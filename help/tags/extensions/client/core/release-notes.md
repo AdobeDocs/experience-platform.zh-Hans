@@ -4,8 +4,8 @@ description: Adobe Experience Platform中的核心扩展的最新发行说明。
 exl-id: a049b2d5-7a00-435d-bcc7-112658a53a1e
 source-git-commit: 4f75bbfee6b550552d2c9947bac8540a982297eb
 workflow-type: tm+mt
-source-wordcount: '1644'
-ht-degree: 49%
+source-wordcount: '1632'
+ht-degree: 46%
 
 ---
 
@@ -13,9 +13,9 @@ ht-degree: 49%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
-## 2023 年 3 月 29 日
+## 2023年3月29日
 
 v3.4.1
 
@@ -31,7 +31,7 @@ v3.4.1
       * 查询字符串参数
       * 流量源
       * Variable
-* 更改events/EntersViewport委托以使用 [交叉观察器API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) 而不是手动检测进入视区的元素。
+* 更改events/EntersViewport委托以使用[交叉点观察器API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)，而不是手动检测进入视区的元素。
 * 删除正在将DTM Cookie迁移到LocalStorage的代码。
 * 当LocalStorage和SessionStorage API不可用时，将警告记录到控制台。
 
@@ -39,9 +39,9 @@ v3.4.1
 
 v3.3.0
 
-* 更改 [触发直接调用操作](./overview.md#direct-call-action) 以便提供要发送到直接调用规则的自定义事件信息。
+* 更改[触发直接调用操作](./overview.md#direct-call-action)，以便您可以提供要发送到直接调用规则的自定义事件信息。
 
-## 2021 年 10 月 8 日
+## 2021年10月8日
 
 v3.2.2
 
@@ -79,7 +79,7 @@ v3.1.0
 * 合并的对象 — 选择多个数据元素，每个数据元素都会提供对象。 这些对象将深层（递归）地合并在一起，以生成一个新的对象。
 * 条件值 — 根据比较结果返回两个值（conditionalValue或fallbackValue）之一。
 * 运行时环境 — 返回以下Launch环境变量之一：环境暂存、库生成日期、属性名称、属性ID、规则名称、规则ID、事件类型、事件详细信息有效负载、直接调用标识符。
-* JavaScript工具 — 常用JavaScript操作的包装器：基本字符串操作（替换、子字符串、正则表达式匹配、第一个和最后一个索引、拆分、切片）、基本数组操作（切片、连接、pop、shift）和基本通用操作（切片、长度）。
+* JavaScript工具 — 用于常见JavaScript操作的包装器：基本字符串操作（替换、子字符串、正则表达式匹配、第一个和最后一个索引、拆分、切片）、基本数组操作（切片、连接、pop、shift）和基本通用操作（切片、长度）。
 * 设备属性 — 返回设备属性，如窗口大小或屏幕大小。
 
 ## 2021年8月11日
@@ -88,7 +88,7 @@ v3.0.0
 
 * PDCL-6153：添加了支持功能，可可靠地将完全限定的URL用于缓存的自定义代码操作。
 
-核心扩展版本3.0.0与中的更改相结合 [Turbine Web运行时v27.2.0](https://github.com/adobe/reactor-turbine/releases/tag/v27.2.0)，如果用户所在的公司支持Premium CDN，则允许用户在多个Adobe管理的主控区域之间加载其库。
+核心扩展的v3.0.0与Turbine Web运行时](https://github.com/adobe/reactor-turbine/releases/tag/v27.2.0)的[v27.2.0中的更改相结合，如果用户的Adobe支持Premium CDN，则允许用户在多个Turbine管理托管区域中加载其库。
 
 此升级是可选的，并且对于没有Premium CDN的用户向后兼容，对于公司启用了Premium CDN的客户是强制性的。
 
@@ -99,13 +99,13 @@ v2.0.7
 * 修复了文本输入上的鼠标交互不再正常工作的问题。
 * 弃用浏览器和操作系统条件。
 
-## 2021 年 5 月 4 日
+## 2021年5月4日
 
 v2.0.6
 
 * 进行小幅更新，以修复屏幕大小更改时扭曲的图标。
 
-## 2021 年 3 月 11 日
+## 2021年3月11日
 
 v2.0.5
 
@@ -117,13 +117,13 @@ v2.0.4
 
 * 为各个字段添加了数据元素支持 — 为以下事件添加了数据元素支持：“页面停留时间”、“Enters Viewport”、“悬停”和“媒体播放时间”。 以及以下条件：“网站逗留时间”和“值比较”
 * 添加了对使用“链接延迟”时ctrl/cmd +单击和鼠标中键单击的默认行为的支持
-* **在点击事件上将链接延迟标记为“不再支持”。**  — 欲知更多信息，请访问 [数据收集博客](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-launch/explainer-link-delay/ba-p/398403) 适用于Adobe Experience Platform的
+* **在点击事件上将链接延迟标记为“不再支持”。** — 可在[数据收集博客](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-launch/explainer-link-delay/ba-p/398403)上找到有关Adobe Experience Platform的更多信息
 
 ## 2021 年 1 月 6 日
 
 v1.9.0
 
-* **新的“触发直接调用”操作**  — 核心扩展现在包含一个名为的新操作类型， `Trigger Direct Call`.  当您想要通过其他规则中的操作来触发直接调用规则时，可使用该选项。它将直接映射到 `_satellite.track()` 方法。衷心感谢 Jan Exner 为此做出的贡献。
+* **新的“触发直接调用”操作** — 核心扩展现在包含一个名为`Trigger Direct Call`的新操作类型。  当您想要通过其他规则中的操作来触发直接调用规则时，可使用该选项。它将直接映射到 `_satellite.track()` 方法。衷心感谢Jan Exner对此所做的贡献。
 
 ## 2020 年 12 月 8 日
 
@@ -169,19 +169,19 @@ v1.7.3
 
 v1.7.0
 
-* **在自定义代码数据元素中访问 `event` 变量** - 现在，在规则的上下文中运行时，您可以从自定义代码数据元素中引用事件。该对象将包含有关触发规则的事件的有用信息。衷心感谢 Stewart Schilling 对此所做的贡献。
+* **在自定义代码数据元素中访问 `event` 变量** - 现在，在规则的上下文中运行时，您可以从自定义代码数据元素中引用事件。该对象将包含有关触发规则的事件的有用信息。衷心感谢Stewart Schilling对此所做的贡献。
 
 ## 2019 年 10 月 7 日
 
 v1.6.2
 
-* **新的“Constant”数据元素类型** - 核心扩展现在包含一个名为 `Constant` 的新数据元素类型。当您需要存储将在各种条件、操作或自定义代码中引用的常数值时，可以使用该数据元素。衷心感谢 Jan Exner 为此做出的贡献。
+* **新的“Constant”数据元素类型** - 核心扩展现在包含一个名为 `Constant` 的新数据元素类型。当您需要存储将在各种条件、操作或自定义代码中引用的常数值时，可以使用该数据元素。衷心感谢Jan Exner对此所做的贡献。
 
 ## 2019 年 9 月 11 日
 
 v1.6.1
 
-* **支持 CSP Nonce** - 现在，核心扩展有一个可选配置参数。您可以添加引用 nonce 的数据元素。如果已配置，则标记添加到页面的所有内联脚本都将使用您配置的nonce。 此更改支持使用包含nonce的内容安全策略，以便标记脚本仍可以在CSP环境中加载。 您可以阅读有关将标记与CSP结合使用的更多信息 [此处](../../../ui/client-side/content-security-policy.md).
+* **支持 CSP Nonce** - 现在，核心扩展有一个可选配置参数。您可以添加引用 nonce 的数据元素。如果已配置，则标记添加到页面的所有内联脚本都将使用您配置的nonce。 此更改支持使用包含nonce的内容安全策略，以便标记脚本仍可以在CSP环境中加载。 您可以在[此处](../../../ui/client-side/content-security-policy.md)阅读有关将标记与CSP结合使用的更多信息。
 
 ## 2019 年 6 月 18 日
 
@@ -209,8 +209,8 @@ v1.4.2
 ## 2018 年 11 月 8 日
 
 * **Persist Cohort 选项** - 在 Sampling 条件中添加了用于持久保留同类群组的选项。这样可以使用户在不同的会话中保留处于样本同类群组之内或之外。例如，如果选中“persist cohort”复选框并且在第一次为给定访客运行条件时返回true，则以后每次为同一访客运行该条件都将返回true。 同样，如果选中“persist cohort”复选框并且在第一次为给定访客运行条件时返回false，则以后每次为同一访客运行该条件都将返回false。
-* **错误修复**  — 修复了在同步加载标记但安装有误（没有调用）的页面上，使用Page Bottom事件和Custom Code操作的规则的问题 `_satellite.pageBottom()`)将清除网站内容。
-* **错误修复**  — 修复了以下问题：如果标记库异步加载并在浏览器DOMContentLoaded事件触发后完成加载，则Enters Viewport将无法正常运行。
+* **错误修复** — 修复了以下问题：在同步加载标记但安装有误（没有调用`_satellite.pageBottom()`）的页面上，使用Page Bottom事件和Custom Code操作的规则将清除网站内容。
+* **错误修复** — 修复了以下问题：如果标记库异步加载并在浏览器DOMContentLoaded事件触发后完成加载，则Enters Viewport将无法正常运行。
 
 ## 2018 年 5 月 24 日
 

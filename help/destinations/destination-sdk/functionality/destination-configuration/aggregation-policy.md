@@ -4,7 +4,7 @@ title: 聚合策略
 exl-id: 2dfa8815-2d69-4a22-8938-8ea41be8b9c5
 source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
 workflow-type: tm+mt
-source-wordcount: '995'
+source-wordcount: '1006'
 ht-degree: 2%
 
 ---
@@ -17,20 +17,20 @@ ht-degree: 2%
 
 使用Destination SDK构建实时（流）目标时，您可以配置如何将导出的用户档案组合在生成的导出中。 此行为由聚合策略设置决定。
 
-要了解此组件在何处适合使用Destination SDK创建的集成，请参阅中的图表 [配置选项](../configuration-options.md) 文档或参阅指南，了解如何 [使用Destination SDK配置流目标](../../guides/configure-destination-instructions.md#create-destination-configuration).
+要了解此组件在何处适合使用Destination SDK创建的集成，请参阅[配置选项](../configuration-options.md)文档中的关系图，或查看有关如何[使用Destination SDK配置流目标](../../guides/configure-destination-instructions.md#create-destination-configuration)的指南。
 
-您可以通过以下方式配置聚合策略设置 `/authoring/destinations` 端点。 有关详细的API调用示例，请参阅以下API参考页面，您可以在其中配置此页面中显示的组件。
+您可以通过`/authoring/destinations`端点配置聚合策略设置。 有关详细的API调用示例，请参阅以下API参考页面，您可以在其中配置此页面中显示的组件。
 
 * [创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)
 * [更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md)
 
 本文介绍了可用于目标的所有受支持的聚合策略设置。
 
-阅读本文档后，请参阅以下文档： [使用模板](../../functionality/destination-server/message-format.md#using-templating) 和 [聚合密钥示例](../../functionality/destination-server/message-format.md#template-aggregation-key) 了解如何根据所选的聚合策略在消息转换模板中包含聚合策略。
+阅读本文档后，请参阅有关[使用模板](../../functionality/destination-server/message-format.md#using-templating)和[聚合密钥示例](../../functionality/destination-server/message-format.md#template-aggregation-key)的文档，了解如何根据所选的聚合策略将聚合策略包含在消息转换模板中。
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -45,7 +45,7 @@ ht-degree: 2%
 
 最大努力聚合最适合以下目标：每个请求喜欢较少的配置文件，并且与具有较多数据的更少请求相比，宁愿接收具有较少数据的更多请求。
 
-以下示例配置显示了最大努力聚合配置。 有关可配置聚合的示例，请参见 [可配置聚合](#configurable-aggregation) 部分。 下表介绍了适用于最大努力聚合的参数。
+以下示例配置显示了最大努力聚合配置。 有关可配置聚合的示例，请参阅[可配置聚合](#configurable-aggregation)部分。 下表介绍了适用于最大努力聚合的参数。
 
 ```json
 "aggregation":{
@@ -60,8 +60,8 @@ ht-degree: 2%
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
 | `aggregationType` | 字符串 | 指示目标应使用的聚合策略的类型。 支持的聚合类型： <ul><li>`BEST_EFFORT`</li><li>`CONFIGURABLE_AGGREGATION`</li></ul> |
-| `bestEffortAggregation.maxUsersPerRequest` | 整数 | Experience Platform可以在单个HTTP调用中聚合多个导出的用户档案。 <br><br>此值指示您的端点在单个HTTP调用中应接收的最大配置文件数。 请注意，这是最大努力汇总。 例如，如果指定值100，Platform在调用中可能会发送任何数量小于100的用户档案。 <br><br> 如果您的服务器不接受每个请求多个用户，则将此值设置为 `1`. |
-| `bestEffortAggregation.splitUserById` | 布尔值 | 如果对目标的调用应按身份拆分，则使用此标志。 将此标志设置为 `true` 如果您的服务器在每次调用时只接受一个身份，则对于给定的身份命名空间。 |
+| `bestEffortAggregation.maxUsersPerRequest` | 整数 | Experience Platform可以在单个HTTP调用中聚合多个导出的用户档案。 <br><br>此值指示您的终结点在一个HTTP调用中应接收的最大配置文件数。 请注意，这是最大努力汇总。 例如，如果指定值100，Platform在调用中可能会发送任何数量小于100的用户档案。 <br><br>如果您的服务器不接受每个请求多个用户，请将此值设置为`1`。 |
+| `bestEffortAggregation.splitUserById` | 布尔值 | 如果对目标的调用应按身份拆分，则使用此标志。 如果您的服务器在每次调用中只接受一个给定身份命名空间中的身份，请将此标志设置为`true`。 |
 
 {style="table-layout:auto"}
 
@@ -73,7 +73,7 @@ ht-degree: 2%
 
 如果更愿意以大批量方式进行，且在同一调用中使用数千个配置文件，则可配置的聚合效果最佳。 此选项还允许您根据复杂的聚合规则聚合导出的用户档案。
 
-下面的示例配置显示了可配置的聚合配置。 有关最大努力汇总的示例，请参见 [最大努力聚合](#best-effort-aggregation) 部分。 下表介绍了适用于可配置聚合的参数。
+下面的示例配置显示了可配置的聚合配置。 有关最大努力聚合的示例，请参阅[最大努力聚合](#best-effort-aggregation)部分。 下表介绍了适用于可配置聚合的参数。
 
 ```json
 "aggregation":{
@@ -108,14 +108,14 @@ ht-degree: 2%
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
 | `aggregationType` | 字符串 | 指示目标应使用的聚合策略的类型。 支持的聚合类型： <ul><li>`BEST_EFFORT`</li><li>`CONFIGURABLE_AGGREGATION`</li></ul> |
-| `configurableAggregation.splitUserById` | 布尔值 | 如果对目标的调用应按身份拆分，则使用此标志。 将此标志设置为 `true` 如果您的服务器在每次调用时只接受一个身份，则对于给定的身份命名空间。 |
-| `configurableAggregation.maxBatchAgeInSecs` | 整数 | 结合使用 `maxNumEventsInBatch`，此参数可确定Experience Platform在向端点发送API调用时应等待的时长。 <ul><li>最小值（秒）：1800</li><li>最大值（秒）：3600</li></ul> 例如，如果为这两个参数使用最大值，则Experience Platform将等待3600秒或直到10000有符合条件的配置文件为止，然后再进行API调用（以先发生者为准）。 |
-| `configurableAggregation.maxNumEventsInBatch` | 整数 | 与一起使用 `maxBatchAgeInSecs`，此参数可确定在API调用中应汇总多少个符合条件的用户档案。 <ul><li>最小值：1000</li><li>最大值：10000</li></ul> 例如，如果为这两个参数使用最大值，则Experience Platform将等待3600秒或直到10000有符合条件的配置文件为止，然后再进行API调用（以先发生者为准）。 |
+| `configurableAggregation.splitUserById` | 布尔值 | 如果对目标的调用应按身份拆分，则使用此标志。 如果您的服务器在每次调用中只接受一个给定身份命名空间中的身份，请将此标志设置为`true`。 |
+| `configurableAggregation.maxBatchAgeInSecs` | 整数 | 此参数与`maxNumEventsInBatch`结合使用，可决定Experience Platform在向端点发送API调用之前应等待的时间。 <ul><li>最小值（秒）：1800</li><li>最大值（秒）：3600</li></ul> 例如，如果为这两个参数使用最大值，则Experience Platform将等待3600秒或直到10000有符合条件的配置文件为止，然后再进行API调用（以先发生者为准）。 |
+| `configurableAggregation.maxNumEventsInBatch` | 整数 | 此参数与`maxBatchAgeInSecs`结合使用，可确定在API调用中应聚合多少个符合条件的配置文件。 <ul><li>最小值：1000</li><li>最大值：10000</li></ul> 例如，如果为这两个参数使用最大值，则Experience Platform将等待3600秒或直到10000有符合条件的配置文件为止，然后再进行API调用（以先发生者为准）。 |
 | `configurableAggregation.aggregationKey` | - | 允许您根据下述参数聚合映射到目标的导出用户档案。 |
-| `configurableAggregation.aggregationKey.includeSegmentId` | 布尔值 | 将此参数设置为 `true` 如果您希望按受众ID对导出到目标的用户档案进行分组。 |
-| `configurableAggregation.aggregationKey.includeSegmentStatus` | 布尔值 | 设置此参数和 `includeSegmentId` 到 `true`，适用于要按受众ID和受众状态对导出到目标的用户档案进行分组的情况。 |
-| `configurableAggregation.aggregationKey.includeIdentity` | 布尔值 | 将此参数设置为 `true` 如果要按身份命名空间对导出到目标的用户档案进行分组。 |
-| `configurableAggregation.aggregationKey.oneIdentityPerGroup` | 布尔值 | 将此参数设置为 `true` 如果您希望将导出的用户档案根据单个身份（GAID、IDFA、电话号码、电子邮件等）聚合到各个组中。 |
+| `configurableAggregation.aggregationKey.includeSegmentId` | 布尔值 | 如果要按受众ID对导出到目标的配置文件进行分组，请将此参数设置为`true`。 |
+| `configurableAggregation.aggregationKey.includeSegmentStatus` | 布尔值 | 如果要按受众ID和受众状态对导出到目标的配置文件进行分组，请将此参数和`includeSegmentId`设置为`true`。 |
+| `configurableAggregation.aggregationKey.includeIdentity` | 布尔值 | 如果要按身份命名空间对导出到目标的配置文件进行分组，请将此参数设置为`true`。 |
+| `configurableAggregation.aggregationKey.oneIdentityPerGroup` | 布尔值 | 如果您希望导出的用户档案根据单个身份（GAID、IDFA、电话号码、电子邮件等）聚合到组中，请将此参数设置为`true`。 |
 | `configurableAggregation.aggregationKey.groups` | 数组 | 如果要按身份命名空间组对导出到目标的配置文件进行分组，请创建身份组列表。 例如，可以使用上例中显示的配置，将包含IDFA和GAID移动标识符的用户档案合并到一个对目标的调用中，并将电子邮件合并到另一个调用中。 |
 
 {style="table-layout:auto"}

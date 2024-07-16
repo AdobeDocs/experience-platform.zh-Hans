@@ -84,4 +84,4 @@ ht-degree: 1%
 
 ## 后续步骤
 
-填充浏览规范后，您可以使用 [!DNL Flow Service] API。 请参阅 [自助源（批处理SDK） API指南](../api/api-overview.md) 以了解更多信息。
+填充浏览规范后，您可以使用[!DNL Flow Service] API继续创建完整的连接规范。 有关详细信息，请参阅[自助源（批处理SDK） API指南](../api/api-overview.md)。

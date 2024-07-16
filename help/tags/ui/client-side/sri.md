@@ -4,8 +4,8 @@ description: 了解Adobe Experience Platform如何支持子资源完整性(SRI)�
 exl-id: bd8bc3f7-9a85-44e2-ae07-f0664179b51c
 source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
-source-wordcount: '601'
-ht-degree: 72%
+source-wordcount: '594'
+ht-degree: 67%
 
 ---
 
@@ -13,9 +13,9 @@ ht-degree: 72%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-本文档介绍了Adobe Experience Platform中如何支持子资源完整性(SRI)。
+本文档介绍Adobe Experience Platform如何支持子资源完整性(SRI)。
 
 现代网站是通过引用 Web 上不同位置的图像、内容和脚本来构建的。SRI允许浏览器验证请求文件的内容是否未被意外修改。
 
@@ -34,11 +34,11 @@ SRI 验证过程可概括如下：
 
 ## 标记管理系统的限制
 
-作为一款标记管理系统(TMS)，Adobe Experience Platform中的标记提供了一个编译的JavaScript库内部版本，您可以通过单个内部版本加载到页面上 `<script>` 元素（嵌入代码）。 TMS 提供的动态功能是通过动态交换该脚本的内容来实现的，无需更改其他任何内容。
+作为一款标记管理系统(TMS)，Adobe Experience Platform中的标记提供了一个编译的JavaScript库内部版本，您可以通过单个`<script>`元素（嵌入代码）将该内部版本加载到页面上。 TMS 提供的动态功能是通过动态交换该脚本的内容来实现的，无需更改其他任何内容。
 
 但是，如果脚本内容发生更改，这些内容的加密哈希也会随之更改。因此，要搭配使用 SRI 与 TMS 的唯一方法是，在发布新内部版本的同时更新嵌入代码。对于许多人来说，这首先就违背了使用 TMS 的主要目的。
 
-标记的下一项最佳安全选项是实施内容安全策略。 有关详细信息，请参阅以下指南： [CSP和标记](./content-security-policy.md).
+标记的另一个最佳安全选项是实施内容安全策略。 有关详细信息，请参阅[CSP和标记](./content-security-policy.md)的指南。
 
 ## 将 SRI 集成到内部版本部署中
 
@@ -56,4 +56,4 @@ SRI 验证过程可概括如下：
 
 ## 后续步骤
 
-本文档介绍了将SRI与标记一起使用的限制，以及在存在这些限制的情况下，将SRI集成到库内部版本部署中所需的步骤。 如果您尚未阅读该指南，强烈建议您阅读 [CSP和标记](./content-security-policy.md) 作为替代安全选项。
+本文档介绍了将SRI与标记一起使用的限制，以及在存在这些限制的情况下，将SRI集成到库内部版本部署中所需的步骤。 如果您尚未阅读有关[CSP和标记](./content-security-policy.md)的指南，强烈建议您参阅其中所述的替代安全选项。

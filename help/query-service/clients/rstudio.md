@@ -6,38 +6,38 @@ description: 本文档介绍了将R Studio与Adobe Experience Platform查询服�
 exl-id: 8dd82bad-6ffb-4536-9c27-223f471a49c6
 source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
-source-wordcount: '449'
+source-wordcount: '439'
 ht-degree: 0%
 
 ---
 
-# Connect [!DNL RStudio] 查询服务
+# 将[!DNL RStudio]连接到查询服务
 
-本文档将介绍连接的步骤 [!DNL RStudio] 使用Adobe Experience Platform [!DNL Query Service].
+本文档逐步介绍将[!DNL RStudio]与Adobe Experience Platform [!DNL Query Service]连接的步骤。
 
 >[!NOTE]
 >
-> [!DNL RStudio] 现已更名为 [!DNL Posit]. [!DNL RStudio] 产品已重命名为 [!DNL Posit Connect]， [!DNL Posit Workbench]， [!DNL Posit Package] 经理， [!DNL Posit Cloud]、和 [!DNL Posit Academy].
+> [!DNL RStudio]现已更名为[!DNL Posit]。 [!DNL RStudio]产品已重命名为[!DNL Posit Connect]、[!DNL Posit Workbench]、[!DNL Posit Package]经理、[!DNL Posit Cloud]和[!DNL Posit Academy]。
 >
-> 本指南假定您已经有权访问 [!DNL RStudio] 并熟悉如何使用它。 有关以下内容的更多信息 [!DNL RStudio] 可在以下位置找到： [正式 [!DNL RStudio] 文档](https://rstudio.com/products/rstudio/).
+> 本指南假定您已经有权访问[!DNL RStudio]并熟悉其使用方法。 有关[!DNL RStudio]的详细信息，请参阅[官方 [!DNL RStudio] 文档](https://rstudio.com/products/rstudio/)。
 > 
-> 此外，要使用 [!DNL RStudio] 使用查询服务，您需要安装 [!DNL PostgreSQL] JDBC 4.2驱动程序。 您可以从以下位置下载JDBC驱动程序 [[!DNL PostgreSQL] 官方网站](https://jdbc.postgresql.org/download/).
+> 此外，要将[!DNL RStudio]与查询服务结合使用，您需要安装[!DNL PostgreSQL] JDBC 4.2驱动程序。 您可以从[[!DNL PostgreSQL] 官方网站](https://jdbc.postgresql.org/download/)下载JDBC驱动程序。
 
-## 创建 [!DNL Query Service] 中的连接 [!DNL RStudio] 界面
+## 在[!DNL RStudio]界面中创建[!DNL Query Service]连接
 
-安装后 [!DNL RStudio]，您需要安装RJDBC包。 操作说明 [通过命令行连接数据库](https://solutions.posit.co/connections/db/best-practices/drivers/#connecting-to-a-database-in-r) 可以在官方的Post文档中找到。
+安装[!DNL RStudio]后，您需要安装RJDBC包。 有关如何通过命令行[连接数据库](https://solutions.posit.co/connections/db/best-practices/drivers/#connecting-to-a-database-in-r)的说明，请参阅官方的Post文档。
 
-如果使用Mac操作系统，您可以选择 **[!UICONTROL 工具]** 在菜单栏中，后接 **[!UICONTROL 安装包]** 下拉菜单中。 或者，选择 **[!DNL Packages]** 选项卡，然后选择 **[!DNL Install]**.
+如果使用Mac OS，您可以从菜单栏选择&#x200B;**[!UICONTROL 工具]**，然后从下拉菜单中选择&#x200B;**[!UICONTROL 安装包]**。 或者，从RStudio UI中选择&#x200B;**[!DNL Packages]**&#x200B;选项卡，然后选择&#x200B;**[!DNL Install]**。
 
-此时会出现一个弹出窗口，其中显示 **[!DNL Install Packages]** 屏幕。 确保 **[!DNL Repository (CRAN)]** 已为 **[!DNL Install from]** 部分。 的值 **[!DNL Packages]** 应为 `RJDBC`. 确保 **[!DNL Install dependencies]** 已选中。 确认所有值均正确后，选择 **[!DNL Install]** 以安装包。 现在已安装RJDBC包，请重新启动 [!DNL RStudio] 以完成安装过程。
+此时会出现一个弹出窗口，显示&#x200B;**[!DNL Install Packages]**&#x200B;屏幕。 确保为&#x200B;**[!DNL Install from]**&#x200B;部分选择&#x200B;**[!DNL Repository (CRAN)]**。 **[!DNL Packages]**&#x200B;的值应为`RJDBC`。 确保已选择&#x200B;**[!DNL Install dependencies]**。 确认所有值均正确后，选择&#x200B;**[!DNL Install]**&#x200B;以安装包。 现在已安装RJDBC包，请重新启动[!DNL RStudio]以完成安装过程。
 
-晚于 [!DNL RStudio] 已重新启动，您现在可以连接到查询服务。 选择 **[!DNL RJDBC]** 中的包 **[!DNL Packages]** 窗格，然后在控制台中输入以下命令：
+在[!DNL RStudio]重新启动后，您现在可以连接到查询服务。 在&#x200B;**[!DNL Packages]**&#x200B;窗格中选择&#x200B;**[!DNL RJDBC]**&#x200B;包，然后在控制台中输入以下命令：
 
 ```console
 pgsql <- JDBC("org.postgresql.Driver", "{PATH TO THE POSTGRESQL JDBC JAR}", "`")
 ```
 
-位置 `{PATH TO THE POSTGRESQL JDBC JAR}` 表示指向的路径 [!DNL PostgreSQL] 计算机上安装的JDBC JAR。
+其中`{PATH TO THE POSTGRESQL JDBC JAR}`表示计算机上安装的[!DNL PostgreSQL] JDBC JAR的路径。
 
 现在，您可以创建与查询服务的连接。 在控制台中输入以下命令：
 
@@ -47,17 +47,17 @@ qsconnection <- dbConnect(pgsql, "jdbc:postgresql://{HOSTNAME}:{PORT}/{DATABASE_
 
 >[!IMPORTANT]
 >
->请参阅 [[!DNL Query Service] SSL文档](./ssl-modes.md) 了解到Adobe Experience Platform查询服务的第三方连接的SSL支持，以及如何使用进行连接 `verify-full` SSL模式。
+>请参阅[[!DNL Query Service] SSL文档](./ssl-modes.md)，了解对Adobe Experience Platform查询服务的第三方连接的SSL支持，以及如何使用`verify-full` SSL模式连接。
 
-有关查找数据库名称、主机、端口和登录凭据的详细信息，请阅读 [凭据指南](../ui/credentials.md). 要查找您的凭据，请登录 [!DNL Platform]，然后选择 **[!UICONTROL 查询]**，后接 **[!UICONTROL 凭据]**.
+有关查找数据库名称、主机、端口和登录凭据的详细信息，请阅读[凭据指南](../ui/credentials.md)。 若要查找凭据，请登录到[!DNL Platform]，然后选择&#x200B;**[!UICONTROL 查询]**，然后选择&#x200B;**[!UICONTROL 凭据]**。
 
 控制台输出中将显示一条消息，确认与查询服务的连接。
 
 ## 编写查询
 
-现在您已连接到 [!DNL Query Service]，可以编写查询来执行并编辑SQL语句。 例如，您可以使用 `dbGetQuery(con, sql)` 执行查询，其中 `sql` 是要运行的SQL查询。
+现在您已连接到[!DNL Query Service]，您可以编写查询以执行并编辑SQL语句。 例如，您可以使用`dbGetQuery(con, sql)`执行查询，其中`sql`是要运行的SQL查询。
 
-以下查询使用的数据集包含 [体验事件](../../xdm/classes/experienceevent.md) 和会创建网站的页面查看直方图（给定设备的屏幕高度）。
+以下查询使用包含[体验事件](../../xdm/classes/experienceevent.md)的数据集，并根据设备的屏幕高度创建网站的页面查看直方图。
 
 ```sql
 df_pageviews <- dbGetQuery(con,
@@ -94,4 +94,4 @@ df_pageviews
 
 ## 后续步骤
 
-有关如何编写和运行查询的更多信息，请阅读以下指南： [正在运行查询](../best-practices/writing-queries.md).
+有关如何编写和运行查询的详细信息，请阅读有关[运行查询](../best-practices/writing-queries.md)的指南。

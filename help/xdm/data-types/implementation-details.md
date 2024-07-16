@@ -9,9 +9,9 @@ ht-degree: 6%
 
 ---
 
-# [!UICONTROL 实施详细信息] 数据类型
+# [!UICONTROL 实现详细信息]数据类型
 
-[!UICONTROL 实施详细信息] 是一个标准体验数据模型(XDM)数据类型，用于描述技术实施，如API或SDK。
+[!UICONTROL 实现详细信息]是描述技术实现（如API或SDK）的标准Experience Data Model (XDM)数据类型。
 
 ![数据类型结构](../images/data-types/implementation-details.png)
 
@@ -26,4 +26,4 @@ ht-degree: 6%
 有关数据类型的更多详细信息，请参阅公共XDM存储库：
 
 * [填充示例](https://github.com/adobe/xdm/blob/master/components/datatypes/industry-verticals/implementationdetails.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/industry-verticals/implementationdetails.schema.json)
+* [完整架构](https://github.com/adobe/xdm/blob/master/components/datatypes/industry-verticals/implementationdetails.schema.json)

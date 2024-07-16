@@ -8,7 +8,7 @@ role: Admin
 source-git-commit: e27695a96d7b61e2552387611c4eb63ebc6daf47
 workflow-type: tm+mt
 source-wordcount: '127'
-ht-degree: 44%
+ht-degree: 45%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 44%
 # 访问控制 {#access-control}
 
 * [访问控制概述](home.md)
-* 基于属性的访问控制 {#abac}
+* 基于属性的访问控制{#abac}
    * [概述](abac/overview.md)
    * [端到端指南](abac/end-to-end-guide.md)
    * [使用访问标签管理用户对目标数据流的访问](/help/access-control/abac/apply-access-labels-destinations.md)
@@ -47,4 +47,4 @@ ht-degree: 44%
    * [查看有效策略](api/effective-policies.md)
 * [疑难解答指南](troubleshooting-guide.md)
 * [API 参考](https://www.adobe.io/experience-platform-apis/references/access-control/)
-* [Platform发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [平台发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

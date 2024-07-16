@@ -13,11 +13,11 @@ ht-degree: 1%
 
 # 访问控制概述
 
-Adobe Experience Platform的访问控制是通过 **[!UICONTROL 权限]** 在 [Adobe Experience Cloud](https://experience.adobe.com/). 此功能利用角色和策略，将用户与权限和沙盒关联起来。
+Adobe Experience Platform的访问控制是通过[Adobe Experience Cloud](https://experience.adobe.com/)中的&#x200B;**[!UICONTROL 权限]**&#x200B;提供的。 此功能利用角色和策略，将用户与权限和沙盒关联起来。
 
 ## 访问控制层级和工作流
 
-要为Experience Platform配置访问控制，您必须对拥有Experience Platform产品的组织具有系统或产品管理员权限。 可以授予或撤销权限的最低角色是产品管理员。 可以管理权限的其他管理员角色是系统管理员（无限制）。 请参阅Adobe Help Center文章，网址为 [管理角色](https://helpx.adobe.com/enterprise/using/admin-roles.html) 以了解更多信息。
+要为Experience Platform配置访问控制，您必须对拥有Experience Platform产品的组织具有系统或产品管理员权限。 可以授予或撤销权限的最低角色是产品管理员。 可以管理权限的其他管理员角色是系统管理员（无限制）。 有关详细信息，请参阅有关[管理角色](https://helpx.adobe.com/enterprise/using/admin-roles.html)的Adobe Help Center文章。
 
 >[!NOTE]
 >
@@ -26,23 +26,23 @@ Adobe Experience Platform的访问控制是通过 **[!UICONTROL 权限]** 在 [A
 用于获取和分配访问权限的高级工作流可概括如下：
 
 - 在许可Adobe Experience Platform或使用Experience Platform的应用程序/应用程序服务后，会向在许可期间指定的管理员发送一封电子邮件。
-- 管理员登录到 [Adobe Admin Console](#adobe-admin-console) 并选择 **Adobe Experience Platform** 从概述页面上的产品列表中。
-- 要授予对Experience Platform的访问权限，建议管理员将用户添加到默认产品配置文件： `AEP-Default-All-Users`.
+- 管理员登录到[Adobe Admin Console](#adobe-admin-console)，并从概述页面的产品列表中选择&#x200B;**Adobe Experience Platform**。
+- 要授予对Experience Platform的访问权限，建议管理员将用户添加到默认产品配置文件： `AEP-Default-All-Users`。
 - 在“Experience Platform权限”中，管理员可以创建新角色，或编辑任何现有角色的权限和用户。
-- 创建或编辑角色时，管理员使用将用户添加到角色 **[!UICONTROL 用户]** 选项卡，并向这些用户授予权限(例如”[!UICONTROL 读取数据集]”或“[!UICONTROL 管理架构]“)，方法是编辑角色的权限。 同样，管理员可以使用相同的编辑选项为沙盒分配访问权限。
-- 当用户登录Experience Platform用户界面时，他们对各种Experience Platform功能的访问权限由上一步中授予的权限驱动。 例如，如果用户没有 [!UICONTROL 查看数据集] 权限， **[!UICONTROL 数据集]** 该用户看不到侧菜单中的选项卡。
+- 创建或编辑角色时，管理员使用&#x200B;**[!UICONTROL 用户]**&#x200B;选项卡将用户添加到该角色，并通过编辑该角色的权限授予这些用户（如“[!UICONTROL 读取数据集]”或“[!UICONTROL 管理架构]”）的权限。 同样，管理员可以使用相同的编辑选项为沙盒分配访问权限。
+- 当用户登录Experience Platform用户界面时，他们对各种Experience Platform功能的访问权限由上一步中授予的权限驱动。 例如，如果用户没有[!UICONTROL 查看数据集]权限，则该用户看不到侧菜单中的&#x200B;**[!UICONTROL 数据集]**&#x200B;选项卡。
 
-有关如何管理Experience Platform中的访问控制的更多详细步骤，请参阅 [访问控制用户指南](./ui/overview.md).
+有关如何管理Experience Platform中的访问权限的详细步骤，请参阅[访问控制用户指南](./ui/overview.md)。
 
 所有对Experience PlatformAPI的调用都会验证权限，如果在当前用户上下文中未找到相应的权限，则将返回错误。 在UI中，将根据授予当前用户的权限，隐藏或更改元素。
 
 ## 权限 {#platform-permissions}
 
-[!UICONTROL 权限] 提供一个中心位置，用于管理组织的Experience Platform访问权限。 到 [!UICONTROL 权限]，则可以为多组用户授予各种Experience Platform功能的访问权限，例如 [!UICONTROL 管理数据集]， [!UICONTROL 查看数据集]，或 [!UICONTROL 管理配置文件].
+[!UICONTROL 权限]提供了一个中心位置，用于管理组织的Experience Platform访问权限。 通过[!UICONTROL 权限]，您可以授予用户组访问各种Experience Platform功能的权限，例如[!UICONTROL 管理数据集]、[!UICONTROL 查看数据集]或[!UICONTROL 管理配置文件]。
 
 ### 角色
 
-在 [!UICONTROL 角色] 部分，权限是通过使用角色分配给用户的。 角色允许您向一个或多个用户授予权限，并且还包含他们对通过角色分配给他们的沙盒范围的访问权限。 可以将用户分配给属于您组织的一个或多个角色。
+在[!UICONTROL 角色]部分中，权限是通过使用角色分配给用户的。 角色允许您向一个或多个用户授予权限，并且还包含他们对通过角色分配给他们的沙盒范围的访问权限。 可以将用户分配给属于您组织的一个或多个角色。
 
 ### 默认角色
 
@@ -57,11 +57,11 @@ Experience Platform附带两个预配置的默认角色。 下表概述了每个
 
 非生产沙盒是一种数据虚拟化形式，允许您将数据与其他沙盒隔离，通常用于开发实验、测试或试用。 角色的权限允许角色的用户访问他们在被授予访问权限的沙盒环境中的Experience Platform功能。 默认Experience Platform许可证授予您5个沙盒（一个生产沙盒和4个非生产沙盒）。 您可以添加包含10个非生产沙盒的包，最多总共75个沙盒。 有关更多详细信息，请联系贵组织的管理员或您的Adobe销售代表。
 
-有关Experience Platform沙箱的更多信息，请参阅 [沙盒概述](../sandboxes/home.md).
+有关Experience Platform中沙盒的更多信息，请参阅[沙盒概述](../sandboxes/home.md)。
 
 ### 沙盒访问权限
 
-沙盒的访问通过角色进行管理。 有关如何为角色启用沙盒访问权限的详细步骤，请参阅 [基于属性的访问控制角色指南](./abac/ui/roles.md).
+沙盒的访问通过角色进行管理。 有关如何为角色启用对沙盒访问的详细步骤，请参阅[基于属性的访问控制角色指南](./abac/ui/roles.md)。
 
 可以授予用户访问角色中一个或多个沙盒的权限。 如果两个或更多角色中包含一个用户，则该用户将有权访问这些角色中包含的所有沙盒。
 
@@ -69,18 +69,18 @@ Experience Platform附带两个预配置的默认角色。 下表概述了每个
 
 ### 资源权限 {#permissions}
 
-资源 [!UICONTROL 权限] 选项卡会显示该角色活动的沙盒和权限：
+角色中的资源[!UICONTROL 权限]选项卡显示对该角色活动的沙盒和权限：
 
-![permissions-overview](./images/permissions.png)
+![权限概述](./images/permissions.png)
 
 通过资源权限授予的权限按类别排序，有些权限授予对多个低级功能的访问权限。
 
-下表概述了Experience Platform在角色中可用的权限，并说明了他们授予访问权限的特定Experience Platform功能。 有关如何向角色添加权限的详细步骤，请参阅 [基于属性的访问控制角色指南](./abac/ui/roles.md).
+下表概述了Experience Platform在角色中可用的权限，并说明了他们授予访问权限的特定Experience Platform功能。 有关如何向角色添加权限的详细步骤，请参阅[基于属性的访问控制角色指南](./abac/ui/roles.md)。
 
 | 类别 | 权限 | 描述 |
 | --- | --- | --- |
-| [!DNL AI Assistant] | [!UICONTROL 启用AI助手] | 能够询问 [AI助手](../ai-assistant/access.md) 问题。 |
-| [!DNL AI Assistant] | [!UICONTROL 查看运营分析] | 获取对的响应的访问权限 [运营洞察](../ai-assistant/home.md##operational-insights) 查询。 |
+| [!DNL AI Assistant] | [!UICONTROL 启用AI助手] | 能够向[AI助手](../ai-assistant/access.md)提问。 |
+| [!DNL AI Assistant] | [!UICONTROL 查看运营分析] | 访问以获取对[操作分析](../ai-assistant/home.md##operational-insights)查询的响应。 |
 | [!DNL Alerts] | [!UICONTROL 查看警报历史记录] | 对警报历史记录的只读访问权限。 |
 | [!DNL Alerts] | [!UICONTROL 解决警报] | 有权读取、编辑和删除警报。 |
 | [!DNL Alerts] | [!UICONTROL 查看警报] | 警报的只读访问权限。 |
@@ -92,11 +92,11 @@ Experience Platform附带两个预配置的默认角色。 下表概述了每个
 | [!DNL Data Governance] | [!UICONTROL 管理使用标签] | 有权读取、创建和删除使用标签。 |
 | [!DNL Data Governance] | [!UICONTROL 管理数据使用策略] | 有权读取、创建、编辑和删除数据使用策略。 |
 | [!DNL Data Governance] | [!UICONTROL 查看数据使用策略] | 对属于您组织的数据使用策略的只读访问权限。 |
-| [!DNL Data Governance] | [!UICONTROL 查看用户活动日志] | 查看录制的只读访问权限 [审核日志](../landing/governance-privacy-security/audit-logs/overview.md) Platform活动的一部分。 |
+| [!DNL Data Governance] | [!UICONTROL 查看用户活动日志] | 只读访问权限，用于查看平台活动中记录的[审核日志](../landing/governance-privacy-security/audit-logs/overview.md)。 |
 | [!DNL Data Ingestion] | [!UICONTROL 管理源] | 有权读取、创建、编辑和禁用源。 |
-| [!DNL Data Ingestion] | [!UICONTROL 查看源] | 对中的可用源的只读访问权限 **[!UICONTROL 目录]** 选项卡和经过验证的源 **[!UICONTROL 浏览]** 选项卡。 |
-| [!DNL Data Ingestion] | [!DNL Manage Audience Share Connections] | 创建、接受和拒绝合作伙伴握手以连接两个组织并启用 [!DNL Segment Match] 流。 |
-| [!DNL Data Ingestion] | [!DNL Manage Audience Share] | 读取、创建、编辑和发布的权限 [!DNL Segment Match] 动态消息。 |
+| [!DNL Data Ingestion] | [!UICONTROL 查看源] | 对&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡中的可用源以及&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡中的已验证源的只读访问权限。 |
+| [!DNL Data Ingestion] | [!DNL Manage Audience Share Connections] | 创建、接受和拒绝伙伴握手以连接两个组织并启用[!DNL Segment Match]流的访问权限。 |
+| [!DNL Data Ingestion] | [!DNL Manage Audience Share] | 有权读取、创建、编辑和发布[!DNL Segment Match]活动伙伴信息源。 |
 | [!DNL Data Lifecycle] | [!UICONTROL 查看数据生命周期] | 数据生命周期的只读访问。 |
 | [!DNL Data Lifecycle] | [!UICONTROL 管理数据生命周期] | 有权读取、创建、编辑和删除数据生命周期。 |
 | [!DNL Data Modeling] | [!UICONTROL 管理架构] | 有权读取、创建、编辑和删除架构和相关资源。 |
@@ -105,14 +105,14 @@ Experience Platform附带两个预配置的默认角色。 下表概述了每个
 | [!DNL Data Modeling] | [!UICONTROL 管理身份元数据] | 有权读取、创建、编辑和删除架构的身份元数据。 |
 | [!DNL Data Management] | [!UICONTROL 管理数据集] | 有权读取、创建、编辑和删除数据集。 架构的只读访问权限。 |
 | [!DNL Data Management] | [!UICONTROL 查看数据集] | 对数据集和架构的只读访问权限。 |
-| [!DNL Data Management] | [!UICONTROL 数据监测] | 对监控数据集和流的只读访问权限。 |
-| [!DNL Data Science Workspace] | [!UICONTROL 管理数据科学工作区] | 在中读取、创建、编辑和删除数据的权限 [!DNL Data Science Workspace]. |
-| [!DNL Destinations] | [!UICONTROL 查看目标] | 只读访问权限，可查看中的可用目标 **[!UICONTROL 目录]** 选项卡和中的经过身份验证的目标 **[!UICONTROL 浏览]** 选项卡。 |
+| [!DNL Data Management] | [!UICONTROL 数据监视] | 对监控数据集和流的只读访问权限。 |
+| [!DNL Data Science Workspace] | [!UICONTROL 管理数据科学Workspace] | 在[!DNL Data Science Workspace]中读取、创建、编辑和删除的权限。 |
+| [!DNL Destinations] | [!UICONTROL 查看目标] | 只读访问权限，可查看&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡中的可用目标和&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡中的已验证目标。 |
 | [!DNL Destinations] | [!UICONTROL 管理目标] | 读取、创建和删除目标连接和目标帐户的权限。 |
-| [!DNL Destinations] | [!UICONTROL 激活目标] | 允许用户将区段激活到现有目标。 在激活工作流中启用映射步骤。 此权限还需要 [!UICONTROL 查看目标] 要授予将数据激活到目标的用户的权限。 |
-| [!DNL Destinations] | [!UICONTROL 激活没有映射的区段] | 允许用户将区段激活到现有目标，而无需显示 [映射步骤](../destinations/ui/activate-batch-profile-destinations.md#mapping). 用户可以在激活工作流中添加和删除区段，但无法添加或删除映射的属性或标识。 此权限还需要 [!UICONTROL 查看目标] 要授予将数据激活到目标的用户的权限。 |
-| [!DNL Destinations] | [!UICONTROL 管理和激活数据集目标] | 能够读取、创建、编辑和禁用数据集导出流。 还能将数据激活到已创建的活动数据集。 此权限还需要 [!UICONTROL 查看目标] 要授予将数据激活到目标的用户的权限。 |
-| [!DNL Destinations] | [!UICONTROL 目标创作] | 能够使用创作目标 [Adobe Experience Platform Destination SDK](../destinations/destination-sdk/overview.md). |
+| [!DNL Destinations] | [!UICONTROL 激活目标] | 允许用户将区段激活到现有目标。 在激活工作流中启用映射步骤。 此权限还要求向将数据激活到目标的用户授予[!UICONTROL 查看目标]权限。 |
+| [!DNL Destinations] | [!UICONTROL 激活没有映射的区段] | 允许用户将区段激活到现有目标，而不显示[映射步骤](../destinations/ui/activate-batch-profile-destinations.md#mapping)。 用户可以在激活工作流中添加和删除区段，但无法添加或删除映射的属性或标识。 此权限还要求向将数据激活到目标的用户授予[!UICONTROL 查看目标]权限。 |
+| [!DNL Destinations] | [!UICONTROL 管理和激活数据集目标] | 能够读取、创建、编辑和禁用数据集导出流。 还能将数据激活到已创建的活动数据集。 此权限还要求向将数据激活到目标的用户授予[!UICONTROL 查看目标]权限。 |
+| [!DNL Destinations] | [!UICONTROL 目标创作] | 能够使用[Adobe Experience Platform Destination SDK](../destinations/destination-sdk/overview.md)创作目标。 |
 | [!DNL Identity Management] | [!UICONTROL 管理身份命名空间] | 读取、创建、编辑和删除身份命名空间的权限。 |
 | [!DNL Identity Management] | [!UICONTROL 查看身份命名空间] | 对身份命名空间的只读访问。 |
 | [!DNL Identity Management] | [!UICONTROL 查看身份图] | 对标识图的只读访问。 |
@@ -137,4 +137,4 @@ Experience Platform附带两个预配置的默认角色。 下表概述了每个
 
 ## 后续步骤
 
-通过阅读本指南，您已经了解了Experience Platform中访问控制的主要原则。 您现在可以继续访问 [基于属性的访问控制用户指南](./abac/overview.md) 有关如何使用Experience Cloud为Experience Platform创建角色和分配权限的详细步骤。
+通过阅读本指南，您已经了解了Experience Platform中访问控制的主要原则。 现在，您可以继续阅读[基于属性的访问控制用户指南](./abac/overview.md)，以了解有关如何使用Experience Cloud创建Experience Platform和分配角色的权限的详细步骤。

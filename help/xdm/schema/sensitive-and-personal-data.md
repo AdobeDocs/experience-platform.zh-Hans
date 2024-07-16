@@ -48,10 +48,10 @@ Platform允许您定义自己的自定义字段组和数据类型，这样，如
 
 >[!IMPORTANT]
 >
->SPI和PII只应保存到 [XDM个人资料](../classes/individual-profile.md) 和 [XDM ExperienceEvent](../classes/experienceevent.md) 类。 作为数据删除以及隐私和治理的最佳实践，请勿将SPI和PII保存在任何其他自定义或标准XDM类中。
+>SPI和PII只应保存到[XDM个人配置文件](../classes/individual-profile.md)和[XDM ExperienceEvent](../classes/experienceevent.md)类中。 作为数据删除以及隐私和治理的最佳实践，请勿将SPI和PII保存在任何其他自定义或标准XDM类中。
 
 ## 后续步骤
 
-本文档介绍了有关XDM中的敏感数据和个人数据的主要注意事项。 有关如何对架构进行建模以最好地满足您的业务用例的更多信息，请参阅以下指南的内容： [数据建模的最佳实践](./best-practices.md).
+本文档介绍了有关XDM中的敏感数据和个人数据的主要注意事项。 有关如何对架构进行建模以最好地满足您的业务用例的更多信息，请参阅[数据建模最佳实践指南](./best-practices.md)。
 
-有关Experience Platform中数据治理和隐私功能的更多信息，请参阅以下内容的概述： [治理、隐私和安全](../../landing/governance-privacy-security/overview.md).
+有关Experience Platform中的数据治理和隐私功能的更多信息，请参阅[治理、隐私和安全性](../../landing/governance-privacy-security/overview.md)概述。

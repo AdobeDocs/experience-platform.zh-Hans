@@ -2,19 +2,19 @@
 title: 文件夹端点
 description: 了解如何使用Adobe Experience Platform API创建、更新、管理和删除文件夹。
 role: Developer
-source-git-commit: 8f9a2b5a2063b76518302eb9de38b628c87416e1
+exl-id: ee43d699-725d-4ffd-a71b-049eeb3b4d7c
+source-git-commit: 717a4ea0568200c940cf9b8f26f4dd2aa9c00a3e
 workflow-type: tm+mt
 source-wordcount: '818'
 ht-degree: 4%
 
 ---
 
-
 # 文件夹端点
 
 >[!IMPORTANT]
 >
->这组端点的端点URL为 `https://experience.adobe.io`.
+>此终结点集的终结点URL为`https://experience.adobe.io`。
 
 文件夹是一项功能，可让您更好地组织业务对象以便于导航和分类。
 
@@ -22,11 +22,11 @@ ht-degree: 4%
 
 ## 快速入门
 
-在继续之前，请查看 [快速入门指南](./getting-started.md) 有关成功调用API所需了解的重要信息，包括所需的标头以及如何读取示例API调用。
+在继续之前，请查看[快速入门指南](./getting-started.md)以了解成功调用API所需了解的重要信息，包括所需的标头以及如何读取示例API调用。
 
 ## 检索文件夹列表 {#list}
 
-您可以向以下网站发出GET请求，以检索属于您组织的文件夹列表： `/folder` 端点并指定文件夹类型和父文件夹ID。
+您可以通过向`/folder`端点发出GET请求并指定文件夹类型和父文件夹ID，检索属于您组织的文件夹的列表。
 
 **API格式**
 
@@ -36,8 +36,8 @@ GET /folder/{FOLDER_TYPE}/{PARENT_FOLDER_ID}/subfolders
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FOLDER_TYPE}` | 文件夹中包含的对象类型。 支持的值包括 `segment` 和 `dataset`. |
-| `{PARENT_FOLDER_ID}` | 从中检索文件夹列表的父文件夹的ID。 要查看所有父文件夹的列表，请使用文件夹ID `root`. |
+| `{FOLDER_TYPE}` | 文件夹中包含的对象类型。 支持的值包括`segment`和`dataset`。 |
+| `{PARENT_FOLDER_ID}` | 从中检索文件夹列表的父文件夹的ID。 要查看所有父文件夹的列表，请使用文件夹ID `root`。 |
 
 **请求**
 
@@ -113,7 +113,7 @@ curl -X GET https://experience.adobe.io/unifiedfolders/folder/dataset/root/subfo
 
 ## 创建新文件夹 {#create}
 
-您可以通过向以下网站发出POST请求来创建新文件夹： `/folder` 端点并指定文件夹类型。
+您可以通过向`/folder`端点发出POST请求并指定文件夹类型来创建新文件夹。
 
 **API格式**
 
@@ -123,7 +123,7 @@ POST /folder/{FOLDER_TYPE}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FOLDER_TYPE}` | 文件夹中包含的对象类型。 支持的值包括 `segment` 和 `dataset`. |
+| `{FOLDER_TYPE}` | 文件夹中包含的对象类型。 支持的值包括`segment`和`dataset`。 |
 
 **请求**
 
@@ -185,7 +185,7 @@ curl -X POST https://experience.adobe.io/unifiedfolders/folder/dataset
 
 ## 检索特定文件夹 {#get}
 
-您可以通过向以下网站发出GET请求，检索属于您组织的特定文件夹： `/folder` 端点并指定文件夹类型和文件夹的ID。
+您可以通过向`/folder`端点发出GET请求并指定文件夹类型和文件夹的ID，检索属于您组织的特定文件夹。
 
 **API格式**
 
@@ -195,7 +195,7 @@ GET /folder/{FOLDER_TYPE}/{FOLDER_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FOLDER_TYPE}` | 文件夹中包含的对象类型。 支持的值包括 `segment` 和 `dataset`. |
+| `{FOLDER_TYPE}` | 文件夹中包含的对象类型。 支持的值包括`segment`和`dataset`。 |
 | `{FOLDER_ID}` | 正在检索的文件夹的ID。 |
 
 **请求**
@@ -250,13 +250,13 @@ curl -X GET https://experience.adobe.io/unifiedfolders/folder/dataset/83f8287c-7
 | `createdAt` | 文件夹创建时间的时间戳。 |
 | `modifiedBy` | 上次更新文件夹的用户的ID。 |
 | `modifiedAt` | 上次更新文件夹的时间戳。 |
-| `status` | 请求的文件夹的状态。 支持的值包括 `IN_USE` 和 `ARCHIVED`. |
+| `status` | 请求的文件夹的状态。 支持的值包括`IN_USE`和`ARCHIVED`。 |
 
 +++
 
 ## 验证指定的文件夹 {#validate}
 
-您可以通过对文件夹发出GET请求，验证文件夹是否有资格在其中包含对象。 `/folder/{FOLDER_TYPE}/{FOLDER_ID}/validate` 端点，并提供文件夹类型和ID。
+您可以验证文件夹是否有资格在其中包含对象，方法是向`/folder/{FOLDER_TYPE}/{FOLDER_ID}/validate`端点发出GET请求，并提供文件夹类型和ID。
 
 **API格式**
 
@@ -266,7 +266,7 @@ GET /folder/{FOLDER_TYPE}/{FOLDER_ID}/validate
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FOLDER_TYPE}` | 文件夹中包含的对象类型。 支持的值包括 `segment` 和 `dataset`. |
+| `{FOLDER_TYPE}` | 文件夹中包含的对象类型。 支持的值包括`segment`和`dataset`。 |
 | `{FOLDER_ID}` | 正在验证的文件夹的ID。 |
 
 **请求**
@@ -316,7 +316,7 @@ curl -X GET https://experience.adobe.io/unifiedfolders/folder/dataset/83f8287c-7
 
 ## 更新特定文件夹 {#update}
 
-您可以通过向以下网站发出PATCH请求，更新属于您组织的特定文件夹的详细信息： `/folder` 端点并指定文件夹类型和文件夹的ID。
+您可以更新属于您组织的特定文件夹的详细信息，方法是向`/folder`端点发出PATCH请求并指定文件夹类型和文件夹的ID。
 
 **API格式**
 
@@ -326,7 +326,7 @@ PATCH /folder/{FOLDER_TYPE}/{FOLDER_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FOLDER_TYPE}` | 文件夹中包含的对象类型。 支持的值包括 `segment` 和 `dataset`. |
+| `{FOLDER_TYPE}` | 文件夹中包含的对象类型。 支持的值包括`segment`和`dataset`。 |
 | `{FOLDER_ID}` | 要更新的文件夹的ID。 |
 
 **请求**
@@ -378,7 +378,7 @@ curl -X GET https://experience.adobe.io/unifiedfolders/folder/dataset/83f8287c-7
 
 ## 删除特定文件夹 {#delete}
 
-您可以通过对以下对象发出DELETE请求，删除属于您组织的特定文件夹： `/folder` 并指定文件夹类型和文件夹的ID。
+通过向`/folder`发出DELETE请求并指定文件夹类型和文件夹的ID，可以删除属于您组织的特定文件夹。
 
 ***API格式**
 
@@ -388,7 +388,7 @@ DELETE /folder/{FOLDER_TYPE}/{FOLDER_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FOLDER_TYPE}` | 文件夹中包含的对象类型。 支持的值包括 `segment` 和 `dataset`. |
+| `{FOLDER_TYPE}` | 文件夹中包含的对象类型。 支持的值包括`segment`和`dataset`。 |
 | `{FOLDER_ID}` | 要删除的文件夹的ID。 |
 
 **请求**

@@ -16,8 +16,8 @@ ht-degree: 2%
 
 Real-time Customer Data Platform B2B版本扩展了现有的Real-Time CDP和Adobe Experience Platform产品，以支持B2B数据和工作流。 本文档提供了一个示例用例，用于演示B2B版本提供的其他好处。 其中包括：
 
-- 将来自不同孤立数据源的个人和帐户数据整合在一起，生成一个全面的视图，从而更好地了解客户并更准确地进行分段。 请参阅相关文档 [创建XDM架构关系](./schemas/b2b.md) 用于各种B2B源，以了解更多信息。
-- 根据相关实体的属性对受众进行分段。 这包括客户、机会、营销活动和营销列表。 受众不再仅限于人员属性和体验事件。 请参阅 [B2B分段文档](./segmentation/b2b.md) 有关创建特定于B2B的受众的更多示例。
+- 将来自不同孤立数据源的个人和帐户数据整合在一起，生成一个全面的视图，从而更好地了解客户并更准确地进行分段。 有关详细信息，请参阅有关[创建XDM架构关系](./schemas/b2b.md)以用于各种B2B源的文档。
+- 根据相关实体的属性对受众进行分段。 这包括客户、机会、营销活动和营销列表。 受众不再仅限于人员属性和体验事件。 有关创建特定于B2B的受众的更多示例，请参阅[B2B分段文档](./segmentation/b2b.md)。
 - 本地支持与多个帐户相关的一个人的用例。
 
 ## 用例
@@ -38,7 +38,7 @@ Bodea是一家科技公司，它推出了一款新产品，希望同时通过电
 
 为了集成和其他公司控制目的，Bodea还具有一个主数据管理(MDM)系统，在该系统中它维护一个记录，以指示Marketo 1中的帐户1（和CRM 1）和Marketo 2中的帐户2（和CRM 2）是同一公司。
 
-上个月， `p2@townsend.com` 访问了新产品页面，Marketo 1记录了该网页访问。
+在上个月，`p2@townsend.com`访问了新产品页面，Marketo 1记录了Web访问。
 
 ![帐户信息图表](./assets/account-info.png)
 
@@ -60,7 +60,7 @@ Bodea是一家科技公司，它推出了一款新产品，希望同时通过电
 
 - 将所有不同源的数据(多个Marketo和CRM实例以及主数据管理)合并到Real-Time CDP B2B版本中。
 
-使用RT-CDP B2B版本，Bodea可以使用Marketo Engage源连接器将来自Marketo 1和Marketo 2的B2B数据引入Experience Platform，并使用与平台连接的应用程序保持此数据最新。 请参阅 [Marketo源连接器](../sources/connectors/adobe-applications/marketo/marketo.md) 文档，以了解更多信息。
+使用RT-CDP B2B版本，Bodea可以使用Marketo EngageSource Connector将来自Marketo 1和Marketo 2的B2B数据引入Experience Platform，并使用与平台连接的应用程序保持此数据最新。 有关详细信息，请参阅[Marketo源连接器](../sources/connectors/adobe-applications/marketo/marketo.md)文档。
 
 CRM1中的B2B数据（人员、帐户、机会和活动）已同步到Marketo 1。 同样，来自CRM 2的所有B2B数据都会同步到Marketo 2中。 它们通过Marketo源连接器同步到Adobe Experience Platform。 但是，如果Bodea希望将来自CRM的其他数据引入Experience Platform，则他们可以使用现有的CRM连接器。
 
@@ -80,10 +80,10 @@ CRM1中的B2B数据（人员、帐户、机会和活动）已同步到Marketo 1�
 - 使用此聚合数据为各种营销计划创建独特受众。 在此示例中，区段定义查找满足以下条件的所有人员：
 
    - （在所有客户中）具有超过100万美元的关联机会
-   - 并且
+   - 和
    - 上个月访问过产品页面
 
-- 创建受众，使其成为Bodea新营销活动的最有效接收者。 在此示例中，RT-CDP、B2B版本将帮助营销人员识别 `p2@townsend.com` 作为此营销活动的正确目标。
+- 创建受众，使其成为Bodea新营销活动的最有效接收者。 在此示例中，RT-CDP， B2B版本将帮助营销人员将`p2@townsend.com`识别为此营销活动的正确目标。
 
 通过使用Marketo Engage和LinkedIn目标，Bodea为其营销团队提供了端到端客户体验管理(CXM)解决方案。 在Experience Platform中创建的受众会被推送到Marketo目标，并在其中显示为静态列表。 然后，此受众会自动添加到Marketo营销活动中。 同时，受众也可以通过RT-CDP B2B版本发送到LinkedIn营销活动中。
 

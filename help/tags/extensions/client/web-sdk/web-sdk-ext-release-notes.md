@@ -12,11 +12,11 @@ ht-degree: 30%
 
 # Adobe Experience Platform Web SDK扩展发行说明
 
-本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅 [Platform Web SDK发行说明](/help/web-sdk/release-notes.md).
+本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[平台Web SDK发行说明](/help/web-sdk/release-notes.md)。
 
 ## 版本2.24.0 - 2024年6月5日
 
-**修复和改进功能**
+**修复和改进**
 
 * 修复了在定义配置覆盖时修改扩展配置时发生的错误。
 * 允许为媒体收集Ping间隔设置空值。
@@ -29,16 +29,16 @@ ht-degree: 30%
 
 **新增功能**
 
-* 添加了对 [`Streaming Media Collection`](web-sdk-extension-configuration.md#streaming-media) 扩展配置中的组件。
-* 添加了 [`Send Media Event`](action-types.md#send-media-event) 操作 [!DNL Streaming Media Collection] 功能。
-* 添加了 [`Media: Quality of Experience`](data-element-types.md#quality-experience) 的数据元素 [!DNL Streaming Media Collection] 功能。
+* 在扩展配置中添加了对[`Streaming Media Collection`](web-sdk-extension-configuration.md#streaming-media)组件的支持。
+* 为[!DNL Streaming Media Collection]功能添加了[`Send Media Event`](action-types.md#send-media-event)操作。
+* 为[!DNL Streaming Media Collection]功能添加了[`Media: Quality of Experience`](data-element-types.md#quality-experience)数据元素。
 
 包含Adobe Experience Platform Web SDK版本2.20.0。
 
-**修复和改进功能**
+**修复和改进**
 
-* 修复了在中搜索数据元素时发生的错误 [更新变量](action-types.md#update-variable) 操作。
-* 已删除 [!UICONTROL 媒体] 建议在中使用的事件类型中的事件类型 `sendEvent` 操作。
+* 修复了在[更新变量](action-types.md#update-variable)操作中搜索数据元素时发生的错误。
+* 已从建议在`sendEvent`操作中使用的事件类型中删除[!UICONTROL 媒体]事件类型。
 
 ## 版本2.22.0 - 2024年5月3日
 
@@ -51,7 +51,7 @@ ht-degree: 30%
 
 ## 版本2.21.4 - 2024年1月10日
 
-**修复和改进功能**
+**修复和改进**
 
 * 修复了在未设置所有3个环境的情况下保存配置覆盖将会导致扩展UI崩溃的问题。
 * 修复了在编辑更新变量操作时，根清除现有值复选框未填充的问题。
@@ -62,33 +62,33 @@ ht-degree: 30%
 
 包含2.19.1版本的Adobe Experience Platform Web SDK。
 
-**修复和改进功能**
+**修复和改进**
 
-* 修复了中的建议数组可用的问题。 `Send event complete` 事件始终为空。
+* 修复了`Send event complete`事件中可用的建议数组始终为空的问题。
 
 ## 版本2.21.2 - 2023年11月1日
 
 **新增功能**
 
-* 已添加 `Request default personalization` 用于发送事件操作的选项。
+* 添加了用于发送事件操作的`Request default personalization`选项。
 * 在“发送事件”操作中添加了对页面事件顶部和底部的支持。
-* 已添加 `Apply propositions` 操作。
-* 已添加 `Evaluate rulesets` 操作和 `Subscribe ruleset items` 应用程序内消息的事件。
-* 已添加 `Decision context` 以发送事件操作。
+* 添加了`Apply propositions`操作。
+* 为应用程序内消息添加了`Evaluate rulesets`操作和`Subscribe ruleset items`事件。
+* 已添加`Decision context`以发送事件操作。
 
-**修复和改进功能**
+**修复和改进**
 
 * 包含Adobe Experience Platform Web SDK版本2.19.0。
 
 ## 版本2.20.3 - 2023年8月8日
 
-**修复和改进功能**
+**修复和改进**
 
 * 修复了数据元素无法保存在ID同步容器ID覆盖字段中的问题。
 
 ## 版本2.20.1 - 2023年8月3日
 
-**修复和改进功能**
+**修复和改进**
 
 * 改进了已保存数据流覆盖设置的验证。
 
@@ -96,16 +96,16 @@ ht-degree: 30%
 
 **新增功能**
 
-* 添加了对的支持 [每个命令覆盖数据流ID](../../../../datastreams/overrides.md).
+* 添加了对数据流ID](../../../../datastreams/overrides.md)的每命令[覆盖的支持。
 
-**修复和改进功能**
+**修复和改进**
 
-* 已弃用 `edgeConfigId` 支持 `datastreamId` 在SDK配置中。
+* 在SDK配置中弃用`edgeConfigId`而支持`datastreamId`。
 * 数据流配置的多个用户体验增强功能会覆盖用户界面。
 
 ## 2.19.0版 — 2023年6月21日
 
-* 此 **[!UICONTROL 变量]** 数据元素和 **[!UICONTROL 更新变量]** 操作现已正式可用。
+* **[!UICONTROL 变量]**&#x200B;数据元素和&#x200B;**[!UICONTROL 更新变量]**&#x200B;操作现已正式可用。
 
 ## 2.18.0版 — 2023年5月18日
 
@@ -116,11 +116,11 @@ ht-degree: 30%
 **新增功能**
 
 * 包含Adobe Experience Platform Web SDK版本2.16.0。
-* 添加了对的支持 [数据流配置覆盖](/help/datastreams/overrides.md).
-* 将弃用通知添加到 `datasetId` 上的选项 `sendEvent` 命令。
+* 添加了对[数据流配置覆盖](/help/datastreams/overrides.md)的支持。
+* 向`sendEvent`命令上的`datasetId`选项添加弃用通知。
 
 
-**修复和改进功能**
+**修复和改进**
 
 * 修复了Safari中的滚动操作将关闭数据流选择器的问题。
 
@@ -132,12 +132,12 @@ ht-degree: 30%
 
 **新增功能**
 
-* (Beta)已添加 **[!UICONTROL 更新变量]** 操作和 **[!UICONTROL 变量]** 数据元素。
-* 已添加以下项的配置： [`onBeforeLinkClickSend`](/help/web-sdk/commands/configure/onbeforelinkclicksend.md) 回调函数。
+* (Beta)已添加&#x200B;**[!UICONTROL Update variable]**&#x200B;操作和&#x200B;**[!UICONTROL Variable]**&#x200B;数据元素。
+* 添加了[`onBeforeLinkClickSend`](/help/web-sdk/commands/configure/onbeforelinkclicksend.md)回调函数的配置。
 
-**修复和改进功能**
+**修复和改进**
 
-* 修复了以下情况，导致在单击锚点标记中的元素时无法正常工作的问题： **[!UICONTROL 带标识的重定向]** 操作已被使用。
+* 修复了在使用具有标识&#x200B;]**的**[!UICONTROL &#x200B;重定向操作时，导致单击锚点标记中的元素无法正常工作的问题。
 * 修复了仅存在一个架构时，XDM对象数据元素无法工作的问题。
 * 包含Adobe Experience Platform Web SDK版本2.15.0。
 
@@ -145,7 +145,7 @@ ht-degree: 30%
 ## 版本2.15.1 - 2023年1月26日
 
 * 修复了无权访问数据流的用户无法编辑扩展配置的问题。
-* 为中的曲面添加了支持 `sendEvent` 操作。
+* 在`sendEvent`操作中添加了对表面的支持。
 
 包含Adobe Experience Platform Web SDK版本2.14.0。
 
@@ -158,7 +158,7 @@ ht-degree: 30%
 
 ## 版本2.14.0 - 2022年9月28日
 
-* 已添加新的 `targetMigrationEnabled` 启用逐页完全迁移的配置。
+* 添加了新的`targetMigrationEnabled`配置，该配置支持逐页完全迁移。
 * 添加了应用响应操作以启用混合服务器 — 客户端实施。
 * 添加了高熵用户代理客户端提示上下文选项。
 
@@ -172,9 +172,9 @@ ht-degree: 30%
 
 ## 版本2.12.0 - 2022年6月13日
 
-* 已更新 `identityMap` 数据元素，用于根据扩展设置定义的沙盒填充命名空间选项。
-* 已添加 **[!UICONTROL 带标识的重定向]** 操作，以允许跨域身份共享。
-* 将文档链接添加到 `sendEvent` 操作。
+* 更新了`identityMap`数据元素，以根据扩展设置定义的沙盒填充命名空间选项。
+* 添加了允许跨域身份共享的&#x200B;**[!UICONTROL 重定向（带有标识]**）操作。
+* 添加了指向`sendEvent`操作的文档链接。
 * 升级了React Spectrum UI库。
 * 多个用户界面增强。
 
@@ -211,13 +211,13 @@ ht-degree: 30%
 
 包含 Adobe Experience Platform Web SDK 库的版本 2.7.0。
 
-* “发送事件完成”事件中提供了来自Edge Network的其他信息，包括 `inferences` 和 `destinations`. 这些属性的格式可能会随这些功能当前作为Beta测试版的一部分推出而更改。
+* 发送事件完成事件中提供了该Edge Network的其他信息，包括`inferences`和`destinations`。 由于这些功能当前正在作为Beta的一部分推出，因此这些属性的格式可能会发生更改。
 
 ## 版本2.7.3 - 2021年9月7日
 
 包含 Adobe Experience Platform Web SDK 库的版本 2.6.4。
 
-* 不再有弃用警告 `container.buildInfo.environment.`
+* `container.buildInfo.environment.`不再有弃用警告
 
 ## 版本2.7.0 - 2021年8月16日
 
@@ -250,7 +250,7 @@ ht-degree: 30%
 
 包含 Adobe Experience Platform Web SDK 库的版本 2.5.0。
 
-* 添加了 `data` “发送事件”操作的字段。 即将发布的文档将介绍如何在特定情况下使用它。
+* 向Send Event操作添加了`data`字段。 即将发布的文档将介绍如何在特定情况下使用它。
 * 在XDM对象数据元素视图中，修复了以下问题：如果用户有权访问Adobe Experience Platform沙盒，但没有访问配置为组织默认值的沙盒，则会引发错误。
 * 在XDM对象数据元素视图中，修复了即使父对象不包含任何值，必填架构字段也会被视为无效的问题。
 
@@ -258,10 +258,10 @@ ht-degree: 30%
 
 包含 Adobe Experience Platform Web SDK 库的版本 2.4.0。
 
-* 已添加 [“文档卸载”](/help/web-sdk/commands/sendevent/documentunloading.md) 用于发送事件操作UI的复选框。
-* 添加了 `out` 选项条件 [配置默认同意](/help/web-sdk/commands/configure/defaultconsent.md) 在收到同意之前丢弃所有事件(现有 `pending` 选项对事件进行排队，并在收到同意后发送它们)。
+* 添加了[“文档卸载”](/help/web-sdk/commands/sendevent/documentunloading.md)复选框以发送事件操作UI。
+* 在[配置默认同意](/help/web-sdk/commands/configure/defaultconsent.md)时添加了对`out`选项的支持，该默认同意会丢弃所有事件直到收到同意为止（现有`pending`选项将事件排入队列，并在收到同意后发送这些事件）。
 * 向默认同意字段添加了工具提示。
-* 添加了对使用时的Adobe Consent 2.0标准的支持 [`setConsent`](/help/web-sdk/commands/setconsent.md) 命令。
+* 添加了对使用[`setConsent`](/help/web-sdk/commands/setconsent.md)命令时的AdobeConsent 2.0标准的支持。
 * 如果用户的访问令牌无效或配置不正确，则XDM对象数据元素UI中现在会显示更好的错误。
 * 修复了在查看XDM对象数据元素时浏览器开发人员控制台上显示的跨源错误（不会影响扩展的操作）。
 
@@ -276,7 +276,7 @@ ht-degree: 30%
 ## 版本2.2.0 - 2020年10月1日
 
 * 当客户尝试按照沙盒模式创建 XDM 对象时，他们将会遇到身份验证问题。由于调用Platform的API现在能够识别环境，因此用户只会看到他们有权编辑的架构。
-* 使用时 `identityMap` 数据元素中，命名空间现在会预填充到下拉列表中，因此您无需手动进行填充。
+* 使用`identityMap`数据元素时，命名空间现在会预填充到下拉列表中，因此您不必手动进行填充。
 * 翻新了 `xdmObject` 数据元素的 UI。在新的 UI 中，您无需输入对象中的每个项目，即可查看已填充字段。
 
 ## 版本2.1.1 - 2020年8月26日
@@ -310,7 +310,7 @@ ht-degree: 30%
 * 修复了每次引用数据元素时都会重置事件合并 ID 的问题。
 * 将 `setCustomerIds` 操作重命名为 `syncIdentity`。
 * 添加了一个 `getIdentity` 命令。现在只能通过自定义代码使用此命令。
-* 使用启用调试 `_satellite` 现在支持在Adobe Experience Platform Web SDK中进行调试。
+* 现在，允许使用`_satellite`进行调试可在Adobe Experience Platform Web SDK中进行调试。
 * 添加了对 XDM 对象中键入值的支持：布尔值、数字和小数。
 
 ## 0.0.10版 — 2020年3月16日

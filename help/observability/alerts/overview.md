@@ -6,7 +6,7 @@ feature: Alerts
 exl-id: c38a93c6-1618-4ef9-8f94-41c7ab4af43c
 source-git-commit: cb889a169aa42b761b0eeff5aa7fb771ad6ed4be
 workflow-type: tm+mt
-source-wordcount: '796'
+source-wordcount: '797'
 ht-degree: 3%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 3%
 >
 >在非生产沙盒中不支持警报。 要订阅警报，您必须确保使用生产沙盒。 当沙盒重置时，所有订阅警报都将重置。 同样，删除沙盒时将擦除所有订阅警报。
 
-通过Adobe Experience Platform，可订阅有关Adobe Experience Platform活动的基于事件的警报。 警报减少或消除轮询警报的必要 [[!DNL Observability Insights] API](../api/overview.md) 用于检查作业是否已完成、是否已到达工作流中的某个里程碑或者是否已发生任何错误。
+通过Adobe Experience Platform，可订阅有关Adobe Experience Platform活动的基于事件的警报。 警报可减少或消除轮询[[!DNL Observability Insights] API](../api/overview.md)以检查作业是否已完成、是否已达到工作流中的某个里程碑或是否已发生任何错误的需要。
 
 当您的Platform操作达到特定条件集时（例如系统超出阈值时出现潜在问题），Platform可以向您组织中订阅了警报消息的任何用户发送警报消息。 这些消息可在预定义的时间间隔内重复出现，直到警报得到解决为止。
 
@@ -41,11 +41,11 @@ ht-degree: 3%
 
 | 组件 | 描述 |
 | --- | --- |
-| **量度** | 可观察性 [量度](../api/metrics.md#available-metrics) 其值会触发警报，例如失败的批量摄取事件数(`timeseries.ingestion.dataset.batchfailed.count`)。 |
+| **指标** | 其值触发警报的可观察性[量度](../api/metrics.md#available-metrics)，例如失败的批次摄取事件数(`timeseries.ingestion.dataset.batchfailed.count`)。 |
 | **条件** | 与度量相关的条件，在警报解析为true时会触发该警报，例如，计数度量超过特定数字。 此条件可以与预定义的时间窗口相关联。 |
 | **窗口** | （可选）警报的条件可以限制在预定义的时间范围内。 例如，根据过去五分钟中失败的批次数量，可能会触发警报。 |
 | **操作** | 触发警报时，将执行操作。 具体而言，消息通过投放渠道(例如预配置的webhook或Experience PlatformUI)发送给适用的收件人。 |
-| **频度** | （可选）可以将警报配置为在定义的间隔内重复其操作（如果该警报的条件为true或未解析）。 |
+| **频率** | （可选）可以将警报配置为在定义的间隔内重复其操作（如果该警报的条件为true或未解析）。 |
 
 {style="table-layout:auto"}
 
@@ -58,7 +58,7 @@ ht-degree: 3%
 
 ### I/O事件 {#events}
 
-可将警报发送到配置的webhook以促进活动监控的高效自动化。 要通过webhook接收警报，您必须在Adobe Developer控制台中为平台警报注册webhook。 请参阅指南，网址为 [订阅Adobe I/O事件通知](./subscribe.md) 以了解具体步骤。
+可将警报发送到配置的webhook以促进活动监控的高效自动化。 要通过webhook接收警报，您必须在Adobe Developer Console中注册用于Platform警报的webhook。 有关具体步骤，请参阅[订阅Adobe I/O事件通知](./subscribe.md)指南。
 
 ### 平台UI {#ui}
 
@@ -71,19 +71,19 @@ Platform UI允许您查看收到的警报和管理警报规则。 以下视频�
 | 权限 | 描述 |
 | --- | --- |
 | 查看警报 | 用于查看已接收的警报消息。 |
-| 查看警报历史记录* | 允许您通过查看已接收警报的历史记录 [!UICONTROL 警报] 选项卡。 |
-| 管理警报* | 允许您通过启用和禁用警报规则 [!UICONTROL 警报] 选项卡。 |
-| 解决警报* | 允许您通过解决触发的警报 [!UICONTROL 警报] 选项卡。 |
+| 查看警报历史记录* | 允许您通过[!UICONTROL 警报]选项卡查看已接收警报的历史记录。 |
+| 管理警报* | 允许您通过[!UICONTROL 警报]选项卡启用和禁用警报规则。 |
+| 解决警报* | 允许您通过[!UICONTROL 警报]选项卡解决触发的警报。 |
 
 {style="table-layout:auto"}
 
-**要访问 [!UICONTROL 警报] 选项卡上，您还必须同时被授予查看警报权限和其他权限之一。*
+**要访问[!UICONTROL 警报]选项卡，还必须同时授予您查看警报权限和其他权限之一。*
 
 >[!NOTE]
 >
->有关如何在Platform中管理权限的更多信息，请参阅 [访问控制文档](../../access-control/ui/overview.md).
+>有关如何在Platform中管理权限的详细信息，请参阅[访问控制文档](../../access-control/ui/overview.md)。
 
-使用“查看警报”权限，可以通过选择铃铛图标(![铃铛图标](../images/alerts/overview/icon.png))中。
+如果具有“查看警报”权限，则可以通过选择右上角的铃铛图标（![铃铛图标](../images/alerts/overview/icon.png)）查看收到的警报。
 
 ![](../images/alerts/overview/ui.png)
 
@@ -91,7 +91,7 @@ Platform UI允许您查看收到的警报和管理警报规则。 以下视频�
 >
 > 选择警报以导航到相关仪表板，了解有关触发警报原因的更多详细信息。
 
-此外， [!UICONTROL 警报] 选项卡允许个人用户订阅特定的警报类型，并允许管理员完全启用或禁用警报规则。 请参阅 [UI指南](./ui.md) 以了解有关管理警报的详细信息。
+此外，UI中的[!UICONTROL 警报]选项卡允许个人用户订阅特定的警报类型，并允许管理员完全启用或禁用警报规则。 有关管理警报的更多信息，请参阅[UI指南](./ui.md)。
 
 ## 后续步骤
 

@@ -4,7 +4,7 @@ title: 管理统一标记
 description: 本文档提供有关在 Adobe Experience Cloud 中管理统一标记的信息
 exl-id: 179b0618-3bd3-435c-9d17-63681177ca47
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
-workflow-type: ht
+workflow-type: tm+mt
 source-wordcount: '1070'
 ht-degree: 100%
 

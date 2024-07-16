@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # Platform Web SDK中A4T数据的服务器端日志记录
 
-Adobe Experience Platform Web SDK允许您在Platform Edge Network上实施Adobe Analytics for Target (A4T)功能。 启用服务器端日志记录后，所有通过Edge Network发送的Analytics点击量都会在服务器端使用Target详细信息增加，而无需经过点击拼合过程。
+Adobe Experience Platform Web SDK允许您在平台Edge Network上实施Adobe Analytics for Target (A4T)功能。 启用服务器端日志记录后，通过Edge Network发送的所有Analytics点击量都会在服务器端增加Target详细信息，而无需经过点击拼合过程。
 
 当在数据流配置中启用Analytics时，将启用Analytics的服务器端日志记录：
 
@@ -26,4 +26,4 @@ Adobe Experience Platform Web SDK允许您在Platform Edge Network上实施Adobe
 
 ## 后续步骤
 
-本指南介绍Web SDK中A4T数据的服务器端日志记录。 请参阅指南，网址为 [客户端日志记录](./client-side.md) 以了解有关如何在客户端处理A4T数据的更多信息。
+本指南介绍Web SDK中A4T数据的服务器端日志记录。 有关如何处理客户端上A4T数据的更多信息，请参阅[客户端日志记录](./client-side.md)指南。

@@ -3,8 +3,8 @@ title: 天气数据字段映射
 description: 可用天气数据字段的参考页面，这些字段作为与 The Weather Channel 的集成的一部分提供。
 exl-id: bc0f158b-f9d0-424a-aa21-953e8380473f
 source-git-commit: e2122008fcae1016db03d6b5f56e4fa25520f9d0
-workflow-type: ht
-source-wordcount: '12238'
+workflow-type: tm+mt
+source-wordcount: '12787'
 ht-degree: 100%
 
 ---

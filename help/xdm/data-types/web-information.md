@@ -11,9 +11,9 @@ ht-degree: 2%
 
 ---
 
-# [!UICONTROL Web信息] 数据类型
+# [!UICONTROL Web信息]数据类型
 
-[!UICONTROL Web信息] 是一个标准的体验数据模型(XDM)数据类型，它描述通过特定于万维网渠道的体验事件记录的信息，包括网页、反向链接和/或与页面上的交互相关的链接。
+[!UICONTROL Web信息]是一种标准的体验数据模型(XDM)数据类型，它描述通过特定于万维网渠道的体验事件记录的信息，包括网页、反向链接和/或与页面上的交互相关的链接。
 
 ![](../images/data-types/web-information.png)
 
@@ -28,4 +28,4 @@ ht-degree: 2%
 有关数据类型的更多详细信息，请参阅公共XDM存储库：
 
 * [填充示例](https://github.com/adobe/xdm/blob/master/components/datatypes/webinfo.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/webinfo.schema.json)
+* [完整架构](https://github.com/adobe/xdm/blob/master/components/datatypes/webinfo.schema.json)

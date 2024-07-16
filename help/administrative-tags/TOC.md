@@ -6,7 +6,7 @@ user-guide-description: 使用统一标记管理元数据分类法。了解如�
 source-git-commit: cc8e7074eafae11887486b0cec54154d96eb5a5c
 workflow-type: tm+mt
 source-wordcount: '45'
-ht-degree: 68%
+ht-degree: 93%
 
 ---
 

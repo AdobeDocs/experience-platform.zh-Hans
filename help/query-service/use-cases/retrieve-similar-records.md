@@ -11,22 +11,22 @@ ht-degree: 3%
 
 # 使用高阶函数检索类似记录
 
-使用Data Distiller高阶函数解决各种常见用例。 要识别一个或多个数据集的类似或相关记录并进行检索，请使用本指南中详述的过滤器、转换和缩减函数。 要了解如何使用高位函数处理复杂的数据类型，请参阅有关如何处理复杂数据类型的 [管理阵列和映射数据类型](../sql/higher-order-functions.md).
+使用Data Distiller高阶函数解决各种常见用例。 要识别一个或多个数据集的类似或相关记录并进行检索，请使用本指南中详述的过滤器、转换和缩减函数。 要了解如何使用高位函数处理复杂的数据类型，请参阅关于如何[管理数组并映射数据类型](../sql/higher-order-functions.md)的文档。
 
 使用本指南可以识别来自不同数据集的产品，这些产品在其特征或属性方面具有显着相似性。 此方法为以下方面提供了解决方案：重复数据删除、记录链接、推荐系统、信息检索、文本分析等。
 
-该文档描述了相似度连接的实现过程，然后使用Data Distiller的高阶函数计算数据集之间的相似度并根据选定的属性过滤它们。 为过程的每个步骤提供了SQL代码段和解释。 工作流使用Jaccard相似性度量实现相似性连接，使用Data Distiller高阶函数进行标记化。 然后使用这些方法基于相似性度量从一个或多个数据集识别和检索相似或相关的记录。 该流程的关键部分包括： [使用高阶函数的标记化](#data-transformation)， [独特元素的交叉联接](#cross-join-unique-elements)， [Jaccard相似度计算](#compute-the-jaccard-similarity-measure)，和 [基于阈值的滤波](#similarity-threshold-filter).
+该文档描述了相似度连接的实现过程，然后使用Data Distiller的高阶函数计算数据集之间的相似度并根据选定的属性过滤它们。 为过程的每个步骤提供了SQL代码段和解释。 工作流使用Jaccard相似性度量实现相似性连接，使用Data Distiller高阶函数进行标记化。 然后使用这些方法基于相似性度量从一个或多个数据集识别和检索相似或相关的记录。 该过程的关键部分包括：[使用更高阶函数的tokenization](#data-transformation)、[唯一元素交叉联接](#cross-join-unique-elements)、[Jaccard相似度计算](#compute-the-jaccard-similarity-measure)以及[基于阈值的筛选](#similarity-threshold-filter)。
 
 ## 先决条件
 
 在继续阅读本文档之前，您应该熟悉以下概念：
 
-- A **相似性联接** 是一个操作，它根据记录之间的相似性度量从一个或多个表中标识和检索记录对。 相似连接的主要要求如下：
-   - **相似性量度**：相似性连接依赖于预定义的相似性量度或度量。 这些度量包括：Jaccard相似度、余弦相似度、编辑距离等。 量度取决于数据的性质和用例。 此量度量化了两个记录的相似或异同。
-   - **阈值**：使用相似度阈值来确定两个记录何时被视为相似度足以包含在连接结果中。 相似度分数高于阈值的记录被视为匹配。
-- 此 **Jaccard相似性** index，或Jaccard similarity measurement，是一种用于衡量样本集相似性和多样性的统计量。 它定义为交集的大小除以样本集的并集的大小。 Jaccard相似性度量的范围从0到1。 Jaccard相似度为零表示集合之间没有相似性，Jaccard相似度为1表示集合相同。
-  ![文氏图说明了雅卡相似性度量。](../images/use-cases/jaccard-similarity.png)
-- **高阶函数** 在Data Distiller中，它们是动态的内联工具，可直接在SQL语句中处理和转换数据。 这些通用函数省去了数据操作中的多个步骤，尤其是当 [处理复杂类型，如数组和映射](../sql/higher-order-functions.md). 通过提高查询效率和简化转换，高阶函数有助于在各种业务情景下更灵活地分析和更好地决策。
+- **相似性联接**&#x200B;是一种操作，它根据记录之间的相似性度量从一个或多个表中标识和检索记录对。 相似连接的主要要求如下：
+   - **相似性量度**：相似性连接依赖于预定义的相似性量度或量度。 这些度量包括：Jaccard相似度、余弦相似度、编辑距离等。 量度取决于数据的性质和用例。 此量度量化了两个记录的相似或异同。
+   - **阈值**：使用相似性阈值来确定两个记录何时被视为相似到足以包含在连接结果中。 相似度分数高于阈值的记录被视为匹配。
+- **Jaccard相似度**指标，即Jaccard相似性度量，是用来衡量样本集相似性和多样性的统计量。 它定义为交集的大小除以样本集的并集的大小。 Jaccard相似性度量的范围从0到1。 Jaccard相似度为零表示集合之间没有相似性，Jaccard相似度为1表示集合相同。
+  ![一个维恩图以说明Jaccard相似性度量。](../images/use-cases/jaccard-similarity.png)
+- **数据Distiller中的高阶函数**&#x200B;是动态的内联工具，可直接在SQL语句中处理和转换数据。 这些通用函数消除了数据操作中多个步骤的需要，尤其是当[处理复杂类型（如数组和映射](../sql/higher-order-functions.md)）时。 通过提高查询效率和简化转换，高阶函数有助于在各种业务情景下更灵活地分析和更好地决策。
 
 ## 快速入门
 
@@ -43,11 +43,13 @@ Jaccard相似性度量可以应用于广泛的数据类型，包括文本数据�
 - 产品集A： `{iPhone, iPad, iWatch, iPad Mini}`
 - 产品集B： `{iPhone, iPad, Macbook Pro}`
 
-要计算产品集A和B之间的Jaccard相似度，首先要找到 **交叉** （公共元素）。 在本例中， `{iPhone, iPad}`. 接下来，查找 **合并** 两个产品集的（所有唯一元素）。 在此示例中， `{iPhone, iPad, iWatch, iPad Mini, Macbook Pro}`.
+要计算产品集A和B之间的Jaccard相似度，首先要找到产品集的&#x200B;**交集**（公共元素）。 在这种情况下，`{iPhone, iPad}`。 接下来，查找两个产品集的&#x200B;**union**（所有唯一元素）。 在此示例中，`{iPhone, iPad, iWatch, iPad Mini, Macbook Pro}`。
 
-最后，使用Jaccard相似度公式： `J(A,B) = A∪B / A∩B` 计算相似度。
+最后，使用Jaccard相似度公式`J(A,B) = A∪B / A∩B`计算相似度。
 
-J =雅卡距离A =集合1 B =集合2
+J =雅卡距离
+A =设置1
+B =设置2
 
 产品集A和B之间的Jaccard相似度为0.4。这表示两个文档中使用的单词之间具有中等程度的相似性。 这两个集之间的这种相似性定义了相似性连接中的列。 这些列表示存储在表中并用于执行相似性计算的信息段或与数据相关联的特征。
 
@@ -103,11 +105,11 @@ SELECT * FROM featurevector1;
 
 以下描述提供了上述SQL代码块的划分：
 
-- 第1行： `CREATE TEMP TABLE featurevector1 AS`：此语句创建一个名为的临时表 `featurevector1`. 临时表通常只能在当前会话中访问，并且会在会话结束时自动删除。
-- 行1和2： `SELECT * FROM (...)`：此部分代码是用于生成插入到中的数据的子查询 `featurevector1` 表格。
-在子查询中，多个 `SELECT` 语句使用 `UNION ALL` 命令。 每个 `SELECT` 语句使用指定的值生成一行数据 `ProductName` 列。
-- 第3行： `SELECT 'iPad' AS ProductName`：这将生成一个值为的行 `iPad` 在 `ProductName` 列。
-- 第5行： `SELECT 'iPhone'`：这将生成一个值为的行 `iPhone` 在 `ProductName` 列。
+- 第1行： `CREATE TEMP TABLE featurevector1 AS`：此语句创建名为`featurevector1`的临时表。 临时表通常只能在当前会话中访问，并且会在会话结束时自动删除。
+- 第1行和第2行： `SELECT * FROM (...)`：此部分代码是用于生成插入到`featurevector1`表中的数据的子查询。
+在子查询中，使用`UNION ALL`命令合并多个`SELECT`语句。 每个`SELECT`语句都生成一行数据，这些数据具有为`ProductName`列指定的值。
+- 第3行： `SELECT 'iPad' AS ProductName`：这将在`ProductName`列中生成值为`iPad`的行。
+- 第5行： `SELECT 'iPhone'`：这将在`ProductName`列中生成值为`iPhone`的行。
 
 SQL语句创建一个表，如下所示：
 
@@ -146,7 +148,7 @@ SELECT * FROM featurevector2;
 
 ### 删除重复项 {#deduplication}
 
-接下来，使用 `DISTINCT` 用于删除重复项的子句。 此示例中没有重复项，但这是提高任何比较准确性的重要步骤。 下面显示了必要的SQL：
+接下来，使用`DISTINCT`子句删除重复项。 此示例中没有重复项，但这是提高任何比较准确性的重要步骤。 下面显示了必要的SQL：
 
 ```SQL
 SELECT DISTINCT(ProductName) AS featurevector1_distinct FROM featurevector1
@@ -155,7 +157,7 @@ SELECT DISTINCT(ProductName) AS featurevector2_distinct FROM featurevector2
 
 ### 去除空格 {#whitespace-removal}
 
-在以下SQL语句中，从特征向量中删除空格。 此 `replace(ProductName, ' ', '') AS featurevector1_nospaces` 部分查询采用 `ProductName` 中的列 `featurevector1` 表并使用 `replace()` 函数。 此 `REPLACE` 函数将出现的空格(“ ”)替换为空字符串(“)。 这会有效地从 `ProductName` 值。 结果别名为 `featurevector1_nospaces`.
+在以下SQL语句中，从特征向量中删除空格。 查询的`replace(ProductName, ' ', '') AS featurevector1_nospaces`部分从`featurevector1`表中获取`ProductName`列并使用`replace()`函数。 `REPLACE`函数将所有出现的空格(“ ”)替换为空字符串(“)。 这会有效地从`ProductName`值中删除所有空格。 结果别名为`featurevector1_nospaces`。
 
 ```SQL
 SELECT DISTINCT(ProductName) AS featurevector1_distinct, replace(ProductName, ' ', '') AS featurevector1_nospaces FROM featurevector1
@@ -194,7 +196,7 @@ SELECT DISTINCT(ProductName) AS featurevector2_distinct, replace(ProductName, ' 
 
 ### 转换为小写 {#lowercase-conversion}
 
-接下来，对SQL进行了改进，将产品名称转换为小写并删除所有空格。 lower函数(`lower(...)`)应用于 `replace()` 函数。 lower函数将修改后的字符转换为 `ProductName` 值转换为小写。 这可以确保值为小写，而不管它们的原始大小写如何。
+接下来，对SQL进行了改进，将产品名称转换为小写并删除所有空格。 下层函数(`lower(...)`)应用于`replace()`函数的结果。 lower函数将修改后的`ProductName`值中的所有字符转换为小写。 这可以确保值为小写，而不管它们的原始大小写如何。
 
 ```SQL
 SELECT DISTINCT(ProductName) AS featurevector1_distinct, lower(replace(ProductName, ' ', '')) AS featurevector1_transform FROM featurevector1;
@@ -233,9 +235,9 @@ SELECT DISTINCT(ProductName) AS featurevector2_distinct, lower(replace(ProductNa
 
 ### 使用SQL提取令牌 {#tokenization}
 
-下一步是标记化或文本拆分。 标记化是将文本拆分为各个术语的过程。 通常，这包括将句子拆分为单词。 在此示例中，通过使用SQL函数（如）提取令牌，将字符串划分为双格（和高阶n格） `regexp_extract_all`. 必须为有效的标记化生成重叠的双向图。
+下一步是标记化或文本拆分。 标记化是将文本拆分为各个术语的过程。 通常，这包括将句子拆分为单词。 在此示例中，通过使用SQL函数（如`regexp_extract_all`）提取令牌，将字符串划分为双格（和高阶n格）。 必须为有效的标记化生成重叠的双向图。
 
-进一步改进了SQL以使用 `regexp_extract_all`. `regexp_extract_all(lower(replace(ProductName, ' ', '')), '.{2}', 0) AS tokens:` 查询的这一部分将进一步处理修改的内容 `ProductName` 在上一步中创建的值。 它使用 `regexp_extract_all()` 函数以从已修改的小写中提取一到两个字符的所有非重叠子字符串 `ProductName` 值。 此 `.{2}` 正则表达式模式匹配长度为两个字符的子字符串。 此 `regexp_extract_all(..., '.{2}', 0)` 然后，该函数的一部分从输入文本中提取所有匹配的子字符串。
+SQL已进一步改进为使用`regexp_extract_all`。 `regexp_extract_all(lower(replace(ProductName, ' ', '')), '.{2}', 0) AS tokens:`此部分查询进一步处理在上一步中创建的修改的`ProductName`值。 它使用`regexp_extract_all()`函数从修改的小写`ProductName`值中提取一到两个字符的所有非重叠子字符串。 `.{2}`正则表达式模式与长度为两个字符的子字符串匹配。 函数的`regexp_extract_all(..., '.{2}', 0)`部分随后从输入文本中提取所有匹配的子字符串。
 
 ```SQL
 SELECT DISTINCT(ProductName) AS featurevector1_distinct, lower(replace(ProductName, ' ', '')) AS featurevector1_transform, 
@@ -258,9 +260,9 @@ FROM featurevector1;
 
 +++
 
-要进一步提高准确性，必须使用SQL创建重叠令牌。 例如，上面的“iPad”字符串缺少“pa”令牌。 要解决此问题，请移开lookahead运算符(使用 `substring`)，并生成bi-gram。
+要进一步提高准确性，必须使用SQL创建重叠令牌。 例如，上面的“iPad”字符串缺少“pa”令牌。 要解决此问题，请将lookahead运算符（使用`substring`）移动一步，并生成双图。
 
-与上一步类似， `regexp_extract_all(lower(replace(substring(ProductName, 2), ' ', '')), '.{2}', 0):` 从修改的产品名称中提取两个字符序列，但使用 `substring` 方法创建重叠令牌。 接下来，在第3-7行中(`array_union(...) AS tokens`)，则 `array_union()` 函数将两个正则表达式提取得到的双字符序列进行组合。 这可确保结果包含来自非重叠和重叠序列的唯一令牌。
+与上一步类似，`regexp_extract_all(lower(replace(substring(ProductName, 2), ' ', '')), '.{2}', 0):`从修改的产品名称中提取双字符序列，但使用`substring`方法从第二个字符开始创建重叠令牌。 接下来，在第3-7行(`array_union(...) AS tokens`)中，`array_union()`函数将两个正则表达式提取得到的双字符序列的数组组合在一起。 这可确保结果包含来自非重叠和重叠序列的唯一令牌。
 
 ```SQL {line-numbers="true"}
 SELECT DISTINCT(ProductName) AS featurevector1_distinct, 
@@ -287,11 +289,11 @@ FROM featurevector1;
 
 +++
 
-但是，使用 `substring` 作为该问题的解决方案，有一些限制。 如果要基于三字母组合从文本中生成令牌（三个字符），则需要使用两个 `substrings` 找两次机会换个班次。 要做10克，你需要九克 `substring` 表达式。 这会使代码膨胀，变得不可持续。 使用纯正则表达式是不合适的。 我们需要新方法。
+但是，使用`substring`作为问题的解决方案存在限制。 如果从文本中生成基于三元组的令牌（三个字符），则需要使用两个`substrings`来回顾两次，以获取所需的班次。 要制造10克，您需要九个`substring`表达式。 这会使代码膨胀，变得不可持续。 使用纯正则表达式是不合适的。 我们需要新方法。
 
 ### 调整产品名称的长度 {#length-adjustment}
 
-SQl可以通过序列和长度函数进行改进。 在以下示例中， `sequence(1, length(lower(replace(ProductName, ' ', ''))) - 3)` 将生成一个编号序列，编号范围从1到修改的产品名称的长度减去3。 例如，如果修改后的产品名称为字符长度为8的“ipadmini”，则会生成从1到5(8-3)的数字。
+SQl可以通过序列和长度函数进行改进。 在下面的示例中，`sequence(1, length(lower(replace(ProductName, ' ', ''))) - 3)`生成一个数字序列，从1到修改的产品名称的长度减去3。 例如，如果修改后的产品名称为字符长度为8的“ipadmini”，则会生成从1到5(8-3)的数字。
 
 下面的语句提取唯一的产品名称，然后将每个名称划分为四个字符长度的字符（令牌）序列（不包括空格），并将它们显示为两列。 其中一列显示唯一的产品名称，另一列显示其生成的令牌。
 
@@ -323,7 +325,7 @@ FROM
 
 ### 确保设置令牌长度 {#ensure-set-token-length}
 
-可以将其他条件添加到语句中，以确保生成的序列具有特定长度。 以下SQL语句通过使 `transform` 函数比较复杂。 语句使用 `filter` 函数范围 `transform` 以确保生成的序列长度为6个字符。 它通过将NULL值指定给这些职位来处理不可能出现的情况。
+可以将其他条件添加到语句中，以确保生成的序列具有特定长度。 以下SQL语句通过使`transform`函数更复杂而扩展了令牌生成逻辑。 该语句使用`transform`中的`filter`函数以确保生成的序列长度为6个字符。 它通过将NULL值指定给这些职位来处理不可能出现的情况。
 
 ```SQL
 SELECT
@@ -363,9 +365,9 @@ FROM
 
 在数据Distiller的上下文中，高阶函数非常适合于创建n元组和字符序列迭代。
 
-此 `reduce` 函数，尤其是在生成的序列中使用 `transform`提供了获取累计值或汇总的方法，这些值或汇总在各种分析和计划流程中可能至关重要。
+`reduce`函数（尤其是在`transform`生成的序列中使用）提供了导出累计值或汇总的方法，这些值或汇总在各种分析和计划流程中可能至关重要。
 
-例如，在下面的SQl语句中， `reduce()` 函数使用自定义聚合器聚合数组中的元素。 它将模拟for循环以 **创建所有整数的累积和** 从一到五。 `1, 1+2, 1+2+3, 1+2+3+4, 1+2+3+4`.
+例如，在下面的SQl语句中，`reduce()`函数使用自定义聚合器聚合数组中的元素。 它模拟for循环以&#x200B;**创建所有整数**&#x200B;从1到5的累积和。`1, 1+2, 1+2+3, 1+2+3+4, 1+2+3+4`。
 
 ```SQL {line-numbers="true"}
 SELECT transform(
@@ -380,14 +382,14 @@ SELECT transform(
 
 以下是对SQL语句的分析：
 
-- 第1行： `transform` 应用函数 `x -> reduce` 序列中生成的每个元素。
-- 第2行： `sequence(1, 5)` 生成从1到5的数字序列。
-- 第3行： `x -> reduce(sequence(1, x), 0, (acc, y) -> acc + y)` 对序列（从1到5）中的每个元素x执行缩减操作。
-   - 此 `reduce` 函数采用初始累加器值0，从1到当前值的序列 `x`和高阶函数 `(acc, y) -> acc + y` 以添加数字。
-   - 高阶函数 `acc + y` 通过将当前值相加来累加总和 `y` 到蓄电池 `acc`.
-- 第8行： `AS sum_result` 将结果列重命名为sum_result。
+- 第1行： `transform`对序列中生成的每个元素应用函数`x -> reduce`。
+- 第2行： `sequence(1, 5)`生成从1到5的数字序列。
+- 行3： `x -> reduce(sequence(1, x), 0, (acc, y) -> acc + y)`对序列（从1到5）中的每个元素x执行缩减操作。
+   - `reduce`函数采用初始累加器值0、从1到当前值`x`的顺序，以及高阶函数`(acc, y) -> acc + y`来添加数字。
+   - 高阶函数`acc + y`通过将当前值`y`加到累加器`acc`来累加总和。
+- 第8行： `AS sum_result`将结果列重命名为sum_result。
 
-总而言之，此高阶函数采用两个参数(`acc` 和 `y`)并定义要执行的操作，在本例中，为 `y` 到蓄电池 `acc`. 在缩减过程中，为序列中的每个元素执行此高阶函数。
+总而言之，此高阶函数采用两个参数（`acc`和`y`）并定义要执行的操作，在此例中，该操作将`y`添加到累加器`acc`。 在缩减过程中，为序列中的每个元素执行此高阶函数。
 
 此语句的输出是单列(`sum_result`)，其中包含从1到5的数字的累积和。
 
@@ -395,7 +397,7 @@ SELECT transform(
 
 本节将分析三元组SQL语句的精简版本，以更好地了解Data Distiller中高位函数的值，从而更有效地创建n元组。
 
-以下报表乃根据中国附 `ProductName` 中的列 `featurevector1` 表格。 它使用从生成的序列获得的位置，生成从表中的修改的产品名称派生的一组三个字符的子字符串。
+以下语句对`featurevector1`表中的`ProductName`列进行操作。 它使用从生成的序列获得的位置，生成从表中的修改的产品名称派生的一组三个字符的子字符串。
 
 ```SQL {line-numbers="true"}
 SELECT
@@ -409,21 +411,21 @@ FROM
 
 以下是对SQL语句的分析：
 
-- 第2行： `transform` 将高次函数应用于序列中的每个整数。
-- 第3行： `sequence(1, length(lower(replace(ProductName, ' ', ''))) - 2)` 从以下位置生成整数序列 `1` 修改后的产品名称长度减去2。
-   - `length(lower(replace(ProductName, ' ', '')))` 计算 `ProductName` 使其变为小写并删除空格后。
-   - `- 2` 从长度中减二以确保该序列为3个字符的子字符串生成有效的起始位置。 减去2可确保在每个起始位置之后有足够的字符来提取由3个字符组成的子字符串。 此处的子字符串函数的操作方式类似于lookahead运算符。
-- 第4行： `i -> substring(lower(replace(ProductName, ' ', '')), i, 3)` 是一个针对每个整数运行的高阶函数 `i` 在生成的序列中。
-   - 此 `substring(...)` 函数从 `ProductName` 列。
-   - 在提取子字符串之前， `lower(replace(ProductName, ' ', ''))` 转换 `ProductName` 小写并删除空格以确保一致性。
+- 第2行： `transform`将更高阶函数应用于序列中的每个整数。
+- 第3行： `sequence(1, length(lower(replace(ProductName, ' ', ''))) - 2)`生成从`1`到修改的产品名称长度减二的整数序列。
+   - `length(lower(replace(ProductName, ' ', '')))`在将`ProductName`设为小写并删除空格后计算其长度。
+   - `- 2`从长度中减去两个，以确保序列为3个字符的子字符串生成有效的起始位置。 减去2可确保在每个起始位置之后有足够的字符来提取由3个字符组成的子字符串。 此处的子字符串函数的操作方式类似于lookahead运算符。
+- 第4行： `i -> substring(lower(replace(ProductName, ' ', '')), i, 3)`是一个对生成序列中的每个整数`i`运行的高阶函数。
+   - `substring(...)`函数从`ProductName`列中提取3个字符的子字符串。
+   - 在提取子字符串之前，`lower(replace(ProductName, ' ', ''))`将`ProductName`转换为小写并删除空格以确保一致性。
 
 输出是长度为三个字符的子字符串的列表，基于序列中指定的位置从修改的产品名称中提取。
 
 ## 筛选结果 {#filter-results}
 
-此 `filter` 函数，带后续 [数据转换](#data-transformation)，允许从文本数据中提取更细化和精确的相关信息。 这使您能够获取见解、提高数据质量并促进更好的决策过程。
+`filter`函数具有后续[数据转换](#data-transformation)，允许从文本数据中提取更细致、更精确的相关信息。 这使您能够获取见解、提高数据质量并促进更好的决策过程。
 
-此 `filter` 以下SQL语句中的函数用于优化和限制字符串中的位置序列，后续转换函数将从这些位置中提取子字符串。
+以下SQL语句中的`filter`函数用于优化和限制字符串中的位置序列，使用后续转换函数从字符串中提取子字符串。
 
 ```SQL
 SELECT
@@ -441,21 +443,21 @@ FROM
   featurevector1;
 ```
 
-此 `filter` 函数在修改后的内部生成一系列有效起始位置 `ProductName` 并提取特定长度的子字符串。 仅允许提取由7个字符组成的子字符串的起始位置。
+`filter`函数在修改的`ProductName`内生成有效起始位置的序列，并提取特定长度的子字符串。 仅允许提取由7个字符组成的子字符串的起始位置。
 
-条件 `i -> i + 6 <= length(lower(replace(ProductName, ' ', '')))` 确保起始位置 `i` 加 `6` （所需的七个字符子字符串的长度减去一个字符）不超过修改后的子字符串的长度 `ProductName`.
+条件`i -> i + 6 <= length(lower(replace(ProductName, ' ', '')))`确保起始位置`i`加上`6`（所需七字符子字符串的长度减一）不超过修改后的`ProductName`的长度。
 
-此 `CASE` 语句用于根据其长度有条件地包含或排除子字符串。 仅包含7个字符的子字符串；其他子字符串将替换为NULL。 然后，会使用这些子字符串 `transform` 函数创建一系列子字符串，从 `ProductName` 中的列 `featurevector1` 表格。
+`CASE`语句用于根据其长度有条件地包含或排除子字符串。 仅包含7个字符的子字符串；其他子字符串将替换为NULL。 然后，`transform`函数使用这些子字符串从`featurevector1`表中的`ProductName`列创建子字符串序列。
 
 >[!TIP]
 >
->您可以使用 [参数化模板](../ui/parameterized-queries.md) 在查询中重用和抽象逻辑的功能。 例如，在构建通用实用程序函数（如上面显示的用于标记字符串的函数）时，可以使用字符数为参数的Data Distiller参数化模板。
+>您可以使用[参数化模板](../ui/parameterized-queries.md)功能在查询中重复使用和抽象逻辑。 例如，在构建通用实用程序函数（如上面显示的用于标记字符串的函数）时，可以使用字符数为参数的Data Distiller参数化模板。
 
 ## 计算两个特征向量间唯一元素的交叉连接 {#cross-join-unique-elements}
 
 根据数据的特定转换确定两个数据集之间的差异或差异是维护数据准确性、提高数据质量和确保数据集之间一致性的常用过程。
 
-下面的SQL语句提取 `featurevector2` 但不在 `featurevector1` 应用转换之后。
+下面的SQL语句在应用转换后提取`featurevector2`中存在，但`featurevector1`中不存在唯一的产品名称。
 
 ```SQL
 SELECT lower(replace(ProductName, ' ', '')) FROM featurevector2
@@ -465,7 +467,7 @@ SELECT lower(replace(ProductName, ' ', '')) FROM featurevector1;
 
 >[!TIP]
 >
->此外 `EXCEPT`，您也可以使用 `UNION` 和 `INTERSECT` 这取决于您的用例。 此外，您还可以试用 `ALL` 或 `DISTINCT` 子句以了解包括所有值和仅返回指定列的唯一值之间的差异。
+>除了`EXCEPT`之外，您还可以根据您的用例使用`UNION`和`INTERSECT`。 此外，还可以尝试使用`ALL`或`DISTINCT`子句以查看包括所有值和仅返回指定列的唯一值之间的差异。
 
 结果如下表所示：
 
@@ -505,7 +507,7 @@ SELECT * FROM featurevector1tokenized;
 
 >[!NOTE]
 >
->如果您使用 [!DNL DbVisualizer]创建或删除表后，请刷新数据库连接，以便刷新表的元数据缓存。 数据Distiller不推送元数据更新。
+>如果使用[!DNL DbVisualizer]，则在创建或删除表后，请刷新数据库连接，以便刷新表的元数据缓存。 数据Distiller不推送元数据更新。
 
 结果如下表所示：
 
@@ -522,7 +524,7 @@ SELECT * FROM featurevector1tokenized;
 
 +++
 
-然后重复该过程 `featurevector2`：
+然后对`featurevector2`重复该过程：
 
 ```SQL
 CREATE TABLE featurevector2tokenized AS 
@@ -574,9 +576,9 @@ CROSS JOIN
 
 以下是用来创建交叉连接的SQl的概要：
 
-- 第2行： `A.featurevector1_distinct AS SetA_ProductNames` 选择 `featurevector1_distinct` 表中的列 `A` 并为其指定一个别名 `SetA_ProductNames`. SQL的此部分将生成第一个数据集中不同产品名称的列表。
-- 第4行： `A.tokens AS SetA_tokens1` 选择 `tokens` 表或子查询中的列 `A` 并为其指定一个别名 `SetA_tokens1`. SQL的此部分会生成与第一个数据集中的产品名称关联的标记化值列表。
-- 第8行： `CROSS JOIN` 操作将组合来自两个数据集的所有可能行组合。 换句话说，它将第一个表中的每个产品名称及其关联的令牌配对(`A`)中每个产品名称及其关联的令牌(`B`)。 这将生成两个数据集的笛卡尔乘积，其中，输出中的每一行表示两个数据集的产品名称及其关联令牌的组合。
+- 第2行： `A.featurevector1_distinct AS SetA_ProductNames`从表`A`中选择`featurevector1_distinct`列并为其分配别名`SetA_ProductNames`。 SQL的此部分将生成第一个数据集中不同产品名称的列表。
+- 第4行： `A.tokens AS SetA_tokens1`从表或子查询`A`中选择`tokens`列并为其分配别名`SetA_tokens1`。 SQL的此部分会生成与第一个数据集中的产品名称关联的标记化值列表。
+- 第8行： `CROSS JOIN`操作将合并两个数据集中所有可能的行组合。 换句话说，它将第一个表中的每个产品名称及其关联的令牌与第二个表(`B`)中的每个产品名称及其关联的令牌配对。 `A`这将生成两个数据集的笛卡尔乘积，其中，输出中的每一行表示两个数据集的产品名称及其关联令牌的组合。
 
 结果如下表所示：
 
@@ -631,9 +633,9 @@ FROM
 
 以下是用于计算Jaccard相似系数的SQL的摘要：
 
-- 第6行： `size(array_intersect(SetA_tokens1, SetB_tokens2)) AS token_intersect_count` 计算两个用户通用的令牌数量 `SetA_tokens1` 和 `SetB_tokens2`. 该计算是通过计算两个令牌阵列相交的大小来实现的。
-- 第7行： `size(array_union(SetA_tokens1, SetB_tokens2)) AS token_union_count` 计算两个标记中的唯一令牌总数 `SetA_tokens1` 和 `SetB_tokens2`. 此行计算两个令牌数组的并集的大小。
-- 第8-10行： `ROUND(CAST(size(array_intersect(SetA_tokens1, SetB_tokens2)) AS DOUBLE) / size(array_union(SetA_tokens1, SetB_tokens2)), 2) AS jaccard_similarity` 计算令牌集之间的Jaccard相似度。 这些行将令牌交集的大小除以令牌并集的大小，并将结果四舍五入到两位小数。 结果是一个介于0和1之间的值，其中1表示完全相似性。
+- 第6行： `size(array_intersect(SetA_tokens1, SetB_tokens2)) AS token_intersect_count`计算`SetA_tokens1`和`SetB_tokens2`共用的令牌数量。 该计算是通过计算两个令牌阵列相交的大小来实现的。
+- 第7行： `size(array_union(SetA_tokens1, SetB_tokens2)) AS token_union_count`计算`SetA_tokens1`和`SetB_tokens2`中的唯一令牌总数。 此行计算两个令牌数组的并集的大小。
+- 第8-10行： `ROUND(CAST(size(array_intersect(SetA_tokens1, SetB_tokens2)) AS DOUBLE) / size(array_union(SetA_tokens1, SetB_tokens2)), 2) AS jaccard_similarity`计算令牌集之间的Jaccard相似度。 这些行将令牌交集的大小除以令牌并集的大小，并将结果四舍五入到两位小数。 结果是一个介于0和1之间的值，其中1表示完全相似性。
 
 结果如下表所示：
 
@@ -715,4 +717,4 @@ WHERE jaccard_similarity>=0.4
 - 数据清理：提高数据质量。
 - 购物篮分析：分析客户行为、偏好和潜在的交叉销售机会。
 
-如果您尚未这样做，建议您阅读 [AI/ML功能管道概述](../data-distiller/ml-feature-pipelines/overview.md). 使用该概述了解Data Distiller和您的首选机器学习如何构建自定义数据模型，以支持带有Experience Platform数据的营销用例。
+如果您尚未这样做，则建议阅读[AI/ML功能管道概述](../data-distiller/ml-feature-pipelines/overview.md)。 使用该概述了解Data Distiller和您的首选机器学习如何构建自定义数据模型，以支持带有Experience Platform数据的营销用例。

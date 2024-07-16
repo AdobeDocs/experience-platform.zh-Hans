@@ -5,7 +5,7 @@ exl-id: d4539132-a72c-40b0-84b6-50cbe3785d2d
 source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
 source-wordcount: '412'
-ht-degree: 50%
+ht-degree: 44%
 
 ---
 
@@ -13,23 +13,23 @@ ht-degree: 50%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 在数据收集标记的上下文中，操作是在发生规则事件且所有条件都通过评估后执行的操作。
 
 例如，扩展可以提供“显示支持聊天”操作类型，该操作类型可以显示支持聊天对话框，以帮助在注销时可能遇到困难的用户。
 
-本文档介绍如何在Adobe Experience Platform中定义Web扩展的操作类型。
+本文档介绍如何在Adobe Experience Platform中为Web扩展定义操作类型。
 
 >[!IMPORTANT]
 >
 >本文档介绍 Web 扩展的操作类型。如果您正在开发 Edge 扩展，请另外参阅关于 [Edge 扩展的操作类型](../edge/action-types.md)的指南。
 >
->本文档还假设您熟悉库模块以及库模块在Web扩展中的集成方式。 如果您需要查看简介，请在返回本指南之前参阅关于[库模块格式](./format.md)的概述。
+>本文档还假定您熟悉库模块以及库模块在Web扩展中的集成方式。 如果您需要查看简介，请在返回本指南之前参阅关于[库模块格式](./format.md)的概述。
 
 操作类型通常包含以下内容：
 
-1. A [视图](./views.md) 显示在Experience PlatformUI和数据收集UI中，允许用户修改操作的设置。
+1. Experience PlatformUI和数据收集UI中显示的[视图](./views.md)，允许用户修改操作的设置。
 2. 在标记运行时库中发出的库模块，用于解释设置并执行操作。
 
 ```js
@@ -38,7 +38,7 @@ module.exports = function(settings) {
 };
 ```
 
-例如，要使Adobe Experience Platform用户可以配置消息，您可以允许用户输入消息并将其保存到设置对象。 该对象如下所示：
+例如，要使Adobe Experience Platform用户可以配置消息，您可以允许用户输入消息并将消息保存到设置对象。 该对象如下所示：
 
 ```json
 {
@@ -56,7 +56,7 @@ module.exports = function(settings) {
 
 ## 上下文事件数据
 
-然后，必须将第二个参数传递到包含有关触发规则的事件的上下文信息的模块。 该参数在某些情况下可能会有所帮助并且可以按如下方式访问：
+然后，必须将第二个参数传递到您的模块，其中包含有关触发规则的事件的上下文信息。 该参数在某些情况下可能会有所帮助并且可以按如下方式访问：
 
 ```js
 module.exports = function(settings, event) {

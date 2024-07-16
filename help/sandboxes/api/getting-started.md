@@ -20,17 +20,17 @@ Adobe Experience Platform中的沙盒提供了独立的开发环境，允许您�
 
 ## 先决条件
 
-为了管理贵组织的沙盒，您必须具有沙盒管理权限。 没有访问权限的用户只能使用 [可用沙盒端点](./available.md) 列出当前用户的活动沙箱。 请参阅 [访问控制概述](../../access-control/home.md) 有关如何为Experience Platform分配沙盒权限的更多信息。
+为了管理贵组织的沙盒，您必须具有沙盒管理权限。 没有访问权限的用户只能使用[可用的沙盒终结点](./available.md)列出当前用户的活动沙盒。 有关如何为Experience Platform分配沙盒权限的更多信息，请参阅[访问控制概述](../../access-control/home.md)。
 
 ### 正在读取示例 API 调用
 
-本指南提供了示例 API 调用来演示如何格式化请求。这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅 [如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在Experience Platform疑难解答指南中。
+本指南提供了示例 API 调用来演示如何格式化请求。这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅Experience Platform疑难解答指南中有关[如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。
 
 ### 收集所需标头的值
 
-本指南要求您已完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en) 才能成功调用平台API。 完成身份验证教程将为所有Experience PlatformAPI调用中的每个所需标头提供值，如下所示：
+本指南要求您完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)，才能成功调用平台API。 完成身份验证教程将为所有Experience PlatformAPI调用中的每个所需标头提供值，如下所示：
 
-* 授权：持有者 `{ACCESS_TOKEN}`
+* 授权：持有人`{ACCESS_TOKEN}`
 * x-api-key： `{API_KEY}`
 * x-gw-ims-org-id： `{ORG_ID}`
 

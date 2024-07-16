@@ -7,7 +7,7 @@ badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/lega
 exl-id: fe7eb94e-5cf1-46bf-80e5-affe5735c998
 source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
-source-wordcount: '1029'
+source-wordcount: '1038'
 ht-degree: 3%
 
 ---
@@ -22,27 +22,27 @@ ht-degree: 3%
 
 ## 创建新得分
 
-要创建新得分，请选择 **[!UICONTROL 服务]** 在侧栏中选择 **[!UICONTROL 创建得分]**.
+要创建新得分，请在侧边栏中选择&#x200B;**[!UICONTROL 服务]**，然后选择&#x200B;**[!UICONTROL 创建得分]**。
 
 ![plas-new-score](../assets/../b2b-ai-ml-services/assets/plas-create-score.png)
 
-此 **[!UICONTROL 基本信息]** 屏幕出现，提示您选择配置文件类型、输入名称和可选说明。 完成后，选择 **[!UICONTROL 下一个]**.
+出现&#x200B;**[!UICONTROL 基本信息]**&#x200B;屏幕，提示您选择配置文件类型、输入名称和可选描述。 完成后，选择&#x200B;**[!UICONTROL 下一步]**。
 
 ![plas-enter-basic-information](../assets/../b2b-ai-ml-services/assets/plas-basic-information.png)
 
-此 **[!UICONTROL 定义您的目标]** 屏幕。 选择下拉箭头，然后从显示的下拉窗口中选择目标类型。
+将显示&#x200B;**[!UICONTROL 定义您的目标]**&#x200B;屏幕。 选择下拉箭头，然后从显示的下拉窗口中选择目标类型。
 
 ![plas-select-a-goal](../assets/../b2b-ai-ml-services/assets/plas-define-goal.png)
 
-此 **[!UICONTROL 目标详情]** 对话框打开。 选择下拉箭头，然后从显示的下拉窗口中选择目标字段名称。
+将打开&#x200B;**[!UICONTROL 目标详情]**&#x200B;对话框。 选择下拉箭头，然后从显示的下拉窗口中选择目标字段名称。
 
 ![plas-select-a-goal-field-name](../assets/../b2b-ai-ml-services/assets/plas-goal-specifics-field-name.png)
 
-此 **[!UICONTROL 目标条件]** 选定内容即会显示。 选择下拉箭头，然后从显示的下拉窗口中选择条件。
+出现&#x200B;**[!UICONTROL 目标条件]**&#x200B;选择。 选择下拉箭头，然后从显示的下拉窗口中选择条件。
 
 ![plas-goal-specifics-condition](../assets/../b2b-ai-ml-services/assets/plas-goal-specidics-condition.png)
 
-此 **[!UICONTROL 目标值]** 字段。 接下来，配置您的 [!UICONTROL 目标详情]. 选择 [!UICONTROL 输入字段值] 面板并输入目标值。
+出现&#x200B;**[!UICONTROL 目标值]**&#x200B;字段。 接下来，配置您的[!UICONTROL 目标详情]。 选择[!UICONTROL 输入字段值]面板并输入目标值。
 
 >[!NOTE]
 >
@@ -50,7 +50,7 @@ ht-degree: 3%
 
 ![plas-goal-specifics-field-value](../assets/../b2b-ai-ml-services/assets/plas-goal-specifics-field-value.png)
 
-要添加其他字段，请选择 **[!UICONTROL 添加字段]**.
+要添加其他字段，请选择&#x200B;**[!UICONTROL 添加字段]**。
 
 ![plas-goal-specifics-add-event](../assets/../b2b-ai-ml-services/assets/plas-goal-specifics-add-event.png)
 
@@ -58,9 +58,9 @@ ht-degree: 3%
 
 ![plas-prediction-timeframe](../assets/../b2b-ai-ml-services/assets/plas-prediction-timeframe.png)
 
-所选合并策略确定如何选择人员配置文件的字段值。 使用下拉箭头选择您选择的合并策略，然后选择 **[!UICONTROL 完成]**.
+所选合并策略确定如何选择人员配置文件的字段值。 使用下拉箭头选择您选择的合并策略，然后选择&#x200B;**[!UICONTROL 完成]**。
 
-此 **[!UICONTROL 评分设置完成]** 此时将显示一个对话框，确认已创建新得分。 选择 **[!UICONTROL 确定]**.
+**[!UICONTROL 评分设置完成]**&#x200B;对话框出现，确认已创建新评分。 选择&#x200B;**[!UICONTROL 确定]**。
 
 ![plas-score-complete](../assets/../b2b-ai-ml-services/assets/plas-score-complete.png)
 
@@ -68,7 +68,7 @@ ht-degree: 3%
 >
 >每个评分过程可能需要24小时才能完成。
 
-您将返回 **[!UICONTROL 服务]** 选项卡，您可以在其中查看在分数列表中创建的新分数。
+您会返回到&#x200B;**[!UICONTROL 服务]**&#x200B;选项卡，您可以在其中查看在分数列表中创建的新分数。
 
 ![plas-score-created](../assets/../b2b-ai-ml-services/assets/plas-score-created.png)
 
@@ -76,15 +76,15 @@ ht-degree: 3%
 
 ![plas-score-additional-information](../assets/../b2b-ai-ml-services/assets/plas-score-info.png)
 
-有关可在上次运行详细信息中看到的错误代码的更多详细信息，请参阅部分 [商机AI管道错误代码](#leads-ai-pipeline-error-codes) 在本文档中。
+有关可在上次运行详细信息下看到的错误代码的更多详细信息，请参阅本文档中有关[潜在客户AI管道错误代码](#leads-ai-pipeline-error-codes)的部分。
 
 ## 编辑得分
 
-要编辑得分，请从中选择一个得分 **[!UICONTROL 服务]** 选项卡并选择 **[!UICONTROL 编辑]** 从屏幕右侧的其他详细信息面板中查看。
+要编辑得分，请从&#x200B;**[!UICONTROL 服务]**&#x200B;选项卡中选择得分，然后从屏幕右侧的附加详细信息面板中选择&#x200B;**[!UICONTROL 编辑]**。
 
 ![plas-edit-score](../assets/../b2b-ai-ml-services/assets/plas-edit-score.png)
 
-此 **[!UICONTROL 编辑实例]** 此时将显示一个对话框，您可以在其中编辑得分的说明。 进行更改并选择 **[!UICONTROL 保存]**.
+此时将显示&#x200B;**[!UICONTROL 编辑实例]**&#x200B;对话框，您可以在其中编辑得分的说明。 进行更改并选择&#x200B;**[!UICONTROL 保存]**。
 
 ![plas-edit-save](../assets/../b2b-ai-ml-services/assets/plas-edit-save.png)
 
@@ -92,33 +92,33 @@ ht-degree: 3%
 >
 >无法更改得分配置，因为这将触发模型重新训练和重新评分。 此操作等同于删除得分并创建新得分。 要编辑得分的配置，您需要克隆此得分或创建新得分。
 
-您将返回 **[!UICONTROL 服务]** 选项卡。 选择分数可在屏幕右侧的其他详细信息面板中查看更新的描述详细信息。
+您返回到&#x200B;**[!UICONTROL 服务]**&#x200B;选项卡。 选择分数可在屏幕右侧的其他详细信息面板中查看更新的描述详细信息。
 
 ## 克隆得分
 
-要克隆得分，请从 **[!UICONTROL 服务]** 选项卡并选择 **[!UICONTROL 克隆]** 从屏幕右侧的其他详细信息面板中查看。
+若要克隆得分，请从&#x200B;**[!UICONTROL 服务]**&#x200B;选项卡中选择得分，然后从屏幕右侧的其他详细信息面板中选择&#x200B;**[!UICONTROL 克隆]**。
 
 ![plas-clone-score](../assets/../b2b-ai-ml-services/assets/plas-clone-score.png)
 
-此 **[!UICONTROL 基本信息]** 屏幕。 配置文件类型、名称和描述是从原始得分克隆而来的。 修改这些详细信息并选择 **[!UICONTROL 下一个]**.
+出现&#x200B;**[!UICONTROL 基本信息]**&#x200B;屏幕。 配置文件类型、名称和描述是从原始得分克隆而来的。 修改这些详细信息并选择&#x200B;**[!UICONTROL 下一步]**。
 
 ![plas-clone-basic-info](../assets/../b2b-ai-ml-services/assets/plas-clone-basic-info.png)
 
-此 **[!UICONTROL 定义您的目标]** 屏幕。 像创建新得分时一样完成目标部分，然后选择 **[!UICONTROL 完成]**.
+将显示&#x200B;**[!UICONTROL 定义您的目标]**&#x200B;屏幕。 像创建新得分时一样完成目标部分，然后选择&#x200B;**[!UICONTROL 完成]**。
 
-您将返回 **[!UICONTROL 服务]** 选项卡，您可以在其中查看列表中新克隆的分数。
+返回到&#x200B;**[!UICONTROL 服务]**&#x200B;选项卡，您可以在列表中看到新克隆的分数。
 
 >[!NOTE]
 >
->此 **[!UICONTROL 定义您的目标]** 区域不会从原始得分中克隆。
+>**[!UICONTROL 定义您的目标]**&#x200B;分区未从原始得分中克隆。
 
 ## 删除得分
 
-要删除分数，请从中选择一个分数 **[!UICONTROL 服务]** 选项卡并选择 **[!UICONTROL 删除]** 从屏幕右侧的其他详细信息面板中查看。
+要删除得分，请从&#x200B;**[!UICONTROL 服务]**&#x200B;选项卡中选择一个得分，然后从屏幕右侧的附加详细信息面板中选择&#x200B;**[!UICONTROL 删除]**。
 
 ![plas-delete-score](../assets/../b2b-ai-ml-services/assets/plas-delete-score.png)
 
-此 **[!UICONTROL 删除文档]** 确认对话框出现。 选择&#x200B;**[!UICONTROL 删除]**。
+出现&#x200B;**[!UICONTROL 删除文档]**&#x200B;确认对话框。 选择&#x200B;**[!UICONTROL 删除]**。
 
 ![plas-delete-score-confirmation](../assets/../b2b-ai-ml-services/assets/plas-delete-score-confirmation.png)
 
@@ -126,33 +126,33 @@ ht-degree: 3%
 >
 >删除得分定义也会删除人员配置文件或帐户配置文件上的所有预测得分，但不删除为得分定义创建的字段组。 字段组在数据模型中将被保留为“孤立”。
 
-您将返回 **[!UICONTROL 服务]** 选项卡，您将无法再在列表中看到分数。
+您会返回到&#x200B;**[!UICONTROL 服务]**&#x200B;选项卡，在该选项卡中，您将无法再在列表中看到得分。
 
 ## 商机AI管道错误代码
 
 | 错误代码 | 错误消息 |
 | --- | --- |
-| 401 | 错误401。 商机AI管道已停止：帐户评分的有效帐户不足。 帐户计数： {}. |
-| 402 | 错误402。 潜在客户人工智能管道已停止：没有足够的有效联系人来进行联系人评分。 联系人计数： {}. |
-| 403 | 错误403。 潜在客户AI管道已停止：活动量不足以进行模型训练。 事件计数： {}. |
-| 404 | 错误404。 潜在客户人工智能管道已停止：转化不足以进行模型训练。 转化计数： {}. |
-| 405 | 错误405。 潜在客户AI管道已停止：对于有效的模型训练，活动过于稀疏。 仅 {} 有活动的帐户百分比。 |
-| 406 | 错误406。 潜在客户AI管道已停止：对于有效的模型训练，活动过于稀疏。 仅 {} 有活动的联系人的百分比。 |
+| 401 | 错误401。 商机AI管道已停止：帐户评分的有效帐户不足。 帐户计数： {}。 |
+| 402 | 错误402。 潜在客户人工智能管道已停止：没有足够的有效联系人来进行联系人评分。 联系人计数： {}。 |
+| 403 | 错误403。 潜在客户AI管道已停止：活动量不足以进行模型训练。 事件计数： {}。 |
+| 404 | 错误404。 潜在客户人工智能管道已停止：转化不足以进行模型训练。 转化计数： {}。 |
+| 405 | 错误405。 潜在客户AI管道已停止：对于有效的模型训练，活动过于稀疏。 只有{}%的帐户具有活动。 |
+| 406 | 错误406。 潜在客户AI管道已停止：对于有效的模型训练，活动过于稀疏。 只有{}%的联系人有活动。 |
 | 407 | 错误407。 潜在客户人工智能管道已停止：评分数据活动类型与训练数据不匹配。 |
-| 408 | 错误408。 潜在客户AI管道已停止：活动功能的缺失率过高。 丢失率： {}. |
-| 409 | 错误409。 潜在客户AI管道已停止：测试auc过低。 测试auc： {}. |
-| 410 | 错误410。 Leads AI管道已停止：参数调整后测试auc过低。 测试auc： {}. |
-| 411 | 错误411。 潜在客户人工智能管道已停止：训练数据没有足够的转化来生成可靠的模型。 转化: {}. |
+| 408 | 错误408。 潜在客户AI管道已停止：活动功能的缺失率过高。 缺少率： {}。 |
+| 409 | 错误409。 潜在客户AI管道已停止：测试auc过低。 测试auc： {}。 |
+| 410 | 错误410。 Leads AI管道已停止：参数调整后测试auc过低。 测试auc： {}。 |
+| 411 | 错误411。 潜在客户人工智能管道已停止：训练数据没有足够的转化来生成可靠的模型。 转化： {}。 |
 | 412 | 错误412。 潜在客户AI管道已停止：测试数据不具有任何计算AUC-ROC的转换。 |
 
 | 警告/信息代码 | 消息 |
 | --- | --- |
-| 100 | 信息100。 潜在客户AI质量检查：帐户计数为： {}. |
-| 101 | 信息101。 潜在客户AI质量检查：联系人数量为： {}. |
-| 102 | 信息102。 潜在客户AI质量检查：机会数量为： {}. |
-| 103 | 信息103。 领导AI质量检查：测试auc较低。 开始参数调整。 测试auc： {}. |
-| 200 | 警告200。 潜在客户AI质量检查：第一层功能的缺失率为： {}. |
-| 201 | 警告201。 潜在客户AI质量检查：活动功能的缺失率为： {}. |
+| 100 | 信息100。 潜在客户AI质量检查：帐户数为： {}。 |
+| 101 | 信息101。 潜在客户AI质量检查：联系人数为： {}。 |
+| 102 | 信息102。 潜在客户AI质量检查：机会数为： {}。 |
+| 103 | 信息103。 领导AI质量检查：测试auc较低。 开始参数调整。 正在测试auc： {}。 |
+| 200 | 警告200。 潜在客户AI质量检查：第一代功能的缺失率为： {}。 |
+| 201 | 警告201。 潜在客户AI质量检查：活动功能的缺失率为： {}。 |
 
 ## 后续步骤
 

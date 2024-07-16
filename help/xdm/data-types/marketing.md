@@ -11,16 +11,16 @@ ht-degree: 6%
 
 ---
 
-# [!UICONTROL 营销] 数据类型
+# [!UICONTROL 营销]数据类型
 
-[!UICONTROL 营销] 是一种标准XDM数据类型，用于描述对特定接触点有效的营销活动。
+[!UICONTROL 营销]是一种标准XDM数据类型，用于描述对特定接触点有效的营销活动。
 
 ![](../images/data-types/marketing.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `campaignGroup` | 字符串 | 营销活动组的名称(在多个营销活动分组在一起的情况下，例如 `50%_DISCOUNT`)。 |
-| `campaignName` | 字符串 | 营销活动的名称，如 `50%_DISCOUNT_USA` 或 `50%_DISCOUNT_ASIA`. |
+| `campaignGroup` | 字符串 | 营销活动组的名称（在多个营销活动像`50%_DISCOUNT`一样分组的情况下）。 |
+| `campaignName` | 字符串 | 营销活动的名称，如`50%_DISCOUNT_USA`或`50%_DISCOUNT_ASIA`。 |
 | `trackingCode` | 字符串 | 可用于识别与事件关联的营销活动的跟踪代码。 |
 
 {style="table-layout:auto"}
@@ -28,4 +28,4 @@ ht-degree: 6%
 有关字段组的更多详细信息，请参阅公共XDM存储库：
 
 * [填充示例](https://github.com/adobe/xdm/blob/master/components/datatypes/marketing/marketing.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/marketing/marketing.schema.json)
+* [完整架构](https://github.com/adobe/xdm/blob/master/components/datatypes/marketing/marketing.schema.json)

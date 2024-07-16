@@ -25,12 +25,12 @@ ht-degree: 0%
 
 ## 快速入门
 
-本指南要求您实际了解 [查询服务中的查询执行](../best-practices/writing-queries.md) 以及Adobe Experience Platform的以下组件：
+本指南要求您实际了解查询服务](../best-practices/writing-queries.md)中的[查询执行以及Adobe Experience Platform的以下组件：
 
-* [Real-time Customer Profile概述](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
-* [模式组合基础](../../xdm/schema/composition.md)：对Experience Data Model (XDM)架构以及构成架构的构建块、原则和最佳实践的简介。
-* [如何为Real-time Customer Profile启用架构](../../profile/tutorials/add-profile-data.md)：本教程概述了将数据添加到Real-Time Customer Profile所需的步骤。
-* [如何定义自定义数据类型](../../xdm/api/data-types.md)：数据类型用作类或架构字段组中的引用类型字段，并允许一致地使用可以包含在架构中任何位置的多字段结构。
+* [实时客户个人资料概述](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时客户个人资料。
+* [架构组合基础](../../xdm/schema/composition.md)：体验数据模型(XDM)架构以及架构组合的构建块、原则和最佳实践简介。
+* [如何为Real-time Customer Profile启用架构](../../profile/tutorials/add-profile-data.md)：本教程概述了将数据添加到Real-time Customer Profile所需的步骤。
+* [如何定义自定义数据类型](../../xdm/api/data-types.md)：数据类型用作类或架构字段组中的引用类型字段，并允许一致使用架构中任何位置都可包含的多字段结构。
 
 ## 目标
 
@@ -46,21 +46,21 @@ ht-degree: 0%
 
 使用查询服务，您可以创建包含分类十分位数的数据集，然后可以对其进行分段以根据属性排名创建受众。 只要定义了类别并且量度可用，就可以应用以下示例中显示的概念来创建其他十分位存储段数据集。
 
-示例航空公司忠诚度数据使用 [XDM ExperienceEvents类](../../xdm/classes/experienceevent.md). 每个活动都是业务交易的记录，包括里程贷记或借记，以及“传单”、“频繁”、“银牌”或“金牌”会员忠诚度状态。 主标识字段为 `membershipNumber`.
+示例航空公司忠诚度数据使用[XDM ExperienceEvents类](../../xdm/classes/experienceevent.md)。 每个活动都是业务交易的记录，包括里程贷记或借记，以及“传单”、“频繁”、“银牌”或“金牌”会员忠诚度状态。 主标识字段为`membershipNumber`。
 
 ### 示例数据集
 
-此示例的初始航空公司忠诚度数据集为“航空公司忠诚度数据”，并具有以下架构。 请注意，架构的主要标识为 `_profilefoundationreportingstg.membershipNumber`.
+此示例的初始航空公司忠诚度数据集为“航空公司忠诚度数据”，并具有以下架构。 请注意，架构的主要标识为`_profilefoundationreportingstg.membershipNumber`。
 
 ![航空公司忠诚度数据架构的图表。](../images/use-cases/airline-loyalty-data.png)
 
 **示例数据**
 
-下表显示了 `_profilefoundationreportingstg` 用于此示例的对象。 它提供了使用十进制存储桶创建复杂派生数据集的上下文。
+下表显示了用于此示例的`_profilefoundationreportingstg`对象中包含的示例数据。 它提供了使用十进制存储桶创建复杂派生数据集的上下文。
 
 >[!NOTE]
 >
->为简单起见，租户ID `_profilefoundationreportingstg` 在列标题中从命名空间的开头省略，之后在文档中多次提及。
+>为简单起见，从列标题中命名空间的开头处删除了租户ID `_profilefoundationreportingstg`，并在文档中后续提及。
 
 | `.membershipNumber` | `.emailAddress.address` | `.transactionDate` | `.transactionType` | `.transactionDetails` | `.mileage` | `.loyaltyStatus` |
 |---|---|---|---|---|---|---|
@@ -74,7 +74,7 @@ ht-degree: 0%
 
 ## 生成十进制数据集
 
-在上面所示的航空公司忠诚度数据中， `.mileage` 值包含成员每次飞行的英里数。 此数据用于在生命周期回顾和各种回顾期间创建飞行英里数的十分位数。 为此，将创建一个数据集，该数据集在每个回顾期间的映射数据类型中包含十分位，并为下分配的每个回顾期间包含适当的十分位 `membershipNumber`.
+在以上所示的航空公司忠诚度数据中，`.mileage`值包含成员乘坐的每架航班的英里数。 此数据用于在生命周期回顾和各种回顾期间创建飞行英里数的十分位数。 为此，将创建一个数据集，该数据集在每个回顾期间的映射数据类型中包含十分位，并为在`membershipNumber`下分配的每个回顾期间包含适当的十分位。
 
 创建“航空公司忠诚度十分位数架构”以使用查询服务创建十分位数数据集。
 
@@ -82,23 +82,23 @@ ht-degree: 0%
 
 ### 为Real-time Customer Profile启用架构
 
-要引入到Experience Platform中以供Real-time Customer Profile使用的数据必须符合 [为配置文件启用的体验数据模型(XDM)架构](../../xdm/ui/resources/schemas.md). 要为配置文件启用架构，它必须实施XDM Individual Profile或XDM ExperienceEvent类。
+被摄取到Experience Platform以供实时客户配置文件使用的数据必须符合为配置文件](../../xdm/ui/resources/schemas.md)启用的[体验数据模型(XDM)架构。 要为配置文件启用架构，它必须实施XDM Individual Profile或XDM ExperienceEvent类。
 
-[使用架构注册表API启用架构以便在Real-time Customer Profile中使用](../../xdm/tutorials/create-schema-api.md) 或 [架构编辑器用户界面](../../xdm/tutorials/create-schema-ui.md).  有关如何为用户档案启用架构的详细说明，请参阅其各自的文档。
+[使用架构注册表API](../../xdm/tutorials/create-schema-api.md)或[架构编辑器用户界面](../../xdm/tutorials/create-schema-ui.md)，启用架构以便在Real-time Customer Profile中使用。  有关如何为用户档案启用架构的详细说明，请参阅其各自的文档。
 
 接下来，创建一个数据类型以供所有十进制相关的字段组重用。 创建十分位字段组是每个沙盒的一次性步骤。 它也可用于所有十等分相关的架构。
 
 ### 创建身份命名空间并将其标记为主要标识符 {#identity-namespace}
 
-为用于小数位数而创建的任何架构都必须分配主标识。 您可以 [在Adobe Experience Platform架构UI中定义标识字段](../../xdm/ui/fields/identity.md#define-an-identity-field)，或通过 [架构注册表API](../../xdm/api/descriptors.md#create).
+为用于小数位数而创建的任何架构都必须分配主标识。 您可以[在Adobe Experience Platform架构UI](../../xdm/ui/fields/identity.md#define-an-identity-field)中定义标识字段，也可以通过[架构注册表API](../../xdm/api/descriptors.md#create)定义标识字段。
 
-查询服务还允许您直接通过SQL为临时架构数据集字段设置标识或主标识。 请参阅相关文档 [在ad hoc模式身份中设置辅助身份和主身份](../data-governance/ad-hoc-schema-identities.md) 以了解更多信息。
+查询服务还允许您直接通过SQL为临时架构数据集字段设置标识或主标识。 有关详细信息，请参阅有关[在临时架构标识中设置辅助标识和主标识](../data-governance/ad-hoc-schema-identities.md)的文档。
 
 ### 创建查询以计算回顾期间的十分位数 {#create-a-query}
 
 以下示例演示了用于计算回看时段内十分位数的SQL查询。
 
-可以使用UI中的查询编辑器或者通过 [查询服务API](../api/query-templates.md#create-a-query-template).
+可以使用UI中的查询编辑器或通过[查询服务API](../api/query-templates.md#create-a-query-template)生成模板。
 
 ```sql
 CREATE TABLE AS airline_loyality_decile 
@@ -193,7 +193,7 @@ CREATE TABLE AS airline_loyality_decile
 
 >[!NOTE]
 >
->如果源数据没有可用于确定回顾期间的列，则将执行所有十分位数类排名 `decileMonthAll`.
+>如果源数据没有可用于确定回顾期间的列，则将在`decileMonthAll`下执行所有十进制类排名。
 
 #### 聚合
 
@@ -210,13 +210,13 @@ summed_miles_1 AS (
 )
 ```
 
-该块在模板中重复两次(`summed_miles_3` 和 `summed_miles_6`)，更改了日期计算以便生成其他回顾期间的数据。
+该块在模板（`summed_miles_3`和`summed_miles_6`）中重复了两次，并且更改了日期计算，以便生成其他回顾期间的数据。
 
-请务必注意查询的身份、维度和量度列(`membershipNumber`， `loyaltyStatus` 和 `totalMiles` （分别）。
+请务必注意查询的标识、维度和量度列（分别为`membershipNumber`、`loyaltyStatus`和`totalMiles`）。
 
 #### 排名
 
-十分位数允许您执行分类分段。 要创建排名编号，请 `NTILE` 函数与参数 `10` 在按以下项分组的WINDOW中 `loyaltyStatus` 字段。 这会导致排名从1到10。 设置 `ORDER BY` 条款 `WINDOW` 到 `DESC` 以确保排名值为 `1` 指定给 **greatest** 维度中的量度。
+十分位数允许您执行分类分段。 要创建排名号，`NTILE`函数与按`loyaltyStatus`字段分组的WINDOW中的`10`参数一起使用。 这会导致排名从1到10。 将`WINDOW`的`ORDER BY`子句设置为`DESC`以确保为维度中的&#x200B;**greatest**&#x200B;度量指定排名值`1`。
 
 ```sql
 rankings_1 AS (
@@ -230,7 +230,7 @@ rankings_1 AS (
 
 #### 映射聚合
 
-对于多个回顾期间，您需要使用 `MAP_FROM_ARRAYS` 和 `COLLECT_LIST` 函数。 在示例代码片段中， `MAP_FROM_ARRAYS` 使用一对键创建映射(`loyaltyStatus`)和值(`decileBucket`)数组。 `COLLECT_LIST` 返回一个数组，该数组包含指定列中的所有值。
+对于多个回顾期间，您需要使用`MAP_FROM_ARRAYS`和`COLLECT_LIST`函数提前创建十进制分段映射。 在示例代码片段中，`MAP_FROM_ARRAYS`使用一对键(`loyaltyStatus`)和值(`decileBucket`)数组创建映射。 `COLLECT_LIST`返回一个数组，该数组具有指定列中的所有值。
 
 ```sql
 map_1 AS (
@@ -245,9 +245,9 @@ map_1 AS (
 >
 >如果仅在生命周期内需要十分位数排名，则不需要映射聚合。
 
-#### 唯一标识
+#### 唯一标识符
 
-唯一标识列表(`membershipNumber`)创建所有成员资格的唯一列表时需要。
+创建所有成员资格的唯一列表需要唯一标识列表(`membershipNumber`)。
 
 ```sql
 all_memberships AS (
@@ -257,7 +257,7 @@ all_memberships AS (
 
 >[!NOTE]
 >
->如果仅在生命周期期间才需要十分位数排名，则可以忽略此步骤并聚合以下各项 `membershipNumber` 可以在最后一步完成。
+>如果只有生命周期期间才需要十分位数排名，则可以省略此步骤，并可在最后一步中完成`membershipNumber`的聚合。
 
 #### 拼合所有临时数据
 
@@ -295,8 +295,8 @@ GROUP BY rankings.membershipNumber
 
 ### 运行查询模板
 
-运行查询以填充十分位数数据集。 您还可以将查询另存为模板，并安排其以节奏运行。 当另存为模板时，还可以更新查询以使用引用了 `table_exists` 命令。 有关如何使用 `table_exists`命令位于 [SQL语法指南](../sql/syntax.md#table-exists).
+运行查询以填充十分位数数据集。 您还可以将查询另存为模板，并安排其以节奏运行。 另存为模板时，还可以更新查询以使用引用`table_exists`命令的创建和插入模式。 有关如何使用`table_exists`命令的详细信息，请参阅[SQL语法指南](../sql/syntax.md#table-exists)。
 
 ## 后续步骤
 
-以上提供的示例用例重点说明了使基于十分位数的派生数据集在实时客户档案中可用的步骤。 借助此功能，分段服务能够通过用户界面或RESTful API基于这些十分位数存储桶生成受众。 请参阅 [分段服务概述](../../segmentation/home.md) 有关如何创建、评估和访问区段的信息。
+以上提供的示例用例重点说明了使基于十分位数的派生数据集在实时客户档案中可用的步骤。 借助此功能，分段服务能够通过用户界面或RESTful API基于这些十分位数存储桶生成受众。 有关如何创建、评估和访问区段的信息，请参阅[分段服务概述](../../segmentation/home.md)。

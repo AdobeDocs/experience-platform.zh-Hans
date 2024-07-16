@@ -17,23 +17,23 @@ ht-degree: 5%
 
 ## 查看沙盒
 
-在Platform UI中，选择 **[!UICONTROL 沙盒]** 在左侧导航中，然后选择 **[!UICONTROL 浏览]** 以打开 [!UICONTROL 沙盒] 仪表板。 仪表板列出了您组织的所有可用沙盒，包括其各自的类型（生产或开发）。
+在Platform UI中，在左侧导航中选择&#x200B;**[!UICONTROL 沙盒]**，然后选择&#x200B;**[!UICONTROL 浏览]**&#x200B;以打开[!UICONTROL 沙盒]仪表板。 仪表板列出了您组织的所有可用沙盒，包括其各自的类型（生产或开发）。
 
-![视图 — 沙盒](../images/ui/view-sandboxes.png)
+![查看 — 沙盒](../images/ui/view-sandboxes.png)
 
 ## 在沙盒之间切换
 
 沙盒指示器位于Platform UI的顶部标题中，并显示您当前所在的沙盒的标题、其区域和类型。
 
-![sandbox-indicator](../images/ui/sandbox-indicator.png)
+![沙盒指示器](../images/ui/sandbox-indicator.png)
 
 要在沙盒之间切换，请选择沙盒指示器，然后从下拉列表中选择所需的沙盒。
 
-![切换器接口](../images/ui/switcher-interface.png)
+![switcher-interface](../images/ui/switcher-interface.png)
 
 选择沙盒后，屏幕将刷新并更新到您选择的沙盒。
 
-![沙盒交换](../images/ui/sandbox-switched.png)
+![沙盒已交换](../images/ui/sandbox-switched.png)
 
 ## 创建新沙盒 {#create}
 
@@ -49,27 +49,27 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->创建新沙盒需要您将其添加到中的角色 [[!UICONTROL 权限]](../../access-control/abac/ui/permissions.md) 才能开始使用。 要了解如何为角色配置沙盒，请参阅 [管理角色的沙盒](../../access-control/abac/ui/permissions.md#managing-sandboxes-for-role) 文档。
+>创建新沙盒需要先将其添加到[[!UICONTROL 权限]](../../access-control/abac/ui/permissions.md)中的角色，然后才能开始使用。 要了解如何为角色配置沙盒，请参阅[为角色管理沙盒](../../access-control/abac/ui/permissions.md#managing-sandboxes-for-role)文档。
 
 请观看以下视频，快速概述如何在Experience Platform中使用沙盒。
 
 >[!VIDEO](https://video.tv.adobe.com/v/29838/?quality=12&learn=on)
 
-要创建新沙盒，请选择 **[!UICONTROL 创建沙盒]** 在屏幕的右上角。
+要创建新沙盒，请选择屏幕右上角的&#x200B;**[!UICONTROL 创建沙盒]**。
 
 ![create-sandbox](../images/ui/create-sandbox.png)
 
-此 **[!UICONTROL 创建沙盒]** 对话框。 如果要创建开发沙盒，请选择 **[!UICONTROL 开发]** 在下拉面板中。 要创建新的生产沙盒，请选择 **[!UICONTROL 生产]**.
+出现&#x200B;**[!UICONTROL 创建沙盒]**&#x200B;对话框。 如果要创建开发沙盒，请在下拉面板中选择&#x200B;**[!UICONTROL 开发]**。 要创建新的生产沙盒，请选择&#x200B;**[!UICONTROL 生产]**。
 
-![sandbox-type](../images/ui/sandbox-type.png)
+![沙盒类型](../images/ui/sandbox-type.png)
 
 选择类型后，为您的沙盒提供名称和标题。 标题应该易于用户识别，并且应该具有足够的描述性以便轻松识别。 沙盒名称是用于API调用的全小写标识符，因此应唯一且简洁。 沙盒名称必须以字母开头，最多可包含256个字符，并且仅由字母数字字符和连字符(-)组成。
 
-完成后，选择 **[!UICONTROL 创建]**.
+完成后，选择&#x200B;**[!UICONTROL 创建]**。
 
-![sandbox-info](../images/ui/sandbox-info.png)
+![沙盒信息](../images/ui/sandbox-info.png)
 
-创建完沙盒后，刷新页面，新的沙盒将显示在 **[!UICONTROL 沙盒]** 状态为“”的功能板[!UICONTROL 正在创建]“。 系统配置新沙盒大约需要30秒，之后其状态将更改为&quot;[!UICONTROL 活动]“。
+创建完沙盒后，刷新页面，新沙盒将出现在&#x200B;**[!UICONTROL 沙盒]**&#x200B;仪表板中，状态为“[!UICONTROL 正在创建]”。 系统配置新沙盒大约需要30秒，之后沙盒的状态将更改为“[!UICONTROL 活动]”。
 
 ![new-sandbox](../images/ui/new-sandbox.png)
 
@@ -78,8 +78,8 @@ ht-degree: 5%
 >[!WARNING]
 >
 >以下是可阻止您重置默认生产沙盒或用户创建的生产沙盒的异常列表：
->* 如果Adobe Analytics也在将在该沙盒中托管的身份图形用于 [Cross Device Analytics (CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html) 功能。
->* 如果Adobe Audience Manager也在将在该沙盒中托管的身份图形用于 [基于人员的目标(PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html).
+>* 如果Adobe Analytics也在使用该沙盒中托管的身份图形进行[Cross Device Analytics (CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html)功能，则无法重置默认生产沙盒。
+>* 如果Adobe Audience Manager也在使用这个沙盒中托管的身份图形进行[基于人员的目标(PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html)，则无法重置默认的生产沙盒。
 >* 如果默认生产沙盒包含CDA和PBD功能的数据，则无法重置该沙盒。
 >* 用于在警告消息后重置与Adobe Audience Manager或Audience Core Service进行双向区段共享的用户创建的生产沙盒。
 >* 在启动沙盒重置之前，您将需要手动删除合成，以确保正确清理关联的受众数据。
@@ -88,15 +88,15 @@ ht-degree: 5%
 
 受众构成当前未与沙盒重置功能集成，因此需要手动删除受众才能执行沙盒重置。
 
-选择 **[!UICONTROL 受众]** 从左侧导航中，然后选择 **[!UICONTROL 合成]**.
+从左侧导航中选择&#x200B;**[!UICONTROL 受众]**，然后选择&#x200B;**[!UICONTROL 合成]**。
 
-![此 [!UICONTROL 合成] 选项卡 [!UICONTROL 受众] 工作区。](../images/ui/audiences.png)
+![[!UICONTROL 受众]工作区中的[!UICONTROL 合成]选项卡。](../images/ui/audiences.png)
 
-接下来，选择省略号(`...`)，然后选择 **[!UICONTROL 删除]**.
+接下来，选择第一个受众旁边的省略号(`...`)，然后选择&#x200B;**[!UICONTROL 删除]**。
 
-![受众菜单高亮显示 [!UICONTROL 删除] 选项。](../images/ui/delete-composition.png)
+![突出显示[!UICONTROL 删除]选项的受众菜单。](../images/ui/delete-composition.png)
 
-屏幕上会显示成功删除的确认信息，您将返回 **[!UICONTROL 合成]** 选项卡。
+将显示成功删除的确认，并返回到&#x200B;**[!UICONTROL 合成]**&#x200B;选项卡。
 
 对所有合成内容重复上述步骤。 这将从受众清单中删除所有受众。 删除所有受众后，您可以继续重置沙盒。
 
@@ -104,38 +104,38 @@ ht-degree: 5%
 
 重置生产或开发沙盒会删除与该沙盒关联的所有资源（架构、数据集等），同时保持沙盒的名称和关联的权限。 对于有权访问此“清理”沙盒的用户，将继续以相同的名称提供该沙盒。
 
-从沙盒列表中选择要重置的沙盒。 在出现的右侧导航面板中，选择 **[!UICONTROL 沙盒重置]**.
+从沙盒列表中选择要重置的沙盒。 在出现的右侧导航面板中，选择&#x200B;**[!UICONTROL 沙盒重置]**。
 
 ![重置](../images/ui/reset.png)
 
-将出现一个对话框，提示您确认您的选择。 选择 **[!UICONTROL 继续]** 以继续。
+将出现一个对话框，提示您确认您的选择。 选择&#x200B;**[!UICONTROL 继续]**&#x200B;以继续。
 
 ![重置警告](../images/ui/reset-warning.png)
 
-在最终确认窗口中，在对话框中输入沙盒的名称，然后选择 **[!UICONTROL 重置]**.
+在最终确认窗口中，在对话框中输入沙盒的名称，然后选择&#x200B;**[!UICONTROL 重置]**。
 
-![reset-confirm](../images/ui/reset-confirm.png)
+![重置确认](../images/ui/reset-confirm.png)
 
 ## 删除沙盒
 
 >[!WARNING]
 >
->您无法删除默认的生产沙盒。 但是，用户创建的任何用于与进行双向区段共享的生产沙盒 [!DNL Audience Manager] 或 [!DNL Audience Core Service] 出现警告消息后可将其删除。
+>您无法删除默认的生产沙盒。 但是，在出现警告消息后，可以删除任何用于与[!DNL Audience Manager]或[!DNL Audience Core Service]进行双向区段共享的用户创建的生产沙盒。
 
 删除生产或开发沙盒将永久删除与该沙盒关联的所有资源，包括权限。
 
-从沙盒列表中选择要删除的沙盒。 在出现的右侧导航面板中，选择 **[!UICONTROL 删除]**.
+从沙盒列表中选择要删除的沙盒。 在出现的右侧导航面板中，选择&#x200B;**[!UICONTROL 删除]**。
 
 ![删除](../images/ui/delete.png)
 
-将出现一个对话框，提示您确认您的选择。 选择 **[!UICONTROL 继续]** 以继续。
+将出现一个对话框，提示您确认您的选择。 选择&#x200B;**[!UICONTROL 继续]**&#x200B;以继续。
 
-![delete-warning](../images/ui/delete-warning.png)
+![删除警告](../images/ui/delete-warning.png)
 
-在最终确认窗口中，在对话框中输入沙盒的名称，然后选择  **[!UICONTROL 继续]**.
+在最终确认窗口中，在对话框中输入沙盒的名称，然后选择&#x200B;**[!UICONTROL 继续]**。
 
 ![delete-confirm](../images/ui/delete-confirm.png)
 
 ## 后续步骤
 
-本文档演示如何在Experience PlatformUI中管理沙盒。 有关如何使用沙盒API管理沙盒的信息，请参阅 [沙盒开发人员指南](../api/getting-started.md).
+本文档演示如何在Experience PlatformUI中管理沙盒。 有关如何使用沙盒API管理沙盒的信息，请参阅[沙盒开发人员指南](../api/getting-started.md)。

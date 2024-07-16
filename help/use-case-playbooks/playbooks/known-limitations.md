@@ -20,11 +20,11 @@ ht-degree: 1%
 
 在创建剧本实例并生成资产时，会显示一些已知限制。
 
-* 对于生成的架构，如果在剧本的一个实例中生成了一个架构，并且您编辑了该架构，则另外生成了一个架构 *不会* 如果启用剧本的另一个实例，则会生成。 相反，请继续使用您在实例中编辑的架构。
+* 对于生成的架构，如果在行动手册的一个实例中生成了一个架构，并且您编辑了该架构，那么如果启用行动手册的另一个实例，则不会&#x200B;*生成另一个架构。*&#x200B;相反，请继续使用您在实例中编辑的架构。
 
-* 使用时 [数据感知功能](/help/use-case-playbooks/playbooks/data-awareness.md) 要将架构从启发型沙盒提升到开发沙盒，您可能会看到一些与以下类似的错误：
+* 使用[数据感知功能](/help/use-case-playbooks/playbooks/data-awareness.md)将架构从启发型沙盒提升到开发沙盒时，您可能会看到类似于以下内容的一些错误：
 
-![架构映射工作流中显示的错误。](/help/use-case-playbooks/assets/playbooks/troubleshooting/schema-errors.png){width="1000" zoomable="yes"}
+![架构映射工作流中显示错误。](/help/use-case-playbooks/assets/playbooks/troubleshooting/schema-errors.png){width="1000" zoomable="yes"}
 
 这是因为从架构生成的某些字段在要复制到其中的开发沙盒的架构中不存在。 查查那些栏位是什么。 然后，返回开发沙盒，您可以在其中执行以下操作：
 

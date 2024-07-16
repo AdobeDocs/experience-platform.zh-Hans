@@ -4,8 +4,8 @@ description: 沙盒工具API中的/tools端点允许您在Adobe Experience Platf
 exl-id: 529cb7d6-6b3f-459c-be03-35fc28b891cf
 source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
-source-wordcount: '152'
-ht-degree: 19%
+source-wordcount: '150'
+ht-degree: 20%
 
 ---
 
@@ -13,11 +13,11 @@ ht-degree: 19%
 
 沙盒工具允许您选择不同的工件并将它们导出到资源包中。 包可以包含单个对象或多个对象。包中包含的任何对象必须来自同一沙盒。
 
-此 `/tools` 沙盒工具API中的端点允许您列出和检索作业JSON数据。
+沙盒工具API中的`/tools`端点允许您列出和检索作业JSON数据。
 
-## 作业详细信息 {#details}
+## 工作详细信息 {#details}
 
-GET要单独获取作业JSON数据，请向 `/tools` 端点并提供作业的ID。
+要单独获取作业JSON数据，请向`/tools`端点发出GET请求并提供作业的ID。
 
 **API格式**
 
@@ -31,7 +31,7 @@ GET /tools/job/{JOB_ID}
 
 **请求**
 
-以下请求检索以下项的信息 {JOB_ID}.
+以下请求检索{JOB_ID}的信息。
 
 ```shell
 curl -X GET \
@@ -43,7 +43,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回查询的作业ID的详细信息，并以下列方式提供实时状态更新 `completedTasks` 和 `failedTasks` 会随着作业进行而更新。
+成功的响应会返回查询的作业ID的详细信息，从而提供实时状态更新，因为`completedTasks`和`failedTasks`会随着作业进行而更新。
 
 ```json
 {

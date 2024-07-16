@@ -4,16 +4,16 @@ description: 了解Adobe Experience Platform中的Adobe Analytics标记扩展。
 exl-id: 33ebdcb6-9bf0-44e6-b016-e93fe78af578
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
-source-wordcount: '2275'
-ht-degree: 83%
+source-wordcount: '2105'
+ht-degree: 82%
 
 ---
 
-# Adobe Analytics 扩展概述
+# Adobe Analytics扩展概述
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用本参考可了解有关配置 Adobe Analytics 扩展以及使用此扩展构建规则时可用的选项的信息。
 
@@ -21,9 +21,9 @@ ht-degree: 83%
 
 此部分提供有关配置 Adobe Analytics 扩展时可用的选项的参考。
 
-如果尚未安装Adobe Analytics扩展，请打开您的资产，然后选择 **[!UICONTROL “扩展”>“目录”]**，将鼠标悬停在Adobe Analytics扩展上，然后选择 **[!UICONTROL 安装]**.
+如果尚未安装Adobe Analytics扩展，请打开您的资产，然后选择&#x200B;**[!UICONTROL 扩展>目录]**，将鼠标悬停在Adobe Analytics扩展上，然后选择&#x200B;**[!UICONTROL 安装]**。
 
-要配置该扩展，请打开Extensions选项卡，将鼠标悬停在该扩展上，然后选择 **[!UICONTROL 配置]**.
+要配置该扩展，请打开“扩展”选项卡，将鼠标悬停在该扩展上，然后选择&#x200B;**[!UICONTROL 配置]**。
 
 ![](../../../images/ext-analytics-config.png)
 
@@ -85,11 +85,11 @@ Activity Map 作为单独的模块（与 AAM 模块类似）加载。默认情�
 
 #### Open Editor
 
-允许您插入核心 [AppMeasurement.js](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html) 代码。 使用自动配置方法时会自动填充此代码。
+允许您插入核心[AppMeasurement.js](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html)代码。 使用自动配置方法时会自动填充此代码。
 
 >[!NOTE]
 >
->标记代码编辑器中使用的验证器可识别开发人员编写的代码中存在的问题。 经过缩小的代码（例如从代码管理器中下载的AppMeasurement.js代码）可能会被标记验证器错误地标记为存在问题，这通常可以忽略不计。
+>标记代码编辑器中使用的验证器可识别开发人员编写的代码中存在的问题。 经过缩小的代码(例如从代码管理器中下载的AppMeasurement.js代码)可能会被标记验证器错误地标记为存在问题，这通常可以忽略不计。
 
 #### Set the following report suites on tracker
 
@@ -111,7 +111,7 @@ Activity Map 作为单独的模块（与 AAM 模块类似）加载。默认情�
 
 基于 EU 隐私 Cookie，启用或禁用跟踪。
 
-当您选中EU Compliance复选框时， [!UICONTROL 跟踪Cookie名称] 字段。 跟踪 Cookie 会覆盖默认的跟踪 Cookie 名称。您可以自定义标记用于跟踪您的选择退出状态的名称，以便接收其他Cookie。
+当您选中“欧盟合规”复选框时，将显示[!UICONTROL 跟踪Cookie名称]字段。 跟踪 Cookie 会覆盖默认的跟踪 Cookie 名称。您可以自定义标记在跟踪您的选择退出状态以接收其他Cookie时所使用的名称。
 
 在加载页面时，系统会检查是否设置了名为 sat\_track 的 Cookie（或在 Edit Property 页面中指定的自定义 Cookie 名称）。请考虑以下信息：
 
@@ -124,7 +124,7 @@ Activity Map 作为单独的模块（与 AAM 模块类似）加载。默认情�
 _satellite.cookie.set("sat_track", "false");
 ```
 
-如果希望访客能够在以后选择启用，则必须具备一个机制将该 Cookie 设置为 true：
+如果希望访客稍后能够选择加入，则还必须具有一种机制，以将该Cookie设置为true ：
 
 ```javascript
 _satellite.cookie.set("sat_track", "true");
@@ -140,7 +140,7 @@ _satellite.cookie.set("sat_track", "true");
 
 确定要应用于收入和货币事件的转换率。如果您的网站允许访客以多种货币进行购买，则设置货币代码可确保正确转换和存储货币金额。
 
-有关支持的货币代码的更多信息，请参阅 [currencyCode](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/currencycode.html?lang=zh-Hans)。
+有关支持的货币代码的更多信息，请参阅 [currencyCode](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/currencycode.html)。
 
 ### Tracking Server
 
@@ -160,7 +160,7 @@ _satellite.cookie.set("sat_track", "true");
 
 ## Global Variables
 
-可以使用此部分设置 [eVars 和 Props](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar.html?lang=zh-Hans)，并创建层级。
+可以使用此部分设置 [eVars 和 Props](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar.html)，并创建层级。
 
 全局变量是在页面上初始化 Analytics 跟踪对象时在该对象上设置的变量。在每个页面上创建跟踪对象时，将设置您在此处设置的任何变量。设置这些变量后，它们就如同以任何其他方式设置的任何其他变量一样。具体而言，这意味着规则可以修改、更改或清除这些变量。
 
@@ -172,7 +172,7 @@ _satellite.cookie.set("sat_track", "true");
 
 ### Enable ClickMap
 
-[ClickMap](https://experienceleague.adobe.com/docs/analytics/analyze/activity-map/activity-map.html?lang=zh-Hans) 是一个适用于 Internet Explorer 和 Firefox 的插件，而且也是“Reports &amp; Analytics”中的一个模块。
+[ClickMap](https://experienceleague.adobe.com/docs/analytics/analyze/activity-map/activity-map.html) 是一个适用于 Internet Explorer 和 Firefox 的插件，而且也是“Reports &amp; Analytics”中的一个模块。
 
 ### Track download links
 
@@ -196,7 +196,7 @@ _satellite.cookie.set("sat_track", "true");
 
 您可以使用以下方法之一跟踪来自 SPA 网站的出站链接：
 
-* 如果不希望跟踪来自 SPA 的任何出站链接，则在 Never Track 部分插入一个条目。例如，`http://testsite.com/spa/\#`。将忽略此主机的所有 \# 链接。并跟踪指向其他主机的所有出站链接，如 [https://www.google.com](https://www.google.com)。
+* 如果不希望跟踪来自 SPA 的任何出站链接，则在 Never Track 部分插入一个条目。例如：`http://testsite.com/spa/\#`。指向此主机的所有\#链接都将被忽略。 并跟踪指向其他主机的所有出站链接，如 [https://www.google.com](https://www.google.com)。
 * 如果希望跟踪 SPA 上的某些链接，则使用 Always Track 部分。
 
 例如，如果希望跟踪 spa/\#/about 页面，则可以将“about”放置在 Always Track 部分。
@@ -245,7 +245,7 @@ _satellite.cookie.set("sat_track", "true");
 
 确定 Cookie 的生命期限。
 
-请参阅 [s.cookieLifetime](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/cookielifetime.html?lang=zh-Hans)。
+请参阅 [s.cookieLifetime](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/cookielifetime.html)。
 
 ### Secure Cookies
 
@@ -270,7 +270,7 @@ _satellite.cookie.set("sat_track", "true");
 
 Audience Manager 子域由 Adobe Audience Manager 分配。它有时称为“合作伙伴名称”或“合作伙伴子域”。如果您不知道自己的合作伙伴名称，请联系您的 Adobe 顾问或 Adobe 客户关怀团队。
 
-您可以通过选择 **显示高级设置** 并输入您的首选项。
+您可以通过选择&#x200B;**显示高级设置**&#x200B;并输入首选项来配置高级设置。
 
 ![](../../../images/an-ext-aam-adv.png)
 
@@ -283,7 +283,7 @@ Audience Manager 子域由 Adobe Audience Manager 分配。它有时称为“合
 Analytics 扩展提供了以下操作：
 
 * [设置变量](#set-variables)
-* [Send Beacon](#send-beacon)
+* [发送信标](#send-beacon)
 * [清除变量](#clear-variables)
 
 ### 设置变量 {#set-variables}
@@ -292,7 +292,7 @@ Analytics 扩展提供了以下操作：
 
 #### eVar
 
-设置一个或多个 [eVar](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar.html?lang=zh-Hans)。
+设置一个或多个 [eVar](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar.html)。
 
 1. 从下拉菜单中选择一个 eVar。
 1. 指定是要将 eVar 设置为值 (Set As) 还是复制 (Duplicate From) 其他 eVar。
@@ -307,7 +307,7 @@ Analytics 扩展提供了以下操作：
 1. 从下拉菜单中选择一个 prop。
 1. 指定是要将 prop 设置为值 (Set As) 还是复制 (Duplicate From) 其他 eVar。
 1. 提供 Set As 值，或选择要从中复制 prop 的 eVar。
-1. （可选）选择 **[!UICONTROL 添加prop]** 以设置更多prop。
+1. （可选）选择&#x200B;**[!UICONTROL 添加prop]**&#x200B;以设置更多prop。
 1. 选择&#x200B;**[!UICONTROL 保留更改]**。
 
 #### 事件
@@ -315,8 +315,8 @@ Analytics 扩展提供了以下操作：
 设置一个或多个[事件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/events/events-overview.html)。
 
 1. 从下拉菜单中选择一个事件。
-1. （可选）选择或指定用于[事件序列化](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/events/event-serialization.html?lang=zh-Hans)的数据元素。
-1. （可选）选择 **[!UICONTROL 添加事件]** 以设置更多事件。
+1. （可选）选择或指定用于[事件序列化](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/events/event-serialization.html)的数据元素。
+1. （可选）选择&#x200B;**[!UICONTROL 添加事件]**&#x200B;以设置更多事件。
 1. 选择&#x200B;**[!UICONTROL 保留更改]**。
 
 #### 层级
@@ -329,13 +329,13 @@ Analytics 扩展提供了以下操作：
 
 #### 页面名称
 
-此值是指给定页面的名称，对应于 [`pageName` 变量](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/pagename.html) Analytics中的。
+此值是指给定页面的名称，对应于Analytics中的[`pageName`变量](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/pagename.html)。
 
 >[!IMPORTANT]
 >
->在Adobe Experience Manager实施中，此变量可告知AEM将获取的Analytics报表存储在何处。 要确保正确保留报表，页面名称字符串必须设置为以冒号分隔的网站路径格式。
+>在Adobe Experience Manager实施中，此变量可告知AEM将获取的Analytics报表存储在何处。 要确保正确保留报表，必须将页面名称字符串设置为以冒号分隔的网站路径格式。
 >
->例如，位于以下位置的网页 `content/we-retail/language-masters/en/men.html` 的页面名称值应为 `content:we-retail:language-masters:en:men`.
+>例如，位于`content/we-retail/language-masters/en/men.html`的网页的页面名称值应为`content:we-retail:language-masters:en:men`。
 
 #### Other information
 
@@ -350,7 +350,7 @@ Analytics 扩展提供了以下操作：
 * Campaign
 * Purchase ID
 
-   指定值或查询参数
+  指定值或查询参数
 
 * State
 * Zip
@@ -366,17 +366,17 @@ Analytics 扩展提供了以下操作：
 
 **Settings**
 
-1. 选择 **[!UICONTROL 打开编辑器]**.
+1. 选择&#x200B;**[!UICONTROL 打开编辑器]**。
 1. 键入自定义代码。
 1. 选择&#x200B;**[!UICONTROL 保存]**。
 
-### Send Beacon {#send-beacon}
+### 发送信标 {#send-beacon}
 
 #### Increment a pageview - s.t()
 
 选择是否要递增一次页面查看。
 
-#### 不递增页面查看 — s.tl()
+#### 不要递增页面查看 — s.tl()
 
 选择是否不要递增一次页面查看。
 

@@ -1,19 +1,19 @@
 ---
 title: getMediaAnalyticsTracker
 description: 了解如何创建Media Analytics跟踪器对象并使用它跟踪媒体事件。
-source-git-commit: 9384c1cc15441199e898d6cc0850e5422253f106
+exl-id: ae968da8-7763-4b2a-a716-3014ba0d270d
+source-git-commit: 57d42d88ec9a93744450a2a352590ab57d9e5bb7
 workflow-type: tm+mt
 source-wordcount: '302'
 ht-degree: 3%
 
 ---
 
-
 # `getMediaAnalyticsTracker`
 
-此Web SDK命令可检索Media Analytics跟踪器。 您可以使用此命令创建一个对象实例，然后使用与提供的相同API [Media JS库](https://adobe-marketing-cloud.github.io/media-sdks/reference/javascript_3x/APIReference.html)，跟踪媒体事件。
+此Web SDK命令可检索Media Analytics跟踪器。 您可以使用此命令创建对象实例，然后使用与[媒体JS库](https://adobe-marketing-cloud.github.io/media-sdks/reference/javascript_3x/APIReference.html)提供的API相同的API跟踪媒体事件。
 
-此 `getMediaAnalyticsTracker` 命令返回旧版Media Analytics API。
+`getMediaAnalyticsTracker`命令返回旧版Media Analytics API。
 
 
 | 方法名称 | 描述 | 语法 |
@@ -45,9 +45,9 @@ ht-degree: 3%
 | 常量名称 | 描述 | 值 |
 |-----------------|--|-----------------|
 | `MediaType` | 媒体类型 | `Video`、`Audio` |
-| `StreamType` | 流类型 | `VOD`， `Live`， `Linear`， `Podcast`， `Audiobook`， `AOD` |
-| `VideoMetadataKeys` | 这会定义视频流的标准元数据键 | `Show`， `Season`， `Episode`， `AssetId`， `Genre`， `FirstAirDate`， `FirstDigitalDate`， `Rating`， `Originator`， `Network`， `ShowType`， `AdLoad`， `MVPD`， `Authorized`， `DayPart`， `Feed`， `StreamFormat` |
-| `AudioMetadataKeys` | 这会定义音频流的标准元数据键。 | `Artist`， `Album`， `Label`， `Author`， `Station`， `Publisher` |
-| `AdMetadataKeys` | 这会定义广告的标准元数据键。 | `Advertiser`， `CampaignId`， `CreativeId`， `PlacementId`， `SiteId`， `CreativeUrl` |
-| `Event` | 这会定义跟踪事件的类型。 | `AdBreakStart`， `AdBreakComplete`， `AdStart`， `AdComplete`， `AdSkip`， `ChapterStart`， `ChapterComplete`， `ChapterSkip`， `SeekStart`， `SeekComplete`， `BufferStart`， `BufferComplete`， `BitrateChange`， `StateStart`， `StateEnd` |
-| `PlayerState` | 这将定义用于跟踪播放器状态的标准值。 | `FullScreen`， `ClosedCaption`， `Mute`， `PictureInPicture`， `InFocus` |
+| `StreamType` | 流类型 | `VOD`，`Live`，`Linear`，`Podcast`，`Audiobook`，`AOD` |
+| `VideoMetadataKeys` | 这会定义视频流的标准元数据键 | `Show`、`Season`、`Episode`、`AssetId`、`Genre`、`FirstAirDate`、`FirstDigitalDate`、`Rating`、`Originator`、`Network`、`ShowType`、`AdLoad`、`MVPD`、`Authorized`、`DayPart`、`Feed`、`StreamFormat` |
+| `AudioMetadataKeys` | 这会定义音频流的标准元数据键。 | `Artist`，`Album`，`Label`，`Author`，`Station`，`Publisher` |
+| `AdMetadataKeys` | 这会定义广告的标准元数据键。 | `Advertiser`，`CampaignId`，`CreativeId`，`PlacementId`，`SiteId`，`CreativeUrl` |
+| `Event` | 这会定义跟踪事件的类型。 | `AdBreakStart`、`AdBreakComplete`、`AdStart`、`AdComplete`、`AdSkip`、`ChapterStart`、`ChapterComplete`、`ChapterSkip`、`SeekStart`、`SeekComplete`、`BufferStart`、`BufferComplete`、`BitrateChange`、`StateStart`、`StateEnd` |
+| `PlayerState` | 这将定义用于跟踪播放器状态的标准值。 | `FullScreen`，`ClosedCaption`，`Mute`，`PictureInPicture`，`InFocus` |

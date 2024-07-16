@@ -5,7 +5,7 @@ exl-id: 09961b8e-f736-4fcc-ac53-88b55cca7d55
 source-git-commit: 2b6700b2c19b591cf4e60006e64ebd63b87bdb2a
 workflow-type: tm+mt
 source-wordcount: '631'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->本页假定合并策略正在使用身份图。 有关实时客户配置文件中合并策略的更多信息，请阅读上的文档 [合并策略和身份拼接](../profile/merge-policies/overview.md#identity-stitching).
+>本页假定合并策略正在使用身份图。 有关实时客户配置文件中合并策略的更多信息，请阅读有关[合并策略和标识拼接](../profile/merge-policies/overview.md#identity-stitching)的文档。
 
 虽然您可以将Identity Service和Real-time Customer Profile结合使用，但Adobe Experience Platform的两个功能本身并不相同。
 
@@ -42,7 +42,7 @@ Identity Service和Real-time Customer Profile之间的主要区别如下：
 * 首先，Real-time Customer Profile引用身份图并检索所有身份。
 * 接下来，配置文件检索身份图中具有主要身份的配置文件片段。
 * 成功后， Profile than会合并所有现有事件和属性。
-   * 如果存在冲突的属性信息，将根据合并方法选择属性。 欲知更多信息，请参阅 [合并策略概述](../profile/merge-policies/overview.md).
+   * 如果存在冲突的属性信息，将根据合并方法选择属性。 有关详细信息，请阅读[合并策略概述](../profile/merge-policies/overview.md)。
 
 ![详细介绍Identity服务和配置文件合并工作方式的流程图。](./images/merge-profile-process.png)
 

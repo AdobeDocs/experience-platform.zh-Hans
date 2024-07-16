@@ -9,9 +9,9 @@ ht-degree: 4%
 
 ---
 
-# [!UICONTROL 提供商] 类
+# [!UICONTROL 提供程序]类
 
-在Experience Data Model (XDM)中， [!UICONTROL 提供商] 类捕获用于定义提供商业务实体（如医疗保健提供商或保险提供商）的最小属性集。
+在Experience Data Model (XDM)中，[!UICONTROL Provider]类捕获定义提供商业务实体（如医疗保健提供商或保险提供商）的最小属性集。
 
 ![类结构](../images/classes/provider.png)
 
@@ -23,4 +23,4 @@ ht-degree: 4%
 
 {style="table-layout:auto"}
 
-可以使用扩展类 [[!UICONTROL 医疗保健提供商] 字段组](../field-groups/provider/healthcare-provider.md) 描述关于医疗保健提供商的更多详细信息。
+可以使用[[!UICONTROL 医疗保健提供商]字段组](../field-groups/provider/healthcare-provider.md)扩展该类，以描述有关医疗保健提供商的更多详细信息。

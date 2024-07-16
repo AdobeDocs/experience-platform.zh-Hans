@@ -12,13 +12,13 @@ ht-degree: 2%
 ---
 
 
-# [!UICONTROL 个人联系人详细信息] 架构字段组
+# [!UICONTROL 个人联系人详细信息]架构字段组
 
 >[!NOTE]
 >
->多个架构字段组的名称已更改。 查看文档 [字段组名称更新](../name-updates.md) 以了解更多信息。
+>多个架构字段组的名称已更改。 有关详细信息，请参阅有关[字段组名称更新](../name-updates.md)的文档。
 
-[!UICONTROL 个人联系人详细信息] 是的标准架构字段组 [[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md) 用于描述个人的联系信息。
+[!UICONTROL 个人联系人详细信息]是[[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md)的标准架构字段组，用于描述个人联系信息。
 
 ![](../../images/field-groups/personal-contact-details.png)
 
@@ -35,4 +35,4 @@ ht-degree: 2%
 有关字段组的更多详细信息，请参阅公共XDM存储库：
 
 * [填充示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.schema.json)
+* [完整架构](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.schema.json)

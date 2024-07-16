@@ -5,7 +5,7 @@ description: 本文档概述了为使用自助源(Batch SDK)而需要准备的�
 exl-id: 68ed22fe-1f22-46d2-9d58-72ad8a9e6b98
 source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '518'
+source-wordcount: '522'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 身份验证规范定义Adobe Experience Platform用户可以如何连接到您的源。
 
-此 `authSpec` 阵列包含有关将源连接到Platform所需的身份验证参数的信息。 任何给定的源都可以支持多种不同类型的身份验证。
+`authSpec`数组包含有关将源连接到平台所需的身份验证参数的信息。 任何给定的源都可以支持多种不同类型的身份验证。
 
 ## 身份验证规范
 
@@ -181,7 +181,7 @@ OAuth 2刷新代码允许通过生成临时访问令牌和刷新令牌来安全�
 
 ## 身份验证规范示例
 
-以下是使用 [[!DNL MailChimp Members]](../../tutorials/api/create/marketing-automation/mailchimp-members.md) 源。
+以下是使用[[!DNL MailChimp Members]](../../tutorials/api/create/marketing-automation/mailchimp-members.md)源的已完成身份验证规范示例。
 
 ```json
   "authSpec": [
@@ -237,4 +237,4 @@ OAuth 2刷新代码允许通过生成临时访问令牌和刷新令牌来安全�
 
 ## 后续步骤
 
-填充身份验证规范后，您可以继续配置要集成到Platform的源的源规范。 查看文档 [配置源规范](./sourcespec.md) 以了解更多信息。
+填充身份验证规范后，您可以继续配置要集成到Platform的源的源规范。 有关详细信息，请参阅[配置源规范](./sourcespec.md)上的文档。

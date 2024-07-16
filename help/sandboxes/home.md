@@ -23,11 +23,11 @@ Adobe Experience Platform旨在丰富全球范围内的数字体验应用程序�
 
 沙盒是单个Experience Platform实例中的虚拟分区，允许与数字体验应用程序的开发过程无缝集成。 在沙盒内执行的所有内容和操作仅受该沙盒限制，不会影响任何其他沙盒。 Experience Platform支持两种沙盒：
 
-* **生产沙盒**：生产沙盒旨在与生产环境中的用户档案一起使用。 Platform允许您创建多个生产沙盒，以便在保持操作隔离的同时为数据提供适当的功能。 此功能允许您为不同的业务线、品牌、项目或区域指定特定的生产沙箱。 生产沙盒支持大量生产配置文件，直到您许可为止 [!DNL Profile] 承诺（在所有授权的生产沙盒中累积测量）。 您有权使用每个授权用户的许可平均用户档案 [!DNL Profile] （在所有授权的生产沙箱中累计测量）。
-* **开发沙盒**：开发沙盒是一种沙盒，专门可用于对非生产用户档案进行开发和测试。 开发沙盒支持大量非生产配置文件，最多可支持您许可的10% [!DNL Profile] 承诺（在所有授权的开发沙盒中累积测量）。 您有权获得以下权限：
+* **生产沙盒**：生产沙盒应该与生产环境中的用户档案一起使用。 Platform允许您创建多个生产沙盒，以便在保持操作隔离的同时为数据提供适当的功能。 此功能允许您为不同的业务线、品牌、项目或区域指定特定的生产沙箱。 生产沙盒支持大量生产配置文件，最多不超过您的许可[!DNL Profile]承诺（在所有授权的生产沙盒中累积测量）。 您有权为每个授权的[!DNL Profile]使用许可的平均用户档案（在所有授权的生产沙盒中累积测量）。
+* **开发沙盒**：开发沙盒是一个沙盒，可专门用于开发和测试非生产配置文件。 开发沙盒支持大量非生产配置文件，最多占您许可的[!DNL Profile]承诺的10%（在所有授权的开发沙盒中累积测量）。 您有权获得以下权限：
    * 每个授权的非生产配置文件的平均非生产配置文件丰富度为75 KB（在所有授权开发沙盒中累积测量）；
    * 每个开发沙盒每天一个批量分段作业；
-   * 平均120个 [!DNL Profile] API调用，按 [!DNL Profile]，每年（在所有授权的开发沙盒中累积测量）。
+   * 每[!DNL Profile]年平均120次[!DNL Profile] API调用（在所有授权的开发沙盒中累积测量）。
 
 Experience Platform实例支持多个生产和开发沙盒，每个沙盒维护其自身独立的Platform资源库（包括架构、数据集、配置文件等）。 此外，生产和开发沙盒都具有重置功能，可从沙盒中删除所有客户创建的资源。 无法将开发沙盒转换为生产沙盒。
 
@@ -42,24 +42,24 @@ Experience Platform实例支持多个生产和开发沙盒，每个沙盒维护�
 总之，沙盒具有以下优势：
 
 * **应用程序生命周期管理**：创建单独的虚拟环境以开发和改进数字体验应用程序。
-* **项目和品牌管理**：允许在同一组织中并行运行多个项目，同时提供隔离和访问控制。
-* **灵活的发展生态系统**：以无缝、可扩展且经济高效的方式提供沙盒，用于探索、支持和演示目的。
+* **项目和品牌管理**：允许在同一组织内并行运行多个项目，同时提供隔离和访问控制。
+* **灵活的开发生态系统**：以无缝、可扩展且经济实惠的方式提供沙盒，用于探索、启用和演示目的。
 
 ## 沙盒访问控制
 
-默认情况下，组织的所有用户都有权访问生产沙盒。 非生产沙盒的访问必须由系统管理员、产品管理员或产品配置文件管理员通过 [Adobe Admin Console](https://adminconsole.adobe.com).
+默认情况下，组织的所有用户都有权访问生产沙盒。 非生产沙盒的访问必须由系统管理员、产品管理员或产品配置文件管理员通过[Adobe Admin Console](https://adminconsole.adobe.com)授予。
 
 要查看、创建、更新或删除非生产沙盒，还必须向用户授予沙盒管理权限。
 
-有关管理沙盒的角色和权限的更多信息，请参见 [访问控制概述](../access-control/home.md).
+有关管理沙盒的角色和权限的详细信息，请参阅[访问控制概述](../access-control/home.md)。
 
 ## Experience PlatformUI中的沙盒
 
-在 [Experience Platform用户界面](https://platform.adobe.com)，用户可以使用在自己有权访问的沙盒之间切换 **沙盒切换器** 控件。  具有沙盒管理权限的用户还可以访问 **[!UICONTROL 沙盒]** 选项卡，用户可以在其中查看和管理组织的沙箱。 有关如何在UI中使用沙盒的更多信息，请参阅 [沙盒用户指南](ui/overview.md).
+在[Experience Platform用户界面](https://platform.adobe.com)中，用户可以使用屏幕左上角的&#x200B;**沙盒切换器**&#x200B;控件在自己有权访问的沙盒之间切换。  具有沙盒管理权限的用户还可以访问左侧导航中的&#x200B;**[!UICONTROL 沙盒]**&#x200B;选项卡，他们可以在其中查看和管理组织的沙盒。 有关如何在UI中使用沙盒的更多信息，请参阅[沙盒用户指南](ui/overview.md)。
 
 ## Experience PlatformAPI中的沙盒
 
-调用Experience PlatformAPI时，必须在标头下提供沙盒名称 `x-sandbox-name`. 例如，当调用 [[!DNL Catalog Service API]](https://www.adobe.io/experience-platform-apis/references/catalog/) 要查看生产沙盒中的所有数据集，沙盒的名称(“prod”)作为API请求中的标头提供：
+调用Experience PlatformAPI时，必须在标头`x-sandbox-name`下提供沙盒名称。 例如，在调用[[!DNL Catalog Service API]](https://www.adobe.io/experience-platform-apis/references/catalog/)以查看生产沙盒内的所有数据集时，沙盒的名称(“prod”)作为API请求中的标头提供：
 
 ```shell
 curl -X GET \
@@ -70,14 +70,14 @@ curl -X GET \
   -H 'x-sandbox-name: prod'
 ```
 
-如果 `x-sandbox-name` API调用中未包含，系统将改用默认沙盒。 但是，最佳实践是在所有API调用中始终包含此标头，即使使用默认沙盒时也是如此。 因此，Experience Platform的API文档将 `x-sandbox-name` 作为必需标头。
+如果API调用中未包含`x-sandbox-name`，则系统将改用默认沙盒。 但是，最佳实践是在所有API调用中始终包含此标头，即使使用默认沙盒时也是如此。 因此，Experience Platform的API文档将`x-sandbox-name`视为必需的标头。
 
 ### 沙盒API
 
-沙盒API允许您使用RESTful API操作管理沙盒。 请参阅 [沙盒开发人员指南](api/overview.md) 有关如何使用API的详细信息，包括格式正确的请求和示例响应。
+沙盒API允许您使用RESTful API操作管理沙盒。 有关如何使用API的详细信息（包括格式正确的请求和示例响应），请参阅[沙盒开发人员指南](api/overview.md)。
 
 ## 后续步骤
 
-通过阅读本文档，您已了解有关Experience Platform中沙盒的基本概念。 有关如何管理沙箱的详细步骤，请参阅 [用户指南](ui/overview.md) 对于UI或 [开发人员指南](./api/getting-started.md) 用于API。
+通过阅读本文档，您已了解有关Experience Platform中沙盒的基本概念。 有关如何管理沙盒的详细步骤，请参阅UI的[用户指南](ui/overview.md)或API的[开发人员指南](./api/getting-started.md)。
 
-虽然沙盒是一种用于为开发团队隔离平台环境的有用工具，但您也可以使用Adobe Admin Console管理更精细的访问控制。 请参阅 [访问控制概述](../access-control/home.md) 以了解更多信息。
+虽然沙盒是一种用于为开发团队隔离平台环境的有用工具，但您也可以使用Adobe Admin Console管理更精细的访问控制。 有关详细信息，请参阅[访问控制概述](../access-control/home.md)。

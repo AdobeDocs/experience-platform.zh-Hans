@@ -14,15 +14,15 @@ ht-degree: 4%
 
 # 帐户端点
 
-在Adobe Experience Platform查询服务中，帐户用于创建可与外部SQL客户端一起使用的未过期的凭据。 您可以使用 `/accounts` 查询服务API中的端点，允许您以编程方式创建、检索、编辑和删除查询服务集成帐户（也称为技术帐户）。
+在Adobe Experience Platform查询服务中，帐户用于创建可与外部SQL客户端一起使用的未过期的凭据。 您可以在查询服务API中使用`/accounts`端点，从而允许您以编程方式创建、检索、编辑和删除查询服务集成帐户（也称为技术帐户）。
 
 ## 快速入门
 
-本指南中使用的端点属于查询服务API。 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关成功调用API所需了解的重要信息，包括所需的标头以及如何读取示例API调用。
+本指南中使用的端点属于查询服务API。 在继续之前，请查看[快速入门指南](./getting-started.md)以了解成功调用API所需了解的重要信息，包括所需的标头以及如何读取示例API调用。
 
 ## 创建帐户
 
-您可以通过向以下对象发出POST请求来创建查询服务集成帐户： `/accounts` 端点。
+您可以通过向`/accounts`端点发出POST请求来创建查询服务集成帐户。
 
 **API格式**
 
@@ -52,10 +52,10 @@ curl -X POST https://platform.adobe.io/data/foundation/queryauth/accounts \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `accountName` | **必填** 查询服务集成帐户的名称。 |
-| `assignedToUser` | **必填** 将为其创建查询服务集成帐户的Adobe ID。 |
-| `credential` | *（可选）* 用于查询服务集成的凭据。 如果未指定，系统将自动为您生成凭据。 |
-| `description` | *（可选）* 查询服务集成帐户的描述。 |
+| `accountName` | **必需**&#x200B;查询服务集成帐户的名称。 |
+| `assignedToUser` | **必需**&#x200B;将为其创建查询服务集成帐户的Adobe ID。 |
+| `credential` | *（可选）*&#x200B;用于查询服务集成的凭据。 如果未指定，系统将自动为您生成凭据。 |
+| `description` | *（可选）*&#x200B;查询服务集成帐户的描述。 |
 
 **响应**
 
@@ -72,12 +72,12 @@ curl -X POST https://platform.adobe.io/data/foundation/queryauth/accounts \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `technicalAccountName` | 查询服务集成帐户的名称。 |
-| `technicalAccountId` | 查询服务集成帐户的ID。 这与 `credential`，为您的帐户构成密码。 |
-| `credential` | 查询服务集成帐户的凭据。 这与 `technicalAccountId`，为您的帐户构成密码。 |
+| `technicalAccountId` | 查询服务集成帐户的ID。 这与`credential`一起为您的帐户构成密码。 |
+| `credential` | 查询服务集成帐户的凭据。 这与`technicalAccountId`一起为您的帐户构成密码。 |
 
 ## 更新帐户
 
-您可以通过向以下网站发出PUT请求来更新您的查询服务集成帐户： `/accounts` 端点。
+您可以通过向`/accounts`端点发出PUT请求来更新查询服务集成帐户。
 
 **API格式**
 
@@ -109,10 +109,10 @@ curl -X PUT https://platform.adobe.io/data/foundation/queryauth/accounts/E09A0DF
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `accountName` | *（可选）* 查询服务集成帐户的更新名称。 |
-| `assignedToUser` | *（可选）* 查询服务集成帐户所链接的已更新Adobe ID。 |
-| `credential` | *（可选）* 查询服务帐户的已更新凭据。 |
-| `description` | *（可选）* 查询服务集成帐户的更新描述。 |
+| `accountName` | *（可选）*&#x200B;查询服务集成帐户的更新名称。 |
+| `assignedToUser` | *（可选）*&#x200B;查询服务集成帐户所链接的已更新Adobe ID。 |
+| `credential` | *（可选）*&#x200B;查询服务帐户的已更新凭据。 |
+| `description` | *（可选）*&#x200B;查询服务集成帐户的更新描述。 |
 
 **响应**
 
@@ -135,7 +135,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/queryauth/accounts/E09A0DF
 
 ## 列出所有帐户
 
-您可以通过向以下网站发出GET请求，检索所有查询服务集成帐户的列表： `/accounts` 端点。
+您可以通过向`/accounts`端点发出GET请求来检索所有查询服务集成帐户的列表。
 
 **API格式**
 
@@ -206,7 +206,7 @@ curl -X GET https://platform.adobe.io/foundation/queryauth/accounts \
 
 ## 删除帐户
 
-您可以通过向以下网站发出DELETE请求来删除您的查询服务集成帐户： `/accounts` 端点。
+您可以通过向`/accounts`端点发出DELETE请求来删除您的查询服务集成帐户。
 
 **API格式**
 

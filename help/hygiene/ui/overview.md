@@ -21,13 +21,13 @@ ht-degree: 36%
 >title="最近的数据生命周期工单"
 >abstract="此构件显示五个最近创建或更新的数据生命周期工单，具体取决于您在右上角选择的选项。有关数据生命周期流程的更多信息，请在左侧导航中选择&#x200B;**数据生命周期**。"
 
-此 **[!UICONTROL 数据生命周期]** Adobe Experience Platform UI中的工作区允许您创建和监控各种数据生命周期管理任务，包括删除记录和计划数据集过期时间。
+Adobe Experience Platform UI中的&#x200B;**[!UICONTROL 数据生命周期]**&#x200B;工作区允许您创建和监视各种数据生命周期管理任务，包括删除记录和计划数据集过期。
 
-本指南介绍如何在Platform UI中管理数据生命周期任务。 有关如何使用API调用执行这些任务的信息，请参阅 [数据卫生API指南](../api/overview.md).
+本指南介绍如何在Platform UI中管理数据生命周期任务。 有关如何使用API调用执行这些任务的信息，请参阅[数据卫生API指南](../api/overview.md)。
 
-要访问工作区，请选择 **数据生命周期** 在左侧导航中。
+要访问工作区，请在左侧导航中选择&#x200B;**数据生命周期**。
 
-![此 [!UICONTROL 数据生命周期] 平台UI中的工作区，使用 [!UICONTROL 数据生命周期] 在左侧导航中突出显示。](../images/ui/overview/home.png)
+Platform UI中的![数据生命周期]工作区，左侧导航中突出显示[!UICONTROL 数据生命周期]。](../images/ui/overview/home.png)[!UICONTROL 
 
 在此处，您可以浏览现有工作单并配置新的数据生命周期操作。 请参阅本指南的以下部分以了解更多信息：
 

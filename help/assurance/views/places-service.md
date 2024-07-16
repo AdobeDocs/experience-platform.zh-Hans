@@ -3,7 +3,7 @@ title: 位置视图
 description: 本指南详细介绍了 Adobe Experience Platform Assurance 中的位置视图的信息。
 exl-id: 23086aae-8894-4350-aa02-7e2faabe000d
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
-workflow-type: ht
+workflow-type: tm+mt
 source-wordcount: '146'
 ht-degree: 100%
 

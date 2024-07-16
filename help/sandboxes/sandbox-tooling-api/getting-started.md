@@ -4,8 +4,8 @@ description: 使用沙盒工具API检查项目并在沙盒之间导出和导入�
 exl-id: 0b34d153-a603-4397-a375-9cc846efe23a
 source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
-source-wordcount: '314'
-ht-degree: 14%
+source-wordcount: '311'
+ht-degree: 15%
 
 ---
 
@@ -15,11 +15,11 @@ ht-degree: 14%
 
 ## 正在读取示例 API 调用 {#api-calls}
 
-本指南提供了示例 API 调用来演示如何格式化请求。这些包括路径、必需的标头和格式正确的请求负载。还提供了返回到API响应的示例JSON数据。 有关示例API调用文档中使用的约定的信息，请参阅 [如何读取示例API调用](/help/landing/troubleshooting.md#how-do-i-format-an-api-request) 在Experience Platform疑难解答指南中。
+本指南提供了示例 API 调用来演示如何格式化请求。这些包括路径、必需的标头和格式正确的请求负载。还提供了返回到API响应的示例JSON数据。 有关示例API调用文档中使用的约定的信息，请参阅Experience Platform疑难解答指南中有关[如何读取示例API调用](/help/landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。
 
 ## 收集所需标头的值 {#headers}
 
-本指南要求您已完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en) 才能成功调用平台API。 完成身份验证教程将为所有Experience PlatformAPI调用中的每个所需标头提供值，如下所示：
+本指南要求您完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)，才能成功调用平台API。 完成身份验证教程将为所有Experience PlatformAPI调用中的每个所需标头提供值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`

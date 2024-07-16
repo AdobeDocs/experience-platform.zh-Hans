@@ -1,33 +1,33 @@
 ---
-keywords: Experience Platform；主页；热门主题；流式摄取；摄取；流式传输多条消息；多条消息；
+keywords: Experience Platform；主页；热门主题；流式摄取；摄取；流式处理多条消息；多条消息；
 solution: Experience Platform
 title: 在一个HTTP请求中发送多条消息
 type: Tutorial
-description: 本文档提供了一个教程，介绍如何使用流摄取，在一个HTTP请求中向Adobe Experience Platform发送多条消息。
+description: 本文档提供了一个教程，介绍如何使用流摄取，在单个HTTP请求中将多条消息发送到Adobe Experience Platform。
 exl-id: 04045090-8a2c-42b6-aefa-09c043ee414f
 source-git-commit: 3ad5c06db07b360df255d3afb1c177cc5de613bb
 workflow-type: tm+mt
-source-wordcount: '1490'
+source-wordcount: '1487'
 ht-degree: 1%
 
 ---
 
 # 在一个HTTP请求中发送多条消息
 
-将数据流式传输到Adobe Experience Platform时，进行大量HTTP调用可能会很昂贵。 例如，创建1个HTTP请求（每个请求200条1 KB的消息，单个有效负载为200 KB）要比创建200个1 KB的HTTP请求有效得多。 正确使用时，在单个请求中对多个消息进行分组是优化发送数据的好方法 [!DNL Experience Platform].
+将数据流式传输到Adobe Experience Platform时，进行大量HTTP调用可能会很昂贵。 例如，创建1个HTTP请求（每个200条消息为1KB，单个有效负载为200KB）要比创建具有1KB有效负载的200个HTTP请求有效得多。 正确使用时，在单个请求中对多个消息进行分组是优化发送到[!DNL Experience Platform]的数据的绝佳方法。
 
-本文档提供了有关将多条消息发送到的教程 [!DNL Experience Platform] 使用流式摄取在一个HTTP请求中。
+此文档提供了一个教程，介绍如何使用流式摄取在单个HTTP请求中向[!DNL Experience Platform]发送多条消息。
 
 ## 快速入门
 
-本教程需要您对Adobe Experience Platform有一定的了解 [!DNL Data Ingestion]. 在开始本教程之前，请查看以下文档：
+本教程要求您对Adobe Experience Platform [!DNL Data Ingestion]有一定的了解。 在开始本教程之前，请查看以下文档：
 
-- [数据引入概述](../home.md)：涵盖 [!DNL Experience Platform Data Ingestion]，包括摄取方法和Data Connectors。
-- [流式摄取概述](../streaming-ingestion/overview.md)：流摄取的工作流程和构建块，例如流连接、数据集、 [!DNL XDM Individual Profile]、和 [!DNL XDM ExperienceEvent].
+- [数据摄取概述](../home.md)：涵盖[!DNL Experience Platform Data Ingestion]的核心概念，包括摄取方法和Data Connectors。
+- [流式摄取概述](../streaming-ingestion/overview.md)：流式摄取的工作流程和构建基块，如流式连接、数据集、[!DNL XDM Individual Profile]和[!DNL XDM ExperienceEvent]。
 
-此外，本教程还要求您已完成 [对Adobe Experience Platform的身份验证](https://www.adobe.com/go/platform-api-authentication-en) 要成功调用到的教程 [!DNL Platform] API。 完成身份验证教程将为本教程中所有API调用所需的Authorization标头提供值。 标头在示例调用中如下所示：
+本教程还要求您已完成[对Adobe Experience Platform的身份验证](https://www.adobe.com/go/platform-api-authentication-en)教程，才能成功调用[!DNL Platform] API。 完成身份验证教程将在本教程中为所有API调用所需的授权标头提供值。 标头在示例调用中显示，如下所示：
 
-- 授权：持有者 `{ACCESS_TOKEN}`
+- 授权：持有人`{ACCESS_TOKEN}`
 
 所有POST请求都需要额外的标头：
 
@@ -35,17 +35,17 @@ ht-degree: 1%
 
 ## 创建流连接
 
-必须先创建流连接，然后才能开始将数据流式传输到 [!DNL Experience Platform]. 阅读 [创建流连接](./create-streaming-connection.md) 有关如何创建流连接的指南。
+必须先创建流连接，然后才能开始将数据流式传输到[!DNL Experience Platform]。 阅读[创建流连接](./create-streaming-connection.md)指南，了解如何创建流连接。
 
-注册流连接后，作为数据制作者，您将拥有一个唯一的URL，可用于将数据流式传输到Platform。
+注册流连接后，作为数据制作者，您将拥有唯一的URL，该URL可用于将数据流式传输到Platform。
 
 ## 流到数据集
 
-以下示例显示如何在单个HTTP请求中向特定数据集发送多条消息。 在消息标头中插入数据集ID，以便将该消息直接摄取到其中。
+以下示例显示如何在单个HTTP请求中将多个消息发送到特定数据集。 在消息标头中插入数据集ID，以便将该消息直接摄取到其中。
 
-您可以使用获取现有数据集的ID [!DNL Platform] UI或使用API中的列表操作。 数据集ID可在上找到 [Experience Platform](https://platform.adobe.com) 通过转到 **[!UICONTROL 数据集]** 选项卡，单击要为其创建ID的数据集，然后从 **[!UICONTROL 信息]** 选项卡。 请参阅 [目录服务概述](../../catalog/home.md) 有关如何使用API检索数据集的信息。
+您可以使用[!DNL Platform] UI或API中的列表操作获取现有数据集的ID。 通过转至&#x200B;**[!UICONTROL 数据集]**&#x200B;选项卡，单击要查找数据集ID的数据集，然后从&#x200B;**[!UICONTROL 信息]**&#x200B;选项卡上的数据集ID字段中复制字符串，可以在[Experience Platform](https://platform.adobe.com)上找到数据集ID。 有关如何使用API检索数据集的信息，请参阅[目录服务概述](../../catalog/home.md)。
 
-您可以创建新数据集，而不是使用现有数据集。 请阅读 [使用API创建数据集](../../catalog/api/create-dataset.md) 有关使用API创建数据集的更多信息，请参阅教程。
+您可以创建新数据集，而不是使用现有数据集。 有关使用API创建数据集的更多信息，请参阅[使用API创建数据集](../../catalog/api/create-dataset.md)教程。
 
 **API格式**
 
@@ -188,7 +188,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
 
 **响应**
 
-成功的响应返回HTTP状态207（多状态）。 查看响应正文提供了有关在请求中执行的每种方法成功或失败的更多详细信息。 将为请求消息数组的每个元素返回响应。 以下是成功响应且无消息失败的示例：
+成功的响应返回HTTP状态207（多状态）。 查看响应正文可提供请求中执行的每种方法成功或失败的更多详细信息。 将为请求消息数组的每个元素返回响应。 以下是成功响应且无消息失败的示例：
 
 ```json
 {
@@ -206,22 +206,22 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
 }
 ```
 
-有关状态代码的更多信息，请参阅 [响应代码](#response-codes) 表。
+有关状态代码的更多信息，请参阅本教程附录中的[响应代码](#response-codes)表。
 
 ## 识别失败消息
 
 与通过单个消息发送请求相比，在发送包含多个消息的HTTP请求时，还需要考虑其他因素，例如：如何识别数据何时无法发送、哪些特定消息无法发送以及如何检索这些消息，以及当同一请求中的其他消息失败时，成功的数据会发生什么情况。
 
-在继续本教程之前，建议先查看 [检索失败的批次](../quality/retrieve-failed-batches.md) 指南。
+在继续本教程之前，建议先查看[检索失败的批次](../quality/retrieve-failed-batches.md)指南。
 
 ### 发送包含有效消息和无效消息的请求有效负载
 
 以下示例显示了当批次包含有效消息和无效消息时发生的情况。
 
 请求有效负载是表示XDM架构中事件的JSON对象数组。 请注意，要成功验证报文，需要满足以下条件：
-- 此 `imsOrgId` 消息标头中的字段必须与入口定义匹配。 如果请求有效负载不包含 `imsOrgId` 字段， [!DNL Data Collection Core Service] (DCCS)将自动添加字段。
-- 消息的标头应引用在中创建的现有XDM架构 [!DNL Platform] UI。
-- 此 `datasetId` 字段需要引用中的现有数据集 [!DNL Platform]，其架构需要与 `header` 请求正文中包含的每个消息中的对象。
+- 消息标头中的`imsOrgId`字段必须与入口定义匹配。 如果请求有效负载不包含`imsOrgId`字段，[!DNL Data Collection Core Service] (DCCS)将自动添加该字段。
+- 消息的标头应引用在[!DNL Platform] UI中创建的现有XDM架构。
+- `datasetId`字段需要引用[!DNL Platform]中的现有数据集，并且其架构需要匹配请求正文中包含的每个消息中的`header`对象中提供的架构。
 
 **API格式**
 
@@ -460,7 +460,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
 
 **响应**
 
-响应有效负载包含每条消息的状态以及 `xactionId` 可用于跟踪。
+响应有效负载包含每个消息的状态以及`xactionId`中可用于跟踪的GUID。
 
 ```JSON
 {
@@ -487,9 +487,9 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
 }
 ```
 
-上面的示例响应显示了上一个请求的错误消息。 通过将此响应与先前的有效响应进行比较，您可以发现请求导致部分成功，其中一条消息摄取成功，三条消息导致失败。 请注意，这两个响应都返回“207”状态代码。 有关状态代码的更多信息，请参阅 [响应代码](#response-codes) 表。
+上面的示例响应显示了上一个请求的错误消息。 通过将此响应与先前的有效响应进行比较，您可以发现请求导致部分成功，其中一条消息摄取成功，三条消息导致失败。 请注意，两个响应都返回“207”状态代码。 有关状态代码的更多信息，请参阅本教程附录中的[响应代码](#response-codes)表。
 
-第一条　消息已成功发送至 [!DNL Platform] 并且不受其他消息结果的影响。 因此，在尝试重新发送失败的消息时，您无需重新包含此消息。
+第一个消息已成功发送到[!DNL Platform]，不受其他消息结果的影响。 因此，在尝试重新发送失败消息时，您无需重新包含此消息。
 
 第二个消息失败，因为它缺少消息正文。 集合请求要求消息元素具有有效的标头和正文部分。 在第二条消息的标头之后添加以下代码将修复请求，从而允许第二条消息通过验证：
 
@@ -508,28 +508,28 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
     },
 ```
 
-第三个消息失败，因为标头中使用了无效的组织ID。 组织必须与您尝试发布到的{CONNECTION_ID}匹配。 要确定哪个组织ID与您使用的流连接匹配，您可以执行 `GET inlet` 使用 [[!DNL Streaming Ingestion API]](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/). 参见 [检索流连接](./create-streaming-connection.md#get-data-collection-url) 有关如何检索之前创建的流连接的示例。
+第三个消息失败，因为标头中使用了无效的组织ID。 组织必须与尝试向其发布内容的{CONNECTION_ID}匹配。 要确定哪个组织ID与您正在使用的流连接匹配，您可以使用[[!DNL Streaming Ingestion API]](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/)执行`GET inlet`请求。 有关如何检索先前创建的流连接的示例，请参阅[检索流连接](./create-streaming-connection.md#get-data-collection-url)。
 
-第四条　消息失败，因为它未遵循预期的XDM架构。 此 `xdmSchema` 请求的标头和正文中包含的与的XDM架构不匹配 `{DATASET_ID}`. 更正消息标头和正文中的架构后，可以使其通过DCCS验证并成功发送到 [!DNL Platform]. 还必须更新消息正文以匹配的XDM架构 `{DATASET_ID}` 以通过流验证 [!DNL Platform]. 有关成功流式传输到Platform的消息有何影响的更多信息，请参阅 [确认消息已摄取](#confirm-messages-ingested) 部分。
+第四条　消息失败，因为它未遵循预期的XDM架构。 请求标头和正文中包含的`xdmSchema`与`{DATASET_ID}`的XDM架构不匹配。 更正消息标头和正文中的架构可使其通过DCCS验证并成功发送到[!DNL Platform]。 还必须更新消息正文以匹配`{DATASET_ID}`的XDM架构，才能使其在[!DNL Platform]上传递流验证。 有关成功流式传输到Platform的消息有何影响的更多信息，请参阅本教程的[确认已摄取的消息](#confirm-messages-ingested)部分。
 
-### 从检索失败的邮件 [!DNL Platform]
+### 从[!DNL Platform]检索失败的邮件
 
 失败的消息由响应数组中的错误状态代码标识。
-无效消息将被收集并存储在指定的数据集中的“错误”批次 `{DATASET_ID}`.
+在`{DATASET_ID}`指定的数据集内，收集无效消息并将其存储在“错误”批次中。
 
-阅读 [检索失败的批次](../quality/retrieve-failed-batches.md) 指南，以了解有关恢复失败的批处理消息的详细信息。
+有关恢复失败的批处理消息的详细信息，请阅读[检索失败的批次](../quality/retrieve-failed-batches.md)指南。
 
 ## 确认消息已摄取
 
-通过DCCS验证的消息将流式传输到 [!DNL Platform]. 日期 [!DNL Platform]，批量消息在被摄取到之前通过流验证进行测试 [!DNL Data Lake]. 批次的状态（无论是否成功）将显示在由指定的数据集内 `{DATASET_ID}`.
+通过DCCS验证的邮件将流式传输到[!DNL Platform]。 在[!DNL Platform]上，批处理消息在被引入[!DNL Data Lake]之前通过流式验证进行测试。 批次的状态（无论是否成功）将显示在`{DATASET_ID}`指定的数据集内。
 
-您可以查看成功作为流接收方的批处理消息的状态 [!DNL Platform] 使用 [EXPERIENCE PLATFORMUI](https://platform.adobe.com) 通过转到 **[!UICONTROL 数据集]** 选项卡，单击要流式传输到的数据集，然后检查 **[!UICONTROL 数据集活动]** 选项卡。
+您可以查看使用[Experience PlatformUI](https://platform.adobe.com)成功流式传输到[!DNL Platform]的批处理消息的状态，方法是转到&#x200B;**[!UICONTROL 数据集]**&#x200B;选项卡，单击要流式传输到的数据集，然后检查&#x200B;**[!UICONTROL 数据集活动]**&#x200B;选项卡。
 
-通过流验证的批量消息 [!DNL Platform] 被摄取到 [!DNL Data Lake]. 然后，即可分析或导出消息。
+在[!DNL Platform]上通过流验证的批处理消息将被摄取到[!DNL Data Lake]中。 然后，即可分析或导出消息。
 
 ## 后续步骤
 
-现在您知道如何在单个请求中发送多条消息并验证何时将消息成功引入到目标数据集中，接下来您可以开始将自己的数据流式传输到 [!DNL Platform]. 有关如何从查询和检索提取的数据的概述 [!DNL Platform]，请参见 [[!DNL Data Access]](../../data-access/tutorials/dataset-data.md) 指南。
+现在您知道如何在单个请求中发送多条消息并验证何时将消息成功引入到目标数据集中，就可以开始将自己的数据流式传输到[!DNL Platform]。 有关如何查询和检索[!DNL Platform]中摄取的数据的概述，请参阅[[!DNL Data Access]](../../data-access/tutorials/dataset-data.md)指南。
 
 ## 附录
 
@@ -537,15 +537,15 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
 
 ### 响应代码
 
-下表显示了成功和失败响应消息返回的状态代码。
+下表显示了成功和失败的响应消息返回的状态代码。
 
 | 状态代码 | 描述 |
 | :---: | --- |
-| 207 | 尽管使用“207”作为整体响应状态代码，但收件人需要查阅多状态响应主体的内容，以获得有关方法执行成功或失败的更多信息。 响应代码在成功、部分成功以及失败情况下使用。 |
-| 400 | 请求有问题。 有关更具体的错误消息，请参阅响应正文（例如，消息有效负载缺少必填字段，或消息的xdm格式未知）。 |
-| 401 | 未授权：请求缺少有效的授权标头。 仅对启用身份验证的Inlet返回此值。 |
-| 403 | 未授权：提供的授权令牌无效或已过期。 仅对启用身份验证的Inlet返回此值。 |
-| 413 | 有效负载太大 — 当总有效负载请求大于1MB时引发。 |
+| 207 | 虽然使用“207”作为整体响应状态代码，但收件人需要查阅多状态响应主体的内容以进一步了解方法执行成功或失败的信息。 响应代码在成功、部分成功以及失败情况下使用。 |
+| 400 | 请求有问题。 有关更具体的错误消息，请参阅响应正文（例如，消息有效负载缺少必填字段，或消息未知xdm格式）。 |
+| 401 | 未授权：请求缺少有效的授权标头。 仅对启用了身份验证的Inlet返回此项。 |
+| 403 | 未授权：提供的授权令牌无效或已过期。 仅对启用了身份验证的Inlet返回此项。 |
+| 413 | 有效负载过大 — 当总有效负载请求大于1MB时引发。 |
 | 429 | 指定持续时间内的请求过多。 |
-| 500 | 处理有效负载时出错。 有关更具体的错误消息，请参阅响应正文(例如，未指定消息有效负载架构，或者与中的XDM定义不匹配 [!DNL Platform])。 |
+| 500 | 处理有效负载时出错。 查看更具体的错误消息的响应正文（例如，未指定消息有效负载架构，或与[!DNL Platform]中的XDM定义不匹配）。 |
 | 503 | 服务当前不可用。 客户端应使用指数回退策略至少重试3次。 |

@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # `onBeforeEventSend`
 
-此 `onBeforeEventSend` 回调允许您注册JavaScript函数，该函数可以更改您在将数据发送到Adobe之前发送的数据。 此回调允许您处理 `xdm` 或 `data` 对象，包括添加、编辑或删除元素的功能。 您还可以有条件地完全取消发送数据，例如使用检测到的客户端机器人流量。
+`onBeforeEventSend`回调允许您注册JavaScript函数，该函数可以更改您在将数据发送到Adobe之前发送的数据。 此回调允许您处理`xdm`或`data`对象，包括添加、编辑或删除元素的功能。 您还可以有条件地完全取消发送数据，例如使用检测到的客户端机器人流量。
 
 >[!WARNING]
 >
@@ -19,24 +19,24 @@ ht-degree: 0%
 
 ## 使用Web SDK标记扩展在事件发送回调之前进行配置 {#tag-extension}
 
-选择 **[!UICONTROL 在事件发送回调代码之前提供]** 按钮时间 [配置标记扩展](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md). 此按钮将打开一个模式窗口，您可以在其中插入所需的代码。
+在[配置标记扩展](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md)时，选择&#x200B;**[!UICONTROL 在事件发送回调代码之前提供]**&#x200B;按钮。 此按钮将打开一个模式窗口，您可以在其中插入所需的代码。
 
-1. 登录 [experience.adobe.com](https://experience.adobe.com) 使用您的Adobe ID凭据。
-1. 导航到 **[!UICONTROL 数据收集]** > **[!UICONTROL 标记]**.
+1. 使用您的Adobe ID凭据登录[experience.adobe.com](https://experience.adobe.com)。
+1. 导航到&#x200B;**[!UICONTROL 数据收集]** > **[!UICONTROL 标记]**。
 1. 选择所需的标记属性。
-1. 导航到 **[!UICONTROL 扩展]**，然后单击 **[!UICONTROL 配置]** 在 [!UICONTROL Adobe Experience Platform Web SDK] 卡片。
-1. 向下滚动到 [!UICONTROL 数据收集] 部分，然后选择按钮 **[!UICONTROL 在事件发送回调代码之前提供]**.
-1. 此按钮将打开一个带代码编辑器的模式窗口。 插入所需的代码，然后单击 **[!UICONTROL 保存]** 以关闭模式窗口。
-1. 单击 **[!UICONTROL 保存]** 在扩展设置下，然后发布更改。
+1. 导航到&#x200B;**[!UICONTROL 扩展]**，然后单击[!UICONTROL Adobe Experience Platform Web SDK]卡片上的&#x200B;**[!UICONTROL 配置]**。
+1. 向下滚动到[!UICONTROL 数据收集]部分，然后选择按钮&#x200B;**[!UICONTROL 在事件发送回调代码之前提供]**。
+1. 此按钮将打开一个带代码编辑器的模式窗口。 插入所需的代码，然后单击&#x200B;**[!UICONTROL 保存]**&#x200B;以关闭模式窗口。
+1. 单击扩展设置下的&#x200B;**[!UICONTROL 保存]**，然后发布更改。
 
 在代码编辑器中，您可以访问以下变量：
 
-* **`content.xdm`**：和 [XDM](../sendevent/xdm.md) 事件的有效负荷。
-* **`content.data`**：和 [数据](../sendevent/data.md) 事件的对象有效负荷。
-* **`return true`**：立即退出回调，并使用中的当前值将数据发送到Adobe `content` 对象。
+* **`content.xdm`**：事件的[XDM](../sendevent/xdm.md)有效负载。
+* **`content.data`**：事件的[data](../sendevent/data.md)对象有效负载。
+* **`return true`**：立即退出回调，并使用`content`对象中的当前值将数据发送到Adobe。
 * **`return false`**：立即退出回调并中止向Adobe发送数据。
 
-任何在外部定义的变量 `content` 可使用，但不包含在发送到Adobe的有效负载中。
+在`content`之外定义的任何变量都可以使用，但不包括在发送到Adobe的有效负载中。
 
 ```js
 // Use nullish coalescing assignments to add objects if they don't yet exist
@@ -64,11 +64,11 @@ if (myBotDetector.isABot()) {
 ```
 
 >[!TIP]
->避免返回 `false` 在页面上的第一个事件中。 正在返回 `false` 对于第一个事件，可能会对个性化产生负面影响。
+>避免在页面上的第一个事件中返回`false`。 在第一个事件中返回`false`可能会对个性化产生负面影响。
 
 ## 使用Web SDK JavaScript库在事件发送回调之前进行配置 {#library}
 
-注册 `onBeforeEventSend` 运行 `configure` 命令。 您可以更改 `content` 变量名称为所需的任何值（通过更改内联函数中的参数变量）。
+运行`configure`命令时注册`onBeforeEventSend`回调。 您可以通过更改内联函数中的参数变量，将`content`变量名称更改为所需的任何值。
 
 ```js
 alloy("configure", {

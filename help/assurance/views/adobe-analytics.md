@@ -3,8 +3,8 @@ title: Assurance 中的 Adobe Analytics 视图
 description: 本指南介绍如何将 Adobe Analytics 与 Adobe Experience Platform Assurance 配合使用。
 exl-id: e5cc72b0-d6d6-430b-9321-4835c1f77581
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
-workflow-type: ht
-source-wordcount: '359'
+workflow-type: tm+mt
+source-wordcount: '352'
 ht-degree: 100%
 
 ---

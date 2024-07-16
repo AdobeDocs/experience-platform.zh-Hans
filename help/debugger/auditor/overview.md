@@ -5,31 +5,31 @@ keywords: debugger;experience platform debugger 扩展程序;chrome;扩展程序
 exl-id: 409094f8-a7d9-45f7-ba12-b5e6250abc0f
 source-git-commit: df1a67e4b6f3d2eaeaba2b8d3c9b1588ee0b1461
 workflow-type: tm+mt
-source-wordcount: '363'
+source-wordcount: '368'
 ht-degree: 35%
 
 ---
 
 # Auditor选项卡
 
-在Adobe Experience Platform Debugger中，您可以使用 **[!UICONTROL Auditor]** 选项卡，以在您的页面上运行一系列审核测试。
+在Adobe Experience Platform Debugger中，您可以使用&#x200B;**[!UICONTROL Auditor]**&#x200B;选项卡在页面上运行一系列审核测试。
 
-要使用此功能：
+要使用此功能，请执行以下操作：
 
-1. 选择 **[!UICONTROL Auditor]** 左侧导航栏中。
-1. 选择 **[!UICONTROL 运行Auditor测试]**. 测试完成后，其结果显示在下方。
+1. 在左侧导航中选择&#x200B;**[!UICONTROL Auditor]**。
+1. 选择&#x200B;**[!UICONTROL 运行Auditor测试]**。 测试完成后，其结果显示在下方。
 
-![Auditor选项卡上测试结果的屏幕快照](../images/auditor-results.png)
+![Auditor选项卡上测试结果的屏幕截图](../images/auditor-results.png)
 
 在结果列表上，显示了相应的测试及其结果，并提供了用来解决任意问题的建议。
 
 ## 解释测试结果
 
-每个测试经过加权处理，您的测试得分等于分配的权重。 如果您通过了一个权重为5的测试，那么您将获得5分。
+每个测试都要经过加权，您的测试得分等于分配的权重。 如果您通过了一个权重为5的测试，那么您将获得5分。
 
 | 得分 | 描述 |
 | --- | --- |
-| 0 | 提醒您应注意的问题，但不影响您的得分。 |
+| 0 | 向您发出您应注意的问题，但不影响您的得分。 |
 | 1 | 建议进行优化。 不影响数据准确性。 |
 | 2 | 如果未通过此测试，则意味着您将无法访问Adobe Experience Cloud中的最新功能和修复。 |
 | 3 | 测试效率以及实施是否遵循最佳实践。 |

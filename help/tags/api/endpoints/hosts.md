@@ -4,7 +4,7 @@ description: 了解如何在Reactor API中调用/hosts端点。
 exl-id: 9d0d2a65-49e9-429c-a665-754b59a11cf1
 source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '796'
+source-wordcount: '793'
 ht-degree: 3%
 
 ---
@@ -13,19 +13,19 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->本文档介绍如何在Reactor API中管理主机。 有关标记主机的更多常规信息，请参阅 [主机概述](../../ui/publishing/hosts/hosts-overview.md) 在发布文档中。
+>本文档介绍如何在Reactor API中管理主机。 有关标记主机的更多常规信息，请参阅发布文档中的[主机概述](../../ui/publishing/hosts/hosts-overview.md)指南。
 
-在Reactor API中，主机定义了一个目的地，其中 [生成](./builds.md) 可以交付。
+在Reactor API中，主机定义了可交付[内部版本](./builds.md)的目标。
 
-当Adobe Experience Platform中的标记用户请求生成内部版本时，系统会检查库以确定哪个 [环境](./environments.md) 库应该构建到。 每个环境都与主机有关系，指示将内部版本交付到何处。
+当Adobe Experience Platform中的标记用户请求生成时，系统会检查库以确定应将库生成到哪个[环境](./environments.md)。 每个环境都与主机有关系，指示将内部版本交付到何处。
 
-一台主机只属于一台 [属性](./properties.md)，而资产可以具有多个主机。 在发布之前，资产必须至少有一台主机。
+一个主机只属于一个[属性](./properties.md)，而一个属性可以有多个主机。 在发布之前，资产必须至少有一台主机。
 
 一个主机可由一个资产中的多个环境使用。 资产上通常有一台主机，而该资产上的所有环境都使用同一台主机。
 
 ## 快速入门
 
-本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [快速入门指南](../getting-started.md) 有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续之前，请查看[快速入门指南](../getting-started.md)，以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索主机列表 {#list}
 
@@ -39,13 +39,13 @@ GET /properties/{PROPERTY_ID}/hosts
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 此 `id` 拥有主机的资产的属性。 |
+| `PROPERTY_ID` | 拥有主机的属性的`id`。 |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性过滤列出的主机：<ul><li>`created_at`</li><li>`name`</li><li>`type_of`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [过滤响应](../guides/filtering.md) 以了解更多信息。
+>使用查询参数，可以根据以下属性过滤列出的主机：<ul><li>`created_at`</li><li>`name`</li><li>`type_of`</li><li>`updated_at`</li></ul>有关详细信息，请参阅[筛选响应](../guides/filtering.md)指南。
 
 **请求**
 
@@ -121,7 +121,7 @@ GET /hosts/{HOST_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `HOST_ID` | 此 `id` 要查找的主机的URL。 |
+| `HOST_ID` | 要查找的主机的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -188,13 +188,13 @@ POST /properties/{PROPERTY_ID}/hosts
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 此 `id` 的 [属性](./properties.md) ，则会在其中定义主机。 |
+| `PROPERTY_ID` | 您正在定义主机的[属性](./properties.md)的`id`。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求为指定的属性创建新主机。 调用还会通过 `relationships` 属性。 请参阅指南，网址为 [关系](../guides/relationships.md) 以了解更多信息。
+以下请求为指定的属性创建新主机。 调用还会通过`relationships`属性将主机与现有扩展关联。 有关详细信息，请参阅[关系](../guides/relationships.md)指南。
 
 ```shell
 curl -X POST \
@@ -222,15 +222,15 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes.name` | **（必需）** 易于用户识别的主机名称。 |
-| `attributes.type_of` | **（必需）** 主机的类型。 可以是以下两个选项之一： <ul><li>`akamai` 对象 [Adobe管理的主机](../../ui/publishing/hosts/managed-by-adobe-host.md)</li><li>`sftp` 对象 [SFTP主机](../../ui/publishing/hosts/sftp-host.md)</li></ul> |
+| `attributes.name` | **（必需）**&#x200B;易于用户识别的主机名称。 |
+| `attributes.type_of` | **（必需）**&#x200B;主机的类型。 可以是以下两个选项之一： <ul><li>[Adobe管理的主机](../../ui/publishing/hosts/managed-by-adobe-host.md)的`akamai`</li><li>[SFTP主机](../../ui/publishing/hosts/sftp-host.md)的`sftp`</li></ul> |
 | `attributes.encrypted_private_key` | 用于主机身份验证的可选私钥。 |
-| `attributes.path` | 要附加到 `server` URL。 |
+| `attributes.path` | 要附加到`server` URL的路径。 |
 | `attributes.port` | 一个整数，表示要使用的特定服务器端口。 |
 | `attributes.server` | 服务器的主机URL。 |
-| `attributes.skip_symlinks`<br><br>（仅适用于SFTP主机） | 默认情况下，所有SFTP主机都使用符号链接(symlink)来引用保存到服务器的库内部版本。 但是，并非所有服务器都支持使用符号链接。 包括此属性并将其设置为时 `true`，主机会使用复制操作直接更新生成资产，而不是使用符号链接。 |
+| `attributes.skip_symlinks`<br><br>（仅适用于SFTP主机） | 默认情况下，所有SFTP主机都使用符号链接(symlink)来引用保存到服务器的库内部版本。 但是，并非所有服务器都支持使用符号链接。 当此属性包含并设置为`true`时，主机使用复制操作直接更新生成资产，而不是使用符号链接。 |
 | `attributes.username` | 身份验证的可选用户名。 |
-| `type` | 正在更新的资源类型。 对于此端点，值必须为 `hosts`. |
+| `type` | 正在更新的资源类型。 对于此终结点，值必须为`hosts`。 |
 
 {style="table-layout:auto"}
 
@@ -290,13 +290,13 @@ PATCH /hosts/{HOST_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `HOST_ID` | 此 `id` 要更新的主机的ID。 |
+| `HOST_ID` | 要更新的主机的`id`。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求将更新 `name` 对于现有主机。
+以下请求更新现有主机的`name`。
 
 ```shell
 curl -X PATCH \
@@ -319,8 +319,8 @@ curl -X PATCH \
 | 属性 | 描述 |
 | --- | --- |
 | `attributes` | 一个对象，其属性表示要为主机更新的属性。 可以为主机更新以下属性： <ul><li>`encrypted_private_key`</li><li>`name`</li><li>`path`</li><li>`port`</li><li>`server`</li><li>`type_of`</li><li>`username`</li></ul> |
-| `id` | 此 `id` 要更新的主机的ID。 这应该匹配 `{HOST_ID}` 请求路径中提供的值。 |
-| `type` | 正在更新的资源类型。 对于此端点，值必须为 `hosts`. |
+| `id` | 要更新的主机的`id`。 这应当与在请求路径中提供的`{HOST_ID}`值匹配。 |
+| `type` | 正在更新的资源类型。 对于此终结点，值必须为`hosts`。 |
 
 {style="table-layout:auto"}
 
@@ -376,7 +376,7 @@ DELETE /hosts/{HOST_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `HOST_ID` | 此 `id` 要删除的主机的ID。 |
+| `HOST_ID` | 要删除的主机的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -396,13 +396,13 @@ curl -X DELETE \
 
 ## 检索主机的相关资源 {#related}
 
-以下调用演示了如何检索主机的相关资源。 时间 [查找主机](#lookup)，这些关系列在 `relationships` 属性。
+以下调用演示了如何检索主机的相关资源。 当[查找主机](#lookup)时，这些关系将列在`relationships`属性下。
 
-请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
+有关Reactor API中关系的详细信息，请参阅[关系指南](../guides/relationships.md)。
 
 ### 查找主机的相关属性 {#property}
 
-您可以通过附加来查找拥有主机的资产 `/property` 到查找请求的路径。
+您可以通过在查找请求的路径中附加`/property`来查找拥有主机的属性。
 
 **API格式**
 
@@ -412,7 +412,7 @@ GET /hosts/{HOST_ID}/property
 
 | 参数 | 描述 |
 | --- | --- |
-| `{HOST_ID}` | 此 `id` 要查找其属性的主机的ID。 |
+| `{HOST_ID}` | 要查找其属性的主机的`id`。 |
 
 {style="table-layout:auto"}
 

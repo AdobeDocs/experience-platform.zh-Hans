@@ -1,16 +1,16 @@
 ---
 keywords: Experience Platform；主页；热门主题；流服务；流服务API；源；源
-title: 使用流服务API筛选源的行级数据
+title: 使用流服务API筛选Source的行级数据
 description: 本教程介绍了有关如何使用流服务API在源级别过滤数据的步骤
 exl-id: 224b454e-a079-4df3-a8b2-1bebfb37d11f
 source-git-commit: b0e2fc4767fb6fbc90bcdd3350b3add965988f8f
 workflow-type: tm+mt
-source-wordcount: '782'
-ht-degree: 3%
+source-wordcount: '778'
+ht-degree: 2%
 
 ---
 
-# 使用以下方式筛选源的行级数据 [!DNL Flow Service] API
+# 使用[!DNL Flow Service] API筛选源的行级数据
 
 >[!IMPORTANT]
 >
@@ -21,18 +21,18 @@ ht-degree: 3%
 >* [Salesforce](../../connectors/crm/salesforce.md)
 >* [Snowflake](../../connectors/databases/snowflake.md)
 
-本教程提供了有关如何使用为源筛选行级数据的步骤。 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+本教程提供了有关如何使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)筛选源的行级数据的步骤。
 
 ## 快速入门
 
 本教程要求您实际了解Adobe Experience Platform的以下组件：
 
-* [源](../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下内容构建、标记和增强传入数据： [!DNL Platform] 服务。
-* [沙盒](../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个文件夹进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [源](../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。
+* [沙盒](../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ### 使用平台API
 
-有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../landing/api-guide.md).
+有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../landing/api-guide.md)指南。
 
 ## 筛选源数据
 
@@ -42,7 +42,7 @@ ht-degree: 3%
 
 在使用API筛选源的行级数据之前，必须首先检索源的连接规范详细信息，以确定特定源支持的运算符和语言。
 
-GET要检索给定源的连接规范，请向 `/connectionSpecs` 的端点 [!DNL Flow Service] API，同时提供源的属性名称作为查询参数的一部分。
+要检索给定源的连接规范，请向[!DNL Flow Service] API的`/connectionSpecs`端点发出GET请求，同时提供源的属性名称作为查询参数的一部分。
 
 **API格式**
 
@@ -52,11 +52,11 @@ GET /connectionSpecs/{QUERY_PARAMS}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{QUERY_PARAMS}` | 用于筛选结果的可选查询参数。 您可以检索 [!DNL Google BigQuery] 连接规范，应用 `name` 属性和指定 `"google-big-query"` 在搜索中。 |
+| `{QUERY_PARAMS}` | 用于筛选结果的可选查询参数。 您可以通过应用`name`属性并在搜索中指定`"google-big-query"`来检索[!DNL Google BigQuery]连接规范。 |
 
 **请求**
 
-以下请求检索的连接规范 [!DNL Google BigQuery].
+以下请求检索[!DNL Google BigQuery]的连接规范。
 
 ```shell
 curl -X GET \
@@ -69,7 +69,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回的连接规范 [!DNL Google BigQuery]，包括其支持的查询语言和逻辑运算符的信息。
+成功的响应返回[!DNL Google BigQuery]的连接规范，包括有关其支持的查询语言和逻辑运算符的信息。
 
 >[!NOTE]
 >
@@ -121,14 +121,14 @@ curl -X GET \
 | `>` | 按属性是否大于提供的值筛选。 |
 | `<=` | 根据属性是否小于或等于提供的值来进行筛选。 |
 | `>=` | 按属性是否大于或等于提供的值筛选。 |
-| `like` | 在中使用的筛选器 `WHERE` 用于搜索指定模式的子句。 |
+| `like` | 通过在`WHERE`子句中使用来搜索指定模式的筛选器。 |
 | `in` | 按属性是否在指定范围内进行筛选。 |
 
 {style="table-layout:auto"}
 
 ### 指定摄取的筛选条件
 
-在确定了源支持的逻辑运算符和查询语言后，可以使用配置文件查询语言(PQL)指定要应用于源数据的过滤条件。
+在确定了源支持的逻辑运算符和查询语言后，可以使用Profile Query Language (PQL)指定要应用于源数据的筛选条件。
 
 在下面的示例中，条件仅应用于与作为参数列出的节点类型所提供的值相等的数据。
 
@@ -155,7 +155,7 @@ curl -X GET \
 
 ### 预览数据
 
-您可以通过向以下网站发出GET请求来预览数据： `/explore` 的端点 [!DNL Flow Service] API，同时提供 `filters` 作为查询参数的一部分并在中指定PQL输入条件 [!DNL Base64].
+您可以预览数据，方法是向[!DNL Flow Service] API的`/explore`端点发出GET请求，同时提供`filters`作为查询参数的一部分，并在[!DNL Base64]中指定PQL输入条件。
 
 **API格式**
 
@@ -167,7 +167,7 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=table&object={TABLE_PAT
 | --- | --- |
 | `{BASE_CONNECTION_ID}` | 源的基本连接ID。 |
 | `{TABLE_PATH}` | 要检查的表的path属性。 |
-| `{FILTERS}` | 您编码的PQL过滤条件 [!DNL Base64]. |
+| `{FILTERS}` | 您的PQL筛选条件以[!DNL Base64]编码。 |
 
 **请求**
 
@@ -330,7 +330,7 @@ curl -X GET \
 
 ### 为过滤的数据创建源连接
 
-要创建源连接并摄取过滤的数据，请向发出POST请求 `/sourceConnections` 端点，同时将筛选条件作为正文参数的一部分提供。
+要创建源连接并摄取过滤的数据，请向`/sourceConnections`端点发出POST请求，同时将筛选条件作为正文参数的一部分提供。
 
 **API格式**
 
@@ -340,7 +340,7 @@ POST /sourceConnections
 
 **请求**
 
-以下请求创建一个源连接以从中摄取数据 `test1.fasTestTable` 位置 `city` = `DDN`.
+以下请求创建一个源连接以从`test1.fasTestTable`中摄取数据，其中`city` = `DDN`。
 
 ```shell
 curl -X POST \
@@ -387,7 +387,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应将返回唯一标识符(`id`)。
+成功的响应返回新创建的源连接的唯一标识符(`id`)。
 
 ```json
 {
@@ -402,7 +402,7 @@ curl -X POST \
 
 ### 奇异条件
 
-您可以省略初始的 `fnApply` 适用于只需要一个条件的方案。
+对于只需要一个条件的方案，可以省略初始`fnApply`。
 
 ```json
 {
@@ -425,9 +425,9 @@ curl -X POST \
 }
 ```
 
-### 使用 `in` 运算符
+### 使用`in`运算符
 
-有关运算符的示例，请参阅下面的有效负载示例 `in`.
+有关运算符`in`的示例，请参阅下面的示例有效负载。
 
 ```json
 {
@@ -459,9 +459,9 @@ curl -X POST \
 }
 ```
 
-### 使用 `isNull` 运算符
+### 使用`isNull`运算符
 
-有关运算符的示例，请参阅下面的有效负载示例 `isNull`.
+有关运算符`isNull`的示例，请参阅下面的示例有效负载。
 
 ```json
 {
@@ -480,9 +480,9 @@ curl -X POST \
 }
 ```
 
-### 使用 `NOT` 运算符
+### 使用`NOT`运算符
 
-有关运算符的示例，请参阅下面的有效负载示例 `NOT`.
+有关运算符`NOT`的示例，请参阅下面的示例有效负载。
 
 ```json
 {

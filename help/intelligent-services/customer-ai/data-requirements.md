@@ -8,8 +8,8 @@ description: 进一步了解客户人工智能使用的所需事件、输入和�
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
 source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
 workflow-type: tm+mt
-source-wordcount: '2484'
-ht-degree: 3%
+source-wordcount: '2505'
+ht-degree: 1%
 
 ---
 
@@ -26,9 +26,9 @@ ht-degree: 3%
 
 2. 排定用例优先级：哪一项是业务的最高优先级？
 
-3. 在Customer AI中构建模型：观看此视频 [快速教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/intelligent-services/configure-customer-ai.html) 并参阅我们的 [UI指南](../customer-ai/user-guide/configure.md) 用于构建模型的逐步过程。
+3. 在Customer AI中构建模型：观看此[快速教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/intelligent-services/configure-customer-ai.html)并参阅我们的[UI指南](../customer-ai/user-guide/configure.md)，了解构建模型的分步流程。
 
-4. [生成区段](../customer-ai/user-guide/create-segment.md) 使用模型结果。
+4. [使用模型结果生成区段](../customer-ai/user-guide/create-segment.md)。
 
 5. 根据这些区段采取有针对性的业务行动。 监控结果并反复执行要改进的操作。
 
@@ -36,10 +36,10 @@ ht-degree: 3%
 
 | 步骤 | 定义 | 示例 |
 | ---- | ------ | ------- |
-| 设置 | 指定有关模型的基本信息。 | **名称**：铅笔购买倾向模型 <br> **模型类型**：转化 |
-| 选择数据 | 指定用于构建模型的数据集。 | **数据集**：Adobe Analytics数据集 <br> **标识**：确保将每个数据集的标识列设置为公共标识。 |
-| 定义目标 | 定义目标、符合条件的群体、自定义事件和用户档案属性。 | **预测目标**：选择 `commerce.purchases.value` 等于铅笔 <br> **结果窗口**：30天。 |
-| 设置选项 | 设置模型刷新计划并为配置文件启用得分 | **计划**：每周 <br> **为配置文件启用**：要使模型输出用于分段，必须启用此项。 |
+| 设置 | 指定有关模型的基本信息。 | **名称**：铅笔购买倾向模型<br> **模型类型**：转换 |
+| 选择数据 | 指定用于构建模型的数据集。 | **数据集**： Adobe Analytics数据集<br> **标识**：确保将每个数据集的标识列设置为公共标识。 |
+| 定义目标 | 定义目标、符合条件的群体、自定义事件和用户档案属性。 | **预测目标**：选择`commerce.purchases.value`等于铅笔<br> **结果窗口**： 30天。 |
+| 设置选项 | 设置模型刷新计划并为配置文件启用得分 | **计划**：每周<br> **为配置文件**&#x200B;启用：必须为要用于分段中的模型输出启用此项。 |
 
 ## 数据概述 {#data-overview}
 
@@ -47,33 +47,33 @@ ht-degree: 3%
 
 客户人工智能通过分析以下数据集来预测客户流失（客户何时可能停止使用产品）或转化（客户何时可能购买）倾向分数：
 
-- Adobe Analytics数据使用 [Analytics源连接器](../../sources/tutorials/ui/create/adobe-applications/analytics.md)
-- Adobe Audience Manager数据使用 [Audience Manager源连接器](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md)
+- 使用[Analytics源连接器](../../sources/tutorials/ui/create/adobe-applications/analytics.md)的Adobe Analytics数据
+- 使用[Audience Manager源连接器](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md)的Adobe Audience Manager数据
 - [体验事件数据集](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/experienceevent.html)
 - [使用者体验事件数据集](https://experienceleague.adobe.com/docs/experience-platform/intelligent-services/data-preparation.html#cee-schema)
 
-如果每个数据集共享相同的身份类型（命名空间）（如ECID），则可以添加来自不同来源的多个数据集。 有关添加多个数据集的更多信息，请访问 [Customer AI用户指南](../customer-ai/user-guide/configure.md).
+如果每个数据集共享相同的身份类型（命名空间）（如ECID），则可以添加来自不同来源的多个数据集。 有关添加多个数据集的更多信息，请访问[客户人工智能用户指南](../customer-ai/user-guide/configure.md)。
 
 >[!IMPORTANT]
 >
->源连接器最多需要4周才能回填数据。 如果您最近设置了连接器，则应验证数据集是否具有客户人工智能所需的最小数据长度。 请查阅 [历史数据](#data-requirements) 部分，以验证您是否有足够的预测目标数据。
+>Source连接器最多需要四周时间来回填数据。 如果您最近设置了连接器，则应验证数据集是否具有客户人工智能所需的最小数据长度。 请查看[历史数据](#data-requirements)部分，以验证您的预测目标是否有足够的数据。
 
 下表概述了本文档中使用的一些常用术语：
 
 | 搜索词 | 定义 |
 | --- | --- |
-| [Experience Data Model (XDM)](../../xdm/home.md) | XDM是一个基础框架，它允许由Adobe Experience Platform提供支持的Adobe Experience Cloud在正确的时间通过正确的渠道向正确的人员传递正确的信息。 Platform使用XDM系统以特定方式组织数据，使其更易于用于Platform服务。 |
-| [XDM 架构](../../xdm/schema/composition.md) | Experience Platform 会使用架构，以便以可重用的一致方式描述数据结构。通过在整个系统中以一致的方式定义数据，更容易保留含义并因此从数据中获取价值。在将数据引入Platform之前，必须组合模式以描述数据的结构并对每个字段中可以包含的数据类型提供约束。 架构由一个基本XDM类以及零个或多个架构字段组组成。 |
-| [XDM类](../../xdm/schema/field-constraints.md) | 所有XDM架构都描述了可分类为 `Experience Event`. 架构的数据行为由架构的类定义，该类在首次创建架构时分配给架构。 XDM类描述架构必须包含的最小属性数，以便表示特定数据行为。 |
-| [字段组](../../xdm/schema/composition.md) | 定义架构中一个或多个字段的组件。 字段组强制实施其字段在架构层次结构中的显示方式，因此它们包含的每个架构都具有相同的结构。 字段组仅与由其标识的特定类兼容 `meta:intendedToExtend` 属性。 |
+| [体验数据模型(XDM)](../../xdm/home.md) | XDM是一个基础框架，它允许由Adobe Experience Platform提供支持的Adobe Experience Cloud在正确的时间通过正确的渠道向正确的人员传递正确的信息。 Platform使用XDM系统以特定方式组织数据，使其更易于用于Platform服务。 |
+| [XDM架构](../../xdm/schema/composition.md) | Experience Platform使用架构以一致且可重用的方式描述数据结构。 通过在系统中以一致的方式定义数据，更容易保留含义并因此从数据中获取价值。 在将数据引入Platform之前，必须组合模式以描述数据的结构并对每个字段中可以包含的数据类型提供约束。 架构由一个基本XDM类以及零个或多个架构字段组组成。 |
+| [XDM类](../../xdm/schema/field-constraints.md) | 所有XDM架构都描述了可分类为`Experience Event`的数据。 架构的数据行为由架构的类定义，该类在首次创建架构时分配给架构。 XDM类描述架构必须包含的最小属性数，以便表示特定数据行为。 |
+| [字段组](../../xdm/schema/composition.md) | 定义架构中一个或多个字段的组件。 字段组强制实施其字段在架构层次结构中的显示方式，因此它们包含的每个架构都具有相同的结构。 字段组仅与由其`meta:intendedToExtend`属性标识的特定类兼容。 |
 | [数据类型](../../xdm/schema/composition.md) | 还可以为架构提供一个或多个字段的组件。 但是，与字段组不同，数据类型不受特定类的约束。 这使得数据类型成为描述通用数据结构的更灵活的选项，这些结构可以在具有不同类的多个架构中重用。 CEE和Adobe Analytics架构均支持本文档中概述的数据类型。 |
 | [实时客户资料](../../profile/home.md) | Real-time Customer Profile为有针对性的个性化体验管理提供了一个集中式客户配置文件。 每个用户档案都包含跨所有系统汇总的数据，以及在您用于Experience Platform的任何系统中发生的涉及个人事件的可操作时间戳帐户。 |
 
 ## 客户人工智能输入数据 {#customer-ai-input-data}
 
-对于输入数据集(如Adobe Analytics和Adobe Audience Manager)，默认情况下，源连接器在连接过程中直接映射这些标准字段组（Commerce、Web、Application和Search）中的事件。 下表显示了Customer AI的默认标准字段组中的事件字段。
+对于输入数据集(如Adobe Analytics和Adobe Audience Manager)，默认情况下，源连接器在连接过程中直接映射这些标准字段组(Commerce、Web、应用程序和搜索)中的事件。 下表显示了Customer AI的默认标准字段组中的事件字段。
 
-有关映射Adobe Analytics数据或Audience Manager数据的更多信息，请访问Analytics字段映射或Audience Manager [字段映射指南](../../sources/connectors/adobe-applications/mapping/audience-manager.md).
+有关映射Adobe Analytics数据或Audience Manager数据的详细信息，请访问Analytics字段映射或Audience Manager[字段映射指南](../../sources/connectors/adobe-applications/mapping/audience-manager.md)。
 
 您可以将体验事件或使用者体验事件XDM架构用于未通过以上连接器之一填充的输入数据集。 可在架构创建过程中添加其他XDM字段组。 字段组可由标准字段组或自定义字段组等Adobe提供，这与平台中的数据表示形式匹配。
 
@@ -89,13 +89,13 @@ ht-degree: 3%
 >
 >如果您使用的是Adobe Analytics或Adobe Audience Manager数据，则架构会使用捕获数据所需的标准事件自动创建。 如果您创建自己的自定义EE架构来捕获数据，则需要考虑捕获数据所需的字段组。
 
-默认情况下，客户人工智能使用四个标准字段组中的事件：Commerce、Web、Application和Search。 无需在下面列出的标准字段组中为每个事件提供数据，但在某些情况下需要某些事件。 如果标准字段组中有任何可用事件，建议将其包含在架构中。 例如，如果要创建用于预测购买事件的客户人工智能模型，则从商务和网页详细信息字段组获取数据会很有用。
+默认情况下，客户人工智能使用四个标准字段组中的事件：Commerce、Web、Application和Search。 无需在下面列出的标准字段组中为每个事件提供数据，但在某些情况下需要某些事件。 如果标准字段组中有任何可用事件，建议将其包含在架构中。 例如，如果要创建用于预测购买事件的客户人工智能模型，则从Commerce和网页详细信息字段组获得数据会很有用。
 
-要在Platform UI中查看字段组，请选择 **[!UICONTROL 架构]** 选项卡，然后选择 **[!UICONTROL 字段组]** 选项卡。
+要在Platform UI中查看字段组，请选择左边栏上的&#x200B;**[!UICONTROL 架构]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 字段组]**&#x200B;选项卡。
 
 | 字段组 | 事件类型 | XDM字段路径 |
 | --- | --- | --- |
-| [!UICONTROL 商业详细信息] | 订单 | <li> `commerce.order.purchaseID` </li> <li> `productListItems.SKU` </li> |
+| [!UICONTROL Commerce详细信息] | 订单 | <li> `commerce.order.purchaseID` </li> <li> `productListItems.SKU` </li> |
 |  | productListView | <li> `commerce.productListViews.value` </li> <li> `productListItems.SKU` </li> |
 |  | 结账 | <li> `commerce.checkouts.value` </li> <li> `productListItems.SKU` </li> |
 |  | 购买 | <li> `commerce.purchases.value` </li> <li> `productListItems.SKU` </li> |
@@ -113,15 +113,15 @@ ht-degree: 3%
 |  | applicationUpgrade | <li> application.upgrades.value </li> <li> `application.name` </li> |
 | [!UICONTROL 搜索详细信息] | 搜索 | `search.keywords` |
 
-此外，Customer AI可以使用订阅数据构建更好的流失模型。 每个用户档案都需要订阅数据，请使用 [[!UICONTROL 订阅]](../../xdm/data-types/subscription.md) 数据类型格式。 大多数字段是可选的，但是，对于最佳流失模型，强烈建议您为尽可能多的字段提供数据，例如 `startDate`， `endDate`以及任何其他相关详细信息。 请联系您的帐户团队以获取有关此功能的更多支持。
+此外，Customer AI可以使用订阅数据构建更好的流失模型。 使用[[!UICONTROL 订阅]](../../xdm/data-types/subscription.md)数据类型格式的每个配置文件都需要订阅数据。 大多数字段是可选的，但是，对于最佳流失模型，强烈建议您为尽可能多的字段（如`startDate`、`endDate`）提供数据，以及任何其他相关详细信息。 请联系您的帐户团队以获取有关此功能的更多支持。
 
 ### 添加自定义事件和配置文件属性 {#add-custom-events}
 
-如果您希望除默认信息之外还包含其他信息 [标准事件字段](#standard-events) 由Customer AI使用，您可以使用 [自定义事件配置](./user-guide/configure.md#custom-events) 以扩充模型使用的数据。
+如果除了客户人工智能使用的默认[标准事件字段](#standard-events)之外，您还希望包含其他信息，则可以使用[自定义事件配置](./user-guide/configure.md#custom-events)来增加模型使用的数据。
 
 #### 何时使用自定义事件
 
-当在数据集选择步骤中选择的数据集包含 *无* 客户人工智能使用的默认事件字段的内容。 客户人工智能需要有关结果以外的至少一个用户行为事件的信息。
+当在数据集选择步骤中选择的数据集包含&#x200B;*none*&#x200B;客户人工智能使用的默认事件字段时，需要自定义事件。 客户人工智能需要有关结果以外的至少一个用户行为事件的信息。
 
 自定义事件有助于：
 
@@ -143,9 +143,9 @@ ht-degree: 3%
 
 | 行业 | 自定义事件 |
 | --- | --- |
-| 零售 | 店内交易<br>注册俱乐部卡<br>剪辑移动优惠券。 |
-| 娱乐 | 购买季成员资格 <br> 流视频。 |
-| 招待 | 进行餐厅预订 <br> 购买会员积分。 |
+| 零售 | 店内交易<br>注册会员卡<br>剪辑移动优惠券。 |
+| 娱乐 | 购买季成员资格<br>流视频。 |
+| 招待 | 进行餐厅预订<br>购买会员积分。 |
 | 旅游 | 添加已知的旅行者信息购买英里数。 |
 | 通信 | 升级/降级/取消计划。 |
 
@@ -159,7 +159,7 @@ ht-degree: 3%
 
 以下示例演示了如何使用一个简单的公式，该公式可帮助您确定所需的最小数据量。 如果您拥有的数据多于最低要求，则您的模型可能会提供更准确的结果。 如果少于所需的最小值，则模型将失败，因为没有足够的数据进行模型训练。
 
-**公式**:
+**公式**：
 
 要确定系统中现有数据所需的最短持续时间，请执行以下操作：
 
@@ -175,7 +175,7 @@ ht-degree: 3%
 >
 >30是符合条件的群体所需的最小天数。 如果未提供，则默认为45天。
 
-**示例**:
+**示例**：
 
 - 您想要预测客户是否可能在接下来的30天内为过去60天内有某个Web活动的客户购买手表。
 
@@ -185,7 +185,7 @@ ht-degree: 3%
 
    - 所需数据= 60天+ 30天= 90天
 
-- 您要预测用户是否可能在未来7天内购买手表 **不含** 提供明确符合条件的群体。 在这种情况下，符合条件的群体将默认为“过去45天内有活动的人”，并且结果窗口为7天。
+- 您想要预测用户是否可能在&#x200B;**后7天内购买手表而不提供明确的合格群体**。 在这种情况下，符合条件的群体将默认为“过去45天内有活动的人”，并且结果窗口为7天。
 
    - 资格回顾时间范围= 45天
 
@@ -207,9 +207,9 @@ ht-degree: 3%
 
 ## Customer AI输出数据 {#customer-ai-output-data}
 
-客户人工智能为被认为符合条件的个人资料生成多个属性。 根据您配置的内容，可通过两种方式使用得分（输出）。 如果您拥有启用了实时客户配置文件的数据集，则可以使用 [区段生成器](../../segmentation/ui/segment-builder.md). 如果您没有启用配置文件的数据集，您可以 [下载客户人工智能输出](./user-guide/download-scores.md) 数据湖中可用的数据集。
+客户人工智能为被认为符合条件的个人资料生成多个属性。 根据您配置的内容，可通过两种方式使用得分（输出）。 如果您拥有启用实时客户配置文件的数据集，则可以在[区段生成器](../../segmentation/ui/segment-builder.md)中使用来自实时客户配置文件的见解。 如果您没有启用配置文件的数据集，您可以[下载可在数据湖中使用的客户人工智能输出](./user-guide/download-scores.md)数据集。
 
-您可以在Platform中找到输出数据集 **数据集** 工作区。 所有客户人工智能输出数据集都以名称开头 **客户人工智能分数 — NAME_OF_APP**. 同样，所有客户人工智能输出架构都以名称开头 **客户人工智能架构 — Name_of_app**.
+您可以在Platform **数据集**&#x200B;工作区中找到输出数据集。 所有客户人工智能输出数据集都以名称&#x200B;**客户人工智能分数 — NAME_OF_APP**&#x200B;开头。 同样，所有客户人工智能输出架构都以名称&#x200B;**客户人工智能架构 — Name_of_app**&#x200B;开头。
 
 ![客户人工智能中输出数据集的名称](./images/user-guide/cai-schema-name-of-app.png)
 
@@ -226,4 +226,4 @@ ht-degree: 3%
 
 ## 后续步骤 {#next-steps}
 
-准备数据并确保所有凭据和架构均已就绪后，请参阅 [配置客户人工智能实例](./user-guide/configure.md) 指南，它将指导您完成创建客户人工智能实例的分步教程。
+准备数据并确保所有凭据和架构均已就绪后，请参阅[配置客户人工智能实例](./user-guide/configure.md)指南，该指南将指导您完成创建客户人工智能实例的分步教程。

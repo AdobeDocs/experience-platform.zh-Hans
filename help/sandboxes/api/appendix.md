@@ -14,15 +14,15 @@ ht-degree: 1%
 
 # 沙盒API指南附录
 
-本文档提供有关使用 [!DNL Sandbox] API。
+本文档提供有关使用[!DNL Sandbox] API的补充信息。
 
 ## 使用查询参数 {#query}
 
-此 [[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox) 在列出沙盒时，支持使用查询参数来页面和筛选结果。
+[[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox)支持在列出沙盒时使用查询参数来页面和筛选结果。
 
 >[!NOTE]
 >
->此 `limit` 和 `offset` 查询参数必须一起指定。 如果您只指定一个，则API将返回错误。 如果指定“无”，则缺省限制为50，偏移为0。
+>必须同时指定`limit`和`offset`查询参数。 如果您只指定一个，则API将返回错误。 如果指定“无”，则缺省限制为50，偏移为0。
 
 | 参数 | 描述 |
 | --- | --- |

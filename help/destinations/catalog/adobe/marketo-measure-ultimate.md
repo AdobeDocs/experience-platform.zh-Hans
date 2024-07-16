@@ -40,8 +40,8 @@ Marketo Measure（前身为Bizible）让营销人员能够洞悉哪些营销工�
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 数据集导出]** | 您正在导出未按受众兴趣或资格进行分组或构建的原始数据集。 详细了解 [数据集导出](/help/destinations/destination-types.md#dataset-export-destinations). |
-| 导出频率 | **[!UICONTROL 批次]** | 此批处理目标每两小时会将文件导出到Marketo Measure平台。 详细了解 [计划数据集导出](/help/destinations/ui/export-datasets.md#scheduling). |
+| 导出类型 | **[!UICONTROL 数据集导出]** | 您正在导出未按受众兴趣或资格进行分组或构建的原始数据集。 阅读有关[数据集导出](/help/destinations/destination-types.md#dataset-export-destinations)的更多信息。 |
+| 导出频率 | **[!UICONTROL 批次]** | 此批处理目标每两小时会将文件导出到Marketo Measure平台。 阅读有关[计划数据集导出](/help/destinations/ui/export-datasets.md#scheduling)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -49,9 +49,9 @@ Marketo Measure（前身为Bizible）让营销人员能够洞悉哪些营销工�
 
 >[!IMPORTANT]
 > 
->要连接到目标，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 管理和激活数据集目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理和激活数据集目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
-要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写以下部分中列出的字段。
+要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写以下部分中列出的字段。
 
 ### 填写目标详细信息 {#destination-details}
 
@@ -60,26 +60,26 @@ Marketo Measure（前身为Bizible）让营销人员能够洞悉哪些营销工�
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
 
-![Marketo Measure目标的连接到目标工作流。](/help/destinations/assets/catalog/adobe/marketo-measure-ultimate/marketo-measure-connect-to-destination.png)
+![Marketo Measure目标的“连接到目标”工作流。](/help/destinations/assets/catalog/adobe/marketo-measure-ultimate/marketo-measure-connect-to-destination.png)
 
 ### 启用警报 {#enable-alerts}
 
-您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅以下内容中的指南： [使用UI订阅目标警报](../../ui/alerts.md).
+您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
 
 ## 将数据集导出到此目标 {#export-datasets}
 
 >[!IMPORTANT]
 > 
->要激活数据，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 管理和激活数据集目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理和激活数据集目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
-阅读 [导出数据集](/help/destinations/ui/export-datasets.md) 有关将数据集导出到此目标的详细说明，请参阅教程。
+有关将数据集导出到此目标的详细说明，请阅读[导出数据集](/help/destinations/ui/export-datasets.md)教程。
 
 ## 验证数据导出 {#exported-data}
 
-要验证是否成功导出数据集，您可以检查数据集是否已成功导出到 [Snowflake数据仓库](https://experienceleague.adobe.com/docs/marketo-measure/using/marketo-measure-data-warehouse/data-warehouse-access-reader-account.html).
+要验证是否成功导出数据集，您可以检查数据集是否已成功导出到[Snowflake数据仓库](https://experienceleague.adobe.com/docs/marketo-measure/using/marketo-measure-data-warehouse/data-warehouse-access-reader-account.html)。
 
 ## 数据使用和治理 {#data-usage-governance}
 
-全部 [!DNL Adobe Experience Platform] 目标在处理您的数据时符合数据使用策略。 有关如何执行操作的详细信息 [!DNL Adobe Experience Platform] 实施数据管理，请阅读 [数据管理概述](/help/data-governance/home.md).
+在处理您的数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据治理的详细信息，请阅读[数据治理概述](/help/data-governance/home.md)。

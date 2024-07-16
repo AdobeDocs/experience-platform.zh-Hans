@@ -20,7 +20,7 @@ ht-degree: 5%
 
 数据卫生API允许您以编程方式更正或删除客户在Adobe Experience Platform中存储的个人数据。
 
-您可以通过与相同的根路径访问API [PRIVACY SERVICEAPI](../../privacy-service/api/overview.md)： `https://platform.adobe.io/data/core/privacy/`
+您可以通过与[Privacy ServiceAPI](../../privacy-service/api/overview.md)相同的根路径访问该API： `https://platform.adobe.io/data/core/privacy/`
 
 ## 快速入门
 
@@ -28,7 +28,7 @@ ht-degree: 5%
 
 ### 收集所需标头的值
 
-要调用数据卫生API，您必须首先收集身份验证凭据。 这些是用于访问Privacy ServiceAPI的相同凭据。 请参阅 [API概述](./overview.md#getting-started) 为数据卫生API的每个所需标头生成值，如下所示：
+要调用数据卫生API，您必须首先收集身份验证凭据。 这些是用于访问Privacy ServiceAPI的相同凭据。 请参阅[API概述](./overview.md#getting-started)，为数据卫生API的每个所需标头生成值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
@@ -40,7 +40,7 @@ ht-degree: 5%
 
 ### 正在读取示例 API 调用
 
-本文档提供了一个示例API调用，用于演示如何格式化请求。 有关文档中用于示例API调用的惯例的信息，请参阅 [如何读取示例API调用](../../landing/api-guide.md#sample-api) 《Experience PlatformAPI快速入门指南》中的。
+本文档提供了一个示例API调用，用于演示如何格式化请求。 有关示例API调用文档中使用的约定的信息，请参阅Experience PlatformAPI快速入门指南中有关[如何读取示例API调用](../../landing/api-guide.md#sample-api)的部分。
 
 ## 创建删除作业
 
@@ -54,7 +54,7 @@ POST /jobs
 
 **请求**
 
-请求有效负载的结构与 [删除Privacy ServiceAPI中的请求](../../privacy-service/api/privacy-jobs.md#access-delete). 它包括 `users` 数组，其对象表示要删除其数据的用户。
+请求有效负载的结构与Privacy ServiceAPI](../../privacy-service/api/privacy-jobs.md#access-delete)中的[delete请求的结构类似。 它包含一个`users`数组，其对象表示要删除其数据的用户。
 
 ```shell
 curl -X POST \
@@ -108,8 +108,8 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `companyContexts` | 包含您组织的身份验证信息的数组。 它必须包含具有以下属性的单个对象： <ul><li>`namespace`：必须设置为 `imsOrgID`.</li><li>`value`：您的组织ID。 此值与 `x-gw-ims-org-id` 标题。</li></ul> |
-| `users` | 一个数组，其中包含您要删除其信息的至少一个用户的集合。 每个用户对象包含以下信息： <ul><li>`key`：用于限定响应数据中各个作业ID的用户的标识符。 最好为此值选择一个唯一的、易于识别的字符串，以便稍后可以引用或查找。</li><li>`action`：一个数组，列出了要对用户数据执行的所需操作。 必须包含单个字符串值： `delete`.</li><li>`userIDs`：用户的身份集合。 单个用户可以拥有的身份数限制为9个。 每个标识都包含以下属性： <ul><li>`namespace`：和 [身份命名空间](../../identity-service/features/namespaces.md) 与ID关联。 这可以是 [标准命名空间](../../privacy-service/api/appendix.md#standard-namespaces) 可被Platform识别，也可以是由您的组织定义的自定义命名空间。 使用的命名空间类型必须反映在 `type` 属性。</li><li>`value`：身份值。</li><li>`type`：必须设置为 `standard` 如果使用全局识别的命名空间，或者 `custom` 如果您使用的是组织定义的命名空间。</li></ul></li></ul> |
+| `companyContexts` | 包含您组织的身份验证信息的数组。 它必须包含具有以下属性的单个对象： <ul><li>`namespace`：必须设置为`imsOrgID`。</li><li>`value`：您的组织ID。 此值与`x-gw-ims-org-id`标头中提供的值相同。</li></ul> |
+| `users` | 一个数组，其中包含您要删除其信息的至少一个用户的集合。 每个用户对象包含以下信息： <ul><li>`key`：用于限定响应数据中各个作业ID的用户的标识符。 最好为此值选择一个唯一的、易于识别的字符串，以便稍后可以引用或查找。</li><li>`action`：一个数组，列出了要对用户数据执行的所需操作。 必须包含单个字符串值： `delete`。</li><li>`userIDs`：用户的标识集合。 单个用户可以拥有的身份数限制为9个。 每个标识都包含以下属性： <ul><li>`namespace`：与ID关联的[身份命名空间](../../identity-service/features/namespaces.md)。 这可以是Platform识别的[标准命名空间](../../privacy-service/api/appendix.md#standard-namespaces)，也可以是您的组织定义的自定义命名空间。 使用的命名空间类型必须反映在`type`属性中。</li><li>`value`：标识值。</li><li>`type`：如果使用全局可识别的命名空间，则必须设置为`standard`；如果使用组织定义的命名空间，则必须设置为`custom`。</li></ul></li></ul> |
 
 {style="table-layout:auto"}
 

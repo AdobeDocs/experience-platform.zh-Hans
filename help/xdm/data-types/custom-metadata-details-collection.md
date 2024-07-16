@@ -1,16 +1,17 @@
 ---
 title: 自定义元数据详细信息收藏集数据类型
 description: 了解自定义元数据详细信息收集Experience Data Model (XDM)数据类型。
-source-git-commit: e9107092b60361216744e154752f48546b5bad73
+exl-id: e2fa65ea-b738-43c6-90f1-1968dd83b963
+source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
 workflow-type: tm+mt
 source-wordcount: '111'
-ht-degree: 8%
+ht-degree: 9%
 
 ---
 
-# [!UICONTROL 自定义元数据详细信息] 收藏集数据类型
+# [!UICONTROL 自定义元数据详细信息]集合数据类型
 
-[!UICONTROL 自定义元数据详细信息] 收藏集是一种标准的体验数据模型(XDM)数据类型，它定义了用于存储自定义元数据的结构。 使用 [!UICONTROL 自定义元数据详细信息] 用于捕获详细信息（如与内容或交互关联的自定义元数据的名称和值）的收藏集数据类型。
+[!UICONTROL 自定义元数据详细信息]集合是标准体验数据模型(XDM)数据类型，定义了用于存储自定义元数据的结构。 使用[!UICONTROL 自定义元数据详细信息]集合数据类型捕获详细信息，例如与内容或交互关联的自定义元数据的名称和值。
 
 ![自定义元数据详细信息集合数据类型的图表。](../images/data-types/the-custom-metadata-collection.png)
 

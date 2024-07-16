@@ -17,14 +17,14 @@ ht-degree: 0%
 
 本文档提供有关Attribution AI的常见问题解答。
 
-## 无法在Chrome中匿名访问Attribution AI
+## 无法无痕访问Chrome中的Attribution AI
 
-由于Google Chrome无痕模式安全设置发生更新，导致在Google Chrome无痕模式中加载出错。 这个问题正在与Chrome一起积极探讨，以使experience.adobe.com成为受信任的域。
+由于Google Chrome无痕模式安全设置发生更新，导致Google Chrome无痕模式中存在加载错误。 Chrome正在积极处理此问题，以使experience.adobe.com成为受信任的域。
 
 <img src="./images/faq/error.PNG" width="500" /><br />
 
 ### 建议的修复
 
-要解决此问题，您需要将experience.adobe.com添加为始终可以使用Cookie的站点。 首先导航到 **chrome://settings/cookies**. 接下来，向下滚动到 **自定义行为** 部分，然后选择 **添加** 按钮（位于“始终可以使用Cookie的网站”旁边）。 在显示的弹出窗口中，复制并粘贴 `[*.]experience.adobe.com` 然后选择 **包括第三方Cookie** “在此网站上”复选框。 完成后，选择 **添加** 并隐匿地重新装载Attribution AI。
+要解决此问题，您需要将experience.adobe.com添加为始终可以使用Cookie的站点。 首先导航到&#x200B;**chrome://settings/cookies**。 接下来，向下滚动到&#x200B;**自定义行为**&#x200B;部分，然后选择“始终可以使用Cookie的站点”旁边的&#x200B;**添加**&#x200B;按钮。 在显示的弹出窗口中，复制并粘贴`[*.]experience.adobe.com`，然后选中&#x200B;**在此网站中包含第三方Cookie**&#x200B;复选框。 完成后，选择&#x200B;**添加**&#x200B;并以无痕方式重新加载Attribution AI。
 
 ![建议的修复](./images/faq/cookies2.gif)

@@ -23,7 +23,7 @@ ht-degree: 14%
 
 >[!IMPORTANT]
 >
->切勿将基于属性的访问控制与Experience Platform的数据治理功能混为一谈，后者允许您使用标签和策略来控制数据在Platform中的使用方式，而不是让组织中的哪些用户有权访问数据。 请参阅 [数据治理概述](../../data-governance/home.md) 以了解更多信息。
+>切勿将基于属性的访问控制与Experience Platform的数据治理功能混为一谈，后者允许您使用标签和策略来控制数据在Platform中的使用方式，而不是让组织中的哪些用户有权访问数据。 有关详细信息，请参阅[数据管理概述](../../data-governance/home.md)。
 
 通过基于属性的访问控制，贵组织的管理员可以控制用户对所有平台工作流和资源的敏感个人数据(SPD)、个人身份信息(PII)和自定义类型数据的访问。 管理员可以定义只能访问特定字段以及与这些字段对应的数据的用户角色。
 
@@ -55,11 +55,11 @@ ht-degree: 14%
 
 权限是Experience Cloud的区域，管理员可以在其中定义用户角色和访问策略，以管理产品应用程序中功能和对象的访问权限。
 
-通过权限，您可以创建和管理角色，并为这些角色分配所需的资源权限。 权限还允许您管理与特定角色关联的标签、沙盒和用户。 欲了解更多信息，请参见 [权限指南](ui/browse.md).
+通过权限，您可以创建和管理角色，并为这些角色分配所需的资源权限。 权限还允许您管理与特定角色关联的标签、沙盒和用户。 有关详细信息，请参阅[权限指南](ui/browse.md)。
 
 ## 基于属性的访问控制API
 
-通过基于属性的访问控制API，您可以使用API以编程方式管理Platform中的角色、策略和产品。 有关详细信息，请参阅以下内容中的指南： [使用API管理基于属性的访问控制配置](api/overview.md).
+通过基于属性的访问控制API，您可以使用API以编程方式管理Platform中的角色、策略和产品。 有关详细信息，请参阅[使用API管理基于属性的访问控制配置](api/overview.md)指南。
 
 ## Adobe Experience Platform中基于属性的访问控制
 
@@ -67,25 +67,25 @@ ht-degree: 14%
 
 ### 访问控制
 
-平台利用 [Adobe Admin Console](https://adminconsole.adobe.com) 角色将用户与权限和沙盒关联起来。 权限控制对各种平台功能的访问，包括数据建模、配置文件管理和沙盒管理。 为您的组织启用了基于属性的访问控制后，您可以开始使用Adobe Experience Cloud上的权限而不是Adobe Admin Console中的角色来管理组织中用户、功能、标签和其他资源的权限。
+Platform利用[Adobe Admin Console](https://adminconsole.adobe.com)角色将用户与权限和沙盒相关联。 权限控制对各种平台功能的访问，包括数据建模、配置文件管理和沙盒管理。 为您的组织启用了基于属性的访问控制后，您可以开始使用Adobe Experience Cloud上的权限而不是Adobe Admin Console中的角色来管理组织中用户、功能、标签和其他资源的权限。
 
 对于购买医疗保健和/或隐私保护的客户，基于属性的访问控制的可用性有限。 此功能的功能包括：
 
 * 权限界面：提供了一个界面，供您为基于属性的访问控制定义用户角色、权限和策略。
 
-* 标签设置：为用户角色、架构字段、区段和其他支持的对象添加、编辑和删除标签，以便利用访问控制策略。 **注意：** 同样，如果您希望对使用已标记属性的任何区段应用相同的访问限制，则必须对此类区段进行标记。
+* 标签设置：为用户角色、架构字段、区段和其他支持的对象添加、编辑和删除标签，以便利用访问控制策略。 **注意：**&#x200B;如果您希望对使用已标记属性的任何区段应用相同的访问限制，则必须同样对其添加标记。
 
 正在切换从Admin Console到新权限界面的所有Experience Platform支持的应用程序的管理工作流。
 
 >[!IMPORTANT]
 >
->在启用了您的组织后，您的角色会自动迁移到权限界面。 Admin Console中的角色将暂时保持不变。 请 **不要** 在启用组织后修改您的角色。
+>在启用了您的组织后，您的角色会自动迁移到权限界面。 Admin Console中的角色将暂时保持不变。 在启用您的组织后，请&#x200B;**不要**&#x200B;修改您的角色。
 
-有关访问控制的详细信息，请参见 [访问控制概述](../home.md).
+有关访问控制的详细信息，请参阅[访问控制概述](../home.md)。
 
 ### 目标 {#destinations}
 
-[!DNL Destinations] 是预先构建的与目标平台的集成，允许无缝激活来自平台的数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
+[!DNL Destinations]是预先构建的与目标平台的集成，允许从平台无缝激活数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
 作为管理员，您可以使用基于属性的访问控制功能来：
 
@@ -98,19 +98,19 @@ ht-degree: 14%
 >
 >总之，在使用目标和基于属性的访问控制时，请牢记以下含义：
 >
->* 您只能激活您有权访问和查看的受众 [受众门户](/help/segmentation/ui/audience-portal.md#browse) 和 [选择区段步骤](/help/destinations/ui/activate-batch-profile-destinations.md#select-segments) 激活工作流的。
->* 在 [激活工作流的映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)，则您只能查看和选择您具有访问权限的字段以进行激活。
+>* 您只能激活您有权在[受众门户](/help/segmentation/ui/audience-portal.md#browse)和激活工作流的[选择区段步骤](/help/destinations/ui/activate-batch-profile-destinations.md#select-segments)中访问和查看的受众。
+>* 在激活工作流](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)的[映射步骤中，您只能查看和选择您有访问权限的字段进行激活。
 >* 如果您希望将其他区段激活到现有目标，而您无权访问映射为导出的所有字段，则会为您阻止激活工作流。
 
-有关的详细信息 [!DNL Destinations]，请参阅 [[!DNL Destinations] 概述](../../destinations/home.md).
+有关[!DNL Destinations]的详细信息，请参阅[[!DNL Destinations] 概述](../../destinations/home.md)。
 
 ### 身份服务
 
-Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统桥接身份，允许您实时提供有影响力的个人数字体验，从而帮助您更好地了解客户及其行为。
+Adobe Experience Platform [!DNL Identity Service]通过跨设备和系统桥接身份，允许您实时提供有影响力的个人数字体验，从而帮助您更好地了解客户及其行为。
 
-作为基于属性的访问控制的一部分， `view-identity-graph` 权限允许您确定贵组织中的哪些用户可以通过用户界面或API访问身份图。 有关详细信息，请参阅以下内容中的指南： [使用身份图查看器](../../identity-service/features/identity-graph-viewer.md).
+作为基于属性的访问控制的一部分，`view-identity-graph`权限允许您确定组织中的哪些用户可以通过用户界面或API访问身份图。 有关详细信息，请参阅[上的使用身份图查看器](../../identity-service/features/identity-graph-viewer.md)指南。
 
-有关的详细信息 [!DNL Identity Service]，请参阅 [[!DNL Identity Service] 概述](../../identity-service/home.md).
+有关[!DNL Identity Service]的详细信息，请参阅[[!DNL Identity Service] 概述](../../identity-service/home.md)。
 
 ### 实时客户配置文件
 
@@ -123,7 +123,7 @@ Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统桥接
    * 作为管理员，在创建区段时，您可以在组织中预置用户以仅查看带有用户有权访问的标签的用户档案属性；
 * 通过标记数据模型的XDM架构中使用的特定数据字段，配置用户对数据预览的访问权限。
 
-有关配置文件的详细信息，请参阅 [配置文件概述](../../profile/home.md).
+有关配置文件的详细信息，请参阅[配置文件概述](../../profile/home.md)。
 
 ### Segmentation Service
 
@@ -134,7 +134,7 @@ Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统桥接
 * 根据角色、权限和标签，配置用户访问权限以查看和管理特定区段；
    * 作为管理员，您可以将组织中的用户设置为在使用分段UI时仅查看标记为用户有权访问的标签的区段以及不包含任何标签的区段。
 
-有关的详细信息 [!DNL Segmentation Service]，请参阅 [[!DNL Segmentation Service] 概述](../../segmentation/home.md).
+有关[!DNL Segmentation Service]的详细信息，请参阅[[!DNL Segmentation Service] 概述](../../segmentation/home.md)。
 
 ### XDM
 
@@ -142,7 +142,7 @@ Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统桥接
 
 通过基于属性的访问控制，您可以：
 
-* [将数据使用标签应用于字段组和类](../../xdm/tutorials/labels.md). 这允许具有相同字段组或类的多个架构具有使用相同属性标记的字段，具体取决于字段组或类级别的配置；
+* [将数据使用标签应用于字段组和类](../../xdm/tutorials/labels.md)。 这允许具有相同字段组或类的多个架构具有使用相同属性标记的字段，具体取决于字段组或类级别的配置；
 * 根据应用于分配给用户的角色的权限集，配置用户对特定XDM架构字段的访问权限。
 
-有关XDM的更多信息，请参阅 [XDM概述](../../xdm/home.md).
+有关XDM的更多信息，请参阅[XDM概述](../../xdm/home.md)。

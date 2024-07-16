@@ -1,22 +1,22 @@
 ---
 solution: Experience Platform
 title: PQL字符串函数
-description: 配置文件查询语言(PQL)提供了一些函数，可简化与字符串的交互。
+description: Profile Query Language (PQL)提供了一些函数，可简化与字符串的交互。
 exl-id: 9fd79d86-0802-4312-abce-f6ef5ba5bb34
 source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '823'
-ht-degree: 6%
+source-wordcount: '815'
+ht-degree: 5%
 
 ---
 
 # 字符串函数
 
-[!DNL Profile Query Language] (PQL)提供了一些函数，可简化与字符串的交互。 有关其他PQL函数的更多信息，请参见 [[!DNL Profile Query Language] 概述](./overview.md).
+[!DNL Profile Query Language] (PQL)提供了一些函数，可简化与字符串的交互。 有关其他PQL函数的详细信息，请参阅[[!DNL Profile Query Language] 概述](./overview.md)。
 
-## 点赞
+## 喜欢
 
-此 `like` 函数用于确定一个字符串是否与指定的模式匹配。
+`like`函数用于确定一个字符串是否与指定的模式匹配。
 
 **格式**
 
@@ -27,7 +27,7 @@ ht-degree: 6%
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{STRING_1}` | 要检查的字符串。 |
-| `{STRING_2}` | 要与第一个字符串匹配的表达式。 创建表达式时支持使用两个特殊字符： `%` 和 `_`. <ul><li>`%` 用于表示零个或更多字符。</li><li>`_` 用于恰好表示一个字符。</li></ul> |
+| `{STRING_2}` | 要与第一个字符串匹配的表达式。 创建表达式时支持使用两个特殊字符： `%`和`_`。 <ul><li>`%`用于表示零个或更多字符。</li><li>`_`只用于表示一个字符。</li></ul> |
 
 **示例**
 
@@ -39,7 +39,7 @@ city like "%es%"
 
 ## 开始于
 
-此 `startsWith` 函数用于确定一个字符串是否以指定的子字符串开头。
+`startsWith`函数用于确定一个字符串是否以指定的子字符串开头。
 
 **格式**
 
@@ -55,15 +55,15 @@ city like "%es%"
 
 **示例**
 
-以下PQL查询会区分大小写确定人员的姓名是否以“Joe”开头。
+以下PQL查询区分大小写确定人员姓名是否以“Joe”开头。
 
 ```sql
 person.name.startsWith("Joe")
 ```
 
-## 开头不是
+## Does not start with
 
-此 `doesNotStartWith` 函数用于确定一个字符串是否不以指定的子字符串开头。
+`doesNotStartWith`函数用于确定一个字符串是否不以指定的子字符串开头。
 
 **格式**
 
@@ -79,7 +79,7 @@ person.name.startsWith("Joe")
 
 **示例**
 
-以下PQL查询会区分大小写确定人员的姓名是否不以“Joe”开头。
+以下PQL查询以区分大小写的方式确定人员的姓名是否不以“Joe”开头。
 
 ```sql
 person.name.doesNotStartWith("Joe")
@@ -87,7 +87,7 @@ person.name.doesNotStartWith("Joe")
 
 ## 结束于
 
-此 `endsWith` 函数用于确定一个字符串是否以指定的子字符串结尾。
+`endsWith`函数用于确定一个字符串是否以指定的子字符串结尾。
 
 **格式**
 
@@ -109,9 +109,9 @@ person.name.doesNotStartWith("Joe")
 person.emailAddress.endsWith(".com")
 ```
 
-## 结尾不是
+## Does not end with
 
-此 `doesNotEndWith` 函数用于确定一个字符串是否不以指定的子字符串结尾。
+`doesNotEndWith`函数用于确定一个字符串是否不以指定的子字符串结尾。
 
 **格式**
 
@@ -127,7 +127,7 @@ person.emailAddress.endsWith(".com")
 
 **示例**
 
-以下PQL查询会区分大小写确定人员的电子邮件地址是否不以“.com”结尾。
+以下PQL查询区分大小写确定人员的电子邮件地址是否不以“.com”结尾。
 
 ```sql
 person.emailAddress.doesNotEndWith(".com")
@@ -135,7 +135,7 @@ person.emailAddress.doesNotEndWith(".com")
 
 ## Contains
 
-此 `contains` 函数用于确定一个字符串是否包含指定的子字符串。
+`contains`函数用于确定一个字符串是否包含指定的子字符串。
 
 **格式**
 
@@ -151,7 +151,7 @@ person.emailAddress.doesNotEndWith(".com")
 
 **示例**
 
-以下PQL查询会区分大小写确定人员的电子邮件地址是否包含字符串“2010@gm”。
+以下PQL查询区分大小写确定人员的电子邮件地址是否包含字符串“2010@gm”。
 
 ```sql
 person.emailAddress.contains("2010@gm")
@@ -159,7 +159,7 @@ person.emailAddress.contains("2010@gm")
 
 ## 不包含
 
-此 `doesNotContain` 函数用于确定一个字符串是否不包含指定的子字符串。
+`doesNotContain`函数用于确定一个字符串是否不包含指定的子字符串。
 
 **格式**
 
@@ -183,7 +183,7 @@ person.emailAddress.doesNotContain("2010@gm")
 
 ## 等于
 
-此 `equals` 函数用于确定一个字符串是否等于指定的字符串。
+`equals`函数用于确定一个字符串是否等于指定的字符串。
 
 **格式**
 
@@ -206,7 +206,7 @@ person.name.equals("John")
 
 ## 不等于
 
-此 `notEqualTo` 函数用于确定一个字符串是否不等于指定的字符串。
+`notEqualTo`函数用于确定一个字符串是否不等于指定的字符串。
 
 **格式**
 
@@ -221,15 +221,15 @@ person.name.equals("John")
 
 **示例**
 
-以下PQL查询会区分大小写确定人员姓名是否为“John”。
+以下PQL查询区分大小写确定人员姓名是否为“John”。
 
 ```sql
 person.name.notEqualTo("John")
 ```
 
-## 匹配
+## Matches
 
-此 `matches` 函数用于确定一个字符串是否与特定的正则表达式匹配。 请参阅 [本文档](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html) 有关正则表达式中匹配模式的详细信息。
+`matches`函数用于确定一个字符串是否与特定的正则表达式匹配。 有关正则表达式中匹配模式的详细信息，请参阅[本文档](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)。
 
 **格式**
 
@@ -247,11 +247,11 @@ person.name.matches("(?i)^John")
 
 >[!NOTE]
 >
->如果您使用的是正则表达式函数，例如 `\w`，您 **必须** 转义反斜杠字符。 所以，与其直接写作 `\w`，则必须包含额外的反斜杠和write `\\w`.
+>如果使用正则表达式函数（如`\w`），则&#x200B;**必须**&#x200B;对反斜杠字符进行转义。 因此，您必须包含额外的反斜杠并写入`\\w`，而不是只写入`\w`。
 
 ## 正则表达式组
 
-此 `regexGroup` 函数用于根据提供的正则表达式提取特定信息。
+`regexGroup`函数用于根据提供的正则表达式提取特定信息。
 
 **格式**
 
@@ -269,8 +269,8 @@ emailAddress.regexGroup("@(\\w+)", 1)
 
 >[!NOTE]
 >
->如果您使用的是正则表达式函数，例如 `\w`，您 **必须** 转义反斜杠字符。 所以，与其直接写作 `\w`，则必须包含额外的反斜杠和write `\\w`.
+>如果使用正则表达式函数（如`\w`），则&#x200B;**必须**&#x200B;对反斜杠字符进行转义。 因此，您必须包含额外的反斜杠并写入`\\w`，而不是只写入`\w`。
 
 ## 后续步骤
 
-现在，您已了解字符串函数，可以在PQL查询中使用它们。 有关其他PQL功能的详细信息，请参阅 [配置文件查询语言概述](./overview.md).
+现在，您已了解字符串函数，可以在PQL查询中使用它们。 有关其他PQL功能的更多信息，请阅读[Profile Query Language概述](./overview.md)。

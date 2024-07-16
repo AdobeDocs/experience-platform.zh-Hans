@@ -4,33 +4,32 @@ description: 了解如何弃用架构注册表API中的Experience Data Model (XD
 exl-id: e49517c4-608d-4e05-8466-75724ca984a8
 source-git-commit: f9f783b75bff66d1bf3e9c6d1ed1c543bd248302
 workflow-type: tm+mt
-source-wordcount: '588'
+source-wordcount: '584'
 ht-degree: 2%
 
 ---
 
 # 在API中弃用XDM字段
 
-在Experience Data Model (XDM)中，您可以使用来弃用架构或自定义资源中的字段 [架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). 弃用字段会导致在下游UI中隐藏该字段，例如 [!UICONTROL 配置文件] 工作区和Customer Journey Analytics，但在其他情况下，它是一项无中断的更改，不会对现有数据流产生负面影响。
+在Experience Data Model (XDM)中，您可以使用[架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/)来弃用架构或自定义资源中的字段。 弃用字段会导致在下游UI中隐藏该字段，例如[!UICONTROL 配置文件]工作区和Customer Journey Analytics，否则它是无中断的更改，不会对现有数据流产生负面影响。
 
-本文档介绍了如何为不同的XDM资源弃用字段。 有关在Experience Platform用户界面中使用架构编辑器来弃用XDM字段的步骤，请参阅以下教程： [在UI中弃用XDM字段](./field-deprecation-ui.md).
+本文档介绍如何为不同的XDM资源弃用字段。 有关在Experience Platform用户界面中使用“架构编辑器”弃用XDM字段的步骤，请参阅有关[在UI](./field-deprecation-ui.md)中弃用XDM字段的教程。
 
 ## 快速入门
 
-本教程需要调用架构注册表API。 请查看 [开发人员指南](../api/getting-started.md) 有关发出这些API调用所需了解的重要信息。 这包括您的 `{TENANT_ID}`、“容器”的概念以及发出请求所需的标头(请特别注意 `Accept` 标头及其可能值)。
+本教程需要调用架构注册表API。 请查阅[开发人员指南](../api/getting-started.md)以了解进行这些API调用所需了解的重要信息。 这包括您的`{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（请特别注意`Accept`标头及其可能的值）。
 
 ## 弃用自定义字段 {#custom}
 
-要弃用自定义类、字段组或数据类型中的字段，请通过PUT或PATCH请求更新自定义资源并添加属性 `meta:status: deprecated` 到有问题的领域。
+要弃用自定义类、字段组或数据类型中的字段，请通过PUT或PATCH请求更新自定义资源，并将属性`meta:status: deprecated`添加到相关字段。
 
 >[!NOTE]
 >
->有关更新XDM中自定义资源的一般信息，请参阅以下文档：
+>有关在XDM中更新自定义资源的一般信息，请参阅以下文档：
 >
 >* [更新类](../api/classes.md#patch)
 >* [更新字段组](../api/field-groups.md#patch)
 >* [更新数据类型](../api/data-types.md#patch)
-
 
 下面的示例API调用弃用了自定义数据类型中的字段。
 
@@ -42,7 +41,7 @@ PATCH /tenant/datatypes/{DATA_TYPE_ID}
 
 **请求**
 
-以下请求弃用 `expansionArea` 用于描述房地产属性的数据类型的字段。
+以下请求为描述不动产属性的数据类型弃用`expansionArea`字段。
 
 ```shell
 curl -X PATCH \
@@ -63,7 +62,7 @@ curl -X PATCH \
 
 **响应**
 
-成功响应将返回自定义资源的更新详细信息，已弃用的字段包含 `meta:status` 值 `deprecated`. 下面的示例响应因空间而被截断。
+成功的响应返回自定义资源的更新详细信息，已弃用的字段包含`meta:status`值`deprecated`。 下面的示例响应因空间而被截断。
 
 ```json
 {
@@ -165,11 +164,11 @@ curl -X PATCH \
 
 ## 弃用架构中的标准字段 {#standard}
 
-不能直接弃用标准类、字段组和数据类型中的字段。 相反，您可以在使用这些标准资源的各个架构中，通过使用描述符来弃用它们。
+不能直接弃用标准类、字段组和数据类型中的字段。 相反，您可以在采用这些标准资源的各个架构中，通过使用描述符来弃用它们。
 
 ### 创建字段弃用描述符 {#create-descriptor}
 
-POST要为要弃用的架构字段创建描述符，请向 `/tenant/descriptors` 端点。
+要为要弃用的架构字段创建描述符，请向`/tenant/descriptors`端点发出POST请求。
 
 **API格式**
 
@@ -197,10 +196,10 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `@type` | 描述符的类型。 对于字段弃用描述符，该值必须设置为 `xdm:descriptorDeprecated`. |
-| `xdm:sourceSchema` | URI `$id` 将描述符应用于的架构的ID。 |
-| `xdm:sourceVersion` | 将描述符应用于的架构的版本。 应设置为 `1`. |
-| `xdm:sourceProperty` | 将描述符应用于的架构中属性的路径。 如果要将描述符应用于多个属性，则可以提供数组形式的路径列表(例如， `["/firstName", "/lastName"]`)。 |
+| `@type` | 描述符的类型。 对于字段弃用描述符，此值必须设置为`xdm:descriptorDeprecated`。 |
+| `xdm:sourceSchema` | 要应用描述符的架构的URI `$id`。 |
+| `xdm:sourceVersion` | 要将描述符应用于的架构的版本。 应设置为`1`。 |
+| `xdm:sourceProperty` | 架构中要将描述符应用于的属性的路径。 如果要将描述符应用于多个属性，则可以提供数组形式的路径列表（例如，`["/firstName", "/lastName"]`）。 |
 
 **响应**
 
@@ -221,7 +220,7 @@ curl -X POST \
 
 ### 验证已弃用的字段 {#verify-deprecation}
 
-应用描述符后，您可以通过在使用适当时查找相关架构来验证字段是否已被弃用 `Accept` 标头。
+应用描述符后，您可以通过使用相应的`Accept`标头查找相关架构来验证字段是否已被弃用。
 
 >[!NOTE]
 >
@@ -235,7 +234,7 @@ GET /tenant/schemas
 
 **请求**
 
-要在API响应中包含有关已弃用字段的信息，您必须设置 `Accept` 标头到 `application/vnd.adobe.xed-deprecatefield+json; version=1`.
+要在API响应中包含有关已弃用字段的信息，必须将`Accept`标头设置为`application/vnd.adobe.xed-deprecatefield+json; version=1`。
 
 ```shell
 curl -X GET \
@@ -249,7 +248,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回架构的详细信息，已弃用的字段包含 `meta:status` 值 `deprecated`. 下面的示例响应因空间而被截断。
+成功的响应返回架构的详细信息，已弃用的字段包含`meta:status`值`deprecated`。 下面的示例响应因空间而被截断。
 
 ```json
 "faxPhone": {
@@ -266,4 +265,4 @@ curl -X GET \
 
 ## 后续步骤
 
-本文档介绍了如何使用架构注册表API弃用XDM字段。 有关为自定义资源配置字段的更多信息，请参阅 [在API中定义XDM字段](./custom-fields-api.md). 有关管理描述符的更多信息，请参见 [描述符端点指南](../api/descriptors.md).
+本文档介绍了如何使用架构注册表API弃用XDM字段。 有关为自定义资源配置字段的更多信息，请参阅[在API中定义XDM字段指南](./custom-fields-api.md)。 有关管理描述符的详细信息，请参阅[描述符终结点指南](../api/descriptors.md)。

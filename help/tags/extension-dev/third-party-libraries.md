@@ -4,8 +4,8 @@ description: 了解在Adobe Experience Platform标记扩展中托管第三方库
 exl-id: d8eaf814-cce8-499d-9f02-b2ed3c5ee4d0
 source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
-source-wordcount: '1330'
-ht-degree: 68%
+source-wordcount: '1315'
+ht-degree: 65%
 
 ---
 
@@ -13,19 +13,19 @@ ht-degree: 68%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../term-updates.md)。
 
-Adobe Experience Platform中标记扩展的主要目的之一是，让您能够轻松地在网站中实施现有的营销技术（库）。 通过使用扩展，您可以实施由第三方内容交付网络 (CDN) 提供的库，而无需手动编辑网站的 HTML。
+Adobe Experience Platform中标记扩展的主要用途之一，是让您能够轻松地在网站中实施现有的营销技术（库）。 通过使用扩展，您可以实施由第三方内容交付网络 (CDN) 提供的库，而无需手动编辑网站的 HTML。
 
 有多种方法可以在扩展中托管第三方（供应商）库。 本文档概述了这些不同的实施方法，其中包括每种方法的优点和缺点。
 
 ## 先决条件
 
-本文档要求对标记中的扩展有一定的了解，包括扩展可以执行的操作以及扩展是如何构成的。 请参阅 [扩展开发概述](./overview.md) 了解更多信息。
+本文档要求您对标记中的扩展有一定的了解，包括扩展具有什么功能，以及它们是如何构建的。 有关详细信息，请参阅[扩展开发概述](./overview.md)。
 
 ## 基础代码加载流程
 
-在标记上下文之外，了解营销技术通常如何在网站上加载非常重要。 第三方库供应商会提供一段代码（称为基础代码），必须将这段代码嵌入到网站的 HTML 中，才能加载库的功能。
+除了标记的上下文之外，了解营销技术通常在网站上加载的方式非常重要。 第三方库供应商会提供一段代码（称为基础代码），必须将这段代码嵌入到网站的 HTML 中，才能加载库的功能。
 
 通常，当营销技术的基础代码加载到您的网站中时，会执行以下流程中的某个变体：
 
@@ -39,7 +39,7 @@ Adobe Experience Platform中标记扩展的主要目的之一是，让您能够�
 
 ### 基础代码示例
 
-以下JavaScript是的未缩小的基代码示例 [pinterest转化标记](https://developers.pinterest.com/docs/ad-tools/conversion-tag/?)，本文档稍后将引用这些内容，以演示如何为带有标记的不同实施策略调整基础代码：
+以下JavaScript是[Pinterest转换标记](https://developers.pinterest.com/docs/ad-tools/conversion-tag/?)未经简化的基础代码示例，为了演示如何针对标记的各种实施策略调整基础代码，稍后将在本文档中引用这些代码：
 
 ```js
 !function(scriptUrl) {
@@ -84,11 +84,11 @@ firstScriptElement.parentNode.insertBefore(
 
 ## 标记实施选项
 
-以下各部分演示了在扩展中加载供应商库的不同方式，以前面展示的 Pinterest 基础代码为例。每个示例都涉及创建 [Web扩展的操作类型](./web/action-types.md) 会在您的网站上加载库。
+以下各部分演示了在扩展中加载供应商库的不同方式，以前面展示的 Pinterest 基础代码为例。每个示例都涉及为Web扩展](./web/action-types.md)创建一个[操作类型，该操作类型将库加载到您的网站上。
 
 >[!NOTE]
 >
->虽然下面的示例使用操作类型进行演示，但您可以将相同的原则应用于在网站上加载标记库的任何函数。
+>虽然以下示例使用操作类型进行演示，但您可以将相同的原则应用于在网站上加载标记库的任何函数。
 
 
 包含以下方法：
@@ -139,7 +139,7 @@ module.exports = function() {
 
 或者，您也可以采取其他步骤来重构此实施。由于变量 `scriptElement` 和 `firstScriptElement` 目前的作用范围仅限于导出的函数，因此可删除 IIFE，原因是这些变量不会产生全局风险。
 
-此外，标记提供了多个 [核心模块](./web/core.md) 任何扩展都可以使用的实用程序。 具体来说，`@adobe/reactor-load-script` 模块可通过创建脚本元素并将其添加到文档中，从而在远程位置加载脚本。通过将此模块运用于脚本加载流程，您可以进一步重构操作代码：
+此外，标记提供了多个[核心模块](./web/core.md)，这些模块是任何扩展都可以使用的实用程序。 具体来说，`@adobe/reactor-load-script` 模块可通过创建脚本元素并将其添加到文档中，从而在远程位置加载脚本。通过将此模块运用于脚本加载流程，您可以进一步重构操作代码：
 
 ```js
 var loadScript = require('@adobe/reactor-load-script');
@@ -164,7 +164,7 @@ module.exports = function() {
 
 将供应商 CDN 用于库托管会带来若干风险：CDN 可能会失败，文件可能随时会因为严重错误而更新，或者文件可能因恶意目的而受到破坏。
 
-要解决这些问题，您可以选择将供应商库作为单独的文件，并将其包含在您的扩展中。然后，可以配置该扩展，以便该文件与主标记库一起托管。 运行期间，扩展将使用向网站交付主库的同一服务器来加载供应商库。
+要解决这些问题，您可以选择将供应商库作为单独的文件，并将其包含在您的扩展中。然后，可以配置扩展，以便该文件与主标记库一起托管。 运行期间，扩展将使用向网站交付主库的同一服务器来加载供应商库。
 
 >[!IMPORTANT]
 >
@@ -172,7 +172,7 @@ module.exports = function() {
 
 为了实现上述功能，您必须先将供应商库下载到您的计算机。对于 Pinterest，可在 [https://s.pinimg.com/ct/core.js](https://s.pinimg.com/ct/core.js) 中找到供应商库。下载文件后，您必须将其放入扩展项目中。在以下示例中，该文件名为 `pinterest.js`，且位于项目目录的 `vendor` 文件夹中。
 
-将库文件放入项目中后，您必须更新 [扩展清单](./manifest.md) (`extension.json`)，以指示供应商库应当与主标记库一起交付。 这是通过在 `hostedLibFiles` 数组中向库文件添加路径来完成的：
+将库文件放入项目中之后，您必须更新[扩展清单](./manifest.md) (`extension.json`)，以指示供应商库应随主标记库一起交付。 这是通过在 `hostedLibFiles` 数组中向库文件添加路径来完成的：
 
 ```json
 {
@@ -228,6 +228,6 @@ module.exports = function() {
 
 ## 后续步骤
 
-本文档概述了在标记扩展中托管第三方库的各种方法。 尽管提供的示例侧重于库，但这些技术适用于您的扩展可利用的任何代码段。
+本文档概述了在标记扩展中托管第三方库的不同方法。 尽管提供的示例侧重于库，但这些技术适用于您的扩展可利用的任何代码段。
 
 请参阅本指南中链接的文档，以了解有关用于配置扩展的工具（包括操作类型、扩展清单、核心模块和 turbine 对象）的更多信息。

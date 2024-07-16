@@ -2,26 +2,26 @@
 keywords: Experience Platform；主页；热门主题；数据准备；API指南；映射集；
 solution: Experience Platform
 title: 映射集API端点
-description: 您可以使用Adobe Experience Platform API中的“/mappingSets”端点以编程方式检索、创建、更新和验证映射集。
+description: 您可以在Adobe Experience Platform API中使用“/mappingSets”端点以编程方式检索、创建、更新和验证映射集。
 exl-id: a4e4ddcd-164e-42aa-b7d1-ba59d70da142
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '852'
+source-wordcount: '859'
 ht-degree: 3%
 
 ---
 
 # 映射集端点
 
-映射集可用于定义源架构中的数据如何映射到目标架构的数据。 您可以使用 `/mappingSets` 数据准备API中的端点，用于以编程方式检索、创建、更新和验证映射集。
+映射集可用于定义源架构中的数据如何映射到目标架构的数据。 您可以使用数据准备API中的`/mappingSets`端点以编程方式检索、创建、更新和验证映射集。
 
 ## 列出映射集
 
-您可以通过对以下项发出GET请求，检索贵组织的所有映射集的列表： `/mappingSets` 端点。
+您可以通过向`/mappingSets`端点发出GET请求来检索组织的所有映射集列表。
 
 **API格式**
 
-此 `/mappingSets` 端点支持多个查询参数以帮助筛选结果。 虽然这些参数中的大多数是可选的，但强烈建议使用这些参数以帮助减少昂贵的开销。 但是，您必须同时包含 `start` 和 `limit` 请求中的参数。 可以包含多个参数，以&amp;符号(`&`)。
+`/mappingSets`端点支持多个查询参数以帮助筛选结果。 虽然这些参数中的大多数是可选的，但强烈建议使用这些参数以帮助减少昂贵的开销。 但是，您必须在请求中同时包含`start`和`limit`参数。 可以包含多个参数，以&amp;符号(`&`)分隔。
 
 ```http
 GET /mappingSets?limit={LIMIT}&start={START}
@@ -32,10 +32,10 @@ GET /mappingSets?limit={LIMIT}&start={START}&expandSchema={EXPAND_SCHEMA}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{LIMIT}` | (**必需**)指定返回的映射集数。 |
-| `{START}` | (**必需**)指定结果页面的偏移。 要获取结果的第一页，请将值设置为 `start=0`. |
+| `{LIMIT}` | （**必需**）指定返回的映射集数。 |
+| `{START}` | （**必需**）指定结果页面的偏移。 若要获取结果的第一页，请将值设置为`start=0`。 |
 | `{NAME}` | 按名称筛选映射集。 |
-| `{ORDER_BY}` | 对结果的顺序进行排序。 仅支持以下字段 `createdDate` 和 `updatedDate`. 可以在属性前加上 `+` 或 `-` 以分别按升序或降序进行排序。 |
+| `{ORDER_BY}` | 对结果的顺序进行排序。 唯一支持的字段是`createdDate`和`updatedDate`。 您可以在属性前加上`+`或`-`，以分别按升序或降序排序。 |
 | `{EXPAND_SCHEMA}` | 一个布尔值，确定是否将完整输出架构作为响应的一部分返回。 |
 
 **请求**
@@ -165,7 +165,7 @@ curl -X GET https://platform.adobe.io/data/foundation/conversion/mappingSets?lim
 
 ## 创建映射集
 
-您可以通过向以下对象发出POST请求来创建新的映射集： `/mappingSets` 端点。
+您可以通过向`/mappingSets`端点发出POST请求来创建新的映射集。
 
 **API格式**
 
@@ -175,7 +175,7 @@ POST /mappingSets
 
 **请求**
 
-以下请求创建一个新映射集，该映射集由有效负载中提供的参数配置。
+以下请求创建新的映射集，该映射集由有效负载中提供的参数配置。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/conversion/mappingSets \
@@ -217,14 +217,14 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/mappingSets \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `outputSchema.schemaRef.id` | 您正在引用的XDM架构的ID。 |
-| `outputSchema.schemaRef.contentType` | 确定引用的架构的响应格式。 有关此字段的更多信息，请参阅 [Schema Registry开发人员指南](../../xdm/api/schemas.md#lookup). |
-| `mappings.sourceType` | 源类型描述如何将值从源提取到目标。 源类型支持两个可能的值： <ul><li>`ATTRIBUTE`：源类型 `ATTRIBUTE` 当输入属性来自源架构时使用。</li><li>`EXPRESSION`：源类型 `EXPRESSION` 使用计算字段完成映射时使用。</li></ul> **警告**：错误设置源类型值可能会使您的映射集无法编辑。 |
+| `outputSchema.schemaRef.contentType` | 确定所引用架构的响应格式。 有关此字段的详细信息，请参阅[架构注册表开发人员指南](../../xdm/api/schemas.md#lookup)。 |
+| `mappings.sourceType` | 源类型描述如何将值从源提取到目标。 源类型支持两个可能的值： <ul><li>`ATTRIBUTE`：当输入属性来自源架构时，使用源类型`ATTRIBUTE`。</li><li>`EXPRESSION`：在使用计算字段完成映射时使用源类型`EXPRESSION`。</li></ul> **警告**：错误设置源类型值可能会使您的映射集无法编辑。 |
 | `mappings.source` | 您希望映射数据的位置。 |
 | `mappings.destination` | 您希望数据映射到的位置。 |
 
 **响应**
 
-成功的响应会返回HTTP状态200，其中包含有关新创建的映射集的信息。
+成功的响应返回HTTP状态200，其中包含有关新创建的映射集的信息。
 
 ```json
 {
@@ -239,7 +239,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/mappingSets \
 
 ## 验证映射
 
-您可以通过对以下对象发出POST请求，验证映射是否正常工作 `/mappingSets/validate` 端点。
+您可以通过向`/mappingSets/validate`端点发出POST请求来验证映射是否正常工作。
 
 **API格式**
 
@@ -249,7 +249,7 @@ POST /mappingSets/validate
 
 **请求**
 
-以下请求将验证有效负载中提供的映射。
+以下请求验证有效负载中提供的映射。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/conversion/mappingSets/validate \
@@ -290,7 +290,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/mappingSets/va
 
 **响应**
 
-成功响应会返回包含建议映射的验证信息的HTTP状态200。
+成功的响应返回HTTP状态200，其中包含建议映射的验证信息。
 
 ```json
 {
@@ -313,7 +313,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/mappingSets/va
 
 ## 预览映射数据
 
-您可以通过向以下地址发出POST请求，预览您的数据将映射到的内容： `/mappingSets/preview` 端点。
+您可以通过向`/mappingSets/preview`端点发出POST请求来预览您的数据将映射到的内容。
 
 **API格式**
 
@@ -392,7 +392,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/mappingSets/pr
 
 ## 查找映射集
 
-您可以通过在GET请求的路径中提供特定映射集的ID来检索该映射集。 `/mappingSets` 端点。 此端点还支持多个查询参数，以帮助您检索有关指定映射集版本的详细信息。
+您可以通过在`/mappingSets`终结点的GET请求路径中提供特定映射集的ID来检索该映射集。 此端点还支持多个查询参数，以帮助您检索有关指定映射集版本的详细信息。
 
 **API格式**
 
@@ -404,8 +404,8 @@ GET /mappingSets/{MAPPING_SET_ID}?version={VERSION}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{MAPPING_SET_ID}` | (**必需**)要检索的映射集的ID。 |
-| `{EXPAND_SCHEMA}` | 一个布尔查询参数，它确定是否将输出架构作为响应的一部分返回。 |
+| `{MAPPING_SET_ID}` | （**必需**）要检索的映射集的ID。 |
+| `{EXPAND_SCHEMA}` | 一个布尔查询参数，它确定是否作为响应的一部分返回输出架构。 |
 | `{VERSION}` | 一个整数查询参数，它确定要检索的映射集版本。 |
 
 **请求**
@@ -583,7 +583,7 @@ curl -X GET https://platform.adobe.io/data/foundation/conversion/mappingSets/e7c
 
 ## 更新映射集
 
-您可以通过在的路径中提供映射集的ID来更新映射集。 `PUT` 请求 `mappingSets` 端点。
+您可以通过在`PUT`请求到`mappingSets`端点的路径中提供其ID来更新映射集。
 
 **API格式**
 
@@ -641,7 +641,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/conversion/mappingSets/e7c
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含有关新更新的映射集的详细信息。
+成功的响应返回HTTP状态200，其中包含有关新更新的映射集的详细信息。
 
 >[!NOTE]
 >
@@ -913,7 +913,7 @@ curl -X GET https://platform.adobe.io/data/foundation/conversion/mappingSets/e7c
 
 ## 在映射集中查找映射
 
-通过在GET请求的路径中向以下端点提供映射集的ID，可以检索映射集的特定映射。
+通过在GET请求的路径中为以下端点提供其ID，您可以检索映射集的特定映射。
 
 **API格式**
 
@@ -923,7 +923,7 @@ GET /mappingSets/{MAPPING_SET_ID}/mappings/{MAPPING_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{MAPPING_SET_ID}` | 要查找有关映射信息的映射集的ID。 |
+| `{MAPPING_SET_ID}` | 要查找其映射信息的映射集的ID。 |
 | `{MAPPING_ID}` | 要查找的映射的ID。 |
 
 **请求**

@@ -16,19 +16,19 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->无论是否需要架构字段，Platform都不会接受 `null` 或任何引入的字段的值为空。 如果记录或事件中没有特定字段的值，则应该从摄取有效负载中排除该字段的键。
+>无论是否需要架构字段，Platform都不会接受任何已引入字段的`null`或空值。 如果记录或事件中没有特定字段的值，则应该从摄取有效负载中排除该字段的键。
 
-时间 [定义新字段](./overview.md#define) 在Adobe Experience Platform用户界面中，您可以通过选择 **[!UICONTROL 必填]** 复选框。 选择 **[!UICONTROL 应用]** 将更改应用于架构。
+在Adobe Experience Platform用户界面中[定义新字段](./overview.md#define)时，您可以通过选中右边栏中的&#x200B;**[!UICONTROL 必填]**&#x200B;复选框将其设置为必填字段。 选择&#x200B;**[!UICONTROL 应用]**&#x200B;以将更改应用于架构。
 
-![“必需”复选框](../../images/ui/fields/required/root.png)
+![必需复选框](../../images/ui/fields/required/root.png)
 
-如果字段是租户ID对象下的根级别属性，则其路径立即显示在下 **[!UICONTROL 必填字段]** 在左边栏中。
+如果字段是租户ID对象下的根级别属性，则其路径会立即显示在左边栏中的&#x200B;**[!UICONTROL 必填字段]**&#x200B;下。
 
-![根级别必填字段](../../images/ui/fields/required/applied.png)
+![根级必填字段](../../images/ui/fields/required/applied.png)
 
-但是，如果必填字段嵌套在未标记为必填对象的对象中，则嵌套字段不会显示在下方 **[!UICONTROL 必填字段]** 在左边栏中。
+但是，如果某个必填字段嵌套在未标记为必填对象的对象中，则该嵌套字段不会出现在左边栏中的&#x200B;**[!UICONTROL 必填字段]**&#x200B;下。
 
-在以下示例中， `internalSKU` 字段已设置为必填，但其父对象 `SKUs` 不是。 在这种情况下，如果在以下情况下，将不会发生验证错误： `SKUs` 摄取数据时将被排除，即使子字段也是如此 `internalSKU` 标记为必需。 换言之，当 `SKUs` 是可选的，它必须包含 `internalSKU` 字段。
+在以下示例中，`internalSKU`字段设置为必填，但其父对象`SKUs`不是。 在这种情况下，如果在摄取数据时排除`SKUs`，即使子字段`internalSKU`标记为必需，也不会发生验证错误。 换言之，尽管`SKUs`是可选的，但它必须在其包含的事件中包含一个`internalSKU`字段。
 
 ![嵌套必填字段](../../images/ui/fields/required/nested.png)
 
@@ -38,4 +38,4 @@ ht-degree: 0%
 
 ## 后续步骤
 
-本指南介绍了如何在UI中定义必填字段。 有关更多详细信息，请参阅 [在UI中定义字段](./overview.md#special) 了解如何在中定义其他XDM字段类型 [!DNL Schema Editor].
+本指南介绍了如何在UI中定义必填字段。 请参阅[在UI](./overview.md#special)中定义字段的概述，了解如何在[!DNL Schema Editor]中定义其他XDM字段类型。

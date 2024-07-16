@@ -2,30 +2,30 @@
 keywords: Experience Platform；归因人工智能概述；热门主题；归因人工智能；归因人工智能
 feature: Attribution AI
 title: Attribution AI概述
-description: Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户历程中每个营销接触点的营销影响。接触点示例包括显示广告展示、电子邮件发送、电子邮件打开和付费搜索点击。
+description: Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。接触点示例包括显示广告展示、电子邮件发送、电子邮件打开和付费搜索点击。
 landing-page-description: Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户历程中每个营销接触点的营销影响。
 short-description: Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户历程中每个营销接触点的营销影响。
 exl-id: a5991b08-217a-4b39-9948-d28eadea7ded
 source-git-commit: b21367814e38fb5ee017709a29b39de982d59d24
 workflow-type: tm+mt
 source-wordcount: '532'
-ht-degree: 40%
+ht-degree: 31%
 
 ---
 
 # 归因人工智能概述
 
-作为Intelligent Services的一部分，Attribution AI是一种多渠道算法归因服务，它计算客户交互对指定结果的影响和增量影响。 利用 Attribution AI，营销人员可以通过了解客户历程各个阶段每个客户互动的影响来衡量和优化营销和广告支出。
+作为Intelligent Services的一部分，Attribution AI是一种多渠道算法归因服务，它计算客户交互对指定结果的影响和增量影响。 借助Attribution AI，营销人员可以通过了解客户旅程各个阶段每个客户互动的影响来衡量和优化营销和广告支出。
 
 ## 了解Attribution AI
 
-Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户历程中每个营销接触点的营销影响。接触点示例包括显示广告展示、电子邮件发送、电子邮件打开和付费搜索点击。
+Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。接触点示例包括显示广告展示、电子邮件发送、电子邮件打开和付费搜索点击。
 
 Attribution AI输出可以跨不同维度进行分隔，并可在客户历程的不同阶段使用。 这无需将业务需求转换为机器学习问题、选择算法、培训或部署模型即可完成。
 
-Attribution AI数据可以来自Adobe(例如， [!DNL Analytics])或非Adobe数据源。
+Attribution AI数据可以来自Adobe（例如[!DNL Analytics]）或非Adobe数据源。
 
-Attribution AI支持两类分数：算法分数和基于规则的分数。 算法分数包括增量分数和影响分数。基于规则的分数包括 First touch、Last touch、线性、U 型、时间衰减。
+Attribution AI支持两类分数：算法分数和基于规则的分数。 算法分数包括增量分数和影响分数。 基于规则的分数包括First touch、Last touch、线性、U形和时间衰减。
 
 以下视频旨在支持您对Attribution AI的理解。
 
@@ -35,16 +35,16 @@ Attribution AI支持两类分数：算法分数和基于规则的分数。 算�
 
 Attribution AI可用于协助处理以下示例用例：
 
-- **执行报告**：让执行官能够按渠道、区域、SKU等了解营销的真正增量影响。
-- **预算分配**：为跨营销渠道的预算分配决策提供信息。
-- **活动优化**：在每个渠道中，了解哪些营销活动、创意和关键字更适合哪些SKU或Geo。 这样，您就可以查看每个渠道，以便营销团队能够优化其策略。
-- **完整漏斗归因**：了解营销在整个客户历程中的影响。 例如，免费帐户注册以实现付费转化和其他。
+- **执行报告**：允许执行用户了解营销的真正增量影响，包括整体影响，以及按渠道、地区、SKU等列出的影响。
+- **预算分配**：通知跨营销渠道的预算分配决策。
+- **促销活动优化**：在每个渠道中，了解哪些促销活动、创意和关键字更适合哪些SKU或Geo。 这样，您就可以查看每个渠道，以便营销团队能够优化其策略。
+- **全漏斗归因**：了解营销对整个客户历程的影响。 例如，免费帐户注册以实现付费转化和其他。
 - **合作伙伴评估**：根据归因结果评估机构和合作伙伴的有效性。
 
 ### 其他功能
 
-Attribution AI还提供了与其他Adobe解决方案的集成，例如 [!DNL Customer Journey Analytics]. 这使您能够使用这些解决方案来利用可自定义的算法模型来评估媒体性能并提供分析见解。
+Attribution AI还提供与其他Adobe解决方案（如[!DNL Customer Journey Analytics]）的集成。 这使您能够使用这些解决方案来利用可自定义的算法模型来评估媒体性能并提供分析见解。
 
 ## 后续步骤
 
-您可以按照以下步骤开始操作 [快速入门](./getting-started.md) 指南。 本指南将指导您设置Attribution AI的所有必需预请求。 如果您已准备好凭据和数据，请访问 [Attribution AI用户指南](./user-guide.md). 本指南将指导您如何创建实例并提交它以进行培训和评分。
+您可以按照[快速入门](./getting-started.md)指南开始操作。 本指南将指导您设置Attribution AI的所有必需预请求。 如果您已准备好凭据和数据，请访问[Attribution AI用户指南](./user-guide.md)。 本指南将指导您如何创建实例并提交它以进行培训和评分。

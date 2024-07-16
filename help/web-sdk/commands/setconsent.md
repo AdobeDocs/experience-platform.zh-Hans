@@ -12,25 +12,25 @@ ht-degree: 2%
 
 # `setConsent`
 
-此 `setConsent` 命令告知Web SDK是应发送数据（选择启用）、丢弃数据（选择禁用）还是使用 [`defaultConsent`](configure/defaultconsent.md) （同意未知）。
+`setConsent`命令告知Web SDK是应发送数据（选择启用）、丢弃数据（选择禁用）还是使用[`defaultConsent`](configure/defaultconsent.md)（同意未知）。
 
 Web SDK支持以下标准：
 
 * **[Adobe标准](/help/landing/governance-privacy-security/consent/adobe/overview.md)**：同时支持1.0和2.0标准。
-* **[IAB透明度和同意框架](/help/landing/governance-privacy-security/consent/iab/overview.md)**：如果您使用此标准，并且在您的实施配置正确的情况下，访客的Real-time Customer Profile将会更新为同意信息：
-   1. XDM个人资料架构包含 [IAB TCF 2.0同意字段组](/help/xdm/field-groups/profile/iab.md).
-   1. 体验事件架构包含 [IAB TCF 2.0同意字段组](/help/xdm/field-groups/event/iab.md).
-   1. 在事件中包含IAB同意信息 [XDM对象](sendevent/xdm.md). 在发送事件数据时，Web SDK不会自动包含同意信息。
+* **[IAB透明度和同意框架](/help/landing/governance-privacy-security/consent/iab/overview.md)**：如果使用此标准，且您的实施配置正确，则访客的实时客户配置文件将更新为同意信息：
+   1. XDM个人配置文件架构包含[IAB TCF 2.0同意字段组](/help/xdm/field-groups/profile/iab.md)。
+   1. 体验事件架构包含[IAB TCF 2.0同意字段组](/help/xdm/field-groups/event/iab.md)。
+   1. 您将IAB同意信息包含在事件[XDM对象](sendevent/xdm.md)中。 在发送事件数据时，Web SDK不会自动包含同意信息。
 
 使用此命令后，Web SDK会将用户的首选项写入Cookie。 下次用户在浏览器中加载您的网站时，SDK将检索这些保留的首选项，以确定是否可将事件发送到Adobe。
 
-Adobe建议您将任何同意对话框首选项与Web SDK同意分开存储。 Web SDK不提供检索同意的方法。 要确保用户首选项与SDK保持同步，您可以调用 `setConsent` 命令进行加载。 Web SDK仅在同意更改时进行服务器调用。
+Adobe建议您将任何同意对话框首选项与Web SDK同意分开存储。 Web SDK不提供检索同意的方法。 为确保用户首选项与SDK保持同步，您可以在每次页面加载时调用`setConsent`命令。 Web SDK仅在同意更改时进行服务器调用。
 
-## 使用 `defaultConsent` 与 `setConsent` {#using-consent}
+## 将`defaultConsent`与`setConsent`一起使用 {#using-consent}
 
 Web SDK提供了两个互补的同意配置命令：
 
-* [`defaultConsent`](configure/defaultconsent.md)：此命令用于捕获使用Web SDK的Adobe客户的同意首选项。
+* [`defaultConsent`](configure/defaultconsent.md)：此命令用于使用Web SDK捕获Adobe客户的同意首选项。
 * [`setConsent`](setconsent.md)：此命令用于捕获网站访客的同意首选项。
 
 如果同时使用这些设置，则可能会导致数据收集和Cookie设置结果有所不同，具体取决于其配置的值。
@@ -53,48 +53,48 @@ Web SDK提供了两个互补的同意配置命令：
 
 | 名称 | 最大年龄 | 描述 |
 |---|---|---|
-| **AMCV_###@AdobeOrg** | 34128000（395天） | 前提条件 [`idMigrationEnabled`](configure/idmigrationenabled.md) 已启用。 当站点的某些部分仍在使用时，在过渡到Web SDK时非常有用 `visitor.js`. |
+| **AMCV_###@AdobeOrg** | 34128000（395天） | 启用[`idMigrationEnabled`](configure/idmigrationenabled.md)时存在。 当站点的某些部分仍在使用`visitor.js`时，转换到Web SDK会很有帮助。 |
 | **Demdex Cookie** | 15552000（180天） | 如果启用了ID同步，则会显示。 Audience Manager通过设置此Cookie来向网站访客分配唯一ID。 demdex Cookie可帮助Audience Manger执行基本的功能，例如访客识别、ID同步、分段、建模和报告等。 |
 | **kndctr_orgid_cluster** | 1800（30分钟） | 存储为当前Edge Network提供请求的请求区域。 URL路径中使用区域，以便Edge Network能够将请求路由到正确的区域。 如果用户使用不同的IP地址或以不同的会话连接，则请求将再次路由到最近的区域。 |
 | **kndct_orgid_identity** | 34128000（395天） | 存储ECID以及与ECID相关的其他信息。 |
 | **kndctr_orgid_consent** | 15552000（180天） | 存储网站的用户同意首选项。 |
-| **s_ecid** | 63115200（2年） | 包含Experience CloudID的副本([!DNL ECID])或MID。 MID 存储在一个键值对中，它遵循以下语法：`s_ecid=MCMID\|<ECID>`。 |
+| **s_ecid** | 63115200（2年） | 包含Experience CloudID ([!DNL ECID])或MID的副本。 MID 存储在一个键值对中，它遵循以下语法：`s_ecid=MCMID\|<ECID>`。 |
 
 ## 使用Web SDK标记扩展设置同意
 
 在Adobe Experience Platform数据收集标记界面中，将同意设置作为规则中的一项操作。
 
-1. 登录 [experience.adobe.com](https://experience.adobe.com) 使用您的Adobe ID凭据。
-1. 导航到 **[!UICONTROL 数据收集]** > **[!UICONTROL 标记]**.
+1. 使用您的Adobe ID凭据登录[experience.adobe.com](https://experience.adobe.com)。
+1. 导航到&#x200B;**[!UICONTROL 数据收集]** > **[!UICONTROL 标记]**。
 1. 选择所需的标记属性。
-1. 导航到 **[!UICONTROL 规则]**，然后选择所需的规则。
-1. 下 [!UICONTROL 操作]，选择现有操作或创建操作。
-1. 设置 [!UICONTROL 扩展名] 下拉字段至 **[!UICONTROL Adobe Experience Platform Web SDK]**，并设置 [!UICONTROL 操作类型] 到 **[!UICONTROL 设置同意]**.
-1. 在右侧设置所需字段，包括 **[!UICONTROL 标准]** 和 **[!UICONTROL 一般同意]**.
-1. 单击 **[!UICONTROL 保留更改]**，然后运行发布工作流程。
+1. 导航到&#x200B;**[!UICONTROL 规则]**，然后选择所需的规则。
+1. 在[!UICONTROL 操作]下，选择现有操作或创建操作。
+1. 将[!UICONTROL 扩展]下拉字段设置为&#x200B;**[!UICONTROL Adobe Experience Platform Web SDK]**，并将[!UICONTROL 操作类型]设置为&#x200B;**[!UICONTROL 设置同意]**。
+1. 在右侧设置所需字段，包括&#x200B;**[!UICONTROL 标准]**&#x200B;和&#x200B;**[!UICONTROL 一般同意]**。
+1. 单击&#x200B;**[!UICONTROL 保留更改]**，然后运行发布工作流程。
 
 您可以在此操作中包含多个同意对象。
 
 ## 使用Web SDK JavaScript库设置同意
 
-运行 `setConsent` 命令。 您可以在此命令中包含以下对象：
+调用Web SDK的配置实例时运行`setConsent`命令。 您可以在此命令中包含以下对象：
 
-* **`consent[]`**：数组 `consent` 对象。 同意对象的格式有所不同，具体取决于您选择的标准和版本。 有关每个同意对象的示例，请参见下面的选项卡，具体取决于同意标准。
-* **`identityMap`**：一个对象，可控制如何生成ECID以及同意信息绑定到哪些ID。 Adobe建议在以下情况下包含此对象： `setConsent` 在其他命令之前运行，例如 [`sendEvent`](sendevent/overview.md).
-* **`edgeConfigOverrides`**：包含 [数据流配置覆盖](datastream-overrides.md).
+* **`consent[]`**： `consent`对象的数组。 同意对象的格式有所不同，具体取决于您选择的标准和版本。 有关每个同意对象的示例，请参见下面的选项卡，具体取决于同意标准。
+* **`identityMap`**：一个对象，它控制如何生成ECID以及同意信息绑定到哪些ID。 Adobe建议当`setConsent`在其他命令（如[`sendEvent`](sendevent/overview.md)）之前运行时包含此对象。
+* **`edgeConfigOverrides`**：包含[数据流配置的对象将覆盖](datastream-overrides.md)。
 
 >[!BEGINTABS]
 
 >[!TAB Adobe2.0]
 
-### Adobe2.0标准 `consent` 对象
+### Adobe2.0标准`consent`对象
 
-如果您使用的是Adobe Experience Platform，则需要在配置文件架构中包含隐私架构字段组。 请参阅 [Adobe Experience Platform中的治理、隐私和安全性](../../landing/governance-privacy-security/overview.md) 以了解有关Adobe2.0标准的更多信息。 您可以在对应于以下架构的值对象中添加数据 `consents` 字段 [!UICONTROL 同意和偏好设置] 配置文件字段组。
+如果您使用的是Adobe Experience Platform，则需要在配置文件架构中包含隐私架构字段组。 有关Adobe2.0标准的详细信息，请参阅[Adobe Experience Platform中的治理、隐私和安全性](../../landing/governance-privacy-security/overview.md)。 您可以在对应于[!UICONTROL 同意和偏好设置]配置文件字段组的`consents`字段的架构的下方值对象中添加数据。
 
-* **`standard`**：您选择的同意标准。 将此属性设置为 `"Adobe"` 用于Adobe2.0标准。
-* **`version`**：表示同意标准版本的字符串。 将此属性设置为 `"2.0"` 用于Adobe2.0标准。
+* **`standard`**：您选择的同意标准。 对于Adobe2.0标准，将此属性设置为`"Adobe"`。
+* **`version`**：表示同意标准版本的字符串。 对于Adobe2.0标准，将此属性设置为`"2.0"`。
 * **`value`**：包含同意值的对象。
-   * **`value.collect.val`**：同意值。 将此项设置为 `"y"` 用户选择启用并启用 `"n"` 用户选择退出时。
+   * **`value.collect.val`**：同意值。 当用户选择加入时将此项设置为`"y"`，当用户选择退出时将此项设置为`"n"`。
    * **`value.metadata.time`**：用户上次更新其同意设置的时间戳。
 
 ```js
@@ -117,19 +117,19 @@ alloy("setConsent", {
 
 >[!TAB IAB TCF 2.0]
 
-### IAB TCF 2.0标准 `consent` 对象
+### IAB TCF 2.0标准`consent`对象
 
-要记录通过欧洲互动广告局(IAB)透明度和同意框架(TCF)标准提供的用户同意首选项，请设置如下所示的同意字符串。
+要记录通过交互式Advertising Bureau Europe (IAB)透明度和同意框架(TCF)标准提供的用户同意首选项，请设置如下所示的同意字符串。
 
-以这种方式设置同意后，Real-time Customer Profile将更新同意信息。 要使此功能正常工作，配置文件XDM架构需要包含 [配置文件隐私架构字段组](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-privacy.schema.md). 发送事件时，需要手动将IAB同意信息添加到事件XDM对象。 Web SDK不会自动在事件中包含同意信息。
+以这种方式设置同意后，Real-time Customer Profile将更新同意信息。 要使此功能正常工作，配置文件XDM架构需要包含[配置文件隐私架构字段组](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-privacy.schema.md)。 发送事件时，需要手动将IAB同意信息添加到事件XDM对象。 Web SDK不会自动在事件中包含同意信息。
 
-要在事件中发送同意信息，您必须将体验事件隐私字段组添加到 [!DNL Profile] — 启用 [!DNL XDM ExperienceEvent] 架构。 请参阅以下部分 [更新ExperienceEvent架构](../../landing/governance-privacy-security/consent/iab/dataset.md#event-schema) ，以了解如何配置此功能的步骤。
+要在事件中发送同意信息，您必须将体验事件隐私字段组添加到已启用[!DNL Profile]的[!DNL XDM ExperienceEvent]架构中。 有关如何配置此架构的步骤，请参阅数据集准备指南中有关[更新ExperienceEvent架构](../../landing/governance-privacy-security/consent/iab/dataset.md#event-schema)的部分。
 
-* **`standard`**：您选择的同意标准。 将此属性设置为 `"IAB TCF"` 适用于IAB TCF 2.0标准。
-* **`version`**：表示同意标准版本的字符串。 将此属性设置为 `"2.0"` 适用于IAB TCF 2.0标准。
+* **`standard`**：您选择的同意标准。 对于IAB TCF 2.0标准，将此属性设置为`"IAB TCF"`。
+* **`version`**：表示同意标准版本的字符串。 对于IAB TCF 2.0标准，将此属性设置为`"2.0"`。
 * **`value`**：包含同意值的字符串。
-* **`gdprApplies`**：一个布尔值，用于确定GDPR是否适用于此同意值。 其默认值为 `true`.
-* **`gdprContainsPersonalData`**：一个布尔值，用于确定与此用户关联的事件数据是否包含个人数据。 其默认值为 `false`.
+* **`gdprApplies`**：一个布尔值，用于确定GDPR是否适用于此同意值。 其默认值为`true`。
+* **`gdprContainsPersonalData`**：一个布尔值，用于确定与此用户关联的事件数据是否包含个人数据。 其默认值为`false`。
 
 ```js
 // Set consent using the IAB TCF 2.0 standard
@@ -146,11 +146,11 @@ alloy("setConsent", {
 
 >[!TAB Adobe1.0]
 
-### Adobe1.0标准 `consent` 对象
+### Adobe1.0标准`consent`对象
 
-* **`standard`**：您选择的同意标准。 将此属性设置为 `"Adobe"` 对于Adobe1.0标准。
-* **`version`**：表示同意标准版本的字符串。 将此属性设置为 `"1.0"` 对于Adobe1.0标准。
-* **`value.general`**：同意值。 将此项设置为 `"in"` 用户选择启用并启用 `"out"` 用户选择退出时。
+* **`standard`**：您选择的同意标准。 对于Adobe1.0标准，将此属性设置为`"Adobe"`。
+* **`version`**：表示同意标准版本的字符串。 对于Adobe1.0标准，将此属性设置为`"1.0"`。
+* **`value.general`**：同意值。 当用户选择加入时将此项设置为`"in"`，当用户选择退出时将此项设置为`"out"`。
 
 ```js
 // Set consent using the Adobe 1.0 standard
@@ -196,10 +196,10 @@ alloy("setConsent", {
 
 ## 同意偏好设置的持久性 {#persistence}
 
-在使用向Web SDK传达用户偏好设置后， `setConsent` 命令时，SDK会保留用户对Cookie的偏好设置。 下次用户在浏览器中加载您的网站时，Web SDK将检索并使用这些保留的首选项来确定是否可将事件发送到Adobe。
+使用`setConsent`命令向Web SDK传达用户偏好设置后，SDK会保留对Cookie的用户偏好设置。 下次用户在浏览器中加载您的网站时，Web SDK将检索并使用这些保留的首选项来确定是否可将事件发送到Adobe。
 
-您需要单独存储用户偏好设置才能显示同意对话框以及当前偏好设置。 无法从Web SDK检索用户偏好设置。 要确保用户首选项与SDK保持同步，您可以调用 `setConsent` 命令进行加载。 只有在首选项发生更改时，Web SDK才会进行服务器调用。
+您需要单独存储用户偏好设置才能显示同意对话框以及当前偏好设置。 无法从Web SDK检索用户偏好设置。 为确保用户首选项与SDK保持同步，您可以在每次页面加载时调用`setConsent`命令。 只有在首选项发生更改时，Web SDK才会进行服务器调用。
 
 ## 在设置同意时同步身份 {#sync-identities}
 
-当默认同意(通过 [defaultconsent](configure/defaultconsent.md) parameter)设置为 `pending` 或 `out`， `setConsent` 设置可能是第一个发出并建立身份的请求。 因此，在第一个请求上同步身份可能很重要。 您可以将标识映射添加到 `setConsent` 命令，就像在 `sendEvent` 命令。 请参阅 [使用identitymap](../identity/overview.md#using-identitymap) 有关如何在命令中包含标识映射的示例。
+当默认同意（通过[defaultConsent](configure/defaultconsent.md)参数设置）设置为`pending`或`out`时，`setConsent`设置可能是第一个发出并建立身份的请求。 因此，在第一个请求上同步身份可能很重要。 您可以将标识映射添加到`setConsent`命令，就像在`sendEvent`命令上一样。 有关如何将标识映射包含在命令中的示例，请参见[使用identityMap](../identity/overview.md#using-identitymap)。

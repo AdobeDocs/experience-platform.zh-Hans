@@ -19,7 +19,7 @@ ht-degree: 0%
 
 ## 先决条件 {#prerequisites}
 
-在阅读本教程之前，请浏览 [可用的用例剧本模板](/help/use-case-playbooks/playbooks/choose.md#search-and-filter) 和 [创建实例](/help/use-case-playbooks/playbooks/create-share-reuse.md) 偏好的剧本。
+在阅读本教程之前，请浏览[可用的用例剧本模板](/help/use-case-playbooks/playbooks/choose.md#search-and-filter)和[创建首选剧本的实例](/help/use-case-playbooks/playbooks/create-share-reuse.md)。
 
 创建实例会在启发型沙盒中生成一组资源，例如历程、区段、架构和消息。 请阅读并了解如何将这些资源复制到其他沙盒中。
 
@@ -29,55 +29,55 @@ ht-degree: 0%
 >
 > 您只能将包导入其他开发沙盒中。 完成所有必要的更改或更新后，您可以将资源或包从这些开发沙盒导入到生产环境中。 您无法直接从用例行动手册沙盒导入到生产环境。
 
-1. 要将启发性的沙盒中的对象导入另一个沙盒，请浏览到用例剧本的所需实例，然后选择 **[!UICONTROL 将Publish转移到其他沙盒]** 将对象导出为文件包。
+1. 要将启发型沙盒中的对象导入另一个沙盒，请浏览到用例剧本的所需实例，然后选择&#x200B;**[!UICONTROL Publish到另一个沙盒]**&#x200B;以将对象导出为包。
 
-   ![显示不同用例实例的GIF](/help/use-case-playbooks/assets/playbooks/data-awareness/browse-to-existing-instances-of-playbook.gif)
+   ![GIF显示其他用例实例](/help/use-case-playbooks/assets/playbooks/data-awareness/browse-to-existing-instances-of-playbook.gif)
 
-2. 一旦您选择 **[!UICONTROL 将Publish转移到其他沙盒]** 按钮，此时将显示一个模式窗口。 填写名称和可选说明，然后选择 **[!UICONTROL 创建]**. 此步骤将生成的资源捆绑到一个包中，该包可以导入到其他沙盒中。
+2. 选择&#x200B;**[!UICONTROL Publish到其他沙盒]**&#x200B;按钮后，将显示一个模式窗口。 填写名称和可选说明，然后选择&#x200B;**[!UICONTROL 创建]**。 此步骤将生成的资源捆绑到一个包中，该包可以导入到其他沙盒中。
 
-   ![用于创建资源包的模式](/help/use-case-playbooks/assets/playbooks/data-awareness/create-package-modal.png)
+   ![用于创建包的模式](/help/use-case-playbooks/assets/playbooks/data-awareness/create-package-modal.png)
 
-3. 导航至 **沙盒** 页面，然后选择 **包** 选项卡，找到您的包并将其发布。 要发布处于草稿状态的资源包，请按照 [沙盒工具](/help/sandboxes/ui/sandbox-tooling.md#add-an-object-to-an-existing-package-and-publish) 文档。
+3. 导航到左侧导航中的&#x200B;**沙盒**&#x200B;页面并选择&#x200B;**包**&#x200B;选项卡，找到您的包并将其发布。 要发布处于草稿状态的包，请按照[沙盒工具](/help/sandboxes/ui/sandbox-tooling.md#add-an-object-to-an-existing-package-and-publish)文档中的步骤操作。
 
    ![处于草稿或未发布状态的包](/help/use-case-playbooks/assets/playbooks/data-awareness/draft-mode.png)
 
-   ![发布包](/help/use-case-playbooks/assets/playbooks/data-awareness/publish-draft.png)
+   ![正在发布包](/help/use-case-playbooks/assets/playbooks/data-awareness/publish-draft.png)
 
-4. 发布成功后，在包浏览页面上，您应会看到 **+** 名称旁边的“已启用”按钮。
+4. 发布成功后，在包浏览页面上，您应该会看到名称旁边启用了&#x200B;**+**&#x200B;按钮。
 
-   ![“沙盒”页面中的“包”选项卡](/help/use-case-playbooks/assets/playbooks/data-awareness/packages.png)
+   沙盒页面中的![包选项卡](/help/use-case-playbooks/assets/playbooks/data-awareness/packages.png)
 
    >[!NOTE]
    >
    > 当包仍处于草稿模式时，无法导入包，因此打开包详细信息页面并发布包。
 
-5. 选择 **+** 控制并启动工作流以将用例剧本生成的资产导入 **[!UICONTROL Target沙盒]**. 选择目标沙盒，然后使用下拉菜单确认您要导入的包名称。 在继续下一步之前，请添加作业详细信息，例如作业名称和作业描述。
+5. 选择&#x200B;**+**&#x200B;控件并启动工作流以将用例行动手册生成的资源导入&#x200B;**[!UICONTROL Target沙盒]**。 选择目标沙盒，然后使用下拉菜单确认您要导入的包名称。 在继续下一步之前，请添加作业详细信息，例如作业名称和作业描述。
 
    ![启动导入工作流，选择目标，确认包，添加作业详细信息。](/help/use-case-playbooks/assets/playbooks/data-awareness/import-package-import-settings.png)
 
-6. 在 **[!UICONTROL 查看依赖关系]** 步骤，您可以将架构映射并将其他资产从启发型沙盒复制到目标沙盒中。 此 **[!UICONTROL 完成]** 在映射每个架构之前，按钮处于禁用状态。
+6. 在&#x200B;**[!UICONTROL 查看依赖项]**&#x200B;步骤中，您可以将架构映射并将其他资产从启发型沙盒复制到目标沙盒中。 在映射每个架构之前，**[!UICONTROL 完成]**&#x200B;按钮处于禁用状态。
 
    ![在“查看依赖项”步骤中映射架构，启用“完成”按钮。](/help/use-case-playbooks/assets/playbooks/data-awareness/import-package-view-dependencies.png)
 
 ### 映射架构 {#map-schemas}
 
-1. 映射第一个架构。 架构映射对话框显示一个下拉列表，用于选择目标架构。 如果源架构是配置文件架构，则除了 [单个合并配置文件架构](/help/xdm/classes/individual-profile.md). 首次显示页面时，您可以看到源数据和目标字段之间自动生成的映射推荐。 通过选择目标字段，然后选择新字段可以编辑映射。 如果修改建议的映射，请使用 **验证** 按钮验证新映射并显示任何可能链接到新映射的错误。 选择 **保存** 映射完成后。
+1. 映射第一个架构。 架构映射对话框显示一个下拉列表，用于选择目标架构。 如果源架构是配置文件架构，则除了[单个合并配置文件架构](/help/xdm/classes/individual-profile.md)之外，没有其他目标架构选项。 首次显示页面时，您可以在Source数据和目标字段之间查看自动生成的映射推荐。 通过选择目标字段，然后选择新字段可以编辑映射。 如果修改建议的映射，请使用&#x200B;**验证**&#x200B;按钮来验证新映射，并显示任何可能链接到新映射的错误。 映射完成后，选择&#x200B;**保存**。
 
-   ![架构映射对话框，其中包含用于选择目标架构的下拉列表。](/help/use-case-playbooks/assets/playbooks/data-awareness/map-to-existing-fields.png)
+   ![架构映射对话框，带有用于选择目标架构的下拉列表。](/help/use-case-playbooks/assets/playbooks/data-awareness/map-to-existing-fields.png)
 
-2. 继续映射架构中的所有字段。 如果架构是 [事件架构](/help/xdm/classes/experienceevent.md)，该对话框显示一个下拉列表，您可在其中查看target沙盒中的所有事件架构。
+2. 继续映射架构中的所有字段。 如果架构是[事件架构](/help/xdm/classes/experienceevent.md)，则该对话框会显示一个下拉列表，您可以在其中查看目标沙盒中的所有事件架构。
 
-   ![从下拉列表中选择目标架构](/help/use-case-playbooks/assets/playbooks/data-awareness/map-to-event-schema.png)
+   ![从下拉菜单中选择目标架构](/help/use-case-playbooks/assets/playbooks/data-awareness/map-to-event-schema.png)
 
-3. 从的可用架构中选择架构 **Target沙盒**.
+3. 从&#x200B;**Target沙盒**&#x200B;中的可用架构中选择架构。
 
    ![选择架构](/help/use-case-playbooks/assets/playbooks/data-awareness/map-to-available-schemas.png)
 
-4. 完成映射并选择 **保存**.
+4. 完成映射并选择&#x200B;**保存**。
 
    ![保存映射](/help/use-case-playbooks/assets/playbooks/data-awareness/map-to-existing-modal.png)
 
-5. 完成映射架构中的所有字段后，选择 **完成** 以完成导入工作流。
+5. 完成映射架构中的所有字段后，选择&#x200B;**完成**&#x200B;以完成导入工作流。
 
    ![完成流程](/help/use-case-playbooks/assets/playbooks/data-awareness/complete-flow.png)
 
@@ -87,14 +87,14 @@ ht-degree: 0%
 
 ### 导入状态 {#import-status}
 
-1. 系统会自动将您重定向到 [**导入**](/help/sandboxes/ui/sandbox-tooling.md#view-import-details) 可在其中查看导入进度的页面。
+1. 系统会自动将您重定向到&#x200B;[**导入**](/help/sandboxes/ui/sandbox-tooling.md#view-import-details)&#x200B;页面，您可以在其中查看导入进度。
 
-   ![显示导入进度的页面](/help/use-case-playbooks/assets/playbooks/data-awareness/import-progress.png)
+   ![页面显示导入进度](/help/use-case-playbooks/assets/playbooks/data-awareness/import-progress.png)
 
 2. 在导入包时，将在目标沙盒中创建包的资产。 完成后，它们将引用您在导入过程中映射的字段。 该过程现已完成，灵感沙盒中的资产现在也位于您的目标沙盒中以供您测试。
 
-   ![在目标沙盒中生成的资源](/help/use-case-playbooks/assets/playbooks/data-awareness/packages.png)
+   ![在目标沙盒中生成资源](/help/use-case-playbooks/assets/playbooks/data-awareness/packages.png)
 
 ## 后续步骤
 
-阅读本指南后，您现在可以更好地了解如何利用用例行动手册以及 [沙盒工具](/help/sandboxes/ui/sandbox-tooling.md#monitor-import-jobs-and-view-import-objects-details) 创建引用架构的可执行历程。 了解关于常见问题的更多信息 [Real-Time CDP用例](/help/rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md).
+阅读本指南后，您现在可以更好地了解如何利用用例行动手册以及[沙盒工具](/help/sandboxes/ui/sandbox-tooling.md#monitor-import-jobs-and-view-import-objects-details)来创建引用架构的可执行历程。 了解有关常见[Real-Time CDP用例](/help/rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md)的更多信息。

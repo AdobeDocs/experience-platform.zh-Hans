@@ -33,7 +33,7 @@ ht-degree: 67%
    * [帐户配置文件 UI 指南](accounts/account-profile-ui-guide.md)
 * 管理 {#admin}
    * [管理概述](administration/admin-overview.md)
-* 受众和分段 {#segmentation}
+* 受众和分段{#segmentation}
    * [分段概述](segmentation/segmentation-overview.md)
    * [区段生成器指南](segmentation/segment-builder-guide.md)
    * [Real-Time CDP B2B 版本中的分段](segmentation/b2b.md)
@@ -44,13 +44,13 @@ ht-degree: 67%
 * 目标 {#destinations}
    * [目标概述](destinations/overview.md)
    * [Real-Time CDP B2B 版本中的目标](destinations/b2b.md)
-* 护栏 {#guardrails}
+* 护栏{#guardrails}
    * [Real-Time CDP护栏概述](guardrails/overview.md)
-   * [数据摄取的护栏](https://experienceleague.adobe.com/docs/experience-platform/ingestion/guardrails.html){target="_blank"}
-   * [的护栏 [!DNL Edge Network Server API]](https://experienceleague.adobe.com/docs/experience-platform/edge-network-server-api/guardrails.html){target="_blank"}
-   * [护栏 [!DNL Real-Time Customer Profile] 数据和分段](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html?lang=zh-Hans){target="_blank"}
-   * [护栏 [!DNL Identity Service] 数据](https://experienceleague.adobe.com/docs/experience-platform/identity/guardrails.html){target="_blank"}
-   * [护栏 [!DNL Query Service]](https://experienceleague.adobe.com/docs/experience-platform/query/guardrails.html){target="_blank"}
+   * 用于数据引入的[护栏](https://experienceleague.adobe.com/docs/experience-platform/ingestion/guardrails.html){target="_blank"}
+   *  [!DNL Edge Network Server API]](https://experienceleague.adobe.com/docs/experience-platform/edge-network-server-api/guardrails.html){target="_blank"}的[护栏
+   * [针对 [!DNL Real-Time Customer Profile] 数据和分段的护栏](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html?lang=zh-Hans){target="_blank"}
+   *  [!DNL Identity Service] 数据](https://experienceleague.adobe.com/docs/experience-platform/identity/guardrails.html){target="_blank"}的[护栏
+   *  [!DNL Query Service]](https://experienceleague.adobe.com/docs/experience-platform/query/guardrails.html){target="_blank"}的[护栏
    * [通过目标激活数据的护栏](https://experienceleague.adobe.com/docs/experience-platform/destinations/guardrails.html){target="_blank"}
 * 标识 {#identity}
    * [标识和标识命名空间](profile/identities-overview.md)
@@ -76,15 +76,15 @@ ht-degree: 67%
    * [Real-Time CDP B2B 版本中的源](sources/b2b.md)
 * 用例 {#use-cases}
    * [示例用例概述](/help/rtcdp/use-case-guides/overview.md)
-   * 客户获取 {#customer-acquisition}
-      * [在不依赖第三方Cookie的情况下吸引和赢取新客户](/help/rtcdp/partner-data/prospecting.md)
+   * 客户获取{#customer-acquisition}
+      * [在不依赖第三方Cookie的情况下吸引和获取新客户](/help/rtcdp/partner-data/prospecting.md)
       * [使用合作伙伴辅助的访客识别功能，为未知访客提供个性化的现场体验](/help/rtcdp/partner-data/onsite-personalization.md)
       * [未经身份验证的用户异地重定向](./partner-data/offsite-retargeting.md)
-   * 配置文件扩充 {#profile-enrichment}
+   * 配置文件扩充{#profile-enrichment}
       * [用合作伙伴提供的属性补充第一方配置文件](/help/rtcdp/partner-data/supplement-first-party-profiles.md)
-   * 个性化的洞察和参与 {#personalization-insights-engagement}
+   * 个性化的见解和参与{#personalization-insights-engagement}
       * [将一次性客户价值提升至存留期价值](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/evolve-one-time-value-to-lifetime-value.md)
       * [以智能的方式重新吸引您的客户](/help/rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md)
       * [智能地重新吸引客户：Luma示例](/help/rtcdp/use-case-guides/intelligent-re-engagement/use-cases-luma.md)
-* [Experience Platform 发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [Experience Platform 发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
 * [Experience Platform 术语表](https://www.adobe.com/go/platform-glossary_cn)

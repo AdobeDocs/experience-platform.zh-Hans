@@ -29,7 +29,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 要打开Audience Portal，请选择“分段”部分中的&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡。
 
-## 受众列表 {#list}
+## “受众”列表 {#list}
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_browse_churncolumnname"

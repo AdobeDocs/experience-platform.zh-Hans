@@ -36,4 +36,4 @@ ht-degree: 33%
    * [为配置文件更新启用数据集(upsert)](datasets/enable-upsert.md)
 * [数据湖中的隐私请求处理](privacy.md)
 * [API 参考](https://www.adobe.io/experience-platform-apis/references/catalog/)
-* [Platform发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [平台发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

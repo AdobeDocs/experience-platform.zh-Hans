@@ -4,32 +4,32 @@ description: 了解如何在Reactor API中调用/builds端点。
 exl-id: 476abea0-efff-478a-b87f-ef6b91bfcca5
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '803'
-ht-degree: 4%
+source-wordcount: '799'
+ht-degree: 5%
 
 ---
 
 # 生成端点
 
-扩展、规则和数据元素是Adobe Experience Platform中标记的构建块。 如果您希望应用程序执行一些操作，则需要将这些构建块添加到 [库](./libraries.md). 要在体验应用程序上部署库，需将该库编译为内部版本。 此 `/builds` Reactor API中的端点允许您以编程方式管理体验应用程序中的构建。
+扩展、规则和数据元素是Adobe Experience Platform中标记的构建块。 如果您希望应用程序执行一些操作，则需要将这些构建块添加到[库](./libraries.md)中。 要在体验应用程序上部署库，需要将该库编译为内部版本。 Reactor API中的`/builds`端点允许您以编程方式管理体验应用程序中的生成。
 
-内部版本是在Web和移动应用程序中加载的实际文件（或多个文件）。 每个内部版本的内容因以下因素而异：
+内部版本是加载到Web和移动应用程序中的实际文件（或多个文件）。 每个内部版本的内容因以下因素而异：
 
 * 库中包含的资源
-* 的配置 [环境](./environments.md) 在其中生成库的库
-* 的平台 [属性](./properties.md) 内部版本所属的
+* 生成库的[环境](./environments.md)的配置
+* 内部版本所属的[属性](./properties.md)的平台
 
-一个内部版本只属于一个库。 一个库可以有许多内部版本。
+一个内部版本只属于一个库。 库可以有许多内部版本。
 
-有关内部版本以及它们如何适应标记的发布工作流的更多常规信息，请参阅 [发布概述](../../ui/publishing/overview.md).
+有关内部版本以及它们如何适应标记的发布工作流的更多常规信息，请参阅[发布概述](../../ui/publishing/overview.md)。
 
 ## 快速入门
 
-本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [快速入门指南](../getting-started.md) 有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续之前，请查看[快速入门指南](../getting-started.md)，以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索内部版本列表 {#list}
 
-通过在GET请求的路径中包含库的ID，可以列出特定库的内部版本。
+您可以通过在GET请求的路径中包含库的ID来列出特定库的内部版本。
 
 **API格式**
 
@@ -39,13 +39,13 @@ GET /libraries/{LIBRARY_ID}/builds
 
 | 参数 | 描述 |
 | --- | --- |
-| `LIBRARY_ID` | 此 `id` 要列出其内部版本的库。 |
+| `LIBRARY_ID` | 要列出其内部版本的库的`id`。 |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性筛选列出的内部版本：<ul><li>`created_at`</li><li>`status`</li><li>`token`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [筛选响应](../guides/filtering.md) 了解更多信息。
+>使用查询参数，可以根据以下属性过滤列出的内部版本：<ul><li>`created_at`</li><li>`status`</li><li>`token`</li><li>`updated_at`</li></ul>有关详细信息，请参阅[筛选响应](../guides/filtering.md)指南。
 
 **请求**
 
@@ -61,7 +61,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回指定库的内部版本列表。
+成功的响应将返回指定库的内部版本列表。
 
 ```json
 {
@@ -146,7 +146,7 @@ curl -X GET \
 
 ## 查找内部版本 {#lookup}
 
-您可以通过在GET请求的路径中提供其ID来查找内部版本。
+您可以通过在GET请求的路径中提供内部版本的ID来查找内部版本。
 
 **API格式**
 
@@ -156,7 +156,7 @@ GET /builds/{BUILD_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `BUILD_ID` | 此 `id` 要查找的版本编号。 |
+| `BUILD_ID` | 要查找的生成版本的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -174,7 +174,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回内部版本的详细信息。
+成功的响应将返回生成的详细信息。
 
 ```json
 {
@@ -258,7 +258,7 @@ POST /libraries/{LIBRARY_ID}/builds
 
 | 参数 | 描述 |
 | --- | --- |
-| `LIBRARY_ID` | 此 `id` 库中，您将在该库下定义内部版本。 |
+| `LIBRARY_ID` | 您正在其下定义内部版本的库的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -276,7 +276,7 @@ curl -X POST \
 
 **响应**
 
-成功响应将返回新创建的内部版本的详细信息。
+成功的响应会返回新创建的内部版本的详细信息。
 
 ```json
 {
@@ -350,7 +350,7 @@ curl -X POST \
 
 ## 重新发布内部版本 {#republish}
 
-您可以从重新发布内部版本 [已发布库](./libraries.md#publish) 在PATCH请求的路径中包含其ID。
+通过在PATCH请求的路径中包含内部版本ID，您可以从[发布的库](./libraries.md#publish)重新发布内部版本。
 
 **API格式**
 
@@ -360,13 +360,13 @@ PATCH /builds/{BUILD_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `BUILD_ID` | 此 `id` 重新发布的内部版本。 |
+| `BUILD_ID` | 要重新发布的内部版本的`id`。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求将更新 `app_id` 对于现有应用程序配置。
+以下请求更新现有应用程序配置的`app_id`。
 
 ```shell
 curl -X PATCH \
@@ -388,15 +388,15 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 此 `id` 要更新的内部版本的一部分。 这应该与 `{BUILD_ID}` 请求路径中提供的值。 |
-| `type` | 正在更新的资源类型。 对于此端点，值必须为 `builds`. |
-| `meta.action` | 要执行的PATCH操作的类型。 必须设置为 `republish`. |
+| `id` | 要更新的内部版本的`id`。 这应当与在请求路径中提供的`{BUILD_ID}`值匹配。 |
+| `type` | 正在更新的资源类型。 对于此终结点，值必须为`builds`。 |
+| `meta.action` | 要执行的PATCH操作的类型。 必须设置为`republish`。 |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功响应将返回重新发布的内部版本的详细信息。
+成功的响应会返回重新发布的内部版本的详细信息。
 
 ```json
 {
@@ -471,13 +471,13 @@ curl -X PATCH \
 
 ## 检索内部版本的相关资源 {#related}
 
-以下调用演示了如何检索内部版本的相关资源。 时间 [查找内部版本](#lookup)，这些关系列在 `relationships` 属性。
+以下调用演示了如何检索内部版本的相关资源。 当[查找生成](#lookup)时，这些关系列在`relationships`属性下。
 
-请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
+有关Reactor API中关系的详细信息，请参阅[关系指南](../guides/relationships.md)。
 
 ### 列出内部版本的相关数据元素 {#data-elements}
 
-您可以通过附加来列出内部版本的相关数据元素 `/data_elements` 到查找请求的路径。
+您可以通过将`/data_elements`附加到查找请求的路径来列出生成的相关数据元素。
 
 **API格式**
 
@@ -487,7 +487,7 @@ GET  /builds/{BUILD_ID}/data_elements
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BUILD_ID}` | 此 `id` 要列出其数据元素的内部版本。 |
+| `{BUILD_ID}` | 要列出其数据元素的生成的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -505,7 +505,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回与内部版本相关的数据元素列表。
+成功的响应将返回与生成相关的数据元素列表。
 
 ```json
 {
@@ -618,7 +618,7 @@ curl -X GET \
 
 ### 列出内部版本的相关扩展 {#extensions}
 
-您可以通过附加来列出内部版本的相关扩展 `/extensions` 到查找请求的路径。
+您可以将`/extensions`附加到查找请求的路径，以列出内部版本的相关扩展。
 
 **API格式**
 
@@ -628,7 +628,7 @@ GET  /builds/{BUILD_ID}/extensions
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BUILD_ID}` | 此 `id` 要列出其扩展名的内部版本。 |
+| `{BUILD_ID}` | 要列出其扩展名的内部版本的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -749,7 +749,7 @@ curl -X GET \
 
 ### 列出内部版本的相关规则 {#rules}
 
-您可以通过附加来列出内部版本的相关规则 `/rules` 到查找请求的路径。
+您可以通过将`/rules`附加到查找请求的路径来列出生成的相关规则。
 
 **API格式**
 
@@ -759,7 +759,7 @@ GET  /builds/{BUILD_ID}/rules
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BUILD_ID}` | 此 `id` 要列出其规则的内部版本。 |
+| `{BUILD_ID}` | 要列出其规则的内部版本的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -777,7 +777,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回与内部版本相关的规则列表。
+成功的响应将返回与生成相关的规则列表。
 
 ```json
 {
@@ -862,7 +862,7 @@ curl -X GET \
 
 ### 查找内部版本的相关库 {#library}
 
-您可以通过附加来检索内部版本的相关库 `/library` 到查找请求的路径。
+您可以将`/library`附加到查找请求的路径，以检索内部版本的相关库。
 
 **API格式**
 
@@ -872,7 +872,7 @@ GET  /builds/{BUILD_ID}/library
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BUILD_ID}` | 此 `id` 要查找其库的内部版本。 |
+| `{BUILD_ID}` | 要查找其库的内部版本的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -975,7 +975,7 @@ curl -X GET \
 
 ### 查找内部版本的相关环境 {#environment}
 
-您可以通过附加来检索内部版本的相关环境 `/environment` 到查找请求的路径。
+您可以通过将`/environment`附加到查找请求的路径来检索生成的相关环境。
 
 **API格式**
 
@@ -985,7 +985,7 @@ GET  /builds/{BUILD_ID}/environment
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BUILD_ID}` | 此 `id` 要查找其环境的版本。 |
+| `{BUILD_ID}` | 要查找其环境的内部版本的`id`。 |
 
 {style="table-layout:auto"}
 

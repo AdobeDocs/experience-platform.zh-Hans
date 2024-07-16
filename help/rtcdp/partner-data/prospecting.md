@@ -1,12 +1,12 @@
 ---
 title: 在不依赖第三方Cookie的情况下吸引和赢取新客户
-description: 了解如何通过潜在用例吸引和赢取新客户，而无需依赖第三方Cookie。
+description: 了解如何不依赖第三方 Cookie，而是通过潜在客户发掘用例吸引和获得新客户。
 feature: Use Cases, Customer Acquisition
 exl-id: b9e7b3af-2a13-4904-bd12-e3ed05a1988e
 source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '2074'
-ht-degree: 85%
+ht-degree: 86%
 
 ---
 
@@ -124,7 +124,7 @@ Adobe Real-time Customer Data Platform可帮助品牌商安全地将其支持的
 
 #### 将第三方数据治理标签添加到架构中的所有字段
 
-考虑将第三方数据治理标签添加到构成架构的所有字段。这对于确保负责任地使用第三方数据并最大限度地降低数据泄露风险非常重要。查找有关 [第三方数据管理标签](../../data-governance/labels/reference.md#partner-ecosystem-labels).
+考虑将第三方数据治理标签添加到构成架构的所有字段。这对于确保负责任地使用第三方数据并最大限度地降低数据泄露风险非常重要。查找有关[第三方数据管理标签](../../data-governance/labels/reference.md#partner-ecosystem-labels)的更多信息。
 
 为此，请执行以下步骤：
 
@@ -221,12 +221,12 @@ Adobe Real-time Customer Data Platform可帮助品牌商安全地将其支持的
 
 ![支持潜在客户受众的目标。](/help/destinations/assets/ui/activate-prospect-audiences/data-types-filter.png)
 
-[了解更多](/help/destinations/ui/activate-prospect-audiences.md) 关于将潜在客户激活到云存储目标。
+[阅读有关将潜在客户激活到云存储目标的更多信息](/help/destinations/ui/activate-prospect-audiences.md)。
 
 ## 由合作伙伴数据支持实现的其他用例 {#other-use-cases}
 
 探索通过 Real-Time CDP 中的合作伙伴数据支持实现的更多用例：
 
 * [用受信任的数据合作伙伴提供的属性补充第一方配置文件](/help/rtcdp/partner-data/supplement-first-party-profiles.md)，以改善您的数据基础、了解客户群的新情况并获得更好的受众优化。
-* [使用合作伙伴辅助的访客识别功能，为未知访客提供个性化的现场体验](/help/rtcdp/partner-data/onsite-personalization.md) 在访问期间，用户不会进行身份验证或者没有品牌历史。
+* [在访问期间使用合作伙伴帮助的访客识别](/help/rtcdp/partner-data/onsite-personalization.md)为未知访客提供个性化现场体验，用户无需进行身份验证或没有您的品牌历史记录。
 * [扩大了潜在客户配置文件和潜在客户受众的激活范围](/help/destinations/ui/activate-prospect-audiences.md)，以选择目标。

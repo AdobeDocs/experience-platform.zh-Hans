@@ -15,12 +15,12 @@ Adobe Experience Platform查询服务支持匿名块。 匿名块功能允许您
 
 匿名块特征是执行一系列操作或查询的有效方法。 块中的查询链可以另存为模板，并计划以特定时间或间隔运行。 这些查询可用于写入和附加数据以创建新数据集，通常用于具有依赖关系的地方。
 
-该表提供了块主要部分的划分信息：执行和异常处理。 截面由关键字定义 `BEGIN`， `END`、和 `EXCEPTION`.
+该表提供了块主要部分的划分信息：执行和异常处理。 这些部分由关键字`BEGIN`、`END`和`EXCEPTION`定义。
 
 | 部分 | 描述 |
 |---|---|
-| 执行 | 可执行部分以关键字开头 `BEGIN` 并以关键词结尾 `END`. 任何包含在 `BEGIN` 和 `END` 关键字将按顺序执行，并确保在顺序中的上一个查询完成之前不执行后续查询。 |
-| 异常处理 | 可选的异常处理部分以关键字开头 `EXCEPTION`. 它包含当执行部分中的任何SQL语句失败时捕获和处理异常的代码。 如果有任何查询失败，则整个块将停止。 |
+| 执行 | 可执行部分以关键字`BEGIN`开头，以关键字`END`结尾。 将按顺序执行`BEGIN`和`END`关键字中包含的任何语句集，并确保在完成顺序中的上一个查询之前，不会执行后续查询。 |
+| 异常处理 | 可选的异常处理部分以关键字`EXCEPTION`开头。 它包含当执行部分中的任何SQL语句失败时捕获和处理异常的代码。 如果有任何查询失败，则整个块将停止。 |
 
 值得注意的是，块是可执行语句，因此可以嵌套在其他块中。
 
@@ -30,7 +30,7 @@ Adobe Experience Platform查询服务支持匿名块。 匿名块功能允许您
 
 ## 示例匿名块查询
 
-以下查询显示链接SQL语句的示例。 请参阅 [查询服务中的SQL语法](../sql/syntax.md) 文档，以了解有关使用的任何SQL语法的详细信息。
+以下查询显示链接SQL语句的示例。 有关使用的任何SQL语法的详细信息，请参阅查询服务](../sql/syntax.md)文档中的[SQL语法。
 
 ```SQL
 $$ BEGIN
@@ -42,11 +42,11 @@ END
 $$;
 ```
 
-在以下示例中， `SET` 保留结果 `SELECT` 在指定的局部变量中查询。 变量的作用域为匿名块。
+在以下示例中，`SET`在指定的局部变量中保留`SELECT`查询的结果。 变量的作用域为匿名块。
 
 快照ID存储为局部变量(`@current_sid`)。 然后，在下一个查询中使用它来返回来自同一数据集/表的基于SNAPSHOT的结果。
 
-数据库快照是SQL Server数据库的只读静态视图。 了解更多信息 [有关snapshot子句的信息](../sql/syntax.md#SNAPSHOT-clause) 请参阅SQL语法文档。
+数据库快照是SQL Server数据库的只读静态视图。 有关snapshot子句](../sql/syntax.md#SNAPSHOT-clause)的更多[信息，请参阅SQL语法文档。
 
 ```SQL
 $$ BEGIN                                             
@@ -60,7 +60,7 @@ $$;
 
 某些第三方客户端在SQL块之前和之后可能需要单独的标识符，以指示脚本的一部分应作为单个语句处理。 如果您在第三方客户端上使用查询服务时收到错误消息，您应该参阅第三方客户端关于使用SQL块的文档。
 
-例如， **DbVisualizer** 要求分隔符必须是行上的唯一文本。 在DbVisualizer中，“开始标识符”的默认值为 `--/` 对于End Identifier ，它是 `/`. 下面显示了DbVisualizer中的匿名块示例：
+例如，**DbVisualizer**&#x200B;要求分隔符必须是行上的唯一文本。 在DbVisualizer中，开始标识符的默认值为`--/`，结束标识符的默认值为`/`。 下面显示了DbVisualizer中的匿名块示例：
 
 ```SQL
 --/
@@ -74,10 +74,10 @@ $$;
 /
 ```
 
-特别是对于DbVisualizer，UI中还有一个&#39;&#39;选项[!DNL Execute the complete buffer as one SQL statement]“。 请参阅 [DbVisualizer文档](https://confluence.dbvis.com/display/UG120/Executing+Complex+Statements#ExecutingComplexStatements-UsingExecuteBuffer) 以了解更多信息。
+特别是对于DbVisualizer，UI中还提供了“[!DNL Execute the complete buffer as one SQL statement]”选项。 有关详细信息，请参阅[DbVisualizer文档](https://confluence.dbvis.com/display/UG120/Executing+Complex+Statements#ExecutingComplexStatements-UsingExecuteBuffer)。
 
 ## 后续步骤
 
-通过阅读本文档，您现在对匿名块及其结构方式有了清楚的了解。 请阅读 [查询执行指南](../best-practices/writing-queries.md) 以了解有关编写查询的详细信息。
+通过阅读本文档，您现在对匿名块及其结构方式有了清楚的了解。 有关写入查询的详细信息，请阅读[查询执行指南](../best-practices/writing-queries.md)。
 
-您还应阅读 [如何将匿名块与增量负载设计模式一起使用](./incremental-load.md) 以提高查询效率。
+您还应该阅读[如何将匿名块与增量负载设计模式](./incremental-load.md)结合使用以提高查询效率。

@@ -4,16 +4,16 @@ description: Adobe Experience Platform中的Adobe Analytics Product String标记
 exl-id: 3ddc3e6f-412c-42d5-8cbf-25273c1794d5
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
-source-wordcount: '131'
-ht-degree: 67%
+source-wordcount: '135'
+ht-degree: 42%
 
 ---
 
-# Adobe Analytics Product String 扩展发行说明
+# Adobe Analytics Product String扩展发行说明
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 ## 2020 年 1 月 31 日
 

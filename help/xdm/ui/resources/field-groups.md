@@ -26,65 +26,65 @@ Adobe Experience Platform提供了许多标准字段组，涵盖广泛的营销�
 
 ## 先决条件 {#prerequisites}
 
-本指南要求您对XDM系统有一定的了解。 请参阅 [XDM概述](../../home.md) 介绍XDM在Experience Platform生态系统中的作用，以及 [模式组合基础](../../schema/composition.md) 了解字段组对XDM架构的贡献方式。
+本指南要求您对XDM系统有一定的了解。 请参阅[XDM概述](../../home.md)，了解XDM在Experience Platform生态系统中的角色介绍，以及架构组合的[基础知识](../../schema/composition.md)，了解字段组如何对XDM架构做出贡献。
 
-虽然本指南并非必需，但建议您也按照以下内容阅读本教程： [在UI中组合架构](../../tutorials/create-schema-ui.md) 熟悉 [!DNL Schema Editor].
+虽然本指南并非必需，但建议您也学习有关[在UI](../../tutorials/create-schema-ui.md)中撰写架构的教程，以熟悉[!DNL Schema Editor]的各种功能。
 
 ## 创建新字段组 {#create}
 
-要创建新字段组，您必须首先选择要将该字段组添加到的架构。 您可以选择 [创建新架构](./schemas.md#create) 或 [选择要编辑的现有架构](./schemas.md#edit).
+要创建新字段组，您必须首先选择要将该字段组添加到的架构。 您可以选择[创建新架构](./schemas.md#create)或[选择要编辑的现有架构](./schemas.md#edit)。
 
-一旦您在中打开架构， [!DNL Schema Editor]，选择 **[!UICONTROL 添加]** 旁边的 [!UICONTROL 字段组] 部分。
+在[!DNL Schema Editor]中打开架构后，选择左边栏中[!UICONTROL 字段组]部分旁边的&#x200B;**[!UICONTROL 添加]**。
 
 ![](../../images/ui/resources/field-groups/add-field-group.png)
 
-在显示的对话框中，选择 **[!UICONTROL 创建新字段组]**. 在这里，您可以提供 **[!UICONTROL 显示名称]** 和 **[!UICONTROL 描述]** 对于字段组。 完成后，选择 **[!UICONTROL 添加字段组]**.
+在出现的对话框中，选择&#x200B;**[!UICONTROL 新建字段组]**。 您可以在此为字段组提供&#x200B;**[!UICONTROL 显示名称]**&#x200B;和&#x200B;**[!UICONTROL 描述]**。 完成后，选择&#x200B;**[!UICONTROL 添加字段组]**。
 
 ![](../../images/ui/resources/field-groups/create-field-group.png)
 
-此 [!DNL Schema Editor] 此时会重新显示，左侧边栏中列出了新的字段组。 由于这是一个全新的字段组，它当前不向架构提供任何字段，因此画布保持不变。 您现在可以开始 [向字段组添加字段](#add-fields).
+[!DNL Schema Editor]会重新出现，新字段组列在左边栏中。 由于这是一个全新的字段组，它当前不向架构提供任何字段，因此画布保持不变。 您现在可以开始[向字段组](#add-fields)添加字段。
 
 ![](../../images/ui/resources/field-groups/field-group-added.png)
 
 ## 筛选字段组 {#filter}
 
-根据如何创建可用的字段预先过滤可用的字段的列表。默认设置显示由Adobe定义的字段组。 但是，您还可以筛选列表以显示由您的组织创建的列表。 选择单选按钮以选择 [!UICONTROL 标准] 和 [!UICONTROL 自定义] 选项。 此 [!UICONTROL 标准] 选项显示由Adobe创建的实体以及 [!UICONTROL 自定义] 选项显示组织内创建的实体。
+根据如何创建可用的字段预先过滤可用的字段的列表。默认设置显示由Adobe定义的字段组。 但是，您还可以筛选列表以显示由您的组织创建的列表。 选择单选按钮以在[!UICONTROL 标准]和[!UICONTROL 自定义]选项之间进行选择。 [!UICONTROL Standard]选项显示由Adobe创建的实体，[!UICONTROL Custom]选项显示组织内创建的实体。
 
-![此 [!UICONTROL 字段组] 选项卡 [!UICONTROL 架构] 工作区，使用 [!UICONTROL 标准] 和 [!UICONTROL 自定义] 突出显示。](../../images/ui/resources/field-groups/standard-and-custom-field-groups.png)
+![已突出显示[!UICONTROL 架构]工作区的[!UICONTROL 字段组]选项卡，其中包含[!UICONTROL 标准]和[!UICONTROL 自定义]。](../../images/ui/resources/field-groups/standard-and-custom-field-groups.png)
 
 ## 编辑现有字段组 {#edit}
 
 >[!NOTE]
 >
->只能完全编辑和自定义由您的组织定义的自定义字段组。 对于由Adobe定义的核心字段组，只能在单个架构的上下文中编辑其字段的显示名称。 在架构编辑器中用挂锁图标(![挂锁图标。](../../images/ui/explore/padlock-icon.png))。请参阅以下部分 [编辑架构字段的显示名称](./schemas.md#display-names) 以了解详细信息。
+>只能完全编辑和自定义由您的组织定义的自定义字段组。 对于由Adobe定义的核心字段组，只能在单个架构的上下文中编辑其字段的显示名称。 它们由挂锁图标（![挂锁图标）在架构编辑器中指示。](../../images/ui/explore/padlock-icon.png))。 有关详细信息，请参阅有关[编辑架构字段的显示名称](./schemas.md#display-names)的部分。
 >
->保存自定义字段组并在架构中使用它进行数据摄取后，以后只能对字段组进行附加更改。 请参阅 [模式演化规则](../../schema/composition.md#evolution) 以了解更多信息。
+>保存自定义字段组并在架构中使用它进行数据摄取后，以后只能对字段组进行附加更改。 有关详细信息，请参阅架构演变[规则](../../schema/composition.md#evolution)。
 
-要编辑现有字段组，您必须首先打开一个架构，该架构采用 [!DNL Schema Editor]. 您可以 [选择要编辑的现有架构](./schemas.md#edit)，或者您可以 [创建新架构](./schemas.md#create) 并添加相关字段组。
+要编辑现有字段组，您必须首先打开一个采用[!DNL Schema Editor]中的字段组的架构。 您可以[选择要编辑的现有架构](./schemas.md#edit)，也可以[创建新架构](./schemas.md#create)并添加相关字段组。
 
-在编辑器中打开架构后，您可以启动 [向字段组添加字段](#add-fields).
+在编辑器中打开架构后，即可开始[向字段组](#add-fields)添加字段。
 
 ## 将字段添加到字段组 {#add-fields}
 
 >[!NOTE]
 >
->本节重点介绍如何向自定义字段组添加字段。 有关如何将自定义字段添加到标准字段组的信息，请参阅 [架构UI指南](./schemas.md#custom-fields-for-standard-groups).
+>本节重点介绍如何向自定义字段组添加字段。 有关如何将自定义字段添加到标准字段组的信息，请参阅[架构UI指南](./schemas.md#custom-fields-for-standard-groups)。
 
-要将字段添加到自定义字段组，请从选择 **加(+)** 图标（位于画布中的架构名称旁）。
+要将字段添加到自定义字段组，请在画布中选择架构名称旁边的&#x200B;**加号(+)**&#x200B;图标。
 
 ![](../../images/ui/resources/field-groups/add-field.png)
 
-An **[!UICONTROL 无标题的字段]** 占位符显示在画布中，右边栏更新以显示用于配置字段属性的控件。 请参阅指南，网址为 [在UI中定义字段](../fields/overview.md#define) 有关如何配置不同字段类型的具体步骤。
+画布中显示&#x200B;**[!UICONTROL 无标题字段]**&#x200B;占位符，右边栏更新以显示用于配置字段属性的控件。 有关如何配置不同字段类型的特定步骤，请参阅[在UI](../fields/overview.md#define)中定义字段的指南。
 
-下 **[!UICONTROL 分配给]**，选择 **[!UICONTROL 字段组]** 选项，然后使用下拉菜单从列表中选择所需的字段组。 您可以开始键入字段组的名称来缩小结果范围。
-
-![](../../images/ui/resources/field-groups/select-field-group.png)
-
-下 **[!UICONTROL 分配给]**，选择 **[!UICONTROL 字段组]** 选项，然后使用下拉菜单从列表中选择所需的字段组。 您可以开始键入字段组的名称来缩小结果范围。
+在&#x200B;**[!UICONTROL 分配给]**&#x200B;下，选择&#x200B;**[!UICONTROL 字段组]**&#x200B;选项，然后使用下拉菜单从列表中选择所需的字段组。 您可以开始键入字段组的名称来缩小结果范围。
 
 ![](../../images/ui/resources/field-groups/select-field-group.png)
 
-将字段添加到架构后，即会将其分配给所选的字段组。 继续向字段组添加所需数量的字段。 完成后，选择 **[!UICONTROL 保存]** 以保存架构和字段组。
+在&#x200B;**[!UICONTROL 分配给]**&#x200B;下，选择&#x200B;**[!UICONTROL 字段组]**&#x200B;选项，然后使用下拉菜单从列表中选择所需的字段组。 您可以开始键入字段组的名称来缩小结果范围。
+
+![](../../images/ui/resources/field-groups/select-field-group.png)
+
+将字段添加到架构后，即会将其分配给所选的字段组。 继续向字段组添加所需数量的字段。 完成后，选择&#x200B;**[!UICONTROL 保存]**&#x200B;以保存架构和字段组。
 
 ![](../../images/ui/resources/field-groups/complete-field-group.png)
 
@@ -92,6 +92,6 @@ An **[!UICONTROL 无标题的字段]** 占位符显示在画布中，右边栏�
 
 ## 后续步骤 {#next-steps}
 
-本指南介绍了如何使用Platform UI创建和编辑字段组。 欲知关于 [!UICONTROL 架构] 工作区，请参见 [[!UICONTROL 架构] 工作区概述](../overview.md).
+本指南介绍了如何使用Platform UI创建和编辑字段组。 有关[!UICONTROL 架构]工作区的功能的更多信息，请参阅[[!UICONTROL 架构]工作区概述](../overview.md)。
 
-要了解如何使用管理字段组 [!DNL Schema Registry] API，请参见 [字段组端点指南](../../api/field-groups.md).
+要了解如何使用[!DNL Schema Registry] API管理字段组，请参阅[字段组端点指南](../../api/field-groups.md)。

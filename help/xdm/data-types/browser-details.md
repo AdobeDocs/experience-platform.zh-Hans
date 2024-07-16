@@ -7,13 +7,13 @@ exl-id: c67ff8bc-0614-4422-9bb7-689b98d7086d
 source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
 source-wordcount: '240'
-ht-degree: 7%
+ht-degree: 27%
 
 ---
 
-# [!UICONTROL 浏览器详细信息] 数据类型
+# [!UICONTROL 浏览器详细信息]数据类型
 
-[!UICONTROL 浏览器详细信息] 是标准的XDM数据类型，用于描述与浏览器或应用程序相关的详细信息。
+[!UICONTROL 浏览器详细信息]是描述与浏览器或应用程序相关的详细信息的标准XDM数据类型。
 
 <img src="../images/data-types/browser-details.png" width="450" /><br />
 
@@ -23,12 +23,12 @@ ht-degree: 7%
 | `cookiesEnabled` | 布尔值 | 指示用户的设置是否允许写入Cookie。 |
 | `javaEnabled` | 布尔值 | 指示从中进行观察的设备中是否启用了Java。 |
 | `javaScriptEnabled` | 布尔值 | 指示从中进行观察的设备中是否启用了JavaScript。 |
-| `javaScriptVersion` | 字符串 | 观察期间支持的JavaScript版本。 |
-| `javaVersion` | 字符串 | 观察期间支持的Java版本。 |
+| `javaScriptVersion` | 字符串 | 观察期间支持的 JavaScript 版本。 |
+| `javaVersion` | 字符串 | 观察期间支持的 Java 版本。 |
 | `name` | 字符串 | 应用程序或浏览器名称。 |
-| `quicktimeVersion` | 字符串 | 观察期间支持的Apple Quicktime版本。 |
+| `quicktimeVersion` | 字符串 | 观察期间支持的 Apple Quicktime 版本。 |
 | `thirdPartyCookiesEnabled` | 布尔值 | 指示进行观察的设备中是否启用了第三方Cookie。 |
-| `userAgent` | 字符串 | 来自客户端请求的HTTP用户代理字符串。 |
+| `userAgent` | 字符串 | 来自客户端请求的 HTTP user-agent 字符串。 |
 | `vendor` | 字符串 | 应用程序或浏览器供应商。 |
 | `version` | 字符串 | 应用程序或浏览器版本。 |
 | `viewportHeight` | 整数 | 显示事件的窗口的垂直大小（像素）。 对于Web视图事件，这是浏览器视区高度。 |
@@ -39,4 +39,4 @@ ht-degree: 7%
 有关数据类型的更多详细信息，请参阅公共XDM存储库：
 
 * [填充示例](https://github.com/adobe/xdm/blob/master/components/datatypes/browserdetails.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/browserdetails.schema.json)
+* [完整架构](https://github.com/adobe/xdm/blob/master/components/datatypes/browserdetails.schema.json)

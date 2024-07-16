@@ -7,13 +7,13 @@ exl-id: 85711a06-2756-46f9-83ba-1568310c9f73
 source-git-commit: 9399a242b855e151e5822035bc952efa89fe4bf0
 workflow-type: tm+mt
 source-wordcount: '649'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
 
 # 监控数据摄取
 
-通过数据摄取，您可以将数据摄取到Adobe Experience Platform。 您可以使用批量摄取，这允许您使用各种文件类型（如CSV）插入数据；也可以使用流式摄取，这允许您将数据摄取到 [!DNL Platform] 实时使用流式端点。
+通过数据摄取，您可以将数据摄取到Adobe Experience Platform。 您可以使用批量摄取，这允许您使用各种文件类型（如CSV）插入数据；也可以使用流式摄取，这允许您使用流式端点实时将数据摄取到[!DNL Platform]。
 
 本用户指南提供了有关如何在Adobe Experience Platform用户界面中监视数据的步骤。 本指南要求您拥有Adobe ID并有权访问Adobe Experience Platform。
 
@@ -28,11 +28,11 @@ ht-degree: 3%
 
 >[!TIP]
 >
->要计算特定日期的总事件数，请使用以下表达式： `total events / day = ingestion rate * 60 * 60 * 24`.
+>要计算特定日期的总事件数，请使用表达式： `total events / day = ingestion rate * 60 * 60 * 24`。
 
-在 [EXPERIENCE PLATFORMUI](https://platform.adobe.com)，选择 **[!UICONTROL 监控]** 左侧导航菜单，后面是 **[!UICONTROL 端到端的流式传输]**.
+在[Experience PlatformUI](https://platform.adobe.com)中，从左侧导航菜单中选择&#x200B;**[!UICONTROL 监视]**，然后选择&#x200B;**[!UICONTROL 流传输端到端]**。
 
-此 **[!UICONTROL 端到端的流式传输]** 此时会显示“监视”页面。 此工作区提供了一个图表，该图表显示接收流式事件的速率 [!DNL Platform]，该图显示了由成功处理的流式处理事件的速率 [[!DNL Real-Time Customer Profile]](../../profile/home.md)以及传入数据的详细列表。
+出现&#x200B;**[!UICONTROL 流端对端]**&#x200B;监视页面。 此工作区提供了一个图形，该图形显示[!DNL Platform]接收流式事件的速率，该图形显示[[!DNL Real-Time Customer Profile]](../../profile/home.md)成功处理的流式事件的速率，以及传入数据的详细列表。
 
 ![](../images/quality/monitor-data-flows/list-streams.png)
 
@@ -40,11 +40,11 @@ ht-degree: 3%
 
 ![](../images/quality/monitor-data-flows/events-received.png)
 
-下面的图表显示按如下方式成功处理流式事件的速率 [!DNL Profile] 在过去七天里。 通过选择高亮显示的按钮，可以调整此日期范围以显示各种时间段。
+底部图表显示过去7天内[!DNL Profile]成功处理流式事件的速率。 通过选择高亮显示的按钮，可以调整此日期范围以显示各种时间段。
 
 >[!NOTE]
 >
->为了让数据显示在此图表上，数据必须 **明确** 已启用 [!DNL Profile]. 了解如何为以下对象启用流数据 [!DNL Profile]，阅读 [数据集用户指南](../../catalog/datasets/user-guide.md#enable-a-dataset-for-real-time-customer-profile).
+>为了让数据显示在此图表上，数据必须为[!DNL Profile]明确启用&#x200B;****。 要了解如何为[!DNL Profile]启用流数据，请阅读[数据集用户指南](../../catalog/datasets/user-guide.md#enable-a-dataset-for-real-time-customer-profile)。
 
 ![](../images/quality/monitor-data-flows/ingested-by-profile.png)
 
@@ -66,15 +66,15 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->如果摄取的行中存在错误，则这些行将 **非** 将被丢弃，除非生成的消息导致无效的XDM。
+>如果摄取的行中有错误，则这些行&#x200B;**不会**&#x200B;被丢弃，除非生成的消息导致无效的XDM。
 
 ![](../images/quality/monitor-data-flows/failed-batch-error.png)
 
 ## 监控批量端到端数据摄取
 
-在 [[!DNL Experience Platform UI]](https://platform.adobe.com)，选择 **[!UICONTROL 监控]** 左侧导航菜单上。
+在[[!DNL Experience Platform UI]](https://platform.adobe.com)中，从左侧导航菜单中选择&#x200B;**[!UICONTROL 监视]**。
 
-此 **[!UICONTROL 批次端到端]** 此时将显示“监视”页面，其中显示了先前摄取的批的列表。 您可以选择任何批次，以了解有关该记录的更多详细信息。
+此时将显示&#x200B;**[!UICONTROL 批次端对端]**&#x200B;监视页面，该页面显示以前摄取的批次的列表。 您可以选择任何批次，以了解有关该记录的更多详细信息。
 
 ![](../images/quality/monitor-data-flows/batch-monitoring.png)
 
@@ -92,6 +92,6 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->如果摄取的行中存在错误，则这些行将 **非** 将被丢弃，除非生成的消息导致无效的XDM。
+>如果摄取的行中有错误，则这些行&#x200B;**不会**&#x200B;被丢弃，除非生成的消息导致无效的XDM。
 
 ![](../images/quality/monitor-data-flows/failed-streaming-error.png)

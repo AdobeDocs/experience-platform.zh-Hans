@@ -7,30 +7,30 @@ exl-id: 00c20081-09d0-425c-9894-0f957558bd43
 source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
 source-wordcount: '692'
-ht-degree: 6%
+ht-degree: 5%
 
 ---
 
-# [!UICONTROL 电信订阅] 架构字段组
+# [!UICONTROL 电信订阅]架构字段组
 
 >[!NOTE]
 >
->多个架构字段组的名称已更改。 查看文档 [字段组名称更新](../name-updates.md) 以了解更多信息。
+>多个架构字段组的名称已更改。 有关详细信息，请参阅有关[字段组名称更新](../name-updates.md)的文档。
 
-[!UICONTROL 电信订阅] 是的标准架构字段组 [[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md) 其中描述了客户的电信订阅计划，包括定价、套餐和单个产品订阅。
+[!UICONTROL 电信订阅]是[[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md)的标准架构字段组，它描述了客户的电信订阅计划，包括定价、套件和单个产品订阅。
 
-字段组提供单个对象类型字段， `telecomSubscription`，其属性如下所述。
+字段组提供单个对象类型字段`telecomSubscription`，其属性如下所述。
 
 ![电信订阅结构](../../images/field-groups/telecom-subscription/structure.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `internetSubscription` | 对象数组 | 描述Internet订阅计划详细信息，如数据限制、连接类型和速度详细信息。 请参阅 [以下部分](#internetSubscription) 以了解更多信息。 |
-| `landlineSubscription` | 对象数组 | 描述固定电话订阅计划详细信息，包括选定功能、分钟数和拨号计划。 请参阅 [以下部分](#landlineSubscription) 以了解更多信息。 |
-| `mediaSubscription` | 对象数组 | 描述媒体订阅计划详细信息，包括频道数和包含的流媒体服务。 请参阅 [以下部分](#mediaSubscription) 以了解更多信息。 |
-| `mobileSubscription` | 对象数组 | 描述移动订阅计划详细信息，包括线路数、数据速率、成本等。 请参阅 [以下部分](#mobileSubscription) 以了解更多信息。 |
+| `internetSubscription` | 对象数组 | 描述Internet订阅计划详细信息，如数据限制、连接类型和速度详细信息。 有关详细信息，请参阅下面](#internetSubscription)的[部分。 |
+| `landlineSubscription` | 对象数组 | 描述固定电话订阅计划详细信息，包括选定功能、分钟数和拨号计划。 有关详细信息，请参阅下面](#landlineSubscription)的[部分。 |
+| `mediaSubscription` | 对象数组 | 描述媒体订阅计划详细信息，包括频道数和包含的流媒体服务。 有关详细信息，请参阅下面](#mediaSubscription)的[部分。 |
+| `mobileSubscription` | 对象数组 | 描述移动订阅计划详细信息，包括线路数、数据速率、成本等。 有关详细信息，请参阅下面](#mobileSubscription)的[部分。 |
 | `primarySubscriber` | [[!UICONTROL 人员]](../../data-types/person.md) | 描述订阅的所有者。 |
-| `bundleName` | 字符串 | 捕获客户注册的任何类型订阅包的名称，例如 `Internet + Media`. |
+| `bundleName` | 字符串 | 捕获客户注册的任何类型的订阅包的名称，如`Internet + Media`。 |
 | `primaryPartyID` | 字符串 | 负责订阅的主要人员的标识符，通常可能是他们的设备电话号码。 |
 
 {style="table-layout:auto"}
@@ -38,13 +38,13 @@ ht-degree: 6%
 有关字段组的更多详细信息，请参阅公共XDM存储库：
 
 * [填充示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.schema.json)
+* [完整架构](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.schema.json)
 
 ## `internetSubscription` {#internetSubscription}
 
-`internetSubscription` 以对象数组形式提供。 每个对象的结构如下所述。
+`internetSubscription`作为对象数组提供。 每个对象的结构如下所述。
 
-![internet订阅](../../images/field-groups/telecom-subscription/internetSubscription.png)
+![internetSubscription](../../images/field-groups/telecom-subscription/internetSubscription.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
@@ -59,7 +59,7 @@ ht-degree: 6%
 
 ## `landlineSubscription` {#landlineSubscription}
 
-`landlineSubscription` 以对象数组形式提供。 每个对象的结构如下所述。
+`landlineSubscription`作为对象数组提供。 每个对象的结构如下所述。
 
 ![固定电话订阅](../../images/field-groups/telecom-subscription/landlineSubscription.png)
 
@@ -82,13 +82,13 @@ ht-degree: 6%
 
 ## `mediaSubscription` {#mediaSubscription}
 
-`mediaSubscription` 以对象数组形式提供。 每个对象的结构如下所述。
+`mediaSubscription`作为对象数组提供。 每个对象的结构如下所述。
 
 ![mediaSubscription](../../images/field-groups/telecom-subscription/mediaSubscription.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `streamingServices` | 对象数组 | 订阅中包含的所有流媒体服务的列表。 每个数组项都包含以下属性： <ul><li>`promotionLength`：促销的时长，以月为单位（如果将流服务作为促销的一部分添加）。</li><li>`promotionalAddition`：指示是否将流服务作为促销的一部分添加。</li><li>`serviceName`：流服务的名称。</li></ul> |
+| `streamingServices` | 对象数组 | 订阅中包含的所有流媒体服务的列表。 每个数组项都包含以下属性： <ul><li>`promotionLength`：如果已将流服务作为促销的一部分添加，则促销的时长（以月为单位）。</li><li>`promotionalAddition`：指示是否将流服务作为促销的一部分添加。</li><li>`serviceName`：流服务的名称。</li></ul> |
 | `subscriptionDetails` | [[!UICONTROL 电信订阅]](../../data-types/telecom-subscription.md) | 描述有关订阅的一般详细信息，包括订阅时长、费用、状态等。 |
 | `channels` | 整数 | 媒体订阅中包含的频道数。 |
 
@@ -96,7 +96,7 @@ ht-degree: 6%
 
 ## `mobileSubscription` {#mobileSubscription}
 
-`mobileSubscription` 以对象数组形式提供。 每个对象的结构如下所述。
+`mobileSubscription`作为对象数组提供。 每个对象的结构如下所述。
 
 ![mobileSubscription](../../images/field-groups/telecom-subscription/mobileSubscription.png)
 

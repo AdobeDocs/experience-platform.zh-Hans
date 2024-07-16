@@ -14,17 +14,17 @@ ht-degree: 2%
 
 # 营销操作端点
 
-在Adobe Experience Platform数据管理上下文中，营销操作是一个 [!DNL Experience Platform] 数据使用者需要使用，为此，需要检查是否存在违反数据使用策略的情况。
+在Adobe Experience Platform数据管理上下文中，营销操作是[!DNL Experience Platform]数据使用者执行的操作，需要检查是否存在数据使用策略违规行为。
 
-您可以使用管理组织的营销活动 `/marketingActions` 策略服务API中的端点。
+您可以使用策略服务API中的`/marketingActions`端点管理组织的营销操作。
 
 ## 快速入门
 
-本指南中使用的API端点是 [[!DNL Policy Service] API](https://www.adobe.io/experience-platform-apis/references/policy-service/). 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接、阅读本文档中的示例API调用的指南，以及有关成功调用任何组件所需的所需标头的重要信息 [!DNL Experience Platform] API。
+本指南中使用的API端点是[[!DNL Policy Service] API](https://www.adobe.io/experience-platform-apis/references/policy-service/)的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、此文档中示例API调用的阅读指南，以及有关成功调用任何[!DNL Experience Platform] API所需的所需标头的重要信息。
 
 ## 检索营销操作列表 {#list}
 
-您可以通过向以下对象发出GET请求，检索核心或自定义营销操作的列表： `/marketingActions/core` 或 `/marketingActions/custom`、ID名称和ID名称等。
+您可以通过分别向`/marketingActions/core`或`/marketingActions/custom`发出GET请求来检索核心或自定义营销操作的列表。
 
 **API格式**
 
@@ -48,7 +48,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回每个检索到的营销操作的详细信息，包括其 `name` 和 `href`. 此 `href` 值用于标识以下情况下的营销操作 [创建数据使用策略](policies.md#create-policy).
+成功的响应将返回每个检索到的营销操作的详细信息，包括其`name`和`href`。 `href`值用于在[创建数据使用策略](policies.md#create-policy)时标识营销操作。
 
 ```json
 {
@@ -102,12 +102,12 @@ curl -X GET \
 | --- | --- |
 | `_page.count` | 返回的营销操作总数。 |
 | `children` | 包含检索到的营销操作详细信息的对象数组。 |
-| `name` | 营销操作的名称，在下列情况下用作其唯一标识符 [查找特定营销操作](#lookup). |
-| `_links.self.href` | 营销活动的URI引用，可用于完成 `marketingActionsRefs` 数组 [创建数据使用策略](policies.md#create-policy). |
+| `name` | 营销操作的名称，在[查找特定营销操作](#lookup)时用作其唯一标识符。 |
+| `_links.self.href` | 营销操作的URI引用，在[创建数据使用策略](policies.md#create-policy)时，可用于完成`marketingActionsRefs`阵列。 |
 
 ## 查找特定营销操作 {#lookup}
 
-通过包含营销操作的，您可以查找特定营销操作的详细信息 `name` 属性添加到GET请求的路径中。
+通过在GET请求路径中包含营销操作的`name`属性，您可以查找特定营销操作的详细信息。
 
 **API格式**
 
@@ -118,11 +118,11 @@ GET /marketingActions/custom/{MARKETING_ACTION_NAME}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MARKETING_ACTION_NAME}` | 此 `name` 要查找的营销操作的属性。 |
+| `{MARKETING_ACTION_NAME}` | 要查找的营销操作的`name`属性。 |
 
 **请求**
 
-以下请求检索名为的自定义营销操作 `combineData`.
+以下请求检索名为`combineData`的自定义营销操作。
 
 ```shell
 curl -X GET \
@@ -135,7 +135,7 @@ curl -X GET \
 
 **响应**
 
-响应对象包含营销操作的详细信息，包括路径(`_links.self.href`)需要在以下情况下引用营销操作 [定义数据使用策略](policies.md#create-policy) (`marketingActionsRefs`)。
+响应对象包含营销操作的详细信息，包括在[定义数据使用策略](policies.md#create-policy) (`marketingActionsRefs`)时引用营销操作所需的路径(`_links.self.href`)。
 
 ```JSON
 {
@@ -172,7 +172,7 @@ PUT /marketingActions/custom/{MARKETING_ACTION_NAME}
 
 **请求**
 
-以下请求创建一个名为的新营销操作 `crossSiteTargeting`，前提是系统中不存在同名的营销操作。 如果 `crossSiteTargeting` 营销操作确实存在，此调用会根据有效负载中提供的属性更新该营销操作。
+以下请求创建一个名为`crossSiteTargeting`的新营销操作，前提是系统中不存在同名的营销操作。 如果确实存在`crossSiteTargeting`营销操作，则此调用会根据有效负载中提供的属性更新该营销操作。
 
 ```shell
 curl -X PUT \
@@ -190,7 +190,7 @@ curl -X PUT \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 要创建或更新的营销操作的名称。 <br><br>**重要**：此属性必须匹配 `{MARKETING_ACTION_NAME}` 路径中，否则将发生HTTP 400（错误请求）错误。 换言之，一旦创建了营销操作，其 `name` 属性无法更改。 |
+| `name` | 要创建或更新的营销操作的名称。 <br><br>**重要**：此属性必须与路径中的`{MARKETING_ACTION_NAME}`匹配，否则将发生HTTP 400（错误请求）错误。 换句话说，一旦创建了营销操作，就无法更改其`name`属性。 |
 | `description` | 可选描述，为营销操作提供进一步的上下文。 |
 
 **响应**
@@ -249,4 +249,4 @@ curl -X DELETE \
 
 成功的响应返回带有空白响应正文的HTTP状态200 （确定）。
 
-您可以通过尝试确认删除 [查找营销操作](#look-up). 如果从系统中删除了营销操作，您应会收到HTTP 404（未找到）错误。
+您可以通过尝试[查找营销操作](#look-up)来确认删除。 如果从系统中删除了营销操作，您应会收到HTTP 404（未找到）错误。

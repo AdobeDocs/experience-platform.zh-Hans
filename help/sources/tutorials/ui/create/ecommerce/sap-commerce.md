@@ -1,50 +1,50 @@
 ---
 title: 在UI中创建SAP Commerce源连接
-description: 了解如何使用Adobe Experience Platform用户界面创建SAP Commerce源连接。
+description: 了解如何使用Adobe Experience Platform UI创建SAP Commerce源连接。
 badge: Beta 版
 exl-id: 6484e51c-77cd-4dbd-9c68-0a4e3372da33
 source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
-source-wordcount: '1010'
-ht-degree: 1%
+source-wordcount: '965'
+ht-degree: 3%
 
 ---
 
-# 创建 [!DNL SAP Commerce] UI中的源连接
+# 在用户界面中创建[!DNL SAP Commerce]源连接
 
 >[!NOTE]
 >
->此 [!DNL SAP Commerce] 源为测试版。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
+>[!DNL SAP Commerce]源为测试版。 有关使用测试版标记源的更多信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
 
-以下教程将指导您完成创建 [!DNL SAP Commerce] 要引入的源连接 [[!DNL SAP] 订阅帐单](https://www.sap.com/products/financial-management/subscription-billing.html) 使用Adobe Experience Platform用户界面查看联系人和客户数据。
+以下教程将指导您完成使用Adobe Experience Platform用户界面创建[!DNL SAP Commerce]源连接以引入[[!DNL SAP] 订阅账单](https://www.sap.com/products/financial-management/subscription-billing.html)联系人和客户数据的步骤。
 
 ## 快速入门 {#getting-started}
 
 本教程需要对以下Experience Platform组件有一定的了解：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
-   * [模式组合基础](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
+   * [架构组合的基础知识](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
 
-如果您已经拥有有效的 [!DNL SAP Commerce] 帐户，您可以跳过本文档的其余部分，并继续阅读上的教程 [配置数据流](../../dataflow/ecommerce.md).
+如果您已经拥有有效的[!DNL SAP Commerce]帐户，则可以跳过本文档的其余部分，并转到有关[配置数据流](../../dataflow/ecommerce.md)的教程。
 
 ### 收集所需的凭据 {#gather-credentials}
 
-为了连接 [!DNL SAP Commerce] 要Experience Platform，必须提供以下连接属性的值：
+为了将[!DNL SAP Commerce]连接到Experience Platform，您必须提供以下连接属性的值：
 
 | 凭据 | 描述 |
 | --- | --- |
-| 客户端ID | 的值 `clientId` 服务密钥。 |
-| 客户端密码 | 的值 `clientSecret` 服务密钥。 |
-| 令牌端点 | 的值 `url` 从服务密钥中，它将类似于 `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`. |
-| 区域 | 您的数据中心位置。 此区域出现在 `url` 且其值类似于 `eu10` 或 `us10`. 例如，如果 `url` 是 `https://eu10.revenue.cloud.sap/api` 您将需要 `eu10`. |
+| 客户端 ID | 服务键中`clientId`的值。 |
+| 客户端密码 | 服务键中`clientSecret`的值。 |
+| 令牌端点 | 服务键中`url`的值，它将类似于`https://subscriptionbilling.authentication.eu10.hana.ondemand.com`。 |
+| 区域 | 您的数据中心位置。 该区域存在于`url`中，其值类似于`eu10`或`us10`。 例如，如果`url`是`https://eu10.revenue.cloud.sap/api`，您将需要`eu10`。 |
 
-欲知更多信息，请参见 [[!DNL SAP Commerce] 文档](https://help.sap.com/docs/CLOUD_TO_CASH_OD/987aec876092428f88162e438acf80d6/c5fcaf96daff4c7a8520188e4d8a1843.html).
+有关详细信息，请参阅[[!DNL SAP Commerce] 文档](https://help.sap.com/docs/CLOUD_TO_CASH_OD/987aec876092428f88162e438acf80d6/c5fcaf96daff4c7a8520188e4d8a1843.html)。
 
 ### 创建Platform架构 {#create-platform-schema}
 
-创建之前 [!DNL SAP Commerce] 源连接时，还必须确保首先创建用于源的Experience Platform架构。 请参阅上的教程 [创建平台架构](../../../../../xdm/schema/composition.md) 以了解有关如何创建模式的完整步骤。
+在创建[!DNL SAP Commerce]源连接之前，还必须确保首先创建一个Experience Platform架构以用于您的源。 有关如何创建架构的完整步骤，请参阅有关[创建平台架构](../../../../../xdm/schema/composition.md)的教程。
 
 展开以下部分以查看模式示例。
 
@@ -141,29 +141,29 @@ ht-degree: 1%
 
 +++
 
-## 连接您的 [!DNL SAP Commerce] 帐户 {#connect-account}
+## 连接您的[!DNL SAP Commerce]帐户 {#connect-account}
 
-在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示了多种来源，您可以使用这些来源创建帐户。
+在Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
-在 *电子商务* 类别，选择 **[!UICONTROL SAP商务]**，然后选择 **[!UICONTROL 添加数据]**.
+在&#x200B;*电子商务*&#x200B;类别下，选择&#x200B;**[!UICONTROL SAP Commerce]**，然后选择&#x200B;**[!UICONTROL 添加数据]**。
 
 ![带有SAP Commerce卡的目录的平台UI屏幕截图](../../../../images/tutorials/create/ecommerce/sap-commerce/catalog-card.png)
 
-此 **[!UICONTROL 连接SAP Commerce帐户]** 页面。 在此页上，您可以使用新凭据或现有凭据。
+此时会显示&#x200B;**[!UICONTROL Connect SAP Commerce帐户]**&#x200B;页。 在此页上，您可以使用新凭据或现有凭据。
 
-### 现有帐户 {#existing-account}
+### 现有账户 {#existing-account}
 
-要使用现有帐户，请选择 [!DNL SAP Commerce] 要用于创建新数据流的帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
+要使用现有帐户，请选择要用于创建新数据流的[!DNL SAP Commerce]帐户，然后选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
 
-![用于将SAP Commerce帐户与现有帐户连接的平台UI屏幕截图](../../../../images/tutorials/create/ecommerce/sap-commerce/existing.png)
+![用于将SAP Commerce帐户与现有帐户连接的Platform UI屏幕截图](../../../../images/tutorials/create/ecommerce/sap-commerce/existing.png)
 
 ### 新帐户 {#new-account}
 
-如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后提供名称、可选描述和您的凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后等待一段时间以建立新连接。
+如果要创建新帐户，请选择&#x200B;**[!UICONTROL 新建帐户]**，然后提供名称、可选描述和凭据。 完成后，选择&#x200B;**[!UICONTROL 连接到源]**，然后留出一些时间来建立新连接。
 
-![用于将SAP Commerce帐户连接到新帐户的平台UI屏幕截图](../../../../images/tutorials/create/ecommerce/sap-commerce/new.png)
+![用于将SAP Commerce帐户与新帐户连接的Platform UI屏幕截图](../../../../images/tutorials/create/ecommerce/sap-commerce/new.png)
 
 ### 选择数据 {#select-data}
 
@@ -178,29 +178,29 @@ ht-degree: 1%
 
 >[!TAB 客户]
 
-要摄取客户数据，请选择 **[!UICONTROL 客户]** 作为对象类型，然后选择 **[!UICONTROL 下一个]**.
+若要摄取客户数据，请选择&#x200B;**[!UICONTROL 客户]**&#x200B;作为您的对象类型，然后选择&#x200B;**[!UICONTROL 下一步]**。
 
-![SAP Commerce的Platform UI屏幕截图，其中显示了与客户一起选择的配置](../../../../images/tutorials/create/ecommerce/sap-commerce/configuration-customers.png)
+![SAP Commerce的平台UI屏幕截图显示了与客户选项一起选择的配置](../../../../images/tutorials/create/ecommerce/sap-commerce/configuration-customers.png)
 
 >[!TAB 联系人]
 
-要摄取联系人数据，请选择 **[!UICONTROL 联系人]** 作为对象类型，然后选择 **[!UICONTROL 下一个]**.
+若要摄取联系人数据，请选择&#x200B;**[!UICONTROL 联系人]**&#x200B;作为对象类型，然后选择&#x200B;**[!UICONTROL 下一步]**。
 
-![SAP Commerce的平台UI屏幕截图，其中显示了选中了“联系人”选项的配置](../../../../images/tutorials/create/ecommerce/sap-commerce/configuration-contacts.png)
+![SAP Commerce的平台UI屏幕截图显示了已选择“联系人”选项的配置](../../../../images/tutorials/create/ecommerce/sap-commerce/configuration-contacts.png)
 
 >[!ENDTABS]
 
 ## 后续步骤 {#next-steps}
 
-通过学习本教程，您已建立与的连接 [!DNL SAP Commerce] 帐户。 您现在可以继续下一教程和 [配置数据流以将数据引入Platform](../../dataflow/ecommerce.md).
+通过学习本教程，您已建立与[!DNL SAP Commerce]帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入Platform](../../dataflow/ecommerce.md)。
 
 ## 其他资源 {#additional-resources}
 
-以下各节提供了在使用时，您可以参考的其他资源 [!DNL SAP Commerce] 源。
+以下各节提供了在使用[!DNL SAP Commerce]源时可以参考的其他资源。
 
 ### 映射 {#mapping}
 
-Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅 [数据准备UI指南](../../../../../data-prep/ui/mapping.md).
+Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](../../../../../data-prep/ui/mapping.md)。
 
 数据流的映射配置将因架构和您选择要摄取的对象类型而异。
 
@@ -208,9 +208,9 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 >[!TAB 客户]
 
-对于客户数据， [!DNL SAP Commerce] 使用 [客户](https://api.sap.com/api/BusinessPartner_APIs/path/GET_customers) 和 [客户 — 联系人关系](https://api.sap.com/api/BusinessPartner_APIs/path/GET_relationships-customer-contacts) 的端点 [!DNL SAP Business Partners] 用于检索数据的API
+对于客户数据，[!DNL SAP Commerce]使用[!DNL SAP Business Partners] API的[客户](https://api.sap.com/api/BusinessPartner_APIs/path/GET_customers)和[客户联系人关系](https://api.sap.com/api/BusinessPartner_APIs/path/GET_relationships-customer-contacts)端点检索数据
 
-以下是映射的配置示例 [!DNL SAP Commerce] 客户数据的数据流：
+以下是客户数据的[!DNL SAP Commerce]数据流映射配置示例：
 
 | 目标字段 | 描述 |
 | --- | --- |
@@ -232,9 +232,9 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 >[!TAB 联系人]
 
-对于联系数据， [!DNL SAP Commerce] 使用 [联系人](https://api.sap.com/api/BusinessPartner_APIs/path/GET_contacts) 的端点 [!DNL SAP Business Partners] 用于检索数据的API。
+对于联系人数据，[!DNL SAP Commerce]使用[!DNL SAP Business Partners] API的[联系人](https://api.sap.com/api/BusinessPartner_APIs/path/GET_contacts)端点检索数据。
 
-以下是映射的配置示例 [!DNL SAP Commerce] 联系数据的数据流：
+以下是联系数据的[!DNL SAP Commerce]数据流映射配置示例：
 
 | 目标字段 | 描述 |
 | --- | --- |

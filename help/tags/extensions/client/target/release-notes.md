@@ -4,23 +4,23 @@ description: Adobe Experience Platform中的Adobe Target标记扩展的最新发
 exl-id: ba29f614-c3cd-4e0b-b043-2b1c17567def
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
-source-wordcount: '520'
-ht-degree: 74%
+source-wordcount: '578'
+ht-degree: 70%
 
 ---
 
-# Adobe Target 发行说明
+# Adobe Target发行说明
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 ## 2021 年 9 月 16 日
 
 ### Adobe Target 扩展 0.11.4
 
 * 已更新至at.js v1.8.3
-* 已添加 `SameSite=None` 和 `Secure` 设置Cookie时的属性
+* 在设置Cookie时添加了`SameSite=None`和`Secure`属性
 
 ## 2020 年 7 月 24 日
 

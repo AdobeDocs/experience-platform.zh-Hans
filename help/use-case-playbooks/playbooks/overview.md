@@ -29,7 +29,7 @@ ht-degree: 30%
 
 ## 概述 {#overview}
 
-[!UICONTROL 用例行动手册] 当您无法确切了解从何开始以及如何创建正确的资源以实现所需的用例时，可以帮助您解决Real-Time CDP或Adobe Journey Optimizer快速入门中的问题。 用例行动手册可通过以下方式为您提供帮助：
+[!UICONTROL 用例行动手册]可帮助您在开始使用Real-Time CDP或Adobe Journey Optimizer时克服问题，当时您可能不知道从什么开始以及如何创建正确的资源以实现所需的用例。 用例行动手册可通过以下方式为您提供帮助：
 
 * 向您显示用于获取灵感的用例
 * 创建不同的资源以供您在准备就绪时使用、测试并提升至生产环境。
@@ -50,11 +50,11 @@ ht-degree: 30%
 
 ## 可用性 {#availability}
 
-部分 [!UICONTROL 用例行动手册] 专为Real-Time CDP用例量身打造，而其他用例最适合使用Journey Optimizer的客户。 浏览目录以查找最适合您的产品和用例的行动手册。 在中了解有关Real-Time CDP和Journey Optimizer的更多信息 [Adobe产品描述](https://helpx.adobe.com/legal/product-descriptions.html).
+某些[!UICONTROL 用例行动手册]是针对Real-Time CDP用例量身定制的，而其他行动手册最适合使用Journey Optimizer的客户。 浏览目录以查找最适合您的产品和用例的行动手册。 在[Adobe的产品描述](https://helpx.adobe.com/legal/product-descriptions.html)中了解有关Real-Time CDP和Journey Optimizer的更多信息。
 
 ## UI 指南  {#ui-guides}
 
-在您决定要使用的战术手册后，从 UI 中选择该战术手册，并开始使用。阅读上的用户界面指南 [如何从所选内容中选择合适的剧本](/help/use-case-playbooks/playbooks/choose.md) 对于您和 [如何创建、共享和重复使用剧本实例](/help/use-case-playbooks/playbooks/create-share-reuse.md) 有关如何创建实例并充分利用行动手册的完整信息。 要了解如何将各种资源从启发性的沙盒提升到其他开发沙盒，然后再提升到生产环境，请阅读上的文档 [数据感知](/help/use-case-playbooks/playbooks/data-awareness.md).
+在您决定要使用的战术手册后，从 UI 中选择该战术手册，并开始使用。阅读有关[如何从所选内容中选择正确的行动手册](/help/use-case-playbooks/playbooks/choose.md)和[如何创建、共享和重用行动手册实例](/help/use-case-playbooks/playbooks/create-share-reuse.md)的用户界面指南，以了解有关如何创建实例并充分利用行动手册的完整信息。 要了解如何将各种资源从启发型沙盒提升到其他开发沙盒，然后再提升到生产环境，请阅读有关[数据感知](/help/use-case-playbooks/playbooks/data-awareness.md)的文档。
 
 ## 故障排除和已知限制 {#trouble-shooting-known-limitations}
 

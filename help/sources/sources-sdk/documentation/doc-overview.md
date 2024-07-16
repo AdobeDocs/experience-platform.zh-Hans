@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK；SDK
 solution: Experience Platform
-title: 记录您的源
+title: 记录您的Source
 description: 在Adobe Experience Platform中启用新源之前的最后一步是记录新源。
 exl-id: 80daadb1-127f-4f42-8bc9-fb89a7898462
 source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '407'
+source-wordcount: '392'
 ht-degree: 0%
 
 ---
@@ -20,14 +20,14 @@ ht-degree: 0%
 * 接下来可以学习的教程，为您的新源创建文档页面；
 * 供您为新源填写的文档模板；
 * [有关如何使用Markdown编写技术文档的说明](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html)；
-* [关于了解AdobeMarkdown风格的说明](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html#custom-markdown-extensions).
+* [有关了解AdobeMarkdown风格的说明](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html#custom-markdown-extensions)。
 
 ## 先决条件
 
 在开始记录新源之前，需要以下项：
 
-* **有效的GitHub用户帐户**：如果您没有现有的GitHub帐户，则必须通过 [GitHub注册页面](https://github.com/)；
-* **访问GitHub Desktop**：您必须使用 [GitHub桌面应用程序](https://desktop.github.com/) 以便在本地环境中创建源文档；
+* **有效的GitHub用户帐户**：如果您没有现有的GitHub帐户，则必须通过[GitHub注册页面](https://github.com/)创建一个；
+* **访问GitHub Desktop**：若要在本地环境中创建源文档，您必须使用[GitHub Desktop应用程序](https://desktop.github.com/)；
 * 您与Adobe的集成必须处于测试阶段，并且您的源部署在Platform中的暂存环境中。
 
 ## 在Platform中为源创建文档的高级说明
@@ -36,7 +36,7 @@ ht-degree: 0%
 
 ## 文档模板
 
-您可以使用预填充 [文档模板](./template.md) 以帮助为您的源创建文档。 此外，您还可以找到有关如何编辑模板和打开拉取请求的说明。 为您的新源提交的文档将由Adobe文档团队审阅并发布。
+您可以使用预填充的[文档模板](./template.md)来协助创建源的文档。 此外，您还可以找到有关如何编辑模板和打开拉取请求的说明。 为您的新源提交的文档将由Adobe文档团队审阅并发布。
 
 您还可以下载以下文档模板：
 

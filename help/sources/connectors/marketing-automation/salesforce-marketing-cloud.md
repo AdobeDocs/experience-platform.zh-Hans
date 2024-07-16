@@ -1,12 +1,12 @@
 ---
 solution: Experience Platform
-title: SalesforceMarketing Cloud源概述
+title: SalesforceMarketing CloudSource概述
 description: 了解如何使用API或用户界面将SalesforceMarketing Cloud连接到Adobe Experience Platform。
 exl-id: 2177d68c-0cef-4031-a0e7-8bf22ee2e70b
 last-substantial-update: 2023-05-25T00:00:00Z
 source-git-commit: bc37d41d0f7b0ff0cf4d52242f41467f2891d613
 workflow-type: tm+mt
-source-wordcount: '334'
+source-wordcount: '322'
 ht-degree: 0%
 
 ---
@@ -15,38 +15,38 @@ ht-degree: 0%
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 
-Experience Platform支持从第三方营销自动化系统中提取数据。 对营销自动化提供商的支持包括 [!DNL Salesforce Marketing Cloud].
+Experience Platform支持从第三方营销自动化系统中提取数据。 对营销自动化提供商的支持包括[!DNL Salesforce Marketing Cloud]。
 
 ## 先决条件
 
-在连接之前， [!DNL Salesforce Marketing Cloud] 源到平台，您必须确保 **权限范围** 已配置到您的 [!DNL Salesforce Marketing Cloud] 客户端ID和客户端密钥组合：
+在将[!DNL Salesforce Marketing Cloud]源连接到Platform之前，必须确保将以下&#x200B;**权限范围**&#x200B;配置为您的[!DNL Salesforce Marketing Cloud]客户端ID和客户端密钥组合：
 
 * `campaign_read`
 * `list_and_subscribers_read`
 
-您可以通过调用 `v2/userinfo` 的资源 [!DNL Salesforce Marketing Cloud] API。 请参阅 [[!DNL Salesforce Marketing Cloud] API集成权限范围文档](<https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/data-access-permissions.html>) 以获取有关如何请求和比较范围的指导。
+您可以通过调用[!DNL Salesforce Marketing Cloud] API的`v2/userinfo`资源来请求作用域。 有关如何请求和比较范围的指导，请参阅[[!DNL Salesforce Marketing Cloud] API集成权限范围文档](<https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/data-access-permissions.html>)。
 
-有关范围的更多信息，包括其相关权限和行为的列表，请参阅此 [[!DNL Salesforce Marketing Cloud] REST API文档](<https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/rest-permissions-and-scopes.html>).
+有关作用域的更多信息，包括其相关权限和行为的列表，请参阅此[[!DNL Salesforce Marketing Cloud] REST API文档](<https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/rest-permissions-and-scopes.html>)。
 
 >[!IMPORTANT]
 >
->当前不支持自定义对象摄取 [!DNL Salesforce Marketing Cloud] 源集成。
+>[!DNL Salesforce Marketing Cloud]源集成当前不支持自定义对象摄取。
 
 ## IP地址允许列表
 
-在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 请参阅 [IP地址允许列表](../../ip-address-allow-list.md) 页面以了解更多信息。
+在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 有关详细信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md)页。
 
-## 连接 [!DNL Salesforce Marketing Cloud] 到使用API的平台
+## 使用API将[!DNL Salesforce Marketing Cloud]连接到平台
 
-以下文档提供了有关如何连接的信息 [!DNL Salesforce Marketing Cloud] 到使用API的平台：
+以下文档提供了有关如何使用API将[!DNL Salesforce Marketing Cloud]连接到Platform的信息：
 
 * [使用流服务API创建SalesforceMarketing Cloud基本连接](../../tutorials/api/create/marketing-automation/salesforce-marketing-cloud.md)
 * [使用流服务API浏览数据表](../../tutorials/api/explore/tabular.md)
 * [使用流服务API为营销自动化源创建数据流](../../tutorials/api/collect/marketing-automation.md)
 
-## 连接 [!DNL Salesforce Marketing Cloud] 到Platform，使用UI
+## 使用UI将[!DNL Salesforce Marketing Cloud]连接到平台
 
-以下文档提供了有关如何连接的信息 [!DNL Salesforce Marketing Cloud] 使用用户界面连接到Platform：
+以下文档提供了有关如何使用用户界面将[!DNL Salesforce Marketing Cloud]连接到Platform的信息：
 
 * [在UI中创建SalesforceMarketing Cloud源连接](../../tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
 * [在UI中为Marketing Automation源连接创建数据流](../../tutorials/ui/dataflow/marketing-automation.md)

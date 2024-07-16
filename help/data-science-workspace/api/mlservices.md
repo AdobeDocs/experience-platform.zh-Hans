@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform；开发人员指南；端点；Data Science Workspace；热门主题；mlservices；sensei机器学习api
+keywords: Experience Platform；开发人员指南；端点；数据科学Workspace；热门主题；mlservices；sensei机器学习api
 solution: Experience Platform
 title: MLServices API端点
 description: MLService是一个已发布的经过训练的模型，使您的组织能够访问和重复使用以前开发的模型。 MLServices的主要功能是能够按计划自动进行训练和评分。 计划的训练运行有助于保持模型的效率和准确性，而计划的得分运行可以确保始终如一地生成新见解。
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 MLService是一个已发布的经过训练的模型，使您的组织能够访问和重复使用以前开发的模型。 MLServices的主要功能是能够按计划自动进行训练和评分。 计划的训练运行有助于保持模型的效率和准确性，而计划的得分运行可以确保始终如一地生成新见解。
 
-自动训练和评分计划具有开始时间戳、结束时间戳和以表示的频率。 [cron表达式](https://en.wikipedia.org/wiki/Cron). 可以在以下情况下定义计划 [创建MLService](#create-an-mlservice) 或应用者 [更新现有MLService](#update-an-mlservice).
+自动训练和评分计划定义有开始时间戳、结束时间戳和以[cron表达式](https://en.wikipedia.org/wiki/Cron)表示的频率。 可以在[创建MLService](#create-an-mlservice)或由[更新现有MLService](#update-an-mlservice)应用时定义计划。
 
 ## 创建MLService {#create-an-mlservice}
 
@@ -77,7 +77,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回包含新创建的MLService的详细信息的有效负载，包括其唯一标识符(`id`)，用于培训的试验ID (`trainingExperimentId`)，用于评分的试验ID (`scoringExperimentId`)，以及输入训练数据集ID (`trainingDataSetId`)。
+成功的响应将返回一个有效负载，其中包含新创建的MLService的详细信息，包括其唯一标识符(`id`)、用于训练的试验ID (`trainingExperimentId`)、用于评分的试验ID (`scoringExperimentId`)以及输入训练数据集ID (`trainingDataSetId`)。
 
 ```json
 {
@@ -108,7 +108,7 @@ curl -X POST \
 
 ## 检索MLServices列表 {#retrieve-a-list-of-mlservices}
 
-您可以通过执行单个GET请求来检索MLServices列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅 [用于资源检索的查询参数](./appendix.md#query).
+您可以通过执行单个GET请求来检索MLServices列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅[用于资源检索的查询参数](./appendix.md#query)的附录部分。
 
 **API格式**
 
@@ -120,12 +120,12 @@ GET /mlServices?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAMETER_2}={VALUE_2}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{QUERY_PARAMETER}` | 其中一项 [可用的查询参数](./appendix.md#query) 用于筛选结果。 |
+| `{QUERY_PARAMETER}` | 用于筛选结果的[可用查询参数](./appendix.md#query)之一。 |
 | `{VALUE}` | 上一个查询参数的值。 |
 
 **请求**
 
-以下请求包含一个查询，并检索共享同一MLInstance ID (`{MLINSTANCE_ID}`)。
+以下请求包含一个查询，并检索共享同一MLInstance ID (`{MLINSTANCE_ID}`)的MLServices列表。
 
 ```shell
 curl -X GET \
@@ -138,7 +138,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回MLServices列表及其详细信息，包括其MLService ID (`{MLSERVICE_ID}`)，用于培训的试验ID (`{TRAINING_ID}`)，用于评分的试验ID (`{SCORING_ID}`)，以及输入训练数据集ID (`{DATASET_ID}`)。
+成功的响应返回MLServices及其详细信息，包括其MLService ID (`{MLSERVICE_ID}`)、用于训练的试验ID (`{TRAINING_ID}`)、用于评分的试验ID (`{SCORING_ID}`)以及输入训练数据集ID (`{DATASET_ID}`)。
 
 ```json
 {
@@ -215,7 +215,7 @@ curl -X GET \
 
 >[!TIP]
 >
->为确保此PUT请求成功，建议您首先执行GET请求，以 [按ID检索MLService](#retrieve-a-specific-mlservice). 然后，修改并更新返回的JSON对象，并将修改后的整个JSON对象应用作PUT请求的有效负载。
+>为确保此PUT请求成功，建议您首先执行GET请求，以[按ID](#retrieve-a-specific-mlservice)检索MLService。 然后，修改并更新返回的JSON对象，并将修改后的整个JSON对象应用作PUT请求的有效负载。
 
 **API格式**
 

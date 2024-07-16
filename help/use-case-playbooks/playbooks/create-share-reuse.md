@@ -22,7 +22,7 @@ ht-degree: 81%
 >title="创建实例"
 >abstract="生成要在历程或激活场景中使用的历程、受众、架构或目标等资源的列表。"
 
-在创建行动手册实例之前，请浏览可用的行动手册，以 [选择正确的剧本](/help/use-case-playbooks/playbooks/choose.md). 当您准备好继续使用战术手册并创建实例时，请选择&#x200B;**[!UICONTROL 创建实例]**，以继续执行战术手册，并生成技术资产。
+在创建行动手册实例之前，请浏览可用的行动手册[选择正确的行动手册](/help/use-case-playbooks/playbooks/choose.md)。 当您准备好继续使用战术手册并创建实例时，请选择&#x200B;**[!UICONTROL 创建实例]**，以继续执行战术手册，并生成技术资产。
 
 ![创建一个战术手册实例。](/help/use-case-playbooks/assets/playbooks/ui-guide/create-playbook-instance.png)
 
@@ -63,7 +63,7 @@ ht-degree: 81%
 >
 >在开发沙盒中进行测试，准备就绪后即可转移到生产环境。
 >
->生成对象后，您可以通过添加数据继续在开发沙盒中进行测试。您可以根据需要在开发沙盒中测试资产，并在准备就绪后在生产沙盒中复制资产逻辑（受众定义、历程、架构等）。 您可以使用移至开发沙盒，然后移至生产沙盒。 [数据感知功能](/help/use-case-playbooks/playbooks/data-awareness.md).
+>生成对象后，您可以通过添加数据继续在开发沙盒中进行测试。您可以根据需要在开发沙盒中测试资产，并在准备就绪后在生产沙盒中复制资产逻辑（受众定义、历程、架构等）。 通过使用[数据感知功能](/help/use-case-playbooks/playbooks/data-awareness.md)，您可以先转到开发沙盒，然后再转到生产沙盒。
 
 ## 重用战术手册 {#reuse-playbooks}
 

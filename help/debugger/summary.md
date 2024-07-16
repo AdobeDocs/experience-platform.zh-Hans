@@ -15,7 +15,7 @@ ht-degree: 85%
 
 # “摘要”选项卡
 
-要运行Adobe Experience Platform Debugger，请在浏览器中打开要检查的页面，然后选择图标(![](images/start-icon.jpg))。 扩展将在 **摘要** 选项卡。
+要运行Adobe Experience Platform Debugger，请在浏览器中打开要检查的页面，然后选择浏览器栏上的图标(![](images/start-icon.jpg))。 扩展将在&#x200B;**摘要**&#x200B;选项卡上打开。
 
 ![](images/summary.jpg)
 
@@ -77,19 +77,19 @@ Experience Platform Debugger 将显示每个解决方案的以下信息：
  <tbody> 
   <tr> 
    <td colname="col1"> <p>名称 </p> </td> 
-   <td colname="col2"> <p>标记的名称 <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/admin/companies-and-properties.html" format="https" scope="external"> 属性</a> </p> </td> 
+   <td colname="col2"> <p>标记<a href="https://experienceleague.adobe.com/docs/experience-platform/tags/admin/companies-and-properties.html" format="https" scope="external">属性</a>的名称 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>版本 </p> </td> 
-   <td colname="col2"> <p>Turbine的版本</a> </p> </td> 
+   <td colname="col2"> <p>Turbine</a>的版本 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>内部版本发布日期 </p> </td> 
-   <td colname="col2"> <p>标记 <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/libraries.html" format="https" scope="external"> 库</a> 内部版本日期 </p> </td> 
+   <td colname="col2"> <p>标记<a href="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/libraries.html" format="https" scope="external">库</a>生成日期 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>环境 </p> </td> 
-   <td colname="col2"> <p>此 <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/environments/environments.html?lang=zh-Hans" format="https" scope="external"> 环境</a> 由标记库使用 </p> </td> 
+   <td colname="col2"> <p>标记库使用的<a href="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/environments/environments.html?lang=zh-Hans" format="https" scope="external">环境</a> </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>扩展 </p> </td> 

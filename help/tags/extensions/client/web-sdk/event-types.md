@@ -12,21 +12,21 @@ ht-degree: 0%
 
 # 事件类型
 
-本页介绍由Adobe Experience Platform Web SDK标记扩展提供的Adobe Experience Platform事件类型。 这些已用来 [生成规则](https://experienceleague.adobe.com/docs/platform-learn/data-collection/tags/build-rules.html) 也不应该混淆 `eventType` 中的字段 [`xdm` 对象](/help/web-sdk/commands/sendevent/xdm.md).
+本页介绍由Adobe Experience Platform Web SDK标记扩展提供的Adobe Experience Platform事件类型。 它们用于[生成规则](https://experienceleague.adobe.com/docs/platform-learn/data-collection/tags/build-rules.html?lang=zh-Hans)，不应与[`xdm`对象](/help/web-sdk/commands/sendevent/xdm.md)中的`eventType`字段混淆。
 
 ## [!UICONTROL 发送事件完成]
 
-通常，您的资产会有一个或多个使用 [[!UICONTROL 发送事件] 操作](action-types.md#send-event) 将事件发送到Adobe Experience Platform Edge Network。 每次将事件发送到Edge Network时，系统都会向浏览器返回包含有用数据的响应。 不使用 [!UICONTROL 发送事件完成] 事件类型时，您将无权访问此返回的数据。
+通常，您的属性将有一个或多个使用[[!UICONTROL 发送事件]操作](action-types.md#send-event)将事件发送到Adobe Experience PlatformEdge Network的规则。 每次将事件发送到Edge Network时，系统都会向浏览器返回包含有用数据的响应。 如果没有[!UICONTROL 发送事件完成]事件类型，您将无法访问此返回的数据。
 
-要访问返回的数据，请创建一个单独的规则，然后添加 [!UICONTROL 发送事件完成] 事件到规则。 每次从服务器收到作为结果而发出的成功响应时，都会触发此规则。 [!UICONTROL 发送事件] 操作。
+要访问返回的数据，请创建一个单独的规则，然后向该规则添加一个[!UICONTROL 发送事件结束]事件。 每次通过[!UICONTROL 发送事件]操作从服务器收到成功响应时，都会触发此规则。
 
-当 [!UICONTROL 发送事件完成] 事件会触发规则，它会提供从服务器返回的数据，这些数据对于完成某些任务可能很有用。 通常，您将添加 [!UICONTROL 自定义代码] 操作(来自 [!UICONTROL 核心] 扩展名)的相同规则中包含 [!UICONTROL 发送事件完成] 事件。 在 [!UICONTROL 自定义代码] 操作，您的自定义代码将有权访问名为的变量 `event`. 此 `event` 变量中包含从服务器返回的数据。
+当[!UICONTROL 发送事件完成]事件触发规则时，它会提供从服务器返回的数据，这些数据可能有助于完成某些任务。 通常，您将向包含[!UICONTROL 发送事件完成]事件的同一规则添加[!UICONTROL 自定义代码]操作（来自[!UICONTROL Core]扩展）。 在[!UICONTROL 自定义代码]操作中，您的自定义代码将有权访问名为`event`的变量。 此`event`变量将包含从服务器返回的数据。
 
 用于处理从Edge Network返回的数据的规则可能如下所示：
 
 ![](assets/send-event-complete.png)
 
-以下是如何使用执行某些任务的一些示例 [!UICONTROL 自定义代码] 操作。
+以下是如何使用此规则中的[!UICONTROL Custom code]操作执行某些任务的示例。
 
 ### 手动呈现个性化内容
 
@@ -36,15 +36,15 @@ ht-degree: 0%
 var propositions = event.propositions;
 ```
 
-如果 `event.propositions` 存在，它是一个包含个性化建议对象的数组。 数组中包括的建议在很大程度上取决于事件发送到服务器的方式。
+如果`event.propositions`存在，则它是一个包含个性化建议对象的数组。 数组中包括的建议在很大程度上取决于事件发送到服务器的方式。
 
-对于第一种方案，假设您尚未选中 [!UICONTROL 呈现决策] 复选框，且未提供任何 [!UICONTROL 决策范围] 内部 [!UICONTROL 发送事件] 负责发送事件的操作。
+对于第一个方案，假设您未选中[!UICONTROL 渲染决策]复选框，并且未在负责发送事件的[!UICONTROL 发送事件]操作中提供任何[!UICONTROL 决策范围]。
 
 ![img.png](assets/send-event-render-unchecked-without-scopes.png)
 
-在此示例中， `propositions` 数组仅包含与符合自动呈现条件的事件相关的建议。
+在此示例中，`propositions`数组仅包含与事件相关的建议，这些建议适用于自动渲染。
 
-此 `propositions` 数组可能与以下示例类似：
+`propositions`数组可能与以下示例类似：
 
 ```json
 [
@@ -85,17 +85,17 @@ var propositions = event.propositions;
 ]
 ```
 
-发送事件时， [!UICONTROL 呈现决策] 未选中复选框，因此SDK不会尝试自动渲染任何内容。 但是，SDK仍会自动检索符合自动渲染条件的内容，并在需要时为您提供该内容以手动渲染。 请注意，每个建议对象都有其 `renderAttempted` 属性设置为 `false`.
+发送事件时，未选中[!UICONTROL 渲染决策]复选框，因此SDK不会尝试自动渲染任何内容。 但是，SDK仍会自动检索符合自动渲染条件的内容，并在需要时为您提供该内容以手动渲染。 请注意，每个建议对象的`renderAttempted`属性均设置为`false`。
 
-如果您选择的是 [!UICONTROL 呈现决策] 复选框。在发送事件时，SDK会尝试呈现任何有资格自动呈现的建议。 因此，每个建议对象将具有 `renderAttempted` 属性设置为 `true`. 在这种情况下，无需手动呈现这些建议。
+如果您在发送事件时选中了[!UICONTROL 渲染决策]复选框，则SDK会尝试渲染任何符合自动渲染条件的建议。 因此，每个建议对象的`renderAttempted`属性都将设置为`true`。 在这种情况下，无需手动呈现这些建议。
 
-到目前为止，您仅查看了符合自动呈现条件的个性化内容(例如，在Adobe Target可视化体验编辑器中创建的任何内容)。 检索任何个性化内容 _非_ 符合自动呈现的条件，通过使用提供决策范围来请求内容 [!UICONTROL 决策范围] 中的字段 [!UICONTROL 发送事件] 操作。 范围是一个字符串，它标识您要从服务器检索的特定建议。
+到目前为止，您仅查看了符合自动呈现条件的个性化内容(例如，在Adobe Target可视化体验编辑器中创建的任何内容)。 要检索任何个性化内容&#x200B;_不_&#x200B;适合自动呈现，请使用[!UICONTROL 发送事件]操作中的[!UICONTROL 决策范围]字段提供决策范围，以请求该内容。 范围是一个字符串，它标识您要从服务器检索的特定建议。
 
-此 [!UICONTROL 发送事件] 操作如下所示：
+[!UICONTROL 发送事件]操作如下所示：
 
 ![img.png](assets/send-event-render-unchecked-with-scopes.png)
 
-在本例中，如果在服务器上找到与 `salutation` 或 `discount` 范围，它们将返回并包含在 `propositions` 数组。 请注意，符合自动呈现条件的主张将继续包含在 `propositions` 阵列，无论您如何配置 [!UICONTROL 呈现决策] 或 [!UICONTROL 决策范围] 中的字段 [!UICONTROL 发送事件] 操作。 此 `propositions` 在此例中，数组类似于以下示例：
+在此示例中，如果在与`salutation`或`discount`范围匹配的服务器上找到建议，则将返回这些建议并将其包含在`propositions`数组中。 请注意，符合自动呈现条件的建议将继续包含在`propositions`数组中，无论您如何在[!UICONTROL 发送事件]操作中配置[!UICONTROL 呈现决策]或[!UICONTROL 决策范围]字段。 在这种情况下，`propositions`数组将与以下示例类似：
 
 ```json
 [
@@ -169,14 +169,14 @@ var propositions = event.propositions;
 ]
 ```
 
-此时，您可以根据需要呈现建议内容。 在此示例中，建议与 `discount` scope是使用Adobe Target的基于表单的HTML编辑器构建的体验建议。 假设您的页面上有一个元素，其ID为 `daily-special` 并希望呈现以下源的内容： `discount` 中的建议 `daily-special` 元素。 执行以下操作：
+此时，您可以根据需要呈现建议内容。 在此示例中，与`discount`范围匹配的建议是使用Adobe Target的基于表单的HTML编辑器构建的体验建议。 假设您的页面上有一个ID为`daily-special`的元素，并希望将`discount`建议中的内容渲染到`daily-special`元素中。 执行以下操作：
 
-1. 从提取建议 `event` 对象。
-1. 循环查看每个建议，寻找具有以下范围的建议 `discount`.
+1. 从`event`对象提取建议。
+1. 循环遍历每个建议，查找范围为`discount`的建议。
 1. 如果您找到一个建议，请循环遍历建议中的每个项目，查找包含HTML内容的项目。 （检查总比假设要好。 ）
-1. 如果找到一个包含HTML内容的项目，请找到 `daily-special` 元素，并将其HTML替换为个性化内容。
+1. 如果找到一个包含HTML内容的项目，请在页面上找到`daily-special`元素，并将其HTML替换为个性化内容。
 
-您在中的自定义代码 [!UICONTROL 自定义代码] 操作可能如下所示：
+您在[!UICONTROL Custom code]操作中的自定义代码可能如下所示：
 
 ```javascript
 var propositions = event.propositions;
@@ -217,7 +217,7 @@ if (discountHtml) {
 
 ### 访问Adobe Target响应令牌
 
-从Adobe Target返回的个性化内容包括 [响应令牌](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)，其中包含有关活动、选件、体验、用户配置文件、地理信息等的详细信息。 这些详细信息可与第三方工具共享或用于调试。 响应令牌可在Adobe Target用户界面中配置。
+从Adobe Target返回的Personalization内容包括[响应令牌](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)，这些令牌包含有关活动、选件、体验、用户配置文件、地理信息等的详细信息。 这些详细信息可与第三方工具共享或用于调试。 响应令牌可在Adobe Target用户界面中配置。
 
 在处理响应数据的规则中的Custom Code操作中，您可以访问从服务器返回的个性化建议。 为此，请键入以下自定义代码：
 
@@ -225,15 +225,15 @@ if (discountHtml) {
 var propositions = event.propositions;
 ```
 
-如果 `event.propositions` 存在，它是一个包含个性化建议对象的数组。 请参阅 [手动呈现个性化内容](#manually-render-personalized-content) ，以了解有关 `result.propositions`.
+如果`event.propositions`存在，则它是一个包含个性化建议对象的数组。 有关`result.propositions`内容的更多信息，请参阅[手动渲染个性化内容](#manually-render-personalized-content)。
 
-假设您想从Web SDK自动渲染的所有建议中收集所有活动名称，并将它们推入单个数组中。 然后，您可以将单个阵列发送给第三方。 在这种情况下，请将自定义代码写入 [!UICONTROL 自定义代码] 操作至：
+假设您想从Web SDK自动渲染的所有建议中收集所有活动名称，并将它们推入单个数组中。 然后，您可以将单个阵列发送给第三方。 在这种情况下，请在[!UICONTROL Custom code]操作中将自定义代码写入：
 
-1. 从提取建议 `event` 对象。
+1. 从`event`对象提取建议。
 1. 循环访问每个建议。
 1. 确定SDK是否呈现建议。
 1. 如果是，则循环遍历建议中的每个项目。
-1. 从检索活动名称 `meta` 属性，是包含响应令牌的对象。
+1. 从`meta`属性中检索活动名称，该属性是包含响应令牌的对象。
 1. 将活动名称推入数组。
 1. 将活动名称发送给第三方。
 

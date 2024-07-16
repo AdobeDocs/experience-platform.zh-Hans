@@ -3,7 +3,7 @@ title: Assurance 中的适用于流媒体的 Adobe Analytics 视图
 description: 本指南介绍如何将适用于流媒体的 Adobe Analytics 与 Adobe Experience Platform Assurance 配合使用。
 exl-id: 9a9c2c64-e9ed-4d58-b936-d802f1c3b7d3
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
-workflow-type: ht
+workflow-type: tm+mt
 source-wordcount: '412'
 ht-degree: 100%
 

@@ -2,7 +2,8 @@
 title: Stripe
 description: 了解如何将支付数据从Stripe帐户提取到Adobe Experience Platform
 badge: Beta 版
-source-git-commit: f8df3ddb96ad0810a7a46b0a55125336c427aebd
+exl-id: 191d217e-036d-491a-b7dd-abcad74625ba
+source-git-commit: 62bcaa532cdec68a2f4f62e5784c35b91b7d5743
 workflow-type: tm+mt
 source-wordcount: '809'
 ht-degree: 1%
@@ -13,69 +14,69 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->此 [!DNL Stripe] 源为测试版。 请阅读 [源概述](../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
+>[!DNL Stripe]源为测试版。 有关使用测试版标记源的更多信息，请阅读[源概述](../../home.md#terms-and-conditions)。
 
-各种规模的数千家企业都使用 [!DNL Stripe] 在线和亲自接受支付、创造新的收入来源，并在Adobe Experience Platform、Adobe Commerce和的帮助下实现全球扩张 [!DNL Magento Open Source].
+数千家各种规模的企业利用[!DNL Stripe]在线或亲自接受付款、创造新的收入来源，并在Adobe Experience Platform、Adobe Commerce和[!DNL Magento Open Source]的帮助下在全球范围内进行扩展。
 
-使用 [!DNL Stripe] Experience Platform中的源，用于摄取在客户购买流程中捕获的数据。 引入后，使用此数据创建个性化优惠并解锁更丰富的业务洞察。
+在Experience Platform中使用[!DNL Stripe]源摄取客户在购买流程中捕获的数据。 引入后，使用此数据创建个性化优惠并解锁更丰富的业务洞察。
 
 >[!TIP]
 >
->有关 [!DNL Stripe] Experience Platform的来源，联系人 [!DNL Stripe] adobe合作伙伴<span>@stripe.com.
+>有关Experience Platform上[!DNL Stripe]源的问题，请通过adobe-partnership<span>@stripe.com联系[!DNL Stripe]。
 
 >[!BEGINSHADEBOX]
 
-**示例用例 [!DNL Stripe] 源**
+**源[!DNL Stripe]的示例用例**
 
-您的企业允许客户在您的在线商店上购买商品，并且可选择以下选项： **立即购买** 和 **稍后支付** (使用 [!DNL Klarna]， [!DNL Afterpay]， [!DNL Affirm]，或 [!DNL Zip])。
+您的企业允许客户在您的在线商店购买商品，其选项为&#x200B;**立即购买**&#x200B;和&#x200B;**稍后付款**（使用[!DNL Klarna]、[!DNL Afterpay]、[!DNL Affirm]或[!DNL Zip]）。
 
-使用 [!DNL Stripe] 用于分析使用情况的数据源 **立即购买** 和 **稍后支付** 选项并尝试为这些客户提供个性化优惠。 例如，考虑推荐附加产品，以便在结账前增加购物车中的产品数量。
+使用[!DNL Stripe]数据源分析&#x200B;**立即购买**&#x200B;和&#x200B;**稍后付款**&#x200B;选项的使用情况，并尝试为这些客户提供个性化优惠。 例如，考虑推荐附加产品，以便在结账前增加购物车中的产品数量。
 
 >[!ENDSHADEBOX]
 
-请阅读下面的文档，了解如何设置 [!DNL Stripe] 源帐户，检索必要的凭据，并创建架构。
+请阅读以下文档，了解如何设置[!DNL Stripe]源帐户、检索必要的凭据以及创建架构。
 
 ## 先决条件 {#prerequisites}
 
-以下部分提供了在连接之前必须完成的先决条件设置的信息 [!DNL Stripe] 帐户到Experience Platform。
+以下部分提供了在将[!DNL Stripe]帐户连接到Experience Platform之前必须完成的先决条件设置的信息。
 
 ### 检索您的访问令牌
 
-* 登录到 [[!DNL Stripe] 仪表板](https://dashboard.stripe.com/login) 使用 [!DNL Stripe] 电子邮件地址和密码。
-* 在 [!DNL Developers] 仪表板，选择 **[!DNL API keys for developers]**.
-* 在 **API密钥** 选项卡，选择 **[!DNL Reveal test key]** 以显示您的访问令牌。
-* 现在，在连接您的设备时，您可以将此令牌用作您的访问令牌 [!DNL Stripe] 帐户到Experience Platform，使用 [!DNL Flow Service] API或Experience PlatformUI。
+* 使用您的[!DNL Stripe]电子邮件地址和密码登录到[[!DNL Stripe] 仪表板](https://dashboard.stripe.com/login)。
+* 在[!DNL Developers]仪表板中，选择&#x200B;**[!DNL API keys for developers]**。
+* 在&#x200B;**API密钥**&#x200B;选项卡下，选择&#x200B;**[!DNL Reveal test key]**&#x200B;以显示您的访问令牌。
+* 在将[!DNL Stripe]帐户连接到Experience Platform时，您现在可以使用此令牌作为访问令牌，使用[!DNL Flow Service] API或Experience PlatformUI。
 
 ### 收集所需的凭据
 
-为了连接 [!DNL Stripe] 要Experience Platform的帐户，必须提供以下身份验证凭据的值：
+为了将您的[!DNL Stripe]帐户连接到Experience Platform，您必须提供以下身份验证凭据的值：
 
 >[!BEGINTABS]
 
 >[!TAB API]
 
-在连接时，必须提供以下凭据 [!DNL Stripe] 帐户使用 [!DNL Flow Service] API。
+在使用[!DNL Flow Service] API连接[!DNL Stripe]帐户时，必须提供以下凭据。
 
 | 凭据 | 描述 |
 | --- | --- |
-| `accessToken` | 您的 [!DNL Stripe] OAuth 2刷新代码身份验证令牌。 |
-| `connectionSpec.id` | 的连接规范ID [!DNL Stripe] 源。 此ID被修复为： `cc2c31d6-7b8c-4581-b49f-5c8698aa3ab3`. |
+| `accessToken` | 您的[!DNL Stripe] OAuth 2刷新代码身份验证令牌。 |
+| `connectionSpec.id` | [!DNL Stripe]源的连接规范ID。 此ID被固定为： `cc2c31d6-7b8c-4581-b49f-5c8698aa3ab3`。 |
 
 >[!TAB UI]
 
-在连接时，必须提供以下凭据 [!DNL Stripe] 使用Experience Platform用户界面的account。
+在使用Experience Platform用户界面连接[!DNL Stripe]帐户时，必须提供以下凭据。
 
 | 凭据 | 描述 |
 | --- | --- |
-| 访问令牌 | 您的 [!DNL Stripe] OAuth 2刷新代码身份验证令牌。 |
+| 访问令牌 | 您的[!DNL Stripe] OAuth 2刷新代码身份验证令牌。 |
 
 >[!ENDTABS]
 
-有关使用的更多信息 [!DNL Stripe] API，请阅读 [[!DNL Stripe] 关于API密钥的文档](https://docs.stripe.com/keys).
+有关使用[!DNL Stripe] API的更多信息，请阅读有关API密钥](https://docs.stripe.com/keys)的[[!DNL Stripe] 文档。
 
 ### 创建Experience Data Model (XDM)架构
 
-此 [!DNL Stripe] 源支持从以下资源路径摄取数据：
+[!DNL Stripe]源支持从以下资源路径摄取数据：
 
 * 费用
 * 订阅
@@ -84,13 +85,13 @@ ht-degree: 1%
 * 客户
 * 价格
 
-您必须创建描述数据集的XDM架构，该数据集可以存储将从中发送的字段和数据类型 [!DNL Stripe] Experience Platform。
+您必须创建描述数据集的XDM架构，该数据集可以存储将从[!DNL Stripe]发送到Experience Platform的字段和数据类型。
 
 >[!BEGINTABS]
 
 >[!TAB 费用]
 
-在 [!DNL Stripe]， **费用** 代表试图将资金转入 [!DNL Stripe]. 阅读 [[!DNL Stripe] 收费的API指南](https://docs.stripe.com/api/charges) 以获取有关特定收费属性的更多信息。
+在[!DNL Stripe]中，**费用**&#x200B;表示尝试将资金转入[!DNL Stripe]。 有关特定收费属性的更多信息，请阅读[[!DNL Stripe] 收费的API指南](https://docs.stripe.com/api/charges)。
 
 +++选择以查看Stripe费用对象
 
@@ -185,7 +186,7 @@ ht-degree: 1%
 
 >[!TAB 订阅]
 
-在 [!DNL Stripe]，您可以使用 **订阅** 定期向客户收费。 阅读 [[!DNL Stripe] 订阅的API指南](https://docs.stripe.com/api/subscriptions) 有关特定订阅属性的更多信息。
+在[!DNL Stripe]中，您可以使用&#x200B;**订阅**&#x200B;定期向客户收费。 有关特定订阅属性的更多信息，请阅读订阅](https://docs.stripe.com/api/subscriptions)上的[[!DNL Stripe] API指南。
 
 +++选择以查看Stripe预订对象
 
@@ -327,7 +328,7 @@ ht-degree: 1%
 
 >[!TAB 退款]
 
-在 [!DNL Stripe]，您可以使用 **退款** 以退回以前创建的费用。 阅读 [[!DNL Stripe] 退款API指南](https://docs.stripe.com/api/refunds) 以了解有关特定退款属性的更多信息。
+在[!DNL Stripe]中，您可以使用&#x200B;**退款**&#x200B;退款以前创建的费用。 有关特定退款属性的更多信息，请阅读退款[[!DNL Stripe] API指南](https://docs.stripe.com/api/refunds)。
 
 +++选择以查看Stripe退款对象
 
@@ -363,7 +364,7 @@ ht-degree: 1%
 
 >[!TAB 余额交易记录]
 
-在 [!DNL Stripe]， **余额交易记录** 代表贵机构与分支机构之间的资金流动。 [!DNL Stripe] 帐户。 阅读 [[!DNL Stripe] 余额交易的API指南](https://docs.stripe.com/api/balance_transactions) 有关特定余额事务处理属性的详细信息。
+在[!DNL Stripe]中，**余额交易记录**&#x200B;表示您的[!DNL Stripe]帐户之间的资金流动。 有关特定余额交易属性的详细信息，请阅读余额交易的[[!DNL Stripe] API指南](https://docs.stripe.com/api/balance_transactions)。
 
 +++选择以查看“Stripe余额事务处理”对象
 
@@ -391,7 +392,7 @@ ht-degree: 1%
 
 >[!TAB 客户]
 
-在 [!DNL Stripe]， **客户** 代表您企业的给定客户。 有关特定客户属性的信息，请参阅 [[!DNL Stripe] 客户的API指南](https://docs.stripe.com/api/customers) 以了解有关特定客户属性的更多信息。
+在[!DNL Stripe]中，**客户**&#x200B;代表您公司的给定客户。 有关特定客户属性的信息，请阅读有关客户的[[!DNL Stripe] API指南](https://docs.stripe.com/api/customers)，了解有关特定客户属性的更多信息。
 
 +++选择以查看Stripe客户对象
 
@@ -431,7 +432,7 @@ ht-degree: 1%
 
 >[!TAB 价格]
 
-在 [!DNL Stripe]， **价格** 表示产品循环购买和一次性购买的单位成本、货币和可选的计费周期。 阅读 [[!DNL Stripe] API价格指南](https://docs.stripe.com/api/prices) 以了解有关特定价格属性的更多信息。
+在[!DNL Stripe]中，**价格**&#x200B;表示产品循环购买和一次性购买的单位成本、货币和可选帐单周期。 有关特定价格属性的更多信息，请阅读价格](https://docs.stripe.com/api/prices)的[[!DNL Stripe] API指南。
 
 +++选择以查看Stripe价格对象
 
@@ -472,15 +473,15 @@ ht-degree: 1%
 
 ### IP地址允许列表
 
-在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 请参阅 [IP地址允许列表](../../ip-address-allow-list.md) 页面以了解更多信息。
+在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 有关详细信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md)页。
 
 ### 配置Experience Platform权限
 
-您必须同时拥有两者 **[!UICONTROL 查看源]** 和 **[!UICONTROL 管理源]** 为您的帐户启用的权限以连接 [!DNL Stripe] 帐户到Experience Platform。 请联系您的产品管理员以获取必要的权限。 欲知更多信息，请参阅 [访问控制UI指南](../../../access-control/ui/overview.md).
+若要将您的[!DNL Stripe]帐户连接到Experience Platform，您必须同时为您的帐户启用&#x200B;**[!UICONTROL 查看源]**&#x200B;和&#x200B;**[!UICONTROL 管理源]**&#x200B;权限。 请联系您的产品管理员以获取必要的权限。 有关详细信息，请阅读[访问控制UI指南](../../../access-control/ui/overview.md)。
 
 ## 后续步骤
 
-完成先决条件设置后，您可以继续连接并摄取 [!DNL Stripe] 要Experience Platform的数据。 请阅读以下指南，了解如何摄取 [!DNL Stripe] 使用API或用户界面将支付数据发送到Experience Platform：
+完成先决条件设置后，您可以继续连接并将[!DNL Stripe]数据摄取到Experience Platform。 请阅读以下指南，了解如何使用API或用户界面将[!DNL Stripe]付款数据摄取到Experience Platform：
 
-* [使用流服务API从您的Stripe帐户中摄取支付数据以Experience Platform](../../tutorials/api/create/payments/stripe.md).
-* [使用用户界面从Stripe帐户摄取支付数据以Experience Platform](../../tutorials/ui/create/payments/stripe.md).
+* [使用流服务API从您的Stripe帐户引入付款数据以Experience Platform](../../tutorials/api/create/payments/stripe.md)。
+* [使用用户界面](../../tutorials/ui/create/payments/stripe.md)将付款数据从您的Stripe帐户摄取到Experience Platform。

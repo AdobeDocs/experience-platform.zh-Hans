@@ -18,7 +18,7 @@ ht-degree: 4%
 >
 >基于属性的访问控制当前仅在有限版本中可用。
 
-[基于属性的访问控制](../../../access-control/abac/overview.md) 是Adobe Experience Platform的一项功能，它允许管理员根据属性控制对特定对象和/或功能的访问。 属性可以是添加到对象的元数据，例如添加到架构字段或区段的标签。 管理员定义包括管理用户访问权限的属性的访问策略。
+[基于属性的访问控制](../../../access-control/abac/overview.md)是Adobe Experience Platform的一项功能，它使管理员能够根据属性控制对特定对象和/或功能的访问。 属性可以是添加到对象的元数据，例如添加到架构字段或区段的标签。 管理员定义包括管理用户访问权限的属性的访问策略。
 
 此功能允许您使用定义组织或数据使用范围的标签来标记Experience Data Model (XDM)架构字段。 同时，管理员可以使用用户和角色管理界面定义围绕XDM架构字段的访问策略，并更好地管理授予用户或用户组（内部、外部或第三方用户）的访问权限。 此外，基于属性的访问控制允许管理员管理对特定区段的访问。
 
@@ -28,22 +28,22 @@ ht-degree: 4%
 
 ![突出显示服务模型结果中受限制字段的客户人工智能工作区。](../images/user-guide/unavailable-functionalities.png)
 
-位于客户人工智能工作区的顶部 **分析页面**，请注意，侧栏、得分定义、身份和用户档案属性中的详细信息均显示“访问受限”。
+在客户人工智能工作区&#x200B;**分析页面**&#x200B;顶部，请注意，侧栏、得分定义、身份和配置文件属性中的详细信息均显示“访问受限”。
 
-![突出显示架构的限制字段的客户人工智能工作区。](../images/user-guide/access-restricted.png)
+![突出显示架构的限制字段的Customer AI工作区。](../images/user-guide/access-restricted.png)
 
-当您在“ ”上预览架构受限的数据集时 **[!UICONTROL 创建模型工作流]** 页面，会出现警告以告知您 [!UICONTROL 由于访问限制，某些信息不会显示在数据集预览中。]
+当您在&#x200B;**[!UICONTROL 创建模型工作流]**&#x200B;页面上预览具有受限架构的数据集时，会显示一条警告，让您知道[!UICONTROL 由于访问限制，某些信息不会显示在数据集预览中。]
 
-![突出显示具有受限架构结果的预览数据集的受限字段的客户人工智能工作区。](../images/user-guide/restricted-dataset-preview-save-and-exit-cai.png)
+![带有受限制架构结果的预览数据集的受限字段的客户人工智能工作区突出显示。](../images/user-guide/restricted-dataset-preview-save-and-exit-cai.png)
 
-创建包含受限信息的模型并转到 **[!UICONTROL 定义目标]** 步骤，顶部将显示警告： [!UICONTROL 由于访问限制，某些信息不会显示在配置中。]
+创建包含受限信息的模型并继续&#x200B;**[!UICONTROL 定义目标]**&#x200B;步骤后，顶部将显示警告： [!UICONTROL 由于访问限制，某些信息不会显示在配置中。]
 
 ![突出显示服务模型结果中受限制字段的客户人工智能工作区。](../images/user-guide/information-not-displayed-save-and-exit.png)
 
-使用访问控制时， **查看客户人工智能** 和 **管理客户人工智能** 权限授予对客户人工智能不同功能的访问权限。 此 **管理客户人工智能** 权限允许您 **创建**，**更新**， **删除**， **启用**，或 **disable** 模型，但 **查看客户人工智能** 允许您阅读或查看该报告。 此 **创建**， **更新** 和 **删除** 操作由审核日志记录。
+使用访问控制时，**查看客户人工智能**&#x200B;和&#x200B;**管理客户人工智能**&#x200B;权限授予对客户人工智能不同功能的访问权限。 **管理客户人工智能**&#x200B;权限允许您&#x200B;**创建**、**更新**、**删除**、**启用**&#x200B;或&#x200B;**禁用**&#x200B;模型，而&#x200B;**查看客户人工智能**&#x200B;允许您读取或查看模型。 审核日志记录了&#x200B;**创建**、**更新**&#x200B;和&#x200B;**删除**&#x200B;操作。
 
-请参阅文档以了解详情 [为访问控制分配权限](../../../access-control/home.md) 或如何 [使用审核日志监控访问和活动](../../../landing/governance-privacy-security/audit-logs/overview.md).
+请参阅文档以了解[为访问控制](../../../access-control/home.md)分配权限，或如何[使用审核日志来监视访问和活动](../../../landing/governance-privacy-security/audit-logs/overview.md)。
 
 ## 后续步骤
 
-通过阅读本指南，您已经了解了中访问控制的主要原则 [!DNL Experience Platform]. 您现在可以继续访问 [访问控制用户指南](../overview.md) 有关如何使用 [!DNL Admin Console] 创建产品配置文件并为分配权限 [!DNL Platform].
+通过阅读本指南，您已了解[!DNL Experience Platform]中访问控制的主要原则。 您现在可以继续阅读[访问控制用户指南](../overview.md)，以了解有关如何使用[!DNL Admin Console]创建产品配置文件和为[!DNL Platform]分配权限的详细步骤。

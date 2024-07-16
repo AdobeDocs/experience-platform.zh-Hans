@@ -5,13 +5,13 @@ exl-id: 49851544-9118-4b73-b1d1-4cf49b3f1dee
 source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
 source-wordcount: '176'
-ht-degree: 8%
+ht-degree: 24%
 
 ---
 
-# [!UICONTROL 信息卡操作] 架构字段组
+# [!UICONTROL 卡片操作]架构字段组
 
-[!UICONTROL 信息卡操作] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md). 字段组提供单个 `personalFinances.cardActions` 架构的字段，用于捕获有关信息卡操作的详细信息，例如信息卡类型、激活状态和锁定状态。
+[!UICONTROL 卡操作]是[[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)的标准架构字段组。 字段组为架构提供单个`personalFinances.cardActions`字段，用于捕获有关信息卡操作的详细信息，例如信息卡类型、激活状态和锁定状态。
 
 ![](../../images/field-groups/card-actions.png)
 
@@ -31,4 +31,4 @@ ht-degree: 8%
 
 {style="table-layout:auto"}
 
-有关字段组的更多详细信息，请参阅 [公共XDM存储库](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/experienceevent-card-actions.schema.json).
+有关字段组的更多详细信息，请参阅[公共XDM存储库](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/experienceevent-card-actions.schema.json)。

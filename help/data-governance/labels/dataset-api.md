@@ -6,30 +6,30 @@ description: 数据集服务API允许您应用和编辑数据集的使用标签�
 exl-id: 24a8d870-eb81-4255-8e47-09ae7ad7a721
 source-git-commit: 8db484e4a65516058d701ca972fcbcb6b73abb31
 workflow-type: tm+mt
-source-wordcount: '1318'
+source-wordcount: '1314'
 ht-degree: 1%
 
 ---
 
 # 使用API管理数据集的数据使用标签
 
-此 [[!DNL Dataset Service API]](https://www.adobe.io/experience-platform-apis/references/dataset-service/) 允许您应用和编辑数据集的使用标签。 它是Adobe Experience Platform数据目录功能的一部分，但与 [!DNL Catalog Service] 管理数据集元数据的API。
+[[!DNL Dataset Service API]](https://www.adobe.io/experience-platform-apis/references/dataset-service/)允许您应用和编辑数据集的使用标签。 它是Adobe Experience Platform数据目录功能的一部分，但与管理数据集元数据的[!DNL Catalog Service] API不同。
 
 >[!IMPORTANT]
 >
->仅数据管理用例支持在数据集级别应用标签。 如果您尝试为数据创建访问策略，则必须 [将标签应用于架构](../../xdm/tutorials/labels.md) 数据集所基于的内容。 有关更多详细信息，请参阅 [基于属性的访问控制](../../access-control/abac/overview.md) 以了解更多信息。
+>仅数据管理用例支持在数据集级别应用标签。 如果尝试创建数据的访问策略，则必须[将标签应用于数据集所基于的架构](../../xdm/tutorials/labels.md)。 有关详细信息，请参阅[基于属性的访问控制](../../access-control/abac/overview.md)的概述。
 
-本文档介绍如何使用管理数据集和字段的标签 [!DNL Dataset Service API]. 有关如何使用API调用管理数据使用标签本身的步骤，请参阅 [标签端点指南](../api/labels.md) 对于 [!DNL Policy Service API].
+本文档介绍如何使用[!DNL Dataset Service API]管理数据集和字段的标签。 有关如何使用API调用管理数据使用标签本身的步骤，请参阅[!DNL Policy Service API]的[标签端点指南](../api/labels.md)。
 
 ## 快速入门
 
-在阅读本指南之前，请按照 [快速入门部分](../../catalog/api/getting-started.md) ，以收集进行调用所需的凭据 [!DNL Platform] API。
+在阅读本指南之前，请按照《目录开发人员指南》的[入门部分](../../catalog/api/getting-started.md)中所述的步骤来收集调用[!DNL Platform] API所需的凭据。
 
-要调用本文档中概述的端点，您必须具有 `id` 特定数据集的值。 如果您没有此值，请参阅上的指南 [列出目录对象](../../catalog/api/list-objects.md) 以查找现有数据集的ID。
+要调用本文档中概述的端点，您必须具有特定数据集的唯一`id`值。 如果没有此值，请参阅[列出目录对象](../../catalog/api/list-objects.md)上的指南以查找现有数据集的ID。
 
 ## 查找数据集的标签 {#look-up}
 
-您可以通过对GET请求，查找已应用于现有数据集的数据使用标签 [!DNL Dataset Service] API。
+通过向[!DNL Dataset Service] API发出GET请求，您可以查找已应用于现有数据集的数据使用标签。
 
 **API格式**
 
@@ -39,7 +39,7 @@ GET /datasets/{DATASET_ID}/labels
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DATASET_ID}` | 唯一 `id` 要查找其标签的数据集的值。 |
+| `{DATASET_ID}` | 要查找其标签的数据集的唯一`id`值。 |
 
 **请求**
 
@@ -82,7 +82,7 @@ curl -X GET \
 
 ## 将标签应用于数据集 {#apply}
 
-通过在POST或PUT请求的有效负荷中提供一组标签，您可以为整个数据集应用这些标签。 [!DNL Dataset Service] API。 两个调用的请求正文相同。 您无法将标签添加到单独的数据集字段。
+通过在POST或PUT请求的有效负荷中向[!DNL Dataset Service] API提供一组标签，您可以为整个数据集应用一组标签。 两个调用的请求正文相同。 您无法将标签添加到单独的数据集字段。
 
 **API格式**
 
@@ -93,19 +93,19 @@ PUT /datasets/{DATASET_ID}/labels
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DATASET_ID}` | 唯一 `id` 要为其创建标签的数据集的值。 |
+| `{DATASET_ID}` | 您为其创建标签的数据集的唯一`id`值。 |
 
 **请求**
 
-下面的示例POST请求使用更新整个数据集 `C1` 标签。 有效负载中提供的字段与PUT请求所需的字段相同。
+下面的示例POST请求使用`C1`标签更新整个数据集。 有效负载中提供的字段与PUT请求所需的字段相同。
 
-进行更新数据集(PUT)现有标签的API调用时， `If-Match` 必须包括指示数据集服务中数据集标签实体的当前版本的标头。 为防止数据冲突，服务将只更新数据集实体（如果包含） `If-Match` 字符串匹配系统为该数据集生成的最新版本标记。
+当进行API调用以更新数据集(PUT)的现有标签时，必须包括一个`If-Match`标头，以指示数据集服务中dataset-label实体的当前版本。 为避免数据冲突，仅当包含的`If-Match`字符串与系统为该数据集生成的最新版本标记匹配时，服务才会更新数据集实体。
 
 >[!NOTE]
 >
->如果相关数据集当前存在标签，则只能通过PUT请求添加新标签，这需要一个 `If-Match` 标题。 将标签添加到数据集后，最近的 `etag` 稍后需要使用此值来更新或删除标签<br>在执行PUT方法之前，必须对数据集标签执行GET请求。 确保仅更新请求中要修改的特定字段，而其余字段保持不变。 此外，确保PUT调用维护与GET调用相同的父实体。 任何差异都会导致客户出错。
+>如果相关数据集当前存在标签，则只能通过PUT请求添加新标签，该请求需要`If-Match`标头。 将标签添加到数据集后，以后需要最新的`etag`值来更新或删除标签<br>在执行PUT方法之前，必须对数据集标签执行GET请求。 确保仅更新请求中要修改的特定字段，而其余字段保持不变。 此外，确保PUT调用维护与GET调用相同的父实体。 任何差异都会导致客户出错。
 
-要检索最新版本的dataset-label实体，请生成 [GET请求](#look-up) 到 `/datasets/{DATASET_ID}/labels` 端点。 当前值在响应中返回到 `etag` 标题。 更新现有数据集标签时，最佳做法是首先执行数据集的查找请求，以获取其最新数据 `etag` 值之前，在中使用该 `If-Match` 后续PUT请求的标题。
+要检索最新版本的dataset-label实体，请向`/datasets/{DATASET_ID}/labels`端点发出[GET](#look-up)。 当前值在`etag`标头下的响应中返回。 更新现有数据集标签时，最佳做法是先对数据集执行查找请求，以获取其最新的`etag`值，然后再在后续PUT请求的`If-Match`标头中使用该值。
 
 ```shell
 curl -X POST \
@@ -131,11 +131,11 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `entityId` | 这将标识要更新的特定数据集实体。 |
-| `entityId.namespace` | 用于避免ID冲突。 此 `namespace` 是 `AEP`. |
-| `entityId.id` | 要更新的资源的ID。 此名称是指 `datasetId`. |
-| `entityId.type` | 正在更新的资源的类型。 这将永远是 `dataset`. |
+| `entityId.namespace` | 用于避免ID冲突。 `namespace`是`AEP`。 |
+| `entityId.id` | 要更新的资源的ID。 这是对`datasetId`的引用。 |
+| `entityId.type` | 正在更新的资源的类型。 这将始终为`dataset`。 |
 | `labels` | 要添加到整个数据集的数据使用标签列表。 |
-| `parents` | 此 `parents` 数组包含列表 `entityId`此数据集将从中继承标签的内容。 数据集可以从架构和/或数据集继承标签。 |
+| `parents` | `parents`数组包含此数据集将继承其标签的`entityId`的列表。 数据集可以从架构和/或数据集继承标签。 |
 
 **响应**
 
@@ -143,7 +143,7 @@ curl -X POST \
 
 >[!IMPORTANT]
 >
->此 `optionalLabels` 已弃用资产以用于POST请求。 无法再将数据标签添加到数据集字段。 POST如果 `optionalLabel` 值存在。 但是，您可以使用PUT请求和从各个字段删除标签 `optionalLabels` 属性。 有关详细信息，请参阅 [从数据集中删除标签](#remove).
+>已弃用`optionalLabels`属性以用于POST请求。 无法再将数据标签添加到数据集字段。 如果存在`optionalLabel`值，则POST操作将引发错误。 但是，您可以使用PUT请求和`optionalLabels`属性从单个字段删除标签。 有关详细信息，请参阅[从数据集](#remove)中删除标签一节。
 
 ```json
 {
@@ -165,7 +165,7 @@ curl -X POST \
 
 ## 从数据集中删除标签 {#remove}
 
-您可以通过更新现有的字段标签来移除任何以前应用的字段标签 `optionalLabels` 具有现有字段标签子集的值，或要完全删除它们的空列表。 向发出PUT请求 [!DNL Dataset Service] 用于更新或删除以前应用的标签的API。
+您可以通过更新具有现有字段标签子集的现有`optionalLabels`值，或通过使用空列表完全删除它们，来删除任何以前应用的字段标签。 向[!DNL Dataset Service] API发出PUT请求以更新或删除以前应用的标签。
 
 **API格式**
 
@@ -175,13 +175,13 @@ PUT /datasets/{DATASET_ID}/labels
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DATASET_ID}` | 唯一 `id` 要为其创建标签的数据集的值。 |
+| `{DATASET_ID}` | 您为其创建标签的数据集的唯一`id`值。 |
 
 **请求**
 
 应用PUT操作的以下数据集的properties/person/properties/address字段上具有C1 optionalLabel，而/properties/person/properties/name/properties/fullName字段上具有C1， C2 optionalLabels。 在put操作之后，第一字段将没有标签（C1标签被删除），而第二字段将只有C1标签（C2标签被删除）
 
-在下面的示例场景中，PUT请求用于移除添加到单个字段的标签。 在提出请求之前， `fullName` 字段具有 `C1` 和 `C2` 已应用标签，并且 `address` 字段已具有 `C1` 已应用标签。 PUT请求覆盖现有标签 `C1, C2` 标签来自 `fullName` 带有以下内容的字段 `C1` 标签使用 `optionalLabels.labels` 参数。 该请求还将覆盖 `C1` 标签来自 `address` 字段标签集为空的字段。
+在下面的示例场景中，PUT请求用于移除添加到单个字段的标签。 在发出请求之前，`fullName`字段已应用`C1`和`C2`标签，并且`address`字段已应用`C1`标签。 PUT请求使用`optionalLabels.labels`参数覆盖具有`C1`标签的`fullName`字段中的现有标签`C1, C2`标签。 该请求还会使用一组空的字段标签覆盖`address`字段中的`C1`标签。
 
 ```shell
 curl -X PUT \
@@ -233,10 +233,10 @@ curl -X PUT \
 
 | 参数 | 描述 |
 | --- | --- |
-| `entityId` | 这将标识要更新的特定数据集实体。 此 `entityId` 必须包括以下三个值：<br/><br/>`namespace`：用于避免ID冲突。 此 `namespace` 是 `AEP`.<br/>`id`：要更新的资源的ID。 此名称是指 `datasetId`.<br/>`type`：正在更新的资源的类型。 这将永远是 `dataset`. |
+| `entityId` | 这将标识要更新的特定数据集实体。 `entityId`必须包括以下三个值：<br/><br/>`namespace`：用于避免ID冲突。 `namespace`是`AEP`。<br/>`id`：正在更新的资源的ID。 这是对`datasetId`的引用。<br/>`type`：正在更新的资源的类型。 这将始终为`dataset`。 |
 | `labels` | 要添加到整个数据集的数据使用标签列表。 |
-| `parents` | 此 `parents` 数组包含列表 `entityId`此数据集将从中继承标签的内容。 数据集可以从架构和/或数据集继承标签。 |
-| `optionalLabels` | 此参数用于移除先前应用于数据集字段的标签。 数据集中要从中删除标签的任何单独字段的列表。 此数组中的每一项都必须具有以下属性： <br/><br/>`option`：包含 [!DNL Experience Data Model] (XDM)字段的属性。 需要以下三个属性：<ul><li><code>id</code>：URI <code>$id</code> 与字段关联的架构的值。</li><li><code>contentType</code>：架构的内容类型和版本号。 这应该采用有效形式之一 <a href="../../xdm/api/getting-started.md#accept">接受标头</a> ，以获取XDM查找请求。</li><li><code>架构路径</code>：数据集架构中字段的路径。</li></ul>`labels`：此值必须包含应用的现有字段标签的子集，或为空以删除所有现有字段标签。 PUT或POST方法现在会返回错误，如果 `optionalLabels` 字段具有任何新标签或修改的标签。 |
+| `parents` | `parents`数组包含此数据集将继承其标签的`entityId`的列表。 数据集可以从架构和/或数据集继承标签。 |
+| `optionalLabels` | 此参数用于移除先前应用于数据集字段的标签。 数据集中要从中删除标签的任何单独字段的列表。 此数组中的每个项都必须具有以下属性： <br/><br/>`option`：包含字段的[!DNL Experience Data Model] (XDM)属性的对象。 需要以下三个属性：<ul><li><code>id</code>： URI <code>$id</code> 与字段关联的架构的值。</li><li><code>内容类型</code>：架构的内容类型和版本号。 这应该采用XDM查找请求的有效<a href="../../xdm/api/getting-started.md#accept">接受标头</a>的形式。</li><li><code>架构路径</code>：数据集架构中字段的路径。</li></ul>`labels`：此值必须包含应用的现有字段标签的子集，或者为空以删除所有现有字段标签。 如果`optionalLabels`字段具有任何新标签或修改的标签，则PUT或POST方法现在会返回错误。 |
 
 **响应**
 
@@ -262,6 +262,6 @@ curl -X PUT \
 
 ## 后续步骤
 
-通过阅读本文档，您已了解如何使用 [!DNL Dataset Service] API。 您现在可以定义 [数据使用策略](../policies/overview.md) 和 [访问控制策略](../../access-control/abac/ui/policies.md) 基于您应用的标签。
+通过阅读本文档，您已了解如何使用[!DNL Dataset Service] API管理数据集和字段的数据使用标签。 您现在可以根据已应用的标签定义[数据使用策略](../policies/overview.md)和[访问控制策略](../../access-control/abac/ui/policies.md)。
 
-有关管理中数据集的更多信息 [!DNL Experience Platform]，请参见 [数据集概述](../../catalog/datasets/overview.md).
+有关管理[!DNL Experience Platform]中数据集的详细信息，请参阅[数据集概述](../../catalog/datasets/overview.md)。

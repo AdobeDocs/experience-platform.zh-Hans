@@ -14,4 +14,4 @@ ht-degree: 0%
 
 Adobe Experience Platform Web SDK与其他Adobe解决方案(如Adobe Analytics、Audience Manager、Target和Experience Platform)一起支持各种个性化用例。
 
-有关实施受支持用例的详细信息，请查阅以下文件中的相应文档 [Web SDK用例项目页面](https://github.com/orgs/adobe/projects/18/views/1?filterQuery=).
+有关实施支持的用例的详细信息，请在[Web SDK用例项目页面](https://github.com/orgs/adobe/projects/18/views/1?filterQuery=)中查看其相应的文档。

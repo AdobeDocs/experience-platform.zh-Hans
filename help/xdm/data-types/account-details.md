@@ -5,13 +5,13 @@ exl-id: 17254393-263e-4000-9bd2-815a9e842533
 source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
 source-wordcount: '409'
-ht-degree: 5%
+ht-degree: 11%
 
 ---
 
-# [!UICONTROL 帐户详细信息] 数据类型
+# [!UICONTROL 帐户详细信息]数据类型
 
-[!UICONTROL 帐户详细信息] 是一种标准的体验数据模型(XDM)数据类型，用于描述与业务组织相关的详细信息。
+[!UICONTROL 帐户详细信息]是标准体验数据模型(XDM)数据类型，用于描述与业务组织相关的详细信息。
 
 ![数据类型结构](../images/data-types/account-details.png)
 
@@ -25,22 +25,22 @@ ht-degree: 5%
 | `SICDescription` | 字符串 | 对组织业务线的简要描述（基于其SIC代码）。 |
 | `companyProductAndServices` | 字符串 | 组织正在交易或开展业务的产品和服务。 |
 | `facebookPageUrl` | 字符串 | 指向组织的Facebook帐户的网站链接。 |
-| `industry` | 字符串 | 该组织所属的行业。 这是一个自由格式的字段，建议在查询中使用结构化值或使用 `xdm:classifier` 属性。 |
+| `industry` | 字符串 | 该组织所属的行业。 这是自由格式字段，建议在查询中使用结构化值或使用`xdm:classifier`属性。 |
 | `jigsaw` | 字符串 | 组织的Data.com键。 |
 | `linkedinPageUrl` | 字符串 | 指向组织的LinkedIn帐户的网站链接。 |
-| `logoUrl` | 字符串 | 要与Salesforce实例的URL组合的路径(例如， `https://yourInstance.salesforce.com/`)来生成URL以请求与组织关联的社交网络个人资料图像。 生成的URL会返回指向组织的社交网络个人资料图像的HTTP重定向（代码302）。 |
-| `marketSegment` | 字符串 | 组织参与的指定市场受众。 这是一个自由格式的字段，建议在查询中使用结构化值或使用 `xdm:identifier` 属性。 |
-| `numberOfEmployees` | 整数 | 组织的员工数。 |
+| `logoUrl` | 字符串 | 要与Salesforce实例的URL（例如`https://yourInstance.salesforce.com/`）组合的路径，用于生成URL以请求与组织关联的社交网络个人资料图像。 生成的URL会返回指向组织的社交网络个人资料图像的HTTP重定向（代码302）。 |
+| `marketSegment` | 字符串 | 组织参与的指定市场受众。 这是自由格式字段，建议在查询中使用结构化值或使用`xdm:identifier`属性。 |
+| `numberOfEmployees` | 整数 | 组织内的员工数。 |
 | `organizationType` | 字符串 | 描述组织类型的标签。 |
 | `primaryEmailDomain` | 字符串 | 组织用于其人员的主要电子邮件域。 |
-| `rating` | 双精度 | 此组织的计算得分或星级。 `1` 指示最大可能评级，并且 `0` 是可能的最低评级。 |
-| `tickerSymbol` | 字符串 | 此帐户的股市符号。 最多20个字符。 |
+| `rating` | 两次 | 此组织的计算得分或星级。 `1`表示可能的最大评分，`0`表示可能的最小评分。 |
+| `tickerSymbol` | 字符串 | 此帐户的股市符号。最多 20 个字符。 |
 | `twitterHandleUrl` | 字符串 | 指向组织的twitter句柄的网站链接。 |
-| `website` | 字符串 | 组织网站的URL。 |
+| `website` | 字符串 | 组织网站的 URL。 |
 
 {style="table-layout:auto"}
 
 有关数据类型的更多详细信息，请参阅公共XDM存储库：
 
 * [填充示例](https://github.com/adobe/xdm/blob/master/components/datatypes/b2b/account-organization.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/b2b/account-organization.schema.json)
+* [完整架构](https://github.com/adobe/xdm/blob/master/components/datatypes/b2b/account-organization.schema.json)

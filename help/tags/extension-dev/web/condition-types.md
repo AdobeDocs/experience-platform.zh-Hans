@@ -5,7 +5,7 @@ exl-id: db504455-858b-4ac8-aa42-de516b0f1d5a
 source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
 source-wordcount: '502'
-ht-degree: 65%
+ht-degree: 52%
 
 ---
 
@@ -13,11 +13,11 @@ ht-degree: 65%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-在规则的上下文中，会在事件发生后评估条件。 所有条件必须返回 true，规则才会继续处理。例外情况是用户将条件明确放入“例外”存储段中，在这种情况下，存储段中的所有条件都必须返回false，规则才能继续处理。
+在规则的上下文中，会在事件发生后评估条件。 所有条件必须返回 true，规则才会继续处理。例外情况是用户将条件明确放入“例外”存储段中，在这种情况下，该存储段内的所有条件都必须返回false，规则才能继续处理。
 
-例如，扩展可以提供“视区包含”条件类型， 用户可在其中指定 CSS 选择器。在客户端网站上评估条件时，扩展将能够找到与 CSS 选择器匹配的元素，并返回其中是否有任何元素包含在用户视区中。
+例如，扩展可以提供“视区包含”条件类型，用户可在其中指定CSS选择器。 在客户端网站上评估条件时，扩展将能够找到与 CSS 选择器匹配的元素，并返回其中是否有任何元素包含在用户视区中。
 
 本文档介绍如何在Adobe Experience Platform中定义Web扩展的条件类型。
 
@@ -29,7 +29,7 @@ ht-degree: 65%
 
 条件类型通常包含以下内容：
 
-1. A [视图](./views.md) 显示在Experience PlatformUI和数据收集UI中，允许用户修改条件的设置。
+1. Experience PlatformUI和数据收集UI中显示的[视图](./views.md)，允许用户修改条件的设置。
 2. 在标记运行时库中发出的库模块，用于解释设置并评估条件。
 
 条件类型库模块的一个目标是：评估某些内容是true还是false。 具体评估的内容由您来决定。
@@ -42,7 +42,7 @@ module.exports = function(settings) {
 };
 ```
 
-现在，假定您希望可由 Adobe Experience Platform 用户配置主机名。您可以允许用户输入主机名，然后将主机名保存到设置对象。该对象可能如下所示：
+现在，假定您希望可由Adobe Experience Platform用户配置主机名。 您可以允许用户输入主机名，然后将主机名保存到设置对象。该对象可能如下所示：
 
 ```js
 {

@@ -4,14 +4,14 @@ description: 本文档提供有关使用沙盒工具API的补充信息。
 exl-id: fdfa019d-ce0e-456b-b591-7d96d1115e02
 source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
-source-wordcount: '179'
+source-wordcount: '180'
 ht-degree: 1%
 
 ---
 
 # 沙盒API指南附录
 
-本文档提供有关使用 [!DNL Sandbox] API。
+本文档提供有关使用[!DNL Sandbox] API的补充信息。
 
 ## 使用查询参数 {#query}
 
@@ -19,7 +19,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->此 `limit` 可以单独传递和启动。
+>可以单独传递和启动`limit`。
 
 | 参数 | 描述 |
 | --- | --- |

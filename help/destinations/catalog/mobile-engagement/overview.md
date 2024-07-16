@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## 支持的移动参与目标 {#supported-destinations}
 
-[!DNL Adobe Experience Platform] 当前支持以下移动参与目标：
+[!DNL Adobe Experience Platform]当前支持以下移动参与目标：
 
 * [飞艇属性连接](airship-attributes.md)
 * [飞艇标记连接](airship-tags.md)

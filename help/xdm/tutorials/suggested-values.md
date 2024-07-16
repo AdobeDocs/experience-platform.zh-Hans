@@ -1,38 +1,38 @@
 ---
 title: 在API中管理建议值
-description: 了解如何将建议值添加到架构注册表API中的字符串字段。
+description: 了解如何在架构注册表API中将建议值添加到字符串字段。
 exl-id: 96897a5d-e00a-410f-a20e-f77e223bd8c4
 source-git-commit: a3140d5216857ef41c885bbad8c69d91493b619d
 workflow-type: tm+mt
-source-wordcount: '658'
-ht-degree: 0%
+source-wordcount: '654'
+ht-degree: 1%
 
 ---
 
 # 在API中管理建议值
 
-对于体验数据模型(XDM)中的任何字符串字段，您可以定义 **枚举** 该参数会限制字段可以摄取到预定义集合的值。 如果您尝试将数据摄取到枚举字段，并且该值与其配置中定义的任何值都不匹配，则将拒绝摄取。
+对于体验数据模型(XDM)中的任何字符串字段，您可以定义&#x200B;**枚举**，以限制该字段可以摄取到预定义集的值。 如果您尝试将数据摄取到枚举字段，但值与其配置中定义的任何值都不匹配，则将拒绝摄取。
 
-与枚举相反，添加 **建议值** 字符串字段不会限制它可以摄取的值。 相反，建议值会影响中提供的预定义值 [分段UI](../../segmentation/ui/overview.md) 将字符串字段包含为属性时。
+与枚举相反，向字符串字段添加&#x200B;**建议值**&#x200B;不会限制它可以摄取的值。 建议值反而会影响[分段UI](../../segmentation/ui/overview.md)中哪些预定义值在将该字符串字段作为属性包含时可用。
 
 >[!NOTE]
 >
->字段的更新建议值大约会延迟5分钟，以便反映在分段UI中。
+>字段的更新建议值大约有五分钟的延迟才能反映在分段UI中。
 
-本指南介绍如何使用管理建议值 [架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). 有关如何在Adobe Experience Platform用户界面中执行此操作的步骤，请参阅 [有关枚举和建议值的UI指南](../ui/fields/enum.md).
+本指南介绍如何使用[架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/)管理建议值。 有关如何在Adobe Experience Platform用户界面中执行此操作的步骤，请参阅有关枚举和建议值的[UI指南](../ui/fields/enum.md)。
 
 ## 先决条件
 
-本指南假定您熟悉XDM中架构组合的元素以及如何使用架构注册表API创建和编辑XDM资源。 如果您需要获取简介，请参阅以下文档：
+本指南假定您熟悉XDM中架构组合的元素以及如何使用架构注册表API创建和编辑XDM资源。 如果您需要了解简介，请参阅以下文档：
 
-* [模式组合基础](../schema/composition.md)
+* [架构组合基础](../schema/composition.md)
 * [架构注册表API指南](../api/overview.md)
 
-此外，还强烈建议您查看 [枚举和建议值的演化规则](../ui/fields/enum.md#evolution) 如果您正在更新现有字段。 如果您正在管理参与合并的架构的建议值，请参阅 [合并枚举和建议值的规则](../ui/fields/enum.md#merging).
+如果更新现有字段，则强烈建议您查看枚举和建议值的[演化规则](../ui/fields/enum.md#evolution)。 如果您正在管理参与合并的架构的建议值，请参阅合并枚举和建议值的[规则](../ui/fields/enum.md#merging)。
 
-## 合成
+## 构成
 
-在API中， **枚举** 字段由 `enum` 数组，而 `meta:enum` 对象为以下值提供友好的显示名称：
+在API中，**枚举**&#x200B;字段的约束值由`enum`数组表示，而`meta:enum`对象为这些值提供友好的显示名称：
 
 ```json
 "exampleStringField": {
@@ -51,9 +51,9 @@ ht-degree: 0%
 }
 ```
 
-对于枚举字段，架构注册表不允许 `meta:enum` 将扩展到 `enum`，因为尝试在这些约束之外引入字符串值将不会通过验证。
+对于枚举字段，架构注册表不允许`meta:enum`扩展到`enum`下提供的值之外，因为尝试在这些约束之外摄取字符串值将不会通过验证。
 
-或者，您可以定义一个不包含 `enum` 数组，并且仅使用 `meta:enum` 要表示的对象 **建议值**：
+或者，您可以定义一个不包含`enum`数组的字符串字段，并且只使用`meta:enum`对象表示&#x200B;**建议值**：
 
 ```json
 "exampleStringField": {
@@ -67,21 +67,21 @@ ht-degree: 0%
 }
 ```
 
-由于该字符串没有 `enum` 数组，用于定义约束 `meta:enum` 属性可以扩展以包含新值。
+由于字符串没有用于定义约束的`enum`数组，因此可以扩展其`meta:enum`属性以包含新值。
 
 <!-- ## Manage suggested values for standard fields
 
 For existing standard fields, you can [add suggested values](#add-suggested-standard) or [remove suggested values](#remove-suggested-standard). -->
 
-## 将建议值添加到标准字段 {#add-suggested-standard}
+## 向标准字段添加建议值 {#add-suggested-standard}
 
-要扩展 `meta:enum` 对于标准字符串字段，您可以创建 [友好名称描述符](../api/descriptors.md#friendly-name) 用于特定架构中相关字段。
+要扩展标准字符串字段的`meta:enum`，您可以为特定架构中相关字段创建[友好名称描述符](../api/descriptors.md#friendly-name)。
 
 >[!NOTE]
 >
->字符串字段的建议值只能在架构级别添加。 换句话说，扩展 `meta:enum` 一个架构中某个标准字段的设置不会影响使用同一标准字段的其他架构。
+>字符串字段的建议值只能在架构级别添加。 换句话说，在一个架构中扩展标准字段的`meta:enum`不会影响使用同一标准字段的其他架构。
 
-以下请求将建议值添加到标准 `eventType` 字段(由 [XDM ExperienceEvent类](../classes/experienceevent.md))下ID为的架构 `sourceSchema`：
+以下请求将建议值添加到`sourceSchema`下标识的架构的标准`eventType`字段（由[XDM ExperienceEvent类](../classes/experienceevent.md)提供）：
 
 ```curl
 curl -X POST \
@@ -112,7 +112,7 @@ curl -X POST \
       }'
 ```
 
-应用描述符后，架构注册表在检索架构时使用以下内容进行响应（响应因空间而被截断）：
+应用描述符后，架构注册表在检索架构（响应因空间而被截断）时使用以下内容进行响应：
 
 ```json
 {
@@ -134,10 +134,9 @@ curl -X POST \
 
 >[!NOTE]
 >
->如果标准字段已包含下列值 `meta:enum`时，描述符中的新值不会覆盖现有字段，而是添加到上：
+>如果标准字段已包含`meta:enum`下的值，则描述符中的新值不会覆盖现有字段，而是会添加到上：
 >
->
-```json
+>```json
 >"standardField": {
 >   "type":"string",
 >   "title": "Example standard enum field",
@@ -215,18 +214,17 @@ A successful response returns HTTP status 201 (Created) and the details of the n
 
 ## 管理自定义字段的建议值 {#suggested-custom}
 
-要管理 `meta:enum` 对于自定义字段，您可以通过PATCH请求更新该字段的父类、字段组或数据类型。
+要管理自定义字段的`meta:enum`，您可以通过PATCH请求更新该字段的父类、字段组或数据类型。
 
 >[!WARNING]
 >
->与标准字段相反，它将 `meta:enum` 影响使用该字段的所有其他架构。 如果不希望更改在架构之间传播，请考虑改为创建新的自定义资源：
+>与标准字段相反，更新自定义字段的`meta:enum`会影响使用该字段的所有其他架构。 如果不希望更改在架构之间传播，请考虑改为创建新的自定义资源：
 >
 >* [创建自定义类](../api/classes.md#create)
 >* [创建自定义字段组](../api/field-groups.md#create)
 >* [创建自定义数据类型](../api/data-types.md#create)
 
-
-以下请求将更新 `meta:enum` 由自定义数据类型提供的“忠诚度级别”字段的读者群：
+以下请求更新由自定义数据类型提供的“忠诚度”字段的`meta:enum`：
 
 ```curl
 curl -X PATCH \
@@ -251,7 +249,7 @@ curl -X PATCH \
       ]'
 ```
 
-应用更改后，架构注册表在检索架构时使用以下内容进行响应（响应因空间而被截断）：
+应用更改后，架构注册表在检索架构（响应因空间而被截断）时使用以下内容进行响应：
 
 ```json
 {
@@ -276,4 +274,4 @@ curl -X PATCH \
 
 ## 后续步骤
 
-本指南介绍了如何管理架构注册表API中字符串字段的建议值。 请参阅指南，网址为 [在API中定义自定义字段](./custom-fields-api.md) 有关如何创建不同字段类型的更多信息。
+本指南介绍了如何管理架构注册表API中字符串字段的建议值。 有关如何创建不同字段类型的更多信息，请参阅[在API中定义自定义字段的指南](./custom-fields-api.md)。

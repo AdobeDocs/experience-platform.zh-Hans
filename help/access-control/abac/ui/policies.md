@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->不要将访问策略与数据使用策略混淆，数据使用策略控制数据在Adobe Experience Platform中的使用方式，而不是贵组织中的哪些用户有权访问数据。 请参阅有关创建的指南 [数据使用策略](../../../data-governance/policies/create.md) 以了解更多信息。
+>不要将访问策略与数据使用策略混淆，数据使用策略控制数据在Adobe Experience Platform中的使用方式，而不是贵组织中的哪些用户有权访问数据。 有关详细信息，请参阅有关创建[数据使用策略](../../../data-governance/policies/create.md)的指南。
 
 <!-- ## Create a new policy
 
@@ -120,29 +120,29 @@ You are returned to the **[!UICONTROL policies]** tab and a confirmation of dele
 
 >[!IMPORTANT]
 >
->默认情况下， [!UICONTROL 自动包含] 将为所有客户打开功能，这意味着所有沙盒都将添加到策略中。
+>默认情况下，为所有客户启用了[!UICONTROL 自动包含]功能，这意味着所有沙盒都将添加到策略中。
 
 >[!NOTE]
 >
->此 **[!UICONTROL Default-Label-Based Access-Control-Policy]** 策略是目前唯一可用于配置的策略。
+>**[!UICONTROL Default-Label-Based-Access-Control-Policy]**&#x200B;策略当前是唯一可供配置的策略。
 
-要查看与策略关联的沙盒，请从以下位置选择策略 **[!UICONTROL 策略]** 选项卡。
+要查看与策略关联的沙盒，请从&#x200B;**[!UICONTROL 策略]**&#x200B;选项卡中选择该策略。
 
-![显示现有可用策略列表的“策略”页。](../../images/abac-end-to-end-user-guide/abac-policies-page.png)
+![显示现有可用策略列表的策略页面。](../../images/abac-end-to-end-user-guide/abac-policies-page.png)
 
-接下来，选择策略，然后选择 **[!UICONTROL 沙盒]** 选项卡。 将显示与策略关联的沙盒列表。
+接下来，选择策略，然后选择&#x200B;**[!UICONTROL 沙盒]**&#x200B;选项卡。 将显示与策略关联的沙盒列表。
 
-![显示现有可用策略列表的“策略”页。](../../images/flac-ui/abac-policies-sandboxes-tab.png)
+![显示现有可用策略列表的策略页面。](../../images/flac-ui/abac-policies-sandboxes-tab.png)
 
 ### 将策略添加到所有沙盒
 
-使用 **[!UICONTROL 自动包含]** 打开 **[!UICONTROL 沙盒]** 选项卡以激活所有沙盒的策略。
+使用&#x200B;**[!UICONTROL 沙盒]**&#x200B;选项卡上的&#x200B;**[!UICONTROL 自动包含]**&#x200B;切换开关为所有沙盒激活策略。
 
-![此 [!UICONTROL 沙盒] 选项卡显示 [!UICONTROL 自动包含] 切换。](../../images/flac-ui/abac-policies-auto-include.png)
+![显示[!UICONTROL 自动包含]切换的[!UICONTROL 沙盒]选项卡。](../../images/flac-ui/abac-policies-auto-include.png)
 
-此 **[!UICONTROL 启用自动包含]** 出现对话框提示您确认选择。 选择 **[!UICONTROL 启用]** 以完成配置设置。
+出现&#x200B;**[!UICONTROL 启用自动包含]**&#x200B;对话框，提示您确认选择。 选择&#x200B;**[!UICONTROL 启用]**&#x200B;以完成配置设置。
 
-![此 [!UICONTROL 启用自动包含] 对话框突出显示 [!UICONTROL 启用].](../../images/flac-ui/abac-policies-auto-include-enable.png)
+![启用[!UICONTROL 自动包含]对话框突出显示[!UICONTROL 启用]。](../../images/flac-ui/abac-policies-auto-include-enable.png)
 
 >[!SUCCESS]
 >
@@ -152,19 +152,19 @@ You are returned to the **[!UICONTROL policies]** tab and a confirmation of dele
 
 >[!IMPORTANT]
 >
->如果符合以下条件，则默认情况下不会将未来的沙盒包含在策略中 [!UICONTROL 自动包含] 切换功能已关闭。 您需要手动管理沙盒并将其添加到策略中。
+>如果关闭[!UICONTROL 自动包含]切换开关，则默认情况下未来沙盒将不会包含在策略中。 您需要手动管理沙盒并将其添加到策略中。
 
-使用 **[!UICONTROL 自动包含]** 打开 **[!UICONTROL 沙盒]** 选项卡禁用所有沙盒的策略。
+使用&#x200B;**[!UICONTROL 沙盒]**&#x200B;选项卡上的&#x200B;**[!UICONTROL 自动包含]**&#x200B;切换开关可禁用所有沙盒的策略。
 
-![此 [!UICONTROL 沙盒] 选项卡显示 [!UICONTROL 自动包含] 切换。](../../images/flac-ui/abac-policies-auto-include.png)
+![显示[!UICONTROL 自动包含]切换的[!UICONTROL 沙盒]选项卡。](../../images/flac-ui/abac-policies-auto-include.png)
 
-从 **[!UICONTROL 沙盒]** 选项卡，选择 **[!UICONTROL 添加沙盒]** 以选择此策略将应用的沙盒。
+从&#x200B;**[!UICONTROL 沙盒]**&#x200B;选项卡中，选择&#x200B;**[!UICONTROL 添加沙盒]**&#x200B;以选择将应用此策略的沙盒。
 
-![此 [!UICONTROL 沙盒] 选项卡，其中显示了添加到策略的沙盒列表。](../../images/flac-ui/abac-policies-sandboxes-tab-add.png)
+![显示添加到策略中的沙盒列表的[!UICONTROL 沙盒]选项卡。](../../images/flac-ui/abac-policies-sandboxes-tab-add.png)
 
 此时将显示沙盒列表。 从列表中选择要添加的沙盒。 或者，使用搜索栏搜索沙盒。 选择&#x200B;**[!UICONTROL 保存]**。
 
-![此 [!UICONTROL 添加沙盒] 显示可添加到策略的现有沙盒列表的页面。](../../images/flac-ui/abac-policies-sandboxes-list.png)
+![[!UICONTROL 添加沙盒]页面显示可添加到策略的现有沙盒列表。](../../images/flac-ui/abac-policies-sandboxes-list.png)
 
 >[!SUCCESS]
 >
@@ -172,13 +172,13 @@ You are returned to the **[!UICONTROL policies]** tab and a confirmation of dele
 
 ### 从策略中删除沙盒
 
-要删除沙盒，请选择 **X** 沙盒名称旁边的图标。
+要删除沙盒，请选择沙盒名称旁边的&#x200B;**X**&#x200B;图标。
 
-![此 [!UICONTROL 沙盒] 选项卡显示沙盒列表，突出显示 [!UICONTROL X] 以删除。](../../images/flac-ui/abac-policies-remove-sandbox-x.png)
+![显示沙盒列表的[!UICONTROL 沙盒]选项卡，突出显示要删除的[!UICONTROL X]。](../../images/flac-ui/abac-policies-remove-sandbox-x.png)
 
-此 **[!UICONTROL 移除]** 出现对话框提示您确认选择。 选择 **[!UICONTROL 确认]** 以完成删除。
+出现&#x200B;**[!UICONTROL 删除]**&#x200B;对话框，提示您确认选择。 选择&#x200B;**[!UICONTROL 确认]**&#x200B;以完成删除。
 
-![此 [!UICONTROL 移除] 对话框突出显示 [!UICONTROL 确认].](../../images/flac-ui/abac-policies-remove-sandbox.png)
+![突出显示[!UICONTROL 确认]的[!UICONTROL 移除]对话框。](../../images/flac-ui/abac-policies-remove-sandbox.png)
 
 >[!SUCCESS]
 >
@@ -186,23 +186,23 @@ You are returned to the **[!UICONTROL policies]** tab and a confirmation of dele
 
 ## 激活策略
 
-要激活现有策略，请从 **[!UICONTROL 策略]** 选项卡。
+要激活现有策略，请从&#x200B;**[!UICONTROL 策略]**&#x200B;选项卡中选择策略。
 
 ![flac-policy-select](../../images/abac-end-to-end-user-guide/abac-policies-page.png)
 
-接下来，选择省略号(`…`)，此时下拉菜单会显示用于编辑、激活、删除或复制角色的控件。 从下拉菜单中选择激活。
+接下来，选择策略名称旁边的省略号(`…`)，下拉菜单会显示用于编辑、激活、删除或复制角色的控件。 从下拉菜单中选择激活。
 
 ![flac-policy-activate](../../images/abac-end-to-end-user-guide/abac-policies-activate.png)
 
-此 **[!UICONTROL 激活策略]** 出现对话框，提示您确认激活。
+出现&#x200B;**[!UICONTROL 激活策略]**&#x200B;对话框，提示您确认激活。
 
 ![flac-policy-activate-confirm](../../images/abac-end-to-end-user-guide/abac-activate-policies-dialog.png)
 
 
-您将返回 **[!UICONTROL 策略]** 选项卡，此时会显示确认激活弹出窗口。 策略状态显示为活动。
+您返回到&#x200B;**[!UICONTROL 策略]**&#x200B;选项卡，此时会出现确认激活弹出窗口。 策略状态显示为活动。
 
-![flac策略激活](../../images/abac-end-to-end-user-guide/abac-policies-confirm-activate.png)
+![flac-policy-activated](../../images/abac-end-to-end-user-guide/abac-policies-confirm-activate.png)
 
 ## 后续步骤
 
-激活策略后，您可以继续下一步以 [管理角色的权限](permissions.md).
+激活策略后，您可以继续下一步以[管理角色](permissions.md)的权限。

@@ -102,7 +102,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 功能 | 描述 |
 | --- | --- |
-| 使用 SQL 为配置文件启用数据集 | [在 CTAS 查询中使用 LABEL 使数据集“启用配置文件”](../../query-service/sql/syntax.md#create-table-as-select)，或使用 ALTER 更新要为配置文件启用的现有数据集。您可以使用此扩展的SQL构造为Real-time Customer Profile业务用例提供对派生数据集的无缝支持。 请参阅 [派生数据集文档的无缝SQL流](../../query-service/data-distiller/derived-datasets/create-derived-datasets-with-sql.md) 以了解更多详细信息。 |
+| 使用 SQL 为配置文件启用数据集 | [在 CTAS 查询中使用 LABEL 使数据集“启用配置文件”](../../query-service/sql/syntax.md#create-table-as-select)，或使用 ALTER 更新要为配置文件启用的现有数据集。您可以使用此扩展的SQL构造为Real-time Customer Profile业务用例提供对派生数据集的无缝支持。 有关更多详细信息，请参阅派生数据集的[无缝SQL流文档](../../query-service/data-distiller/derived-datasets/create-derived-datasets-with-sql.md)。 |
 | 监测计划查询 | 使用[计划查询选项卡](../../query-service/ui/monitor-queries.md)，查找有关查询运行的重要信息并订阅警报。监测查询以获取计划详细信息、状态和错误消息/代码（如果失败）。 |
 | 切换自动完成功能 | [切换查询编辑器自动完成功能](../../query-service/ui/user-guide.md#auto-complete)，消除某些元数据命令并缩短处理时间。此功能会在您编写查询时自动建议潜在的 SQL 关键字和表详细信息。 |
 | 数据集样本 | 在查询中指定采样率，[使用数据集样本创建统一随机样本](../../query-service/key-concepts/dataset-samples.md)，或根据特定标准创建条件样本。 |

@@ -15,24 +15,24 @@ ht-degree: 2%
 
 在开发区段定义时，您可以使用Adobe Experience Platform中的评估和预览工具来查看摘要级别的信息，从而帮助确保隔离您预期的受众。
 
-* **预览** 提供符合区段定义的用户档案的分页列表，以便您可以将结果与预期结果进行比较。
+* **预览**&#x200B;提供符合区段定义资格的用户档案的分页列表，允许您比较结果与预期结果。
 
-* **估计** 提供有关区段定义的统计信息，例如预计受众规模、置信区间和误差标准偏差。
+* **估算值**&#x200B;提供有关区段定义的统计信息，例如预计受众大小、置信区间和误差标准偏差。
 
 >[!NOTE]
 >
->要访问与实时客户个人资料数据相关的类似量度，例如特定命名空间中个人资料片段和合并个人资料的总数或个人资料数据存储的总数，请参阅 [配置文件预览（预览示例状态）端点指南](../../profile/api/preview-sample-status.md)，配置文件API开发人员指南的一部分。
+>要访问与实时客户个人资料数据相关的类似量度，如特定命名空间或个人资料数据存储中的个人资料片段和合并个人资料的总数，请参阅个人资料API开发人员指南中的[个人资料预览（预览样本状态）端点指南](../../profile/api/preview-sample-status.md)。
 
 ## 快速入门
 
-本指南中使用的端点是 [!DNL Adobe Experience Platform Segmentation Service] API。 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关成功调用API所需了解的重要信息，包括所需的标头以及如何读取示例API调用。
+本指南中使用的端点是[!DNL Adobe Experience Platform Segmentation Service] API的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)以了解成功调用API所需了解的重要信息，包括所需的标头以及如何读取示例API调用。
 
 ## 如何生成估算
 
 当将记录摄取到配置文件存储中增加或减少总配置文件计数超过5%时，将触发取样作业以更新计数。 数据采样的触发方式取决于摄取方法：
 
-* **批量摄取：** 对于批量摄取，在成功将批次摄取到配置文件存储区后15分钟内，如果满足5%的增加或减少阈值，则会运行作业以更新计数。
-* **流式摄取：** 对于流数据工作流，会每小时进行一次检查，以确定是否满足了5%的增加或减少阈值。 如果超过100次，则会自动触发作业以更新计数。
+* **批次摄取：**&#x200B;对于批次摄取，在成功将批次摄取到配置文件存储区后15分钟内，如果达到5%的增加或减少阈值，将运行作业以更新计数。
+* **流式摄取：**&#x200B;对于流式数据工作流，每小时进行一次检查，以确定是否已达到5%的增加或减少阈值。 如果超过100次，则会自动触发作业以更新计数。
 
 扫描的样本大小取决于配置文件存储区中的实体总数。 下表显示了这些样本量：
 
@@ -48,7 +48,7 @@ ht-degree: 2%
 
 ## 新建预览 {#create-preview}
 
-您可以向以下对象发出POST请求，以创建新的预览 `/preview` 端点。
+您可以通过向`/preview`端点发出POST请求来创建新的预览。
 
 >[!NOTE]
 >
@@ -81,9 +81,9 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `predicateExpression` | 作为数据查询依据的PQL表达式。 |
-| `predicateType` | 下查询表达式的谓词类型 `predicateExpression`. 目前，此属性唯一接受的值是 `pql/text`. |
-| `predicateModel` | 的名称 [!DNL Experience Data Model] 配置文件数据所基于的(XDM)架构类。 |
-| `graphType` | 您希望从中获取集群的图形类型。 支持的值为 `none` （不执行身份拼接）和 `pdg` （根据个人身份图执行身份拼接）。 |
+| `predicateType` | `predicateExpression`下的查询表达式的谓词类型。 当前，此属性的唯一接受值为`pql/text`。 |
+| `predicateModel` | 配置文件数据所基于的[!DNL Experience Data Model] (XDM)架构类的名称。 |
+| `graphType` | 您希望从中获取集群的图形类型。 支持的值为`none`（不执行身份拼接）和`pdg`（根据您的专用身份图形执行身份拼接）。 |
 
 **响应**
 
@@ -106,7 +106,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
 
 ## 检索特定预览的结果 {#get-preview}
 
-您可以通过向以下网站发出GET请求，检索有关特定预览的详细信息： `/preview` 端点并在请求路径中提供预览ID。
+您可以通过向`/preview`端点发出GET请求并在请求路径中提供预览ID，来检索有关特定预览的详细信息。
 
 **API格式**
 
@@ -116,7 +116,7 @@ GET /preview/{PREVIEW_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{PREVIEW_ID}` | 此 `previewId` 要检索的预览的值。 |
+| `{PREVIEW_ID}` | 要检索的预览的`previewId`值。 |
 
 **请求**
 
@@ -179,11 +179,11 @@ curl -X GET https://platform.adobe.io/data/core/ups/preview/MDphcHAtMzJiZTAzMjgt
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `results` | 实体ID及其相关标识的列表。 提供的链接可用于查找指定的实体，使用 [配置文件访问API端点](../../profile/api/entities.md). |
+| `results` | 实体ID及其相关标识的列表。 提供的链接可用于使用[配置文件访问API终结点](../../profile/api/entities.md)查找指定的实体。 |
 
 ## 检索特定估算作业的结果 {#get-estimate}
 
-创建预览作业后，您可以使用其 `previewId` 在GET请求的路径中 `/estimate` 端点以查看有关区段定义的统计信息，包括预计受众大小、置信区间和误差标准偏差。
+创建预览作业后，您可以在指向`/estimate`端点的GET请求路径中使用其`previewId`来查看有关区段定义的统计信息，包括预计受众大小、置信区间和错误标准偏差。
 
 **API格式**
 
@@ -193,7 +193,7 @@ GET /estimate/{PREVIEW_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{PREVIEW_ID}` | 仅在创建预览作业且两个作业共享同一ID值以进行查找时，才会触发估计作业。 具体来说，这是 `previewId` 创建预览作业时返回的值。 |
+| `{PREVIEW_ID}` | 仅在创建预览作业且两个作业共享同一ID值以进行查找时，才会触发估计作业。 具体而言，这是创建预览作业时返回的`previewId`值。 |
 
 **请求**
 
@@ -245,8 +245,8 @@ curl -X GET https://platform.adobe.io/data/core/ups/estimate/MDoyOjRhNDVlODUzLWF
 | -------- | ----------- |
 | `estimatedNamespaceDistribution` | 一个对象数组，显示区段内按身份命名空间划分的配置文件数。 按命名空间列出的配置文件总数（将每个命名空间显示的值相加）可能高于配置文件计数量度，因为一个配置文件可能与多个命名空间关联。 例如，如果客户在多个渠道上与您的品牌互动，则多个命名空间将与该个人客户关联。 |
 | `state` | 预览作业的当前状态。 状态将为“正在运行”，直到处理完成，此时状态将变为“RESULT_READY”或“FAILED”。 |
-| `_links.preview` | 当 `state` 为“RESULT_READY”，此字段提供一个URL以查看估算。 |
+| `_links.preview` | 当`state`为“RESULT_READY”时，此字段提供一个URL以查看估计值。 |
 
 ## 后续步骤
 
-阅读本指南后，您应该更好地了解如何使用分段API进行预览和评估。 要了解如何访问与您的实时客户个人资料数据相关的量度，如特定命名空间内的个人资料片段和合并个人资料的总数或个人资料数据存储的总数，请访问 [配置文件预览(`/previewsamplestatus`)端点指南](../../profile/api/preview-sample-status.md).
+阅读本指南后，您应该更好地了解如何使用分段API进行预览和评估。 要了解如何访问与实时客户配置文件数据相关的量度，如特定命名空间内的配置文件片段和合并配置文件总数或配置文件数据存储的总量，请访问[配置文件预览(`/previewsamplestatus`)端点指南](../../profile/api/preview-sample-status.md)。

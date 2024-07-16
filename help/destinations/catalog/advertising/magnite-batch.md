@@ -28,13 +28,13 @@ Adobe Real-Time CDP受众可以通过两种方式交付到Magnite：流式平台
 
 
 请继续阅读下文，了解有关Magnite：流式批处理目标、如何连接到该目标以及如何为其激活Adobe Real-Time CDP受众的更多信息。
-有关实时目标的详细信息，请参阅 [本文档](magnite-streaming.md) 而是。
+有关实时目标的详细信息，请参阅[此文档](magnite-streaming.md)。
 
 >[!IMPORTANT]
 >
 >此目标连接器为测试版，仅向部分客户提供。 要请求获取访问权限，请联系您的Adobe代表。
 >
->目标连接器和文档页面由创建和维护 [!DNL Magnite] 团队。 如有任何查询或更新请求，请直接通过以下电子邮件联系他们： `adobe-tech@magnite.com`.
+>目标连接器和文档页面由[!DNL Magnite]团队创建和维护。 如有任何查询或更新请求，请直接通过`adobe-tech@magnite.com`联系他们。
 
 ## 用例 {#use-cases}
 
@@ -54,15 +54,15 @@ Adobe Real-Time CDP受众可以通过两种方式交付到Magnite：流式平台
 
 ## 先决条件 {#prerequisites}
 
-要在Adobe Experience Platform中使用Magnite目标，您必须首先拥有Magnite流帐户。 如果您拥有 [!DNL Magnite Streaming] 帐户，请联系您的 [!DNL Magnite] 要提供凭据以访问的帐户管理员 [!DNL Magnite's] 目标。 如果您没有 [!DNL Magnite Streaming] 帐户，请联系adobe-tech@magnite.com
+要在Adobe Experience Platform中使用Magnite目标，您必须首先拥有Magnite流帐户。 如果您有[!DNL Magnite Streaming]帐户，请联系您的[!DNL Magnite]帐户管理员，以获得访问[!DNL Magnite's]目标的凭据。 如果您没有[!DNL Magnite Streaming]帐户，请联系adobe-tech@magnite.com
 
 ## 支持的身份 {#supported-identities}
 
-菱格流：批处理目标可以接收 *任意* 来自AdobeCDP的身份源。 目前，此目标具有三个目标标识字段可供您映射到。
+Magnite流：批处理目标可以从AdobeCDP接收&#x200B;*任意*&#x200B;身份源。 目前，此目标具有三个目标标识字段可供您映射到。
 
 >[!NOTE]
 >
->*任何* 标识源可以映射到任何magnite_deviceId目标标识。
+>*任何*&#x200B;标识源可以映射到任何magnite_deviceId目标标识。
 
 | 目标身份 | 描述 | 注意事项 |
 |:--------------------------- |:------------------------------------------------------------------------------------------------ |:------------------------------------------------------------------------------------- |
@@ -76,8 +76,8 @@ Adobe Real-Time CDP受众可以通过两种方式交付到Magnite：流式平台
 
 | 受众来源 | 支持 | 描述 |
 |-----------------------------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
+| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
 
 {style="table-layout:auto"}
 
@@ -86,7 +86,7 @@ Adobe Real-Time CDP受众可以通过两种方式交付到Magnite：流式平台
 | 项目 | 类型 | 注释 |
 |-----------------------------|----------|----------|
 | 导出类型 | 受众导出 | 您正在导出具有Magnite流：批处理目标中使用的标识符（姓名、电话号码或其他）的受众的所有成员。 |
-| 导出频率 | 批次 | 批量目标以三、六、八、十二或二十四小时的增量将文件导出到下游平台。 阅读有关批次的更多信息 [基于文件的目标](/help/destinations/destination-types.md). |
+| 导出频率 | 批次 | 批量目标以三、六、八、十二或二十四小时的增量将文件导出到下游平台。 阅读有关批处理[基于文件的目标](/help/destinations/destination-types.md)的详细信息。 |
 
 {style="table-layout:auto"}
 
@@ -100,7 +100,7 @@ Adobe Real-Time CDP受众可以通过两种方式交付到Magnite：流式平台
 
 如果您已经拥有现有帐户，则可以通过将“帐户类型”选项更改为“现有帐户”来查找该帐户。 否则，您将在下面创建一个帐户：
 
-要创建新帐户并首次向目标验证帐户，请填写所需的“S3访问密钥”和“S3密钥”字段（通过帐户管理员提供），然后选择 **[!UICONTROL 连接到目标]**
+要创建新帐户并首次向目标验证帐户，请填写所需的“S3访问密钥”和“S3密钥”字段（通过帐户管理员提供给您），然后选择&#x200B;**[!UICONTROL 连接到目标]**
 
 ![目标配置身份验证字段未填写](../../assets/catalog/advertising/magnite/destination-batch-config-auth-unfilled.png)
 
@@ -112,9 +112,11 @@ Adobe Real-Time CDP受众可以通过两种方式交付到Magnite：流式平台
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
-* **[!UICONTROL 名称]**：用于将来识别此目标连接/实例的名称。
-* **[!UICONTROL 描述]**：可帮助您将来识别此目标连接/实例的描述。
-* **[!UICONTROL 您的源合作伙伴的名称]**：您希望作为Magnite Streaming平台中的源使用的名称
+* **[!UICONTROL 名称]**：用于识别此目标连接/实例的名称
+未来。
+* **[!UICONTROL 描述]**：可帮助您识别此内容的描述
+未来的目标连接/实例。
+* **[!UICONTROL 源合作伙伴的名称]**：您希望作为Magnite Streaming平台中的源的名称
 
 ![目标配置身份验证字段已填写](../../assets/catalog/advertising/magnite/destination-batch-config-auth-filled.png)
 
@@ -122,37 +124,37 @@ Adobe Real-Time CDP受众可以通过两种方式交付到Magnite：流式平台
 >
 >如果您计划发送多个ID类型（GAID、IDFA等） 使用批处理目标时，每个目标都需要新的目标连接/实例。 有关更多信息，请与您的Magnite客户代表联系。
 
-然后，您可以通过选择 **[!UICONTROL 下一个]**
+然后，您可以通过选择&#x200B;**[!UICONTROL 下一步]**&#x200B;继续
 
 在标题为“治理策略和强制执行操作（可选）”的下一个屏幕上，您可以选择任意相关的数据治理策略。 通常，会为Magnite流批处理目标选择“数据导出”。
 
-![可选的治理策略和实施行动](../../assets/catalog/advertising/magnite/destination-batch-config-grouping-policy.png)
+![可选的治理策略和实施操作](../../assets/catalog/advertising/magnite/destination-batch-config-grouping-policy.png)
 
-选中后，或者如果要跳过此可选屏幕，请选择 **[!UICONTROL 创建]**
+选择后，或者如果要跳过此可选屏幕，请选择&#x200B;**[!UICONTROL 创建]**
 
 ### 启用警报 {#enable-alerts}
 
-您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅以下内容中的指南： [使用UI订阅目标警报](../../ui/alerts.md).
+您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
 
 ### 将区段激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
->* 要激活数据，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
->* 要导出 *身份*，您需要 **[!UICONTROL 查看身份图]** [访问控制权限](/help/access-control/home.md#permissions). <br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+>* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
-读取 [将受众数据激活到批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md) 有关将受众区段激活到此目标的说明。
+有关将受众区段激活到此目标的说明，请阅读[将受众数据激活到批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md)。
 
 ### 映射属性和身份 {#map}
 
-在 **[!UICONTROL Source字段]**中，您可以选择设备的任意属性或标识。 在本例中，我们选择了一个名为“DeviceId”的自定义IdentityMap
+在&#x200B;**[!UICONTROL Source字段]**中，您可以选择设备的任意属性或标识。 在本例中，我们选择了一个名为“DeviceId”的自定义IdentityMap
 ![将所需的数据字段映射到device_id字段](../../assets/catalog/advertising/magnite/destination-batch-active-audience-field-mapping.png)
 
-在 **[!UICONTROL 目标字段]**：
-![选择适当的设备类型目标标识](../../assets/catalog/advertising/magnite/destination-batch-active-audience-select-device-type.png) 请参阅 [支持的身份](#supported-identities) 以了解更多信息。
-在此示例中，我们已选择 **[!UICONTROL 目标字段]**：magnite_deviceId_CUSTOM，因为我们的 **[!UICONTROL Source字段]** 定义为自定义IdentityMap： DeviceID。
+在&#x200B;**[!UICONTROL 目标字段]**中：
+![选择适当的设备类型目标标识](../../assets/catalog/advertising/magnite/destination-batch-active-audience-select-device-type.png)有关详细信息，请参阅[支持的标识](#supported-identities)。
+在此示例中，我们已选择**[!UICONTROL 目标字段]**： magnite_deviceId_CUSTOM，因为我们的&#x200B;**[!UICONTROL Source字段]**&#x200B;被定义为自定义IdentityMap： DeviceID。
 
 >[!NOTE]
 >
@@ -167,7 +169,7 @@ Adobe Real-Time CDP受众可以通过两种方式交付到Magnite：流式平台
 >
 > 当受众具有Magnite流先前已知的预先存在的区段ID时，应该提供映射ID。 否则，应使用“NONE”作为映射ID。
 >
-> 在为每个受众配置文件名时，请通过“自定义文本”字段包含映射ID以添加。 映射ID将附加为： `{previous_filename}\_\[MAPPING_ID\].` 如果此受众是Magnite Streaming的新受众，并且您不提供映射ID，则应在“自定义文本”字段中输入“NONE”。 在这种情况下，新文件名应为： `{previous_filename}\_\[NONE\]`.
+> 在为每个受众配置文件名时，请通过“自定义文本”字段包含映射ID以添加。 映射ID将附加为： `{previous_filename}\_\[MAPPING_ID\].`如果此受众是Magnite Streaming的新受众，并且您不提供映射ID，则应在“自定义文本”字段中输入“NONE”。 在这种情况下，新文件名应为： `{previous_filename}\_\[NONE\]`。
 
 ## 导出的数据/验证数据导出 {#exported-data}
 
@@ -177,12 +179,12 @@ Adobe Real-Time CDP受众可以通过两种方式交付到Magnite：流式平台
 
 >[!NOTE]
 >
->激活/交付到Magnite流批处理目标的受众将 *replace* 通过Magnite流式实时目标激活/投放的受众。 如果您使用区段名称查找区段，则在Magnite流平台摄取并处理批次之前，可能无法实时找到该区段。
+>激活/交付到Magnite流批处理目标的受众将&#x200B;*替换*&#x200B;通过Magnite流实时目标激活/交付的相同受众。 如果您使用区段名称查找区段，则在Magnite流平台摄取并处理批次之前，可能无法实时找到该区段。
 
 ## 数据使用和治理 {#data-usage-governance}
 
-全部 [!DNL Adobe Experience Platform] 目标在处理您的数据时符合数据使用策略。 有关如何执行操作的详细信息 [!DNL Adobe Experience Platform] 实施数据管理，请阅读 [数据管理概述](/help/data-governance/home.md).
+在处理您的数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据治理的详细信息，请阅读[数据治理概述](/help/data-governance/home.md)。
 
 ## 其他资源 {#additional-resources}
 
-有关其他帮助文档，请访问 [菱镁矿帮助中心](https://help.magnite.com/help).
+有关其他帮助文档，请访问[Magnite帮助中心](https://help.magnite.com/help)。

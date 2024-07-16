@@ -11,13 +11,13 @@ ht-degree: 3%
 
 ---
 
-# [!UICONTROL Web详细信息] 架构字段组
+# [!UICONTROL Web详细信息]架构字段组
 
 >[!NOTE]
 >
->多个架构字段组的名称已更改。 查看文档 [字段组名称更新](../name-updates.md) 以了解更多信息。
+>多个架构字段组的名称已更改。 有关详细信息，请参阅有关[字段组名称更新](../name-updates.md)的文档。
 
-[!UICONTROL Web详细信息] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)，用于描述有关Web详细信息事件的信息，例如交互、页面详细信息和反向链接。
+[!UICONTROL Web详细信息]是[[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)的标准架构字段组，用于描述有关Web详细信息事件的信息，如交互、页面详细信息和反向链接。
 
 ![](../../images/field-groups/web-details.png)
 
@@ -30,4 +30,4 @@ ht-degree: 3%
 有关字段组的更多详细信息，请参阅公共XDM存储库：
 
 * [填充示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-web.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-web.schema.json)
+* [完整架构](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-web.schema.json)

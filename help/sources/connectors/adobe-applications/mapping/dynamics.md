@@ -4,14 +4,14 @@ description: 下表包含Microsoft Dynamics源字段及其对应的XDM字段之�
 exl-id: 32f51761-5de3-4192-8f23-c1412ca12c08
 source-git-commit: ec42cf27c082611acb1a08500b7bbd23fc34d730
 workflow-type: tm+mt
-source-wordcount: '524'
-ht-degree: 9%
+source-wordcount: '499'
+ht-degree: 8%
 
 ---
 
-# [!DNL Microsoft Dynamics] 字段映射
+# [!DNL Microsoft Dynamics]字段映射
 
-下表包含以下映射之间的映射： [!DNL Microsoft Dynamics] 源字段及其相应的体验数据模型(XDM)字段。
+下表包含[!DNL Microsoft Dynamics]源字段及其相应的体验数据模型(XDM)字段之间的映射。
 
 ## 联系人 {#contacts}
 
@@ -33,9 +33,9 @@ ht-degree: 9%
 | `assistantphone` | `extendedWorkDetails.assistantDetails.phone.number` |
 | `birthdate` | `person.birthDate` |
 | `"Dynamics"` | `b2b.personKey.sourceType` |
-| `"${CRM_ORG_ID}"` | `b2b.personKey.sourceInstanceID` | 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `"${CRM_ORG_ID}"` | `b2b.personKey.sourceInstanceID` | 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `contactid` | `b2b.personKey.sourceID` |
-| `concat(contactid,"@${CRM_ORG_ID}.Dynamics")` | `b2b.personKey.sourceKey` | 主要标识. 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `concat(contactid,"@${CRM_ORG_ID}.Dynamics")` | `b2b.personKey.sourceKey` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `iif(contactid != null && contactid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", contactid, "sourceKey", concat(contactid,"@${CRM_ORG_ID}.Dynamics")), null)` | `personComponents.sourcePersonKey` |
 | `department` | `extendedWorkDetails.departments` |
 | `fullname` | `person.name.fullName` |
@@ -86,9 +86,9 @@ ht-degree: 9%
 | `jobtitle` | `extendedWorkDetails.jobTitle` |
 | `lastname` | `person.name.lastName` |
 | `"Dynamics"` | `b2b.personKey.sourceType` |
-| `"${CRM_ORG_ID}"` | `b2b.personKey.sourceInstanceID` | 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `"${CRM_ORG_ID}"` | `b2b.personKey.sourceInstanceID` | 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `leadid` | `b2b.personKey.sourceID` |
-| `concat(leadid,"@${CRM_ORG_ID}.Dynamics")` | `b2b.personKey.sourceKey` | 主要标识. 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `concat(leadid,"@${CRM_ORG_ID}.Dynamics")` | `b2b.personKey.sourceKey` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `iif(leadid != null && leadid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", leadid, "sourceKey", concat(leadid,"@${CRM_ORG_ID}.Dynamics")), null)` | `personComponents.sourcePersonKey` |
 | `middlename` | `person.name.middleName` |
 | `mobilephone` | `mobilePhone.number` |
@@ -102,8 +102,8 @@ ht-degree: 9%
 | 源字段 | 目标XDM字段 | 注释 |
 | --- | --- | --- |
 | `"Dynamics"` | `accountKey.sourceType` |
-| `"${CRM_ORG_ID}"` | `accountKey.sourceInstanceID` | 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
-| `accountid` | `accountKey.sourceID` | 主要标识. 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `"${CRM_ORG_ID}"` | `accountKey.sourceInstanceID` | 将自动替换`"${CRM_ORG_ID}"`的值。 |
+| `accountid` | `accountKey.sourceID` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `accountnumber` | `accountNumber` |
 | `accountratingcode` | `accountOrganization.rating` |
 | `address1_addressid` | `accountPhysicalAddress._id` |
@@ -140,7 +140,7 @@ ht-degree: 9%
 | --- | --- | --- |
 | `name` | `opportunityName` |
 | `"Dynamics"` | `opportunityKey.sourceType` |
-| `"${CRM_ORG_ID}"` | `opportunityKey.sourceInstanceID` | 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `"${CRM_ORG_ID}"` | `opportunityKey.sourceInstanceID` | 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `iif(parentaccountid != null && parentaccountid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", parentaccountid, "sourceKey", concat(parentaccountid, "@${CRM_ORG_ID}.Dynamics")), null)` | `accountKey` |
 | `actualclosedate` | `actualCloseDate` |
 | `actualvalue` | `opportunityAmount.amount` |
@@ -152,7 +152,7 @@ ht-degree: 9%
 | `estimatedvalue` | `expectedRevenue.amount` |
 | `modifiedon` | `extSourceSystemAudit.lastUpdatedDate` |
 | `opportunityid` | `opportunityKey.sourceID` |
-| `concat(opportunityid,"@${CRM_ORG_ID}.Dynamics")` | `opportunityKey.sourceKey` | 主要标识. 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `concat(opportunityid,"@${CRM_ORG_ID}.Dynamics")` | `opportunityKey.sourceKey` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `salesstage` | `opportunityStage` |
 | `stepname` | `nextStep` |
 
@@ -163,16 +163,16 @@ ht-degree: 9%
 | 源字段 | 目标XDM字段 | 注释 |
 | --- | --- | --- |
 | `"Dynamics"` | `opportunityPersonKey.sourceType` |
-| `"${CRM_ORG_ID}"` | `opportunityPersonKey.sourceInstanceID` | 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `"${CRM_ORG_ID}"` | `opportunityPersonKey.sourceInstanceID` | 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `connectionid` | `opportunityPersonKey.sourceID` |
-| `concat(connectionid,"@${CRM_ORG_ID}.Dynamics")` | `opportunityPersonKey.sourceKey` | 主要标识. 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `concat(connectionid,"@${CRM_ORG_ID}.Dynamics")` | `opportunityPersonKey.sourceKey` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `createdon` | `extSourceSystemAudit.createdDate` |
 | `modifiedon` | `extSourceSystemAudit.lastUpdatedDate` |
 | `iif(record1id != null && record1id != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", record1id, "sourceKey", concat(record1id,"@${CRM_ORG_ID}.Dynamics")), null)` | `opportunityKey` |
 | `iif(record2id != null && record2id != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", record2id, "sourceKey", concat(record2id,"@${CRM_ORG_ID}.Dynamics")), null)` | `personKey` |
 | `connectionrole1.name` | `personRole` |
-| `record1objecttypecode` | *自定义字段组必须定义为目标架构。* 请参阅附录部分，了解相关步骤 [如何将选取列表类型源字段映射到目标XDM架构](#picklist-type-fields) 以了解更多信息。 | 以获取可能的和值列表以及标签 `record1objecttypecode` 源字段，请参见此 [[!DNL Microsoft Dynamics] 连接实体引用文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/connection?view=op-9-1#record1objecttypecode-options). |
-| `record2objecttypecode` | *自定义字段组必须定义为目标架构。* 请参阅附录部分，了解相关步骤 [如何将选取列表类型源字段映射到目标XDM架构](#picklist-type-fields) 以了解更多信息。 | 以获取可能的和值列表以及标签 `record2objecttypecode` 源字段，请参见此 [[!DNL Microsoft Dynamics] 连接实体引用文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/connection?view=op-9-1#record2objecttypecode-options). |
+| `record1objecttypecode` | *自定义字段组必须定义为目标架构。*&#x200B;请参阅附录部分以了解有关[如何将选取列表类型源字段映射到目标XDM架构](#picklist-type-fields)的步骤，以获取更多信息。 | 有关`record1objecttypecode`源字段的可能值及标签列表，请参阅此[[!DNL Microsoft Dynamics] 连接实体参考文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/connection?view=op-9-1#record1objecttypecode-options)。 |
+| `record2objecttypecode` | *自定义字段组必须定义为目标架构。*&#x200B;请参阅附录部分以了解有关[如何将选取列表类型源字段映射到目标XDM架构](#picklist-type-fields)的步骤，以获取更多信息。 | 有关`record2objecttypecode`源字段的可能值及标签列表，请参阅此[[!DNL Microsoft Dynamics] 连接实体参考文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/connection?view=op-9-1#record2objecttypecode-options)。 |
 
 {style="table-layout:auto"}
 
@@ -181,10 +181,10 @@ ht-degree: 9%
 | 源字段 | 目标XDM字段 | 注释 |
 | --- | --- | --- |
 | `campaignid` | `campaignKey.sourceID` |
-| `"${CRM_ORG_ID}"` | `campaignKey.sourceInstanceID` | 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
-| `concat(campaignid,"@${CRM_ORG_ID}.Dynamics")` | `campaignKey.sourceKey` | 主要标识. 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `"${CRM_ORG_ID}"` | `campaignKey.sourceInstanceID` | 将自动替换`"${CRM_ORG_ID}"`的值。 |
+| `concat(campaignid,"@${CRM_ORG_ID}.Dynamics")` | `campaignKey.sourceKey` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `"Dynamics"` | `campaignKey.sourceType` |
-| `iif(campaignid != null && campaignid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", campaignid, "sourceKey", concat(campaignid,"@${CRM_ORG_ID}.Dynamics")), null)` | `extSourceSystemAudit.externalKey` | 此 `extSourceSystemAudit.externalKey` 是辅助标识。 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `iif(campaignid != null && campaignid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", campaignid, "sourceKey", concat(campaignid,"@${CRM_ORG_ID}.Dynamics")), null)` | `extSourceSystemAudit.externalKey` | `extSourceSystemAudit.externalKey`是辅助标识。 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `createdon` | `extSourceSystemAudit.createdDate` |
 | `modifiedby` | `extSourceSystemAudit.lastUpdatedBy` |
 | `modifiedon` | `extSourceSystemAudit.lastUpdatedDate` |
@@ -206,11 +206,11 @@ ht-degree: 9%
 | 源字段 | 目标XDM字段 | 注释 |
 | --- | --- | --- |
 | `"Dynamics"` | `marketingListKey.sourceType` |
-| `"${CRM_ORG_ID}"` | `marketingListKey.sourceInstanceID` | 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `"${CRM_ORG_ID}"` | `marketingListKey.sourceInstanceID` | 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `description` | `marketingListDescription` |
 | `listname` | `marketingListName` |
 | `listid` | `marketingListKey.sourceID` |
-| `concat(listid,"@${CRM_ORG_ID}.Dynamics")` | `marketingListKey.sourceKey` | 主要标识. 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `concat(listid,"@${CRM_ORG_ID}.Dynamics")` | `marketingListKey.sourceKey` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `modifiedon` | `extSourceSystemAudit.lastUpdatedDate` |
 | `createdon` | `extSourceSystemAudit.createdDate` |
 
@@ -221,10 +221,10 @@ ht-degree: 9%
 | 源字段 | 目标XDM字段 | 注释 |
 | --- | --- | --- |
 | `"Dynamics"` | `marketingListMemberKey.sourceType` |
-| `"${CRM_ORG_ID}"` | `marketingListMemberKey.sourceInstanceID` | 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `"${CRM_ORG_ID}"` | `marketingListMemberKey.sourceInstanceID` | 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `iif(entityid != null && entityid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", entityid, "sourceKey", concat(entityid,"@${CRM_ORG_ID}.Dynamics")), null)` | `personKey` |
 | `listmemberid` | `marketingListMemberKey.sourceID` |
-| `concat(listmemberid,"@${CRM_ORG_ID}.Dynamics")` | `marketingListMemberKey.sourceKey` | 主要标识. 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `concat(listmemberid,"@${CRM_ORG_ID}.Dynamics")` | `marketingListMemberKey.sourceKey` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `iif(listid != null && listid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", listid, "sourceKey", concat(listid,"@${CRM_ORG_ID}.Dynamics")), null)` | `marketingListKey` |
 | `createdon` | `extSourceSystemAudit.createdDate` |
 
@@ -232,20 +232,20 @@ ht-degree: 9%
 
 ## 附录
 
-以下各节提供了可在为配置B2B映射时使用的其他信息 [!DNL Microsoft] 动态源。
+以下部分提供了可在为[!DNL Microsoft]动态源配置B2B映射时使用的其他信息。
 
 ### 选择列表类型字段 {#picklist-type-fields}
 
-您可以使用 [计算字段](../../../../data-prep/ui/mapping.md#calculated-fields) 要映射选取列表类型源字段，请执行以下操作： [!DNL Microsoft Dynamics] 到目标XDM字段。
+您可以使用[计算字段](../../../../data-prep/ui/mapping.md#calculated-fields)将选取列表类型源字段从[!DNL Microsoft Dynamics]映射到目标XDM字段。
 
-例如， `genderCode` 字段包括两个选项：
+例如，`genderCode`字段包含两个选项：
 
 | 值 | 标签 |
 | --- | --- |
 | 1 | `male` |
 | 2 | `female` |
 
-您可以使用以下选项来映射 `genderCode` 源字段至 `person.gender` 目标字段：
+您可以使用以下选项将`genderCode`源字段映射到`person.gender`目标字段：
 
 #### 使用逻辑运算符
 
@@ -253,7 +253,7 @@ ht-degree: 9%
 | --- | --- |
 | `decode(genderCode, "1", "male", "2", "female", "default")` | `person.gender` |
 
-在此方案中，值对应于键，前提是在选项中找到键，或者 `default`， if `default` 存在，但未找到密钥。 该值对应于 `null` 如果选项为 `null` 或者没有 `default` 并且找不到密钥。
+在此方案中，该值对应于键（如果在选项中找到键）或`default`（如果存在`default`但未找到键）。 如果选项为`null`或没有`default`且未找到键，则该值对应于`null`。
 
 #### 使用计算字段
 
@@ -263,6 +263,6 @@ ht-degree: 9%
 
 >[!TIP]
 >
->上述操作的嵌套小版本将类似于： `iif(condition, iif(cond1, tv1, fv1), iif(cond2, tv2, fv2))`.
+>上述操作的嵌套迭代将类似于： `iif(condition, iif(cond1, tv1, fv1), iif(cond2, tv2, fv2))`。
 
-欲知更多信息，请参见 [关于中逻辑运算符的文档 [!DNL Data Prep]](../../../../data-prep/functions.md##logical-operators)
+有关详细信息，请参阅 [!DNL Data Prep]](../../../../data-prep/functions.md##logical-operators)中关于逻辑运算符的[文档

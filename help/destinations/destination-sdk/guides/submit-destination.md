@@ -25,19 +25,19 @@ ht-degree: 0%
 >
 >* 对于要更新的新目标和现有目标，审核时间线和所需对象是相同的。
 
-在将目标发布到之前 [Experience Platform目标目录](/help/destinations/catalog/overview.md)，您必须向Adobe提供有关目标和所执行测试的特定信息，以确保用户在将数据激活到您的平台时享有最佳体验。
+在将目标发布到[Experience Platform目标目录](/help/destinations/catalog/overview.md)之前，您必须向Adobe提供有关目标以及您执行的测试的特定信息，以确保用户在将数据激活到您的平台时享有最佳体验。
 
-本页列出了提交或更新使用Adobe Experience Platform Destination SDK编写的目标时需要提供的所有信息。 要在Adobe Experience Platform中成功提交目标，请发送电子邮件至 <aepdestsdk@adobe.com> 其中包括：
+本页列出了提交或更新使用Adobe Experience Platform Destination SDK编写的目标时需要提供的所有信息。 要在Adobe Experience Platform中成功提交目标，请向<aepdestsdk@adobe.com>发送一封电子邮件，其中包括：
 
 * 目标解决的使用案例描述。 只有在提交新的目标配置时才需要此操作。
 * 目标提交原因的描述。 只有在更新现有目标配置时才需要此项。
 * 使用测试目标API端点对目标执行HTTP调用后的测试结果。 请与Adobe共享对您的目标端点进行的API调用以及从目标端点接收的API响应。
 * 基于文件的目标的其他要求：
-   * 使用测试API将请求和响应示例共享到 [使用示例配置文件测试基于文件的目标](../testing-api/batch-destinations/file-based-destination-testing-api.md).
+   * 使用测试API共享请求和响应示例以[使用示例配置文件测试基于文件的目标](../testing-api/batch-destinations/file-based-destination-testing-api.md)。
    * 附加由目标生成并导出到存储位置的样例文件。
    * 提交某种形式的证明，证明您已成功将导出的文件从存储位置摄取到系统中。
-* 证明您已使用提交针对您的目标发布请求的目标 [目标发布API](../publishing-api/create-publishing-request.md).
-* 文档PR（拉取请求），按照 [自助式文档流程](../docs-framework/documentation-instructions.md).
+* 证明您已使用[目标发布API](../publishing-api/create-publishing-request.md)提交目标的目标发布请求。
+* 文档PR（拉取请求），按照[自助文档流程](../docs-framework/documentation-instructions.md)中所述的说明操作。
 * 在Experience Platform目标目录中显示为您的目标卡徽标的图像文件。
 
 您可以在以下部分中找到有关每个项目的详细信息：
@@ -46,8 +46,8 @@ ht-degree: 0%
 
 描述您的目标为Experience Platform客户解决的用例。 您的描述可能与现有合作伙伴的用例类似：
 
-* [pinterest](/help/destinations/catalog/advertising/pinterest.md)：根据您的客户列表、访问过您网站的人或已在Pinterest上与您的内容交互的人创建受众。
-* [Yahoo数据X](/help/destinations/catalog/advertising/datax.md#use-cases)：DataX API可用于广告商，这些广告商希望将Verizon Media (VMG)中的电子邮件地址作为目标特定受众组，它们可以使用VMG的近乎实时API快速创建新受众并推送所需的受众组。
+* [Pinterest](/help/destinations/catalog/advertising/pinterest.md)：根据您的客户列表、访问过您网站的人或已在Pinterest上与您的内容交互的人创建受众。
+* [Yahoo Data X](/help/destinations/catalog/advertising/datax.md#use-cases)： DataX API可用于广告商，这些广告商希望定位以Verizon Media (VMG)中电子邮件地址作为关键字的特定受众组，它们可以使用VMG近乎实时的API快速创建新受众并推送所需的受众组。
 
 ## 更新原因 {#reason-for-update}
 
@@ -59,7 +59,7 @@ ht-degree: 0%
 
 ## 使用测试目标API后的测试结果 {#testing-api-response}
 
-使用后提供测试结果 [测试目标API](../testing-api/streaming-destinations/streaming-destination-testing-overview.md) 端点执行HTTP调用到您的目标。 这包括：
+在使用[测试目标API](../testing-api/streaming-destinations/streaming-destination-testing-overview.md)端点执行到目标的HTTP调用后提供测试结果。 这包括：
 
 * 使用测试API向目标端点发出完整API请求（标头和正文）。
 * 从目标端点接收的API响应。
@@ -233,11 +233,11 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 
 ### 测试API响应 {#testing-api-response-file-based}
 
-使用测试API将请求和响应示例包含到 [使用示例配置文件测试基于文件的目标](../testing-api/batch-destinations/file-based-destination-testing-api.md).
+使用测试API后包括请求和响应示例，以使用示例配置文件](../testing-api/batch-destinations/file-based-destination-testing-api.md)测试基于文件的目标[。
 
 ### 附加导出的文件 {#attach-exported-file}
 
-在您的 [提交电子邮件](#download-sample-email)，请附加一个您设置的目标已导出到您的存储位置的CSV文件。
+在您的[提交电子邮件](#download-sample-email)中，附上由您设置的目标导出到存储位置的CSV文件。
 
 ### 摄取成功的证明 {#proof-of-successful-ingestion}
 
@@ -249,13 +249,13 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 
 ## 证明您已提交目标发布请求 {#destination-publishing-request-proof}
 
-成功测试目标后，您必须使用 [目标发布API](../publishing-api/create-publishing-request.md) 将目标提交到Adobe以供审阅和发布。
+成功测试目标后，必须使用[目标发布API](../publishing-api/create-publishing-request.md)将目标提交到Adobe进行审查和发布。
 
-提供目标发布请求的ID。 有关如何检索发布请求ID的信息，请阅读如何 [检索目标发布请求](../publishing-api/retrieve-publishing-request.md).
+提供目标发布请求的ID。 有关如何检索发布请求ID的信息，请阅读如何[检索目标发布请求](../publishing-api/retrieve-publishing-request.md)。
 
 ## 产品集成的目标文档PR（拉取请求） {#documentation-pr}
 
-如果您是独立软件供应商(ISV)或系统集成商(SI)，请创建 [产品化集成](../overview.md#productized-custom-integrations)，您必须使用 [自助式文档流程](../docs-framework/documentation-instructions.md) 以创建目标的产品文档页面。 在提交过程中，提供目标文档的拉取请求(PR)。
+如果您是创建[产品化集成](../overview.md#productized-custom-integrations)的独立软件供应商(ISV)或系统集成商(SI)，则必须使用[自助服务文档流程](../docs-framework/documentation-instructions.md)为您的目标创建产品文档页面。 在提交过程中，提供目标文档的拉取请求(PR)。
 
 ## 目标徽标 {#logo}
 
@@ -267,4 +267,4 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 
 ## 下载示例电子邮件 {#download-sample-email}
 
-[下载](../assets/guides/sample-email-submit-destination.rtf) 包含您需要提供给Adobe的所有信息的示例电子邮件。
+[下载](../assets/guides/sample-email-submit-destination.rtf)示例电子邮件，其中包含您需要为Adobe提供的所有信息。

@@ -31,14 +31,14 @@ Privacy Service提供了RESTful API和用户界面，帮助您管理客户数据
 
 可通过以下问题对这些决策进行总结：
 
-1. **我从客户那里收集哪些信息？**
-   * 要充分利用Privacy Service，您必须详细了解从客户那里收集的数据类型，以及哪些类型受隐私法规的约束。 请参阅以下部分 [确定隐私要求](#requirements) 以了解更多信息。
+1. **我正在从客户那里收集哪些信息？**
+   * 要充分利用Privacy Service，您必须详细了解从客户那里收集的数据类型，以及哪些类型受隐私法规的约束。 有关详细信息，请参阅[确定隐私要求](#requirements)一节。
 1. **我是否正确标记了数据？**
-   * 必须为服务正确标记数据，以确定在隐私作业期间要访问或删除哪些字段。 请参阅以下部分 [标签数据](#label) 以了解更多信息。
-1. **我是否知道向Privacy Service发送哪些ID？**
-   * 在发送隐私请求时，必须提供特定Adobe应用程序特有的单个客户ID。 请参阅以下部分 [提供身份数据](#identity)  和 [发出隐私请求](#requests) 以了解更多信息。
-1. **如何跟踪我的隐私作业？**
-   * 发出隐私请求后，可通过多个选项跟踪其状态和结果。 请参阅以下部分 [监控隐私作业](#monitor) 以了解更多信息。
+   * 必须为服务正确标记数据，以确定在隐私作业期间要访问或删除哪些字段。 有关详细信息，请参阅有关[为数据设置标签](#label)的部分。
+1. **我知不知道要向Privacy Service发送哪些ID？**
+   * 在发送隐私请求时，必须提供特定Adobe应用程序特有的单个客户ID。 有关详细信息，请参阅[提供身份数据](#identity)和[提出隐私请求](#requests)中的部分。
+1. **我如何跟踪我的隐私作业？**
+   * 发出隐私请求后，可通过多个选项跟踪其状态和结果。 有关详细信息，请参阅有关[监视隐私作业](#monitor)的部分。
 
 以下各部分提供了有关这些重要先决条件步骤的一般指导，同时还提供了指向更多Privacy Service文档的链接，以便了解更多详细信息。
 
@@ -46,7 +46,7 @@ Privacy Service提供了RESTful API和用户界面，帮助您管理客户数据
 
 根据您的业务性质及运营所在的司法管辖区，您的数据运营可能会受到隐私法规的约束。这些法规通常赋予您的客户请求访问您从他们那里收集的数据的权利，并且这些客户有权请求删除所存储的数据。在整个文档中，这些客户对其个人数据的请求都称为“隐私请求”。
 
-有关Privacy Service管理请求的各种法律隐私法规的详细信息（包括关键术语和常见问题解答），请参阅 [隐私法规文档](./regulations/overview.md).
+有关Privacy Service管理请求的各种法律隐私法规的详细信息（包括关键术语和常见问题解答），请参阅[隐私法规文档](./regulations/overview.md)。
 
 如果您的数据操作属于任何受支持法规的管辖范围，请查看相关文档以了解重要信息，例如它们为客户提供的特定隐私权，以及用于履行隐私请求的合规窗口。 在决定如何将Privacy Service集成到您的CRM系统中，以及客户应如何与您的网站交互以便提出隐私请求时，应考虑这些信息。
 
@@ -54,15 +54,15 @@ Privacy Service提供了RESTful API和用户界面，帮助您管理客户数据
 
 ### 为隐私请求标记数据 {#label}
 
-根据 [!DNL Experience Cloud] 对于您正在使用的应用程序，您必须为响应隐私请求而应该访问或删除的特定数据字段添加标签。 标记数据的过程因应用程序而异。 要了解如何为每个受支持的Adobe应用程序标记数据，请参阅上的文档 [Experience Cloud应用程序](./experience-cloud-apps.md).
+根据您使用的[!DNL Experience Cloud]应用程序，必须标记在响应隐私请求时应该访问或删除的特定数据字段。 标记数据的过程因应用程序而异。 要了解如何为每个支持的Adobe应用程序标记数据，请参阅[Experience Cloud应用程序](./experience-cloud-apps.md)上的文档。
 
 ### 确定要发送到Privacy Service的标识数据的类型 {#identity}
 
-为了使Privacy Service处理来自客户的隐私请求，必须在请求本身中为该客户提供至少一个唯一标识值。 唯一标识值是可用于识别个人及其存储在您的中的个人数据的任何信息。 [!DNL Experience Cloud] 数据存储。 Privacy Service使用此身份信息，根据请求的性质（访问、删除或选择退出）查找和处理客户的个人数据。
+为了使Privacy Service处理来自客户的隐私请求，必须在请求本身中为该客户提供至少一个唯一标识值。 唯一标识值是可用于在[!DNL Experience Cloud]数据存储中识别个人及其存储的个人数据的任何信息。 Privacy Service使用此身份信息，根据请求的性质（访问、删除或选择退出）查找和处理客户的个人数据。
 
-根据 [!DNL Experience Cloud] 您的CRM系统使用的应用程序，您必须为每个客户提供的标识值的类型和数量会有所不同。 某些应用程序使用自己的内部客户ID值(如Adobe Target ID)，而其他解决方案依赖于Adobe中的全局标识符 [!DNL Experience Cloud Identity Service] (ECID)跟踪所有客户活动 [!DNL Experience Cloud] 应用程序。 此外，电子邮件地址或电话号码等通用个人信息也可以用作有效的身份数据。
+根据您的CRM系统使用的[!DNL Experience Cloud]应用程序，您必须为每个客户提供的标识值的类型和数量会有所不同。 某些应用程序使用自己的内部客户ID值(如Adobe Target ID)，而其他解决方案依赖来自Adobe[!DNL Experience Cloud Identity Service] (ECID)的全局标识符来跟踪所有[!DNL Experience Cloud]应用程序中的客户活动。 此外，电子邮件地址或电话号码等通用个人信息也可以用作有效的身份数据。
 
-阅读文档 [隐私请求的身份数据](./identity-data.md) 有关接受Privacy Service的标识信息类型的更多详细信息。 本文档还提供了有关如何应用Adobe技术在客户与您的网站交互时有效地从客户检索适当的身份信息，并在API请求中将数据发送到Privacy Service的指南。
+阅读有关[隐私请求的身份数据](./identity-data.md)的文档，以了解有关接受Privacy Service的身份信息类型的详细信息。 本文档还提供了有关如何应用Adobe技术在客户与您的网站交互时有效地从客户检索适当的身份信息，并在API请求中将数据发送到Privacy Service的指南。
 
 ### 开始发出隐私请求 {#requests}
 
@@ -70,15 +70,15 @@ Privacy Service提供了RESTful API和用户界面，帮助您管理客户数据
 
 >[!IMPORTANT]
 >
->以下部分提供了文档链接，这些文档涵盖如何在API或UI中发出通用隐私请求。 但是，根据 [!DNL Experience Cloud] 如果您使用的应用程序，则您在请求有效负载中必须发送的字段可能与这些指南中显示的示例不同。
+>以下部分提供了文档链接，这些文档涵盖如何在API或UI中发出通用隐私请求。 但是，根据您使用的[!DNL Experience Cloud]应用程序，您在请求有效负载中必须发送的字段可能与这些指南中显示的示例不同。
 >
->当您按照API或UI指南进行操作时，请参阅上的文档 [Privacy Service和Experience Cloud应用程序](./experience-cloud-apps.md) 有关如何为特定隐私请求设置格式的更多文档 [!DNL Experience Cloud] 应用程序。
+>与API或UI指南一起使用时，请参阅[Privacy Service和Experience Cloud应用程序](./experience-cloud-apps.md)上的文档，以获取有关如何为特定[!DNL Experience Cloud]应用程序设置隐私请求格式的更多文档。
 >
 >还需要注意的是，隐私请求是跨Experience Cloud应用程序异步处理的。 Privacy Service收到请求后，每个应用程序可能需要几分钟到几周的时间才能完成请求。 完成每个请求所需的时间取决于您所使用的应用程序，以及需要处理的数据量。
 
 #### 使用 API {#api}
 
-以编程方式实现您的隐私法规合规性 [!DNL Experience Cloud] 应用程序，您可以使用RESTful API调用来 [[!DNL Privacy Service API]](https://developer.adobe.com/experience-platform-apis/references/privacy-service/) 用于创建和管理隐私作业的端点。 有关如何使用API的详细步骤，请参阅 [Privacy ServiceAPI指南](api/overview.md).
+若要以编程方式实现[!DNL Experience Cloud]应用程序的隐私法规合规性，您可以使用对[[!DNL Privacy Service API]](https://developer.adobe.com/experience-platform-apis/references/privacy-service/)端点的RESTful API调用创建和管理隐私作业。 有关如何使用API的详细步骤，请参阅[Privacy ServiceAPI指南](api/overview.md)。
 
 #### 使用UI {#ui}
 
@@ -86,7 +86,7 @@ Privacy Service提供了RESTful API和用户界面，帮助您管理客户数据
 >
 >Privacy ServiceUI当前仅支持访问和删除请求。 所有选择退出请求必须改通过API发出。
 
-您可以使用带有Privacy ServiceUI的图形界面创建和监控隐私作业。 UI包括 **[!UICONTROL 状态报表]** 提供所有活动请求状态的可视表示的小部件，您可以使用内置创建请求 **[!UICONTROL 请求生成器]** 或上传JSON文件。 有关使用UI的更多信息，请参阅 [Privacy Service用户指南](ui/overview.md).
+您可以使用带有Privacy ServiceUI的图形界面创建和监控隐私作业。 UI包含一个&#x200B;**[!UICONTROL 状态报表]**&#x200B;小组件，该小组件提供所有活动请求状态的可视表示形式，您可以使用内置&#x200B;**[!UICONTROL 请求生成器]**&#x200B;或通过上传JSON文件来创建请求。 有关使用UI的详细信息，请参阅[Privacy Service用户指南](ui/overview.md)。
 
 ### 监测隐私作业 {#monitor}
 
@@ -94,9 +94,9 @@ Privacy Service提供了RESTful API和用户界面，帮助您管理客户数据
 
 | 监测方法 | 描述 |
 | --- | --- |
-| PRIVACY SERVICEUI | 您可以使用Privacy ServiceUI监视仪表板查看所有活动请求状态的可视表示形式。 请参阅 [Privacy Service用户指南](ui/overview.md) 以了解更多信息。 |
-| PRIVACY SERVICEAPI | 您可以使用Privacy ServiceAPI提供的查找端点以编程方式监控隐私作业的状态。 请参阅 [Privacy ServiceAPI指南](./api/overview.md) 有关如何使用API的详细步骤。 |
-| [!DNL Privacy Events] | [!DNL Privacy Events] 使用发送到配置的webhook的Adobe I/O事件来促进高效的作业请求自动化。 它们可减少或消除轮询Privacy ServiceAPI以检查作业是否完成或工作流中是否已达到特定里程碑的需要。 请参阅上的教程 [订阅隐私事件](./privacy-events.md) 以了解更多信息。 |
+| PRIVACY SERVICEUI | 您可以使用Privacy ServiceUI监视仪表板查看所有活动请求状态的可视表示形式。 有关详细信息，请参阅[Privacy Service用户指南](ui/overview.md)。 |
+| PRIVACY SERVICEAPI | 您可以使用Privacy ServiceAPI提供的查找端点以编程方式监控隐私作业的状态。 有关如何使用API的详细步骤，请参阅[Privacy ServiceAPI指南](./api/overview.md)。 |
+| [!DNL Privacy Events] | [!DNL Privacy Events]使用发送到配置的webhook的Adobe I/O事件来促进高效的作业请求自动化。 它们可减少或消除轮询Privacy ServiceAPI以检查作业是否完成或工作流中是否已达到特定里程碑的需要。 有关详细信息，请参阅有关[订阅隐私事件](./privacy-events.md)的教程。 |
 
 ## 后续步骤
 

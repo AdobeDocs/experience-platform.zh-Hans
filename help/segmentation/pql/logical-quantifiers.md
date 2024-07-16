@@ -1,22 +1,22 @@
 ---
 solution: Experience Platform
 title: PQL逻辑量化符
-description: 逻辑量化符可用于断言配置文件查询语言(PQL)中数组的条件。
+description: 逻辑量化符可用于断言Profile Query Language (PQL)中数组的条件。
 exl-id: 8b1c9560-02e2-46e0-9646-c64dd4a15df1
 source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '201'
-ht-degree: 4%
+source-wordcount: '203'
+ht-degree: 3%
 
 ---
 
 # 逻辑量化符函数
 
-逻辑量化符可用于断言以下阵列的条件： [!DNL Profile Query Language] (PQL)。 有关其他PQL函数的更多信息，请参见 [[!DNL Profile Query Language] 概述](./overview.md).
+逻辑量化符可用于断言[!DNL Profile Query Language] (PQL)中数组的条件。 有关其他PQL函数的详细信息，请参阅[[!DNL Profile Query Language] 概述](./overview.md)。
 
 ## 存在
 
-此 `exists` 函数确定数组中的项是否存在，前提是它满足所提供的条件。
+`exists`函数确定数组中的项是否存在，前提是它满足所提供的条件。
 
 **格式**
 
@@ -41,7 +41,7 @@ exists E from xEvent where (E.commerce.item.price > 50), I from E.productListIte
 
 ## 全部
 
-此 `forall` 函数确定一个数组中满足所有给定条件的所有项。
+`forall`函数确定数组中满足所有给定条件的所有项。
 
 **格式**
 
@@ -66,4 +66,4 @@ forall E from xEvent where (E.commerce.item.price > 50), I from E.productListIte
 
 ## 后续步骤
 
-现在，您已了解逻辑量词，可以在PQL查询中使用它们。 有关其他PQL功能的详细信息，请参阅 [配置文件查询语言概述](./overview.md).
+现在，您已了解逻辑量词，可以在PQL查询中使用它们。 有关其他PQL功能的更多信息，请阅读[Profile Query Language概述](./overview.md)。

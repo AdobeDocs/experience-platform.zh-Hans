@@ -4,24 +4,24 @@ description: 了解如何在Reactor API中调用/profiles端点。
 exl-id: d0434098-f49a-45f3-9772-488bd3c134aa
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '169'
-ht-degree: 5%
+source-wordcount: '161'
+ht-degree: 3%
 
 ---
 
 # 配置文件端点
 
-在Reactor API中，配置文件表示Adobe Experience Platform用户。 Reactor API不维护自己的用户和权限数据库，而是依赖由管理的AdobeID [Adobe身份管理系统(IMS)](https://helpx.adobe.com/cn/enterprise/using/identity.html).
+在Reactor API中，配置文件表示Adobe Experience Platform用户。 Reactor API不维护自己的用户和权限数据库，而是依赖于[Adobe身份管理系统(IMS)](https://helpx.adobe.com/cn/enterprise/using/identity.html)管理的AdobeID。
 
-配置文件包含有关登录用户的所有信息，包括他们所属的所有组织、他们在每个组织中所属的产品配置文件以及他们在每个产品配置文件中拥有的权限。
+用户档案包含有关登录用户的所有信息，包括登录用户所属的所有组织、每个组织中登录用户所属的产品配置文件以及登录用户在每个产品配置文件中拥有的权限。
 
 ## 快速入门
 
-本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [快速入门指南](../getting-started.md) 有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续之前，请查看[快速入门指南](../getting-started.md)，以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索当前配置文件 {#lookup}
 
-您可以通过向以下网站发出GET请求来检索当前登录配置文件的详细信息： `/profile` 端点。
+您可以通过向`/profile`端点发出GET请求来检索当前登录配置文件的详细信息。
 
 **API格式**
 
@@ -43,7 +43,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回用户档案的详细信息。
+成功的响应将返回用户档案的详细信息。
 
 ```json
 {

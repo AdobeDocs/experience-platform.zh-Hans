@@ -14,9 +14,9 @@ ht-degree: 1%
 
 # 策略评估端点
 
-在创建营销操作和定义数据使用策略后，您可以使用 [!DNL Policy Service] 用于评估某些操作是否违反了任何策略的API。 返回的约束采用一组策略的形式，通过尝试对包含数据使用标签的指定数据执行营销操作，将违反这些策略。
+创建营销操作并定义数据使用策略后，您可以使用[!DNL Policy Service] API来评估某些操作是否违反了任何策略。 返回的约束采用一组策略的形式，通过尝试对包含数据使用标签的指定数据执行营销操作，将违反这些策略。
 
-默认情况下，仅策略状态设置为 `ENABLED` 参与评估。 但是，您可以使用查询参数 `?includeDraft=true` 要包含 `DRAFT` 正在评估中的策略。
+默认情况下，只有状态设置为`ENABLED`的策略才会参与评估。 但是，您可以使用查询参数`?includeDraft=true`在评估中包含`DRAFT`策略。
 
 可通过以下三种方式之一发出评估请求：
 
@@ -26,11 +26,11 @@ ht-degree: 1%
 
 ## 快速入门
 
-本指南中使用的API端点是 [[!DNL Policy Service] API](https://www.adobe.io/experience-platform-apis/references/policy-service/). 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接、阅读本文档中的示例API调用的指南，以及有关成功调用任何组件所需的所需标头的重要信息 [!DNL Experience Platform] API。
+本指南中使用的API端点是[[!DNL Policy Service] API](https://www.adobe.io/experience-platform-apis/references/policy-service/)的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、此文档中示例API调用的阅读指南，以及有关成功调用任何[!DNL Experience Platform] API所需的所需标头的重要信息。
 
 ## 使用数据使用标签评估策略违规 {#labels}
 
-您可以使用以下工具根据特定数据使用标签集的存在来评估策略违规 `duleLabels` GET查询参数。
+可通过在GET请求中使用`duleLabels`查询参数，根据是否存在一组特定的数据使用标签来评估策略违规。
 
 **API格式**
 
@@ -41,8 +41,8 @@ GET /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints?duleLabels={LAB
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MARKETING_ACTION_NAME}` | 要针对一组数据使用标签进行测试的营销操作的名称。 您可以通过以下方式检索可用营销操作的列表 [对营销操作端点的GET请求](./marketing-actions.md#list). |
-| `{LABELS_LIST}` | 要针对其测试营销操作的数据使用标签名称的逗号分隔列表。 例如： `duleLabels=C1,C2,C3`<br><br>请注意，标签名称区分大小写。 在中列出这些组件时，请确保您使用正确的大小写 `duleLabels` 参数。 |
+| `{MARKETING_ACTION_NAME}` | 要针对一组数据使用标签进行测试的营销操作的名称。 您可以通过向营销操作终结点](./marketing-actions.md#list)发出[GET请求来检索可用营销操作的列表。 |
+| `{LABELS_LIST}` | 要针对其测试营销操作的数据使用标签名称的逗号分隔列表。 例如： `duleLabels=C1,C2,C3`<br><br>请注意，标签名称区分大小写。 确保在`duleLabels`参数中列出它们时使用正确的大小写。 |
 
 **请求**
 
@@ -50,7 +50,7 @@ GET /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints?duleLabels={LAB
 
 >[!IMPORTANT]
 >
->请注意 `AND` 和 `OR` 策略表达式中的运算符。 在以下示例中，如果任意标签(`C1` 或 `C3`)单独出现在请求中，营销操作不会违反此策略。 它需要两个标签(`C1` 和 `C3`)返回违反的策略。 确保仔细评估策略并同等谨慎地定义策略表达式。
+>请注意策略表达式中的`AND`和`OR`运算符。 在以下示例中，如果任一标签（`C1`或`C3`）单独出现在请求中，则营销操作不会违反此策略。 需要两个标签（`C1`和`C3`）才能返回违反的策略。 确保仔细评估策略并同等谨慎地定义策略表达式。
 
 ```shell
 curl -X GET \
@@ -63,7 +63,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应包括 `violatedPolicies` 数组，其中包含对提供的标签执行营销操作而违反的策略的详细信息。 如果未违反任何策略，则 `violatedPolicies` 数组将为空。
+成功的响应包括`violatedPolicies`数组，其中包含对提供的标签执行营销操作所违反的策略的详细信息。 如果未违反任何策略，则`violatedPolicies`数组将为空。
 
 ```JSON
 {
@@ -123,7 +123,7 @@ curl -X GET \
 
 ## 使用数据集评估策略违规 {#datasets}
 
-您可以根据一个或多个数据集集评估策略违规，可以从这些数据集收集数据使用标签。 POST这是通过对 `/constraints` 特定营销操作的端点，并在请求正文中提供数据集ID列表。
+您可以根据一个或多个数据集集评估策略违规，可以从这些数据集收集数据使用标签。 这是通过对特定营销操作的`/constraints`端点执行POST请求并在请求正文中提供数据集ID的列表来完成的。
 
 **API格式**
 
@@ -134,11 +134,11 @@ POST /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MARKETING_ACTION_NAME}` | 针对一个或多个数据集测试的营销操作的名称。 您可以通过以下方式检索可用营销操作的列表 [对营销操作端点的GET请求](./marketing-actions.md#list). |
+| `{MARKETING_ACTION_NAME}` | 针对一个或多个数据集测试的营销操作的名称。 您可以通过向营销操作终结点](./marketing-actions.md#list)发出[GET请求来检索可用营销操作的列表。 |
 
 **请求**
 
-以下请求执行 `crossSiteTargeting` 针对一组三个数据集执行营销操作，以评估任何策略违规。
+以下请求对一组三个数据集执行`crossSiteTargeting`营销操作以评估任何策略违规。
 
 ```shell
 curl -X POST \
@@ -166,12 +166,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `entityType` | ID在同级中指示的实体的类型 `entityId` 属性。 目前，唯一接受的值是 `dataSet`. |
-| `entityId` | 测试营销操作所针对的数据集的ID。 GET通过向 `/dataSets` 中的端点 [!DNL Catalog Service] API。 请参阅指南，网址为 [列表 [!DNL Catalog] 对象](../../catalog/api/list-objects.md) 以了解更多信息。 |
+| `entityType` | ID在同级`entityId`属性中指示的实体的类型。 当前，唯一接受的值为`dataSet`。 |
+| `entityId` | 测试营销操作所针对的数据集的ID。 通过向[!DNL Catalog Service] API中的`/dataSets`端点发出GET请求，可以获得数据集及其相应ID的列表。 有关详细信息，请参阅[列表 [!DNL Catalog] 对象](../../catalog/api/list-objects.md)指南。 |
 
 **响应**
 
-成功的响应包括 `violatedPolicies` 数组，其中包含对提供的数据集执行营销操作所违反的策略的详细信息。 如果未违反任何策略，则 `violatedPolicies` 数组将为空。
+成功的响应包括`violatedPolicies`数组，其中包含对提供的数据集执行营销操作所违反的策略的详细信息。 如果未违反任何策略，则`violatedPolicies`数组将为空。
 
 ```JSON
 {
@@ -344,8 +344,8 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `duleLabels` | 响应对象包括 `duleLabels` 数组，其中包含指定数据集中找到的所有标签的统一列表。 此列表在数据集中的所有字段上包含数据集级别和字段级别的标签。 |
-| `discoveredLabels` | 响应还包括 `discoveredLabels` 包含每个数据集的对象的数组，显示 `datasetLabels` 细分为数据集级别和字段级别标签。 每个字段级标签都显示了带有该标签的特定字段的路径。 |
+| `duleLabels` | 响应对象包含一个`duleLabels`数组，该数组包含在指定数据集中找到的所有标签的统一列表。 此列表在数据集中的所有字段上包含数据集级别和字段级别的标签。 |
+| `discoveredLabels` | 响应还包括一个包含每个数据集的对象的`discoveredLabels`数组，其中显示`datasetLabels`划分为数据集级别和字段级别的标签。 每个字段级标签都显示了带有该标签的特定字段的路径。 |
 
 ## 使用特定数据集字段评估策略违规 {#fields}
 
@@ -353,8 +353,8 @@ curl -X POST \
 
 在使用数据集字段评估策略时，请牢记以下几点：
 
-* **字段名称区分大小写**：提供字段时，必须完全按照数据集中的显示方式编写它们(例如， `firstName` 对比 `firstname`)。
-* **数据集标签继承**：数据集中的各个字段会继承已在数据集级别应用的任何标签。 如果策略评估未按预期返回，请务必检查任何可能从数据集级别向下继承到字段的标签，以及在字段级别应用的标签。
+* **字段名称区分大小写**：提供字段时，必须完全按照它们在数据集中的显示方式写入（例如，`firstName`与`firstname`）。
+* **数据集标签继承**：数据集中的各个字段继承已在数据集级别应用的任何标签。 如果策略评估未按预期返回，请务必检查任何可能从数据集级别向下继承到字段的标签，以及在字段级别应用的标签。
 
 **API格式**
 
@@ -365,11 +365,11 @@ POST /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MARKETING_ACTION_NAME}` | 针对数据集字段子集进行测试的营销操作的名称。 您可以通过以下方式检索可用营销操作的列表 [对营销操作端点的GET请求](./marketing-actions.md#list). |
+| `{MARKETING_ACTION_NAME}` | 针对数据集字段子集进行测试的营销操作的名称。 您可以通过向营销操作终结点](./marketing-actions.md#list)发出[GET请求来检索可用营销操作的列表。 |
 
 **请求**
 
-以下请求测试营销操作 `crossSiteTargeting` 属于三个数据集的特定字段集上。 有效负载类似于 [仅涉及数据集的评估请求](#datasets)，为每个要从中收集标签的数据集添加特定字段。
+以下请求对属于三个数据集的特定字段集测试营销操作`crossSiteTargeting`。 有效负载类似于[仅涉及数据集](#datasets)的评估请求，为要从中收集标签的每个数据集添加特定字段。
 
 ```shell
 curl -X POST \
@@ -414,15 +414,15 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `entityType` | ID在同级中指示的实体的类型 `entityId` 属性。 目前，唯一接受的值是 `dataSet`. |
-| `entityId` | 要根据营销操作评估其字段的数据集的ID。 GET通过向 `/dataSets` 中的端点 [!DNL Catalog Service] API。 请参阅指南，网址为 [列表 [!DNL Catalog] 对象](../../catalog/api/list-objects.md) 以了解更多信息。 |
-| `entityMeta.fields` | 数据集架构中特定字段的路径数组，以JSON指针字符串形式提供。 请参阅以下部分 [JSON指针](../../landing/api-fundamentals.md#json-pointer) API基础知识指南中，以了解有关这些字符串的接受语法的详细信息。 |
+| `entityType` | ID在同级`entityId`属性中指示的实体的类型。 当前，唯一接受的值为`dataSet`。 |
+| `entityId` | 要根据营销操作评估其字段的数据集的ID。 通过向[!DNL Catalog Service] API中的`/dataSets`端点发出GET请求，可以获得数据集及其相应ID的列表。 有关详细信息，请参阅[列表 [!DNL Catalog] 对象](../../catalog/api/list-objects.md)指南。 |
+| `entityMeta.fields` | 数据集架构中特定字段的路径数组，以JSON指针字符串形式提供。 有关这些字符串的接受语法的详细信息，请参阅API基础指南中有关[JSON指针](../../landing/api-fundamentals.md#json-pointer)的部分。 |
 
 **响应**
 
-成功的响应包括 `violatedPolicies` 数组，其中包含对提供的数据集字段执行营销操作所违反策略的详细信息。 如果未违反任何策略，则 `violatedPolicies` 数组将为空。
+成功的响应包括`violatedPolicies`数组，其中包含对提供的数据集字段执行营销操作所违反的策略的详细信息。 如果未违反任何策略，则`violatedPolicies`数组将为空。
 
-将下面的示例响应与 [仅涉及数据集的响应](#datasets)，请注意，收集的标签列表较短。 此 `discoveredLabels` 还减少了每个数据集的数量，因为它们仅包含在请求正文中指定的字段。 此外，以前违反的策略 `Targeting Ads or Content` 需要两者 `C4 AND C6` 标签存在，因此不再违反（如空所示） `violatedPolicies` 数组。
+将下面的示例响应与仅涉及数据集](#datasets)的[响应进行比较，请注意，收集的标签列表较短。 还减少了每个数据集的`discoveredLabels`，因为它们仅包含在请求正文中指定的字段。 此外，以前违反的策略`Targeting Ads or Content`要求同时存在`C4 AND C6`标签，因此不再违反`violatedPolicies`空数组所指示的策略。
 
 ```JSON
 {
@@ -524,7 +524,7 @@ curl -X POST \
 
 ## 批量评估策略 {#bulk}
 
-此 `/bulk-eval` 端点允许您在一个API调用中运行多个评估作业。
+`/bulk-eval`终结点允许您在一个API调用中运行多个评估作业。
 
 **API格式**
 
@@ -534,11 +534,11 @@ POST /bulk-eval
 
 **请求**
 
-批量评估请求的有效负载应为一组对象；每个评估作业执行一个对象。 对于基于数据集和字段进行评估的作业，应 `entityList` 必须提供数组。 对于根据数据使用标签进行评估的作业， `labels` 必须提供数组。
+批量评估请求的有效负载应为一组对象；每个评估作业执行一个对象。 对于基于数据集和字段进行评估的作业，必须提供`entityList`数组。 对于基于数据使用标签进行评估的作业，必须提供`labels`数组。
 
 >[!WARNING]
 >
->如果列出的任何评估作业同时包含 `entityList` 和 `labels` 数组，这将导致错误。 如果您要根据数据集和标签来评估相同的营销操作，则必须为该营销操作包含单独的评估作业。
+>如果任何列出的评估作业同时包含`entityList`和`labels`数组，则会导致错误。 如果您要根据数据集和标签来评估相同的营销操作，则必须为该营销操作包含单独的评估作业。
 
 ```shell
 curl -X POST \
@@ -579,10 +579,10 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `evalRef` | 营销操作的URI，用于针对违反策略的标签或数据集进行测试。 |
-| `includeDraft` | 默认情况下，只有启用的策略才参与评估。 如果 `includeDraft` 设置为 `true`，策略位于 `DRAFT` 状态也将参与。 |
-| `labels` | 用于测试营销操作的数据使用标签数组。<br><br>**重要**：使用此属性时，应 `entityList` 属性不得包含在同一对象中。 要使用数据集和/或字段评估相同的营销操作，您必须在请求有效负荷中包含一个单独的对象，该对象包含 `entityList` 数组。 |
-| `entityList` | 这些数据集内用于测试营销操作的数据集和（可选）特定字段的数组。<br><br>**重要**：使用此属性时， `labels` 属性不得包含在同一对象中。 要使用特定数据使用标签评估相同的营销操作，您必须在请求有效载荷中包含一个单独的对象，该对象应 `labels` 数组。 |
-| `entityType` | 测试营销操作的实体类型。 当前，仅限 `dataSet` 受支持。 |
+| `includeDraft` | 默认情况下，只有启用的策略才参与评估。 如果`includeDraft`设置为`true`，则处于`DRAFT`状态的策略也将参与。 |
+| `labels` | 用于测试营销操作的数据使用标签数组。<br><br>**重要信息**：使用此属性时，同一对象中不能包含`entityList`属性。 要使用数据集和/或字段评估相同的营销操作，您必须在包含`entityList`数组的请求有效负载中包含单独的对象。 |
+| `entityList` | 这些数据集内用于测试营销操作的数据集和（可选）特定字段的数组。<br><br>**重要信息**：使用此属性时，`labels`属性不能包含在同一个对象中。 要使用特定数据使用标签评估相同的营销操作，您必须在包含`labels`数组的请求有效负载中包含单独的对象。 |
+| `entityType` | 测试营销操作的实体类型。 当前仅支持`dataSet`。 |
 | `entityId` | 测试营销操作所针对的数据集的ID。 |
 | `entityMeta.fields` | （可选）数据集中用于测试营销操作的特定字段的列表。 |
 
@@ -682,6 +682,6 @@ curl -X POST \
 ]
 ```
 
-## 策略评估 [!DNL Real-Time Customer Profile]
+## [!DNL Real-Time Customer Profile]的策略评估
 
-此 [!DNL Policy Service] API还可用于检查涉及使用的策略违规 [!DNL Real-Time Customer Profile] 区段。 请参阅上的教程 [强制实施受众区段的数据使用合规性](../../segmentation/tutorials/governance.md) 以了解更多信息。
+[!DNL Policy Service] API还可用于检查涉及使用[!DNL Real-Time Customer Profile]区段的策略违规。 有关详细信息，请参阅有关[强制受众区段](../../segmentation/tutorials/governance.md)的数据使用合规性的教程。

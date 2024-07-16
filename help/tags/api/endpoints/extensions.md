@@ -4,20 +4,20 @@ description: 了解如何在Reactor API中调用/extensions端点。
 exl-id: cc02b2aa-d107-463a-930c-5a9fcc5b4a5a
 source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '940'
+source-wordcount: '938'
 ht-degree: 4%
 
 ---
 
 # 扩展端点
 
-在Reactor API中，扩展表示已安装的 [扩展包](./extension-packages.md). 扩展使扩展包定义的功能对可用 [属性](./properties.md). 创建时使用这些功能 [扩展](./data-elements.md) 和 [规则组件](./rule-components.md).
+在Reactor API中，扩展表示[扩展包](./extension-packages.md)的安装实例。 扩展使扩展包定义的功能对[属性](./properties.md)可用。 在创建[扩展](./data-elements.md)和[规则组件](./rule-components.md)时，会利用这些功能。
 
 扩展只属于一个资产。 资产可以具有多个扩展，但给定的扩展包最多只能有一个已安装的实例。
 
 ## 快速入门
 
-本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [快速入门指南](../getting-started.md) 有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续之前，请查看[快速入门指南](../getting-started.md)，以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索扩展列表 {#list}
 
@@ -31,13 +31,13 @@ GET properties/{PROPERTY_ID}/extensions
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 此 `id` 要列出其扩展名的属性的。 |
+| `{PROPERTY_ID}` | 要列出其扩展名的属性的`id`。 |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性过滤列出的扩展：<ul><li>`created_at`</li><li>`dirty`</li><li>`display_name`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li><li>`version`</li></ul>请参阅指南，网址为 [过滤响应](../guides/filtering.md) 以了解更多信息。
+>使用查询参数，可以根据以下属性过滤列出的扩展：<ul><li>`created_at`</li><li>`dirty`</li><li>`display_name`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li><li>`version`</li></ul>有关详细信息，请参阅[筛选响应](../guides/filtering.md)指南。
 
 **请求**
 
@@ -160,7 +160,7 @@ curl -X GET \
 
 >[!NOTE]
 >
->删除扩展时，会在系统中将其标记为已删除，但实际上并不会将其删除。 因此，可以检索已删除的扩展。 可以通过存在以下项来标识已删除的扩展： `deleted_at` 中的属性 `meta` 返回扩展数据的ID。
+>删除扩展时，会在系统中将其标记为已删除，但实际上并不会将其删除。 因此，可以检索已删除的扩展。 返回的扩展数据的`meta`中存在`deleted_at`属性，可以识别已删除的扩展。
 
 **API格式**
 
@@ -170,7 +170,7 @@ GET /extensions/{EXTENSION_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `EXTENSION_ID` | 此 `id` 要查找的扩展的开头。 |
+| `EXTENSION_ID` | 要查找的扩展的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -280,7 +280,7 @@ curl -X GET \
 
 ## 创建或更新扩展 {#create}
 
-扩展是通过引用 [扩展包](./extension-packages.md) 并将已安装的扩展添加到资产。 安装任务完成时，将返回一个响应，指示扩展安装是否成功。
+通过引用[扩展包](./extension-packages.md)并将已安装的扩展添加到属性来创建扩展。 安装任务完成时，将返回一个响应，指示扩展安装是否成功。
 
 **API格式**
 
@@ -290,7 +290,7 @@ POST /properties/{PROPERTY_ID}/extensions
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 此 `id` 要在其下安装扩展的属性的ID。 |
+| `PROPERTY_ID` | 要在其下安装扩展的属性的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -325,8 +325,8 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `relationships.extension_package` | **（必需）** 引用正在安装的扩展包的ID的对象。 |
-| `attributes.delegate_descriptor_id` | 如果您的扩展需要自定义设置，则它还需要委派描述符ID。 请参阅指南，网址为 [委托描述符ID](../guides/delegate-descriptor-ids.md) 以了解更多信息。 |
+| `relationships.extension_package` | **（必需）**&#x200B;引用正在安装的扩展包的ID的对象。 |
+| `attributes.delegate_descriptor_id` | 如果您的扩展需要自定义设置，则它还需要委派描述符ID。 有关详细信息，请参阅有关[委托描述符ID](../guides/delegate-descriptor-ids.md)的指南。 |
 | `attributes.enabled` | 布尔值，指示扩展是否已启用。 |
 | `attributes.settings` | 以字符串表示的设置JSON对象。 |
 
@@ -436,13 +436,13 @@ PATCH /extensions/{EXTENSION_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `EXTENSION_ID` | 此 `id` 要修订的扩展的ID。 |
+| `EXTENSION_ID` | 要修订的扩展的`id`。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-与 [创建扩展](#create)，必须通过表单数据上传修订包的本地版本。
+与[创建扩展](#create)一样，必须通过表单数据上载修订包的本地版本。
 
 ```shell
 curl -X PATCH \
@@ -467,14 +467,14 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes` | 要修订的属性。 对于扩展，您可以修改其 `delegate_descriptor_id`， `enabled`、和 `settings` 属性。 |
-| `meta.action` | 必须包含在值中 `revise` 进行修订时。 |
+| `attributes` | 要修订的属性。 对于扩展，您可以修改其`delegate_descriptor_id`、`enabled`和`settings`属性。 |
+| `meta.action` | 进行修订时必须包含值`revise`。 |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功响应将返回修订后的扩展的详细信息，以及 `meta.latest_revision_number` 属性增加了1。
+成功的响应返回修改后的扩展的详细信息，其`meta.latest_revision_number`属性增加1。
 
 ```json
 {
@@ -576,7 +576,7 @@ DELETE /extensions/{EXTENSION_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `EXTENSION_ID` | 此 `id` 要删除的扩展的ID。 |
+| `EXTENSION_ID` | 要删除的扩展的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -596,17 +596,17 @@ curl -X DELETE \
 
 ## 管理扩展的注释 {#notes}
 
-扩展是“重要”资源，这意味着您可以针对每个资源创建和检索基于文本的注释。 请参阅 [注释端点指南](./notes.md) 有关如何管理扩展和其他兼容资源的注释的更多信息。
+扩展是“重要”资源，这意味着您可以针对每个资源创建和检索基于文本的注释。 有关如何管理扩展和其他兼容资源的注释的更多信息，请参阅[注释端点指南](./notes.md)。
 
 ## 检索扩展的相关资源 {#related}
 
-以下调用演示了如何检索扩展的相关资源。 时间 [查找扩展](#lookup)，这些关系列在 `relationships` 属性。
+以下调用演示了如何检索扩展的相关资源。 当[查找扩展](#lookup)时，这些关系将列在`relationships`属性下。
 
-请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
+有关Reactor API中关系的详细信息，请参阅[关系指南](../guides/relationships.md)。
 
 ### 列出扩展的相关库 {#libraries}
 
-您可以通过附加来列出利用扩展的库 `/libraries` 到查找请求的路径。
+您可以通过将`/libraries`附加到查找请求的路径来列出使用扩展的库。
 
 **API格式**
 
@@ -616,7 +616,7 @@ GET  /extensions/{EXTENSION_ID}/libraries
 
 | 参数 | 描述 |
 | --- | --- |
-| `{EXTENSION_ID}` | 此 `id` 要列出其库的扩展的名称。 |
+| `{EXTENSION_ID}` | 要列出其库的扩展的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -728,7 +728,7 @@ curl -X GET \
 
 ### 列出扩展的相关修订版本 {#revisions}
 
-您可以通过附加以下内容来列出扩展的先前修订版本 `/revisions` 到查找请求的路径。
+您可以通过将`/revisions`附加到查找请求的路径来列出扩展的先前修订。
 
 **API格式**
 
@@ -738,7 +738,7 @@ GET  /extensions/{EXTENSION_ID}/revisions
 
 | 参数 | 描述 |
 | --- | --- |
-| `{EXTENSION_ID}` | 此 `id` 要列出其修订版本的扩展的名称。 |
+| `{EXTENSION_ID}` | 要列出其修订的扩展的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -942,7 +942,7 @@ curl -X GET \
 
 ### 查找扩展的相关扩展包 {#extension}
 
-您可以通过附加来查找扩展所基于的扩展包 `/extension_package` 到GET请求的路径。
+通过将`/extension_package`附加到GET请求的路径，您可以查找扩展所基于的扩展包。
 
 **API格式**
 
@@ -952,7 +952,7 @@ GET  /extensions/{EXTENSION_ID}/extension_package
 
 | 参数 | 描述 |
 | --- | --- |
-| `{EXTENSION_ID}` | 此 `id` 要查找的扩展的扩展名。 |
+| `{EXTENSION_ID}` | 要查找其扩展的扩展的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -1177,7 +1177,7 @@ curl -X GET \
 
 ### 查找扩展的相关来源 {#origin}
 
-您可以通过附加来查找扩展的来源 `/origin` 到GET请求的路径。 扩展的来源是为创建当前修订版本而更新的先前修订版本。
+您可以通过将`/origin`附加到GET请求的路径来查找扩展的来源。 扩展的来源是为创建当前修订版本而更新的先前修订版本。
 
 **API格式**
 
@@ -1187,7 +1187,7 @@ GET  /extensions/{EXTENSION_ID}/origin
 
 | 参数 | 描述 |
 | --- | --- |
-| `{EXTENSION_ID}` | 此 `id` 要查找其原点的扩展的名称。 |
+| `{EXTENSION_ID}` | 要查找其原点的扩展的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -1297,7 +1297,7 @@ curl -X GET \
 
 ### 查找扩展的相关属性 {#property}
 
-您可以通过附加以下内容来查找拥有扩展的资产 `/property` 到GET请求的路径。
+您可以通过将`/property`附加到GET请求的路径中来查找拥有扩展的属性。
 
 **API格式**
 
@@ -1307,7 +1307,7 @@ GET  /extensions/{EXTENSION_ID}/property
 
 | 参数 | 描述 |
 | --- | --- |
-| `{EXTENSION_ID}` | 此 `id` 要查找其属性的扩展的。 |
+| `{EXTENSION_ID}` | 要查找其属性的扩展的`id`。 |
 
 {style="table-layout:auto"}
 

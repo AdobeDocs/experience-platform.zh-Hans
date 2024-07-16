@@ -5,7 +5,7 @@ exl-id: f3792076-3e01-4e26-8788-32927202a2e5
 source-git-commit: 34eb9151cc6bb8551553b0a8427e58871acb4dbb
 workflow-type: tm+mt
 source-wordcount: '1661'
-ht-degree: 1%
+ht-degree: 3%
 
 ---
 
@@ -15,9 +15,9 @@ ht-degree: 1%
 
 通过访问为配置文件提供支持的SQL来了解配置文件洞察，然后生成您自己的洞察以进一步探索您的客户及其构成您配置文件的消费者体验。 通过使用现有的Real-Time CDP数据模型SQL作为灵感，根据独特的业务需求创建查询，将原始数据转换为新的可操作洞察。
 
-请参阅 [查看SQL文档](../view-sql.md) 有关如何直接通过Platform UI调整您的见解的SQL的更多信息。
+有关如何直接通过Platform UI调整您的分析的SQL的详细信息，请参阅[查看SQL文档](../view-sql.md)。
 
-以下见解全部可供您用作 [配置文件仪表板](../guides/profiles.md) 或自定义 [用户定义的仪表板](../user-defined-dashboards.md). 请参阅 [自定义概述](../customize/overview.md) 有关如何自定义功能板的说明，或者 [创建和编辑新构件](../customize/custom-widgets.md) 在小组件库和 [用户定义的仪表板](../user-defined-dashboards.md#create-widget).
+以下分析均可用作[用户档案仪表板](../guides/profiles.md)或自定义[用户定义仪表板](../user-defined-dashboards.md)的一部分。 有关如何自定义仪表板或[在构件库和[用户定义的仪表板](../user-defined-dashboards.md#create-widget)中创建和编辑新构件](../customize/custom-widgets.md)的说明，请参阅[自定义概述](../customize/overview.md)。
 
 ## 按合并策略列出的受众重叠 {#audience-overlap-by-merge-policy}
 
@@ -64,9 +64,9 @@ SELECT Sum(overlap_col1) overlap_col1,
 
 +++
 
-请参阅 [按合并策略构件文档划分的受众重叠](../guides/profiles.md#audience-overlap-by-merge-policy) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[按合并策略构件划分的受众重叠文档](../guides/profiles.md#audience-overlap-by-merge-policy)。
 
-## 受众重叠报表 {#audience-overlap-report}
+## 受众重叠报告 {#audience-overlap-report}
 
 通过此洞察回答的问题：
 
@@ -131,7 +131,7 @@ SELECT source_segment_name,
 
 +++
 
-请参阅 [受众重叠报表小组件文档](../guides/profiles.md#audience-overlap-report) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[受众重叠报表构件文档](../guides/profiles.md#audience-overlap-report)。
 
 ## 受众（计数） {#audiences}
 
@@ -159,7 +159,7 @@ SELECT count(DISTINCT a.segment_id) count_of_segments
 
 +++
 
-请参阅 [受众小组件文档](../guides/profiles.md#audiences) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[受众小组件文档](../guides/profiles.md#audiences)。
 
 ## 映射到目标状态的受众 {#audiences-mapped-to-destination-status}
 
@@ -191,7 +191,7 @@ SELECT COUNT(DISTINCT (y.segment_id)) AS count_mapped_segments,
 
 +++
 
-请参阅 [映射到目标状态小部件的受众文档](../guides/profiles.md#audiences-mapped-to-destination-status) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[映射到目标状态小组件文档](../guides/profiles.md#audiences-mapped-to-destination-status)。
 
 ## 受众规模 {#audiences-size}
 
@@ -224,9 +224,9 @@ SELECT qsaccel.profile_agg.adwh_fact_profile_by_segment_trendlines.date_key,
 
 +++
 
-请参阅 [受众规模小组件文档](../guides/profiles.md#audiences-size) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[受众大小小组件文档](../guides/profiles.md#audiences-size)。
 
-## 得分的客户人工智能分布 {#customer-ai-distribution-of-scores}
+## 客户人工智能得分分布 {#customer-ai-distribution-of-scores}
 
 通过此洞察回答的问题：
 
@@ -361,9 +361,9 @@ SELECT b.model_name,
 
 +++
 
-请参阅 [得分构件文档的客户人工智能分发](../guides/profiles.md#customer-ai-distribution-of-scores) 以了解有关此分析的外观和功能的信息。
+有关此洞察的外观和功能的信息，请参阅[得分构件的Customer AI分发文档](../guides/profiles.md#customer-ai-distribution-of-scores)。
 
-## 客户人工智能评分摘要 {#customer-ai-scoring-summary}
+## 客户人工智能评分汇总 {#customer-ai-scoring-summary}
 
 通过此洞察回答的问题：
 
@@ -402,13 +402,13 @@ SELECT model_name,
 
 +++
 
-请参阅 [客户人工智能评分摘要小部件文档](../guides/profiles.md#customer-ai-scoring-summary) 以了解有关此分析的外观和功能的信息。
+有关此洞察的外观和功能的信息，请参阅[客户人工智能评分摘要构件文档](../guides/profiles.md#customer-ai-scoring-summary)。
 
 ## 标识重叠 {#identity-overlap}
 
 通过此洞察回答的问题：
 
-- 两者之间的共同交集是什么 [!UICONTROL 身份类型A] 和 [!UICONTROL 身份类型B]？
+- [!UICONTROL 标识类型A]和[!UICONTROL 标识类型B]之间的公共交叉点是什么？
 - 如何根据特定身份类型之间的重叠来优化客户受众，以增强有针对性的营销策略？
 - 评估交叉区域内的营销活动绩效可以获得哪些见解？
 - 利用这一营销活动效果洞察，如何优化未来的营销工作？
@@ -459,7 +459,7 @@ SELECT Sum(overlap_col1) overlap_col1,
 
 +++
 
-请参阅 [身份重叠构件文档](../guides/profiles.md#identity-overlap) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[身份重叠构件文档](../guides/profiles.md#identity-overlap)。
 
 ## 配置文件计数 {#profile-count}
 
@@ -481,9 +481,9 @@ SELECT qsaccel.profile_agg.adwh_dim_merge_policies.merge_policy_name,
   GROUP BY qsaccel.profile_agg.adwh_dim_merge_policies.merge_policy_name;
 ```
 
-有关此洞察外观和功能的完整信息，请参见 [配置文件计数小部件指南](https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#profile-count).
+有关此洞察外观和功能的完整信息可在[配置文件计数构件指南](https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#profile-count)中找到。
 
-请参阅 [配置文件计数构件文档](../guides/profiles.md#profile-count) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[配置文件计数构件文档](../guides/profiles.md#profile-count)。
 
 ## 配置文件计数变化 {#profile-count-change}
 
@@ -528,7 +528,7 @@ SELECT (sum(count_of_profiles) - sum(count_of_profiles_days_ago)) profiles_added
 
 +++
 
-请参阅 [配置文件计数更改小组件文档](../guides/profiles.md#profile-count-change) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[配置文件计数更改构件文档](../guides/profiles.md#profile-count-change)。
 
 ## 配置文件计数变化趋势 {#profile-count-change-trend}
 
@@ -562,9 +562,9 @@ SELECT date_key,
 
 +++
 
-请参阅 [配置文件计数更改趋势构件文档](../guides/profiles.md#profile-count-change-trend) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[配置文件计数更改趋势构件文档](../guides/profiles.md#profile-count-change-trend)。
 
-## 配置文件计数趋势 {#profile-count-trend}
+## 轮廓计数趋势 {#profile-count-trend}
 
 通过此洞察回答的问题：
 
@@ -593,7 +593,7 @@ SELECT date_key,
 
 +++
 
-请参阅 [配置文件计数趋势小组件文档](../guides/profiles.md#profile-count-trend) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[配置文件计数趋势构件文档](../guides/profiles.md#profile-count-trend)。
 
 ## 按标识列出的配置文件 {#profiles-by-identity}
 
@@ -622,7 +622,7 @@ SELECT qsaccel.profile_agg.adwh_dim_namespaces.namespace_description,
 
 +++
 
-请参阅 [按身份构件列出的配置文件文档](../guides/profiles.md#profiles-by-identity) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[按身份构件列出的配置文件文档](../guides/profiles.md#profiles-by-identity)。
 
 ## 配置文件计数变化趋势 {#profiles-count-change-trend}
 
@@ -656,9 +656,9 @@ SELECT date_key,
 
 +++
 
-请参阅 [配置文件计数变化趋势构件文档](../guides/profiles.md#profiles-count-change-trend) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[配置文件计数更改趋势构件文档](../guides/profiles.md#profiles-count-change-trend)。
 
-## 按身份列出的配置文件计数变化趋势 {#profiles-count-change-trend-by-identity}
+## 按标识分类的轮廓计数变化趋势 {#profiles-count-change-trend-by-identity}
 
 通过此洞察回答的问题：
 
@@ -697,7 +697,7 @@ SELECT date_key,
 
 +++
 
-请参阅 [按身份构件文档列出的配置文件计数变化趋势](../guides/profiles.md#profiles-count-change-trend-by-identity) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[按身份构件列出的配置文件计数变化趋势](../guides/profiles.md#profiles-count-change-trend-by-identity)。
 
 ## 单一标识配置文件 {#single-identity-profiles}
 
@@ -722,9 +722,9 @@ SELECT qsaccel.profile_agg.adwh_dim_merge_policies.merge_policy_name,
 
 +++
 
-请参阅 [单一身份配置文件小部件文档](../guides/profiles.md#single-identity-profiles) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[单一身份配置文件小部件文档](../guides/profiles.md#single-identity-profiles)。
 
-## 按身份列出的单一身份配置文件 {#single-identity-profiles-by-identity}
+## 按标识列出的单一标识轮廓 {#single-identity-profiles-by-identity}
 
 通过此洞察回答的问题：
 
@@ -749,7 +749,7 @@ SELECT qsaccel.profile_agg.adwh_dim_namespaces.namespace_description,
 
 +++
 
-请参阅 [按身份构件文档的单一身份配置文件](../guides/profiles.md#single-identity-profiles-by-identity) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[按身份构件列出的单一身份配置文件](../guides/profiles.md#single-identity-profiles-by-identity)。
 
 ## 未分段的配置文件 {#unsegmented-profiles}
 
@@ -773,12 +773,12 @@ SELECT qsaccel.profile_agg.adwh_dim_merge_policies.merge_policy_name,
 
 +++
 
-请参阅 [未分段配置文件小组件文档](../guides/profiles.md#unsegmented-profiles) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[未分段配置文件小组件文档](../guides/profiles.md#unsegmented-profiles)。
 
 ## 后续步骤
 
 通过阅读本文档，您现在了解了生成仪表板分析的SQL以及此分析可以解决哪些常见问题。 您现在可以对SQL进行编辑和迭代，以生成您自己的见解。
 
-请参阅 [查看SQL文档](../view-sql.md) 有关如何直接通过Platform UI调整您的分析的SQL的详细信息。
+有关如何直接通过PLatform UI调整分析的SQL的详细信息，请参阅[查看SQL文档](../view-sql.md)。
 
-您还可以阅读并了解为生成分析的SQL [受众](./audiences.md)， [帐户配置文件](./account-profiles.md)、和 [目标](./destinations.md) 功能板。
+您还可以阅读并了解为[受众](./audiences.md)、[帐户配置文件](./account-profiles.md)和[目标](./destinations.md)仪表板生成分析的SQL。

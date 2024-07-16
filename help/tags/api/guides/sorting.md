@@ -11,22 +11,25 @@ ht-degree: 0%
 
 # 对Reactor API中的响应进行排序
 
-列出Reactor API中的端点，可让您根据指定的属性对返回的资源进行排序。 您可以通过提供 `sort` 请求路径中的参数。
+在Reactor API中列出端点，可让您根据指定的属性对返回的资源进行排序。 通过在请求路径中提供`sort`参数，可以配置响应的排序顺序。
 
 ## 升序排序
 
-资源可以按属性升序排序，方法是指定要排序的属性，并在该属性前面加上 `+`：
+可以通过指定
+要排序的属性，并以`+`作为前缀：
 
 `GET /companies/:company_id/properties?sort=+name`
 
 ## 降序排序
 
-资源可以按属性降序排序，方法是指定要排序的属性，并在该属性前面加上 `-`：
+可以通过指定
+要排序的属性，并以`-`作为前缀：
 
 `GET /companies/:company_id/properties?sort=-name`
 
 ## 多种排序
 
-要按多个值排序，请以逗号分隔列表的形式提供排序指令：
+要按多个值排序，请以逗号分隔的形式提供排序指令
+列表：
 
 `GET /companies/:company_id/properties?sort=+name,-org_id`

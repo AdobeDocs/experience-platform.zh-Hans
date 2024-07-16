@@ -6,7 +6,7 @@ description: 本教程列出了在Adobe Experience Platform UI中删除现有目
 exl-id: 7b672859-e61a-4b3c-9db9-62048258f0aa
 source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '413'
+source-wordcount: '411'
 ht-degree: 0%
 
 ---
@@ -19,27 +19,27 @@ ht-degree: 0%
 
 删除目标会删除指向该目标的所有现有数据流。 在删除数据流之前，激活到您删除的目标的所有受众都会取消映射。
 
-您可以通过两种方式从删除目标 [!DNL Platform] [!DNL UI]. 您可以：
+有两种方法可以从[!DNL Platform] [!DNL UI]中删除目标。 您可以：
 
-* [从删除目标 [!UICONTROL 浏览] 选项卡](#delete-browse-tab)
+* [从[!UICONTROL 浏览]选项卡中删除目标](#delete-browse-tab)
 * [从目标详细信息页面中删除目标](#delete-destination-details-page)
 
 ## 从“浏览”选项卡中删除目标{#delete-browse-tab}
 
-请按照以下步骤从 [!UICONTROL 浏览] 选项卡。
+按照以下步骤从[!UICONTROL 浏览]选项卡中删除目标。
 
-1. 登录到 [EXPERIENCE PLATFORMUI](https://platform.adobe.com/) 并选择 **[!UICONTROL 目标]** 左侧导航栏中。 要查看现有目标，请选择 **[!UICONTROL 浏览]** 从顶部标题中。
+1. 登录到[Experience PlatformUI](https://platform.adobe.com/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL 目标]**。 要查看现有目标，请从顶部标题中选择&#x200B;**[!UICONTROL 浏览]**。
 
    ![浏览目标](../assets/ui/delete-destinations/browse-destinations.png)
 
-2. 选择过滤器图标 ![筛选图标](../assets/ui/delete-destinations/filter.png) 以启动“排序”面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的过滤选择。
+2. 选择左上角的过滤器图标![过滤器图标](../assets/ui/delete-destinations/filter.png)以启动排序面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的过滤选择。
 
    ![筛选目标](../assets/ui/delete-destinations/filter-destinations.png)
 
-3. 选择 ![“更多”按钮](../assets/ui/delete-destinations/more-icon.png) 按钮，然后选择 ![“删除”按钮](../assets/ui/delete-destinations/delete-icon.png) **[!UICONTROL 删除]** 删除现有的目标连接。
+3. 在“名称”列中选择![更多按钮](../assets/ui/delete-destinations/more-icon.png)按钮，然后选择![删除按钮](../assets/ui/delete-destinations/delete-icon.png) **[!UICONTROL 删除]**以删除现有目标连接。
    ![删除目标](../assets/ui/delete-destinations/delete-destinations.png)
 
-4. 选择 **[!UICONTROL 删除]** 以确认删除目标连接。
+4. 选择&#x200B;**[!UICONTROL 删除]**&#x200B;以确认删除目标连接。
 
    ![确认删除目标](../assets/ui/delete-destinations/delete-destinations-confirm.png)
 
@@ -47,11 +47,11 @@ ht-degree: 0%
 
 按照以下步骤从目标详细信息页面中删除目标。
 
-1. 登录到 [EXPERIENCE PLATFORMUI](https://platform.adobe.com/) 并选择 **[!UICONTROL 目标]** 左侧导航栏中。 要查看现有目标，请选择 **[!UICONTROL 浏览]** 从顶部标题中。
+1. 登录到[Experience PlatformUI](https://platform.adobe.com/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL 目标]**。 要查看现有目标，请从顶部标题中选择&#x200B;**[!UICONTROL 浏览]**。
 
    ![浏览目标](../assets/ui/delete-destinations/browse-destinations.png)
 
-2. 选择过滤器图标 ![筛选图标](../assets/ui/delete-destinations/filter.png) 以启动“排序”面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的过滤选择。
+2. 选择左上角的过滤器图标![过滤器图标](../assets/ui/delete-destinations/filter.png)以启动排序面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的过滤选择。
 
    ![筛选目标](../assets/ui/delete-destinations/filter-destinations.png)
 
@@ -59,7 +59,7 @@ ht-degree: 0%
 
    ![选择目标](../assets/ui/delete-destinations/delete-destination-select.png)
 
-   * 如果目标具有现有数据流，则会转到 [!UICONTROL 数据流运行] 选项卡。
+   * 如果目标具有现有数据流，则您将被带到[!UICONTROL 数据流运行]选项卡。
 
      ![数据流运行选项卡](../assets/ui/delete-destinations/destination-details-dataflows.png)
 
@@ -67,14 +67,14 @@ ht-degree: 0%
 
      ![目标详细信息](../assets/ui/delete-destinations/destination-details-empty.png)
 
-4. 选择 **[!UICONTROL 删除]** 在右边栏中。
+4. 在右边栏中选择&#x200B;**[!UICONTROL 删除]**。
 
    ![删除目标](../assets/ui/delete-destinations/delete-destinations-button.png)
 
-5. 选择 **[!UICONTROL 删除]** 在确认对话框中，删除目标。
+5. 在确认对话框中选择&#x200B;**[!UICONTROL 删除]**&#x200B;以删除目标。
 
    ![删除目标确认](..//assets/ui/delete-destinations/delete-destinations-delete.png)
 
    >[!NOTE]
    >
-   >根据服务器负载，可能需要几分钟才能完成以下操作 [!DNL Platform] 以删除目标。
+   >根据服务器负载，[!DNL Platform]可能需要几分钟才能删除目标。

@@ -4,8 +4,8 @@ description: 了解Adobe Experience Platform中的Adobe Experience Cloud Identit
 exl-id: 9bfcb666-a3f1-46ad-8678-2c63738da2b2
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
-source-wordcount: '797'
-ht-degree: 81%
+source-wordcount: '792'
+ht-degree: 73%
 
 ---
 
@@ -13,19 +13,19 @@ ht-degree: 81%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用本参考可了解有关配置Adobe Experience Cloud ID扩展以及使用此扩展构建规则时可用的选项的信息。
 
-使用此扩展将 Experience Cloud Identity Service 融入您的财产。通过 Experience Cloud Identity Service，可为网站访客创建并存储唯一且永久的标识符。
+使用此扩展可将Experience CloudIdentity Service与您的资产相集成。 通过Experience CloudIdentity Service，您可以为网站访客创建并存储唯一的永久标识符。
 
 ## 配置 Experience Cloud ID 扩展
 
 此部分提供有关配置 Experience Cloud ID 扩展时可用的选项的参考。
 
-如果尚未安装Experience CloudID扩展，请打开您的资产，然后选择 **[!UICONTROL “扩展”>“目录”]**，将鼠标悬停在Experience CloudID扩展上，然后选择 **[!UICONTROL 安装]**.
+如果尚未安装Experience CloudID扩展，请打开您的资产，然后选择&#x200B;**[!UICONTROL 扩展>目录]**，将鼠标悬停在Experience CloudID扩展上，然后选择&#x200B;**[!UICONTROL 安装]**。
 
-要配置该扩展，请打开Extensions选项卡，将鼠标悬停在该扩展上，然后选择 **[!UICONTROL 配置]**.
+要配置该扩展，请打开“扩展”选项卡，将鼠标悬停在该扩展上，然后选择&#x200B;**[!UICONTROL 配置]**。
 
 ![](../../../images/optin.jpg)
 
@@ -43,7 +43,7 @@ ht-degree: 81%
 
 （可选）如果这是正则表达式，则启用 Regex。
 
-选择 **[!UICONTROL 添加]** 以排除其他路径。
+选择&#x200B;**[!UICONTROL 添加]**&#x200B;以排除其他路径。
 
 ### Opt In
 
@@ -73,7 +73,7 @@ Opt In 是所有平台解决方案客户端库的中央引用点，用于确定�
 
 指定已启用存储时“选择启用”Cookie 的过期时间（以秒为单位）。
 
-输入一个数字，然后从下拉列表中选择一个时间单位。例如，输入2，然后选择 **[!UICONTROL 周]**. 默认值为 13 个月。
+输入一个数字，然后从下拉列表中选择一个时间单位。例如，输入2并选择&#x200B;**[!UICONTROL 周]**。 默认值为 13 个月。
 
 **Permissions?**
 
@@ -89,7 +89,7 @@ Opt In 是所有平台解决方案客户端库的中央引用点，用于确定�
 
 ### Variables
 
-将名称-值对设置为 Experience Cloud ID 实例属性。使用下拉菜单选择一个变量，然后键入或选择一个值。有关每个变量的信息，请参阅 [Experience CloudIdentity服务文档](https://experiencecloud.adobe.com/resources/help/zh_CN/mcvid/mcvid-overview.html).
+将名称-值对设置为 Experience Cloud ID 实例属性。使用下拉菜单选择一个变量，然后键入或选择一个值。有关每个变量的信息，请参阅[Experience CloudIdentity Service文档](https://experiencecloud.adobe.com/resources/help/zh_CN/mcvid/mcvid-overview.html)。
 
 ## Experience Cloud ID 扩展操作类型
 
@@ -117,5 +117,5 @@ Opt In 是所有平台解决方案客户端库的中央引用点，用于确定�
    * Authenticated
    * Logged out
 
-1. （可选）选择 **[!UICONTROL 添加]** 以设置更多客户ID。
+1. （可选）选择&#x200B;**[!UICONTROL 添加]**&#x200B;以设置更多客户ID。
 1. 选择&#x200B;**[!UICONTROL 保留更改]**。

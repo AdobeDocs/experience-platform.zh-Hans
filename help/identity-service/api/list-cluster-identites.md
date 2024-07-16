@@ -20,10 +20,10 @@ ht-degree: 1%
 
 检索单个标识的所有群集成员。
 
-您可以使用可选的 `graph-type` 指示从中获取集群的身份图的参数。 选项包括：
+您可以使用可选的`graph-type`参数指示从中获取集群的标识图。 选项包括：
 
 - 无 — 不执行身份拼接。
-- 专用图 — 根据专用身份图执行身份拼接。 如果否 `graph-type` （这是默认设置）。
+- 专用图 — 根据专用身份图执行身份拼接。 如果未提供`graph-type`，则这是默认设置。
 
 **API格式**
 
@@ -33,7 +33,7 @@ GET https://platform-{REGION}.adobe.io/data/core/identity/cluster/members?{PARAM
 
 **请求**
 
-选项1：以命名空间形式提供身份(`nsId`，按ID)和ID值(`id`)。
+选项1：提供身份作为命名空间（`nsId`，按ID）和ID值(`id`)。
 
 ```shell
 curl -X GET \
@@ -44,7 +44,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项2：以命名空间形式提供身份(`ns`，按名称)和ID值(`id`)。
+选项2：提供身份作为命名空间（`ns`，按名称）和ID值(`id`)。
 
 ```shell
 curl -X GET \
@@ -55,7 +55,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项3：以XID形式提供身份(`xid`)。 有关如何获取身份的XID的更多信息，请参阅本文档中涵盖的部分 [获取标识的XID](./list-native-id.md).
+选项3：以XID (`xid`)提供标识。 有关如何获取身份的XID的更多信息，请参阅本文档中有关[获取身份的XID](./list-native-id.md)的部分。
 
 ```shell
 curl -X GET \
@@ -68,7 +68,7 @@ curl -X GET \
 
 ## 获取多个标识的关联标识
 
-使用 `POST` 作为批次等效项 `GET` 上述方法用于返回多个身份群集中的身份。
+使用`POST`作为上述`GET`方法的等效批处理，以返回多个标识群集中的标识。
 
 >[!NOTE]
 >
@@ -86,7 +86,7 @@ POST https://platform-{REGION}.adobe.io/data/core/identity/clusters/members
 
 **存根请求**
 
-使用 `x-uis-cst-ctx: stub` 标头将返回存根响应。 这是一个临时解决方案，可在服务完成时帮助早期集成开发进度。 当不再需要时，此选项将被弃用。
+使用`x-uis-cst-ctx: stub`标头将返回存根响应。 这是一个临时解决方案，可在服务完成时帮助早期集成开发进度。 当不再需要时，此选项将被弃用。
 
 ```shell
 curl -X POST \
@@ -102,7 +102,7 @@ curl -X POST \
 }'
 ```
 
-**使用XID调用**
+使用XID **调用**
 
 ```shell
 curl -X POST \
@@ -118,7 +118,7 @@ curl -X POST \
 }' | json_pp
 ```
 
-**使用UID调用**
+使用UID **调用**
 
 ```shell
 curl -X POST \
@@ -144,7 +144,7 @@ curl -X POST \
 
 **响应**
 
-**“已存根”响应**
+**“存根”响应**
 
 ```json
 {
@@ -242,4 +242,4 @@ curl -X POST \
 
 ## 后续步骤
 
-继续下一教程以 [列出标识的群集历史记录](./list-cluster-history.md)
+继续下一教程，将[列出标识的群集历史记录](./list-cluster-history.md)

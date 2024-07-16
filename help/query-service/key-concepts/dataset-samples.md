@@ -4,14 +4,14 @@ description: 查询服务示例数据集使您能够对大数据进行探索性�
 exl-id: 9e676d7c-c24f-4234-878f-3e57bf57af44
 source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
 workflow-type: tm+mt
-source-wordcount: '639'
+source-wordcount: '643'
 ht-degree: 0%
 
 ---
 
 # 数据集样本
 
-Adobe Experience Platform查询服务提供了示例数据集，作为其近似查询处理功能的一部分。 使用来自现有样本的均匀随机样本创建样本数据集 [!DNL Azure Data Lake Storage] (ADLS)数据集仅使用原始记录的一个百分比。 此百分比称为采样速率。 通过调整采样率来控制精度与处理时间的平衡，可以对大数据进行探索性查询，从而大大缩短处理时间，但代价是查询的准确性。
+Adobe Experience Platform查询服务提供了示例数据集，作为其近似查询处理功能的一部分。 样本数据集是使用来自现有[!DNL Azure Data Lake Storage] (ADLS)数据集的统一随机样本创建的，仅使用来自原始数据集的记录百分比。 此百分比称为采样速率。 通过调整采样率来控制精度与处理时间的平衡，可以对大数据进行探索性查询，从而大大缩短处理时间，但代价是查询的准确性。
 
 由于许多用户不需要对数据集上的聚合操作获得准确答案，因此对于大型数据集的探索性查询，发出近似查询以返回近似答案会更有效。 由于示例数据集仅包含来自原始数据集的数据的百分比，因此，您可以利用查询准确性来缩短响应时间。 在读取时，查询服务必须扫描的行数少于您要查询整个数据集时所需的行数，这样可以更快地生成结果。
 
@@ -26,19 +26,19 @@ Adobe Experience Platform查询服务提供了示例数据集，作为其近似�
 
 ## 快速入门 {#get-started}
 
-要使用本文档中详述的创建和删除近似查询处理功能，必须将会话标志设置为 `true`. 从查询编辑器或PSQL客户端的命令行中，输入 `SET aqp=true;` 命令。
+若要使用本文档中详述的创建和删除近似查询处理功能，必须将会话标志设置为`true`。 从查询编辑器或PSQL客户端的命令行输入`SET aqp=true;`命令。
 
 >[!NOTE]
 >
 >每次登录Platform时都必须启用会话标志。
 
-![突出显示使用“SET aqp=true；”命令的查询编辑器。](../images/essential-concepts/set-session-flag.png)
+![突出显示了&#39;SET aqp=true；&#39;命令的查询编辑器。](../images/essential-concepts/set-session-flag.png)
 
 ## 创建统一的随机数据集示例 {#create-a-sample}
 
-使用 `ANALYZE TABLE <table_name> TABLESAMPLE SAMPLERATE x` 命令，可使用数据集名称从该数据集创建统一的随机示例。
+使用具有数据集名称的`ANALYZE TABLE <table_name> TABLESAMPLE SAMPLERATE x`命令从该数据集创建统一的随机示例。
 
-采样率是从原始数据集中获取的记录的百分比。 您可以使用控制采样速率 `TABLESAMPLE SAMPLERATE` 关键字。 在此示例中，5.0的值等于50%的采样率。 值为2.5将等于25%，以此类推。
+采样率是从原始数据集中获取的记录的百分比。 您可以使用`TABLESAMPLE SAMPLERATE`关键字来控制采样率。 在此示例中，5.0的值等于50%的采样率。 值为2.5将等于25%，以此类推。
 
 >[!IMPORTANT]
 >
@@ -68,11 +68,11 @@ ANALYZE TABLE large_table TABLESAMPLE FILTERCONTEXT (month(to_timestamp(timestam
 ANALYZE TABLE large_table TABLESAMPLE FILTERCONTEXT (month(to_timestamp(timestamp)) in ('8', '9') AND (product.name = "product1" OR product.name = "product2")) SAMPLERATE 10;
 ```
 
-在提供的示例中，表名为 `large_table`，则原始表中的过滤条件为 `month(to_timestamp(timestamp)) in ('8', '9')`，并且采样率为（过滤数据的X%），在这种情况下， `10`.
+在提供的示例中，表名称为`large_table`，原始表的过滤条件为`month(to_timestamp(timestamp)) in ('8', '9')`，采样率为（过滤数据的X%），在此例中为`10`。
 
 ## 查看示例列表 {#view-list-of-samples}
 
-使用 `sample_meta()` 函数以查看与ADLS表关联的示例列表。
+使用`sample_meta()`函数查看与ADLS表关联的示例列表。
 
 ```sql
 SELECT sample_meta('example_dataset_name')
@@ -89,7 +89,7 @@ SELECT sample_meta('example_dataset_name')
 
 ## 查询示例数据集 {#query-sample-datasets}
 
-使用 `{EXAMPLE_DATASET_NAME}` 直接查询示例表。 或者，添加 `WITHAPPROXIMATE` 关键字到查询的结尾，查询服务自动使用最近创建的示例。
+使用`{EXAMPLE_DATASET_NAME}`直接查询示例表。 或者，将`WITHAPPROXIMATE`关键字添加到查询的结尾，查询服务将自动使用最近创建的示例。
 
 ```sql
 SELECT * FROM example_dataset_name WITHAPPROXIMATE;

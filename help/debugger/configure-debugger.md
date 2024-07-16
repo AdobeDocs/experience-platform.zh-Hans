@@ -20,15 +20,15 @@ ht-degree: 50%
 
 ## 浅色或深色模式
 
-在Platform Debugger打开后，您可以通过转到 **[!UICONTROL 设置]** 并选择 **深色模式** （默认）或 **光源模式**.
+在Platform Debugger打开后，您可以通过转到&#x200B;**[!UICONTROL 设置]**&#x200B;并选择&#x200B;**深色模式**（默认值）或&#x200B;**浅色模式**&#x200B;来选择首选外观。
 
 ## 重置
 
-选择 **[!UICONTROL 重置所有数据和设置]** 以清除所有数据并返回到默认设置。
+选择&#x200B;**[!UICONTROL 重置所有数据和设置]**&#x200B;以返回清除所有数据并恢复默认设置。
 
 ## 将 Experience Platform Debugger 锁定在某个页面上
 
-当您在网站上变更页面时，Experience Platform Debugger 窗口会随之更新，以显示相应页面的信息。在屏幕底部，将显示您所连接的页面的名称。若要将Experience PlatformDebugger锁定在某个页面上，请选择 **[!UICONTROL 锁定]** Platform Debugger窗口右下角的。
+当您在网站上变更页面时，Experience Platform Debugger 窗口会随之更新，以显示相应页面的信息。在屏幕底部，将显示您所连接的页面的名称。若要将Experience PlatformDebugger锁定在某个页面上，请选择Platform Debugger窗口右下角的&#x200B;**[!UICONTROL 锁定]**。
 
 ![](images/lock.jpg)
 

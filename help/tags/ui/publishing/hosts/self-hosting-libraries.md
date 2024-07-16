@@ -5,7 +5,7 @@ exl-id: 8c3bf202-de7a-46e0-801f-0cede24865fd
 source-git-commit: 91b28fc284344b42020b0e49b64ac023e492d572
 workflow-type: tm+mt
 source-wordcount: '489'
-ht-degree: 74%
+ht-degree: 63%
 
 ---
 
@@ -13,17 +13,17 @@ ht-degree: 74%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
-Adobe Experience Platform中的标记允许生成一组名为的文件。 [生成](../builds.md). 这组文件控制应用程序在运行时的行为。
+Adobe Experience Platform中的标记允许生成一组名为[内部版本](../builds.md)的文件。 这组文件控制应用程序在运行时的行为。
 
 内部版本需要托管在某个位置，这样客户端设备才能在运行时根据需要对其进行检索。
 
-这些文件的托管既可以由 Platform 为您进行管理，也可以由您自行管理。
+这些文件的托管既可以由平台为您进行管理，也可以由您自行管理。
 
 ## 由 Adobe 管理 {#managed-by-adobe}
 
-Adobe 没有 Web 托管业务。如果您选择由 Adobe 管理您的托管文件，则您构建的库将交付到已与我们签约的第三方内容交付网络(CDN)。
+Adobe不从事Web托管业务。 如果您选择由 Adobe 管理您的托管文件，则您构建的库将交付到已与我们签约的第三方内容交付网络(CDN)。
 
 目前，Akamai 是一个主要的 CDN 提供商。在 Akamai 托管的文件会使用域 `assets.adobedtm.com`。
 
@@ -33,7 +33,7 @@ Adobe 没有 Web 托管业务。如果您选择由 Adobe 管理您的托管文�
 
 ## 自托管
 
-如果不希望由 Adobe 管理您的托管文件，则必须自行托管。要托管文件，您需要从Platform获取完成的内部版本，并负责通过公司的发行周期将文件放到公司管理的服务器上。
+如果不希望由 Adobe 管理您的托管文件，则必须自行托管。要托管文件，您需要从Platform中获取已完成的内部版本，并负责通过公司的发行周期将文件放到公司管理的服务器上。
 
 ### 为何使用自托管？
 

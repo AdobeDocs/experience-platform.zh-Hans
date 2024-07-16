@@ -5,8 +5,8 @@ feature: Event Forwarding
 exl-id: f82bfac9-dc2d-44de-a308-651300f107df
 source-git-commit: 05170986263b6eed2d19a65e34f70dc28eb8ba2f
 workflow-type: tm+mt
-source-wordcount: '870'
-ht-degree: 26%
+source-wordcount: '864'
+ht-degree: 22%
 
 ---
 
@@ -14,9 +14,9 @@ ht-degree: 26%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-要在Adobe Experience Platform中使用事件转发，必须使用以下三个选项中的一个或多个将数据发送到Adobe Experience Platform Edge Network：
+要在Adobe Experience Platform中使用事件转发，必须使用以下三个选项中的一个或多个将数据发送到Adobe Experience PlatformEdge Network：
 
 * [Adobe Experience Platform Web SDK](../../extensions/client/web-sdk/overview.md)
 * [Adobe Experience Platform Mobile SDK](https://sdkdocs.com)
@@ -31,18 +31,18 @@ ht-degree: 26%
 
 * Adobe Real-Time CDP Connections、Prime或Ultimate(联系您的Adobe客户团队获取定价信息)
 * Adobe Experience Platform中的事件转发
-* Adobe Experience Platform Web SDK、Mobile SDK或配置为将数据发送到Edge Network的Edge Network服务器API
+* Adobe Experience Platform Web SDK、Mobile SDK或Edge Network服务器API配置为将数据发送到Edge Network
 * 将数据映射到Experience Data Model (XDM)（此映射可以使用标记完成）
 
 ## 创建 XDM 架构
 
 在 Adobe Experience Platform 中，创造您的架构。
 
-1. 通过选择创建架构 **[!UICONTROL 架构]**>**[!UICONTROL 创建架构]** 并选择 **[!UICONTROL XDM ExperienceEvent]** 选项。
+1. 通过选择&#x200B;**[!UICONTROL 架构]**>**[!UICONTROL 创建架构]**&#x200B;并选择&#x200B;**[!UICONTROL XDM ExperienceEvent]**&#x200B;选项来创建架构。
 
 1. 为架构命名并提供简短描述。
 
-1. 您可以通过选择，添加“ExperienceEvent Web详细信息”字段组 **[!UICONTROL 添加]** 旁边 **[!UICONTROL 字段组]**.
+1. 您可以通过选择&#x200B;**[!UICONTROL 字段组]**&#x200B;旁边的&#x200B;**[!UICONTROL 添加]**&#x200B;来添加“ExperienceEvent Web详细信息”字段组。
 
    >[!NOTE]
    >
@@ -54,23 +54,24 @@ ht-degree: 26%
 
 ## 创建事件转发属性
 
-在 **[!UICONTROL 标记]** 工作区，创建以下类型的属性： **[!UICONTROL Edge]**.
+在&#x200B;**[!UICONTROL 标记]**&#x200B;工作区中，创建&#x200B;**[!UICONTROL Edge]**&#x200B;类型的属性。
 
 1. 选择&#x200B;**[!UICONTROL 新属性]**。
 
 1. 命名资产。
 
-1. 选择“边缘”平台类型。
+1. 选择“Edge”平台类型。
 
 1. 选择&#x200B;**[!UICONTROL 保存]**。
 
-创建资产后，转到 **[!UICONTROL 环境]** 选项卡，并记下环境ID。 如果数据流中使用的Adobe组织与事件转发中使用的Adobe组织不同，您可以从以下位置复制环境ID： **[!UICONTROL 环境]** 制表符并在创建数据流时粘贴它。 您也可以从下拉菜单中选择环境。
+创建资产后，转到新资产的&#x200B;**[!UICONTROL 环境]**选项卡并进行
+记录环境ID。 如果数据流中使用的Adobe组织与事件转发中使用的Adobe组织不同，则可以从**[!UICONTROL 环境]**&#x200B;选项卡中复制环境ID，并在创建数据流时粘贴它。 您也可以从下拉菜单中选择环境。
 
 ## 创建数据流
 
 要在Adobe Experience Platform中创建数据流，请使用在创建事件转发属性时生成的环境ID。
 
-1. 选择 **[!UICONTROL 数据流]** 在左侧导航中。
+1. 在左侧导航中选择&#x200B;**[!UICONTROL 数据流]**。
 
 1. 对配置进行命名并提供描述（可选）。
 该描述有助于在包含多个配置的列表中识别配置。
@@ -81,11 +82,11 @@ ht-degree: 26%
 
 接下来，配置Edge Network以将数据发送到事件转发和其他Adobe产品。
 
-1. 在 **[!UICONTROL 数据流]** 在工作区中，选择您创建的资产。
+1. 在&#x200B;**[!UICONTROL 数据流]**&#x200B;工作区中，选择您创建的属性。
 
 1. 选择 Development、Production 或 Staging 环境。
 
-   或者，若要将数据发送到Adobe组织外的事件转发环境，请选择 **[!UICONTROL 切换到高级模式]** 并粘贴一个ID。 此ID是您在创建事件转发属性时提供的ID。
+   或者，若要将数据发送到Adobe组织外的事件转发环境，请选择&#x200B;**[!UICONTROL 切换到高级模式]**&#x200B;并粘贴到ID。 此ID是您在创建事件转发属性时提供的ID。
 
 1. 打开必要的工具并根据需要进行配置。
 
@@ -97,9 +98,9 @@ ht-degree: 26%
 
 ## 配置Platform Web SDK扩展以将数据发送到之前创建的数据流
 
-在中创建资产 **[!UICONTROL 标记]** 工作区，然后导航到 **[!UICONTROL 扩展]** 并从目录中选择Experience PlatformWeb SDK扩展以对其进行配置和安装。
+在&#x200B;**[!UICONTROL 标记]**&#x200B;工作区中创建属性，然后导航到&#x200B;**[!UICONTROL 扩展]**，并从目录中选择Experience PlatformWeb SDK扩展以对其进行配置和安装。
 
-请参阅 [Web SDK扩展文档](../../extensions/client/web-sdk/overview.md) 以了解有关配置选项的详细信息。
+有关配置选项的详细信息，请参阅[Web SDK扩展文档](../../extensions/client/web-sdk/overview.md)。
 
 ## 创建标记规则以将数据发送到Platform Web SDK
 
@@ -107,17 +108,17 @@ ht-degree: 26%
 
 使用Platform Web SDK扩展和“发送事件”操作类型创建页面加载规则：
 
-1. 打开 **[!UICONTROL 规则]** 选项卡，然后选择 **[!UICONTROL 创建新规则]**.
+1. 打开&#x200B;**[!UICONTROL 规则]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 创建新规则]**。
 
 1. 命名规则。
 
-1. 选择 **[!UICONTROL 事件添加]**.
+1. 选择&#x200B;**[!UICONTROL 事件添加]**。
 
-1. 通过选择扩展以及该扩展可用的事件类型之一来添加事件，然后配置该事件的设置。例如，选择 **[!UICONTROL 核心 — 已加载窗口]**.
+1. 通过选择扩展以及该扩展可用的事件类型之一来添加事件，然后配置该事件的设置。例如，选择&#x200B;**[!UICONTROL Core - Window Loaded]**。
 
-1. 使用 Platform Web SDK 扩展添加操作。选择 **[!UICONTROL 发送事件]** 从 **[!UICONTROL 操作类型]** 列表中，选择所需的实例（以前配置的Alloy实例），然后选择要添加到Alloy点击的XDM数据块的数据元素。
+1. 使用 Platform Web SDK 扩展添加操作。从&#x200B;**[!UICONTROL 操作类型]**&#x200B;列表中选择&#x200B;**[!UICONTROL 发送事件]**，选择所需的实例（以前配置的Alloy实例），然后选择要添加到Alloy点击的XDM数据块的数据元素。
 
-1. 对于本示例，请将其余设置保留为默认设置，然后选择 **[!UICONTROL 保存]**.
+1. 对于此示例，请将其余设置保留为默认设置，然后选择&#x200B;**[!UICONTROL 保存]**。
 
 再举一个示例，如果用户将鼠标悬停在指定的按钮上，您可以创建一项将数据层发送到 Edge 的规则。
 

@@ -9,9 +9,9 @@ ht-degree: 5%
 
 ---
 
-# [!UICONTROL 付款人] 类
+# [!UICONTROL 付款人]类
 
-在Experience Data Model (XDM)中， [!UICONTROL 付款人] 类捕获定义付款人业务实体的最小资产集，该实体收集与保险公司（例如健康保险）相关的数据。
+在Experience Data Model (XDM)中，[!UICONTROL 付款人]类捕获定义付款人业务实体的最小属性集，该业务实体收集与保险公司相关的数据（例如健康保险）。
 
 ![类结构](../images/classes/payer.png)
 

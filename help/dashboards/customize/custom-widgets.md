@@ -5,7 +5,7 @@ description: 本指南提供了有关创建自定义小组件以在Adobe Experie
 exl-id: 0168ab1e-0b7d-4faf-852e-7208a2b09a04
 source-git-commit: 32dd90018c990e7013d826b29608a61022ba808b
 workflow-type: tm+mt
-source-wordcount: '975'
+source-wordcount: '976'
 ht-degree: 0%
 
 ---
@@ -14,41 +14,41 @@ ht-degree: 0%
 
 在Adobe Experience Platform中，您可以使用多个功能板查看组织的数据并与之交互。 您还可以通过向仪表板视图添加新构件来更新某些仪表板。 除了Adobe提供的标准构件之外，您还可以创建自定义构件并在整个组织内共享它们。
 
-本指南提供了有关创建自定义构件并将其添加到的分步说明。 [!UICONTROL 配置文件]， [!UICONTROL 区段]、和 [!UICONTROL 目标] Platform UI中的功能板。
+本指南提供了在Platform UI中创建自定义构件并将其添加到[!UICONTROL 配置文件]、[!UICONTROL 区段]和[!UICONTROL 目标]功能板的分步说明。
 
 >[!NOTE]
 >
 >对功能板所做的任何更新都是按组织和沙盒进行的。
 
-要了解有关标准构件的更多信息，请参阅指南，了解 [将标准构件添加到仪表板](standard-widgets.md).
+要了解有关标准构件的更多信息，请参阅[将标准构件添加到仪表板](standard-widgets.md)的指南。
 
 ## 构件库 {#widget-library}
 
-本指南需要访问 [!UICONTROL 构件库] 在Experience Platform内。 要详细了解构件库以及如何在UI中访问它，请从阅读 [构件库概述](widget-library.md).
+本指南需要访问Experience Platform中的[!UICONTROL 构件库]。 要了解有关构件库以及如何在UI中访问它的更多信息，请从阅读[构件库概述](widget-library.md)开始。
 
 ## 自定义构件入门
 
-在Widget库中， **[!UICONTROL 自定义]** 选项卡允许您创建构件并与组织中的其他用户共享这些构件，以自定义仪表板的外观。
+在小组件库中，**[!UICONTROL 自定义]**&#x200B;选项卡允许您创建小组件并与组织中的其他用户共享这些小组件，以便自定义仪表板的外观。
 
 >[!IMPORTANT]
 >
 >贵组织最多可以在构件库中创建20个自定义构件。
 
-选择 **[!UICONTROL 自定义]** 选项卡开始创建自定义构件，或查看贵组织已创建的自定义构件。
+选择&#x200B;**[!UICONTROL 自定义]**&#x200B;选项卡以开始创建自定义构件，或查看您的组织已创建的自定义构件。
 
-![突出显示“自定义”选项卡的小组件库工作区。](../images/customization/custom-widgets.png)
+![突出显示“自定义”选项卡的Widget库工作区。](../images/customization/custom-widgets.png)
 
 ## 创建自定义构件
 
-要创建自定义构件，请选择 **[!UICONTROL 创建构件]** 从构件库的右上角，或者，如果这是您组织的第一个自定义构件，请选择 **[!UICONTROL 创建]** 从小组件库的中央。
+要创建自定义构件，请从构件库的右上角选择&#x200B;**[!UICONTROL 创建构件]**；或者，如果这是您组织的第一个自定义构件，请从构件库的中心选择&#x200B;**[!UICONTROL 创建]**。
 
-![突出显示创建后小组件库工作区的“自定义”选项卡。](../images/customization/create-widget.png)
+![突出显示“创建”的小组件库工作区的“自定义”选项卡。](../images/customization/create-widget.png)
 
-在 **[!UICONTROL 创建构件]** 对话框，为新构件提供标题和描述，并选择您希望构件显示的属性。
+在&#x200B;**[!UICONTROL 创建构件]**&#x200B;对话框中，为新构件提供标题和描述，并选择您希望构件显示的属性。
 
 >[!NOTE]
 >
->可用属性的列表取决于为您的组织配置的架构。 要了解有关属性选择和架构配置的更多信息，请阅读以下内容的指南： [编辑架构以创建自定义构件](edit-schema.md).
+>可用属性的列表取决于为您的组织配置的架构。 要了解有关属性选择和架构配置的更多信息，请阅读有关[编辑架构以创建自定义小组件](edit-schema.md)的指南。
 
 要选择属性，请选择要添加属性旁边的单选按钮。
 
@@ -56,7 +56,7 @@ ht-degree: 0%
 >
 >每个构件只能选择一个属性，且每个属性只能创建一个构件。 如果已为属性创建了构件，则该属性将显示为灰色。
 
-![“创建构件”对话框。](../images/customization/create-widget-dialog.png)
+![创建构件对话框。](../images/customization/create-widget-dialog.png)
 
 ## 选择可视化图表
 
@@ -78,19 +78,19 @@ ht-degree: 0%
 >
 >示例小部件中显示的数据仅供说明之用。 预览不显示贵组织的实际数据。
 
-保存您的新构件并返回至 [!UICONTROL 自定义] 选项卡，选择 **[!UICONTROL 创建]**.
+要保存您的新构件并返回[!UICONTROL 自定义]选项卡，请选择&#x200B;**[!UICONTROL 创建]**。
 
-![创建构件对话框，其中可视化选项和创建突出显示。](../images/customization/create-widget-select-attribute.png)
+![包含可视化选项的“创建构件”对话框和突出显示的创建。](../images/customization/create-widget-select-attribute.png)
 
-您的新构件现在可以通过从库中选择构件并选择 **[!UICONTROL 添加构件]**.
+现在可通过从库中选择构件并选择&#x200B;**[!UICONTROL 添加构件]**，将您的新构件添加到仪表板。
 
-![突出显示具有新小部件和添加小部件的构件库工作区的“自定义”选项卡。](../images/customization/custom-widgets-new.png)
+![突出显示具有新构件和添加构件的构件库工作区的“自定义”选项卡。](../images/customization/custom-widgets-new.png)
 
 ## 隐藏自定义构件
 
-将构件添加到库后，可以通过选择省略号(`...`)，然后选择 **[!UICONTROL 隐藏构件]**. 您还可以从同一下拉菜单中预览和编辑构件。
+将构件添加到库后，可以通过选择构件卡上的省略号(`...`)，然后选择&#x200B;**[!UICONTROL 隐藏构件]**&#x200B;来隐藏该构件。 您还可以从同一下拉菜单中预览和编辑构件。
 
-要查看已隐藏的小部件，请选择 **[!UICONTROL 显示隐藏构件]** 从小组件库的右上角
+要查看已隐藏的构件，请从构件库的右上角选择&#x200B;**[!UICONTROL 显示隐藏的构件]**。
 
 >[!WARNING]
 >
@@ -100,11 +100,11 @@ ht-degree: 0%
 
 ## 编辑自定义构件
 
-您可以通过选择省略号(`...`)，然后选择 **[!UICONTROL 编辑]** 下拉菜单中。
+您可以通过选择构件卡上的省略号(`...`)，然后从下拉菜单中选择&#x200B;**[!UICONTROL 编辑]**，来编辑构件库中的自定义构件。
 
-![小组件下拉菜单选项中突出显示了省略号和编辑。](../images/customization/custom-widget-edit.png)
+![突出显示带有椭圆和“编辑”的小组件下拉菜单选项。](../images/customization/custom-widget-edit.png)
 
-在 **[!UICONTROL 编辑构件]** 在该对话框中，您可以编辑构件的标题和描述，以及预览和选择不同的可视化图表。 完成编辑后，选择 **[!UICONTROL 保存]** 以保存所做更改并返回自定义构件选项卡。
+在&#x200B;**[!UICONTROL 编辑构件]**&#x200B;对话框中，您可以编辑构件的标题和描述，以及预览和选择不同的可视化图表。 完成编辑后，选择&#x200B;**[!UICONTROL 保存]**&#x200B;以保存更改并返回自定义构件选项卡。
 
 >[!WARNING]
 >
@@ -114,4 +114,4 @@ ht-degree: 0%
 
 ## 后续步骤
 
-阅读本文档后，您可以访问构件库，并使用它为您的组织创建和添加自定义构件。 要修改显示在仪表板中的小部件的大小和位置，请参阅 [修改功能板指南](modify.md).
+阅读本文档后，您可以访问构件库，并使用它为您的组织创建和添加自定义构件。 要修改仪表板中显示的小部件的大小和位置，请参阅[修改仪表板指南](modify.md)。

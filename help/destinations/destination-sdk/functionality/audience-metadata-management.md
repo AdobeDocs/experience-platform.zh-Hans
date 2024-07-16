@@ -13,17 +13,17 @@ ht-degree: 0%
 
 使用受众元数据模板以编程方式创建、更新或删除目标中的受众。 Adobe提供了一个可扩展的受众元数据模板，您可以根据营销API的规范配置该模板。 定义、测试和提交配置后，Adobe将使用该配置来构造指向目标的API调用。
 
-您可以使用配置本文档中描述的功能 `/authoring/audience-templates` API端点。 读取 [创建元数据模板](../metadata-api/create-audience-template.md) 有关可对端点执行的操作的完整列表。
+您可以使用`/authoring/audience-templates` API端点配置本文档中描述的功能。 读取[创建元数据模板](../metadata-api/create-audience-template.md)，以获取可在终结点上执行的操作的完整列表。
 
 ## 何时使用受众元数据管理端点 {#when-to-use}
 
 根据您的API配置，在Experience Platform中配置目标时，您可能需要也可能不需要使用受众元数据管理端点。 使用下面的决策树图了解何时使用受众元数据端点以及如何为目标配置受众元数据模板。
 
-![决策树图](../assets/functionality/audience-metadata-decision-tree.png)
+![决策树图表](../assets/functionality/audience-metadata-decision-tree.png)
 
 ## 受众元数据管理支持的用例 {#use-cases}
 
-借助Destination SDK中的受众元数据支持，在配置Experience Platform目标时，您可以为Platform用户提供以下多个选项之一，以便他们映射并激活受众到您的目标。 您可以通过 [受众元数据配置](../functionality/destination-configuration/audience-metadata-configuration.md) 部分。
+借助Destination SDK中的受众元数据支持，在配置Experience Platform目标时，您可以为Platform用户提供以下多个选项之一，以便他们映射并激活受众到您的目标。 您可以通过目标配置[受众元数据配置](../functionality/destination-configuration/audience-metadata-configuration.md)部分中的参数控制用户可用的选项。
 
 ### 用例1 — 您有一个第三方API，用户不需要输入映射ID
 
@@ -35,7 +35,7 @@ ht-degree: 0%
 
 如果受众和其他元数据需要由合作伙伴或用户在您的目标中手动创建，则用户必须手动填写激活工作流中的受众映射ID字段，以在您的目标和Experience Platform之间同步受众元数据。
 
-![输入映射Id](../assets/functionality/input-mapping-id.png)
+![输入映射ID](../assets/functionality/input-mapping-id.png)
 
 ### 用例3 — 您的目标接受Experience Platform的受众ID，用户无需手动输入映射ID
 
@@ -45,7 +45,7 @@ ht-degree: 0%
 
 为了支持上面列出的用例，Adobe为您提供了一个通用模板，可以自定义该模板以根据API规范进行调整。
 
-您可以使用通用模板执行以下操作 [创建新的受众模板](../metadata-api/create-audience-template.md) 如果您的API支持：
+如果您的API支持：[](../metadata-api/create-audience-template.md)
 
 * HTTP方法：POST、GET、PUT、DELETE、PATCH
 * 身份验证类型：OAuth 1、具有刷新令牌的OAuth 2、具有持有者令牌的OAuth 2
@@ -57,7 +57,7 @@ ht-degree: 0%
 
 本节包含三个通用受众元数据配置示例供您参考，以及对配置主要部分的描述。 请注意三个示例配置之间的url、标头、请求和响应正文有何不同。 这是因为三个示例平台的营销API的规范不同。
 
-请注意，在一些示例中，宏字段如 `{{authData.accessToken}}` 或 `{{segment.name}}` 在URL中使用，而在其他示例中则在标头或请求正文中使用。 这确实取决于您的营销API规范。
+请注意，在一些示例中，URL中使用了`{{authData.accessToken}}`或`{{segment.name}}`等宏字段，而在其他示例中，标头或请求正文中使用这些宏字段。 这确实取决于您的营销API规范。
 
 | 模板部分 | 描述 |
 |--- |--- |
@@ -521,7 +521,7 @@ ht-degree: 0%
 }
 ```
 
-在中查找模板中所有参数的描述 [创建受众模板](../metadata-api/create-audience-template.md) API引用。
+在[创建受众模板](../metadata-api/create-audience-template.md) API引用中查找模板中所有参数的描述。
 
 ## 受众元数据模板中使用的宏 {#macros}
 
@@ -534,8 +534,8 @@ ht-degree: 0%
 | `{{segment.id}}` | 允许您访问Experience Platform中的受众ID。 |
 | `{{customerData.accountId}}` | 允许您访问在目标配置中设置的帐户ID字段。 |
 | `{{oauth2ServiceAccessToken}}` | 允许您根据OAuth 2配置动态生成访问令牌。 |
-| `{{authData.accessToken}}` | 允许您将访问令牌传递到API端点。 使用 `{{authData.accessToken}}` 如果Experience Platform应使用未过期的令牌连接到您的目标，否则使用 `{{oauth2ServiceAccessToken}}` 以生成访问令牌。 |
-| `{{body.segments[0].segment.id}}` | 返回已创建受众的唯一标识符作为键的值 `externalAudienceId`. |
+| `{{authData.accessToken}}` | 允许您将访问令牌传递到API端点。 如果Experience Platform应使用未过期的令牌连接到您的目标，请使用`{{authData.accessToken}}`，否则请使用`{{oauth2ServiceAccessToken}}`生成访问令牌。 |
+| `{{body.segments[0].segment.id}}` | 返回已创建受众的唯一标识符作为键`externalAudienceId`的值。 |
 | `{{error.message}}` | 返回将在Experience PlatformUI中向用户显示的错误消息。 |
 
 {style="table-layout:auto"}

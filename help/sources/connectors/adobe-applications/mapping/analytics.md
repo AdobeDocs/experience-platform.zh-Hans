@@ -1,13 +1,13 @@
 ---
 keywords: Analytics映射字段；Analytics映射
 solution: Experience Platform
-title: Adobe Analytics源连接器的映射字段
+title: Adobe Analytics Source连接器的映射字段
 description: 使用Adobe Analytics Source Connector将Analytics字段映射到XDM字段。
 exl-id: 15dc1368-5cf1-42e1-9683-d5158f8aa2db
 source-git-commit: 6cbd902c6a1159d062fb38bf124a09bb18ad1ba8
 workflow-type: tm+mt
 source-wordcount: '2388'
-ht-degree: 14%
+ht-degree: 8%
 
 ---
 
@@ -21,7 +21,7 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 
 选择字段直接从Adobe Analytics映射到Experience Data Model (XDM)。
 
-| Analytics 字段 | XDM字段 | XDM类型 | 描述 |
+| Analytics字段 | XDM字段 | XDM类型 | 描述 |
 | --------------- | --------- | -------- | ---------- |
 | `m_evar1`<br/>`[...]`<br/>`m_evar250` | `_experience.analytics.customDimensions.`<br/>`eVars.eVar1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`eVars.eVar250` | 字符串 | 自定义Analytics eVar。 每个组织可以以不同的方式使用eVar。 |
 | `m_prop1`<br/>`[...]`<br/>`m_prop75` | `_experience.analytics.customDimensions.`<br/>`props.prop1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`props.prop75` | 字符串 | 自定义Analytics prop。 每个组织可以有不同的方式使用prop。 |
@@ -40,21 +40,21 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 | `m_page_url` | `web.webPageDetails.URL` | 字符串 | 页面点击的URL。 |
 | `m_pagename` | `web.webPageDetails.pageViews.value` | 字符串 | 具有页面名称的点击上等于1。 这类似于Adobe Analytics页面查看次数量度。 |
 | `m_referrer` | `web.webReferrer.URL` | 字符串 | 上一页的页面URL。 |
-| `m_search_page_num` | `search.pageDepth` | 整数 | 供所有搜索页面排名维度使用。 指示用户在点击进入您的网站之前您的网站出现在搜索结果的哪一页。 |
+| `m_search_page_num` | `search.pageDepth` | 整数 | 供所有搜索页面排名维度使用。 指示用户在点击进入您的网站之前您的网站出现在搜索结果的哪个页面。 |
 | `m_state` | `_experience.analytics.customDimensions.`<br/>`stateProvince` | 字符串 | 状态变量。 |
 | `m_user_server` | `web.webPageDetails.server` | 字符串 | 在服务器维度中使用的变量。 |
 | `m_zip` | `_experience.analytics.customDimensions.`<br/>`postalCode` | 字符串 | 用于填充邮政编码维度的变量。 |
 | `accept_language` | `environment.browserDetails.acceptLanguage` | 字符串 | 列出所有接受的语言，如Accept-Language HTTP标头所示。 |
-| `homepage` | `web.webPageDetails.isHomePage` | 布尔 | 已不再使用。指示当前URL是否为浏览器的主页。 |
+| `homepage` | `web.webPageDetails.isHomePage` | 布尔 | 已不再使用。 指示当前URL是否为浏览器的主页。 |
 | `ipv6` | `environment.ipV6` | 字符串 |
 | `j_jscript` | `environment.browserDetails.javaScriptVersion` | 字符串 | 浏览器支持的JavaScript版本。 |
 | `user_agent` | `environment.browserDetails.userAgent` | 字符串 | HTTP标头中发送的用户代理字符串。 |
-| `mobileappid` | `application.name` | 字符串 | 移动设备应用程序ID，按以下格式存储： `[AppName][BundleVersion]`. |
+| `mobileappid` | `application.name` | 字符串 | 移动设备应用程序ID，以下列格式存储： `[AppName][BundleVersion]`。 |
 | `mobiledevice` | `device.model` | 字符串 | 移动设备的名称。 在iOS上，它存储为逗号分隔的2位字符串。 第一个数字代表第几代设备，第二个数字代表设备系列。 |
 | `pointofinterest` | `placeContext.POIinteraction.POIDetail.`<br/>`name` | 字符串 | 由Mobile Services使用。 表示目标点。 |
 | `pointofinterestdistance` | `placeContext.POIinteraction.POIDetail.`<br/>`geoInteractionDetails.distanceToCenter` | 数字 | 由Mobile Services使用。 表示兴趣点距离。 |
-| `mobileplaceaccuracy` | `placeContext.POIinteraction.POIDetail.`<br/>`geoInteractionDetails.deviceGeoAccuracy` | 数字 | 从上下文数据变量 a.loc.acc 收集。指示收集时 GPS 的精度（以米为单位）。 |
-| `mobileplacecategory` | `placeContext.POIinteraction.POIDetail.`<br/>`category` | 字符串 | 从上下文数据变量 a.loc.category 收集。描述特定位置的类别。 |
+| `mobileplaceaccuracy` | `placeContext.POIinteraction.POIDetail.`<br/>`geoInteractionDetails.deviceGeoAccuracy` | 数字 | 从上下文数据变量a.loc.acc收集。 指示GPS在收集时的精度（以米为单位）。 |
+| `mobileplacecategory` | `placeContext.POIinteraction.POIDetail.`<br/>`category` | 字符串 | 从上下文数据变量a.loc.category收集。 描述特定位置的类别。 |
 | `mobileplaceid` | `placeContext.POIinteraction.POIDetail.`<br/>`POIID` | 字符串 | 从上下文数据变量a.loc.id收集。 给定目标点的标识符。 |
 | `video` | `media.mediaTimed.primaryAssetReference.`<br/>`_id` | 字符串 | 视频的名称。 |
 | `videoad` | `advertising.adAssetReference._id` | 字符串 | 广告资源的标识符。 |
@@ -102,7 +102,7 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 | `videoqoedropbeforestart` | `media.mediaTimed.dropBeforeStarts` | 对象 | <!-- MISSING --> | {id （字符串），值（数字）} |
 | `videoqoebuffercount` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.buffers` | 对象 | 视频品质：缓冲计数 | {id （字符串），值（数字）} |
 | `videoqoebuffertime` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.bufferTime` | 对象 | 视频品质：缓冲时间 | {id （字符串），值（数字）} |
-| `videoqoebitratechangecount` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.bitrateChanges` | 对象 | 视频品质：比特率变化计数 | {id （字符串），值（数字）} |
+| `videoqoebitratechangecount` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.bitrateChanges` | 对象 | 视频品质：变化计数 | {id （字符串），值（数字）} |
 | `videoqoebitrateaverage` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.bitrateAverage` | 对象 | 视频品质：平均比特率 | {id （字符串），值（数字）} |
 | `videoqoeerrorcount` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.errors` | 对象 | 视频品质：错误计数 | {id （字符串），值（数字）} |
 | `videoqoedroppedframecount` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.droppedFrames` | 对象 | <!-- MISSING --> | {id （字符串），值（数字）} |
@@ -120,9 +120,9 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 
 ## 拆分映射字段
 
-这些字段只有一个源，但映射到 **多个** xdm位置。
+这些字段具有单个源，但映射到&#x200B;**多个** XDM位置。
 
-| Analytics 字段 | XDM字段 | XDM类型 | 描述 |
+| Analytics字段 | XDM字段 | XDM类型 | 描述 |
 | --------------- | --------- | -------- | ---------- |
 | `s_resolution` | `device.screenWidth`，<br/>`device.screenHeight` | 整数 | 表示显示器分辨率的数值ID。 |
 | `mobileosversion` | `environment.operatingSystem`，<br/>`environment.operatingSystemVersion` | 字符串 | 移动设备操作系统版本。 |
@@ -134,7 +134,7 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 
 必须转换来自ADC的选择字段，这要求在XDM中生成来自Adobe Analytics的直接副本以外的逻辑。
 
-| Analytics 字段 | XDM字段 | XDM类型 | 描述 |
+| Analytics字段 | XDM字段 | XDM类型 | 描述 |
 | --------------- | --------- | -------- | ----------- |
 | `m_prop1`<br/>`[...]`<br/>`m_prop75` | `_experience.analytics.customDimensions`<br/>`.listprops.prop1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`listprops.prop75` | 对象 | 自定义Analytics属性，配置为列表属性。 它包含分隔的值列表。 | {} |
 | `m_hier1`<br/>`[...]`<br/>`m_hier5` | `_experience.analytics.customDimensions.`<br/>`hierarchies.hier1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`hierarchies.hier5` | 对象 | 由层次结构变量使用。 它包含分隔的值列表。 | {values (array)， delimiter (string)} |
@@ -155,17 +155,17 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 | `m_pagename_no_url` | `web.webPageDetails.name` | 数字 | 页面的名称（如果已设置）。 如果未指定页面，此值将留空。 |
 | `m_paid_search` | `search.isPaid` | 布尔 | 如果点击与付费搜索检测相匹配，则设置此标记。 |
 | `m_product_list` | `productListItems[].items` | 数组 | 产品列表，通过products变量传入。 | {SKU （字符串）、数量（整数）、价格总计（数字）} |
-| `m_ref_type` | `web.webReferrer.type` | 字符串 | 表示点击的反向链接类型的数字 ID。<br/>`1`：网站内部<br/>`2`：其他网站<br/>`3`：搜索引擎<br/>`4`：硬盘<br/>`5`：用户端<br/>`6`：已输入/添加书签（无反向链接）<br/>`7`：电子邮件<br/>`8`：无JavaScript<br/>`9`：社交网络 |
+| `m_ref_type` | `web.webReferrer.type` | 字符串 | 表示点击的反向链接类型的数值ID。<br/>`1`：网站内<br/>`2`：其他网站<br/>`3`：搜索引擎<br/>`4`：硬盘<br/>`5`：未发送<br/>`6`：已输入/添加书签（无反向链接）<br/>`7`：电子邮件<br/>`8`：无JavaScript<br/>`9`：社交网络 |
 | `m_search_engine` | `search.searchEngine` | 字符串 | 表示将访客引荐至您的网站的搜索引擎的数值ID。 |
-| `post_currency` | `commerce.order.currencyCode` | 字符串 | 交易过程中使用的货币代码。 |
+| `post_currency` | `commerce.order.currencyCode` | 字符串 | 交易期间使用的货币代码。 |
 | `post_cust_hit_time_gmt` | `timestamp` | 字符串 | 这仅在启用了时间戳的数据集中使用。 这是随点击发送的时间戳，基于UNIX®时间。 |
 | `post_cust_visid` | `identityMap` | 对象 | 客户访客ID。 |
 | `post_cust_visid` | `endUserIDs._experience.aacustomid.primary` | 布尔 | 客户访客ID。 |
 | `post_cust_visid` | `endUserIDs._experience.aacustomid.namespace.code` | 字符串 | 客户访客ID。 |
 | `post_visid_high` + `visid_low` | `identityMap` | 对象 | 访问的唯一标识符。 |
 | `post_visid_high` + `visid_low` | `endUserIDs._experience.aaid.id` | 字符串 | 访问的唯一标识符。 |
-| `post_visid_high` | `endUserIDs._experience.aaid.primary` | 布尔 | 使用方式 `visid_low` 以唯一地标识访问。 |
-| `post_visid_high` | `endUserIDs._experience.aaid.namespace.code` | 字符串 | 使用方式 `visid_low` 以唯一地标识访问。 |
+| `post_visid_high` | `endUserIDs._experience.aaid.primary` | 布尔 | 与`visid_low`一起使用以唯一标识访问。 |
+| `post_visid_high` | `endUserIDs._experience.aaid.namespace.code` | 字符串 | 与`visid_low`一起使用以唯一标识访问。 |
 | `post_visid_low` | `identityMap` | 对象 | 与visid_high结合使用，用来唯一标识访问。 |
 | `hit_time_gmt` | `receivedTimestamp` | 字符串 | 点击的时间戳，基于UNIX®时间。 |
 | `hitid_high` + `hitid_low` | `_id` | 字符串 | 用于标识点击的唯一标识符。 |
@@ -188,9 +188,9 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 
 选择字段（称为“post values”）包含Adobe使用处理规则、VISTA规则和查找表调整其值后的数据。 大多数post值具有预处理的对应项。 贵组织可以决定是使用预处理字段、后处理字段，还是同时使用两者。
 
-要了解有关使用查询服务执行这些转换的更多信息，请参阅 [Adobe定义的函数](/help/query-service/sql/adobe-defined-functions.md) 查询服务用户指南中的。
+要了解有关使用查询服务执行这些转换的更多信息，请参阅查询服务用户指南中的[Adobe定义的函数](/help/query-service/sql/adobe-defined-functions.md)。
 
-| Analytics 字段 | XDM字段 | XDM类型 | 描述 |
+| Analytics字段 | XDM字段 | XDM类型 | 描述 |
 | --------------- | --------- | -------- | ---------- |
 | `post_evar1`<br/>`[...]`<br/>`post_evar250` | `_experience.analytics.customDimensions.`<br/>`eVars.eVar1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`eVars.eVar250` | 字符串 | 自定义Analytics eVar。 每个组织可以以不同的方式使用eVar。 |
 | `post_prop1`<br/>`[...]`<br/>`post_prop75` | `_experience.analytics.customDimensions.`<br/>`props.prop1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`props.prop75` | 字符串 | 自定义Analytics prop。 每个组织可以有不同的方式使用prop。 |
@@ -226,7 +226,7 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 | `post_prop1`<br/>`[...]`<br/>`post_prop75` | `_experience.analytics.customDimensions.`<br/>`listprops.prop1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`listprops.prop75` | 对象 | 自定义Analytics属性，配置为列表属性。 它包含分隔的值列表。 |
 | `post_hier1`<br/>`[...]`<br/>`post_hier5` | `_experience.analytics.customDimensions.`<br/>`hierarchies.hier1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`hierarchies.hier5` | 对象 | 由层次结构变量使用并包含分隔的值列表。 | {values (array)， delimiter (string)} |
 | `post_mvvar1`<br/>`[...]`<br/>`post_mvvar3` | `_experience.analytics.customDimensions.`<br/>`lists.list1.list[]`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`lists.list3.list[]` | 数组 | 变量值的列表。 包含分隔的自定义值列表，具体取决于实施。 | {值（字符串），键（字符串）} |
-| `post_cookies` | `environment.browserDetails.cookiesEnabled` | 布尔 | 在“Cookie 支持”维度中使用的变量。 |
+| `post_cookies` | `environment.browserDetails.cookiesEnabled` | 布尔 | 在“Cookie支持”维度中使用的变量。 |
 | `post_event_list` | `commerce.purchases`，<br/>`commerce.productViews`，<br/>`commerce.productListOpens`，<br/>`commerce.checkouts`，<br/>`commerce.productListAdds`，<br/>`commerce.productListRemovals`，<br/>`commerce.productListViews` | 对象 | 点击时触发的标准商务事件。 | {id （字符串），值（数字）} |
 | `post_event_list` | `_experience.analytics.event1to100.event1`<br/>`[...]`<br/>`_experience.analytics.event901to1000.event1000` | 对象 | 点击时触发的自定义事件。 | {id（对象），值（对象）} |
 | `post_java_enabled` | `environment.browserDetails.javaEnabled` | 布尔 | 指示Java™是否已启用的标记。 |
@@ -246,11 +246,11 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 | `color` | `device.colorDepth` | 整数 | 颜色深度ID，基于c_color列的值。 |
 | `first_hit_ref_type` | `_experience.analytics.endUser.`<br/>`firstWeb.webReferrer.type` | 字符串 | 数值ID，表示访客的第一个反向链接的反向链接类型。 |
 | `first_hit_time_gmt` | `_experience.analytics.endUser.`<br/>`firstTimestamp` | 整数 | 访客第一次点击的时间戳(以UNIX®时间表示)。 |
-| `geo_country` | `placeContext.geo.countryCode` | 字符串 | 点击来源国家/地区的缩写，基于 IP 地址。 |
+| `geo_country` | `placeContext.geo.countryCode` | 字符串 | 点击来源国家/地区的缩写，基于IP地址。 |
 | `geo_latitude` | `placeContext.geo._schema.latitude` | 数字 | <!-- MISSING --> |
 | `geo_longitude` | `placeContext.geo._schema.longitude` | 数字 | <!-- MISSING --> |
 | `paid_search` | `search.isPaid` | 布尔 | 如果点击与付费搜索检测相匹配，则设置此标记。 |
-| `ref_type` | `web.webReferrer.type` | 字符串 | 表示点击的反向链接类型的数字 ID。 |
+| `ref_type` | `web.webReferrer.type` | 字符串 | 表示点击的反向链接类型的数值ID。 |
 | `visit_paid_search` | `_experience.analytics.session.`<br/>`search.isPaid` | 布尔 | 指示访问的第一次点击是否来自付费搜索点击的标志（1=付费，0=未付费）。 |
 | `visit_ref_type` | `_experience.analytics.session.`<br/>`web.webReferrer.type` | 字符串 | 表示访问的第一个反向链接的反向链接类型的数值ID。 |
 | `visit_search_engine` | `_experience.analytics.session.`<br/>`search.searchEngine` | 字符串 | 访问的第一个搜索引擎的数值ID。 |

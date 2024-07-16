@@ -1,6 +1,6 @@
 ---
 title: Experience PlatformUI导览
-description: 此视频快速导览Adobe Experience Platform的用户界面，向您说明如何从Experience Cloud、主页仪表板、界面的支持功能、沙盒切换器和导航元素导航到Experience Platform。
+description: 此视频快速导览Adobe Experience Platform的用户界面，向您展示如何从Experience Cloud、主页仪表板、界面的支持功能、沙盒切换器和导航元素导航到Experience Platform。
 kt: 4821
 audience: all
 doc-type: video
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Experience Platform用户界面经常更新，自从录制此视频以来，可能已经更改。 欲了解最新信息，请访问 [Adobe Experience Platform UI指南](../ui-guide.md).
+>Experience Platform用户界面经常更新，自从录制此视频以来，该界面可能已发生更改。 有关最新信息，请访问[Adobe Experience Platform用户界面指南](../ui-guide.md)。
 
 
 >[!VIDEO](https://video.tv.adobe.com/v/32792?quality=12&learn=on)

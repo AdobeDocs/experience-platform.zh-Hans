@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Adobe Real-time Customer Data Platform (Real-Time CDP)构建于Adobe Experience Platform之上，可帮助企业汇总来自多个企业的已知和匿名数据，以创建可用于实时跨所有渠道和设备提供个性化客户体验的客户档案。
 
-![各种Experience Platform应用程序的概述，重点介绍了Real-Time CDP。](/help/rtcdp/assets/platform-apps-overview.png)
+![各种Experience Platform应用概述，突出显示Real-Time CDP。](/help/rtcdp/assets/platform-apps-overview.png)
 
 Real-Time CDP包括用于数据治理、身份管理、高级分段和数据科学的工具，以便您可以构建用户档案和定义受众，以及在能够强制执行严格的数据治理策略的同时获得丰富的见解。
 
@@ -51,25 +51,25 @@ Real-Time CDP可连接到由众多合作伙伴组成的大型生态系统，更�
 
 ### Adobe Real-time Customer Data Platform — 企业对消费者(B2C)版 {#rtcdp-b2c}
 
-Real-Time CDP Business-to-Consumer (B2C)是为B2C营销人员专门构建的，用于统一、管理和激活所有 *使用者数据* 跨系统和渠道，提供更加个性化的客户体验和完整的数据让您高枕无忧。
+Real-Time CDP Business-to-Consumer (B2C)是为B2C营销人员专门构建的，用于统一、管理和激活跨系统和渠道的所有&#x200B;*消费者数据*，以实现更个性化的客户体验和完整的数据，让您高枕无忧。
 
 ### Adobe Real-time Customer Data Platform - Business-to-Business (B2B)版本 {#rtcdp-b2b}
 
-Real-Time CDP Business-to-Business (B2B)是为B2B营销人员专门构建的，用于统一、管理和激活所有 *商机和帐户数据* 跨系统和渠道，提供更加个性化的客户体验和完整的数据让您高枕无忧
+Real-Time CDP Business-to-Business (B2B)是为B2B营销人员专门构建的，用于统一、管理和激活跨系统和渠道的所有&#x200B;*潜在客户和帐户数据*，以实现更个性化的客户体验和完整的数据，让您高枕无忧
 
 Real-Time CDP B2B版本允许营销人员为人员和帐户创建完整的配置文件。 具体来说，您可以从统一帐户配置文件的集中存储中扩充、分段和导出所有跨源数据。 使用可在集中化过程的每个步骤获得的数据治理工具，可以管理这些数据。
 
-请参阅 [Real-Time CDP B2B版本概述](./b2b-overview.md) 以了解更全面的信息。
+有关更全面的信息，请参阅[Real-Time CDP B2B Edition概述](./b2b-overview.md)。
 
 ### Adobe Real-time Customer Data Platform — 企业对个人(B2P)版本 {#rtcdp-b2p}
 
-使用Real-Time CDP的企业对个人(B2P)版本，您可以统一、管理和激活您的 *B2C和B2B客户数据* 使用单个CDP跨所有业务线定位同一人，提供无缝体验和完全的数据让您高枕无忧。
+使用Real-Time CDP的企业对个人(B2P)版本，您可以使用单个CDP来统一、管理和激活您的&#x200B;*B2C和B2B客户数据*，从而以无缝体验和完全的数据高枕无忧的方式将同一人定位到所有业务线中。
 
-通过此版本，您可获得完整的客户数据平台，用于 *B2C和B2B* 企业，跨所有业务线为同一人个性化体验。
+通过此版本，您将获得&#x200B;*B2C和B2B*&#x200B;业务的完整客户数据平台，以便跨所有业务线为同一人提供个性化的体验。
 
 ## 其他信息
 
-要了解有关Adobe Experience Platform的更多信息，请从阅读 [Experience Platform概述](../landing/home.md).
+要了解有关Adobe Experience Platform的更多信息，请从阅读[Experience Platform概述](../landing/home.md)开始。
 
 推荐以下文档来帮助您开始使用Real-time Customer Data Platform：
 
@@ -82,4 +82,4 @@ Real-Time CDP B2B版本允许营销人员为人员和帐户创建完整的配置
 
 ## 术语表
 
-使用 [**术语表**](/help/landing/glossary.md) 用于查看Real-Time CDP和Adobe Experience Platform术语的页面。
+使用&#x200B;[**术语表**](/help/landing/glossary.md)&#x200B;页面查看Real-Time CDP和Adobe Experience Platform术语。

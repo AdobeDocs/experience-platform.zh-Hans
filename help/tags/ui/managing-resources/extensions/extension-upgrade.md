@@ -1,11 +1,11 @@
 ---
 title: 扩展升级
-description: 了解扩展升级如何在扩展目录中打包和显示。
+description: 了解扩展升级在扩展目录中如何打包和呈现。
 exl-id: 4a7e0c5c-4bd1-4fb8-8509-f88a0aa42ac4
 source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
 source-wordcount: '682'
-ht-degree: 76%
+ht-degree: 72%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 76%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 扩展开发人员会不断向其扩展中添加新功能，并且还经常修复错误。这些更新将打包到扩展的新版本中，并在扩展目录中作为升级提供。
 
@@ -25,7 +25,7 @@ ht-degree: 76%
 
 ## 升级通知
 
-当您在资产上安装了扩展，并且目录中提供了较新版本时，您将看到 [!UICONTROL 升级] 按钮进行查看。
+如果您在资产上安装了扩展，并且目录中提供了较新的版本，则当您查看Installed Extensions页面时，您将在扩展卡片上看到[!UICONTROL 升级]按钮。
 
 编辑该扩展提供的资源时，您也会看到通知。
 
@@ -41,11 +41,11 @@ ht-degree: 76%
 
 安装升级的过程与首次安装扩展的过程大致相同。
 
-1. 选择 **[!UICONTROL 升级]** 以转到 [!UICONTROL 扩展配置] 屏幕。
+1. 选择&#x200B;**[!UICONTROL 升级]**&#x200B;以转到[!UICONTROL 扩展配置]屏幕。
 1. 根据需要做出任何配置更改。
 1. 选择&#x200B;**[!UICONTROL 保存]**。
 
-在您点击之前，实际不会执行升级 **[!UICONTROL 保存]**. 在此之前的任何时间，您都可以选择 [!UICONTROL 取消] 并继续使用当前安装的版本。 选择 **[!UICONTROL 保存]** 是无法回访的意义。
+在您点击&#x200B;**[!UICONTROL 保存]**&#x200B;之前，实际不会执行升级。 在此之前的任何时间，您都可以选择[!UICONTROL 取消]，并继续使用当前安装的版本。 选择&#x200B;**[!UICONTROL 保存]**&#x200B;后将无法撤销。
 
 如果您的库处于 `Approved` 或 `Submitted` 状态，则不允许执行扩展升级。这是因为下一个生成版本必须包含新的扩展版本。对于处于 `Approved` 或 `Submitted` 状态的库，下一个生成版本是生产版本。该生成操作将由于不包含最新版本而失败，因此工作流程是在升级扩展&#x200B;_之前_&#x200B;发布或拒绝处于 `Approved` 或 `Submitted` 状态的库。
 
@@ -55,7 +55,7 @@ ht-degree: 76%
 
 除此之外，将已升级的扩展添加到库的方式与[将任何其他更改添加到库](../../publishing/libraries.md)的方式相同。
 
-从 [!UICONTROL 编辑库] 屏幕，您可以使用“[!UICONTROL 添加所有更改的资源]”按钮，或者您可以使用“[!UICONTROL 添加资源]”按钮并自行选择已升级的扩展。
+在[!UICONTROL Edit Library]屏幕中，您可以使用“[!UICONTROL Add All Changed Resources]”按钮，也可以使用“[!UICONTROL Add a Resource]”按钮并自行选择升级的扩展。
 
 >[!TIP]
 >

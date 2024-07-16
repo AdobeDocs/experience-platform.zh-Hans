@@ -6,7 +6,7 @@ description: Adobe Experience Platform提供的API服务彼此密切相关。 �
 exl-id: a362bcb4-a908-43a8-abd3-0e1d21cb9117
 source-git-commit: c728d63c22593ca56999dd0bb6679dea7de0e00a
 workflow-type: tm+mt
-source-wordcount: '1412'
+source-wordcount: '1405'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Adobe Experience Platform是根据“API优先”的理念开发的。 使用Pla
 
 ## 身份验证和标头
 
-要成功调用Platform端点，您需要完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将提供Experience PlatformAPI调用中每个所需标头的值，如下所示：
+要成功调用Platform端点，您需要完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程将提供Experience PlatformAPI调用中每个所需标头的值，如下所示：
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
@@ -31,31 +31,31 @@ Experience Platform中的所有资源都被隔离到特定的虚拟沙盒中。 
 
 - `x-sandbox-name: {SANDBOX_NAME}`
 
-有关Platform中沙盒的更多信息，请参阅 [沙盒概述文档](../sandboxes/home.md).
+有关Platform中沙盒的更多信息，请参阅[沙盒概述文档](../sandboxes/home.md)。
 
 ### 内容类型标头
 
-所有在请求正文中具有有效负载的请求(例如POST、PUT和PATCH调用)都必须包含 `Content-Type` 标题。 接受的值特定于每个API端点。 如果 `Content-Type` 端点需要值，其值将显示在提供的示例API请求中。 [适用于各个平台服务的API指南](#api-guides).
+所有在请求正文中具有有效负载的请求(如POST、PUT和PATCH调用)都必须包含`Content-Type`标头。 接受的值特定于每个API端点。 如果端点需要特定的`Content-Type`值，其值将显示在[API指南为各个Platform服务](#api-guides)提供的示例API请求中。
 
 ## Experience PlatformAPI基础知识
 
 Adobe Experience Platform API采用多种底层技术和语法，这些技术和语法对于有效管理Platform资源非常重要，需要了解。
 
-要详细了解Platform使用的底层API技术，包括示例JSON模式对象，请访问 [Experience PlatformAPI基础知识](api-fundamentals.md) 指南。
+要了解有关Platform使用的基础API技术的更多信息，包括示例JSON模式对象，请访问[Experience PlatformAPI基础知识](api-fundamentals.md)指南。
 
 ## Experience PlatformAPI的Postman收藏集
 
 Postman是API开发的协作平台，允许您使用预设变量设置环境、共享API收藏集、简化CRUD请求等。 大多数Platform API服务都具有Postman集合，这些集合可用于协助进行API调用。
 
-要了解有关Postman的更多信息（包括如何设置环境、可用收藏集列表以及如何导入收藏集），请访问 [Platform Postman文档](postman.md).
+要了解有关Postman的更多信息（包括如何设置环境、可用收藏集列表以及如何导入收藏集），请访问[Platform Postman文档](postman.md)。
 
 ## 正在读取示例 API 调用 {#sample-api}
 
 请求格式因所使用的平台API而异。 了解如何构建API调用结构的最佳方法是，按照与所使用的特定Platform服务的文档提供的示例进行操作。
 
-的文档 [!DNL Experience Platform] 以两种不同的方式显示API调用示例。 首先，调用会显示在其 **API格式**，一种模板表示形式，仅显示操作(GET、POST、PUT、PATCH、DELETE)和正在使用的端点(例如， `/global/classes`)。 某些模板还显示变量的位置，以帮助说明应如何制定调用，例如 `GET /{VARIABLE}/classes/{ANOTHER_VARIABLE}`.
+[!DNL Experience Platform]的文档以两种不同的方式显示示例API调用。 首先，调用以其&#x200B;**API格式**&#x200B;呈现，模板表示仅显示操作(GET、POST、PUT、PATCH、DELETE)和正在使用的端点（例如`/global/classes`）。 某些模板还显示变量的位置，以帮助说明应如何制定调用，如`GET /{VARIABLE}/classes/{ANOTHER_VARIABLE}`。
 
-然后，调用将作为中的cURL命令显示 **请求**，包括成功与API交互所需的必要标头和完整“基本路径”。 基本路径应预先附加到所有端点。 例如，前面提到的 `/global/classes` 终结点变为 `https://platform.adobe.io/data/foundation/schemaregistry/global/classes`. 您将在整个文档中看到API格式/请求模式，并在自行调用Platform API时，应使用示例请求中显示的完整路径。
+然后，这些调用在&#x200B;**请求**&#x200B;中显示为cURL命令，其中包括成功与API交互所需的必要标头和完整的“基本路径”。 基本路径应预先附加到所有端点。 例如，前面提到的`/global/classes`端点变为`https://platform.adobe.io/data/foundation/schemaregistry/global/classes`。 您将在整个文档中看到API格式/请求模式，并在自行调用Platform API时，应使用示例请求中显示的完整路径。
 
 ### 示例API请求
 
@@ -63,7 +63,7 @@ Postman是API开发的协作平台，允许您使用预设变量设置环境、�
 
 **API格式**
 
-API格式显示了正在使用的操作(GET)和端点。 变量由大括号指示(在本例中， `{CONTAINER_ID}`)。
+API格式显示了正在使用的操作(GET)和端点。 变量用大括号指示（在本例中为`{CONTAINER_ID}`）。
 
 ```http
 GET /{CONTAINER_ID}/classes
@@ -109,39 +109,39 @@ curl -X GET \
 
 ## 错误消息
 
-此 [平台疑难解答指南](troubleshooting.md#errors-and-troubleshooting) 提供了在使用任何Experience Platform服务时可能遇到的错误列表。
+[平台疑难解答指南](troubleshooting.md#errors-and-troubleshooting)提供了在使用任何Experience Platform服务时可能遇到的错误列表。
 
-有关各平台服务的故障排除指南，请参阅 [服务疑难解答目录](troubleshooting.md#service-troubleshooting-directory).
+有关单个Platform服务的故障排除指南，请参阅[服务故障排除目录](troubleshooting.md#service-troubleshooting-directory)。
 
-有关Platform API中特定端点的更多信息，包括所需的标头和请求正文，请参阅 [平台API指南](#api-guides).
+有关Platform API中特定端点的更多信息，包括所需的标头和请求正文，请参阅[Platform API指南](#api-guides)。
 
 ## 平台API指南 {#api-guides}
 
 | API指南 | 描述 |
 | --- | --- |
-| [[!DNL Access Control] API指南](.././access-control/api/getting-started.md) | 此 [!DNL Access Control] API端点可以检索指定沙盒内给定资源上某个用户生效的当前策略。 所有其他访问控制功能均通过 [Adobe Admin Console](https://adminconsole.adobe.com/). |
-| [批量摄取API指南](.././ingestion/batch-ingestion/api-overview.md) | Adobe Experience Platform [!DNL Data Ingestion] API允许您将数据作为批处理文件接入Platform。 所摄取的数据可以是来自CRM系统中平面文件（如Parquet文件）的配置文件数据，也可以是与架构注册表(XDM)中的已知架构相符的数据。 |
-| [[!DNL Catalog Service] API指南](.././catalog/api/getting-started.md) | 此 [!DNL Catalog Service] API允许开发人员在Adobe Experience Platform中管理数据集元数据。 这包括数据位置、处理阶段、处理期间发生的错误和数据报表。 |
-| [[!DNL Data Access] API指南](.././data-access/api.md) | 此 [!DNL Data Access] API允许开发人员检索Experience Platform中已摄取数据集的信息。 这包括访问和下载数据集文件、检索标头信息、列出失败和成功的批处理，以及下载预览CSV/Parquet文件。 |
+| [[!DNL Access Control] API指南](.././access-control/api/getting-started.md) | [!DNL Access Control] API终结点可以在指定沙盒内的给定资源上检索某个用户有效的当前策略。 所有其他访问控制功能均通过[Adobe Admin Console](https://adminconsole.adobe.com/)提供。 |
+| [批次摄取API指南](.././ingestion/batch-ingestion/api-overview.md) | Adobe Experience Platform [!DNL Data Ingestion] API允许您将数据作为批处理文件摄取到Platform中。 所摄取的数据可以是来自CRM系统中平面文件（如Parquet文件）的配置文件数据，也可以是与架构注册表(XDM)中的已知架构相符的数据。 |
+| [[!DNL Catalog Service] API指南](.././catalog/api/getting-started.md) | [!DNL Catalog Service] API允许开发人员在Adobe Experience Platform中管理数据集元数据。 这包括数据位置、处理阶段、处理期间发生的错误和数据报表。 |
+| [[!DNL Data Access] API指南](.././data-access/api.md) | [!DNL Data Access] API允许开发人员检索Experience Platform中已摄取数据集的信息。 这包括访问和下载数据集文件、检索标头信息、列出失败和成功的批处理，以及下载预览CSV/Parquet文件。 |
 | [[!DNL Dataset Service] API指南](.././data-governance/labels/dataset-api.md) | 数据集服务API允许您应用和编辑数据集的使用标签。 它是Adobe Experience Platform数据目录功能的一部分，但与管理数据集元数据的目录服务API不同。 |
-| [[!DNL Edge Network Server] API指南](../server-api/overview.md) | 此 [!DNL Edge Network Server API] 可用于各种数据收集、个性化、广告和营销用例。 此 [!DNL Server API] 可以在服务器上使用， [!DNL IoT] 设备、机顶盒和其他各种设备。 |
-| [[!DNL Identity Service] API指南](.././identity-service/api/getting-started.md) | 此 [!DNL Identity Service] API允许开发人员在Adobe Experience Platform中使用身份图管理客户的跨设备、跨渠道和近乎实时的身份识别。 |
-| [[!DNL Observability Insights] API指南](.././observability/api/overview.md) | [!DNL Observability Insights] 是一个RESTful API，它允许开发人员在Adobe Experience Platform中公开关键的可观察性指标。 这些量度可深入分析平台使用统计数据、Platform服务的运行状况检查、历史趋势和各种Platform功能的性能指标。 |
-| [[!DNL Policy Service] API指南](.././data-governance/api/overview.md) <br> （数据管理） | 此 [!DNL Policy Service] API允许您创建和管理数据使用标签和策略，以确定可以对包含特定数据使用标签的数据执行哪些营销操作。 要将标签应用于数据集和字段，请参阅 [[!DNL Dataset Service] API](.././data-governance/labels/dataset-api.md) 指南 |
-| [[!DNL Privacy Service] API指南](.././privacy-service/api/getting-started.md) | 此 [!DNL Privacy Service] API允许开发人员在遵守隐私法规的情况下，创建和管理客户跨Experience Cloud应用程序访问或删除其个人数据的请求。 |
-| [[!DNL Query Service] API指南](.././query-service/api/getting-started.md) | 此 [!DNL Query Service] API允许开发人员使用标准SQL查询其Adobe Experience Platform数据。 |
+| [[!DNL Edge Network Server] API指南](../server-api/overview.md) | [!DNL Edge Network Server API]可用于各种数据收集、个性化、广告和营销用例。 [!DNL Server API]可用于服务器、[!DNL IoT]设备、机顶盒和其他各种设备。 |
+| [[!DNL Identity Service] API指南](.././identity-service/api/getting-started.md) | [!DNL Identity Service] API允许开发人员使用Adobe Experience Platform中的标识图管理客户的跨设备、跨渠道和近乎实时的身份识别。 |
+| [[!DNL Observability Insights] API指南](.././observability/api/overview.md) | [!DNL Observability Insights]是一个RESTful API，它允许开发人员在Adobe Experience Platform中公开关键可观察性指标。 这些量度可深入分析平台使用统计数据、Platform服务的运行状况检查、历史趋势和各种Platform功能的性能指标。 |
+| [[!DNL Policy Service] API指南](.././data-governance/api/overview.md) <br> （数据管理） | [!DNL Policy Service] API允许您创建和管理数据使用标签和策略，以确定可以对包含特定数据使用标签的数据执行哪些营销操作。 要将标签应用于数据集和字段，请参阅[[!DNL Dataset Service] API](.././data-governance/labels/dataset-api.md)指南 |
+| [[!DNL Privacy Service] API指南](.././privacy-service/api/getting-started.md) | [!DNL Privacy Service] API允许开发人员创建和管理客户请求，以访问或删除他们跨Experience Cloud应用程序的个人数据，从而符合隐私法规。 |
+| [[!DNL Query Service] API指南](.././query-service/api/getting-started.md) | [!DNL Query Service] API允许开发人员使用标准SQL查询其Adobe Experience Platform数据。 |
 | [[!DNL Real-Time Customer Profile] API指南](.././profile/api/overview.md) | 实时客户个人资料API允许开发人员探索和使用个人资料数据，包括查看个人资料、创建和更新合并策略、导出或取样个人资料数据，以及删除不再需要或添加错误的个人资料数据。 |
 | [沙盒API指南](.././sandboxes/api/getting-started.md) | 沙盒API允许开发人员以编程方式管理Adobe Experience Platform中的独立虚拟沙盒环境。 |
-| [[!DNL Schema Registry] API指南](.././xdm/api/overview.md) <br> (XDM) | 此 [!DNL Schema Registry] API允许开发人员以编程方式管理Adobe Experience Platform中的所有架构和相关体验数据模型(XDM)资源。 |
-| [[!DNL Segmentation Service] API指南](.././segmentation/api/overview.md) | 此 [!DNL Segmentation Service] API允许开发人员以编程方式管理Adobe Experience Platform中的分段操作。 这包括从实时客户档案数据构建区段和生成受众。 |
-| [[!DNL Sensei Machine Learning] API指南](.././data-science-workspace/api/getting-started.md) <br> （数据科学工作区） | 此 [!DNL Sensei Machine Learning] API为数据科学家提供了一种机制，可用于组织和管理机器学习(ML)服务，从算法载入、实验到服务部署。 |
+| [[!DNL Schema Registry] API指南](.././xdm/api/overview.md) <br> (XDM) | [!DNL Schema Registry] API允许开发人员以编程方式管理Adobe Experience Platform中的所有架构和相关体验数据模型(XDM)资源。 |
+| [[!DNL Segmentation Service] API指南](.././segmentation/api/overview.md) | [!DNL Segmentation Service] API允许开发人员以编程方式管理Adobe Experience Platform中的分段操作。 这包括从实时客户档案数据构建区段和生成受众。 |
+| [[!DNL Sensei Machine Learning] API指南](.././data-science-workspace/api/getting-started.md) <br> (数据科学Workspace) | [!DNL Sensei Machine Learning] API为数据科学家提供了一种机制，可用于组织和管理机器学习(ML)服务，从算法载入、实验到服务部署。 |
 
-欲知关于每项服务可用的特定端点和操作的更多信息，请参见 [API参考文档](https://www.adobe.com/go/platform-api-reference-en) Adobe I/O时。
+有关每个服务可用的特定端点和操作的更多信息，请参阅Adobe I/O上的[API参考文档](https://www.adobe.com/go/platform-api-reference-en)。
 
 ## 后续步骤
 
-本文档介绍了所需的标头、可用的指南，并提供了一个示例API调用。 现在，您已在Adobe Experience Platform上进行API调用所需的标头值，请从中选择要探索的API端点 [平台API指南表](#api-guides).
+本文档介绍了所需的标头、可用的指南，并提供了一个示例API调用。 现在您已具有在Adobe Experience Platform上进行API调用所需的标头值，请从[Platform API指南表](#api-guides)中选择要探索的API端点。
 
-有关常见问题的解答，请参阅 [平台疑难解答指南](troubleshooting.md).
+有关常见问题的解答，请参阅[平台疑难解答指南](troubleshooting.md)。
 
-要设置Postman环境并探索可用的Postman收藏集，请参阅 [Platform Postman指南](postman.md).
+要设置Postman环境并浏览可用的Postman收藏集，请参阅[平台Postman指南](postman.md)。

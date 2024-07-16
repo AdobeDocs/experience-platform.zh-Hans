@@ -4,20 +4,20 @@ description: Adobe Experience Platform中的“常用Analytics插件”标记扩
 exl-id: 5ea4b709-4e21-4f5d-be99-e72e4889ed99
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
-source-wordcount: '329'
+source-wordcount: '352'
 ht-degree: 55%
 
 ---
 
-# 常见Analytics插件发行说明
+# 常用Analytics插件发行说明
 
-## 2022 年 6 月 03 日
+## 2022年6月3日
 
 ### “常用 Analytics 插件”扩展 3.0.7
 
 #### 功能
 
-* 设置Cookie的插件现在使用安全标记
+* 设置Cookie的插件现在使用secure标记
 
 ## 2021年6月23日
 
@@ -42,8 +42,8 @@ ht-degree: 55%
 #### 错误修复
 
 * 修复了getPageLoadTime在窗口对象上错误设置变量的问题
-* 修复了当queryParam不存在于查询字符串中时，getQueryParam返回undefined而不是“”的问题
-* 修复了初始化操作中显示版本号不正确的问题
+* 修复了以下问题：如果查询字符串中不存在queryParam，则getQueryParam返回undefined而非“”
+* 修复了在初始化操作中显示错误版本号的问题
 
 ## 2021 年 3 月 19 日
 
@@ -51,7 +51,7 @@ ht-degree: 55%
 
 #### 功能
 
-* 更新了所有插件以自动包含版本信息作为上下文数据
+* 更新了所有插件，以自动包含版本信息作为上下文数据
 * 添加了getPercentPageViewed插件
 * 为以下插件添加了数据元素
    * getGeoCoordinates
@@ -62,7 +62,7 @@ ht-degree: 55%
    * getTimeSinceLastVisit
    * getVisitDuration
    * getVisitNum
-* 更新的样式
+* 已更新样式
 
 ## 2020 年 4 月 9 日
 
@@ -127,5 +127,5 @@ ht-degree: 55%
 
 #### 功能
 
-* 扩展随七个插件一起发布
+* 扩展发布，其中七个插件
 * 可用于分别初始化每个插件的单个操作

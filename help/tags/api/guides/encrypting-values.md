@@ -4,20 +4,21 @@ description: 了解如何在使用Reactor API时加密敏感值。
 exl-id: d89e7f43-3bdb-40a5-a302-bad6fd1f4596
 source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
-source-wordcount: '392'
+source-wordcount: '366'
 ht-degree: 1%
 
 ---
 
 # 加密值
 
-使用Adobe Experience Platform中的标记时，某些工作流需要提供敏感值（例如，在通过主机将库交付到环境时提供私钥）。 这些凭据的敏感性质要求安全传输和存储。
+使用Adobe Experience Platform中的标记时，某些工作流需要提供敏感值（例如，在通过主机将库交付到环境时提供私钥）。 这些凭证的敏感性质是必要的
+安全传输和存储。
 
-本文档介绍如何使用加密敏感值 [GnuPG加密](https://www.gnupg.org/gph/en/manual/x110.html) （也称为GPG），以便只有标签系统才能读取它们。
+本文档介绍如何使用[GnuPG加密](https://www.gnupg.org/gph/en/manual/x110.html)（也称为GPG）来加密敏感值，以便只有标记系统才能读取它们。
 
 ## 获取公共GPG密钥和校验和
 
-晚于 [正在下载](https://gnupg.org/download/) 并安装最新版本的GPG，您必须获取用于标记生产环境的公共GPG密钥：
+在[下载](https://gnupg.org/download/)并安装最新版本的GPG后，您必须获取标记生产环境的公共GPG密钥：
 
 * [GPG密钥](https://github.com/adobe/reactor-developer-docs/blob/master/files/launch%40adobe.com_pub.gpg)
 * [校验和](https://github.com/adobe/reactor-developer-docs/blob/master/files/launch%40adobe.com_pub.gpg.sum)
@@ -46,7 +47,7 @@ gpg --import launch@adobe.com_pub.gpg
 
 ## 加密值
 
-将密钥添加到密钥链后，可以使用 `--encrypt` 标志。 以下脚本演示了此命令的工作方式：
+将密钥添加到密钥链后，可以使用`--encrypt`标记开始加密值。 以下脚本演示了此命令的工作方式：
 
 ```shell
 echo -n 'Example value' | gpg --armor --encrypt -r "Tags Data Encryption <launch@adobe.com>"
@@ -54,12 +55,12 @@ echo -n 'Example value' | gpg --armor --encrypt -r "Tags Data Encryption <launch
 
 此命令可按如下方式划分：
 
-* 输入已提供给 `gpg` 命令。
-* `--armor` 创建ASCII装甲输出，而不是二进制输出。 这简化了通过JSON传输值的过程。
-* `--encrypt` 指示GPG加密数据。
-* `-r` 设置数据的收件人。 只有收件人（与公钥对应的私钥的持有者）可以解密数据。 可以通过检查的输出，找到所需密钥的收件人名称 `gpg --list-keys`.
+* 输入已提供给`gpg`命令。
+* `--armor`创建ASCII装甲输出，而不是二进制输出。 这简化了通过JSON传输值的过程。
+* `--encrypt`指示GPG加密数据。
+* `-r`为数据设置收件人。 只有收件人（与公钥对应的私钥的持有者）可以解密数据。 通过检查`gpg --list-keys`的输出可以找到所需密钥的收件人名称。
 
-上述命令将公钥用于 `Tags Data Encryption <launch@adobe.com>` 加密该值， `Example value`，采用ASCII装甲格式。
+上述命令使用`Tags Data Encryption <launch@adobe.com>`的公共密钥以ASCII装甲格式加密值`Example value`。
 
 该命令的输出将类似于以下内容：
 
@@ -83,10 +84,11 @@ OUoIPf4KxTaboHZOEy32ZBng5heVrn4i9w==
 -----END PGP MESSAGE-----
 ```
 
-此输出只能由拥有与 `Tags Data Encryption <launch@adobe.com>` 公钥。
+此输出只能由拥有私钥的系统解密，
+对应于`Tags Data Encryption <launch@adobe.com>`公钥。
 
-此输出是将数据发送到Reactor API时应在中提供的值。 系统存储该加密输出，并在必要时对其进行临时解密。 例如，系统会解密足够长的主机凭据以启动与服务器的连接，然后立即删除解密值的所有跟踪。
+此输出是在向Reactor API发送数据时应在中提供的值。 系统存储该加密输出，并在必要时临时解密。 例如，系统会解密足够长的主机凭据以启动与服务器的连接，然后立即删除已解密值的所有跟踪。
 
 >[!NOTE]
 >
->装甲加密值格式很重要。 确保返回的行在请求中提供的值中正确转义。
+>装甲、加密的格式很重要。 确保返回的行在请求中提供的值中正确转义。

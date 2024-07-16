@@ -16,13 +16,13 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-Adobe Experience Platform Web SDK允许您收集 [Adobe Analytics for Target (A4T)](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html) Web应用程序客户端的数据。
+Adobe Experience Platform Web SDK允许您在Web应用程序的客户端收集[Adobe Analytics for Target (A4T)](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html)数据。
 
-客户端日志记录意味着相关 [!DNL Target] 数据将在客户端返回，允许您收集这些数据并与Analytics共享。 如果您打算使用手动将数据发送到Analytics，则应启用此选项 [数据插入API](https://experienceleague.adobe.com/docs/analytics/import/c-data-insertion-api.html).
+客户端日志记录意味着相关[!DNL Target]数据将在客户端返回，允许您收集这些数据并与Analytics共享。 如果您打算使用[数据插入API](https://experienceleague.adobe.com/docs/analytics/import/c-data-insertion-api.html)手动将数据发送到Analytics，则应启用此选项。
 
 >[!NOTE]
 >
->一种使用执行此操作的方法 [AppMeasurement.js](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html) 目前正在开发中，将在不久的将来提供。
+>使用[AppMeasurement.js](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html)执行此操作的方法目前正在开发中，将在不久的将来提供。
 
 本文档介绍了为Web SDK设置客户端A4T日志记录的步骤，并提供一些常见用例的实施示例。
 
@@ -40,13 +40,13 @@ Adobe Experience Platform Web SDK允许您收集 [Adobe Analytics for Target (A4
 
 ### 启用Analytics客户端日志 {#enable-analytics-client-side-logging}
 
-要考虑为实施启用Analytics客户端日志记录，您必须在中禁用Adobe Analytics配置， [数据流](../../../../datastreams/overview.md).
+若要考虑为实施启用Analytics客户端日志记录，您必须在[数据流](../../../../datastreams/overview.md)中禁用Adobe Analytics配置。
 
 ![已禁用Analytics数据流配置](../assets/disable-analytics-datastream.png)
 
-### Retrieve [!DNL A4T] 来自SDK的数据并将其发送到Analytics {#a4t-to-analytics}
+### 从SDK检索[!DNL A4T]数据并将其发送到Analytics {#a4t-to-analytics}
 
-为了使此报告方法正常工作，您必须发送 [!DNL A4T] 从检索到的相关数据 [`sendEvent`](/help/web-sdk/commands/sendevent/overview.md) Analytics点击中的命令。
+为了使此报告方法正常工作，您必须发送从Analytics点击中的[`sendEvent`](/help/web-sdk/commands/sendevent/overview.md)命令检索到的[!DNL A4T]相关数据。
 
 当Target Edge计算建议响应时，它会检查是否启用Analytics客户端日志记录（即，是否在数据流中禁用Analytics）。 如果启用了客户端日志记录，则系统会向响应中的每个建议添加一个Analytics令牌。
 
@@ -54,7 +54,7 @@ Adobe Experience Platform Web SDK允许您收集 [Adobe Analytics for Target (A4
 
 ![客户端日志记录流程](../assets/analytics-client-side-logging.png)
 
-以下是 `interact` 启用Analytics客户端日志记录时的响应。 如果建议适用于具有Analytics报表的活动，则它具有 `scopeDetails.characteristics.analyticsToken` 属性。
+以下是启用Analytics客户端日志记录时的`interact`响应示例。 如果建议适用于具有Analytics报表的活动，则它将具有`scopeDetails.characteristics.analyticsToken`属性。
 
 ```json
 {
@@ -136,7 +136,7 @@ Adobe Experience Platform Web SDK允许您收集 [Adobe Analytics for Target (A4
 }
 ```
 
-基于表单的体验编辑器活动的建议可以同时包含同一建议下的内容和点击量度项目。 因此，内容显示不会只有一个分析令牌 `scopeDetails.characteristics.analyticsToken` 属性，这些属性可以在中同时指定显示和点击分析令牌 `scopeDetails.characteristics.analyticsDisplayToken` 和 `scopeDetails.characteristics.analyticsClickToken` 属性，则相应地。
+基于表单的体验编辑器活动的建议可以同时包含同一建议下的内容和点击量度项目。 因此，它们可以相应地在`scopeDetails.characteristics.analyticsDisplayToken`和`scopeDetails.characteristics.analyticsClickToken`属性中同时指定显示和点击分析令牌，而不是在`scopeDetails.characteristics.analyticsToken`属性中只显示一个分析令牌。
 
 ```json
 {
@@ -204,11 +204,11 @@ Adobe Experience Platform Web SDK允许您收集 [Adobe Analytics for Target (A4
 }
 ```
 
-所有值来自 `scopeDetails.characteristics.analyticsToken`以及 `scopeDetails.characteristics.analyticsDisplayToken` （适用于显示的内容）和 `scopeDetails.characteristics.analyticsClickToken` （对于点击量度）是需要收集并包含为的A4T负载 `tnta` 标记中 [数据插入API](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md) 呼叫。
+来自`scopeDetails.characteristics.analyticsToken`、`scopeDetails.characteristics.analyticsDisplayToken`（用于显示的内容）和`scopeDetails.characteristics.analyticsClickToken`（用于点击量度）的所有值都是需要收集的A4T负载，并将它们作为`tnta`标记包含在[数据插入API](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md)调用中。
 
 >[!IMPORTANT]
 >
->此 `analyticsToken`， `analyticsDisplayToken`， `analyticsClickToken` 属性可以包含多个令牌，作为单个以逗号分隔的字符串连接。
+>`analyticsToken`、`analyticsDisplayToken`、`analyticsClickToken`属性可以包含多个令牌，并作为单个以逗号分隔的字符串连接。
 >
 >在下一部分提供的实施示例中，将迭代收集多个Analytics令牌。 要连接一组Analytics令牌，请使用类似于以下内容的函数：
 >
@@ -227,11 +227,11 @@ Adobe Experience Platform Web SDK允许您收集 [Adobe Analytics for Target (A4
 
 ### 基于表单的体验编辑器活动 {#form-based-composer}
 
-您可以使用Web SDK从以下位置控制建议的执行 [基于Adobe Target表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) 活动。
+您可以使用Web SDK来控制从[Adobe Target基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html)活动中执行建议。
 
-在为特定决策范围请求建议时，返回的建议包含其相应的Analytics令牌。 最佳实践是链接Platform Web SDK `sendEvent` 命令，并在收集Analytics令牌的同时迭代返回的提议以执行它们。
+在为特定决策范围请求建议时，返回的建议包含其相应的Analytics令牌。 最佳实践是链接Platform Web SDK `sendEvent`命令并在收集Analytics令牌时循环遍历返回的建议以执行它们。
 
-您可以触发 `sendEvent` 基于表单的体验编辑器活动范围的命令，如下所示：
+您可以为基于表单的体验编辑器活动范围触发`sendEvent`命令，如下所示：
 
 ```javascript
 alloy("sendEvent", {
@@ -251,7 +251,7 @@ alloy("sendEvent", {
 });
 ```
 
-从此处，您必须实施代码以执行建议并构建最终发送到Analytics的有效负载。 以下示例说明 `results.propositions` 可能包含：
+从此处，您必须实施代码以执行建议并构建最终发送到Analytics的有效负载。 这是`results.propositions`可能包含的内容的示例：
 
 ```json
 [
@@ -391,7 +391,7 @@ function getDisplayAnalyticsPayload(proposition) {
 }
 ```
 
-建议可以包含不同类型的项目，如 `schema` 相关项目的属性。 基于表单的体验编辑器活动支持四种建议项目架构：
+建议可以具有不同类型的项目，如所讨论项目的`schema`属性所指示。 基于表单的体验编辑器活动支持四种建议项目架构：
 
 ```javascript
 var HTML_SCHEMA = "https://ns.adobe.com/personalization/html-content-item";
@@ -400,7 +400,7 @@ var JSON_SCHEMA = "https://ns.adobe.com/personalization/json-content-item";
 var REDIRECT_SCHEMA = "https://ns.adobe.com/personalization/redirect-item";
 ```
 
-`HTML_SCHEMA` 和 `JSON_SCHEMA` 是反映选件类型的架构，而 `MEASUREMENT_SCHEMA` 反映应附加到DOM元素的量度。
+`HTML_SCHEMA`和`JSON_SCHEMA`是反映选件类型的架构，而`MEASUREMENT_SCHEMA`反映应附加到DOM元素的量度。
 
 当访客实际点击先前显示的内容时，点击量度的Analytics负载应收集并与内容项目分开发送到Analytics。
 
@@ -425,12 +425,12 @@ function getClickAnalyticsPayload(proposition) {
 
 1. 发送获取基于表单的体验编辑器活动选件的事件；
 1. 将内容更改应用到页面；
-1. 发送 `decisioning.propositionDisplay` 通知事件；
+1. 发送`decisioning.propositionDisplay`通知事件；
 1. 从SDK响应中收集Analytics显示令牌，并为Analytics点击构建有效负载；
-1. 使用将有效负载发送到Analytics [数据插入API](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md)；
-1. 如果投放的建议中包含任何点击量度，则应设置点击侦听器，以便在执行点击时发送 `decisioning.propositionInteract` 通知事件。 此 `onBeforeEventSend` 应配置处理程序，以便在截获时 `decisioning.propositionInteract` 事件，则会发生以下操作：
-   1. 收集Analytics令牌的来源 `xdm._experience.decisioning.propositions`
-   1. 通过发送包含收集的Analytics有效负载的点击Analytics点击 [数据插入API](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md)；
+1. 使用[数据插入API](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md)将有效负载发送到Analytics；
+1. 如果投放的建议中包含任何点击量度，则应设置点击侦听器，以便在执行点击时，发送`decisioning.propositionInteract`通知事件。 应配置`onBeforeEventSend`处理程序，以便在拦截`decisioning.propositionInteract`事件时执行以下操作：
+   1. 正在从`xdm._experience.decisioning.propositions`中收集Analytics点击令牌
+   1. 通过[数据插入API](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md)，使用收集的Analytics有效负载发送点击Analytics点击；
 
 ```javascript
 alloy("sendEvent", {
@@ -467,13 +467,13 @@ alloy("sendEvent", {
 
 ### 可视化体验编辑器活动 {#visual-experience-composer-acitivties}
 
-Web SDK允许您处理通过编写的选件 [可视化体验编辑器(VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html).
+Web SDK允许您处理使用[可视化体验编辑器(VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)创作的选件。
 
 >[!NOTE]
 >
->实施此用例的步骤与的步骤非常相似 [基于表单的体验编辑器活动](#form-based-composer). 请查看上一部分以了解更多详细信息。
+>实施此用例的步骤与[基于表单的体验编辑器活动](#form-based-composer)的步骤非常相似。 请查看上一部分以了解更多详细信息。
 
-启用自动渲染后，您可以从页面上执行的建议中收集Analytics令牌。 最佳实践是链接Platform Web SDK `sendEvent` 命令并迭代返回的提议以筛选Web SDK尝试渲染的建议。
+启用自动渲染后，您可以从页面上执行的建议中收集Analytics令牌。 最佳实践是链接Platform Web SDK `sendEvent`命令并循环遍历返回的建议，以筛选Web SDK尝试渲染的建议。
 
 **示例**
 
@@ -509,13 +509,13 @@ alloy("sendEvent", {
 });
 ```
 
-### 使用 `onBeforeEventSend` 处理页面量度 {#using-onbeforeeventsend}
+### 使用`onBeforeEventSend`处理页面量度 {#using-onbeforeeventsend}
 
 使用Adobe Target活动，您可以在页面上设置不同的量度，手动附加到DOM或自动附加到DOM（VEC创作活动）。 这两种类型都是网页上延迟的最终用户交互。
 
-要解决此问题，最佳实践是使用 `onBeforeEventSend` Adobe Experience Platform Web SDK挂钩。 此 `onBeforeEventSend` 应该使用配置挂接 `configure` 命令，和将被反映在通过数据流发送的所有事件中。
+要解决此问题，最佳实践是使用`onBeforeEventSend` Adobe Experience Platform Web SDK挂接收集Analytics有效负载。 `onBeforeEventSend`挂接应使用`configure`命令进行配置，并将反映在通过数据流发送的所有事件中。
 
-以下示例说明如何 `onBeforeEventSent` 可以配置为触发Analytics点击：
+以下是如何配置`onBeforeEventSent`以触发Analytics点击的示例：
 
 ```javascript
 alloy("configure", {
@@ -540,4 +540,4 @@ alloy("configure", {
 
 ## 后续步骤 {#next-steps}
 
-本指南介绍Web SDK中A4T数据的客户端日志记录。 请参阅指南，网址为 [服务器端日志记录](server-side.md) 有关如何在Edge Network上处理A4T数据的更多信息。
+本指南介绍Web SDK中A4T数据的客户端日志记录。 有关如何处理Edge Network上的A4T数据的详细信息，请参阅[服务器端日志记录](server-side.md)指南。

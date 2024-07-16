@@ -11,9 +11,9 @@ ht-degree: 0%
 
 # `appendIdentityToUrl`
 
-此 `appendIdentityToUrl` 命令用于将用户标识符作为查询字符串添加到URL中。 通过此操作，您可以在域之间携带访客身份，从而防止同时包含域或渠道的数据集出现重复访客计数。 它在Web SDK版本2.11.0或更高版本上可用。
+`appendIdentityToUrl`命令允许您向URL添加用户标识符作为查询字符串。 通过此操作，您可以在域之间携带访客身份，从而防止同时包含域或渠道的数据集出现重复访客计数。 它在Web SDK版本2.11.0或更高版本上可用。
 
-生成并附加到URL的查询字符串是 `adobe_mc`. 如果Web SDK找不到ECID，则会调用 `/acquire` 端点以生成一个。
+生成并附加到URL的查询字符串是`adobe_mc`。 如果Web SDK找不到ECID，它将调用`/acquire`端点以生成一个ECID。
 
 >[!NOTE]
 >
@@ -23,24 +23,24 @@ ht-degree: 0%
 
 将身份附加到URL可作为Adobe Experience Platform数据收集标记界面中的规则中的操作执行。
 
-1. 登录 [experience.adobe.com](https://experience.adobe.com) 使用您的Adobe ID凭据。
-1. 导航到 **[!UICONTROL 数据收集]** > **[!UICONTROL 标记]**.
+1. 使用您的Adobe ID凭据登录[experience.adobe.com](https://experience.adobe.com)。
+1. 导航到&#x200B;**[!UICONTROL 数据收集]** > **[!UICONTROL 标记]**。
 1. 选择所需的标记属性。
-1. 导航到 **[!UICONTROL 规则]**，然后选择所需的规则。
-1. 下 [!UICONTROL 操作]，选择现有操作或创建操作。
-1. 设置 [!UICONTROL 扩展名] 下拉字段至 **[!UICONTROL Adobe Experience Platform Web SDK]**，并设置 [!UICONTROL 操作类型] 到 **[!UICONTROL 带标识的重定向]**.
-1. 单击 **[!UICONTROL 保留更改]**，然后运行发布工作流程。
+1. 导航到&#x200B;**[!UICONTROL 规则]**，然后选择所需的规则。
+1. 在[!UICONTROL 操作]下，选择现有操作或创建操作。
+1. 将[!UICONTROL 扩展]下拉字段设置为&#x200B;**[!UICONTROL Adobe Experience Platform Web SDK]**，并将[!UICONTROL 操作类型]设置为&#x200B;**[!UICONTROL 使用标识重定向]**。
+1. 单击&#x200B;**[!UICONTROL 保留更改]**，然后运行发布工作流程。
 
 此命令通常与监听点击并检查所需域的特定规则一起使用。
 
 +++规则事件条件
 
-当具有的锚标记时触发 `href` 属性被单击。
+单击具有`href`属性的锚标记时触发。
 
-* **[!UICONTROL 扩展名]**：核心
+* **[!UICONTROL 扩展]**：核心
 * **[!UICONTROL 事件类型]**：单击
-* **[!UICONTROL 当用户单击]**：特定元素
-* **[!UICONTROL 匹配CSS选择器的元素]**： `a[href]`
+* **[!UICONTROL 用户单击]**&#x200B;时：特定元素
+* **[!UICONTROL 与CSS选择器匹配的元素]**： `a[href]`
 
 ![规则事件](../assets/id-sharing-event-configuration.png)
 
@@ -51,11 +51,11 @@ ht-degree: 0%
 仅在所需的域上触发。
 
 * **[!UICONTROL 逻辑类型]**：常规
-* **[!UICONTROL 扩展名]**：核心
-* **[!UICONTROL 完成情况类型]**：值比较
+* **[!UICONTROL 扩展]**：核心
+* **[!UICONTROL 条件类型]**：值比较
 * **[!UICONTROL 左操作数]**： `%this.hostname%`
-* **[!UICONTROL 运算符]**：匹配Regex
-* **[!UICONTROL 右操作数]**：匹配所需域的正则表达式。 例如：`adobe.com$|behance.com$`
+* **[!UICONTROL 运算符]**：匹配正则表达式
+* **[!UICONTROL 右操作数]**：与所需域匹配的正则表达式。 例如：`adobe.com$|behance.com$`
 
 ![规则条件](../assets/id-sharing-condition-configuration.png)
 
@@ -65,7 +65,7 @@ ht-degree: 0%
 
 将标识附加到URL。
 
-* **[!UICONTROL 扩展名]**：Adobe Experience Platform Web SDK
+* **[!UICONTROL 扩展]**： Adobe Experience Platform Web SDK
 * **[!UICONTROL 操作类型]**：使用标识重定向
 
 ![规则操作](../assets/id-sharing-action-configuration.png)
@@ -74,7 +74,7 @@ ht-degree: 0%
 
 ## 使用Web SDK JavaScript库将身份附加到URL
 
-运行 `appendIdentityToUrl` 命令并将URL作为参数。 此方法会返回一个标识符作为查询字符串附加的URL。
+以URL作为参数运行`appendIdentityToUrl`命令。 此方法会返回一个标识符作为查询字符串附加的URL。
 
 ```js
 alloy("appendIdentityToUrl",document.location);
@@ -100,4 +100,4 @@ document.addEventListener("click", event => {
 
 ## 响应对象
 
-如果您决定 [处理响应](command-responses.md) 使用此命令，响应对象将包含 **`url`**，包含身份信息的新URL被添加为查询字符串参数。
+如果您决定使用此命令[处理响应](command-responses.md)，则响应对象包含&#x200B;**`url`**，新URL具有作为查询字符串参数添加的标识信息。

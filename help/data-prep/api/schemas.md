@@ -5,8 +5,8 @@ title: 架构API端点
 description: 您可以使用Adobe Experience Platform API中的“/schemas”端点以编程方式检索、创建和更新架构，以便在Platform中与映射器一起使用。
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '611'
-ht-degree: 4%
+source-wordcount: '616'
+ht-degree: 3%
 
 ---
 
@@ -14,19 +14,19 @@ ht-degree: 4%
 
 # 架构端点
 
-架构可与映射器一起使用，以确保您摄取到Adobe Experience Platform的数据与您要摄取的数据相匹配。 您可以使用 `/schemas` 端点，用于以编程方式创建、列出和获取自定义架构，以便在Platform中与映射器一起使用。
+架构可与映射器一起使用，以确保您摄取到Adobe Experience Platform的数据与您要摄取的数据相匹配。 您可以使用`/schemas`端点以编程方式创建、列出和获取自定义架构，以便在Platform中与映射器一起使用。
 
 >[!NOTE]
 >
->使用此端点创建的架构仅与映射器和映射集一起使用。 要创建可由其他Platform服务访问的架构，请参阅 [Schema Registry开发人员指南](../../xdm/api/schemas.md).
+>使用此端点创建的架构仅与映射器和映射集一起使用。 若要创建可由其他Platform服务访问的架构，请阅读[架构注册开发人员指南](../../xdm/api/schemas.md)。
 
 ## 获取所有架构
 
-您可以通过对以下网站发出GET请求，检索贵组织所有可用映射器架构的列表： `/schemas` 端点。
+您可以通过向`/schemas`端点发出GET请求来检索组织的所有可用映射器架构列表。
 
 **API格式**
 
-此 `/schemas` 端点支持多个查询参数以帮助您筛选结果。 虽然这些参数中的大多数是可选的，但强烈建议使用这些参数以帮助减少昂贵的开销。 但是，您必须同时包含 `start` 和 `limit` 请求中的参数。 可以包含多个参数，以&amp;符号(`&`)。
+`/schemas`端点支持多个查询参数以帮助您筛选结果。 虽然这些参数中的大多数是可选的，但强烈建议使用这些参数以帮助减少昂贵的开销。 但是，您必须在请求中同时包含`start`和`limit`参数。 可以包含多个参数，以&amp;符号(`&`)分隔。
 
 ```http
 GET /schemas?limit={LIMIT}&start={START}
@@ -36,10 +36,10 @@ GET /schemas?limit={LIMIT}&start={START}&orderBy={ORDER_BY}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{LIMIT}` | **必需**. 指定返回的架构数。 |
-| `{START}` | **必需**. 指定结果页面的偏移。 要获取结果的第一页，请将值设置为 `start=0`. |
+| `{LIMIT}` | **必需**。 指定返回的架构数。 |
+| `{START}` | **必需**。 指定结果页面的偏移量。 若要获取结果的第一页，请将值设置为`start=0`。 |
 | `{NAME}` | 根据名称筛选架构。 |
-| `{ORDER_BY}` | 对结果的顺序进行排序。 支持的字段包括 `modifiedDate` 和 `createdDate`. 可以在属性前加上 `+` 或 `-` 以分别按升序或降序进行排序。 |
+| `{ORDER_BY}` | 对结果的顺序进行排序。 支持的字段为`modifiedDate`和`createdDate`。 您可以在属性前加上`+`或`-`，以分别按升序或降序排序。 |
 
 **请求**
 
@@ -132,7 +132,7 @@ curl -X GET https://platform.adobe.io/data/foundation/conversion/schemas&start=0
 
 ## 创建架构
 
-您可以通过对以下网站发出POST请求，创建要验证的架构： `/schemas` 端点。 创建模式的方法有三种：发送 [JSON架构](https://json-schema.org/)，使用示例数据，或引用现有XDM架构。
+您可以通过向`/schemas`端点发出POST请求来创建要验证的架构。 可通过三种方式创建架构：发送[JSON架构](https://json-schema.org/)、使用示例数据或引用现有XDM架构。
 
 ```http
 POST /schemas
@@ -142,7 +142,7 @@ POST /schemas
 
 **请求**
 
-以下请求允许您通过发送 [JSON架构](https://json-schema.org/).
+以下请求允许您通过发送[JSON架构](https://json-schema.org/)来创建架构。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
@@ -181,7 +181,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
 
 **请求**
 
-以下请求允许您使用之前上传的示例数据创建架构。
+以下请求允许您使用之前上传的示例数据创建一个架构。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
@@ -198,7 +198,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `sampleId` | 架构所依据的示例数据的ID。 |
+| `sampleId` | 架构所基于的示例数据的ID。 |
 
 **响应**
 
@@ -268,8 +268,8 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `name` | 要创建的架构的名称。 |
-| `schemaRef.id` | 您引用的架构的ID。 |
-| `schemaRef.contentType` | 确定引用的架构的响应格式。 有关该字段的更多信息，请参阅 [架构注册开发人员指南](../../xdm/api/schemas.md#lookup) |
+| `schemaRef.id` | 您正在引用的架构的ID。 |
+| `schemaRef.contentType` | 确定所引用架构的响应格式。 有关详细信息，请参阅[架构注册表开发人员指南](../../xdm/api/schemas.md#lookup) |
 
 **响应**
 
@@ -292,9 +292,9 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
 }
 ```
 
-## 使用文件上传创建架构
+## 使用文件上载创建架构
 
-您可以通过上传要从其中转换的JSON文件来创建架构。
+您可以通过上传要从中转换的JSON文件来创建架构。
 
 **API格式**
 
@@ -334,7 +334,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas/upload
 
 ## 检索特定架构
 
-您可以通过向以下网站发出GET请求来检索有关特定架构的信息： `/schemas` 端点，并提供要在请求路径中检索的架构的ID。
+您可以通过向`/schemas`端点发出GET请求并在请求路径中提供要检索的架构的ID来检索有关特定架构的信息。
 
 **API格式**
 
@@ -344,7 +344,7 @@ GET /schemas/{SCHEMA_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{SCHEMA_ID}` | 您要查找的架构的ID。 |
+| `{SCHEMA_ID}` | 正在查找的架构的ID。 |
 
 **请求**
 

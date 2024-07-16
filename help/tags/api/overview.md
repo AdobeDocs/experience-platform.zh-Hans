@@ -4,7 +4,7 @@ description: 利用 Reactor API，开发人员能够以编程方式管理 Adobe 
 exl-id: 153eab11-db08-499e-80d1-c56f254372ce
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1081'
+source-wordcount: '1079'
 ht-degree: 4%
 
 ---
@@ -13,112 +13,112 @@ ht-degree: 4%
 
 Reactor API提供了多个端点，允许您以编程方式管理Adobe Experience Platform中标记的所有资源。
 
-这些端点概述如下。 有关详细信息，请参阅各个端点指南，并参阅 [快速入门指南](./getting-started.md) 有关如何对API进行身份验证的重要信息。
+这些端点概述如下。 请访问各个端点指南以了解详细信息，请参阅[入门指南](./getting-started.md)以了解有关如何对API进行身份验证的重要信息。
 
-要查看所有可用的端点和CRUD操作，请访问 [Reactor API参考](https://www.adobe.io/experience-platform-apis/references/reactor/).
+要查看所有可用的端点和CRUD操作，请访问[Reactor API引用](https://www.adobe.io/experience-platform-apis/references/reactor/)。
 
 ## 公司
 
 公司表示标记用户的组织，通常是企业。 这些公司将1:1与组织ID匹配。 API用户只能查看他们有权访问的公司。
 
-请参阅 [公司端点指南](./endpoints/companies.md) 以了解如何在API中查看可用的公司。
+请参阅[公司终结点指南](./endpoints/companies.md)，了解如何在API中查看可用的公司。
 
 ## 属性
 
 资产是一个容器，可容纳Reactor API中提供的大多数其他资源。 唯一不属于资产的资源是审核事件、公司、扩展包和配置文件。 资产只属于一个公司，而公司可以具有多个资产。
 
-请参阅 [属性端点指南](./endpoints/properties.md) 以了解如何在API中管理资产。
+请参阅[属性端点指南](./endpoints/properties.md)，了解如何管理API中的属性。
 
 ## 数据元素
 
 数据元素具有变量功能，指向应用程序中的重要数据段。 数据元素在规则和扩展配置中使用。 在运行时在浏览器或应用程序中触发规则时，将会解析数据元素的值并在规则中使用。
 
-请参阅 [数据元素端点指南](./endpoints/data-elements.md) 了解如何在API中管理数据元素。
+请参阅[数据元素端点指南](./endpoints/data-elements.md)，了解如何管理API中的数据元素。
 
 ## 规则
 
 规则控制已部署库中包含的资源的行为。 规则是由一个或多个规则组件组成的组，通过规则来以逻辑方式将规则组件绑定在一起。
 
-请参阅 [规则端点指南](./endpoints/rules.md) 了解如何在API中管理规则。
+请参阅[规则端点指南](./endpoints/rules.md)，了解如何管理API中的规则。
 
 ## 规则组件
 
 规则组件是构成规则的各个项。 规则组件具有三种基本类型：
 
-* **活动**：触发规则的原因
+* **事件**：触发规则的内容
 * **条件**：规则检查以确定操作的内容
 * **操作**：根据是否满足条件执行规则
 
-请参阅 [规则端点指南](./endpoints/rules.md) 了解如何在API中管理规则。
+请参阅[规则端点指南](./endpoints/rules.md)，了解如何管理API中的规则。
 
 ## 扩展包
 
 扩展包表示可对标记用户提供的一组单个功能。 这些功能通常以规则组件和数据元素的形式提供，但也可以包括主模块和共享模块。 扩展包提供的功能在包含在库中时作为扩展安装。
 
-请参阅 [扩展包端点指南](./endpoints/extension-packages.md) 了解如何在API中管理扩展包。
+请参阅[扩展包端点指南](./endpoints/extension-packages.md)，了解如何在API中管理扩展包。
 
 ## 扩展
 
 扩展表示已安装的扩展包实例。 扩展使资产可以使用扩展包定义的功能。 在创建数据元素和规则组件时，会利用这些功能。
 
-请参阅 [扩展端点指南](./endpoints/extensions.md) 以了解如何在API中管理扩展。
+请参阅[扩展端点指南](./endpoints/extensions.md)，了解如何在API中管理扩展。
 
 ## 库
 
 库是表示资产的所需行为的资源（扩展、规则和数据元素）的集合。 库会被编译为内部版本，这些内部版本会在发布流从测试流向生产环境时分配给不同的环境。
 
-请参阅 [库端点指南](./endpoints/libraries.md) 了解如何在API中管理库。
+请参阅[库端点指南](./endpoints/libraries.md)，了解如何管理API中的库。
 
 ## 内部版本
 
 标记库将编译到内部版本中，以便将其分配给环境进行测试和部署。 内部版本的内容因库中包含的资源、该内部版本所分配到的环境的配置以及该内部版本所属的资产的平台而异。
 
-请参阅 [生成端点指南](./endpoints/builds.md) 了解如何在API中管理内部版本。
+请参阅[生成终结点指南](./endpoints/builds.md)，了解如何管理API中的生成。
 
 ## 环境
 
-环境指示可以在其中部署内部版本的特定主机，以及应该将内部版本部署为一组文件还是以存档格式压缩。 在Reactor API中，环境与主机本身是分开的，主机由管理 `/hosts` 端点。
+环境指示可以在其中部署内部版本的特定主机，以及应该将内部版本部署为一组文件还是以存档格式压缩。 在Reactor API中，环境与主机本身是分开的，主机本身由`/hosts`端点管理。
 
-请参阅 [生成端点指南](./endpoints/builds.md) 了解如何在API中管理内部版本。
+请参阅[生成终结点指南](./endpoints/builds.md)，了解如何管理API中的生成。
 
 ## 托管
 
 主机表示一个托管目标，可以在该目标交付并最终部署库内部版本。 主机可以是Akamai或SFTP服务器。
 
-请参阅 [hosts端点指南](./endpoints/hosts.md) 以了解如何在API中管理主机。
+请参阅[主机端点指南](./endpoints/hosts.md)，了解如何在API中管理主机。
 
 ## 应用程序配置
 
-应用程序配置允许存储和检索凭据以供将来使用。 请参阅 [应用程序配置端点指南](./endpoints/app-configurations.md) 了解如何在API中管理应用程序配置。
+应用程序配置允许存储和检索凭据以供将来使用。 请参阅[应用程序配置端点指南](./endpoints/app-configurations.md)，了解如何在API中管理应用程序配置。
 
 ## 审核事件
 
 审核事件是在进行更改时生成的对另一个标记资源进行特定更改的记录。 这些是可通过使用回调函数订阅的系统事件。
 
-请参阅 [审核事件端点指南](./endpoints/audit-events.md) 了解如何在API中管理审核事件。
+请参阅[审核事件端点指南](./endpoints/audit-events.md)，了解如何在API中管理审核事件。
 
 ## 回调
 
-回调是每当生成新的审核事件时Platform发送给URL主机的消息。 请参阅 [回调端点指南](./endpoints/callbacks.md) 以了解如何在API中管理回调。
+回调是每当生成新的审核事件时Platform发送给URL主机的消息。 请参阅[回调端点指南](./endpoints/callbacks.md)，了解如何在API中管理回调。
 
 ## 注释
 
-注释是可以添加到某些标记资源（如数据元素、扩展、库、属性、规则和规则组件）的文本批注。 请参阅 [注释端点指南](./endpoints/notes.md) 以了解如何在API中管理注释。
+注释是可以添加到某些标记资源（如数据元素、扩展、库、属性、规则和规则组件）的文本批注。 请参阅[注释端点指南](./endpoints/notes.md)，了解如何在API中管理注释。
 
 ## 配置文件
 
 配置文件包含有关登录用户的所有信息，包括用户所属的所有Adobe组织、每个组织内用户所属的产品配置文件以及用户在每个产品配置文件中拥有的权限。
 
-请参阅 [配置文件端点指南](./endpoints/profile.md) 以了解如何在API中查看此信息。
+请参阅[配置文件端点指南](./endpoints/profile.md)，了解如何在API中查看此信息。
 
 ## 搜索
 
-此 `/search` 端点提供了一种查找符合所需条件的资源的方法，以查询形式表示。 所有查询的范围均为您当前的公司和可访问属性。 请参阅 [搜索端点指南](./endpoints/search.md) 以了解如何使用此功能。
+`/search`端点提供了一种查找与所需条件匹配的资源的方法，以查询形式表示。 所有查询的范围均为您当前的公司和可访问属性。 请参阅[搜索终结点指南](./endpoints/search.md)以了解如何使用此功能。
 
 ## 密钥
 
-密码包含凭据，允许事件转发到其他系统进行安全数据交换的身份验证。 请参阅 [秘密指南](./guides/secrets.md) 有关密码在事件转发中的运行方式以及 [密钥端点指南](./endpoints/secrets.md) 以了解如何在Reactor API中管理它们。
+密码包含凭据，允许事件转发到其他系统进行安全数据交换的身份验证。 请参阅[密码指南](./guides/secrets.md)以了解密码在事件转发中的作用概述，并参阅[密码端点指南](./endpoints/secrets.md)以了解如何在Reactor API中管理密码。
 
 ## 后续步骤
 
-要开始使用架构注册表API进行调用，请阅读 [快速入门指南](./getting-started.md) 然后选择其中一个端点指南以了解如何使用特定端点。
+若要开始使用架构注册表API进行调用，请阅读[快速入门指南](./getting-started.md)，然后选择其中一个端点指南，以了解如何使用特定端点。

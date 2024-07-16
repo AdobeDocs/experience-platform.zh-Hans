@@ -7,7 +7,7 @@ exl-id: e07f8c5a-0424-4de5-810f-3d5711ef4606
 source-git-commit: 4566d5241f287801569e0cfa5b86ea6210fd1638
 workflow-type: tm+mt
 source-wordcount: '376'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
 
@@ -30,22 +30,22 @@ Adobe Experience Platform支持以下电子邮件营销目标：
 * [（文件）OracleEloqua](oracle-eloqua.md)
 * [（文件） [!DNL Salesforce Marketing Cloud]](salesforce-marketing-cloud.md)
 * [[!DNL Salesforce Marketing Cloud Account Engagement]](salesforce-marketing-cloud-account-engagement.md)
-* [oracleResponsys](oracle-responsys.md)
+* [Oracle Responsys](oracle-responsys.md)
 * [发送网格](sendgrid.md)
 
 ## 连接到新的电子邮件营销目标 {#connect-destination}
 
-要将受众发送到营销活动的电子邮件营销目标，平台必须首先连接到目标。 请参阅 [目标创建教程](../../ui/connect-destination.md) 以了解有关设置新目标的详细信息。
+要将受众发送到营销活动的电子邮件营销目标，平台必须首先连接到目标。 有关设置新目标的详细信息，请参阅[目标创建教程](../../ui/connect-destination.md)。
 
 ## 将受众激活到电子邮件营销目标的最佳实践 {#best-practices}
 
-### 身份选择 {#identity}
+### 标识选择 {#identity}
 
-Adobe建议您从 [合并架构](../../../profile/home.md#profile-fragments-and-union-schemas). 这是您的用户身份已中断的字段。 最常见的是，此字段是电子邮件地址，但它也可以是忠诚度计划ID或电话号码。 有关架构中最常见的唯一标识符及其XDM字段，请参阅下表。
+Adobe建议您从[合并架构](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 这是您的用户身份已中断的字段。 最常见的是，此字段是电子邮件地址，但它也可以是忠诚度计划ID或电话号码。 有关架构中最常见的唯一标识符及其XDM字段，请参阅下表。
 
 | 唯一标识符 | 统一架构中的XDM字段 |
 |----------------- | ---------------------------|
-| Email Address | `personalEmail.address` |
+| 电子邮件地址 | `personalEmail.address` |
 | 电话 | `mobilePhone.number` |
 | 忠诚度计划ID | `Customer-defined XDM field` |
 
@@ -64,7 +64,7 @@ Adobe建议您从 [合并架构](../../../profile/home.md#profile-fragments-and-
 | 地址状态 | `homeAddress.stateProvince` |
 | 地址邮政编码 | `homeAddress.postalCode` |
 | 生日 | `person.birthDayAndMonth` |
-| 区段成员资格 | `segmentMembership.status` |
+| 区段会员资格 | `segmentMembership.status` |
 
 {style="table-layout:auto"}
 
@@ -74,7 +74,7 @@ Adobe建议您从 [合并架构](../../../profile/home.md#profile-fragments-and-
 
 其他目标将文件导出到云存储位置。 导出完成后，您需要将数据从云存储位置导入电子邮件营销目标。
 
-请访问以下链接中的链接： [支持的电子邮件营销目标](#supported-destinations) 部分以了解如何将受众激活到每个电子邮件营销目标。
+按照[支持的电子邮件营销目标](#supported-destinations)部分中的链接了解如何将受众激活到每个电子邮件营销目标。
 
 ## 其他资源 {#additional-resources}
 

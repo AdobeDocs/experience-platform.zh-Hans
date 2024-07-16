@@ -4,8 +4,8 @@ description: 了解如何在Adobe Experience Platform中为Web扩展设置库模
 exl-id: 08f2bb01-9071-49c5-a0ff-47d592cc34a5
 source-git-commit: b3754c94843f32ba58aa1e020dface1179372de3
 workflow-type: tm+mt
-source-wordcount: '378'
-ht-degree: 70%
+source-wordcount: '372'
+ht-degree: 63%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 70%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 >[!IMPORTANT]
 >
@@ -71,4 +71,4 @@ module.exports = function(settings) {
 }
 ```
 
-`runs on startup` 将立即记录，而 `runs when necessary` 只有在标记引擎调用导出的函数后，才会记录该事件。 虽然这对于特定模块而言可能是不必要的，但您可以通过在导出函数之前执行任何必要的设置来利用此功能。
+将立即记录`runs on startup`，而只有在标记引擎调用导出的函数后才记录`runs when necessary`。 虽然这对于特定模块而言可能是不必要的，但您可以通过在导出函数之前执行任何必要的设置来利用此功能。

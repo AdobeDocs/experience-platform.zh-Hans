@@ -7,42 +7,42 @@ description: 了解如何使用流服务API将GreenPlum连接到Adobe Experience
 exl-id: c4ce452a-b4c5-46ab-83ab-61b296c271d0
 source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
-source-wordcount: '434'
-ht-degree: 2%
+source-wordcount: '426'
+ht-degree: 5%
 
 ---
 
-# 创建 [!DNL GreenPlum] 基本连接使用 [!DNL Flow Service] API
+# 使用[!DNL Flow Service] API创建[!DNL GreenPlum]基本连接
 
-基本连接表示源和Adobe Experience Platform之间经过身份验证的连接。
+基本连接表示源和Adobe Experience Platform之间的已验证连接。
 
-本教程将指导您完成创建基本连接的步骤。 [!DNL GreenPlum] 使用 [[!DNL Flow Service] API](https://docs.greenplum.org/6-7/security-guide/topics/Authenticate.html).
+本教程将指导您完成使用[[!DNL Flow Service] API](https://docs.greenplum.org/6-7/security-guide/topics/Authenticate.html)为[!DNL GreenPlum]创建基本连接的步骤。
 
 ## 快速入门
 
-本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
+本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [源](../../../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下方式构建、标记和增强传入数据： [!DNL Platform] 服务。
-* [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。
+* [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-以下部分提供了成功连接时需要了解的其他信息 [!DNL GreenPlum] 使用 [!DNL Flow Service] API。
+以下部分提供使用[!DNL Flow Service] API成功连接到[!DNL GreenPlum]所需了解的其他信息。
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `connectionString` | 用于连接到 [!DNL GreenPlum] 实例。 的连接字符串模式 [!DNL GreenPlum] 是 `HOST={SERVER};PORT={PORT};DB={DATABASE};UID={USERNAME};PWD={PASSWORD}` |
-| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的身份验证规范。 的连接规范ID [!DNL GreenPlum] 是 `37b6bf40-d318-4655-90be-5cd6f65d334b`. |
+| `connectionString` | 用于连接到[!DNL GreenPlum]实例的连接字符串。 [!DNL GreenPlum]的连接字符串模式为`HOST={SERVER};PORT={PORT};DB={DATABASE};UID={USERNAME};PWD={PASSWORD}` |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL GreenPlum]的连接规范ID为`37b6bf40-d318-4655-90be-5cd6f65d334b`。 |
 
-有关获取连接字符串的详细信息，请参阅 [此GreenPlum文档](https://docs.greenplum.org/6-7/security-guide/topics/Authenticate.html).
+有关获取连接字符串的详细信息，请参阅[此GreenPlum文档](https://docs.greenplum.org/6-7/security-guide/topics/Authenticate.html)。
 
 ### 使用平台API
 
-有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
+有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../../landing/api-guide.md)指南。
 
 ## 创建基本连接
 
-基本连接会保留源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
+基本连接会保留您的源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-POST要创建基本连接ID，请向 `/connections` 端点同时提供 [!DNL GreenPlum] 作为请求参数一部分的身份验证凭据。
+要创建基本连接ID，请在提供[!DNL GreenPlum]身份验证凭据作为POST参数的一部分时，向`/connections`端点请求请求。
 
 **API格式**
 
@@ -52,7 +52,7 @@ POST /connections
 
 **请求**
 
-以下请求创建基本连接 [!DNL GreenPlum]：
+以下请求为[!DNL GreenPlum]创建基本连接：
 
 ```shell
 curl -X POST \
@@ -80,12 +80,12 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `auth.params.connectionString` | 用于连接到的连接字符串 [!DNL GreenPlum] 帐户。 连接字符串模式为： `HOST={SERVER};PORT={PORT};DB={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
-| `connectionSpec.id` | 此 [!DNL GreenPlum] 连接规范ID： `37b6bf40-d318-4655-90be-5cd6f65d334b`. |
+| `auth.params.connectionString` | 用于连接到[!DNL GreenPlum]帐户的连接字符串。 连接字符串模式为： `HOST={SERVER};PORT={PORT};DB={DATABASE};UID={USERNAME};PWD={PASSWORD}`。 |
+| `connectionSpec.id` | [!DNL GreenPlum]连接规范ID： `37b6bf40-d318-4655-90be-5cd6f65d334b`。 |
 
 **响应**
 
-成功响应将返回新创建的连接的详细信息，包括其唯一标识符(`id`)。 在下一个教程中，需要此ID来浏览您的数据。
+成功的响应返回新创建的连接的详细信息，包括其唯一标识符(`id`)。 在下个教程中，需要此ID才能浏览您的数据。
 
 ```json
 {
@@ -96,7 +96,7 @@ curl -X POST \
 
 ## 后续步骤
 
-按照本教程，您已创建了一个 [!DNL GreenPlum] 基本连接使用 [!DNL Flow Service] API。 您可以在以下教程中使用此基本连接ID：
+通过完成本教程，您已使用[!DNL Flow Service] API创建了[!DNL GreenPlum]基本连接。 您可以在下列教程中使用此基本连接ID：
 
-* [使用浏览数据表的结构和内容 [!DNL Flow Service] API](../../explore/tabular.md)
-* [使用创建数据流以将数据库数据引入Platform [!DNL Flow Service] API](../../collect/database-nosql.md)
+* [使用 [!DNL Flow Service] API浏览数据表的结构和内容](../../explore/tabular.md)
+* [创建数据流以使用 [!DNL Flow Service] API将数据库数据引入平台](../../collect/database-nosql.md)

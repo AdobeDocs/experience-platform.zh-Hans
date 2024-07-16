@@ -1,5 +1,5 @@
 ---
-title: 通过Adobe Target进行个性化
+title: Personalization(通过Adobe Target)
 description: 了解如何使用服务器API来交付和渲染在Adobe Target中创建的个性化体验。
 exl-id: c9e2f7ef-5022-4dc4-82b4-ecc210f27270
 source-git-commit: ddffe9bf30741b457f7de1099b50ac1624fca927
@@ -9,29 +9,29 @@ ht-degree: 1%
 
 ---
 
-# 通过Adobe Target进行个性化
+# Personalization(通过Adobe Target)
 
 ## 概述 {#overview}
 
-Edge Network Server API可以投放和渲染在Adobe Target中创建的个性化体验，具体可借助于 [基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html).
+在[基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html)的帮助下，Edge Network服务器API可以交付和渲染在Adobe Target中创建的个性化体验。
 
 >[!IMPORTANT]
 >
->通过创建的个性化体验 [Target可视化体验编辑器(VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) 服务器API不完全支持。 服务器API可以 **retrieve** 由VEC创建的活动，但服务器API无法 **渲染** VEC创建的活动。 如果要呈现由VEC创建的活动，请实施 [混合个性化](../web-sdk/personalization/hybrid-personalization.md) 使用Web SDK和Edge Network服务器API。
+>服务器API不完全支持通过[Target可视化体验编辑器(VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)创建的Personalization体验。 服务器API可以&#x200B;**检索由VEC创建的**&#x200B;活动，但服务器API不能&#x200B;**渲染由VEC创建的**&#x200B;活动。 如果要呈现由VEC创建的活动，请使用Web SDK和Edge Network服务器API实施[混合个性化](../web-sdk/personalization/hybrid-personalization.md)。
 
 ## 配置数据流 {#configure-your-datastream}
 
 在将服务器API与Adobe Target结合使用之前，您必须先对数据流配置启用Adobe Target个性化。
 
-请参阅 [有关将服务添加到数据流的指南](../datastreams/overview.md#adobe-target-settings)，以了解有关如何启用Adobe Target的详细信息。
+有关如何启用Adobe Target的详细信息，请参阅有关将服务添加到数据流](../datastreams/overview.md#adobe-target-settings)的[指南。
 
-配置数据流时，您可以（可选）提供以下值 [!DNL Property Token]， [!DNL Target Environment ID]、和 [!DNL Target Third Party ID Namespace].
+配置数据流时，您可以（可选）提供[!DNL Property Token]、[!DNL Target Environment ID]和[!DNL Target Third Party ID Namespace]的值。
 
-![显示数据流服务配置屏幕且已选择Adobe Target的UI图像](assets/target-datastream.png)
+![UI图像显示数据流服务配置屏幕，已选择Adobe Target](assets/target-datastream.png)
 
 ## 自定义参数 {#custom-parameters}
 
-中的大多数字段 [!DNL XDM] 每个请求的一部分将被序列化为点表示法，然后作为自定义或发送到Target [!DNL mbox] 参数。
+每个请求的[!DNL XDM]部分中的大多数字段都被序列化为点表示法，然后作为自定义或[!DNL mbox]参数发送到Target。
 
 
 ### 示例 {#custom-parameters-example}
@@ -56,7 +56,7 @@ Edge Network Server API可以投放和渲染在Adobe Target中创建的个性化
 
 ## Target配置文件更新 {#profile-update}
 
-此 [!DNL Server API] 允许更新Target配置文件。 要更新Target配置文件，请确保配置文件数据在 `data` 部分请求，格式如下：
+[!DNL Server API]允许更新Target配置文件。 要更新Target配置文件，请确保在请求的`data`部分中按以下格式传递配置文件数据：
 
 ```json
 "data":  {
@@ -71,26 +71,26 @@ Edge Network Server API可以投放和渲染在Adobe Target中创建的个性化
 
 ### 架构 {#schemas}
 
-请求的查询部分确定Target返回的内容。 在 `personalization` 对象， `schemas` 确定Target返回的内容类型。
+请求的查询部分确定Target返回的内容。 在`personalization`对象下，`schemas`确定Target返回的内容类型。
 
-如果不确定将检索哪一类选件，则应将所有四个架构都包含在对Edge Network的个性化查询中：
+如果不确定将检索哪些Edge Network，则应将所有四个架构都包含在对Offers的个性化查询中：
 
-* **基于HTML的优惠：**
+* **基于HTML的选件：**
 https://ns.adobe.com/personalization/html-content-item
 * **基于JSON的选件：**
 https://ns.adobe.com/personalization/json-content-item
 * **Target重定向选件**
 https://ns.adobe.com/personalization/redirect-item
-* **定位DOM操作选件**
+* **目标DOM操作选件**
 https://ns.adobe.com/personalization/dom-action
 
 ### 决策范围 {#decision-scopes}
 
-Adobe Target [!DNL mbox] 名称应包含在 `decisionScopes` 数组，以返回相应的内容。
+Adobe Target [!DNL mbox]名称应包含在`decisionScopes`数组中，以返回相应的内容。
 
 #### 示例 {#decision-scopes-example}
 
-在下面的示例中，将请求所有四种选件类型以及一个名为的Target活动 `serverapimbox`.
+在下面的示例中，所有四种选件类型都与名为`serverapimbox`的Target活动一起请求。
 
 ```json
 "query":{
@@ -199,7 +199,7 @@ curl -X POST 'https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM
 
 ### 响应 {#response}
 
-Edge Network将返回类似于下面的响应。
+该Edge Network将返回类似于以下内容的响应。
 
 ```json
 {
@@ -270,9 +270,9 @@ Edge Network将返回类似于下面的响应。
 }
 ```
 
-如果访客根据发送到Adobe Target的数据符合个性化活动资格，则相关活动内容将位于 `handle` 对象，其中类型为 `personalization:decisions`.
+如果访客根据发送到Adobe Target的数据符合个性化活动资格，则相关活动内容将位于`handle`对象下，其中类型为`personalization:decisions`。
 
-其他内容有时将返回到 `handle` 也一样。 其他内容类型与Target个性化无关。 如果访客符合多个活动的条件，则每个活动都将是一个单独的 `personalization` 数组中的对象。
+其他内容有时也会在`handle`下返回。 其他内容类型与Target个性化无关。 如果该访客符合多个活动的条件，则每个活动将成为数组中的单独`personalization`对象。
 
 下表解释了该部分响应的关键元素。
 
@@ -290,6 +290,6 @@ Edge Network将返回类似于下面的响应。
 
 ## 服务器端个性化示例应用程序 {#sample}
 
-示例应用程序位于 [此URL](https://github.com/adobe/alloy-samples/tree/main/target/personalization-server-side) 演示使用Adobe Experience Platform从Adobe Target获取个性化内容。 网页会根据返回的个性化内容而发生更改。
+在[此URL](https://github.com/adobe/alloy-samples/tree/main/target/personalization-server-side)找到的示例应用程序演示了使用Adobe Experience Platform从Adobe Target获取个性化内容。 网页会根据返回的个性化内容而发生更改。
 
-此示例可以 _非_ 依赖客户端库，例如 [!DNL Web SDK] 以获取个性化内容。 而是使用Adobe Experience Platform API来获取个性化内容。 然后，该实现基于返回的个性化内容生成HTML服务器端。
+此示例&#x200B;_不_&#x200B;依赖客户端库（如[!DNL Web SDK]）来获取个性化内容。 而是使用Adobe Experience Platform API来获取个性化内容。 然后，该实现基于返回的个性化内容生成HTML服务器端。

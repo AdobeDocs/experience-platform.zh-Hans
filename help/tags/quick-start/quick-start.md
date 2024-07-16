@@ -1,11 +1,11 @@
 ---
 title: 快速入门指南
-description: 了解如何快速启动和运行Adobe Experience Platform中的标记。
+description: 了解如何快速启动并运行Adobe Experience Platform中的标记。
 exl-id: 490ee344-3b18-4189-9293-2378f86fb10d
 source-git-commit: 60d88be5d710314cdc6900f4b63643c740b91fa6
 workflow-type: tm+mt
-source-wordcount: '1525'
-ht-degree: 43%
+source-wordcount: '1521'
+ht-degree: 41%
 
 ---
 
@@ -13,9 +13,9 @@ ht-degree: 43%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../term-updates.md)。
 
-标记是Adobe Experience Platform的下一代标记管理技术。 它从头开始构建，以支持一个开放且可持续的生态系统，在该生态系统中，任何人都可以构建自己的集成，供Adobe客户部署到其站点。 Launch 是一个以 API 为主导的应用程序，因此所有可以通过用户界面执行的操作也都可以通过 API 以编程方式执行。
+标记是Adobe Experience Platform的下一代标记管理技术。 它从头开始构建，以支持开放且可持续的生态系统，在该生态系统中，任何人都可以构建自己的集成，供Adobe客户部署到其站点。 Launch 是一个以 API 为主导的应用程序，因此所有可以通过用户界面执行的操作也都可以通过 API 以编程方式执行。
 
 基本标记工作流程：
 
@@ -29,19 +29,19 @@ ht-degree: 43%
 
 ## 1. 设置组和用户
 
-标记已与您的Adobe ID完全集成。 用户权限可与Admin Console中的其他Adobe产品和解决方案一同管理。 [!DNL Creative Cloud]， [!DNL Document Cloud]和Experience Cloud。
+标记已与您的Adobe ID完全集成。 用户权限是通过Admin Console与[!DNL Creative Cloud]、[!DNL Document Cloud]和Experience Cloud中的其他Adobe产品和解决方案一起管理的。
 
-标记具有基于权限的用户管理系统。 这意味着必须明确授予个人权限。 这些权限会分配给组，然后会将用户添加到相应的组，从而获取访问权限。即使您的组织有权访问数据收集，个人用户仍无法执行任何操作，直到管理员明确授予他们某些权限。
+标记具有基于权限的用户管理系统。 这意味着必须明确授予个人权限。 这些权限会分配给组，然后会将用户添加到相应的组，从而获取访问权限。即使您的组织有权访问数据收集，个人用户仍必须等待管理员向其明确授予一些权限，否则将无法执行任何操作。
 
-有关如何为标记创建组和添加用户的详细说明，请参阅 [数据收集权限指南](../../collection/permissions.md).
+有关如何为标记创建组并添加用户的详细说明，请参阅[数据收集权限指南](../../collection/permissions.md)。
 
 ## 2. 登录
 
-将标记权限添加到Adobe ID后，您需要登录到Experience PlatformUI或数据收集UI。 为此，您可以直接导航到 [Experience Cloud登录屏幕](https://experience.adobe.com/)，并选择 **[!UICONTROL 数据收集]** 或 **[!UICONTROL Experience Platform]**.
+将标记权限添加到Adobe ID后，您需要登录到Experience PlatformUI或数据收集UI。 为此，您可以直接导航到[Experience Cloud登录屏幕](https://experience.adobe.com/)，然后选择&#x200B;**[!UICONTROL 数据收集]**&#x200B;或&#x200B;**[!UICONTROL Experience Platform]**。
 
 >[!NOTE]
 >
->如果您只有一个帐户，该帐户对多个组织具有权限，则可以通过在屏幕顶部的“控制”栏中选择组织名称，然后从下拉列表中选择不同的组织来更改组织。
+>如果您有一个对多个组织具有权限的帐户，则可以通过在屏幕顶部的Control栏中选择组织名称，然后从下拉列表中选择不同的组织来更改组织。
 
 ## 3. 创建资产
 
@@ -51,11 +51,11 @@ ht-degree: 43%
 
 ## 4. 安装扩展
 
-扩展是由Adobe或Adobe合作伙伴构建的集成，可为您能够部署到网站的标记添加无限数量的新选项。 如果将标记看作一种操作系统，那么扩展就是您安装的应用程序，用来执行您需要它执行的特定操作。
+扩展是由Adobe或Adobe合作伙伴构建的集成，可为您能够部署到网站的标记添加无限数量的新选项。 如果将标记看作一种操作系统，那么扩展就是您安装的应用程序，用来完成您所需的特定操作。
 
 所有新资产均随安装的[核心扩展](../extensions/client/core/overview.md)一起提供。移动资产则随其他扩展一起提供。核心扩展由Adobe构建，可提供一组可靠的默认数据元素类型和事件类型，分别供数据层和规则使用。 您要执行的大多数操作（获取 ECID、发送 [!DNL Adobe Analytics] 信标、加载 [!DNL Target] 全局 mbox 等等）都来自于您从目录安装的扩展。
 
-Platform中的标记之所以真正独特，是因为这些扩展可以由任何人构建。 您是否需要丢弃网站上的 Facebook 再营销像素？可考虑使用 Facebook 构建的扩展。您是否希望对 Twitter 或 Linked In 执行相同的操作？可使用这些扩展。您是否需要运行调查？可考虑使用 Question Pro 或 Foresee。您是否需要管理最终用户的隐私和同意，以帮助遵循 [!DNL GDPR]？ 可认真考虑使用 Evidon 和 Trust Arc。您是否希望对网站上各个用户的行为有细致入微的了解？ 或许可以考虑使用 Clicktale。有关更多信息，请参阅以下章节： [添加新扩展](../ui/managing-resources/extensions/overview.md#add-a-new-extension).
+Platform中标记真正的独特之处在于，这些扩展可由任何人构建。 您是否需要丢弃网站上的 Facebook 再营销像素？可考虑使用 Facebook 构建的扩展。您是否希望对 Twitter 或 Linked In 执行相同的操作？可使用这些扩展。您是否需要运行调查？可考虑使用 Question Pro 或 Foresee。您是否需要管理最终用户的隐私和同意，以帮助遵循[!DNL GDPR]？ 可认真考虑使用 Evidon 和 Trust Arc。您是否希望对网站上各个用户的行为有细致入微的了解？ 或许可以考虑使用 Clicktale。有关详细信息，请参阅有关[添加新扩展](../ui/managing-resources/extensions/overview.md#add-a-new-extension)的部分。
 
 ## 5. 创建数据元素和规则
 
@@ -67,7 +67,7 @@ Platform中的标记之所以真正独特，是因为这些扩展可以由任何
 * 会话和本地存储
 * 任何其他内容
 
-定义数据元素后，您可以在UI中的任意位置对任何扩展使用该元素。 请参阅相关文档 [数据元素](../ui/managing-resources/data-elements.md) 以了解更多详细信息。
+定义数据元素后，您可以在UI中的任意位置对任何扩展使用该元素。 有关更多详细信息，请参阅有关[数据元素](../ui/managing-resources/data-elements.md)的文档。
 
 **规则**&#x200B;处于实施的逻辑核心，可控制您网站上所有标记的内容、时间、位置和方式。定义事件、设置条件和例外，然后定义操作和顺序。最后，发布您所做的更改以查看结果。有关更多信息，请参阅[规则](../ui/managing-resources/rules.md)。
 
@@ -75,25 +75,25 @@ Platform中的标记之所以真正独特，是因为这些扩展可以由任何
 
 ### 库和内部版本
 
-标记内部版本从不自动发布。 您所做的每一组更改都将封装在[库](../ui/publishing/libraries.md)中。您创建的每个库都会自动继承任何上游内容（已发布、已批准或已提交的内容）并将其作为基线，因此您只需定义要进行的更改。此库将用作生成[内部版本](../ui/publishing/builds.md)的蓝图。内部版本实际上是一组已部署和已使用的 JavaScript 文件。
+标记内部版本不会自动发布。 您所做的每一组更改都将封装在[库](../ui/publishing/libraries.md)中。您创建的每个库都会自动继承任何上游内容（已发布、已批准或已提交的内容）并将其作为基线，因此您只需定义要进行的更改。此库将用作生成[内部版本](../ui/publishing/builds.md)的蓝图。内部版本实际上是一组已部署和已使用的 JavaScript 文件。
 
 了解网页、托管位置和标记之间的关系很重要。
 
 1. 您的主机服务器提供了一个发布内部版本的位置。 内部版本本身包含库所需的JavaScript文件。
 
-   每个环境都与主机有关系，主机会提供一个端点，指示将内部版本交付到的位置。 虽然一个资产可以具有多个主机，但主机只能属于一个资产。
+   每个环境都与主机有关系，主机会提供一个端点，指示将内部版本交付到何处。 虽然一个资产可以具有多个主机，但主机只能属于一个资产。
 
-2. 表单中提供嵌入代码  `<script>` 标记将放入 `<head>` 部分HTML。
+2. 以格式`<script>`标记提供了嵌入代码，该格式会进入网站HTML的`<head>`部分。
 
-   在创建环境并附加主机时，环境会自动生成一个唯一的嵌入代码，该代码允许您将其分配的内部版本集成到网站中。 此 `<script>` 代码用于在运行时部署库内部版本。
+   在创建环境并附加主机时，该环境会自动生成唯一的嵌入代码，以便您将其分配的内部版本集成到网站中。 `<script>`代码用于在运行时部署库内部版本。
 
-3. 当用户浏览您的网站时，嵌入代码 `<script>` tag会从主机服务器中检索内部版本，并在浏览器中执行定义的操作。
+3. 当用户浏览您的网站时，嵌入代码`<script>`标记将从您的主机服务器中检索内部版本，并在浏览器中执行定义的操作。
 
 ### 托管
 
-主机是标记属性和您的托管位置之间的连接。 Adobe标记当前支持通过 [!DNL Akamai] 通过SFTP主机进行托管或自托管。 每当您生成一个内部版本时，标记都会连接到由您的主机定义的服务器并交付该内部版本。
+主机连接标记属性和您的托管位置。 标记当前支持通过[!DNL Akamai]主机进行Adobe托管或通过SFTP主机进行自托管。 每当您生成内部版本时，标记都会连接到由您的主机定义的服务器并交付该内部版本。
 
-如果您是自托管，则标记构建可以直接通过SFTP推送到您的服务器，或者您可以将其推送到 [!DNL Akamai] 并使用环境的“存档”选项下载它。
+如果您是自托管，则标记内部版本可以通过SFTP直接推送到您的服务器，或者您可以将它推送到[!DNL Akamai]并使用您环境的Archive选项下载它。
 
 有关更多信息，请参阅[主机](../ui/publishing/hosts/hosts-overview.md)。
 
@@ -101,14 +101,14 @@ Platform中的标记之所以真正独特，是因为这些扩展可以由任何
 
 每个库都是在环境中创建的。环境可定义您希望内部版本在发布时的外观。您可以指定：
 
-* **主机：** 每个环境都需要一个主机，主机可确定将推送在此环境中创建的任何内部版本的端点。
-* **存档：** 默认设置为将内部版本部署为缩小的.js文件。 如果您使用自定义代码，则可能有多个文件相互引用。 这些文件可以合并到一个zip文件中并进行加密。
+* **主机：**&#x200B;每个环境都需要一个主机，该主机可确定将推送在此环境中创建的任何内部版本的终结点。
+* **存档：**&#x200B;默认设置是将您的内部版本部署为缩小的.js文件。 如果您使用的是自定义代码，则可能有多个相互引用的文件。 这些文件可以合并到一个zip文件中并进行加密。
 
 保存环境后，会生成嵌入代码，您可以将该代码复制并粘贴到您的网站中。请注意，在创建库并生成内部版本之前，嵌入代码不起作用。 有关更多信息，请参阅[环境](../ui/publishing/environments.md)。
 
 ### 将内部版本发布到开发环境
 
-以下步骤介绍了发布流程。
+发布流程将在以下步骤中进行描述。
 
 1. 创建主机。
 1. 使用您创建的主机创建开发环境。
@@ -118,7 +118,7 @@ Platform中的标记之所以真正独特，是因为这些扩展可以由任何
 
 ## 7. 提升至生产
 
-在开发环境中测试内部版本后，请确保创建暂存和生产环境，并将嵌入的代码置于必要的位置。 您可以为此目的重复使用现有主机。
+在开发环境中测试内部版本后，请确保创建暂存和生产环境，并将嵌入的代码置于必要位置。 您可以为此目的重复使用现有主机。
 
 要将库一直提升至生产环境，通常需要拥有相应权限的不同人员相互协作。
 
@@ -136,4 +136,4 @@ Platform中的标记之所以真正独特，是因为这些扩展可以由任何
 
 * **[数据收集社区](https://forums.adobe.com/community/experience-cloud/platform/launch)**：提问或回答他人提出的问题、发表自己的意见、对他人的意见进行投票。 使用您的Adobe ID登录。
 * **[开发人员文档](../api/overview.md)**：加入标记开发人员社区，构建扩展或使用标记API
-* **[Tutorials概述](https://experienceleague.adobe.com/docs/core-services-learn/tutorials/overview.html)**：这些文档向您介绍了标记概念，包括Android应用程序中的事件转发和Mobile SDK。
+* **[Tutorials概述](https://experienceleague.adobe.com/docs/core-services-learn/tutorials/overview.html)**：这些文档将向您介绍Android应用程序中的标记概念，包括事件转发和Mobile SDK。

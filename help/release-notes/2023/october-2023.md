@@ -1,19 +1,19 @@
 ---
 title: Adobe Experience Platform 发行说明
-description: Adobe Experience Platform 2023年10月版发行说明。
+description: Adobe Experience Platform 的 2023 年 10 月发行说明。
 exl-id: e9cf5299-8350-4b40-8f56-05e598846875
 source-git-commit: f2d0848952902d94b441566da677ef174518192e
 workflow-type: tm+mt
-source-wordcount: '1068'
+source-wordcount: '1052'
 ht-degree: 32%
 
 ---
 
 # Adobe Experience Platform 发行说明
 
-**发行日期：2023 年 10 月 25 日**
+**发行日期： 2023年10月25日**
 
- Experience Platform 中现有功能的更新：
+对Experience Platform中现有功能的更新：
 
 - [仪表板](#dashboards)
 - [数据收集](#data-collection)
@@ -30,7 +30,7 @@ Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查
 
 | 功能 | 描述 |
 | --- | --- |
-| 目标使用情况量度 | 新的计数指标已添加到许可证使用情况仪表板。 此 **[!UICONTROL Audience Activation大小]** 和 **[!UICONTROL 数据导出大小]** 量度提供了一种便捷的方式来跟踪您已从Platform导出多少与您的许可证使用权利相关的数据。 请参阅 [可用量度](../../dashboards/guides/license-usage.md#available-metrics) 这些指标和其他许可证使用量度说明的文档。 |
+| 目标使用情况量度 | 新的计数指标已添加到许可证使用情况仪表板。 **[!UICONTROL Audience Activation大小]**&#x200B;和&#x200B;**[!UICONTROL 数据导出大小]**&#x200B;量度提供了一种方便的方法来跟踪您已从Platform导出多少与您的许可证使用授权相关的数据。 有关这些量度和其他许可证使用量度的说明，请参阅[可用量度](../../dashboards/guides/license-usage.md#available-metrics)文档。 |
 
 {style="table-layout:auto"}
 
@@ -44,11 +44,11 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 类型 | 功能 | 描述 |
 | --- | --- | --- |
-| 扩展 | [!DNL Meta] 转化API增强功能 | 有三项增强功能 [元转化API](/help/tags/extensions/server/meta/overview.md) 扩展名： <ul><li>与集成 [[!DNL Meta Business Extension (MBE)]](/help/tags/extensions/server/meta/overview.md#integration-with-meta-business-extension-mbe)：通过允许您共享用于转化API与Adobe集成的像素ID和访问令牌，创建无缝登录体验。</li><li>与集成 [[!DNL Event Match Quality Score (EMQ)]](/help/tags/extensions/server/meta/overview.md#integration-with-event-quality-match-score-emq)：用于向更有可能完成所需操作的人投放广告，并将操作链接回投放的广告。</li><li>与集成 [[!DNL LiveRamp (Alpha)]](/help/tags/extensions/server/meta/overview.md#integration-with-liveramp-alpha)：允许您在CIP字段中传递LiveRamp的RampID，而无需直接与合作伙伴或Meta共享PII。 </li></ul> |
-| 扩展 | [!DNL LinkedIn] 转化API | 此 [[!DNL LinkedIn] 转化API](../../tags/extensions/server/linkedin/overview.md) 通过扩展，您可以将Experience Platform事件数据转发到LinkedIn，从而评估LinkedIn营销活动的有效性。 |
-| 机密 | [!DNL LinkedIn] OAuth 2密码 | 此 [[!DNL LinkedIn] OAuth 2密码](../../tags/ui/event-forwarding/secrets.md#linkedin-oauth-2) 允许您将服务器与服务器的交互发送到 [!DNL LinkedIn] 在事件转发中。 |
-| 事件转发 | 标记和事件转发的更新 | 要保留 [标记](https://experienceleague.adobe.com/docs/experience-platform/tags/home.html) 和 [事件转发](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/overview.html) 在Platform中的性能方面，将仅保留最近成功和不成功的开发和暂存构建。 将删除所有不再使用的内部版本。 此外，还实施了限制和速率限制以确保一些较重的API使用不会降低其他应用程序的API性能。 |
-| 扩展 | 元素、规则和扩展 | [元素、规则和扩展](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/overview.html) 现在，在库输出中进行排序，以确保同一库的多个构建和部署之间更加一致。 |
+| 扩展 | [!DNL Meta]转化API增强 | [Meta Conversions API](/help/tags/extensions/server/meta/overview.md)扩展有三个增强功能： <ul><li>与[[!DNL Meta Business Extension (MBE)]](/help/tags/extensions/server/meta/overview.md#integration-with-meta-business-extension-mbe)集成：通过允许您共享您的像素ID和访问Conversions API与Adobe集成的令牌，创建无缝的登录体验。</li><li>与[[!DNL Event Match Quality Score (EMQ)]](/help/tags/extensions/server/meta/overview.md#integration-with-event-quality-match-score-emq)集成：允许您向更有可能完成所需操作的人员投放广告，并将操作链接回所投放的广告。</li><li>与[[!DNL LiveRamp (Alpha)]](/help/tags/extensions/server/meta/overview.md#integration-with-liveramp-alpha)集成：允许您在CIP字段中传递LiveRamp的RampID，而无需直接与合作伙伴或Meta共享PII。 </li></ul> |
+| 扩展 | [!DNL LinkedIn]转化API | [[!DNL LinkedIn] 转化API](../../tags/extensions/server/linkedin/overview.md)扩展允许您将Experience Platform事件数据转发到LinkedIn，从而评估LinkedIn营销活动的有效性。 |
+| 机密 | [!DNL LinkedIn] OAuth 2密码 | [[!DNL LinkedIn] OAuth 2密钥](../../tags/ui/event-forwarding/secrets.md#linkedin-oauth-2)允许您在事件转发中将服务器与服务器的交互发送到[!DNL LinkedIn]。 |
+| 事件转发 | 标记和事件转发的更新 | 为了在Platform中保留[标记](https://experienceleague.adobe.com/docs/experience-platform/tags/home.html)和[事件转发](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/overview.html)性能，将仅保留最近成功和不成功的开发和暂存构建。 将删除所有不再使用的内部版本。 此外，还实施了限制和速率限制以确保一些较重的API使用不会降低其他应用程序的API性能。 |
+| 扩展 | 元素、规则和扩展 | [元素、规则和扩展](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/overview.html)现在在库输出中排序，以确保同一库的多个生成和部署之间更加一致。 |
 
 有关数据收集的更多信息，请参阅[数据收集概述](../../tags/home.md)。
 
@@ -69,8 +69,8 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| （Beta版）支持计算字段中的哈希函数 | 除了的特定功能外 [导出数组](../../destinations/ui/export-arrays-calculated-fields.md) 或数组中的元素时，您现在可以使用 [哈希函数](../../destinations/ui/export-arrays-calculated-fields.md#hashing-functions) 以散列导出文件中的属性。 支持的哈希函数包括： `sha`， `sha256`， `sha512`， `hash`， `md5`， `crc32`. |
-| （有限GA）将帐户受众激活到某些目标 | Real-Time CDP B2B客户现在可以激活 [帐户受众](../../segmentation/ui/account-audiences.md) 到特定目标。 有关此功能的详细信息，请阅读 [激活帐户受众教程](/help/destinations/ui/activate-account-audiences.md). |
+| (Beta)计算字段中支持哈希函数 | 除了特定于[导出数组](../../destinations/ui/export-arrays-calculated-fields.md)或数组中的元素的函数之外，您现在还可以使用其他[散列函数](../../destinations/ui/export-arrays-calculated-fields.md#hashing-functions)对导出文件中的散列属性进行散列处理。 支持的哈希函数为： `sha`、`sha256`、`sha512`、`hash`、`md5`、`crc32`。 |
+| （有限GA）将帐户受众激活到某些目标 | Real-Time CDP B2B客户现在可以将[帐户受众](../../segmentation/ui/account-audiences.md)激活到某些目标。 有关此功能的详细信息，请参阅[激活帐户受众教程](/help/destinations/ui/activate-account-audiences.md)。 |
 
 {style="table-layout:auto"}
 
@@ -86,9 +86,9 @@ Adobe Experience Platform旨在丰富全球范围内的数字体验应用程序�
 
 | 功能 | 描述 |
 | --- | --- |
-| 沙盒工具 | 利用沙盒工具功能，可跨沙盒提高配置准确性并在沙盒之间无缝导出和导入沙盒配置。 您可以使用沙盒工具功能选择不同的对象并将它们导出到包中。 欲了解更多信息，请参见 [沙盒工具UI指南](../../sandboxes/ui/sandbox-tooling.md). |
+| 沙盒工具 | 利用沙盒工具功能，可跨沙盒提高配置准确性并在沙盒之间无缝导出和导入沙盒配置。 您可以使用沙盒工具功能选择不同的对象并将它们导出到包中。 有关详细信息，请参阅[沙盒工具用户界面指南](../../sandboxes/ui/sandbox-tooling.md)。 |
 
-有关沙箱的详细信息，请参阅 [沙盒概述](../../sandboxes/home.md).
+有关沙箱的详细信息，请参阅[沙箱概述](../../sandboxes/home.md)。
 
 ## Segmentation Service {#segmentation}
 
@@ -98,9 +98,9 @@ Adobe Experience Platform旨在丰富全球范围内的数字体验应用程序�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 帐户受众（限定GA） | 在Real-time Customer Data Platform B2B版本中，您现在可以使用帐户分段，从基于人员的受众到基于帐户的受众，全面简化营销分段体验。 有关此功能的详细信息，请阅读 [帐户受众概述](../../segmentation/ui/account-audiences.md). |
+| 帐户受众（限定GA） | 在Real-time Customer Data Platform B2B版本中，您现在可以使用帐户分段，从基于人员的受众到基于帐户的受众，全面简化营销分段体验。 有关此功能的详细信息，请阅读[帐户受众概述](../../segmentation/ui/account-audiences.md)。 |
 
-要了解有关分段服务的更多信息，请阅读 [分段服务概述](../../segmentation/home.md).
+若要了解有关分段服务的更多信息，请阅读[分段服务概述](../../segmentation/home.md)。
 
 ## 源 {#sources}
 
@@ -110,8 +110,8 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 | 功能 | 描述 |
 | --- | --- |
-| 更新了数据登陆区的身份验证 | 现在，您可以在查看凭据时看到数据登陆区域的指定到期日期。 您必须在到期日期之前刷新令牌才能继续在应用程序中使用它。 如果您未在规定的到期日期之前手动刷新令牌，则它将在您下次检索凭据时自动刷新并提供新令牌。 有关详细信息，请阅读以下文档： [使用数据登陆区](../../sources/tutorials/ui/create/cloud-storage/data-landing-zone.md). |
+| 更新了数据登陆区的身份验证 | 现在，您可以在查看凭据时看到数据登陆区域的指定到期日期。 您必须在到期日期之前刷新令牌才能继续在应用程序中使用它。 如果您未在规定的到期日期之前手动刷新令牌，则它将在您下次检索凭据时自动刷新并提供新令牌。 有关详细信息，请阅读有关[使用数据登录区](../../sources/tutorials/ui/create/cloud-storage/data-landing-zone.md)的文档。 |
 
 {style="table-layout:auto"}
 
-要了解有关来源的更多信息，请阅读 [源概述](../../sources/home.md).
+若要了解有关源的更多信息，请阅读[源概述](../../sources/home.md)。

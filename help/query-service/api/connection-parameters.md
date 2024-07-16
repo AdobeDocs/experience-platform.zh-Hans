@@ -16,11 +16,11 @@ ht-degree: 1%
 
 ## 示例API调用
 
-以下部分将指导您使用 [!DNL Query Service] API。 该调用包括常规API格式、显示所需标头的示例请求以及示例响应。
+以下部分将指导您完成可以使用[!DNL Query Service] API进行的API调用。 该调用包括常规API格式、显示所需标头的示例请求以及示例响应。
 
 ### 请求连接参数
 
-您可以通过向以下网站发出GET请求来检索连接参数 `/connection_parameters` 端点。 有关使用连接参数通过交互式服务进行连接的客户端的更多信息，请阅读以下文档： [查询服务客户端](../clients/overview.md).
+您可以通过向`/connection_parameters`端点发出GET请求来检索连接参数。 有关使用连接参数通过交互式服务进行连接的客户端的详细信息，请阅读有关[查询服务客户端](../clients/overview.md)的文档。
 
 **API格式**
 

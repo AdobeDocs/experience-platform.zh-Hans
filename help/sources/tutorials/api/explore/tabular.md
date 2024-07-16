@@ -1,37 +1,37 @@
 ---
 keywords: Experience Platform；主页；热门主题；源；API；浏览；流服务
-title: 使用流服务API浏览表格源
+title: 使用流服务API浏览表格式Source
 description: 本教程使用流服务API来探索基于表的源的内容和结构。
 exl-id: 0c7a5b8a-2071-4ac2-b2d1-c5534e7c7d9c
 source-git-commit: 3bdeec8284873b8d9368f833b24e9922ed489019
 workflow-type: tm+mt
-source-wordcount: '469'
-ht-degree: 2%
+source-wordcount: '465'
+ht-degree: 5%
 
 ---
 
-# 使用浏览数据表 [!DNL Flow Service] API
+# 使用[!DNL Flow Service] API浏览数据表
 
-本教程提供了有关如何使用来浏览和预览数据表的结构和内容的步骤。 [[!DNL Flow Service]](https://www.adobe.io/experience-platform-apis/references/flow-service/) API。
+本教程提供了有关如何使用[[!DNL Flow Service]](https://www.adobe.io/experience-platform-apis/references/flow-service/) API浏览和预览数据表结构和内容的步骤。
 
 >[!NOTE]
 >
-> 要浏览数据表，您必须已经拥有表格式源的有效基本连接ID。 如果您没有此ID，请参阅以下教程，以了解如何为表格式源创建基本连接ID的步骤： <ul><li>[Advertising](../../../home.md#advertising)</li><li>[CRM](../../../home.md#customer-relationship-management)</li><li>[客户成功](../../../home.md#customer-success)</li><li>[数据库](../../../home.md#database)</li><li>[电子商务](../../../home.md#ecommerce)</li><li>[营销自动化](../../../home.md#marketing-automation)</li><li>[支付](../../../home.md#payments)</li><li>[协议](../../../home.md#protocols)</li></ul>
+> 要浏览数据表，您必须已经拥有表格式源的有效基本连接ID。 如果您没有此ID，请参阅以下教程，以了解如何为表格式源创建基本连接ID的步骤： <ul><li>[Advertising](../../../home.md#advertising)</li><li>[CRM](../../../home.md#customer-relationship-management)</li><li>[客户成功](../../../home.md#customer-success)</li><li>[数据库](../../../home.md#database)</li><li>[电子商务](../../../home.md#ecommerce)</li><li>[营销自动化](../../../home.md#marketing-automation)</li><li>[付款](../../../home.md#payments)</li><li>[协议](../../../home.md#protocols)</li></ul>
 
 ## 快速入门
 
-本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
+本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [源](../../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下方式构建、标记和增强传入数据： [!DNL Platform] 服务。
-* [沙盒](../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [源](../../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。
+* [沙盒](../../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ### 使用平台API
 
-有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../landing/api-guide.md).
+有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../landing/api-guide.md)指南。
 
 ## 浏览您的数据表
 
-您可以通过对以下对象发出GET请求，检索有关数据表结构的信息 [!DNL Flow Service] 提供源的基本连接ID时的API。
+您可以在提供源的基本连接ID的同时向[!DNL Flow Service] API发出GET请求，以检索有关数据表结构的信息。
 
 **API格式**
 
@@ -56,7 +56,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会从源中返回表数组。 找到您要带入Platform的表格并记下该表格 `path` 属性，因为您需要在下一步中提供它以检查其结构。
+成功的响应会从源中返回表数组。 查找要带入Platform的表并记下其`path`属性，因为需要在下一步中提供该表以检查其结构。
 
 ```json
 [
@@ -79,7 +79,7 @@ curl -X GET \
 
 ## Inspect表的结构
 
-GET要检查数据表的内容，请向 [!DNL Flow Service] 将表的路径指定为查询参数时使用的API。
+要检查数据表的内容，请在将表的路径指定为查询参数时对[!DNL Flow Service] API执行GET请求。
 
 **API格式**
 
@@ -90,7 +90,7 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=table&object={TABLE_PAT
 | 参数 | 描述 |
 | --- | --- |
 | `{BASE_CONNECTION_ID}` | 源的基本连接ID。 |
-| `{TABLE_PATH}` | 要检查的表的路径属性。 |
+| `{TABLE_PATH}` | 要检查的表的path属性。 |
 
 **请求**
 
@@ -105,7 +105,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回有关指定表的内容和结构的信息。 有关每个表列的详细信息位于 `columns` 数组。
+成功的响应将返回有关指定表的内容和结构的信息。 有关每个表列的详细信息位于`columns`数组的元素中。
 
 ```json
 {
@@ -188,9 +188,9 @@ curl -X GET \
 
 ## 后续步骤
 
-通过阅读本教程，您已收集有关数据表结构和内容的信息。 此外，您已检索要摄取到Platform中的表的路径。 您可以使用此信息创建源连接和数据流，以将您的数据传送到Platform。 有关如何使用创建源连接和数据流的特定步骤，请参阅以下教程 [!DNL Flow Service] API：
+通过学习本教程，您已收集有关数据表结构和内容的信息。 此外，您已检索要摄取到Platform中的表的路径。 您可以使用此信息创建源连接和数据流，以将您的数据传送到Platform。 有关如何使用[!DNL Flow Service] API创建源连接和数据流的特定步骤，请参阅以下教程：
 
-* [广告源](../collect/advertising.md)
+* [Advertising源](../collect/advertising.md)
 * [CRM源](../collect/crm.md)
 * [客户成功来源](../collect/customer-success.md)
 * [数据库源](../collect/database-nosql.md)

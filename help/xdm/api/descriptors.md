@@ -17,17 +17,17 @@ ht-degree: 1%
 
 架构描述符是租户级别的元数据，这意味着它们对于您的组织是唯一的，并且所有描述符操作都在租户容器中进行。
 
-每个架构可以应用一个或多个架构描述符实体。 每个架构描述符实体包括一个描述符 `@type` 和 `sourceSchema` 适用于此项。 应用后，这些描述符将应用于使用该架构创建的所有数据集。
+每个架构可以应用一个或多个架构描述符实体。 每个架构描述符实体包括描述符`@type`及其适用的`sourceSchema`。 应用后，这些描述符将应用于使用该架构创建的所有数据集。
 
-此 `/descriptors` 中的端点 [!DNL Schema Registry] API允许您以编程方式管理体验应用程序中的描述符。
+[!DNL Schema Registry] API中的`/descriptors`端点允许您以编程方式管理体验应用程序中的描述符。
 
 ## 快速入门
 
-本指南中使用的端点是 [[!DNL Schema Registry] API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+本指南中使用的终结点是[[!DNL Schema Registry] API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/)的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
 
 ## 检索描述符列表 {#list}
 
-您可以通过向以下网站发出GET请求，列出贵组织定义的所有描述符： `/tenant/descriptors`.
+通过向`/tenant/descriptors`发出GET请求，您可以列出贵组织定义的所有描述符。
 
 **API格式**
 
@@ -47,26 +47,26 @@ curl -X GET \
   -H 'Accept: application/vnd.adobe.xdm-link+json'
 ```
 
-响应格式取决于 `Accept` 标头在请求中发送。 请注意 `/descriptors` 端点使用 `Accept` 与中的所有其他端点不同的标头 [!DNL Schema Registry] API。
+响应格式取决于请求中发送的`Accept`标头。 请注意，`/descriptors`端点使用的`Accept`标头与[!DNL Schema Registry] API中的所有其他端点不同。
 
 >[!IMPORTANT]
 >
->描述符需要唯一 `Accept` 替换的标头 `xed` 替换为 `xdm`，并且还提供 `link` 描述符特有的选项。 适当的 `Accept` 标头已包含在下面的示例调用中，但请特别注意，以确保在使用描述符时使用正确的标头。
+>描述符需要将`xed`替换为`xdm`的唯一`Accept`标头，并且还提供描述符唯一的`link`选项。 以下示例调用中已包含正确的`Accept`标头，但请格外小心，以确保在使用描述符时使用正确的标头。
 
-| `Accept` 标题 | 描述 |
+| `Accept`标头 | 描述 |
 | -------|------------ |
 | `application/vnd.adobe.xdm-id+json` | 返回描述符ID的数组 |
 | `application/vnd.adobe.xdm-link+json` | 返回描述符API路径的数组 |
 | `application/vnd.adobe.xdm+json` | 返回扩展描述符对象的数组 |
-| `application/vnd.adobe.xdm-v2+json` | 此 `Accept` 标头必须使用分页功能。 |
+| `application/vnd.adobe.xdm-v2+json` | 此`Accept`标头必须使用分页功能。 |
 
 {style="table-layout:auto"}
 
 **响应**
 
-响应包括已定义描述符的每个描述符类型的数组。 换言之，如果没有某个 `@type` 定义，注册表将不会返回该描述符类型的空数组。
+响应包括已定义描述符的每个描述符类型的数组。 换言之，如果没有定义特定`@type`的描述符，则注册表将不会为该描述符类型返回空数组。
 
-使用时 `link` `Accept` 标头，每个描述符以格式显示为数组项 `/{CONTAINER}/descriptors/{DESCRIPTOR_ID}`
+使用`link` `Accept`标头时，每个描述符都显示为格式为`/{CONTAINER}/descriptors/{DESCRIPTOR_ID}`的数组项
 
 ```JSON
 {
@@ -86,7 +86,7 @@ curl -X GET \
 
 ## 查找描述符 {#lookup}
 
-如果要查看特定描述符的详细信息，可以使用其查找(GET)单个描述符 `@id`.
+如果要查看特定描述符的详细信息，可以使用其`@id`查找(GET)单个描述符。
 
 **API格式**
 
@@ -96,13 +96,13 @@ GET /tenant/descriptors/{DESCRIPTOR_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DESCRIPTOR_ID}` | 此 `@id` 要查找的描述符对应的字段。 |
+| `{DESCRIPTOR_ID}` | 要查找的描述符的`@id`。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求通过其检索描述符 `@id` 值。 描述符未进行版本控制，因此不 `Accept` 查找请求中需要标头。
+以下请求按其`@id`值检索描述符。 描述符未进行版本控制，因此查找请求中不需要任何`Accept`标头。
 
 ```SHELL
 curl -X GET \
@@ -115,7 +115,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回描述符的详细信息，包括其 `@type` 和 `sourceSchema`以及根据描述符类型而不同的其他信息。 返回的 `@id` 应该匹配描述符 `@id` 在请求中提供。
+成功的响应将返回描述符的详细信息，包括其`@type`和`sourceSchema`，以及根据描述符类型而异的其他信息。 返回的`@id`应与请求中提供的描述符`@id`匹配。
 
 ```JSON
 {
@@ -139,11 +139,11 @@ curl -X GET \
 
 ## 创建描述符 {#create}
 
-您可以通过向以下对象发出POST请求来创建新的描述符： `/tenant/descriptors` 端点。
+您可以通过向`/tenant/descriptors`端点发出POST请求来创建新的描述符。
 
 >[!IMPORTANT]
 >
->此 [!DNL Schema Registry] 允许您定义几种不同的描述符类型。 每个描述符类型都需要在请求正文中发送其自身的特定字段。 请参阅 [附录](#defining-descriptors) 以获取描述符的完整列表以及定义这些描述符所需的字段。
+>[!DNL Schema Registry]允许您定义多个不同的描述符类型。 每个描述符类型都需要在请求正文中发送其自身的特定字段。 有关描述符的完整列表以及定义描述符所需的字段，请参阅[附录](#defining-descriptors)。
 
 **API格式**
 
@@ -153,7 +153,7 @@ POST /tenant/descriptors
 
 **请求**
 
-以下请求在示例架构中的“电子邮件地址”字段中定义标识描述符。 这说明 [!DNL Experience Platform] 将电子邮件地址用作标识符以帮助拼接有关个人的信息。
+以下请求在示例架构中的“电子邮件地址”字段中定义标识描述符。 这告知[!DNL Experience Platform]使用电子邮件地址作为标识符以帮助拼接有关个人的信息。
 
 ```SHELL
 curl -X POST \
@@ -177,7 +177,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应返回HTTP状态201 （已创建）以及新创建的描述符的详细信息，包括其 `@id`. 此 `@id` 是由分配的只读字段 [!DNL Schema Registry] 和用于引用API中的描述符。
+成功的响应返回HTTP状态201 （已创建）以及新创建的描述符的详细信息，包括其`@id`。 `@id`是由[!DNL Schema Registry]分配的只读字段，用于引用API中的描述符。
 
 ```JSON
 {
@@ -195,7 +195,7 @@ curl -X POST \
 
 ## 更新描述符 {#put}
 
-您可以通过包含其描述符来更新描述符 `@id` 在PUT请求的路径中。
+您可以通过在PUT请求的路径中包含描述符的`@id`来更新描述符。
 
 **API格式**
 
@@ -205,19 +205,19 @@ PUT /tenant/descriptors/{DESCRIPTOR_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DESCRIPTOR_ID}` | 此 `@id` 要更新的描述符的。 |
+| `{DESCRIPTOR_ID}` | 要更新的描述符的`@id`。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-此请求基本上重写描述符，因此请求正文必须包含定义该类型的描述符所需的所有字段。 换句话说，用于更新(PUT)描述符的请求有效负载与要更新的有效负载相同 [创建(POST)描述符](#create) 相同类型的。
+此请求基本上重写描述符，因此请求正文必须包含定义该类型的描述符所需的所有字段。 换句话说，用于更新(PUT)描述符的请求有效负载与用于[创建(POST)相同类型的描述符](#create)的有效负载相同。
 
 >[!IMPORTANT]
 >
->与使用POST请求创建描述符一样，每种描述符类型都需要在PUT请求负载中发送其自己的特定字段。 请参阅 [附录](#defining-descriptors) 以获取描述符的完整列表以及定义这些描述符所需的字段。
+>与使用POST请求创建描述符一样，每种描述符类型都需要在PUT请求负载中发送其自己的特定字段。 有关描述符的完整列表以及定义描述符所需的字段，请参阅[附录](#defining-descriptors)。
 
-以下示例将标识描述符更新为引用其他 `xdm:sourceProperty` (`mobile phone`)并更改 `xdm:namespace` 到 `Phone`.
+以下示例将标识描述符更新为引用其他`xdm:sourceProperty` (`mobile phone`)，并将`xdm:namespace`更改为`Phone`。
 
 ```SHELL
 curl -X PUT \
@@ -240,7 +240,7 @@ curl -X PUT \
 
 **响应**
 
-成功的响应返回HTTP状态201（已创建），并且 `@id` 的匹配项(该匹配项 `@id` （已在请求中发送）。
+成功的响应返回HTTP状态201 （已创建）和更新描述符的`@id`（应与请求中发送的`@id`匹配）。
 
 ```JSON
 {
@@ -248,11 +248,11 @@ curl -X PUT \
 }
 ```
 
-执行 [查找(GET)请求](#lookup) 要查看描述符，则表明字段现已更新，以反映在PUT请求中发送的更改。
+执行[查找(GET)请求](#lookup)以查看描述符时，显示字段现已更新以反映PUT请求中发送的更改。
 
 ## 删除描述符 {#delete}
 
-有时，您可能需要从删除已定义的描述符 [!DNL Schema Registry]. DELETE这是通过发出引用 `@id` 要移除的描述符的。
+有时您可能需要从[!DNL Schema Registry]中删除已定义的描述符。 这是通过发出引用要删除的描述符的`@id`的DELETE请求来完成的。
 
 **API格式**
 
@@ -262,7 +262,7 @@ DELETE /tenant/descriptors/{DESCRIPTOR_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DESCRIPTOR_ID}` | 此 `@id` 要删除的描述符的ID。 |
+| `{DESCRIPTOR_ID}` | 要删除的描述符的`@id`。 |
 
 {style="table-layout:auto"}
 
@@ -281,11 +281,11 @@ curl -X DELETE \
 
 成功的响应返回HTTP状态204（无内容）和一个空白正文。
 
-要确认描述符已被删除，您可以执行 [查找请求](#lookup) 针对描述符 `@id`. 响应返回HTTP状态404 （未找到），因为描述符已从 [!DNL Schema Registry].
+要确认该描述符已被删除，您可以对该描述符`@id`执行[查找请求](#lookup)。 响应返回HTTP状态404 （未找到），因为描述符已从[!DNL Schema Registry]中删除。
 
 ## 附录
 
-以下部分提供了有关在中使用描述符的其他信息 [!DNL Schema Registry] API。
+以下部分提供了有关在[!DNL Schema Registry] API中使用描述符的其他信息。
 
 ### 定义描述符 {#defining-descriptors}
 
@@ -301,7 +301,7 @@ curl -X DELETE \
 
 #### 身份描述符
 
-身份描述符表示“[!UICONTROL sourceproperty]的“[!UICONTROL sourceschema]”是一个 [!DNL Identity] 字段，如所述 [Adobe Experience Platform Identity服务](../../identity-service/home.md).
+标识描述符指示“[!UICONTROL sourceSchema]”的“[!UICONTROL sourceProperty]”是[Adobe Experience Platform Identity Service](../../identity-service/home.md)描述的[!DNL Identity]字段。
 
 ```json
 {
@@ -318,19 +318,19 @@ curl -X DELETE \
 
 | 属性 | 描述 |
 | --- | --- |
-| `@type` | 正在定义的描述符类型。 对于标识描述符，该值必须设置为 `xdm:descriptorIdentity`. |
-| `xdm:sourceSchema` | 此 `$id` 正在定义描述符的架构的URI。 |
+| `@type` | 正在定义的描述符类型。 对于标识描述符，此值必须设置为`xdm:descriptorIdentity`。 |
+| `xdm:sourceSchema` | 正在定义描述符的架构的`$id` URI。 |
 | `xdm:sourceVersion` | 源架构的主要版本。 |
 | `xdm:sourceProperty` | 将成为标识的特定属性的路径。 路径应该以“/”开头，而不是以开头。 不要在路径中包含“properties”（例如，使用“/personalEmail/address”而不是“/properties/personalEmail/properties/address”） |
-| `xdm:namespace` | 此 `id` 或 `code` 身份命名空间的值。 命名空间列表可以使用 [[!DNL Identity Service API]](https://developer.adobe.com/experience-platform-apis/references/identity-service). |
-| `xdm:property` | 或者 `xdm:id` 或 `xdm:code`，具体取决于 `xdm:namespace` 已使用。 |
+| `xdm:namespace` | 身份命名空间的`id`或`code`值。 可以使用[[!DNL Identity Service API]](https://developer.adobe.com/experience-platform-apis/references/identity-service)找到命名空间列表。 |
+| `xdm:property` | `xdm:id`或`xdm:code`，具体取决于使用的`xdm:namespace`。 |
 | `xdm:isPrimary` | 可选的布尔值。 如果为true，则指示字段作为主标识。 架构只能包含一个主标识。 |
 
 {style="table-layout:auto"}
 
 #### 友好名称描述符 {#friendly-name}
 
-友好名称描述符允许用户修改 `title`， `description`、和 `meta:enum` 核心库架构字段的值。 在使用“eVar”和您希望标记为包含特定于您的组织的信息的其他“通用”字段时特别有用。 UI可以使用这些显示更友好的名称或仅显示具有友好名称的字段。
+友好名称描述符允许用户修改核心库架构字段的`title`、`description`和`meta:enum`值。 在使用“eVar”和您希望标记为包含特定于您的组织的信息的其他“通用”字段时特别有用。 UI可以使用这些显示更友好的名称或仅显示具有友好名称的字段。
 
 ```json
 {
@@ -358,20 +358,20 @@ curl -X DELETE \
 
 | 属性 | 描述 |
 | --- | --- |
-| `@type` | 正在定义的描述符类型。 对于友好名称描述符，必须将此值设置为 `xdm:alternateDisplayInfo`. |
-| `xdm:sourceSchema` | 此 `$id` 正在定义描述符的架构的URI。 |
+| `@type` | 正在定义的描述符类型。 对于友好名称描述符，此值必须设置为`xdm:alternateDisplayInfo`。 |
+| `xdm:sourceSchema` | 正在定义描述符的架构的`$id` URI。 |
 | `xdm:sourceVersion` | 源架构的主要版本。 |
-| `xdm:sourceProperty` | 要修改其详细信息的特定属性的路径。 路径应以斜杠(`/`)，并且不是以一个结尾。 不包括 `properties` 在路径中(例如，使用 `/personalEmail/address` 而不是 `/properties/personalEmail/properties/address`)。 |
+| `xdm:sourceProperty` | 要修改其详细信息的特定属性的路径。 路径应以斜杠(`/`)开头，而不是以斜杠结尾。 不要在路径中包含`properties`（例如，使用`/personalEmail/address`而不是`/properties/personalEmail/properties/address`）。 |
 | `xdm:title` | 您希望为此字段显示的新标题，以字首大写字母表示。 |
 | `xdm:description` | 可以在标题中添加可选描述。 |
-| `meta:enum` | 如果字段由 `xdm:sourceProperty` 是字符串字段， `meta:enum` 可用于在分段UI中为字段添加建议值。 请务必注意 `meta:enum` 不会为XDM字段声明枚举或提供任何数据验证。<br><br>这应当仅用于Adobe定义的核心XDM字段。 如果源属性是由您的组织定义的自定义字段，则应编辑该字段的 `meta:enum` 属性直接通过PATCH请求发送到字段的父资源。 |
-| `meta:excludeMetaEnum` | 如果字段由 `xdm:sourceProperty` 是一个字符串字段，其下提供了现有的建议值 `meta:enum` 字段中，您可以将此对象包含在友好名称描述符中，以从分段中排除其中的部分或全部值。 每个条目的键和值必须与原始条目中包含的键和值匹配 `meta:enum` 字段，以便排除条目。 |
+| `meta:enum` | 如果`xdm:sourceProperty`指示的字段为字符串字段，则可以使用`meta:enum`在分段UI中为字段添加建议值。 需要注意的是，`meta:enum`不会为XDM字段声明枚举或提供任何数据验证。<br><br>这只能用于Adobe定义的核心XDM字段。 如果源属性是由贵组织定义的自定义字段，则应直接通过对该字段父资源的PATCH请求编辑该字段的`meta:enum`属性。 |
+| `meta:excludeMetaEnum` | 如果由`xdm:sourceProperty`指示的字段是一个字符串字段，该字段具有在`meta:enum`字段下提供的现有建议值，则可以在友好名称描述符中包含此对象，以从分段中排除这些值的部分或全部。 每个条目的键和值必须与字段的原始`meta:enum`中包含的键和值匹配，才能排除该条目。 |
 
 {style="table-layout:auto"}
 
 #### 关系描述符
 
-关系描述符描述两个不同架构之间的关系，它们基于中所述的属性 `sourceProperty` 和 `destinationProperty`. 请参阅上的教程 [定义两个架构之间的关系](../tutorials/relationship-api.md) 以了解更多信息。
+关系描述符描述两个不同架构之间的关系，它们以`sourceProperty`和`destinationProperty`中描述的属性作为密钥。 有关详细信息，请参阅有关[定义两个架构](../tutorials/relationship-api.md)之间关系的教程。
 
 ```json
 {
@@ -389,11 +389,11 @@ curl -X DELETE \
 
 | 属性 | 描述 |
 | --- | --- |
-| `@type` | 正在定义的描述符类型。 对于关系描述符，该值必须设置为 `xdm:descriptorOneToOne`. |
-| `xdm:sourceSchema` | 此 `$id` 正在定义描述符的架构的URI。 |
+| `@type` | 正在定义的描述符类型。 对于关系描述符，此值必须设置为`xdm:descriptorOneToOne`。 |
+| `xdm:sourceSchema` | 正在定义描述符的架构的`$id` URI。 |
 | `xdm:sourceVersion` | 源架构的主要版本。 |
 | `xdm:sourceProperty` | 要定义关系的源架构中字段的路径。 应该以“/”开头，而不是以开头。 不要在路径中包含“properties”（例如，“/personalEmail/address”而不是“/properties/personalEmail/properties/address”）。 |
-| `xdm:destinationSchema` | 此 `$id` 此描述符正在定义与其关系的参考架构的URI。 |
+| `xdm:destinationSchema` | 此描述符正在定义关系的参考架构的`$id` URI。 |
 | `xdm:destinationVersion` | 引用架构的主要版本。 |
 | `xdm:destinationProperty` | 引用架构中目标字段的可选路径。 如果忽略此属性，则包含匹配引用标识描述符的任何字段都会推断目标字段（请参阅下文）。 |
 
@@ -415,17 +415,17 @@ curl -X DELETE \
 
 | 属性 | 描述 |
 | --- | --- |
-| `@type` | 正在定义的描述符类型。 对于引用身份描述符，必须将此值设置为 `xdm:descriptorReferenceIdentity`. |
-| `xdm:sourceSchema` | 此 `$id` 正在定义描述符的架构的URI。 |
+| `@type` | 正在定义的描述符类型。 对于引用标识描述符，此值必须设置为`xdm:descriptorReferenceIdentity`。 |
+| `xdm:sourceSchema` | 正在定义描述符的架构的`$id` URI。 |
 | `xdm:sourceVersion` | 源架构的主要版本。 |
-| `xdm:sourceProperty` | 源架构中用于引用引用架构的字段的路径。 应该以“/”开头，而不是以开头。 不要在路径中包含“properties”(例如， `/personalEmail/address` 而不是 `/properties/personalEmail/properties/address`)。 |
+| `xdm:sourceProperty` | 源架构中用于引用引用架构的字段的路径。 应该以“/”开头，而不是以开头。 不要在路径中包含“properties”（例如，`/personalEmail/address`而不是`/properties/personalEmail/properties/address`）。 |
 | `xdm:identityNamespace` | 源属性的身份命名空间代码。 |
 
 {style="table-layout:auto"}
 
 #### 已弃用的字段描述符
 
-您可以 [弃用自定义XDM资源中的字段](../tutorials/field-deprecation-api.md#custom) 通过添加 `meta:status` 属性设置为 `deprecated` 到有问题的领域。 但是，如果要弃用由架构中的标准XDM资源提供的字段，可向相关架构分配已弃用的字段描述符，以实现相同的效果。 使用 [正确 `Accept` 标题](../tutorials/field-deprecation-api.md#verify-deprecation)后，您可以在API中查找架构时，查看该架构已弃用的标准字段。
+您可以[弃用自定义XDM资源](../tutorials/field-deprecation-api.md#custom)中的字段，方法是向相关字段添加设置为`deprecated`的`meta:status`属性。 但是，如果要弃用由架构中的标准XDM资源提供的字段，可向相关架构分配已弃用的字段描述符，以实现相同的效果。 通过使用[正确的`Accept`标头](../tutorials/field-deprecation-api.md#verify-deprecation)，您可以在API中查找架构时查看该架构已弃用的标准字段。
 
 ```json
 {
@@ -438,9 +438,9 @@ curl -X DELETE \
 
 | 属性 | 描述 |
 | --- | --- |
-| `@type` | 描述符的类型。 对于字段弃用描述符，必须将此值设置为 `xdm:descriptorDeprecated`. |
-| `xdm:sourceSchema` | URI `$id` 描述符应用于的架构的ID。 |
-| `xdm:sourceVersion` | 要将描述符应用于的架构的版本。 应设置为 `1`. |
-| `xdm:sourceProperty` | 架构中要将描述符应用于的属性的路径。 如果要将描述符应用于多个属性，则可以提供数组形式的路径列表(例如， `["/firstName", "/lastName"]`)。 |
+| `@type` | 描述符的类型。 对于字段弃用描述符，此值必须设置为`xdm:descriptorDeprecated`。 |
+| `xdm:sourceSchema` | 要应用描述符的架构的URI `$id`。 |
+| `xdm:sourceVersion` | 要将描述符应用于的架构的版本。 应设置为`1`。 |
+| `xdm:sourceProperty` | 架构中要将描述符应用于的属性的路径。 如果要将描述符应用于多个属性，则可以提供数组形式的路径列表（例如，`["/firstName", "/lastName"]`）。 |
 
 {style="table-layout:auto"}

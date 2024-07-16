@@ -9,9 +9,9 @@ ht-degree: 9%
 
 ---
 
-# [!UICONTROL 产品类别] 架构字段组
+# [!UICONTROL 产品类别]架构字段组
 
-[!UICONTROL 产品类别] 是的标准架构字段组 [[!UICONTROL 产品] 类](../../classes/product.md) 用于捕获与产品类别相关的属性。
+[!UICONTROL 产品类别]是[[!UICONTROL 产品]类](../../classes/product.md)的标准架构字段组，用于捕获与产品类别相关的属性。
 
 ![](../../images/field-groups/product/product-category.png)
 
@@ -24,4 +24,4 @@ ht-degree: 9%
 
 {style="table-layout:auto"}
 
-有关字段组的更多详细信息，请参阅 [公共XDM存储库](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/product/product-category.schema.json).
+有关字段组的更多详细信息，请参阅[公共XDM存储库](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/product/product-category.schema.json)。

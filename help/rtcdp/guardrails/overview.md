@@ -16,21 +16,21 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->检查您的销售订单中的许可证权利以及相应的 [产品描述](https://helpx.adobe.com/legal/product-descriptions.html) 实际使用限制以及此护栏页面。
+>除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/legal/product-descriptions.html)中的实际使用限制。
 
 从此处开始，访问下面的链接，了解Real-Time CDP各种服务和区域的所有防护：
 
 * [数据摄取的护栏](/help/ingestion/guardrails.md)
-* [的护栏 [!DNL Edge Network Server API]](/help/server-api/guardrails.md)
-* [护栏 [!DNL Real-Time Customer Profile] 数据和分段](/help/profile/guardrails.md)
-* [护栏 [!DNL Identity Service] 数据](/help/identity-service/guardrails.md)
-* [护栏 [!DNL Query Service]](/help/query-service/guardrails.md)
+* [ [!DNL Edge Network Server API]的护栏](/help/server-api/guardrails.md)
+* [ [!DNL Real-Time Customer Profile] 数据和分段的护栏](/help/profile/guardrails.md)
+* [ [!DNL Identity Service] 数据的护栏](/help/identity-service/guardrails.md)
+* [ [!DNL Query Service]的护栏](/help/query-service/guardrails.md)
 * [通过目标激活数据的护栏](/help/destinations/guardrails.md)
 * [Real-Time CDP B2B的护栏](/help/rtcdp/b2b-guardrails.md)
 
 >[!TIP]
 >
->此外，访问 [数字体验Blueprint](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html) 以了解更多信息，例如 [端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) 用于各种Experience Platform服务。
+>此外，请访问[数字体验Blueprint](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html)以获取详细信息，如各种Experience Platform服务的[端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams)。
 
 ## 护栏类型 {#guardrail-types}
 
@@ -61,4 +61,4 @@ ht-degree: 1%
 
 ## 后续步骤
 
-了解了适用于Real-Time CDP各个区域和服务的护栏后，您可以遵循这些护栏 [Real-Time CDP实施的示例用例](/help/rtcdp/get-started.md).
+在了解了适用于Real-Time CDP各个区域和服务的护栏后，您可以遵循该护栏并查看一个[Real-Time CDP实施示例用例](/help/rtcdp/get-started.md)。

@@ -11,39 +11,39 @@ ht-degree: 0%
 
 ---
 
-# 连接 [!DNL Tableau] 查询服务
+# 将[!DNL Tableau]连接到查询服务
 
-本文档提供了有关连接的信息 [!DNL Tableau] 使用Adobe Experience Platform [!DNL Query Service].
+本文档提供了有关将[!DNL Tableau]与Adobe Experience Platform [!DNL Query Service]连接的信息。
 
 >[!NOTE]
 >
-> 本指南假定您已经有权访问 [!DNL Tableau] 并熟悉如何导航其界面。 有关以下内容的更多信息 [!DNL Tableau] 可在以下位置找到： [官方 [!DNL Tableau] 文档](https://help.tableau.com/current/pro/desktop/en-us/default.htm).
+> 本指南假定您已具有访问[!DNL Tableau]的权限并熟悉如何导航其界面。 有关[!DNL Tableau]的详细信息，请参阅[官方 [!DNL Tableau] 文档](https://help.tableau.com/current/pro/desktop/en-us/default.htm)。
 
-操作说明 [使用Tableau连接到PostgreSQL服务器](https://help.tableau.com/current/pro/desktop/en-us/examples_postgresql.htm) 详情请访问Tableau官方网站。 出现连接设置对话框后，在参数字段中输入您的Platform凭据以与Adobe Experience Platform连接。 下面列出了所需的连接参数。
+有关如何[使用Tableau](https://help.tableau.com/current/pro/desktop/en-us/examples_postgresql.htm)连接到PostgreSQL服务器的说明，请参阅官方的Tableau网站。 出现连接设置对话框后，在参数字段中输入您的Platform凭据以与Adobe Experience Platform连接。 下面列出了所需的连接参数。
 
 | 连接参数 | 描述 |
 |---|---|
-| **[!DNL Server]** | SFTP存储位置的地址。 使用Experience Platform的值 **[!UICONTROL 主机]** 凭据。 |
-| **[!DNL Port]:** | 的端口 [!DNL Query Service]. 必须使用端口 **80** 或 **5432** 以连接 [!DNL Query Service]. |
-| **[!DNL Database]** | 要访问的数据库。 使用Experience Platform的值 **[!UICONTROL 数据库]** 凭据： `prod:all`. |
-| **[!DNL Authentication]:** | 您选择的证明用户身份的方法。 建议您选择 [!DNL Username and Password] 从下拉菜单的可用选项中。 |
-| **[!DNL Username]** | 这是您的Platform组织ID。 使用Experience Platform的值 **[!UICONTROL 用户名]** 凭据。 ID将采用以下格式 `ORG_ID@AdobeOrg`. |
-| **[!DNL Password]** | 该字母数字字符串是您的Experience Platform **[!UICONTROL 密码]** 凭据。 如果要使用未过期的凭据，此值是以下项的连接参数： `technicalAccountID` 和 `credential` 在配置JSON文件中下载。 密码值采用以下形式： {technicalAccountId}：{credential}. 未过期凭据的配置JSON文件是在其初始化期间的一次性下载，该Adobe不保留的副本。 |
+| **[!DNL Server]** | SFTP存储位置的地址。 使用Experience Platform **[!UICONTROL Host]**&#x200B;凭据的值。 |
+| **[!DNL Port]:** | [!DNL Query Service]的端口。 您必须使用端口&#x200B;**80**&#x200B;或&#x200B;**5432**&#x200B;来连接[!DNL Query Service]。 |
+| **[!DNL Database]** | 要访问的数据库。 使用Experience Platform **[!UICONTROL 数据库]**&#x200B;凭据的值： `prod:all`。 |
+| **[!DNL Authentication]:** | 您选择的证明用户身份的方法。 建议从下拉菜单的可用选项中选择[!DNL Username and Password]。 |
+| **[!DNL Username]** | 这是您的Platform组织ID。 使用Experience Platform **[!UICONTROL 用户名]**&#x200B;凭据的值。 ID将采用`ORG_ID@AdobeOrg`格式。 |
+| **[!DNL Password]** | 此字母数字字符串是您的Experience Platform **[!UICONTROL 密码]**&#x200B;凭据。 如果要使用未过期的凭据，此值是从JSON配置文件中下载的`technicalAccountID`和`credential`中的连接参数。 密码值采用以下形式： {technicalAccountId}：{credential}。 未过期凭据的配置JSON文件是在其初始化期间的一次性下载，该Adobe不保留的副本。 |
 
-有关查找用户名、密码和登录凭据的详细信息，请阅读 [凭据指南](../ui/credentials.md). 要查找您的凭据，请登录 [!DNL Platform]，然后选择 **[!UICONTROL 查询]**，后接 **[!UICONTROL 凭据]**.
-
->[!IMPORTANT]
->
->作为Tableau或Power BI用户，您可以从“查询服务凭据”选项卡将Customer Journey Analytics连接到BI工具。 有关如何执行操作的说明，请参阅凭据文档 [将您的BI工具连接到Customer Journey Analytics](../ui/credentials.md#connect-to-customer-journey-analytics).
-
-确保您已检查 **[!UICONTROL 需要SSL]** 方框，然后再尝试连接。 请参阅 [SSL模式文档](./ssl-modes.md) 了解到Adobe Experience Platform查询服务的第三方连接的SSL支持。
+有关查找用户名、密码和登录凭据的详细信息，请阅读[凭据指南](../ui/credentials.md)。 若要查找凭据，请登录到[!DNL Platform]，然后选择&#x200B;**[!UICONTROL 查询]**，然后选择&#x200B;**[!UICONTROL 凭据]**。
 
 >[!IMPORTANT]
 >
->第三方BI工具中的嵌套数据结构可以扁平化，以提高其可用性并减少检索、分析、转换和报告数据所需的工作量。 请参阅有关以下内容的文档[`FLATTEN` 特征](../key-concepts/flatten-nested-data.md) 以获取有关在连接到数据库时如何激活此设置的说明。
+>作为Tableau或Power BI用户，您可以从“查询服务凭据”选项卡将Customer Journey Analytics连接到BI工具。 有关如何[将BI工具连接到Customer Journey Analytics](../ui/credentials.md#connect-to-customer-journey-analytics)的说明，请参阅凭据文档。
+
+在尝试连接之前，请确保已选中&#x200B;**[!UICONTROL 要求SSL]**&#x200B;框。 请参阅[SSL模式文档](./ssl-modes.md)，了解对Adobe Experience Platform查询服务的第三方连接的SSL支持。
+
+>[!IMPORTANT]
+>
+>第三方BI工具中的嵌套数据结构可以扁平化，以提高其可用性并减少检索、分析、转换和报告数据所需的工作量。 有关在连接到数据库时如何激活此设置的说明，请参阅有关[`FLATTEN`功能](../key-concepts/flatten-nested-data.md)的文档。
 
 填写完您的所有凭据后，确认您的设置以继续。 您现在已与Adobe Experience Platform建立了连接。
 
 ## 后续步骤
 
-现在您已连接到 [!DNL Query Service]，您可以使用 [!DNL Tableau] 以编写查询。 有关如何编写和运行查询的更多信息，请阅读以下指南： [正在运行查询](../best-practices/writing-queries.md).
+现在您已与[!DNL Query Service]连接，可以使用[!DNL Tableau]编写查询。 有关如何编写和运行查询的详细信息，请阅读有关[运行查询](../best-practices/writing-queries.md)的指南。

@@ -14,21 +14,21 @@ ht-degree: 2%
 
 # 配置文件系统作业端点（删除请求）
 
-Adobe Experience Platform允许您从多个源摄取数据，并为个别客户构建可靠的配置文件。 数据被引入 [!DNL Platform] 存储在 [!DNL Data Lake]，并且如果为配置文件启用了数据集，则该数据将存储在 [!DNL Real-Time Customer Profile] 数据存储区。 有时候，可能有必要从配置文件存储中删除与数据集关联的配置文件数据，以便删除不再需要或添加错误的数据。 这需要使用 [!DNL Real-Time Customer Profile] 用于创建应用程序的API [!DNL Profile] 系统作业，或 `delete request`，如有必要，还可以修改、监视或移除这些组件。
+Adobe Experience Platform允许您从多个源摄取数据，并为个别客户构建可靠的配置文件。 摄取到[!DNL Platform]的数据存储在[!DNL Data Lake]中，如果为配置文件启用了数据集，则该数据也存储在[!DNL Real-Time Customer Profile]数据存储中。 有时候，可能有必要从配置文件存储中删除与数据集关联的配置文件数据，以便删除不再需要或添加错误的数据。 这需要使用[!DNL Real-Time Customer Profile] API创建[!DNL Profile]系统作业，或`delete request`，如有必要，还可以修改、监视或删除这些作业。
 
 >[!NOTE]
 >
->如果您尝试从以下位置删除数据集或批次： [!DNL Data Lake]，请访问 [目录服务概述](../../catalog/home.md) 以了解更多信息。
+>如果您尝试从[!DNL Data Lake]中删除数据集或批次，请访问[目录服务概述](../../catalog/home.md)以了解更多信息。
 
 ## 快速入门
 
-本指南中使用的API端点是 [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). 在继续之前，请查看 [快速入门指南](getting-started.md) 有关相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+本指南中使用的API终结点是[[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en)的一部分。 在继续之前，请查看[快速入门指南](getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
 
 ## 查看删除请求
 
-删除请求是一个长期运行的异步过程，这意味着您的组织可能同时运行多个删除请求。 要查看贵组织当前运行的所有删除请求，您可以向以下网站执行GET请求： `/system/jobs` 端点。
+删除请求是一个长期运行的异步过程，这意味着您的组织可能同时运行多个删除请求。 要查看您的组织当前运行的所有删除请求，您可以对`/system/jobs`端点执行GET请求。
 
-您还可以使用可选的查询参数来筛选响应中返回的删除请求列表。 要使用多个参数，请使用&amp;符号(`&`)。
+您还可以使用可选的查询参数来筛选响应中返回的删除请求列表。 若要使用多个参数，请使用&amp;符号(`&`)分隔每个参数。
 
 **API格式**
 
@@ -42,7 +42,7 @@ GET /system/jobs?{QUERY_PARAMETERS}
 | `start` | 根据请求的创建时间，偏移返回的结果页面。 示例：`start=4` |
 | `limit` | 限制返回的结果数。 示例：`limit=10` |
 | `page` | 根据请求的创建时间，返回结果的特定页面。 示例：`page=2` |
-| `sort` | 按特定字段对结果进行升序排序(`asc`)或降序(`desc`)。 返回多个结果页面时，排序参数不起作用。 示例：`sort=batchId:asc` |
+| `sort` | 按特定字段对结果进行升序(`asc`)或降序(`desc`)排序。 返回多个结果页面时，排序参数不起作用。 示例：`sort=batchId:asc` |
 
 **请求**
 
@@ -93,18 +93,18 @@ curl -X GET \
 | 属性 | 描述 |
 |---|---|
 | `_page.count` | 请求总数。 此响应的空间已被截断。 |
-| `_page.next` | 如果存在额外的结果页面，请通过替换 [查找请求](#view-a-specific-delete-request) 使用 `"next"` 提供的值。 |
-| `jobType` | 正在创建的作业类型。 在这种情况下，它将始终返回 `"DELETE"`. |
-| `status` | 删除请求的状态。 可能的值包括 `"NEW"`， `"PROCESSING"`， `"COMPLETED"`， `"ERROR"`. |
-| `metrics` | 包含已处理的记录数的对象(`"recordsProcessed"`)以及处理请求所用的时间（以秒为单位）或完成请求所用的时间(`"timeTakenInSec"`)。 |
+| `_page.next` | 如果存在额外的结果页，请将[查找请求](#view-a-specific-delete-request)中的ID值替换为提供的`"next"`值，以查看下一页的结果。 |
+| `jobType` | 正在创建的作业类型。 在这种情况下，它将始终返回`"DELETE"`。 |
+| `status` | 删除请求的状态。 可能的值为`"NEW"`、`"PROCESSING"`、`"COMPLETED"`、`"ERROR"`。 |
+| `metrics` | 一个对象，其中包含已处理的记录数(`"recordsProcessed"`)、请求已处理的时间（以秒为单位）或完成请求所需的时间(`"timeTakenInSec"`)。 |
 
 ## 创建删除请求 {#create-a-delete-request}
 
-新删除请求是通过向发出的POST请求来启动的 `/systems/jobs` 端点，其中在请求正文中提供要删除的数据集或批次的ID。
+启动新的删除请求是通过向`/systems/jobs`端点发出的POST请求完成的，在该请求正文中提供了要删除的数据集或批次的ID。
 
 ### 删除数据集和关联的配置文件数据
 
-要从配置文件存储中删除数据集及与该数据集关联的所有配置文件数据，数据集ID必须包含在POST请求正文中。 此操作将删除给定数据集的所有数据。 [!DNL Experience Platform] 允许您同时基于记录和时间序列架构删除数据集。
+要从配置文件存储中删除数据集及与该数据集关联的所有配置文件数据，数据集ID必须包含在POST请求正文中。 此操作将删除给定数据集的所有数据。 [!DNL Experience Platform]允许您同时基于记录和时间序列架构删除数据集。
 
 **API格式**
 
@@ -129,11 +129,11 @@ curl -X POST \
 
 | 属性 | 描述 |
 |---|---|
-| `dataSetId` | **（必需）** 要删除的数据集的ID。 |
+| `dataSetId` | **（必需）**&#x200B;要删除的数据集的ID。 |
 
 **响应**
 
-成功的响应会返回新创建的删除请求的详细信息，包括系统生成的唯一只读ID请求。 这可用于查找请求并检查其状态。 此 `status` 对于创建时的请求，为 `"NEW"` 直到它开始处理。 此 `dataSetId` 在响应中应匹配 `dataSetId` 在请求中发送。
+成功的响应会返回新创建的删除请求的详细信息，包括系统生成的唯一只读ID请求。 这可用于查找请求并检查其状态。 创建请求时的`status`为`"NEW"`，直到开始处理为止。 响应中的`dataSetId`应与请求中发送的`dataSetId`匹配。
 
 ```json
 {
@@ -160,7 +160,7 @@ curl -X POST \
 >
 > 无法删除基于记录架构的数据集的批次，因为记录类型数据集批次会覆盖以前的记录，因此无法“撤消”或删除。 在基于记录架构的数据集中消除错误批次影响的唯一方法是使用正确的数据重新摄取批次，以覆盖错误的记录。
 
-有关记录和时间序列行为的更多信息，请查阅 [有关XDM数据行为的部分](../../xdm/home.md#data-behaviors) 在 [!DNL XDM System] 概述。
+有关记录和时序行为的更多信息，请查看[!DNL XDM System]概述中有关XDM数据行为](../../xdm/home.md#data-behaviors)的[部分。
 
 **API格式**
 
@@ -185,11 +185,11 @@ curl -X POST \
 
 | 属性 | 描述 |
 |---|---|
-| `batchId` | **（必需）** 要删除的批次的ID。 |
+| `batchId` | **（必需）**&#x200B;要删除的批次ID。 |
 
 **响应**
 
-成功的响应会返回新创建的删除请求的详细信息，包括系统生成的唯一只读ID请求。 这可用于查找请求并检查其状态。 此 `"status"` 对于创建时的请求，为 `"NEW"` 直到它开始处理。 此 `"batchId"` 响应中的值应与 `"batchId"` 请求中发送的值。
+成功的响应会返回新创建的删除请求的详细信息，包括系统生成的唯一只读ID请求。 这可用于查找请求并检查其状态。 创建请求时的`"status"`为`"NEW"`，直到开始处理为止。 响应中的`"batchId"`值应与请求中发送的`"batchId"`值匹配。
 
 ```json
 {
@@ -226,7 +226,7 @@ curl -X POST \
 
 ## 查看特定的删除请求 {#view-a-specific-delete-request}
 
-要查看特定删除请求（包括其状态等详细信息），您可以向以下地址执行查找(GET)请求： `/system/jobs` 端点并在路径中包含删除请求的ID。
+要查看特定删除请求，包括其状态等详细信息，您可以对`/system/jobs`端点执行查找(GET)请求，并在路径中包含删除请求的ID。
 
 **API格式**
 
@@ -236,7 +236,7 @@ GET /system/jobs/{DELETE_REQUEST_ID}
 
 | 参数 | 描述 |
 |---|---|
-| `{DELETE_REQUEST_ID}` | **（必需）** 要查看的删除请求的ID。 |
+| `{DELETE_REQUEST_ID}` | **（必需）**&#x200B;要查看的删除请求的ID。 |
 
 **请求**
 
@@ -251,7 +251,7 @@ curl -X GET \
 
 **响应**
 
-响应会提供删除请求的详细信息，包括其更新状态。 响应中的删除请求的ID (响应中的 `"id"` 值)应与请求路径中发送的ID匹配。
+响应会提供删除请求的详细信息，包括其更新状态。 响应中的删除请求的ID（`"id"`值）应与请求路径中发送的ID匹配。
 
 ```json
 {
@@ -268,15 +268,15 @@ curl -X GET \
 
 | 属性 | 描述 |
 |---|---|
-| `jobType` | 正在创建的作业类型，在这种情况下，将始终返回 `"DELETE"`. |
-| `status` | 删除请求的状态。 可能的值： `"NEW"`， `"PROCESSING"`， `"COMPLETED"`， `"ERROR"`. |
+| `jobType` | 正在创建的作业类型，在这种情况下，它将始终返回`"DELETE"`。 |
+| `status` | 删除请求的状态。 可能的值： `"NEW"`、`"PROCESSING"`、`"COMPLETED"`、`"ERROR"`。 |
 | `metrics` | 一个数组，其中包含已处理的记录数(`"recordsProcessed"`)以及处理请求所用的时间（以秒为单位）或完成请求所用的时间(`"timeTakenInSec"`)。 |
 
-一旦删除请求状态为 `"COMPLETED"` 您可以通过尝试使用数据访问API访问已删除的数据来确认数据已被删除。 有关如何使用数据访问API访问数据集和批次的说明，请查看 [数据访问文档](../../data-access/home.md).
+删除请求状态为`"COMPLETED"`后，您可以通过尝试使用数据访问API访问已删除的数据来确认数据已被删除。 有关如何使用数据访问API访问数据集和批次的说明，请查看[数据访问文档](../../data-access/home.md)。
 
 ## 删除删除请求
 
-[!DNL Experience Platform] 允许您删除以前的请求，删除请求可能由于许多原因非常有用，包括删除作业未完成或停滞在处理阶段。 要删除删除请求，您可以对执行DELETE请求 `/system/jobs` 端点，并包括要删除到请求路径的删除请求的ID。
+[!DNL Experience Platform]允许您删除以前的请求，这可能对许多原因有用，包括删除作业未完成或卡在处理阶段。 要删除删除请求，您可以对`/system/jobs`端点执行DELETE请求，并包含要删除到请求路径的删除请求的ID。
 
 **API格式**
 
@@ -305,4 +305,4 @@ curl -X POST \
 
 ## 后续步骤
 
-现在您已经知道了从中删除数据集和批次所涉及的步骤 [!DNL Profile store] 范围 [!DNL Experience Platform]，您可以安全地删除错误添加或您的组织不再需要的数据。 请注意，删除请求无法撤消，因此您应该只删除确信现在不需要且将来不需要的数据。
+现在您已经知道从[!DNL Experience Platform]中的[!DNL Profile store]删除数据集和批次所涉及的步骤，您可以安全地删除已错误添加或您的组织不再需要的数据。 请注意，删除请求无法撤消，因此您应该只删除确信现在不需要且将来不需要的数据。

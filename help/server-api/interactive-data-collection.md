@@ -17,9 +17,9 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
->此 `/interact` 端点主要设计为Experience PlatformSDK使用。 此端点可能会发生额外的更改，其行为可能会发生演变，恕不另行通知。 例如，将来可能会向响应有效负载添加新项目。
+>`/interact`终结点主要设计为Experience PlatformSDK使用。 此端点可能会发生额外的更改，其行为可能会发生演变，恕不另行通知。 例如，将来可能会向响应有效负载添加新项目。
 
-服务器响应包括一个或多个 `Handle` 对象，如下所示。
+服务器响应包含一个或多个`Handle`对象，如下所示。
 
 ## API调用示例
 
@@ -67,11 +67,11 @@ curl -X POST "https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM
 | 参数 | 类型 | 必需 | 描述 |
 | --- | --- | --- | --- |
 | `dataStreamId` | `String` | 可以。 | 数据流ID。 |
-| `requestId` | `String` | 否 | 提供用于关联内部服务器请求的客户端随机ID。 如果未提供，Edge Network将生成一个，并在响应中返回它。 |
+| `requestId` | `String` | 否 | 提供用于关联内部服务器请求的客户端随机ID。 如果未提供任何内容，则Edge Network将生成一个，并在响应中返回该值。 |
 
 ### 响应 {#response}
 
-成功的响应返回HTTP状态 `200 OK`，带有一个或多个 `Handle` 对象，具体取决于在数据流配置中启用的实时边缘服务。
+根据数据流配置中启用的实时边缘服务，成功的响应返回一个或多个`Handle`对象的HTTP状态`200 OK`。
 
 ```json
 {

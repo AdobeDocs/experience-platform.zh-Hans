@@ -7,55 +7,55 @@ description: 了解如何使用流服务API将数据流删除到批处理目标�
 exl-id: fa40cf97-46c6-4a10-b53c-30bed2dd1b2d
 source-git-commit: c35a29d4e9791b566d9633b651aecd2c16f88507
 workflow-type: tm+mt
-source-wordcount: '572'
-ht-degree: 1%
+source-wordcount: '567'
+ht-degree: 14%
 
 ---
 
 # 使用流服务API删除目标数据流
 
-您可以使用删除包含错误或已过时的数据流 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+您可以使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)删除包含错误或已过时的数据流。
 
-本教程介绍了使用将数据流同时删除到批处理目标和流式目标 [!DNL Flow Service].
+本教程介绍使用[!DNL Flow Service]将数据流同时删除到批处理目标和流式目标的步骤。
 
 ## 快速入门 {#get-started}
 
-本教程要求您拥有有效的流ID。 如果您没有有效的流ID，请从 [目标目录](../catalog/overview.md) 并按照概述的步骤操作 [连接到目标](../ui/connect-destination.md) 和 [激活数据](../ui/activation-overview.md) 在尝试本教程之前。
+本教程要求您拥有有效的流ID。 如果您没有有效的流ID，请从[目标目录](../catalog/overview.md)中选择您选择的目标，然后按照列出的步骤[连接到目标](../ui/connect-destination.md)和[激活数据](../ui/activation-overview.md)，然后再尝试本教程。
 
 本教程还要求您实际了解Adobe Experience Platform的以下组件：
 
-* [目标](../home.md)： [!DNL Destinations] 是与目标平台预建的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用目标为跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例激活已知和未知数据。
-* [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [目标](../home.md)： [!DNL Destinations]是预先构建的与目标平台的集成，可无缝激活Adobe Experience Platform中的数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
+* [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-以下部分提供了使用，成功删除数据流时需要了解的其他信息 [!DNL Flow Service] API。
+以下部分提供了使用[!DNL Flow Service] API成功删除数据流时需要了解的其他信息。
 
-### 正在读取示例API调用 {#reading-sample-api-calls}
+### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何设置请求的格式。 这些资源包括路径、必需的标头和格式正确的请求负载。 此外，还提供了在API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅以下章节： [如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中有关[如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。
 
-### 收集所需标题的值 {#gather-values-for-required-headers}
+### 收集所需标头的值 {#gather-values-for-required-headers}
 
-为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将提供所有中所有所需标头的值 [!DNL Experience Platform] API调用，如下所示：
+要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-中的所有资源 [!DNL Experience Platform]，包括属于 [!DNL Flow Service]，与特定的虚拟沙盒隔离。 的所有请求 [!DNL Platform] API需要一个标头，用于指定将在其中执行操作的沙盒的名称：
+[!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都被隔离到特定的虚拟沙盒中。 对[!DNL Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->如果 `x-sandbox-name` 未指定标头，请求将在 `prod` 沙盒。
+>如果未指定`x-sandbox-name`标头，则在`prod`沙盒下解析请求。
 
-包含有效负载(POST、PUT、PATCH)的所有请求都需要额外的媒体类型标头：
+所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
 
 * `Content-Type: application/json`
 
 ## 删除目标数据流 {#delete-destination-dataflow}
 
-对于现有的流ID，您可以通过向以下对象执行DELETE请求来删除目标数据流： [!DNL Flow Service] API。
+使用现有的流ID，您可以通过对[!DNL Flow Service] API执行DELETE请求来删除目标数据流。
 
 **API格式**
 
@@ -65,7 +65,7 @@ DELETE /flows/{FLOW_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FLOW_ID}` | 唯一 `id` 要删除的目标数据流的值。 |
+| `{FLOW_ID}` | 要删除的目标数据流的唯一`id`值。 |
 
 **请求**
 
@@ -84,12 +84,12 @@ curl -X DELETE \
 
 ## API错误处理 {#api-error-handling}
 
-本教程中的API端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](/help/landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](/help/landing/troubleshooting.md#request-header-errors) 有关解释错误响应的更多信息，请参阅Platform疑难解答指南。
+本教程中的API端点遵循常规Experience PlatformAPI错误消息原则。 有关解释错误响应的详细信息，请参阅Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤 {#next-steps}
 
-按照本教程中的说明，您已成功使用了 [!DNL Flow Service] 用于删除到目标的现有数据流的API。
+通过完成本教程，您已成功使用[!DNL Flow Service] API删除到目标的现有数据流。
 
-有关如何使用用户界面执行这些操作的步骤，请参阅关于的教程 [在UI中删除数据流](../ui/delete-destinations.md).
+有关如何使用用户界面执行这些操作的步骤，请参阅有关[在UI中删除数据流](../ui/delete-destinations.md)的教程。
 
-您现在可以继续 [删除目标帐户](/help/destinations/api/delete-destination-account.md) 使用 [!DNL Flow Service] API。
+您现在可以使用[!DNL Flow Service] API继续并[删除目标帐户](/help/destinations/api/delete-destination-account.md)。

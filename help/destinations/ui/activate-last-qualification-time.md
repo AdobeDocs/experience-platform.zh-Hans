@@ -18,7 +18,7 @@ ht-degree: 1%
 
 ## 先决条件 {#prerequisites}
 
-使用上次资格取得时间(`lastQualificationTime`)，您必须将数据导出到下面列出的六个云存储目标之一：
+要使用最后限定时间(`lastQualificationTime`) XDM属性，您必须将数据导出到下面列出的六个云存储目标之一：
 
 * [[!DNL ADLS Gen 2]](/help/destinations/catalog/cloud-storage/adls-gen2.md)
 * [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md)
@@ -29,12 +29,12 @@ ht-degree: 1%
 
 ## 如何使用最后限定时间XDM属性 {#how-to-use}
 
-如果您使用上面列出的六个云存储连接器之一，则可以在中使用上次资格取得时间XDM属性 [映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping) ，以在导出的文件中创建一个列，该列的最新时间戳为配置文件符合区段资格的时间。 这可以帮助您处理某些测量或分析用例，并让您更好地了解何时激活某些受众。
+如果您使用上面列出的六个云存储连接器之一，则可以使用激活工作流的[映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)中的上次资格取得时间XDM属性，在导出文件中创建一个列，其最新时间戳为配置文件符合区段资格取得时间。 这可以帮助您处理某些测量或分析用例，并让您更好地了解何时激活某些受众。
 
-请注意，要添加 `lastQualificationTime` 在文件导出中，当前需要手动插入值 `xdm: segmentMembership.ups.seg_id.lastQualificationTime` 放入源字段，如下所示。 您还可以将目标字段编辑为 `lastQualificationTime` 或任何其他要命名此列的值。 请注意，由于这是测试版功能，因此其语法 `xdm: segmentMembership.ups.seg_id.lastQualificationTime` 值可能会在未来发生更改。
+请注意，要将`lastQualificationTime`添加到您的文件导出，您当前需要手动将值`xdm: segmentMembership.ups.seg_id.lastQualificationTime`插入源字段，如下所示。 您还可以将目标字段编辑为`lastQualificationTime`或要为此列命名的任何其他值。 请注意，由于这是测试版功能，因此`xdm: segmentMembership.ups.seg_id.lastQualificationTime`值的语法将来可能会更改。
 
 ![显示上次将XDM属性粘贴到映射步骤中的资格时间的屏幕录制](/help/destinations/ui/last-qualification-time.gif)
 
 ## 更多信息 {#more-information}
 
-有关将数据激活到基于文件的目标的详细信息（包括工作流中的所有步骤和必要权限），请参阅 [激活基于文件的目标教程](/help/destinations/ui/activate-batch-profile-destinations.md).
+有关将数据激活到基于文件的目标的详细信息（包括工作流中的所有步骤和必要的权限），请阅读[激活基于文件的目标教程](/help/destinations/ui/activate-batch-profile-destinations.md)。

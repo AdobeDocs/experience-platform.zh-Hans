@@ -1,10 +1,11 @@
 ---
 title: Adobe Experience Platform 发行说明（2024 年 1 月）
 description: Adobe Experience Platform 的 2024 年 1 月发行说明。
-source-git-commit: c6d471d7bb8cb9d5e376cc49c9c89c39e663d7f9
+exl-id: d4b3c5b2-3adb-41fd-91ad-f4c0f21d2325
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
-source-wordcount: '1655'
-ht-degree: 38%
+source-wordcount: '1659'
+ht-degree: 39%
 
 ---
 
@@ -14,7 +15,7 @@ ht-degree: 38%
 
 Adobe Experience Platform中的新增功能：
 
-- [用例行动手册](#use-case-playbooks)
+- [用例战术手册](#use-case-playbooks)
 
 对Experience Platform中现有功能的更新：
 
@@ -28,17 +29,17 @@ Adobe Experience Platform中的新增功能：
 - [Segmentation Service](#segmentation)
 - [源](#sources)
 
-## 用例行动手册 {#use-case-playbooks}
+## 用例战术手册 {#use-case-playbooks}
 
-此 [!UICONTROL 用例行动手册] 功能现已正式提供给所有Real-Time CDP和Adobe Journey Optimizer客户。 [!UICONTROL 用例行动手册] 旨在帮助用户在开始使用Real-time Customer Data Platform或Adobe Journey Optimizer时克服挑战。 当您不确定从何处开始或如何为所需的用例创建正确的资产时，用例行动手册会提供灵感并创建不同的资产，以供您在准备就绪时测试并导入生产环境。
+[!UICONTROL 用例行动手册]功能现在普遍适用于所有Real-Time CDP和Adobe Journey Optimizer客户。 [!UICONTROL 用例行动手册]旨在帮助用户在开始使用Real-time Customer Data Platform或Adobe Journey Optimizer时克服挑战。 当您不确定从何处开始或如何为所需的用例创建正确的资产时，用例行动手册会提供灵感并创建不同的资产，以供您在准备就绪时测试并导入生产环境。
 
-开始使用 [!UICONTROL 用例行动手册]，请阅读以下文档页面：
+要开始使用[!UICONTROL 用例行动手册]，请阅读以下文档页面：
 
-- 阅读 [“概述”页面](/help/use-case-playbooks/playbooks/overview.md) 了解行动手册的用途、可用性信息，并获取关于行动手册如何工作的端到端演示，从发现到创建实例，再到将生成的资源导入其他沙盒环境。
-- 获取所有内容的列表 [可用的行动手册](/help/use-case-playbooks/playbooks/playbooks-list.md)，按产品分组(Real-Time CDP或Journey Optimizer)
-- 获取关于所有的信息 [所需权限](/help/use-case-playbooks/playbooks/get-started.md#grant-your-team-the-required-access-permissions) 使用行动手册和行动手册生成的资源。
-- 了解 [数据感知功能](/help/use-case-playbooks/playbooks/data-awareness.md) 这允许您将生成的资源复制到其他沙盒环境
-- Get [疑难解答提示](/help/use-case-playbooks/playbooks/troubleshooting.md) 如果您在使用用例行动手册时遇到错误或困难。
+- 阅读[概述页面](/help/use-case-playbooks/playbooks/overview.md)以了解用途、可用性信息，并获取行动手册如何工作的端到端演示，从发现到创建实例，再到将生成的资源导入其他沙盒环境。
+- 获取按产品(Real-Time CDP或Journey Optimizer)分组的所有[可用行动手册](/help/use-case-playbooks/playbooks/playbooks-list.md)的列表
+- 获取有关使用行动手册和行动手册生成的资产的所有[所需权限](/help/use-case-playbooks/playbooks/get-started.md#grant-your-team-the-required-access-permissions)的信息。
+- 了解[数据感知功能](/help/use-case-playbooks/playbooks/data-awareness.md)，它允许您将生成的资产复制到其他沙盒环境
+- 如果您在使用用例行动手册时遇到错误或困难，请获取[疑难解答提示](/help/use-case-playbooks/playbooks/troubleshooting.md)。
 
 ## 基于属性的访问控制 {#abac}
 
@@ -50,7 +51,7 @@ Adobe Experience Platform中的新增功能：
 
 | 文档更新 | 描述 |
 | --- | --- |
-| 为基于属性的访问控制记录了新的API端点 | 此 [访问控制API参考文档](https://developer.adobe.com/experience-platform-apis/references/access-control/) 现在包括基于属性的访问控制API角色、策略和产品端点。 这些端点可用于检索指定沙盒中给定资源上用户的相关角色、策略和产品。 |
+| 为基于属性的访问控制记录了新的API端点 | [访问控制API参考文档](https://developer.adobe.com/experience-platform-apis/references/access-control/)现在包含基于属性的访问控制API角色、策略和产品端点。 这些端点可用于检索指定沙盒中给定资源上用户的相关角色、策略和产品。 |
 
 {style="table-layout:auto"}
 
@@ -64,11 +65,11 @@ Adobe Experience Platform中的新增功能：
 
 | 功能 | 描述 |
 | --- | --- |
-| 新的映射器函数 | <ul><li>`object_to_map`：使用 `object_to_map` 函数来创建映射数据类型。 此函数支持多种不同的语法。 有关详细信息，请阅读上的指南 [层次结构的函数 — 对象](../../data-prep/functions.md#objects). </li><li>`to_map`：使用 `to_map` 函数创建具有给定字段名和值对的映射。 有关详细信息，请阅读上的指南 [层次函数 — 映射](../../data-prep/functions.md#map). </li><li>`array_to_map`：使用 `array_to_map` 函数来创建具有给定字段名和值对的映射。 有关详细信息，请阅读上的指南 [层次函数 — 映射](../../data-prep/functions.md#map). |
+| 新的映射器函数 | <ul><li>`object_to_map`：使用`object_to_map`函数创建映射数据类型。 此函数支持多种不同的语法。 有关详细信息，请阅读有关层次结构 — 对象](../../data-prep/functions.md#objects)的[函数的指南。 </li><li>`to_map`：使用`to_map`函数创建映射，并使用对象指定字段名和值对。 有关详细信息，请阅读有关层次结构 — 映射](../../data-prep/functions.md#map)的[函数的指南。 </li><li>`array_to_map`：使用`array_to_map`函数创建映射，并使用对象数组指定字段名和值对。 有关详细信息，请阅读有关层次结构 — 映射](../../data-prep/functions.md#map)的[函数的指南。 |
 
 {style="table-layout:auto"}
 
-有关数据准备的详细信息，请阅读 [数据准备概述](../../data-prep/home.md).
+有关数据准备的更多信息，请阅读[数据准备概述](../../data-prep/home.md)。
 
 ## 仪表板 {#dashboards}
 
@@ -78,7 +79,7 @@ Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查
 
 | 功能 | 描述 |
 | --- | --- |
-| 查看SQL | 您现在可以使用“查看SQL”切换来查看“用户档案”、“受众”、“目标”和自定义分析后面的SQL，然后通过查询编辑器按需执行查询。 访问支持Real-time Customer Data Platform分析的SQL可帮助您了解数据模型分析背后的逻辑。 这种透明度使您的AdobeReal-time CDP数据更易于访问、理解并影响决策。<br>从SQL中获取40多种现有见解作为灵感，以创建新查询，这些查询可根据您的业务需求从Platform数据获取独特的见解。 SQL也可用于您的 [配置文件](../../dashboards/insights/profiles.md)， [受众](../../dashboards/insights/audiences.md)、和 [目标](../../dashboards/insights/destinations.md) Experience League文档中的见解。 这些文件突出显示可使用标准见解解答的业务用例。 有关详细信息，请阅读上的指南 [查看分析SQL](../../dashboards/view-sql.md). |
+| 查看 SQL | 您现在可以使用“查看SQL”切换来查看“用户档案”、“受众”、“目标”和自定义分析后面的SQL，然后通过查询编辑器按需执行查询。 访问支持Real-time Customer Data Platform分析的SQL可帮助您了解数据模型分析背后的逻辑。 这种透明度使您的AdobeReal-time CDP数据更易于访问、理解并影响决策。<br>从SQL中获取40多种现有见解作为灵感，以创建新的查询，这些查询可根据您的业务需求从Platform数据中获取独特的见解。 Experience League文档中的SQL还可用于您的[配置文件](../../dashboards/insights/profiles.md)、[受众](../../dashboards/insights/audiences.md)和[目标](../../dashboards/insights/destinations.md)分析。 这些文件突出显示可使用标准见解解答的业务用例。 有关详细信息，请参阅[查看分析SQL](../../dashboards/view-sql.md)指南。 |
 
 {style="table-layout:auto"}
 
@@ -92,7 +93,7 @@ Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查
 
 | 目标 | 描述 |
 | ----------- | ----------- |
-| [公共连接](../../destinations/catalog/advertising/pubmatic.md) | 使用此目标可将受众数据发送到 [!DNL PubMatic Connect] 平台。 |
+| [公用连接](../../destinations/catalog/advertising/pubmatic.md) | 使用此目标将受众数据发送到[!DNL PubMatic Connect]平台。 |
 
 {style="table-layout:auto"}
 
@@ -100,7 +101,7 @@ Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| 新建 **假定的角色** Amazon S3目标的身份验证类型 | 如果您不想与Experience Platform共享帐户密钥和密钥，请在将Experience Platform连接到Amazon S3存储桶时使用新的假定角色身份验证类型。 有关新的身份验证方法的更多信息，请参阅 [身份验证部分](/help/destinations/catalog/cloud-storage/amazon-s3.md#assumed-role-authentication) Amazon S3文档的URL名称。 |
+| 为Amazon S3目标新建&#x200B;**承担角色**&#x200B;身份验证类型 | 如果您不想与Experience Platform共享帐户密钥和密钥，请在将Experience Platform连接到Amazon S3存储桶时使用新的假定角色身份验证类型。 有关新的身份验证方法的更多信息，请参阅Amazon S3文档的[身份验证部分](/help/destinations/catalog/cloud-storage/amazon-s3.md#assumed-role-authentication)。 |
 
 {style="table-layout:auto"}
 
@@ -114,11 +115,11 @@ Adobe Experience Platform 身份服务通过跨设备和系统桥接身份，使
 
 | 文档更新 | 描述 |
 | --- | --- |
-| 文档重组 | Identity Service文档进行了重组，以改进Identity Service中概念的呈现和清晰性：<ul><li>访问 [“Identity服务概览”页](../../identity-service/home.md) 有关扩展的术语指南、详细说明典型客户历程的用例示例、Identity Service如何将身份链接在一起的细分以及Identity Service在Experience Platform生态系统中所发挥作用的摘要。</li><li>阅读指南： [了解Identity Service与Real-Time Customer Profile之间的关系](../../identity-service/identity-and-profile.md) 详细总结这两个服务如何协作以及它们的目的、流程、投入和产出之间的差异。</li><li>请参阅 [Identity Service链接逻辑指南](../../identity-service/features/identity-linking-logic.md) ，以了解在给定的不同场景和时间戳中，身份图的行为说明和可视化图表。</li></ul> |
+| 文档重组 | Identity Service文档进行了重组，以改进Identity Service中概念的呈现和清晰性：<ul><li>访问[Identity Service概述页面](../../identity-service/home.md)，了解扩展的术语指南、详细说明典型客户历程的用例示例、Identity Service如何将身份链接在一起的细分以及Identity Service在Experience Platform生态系统中所扮演角色的摘要。</li><li>请阅读有关[的指南，了解Identity Service与Real-time Customer Profile](../../identity-service/identity-and-profile.md)之间的关系，详细了解这两种服务如何协作以及它们的目的、流程、输入和输出之间的差异。</li><li>请参阅[Identity Service链接逻辑指南](../../identity-service/features/identity-linking-logic.md)，以解释和可视化身份图在给定不同方案和时间戳时的行为方式。</li></ul> |
 
 {style="table-layout:auto"}
 
-要了解有关Identity Service的更多信息，请阅读 [Identity服务概述](../../identity-service/home.md).
+若要了解有关Identity Service的更多信息，请阅读[Identity Service概述](../../identity-service/home.md)。
 
 ## Real-Time Customer Data Platform {#rtcdp}
 
@@ -128,7 +129,7 @@ Adobe Experience Platform 身份服务通过跨设备和系统桥接身份，使
 
 | 功能 | 描述 |
 | --- | --- |
-| 的更新 [Real-Time CDP主页](https://experience.adobe.com) | <ul><li>**配置文件小组件**：您现在可以使用配置文件小组件导航到配置文件概述页面，并查看贵组织的配置文件量度。</li><li>**配置文件量度卡片**：主页仪表板中的配置文件量度卡现在显示组织中的配置文件总数，具体取决于您各自的合并策略。</li><li>**架构小组件**：您现在可以使用架构构件导航到UI中的架构创建工作流。</li></ul> |
+| [Real-Time CDP主页](https://experience.adobe.com)的更新 | <ul><li>**配置文件小组件**：您现在可以使用配置文件小组件导航到配置文件概述页面并查看您组织的配置文件量度。</li><li>**配置文件量度卡**：主页仪表板中的配置文件量度卡现在显示您组织中的配置文件总数，具体取决于您各自的合并策略。</li><li>**架构小组件**：您现在可以使用架构小组件导航到UI中的架构创建工作流。</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -136,12 +137,12 @@ Adobe Experience Platform 身份服务通过跨设备和系统桥接身份，使
 
 | 文档更新 | 描述 |
 | --- | --- |
-| 新的Real-Time CDP文档主页 | 访问 [新的Real-Time CDP文档主页](/help/rtcdp/home.md) 以获取有关如何开始使用产品、护栏、示例用例等的概览信息。 |
-| 示例Real-Time CDP用例概述 | 访问 [新的示例用例概述页面](/help/rtcdp/use-case-guides/overview.md) 用于收集您的组织可以使用Real-Time CDP实现的示例用例。 |
+| 新的Real-Time CDP文档主页 | 访问[新的Real-Time CDP文档主页](/help/rtcdp/home.md)，概览有关如何开始使用产品、护栏、示例用例等的信息。 |
+| 示例Real-Time CDP用例概述 | 访问[新示例用例概述页面](/help/rtcdp/use-case-guides/overview.md)，查看您的组织可以使用Real-Time CDP实现的示例用例集合。 |
 
 {style="table-layout:auto"}
 
-要进一步了解Real-Time CDP，请阅读 [Real-Time CDP概述](../../rtcdp/overview.md).
+要了解有关Real-Time CDP的更多信息，请阅读[Real-Time CDP概述](../../rtcdp/overview.md)。
 
 ## 实时客户配置文件 {#profile}
 
@@ -155,7 +156,7 @@ Adobe Experience Platform 使您能够为客户提供协调、一致且相关的
 
 {style="table-layout:auto"}
 
-要了解有关Real-time Customer Profile的更多信息，请参阅 [配置文件概述](../../profile/home.md)
+若要了解有关实时客户个人资料的更多信息，请阅读[个人资料概述](../../profile/home.md)
 
 ## Segmentation Service {#segmentation}
 
@@ -165,8 +166,8 @@ Adobe Experience Platform 使您能够为客户提供协调、一致且相关的
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 外部生成的受众上传 | 最大列数已增加到 **25**. |
-| 区段生成器评估 | 预计值和符合条件的用户档案现在显示在受众属性部分中。 有关此更改的详细信息，请阅读 [区段生成器UI指南](../../segmentation/ui/segment-builder.md). |
+| 外部生成的受众上传 | 最大列数已增加到&#x200B;**25**。 |
+| 区段生成器评估 | 预计值和符合条件的用户档案现在显示在受众属性部分中。 有关此更改的更多信息，请阅读[区段生成器UI指南](../../segmentation/ui/segment-builder.md)。 |
 
 {style="table-layout:auto"}
 
@@ -180,9 +181,9 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 | 功能 | 描述 |
 | --- | --- |
-| [!BADGE Beta]{type=Informative}[!DNL Oracle NetSuite] 源 | 使用 [!DNL Oracle NetSuite] 源目录中的集成，可从 [[!DNL Oracle NetSuite Activities]](../../sources/tutorials/ui/create/marketing-automation/oracle-netsuite-activities.md) 和 [[!DNL Oracle NetSuite Entities]](../../sources/tutorials/ui/create/marketing-automation/oracle-netsuite-entities.md) 要Experience Platform的帐户。 |
-| [!BADGE Beta]{type=Informative}[!DNL Braze Currents] 源 | 使用 [[!DNL Braze Currents]](../../sources/tutorials/ui/create/marketing-automation/braze.md) 集成到源目录中，以从您的目录中 [!DNL Braze] 帐户到Experience Platform。 |
-| 支持以下项的密钥对身份验证 [!DNL Snowflake] 批次源 | 现在，您可以在创建新时使用密钥对身份验证 [!DNL Snowflake] 批处理数据的帐户。 有关详细信息，请阅读上的指南 [创建 [!DNL Snowflake] 使用API的帐户](../../sources/tutorials/api/create/databases/snowflake.md) 或上的指南 [创建 [!DNL Snowflake] 使用UI的帐户](../../sources/tutorials/ui/create/databases/snowflake.md). |
+| [!BADGE Beta]{type=Informational} [!DNL Oracle NetSuite]源 | 使用源目录中的[!DNL Oracle NetSuite]集成将来自[[!DNL Oracle NetSuite Activities]](../../sources/tutorials/ui/create/marketing-automation/oracle-netsuite-activities.md)和[[!DNL Oracle NetSuite Entities]](../../sources/tutorials/ui/create/marketing-automation/oracle-netsuite-entities.md)帐户的数据引入Experience Platform。 |
+| [!BADGE Beta]{type=Informational} [!DNL Braze Currents]源 | 使用源目录中的[[!DNL Braze Currents]](../../sources/tutorials/ui/create/marketing-automation/braze.md)集成将[!DNL Braze]帐户中的数据导入Experience Platform。 |
+| 支持[!DNL Snowflake]批次源的密钥对身份验证 | 在为批次数据创建新的[!DNL Snowflake]帐户时，您现在可以使用密钥对身份验证。 有关详细信息，请阅读[使用API创建 [!DNL Snowflake] 帐户的指南](../../sources/tutorials/api/create/databases/snowflake.md)或[使用UI创建 [!DNL Snowflake] 帐户的指南](../../sources/tutorials/ui/create/databases/snowflake.md)。 |
 
 {style="table-layout:auto"}
 

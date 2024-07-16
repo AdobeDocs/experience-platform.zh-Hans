@@ -29,77 +29,77 @@ ht-degree: 10%
 >title="参考标识命名空间"
 >abstract="参考架构的主要标识字段的命名空间（类型）。参考架构必须有一个建立的主要标识字段才能参与关系。有关架构关系的更多信息，请参阅文档。"
 
-了解客户之间的关系以及客户在不同渠道中与您的品牌之间的互动是Adobe Experience Platform的重要组成部分。 在的结构中定义这些关系 [!DNL Experience Data Model] (XDM)架构允许您对客户数据获得复杂的见解。
+了解客户之间的关系以及客户在不同渠道中与您的品牌之间的互动是Adobe Experience Platform的重要组成部分。 通过在[!DNL Experience Data Model] (XDM)架构的结构中定义这些关系，您可以获得有关客户数据的复杂洞察。
 
-而架构关系可通过使用合并架构和来推断 [!DNL Real-Time Customer Profile]，这仅适用于共享相同类的架构。 要在属于不同类的两个架构之间建立关系，必须在源架构中添加一个专用关系字段，该字段引用其他相关架构的标识。
-
->[!NOTE]
->
->如果源架构和目标架构都属于同一类，则专用关系字段应 **非** 使用。 在这种情况下，请使用合并架构UI查看关系。 有关如何执行此操作的说明，请参见 [查看关系](../../profile/ui/union-schema.md#view-relationships) 合并架构UI指南的部分。
-
-本文档提供了一个教程，介绍如何使用中的架构编辑器定义两个架构之间的关系。 [!DNL Experience Platform] 用户界面。 有关使用API定义架构关系的步骤，请参阅关于的教程 [使用架构注册表API定义关系](relationship-api.md).
+虽然可以使用合并架构和[!DNL Real-Time Customer Profile]推断架构关系，但这仅适用于共享相同类的架构。 要在属于不同类的两个架构之间建立关系，必须在源架构中添加一个专用关系字段，该字段引用其他相关架构的标识。
 
 >[!NOTE]
 >
->有关如何在Adobe Real-time Customer Data Platform B2B版本中创建多对一关系的步骤，请参阅 [创建B2B关系](./relationship-b2b.md).
+>如果源架构和目标架构都属于同一类，则不应使用专用关系字段&#x200B;****。 在这种情况下，请使用合并架构UI查看关系。 有关如何执行此操作的说明，请参阅合并架构UI指南的[查看关系](../../profile/ui/union-schema.md#view-relationships)部分。
+
+本文档提供了一个教程，介绍如何在[!DNL Experience Platform]用户界面中使用架构编辑器定义两个架构之间的关系。 有关使用API定义架构关系的步骤，请参阅有关[使用架构注册表API定义关系的教程](relationship-api.md)。
+
+>[!NOTE]
+>
+>有关如何在Adobe Real-time Customer Data Platform B2B版本中创建多对一关系的步骤，请参阅有关[创建B2B关系](./relationship-b2b.md)的指南。
 
 ## 快速入门
 
-本教程需要对以下内容有一定的了解 [!DNL XDM System] 和中的架构编辑器 [!DNL Experience Platform] UI。 在开始本教程之前，请查看以下文档：
+本教程需要您对[!DNL XDM System]和[!DNL Experience Platform] UI中的架构编辑器有一定的了解。 在开始本教程之前，请查看以下文档：
 
-* [Experience Platform中的XDM系统](../home.md)：XDM及其在中的实施概述 [!DNL Experience Platform].
-* [模式组合基础](../schema/composition.md)：对XDM架构构建块的介绍。
-* [使用创建架构 [!DNL Schema Editor]](create-schema-ui.md)：涵盖使用的基础知识的教程 [!DNL Schema Editor].
+* Experience Platform](../home.md)中的[XDM System： [!DNL Experience Platform]中的XDM及其实现概述。
+* [架构组合的基础知识](../schema/composition.md)： XDM架构的构建块简介。
+* [使用 [!DNL Schema Editor]](create-schema-ui.md)创建架构：介绍使用[!DNL Schema Editor]的基础知识的教程。
 
 ## 定义源和引用架构
 
-您应已创建将在关系中定义的两个架构。 出于演示目的，本教程将在组织的忠诚度计划(在“[!DNL Loyalty Members]”架构)和他们最喜爱的酒店(在“[!DNL Hotels]”架构)。
+您应已创建将在关系中定义的两个架构。 出于演示目的，本教程将在组织的忠诚度计划（在“[!DNL Loyalty Members]”架构中定义）的成员与其喜爱的酒店（在“[!DNL Hotels]”架构中定义）之间创建关系。
 
 >[!IMPORTANT]
 >
->为了建立关系，两个架构都必须定义主身份并启用 [!DNL Real-Time Customer Profile]. 请参阅以下部分 [启用架构以在配置文件中使用](./create-schema-ui.md#profile) 模式创建教程中，如果您需要有关如何相应地配置模式的指导。
+>为了建立关系，两个架构都必须定义主标识并启用[!DNL Real-Time Customer Profile]。 如果您需要有关如何相应地配置架构的指导，请参阅架构创建教程中有关[启用架构以用于配置文件](./create-schema-ui.md#profile)的部分。
 
-架构关系由 **源架构** 指向内的另一个字段 **引用架构**. 在接下来的步骤中， ”[!DNL Loyalty Members]“ ”将是源架构，而“[!DNL Hotels]”将用作参考模式。
+架构关系由&#x200B;**源架构**&#x200B;中的专用字段表示，该字段指向&#x200B;**引用架构**&#x200B;中的另一个字段。 在接下来的步骤中，“[!DNL Loyalty Members]”将用作源架构，而“[!DNL Hotels]”将用作参考架构。
 
 以下各节介绍在定义关系之前本教程中使用的每个架构的结构。
 
-### [!DNL Loyalty Members] 架构
+### [!DNL Loyalty Members]架构
 
-源架构&#39;&#39;[!DNL Loyalty Members]”基于 [!DNL XDM Individual Profile] 类，包含描述忠诚度计划成员的字段。 其中一个领域， `personalEmail.addess`，用作下的架构的主要标识 [!UICONTROL 电子邮件] 命名空间。 如下所见 **[!UICONTROL 架构属性]**，此架构已支持在 [!DNL Real-Time Customer Profile].
+源架构“[!DNL Loyalty Members]”基于[!DNL XDM Individual Profile]类，其中包含描述忠诚度计划成员的字段。 这些字段之一`personalEmail.addess`用作[!UICONTROL 电子邮件]命名空间下的架构的主要标识。 如&#x200B;**[!UICONTROL 架构属性]**&#x200B;下所示，此架构已在[!DNL Real-Time Customer Profile]中启用。
 
 ![](../images/tutorials/relationship/loyalty-members.png)
 
-### [!DNL Hotels] 架构
+### [!DNL Hotels]架构
 
-参考架构»[!DNL Hotels]”基于自定义“[!DNL Hotels]“ class，并包含描述酒店的字段。 为了参与关系，引用架构还必须定义并启用主标识 [!UICONTROL 个人资料]. 在本例中， `_tenantId.hotelId`用作架构的主要标识，使用自定义&quot;[!DNL Hotel ID]&quot;身份命名空间。
+引用架构“[!DNL Hotels]”基于自定义“[!DNL Hotels]”类，并包含描述酒店的字段。 为了参与关系，参考架构还必须定义主标识并为[!UICONTROL 配置文件]启用。 在这种情况下，`_tenantId.hotelId`使用自定义“[!DNL Hotel ID]”标识命名空间作为架构的主标识。
 
-![为配置文件启用](../images/tutorials/relationship/hotels.png)
+为配置文件](../images/tutorials/relationship/hotels.png)启用![
 
 >[!NOTE]
 >
->要了解如何创建自定义身份命名空间，请参阅 [Identity Service文档](../../identity-service/features/namespaces.md#manage-namespaces).
+>要了解如何创建自定义身份命名空间，请参阅[Identity Service文档](../../identity-service/features/namespaces.md#manage-namespaces)。
 
 ## 创建关系字段组
 
 >[!NOTE]
 >
->仅当源架构没有专用字符串类型字段用作引用架构的主要标识的指针时，才需要执行此步骤。 如果此字段已在源架构中定义，请跳至的下一步 [定义关系字段](#relationship-field).
+>仅当源架构没有专用字符串类型字段用作引用架构的主要标识的指针时，才需要执行此步骤。 如果已在源架构中定义此字段，请跳到[定义关系字段](#relationship-field)的下一步骤。
 
 为了定义两个架构之间的关系，源架构必须具有专用字段，以指示引用架构的主要身份。 您可以通过创建新架构字段组或扩展现有架构字段组，将此字段添加到源架构中。
 
-在 [!DNL Loyalty Members] 架构，新 `preferredHotel` 将添加字段以指示忠诚度成员首选的公司访问酒店。 首先，选择加号图标(**+**)。
+对于[!DNL Loyalty Members]架构，将添加新的`preferredHotel`字段以指示忠诚度成员首选的公司访问酒店。 首先，选择源架构名称旁边的加号图标(**+**)。
 
 ![](../images/tutorials/relationship/loyalty-add-field.png)
 
-画布中将显示一个新的字段占位符。 下 **[!UICONTROL 字段属性]**，提供字段名称和字段的显示名称，并将其类型设置为&quot;[!UICONTROL 字符串]“。 下 **[!UICONTROL 分配给]**，选择要扩展的现有字段组，或键入唯一名称以创建新字段组。 在本例中，是一个新的&quot;[!DNL Preferred Hotel]已创建“ ”字段组。
+画布中将显示一个新的字段占位符。 在&#x200B;**[!UICONTROL 字段属性]**&#x200B;下，提供字段名称和显示名称，并将其类型设置为“[!UICONTROL 字符串]”。 在&#x200B;**[!UICONTROL 分配给]**&#x200B;下，选择要扩展的现有字段组，或键入唯一名称以创建新字段组。 在这种情况下，将创建一个新的&quot;[!DNL Preferred Hotel]&quot;字段组。
 
 ![](../images/tutorials/relationship/relationship-field-details.png)
 
-完成后，选择 **[!UICONTROL 应用]**.
+完成后，选择&#x200B;**[!UICONTROL 应用]**。
 
 ![](../images/tutorials/relationship/relationship-field-apply.png)
 
-更新的 `preferredHotel` 字段显示在画布中，位于 `_tenantId` 对象，因为它是自定义字段。 选择 **[!UICONTROL 保存]** 以完成对架构的更改。
+更新的`preferredHotel`字段显示在画布中，位于`_tenantId`对象下方，因为它是自定义字段。 选择&#x200B;**[!UICONTROL 保存]**&#x200B;以完成对架构的更改。
 
 ![](../images/tutorials/relationship/relationship-field-save.png)
 
@@ -109,20 +109,20 @@ ht-degree: 10%
 
 >[!NOTE]
 >
->以下步骤介绍了如何使用画布中的右边栏控件定义关系字段。 如果您有权访问Real-Time CDP B2B版本，还可以使用 [相同对话框](./relationship-b2b.md#relationship-field) 在创建多对一关系时也是如此。
+>以下步骤介绍了如何使用画布中的右边栏控件定义关系字段。 如果您有权访问Real-Time CDP B2B Edition，则还可以使用[相同的对话框](./relationship-b2b.md#relationship-field)定义一对一关系，就像创建多对一关系时一样。
 
-选择 `preferredHotel` 字段，然后向下滚动到 **[!UICONTROL 字段属性]** 直到 **[!UICONTROL 关系]** 复选框。 选中此复选框以显示配置关系字段所需的参数。
+在画布中选择`preferredHotel`字段，然后向下滚动到&#x200B;**[!UICONTROL 字段属性]**&#x200B;下，直到出现&#x200B;**[!UICONTROL 关系]**&#x200B;复选框。 选中此复选框以显示配置关系字段所需的参数。
 
 ![](../images/tutorials/relationship/relationship-checkbox.png)
 
-选择对应的下拉菜单 **[!UICONTROL 引用架构]** 并为关系选择引用架构(“[!DNL Hotels]在本例中)。 下 **[!UICONTROL 引用身份命名空间]**，选择引用架构的标识字段的命名空间(在本例中， ”[!DNL Hotel ID]“)。 选择 **[!UICONTROL 应用]** 完成后。
+选择&#x200B;**[!UICONTROL 引用架构]**&#x200B;的下拉列表，然后选择关系的引用架构（本示例中为“[!DNL Hotels]”）。 在&#x200B;**[!UICONTROL 引用身份命名空间]**&#x200B;下，选择引用架构的身份字段的命名空间（在本例中为“[!DNL Hotel ID]”）。 完成时选择&#x200B;**[!UICONTROL 应用]**。
 
 ![](../images/tutorials/relationship/reference-schema-id-namespace.png)
 
-此 `preferredHotel` 字段现在以画布中的关系突出显示，显示引用架构的名称。 选择 **[!UICONTROL 保存]** 以保存更改并完成工作流。
+`preferredHotel`字段现在在画布中作为关系突出显示，显示引用架构的名称。 选择&#x200B;**[!UICONTROL 保存]**&#x200B;以保存更改并完成工作流。
 
 ![](../images/tutorials/relationship/relationship-save.png)
 
 ## 后续步骤
 
-通过学习本教程，您已使用成功地创建了两个架构之间的一对一关系。 [!DNL Schema Editor]. 有关如何使用API定义关系的步骤，请参阅关于的教程 [使用架构注册表API定义关系](relationship-api.md).
+通过学习本教程，您已使用[!DNL Schema Editor]成功地创建了两个架构之间的一对一关系。 有关如何使用API定义关系的步骤，请参阅有关[使用架构注册表API定义关系的教程](relationship-api.md)。

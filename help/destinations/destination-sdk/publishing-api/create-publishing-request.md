@@ -4,8 +4,8 @@ title: 创建目标发布请求
 exl-id: 913be9de-a699-4756-885d-b3761ec729cb
 source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
-source-wordcount: '447'
-ht-degree: 2%
+source-wordcount: '448'
+ht-degree: 1%
 
 ---
 
@@ -17,26 +17,26 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->**API端点**： `platform.adobe.io/data/core/activation/authoring/destinations/publish`
+>**API终结点**： `platform.adobe.io/data/core/activation/authoring/destinations/publish`
 
-配置和测试目标后，可将其提交给Adobe进行审查和发布。 读取 [提交在Destination SDK中创作的目标以供审查](../guides/submit-destination.md) 对于所有其他步骤，您必须在目标提交流程中执行。
+配置和测试目标后，可将其提交给Adobe进行审查和发布。 请阅读[提交Destination SDK](../guides/submit-destination.md)中编写的目标以进行审核，了解作为目标提交过程的一部分您必须执行的所有其他步骤。
 
 在以下情况下，使用发布目标API端点提交发布请求：
 
 * 作为Destination SDK合作伙伴，您希望使您的产品化目标在所有Experience Platform组织中均可用，以供所有Experience Platform客户使用；
-* 您制作 *任何更新* 到您的配置。 只有在提交新的发布请求(经Experience Platform团队批准)后，配置更新才会反映在目标中。
+* 您对配置进行了&#x200B;*任何更新*。 只有在提交新的发布请求(经Experience Platform团队批准)后，配置更新才会反映在目标中。
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 目标发布API操作快速入门 {#get-started}
 
-在继续之前，请查看 [快速入门指南](../getting-started.md) 获取成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[入门指南](../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 提交目标配置以进行发布 {#create}
 
-您可以向以下网站发出POST请求，以提交要发布的目标配置 `/authoring/destinations/publish` 端点。
+您可以通过向`/authoring/destinations/publish`端点发出POST请求来提交要发布的目标配置。
 
 **API格式**
 
@@ -46,7 +46,7 @@ POST /authoring/destinations/publish
 
 +++请求
 
-以下请求跨由有效负载中提供的参数配置的组织提交发布目标。 以下有效负载包含接受的所有参数 `/authoring/destinations/publish` 端点。
+以下请求跨由有效负载中提供的参数配置的组织提交发布目标。 以下有效负载包含`/authoring/destinations/publish`终结点接受的所有参数。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinations/publish \
@@ -64,8 +64,8 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
-| `destinationId` | 字符串 | 您要提交以进行发布的目标配置的目标ID。 使用获取目标配置的目标ID [检索目标配置](../authoring-api/destination-configuration/retrieve-destination-configuration.md) API调用。 |
-| `destinationAccess` | 字符串 | 使用 `ALL` ，以便您的目标显示在所有Experience Platform客户的目录中。 |
+| `destinationId` | 字符串 | 您要提交以进行发布的目标配置的目标ID。 使用[检索目标配置](../authoring-api/destination-configuration/retrieve-destination-configuration.md) API调用获取目标配置的目标ID。 |
+| `destinationAccess` | 字符串 | 使用`ALL`让您的目标显示在所有Experience Platform客户的目录中。 |
 
 {style="table-layout:auto"}
 
@@ -79,7 +79,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 ## API错误处理
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../landing/troubleshooting.md#request-header-errors) ，位于平台疑难解答指南中。
+Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅平台疑难解答指南中的[API状态代码](../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤
 

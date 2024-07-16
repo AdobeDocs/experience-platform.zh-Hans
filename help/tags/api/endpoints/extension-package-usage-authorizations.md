@@ -11,13 +11,13 @@ ht-degree: 4%
 
 # 扩展包使用授权端点
 
-扩展包表示 [扩展](./extensions.md) 由扩展开发人员创作。 可以为标记用户提供的其他功能由扩展包定义。 这些功能可以包括主模块和共享模块，尽管它们最常作为 [规则组件](./rule-components.md) （事件、条件和操作）和 [数据元素](./data-elements.md).
+扩展包表示由扩展开发人员创作的[扩展](./extensions.md)。 可以为标记用户提供的其他功能由扩展包定义。 这些功能可以包括主模块和共享模块，但它们最常作为[规则组件](./rule-components.md)（事件、条件和操作）和[数据元素](./data-elements.md)提供。
 
-扩展包由开发人员的 [公司](./companies.md). 扩展包的所有者可以授权其他企业使用其私有版本的包。 每个授权业务都获得单个扩展包的使用授权，该扩展包对于该包的所有未来版本和当前专用版本都有效。
+扩展包由开发人员的[公司](./companies.md)拥有。 扩展包的所有者可以授权其他企业使用其私有版本的包。 每个授权业务都获得单个扩展包的使用授权，该扩展包对于该包的所有未来版本和当前专用版本都有效。
 
 ## 快速入门
 
-本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [快速入门指南](../getting-started.md) 有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续之前，请查看[快速入门指南](../getting-started.md)，以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索扩展包的扩展包使用授权 {#list}
 
@@ -31,7 +31,7 @@ GET /extension_packages/{EXTENSION_PACKAGE_ID}/extension_package_usage_authoriza
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 此 `ID` 要列出其扩展包使用授权的属性。 |
+| `{PROPERTY_ID}` | 要列出其扩展包使用授权的属性的`ID`。 |
 
 {style="table-layout:auto"}
 
@@ -102,7 +102,7 @@ curl -X GET \
 
 ## 创建扩展包使用授权 {#create}
 
-为每个创建扩展包使用授权 [扩展包](./extension-packages.md) 和 `{ORG_ID}` 要授权的组织的名称。 要创建新的扩展包使用授权，请向以下端点发出POST请求。
+为要授权的组织的每个[扩展包](./extension-packages.md)和`{ORG_ID}`创建扩展包使用授权。 要创建新的扩展包使用授权，请向以下端点发出POST请求。
 
 **API格式**
 
@@ -112,7 +112,7 @@ POST /extension_packages/{EXTENSION_PACKAGE_ID}/extension_package_usage_authoriz
 
 | 参数 | 描述 |
 | --- | --- |
-| `EXTENSION_PACKAGE_ID` | 此 `ID` ，您要为其创建授权的扩展包。” |
+| `EXTENSION_PACKAGE_ID` | 要为其创建授权的扩展包的`ID`。” |
 
 {style="table-layout:auto"}
 
@@ -137,7 +137,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes.authorized_org_id` | 此 `ID` 要授权的组织的名称。 |
+| `attributes.authorized_org_id` | 要授权的组织的`ID`。 |
 
 **响应**
 
@@ -183,7 +183,7 @@ curl -X POST \
 
 >[!NOTE]
 >
->在上述示例响应中，授权当前位于 `pending_approval` 暂存。 在使用扩展包之前，组织必须批准授权。 当授权正在等待审批时，组织的用户能够浏览专用扩展包，但他们无法安装该包，并且无法在扩展目录中找到它。
+>在上述示例响应中，授权当前处于`pending_approval`阶段。 在使用扩展包之前，组织必须批准授权。 当授权正在等待审批时，组织的用户能够浏览专用扩展包，但他们无法安装该包，并且无法在扩展目录中找到它。
 
 ## 检索扩展包使用授权列表 {#list_authorizations}
 
@@ -264,7 +264,7 @@ curl -X GET \
 
 ## 删除扩展包使用授权 {#delete}
 
-要删除扩展包使用授权，请包含其 `ID` 在DELETE请求的路径中。 这样可防止授权组织查看目录中的专用扩展包版本，并防止在其属性上安装该扩展包。
+要删除扩展包使用授权，请在DELETE请求的路径中包含其`ID`。 这样可防止授权组织查看目录中的专用扩展包版本，并防止在其属性上安装该扩展包。
 
 >[!NOTE]
 >
@@ -278,7 +278,7 @@ DELETE /extension_package_usage_authorizations/{ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `ID` | 此 `ID` 您希望删除的扩展包使用授权。 |
+| `ID` | 要删除的扩展包使用授权的`ID`。 |
 
 {style="table-layout:auto"}
 
@@ -298,11 +298,11 @@ curl -X DELETE \
 
 ## 更新扩展包使用授权 {#update}
 
-要批准或拒绝扩展包使用授权，请包括其 `ID` 在PATCH请求的路径中。
+要批准或拒绝扩展包使用授权，请在PATCH请求的路径中包含其`ID`。
 
 >[!NOTE]
 >
->要批准或拒绝贵公司的扩展包使用授权，您必须拥有 `manage_properties` 权限。
+>要批准或拒绝贵公司的扩展包使用授权，您必须具有`manage_properties`权限。
 
 **API格式**
 
@@ -312,7 +312,7 @@ PATCH /extension_package_usage_authorizations/{ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `ID` | 此 `ID` 您希望删除的扩展包使用授权。 |
+| `ID` | 要删除的扩展包使用授权的`ID`。 |
 
 {style="table-layout:auto"}
 
@@ -338,7 +338,7 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes` | 要修订的属性。 对于扩展包使用授权，您可以修改其 `state`. |
+| `attributes` | 要修订的属性。 对于扩展包使用授权，您可以修改其`state`。 |
 
 **响应**
 
@@ -398,7 +398,7 @@ GET /extension_package_usage_authorizations/{ID}/extension_package
 
 | 参数 | 描述 |
 | --- | --- |
-| `ID` | 此 `ID` 要检索的扩展包使用授权。 |
+| `ID` | 要检索的扩展包使用授权的`ID`。 |
 
 {style="table-layout:auto"}
 

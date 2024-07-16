@@ -1,11 +1,11 @@
 ---
 title: 注释
-description: 了解如何在Adobe Experience Platform中向某些标记资源添加文本批注。
+description: 了解如何在Adobe Experience Platform中为某些标记资源添加文本批注。
 exl-id: 14d6b6a1-3bd0-4181-8181-e6b35c197a44
 source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
-source-wordcount: '309'
-ht-degree: 65%
+source-wordcount: '310'
+ht-degree: 50%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 65%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 注释是可以添加到Adobe Experience Platform中的某些标记资源的文本批注。 注释可附加到以下资源：
 
@@ -26,7 +26,7 @@ ht-degree: 65%
 
 注释最多可包含 512 个 Unicode 字符。
 
-注释是对其附加到的资源的行为没有任何影响的评论。它们不会包含在构建的库中。您可以将注释用于：
+注释是对其附加到的资源的行为没有任何影响的评论。 它们不会包含在构建的库中。您可以将注释用于：
 
 * 提供有关资源的背景信息
 * 充当有待未来增强的待办事项列表
@@ -39,10 +39,10 @@ ht-degree: 65%
 
 可注释的资源在屏幕的右侧显示窄边栏。边栏包括注释的图标。此图标显示当前附加到该资源的注释数量。
 
-选择 **[!UICONTROL 注释]** 展开右边栏并显示注释，最近的注释将位于顶部。  要添加新注释，请在顶部的框中输入注释文本，然后选择 **[!UICONTROL 添加注释]**.
+选择&#x200B;**[!UICONTROL 注释]**&#x200B;可展开右边栏并显示注释，最近的注释将位于顶部。  要添加新注释，请在顶部的框中输入注释文本，然后选择&#x200B;**[!UICONTROL 添加注释]**。
 
 ## 其他
 
-* 标记资源上的注释与DTM中的注释行为相匹配，因为这些注释不可变，无法编辑或删除。
+* 标记资源上的注释与DTM中的注释行为相匹配，因为这些注释不可变，并且无法编辑或删除。
 * 查看资源的旧版修订版时，只显示在该修版订的 `created_at` 日期之前创建的注释。
 * 删除资源时，附加到该资源的所有注释也会被删除。

@@ -1,11 +1,11 @@
 ---
-title: 向后兼容性标准
-description: 了解Adobe Experience Platform中的向后兼容性标准，该标准可确保更新版本的标记扩展与先前版本兼容。
+title: 向后兼容标准
+description: 了解Adobe Experience Platform中的向后兼容性标准，该标准可确保标记扩展的更新版本与先前版本兼容。
 exl-id: 325390f1-88c7-4b9e-a484-5442ca649bdf
 source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
 source-wordcount: '833'
-ht-degree: 84%
+ht-degree: 81%
 
 ---
 
@@ -13,9 +13,9 @@ ht-degree: 84%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../term-updates.md)。
 
-对Adobe Experience Platform中的标记扩展所做的更新必须能够向后兼容该扩展的先前版本。 这意味着：
+对Adobe Experience Platform中的标记扩展进行的更新必须能够向后兼容该扩展的先前版本。 这意味着：
 
 * 对扩展的主要组件所做的任何修改必须能够与先前版本兼容。这包括扩展配置、事件类型、条件类型、操作类型、数据元素类型和共享模块。
 * 用户使用旧版本扩展创建的组件必须能够通过针对较新版本提供的模式执行的验证。
@@ -57,7 +57,7 @@ ht-degree: 84%
 1. 我要将可选字段更改为必填字段 => 创建一个需要该必填字段的新组件并弃用旧组件
 1. 我要更改共享模块的 API => 创建一个新的共享模块并弃用旧模块
 
-您可能找出了这些替代操作所隐含的规律。这很好。弃用旧组件时，您将需要通知扩展的用户，该组件已被弃用，他们需要切换到新组件。  有关与用户通信的几点建议：
+您可能找出了这些替代操作所隐含的规律。这很好。弃用旧组件时，您将需要通知扩展的用户，该组件已弃用，他们需要切换到新组件。  有关与用户通信的几点建议：
 
 * 更新旧组件的显示名称，使其包括“（已弃用）”。
 * 更新旧组件的视图，使用红色大警告文本指示该组件已被弃用，用户应切换到新组件。

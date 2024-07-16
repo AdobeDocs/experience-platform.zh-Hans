@@ -4,7 +4,7 @@ title: 为基于文件的目标配置文件格式选项
 exl-id: f59b1952-e317-40ba-81d1-35535e132a72
 source-git-commit: 0eb17d4d7ad9db3737a14f383bdafe40d59eb12c
 workflow-type: tm+mt
-source-wordcount: '1188'
+source-wordcount: '1193'
 ht-degree: 19%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 19%
 > 
 >本文档中介绍的文件格式选项当前仅适用于CSV文件。
 
-当您使用时，可以使用为导出的文件配置各种文件格式选项的选项 [connect](/help/destinations/ui/connect-destination.md) 到基于文件的目标，如 [Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md#connect)， [Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md#connect)，或 [SFTP](/help/destinations/catalog/cloud-storage/sftp.md#connect).
+当您[连接](/help/destinations/ui/connect-destination.md)到基于文件的目标(如[Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md#connect)、[Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md#connect)或[SFTP](/help/destinations/catalog/cloud-storage/sftp.md#connect))时，可以使用选项为导出的文件配置各种文件格式选项。
 
 您可以使用Experience PlatformUI为导出的文件配置各种文件格式选项。 您可以修改导出文件的几个属性，以符合您所在端文件接收系统的要求，从而以最佳方式读取和解释从Experience Platform接收的文件。
 
@@ -26,15 +26,15 @@ ht-degree: 19%
 
 ## CSV文件的文件格式配置 {#file-configuration}
 
-要显示文件格式选项，请启动 [连接到目标](/help/destinations/ui/connect-destination.md) 工作流。 选择 **数据类型：区段** 和 **文件类型：CSV** 用于显示可用于导出的文件格式设置 `CSV` 文件。
+要显示文件格式选项，请启动[连接到目标](/help/destinations/ui/connect-destination.md)工作流。 选择&#x200B;**数据类型：区段**&#x200B;和&#x200B;**文件类型：CSV**&#x200B;以显示可用于导出`CSV`文件的文件格式设置。
 
 >[!IMPORTANT]
 >
 >您连接到的目标可能没有所有这些可用选项。 目标开发人员可以决定他们要在目标中支持哪些文件格式选项。 目标开发人员可以确定在连接到目标时可用的选项。 在Experience PlatformUI中，必填选项标有星号。
 > 
->Adobe构建的云存储目标 —  [Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md)， [Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md)， [Azure Data Lake Storage Gen2](/help/destinations/catalog/cloud-storage/adls-gen2.md)， [数据登陆区](/help/destinations/catalog/cloud-storage/data-landing-zone.md)， [Google云存储](/help/destinations/catalog/cloud-storage/google-cloud-storage.md)， [SFTP](/help/destinations/catalog/cloud-storage/sftp.md)  — 当前仅支持下面高亮显示的六个CSV选项。
+>Adobe构建的云存储目标 — [Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md)、[Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md)、[Azure Data Lake Storage Gen2](/help/destinations/catalog/cloud-storage/adls-gen2.md)、[数据登陆区域](/help/destinations/catalog/cloud-storage/data-landing-zone.md)、[Google Cloud Storage](/help/destinations/catalog/cloud-storage/google-cloud-storage.md)、[SFTP](/help/destinations/catalog/cloud-storage/sftp.md) — 当前仅支持下面突出显示的六个CSV选项。
 
-![此图像显示了一些可用的文件格式选项。](../assets/ui/batch-destinations-file-formatting-options/file-formatting-options.png)
+![显示某些可用文件格式选项的图像。](../assets/ui/batch-destinations-file-formatting-options/file-formatting-options.png)
 
 ### 分隔符 {#delimiter}
 
@@ -45,21 +45,21 @@ ht-degree: 19%
 
 使用此控件可以为导出的CSV文件中的每个字段和值设置分隔符。 可用选项包括：
 
-* 冒号 `(:)`
-* 逗号 `(,)`
-* 竖线 `(|)`
-* 分号 `(;)`
-* Tab `(\t)`
+* 冒号`(:)`
+* 逗号`(,)`
+* 管道`(|)`
+* 分号`(;)`
+* 选项卡`(\t)`
 
 #### 示例
 
 通过UI中的每个选择，查看导出CSV文件中内容的以下示例。
 
-* 示例输出 **[!UICONTROL 冒号`(:)`]** 已选定： `male:John:Doe`
-* 示例输出 **[!UICONTROL 逗号`(,)`]** 已选定： `male,John,Doe`
-* 示例输出 **[!UICONTROL 竖线`(|)`]** 已选定： `male|John|Doe`
-* 示例输出 **[!UICONTROL 分号`(;)`]** 已选定： `male;John;Doe`
-* 示例输出 **[!UICONTROL 选项卡`(\t)`]** 已选定： `male \t John \t Doe`
+* 示例输出中选定了&#x200B;**[!UICONTROL 冒号`(:)`]**： `male:John:Doe`
+* 示例输出中选定了&#x200B;**[!UICONTROL 逗号`(,)`]**： `male,John,Doe`
+* 已选择&#x200B;**[!UICONTROL 管道`(|)`]**&#x200B;的示例输出： `male|John|Doe`
+* 示例输出中选定了&#x200B;**[!UICONTROL 分号`(;)`]**： `male;John;Doe`
+* 已选择&#x200B;**[!UICONTROL 选项卡`(\t)`]**&#x200B;的示例输出： `male \t John \t Doe`
 
 ### 引号字符 {#quote-character}
 
@@ -70,15 +70,15 @@ ht-degree: 19%
 
 如果要从导出的字符串中删除双引号，请使用此选项。可用选项包括：
 
-* **[!UICONTROL 空字符(\0000)]**. 使用此选项可从导出的CSV文件中删除双引号。
-* **[!UICONTROL 双引号(“)]**. 使用此选项可在导出的CSV文件中保留双引号。
+* **[!UICONTROL Null字符(\0000)]**。 使用此选项可从导出的CSV文件中删除双引号。
+* **[!UICONTROL 双引号(“)]**。 使用此选项可在导出的CSV文件中保留双引号。
 
 #### 示例
 
 在UI中选择每个内容，查看导出CSV文件中的以下内容示例。
 
-* 示例输出 **[!UICONTROL 空字符(\0000)]** 已选定： `Test,John,LastName`
-* 示例输出 **[!UICONTROL 双引号(“)]** 已选定： `"Test","John","LastName"`
+* 已选择&#x200B;**[!UICONTROL Null字符(\0000)]**&#x200B;的输出示例： `Test,John,LastName`
+* 示例输出中选定了&#x200B;**[!UICONTROL 双引号(&quot;)]**： `"Test","John","LastName"`
 
 ### 转义字符 {#escape-character}
 
@@ -89,15 +89,15 @@ ht-degree: 19%
 
 使用此选项可设置一个字符，用于在已加引号的值内转义引号。 例如，当字符串用双引号括起来时，此选项非常有用，因为字符串的一部分已用双引号括起来。 此选项确定要替换内双引号的字符。 可用选项包括：
 
-* 反斜杠 `(\)`
-* 单引号 `(')`
+* 反斜杠`(\)`
+* 单引号`(')`
 
 #### 示例
 
 在UI中选择每个内容，查看导出CSV文件中的以下内容示例。
 
-* 示例输出 **[!UICONTROL 反斜杠`(\)`]** 已选定： `"Test,\"John\",LastName"`
-* 示例输出 **[!UICONTROL 单引号`(')`]** 已选定： `"Test,'"John'",LastName"`
+* 示例输出&#x200B;**[!UICONTROL 反斜杠`(\)`]**&#x200B;已选定： `"Test,\"John\",LastName"`
+* 已选择&#x200B;**[!UICONTROL 单引号`(')`]**&#x200B;的输出示例： `"Test,'"John'",LastName"`
 
 ### 空值输出 {#empty-value-output}
 
@@ -109,16 +109,16 @@ ht-degree: 19%
 使用此控件可设置空值的字符串表示形式。 此选项确定在导出的CSV文件中如何表示空值。 可用选项包括：
 
 * **[!UICONTROL Null (null)]**
-* **双引号(“”)中的空字符串**
+* **双引号(“)**&#x200B;中的空字符串
 * **[!UICONTROL 空字符串]**
 
 #### 示例
 
 在UI中选择每个内容，查看导出CSV文件中的以下内容示例。
 
-* 示例输出 **[!UICONTROL null]** 已选定： `male,NULL,TestLastName`. 在这种情况下，Experience Platform将空值转换为null值。
-* 示例输出 **“”** 已选定： `male,"",TestLastName`. 在这种情况下，Experience Platform将空值转换为一对双引号。
-* 示例输出 **[!UICONTROL 空字符串]** 已选定： `male,,TestLastName`. 在这种情况下，Experience Platform将维护空值并按原样导出（不带双引号）。
+* 已选择&#x200B;**[!UICONTROL null]**&#x200B;的示例输出： `male,NULL,TestLastName`。 在这种情况下，Experience Platform将空值转换为null值。
+* 已选择&#x200B;**“**”的示例输出： `male,"",TestLastName`。 在这种情况下，Experience Platform将空值转换为一对双引号。
+* 已选择&#x200B;**[!UICONTROL 空字符串]**&#x200B;的示例输出： `male,,TestLastName`。 在这种情况下，Experience Platform将维护空值并按原样导出（不带双引号）。
 
 >[!TIP]
 >
@@ -134,16 +134,16 @@ ht-degree: 19%
 使用此选项设置应如何在导出的文件中表示 null 值。此选项确定在导出的CSV文件中如何表示null值。 可用选项包括：
 
 * **[!UICONTROL Null (null)]**
-* **双引号(“”)中的空字符串**
+* **双引号(“)**&#x200B;中的空字符串
 * **[!UICONTROL 空字符串]**
 
 #### 示例
 
 在UI中选择每个内容，查看导出CSV文件中的以下内容示例。
 
-* 示例输出 **[!UICONTROL null]** 已选定： `male,NULL,TestLastName`. 在这种情况下，不会进行任何转换，并且CSV文件包含null值。
-* 示例输出 **“”** 已选定： `male,"",TestLastName`. 在这种情况下，Experience Platform会在空字符串周围使用双引号替换null值。
-* 示例输出 **[!UICONTROL 空字符串]** 已选定： `male,,TestLastName`. 在这种情况下，Experience Platform会将null值替换为空字符串（不带双引号）。
+* 已选择&#x200B;**[!UICONTROL null]**&#x200B;的示例输出： `male,NULL,TestLastName`。 在这种情况下，不会进行任何转换，并且CSV文件包含null值。
+* 已选择&#x200B;**“**”的示例输出： `male,"",TestLastName`。 在这种情况下，Experience Platform会在空字符串周围使用双引号替换null值。
+* 已选择&#x200B;**[!UICONTROL 空字符串]**&#x200B;的示例输出： `male,,TestLastName`。 在这种情况下，Experience Platform会将null值替换为空字符串（不带双引号）。
 
 ### 压缩格式 {#compression-format}
 
@@ -156,32 +156,32 @@ ht-degree: 19%
 
 ### 编码
 
-*未显示在UI屏幕快照中*. 指定保存的CSV文件的编码（字符集）。 选项为UTF-8或UTF-16。
+*未显示在用户界面屏幕快照中*。 指定保存的CSV文件的编码（字符集）。 选项为UTF-8或UTF-16。
 
 ### 用于转义引号的字符
 
-*未显示在UI屏幕快照中*. 指示是否始终将包含引号的值包含在引号中的标志。
+*未显示在用户界面屏幕快照中*。 指示是否始终将包含引号的值包含在引号中的标志。
 
 默认转义包含引号字符的所有值。
 
 ### 行分隔符
 
-*未显示在UI屏幕快照中*. 定义用于编写的行分隔符。 最大长度为1个字符。
+*未显示在用户界面屏幕快照中*。 定义用于编写的行分隔符。 最大长度为1个字符。
 
 ### 忽略前导空格
 
-*未显示在UI屏幕快照中*. 指示是否应跳过导出值前导空格的标记。
+*未显示在用户界面屏幕快照中*。 指示是否应跳过导出值前导空格的标记。
 
-示例输出 **[!UICONTROL True]** 已选定： `"male","John","TestLastName"`
-示例输出 **[!UICONTROL 假]** 已选定： `" male","John","TestLastName"`
+已选择&#x200B;**[!UICONTROL True]**&#x200B;的示例输出： `"male","John","TestLastName"`
+已选择**[!UICONTROL False]**&#x200B;的示例输出： `" male","John","TestLastName"`
 
 ### 忽略尾随空格
 
 未显示在UI屏幕快照中。 指示是否应跳过导出值的尾随空格标志。
 
-示例输出 **[!UICONTROL True]** 已选定： `"male","John","TestLastName"`
-示例输出 **[!UICONTROL 假]** 已选定： `"male ","John","TestLastName"`
+已选择&#x200B;**[!UICONTROL True]**&#x200B;的示例输出： `"male","John","TestLastName"`
+已选择**[!UICONTROL False]**&#x200B;的示例输出： `"male ","John","TestLastName"`
 
 ### 后续步骤 {#next-steps}
 
-阅读本文档后，您现在知道如何为CSV数据文件配置文件导出选项，以根据下游文件接收系统的要求定制文件内容。 接下来，您可以阅读 [基于文件的目标激活教程](/help/destinations/ui/activate-batch-profile-destinations.md) 以开始将文件导出到您首选的云存储位置。
+阅读本文档后，您现在知道如何为CSV数据文件配置文件导出选项，以根据下游文件接收系统的要求定制文件内容。 接下来，您可以阅读[基于文件的目标激活教程](/help/destinations/ui/activate-batch-profile-destinations.md)，以开始将文件导出到您首选的云存储位置。

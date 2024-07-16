@@ -1,33 +1,33 @@
 ---
-keywords: Experience Platform；快速入门；内容；内容标记ai；关键词标记；关键词标记
+keywords: Experience Platform；快速入门；内容；内容标记人工智能；关键字标记；关键字标记
 solution: Experience Platform
 title: 内容标记API中的关键词标记
-description: 关键字标记服务在给定文本文档时，自动提取最能描述文档主题的关键字或关键词组。 为了提取关键词，使用命名实体识别(NER)和无监督关键词标记算法相结合。
+description: 关键字标记服务在指定文本文档时，会自动提取最能描述文档主题的关键字或关键短语。 为了提取关键词，使用命名实体识别(NER)和无监督关键词标记算法的组合。
 exl-id: 56a2da96-5056-4702-9110-a1dfec56f0dc
 source-git-commit: 7c8c1d69f4c4e0a1374603d541b634ac7f64ab38
 workflow-type: tm+mt
-source-wordcount: '447'
+source-wordcount: '444'
 ht-degree: 5%
 
 ---
 
 # 关键词标记
 
-当给定一个文本文档时，关键字标记服务自动提取最能描述文档主题的关键字或关键短语。 为了提取关键词，使用命名实体识别(NER)和无监督关键词标记算法相结合。
+当给定文本文档时，关键字标记服务自动提取最能描述文档主题的关键字或关键短语。 为了提取关键词，使用命名实体识别(NER)和无监督关键词标记算法的组合。
 
-下表列出了满足以下条件的命名实体 [!DNL Content Tagging] 可以识别：
+下表列出了[!DNL Content Tagging]可以识别的已命名实体：
 
 | 实体名称 | 描述 |
 | --- | --- |
 | 人员 | 人，包括虚构的人。 |
 | GPE | 国家/地区、城市和州。 |
 | LOC | 非GPE位置、山脉和水体。 |
-| 常见问题解答 | 建筑、机场、高速公路、桥梁等。 |
-| 组织 | 公司、代理商、机构等 |
-| 产品 | 物品、车辆、食品等。 （不是服务。） |
-| 事件 | 命名为飓风、战斗、战争、体育赛事等。 |
-| 艺术作品 | 书籍、歌曲等标题。 |
-| 法律 | 被列为法律的文件。 |
+| 常见问题解答 | 建筑物、机场、公路、桥梁等。 |
+| ORG | 公司、代理商、机构等 |
+| 产品 | 物品、车辆、食物等 （不是服务。） |
+| 活动 | 已命名飓风、战斗、战争、体育赛事等 |
+| 艺术作品 | 书籍、歌曲等标题 |
+| 法律 | 被取名的文件被制定成法律。 |
 | 语言 | 任何命名语言。 |
 
 **API格式**
@@ -40,9 +40,9 @@ POST /services/v2/predict
 
 以下请求基于有效负荷中提供的输入参数从文档中提取关键词。
 
-有关显示的输入参数的更多信息，请参阅示例有效负载下表。
+有关显示的输入参数的更多信息，请参阅示例有效负载下方的表。
 
-此 [示例pdf](../pdf-files/simple-text.pdf) 在本文档所示的示例中使用了文件。
+此[示例pdf](../pdf-files/simple-text.pdf)文件用于此文档中所示的示例。
 
 ```SHELL
 curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
@@ -91,10 +91,10 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
 | 属性 | 描述 | 必需 |
 | --- | --- | --- |
 | `top_n` | 要返回的结果数。 0，返回所有结果。 当与阈值一起使用时，返回的结果数将少于任一限制。 | 否 |
-| `min_relevance` | 分数阈值，必须低于该阈值返回结果。 排除参数可返回所有结果。 | 否 |
+| `min_relevance` | 得分阈值，必须低于该阈值返回结果。 排除参数以返回所有结果。 | 否 |
 | `min_key_phrase_length` | 关键短语中所需的最小字数。 | 否 |
 | `max_key_phrase_length` | 关键短语中所需的最大字数。 | 否 |
-| `last_semantic_unit_type` | 仅返回分层响应中最高到给定级别的语义单位。 “key_phrase”仅返回关键短语，“linked_entity”仅返回关键短语及其对应的链接实体，“concept”返回关键短语、链接实体和概念。 | 否 |
+| `last_semantic_unit_type` | 仅返回分层响应中给定级别的语义单元。 “key_phrase”仅返回关键短语，“linked_entity”仅返回关键短语及其对应的链接实体，“concept”返回关键短语、链接实体和概念。 | 否 |
 | `entity_types` | 要作为关键短语返回的实体类型。 | 否 |
 
 **文档对象**
@@ -104,11 +104,11 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
 | `repo:path` | 字符串 | - | - | - | 要从中提取关键短语的文档的预签名URL。 |
 | `sensei:repoType` | 字符串 | - | - | HTTPS | 存储文档的存储库类型。 |
 | `sensei:multipart_field_name` | 字符串 | - | - | - | 将文档作为多部分参数传递时，请使用此选项，而不是使用预签名URL。 |
-| `dc:format` | 字符串 | 是 | - | &quot;text/plain&quot;，<br>&quot;application/pdf&quot;，<br>&quot;text/pdf&quot;，<br>&quot;text/html&quot;，<br>&quot;text/rtf&quot;，<br>&quot;application/rtf&quot;，<br>“application/msword”，<br>&quot;application/vnd.openxmlformats-officedocument.wordprocessingml.document&quot;，<br>&quot;application/mspowerpoint&quot;，<br>&quot;application/vnd.ms-powerpoint&quot;，<br>&quot;application/vnd.openxmlformats-officedocument.presentationml.presentation&quot; | 在处理之前，将根据允许的输入编码类型检查文档编码。 |
+| `dc:format` | 字符串 | 是 | - | &quot;text/plain&quot;，<br>&quot;application/pdf&quot;，<br>&quot;text/pdf&quot;，<br>&quot;text/html&quot;，<br>&quot;text/rtf&quot;，<br>&quot;application/rtf&quot;，<br>&quot;application/msword&quot;，<br>&quot;application/vnd.openxmlformats-officedocument.wordprocessingml.document&quot;，<br>&quot;application/mspowerpoint&quot;，<br>&quot;application/vnd.ms-powerpoint&quot;，<br>&quot;application/vnd.openxmlformats-officedocument.presentationml.presentation&quot; | 在处理之前，将根据允许的输入编码类型检查文档编码。 |
 
 **响应**
 
-成功的响应会返回一个JSON对象，其中包含提取的关键字，该对象位于 `response` 数组。
+成功的响应返回`response`数组中包含提取关键字的JSON对象。
 
 ```json
 {

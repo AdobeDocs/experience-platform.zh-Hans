@@ -7,7 +7,7 @@ feature: Sandboxes
 source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
 workflow-type: tm+mt
 source-wordcount: '70'
-ht-degree: 62%
+ht-degree: 72%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 62%
 
 * [沙盒概述](home.md)
 * 沙盒UI {#ui}
-   * [沙盒UI概述](ui/overview.md)
+   * [沙盒 UI 概述](ui/overview.md)
    * [沙盒用户指南](ui/user-guide.md)
    * [沙盒工具](ui/sandbox-tooling.md)
 * 沙盒API {#api}
@@ -34,4 +34,4 @@ ht-degree: 62%
    * [附录](sandbox-tooling-api/appendix.md)
 * [疑难解答指南](troubleshooting-guide.md)
 * [API 参考](https://www.adobe.io/experience-platform-apis/references/sandbox)
-* [Platform发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [平台发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

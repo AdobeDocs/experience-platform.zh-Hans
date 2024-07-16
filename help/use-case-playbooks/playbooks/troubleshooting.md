@@ -22,11 +22,11 @@ ht-degree: 0%
 
 ![疑难解答](/help/use-case-playbooks/assets/playbooks/troubleshooting/troubleshooting-ajo.png)
 
-这是因为Journey Optimizer行动手册为电子邮件、推送和短信渠道创建消息。 阅读 [入门](/help/use-case-playbooks/playbooks/get-started.md#configure-sandbox-and-channel-surfaces-in-journey-optimizer) 指导您配置不同的表面。
+这是因为Journey Optimizer行动手册为电子邮件、推送和短信渠道创建消息。 阅读[入门](/help/use-case-playbooks/playbooks/get-started.md#configure-sandbox-and-channel-surfaces-in-journey-optimizer)指南以配置不同的表面。
 
-## 状态 *失败* 创建新实例时 {#status-failed}
+## 创建新实例时状态&#x200B;*失败* {#status-failed}
 
-如果您在尝试创建实例时看到失败消息，这可能是因为管理员未向您授予所需的用户权限。 行动手册包含大量不同的资产，您的用户需要拥有创建这些资产的权限，才能成功创建行动手册的实例。 请参阅 [权限](/help/use-case-playbooks/playbooks/get-started.md#grant-your-team-the-required-access-permissions) 部分，了解如何设置权限。
+如果您在尝试创建实例时看到失败消息，这可能是因为管理员未向您授予所需的用户权限。 行动手册包含大量不同的资产，您的用户需要拥有创建这些资产的权限，才能成功创建行动手册的实例。 有关如何设置权限，请参阅本指南的[权限](/help/use-case-playbooks/playbooks/get-started.md#grant-your-team-the-required-access-permissions)部分。
 
 ## 导入失败 {#import-failure}
 

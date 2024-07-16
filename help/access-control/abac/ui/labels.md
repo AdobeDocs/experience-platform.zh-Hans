@@ -27,14 +27,14 @@ ht-degree: 10%
 
 >[!NOTE]
 >
->整个组织只有一个标签列表。 要创建自定义标签，您需要 **[!UICONTROL 管理使用标签]** 生产沙盒的权限。 当前不支持删除标签。
+>整个组织只有一个标签列表。 要创建自定义标签，您需要在生产沙盒上具有&#x200B;**[!UICONTROL 管理使用标签]**&#x200B;权限。 当前不支持删除标签。
 
-要创建新标签，请选择 **[!UICONTROL 标签]** 选项卡，然后选择 **[!UICONTROL 创建标签]**.
+要创建新标签，请选择侧边栏中的&#x200B;**[!UICONTROL 标签]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 创建标签]**。
 
 ![flac-new-label](../../images/flac-ui/create-label.png)
 
-此 **[!UICONTROL 创建新标签]** 出现对话框，提示您输入名称、可选的友好名称和可选的说明。
+出现&#x200B;**[!UICONTROL 创建新标签]**&#x200B;对话框，提示您输入名称、可选的友好名称和可选的说明。
 
 ![new-label-info](../../images/flac-ui/new-label-info.png)
 
-完成后，选择 **[!UICONTROL 确认]**.
+完成后，选择&#x200B;**[!UICONTROL 确认]**。

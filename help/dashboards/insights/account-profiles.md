@@ -7,21 +7,21 @@ exl-id: a953dd56-7dd8-4cd0-baa0-85f92d192789
 source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
 workflow-type: tm+mt
 source-wordcount: '549'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
 # 帐户配置文件分析
 
-[帐户配置文件](../../rtcdp/accounts/account-profile-overview.md) 用于整合来自各种来源（包括多个营销渠道和组织系统）的帐户信息。 此统一视图允许全面了解客户帐户，从而增强B2B营销活动。 通过分析数据模型得出的洞察信息使Adobe Real-time Customer Data Platform B2B数据更易于访问、理解并具有更大的决策影响力。
+[帐户配置文件](../../rtcdp/accounts/account-profile-overview.md)用于合并来自各种来源（包括多个营销渠道和组织系统）的帐户信息。 此统一视图允许全面了解客户帐户，从而增强B2B营销活动。 通过分析数据模型得出的洞察信息使Adobe Real-time Customer Data Platform B2B数据更易于访问、理解并具有更大的决策影响力。
 
 通过访问提供见解的SQL，您可以更好地了解您的B2B数据并生成您自己的高度自定义的可重用见解，以进一步探索您的客户帐户信息。 通过使用现有的Real-Time CDP数据模型SQL作为灵感，根据独特的业务需求创建查询，将原始数据转换为新的可操作洞察。
 
 <!-- Add link to new generate insights with SQL workflow doc after April release.-->
 
-以下见解全部可供您用作 [帐户配置文件仪表板](../guides/account-profiles.md) 或 [自定义仪表板](../user-defined-dashboards.md). 请参阅 [自定义概述](../customize/overview.md) 有关如何自定义功能板的说明，或者 [创建和编辑新构件](../customize/custom-widgets.md) 在小组件库和 [用户定义的仪表板](../user-defined-dashboards.md#create-widget).
+以下分析均可用作[帐户配置文件仪表板](../guides/account-profiles.md)或[自定义仪表板](../user-defined-dashboards.md)的一部分。 有关如何自定义仪表板或[在构件库和[用户定义的仪表板](../user-defined-dashboards.md#create-widget)中创建和编辑新构件](../customize/custom-widgets.md)的说明，请参阅[自定义概述](../customize/overview.md)。
 
-## 已添加帐户配置文件 {#account-profiles-added}
+## 已添加帐户轮廓 {#account-profiles-added}
 
 通过此洞察回答的问题：
 
@@ -106,7 +106,7 @@ LIMIT  5000;
 
 +++
 
-## 已添加机会 {#opportunities-added}
+## 新增机会 {#opportunities-added}
 
 通过此洞察回答的问题：
 
@@ -287,4 +287,4 @@ ORDER BY  d.date_key limit 5000;
 
 <!-- Add link above Learn how to [generate insights with SQL](). after April release -->
 
-您还可以阅读并了解为生成分析的SQL [配置文件](./profiles.md)， [受众](./audiences.md)、和 [目标](./destinations.md) 功能板。
+您还可以阅读并了解为[配置文件](./profiles.md)、[受众](./audiences.md)和[目标](./destinations.md)仪表板生成分析的SQL。

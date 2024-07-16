@@ -14,13 +14,13 @@ ht-degree: 3%
 
 # MLInstances端点
 
-MLInstance是现有 [引擎](./engines.md) ，用于定义任何训练参数、评分参数或硬件资源配置。
+MLInstance是现有[引擎](./engines.md)与定义任何训练参数、评分参数或硬件资源配置的适当配置集的配对。
 
 ## 创建MLInstance {#create-an-mlinstance}
 
-您可以创建MLInstance，方法是在提供包含有效引擎ID的POST有效负载的同时执行请求请求(`{ENGINE_ID}`)和一组适当的默认配置。
+您可以通过在提供包含有效引擎ID (`{ENGINE_ID}`)和适当默认配置集的请求有效负载时执行POST请求来创建MLInstance。
 
-如果引擎ID引用PySpark或Spark引擎，则您能够配置计算资源的数量，例如核心数量或内存量。 如果引用了Python引擎，则可以选择使用CPU或GPU进行训练和评分。 请参阅附录中有关 [PySpark和Spark资源配置](./appendix.md#resource-config) 和 [Python CPU和GPU配置](./appendix.md#cpu-gpu-config) 以了解更多信息。
+如果引擎ID引用PySpark或Spark引擎，则您能够配置计算资源的数量，例如核心数量或内存量。 如果引用了Python引擎，则可以选择使用CPU或GPU进行训练和评分。 请参阅附录中有关[PySpark和Spark资源配置](./appendix.md#resource-config)以及[Python CPU和GPU配置](./appendix.md#cpu-gpu-config)的部分以了解更多信息。
 
 **API格式**
 
@@ -83,7 +83,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回包含新创建的MLInstance的详细信息的有效负载，包括其唯一标识符(`id`)。
+成功的响应返回有效负载，该有效负载包含新创建的MLInstance的详细信息，包括其唯一标识符(`id`)。
 
 ```json
 {
@@ -130,7 +130,7 @@ curl -X POST \
 
 ## 检索MLIstances列表
 
-您可以通过执行单个GET请求来检索MLInstances列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅 [用于资源检索的查询参数](./appendix.md#query).
+您可以通过执行单个GET请求来检索MLInstances列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅[用于资源检索的查询参数](./appendix.md#query)的附录部分。
 
 **API格式**
 
@@ -142,7 +142,7 @@ GET /mlInstances?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAMETER_2}={VALUE_2}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{QUERY_PARAMETER}` | 其中一项 [可用的查询参数](./appendix.md#query) 用于筛选结果。 |
+| `{QUERY_PARAMETER}` | 用于筛选结果的[可用查询参数](./appendix.md#query)之一。 |
 | `{VALUE}` | 上一个查询参数的值。 |
 
 **请求**
@@ -275,7 +275,7 @@ curl -X GET \
 
 >[!TIP]
 >
->为确保此PUT请求成功，建议您首先执行GET请求，以 [按ID检索MLInstance](#retrieve-specific). 然后，修改并更新返回的JSON对象，并将修改后的整个JSON对象应用作PUT请求的有效负载。
+>为确保此PUT请求成功，建议您首先执行GET请求，以[按ID](#retrieve-specific)检索MLInstance。 然后，修改并更新返回的JSON对象，并将修改后的整个JSON对象应用作PUT请求的有效负载。
 
 以下示例API调用将在最初具有这些属性时更新MLInstance的训练和评分参数：
 

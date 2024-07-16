@@ -4,26 +4,26 @@ description: 了解如何在Reactor API中调用/libraries端点。
 exl-id: 0f7bc10f-2e03-43fa-993c-a2635f4d0c64
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '1521'
+source-wordcount: '1517'
 ht-degree: 5%
 
 ---
 
 # 库端点
 
-库是标记资源的集合([扩展](./extensions.md)， [规则](./rules.md)、和 [数据元素](./data-elements.md))来表示所需的行为 [属性](./properties.md). 此 `/libraries` Reactor API中的端点允许您以编程方式管理标记属性中的库。
+库是表示[属性](./properties.md)所需行为的标记资源（[扩展](./extensions.md)、[规则](./rules.md)和[数据元素](./data-elements.md)）的集合。 Reactor API中的`/libraries`端点允许您以编程方式管理标记属性中的库。
 
-库只属于一个资产。 一个资产可以有许多库。
+库只属于一个属性。 资产可以具有多个库。
 
 ## 快速入门
 
-本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [快速入门指南](../getting-started.md) 有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续之前，请查看[快速入门指南](../getting-started.md)，以了解有关如何对API进行身份验证的重要信息。
 
-在使用Reactor API中的库之前，请务必了解库状态和环境在决定您可以对特定库执行哪些操作方面扮演的角色。 请参阅 [库发布流](../../ui/publishing/publishing-flow.md) 了解更多信息。
+在使用Reactor API中的库之前，请务必了解库状态和环境在决定您可以对特定库执行哪些操作方面扮演的角色。 有关详细信息，请参阅[库发布流](../../ui/publishing/publishing-flow.md)指南。
 
 ## 检索库列表 {#list}
 
-通过在GET请求的路径中包含资产的ID，可以检索资产的库列表。
+您可以通过在GET请求的路径中包含资产的ID来检索资产的库列表。
 
 **API格式**
 
@@ -33,13 +33,13 @@ GET /properties/{PROPERTY_ID}/libraries
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 此 `id` 拥有库的资产的属性。 |
+| `PROPERTY_ID` | 拥有库的属性的`id`。 |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性筛选列出的库：<ul><li>`created_at`</li><li>`name`</li><li>`published_at`</li><li>`stale`</li><li>`state`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [筛选响应](../guides/filtering.md) 了解更多信息。
+>使用查询参数，可以根据以下属性过滤列出的库：<ul><li>`created_at`</li><li>`name`</li><li>`published_at`</li><li>`stale`</li><li>`state`</li><li>`updated_at`</li></ul>有关详细信息，请参阅[筛选响应](../guides/filtering.md)指南。
 
 **请求**
 
@@ -149,7 +149,7 @@ curl -X GET \
 
 ## 查找库 {#lookup}
 
-您可以通过在GET请求的路径中提供库ID来查找库。
+您可以通过在GET请求的路径中提供库的ID来查找库。
 
 **API格式**
 
@@ -159,7 +159,7 @@ GET /libraries/{LIBRARY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `LIBRARY_ID` | 此 `id` 要查找的库的URL。 |
+| `LIBRARY_ID` | 要查找的库的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -177,7 +177,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回库的详细信息。
+成功的响应将返回库的详细信息。
 
 ```json
 {
@@ -270,13 +270,13 @@ POST /properties/{PROPERTY_ID}/libraries
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 此 `id` 的 [属性](./properties.md) 您正在其下定义库。 |
+| `PROPERTY_ID` | 您正在定义库的[属性](./properties.md)的`id`。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求为指定的属性创建新库。 首次创建库时，仅其 `name` 属性可进行配置。 要将数据元素、扩展和规则添加到库，您必须创建关系。 请参阅以下部分： [管理库资源](#resources) 了解更多信息。
+以下请求为指定属性创建新库。 首次创建库时，只能配置其`name`属性。 要将数据元素、扩展和规则添加到库，您必须创建关系。 有关详细信息，请参阅[管理库资源](#resources)一节。
 
 ```shell
 curl -X POST \
@@ -297,14 +297,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes.name` | **（必需）** 易于用户识别的库名称。 |
-| `type` | 正在更新的资源类型。 对于此端点，值必须为 `libraries`. |
+| `attributes.name` | **（必需）**&#x200B;易于用户识别的库名称。 |
+| `type` | 正在更新的资源类型。 对于此终结点，值必须为`libraries`。 |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功响应将返回新创建的库的详细信息。
+成功的响应将返回新创建库的详细信息。
 
 ```json
 {
@@ -410,7 +410,7 @@ curl -X POST \
 
 ### 将资源添加到库 {#add-resources}
 
-您可以通过附加来将资源添加到库 `/relationships` POST请求的路径，后跟资源类型。
+您可以将`/relationships`附加到POST请求的路径中，然后附加资源类型，从而向库添加资源。
 
 **API格式**
 
@@ -460,7 +460,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应将返回添加关系的详细信息。 执行 [查找请求](#lookup) （对于库），显示在 `relationships` 属性。
+成功的响应将返回添加关系的详细信息。 对该库执行[查找请求](#lookup)会在`relationships`属性下显示添加的关系。
 
 ```json
 {
@@ -483,7 +483,7 @@ curl -X POST \
 
 ### 替换库的资源 {#replace-resources}
 
-您可以通过附加来替换库的特定类型的所有现有资源 `/relationships` 到PATCH请求的路径，后跟要替换的资源类型。
+您可以将`/relationships`附加到PATCH请求的路径中，后跟要替换的资源类型，以替换库的特定类型的所有现有资源。
 
 **API格式**
 
@@ -500,7 +500,7 @@ PATCH /libraries/{LIBRARY_ID}/relationships/{RESOURCE_TYPE}
 
 **请求**
 
-以下请求会将库的扩展替换为 `data` 数组。
+以下请求将库的扩展替换为`data`数组中提供的扩展。
 
 ```shell
 curl -X PATCH \
@@ -529,7 +529,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的响应将返回已更新关系的详细信息。 执行 [查找请求](#lookup) （对于库）显示 `relationships` 属性。
+成功的响应会返回已更新关系的详细信息。 对该库执行[查找请求](#lookup)将显示`relationships`属性下的关系。
 
 ```json
 {
@@ -548,7 +548,7 @@ curl -X PATCH \
 
 ### 删除库的资源 {#remove-resources}
 
-您可以通过附加，从库中移除现有资源 `/relationships` DELETE请求的路径，后跟要删除的资源类型。
+您可以将`/relationships`附加到DELETE请求的路径中，后跟要删除的资源类型，以从库中移除现有资源。
 
 **API格式**
 
@@ -559,13 +559,13 @@ DELETE /libraries/{LIBRARY_ID}/relationships/{RESOURCE_TYPE}
 | 参数 | 描述 |
 | --- | --- |
 | `{LIBRARY_ID}` | 要删除其资源的库的ID。 |
-| `{RESOURCE_TYPE}` | 正在删除的资源类型。 接受以下值： <ul><li>`data_elements`</li><li>`extensions`</li><li>`rules`</li></ul> |
+| `{RESOURCE_TYPE}` | 要移除的资源类型。 接受以下值： <ul><li>`data_elements`</li><li>`extensions`</li><li>`rules`</li></ul> |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求从库中移除规则。 任何未包含在 `data` 阵列未被删除。
+以下请求从库中移除规则。 任何未包含在`data`数组中的现有规则都不会被删除。
 
 ```shell
 curl -X DELETE \
@@ -594,7 +594,7 @@ curl -X DELETE \
 
 **响应**
 
-成功的响应会返回资源类型已更新关系的详细信息。 如果此资源类型不存在任何关系，则 `data` 属性作为空数组返回。 执行 [查找请求](#lookup) （对于库）显示 `relationships` 属性。
+成功的响应会返回资源类型已更新关系的详细信息。 如果此资源类型不存在任何关系，则将`data`属性作为空数组返回。 对该库执行[查找请求](#lookup)将显示`relationships`属性下的关系。
 
 ```json
 {
@@ -608,9 +608,9 @@ curl -X DELETE \
 }
 ```
 
-## 将库分配给环境 {#environment}
+## 将库分配到环境 {#environment}
 
-您可以将库分配到环境  `/relationships/environment` 到POST请求的路径。
+您可以将库分配给POST`/relationships/environment`环境，以将其分配给Environment请求的路径。
 
 **API格式**
 
@@ -645,13 +645,13 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `id` | 您为库分配的环境的ID。 |
-| `type` | 必须设置为 `environments`. |
+| `type` | 必须设置为`environments`。 |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的响应将返回关系的详细信息。 执行 [查找请求](#lookup) （对于库），会在下显示添加的关系 `relationships` 属性。
+成功的响应将返回关系的详细信息。 对该库执行[查找请求](#lookup)会在`relationships`属性下显示添加的关系。
 
 ```json
 {
@@ -668,7 +668,7 @@ curl -X POST \
 
 ## 过渡库 {#transition}
 
-通过在PATCH请求的路径中包含库的ID并提供相应的路径，可以将库转换为其他发布状态 `meta.action` 有效负载中的值。
+通过在PATCH请求的路径中包含库的ID并在有效负载中提供相应的`meta.action`值，可以将库转换为其他发布状态。
 
 **API格式**
 
@@ -678,13 +678,13 @@ PATCH /libraries/{LIBRARY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `LIBRARY_ID` | 此 `id` 要转换的库的ID。 |
+| `LIBRARY_ID` | 要转换的库的`id`。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求根据 `meta.action` 有效负载中提供的。 库的可用操作取决于其当前发布状态，如 [发布流](../../ui/publishing/publishing-flow.md#state).
+以下请求基于有效负载中提供的`meta.action`值转换现有库的状态。 库的可用操作取决于其当前发布状态，如[发布流](../../ui/publishing/publishing-flow.md#state)中所述。
 
 ```shell
 curl -X PATCH \
@@ -706,15 +706,15 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `meta.action` | 要在库中进行的特定过渡操作。 根据库的当前发布状态，可以使用以下操作： <ul><li>`develop`</li><li>`submit`</li><li>`approve`</li><li>`reject`</li></ul> |
-| `id` | 此 `id` 要更新的库的。 这应该与 `{LIBRARY_ID}` 请求路径中提供的值。 |
-| `type` | 正在更新的资源类型。 对于此端点，值必须为 `libraries`. |
+| `meta.action` | 您希望对库执行的特定过渡操作。 根据库的当前发布状态，可以使用以下操作： <ul><li>`develop`</li><li>`submit`</li><li>`approve`</li><li>`reject`</li></ul> |
+| `id` | 要更新的库的`id`。 这应当与在请求路径中提供的`{LIBRARY_ID}`值匹配。 |
+| `type` | 正在更新的资源类型。 对于此终结点，值必须为`libraries`。 |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功响应将返回已更新库的详细信息。
+成功的响应将返回已更新库的详细信息。
 
 ```json
 {
@@ -798,13 +798,13 @@ curl -X PATCH \
 }
 ```
 
-## 发布库 {#publish}
+## Publish a library {#publish}
 
 >[!NOTE]
 >
 >只有已获批准的库才能发布到生产环境。
 
-要将库发布到生产环境，请确保已将生产环境添加到库，然后创建内部版本。
+要将库发布到生产环境，请确保已向库添加了生产环境，然后创建内部版本。
 
 **API格式**
 
@@ -814,7 +814,7 @@ POST /libraries/{LIBRARY_ID}/builds
 
 | 参数 | 描述 |
 | --- | --- |
-| `LIBRARY_ID` | 此 `id` 要发布的库的ID。 |
+| `LIBRARY_ID` | 要发布的库的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -905,17 +905,17 @@ curl -X POST \
 
 ## 管理库的注释 {#notes}
 
-库是“重要”资源，这意味着您可以创建和检索每个单独资源中基于文本的注释。 请参阅 [注释端点指南](./notes.md) 有关如何管理库和其他兼容资源的注释的更多信息。
+库是“重要”资源，这意味着您可以在每个资源中创建和检索基于文本的注释。 有关如何管理库和其他兼容资源的注释的更多信息，请参阅[注释端点指南](./notes.md)。
 
 ## 检索库的相关资源 {#related}
 
-以下调用演示了如何检索库的相关资源。 时间 [查找库](#lookup)，这些关系列在 `relationships` 属性。
+以下调用演示了如何检索库的相关资源。 在[查找库](#lookup)时，这些关系将列在`relationships`属性下。
 
-请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
+有关Reactor API中关系的详细信息，请参阅[关系指南](../guides/relationships.md)。
 
 ### 列出库的相关数据元素 {#data-elements}
 
-您可以通过附加来列出库所使用的数据元素 `/data_elements` 到查找请求的路径。
+您可以将`/data_elements`附加到查找请求的路径中，以列出库所使用的数据元素。
 
 **API格式**
 
@@ -925,7 +925,7 @@ GET  /libraries/{LIBRARY_ID}/data_elements
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LIBRARY_ID}` | 此 `id` 要列出其数据元素的库的。 |
+| `{LIBRARY_ID}` | 要列出其数据元素的库的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -943,7 +943,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回使用指定库的数据元素列表。
+成功的响应将返回使用指定库的数据元素列表。
 
 ```json
 {
@@ -1056,7 +1056,7 @@ curl -X GET \
 
 ### 列出库的相关扩展 {#extensions}
 
-您可以通过附加来列出库使用的扩展 `/extensions` 到查找请求的路径。
+您可以将`/extensions`附加到查找请求的路径中，以列出库所使用的扩展。
 
 **API格式**
 
@@ -1066,7 +1066,7 @@ GET  /libraries/{LIBRARY_ID}/extensions
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LIBRARY_ID}` | 此 `id` 要列出其扩展名的库的。 |
+| `{LIBRARY_ID}` | 要列出其扩展的库的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -1187,7 +1187,7 @@ curl -X GET \
 
 ### 列出库的相关规则 {#rules}
 
-您可以通过附加来列出库使用的规则 `/rules` 到查找请求的路径。
+您可以将`/rules`附加到查找请求的路径中，以列出库使用的规则。
 
 **API格式**
 
@@ -1197,7 +1197,7 @@ GET  /libraries/{LIBRARY_ID}/rules
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LIBRARY_ID}` | 此 `id` 要列出其规则的库的。 |
+| `{LIBRARY_ID}` | 要列出其规则的库的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -1215,7 +1215,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回使用指定库的规则列表。
+成功的响应将返回使用指定库的规则列表。
 
 ```json
 {
@@ -1300,7 +1300,7 @@ curl -X GET \
 
 ### 查找库的相关环境 {#related-environment}
 
-您可以通过附加来查找库已分配到的环境 `/environment` 到GET请求的路径。
+您可以通过将`/environment`附加到GET请求的路径来查找库已分配到的环境。
 
 **API格式**
 
@@ -1310,7 +1310,7 @@ GET  /libraries/{LIBRARY_ID}/environment
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LIBRARY_ID}` | 此 `id` 要查找其环境的库的。 |
+| `{LIBRARY_ID}` | 要查找其环境的库的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -1328,7 +1328,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回指定库所分配到的环境的详细信息。
+成功的响应将返回指定库所分配到的环境的详细信息。
 
 ```json
 {
@@ -1412,7 +1412,7 @@ curl -X GET \
 
 ### 查找库的相关属性 {#property}
 
-您可以通过附加来查找拥有库的资产 `/property` 到GET请求的路径。
+您可以通过将`/property`附加到GET请求的路径来查找拥有库的属性。
 
 **API格式**
 
@@ -1422,7 +1422,7 @@ GET  /libraries/{LIBRARY_ID}/property
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LIBRARY_ID}` | 此 `id` 要查找其属性的库的。 |
+| `{LIBRARY_ID}` | 您要查找其属性的库的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -1440,7 +1440,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回拥有指定库的属性的详细信息。
+成功的响应将返回拥有指定库的属性的详细信息。
 
 ```json
 {
@@ -1535,7 +1535,7 @@ curl -X GET \
 
 ### 查找库的上游 {#upstream}
 
-您可以通过附加，从库上游查找下一个库 `/upstream_library` 到GET请求的路径。
+您可以通过将`/upstream_library`附加到GET请求的路径中，从库上游查找下一个库。
 
 **API格式**
 
@@ -1545,7 +1545,7 @@ GET  /libraries/{LIBRARY_ID}/upstream_library
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LIBRARY_ID}` | 此 `id` 要查找其上游库的库。 |
+| `{LIBRARY_ID}` | 要查找其上游库的库的`id`。 |
 
 {style="table-layout:auto"}
 

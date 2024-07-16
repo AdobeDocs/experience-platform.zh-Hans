@@ -15,13 +15,13 @@ ht-degree: 2%
 
 This document provides an overview of the AI/ML feature pipelines use case and details the steps required to get started with the cloud machine learning environment (CMLE) notebooks. -->
 
-Data Distiller使数据科学家和工程师能够利用Adobe Experience Platform中收集和整理的高价值客户体验数据，丰富其机器学习管道。 从 [!DNL Python] notebook在任何环境中，您都可以交互地浏览Experience Platform中的客户数据，定义并计算数据中的功能，并将计算出的功能读入机器学习环境中以进行建模。
+Data Distiller使数据科学家和工程师能够利用Adobe Experience Platform中收集和整理的高价值客户体验数据，丰富其机器学习管道。 从任何环境中的[!DNL Python]笔记本中，您可以交互浏览Experience Platform中的客户数据，从数据中定义和计算功能，并将计算功能读入机器学习环境中以进行建模。
 
 >[!IMPORTANT]
 >
 >此工作流需要Data Distiller和Adobe Experience Platform Intelligence许可证。 如果您没有这两种产品，请与您的Adobe服务代表联系。
 
-![详述AI-ML功能管道的信息图形。](../../images/data-distiller/ai-ml-feature-pipeline.png)
+![详细介绍AI-ML功能管道的信息图形。](../../images/data-distiller/ai-ml-feature-pipeline.png)
 
 - 借助Data Distiller强大的查询功能，您可以从Experience Platform中提供的丰富行为数据中提取有意义的特征。 然后，您可以将提取的特征数据引入机器学习Experience Platform，而无需在环境之外复制大量事件数据。
 - 将准备好的功能数据集读取到您首选的机器学习工具中，并与来自企业数据的其他功能相结合，训练、试验、调整和部署为您的业务定制的自定义模型。
@@ -31,27 +31,27 @@ Data Distiller使数据科学家和工程师能够利用Adobe Experience Platfor
 
 此工作流要求您对Adobe Experience Platform的各个方面有一定的了解。 在开始本教程之前，请查看文档以了解以下概念：
 
-- 操作方法 [身份验证和访问Experience PlatformAPI](../../../landing/api-authentication.md).
-- 沙盒： [基于属性的访问控制权限](../../../access-control/abac/overview.md) 以及如何创建和管理角色，并为这些角色分配所需的资源权限。
-- 数据管理：如何 [将数据使用标签应用于数据集和字段，对每个数据集和字段进行分类](../../../data-governance/labels/overview.md) 管理策略和访问控制策略。
+- 如何[验证和访问Experience PlatformAPI](../../../landing/api-authentication.md)。
+- 沙盒： [基于属性的访问控制权限](../../../access-control/abac/overview.md)以及如何创建和管理角色，并为这些角色分配所需的资源权限。
+- 数据管理：如何[将数据使用标签应用于数据集和字段，并根据相关的数据治理策略和访问控制策略对每个](../../../data-governance/labels/overview.md)进行分类。
 
 ## 后续步骤
 
 通过阅读本文档，您已了解使用首选机器学习工具构建支持营销用例的自定义模型背后的重要概念。
 
-本系列指南中包含的文档描述了创建功能管道的基本步骤，这些管道从Experience Platform到馈送机器学习环境中的自定义模型。 现在，您可以在数据Distiller与您的 [!DNL Jupyter Notebook].
+本系列指南中包含的文档描述了创建功能管道的基本步骤，这些管道从Experience Platform到馈送机器学习环境中的自定义模型。 您现在已准备好在Data Distiller与[!DNL Jupyter Notebook]之间建立连接。
 
-- **设置**： [从连接到数据Distiller [!DNL Python] 笔记本](./establish-connection.md)
+- **设置**：[从 [!DNL Python] 笔记本连接到数据Distiller](./establish-connection.md)
 
 下面链接的文档与上面信息图中指示的步骤相对应。
 
-- **步骤1**： [浏览和分析数据集](./exploratory-analysis.md)
-- **步骤2**： [机器学习的工程师功能](./feature-engineering.md)
-- **步骤3**： [导出功能数据集](./export-data.md)
+- **步骤1**：[浏览和分析数据集](./exploratory-analysis.md)
+- **步骤2**：[机器学习的工程师功能](./feature-engineering.md)
+- **步骤3**：[导出功能数据集](./export-data.md)
 
 ## 其他资源
 
-- [aepp](https://github.com/adobe/aepp)：Adobe管理的开放源代码 [!DNL Python] 库，用于从请求Data Distiller和其他Experience Platform服务 [!DNL Python] 代码。
+- [aepp](https://github.com/adobe/aepp)：Adobe管理的开源[!DNL Python]库，用于从[!DNL Python]代码向Data Distiller和其他Experience Platform服务发出请求。
 
 <!-- Old content below -->
 

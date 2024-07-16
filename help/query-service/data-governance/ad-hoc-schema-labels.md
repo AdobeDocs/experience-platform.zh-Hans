@@ -25,16 +25,16 @@ ht-degree: 2%
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [Experience Data Model (XDM)系统](../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+* [体验数据模型(XDM)系统](../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
    * [[!DNL Schema Editor]](../../xdm/ui/overview.md)：了解如何在Platform UI中创建和管理架构和其他资源。
-* [[!DNL Data Governance]](../../data-governance/home.md)：了解如何操作 [!DNL Data Governance] 允许您管理客户数据并确保遵守适用于数据使用的法规、限制和策略。
-* [基于属性的访问控制](../../access-control/abac/overview.md)：基于属性的访问控制是Adobe Experience Platform的一项功能，它允许管理员根据属性控制对特定对象和/或功能的访问。 属性可以是添加到对象的元数据，例如添加到临时或常规架构字段的标签。 管理员定义包括管理用户访问权限的属性的访问策略。
+* [[!DNL Data Governance]](../../data-governance/home.md)：了解[!DNL Data Governance]如何允许您管理客户数据并确保遵守适用于数据使用的法规、限制和策略。
+* [基于属性的访问控制](../../access-control/abac/overview.md)：基于属性的访问控制是Adobe Experience Platform的一项功能，它使管理员能够根据属性控制对特定对象和/或功能的访问。 属性可以是添加到对象的元数据，例如添加到临时或常规架构字段的标签。 管理员定义包括管理用户访问权限的属性的访问策略。
 
 ## 创建临时架构
 
 执行查询并生成结果后，将自动生成临时架构并将其添加到架构清单。
 
-要添加数据标签，请导航至 [!UICONTROL 架构] 通过选择 [!UICONTROL 架构] Platform UI的左边栏中。 将显示架构清单。
+要添加数据标签，请选择Platform UI左边栏中的[!UICONTROL 架构]，导航到[!UICONTROL 架构]仪表板浏览选项卡。 将显示架构清单。
 
 >[!NOTE]
 >
@@ -42,41 +42,41 @@ ht-degree: 2%
 
 ## 在Platform UI的架构清单中发现临时架构 {#discover-ad-hoc-schemas}
 
-要在Platform UI中启用临时架构显示，请选择过滤器图标(![过滤器图标。](../images/data-governance/filter.png))，然后选择**[!UICONTROL 显示临时架构] 在显示的左边栏中。
+要在Platform UI中启用临时架构显示，请选择过滤器图标（![过滤器图标）。](../images/data-governance/filter.png))，然后在显示的左边栏中选择**[!UICONTROL 显示临时架构]。
 
-![启用了“显示临时架构”切换的架构功能板筛选器选项左边栏。](../images/data-governance/adhoc-schema-toggle.png)
+![架构仪表板筛选器选项左边栏的“显示临时架构”切换已启用。](../images/data-governance/adhoc-schema-toggle.png)
 
 从可用列表中选择最近创建的临时方案的名称。 此时将显示临时架构结构的可视化图表。
 
-![临时模式结构图示例。](../images/data-governance/adhoc-schema-structure-diagram.png)
+![示例临时架构结构图。](../images/data-governance/adhoc-schema-structure-diagram.png)
 
 ## 编辑治理标签
 
-要编辑临时架构的数据标签，请选择 [!UICONTROL 标签] 选项卡。 标签工作区允许您将标签应用、创建和编辑到临时架构字段，并通过UI控制访问权限。 此处显示了临时架构中的所有字段。
+要编辑临时架构的数据标签，请选择[!UICONTROL 标签]选项卡。 标签工作区允许您将标签应用、创建和编辑到临时架构字段，并通过UI控制访问权限。 此处显示了临时架构中的所有字段。
 
 ## 编辑架构或字段的标签
 
-要编辑整个架构的标签，请选择铅笔图标(![铅笔图标。](../images/data-governance/edit-icon.png))添加到架构名称一侧 [!UICONTROL 标签] 选项卡。
+要编辑整个架构的标签，请选择铅笔图标（![A铅笔图标）。](../images/data-governance/edit-icon.png))到[!UICONTROL 标签]选项卡下的架构名称一侧。
 
-![在模式工作区中，标签视图以铅笔图标突出显示。](../images/data-governance/edit-entire-schema-labels.png)
+![架构工作区中突出显示铅笔图标的标签视图。](../images/data-governance/edit-entire-schema-labels.png)
 
-要将标签应用于现有字段，请从列表中选择一个或多个字段，后跟一个字段 [!UICONTROL 编辑治理标签] 在右侧边栏中。
+要将标签应用于现有字段，请从列表中选择一个或多个字段，然后在右侧边栏中依次选择[!UICONTROL 编辑治理标签]。
 
-![在右侧边栏中突出显示“编辑治理标签”选项的架构工作区中的“标签”视图。](../images/data-governance/edit-governance-labels.png)
+![右侧边栏中突出显示“编辑治理标签”选项的架构工作区中的“标签”视图。](../images/data-governance/edit-governance-labels.png)
 
 ## “编辑标签”弹出框
 
-此 [!UICONTROL 编辑标签] 弹出窗口出现。 从该视图中，您可以通过UI创建或编辑现有治理标签。
+出现[!UICONTROL 编辑标签]弹出框。 从该视图中，您可以通过UI创建或编辑现有治理标签。
 
-![“编辑标签”弹出框。](../images/data-governance/edit-labels-popover.png)
+![编辑标签弹出框。](../images/data-governance/edit-labels-popover.png)
 
-请参阅文档以了解如何 [创建或编辑所选架构或字段的标签](../../xdm/tutorials/labels.md#edit-the-labels-for-the-schema-or-field).
+请参阅文档以了解如何[创建或编辑所选架构或字段](../../xdm/tutorials/labels.md#edit-the-labels-for-the-schema-or-field)的标签。
 
 >[!NOTE]
 >
 >创建新标签或编辑现有标签需要组织的管理员权限。 如果您没有管理员权限，请联系您的系统管理员来安排访问权限。
 
-还可以使用权限工作区创建标签。 请参阅 [有关在权限工作区中创建标签的指南](../../access-control/abac/ui/labels.md) 以获取说明。
+还可以使用权限工作区创建标签。 有关说明，请参阅有关在权限工作区](../../access-control/abac/ui/labels.md)中创建标签的[指南。
 
 应用基于属性的访问控制的适当级别后，当用户尝试访问不可访问的数据时，以下系统行为适用于通过查询服务执行的任何查询：
 

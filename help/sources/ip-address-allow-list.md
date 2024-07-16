@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；ip地址；ip地址；ip地址允许列表；允许列表
 description: 在使用源连接器之前，必须将IP地址添加到允许列表。
 solution: Experience Platform
-title: 源连接的IP地址允许列表
+title: Source连接的IP地址允许列表
 exl-id: 40093c80-dbdb-4dc1-97bb-81a8200b731f
 source-git-commit: bcd74083169c40966d7de8ba7b79082931a6744d
 workflow-type: tm+mt
@@ -69,7 +69,7 @@ ht-degree: 0%
 
 ## 流源的IP地址允许列表 {#streaming}
 
-您必须将以下IP地址添加到允许列表，以便允许流媒体源的数据传输服务的流量，例如 [[!DNL Amazon Kinesis]](./connectors/cloud-storage/kinesis.md)， [[!DNL Azure Event Hub]](./connectors/cloud-storage/eventhub.md)， [[!DNL Google PubSub]](./connectors/cloud-storage/google-pubsub.md)、和 [[!DNL Snowflake Streaming]](./connectors/databases/snowflake-streaming.md).
+您必须将以下IP地址添加到您的允许列表中，以便允许流源（如[[!DNL Amazon Kinesis]](./connectors/cloud-storage/kinesis.md)、[[!DNL Azure Event Hub]](./connectors/cloud-storage/eventhub.md)、[[!DNL Google PubSub]](./connectors/cloud-storage/google-pubsub.md)和[[!DNL Snowflake Streaming]](./connectors/databases/snowflake-streaming.md)）的数据传输服务的流量。
 
 >[!BEGINTABS]
 

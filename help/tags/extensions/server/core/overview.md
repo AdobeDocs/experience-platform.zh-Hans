@@ -6,7 +6,7 @@ exl-id: b5ee4ccf-6fa5-4472-be04-782930f07e20
 source-git-commit: 2ba02f94ff20281953d74b3213033e5f0a7fa111
 workflow-type: tm+mt
 source-wordcount: '1715'
-ht-degree: 91%
+ht-degree: 90%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 91%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 核心事件转发扩展为Adobe Experience Platform中的事件转发提供默认事件、条件和数据类型。
 
@@ -28,7 +28,7 @@ ht-degree: 91%
 
 指定必须作为事件条件存在的任何自定义代码。使用内置代码编辑器输入自定义代码。Adobe Experience Platform中的事件转发支持ES13。
 
-1. 选择 **[!UICONTROL 打开编辑器]**.
+1. 选择&#x200B;**[!UICONTROL 打开编辑器]**。
 1. 键入自定义代码。
 1. 选择&#x200B;**[!UICONTROL 保存]**。
 
@@ -158,8 +158,8 @@ module.exports = (context) => {
 提供在触发事件并评估条件后运行的代码。Adobe Experience Platform中的事件转发支持ES13。
 
 1. 命名操作代码。
-1. 选择 **[!UICONTROL 打开编辑器]**.
-1. 编辑代码，然后选择 **[!UICONTROL 保存]**.
+1. 选择&#x200B;**[!UICONTROL 打开编辑器]**。
+1. 编辑代码，然后选择&#x200B;**[!UICONTROL 保存]**。
 
 要访问自定义代码中数据元素的值，请使用 `getDataElementValue` 方法。例如，要检索名为 `productName` 的数据元素的值，请编写以下代码： 
 
@@ -183,7 +183,7 @@ arc.ruleStash.core.productCategory
 
 ### 自定义代码
 
-通过选择将自定义JavaScript输入到用户界面中  **[!UICONTROL 打开编辑器]** 并将代码插入编辑器窗口。
+通过选择&#x200B;**[!UICONTROL 打开编辑器]**&#x200B;并将代码插入编辑器窗口，可以将自定义JavaScript输入到用户界面中。
 
 编辑器窗口中需要一个返回语句，以指示应该将什么值用作数据元素值。如果不包含返回语句，或返回的值为 `null` 或 `undefined`，则数据元素的默认值反映为 `null` 或 `undefined`。
 
@@ -226,4 +226,4 @@ arc.event.xdm.page.pageName
 
 >[!NOTE]
 >
->此 `interact` 来自客户端的调用具有 `events`，但是要转发事件，您需要 `event`. 这是因为事件转发会单独检查每个事件，而不是像客户端上所示的一批检查多个事件。
+>来自客户端的`interact`调用具有`events`，但是对于事件转发，您需要`event`。 这是因为事件转发会单独检查每个事件，而不是像客户端上所示的一批检查多个事件。

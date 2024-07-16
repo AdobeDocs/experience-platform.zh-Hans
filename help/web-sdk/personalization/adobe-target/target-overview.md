@@ -5,91 +5,92 @@ exl-id: 021171ab-0490-4b27-b350-c37d2a569245
 source-git-commit: 69406293dce5fdfc832adff801f1991626dafae0
 workflow-type: tm+mt
 source-wordcount: '1345'
-ht-degree: 4%
+ht-degree: 1%
 
 ---
 
-# 使用 [!DNL Adobe Target] 和 [!DNL Web SDK] 个性化
+# 使用[!DNL Adobe Target]和[!DNL Web SDK]进行个性化
 
-[!DNL Adobe Experience Platform] [!DNL Web SDK] 可以投放和渲染在中管理的个性化体验 [!DNL Adobe Target] 到Web渠道。 您可以使用WYSIWYG编辑器，称为 [可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) (VEC)或非可视化界面， [基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html)，创建、激活和交付您的活动和个性化体验。
+[!DNL Adobe Experience Platform] [!DNL Web SDK]可以将在[!DNL Adobe Target]中管理的个性化体验交付并渲染到Web渠道。 您可以使用名为[可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) (VEC)的WYSIWYG编辑器，或使用非可视化界面[基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html)，创建、激活并交付您的活动和个性化体验。
 
 >[!IMPORTANT]
 >
->了解如何使用将Target实施迁移到Platform Web SDK [将Target从at.js 2.x迁移到Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/migrate-target-to-websdk/introduction.html) 教程。
+>了解如何使用[将Target从at.js 2.x迁移到Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/migrate-target-to-websdk/introduction.html)教程将Target实施迁移到Platform Web SDK。
 >
->了解如何使用首次实施Target [利用Web SDK实施Adobe Experience Cloud](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html?lang=zh-Hans) 教程。 有关特定于Target的信息，请参阅名为的教程部分 [使用Platform Web SDK设置Target](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/applications-setup/setup-target.html).
+>了解如何使用[使用Web SDK实施Adobe Experience Cloud](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html?lang=zh-Hans)教程首次实施Target。 有关特定于Target的信息，请参阅标题为[使用Platform Web SDK设置Target](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/applications-setup/setup-target.html)的教程部分。
 
 
-以下功能已经过测试，当前在中受支持 [!DNL Target]：
+以下功能已经过测试，当前在[!DNL Target]中受支持：
 
 * [A/B测试](https://experienceleague.adobe.com/docs/target/using/activities/abtest/test-ab.html)
-* [A4T展示和转化报表](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html)
+* [A4T展示和转化报告](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html)
 * [Automated Personalization活动](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
 * [体验定位活动](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
 * [多变量测试(MVT)](https://experienceleague.adobe.com/docs/target/using/activities/multivariate-test/multivariate-testing.html)
 * [Recommendations活动](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html)
-* [原生Target展示和转化报表](https://experienceleague.adobe.com/docs/target/using/reports/reports.html)
+* [本机目标展示和转化报告](https://experienceleague.adobe.com/docs/target/using/reports/reports.html)
 * [VEC支持](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)
 
-## [!DNL Web SDK] 系统图
+## [!DNL Web SDK]系统图
 
-下图可帮助您了解的工作流 [!DNL Target] 和 [!DNL Web SDK] edge decisioning.
+下图可帮助您了解[!DNL Target]和[!DNL Web SDK]边缘决策的工作流。
 
-![使用Platform Web SDK的Adobe Target Edge Decisioning示意图](assets/target-platform-web-sdk-new.png)
+![使用Platform Web SDK的Adobe Target Edge Decisioning图表](assets/target-platform-web-sdk-new.png)
 
 | 调用 | 详细信息 |
 | --- | --- |
-| 1 | 设备加载 [!DNL Web SDK]. 此 [!DNL Web SDK] 向Edge Network发送请求，其中包含XDM数据、数据流环境ID、传入的参数和客户ID（可选）。 页面（或容器）已预先隐藏。 |
+| 1 | 设备加载[!DNL Web SDK]。 [!DNL Web SDK]向Edge Network发送请求，其中包含XDM数据、数据流环境ID、传入的参数和客户ID（可选）。 页面（或容器）已预先隐藏。 |
 | 2 | Edge Network将请求发送到边缘服务，以使用访客ID、同意和其他访客上下文信息（如地理位置和设备友好名称）对其进行扩充。 |
-| 3 | Edge Network将扩充个性化请求发送至 [!DNL Target] 使用访客ID和传入的参数进行Edge。 |
-| 4 | 配置文件脚本先执行，然后注入到 [!DNL Target] 配置文件存储。 配置文件存储从获取区段 [!UICONTROL 受众库] (例如，从共享区段 [!DNL Adobe Analytics]， [!DNL Adobe Audience Manager]， [!DNL Adobe Experience Platform])。 |
-| 5 | 根据URL请求参数和配置文件数据， [!DNL Target] 确定可为访客显示的当前页面视图和未来预取视图的活动和体验。 [!DNL Target] 然后将它发送回Edge Network。 |
-| 6 | a.Edge Network将个性化响应发送回页面，其中可能包含其他个性化的配置文件值。 当前页面上的个性化内容会在默认内容不发生闪烁的情况下尽快显示。<br>b.作为用户操作在单页应用程序(SPA)中显示的视图的个性化内容将缓存，这样便可在触发视图时即时应用而无需额外的服务器调用。 <br>c.Edge Network发送访客ID和Cookie中的其他值，如同意、会话ID、身份、Cookie检查和个性化。 |
+| 3 | Edge Network使用访客ID和传入的参数将扩充的个性化请求发送给[!DNL Target]边缘。 |
+| 4 | 配置文件脚本在执行后进入[!DNL Target]配置文件存储。 配置文件存储从[!UICONTROL 受众库]中获取区段（例如，从[!DNL Adobe Analytics]、[!DNL Adobe Audience Manager]、[!DNL Adobe Experience Platform]共享的区段）。 |
+| 5 | 根据URL请求参数和配置文件数据，[!DNL Target]确定将为访客显示的当前页面视图和未来预取视图的活动和体验。 [!DNL Target]然后将它发送回Edge Network。 |
+| 6 | a.Edge Network将个性化响应发送回页面，其中可能包含其他个性化的配置文件值。 当前页面上的个性化内容会在默认内容不发生闪烁的情况下尽快显示。<br>b。作为用户操作在单页应用程序(SPA)中显示的视图的个性化内容将缓存，这样便可在触发视图时即时应用而无需额外的服务器调用。 <br>c。Edge Network会发送访客ID和Cookie中的其他值，例如同意、会话ID、身份、Cookie检查和个性化。 |
 | 7 | Web SDK将通知从设备发送到Edge Network。 |
-| 8 | Edge Network转发 [!UICONTROL 目标分析] (A4T)的详细信息（活动、体验和转化元数据） [!DNL Analytics] 边缘。 |
+| 8 | Edge Network将[!UICONTROL Analytics for Target] (A4T)详细信息（活动、体验和转化元数据）转发到[!DNL Analytics]边缘。 |
 
-## 正在启用 [!DNL Adobe Target]
+## 正在启用[!DNL Adobe Target]
 
-要启用 [!DNL Target]，请执行以下操作：
+要启用[!DNL Target]，请执行以下操作：
 
-1. 启用 [!DNL Target] 在您的 [数据流](../../../datastreams/overview.md) ，并提供相应的客户端代码。
-1. 添加 `renderDecisions` 选项添加到您的事件。
+1. 使用适当的客户端代码启用[数据流](../../../datastreams/overview.md)中的[!DNL Target]。
+1. 将`renderDecisions`选项添加到您的事件。
 
 然后，您还可以选择添加以下选项：
 
-* **`decisionScopes`**：通过将此选项添加到您的事件中，检索特定活动（对于使用基于表单的编辑器创建的活动非常有用）。
+* **`decisionScopes`**：通过将此选项添加到您的事件中，检索特定活动（对于使用基于表单的编辑器创建的活动很有用）。
 * **[预隐藏代码片段](../manage-flicker.md)**：仅隐藏页面的某些部分。
 
 ## 使用Adobe Target VEC
 
-要将VEC与 [!DNL Web SDK] 实施，安装并激活 [Firefox](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/) 或 [铬黄](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak) VEC助手扩展。
+要将VEC与[!DNL Web SDK]实现结合使用，请安装并激活[Firefox](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/)或[Chrome](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak) VEC Helper扩展。
 
-有关更多信息，请参阅 [可视化体验编辑器助手扩展](https://experienceleague.adobe.com/docs/target/using/experiences/vec/troubleshoot-composer/vec-helper-browser-extension.html) 在 *Adobe Target指南*.
+有关详细信息，请参阅&#x200B;*Adobe Target指南*&#x200B;中的[可视化体验编辑器助手扩展](https://experienceleague.adobe.com/docs/target/using/experiences/vec/troubleshoot-composer/vec-helper-browser-extension.html)。
 
 ## 呈现个性化内容
 
-请参阅 [呈现个性化内容](../rendering-personalization-content.md) 以了解更多信息。
+有关详细信息，请参阅[呈现个性化内容](../rendering-personalization-content.md)。
 
 ## XDM中的受众
 
-在为定义受众时 [!DNL Target] 通过交付的活动 [!DNL Web SDK]， [XDM](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html) 必须定义和使用。 定义XDM架构、类和架构字段组后，您可以创建 [!DNL Target] 由XDM数据定义的用于定位的受众规则。 范围 [!DNL Target]， XDM数据显示在 [!UICONTROL Audience Builder] 作为自定义参数。 XDM使用点表示法序列化(例如， `web.webPageDetails.name`)。
+在为通过[!DNL Web SDK]交付的[!DNL Target]活动定义受众时，必须定义和使用[XDM](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html)。 定义XDM架构、类和架构字段组后，可创建由XDM数据定义的[!DNL Target]受众规则以进行定位。 在[!DNL Target]内，XDM数据在[!UICONTROL 受众生成器]中显示为自定义参数。 XDM使用点表示法序列化（例如，`web.webPageDetails.name`）。
 
-如果您拥有 [!DNL Target] 如果活动包含使用自定义参数或用户配置文件的预定义受众，则无法通过SDK正确交付这些活动。 您必须改用XDM，而不是使用自定义参数或用户配置文件。 但是，提供开箱即用的受众定位字段，支持它们通过 [!DNL Web SDK] 而不需要XDM。 这些字段在 [!DNL Target] 不需要XDM的UI：
+如果您的[!DNL Target]活动具有使用自定义参数或用户配置文件的预定义受众，则无法通过SDK正确交付这些受众。 您必须改用XDM，而不是使用自定义参数或用户配置文件。 但是，有一些通过[!DNL Web SDK]支持的现成受众定向字段不需要XDM。 这些字段在[!DNL Target] UI中可用，不需要XDM：
 
-* 定位库
-* 地域
+* Target库
+* 地理
 * 网络
 * 操作系统
-* 网站页面
+* 网页
 * 浏览器
 * 流量源
 * 时间范围
 
-有关更多信息，请参阅 [受众类别](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/target-rules.html) 在 *Adobe Target指南*.
+有关详细信息，请参阅&#x200B;*Adobe Target指南*&#x200B;中的[受众类别](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/target-rules.html)。
 
 ### 响应令牌
 
-响应令牌用于将元数据发送到Google或Facebook等第三方。 响应令牌在中返回 `meta` 字段范围 `propositions` -> `items`. 以下是示例：
+响应令牌用于将元数据发送到Google或Facebook等第三方。 返回响应令牌
+在`propositions` -> `items`内的`meta`字段中。 以下是示例：
 
 ```json
 {
@@ -112,9 +113,9 @@ ht-degree: 4%
 }
 ```
 
-要收集响应令牌，您必须订阅 `alloy.sendEvent` 承诺，反复访问 `propositions`，并从提取详细信息 `items` -> `meta`.
+要收集响应令牌，您必须订阅`alloy.sendEvent` promise，通过`propositions`进行迭代，并从`items` -> `meta`中提取详细信息。
 
-每 `proposition` 具有 `renderAttempted` 布尔字段，指示是否 `proposition` 是否呈现。 请参阅下面的示例：
+每个`proposition`都有一个`renderAttempted`布尔字段，用于指示`proposition`是否已呈现。 请参阅下面的示例：
 
 ```js
 alloy("sendEvent",
@@ -146,50 +147,50 @@ alloy("sendEvent",
 
 #### 在页面加载时：
 
-* 基于表单的编辑器 `propositions` 替换为 `renderAttempted` 标志设置为 `false`
-* 基于可视化体验编辑器的建议，具有 `renderAttempted` 标志设置为 `true`
-* 基于可视化体验编辑器的单页应用程序视图建议 `renderAttempted` 标志设置为 `true`
+* 基于表单的编辑器`propositions`，其中`renderAttempted`标志设置为`false`
+* 基于Visual Experience Composer的建议，`renderAttempted`标志设置为`true`
+* 对于标志设置为`true`的`renderAttempted`的单页应用程序视图，基于可视化体验编辑器的建议
 
 #### 查看时 — 更改（对于缓存的视图）：
 
-* 基于可视化体验编辑器的单页应用程序视图建议 `renderAttempted` 标志设置为 `true`
+* 对于标志设置为`true`的`renderAttempted`的单页应用程序视图，基于可视化体验编辑器的建议
 
 禁用自动渲染时，建议数组包含：
 
 #### 在页面加载时：
 
-* [!DNL Form-based Composer]基于 `propositions` 替换为 `renderAttempted` 标志设置为 `false`
-* [!DNL Visual Experience Composer]基于的主张，带有 `renderAttempted` 标志设置为 `false`
-* [!DNL Visual Experience Composer]用于单页应用程序视图的基于的建议 `renderAttempted` 标志设置为 `false`
+* 基于[!DNL Form-based Composer]的`propositions`，其中`renderAttempted`标志设置为`false`
+* 基于[!DNL Visual Experience Composer]的建议，其中`renderAttempted`标志设置为`false`
+* 基于[!DNL Visual Experience Composer]的单页应用程序视图建议，且标志设置为`renderAttempted``false`
 
 #### 查看时 — 更改（对于缓存的视图）：
 
-* 基于可视化体验编辑器的单页应用程序视图建议，具有 `renderAttempted` 标志设置为 `false`
+* 针对标志设置为`false`的`renderAttempted`的单页应用程序视图，基于可视化体验编辑器的建议
 
 ### 单个配置文件更新
 
-此 [!DNL Web SDK] 允许您将配置文件更新到 [!DNL Target] 配置文件和 [!DNL Web SDK] 作为体验事件。
+通过[!DNL Web SDK]，您可以将个人资料更新到[!DNL Target]个人资料和[!DNL Web SDK]以作为体验事件。
 
-要更新 [!DNL Target] 配置文件时，请确保使用以下各项来传递配置文件数据：
+要更新[!DNL Target]配置文件，请确保通过以下方式传递配置文件数据：
 
-* 下 `"data {"`
-* 下 `"__adobe.target"`
-* 前缀 `"profile."`
+* 在`"data {"`下
+* 在`"__adobe.target"`下
+* 前缀`"profile."`
 
 | 键 | 类型 | 描述 |
 | --- | --- | --- |
 | `renderDecisions` | 布尔值 | 指示个性化组件是否应解释DOM操作 |
-| `decisionScopes` | 数组 `<String>` | 要检索决策的作用域列表 |
+| `decisionScopes` | 数组`<String>` | 要检索决策的作用域列表 |
 | `xdm` | 对象 | 在Web SDK中作为体验事件登陆的XDM格式的数据 |
-| `data` | 对象 | 发送到的任意键/值对 [!DNL Target] 目标类下的解决方案。 |
+| `data` | 对象 | 发送到target类下[!DNL Target]解决方案的任意键/值对。 |
 
 <!--Typical [!DNL Web SDK] code using this command looks like the following:-->
 
 **延迟保存配置文件或实体参数，直到内容显示给最终用户**
 
-要在显示内容之前延迟在配置文件中记录属性，请设置 `data.adobe.target._save=false` 在您的请求中。
+要在显示内容之前延迟在配置文件中记录属性，请在请求中设置`data.adobe.target._save=false`。
 
-例如，您的网站包含三个决策范围，分别对应于网站上的三个类别链接（“男性”、“女性”和“儿童”），并且您希望跟踪用户最终访问的类别。 发送这些请求时使用 `__save` 标志设置为 `false` 以避免在请求内容时保留类别。 对内容进行可视化后，发送相应的有效负载(包括 `eventToken` 和 `stateToken`)，以记录对应的属性。
+例如，您的网站包含三个决策范围，分别对应于网站上的三个类别链接（“男性”、“女性”和“儿童”），并且您希望跟踪用户最终访问的类别。 发送这些请求，并将`__save`标志设置为`false`，以避免在请求内容时保留类别。 内容可视化后，为要记录的相应属性发送适当的负载（包括`eventToken`和`stateToken`）。
 
 <!--Save profile or entity attributes by default with:
 
@@ -235,7 +236,7 @@ alloy ( "sendEvent" , {
 
 >[!NOTE]
 >
->如果 `__save` 省略了指令，保存配置文件和实体属性会立即执行，就像请求已执行一样，即使请求的其余部分是个性化的预获取。 此 `__save` 指令仅与配置文件和实体属性相关。 如果存在跟踪对象，则 `__save` 指令被忽略。 数据会立即保存并记录通知。
+>如果省略`__save`指令，则会立即保存配置文件和实体属性，就像已执行请求一样，即使请求的其余部分是对个性化的预获取。 `__save`指令仅与配置文件和实体属性相关。 如果存在跟踪对象，则忽略`__save`指令。 数据会立即保存并记录通知。
 
 **`sendEvent`包含配置文件数据**
 
@@ -265,26 +266,26 @@ alloy("sendEvent", {
 
 ## 请求建议
 
-下表列出了 [!DNL Recommendations] 属性以及是否通过 [!DNL Web SDK]：
+下表列出了[!DNL Recommendations]属性以及是否通过[!DNL Web SDK]支持每个属性：
 
 | 类别 | 属性 | 支持状态 |
 | --- | --- | --- |
-| Recommendations — 默认实体属性 | entity.id | 受支持 |
-|  | entity.name | 受支持 |
-|  | entity.categoryId | 受支持 |
-|  | entity.pageUrl | 受支持 |
-|  | entity.thumbnailUrl | 受支持 |
-|  | entity.message | 受支持 |
-|  | entity.value | 受支持 |
-|  | entity.inventory | 受支持 |
-|  | entity.brand | 受支持 |
-|  | entity.margin | 受支持 |
-|  | entity.event.detailsOnly | 受支持 |
-| Recommendations — 自定义实体属性 | entity.yourCustomAttributeName | 受支持 |
-| Recommendations — 保留的mbox/页面参数 | excludedIds | 受支持 |
-|  | cartIds | 受支持 |
-|  | productPurchasedId | 受支持 |
-| 类别亲和度的页面或物料类别 | user.categoryId | 受支持 |
+| Recommendations — 默认实体属性 | entity.id | 支持 |
+|  | entity.name | 支持 |
+|  | entity.categoryId | 支持 |
+|  | entity.pageUrl | 支持 |
+|  | entity.thumbnailUrl | 支持 |
+|  | entity.message | 支持 |
+|  | entity.value | 支持 |
+|  | entity.inventory | 支持 |
+|  | entity.brand | 支持 |
+|  | entity.margin | 支持 |
+|  | entity.event.detailsOnly | 支持 |
+| Recommendations — 自定义实体属性 | entity.yourCustomAttributeName | 支持 |
+| Recommendations — 保留的mbox/页面参数 | excludedIds | 支持 |
+|  | cartIds | 支持 |
+|  | productPurchasedId | 支持 |
+| 类别亲和度的页面或物料类别 | user.categoryId | 支持 |
 
 **如何将Recommendations属性发送到Adobe Target：**
 
@@ -304,14 +305,14 @@ alloy("sendEvent", {
 
 ## 调试
 
-已弃用mboxTrace和mboxDebug。 使用方法 [Web SDK调试](/help/web-sdk/use-cases/debugging.md) 而是。
+已弃用mboxTrace和mboxDebug。 请改用[Web SDK调试](/help/web-sdk/use-cases/debugging.md)的方法。
 
 ## 术语
 
-__建议：__ 在 [!DNL Adobe Target]，建议与从活动中选择的体验相关联。
+__建议：__&#x200B;在[!DNL Adobe Target]中，建议与从活动中选择的体验相关联。
 
-__架构：__ 决策的结构是中的优惠类型 [!DNL Adobe Target].
+__架构：__&#x200B;决策的架构是[!DNL Adobe Target]中的优惠类型。
 
-__范围：__ 决定的范围。 在 [!DNL Adobe Target]，范围是mBox。 全局mBox是 `__view__` 范围。
+__范围：__&#x200B;决定的范围。 在[!DNL Adobe Target]中，范围是mBox。 全局mBox是`__view__`作用域。
 
-__XDM：__ XDM将序列化为点表示法，然后放入 [!DNL Adobe Target] 作为mBox参数。
+__XDM：__ XDM被序列化为点表示法，然后作为mBox参数放入[!DNL Adobe Target]中。

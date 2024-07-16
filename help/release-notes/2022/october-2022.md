@@ -1,11 +1,11 @@
 ---
 title: Adobe Experience Platform发行说明2022年10月
-description: Adobe Experience Platform 2022年10月版发行说明。
+description: Adobe Experience Platform 的 2022 年 10 月发行说明。
 exl-id: 61ef2472-5e79-433f-9f60-b1245f619b42
 source-git-commit: 18c1d32bbc2732c38a9c37ee8fb9d36a23d4e515
 workflow-type: tm+mt
 source-wordcount: '1135'
-ht-degree: 29%
+ht-degree: 30%
 
 ---
 
@@ -23,7 +23,7 @@ ht-degree: 29%
 
 存储在Adobe Experience Platform上的所有数据都使用系统级别密钥静态加密。 如果您使用的是基于Platform构建的应用程序，则现在可以选择改用您自己的加密密钥，从而使您能够更好地控制数据安全。
 
-有关更多详细信息，请参阅 [客户管理的密钥](../../landing/governance-privacy-security/customer-managed-keys/overview.md) 以了解有关该功能的详细信息。
+有关该功能的详细信息，请参阅[客户管理的密钥](../../landing/governance-privacy-security/customer-managed-keys/overview.md)的概述。
 
 ## 数据收集 {#data-collection}
 
@@ -33,9 +33,9 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 功能 | 描述 |
 | --- | --- |
-| 数据流的敏感数据处理 | 数据流现在利用多种平台技术适当地处理由健康保险便携性和责任法案(HIPAA)等法规强制执行的敏感数据。 请参阅以下部分 [处理数据流中的敏感数据](../../datastreams/overview.md#sensitive) 以了解更多信息。 |
-| [!DNL Splunk] 事件转发的扩展 | 您现在可以将数据发送至 [!DNL Splunk] 使用 [事件转发](../../tags/ui/event-forwarding/overview.md) 扩展。 请参阅 [[!DNL Splunk] 扩展概述](../../tags/extensions/server/splunk/overview.md) 以了解更多信息。 |
-| [!DNL Zendesk] 事件转发的扩展 | 您现在可以将数据发送至 [!DNL Zendesk] 使用 [事件转发](../../tags/ui/event-forwarding/overview.md) 扩展。 请参阅 [[!DNL Zendesk] 扩展概述](../../tags/extensions/server/zendesk/overview.md) 以了解更多信息。 |
+| 数据流的敏感数据处理 | 数据流现在利用多种平台技术适当地处理由健康保险便携性和责任法案(HIPAA)等法规强制执行的敏感数据。 有关详细信息，请参阅有关[处理数据流中的敏感数据](../../datastreams/overview.md#sensitive)的部分。 |
+| 用于事件转发的[!DNL Splunk]扩展 | 您现在可以使用[事件转发](../../tags/ui/event-forwarding/overview.md)扩展将数据发送到[!DNL Splunk]。 有关详细信息，请参阅[[!DNL Splunk] 扩展概述](../../tags/extensions/server/splunk/overview.md)。 |
+| 用于事件转发的[!DNL Zendesk]扩展 | 您现在可以使用[事件转发](../../tags/ui/event-forwarding/overview.md)扩展将数据发送到[!DNL Zendesk]。 有关详细信息，请参阅[[!DNL Zendesk] 扩展概述](../../tags/extensions/server/zendesk/overview.md)。 |
 
 {style="table-layout:auto"}
 
@@ -47,8 +47,8 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 功能 | 描述 |
 | --- | --- |
-| (Beta)数据集导出 | 此 [数据集导出测试版功能](/help/destinations/ui/export-datasets.md) 用于导出第一代数据(如 [Real-time Customer Data Platform产品描述](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html))，通过Adobe Experience Platform中的目标用户界面连接到您自己的外部客户系统。 这让您能够借助无代码/低代码工作流将数据从Experience Platform中获取到六个云存储目标（如下表中所列），以用于分析和合规性用例。 |
-| (Beta)增强的文件导出功能 | 现在，在导出Experience Platform之外的文件时，您可以受益于增强的自定义功能： <br><ul><li>额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#file-names)。</li><li>可通过[改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)在您导出的文件中设置自定义文件头。</li><li>[能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md).</li></ul> <br> 下表列出的六个新的测试版云存储卡支持此功能。 |
+| (Beta)数据集导出 | [数据集导出Beta功能](/help/destinations/ui/export-datasets.md)允许您通过目标用户界面将第一代数据(如[Real-time Customer Data Platform产品描述](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)中的定义)从Adobe Experience Platform导出到您自己的外部客户系统。 这让您能够借助无代码/低代码工作流将数据从Experience Platform中获取到六个云存储目标（如下表中所列），以用于分析和合规性用例。 |
+| (Beta)增强的文件导出功能 | 现在，在导出Experience Platform外的文件时，您可以从增强的自定功能中获益： <br><ul><li>额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#file-names)。</li><li>可通过[改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)在您导出的文件中设置自定义文件头。</li><li>[能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md)。</li></ul> <br>下表列出的六个新的Beta版云存储卡支持此功能。 |
 
 {style="table-layout:auto"}
 
@@ -58,13 +58,13 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 | ----------- | ----------- |
 | [[!DNL Line]](../../destinations/catalog/mobile-engagement/line.md) | Line是一个连接人员、服务和信息的流行通信平台，已从聊天应用程序发展为娱乐、社交和日常活动的中心。 |
 | [[!DNL Microsoft Dynamics 365]](../../destinations/catalog/crm/microsoft-dynamics-365.md) | Microsoft Dynamics 365是一个基于云的业务应用程序平台，它将企业资源规划(ERP)、客户关系管理(CRM)与工作效率应用程序和AI工具相结合，以实现端到端更平稳、更可控的运营、更好的增长潜力和更低的成本。 |
-| [[!DNL (Beta) Adobe Commerce]](../../destinations/catalog/personalization/adobe-commerce.md) | 此 [!DNL (Beta) Adobe Commerce] 目标连接器允许您选择一个或多个Real-Time CDP区段来激活您的 [!DNL Adobe Commerce] 帐户，为购物者提供动态的个性化体验。 范围 [!DNL Adobe Commerce]之后，您可以选择这些Real-Time CDP区段来对购物车中的独特优惠进行个性化，例如“购买2 get 1免费”。 您还可以显示主页横幅，并通过促销优惠修改产品定价，所有这些都可根据Adobe Real-Time CDP区段进行自定义。 |
+| [[!DNL (Beta) Adobe Commerce]](../../destinations/catalog/personalization/adobe-commerce.md) | [!DNL (Beta) Adobe Commerce]目标连接器允许您选择一个或多个要激活到[!DNL Adobe Commerce]帐户的Real-Time CDP区段，以便为购物者提供动态的个性化体验。 在[!DNL Adobe Commerce]内，您可以选择这些Real-Time CDP区段来个性化购物车中的独特优惠，例如“购买2 get 1免费”。 您还可以显示主页横幅，并通过促销优惠修改产品定价，所有这些都可根据Adobe Real-Time CDP区段进行自定义。 |
 | [[!DNL (Beta) Azure Data Lake Storage Gen2]](../../destinations/catalog/cloud-storage/adls-gen2.md) | 创建通往 [!DNL Azure Data Lake Storage Gen2] 的实时出站连接以定期将数据文件从 Adobe Experience Platform 导出到您自己的存储位置。这个新的测试版目标提供了增强的文件导出功能并支持数据集导出。 |
 | [[!DNL (Beta) Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md) | [!DNL Data Landing Zone] 是 Adobe Experience Platform 提供的一个 [!DNL Azure Blob] 存储接口，它准许您访问安全、基于云的文件存储设施以将文件导出到 Platform 之外。这个新的测试版目标提供了增强的文件导出功能并支持数据集导出。 |
 | [[!DNL (Beta) Google Cloud Storage]](../../destinations/catalog/cloud-storage/google-cloud-storage.md) | 创建通往 [!DNL Google Cloud Storage] 的实时出站连接以定期将数据文件从 Adobe Experience Platform 导出到您自己的存储桶中。这个新的测试版目标提供了增强的文件导出功能并支持数据集导出。 |
-| [[!DNL (Beta) Amazon S3]](../../destinations/catalog/cloud-storage/amazon-s3.md#changelog) | Beta版参与者现在可以看到两项 [!DNL Amazon S3] 在目标目录中并排显示目标卡片。 新的测试版目标提供了增强的文件导出功能并支持数据集导出。 |
-| [[!DNL (Beta) Azure Blob]](../../destinations/catalog/cloud-storage/azure-blob.md#changelog) | Beta版参与者现在可以看到两项 [!DNL Azure Blob] 在目标目录中并排显示目标卡片。 新的测试版目标提供了增强的文件导出功能并支持数据集导出。 |
-| [[!DNL (Beta) SFTP]](../../destinations/catalog/cloud-storage/sftp.md#changelog) | Beta版参与者现在可以看到两项 [!DNL SFTP] 在目标目录中并排显示目标卡片。 新的测试版目标提供了增强的文件导出功能并支持数据集导出。 |
+| [[!DNL (Beta) Amazon S3]](../../destinations/catalog/cloud-storage/amazon-s3.md#changelog) | Beta参与者现在可以在目标目录中并排看到两个[!DNL Amazon S3]目标卡片。 新的测试版目标提供了增强的文件导出功能并支持数据集导出。 |
+| [[!DNL (Beta) Azure Blob]](../../destinations/catalog/cloud-storage/azure-blob.md#changelog) | Beta参与者现在可以在目标目录中并排看到两个[!DNL Azure Blob]目标卡片。 新的测试版目标提供了增强的文件导出功能并支持数据集导出。 |
+| [[!DNL (Beta) SFTP]](../../destinations/catalog/cloud-storage/sftp.md#changelog) | Beta参与者现在可以在目标目录中并排看到两个[!DNL SFTP]目标卡片。 新的测试版目标提供了增强的文件导出功能并支持数据集导出。 |
 
 {style="table-layout:auto"}
 
@@ -84,9 +84,9 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 组件类型 | 名称 | 描述 |
 | --- | --- | --- |
-| 数据类型 | [[!UICONTROL 会话详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/sessiondetails.schema.json) | 已更新 `authorized` 字段到字符串的布尔类型。 `season` 和 `episode` 已从整数更改为字符串。 |
-| 数据类型 | [[!UICONTROL Advertising 详情信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/advertisingdetails.schema.json) | `name` 已重命名为 `friendlyName`、和 `ID` 已重命名为 `name`. |
-| 数据类型 | [[!UICONTROL 错误详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/errordetails.schema.json) | `ID` 已重命名为 `name`. |
+| 数据类型 | [[!UICONTROL 会话详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/sessiondetails.schema.json) | 已将`authorized`字段从布尔类型更新为字符串。 `season`和`episode`已从整数更改为字符串。 |
+| 数据类型 | [[!UICONTROL Advertising 详情信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/advertisingdetails.schema.json) | `name`已重命名为`friendlyName`，`ID`已重命名为`name`。 |
+| 数据类型 | [[!UICONTROL 错误详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/errordetails.schema.json) | `ID`已重命名为`name`。 |
 
 {style="table-layout:auto"}
 
@@ -94,17 +94,17 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 ## 查询服务 {#query-service}
 
-查询服务允许您使用标准 SQL 查询 Adobe Experience Platform [!DNL Data Lake] 中的数据。您可以从以下位置连接任何数据集： [!DNL Data Lake] 并将查询结果捕获为新数据集，以用于报表、数据科学工作区或将其摄取到实时客户档案中。
+查询服务允许您使用标准 SQL 查询 Adobe Experience Platform [!DNL Data Lake] 中的数据。您可以加入[!DNL Data Lake]中的任何数据集，并将查询结果捕获为新的数据集，以用于报表、数据科学Workspace或将其摄取到实时客户个人资料中。
 
 **更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 通过Platform UI监控查询 | 查询服务 [!UICONTROL 计划的查询] 选项卡改进了通过UI查看所有查询作业状态的可见性。 您现在可以从以下位置找到有关查询运行状态的重要信息，包括失败时的错误消息和代码： [!UICONTROL 计划的查询] 选项卡。 您还可以通过UI根据这些查询的状态订阅警报。 请参阅 [监控查询文档](../../query-service/ui/monitor-queries.md) 以了解有关此功能的更多信息。 |
-| 查询加速报表见解数据模型 | 作为Data Distiller SKU的一部分，查询加速存储允许您减少从数据获得关键见解所需的时间和处理能力。 借助查询加速存储，您可以构建自定义数据模型和/或扩展现有Adobe Real-time Customer Data Platform数据模型，以改进您的报表见解及其可视化效果。 请参阅 [查询accelerated store报告分析文档](../../query-service/data-distiller/customizable-insights/reporting-insights-data-model.md) 以了解有关此功能的更多信息。 |
+| 通过Platform UI监控查询 | 查询服务[!UICONTROL 计划查询]选项卡通过UI提高了所有查询作业状态的可见性。 您现在可以从[!UICONTROL 计划的查询]选项卡中找到有关查询运行状态的重要信息，包括失败时的错误消息和代码。 您还可以通过UI根据这些查询的状态订阅警报。 请参阅[监视器查询文档](../../query-service/ui/monitor-queries.md)以了解有关此功能的详细信息。 |
+| 查询加速报表见解数据模型 | 作为Data Distiller SKU的一部分，查询加速存储允许您减少从数据获得关键见解所需的时间和处理能力。 借助查询加速存储，您可以构建自定义数据模型和/或扩展现有Adobe Real-time Customer Data Platform数据模型，以改进您的报表见解及其可视化效果。 请参阅[query accelerated store reporting insights文档](../../query-service/data-distiller/customizable-insights/reporting-insights-data-model.md)以了解有关此功能的更多信息。 |
 
 {style="table-layout:auto"}
 
-有关查询服务的详细信息，请参阅 [查询服务概述](../../query-service/home.md).
+有关查询服务的详细信息，请参阅[查询服务概述](../../query-service/home.md)。
 Adobe Experience Platform中的新增功能：
 

@@ -11,20 +11,20 @@ ht-degree: 7%
 
 ---
 
-# [!DNL Privacy Service] 和 [!DNL Experience Cloud] 应用程序
+# [!DNL Privacy Service]和[!DNL Experience Cloud]应用程序
 
-Adobe Experience Platform [!DNL Privacy Service] 构建用于支持多个Adobe Experience Cloud应用程序的隐私请求。 每个应用程序支持不同的产品值和ID，以便识别数据主体。
+Adobe Experience Platform [!DNL Privacy Service]构建用于支持多个Adobe Experience Cloud应用程序的隐私请求。 每个应用程序支持不同的产品值和ID，以便识别数据主体。
 
-本文档可作为参考 [!DNL Experience Cloud] 应用程序文档，其中概述了如何配置该应用程序以进行与隐私相关的操作。 这包括如何格式化数据和为数据设置标签。 其中涵盖了两种类型的应用程序：
+本文档可作为[!DNL Experience Cloud]应用程序文档的参考，该文档概述了如何配置该应用程序以进行与隐私相关的操作。 这包括如何格式化数据和为数据设置标签。 其中涵盖了两种类型的应用程序：
 
-* [与Privacy Service集成的应用程序](#integrated)：能够向发送访问、删除或选择退出请求的应用程序 [!DNL Privacy Service].
-* [自助应用程序](#self-serve)：必须在内部管理其隐私请求的应用程序，无法与之通信 [!DNL Privacy Service] 直接。
+* [与Privacy Service](#integrated)集成的应用程序：能够向[!DNL Privacy Service]发送访问、删除或选择退出请求的应用程序。
+* [自助应用程序](#self-serve)：必须在内部管理其隐私请求的应用程序，不能直接与[!DNL Privacy Service]通信。
 
-请查看文档，了解 [!DNL Experience Cloud] 应用程序，了解如何设置隐私请求的格式，以及这些请求支持哪些值。
+请查看[!DNL Experience Cloud]应用程序的文档，了解如何设置隐私请求的格式，以及这些请求支持哪些值。
 
-## 与集成的应用程序 [!DNL Privacy Service] {#integrated}
+## 与[!DNL Privacy Service]集成的应用程序 {#integrated}
 
-以下是 [!DNL Experience Cloud] 与集成的应用程序 [!DNL Privacy Service]，包括 [!DNL Privacy Service] 它们兼容的功能、处理删除请求的协议以及指向文档的链接以了解更多信息。
+以下是与[!DNL Privacy Service]集成的[!DNL Experience Cloud]应用程序的列表，包括它们兼容的[!DNL Privacy Service]功能、它们处理删除请求的协议以及指向文档的链接以了解更多信息。
 
 >[!NOTE]
 >
@@ -33,29 +33,29 @@ Adobe Experience Platform [!DNL Privacy Service] 构建用于支持多个Adobe E
 | 应用程序 | 访问/删除 | 选择禁用销售 | 删除行为 | 文档和其他注意事项 |
 | --- | :---: | :---: | --- | --- |
 | Adobe Advertising Cloud | ✓ {\f13 } | ✓ {\f13 } | 数据主体的Cookie ID或设备ID以及与Cookie关联的所有成本、点击和收入数据都会从系统中删除。 | <ul><li>[访问/删除GDPR文档](https://experienceleague.adobe.com/docs/advertising-cloud/privacy/ad-cloud-gdpr.html)</li><li>[访问/删除CCPA文档](https://experienceleague.adobe.com/docs/advertising-cloud/privacy/ad-cloud-ccpa-access-delete.html)</li><li>[CCPA的选择退出销售文档](https://experienceleague.adobe.com/docs/advertising-cloud/privacy/ad-cloud-ccpa-opt-out-of-sale.html)</li></ul> |
-| Adobe Analytics | ✓ {\f13 } | ✓ {\f13 } | Adobe Analytics提供了用于根据其敏感性和合同限制来标记数据的工具。 标签是执行以下操作的重要步骤：<ol><li>识别数据主体。</li><li>确定作为访问请求的一部分返回哪些数据。</li><li>确定删除请求中必须删除的数据字段。</li></ol> | <ul><li>[隐私工作流程](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/data-governance/an-gdpr-workflow.html)</li><li>[Analytics标签设置](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/data-governance/data-labels/gdpr-labels.html)</li><li>[Analytics选择退出](https://experienceleague.adobe.com/docs/analytics/components/dimensions/cm-opt-out.html)</li></ul> |
-| Adobe Audience Manager | ✓ {\f13 } | ✓ {\f13 } | 与请求中包含的Audience Manager标识符关联的所有特征和区段都会被删除。 此外，个人相应的标识符被选择退出进一步的数据收集并且相应的ID映射被移除。 | <ul><li>[访问](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/data-privacy-requests.html#access-data) / [删除](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/data-privacy-requests.html#delete-data) 文档</li><li>[选择退出文档](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/declared-ids.html#opt-out-calls)</li><li>[选择退出请求](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/data-privacy-requests.html#opt-out-requests)</li></ul> |
-| Adobe Campaign Classic | ✓ {\f13 } | ✓ {\f13 } | 从系统中删除数据主体的存储数据。 | <ul><li>[隐私管理](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/privacy/privacy-management.html?lang=zh-Hans).</li></ul> |
+| Adobe Analytics | ✓ {\f13 } | ✓ {\f13 } | Adobe Analytics提供了用于根据其敏感性和合同限制来标记数据的工具。 标签是执行以下操作的重要步骤：<ol><li>识别数据主体。</li><li>确定作为访问请求的一部分返回哪些数据。</li><li>确定删除请求中必须删除的数据字段。</li></ol> | <ul><li>[隐私工作流](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/data-governance/an-gdpr-workflow.html)</li><li>[Analytics标签](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/data-governance/data-labels/gdpr-labels.html)</li><li>[Analytics选择退出](https://experienceleague.adobe.com/docs/analytics/components/dimensions/cm-opt-out.html)</li></ul> |
+| Adobe Audience Manager | ✓ {\f13 } | ✓ {\f13 } | 与请求中包含的Audience Manager标识符关联的所有特征和区段都会被删除。 此外，个人相应的标识符被选择退出进一步的数据收集并且相应的ID映射被移除。 | <ul><li>[访问](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/data-privacy-requests.html#access-data) / [删除](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/data-privacy-requests.html#delete-data)文档</li><li>[选择退出文档](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/declared-ids.html#opt-out-calls)</li><li>[选择退出请求](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/data-privacy-requests.html#opt-out-requests)</li></ul> |
+| Adobe Campaign Classic | ✓ {\f13 } | ✓ {\f13 } | 从系统中删除数据主体的存储数据。 | <ul><li>[隐私管理](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/privacy/privacy-management.html?lang=zh-Hans)。</li></ul> |
 | Adobe Campaign Standard | ✓ {\f13 } | ✓ {\f13 } | 从系统中删除数据主体的存储数据。 | <ul><li>[访问/删除文档](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/privacy/privacy-management.html?lang=zh-Hans)</li><li>[选择退出文档](../segmentation/consents.md)</li></ul> |
 | Adobe客户属性(CRS) | ✓ {\f13 } | 不适用 | 从系统中删除数据主体的属性。 | <ul><li>[访问/删除GDPR文档](https://experienceleague.adobe.com/docs/core-services/interface/customer-attributes/gdpr.html)</li><li>[访问/删除CCPA文档](https://experienceleague.adobe.com/docs/core-services/interface/customer-attributes/ccpa.html)</li><li>客户属性无法传输数据，因此选择退出销售请求不适用。</li></ul> |
-| Adobe Experience Platform | ✓ {\f13 } | ✓ {\f13 } | 当Experience Platform收到来自Privacy Service的删除请求时，平台会向Privacy Service发送确认，确认请求已收到，并且受影响的数据已标记为删除。 隐私作业完成后，记录将从数据湖或配置文件存储中删除。 在作业完成之前，数据会被软删除，因此任何平台服务都无法访问。 | <ul><li>[访问/删除数据湖文档](../catalog/privacy.md)</li><li>[访问/删除Identity Service文档](../identity-service/privacy.md)</li><li>[访问/删除实时客户个人资料的文档](../profile/privacy.md)</li><li>[!DNL Experience Platform] 荣誉 [受众区段的选择退出请求](../segmentation/consents.md).</li></ul> |
+| Adobe Experience Platform | ✓ {\f13 } | ✓ {\f13 } | 当Experience Platform收到来自Privacy Service的删除请求时，平台会向Privacy Service发送确认，确认请求已收到，并且受影响的数据已标记为删除。 隐私作业完成后，记录将从数据湖或配置文件存储中删除。 在作业完成之前，数据会被软删除，因此任何平台服务都无法访问。 | <ul><li>[访问/删除数据湖的文档](../catalog/privacy.md)</li><li>[访问/删除Identity服务的文档](../identity-service/privacy.md)</li><li>[访问/删除实时客户个人资料的文档](../profile/privacy.md)</li><li>[!DNL Experience Platform]执行受众区段的[选择退出请求](../segmentation/consents.md)。</li></ul> |
 | Adobe Journey Optimizer | ✓ {\f13 } | 不适用 | 从系统中删除数据主体的存储数据。 | <ul><li>[访问/删除文档](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/privacy/requests)</li></ul> |
 | Adobe Pass 身份验证 | ✓ {\f13 } | 不适用 | 从系统中删除数据主体的存储数据。 | <ul><li>[访问/删除文档](https://tve.helpdocsonline.com/how-to-make-a-privacy-request)</li><li>Pass无法传输数据，因此选择退出销售请求不适用。</li></ul> |
-| Adobe Target | ✓ {\f13 } | 不适用 | 与数据主体ID关联的所有数据都会从其访客配置文件中删除。 无法识别个人或无其他关联的聚合或匿名数据（例如内容数据）不适用于删除请求。 | <ul><li>[访问/删除文档](https://experienceleague.adobe.com/docs/target/using/implement-target/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.html)</li><li>[!DNL Target] 无法传输数据，因此选择退出销售请求不适用。</li></ul> |
-| Marketo Engage | ✓ {\f13 } | 不适用 | 从系统中删除数据主体的存储数据。 | <ul><li>[访问/删除文档](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/privacy-requests.html)</li><li>[!DNL Marketo] 无法传输数据，因此选择退出销售请求不适用。</li></ul> |
+| Adobe Target | ✓ {\f13 } | 不适用 | 与数据主体ID关联的所有数据都会从其访客配置文件中删除。 无法识别个人或无其他关联的聚合或匿名数据（例如内容数据）不适用于删除请求。 | <ul><li>[访问/删除文档](https://experienceleague.adobe.com/docs/target/using/implement-target/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.html)</li><li>[!DNL Target]没有传输数据的功能，因此选择退出销售请求不适用。</li></ul> |
+| Marketo Engage | ✓ {\f13 } | 不适用 | 从系统中删除数据主体的存储数据。 | <ul><li>[访问/删除文档](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/privacy-requests.html)</li><li>[!DNL Marketo]没有传输数据的功能，因此选择退出销售请求不适用。</li></ul> |
 
 {style="table-layout:auto"}
 
 ## 自助应用程序 {#self-serve}
 
-以下是 [!DNL Experience Cloud] 未与集成的应用程序 [!DNL Privacy Service] 并且必须在内部处理隐私问题。 提供了指向每个应用程序文档的链接，以及文档内容的描述。
+以下是[!DNL Experience Cloud]应用程序的列表，这些应用程序未与[!DNL Privacy Service]集成，必须在内部管理其隐私问题。 提供了指向每个应用程序文档的链接，以及文档内容的描述。
 
 | 应用程序 | 文档描述 |
 | ------- | ----------- |
 | [Adobe Experience Manager](https://experienceleague.adobe.com/docs/experience-manager-64/managing/data-protection/data-protection-and-privacy.html) | 概述客户隐私管理员或AEM管理员如何处理GDPR请求。 |
 | [Adobe Experience Manager Livefyre](https://experienceleague.adobe.com/docs/livefyre/using/settings-other/privacy-requests/c-gdpr-compliance.html) | 使用Livefyre发出GDPR访问和删除请求的步骤。 |
 | [Magento](https://devdocs.magento.com/compliance/industry-compliance.html) | 确保您的Magento Commerce安装符合特定隐私法规的要求。 |
-| [Adobe Experience Platform中的标记](../tags/ui/client-side/consent.md) | 介绍开发人员如何使用扩展功能和规则生成器，来定义“选择加入”和“选择退出”解决方案。 |
+| Adobe Experience Platform中的[标记](../tags/ui/client-side/consent.md) | 介绍开发人员如何使用扩展功能和规则生成器，来定义“选择加入”和“选择退出”解决方案。 |
 | [Workfront](https://www.workfront.com/privacy-notice) | 了解Workfront如何收集个人数据，以及数据主体如何通过表单提交隐私请求。 |
 
 {style="table-layout:auto"}

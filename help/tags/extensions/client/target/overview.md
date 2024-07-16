@@ -1,11 +1,11 @@
 ---
 title: Adobe Target扩展概述
-description: 了解Adobe Experience Platform中的Adobe Target标记扩展。
+description: 了解Adobe Experience Platform中Adobe Target的标记扩展。
 exl-id: b1c5e25b-42ea-4835-b2d4-913fa2536e77
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
-source-wordcount: '1192'
-ht-degree: 73%
+source-wordcount: '1179'
+ht-degree: 71%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 73%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用本参考可了解有关使用此扩展构建规则时可用的选项的信息。
 
@@ -23,9 +23,9 @@ ht-degree: 73%
 >
 > Adobe Target 扩展需要使用 at.js。它不支持 mbox.js。
 
-如果尚未安装Adobe Target扩展，请打开您的资产，然后选择 **[!UICONTROL “扩展”>“目录”]**，将鼠标悬停在Target扩展上，然后选择 **[!UICONTROL 安装]**.
+如果尚未安装Adobe Target扩展，请打开您的资产，然后选择&#x200B;**[!UICONTROL 扩展>目录]**，将鼠标悬停在Target扩展上，然后选择&#x200B;**[!UICONTROL 安装]**。
 
-要配置该扩展，请打开 [!UICONTROL 扩展] 选项卡，将鼠标悬停在该扩展上，然后选择 **[!UICONTROL 配置]**.
+要配置该扩展，请打开[!UICONTROL 扩展]选项卡，将鼠标悬停在该扩展上，然后选择&#x200B;**[!UICONTROL 配置]**。
 
 ![](../../../images/ext-target-config.png)
 
@@ -72,7 +72,7 @@ ht-degree: 73%
 
 #### Target 用户界面中可用的其他 at.js 设置
 
-上提供了多个设置 [!UICONTROL 编辑at.js设置] Target UI的页面不属于Target扩展的一部分。 下面列出了建议的解决方法：
+Target UI的[!UICONTROL 编辑at.js设置]页面上可用的多个设置未包含在Target扩展中。 下面列出了建议的解决方法：
 
 * 自动创建全局 mbox：此设置将在 Target 扩展中替换为 Fire Global Mbox 操作。
 * 库标题：此设置未包含在 Target 扩展中。可在使用 Load Target 操作之前，将需要在 at.js 之前加载的代码置于核心扩展的 Custom Code 操作中。
@@ -129,14 +129,14 @@ Target 扩展在规则的 Then 部分中提供了以下操作：
 
 ## 使用异步部署的 Adobe Target 扩展
 
-标记可以异步部署。 如果您异步加载标记库，且其中包含Target，则也将会异步加载Target。 这是一个完全支持的方案，但有一个额外的注意事项必须加以处理。
+标记可以异步部署。 如果您异步加载包含Target的标记库，则也将会异步加载Target。 这是一个完全支持的方案，但有一个额外的注意事项必须加以处理。
 
 在异步部署中，页面可以在Target库完全加载并执行内容交换之前完成默认内容渲染。 这可能会导致所谓的“闪烁”，在这种情况下，会先短暂显示默认内容，然后再将该内容替换为 Target 指定的个性化内容。如果要避免出现这种闪烁情况，我们建议您使用预隐藏代码片段并异步加载标记包来避免任何内容闪烁。
 
 在使用预隐藏代码片段时，请谨记以下事项：
 
-* 必须在加载标记标头嵌入代码之前添加代码片段。
-* 此代码不能由标记管理，因此必须将其直接添加到页面。
+* 必须在加载标记页眉嵌入代码之前添加代码片段。
+* 标记无法管理此代码，因此必须将其直接添加到页面。
 * 当发生以下事件时（以最先发生者为准），将显示该页面：
    * 收到全局 mbox 响应
    * 全局 mbox 请求超时

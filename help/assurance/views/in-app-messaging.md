@@ -3,8 +3,8 @@ title: 应用程序内消息视图
 description: 本指南详细介绍了 Adobe Experience Platform Assurance 中的应用程序内消息视图的信息。
 exl-id: 6131289a-aebb-4b3a-9045-4b2cf23415f8
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
-workflow-type: ht
-source-wordcount: '682'
+workflow-type: tm+mt
+source-wordcount: '686'
 ht-degree: 100%
 
 ---

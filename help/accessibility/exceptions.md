@@ -12,4 +12,4 @@ ht-degree: 34%
 
 # Experience Platform的辅助功能异常和解决方法
 
-目前，Experience Platform中的变通方法没有明显的异常。
+目前，Experience Platform中的变通方法没有已知的异常。

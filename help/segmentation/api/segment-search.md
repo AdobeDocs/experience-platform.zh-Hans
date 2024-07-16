@@ -18,7 +18,7 @@ ht-degree: 2%
 
 ## 快速入门
 
-本指南中使用的端点是 [!DNL Adobe Experience Platform Segmentation Service] API。 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关成功调用API所需了解的重要信息，包括所需的标头以及如何读取示例API调用。
+本指南中使用的端点是[!DNL Adobe Experience Platform Segmentation Service] API的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)以了解成功调用API所需了解的重要信息，包括所需的标头以及如何读取示例API调用。
 
 除了快速入门部分中概述的必需标头外，对区段搜索端点的所有请求都需要以下附加标头：
 
@@ -37,8 +37,8 @@ GET /search/namespaces?schema.name={SCHEMA}&s={SEARCH_TERM}
 
 | 参数 | 描述 |
 | ---------- | ----------- | 
-| `schema.name={SCHEMA}` | **（必需）** 位置 {SCHEMA} 表示与搜索对象关联的架构类值。 当前，仅限 `_xdm.context.segmentdefinition` 受支持。 |
-| `s={SEARCH_TERM}` | *（可选）* 位置 {SEARCH_TERM} 表示符合Microsoft实施的查询 [Lucene的搜索语法](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). 如果未指定搜索词，则与关联的所有记录 `schema.name` 将被退回。 欲知更详细的解释，请参见 [附录](#appendix) 本文档的。 |
+| `schema.name={SCHEMA}` | **（必需）**&#x200B;其中{SCHEMA}表示与搜索对象关联的架构类值。 当前仅支持`_xdm.context.segmentdefinition`。 |
+| `s={SEARCH_TERM}` | *（可选）*&#x200B;其中{SEARCH_TERM}表示符合Microsoft对[Lucene搜索语法](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax)的实现的查询。 如果未指定搜索词，则将返回与`schema.name`关联的所有记录。 有关更详细的解释，请参阅本文档的[附录](#appendix)。 |
 
 **请求**
 
@@ -97,12 +97,12 @@ GET /search/entities?schema.name={SCHEMA}&namespace={NAMESPACE}&entityId={ENTITY
 
 | 参数 | 描述 |
 | ---------- | ----------- | 
-| `schema.name={SCHEMA}` | **（必需）** 位置 {SCHEMA} 包含与搜索对象关联的架构类值。 当前，仅限 `_xdm.context.segmentdefinition` 受支持。 |
-| `namespace={NAMESPACE}` | **（必需）** 位置 {NAMESPACE} 包含要在其中搜索的命名空间。 |
-| `s={SEARCH_TERM}` | *（可选）* 位置 {SEARCH_TERM} 包含符合Microsoft实施的查询 [Lucene的搜索语法](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). 如果未指定搜索词，则与关联的所有记录 `schema.name` 将被退回。 欲知更详细的解释，请参见 [附录](#appendix) 本文档的。 |
-| `entityId={ENTITY_ID}` | *（可选）* 将搜索限制在指定的文件夹内，使用 {ENTITY_ID}. |
-| `limit={LIMIT}` | *（可选）* 位置 {LIMIT} 表示要返回的搜索结果数。 默认值为 50。 |
-| `page={PAGE}` | *（可选）* 位置 {PAGE} 表示用于分页所搜索查询结果的页码。 请注意，页码开始于 **0**. |
+| `schema.name={SCHEMA}` | **（必需）**&#x200B;其中{SCHEMA}包含与搜索对象关联的架构类值。 当前仅支持`_xdm.context.segmentdefinition`。 |
+| `namespace={NAMESPACE}` | **（必需）**&#x200B;其中{NAMESPACE}包含要搜索的命名空间。 |
+| `s={SEARCH_TERM}` | *（可选）*&#x200B;其中{SEARCH_TERM}包含符合Microsoft的[Lucene搜索语法](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax)实现的查询。 如果未指定搜索词，则将返回与`schema.name`关联的所有记录。 有关更详细的解释，请参阅本文档的[附录](#appendix)。 |
+| `entityId={ENTITY_ID}` | *（可选）*&#x200B;将您的搜索限制在指定的文件夹内，使用{ENTITY_ID}指定。 |
+| `limit={LIMIT}` | *（可选）*&#x200B;其中{LIMIT}表示要返回的搜索结果数。 默认值为 50。 |
+| `page={PAGE}` | *（可选）*&#x200B;其中{PAGE}表示用于分页搜索查询结果的页码。 请注意，页码从&#x200B;**0**&#x200B;开始。 |
 
 
 **请求**
@@ -168,9 +168,9 @@ GET /search/taxonomy?schema.name={SCHEMA}&namespace={NAMESPACE}&entityId={ENTITY
 
 | 参数 | 描述 |
 | ---------- | ----------- | 
-| `schema.name={SCHEMA}` | **（必需）** 位置 {SCHEMA} 包含与搜索对象关联的架构类值。 当前，仅限 `_xdm.context.segmentdefinition` 受支持。 |
-| `namespace={NAMESPACE}` | **（必需）** 位置 {NAMESPACE} 包含要在其中搜索的命名空间。 |
-| `entityId={ENTITY_ID}` | **（必需）** 要获取有关结构信息的搜索对象的ID，指定了 {ENTITY_ID}. |
+| `schema.name={SCHEMA}` | **（必需）**&#x200B;其中{SCHEMA}包含与搜索对象关联的架构类值。 当前仅支持`_xdm.context.segmentdefinition`。 |
+| `namespace={NAMESPACE}` | **（必需）**&#x200B;其中{NAMESPACE}包含要搜索的命名空间。 |
+| `entityId={ENTITY_ID}` | **（必需）**&#x200B;要获取有关结构信息的搜索对象的ID，使用{ENTITY_ID}指定。 |
 
 **请求**
 
@@ -223,9 +223,9 @@ curl -X GET \
 
 ## 附录 {#appendix}
 
-以下部分提供有关搜索词工作方式的其他信息。 搜索查询的编写方式如下： `s={FieldName}:{SearchExpression}`. 例如，搜索名为AAM的区段定义或 [!DNL Platform]，您可以使用以下搜索查询： `s=segmentName:AAM%20OR%20Platform`.
+以下部分提供有关搜索词工作方式的其他信息。 搜索查询的编写方式如下： `s={FieldName}:{SearchExpression}`。 例如，要搜索名为AAM或[!DNL Platform]的区段定义，您可以使用以下搜索查询： `s=segmentName:AAM%20OR%20Platform`。
 
->  对于最佳实践，搜索表达式应进行HTML编码，如上面的示例所示。
+> 为获得最佳实践，搜索表达式应进行HTML编码，如上面的示例所示。
 
 ### 搜索字段 {#search-fields}
 
@@ -244,20 +244,20 @@ curl -X GET \
 
 下表列出了使用区段搜索API时搜索查询的工作方式的详细信息。
 
->  为了更加清晰明了，以下示例以非HTML编码格式显示。 为获得最佳实践，HTML对搜索表达式进行编码。
+> 为了更加清晰明了，以下示例以非HTML编码格式显示。 为获得最佳实践，HTML对搜索表达式进行编码。
 
 | 示例搜索表达式 | 描述 |
 | ------------------------- | ----------- |
 | foo | 搜索任意单词。 如果在任何可搜索字段中找到“foo”一词，则将返回结果。 |
-| foo AND bar | 布尔搜索。 如果符合以下条件，这将返回结果 **两者** “foo”和“bar”这两个词可以在任何可搜索的字段中找到。 |
-| foo OR栏 | 布尔搜索。 如果符合以下条件，这将返回结果 **或者** “foo”一词或“bar”一词可在任何可搜索字段中找到。 |
+| foo AND bar | 布尔搜索。 如果在任何可搜索字段中都找到&#x200B;**词“foo”和“bar”，则将返回结果**。 |
+| foo OR栏 | 布尔搜索。 如果在任何可搜索字段中找到&#x200B;**一个**&#x200B;单词“foo”或单词“bar”，则将返回结果。 |
 | foo NOT栏 | 布尔搜索。 如果找到单词“foo”，但在任何可搜索字段中都找不到单词“bar”，则将返回结果。 |
-| 名称：foo AND栏 | 布尔搜索。 如果符合以下条件，这将返回结果 **两者** “foo”和“bar”这两个词可在“name”字段中找到。 |
+| 名称：foo AND栏 | 布尔搜索。 如果&#x200B;**在“名称”字段中同时找到**&#x200B;单词“foo”和“bar”，这将返回结果。 |
 | 运行* | 通配符搜索。 使用星号(*)可匹配0个或更多字符，这意味着如果任何可搜索字段的内容包含以“run”开头的单词，则会返回结果。 例如，如果出现“runs”、“running”、“runner”或“runt”这些词，则将返回结果。 |
 | 小卡？ | 通配符搜索。 使用问号(？) 只匹配一个字符，这意味着如果任何可搜索字段的内容以“cam”和附加字母开头，则会返回结果。 例如，如果出现“camp”或“cams”单词，这将返回结果，但出现“camera”或“campfire”单词时将不会返回结果。 |
 | “蓝雨伞” | 短语搜索。 如果任何可搜索字段的内容包含完整的短语“蓝色雨伞”，则将返回结果。 |
-| 蓝色\~ | 模糊搜索。 或者，也可以在波状符号(~)后面放置一个介于0-2之间的数字以指定编辑距离。 例如，“blue\~1”将返回“blue”、“blues”或“glue”。 模糊搜索可以 **仅限** 适用于词语，而不是短语。 但是，您可以在短语中每个单词的末尾附加颚化符。 因此，例如，“夏令营”与“夏令营”相匹配。 |
-| “酒店机场”\~5 | 近接搜索。 此类搜索用于查找文档中彼此接近的术语。 例如，短语 `"hotel airport"~5` 会在文档中找到“hotel”和“airport”这两个词语，且这两个词语会相差5个词。 |
-| `/a[0-9]+b$/` | 正则表达式搜索。 此类搜索根据正斜杠“/”之间的内容找到匹配项，如RegExp类中所述。 例如，要查找包含“motel”或“hotel”的文档，请指定 `/[mh]otel/`. 正则表达式搜索仅针对单个单词进行匹配。 |
+| 蓝色\~ | 模糊搜索。 或者，也可以在波状符号(~)后面放置一个介于0-2之间的数字以指定编辑距离。 例如，“blue\~1”将返回“blue”、“blues”或“glue”。 模糊搜索&#x200B;**只能**&#x200B;应用于词汇，不能应用于短语。 但是，您可以在短语中每个单词的末尾附加颚化符。 因此，例如，“夏令营”与“夏令营”相匹配。 |
+| “酒店机场”\~5 | 近接搜索。 此类搜索用于查找文档中彼此接近的术语。 例如，短语`"hotel airport"~5`将在文档中找到5个词语中的术语“hotel”和“airport”。 |
+| `/a[0-9]+b$/` | 正则表达式搜索。 此类搜索根据正斜杠“/”之间的内容找到匹配项，如RegExp类中所述。 例如，要查找包含“motel”或“hotel”的文档，请指定`/[mh]otel/`。 正则表达式搜索仅针对单个单词进行匹配。 |
 
-有关查询语法的更多详细文档，请参阅 [Lucene查询语法文档](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax).
+有关查询语法的更多详细文档，请参阅[Lucene查询语法文档](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax)。

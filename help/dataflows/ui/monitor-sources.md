@@ -5,7 +5,7 @@ exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
 source-git-commit: 51f8a8c77518a0b2e9e4b914c891f97433db1ef2
 workflow-type: tm+mt
 source-wordcount: '1256'
-ht-degree: 8%
+ht-degree: 11%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 8%
 
 >[!IMPORTANT]
 >
->流源，如 [HTTP API源](../../sources/connectors/streaming/http.md) 监视仪表板当前不支持。 目前，您只能使用功能板监控批次源。
+>监视仪表板当前不支持流源，如[HTTP API源](../../sources/connectors/streaming/http.md)。 目前，您只能使用功能板监控批次源。
 
 阅读本文档，了解如何使用监视仪表板在Experience PlatformUI中监视源数据流。
 
@@ -21,12 +21,12 @@ ht-degree: 8%
 
 本教程需要对以下Adobe Experience Platform组件有一定的了解：
 
-* [数据流](../home.md)：数据流表示跨Platform移动数据的数据作业。 数据流在不同的服务之间配置，有助于将数据从源连接器移动到目标数据集，以 [!DNL Identity] 和 [!DNL Profile]、和 [!DNL Destinations].
-   * [数据流运行](../../sources/notifications.md)：数据流运行是基于所选数据流的频率配置的定期计划作业。
-* [源](../../sources/home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
-* [Identity Service](../../identity-service/home.md)：通过跨设备和系统桥接身份，更好地了解个人客户及其行为。
-* [Real-time Customer Profile](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
-* [沙盒](../../sandboxes/home.md)：Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+* [数据流](../home.md)：数据流是跨平台移动数据的数据作业的表示形式。 数据流在不同服务之间配置，帮助将数据从源连接器移动到目标数据集、[!DNL Identity]和[!DNL Profile]以及[!DNL Destinations]。
+   * [数据流运行](../../sources/notifications.md)：数据流运行是基于所选数据流的频率配置的周期性计划作业。
+* [源](../../sources/home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
+* [身份服务](../../identity-service/home.md)：通过跨设备和系统桥接身份，更好地了解个人客户及其行为。
+* [实时客户个人资料](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时客户个人资料。
+* [沙盒](../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ## 使用监控仪表板监控源数据
 
@@ -46,25 +46,25 @@ ht-degree: 8%
 
 At the center of the dashboard is the [!UICONTROL Source ingestion] panel, which contains metrics and graphs that display data on records ingested and records failed. -->
 
-在监视功能板中，选择 [!UICONTROL 源] 来更新仪表板，其中显示源数据流摄取率。
+在监视仪表板中，从主标题中选择[!UICONTROL 源]以更新仪表板，显示源数据流摄取率。
 
 ![已选择源信息卡的监视仪表板。](../assets/ui/monitor-sources/sources.png)
 
-此 [!UICONTROL 摄取率] 图形会根据您配置的时间范围显示您的数据摄取率。 默认情况下，监视功能板显示过去24小时的摄取率。 有关如何配置时间范围的步骤，请阅读上的指南 [配置监视时间范围](monitor.md#configure-monitoring-time-frame).
+[!UICONTROL 摄取率]图形根据您配置的时间范围显示您的数据摄取率。 默认情况下，监视功能板显示过去24小时的摄取率。 有关如何配置时间范围的步骤，请阅读[配置监视时间范围](monitor.md#configure-monitoring-time-frame)上的指南。
 
-默认情况下，该图形处于显示状态。 要隐藏图形，请选择 **[!UICONTROL 量度和图形]** 禁用切换并隐藏图形。
+默认情况下，该图形处于显示状态。 要隐藏图形，请选择&#x200B;**[!UICONTROL 量度和图形]**&#x200B;以禁用切换并隐藏图形。
 
 ![摄取率量度图表。](../assets/ui/monitor-sources/metrics-graph.png)
 
 功能板的下部显示一个表格，其中概述了所有现有源数据流的当前指标报表。
 
-![监视功能板度量表。](../assets/ui/monitor-sources/metrics-table.png)
+![监视仪表板度量表。](../assets/ui/monitor-sources/metrics-table.png)
 
 | 量度 | 描述 |
 | --- | --- |
 | 已接收的记录 | 从源接收的记录总数。 |
 | 已提取的记录 | 摄取到数据湖的记录总数。 |
-| 跳过的记录数 | 跳过的记录总数。 |
+| 跳过的记录 | 跳过的记录总数。 |
 | 失败的记录 | 由于错误而无法提取的记录总数。 |
 | 摄取率 | 根据接收的记录总数摄取的记录百分比。 |
 | 失败的数据流总数 | 失败的数据流总数。 |
@@ -76,30 +76,30 @@ At the center of the dashboard is the [!UICONTROL Source ingestion] panel, which
 | 筛选选项 | 描述 |
 | --- | --- |
 | 搜索 | 使用搜索栏将视图筛选为单个源类型。 |
-| 源 | 选择 **[!UICONTROL 源]** 筛选视图并显示每种源类型的量度数据。 这是监视仪表板使用的默认显示。 |
-| 数据流 | 选择 **[!UICONTROL 数据流]** 以筛选视图并显示每个数据流的量度数据。 |
-| 仅显示故障 | 选择 **[!UICONTROL 仅显示故障]** 以筛选视图，并仅显示报告摄取失败的数据流。 |
-| 我的源 | 您可以使用进一步筛选视图 [!UICONTROL 我的源] 下拉菜单。 使用下拉菜单按类别筛选视图。 或者，您可以选择 **[!UICONTROL 所有源]** 以在所有或源上显示指标，或选择 **[!UICONTROL 我的源]** 以仅显示您具有相应帐户的源。 |
+| 源 | 选择&#x200B;**[!UICONTROL 源]**&#x200B;以筛选视图并显示每种源类型的量度数据。 这是监视仪表板使用的默认显示。 |
+| 数据流 | 选择&#x200B;**[!UICONTROL 数据流]**&#x200B;以筛选视图并显示每个数据流的量度数据。 |
+| 仅显示故障 | 选择&#x200B;**[!UICONTROL 仅显示失败]**&#x200B;以筛选视图并仅显示报告引入失败的数据流。 |
+| 我的源 | 您可以使用[!UICONTROL 我的源]下拉菜单进一步筛选视图。 使用下拉菜单按类别筛选视图。 或者，您可以选择&#x200B;**[!UICONTROL 所有源]**&#x200B;来显示所有或所有源的量度，或者选择&#x200B;**[!UICONTROL 我的源]**&#x200B;来仅显示您具有相应帐户的源。 |
 
 {style="table-layout:auto"}
 
-要监视特定数据流中摄取的数据，请选择过滤器图标 ![筛选](../assets/ui/monitor-sources/filter.png) 在消息来源旁边。
+要监视特定数据流中摄取的数据，请选择源旁边的过滤器图标![过滤器](../assets/ui/monitor-sources/filter.png)。
 
 ![通过选择给定源旁边的过滤器图标来监视特定数据流。](../assets/ui/monitor-sources/monitor-dataflow.png)
 
 量度表将更新为活动数据流的表，这些数据流对应于您选择的源。 在此步骤中，您可以查看有关数据流的其他信息，包括其相应的数据集和数据类型，以及指示数据流上次处于活动状态的时间戳。
 
-要进一步检查数据流，请选择过滤器图标 ![筛选](../assets/ui/monitor-sources/filter.png) 数据流的旁边。
+要进一步检查数据流，请选择数据流旁边的过滤器图标![过滤器](../assets/ui/monitor-sources/filter.png)。
 
-![监控仪表板中的数据流表。](../assets/ui/monitor-sources/select-dataflow.png)
+![监视仪表板中的数据流表。](../assets/ui/monitor-sources/select-dataflow.png)
 
 接下来，您会进入一个界面，其中列出了所选数据流的所有数据流运行迭代。
 
 数据流运行代表数据流执行的实例。 例如，如果数据流计划在早上9:00、晚上10:00和晚上11:00每小时运行，则您将有三次流运行实例。 流量运行特定于您的特定组织。
 
-要检查特定数据流运行迭代的量度，请选择过滤器图标 ![筛选](../assets/ui/monitor-sources/filter.png) 在您的数据流旁边。
+要检查特定数据流运行迭代的量度，请选择数据流旁边的过滤器图标![过滤器](../assets/ui/monitor-sources/filter.png)。
 
-![数据流运行度量页面。](../assets/ui/monitor-sources/dataflow-page.png)
+![数据流运行度量页。](../assets/ui/monitor-sources/dataflow-page.png)
 
 使用数据流运行详细信息页面可查看所选运行迭代的量度和信息。
 
@@ -111,10 +111,10 @@ At the center of the dashboard is the [!UICONTROL Source ingestion] panel, which
 | 失败的记录 | 由于数据流运行中的错误而未摄取的记录总数。 |
 | 文件总数 | 数据流运行中的文件总数。 |
 | 数据大小 | 数据流运行中包含的数据的总大小。 |
-| 数据流运行ID | 数据流运行迭代的ID。 |
+| 数据流运行 ID | 数据流运行迭代的ID。 |
 | 组织ID | 在其中创建数据流运行的组织的ID。 |
 | 状态 | 数据流运行的状态。 |
-| 数据流运行开始 | 指示数据流运行何时开始的时间戳。 |
+| 数据流运行启动 | 指示数据流运行何时开始的时间戳。 |
 | 数据流运行结束 | 指示数据流运行何时结束的时间戳。 |
 | 数据集 | 用于创建数据流的数据集。 |
 | 数据类型 | 数据流中的数据类型。 |
@@ -124,9 +124,9 @@ At the center of the dashboard is the [!UICONTROL Source ingestion] panel, which
 
 {style="table-layout:auto"}
 
-如果数据流运行报告错误，您可以向下滚动到页面底部，使用 [!UICONTROL 数据流运行错误] 界面。
+如果数据流运行报告错误，则可以向下滚动到页面底部，使用[!UICONTROL 数据流运行错误]界面。
 
-使用 [!UICONTROL 记录失败] 部分，以查看因错误而未摄取的记录的量度。 要查看完整的错误报告，请选择 **[!UICONTROL 预览错误诊断]**. 要下载错误诊断和文件清单的副本，请选择 **[!UICONTROL 下载]** 然后复制要与一起使用的示例API调用 [!DNL Data Access] API。
+使用[!UICONTROL 记录失败]部分查看由于错误而未摄取的记录的量度。 要查看完整的错误报告，请选择&#x200B;**[!UICONTROL 预览错误诊断]**。 要下载错误诊断和文件清单的副本，请选择&#x200B;**[!UICONTROL 下载]**，然后复制要与[!DNL Data Access] API一起使用的示例API调用。
 
 >[!NOTE]
 >
@@ -136,7 +136,7 @@ At the center of the dashboard is the [!UICONTROL Source ingestion] panel, which
 
 ## 后续步骤 {#next-steps}
 
-通过学习本教程，您已使用成功地从源级别监视摄取数据流 **[!UICONTROL 监控]** 仪表板。 您还已成功识别出在摄取过程中导致数据流失败的错误。 有关更多详细信息，请参阅以下文档：
+通过学习本教程，您已使用&#x200B;**[!UICONTROL 监视]**&#x200B;仪表板成功监视源级别的摄取数据流。 您还已成功识别出在摄取过程中导致数据流失败的错误。 有关更多详细信息，请参阅以下文档：
 
-* [监控身份数据](./monitor-identities.md).
-* [监控配置文件数据](./monitor-profiles.md).
+* [正在监视身份数据](./monitor-identities.md)。
+* [正在监视配置文件数据](./monitor-profiles.md)。

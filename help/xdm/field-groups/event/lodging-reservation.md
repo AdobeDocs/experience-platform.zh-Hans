@@ -6,34 +6,34 @@ exl-id: f0eafc83-21f1-483d-9397-1133e3777699
 source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
 source-wordcount: '655'
-ht-degree: 5%
+ht-degree: 7%
 
 ---
 
-# [!UICONTROL 住宿预订] 架构字段组
+# [!UICONTROL 住宿预订]架构字段组
 
-[!UICONTROL 住宿预订] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md) 用于捕获有关住宿预订的信息。
+[!UICONTROL 住宿预订]是[[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)的标准架构字段组，用于捕获有关住宿预订的信息。
 
-字段组是 [!UICONTROL 预订详细信息] 字段组，并在单个对象类型字段下包含所有相同的字段， `reservations`. 除了这些通用字段之外， [!UICONTROL 住宿预订] 还包括 `lodgingReservations` 数组。 此对象数组用于描述一个或多个具有住宿专用属性的预订。
+该字段组是[!UICONTROL 保留详细信息]字段组的扩展，它包含单个对象类型字段`reservations`下的所有相同字段。 除了这些通用字段外，[!UICONTROL 住宿预订]还包含`lodgingReservations`数组。 此对象数组用于描述一个或多个具有住宿专用属性的预订。
 
 >[!NOTE]
 >
->本文档介绍 `lodgingReservations` 数组。 有关 `reservations` 对象，请参阅 [[!UICONTROL 预订详细信息] 字段组引用](./reservation-details.md).
+>本文档介绍`lodgingReservations`阵列的详细信息。 有关`reservations`对象下提供的其他字段的信息，请参阅[[!UICONTROL 保留详细信息]字段组引用](./reservation-details.md)。
 
 ![住宿预订结构](../../images/field-groups/lodging-reservation/structure.png)
 
 ## `lodgingReservations`
 
-`lodgingReservations` 是一个对象数组，表示住宿预订列表。 例如，如果预订事件涉及旅行路线上的多个不同酒店的预订，则这些预订可作为 `lodgingReservations` 就为了一个事件。
+`lodgingReservations`是一个表示住宿预订列表的对象数组。 例如，如果预订事件涉及在旅行路线上的多个不同酒店的预订，则这些预订可以作为单个事件的`lodgingReservations`下的单个对象列出。
 
-下面提供的每个对象的结构 `lodgingReservations` 具体内容如下。
+下面提供了在`lodgingReservations`下提供的每个对象的结构。
 
 ![住宿预订结构](../../images/field-groups/lodging-reservation/lodgingReservations.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
 | `averageDailyPrice` | [[!UICONTROL 货币]](../../data-types/currency.md) | 酒店房间的平均每日价格。 |
-| `lodgingCheckIn` | 对象 | 描述住宿登记详细信息的对象。 包括以下值：<ul><li>`digitalKey`：（整数）指示访客在签入时何时选择使用数字密钥。</li><li>`earlyCheckInRequested`：（整数）指示访客何时请求比正常签入时间更早签入。</li><li>`lateCheckInRequested`：（整数）指示访客请求签入的时间晚于正常签入时间（以小时为单位）。</li><li>`noRoomCheckIn`：（整数）当访客完成签入且此时没有可用房间时，将捕获此值。</li><li>`oneRoomCheckIn`：（整数）当来宾完成签入时且当时只有一个房间可用时，将捕获此值。</li><li>`roomKeys`：（整数）登记入住时提供的标准房间钥匙数量。</li><li>`userSelectedRoom`：（布尔值）指示访客是否在登记入住时选择了他们的房间。</li></ul> |
+| `lodgingCheckIn` | 对象 | 描述住宿登记详细信息的对象。 包括以下值：<ul><li>`digitalKey`： （整数）指示访客在签入时何时选择使用数字密钥。</li><li>`earlyCheckInRequested`： （整数）指示访客请求签入的时间早于正常签入时间（小时）。</li><li>`lateCheckInRequested`： （整数）指示访客请求签入的时间晚于正常签入时间（以小时为单位）。</li><li>`noRoomCheckIn`： （整数）当来宾完成签入且当时没有可用房间时捕获此值。</li><li>`oneRoomCheckIn`： （整数）当来宾完成签入时，如果当时只有一个房间可用，则会捕获此值。</li><li>`roomKeys`： （整数）签到时提供的标准房间钥匙数。</li><li>`userSelectedRoom`： （布尔值）指示访客在签到时是否选择了他们的房间。</li></ul> |
 | `rackrate` | [[!UICONTROL 货币]](../../data-types/currency.md) | 未经事先预订安排的当天预订费用。 |
 | `ID` | 字符串 | 预订编号或标识符。 |
 | `agentID` | 字符串 | 与酒店预订关联的代理ID。 |
@@ -46,7 +46,7 @@ ht-degree: 5%
 | `couponCode` | 字符串 | 与酒店预订关联的优惠券代码。 |
 | `created` | 整数 | 此值在创建预订后捕获。 |
 | `currencyCode` | 字符串 | 用于进行购买的ISO 4217货币代码。 |
-| `discountPercent` | 双精度 | 与预订关联的折扣百分比。 |
+| `discountPercent` | 两次 | 与预订关联的折扣百分比。 |
 | `freeCancelation` | 布尔值 | 指示文件室是否具有免费取消政策。 |
 | `guestID` | 字符串 | 与酒店预订关联的客人ID。 |
 | `length` | 整数 | 预订的总天数。 |
@@ -73,4 +73,4 @@ ht-degree: 5%
 有关字段组的更多详细信息，请参阅公共XDM存储库：
 
 * [填充示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-lodging-reservation.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-lodging-reservation.schema.json)
+* [完整架构](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-lodging-reservation.schema.json)

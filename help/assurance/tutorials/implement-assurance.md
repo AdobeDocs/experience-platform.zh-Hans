@@ -3,8 +3,8 @@ title: 实施 Adobe Experience Platform Assurance 扩展
 description: 本指南介绍了如何实施和安装 Adobe Experience Platform Assurance 扩展。
 exl-id: b7bd1bb1-1606-4d00-97e0-c329c86d8ca4
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
-workflow-type: ht
-source-wordcount: '400'
+workflow-type: tm+mt
+source-wordcount: '386'
 ht-degree: 100%
 
 ---

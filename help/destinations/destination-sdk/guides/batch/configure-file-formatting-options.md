@@ -19,18 +19,18 @@ Destination SDK允许您广泛调整导出文件的格式和压缩选项，以�
 
 ## 先决条件 {#prerequisites}
 
-在继续执行以下步骤之前，请阅读 [Destination SDK快速入门](../../getting-started.md) 页面，以了解有关获取使用Destination SDKAPI所需的Adobe I/O身份验证凭据和其他先决条件的信息。
+在进入下面列出的步骤之前，请阅读[Destination SDK快速入门](../../getting-started.md)页面，了解有关获取使用Destination SDKAPI所必需的Adobe I/O身份验证凭据和其他先决条件的信息。
 
 Adobe还建议您先阅读并熟悉以下文档，然后再继续：
 
-* 每个可用的文件格式选项都详细记录在 [文件格式配置](../../functionality/destination-server/file-formatting.md) 部分。
-* 完成步骤以 [配置基于文件的目标](../../guides/configure-file-based-destination-instructions.md) 使用Destination SDK。
+* 每个可用的文件格式选项均在[文件格式配置](../../functionality/destination-server/file-formatting.md)部分中详细记录。
+* 完成使用Destination SDK[配置基于文件的目标](../../guides/configure-file-based-destination-instructions.md)的步骤。
 
 ## 创建服务器和文件配置 {#create-server-file-configuration}
 
-首先使用 `/destination-server` 端点确定要为导出的文件设置哪些文件格式配置选项。
+首先使用`/destination-server`端点来确定要为导出的文件设置哪些文件格式配置选项。
 
-以下是 [!DNL Amazon S3] 目标，选择了多个文件格式选项。
+以下是[!DNL Amazon S3]目标的目标服务器配置示例，其中选择了多个文件格式选项。
 
 **API格式**
 
@@ -102,13 +102,13 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 >[!TIP]
 >
->**验证Experience PlatformUI**. 使用下面部分中演示的配置来配置文件格式选项时，您应该检查Experience PlatformUI以了解这些选项的呈现方式。
+>**验证Experience PlatformUI**。 使用下面部分中演示的配置来配置文件格式选项时，您应该检查Experience PlatformUI以了解这些选项的呈现方式。
 
-在上一步中将所需的文件格式选项添加到目标服务器和文件格式配置后，您现在可以使用 `/destinations` API端点将所需的字段作为客户数据字段添加到目标配置。
+在上一步中将所需的文件格式选项添加到目标服务器和文件格式配置后，您现在可以使用`/destinations` API端点将所需的字段作为客户数据字段添加到目标配置。
 
 >[!IMPORTANT]
 >
->此步骤是可选的，它仅决定在Experience PlatformUI中应向用户显示哪些文件格式选项。 如果您没有将文件格式选项设置为客户数据字段，则文件导出将继续使用中配置的默认值。 [服务器和文件配置](#create-server-file-configuration).
+>此步骤是可选的，它仅决定在Experience PlatformUI中应向用户显示哪些文件格式选项。 如果您未设置文件格式选项作为客户数据字段，则文件导出将使用[服务器和文件配置](#create-server-file-configuration)中配置的默认值继续。
 
 在此步骤中，您可以按所需的任何顺序对显示的选项进行分组，您可以根据所选文件类型创建自定义分组、下拉字段和条件分组。 所有这些设置都显示在录制和更下面的部分中。
 
@@ -116,9 +116,9 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 ### 对文件格式选项排序 {#ordering}
 
-作为目标配置中的客户数据字段，您添加文件格式选项的顺序反映在UI中。 例如，以下配置将相应地反映在UI中，并按顺序显示各个选项 **[!UICONTROL 分隔符]**， **[!UICONTROL 引号字符]**， **[!UICONTROL 转义字符]**， **[!UICONTROL 空值]**， **[!UICONTROL 空值]**.
+作为目标配置中的客户数据字段，您添加文件格式选项的顺序反映在UI中。 例如，以下配置将相应地反映在UI中，选项按顺序&#x200B;**[!UICONTROL 分隔符]**、**[!UICONTROL 引号字符]**、**[!UICONTROL 转义字符]**、**[!UICONTROL 空值]**、**[!UICONTROL 空值]**&#x200B;显示。
 
-![该图像显示了Experience PlatformUI中文件格式选项顺序。](../../assets/guides/batch/file-formatting-order.png)
+![显示Experience PlatformUI中文件格式选项顺序的图像。](../../assets/guides/batch/file-formatting-order.png)
 
 ```json
         {
@@ -241,7 +241,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 您可以将多个文件格式选项组合在一个节中。 在UI中设置与目标之间的连接时，用户可以查看类似字段的可视化分组并从中受益。
 
-为此，请使用 `"type": "object"` 创建组，并在中收集所需的文件格式选项 `properties` 参数，如下面的示例所示，其中 **[!UICONTROL CSV选项]** 高亮显示。
+为此，请使用`"type": "object"`创建组，并在`properties`参数中收集所需的文件格式选项，如以下示例所示，其中高亮显示了&#x200B;**[!UICONTROL CSV选项]**&#x200B;分组。
 
 ```json {line-numbers="true" start-number="100" highlight="106-128"}
 "customerDataFields":[
@@ -279,13 +279,13 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 ]
 ```
 
-![该图像显示了UI中的CSV选项分组。](../../assets/guides/batch/file-formatting-grouping.png)
+![图像显示UI中的CSV选项分组。](../../assets/guides/batch/file-formatting-grouping.png)
 
 ### 为文件格式选项创建下拉选择器 {#dropdown-selectors}
 
 对于希望允许用户在多个选项之间进行选择的情况（例如，应使用哪个字符来分隔CSV文件中的字段），您可以向UI添加下拉字段。
 
-要执行此操作，请使用 `namedEnum` 对象并配置 `default` 用户可以选择的选项的值。
+为此，请使用如下所示的`namedEnum`对象，并为用户可以选择的选项配置`default`值。
 
 ```json {line-numbers="true" start-number="100" highlight="114-124"}
 [...]
@@ -324,13 +324,13 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 ]
 ```
 
-![屏幕录制，显示使用上面显示的配置创建的下拉列表选择器示例。](../../assets/guides/batch/dropdown-options-file-formatting.gif)
+![屏幕录制，显示使用以上所示配置创建的下拉选择器示例。](../../assets/guides/batch/dropdown-options-file-formatting.gif)
 
 ### 创建条件文件格式选项 {#conditional-options}
 
 您可以创建条件文件格式选项，这些选项仅在用户选择特定文件类型进行导出时才会显示在激活工作流中。 例如，下面的配置为CSV文件选项创建条件分组。 只有在用户选择CSV作为导出所需的文件类型时，才会显示CSV文件选项。
 
-要将字段设置为条件字段，请使用 `conditional` 参数如下所示：
+要将字段设置为条件字段，请使用`conditional`参数，如下所示：
 
 ```json
             "conditional": {
@@ -340,7 +340,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
             }
 ```
 
-在更广泛的背景下，您可以看到 `conditional` 以下目标配置中使用的字段，以及 `fileType` 字符串和 `csvOptions` 在其中定义它的对象。
+在更广泛的上下文中，您可以看到以下目标配置中使用的`conditional`字段，以及在其中定义该字段的`fileType`字符串和`csvOptions`对象。
 
 ```json
         {
@@ -711,7 +711,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 }'
 ```
 
-成功的响应将返回目标配置，包括唯一标识符(`instanceId`)。
+成功的响应返回目标配置，包括配置的唯一标识符(`instanceId`)。
 
 ## 已知限制 {#known-limitations}
 
@@ -742,4 +742,4 @@ James,Smith,"","\"\""
 
 ## 后续步骤 {#next-steps}
 
-阅读本文后，您现在知道如何使用Destination SDK为导出的文件设置自定义文件格式选项。 接下来，您的团队可以使用 [基于文件的目标的激活工作流](../../../ui/activate-batch-profile-destinations.md) 将数据导出到目标。
+阅读本文后，您现在知道如何使用Destination SDK为导出的文件设置自定义文件格式选项。 接下来，您的团队可以使用基于文件的目标的[激活工作流](../../../ui/activate-batch-profile-destinations.md)将数据导出到目标。

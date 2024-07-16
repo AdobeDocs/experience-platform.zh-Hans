@@ -9,9 +9,9 @@ ht-degree: 6%
 
 ---
 
-# [!UICONTROL 报价请求详细信息] 架构字段组
+# [!UICONTROL 报价请求详细信息]架构字段组
 
-[!UICONTROL 报价请求详细信息] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md). 字段组提供单个 `quotes` 对象，用于捕获各种类型报价的请求流程详细信息，包括保单、医疗保健、制造订单和高科技订单。
+[!UICONTROL 报价请求详细信息]是[[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)的标准架构字段组。 字段组为架构提供单个`quotes`对象，用于捕获各种类型报价的请求流程详细信息，包括保单、医疗保健、制造订单和高科技订单。
 
 ![](../../images/field-groups/quote-request-details.png)
 
@@ -25,4 +25,4 @@ ht-degree: 6%
 
 {style="table-layout:auto"}
 
-有关字段组的更多详细信息，请参阅 [公共XDM存储库](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/experienceevent-quote-request-details.schema.json).
+有关字段组的更多详细信息，请参阅[公共XDM存储库](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/experienceevent-quote-request-details.schema.json)。

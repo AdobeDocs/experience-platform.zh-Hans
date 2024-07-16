@@ -5,8 +5,8 @@ description: 通过将Platform中的数据连接到其他Adobe Experience Cloud�
 exl-id: 15a22a93-b4d6-4b94-bc6c-3634920c7689
 source-git-commit: 461545b7d06a4c54fb4037cf1eb2ba44dd6ee7b9
 workflow-type: tm+mt
-source-wordcount: '231'
-ht-degree: 12%
+source-wordcount: '224'
+ht-degree: 7%
 
 ---
 
@@ -20,7 +20,7 @@ ht-degree: 12%
 
 目前，平台支持下面列出的Adobe目标。
 
-要了解连接和扩展之间的区别，请参阅 [连接](../../destination-types.md#connections) 在目标类型和类别页面中。
+若要了解连接和扩展之间的区别，请参阅“目标类型和类别”页面中的[连接](../../destination-types.md#connections)。
 
 ### 连接
 
@@ -35,9 +35,9 @@ ht-degree: 12%
 
 * [Adobe Advertising Cloud扩展](../advertising/adobe-advertising-cloud.md)
 * [Adobe Analytics 扩展](../analytics/adobe-analytics.md)
-* [Adobe Media Analytics for Audio and Video 扩展](../analytics/adobe-video-analytics.md)
+* [Adobe Medium Analytics for Audio and Video扩展](../analytics/adobe-video-analytics.md)
 * [Adobe Target 扩展](../personalization/adobe-target.md)
-* [Adobe Target v2 扩展](../personalization/adobe-target-v2.md)
+* [Adobe Target v2扩展](../personalization/adobe-target-v2.md)
 * [Audience ManagerDIL扩展](../data-management/aam-dil-extension.md)
 * [Experience Cloud ID 服务扩展](../personalization/adobe-ecid.md)
 * [Marketo扩展](../email/marketo.md)
@@ -48,4 +48,4 @@ ht-degree: 12%
 
 使用Experience Platform受众共享功能将Experience Platform受众共享到其他Adobe目标。 有关更多信息(在Audience Manager文档门户中打开)，请参阅以下页面：
 
-* [通过核心服务集成，Experience Platform与Adobe Audience Manager、Adobe Advertising Cloud和Adobe Target的受众共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
+* 通过核心服务集成[Experience Platform与Adobe Audience Manager、Adobe Advertising Cloud和Adobe Target的受众共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)

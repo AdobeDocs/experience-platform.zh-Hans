@@ -9,9 +9,9 @@ ht-degree: 6%
 
 ---
 
-# [!UICONTROL 展示次数] 数据类型
+# [!UICONTROL 展示次数]数据类型
 
-[!UICONTROL 展示次数] 是描述营销展示的标准XDM数据类型，营销展示是一种量度，用于量化一段内容（如广告、数字帖子或网页）的数字查看或参与次数。
+[!UICONTROL 展示次数]是描述营销展示的标准XDM数据类型，该指标用于量化一段内容（如广告、数字帖子或网页）的数字查看次数或参与次数。
 
 ![](../images/data-types/impressions.png)
 
@@ -27,4 +27,4 @@ ht-degree: 6%
 有关字段组的更多详细信息，请参阅公共XDM存储库：
 
 * [填充示例](https://github.com/adobe/xdm/blob/master/components/datatypes/industry-verticals/impressions.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/industry-verticals/impressions.schema.json)
+* [完整架构](https://github.com/adobe/xdm/blob/master/components/datatypes/industry-verticals/impressions.schema.json)

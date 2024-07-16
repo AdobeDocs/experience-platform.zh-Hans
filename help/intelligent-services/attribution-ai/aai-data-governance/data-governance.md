@@ -7,8 +7,8 @@ description: Adobe Experience Platform提供了多种服务和工具，可让您
 exl-id: 70b04061-0cb0-4b3e-9dfa-d49cc0ef1be0
 source-git-commit: f28558d5939607cabf449cbc03b7e0f5406f6326
 workflow-type: tm+mt
-source-wordcount: '224'
-ht-degree: 12%
+source-wordcount: '206'
+ht-degree: 1%
 
 ---
 
@@ -22,10 +22,10 @@ Attribution AI与Adobe Experience Platform数据管理之间的集成使您能�
 
 在Platform使用的数据集上创建的数据使用标签和策略可以在Attribution AI配置工作流中显示。 这些标签会阻止或警告使用已标记字段的用户。
 
-此集成允许您更有效地管理合规性。 组织中的数据管理员可以设置策略以限制使用。 因此，您可以使用符合数据管理员定义的策略的数据。 请阅读相关文档 [标签和策略](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-dataviews/data-governance.html) 了解更多信息。
+此集成允许您更有效地管理合规性。 组织中的数据管理员可以设置策略来限制使用。 因此，您可以使用符合数据管理员定义的策略的数据。 阅读有关[标签和策略](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-dataviews/data-governance.html)的文档以了解更多信息。
 
 您可以在此处了解有关此功能的更多信息：
 
-[Attribution AI快速入门](../../attribution-ai/getting-started.md)
-[Adobe Experience Platform与应用程序](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html)
-[Adobe Experience Cloud架构图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/experience-cloud.html)
+[Attribution AI入门](../../attribution-ai/getting-started.md)
+[Adobe Experience Platform和应用程序](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html)
+[Adobe Experience Cloud架构图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/experience-cloud.html?lang=zh-Hans)

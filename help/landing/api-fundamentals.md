@@ -6,22 +6,22 @@ description: 本文档简要概述了Experience PlatformAPI涉及的一些底层
 exl-id: cd69ba48-f78c-4da5-80d1-efab5f508756
 source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
 workflow-type: tm+mt
-source-wordcount: '519'
-ht-degree: 1%
+source-wordcount: '506'
+ht-degree: 0%
 
 ---
 
 # Experience PlatformAPI基础知识
 
-Adobe Experience Platform API使用多种底层技术和语法，这些技术和语法对于有效管理基于JSON的文档非常重要 [!DNL Platform] 资源。 本文档简要概述这些技术，并提供指向外部文档的链接以了解更多信息。
+Adobe Experience Platform API使用多种基础技术和语法，这些技术和语法对于有效管理基于JSON的[!DNL Platform]资源非常重要。 本文档提供了这些技术的简要概述，以及指向外部文档的链接以了解更多信息。
 
 ## JSON指针 {#json-pointer}
 
-JSON指针是一个标准化的字符串语法([RFC 6901](https://tools.ietf.org/html/rfc6901))来标识JSON文档中的特定值。 JSON指针是由以下符号分隔的令牌字符串 `/` 字符，用于指定对象键或数组索引，并且令牌可以是字符串或数字。 JSON指针字符串用在许多PATCH操作中， [!DNL Platform] API，如本文档稍后所述。 有关JSON指针的更多信息，请参阅 [JSON指针概述文档](https://rapidjson.org/md_doc_pointer.html).
+JSON指针是一个标准化的字符串语法([RFC 6901](https://tools.ietf.org/html/rfc6901))，用于标识JSON文档中的特定值。 JSON指针是以`/`字符分隔的令牌字符串，用于指定对象键或数组索引，并且令牌可以是字符串或数字。 [!DNL Platform] API的许多PATCH操作中都使用了JSON指针字符串，如本文档后面所述。 有关JSON指针的更多信息，请参阅[JSON指针概述文档](https://rapidjson.org/md_doc_pointer.html)。
 
 ### 示例JSON模式对象
 
-以下JSON表示简化的XDM架构，其字段可以使用JSON指针字符串引用。 请注意，使用自定义架构字段组添加的所有字段(例如 `loyaltyLevel`)的命名空间位于 `_{TENANT_ID}` 对象，而使用核心字段组添加的字段(例如 `fullName`)则不然。
+以下JSON表示简化的XDM架构，其字段可以使用JSON指针字符串引用。 请注意，使用自定义架构字段组（如`loyaltyLevel`）添加的所有字段都在`_{TENANT_ID}`对象下命名空间，而使用核心字段组（如`fullName`）添加的字段则不是。
 
 ```json
 {
@@ -82,21 +82,21 @@ JSON指针是一个标准化的字符串语法([RFC 6901](https://tools.ietf.org
 
 ### 基于模式对象的JSON指针示例
 
-| JSON指针 | 解析到 |
+| JSON指针 | 解析为 |
 | --- | --- |
 | `"/title"` | `"Example schema"` |
-| `"/properties/person/properties/name/properties/fullName"` | (返回对的引用 `fullName` 字段，由核心字段组提供。) |
-| `"/properties/_{TENANT_ID}/properties/loyaltyLevel"` | (返回对的引用 `loyaltyLevel` 字段，由自定义字段组提供。) |
+| `"/properties/person/properties/name/properties/fullName"` | （返回由核心字段组提供的`fullName`字段的引用。） |
+| `"/properties/_{TENANT_ID}/properties/loyaltyLevel"` | （返回对自定义字段组提供的`loyaltyLevel`字段的引用。） |
 | `"/properties/_{TENANT_ID}/properties/loyaltyLevel/enum"` | `["platinum", "gold", "silver", "bronze"]` |
 | `"/properties/_{TENANT_ID}/properties/loyaltyLevel/enum/0"` | `"platinum"` |
 
 >[!NOTE]
 >
->在处理 `xdm:sourceProperty` 和 `xdm:destinationProperty` 属性 [!DNL Experience Data Model] (XDM)描述符，任何 `properties` 键必须是 **已排除** 从JSON指针字符串中。 请参阅 [!DNL Schema Registry] 上的API开发人员指南子指南 [描述符](../xdm/api/descriptors.md) 了解更多信息。
+>在处理[!DNL Experience Data Model] (XDM)描述符的`xdm:sourceProperty`和`xdm:destinationProperty`属性时，任何`properties`键都必须从JSON指针字符串中&#x200B;**排除**。 有关详细信息，请参阅[描述符](../xdm/api/descriptors.md)上的[!DNL Schema Registry] API开发人员指南子指南。
 
 ## JSON修补程序 {#json-patch}
 
-有许多针对的PATCH操作 [!DNL Platform] 接受JSON修补程序对象进行请求负载的API。 JSON Patch是一种标准化格式([RFC 6902](https://tools.ietf.org/html/rfc6902))以描述对JSON文档的更改。 它允许您定义对JSON的部分更新，而无需在请求正文中发送整个文档。
+[!DNL Platform] API许多PATCH操作都接受JSON修补程序对象作为其请求负载。 JSON修补程序是一种用于描述JSON文档更改的标准化格式([RFC 6902](https://tools.ietf.org/html/rfc6902))。 它允许您定义对JSON的部分更新，而无需在请求正文中发送整个文档。
 
 ### 示例JSON修补程序对象
 
@@ -107,21 +107,21 @@ JSON指针是一个标准化的字符串语法([RFC 6901](https://tools.ietf.org
 }
 ```
 
-* `op`：修补程序操作的类型。 虽然JSON修补程序支持多种不同的操作类型，但并非所有PATCH操作都在 [!DNL Platform] API与每种操作类型都兼容。 可用的操作类型包括：
+* `op`：修补操作的类型。 虽然JSON修补程序支持多种不同的操作类型，但并非所有[!DNL Platform] API中的PATCH操作都与每种操作类型兼容。 可用的操作类型包括：
    * `add`
    * `remove`
    * `replace`
    * `copy`
    * `move`
    * `test`
-* `path`：要更新的JSON结构部分，使用进行标识 [JSON指针](#json-pointer) 表示法。
+* `path`：要更新的JSON结构部分，使用[JSON指针](#json-pointer)表示法标识。
 
-根据中指示的操作类型 `op`，则JSON修补程序对象可能需要其他属性。 有关不同的JSON修补程序操作及其所需语法的更多信息，请参阅 [JSON修补程序文档](https://datatracker.ietf.org/doc/html/rfc6902).
+根据`op`中指示的操作类型，JSON修补程序对象可能需要其他属性。 有关不同的JSON修补程序操作及其所需语法的更多信息，请参阅[JSON修补程序文档](https://datatracker.ietf.org/doc/html/rfc6902)。
 
 ## JSON架构 {#json-schema}
 
-JSON模式是用于描述和验证JSON数据结构的格式。 [体验数据模型(XDM)](../xdm/home.md) 利用JSON模式功能对摄取的客户体验数据的结构和格式实施限制。 有关JSON架构的更多信息，请参阅 [官方文档](https://json-schema.org/).
+JSON模式是一种用于描述和验证JSON数据结构的格式。 [体验数据模型(XDM)](../xdm/home.md)利用JSON架构功能对摄取的客户体验数据的结构和格式实施约束。 有关JSON架构的更多信息，请参阅[官方文档](https://json-schema.org/)。
 
 ## 后续步骤
 
-本文档介绍了用于管理基于JSON的资源的一些技术和语法。 [!DNL Experience Platform]. 请参阅 [快速入门指南](api-guide.md) 有关使用Platform API的更多信息，包括最佳实践。 有关常见问题的解答，请参阅 [平台疑难解答指南](troubleshooting.md).
+本文档介绍了与管理[!DNL Experience Platform]的基于JSON的资源相关的一些技术和语法。 有关使用平台API（包括最佳实践）的更多信息，请参阅[快速入门指南](api-guide.md)。 有关常见问题的解答，请参阅[平台疑难解答指南](troubleshooting.md)。

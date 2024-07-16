@@ -14,13 +14,13 @@ ht-degree: 1%
 
 # 同意端点
 
-某些法规要求客户明确同意才能收集其个人数据。 此 `/consent` 中的端点 [!DNL Privacy Service] API允许您处理客户同意请求并将它们集成到隐私工作流中。
+某些法规要求客户明确同意才能收集其个人数据。 [!DNL Privacy Service] API中的`/consent`端点允许您处理客户同意请求并将它们集成到隐私工作流中。
 
-在使用本指南之前，请参阅 [快速入门](./getting-started.md) 指南，以了解有关以下示例API调用中提供的所需身份验证标头的信息。
+在使用本指南之前，请参阅[快速入门](./getting-started.md)指南，了解有关以下示例API调用中提供的所需身份验证标头的信息。
 
 ## 处理客户同意请求
 
-同意请求是通过向以下对象发出POST请求来处理的 `/consent` 端点。
+通过向`/consent`端点发出POST请求来处理同意请求。
 
 **API格式**
 
@@ -30,7 +30,7 @@ POST /consent
 
 **请求**
 
-以下请求为中提供的用户ID创建新的同意作业 `entities` 数组。
+以下请求为`entities`数组中提供的用户ID创建新的同意作业。
 
 ```shell
 curl -X POST \
@@ -61,17 +61,17 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `optOutOfSale` | 当设置为true时，表示提供的用户位于 `entities` 希望选择退出出售或共享其个人数据。 |
-| `entities` | 一个对象数组，指明同意请求应用于的用户。 每个对象包含 `namespace` 和数组 `values` 将单个用户与该命名空间进行匹配。 |
-| `nameSpace` | 中的每个对象 `entities` 数组必须包含一个 [标准身份命名空间](./appendix.md#standard-namespaces) 由Privacy ServiceAPI识别。 |
-| `values` | 每个用户的值数组，对应于提供的 `nameSpace`. |
+| `optOutOfSale` | 如果设置为true，则表示在`entities`下提供的用户希望选择退出出售或共享其个人数据。 |
+| `entities` | 一个对象数组，指明同意请求应用于的用户。 每个对象都包含一个`namespace`和一个`values`数组，以匹配具有该命名空间的单个用户。 |
+| `nameSpace` | `entities`数组中的每个对象都必须包含Privacy ServiceAPI可识别的[标准标识命名空间](./appendix.md#standard-namespaces)之一。 |
+| `values` | 每个用户的值数组，与提供的`nameSpace`相对应。 |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->有关如何确定要将哪些客户标识值发送到的详细信息 [!DNL Privacy Service]，请参阅指南，网址为 [提供身份数据](../identity-data.md).
+>有关如何确定将哪些客户标识值发送到[!DNL Privacy Service]的更多信息，请参阅[提供标识数据](../identity-data.md)指南。
 
 **响应**
 
-成功的响应返回HTTP状态202（已接受），没有任何有效负载，指示请求已被接受 [!DNL Privacy Service] 并正在进行处理。
+成功的响应返回HTTP状态202 （已接受），没有有效负载，表示[!DNL Privacy Service]已接受请求并正在进行处理。

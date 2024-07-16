@@ -5,7 +5,7 @@ exl-id: 83a7a154-4f55-4bf0-bfef-594d5d50f460
 source-git-commit: adb48b898c85561efb2d96b714ed98a0e3e4ea9b
 workflow-type: tm+mt
 source-wordcount: '1736'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -15,10 +15,10 @@ ht-degree: 2%
 
 加密数据摄取过程如下：
 
-1. [使用Experience PlatformAPI创建加密密钥对](#create-encryption-key-pair). 加密密钥对由私钥和公钥组成。 创建后，您可以复制或下载公钥及其对应的公钥ID和到期时间。 在此过程中，私钥将通过Experience Platform存储在安全保险库中。 **注意：** 响应中的公钥采用Base64编码，必须在使用之前解密。
+1. [使用Experience PlatformAPI创建加密密钥对](#create-encryption-key-pair)。 加密密钥对由私钥和公钥组成。 创建后，您可以复制或下载公钥及其对应的公钥ID和到期时间。 在此过程中，私钥将通过Experience Platform存储在安全保险库中。 **注意：**&#x200B;响应中的公钥采用Base64编码，必须在使用之前解密。
 2. 使用公钥加密要摄取的数据文件。
 3. 将加密文件放入云存储中。
-4. 加密文件准备就绪后， [为云存储源创建源连接和数据流](#create-a-dataflow-for-encrypted-data). 在流创建步骤中，您必须提供 `encryption` 参数，并包含您的公钥ID。
+4. 加密文件准备就绪后，[为您的云存储源](#create-a-dataflow-for-encrypted-data)创建源连接和数据流。 在流创建步骤中，必须提供`encryption`参数并包含公钥ID。
 5. Experience Platform从安全保险库中检索私钥，以在摄取时解密数据。
 
 >[!IMPORTANT]
@@ -31,13 +31,13 @@ ht-degree: 2%
 
 本教程要求您实际了解Adobe Experience Platform的以下组件：
 
-* [源](../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
-   * [云存储源](../api/collect/cloud-storage.md)：创建数据流以将批量数据从云存储源引入Experience Platform。
-* [沙盒](../../../sandboxes/home.md)：Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+* [源](../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
+   * [云存储源](../api/collect/cloud-storage.md)：创建数据流以将批次数据从云存储源引入Experience Platform。
+* [沙盒](../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ### 使用平台API
 
-有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../landing/api-guide.md).
+有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../landing/api-guide.md)指南。
 
 ### 加密文件支持的文件扩展名 {#supported-file-extensions-for-encrypted-files}
 
@@ -64,7 +64,7 @@ ht-degree: 2%
 
 ## 创建加密密钥对 {#create-encryption-key-pair}
 
-将加密数据提取到Experience PlatformPOST的第一步是通过向 `/encryption/keys` 的端点 [!DNL Connectors] API。
+将加密数据提取到Experience Platform的第一步是通过向[!DNL Connectors] API的`/encryption/keys`端点发出POST请求来创建加密密钥对。
 
 **API格式**
 
@@ -96,7 +96,7 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --- | --- |
-| `encryptionAlgorithm` | 正在使用的加密算法类型。 支持的加密类型包括 `PGP` 和 `GPG`. |
+| `encryptionAlgorithm` | 正在使用的加密算法类型。 支持的加密类型为`PGP`和`GPG`。 |
 | `params.passPhrase` | 密码短语为加密密钥提供了额外的保护层。 创建后，Experience Platform将该密码短语存储在与公钥不同的安全电子仓库中。 您必须提供非空字符串作为密码短语。 |
 
 +++
@@ -125,7 +125,7 @@ curl -X POST \
 
 ### 检索加密密钥 {#retrieve-encryption-keys}
 
-GET要检索贵公司的所有加密密钥，请向 `/encryption/keys` endpoit=nt.
+要检索组织中的所有加密密钥，请向`/encryption/keys` endpoit=nt发出GET请求。
 
 **API格式**
 
@@ -168,7 +168,7 @@ curl -X GET \
 
 ### 按ID检索加密密钥 {#retrieve-encryption-keys-by-id}
 
-GET要检索一组特定的加密密钥，请向 `/encryption/keys` 端点，并提供您的公钥ID作为标头参数。
+要检索一组特定的加密密钥，请向`/encryption/keys`端点发出GET请求，并提供您的公共密钥ID作为标头参数。
 
 **API格式**
 
@@ -215,7 +215,7 @@ curl -X GET \
 
 ### 共享您的公钥以Experience Platform
 
-要共享公钥，请向发出POST请求 `/customer-keys` 端点，同时提供加密算法和Base64编码的公共密钥。
+要共享公钥，请在提供加密算法和Base64编码公钥的同时向`/customer-keys`端点发出POST请求。
 
 **API格式**
 
@@ -243,7 +243,7 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --- | --- |
-| `encryptionAlgorithm` | 正在使用的加密算法类型。 支持的加密类型包括 `PGP` 和 `GPG`. |
+| `encryptionAlgorithm` | 正在使用的加密算法类型。 支持的加密类型为`PGP`和`GPG`。 |
 | `publicKey` | 对应于客户管理的用于签署您的加密密钥的公共密钥。 此密钥必须为Base64编码。 |
 
 +++
@@ -264,7 +264,7 @@ curl -X POST \
 
 +++
 
-## 使用将您的云存储源连接到Experience Platform [!DNL Flow Service] API
+## 使用[!DNL Flow Service] API连接云存储源以Experience Platform
 
 在检索到加密密钥对后，您现在可以继续为云存储源创建源连接，并将加密数据导入Platform。
 
@@ -274,14 +274,14 @@ curl -X POST \
 * [[!DNL Apache HDFS]](../api/create/cloud-storage/hdfs.md)
 * [Azure Blob](../api/create/cloud-storage/blob.md)
 * [Azure Data Lake Storage Gen2](../api/create/cloud-storage/adls-gen2.md)
-* [Azure文件存储](../api/create/cloud-storage/azure-file-storage.md)
+* [Azure 文件存储](../api/create/cloud-storage/azure-file-storage.md)
 * [数据登陆区](../api/create/cloud-storage/data-landing-zone.md)
 * [FTP](../api/create/cloud-storage/ftp.md)
-* [Google云存储](../api/create/cloud-storage/google.md)
-* [oracle对象存储](../api/create/cloud-storage/oracle-object-storage.md)
+* [Google 云存储](../api/create/cloud-storage/google.md)
+* [Oracle 对象存储](../api/create/cloud-storage/oracle-object-storage.md)
 * [SFTP](../api/create/cloud-storage/sftp.md)
 
-创建基本连接后，您必须按照的教程中概述的步骤进行操作 [为云存储源创建源连接](../api/collect/cloud-storage.md) 以创建源连接、目标连接和映射。
+创建基本连接后，您必须按照教程中有关[为云存储源](../api/collect/cloud-storage.md)创建源连接的步骤进行操作，以便创建源连接、目标连接和映射。
 
 ## 为加密数据创建数据流 {#create-a-dataflow-for-encrypted-data}
 
@@ -290,11 +290,11 @@ curl -X POST \
 >要创建用于加密数据提取的数据流，您必须具备以下条件：
 >
 >* [公钥ID](#create-encryption-key-pair)
->* [源连接ID](../api/collect/cloud-storage.md#source)
+>* [Source连接ID](../api/collect/cloud-storage.md#source)
 >* [目标连接ID](../api/collect/cloud-storage.md#target)
->* [映射Id](../api/collect/cloud-storage.md#mapping)
+>* [映射ID](../api/collect/cloud-storage.md#mapping)
 
-POST要创建数据流，请向 `/flows` 的端点 [!DNL Flow Service] API。 要摄取加密数据，您必须添加 `encryption` 部分至 `transformations` 属性并包括 `publicKeyId` 之前步骤中创建的标记。
+要创建数据流，请向[!DNL Flow Service] API的`/flows`端点发出POST请求。 要摄取加密数据，您必须将`encryption`部分添加到`transformations`属性中，并包含在先前步骤中创建的`publicKeyId`。
 
 **API格式**
 
@@ -360,11 +360,11 @@ curl -X POST \
 | `sourceConnectionIds` | 源连接ID。 此ID表示数据从源到Platform的传输。 |
 | `targetConnectionIds` | 目标连接ID 此ID表示数据在被带入Platform后所处的位置。 |
 | `transformations[x].params.mappingId` | 映射ID。 |
-| `transformations.name` | 摄取加密文件时，必须提供 `Encryption` 作为数据流的附加转换参数。 |
+| `transformations.name` | 摄取加密文件时，必须提供`Encryption`作为数据流的附加转换参数。 |
 | `transformations[x].params.publicKeyId` | 您创建的公钥ID。 此ID是用来加密云存储数据的加密密钥对的一半。 |
 | `scheduleParams.startTime` | 以纪元时间表示的数据流开始时间。 |
-| `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`， `minute`， `hour`， `day`，或 `week`. |
-| `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 间隔的值应为非零整数。 当频率设置为时，不需要间隔 `once` 并且应大于或等于 `15` 其他频率值。 |
+| `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`、`minute`、`hour`、`day`或`week`。 |
+| `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 间隔的值应为非零整数。 当频率设置为`once`时不需要间隔，其他频率值应大于或等于`15`。 |
 
 +++
 
@@ -372,7 +372,7 @@ curl -X POST \
 
 +++查看示例响应
 
-成功的响应会返回ID (`id`)。
+成功的响应返回已加密数据新创建的数据流的ID (`id`)。
 
 ```json
 {
@@ -442,7 +442,7 @@ curl -X POST \
 
 +++查看示例响应
 
-成功的响应会返回ID (`id`)。
+成功的响应返回已加密数据新创建的数据流的ID (`id`)。
 
 ```json
 {
@@ -457,7 +457,7 @@ curl -X POST \
 
 ### 删除加密密钥 {#delete-encryption-keys}
 
-DELETE要删除您的加密密钥，请向 `/encryption/keys` 端点，并提供您的公钥ID作为标头参数。
+要删除您的加密密钥，请向`/encryption/keys`端点发出DELETE请求，并提供您的公共密钥ID作为标头参数。
 
 **API格式**
 
@@ -485,7 +485,7 @@ curl -X DELETE \
 
 ### 验证加密密钥 {#validate-encryption-keys}
 
-GET要验证您的加密密钥，请向 `/encryption/keys/validate/` 端点，并提供要验证为标头参数的公钥ID。
+要验证加密密钥，请向`/encryption/keys/validate/`端点发出GET请求，并提供要作为标头参数验证的公钥ID。
 
 ```http
 GET /data/foundation/connectors/encryption/keys/validate/{PUBLIC_KEY_ID}
@@ -513,7 +513,7 @@ curl -X GET \
 
 >[!TAB 有效]
 
-有效的公钥ID返回状态 `Active` 以及您的公钥ID。
+有效的公钥ID返回`Active`状态以及您的公钥ID。
 
 ```json
 {
@@ -524,7 +524,7 @@ curl -X GET \
 
 >[!TAB 无效]
 
-无效的公钥ID返回状态 `Expired` 以及您的公钥ID。
+无效的公钥ID返回状态`Expired`以及您的公钥ID。
 
 ```json
 {
@@ -540,7 +540,7 @@ curl -X GET \
 
 加密的数据摄取不支持在源中摄取循环或多级别文件夹。 所有加密文件必须包含在单个文件夹中。 不支持在单个源路径中包含多个文件夹的通配符。
 
-以下是受支持的文件夹结构的示例，其中源路径为 `/ACME-customers/*.csv.gpg`.
+以下是受支持的文件夹结构的示例，其中源路径为`/ACME-customers/*.csv.gpg`。
 
 在此方案中，粗体格式的文件将被摄取到Experience Platform中。
 
@@ -551,7 +551,7 @@ curl -X GET \
    * File4.json
    * **文件5.csv.gpg**
 
-以下是不受支持的文件夹结构的示例，其中源路径为 `/ACME-customers/*`.
+以下是不受支持的文件夹结构的示例，其中源路径为`/ACME-customers/*`。
 
 在此方案中，流运行将失败，并返回一则错误消息，指示无法从源复制数据。
 
@@ -568,4 +568,4 @@ curl -X GET \
 
 ## 后续步骤
 
-通过阅读本教程，您已为云存储数据创建了一个加密密钥对，并创建了数据流以使用摄取您的加密数据。 [!DNL Flow Service API]. 有关数据流完整性、错误和量度的状态更新，请阅读以下指南： [使用监控数据流 [!DNL Flow Service] API](./monitor.md).
+通过完成本教程，您已为云存储数据创建加密密钥对，并使用[!DNL Flow Service API]创建数据流以摄取加密数据。 有关数据流完整性、错误和量度的状态更新，请参阅[使用 [!DNL Flow Service] API](./monitor.md)监视数据流的指南。

@@ -4,18 +4,18 @@ description: 了解如何使用Data Distiller浏览和分析Python笔记本中�
 exl-id: 1dd4cf6e-f7cc-4f4b-afbd-bfc1d342a2c3
 source-git-commit: 27834417a1683136a173996cff1fd422305e65b9
 workflow-type: tm+mt
-source-wordcount: '808'
-ht-degree: 15%
+source-wordcount: '760'
+ht-degree: 13%
 
 ---
 
 # 探索性数据分析
 
-本文档提供了一些使用Data Distiller探索和分析来自的数据(例如 [!DNL Python] 笔记本。
+本文档提供了使用Data Distiller浏览和分析[!DNL Python]笔记本中的数据的一些基本示例和最佳实践。
 
 ## 开始使用
 
-在继续本指南之前，请确保已在中创建了到Data Distiller的连接， [!DNL Python] 笔记本。 有关如何执行操作的说明，请参阅文档 [连接 [!DNL Python] notebook to Data Distiller](./establish-connection.md).
+在继续本指南之前，请确保已在[!DNL Python]笔记本中创建了到Data Distiller的连接。 有关如何[将 [!DNL Python] 笔记本连接到Data Distiller](./establish-connection.md)的说明，请参阅文档。
 
 ## 获取基本统计信息 {#basic-statistics}
 
@@ -42,9 +42,9 @@ df
 
 ## 创建大型数据集的采样版本 {#create-dataset-sample}
 
-如果要查询的数据集非常大，或者如果不需要探索查询的准确结果，请使用 [取样功能](../../key-concepts/dataset-samples.md) 可用于Data Distiller查询。 此过程分为两步：
+如果要查询的数据集非常大，或者不需要通过探索性查询获得准确的结果，请使用可用于Data Distiller查询的[取样功能](../../key-concepts/dataset-samples.md)。 此过程分为两步：
 
-- 首先， **分析** 用于创建具有指定采样率的采样版本的数据集
+- 首先，**分析**&#x200B;数据集以创建具有指定采样率的采样版本
 - 接下来，查询数据集的采样版本。 根据应用于采样数据集的函数，您可能希望将输出扩展到整个数据集的数字
 
 ### 创建5%的示例 {#create-sample}
@@ -64,7 +64,7 @@ qs_cursor.query(analyze_table_query, output="raw")
 
 ### 查看示例 {#view-sample}
 
-您可以使用 `sample_meta` 函数以查看从给定数据集创建的任何示例。 下面的代码片段演示了如何使用 `sample_meta` 函数。
+您可以使用`sample_meta`函数查看从给定数据集创建的任何示例。 下面的代码段演示了如何使用`sample_meta`函数。
 
 ```python
 sampled_version_of_table_query = f'''SELECT sample_meta('{table_name}')'''
@@ -105,7 +105,7 @@ Approximate count: 1284600.0 using 5.0% sample
 
 ## 电子邮件漏斗分析 {#email-funnel-analysis}
 
-漏斗分析是一种了解实现目标结果所需的步骤以及完成每个步骤的用户数量的方法。 以下示例对导致用户订阅新闻稿的步骤进行了简单的漏斗分析。 订阅结果由以下事件类型表示 `web.formFilledOut`.
+漏斗分析是一种了解实现目标结果所需的步骤以及完成每个步骤的用户数量的方法。 以下示例对导致用户订阅新闻稿的步骤进行了简单的漏斗分析。 订阅结果由`web.formFilledOut`的事件类型表示。
 
 首先，运行查询以获取每一步的用户数。
 
@@ -138,7 +138,7 @@ funnel_df
 
 ### 绘制查询结果 {#plot-results}
 
-接下来，使用 [!DNL Python] `plotly` 库：
+接下来，使用[!DNL Python] `plotly`库绘制查询结果：
 
 ```python
 import plotly.express as px
@@ -156,14 +156,14 @@ fig.show()
 
 ## 事件关联 {#event-correlations}
 
-另一种常见分析是计算事件类型与目标转化事件类型之间的关联。 在此示例中，订阅事件由表示 `web.formFilledOut`. 此示例使用 [!DNL Spark] 可在Data Distiller查询中使用的函数以实现以下步骤：
+另一种常见分析是计算事件类型与目标转化事件类型之间的关联。 在此示例中，订阅事件由`web.formFilledOut`表示。 此示例使用Data Distiller查询中可用的[!DNL Spark]函数来实现以下步骤：
 
 1. 按配置文件计算每种事件类型的事件数。
-2. 跨配置文件汇总每个事件类型的计数，并通过计算每个事件类型的关联 `web,formFilledOut`.
+2. 跨配置文件聚合每个事件类型的计数，并使用`web,formFilledOut`计算每个事件类型的关联。
 3. 将计数和关联的数据流转换为每个特征的皮尔森相关系数（事件类型计数）与目标事件的表。
 4. 以图表的形式显示结果。
 
-此 [!DNL Spark] 函数会聚合数据以返回一个小型结果表，这样您就可以在整个数据集中执行此类查询。
+[!DNL Spark]函数聚合数据以返回一个小型结果表，这样您就可以在整个数据集中执行此类型的查询。
 
 ```python
 large_correlation_query=f'''
@@ -215,7 +215,7 @@ large_correlation_df
 
 |   | webFormsFilled_totalUsers | advertisingClicks_totalUsers | productViews_totalUsers | productPurchases_totalUsers | propositionDismisses_totaUsers | propositionDisplays_totaUsers | propositionInteracts_totalUsers | emailClicks_totalUsers | emailOpens_totalUsers | webLinksClicks_totalUsers | ... | webForms_advertisingClicks | webForms_productViews | webForms_productPurchases | webForms_propositionDismisses | webForms_propositionInteracts | webForms_emailClicks | webForms_emailOpens | webForms_emailSends | webForms_webLinkClicks | webForms_webPageViews |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 0 | 17860 | 7610 | 37915 | 0 | 2889 | 37650 | 2964 | 51581 | 239028 | 37581 | … | 0.026805 | 0.2779 | None | 0.06014 | 0.143656 | 0.305657 | 0.218874 | 0.192836 | 0.259353 | None |
+| 0 | 17860 | 7610 | 37915 | 0 | 2889 | 37650 | 2964 | 51581 | 239028 | 37581 | ... | 0.026805 | 0.2779 | None | 0.06014 | 0.143656 | 0.305657 | 0.218874 | 0.192836 | 0.259353 | None |
 
 {style="table-layout:auto"}
 
@@ -249,7 +249,7 @@ corrdf.fillna(0)
 | 10 | `webForms_webPageViews` | 0.000000 | webPageViews | 0.000000 |
 
 
-最后，您可以可视化与 `matplotlib` [!DNL Python] 库：
+最后，您可以可视化与`matplotlib` [!DNL Python]库的关联：
 
 ```python
 import matplotlib.pyplot as plt
@@ -258,8 +258,8 @@ sns.barplot(data=corrdf.fillna(0), y="feature", x="pearsonCorrelation")
 ax.set_title("Pearson Correlation of Events with the outcome event")
 ```
 
-![事件结果的皮尔逊事件关联的条形图](../../images/data-distiller/pearson-correlations.png)
+![事件结果的皮尔逊关联条形图](../../images/data-distiller/pearson-correlations.png)
 
 ## 后续步骤
 
-通过阅读本文档，您已了解如何使用Data Distiller来探索和分析来自的数据 [!DNL Python] 笔记本。 在机器学习环境中创建从Experience Platform到馈送自定义模型的功能管道的下一步是 [机器学习的工程师功能](./feature-engineering.md).
+通过阅读本文档，您已了解如何使用Data Distiller浏览和分析[!DNL Python]笔记本中的数据。 在机器学习环境中创建从Experience Platform到馈送自定义模型的功能管道的下一步是[为机器学习设计功能](./feature-engineering.md)。

@@ -33,7 +33,7 @@ curl -X GET \
 
 **响应**
 
-响应包括对象数组，每个对象表示一个可用的命名空间。 带有&quot;[!UICONTROL 自定义]“ ”的值[!UICONTROL false]&quot;是标准命名空间，而具有&quot;[!UICONTROL 自定义]“ ”的值[!UICONTROL true]”是您的组织创建的命名空间。
+响应包括对象数组，每个对象表示一个可用的命名空间。 “[!UICONTROL 自定义]”值为“[!UICONTROL false]”的命名空间是标准命名空间，而“[!UICONTROL 自定义]”值为“[!UICONTROL true]”的命名空间是您的组织创建的命名空间。
 
 >[!NOTE]
 >
@@ -79,4 +79,4 @@ curl -X GET \
 
 ## 后续步骤
 
-继续下一教程以 [创建自定义命名空间](./create-custom-namespace.md)
+继续下一教程以[创建自定义命名空间](./create-custom-namespace.md)

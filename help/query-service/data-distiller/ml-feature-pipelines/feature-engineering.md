@@ -4,27 +4,27 @@ description: 了解如何将Adobe Experience Platform中的数据转换为机器
 exl-id: 7fe017c9-ec46-42af-ac8f-734c4c6e24b5
 source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
-source-wordcount: '1161'
+source-wordcount: '1140'
 ht-degree: 13%
 
 ---
 
 # 机器学习的工程师功能
 
-本文档演示如何将Adobe Experience Platform中的数据转换为 **功能**&#x200B;或变量一起使用。 此过程称为 **特征工程**. 使用Data Distiller可大规模计算ML功能，并将这些功能共享到您的机器学习环境。 其中涉及以下各项：
+本文档演示如何将Adobe Experience Platform中的数据转换为&#x200B;**功能**&#x200B;或可由机器学习模型使用的变量。 此过程称为&#x200B;**功能工程**。 使用Data Distiller可大规模计算ML功能，并将这些功能共享到您的机器学习环境。 其中涉及以下各项：
 
 1. 创建查询模板以定义要为模型计算的目标标签和特征
 2. 执行查询并将结果存储在训练数据集中
 
 ## 定义培训数据 {#define-training-data}
 
-下方的示例说明了从Experience Events数据集为模型导出训练数据的查询，该数据用于预测用户订阅新闻稿的倾向。 订阅事件由事件类型表示 `web.formFilledOut`数据集中的、和其他行为事件用于派生用户档案级别的功能，以预测订阅。
+下方的示例说明了从Experience Events数据集为模型导出训练数据的查询，该数据用于预测用户订阅新闻稿的倾向。 订阅事件由事件类型`web.formFilledOut`表示，数据集中的其他行为事件用于派生配置文件级功能以预测订阅。
 
 ### 查询正标签和负标签 {#query-positive-and-negative-labels}
 
 用于训练（监督）机器学习模型的完整数据集包括表示要预测的结果的目标变量或标签，以及一组用于描述用于训练模型的示例用户档案的特征或解释变量。
 
-在这种情况下，标签是一个变量，名为 `subscriptionOccurred` 如果用户配置文件具有类型为的事件，则等于1 `web.formFilledOut` ，否则为0。 以下查询从事件数据集中返回一组50,000个用户，其中包括具有正标签的所有用户(`subscriptionOccurred = 1`)加上一组随机选择的带负标签的用户以完成50,000个用户的样本大小。 这可确保训练数据包含可供模型学习的正面和负面示例。
+在这种情况下，标签是一个名为`subscriptionOccurred`的变量，如果用户配置文件具有类型为`web.formFilledOut`的事件，则其等于1，否则为0。 以下查询从事件数据集返回一组50,000个用户，其中包括具有正标签(`subscriptionOccurred = 1`)的所有用户，加上随机选择的具有负标签的用户集，以完成50,000个用户样本的大小。 这可确保训练数据包含可供模型学习的正面和负面示例。
 
 ```python
 from aepp import queryservice
@@ -70,13 +70,13 @@ df_labels.head()
 
 通过适当的查询，您可以将数据集中的事件收集到有意义的数字特征中，这些特征可用于训练倾向模型。 下面显示了示例事件：
 
-- **电子邮件数量** 已发送用于营销目的并由用户接收的数量。
-- 这些电子邮件中属于 **已打开**.
-- 这些电子邮件中用户在 **已选择** 链接。
-- **产品数量** 已查看的项目。
-- 数量 **与之交互的建议**.
-- 数量 **已驳回的建议**.
-- 数量 **已选择的链接**.
+- **发送用于营销目的并由用户接收的电子邮件数量**。
+- 这些电子邮件中&#x200B;**打开的部分**。
+- 用户&#x200B;**选择**&#x200B;链接的电子邮件部分。
+- **查看的产品数**。
+- 与&#x200B;**交互的**&#x200B;建议数。
+- 已驳回的&#x200B;**建议数**。
+- 已选择的&#x200B;**链接数**。
 - 收到两封连续电子邮件之间的分钟数。
 - 打开的两封连续电子邮件之间的分钟数。
 - 用户实际选择链接的两封连续电子邮件之间的分钟数。
@@ -246,9 +246,9 @@ df_training_set.head()
 这样做需要对训练集查询进行一些修改：
 
 - 添加逻辑以创建新训练数据集（如果不存在），否则，将新标签和功能插入到现有训练数据集中。 这需要训练集查询的一系列两个版本：
-   - 首先，使用 `CREATE TABLE IF NOT EXISTS {table_name} AS` 语句
-   - 接下来，使用 `INSERT INTO {table_name}` 语句适用于训练数据集已存在的情况
-- 添加 `SNAPSHOT BETWEEN $from_snapshot_id AND $to_snapshot_id` 语句，将查询限制为在指定间隔内添加的事件数据。 此 `$` 快照ID的前缀指示它们是执行查询模板时将传入的变量。
+   - 首先，使用`CREATE TABLE IF NOT EXISTS {table_name} AS`语句
+   - 接下来，对训练数据集已存在的情况下使用`INSERT INTO {table_name}`语句
+- 添加`SNAPSHOT BETWEEN $from_snapshot_id AND $to_snapshot_id`语句以将查询限制为在指定间隔内添加的事件数据。 快照ID上的`$`前缀表示它们是在执行查询模板时要传入的变量。
 
 应用这些更改会导致以下查询：
 
@@ -482,6 +482,6 @@ Query is still in progress, sleeping…
 Query completed successfully in 473.8 seconds
 ```
 
-## 后续步骤:
+## 后续步骤：
 
-通过阅读本文档，您已了解如何将Adobe Experience Platform中的数据转换为机器学习模型可以使用的功能或变量。 在机器学习环境中创建从Experience Platform到馈送自定义模型的功能管道的下一步是 [导出功能数据集](./export-data.md).
+通过阅读本文档，您已了解如何将Adobe Experience Platform中的数据转换为机器学习模型可以使用的功能或变量。 在机器学习环境中创建从Experience Platform到馈送自定义模型的功能管道的下一步是[导出功能数据集](./export-data.md)。

@@ -2,7 +2,8 @@
 title: Real-Time CDP中的示例用例
 description: 查看跨服务用例示例，以充分利用您的Real-Time CDP实施。
 feature: Use Cases
-source-git-commit: a58476e0a52cce763a114b2b4f4314fdb2e3f4c9
+exl-id: 2d92a9d3-7648-4241-904e-48f5b2e16023
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '351'
 ht-degree: 6%
@@ -39,7 +40,7 @@ Adobe Real-Time CDP提供了对合作伙伴标识符的广泛支持，允许您�
     </a>
     </div>
     <p>
-    <em>在不依赖第三方Cookie的情况下吸引和赢取新客户</em>
+    <em>在不依赖第三方Cookie的情况下吸引和获取新客户</em>
     <p>
   </td>
   <td>
@@ -61,17 +62,17 @@ Adobe Real-Time CDP提供了对合作伙伴标识符的广泛支持，允许您�
     </a>
     <div>
       <a href="../partner-data/offsite-retargeting.md">
-    <strong>未经身份验证的访客的异地重定向</strong>
+    <strong>未经身份验证的访客的异地重定位</strong>
     </a>
     </div>
     <p>
-    <em>了解如何构建未经身份验证的访客受众，并使用合作伙伴提供的持久ID重新定位他们。</em>
+    <em>了解如何构建未经身份验证的访客的受众，并使用合作伙伴提供的持久ID重新定位他们。</em>
     <p>
   </td>
   </tr>
   </table>
 
-### 配置文件扩充 {#profile-enrichment}
+### 轮廓扩充 {#profile-enrichment}
 
 <table style="margin-top: 0 !important">
 <tr>
@@ -81,7 +82,7 @@ Adobe Real-Time CDP提供了对合作伙伴标识符的广泛支持，允许您�
     </a>
     <div>
       <a href="../partner-data/supplement-first-party-profiles.md">
-    <strong>使用合作伙伴提供的属性补充第一方用户档案</strong>
+    <strong>使用合作伙伴提供的属性补充第一方配置文件</strong>
     </a>
     </div>
     <p>
@@ -91,7 +92,7 @@ Adobe Real-Time CDP提供了对合作伙伴标识符的广泛支持，允许您�
   </tr>
   </table>
 
-## 个性化、洞察、参与 {#personalization-insights-engagement}
+## Personalization，洞察，参与 {#personalization-insights-engagement}
 
 <table style="margin-top: 0 !important">
 <tr>
@@ -105,7 +106,7 @@ Adobe Real-Time CDP提供了对合作伙伴标识符的广泛支持，允许您�
     </a>
     </div>
     <p>
-    <em>以明智和负责任的方式重新吸引放弃转化的客户。 通过体验吸引失效的客户，以提高转化率并增加客户存留期值。</em>
+    <em>以明智和负责任的方式重新吸引放弃转化的客户。 与有体验的失效客户接洽，以提高转化率并增加客户端生命周期值。</em>
     <p>
   </td>
   </tr>

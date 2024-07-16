@@ -5,7 +5,7 @@ exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
 source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
 workflow-type: tm+mt
 source-wordcount: '1291'
-ht-degree: 42%
+ht-degree: 36%
 
 ---
 
@@ -28,7 +28,7 @@ ht-degree: 42%
 
 为了提高系统中执行的活动的透明度和可见性，Adobe Experience Platform允许您以“审核日志”的形式审核各种服务和功能的用户活动。 这些日志形成审核记录，可以帮助对Platform上的问题进行故障诊断，并帮助您的企业有效地遵守公司数据管理政策和法规要求。
 
-从基本意义上讲，审核日志将说明&#x200B;**谁**&#x200B;执行了&#x200B;**什么**&#x200B;操作，以及在&#x200B;**什么时候**&#x200B;执行的。日志中记录的每个操作都包含元数据，这些元数据可指示操作类型、日期和时间、执行操作的用户的电子邮件 ID 以及与操作类型相关的其他属性。
+从基本意义上说，审核日志可告知&#x200B;**谁**&#x200B;执行了&#x200B;**什么**&#x200B;操作，以及&#x200B;**何时**。 日志中记录的每个操作都包含元数据，这些元数据指示操作类型、日期和时间、执行操作的用户的电子邮件ID以及与操作类型相关的其他属性。
 
 本文档介绍Platform中的审核日志，包括如何在UI或API中查看和管理它们。
 
@@ -45,30 +45,30 @@ ht-degree: 42%
 | [类](../../../xdm/schema/composition.md#class) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
 | 计算属性 | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
 | [客户人工智能实例](../../../intelligent-services/customer-ai/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用</li><li>禁用</li></ul> |
-| [数据集](../../../catalog/datasets/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>为以下项启用 [Real-time Customer Profile](../../../profile/home.md)</li><li>为配置文件禁用</li><li>添加数据</li><li>删除批次</li></ul> |
+| [数据集](../../../catalog/datasets/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>为[实时客户个人资料](../../../profile/home.md)启用</li><li>为轮廓禁用</li><li>添加数据</li><li>删除批次</li></ul> |
 | [数据流](../../../datastreams/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用</li><li>禁用</li><li>[编辑映射](../../../datastreams/data-prep.md)</li></ul> |
 | [数据类型](../../../xdm/schema/composition.md#data-type) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
-| [目标](../../../destinations/home.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用</li><li>禁用</li><li>数据集激活</li><li>数据集移除</li><li>配置文件激活</li><li>配置文件移除</li></ul> |
+| [目标](../../../destinations/home.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用</li><li>禁用</li><li>数据集激活</li><li>数据集移除</li><li>轮廓激活</li><li>轮廓移除</li></ul> |
 | [字段组](../../../xdm/schema/composition.md#field-group) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
 | [身份图](../../../identity-service/features/identity-graph-viewer.md) | <ul><li>视图</li></ul> |
 | [身份命名空间](../../../identity-service/features/namespaces.md) | <ul><li>创建</li><li>更新</li></ul> |
 | [合并策略](../../../profile/merge-policies/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
 | [产品配置文件](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
-| [查询](../../../query-service/ui/overview.md) | <ul><li>Execute</li></ul> |
+| [查询](../../../query-service/ui/overview.md) | <ul><li>执行</li></ul> |
 | [查询模板](../../../query-service/ui/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
-| [角色（基于属性的访问控制）](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>添加用户</li><li>删除用户</li></ul> |
+| [角色（基于属性的访问控制）](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>添加用户</li><li>移除用户</li></ul> |
 | [沙盒](../../../sandboxes/home.md) | <ul><li>创建</li><li>更新</li><li>重置</li><li>Delete</li></ul> |
 | [计划的查询](../../../query-service/ui/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
-| [架构](../../../xdm/schema/composition.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>为配置文件启用</li></ul> |
+| [架构](../../../xdm/schema/composition.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>为轮廓启用</li></ul> |
 | [区段](../../../segmentation/home.md) | <ul><li>创建</li><li>Delete</li><li>区段激活</li><li>区段移除</li></ul> |
-| [源数据流](../../../sources/connectors/tutorials/ui/../../../tutorials/ui/update.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用</li><li>禁用</li><li>数据集激活</li><li>数据集移除</li><li>配置文件激活</li><li>配置文件移除</li></ul> |
+| [Source数据流](../../../sources/connectors/tutorials/ui/../../../tutorials/ui/update.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用</li><li>禁用</li><li>数据集激活</li><li>数据集移除</li><li>配置文件激活</li><li>轮廓移除</li></ul> |
 | [工单](../../../hygiene/home.md) | <ul><li>创建</li></ul> |
 
 ## 访问审核日志
 
-为您的组织启用该功能后，系统会在活动发生时自动收集审核日志。您无需手动启用日志收集。
+为您的组织启用该功能后，系统会在活动发生时自动收集审核日志。 您无需手动启用日志收集。
 
-要查看和导出审核日志，您必须具有 **[!UICONTROL 查看用户活动日志]** 已授予访问控制权限(可在 [!UICONTROL 数据管理] 类别)。 要了解如何管理Platform功能的各项权限，请参阅 [访问控制文档](../../../access-control/home.md).
+为了查看和导出审核日志，您必须授予&#x200B;**[!UICONTROL 查看用户活动日志]**&#x200B;访问控制权限（可在[!UICONTROL 数据管理]类别下找到）。 要了解如何管理Platform功能的各个权限，请参阅[访问控制文档](../../../access-control/home.md)。
 
 ## 在 UI 中管理审核日志 {#managing-audit-logs-in-the-ui}
 
@@ -77,15 +77,15 @@ ht-degree: 42%
 >title="说明"
 >abstract="<ul><li>在左侧导航中选择<b>审核</b>。“审核”工作区显示记录日志的列表，默认按最新到最旧排序。</li>   <li> 注意：将审核日志保留 365 天，此后将从系统中删除审核日志。因此，只能回溯最长为期 365 天。如果需要回溯超过 365 天之前的数据，则应定期导出日志以满足您的内部政策要求。 </li><li>从列表中选择一个事件以在右边栏中查看其详细信息。 </li><li>选择漏斗图标以显示过滤器控件的列表，帮助缩小结果范围。无论选择什么过滤器，都仅显示最后 1000 条记录。 </li><li>要导出审核日志的当前列表，请选择&#x200B;**下载日志**。</li><li>有关此功能的更多帮助，请参阅 Experience League 上的<a href="https://experienceleague.adobe.com/docs/experience-platform/landing/governance-privacy-security/audit-logs/overview.html?lang=zh-Hans">审核日志概述</a>。</li></ul>"
 
-您可以在中查看其他Experience Platform功能的审核日志 **[!UICONTROL 审核]** Platform UI中的工作区。 工作区会显示记录的日志列表，默认情况下，这些日志按从最近到最近的顺序排序。
+您可以在Platform UI的&#x200B;**[!UICONTROL 审核]**&#x200B;工作区中查看其他Experience Platform功能的审核日志。 工作区会显示记录的日志列表，默认情况下，这些日志按从最近到最近的顺序排序。
 
-![审核功能板在左侧菜单中突出显示审核。](../../images/audit-logs/audits.png)
+![左侧菜单中突出显示“审核”的“审核”仪表板。](../../images/audit-logs/audits.png)
 
 审核日志会保留365天，之后将从系统中将其删除。 因此，只能回溯最长为期 365 天。如果您需要的数据超过365天，则应定期导出日志以满足内部策略要求。
 
 从列表中选择一个事件以在右边栏中查看其详细信息。
 
-![审核功能板“活动日志”选项卡，突出显示事件详细信息面板。](../../images/audit-logs/select-event.png)
+![审核仪表板活动日志选项卡，事件详细信息面板突出显示。](../../images/audit-logs/select-event.png)
 
 ### 筛选审核日志
 
@@ -94,57 +94,57 @@ ht-degree: 42%
 >由于这是一项新功能，显示的数据仅追溯到2022年3月。 根据所选资源，从2022年1月起，可能会提供以前的数据。
 
 
-选择漏斗图标(![过滤器图标](../../images/audit-logs/icon.png))，显示筛选器控件列表以帮助缩小结果范围。 仅显示最后1000条记录，这与选择的各种过滤器无关。
+选择漏斗图标（![筛选器图标](../../images/audit-logs/icon.png)）以显示筛选器控件列表，帮助缩小结果范围。 仅显示最后1000条记录，这与选择的各种过滤器无关。
 
-![突出显示筛选活动日志的审核仪表板。](../../images/audit-logs/filters.png)
+![已突出显示筛选活动日志的审核仪表板。](../../images/audit-logs/filters.png)
 
-在 UI 中有以下过滤器可用于审核事件：
+以下过滤器可用于UI中的审核事件：
 
-| 过滤器 | 描述 |
+| 筛选条件 | 描述 |
 | --- | --- |
-| [!UICONTROL 类别] | 使用下拉菜单按以下项筛选显示的结果 [类别](#category). |
+| [!UICONTROL 类别] | 使用下拉菜单按[类别](#category)筛选显示的结果。 |
 | [!UICONTROL 操作] | 按操作筛选。 每项服务的可用操作可在上面的资源表中查看。 |
-| [!UICONTROL 用户] | 输入完整的用户ID(例如， `johndoe@acme.com`)，以按用户筛选。 |
-| [!UICONTROL 状态] | 按操作是否允许（完成）或由于缺少而拒绝进行筛选 [访问控制](../../../access-control/home.md) 权限。 |
+| [!UICONTROL 用户] | 输入完整的用户ID（例如，`johndoe@acme.com`）以按用户筛选。 |
+| [!UICONTROL 状态] | 按由于缺少[访问控制](../../../access-control/home.md)权限而允许（完成）还是拒绝操作进行筛选。 |
 | [!UICONTROL 日期] | 选择开始日期和/或结束日期，以定义筛选结果的日期范围。 可导出具有90天回顾期的数据（例如，2021-12-15到2022-03-15）。 这可能因事件类型而异。 |
 
-要移除过滤器，请选择相关过滤器的药丸图标上的“X”，或选择 **[!UICONTROL 全部清除]** 以删除所有筛选器。
+要移除过滤器，请选择相关过滤器的药丸图标上的“X”，或选择&#x200B;**[!UICONTROL 全部清除]**&#x200B;以移除所有过滤器。
 
-![突出显示具有清除过滤器的审核仪表板。](../../images/audit-logs/clear-filters.png)
+![带有清除筛选器的审核仪表板突出显示。](../../images/audit-logs/clear-filters.png)
 
 返回的审核日志数据包含以下关于满足所选筛选条件的所有查询的信息。
 
-| 列名称 | 描述 |
+| 列名 | 描述 |
 |---|---|
-| [!UICONTROL 时间戳] | 在中执行的操作的确切日期和时间 `month/day/year hour:minute AM/PM` 格式。 |
-| [!UICONTROL 资源名称] | 的值 [!UICONTROL 资源名称] 字段取决于选为过滤器的类别。 |
+| [!UICONTROL 时间戳] | 以`month/day/year hour:minute AM/PM`格式执行的操作的确切日期和时间。 |
+| [!UICONTROL 资源名称] | [!UICONTROL 资源名称]字段的值取决于选择作为筛选器的类别。 |
 | [!UICONTROL 类别] | 此字段与在筛选器下拉列表中选定的类别匹配。 |
 | [!UICONTROL 操作] | 可用的操作取决于选作过滤器的类别。 |
 | [!UICONTROL 用户] | 此字段提供执行查询的用户ID。 |
 
-![突出显示筛选活动日志的审核仪表板。](../../images/audit-logs/filtered.png)
+![已突出显示筛选活动日志的审核仪表板。](../../images/audit-logs/filtered.png)
 
 ### 导出审核日志
 
 要导出审核日志的当前列表，请选择&#x200B;**[!UICONTROL 下载日志]**。
 
-![带以下项的审核仪表板 [!UICONTROL 下载日志] 突出显示。](../../images/audit-logs/download.png)
+![突出显示了[!UICONTROL 下载日志]的审核仪表板。](../../images/audit-logs/download.png)
 
-在显示的对话框中，选择您首选的格式(或者 **[!UICONTROL CSV]** 或 **[!UICONTROL JSON]**)，然后选择 **[!UICONTROL 下载]**. 浏览器下载生成的文件，并将其保存到您的计算机。
+在出现的对话框中，选择您首选的格式（**[!UICONTROL CSV]**&#x200B;或&#x200B;**[!UICONTROL JSON]**），然后选择&#x200B;**[!UICONTROL 下载]**。 浏览器下载生成的文件，并将其保存到您的计算机。
 
-![文件格式选择对话框 [!UICONTROL 下载] 突出显示。](../../images/audit-logs/select-download-format.png)
+![带有[!UICONTROL 下载]的文件格式选择对话框突出显示。](../../images/audit-logs/select-download-format.png)
 
 ## 在API中管理审核日志
 
-您在 UI 中可以执行的所有操作也可以使用 API 调用来完成。请参阅 [API参考文档](https://www.adobe.io/experience-platform-apis/references/audit-query/) 以了解更多信息。
+您可以在UI中执行的所有操作也可以使用API调用来完成。 有关详细信息，请参阅[API参考文档](https://www.adobe.io/experience-platform-apis/references/audit-query/)。
 
 ## 管理Adobe Admin Console的审核日志
 
-要了解如何管理Adobe Admin Console中的活动的审核日志，请参阅以下内容 [文档](https://helpx.adobe.com/enterprise/using/audit-logs.html).
+要了解如何管理Adobe Admin Console中的活动的审核日志，请参阅以下[文档](https://helpx.adobe.com/enterprise/using/audit-logs.html)。
 
 ## 后续步骤和其他资源
 
-本指南介绍了如何管理Experience Platform中的审核日志。 有关如何监控Platform活动的更多信息，请参阅相关的文档： [可观察性洞察](../../../observability/home.md) 和 [监控数据摄取](../../../ingestion/quality/monitor-data-ingestion.md).
+本指南介绍了如何管理Experience Platform中的审核日志。 有关如何监视Platform活动的更多信息，请参阅有关[可观察性分析](../../../observability/home.md)和[监视数据摄取](../../../ingestion/quality/monitor-data-ingestion.md)的文档。
 
 要加深您对Experience Platform中审核日志的了解，请观看以下视频：
 

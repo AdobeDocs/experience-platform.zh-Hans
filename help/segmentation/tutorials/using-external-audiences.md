@@ -22,13 +22,13 @@ Adobe Experience Platform支持导入外部受众的功能，这些受众随后�
 
 ## 快速入门
 
-本教程需要对各种 [!DNL Adobe Experience Platform] 创建受众时涉及的服务。 在开始本教程之前，请查看以下服务的文档：
+本教程需要对创建受众中涉及的各种[!DNL Adobe Experience Platform]服务有一定的了解。 在开始本教程之前，请查看以下服务的文档：
 
-- [分段服务](../home.md)：用于根据实时客户档案数据构建受众。
-- [Real-time Customer Profile](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
-- [体验数据模型(XDM)](../../xdm/home.md)：Platform用于组织客户体验数据的标准化框架。 为了更好地利用分段，请确保您的数据被作为配置文件和事件摄取，并根据 [数据建模的最佳实践](../../xdm/schema/best-practices.md).
-- [数据集](../../catalog/datasets/overview.md)：用于Experience Platform中数据持久化的存储和管理结构。
-- [流式摄取](../../ingestion/streaming-ingestion/overview.md)：Experience Platform如何实时从客户端和服务器端设备摄取和存储数据。
+- [分段服务](../home.md)：允许您根据实时客户个人资料数据构建受众。
+- [实时客户个人资料](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时客户个人资料。
+- [体验数据模型(XDM)](../../xdm/home.md)： Platform用于组织客户体验数据的标准化框架。 为了更好地利用分段，请确保根据用于数据建模的[最佳实践](../../xdm/schema/best-practices.md)，将您的数据作为配置文件和事件摄取。
+- [数据集](../../catalog/datasets/overview.md)：用于Experience Platform中数据持久性的存储和管理结构。
+- [流式引入](../../ingestion/streaming-ingestion/overview.md)：Experience Platform如何从客户端和服务器端设备实时引入和存储数据。
 
 ### 受众与区段定义
 
@@ -46,29 +46,29 @@ Adobe Experience Platform支持导入外部受众的功能，这些受众随后�
 
 使用外部受众的第一步是创建身份命名空间。 身份命名空间允许Platform关联受众源自何处。
 
-要创建身份命名空间，请按照 [身份命名空间指南](../../identity-service/features/namespaces.md#manage-namespaces). 创建身份命名空间时，请将源详细信息添加到身份命名空间，并标记其 [!UICONTROL 类型] as a **[!UICONTROL 非人员标识符]**.
+要创建身份命名空间，请按照[身份命名空间指南](../../identity-service/features/namespaces.md#manage-namespaces)中的说明操作。 创建身份命名空间时，请将源详细信息添加到身份命名空间，并将其[!UICONTROL Type]标记为&#x200B;**[!UICONTROL 非人员标识符]**。
 
-![非人员标识符在创建身份命名空间模式中突出显示。](../images/tutorials/external-audiences/identity-namespace-info.png)
+![创建身份命名空间模式中突出显示了非人员标识符。](../images/tutorials/external-audiences/identity-namespace-info.png)
 
 ## 为区段元数据创建架构
 
 创建身份命名空间后，您需要为将创建的区段创建新架构。
 
-要开始合成架构，请先选择 **[!UICONTROL 架构]** 左侧导航栏中，后面是 **[!UICONTROL 创建架构]** 在架构工作区的右上角。 从此处选择 **[!UICONTROL 浏览]** 查看所有可用的架构类型。
+要开始撰写架构，请先在左侧导航栏中选择&#x200B;**[!UICONTROL 架构]**，然后在架构工作区的右上角选择&#x200B;**[!UICONTROL 创建架构]**。 在此处，选择&#x200B;**[!UICONTROL 浏览]**&#x200B;以查看所有可用的架构类型。
 
 ![创建架构和浏览都会突出显示。](../images/tutorials/external-audiences/create-schema-browse.png)
 
-由于正在创建区段定义（一个预定义类），请选择 **[!UICONTROL 使用现有类]**. 现在，选择 **[!UICONTROL 区段定义]** 类，随后是 **[!UICONTROL 分配类]**.
+由于您正在创建区段定义（预定义的类），请选择&#x200B;**[!UICONTROL 使用现有类]**。 现在，选择&#x200B;**[!UICONTROL 区段定义]**&#x200B;类，然后选择&#x200B;**[!UICONTROL 分配类]**。
 
-![区段定义类被加亮。](../images/tutorials/external-audiences/assign-class.png)
+![区段定义类已突出显示。](../images/tutorials/external-audiences/assign-class.png)
 
 现在您的架构已创建，您需要指定哪个字段将包含区段ID。 此字段应当标记为主标识，并分配给您之前创建的命名空间。
 
 ![架构编辑器中突出显示将选定字段标记为主标识的复选框。](../images/tutorials/external-audiences/mark-primary-identifier.png)
 
-标记 `_id` 字段作为主标识，选择架构的标题，然后选择标记为的切换 **[!UICONTROL 个人资料]**. 选择 **[!UICONTROL 启用]** 要为以下项启用架构 [!DNL Real-Time Customer Profile].
+将`_id`字段标记为主要标识后，选择架构的标题，然后选择标记为&#x200B;**[!UICONTROL 配置文件]**&#x200B;的切换开关。 选择&#x200B;**[!UICONTROL 启用]**&#x200B;以启用[!DNL Real-Time Customer Profile]的架构。
 
-![为配置文件启用架构的切换在架构编辑器中突出显示。](../images/tutorials/external-audiences/schema-profile.png)
+![在架构编辑器中高亮显示启用配置文件的架构的切换开关。](../images/tutorials/external-audiences/schema-profile.png)
 
 现在，为配置文件启用此架构，并将主标识分配给您创建的非人员身份命名空间。 因此，这意味着使用此架构导入到Platform的区段元数据将被摄取到配置文件中，而不会与其他人员相关的配置文件数据合并。
 
@@ -76,13 +76,13 @@ Adobe Experience Platform支持导入外部受众的功能，这些受众随后�
 
 配置架构后，您将需要为区段元数据创建数据集。
 
-要创建数据集，请按照 [数据集用户指南](../../catalog/datasets/user-guide.md#create). 您应遵循 **[!UICONTROL 从架构创建数据集]** 选项，使用您之前创建的架构。
+要创建数据集，请按照[数据集用户指南](../../catalog/datasets/user-guide.md#create)中的说明操作。 您应该使用&#x200B;**[!UICONTROL 从架构创建数据集]**&#x200B;选项，使用您之前创建的架构。
 
-![数据集要基于的架构会突出显示。](../images/tutorials/external-audiences/select-schema.png)
+![要作为数据集基础的架构突出显示。](../images/tutorials/external-audiences/select-schema.png)
 
-创建数据集后，请继续按照 [数据集用户指南](../../catalog/datasets/user-guide.md#enable-profile) 为实时客户资料启用此数据集。
+创建数据集后，继续按照[数据集用户指南](../../catalog/datasets/user-guide.md#enable-profile)中的说明启用此数据集以用于实时客户个人资料。
 
-![为配置文件启用架构的切换开关会在“数据集”活动页面中突出显示。](../images/tutorials/external-audiences/dataset-profile.png)
+![为配置文件启用架构的切换开关在“数据集”活动页面中突出显示。](../images/tutorials/external-audiences/dataset-profile.png)
 
 ## 设置和导入受众数据
 
@@ -90,15 +90,15 @@ Adobe Experience Platform支持导入外部受众的功能，这些受众随后�
 
 ### 使用批处理连接摄取数据
 
-要创建批处理连接，您可以按照通用说明中的说明进行操作 [本地文件上传UI指南](../../sources/tutorials/ui/create/local-system/local-file-upload.md). 有关可结合使用摄取数据的可用源的完整列表，请阅读 [源概述](../../sources/home.md).
+要创建批处理连接，您可以按照通用[本地文件上传UI指南](../../sources/tutorials/ui/create/local-system/local-file-upload.md)中的说明进行操作。 有关可结合使用摄取数据的可用源的完整列表，请阅读[源概述](../../sources/home.md)。
 
 ### 使用流连接摄取数据
 
-要创建流连接，您可以按照 [API教程](../../sources/tutorials/api/create/streaming/http.md) 或 [用户界面教程](../../sources/tutorials/ui/create/streaming/http.md).
+要创建流连接，您可以按照[API教程](../../sources/tutorials/api/create/streaming/http.md)或[UI教程](../../sources/tutorials/ui/create/streaming/http.md)中的说明进行操作。
 
-创建流连接后，您将有权访问唯一的流端点，您可以将数据发送至。 要了解如何将数据发送到这些端点，请阅读 [有关流式记录数据的教程](../../ingestion/tutorials/streaming-record-data.md#ingest-data).
+创建流连接后，您将有权访问唯一的流端点，您可以将数据发送至。 要了解如何将数据发送到这些端点，请阅读有关流式记录数据的[教程](../../ingestion/tutorials/streaming-record-data.md#ingest-data)。
 
-![流连接的流端点会在源详细信息页面中突出显示。](../images/tutorials/external-audiences/get-streaming-endpoint.png)
+![流连接的流终结点在源详细信息页面中突出显示。](../images/tutorials/external-audiences/get-streaming-endpoint.png)
 
 ## 受众元数据结构
 
@@ -144,22 +144,22 @@ Adobe Experience Platform支持导入外部受众的功能，这些受众随后�
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `schemaRef` | 架构 **必须** 请参阅之前为区段元数据创建的架构。 |
-| `datasetId` | 数据集Id **必须** 请参阅之前为刚刚创建的架构创建的数据集。 |
-| `xdmEntity._id` | ID **必须** 请参阅您用作外部受众的相同区段ID。 |
-| `xdmEntity.identityMap` | 本节 **必须** 包含创建以前创建的命名空间时使用的身份标签。 |
+| `schemaRef` | 架构&#x200B;**必须**&#x200B;引用之前为区段元数据创建的架构。 |
+| `datasetId` | 数据集ID **必须**&#x200B;引用之前为刚刚创建的架构创建的数据集。 |
+| `xdmEntity._id` | ID **必须**&#x200B;引用了您用作外部受众的相同区段ID。 |
+| `xdmEntity.identityMap` | 此部分&#x200B;**必须**&#x200B;包含创建以前创建的命名空间时使用的身份标签。 |
 | `{IDENTITY_NAMESPACE}` | 这是以前创建的身份命名空间的标签。 因此，例如，如果您将身份命名空间称为“externalAudience”，则可以将其用作数组的键。 |
 | `segmentName` | 您希望外部受众分段依据的区段名称。 |
 
 ## 使用导入的受众生成区段
 
-设置导入的受众后，可在分段过程中使用这些受众。 要查找外部受众，请转到区段生成器，然后选择 **[!UICONTROL 受众]** 选项卡 **[!UICONTROL 字段]** 部分。
+设置导入的受众后，可在分段过程中使用这些受众。 要查找外部受众，请转到区段生成器，然后在&#x200B;**[!UICONTROL 字段]**&#x200B;部分中选择&#x200B;**[!UICONTROL 受众]**&#x200B;选项卡。
 
-![区段生成器中的外部受众选择器会突出显示。](../images/tutorials/external-audiences/external-audiences.png)
+![区段生成器中的外部受众选择器突出显示。](../images/tutorials/external-audiences/external-audiences.png)
 
 ## 后续步骤
 
-现在，您可以在区段中使用外部受众，接下来可以使用区段生成器来创建区段。 要了解如何创建区段，请参阅 [有关创建区段的教程](./create-a-segment.md).
+现在，您可以在区段中使用外部受众，接下来可以使用区段生成器来创建区段。 要了解如何创建区段，请阅读有关创建区段的[教程](./create-a-segment.md)。
 
 ## 附录
 
@@ -167,29 +167,29 @@ Adobe Experience Platform支持导入外部受众的功能，这些受众随后�
 
 ### 设置外部区段成员资格目标架构
 
-要开始合成架构，请先选择 **[!UICONTROL 架构]** 左侧导航栏中，后面是 **[!UICONTROL 创建架构]** 在架构工作区的右上角。 从此处选择 **[!UICONTROL XDM个人资料]**.
+要开始撰写架构，请先在左侧导航栏中选择&#x200B;**[!UICONTROL 架构]**，然后在架构工作区的右上角选择&#x200B;**[!UICONTROL 创建架构]**。 在此处，选择&#x200B;**[!UICONTROL XDM个人资料]**。
 
-![“XDM单个配置文件”区域被加亮。](../images/tutorials/external-audiences/create-schema-profile.png)
+![XDM个人资料区域已突出显示。](../images/tutorials/external-audiences/create-schema-profile.png)
 
-现在已创建架构，您需要添加区段成员资格字段组作为架构的一部分。 要执行此操作，请选择 [!UICONTROL 区段成员资格详细信息]，后接 [!UICONTROL 添加字段组].
+现在已创建架构，您需要添加区段成员资格字段组作为架构的一部分。 为此，请选择[!UICONTROL 区段成员资格详细信息]，然后选择[!UICONTROL 添加字段组]。
 
-![区段成员资格详细信息字段组会突出显示。](../images/tutorials/external-audiences/segment-membership-details.png)
+![区段成员资格详细信息字段组已突出显示。](../images/tutorials/external-audiences/segment-membership-details.png)
 
-此外，请确保架构已标记为 **[!UICONTROL 个人资料]**. 要实现此目的，您需要将字段标记为主要标识。
+此外，请确保为&#x200B;**[!UICONTROL 配置文件]**&#x200B;标记架构。 要实现此目的，您需要将字段标记为主要标识。
 
-![为配置文件启用架构的切换在架构编辑器中突出显示。](../images/tutorials/external-audiences/external-segment-profile.png)
+![在架构编辑器中高亮显示启用配置文件的架构的切换开关。](../images/tutorials/external-audiences/external-segment-profile.png)
 
 ### 设置数据集
 
 创建架构后，您将需要创建一个数据集。
 
-要创建数据集，请按照 [数据集用户指南](../../catalog/datasets/user-guide.md#create). 您应遵循 **[!UICONTROL 从架构创建数据集]** 选项，使用您之前创建的架构。
+要创建数据集，请按照[数据集用户指南](../../catalog/datasets/user-guide.md#create)中的说明操作。 您应该使用&#x200B;**[!UICONTROL 从架构创建数据集]**&#x200B;选项，使用您之前创建的架构。
 
-![用于创建数据库的模式会突出显示。](../images/tutorials/external-audiences/select-schema.png)
+![用于创建数据库的架构已突出显示。](../images/tutorials/external-audiences/select-schema.png)
 
-创建数据集后，请继续按照 [数据集用户指南](../../catalog/datasets/user-guide.md#enable-profile) 为实时客户资料启用此数据集。
+创建数据集后，继续按照[数据集用户指南](../../catalog/datasets/user-guide.md#enable-profile)中的说明启用此数据集以用于实时客户个人资料。
 
-![为配置文件启用架构的切换将在创建数据集工作流中突出显示。](../images/tutorials/external-audiences/dataset-profile.png)
+![创建数据集工作流中高亮显示启用配置文件架构的切换开关。](../images/tutorials/external-audiences/dataset-profile.png)
 
 ## 设置和导入外部受众成员资格数据
 
@@ -197,15 +197,15 @@ Adobe Experience Platform支持导入外部受众的功能，这些受众随后�
 
 ### 使用批处理连接摄取数据
 
-要创建批处理连接，您可以按照通用说明中的说明进行操作 [本地文件上传UI指南](../../sources/tutorials/ui/create/local-system/local-file-upload.md). 有关可结合使用摄取数据的可用源的完整列表，请阅读 [源概述](../../sources/home.md).
+要创建批处理连接，您可以按照通用[本地文件上传UI指南](../../sources/tutorials/ui/create/local-system/local-file-upload.md)中的说明进行操作。 有关可结合使用摄取数据的可用源的完整列表，请阅读[源概述](../../sources/home.md)。
 
 ### 使用流连接摄取数据
 
-要创建流连接，您可以按照 [API教程](../../sources/tutorials/api/create/streaming/http.md) 或 [用户界面教程](../../sources/tutorials/ui/create/streaming/http.md).
+要创建流连接，您可以按照[API教程](../../sources/tutorials/api/create/streaming/http.md)或[UI教程](../../sources/tutorials/ui/create/streaming/http.md)中的说明进行操作。
 
-创建流连接后，您将有权访问唯一的流端点，您可以将数据发送至。 要了解如何将数据发送到这些端点，请阅读 [有关流式记录数据的教程](../../ingestion/tutorials/streaming-record-data.md#ingest-data).
+创建流连接后，您将有权访问唯一的流端点，您可以将数据发送至。 要了解如何将数据发送到这些端点，请阅读有关流式记录数据的[教程](../../ingestion/tutorials/streaming-record-data.md#ingest-data)。
 
-![流连接的流端点会在源详细信息页面中突出显示。](../images/tutorials/external-audiences/get-streaming-endpoint.png)
+![流连接的流终结点在源详细信息页面中突出显示。](../images/tutorials/external-audiences/get-streaming-endpoint.png)
 
 ## 区段成员资格结构
 
@@ -257,12 +257,12 @@ Adobe Experience Platform支持导入外部受众的功能，这些受众随后�
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `schemaRef` | 架构 **必须** 有关区段成员资格数据，请参阅之前创建的架构。 |
-| `datasetId` | 数据集Id **必须** 请参阅之前创建的数据集，了解您刚刚创建的成员资格架构。 |
+| `schemaRef` | 架构&#x200B;**必须**&#x200B;引用以前为区段成员资格数据创建的架构。 |
+| `datasetId` | 数据集ID **必须**&#x200B;引用之前为刚刚创建的成员资格架构创建的数据集。 |
 | `xdmEntity._id` | 一个合适的ID，用于唯一标识数据集中的记录。 |
 | `{TENANT_NAME}.identities` | 此部分用于将自定义标识的字段组与您之前导入的用户连接。 |
 | `segmentMembership.{IDENTITY_NAMESPACE}` | 这是以前创建的自定义身份命名空间的标签。 因此，例如，如果您将身份命名空间称为“externalAudience”，则可以将其用作数组的键。 |
 
 >[!NOTE]
 >
->默认情况下，外部受众成员资格将在30天后删除。 为防止删除并保留30天以上，请使用 `validUntil` 字段。 有关此字段的更多信息，请阅读以下指南： [区段成员资格详细信息架构字段组](../../xdm/field-groups/profile/segmentation.md).
+>默认情况下，外部受众成员资格将在30天后删除。 要防止删除并将其保留超过30天，请在引入受众数据时使用`validUntil`字段。 有关此字段的更多信息，请阅读有关[区段成员资格详细信息架构字段组](../../xdm/field-groups/profile/segmentation.md)的指南。

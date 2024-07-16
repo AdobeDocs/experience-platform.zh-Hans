@@ -5,17 +5,17 @@ exl-id: 33ee76f2-0495-4acd-a862-c942c0fa3177
 source-git-commit: ec42cf27c082611acb1a08500b7bbd23fc34d730
 workflow-type: tm+mt
 source-wordcount: '462'
-ht-degree: 9%
+ht-degree: 7%
 
 ---
 
-# [!DNL Salesforce] 字段映射
+# [!DNL Salesforce]字段映射
 
-下表包含以下映射之间的映射： [!DNL Salesforce] 源字段及其相应的体验数据模型(XDM)字段。
+下表包含[!DNL Salesforce]源字段及其相应的体验数据模型(XDM)字段之间的映射。
 
 ## 联系人 {#contact}
 
-阅读 [XDM个人资料概述](../../../../xdm/classes/individual-profile.md) 以了解有关XDM类的详细信息。 有关XDM字段组的更多信息，请参阅 [XDM业务人员详细信息架构字段组](../../../../xdm/field-groups/profile/business-person-details.md) 指南和 [XDM业务人员组件架构字段组](../../../../xdm/field-groups/profile/business-person-components.md) 指南。
+有关XDM类的更多信息，请阅读[XDM个人配置文件概述](../../../../xdm/classes/individual-profile.md)。 有关XDM字段组的详细信息，请阅读[XDM业务人员详细信息架构字段组](../../../../xdm/field-groups/profile/business-person-details.md)指南和[XDM业务人员组件架构字段组](../../../../xdm/field-groups/profile/business-person-components.md)指南。
 
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
@@ -23,8 +23,8 @@ ht-degree: 9%
 | `iif(AccountId != null && AccountId != "", to_object("sourceType", "Salesforce", "sourceInstanceID", "${CRM_ORG_ID}", "sourceKey", concat(AccountId,"@${CRM_ORG_ID}.Salesforce")), null)` | `b2b.accountKey` |
 | `iif(AccountId != null && AccountId != "", to_object("sourceType", "Salesforce", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", AccountId, "sourceKey", concat(AccountId,"@${CRM_ORG_ID}.Salesforce")), null)` | `personComponents.sourceAccountKey` |
 | `"Salesforce"` | `b2b.personKey.sourceType` |
-| `"${CRM_ORG_ID}"` | `b2b.personKey.sourceInstanceID` | 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
-| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `b2b.personKey.sourceKey` | 主要标识. 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `"${CRM_ORG_ID}"` | `b2b.personKey.sourceInstanceID` | 将自动替换`"${CRM_ORG_ID}"`的值。 |
+| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `b2b.personKey.sourceKey` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `AssistantName` | `extendedWorkDetails.assistantDetails.name.fullName` |
 | `AssistantPhone` | `extendedWorkDetails.assistantDetails.phone.number` |
 | `Birthdate` | `person.birthDate` |
@@ -75,7 +75,7 @@ ht-degree: 9%
 
 ## 潜在客户 {#lead}
 
-阅读 [XDM个人资料概述](../../../../xdm/classes/individual-profile.md) 以了解有关XDM类的详细信息。 有关XDM字段组的更多信息，请参阅 [XDM业务人员详细信息架构字段组](../../../../xdm/field-groups/profile/business-person-details.md) 指南和 [XDM业务人员组件架构字段组](../../../../xdm/field-groups/profile/business-person-components.md) 指南。
+有关XDM类的更多信息，请阅读[XDM个人配置文件概述](../../../../xdm/classes/individual-profile.md)。 有关XDM字段组的详细信息，请阅读[XDM业务人员详细信息架构字段组](../../../../xdm/field-groups/profile/business-person-details.md)指南和[XDM业务人员组件架构字段组](../../../../xdm/field-groups/profile/business-person-components.md)指南。
 
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
@@ -91,7 +91,7 @@ ht-degree: 9%
 | `"Salesforce"` | `b2b.personKey.sourceType` |
 | `"${CRM_ORG_ID}"` | `b2b.personKey.sourceInstanceID` |
 | `Id` | `b2b.personKey.sourceID` |
-| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `b2b.personKey.sourceKey` | 主要标识. 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `b2b.personKey.sourceKey` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `"Salesforce"` | `personComponents.sourcePersonKey.sourceType` |
 | `"${CRM_ORG_ID}"` | `personComponents.sourcePersonKey.sourceInstanceID` |
 | `Id` | `personComponents.sourcePersonKey.sourceID` |
@@ -126,12 +126,12 @@ ht-degree: 9%
 
 ## 帐户 {#account}
 
-阅读 [XDM业务帐户详细信息概述](../../../../xdm/classes/b2b/business-account.md) 以了解有关XDM类的详细信息。
+有关XDM类的详细信息，请阅读[XDM业务帐户详细信息概述](../../../../xdm/classes/b2b/business-account.md)。
 
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
 | `"Salesforce"` | `accountKey.sourceType` |
-| `"${CRM_ORG_ID}"` | `accountKey.sourceInstanceID` | 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `"${CRM_ORG_ID}"` | `accountKey.sourceInstanceID` | 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `AccountNumber` | `accountNumber` |
 | `AccountSource` | `accountSourceType` |
 | `AnnualRevenue` | `accountOrganization.annualRevenue.amount` |
@@ -148,7 +148,7 @@ ht-degree: 9%
 | `Fax` | `accountFax.number` |
 | `isDeleted` | `isDeleted` |
 | `Id` | `accountKey.sourceID` |
-| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `accountKey.sourceKey` | 主要标识. 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `accountKey.sourceKey` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `Industry` | `accountOrganization.industry` |
 | `Jigsaw` | `accountOrganization.jigsaw` |
 | `LastActivityDate` | `extSourceSystemAudit.lastActivityDate` |
@@ -182,15 +182,15 @@ ht-degree: 9%
 
 ## 机会 {#opportunity}
 
-阅读 [XDM业务机会概述](../../../../xdm/classes/b2b/business-opportunity.md) 以了解有关XDM类的详细信息。
+有关XDM类的详细信息，请阅读[XDM业务机会概述](../../../../xdm/classes/b2b/business-opportunity.md)。
 
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
 | `"Salesforce"` | `opportunityKey.sourceType` |
-| `"${CRM_ORG_ID}"` | `opportunityKey.sourceInstanceID` | 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
-| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `opportunityKey.sourceKey` | 主要标识. 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `"${CRM_ORG_ID}"` | `opportunityKey.sourceInstanceID` | 将自动替换`"${CRM_ORG_ID}"`的值。 |
+| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `opportunityKey.sourceKey` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `AccountId` | `accountKey.sourceID` |
-| `iif(AccountId != null && AccountId != "", to_object("sourceType", "Salesforce", "sourceInstanceID", "${CRM_ORG_ID}", "sourceKey", concat(AccountId,"@${CRM_ORG_ID}.Salesforce")), null)` | `accountKey` | 关系. |
+| `iif(AccountId != null && AccountId != "", to_object("sourceType", "Salesforce", "sourceInstanceID", "${CRM_ORG_ID}", "sourceKey", concat(AccountId,"@${CRM_ORG_ID}.Salesforce")), null)` | `accountKey` | 关系。 |
 | `Amount` | `opportunityAmount.amount` |
 | `CampaignId` | `campaignKey.sourceID` |
 | `iif(CampaignId != null && CampaignId != "", to_object("sourceType", "Salesforce", "sourceInstanceID", "${CRM_ORG_ID}", "sourceKey", concat(CampaignId,"@${CRM_ORG_ID}.Salesforce")), null)` | `campaignKey` |
@@ -223,19 +223,19 @@ ht-degree: 9%
 
 ## 机会联系人角色 {#opportunity-contact-role}
 
-阅读 [XDM业务机会人员关系类概述](../../../../xdm/classes/b2b/business-opportunity-person-relation.md) 以了解有关XDM类的详细信息。
+有关XDM类的详细信息，请阅读[XDM业务机会人员关系类概述](../../../../xdm/classes/b2b/business-opportunity-person-relation.md)。
 
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
 | `"Salesforce"` | `opportunityPersonKey.sourceType` |
-| `"${CRM_ORG_ID}"` | `opportunityPersonKey.sourceInstanceID` | 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `"${CRM_ORG_ID}"` | `opportunityPersonKey.sourceInstanceID` | 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `"Salesforce"` | `personKey.sourceType` |
 | `"${CRM_ORG_ID}"` | `personKey.sourceInstanceID` |
 | `ContactId` | `personKey.sourceID` |
 | `concat(ContactId,"@${CRM_ORG_ID}.Salesforce")` | `personKey.sourceKey` |
 | `CreatedDate` | `extSourceSystemAudit.createdDate` |
 | `Id` | `opportunityPersonKey.sourceID` |
-| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `opportunityPersonKey.sourceKey` | 主要标识. 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `opportunityPersonKey.sourceKey` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `isDeleted` | `isDeleted` |
 | `IsPrimary` | `isPrimary` |
 | `LastModifiedDate` | `extSourceSystemAudit.lastUpdatedDate` |
@@ -249,15 +249,15 @@ ht-degree: 9%
 
 ## Campaign {#campaign}
 
-阅读 [XDM商业营销活动类概述](../../../../xdm/classes/b2b/business-campaign.md) 以了解有关XDM类的详细信息。 有关XDM字段组的更多信息，请参阅 [XDM商业营销活动详细信息架构字段组](../../../../xdm/field-groups/b2b-campaign/details.md) 指南。
+有关XDM类的详细信息，请阅读[XDM商业营销活动类概述](../../../../xdm/classes/b2b/business-campaign.md)。 有关XDM字段组的详细信息，请阅读[XDM商业营销活动详细信息架构字段组](../../../../xdm/field-groups/b2b-campaign/details.md)指南。
 
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
 | `"Salesforce"` | `campaignKey.sourceType` |
-| `"${CRM_ORG_ID}"` | `campaignKey.sourceInstanceID` | 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `"${CRM_ORG_ID}"` | `campaignKey.sourceInstanceID` | 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `isDeleted` | `isDeleted` |
 | `Id` | `campaignKey.sourceID` |
-| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `campaignKey.sourceKey` | 主要标识. 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `campaignKey.sourceKey` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `Name` | `campaignName` |
 | `ParentId` | `parentCampaignKey.sourceID` |
 | `iif(ParentId != null && ParentId != "", to_object("sourceType", "Salesforce", "sourceInstanceID", "${CRM_ORG_ID}", "sourceKey", concat(ParentId,"@${CRM_ORG_ID}.Salesforce")), null)` | `parentCampaignKey` |
@@ -280,15 +280,15 @@ ht-degree: 9%
 
 ## 营销活动成员 {#campaign-member}
 
-阅读 [XDM商业营销活动成员概述](../../../../xdm/classes/b2b/business-campaign-members.md) 以了解有关XDM类的详细信息。 有关XDM字段组的更多信息，请参阅 [XDM商业营销活动成员详细信息架构字段组](../../../../xdm/field-groups/b2b-campaign/details.md) 文档。
+有关XDM类的详细信息，请阅读[XDM商业营销活动成员概述](../../../../xdm/classes/b2b/business-campaign-members.md)。 有关XDM字段组的详细信息，请阅读[XDM商业营销活动成员详细信息架构字段组](../../../../xdm/field-groups/b2b-campaign/details.md)文档。
 
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
 | `"Salesforce"` | `campaignMemberKey.sourceType` |
-| `"${CRM_ORG_ID}"` | `campaignMemberKey.sourceInstanceID` | 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `"${CRM_ORG_ID}"` | `campaignMemberKey.sourceInstanceID` | 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `isDeleted` | `isDeleted` |
 | `Id` | `campaignMemberKey.sourceID` |
-| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `campaignMemberKey.sourceKey` | 主要标识. 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `campaignMemberKey.sourceKey` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `"Salesforce"` | `campaignKey.sourceType` |
 | `${CRM_ORG_ID}` | `campaignKey.sourceInstanceID` |
 | `CampaignId` | `campaignKey.sourceID` |
@@ -306,7 +306,7 @@ ht-degree: 9%
 
 ## 帐户联系人关系 {#account-contact-relation}
 
-阅读 [XDM业务帐户人员关系类](../../../../xdm/classes/b2b/business-account-person-relation.md) 以了解有关XDM类的详细信息。
+有关XDM类的详细信息，请阅读[XDM业务帐户人员关系类](../../../../xdm/classes/b2b/business-account-person-relation.md)。
 
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
@@ -321,7 +321,7 @@ ht-degree: 9%
 | `Id` | `accountPersonKey.sourceID` |
 | `"Salesforce"` | `accountPersonKey.sourceType` |
 | `"${CRM_ORG_ID}"` | `accountPersonKey.sourceInstanceID` |
-| `concat(Id, "@${CRM_ORG_ID}.Salesforce")` | `accountPersonKey.sourceKey` | 主要标识. |
+| `concat(Id, "@${CRM_ORG_ID}.Salesforce")` | `accountPersonKey.sourceKey` | 主要身份。 |
 | `IsActive` | `IsActive` |
 | `IsDirect` | `IsDirect` |
 | `LastModifiedById` | `extSourceSystemAudit.lastUpdatedBy` |
@@ -331,4 +331,4 @@ ht-degree: 9%
 
 ## 后续步骤
 
-通过阅读本文档，您已获得对以下项目之间的映射关系的洞察 [!DNL Salesforce] 源字段及其对应的XDM字段。 请参阅相关文档 [创建 [!DNL Salesforce] 源连接](../../../connectors/crm/salesforce.md) 以了解更多信息。
+通过阅读本文档，您已了解[!DNL Salesforce]源字段及其相应XDM字段之间的映射关系。 有关详细信息，请参阅有关[创建 [!DNL Salesforce] 源连接](../../../connectors/crm/salesforce.md)的文档。

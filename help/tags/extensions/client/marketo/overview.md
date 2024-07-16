@@ -1,11 +1,11 @@
 ---
-title: Marketo Munchkin 扩展 概述
+title: Marketo Munchkin扩展概述
 description: 了解Adobe Experience Platform中的Marketo Munchkin标记扩展。
 exl-id: 8efc5203-91fc-4e89-be8f-74bf1aeeee5f
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
-source-wordcount: '214'
-ht-degree: 75%
+source-wordcount: '210'
+ht-degree: 55%
 
 ---
 
@@ -13,19 +13,19 @@ ht-degree: 75%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用此扩展可将 [!DNL Marketo Munchkin] JavaScript 跟踪代码与您的资产相集成。[!DNL Marketo Munchkin] JavaScript 允许跟踪最终用户对 Marketo 登陆页面和外部网页的页面访问次数和导航次数。
 
 ## 安装 Marketo Munchkin 扩展
 
-如果 [!DNL Marketo Munchkin] 尚未安装扩展，请打开您的资产，然后选择 **[!UICONTROL “扩展”>“目录”]**，将光标悬停在 [!DNL Marketo Munchkin] 扩展并选择 **[!UICONTROL 安装]**.
+如果尚未安装[!DNL Marketo Munchkin]扩展，请打开您的属性，然后选择&#x200B;**[!UICONTROL 扩展>目录]**，将鼠标悬停在[!DNL Marketo Munchkin]扩展上，然后选择&#x200B;**[!UICONTROL 安装]**。
 
 此扩展没有必需的配置。
 
 ## Marketo Munchkin 扩展操作类型
 
-此部分介绍了 [!DNL Marketo Munchkin] 扩展中可用的操作类型。
+本节介绍[!DNL Marketo Munchkin]扩展中可用的操作类型。
 
 ### 初始化
 

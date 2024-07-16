@@ -9,7 +9,7 @@ role: Developer
 source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '49'
-ht-degree: 71%
+ht-degree: 67%
 
 ---
 
@@ -21,6 +21,6 @@ ht-degree: 71%
 - [事件重复处理](event-duplication.md)
 - [权限管理](permissions.md)
 - [客户端状态管理](client-state.md)
-- 访客识别 {#visitor-identification}
+- 访客标识{#visitor-identification}
    - [概述](visitor-identification.md)
    - [通过FPID进行访客识别](visitor-identification-fpid.md)

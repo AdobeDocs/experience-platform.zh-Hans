@@ -18,13 +18,13 @@ ht-degree: 22%
 
 * [Web SDK 概述](home.md)
 * [发行说明](release-notes.md)
-* Web SDK安装 {#install}
+* Web SDK安装{#install}
    * [概述](install/overview.md)
    * [使用标记扩展安装Web SDK](install/extension.md)
    * [使用JavaScript库安装Web SDK](install/library.md)
    * [使用NPM包安装Web SDK](install/npm.md)
-* 命令 {#commands}
-   * 配置 {#configure}
+* 命令{#commands}
+   * 配置{#configure}
       * [概述](commands/configure/overview.md)
       * [clickCollectionEnabled](commands/configure/clickcollectionenabled.md)
       * [clickCollection](commands/configure/clickcollection.md)
@@ -64,7 +64,7 @@ ht-degree: 22%
    * [配置数据流覆盖](commands/datastream-overrides.md)
    * [命令响应](commands/command-responses.md)
 
-* 标识 {#identity}
+* 标识{#identity}
    * [概述](identity/overview.md)
    * [第一方设备Id](identity/first-party-device-ids.md)
    * [移动到Web和跨域ID共享](identity/id-sharing.md)
@@ -80,18 +80,18 @@ ht-degree: 22%
       * [访问响应令牌](personalization/adobe-target/accessing-response-tokens.md)
       * [使用mbox第三方ID](personalization/adobe-target/using-mbox-3rdpartyid.md)
       * [将at.js库与Web SDK进行比较](personalization/adobe-target/web-sdk-atjs-comparison.md)
-      * Analytics for Target (A4T)日志记录 {#a4t}
+      * Analytics for Target (A4T)日志记录{#a4t}
          * [概述](personalization/adobe-target/analytics-logging/overview.md)
          * [客户端日志记录](personalization/adobe-target/analytics-logging/client-side.md)
          * [服务器端日志记录](personalization/adobe-target/analytics-logging/server-side.md)
-   * offer decisioning {#offer-decisioning}
+   * offer decisioning{#offer-decisioning}
       * [概述](personalization/offer-decisioning/offer-decisioning-overview.md)
    * Adobe Journey Optimizer {#ajo}
       * [概述](personalization/ajo/overview.md)
       * [单页应用程序实施](personalization/ajo/web-spa-implementation.md)
       * [在Web SDK中配置Web应用程序内消息传送支持](personalization/web-in-app-messaging.md)
 
-* 同意 {#consent}
+* 同意{#consent}
    * IAB透明度和同意框架2.0 {#iab-tcf}
       * [概述](consent/iab-tcf/overview.md)
       * [与标记集成](consent/iab-tcf/with-tags.md)

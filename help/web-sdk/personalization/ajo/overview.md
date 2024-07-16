@@ -6,34 +6,34 @@ exl-id: 3f28e2bc-2c4b-4400-8f69-c7316449ff4f
 source-git-commit: ae6c6d21b1eea900d01be3287827296071429d30
 workflow-type: tm+mt
 source-wordcount: '390'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
-# 使用 [!DNL Adobe Journey Optimizer] 使用 [!DNL Platform Web SDK]
+# 将[!DNL Adobe Journey Optimizer]与[!DNL Platform Web SDK]一起使用
 
-[!DNL Adobe Experience Platform] [!DNL Web SDK] 可以投放和渲染在中管理的个性化体验 [!DNL Adobe Journey Optimizer] 到Web渠道。 您可以使用WYSIWYG编辑器， [!DNL Adobe Journey Optimizer] [Web渠道](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html)或者非可视化界面， [基于代码的体验渠道](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based) 创建、激活并交付您的 [!DNL Journey Optimizer Web] 营销活动和个性化体验。
+[!DNL Adobe Experience Platform] [!DNL Web SDK]可以将在[!DNL Adobe Journey Optimizer]中管理的个性化体验交付并渲染到Web渠道。 您可以使用WYSIWYG编辑器[!DNL Adobe Journey Optimizer] [Web渠道](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html)，或者非可视化界面[基于代码的体验渠道](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based)创建、激活和提供[!DNL Journey Optimizer Web]营销活动和个性化体验。
 
 >[!IMPORTANT]
 >
->阅读 [Adobe Journey Optimizer Web渠道文档](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/get-started-web.html?lang=zh-Hans) ，以了解有关入门的信息 [!DNL Journey Optimizer Web] 体验创作和报告。
+>阅读[Adobe Journey Optimizer Web渠道文档](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/get-started-web.html?lang=zh-Hans)以了解有关[!DNL Journey Optimizer Web]体验创作和报告快速入门的信息。
 
 ## 术语 {#terminology}
 
-**[!UICONTROL 表面]**： Web表面是指由URI标识的页面上的网页或位置，其中 [!DNL Adobe Journey Optimizer] 体验内容将被交付。
+**[!UICONTROL 表面]**： Web表面是通过URI标识的页面上的网页或位置，将在其中传递[!DNL Adobe Journey Optimizer]体验内容。
 
-**[!UICONTROL 建议]**：在 [!DNL Adobe Journey Optimizer]，建议与从中选择的体验相关联 [!DNL Journey Optimizer Campaign].
+**[!UICONTROL 建议]**：在[!DNL Adobe Journey Optimizer]中，建议与从[!DNL Journey Optimizer Campaign]中选择的体验相关联。
 
-## 正在启用 [!DNL Adobe Journey Optimizer] {#enable-ajo}
+## 正在启用[!DNL Adobe Journey Optimizer] {#enable-ajo}
 
-开始使用 [!DNL Adobe Journey Optimizer]，请按照以下步骤操作。
+要开始使用[!DNL Adobe Journey Optimizer]，请执行以下步骤。
 
-1. 浏览 [先决条件](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html#prerequesites) 从 [!DNL Adobe Journey Optimizer] [Web体验指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html)，具体来说：
-   * 设置 [!DNL Adobe Experience Cloud Visual Editing Helper].
-   * 启用 [!DNL Adobe Journey Optimizer] 在您的 [数据流](../../../datastreams/overview.md).
-   * 启用 [!UICONTROL Active-On-Edge合并策略] 选项。
+1. 从[!DNL Adobe Journey Optimizer] [Web体验指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html)中查看[先决条件](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html#prerequesites)，具体为：
+   * 设置[!DNL Adobe Experience Cloud Visual Editing Helper]。
+   * 在[数据流](../../../datastreams/overview.md)中启用[!DNL Adobe Journey Optimizer]。
+   * 启用[!UICONTROL Edge上的活动合并策略]选项。
 
-2. 添加 `renderDecisions` 选项添加到您的事件。 设置 `renderDecisions` 到 `true` 用于在网页表面上自动呈现交付的Journey Optimizer内容建议。
+2. 将`renderDecisions`选项添加到您的事件。 将`renderDecisions`设置为`true`以在网页表面上自动呈现已交付的Journey Optimizer内容建议。
 
    ```javascript
    alloy("sendEvent", {
@@ -42,7 +42,7 @@ ht-degree: 1%
    })
    ```
 
-3. （可选）在事件中指定其他表面。 默认情况下，Web SDK将自动为当前网页生成Web表面，并将其包含在对Edge Network的请求中。 如果需要，可以通过在 `personalization.surfaces` 的选项 `sendEvent` 命令，或在对应 **[!UICONTROL 曲面]** [[!UICONTROL 发送事件] 操作](../../../tags/extensions/client/web-sdk/action-types.md#send-event) web SDK扩展的配置。
+3. （可选）在事件中指定其他表面。 默认情况下，Web SDK将自动为当前网页生成Web表面，并将其包含在对Edge Network的请求中。 如果需要，可以通过在`sendEvent`命令的`personalization.surfaces`选项中或Web SDK扩展的相应&#x200B;**[!UICONTROL Surfaces]** [[!UICONTROL 发送事件]操作](../../../tags/extensions/client/web-sdk/action-types.md#send-event)配置中指定这些表面来在请求中包含其他表面。
 
    ```javascript
    alloy("sendEvent", {
@@ -55,7 +55,7 @@ ht-degree: 1%
 
    ![extension-add-surface](./assets/extension-add-surface.png)
 
-   事件表面包含在 `query.personalization.surfaces` 请求字段：
+   事件表面包含在`query.personalization.surfaces`请求字段中：
 
    ```json
    {
@@ -80,17 +80,17 @@ ht-degree: 1%
    }
    ```
 
-4. 与其他个性化功能类似，您可以添加 **[预隐藏代码片段](../manage-flicker.md)** 以在提取体验时仅隐藏页面的某些部分。
+4. 与其他个性化功能类似，您可以添加&#x200B;**[预隐藏代码片段](../manage-flicker.md)**，以便在获取体验时仅隐藏页面的某些部分。
 
 ## 创建Adobe Journey Optimizer Web体验 {#create-ajo-web-experiences}
 
-请遵循 [Web营销活动创作](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html#create-web-campaign) 中的说明 [!DNL Adobe Journey Optimizer] [Web体验指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html) 创建 [!DNL Journey Optimizer Web] 营销活动和体验。
+按照[!DNL Adobe Journey Optimizer] [Web体验指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html)中的[Web营销活动创作](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html#create-web-campaign)说明创建[!DNL Journey Optimizer Web]营销活动和体验。
 
 ## 呈现个性化内容 {#rendering-personalized-content}
 
-请参阅相关文档 [呈现个性化内容](../rendering-personalization-content.md) 以了解更多信息。
+有关详细信息，请参阅有关[渲染个性化内容](../rendering-personalization-content.md)的文档。
 
-用于Web表面的Adobe Journey Optimizer建议的处理方式与 `__view__` 决策范围建议。 具体来说，当 `renderDecisions` 选项设置为 `true` 在 `sendEvent` 命令这些内容将由Web SDK自动呈现。
+Web表面的Adobe Journey Optimizer建议的处理方式与`__view__`决策范围建议类似。 具体而言，当`sendEvent`命令中的`renderDecisions`选项设置为`true`时，Web SDK将自动渲染这些选项。
 
 Journey Optimizer内容建议示例：
 
@@ -145,6 +145,6 @@ Journey Optimizer内容建议示例：
 
 ## 调试 {#debugging}
 
-要调试Adobe Journey Optimizer个性化实施，请使用 [Web SDK调试](/help/web-sdk/use-cases/debugging.md). [!DNL Adobe Journey Optimizer] 在使用进行故障诊断时，可以使用调试跟踪 [[!DNL Adobe Experience Platform Assurance]](https://developer.adobe.com/client-sdks/documentation/platform-assurance/). 使用检查事件 `AJO:` 前缀。
+要调试Adobe Journey Optimizer个性化实施，请使用[Web SDK调试](/help/web-sdk/use-cases/debugging.md)。 使用[[!DNL Adobe Experience Platform Assurance]](https://developer.adobe.com/client-sdks/documentation/platform-assurance/)进行故障排除时，有[!DNL Adobe Journey Optimizer]调试跟踪可用。 检查前缀为`AJO:`的事件。
 
 ![assurance-ajo-trace](./assets/assurance-ajo-trace.png)

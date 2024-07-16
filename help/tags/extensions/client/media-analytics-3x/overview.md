@@ -4,8 +4,8 @@ description: 了解Adobe Experience Platform中的Adobe Medium Analytics (3.x SD
 exl-id: 7289d57d-7e7f-4832-9469-3b5a62183a32
 source-git-commit: e21ed1e9fd0c2678551cfc664b611076c198a157
 workflow-type: tm+mt
-source-wordcount: '752'
-ht-degree: 74%
+source-wordcount: '707'
+ht-degree: 66%
 
 ---
 
@@ -13,29 +13,29 @@ ht-degree: 74%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用本文档了解有关安装、配置和实施 Adobe Media Analytics (3.x SDK) for Audio and Video 扩展（Media Analytics 扩展）的信息。其中包括使用此扩展构建规则时可用的选项，以及一些示例和指向示例的链接。
 
-Media Analytics (MA) 扩展添加了核心 JavaScript Media SDK (Media 3.x SDK)。此扩展提供了用于添加 `Media` 指向启用了标记的网站或项目的跟踪器实例。 MA 扩展需要使用其他两个扩展：
+Media Analytics (MA) 扩展添加了核心 JavaScript Media SDK (Media 3.x SDK)。此扩展提供了将`Media`跟踪器实例添加到启用了标记的网站或项目的功能。 MA 扩展需要使用其他两个扩展：
 
 * [Analytics 扩展](../analytics/overview.md)
 * [Experience Cloud ID 扩展](../id-service/overview.md)
 
 >[!IMPORTANT]
 >
->此扩展随 Media 3.x SDK 一起部署，无法向后兼容 Media 2.x SDK。自2.x被弃用以来，请更新到3.x。
+>此扩展随 Media 3.x SDK 一起部署，无法向后兼容 Media 2.x SDK。由于2.x已被弃用，请更新至3.x。
 
-在启用标记的项目中包含上述所有三个扩展后，可以采用以下两种方法之一继续操作：
+在启用了标记的项目中包含上述所有三个扩展后，可以采用以下两种方法之一继续操作：
 
 * 使用您的 Web 应用程序中的 `Media` API
 * 包含或构建特定于播放器的扩展，以便将特定媒体播放器事件映射到 `Media` 跟踪器实例上的 API。此实例将通过 MA 扩展公开。
 
 ## 安装和配置 MA 扩展
 
-* **安装：** 要安装MA扩展，请打开您的扩展资产，然后选择 **[!UICONTROL “扩展”>“目录”]**，将光标悬停在 **[!UICONTROL 适用于音频和视频的Adobe Medium Analytics (3.x SDK)]** 扩展并选择 **[!UICONTROL 安装]**.
+* **安装：**&#x200B;要安装MA扩展，请打开您的扩展属性，选择&#x200B;**[!UICONTROL Extensions > Catalog]**，将鼠标悬停在&#x200B;**[!UICONTROL Adobe Medium Analytics (3.x SDK) for Audio and Video]**&#x200B;扩展上，然后选择&#x200B;**[!UICONTROL 安装]**。
 
-* **配置：** 要配置MA扩展，请打开 [!UICONTROL 扩展] 选项卡，将鼠标悬停在该扩展上，然后选择 **[!UICONTROL 配置]**：
+* **配置：**&#x200B;要配置MA扩展，请打开[!UICONTROL 扩展]选项卡，将鼠标悬停在该扩展上，然后选择&#x200B;**[!UICONTROL 配置]**：
 
 ![MA 扩展配置](../../../images/ext-ma-config.png)
 
@@ -58,7 +58,7 @@ Media Analytics (MA) 扩展添加了核心 JavaScript Media SDK (Media 3.x SDK)�
 
 ### 通过网页/JS 应用程序使用
 
-MA扩展通过启用中的“Export APIs to Window Object”设置，在全局窗口对象中导出Media API。 [!UICONTROL 配置] 页面。 它将在配置的变量名称下导出 API。例如，如果变量名称配置为 `ADB`，则 `window.ADB.Media` 可以访问 Media API。
+MA扩展通过启用[!UICONTROL 配置]页面中的“Export APIs to Window Object”设置，在全局窗口对象中导出Media API。 它将在配置的变量名称下导出 API。例如，如果变量名称配置为 `ADB`，则 `window.ADB.Media` 可以访问 Media API。
 
 >[!IMPORTANT]
 >
@@ -85,7 +85,7 @@ MA扩展通过启用中的“Export APIs to Window Object”设置，在全局�
 
 ### 通过其他扩展使用
 
-MA扩展会公开 `media` 作为共享模块添加到其他扩展。 （有关共享模块的其他信息，请参阅[共享模块文档](../../../extension-dev/web/shared.md)。）
+MA扩展会将`media`作为共享模块公开给其他扩展。 （有关共享模块的其他信息，请参阅[共享模块文档](../../../extension-dev/web/shared.md)。）
 
 >[!IMPORTANT]
 >
@@ -110,4 +110,4 @@ MA扩展会公开 `media` 作为共享模块添加到其他扩展。 （有关�
 
 >[!NOTE]
 >
->**测试：**&#x200B;对于此版本，要测试您的扩展，必须将其上传到 [ Platform ](../../../extension-dev/submit/upload-and-test.md)，您可以在其中访问所有依赖的扩展。
+>**测试：**&#x200B;对于此版本，要测试您的扩展，必须将其上传到[平台](../../../extension-dev/submit/upload-and-test.md)，您可以在其中访问所有依赖的扩展。

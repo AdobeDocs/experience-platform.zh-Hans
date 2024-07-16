@@ -1,42 +1,42 @@
 ---
-keywords: Experience Platform；主页；热门主题；广告系统；广告系统
+keywords: Experience Platform；主页；热门主题；广告系统；Advertising system
 solution: Experience Platform
-title: 使用流服务API浏览广告系统
-description: 流量服务用于从Adobe Experience Platform内各种不同的来源收集客户数据并对其进行集中。 该服务提供了一个用户界面和RESTful API，所有受支持的源均可从此API进行连接。 本教程使用流服务API来探索广告系统。
+title: 使用流服务API浏览Advertising系统
+description: 流量服务用于从Adobe Experience Platform内各种不同的来源收集和集中客户数据。 该服务提供了一个用户界面和RESTful API，所有受支持的源均可从该API连接。 本教程使用流服务API来探索广告系统。
 exl-id: 3016ce1e-12e6-47ce-a4c5-52f8d440f515
 source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
-source-wordcount: '502'
-ht-degree: 2%
+source-wordcount: '498'
+ht-degree: 5%
 
 ---
 
-# 使用浏览广告系统 [!DNL Flow Service] API
+# 使用[!DNL Flow Service] API浏览广告系统
 
 在创建基本连接后，您现在可以使用唯一的基本连接ID来导航和浏览源的数据结构和内容。 这允许您在创建数据流并将它们引进Adobe Experience Platform之前，识别特定项目及其各自的数据类型和格式。
 
-本教程使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/) 探索广告系统。
+本教程使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)来浏览广告系统。
 
 ## 快速入门
 
 >[!IMPORTANT]
 >
->本教程要求您拥有广告源的唯一基本连接ID。 如果您没有此ID，请参阅上的教程 [将广告源连接到Platform](../../api/create/advertising/ads.md) 教程。
+>本教程要求您拥有广告源的唯一基本连接ID。 如果您没有此ID，请参阅有关[将广告源连接到Platform](../../api/create/advertising/ads.md)的教程。
 
-本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
+本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [源](../../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下方式构建、标记和增强传入数据： [!DNL Platform] 服务。
-* [沙盒](../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [源](../../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。
+* [沙盒](../../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-以下部分提供了使用，成功连接到广告系统所需的其他信息 [!DNL Flow Service] API。
+以下部分提供了使用[!DNL Flow Service] API成功连接到广告系统所需了解的其他信息。
 
 ### 使用平台API
 
-有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../landing/api-guide.md).
+有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../landing/api-guide.md)指南。
 
 ## 浏览您的数据表
 
-使用广告系统的基本连接，您可以通过执行GET请求来浏览数据表。 使用以下调用查找要检查或摄取的表的路径 [!DNL Platform].
+通过使用广告系统的基本连接，您可以通过执行GET请求来浏览数据表。 使用以下调用查找要检查或纳入[!DNL Platform]的表的路径。
 
 **API格式**
 
@@ -61,7 +61,7 @@ curl -X GET \
 
 **响应**
 
-成功响应是指从到广告系统的大量表。 查找您要引入的表 [!DNL Platform] 并注意其 `path` 属性，因为您需要在下一步中提供它以检查其结构。
+成功的响应是从到广告系统的大量表。 查找要引入[!DNL Platform]的表并记下其`path`属性，因为您需要在下一步中提供该表以检查其结构。
 
 ```json
 [
@@ -124,7 +124,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回表的结构。 有关每个表列的详细信息位于 `columns` 数组。
+成功的响应将返回表的结构。 有关每个表列的详细信息位于`columns`数组的元素中。
 
 ```json
 {
@@ -170,4 +170,4 @@ curl -X GET \
 
 ## 后续步骤
 
-通过完成本教程，您已探索广告系统，找到要引入的表的路径 [!DNL Platform]，并获得了有关其结构的信息。 您可以在下一教程中使用此信息来 [从广告系统收集数据并将其引入平台](../collect/advertising.md).
+通过完成本教程，您已探索广告系统，找到要引入[!DNL Platform]的表的路径，并获取有关其结构的信息。 您可以在下一个教程中使用此信息从广告系统[收集数据并将其带入Platform](../collect/advertising.md)。

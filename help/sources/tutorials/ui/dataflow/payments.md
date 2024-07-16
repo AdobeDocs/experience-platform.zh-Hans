@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform；主页；热门主题；支付连接器
 solution: Experience Platform
-title: 在UI中使用支付源创建数据流
+title: 在UI中使用支付Source创建数据流
 type: Tutorial
 description: 数据流是一种计划任务，用于在源中检索数据并将其摄取到Platform数据集。 本教程提供了有关如何使用Platform UI为支付来源创建数据流的步骤。
 exl-id: 7355435b-c038-4310-b04a-8ac6b6723b9b
 source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
 source-wordcount: '1449'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -18,82 +18,82 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->* 要创建数据流，您必须已拥有带支付源的经过身份验证的帐户。 有关在UI中创建不同支付来源帐户的教程列表，请参阅 [源概述](../../../home.md#payments).
+>* 要创建数据流，您必须已拥有带支付源的经过身份验证的帐户。 在[源概述](../../../home.md#payments)中可找到在UI中创建不同支付源帐户的教程列表。
 >* 要使Experience Platform摄取数据，必须将所有基于表的批处理源的时区配置为UTC时区。
 
 ## 快速入门
 
 本教程需要您对Platform的以下组件有一定的了解：
 
-* [源](../../../home.md)：Platform允许从各种源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。
+* [源](../../../home.md)：平台允许从各种源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。
 * [[!DNL Experience Data Model (XDM)] 系统](../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
-   * [模式组合基础](../../../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
+   * [架构组合的基础知识](../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构编辑器教程](../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
-* [[!DNL Real-Time Customer Profile]](../../../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
-* [[!DNL Data Prep]](../../../../data-prep/home.md)：允许数据工程师映射、转换和验证往来于Experience Data Model (XDM)的数据。
+* [[!DNL Real-Time Customer Profile]](../../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
+* [[!DNL Data Prep]](../../../../data-prep/home.md)：允许数据工程师映射、转换和验证与Experience Data Model (XDM)之间的数据。
 
 ## 添加数据
 
-创建付款来源帐户之后，您可以 **[!UICONTROL 添加数据]** 此时将显示步骤，为您提供浏览付款来源帐户表层次结构的界面。
+创建付款源帐户后，将显示&#x200B;**[!UICONTROL 添加数据]**&#x200B;步骤，为您提供一个浏览付款源帐户表层次结构的界面。
 
 * 界面的左半部分是一个浏览器，显示帐户中包含的数据表列表。 该界面还包括一个搜索选项，可让您快速识别要使用的源数据。
 * 界面的右半部分是预览面板，允许您预览最多100行数据。
 
 >[!NOTE]
 >
->搜索源数据选项适用于除Adobe Analytics之外的所有基于表的源。 [!DNL Amazon Kinesis]、和 [!DNL Azure Event Hubs].
+>搜索源数据选项适用于除Adobe Analytics、[!DNL Amazon Kinesis]和[!DNL Azure Event Hubs]之外的所有基于表的源。
 
-找到源数据后，选择表，然后选择 **[!UICONTROL 下一个]**.
+找到源数据后，请选择该表，然后选择&#x200B;**[!UICONTROL 下一步]**。
 
 ![select-data](../../../images/tutorials/dataflow/table-based/select-data.png)
 
 ## 提供数据流详细信息
 
-此 [!UICONTROL 数据流详细信息] 页面允许您选择是使用现有数据集还是新数据集。 在此过程中，您还可以配置以下项目的设置 [!UICONTROL 配置文件数据集]， [!UICONTROL 错误诊断]， [!UICONTROL 部分摄取]、和 [!UICONTROL 警报].
+[!UICONTROL 数据流详细信息]页面允许您选择是要使用现有数据集，还是使用新数据集。 在此过程中，您还可以配置[!UICONTROL 配置文件数据集]、[!UICONTROL 错误诊断]、[!UICONTROL 部分摄取]和[!UICONTROL 警报]的设置。
 
 ![数据流详细信息](../../../images/tutorials/dataflow/table-based/dataflow-detail.png)
 
 ### 使用现有数据集
 
-要将数据摄取到现有数据集，请选择 **[!UICONTROL 现有数据集]**. 您可以使用检索现有数据集 [!UICONTROL 高级搜索] 选项，或者通过在下拉菜单中滚动现有数据集的列表来进行更改。 选择数据集后，为数据流提供名称和描述。
+要将数据摄取到现有数据集，请选择&#x200B;**[!UICONTROL 现有数据集]**。 您可以使用[!UICONTROL 高级搜索]选项或通过滚动下拉菜单中的现有数据集列表来检索现有数据集。 选择数据集后，为数据流提供名称和描述。
 
-![existing-dataset](../../../images/tutorials/dataflow/table-based/existing-dataset.png)
+![现有数据集](../../../images/tutorials/dataflow/table-based/existing-dataset.png)
 
 ### 使用新数据集
 
-要摄取到新数据集中，请选择 **[!UICONTROL 新数据集]** 然后提供输出数据集名称和可选描述。 接下来，使用 [!UICONTROL 高级搜索] 选项，或者通过在下拉菜单中滚动查看现有架构的列表来进行更改。 选择架构后，为数据流提供名称和描述。
+要摄取到新数据集中，请选择&#x200B;**[!UICONTROL 新数据集]**，然后提供输出数据集名称和可选描述。 接下来，使用[!UICONTROL 高级搜索]选项或通过滚动下拉菜单中的现有架构列表来选择要映射到的架构。 选择架构后，为数据流提供名称和描述。
 
-![new-dataset](../../../images/tutorials/dataflow/table-based/new-dataset.png)
+![新数据集](../../../images/tutorials/dataflow/table-based/new-dataset.png)
 
-### 启用 [!DNL Profile] 和错误诊断
+### 启用[!DNL Profile]和错误诊断
 
-接下来，选择 **[!UICONTROL 配置文件数据集]** 切换以启用您的数据集 [!DNL Profile]. 这允许您创建实体的属性和行为的整体视图。 来自所有客户的数据 [!DNL Profile]启用的数据集将包含在 [!DNL Profile] 在保存数据流时，将应用更改。
+接下来，选择&#x200B;**[!UICONTROL 配置文件数据集]**&#x200B;切换开关以为[!DNL Profile]启用您的数据集。 这允许您创建实体的属性和行为的整体视图。 来自所有已启用[!DNL Profile]的数据集的数据将包含在[!DNL Profile]中，并且更改会在您保存数据流时应用。
 
-[!UICONTROL 错误诊断] 为数据流中发生的任何错误记录启用详细的错误消息生成，而 [!UICONTROL 部分摄取] 允许您摄取包含错误的数据，摄取到手动定义的特定阈值为止。 请参阅 [部分批次摄取概述](../../../../ingestion/batch-ingestion/partial.md) 以了解更多信息。
+[!UICONTROL 错误诊断]允许为数据流中发生的任何错误记录生成详细的错误消息，而[!UICONTROL 部分摄取]允许您摄取包含错误的数据，摄取阈值为您手动定义的某个阈值。 有关详细信息，请参阅[部分批次摄取概述](../../../../ingestion/batch-ingestion/partial.md)。
 
 ![配置文件和错误](../../../images/tutorials/dataflow/table-based/profile-and-errors.png)
 
 ### 启用警报
 
-您可以启用警报以接收有关数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅以下内容中的指南： [使用UI订阅源警报](../alerts.md).
+您可以启用警报以接收有关数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅源警报指南](../alerts.md)。
 
-完成向数据流提供详细信息后，选择 **[!UICONTROL 下一个]**.
+完成向数据流提供详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
 
 ![警报](../../../images/tutorials/dataflow/table-based/alerts.png)
 
 ## 将数据字段映射到XDM架构
 
-此 [!UICONTROL 映射] 此时会显示步骤，为您提供用于将源架构中的源字段映射到目标架构中相应的目标XDM字段的界面。
+此时将显示[!UICONTROL 映射]步骤，该步骤为您提供了一个接口，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
 
-Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅 [数据准备UI指南](../../../../data-prep/ui/mapping.md).
+Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](../../../../data-prep/ui/mapping.md)。
 
-成功映射源数据后，选择 **[!UICONTROL 下一个]**.
+成功映射源数据后，选择&#x200B;**[!UICONTROL 下一步]**。
 
 ![映射](../../../images/tutorials/dataflow/table-based/mapping.png)
 
 ## 计划摄取运行
 
-此 [!UICONTROL 正在计划] 此时将显示步骤，允许您配置摄取计划，以使用配置的映射自动摄取选定的源数据。 默认情况下，计划设置为 `Once`. 要调整摄取频率，请选择 **[!UICONTROL 频率]** 然后从下拉菜单中选择一个选项。
+此时将显示[!UICONTROL 计划]步骤，允许您配置摄取计划，以使用配置的映射自动摄取选定的源数据。 默认情况下，计划设置为`Once`。 要调整您的摄取频率，请选择&#x200B;**[!UICONTROL 频率]**，然后从下拉菜单中选择一个选项。
 
 >[!TIP]
 >
@@ -101,45 +101,45 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 ![计划](../../../images/tutorials/dataflow/table-based/scheduling.png)
 
-如果将摄取频率设置为 `Minute`， `Hour`， `Day`，或 `Week`，则必须设置一个时间间隔，以便在每次引入之间设置时间范围。 例如，摄取频率设置为 `Day` 并且间隔设置为 `15` 这意味着您的数据流计划每15天摄取一次数据。
+如果将摄取频率设置为`Minute`、`Hour`、`Day`或`Week`，则必须设置一个间隔，以便在每次摄取之间建立一个设置的时间范围。 例如，摄取频率设置为`Day`，间隔设置为`15`意味着您的数据流计划每15天摄取一次数据。
 
-在此步骤中，您还可以启用 **回填** 并为数据的增量摄取定义列。 回填用于摄取历史数据，而您为增量摄取定义的列允许从现有数据中区分新数据。
+在此步骤中，您还可以启用&#x200B;**回填**&#x200B;并为增量数据摄取定义列。 回填用于摄取历史数据，而您为增量摄取定义的列允许从现有数据中区分新数据。
 
 有关计划配置的详细信息，请参阅下表。
 
 | 字段 | 描述 |
 | --- | --- |
-| 频度 | 摄取发生的频率。 可选择频率包括 `Once`， `Minute`， `Hour`， `Day`、和 `Week`. |
+| 频度 | 摄取发生的频率。 可选择频率包括`Once`、`Minute`、`Hour`、`Day`和`Week`。 |
 | 间隔 | 设置所选频率间隔的整数。 间隔值应为非零整数，且应设置为大于或等于15。 |
 | 开始时间 | UTC时间戳，指示何时设置第一次引入。 开始时间必须大于或等于当前UTC时间。 |
 | 回填 | 一个布尔值，用于确定最初摄取的数据。 如果启用了回填，则指定路径中的所有当前文件将在第一次计划摄取期间摄取。 如果禁用回填，则只摄取在第一次引入运行到开始时间之间加载的文件。 将不会摄取在开始时间之前加载的文件。 |
-| 加载增量数据依据 | 一个选项，其中包含一组类型为、日期或时间的源架构字段。 您选择的字段 **[!UICONTROL 加载增量数据依据]** 必须具有UTC时区的日期时间值，才能正确加载增量数据。 所有基于表的批处理源均可通过将增量列时间戳值与相应的流运行窗口UTC时间进行比较，然后复制源中的数据（如果在UTC时间窗口内发现任何新数据）来选择增量数据。 |
+| 加载增量数据依据 | 一个选项，其中包含一组类型为、日期或时间的源架构字段。 您为&#x200B;**[!UICONTROL 加载增量数据(]**)选择的字段必须具有UTC时区的日期时间值，才能正确加载增量数据。 所有基于表的批处理源均可通过将增量列时间戳值与相应的流运行窗口UTC时间进行比较，然后复制源中的数据（如果在UTC时间窗口内发现任何新数据）来选择增量数据。 |
 
 ![回填](../../../images/tutorials/dataflow/table-based/backfill.png)
 
 ## 查看您的数据流
 
-此 **[!UICONTROL 审核]** 此时会显示步骤，允许您在创建新数据流之前对其进行查看。 详细信息分为以下类别：
+将显示&#x200B;**[!UICONTROL 审核]**&#x200B;步骤，允许您在创建新数据流之前对其进行审核。 详细信息分为以下类别：
 
 * **[!UICONTROL 连接]**：显示源类型、所选源文件的相关路径以及该源文件中的列数。
 * **[!UICONTROL 分配数据集和映射字段]**：显示要将源数据摄取到哪个数据集，包括数据集所遵循的架构。
-* **[!UICONTROL 正在计划]**：显示摄取计划的活动时段、频率和间隔。
+* **[!UICONTROL 计划]**：显示摄取计划的活动时段、频率和间隔。
 
-查看数据流后，选择 **[!UICONTROL 完成]** 留出一段时间来创建数据流。
+查看数据流后，选择&#x200B;**[!UICONTROL 完成]**，然后等待一些时间来创建数据流。
 
 ![审核](../../../images/tutorials/dataflow/table-based/review.png)
 
 ## 监测数据流
 
-创建数据流后，您可以监视通过它摄取的数据，以查看有关摄取率、成功和错误的信息。 有关如何监视数据流的更多信息，请参阅关于的教程 [在UI中监控帐户和数据流](../monitor.md).
+创建数据流后，您可以监视通过它摄取的数据，以查看有关摄取率、成功和错误的信息。 有关如何监视数据流的详细信息，请参阅有关UI](../monitor.md)中[监视帐户和数据流的教程。
 
 ## 删除您的数据流
 
-您可以删除不再必需的数据流或使用 **[!UICONTROL 删除]** 函数位于 **[!UICONTROL 数据流]** 工作区。 有关如何删除数据流的更多信息，请参阅关于的教程 [在UI中删除数据流](../delete.md).
+您可以删除不再必需的数据流或使用&#x200B;**[!UICONTROL 数据流]**&#x200B;工作区中提供的&#x200B;**[!UICONTROL 删除]**&#x200B;功能错误地创建的数据流。 有关如何删除数据流的详细信息，请参阅有关[在UI中删除数据流](../delete.md)的教程。
 
 ## 后续步骤
 
-通过学习本教程，您已成功地创建了数据流，可将支付源中的数据引入Platform。 传入数据现在可供下游使用 [!DNL Platform] 服务，例如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
+通过学习本教程，您已成功地创建了数据流，可将支付源中的数据引入Platform。 下游[!DNL Platform]服务（如[!DNL Real-Time Customer Profile]和[!DNL Data Science Workspace]）现在可以使用传入数据。 有关更多详细信息，请参阅以下文档：
 
 * [[!DNL Real-Time Customer Profile] 概述](../../../../profile/home.md)
 * [[!DNL Data Science Workspace] 概述](../../../../data-science-workspace/home.md)

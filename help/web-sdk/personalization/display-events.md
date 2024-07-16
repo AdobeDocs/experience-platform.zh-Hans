@@ -17,12 +17,12 @@ ht-degree: 0%
 
 Web SDK允许您通过两种方式发送显示事件：
 
-* [自动](#send-automatically)，紧跟在页面上呈现个性化内容之后。 请参阅有关如何执行操作的文档 [呈现个性化内容](rendering-personalization-content.md) 以了解更多信息。
-* [手动](#send-sendEvent-calls)，通过后续的 `sendEvent` 呼叫。
+* [自动](#send-automatically)，紧跟个性化内容在页面上呈现之后。 有关详细信息，请参阅有关如何[渲染个性化内容](rendering-personalization-content.md)的文档。
+* [手动](#send-sendEvent-calls)，通过后续`sendEvent`调用。
 
 >[!NOTE]
 >
->在调用时，不会自动发送显示事件 `applyPropositions` 函数。
+>调用`applyPropositions`函数时不会自动发送显示事件。
 
 ## 自动发送显示事件 {#send-automatically}
 
@@ -31,31 +31,31 @@ Web SDK允许您通过两种方式发送显示事件：
 要在页面上呈现个性化内容后自动发送显示事件，必须配置以下参数：
 
 * `renderDecisions: true`
-* `personalization.sendDisplayNotifications: true` 或未指定
+* `personalization.sendDisplayNotifications: true`或未指定
 
-在任何个性化作为的结果呈现后，Web SDK会立即发送显示事件。 `sendEvent` 呼叫。
+Web SDK在作为`sendEvent`调用的结果呈现任何个性化设置后立即发送显示事件。
 
 ## 在后续sendEvent调用中发送显示事件 {#send-sendEvent-calls}
 
-比较对象 [自动](#send-automatically) 发送显示事件（当在后续操作中包含这些事件时） `sendEvent` 调用您还有机会在调用中包含有关页面加载的更多信息。 这可能是额外的信息，在请求个性化内容时不可用。
+与[自动](#send-automatically)发送显示事件相比，当您将其包含在后续`sendEvent`调用中时，您还有机会在调用中包含有关页面加载的更多信息。 这可能是额外的信息，在请求个性化内容时不可用。
 
-此外，发送显示事件于 `sendEvent` 使用Adobe Analytics时，调用可将跳出率错误降至最低。
+此外，在使用Adobe Analytics时，在`sendEvent`调用中发送显示事件可最大限度地减少跳出率错误。
 
 >[!IMPORTANT]
 >
->使用手动渲染的建议时，仅支持显示事件，途径为 `sendEvent` 呼叫。 在这种情况下，您无法自动发送显示事件。
+>使用手动渲染的建议时，仅通过`sendEvent`调用支持显示事件。 在这种情况下，您无法自动发送显示事件。
 
 ### 为自动呈现的建议发送显示事件 {#auto-rendered-propositions}
 
-要为自动呈现的建议发送显示事件，您必须在 `sendEvent` 调用：
+要为自动呈现的建议发送显示事件，必须在`sendEvent`调用中配置以下参数：
 
 * `renderDecisions: true`
-* `personalization.sendDisplayNotifications: false` 对于页面点击顶部
+* 页面点击顶部的`personalization.sendDisplayNotifications: false`
 
-要发送显示事件，请调用 `sendEvent` 替换为 `personalization.includePendingDisplayNotifications: true`
+若要发送显示事件，请使用`personalization.includePendingDisplayNotifications: true`调用`sendEvent`
 
 ### 发送手动呈现的建议的显示事件 {#manually-rendered-propositions}
 
-要为手动呈现的建议发送显示事件，您必须将它们包含在中 `_experience.decisioning.propositions` XDM字段，包括 `id`， `scope`、和 `scopeDetails` 字段。
+要发送手动呈现建议中的显示事件，您必须将其包含在`_experience.decisioning.propositions` XDM字段中，包括建议中的`id`、`scope`和`scopeDetails`字段。
 
-此外，设置 `include _experience.decisioning.propositionEventType.display` 字段至 `1`.
+此外，将`include _experience.decisioning.propositionEventType.display`字段设置为`1`。

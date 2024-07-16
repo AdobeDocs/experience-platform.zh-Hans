@@ -13,6 +13,6 @@ ht-degree: 0%
 
 # Real-time Customer Data Platform中的数据集
 
-在Real-time Customer Data Platform用户界面中，您可以查看和管理贵组织创建的所有数据集，以及创建新数据集。 要浏览UI中的数据集，请选择 **[!UICONTROL 数据集]** 在左侧导航栏中。 此 **[!UICONTROL 浏览]** 选项卡包含数据集列表，其中包括显示名称、创建（日期和时间）、源、架构和上次批次状态以及上次更新数据集的日期和时间的列。
+在Real-time Customer Data Platform用户界面中，您可以查看和管理贵组织创建的所有数据集，以及创建新数据集。 要浏览UI中的数据集，请在左侧导航中选择&#x200B;**[!UICONTROL 数据集]**。 **[!UICONTROL 浏览]**&#x200B;选项卡包含数据集列表，其中包括显示名称、创建（日期和时间）、源、架构和上次批次状态以及上次更新数据集的日期和时间的列。
 
-有关中的数据集的信息 [!DNL Experience Platform]，首先阅读 [数据集概述](../../catalog/datasets/overview.md).
+有关[!DNL Experience Platform]中数据集的信息，请首先阅读[数据集概述](../../catalog/datasets/overview.md)。

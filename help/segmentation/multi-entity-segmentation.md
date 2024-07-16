@@ -12,17 +12,17 @@ ht-degree: 0%
 
 # 多实体分段概述
 
-多实体分段是Adobe Experience Platform中提供的高级功能 [!DNL Segmentation Service]. 此功能允许您扩展 [!DNL Real-Time Customer Profile] 包含您的组织可能定义的其他“非人员”数据（也称为“维度实体”）的数据，例如与产品或商店相关的数据。 多实体分段在基于与您的独特业务需求相关的数据定义区段定义时提供了灵活性，并且无需在查询数据库方面拥有专业知识即可执行。 借助多实体分段，您可以将关键数据添加到区段定义，而无需对数据流进行成本高昂的更改或等待后端数据合并。
+多实体分段是Adobe Experience Platform [!DNL Segmentation Service]中提供的高级功能。 此功能允许您使用组织可能定义的其他“非人员”数据（也称为“维度实体”）扩展[!DNL Real-Time Customer Profile]数据，例如与产品或商店相关的数据。 多实体分段在基于与您的独特业务需求相关的数据定义区段定义时提供了灵活性，并且无需在查询数据库方面拥有专业知识即可执行。 借助多实体分段，您可以将关键数据添加到区段定义，而无需对数据流进行成本高昂的更改或等待后端数据合并。
 
 ## 快速入门
 
 多实体分段需要深入了解分段中涉及的各种Adobe Experience Platform服务。 在继续本指南之前，请查看以下文档：
 
-* [[!DNL Real-Time Customer Profile]](../profile/home.md)：根据来自多个源的汇总数据，实时提供统一的用户配置文件。
-   * [侧面护栏](../profile/guardrails.md)：创建受支持的数据模型的最佳实践 [!DNL Profile].
-* [[!DNL Adobe Experience Platform Segmentation Service]](./home.md)：允许您从构建受众 [!DNL Real-Time Customer Profile] 数据。
+* [[!DNL Real-Time Customer Profile]](../profile/home.md)：基于来自多个源的聚合数据，实时提供统一的使用者配置文件。
+   * [配置文件护栏](../profile/guardrails.md)：用于创建[!DNL Profile]支持的数据模型的最佳实践。
+* [[!DNL Adobe Experience Platform Segmentation Service]](./home.md)：允许您从[!DNL Real-Time Customer Profile]数据构建受众。
 * [[!DNL Experience Data Model (XDM)]](../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
-   * [模式组合基础](../xdm/schema/composition.md#union)：了解合成Experience Platform中使用的架构的最佳实践。 为了更好地利用分段，请确保您的数据被作为配置文件和事件摄取，并根据 [数据建模的最佳实践](../xdm/schema/best-practices.md).
+   * [架构组合的基础知识](../xdm/schema/composition.md#union)：了解组合架构以用于Experience Platform的最佳实践。 为了更好地利用分段，请确保根据用于数据建模的[最佳实践](../xdm/schema/best-practices.md)，将您的数据作为配置文件和事件摄取。
 
 ## 用例
 
@@ -38,7 +38,7 @@ ht-degree: 0%
 
 ## 创建多实体区段定义
 
-创建多实体区段定义首先需要定义架构之间的关系，然后再使用 [!DNL Segmentation] API或区段生成器UI来生成区段定义。
+创建多实体区段定义首先需要定义架构之间的关系，然后再使用[!DNL Segmentation] API或区段生成器UI生成区段定义。
 
 ### 定义关系
 
@@ -58,4 +58,4 @@ ht-degree: 0%
 
 ## 评估和访问多实体区段定义
 
-创建区段定义后，您可以使用分段API评估和访问结果。 评估多实体区段定义与评估标准区段定义非常相似。 此过程只能使用分段API完成。 要获取有关如何使用API来评估和访问区段定义的详细指南，请参阅 [评估和访问区段定义](./tutorials/evaluate-a-segment.md) 教程。
+创建区段定义后，您可以使用分段API评估和访问结果。 评估多实体区段定义与评估标准区段定义非常相似。 此过程只能使用分段API完成。 有关如何使用API来评估和访问区段定义的详细指南，请参阅[评估和访问区段定义](./tutorials/evaluate-a-segment.md)教程。

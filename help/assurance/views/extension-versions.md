@@ -3,7 +3,7 @@ title: 扩展版本视图
 description: 本指南详细介绍了 Adobe Experience Platform Assurance 中的扩展版本视图的信息。
 exl-id: a3a649da-1ef1-45a3-a1ed-6a7bc16c2987
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
-workflow-type: ht
+workflow-type: tm+mt
 source-wordcount: '190'
 ht-degree: 100%
 

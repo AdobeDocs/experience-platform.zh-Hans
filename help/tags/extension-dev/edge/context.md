@@ -1,11 +1,11 @@
 ---
-title: 边缘扩展模块中的上下文
+title: Edge扩展模块中的上下文
 description: 了解上下文对象及其在与Edge属性的标记扩展中的库模块交互中发挥的作用。
 exl-id: 04e4e369-687e-4b46-9d24-18a97a218555
 source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
-source-wordcount: '747'
-ht-degree: 77%
+source-wordcount: '729'
+ht-degree: 73%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 77%
 
 >[!NOTE]
 >
-> Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+> Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 Edge 扩展中的所有库模块在执行时，都会获得一个 `context` 对象。本文档介绍了 `context` 对象提供的属性，以及些属性在库模块中发挥的作用。
 
@@ -23,7 +23,7 @@ Edge 扩展中的所有库模块在执行时，都会获得一个 `context` 对�
 
 ### [!DNL event]
 
-此 `event` object表示触发规则的事件，它包含以下值：
+`event`对象表示触发规则的事件，并包含以下值：
 
 ```js
 logger.log(context.arc.event);
@@ -42,7 +42,7 @@ logger.log(context.arc.event);
 logger.log(context.arc.request)
 ```
 
-`request` 对象有两个顶级属性：`body` 和 `head`。此 `body` Adobe Experience Platform属性包含Experience Data Model (XDM)信息，当您导航到 **[!UICONTROL Launch]** 并选择 **[!UICONTROL 边缘跟踪]** 选项卡。
+`request` 对象有两个顶级属性：`body` 和 `head`。`body`属性包含体验数据模型(XDM)信息，当您导航到&#x200B;**[!UICONTROL Launch]**&#x200B;并选择&#x200B;**[!UICONTROL Edge跟踪]**&#x200B;选项卡时，可在Adobe Experience Platform Debugger中检查该属性。
 
 ### [!DNL ruleStash] {#rulestash}
 
@@ -96,15 +96,15 @@ module.exports = (context) => {
 
 >[!NOTE]
 >
->使用此策略时，请注意要始终返回完整的扩展规则存储。 如果您只返回一个值，则它将覆盖您可能已设置的任何其他属性。
+>使用此策略时，请注意要始终返回完整的扩展规则存储。 如果只返回一个值，它将覆盖您可能已设置的任何其他属性。
 
 ## 实用工具
 
-此 `utils` 属性表示一个对象，该对象提供特定于标记运行时的实用程序。
+`utils`属性表示提供特定于标记运行时的实用程序的对象。
 
 ### [!DNL logger]
 
-此 `logger` 实用程序允许您记录在使用调试会话期间显示的消息 [Adobe Experience Platform调试器](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob).
+`logger`实用程序允许您记录使用[Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob)时调试会话期间显示的消息。
 
 ```js
 context.utils.logger.error('Error!');
@@ -131,7 +131,7 @@ context.utils.fetch('http://example.com/movies.json')
 
 ### [!DNL getBuildInfo]
 
-此实用程序返回一个对象，其中包含有关当前标记运行时库的生成信息。
+该实用程序返回了一个对象，其中包含有关当前标记运行时库的生成信息。
 
 ```js
 logger.log(context.utils.getBuildInfo().turbineBuildDate);

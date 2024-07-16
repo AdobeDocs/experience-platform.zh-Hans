@@ -19,10 +19,10 @@ ht-degree: 0%
 
 此概述需要您对Adobe Experience Platform的以下组件有一定的了解：
 
-- [数据准备](./home.md)：数据准备允许数据工程师映射、转换和验证进出体验数据模型(XDM)的数据。
-- [数据流](../dataflows/home.md)：数据流表示跨Platform移动数据的数据作业。 数据流在不同的服务之间配置，有助于将数据从源连接器移动到目标数据集，以 [!DNL Identity] 和 [!DNL Profile]、和 [!DNL Destinations].
-- [[!DNL Adobe Experience Platform Data Ingestion]](../ingestion/home.md)：将数据发送到的方法 [!DNL Experience Platform].
-- [[!DNL Experience Data Model (XDM) System]](../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
+- [数据准备](./home.md)：数据准备允许数据工程师映射、转换和验证与体验数据模型(XDM)之间的数据。
+- [数据流](../dataflows/home.md)：数据流是跨平台移动数据的数据作业的表示形式。 数据流在不同服务之间配置，帮助将数据从源连接器移动到目标数据集、[!DNL Identity]和[!DNL Profile]以及[!DNL Destinations]。
+- [[!DNL Adobe Experience Platform Data Ingestion]](../ingestion/home.md)：将数据发送到[!DNL Experience Platform]的方法。
+- [[!DNL Experience Data Model (XDM) System]](../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
 
 ## 映射集语法
 
@@ -73,19 +73,19 @@ ht-degree: 0%
 | `inputSchema` | 传入数据的XDM架构。 |
 | `outputSchema` | 输入数据将转换为符合的XDM架构。 |
 | `mappings` | 从源架构到目标架构的字段到字段映射数组。 |
-| `sourceType` | 对于列出的每个映射，其 `sourceType` attribute指示要映射的源类型。 可以是以下之一 `ATTRIBUTE`， `STATIC`，或 `EXPRESSION`： <ul><li> `ATTRIBUTE` 用于源路径中找到的任何值。 </li><li>`STATIC` 用于插入目标路径中的值。 该值保持不变，不受源架构的影响。</li><li> `EXPRESSION` 用于表达式，该表达式将在运行时解析。 可用表达式的列表可在 [映射函数指南](./functions.md).</li> </ul> |
-| `source` | 对于每个列出的映射， `source` attribute表示要映射的字段。 有关如何配置源的详细信息，请参见 [源概述](../sources/home.md). |
-| `destination` | 对于每个列出的映射， `destination` attribute表示字段或字段的路径，其中值是从 `source` 将放置字段。 有关如何配置目标的更多信息，请参阅 [目标概述](../destinations/home.md). |
-| `mappings.name` | (*可选*)映射的名称。 |
-| `mappings.description` | (*可选*)映射的说明。 |
+| `sourceType` | 对于每个列出的映射，其`sourceType`属性指示要映射的源类型。 可以是`ATTRIBUTE`、`STATIC`或`EXPRESSION`之一： <ul><li> `ATTRIBUTE`用于源路径中找到的任何值。 </li><li>`STATIC`用于插入到目标路径中的值。 该值保持不变，不受源架构的影响。</li><li> `EXPRESSION`用于将在运行时解析的表达式。 可以在[映射函数指南](./functions.md)中找到可用表达式的列表。</li> </ul> |
+| `source` | 对于每个列出的映射，`source`属性表示要映射的字段。 有关如何配置源的详细信息，请参阅[源概述](../sources/home.md)。 |
+| `destination` | 对于列出的每个映射，`destination`属性都表示该字段或字段的路径，从中将放置从`source`字段提取的值。 有关如何配置目标的详细信息，请参阅[目标概述](../destinations/home.md)。 |
+| `mappings.name` | （*可选*）映射的名称。 |
+| `mappings.description` | （*可选*）映射的说明。 |
 
 ## 配置映射源
 
-在映射中， `source` 可以是字段、表达式或静态值。 根据给定的源类型，可以通过多种方式提取该值。
+在映射中，`source`可以是字段、表达式或静态值。 根据给定的源类型，可以通过多种方式提取该值。
 
 ### 列数据中的字段
 
-在列数据（如CSV文件）中映射字段时，请使用 `ATTRIBUTE` 源类型。 如果字段包含 `.` 在其名称内，使用 `\` 以转义值。 此映射的示例如下所示：
+在列数据（如CSV文件）中映射字段时，请使用`ATTRIBUTE`源类型。 如果该字段的名称中包含`.`，请使用`\`对该值进行转义。 此映射的示例如下所示：
 
 **示例CSV文件：**
 
@@ -104,7 +104,7 @@ John Smith, js@example.com
 }
 ```
 
-**转换后的数据**
+**转换的数据**
 
 ```json
 {
@@ -116,7 +116,7 @@ John Smith, js@example.com
 
 ### 嵌套数据中的字段
 
-在嵌套数据（如JSON文件）中映射字段时，请使用 `ATTRIBUTE` 源类型。 如果字段包含 `.` 在其名称内，使用 `\` 以转义值。 此映射的示例如下所示：
+在嵌套数据（如JSON文件）中映射字段时，请使用`ATTRIBUTE`源类型。 如果该字段的名称中包含`.`，请使用`\`对该值进行转义。 此映射的示例如下所示：
 
 **示例JSON文件**
 
@@ -139,7 +139,7 @@ John Smith, js@example.com
 }
 ```
 
-**转换后的数据**
+**转换的数据**
 
 ```json
 {
@@ -151,7 +151,7 @@ John Smith, js@example.com
 
 ### 数组中的字段
 
-在数组中映射字段时，可以使用索引检索特定值。 要执行此操作，请使用 `ATTRIBUTE` 源类型和要映射的值的索引。 此映射的示例如下所示：
+在数组中映射字段时，可以使用索引检索特定值。 为此，请使用`ATTRIBUTE`源类型和要映射的值的索引。 此映射的示例如下所示：
 
 **示例JSON文件**
 
@@ -182,7 +182,7 @@ John Smith, js@example.com
 }
 ```
 
-**转换后的数据**
+**转换的数据**
 
 ```json
 {
@@ -194,7 +194,7 @@ John Smith, js@example.com
 
 ### 数组到数组或对象到对象
 
-使用 `ATTRIBUTE` 源类型，您还可以直接将数组映射到数组，或将对象映射到对象。 此映射的示例如下所示：
+使用`ATTRIBUTE`源类型，您还可以直接将数组映射到数组，或将对象映射到对象。 此映射的示例如下所示：
 
 **示例JSON文件**
 
@@ -225,7 +225,7 @@ John Smith, js@example.com
 }
 ```
 
-**转换后的数据**
+**转换的数据**
 
 ```json
 {
@@ -246,7 +246,7 @@ John Smith, js@example.com
 
 ### 阵列上的迭代运算
 
-使用 `ATTRIBUTE` 源类型时，可以使用通配符索引(`[*]`)。 此映射的示例如下所示：
+使用`ATTRIBUTE`源类型，您可以使用通配符索引(`[*]`)反复循环遍历数组并将它们映射到目标架构。 此映射的示例如下所示：
 
 **示例JSON文件**
 
@@ -277,7 +277,7 @@ John Smith, js@example.com
 }
 ```
 
-**转换后的数据**
+**转换的数据**
 
 ```json
 {
@@ -298,7 +298,7 @@ John Smith, js@example.com
 
 ### 常量值
 
-如果要映射常量或静态值，请使用 `STATIC` 源类型。  使用时 `STATIC` 源类型， `source` 表示要分配到的硬编码值 `destination`. 此映射的示例如下所示：
+如果要映射常量或静态值，请使用`STATIC`源类型。  使用`STATIC`源类型时，`source`表示要分配给`destination`的硬编码值。 此映射的示例如下所示：
 
 **示例JSON文件**
 
@@ -319,7 +319,7 @@ John Smith, js@example.com
 }
 ```
 
-**转换后的数据**
+**转换的数据**
 
 ```json
 {
@@ -329,7 +329,7 @@ John Smith, js@example.com
 
 ### 表达式
 
-如果要映射表达式，请使用 `EXPRESSION` 源类型。 接受的函数列表可在 [映射函数指南](./functions.md). 使用时 `EXPRESSION` 源类型， `source` 表示要解析的功能。 此映射的示例如下所示：
+如果要映射表达式，请使用`EXPRESSION`源类型。 可以在[映射函数指南](./functions.md)中找到接受的函数列表。 使用`EXPRESSION`源类型时，`source`表示要解析的函数。 此映射的示例如下所示：
 
 **示例JSON文件**
 
@@ -351,7 +351,7 @@ John Smith, js@example.com
 }
 ```
 
-**转换后的数据**
+**转换的数据**
 
 ```json
 {
@@ -363,11 +363,11 @@ John Smith, js@example.com
 
 ## 配置映射目标
 
-在映射中， `destination` 是从中提取值的位置 `source` 将被插入。
+在映射中，`destination`是将从`source`中提取的值插入到的位置。
 
 ### 根级别的字段
 
-当您想要映射 `source` 值到转换后数据的根级别，请遵循以下示例：
+如果要将`source`值映射到转换后数据的根级别，请遵循以下示例：
 
 **示例JSON文件**
 
@@ -390,7 +390,7 @@ John Smith, js@example.com
 }
 ```
 
-**转换后的数据**
+**转换的数据**
 
 ```json
 {
@@ -400,7 +400,7 @@ John Smith, js@example.com
 
 ### 嵌套字段
 
-当您想要映射 `source` 值转换为转换后的数据中的嵌套字段，请遵循以下示例：
+当您要将`source`值映射到转换后的数据中的嵌套字段时，请遵循以下示例：
 
 **示例JSON文件**
 
@@ -421,7 +421,7 @@ John Smith, js@example.com
 }
 ```
 
-**转换后的数据**
+**转换的数据**
 
 ```json
 {
@@ -433,7 +433,7 @@ John Smith, js@example.com
 
 ### 特定数组索引处的字段
 
-当您想要映射 `source` 值到转换后的数据阵列中的特定索引时，请遵循以下示例：
+如果要将`source`值映射到转换数据数组中的特定索引，请遵循以下示例：
 
 **示例JSON文件**
 
@@ -456,7 +456,7 @@ John Smith, js@example.com
 }
 ```
 
-**转换后的数据**
+**转换的数据**
 
 ```json
 {
@@ -495,7 +495,7 @@ John Smith, js@example.com
 }
 ```
 
-**转换后的数据**
+**转换的数据**
 
 ```json
 {
@@ -516,4 +516,4 @@ John Smith, js@example.com
 
 ## 后续步骤
 
-通过阅读本文档，您现在应该了解如何构建映射集，包括如何在映射集中配置各个映射。 有关其他数据准备功能的详细信息，请阅读 [数据准备概述](./home.md). 要了解如何在数据准备API中使用映射集，请参阅 [数据准备开发人员指南](./api/overview.md).
+通过阅读本文档，您现在应该了解如何构建映射集，包括如何在映射集中配置各个映射。 有关其他数据准备功能的详细信息，请阅读[数据准备概述](./home.md)。 要了解如何在数据准备API中使用映射集，请阅读[数据准备开发人员指南](./api/overview.md)。

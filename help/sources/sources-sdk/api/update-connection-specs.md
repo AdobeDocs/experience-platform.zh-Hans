@@ -22,7 +22,7 @@ PUT /connectionSpecs/{CONNECTION_SPEC_ID}
 
 **请求**
 
-以下请求将更新 `name` 的 [!DNL MailChimp] 在上一步中创建的源。
+以下请求更新在上一步中创建的[!DNL MailChimp]源的`name`。
 
 ```shell
 PUT -X GET \
@@ -205,7 +205,7 @@ PUT -X GET \
 
 **响应**
 
-成功的调用会返回更新的连接规范详细信息，包括其更新的名称。
+成功的调用将返回更新的连接规范详细信息，包括其更新的名称。
 
 ```json
 {

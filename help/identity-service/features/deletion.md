@@ -5,7 +5,7 @@ exl-id: 0619d845-71c1-4699-82aa-c6436815d5b3
 source-git-commit: 576b17842ee1c5722332ba49e26b037537ec96ed
 workflow-type: tm+mt
 source-wordcount: '1199'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -21,23 +21,23 @@ Adobe Experience Platform Identity Service通过确定性地关联个人跨设�
 
 以下文档引用了Experience Platform的以下功能：
 
-* [Identity Service](../home.md)：通过跨设备和系统桥接身份，更好地了解个人客户及其行为。
-   * [身份图](./identity-graph-viewer.md)：身份图是特定客户不同身份之间关系的映射，为您提供客户如何跨不同渠道与您的品牌互动的可视表示形式。
-   * [身份命名空间](./namespaces.md)：身份命名空间是Identity Service的组件，充当与身份相关的上下文指示器。 例如，它们区分“name”值<span>@email.com”作为电子邮件地址，或者“443522”作为数字CRM ID。
+* [身份服务](../home.md)：通过跨设备和系统桥接身份，更好地了解个人客户及其行为。
+   * [身份图](./identity-graph-viewer.md)：身份图是特定客户不同身份之间关系的映射，它为您提供了客户如何跨不同渠道与您的品牌互动的可视表示形式。
+   * [身份命名空间](./namespaces.md)：身份命名空间是Identity Service的组件，充当与身份相关的上下文的指示器。 例如，它们将“name<span>@email.com”的值区分为电子邮件地址或“443522”区分为数字CRM ID。
 * [目录服务](../../catalog/home.md)：浏览数据湖中的数据谱系、元数据、文件描述、目录和数据集。
 * [数据卫生](../../hygiene/home.md)：通过计划自动数据集过期时间，或者从一个数据集或所有数据集中删除单个记录来管理存储的消费者数据。
 * [Adobe Experience Platform Privacy Service](../../privacy-service/home.md)：管理客户跨多个Adobe Experience Cloud应用程序访问、选择退出销售或删除其个人数据的请求。
-* [Real-time Customer Profile](../../profile/home.md)：根据来自多个来源的汇总数据，实时提供统一的客户个人资料。
+* [实时客户个人资料](../../profile/home.md)：根据来自多个来源的汇总数据，实时提供统一的客户个人资料。
 
 ## 单个身份删除
 
-通过单个身份删除请求可以删除图形中的身份，从而删除与与身份命名空间关联的单个用户身份关联的链接。 您可以使用以下提供的机制 [Privacy Service](../../privacy-service/home.md) 用例，例如客户请求删除数据以及遵守《通用数据保护条例》(GDPR)等隐私法规。
+通过单个身份删除请求可以删除图形中的身份，从而删除与与身份命名空间关联的单个用户身份关联的链接。 您可以将[Privacy Service](../../privacy-service/home.md)提供的机制用于用户案例，例如客户请求删除数据以及遵守《通用数据保护条例》(GDPR)等隐私法规。
 
 以下各节概述了可用于Experience Platform中单个身份删除请求的机制。
 
 ### 在Privacy Service中删除单个身份
 
-Privacy Service会处理客户访问、选择退出销售或删除其个人数据的请求，这些请求由隐私法规(例如，《通用数据保护条例》(GDPR)和《加州消费者隐私法案》(CCPA)来规定。 借助Privacy Service，您可以使用API或UI提交作业请求。 当Experience Platform收到来自Privacy Service的删除请求时，平台会向Privacy Service发送确认，确认请求已收到，并且受影响的数据已标记为删除。 个人身份的删除基于提供的命名空间和/或ID值。 此外，还会删除与给定组织关联的所有沙盒。 有关详细信息，请阅读上的指南 [Identity Service中的隐私请求处理](../privacy.md).
+Privacy Service会处理客户访问、选择退出销售或删除其个人数据的请求，这些请求由隐私法规(例如，《通用数据保护条例》(GDPR)和《加州消费者隐私法案》(CCPA)来规定。 借助Privacy Service，您可以使用API或UI提交作业请求。 当Experience Platform收到来自Privacy Service的删除请求时，平台会向Privacy Service发送确认，确认请求已收到，并且受影响的数据已标记为删除。 个人身份的删除基于提供的命名空间和/或ID值。 此外，还会删除与给定组织关联的所有沙盒。 有关详细信息，请参阅Identity Service](../privacy.md)中的[隐私请求处理指南。
 
 下表提供了Privacy Service中单个身份删除的划分信息：
 
@@ -56,11 +56,11 @@ Privacy Service会处理客户访问、选择退出销售或删除其个人数�
 
 ### 在目录服务中删除数据集
 
-您可以使用目录服务提交数据集删除请求。 有关如何使用目录服务删除数据集的更多信息，请阅读上的指南 [使用目录服务API删除对象](../../catalog/api/delete-object.md). 或者，您可以使用Platform UI提交数据集删除请求。 欲知更多信息，请参阅 [数据集用户指南](../../catalog/datasets/user-guide.md#delete-a-dataset).
+您可以使用目录服务提交数据集删除请求。 有关如何使用目录服务删除数据集的更多信息，请阅读有关使用目录服务API [删除对象的指南](../../catalog/api/delete-object.md)。 或者，您可以使用Platform UI提交数据集删除请求。 有关详细信息，请阅读[数据集用户指南](../../catalog/datasets/user-guide.md#delete-a-dataset)。
 
 ### 数据保健中的数据集过期时间
 
-此 [[!UICONTROL 数据保健] 工作区](../../hygiene/ui/overview.md) 在Adobe Experience Platform UI中，您可以安排数据集的过期时间。 当数据集达到其到期日期时，数据湖、Identity Service和Real-time Customer Profile会开始单独的进程，以从各自的服务中删除数据集的内容。 有关详细信息，请阅读上的指南 [使用管理数据集过期 [!UICONTROL 数据保健] 工作区](../../hygiene/ui/dataset-expiration.md).
+Adobe Experience Platform UI中的[[!UICONTROL 数据卫生]工作区](../../hygiene/ui/overview.md)允许您安排数据集的过期时间。 当数据集达到其到期日期时，数据湖、Identity Service和Real-time Customer Profile会开始单独的进程，以从各自的服务中删除数据集的内容。 有关详细信息，请参阅[使用[!UICONTROL 数据保健]工作区](../../hygiene/ui/dataset-expiration.md)管理数据集过期时间的指南。
 
 下表细列了目录服务中的数据集删除与数据卫生之间的差异：
 
@@ -89,7 +89,7 @@ Privacy Service会处理客户访问、选择退出销售或删除其个人数�
 
 ## 后续步骤
 
-本文档介绍了可用于在Experience Platform上删除身份和数据集的各种机制。 本文档还概述了身份和数据集删除如何影响身份图。 有关Identity Service的详细信息，请阅读 [Identity服务概述](../home.md).
+本文档介绍了可用于在Experience Platform上删除身份和数据集的各种机制。 本文档还概述了身份和数据集删除如何影响身份图。 有关Identity服务的详细信息，请阅读[Identity服务概述](../home.md)。
 
 <!--
 

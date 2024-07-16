@@ -7,33 +7,33 @@ description: 了解如何使用流服务API删除批处理数据流和流式数�
 exl-id: ea9040b1-3a40-493d-86f0-27deef09df07
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
-source-wordcount: '324'
+source-wordcount: '322'
 ht-degree: 2%
 
 ---
 
 # 使用流服务API删除数据流
 
-您可以使用删除包含错误或已过时的批处理数据流和流式数据流 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+您可以使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)删除包含错误或已过期的批处理数据流和流式数据流。
 
-本教程介绍了使用删除通过批处理源和流式源生成的数据流的步骤。 [!DNL Flow Service].
+本教程介绍如何使用[!DNL Flow Service]删除通过批处理源和流源创建的数据流的步骤。
 
 ## 快速入门
 
-本教程要求您拥有有效的流ID。 如果您没有有效的流ID，请从 [源概述](../../home.md) 并按照尝试阅读本教程之前概述的步骤操作。
+本教程要求您拥有有效的流ID。 如果您没有有效的流ID，请从[源概述](../../home.md)中选择您选择的连接器，并按照尝试本教程之前概述的步骤操作。
 
 本教程还要求您实际了解Adobe Experience Platform的以下组件：
 
-* [源](../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下方式构建、标记和增强传入数据： [!DNL Platform] 服务。
-* [沙盒](../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [源](../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。
+* [沙盒](../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ### 使用平台API
 
-有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../landing/api-guide.md).
+有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../landing/api-guide.md)指南。
 
 ## 删除数据流
 
-使用现有的流ID，您可以通过向以下对象执行DELETE请求来删除数据流： [!DNL Flow Service] API。
+使用现有的流ID，您可以通过对[!DNL Flow Service] API执行DELETE请求来删除数据流。
 
 **API格式**
 
@@ -43,7 +43,7 @@ DELETE /flows/{FLOW_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FLOW_ID}` | 唯一 `id` 要删除的数据流的值。 |
+| `{FLOW_ID}` | 要删除的数据流的唯一`id`值。 |
 
 **请求**
 
@@ -62,6 +62,6 @@ curl -X DELETE \
 
 ## 后续步骤
 
-按照本教程中的说明，您已成功使用了 [!DNL Flow Service] 要删除现有数据流的API。
+通过完成本教程，您已成功使用[!DNL Flow Service] API删除现有数据流。
 
-有关如何使用用户界面执行这些操作的步骤，请参阅关于的教程 [在UI中删除数据流](../../tutorials/ui/delete.md)
+有关如何使用用户界面执行这些操作的步骤，请参阅有关[在UI中删除数据流](../../tutorials/ui/delete.md)的教程

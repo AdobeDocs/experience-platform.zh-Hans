@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；开发人员指南；端点；Data Science Workspace；热门主题；引擎；Sensei机器学习API
+keywords: Experience Platform；开发人员指南；端点；数据科学Workspace；热门主题；引擎；sensei机器学习api
 solution: Experience Platform
 title: 引擎API端点
-description: 引擎是数据科学工作区中机器学习模型的基础。 它们包含用于解决特定问题的机器学习算法、用于执行特征工程的特征管道或两者。
+description: 引擎是数据科学Workspace中机器学习模型的基础。 它们包含用于解决特定问题的机器学习算法、用于执行特征工程的特征管道或两者。
 role: Developer
 exl-id: 7c670abd-636c-47d8-bd8c-5ce0965ce82f
 source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
@@ -14,13 +14,13 @@ ht-degree: 2%
 
 # 引擎端点
 
-引擎是数据科学工作区中机器学习模型的基础。 它们包含用于解决特定问题的机器学习算法、用于执行特征工程的特征管道或两者。
+引擎是数据科学Workspace中机器学习模型的基础。 它们包含用于解决特定问题的机器学习算法、用于执行特征工程的特征管道或两者。
 
 ## 查找Docker注册表
 
 >[!TIP]
 >
->如果您没有Docker URL，请访问 [将源文件打包到方法中](../models-recipes/package-source-files-recipe.md) 有关创建Docker主机URL的分步说明教程。
+>如果您没有Docker URL，请访问[将源文件打包到方法](../models-recipes/package-source-files-recipe.md)教程中，以了解有关创建Docker主机URL的分步说明。
 
 需要Docker注册表凭据才能上传打包的方法文件，包括Docker主机URL、用户名和密码。 您可以通过执行以下GET请求来查找此信息：
 
@@ -42,11 +42,11 @@ curl -X GET https://platform.adobe.io/data/sensei/engines/dockerRegistry \
 
 **响应**
 
-成功的响应会返回包含Docker注册表详细信息（包括Docker URL ）的有效负载。`host`)，用户名(`username`)和密码(`password`)。
+成功的响应将返回包含Docker注册表详细信息(包括Docker URL (`host`)、用户名(`username`)和密码(`password`))的有效负载。
 
 >[!NOTE]
 >
->当您的Docker密码更改时， `{ACCESS_TOKEN}` 已更新。
+>每当`{ACCESS_TOKEN}`更新时，您的Docker密码都会更改。
 
 ```json
 {
@@ -104,7 +104,7 @@ curl -X POST \
 
 **请求PySpark/Scala**
 
-在请求PySpark配方时， `executionType` 和 `type` 是“PySpark”。 在索取斯卡拉食谱时， `executionType` 和 `type` 是“Spark” 以下Scala方法示例使用Spark：
+在请求PySpark配方时，`executionType`和`type`为“PySpark”。 在请求Scala配方时，`executionType`和`type`是“Spark”。 以下Scala方法示例使用Spark：
 
 ```shell
 curl -X POST \
@@ -137,13 +137,13 @@ curl -X POST \
 | `name` | 引擎所需的名称。 与此引擎对应的方法将继承此值，以方法名称的形式显示在UI中。 |
 | `description` | 引擎的可选描述。 与此引擎对应的方法将继承此值，以作为方法的描述显示在UI中。 此属性是必需的。 如果您不想提供描述，请将其值设置为空字符串。 |
 | `type` | 引擎的执行类型。 此值对应于构建Docker图像时所用的语言。 该值可设置为Spark或PySpark。 |
-| `mlLibrary` | 创建PySpark和Scala配方的引擎时所需的字段。 此字段必须设置为 `databricks-spark`. |
+| `mlLibrary` | 创建PySpark和Scala配方的引擎时所需的字段。 此字段必须设置为`databricks-spark`。 |
 | `artifacts.default.image.location` | Docker图像的位置。 仅支持Azure ACR或公共（未经身份验证）Dockerhub。 |
 | `artifacts.default.image.executionType` | 引擎的执行类型。 此值对应于构建Docker图像时所用的语言。 这可以是“Spark”或“PySpark”。 |
 
 **响应**
 
-成功的响应将返回包含新创建引擎的详细信息的有效负载，包括其唯一标识符(`id`)。 以下示例响应适用于Python引擎。 所有引擎响应都遵循以下格式：
+成功的响应将返回一个有效负载，其中包含新创建的引擎的详细信息，包括其唯一标识符(`id`)。 以下示例响应适用于Python引擎。 所有引擎响应都遵循以下格式：
 
 ```json
 {
@@ -214,18 +214,18 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `type` | 引擎的执行类型。 此值对应于构建Docker图像时所用的语言。 该值可设置为Spark或PySpark。 |
-| `algorithm` | 使用的算法，将此值设置为 `fp` （功能管道）。 |
+| `algorithm` | 正在使用的算法，将此值设置为`fp` （功能管道）。 |
 | `name` | 功能管道引擎的所需名称。 与此引擎对应的方法将继承此值，以方法名称的形式显示在UI中。 |
 | `description` | 引擎的可选描述。 与此引擎对应的方法将继承此值，以作为方法的描述显示在UI中。 此属性是必需的。 如果您不想提供描述，请将其值设置为空字符串。 |
-| `mlLibrary` | 创建PySpark和Scala配方的引擎时所需的字段。 此字段必须设置为 `databricks-spark`. |
+| `mlLibrary` | 创建PySpark和Scala配方的引擎时所需的字段。 此字段必须设置为`databricks-spark`。 |
 | `artifacts.default.image.location` | Docker图像的位置。 仅支持Azure ACR或公共（未经身份验证）Dockerhub。 |
 | `artifacts.default.image.executionType` | 引擎的执行类型。 此值对应于构建Docker图像时所用的语言。 这可以是“Spark”或“PySpark”。 |
-| `artifacts.default.image.packagingType` | 引擎的包装类型。 此值应设置为 `docker`. |
-| `artifacts.default.defaultMLInstanceConfigs` | 您的 `pipeline.json` 配置文件参数。 |
+| `artifacts.default.image.packagingType` | 引擎的包装类型。 此值应设置为`docker`。 |
+| `artifacts.default.defaultMLInstanceConfigs` | 您的`pipeline.json`配置文件参数。 |
 
 **响应**
 
-成功的响应会返回一个有效负载，其中包含新创建的功能管道引擎的详细信息，包括其唯一标识符(`id`)。 以下示例响应适用于PySpark特征管线引擎。
+成功的响应将返回一个有效负载，其中包含新创建的功能管道引擎的详细信息，包括其唯一标识符(`id`)。 以下示例响应适用于PySpark特征管线引擎。
 
 ```json
 {
@@ -254,7 +254,7 @@ curl -X POST \
 
 ## 检索引擎列表
 
-您可以通过执行单个GET请求来检索引擎列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅 [用于资源检索的查询参数](./appendix.md#query).
+您可以通过执行单个GET请求来检索引擎列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅[用于资源检索的查询参数](./appendix.md#query)的附录部分。
 
 **API格式**
 
@@ -387,7 +387,7 @@ curl -X GET \
 
 >[!NOTE]
 >
->为确保此PUT请求成功，建议您首先执行GET请求，以 [按ID检索引擎](#retrieve-specific). 然后，修改并更新返回的JSON对象，并将修改后的整个JSON对象应用作PUT请求的有效负载。
+>为确保此PUT请求成功，建议您首先执行GET请求，以[按ID](#retrieve-specific)检索引擎。 然后，修改并更新返回的JSON对象，并将修改后的整个JSON对象应用作PUT请求的有效负载。
 
 以下示例API调用最初具有这些属性时会更新引擎的名称和描述：
 

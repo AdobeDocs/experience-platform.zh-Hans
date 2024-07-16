@@ -17,11 +17,11 @@ Adobe Experience Platform查询服务允许您为临时查询和计划查询订�
 
 ## 快速入门
 
-本指南中使用的端点是Adobe Experience Platform的一部分 [查询服务API](https://developer.adobe.com/experience-platform-apis/references/query-service/). 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关成功调用API所需了解的重要信息，包括所需的标头以及如何读取示例API调用。
+本指南中使用的端点是Adobe Experience Platform [查询服务API](https://developer.adobe.com/experience-platform-apis/references/query-service/)的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)以了解成功调用API所需了解的重要信息，包括所需的标头以及如何读取示例API调用。
 
 >[!IMPORTANT]
 >
->要接收电子邮件警报，您必须先在UI中启用此设置。 请参阅相关文档 [有关如何启用电子邮件警报的说明](../../observability/alerts/ui.md#enable-email-alerts).
+>要接收电子邮件警报，您必须先在UI中启用此设置。 请参阅文档[有关如何启用电子邮件提醒的说明](../../observability/alerts/ui.md#enable-email-alerts)。
 
 ## 警报类型 {#alert-types}
 
@@ -29,14 +29,14 @@ Adobe Experience Platform查询服务允许您为临时查询和计划查询订�
 
 >[!IMPORTANT]
 >
->此 `delay` 或 [!UICONTROL 查询运行延迟] 查询服务API当前不支持警报类型。 此警报会通知您计划查询执行的结果在指定阈值之外是否有延迟。 要使用此警报，必须设置一个自定义时间，当查询在该持续时间运行而没有完成或失败时，将触发警报。 要了解如何在UI中设置此警报，请参阅 [查询计划](../ui/query-schedules.md#alerts-for-query-status) 文档或 [内联查询操作指南](../ui/monitor-queries.md#query-run-delay).
+>查询服务API当前不支持`delay`或[!UICONTROL 查询运行延迟]警报类型。 此警报会通知您计划查询执行的结果在指定阈值之外是否有延迟。 要使用此警报，必须设置一个自定义时间，当查询在该持续时间运行而没有完成或失败时，将触发警报。 要了解如何在UI中设置此警报，请参阅[查询计划](../ui/query-schedules.md#alerts-for-query-status)文档或内联查询操作[指南](../ui/monitor-queries.md#query-run-delay)。
 
-| 警报类型 | 描述 |
+| 提醒类型 | 描述 |
 |---|---|
 | `start` | 此警报会在启动或开始处理计划的查询运行时通知您。 |
 | `success` | 此警报会在计划的查询运行成功完成时通知您，指示查询在没有任何错误的情况下执行。 |
 | `failed` | 当计划的查询运行遇到错误或无法成功执行时，将触发此警报。 它有助于您及时识别和处理问题。 |
-| `quarantine` | 当计划的查询运行处于隔离状态时，将激活此警报。 在隔离功能中注册查询后，任何连续十次运行失败的计划查询都会自动置入 [!UICONTROL 已隔离] 省/州。 然后，您需要进行干预，然后才能执行任何进一步的执行。 |
+| `quarantine` | 当计划的查询运行处于隔离状态时，将激活此警报。 在隔离功能中注册查询后，任何连续十次运行失败的计划查询将自动置于[!UICONTROL 隔离]状态。 然后，您需要进行干预，然后才能执行任何进一步的执行。 |
 
 >[!NOTE]
 >
@@ -57,7 +57,7 @@ Adobe Experience Platform查询服务允许您为临时查询和计划查询订�
 
 ## 检索组织和沙盒的所有警报的列表 {#get-list-of-org-alert-subs}
 
-通过向以下对象发出GET请求，检索组织沙盒的所有警报的列表： `/alert-subscriptions` 端点。
+通过向`/alert-subscriptions`端点发出GET请求，检索组织沙盒的所有警报的列表。
 
 **API格式**
 
@@ -76,10 +76,10 @@ GET /alert-subscriptions?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `orderby` | 指定结果顺序的字段。 支持的字段包括 `created` 和 `updated`. 在属性名称前面加上 `+` 升序和 `-` 以降序排序。 默认为 `-created`. 请注意，`+`)必须转义 `%2B`. 例如 `%2Bcreated` 是升序创建顺序的值。 |
+| `orderby` | 指定结果顺序的字段。 支持的字段为`created`和`updated`。 在属性名称前添加`+`作为升序，`-`作为降序。 默认值为`-created`。 请注意，加号(`+`)必须使用`%2B`进行转义。 例如，`%2Bcreated`是升序创建顺序的值。 |
 | `pagesize` | 使用此参数可控制要从每页的API调用中获取的记录数。 默认限制设置为每页最大记录50条。 |
 | `page` | 指明要查看记录的返回结果的页码。 |
-| `property` | 根据所选字段筛选结果。 过滤器 **必须** HTML逃跑了。 逗号用于组合多组过滤器。 以下属性允许筛选： <ul><li>ID</li><li>资产ID</li><li>状态</li><li>警报类型</li></ul> 支持的运算符为 `==` （等于）。 例如， `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` 将返回具有匹配ID的警报。 |
+| `property` | 根据所选字段筛选结果。 筛选器&#x200B;**必须**&#x200B;进行HTML转义。 逗号用于组合多组过滤器。 以下属性允许筛选： <ul><li>ID</li><li>资产ID</li><li>状态</li><li>警报类型</li></ul> 支持的运算符为`==`（等于）。 例如，`id==6ebd9c2d-494d-425a-aa91-24033f3abeec`将返回具有匹配ID的警报。 |
 
 **请求**
 
@@ -95,11 +95,11 @@ curl -X GET 'https://platform.adobe.io/data/foundation/query/alert-subscriptions
 
 **响应**
 
-成功的响应会返回HTTP 200状态，并且 `alerts` 数组，其中包含分页和版本信息。 此 `alerts` 数组包含组织和特定沙盒的所有警报的详细信息。 每个响应最多有三个警报可用，响应正文中包含每个警报类型的一个警报。
+成功的响应返回HTTP 200状态以及包含分页和版本信息的`alerts`数组。 `alerts`数组包含组织和特定沙盒的所有警报的详细信息。 每个响应最多有三个警报可用，响应正文中包含每个警报类型的一个警报。
 
 >[!NOTE]
 >
->此 `alerts._links` 中的对象 `alerts` 为简短起见，数组已截断。 的完整示例 `alerts._links` 对象可在 [POST请求的响应](#subscribe-users).
+>`alerts`数组中的`alerts._links`对象已截断，以便简洁。 在POST请求](#subscribe-users)的[响应中可以找到`alerts._links`对象的完整示例。
 
 ```json
 {
@@ -165,16 +165,16 @@ curl -X GET 'https://platform.adobe.io/data/foundation/query/alert-subscriptions
 | 属性 | 描述 |
 | -------- | ----------- |
 | `alerts.assetId` | 将警报与特定查询关联的查询ID。 |
-| `alerts.id` | 警报的名称。 此名称由警报服务生成，并用于警报仪表板。 警报名称由存储该警报的文件夹组成， `alertType`和流ID。 有关可用警报的信息，请参见 [平台警报仪表板文档](../../observability/alerts/ui.md). |
-| `alerts.status` | 警报有四个状态值： `enabled`， `enabling`， `disabled`、和 `disabling`. 警报正在主动侦听事件，并在保留所有相关订阅者和设置的同时暂停以供将来使用，或者在这些状态之间转换。 |
-| `alerts.alertType` | 警报的类型。 尽管临时查询只有四种警报状态，但计划查询有五种警报状态可用。 此 `quarantine` 警报仅适用于计划的查询。 此外，您只能设置 `delay` Platform UI中的警报。 出于这个原因 `delay` 此处未进行描述。 可用的警报包括： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：在查询完成时通知用户。</li><li>`failure`：在查询失败时通知用户。</li><li>`quarantine`：当计划的查询运行进入隔离状态时激活。</li></ul> |
+| `alerts.id` | 警报的名称。 此名称由警报服务生成，并用于警报仪表板。 警报名称由存储该警报的文件夹、`alertType`和流ID组成。 有关可用警报的信息可在[平台警报仪表板文档](../../observability/alerts/ui.md)中找到。 |
+| `alerts.status` | 警报有四个状态值： `enabled`、`enabling`、`disabled`和`disabling`。 警报正在主动侦听事件，并在保留所有相关订阅者和设置的同时暂停以供将来使用，或者在这些状态之间转换。 |
+| `alerts.alertType` | 警报的类型。 尽管临时查询只有四种警报状态，但计划查询有五种警报状态可用。 `quarantine`警报仅适用于计划的查询。 此外，您只能从Platform UI设置`delay`警报。 因此，此处未描述`delay`。 可用的警报包括： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：查询完成时通知用户。</li><li>`failure`：如果查询失败，则通知用户。</li><li>`quarantine`：当计划的查询运行进入隔离状态时激活。</li></ul> |
 | `alerts._links` | 提供有关可用于检索、更新、编辑或删除与此警报ID相关信息的可用方法和端点的信息。 |
 | `_page` | 对象包含用于描述顺序、大小、总页数和当前页面的属性。 |
 | `_links` | 对象包含可用于获取资源的下一页或上一页的URI引用。 |
 
 ## 检索特定查询或计划ID的警报订阅信息 {#retrieve-all-alert-subscriptions-by-id}
 
-通过向发出一个GET请求，检索特定查询ID或计划ID的警报订阅信息 `/alert-subscriptions/{QUERY_ID}` 或 `/alert-subscriptions/{SCHEDULE_ID}` 端点。
+通过向`/alert-subscriptions/{QUERY_ID}`或`/alert-subscriptions/{SCHEDULE_ID}`端点发出GET请求，检索特定查询ID或计划ID的警报订阅信息。
 
 **API格式**
 
@@ -202,7 +202,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/query/alert-subscriptions
 
 **响应**
 
-成功的响应会返回HTTP状态200，并且 `alerts` 数组，其中包含所提供查询或计划ID的订阅信息。
+成功的响应返回HTTP状态200和`alerts`数组，该数组包含所提供查询或计划ID的订阅信息。
 
 ```json
 {
@@ -294,15 +294,15 @@ curl -X GET 'https://platform.adobe.io/data/foundation/query/alert-subscriptions
 | 属性 | 描述 |
 | -------- | ----------- |
 | `assetId` | 警报与此ID关联。 该ID可以是查询ID或计划ID。 |
-| `id` | 警报的名称。 此名称由警报服务生成，并用于警报仪表板。 警报名称由存储该警报的文件夹组成， `alertType`和流ID。 有关可用警报的信息，请参见 [平台警报仪表板文档](../../observability/alerts/ui.md). |
-| `status` | 警报有四个状态值： `enabled`， `enabling`， `disabled`、和 `disabling`. 警报正在主动侦听事件，并在保留所有相关订阅者和设置的同时暂停以供将来使用，或者在这些状态之间转换。 |
-| `alertType` | 每个警报可以有三种不同的警报类型。 它们是： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：在查询完成时通知用户。</li><li>`failure`：在查询失败时通知用户。</li></ul> |
+| `id` | 警报的名称。 此名称由警报服务生成，并用于警报仪表板。 警报名称由存储该警报的文件夹、`alertType`和流ID组成。 有关可用警报的信息可在[平台警报仪表板文档](../../observability/alerts/ui.md)中找到。 |
+| `status` | 警报有四个状态值： `enabled`、`enabling`、`disabled`和`disabling`。 警报正在主动侦听事件，并在保留所有相关订阅者和设置的同时暂停以供将来使用，或者在这些状态之间转换。 |
+| `alertType` | 每个警报可以有三种不同的警报类型。 它们是： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：查询完成时通知用户。</li><li>`failure`：如果查询失败，则通知用户。</li></ul> |
 | `subscriptions.emailNotifications` | Adobe注册的电子邮件地址数组，适用于已订阅接收警报电子邮件的用户。 |
 | `subscriptions.inContextNotifications` | 为订阅了警报的UI通知的Adobe注册的电子邮件地址数组。 |
 
 ## 检索特定查询或计划ID和警报类型的警报订阅信息 {#get-alert-info-by-id-and-alert-type}
 
-通过向发出一个GET请求，检索特定ID和警报类型的警报订阅信息 `/alert-subscriptions/{QUERY_ID}/{ALERT_TYPE}` 端点。 这同时适用于查询或计划的查询ID。
+通过向`/alert-subscriptions/{QUERY_ID}/{ALERT_TYPE}`端点发出GET请求，检索特定ID和警报类型的警报订阅信息。 这同时适用于查询或计划的查询ID。
 
 **API格式**
 
@@ -313,7 +313,7 @@ GET /alert-subscriptions/{SCHEDULE_ID}/{ALERT_TYPE}
 
 | 参数 | 描述 |
 | -------- | ----------- |
-| `ALERT_TYPE` | 此属性描述触发警报的查询执行的状态。 响应将仅包括此类警报的警报订阅信息。 每个警报可以有三种不同的警报类型。 它们是： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：在查询完成时通知用户。</li><li>`failure`：在查询失败时通知用户。</li></ul> |
+| `ALERT_TYPE` | 此属性描述触发警报的查询执行的状态。 响应将仅包括此类警报的警报订阅信息。 每个警报可以有三种不同的警报类型。 它们是： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：查询完成时通知用户。</li><li>`failure`：如果查询失败，则通知用户。</li></ul> |
 | `QUERY_ID` | 要更新的查询的唯一标识符。 |
 | `SCHEDULE_ID` | 要更新的计划查询的唯一标识符。 |
 
@@ -382,14 +382,14 @@ curl -X GET 'https://platform.adobe.io/data/foundation/query/alert-subscriptions
 | 属性 | 描述 |
 | -------- | ----------- |
 | `assetId` | 将警报与特定查询关联的查询ID。 |
-| `alertType` | 警报的类型。 尽管临时查询只有四种警报状态，但计划查询有五种警报状态可用。 此 `quarantine` 警报仅适用于计划的查询。 此外，您只能设置 `delay` Platform UI中的警报。 出于这个原因 `delay` 此处未进行描述。 可用的警报包括： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：在查询完成时通知用户。</li><li>`failure`：在查询失败时通知用户。</li><li>`quarantine`：当计划的查询运行进入隔离状态时激活。</li></ul> |
+| `alertType` | 警报的类型。 尽管临时查询只有四种警报状态，但计划查询有五种警报状态可用。 `quarantine`警报仅适用于计划的查询。 此外，您只能从Platform UI设置`delay`警报。 因此，此处未描述`delay`。 可用的警报包括： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：查询完成时通知用户。</li><li>`failure`：如果查询失败，则通知用户。</li><li>`quarantine`：当计划的查询运行进入隔离状态时激活。</li></ul> |
 | `subscriptions` | 一个对象，用于传递与警报相关联的Adobe注册的电子邮件ID，以及用户将接收警报的渠道。 |
 | `subscriptions.inContextNotifications` | 为订阅了警报的UI通知的Adobe注册的电子邮件地址数组。 |
 | `subscriptions.emailNotifications` | Adobe注册的电子邮件地址数组，适用于已订阅接收警报电子邮件的用户。 |
 
 ## 检索用户订阅的所有警报的列表 {#get-alert-subscription-list}
 
-通过向GET发出请求，检索用户订阅的所有警报的列表 `/alert-subscriptions/user-subscriptions/{EMAIL_ID}` 端点。 响应包括警报名称、ID、状态、警报类型和通知渠道。
+通过向`/alert-subscriptions/user-subscriptions/{EMAIL_ID}`端点发出GET请求，检索用户订阅的所有警报的列表。 响应包括警报名称、ID、状态、警报类型和通知渠道。
 
 **API格式**
 
@@ -400,10 +400,10 @@ GET /alert-subscriptions/user-subscriptions/{EMAIL_ID}
 | 参数 | 描述 |
 | -------- | ----------- |
 | `{EMAIL_ID}` | 注册到Adobe帐户的电子邮件地址用于识别订阅了警报的用户。 |
-| `orderby` | 指定结果顺序的字段。 支持的字段包括 `created` 和 `updated`. 在属性名称前面加上 `+` 升序和 `-` 以降序排序。 默认为 `-created`. 请注意，`+`)必须转义 `%2B`. 例如 `%2Bcreated` 是升序创建顺序的值。 |
+| `orderby` | 指定结果顺序的字段。 支持的字段为`created`和`updated`。 在属性名称前添加`+`作为升序，`-`作为降序。 默认值为`-created`。 请注意，加号(`+`)必须使用`%2B`进行转义。 例如，`%2Bcreated`是升序创建顺序的值。 |
 | `pagesize` | 使用此参数可控制要从每页的API调用中获取的记录数。 默认限制设置为每页最大记录50条。 |
 | `page` | 指明要查看记录的返回结果的页码。 |
-| `property` | 根据所选字段筛选结果。 过滤器 **必须** HTML逃跑了。 逗号用于组合多组过滤器。 以下属性允许筛选： <ul><li>ID</li><li>资产ID</li><li>状态</li><li>警报类型</li></ul> 支持的运算符为 `==` （等于）。 例如， `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` 将返回具有匹配ID的警报。 |
+| `property` | 根据所选字段筛选结果。 筛选器&#x200B;**必须**&#x200B;进行HTML转义。 逗号用于组合多组过滤器。 以下属性允许筛选： <ul><li>ID</li><li>资产ID</li><li>状态</li><li>警报类型</li></ul> 支持的运算符为`==`（等于）。 例如，`id==6ebd9c2d-494d-425a-aa91-24033f3abeec`将返回具有匹配ID的警报。 |
 
 **请求**
 
@@ -419,7 +419,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/query/alert-subscriptions
 
 **响应**
 
-成功的响应返回HTTP状态200，并且 `items` 阵列，其中包含由订阅的警报的详细信息 `emailId` 已提供。
+成功的响应返回HTTP状态200和`items`数组，其中包含`emailId`订阅的警报的详细信息。
 
 ```json
 {
@@ -512,17 +512,17 @@ curl -X GET 'https://platform.adobe.io/data/foundation/query/alert-subscriptions
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `name` | 警报的名称。 此名称由警报服务生成，并用于警报仪表板。 警报名称由存储该警报的文件夹组成， `alertType`和流ID。 有关可用警报的信息，请参见 [平台警报仪表板文档](../../observability/alerts/ui.md). |
+| `name` | 警报的名称。 此名称由警报服务生成，并用于警报仪表板。 警报名称由存储该警报的文件夹、`alertType`和流ID组成。 有关可用警报的信息可在[平台警报仪表板文档](../../observability/alerts/ui.md)中找到。 |
 | `assetId` | 将警报与特定查询关联的查询ID。 |
-| `status` | 警报有四个状态值： `enabled`， `enabling`， `disabled`、和 `disabling`. 警报正在主动侦听事件，并在保留所有相关订阅者和设置的同时暂停以供将来使用，或者在这些状态之间转换。 |
-| `alertType` | 警报的类型。 尽管临时查询只有四种警报状态，但计划查询有五种警报状态可用。 此 `quarantine` 警报仅适用于计划的查询。 此外，您只能设置 `delay` Platform UI中的警报。 出于这个原因 `delay` 此处未进行描述。 可用的警报包括： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：在查询完成时通知用户。</li><li>`failure`：在查询失败时通知用户。</li><li>`quarantine`：当计划的查询运行进入隔离状态时激活。</li></ul> |
+| `status` | 警报有四个状态值： `enabled`、`enabling`、`disabled`和`disabling`。 警报正在主动侦听事件，并在保留所有相关订阅者和设置的同时暂停以供将来使用，或者在这些状态之间转换。 |
+| `alertType` | 警报的类型。 尽管临时查询只有四种警报状态，但计划查询有五种警报状态可用。 `quarantine`警报仅适用于计划的查询。 此外，您只能从Platform UI设置`delay`警报。 因此，此处未描述`delay`。 可用的警报包括： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：查询完成时通知用户。</li><li>`failure`：如果查询失败，则通知用户。</li><li>`quarantine`：当计划的查询运行进入隔离状态时激活。</li></ul> |
 | `subscriptions` | 一个对象，用于传递与警报相关联的Adobe注册的电子邮件ID，以及用户将接收警报的渠道。 |
-| `subscriptions.inContextNotifications` | 一个布尔值，用于确定用户接收警报通知的方式。 A `true` 值用于确认应通过UI提供警报。 A `false` 值可确保不会通过该渠道通知用户。 |
-| `subscriptions.emailNotifications` | 一个布尔值，用于确定用户接收警报通知的方式。 A `true` 值用于确认应通过电子邮件提供警报。 A `false` 值可确保不会通过该渠道通知用户。 |
+| `subscriptions.inContextNotifications` | 一个布尔值，用于确定用户接收警报通知的方式。 `true`值用于确认应通过UI提供警报。 `false`值可确保不会通过该渠道通知用户。 |
+| `subscriptions.emailNotifications` | 一个布尔值，用于确定用户接收警报通知的方式。 `true`值用于确认应通过电子邮件提供警报。 `false`值可确保不会通过该渠道通知用户。 |
 
 ## 创建警报并订阅用户 {#subscribe-users}
 
-要创建警报并订阅用户以接收警报，请发出 `POST` 请求 `/alert-subscriptions` 端点。 此请求使用将查询关联到新创建的警报 `assetId` 属性，并通过使用为用户订阅该查询的警报 `emailIds`.
+要创建警报并订阅用户以接收警报，请向`/alert-subscriptions`端点发出`POST`请求。 此请求使用`assetId`属性将查询关联到新创建的警报，并使用`emailIds`为用户订阅该查询的警报。
 
 >[!IMPORTANT]
 >
@@ -560,11 +560,11 @@ curl -X POST https://platform.adobe.io/data/foundation/query/alert-subscriptions
 | 属性 | 描述 |
 | -------- | ----------- |
 | `assetId` | 警报与此ID关联。 该ID可以是查询ID或计划ID。 |
-| `alertType` | 警报的类型。 尽管临时查询只有四种警报状态，但计划查询有五种警报状态可用。 此 `quarantine` 警报仅适用于计划的查询。 此外，您只能设置 `delay` Platform UI中的警报。 出于这个原因 `delay` 此处未进行描述。 可用的警报包括： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：在查询完成时通知用户。</li><li>`failure`：在查询失败时通知用户。</li><li>`quarantine`：当计划的查询运行进入隔离状态时激活。</li></ul> |
+| `alertType` | 警报的类型。 尽管临时查询只有四种警报状态，但计划查询有五种警报状态可用。 `quarantine`警报仅适用于计划的查询。 此外，您只能从Platform UI设置`delay`警报。 因此，此处未描述`delay`。 可用的警报包括： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：查询完成时通知用户。</li><li>`failure`：如果查询失败，则通知用户。</li><li>`quarantine`：当计划的查询运行进入隔离状态时激活。</li></ul> |
 | `subscriptions` | 一个对象，用于传递与警报相关联的Adobe注册的电子邮件ID，以及用户将接收警报的渠道。 |
-| `subscriptions.emailIds` | 一系列电子邮件地址，用于标识应接收警报的用户。 电子邮件地址 **必须** 注册到Adobe账户。 |
-| `subscriptions.inContextNotifications` | 一个布尔值，用于确定用户接收警报通知的方式。 A `true` 值用于确认应通过UI提供警报。 A `false` 值可确保不会通过该渠道通知用户。 |
-| `subscriptions.emailNotifications` | 一个布尔值，用于确定用户接收警报通知的方式。 A `true` 值用于确认应通过电子邮件提供警报。 A `false` 值可确保不会通过该渠道通知用户。 |
+| `subscriptions.emailIds` | 一系列电子邮件地址，用于标识应接收警报的用户。 电子邮件地址&#x200B;**必须**&#x200B;注册到Adobe帐户。 |
+| `subscriptions.inContextNotifications` | 一个布尔值，用于确定用户接收警报通知的方式。 `true`值用于确认应通过UI提供警报。 `false`值可确保不会通过该渠道通知用户。 |
+| `subscriptions.emailNotifications` | 一个布尔值，用于确定用户接收警报通知的方式。 `true`值用于确认应通过电子邮件提供警报。 `false`值可确保不会通过该渠道通知用户。 |
 
 {style="table-layout:auto"}
 
@@ -613,12 +613,12 @@ curl -X POST https://platform.adobe.io/data/foundation/query/alert-subscriptions
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `id` | 警报的名称。 此名称由警报服务生成，并用于警报仪表板。 警报名称由存储该警报的文件夹组成， `alertType`和流ID。 有关可用警报的信息，请参见 [平台警报仪表板文档](../../observability/alerts/ui.md). |
+| `id` | 警报的名称。 此名称由警报服务生成，并用于警报仪表板。 警报名称由存储该警报的文件夹、`alertType`和流ID组成。 有关可用警报的信息可在[平台警报仪表板文档](../../observability/alerts/ui.md)中找到。 |
 | `_links` | 提供有关可用于检索、更新、编辑或删除与此警报ID相关信息的可用方法和端点的信息。 |
 
 ## 启用或禁用警报 {#enable-or-disable-alert}
 
-此请求使用查询或计划ID和警报类型引用特定警报，并将警报状态更新为 `enable` 或 `disable`. 您可以通过以下方式更新警报的状态 `PATCH` 请求 `/alert-subscriptions/{queryId}/{alertType}` 或 `/alert-subscriptions/{scheduleId}/{alertType}` 端点。
+此请求使用查询或计划ID和警报类型引用特定警报，并将警报状态更新为`enable`或`disable`。 您可以通过向`/alert-subscriptions/{queryId}/{alertType}`或`/alert-subscriptions/{scheduleId}/{alertType}`端点发出`PATCH`请求来更新警报的状态。
 
 **API格式**
 
@@ -629,7 +629,7 @@ PATCH /alert-subscriptions/{SCHEDULE_ID}/{ALERT_TYPE}
 
 | 参数 | 描述 |
 | -------- | ----------- |
-| `ALERT_TYPE` | 警报的类型。 尽管临时查询只有四种警报状态，但计划查询有五种警报状态可用。 此 `quarantine` 警报仅适用于计划的查询。 此外，您只能设置 `delay` Platform UI中的警报。 出于这个原因 `delay` 此处未进行描述。 可用的警报包括： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：在查询完成时通知用户。</li><li>`failure`：在查询失败时通知用户。</li><li>`quarantine`：当计划的查询运行进入隔离状态时激活。</li></ul>必须在端点命名空间中指定当前警报类型才能更改它。 |
+| `ALERT_TYPE` | 警报的类型。 尽管临时查询只有四种警报状态，但计划查询有五种警报状态可用。 `quarantine`警报仅适用于计划的查询。 此外，您只能从Platform UI设置`delay`警报。 因此，此处未描述`delay`。 可用的警报包括： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：查询完成时通知用户。</li><li>`failure`：如果查询失败，则通知用户。</li><li>`quarantine`：当计划的查询运行进入隔离状态时激活。</li></ul>必须在端点命名空间中指定当前警报类型才能更改它。 |
 | `QUERY_ID` | 要更新的查询的唯一标识符。 |
 | `SCHEDULE_ID` | 要更新的计划查询的唯一标识符。 |
 
@@ -652,9 +652,9 @@ curl -X PATCH 'https://platform.adobe.io/data/foundation/query/alert-subscriptio
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `op` | 要执行的操作。 目前，唯一接受的值是 `replace`. |
-| `path` | 此值与端点中的命名空间相关。 目前，唯一接受的值是 `/status`. |
-| `value` | 在成功的PATCH请求中，这会更改 `status` 警报的值。 目前，接受的值包括 `enable` 或 `disable`. |
+| `op` | 要执行的操作。 当前，唯一接受的值为`replace`。 |
+| `path` | 此值与端点中的命名空间相关。 当前，唯一接受的值为`/status`。 |
+| `value` | 在成功的PATCH请求中，这会更改警报的`status`值。 目前，接受的值为`enable`或`disable`。 |
 
 {style="table-layout:auto"}
 
@@ -673,14 +673,14 @@ curl -X PATCH 'https://platform.adobe.io/data/foundation/query/alert-subscriptio
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `id` | 警报的名称。 此名称由警报服务生成，并用于警报仪表板。 警报名称由存储该警报的文件夹组成， `alertType`和流ID。 有关可用警报的信息，请参见 [平台警报仪表板文档](../../observability/alerts/ui.md). |
+| `id` | 警报的名称。 此名称由警报服务生成，并用于警报仪表板。 警报名称由存储该警报的文件夹、`alertType`和流ID组成。 有关可用警报的信息可在[平台警报仪表板文档](../../observability/alerts/ui.md)中找到。 |
 | `assetId` | 警报与此ID关联。 该ID可以是查询ID或计划ID。 |
-| `alertType` | 每个警报可以有三种不同的警报类型。 它们是： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：在查询完成时通知用户。</li><li>`failure`：在查询失败时通知用户。</li></ul> |
-| `status` | 警报有四个状态值： `enabled`， `enabling`， `disabled`、和 `disabling`. 警报正在主动侦听事件，并在保留所有相关订阅者和设置的同时暂停以供将来使用，或者在这些状态之间转换。 |
+| `alertType` | 每个警报可以有三种不同的警报类型。 它们是： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：查询完成时通知用户。</li><li>`failure`：如果查询失败，则通知用户。</li></ul> |
+| `status` | 警报有四个状态值： `enabled`、`enabling`、`disabled`和`disabling`。 警报正在主动侦听事件，并在保留所有相关订阅者和设置的同时暂停以供将来使用，或者在这些状态之间转换。 |
 
 ## 删除特定查询和警报类型的警报 {#delete-alert-info-by-id-and-alert-type}
 
-通过向发出一个DELETE请求，删除特定查询的警报，或计划ID和警报类型 `/alert-subscriptions/{QUERY_ID}/{ALERT_TYPE}` 或 `/alert-subscriptions/{SCHEDULE_ID}/{ALERT_TYPE}` 端点。
+通过向`/alert-subscriptions/{QUERY_ID}/{ALERT_TYPE}`或`/alert-subscriptions/{SCHEDULE_ID}/{ALERT_TYPE}`端点发出DELETE请求，删除特定查询、计划ID和警报类型的警报。
 
 ```http
 DELETE /alert-subscriptions/{QUERY_ID}/{ALERT_TYPE}
@@ -689,7 +689,7 @@ DELETE /alert-subscriptions/{SCHEDULE_ID}/{ALERT_TYPE}
 
 | 参数 | 描述 |
 | -------- | ----------- |
-| `ALERT_TYPE` | 警报的类型。 尽管临时查询只有四种警报状态，但计划查询有五种警报状态可用。 此 `quarantine` 警报仅适用于计划的查询。 此外，您只能设置 `delay` Platform UI中的警报。 出于这个原因 `delay` 此处未进行描述。 可用的警报包括： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：在查询完成时通知用户。</li><li>`failure`：在查询失败时通知用户。</li><li>`quarantine`：当计划的查询运行进入隔离状态时激活。</li></ul> DELETE请求仅适用于提供的特定警报类型。 |
+| `ALERT_TYPE` | 警报的类型。 尽管临时查询只有四种警报状态，但计划查询有五种警报状态可用。 `quarantine`警报仅适用于计划的查询。 此外，您只能从Platform UI设置`delay`警报。 因此，此处未描述`delay`。 可用的警报包括： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：查询完成时通知用户。</li><li>`failure`：如果查询失败，则通知用户。</li><li>`quarantine`：当计划的查询运行进入隔离状态时激活。</li></ul> DELETE请求仅适用于提供的特定警报类型。 |
 | `QUERY_ID` | 要更新的查询的唯一标识符。 |
 | `SCHEDULE_ID` | 要更新的计划查询的唯一标识符。 |
 
@@ -718,6 +718,6 @@ curl -X DELETE 'https://platform.adobe.io/data/foundation/query/alert-subscripti
 
 ## 后续步骤
 
-本指南介绍如何使用 `/alert-subscriptions` 查询服务API中的端点。 阅读本指南后，您现在可以更好地了解如何为查询创建警报、为用户订阅警报、可用的警报类型以及如何检索、更新和删除警报订阅信息。
+本指南介绍了如何在查询服务API中使用`/alert-subscriptions`端点。 阅读本指南后，您现在可以更好地了解如何为查询创建警报、为用户订阅警报、可用的警报类型以及如何检索、更新和删除警报订阅信息。
 
-请参阅 [查询服务API指南](./getting-started.md) 以了解有关其他可用功能和操作的更多信息。
+请参阅[查询服务API指南](./getting-started.md)，了解有关其他可用功能和操作的更多信息。

@@ -4,14 +4,14 @@ description: 了解在Reactor API中列出资源时如何分页结果。
 exl-id: bccb6e78-4ac8-4786-b398-6e55109d99dd
 source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
-source-wordcount: '101'
+source-wordcount: '102'
 ht-degree: 0%
 
 ---
 
 # 在Reactor API中分页响应
 
-Reactor API返回的响应将分页。 默认页面大小为25个元素。 有关分页的详细信息，请参见 `meta.pagination `API响应对象的部分：
+Reactor API返回的响应将分页。 默认页面大小为25个元素。 有关分页的详细信息，将在API响应对象的`meta.pagination `部分中报告：
 
 ```json
 "meta": {
@@ -25,7 +25,7 @@ Reactor API返回的响应将分页。 默认页面大小为25个元素。 有�
 }
 ```
 
-可以通过包含来获取特定页面并修改页面大小 `page` 查询参数。
+可以通过在请求路径中包含`page`查询参数来获取特定页面并修改页面大小。
 
 ## 检索特定页面
 

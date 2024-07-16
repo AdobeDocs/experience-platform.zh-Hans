@@ -11,13 +11,13 @@ ht-degree: 3%
 
 ---
 
-# [!UICONTROL 营销活动详细信息] 架构字段组
+# [!UICONTROL 营销活动营销详细信息]架构字段组
 
 >[!NOTE]
 >
->多个架构字段组的名称已更改。 查看文档 [字段组名称更新](../name-updates.md) 以了解更多信息。
+>多个架构字段组的名称已更改。 有关详细信息，请参阅有关[字段组名称更新](../name-updates.md)的文档。
 
-[!UICONTROL 营销活动详细信息] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)，用于描述营销活动信息，如活动组、名称和跟踪代码。
+[!UICONTROL 促销活动营销详细信息]是[[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)的标准架构字段组，用于描述促销活动信息，如促销活动组、名称和跟踪代码。
 
 ![](../../images/field-groups/campaign-marketing-details.png)
 
@@ -30,4 +30,4 @@ ht-degree: 3%
 有关字段组的更多详细信息，请参阅公共XDM存储库：
 
 * [填充示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-marketing.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-marketing.schema.json)
+* [完整架构](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-marketing.schema.json)

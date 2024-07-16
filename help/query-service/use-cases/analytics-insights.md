@@ -1,31 +1,31 @@
 ---
-title: Analytics Insights For Web和移动交互
-description: 本文档介绍如何使用查询服务从引入的Adobe Analytics数据创建切实可行的见解。
+title: Analytics Insights For Web And Mobile Interactions
+description: 本文档介绍如何使用查询服务根据摄取的Adobe Analytics数据创建切实可行的见解。
 exl-id: f64e61ef-0157-4f0a-88f8-bbe4f9aa83f0
 source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
 workflow-type: tm+mt
-source-wordcount: '232'
+source-wordcount: '237'
 ht-degree: 1%
 
 ---
 
 # Analytics针对Web和移动设备交互的分析
 
-Adobe Experience Platform允许您使用Experience Data Model (XDM)字段从Adobe Analytics报表包中摄取数据以填充数据集。 修改此分析数据以符合 [!DNL XDM ExperienceEvent] 类。 然后，查询服务可以通过运行SQL查询来利用此数据，从用户在数字平台上的行为生成有价值的见解。
+Adobe Experience Platform允许您使用Experience Data Model (XDM)字段从Adobe Analytics报表包中摄取数据以填充数据集。 修改此分析数据以符合[!DNL XDM ExperienceEvent]类。 然后，查询服务可以通过运行SQL查询来利用此数据，从用户在数字平台上的行为中生成有价值的见解。
 
 本文档提供了各种示例SQL查询，这些示例演示了根据Web和移动Analytics数据创建见解时的常见用例。
 
-请参阅 [Analytics字段映射文档](../../sources/connectors/adobe-applications/mapping/analytics.md) 以了解有关摄取和映射Analytics数据的更多信息。
+有关摄取和映射Analytics数据的更多信息，请参阅[Analytics字段映射文档](../../sources/connectors/adobe-applications/mapping/analytics.md)。
 
 ## 快速入门
 
-对于以下每个用例，都会提供一个参数化SQL查询示例作为模板供您自定义。 提供您看到的任何位置的参数 `{ }` 在SQL示例中，查看您要评估的数据集、eVar、事件或时间范围。
+对于以下每个用例，都会提供一个参数化SQL查询示例作为模板供您自定义。 在SQL示例中看到`{ }`的任何位置为您希望评估的数据集、eVar、事件或时间范围提供参数。
 
 ## 目标
 
 以下示例显示了用于分析Adobe Analytics数据的常见用例的SQL查询。
 
-### 生成给定日期中每小时的访客计数
+### 生成给定日期每小时的访客计数
 
 ```sql
 SELECT Substring(from_utc_timestamp(timestamp, 'America/New_York'), 1, 10) AS Day,
@@ -37,7 +37,7 @@ GROUP BY Day, Hour
 ORDER BY Hour;
 ```
 
-### 识别给定日期中查看次数最多的10个页面
+### 识别给定日期中查看次数最多的十个页面
 
 ```SQL
 SELECT web.webpagedetails.name AS Page_Name,
@@ -88,7 +88,7 @@ ORDER BY Total_Product_Views DESC
 LIMIT  10;
 ```
 
-### 确定最高的10个订单收入
+### 确定前10位订单收入
 
 ```sql
 SELECT Purchase_ID,

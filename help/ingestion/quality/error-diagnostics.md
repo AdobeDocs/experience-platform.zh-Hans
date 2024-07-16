@@ -1,52 +1,52 @@
 ---
-keywords: Experience Platform；主页；热门主题；批量摄取；批量摄取；部分摄取；检索错误；检索错误；部分批量摄取；部分批量摄取；部分；摄取；摄取；错误诊断；检索错误诊断；获取错误诊断；获取错误；获取错误；
+keywords: Experience Platform；主页；热门主题；批量摄取；批量摄取；部分摄取；部分摄取；检索错误；检索错误；部分批量摄取；部分批次摄取；部分；摄取；摄取；错误诊断；检索错误诊断；获取错误诊断；获取错误；获取错误；检索错误；
 solution: Experience Platform
-title: 检索数据引入错误诊断
+title: 检索数据摄取错误诊断
 description: 本文档提供了有关监控批次摄取、管理部分批次摄取错误的信息，以及部分批次摄取类型的参考。
 exl-id: b885fb00-b66d-453b-80b7-8821117c2041
 source-git-commit: edd285c3d0638b606876c015dffb18309887dfb5
 workflow-type: tm+mt
-source-wordcount: '981'
-ht-degree: 2%
+source-wordcount: '976'
+ht-degree: 8%
 
 ---
 
-# 检索数据引入错误诊断
+# 检索数据摄取错误诊断
 
-Adobe Experience Platform提供两种上传和摄取数据的方法。 您可以使用批量摄取，这允许您使用各种文件类型（如CSV）插入数据；也可以使用流式摄取，这允许您将其数据插入到 [!DNL Platform] 实时使用流式端点。
+Adobe Experience Platform提供两种上传和摄取数据的方法。 您可以使用批量摄取，这允许您使用各种文件类型（如CSV）插入数据；也可以使用流式摄取，这允许您使用流式端点实时将其数据插入到[!DNL Platform]。
 
 本文档提供了有关监控批次摄取、管理部分批次摄取错误的信息，以及部分批次摄取类型的参考。
 
 ## 快速入门
 
-本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
+本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
-- [[!DNL Adobe Experience Platform Data Ingestion]](../home.md)：将数据发送到的方法 [!DNL Experience Platform].
+- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
+- [[!DNL Adobe Experience Platform Data Ingestion]](../home.md)：将数据发送到[!DNL Experience Platform]的方法。
 
-### 正在读取示例API调用
+### 正在读取示例 API 调用
 
-本教程提供了示例API调用来演示如何设置请求的格式。 这些资源包括路径、必需的标头和格式正确的请求负载。 此外，还提供了在API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅以下章节： [如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中有关[如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。
 
-### 收集所需标题的值
+### 收集所需标头的值
 
-为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将提供所有中所有所需标头的值 [!DNL Experience Platform] API调用，如下所示：
+要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
 - `x-gw-ims-org-id: {ORG_ID}`
 
-中的所有资源 [!DNL Experience Platform]，包括那些属于 [!DNL Schema Registry]，与特定的虚拟沙盒隔离。 的所有请求 [!DNL Platform] API需要一个标头，用于指定将在其中执行操作的沙盒的名称：
+[!DNL Experience Platform]中的所有资源（包括属于[!DNL Schema Registry]的资源）都被隔离到特定的虚拟沙盒中。 对[!DNL Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 - `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关中沙箱的详细信息 [!DNL Platform]，请参见 [沙盒概述文档](../../sandboxes/home.md).
+>有关[!DNL Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
 
 ## 正在下载错误诊断 {#download-diagnostics}
 
-Adobe Experience Platform允许用户下载输入文件的错误诊断。 诊断程序将保留在 [!DNL Platform] 最多30天。
+Adobe Experience Platform允许用户下载输入文件的错误诊断。 诊断将在[!DNL Platform]内保留最多30天。
 
 ### 列出输入文件 {#list-files}
 
@@ -74,7 +74,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/af838510-22
 
 **响应**
 
-成功响应将返回JSON对象，其中详细说明诊断的保存位置。
+成功的响应将返回JSON对象，该对象详细说明诊断的保存位置。
 
 ```json
 {
@@ -132,7 +132,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/af838510-22
 
 **响应**
 
-成功的响应将返回包含以下内容的JSON对象 `path` 详细说明诊断保存位置的对象。 响应将返回 `path` 中的对象 [JSON行](https://jsonlines.readthedocs.io/en/latest/) 格式。
+成功的响应将返回包含`path`个对象的JSON对象，这些对象详细说明诊断的保存位置。 响应将返回[JSON行](https://jsonlines.readthedocs.io/en/latest/)格式的`path`对象。
 
 ```json
 {"path": "F1.json"}
@@ -141,11 +141,11 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/af838510-22
 
 ## 检索批次摄取错误 {#retrieve-errors}
 
-如果批次包含故障，则应检索有关这些故障的错误信息，以便重新摄取数据。
+如果批次包含失败，您应该检索有关这些失败的错误信息，以便重新摄取数据。
 
 ### 检查状态 {#check-status}
 
-要检查摄取的批的状态，必须在GET请求的路径中提供批的ID。 要了解有关使用此API调用的更多信息，请阅读 [目录端点指南](../../catalog/api/list-objects.md).
+要检查摄取的批的状态，必须在GET请求路径中提供批的ID。 要了解有关使用此API调用的更多信息，请阅读[目录终结点指南](../../catalog/api/list-objects.md)。
 
 **API格式**
 
@@ -156,8 +156,8 @@ GET /catalog/batches/{BATCH_ID}?{FILTER}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 此 `id` 要检查其状态的批的值。 |
-| `{FILTER}` | 用于筛选响应中返回结果的查询参数。 多个参数由&amp;符号(`&`)。 欲知更多信息，请阅读 [筛选目录数据](../../catalog/api/filter-data.md). |
+| `{BATCH_ID}` | 要检查其状态的批次的`id`值。 |
+| `{FILTER}` | 用于筛选响应中返回结果的查询参数。 多个参数由&amp;符号(`&`)分隔。 有关详细信息，请阅读[筛选目录数据](../../catalog/api/filter-data.md)的指南。 |
 
 **请求**
 
@@ -169,9 +169,9 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-**无错误响应**
+**没有错误的响应**
 
-成功响应将返回，其中包含有关批次状态的详细信息。
+成功的响应将返回，其中包含有关批次状态的详细信息。
 
 ```json
 {
@@ -214,11 +214,11 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `metrics.failedRecordCount` | 由于解析、转换或验证而无法处理的行数。 此值可通过减去以下值得出： `inputRecordCount` 从 `outputRecordCount`. 此值将在所有批次中生成，无论是否为 `errorDiagnostics` 已启用。 |
+| `metrics.failedRecordCount` | 由于解析、转换或验证而无法处理的行数。 此值可以通过从`outputRecordCount`中减去`inputRecordCount`而派生。 此值在所有批次中生成，无论是否启用了`errorDiagnostics`。 |
 
-**有错误的响应**
+**带有错误的响应**
 
-如果批次具有一个或多个错误，并且启用了错误诊断，则响应将返回有关错误的更多信息，包括有效负载本身以及可下载的错误文件。 请注意，包含错误的批的状态可能仍具有成功状态。
+如果批次具有一个或多个错误并启用了错误诊断，则响应将返回有关错误的更多信息，这些信息既存在于有效负荷中，也存在于可下载的错误文件中。 请注意，包含错误的批次的状态可能仍具有成功状态。
 
 ```json
 {
@@ -277,12 +277,12 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `metrics.failedRecordCount` | 由于解析、转换或验证而无法处理的行数。 此值可通过减去以下值得出： `inputRecordCount` 从 `outputRecordCount`. 此值将在所有批次中生成，无论是否为 `errorDiagnostics` 已启用。 |
-| `errors.recordCount` | 指定错误代码失败的行数。 此值为 **仅限** 生成条件 `errorDiagnostics` 已启用。 |
+| `metrics.failedRecordCount` | 由于解析、转换或验证而无法处理的行数。 此值可以通过从`outputRecordCount`中减去`inputRecordCount`而派生。 此值在所有批次中生成，无论是否启用了`errorDiagnostics`。 |
+| `errors.recordCount` | 因指定的错误代码而失败的行数。 如果启用了`errorDiagnostics`，则只生成&#x200B;**1}值。** |
 
 >[!NOTE]
 >
->如果没有错误诊断程序可用，则会显示以下错误消息：
+>如果错误诊断不可用，则会显示以下错误消息：
 >
 ```json
 >{
@@ -295,7 +295,7 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
 
 ## 后续步骤 {#next-steps}
 
-本教程介绍了如何监测部分批次摄取错误。 有关批量摄取的更多信息，请阅读 [批量摄取开发人员指南](../batch-ingestion/api-overview.md).
+本教程介绍了如何监测部分批次摄取错误。 有关批量摄取的更多信息，请阅读[批量摄取开发人员指南](../batch-ingestion/api-overview.md)。
 
 ## 附录 {#appendix}
 
@@ -303,23 +303,23 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
 
 ### 部分批次摄取错误类型 {#partial-ingestion-types}
 
-摄取数据时，部分批量摄取有三种不同的错误类型：
+摄取数据时，部分批次摄取具有三种不同的错误类型：
 
 - [无法读取的文件](#unreadable)
-- [无效的架构或标头](#schemas-headers)
-- [不可分析的行](#unparsable)
+- [架构或标头无效](#schemas-headers)
+- [无法分析的行](#unparsable)
 
 ### 无法读取的文件 {#unreadable}
 
-如果摄取的批次具有不可读的文件，则该批次的错误将附加到批次本身。 有关检索失败批次的更多信息，请参阅 [检索失败的批次指南](../quality/retrieve-failed-batches.md).
+如果摄取的批次具有不可读的文件，则批次的错误将附加到批次本身。 有关检索失败的批次的详细信息，请参阅[检索失败的批次指南](../quality/retrieve-failed-batches.md)。
 
-### 无效的架构或标头 {#schemas-headers}
+### 架构或标头无效 {#schemas-headers}
 
-如果摄取的批次具有无效架构或无效标头，则批次的错误将附加到批次本身。 有关检索失败批次的更多信息，请参阅 [检索失败的批次指南](../quality/retrieve-failed-batches.md).
+如果摄取的批次具有无效架构或无效标头，则批次的错误将附加到批次本身。 有关检索失败的批次的详细信息，请参阅[检索失败的批次指南](../quality/retrieve-failed-batches.md)。
 
-### 不可分析的行 {#unparsable}
+### 无法分析的行 {#unparsable}
 
-如果您摄取的批次具有不可分析的行，则可以使用以下请求查看包含错误的文件列表。
+如果您摄取的批处理包含不可分析的行，则可以使用以下请求查看包含错误的文件列表。
 
 **API格式**
 
@@ -329,7 +329,7 @@ GET /export/batches/{BATCH_ID}/meta?path=row_errors
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 此 `id` 从中检索错误信息的批次的值。 |
+| `{BATCH_ID}` | 正在从中检索错误信息的批次的`id`值。 |
 
 **请求**
 
@@ -343,7 +343,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/01EFZ7W203P
 
 **响应**
 
-成功响应将返回包含错误的文件列表。
+成功的响应会返回包含错误的文件列表。
 
 ```json
 {
@@ -374,7 +374,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/01EFZ7W203P
 }
 ```
 
-然后，您可以使用检索有关错误的详细信息 [诊断检索端点](#retrieve-diagnostics).
+然后，可以使用[诊断检索终结点](#retrieve-diagnostics)检索有关错误的详细信息。
 
 检索错误文件的示例响应如下所示：
 

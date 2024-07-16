@@ -18,6 +18,6 @@ ht-degree: 0%
 
 此视频简要介绍了Experience Platform，并概述了它解决的一些业务挑战。
 
-要了解更多信息，请从阅读 [Experience Platform概述](../home.md).
+要了解更多信息，请先阅读[Experience Platform概述](../home.md)。
 
 >[!VIDEO](https://video.tv.adobe.com/v/32797?quality=12&learn=on)

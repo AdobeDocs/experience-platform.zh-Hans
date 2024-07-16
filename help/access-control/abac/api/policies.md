@@ -18,19 +18,19 @@ ht-degree: 2%
 >
 >如果传递的是用户令牌，则该令牌的用户必须具有所请求组织的“组织管理员”角色。
 
-访问控制策略是将属性集合在一起以建立允许和不允许的操作的语句。 这些策略可以是本地策略或全局策略，也可以覆盖其他策略。 此 `/policies` 基于属性的访问控制API中的端点允许您以编程方式管理策略，包括有关控制策略的规则及其各自的主题条件的信息。
+访问控制策略是将属性集合在一起以建立允许和不允许的操作的语句。 这些策略可以是本地策略或全局策略，也可以覆盖其他策略。 基于属性的访问控制API中的`/policies`端点允许您以编程方式管理策略，包括有关控制策略的规则及其相应主题条件的信息。
 
 >[!IMPORTANT]
 >
->此端点不应与 `/policies` 中的端点 [策略服务API](../../../data-governance/api/policies.md)，用于管理数据使用策略。
+>不应将此端点与用于管理数据使用策略的[策略服务API](../../../data-governance/api/policies.md)中的`/policies`端点混淆。
 
 ## 快速入门
 
-本指南中使用的API端点属于基于属性的访问控制API。 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+本指南中使用的API端点属于基于属性的访问控制API。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
 
 ## 检索策略列表 {#list}
 
-GET向 `/policies` 端点列出组织中的所有现有策略。
+向`/policies`端点发出GET请求，以列出组织中的所有现有策略。
 
 **API格式**
 
@@ -136,22 +136,22 @@ curl -X GET \
 | `id` | 与策略相对应的ID。 此标识符是自动生成的，可用于查找、更新和删除策略。 |
 | `imsOrgId` | 查询的策略可访问的组织。 |
 | `createdBy` | 创建策略的用户的ID。 |
-| `createdAt` | 创建策略的时间。 此 `createdAt` 属性以unix epoch时间戳显示。 |
+| `createdAt` | 创建策略的时间。 `createdAt`属性以unix epoch时间戳显示。 |
 | `modifiedBy` | 上次更新策略的用户的ID。 |
-| `modifiedAt` | 上次更新策略的时间。 此 `modifiedAt` 属性以unix epoch时间戳显示。 |
+| `modifiedAt` | 上次更新策略的时间。 `modifiedAt`属性以unix epoch时间戳显示。 |
 | `name` | 策略的名称。 |
 | `description` | （可选）可以添加以提供有关特定策略的进一步信息的属性。 |
-| `status` | 策略的当前状态。 此属性定义策略当前是否为 `active` 或 `inactive`. |
-| `subjectCondition` | 应用于主体的条件。 主体是具有特定属性的用户，请求访问资源以执行操作。 在本例中， `subjectCondition` 适用于主题属性的类似查询的条件。 |
+| `status` | 策略的当前状态。 此属性定义策略当前是`active`还是`inactive`。 |
+| `subjectCondition` | 应用于主体的条件。 主体是具有特定属性的用户，请求访问资源以执行操作。 在这种情况下，`subjectCondition`是应用于主题属性的类似查询的条件。 |
 | `rules` | 定义策略的一组规则。 规则定义了哪些属性组合已获授权，以便主体能够成功对资源执行操作。 |
-| `rules.effect` | 考虑以下值后产生的影响 `action`， `condition` 和 `resource`. 可能的值包括： `permit`， `deny`，或 `indeterminate`. |
+| `rules.effect` | 考虑`action`、`condition`和`resource`的值后产生的效果。 可能的值包括： `permit`、`deny`或`indeterminate`。 |
 | `rules.resource` | 主体可以或无法访问的资源或对象。  资源可以是文件、应用程序、服务器甚至API。 |
 | `rules.condition` | 应用于资源的条件。 例如，如果资源是架构，则架构可以应用某些标签，这有助于确定针对该架构的操作是允许还是不允许的。 |
-| `rules.action` | 允许主体对查询的资源执行的操作。 可能的值包括： `read`， `create`， `edit`、和 `delete`. |
+| `rules.action` | 允许主体对查询的资源执行的操作。 可能的值包括： `read`、`create`、`edit`和`delete`。 |
 
 ## 按ID查找策略详细信息 {#lookup}
 
-GET向 `/policies` 在请求路径中提供策略ID以检索有关该单个策略的信息时，使用这种方法来获取端点。
+在请求路径中提供策略ID以检索有关单个GET的信息时，向`/policies`端点发出策略请求。
 
 **API格式**
 
@@ -232,23 +232,23 @@ curl -X GET \
 | `id` | 与策略相对应的ID。 此标识符是自动生成的，可用于查找、更新和删除策略。 |
 | `imsOrgId` | 查询的策略可访问的组织。 |
 | `createdBy` | 创建策略的用户的ID。 |
-| `createdAt` | 创建策略的时间。 此 `createdAt` 属性以unix epoch时间戳显示。 |
+| `createdAt` | 创建策略的时间。 `createdAt`属性以unix epoch时间戳显示。 |
 | `modifiedBy` | 上次更新策略的用户的ID。 |
-| `modifiedAt` | 上次更新策略的时间。 此 `modifiedAt` 属性以unix epoch时间戳显示。 |
+| `modifiedAt` | 上次更新策略的时间。 `modifiedAt`属性以unix epoch时间戳显示。 |
 | `name` | 策略的名称。 |
 | `description` | （可选）可以添加以提供有关特定策略的进一步信息的属性。 |
-| `status` | 策略的当前状态。 此属性定义策略当前是否为 `active` 或 `inactive`. |
-| `subjectCondition` | 应用于主体的条件。 主体是具有特定属性的用户，请求访问资源以执行操作。 在本例中， `subjectCondition` 适用于主题属性的类似查询的条件。 |
+| `status` | 策略的当前状态。 此属性定义策略当前是`active`还是`inactive`。 |
+| `subjectCondition` | 应用于主体的条件。 主体是具有特定属性的用户，请求访问资源以执行操作。 在这种情况下，`subjectCondition`是应用于主题属性的类似查询的条件。 |
 | `rules` | 定义策略的一组规则。 规则定义了哪些属性组合已获授权，以便主体能够成功对资源执行操作。 |
-| `rules.effect` | 考虑以下值后产生的影响 `action`， `condition` 和 `resource`. 可能的值包括： `permit`， `deny`，或 `indeterminate`. |
+| `rules.effect` | 考虑`action`、`condition`和`resource`的值后产生的效果。 可能的值包括： `permit`、`deny`或`indeterminate`。 |
 | `rules.resource` | 主体可以或无法访问的资源或对象。  资源可以是文件、应用程序、服务器甚至API。 |
 | `rules.condition` | 应用于资源的条件。 例如，如果资源是架构，则架构可以应用某些标签，这有助于确定针对该架构的操作是允许还是不允许的。 |
-| `rules.action` | 允许主体对查询的资源执行的操作。 可能的值包括： `read`， `create`， `edit`、和 `delete`. |
+| `rules.action` | 允许主体对查询的资源执行的操作。 可能的值包括： `read`、`create`、`edit`和`delete`。 |
 
 
 ## 创建策略 {#create}
 
-POST要创建新策略，请向 `/policies` 端点。
+要创建新策略，请向`/policies`端点发出POST请求。
 
 **API格式**
 
@@ -258,7 +258,7 @@ POST /policies
 
 **请求**
 
-以下请求将创建一个名为的新策略： `acme-integration-policy`.
+以下请求创建一个名为的新策略： `acme-integration-policy`。
 
 ```shell
 curl -X POST \
@@ -289,10 +289,10 @@ curl -X POST \
 | `description` | （可选）可以添加以提供有关特定策略的进一步信息的属性。 |
 | `imsOrgId` | 包含策略的组织。 |
 | `rules` | 定义策略的一组规则。 规则定义了哪些属性组合已获授权，以便主体能够成功对资源执行操作。 |
-| `rules.effect` | 考虑以下值后产生的影响 `action`， `condition` 和 `resource`. 可能的值包括： `permit`， `deny`，或 `indeterminate`. |
+| `rules.effect` | 考虑`action`、`condition`和`resource`的值后产生的效果。 可能的值包括： `permit`、`deny`或`indeterminate`。 |
 | `rules.resource` | 主体可以或无法访问的资源或对象。  资源可以是文件、应用程序、服务器甚至API。 |
 | `rules.condition` | 应用于资源的条件。 例如，如果资源是架构，则架构可以应用某些标签，这有助于确定针对该架构的操作是允许还是不允许的。 |
-| `rules.action` | 允许主体对查询的资源执行的操作。 可能的值包括： `read`， `create`， `edit`、和 `delete`. |
+| `rules.action` | 允许主体对查询的资源执行的操作。 可能的值包括： `read`、`create`、`edit`和`delete`。 |
 
 **响应**
 
@@ -329,15 +329,15 @@ curl -X POST \
 | `id` | 与策略相对应的ID。 此标识符是自动生成的，可用于查找、更新和删除策略。 |
 | `name` | 策略的名称。 |
 | `rules` | 定义策略的一组规则。 规则定义了哪些属性组合已获授权，以便主体能够成功对资源执行操作。 |
-| `rules.effect` | 考虑以下值后产生的影响 `action`， `condition` 和 `resource`. 可能的值包括： `permit`， `deny`，或 `indeterminate`. |
+| `rules.effect` | 考虑`action`、`condition`和`resource`的值后产生的效果。 可能的值包括： `permit`、`deny`或`indeterminate`。 |
 | `rules.resource` | 主体可以或无法访问的资源或对象。  资源可以是文件、应用程序、服务器甚至API。 |
 | `rules.condition` | 应用于资源的条件。 例如，如果资源是架构，则架构可以应用某些标签，这有助于确定针对该架构的操作是允许还是不允许的。 |
-| `rules.action` | 允许主体对查询的资源执行的操作。 可能的值包括： `read`， `create`， `edit`、和 `delete`. |
+| `rules.action` | 允许主体对查询的资源执行的操作。 可能的值包括： `read`、`create`、`edit`和`delete`。 |
 
 
 ## 按策略ID更新策略 {#put}
 
-PUT要更新单个策略的规则，请向 `/policies` 端点，同时提供要在请求路径中更新的策略的ID。
+要更新单个策略的规则，请在请求PUT中提供要更新的策略的ID时，向`/policies`端点发出请求请求。
 
 **API格式**
 
@@ -406,7 +406,7 @@ curl -X PUT \
 
 ## 更新策略属性 {#patch}
 
-PATCH要更新单个策略的属性，请向 `/policies` 端点，同时提供要在请求路径中更新的策略的ID。
+要更新单个策略的属性，请在请求PATCH中提供要更新的策略的ID时，向`/policies`端点发出请求请求。
 
 **API格式**
 
@@ -420,7 +420,7 @@ PATCH /policies/{POLICY_ID}
 
 **请求**
 
-以下请求替换了 `/description` 在策略ID中 `c3863937-5d40-448d-a7be-416e538f955e`.
+以下请求替换策略ID `c3863937-5d40-448d-a7be-416e538f955e`中的`/description`值。
 
 ```shell
 curl -X PATCH \
@@ -441,7 +441,7 @@ curl -X PATCH \
 
 | 操作 | 描述 |
 | --- | --- |
-| `op` | 用于定义更新角色所需的操作的操作调用。 操作包括： `add`， `replace`、和 `remove`. |
+| `op` | 用于定义更新角色所需的操作的操作调用。 操作包括： `add`、`replace`和`remove`。 |
 | `path` | 要更新的参数的路径。 |
 | `value` | 要用于更新参数的新值。 |
 
@@ -477,7 +477,7 @@ curl -X PATCH \
 
 ## 删除策略 {#delete}
 
-DELETE要删除策略，请向 `/policies` 端点提供了要删除的策略的ID。
+要删除策略，请在提供要删除的策略的ID时向`/policies`端点发出DELETE请求。
 
 **API格式**
 
@@ -491,7 +491,7 @@ DELETE /policies/{POLICY_ID}
 
 **请求**
 
-以下请求删除ID为 `c3863937-5d40-448d-a7be-416e538f955e`.
+以下请求删除ID为`c3863937-5d40-448d-a7be-416e538f955e`的策略。
 
 ```shell
 curl -X DELETE \

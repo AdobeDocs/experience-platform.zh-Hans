@@ -13,21 +13,21 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-本页介绍如何使用中的信息 [目标SDK中的配置选项](../functionality/configuration-options.md) 和其他Destination SDK功能和API参考文档中的内容，以配置 [基于文件的目标](../../destination-types.md#file-based). 步骤按以下顺序排列。
+本页介绍如何使用目标SDK](../functionality/configuration-options.md)中的[配置选项以及其他Destination SDK功能和API参考文档中的信息来配置基于[文件的目标](../../destination-types.md#file-based)。 步骤按以下顺序排列。
 
 ## 先决条件 {#prerequisites}
 
-在继续执行以下步骤之前，请阅读 [Destination SDK快速入门](../getting-started.md) 页面，以了解有关获取使用Destination SDKAPI所需的Adobe I/O身份验证凭据和其他先决条件的信息。
+在继续执行以下步骤之前，请阅读[Destination SDK快速入门](../getting-started.md)页面，了解有关获取使用Destination SDKAPI所必需的Adobe I/O身份验证凭据和其他先决条件的信息。
 
 ## 在Destination SDK中使用配置选项设置目标的步骤 {#steps}
 
-![说明使用Destination SDK端点的步骤](../assets/guides/destination-sdk-steps-batch.png)
+![使用Destination SDK端点的说明步骤](../assets/guides/destination-sdk-steps-batch.png)
 
 ## 步骤1：创建服务器和文件配置 {#create-server-file-configuration}
 
-开始方式 [创建服务器和文件配置](../authoring-api/destination-server/create-destination-server.md) 使用 `/destinations-server` 端点。
+首先[使用`/destinations-server`端点创建服务器和文件配置](../authoring-api/destination-server/create-destination-server.md)。
 
-下面显示的是的示例配置 [!DNL Amazon S3] 目标。 有关配置中使用的字段以及配置其他类型的基于文件的目标的更多详细信息，请参阅相应的字段 [服务器配置](../functionality/destination-server/server-specs.md).
+下面显示了[!DNL Amazon S3]目标的配置示例。 有关配置中使用的字段以及配置其他类型的基于文件的目标的更多详细信息，请参阅它们对应的[服务器配置](../functionality/destination-server/server-specs.md)。
 
 **API格式**
 
@@ -114,9 +114,9 @@ POST platform.adobe.io/data/core/activation/authoring/destination-servers
 
 ## 步骤2：创建目标配置 {#create-destination-configuration}
 
-下面显示了使用创建的目标配置示例。 `/destinations` API端点。
+下面显示的是使用`/destinations` API端点创建的目标配置示例。
 
-要将服务器和文件配置从步骤1连接到此目标配置，请添加 `instance ID` 的服务器和文件配置为 `destinationServerId` 此处。
+要将步骤1中的服务器和文件配置连接到此目标配置，请在此处添加服务器和文件配置的`instance ID`作为`destinationServerId`。
 
 **API格式**
 
@@ -255,9 +255,9 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 ## 步骤3：创建受众元数据配置 {#create-audience-metadata-configuration}
 
-对于某些目标，Destination SDK需要您将受众元数据配置配置为以编程方式创建、更新或删除目标中的受众。 请参阅 [受众元数据管理](../functionality/audience-metadata-management.md) 有关何时需要设置此配置以及如何设置的信息。
+对于某些目标，Destination SDK需要您将受众元数据配置配置为以编程方式创建、更新或删除目标中的受众。 有关何时需要设置此配置以及如何设置的信息，请参阅[受众元数据管理](../functionality/audience-metadata-management.md)。
 
-如果使用受众元数据配置，则必须将其连接到在步骤2中创建的目标配置。 将受众元数据配置的实例ID添加到目标配置中，如下所示 `audienceTemplateId`.
+如果使用受众元数据配置，则必须将其连接到在步骤2中创建的目标配置。 将受众元数据配置的实例ID作为`audienceTemplateId`添加到目标配置中。
 
 ```json {line-numbers="true" highlight="90"}
 {
@@ -396,13 +396,13 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 ## 步骤4：设置身份验证 {#set-up-authentication}
 
-取决于您是否指定 `"authenticationRule": "CUSTOMER_AUTHENTICATION"` 或 `"authenticationRule": "PLATFORM_AUTHENTICATION"` 在上面的目标配置中，您可以使用来设置目标的身份验证 `/destination` 或 `/credentials` 端点。
+根据您在上面的目标配置中指定`"authenticationRule": "CUSTOMER_AUTHENTICATION"`还是`"authenticationRule": "PLATFORM_AUTHENTICATION"`，可以使用`/destination`或`/credentials`端点为目标设置身份验证。
 
 >[!NOTE]
 >
->`CUSTOMER_AUTHENTICATION` 是两种身份验证规则中比较常见的一个，如果您要求用户在设置连接和导出数据之前向您的目标提供某种形式的身份验证，则需使用它。
+>`CUSTOMER_AUTHENTICATION`是两个身份验证规则中比较常见的一个，如果您要求用户在设置连接和导出数据之前向您的目标提供某种形式的身份验证，则应该使用。
 
-* 如果您选择 `"authenticationRule": "CUSTOMER_AUTHENTICATION"` 在目标配置中，请参阅以下部分，了解Destination SDK支持的基于文件的目标身份验证类型：
+* 如果您在目标配置中选择了`"authenticationRule": "CUSTOMER_AUTHENTICATION"`，请参阅以下部分，了解基于文件的目标的Destination SDK所支持的身份验证类型：
 
    * [Amazon S3身份验证](../functionality/destination-configuration/customer-authentication.md#s3)
    * [Azure Blob](../functionality/destination-configuration/customer-authentication.md#blob)
@@ -411,12 +411,12 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
    * [使用SSH密钥进行SFTP身份验证](../functionality/destination-configuration/customer-authentication.md#sftp-ssh)
    * [使用密码的SFTP身份验证](../functionality/destination-configuration/customer-authentication.md#sftp-password)
 
-* 如果您选择 `"authenticationRule": "PLATFORM_AUTHENTICATION"`，请参阅 [凭据配置API文档](../credentials-api/create-credential-configuration.md#when-to-use).
+* 如果您选择了`"authenticationRule": "PLATFORM_AUTHENTICATION"`，请参阅[凭据配置API文档](../credentials-api/create-credential-configuration.md#when-to-use)。
 
 
 ## 步骤5：测试您的目标 {#test-destination}
 
-使用前面步骤中的配置端点设置目标后，您可以使用 [目标测试工具](../testing-api/batch-destinations/file-based-destination-testing-overview.md) 测试Adobe Experience Platform与您的目标之间的集成。
+使用前面步骤中的配置端点设置目标后，您可以使用[目标测试工具](../testing-api/batch-destinations/file-based-destination-testing-overview.md)来测试Adobe Experience Platform与您的目标之间的集成。
 
 在测试目标的过程中，您必须使用Experience PlatformUI创建受众，并将受众激活到目标。 有关如何在Experience Platform中创建受众的说明，请参阅以下两个资源：
 
@@ -429,7 +429,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 >
 >如果您正在创建供自己使用的专用目标，并且不想将其发布到目标目录以供其他客户使用，则不需要执行此步骤。
 
-配置和测试目标后，使用 [目标发布API](../publishing-api/create-publishing-request.md) 将您的配置提交给Adobe进行审核。
+配置和测试目标后，使用[目标发布API](../publishing-api/create-publishing-request.md)将配置提交给Adobe进行审核。
 
 ## 步骤7：记录您的目标 {#document-destination}
 
@@ -437,7 +437,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 >
 >如果您正在创建供自己使用的专用目标，并且不想将其发布到目标目录以供其他客户使用，则不需要执行此步骤。
 
-如果您是独立软件供应商(ISV)或系统集成商(SI)，请创建 [产品化集成](../overview.md#productized-custom-integrations)，使用 [自助式文档流程](../docs-framework/documentation-instructions.md) 在中为您的目标创建产品文档页面 [Experience Platform目标目录](/help/destinations/catalog/overview.md).
+如果您是创建[产品化集成](../overview.md#productized-custom-integrations)的独立软件供应商(ISV)或系统集成商(SI)，请使用[自助文档流程](../docs-framework/documentation-instructions.md)在[Experience Platform目标目录](/help/destinations/catalog/overview.md)中为您的目标创建产品文档页面。
 
 ## 步骤8：提交目标以供Adobe审核 {#submit-for-review}
 
@@ -445,4 +445,4 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 >
 >如果您正在创建供自己使用的专用目标，并且不想将其发布到目标目录以供其他客户使用，则不需要执行此步骤。
 
-最后，在Experience Platform目录中发布目标并对所有Experience Platform客户可见之前，您需要正式提交目标以供Adobe审查。 查找有关如何执行操作的完整信息 [提交供审查在Destination SDK中创作的产品化目的地](../guides/submit-destination.md).
+最后，在Experience Platform目录中发布目标并对所有Experience Platform客户可见之前，您需要正式提交目标以供Adobe审查。 查找有关如何[提交以供审阅在Destination SDK](../guides/submit-destination.md)中创作的产品化目标的完整信息。

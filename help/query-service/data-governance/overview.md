@@ -5,7 +5,7 @@ exl-id: 37543d43-bd8c-4bf9-88e5-39de5efe3164
 source-git-commit: 18c1d32bbc2732c38a9c37ee8fb9d36a23d4e515
 workflow-type: tm+mt
 source-wordcount: '3129'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -25,7 +25,7 @@ Adobe Experience Platform将来自多个企业系统的数据整合在一起，�
 1. 隐私
 1. 数据卫生
 
-本文档将分析治理的各个方面，并演示在使用查询服务时如何促进数据合规性。 请参阅 [治理、隐私和安全性概述](../../landing/governance-privacy-security/overview.md) 有关Experience Platform如何允许您管理客户数据和确保法规遵从性的更全面的信息。
+本文档将分析治理的各个方面，并演示在使用查询服务时如何促进数据合规性。 请参阅[治理、隐私和安全概述](../../landing/governance-privacy-security/overview.md)，以进一步了解Experience Platform如何允许您管理客户数据和确保合规性。
 
 ## 安全性 {#security}
 
@@ -33,15 +33,15 @@ Adobe Experience Platform将来自多个企业系统的数据整合在一起，�
 
 查询服务的安全性分为以下几类：
 
-* [访问控制](#access-control)：访问通过角色和权限（包括数据集和列级别的权限）进行控制。
-* 通过以下方式保护数据 [连通性](#connectivity)：通过与过期凭据或不过期凭据建立有限连接，通过Platform和外部客户端保护数据的安全。
-* 通过以下方式保护数据 [加密和客户管理的密钥(CMK)](#encryption-and-customer-managed-keys)：数据静止时通过加密控制访问。
+* [访问控制](#access-control)：通过角色和权限（包括数据集和列级权限）来控制访问。
+* 通过[连接](#connectivity)保护数据：通过实现与过期凭据或不过期凭据的有限连接，通过Platform和外部客户端保护数据。
+* 通过[加密和客户管理的密钥(CMK)](#encryption-and-customer-managed-keys)保护数据：数据静止时通过加密控制访问。
 
 ### 访问控制 {#access-control}
 
-Adobe Experience Platform中的访问控制允许您使用 [Adobe Admin Console](https://adminconsole.adobe.com/) 使用基于角色的权限管理对查询服务功能的访问。 同样，您可以通过架构和数据字段上的标签管理来控制对特定数据属性的访问。
+Adobe Experience Platform中的访问控制允许您使用[Adobe Admin Console](https://adminconsole.adobe.com/)，通过基于角色的权限来管理对查询服务功能的访问。 同样，您可以通过架构和数据字段上的标签管理来控制对特定数据属性的访问。
 
-本节概述用户必须具有哪些必要的访问控制权限，才能充分利用查询服务功能。 查看文档 [管理权限](../../access-control/ui/permissions.md) 和 [管理用户](../../access-control/ui/users.md) 以获取有关为产品配置文件分配访问权限的详细说明。
+本节概述用户必须具有哪些必要的访问控制权限，才能充分利用查询服务功能。 有关将访问权限分配给产品配置文件的详细说明，请参阅[管理权限](../../access-control/ui/permissions.md)和[管理用户](../../access-control/ui/users.md)上的文档。
 
 #### 相关权限
 
@@ -53,7 +53,7 @@ Adobe Experience Platform中的访问控制允许您使用 [Adobe Admin Console]
 
 | 权限 | 描述 |
 |---|---|
-| [!UICONTROL 管理查询] | 此权限允许用户执行数据探索和批量查询，这些查询可以读取现有数据集或将数据写入数据集。 这包括两者 `CREATE TABLE AS SELECT` (`CTAS`)和 `INSERT INTO AS SELECT` (`ITAS`)个查询。 |
+| [!UICONTROL 管理查询] | 此权限允许用户执行数据探索和批量查询，这些查询可以读取现有数据集或将数据写入数据集。 这包括`CREATE TABLE AS SELECT` (`CTAS`)和`INSERT INTO AS SELECT` (`ITAS`)查询。 |
 
 **数据集权限**
 
@@ -70,7 +70,7 @@ Adobe Experience Platform中的访问控制允许您使用 [Adobe Admin Console]
 
 基于属性的访问控制功能使查询服务用户能够限制对关键用户数据的访问。 可以根据分配给角色的权限来授予或限制访问权限。 用户对单个列的访问受相关数据使用标签以及应用于分配给用户的角色的权限集控制。
 
-使用数据使用标签标记架构字段组和类会将数据使用限制应用于具有相同字段组和类的所有架构。 有关更多详细信息，请参阅 [基于属性的访问控制](../../access-control/abac/overview.md) 以了解有关此功能的详细信息。
+使用数据使用标签标记架构字段组和类会将数据使用限制应用于具有相同字段组和类的所有架构。 有关此功能的完整信息，请参阅[基于属性的访问控制](../../access-control/abac/overview.md)的概述。
 
 此功能允许您向所选的用户组授予对机密列的访问权限。 列的访问控制可以限制特定类型用户的读取和写入功能。
 
@@ -81,23 +81,23 @@ Adobe Experience Platform中的访问控制允许您使用 [Adobe Admin Console]
 1. 如果用户被拒绝访问架构中的某一列，则该用户也被拒绝对受限列的读取或写入权限。 这适用于以下常见方案：
 
    * **用例1**：当用户尝试执行仅影响受限列的查询时，系统会引发该列不存在的错误。
-   * **用例2**：当用户尝试执行具有多个列（包括受限列）的查询时，系统仅返回所有非受限列的输出。
+   * **用例2**：当用户尝试执行包含多个列（包括一个受限列）的查询时，系统仅返回所有非受限列的输出。
 
 1. 如果用户尝试访问计算字段，则要求用户具有对构成中使用的所有字段的访问权限，或者系统拒绝对计算字段的访问权限。
 
 #### 视图的访问控制
 
-查询服务提供了将标准ANSI SQL用于 [`CREATE VIEW`](../sql/syntax.md#create-view) 语句。 对于高度敏感的数据工作流，在创建视图时必须实施适当的控制。
+查询服务提供了对[`CREATE VIEW`](../sql/syntax.md#create-view)语句使用标准ANSI SQL的功能。 对于高度敏感的数据工作流，在创建视图时必须实施适当的控制。
 
-此 `CREATE VIEW` 关键字定义查询的视图，但该视图并未实际实现。 相反，每次在查询中引用视图时都会运行查询。 当用户从数据集创建视图时，父数据集的基于角色和属性的访问控制规则是 **非** 分层应用。 因此，在创建视图时，必须明确设置每列的权限。
+`CREATE VIEW`关键字定义了查询的视图，但该视图未实际实现。 相反，每次在查询中引用视图时都会运行查询。 当用户从数据集创建视图时，父数据集的基于角色和属性的访问控制规则&#x200B;**未分层应用**。 因此，在创建视图时，必须明确设置每列的权限。
 
 #### 对加速的数据集创建基于字段的访问限制 {#create-field-based-access-restrictions-on-accelerated-datasets}
 
-使用 [基于属性的访问控制功能](../../access-control/abac/overview.md) 您可以在中定义事实和维度数据集的组织或数据使用范围 [加速存储](../data-distiller/customizable-insights/send-accelerated-queries.md). 这允许管理员管理对特定区段的访问，并更好地管理授予用户或用户组的访问权限。
+通过基于[属性的访问控制功能](../../access-control/abac/overview.md)，您可以在[加速存储](../data-distiller/customizable-insights/send-accelerated-queries.md)中的事实和维度数据集上定义组织或数据使用范围。 这允许管理员管理对特定区段的访问，并更好地管理授予用户或用户组的访问权限。
 
-要对加速数据集创建基于字段的访问限制，您可以使用查询服务CTAS查询创建加速数据集，并基于现有XDM架构或临时架构构建这些数据集。 然后，管理员可以 [添加和编辑架构的数据使用标签](../../xdm/tutorials/labels.md#edit-the-labels-for-the-schema-or-field) 或 [临时架构](./ad-hoc-schema-labels.md#edit-governance-labels). 您可以从应用、创建和编辑架构的标签 [!UICONTROL 标签] 中的工作区 [!UICONTROL 架构] UI。
+要对加速数据集创建基于字段的访问限制，您可以使用查询服务CTAS查询创建加速数据集，并基于现有XDM架构或临时架构构建这些数据集。 然后，管理员可以[添加和编辑架构](../../xdm/tutorials/labels.md#edit-the-labels-for-the-schema-or-field)或[临时架构](./ad-hoc-schema-labels.md#edit-governance-labels)的数据使用标签。 您可以在[!UICONTROL 架构] UI的[!UICONTROL 标签]工作区中，应用、创建和编辑架构的标签。
 
-数据使用标签也可以 [直接应用于或编辑数据集](../../data-governance/labels/user-guide.md#add-labels) 通过数据集UI，或从访问控制创建 [!UICONTROL 标签] 工作区。 请参阅有关如何执行操作的指南 [创建新标签](../../access-control/abac/ui/labels.md) 以了解更多信息。
+还可以通过数据集UI将数据使用标签[直接应用或编辑到数据集](../../data-governance/labels/user-guide.md#add-labels)，或者从访问控制[!UICONTROL 标签]工作区创建数据使用标签。 有关详细信息，请参阅有关如何[创建新标签](../../access-control/abac/ui/labels.md)的指南。
 
 随后，用户对单个列的访问可由附加的数据使用标签以及应用于分配给用户的角色的权限集进行控制。
 
@@ -107,52 +107,52 @@ Adobe Experience Platform中的访问控制允许您使用 [Adobe Admin Console]
 
 #### 通过外部客户端的连接
 
-使用第三方客户端访问查询服务需要凭据才能获得授权。 要通过任何兼容的外部客户端访问查询服务，必须提供这些凭据。 您可以使用以下任一方式连接到外部客户端 [过期凭据](#expiring-credentials) 或 [未过期的凭据](#non-expiring-credentials).
+使用第三方客户端访问查询服务需要凭据才能获得授权。 要通过任何兼容的外部客户端访问查询服务，必须提供这些凭据。 您可以使用[过期凭据](#expiring-credentials)或[非过期凭据](#non-expiring-credentials)连接到外部客户端。
 
 #### 通过过期凭据进行的连接时间有限 {#expiring-credentials}
 
-[过期凭据](../ui/credentials.md) 允许用户与外部客户端建立临时连接。 这组凭据仅在24小时内有效。 这些类型的凭据的过期以及查询服务仪表板中的凭据选项卡都可以看到。
+[过期凭据](../ui/credentials.md)允许用户与外部客户端建立临时连接。 这组凭据仅在24小时内有效。 这些类型的凭据的过期以及查询服务仪表板中的凭据选项卡都可以看到。
 
-![查询服务工作区中的凭据选项卡，突出显示即将过期的凭据。](../images/data-governance/overview/expiring-credentials.png)
+![查询服务工作区中的“凭据”选项卡突出显示了过期凭据。](../images/data-governance/overview/expiring-credentials.png)
 
-#### 未过期的凭据 {#non-expiring-credentials}
+#### 未过期凭据 {#non-expiring-credentials}
 
-[未过期的凭据](../ui/credentials.md#non-expiring-credentials) 允许您与外部客户端建立永久连接，这样无需手动密码即可更轻松地连接到查询服务。
+[未过期的凭据](../ui/credentials.md#non-expiring-credentials)允许您与外部客户端建立永久连接，这样无需手动密码即可更轻松地连接到查询服务。
 
-要启用生成不会过期的凭据的选项，必须遵循概述的 [必备工作流](../ui/credentials.md#prerequisites). 在此过程中，您的组织管理员需要配置产品配置文件的权限，从而让管理员能够控制哪些帐户有权使用不会过期的凭据。
+要启用生成不过期凭据的选项，必须遵循概述的[必备工作流](../ui/credentials.md#prerequisites)。 在此过程中，您的组织管理员需要配置产品配置文件的权限，从而让管理员能够控制哪些帐户有权使用不会过期的凭据。
 
-可以为允许使用未过期凭据的技术用户帐户分配角色，以通过根据他们的责任和需求定义其读写访问权限范围来确保适当的数据管理。 请参阅前面关于 [通过访问控制使用基于角色的权限](#access-control) 以管理对查询服务的访问。
+可以为允许使用未过期凭据的技术用户帐户分配角色，以通过根据他们的责任和需求定义其读写访问权限范围来确保适当的数据管理。 请参阅前面关于[的部分，其中通过访问控制](#access-control)使用基于角色的权限来管理对查询服务的访问。
 
-先决工作流完成后，授权用户现在可以 [生成所需的连接凭据](../ui/credentials.md#generate-credentials).
+完成必备工作流后，授权用户现在可以[生成所需的连接凭据](../ui/credentials.md#generate-credentials)。
 
 #### SSL数据加密
 
 为了提高安全性，查询服务为SSL连接提供本机支持，以加密客户端/服务器通信。 Platform支持各种SSL选项，以满足您的数据安全需求并平衡加密和密钥交换的处理开销。
 
-请参阅指南，了解可用的 [第三方客户端连接到查询服务的SSL选项](../clients/ssl-modes.md) ，以了解更多信息，包括如何使用 `verify-full` ssl参数值。
+有关详细信息（包括如何使用`verify-full` SSL参数值连接），请参阅关于与查询服务](../clients/ssl-modes.md)的第三方客户端连接的可用[SSL选项的指南。
 
 ### 加密和客户管理的密钥(CMK) {#encryption-and-customer-managed-keys}
 
 加密是使用算法过程将数据转换为编码和不可读的文本，以确保在没有解密密钥的情况下信息受到保护且不可访问。
 
-查询服务数据合规性确保数据始终加密。 传输中的数据始终符合HTTPS标准，静态数据在Azure Data Lake存储中使用系统级密钥进行加密。 请参阅相关文档 [如何在Adobe Experience Platform中加密数据](../../landing/governance-privacy-security/encryption.md) 以了解更多信息。 有关如何在Azure Data Lake Storage中加密静态数据的详细信息，请参阅 [Azure官方文档](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-encryption).
+查询服务数据合规性确保数据始终加密。 传输中的数据始终符合HTTPS标准，静态数据在Azure Data Lake存储中使用系统级密钥进行加密。 有关详细信息，请参阅有关[如何在Adobe Experience Platform](../../landing/governance-privacy-security/encryption.md)中加密数据的文档。 有关如何在Azure Data Lake Storage中加密静态数据的详细信息，请参阅[Azure官方文档](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-encryption)。
 
-传输中的数据始终符合HTTPS，同样，当数据在数据湖中静止时，使用客户管理密钥(CMK)进行加密，该密钥已受Data Lake Management支持。 当前支持的版本为TLS1.2。请参阅 [客户管理的密钥(CMK)文档](../../landing/governance-privacy-security/customer-managed-keys/overview.md) 了解如何为Adobe Experience Platform中存储的数据设置自己的加密密钥。
+传输中的数据始终符合HTTPS，同样，当数据在数据湖中静止时，使用客户管理密钥(CMK)进行加密，该密钥已受Data Lake Management支持。 当前支持的版本为TLS1.2。请参阅[客户管理的密钥(CMK)文档](../../landing/governance-privacy-security/customer-managed-keys/overview.md)，了解如何为Adobe Experience Platform中存储的数据设置您自己的加密密钥。
 
 
 ## 审核 {#audit}
 
-查询服务记录用户活动，并将该活动分类为不同的日志类型。 日志提供信息 **谁** 已执行 **什么** 操作，以及 **时间**. 日志中记录的每个操作都包含元数据，这些元数据可指示操作类型、日期和时间、执行操作的用户的电子邮件 ID 以及与操作类型相关的其他属性。
+查询服务记录用户活动，并将该活动分类为不同的日志类型。 日志提供有关&#x200B;**谁**&#x200B;执行了&#x200B;**什么**&#x200B;操作以及&#x200B;**何时**&#x200B;的信息。 日志中记录的每个操作都包含元数据，这些元数据指示操作类型、日期和时间、执行操作的用户的电子邮件ID以及与操作类型相关的其他属性。
 
 Platform用户可以根据需要请求任何日志类别。 此部分提供有关为查询服务捕获的信息类型以及可在何处访问此信息的详细信息。
 
 ### 查询日志 {#query-logs}
 
-查询日志UI允许您监视和查看已通过查询编辑器或查询服务API运行的所有查询的执行详细信息。 这提高了查询服务活动的透明度，允许您检查元数据 **所有** 已跨查询服务执行的查询。 它包括所有类型的查询，无论是探索性查询、批量查询还是计划查询。
+查询日志UI允许您监视和查看已通过查询编辑器或查询服务API运行的所有查询的执行详细信息。 这提高了查询服务活动的透明度，允许您检查跨查询服务执行的&#x200B;**所有**&#x200B;查询的元数据。 它包括所有类型的查询，无论是探索性查询、批量查询还是计划查询。
 
-可通过中的Platform UI访问查询日志 [!UICONTROL 日志] 选项卡 [!UICONTROL 查询] 工作区。
+可通过[!UICONTROL 查询]工作区的[!UICONTROL 日志]选项卡中的Platform UI访问查询日志。
 
-![查询日志选项卡，其详细信息面板突出显示。](../images/data-governance/overview/queries-log.png)
+![查询日志选项卡，详细信息面板突出显示。](../images/data-governance/overview/queries-log.png)
 
 ### 审核日志 {#audit-logs}
 
@@ -164,21 +164,21 @@ Platform用户可以根据需要请求任何日志类别。 此部分提供有�
 
 | 类别 | 操作类型 |
 |---|---|
-| 查询 | Execute |
+| 查询 | 执行 |
 | 查询模板 | 创建、删除、更新 |
 | 计划查询 | 创建、删除、更新 |
 
 以下是三个扩展服务器日志的列表，这些日志的详细信息多于查询日志中的信息。 在审核日志查询类别中找到扩展日志：
 
-1. **元查询日志**：执行查询时，会执行各种关联的后端子查询（例如解析）。 这些类型的查询称为“元数据”查询。 可在审计日志中找到其相关详细信息。
-1. **会话日志**：系统会在用户登录查询服务时为其创建会话条目日志，而不管他们是否执行查询。
+1. **元查询日志**：执行查询时，执行各种关联的后端子查询（例如解析）。 这些类型的查询称为“元数据”查询。 可在审计日志中找到其相关详细信息。
+1. **会话日志**：系统会在用户登录查询服务时为其创建会话条目日志，而不管用户是否执行查询。
 1. **第三方客户端连接日志**：当用户成功将查询服务连接到第三方客户端时，将生成连接审核日志。
 
-请参阅 [审核日志概述](../../landing/governance-privacy-security/audit-logs/overview.md) 有关审核日志如何帮助您的组织实现数据合规性的更多信息。
+查看[审核日志概述](../../landing/governance-privacy-security/audit-logs/overview.md)，了解审核日志如何帮助您的组织实现数据合规性的更多信息。
 
 ## 数据使用 {#data-usage}
 
-Platform中的数据治理框架提供了一种统一的方式，可跨所有Adobe解决方案、服务和平台负责任地使用数据。 它协调在整个云Adobe Experience Cloud中捕获、传输和使用元数据的系统方法。 这反过来又可帮助数据控制者根据所需的营销操作以及这些预期营销操作对该数据施加的限制来标记数据。 有关更多详细信息，请参阅 [数据使用标签](../../data-governance/labels/overview.md) 有关如何通过“数据管理”将数据使用标签应用于数据集和字段的更多信息。
+Platform中的数据治理框架提供了一种统一的方式，可跨所有Adobe解决方案、服务和平台负责任地使用数据。 它协调在整个云Adobe Experience Cloud中捕获、传输和使用元数据的系统方法。 这反过来又可帮助数据控制者根据所需的营销操作以及这些预期营销操作对该数据施加的限制来标记数据。 有关“数据管理”如何允许您将数据使用标签应用于数据集和字段的更多信息，请参阅[数据使用标签](../../data-governance/labels/overview.md)概述。
 
 最佳实践是在数据历程的每个阶段努力实现数据合规性。 为此，作为数据管理框架的一部分，应适当标记使用临时架构的派生数据集。 查询服务形成的派生数据集有两种类型：使用标准架构的数据集和使用临时架构的数据集。
 
@@ -186,21 +186,21 @@ Platform中的数据治理框架提供了一种统一的方式，可跨所有Ado
 >
 >使用查询服务创建的数据集称为“派生数据集”。
 
-由于临时架构是由个人用户为特定目的创建的，因此XDM架构字段为该特定数据集进行命名空间，而不是用于不同的数据集。 因此，临时架构在Experience PlatformUI中默认不可见。 尽管标准架构和临时架构在数据使用标签的应用方面没有区别，但查询服务为设置标签而创建的临时架构必须首先在Platform UI中可见。 请参阅指南，网址为 [在Platform UI中发现临时架构](./ad-hoc-schema-labels.md#discover-ad-hoc-schemas) 以了解更多详细信息。
+由于临时架构是由个人用户为特定目的创建的，因此XDM架构字段为该特定数据集进行命名空间，而不是用于不同的数据集。 因此，临时架构在Experience PlatformUI中默认不可见。 尽管标准架构和临时架构在数据使用标签的应用方面没有区别，但查询服务为设置标签而创建的临时架构必须首先在Platform UI中可见。 有关更多详细信息，请参阅关于[在平台UI中发现临时架构](./ad-hoc-schema-labels.md#discover-ad-hoc-schemas)的指南。
 
-访问架构后，您可以 [将标签应用于单个字段](../../xdm/tutorials/labels.md). 标记某个架构后，从该架构派生的所有数据集都将继承这些标签。 从此处，您可以设置数据使用策略，以限制将带有特定标签的数据激活到特定目标。 有关更多信息，请参阅的概述。 [数据使用策略](../../data-governance/policies/overview.md).
+访问架构后，您可以[将标签应用于各个字段](../../xdm/tutorials/labels.md)。 标记某个架构后，从该架构派生的所有数据集都将继承这些标签。 从此处，您可以设置数据使用策略，以限制将带有特定标签的数据激活到特定目标。 有关详细信息，请参阅[数据使用策略](../../data-governance/policies/overview.md)的概述。
 
 ## 隐私 {#privacy}
 
-[Privacy Service](../../privacy-service/home.md) 帮助您根据隐私法规管理客户访问和删除其数据的请求。 它通过搜索数据以查找预先存在的标识符来完成此操作，并根据请求的隐私作业访问或删除该数据。 数据必须正确标记，服务才能确定在隐私作业期间要访问或删除哪些字段。 受隐私请求约束的数据必须包含客户身份信息，这样才能将不同的数据段与隐私请求所应用于的个人联系起来。 查询服务可以使用唯一标识符扩充它使用的数据以满足隐私作业的要求。
+[Privacy Service](../../privacy-service/home.md)可帮助您根据隐私法规管理客户访问和删除其数据的请求。 它通过搜索数据以查找预先存在的标识符来完成此操作，并根据请求的隐私作业访问或删除该数据。 数据必须正确标记，服务才能确定在隐私作业期间要访问或删除哪些字段。 受隐私请求约束的数据必须包含客户身份信息，这样才能将不同的数据段与隐私请求所应用于的个人联系起来。 查询服务可以使用唯一标识符扩充它使用的数据以满足隐私作业的要求。
 
 隐私请求可以发送到数据湖或配置文件数据存储。 从数据湖中删除的记录不会导致从这些记录中删除用户档案。 此外，从Data Lake删除个人信息的隐私作业不会删除其个人资料，因此在隐私作业完成后摄取的任何信息（包含该个人资料ID）都会正常更新该个人资料。 这再次表明需要正确识别在临时架构中使用的数据。
 
-有关更多详细信息，请参阅Privacy Service文档 [隐私请求的身份数据](../../privacy-service/identity-data.md) 以及如何配置数据操作并利用Adobe技术有效地检索适当的身份信息以供客户隐私请求之用。
+有关[隐私请求的身份数据](../../privacy-service/identity-data.md)以及如何配置数据操作和利用Adobe技术有效检索客户隐私请求的相应身份信息的更多信息，请参阅Privacy Service文档。
 
-用于数据管理的查询服务功能简化并简化了数据分类和遵守数据使用法规的过程。 识别数据后，可使用查询服务在所有输出数据集上分配主身份。 您 **必须** 将身份添加到数据集，以方便数据隐私请求并努力实现数据合规性。
+用于数据管理的查询服务功能简化并简化了数据分类和遵守数据使用法规的过程。 识别数据后，可使用查询服务在所有输出数据集上分配主身份。 您&#x200B;**必须**&#x200B;将身份添加到数据集，以方便数据隐私请求并努力实现数据合规性。
 
-架构数据字段可以通过Platform UI设置为标识字段，并且查询服务还允许您 [使用SQL命令&#39;ALTER TABLE&#39;标记主身份](../sql/syntax.md#alter-table). 使用设置标识 `ALTER TABLE` 当使用SQL而不是通过Platform UI直接从架构创建数据集时，命令特别有用。 有关如何执行操作的说明，请参阅文档 [在UI中定义标识字段](../../xdm/ui/fields/identity.md) 使用标准架构时。
+架构数据字段可以通过Platform UI设置为标识字段，并且查询服务还允许您使用SQL命令“ALTER TABLE”](../sql/syntax.md#alter-table)来[标记主标识。 当数据集是使用SQL创建的，而不是通过Platform UI直接从架构创建时，使用`ALTER TABLE`命令设置标识特别有用。 有关在使用标准架构时如何[在UI](../../xdm/ui/fields/identity.md)中定义标识字段的说明，请参阅文档。
 
 ## 数据卫生 {#data-hygiene}
 
@@ -212,4 +212,4 @@ Platform中的数据治理框架提供了一种统一的方式，可跨所有Ado
 
 此方案的例外是删除。 如果请求在数据集上删除数据卫生，并且在删除完成之前，执行另一个派生的数据集查询，则派生的数据集将从原始数据集捕获信息。 在这种情况下，您必须注意，如果已发送删除数据集的请求，则不得使用相同数据集源执行任何新派生的数据集查询。
 
-请参阅 [数据卫生概述](../../hygiene/home.md) 有关Adobe Experience Platform中的数据卫生的更多信息。
+有关Adobe Experience Platform中的数据卫生的更多信息，请参阅[数据卫生概述](../../hygiene/home.md)。

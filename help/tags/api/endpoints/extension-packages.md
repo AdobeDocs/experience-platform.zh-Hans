@@ -4,7 +4,7 @@ description: 了解如何在Reactor API中调用/extension_packages端点。
 exl-id: a91c6f32-6c72-4118-a43f-2bd8ef50709f
 source-git-commit: 4f75bbfee6b550552d2c9947bac8540a982297eb
 workflow-type: tm+mt
-source-wordcount: '939'
+source-wordcount: '930'
 ht-degree: 3%
 
 ---
@@ -13,47 +13,47 @@ ht-degree: 3%
 
 >[!WARNING]
 >
->实施 `/extension_packages` 端点在添加、删除和重新加工特征时处于非活动状态。
+>`/extension_packages`终结点的实现在添加、删除和重新处理功能时处于非活动状态。
 
-扩展包表示 [扩展](./extensions.md) 由扩展开发人员创作。 扩展包定义了可用于标记用户的其他功能。 这些功能通常以下列形式提供 [规则组件](./rule-components.md) （事件、条件和操作）和 [数据元素](./data-elements.md)，还可以包括主模块和共享模块。
+扩展包表示由扩展开发人员创作的[扩展](./extensions.md)。 扩展包定义了可用于标记用户的其他功能。 这些功能通常采用[规则组件](./rule-components.md)（事件、条件和操作）和[数据元素](./data-elements.md)的形式，但也可以包含主模块和共享模块。
 
 扩展包显示在数据收集UI和Adobe Experience Platform UI的扩展目录中，以供用户安装。 将扩展包添加到属性是通过创建带有扩展包链接的扩展来实现的。
 
-扩展包属于 [公司](./companies.md) 创建它的开发人员。
+扩展包属于创建它的开发人员的[公司](./companies.md)。
 
 ## 快速入门
 
-本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [快速入门指南](../getting-started.md) 有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续之前，请查看[快速入门指南](../getting-started.md)，以了解有关如何对API进行身份验证的重要信息。
 
-除了了解如何调用Reactor API之外，了解扩展包的 `status` 和 `availability` 属性会影响您可以对其执行的操作。 以下各节对此进行了说明。
+除了了解如何调用Reactor API之外，了解扩展包的`status`和`availability`属性如何影响您可以对其执行的操作也很重要。 以下各节对此进行了说明。
 
 ### 状态
 
-扩展包具有三种潜在状态： `pending`， `succeeded`、和 `failed`.
+扩展包具有三种潜在状态： `pending`、`succeeded`和`failed`。
 
 | 状态 | 描述 |
 | --- | --- |
-| `pending` | 创建扩展包时，其 `status` 设置为 `pending`. 这表示系统已收到扩展包的信息并将开始处理。 状态为的扩展包 `pending` 不可用。 |
-| `succeeded` | 扩展包的状态将更新为 `succeeded` 如果它成功完成处理。 |
-| `failed` | 扩展包的状态将更新为 `failed` 如果处理失败，则完成处理。 扩展包状态为 `failed` 可能会更新，直到处理成功。 状态为的扩展包 `failed` 不可用。 |
+| `pending` | 创建扩展包时，其`status`设置为`pending`。 这表示系统已收到扩展包的信息并将开始处理。 状态为`pending`的扩展包不可用。 |
+| `succeeded` | 如果扩展包成功完成处理，则扩展包的状态将更新为`succeeded`。 |
+| `failed` | 如果扩展包未成功完成处理，则扩展包的状态将更新为`failed`。 在处理成功之前，状态为`failed`的扩展包可能会更新。 状态为`failed`的扩展包不可用。 |
 
 ### 可用性
 
-扩展包的可用性级别包括： `development`， `private`、和 `public`.
+扩展包的可用性级别为： `development`、`private`和`public`。
 
 | 可用性 | 描述 |
 | --- | --- |
-| `development` | 中的扩展包 `development` 仅对拥有它的公司可见，并且在其内部可用。 此外，它只能用于为扩展开发配置的资产。 |
-| `private` | A `private` 扩展包仅对拥有它的公司可见，并且只能安装在公司拥有的资产上。 |
-| `public` | A `public` 扩展包对所有公司和资产均可见和可用。 |
+| `development` | `development`中的扩展包仅对拥有该扩展包的公司可见，并且可在拥有该扩展包的公司中使用。 此外，它只能用于为扩展开发配置的资产。 |
+| `private` | `private`扩展包仅对拥有它的公司可见，并且只能安装在公司拥有的资产上。 |
+| `public` | `public`扩展包对所有公司和属性可见和可用。 |
 
 >[!NOTE]
 >
->创建扩展包时， `availability` 设置为 `development`. 测试完成后，您可以将扩展包转换为 `private` 或 `public`.
+>创建扩展包时，`availability`设置为`development`。 测试完成后，您可以将扩展包转换为`private`或`public`。
 
 ## 检索扩展包列表 {#list}
 
-您可以通过向以下对象发出GET请求来检索扩展包列表 `/extension_packages`.
+您可以通过向`/extension_packages`发出GET请求来检索扩展包列表。
 
 **API格式**
 
@@ -63,7 +63,7 @@ GET /extension_packages
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性过滤列出的扩展包：<ul><li>`archive`</li><li>`created_at`</li><li>`name`</li><li>`stage`</li><li>`token`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [过滤响应](../guides/filtering.md) 以了解更多信息。
+>使用查询参数，可以根据以下属性过滤列出的扩展包：<ul><li>`archive`</li><li>`created_at`</li><li>`name`</li><li>`stage`</li><li>`token`</li><li>`updated_at`</li></ul>有关详细信息，请参阅[筛选响应](../guides/filtering.md)指南。
 
 **请求**
 
@@ -247,7 +247,7 @@ GET /extension_packages/{EXTENSION_PACKAGE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `EXTENSION_PACKAGE_ID` | 此 `id` 要查找的扩展包的ID。 |
+| `EXTENSION_PACKAGE_ID` | 要查找的扩展包的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -265,7 +265,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回扩展包的详细信息，包括其委托资源，例如 `actions`， `conditions`， `data_elements`，等等。 下面的示例响应因空间而被截断。
+成功的响应返回扩展包的详细信息，包括其委托资源，如`actions`、`conditions`、`data_elements`等。 下面的示例响应因空间而被截断。
 
 ```json
 {
@@ -472,7 +472,7 @@ curl -X GET \
 
 ## 创建扩展包 {#create}
 
-扩展包是使用Node.js基架工具创建的，并在提交到Reactor API之前保存在本地计算机上。 有关配置扩展包的更多信息，请参阅以下内容的相关指南： [扩展开发快速入门](../../extension-dev/getting-started.md).
+扩展包是使用Node.js基架工具创建的，并在提交到Reactor API之前保存在本地计算机上。 有关配置扩展包的详细信息，请参阅[扩展开发快速入门](../../extension-dev/getting-started.md)指南。
 
 创建扩展包文件后，您可以通过POST请求将其提交到Reactor API。
 
@@ -484,7 +484,7 @@ POST /extension_packages
 
 **请求**
 
-以下请求创建新的扩展包。 要上传的包文件的本地路径将作为表单数据引用(`package`)，因此此端点需要 `Content-Type` 页眉 `multipart/form-data`.
+以下请求创建新的扩展包。 正在上载的包文件的本地路径作为表单数据(`package`)引用，因此此端点需要`multipart/form-data`的`Content-Type`标头。
 
 ```shell
 curl -X POST \
@@ -715,13 +715,13 @@ PATCH /extension_packages/{EXTENSION_PACKAGE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `EXTENSION_PACKAGE_ID` | 此 `id` 要更新的扩展包的。 |
+| `EXTENSION_PACKAGE_ID` | 要更新的扩展包的`id`。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-与 [创建扩展包](#create)，必须通过表单数据上传更新包的本地版本。
+与[创建扩展包](#create)一样，必须通过表单数据上载更新包的本地版本。
 
 ```shell
 curl -X PATCH \
@@ -944,7 +944,7 @@ curl -X PATCH \
 
 完成扩展包的测试后，您可以私密发布该包。 这使其可用于公司内的任何资产。
 
-私密发布后，您可以通过填写 [公开发布申请表](https://www.feedbackprogram.adobe.com/c/r/DCExtensionReleaseRequest).
+私密发布后，您可以通过填写[公开发布申请表](https://www.feedbackprogram.adobe.com/c/r/DCExtensionReleaseRequest)开始公开发布流程。
 
 **API格式**
 
@@ -954,13 +954,13 @@ PATCH /extension_packages/{EXTENSION_PACKAGE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `EXTENSION_PACKAGE_ID` | 此 `id` 要私密发布的扩展包的ID。 |
+| `EXTENSION_PACKAGE_ID` | 要私密发布的扩展包的`id`。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-通过提供 `action` 值为 `release_private` 在 `meta` 请求数据的。
+通过在请求数据的`meta`中提供一个值为`release_private`的`action`来实现私有释放。
 
 ```shell
 curl -X PATCH \
@@ -1189,7 +1189,7 @@ curl -X PATCH \
 
 ## 停用扩展包 {#discontinue}
 
-您可以通过设置扩展包的中止扩展包 `discontinued` 属性至 `true` 通过PATCH请求。
+您可以通过PATCH请求将扩展包的`discontinued`属性设置为`true`来中止该扩展包。
 
 **API格式**
 
@@ -1199,13 +1199,13 @@ PATCH /extension_packages/{EXTENSION_PACKAGE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `EXTENSION_PACKAGE_ID` | 此 `id` 要中断的扩展包的ID。 |
+| `EXTENSION_PACKAGE_ID` | 要停止的扩展包的`id`。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-通过提供 `action` 值为 `release_private` 在 `meta` 请求数据的。
+通过在请求数据的`meta`中提供一个值为`release_private`的`action`来实现私有释放。
 
 ```shell
 curl -X PATCH \
@@ -1282,7 +1282,7 @@ curl -X PATCH \
 
 ## 列出扩展包的版本
 
-您可以通过附加来列出扩展包的版本 `/versions` 到查找请求的路径。
+您可以通过将`/versions`附加到查找请求的路径来列出扩展包的版本。
 
 **API格式**
 
@@ -1292,7 +1292,7 @@ GET /extension_packages/{EXTENSION_PACKAGE_ID}/versions
 
 | 参数 | 描述 |
 | --- | --- |
-| `EXTENSION_PACKAGE_ID` | 此 `id` 要列出其版本的扩展包的。 |
+| `EXTENSION_PACKAGE_ID` | 要列出其版本的扩展包的`id`。 |
 
 {style="table-layout:auto"}
 

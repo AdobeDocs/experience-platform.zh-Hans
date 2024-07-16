@@ -14,15 +14,15 @@ ht-degree: 2%
 
 # 沙盒类型端点
 
-您可以向以下网站发出GET请求，检索贵组织支持的沙盒类型列表 `/sandboxTypes` 端点。
+您可以通过向`/sandboxTypes`端点发出GET请求来检索贵组织支持的沙盒类型列表。
 
 ## 快速入门
 
-本指南中使用的API端点是 [[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox). 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+本指南中使用的API端点是[[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox)的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
 
 ## 检索支持的沙盒类型列表
 
-您可以向以下网站发出GET请求，检索贵组织支持的沙盒类型列表 `/sandboxTypes` 端点。
+您可以通过向`/sandboxTypes`端点发出GET请求来检索贵组织支持的沙盒类型列表。
 
 **API格式**
 

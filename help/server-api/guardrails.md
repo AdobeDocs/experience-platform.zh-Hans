@@ -20,16 +20,16 @@ Adobe对超出使用限制导致的性能下降不承担任何责任。 始终�
 
 >[!IMPORTANT]
 >
->检查您的销售订单中的许可证权利以及相应的 [产品描述](https://helpx.adobe.com/legal/product-descriptions.html) 实际使用限制以及此护栏页面。
+>除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/legal/product-descriptions.html)中的实际使用限制。
 
 ## 定义
 
-* **可用性** 在每个5分钟间隔内计算为Experience PlatformEdge Network处理的请求百分比，这些请求不会因错误而失败并仅与已设置的Edge NetworkAPI相关。 如果租户在给定的五分钟间隔内未提出任何请求，则该间隔视为100%可用。
-* **每月正常运行时间百分比** 对于给定区域，计算为一个月内所有五分钟间隔的可用性的平均值。
-* An **上游** 是Edge Network背后的服务，为特定数据流启用，例如Adobe服务器端转发、Adobe Edge Segmentation或Adobe Target。
-* A **请求单位** 对应于请求的8 KB片段，以及为数据流配置的一个上游。
-* A **请求** 是客户拥有的应用程序发送给 [!DNL Server API]. 请求可以包含一个或多个请求单元。
-* An **错误** 是因Edge Network而失败的任何请求 [内部服务错误](error-handling.md).
+* **可用性**&#x200B;按每五分钟间隔计算为Experience PlatformEdge Network处理的请求的百分比，这些请求不会因错误而失败，并且仅与设置的Edge NetworkAPI相关。 如果租户在给定的五分钟间隔内未提出任何请求，则该间隔视为100%可用。
+* **给定区域的每月正常运行时间百分比**&#x200B;计算为一个月内所有五分钟间隔的可用性平均值。
+* **上游**&#x200B;是Edge Network背后的服务，为特定数据流启用，如Adobe服务器端转发、Adobe Edge Segmentation或Adobe Target。
+* **请求单元**&#x200B;对应于请求的8 KB片段，以及为数据流配置的一个上游片段。
+* **请求**&#x200B;是客户拥有的应用程序发送给[!DNL Server API]的单个消息。 请求可以包含一个或多个请求单元。
+* **错误**&#x200B;是因Edge Network[内部服务错误](error-handling.md)而失败的任何请求。
 
 ## 服务限制
 
@@ -37,7 +37,7 @@ Adobe对超出使用限制导致的性能下降不承担任何责任。 始终�
 
 ### 请求单位
 
-所有限制都在 **请求单位(RU)**，定义为 **8 KB片段** 请求发送到数据流中配置的一个上游服务。
+所有限制都在&#x200B;**请求单元(RU)**&#x200B;上应用并标准化，该请求单元被定义为一个请求的&#x200B;**8 KB片段**，该请求转到数据流中配置的一个上游服务。
 
 #### 示例
 
@@ -74,7 +74,7 @@ Adobe对超出使用限制导致的性能下降不承担任何责任。 始终�
 请参阅Real-Time CDP产品描述文档中的以下文档，了解有关其他Experience Platform服务护栏、端到端延迟信息和许可信息的更多信息：
 
 * [Real-Time CDP护栏](/help/rtcdp/guardrails/overview.md)
-* [端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) 用于各种Experience Platform服务。
+* [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams)。
 * [Real-time Customer Data Platform （B2C版本 — Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform （B2P — 主要和最终包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform （B2B - Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [Real-time Customer Data Platform （B2P — 主包和最终包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-time Customer Data Platform （B2B — 主包和最终包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)

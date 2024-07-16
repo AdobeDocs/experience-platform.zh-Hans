@@ -1,7 +1,8 @@
 ---
 title: edgbasePath
 description: 用于与Adobe服务交互的端点的基本路径。
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+exl-id: 3542575d-ad02-415c-8e47-97c877dfdd9d
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '156'
 ht-degree: 0%
@@ -10,22 +11,22 @@ ht-degree: 0%
 
 # `edgeBasePath`
 
-此 `edgeBasePath` 属性可在您与Adobe服务交互时更改目标路径。 大多数组织不需要设置或更改此属性。
+当您与Adobe服务交互时，`edgeBasePath`属性会更改目标路径。 大多数组织不需要设置或更改此属性。
 
 ## 使用Web SDK标记扩展的Edge基本路径
 
-在中输入所需的文本 **[!UICONTROL 边缘基本路径]** 文本字段，条件 [配置标记扩展](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
+当[配置标记扩展](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md)时，在&#x200B;**[!UICONTROL Edge基本路径]**&#x200B;文本字段中输入所需的文本。
 
-1. 登录 [experience.adobe.com](https://experience.adobe.com) 使用您的Adobe ID凭据。
-1. 导航到 **[!UICONTROL 数据收集]** > **[!UICONTROL 标记]**.
+1. 使用您的Adobe ID凭据登录[experience.adobe.com](https://experience.adobe.com)。
+1. 导航到&#x200B;**[!UICONTROL 数据收集]** > **[!UICONTROL 标记]**。
 1. 选择所需的标记属性。
-1. 导航到 **[!UICONTROL 扩展]**，然后单击 **[!UICONTROL 配置]** 在 [!UICONTROL Adobe Experience Platform Web SDK] 卡片。
-1. 向下滚动到 [!UICONTROL 高级设置] 部分，然后在中输入所需的值 **[!UICONTROL 边缘基本路径]** 文本字段。
-1. 单击 **[!UICONTROL 保存]**，然后发布更改。
+1. 导航到&#x200B;**[!UICONTROL 扩展]**，然后单击[!UICONTROL Adobe Experience Platform Web SDK]卡片上的&#x200B;**[!UICONTROL 配置]**。
+1. 向下滚动到[!UICONTROL 高级设置]部分，然后在&#x200B;**[!UICONTROL Edge基本路径]**&#x200B;文本字段中输入所需的值。
+1. 单击&#x200B;**[!UICONTROL 保存]**，然后发布更改。
 
-## 使用Web SDK JavaScript库的边缘基本路径
+## 使用Web SDK JavaScript库的Edge基本路径
 
-设置 `edgeBasePath` 文本字段 `configure` 命令。 如果忽略此属性，则其默认值为 `ee`. Adobe建议在大多数配置中忽略此属性。
+运行`configure`命令时设置`edgeBasePath`文本字段。 如果忽略此属性，则其默认值为`ee`的值。 Adobe建议在大多数配置中忽略此属性。
 
 ```js
 alloy("configure", {

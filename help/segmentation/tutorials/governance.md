@@ -17,38 +17,38 @@ ht-degree: 6%
 
 ## 快速入门
 
-本教程需要对以下组件有一定的了解 [!DNL Adobe Experience Platform]：
+本教程需要您对[!DNL Adobe Experience Platform]的以下组件有一定的了解：
 
-- [[!DNL Real-Time Customer Profile]](../../profile/home.md)： [!DNL Real-Time Customer Profile] 是一个通用查找实体存储，用于管理 [!DNL Experience Data Model (XDM)] 数据范围 [!DNL Platform]. 配置文件跨各种企业数据资产合并数据，并以统一的呈现方式提供对这些数据的访问。
-   - [合并策略](../../profile/api/merge-policies.md)：使用的规则 [!DNL Real-Time Customer Profile] 以确定在特定条件下可以将哪些数据合并到统一视图中。 可以为数据管理目的配置合并策略。
-- [[!DNL Segmentation]](../home.md)：方法 [!DNL Real-Time Customer Profile] 将个人资料存储中包含的大量个人划分为较小的组，这些组具有相似的特征，并且对营销策略的响应也类似。
-- [数据管理](../../data-governance/home.md)：数据管理使用以下组件提供用于标记和执行数据使用的基础架构：
-   - [数据使用情况标签](../../data-governance/labels/user-guide.md)：用于根据处理数据集和字段各自数据的敏感度级别描述数据集和字段的标签。
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md)： [!DNL Real-Time Customer Profile]是通用查找实体存储，用于管理[!DNL Platform]中的[!DNL Experience Data Model (XDM)]数据。 配置文件跨各种企业数据资产合并数据，并以统一的呈现方式提供对这些数据的访问。
+   - [合并策略](../../profile/api/merge-policies.md)： [!DNL Real-Time Customer Profile]用于确定在特定条件下可以将哪些数据合并到统一视图的规则。 可以为数据管理目的配置合并策略。
+- [[!DNL Segmentation]](../home.md)： [!DNL Real-Time Customer Profile]如何将个人资料存储区中包含的大量个人分组为具有相似特征且响应方式相似的较小组。
+- [数据管理](../../data-governance/home.md)：“数据管理”使用以下组件提供用于标记和实施数据使用的基础结构：
+   - [数据使用标签](../../data-governance/labels/user-guide.md)：用于根据处理数据集和字段各自数据的敏感度级别描述数据集和字段的标签。
    - [数据使用策略](../../data-governance/policies/overview.md)：指示允许对按特定数据使用标签分类的数据执行哪些营销操作的配置。
-   - [策略实施](../../data-governance/enforcement/overview.md)：用于强制实施数据使用策略并阻止构成策略违规的数据操作。
-- [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个文件夹进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+   - [策略实施](../../data-governance/enforcement/overview.md)：允许您实施数据使用策略并阻止构成策略违规的数据操作。
+- [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-以下部分提供成功调用 [!DNL Platform] API。
+以下部分提供了成功调用[!DNL Platform] API所需了解的其他信息。
 
 ### 正在读取示例 API 调用
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关文档中用于示例API调用的惯例的信息，请参阅 [如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中有关[如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。
 
 ### 收集所需标头的值
 
-为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
-- 授权：持有者 `{ACCESS_TOKEN}`
+- 授权：持有人`{ACCESS_TOKEN}`
 - x-api-key： `{API_KEY}`
 - x-gw-ims-org-id： `{ORG_ID}`
 
-中的所有资源 [!DNL Experience Platform] 被隔离到特定的虚拟沙盒中。 所有请求 [!DNL Platform] API需要一个标头，该标头应指定将在其中执行操作的沙盒的名称：
+[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 - x-sandbox-name： `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关中沙箱的详细信息 [!DNL Platform]，请参见 [沙盒概述文档](../../sandboxes/home.md).
+>有关[!DNL Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
 
 包含负载 (POST、PUT、PATCH) 的所有请求都需要额外的标头：
 
@@ -56,9 +56,9 @@ ht-degree: 6%
 
 ## 查找区段定义的合并策略 {#merge-policy}
 
-此工作流从访问已知的区段定义开始。 已启用以便在中使用的区段定义 [!DNL Real-Time Customer Profile] 在其区段定义中包含合并策略ID。 此合并策略包含有关哪些数据集将包含在区段定义中的信息，这些数据集又包含任何适用的数据使用标签。
+此工作流从访问已知的区段定义开始。 允许在[!DNL Real-Time Customer Profile]中使用的区段定义包含合并策略ID。 此合并策略包含有关哪些数据集将包含在区段定义中的信息，这些数据集又包含任何适用的数据使用标签。
 
-使用 [!DNL Segmentation] API时，您可以按其ID查找区段定义，以查找与其关联的合并策略。
+使用[!DNL Segmentation] API，您可以按其ID查找区段定义，以查找与其关联的合并策略。
 
 **API格式**
 
@@ -125,7 +125,7 @@ curl -X GET \
 
 ## 从合并策略中查找源数据集 {#datasets}
 
-合并策略包含有关其源数据集的信息，而这些源数据集又包含数据使用标签。 您可以通过在向提供的合并策略ID请求中提供GET，查找合并策略的详细信息。 [!DNL Profile] API。 有关合并策略的更多信息，请参阅 [合并策略端点指南](../../profile/api/merge-policies.md).
+合并策略包含有关其源数据集的信息，而这些源数据集又包含数据使用标签。 您可以通过在[!DNL Profile] API的GET请求中提供合并策略ID来查找合并策略的详细信息。 有关合并策略的详细信息，请参阅[合并策略终结点指南](../../profile/api/merge-policies.md)。
 
 **API格式**
 
@@ -135,7 +135,7 @@ GET /config/mergePolicies/{MERGE_POLICY_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{MERGE_POLICY_ID}` | 在中获取的合并策略的ID [上一步](#merge-policy). |
+| `{MERGE_POLICY_ID}` | 在[上一步](#merge-policy)中获取的合并策略的ID。 |
 
 **请求**
 
@@ -177,16 +177,16 @@ curl -X GET \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `schema.name` | 与合并策略关联的架构的名称。 |
-| `attributeMerge.type` | 合并策略的数据优先配置类型。 如果值为 `dataSetPrecedence`，则与此合并策略关联的数据集将列在 `attributeMerge > data > order`. 如果值为 `timestampOrdered`，则与中引用的架构关联的所有数据集 `schema.name` 由合并策略使用。 |
-| `attributeMerge.data.order` | 如果 `attributeMerge.type` 是 `dataSetPrecedence`，则此属性将是一个数组，其中包含此合并策略所使用的数据集的ID。 这些ID将在下一步中使用。 |
+| `attributeMerge.type` | 合并策略的数据优先配置类型。 如果该值为`dataSetPrecedence`，则与此合并策略关联的数据集将列在`attributeMerge > data > order`下。 如果该值为`timestampOrdered`，则合并策略将使用与`schema.name`中引用的架构关联的所有数据集。 |
+| `attributeMerge.data.order` | 如果`attributeMerge.type`是`dataSetPrecedence`，则此属性将是一个数组，其中包含此合并策略所使用的数据集的ID。 这些ID将在下一步中使用。 |
 
 ## 评估策略违规的数据集
 
 >[!NOTE]
 >
-> 此步骤假定您至少有一个有效的数据使用策略，该策略阻止对包含特定标签的数据执行特定营销操作。 如果您没有适用于所评估的数据集的使用策略，请遵循 [策略创建教程](../../data-governance/policies/create.md) 以创建一个工作流，然后再继续此步骤。
+> 此步骤假定您至少有一个有效的数据使用策略，该策略阻止对包含特定标签的数据执行特定营销操作。 如果对于正在评估的数据集没有任何适用的使用策略，请按照[策略创建教程](../../data-governance/policies/create.md)创建策略，然后再继续此步骤。
 
-获取合并策略的源数据集的ID后，您可以使用 [策略服务API](https://www.adobe.io/experience-platform-apis/references/policy-service/) 根据特定营销操作评估这些数据集，以检查是否存在数据使用策略违规。
+获取合并策略的源数据集的ID后，可以使用[策略服务API](https://www.adobe.io/experience-platform-apis/references/policy-service/)根据特定营销操作评估这些数据集，以检查是否存在数据使用策略违规情况。
 
 要评估数据集，您必须在POST请求的路径中提供营销操作的名称，同时在请求正文中提供数据集ID，如以下示例所示。
 
@@ -199,11 +199,11 @@ POST /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MARKETING_ACTION_NAME}` | 与用于评估数据集的数据使用策略关联的营销操作的名称。 根据策略是由Adobe还是贵组织定义的，您必须使用 `/marketingActions/core` 或 `/marketingActions/custom`、ID名称和ID名称等。 |
+| `{MARKETING_ACTION_NAME}` | 与用于评估数据集的数据使用策略关联的营销操作的名称。 根据策略是由Adobe还是贵组织定义的，您必须分别使用`/marketingActions/core`或`/marketingActions/custom`。 |
 
 **请求**
 
-以下请求将测试 `exportToThirdParty` 针对中获取的数据集执行营销操作 [上一步](#datasets). 请求有效负载是一个数组，包含每个数据集的ID。
+以下请求针对在[上一步](#datasets)中获取的数据集测试`exportToThirdParty`营销操作。 请求有效负载是一个数组，包含每个数据集的ID。
 
 ```shell
 curl -X POST \
@@ -232,7 +232,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应将返回营销操作的URI、从提供的数据集中收集的数据使用标签，以及由于针对这些标签测试操作而违反的任何数据使用策略的列表。 在此示例中，“将数据导出到第三方”策略显示在 `violatedPolicies` 数组，指示营销操作触发了策略冲突。
+成功的响应将返回营销操作的URI、从提供的数据集中收集的数据使用标签，以及由于针对这些标签测试操作而违反的任何数据使用策略的列表。 在此示例中，“将数据导出到第三方”策略显示在`violatedPolicies`数组中，指示营销操作触发了策略冲突。
 
 ```json
 {
@@ -360,7 +360,7 @@ curl -X POST \
 | --- | --- |
 | `duleLabels` | 从提供的数据集中提取的数据使用标签列表。 |
 | `discoveredLabels` | 在请求有效负载中提供的数据集列表，其中显示了在每个数据集中找到的数据集级别和字段级别标签。 |
-| `violatedPolicies` | 一个数组，列出了通过测试营销操作(在 `marketingActionRef`)根据提供的 `duleLabels`. |
+| `violatedPolicies` | 一个数组，列出了通过针对提供的`duleLabels`测试营销操作（在`marketingActionRef`中指定）而违反的任何数据使用策略。 |
 
 使用API响应中返回的数据，您可以在体验应用程序中设置协议，以在发生策略违规时适当地实施这些违规。
 
@@ -370,16 +370,16 @@ curl -X POST \
 
 ### 更新区段定义的合并策略
 
-更新区段定义的合并策略将调整运行区段作业时将包含的数据集和字段。 请参阅以下部分 [更新现有合并策略](../../profile/api/merge-policies.md#update) 有关更多信息，请参阅API合并策略教程。
+更新区段定义的合并策略将调整运行区段作业时将包含的数据集和字段。 有关详细信息，请参阅API合并策略教程中有关[更新现有合并策略](../../profile/api/merge-policies.md#update)的部分。
 
 ### 导出区段定义时限制特定数据字段
 
-使用将区段定义导出到数据集时 [!DNL Segmentation] API中，您可以使用来过滤导出中包含的数据 `fields` 参数。 添加到此参数的任何数据字段都将包含在导出中，而所有其他数据字段将被排除。
+使用[!DNL Segmentation] API将区段定义导出到数据集时，您可以使用`fields`参数筛选导出中包含的数据。 添加到此参数的任何数据字段都将包含在导出中，而所有其他数据字段将被排除。
 
-考虑具有名为“A”、“B”和“C”的数据字段的区段定义。 如果您只想导出字段“C”，则 `fields` 参数将仅包含字段“C”。 这样，在导出区段定义时将排除字段“A”和“B”。
+考虑具有名为“A”、“B”和“C”的数据字段的区段定义。 如果您只想导出字段“C”，则`fields`参数将仅包含字段“C”。 这样，在导出区段定义时将排除字段“A”和“B”。
 
-请参阅以下部分 [导出区段定义](./evaluate-a-segment.md#export) 有关更多信息，请参阅分段教程。
+有关详细信息，请参阅分段教程中有关[导出区段定义](./evaluate-a-segment.md#export)的部分。
 
 ## 后续步骤
 
-通过学习本教程，您已查找与区段定义关联的数据使用标签，并测试它们是否违反了针对特定营销操作的策略。 有关“数据管理”的详细信息，请参阅 [!DNL Experience Platform]，请阅读 [数据管理](../../data-governance/home.md).
+通过学习本教程，您已查找与区段定义关联的数据使用标签，并测试它们是否违反了针对特定营销操作的策略。 有关[!DNL Experience Platform]中数据管理的更多信息，请阅读[数据管理](../../data-governance/home.md)的概述。

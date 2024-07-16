@@ -14,12 +14,12 @@ ht-degree: 1%
 
 # 获取标识的群集历史记录
 
-身份可以在各种设备图运行的过程中移动群集。 [!DNL Identity Service] 提供一段时间内给定标识的群集关联的可见性。
+身份可以在各种设备图运行的过程中移动群集。 [!DNL Identity Service]提供一段时间内给定标识的群集关联的可见性。
 
-使用可选 `graph-type` 指示从中获取集群的输出类型的参数。 选项包括：
+使用可选的`graph-type`参数指示从中获取群集的输出类型。 选项包括：
 
-- `None`  — 不执行身份拼接。
-- `Private Graph`  — 根据专用身份图执行身份拼接。 如果否 `graph-type` （这是默认设置）。
+- `None` — 不执行身份拼接。
+- `Private Graph` — 根据您的个人身份图执行身份拼合。 如果未提供`graph-type`，则这是默认设置。
 
 ## 获取单个标识的群集历史记录
 
@@ -31,7 +31,7 @@ GET https://platform-{REGION}.adobe.io/data/core/identity/cluster/history
 
 **请求**
 
-选项1：以命名空间形式提供身份(`nsId`，按ID)和ID值(`id`)。
+选项1：提供身份作为命名空间（`nsId`，按ID）和ID值(`id`)。
 
 ```shell
 curl -X GET \
@@ -42,7 +42,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项2：以命名空间形式提供身份(`ns`，按名称)和ID值(`id`)。
+选项2：提供身份作为命名空间（`ns`，按名称）和ID值(`id`)。
 
 ```shell
 curl -X GET \
@@ -53,7 +53,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项3：以XID形式提供身份(`xid`)。 有关如何获取身份的XID的更多信息，请参阅本文档中涵盖的部分 [获取标识的XID](./list-native-id.md).
+选项3：以XID (`xid`)提供标识。 有关如何获取身份的XID的更多信息，请参阅本文档中有关[获取身份的XID](./list-native-id.md)的部分。
 
 ```shell
 curl -X GET \
@@ -66,7 +66,7 @@ curl -X GET \
 
 ## 获取多个标识的群集历史记录
 
-使用 `POST` 方法作为批次等效的 `GET` 上述方法可返回多个身份的群集历史记录。
+将`POST`方法用作上述`GET`方法的等效批次方法，以返回多个标识的群集历史记录。
 
 >[!NOTE]
 >
@@ -109,7 +109,7 @@ POST https://platform-va7.adobe.io/data/core/identity/clusters/history
 
 **存根请求**
 
-使用 `x-uis-cst-ctx: stub` 标头将返回存根响应。 这是一个临时解决方案，可在服务完成时帮助早期集成开发进度。 当不再需要时，此选项将被弃用。
+使用`x-uis-cst-ctx: stub`标头将返回存根响应。 这是一个临时解决方案，可在服务完成时帮助早期集成开发进度。 当不再需要时，此选项将被弃用。
 
 ```shell
 curl -X POST \
@@ -218,4 +218,4 @@ curl -X POST \
 
 ## 后续步骤
 
-继续下一教程以 [列表身份映射](./list-identity-mappings.md)
+继续到[列表标识映射](./list-identity-mappings.md)的下一个教程

@@ -14,8 +14,8 @@ ht-degree: 0%
 
 # 使用API创建流连接
 
-需要流式连接注册，才能开始将数据流式传输到Adobe Experience Platform。 注册流连接时，您需要提供一些关键详细信息，如流数据的来源。
+需要流连接注册，才能开始将数据流式传输到Adobe Experience Platform。 注册流连接时，您需要提供一些关键详细信息，例如流数据的来源。
 
-注册流连接后，作为数据制作者，您将拥有一个唯一的URL，可用于将数据流式传输到Platform。
+注册流连接后，作为数据制作者，您将拥有唯一的URL，该URL可用于将数据流式传输到Platform。
 
-要了解如何创建经过身份验证的流连接，请阅读 [HTTP API源API指南](../../sources/tutorials/api/create/streaming/http.md).
+要了解如何创建经过身份验证的流连接，请阅读[HTTP API源API指南](../../sources/tutorials/api/create/streaming/http.md)。

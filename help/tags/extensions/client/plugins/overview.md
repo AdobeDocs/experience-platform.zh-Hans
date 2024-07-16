@@ -4,8 +4,8 @@ description: 了解Adobe Experience Platform中的“常用Analytics”标记扩
 exl-id: 9eeb4589-df90-4356-b927-b2c29c32370b
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
-source-wordcount: '406'
-ht-degree: 77%
+source-wordcount: '399'
+ht-degree: 68%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 77%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用本文的参考信息可了解有关配置“常用 Analytics 插件”扩展，以及使用此扩展增强 [!DNL Adobe Analytics] 扩展时可用选项的信息。
 
@@ -50,7 +50,7 @@ ht-degree: 77%
 >
 >虽然此操作更易于实施，但 Adobe 咨询服务团队不建议您使用此操作，因为它会增加插件的负担。
 
-在此操作中，您可以选择要包含在实施中的每个插件并保存更改。您可以按照自己的需要，选择任意数量的、要在实施过程中使用的插件。
+在此操作中，您可以选择要包含在实施中的每个插件并保存更改。选择您要在实施过程中使用的任意数量的。
 
 ### 初始化插件
 
@@ -58,7 +58,7 @@ ht-degree: 77%
 
 ## “常用Analytics插件”扩展数据元素
 
-“常用Analytics插件”扩展中有以下数据元素，它们利用标记功能在Analytics中设置并配置其相应的插件：
+“常用Analytics插件”扩展中提供了以下数据元素，这些插件利用标记功能在Analytics中设置并配置其相应的插件：
 
 * `getGeoCoordinates`
 * `getNewRepeat`
@@ -71,4 +71,4 @@ ht-degree: 77%
 
 >[!NOTE]
 >
->有关上述插件的更多信息，请参阅 [Analytics文档](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/impl-plugins.html).
+>有关上述插件的更多信息，请参阅[Analytics文档](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/impl-plugins.html)。

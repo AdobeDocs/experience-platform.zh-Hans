@@ -5,7 +5,7 @@ exl-id: ddbc3912-1c25-4d21-bde8-e40e583b4278
 source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
 source-wordcount: '439'
-ht-degree: 24%
+ht-degree: 18%
 
 ---
 
@@ -13,19 +13,19 @@ ht-degree: 24%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-在标记中，数据元素是Web或移动页面上数据段的别名，无论数据在服务器收到的事件中的什么位置找到。 数据元素可以被规则引用，并充当访问这些数据段的抽象。当数据的位置在将来发生更改（例如更改包含值的事件键）时，可以重新配置单个数据元素，而引用该数据元素的所有规则都可以保持不变。
+在标记中，数据元素是Web或移动页面上数据段的别名，与在服务器接收的事件内发现的数据位置无关。 数据元素可以被规则引用，并充当访问这些数据段的抽象。当数据的位置在将来发生更改（例如更改包含值的事件键）时，可以重新配置单个数据元素，而引用该数据元素的所有规则都可以保持不变。
 
-数据元素类型由扩展提供，扩展作者可决定如何检索这段数据。 例如，您可以使用数据元素类型，以允许Adobe Experience Platform用户从XDM层或其自定义数据层检索一段数据。
+数据元素类型由扩展提供，扩展作者可确定如何检索这段数据。 例如，您可以使用数据元素类型来允许Adobe Experience Platform用户从XDM层或其自定义数据层检索一段数据。
 
 本文档介绍如何在Adobe Experience Platform中为Edge扩展定义数据元素类型。
 
 >[!IMPORTANT]
 >
->如果您正在开发Web扩展，请参阅 [Web扩展的数据元素类型](../web/data-element-types.md) 而是。
+>如果您正在开发Web扩展，请另外参阅关于Web扩展的[数据元素类型](../web/data-element-types.md)的指南。
 >
->本文档还假设您熟悉库模块以及库模块在Edge扩展中的集成方式。 如果您需要查看简介，请在返回本指南之前参阅关于[库模块格式](./format.md)的概述。
+>此外，本文档假设您熟悉库模块以及库模块在Edge扩展中的集成方式。 如果您需要查看简介，请在返回本指南之前参阅关于[库模块格式](./format.md)的概述。
 
 数据元素类型通常包含以下内容：
 
@@ -41,7 +41,7 @@ module.exports = (context) => {
 };
 ```
 
-如果要让Adobe Experience Platform用户能够配置返回给数据层的数据，则可以允许用户输入键名称，然后将该名称保存到 `settings` 对象。 对象可能如下所示。
+如果要让Adobe Experience Platform用户能够配置返回给数据层的数据，则可以允许用户输入键名称，然后将该名称保存到`settings`对象。 对象可能如下所示。
 
 ```js
 {

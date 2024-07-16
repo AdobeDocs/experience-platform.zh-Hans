@@ -10,21 +10,21 @@ ht-degree: 1%
 
 ---
 
-# 使用更新流规范 [!DNL Flow Service] API
+# 使用[!DNL Flow Service] API更新流规范
 
 生成新的连接规范ID后，必须将此ID添加到流规范中，才能创建数据流。
 
-流程规范包含定义流程的信息，包括它支持的源连接ID和目标连接ID、需要应用于数据的转换规范以及生成流程所需的计划参数。 您可以使用来编辑流规范 `/flowSpecs` 端点。
+流程规范包含定义流程的信息，包括它支持的源连接ID和目标连接ID、需要应用于数据的转换规范以及生成流程所需的计划参数。 您可以使用`/flowSpecs`端点编辑流规范。
 
-以下文档提供了有关如何使用检索和更新流规格的步骤 [!DNL Flow Service] 适用于自助源（批处理SDK）的API。
+以下文档提供了有关如何使用[!DNL Flow Service] API for Self-Serve Sources (Batch SDK)检索和更新流规范的步骤。
 
 ## 快速入门
 
-在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
 
 ## 查找流规范 {#lookup}
 
-使用创建的源 `generic-rest-extension` 模板都使用 `RestStorageToAEP` 流程规范。 可以通过向以下对象发出GET请求来检索此流量规范 `/flowSpecs/` 端点，并提供 `flowSpec.id` 之 `6499120c-0b15-42dc-936e-847ea3c24d72`.
+使用`generic-rest-extension`模板创建的源都使用`RestStorageToAEP`流规范。 通过向`/flowSpecs/`端点发出GET请求并提供`6499120c-0b15-42dc-936e-847ea3c24d72`的`flowSpec.id`，可以检索此流规范。
 
 **API格式**
 
@@ -34,7 +34,7 @@ GET /flowSpecs/6499120c-0b15-42dc-936e-847ea3c24d72
 
 **请求**
 
-以下请求将检索 `6499120c-0b15-42dc-936e-847ea3c24d72` 连接规范。
+以下请求检索`6499120c-0b15-42dc-936e-847ea3c24d72`连接规范。
 
 ```shell
 curl -X GET \
@@ -237,7 +237,7 @@ curl -X GET \
 
 >[!IMPORTANT]
 >
->您必须更新列表 `sourceConnectionSpecIds` 每次创建新源时对应于新源的流规范。 这可确保现有流规范支持新源，从而允许您使用新源完成数据流创建过程。
+>每次创建新源时，必须更新与新源对应的流规范的`sourceConnectionSpecIds`列表。 这可确保现有流规范支持新源，从而允许您使用新源完成数据流创建过程。
 
 **API格式**
 
@@ -247,7 +247,7 @@ PUT /flowSpecs/6499120c-0b15-42dc-936e-847ea3c24d72
 
 **请求**
 
-以下请求更新了的流规范 `6499120c-0b15-42dc-936e-847ea3c24d72` 以包含连接规范ID `f6c0de0c-0a42-4cd9-9139-8768bf2f1b55`.
+以下请求更新`6499120c-0b15-42dc-936e-847ea3c24d72`的流规范以包含连接规范ID `f6c0de0c-0a42-4cd9-9139-8768bf2f1b55`。
 
 ```shell
 PUT -X GET \
@@ -429,7 +429,7 @@ PUT -X GET \
 
 **响应**
 
-成功的响应将返回查询流程规范的详细信息，包括其更新的列表 `sourceConnectionSpecIds`.
+成功的响应返回查询的流规范的详细信息，包括其更新的`sourceConnectionSpecIds`列表。
 
 ```json
 {
@@ -610,4 +610,4 @@ PUT -X GET \
 
 ## 后续步骤
 
-在将新的连接规范添加到适当的流量规范后，您现在可以继续测试和提交新源。 请参阅指南，网址为 [测试和提交新源](./submit.md) 以了解更多信息。
+在将新的连接规范添加到适当的流量规范后，您现在可以继续测试和提交新源。 有关详细信息，请参阅有关[测试和提交新源](./submit.md)的指南。

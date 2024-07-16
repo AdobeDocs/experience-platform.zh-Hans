@@ -1,6 +1,6 @@
 ---
 title: 查询服务中的模糊匹配
-description: 了解如何对Platform数据执行匹配，该匹配通过大致匹配所选的字符串来组合来自多个数据集的结果。
+description: 了解如何对您的Platform数据执行匹配，该匹配通过大致匹配您选择的字符串来组合来自多个数据集的结果。
 exl-id: ec1e2dda-9b80-44a4-9fd5-863c45bc74a7
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
@@ -11,48 +11,48 @@ ht-degree: 0%
 
 # 查询服务中的模糊匹配
 
-对Adobe Experience Platform数据使用“模糊”匹配可返回最有可能的近似匹配，而无需搜索具有相同字符的字符串。 这允许更灵活地搜索数据，并节省时间和精力，使数据更易于访问。
+对您的Adobe Experience Platform数据使用“模糊”匹配可返回最有可能的近似匹配，而无需搜索具有相同字符的字符串。 这允许更灵活地搜索数据，并节省时间和精力，使数据更易于访问。
 
-模糊匹配方法不是通过重新格式化搜索字符串来进行匹配，而是分析两个序列之间的相似度并返回相似度的百分比。 [[!DNL FuzzyWuzzy]](https://pypi.org/project/fuzzywuzzy/) 建议用于此过程，因为其函数更适合帮助匹配与以下情况相比更复杂的字符串 [!DNL regex] 或 [!DNL difflib].
+模糊匹配方法不是通过重新格式化搜索字符串来进行匹配，而是分析两个序列之间的相似度并返回相似度百分比。 建议对此进程使用[[!DNL FuzzyWuzzy]](https://pypi.org/project/fuzzywuzzy/)，因为其函数比[!DNL regex]或[!DNL difflib]更适合在更复杂的情况下帮助匹配字符串。
 
-此用例中提供的示例侧重于在两个不同的旅行社数据集上匹配来自酒店房间搜索的相似属性。 本文档演示了如何根据字符串与大型单独数据源的相似性程度来匹配字符串。 在本例中，模糊匹配比较了Luma和Acme旅行社对房间特征的搜索结果。
+此用例中提供的示例侧重于匹配来自两个不同旅行社数据集的酒店房间搜索的相似属性。 此文档演示了如何通过字符串与大型独立数据源的相似度来匹配字符串。 在本例中，模糊匹配比较了Luma和Acme旅行社对房间特征的搜索结果。
 
 ## 快速入门 {#getting-started}
 
-在此过程中，您需要培训机器学习模型，本文档假定您具备一个或多个机器学习环境的工作知识。
+作为此过程的一部分，您需要培训机器学习模型，本文档假定您掌握一个或多个机器学习环境的工作知识。
 
-此示例使用 [!DNL Python] 和 [!DNL Jupyter Notebook] 开发环境。 虽然有许多可用选项， [!DNL Jupyter Notebook] 推荐使用，因为它是开源Web应用程序，计算要求较低。 可从以下位置下载： [Jupyter官方网站](https://jupyter.org/).
+此示例使用[!DNL Python]和[!DNL Jupyter Notebook]开发环境。 虽然有许多可用选项，但建议使用[!DNL Jupyter Notebook]，因为它是开源Web应用程序，计算要求较低。 可从[官方Jupyter网站](https://jupyter.org/)下载。
 
-在开始之前，必须导入必要的库。 [!DNL FuzzyWuzzy] 是开源 [!DNL Python] 库构建于 [!DNL difflib] 库，用于匹配字符串。 它使用 [!DNL Levenshtein Distance] 计算序列和图案之间的差异。 [!DNL FuzzyWuzzy] 具有以下要求：
+在开始之前，必须导入必要的库。 [!DNL FuzzyWuzzy]是基于[!DNL difflib]库构建的开源[!DNL Python]库，用于匹配字符串。 它使用[!DNL Levenshtein Distance]计算序列和模式之间的差异。 [!DNL FuzzyWuzzy]具有以下要求：
 
 - [!DNL Python] 2.4（或更高版本）
 - [!DNL Python-Levenshtein]
 
-在命令行中，使用以下命令安装 [!DNL FuzzyWuzzy]：
+从命令行中，使用以下命令安装[!DNL FuzzyWuzzy]：
 
 ```console
 pip install fuzzywuzzy
 ```
 
-或者使用以下命令安装 [!DNL Python-Levenshtein] 以及：
+或者使用以下命令安装[!DNL Python-Levenshtein]：
 
 ```console
 pip install fuzzywuzzy[speedup]
 ```
 
-有关的更多技术信息 [!DNL Fuzzywuzzy] 可以在以下网站中找到： [官方文档](https://pypi.org/project/fuzzywuzzy/).
+有关[!DNL Fuzzywuzzy]的更多技术信息可在其[官方文档](https://pypi.org/project/fuzzywuzzy/)中找到。
 
 ### 连接到查询服务
 
-您必须通过提供连接凭据将机器学习模型连接到查询服务。 可以提供过期凭据和不过期凭据。 请查看 [凭据指南](../ui/credentials.md) 有关如何获取必要凭据的更多信息。 如果您使用 [!DNL Jupyter Notebook]，请阅读有关以下内容的完整指南： [如何连接到查询服务](../clients/jupyter-notebook.md).
+您必须通过提供连接凭据将机器学习模型连接到查询服务。 可以提供过期凭据和不过期凭据。 有关如何获取所需凭据的更多信息，请参阅[凭据指南](../ui/credentials.md)。 如果您使用的是[!DNL Jupyter Notebook]，请阅读有关[如何连接到查询服务](../clients/jupyter-notebook.md)的完整指南。
 
-此外，请务必导入 [!DNL numpy] 打包到 [!DNL Python] 环境以启用线性代数。
+此外，请确保将[!DNL numpy]包导入您的[!DNL Python]环境以启用线性代数。
 
 ```python
 import numpy as np
 ```
 
-以下命令是连接查询服务所必需的 [!DNL Jupyter Notebook]：
+以下命令是从[!DNL Jupyter Notebook]连接到查询服务所必需的：
 
 ```python
 import psycopg2
@@ -67,11 +67,11 @@ password=<YOUR_QUERY_SERVICE_PASSWORD>
 cur = conn.cursor()
 ```
 
-您的 [!DNL Jupyter Notebook] 实例现在已连接到查询服务。 如果连接成功，则不会显示任何消息。 如果连接失败，将显示错误。
+您的[!DNL Jupyter Notebook]实例现在已连接到查询服务。 如果连接成功，则不会显示任何消息。 如果连接失败，将显示错误。
 
-### 从Luma数据集提取数据 {#luma-dataset}
+### 来自Luma数据集的Draw数据 {#luma-dataset}
 
-使用以下命令从第一个数据集中提取要分析的数据。 为简短起见，这些示例已限制为列的前10个结果。
+使用以下命令从第一个数据集中绘制要分析的数据。 为简单起见，这些示例已限制为该列的前10个结果。
 
 ```python
 cur.execute('''SELECT * FROM luma;
@@ -81,7 +81,7 @@ luma = np.array([r[0] for r in cur])
 luma[:10]
 ```
 
-选择 **输出** 以显示返回的数组。
+选择&#x200B;**输出**&#x200B;以显示返回的数组。
 
 +++输出
 
@@ -96,9 +96,9 @@ array(['Deluxe King Or Queen Room', 'Kona Tower City / Mountain View',
 
 +++
 
-### 从Acme数据集提取数据 {#acme-dataset}
+### Acme数据集中的Draw数据 {#acme-dataset}
 
-现在，使用以下命令从第二个数据集中提取要分析的数据。 同样，为简短起见，这些示例已限制为列的前10个结果。
+现在，使用以下命令从第二个数据集中提取要分析的数据。 同样，为简短起见，这些示例已限制为该列的前10个结果。
 
 ```python
 cur.execute('''SELECT * FROM acme;
@@ -108,7 +108,7 @@ acme = np.array([r[0] for r in cur])
 acme[:10]
 ```
 
-选择 **输出** 以显示返回的数组。
+选择&#x200B;**输出**&#x200B;以显示返回的数组。
 
 +++输出
 
@@ -125,7 +125,7 @@ array(['Deluxe King Or Queen Room', 'Kona Tower City / Mountain View',
 
 ### 创建模糊评分函数 {#fuzzy-scoring}
 
-接下来，您必须导入 `fuzz` 从FuzzyWuzzy库并执行字符串的部分比比较。 partial ratio函数允许您执行子字符串匹配。 这取用最短的字符串，并将其与具有相同长度的所有子字符串匹配。 此函数返回高达100%的百分比相似度比率。 例如，partial ratio函数将比较以下字符串“Deluxe Room”、“1 King Bed”和“Deluxe King Room”，并返回相似得分69%。
+接下来，必须从FuzzyWuzzy库导入`fuzz`并执行字符串的部分比率比较。 partial ratio函数允许您执行子字符串匹配。 这会采用最短的字符串，并将其与具有相同长度的所有子字符串匹配。 此函数返回高达100%的百分比相似度比率。 例如，partial ratio函数将比较以下字符串“Deluxe Room”、“1 King Bed”和“Deluxe King Room”，并返回相似度得分69%。
 
 在酒店房间匹配用例中，使用以下命令完成此操作：
 
@@ -135,7 +135,7 @@ def compute_match_score(x,y):
     return fuzz.partial_ratio(x,y)
 ```
 
-下一步，导入 `cdist` 从 [!DNL SciPy] 库，计算两个输入集合中每对之间的距离。 这会计算每个旅行社提供的所有酒店客房的得分。
+接下来，从[!DNL SciPy]库导入`cdist`以计算两个输入集合中每对之间的距离。 这会计算每个旅行社提供的所有酒店客房的得分。
 
 ```python
 from scipy.spatial.distance import cdist
@@ -144,7 +144,7 @@ pairwise_distance =  cdist(luma.reshape((-1,1)),acme.reshape((-1,1)),compute_mat
 
 ### 使用模糊联接分数创建两列之间的映射
 
-现在，已根据距离对列进行评分，您可以对配对进行索引，并仅保留评分高于特定百分比的匹配。 此示例仅保留得分不低于70%的配对。
+现在，各列已经根据距离进行了评分，您可以对这些列进行索引，并且仅保留得分高于特定百分比的匹配。 此示例仅保留与得分70%或更高匹配的配对。
 
 ```python
 matched_pairs = []
@@ -160,7 +160,7 @@ for i,c1 in enumerate(luma):
 matched_pairs[:10]
 ```
 
-选择 **输出** 查看结果。
+选择&#x200B;**输出**&#x200B;以查看结果。
 
 +++输出
 
@@ -187,7 +187,7 @@ matched_pairs[:10]
 matching_sql = ' OR '.join(["(e.luma = '{}' AND b.acme = '{}')".format(c1,c2) for c1,c2 in matched_pairs])
 ```
 
-## 应用映射在查询服务中进行模糊连接 {#mappings-for-query-service}
+## 在查询服务中应用映射进行模糊连接 {#mappings-for-query-service}
 
 接下来，使用SQL连接高分匹配对以创建新数据集。
 
@@ -202,7 +202,7 @@ WHERE
 [r for r in cur]
 ```
 
-选择 **输出** 查看此连接的结果。
+选择&#x200B;**输出**&#x200B;查看此连接的结果。
 
 +++输出
 
@@ -350,9 +350,9 @@ WHERE
 
 +++
 
-### 将模糊匹配结果保存到Platform {#save-to-platform}
+### 将模糊匹配结果保存到平台 {#save-to-platform}
 
-最后，利用SQL将模糊匹配的结果保存为数据集，供在Adobe Experience Platform中使用。
+最后，利用SQL将模糊匹配的结果保存为数据集，供Adobe Experience Platform使用。
 
 ```python
 cur.execute(''' 

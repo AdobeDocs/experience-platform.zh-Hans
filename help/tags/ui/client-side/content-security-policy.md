@@ -4,8 +4,8 @@ description: 了解在将您的网站与Adobe Experience Platform中的标记集
 exl-id: 9232961e-bc15-47e1-aa6d-3eb9b865ac23
 source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
-source-wordcount: '1080'
-ht-degree: 57%
+source-wordcount: '1074'
+ht-degree: 54%
 
 ---
 
@@ -13,9 +13,9 @@ ht-degree: 57%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-内容安全策略 (CSP) 是一项安全功能，有助于防止跨站点脚本攻击 (XSS)。当浏览器受到欺骗，运行似乎来自可靠来源但实际上来自其他来源的恶意内容时，就会发生这种情况。 CSP 允许浏览器（代表用户）验证脚本是否实际来自可信来源。
+内容安全策略 (CSP) 是一项安全功能，有助于防止跨站点脚本攻击 (XSS)。这种攻击是指浏览器受到欺骗，运行似乎来自可靠来源但实际上来自其他来源的恶意内容。 CSP 允许浏览器（代表用户）验证脚本是否实际来自可信来源。
 
 CSP 通过以下两种方式来实施：将 `Content-Security-Policy` HTTP 标头添加到服务器响应，或者在 HTML 文件的 `<head>` 部分中添加已配置的 `<meta>` 元素。
 
@@ -27,10 +27,10 @@ Adobe Experience Platform中的标记是一个标记管理系统，旨在动态�
 
 如果您希望标记与CSP配合使用，则需要克服两个主要挑战：
 
-* **标记库的来源必须可信。** 如果不满足这项条件，则浏览器将阻止标记库和其他必需的JavaScript文件，并且不会在页面上加载。
+* **标记库的来源必须可信。**&#x200B;如果不满足这项条件，则浏览器将阻止标记库和其他必需的JavaScript文件，并且不会在页面上加载。
 * **必须允许使用内联脚本。**&#x200B;如果不满足这项条件，则页面将阻止“自定义代码”规则操作，并且无法正常执行。
 
-提高安全性需要增加内容创建者的工作量。 如果您希望使用标记并实施CSP，则必须解决这两个问题，而又不能将其他脚本错误地标记为安全。 本文档的其余部分提供了有关如何实现此目标的指南。
+提高安全性需要增加内容创建者的工作量。 如果要使用标记并实施CSP，则您必须解决这两个问题，而又不能将其他脚本错误地标记为安全。 本文档的其余部分提供了有关如何实现此目标的指南。
 
 ## 将标记添加为可信来源
 
@@ -54,7 +54,7 @@ Content-Security-Policy: script-src 'self'
 
 ### Adobe 管理的主机
 
-如果您使用的是 [Adobe 管理的主机](../publishing/hosts/managed-by-adobe-host.md)，则在 `assets.adobedtm.com` 上维护您的内部版本。您应指定 `self` 作为安全域，以便您不会破坏已经加载的脚本，但您还需要 `assets.adobedtm.com` 标记为安全，否则您的标记库将不会加载到页面上。 在这种情况下，您应该使用以下配置：
+如果您使用的是 [Adobe 管理的主机](../publishing/hosts/managed-by-adobe-host.md)，则在 `assets.adobedtm.com` 上维护您的内部版本。您应该将`self`指定为安全域，以便不会破坏已经加载的脚本，但同时您还需要将`assets.adobedtm.com`列为安全，否则您的标记库将不会加载到页面上。 在这种情况下，您应该使用以下配置：
 
 **HTTP 标头**
 
@@ -65,7 +65,7 @@ Content-Security-Policy: script-src 'self' assets.adobedtm.com
 **HTML `<meta>` 标记**
 
 
-有一个非常重要的先决条件：必须加载标记库 [非同步](./asynchronous-deployment.md). 同步加载标记库行不通（这会导致控制台错误和规则无法正确执行）。
+有一个非常重要的先决条件：必须异步加载标记库[](./asynchronous-deployment.md)。 同步加载标记库行不通（因为会导致控制台错误和规则无法正确执行）。
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="script-src 'self' assets.adobedtm.com">
@@ -82,7 +82,7 @@ Content-Security-Policy: script-src 'self' assets.adobedtm.com
 
 >[!NOTE]
 >
->CSP规范包含第三个选项“使用哈希”的详细信息，但是这种方法在搭配使用标记管理系统时不可行。 有关对Platform中的标记使用哈希的限制的更多信息，请参阅 [子资源完整性(SRI)指南](./sri.md).
+>CSP规范包含第三个选项“使用哈希”的详细信息，但是这种方法在搭配使用标记等标记管理系统时不可行。 有关在Platform中的标记中使用哈希的限制的更多信息，请参阅[子资源完整性(SRI)指南](./sri.md)。
 
 ### 允许特定场合使用 {#nonce}
 
@@ -114,7 +114,7 @@ Content-Security-Policy: script-src 'self' assets.adobedtm.com 'nonce-2726c7f26c
 
 >[!NOTE]
 >
->上述过程只处理自定义代码的加载，而不处理自定义代码的用途。如果内联脚本包含与 CSP 不兼容的自定义代码，则优先使用 CSP。例如，如果您使用自定义代码，通过将代码附加到DOM来加载内联脚本，则标记无法正确添加nonce，进而导致特定的自定义代码操作无法按预期执行。
+>上述过程只处理自定义代码的加载，而不处理自定义代码的用途。如果内联脚本包含与 CSP 不兼容的自定义代码，则优先使用 CSP。例如，如果您使用自定义代码，通过将代码附加到DOM来加载内联脚本，那么标记将无法正确添加nonce，进而导致特定的自定义代码操作无法按预期执行。
 
 ### 允许使用所有内联脚本 {#unsafe-inline}
 
@@ -158,4 +158,4 @@ Content-Security-Policy: script-src 'self' assets.adobedtm.com 'unsafe-inline'
 
 通过阅读本文档，您现在应该了解如何将CSP标头配置为接受标记库文件并允许使用内联脚本。
 
-作为一项额外的安全措施，您还可以选择使用子资源完整性 (SRI) 来验证已获取的库内部版本。但是，当与标记等标记管理系统一起使用时，此功能存在一些主要限制。 请参阅指南，网址为 [平台中的SRI兼容性](./sri.md) 了解更多信息。
+作为一项额外的安全措施，您还可以选择使用子资源完整性 (SRI) 来验证已获取的库内部版本。但是，当与标记等标记管理系统一起使用时，这项功能存在一些主要限制。 有关详细信息，请参阅平台](./sri.md)中[SRI兼容性的指南。

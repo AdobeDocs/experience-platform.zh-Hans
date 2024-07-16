@@ -11,13 +11,13 @@ ht-degree: 4%
 
 ---
 
-# [!UICONTROL 设备以旧换新详细信息] 架构字段组
+# [!UICONTROL 设备以旧换新详细信息]架构字段组
 
 >[!NOTE]
 >
->多个架构字段组的名称已更改。 查看文档 [字段组名称更新](../name-updates.md) 以了解更多信息。
+>多个架构字段组的名称已更改。 有关详细信息，请参阅有关[字段组名称更新](../name-updates.md)的文档。
 
-[!UICONTROL 设备以旧换新详细信息] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md). 它提供单个字段(`deviceTradeInDetails`)描述了设备以旧换新交易，包括折价价值、原始设备ID和新设备ID。
+[!UICONTROL 设备以旧换新详细信息]是[[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)的标准架构字段组。 它提供单个字段(`deviceTradeInDetails`)，用于描述设备以旧换新交易，包括以旧换新值、原始设备ID和新设备ID。
 
 ![设备以旧换新详细信息结构](../../images/field-groups/device-trade-in-details.png)
 
@@ -32,4 +32,4 @@ ht-degree: 4%
 有关字段组的更多详细信息，请参阅公共XDM存储库：
 
 * [填充示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-device-trade-in-details.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-device-trade-in-details.schema.json)
+* [完整架构](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-device-trade-in-details.schema.json)

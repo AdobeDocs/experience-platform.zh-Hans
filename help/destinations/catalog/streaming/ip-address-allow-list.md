@@ -16,7 +16,7 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > * Adobe建议您将此页面加入书签，每三个月重新访问一次，以检查最新IP地址。 Adobe不提供新IP范围的通知。
-> * 此处记录的IP列表 *不会* 适用于您使用构建的任何目标 [[!DNL Destination SDK]](/help/destinations/destination-sdk/overview.md).
+> * 此处记录的IP列表&#x200B;*不适用于您使用[[!DNL Destination SDK]](/help/destinations/destination-sdk/overview.md)构建的任何目标。*
 
 ## 概述 {#overview}
 
@@ -28,7 +28,7 @@ ht-degree: 0%
 
 从Experience Platform到这些目标的出站流量始终通过此页列出的IP地址。
 
-列入允许列表此页面提供了可添加到Experience Platform的IP范围，以便安全地将数据从HTTP端点导出到HTTP端点， [!DNL Amazon Kinesis]，或 [!DNL Azure Event Hubs] 实例。 如果您的HTTP端点位于企业防火墙之后，或者您的公司安全和合规性标准要求将IP范围列表列入允许列表，则此功能特别有用。
+列入允许列表此页提供了可添加到IP范围的IP范围，以便安全地将数据从Experience Platform导出到HTTP端点[!DNL Amazon Kinesis]或[!DNL Azure Event Hubs]实例。 如果您的HTTP端点位于企业防火墙之后，或者您的公司安全和合规性标准要求将IP范围列表列入允许列表，则此功能特别有用。
 
 您可以通过网络防火墙定义网络访问控制。 通过指定适当的IP范围，您可以允许数据传输服务的通信。
 

@@ -9,17 +9,17 @@ ht-degree: 38%
 
 ---
 
-# [!DNL LiveRamp - Distribution] 连接
+# [!DNL LiveRamp - Distribution]连接
 
-此 [!DNL LiveRamp - Distribution] 通过connection，您可以激活移动设备、Web、显示和连接的电视媒体中的受众，从Experience Platform到高级发布者。
+通过[!DNL LiveRamp - Distribution]连接，您可以跨移动设备、Web、显示和连接的TV媒体将受众从Experience Platform激活到高级发布者。
 
 >[!IMPORTANT]
 >
->此目标连接器和文档页面由LiveRamp创建和维护。 如有任何查询或更新请求，请直接联系LiveRamp [此处](mailto:adobertcdp@liveramp.com).
+>此目标连接器和文档页面由LiveRamp创建和维护。 如有任何查询或更新请求，请直接在[此处](mailto:adobertcdp@liveramp.com)联系LiveRamp。
 
 ## 支持的目标 {#supported-destinations}
 
-[!DNL LiveRamp - Distribution] 当前支持对以下平台进行受众激活：
+[!DNL LiveRamp - Distribution]当前支持对以下平台进行受众激活：
 
 * [[!DNL 4C Insights]](#insights)
 * [[!DNL Acast]](#acast)
@@ -44,17 +44,17 @@ ht-degree: 38%
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解您应该如何以及何时使用 [!DNL LiveRamp - Distribution] 目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
+为了帮助您更好地了解您应如何以及何时使用[!DNL LiveRamp - Distribution]目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
 
-一家运动服装零售商的营销团队使用了 [LiveRamp — 入门](liveramp-onboarding.md) 用于将受众从Experience Platform发送到其LiveRamp帐户的连接。
+某运动服装零售商的营销团队使用[LiveRamp - Onboarding](liveramp-onboarding.md)连接将受众从Experience Platform发送到其LiveRamp帐户。
 
-通过 [!DNL LiveRamp - Distribution] 连接，它们现在可以触发激活已载入受众到 [支持的目标](#supported-destinations). 然后，它们可以定位移动设备、开放网络、社交和 [!DNL CTV] 平台。
+通过[!DNL LiveRamp - Distribution]连接，他们现在可以触发已载入受众对[支持的目标](#supported-destinations)的激活。 然后，它们可以定位移动、打开Web、社交和[!DNL CTV]平台上的用户。
 
 ## 将受众载入LiveRamp {#onboarding}
 
-在通过激活受众之前 [!DNL LiveRamp - Distribution] connection，使用 [LiveRamp — 入门](liveramp-onboarding.md) 用于将Experience Platform受众导出到LiveRamp的连接。
+在通过[!DNL LiveRamp - Distribution]连接激活受众之前，请使用[LiveRamp — 入门](liveramp-onboarding.md)连接将Experience Platform受众导出到LiveRamp。
 
-将受众载入LiveRamp后，请从继续激活工作流 [连接到目标](#connect) 选择并配置目标平台以进行数据激活的步骤。
+将受众载入LiveRamp后，从[连接到目标](#connect)步骤继续激活工作流，以选择和配置目标目标平台进行数据激活。
 
 ## 连接到目标 {#connect}
 
@@ -65,43 +65,43 @@ ht-degree: 38%
 
 >[!IMPORTANT]
 > 
->要连接到目标，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
-要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两个部分中列出的字段。
+要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写下面两个部分中列出的字段。
 
 ### 向LiveRamp进行身份验证 {#authenticate}
 
-要向目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
+要验证到目标，请填写必填字段并选择&#x200B;**[!UICONTROL 连接到目标]**。
 
 ![显示目标连接屏幕的Platform UI图像。l](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-new-connection.png)
 
-* **[!UICONTROL LiveRamp组织ID]**：LiveRamp帐户的组织ID(列为 _owner_org_ （在LiveRamp提供的凭据中）。
-* **[!UICONTROL 密码]**：您的LiveRamp帐户密码(列为 _secret_key_ （在LiveRamp提供的凭据中）。
-* **[!UICONTROL 令牌URL]**：您的LiveRamp令牌网址。
-* **[!UICONTROL 用户名]**：您的LiveRamp帐户用户名(列为 _account_id_ （在LiveRamp提供的凭据中）。
+* **[!UICONTROL LiveRamp组织ID]**： LiveRamp帐户的组织ID（在LiveRamp提供的凭据中列为&#x200B;_owner_org_）。
+* **[!UICONTROL 密码]**：您的LiveRamp帐户密码（在LiveRamp提供的凭据中列为&#x200B;_secret_key_）。
+* **[!UICONTROL 令牌URL]**：您的LiveRamp令牌URL。
+* **[!UICONTROL 用户名]**：您的LiveRamp帐户用户名（在LiveRamp提供的凭据中列为&#x200B;_account_id_）。
 
 ### 配置目标详细信息 {#destination-details}
 
 成功连接到LiveRamp帐户后，输入所需信息以连接到要将受众激活到的目标。
 
-![显示目标详细信息屏幕的Platform UI图像。l](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-destination-details.png)
+![显示目标详细信息屏幕的平台UI图像。l](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-destination-details.png)
 
 * **[!UICONTROL 名称]**：填写目标连接的首选名称。
 
 >[!NOTE]
 >
->在命名目标时，Adobe建议遵循以下格式： `LiveRamp - Downstream Destination Name`. 此命名模式可帮助您快速识别 [浏览](../../ui/destinations-workspace.md#browse) 目标工作区的选项卡。
+>在命名目标时，Adobe建议遵循以下格式： `LiveRamp - Downstream Destination Name`。 此命名模式可帮助您在目标工作区的[浏览](../../ui/destinations-workspace.md#browse)选项卡中快速识别目标。
 ><br>
 >示例：`LiveRamp - Roku`。
 
 * **[!UICONTROL 描述]**：输入目标的描述。 使用有助于轻松识别此目标用途的描述。
-* **[!UICONTROL 目标]**：使用下拉菜单选择要将受众激活到的目标。 您在此处选择的目标将直接影响您在 [目标特定的设置](#destination-settings) 屏幕。
+* **[!UICONTROL 目标]**：使用下拉菜单选择要将受众激活到的目标。 您在此处选择的目标将直接影响您在[目标特定的设置](#destination-settings)屏幕中看到的内容。
 * **[!UICONTROL 集成]**：选择要用于目标的集成帐户。
 * **[!UICONTROL 标识符]**：选择目标支持的标识符。 目前，下拉菜单中预先填充了所有目标所支持的标识符。
 
 ## 目标特定的设置 {#destination-settings}
 
-每个目标 [支持](#supported-destinations) 按 [!DNL LiveRamp - Distribution] 需要您填写特定的配置选项。
+[!DNL LiveRamp - Distribution]支持的每个目标[](#supported-destinations)都需要您填写特定的配置选项。
 
 有关如何配置每个目标的详细指导，请参阅以下部分。
 
@@ -114,9 +114,9 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![显示4C分析目标的客户数据字段的Platform UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_4C_DestSpecific.png)
+![Platform UI图像显示4C Insights目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_4C_DestSpecific.png)
 
-* **[!UICONTROL 4C品牌配置文件ID]**：输入与您的4C品牌配置文件关联的数字ID。 如果您没有此 ID，请联系您的 4C 客户服务代表。
+* **[!UICONTROL 4C品牌配置文件ID]**：输入与您的4C品牌配置文件关联的数值ID。 如果您没有此 ID，请联系您的 4C 客户服务代表。
 
 ### [!DNL Acast] {#acast}
 
@@ -127,7 +127,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![显示Acast目标的客户数据字段的Platform UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_Acast_DestSpecific.png)
+![Platform UI图像显示Acast目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Acast_DestSpecific.png)
 
 * **[!UICONTROL 客户端名称]**：您希望向目标合作伙伴显示的广告商帐户名称。 使用您的公司名称。请勿使用空格或特殊字符。
 
@@ -140,9 +140,9 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![显示&amp;目标的客户数据字段的Platform UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_Ampersand_DestSpecific.png)
+![Platform UI图像显示&amp;目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Ampersand_DestSpecific.png)
 
-* **[!UICONTROL 您的公司名称]**：您希望向目标合作伙伴显示的公司名称。 请勿使用空格或特殊字符。
+* **[!UICONTROL 公司名称]**：您希望向目标合作伙伴显示的公司名称。 请勿使用空格或特殊字符。
 
 ### [!DNL Captify] {#captify}
 
@@ -153,7 +153,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![显示Captify目标的客户数据字段的Platform UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_Captify_DestSpecific.png)
+![Platform UI图像显示Captify目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Captify_DestSpecific.png)
 
 * **[!UICONTROL 客户端名称]**：您希望向目标合作伙伴显示的广告商帐户名称。 使用您的公司名称。请勿使用空格或特殊字符。
 
@@ -166,7 +166,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![显示Cardlytics目标的客户数据字段的Platform UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_Cardlytics_DestSpecific.png)
+![Platform UI图像显示Cardlytics目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Cardlytics_DestSpecific.png)
 
 * **[!UICONTROL 客户端名称]**：您希望向目标合作伙伴显示的广告商帐户名称。 使用您的公司名称。请勿使用空格或特殊字符。
 
@@ -191,9 +191,9 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![显示迪士尼目的地的客户数据字段的平台UI图像。](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-disney-fields.png)
+![平台UI图像，显示迪士尼目的地的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-disney-fields.png)
 
-* **[!UICONTROL 广告商数据目标条款协议]**：键入 `I AGREE` 确认对迪士尼广告商数据条款的承认和同意。
+* **[!UICONTROL 广告商数据目标条款协议]**：键入`I AGREE`以确认对迪士尼广告商数据条款的确认和同意。
 * **[!UICONTROL 客户端名称]**：输入您希望向目标合作伙伴显示的公司名称。
 * **[!UICONTROL 电子邮件地址]**：输入与个人关联的电子邮件地址。 此电子邮件地址用作广告商数据条款协议的签名。
 
@@ -219,9 +219,9 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![显示Index Exchange目标的客户数据字段的Platform UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_IndexExchange_DestSpecific.png)
+![Platform UI图像显示Index Exchange目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_IndexExchange_DestSpecific.png)
 
-* **[!UICONTROL 帐户名称]**：您的Index Exchange客户端帐户名称。 请勿使用空格或特殊字符。
+* **[!UICONTROL 帐户名]**：您的Index Exchange客户端帐户名。 请勿使用空格或特殊字符。
 
 ### [!DNL Magnite CTV Platform] {#magnite}
 
@@ -232,7 +232,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![显示Magnite CTV目标的客户数据字段的平台UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_MagniteCTV_DestSpecific.png)
+![Platform UI图像显示Magnite CTV目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_MagniteCTV_DestSpecific.png)
 
 * **[!UICONTROL 客户端]**：您希望向目标合作伙伴显示的客户端名称。 使用您的公司名称。请勿使用空格或特殊字符。
 
@@ -250,10 +250,10 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![显示Magnite DV+目标的客户数据字段的Platform UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_MagniteDV_DestSpecific.png)
+![Platform UI图像显示Magnite DV+目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_MagniteDV_DestSpecific.png)
 
 * **[!UICONTROL 合作伙伴ID]**：与拥有区段/数据的发布者关联的Rubicon项目合作伙伴ID。 如果不确定您应使用的值，请联系您的 Rubicon Project 客户代表。
-* **[!UICONTROL 座席ID]**：您的Magnite客户经理提供的菱形DV+座位ID
+* **[!UICONTROL 座位ID]**：您的Magnite客户经理提供的Magnite DV+座位ID
 
 ### [!DNL Nexxen (formerly known as [!DNL Amobee])] {#nexxen}
 
@@ -279,12 +279,12 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![显示Nexen目标的客户数据字段的Platform UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_Nexxen_DestSpecific.png)
+![Platform UI图像显示Nexen目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Nexxen_DestSpecific.png)
 
 * **[!UICONTROL 费率类型]**：费率类型表示数据使用应计费的方式。 所有 0.00 美元的费率应为固定费率。如果您不确定要使用哪种费率类型，请与您的 Nexxen 代表进行确认。
-* **[!UICONTROL 市场Id]**：输入应在其中创建Nexen数据合同的数字市场ID。 如果您在 Nexxen 平台中跨每个市场进行“AlwaysOn”联合，请输入 -1。
-* **[!UICONTROL 广告商ID]**：如果您向Nexen平台中的单个广告商发送数据，请输入数字Nexen广告商ID。 如果要使数据可用于市场中的所有广告商，或者如果这些区段为“AlwaysOn”，请输入–1。
-* **[!UICONTROL 联系人电子邮件]**：输入Nexen用于发送数据合同详细信息的电子邮件地址。 这很可能是您自己的电子邮件地址，但也可以是电子邮件别名。对于多个收件人，请使用逗号( `email1@domain.com`， `email2@domain.com`)。
+* **[!UICONTROL 市场ID]**：输入应在其中创建Nexen数据合同的数字市场ID。 如果您在 Nexxen 平台中跨每个市场进行“AlwaysOn”联合，请输入 -1。
+* **[!UICONTROL 广告商ID]**：如果您要向Nexen平台中的单个广告商发送数据，请输入数字Nexen广告商ID。 如果要使数据可用于市场中的所有广告商，或者如果这些区段为“AlwaysOn”，请输入–1。
+* **[!UICONTROL 联系人电子邮件]**：输入Nexen用于发送数据合同详细信息的电子邮件地址。 这很可能是您自己的电子邮件地址，但也可以是电子邮件别名。对于多个收件人，请使用逗号(`email1@domain.com`， `email2@domain.com`)分隔。
 
 ### [!DNL One Fox] {#fox}
 
@@ -295,7 +295,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![平台UI图像，其中显示了One Fox目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Fox_DestSpecific.png)
+![Platform UI图像显示One Fox目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Fox_DestSpecific.png)
 
 * **[!UICONTROL 客户端]**：您希望向合作伙伴显示的公司/分发帐户的名称。 默认使用您的公司名称。 如果不确定要使用哪个名称，请联系您的合作伙伴客户代表。请勿使用空格或特殊字符。
 
@@ -308,7 +308,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![显示Pandora目标的客户数据字段的Platform UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_Pandora_DestSpecific.png)
+![Platform UI图像显示Pandora目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Pandora_DestSpecific.png)
 
 * **[!UICONTROL 帐户名称]**：您的Pandora帐户的名称。 如果您不确定您的帐户名称是什么，请联系您的 Pandora 客户代表。请勿使用空格或特殊字符。
 
@@ -326,7 +326,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![显示Reddit目标的客户数据字段的平台UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_Reddit_DestSpecific.png)
+![Platform UI图像显示Reddit目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Reddit_DestSpecific.png)
 
 * **[!UICONTROL Reddit广告商ID]**：您的Reddit广告商ID。 必须以“t2_”或“a2_”开头。如果您不知道自己的广告商 ID，请联系您的 Reddit 代表。
 * **[!UICONTROL Reddit广告商名称]**：您的Reddit广告商名称。 请勿使用空格或特殊字符。
@@ -345,9 +345,9 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![显示Roku目标所支持标识符的Platform UI图像。](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-roku-fields.png)
+![Platform UI图像，显示Roku目标支持的标识符。](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-roku-fields.png)
 
-* **[!UICONTROL Roku帐户电子邮件地址]**：输入与Roku帐户关联的电子邮件地址。
+* **[!UICONTROL Roku帐户电子邮件地址]**：输入与您的Roku帐户关联的电子邮件地址。
 * **[!UICONTROL Roku客户代表电子邮件地址]**：输入您的Roku客户代表的电子邮件地址。 要输入多个地址，请用逗号分隔它们。
 
 ### [!DNL Spotify] {#spotify}
@@ -359,7 +359,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![显示Spotify目标所支持标识符的Platform UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_Spotify_DestSpecific.png)
+![Platform UI图像显示Spotify目标支持的标识符。](../../assets/catalog/advertising/liveramp-distribution/LR_Spotify_DestSpecific.png)
 
 * **[!UICONTROL 客户端名称]**：您希望向目标合作伙伴显示的广告商帐户名称。 使用您的公司名称。请勿使用空格或特殊字符。
 
@@ -377,10 +377,10 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![显示Taboola目标所支持标识符的Platform UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_Taboola_DestSpecific.png)
+![Platform UI图像显示Taboola目标支持的标识符。](../../assets/catalog/advertising/liveramp-distribution/LR_Taboola_DestSpecific.png)
 
-* **[!UICONTROL 客户经理电子邮件地址]**：您的Taboola客户经理的电子邮件地址。
-* **[!UICONTROL 区段类型]**：区段类型。 目前仅支持第一方区段。
+* **[!UICONTROL 帐户管理员电子邮件地址]**：您的Taboola帐户管理员的电子邮件地址。
+* **[!UICONTROL 段类型]**：段类型。 目前仅支持第一方区段。
 
 ### [!DNL TargetSpot] {#targetspot}
 
@@ -406,7 +406,7 @@ ht-degree: 38%
 
 ![显示TargetSpot目标所支持标识符的平台UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_Teads_DestSpecific.png)
 
-* **[!UICONTROL 团队编号]**：您的团队ID
+* **[!UICONTROL Teads ID]**：您的Teads ID
 
 ### [!DNL WB Discovery] {#wb-discovery}
 
@@ -417,29 +417,29 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![显示WB发现目标所支持标识符的平台UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_WBD_DestSpecific.png)
+![Platform UI图像显示WB发现目标支持的标识符。](../../assets/catalog/advertising/liveramp-distribution/LR_WBD_DestSpecific.png)
 
 * **[!UICONTROL 客户端名称]**：您希望向目标合作伙伴显示的广告商帐户名称。 使用您的公司名称。请勿使用空格或特殊字符。
 
 ### 启用警报 {#enable-alerts}
 
-您可以启用警报，以接收有关发送到目标的数据流状态的通知。 要接收有关数据流状态的通知，请从列表中选择一个警报。 有关警报的详细信息，请阅读以下指南： [使用UI订阅目标警报](../../ui/alerts.md).
+您可以启用警报，以接收有关发送到目标的数据流状态的通知。 要接收有关数据流状态的通知，请从列表中选择一个警报。 有关警报的详细信息，请阅读有关使用UI订阅目标警报[的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
 
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
->要激活数据，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
-此 [!DNL LiveRamp - Distribution] connection激活已通过LiveRamp帐户载入的受众 [LiveRamp — 入门](liveramp-onboarding.md) 连接。
+[!DNL LiveRamp - Distribution]连接激活已通过[LiveRamp — 载入](liveramp-onboarding.md)连接载入到您的LiveRamp帐户的受众。
 
-要成功激活受众，您必须选择 **相同受众** 您拥有 [之前已载入](liveramp-onboarding.md) 到LiveRamp。
+要成功激活您的受众，您必须选择您之前已[载入](liveramp-onboarding.md)到LiveRamp的&#x200B;**相同受众**。
 
 >[!IMPORTANT]
 >
->选择之前未通过载入的受众 [LiveRamp — 入门](liveramp-onboarding.md) 连接不会触发新受众的载入。
+>选择之前未通过[LiveRamp — 载入](liveramp-onboarding.md)连接载入的受众，不会触发新受众的载入。
 
 ## 导出的数据/验证数据导出 {#exported-data}
 
@@ -449,8 +449,8 @@ ht-degree: 38%
 
 ## 数据使用和治理 {#data-usage-governance}
 
-全部 [!DNL Adobe Experience Platform] 目标在处理您的数据时符合数据使用策略。 有关如何执行操作的详细信息 [!DNL Adobe Experience Platform] 实施数据管理，请阅读 [数据管理概述](/help/data-governance/home.md).
+在处理您的数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据治理的详细信息，请阅读[数据治理概述](/help/data-governance/home.md)。
 
 ## 其他资源 {#additional-resources}
 
-有关如何配置 [!DNL LiveRamp - Onboarding] 目标，请参见 [LiveRamp — 入门文档](liveramp-onboarding.md).
+有关如何配置[!DNL LiveRamp - Onboarding]目标的更多详细信息，请参阅[LiveRamp — 入门文档](liveramp-onboarding.md)。

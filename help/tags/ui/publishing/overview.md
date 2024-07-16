@@ -1,11 +1,11 @@
 ---
 title: 发布概述
-description: 了解将更改发布到Adobe Experience Platform中的标记管理代码库的过程。
+description: 了解将更改发布到Adobe Experience Platform中的标记管理代码库的流程。
 exl-id: 32eaad87-d7dc-4812-b546-a136511512fe
 source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
 source-wordcount: '609'
-ht-degree: 79%
+ht-degree: 72%
 
 ---
 
@@ -13,9 +13,9 @@ ht-degree: 79%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-使用 Adobe Experience Platform ，您可以将对标记管理代码的更改封装到单独的库中。由于多个库现在可以由不同的团队并行开发，这些库必须遵循一个精心设计、获得许可的过程，以便在推送到生产环境之前将更改合并在一起。
+Adobe Experience Platform允许您将对标记管理代码的更改封装到单独的库中。 由于多个库现在可以由不同的团队并行开发，这些库必须遵循一个精心设计、有权限控制的流程，以便在推送到生产环境之前将更改合并在一起。
 
 基本上，每个库都会经历以下发布流程：
 
@@ -35,8 +35,8 @@ ht-degree: 79%
 | 内部版本 | 内部版本是一个编译的库。部署在环境中时，内部版本提供一组实际的文件，其中包含用户查看您的网站时，传输到各个用户浏览器的代码。<br><br>有关内部版本的内容及格式的更多信息，请参阅[内部版本](./builds.md)的概述。 |
 | 环境 | 标记环境由一系列部署指令构成，这些指令用于告知Platform您希望内部版本采用的格式以及您希望交付内部版本的位置。<br><br>有关不同类型的环境、如何安装和配置现有环境以及如何创建新环境的更多信息，请参阅[环境](./environments.md)的概述。 |
 | 托管 | 托管代表环境的连接详细信息，用于将内部版本传输到网站。您可以选择让 Adobe 管理您的内部版本托管，也可以提供您自己的托管服务器的信息。<br><br>有关各个托管选项的更多信息，请参阅[托管](./hosts/hosts-overview.md)的概述。 |
-| 客户端代码 | 客户端代码是一组脚本，您可以将其放在网站或应用程序的源代码中，告知各个客户端设备从哪里检索内部版本。代码附加到环境，并可在您变更环境配置时更改。<br><br>请参阅以下部分： [嵌入代码](./environments.md#embed-code) 以了解详情。 |
+| 客户端代码 | 客户端代码是一组脚本，您可以将其放在网站或应用程序的源代码中，告知各个客户端设备从哪里检索内部版本。代码附加到环境，并可在您变更环境配置时更改。<br><br>要了解更多信息，请参阅环境概述中有关[嵌入代码](./environments.md#embed-code)的部分。 |
 
 ## 后续步骤
 
-本文档概述了与在Adobe Experience Platform中发布标记库相关的各种组件。 请参阅本指南中链接的文档来了解发布流程的详细信息。
+本文档提供了在Adobe Experience Platform中发布标记库时涉及的各个组件的概述。 请参阅本指南中链接的文档来了解发布流程的详细信息。

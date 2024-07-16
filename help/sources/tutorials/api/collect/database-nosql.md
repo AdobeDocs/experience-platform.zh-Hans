@@ -8,37 +8,37 @@ exl-id: 1e1f9bbe-eb5e-40fb-a03c-52df957cb683
 source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
 source-wordcount: '1416'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
-# 使用为数据库源创建数据流 [!DNL Flow Service] API
+# 使用[!DNL Flow Service] API为数据库源创建数据流
 
-本教程介绍了以下步骤：从数据库源检索数据，并使用将这些数据引入平台 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+本教程介绍从数据库源检索数据以及使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将这些数据引入平台的步骤。
 
 >[!NOTE]
 >
->* 要创建数据流，您必须已经具有带数据库源的有效基本连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#database) 用于创建基本连接的数据库源的列表。
->* 要使Experience Platform摄取数据，必须将所有基于表的批处理源的时区配置为UTC时区。 唯一支持的时间戳 [[!DNL Snowflake] 源](../../../connectors/databases/snowflake.md) 是带有UTC时间的TIMESTAMP_NTZ。
+>* 要创建数据流，您必须已经具有带数据库源的有效基本连接ID。 如果没有此ID，请参阅[源概述](../../../home.md#database)，以查看可创建基本连接的数据库源的列表。
+>* 要使Experience Platform摄取数据，必须将所有基于表的批处理源的时区配置为UTC时区。 [[!DNL Snowflake] 源](../../../connectors/databases/snowflake.md)唯一支持的时间戳是带有UTC时间的TIMESTAMP_NTZ。
 
 ## 快速入门
 
 本教程要求您实际了解Adobe Experience Platform的以下组件：
 
 * [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
-   * [模式组合基础](../../../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
-   * [架构注册开发人员指南](../../../../xdm/api/getting-started.md)：包含成功执行对架构注册表API的调用所需了解的重要信息。 这包括您的 `{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（请特别注意“接受”标头及其可能的值）。
-* [[!DNL Catalog Service]](../../../../catalog/home.md)：目录是Experience Platform中数据位置和谱系的记录系统。
+   * [架构组合的基础知识](../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
+   * [架构注册表开发人员指南](../../../../xdm/api/getting-started.md)：包含成功执行对架构注册表API的调用所需了解的重要信息。 这包括您的`{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（请特别注意“接受”标头及其可能的值）。
+* [[!DNL Catalog Service]](../../../../catalog/home.md)：目录是Experience Platform中数据位置和历程的记录系统。
 * [[!DNL Batch ingestion]](../../../../ingestion/batch-ingestion/overview.md)：批量摄取API允许您将数据作为批处理文件摄取到Experience Platform中。
-* [沙盒](../../../../sandboxes/home.md)：Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+* [沙盒](../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ### 使用平台API
 
-有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../landing/api-guide.md).
+有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../landing/api-guide.md)指南。
 
 ## 创建源连接 {#source}
 
-您可以通过向以下对象发出POST请求来创建源连接： [!DNL Flow Service] API。 源连接由连接ID、源数据文件的路径以及连接规范ID组成。
+您可以通过向[!DNL Flow Service] API发出POST请求来创建源连接。 源连接由连接ID、源数据文件的路径以及连接规范ID组成。
 
 要创建源连接，还必须为数据格式属性定义一个枚举值。
 
@@ -50,7 +50,7 @@ ht-degree: 1%
 | JSON | `json` |
 | Parquet | `parquet` |
 
-对于所有基于表的连接器，将该值设置为 `tabular`.
+对于所有基于表的连接器，将该值设置为`tabular`。
 
 **API格式**
 
@@ -114,11 +114,11 @@ curl -X POST \
 | -------- | ----------- |
 | `baseConnectionId` | 数据库源的连接ID。 |
 | `params.path` | 源文件的路径。 |
-| `connectionSpec.id` | 数据库源的连接规范ID。 请参阅 [附录](#appendix) 以获取数据库规范ID的列表。 |
+| `connectionSpec.id` | 数据库源的连接规范ID。 有关数据库规范ID的列表，请参阅[附录](#appendix)。 |
 
 **响应**
 
-成功的响应将返回唯一标识符(`id`)。 在后续步骤中，创建目标连接时需要此ID。
+成功的响应返回新创建的源连接的唯一标识符(`id`)。 在后续步骤中，创建目标连接时需要此ID。
 
 ```json
 {
@@ -131,21 +131,21 @@ curl -X POST \
 
 为了在Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。
 
-可以通过向以下对象执行POST请求来创建目标XDM架构 [架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
+通过向[架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)执行POST请求，可以创建目标XDM架构。
 
-有关如何创建目标XDM架构的详细步骤，请参阅关于的教程 [使用API创建架构](../../../../xdm/api/schemas.md).
+有关如何创建目标XDM架构的详细步骤，请参阅有关使用API [创建架构的教程](../../../../xdm/api/schemas.md)。
 
 ## 创建目标数据集 {#target-dataset}
 
-可以通过向执行POST请求来创建目标数据集 [目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，在有效负载中提供目标架构的ID。
+可以通过向[目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)执行POST请求，在有效负载中提供目标架构的ID来创建目标数据集。
 
-有关如何创建目标数据集的详细步骤，请参阅关于的教程 [使用API创建数据集](../../../../catalog/api/create-dataset.md).
+有关如何创建目标数据集的详细步骤，请参阅有关[使用API创建数据集的教程](../../../../catalog/api/create-dataset.md)。
 
 ## 创建目标连接 {#target-connection}
 
-目标连接表示与所摄取数据所登陆的目标之间的连接。 要创建目标连接，您必须提供与数据湖关联的固定连接规范ID。 此连接规范ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
+目标连接表示与所摄取数据所登陆的目标之间的连接。 要创建目标连接，您必须提供与数据湖关联的固定连接规范ID。 此连接规范ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`。
 
-现在，您拥有目标架构、目标数据集以及到数据湖的连接规范ID的唯一标识符。 使用 [!DNL Flow Service] API之外，您还可以通过指定这些标识符以及将包含入站源数据的数据集来创建目标连接。
+现在，您拥有目标架构、目标数据集以及到数据湖的连接规范ID的唯一标识符。 使用[!DNL Flow Service] API，您可以通过指定这些标识符以及将包含入站源数据的数据集来创建目标连接。
 
 **API格式**
 
@@ -184,14 +184,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `data.schema.id` | 此 `$id` 目标XDM架构的。 |
-| `data.schema.version` | 架构的版本。 必须设置此值 `application/vnd.adobe.xed-full+json;version=1`，返回架构的最新次版本。 |
+| `data.schema.id` | 目标XDM架构的`$id`。 |
+| `data.schema.version` | 架构的版本。 此值必须设置为`application/vnd.adobe.xed-full+json;version=1`，这将返回架构的最新次版本。 |
 | `params.dataSetId` | 上一步中生成的目标数据集的ID。 **注意**：创建目标连接时，必须提供有效的数据集ID。 无效的数据集ID将导致错误。 |
-| `connectionSpec.id` | 用于连接到数据湖的连接规范ID。 此ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
+| `connectionSpec.id` | 用于连接到数据湖的连接规范ID。 此ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`。 |
 
 **响应**
 
-成功的响应将返回新目标连接的唯一标识符(`id`)。 在后续步骤中需要使用此值来创建数据流。
+成功的响应返回新目标连接的唯一标识符(`id`)。 在后续步骤中需要使用此值来创建数据流。
 
 ```json
 {
@@ -204,7 +204,7 @@ curl -X POST \
 
 要将源数据摄取到目标数据集中，必须首先将其映射到目标数据集所遵循的目标架构。
 
-POST要创建映射集，请向 `mappingSets` 的端点 [[!DNL Data Prep] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-prep.yaml) 提供目标XDM架构时 `$id` 以及要创建的映射集的详细信息。
+要创建映射集，请在提供目标XDM架构`$id`和要创建的映射集的详细信息时，向[[!DNL Data Prep] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-prep.yaml)的`mappingSets`端点发出POST请求。
 
 **API格式**
 
@@ -258,11 +258,11 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `xdmSchema` | 此 `$id` 目标XDM架构的。 |
+| `xdmSchema` | 目标XDM架构的`$id`。 |
 
 **响应**
 
-成功响应将返回新创建映射的详细信息，包括其唯一标识符(`id`)。 此ID是稍后步骤创建数据流所必需的。
+成功的响应返回新创建的映射的详细信息，包括其唯一标识符(`id`)。 此ID是稍后步骤创建数据流所必需的。
 
 ```json
 {
@@ -277,7 +277,7 @@ curl -X POST \
 
 ## 检索数据流规范 {#specs}
 
-数据流负责从源收集数据并将这些数据导入Platform。 GET要创建数据流，您必须首先通过对 [!DNL Flow Service] API。 数据流规范负责从外部数据库或NoSQL系统中收集数据。
+数据流负责从源收集数据并将这些数据导入Platform。 要创建数据流，您必须首先通过向[!DNL Flow Service] API执行GET请求来获取数据流规范。 数据流规范负责从外部数据库或NoSQL系统中收集数据。
 
 **API格式**
 
@@ -297,7 +297,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回数据流规范的详细信息，该规范负责将数据从源引入Platform。 响应中包含唯一的流量规范 `id` 需要才能创建新数据流。
+成功的响应将返回数据流规范的详细信息，该规范负责将数据从源引入Platform。 响应包括创建新数据流所需的唯一流规范`id`。
 
 >[!NOTE]
 >
@@ -592,14 +592,14 @@ curl -X GET \
 
 收集数据的最后一步是创建数据流。 此时，您应该准备以下所需的值：
 
-* [源连接ID](#source)
+* [Source连接Id](#source)
 * [目标连接ID](#target)
 * [映射 ID](#mapping)
 * [数据流规范ID](#specs)
 
 数据流负责从源中计划和收集数据。 您可以通过在请求有效载荷中提供上述值时执行POST请求来创建数据流。
 
-要计划摄取，您必须先将开始时间值设置为纪元时间（以秒为单位）。 然后，必须将频率值设置为五个选项之一： `once`， `minute`， `hour`， `day`，或 `week`. 间隔值用于指定两次连续摄取之间的时间段，创建一次性摄取不需要设置间隔。 对于所有其他频率，间隔值必须设置为等于或大于 `15`.
+要计划摄取，您必须先将开始时间值设置为纪元时间（以秒为单位）。 然后，必须将频率值设置为五个选项之一： `once`、`minute`、`hour`、`day`或`week`。 间隔值用于指定两次连续摄取之间的时间段，创建一次性摄取不需要设置间隔。 对于所有其他频率，间隔值必须设置为等于或大于`15`。
 
 **API格式**
 
@@ -661,19 +661,19 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `flowSpec.id` | 此 [流量规范ID](#specs) 在上一步中检索。 |
-| `sourceConnectionIds` | 此 [源连接ID](#source) 在之前的步骤中检索。 |
-| `targetConnectionIds` | 此 [目标连接Id](#target-connection) 在之前的步骤中检索。 |
-| `transformations.params.mappingId` | 此 [映射ID](#mapping) 在之前的步骤中检索。 |
-| `transformations.params.deltaColum` | 用于区分新数据和现有数据的指定列。 将根据选定列的时间戳摄取增量数据。 支持的日期格式 `deltaColumn` 是 `yyyy-MM-dd HH:mm:ss`. 如果您使用的是Azure Table Storage，则支持的格式 `deltaColumn` 是 `yyyy-MM-ddTHH:mm:ssZ`. |
+| `flowSpec.id` | 在上一步中检索到[流规范ID](#specs)。 |
+| `sourceConnectionIds` | 在之前的步骤中检索到[源连接ID](#source)。 |
+| `targetConnectionIds` | 在之前的步骤中检索到[目标连接ID](#target-connection)。 |
+| `transformations.params.mappingId` | 在之前的步骤中检索到[映射ID](#mapping)。 |
+| `transformations.params.deltaColum` | 用于区分新数据和现有数据的指定列。 将根据选定列的时间戳摄取增量数据。 `deltaColumn`支持的日期格式为`yyyy-MM-dd HH:mm:ss`。 如果您使用的是Azure表存储，则`deltaColumn`支持的格式为`yyyy-MM-ddTHH:mm:ssZ`。 |
 | `transformations.params.mappingId` | 与数据库关联的映射ID。 |
 | `scheduleParams.startTime` | 以纪元时间表示的数据流开始时间。 |
-| `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`， `minute`， `hour`， `day`，或 `week`. |
-| `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 间隔的值应为非零整数。 当频率设置为时，不需要间隔 `once` 并且应大于或等于 `15` 其他频率值。 |
+| `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`、`minute`、`hour`、`day`或`week`。 |
+| `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 间隔的值应为非零整数。 当频率设置为`once`时不需要间隔，其他频率值应大于或等于`15`。 |
 
 **响应**
 
-成功的响应会返回ID (`id`)。
+成功的响应返回新创建的数据流的ID (`id`)。
 
 ```json
 {
@@ -684,13 +684,13 @@ curl -X POST \
 
 ## 监测数据流
 
-创建数据流后，您可以监视通过它摄取的数据，以查看有关流运行、完成状态和错误的信息。 有关如何监视数据流的更多信息，请参阅关于的教程 [在API中监控数据流](../monitor.md)
+创建数据流后，您可以监视通过它摄取的数据，以查看有关流运行、完成状态和错误的信息。 有关如何监视数据流的详细信息，请参阅有关API中[监视数据流的教程](../monitor.md)
 
 ## 后续步骤
 
-在本教程之后，您已创建一个源连接器，以按计划从数据库中收集数据。 传入数据现在可供下游平台服务使用，例如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
+在本教程之后，您已创建一个源连接器，以按计划从数据库中收集数据。 传入数据现在可供下游平台服务（如[!DNL Real-Time Customer Profile]和[!DNL Data Science Workspace]）使用。 有关更多详细信息，请参阅以下文档：
 
-* [Real-time Customer Profile概述](../../../../profile/home.md)
+* [实时客户轮廓概述](../../../../profile/home.md)
 * [数据科学工作区概述](../../../../data-science-workspace/home.md)
 
 ## 附录
@@ -702,8 +702,8 @@ curl -X POST \
 | 连接器名称 | 连接规范ID |
 | -------------- | --------------- |
 | [!DNL Amazon Redshift] | `3416976c-a9ca-4bba-901a-1f08f66978ff` |
-| [!DNL Apache Hive] 日期 [!DNL Azure HDInsights] | `aac9bbd4-6c01-46ce-b47e-51c6f0f6db3f` |
-| [!DNL Apache Spark] 日期 [!DNL Azure HDInsights] | `6a8d82bc-1caf-45d1-908d-cadabc9d63a6` |
+| [!DNL Azure HDInsights]上的[!DNL Apache Hive] | `aac9bbd4-6c01-46ce-b47e-51c6f0f6db3f` |
+| [!DNL Azure HDInsights]上的[!DNL Apache Spark] | `6a8d82bc-1caf-45d1-908d-cadabc9d63a6` |
 | [!DNL Azure Data Explorer] | `0479cc14-7651-4354-b233-7480606c2ac3` |
 | [!DNL Azure Synapse Analytics] | `a49bcc7d-8038-43af-b1e4-5a7a089a7d79` |
 | [!DNL Azure Table Storage] | `ecde33f2-c56f-46cc-bdea-ad151c16cd69` |

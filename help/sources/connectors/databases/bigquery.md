@@ -1,5 +1,5 @@
 ---
-title: Google BigQuery源连接器概述
+title: Google BigQuery Source连接器概述
 description: 了解如何使用API或用户界面将Google BigQuery连接到Adobe Experience Platform。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 35c61382-a909-47f4-a937-15cb725ecbe3
@@ -10,41 +10,41 @@ ht-degree: 0%
 
 ---
 
-# [!DNL Google BigQuery] 源
+# [!DNL Google BigQuery]源
 
 >[!IMPORTANT]
 >
->此 [!DNL Google BigQuery] 源目录中的源可供已购买Real-time Customer Data Platform Ultimate的用户使用。
+>[!DNL Google BigQuery]源在源目录中可供已购买Real-time Customer Data Platform Ultimate的用户使用。
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 
-[!DNL Experience Platform] 支持从第三方数据库引入数据。 Platform可以连接到不同类型的数据库，如关系数据库、NoSQL数据库或数据仓库数据库。 对数据库提供程序的支持包括 [!DNL Google BigQuery].
+[!DNL Experience Platform]支持从第三方数据库引入数据。 Platform可以连接到不同类型的数据库，如关系数据库、NoSQL数据库或数据仓库数据库。 对数据库提供程序的支持包括[!DNL Google BigQuery]。
 
 ## IP地址允许列表
 
-在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 请参阅 [IP地址允许列表](../../ip-address-allow-list.md) 页面以了解更多信息。
+在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 有关详细信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md)页。
 
 ## 先决条件
 
-以下部分提供了在创建之前所需的先决条件设置的详细信息 [!DNL Google BigQuery] 源连接。
+以下部分提供了在创建[!DNL Google BigQuery]源连接之前所需的先决条件设置的详细信息。
 
-### 生成您的 [!DNL Google BigQuery] 凭据
+### 生成您的[!DNL Google BigQuery]凭据
 
-连接 [!DNL Google BigQuery] 对于Platform，您需要生成以下凭据的值：
+要将[!DNL Google BigQuery]连接到Platform，您需要生成以下凭据的值：
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `project` | 项目是的基础级别组织实体 [!DNL Google Cloud] 资源，包括 [!DNL Google BigQuery]. |
-| `clientID` | 客户端ID是 [!DNL Google BigQuery] OAuth 2.0凭据。 |
-| `clientSecret` | 客户端密钥是你的另一半 [!DNL Google BigQuery] OAuth 2.0凭据。 |
+| `project` | 项目是[!DNL Google Cloud]资源（包括[!DNL Google BigQuery]）的基级别组织实体。 |
+| `clientID` | 客户端ID是[!DNL Google BigQuery] OAuth 2.0凭据的一半。 |
+| `clientSecret` | 客户端密钥是[!DNL Google BigQuery] OAuth 2.0凭据的另一半。 |
 | `refreshToken` | 刷新令牌允许您获取API的新访问令牌。 访问令牌的生命周期有限，在您的项目过程中可能会过期。 如果需要，您可以使用刷新令牌对项目进行身份验证并请求后续访问令牌。 |
-| `largeResultsDataSetId` | 预先创建的  [!DNL Google BigQuery] 启用对大型结果集的支持所需的数据集ID。 |
+| `largeResultsDataSetId` | 为启用对大型结果集的支持所需的预创建[!DNL Google BigQuery]数据集ID。 |
 
-有关如何为生成OAuth 2.0凭据的详细说明 [!DNL Google] API，请参阅以下内容 [[!DNL Google] OAuth 2.0身份验证指南](https://developers.google.com/identity/protocols/oauth2).
+有关如何为[!DNL Google] API生成OAuth 2.0凭据的详细说明，请参阅以下[[!DNL Google] OAuth 2.0身份验证指南](https://developers.google.com/identity/protocols/oauth2)。
 
-## 连接 [!DNL Google BigQuery] 目标平台
+## 将[!DNL Google BigQuery]连接到平台
 
-以下文档提供了有关如何连接的信息 [!DNL Google BigQuery] 使用API或用户界面连接到Platform：
+以下文档提供了有关如何使用API或用户界面将[!DNL Google BigQuery]连接到Platform的信息：
 
 ### 使用API
 

@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform；主页；热门主题；Audience Manager映射；audience manager映射
+keywords: Experience Platform；主页；热门主题；Audience Manager映射；Audience Manager映射
 solution: Experience Platform
-title: Adobe Audience Manager源连接器的映射字段
-description: 了解如何将Adobe Audience Manager数据（实时、已载入和配置文件数据）映射到Audience Manager源连接器的相应Experience Data Model (XDM)字段。
+title: Adobe Audience Manager Source连接器的映射字段
+description: 了解如何将Adobe Audience Manager数据（实时、已载入和用户档案数据）映射到Audience Manager源连接器的相应Experience Data Model (XDM)字段。
 exl-id: b800ba43-c308-4334-adce-3d554d50cefb
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
-source-wordcount: '169'
+source-wordcount: '156'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 下表包含Adobe Audience Manager数据（实时、已载入和配置文件数据）中的字段与其对应的XDM字段之间的映射。
 
-请查看 [XDM字段字典](../../../../xdm/schema/field-dictionary.md) 以了解有关每个XDM字段的更多信息。
+有关每个XDM字段的更多信息，请参阅[XDM字段字典](../../../../xdm/schema/field-dictionary.md)。
 
 ## 实时数据
 
@@ -32,7 +32,7 @@ ht-degree: 0%
 | `mergeRules[]` | `ExperienceEvent.profileStitch[]` |
 | `timestamps` | `ExperienceEvent.timeStamp` |
 | `deviceMetadata` | `ExperienceEvent.device` <ul><li>primaryHardwareType→类型</li><li>制造商→制造商</li><li>marketingName →模型</li><li>modelNumber → model</li></ul> |
-| `location` | `ExperienceEvent.placeContext.geo` <ul><li>d_country → countryCode</li><li>d_state→stateProvince</li><li>d_city → city</li><li>d_postal → postalCode</li><li>d_lat → latitude</li><li>d_longitude → longitude</li></ul> |
+| `location` | `ExperienceEvent.placeContext.geo` <ul><li>d_country → countryCode</li><li>d_state→stateProvidle</li><li>d_city → city</li><li>d_postal → postalCode</li><li>d_lat → latitude</li><li>d_longitude → longitude</li></ul> |
 | `request_user_agent` | `ExperienceEvent.environment.browserDetails` <ul><li>h_user-agent→userAgent</li><li>h_accept-language → acceptLanguage</li></ul> |
 | `client_ip` | `ExperienceEvent.environment` <ul><li>d_os_name →操作系统名称 </li><li>d_os_version → os_version</li></ul> |
 

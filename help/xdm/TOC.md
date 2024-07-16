@@ -22,7 +22,7 @@ ht-degree: 45%
    * [敏感数据和个人数据](./schema/sensitive-and-personal-data.md)
    * [XDM字段类型约束](schema/field-constraints.md)
    * [XDM中的命名空间](./schema/namespaces.md)
-   * 行业数据模型 {#industries}
+   * 行业数据模型{#industries}
       * [概述](./schema/industries/overview.md)
       * [零售](./schema/industries/retail.md)
       * [金融服务](./schema/industries/financial.md)
@@ -41,7 +41,7 @@ ht-degree: 45%
    * [潜在客户](./classes/prospect.md)
    * [提供商](./classes/provider.md)
    * [区段定义](./classes/segment-definition.md)
-   * B2B类 {#b2b}
+   * B2B类{#b2b}
       * [XDM 业务帐户](./classes/b2b/business-account.md)
       * [XDM 业务帐户人员关系](./classes/b2b/business-account-person-relation.md)
       * [XDM 商业营销活动](./classes/b2b/business-campaign.md)
@@ -50,8 +50,8 @@ ht-degree: 45%
       * [XDM 业务机会人员关系](./classes/b2b/business-opportunity-person-relation.md)
       * [XDM 商业营销列表](./classes/b2b/business-marketing-list.md)
       * [XDM 商业营销列表成员](./classes/b2b/business-marketing-list-members.md)
-* 字段组 {#field-groups}
-   * XDM个人资料 {#profile}
+* 字段组{#field-groups}
+   * XDM个人资料{#profile}
       * [同意和偏好设置](./field-groups/profile/consents.md)
       * [人口统计详细信息](./field-groups/profile/demographic-details.md)
       * [IAB TCF 2.0 同意](./field-groups/profile/iab.md)
@@ -65,7 +65,7 @@ ht-degree: 45%
       * [工作联系人详细信息](./field-groups/profile/work-contact-details.md)
       * [XDM 业务人员组件](./field-groups/profile/business-person-components.md)
       * [XDM 业务人员详细信息](./field-groups/profile/business-person-details.md)
-   * XDM单个潜在客户配置文件 {#prospect-profile}
+   * XDM单个潜在客户配置文件{#prospect-profile}
       * [Partner Prospect详细信息（示例）](./field-groups/prospect-profile/partner-prospect-details.md)
    * XDM ExperienceEvent {#event}
       * [Adobe Analytics完整扩展](./field-groups/event/analytics-full-extension.md)
@@ -93,23 +93,23 @@ ht-degree: 45%
       * [升级详细信息](./field-groups/event/upgrade-details.md)
       * [追加销售详细信息](./field-groups/event/upsell-details.md)
       * [Web 详细信息](./field-groups/event/web-details.md)
-   * XDM商业营销活动 {#b2b-campaign}
+   * XDM商业营销活动{#b2b-campaign}
       * [XDM 商业营销活动详细信息](./field-groups/b2b-campaign/details.md)
-   * XDM商业营销活动成员 {#b2b-campaign-members}
+   * XDM商业营销活动成员{#b2b-campaign-members}
       * [XDM商业营销活动成员详细信息](./field-groups/b2b-campaign-members/details.md)
-   * 药物 {#medication}
+   * 药物{#medication}
       * [保健药物](./field-groups/medication/healthcare-medication.md)
-   * 计划 {#plan}
+   * 计划{#plan}
       * [医疗保健计划详细信息](./field-groups/plan/healthcare-plan-details.md)
-   * 产品 {#product}
+   * 产品{#product}
       * [产品目录](./field-groups/product/product-catalog.md)
       * [产品类别](./field-groups/product/product-category.md)
-   * 提供商 {#provider}
+   * 提供程序{#provider}
       * [医疗保健提供商](./field-groups/provider/healthcare-provider.md)
-   * 已共享 {#shared}
+   * 已共享{#shared}
       * [外部源系统审计详细信息](./field-groups/shared/external-source-system-audit-details.md)
    * [字段组名称更新](./field-groups/name-updates.md)
-* 数据类型 {#data-types}
+* 数据类型{#data-types}
    * [帐户详细信息](./data-types/account-details.md)
    * [广告时间](./data-types/ad-break.md)
    * [地址](./data-types/address.md)
@@ -190,12 +190,12 @@ ht-degree: 45%
 * [!UICONTROL 架构] UI {#ui}
    * [概述](./ui/overview.md)
    * [浏览XDM资源](./ui/explore.md)
-   * 创建和编辑资源 {#resources}
+   * 创建和编辑资源{#resources}
       * [架构](./ui/resources/schemas.md)
       * [分类](./ui/resources/classes.md)
       * [字段组](./ui/resources/field-groups.md)
       * [数据类型](./ui/resources/data-types.md)
-   * 定义字段 {#fields}
+   * 定义字段{#fields}
       * [概述](./ui/fields/overview.md)
       * [数组字段](./ui/fields/array.md)
       * [枚举字段](./ui/fields/enum.md)
@@ -240,4 +240,4 @@ ht-degree: 45%
    * [创建临时架构](tutorials/ad-hoc.md)
 * [疑难解答指南](troubleshooting-guide.md)
 * [API 参考](https://www.adobe.io/experience-platform-apis/references/schema-registry/)
-* [Platform发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
+* [平台发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

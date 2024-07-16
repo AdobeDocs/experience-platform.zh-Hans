@@ -5,23 +5,23 @@ title: 示例数据API端点
 description: 您可以使用Adobe Experience Platform API中的“/samples”端点以编程方式检索、创建、更新和验证映射示例数据。
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '399'
-ht-degree: 5%
+source-wordcount: '405'
+ht-degree: 4%
 
 ---
 
 
 # 示例数据端点
 
-在为映射集创建架构时，可以使用示例数据。 您可以使用 `/samples` 数据准备API中的端点，用于以编程方式检索、创建和更新示例数据。
+在为映射集创建架构时，可以使用示例数据。 您可以使用数据准备API中的`/samples`端点以编程方式检索、创建和更新示例数据。
 
 ## 列出示例数据
 
-您可以通过对以下网站发出GET请求，检索贵组织的所有映射示例数据的列表： `/samples` 端点。
+通过向`/samples`端点发出GET请求，您可以检索组织的所有映射示例数据的列表。
 
 **API格式**
 
-此 `/samples` 端点支持多个查询参数以帮助筛选结果。 目前，您必须同时包含 `start` 和 `limit` 请求中的参数。
+`/samples`端点支持多个查询参数以帮助筛选结果。 当前，您必须同时包含`start`和`limit`参数作为请求的一部分。
 
 ```http
 GET /samples?limit={LIMIT}&start={START}
@@ -29,12 +29,12 @@ GET /samples?limit={LIMIT}&start={START}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{LIMIT}` | **必需**. 指定返回的映射示例数据的数量。 |
-| `{START}` | **必需**. 指定结果页面的偏移。 要获取结果的第一页，请将值设置为 `start=0`. |
+| `{LIMIT}` | **必需**。 指定返回的映射示例数据的数量。 |
+| `{START}` | **必需**。 指定结果页面的偏移量。 若要获取结果的第一页，请将值设置为`start=0`。 |
 
 **请求**
 
-以下请求将检索组织内的最后两个映射示例数据。
+以下请求将检索您组织内的最后两个映射示例数据。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/conversion/samples?limit=2&start=0 \
@@ -81,12 +81,12 @@ curl -X GET https://platform.adobe.io/data/foundation/conversion/samples?limit=2
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `sampleData` |  |
-| `sampleType` |  |
+| `sampleData` | |
+| `sampleType` | |
 
 ## 创建示例数据
 
-您可以通过对以下POST请求创建示例数据： `/samples` 端点。
+您可以通过对`/samples`端点发出POST请求来创建示例数据。
 
 ```http
 POST /samples
@@ -127,7 +127,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/samples \
 
 ## 通过上传文件创建示例数据
 
-POST您可以使用文件创建示例数据，方法是向 `/samples/upload` 端点。
+您可以通过向`/samples/upload`端点发出POST请求，使用文件创建示例数据。
 
 **API格式**
 
@@ -166,7 +166,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/samples \
 
 ## 查找特定的示例数据对象
 
-通过在GET请求的路径中提供样本数据的特定对象ID，您可以查找该对象。 `/samples` 端点。
+通过在`/samples`终结点的GET请求路径中提供其ID，您可以查找示例数据的特定对象。
 
 **API格式**
 
@@ -190,7 +190,7 @@ curl -X GET https://platform.adobe.io/data/foundation/conversion/samples/1fc0b6c
 
 **响应**
 
-成功的响应会返回HTTP状态200，其中包含要检索的示例数据对象的信息。
+成功的响应会返回HTTP状态200，其中包含您要检索的示例数据对象的信息。
 
 ```json
 {
@@ -207,7 +207,7 @@ curl -X GET https://platform.adobe.io/data/foundation/conversion/samples/1fc0b6c
 
 ## 更新示例数据
 
-您可以通过在PUT请求的路径中提供特定示例数据对象的ID来更新该数据对象。 `/samples` 端点。
+通过在`/samples`终结点的PUT请求路径中提供特定示例数据对象的ID，您可以更新该对象。
 
 **API格式**
 

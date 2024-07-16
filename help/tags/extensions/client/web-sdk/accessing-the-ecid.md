@@ -12,30 +12,30 @@ ht-degree: 1%
 
 # 访问ECID
 
-此 [!DNL Experience Cloud Identity (ECID)] 是用户访问您的网站时分配给用户的永久标识符。 在某些情况下，您可能希望访问 [!DNL ECID] （例如，将其发送给第三方）。 另一个用例是设置 [!DNL ECID] 在自定义XDM字段中，此变量不在标识映射中。
+[!DNL Experience Cloud Identity (ECID)]是用户访问您的网站时分配给用户的永久标识符。 在某些情况下，您可能希望访问[!DNL ECID]（例如，将其发送给第三方）。 另一个使用案例是在自定义XDM字段中设置[!DNL ECID]，并将其包含在身份映射中。
 
-您可以通过以下任一方式访问ECID [为数据收集准备数据](../../../../datastreams/data-prep.md) （推荐）或通过标记进行标记。
+您可以通过用于数据收集](../../../../datastreams/data-prep.md)的[数据准备（推荐）或通过标记来访问ECID。
 
 ## 通过数据准备访问ECID（首选方法） {#accessing-ecid-data-prep}
 
-如果您希望在自定义XDM字段中设置ECID，那么除了在身份映射中对其进行设置外，您还可以通过设置 `source` 到以下路径：
+如果您要在自定义XDM字段中设置ECID，并且要在标识映射中设置ECID，则可以通过将`source`设置为以下路径来实现此目的：
 
 ```js
 xdm.identityMap.ECID[0].id
 ```
 
-然后，将目标设置为字段为类型的XDM路径 `string`.
+然后，将目标设置为字段类型为`string`的XDM路径。
 
 ![](./assets/access-ecid-data-prep.png)
 
 ## 标记
 
-如果您需要访问 [!DNL ECID] 在客户端，使用如下所述的标记方法。
+如果您需要在客户端访问[!DNL ECID]，请使用如下所述的标记方法。
 
-1. 确保您的资产配置有 [规则组件排序](../../../ui/managing-resources/rules.md#sequencing) 已启用。
-1. 创建新规则。 此规则应专门用于捕获 [!DNL ECID] 无需执行任何其他重要操作。
-1. 添加 [!UICONTROL 库已加载] 事件到规则。
-1. 添加 [!UICONTROL 自定义代码] 对规则的操作，代码如下(假定您为SDK实例配置的名称为 `alloy` 并且还没有同名的数据元素)：
+1. 请确保您的属性配置为启用[规则组件排序](../../../ui/managing-resources/rules.md#sequencing)。
+1. 创建新规则。 此规则应仅用于捕获[!DNL ECID]，而不执行任何其他重要操作。
+1. 将[!UICONTROL Library Loaded]事件添加到规则中。
+1. 使用以下代码将[!UICONTROL Custom Code]操作添加到规则（假定您为SDK实例配置的名称为`alloy`，并且还没有具有相同名称的数据元素）：
 
    ```js
     return alloy("getIdentity")
@@ -46,4 +46,4 @@ xdm.identityMap.ECID[0].id
 
 1. 保存规则。
 
-然后，您应该能够访问 [!DNL ECID] 在后续规则中，使用 `%ECID%` 或 `_satellite.getVar("ECID")`，就像访问任何其他数据元素一样。
+然后，您应该能够使用`%ECID%`或`_satellite.getVar("ECID")`访问后续规则中的[!DNL ECID]，就像访问任何其他数据元素一样。

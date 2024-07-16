@@ -13,11 +13,11 @@ ht-degree: 1%
 
 # 删除API中的对象
 
-您可以删除 [!DNL Catalog] 对象，方法是在DELETE请求的路径中提供其ID。
+您可以通过在DELETE请求的路径中提供其ID来删除[!DNL Catalog]对象。
 
 >[!WARNING]
 >
->删除对象时请格外小心，因为此操作无法撤消，并且可能会在中的其他位置产生重大更改 [!DNL Experience Platform].
+>删除对象时请格外小心，因为此操作无法撤消，并且可能会在[!DNL Experience Platform]中的其他位置产生重大更改。
 
 **API格式**
 
@@ -27,11 +27,11 @@ DELETE /{OBJECT_TYPE}/{OBJECT_ID}
 
 >[!IMPORTANT]
 >
->此 `DELETE /batches/{ID}` 端点已被弃用。 要删除批次，您应使用 [批量摄取API](../../ingestion/batch-ingestion/api-overview.md#delete-a-batch).
+>`DELETE /batches/{ID}`终结点已被弃用。 要删除批次，您应该使用[批次摄取API](../../ingestion/batch-ingestion/api-overview.md#delete-a-batch)。
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要删除的对象。 有效对象为： <ul><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
+| `{OBJECT_TYPE}` | 要删除的[!DNL Catalog]对象的类型。 有效对象为： <ul><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
 | `{OBJECT_ID}` | 要更新的特定对象的标识符。 |
 
 **请求**
@@ -59,4 +59,4 @@ curl -X DELETE \
 
 >[!NOTE]
 >
->如果否 [!DNL Catalog] 对象与请求中提供的ID匹配，您仍可能会收到HTTP状态代码200，但响应数组将为空。
+>如果没有与请求中提供的ID匹配的[!DNL Catalog]对象，您仍可能会收到HTTP状态代码200，但响应数组将为空。

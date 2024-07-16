@@ -6,36 +6,36 @@ description: 本文档包含概述如何设置Postman环境、导入Postman收�
 exl-id: a09b3875-97f5-47f1-a562-52decbce67b1
 source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
 workflow-type: tm+mt
-source-wordcount: '545'
+source-wordcount: '520'
 ht-degree: 0%
 
 ---
 
 # Adobe Experience Platform中的Postman
 
-Postman是API开发的协作平台，允许您使用预设变量设置环境、共享API收藏集、简化CRUD请求等。 大多数Platform API服务都有Postman集合，可用于协助进行API调用。
+Postman是API开发的协作平台，允许您使用预设变量设置环境、共享API收藏集、简化CRUD请求等。 大多数Platform API服务都具有Postman集合，这些集合可用于协助进行API调用。
 
 ## 如何设置用于Experience Platform的Postman环境
 
-以下视频指南概述了如何创建和设置Postman环境。 Postman环境包含对下面提供的各种收藏集进行API调用所需的所有标头。 设置后，值在任意时间过期(例如 `ACCESS_TOKEN`)您可以更新环境中的当前值，并且此新值将在您的所有收藏集中使用。
+以下视频指南概述了如何创建和设置Postman环境。 Postman环境包含您对下面提供的各种收藏集进行API调用所需的所有标头。 设置后，每当某个值过期（如`ACCESS_TOKEN`）时，您都可以更新环境中的当前值，此新值将在您的所有收藏集中使用。
 
 >[!VIDEO](https://video.tv.adobe.com/v/28832)
 
 ## Postman收藏集 {#collections}
 
-要找到包含所有可用Postman收藏集的文件夹，请访问 [Experience PlatformPostman示例GitHub存储库](https://github.com/adobe/experience-platform-postman-samples/tree/master/apis/experience-platform). 或者，也可以在的每个swagger文件中找到Postman收藏集链接 [API参考文档](https://www.adobe.com/go/platform-api-reference-en) 在Adobe I/O时。
+访问[Experience Platform的Postman示例GitHub存储库](https://github.com/adobe/experience-platform-postman-samples/tree/master/apis/experience-platform)，即可找到包含所有可用Postman收藏集的文件夹。 或者，在Adobe I/O上的[API参考文档](https://www.adobe.com/go/platform-api-reference-en)中的每个swagger文件中都可以找到Postman收藏集链接。
 
-要下载Postman收藏集，请选择 **[!DNL Raw]** 从GitHub页面加载原始JSON文件到新选项卡中。 然后，右键单击并选择 **[!DNL Save as]** 将文件保存到您选择的本地目标。
+要下载Postman收藏集，请从GitHub页面中选择&#x200B;**[!DNL Raw]**&#x200B;以在新选项卡中加载原始JSON文件。 然后，右键单击并选择&#x200B;**[!DNL Save as]**&#x200B;以将文件保存到您选择的本地目标。
 
 ![原始JSON](./images/api-guide/raw-collection.PNG)
 
 ## 导入Postman收藏集 {#import}
 
-为了利用 [Postman收藏集](#collections)，您需要设置一个环境。 完成环境设置后，选择 **[!DNL Manage Environments]** 选择器图标。
+为了利用[Postman收藏集](#collections)，您需要设置一个环境。 完成环境设置后，选择右上角的&#x200B;**[!DNL Manage Environments]**&#x200B;选择器。
 
 ![管理环境选择器](./images/api-guide/environment-selector.png)
 
-此时会出现一个弹出窗口，并显示所有当前环境。 要导入收藏集，请选择 **[!DNL import]** .
+此时会出现一个弹出窗口，其中显示所有当前环境。 要导入收藏集，请选择&#x200B;**[!DNL import]** 。
 
 ![导入按钮](./images/api-guide/import-collection.png)
 
@@ -43,20 +43,20 @@ Postman是API开发的协作平台，允许您使用预设变量设置环境、�
 
 ![填充集合](./images/api-guide/imported-collection.png)
 
-每个集合都有不同的键值对，成功执行CRUD操作可能需要这些键值对。 请查看服务的 [API开发人员指南](api-guide.md#api-guides) 了解有关所需值、提示和查看示例的信息。
+每个集合都有不同的键值对，成功执行CRUD操作可能需要这些键值对。 请查看服务的[API开发人员指南](api-guide.md#api-guides)，了解所需的值、提示并查看示例。
 
-要了解有关Postman UI及其可用功能的更多信息，请访问 [Postman文档](https://learning.postman.com/docs/getting-started/navigating-postman/).
+要了解有关Postman UI及其可用功能的更多信息，请访问[Postman文档](https://learning.postman.com/docs/getting-started/navigating-postman/)。
 
 ### 使用Postman生成访问令牌以供非生产使用
 
 >[!WARNING]
 >
->如Identity Management服务(IMS) Postman集合中所述，所指示的生成方法适用于 **非生产使用**. 本地签名从第三方主机加载JavaScript库，远程签名将私钥发送到Adobe拥有和操作的Web服务。 虽然Adobe不会存储此私钥，但绝不应该与任何人共享生产密钥。
+>如Identity Management服务(IMS) Postman集合中所述，所表示的生成方法适用于&#x200B;**非生产使用**。 本地签名从第三方主机加载JavaScript库，而远程签名将私钥发送到Adobe拥有并操作的Web服务。 虽然Adobe不会存储此私钥，但绝不应该与任何人共享生产密钥。
 
-以下视频使用 [Identity Management服务(IMS) Postman收藏集](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/ims/Identity%20Management%20Service.postman_collection.json) 可以从公共GitHub存储库下载。
+以下视频使用[Identity Management服务(IMS) Postman收藏集](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/ims/Identity%20Management%20Service.postman_collection.json)，该收藏集可从公共GitHub存储库下载。
 
 >[!VIDEO](https://video.tv.adobe.com/v/29698/?quality=12&learn=on)
 
 ## 后续步骤
 
-本文档介绍了Postman环境、收藏集以及如何导入收藏集。 现在您已准备好Postman，请访问 [Platform入门指南](api-guide.md) 有关所需标头、示例和列表的信息 [API指南](api-guide.md#api-guides) 可用于各平台服务。
+本文档介绍了Postman环境、收藏集以及如何导入收藏集。 现在您已准备好Postman，请访问[平台快速入门指南](api-guide.md)，了解有关每个平台服务可用的所需标头、示例和[API指南](api-guide.md#api-guides)列表的信息。

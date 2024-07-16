@@ -1,18 +1,19 @@
 ---
 title: 章节详细信息收藏集数据类型
 description: 了解章节详细信息收集Experience Data Model (XDM)数据类型。
-source-git-commit: c6108bb692c80c79e115ac7b1488d95a7039ffcf
+exl-id: 4f841f5a-3840-4da5-a3a4-ceecde87c684
+source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
 workflow-type: tm+mt
 source-wordcount: '193'
-ht-degree: 6%
+ht-degree: 11%
 
 ---
 
-# [!UICONTROL 章节详细信息] 收藏集数据类型
+# [!UICONTROL 章节详细信息]收藏集数据类型
 
-[!UICONTROL 章节详细信息] 收藏集是一种标准的体验数据模型(XDM)数据类型，用于描述与媒体内容中的章节或区段相关的各种属性。 使用 [!UICONTROL 章节详细信息] 用于捕获章节名称、偏移、持续时间和章节索引等详细信息的集合数据类型。 媒体收集字段会捕获数据并将其发送到其他Adobe服务以供进一步处理。
+[!UICONTROL 章节详细信息]收藏集是标准的体验数据模型(XDM)数据类型，用于描述与媒体内容中的章节或区段相关的各种属性。 使用[!UICONTROL 章节详细信息]集合数据类型捕获章节名称、偏移、持续时间和章节索引等详细信息。 媒体收集字段会捕获数据并将其发送到其他Adobe服务以供进一步处理。
 
-![章节详细信息收藏集数据类型的图表。](../images/data-types/chapter-details-collection.png)
+![章节详细信息集合数据类型的图表。](../images/data-types/chapter-details-collection.png)
 
 >[!NOTE]
 >

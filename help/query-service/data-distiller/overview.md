@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # 数据Distiller概述
 
-Data Distiller是一个包，其中包含Adobe Experience Platform的部分功能。 借助Data Distiller，您可以通过在Query Service中执行批量查询，为实时客户个人资料或分析用例执行摄取后数据准备（例如清理、整形和操作）。 您对Data Distiller的使用取决于您对基于平台的应用程序的授权。
+Data Distiller是一个包，它包含Adobe Experience Platform的部分功能。 借助Data Distiller，您可以通过在“查询服务”中执行批量查询，为实时客户个人资料或分析用例执行摄取后数据准备（例如清理、整形和处理）。 您对Data Distiller的使用取决于您对基于平台的应用程序的授权。
 
 <!-- Commented out references to licence usage dashboard. It is temporarily hidden:
 ## License usage {#license-usage}
@@ -35,7 +35,7 @@ Scoping parameters are usage limits that relate to the scoping of your required 
 
 ## 护栏
 
-请参阅 [查询服务护栏](../guardrails.md) 有关与许可权利相关的查询服务数据的默认使用限制的文档。
+请参阅[查询服务护栏](../guardrails.md)文档，了解与您的许可权利相关的查询服务数据的默认使用限制。
 
 <!-- Update these descriptions post 23.3 release
 ## Static limits

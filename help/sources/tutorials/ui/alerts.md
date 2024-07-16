@@ -6,7 +6,7 @@ exl-id: 5d51edaa-ecba-4ac0-8d3c-49010466b9a5
 source-git-commit: 9120377f5f2048579d7e2a4740cfcbc56d49d61a
 workflow-type: tm+mt
 source-wordcount: '842'
-ht-degree: 6%
+ht-degree: 7%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 6%
 >
 >在非生产沙盒中不支持警报。 要订阅警报，您必须确保使用生产沙盒。
 
-通过Adobe Experience Platform，可订阅有关Adobe Experience Platform活动的基于事件的警报。 警报减少或消除轮询警报的必要 [[!DNL Observability Insights] API](../../../observability/api/overview.md) 用于检查作业是否已完成、是否已到达工作流中的某个里程碑或者是否已发生任何错误。
+通过Adobe Experience Platform，可订阅有关Adobe Experience Platform活动的基于事件的警报。 警报可减少或消除轮询[[!DNL Observability Insights] API](../../../observability/api/overview.md)以检查作业是否已完成、是否已达到工作流中的某个里程碑或是否已发生任何错误的需要。
 
 在创建数据流以接收有关流运行的状态、成功或失败的警报消息时，您可以订阅警报。
 
@@ -26,9 +26,9 @@ ht-degree: 6%
 
 本文档要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [源](../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下内容构建、标记和增强传入数据： [!DNL Platform] 服务。
-* [可观测性](../../../observability/home.md)： [!DNL Observability Insights] 允许您通过使用统计指标和事件通知来监控Platform活动。
-   * [警报](../../../observability/alerts/overview.md)：当您的Platform操作达到特定条件集时（例如系统违反阈值时可能会出现问题），Platform可以向您组织中订阅了警报消息的任何用户发送警报消息。
+* [源](../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。
+* [可观察性](../../../observability/home.md)： [!DNL Observability Insights]允许您通过使用统计量度和事件通知来监视Platform活动。
+   * [警报](../../../observability/alerts/overview.md)：当您的Platform操作中达到一组特定条件（例如系统超出阈值时可能会出现问题）时，Platform可以向您组织中订阅了警报消息的任何用户发送警报消息。
 
 ## 在 UI 中订阅提醒 {#subscribe-sources-alerts}
 
@@ -42,7 +42,7 @@ ht-degree: 6%
 >
 >您必须启用Platform帐户的即时电子邮件通知，才能接收数据流基于电子邮件的警报通知。
 
-您可以在以下期间为数据流启用警报： [!UICONTROL 数据流详细信息] 源工作区中源工作流的步骤。
+您可以在源工作区中源工作流的[!UICONTROL 数据流详细信息]步骤期间为数据流启用警报。
 
 ![数据流详细信息](../../images/tutorials/alerts/dataflow-detail.png)
 
@@ -58,7 +58,7 @@ ht-degree: 6%
 | 源流运行成功 | 当源中的数据成功摄取到Platform时，此警报会向您发送消息。 |
 | 源流运行失败 | 如果数据流中发生错误，此警报会向您发送消息。 |
 
-选择要订阅的警报，然后选择 **[!UICONTROL 下一个]** 以查看并完成您的数据流。
+选择要订阅的警报，然后选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以查看并完成数据流。
 
 ![选择警报](../../images/tutorials/alerts/select-alerts.png)
 
@@ -71,7 +71,7 @@ ht-degree: 6%
 * [电子商务](./dataflow/ecommerce.md)
 * [本地文件](./create/local-system/local-file-upload.md)
 * [营销自动化](./dataflow/marketing-automation.md)
-* [支付](./dataflow/payments.md)
+* [付款](./dataflow/payments.md)
 * [协议](./dataflow/protocols.md)
 
 ## 接收警报
@@ -90,21 +90,21 @@ ht-degree: 6%
 
 您可以将鼠标悬停在警报消息上以将其标记为已读，也可以选择时钟图标以设置有关数据流状态的未来提醒。
 
-![提醒](../../images/tutorials/alerts/remind-me.png)
+![提醒我](../../images/tutorials/alerts/remind-me.png)
 
 选择警报消息可查看有关数据流的特定信息。
 
 ![select-alert-message](../../images/tutorials/alerts/select-alert-message.png)
 
-此 [!UICONTROL 数据流运行概述] 页面。 屏幕的上半部分显示有关数据流的概述，包括有关其属性、相应数据流运行ID和高级别错误摘要的信息。
+此时会显示[!UICONTROL 数据流运行概述]页面。 屏幕的上半部分显示有关数据流的概述，包括有关其属性、相应数据流运行ID和高级别错误摘要的信息。
 
 ![数据流概述](../../images/tutorials/alerts/dataflow-overview.png)
 
-页面下半部显示任何 [!UICONTROL 数据流运行错误] 在数据流运行阶段发生的错误。 在此处，您可以预览错误诊断或使用 [[!DNL Data Access] API](https://www.adobe.io/experience-platform-apis/references/data-access/) 以下载与您的数据流对应的错误诊断或文件清单。
+页面下半部分显示在数据流运行阶段期间出现的所有[!UICONTROL 数据流运行错误]。 在此处，您可以预览错误诊断或使用[[!DNL Data Access] API](https://www.adobe.io/experience-platform-apis/references/data-access/)下载错误诊断或对应于您的数据流的文件清单。
 
 ![数据流运行错误](../../images/tutorials/alerts/dataflow-run-error.png)
 
-有关处理数据流错误的更多信息，请参阅 [在UI中监控源数据流](../../../dataflows/ui/monitor-sources.md).
+有关处理数据流错误的更多信息，请参阅[在UI](../../../dataflows/ui/monitor-sources.md)中监视源数据流的指南。
 
 ### 按电子邮件
 
@@ -112,20 +112,20 @@ ht-degree: 6%
 
 ![电子邮件](../../images/tutorials/alerts/email.png)
 
-与UI警报类似， [!UICONTROL 数据流运行概述] 页面显示，为您提供用于调查与数据流关联的任何错误的界面。
+与UI警报类似，将显示[!UICONTROL 数据流运行概述]页面，为您提供调查与数据流关联的任何错误的界面。
 
 ![数据流概述](../../images/tutorials/alerts/dataflow-overview.png)
 
 ## 订阅和取消订阅警报
 
-您可以为中的现有数据流订阅更多警报或取消订阅已建立的警报 [!UICONTROL 数据流] 页面。 从列表中找到创建的数据流，然后选择省略号(`...`)，以查看选项的下拉菜单。 接下来，选择 **[!UICONTROL 订阅警报]** 以修改数据流的警报设置。
+您可以在[!UICONTROL 数据流]页面中为现有数据流订阅更多警报或取消订阅已建立的警报。 找到从列表中创建的数据流，然后选择省略号(`...`)以查看选项的下拉菜单。 接下来，选择&#x200B;**[!UICONTROL 订阅警报]**&#x200B;以修改数据流的警报设置。
 
-![options](../../images/tutorials/alerts/options.png)
+![选项](../../images/tutorials/alerts/options.png)
 
-此时会出现一个弹出窗口，为您提供源警报列表。 选择要订阅的任何警报，或取消选择要取消订阅的警报。 完成后，选择 **[!UICONTROL 保存]**.
+此时会出现一个弹出窗口，为您提供源警报列表。 选择要订阅的任何警报，或取消选择要取消订阅的警报。 完成后，选择&#x200B;**[!UICONTROL 保存]**。
 
 ![保存](../../images/tutorials/alerts/save.png)
 
 ## 后续步骤
 
-本文档提供了有关如何订阅源数据流的上下文警报的分步指南。 欲了解更多信息，请参见 [警报UI指南](../../../observability/alerts/ui.md).
+本文档提供了有关如何订阅源数据流的上下文警报的分步指南。 有关详细信息，请参阅[警报UI指南](../../../observability/alerts/ui.md)。

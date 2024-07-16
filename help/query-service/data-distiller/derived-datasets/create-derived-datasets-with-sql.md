@@ -51,9 +51,9 @@ MAP <data_type, data_type>
 ARRAY <data_type>
 ```
 
-或者，也可以通过Platform UI为配置文件启用数据集。 有关将数据集标记为已为用户档案启用的更多信息，请参阅 [为实时客户档案文档启用数据集](../../../catalog/datasets/user-guide.md#enable-profile).
+或者，也可以通过Platform UI为配置文件启用数据集。 有关将数据集标记为已为配置文件启用的详细信息，请参阅[为实时客户配置文件启用数据集文档](../../../catalog/datasets/user-guide.md#enable-profile)。
 
-在下面的示例查询中， `decile_table` 数据集创建工具 `id` 作为主标识列，具有命名空间 `IDFA`. 它还具有一个名为的字段 `decile1Month` 映射数据类型的ID。 创建的表(`decile_table`)为配置文件启用。
+在下面的示例查询中，`decile_table`数据集是以`id`作为主标识列创建的，具有命名空间`IDFA`。 它还具有映射数据类型的名为`decile1Month`的字段。 已为配置文件启用创建的表(`decile_table`)。
 
 ```sql
 CREATE TABLE decile_table (id text PRIMARY KEY NAMESPACE 'IDFA', 
@@ -69,13 +69,13 @@ Created Table DataSet Id
 (1 row)
 ```
 
-使用 `label='PROFILE'` 在 `CREATE TABLE` 创建启用配置文件的数据集的命令。 此 `upsert` 默认情况下，功能处于打开状态。 此 `upsert` 功能可使用以下内容覆盖 `ALTER` 命令，如下面的示例所示。
+在`CREATE TABLE`命令上使用`label='PROFILE'`创建启用配置文件的数据集。 默认情况下，`upsert`功能处于打开状态。 可以使用`ALTER`命令覆盖`upsert`功能，如下面的示例所示。
 
 ```sql
 ALTER TABLE <your_table_name> DROP label upsert;
 ```
 
-有关使用的更多信息，请参阅SQl语法文档。 [更改表](../../sql/syntax.md#alter-table) 命令和 [标签作为CTAS查询的一部分](../../sql/syntax.md#create-table-as-select).
+有关在CTAS查询](../../sql/syntax.md#create-table-as-select)中使用[ALTER TABLE](../../sql/syntax.md#alter-table)命令和[标签的详细信息，请参阅SQl语法文档。
 
 ## 帮助通过SQL管理派生数据集的构造
 
@@ -91,7 +91,7 @@ ALTER TABLE your_decile_table ADD label 'PROFILE';
 
 >[!NOTE]
 >
->成功执行 `ALTER TABLE` 命令，控制台将返回 `ALTER SUCCESS`.
+>成功执行`ALTER TABLE`命令后，控制台返回`ALTER SUCCESS`。
 
 ### 向现有数据集添加主要身份 {#add-primary-identity}
 
@@ -107,11 +107,11 @@ ALTER TABLE <your_table_name> ADD CONSTRAINT primary identity NAMESPACE
 ALTER TABLE test1_dataset ADD CONSTRAINT PRIMARY KEY(id2) NAMESPACE 'IDFA';
 ```
 
-在提供的示例中， `id2` 是中的现有列 `test1_dataset`.
+在提供的示例中，`id2`是`test1_dataset`中的现有列。
 
 ### 为配置文件禁用数据集 {#disable-dataset-for-profile}
 
-如果要为配置文件禁用表，则必须使用DROP命令。 USES的示例SQL语句 `DROP` 如下所示。
+如果要为配置文件禁用表，则必须使用DROP命令。 下面显示了使用`DROP`的示例SQL语句。
 
 ```sql
 ALTER TABLE table_name DROP LABEL 'PROFILE';
@@ -123,7 +123,7 @@ ALTER TABLE table_name DROP LABEL 'PROFILE';
 ALTER TABLE decile_table DROP label 'PROFILE';
 ```
 
-此SQL语句提供了使用API调用的高效替代方法。 有关更多信息，请参阅有关如何执行操作的文档。 [使用数据集API禁用用于Real-Time CDP的数据集](../../../catalog/datasets/enable-upsert.md#disable-the-dataset-for-profile).
+此SQL语句提供了使用API调用的高效替代方法。 有关详细信息，请参阅有关如何使用数据集API[禁用用于Real-Time CDP的数据集的文档](../../../catalog/datasets/enable-upsert.md#disable-the-dataset-for-profile)。
 
 ### 允许为数据集更新和插入功能 {#enable-upsert-functionality-for-dataset}
 
@@ -141,7 +141,7 @@ ALTER TABLE table_name ADD LABEL 'UPSERT';
 ALTER TABLE table_with_a_decile ADD label 'UPSERT';
 ```
 
-此SQL语句提供了使用API调用的高效替代方法。 有关更多信息，请参阅有关如何执行操作的文档。 [启用数据集，以便与Real-Time CDP一起使用，并使用数据集API进行UPSERT](../../../catalog/datasets/enable-upsert.md#enable-the-dataset).
+此SQL语句提供了使用API调用的高效替代方法。 有关详细信息，请参阅有关如何使用数据集API](../../../catalog/datasets/enable-upsert.md#enable-the-dataset)启用用于Real-Time CDP和UPSERT的数据集[的文档。
 
 ### 禁用数据集的更新和插入功能 {#disable-upsert-functionality-for-dataset}
 
@@ -161,7 +161,7 @@ ALTER TABLE table_with_a_decile DROP label 'UPSERT';
 
 ### 显示与每个表关联的其他表信息 {#show-labels-for-tables}
 
-为启用配置文件的数据集保留其他元数据。 使用 `SHOW TABLES` 用于显示额外内容的命令 `labels` 列提供有关与表关联的任何标签的信息。
+为启用配置文件的数据集保留其他元数据。 使用`SHOW TABLES`命令显示一个额外的`labels`列，该列提供有关与表关联的任何标签的信息。
 
 此命令的输出示例如下所示：
 
@@ -174,7 +174,7 @@ ALTER TABLE table_with_a_decile DROP label 'UPSERT';
 (3 rows)
 ```
 
-从示例中可以看到 `table_with_a_decile` 已为配置文件启用并已应用标签，例如 [&#39;更新插入&#39;](#enable-upsert-functionality-for-dataset)， [&#39;配置文件&#39;](#enable-existing-dataset-for-profile) 如前所述。
+从示例中可以看到`table_with_a_decile`已为配置文件启用，并应用于标签，如[&#39;UPSERT&#39;](#enable-upsert-functionality-for-dataset)，[&#39;PROFILE&#39;](#enable-existing-dataset-for-profile)，如前所述。
 
 ### 使用SQL创建字段组
 
@@ -188,8 +188,8 @@ CREATE FIELDGROUP <field_group_name> [IF NOT EXISTS]  (field_name <data_type> pr
 
 >[!IMPORTANT]
 >
->如果通过SQL创建字段组失败， `label` 标记未在语句中提供，或者字段组已存在。
->确保查询包含 `IF NOT EXISTS` 子句以避免查询失败，因为字段组已存在。
+>如果语句中未提供`label`标志或字段组已存在，则通过SQL创建字段组将失败。
+>请确保查询包含`IF NOT EXISTS`子句，以避免查询失败，因为该字段组已存在。
 
 现实世界的例子可能与下面所示的例子类似。
 
@@ -199,11 +199,11 @@ CREATE FIELDGROUP field_group_for_test123 (decile1Month map<text, integer>, deci
 
 成功执行此语句将返回创建的字段组ID。 例如：`c731a1eafdfdecae1683c6dca197c66ed2c2b49ecd3a9525`。
 
-请参阅有关如何执行操作的文档 [在架构编辑器中创建新字段组](../../../xdm/ui/resources/field-groups.md#create) 或使用 [架构注册表API](../../../xdm/api/field-groups.md#create) 以了解有关替代方法的更多信息。
+有关替代方法的详细信息，请参阅有关如何在架构编辑器](../../../xdm/ui/resources/field-groups.md#create)中[创建新字段组或使用[架构注册表API](../../../xdm/api/field-groups.md#create)的文档。
 
 ### 放置字段组
 
-有时可能需要从架构注册表中删除字段组。 这是通过执行 `DROP FIELDGROUP` 命令。
+有时可能需要从架构注册表中删除字段组。 这是通过执行具有字段组ID的`DROP FIELDGROUP`命令来完成的。
 
 ```sql
 DROP FIELDGROUP [IF EXISTS] <your_field_group_id>;
@@ -217,11 +217,11 @@ DROP FIELDGROUP field_group_for_test123;
 
 >[!IMPORTANT]
 >
->如果字段组不存在，则通过SQL删除字段组将失败。 确保语句包含 `IF EXISTS` 子句以避免查询失败。
+>如果字段组不存在，则通过SQL删除字段组将失败。 请确保语句包含`IF EXISTS`子句以避免查询失败。
 
 ### 显示表的所有字段组名和ID
 
-此 `SHOW FIELDGROUPS` 命令返回一个表，其中包含表的名称、fieldgroupId和所有者。
+`SHOW FIELDGROUPS`命令返回一个表，其中包含表的名称、fieldgroupId和所有者。
 
 此命令的输出示例如下所示：
 
@@ -237,4 +237,4 @@ DROP FIELDGROUP field_group_for_test123;
 
 ## 后续步骤
 
-阅读本文档后，您对如何使用SQL基于派生数据集创建用户档案和启用更新插入的数据集有了更好的了解。 现在，您可以将此数据集与批量摄取工作流一起使用，以更新用户档案数据。 要了解有关将数据摄取到Adobe Experience Platform的更多信息，请先阅读 [数据摄取概述](../../../ingestion/home.md).
+阅读本文档后，您对如何使用SQL基于派生数据集创建用户档案和启用更新插入的数据集有了更好的了解。 现在，您可以将此数据集与批量摄取工作流一起使用，以更新用户档案数据。 要了解有关将数据摄取到Adobe Experience Platform的更多信息，请从阅读[数据摄取概述](../../../ingestion/home.md)开始。

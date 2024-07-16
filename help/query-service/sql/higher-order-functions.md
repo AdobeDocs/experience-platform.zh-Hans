@@ -1,7 +1,8 @@
 ---
 title: 使用高阶函数管理阵列和映射数据类型
 description: 了解如何使用查询服务中的高位函数管理数组并映射数据类型。 结合常见使用案例给出应用实例。
-source-git-commit: 27eab04e409099450453a2a218659e576b8f6ab4
+exl-id: dec4e4f6-ad6b-4482-ae8c-f10cc939a634
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '1471'
 ht-degree: 0%
@@ -18,7 +19,7 @@ ht-degree: 0%
 
 `transform(array<T>, function<T, U>): array<U>`
 
-上面的代码片段将一个函数应用于数组的每个元素，并返回一个新的转换元素数组。 具体而言， `transform` 函数接受一个类型为T的数组，并将每个元素从类型T转换为类型U。然后返回U类型的数组。实际类型T和U取决于变换函数的具体用法。
+上面的代码片段将一个函数应用于数组的每个元素，并返回一个新的转换元素数组。 具体来说，`transform`函数接受类型为T的数组，并将每个元素从类型T转换为类型U。然后返回U类型的数组。实际类型T和U取决于变换函数的具体用法。
 
 `transform(array<T>, function<T, Int, U>): array<U>`
 
@@ -26,7 +27,7 @@ ht-degree: 0%
 
 **示例**
 
-下面的SQL示例演示了此用例。 查询从指定的表中检索一组有限的行，转换 `productListItems` 数组 `priceTotal` 属性（以73为单位）。 结果包括 `_id`， `productListItems`，以及转换后的 `price_in_inr` 列。 选择基于特定的时间戳范围。
+下面的SQL示例演示了此用例。 查询从指定的表中检索有限的行集，通过将每个项的`priceTotal`属性乘以73来转换`productListItems`数组。 结果包括`_id`、`productListItems`和转换后的`price_in_inr`列。 选择基于特定的时间戳范围。
 
 ```sql
 SELECT _id,
@@ -59,11 +60,11 @@ LIMIT  10;
 
 `exists(array<T>, function<T, boolean>): boolean`
 
-在上面的代码片段中， `exists` 函数将应用于数组的每个元素并返回一个布尔值。 布尔值指示数组中是否存在满足指定条件的一个或多个元素。 在这种情况下，它确认是否存在具有特定SKU的产品。
+在上面的代码片段中，`exists`函数应用于数组的每个元素并返回一个布尔值。 布尔值指示数组中是否存在满足指定条件的一个或多个元素。 在这种情况下，它确认是否存在具有特定SKU的产品。
 
 **示例**
 
-在以下SQL示例中，查询将获取 `productListItems` 从 `geometrixxx_999_xdm_pqs_1batch_10k_rows` 表并评估SKU为的元素是否等于 `123679` 在 `productListItems` 数组存在。 然后，它根据特定时间戳范围筛选结果，并将最终结果限制为10行。
+在以下SQL示例中，查询从`geometrixxx_999_xdm_pqs_1batch_10k_rows`表中提取`productListItems`，并评估`productListItems`数组中是否存在SKU等于`123679`的元素。 然后，它根据特定时间戳范围筛选结果，并将最终结果限制为10行。
 
 ```sql
 SELECT productListItems
@@ -102,7 +103,7 @@ productListItems
 
 **示例**
 
-下面的查询选择 `productListItems` 列，应用过滤器以仅包含SKU大于100000的元素，并将结果集限制为特定时间戳范围内的行。 然后，将过滤后的数组别名设置为 `_filter` 在输出中。
+下面的查询选择`productListItems`列，应用过滤器以仅包含SKU大于100000的元素，并将结果集限制为特定时间戳范围内的行。 然后在输出中将筛选后的数组别名为`_filter`。
 
 ```sql
 SELECT productListItems,
@@ -136,7 +137,7 @@ productListItems | _filter
 
 **示例**
 
-此查询示例计算最大SKU值，来自 `productListItems` 数组，并将结果加倍。 输出包括原始文件 `productListItems` 数组和计算的 `max_value`.
+此查询示例计算给定时间戳范围内`productListItems`数组的最大SKU值，并将结果加倍。 输出包括原始`productListItems`数组和计算的`max_value`。
 
 ```sql
 SELECT productListItems,
@@ -175,7 +176,7 @@ productListItems | max_value
 
 **示例**
 
-以下查询使用 `zip_with` 函数，用于从两个数组创建值对。 为此，它会将 `productListItems` 数组到整数序列，该序列是使用 `Sequence` 函数。 结果将与原始文件一起选择 `productListItems` 列，并根据时间戳范围进行限制。
+以下查询使用`zip_with`函数从两个数组创建值对。 通过将`productListItems`数组中的SKU值添加到使用`Sequence`函数生成的整数序列来执行此操作。 该结果将与原始`productListItems`列一起选择，并根据时间戳范围进行限制。
 
 ```sql
 SELECT productListItems,
@@ -250,7 +251,7 @@ productListItems     | map_from_entries
 
 `map_form_arrays(array<K>, array<V>): map<K, V>`
 
-此 `map_form_arrays` 函数使用两个数组的配对值创建映射。
+`map_form_arrays`函数使用两个数组的配对值创建映射。
 
 >[!IMPORTANT]
 >
@@ -258,7 +259,7 @@ productListItems     | map_from_entries
 
 **示例**
 
-下面的SQL创建了一个映射，其中键是使用 `Sequence` 函数中，值是来自 `productListItems` 数组。 查询将选择 `productListItems` 列并使用 `Map_from_arrays` 函数，用于根据生成的数字序列和数组的元素创建映射。 结果限制为10行，并根据时间戳范围进行筛选。
+下面的SQL创建了一个映射，其中键是使用`Sequence`函数生成的顺序数字，值是来自`productListItems`数组的元素。 查询选择`productListItems`列并使用`Map_from_arrays`函数根据生成的数字序列和数组的元素创建映射。 结果限制为10行，并根据时间戳范围进行筛选。
 
 ```sql
 SELECT productListItems,
@@ -296,11 +297,11 @@ productListItems     | map_from_entries
 
 `map_concat(map<K, V>, ...): map<K, V>`
 
-此 `map_concat` 函数将多个映射作为参数，并返回一个新映射，该映射将输入映射中的所有键值对组合在一起。 该函数将多个映射串联为单个映射，并且生成的映射包括来自输入映射的所有键值对。
+上述代码片段中的`map_concat`函数将多个映射作为参数，并返回一个新的映射，该映射将来自输入映射的所有键值对组合在一起。 该函数将多个映射串联为单个映射，并且生成的映射包括来自输入映射的所有键值对。
 
 **示例**
 
-下面的SQL创建一个映射，其中每个项 `productListItems` 与序列号相关联，然后与另一个映射相关联，其中键在特定序列范围内生成。
+下面的SQL创建一个映射，其中`productListItems`中的每个项都与一个序列号关联，该序列号随后与另一个映射关联，其中键在特定序列范围内生成。
 
 ```sql
 SELECT productListItems,
@@ -345,7 +346,7 @@ productListItems     | map_from_entries
 
 **示例**
 
-查询将选择 `identitymap` 表中的列 `geometrixxx_999_xdm_pqs_1batch_10k_rows` 并提取与键相关的值 `AAID` 每一行。 结果仅限于指定时间戳范围内的行，而查询将输出限制为10行。
+查询从表`geometrixxx_999_xdm_pqs_1batch_10k_rows`中选择`identitymap`列，并为每一行提取与键`AAID`关联的值。 结果仅限于指定时间戳范围内的行，而查询将输出限制为10行。
 
 ```sql
 SELECT identitymap,
@@ -383,7 +384,7 @@ LIMIT 10;
 
 **示例**
 
-下面的查询检索 `identitymap` 列，以及 `Cardinality` 函数计算 `identitymap`. 结果限制为10行，并根据指定的时间戳范围进行筛选。
+下面的查询检索`identitymap`列，`Cardinality`函数计算`identitymap`内每个映射中的元素数。 结果限制为10行，并根据指定的时间戳范围进行筛选。
 
 ```sql
 SELECT identitymap,
@@ -421,7 +422,7 @@ LIMIT  10;
 
 **示例**
 
-下面的查询选择 `productListItems` 列中，会从数组中移除任何重复的项目，并根据指定的时间戳范围将输出限制为10行。
+下面的查询选择`productListItems`列，从数组中移除任何重复项，并根据指定的时间戳范围将输出限制为10行。
 
 ```sql
 SELECT productListItems,
@@ -457,8 +458,8 @@ productListItems     | array_distinct(productListItems)
 
 以下高阶函数的示例在“检索类似记录”用例中进行说明。 该文档的相关部分提供了每个函数用法的示例和说明。
 
-此 [`transform` 函数示例](../use-cases/retrieve-similar-records.md#length-adjustment) 包含产品列表的标记化。
+[`transform`函数示例](../use-cases/retrieve-similar-records.md#length-adjustment)涵盖了产品列表的标记化。
 
-此 [`filter` 函数示例](../use-cases/retrieve-similar-records.md#filter-results) 演示了从文本数据中更精细、更准确地提取相关信息。
+[`filter`函数示例](../use-cases/retrieve-similar-records.md#filter-results)演示了从文本数据中更精细、更精确的相关信息提取。
 
-此 [`reduce` 函数](../use-cases/retrieve-similar-records.md#higher-order-function-solutions) 提供了一种获取累计值或汇总的方法，这些累计值或汇总在各种分析和计划流程中可能至关重要。
+[`reduce`函数](../use-cases/retrieve-similar-records.md#higher-order-function-solutions)提供了一种导出累计值或汇总的方法，这些值或汇总在各种分析和计划流程中可能至关重要。

@@ -7,15 +7,15 @@ exl-id: 0b340025-093b-41e4-8053-969a8e80e889
 source-git-commit: dde38e230a6bcb10cd38a12f644f2dd03f0cebaf
 workflow-type: tm+mt
 source-wordcount: '964'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
 # 实时客户资料故障排除指南
 
-本文档提供有关实时客户个人资料的常见问题解答，以及常见错误的疑难解答指南。 有关Adobe Experience Platform中其他服务的问题和疑难解答，请参阅 [Experience Platform疑难解答指南](../landing/troubleshooting.md).
+本文档提供有关实时客户个人资料的常见问题解答，以及常见错误的疑难解答指南。 有关Adobe Experience Platform中其他服务的问题和疑难解答，请参阅[Experience Platform疑难解答指南](../landing/troubleshooting.md)。
 
-替换为 [!DNL Real-Time Customer Profile]，您可以通过组合来自多个渠道（包括在线、离线、CRM和第三方）的数据来查看每个客户的整体视图。 这使营销人员能够跨多个渠道为客户推动协调、一致且相关的体验。
+使用[!DNL Real-Time Customer Profile]，您可以通过组合来自多个渠道的数据（包括在线、离线、CRM和第三方）来查看每个客户的整体视图。 这使营销人员能够跨多个渠道为客户推动协调、一致且相关的体验。
 
 ## 常见问题解答
 
@@ -23,11 +23,11 @@ ht-degree: 0%
 
 ### Real-time Customer Profile可接受哪些类型的数据？
 
-配置文件接受两者 **记录** 和 **时间序列** 数据，前提是相关数据至少包含一个标识值，将该数据与唯一的个人相关联。
+配置文件同时接受&#x200B;**记录**&#x200B;和&#x200B;**时间系列**&#x200B;数据，但前提是相关数据至少包含一个标识值，用于将数据与个人唯一性关联。
 
-与所有Platform服务一样，用户档案要求其数据在语义上采用体验数据模型(XDM)架构进行结构化。 反过来，此架构必须具有 **主要身份** 已定义并已启用以便在配置文件中使用。
+与所有Platform服务一样，用户档案要求其数据在语义上采用体验数据模型(XDM)架构进行结构化。 反过来，此架构必须定义一个&#x200B;**主标识**，并且启用它才能在配置文件中使用。
 
-如果您不熟悉XDM，请从 [XDM概述](../xdm/home.md) 了解更多信息。 接下来，请参阅XDM用户指南，以了解操作步骤 [设置标识字段](../xdm/tutorials/create-schema-ui.md#identity-field) 和 [为配置文件启用架构](../xdm/tutorials/create-schema-ui.md#profile).
+如果您不熟悉XDM，请从[XDM概述](../xdm/home.md)开始了解更多信息。 接下来，请参阅XDM用户指南，以了解如何[设置标识字段](../xdm/tutorials/create-schema-ui.md#identity-field)和[为配置文件启用架构](../xdm/tutorials/create-schema-ui.md#profile)的步骤。
 
 ### 配置文件数据存储在何处？
 
@@ -37,7 +37,7 @@ Real-time Customer Profile维护其自己的数据存储（称为“配置文件
 
 如果数据被摄取到非配置文件数据集，您必须将该数据重新摄取到启用配置文件的数据集，才能使其在配置文件存储中可用。 可以为配置文件启用现有数据集，但是在该配置之前摄取的任何数据仍将不会显示在配置文件存储中。
 
-如果您希望将之前摄取的数据添加到配置文件存储区，请按照 [数据集配置教程](./tutorials/dataset-configuration.md) 创建新数据集或转换要为配置文件启用的现有数据集，然后将所需数据重新摄取到该数据集。
+如果要将以前摄取的数据添加到配置文件存储，请按照[数据集配置教程](./tutorials/dataset-configuration.md)创建新数据集或将现有数据集转换为配置文件启用的数据集，然后将所需的数据重新摄取到该数据集。
 
 ### 如何查看我摄取的配置文件数据？
 
@@ -45,19 +45,19 @@ Real-time Customer Profile维护其自己的数据存储（称为“配置文件
 
 #### 使用 API
 
-如果您知道要访问的配置文件实体的ID，则可以使用 `/entities` （配置文件访问）配置文件API中的端点，用于查找这些实体。 请参阅以下部分 [实体](./api/entities.md) 有关更多信息，请参阅开发人员指南。
+如果您知道要访问的配置文件实体的ID，则可以使用配置文件API中的`/entities`（配置文件访问）端点查找这些实体。 有关详细信息，请参阅开发人员指南中有关[实体](./api/entities.md)的部分。
 
-您还可以使用Adobe Experience Platform分段服务API来访问符合受众成员资格的客户的个人配置文件。 请参阅 [分段服务概述](../segmentation/home.md) 以了解更多信息。
+您还可以使用Adobe Experience Platform分段服务API来访问符合受众成员资格的客户的个人配置文件。 有关详细信息，请参阅[分段服务概述](../segmentation/home.md)。
 
 #### 使用UI
 
-在Experience PlatformUI中， **[!UICONTROL 浏览]** 选项卡 **[!UICONTROL 配置文件]** 工作区允许您查看配置文件总数并按其身份值搜索各个配置文件。 请参阅 [配置文件用户指南](./ui/user-guide.md) 以了解更多信息。
+在Experience PlatformUI中，**[!UICONTROL 配置文件]**&#x200B;工作区中的&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡允许您查看配置文件总数并按其标识值搜索各个配置文件。 有关详细信息，请参阅[配置文件用户指南](./ui/user-guide.md)。
 
-您还可以在以下位置查看受众列表： **[!UICONTROL 浏览]** 选项卡 **[!UICONTROL 受众]** 工作区。 选择受众后，将显示符合该受众条件的配置文件示例。 然后，您可以选择列出的任意配置文件以查看其详细信息。 请参阅 [分段UI概述](../segmentation/ui/overview.md) 以了解更多信息。
+您还可以在&#x200B;**[!UICONTROL 受众]**&#x200B;工作区的&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡下查看受众列表。 选择受众后，将显示符合该受众条件的配置文件示例。 然后，您可以选择列出的任意配置文件以查看其详细信息。 有关详细信息，请参阅[分段UI概述](../segmentation/ui/overview.md)。
 
 ## 错误代码
 
-以下是使用Real-time Customer Profile API时可能遇到的错误消息列表。 如果此处未列出您遇到的错误，您可能会在一般情况下找到它 [平台疑难解答指南](../landing/troubleshooting.md) 而是。
+以下是使用Real-time Customer Profile API时可能遇到的错误消息列表。 如果此处未列出您遇到的错误，您可以在一般的[平台故障排除指南](../landing/troubleshooting.md)中找到该错误。
 
 ### 无法为提供的路径查找计算属性的架构
 
@@ -68,9 +68,9 @@ Real-time Customer Profile维护其自己的数据存储（称为“配置文件
 }
 ```
 
-创建新的计算属性时，如果系统找不到请求有效负载中提供的架构，则会出现此错误。 确保您在有效负荷的中提供正确的租户ID `path` 属性，并且其值 `schema.name` 是有效的架构名称。
+创建新的计算属性时，如果系统找不到请求有效负载中提供的架构，则会出现此错误。 请确保您在有效负载的`path`属性中提供了正确的租户ID，并且`schema.name`的值是有效的架构名称。
 
-如果您不知道您的租户ID，可以按照 [架构注册开发人员指南](../xdm/api/getting-started.md).
+如果您不知道租户ID，可以按照[架构注册开发人员指南](../xdm/api/getting-started.md)中的步骤检索它。
 
 ### 指定的架构或definedOn已存在同名函数
 
@@ -81,7 +81,7 @@ Real-time Customer Profile维护其自己的数据存储（称为“配置文件
 }
 ```
 
-创建新的计算属性时，如果提供的属性为 `name` 属性已用于下指示的架构 `schema.name`. 在重试之前，请将该值替换为唯一名称。
+创建新的计算属性时，如果提供的`name`属性已用于`schema.name`下指示的架构，则会出现此错误。 在重试之前，请将该值替换为唯一名称。
 
 ### 表达式的返回架构与XDM架构中计算属性的架构不同
 
@@ -92,7 +92,7 @@ Real-time Customer Profile维护其自己的数据存储（称为“配置文件
 }
 ```
 
-创建新的计算属性时，如果提供的属性为 `name` 属性已用于下指示的架构 `schema.name`. 在重试之前，请将该值替换为唯一名称。
+创建新的计算属性时，如果提供的`name`属性已用于`schema.name`下指示的架构，则会出现此错误。 在重试之前，请将该值替换为唯一名称。
 
 ### 删除请求无效（配置文件系统作业）
 
@@ -103,7 +103,7 @@ Real-time Customer Profile维护其自己的数据存储（称为“配置文件
 }
 ```
 
-为删除系统作业提供了无效有效负载时，会发生此错误。 请确保您在有效负载下提供有效的数据集或批次ID `dataSetID` 或 `batchID` 产的收益。 请参阅以下部分 [创建删除请求](./api/profile-system-jobs.md#create-a-delete-request) 有关更多信息，请参阅配置文件开发人员指南。
+为删除系统作业提供了无效有效负载时，会发生此错误。 请确保在有效负载的`dataSetID`或`batchID`属性下分别提供有效的数据集或批次ID。 有关详细信息，请参阅配置文件开发人员指南中有关[创建删除请求](./api/profile-system-jobs.md#create-a-delete-request)的部分。
 
 ### 未找到配置文件数据集的批次
 
@@ -137,7 +137,7 @@ Real-time Customer Profile维护其自己的数据存储（称为“配置文件
 
 大多数配置文件端点都接受将“application/json”作为其Content-Type标头，但以下情况除外：
 
-| 端点 | Content-Type |
+| 终结点 | Content-Type |
 | --- | --- |
 | `/config/projections` | application/vnd.adobe.platform.projectionConfig+json； version=1 |
 | `/config/destinations` | application/vnd.adobe.platform.projectionDestination+json； version=1 |

@@ -4,7 +4,7 @@ description: 了解如何使用Experience Platform中的架构编辑器弃用Exp
 exl-id: f4c5f58a-5190-47d7-8bfc-b33ed238bf25
 source-git-commit: 4fa98df9dcc296ba7cb141cb22df116524a0eb0c
 workflow-type: tm+mt
-source-wordcount: '699'
+source-wordcount: '695'
 ht-degree: 0%
 
 ---
@@ -17,21 +17,21 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->将数据摄取到架构中之前，您可以删除不必要的字段组。 请参阅相关文档 [如何从架构中删除字段组](../ui/resources/schemas.md#remove-fields) 以了解更多信息。
+>将数据摄取到架构中之前，您可以删除不必要的字段组。 有关详细信息，请参阅有关[如何从架构](../ui/resources/schemas.md#remove-fields)中删除字段组的文档。
 
-一旦将数据摄取到架构中，您就无法再从架构中删除字段而无需进行重大更改。 在这种情况下，您可以使用来弃用架构或自定义资源中的不需要字段 [架构编辑器](./create-schema-ui.md) 或 [架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
+一旦将数据摄取到架构中，您就无法再从架构中删除字段而无需进行重大更改。 在这种情况下，可以使用[架构编辑器](./create-schema-ui.md)或[架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/)来弃用架构或自定义资源中不需要的字段。
 
-本文档介绍如何使用Experience Platform用户界面中的架构编辑器来弃用其他XDM资源的字段。 有关使用API弃用XDM字段的步骤，请参阅上的教程 [使用架构注册表API弃用XDM字段](./field-deprecation-api.md).
+本文档介绍如何使用Experience Platform用户界面中的架构编辑器来弃用其他XDM资源的字段。 有关使用API弃用XDM字段的步骤，请参阅有关[使用架构注册表API弃用XDM字段](./field-deprecation-api.md)的教程。
 
 ## 弃用字段 {#deprecate}
 
-要弃用自定义字段，请导航到要编辑的架构的架构编辑器。 从中选择要弃用的字段 [!UICONTROL 结构] 部分，然后是 **[!UICONTROL 弃用]** 从 [!UICONTROL 字段属性].
+要弃用自定义字段，请导航到要编辑的架构的架构编辑器。 从画布的[!UICONTROL 结构]部分中选择要弃用的字段，然后从[!UICONTROL 字段属性]中选择&#x200B;**[!UICONTROL 弃用]**。
 
-![架构编辑器，其中选中了字段，并突出显示了“弃用” 。](../images/tutorials/field-deprecation/deprecate-single-field.png)
+![已选定字段且已高亮显示弃用的架构编辑器。](../images/tutorials/field-deprecation/deprecate-single-field.png)
 
-此时将显示一个对话框，用于确认您的选择并通知您，该字段将从合并架构的UI视图中删除并隐藏在下游UI中。 要完成操作，请选择 **[!UICONTROL 确认]**.
+此时将显示一个对话框，用于确认您的选择并通知您，该字段将从合并架构的UI视图中删除并隐藏在下游UI中。 要完成该操作，请选择&#x200B;**[!UICONTROL 确认]**。
 
-![弃用字段对话框，其中突出显示了确认。](../images/tutorials/field-deprecation/deprecate-field-dialog.png)
+![已突出显示“弃用”字段对话框中的确认。](../images/tutorials/field-deprecation/deprecate-field-dialog.png)
 
 该字段现已从UI视图中删除。
 
@@ -39,26 +39,26 @@ ht-degree: 0%
 >
 >一旦弃用，下游UI(例如分段功能板、Customer Journey Analytics和Adobe Journey Optimizer)将不再将已弃用的字段作为其工作流的一部分显示。 但是，下游UI会根据需要选择显示已弃用的字段，并继续正常处理已弃用的字段。 有关更多信息，请参阅其各自的文档。 使用已弃用字段的查询和受众将继续按预期运行。
 
-## 显示已弃用的字段 {#show-deprecated}
+## 显示弃用的字段 {#show-deprecated}
 
-要查看以前弃用的字段，请导航到架构编辑器中的相关架构。 选择 **[!UICONTROL 显示已弃用的字段]** 中的复选框 [!UICONTROL 合成] 部分。
+要查看以前弃用的字段，请导航到架构编辑器中的相关架构。 在画布的[!UICONTROL 合成]部分中，选中&#x200B;**[!UICONTROL 显示已弃用的字段]**&#x200B;复选框。
 
-已弃用的字段现在显示在UI视图中。 选择 **[!UICONTROL 保存]** 以确认您的设置。
+已弃用的字段现在显示在UI视图中。 选择&#x200B;**[!UICONTROL 保存]**&#x200B;以确认您的设置。
 
-![架构编辑器中选择了字段，并突出显示显示已弃用的字段和保存。](../images/tutorials/field-deprecation/show-deprecated-fields.png)
+![架构编辑器选定了字段，显示已弃用的字段并突出显示保存。](../images/tutorials/field-deprecation/show-deprecated-fields.png)
 
 ## 取消弃用字段 {#undeprecate-fields}
 
-要撤消已弃用的字段，请首先 [显示已弃用的字段](#show-deprecated) 如上所述，然后从编辑器的 [!UICONTROL 结构] 部分。 接下来，选择 **[!UICONTROL 取消弃用]** 从 [!UICONTROL 字段属性] 侧栏后跟 **[!UICONTROL 保存]**.
+要撤消已弃用的字段，请按照上文所述首先[显示已弃用的字段](#show-deprecated)，然后从编辑器的[!UICONTROL 结构]部分中选择已弃用的字段。 接下来，从[!UICONTROL 字段属性]侧边栏中选择&#x200B;**[!UICONTROL 取消弃用]**，然后选择&#x200B;**[!UICONTROL 保存]**。
 
-![架构编辑器中，已弃用字段“Undeprecated”（取消弃用）和“Save”（保存）突出显示。](../images/tutorials/field-deprecation/undeprecate-single-field.png)
+![架构编辑器中包含已弃用的字段、已取消弃用并突出显示“保存”。](../images/tutorials/field-deprecation/undeprecate-single-field.png)
 
-此 [!UICONTROL 取消弃用字段] 出现对话框。 要确认更改，请选择 **[!UICONTROL 确认]**.
+出现[!UICONTROL 取消弃用字段]对话框。 要确认更改，请选择&#x200B;**[!UICONTROL 确认]**。
 
-![此 [!UICONTROL 取消弃用字段] 对话框，其中突出显示了确认。](../images/tutorials/field-deprecation/undeprecate-field-dialog.png)
+![突出显示了[!UICONTROL 取消弃用字段]的确认对话框。](../images/tutorials/field-deprecation/undeprecate-field-dialog.png)
 
 字段现在在UI视图和下游UI中显示为标准字段。 同样，您现在可以选择弃用字段。
 
 ## 后续步骤
 
-本文档介绍了如何使用架构编辑器UI弃用XDM字段。 有关为自定义资源配置字段的更多信息，请参阅 [在API中定义XDM字段](./custom-fields-api.md). 有关管理描述符的更多信息，请参见 [描述符端点指南](../api/descriptors.md).
+本文档介绍了如何使用架构编辑器UI弃用XDM字段。 有关为自定义资源配置字段的更多信息，请参阅[在API中定义XDM字段指南](./custom-fields-api.md)。 有关管理描述符的详细信息，请参阅[描述符终结点指南](../api/descriptors.md)。

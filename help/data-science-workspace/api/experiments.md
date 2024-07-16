@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform；开发人员指南；端点；Data Science Workspace；热门主题；实验；Sensei机器学习API
+keywords: Experience Platform；开发人员指南；端点；数据科学Workspace；热门主题；实验；sensei机器学习api
 solution: Experience Platform
 title: 试验API端点
 description: 模型开发和训练在试验级别进行，试验包括MLInstance、训练运行和评分运行。
@@ -53,7 +53,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回一个有效负载，其中包含新创建试验的详细信息，包括其唯一标识符(`id`)。
+成功的响应将返回一个有效负载，该有效负载包含新创建的试验的详细信息，包括其唯一标识符(`id`)。
 
 ```json
 {
@@ -100,11 +100,11 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `{TASK}` | 指定运行的任务。 将此值设置为 `train` 用于培训， `score` 以进行评分，或 `featurePipeline` 用于功能管道。 |
+| `{TASK}` | 指定运行的任务。 将此值设置为`train`以进行训练，`score`以进行评分，或`featurePipeline`以进行功能管道。 |
 
 **响应**
 
-成功的响应会返回一个有效负载，其中包含新创建的运行的详细信息，包括继承的默认训练或评分参数，以及运行的唯一ID (`{RUN_ID}`)。
+成功的响应将返回一个有效负载，其中包含新创建的运行的详细信息（包括继承的默认训练或评分参数）以及运行的唯一ID (`{RUN_ID}`)。
 
 ```json
 {
@@ -133,7 +133,7 @@ curl -X POST \
 
 ## 检索试验列表
 
-通过执行单个GET请求并提供有效的MLInstance ID作为查询参数，可以检索属于特定MLInstance的试验列表。 有关可用查询的列表，请参阅 [用于资源检索的查询参数](./appendix.md#query).
+通过执行单个GET请求并提供有效的MLInstance ID作为查询参数，可以检索属于特定MLInstance的试验列表。 有关可用查询的列表，请参阅[用于资源检索的查询参数](./appendix.md#query)的附录部分。
 
 
 **API格式**
@@ -160,7 +160,7 @@ curl -X GET \
 
 **响应**
 
-成功响应会返回共享同一MLInstance ID (`{MLINSTANCE_ID}`)。
+成功的响应返回共享同一MLInstance ID (`{MLINSTANCE_ID}`)的试验列表。
 
 ```json
 {
@@ -242,7 +242,7 @@ curl -X GET \
 
 ## 检索试验运行列表
 
-您可以通过执行单个GET请求并提供有效的试验ID，检索属于特定试验的训练或评分运行列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询参数的完整列表，请参阅 [用于资源检索的查询参数](./appendix.md#query).
+您可以通过执行单个GET请求并提供有效的试验ID，检索属于特定试验的训练或评分运行列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询参数的完整列表，请参阅[用于检索资产的查询参数](./appendix.md#query)的附录部分。
 
 >[!NOTE]
 >
@@ -259,7 +259,7 @@ GET /experiments/{EXPERIMENT_ID}/runs?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAM
 | 参数 | 描述 |
 | --- | --- |
 | `{EXPERIMENT_ID}` | 有效的试验ID。 |
-| `{QUERY_PARAMETER}` | 其中一项 [可用的查询参数](./appendix.md#query) 用于筛选结果。 |
+| `{QUERY_PARAMETER}` | 用于筛选结果的[可用查询参数](./appendix.md#query)之一。 |
 | `{VALUE}` | 上一个查询参数的值。 |
 
 **请求**
@@ -277,7 +277,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回一个有效负载，其中包含运行的列表及其每个详细信息，包括其试验运行ID (`{RUN_ID}`)。
+成功的响应将返回一个有效负载，该有效负载包含运行列表及其每个详细信息，包括其试验运行ID (`{RUN_ID}`)。
 
 ```json
 {
@@ -307,7 +307,7 @@ curl -X GET \
 
 >[!TIP]
 >
->为确保此PUT请求成功，建议您首先执行GET请求，以 [按ID检索试验](#retrieve-specific). 然后，修改并更新返回的JSON对象，并将修改后的整个JSON对象应用作PUT请求的有效负载。
+>为确保此PUT请求成功，建议您首先执行GET请求，以[按ID](#retrieve-specific)检索试验。 然后，修改并更新返回的JSON对象，并将修改后的整个JSON对象应用作PUT请求的有效负载。
 
 以下示例API调用在最初具有这些属性时会更新试验的名称：
 

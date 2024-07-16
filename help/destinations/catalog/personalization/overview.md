@@ -1,20 +1,20 @@
 ---
-keywords: 个性化；个性化
-title: 个性化目标概述
-description: 个性化平台从个人行为收集数据和见解。 这些平台可以协助营销人员导航匿名数据，根据先前的活动或作为具有类似习惯的受众的一部分向潜在客户提供优惠或广告。
+keywords: 个性化；Personalization
+title: Personalization目标概述
+description: Personalization平台从个人行为中收集数据和见解。 这些平台可以协助营销人员导航匿名数据，根据先前的活动或作为具有类似习惯的受众的一部分向潜在客户提供优惠或广告。
 exl-id: 18a2b170-43d0-4d41-8afc-d2f0f9bfd7bb
 source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '151'
-ht-degree: 14%
+source-wordcount: '150'
+ht-degree: 9%
 
 ---
 
-# 个性化目标概述 {#personalization-destinations}
+# Personalization目标概述 {#personalization-destinations}
 
 ## 概述 {#overview}
 
-个性化平台从个人行为收集数据和见解。 这些平台可以协助营销人员导航匿名数据，根据先前的活动或作为具有类似习惯的受众的一部分向潜在客户提供优惠或广告。
+Personalization平台从个人行为中收集数据和见解。 这些平台可以协助营销人员导航匿名数据，根据先前的活动或作为具有类似习惯的受众的一部分向潜在客户提供优惠或广告。
 
 ## 支持的个性化目标 {#supported-destinations}
 
@@ -26,12 +26,12 @@ ht-degree: 14%
 * [Adobe Commerce](adobe-commerce.md)
 * [自定义个性化连接](custom-personalization.md)
 * [Pega客户决策中心连接](pega.md)
-* [Pega 配置文件连接](pega-profile.md)
+* [Pega配置文件连接](pega-profile.md)
 
 **扩展**
 
 * [Adobe Target 扩展](adobe-target.md)
-* [Adobe Target v2 扩展](adobe-target-v2.md)
+* [Adobe Target v2扩展](adobe-target-v2.md)
 * [Beemray扩展](beemray.md)
 * [D&amp;B Visitor Intelligence扩展](dnb.md)
 * [Experience Cloud ID 服务扩展](adobe-ecid.md)

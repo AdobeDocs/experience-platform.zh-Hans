@@ -36,7 +36,7 @@ Adobe Experience Platform 中现有功能的更新：
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| HIPAA 准备就绪 | Healthcare Shield 客户现在可以在归因人工智能和某些其他基于 Experience Platform 的应用程序中接收、使用、维护或传输受保护的健康信息。Healthcare Shield 适用于 HIPAA 下的受保实体或业务伙伴的医疗保健客户。有关更多信息，请阅读有关 [HIPAA 和 Adobe 产品和服务](https://www.adobe.com/cn/trust/compliance/hipaa-ready.html)的文档 |
+| HIPAA 准备就绪 | Healthcare Shield 客户现在可以在归因人工智能和某些其他基于 Experience Platform 的应用程序中接收、使用、维护或传输受保护的健康信息。Healthcare Shield 适用于 HIPAA 下的受保实体或业务伙伴的医疗保健客户。有关更多信息，请阅读有关 [HIPAA 和 Adobe 产品和服务](https://www.adobe.com/trust/compliance/hipaa-ready.html)的文档 |
 | 编辑其他得分数据集列 | 现在，您可以在编辑现有模型时添加或删除其他分数数据集列（报告列）。这扩展了属性分数的灵活性，以便在创建模型后为您提供对其他维度的见解。请参阅[属性 UI 指南](../../intelligent-services/attribution-ai/user-guide.md)，了解更多信息。 |
 
 {style="table-layout:auto"}
@@ -51,7 +51,7 @@ Adobe Experience Platform 中现有功能的更新：
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| HIPAA 准备就绪 | Healthcare Shield 客户现在可以在面向 Real-Time Customer Data Platform 的客户人工智能和某些其他基于 Experience Platform 的应用程序中接收、使用、维护或传输受保护的健康信息。Healthcare Shield 适用于 HIPAA 下的受保实体或业务伙伴的医疗保健客户。有关更多信息，请参阅有关 [HIPAA 和 Adobe 产品和服务](https://www.adobe.com/cn/trust/compliance/hipaa-ready.html)的文档 |
+| HIPAA 准备就绪 | Healthcare Shield 客户现在可以在面向 Real-Time Customer Data Platform 的客户人工智能和某些其他基于 Experience Platform 的应用程序中接收、使用、维护或传输受保护的健康信息。Healthcare Shield 适用于 HIPAA 下的受保实体或业务伙伴的医疗保健客户。有关更多信息，请参阅有关 [HIPAA 和 Adobe 产品和服务](https://www.adobe.com/trust/compliance/hipaa-ready.html)的文档 |
 
 {style="table-layout:auto"}
 

@@ -2,10 +2,11 @@
 title: Adobe Experience Platform查询服务支持的用例
 description: 了解Adobe Experience Platform查询服务支持哪些用例。
 keywords: 查询服务；用例
-source-git-commit: 454f485a327233ca1a5b37ea58f16b7b53255ba6
+exl-id: eba8050d-be3a-41b6-8175-4f6b2b2ef7b0
+source-git-commit: 62bcaa532cdec68a2f4f62e5784c35b91b7d5743
 workflow-type: tm+mt
 source-wordcount: '137'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -16,8 +17,7 @@ ht-degree: 1%
 本节中的每个文档都包含有关如何实施其各自用例的信息。 以下建议的文章演示了Query Service提供的多功能性：
 
 - [已放弃的浏览](./abandoned-browse.md)
-- [机器人筛选](./bot-filtering.md)
+- [机器人过滤](./bot-filtering.md)
 - [客户存留期值](./customer-lifetime-value.md)
 - [确定倾向分数](./propensity-score.md)
 - [模糊匹配](./fuzzy-match.md)
-

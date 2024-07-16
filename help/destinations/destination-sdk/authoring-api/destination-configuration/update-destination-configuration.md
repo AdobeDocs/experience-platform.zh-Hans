@@ -4,18 +4,18 @@ title: 更新目标配置
 exl-id: d7f18689-9806-4f73-a63a-fa112569819c
 source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
 workflow-type: tm+mt
-source-wordcount: '369'
-ht-degree: 2%
+source-wordcount: '370'
+ht-degree: 1%
 
 ---
 
 # 更新目标配置
 
-本页举例说明了可用于更新现有目标配置的API请求和有效负荷，使用 `/authoring/destinations` API端点。
+此页面展示了可用于使用`/authoring/destinations` API端点更新现有目标配置的API请求和有效负荷。
 
 >[!TIP]
 >
->只有在您使用 [发布API](../../publishing-api/create-publishing-request.md) 并提交更新以供Adobe审查。
+>只有在使用[发布API](../../publishing-api/create-publishing-request.md)并提交更新以供Adobe审查之后，才能看到对生产/公共目标执行的任何更新操作。
 
 有关目标配置的功能的详细说明，请阅读以下文章：
 
@@ -34,21 +34,21 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 目标配置API操作快速入门 {#get-started}
 
-在继续之前，请查看 [快速入门指南](../../getting-started.md) 获取成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[入门指南](../../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 更新目标配置 {#update}
 
-您可以更新 [现有](create-destination-configuration.md) 目标配置，方法是 `PUT` 请求 `/authoring/destinations` 具有更新的有效负载的端点。
+您可以通过向`/authoring/destinations`终结点发出包含已更新负载的`PUT`请求来更新[现有](create-destination-configuration.md)目标配置。
 
 >[!TIP]
 >
->API端点： `platform.adobe.io/data/core/activation/authoring/destinations`
+>API终结点： `platform.adobe.io/data/core/activation/authoring/destinations`
 
-获取现有目标配置及其相应的配置 `{INSTANCE_ID}`，请参阅关于以下内容的文章： [检索目标配置](retrieve-destination-configuration.md).
+要获取现有目标配置及其对应的`{INSTANCE_ID}`，请参阅有关[检索目标配置](retrieve-destination-configuration.md)的文章。
 
 **API格式**
 
@@ -58,11 +58,11 @@ PUT /authoring/destinations/{INSTANCE_ID}
 
 | 参数 | 描述 |
 | -------- | ----------- |
-| `{INSTANCE_ID}` | 要更新的目标配置的ID。 获取现有目标配置及其相应的配置 `{INSTANCE_ID}`，请参见 [检索目标配置](retrieve-destination-configuration.md). |
+| `{INSTANCE_ID}` | 要更新的目标配置的ID。 要获取现有目标配置及其对应的`{INSTANCE_ID}`，请参阅[检索目标配置](retrieve-destination-configuration.md)。 |
 
 +++请求
 
-以下请求将更新我们在中创建的目标 [此示例](create-destination-configuration.md#create) 与不同 `filenameConfig` 选项。
+以下请求使用不同的`filenameConfig`选项更新我们在[此示例](create-destination-configuration.md#create)中创建的目标。
 
 ```shell {line-numbers="true" highlight="115-128"}
 curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinations/{INSTANCE_ID} \
@@ -207,11 +207,11 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 ## API错误处理 {#error-handling}
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../../landing/troubleshooting.md#request-header-errors) ，位于平台疑难解答指南中。
+Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅平台疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤
 
-阅读本文档后，您现在知道如何通过Destination SDK更新目标配置 `/authoring/destinations` API端点。
+阅读本文档后，您现在知道如何通过Destination SDK`/authoring/destinations` API端点更新目标配置。
 
 要了解有关可使用此端点执行的操作的更多信息，请参阅以下文章：
 

@@ -33,7 +33,7 @@ ht-degree: 1%
 
 ## 页面顶部事件示例 {#top-of-page}
 
-以下代码示例展示了请求个性化但不请求的页面顶部事件配置 [发送显示事件](../personalization/display-events.md#send-sendEvent-calls) 自动渲染的建议。 此 [显示事件](../personalization/display-events.md#send-sendEvent-calls) 将作为页面底部事件的一部分发送。
+以下代码示例展示了页面顶部事件配置，该配置请求个性化但未[为自动呈现的建议](../personalization/display-events.md#send-sendEvent-calls)发送显示事件。 [显示事件](../personalization/display-events.md#send-sendEvent-calls)将作为页面底部事件的一部分发送。
 
 >[!BEGINTABS]
 
@@ -51,9 +51,9 @@ alloy("sendEvent", {
 
 | 参数 | 必需/可选 | 描述 |
 |---|---|---|
-| `type` | 必需 | 将此参数设置为 `decisioning.propositionFetch`. 此特殊事件类型告知Adobe Analytics删除此事件。 使用Customer Journey Analytics时，您还可以设置过滤器以删除这些事件。 |
-| `renderDecisions` | 必需 | 将此参数设置为 `true`. 此参数可告知Web SDK呈现边缘网络返回的决策。 |
-| `personalization.sendDisplayEvent` | 必需 | 将此参数设置为 `false`. 这将停止发送显示事件。 |
+| `type` | 必需 | 将此参数设置为`decisioning.propositionFetch`。 此特殊事件类型告知Adobe Analytics删除此事件。 使用Customer Journey Analytics时，您还可以设置过滤器以删除这些事件。 |
+| `renderDecisions` | 必需 | 将此参数设置为`true`。 此参数可告知Web SDK呈现由Edge Network返回的决策。 |
+| `personalization.sendDisplayEvent` | 必需 | 将此参数设置为`false`。 这将停止发送显示事件。 |
 
 >[!ENDTABS]
 
@@ -61,13 +61,13 @@ alloy("sendEvent", {
 
 >[!BEGINTABS]
 
->[!TAB 自动渲染的建议]
+>[!TAB 自动呈现的建议]
 
-以下代码示例展示了页面底部事件配置，该配置为已在页面上自动呈现但在中禁止显示事件的建议发送显示事件。 [页面顶部](#top-of-page) 事件。
+以下代码示例展示了页面底部事件配置，该配置为自动在页面上呈现，但在页面](#top-of-page)事件的[顶部禁止显示的主张发送显示事件。
 
 >[!NOTE]
 >
->在此方案中，必须调用页面底部事件 _之后_ 第一页顶部。 但是，页面底部事件不需要等待第一页顶部完成。
+>在此方案中，必须调用页面顶部的页面底部事件&#x200B;_after_。 但是，页面底部事件不需要等待第一页顶部完成。
 
 ```js
 alloy("sendEvent", {
@@ -80,10 +80,10 @@ alloy("sendEvent", {
 
 | 参数 | 必需/可选 | 描述 |
 |---|---|---|
-| `personalization.includeRenderedPropositions` | 必需 | 将此参数设置为 `true`. 这将允许发送在页面事件顶部禁止显示的显示事件。 |
+| `personalization.includeRenderedPropositions` | 必需 | 将此参数设置为`true`。 这将允许发送在页面事件顶部禁止显示的显示事件。 |
 | `xdm` | 可选 | 使用此部分可包含页面底部事件所需的所有数据。 |
 
->[!TAB 手动渲染的建议]
+>[!TAB 手动呈现建议]
 
 以下代码示例展示了页面底部事件配置，该配置为在页面上手动呈现的建议（即，对于自定义决策范围或表面）发送显示事件。
 
@@ -117,8 +117,8 @@ alloy("sendEvent", {
 
 | 参数 | 必需/可选 | 描述 |
 |---|---|---|
-| `xdm._experience.decisioning.propositions` | 必需 | 此部分定义手动呈现的建议。 您必须包含建议 `ID`， `scope`、和 `scopeDetails`. 请参阅有关如何执行操作的文档 [手动渲染个性化](../personalization/rendering-personalization-content.md#manually) 有关如何记录手动渲染内容的显示事件的更多信息。 手动呈现的个性化内容必须包含在页面点击的底部。 |
-| `xdm._experience.decisioning.propositionEventType` | 必需 | 将此参数设置为 `display: 1`. |
+| `xdm._experience.decisioning.propositions` | 必需 | 此部分定义手动呈现的建议。 必须包括建议`ID`、`scope`和`scopeDetails`。 请参阅有关如何[手动渲染个性化](../personalization/rendering-personalization-content.md#manually)的文档，以了解有关如何记录手动渲染内容的显示事件的更多信息。 手动呈现的个性化内容必须包含在页面点击的底部。 |
+| `xdm._experience.decisioning.propositionEventType` | 必需 | 将此参数设置为`display: 1`。 |
 | `xdm` | 可选 | 使用此部分可包含页面底部事件所需的所有数据。 |
 
 >[!ENDTABS]
@@ -129,9 +129,9 @@ alloy("sendEvent", {
 
 >[!BEGINTABS]
 
->[!TAB 第一页查看]
+>[!TAB 第一页查看次数]
 
-以下示例包括添加所需的 `xdm.web.webPageDetails.viewName` 参数。 这就是它成为单页应用程序的原因。 此 `viewName` 在此示例中，是在页面加载时加载的视图。
+以下示例包括所需`xdm.web.webPageDetails.viewName`参数的相加。 这就是它成为单页应用程序的原因。 此示例中的`viewName`是页面加载时加载的视图。
 
 ```js
 // Top of page, render decisions for the "home" view.
@@ -191,7 +191,7 @@ alloy("sendEvent", {
 
 >[!TAB 第二次页面查看（选项2）]
 
-如果您仍需要延迟页面点击的底部，则可以使用 `applyPropositions` ，表示页面点击的顶部。 由于无需获取个性化设置且无需记录Analytics数据，因此无需向Edge Network发出请求。
+如果您仍需要延迟页面点击的底部，则可以使用`applyPropositions`作为页面点击的顶部。 由于无需获取任何个性化设置且无需记录Analytics数据，因此无需向Edge Network发出请求。
 
 ```js
 // top of page, render the decisions already fetched for the "cart" view.
@@ -222,4 +222,4 @@ alloy("sendEvent", {
 
 ## GitHub示例 {#github-sample}
 
-在以下位置找到的样本： [此地址](https://github.com/adobe/alloy-samples/tree/main/target/top-and-bottom) 演示如何使用Experience Platform和Web SDK在页面顶部请求个性化，并在底部发送分析量度。 您可以下载示例并在本地运行它以了解页面顶部和底部事件的工作原理。
+在[此地址](https://github.com/adobe/alloy-samples/tree/main/target/top-and-bottom)找到的示例演示了如何使用Experience Platform和Web SDK在页面顶部请求个性化，并在底部发送分析指标。 您可以下载示例并在本地运行它以了解页面顶部和底部事件的工作原理。

@@ -4,7 +4,7 @@ title: 使用Destination SDK构建的流目标的速率限制和重试策略
 exl-id: aad10039-9957-4e9e-a0b7-7bf65eb3eaa9
 source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
-source-wordcount: '426'
+source-wordcount: '436'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 合作伙伴构建的目标可能会返回各种错误，并且具有不同的速率限制策略。 本页说明Experience Platform如何处理流目标返回的各种类型的错误。
 
-使用Destination SDK配置目标时，您可以在两种聚合类型之间进行选择 —  [最大努力聚合](../functionality/destination-configuration/aggregation-policy.md#best-effort-aggregation) 和 [可配置聚合](../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation). 根据您选择的聚合类型，请阅读下面的Experience Platform如何处理错误和速率限制。
+使用Destination SDK配置目标时，您可以在两种聚合类型之间进行选择 — [最大努力聚合](../functionality/destination-configuration/aggregation-policy.md#best-effort-aggregation)和[可配置的聚合](../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation)。 根据您选择的聚合类型，请阅读下面的Experience Platform如何处理错误和速率限制。
 
 ## 最大努力聚合 {#best-effort-aggregation}
 
@@ -26,7 +26,7 @@ ht-degree: 0%
 * Experience Platform重试将数据发送到您的平台的错误：
    * HTTP响应代码420和429
    * HTTP响应代码大于500
-* Experience Platform的错误 *不会* 重试将数据发送到平台：平台返回的所有其他数据
+* Experience Platform *未*&#x200B;重试将数据发送到平台的错误：平台返回的所有其他数据
 
 ### 已描述重试方法 {#retry-approach}
 

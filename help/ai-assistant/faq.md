@@ -1,7 +1,8 @@
 ---
 title: AI助手常见问题解答
 description: 了解关于AI助理的常见问题解答
-source-git-commit: 0820ba0f14e9eae5d89cd48490b1af5f9afcda70
+exl-id: 17a07c11-7bc6-4cba-be0a-d75fdb567053
+source-git-commit: da5a4e099909d7994b9bbe408a70039d34c14b50
 workflow-type: tm+mt
 source-wordcount: '305'
 ht-degree: 0%
@@ -16,14 +17,14 @@ ht-degree: 0%
 
 AI Assistant响应中显示的数据每天都会更新。 这意味着响应中的数据可能比您在Experience Platform用户界面上看到的响应数据晚24小时。
 
-访问控制也适用相同的原则。 AI助手可能需要24小时才能反映在访问控制和权限配置中所做的任何更改。 有关详细信息，请阅读上的指南 [AI助手中的隐私](./privacy.md).
+访问控制也适用相同的原则。 AI助手可能需要24小时才能反映在访问控制和权限配置中所做的任何更改。 有关详细信息，请阅读AI助手](./privacy.md)中有关[隐私的指南。
 
 ## AI Assistant支持哪些Adobe应用程序？
 
 目前，人工智能助理的范围如下：
 
-* [产品知识](./home.md#product-knowledge)：AI助手可以回答Experience Platform、Real-time Customer Data Platform和Adobe Journey Optimizer的产品知识问题。 您也可以深入探讨Customer Journey Analytics的产品知识主题，但只能通过Customer Journey AnalyticsUI进行探讨。
-* [运营见解](./home.md#operational-insights)：您可以向AI助手询问有关以下数据对象的操作见解的问题：属性、受众、数据流、数据集、目标、历程、架构和源。
+* [产品知识](./home.md#product-knowledge)： AI助手可以回答Experience Platform、Real-time Customer Data Platform和Adobe Journey Optimizer的产品知识问题。 您也可以深入探讨Customer Journey Analytics的产品知识主题，但只能通过Customer Journey AnalyticsUI进行探讨。
+* [操作分析](./home.md#operational-insights)：您可以向AI助手询问有关以下数据对象的操作分析的问题：属性、受众、数据流、数据集、目标、历程、架构和源。
 
 ## AI Assistant具有哪些功能？
 

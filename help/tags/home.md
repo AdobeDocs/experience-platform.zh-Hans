@@ -1,11 +1,11 @@
 ---
 title: 标记概述
-description: Adobe Experience Platform 中的标记是 Adobe 推出的新一代标记管理功能。标记为客户提供了一种简单的方式来部署和管理所有用来加强相关客户体验的分析、营销和广告标记。
+description: Adobe Experience Platform中的标记是Adobe推出的新一代标记管理功能。 标记为客户提供了一种简单的方式来部署和管理所有用来加强相关客户体验的分析、营销和广告标记。
 exl-id: 23d882a5-1ddd-404b-a7e9-3000f1804971
 source-git-commit: 31811b7448a285ee5d25872641354a6981c64471
 workflow-type: tm+mt
 source-wordcount: '588'
-ht-degree: 65%
+ht-degree: 53%
 
 ---
 
@@ -13,13 +13,13 @@ ht-degree: 65%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](./term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](./term-updates.md)。
 
-Adobe Experience Platform 中的标记是 Adobe 推出的新一代标记管理功能。标记为客户提供了一种简单的方式来部署和管理所有用来加强相关客户体验的分析、营销和广告标记。
+Adobe Experience Platform中的标记是Adobe推出的新一代标记管理功能。 标记为客户提供了一种简单的方式来部署和管理所有用来加强相关客户体验的分析、营销和广告标记。
 
-标记可让任何人构建并维护自己的集成，称为 *扩展*. [!DNL Adobe Experience Cloud] 客户可在应用商店中获取这些扩展，从而可以快速安装、配置和部署自己的标记。
+标记可让任何人构建并维护他们自己的集成，这称为&#x200B;*扩展*。 [!DNL Adobe Experience Cloud] 客户可在应用商店中获取这些扩展，从而可以快速安装、配置和部署自己的标记。
 
-标记提供给 [!DNL Adobe Experience Cloud] 客户作为内置增值功能。
+标记作为包含的增值功能提供给[!DNL Adobe Experience Cloud]客户。
 
 ## 主要优点 {#key-benefits}
 
@@ -31,11 +31,11 @@ Adobe Experience Platform 中的标记是 Adobe 推出的新一代标记管理�
 
 使用右侧面板中的产品帮助中的，了解有关标记的更多信息并查看其他可用资源。
 
-![数据收集UI中的标记属性。](./images/ui/tags-overview/tags-properties.png)
+数据收集UI中的![标记属性。](./images/ui/tags-overview/tags-properties.png)
 
 ### 扩展 {#extensions}
 
-扩展是一种用于扩展标记功能的代码包（JavaScript、HTML 和 CSS）。使用几乎自助的界面构建、管理和更新您的集成。您可以将扩展视为用于完成任务的应用程序。
+扩展是一种用于扩展标记功能的代码包(JavaScript、HTML和CSS)。 使用几乎自助的界面构建、管理和更新您的集成。您可以将扩展视为用于完成任务的应用程序。
 
 ### 扩展目录 {#extension-catalog}
 

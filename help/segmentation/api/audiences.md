@@ -12,19 +12,19 @@ ht-degree: 2%
 
 # 受众端点
 
-受众是指具有相似行为和/或特征的人群。 这些人员集合可以通过使用Adobe Experience Platform或从外部源生成。 您可以使用 `/audiences` 分段API中的端点，允许您以编程方式检索、创建、更新和删除受众。
+受众是指具有相似行为和/或特征的人群。 这些人员集合可以通过使用Adobe Experience Platform或从外部源生成。 您可以使用分段API中的`/audiences`端点，它允许您以编程方式检索、创建、更新和删除受众。
 
 ## 快速入门
 
-本指南中使用的端点是 [!DNL Adobe Experience Platform Segmentation Service] API。 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关成功调用API所需了解的重要信息，包括所需的标头以及如何读取示例API调用。
+本指南中使用的端点是[!DNL Adobe Experience Platform Segmentation Service] API的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)以了解成功调用API所需了解的重要信息，包括所需的标头以及如何读取示例API调用。
 
 ## 检索受众列表 {#list}
 
-您可以通过向以下网站发出GET请求，检索贵组织所有受众的列表： `/audiences` 端点。
+您可以通过向`/audiences`端点发出GET请求来检索贵组织的所有受众的列表。
 
 **API格式**
 
-此 `/audiences` 端点支持多个查询参数以帮助筛选结果。 虽然这些参数是可选的，但强烈建议使用这些参数，以帮助在列出资源时减少昂贵的开销。 如果您在不使用参数的情况下调用此端点，则将检索对您的组织可用的所有受众。 可以包含多个参数，以&amp;分隔(`&`)。
+`/audiences`端点支持多个查询参数以帮助筛选结果。 虽然这些参数是可选的，但强烈建议使用这些参数，以帮助在列出资源时减少昂贵的开销。 如果您在不使用参数的情况下调用此端点，则将检索对您的组织可用的所有受众。 可以包含多个参数，以&amp;符号(`&`)分隔。
 
 ```http
 GET /audiences
@@ -37,10 +37,10 @@ GET /audiences?{QUERY_PARAMETERS}
 | --------------- | ----------- | ------- |
 | `start` | 指定返回受众的起始偏移。 | `start=5` |
 | `limit` | 指定每页返回的最大受众数。 | `limit=10` |
-| `sort` | 指定排序结果的顺序。 这是以格式编写的 `attributeName:[desc/asc]`. | `sort=updateTime:desc` |
-| `property` | 允许您指定受众的过滤器 **完全匹配** 匹配属性的值。 这是以格式编写的 `property=` | `property=audienceId==test-audience-id` |
-| `name` | 允许您指定其名称的受众的过滤器 **contain** 提供的值。 此值不区分大小写。 | `name=Sample` |
-| `description` | 允许您指定其描述的受众的过滤器 **contain** 提供的值。 此值不区分大小写。 | `description=Test Description` |
+| `sort` | 指定排序结果的顺序。 这是以`attributeName:[desc/asc]`格式编写的。 | `sort=updateTime:desc` |
+| `property` | 允许您指定&#x200B;**与**&#x200B;属性值完全匹配的受众的筛选器。 这是以`property=`格式编写的 | `property=audienceId==test-audience-id` |
+| `name` | 允许您指定其名称&#x200B;**包含**&#x200B;所提供值的受众的筛选器。 此值不区分大小写。 | `name=Sample` |
+| `description` | 用于指定其描述&#x200B;**包含**&#x200B;所提供值的受众的筛选器。 此值不区分大小写。 | `description=Test Description` |
 
 **请求**
 
@@ -176,29 +176,29 @@ curl -X GET https://platform.adobe.io/data/core/ups/audiences?limit=2 \
 | 属性 | 受众类型 | 描述 |
 | -------- | ------------- | ----------- | 
 | `id` | 两者 | 系统生成的受众只读标识符。 |
-| `audienceId` | 两者 | 如果受众是平台生成的受众，则此值与 `id`. 如果受众是外部生成的，则此值由客户端提供。 |
+| `audienceId` | 两者 | 如果该受众是平台生成的受众，则其值与`id`的值相同。 如果受众是外部生成的，则此值由客户端提供。 |
 | `schema` | 两者 | 受众的体验数据模型(XDM)架构。 |
 | `imsOrgId` | 两者 | 受众所属的组织的ID。 |
-| `sandbox` | 两者 | 有关受众所属的沙盒的信息。 有关沙箱的详细信息，请参阅 [沙盒概述](../../sandboxes/home.md). |
+| `sandbox` | 两者 | 有关受众所属的沙盒的信息。 有关沙箱的详细信息，请参阅[沙箱概述](../../sandboxes/home.md)。 |
 | `name` | 两者 | 受众的名称。 |
 | `description` | 两者 | 受众的描述。 |
-| `expression` | 平台生成 | 受众的个人资料查询语言(PQL)表达式。 有关PQL表达式的更多信息，请参见 [PQL表达式指南](../pql/overview.md). |
-| `mergePolicyId` | 平台生成 | 受众关联的合并策略的ID。 有关合并策略的更多信息，请参阅 [合并策略指南](../../profile/api/merge-policies.md). |
-| `evaluationInfo` | 平台生成 | 显示评估受众的方式。 可能的评估方法包括批处理、同步（流）或连续（边缘）。 有关评估方法的更多信息，请参阅 [分段概述](../home.md) |
+| `expression` | 平台生成 | 受众的Profile Query Language (PQL)表达式。 有关PQL表达式的详细信息，请参阅[PQL表达式指南](../pql/overview.md)。 |
+| `mergePolicyId` | 平台生成 | 受众关联的合并策略的ID。 有关合并策略的详细信息，请参阅[合并策略指南](../../profile/api/merge-policies.md)。 |
+| `evaluationInfo` | 平台生成 | 显示评估受众的方式。 可能的评估方法包括批处理、同步（流）或连续（边缘）。 有关评估方法的更多信息，请参阅[分段概述](../home.md) |
 | `dependents` | 两者 | 依赖于当前受众的受众ID数组。 如果您创建的受众是区段的区段，则会使用此字段。 |
 | `dependencies` | 两者 | 受众所依赖的受众ID数组。 如果您创建的受众是区段的区段，则会使用此字段。 |
-| `type` | 两者 | 一个系统生成的字段，用于显示受众是平台生成的还是外部生成的受众。 可能的值包括 `SegmentDefinition` 和 `ExternalSegment`. A `SegmentDefinition` 指在Platform中生成的受众，而 `ExternalSegment` 引用了未在Platform中生成的受众。 |
-| `originName` | 两者 | 引用受众来源名称的字段。 对于平台生成的受众，此值将为 `REAL_TIME_CUSTOMER_PROFILE`. 对于在Audience Orchestration中生成的受众，此值将为 `AUDIENCE_ORCHESTRATION`. 对于在Adobe Audience Manager中生成的受众，此值将为 `AUDIENCE_MANAGER`. 对于其他外部生成的受众，此值将为 `CUSTOM_UPLOAD`. |
+| `type` | 两者 | 一个系统生成的字段，用于显示受众是平台生成的还是外部生成的受众。 可能的值包括`SegmentDefinition`和`ExternalSegment`。 `SegmentDefinition`引用在Platform中生成的受众，而`ExternalSegment`引用未在Platform中生成的受众。 |
+| `originName` | 两者 | 引用受众来源名称的字段。 对于平台生成的受众，此值将为`REAL_TIME_CUSTOMER_PROFILE`。 对于在Audience Orchestration中生成的受众，此值将为`AUDIENCE_ORCHESTRATION`。 对于在Adobe Audience Manager中生成的受众，此值将为`AUDIENCE_MANAGER`。 对于其他外部生成的受众，此值将为`CUSTOM_UPLOAD`。 |
 | `createdBy` | 两者 | 创建受众的用户的ID。 |
 | `labels` | 两者 | 与受众相关的对象级别数据使用和基于属性的访问控制标签。 |
-| `namespace` | 两者 | 受众所属的命名空间。 可能的值包括 `AAM`， `AAMSegments`， `AAMTraits`、和 `AEPSegments`. |
+| `namespace` | 两者 | 受众所属的命名空间。 可能的值包括`AAM`、`AAMSegments`、`AAMTraits`和`AEPSegments`。 |
 | `linkedAudienceRef` | 两者 | 包含其他受众相关系统标识符的对象。 |
 
 +++
 
 ## 创建新受众 {#create}
 
-您可以通过向以下对象发出POST请求来创建新受众： `/audiences` 端点。
+您可以通过向`/audiences`端点发出POST请求来创建新受众。
 
 **API格式**
 
@@ -245,8 +245,8 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences
 | -------- | ----------- | 
 | `name` | 受众的名称。 |
 | `description` | 受众的描述。 |
-| `type` | 一个字段，用于显示受众是平台生成的受众还是外部生成的受众。 可能的值包括 `SegmentDefinition` 和 `ExternalSegment`. A `SegmentDefinition` 指在Platform中生成的受众，而 `ExternalSegment` 引用了未在Platform中生成的受众。 |
-| `expression` | 受众的个人资料查询语言(PQL)表达式。 有关PQL表达式的更多信息，请参见 [PQL表达式指南](../pql/overview.md). |
+| `type` | 一个字段，用于显示受众是平台生成的受众还是外部生成的受众。 可能的值包括`SegmentDefinition`和`ExternalSegment`。 `SegmentDefinition`引用在Platform中生成的受众，而`ExternalSegment`引用未在Platform中生成的受众。 |
+| `expression` | 受众的Profile Query Language (PQL)表达式。 有关PQL表达式的详细信息，请参阅[PQL表达式指南](../pql/overview.md)。 |
 | `schema` | 受众的体验数据模型(XDM)架构。 |
 | `labels` | 与受众相关的对象级别数据使用和基于属性的访问控制标签。 |
 | `ttlInDays` | 表示受众的数据过期值（以天为单位）。 |
@@ -288,13 +288,13 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences
 | `name` | 受众的名称。 |
 | `namespace` | 受众的命名空间。 |
 | `description` | 受众的描述。 |
-| `type` | 一个字段，用于显示受众是平台生成的受众还是外部生成的受众。 可能的值包括 `SegmentDefinition` 和 `ExternalSegment`. A `SegmentDefinition` 指在Platform中生成的受众，而 `ExternalSegment` 引用了未在Platform中生成的受众。 |
-| `originName` | 受众来源的名称。 对于外部生成的受众，此参数的默认值为 `CUSTOM_UPLOAD`. 其他支持的值包括 `REAL_TIME_CUSTOMER_PROFILE`， `CUSTOM_UPLOAD`， `AUDIENCE_ORCHESTRATION`、和 `AUDIENCE_MATCH`. |
-| `lifecycleState` | 一个可选字段，可确定您尝试创建的受众的初始状态。 支持的值包括 `draft`， `published`、和 `inactive`. |
+| `type` | 一个字段，用于显示受众是平台生成的受众还是外部生成的受众。 可能的值包括`SegmentDefinition`和`ExternalSegment`。 `SegmentDefinition`引用在Platform中生成的受众，而`ExternalSegment`引用未在Platform中生成的受众。 |
+| `originName` | 受众来源的名称。 对于外部生成的受众，其默认值为`CUSTOM_UPLOAD`。 其他支持的值包括`REAL_TIME_CUSTOMER_PROFILE`、`CUSTOM_UPLOAD`、`AUDIENCE_ORCHESTRATION`和`AUDIENCE_MATCH`。 |
+| `lifecycleState` | 一个可选字段，可确定您尝试创建的受众的初始状态。 支持的值包括`draft`、`published`和`inactive`。 |
 | `datasetId` | 可在其中找到包含受众的数据的数据集的ID。 |
 | `labels` | 与受众相关的对象级别数据使用和基于属性的访问控制标签。 |
 | `audienceMeta` | 属于外部生成的受众的元数据。 |
-| `linkedAudienceRef` | 包含其他受众相关系统标识符的对象。 这可能包括以下内容： <ul><li>`flowId`：此ID用于将受众连接到用于引入受众数据的数据流。 有关所需ID的更多信息，请参阅 [创建数据流指南](../../sources/tutorials/api/collect/cloud-storage.md).</li><li>`aoWorkflowId`：此ID用于将受众连接到相关的Audience Orchestration合成。&lt;/li/> <li>`payloadFieldGroupRef`：此ID用于引用描述受众结构的XDM字段组架构。 有关此字段值的更多信息，请参见 [XDM字段组端点指南](../../xdm/api/field-groups.md).</li><li>`audienceFolderId`：此ID用于引用Adobe Audience Manager中受众的文件夹ID。 有关此API的更多信息，请参阅 [Adobe Audience Manager API指南](https://bank.demdex.com/portal/swagger/index.html#/Segment%20Folder%20API).</ul> |
+| `linkedAudienceRef` | 包含其他受众相关系统标识符的对象。 这可能包括以下内容： <ul><li>`flowId`：此ID用于将受众连接到用于引入受众数据的数据流。 有关所需ID的详细信息，请参阅[创建数据流指南](../../sources/tutorials/api/collect/cloud-storage.md)。</li><li>`aoWorkflowId`：此ID用于将受众连接到相关的Audience Orchestration合成。&lt;/li/> <li>`payloadFieldGroupRef`：此ID用于引用描述受众结构的XDM字段组架构。 有关此字段值的更多信息，请参阅[XDM字段组终结点指南](../../xdm/api/field-groups.md)。</li><li>`audienceFolderId`：此ID用于引用受众的Adobe Audience Manager中的文件夹ID。 有关此API的详细信息，请参阅[Adobe Audience Manager API指南](https://bank.demdex.com/portal/swagger/index.html#/Segment%20Folder%20API)。</ul> |
 
 +++
 
@@ -419,7 +419,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences
 
 ## 查找指定受众 {#get}
 
-您可以通过对以下网站发出GET请求，查找有关特定受众的详细信息 `/audiences` 端点，并提供您希望在请求路径中检索的受众ID。
+您可以查找有关特定受众的详细信息，方法是向`/audiences`端点发出GET请求，并在请求路径中提供您希望检索的受众ID。
 
 **API格式**
 
@@ -429,7 +429,7 @@ GET /audiences/{AUDIENCE_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- | 
-| `{AUDIENCE_ID}` | 您尝试检索的受众ID。 请注意，这是 `id` 字段，并且是 **非** 该 `audienceId` 字段。 |
+| `{AUDIENCE_ID}` | 您尝试检索的受众ID。 请注意，这是`id`字段，是&#x200B;**而不是** `audienceId`字段。 |
 
 **请求**
 
@@ -561,7 +561,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/audiences/60ccea95-1435-4180
 
 ## 更新受众中的字段 {#update-field}
 
-您可以通过向以下对象发出PATCH请求来更新特定受众的字段： `/audiences` 端点并在请求路径中提供要更新的受众ID。
+您可以通过向`/audiences`端点发出PATCH请求并在请求路径中提供要更新的受众ID来更新特定受众的字段。
 
 **API格式**
 
@@ -571,7 +571,7 @@ PATCH /audiences/{AUDIENCE_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{AUDIENCE_ID}` | 要更新的受众的ID。 请注意，这是 `id` 字段，并且是 **非** 该 `audienceId` 字段。 |
+| `{AUDIENCE_ID}` | 要更新的受众的ID。 请注意，这是`id`字段，是&#x200B;**而不是** `audienceId`字段。 |
 
 **请求**
 
@@ -600,7 +600,7 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-45
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `op` | 对于更新受众，此值始终为 `add`. |
+| `op` | 要更新受众，此值始终为`add`。 |
 | `path` | 要更新的字段的路径。 |
 | `value` | 您希望更新字段的值。 |
 
@@ -679,7 +679,7 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-45
 
 ## 更新受众 {#put}
 
-您可以通过向以下对象发出PUT请求来更新（覆盖）特定受众： `/audiences` 端点并在请求路径中提供要更新的受众ID。
+您可以通过向`/audiences`端点发出PUT请求并在请求路径中提供要更新的受众ID来更新（覆盖）特定受众。
 
 **API格式**
 
@@ -689,7 +689,7 @@ PUT /audiences/{AUDIENCE_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{AUDIENCE_ID}` | 要更新的受众的ID。 请注意，这是 `id` 字段，并且是 **非** 该 `audienceId` 字段。 |
+| `{AUDIENCE_ID}` | 要更新的受众的ID。 请注意，这是`id`字段，是&#x200B;**而不是** `audienceId`字段。 |
 
 **请求**
 
@@ -722,8 +722,8 @@ curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513
 | `name` | 受众的名称。 |
 | `namespace` | 受众的命名空间。 |
 | `description` | 受众的描述。 |
-| `type` | 一个系统生成的字段，用于显示受众是平台生成的还是外部生成的受众。 可能的值包括 `SegmentDefinition` 和 `ExternalSegment`. A `SegmentDefinition` 指在Platform中生成的受众，而 `ExternalSegment` 引用了未在Platform中生成的受众。 |
-| `lifecycleState` | 受众的状态。 可能的值包括 `draft`， `published`、和 `inactive`. `draft` 表示创建受众的时间， `published` 发布受众的时间，以及 `inactive` 受众不再处于活动状态时。 |
+| `type` | 一个系统生成的字段，用于显示受众是平台生成的还是外部生成的受众。 可能的值包括`SegmentDefinition`和`ExternalSegment`。 `SegmentDefinition`引用在Platform中生成的受众，而`ExternalSegment`引用未在Platform中生成的受众。 |
+| `lifecycleState` | 受众的状态。 可能的值包括`draft`、`published`和`inactive`。 `draft`表示创建受众的时间、`published`表示发布受众的时间，以及`inactive`表示受众不再处于活动状态的时间。 |
 | `datasetId` | 可找到受众数据的数据集的ID。 |
 | `labels` | 与受众相关的对象级别数据使用和基于属性的访问控制标签。 |
 
@@ -765,7 +765,7 @@ curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513
 
 ## 删除受众 {#delete}
 
-您可以通过向以下对象发出DELETE请求来删除特定受众： `/audiences` 端点并在请求路径中提供要删除的受众ID。
+您可以通过向`/audiences`端点发出DELETE请求并在请求路径中提供要删除的受众ID来删除特定受众。
 
 **API格式**
 
@@ -775,7 +775,7 @@ DELETE /audiences/{AUDIENCE_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{AUDIENCE_ID}` | 要删除的受众ID。 请注意，这是 `id` 字段，并且是 **非** 该 `audienceId` 字段。 |
+| `{AUDIENCE_ID}` | 要删除的受众ID。 请注意，这是`id`字段，是&#x200B;**而不是** `audienceId`字段。 |
 
 **请求**
 
@@ -797,7 +797,7 @@ curl -X DELETE https://platform.adobe.io/data/core/ups/audiences/60ccea95-1435-4
 
 ## 检索多个受众 {#bulk-get}
 
-您可以通过向以下网站发出POST请求来检索多个受众： `/audiences/bulk-get` 端点，并提供要检索的受众的ID。
+您可以通过向`/audiences/bulk-get`端点发出POST请求并提供要检索的受众ID来检索多个受众。
 
 **API格式**
 
@@ -937,4 +937,4 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences/bulk-get
 
 ## 后续步骤
 
-阅读本指南后，您现在可以更好地了解如何使用Adobe Experience Platform API创建、管理和删除受众。 有关使用UI进行受众管理的更多信息，请参阅 [分段UI指南](../ui/overview.md).
+阅读本指南后，您现在可以更好地了解如何使用Adobe Experience Platform API创建、管理和删除受众。 有关使用UI进行受众管理的更多信息，请参阅[分段UI指南](../ui/overview.md)。

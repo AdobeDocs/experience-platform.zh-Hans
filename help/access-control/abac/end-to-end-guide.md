@@ -19,16 +19,16 @@ ht-degree: 18%
 
 >[!NOTE]
 >
->本文档重点介绍访问控制策略的用例。 如果您试图设置策略以管理 **使用** ，而不是哪些Platform用户可以访问，请参阅的端到端指南 [数据管理](../../data-governance/e2e.md) 而是。
+>本文档重点介绍访问控制策略的用例。 如果您正在尝试设置策略以管理&#x200B;**使用**&#x200B;的数据，而不是哪些Platform用户有权访问它，请改为参阅[数据管理](../../data-governance/e2e.md)的端到端指南。
 
 ## 快速入门
 
 本教程需要您实际了解以下平台组件：
 
 * [[!DNL Experience Data Model (XDM)] 系统](../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
-   * [模式组合基础](../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
+   * [架构组合的基础知识](../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构编辑器教程](../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
-* [Adobe Experience Platform Segmentation Service](../../segmentation/home.md)：内的分段引擎 [!DNL Platform] 用于根据客户行为和属性，从客户配置文件中创建受众区段。
+* [Adobe Experience Platform分段服务](../../segmentation/home.md)： [!DNL Platform]中的分段引擎用于根据客户行为和属性从客户配置文件创建受众区段。
 
 ### 用例概述
 
@@ -36,31 +36,31 @@ ht-degree: 18%
 
 您是医疗保健提供商，希望配置对组织中资源的访问权限。
 
-* 您的内部营销团队应该能够访问 **[!UICONTROL PHI/管控的健康数据]** 数据。
-* 您的外部机构应该无法访问 **[!UICONTROL PHI/管控的健康数据]** 数据。
+* 您的内部营销团队应该能够访问&#x200B;**[!UICONTROL PHI/监管健康数据]**&#x200B;数据。
+* 您的外部机构应该不能访问&#x200B;**[!UICONTROL PHI/监管健康数据]**&#x200B;数据。
 
 为此，您必须配置角色、资源和策略。
 
 您将会：
 
-* [为用户设置角色标签](#label-roles)：以营销组与外部代理合作的医疗保健提供商（ACME业务组）为例。
-* [为资源添加标签（架构字段和区段）](#label-resources)：分配 **[!UICONTROL PHI/管控的健康数据]** 标签到架构资源和区段。
+* [为用户的角色添加标签](#label-roles)：以营销组与外部代理合作的医疗保健提供商（ACME业务组）为例。
+* [为资源（架构字段和区段）添加标签](#label-resources)：将&#x200B;**[!UICONTROL PHI/监管的运行状况数据]**&#x200B;标签分配给架构资源和区段。
 * 
    * [激活将它们链接在一起的策略：](#policy)：启用默认策略，通过将资源上的标签连接到角色中的标签来阻止对架构字段和区段的访问。 随后，具有匹配标签的用户将获得对架构字段的访问权限，并可在所有沙盒中进行分段。
 
 ## 权限
 
-[!UICONTROL 权限] 是Experience Cloud区域，管理员可以在其中定义用户角色和策略，以管理产品应用程序内功能和对象的权限。
+[!UICONTROL 权限]是Experience Cloud区域，管理员可以在其中定义用户角色和策略，以管理产品应用程序内功能和对象的权限。
 
-到 [!UICONTROL 权限]中，您可以创建和管理角色，并为这些角色分配所需的资源权限。 [!UICONTROL 权限] 还允许您管理与特定角色关联的标签、沙盒和用户。
+通过[!UICONTROL 权限]，您可以创建和管理角色，并为这些角色分配所需的资源权限。 [!UICONTROL 权限]还允许您管理与特定角色关联的标签、沙盒和用户。
 
 如果您没有管理员权限，请与系统管理员联系以获得访问权限。
 
-拥有管理员权限后，转到 [Adobe Experience Cloud](https://experience.adobe.com/) 并使用您的Adobe凭据登录。 登录后， **[!UICONTROL 概述]** 此时将显示您拥有管理员权限的组织所对应的页面。 此页面显示贵组织订阅的产品，以及用于将用户和管理员添加到该组织的其他控件。 选择 **[!UICONTROL 权限]** 以打开用于您的平台集成的工作区。
+一旦您拥有管理员权限，请转到[Adobe Experience Cloud](https://experience.adobe.com/)并使用您的Adobe凭据登录。 登录后，会为您拥有管理员权限的组织显示&#x200B;**[!UICONTROL 概述]**&#x200B;页面。 此页面显示贵组织订阅的产品，以及用于将用户和管理员添加到该组织的其他控件。 选择&#x200B;**[!UICONTROL 权限]**&#x200B;以打开平台集成的工作区。
 
-![该图像显示了在Adobe Experience Cloud中选择的权限产品](../images/flac-ui/flac-select-product.png)
+![显示正在Adobe Experience Cloud中选择的权限产品的图像](../images/flac-ui/flac-select-product.png)
 
-此时将显示Platform UI的权限工作区，并在以下位置打开： **[!UICONTROL 角色]** 页面。
+Platform UI的“权限”工作区随即出现，并在&#x200B;**[!UICONTROL 角色]**&#x200B;页面上打开。
 
 ## 将标签应用于角色 {#label-roles}
 
@@ -95,15 +95,15 @@ ht-degree: 18%
 
 角色是对与Platform实例交互的用户类型进行分类的方法，是访问控制策略的构建块。 角色具有给定的权限集，组织的成员可以根据所需的访问范围分配给一个或多个角色。
 
-要开始配置，请选择 **[!UICONTROL ACME业务组]** 从 **[!UICONTROL 角色]** 页面。
+要开始操作，请从&#x200B;**[!UICONTROL 角色]**&#x200B;页面中选择&#x200B;**[!UICONTROL ACME业务组]**。
 
-![显示将在角色中选择的ACME业务角色的图像](../images/abac-end-to-end-user-guide/abac-select-role.png)
+![显示角色中正在选择的ACME业务角色的图像](../images/abac-end-to-end-user-guide/abac-select-role.png)
 
-接下来，选择 **[!UICONTROL 标签]** 然后选择 **[!UICONTROL 添加标签]**.
+接下来，选择&#x200B;**[!UICONTROL 标签]**，然后选择&#x200B;**[!UICONTROL 添加标签]**。
 
-![该图像显示了在“标签”选项卡上选择的“添加标签”](../images/abac-end-to-end-user-guide/abac-select-add-labels.png)
+![图像显示在“标签”选项卡上选择的“添加标签”](../images/abac-end-to-end-user-guide/abac-select-add-labels.png)
 
-此时将显示组织中所有标签的列表。 选择 **[!UICONTROL RHD]** 添加标签 **[!UICONTROL PHI/管控的健康数据]**. 等待片刻，让标签旁边出现一个蓝色复选标记，然后选择 **[!UICONTROL 保存]**.
+此时将显示组织中所有标签的列表。 选择&#x200B;**[!UICONTROL RHD]**&#x200B;以添加&#x200B;**[!UICONTROL PHI/受监管运行状况数据]**&#x200B;的标签。 请稍等片刻让标签旁边显示一个蓝色复选标记，然后选择&#x200B;**[!UICONTROL 保存]**。
 
 ![显示正在选择和保存的RHD标签的图像](../images/abac-end-to-end-user-guide/abac-select-role-label.png)
 
@@ -113,17 +113,17 @@ ht-degree: 18%
 
 ## 将标签应用于架构字段 {#label-resources}
 
-现在，您已使用 [!UICONTROL RHD] 标签，下一步是将相同的标签添加到要为该角色控制的资源。
+现在您已配置具有[!UICONTROL RHD]标签的用户角色，下一步是将同一标签添加到要为该角色控制的资源。
 
-选择 **[!UICONTROL 架构]** 从左侧导航中，然后选择 **[!UICONTROL ACME医疗保健]** 从显示的架构列表中。
+从左侧导航中选择&#x200B;**[!UICONTROL 架构]**，然后从显示的架构列表中选择&#x200B;**[!UICONTROL ACME Healthcare]**。
 
-![显示从架构选项卡中选择的ACME Healthcare架构的图像](../images/abac-end-to-end-user-guide/abac-select-schema.png)
+![显示从“架构”选项卡选择的ACME Healthcare架构的图像](../images/abac-end-to-end-user-guide/abac-select-schema.png)
 
-接下来，选择 **[!UICONTROL 标签]** 查看显示与架构关联字段的列表。 在此处，您可以一次性将标签分配给一个或多个字段。 选择 **[!UICONTROL 血糖]** 和 **[!UICONTROL 胰岛素水平]** 字段，然后选择 **[!UICONTROL 应用访问和数据治理标签]**.
+接下来，选择&#x200B;**[!UICONTROL 标签]**&#x200B;以查看显示与架构关联字段的列表。 在此处，您可以一次性将标签分配给一个或多个字段。 选择&#x200B;**[!UICONTROL 血糖]**&#x200B;和&#x200B;**[!UICONTROL 胰岛素水平]**&#x200B;字段，然后选择&#x200B;**[!UICONTROL 应用访问和数据治理标签]**。
 
-![显示正在选择血糖和胰岛素水平并应用正在选择的访问和数据治理标签的图像](../images/abac-end-to-end-user-guide/abac-select-schema-labels-tab.png)
+![显示正在选择的血糖和胰岛素水平的图像，并应用正在选择的访问和数据治理标签](../images/abac-end-to-end-user-guide/abac-select-schema-labels-tab.png)
 
-此 **[!UICONTROL 编辑标签]** 对话框出现，允许您选择要应用于架构字段的标签。 对于此用例，选择 **[!UICONTROL PHI/管控的健康数据]** 标签，然后选择 **[!UICONTROL 保存]**.
+将显示&#x200B;**[!UICONTROL 编辑标签]**&#x200B;对话框，允许您选择要应用于架构字段的标签。 对于此用例，请选择&#x200B;**[!UICONTROL PHI/监管的运行状况数据]**&#x200B;标签，然后选择&#x200B;**[!UICONTROL 保存]**。
 
 ![显示正在选择和保存的RHD标签的图像](../images/abac-end-to-end-user-guide/abac-select-schema-labels.png)
 
@@ -139,42 +139,42 @@ ht-degree: 18%
 
 完成为架构字段设置标签之后，您现在可以开始为区段设置标签。
 
-选择 **[!UICONTROL 区段]** 从左侧导航栏中。 此时将显示组织中可用的区段列表。 在本例中，将标记以下两个区段，因为它们包含敏感的健康数据：
+从左侧导航中选择&#x200B;**[!UICONTROL 区段]**。 此时将显示组织中可用的区段列表。 在本例中，将标记以下两个区段，因为它们包含敏感的健康数据：
 
 * 血糖>100
 * 胰岛素&lt;50
 
-选择 **[!UICONTROL 血糖>100]** 以开始标记区段。
+选择&#x200B;**[!UICONTROL 血糖>100]**&#x200B;开始标记区段。
 
 ![显示从“区段”选项卡中选择的血糖> 100的图像](../images/abac-end-to-end-user-guide/abac-select-segment.png)
 
-区段 **[!UICONTROL 详细信息]** 屏幕。 选择 **[!UICONTROL 管理访问权限]**.
+将显示区段&#x200B;**[!UICONTROL 详细信息]**&#x200B;屏幕。 选择&#x200B;**[!UICONTROL 管理访问权限]**。
 
 ![显示已选择管理访问权限的图像](../images/abac-end-to-end-user-guide/abac-segment-fields-manage-access.png)
 
-此 **[!UICONTROL 编辑标签]** 此时会显示对话框，允许您选择要应用于区段的标签。 对于此用例，选择 **[!UICONTROL PHI/管控的健康数据]** 标签，然后选择 **[!UICONTROL 保存]**.
+将显示&#x200B;**[!UICONTROL 编辑标签]**&#x200B;对话框，允许您选择要应用于区段的标签。 对于此用例，请选择&#x200B;**[!UICONTROL PHI/监管的运行状况数据]**&#x200B;标签，然后选择&#x200B;**[!UICONTROL 保存]**。
 
-![显示所选RHD标签并保存所选内容的图像](../images/abac-end-to-end-user-guide/abac-select-segment-labels.png)
+![显示所选的RHD标签并保存的图像](../images/abac-end-to-end-user-guide/abac-select-segment-labels.png)
 
-重复上述步骤，使用 **[!UICONTROL 胰岛素&lt;50]**.
+对&#x200B;**[!UICONTROL 胰岛素&lt;50]**&#x200B;重复上述步骤。
 
 ## 激活访问控制策略 {#policy}
 
 默认访问控制策略将利用标签来定义哪些用户角色有权访问特定平台资源。 在此示例中，对于不在架构字段中具有相应标签的角色中的用户，将拒绝他们在所有沙盒中访问架构字段和区段。
 
-要激活访问控制策略，请选择 [!UICONTROL 权限] 从左侧导航中，然后选择 **[!UICONTROL 策略]**.
+要激活访问控制策略，请从左侧导航中选择[!UICONTROL 权限]，然后选择&#x200B;**[!UICONTROL 策略]**。
 
 ![显示的策略列表](../images/abac-end-to-end-user-guide/abac-policies-page.png)
 
-接下来，选择省略号(`...`)，此时下拉菜单会显示用于编辑、激活、删除或复制角色的控件。 选择 **[!UICONTROL 激活]** 从下拉菜单中查找。
+接下来，选择策略名称旁边的省略号(`...`)，下拉菜单会显示用于编辑、激活、删除或复制角色的控件。 从下拉列表中选择&#x200B;**[!UICONTROL 激活]**。
 
 ![用于激活策略的下拉列表](../images/abac-end-to-end-user-guide/abac-policies-activate.png)
 
-此时会出现激活策略对话框，提示您确认激活。 选择 **[!UICONTROL 确认]**.
+此时会出现激活策略对话框，提示您确认激活。 选择&#x200B;**[!UICONTROL 确认]**。
 
-![“激活策略”对话框](../images/abac-end-to-end-user-guide/abac-activate-policies-dialog.png)
+![激活策略对话框](../images/abac-end-to-end-user-guide/abac-activate-policies-dialog.png)
 
-收到策略激活确认消息，您将返回到 [!UICONTROL 策略] 页面。
+收到策略激活确认消息，并返回[!UICONTROL 策略]页面。
 
 ![激活策略确认](../images/abac-end-to-end-user-guide/abac-policies-confirm-activate.png)
 
@@ -259,7 +259,7 @@ Select **[!UICONTROL Activate]** to activate the policy, and a dialog appears wh
 
 您已完成将标签应用于角色、架构字段和区段。 分配给这些角色的外部机构无法查看这些标签及其在架构、数据集和配置文件视图中的值。 在使用区段生成器时，也不允许在区段定义中使用这些字段。
 
-有关基于属性的访问控制的详细信息，请参见 [基于属性的访问控制概述](./overview.md).
+有关基于属性的访问控制的详细信息，请参阅[基于属性的访问控制概述](./overview.md)。
 
 以下视频旨在支持您了解基于属性的访问控制，并概述如何配置角色、资源和策略。
 

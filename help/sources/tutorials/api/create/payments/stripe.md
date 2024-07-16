@@ -1,46 +1,47 @@
 ---
-title: 从贵机构接收支付数据 [!DNL Stripe] 帐户以Experience Platform使用API
+title: 使用API将付款数据从您的 [!DNL Stripe] 帐户引入到Experience Platform
 description: 了解如何使用流服务API将支付数据从您的Stripe帐户摄取到Experience Platform
 badge: Beta 版
-source-git-commit: f8df3ddb96ad0810a7a46b0a55125336c427aebd
+exl-id: a9cb3ef6-aab0-4a5b-894e-ce90b82f35a8
+source-git-commit: 62bcaa532cdec68a2f4f62e5784c35b91b7d5743
 workflow-type: tm+mt
 source-wordcount: '1998'
 ht-degree: 1%
 
 ---
 
-# 从贵机构接收支付数据 [!DNL Stripe] 帐户以Experience Platform使用API
+# 使用API从您的[!DNL Stripe]帐户摄取付款数据以Experience Platform
 
 >[!NOTE]
 >
->此 [!DNL Stripe] 源为测试版。 阅读 [条款和条件](../../../../home.md#terms-and-conditions) 有关使用测试版标记源的更多信息，请参阅源概述。
+>[!DNL Stripe]源为测试版。 有关使用测试版标记源的更多信息，请阅读源概述中的[条款和条件](../../../../home.md#terms-and-conditions)。
 
-请阅读以下教程，了解如何从提取您的支付数据 [!DNL Stripe] 到Adobe Experience Platform，使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+阅读以下教程，了解如何使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将付款数据从[!DNL Stripe]摄取到Adobe Experience Platform。
 
 ## 快速入门
 
 本指南要求您对Experience Platform的以下组件有一定的了解：
 
-* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
-* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ### 身份验证
 
-阅读 [[!DNL Stripe] 概述](../../../../connectors/payments/stripe.md) 有关如何检索身份验证凭据的信息。
+有关如何检索身份验证凭据的信息，请阅读[[!DNL Stripe] 概述](../../../../connectors/payments/stripe.md)。
 
 ### 使用平台API
 
-有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
+有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../../landing/api-guide.md)指南。
 
-## 连接 [!DNL Stripe] 至Experience Platform
+## 将[!DNL Stripe]连接到Experience Platform
 
-按照以下指南了解如何验证您的身份 [!DNL Stripe] 源，创建源连接，并创建数据流以将您的支付数据传送到Experience Platform。
+按照以下指南了解如何验证您的[!DNL Stripe]源、创建源连接和创建数据流以将您的付款数据带入Experience Platform。
 
 ### 创建基本连接 {#base-connection}
 
 基本连接会保留源和Experience Platform之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 您可以使用基本连接ID浏览和导航源中的文件。 此外，您还可以标识要摄取的特定项目，包括有关这些项目的数据类型和格式的详细信息。
 
-POST要创建基本连接ID，请向 `/connections` 端点，同时提供 [!DNL Stripe] 作为请求正文一部分的身份验证凭据。
+要创建基本连接ID，请在将[!DNL Stripe]身份验证凭据作为请求正文的一部分提供时，向`/connections`端点发出POST请求。
 
 **API格式**
 
@@ -50,7 +51,7 @@ POST /connections
 
 **请求**
 
-以下请求为创建基本连接 [!DNL Stripe]：
+以下请求为[!DNL Stripe]创建基本连接：
 
 ```shell
 curl -X POST \
@@ -80,13 +81,13 @@ curl -X POST \
 | --- | --- |
 | `name` | 基础连接的名称。 确保基本连接的名称是描述性的，因为您可以使用此名称查找有关基本连接的信息。 |
 | `description` | 可包含的可选值，用于提供有关基本连接的更多信息。 |
-| `connectionSpec.id` | 源的连接规范ID。 的连接规范ID [!DNL Stripe] 是 `cc2c31d6-7b8c-4581-b49f-5c8698aa3ab3`，并且此ID已修复。 |
+| `connectionSpec.id` | 源的连接规范ID。 [!DNL Stripe]的连接规范ID为`cc2c31d6-7b8c-4581-b49f-5c8698aa3ab3`，此ID已修复。 |
 | `auth.specName` | 用于向Experience Platform验证源的身份验证类型。 |
-| `auth.params.accessToken` | 您的访问令牌 [!DNL Stripe] 帐户。 阅读 [[!DNL Stripe] 身份验证指南](../../../../connectors/payments/stripe.md#prerequisites) 以了解如何检索访问令牌的步骤。 |
+| `auth.params.accessToken` | [!DNL Stripe]帐户的访问令牌。 有关如何检索访问令牌的步骤，请阅读[[!DNL Stripe] 身份验证指南](../../../../connectors/payments/stripe.md#prerequisites)。 |
 
 **响应**
 
-成功的响应会返回新创建的基本连接，包括其唯一连接标识符(`id`)。 在下一步中浏览源的文件结构和内容时，需要此ID。
+成功的响应返回新创建的基本连接，包括其唯一连接标识符(`id`)。 在下一步中浏览源的文件结构和内容时，需要此ID。
 
 ```json
 {
@@ -97,7 +98,7 @@ curl -X POST \
 
 ### 浏览您的源 {#explore}
 
-获得基本连接ID后，您现在可以通过向以下网站执行GET请求来探索源数据的内容和结构： `/connections` 端点，同时提供您的基本连接ID作为查询参数。
+获得基本连接ID后，您现在可以通过对`/connections`端点执行GET请求来探索源数据的内容和结构，同时将基本连接ID作为查询参数提供。
 
 **API格式**
 
@@ -112,11 +113,11 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=rest&object={OBJECT}&fi
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{BASE_CONNECTION_ID}` | 上一步中生成的基本连接ID。 |
-| `objectType=rest` | 您希望浏览的对象类型。 此值始终设置为 `rest`. |
-| `{OBJECT}` | 只有在查看特定目录时才需要此参数。 其值表示您希望浏览的目录的路径。 对于此源，值将为 `json`. |
-| `fileType=json` | 您要带到Platform的文件类型。 目前， `json` 是唯一支持的文件类型。 |
+| `objectType=rest` | 您希望浏览的对象类型。 此值始终设置为`rest`。 |
+| `{OBJECT}` | 只有在查看特定目录时才需要此参数。 其值表示您希望浏览的目录的路径。 对于此源，该值将为`json`。 |
+| `fileType=json` | 您要带到Platform的文件类型。 当前，`json`是唯一支持的文件类型。 |
 | `{PREVIEW}` | 一个布尔值，定义连接的内容是否支持预览。 |
-| `{SOURCE_PARAMS}` | A [!DNL Base64-]指向要浏览的资源路径的编码字符串。 您的资源路径需要编码到 [!DNL Base64] 为了获得批准的格式 `{SOURCE_PARAMS}`. 例如， `{"resourcePath":"charges"}` 编码为 `eyJyZXNvdXJjZVBhdGgiOiJjaGFyZ2VzIn0%3D`. 可用资源路径的列表包括： <ul><li>`charges`</li><li>`subscriptions`</li><li>`refunds`</li><li>`balance_transactions`</li><li>`customers`</li><li>`prices`</li></ul> |
+| `{SOURCE_PARAMS}` | 指向要浏览的资源路径的[!DNL Base64-]编码字符串。 您的资源路径需要以[!DNL Base64]编码，才能获得`{SOURCE_PARAMS}`的批准格式。 例如，`{"resourcePath":"charges"}`编码为`eyJyZXNvdXJjZVBhdGgiOiJjaGFyZ2VzIn0%3D`。 可用资源路径的列表包括： <ul><li>`charges`</li><li>`subscriptions`</li><li>`refunds`</li><li>`balance_transactions`</li><li>`customers`</li><li>`prices`</li></ul> |
 
 ```shell
 curl -X GET \
@@ -406,7 +407,7 @@ curl -X GET \
 
 ### 创建源连接 {#source-connection}
 
-您可以通过向以下对象发出POST请求来创建源连接： `/sourceConnections` 的端点 [!DNL Flow Service] API。 源连接由连接ID、源数据文件的路径以及连接规范ID组成。
+您可以通过向[!DNL Flow Service] API的`/sourceConnections`端点发出POST请求来创建源连接。 源连接由连接ID、源数据文件的路径以及连接规范ID组成。
 
 **API格式**
 
@@ -416,7 +417,7 @@ POST /sourceConnections
 
 **请求**
 
-以下请求为创建源连接 [!DNL Stripe].
+以下请求为[!DNL Stripe]创建源连接。
 
 ```shell
 curl -X POST \
@@ -447,11 +448,11 @@ curl -X POST \
 | --- | --- |
 | `name` | 源连接的名称。 请确保源连接的名称是描述性的，因为您可以使用此名称查找有关源连接的信息。 |
 | `description` | 可包含的可选值，用于提供有关源连接的更多信息。 |
-| `baseConnectionId` | 的基本连接ID [!DNL Stripe]. 此ID是在前面的步骤中生成的。 |
+| `baseConnectionId` | [!DNL Stripe]的基本连接ID。 此ID是在前面的步骤中生成的。 |
 | `connectionSpec.id` | 与源对应的连接规范ID。 |
-| `data.format` | 的格式 [!DNL Stripe] 要摄取的数据。 目前，唯一支持的数据格式为 `json`. |
+| `data.format` | 要摄取的[!DNL Stripe]数据的格式。 当前，唯一支持的数据格式为`json`。 |
 
-成功的响应将返回唯一标识符(`id`)。 此ID是稍后步骤创建数据流所必需的。
+成功的响应返回新创建的源连接的唯一标识符(`id`)。 此ID是稍后步骤创建数据流所必需的。
 
 ```json
 {
@@ -464,21 +465,21 @@ curl -X POST \
 
 为了在Experience Platform中使用源数据，必须创建目标架构以根据需要构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。
 
-可以通过向以下对象执行POST请求来创建目标XDM架构 [架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
+通过向[架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/)执行POST请求，可以创建目标XDM架构。
 
-有关如何创建目标XDM架构的详细步骤，请参阅关于的教程 [使用API创建架构](../../../../../xdm/api/schemas.md#create-a-schema).
+有关如何创建目标XDM架构的详细步骤，请参阅有关使用API [创建架构的教程](../../../../../xdm/api/schemas.md#create-a-schema)。
 
 ### 创建目标数据集 {#target-dataset}
 
-可以通过向执行POST请求来创建目标数据集 [目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，在有效负载中提供目标架构的ID。
+可以通过向[目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)执行POST请求，在有效负载中提供目标架构的ID来创建目标数据集。
 
-有关如何创建目标数据集的详细步骤，请参阅关于的教程 [使用API创建数据集](../../../../../catalog/api/create-dataset.md).
+有关如何创建目标数据集的详细步骤，请参阅有关[使用API创建数据集的教程](../../../../../catalog/api/create-dataset.md)。
 
 ### 创建目标连接 {#target-connection}
 
-目标连接表示与要存储所摄取数据的目标的连接。 要创建目标连接，您必须提供对应于数据湖的固定连接规范ID。 此ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
+目标连接表示与要存储所摄取数据的目标的连接。 要创建目标连接，您必须提供对应于数据湖的固定连接规范ID。 此ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`。
 
-现在，您拥有目标架构、目标数据集以及到数据湖的连接规范ID。 使用这些标识符，您可以使用 [!DNL Flow Service] 用于指定将包含入站源数据的数据集的API。
+现在，您拥有目标架构、目标数据集以及到数据湖的连接规范ID。 使用这些标识符，您可以使用[!DNL Flow Service] API创建目标连接，以指定将包含入站源数据的数据集。
 
 **API格式**
 
@@ -488,7 +489,7 @@ POST /targetConnections
 
 **请求**
 
-以下请求创建目标连接 [!DNL Stripe]：
+以下请求为[!DNL Stripe]创建目标连接：
 
 ```shell
 curl -X POST \
@@ -522,13 +523,13 @@ curl -X POST \
 | -------- | ----------- |
 | `name` | 目标连接的名称。 确保目标连接的名称是描述性的，因为您可以使用此名称查找有关目标连接的信息。 |
 | `description` | 可包含的可选值，用于提供有关目标连接的更多信息。 |
-| `connectionSpec.id` | 对应于数据湖的连接规范ID。 此固定ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
-| `data.format` | 的格式 [!DNL Stripe] 要摄取的数据。 |
-| `params.dataSetId` | 目标数据集的ID。 此ID由生成 [创建目标数据集](#target-dataset). |
+| `connectionSpec.id` | 对应于数据湖的连接规范ID。 此固定ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`。 |
+| `data.format` | 要摄取的[!DNL Stripe]数据的格式。 |
+| `params.dataSetId` | 目标数据集的ID。 此ID由[创建目标数据集](#target-dataset)生成。 |
 
 **响应**
 
-成功的响应将返回新目标连接的唯一标识符(`id`)。 此ID在后续步骤中是必需的。
+成功的响应返回新目标连接的唯一标识符(`id`)。 此ID在后续步骤中是必需的。
 
 ```json
 {
@@ -539,7 +540,7 @@ curl -X POST \
 
 ### 创建映射 {#mapping}
 
-要将源数据摄取到目标数据集中，必须首先将其映射到目标数据集所遵循的目标架构。 POST这是通过对 [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) 请求有效负载中定义的数据映射。
+要将源数据摄取到目标数据集中，必须首先将其映射到目标数据集所遵循的目标架构。 这是通过向[[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/)执行POST请求来实现的，该请求具有在请求有效负载中定义的数据映射。
 
 **API格式**
 
@@ -547,7 +548,7 @@ curl -X POST \
 POST /conversion/mappingSets
 ```
 
-以下请求创建映射 [!DNL Stripe].
+以下请求为[!DNL Stripe]创建映射。
 
 +++选择以查看请求示例
 
@@ -788,17 +789,17 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `xdmSchema` | 目标XDM架构的ID。 此ID通过创建 [目标XDM架构](#target-schema). |
+| `xdmSchema` | 目标XDM架构的ID。 此ID通过创建[目标XDM架构](#target-schema)生成。 |
 | `destinationXdmPath` | 源属性将映射到的XDM字段。 |
 | `sourceAttribute` | 正在映射的源数据字段。 |
-| `identity` | 一个布尔值，定义字段是否将保留在 [Identity Service](../../../../../identity-service/home.md). |
+| `identity` | 一个布尔值，用于定义字段是否将保留在[标识服务](../../../../../identity-service/home.md)中。 |
 | `version` | 您正在使用的映射版本。 |
 
 +++
 
 **响应**
 
-成功响应将返回新创建映射的详细信息，包括其唯一标识符(`id`)。 在后续步骤中需要使用此值来创建数据流。
+成功的响应返回新创建的映射的详细信息，包括其唯一标识符(`id`)。 在后续步骤中需要使用此值来创建数据流。
 
 ```json
 {
@@ -813,9 +814,9 @@ curl -X POST \
 
 ### 创建流 {#flow}
 
-从以下来源获取数据的最后一步 [!DNL Stripe] 到Platform就是创建数据流。 现在，您已准备以下必需值：
+将数据从[!DNL Stripe]引入到Platform的最后一步是创建数据流。 现在，您已准备以下必需值：
 
-* [源连接ID](#source-connection)
+* [Source连接Id](#source-connection)
 * [目标连接ID](#target-connection)
 * [映射 ID](#mapping)
 
@@ -870,21 +871,21 @@ curl -X POST \
 | --- | --- |
 | `name` | 您的数据流的名称。 确保数据流的名称是描述性的，因为您可以使用此名称查找数据流上的信息。 |
 | `description` | 可包含的可选值，用于提供有关数据流的更多信息。 |
-| `flowSpec.id` | 创建数据流所需的流规范ID。 此固定ID为： `6499120c-0b15-42dc-936e-847ea3c24d72`. |
-| `flowSpec.version` | 流规范ID的相应版本。 此值默认为 `1.0`. |
-| `sourceConnectionIds` | 此 [源连接ID](#source-connection) 在之前的步骤中生成。 |
-| `targetConnectionIds` | 此 [目标连接Id](#target-connection) 在之前的步骤中生成。 |
+| `flowSpec.id` | 创建数据流所需的流规范ID。 此固定ID为： `6499120c-0b15-42dc-936e-847ea3c24d72`。 |
+| `flowSpec.version` | 流规范ID的相应版本。 此值默认为`1.0`。 |
+| `sourceConnectionIds` | 在之前的步骤中生成的[源连接ID](#source-connection)。 |
+| `targetConnectionIds` | 在之前的步骤中生成的[目标连接ID](#target-connection)。 |
 | `transformations` | 此属性包含需要应用于数据的各种转换。 将不符合XDM的数据引入Experience Platform时需要此属性。 |
 | `transformations.name` | 分配给转换的名称。 |
-| `transformations.params.mappingId` | 此 [映射ID](#mapping) 在之前的步骤中生成。 |
-| `transformations.params.mappingVersion` | 映射ID的相应版本。 此值默认为 `0`. |
+| `transformations.params.mappingId` | 在之前的步骤中生成的[映射ID](#mapping)。 |
+| `transformations.params.mappingVersion` | 映射ID的相应版本。 此值默认为`0`。 |
 | `scheduleParams.startTime` | 您的数据流将开始的时间。 必须以Unix时间戳的格式提供开始时间值。 |
-| `scheduleParams.frequency` | 数据流收集数据的频率。 您可以将摄取频率配置为：  <ul><li>**一次**：将频率设置为 `once` 以创建一次性摄取。 创建一次性摄取数据流时，间隔和回填配置不可用。 默认情况下，调度频率设置为一次。</li><li>**分钟**：将频率设置为 `minute` 安排数据流以按分钟摄取数据。</li><li>**小时**：将频率设置为 `hour` 安排数据流以每小时摄取数据。</li><li>**天**：将频率设置为 `day` 安排数据流每天摄取数据。</li><li>**周**：将频率设置为 `week` 安排数据流每周摄取数据。</li></ul> |
+| `scheduleParams.frequency` | 数据流收集数据的频率。 您可以将摄取频率配置为：  <ul><li>**一次**：将频率设置为`once`以创建一次性引入。 创建一次性摄取数据流时，间隔和回填配置不可用。 默认情况下，调度频率设置为一次。</li><li>**分钟**：将频率设置为`minute`，以计划数据流以每分钟摄取数据。</li><li>**小时**：将频率设置为`hour`，以计划数据流每小时摄取数据。</li><li>**天**：将频率设置为`day`，以计划数据流每天摄取数据。</li><li>**周**：将频率设置为`week`，以计划数据流每周摄取数据。</li></ul> |
 | `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 例如，如果将频率设置为天并将间隔配置为15，则数据流将每15天运行一次。 间隔值应为非零整数。 |
 
 **响应**
 
-成功的响应会返回ID (`id`)。 您可以使用此ID监视、更新或删除数据流。
+成功的响应返回新创建的数据流的ID (`id`)。 您可以使用此ID监视、更新或删除数据流。
 
 ```json
 {
@@ -899,21 +900,20 @@ curl -X POST \
 
 ### 监测数据流
 
-创建数据流后，您可以监视通过它摄取的数据，以查看有关流运行、完成状态和错误的信息。 有关完整的API示例，请阅读以下指南： [使用API监控源数据流](../../monitor.md).
+创建数据流后，您可以监视通过它摄取的数据，以查看有关流运行、完成状态和错误的信息。 有关完整的API示例，请阅读有关[使用API监视源数据流](../../monitor.md)的指南。
 
 ### 更新您的数据流
 
-通过向的/flows端点发出PATCH请求，更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 [!DNL Flow Service] API，同时提供数据流的ID。 发出PATCH请求时，必须提供数据流的唯一值 `etag` 在 `If-Match` 标题。 有关完整的API示例，请阅读以下指南： [使用API更新源数据流](../../update-dataflows.md).
+在提供数据流ID的同时，通过向[!DNL Flow Service] API的/flows端点发出PATCH请求，更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 发出PATCH请求时，必须在`If-Match`标头中提供数据流唯一的`etag`。 有关完整的API示例，请阅读有关[使用API更新源数据流](../../update-dataflows.md)的指南。
 
 ### 更新您的帐户
 
-PATCH通过向 [!DNL Flow Service] API，同时将您的基本连接ID作为查询参数提供。 发出PATCH请求时，必须提供源帐户的唯一帐户 `etag` 在 `If-Match` 标题。 有关完整的API示例，请阅读以下指南： [使用API更新源帐户](../../update.md).
+在提供您的基本连接ID作为查询参数的同时，通过执行对[!DNL Flow Service] API的PATCH请求来更新源帐户的名称、描述和凭据。 发出PATCH请求时，必须在`If-Match`标头中提供源帐户的唯一`etag`。 有关完整的API示例，请阅读有关[使用API更新源帐户](../../update.md)的指南。
 
 ### 删除您的数据流
 
-通过向以下对象执行DELETE请求来删除您的数据流： [!DNL Flow Service] API，同时提供您要作为查询参数的一部分删除的数据流的ID。 有关完整的API示例，请阅读以下指南： [使用API删除数据流](../../delete-dataflows.md).
+在查询参数中提供要删除的数据流的ID时，通过向[!DNL Flow Service] API执行DELETE请求来删除数据流。 有关完整的API示例，请阅读有关[使用API删除数据流](../../delete-dataflows.md)的指南。
 
 ### 删除您的帐户
 
-向以下网站发出DELETE请求，删除您的帐户： [!DNL Flow Service] API，同时提供要删除帐户的基本连接ID。 有关完整的API示例，请阅读以下指南： [使用API删除源帐户](../../delete.md).
-
+在提供要删除的帐户的基本连接ID时，通过向[!DNL Flow Service] API执行DELETE请求来删除您的帐户。 有关完整的API示例，请阅读有关使用API](../../delete.md)删除源帐户[的指南。

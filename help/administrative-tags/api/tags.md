@@ -2,19 +2,19 @@
 title: 统一标记端点
 description: 了解如何使用Adobe Experience Platform API创建、更新、管理和删除标记类别和标记。
 role: Developer
-source-git-commit: ede314d0cbe50514090915fccf7ef3c2a5254b7a
+exl-id: 6687d1da-a5e4-435a-9f99-1b0f9ac98088
+source-git-commit: 717a4ea0568200c940cf9b8f26f4dd2aa9c00a3e
 workflow-type: tm+mt
 source-wordcount: '1860'
 ht-degree: 3%
 
 ---
 
-
 # 统一标记端点
 
 >[!IMPORTANT]
 >
->这组端点的端点URL为 `https://experience.adobe.io`.
+>此终结点集的终结点URL为`https://experience.adobe.io`。
 
 标记是一项功能，可让您管理元数据分类，以分类业务对象以便于发现和分类。 随后，您可以通过将这些标记添加到标记类别来将这些标记组织到其他组中。
 
@@ -22,19 +22,19 @@ ht-degree: 3%
 
 ## 快速入门
 
-本指南中使用的端点是Adobe Experience Platform API的一部分。 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关成功调用API所需了解的重要信息，包括所需的标头以及如何读取示例API调用
+本指南中使用的端点是Adobe Experience Platform API的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)以了解成功调用API所需了解的重要信息，包括所需的标头以及如何读取示例API调用
 
 ### 术语表
 
-以下术语表突出显示了 **标记** 和 **标记类别**.
+以下术语表突出显示&#x200B;**标记**&#x200B;和&#x200B;**标记类别**&#x200B;之间的区别。
 
-- **标记**：标记允许您管理业务对象的元数据分类，使您能够对这些对象进行分类，以便更轻松地发现和分类。
-   - **未分类的标记**：未分类的标记是指不属于标记类别的标记。 默认情况下，创建的标记将取消分类。
+- **标记**：标记允许您管理业务对象的元数据分类，从而允许您对这些对象进行分类，以便于发现和分类。
+   - **未分类的标记**：未分类的标记是不属于标记类别的标记。 默认情况下，创建的标记将取消分类。
 - **标记类别**：标记类别允许您将标记分组为有意义的集，从而提供更多有关标记目的的上下文。
 
 ## 检索标记类别的列表 {#get-tag-categories}
 
-您可以向以下网站发出GET请求，以检索属于贵组织的标记类别的列表： `/tagCategory` 端点。
+您可以通过向`/tagCategory`端点发出GET请求来检索属于您组织的标记类别的列表。
 
 **API格式**
 
@@ -49,9 +49,9 @@ GET /tagCategory?{QUERY_PARAMETERS}
 | --------------- | ----------- | ------- |
 | `start` | 结果列表的开始位置。 您可以使用此项来指示结果分页的起始索引。 | `start=a` |
 | `limit` | 每页检索的最大标记类别数。 | `limit=20` |
-| `property` | 检索标记类别时要过滤的属性。 支持的值包括： &lt;ul><li>`name`：标记类别的名称。</li></ul> | `property=name==category` |
-| `sortBy` | 标记类别的排序顺序。 支持的值包括 `name`， `createdAt`、和 `modifiedAt`. | `sortBy=name` |
-| `sortOrder` | 标记类别排序的方向。 支持的值包括 `asc` 和 `desc`. | `sortOrder=asc` |
+| `property` | 检索标记类别时要过滤的属性。 支持的值包括： &lt;ul≥<li>`name`：标记类别的名称。</li></ul> | `property=name==category` |
+| `sortBy` | 标记类别的排序顺序。 支持的值包括`name`、`createdAt`和`modifiedAt`。 | `sortBy=name` |
+| `sortOrder` | 标记类别排序的方向。 支持的值包括`asc`和`desc`。 | `sortOrder=asc` |
 
 **请求**
 
@@ -104,7 +104,7 @@ curl -X GET https://experience.adobe.io/unifiedtags/tagCategory
 >
 >只有系统管理员和产品管理员可以使用此API调用。
 
-您可以通过向以下网站发出POST请求来创建新的标记类别： `/tagCategory` 端点。
+您可以通过向`/tagCategory`端点发出POST请求来创建新的标记类别。
 
 **API格式**
 
@@ -159,7 +159,7 @@ curl -X POST https://experience.adobe.io/unifiedtags/tagCategory
 
 ## 检索特定标记类别 {#get-tag-category}
 
-您可以通过对以下网站发出GET请求，检索属于您组织的特定标记类别： `/tagCategory` 端点并指定标记类别的ID。
+您可以通过向`/tagCategory`端点发出GET请求并指定标记类别的ID来检索属于您组织的特定标记类别。
 
 **API格式**
 
@@ -224,7 +224,7 @@ curl -X GET https://experience.adobe.io/unifiedtags/tagCategory/e2b7c656-067b-44
 >
 >只有系统管理员和产品管理员可以使用此API调用。
 
-您可以向以下网站发出PATCH请求，以更新属于贵组织的特定标记类别的详细信息 `/tagCategory` 端点并指定标记类别的ID。
+您可以通过向`/tagCategory`端点发出PATCH请求并指定标记类别的ID来更新属于您组织的特定标记类别的详细信息。
 
 **API格式**
 
@@ -256,8 +256,8 @@ curl -X PATCH https://experience.adobe.io/unifiedtags/tagCategory/e2b7c656-067b-
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `op` | 已完成的操作。 要更新特定标记类别，请将此值设置为 `replace`. |
-| `path` | 将更新的字段的路径。 支持的值包括 `name` 和 `description`. |
+| `op` | 已完成的操作。 要更新特定标记类别，请将此值设置为`replace`。 |
+| `path` | 将更新的字段的路径。 支持的值包括`name`和`description`。 |
 | `value` | 要更新的字段的更新值。 |
 | `from` | 要更新的字段的原始值。 |
 
@@ -291,7 +291,7 @@ curl -X PATCH https://experience.adobe.io/unifiedtags/tagCategory/e2b7c656-067b-
 >
 >只有系统管理员和产品管理员可以使用此API调用。
 
-您可以通过对以下网站发出DELETE请求，删除属于您组织的特定标记类别： `/tagCategory` 端点并指定标记类别的ID。
+通过向`/tagCategory`端点发出DELETE请求并指定标记类别的ID，可以删除属于您组织的特定标记类别。
 
 **API格式**
 
@@ -323,7 +323,7 @@ curl -X DELETE https://experience.adobe.io/unifiedtags/tagCategory/e2b7c656-067b
 
 ## 检索标记列表 {#get-tags}
 
-您可以向以下网站发出GET请求，以检索属于贵组织的标记列表： `/tags` 端点以及标记类别的ID。
+您可以通过向`/tags`端点以及标记类别的ID发出GET请求来检索属于您组织的标记列表。
 
 **API格式**
 
@@ -338,9 +338,9 @@ GET /tags?{QUERY_PARAMETERS}
 | --------------- | ----------- | ------- |
 | `start` | 结果列表的开始位置。 您可以使用此项来指示结果分页的起始索引。 | `start=a` |
 | `limit` | 每页检索的最大标记数。 | `limit=20` |
-| `property` | 检索标记时要过滤的属性。 支持的值包括：<ul><li>`name`：标记的名称。</li><li>`archived`：标记是已存档还是取消存档。 您可以将此值设置为 `true` 或 `false`.</li><li>`tagCategoryId`：标记所属的标记类别的ID。</li></ul> | <ul><li>`property=name==TestTag`</li><li>`property=archived==false`</li><li>`property=tagCategoryId==e2b7c656-067b-4413-a366-adde0401df50`</li> |
-| `sortBy` | 标记排序的顺序。 支持的值包括 `name`， `createdAt`、和 `modifiedAt`. | `sortBy=name` |
-| `sortOrder` | 标记类别排序的方向。 支持的值包括 `asc` 和 `desc`. | `sortOrder=asc` |
+| `property` | 检索标记时要过滤的属性。 支持的值包括：<ul><li>`name`：标记的名称。</li><li>`archived`：标记是否已存档或取消存档。 您可以将此值设置为`true`或`false`。</li><li>`tagCategoryId`：标记所属的标记类别的ID。</li></ul> | <ul><li>`property=name==TestTag`</li><li>`property=archived==false`</li><li>`property=tagCategoryId==e2b7c656-067b-4413-a366-adde0401df50`</li> |
+| `sortBy` | 标记排序的顺序。 支持的值包括`name`、`createdAt`和`modifiedAt`。 | `sortBy=name` |
+| `sortOrder` | 标记类别排序的方向。 支持的值包括`asc`和`desc`。 | `sortOrder=asc` |
 
 
 **请求**
@@ -506,9 +506,9 @@ curl -X GET https://experience.adobe.io/unifiedtags/tags?property=tagCategoryId=
 >
 >只有系统管理员和产品管理员可以使用此API调用在指定的标记类别中创建新标记。
 >
->如果要创建未分类的标记，您可以 **非** 需要管理员权限。
+>如果您正在创建未分类的标记，则&#x200B;**不需要**&#x200B;管理员权限。
 
-您可以通过向以下对象发出POST请求来创建新标记 `/tags` 端点。
+您可以通过向`/tags`端点发出POST请求来创建新标记。
 
 **API格式**
 
@@ -533,8 +533,8 @@ curl -X POST https://experience.adobe.io/unifiedtags/tags
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `name` | **必填**. 要创建的标记的名称。 |
-| `tagCategoryId` | *可选*. 您希望标记所属的标记类别的ID。 如果未指定，则标记将作为“未分类”类别的一部分创建。 |
+| `name` | **必需**。 要创建的标记的名称。 |
+| `tagCategoryId` | *可选*。 您希望标记所属的标记类别的ID。 如果未指定，则标记将作为“未分类”类别的一部分创建。 |
 
 +++
 
@@ -575,7 +575,7 @@ curl -X POST https://experience.adobe.io/unifiedtags/tags
 
 ## 检索特定标记 {#get-tag}
 
-您可以通过对以下网站发出GET请求，检索属于您组织的特定标记 `/tags` 端点并指定要检索的标记的ID。
+您可以通过向`/tags`端点发出GET请求并指定要检索的标记的ID，来检索属于您组织的特定标记。
 
 **API格式**
 
@@ -633,13 +633,13 @@ curl -X GET https://experience.adobe.io/unifiedtags/tags/2bd5ddd9-7284-4767-81d9
 | `modifiedBy` | 上次更新标记的用户的ID。 |
 | `tagCategoryId` | 标记所属的标记类别的ID。 |
 | `tagCategoryName` | 标记所属的标记类别的名称。 |
-| `archived` | 标记的存档状态。 如果设置为 `true`，这意味着标记已存档。 |
+| `archived` | 标记的存档状态。 如果设置为`true`，则表示标记已存档。 |
 
 +++
 
 ## 验证标记 {#validate-tags}
 
-您可以通过向以下网站发出POST请求来验证标记是否存在 `/tags/validate` 端点。
+您可以通过向`/tags/validate`端点发出POST请求来验证标记是否存在。
 
 **API格式**
 
@@ -668,7 +668,7 @@ curl -X POST https://experience.adobe.io/unifiedtags/tags/validate
 | 属性 | 描述 |
 | -------- | ----------- |
 | `ids` | 包含要验证的标记ID列表的数组。 |
-| `entity` | 请求验证的实体。 您可以使用 `{API_KEY}` 此参数的值。 |
+| `entity` | 请求验证的实体。 您可以对此参数使用`{API_KEY}`值。 |
 
 +++
 
@@ -705,7 +705,7 @@ curl -X POST https://experience.adobe.io/unifiedtags/tags/validate
 
 ## 更新特定标记 {#update-tag}
 
-您可以通过向以下对象发出PATCH请求来更新指定标记： `/tags` 端点并提供要更新的标记的ID。
+您可以通过向`/tags`端点发出PATCH请求并提供要更新的标记的ID来更新指定的标记。
 
 **API格式**
 
@@ -737,8 +737,8 @@ curl -X GET https://experience.adobe.io/unifiedtags/tags/2bd5ddd9-7284-4767-81d9
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `op` | 需要执行的操作。 在此用例中，它将始终设置为 `replace`. |
-| `path` | 将更新的字段的路径。 支持的值包括 `name`， `archived`、和 `tagCategoryId`. |
+| `op` | 需要执行的操作。 在此使用案例中，它将始终设置为`replace`。 |
+| `path` | 将更新的字段的路径。 支持的值包括`name`、`archived`和`tagCategoryId`。 |
 | `value` | 要更新的字段的更新值。 |
 | `from` | 要更新的字段的原始值。 |
 
@@ -773,9 +773,9 @@ curl -X GET https://experience.adobe.io/unifiedtags/tags/2bd5ddd9-7284-4767-81d9
 >
 >只有系统管理员和产品管理员可以使用此API调用。
 >
->此外，标记 **无法** 与任何业务对象相关联，并且 **必须** 在可以删除标记之前存档。 您可以使用将标记存档 [更新标记端点](#update-tag).
+>此外，标记&#x200B;**不能**&#x200B;与任何业务对象相关联，而且&#x200B;**必须**&#x200B;存档后才能删除标记。 您可以使用[更新标记终结点](#update-tag)将标记存档。
 
-您可以通过向以下对象创建DELETE标记来删除特定标记： `/tags` 端点，并指定要删除的标记的ID。
+您可以通过为`/tags`端点创建DELETE标记并指定要删除的标记的ID来删除特定标记。
 
 **API格式**
 
@@ -807,4 +807,4 @@ curl -X DELETE https://experience.adobe.io/unifiedtags/tags/2bd5ddd9-7284-4767-8
 
 ## 后续步骤
 
-阅读本指南后，您将会更好地了解如何使用Adobe Experience Platform API创建、管理和删除标记和标记类别。 有关使用UI管理标记的更多信息，请参阅 [managing tags指南](../ui/managing-tags.md). 有关使用UI管理标记类别的更多信息，请参阅 [标记类别指南](../ui/tags-categories.md).
+阅读本指南后，您将会更好地了解如何使用Adobe Experience Platform API创建、管理和删除标记和标记类别。 有关使用UI管理标记的更多信息，请参阅[管理标记指南](../ui/managing-tags.md)。 有关使用UI管理标记类别的更多信息，请参阅[标记类别指南](../ui/tags-categories.md)。

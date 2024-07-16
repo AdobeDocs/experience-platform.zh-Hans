@@ -4,8 +4,8 @@ description: 获取有关Adobe Experience Platform中的标记的常见问题解
 exl-id: c06b8e25-4d79-4a11-94da-94ac096b5e33
 source-git-commit: 9701a14dc2915e0d6dcc6051c15d5113f305487f
 workflow-type: tm+mt
-source-wordcount: '1044'
-ht-degree: 26%
+source-wordcount: '1032'
+ht-degree: 23%
 
 ---
 
@@ -13,39 +13,39 @@ ht-degree: 26%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](./term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](./term-updates.md)。
 
 本文档提供了有关Adobe Experience Platform中的标记的常见问题解答。
 
 ## 什么是标记？
 
-标记是由Adobe提供的下一代标记管理功能，内置于Adobe Experience Platform中。 标记使客户端能够：
+Tags是Adobe提供的新一代标签管理功能，内置于Adobe Experience Platform中。 标记使客户端能够：
 
 - 使用称为“扩展”**&#x200B;的集成部署客户端 Web 产品
 - 以动态方式交付配置来更新本机移动设备应用程序中的客户端实现
 - 始终捕获、定义和管理数据以及在其他供应商和 Adobe 提供的营销和广告产品之间共享数据
 
-标记是一种高级代码和配置交付系统，可以对各种条件进行评估并执行相应操作，从而高效部署客户端库和产品。 它们还提供了高度可扩展的集成管理和构建方法，并具有一组用于程序化交互的强大API。
+标记是一个高级代码和配置交付系统，可以对各种条件进行评估并执行相应操作，从而高效部署客户端库和产品。 此外，它们还提供了一种高度可扩展的集成管理和构建方法，并具有一组用于程序化交互的强大API。
 
 ## 标记的成本是多少？
 
-标记无需额外付费。 它们可用于任何 [!DNL Adobe Experience Cloud] 客户。
+标记无需额外付费。 它们可供任何[!DNL Adobe Experience Cloud]客户使用。
 
 ## 我听说，现在已经推出了插件。是什么插件？
 
-标记内置于Adobe Experience Platform中，并且具有完全可扩展性。 客户、Adobe合作伙伴、代理以及营销或广告技术供应商可以构建标记扩展，该扩展可添加新功能或修改现有功能。 该系统允许合作伙伴和客户自行构建、管理和更新集成。这只是Adobe开放Adobe Experience Platform的一种方式，以便客户和合作伙伴能够在其上构建产品和业务。 这样可以帮助所有人更轻松地将 Adobe 技术与由其他供应商提供的营销和广告技术相连接。
+标记内置于Adobe Experience Platform中并且具有完全可扩展性。 客户、Adobe合作伙伴、代理以及营销或广告技术供应商可以构建标记扩展，该扩展可添加新功能或修改现有功能。 该系统允许合作伙伴和客户自行构建、管理和更新集成。这只是Adobe开放Adobe Experience Platform的一种方式，以便客户和合作伙伴能够在其上构建产品和业务。 这样可以帮助所有人更轻松地将 Adobe 技术与由其他供应商提供的营销和广告技术相连接。
 
 ## 所有第三方扩展都将立即可用吗？
 
-扩展已可用于Adobe解决方案，以及大量日益增多的独立分析、营销、广告、同意供应商和技术。 我们将继续与合作伙伴一起扩展这个生态系统。由于扩展可以由技术所有者构建、管理和更新，因此客户不必等待Adobe工程团队来构建它们。
+扩展已可用于Adobe解决方案，以及大量日益增多的独立分析、营销、广告、同意供应商和技术。 我们将继续与合作伙伴一起扩展这个生态系统。由于扩展可以由技术所有者进行构建、管理和更新，因此客户不必等待Adobe工程团队来构建它们。
 
 ## 客户或合作伙伴何时可以构建扩展？
 
-Tags已开放了其虚拟自助门户，扩展开发人员可以利用这个门户自行构建与Adobe Cloud Platform的集成。
+Tags已经开放了其虚拟自助门户，扩展开发人员可以利用这个门户来自行构建与Adobe Cloud Platform的集成。
 
 我们有许多客户还选择使用相同的扩展开发方法构建自己的专用扩展，以便仅在自己的公司内使用。
 
-要开发扩展，请查看 [扩展开发概述](./extension-dev/overview.md) 页面。
+要开发扩展，请查看[扩展开发概述](./extension-dev/overview.md)页面。
 
 ## 标记是否符合我公司的安全标准？
 
@@ -57,7 +57,7 @@ Tags已开放了其虚拟自助门户，扩展开发人员可以利用这个门�
 
 ## 标记是否支持单页应用程序和我喜爱的框架？
 
-可以。标记具有一些功能，可让用户和扩展开发人员灵活收集、管理和分发单页应用程序体验或Ajax密集型页面或网站中的数据。 无论您喜爱使用何种开发框架（Angular、React.js、Ember、Meteor 等），该产品均适用。
+可以。标记具有多种功能，允许用户和扩展开发人员灵活收集、管理和分发单页面应用程序体验或者Ajax密集型页面或网站中的数据。 无论您喜爱使用何种开发框架（Angular、React.js、Ember、Meteor 等），该产品均适用。
 
 ## 标记是否支持动态数据层？
 
@@ -73,24 +73,24 @@ Tags已开放了其虚拟自助门户，扩展开发人员可以利用这个门�
 
 ## 标记支持哪些浏览器？
 
-查看支持的浏览器 [此处](./extension-dev/browsers.md).
+在[此处](./extension-dev/browsers.md)查看支持的浏览器。
 
-大多数Adobe客户端都利用当前浏览器中更为新式的Web平台功能来创建更好的用户体验，包括单页应用程序以及交互式Ajax密集型网站和页面。 随着大多数客户在他们的网站上转为使用更现代的方法，他们需要使用诸如标记之类的解决方案来启用这些方法。
+大多数Adobe客户端都利用当前浏览器中更为新式的Web平台功能来创造更好的用户体验，包括单页应用程序以及交互式Ajax密集型网站和页面。 随着大多数客户在他们的网站上转为使用更为新式的方法，他们需要使用诸如标记之类的解决方案来启用这些方法。
 
-## 标记是否适用于本机移动设备应用程序？
+## 标记能否在本机移动设备应用程序上运行？
 
-是！标记现在支持新Adobe Experience Platform的移动属性和配置 [移动SDK](https://sdkdocs.com) 在本机移动设备应用程序环境中实施数据收集和交付。 请访问[文档](https://sdkdocs.com)以了解更多信息。
+是！标记现在支持新Adobe Experience Platform [Mobile SDK](https://sdkdocs.com)的移动属性和配置，以便在本机移动应用程序环境中实施数据收集和交付。 请访问[文档](https://sdkdocs.com)以了解更多信息。
 
 ## 为什么UI在加载我的帐户时显示错误？
 
-如果您收到一条消息，指出加载帐户时出错，则意味着您的帐户不属于标记的任何产品配置文件。 请参阅指南，网址为 [管理权限](../collection/permissions.md) 了解如何在Adobe Admin Console中配置产品配置文件，以授予对UI中数据收集功能的访问权限。
+如果您收到一条消息，指出加载帐户时出错，则意味着您的帐户不属于标记的任何产品配置文件。 请参阅[管理权限](../collection/permissions.md)指南，了解如何在Adobe Admin Console中配置产品配置文件以授予对UI中数据收集功能的访问权限。
 
-## 为何无法在UI中添加任何属性？
+## 为什么无法在UI中添加任何属性？
 
 如果您在登录到UI时无法创建任何新资产，则意味着您的帐户不属于具有“管理资产”权限的产品配置文件。
 
-请参阅指南，网址为 [管理权限](../collection/permissions.md) 了解如何在Adobe Admin Console中配置产品配置文件以授予“管理资产”权限。 有关标记的不同权限的更多信息，请参阅的概述 [标记的用户权限](./ui/administration/user-permissions.md).
+请参阅[管理权限](../collection/permissions.md)指南，了解如何在Adobe Admin Console中配置产品配置文件以授予“管理资产”权限。 有关标记的不同权限的更多信息，请参阅标记[用户权限](./ui/administration/user-permissions.md)概述。
 
 ## 如果我遇到其他问题，该怎么办？
 
-如果您还有其他问题，可以询问 [Adobe Experience Platform数据收集社区页面](https://adobe.com/go/launchme) Experience League时，或加入 [社区Slack工作区](https://docs.google.com/forms/d/e/1FAIpQLScq1m63YkDrRpvPLhzUqtfoleWiDDTTXZsSivIXRfFdlSMzpQ/viewform) 适用于开发人员和技术实施主题。
+如果您还有其他问题，可以在Experience League的[Adobe Experience Platform数据收集社区页面](https://adobe.com/go/launchme)上提问，或加入适用于开发人员和技术实施主题的[社区Slack工作区](https://docs.google.com/forms/d/e/1FAIpQLScq1m63YkDrRpvPLhzUqtfoleWiDDTTXZsSivIXRfFdlSMzpQ/viewform)。

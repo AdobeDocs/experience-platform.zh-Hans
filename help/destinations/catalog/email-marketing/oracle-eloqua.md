@@ -10,11 +10,11 @@ ht-degree: 2%
 
 ---
 
-# [!DNL (Files) Oracle Eloqua] 连接
+# [!DNL (Files) Oracle Eloqua]连接
 
-[[!DNL Oracle Eloqua]](https://www.oracle.com/cx/marketing/automation/) 是一个用于营销自动化的软件即服务(SaaS)平台，由 [!DNL Oracle] 旨在帮助B2B营销人员和组织管理营销活动和销售商机拓展。
+[[!DNL Oracle Eloqua]](https://www.oracle.com/cx/marketing/automation/)是由[!DNL Oracle]提供的用于营销自动化的软件即服务(SaaS)平台，旨在帮助B2B营销人员和组织管理营销活动和销售商机开发。
 
-要将受众数据发送到，请执行以下操作 [!DNL Oracle Eloqua]，您必须首先 [连接目标](#connect-destination) 在Adobe Experience Platform中，然后 [设置数据导入](#import-data-into-eloqua) 从存储位置移至 [!DNL Oracle Eloqua].
+若要将受众数据发送到[!DNL Oracle Eloqua]，您必须先在Adobe Experience Platform中[连接目标](#connect-destination)，然后[设置数据导入](#import-data-into-eloqua)（从您的存储位置导入[!DNL Oracle Eloqua]）。
 
 ## 支持的受众 {#supported-audiences}
 
@@ -22,8 +22,8 @@ ht-degree: 2%
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
+| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
 
 {style="table-layout:auto"}
 
@@ -33,8 +33,8 @@ ht-degree: 2%
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如 [目标激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes). |
-| 导出频率 | **[!UICONTROL 批次]** | 批量目标以三、六、八、十二或二十四小时的增量将文件导出到下游平台。 详细了解 [批处理基于文件的目标](/help/destinations/destination-types.md#file-based). |
+| 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如[目标激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes)的选择配置文件属性屏幕中所选。 |
+| 导出频率 | **[!UICONTROL 批次]** | 批量目标以三、六、八、十二或二十四小时的增量将文件导出到下游平台。 阅读有关[基于批处理文件的目标](/help/destinations/destination-types.md#file-based)的详细信息。 |
 
 {style="table-layout:auto"}
 
@@ -42,41 +42,41 @@ ht-degree: 2%
 
 在使用SFTP存储设置电子邮件营销目标时，Adobe建议向允许列表添加特定IP范围。
 
-请参阅 [SFTP目标的IP地址允许列表](../cloud-storage/ip-address-allow-list.md) (如果需要将AdobeIP添加到允许列表)。
+如果需要将AdobeIP添加到允许列表，请参阅SFTP目标的[IP地址允许列表](../cloud-storage/ip-address-allow-list.md)。
 
 ## 连接到目标 {#connect}
 
 >[!IMPORTANT]
 > 
->要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限
+>若要连接到目标，您需要&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限
 
-要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
+要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
 
 此目标支持以下连接类型：
 
-* **[!UICONTROL 包含密码的SFTP]**
-* **[!UICONTROL 包含SSH密钥的SFTP]**
+* 使用密码&#x200B;**[!UICONTROL SFTP]**
+* 使用SSH密钥的&#x200B;**[!UICONTROL SFTP]**
 
 ### 连接参数 {#parameters}
 
-同时 [设置](../../ui/connect-destination.md) 此目标必须提供以下信息：
+在[设置](../../ui/connect-destination.md)此目标时，必须提供以下信息：
 
-* 对象 **[!UICONTROL 包含密码的SFTP]** 连接，您必须提供：
+* 对于使用密码&#x200B;]**的**[!UICONTROL  SFTP连接，您必须提供：
    * [!UICONTROL 域]
    * [!UICONTROL 端口]
    * [!UICONTROL 用户名]
    * [!UICONTROL 密码]
-* 对象 **[!UICONTROL 包含SSH密钥的SFTP]** 连接，您必须提供：
+* 对于使用SSH密钥&#x200B;]**连接的**[!UICONTROL  SFTP，您必须提供：
    * [!UICONTROL 域]
    * [!UICONTROL 端口]
    * [!UICONTROL 用户名]
    * [!UICONTROL SSH密钥]
 
-* 或者，您可以附加RSA格式的公钥，将带有PGP/GPG的加密添加到导出文件中的 **[!UICONTROL 键]** 部分。 您的公钥必须编写为 [!DNL Base64] 编码字符串。
+* 或者，您可以附加RSA格式的公钥，以将使用PGP/GPG的加密添加到&#x200B;**[!UICONTROL 密钥]**&#x200B;部分下的导出文件。 您的公钥必须编写为[!DNL Base64]编码字符串。
 * **[!UICONTROL 名称]**：为您的目标选择相关的名称。
 * **[!UICONTROL 描述]**：输入目标的描述。
-* **[!UICONTROL 文件夹路径]**：提供Platform将导出数据作为CSV文件存储到的存储位置中的路径。
-* **[!UICONTROL 文件格式]**：选择 **CSV** 以将CSV文件导出到存储位置。
+* **[!UICONTROL 文件夹路径]**：提供存储位置中的路径，Platform会将您的导出数据存为CSV文件。
+* **[!UICONTROL 文件格式]**：选择&#x200B;**CSV**&#x200B;以将CSV文件导出到您的存储位置。
 
 <!--
 
@@ -88,27 +88,27 @@ Commenting out Amazon S3 bucket part for now until support is clarified
 
 ### 启用警报 {#enable-alerts}
 
-您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅以下内容中的指南： [使用UI订阅目标警报](../../ui/alerts.md).
+您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
 
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
->* 要激活数据，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
->* 要导出 *身份*，您需要 **[!UICONTROL 查看身份图]** [访问控制权限](/help/access-control/home.md#permissions). <br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+>* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
-请参阅 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
+有关将受众激活到此目标的说明，请参阅[将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md)。
 
 ### 目标属性 {#destination-attributes}
 
-将受众激活到此目标时，Adobe建议您从 [合并架构](../../../profile/home.md#profile-fragments-and-union-schemas). 选择要导出到目标的唯一标识符和任何其他XDM字段。 有关更多信息，请参阅 [将受众激活到电子邮件营销目标的最佳实践](overview.md#best-practices).
+将受众激活到此目标时，Adobe建议您从[合并架构](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择要导出到目标的唯一标识符和任何其他XDM字段。 有关详细信息，请参阅将受众激活到电子邮件营销目标时的最佳实践[](overview.md#best-practices)。
 
 ## 导出的数据 {#exported-data}
 
-对象 [!DNL Oracle Eloqua] 目标，平台创建 `.csv` 文件存储位置。 有关这些文件的详细信息，请参见 [验证受众激活](../../ui/activate-batch-profile-destinations.md#verify) 在audience activation教程中。
+对于[!DNL Oracle Eloqua]目标，Platform会在您提供的存储位置创建一个`.csv`文件。 有关这些文件的详细信息，请参阅受众激活教程中的[验证受众激活](../../ui/activate-batch-profile-destinations.md#verify)。
 
-## 设置数据导入到 [!DNL Oracle Eloqua] {#import-data-into-eloqua}
+## 设置数据导入到[!DNL Oracle Eloqua] {#import-data-into-eloqua}
 
-连接后 [!DNL Platform] 敬您的 [!DNL SFTP] 存储时，您必须设置从存储位置导入到的数据导入 [!DNL Oracle Eloqua]. 要了解如何完成此操作，请参阅 [导入联系人或帐户](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/Help/DataImportExport/Tasks/ImportingContactsOrAccounts.htm) 在 [!DNL Oracle Eloqua Help Center].
+将[!DNL Platform]连接到[!DNL SFTP]存储后，您必须设置从存储位置到[!DNL Oracle Eloqua]的数据导入。 要了解如何完成此操作，请参阅[!DNL Oracle Eloqua Help Center]中的[导入联系人或帐户](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/Help/DataImportExport/Tasks/ImportingContactsOrAccounts.htm)。

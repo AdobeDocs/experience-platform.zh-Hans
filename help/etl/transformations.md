@@ -6,8 +6,8 @@ description: 本文演示了提取、转换、加载(ETL)开发人员可以遇�
 exl-id: 8084f5fd-b621-4515-a329-5a06c137d11c
 source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
-source-wordcount: '493'
-ht-degree: 1%
+source-wordcount: '474'
+ht-degree: 2%
 
 ---
 
@@ -15,18 +15,18 @@ ht-degree: 1%
 
 本文演示了提取、转换、加载(ETL)开发人员可以遇到的以下示例转换。
 
-## 将CSV平面化为层次结构
+## 平面CSV到层次结构
 
 ### 示例文件
 
-可从公共ETL参考中找到示例CSV和JSON文件 [!DNL GitHub] 由Adobe维护的存储库：
+可从由Adobe维护的公共ETL引用[!DNL GitHub]存储库中获得示例CSV和JSON文件：
 
 - [CRM_profiles.csv](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.csv)
 - [CRM_profiles.json](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.json)
 
-### CSV 示例
+### 示例CSV
 
-以下CRM数据已导出为 `CRM_profiles.csv`：
+以下CRM数据已导出为`CRM_profiles.csv`：
 
 ```shell
 TITLE   F_NAME  L_NAME  GENDER  DOB EMAIL   CRMID   ECID    LOYALTYID   ECID2   PHONE   STREET  CITY    STATE   COUNTRY ZIP LAT LONG
@@ -41,23 +41,23 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
 
 ### 映射
 
-下表列出了CRM数据的映射要求，包括以下转换：
-- 要保留的标识列 `identityMap` 属性
+下表概述了CRM数据的映射要求，并包括以下转换：
+- `identityMap`属性的标识列
 - 出生日期(DOB)到年和月 — 日
 - 双精度或短整数的字符串。
 
 | CSV列 | XDM路径 | 数据格式 |
 | ---------- | -------- | --------------- |
 | 标题 | person.name.courtesyTitle | 复制为字符串 |
-| F_NAME | person.name.firstName | 复制为字符串 |
+| F名称 | person.name.firstName | 复制为字符串 |
 | L_NAME | person.name.lastName | 复制为字符串 |
 | 性别 | person.gender | 将性别转换为对应的person.gender枚举值 |
-| DOB | person.birthDayAndMonth： &quot;MM-DD&quot;<br/>person.birthDate： &quot;YYYY-MM-DD&quot;<br/>person.birthYear： YYYY | 将birthDayAndMonth转换为字符串<br/>将birthDate转换为字符串<br/>将birthYear转换为短整数 |
-| 电子邮件 | personalEmail.address | 复制为字符串 |
-| CRMID | identityMap.CRMID[{&quot;id&quot;：x， primary：false}] | 将字符串形式复制到identityMap中的CRMID数组，并将Primary设置为false |
-| ECID | identityMap.ECID[{&quot;id&quot;：x， primary： false}] | 将字符串形式复制到identityMap中的ECID数组中的第一个条目，并将Primary设置为false |
+| DOB | person.birthDayAndMonth： &quot;MM-DD&quot;<br/>person.birthDate： &quot;YYYY-MM-DD&quot;<br/>person.birthYear： YYYY | 将birthDayAndMonth转换为string<br/>将birthDate转换为string<br/>将birthYear转换为short int |
+| EMAIL | personalEmail.address | 复制为字符串 |
+| CRMID | identityMap.CRMID[{&quot;id&quot;：x， primary：false}] | 将字符串形式复制到identityMap中的CRMID数组，并将“主要”设置为false |
+| ECID | identityMap.ECID[{&quot;id&quot;：x，primary： false}] | 将字符串形式复制到identityMap的ECID数组中的第一个条目，并将“主要”设置为false |
 | LOYALTYID | identityMap.LOYALTYID[{&quot;id&quot;：x， primary：true}] | 将字符串形式复制到identityMap中的LOYALTYID数组，并将Primary设置为true |
-| ECID2 | identityMap.ECID[{&quot;id&quot;：x， primary：false}] | 将字符串形式复制到identityMap中ECID数组的第二个条目，并将Primary设置为false |
+| ECID2 | identityMap.ECID[{&quot;id&quot;：x， primary：false}] | 将字符串形式复制到identityMap的ECID数组中的第二个条目，并将Primary设置为false |
 | 电话 | homePhone.number | 复制为字符串 |
 | 街道 | homeAddress.street1 | 复制为字符串 |
 | 城市 | homeAddress.city | 复制为字符串 |
@@ -65,12 +65,12 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
 | 国家/地区 | homeAddress.country | 复制为字符串 |
 | ZIP | homeAddress.postalCode | 复制为字符串 |
 | LAT | homeAddress.latitude | 转换为双精度 |
-| 长 | homeAddress.longitude | 转换为双精度 |
+| 长型 | homeAddress.longitude | 转换为双精度 |
 
 
 ### 输出XDM
 
-以下示例显示转换为XDM的CSV的前两行，如所示 `CRM_profiles.json`：
+以下示例显示转换为XDM的CSV的前两行，如`CRM_profiles.json`中所示：
 
 ```json
 {
@@ -172,11 +172,11 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
 
 ## 从Dataframe到XDM架构
 
-数据流（如Parquet文件）的层次结构必须与要上传到的XDM架构的层次结构匹配。
+数据帧（如Parquet文件）的层级必须与要上传到的XDM架构的层级匹配。
 
 ### 示例数据流
 
-以下示例数据流的结构已映射到实现 [!DNL XDM Individual Profile] 类，并包含与该类型架构关联的最常见字段。
+以下示例数据流的结构已映射到实现[!DNL XDM Individual Profile]类的架构，并包含与该类型架构关联的最常见字段。
 
 ```python
 [
@@ -249,7 +249,7 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
 ]
 ```
 
-在构建用于Adobe Experience Platform的数据流时，确保其层次结构与现有XDM架构的层次结构完全匹配对于字段正确映射非常重要。
+在构建用于Adobe Experience Platform的数据流时，要确保其层次结构与现有XDM架构完全匹配，以便字段正确映射，这一点很重要。
 
 ## 标识到标识映射
 
@@ -284,9 +284,9 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
 
 | 标识字段 | identityMap字段 | 数据类型 |
 | -------------- | ----------------- | --------- |
-| 身份[0].id | identitymap[电子邮件][{"id"}] | 复制为字符串 |
-| 身份[1].id | identitymap[CRMID][{"id"}] | 复制为字符串 |
-| 身份[2].id | identitymap[LOYALTYID][{"id"}] | 复制为字符串 |
+| 身份[0].id | identityMap[电子邮件][{"id"}] | 复制为字符串 |
+| 标识[1].id | identityMap[CRMID][{"id"}] | 复制为字符串 |
+| 身份[2].id | identityMap[LOYALTYID][{"id"}] | 复制为字符串 |
 
 ### 输出XDM
 

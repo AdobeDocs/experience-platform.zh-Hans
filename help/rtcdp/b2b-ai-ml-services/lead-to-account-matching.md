@@ -7,8 +7,8 @@ badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/lega
 exl-id: 2f853599-6bca-4ba6-bbba-131a49d8854e
 source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
-source-wordcount: '626'
-ht-degree: 2%
+source-wordcount: '605'
+ht-degree: 3%
 
 ---
 
@@ -31,24 +31,24 @@ ht-degree: 2%
 - 联系电话
 - 公司名称
 - 公司网站
-- 职务
+- 职务名称
 - 位置
 
 通过商机帐户匹配，可将已知人员配置文件联接到帐户配置文件。 然后，您可以在B2B上下文（如帐户、机会等）中对数据进行分段和定位。 人员配置文件可以分为以下三个类别：
 
-- **帐户人员配置文件：** 人员配置文件已通过来自数据源的关系与至少一个帐户配置文件关联。 这意味着至少有一个联系人片段。
+- **帐户个人资料：**&#x200B;该个人资料已通过来自数据源的关系与至少一个帐户个人资料关联。 这意味着至少有一个联系人片段。
 
 >[!NOTE]
 >
 > 运行潜在客户与帐户匹配作业时，帐户人员配置文件不匹配。
 
-- **已知人员配置文件：** 人员配置文件未与任何帐户配置文件关联，并且以下至少一个人员配置文件属性具有值：
+- **已知人员配置文件：**&#x200B;该人员配置文件未与任何帐户配置文件关联，并且以下至少一个人员配置文件属性具有值：
 
    - 电子邮件地址
    - 公司名称
    - 公司网站
 
-- **匿名人员个人资料：** 人员配置文件未关联到任何帐户配置文件，并且以下任何人员配置文件属性都没有值：
+- **匿名人员个人资料：**&#x200B;该人员个人资料未关联到任何帐户个人资料，并且以下任何人员个人资料属性都没有值：
 
    - 电子邮件地址
    - 公司名称
@@ -72,25 +72,25 @@ ht-degree: 2%
 
 b2b.companyName、b2b.companyWebsite和b2b.personKey.sourceKey属性可以位于B2B person架构的b2b字段组中。
 
-![显示属性的B2B人员模式](/help/rtcdp/accounts/images/b2b-person-schema.png)
+![B2B人员架构显示属性](/help/rtcdp/accounts/images/b2b-person-schema.png)
 
 workEmail属性可作为B2B人员架构中的顶级字段组找到。
 
-![显示工作电子邮件的B2B人员模式](/help/rtcdp/accounts/images/b2b-person-workemail.png)
+![B2B人员架构显示workEmail](/help/rtcdp/accounts/images/b2b-person-workemail.png)
 
 仅当匹配分数超过内部置信度阈值时，才会最佳匹配用户档案。 结果保存在现有帐户人员关系XDM的新系统数据集中。
 
-当有新的人员配置文件快照可用（每24小时一次）时，会运行商机帐户匹配服务。 请参阅文档以了解有关 [商机帐户匹配的配置](/help/rtcdp/accounts/account-profile-ui-guide.md).
+当有新的人员配置文件快照可用（每24小时一次）时，会运行商机帐户匹配服务。 有关商机与帐户匹配](/help/rtcdp/accounts/account-profile-ui-guide.md)的[配置的更多信息，请参阅文档。
 
 ## 如何查看潜在客户与帐户的匹配输出 {#how-to-view}
 
 作业运行后，结果将保存在现有帐户人员关系XDM的新数据集中。
 
-要预览数据集，请选择 **[!UICONTROL 预览数据集]** 在右上角。
+要预览数据集，请选择右上角的&#x200B;**[!UICONTROL 预览数据集]**。
 
 ![新数据集](/help/rtcdp/accounts/images/b2b-dataset-output.png)
 
-数据集包含匹配的帐户信息以及所选数据集的匹配分数。 此 **[!UICONTROL 关系源]** 字段指示它是否来自商机帐户匹配流程。
+数据集包含匹配的帐户信息以及所选数据集的匹配分数。 **[!UICONTROL Relationship Source]**&#x200B;字段指示它是否来自潜在客户与帐户的匹配流程。
 
 ![预览数据集置信度分数和输出](/help/rtcdp/accounts/images/b2b-dataset-preview.png)
 
@@ -98,4 +98,4 @@ workEmail属性可作为B2B人员架构中的顶级字段组找到。
 
 您可以通过仪表板监控任何潜在客户到帐户匹配作业的作业状态和相关量度。
 
-请参阅文档以了解有关 [监控销售线索与帐户匹配的作业](/help/dataflows/ui/b2b/monitor-profile-enrichment.md).
+有关商机与帐户匹配](/help/dataflows/ui/b2b/monitor-profile-enrichment.md)的[监视作业的详细信息，请参阅文档。

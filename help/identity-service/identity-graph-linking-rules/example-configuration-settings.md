@@ -42,7 +42,7 @@ ht-degree: 22%
 
 事件：
 
-* CRM ID：Tom， Email_LC_SHA256： tom<span>@acme.com
+* CRM ID： Tom， Email_LC_SHA256： tom<span>@acme.com
 * CRM ID：Tom，ECID：111
 * CRM ID：Summer， Email_LC_SHA256： summer<span>@acme.com
 * CRM ID：Summer，ECID：222

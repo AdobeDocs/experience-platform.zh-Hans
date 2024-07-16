@@ -4,8 +4,8 @@ description: 了解 Adobe Experience Platform 中的 Adobe Audience Manager 标�
 exl-id: d345e145-fdb9-4ca3-88c2-9c2a247ea59a
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
-source-wordcount: '496'
-ht-degree: 71%
+source-wordcount: '451'
+ht-degree: 62%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 71%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用Audience Manager标记扩展，您可以将Audience Manager使用的DIL代码与Adobe Experience Platform中的资产相集成。
 
@@ -21,13 +21,13 @@ ht-degree: 71%
 
 >[!NOTE]
 >
->此扩展不适用于Adobe Analytics数据的事件转发。 对于事件转发，请使用 [Adobe Analytics扩展](../analytics/overview.md).
+>此扩展不适用于Adobe Analytics数据的事件转发。 对于事件转发，请使用[Adobe Analytics扩展](../analytics/overview.md)。
 
 ## 配置 Adobe Audience Manager 扩展
 
-如果尚未安装Adobe Audience Manager扩展，请打开您的资产，然后选择 **[!UICONTROL Extensions > Catalog]**，将鼠标悬停在Adobe Audience Manager扩展上，然后选择 **[!UICONTROL 安装]**.
+如果尚未安装Adobe Audience Manager扩展，请打开您的资产，然后选择&#x200B;**[!UICONTROL 扩展>目录]**，将鼠标悬停在Adobe Audience Manager扩展上，然后选择&#x200B;**[!UICONTROL 安装]**。
 
-要配置该扩展，请打开 [!UICONTROL 扩展] 选项卡，将鼠标悬停在该扩展上，然后选择 **[!UICONTROL 配置]**.
+要配置该扩展，请打开[!UICONTROL 扩展]选项卡，将鼠标悬停在该扩展上，然后选择&#x200B;**[!UICONTROL 配置]**。
 
 ### DIL 设置
 
@@ -45,7 +45,7 @@ ht-degree: 71%
 
 如果 URL 与任何排除的路径相匹配，则不会加载该扩展。
 
-选择 **[!UICONTROL 添加路径]** 以指定排除的URL。
+选择&#x200B;**[!UICONTROL 添加路径]**&#x200B;以指定排除的URL。
 
 如果 URL 是正则表达式，则启用 Regex。
 
@@ -65,11 +65,11 @@ ht-degree: 71%
 
 添加 [DIL.create](https://experiencecloud.adobe.com/resources/help/en_US/aam/r_dil_create.html) 使用的初始化属性，以及 [visitorService 对象](https://experiencecloud.adobe.com/resources/help/en_US/aam/r_dil_visitor_service.html)的命名空间子属性。在代码编辑器中，代码注释包含两个示例用例。
 
-选择 **[!UICONTROL 选择项目]** 以添加其他属性。
+选择&#x200B;**[!UICONTROL 选择项]**&#x200B;以添加其他属性。
 
 将鼠标悬停在“i”图标上，可了解每个属性的用途。您可以在 [Audience Manager DIL 文档](https://experiencecloud.adobe.com/resources/help/en_US/aam/r_dil_create.html)中找到有关这些属性的更多信息。
 
-选择 **[!UICONTROL 保存]** 配置完该扩展后，发送电子邮件给用户。
+配置完该扩展后，选择&#x200B;**[!UICONTROL 保存]**。
 
 ## Adobe Audience Manager 扩展操作类型
 

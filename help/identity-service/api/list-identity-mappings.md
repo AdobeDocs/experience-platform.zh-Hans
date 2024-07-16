@@ -28,7 +28,7 @@ GET https://platform-{REGION}.adobe.io/data/core/identity/mapping
 
 **请求**
 
-选项1：以命名空间形式提供身份(`nsId`，按ID)和ID值(`id`)。
+选项1：提供身份作为命名空间（`nsId`，按ID）和ID值(`id`)。
 
 ```shell
 curl -X GET \
@@ -39,7 +39,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项2：以命名空间形式提供身份(`ns`，按名称)和ID值(`id`)。
+选项2：提供身份作为命名空间（`ns`，按名称）和ID值(`id`)。
 
 ```shell
 curl -X GET \
@@ -50,7 +50,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项3：以XID形式提供身份(`xid`)。 有关如何获取身份的XID的更多信息，请参阅本文档中涵盖的部分 [获取标识的XID](./list-native-id.md).
+选项3：以XID (`xid`)提供标识。 有关如何获取身份的XID的更多信息，请参阅本文档中有关[获取身份的XID](./list-native-id.md)的部分。
 
 ```shell
 curl -X GET \
@@ -63,7 +63,7 @@ curl -X GET \
 
 ### 获取多个标识的标识映射
 
-使用 `POST` 方法作为批次等效的 `GET` 上述方法检索多个身份的映射。
+使用`POST`方法作为上述`GET`方法的等效批次检索多个标识的映射。
 
 >[!NOTE]
 >
@@ -86,7 +86,7 @@ POST https://platform.adobe.io/data/core/identity/mappings
 }
 ```
 
-选项2：提供身份列表作为复合ID，其中每个身份均按命名空间ID命名ID值和命名空间。 此示例演示在覆盖缺省值时使用此方法 `graph-type` “专用图”的URL名称。
+选项2：提供身份列表作为复合ID，其中每个身份均按命名空间ID命名ID值和命名空间。 此示例演示在覆盖“专用图”的默认`graph-type`时使用此方法。
 
 ```shell
 {
@@ -145,7 +145,7 @@ curl -X POST \
       }' | json_pp
 ```
 
-如果未找到具有所提供的输入的相关标识，则 `HTTP 204` 返回响应代码时没有内容。
+如果未找到具有所提供的输入的相关标识，则将返回`HTTP 204`响应代码，其中不包含任何内容。
 
 **响应**
 
@@ -183,9 +183,9 @@ curl -X POST \
 }
 ```
 
-- `lastAssociationTime`：输入身份上次与此身份关联的时间戳。
-- `regions`：提供 `regionId` 和 `lastAssociationTime` 身份被发现的地方。
+- `lastAssociationTime`：上次将输入身份与此身份关联的时间戳。
+- `regions`：为显示身份的位置提供`regionId`和`lastAssociationTime`。
 
 ## 后续步骤
 
-继续下一教程以 [列出可用的命名空间](./list-namespaces.md).
+继续下一教程，将[列出可用的命名空间](./list-namespaces.md)。

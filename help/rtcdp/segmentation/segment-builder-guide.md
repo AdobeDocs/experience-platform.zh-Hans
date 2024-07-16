@@ -14,6 +14,6 @@ ht-degree: 0%
 
 # Real-time Customer Data Platform中的区段生成器
 
-构建于Adobe Experience Platform之上， [!DNL Adobe Real-Time Customer Data Platform] 能够利用作为一部分的所有区段生成器功能 [!DNL Experience Platform]. 在区段生成器的用户界面中，您可以创建新受众、访问现有受众以及修改现有受众。
+[!DNL Adobe Real-Time Customer Data Platform]基于Adobe Experience Platform构建，能够利用[!DNL Experience Platform]所包含的完整区段生成器功能。 在区段生成器的用户界面中，您可以创建新受众、访问现有受众以及修改现有受众。
 
-有关区段生成器的更详细指南，请阅读 [区段生成器用户指南](../../segmentation/ui/segment-builder.md).
+有关区段生成器的更详细指南，请阅读[区段生成器用户指南](../../segmentation/ui/segment-builder.md)。

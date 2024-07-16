@@ -1,6 +1,6 @@
 ---
 title: 基于Experience Platform构建应用程序和智能服务
-description: 此视频概述了基于Adobe Experience Platform构建的“应用程序”和“智能服务”，它们补充了Experience CloudApplications&mdash；Real-time Customer Data Platform、Journey Orchestration、Customer Journey Analytics、Attribution AI和客户人工智能。
+description: 此视频概述了基于Adobe Experience Platform构建的“应用程序”和“智能服务”，它们补充了Experience Cloud“应用程序&amp”、“mdash”、“Real-time Customer Data Platform”、“Journey Orchestration”、“Customer Journey Analytics”、“Attribution AI”和“客户人工智能”。
 kt: 4333
 audience: all
 doc-type: video

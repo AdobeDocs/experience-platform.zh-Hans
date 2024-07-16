@@ -4,60 +4,60 @@ title: Destination SDK中支持的转换函数
 exl-id: 36f761c7-9d76-41fe-b05f-d4cad655ddd2
 source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
-source-wordcount: '579'
-ht-degree: 3%
+source-wordcount: '552'
+ht-degree: 2%
 
 ---
 
 # Destination SDK中支持的转换函数
 
-Experience PlatformDestination SDK使用 [[!DNL Pebble] 模板](https://pebbletemplates.io/)，允许您将从Experience Platform导出的数据转换为目标所需的格式。
+Experience PlatformDestination SDK使用[[!DNL Pebble] 模板](https://pebbletemplates.io/)，允许您将从Experience Platform导出的数据转换为目标所需的格式。
 
-Experience Platform [!DNL Pebble] 与提供的现成版本相比，实施有一些变化 [!DNL Pebble]. 此外，除了提供的现成功能外， [!DNL Pebble]，Adobe创建了一些可与Destination SDK一起使用的其他函数。
+与[!DNL Pebble]提供的现成版本相比，Experience Platform[!DNL Pebble]实现有一些更改。 此外，除了[!DNL Pebble]提供的现成函数之外，Adobe还创建了一些可与Destination SDK一起使用的其他函数。
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 使用位置 {#where-to-use}
 
-在以下情况下，请使用本页下面列出的受支持函数 [创建消息转换模板](../../testing-api/streaming-destinations/create-template.md) 从Experience Platform导出到目标的数据。
+为从Experience Platform导出到目标的数据创建消息转换模板](../../testing-api/streaming-destinations/create-template.md)时，请使用此页上下面列出的受支持的函数。[
 
-消息转换模板用于 [目标服务器配置](templating-specs.md) 适用于流式传输目标。
+消息转换模板在流目标的[目标服务器配置](templating-specs.md)中使用。
 
 ## 先决条件 {#prerequisites}
 
-要了解此参考页面中的概念和函数，请阅读 [消息格式](message-format.md) 文档优先。 您需要了解 [用户档案的结构](message-format.md#profile-structure) 在Experience Platform中，然后才能使用 [!DNL Pebble] 用于转换和导出数据的模板。
+要了解此参考页中的概念和函数，请先阅读[消息格式](message-format.md)文档。 您需要先了解Experience Platform中配置文件](message-format.md#profile-structure)的[结构，然后才能使用[!DNL Pebble]模板转换和导出的数据。
 
-在继续使用下面记录的功能之前，请查看部分中的模板示例 [使用模板语言进行身份、属性和受众成员资格转换](message-format.md#using-templating). 这里的示例开始非常简单，复杂性也增加了。
+在继续使用下面记录的功能之前，请查看[使用模板语言进行标识、属性和受众成员资格转换](message-format.md#using-templating)一节中的模板化示例。 这里的示例开始非常简单，复杂性也增加了。
 
-## 支持 [!DNL Pebble] 函数 {#supported-functions}
+## 支持的[!DNL Pebble]函数 {#supported-functions}
 
-从 [!DNL Pebble] 标记部分中，Destination SDK仅支持：
+在[!DNL Pebble]标记部分中，Destination SDK仅支持：
 
-* [filter](https://pebbletemplates.io/wiki/tag/filter/)
-* [for](https://pebbletemplates.io/wiki/tag/for/)
-* [如果](https://pebbletemplates.io/wiki/tag/if/)
-* [set](https://pebbletemplates.io/wiki/tag/set/)
+* [筛选器](https://pebbletemplates.io/wiki/tag/filter/)
+* ](https://pebbletemplates.io/wiki/tag/for/)的[
+* [if](https://pebbletemplates.io/wiki/tag/if/)
+* [设置](https://pebbletemplates.io/wiki/tag/set/)
 
 >[!TIP]
 >
->使用 `for` 迭代时不同 *数组* 或 *映射* 元素之间的关联。 循环访问数组时，可以直接获取元素。 循环访问映射时，将获得每个映射项，每个映射项都有一个键值对。
+>在模板中迭代使用&#x200B;*数组*&#x200B;或&#x200B;*映射*&#x200B;元素时，使用`for`是不同的。 循环访问数组时，可以直接获取元素。 循环访问映射时，将获得每个映射项，每个映射项都有一个键值对。
 >
-> * 有关数组元素的示例，请考虑以下对象中的身份 [identityMap](message-format.md#identities) namespace，您可以在其中循环访问元素，例如 `identityMap.gaid`， `identityMap.email`或类似项。
-> * 有关映射元素的示例，请考虑 [区段成员资格](message-format.md#segment-membership).
+> * 有关数组元素的示例，请考虑[identityMap](message-format.md#identities)命名空间中的标识，在该命名空间中，您可以对`identityMap.gaid`、`identityMap.email`等元素进行迭代。
+> * 有关映射元素的示例，请考虑[segmentMembership](message-format.md#segment-membership)。
 
-从 [!DNL Pebble] 过滤器部分，Destination SDK支持所有函数。 下面的另一个示例显示了 `date` 函数可在Destination SDK中使用。
+从[!DNL Pebble]筛选器部分中，Destination SDK支持所有函数。 下面的进一步示例说明如何在Destination SDK中使用`date`函数。
 
-从 [!DNL Pebble] 函数部分，Adobe执行 *非* 支持 [范围](https://pebbletemplates.io/wiki/function/range/) 函数。
+在[!DNL Pebble]函数部分中，Adobe *不*&#x200B;支持[范围](https://pebbletemplates.io/wiki/function/range/)函数。
 
-## 示例 `date` 函数使用 {#date-function}
+## 如何使用`date`函数的示例 {#date-function}
 
-举例说明 [!DNL Pebble] 函数在Destination SDK中使用，请参阅下面日期函数的使用方式([Pebble文档的链接](https://pebbletemplates.io/wiki/filter/date/))用于转换时间戳的格式。
+若要举例说明[!DNL Pebble]函数在Destination SDK中的使用方式，请参阅下面如何使用日期函数（[链接，位于Pebble文档](https://pebbletemplates.io/wiki/filter/date/)中）转换时间戳的格式。
 
 ### 用例
 
-要更改 `lastQualificationTime` 默认时间戳 [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) Experience Platform导出到您的目标首选的其他值的值。
+您想要将`lastQualificationTime`时间戳从Experience Platform导出的默认[ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)值更改为目标首选的其他值。
 
 ### 示例
 
@@ -85,9 +85,9 @@ Experience Platform [!DNL Pebble] 与提供的现成版本相比，实施有一�
 
 ## Adobe添加的函数 {#functions-added-by-adobe}
 
-除了提供的现成功能外， [!DNL Pebble]，请参阅下面的Adobe创建的其他函数，这些函数可用于数据导出。
+除了[!DNL Pebble]提供的现成函数之外，请参阅下面的Adobe创建的其他函数，这些函数可用于数据导出。
 
-### `addedSegments` 和 `removedSegments` 函数 {#addedsegments-removedsegments-functions}
+### `addedSegments`和`removedSegments`函数 {#addedsegments-removedsegments-functions}
 
 #### 用例
 
@@ -199,7 +199,7 @@ added: <111111><333333>;|removed: <222222>;
 
 ## 后续步骤 {#next-steps}
 
-您现在知道了哪个 [!DNL Pebble] Destination SDK支持各种函数，以及如何使用它们调整导出数据的格式以满足您的需求。 接下来，您应该查看以下页面：
+您现在知道Destination SDK支持哪些[!DNL Pebble]函数，以及如何使用它们调整导出数据的格式以满足您的需求。 接下来，您应该查看以下页面：
 
 * [创建和测试消息转换模板](../../testing-api/streaming-destinations/create-template.md)
 * [呈现模板API操作](../../testing-api/streaming-destinations/render-template-api.md)

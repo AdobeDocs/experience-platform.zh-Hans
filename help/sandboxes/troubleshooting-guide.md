@@ -13,7 +13,7 @@ ht-degree: 8%
 
 # 沙盒疑难解答指南
 
-本文档提供有关Adobe Experience Platform中沙盒的常见问题解答。 有关其他Platform服务的问题和疑难解答，请参阅 [Experience Platform疑难解答指南](../landing/troubleshooting.md).
+本文档提供有关Adobe Experience Platform中沙盒的常见问题解答。 有关其他Platform服务的问题和疑难解答，请参阅[Experience Platform疑难解答指南](../landing/troubleshooting.md)。
 
 沙盒将单个Platform实例划分为单独的虚拟环境，以帮助开发和改进数字体验应用程序。 有关更多信息，请参阅[沙盒概述](home.md)。
 
@@ -31,11 +31,11 @@ ht-degree: 8%
 
 Experience Platform中有两种沙盒类型可用：
 
-* **生产沙盒**：生产沙盒旨在与生产环境中的用户档案一起使用。 Platform允许您创建多个生产沙盒，以便在保持操作隔离的同时为数据提供适当的功能。 此功能允许您为不同的业务线、品牌、项目或区域指定特定的生产沙箱。 生产沙盒支持大量生产配置文件，直到您许可为止 [!DNL Profile] 承诺（在所有授权的生产沙盒中累积测量）。 您有权使用每个授权用户的许可平均用户档案 [!DNL Profile] （在所有授权的生产沙箱中累计测量）。
-* **开发沙盒**：开发沙盒是一种沙盒，专门可用于对非生产用户档案进行开发和测试。 开发沙盒支持大量非生产配置文件，最多可支持您许可的10% [!DNL Profile] 承诺（在所有授权的开发沙盒中累积测量）。 您有权获得以下权限：
+* **生产沙盒**：生产沙盒应该与生产环境中的用户档案一起使用。 Platform允许您创建多个生产沙盒，以便在保持操作隔离的同时为数据提供适当的功能。 此功能允许您为不同的业务线、品牌、项目或区域指定特定的生产沙箱。 生产沙盒支持大量生产配置文件，最多不超过您的许可[!DNL Profile]承诺（在所有授权的生产沙盒中累积测量）。 您有权为每个授权的[!DNL Profile]使用许可的平均用户档案（在所有授权的生产沙盒中累积测量）。
+* **开发沙盒**：开发沙盒是一个沙盒，可专门用于开发和测试非生产配置文件。 开发沙盒支持大量非生产配置文件，最多占您许可的[!DNL Profile]承诺的10%（在所有授权的开发沙盒中累积测量）。 您有权获得以下权限：
    * 每个授权的非生产配置文件的平均非生产配置文件丰富度为75 KB（在所有授权开发沙盒中累积测量）；
    * 每个开发沙盒每天一个批量分段作业；
-   * 平均120个 [!DNL Profile] API调用，按 [!DNL Profile]，每年（在所有授权的开发沙盒中累积测量）。
+   * 每[!DNL Profile]年平均120次[!DNL Profile] API调用（在所有授权的开发沙盒中累积测量）。
 
 有关更多信息，请参阅[沙盒概述](./home.md)。
 
@@ -53,7 +53,7 @@ Experience Platform实例支持多个生产和开发沙盒，每个沙盒维护�
 
 默认Experience Platform许可证总共授予您5个沙盒，您可以将其分类为生产或开发。 您可以额外许可包含10个沙盒的包，最多总共75个沙盒。
 
-生产沙盒可以重置或删除，但Adobe Analytics也在使用的生产沙盒除外 [Cross Device Analytics (CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html) 功能，或者Adobe Audience Manager也在使用其中托管的身份图用于 [基于人员的目标(PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html) 功能。
+生产沙盒可以重置或删除，但Adobe Analytics也将其用于[Cross Device Analytics (CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html)功能，或者其中托管的身份图形也被Adobe Audience Manager用于[基于人员的目标(PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html)功能除外。
 
 您可以更新生产沙盒的标题。 但是，无法重命名生产沙盒。
 
@@ -69,8 +69,8 @@ Experience Platform实例支持多个生产和开发沙盒，每个沙盒维护�
 
 ## 我刚刚创建了一个沙盒。 如何为将使用此沙盒的用户设置权限？
 
-Adobe Admin Console通过使用产品配置文件将用户链接到沙盒和权限。 创建新沙盒后，导航到 **权限** 选项卡中列出的要授予访问权限的产品配置文件，然后单击 **沙盒**. 在此，您可以按照与其他权限相同的方式添加新沙盒或删除对新沙盒的访问权限。
+Adobe Admin Console通过使用产品配置文件将用户链接到沙盒和权限。 创建新沙盒后，导航到要授予访问权限的产品配置文件的&#x200B;**权限**&#x200B;选项卡，然后单击&#x200B;**沙盒**。 在此，您可以按照与其他权限相同的方式添加新沙盒或删除对新沙盒的访问权限。
 
 如果您希望向特定沙盒的用户添加唯一权限，您可能需要使用应用的相应沙盒和权限创建新的产品配置文件，并将这些用户分配给该配置文件。
 
-请参阅 [访问控制用户指南](../access-control/ui/overview.md) 有关在Admin Console中管理沙盒和权限的更多信息。
+有关在Admin Console中管理沙盒和权限的详细信息，请参阅[访问控制用户指南](../access-control/ui/overview.md)。

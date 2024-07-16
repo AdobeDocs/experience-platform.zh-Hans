@@ -17,7 +17,7 @@ ht-degree: 60%
 
 1. 在网页上将数据层重新格式化为XDM。
 2. 使用标记本机数据元素功能，将网页的现有数据层格式重新格式化为XDM。
-3. 使用为数据收集准备数据，通过Edge Network将网页的现有数据层格式重新格式化为XDM。
+3. 使用用于数据收集的数据准备，通过Edge Network将网页的现有数据层格式重新格式化为XDM。
 
 本指南重点介绍第三个选项。
 
@@ -25,14 +25,14 @@ ht-degree: 60%
 
 在两种用例中，为数据收集准备数据很有用：
 
-1. 该网站具有格式正确、受管理和维护的数据层，并且更愿意将其直接发送到Edge Network，而不是使用JavaScript操作在页面上将其转换为XDM（通过标记数据元素或通过手动JavaScript操作）。
+1. 网站具有格式正确、受管并维护的数据层，并且更愿意直接将其发送到Edge Network，而不是使用JavaScript操作在页面上将其转换为XDM(通过标记数据元素或通过手动JavaScript操作)。
 2. 在该站点上部署了标记系统以外的标记系统。
 
 ## 通过WebSDK将现有数据层发送到Edge Network {#send-datalayer-via-websdk}
 
-现有的数据层必须使用 [`data`](/help/web-sdk/commands/sendevent/data.md) 中的对象 `sendEvent` 命令。
+现有数据层必须使用`sendEvent`命令中的[`data`](/help/web-sdk/commands/sendevent/data.md)对象发送。
 
-如果您使用的是标记，则必须使用 **[!UICONTROL 数据]** 字段 **[!UICONTROL 发送事件]** 操作类型，如 [Web SDK标记扩展文档](/help/tags/extensions/client/web-sdk/action-types.md).
+如果您使用标记，则必须使用&#x200B;**[!UICONTROL 发送事件]**&#x200B;操作类型的&#x200B;**[!UICONTROL 数据]**&#x200B;字段，如[Web SDK标记扩展文档](/help/tags/extensions/client/web-sdk/action-types.md)中所述。
 
 本指南的其余部分将重点介绍在WebSDK发送数据层后，如何将其映射到XDM标准。
 
@@ -54,7 +54,7 @@ ht-degree: 60%
 
 完成数据流的基本配置后，选择&#x200B;**[!UICONTROL 保存并添加映射]**，**[!UICONTROL 选择数据]**&#x200B;步骤随即出现。从该位置，您必须提供一个示例 JSON 对象，该对象表示您计划发送到 Platform 的数据的结构。
 
-要直接从数据层捕获属性，该 JSON 对象必须具有单个根属性 `data`。的子属性 `data` 然后，应通过映射到要捕获的数据层属性的方式构建对象。 选择以下部分可查看具有 `data` 根的格式正确的 JSON 对象示例。
+要直接从数据层捕获属性，该 JSON 对象必须具有单个根属性 `data`。然后应通过映射到要捕获的数据层属性的方式构建`data`对象的子属性。 选择以下部分可查看具有 `data` 根的格式正确的 JSON 对象示例。
 
 +++示例 JSON 文件，具有 `data` 根
 
@@ -154,7 +154,7 @@ ht-degree: 60%
 
 您可以选择用于将对象作为文件上传的选项，或将原始对象粘贴到提供的文本框中。如果 JSON 有效，预览架构将显示在右侧面板中。选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
 
-![预期传入数据的JSON示例。](assets/data-prep/select-data.png)
+预期传入数据的![JSON示例。](assets/data-prep/select-data.png)
 
 >[!NOTE]
 >
@@ -164,14 +164,14 @@ ht-degree: 60%
 
 **[!UICONTROL 映射]**&#x200B;步骤随即出现，可让您将源数据中的字段映射到 Platform 中目标事件架构的字段。从该位置，您可以通过两种方式配置映射：
 
-* [创建映射规则](#create-mapping) 通过手动过程获取此数据流。
+* [通过手动过程为此数据流创建映射规则](#create-mapping)。
 * 从现有数据流[导入映射规则](#import-mapping)。
 
 ### 创建映射规则 {#create-mapping}
 
-要创建映射规则，请选择 **[!UICONTROL 添加新映射]**.
+要创建映射规则，请选择&#x200B;**[!UICONTROL 添加新映射]**。
 
-![添加新映射。](assets/data-prep/add-new-mapping.png)
+![正在添加新映射。](assets/data-prep/add-new-mapping.png)
 
 选择源图标（![源图标](assets/data-prep/source-icon.png)），在出现的对话框中，选择要在提供的画布中映射的源字段。选择字段后，使用&#x200B;**[!UICONTROL 选择]**&#x200B;按钮以继续。
 
@@ -179,11 +179,11 @@ ht-degree: 60%
 
 接下来，选择架构图标（![架构图标](assets/data-prep/schema-icon.png)），打开类似的目标事件架构对话框。在确认之前，使用&#x200B;**[!UICONTROL 选择]**&#x200B;来选择要将数据映射到的字段。
 
-![选择要映射到目标架构中的字段。](assets/data-prep/target-mapping.png)
+![选择要在目标架构中映射的字段。](assets/data-prep/target-mapping.png)
 
 映射页面将重新出现，并显示已完成的字段映射。**[!UICONTROL 映射进度]**&#x200B;部分将更新以反映已成功映射的字段总数。
 
-![字段已成功映射，并反映了进度。](assets/data-prep/field-mapped.png)
+![字段已成功映射，进度已反映。](assets/data-prep/field-mapped.png)
 
 >[!TIP]
 >
@@ -201,11 +201,11 @@ ht-degree: 60%
 
 要开始，请选择&#x200B;**[!UICONTROL 导入映射]**。
 
-![正在选择导入映射按钮。](assets/data-prep/import-mapping-button.png)
+正在选择![导入映射按钮。](assets/data-prep/import-mapping-button.png)
 
 在出现的对话框中，选择要导入其映射规则的数据流。选择该数据流后，选择&#x200B;**[!UICONTROL 预览]**。
 
-![选择现有数据流。](assets/data-prep/select-mapping-rules.png)
+![正在选择现有的数据流。](assets/data-prep/select-mapping-rules.png)
 
 >[!NOTE]
 >
@@ -213,7 +213,7 @@ ht-degree: 60%
 
 下一个屏幕显示所选数据流的已保存映射规则的预览。确保显示的映射为预期映射，然后选择&#x200B;**[!UICONTROL 导入]**&#x200B;以确认映射并将其添加到新数据流。
 
-![要导入的映射规则。](assets/data-prep/import-mapping-rules.png)
+![映射要导入的规则。](assets/data-prep/import-mapping-rules.png)
 
 >[!NOTE]
 >
@@ -223,7 +223,7 @@ ht-degree: 60%
 
 继续执行上述步骤，将其余字段映射到目标架构。虽然您不必映射所有可用的源字段，但必须映射目标架构中设置为必需的任何字段才能完成此步骤。 **[!UICONTROL 必填字段]**&#x200B;计数器指示当前配置中尚未映射的必填字段的数量。
 
-必填字段计数达到零并对映射感到满意后，选择 **[!UICONTROL 保存]** 以完成更改。
+在必填字段数达到零且对映射感到满意后，选择&#x200B;**[!UICONTROL 保存]**&#x200B;以完成更改。
 
 ![映射完成](assets/data-prep/mapping-complete.png)
 

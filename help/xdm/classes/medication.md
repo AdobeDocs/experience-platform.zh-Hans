@@ -9,9 +9,9 @@ ht-degree: 4%
 
 ---
 
-# [!UICONTROL 药物] 类
+# [!UICONTROL 药物]类
 
-在Experience Data Model (XDM)中， [!UICONTROL 药物] 类捕获定义用于医疗的物质（尤其是药物或药物）的最小属性集。
+在体验数据模型(XDM)中，[!UICONTROL 药物]类捕获定义用于医疗的物质（特别是药物或药物）的最小属性集。
 
 ![类结构](../images/classes/medication.png)
 
@@ -23,4 +23,4 @@ ht-degree: 4%
 
 {style="table-layout:auto"}
 
-可以使用扩展类 [[!UICONTROL 保健药物] 字段组](../field-groups/medication/healthcare-medication.md) 描述药物或药物的进一步细节。
+可以使用[[!UICONTROL 医疗保健药物]字段组](../field-groups/medication/healthcare-medication.md)扩展该类，以描述有关该药物或药物的更多详细信息。

@@ -11,33 +11,33 @@ ht-degree: 9%
 
 ---
 
-# [!UICONTROL 架构] UI概述
+# [!UICONTROL 架构]用户界面概述
 
-此 [!UICONTROL 架构] Adobe Experience Platform用户界面中的工作区允许您管理Experience Data Model (XDM)资源，包括架构、类、架构字段组和数据类型。 您可以查看和浏览由 Adobe 提供的核心资源，并为贵组织创建自定义资源和架构。
+Adobe Experience Platform用户界面中的[!UICONTROL 架构]工作区允许您管理体验数据模型(XDM)资源，包括架构、类、架构字段组和数据类型。 您可以查看和浏览由 Adobe 提供的核心资源，并为贵组织创建自定义资源和架构。
 
-要在Platform UI中访问工作区，请选择 **[!UICONTROL 架构]** 在左边栏中。
+要在平台UI中访问工作区，请在左边栏中选择&#x200B;**[!UICONTROL 架构]**。
 
 ![](../images/ui/overview/schemas-tab.png)
 
 ## 快速入门
 
-如果您是第一次使用工作区，请从指南开始 [在UI中探索现有资源](./explore.md) 以熟悉不同的选项卡和架构画布。
+如果您是第一次使用工作区，请从有关[在UI](./explore.md)中浏览现有资源的指南开始，以熟悉不同的选项卡和架构画布。
 
-此外，还建议您遵循 [架构创建教程](../tutorials/create-schema-ui.md) 以创建示例模式并完整浏览 [!DNL Schema Editor]在流程中的功能。
+还建议您按照[架构创建教程](../tutorials/create-schema-ui.md)创建示例架构，并完整了解[!DNL Schema Editor]在此过程中的功能。
 
 ## 创建和管理XDM资源
 
-此 [!UICONTROL 架构] 工作区提供了强大的工具，用于创建和自定义组织的XDM资源。 请参阅以下文档，了解如何在UI中创建和编辑每种资源类型：
+[!UICONTROL 架构]工作区提供了强大的工具，用于创建和自定义组织的XDM资源。 请参阅以下文档，了解如何在UI中创建和编辑每种资源类型：
 
 * [架构](./resources/schemas.md)
-* [类](./resources/classes.md)
+* [分类](./resources/classes.md)
 * [字段组](./resources/field-groups.md)
 * [数据类型](./resources/data-types.md)
 
 ## 定义XDM字段
 
-类、字段组和数据类型都会将字段添加到架构。 向这些资源添加字段时，您可以从标准字段类型列表中进行选择，还可以为某些用例定义专用字段。 请参阅指南，网址为 [在用户界面中定义XDM字段](./fields/overview.md) 以了解更多信息。
+类、字段组和数据类型都会将字段添加到架构。 向这些资源添加字段时，您可以从标准字段类型列表中进行选择，还可以为某些用例定义专用字段。 有关详细信息，请参阅[在UI](./fields/overview.md)中定义XDM字段的指南。
 
 ## 后续步骤
 
-本文档介绍了 [!UICONTROL 架构] Platform UI中的工作区。 请参阅本概述中链接的文档，了解有关如何管理架构和其他XDM资源的更多信息。
+本文档介绍了Platform UI中的[!UICONTROL 架构]工作区。 请参阅本概述中链接的文档，了解有关如何管理架构和其他XDM资源的更多信息。

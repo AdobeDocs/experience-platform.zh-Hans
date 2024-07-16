@@ -11,7 +11,7 @@ ht-degree: 77%
 
 # 数据流概述
 
-数据流表示实施 Adobe Experience Platform Web 和 Mobile SDK 时的服务器端配置。而 [`configure`](/help/web-sdk/commands/configure/overview.md) SDK中的命令可控制必须在客户端上处理的内容(例如 `edgeDomain`)，数据流处理SDK的所有其他配置。 当请求发送到 Adobe Experience Platform Edge Network 时，`edgeConfigId` 用于引用数据流。这可让您更新服务器端配置，而无需在网站上进行代码更改。
+数据流表示实施 Adobe Experience Platform Web 和 Mobile SDK 时的服务器端配置。虽然SDK中的[`configure`](/help/web-sdk/commands/configure/overview.md)命令可控制必须在客户端（如`edgeDomain`）上处理的内容，但数据流可处理SDK的所有其他配置。 当请求发送到 Adobe Experience Platform Edge Network 时，`edgeConfigId` 用于引用数据流。这可让您更新服务器端配置，而无需在网站上进行代码更改。
 
 您可以通过在 Adobe Experience Platform UI 或数据收集 UI 的左侧导航中选择&#x200B;**[!UICONTROL 数据流]**&#x200B;来创建和管理数据流。
 
@@ -57,7 +57,7 @@ ht-degree: 77%
 
 ### 审核日志
 
-在 Experience Platform 中，可以审核日志形式监控数据流活动。审核日志指示 **谁** 已执行 **什么** 操作，以及 **时间**，以及其他上下文数据，可帮助您排除与数据流相关的问题，以帮助您的企业遵守公司数据管理政策和法规要求。
+在 Experience Platform 中，可以审核日志形式监控数据流活动。审核日志显示&#x200B;**谁**&#x200B;执行了&#x200B;**什么**&#x200B;操作，何时执行&#x200B;**什么时间**，以及其他上下文数据，可帮助您排除与数据流相关的问题，以帮助您的企业遵守公司数据管理政策和法规要求。
 
 当用户创建、更新或删除数据流时，将创建审核日志以记录操作。当用户通过[为数据收集准备数据](./data-prep.md)过程创建、更新或删除映射时，会发生相同的情况。无论更新的是数据流还是映射，生成的审核日志都会归类于[!UICONTROL 数据流]资源类型。
 

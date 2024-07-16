@@ -12,13 +12,13 @@ ht-degree: 2%
 ---
 
 
-# [!UICONTROL 工作联系人详细信息] 架构字段组
+# [!UICONTROL 工作联系人详细信息]架构字段组
 
 >[!NOTE]
 >
->多个架构字段组的名称已更改。 查看文档 [字段组名称更新](../name-updates.md) 以了解更多信息。
+>多个架构字段组的名称已更改。 有关详细信息，请参阅有关[字段组名称更新](../name-updates.md)的文档。
 
-[!UICONTROL 工作联系人详细信息] 是的标准架构字段组 [[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md). 字段组提供了多个字段，用于获取有关个人的职业信息，例如工作地址、工作电子邮件、工作电话号码和人员所属的组织。
+[!UICONTROL 工作联系人详细信息]是[[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md)的标准架构字段组。 字段组提供了多个字段，用于获取有关个人的职业信息，例如工作地址、工作电子邮件、工作电话号码和人员所属的组织。
 
 ![](../../images/field-groups/work-contact-details.png)
 
@@ -34,4 +34,4 @@ ht-degree: 2%
 有关字段组的更多详细信息，请参阅公共XDM存储库：
 
 * [填充示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-work-details.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-work-details.schema.json)
+* [完整架构](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-work-details.schema.json)

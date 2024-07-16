@@ -4,8 +4,8 @@ description: Edge属性中标记扩展的格式库模块。
 exl-id: 82b98972-6fa2-4143-bcf4-c5dac1ca0e7f
 source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
 workflow-type: tm+mt
-source-wordcount: '307'
-ht-degree: 76%
+source-wordcount: '301'
+ht-degree: 68%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 76%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 >[!IMPORTANT]
 >

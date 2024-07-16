@@ -8,7 +8,7 @@ role: Developer
 source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
 workflow-type: tm+mt
 source-wordcount: '145'
-ht-degree: 20%
+ht-degree: 18%
 
 ---
 
@@ -16,13 +16,13 @@ ht-degree: 20%
 # Adobe Experience Platform数据摄取 {#ingestion}
 
 - [数据引入概述](home.md)
-- 流式摄取 {#streaming}
+- 流式引入{#streaming}
    - [概述](streaming-ingestion/overview.md)
    - [Kafka连接器](streaming-ingestion/kafka.md)
    - [故障排除](streaming-ingestion/troubleshooting.md)
-- 批量摄取{#batch}
+- 批次摄取{#batch}
    - [批量摄取API快速入门](batch-ingestion/getting-started.md)
-   - [API 概述](batch-ingestion/overview.md)
+   - [API概述](batch-ingestion/overview.md)
    - [API开发人员指南](batch-ingestion/api-overview.md)
    - [部分批次摄取](batch-ingestion/partial.md)
    - [故障排除](batch-ingestion/troubleshooting.md)
@@ -38,7 +38,7 @@ ht-degree: 20%
    - [流记录数据](tutorials/streaming-record-data.md)
    - [流式处理时间序列数据](tutorials/streaming-time-series-data.md)
    - [流式传输多条消息](tutorials/streaming-multiple-messages.md)
-- 数据质量和监控{#quality}
+- 数据质量和监视{#quality}
    - [概述](quality/overview.md)
    - [监测数据摄取](quality/monitor-data-ingestion.md)
    - [检索错误诊断](quality/error-diagnostics.md)
@@ -46,7 +46,7 @@ ht-degree: 20%
    - [流式摄取验证](quality/streaming-validation.md)
    - [数据摄取通知](quality/subscribe-events.md)
 - [数据摄取的护栏](guardrails.md)
-- [源连接器](source-connectors.md)
-- [批量摄取API参考](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/)
-- [流式引入API参考](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/)
-- [Platform发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+- [Source连接器](source-connectors.md)
+- [批次摄取API引用](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/)
+- [流式引入API引用](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/)
+- [平台发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

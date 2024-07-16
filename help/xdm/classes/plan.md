@@ -9,9 +9,9 @@ ht-degree: 4%
 
 ---
 
-# [!UICONTROL 计划] 类
+# [!UICONTROL 计划]类
 
-在Experience Data Model (XDM)中， [!UICONTROL 计划] class捕获定义计划（如健康计划或保险计划）的最小属性集。
+在Experience Data Model (XDM)中，[!UICONTROL 计划]类捕获定义计划（如健康计划或保险计划）的最小属性集。
 
 ![类结构](../images/classes/plan.png)
 
@@ -23,4 +23,4 @@ ht-degree: 4%
 
 {style="table-layout:auto"}
 
-可以使用扩展类 [[!UICONTROL 医疗保健计划详细信息] 字段组](../field-groups/plan/healthcare-plan-details.md) 描述有关健康保险计划的更多详细信息。
+可以使用[[!UICONTROL 医疗保健计划详细信息]字段组](../field-groups/plan/healthcare-plan-details.md)来扩展该类，以便描述有关医疗保险计划的更多详细信息。

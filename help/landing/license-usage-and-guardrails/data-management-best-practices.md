@@ -1,11 +1,11 @@
 ---
 title: 数据管理许可证权利最佳实践
-description: 了解可用来更好地管理Adobe Experience Platform的许可证权利的最佳实践和工具。
+description: 了解可用来借助 Adobe Experience Platform 更好地管理您的许可证权利的最佳实践和工具。
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
 source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '2237'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 
@@ -15,47 +15,47 @@ Adobe Experience Platform是一个开放系统，可将您的数据转换为强�
 
 Platform提供许可证，用于建立可创建的配置文件数量和可引入的数据量。 由于能够引入任何源、数量或历史数据，因此随着数据量的增长，可能会超出许可权限。
 
-本文档概述了通过Adobe Experience Platform更好地管理您的许可证权利所需遵循的最佳实践和可以使用的工具。
+本文档概述了借助 Adobe Experience Platform 更好地管理您的许可证权利需要遵循的最佳实践和可以使用的工具。
 
 ## 了解Adobe Experience Platform数据存储
 
-Experience Platform主要由两个数据存储库组成： [!DNL data lake] 和配置文件存储。
+Experience Platform主要由两个数据存储库组成：[!DNL data lake]和配置文件存储。
 
-此 **[!DNL data lake]** 主要用途如下：
+**[!DNL data lake]**&#x200B;主要用于以下目的：
 
 * 充当将数据载入Experience Platform的暂存区；
 * 充当所有Experience Platform数据的长期数据存储；
 * 启用数据分析和数据科学等用例。
 
-此 **配置文件存储** 是创建客户配置文件的位置，主要具有以下用途：
+**配置文件存储**&#x200B;是创建客户配置文件的位置，主要用途如下：
 
 * 充当用于支持实时体验的用户档案的数据存储；
 * 支持分段、激活和个性化等用例。
 
 >[!NOTE]
 >
->您对 [!DNL data lake] 取决于您购买的产品SKU。 有关产品SKU的更多信息，请与您的Adobe代表联系。
+>您对[!DNL data lake]的访问权限取决于您购买的产品SKU。 有关产品SKU的更多信息，请与您的Adobe代表联系。
 
 ## 许可证使用 {#license-usage}
 
 在许可Experience Platform时，您会获得因SKU而异的许可证使用授权：
 
-**[!DNL Addressable Audience]**  — 按照合同允许在Experience Platform中使用的客户配置文件总数，包括已知和假名配置文件。
+**[!DNL Addressable Audience]** — 合同允许在Experience Platform中的客户配置文件总数，包括已知和假名配置文件。
 
-**[!DNL Profile Richness]** -Experience Platform中配置文件数据的平均大小。 您可以提高 [!DNL Profile Richness] 通过购买丰富套餐获得权利。
+**[!DNL Profile Richness]** — 您的配置文件数据在Experience Platform中的平均大小。 您可以通过购买丰富包来增加您的[!DNL Profile Richness]权利。
 
-此 [!DNL Profile Richness] 量度因您购买的许可而异。 有两个计算 [!DNL Profile Richness] 可用：
+根据您购买的许可，[!DNL Profile Richness]量度会有所不同。 [!DNL Profile Richness]有两个可用计算：
 
-* Adobe Real-time Customer Data Platform中存储的所有生产数据（即Real-time Customer Profile和Identity Service）在任何时间点之和，除以 [!DNL Addressable Audience]；
-* Platform内存储的所有数据的总和(包括但不限于 [!DNL data lake]、Real-time Customer Profile和Identity Service)以及过去12个月中通过Platform流式传输（而不是存储在）的任何数据，除以 [!DNL Addressable Audience].
+* 在任何时间点存储在Adobe Real-time Customer Data Platform中的所有生产数据的总和（即Real-time Customer Profile和Identity Service），除以[!DNL Addressable Audience]；
+* Platform内存储的所有数据（包括但不限于[!DNL data lake]、Real-time Customer Profile和Identity Service）以及过去12个月中您通过Platform流式传输（而不是存储在）的任何数据的总和，除以[!DNL Addressable Audience]。
 
 这些指标的可用性和每个指标的特定定义因贵组织购买的许可而异。
 
-## 许可证使用情况仪表板
+## 许可证用量仪表板
 
 Adobe Experience Platform UI提供了一个功能板，通过该功能板，您可以查看组织的Platform许可证相关数据的快照。 仪表板中的数据与拍摄快照的特定时间点完全相同。 快照既不是近似值，也不是数据示例，并且仪表板没有实时更新。
 
-有关详细信息，请参阅以下内容中的指南： [使用Platform UI上的许可证使用情况仪表板](../../dashboards/guides/license-usage.md#license-usage-dashboard-data).
+有关详细信息，请参阅[在Platform UI](../../dashboards/guides/license-usage.md#license-usage-dashboard-data)上使用许可证使用情况仪表板的指南。
 
 ## 数据管理最佳实践
 
@@ -79,11 +79,11 @@ Adobe Experience Platform UI提供了一个功能板，通过该功能板，您�
 
 ### 要将哪些数据引入Platform？
 
-数据可以引入Platform中的一个或多个系统，即 [!DNL data lake] 和/或配置文件存储。 这意味着，在不同的用例中，两个系统中可以存在不同的数据。 例如，您可能希望将历史数据保存在 [!DNL data lake]，但不在配置文件存储中。 您可以通过启用用于配置文件摄取的数据集来选择要发送到配置文件存储的数据。
+数据可以引入Platform中的一个或多个系统，即[!DNL data lake]和/或配置文件存储。 这意味着，在不同的用例中，两个系统中可以存在不同的数据。 例如，您可能希望将历史数据保存在[!DNL data lake]中，但不保存在“配置文件存储”中。 您可以通过启用用于配置文件摄取的数据集来选择要发送到配置文件存储的数据。
 
 >[!NOTE]
 >
->您对 [!DNL data lake] 取决于您购买的产品SKU。 有关产品SKU的更多信息，请与您的Adobe代表联系。
+>您对[!DNL data lake]的访问权限取决于您购买的产品SKU。 有关产品SKU的更多信息，请与您的Adobe代表联系。
 
 ### 要保留哪些数据？
 
@@ -98,7 +98,7 @@ Adobe Experience Platform UI提供了一个功能板，通过该功能板，您�
 
 身份图不计入可寻址受众权利总数，因为可寻址受众是指客户配置文件总数。
 
-但是，由于拆分身份，身份图限制可能会影响可寻址受众。 例如，如果从图表中删除了最早的ECID，则ECID将继续作为假名配置文件存在于实时客户配置文件中。 您可以设置 [假名配置文件数据过期](../../profile/pseudonymous-profiles.md) 以规避这种行为。 若要了解更多信息，请阅读[标识服务数据的护栏](../../identity-service/guardrails.md)。
+但是，由于拆分身份，身份图限制可能会影响可寻址受众。 例如，如果从图表中删除了最早的ECID，则ECID将继续作为假名配置文件存在于实时客户配置文件中。 您可以设置[假名配置文件数据有效期](../../profile/pseudonymous-profiles.md)以规避此行为。 若要了解更多信息，请阅读[标识服务数据的护栏](../../identity-service/guardrails.md)。
 
 ### 摄取筛选器 {#ingestion-filters}
 
@@ -106,12 +106,12 @@ Adobe Experience Platform UI提供了一个功能板，通过该功能板，您�
 
 | 摄取筛选器 | 描述 |
 | --- | --- |
-| Adobe Audience Manager源筛选 | 创建Adobe Audience Manager源连接时，您可以选取并选择要引入的区段和特征 [!DNL data lake] 和实时客户档案，而不是摄取Audience Manager数据的完整内容。 请参阅指南，网址为 [创建Audience Manager源连接](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md) 以了解更多信息。 |
-| Adobe Analytics数据准备 | 您可以使用 [!DNL Data Prep] 功能过滤掉用例不需要的数据，创建分析源连接时的功能。 到 [!DNL Data Prep]，您可以定义哪些属性/列需要发布到配置文件。 您还可以提供条件语句，以告知Platform数据是应发布到用户档案，还是应仅发布到 [!DNL data lake]. 请参阅指南，网址为 [创建Analytics源连接](../../sources/tutorials/ui/create/adobe-applications/analytics.md) 以了解更多信息。 |
-| 支持为配置文件启用/禁用数据集 | 要将数据摄取到Real-time Customer Profile，您必须启用要在配置文件存储中使用的数据集。 这样，会将添加到您的 [!DNL Addressable Audience] 和 [!DNL Profile Richness] 权利。 一旦客户个人资料用例不再需要某个数据集，您可以禁用该数据集与个人资料的集成，以确保您的数据仍然符合许可证要求。 请参阅指南，网址为 [为配置文件启用和禁用数据集](../../catalog/datasets/enable-for-profile.md) 以了解更多信息。 |
+| Adobe Audience Manager源筛选 | 在创建Adobe Audience Manager源连接时，您可以选择将哪些区段和特征引入[!DNL data lake]和实时客户个人资料中，而不是摄取整个Audience Manager数据。 有关详细信息，请参阅[创建Audience Manager源连接](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md)指南。 |
+| Adobe Analytics数据准备 | 在创建Analytics源连接时，您可以使用[!DNL Data Prep]功能来过滤掉用例不需要的数据。 通过[!DNL Data Prep]，您可以定义哪些属性/列需要发布到配置文件。 您还可以提供条件语句，以告知Platform数据是应发布到配置文件，还是仅发布到[!DNL data lake]。 有关详细信息，请参阅[创建Analytics源连接](../../sources/tutorials/ui/create/adobe-applications/analytics.md)指南。 |
+| 支持为配置文件启用/禁用数据集 | 要将数据摄取到Real-time Customer Profile，您必须启用要在配置文件存储中使用的数据集。 这样做会将添加到您的[!DNL Addressable Audience]和[!DNL Profile Richness]权利。 一旦客户个人资料用例不再需要某个数据集，您可以禁用该数据集与个人资料的集成，以确保您的数据仍然符合许可证要求。 有关详细信息，请参阅[启用和禁用配置文件](../../catalog/datasets/enable-for-profile.md)的数据集指南。 |
 | Web SDK和移动SDK数据排除 | Web和Mobile SDK收集的数据有两种类型：自动收集的数据和开发人员明确收集的数据。 为了更好地管理许可证合规性，您可以通过上下文设置在SDK的配置中禁用自动数据收集。 您的开发人员也可以删除或设置自定义数据。 |
-| 服务器端转发数据排除 | 如果您使用服务器端转发将数据发送到Platform，则可以通过以下方法排除发送的数据：在规则操作中删除映射以在所有事件中排除该数据，或者向规则添加条件，以便数据仅针对特定事件触发。 请参阅相关文档 [事件和条件](/help/tags/ui/managing-resources/rules.md#events-and-conditions-if) 以了解更多信息。 |
-| 在源级别过滤数据 | 在创建连接并将数据摄取到Experience Platform之前，可以使用逻辑和比较运算符过滤源中的行级数据。 有关详细信息，请阅读上的指南 [使用过滤源的行级数据 [!DNL Flow Service] API](../../sources/tutorials/api/filter.md). |
+| 服务器端转发数据排除 | 如果您使用服务器端转发将数据发送到Platform，则可以通过以下方法排除发送的数据：在规则操作中删除映射以在所有事件中排除该数据，或者向规则添加条件，以便数据仅针对特定事件触发。 有关详细信息，请参阅有关[事件和条件](/help/tags/ui/managing-resources/rules.md#events-and-conditions-if)的文档。 |
+| 在源级别过滤数据 | 在创建连接并将数据摄取到Experience Platform之前，可以使用逻辑和比较运算符过滤源中的行级数据。 有关详细信息，请阅读有关使用 [!DNL Flow Service] API](../../sources/tutorials/api/filter.md)筛选源的行级数据的指南[。 |
 
 {style="table-layout:auto"}
 
@@ -121,10 +121,10 @@ Adobe Experience Platform UI提供了一个功能板，通过该功能板，您�
 
 | 配置文件存储组件 | 描述 |
 | --- | --- |
-| 配置文件片段 | 每个客户配置文件由多个 **配置文件片段** ，从而形成该客户的单一视图。 例如，如果客户跨多个渠道与您的品牌互动，则您的组织将有多个 **配置文件片段** 与出现在多个数据集中的单个客户相关。 将这些片段摄取到Platform中后，会使用身份图将它们拼合在一起，以便为该客户创建单个配置文件。 **配置文件片段** 由作为标识符的身份命名空间组成，并具有关联的记录数据和/或时间序列数据。 |
-| 记录数据（属性） | 用户档案是主题、组织或个人的表示形式，由多个用户档案组成 **属性** (也称为 **记录数据**)。 例如，产品的配置文件可能包括SKU和描述，而人员的配置文件包含名字、姓氏和电子邮件地址等信息。 **记录数据** 通常容量低/中等，但价值可长期持有。 |
-| 时间序列数据（行为） | **时间序列数据** 提供了有关用户行为的信息。 由标准架构类体验数据模型(XDM)表示 [!DNL ExperienceEvent]，时间序列数据可以描述添加到购物车的项目、点击的链接以及查看的视频等事件。 行为的价值可能会随着时间的推移而降低。 |
-| 身份命名空间（身份） | 当客户数据汇集在一起时，会通过使用将其合并到单个配置文件中 **身份命名空间**，以及在了解有关用户的更多信息时将这些身份拼合在一起的能力。 请参阅 [身份命名空间概述](../../identity-service/features/namespaces.md) 以了解更多信息。 |
+| 轮廓片段 | 每个客户配置文件均由多个&#x200B;**配置文件片段**&#x200B;组成，这些片段已合并为该客户的单一视图。 例如，如果某个客户跨多个渠道与您的品牌互动，则贵组织将在多个数据集中显示与该单个客户相关的多个&#x200B;**配置文件片段**。 将这些片段摄取到Platform中后，会使用身份图将它们拼合在一起，以便为该客户创建单个配置文件。 **配置文件片段**&#x200B;包含作为标识符的身份命名空间，其中包含关联的记录数据和/或时间序列数据。 |
+| 记录数据（属性） | 个人资料是主题、组织或个人的表示形式，由多个&#x200B;**属性**（也称为&#x200B;**记录数据**）组成。 例如，产品的配置文件可能包括SKU和描述，而人员的配置文件包含名字、姓氏和电子邮件地址等信息。 **记录数据**&#x200B;的卷通常为低/中等，但长期很有价值。 |
+| 时间序列数据（行为） | **时间序列数据**&#x200B;提供有关用户行为的信息。 时间序列数据由标准架构类Experience Data Model (XDM) [!DNL ExperienceEvent]表示，它可以描述添加到购物车的项目、点击的链接以及查看的视频等事件。 行为的价值可能会随着时间的推移而降低。 |
+| 身份命名空间（身份） | 当客户数据汇集在一起时，会通过使用&#x200B;**身份命名空间**&#x200B;将其合并到单个配置文件中，并且当更多有关用户的信息变得已知时，可以将这些身份拼合在一起。 有关详细信息，请参阅[身份命名空间概述](../../identity-service/features/namespaces.md)。 |
 
 {style="table-layout:auto"}
 
@@ -132,28 +132,28 @@ Adobe Experience Platform UI提供了一个功能板，通过该功能板，您�
 
 有许多报告可帮助您了解配置文件存储区的组成。 这些报告可帮助您针对如何以及在何处设置体验事件过期以更好地优化许可证使用做出明智的决策：
 
-* **数据集重叠报表API**：公开对可寻址受众贡献最大的数据集。 您可以使用此报表来确定要访问的 [!DNL ExperienceEvent] 要为其设置到期的数据集。 请参阅上的教程 [生成数据集重叠报告](../../profile/tutorials/dataset-overlap-report.md) 以了解更多信息。
-* **身份重叠报表API**：公开对可寻址受众贡献最大的身份命名空间。 请参阅上的教程 [生成身份重叠报表](../../profile/api/preview-sample-status.md#generate-the-identity-namespace-overlap-report) 以了解更多信息。
+* **数据集重叠报表API**：公开对可寻址受众贡献最大的数据集。 您可以使用此报告来确定要为其设置过期时间的[!DNL ExperienceEvent]数据集。 有关详细信息，请参阅有关[生成数据集重叠报表](../../profile/tutorials/dataset-overlap-report.md)的教程。
+* **身份重叠报表API**：公开对可寻址受众贡献最大的身份命名空间。 有关详细信息，请参阅有关[生成身份重叠报表](../../profile/api/preview-sample-status.md#generate-the-identity-namespace-overlap-report)的教程。
 <!-- * **Unknown Profiles Report API**: Exposes the impact of applying pseudonymous expirations for different time thresholds. You can use this report to identify which pseudonymous expirations threshold to apply. See the tutorial on [generating the unknown profiles report](../../profile/api/preview-sample-status.md#generate-the-unknown-profiles-report) for more information.
 -->
 
 #### 假名配置文件数据过期 {#pseudonymous-profile-expirations}
 
-此功能允许您自动从配置文件存储中删除过时的假名配置文件。 有关此功能的详细信息，请阅读 [假名配置文件数据过期概述](../../profile/pseudonymous-profiles.md).
+此功能允许您自动从配置文件存储中删除过时的假名配置文件。 有关此功能的详细信息，请阅读[假名配置文件数据过期概述](../../profile/pseudonymous-profiles.md)。
 
 #### 体验事件过期时间 {#event-expirations}
 
-此功能允许您从启用了配置文件的数据集中自动删除对用例不再有用的行为数据。 有关更多详细信息，请参阅 [体验事件过期时间](../../profile/event-expirations.md) 以了解为数据集启用此流程后其工作方式的详细信息。
+此功能允许您从启用了配置文件的数据集中自动删除对用例不再有用的行为数据。 有关为数据集启用此流程后如何工作的详细信息，请参阅[体验事件过期时间](../../profile/event-expirations.md)概述。
 
 ## 许可证使用合规性最佳实践摘要 {#best-practices}
 
 以下是您可以遵循的一些建议最佳实践列表，以确保更好地遵守您的许可证使用授权：
 
-* 使用 [许可证使用情况仪表板](../../dashboards/guides/license-usage.md) 以跟踪和监控客户使用趋势。 这样，您就可以提前了解可能会产生的任何潜在使用过量。
-* 配置 [摄取过滤器](#ingestion-filters) 确定分段和个性化用例所需的事件。 这样，您就可以仅发送用例所需的重要事件。
-* 确保您仅具有 [为配置文件启用数据集](#ingestion-filters) 分段和个性化用例所需的参数。
-* 配置 [体验事件过期时间](#event-expirations) 和 [假名配置文件数据过期](#pseudonymous-profile-expirations) 高频数据（如Web数据）。
-* 定期检查 [配置文件构成报表](#profile-store-composition-reports) 以了解您的个人资料存储合成。 这使您能够了解对许可证使用量消耗贡献最大的数据源。
+* 使用[许可证使用情况仪表板](../../dashboards/guides/license-usage.md)跟踪和监控客户使用情况趋势。 这样，您就可以提前了解可能会产生的任何潜在使用过量。
+* 通过识别分段和个性化用例所需的事件来配置[引入过滤器](#ingestion-filters)。 这样，您就可以仅发送用例所需的重要事件。
+* 确保您只有分段和个性化用例所需的配置文件](#ingestion-filters)的[启用的数据集。
+* 为Web数据等高频数据配置[体验事件过期时间](#event-expirations)和[假名配置文件数据过期时间](#pseudonymous-profile-expirations)。
+* 定期检查[配置文件构成报告](#profile-store-composition-reports)以了解您的配置文件存储构成。 这使您能够了解对许可证使用量消耗贡献最大的数据源。
 
 ## 功能摘要和可用性 {#feature-summary}
 
@@ -163,11 +163,11 @@ Adobe Experience Platform UI提供了一个功能板，通过该功能板，您�
 
 | 功能 | 描述 |
 | --- | --- |
-| [为配置文件启用/禁用数据集](../../catalog/datasets/user-guide.md) | 启用或禁用数据集摄取到Real-time Customer Profile的功能。 |
-| [体验事件过期时间](../../profile/event-expirations.md) | 为引入到启用配置文件的数据集中的所有事件应用过期时间。 请联系您的Adobe客户团队或客户关怀团队以启用此功能。 |
-| [Adobe Analytics数据准备过滤器](../../sources/tutorials/ui/create/adobe-applications/analytics.md) | 应用 [!DNL Kafka] 用于从摄取中排除不必要数据的过滤器 |
-| [Adobe Audience Manager源连接器过滤器](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md) | 应用Audience Manager源连接筛选器以从摄取中排除不必要的数据 |
-| [事件转发数据过滤器](../../tags/ui/event-forwarding/overview.md) | 应用服务器端 [!DNL Kafka] 用于从摄取中排除不必要的数据的过滤器。  请参阅相关文档 [标记规则](../../tags/ui/managing-resources/rules.md) 以了解其他信息。 |
+| [启用/禁用配置文件的数据集](../../catalog/datasets/user-guide.md) | 启用或禁用数据集摄取到Real-time Customer Profile的功能。 |
+| [体验活动过期](../../profile/event-expirations.md) | 为引入到启用配置文件的数据集中的所有事件应用过期时间。 请联系您的Adobe客户团队或客户关怀团队以启用此功能。 |
+| [Adobe Analytics数据准备筛选器](../../sources/tutorials/ui/create/adobe-applications/analytics.md) | 应用[!DNL Kafka]筛选器以从摄取中排除不必要的数据 |
+| [Adobe Audience Manager源连接器筛选器](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md) | 应用Audience Manager源连接筛选器以从摄取中排除不必要的数据 |
+| [事件转发数据筛选器](../../tags/ui/event-forwarding/overview.md) | 应用服务器端[!DNL Kafka]筛选器以从摄取中排除不必要的数据。  有关更多信息，请参阅有关[标记规则](../../tags/ui/managing-resources/rules.md)的文档。 |
 | [许可证使用情况仪表板UI](../../dashboards/guides/license-usage.md#license-usage-dashboard-data) | 查看贵组织的许可证相关数据的快照以供Experience Platform |
 | [数据集重叠报表API](../../profile/tutorials/dataset-overlap-report.md) | 输出对可寻址受众贡献最大的数据集 |
 | [身份重叠报表API](../../profile/api/preview-sample-status.md#generate-the-identity-namespace-overlap-report) | 输出对可寻址受众贡献最大的身份命名空间 |

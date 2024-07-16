@@ -4,30 +4,30 @@ title: 检索目标配置
 exl-id: aaf4cfa0-3e90-4fcc-b506-b84ff62b3027
 source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
-source-wordcount: '365'
-ht-degree: 2%
+source-wordcount: '367'
+ht-degree: 1%
 
 ---
 
 # 检索目标配置
 
-本页举例说明了API请求和有效负载，您可以使用这些API请求和有效负载检索有关现有目标配置的信息。 `/authoring/destination` API端点。
+此页面举例说明了API请求和有效负荷，您可以使用`/authoring/destination` API端点检索有关现有目标配置的信息。
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 目标配置API操作快速入门 {#get-started}
 
-在继续之前，请查看 [快速入门指南](../../getting-started.md) 获取成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[入门指南](../../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 检索目标配置 {#retrieve}
 
-您可以检索 [现有](create-destination-configuration.md) 目标配置，方法是 `GET` 请求 `/authoring/destination` 端点。
+您可以通过向`/authoring/destination`端点发出`GET`请求来检索[existing](create-destination-configuration.md)目标配置。
 
 >[!TIP]
 >
->**API端点**： `platform.adobe.io/data/core/activation/authoring/destinations`
+>**API终结点**： `platform.adobe.io/data/core/activation/authoring/destinations`
 
 
 **API格式**
@@ -38,13 +38,13 @@ ht-degree: 2%
 GET /authoring/destinations
 ```
 
-使用以下API格式检索由定义的特定目标配置 `{INSTANCE_ID}` 参数。
+使用以下API格式检索由`{INSTANCE_ID}`参数定义的特定目标配置。
 
 ```http
 GET /authoring/destinations/{INSTANCE_ID}
 ```
 
-以下两个请求检索IMS组织的所有目标配置，或特定的目标配置，具体取决于您是否传递 `INSTANCE_ID` 请求中的参数。
+以下两个请求检索IMS组织的所有目标配置，或特定的目标配置，具体取决于是否在请求中传递`INSTANCE_ID`参数。
 
 选择下面的每个选项卡以查看相应的有效负载。
 
@@ -66,7 +66,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++响应
 
-成功的响应会返回HTTP状态200，其中包含您有权访问的目标配置列表，该列表基于 [!DNL IMS Org ID] 和您使用的沙盒名称之间的关联。 一 `instanceId` 对应于一个目标配置。
+成功的响应返回HTTP状态200，其中包含您有权访问的目标配置列表，该列表基于您使用的[!DNL IMS Org ID]和沙盒名称。 一个`instanceId`对应于一个目标配置。
 
 ```json
 {
@@ -174,7 +174,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++
 
->[!TAB 检索特定目标配置]
+>[!TAB 检索特定的目标配置]
 
 +++请求
 
@@ -194,7 +194,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++响应
 
-成功的响应返回HTTP状态200，其中包含与对应的目标配置的详细信息 `{INSTANCE_ID}` 在调用中提供。
+成功的响应返回HTTP状态200，其中包含与调用中提供的`{INSTANCE_ID}`对应的目标配置详细信息。
 
 ```json
 {
@@ -306,11 +306,11 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 ## API错误处理 {#error-handling}
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../../landing/troubleshooting.md#request-header-errors) ，位于平台疑难解答指南中。
+Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅平台疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤
 
-阅读本文档后，您现在知道如何通过Destination SDK检索目标配置 `/authoring/destinations` API端点。
+阅读本文档后，您现在知道如何通过Destination SDK`/authoring/destinations` API端点检索目标配置。
 
 要了解有关可使用此端点执行的操作的更多信息，请参阅以下文章：
 

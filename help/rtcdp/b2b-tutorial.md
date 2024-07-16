@@ -36,17 +36,17 @@ ht-degree: 0%
 >
 >您必须按照本教程中链接到的相关源文档中所述的摄取模式进行操作。 不能保证其他字段映射方法有效。
 
-Adobe Experience Platform允许您自动生成B2B数据源所需的架构和命名空间。 此工具可确保创建的架构以结构化的可重用方式描述数据。 请遵循 [B2B命名空间和架构自动生成实用程序文档](../sources/connectors/adobe-applications/marketo/marketo-namespaces.md) 以获取有关设置过程的完整参考。
+Adobe Experience Platform允许您自动生成B2B数据源所需的架构和命名空间。 此工具可确保创建的架构以结构化的可重用方式描述数据。 有关安装过程的完整参考，请参阅[B2B命名空间和架构自动生成实用程序文档](../sources/connectors/adobe-applications/marketo/marketo-namespaces.md)。
 
-在Adobe Experience Platform UI中，Bodea营销人员选择 **[!UICONTROL 架构]** 在左边栏中，后面是 **[!UICONTROL 浏览]** 选项卡。 由于它们使用了Marketo Engage自动生成实用程序，因此列表中将显示新的空架构，并且所有架构的前缀均为“B2B”。
+在Adobe Experience Platform UI中，Bodea营销人员在左边栏中选择&#x200B;**[!UICONTROL 架构]**，然后选择&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡。 由于它们使用了Marketo Engage自动生成实用程序，因此列表中将显示新的空架构，并且所有架构的前缀均为“B2B”。
 
 ![架构工作区浏览选项卡](./assets/b2b-tutorial/empty-b2b-schemas.png)
 
-自动生成实用程序使用标准XDM B2B类(如 [XDM业务帐户](../xdm/classes/b2b/business-account.md) 和 [XDM商业机会](../xdm/classes/b2b/business-opportunity.md))来捕获基本B2B数据实体。 此外，基于这些类自动生成的B2B架构已预先建立关系，允许进行高级分段用例。 任何数据结构所需的其他字段组都可以通过UI在此轻松创建。 请参阅 [XDM UI指南，将字段组添加到架构部分](../xdm/ui/resources/schemas.md#add-field-groups) 以了解更多信息。
+自动生成实用程序使用捕获基本B2B数据实体的标准XDM B2B类（如[XDM业务帐户](../xdm/classes/b2b/business-account.md)和[XDM业务机会](../xdm/classes/b2b/business-opportunity.md)）为架构定义了数据模型结构。 此外，基于这些类自动生成的B2B架构已预先建立关系，允许进行高级分段用例。 任何数据结构所需的其他字段组都可以通过UI在此轻松创建。 有关详细信息，请参阅[XDM UI指南，将字段组添加到架构部分](../xdm/ui/resources/schemas.md#add-field-groups)。
 
 >[!NOTE]
 > 
->如果您未使用自动生成器实用程序，或者需要创建新关系，请参阅上的教程 [在B2B架构之间创建关系](../xdm/tutorials/relationship-b2b.md).
+>如果您未使用自动生成器实用程序，或者需要创建新关系，请参阅有关[在B2B架构之间创建关系的教程](../xdm/tutorials/relationship-b2b.md)。
 
 Real-time Customer Profile将合并来自不同来源的数据，以创建关键B2B实体的整合配置文件。 由于用户档案是基于单个类生成的，因此自动生成实用程序会根据常见的业务用例设置架构之间的关系。 因此，Bodea团队现在已准备好根据其B2B架构摄取数据。
 
@@ -58,15 +58,15 @@ Real-time Customer Profile将合并来自不同来源的数据，以创建关键
 
 ## 将数据摄取到Experience Platform
 
-接下来，Bodea营销人员使用 [Marketo Engage连接器](../sources/connectors/adobe-applications/marketo/marketo.md) 将数据摄取到Platform以供下游服务使用。 您还可以使用Real-Time CDP B2B版本的某个已批准源来摄取数据。
+接下来，Bodea营销人员使用[Marketo Engage连接器](../sources/connectors/adobe-applications/marketo/marketo.md)将数据摄取到Platform中以用于下游服务。 您还可以使用Real-Time CDP B2B版本的某个已批准源来摄取数据。
 
 >[!NOTE]
 > 
->要了解您的组织可以使用哪些源连接器，您可以在Platform UI中查看源目录。 要访问目录，请选择 **源** 在左侧导航中，然后选择 **目录**.
+>要了解您的组织可以使用哪些源连接器，您可以在Platform UI中查看源目录。 要访问目录，请在左侧导航中选择&#x200B;**源**，然后选择&#x200B;**目录**。
 
-为了在Marketo帐户和平台之间创建连接，您必须获取身份验证凭据。 请参阅 [有关获取Marketo源连接器身份验证凭据的指南](../sources/connectors/adobe-applications/marketo/marketo-auth.md) 以获取详细说明。
+为了在Marketo帐户和平台之间创建连接，您必须获取身份验证凭据。 有关详细说明，请参阅有关获取Marketo源连接器身份验证凭据的[指南](../sources/connectors/adobe-applications/marketo/marketo-auth.md)。
 
-在获取身份验证凭据后，Bodea营销人员会在Marketo帐户与其Platform组织之间创建连接。 有关说明，请参阅文档 [如何使用Platform UI连接Marketo帐户](../sources/tutorials/ui/create/adobe-applications/marketo.md).
+在获取身份验证凭据后，Bodea营销人员会在Marketo帐户与其Platform组织之间创建连接。 请参阅文档，了解有关[如何使用Platform UI](../sources/tutorials/ui/create/adobe-applications/marketo.md)连接Marketo帐户的说明。
 
 Marketo Engage源连接器提供自动映射功能，使将所有数据字段映射到新创建架构的数据字段的过程更加容易。
 
@@ -78,31 +78,31 @@ Bodea营销人员检查所有字段组是否都已正确映射，并通过初始
 
 ## 创建受众以评估数据
 
-接下来，根据源数据中相关实体的特定属性，为Bodea的新电子邮件营销活动创建受众。 在Platform UI中，Bodea营销人员会首先选择 **[!UICONTROL 区段]** 在左侧导航中，然后 **[!UICONTROL 创建区段]**.
+接下来，根据源数据中相关实体的特定属性，为Bodea的新电子邮件营销活动创建受众。 在Platform UI中，Bodea营销人员首先在左侧导航中选择&#x200B;**[!UICONTROL 区段]**，然后&#x200B;**[!UICONTROL 创建区段]**。
 
 在本例中，受众会查找所有在销售部门工作并与至少有一个未完成销售机会的任何客户相关的人员。 此受众需要XDM个人资料类、XDM商业帐户类和XDM商业机会类之间的链接。
 
-![用例区段](./assets/b2b-tutorial/use-case-segment.png)
+![用例段](./assets/b2b-tutorial/use-case-segment.png)
 
 >[!NOTE]
 > 
->有关如何创建受众以评估数据的说明，请参阅 [区段生成器UI指南](../segmentation/ui/segment-builder.md). 有关更具体的B2B分段用例，请参阅 [Real-Time CDP B2B版本的分段概述](./segmentation/b2b.md).
+>有关如何创建受众以评估数据的说明，请参阅[区段生成器用户界面指南](../segmentation/ui/segment-builder.md)。 有关更具体的B2B分段用例，请参阅[Real-Time CDP B2B版本分段概述](./segmentation/b2b.md)。
 
 区段生成器允许您根据实时客户档案数据创建适销受众，并根据您定义的属性、事件和现有受众的组合查看潜在受众的估计值。
 
 ## 将评估的数据激活到目标
 
-成功创建受众后，中会提供摘要 [!UICONTROL 详细信息] 部分。 由于当前没有为区段定义激活目标，因此Bodea营销人员需要将受众导出到可在其中进行访问和操作的数据集。
+成功创建受众后，工作区的[!UICONTROL 详细信息]部分将提供摘要。 由于当前没有为区段定义激活目标，因此Bodea营销人员需要将受众导出到可在其中进行访问和操作的数据集。
 
-在 [!UICONTROL 区段] Platform UI的工作区，Bodea营销人员会选择 **[!UICONTROL 激活到目标]**.
+在Platform UI的[!UICONTROL 区段]工作区中，Bodea营销人员选择&#x200B;**[!UICONTROL 激活到目标]**。
 
 ![将受众激活到目标](./assets/b2b-tutorial/activate-to-destination.png)
 
 >[!NOTE]
 > 
->请参阅上的教程 [将受众激活到目标](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html) 以了解如何完成此任务的完整步骤。
+>有关如何完成此操作的完整步骤，请参阅有关[将受众激活到目标](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html)的教程。
 
-Bodea营销人员可将受众激活到Marketo目标，从而允许他们将受众数据从Platform以静态列表的形式推送到Marketo Engage。 请参阅 [Marketo目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/adobe/marketo-engage.html) 以了解更多信息。
+Bodea营销人员可将受众激活到Marketo目标，从而允许他们将受众数据从Platform以静态列表的形式推送到Marketo Engage。 有关详细信息，请参阅[Marketo目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/adobe/marketo-engage.html)上的指南。
 
 ## 后续步骤
 

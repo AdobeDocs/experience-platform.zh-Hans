@@ -7,68 +7,68 @@ description: 了解如何使用流服务API删除目标帐户。
 exl-id: a963073c-ecba-486b-a5c2-b85bdd426e72
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '769'
-ht-degree: 1%
+source-wordcount: '764'
+ht-degree: 16%
 
 ---
 
 # 使用流服务API删除目标帐户
 
-[!DNL Destinations] 是与目标平台预建的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用目标为跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例激活已知和未知数据。
+[!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
-在激活数据之前，您需要先设置目标帐户，以连接到目标。 本教程介绍了通过使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+在激活数据之前，您需要先设置目标帐户，以连接到目标。 本教程介绍使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)删除不再需要的目标帐户的步骤。
 
 >[!NOTE]
 >
->当前仅流服务API支持删除目标帐户。 无法使用Experience PlatformUI删除目标帐户。
+>当前仅在流服务API中支持删除目标帐户。 无法使用Experience PlatformUI删除目标帐户。
 
 ## 快速入门 {#get-started}
 
-本教程要求您拥有有效的连接ID。 连接ID表示与目标的帐户连接。 如果您没有有效的连接ID，请从 [目标目录](../catalog/overview.md) 并按照概述的步骤操作 [连接到目标](../ui/connect-destination.md) 在尝试本教程之前。
+本教程要求您具有有效的连接ID。 连接ID表示与目标的帐户连接。 如果您没有有效的连接ID，请从[目标目录](../catalog/overview.md)中选择您选择的目标，并按照[连接到目标](../ui/connect-destination.md)中列出的步骤操作，然后再尝试本教程。
 
 本教程还要求您实际了解Adobe Experience Platform的以下组件：
 
-* [目标](../home.md)： [!DNL Destinations] 是与目标平台预建的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用目标为跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例激活已知和未知数据。
-* [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [目标](../home.md)： [!DNL Destinations]是预先构建的与目标平台的集成，可无缝激活Adobe Experience Platform中的数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
+* [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-以下部分提供您需要了解的其他信息，以便您使用 [!DNL Flow Service] API。
+以下部分提供使用[!DNL Flow Service] API成功删除目标帐户所需了解的其他信息。
 
-### 正在读取示例API调用 {#reading-sample-api-calls}
+### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何设置请求的格式。 这些资源包括路径、必需的标头和格式正确的请求负载。 此外，还提供了在API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅以下章节： [如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中有关[如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。
 
-### 收集所需标题的值 {#gather-values-for-required-headers}
+### 收集所需标头的值 {#gather-values-for-required-headers}
 
-为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将提供所有中所有所需标头的值 [!DNL Experience Platform] API调用，如下所示：
+要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-中的所有资源 [!DNL Experience Platform]，包括属于 [!DNL Flow Service]，与特定的虚拟沙盒隔离。 的所有请求 [!DNL Platform] API需要一个标头，用于指定将在其中执行操作的沙盒的名称：
+[!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都被隔离到特定的虚拟沙盒中。 对[!DNL Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->如果 `x-sandbox-name` 未指定标头，请求将在 `prod` 沙盒。
+>如果未指定`x-sandbox-name`标头，则在`prod`沙盒下解析请求。
 
-包含有效负载(POST、PUT、PATCH)的所有请求都需要额外的媒体类型标头：
+所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
 
 * `Content-Type: application/json`
 
 ## 查找要删除的目标帐户的连接ID {#find-connection-id}
 
 >[!NOTE]
->本教程使用 [飞艇目标](../catalog/mobile-engagement/airship-attributes.md) 例如，但概述的步骤适用于任何 [可用目标](../catalog/overview.md).
+>本教程以[飞艇目标](../catalog/mobile-engagement/airship-attributes.md)为例，但列出的步骤适用于任何[可用目标](../catalog/overview.md)。
 
 删除目标帐户的第一步是查找与要删除的目标帐户对应的连接ID。
 
-在Experience PlatformUI中，浏览 **[!UICONTROL 目标]** > **[!UICONTROL 帐户]** ，并通过选择中的编号来选择要删除的帐户 **[!UICONTROL 目标]** 列。
+在Experience PlatformUI中，浏览到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 帐户]**，并通过选择&#x200B;**[!UICONTROL 目标]**&#x200B;列中的数字来选择要删除的帐户。
 
 ![选择要删除的目标帐户](/help/destinations/assets/api/delete-destination-account/select-destination-account.png)
 
-接下来，您可以从浏览器中的URL检索目标帐户的连接ID。
+接下来，您可以从浏览器的URL中检索目标帐户的连接ID。
 
 ![从URL检索连接ID](/help/destinations/assets/api/delete-destination-account/find-connection-id.png)
 
@@ -148,11 +148,10 @@ A successful response returns the current details of your connection including i
 >
 >在删除目标帐户之前，必须删除指向目标帐户的任何现有数据流。
 >要删除现有数据流，请参阅以下页面：
->* [使用Experience PlatformUI](../ui/delete-destinations.md) 删除现有数据流；
->* [使用流服务API](delete-destination-dataflow.md) 以删除现有数据流。
+>* [使用Experience PlatformUI](../ui/delete-destinations.md)删除现有数据流；
+>* [使用流服务API](delete-destination-dataflow.md)删除现有数据流。
 
-
-DELETE当您拥有连接ID并确保目标帐户不存在数据流后，请对 [!DNL Flow Service] API。
+在拥有连接ID并确保不存在到目标帐户的数据流后，请对[!DNL Flow Service] API执行DELETE请求。
 
 **API格式**
 
@@ -162,7 +161,7 @@ DELETE /connections/{CONNECTION_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | 唯一 `id` 要删除的连接值。 |
+| `{CONNECTION_ID}` | 要删除的连接唯一`id`值。 |
 
 **请求**
 
@@ -181,8 +180,8 @@ curl -X DELETE \
 
 ## API错误处理 {#api-error-handling}
 
-本教程中的API端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../landing/troubleshooting.md#request-header-errors) 平台疑难解答指南中的。
+本教程中的API端点遵循常规Experience PlatformAPI错误消息原则。 请参阅平台疑难解答指南中的[API状态代码](../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤
 
-按照本教程中的说明，您已成功使用了 [!DNL Flow Service] 用于删除现有目标帐户的API。 有关使用目标的更多信息，请参阅 [目标概述](/help/destinations/home.md).
+通过完成本教程，您已成功使用[!DNL Flow Service] API删除现有的目标帐户。 有关使用目标的详细信息，请参阅[目标概述](/help/destinations/home.md)。

@@ -41,7 +41,7 @@ ht-degree: 1%
 
 还有一些用户在注册时提供虚假值作为电话号码和/或电子邮件地址的实例。 在这些情况下，如果未启用限制，则电话/电子邮件相关的身份最终会链接到多个不同的CRM ID。
 
-![invalid-email-phone](../images/identity-settings/invalid-email-phone.png)
+![无效的电子邮件电话](../images/identity-settings/invalid-email-phone.png)
 
 利用身份图链接规则，您可以：
 
@@ -58,7 +58,7 @@ ht-degree: 1%
 
 这些标识可能会导致以下图表，其中多个CRM ID与“坏”标识合并在一起：
 
-![坏数据](../images/identity-settings/bad-data.png)
+![错误数据](../images/identity-settings/bad-data.png)
 
 通过身份图链接规则，您可以将CRM ID配置为唯一标识符，以防止由于此类数据而造成不需要的用户档案折叠。
 

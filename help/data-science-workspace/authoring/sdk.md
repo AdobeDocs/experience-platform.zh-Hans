@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；开发人员指南；SDK；模型创作；Data Science Workspace；热门主题；测试
+keywords: Experience Platform；开发人员指南；SDK；模型创作；数据科学Workspace；热门主题；测试
 solution: Experience Platform
 title: 模型创作SDK
-description: 模型创作SDK允许您开发可在Adobe Experience Platform数据科学工作区中使用的自定义机器学习方法和功能管道，从而在PySpark和Spark (Scala)中提供可实施的模板。
+description: 模型创作SDK允许您开发自定义机器学习方法和功能管道，这些管道可以在Adobe Experience Platform数据科学Workspace中使用，从而在PySpark和Spark (Scala)中提供可实施的模板。
 exl-id: c7577f93-a64f-49b7-a76d-71f21d619052
 source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
@@ -13,13 +13,13 @@ ht-degree: 1%
 
 # 模型创作SDK
 
-模型创作SDK允许您开发自定义机器学习方法和功能管道，这些管道可用于 [!DNL Adobe Experience Platform] 数据科学工作区，提供可实施的模板 [!DNL PySpark] 和 [!DNL Spark (Scala)].
+模型创作SDK允许您开发自定义机器学习方法和功能管道，这些管道可在[!DNL Adobe Experience Platform]数据科学Workspace中使用，从而在[!DNL PySpark]和[!DNL Spark (Scala)]中提供可实施的模板。
 
 本文档提供了有关在模型创作SDK中找到的各种类的信息。
 
-## 数据加载器 {#dataloader}
+## 数据加载程序 {#dataloader}
 
-DataLoader类封装与检索、筛选和返回原始输入数据相关的任何内容。 输入数据的示例包括培训、评分或功能工程方面的数据。 数据加载器扩展抽象类 `DataLoader` 和必须覆盖抽象方法 `load`.
+DataLoader类封装与检索、筛选和返回原始输入数据相关的任何内容。 输入数据的示例包括用于训练、评分或功能工程的示例。 数据加载器扩展抽象类`DataLoader`，必须覆盖抽象方法`load`。
 
 **PySpark**
 
@@ -36,13 +36,13 @@ DataLoader类封装与检索、筛选和返回原始输入数据相关的任何�
         <tr>
             <td>
                 <p><code>load(self, configProperties, spark)</code></p>
-                <p>将Platform数据加载为熊猫数据帧并返回</p>
+                <p>将Platform数据作为Pandas DataFrame加载和返回</p>
             </td>
             <td>
                 <ul>
                     <li><code>self</code>：自引用</li>
                     <li><code>configProperties</code>：配置属性映射</li>
-                    <li><code>spark</code>：Spark会话</li>
+                    <li><code>spark</code>： Spark会话</li>
                 </ul>
             </td>
         </tr>
@@ -51,7 +51,7 @@ DataLoader类封装与检索、筛选和返回原始输入数据相关的任何�
 
 **Spark**
 
-下表描述了的抽象方法 [!DNL Spark] Data Loader类：
+下表描述了[!DNL Spark] Data Loader类的抽象方法：
 
 <table>
     <thead>
@@ -64,21 +64,21 @@ DataLoader类封装与检索、筛选和返回原始输入数据相关的任何�
         <tr>
             <td>
                 <p><code>load(configProperties, sparkSession)</code></p>
-                <p>将Platform数据加载为数据帧并返回</p>
+                <p>将Platform数据作为DataFrame加载和返回</p>
             </td>
             <td>
                 <ul>
                     <li><code>configProperties</code>：配置属性映射</li>
-                    <li><code>sparkSession</code>：Spark会话</li>
+                    <li><code>sparkSession</code>： Spark会话</li>
                 </ul>
             </td>
         </tr>
     </tbody>
 </table>
 
-### 从 [!DNL Platform] 数据集 {#load-data-from-a-platform-dataset}
+### 从[!DNL Platform]数据集加载数据 {#load-data-from-a-platform-dataset}
 
-以下示例检索 [!DNL Platform] 按ID划分数据并返回一个DataFrame，其中数据集ID (`datasetId`)是配置文件中定义的属性。
+以下示例按ID检索[!DNL Platform]数据并返回一个DataFrame，其中数据集ID (`datasetId`)是配置文件中定义的属性。
 
 **PySpark**
 
@@ -193,11 +193,11 @@ class MyDataLoader extends DataLoader {
 
 ## DataSaver {#datasaver}
 
-DataSaver类封装与存储输出数据相关的任何内容，包括来自评分或功能工程的数据。 数据保存程序扩展抽象类 `DataSaver` 和必须覆盖抽象方法 `save`.
+DataSaver类封装与存储输出数据相关的任何内容，包括来自评分或功能工程的数据。 数据保存程序扩展抽象类`DataSaver`，必须覆盖抽象方法`save`。
 
 **PySpark**
 
-下表描述了的抽象方法 [!DNL PySpark] Data Saver类：
+下表描述了[!DNL PySpark]数据保存程序类的抽象方法：
 
 <table>
     <thead>
@@ -216,7 +216,7 @@ DataSaver类封装与存储输出数据相关的任何内容，包括来自评�
                 <ul>
                     <li><code>self</code>：自引用</li>
                     <li><code>configProperties</code>：配置属性映射</li>
-                    <li><code>dataframe</code>：以DataFrame形式存储的数据</li>
+                    <li><code>dataframe</code>：要以DataFrame形式存储的数据</li>
                 </ul>
             </td>
         </tr>
@@ -225,7 +225,7 @@ DataSaver类封装与存储输出数据相关的任何内容，包括来自评�
 
 **Spark (Scala)**
 
-下表描述了的抽象方法 [!DNL Spark] Data Saver类：
+下表描述了[!DNL Spark]数据保存程序类的抽象方法：
 
 <table>
     <thead>
@@ -243,21 +243,21 @@ DataSaver类封装与存储输出数据相关的任何内容，包括来自评�
             <td>
                 <ul>
                     <li><code>configProperties</code>：配置属性映射</li>
-                    <li><code>dataFrame</code>：以DataFrame形式存储的数据</li>
+                    <li><code>dataFrame</code>：要以DataFrame形式存储的数据</li>
                 </ul>
             </td>
         </tr>
     </tbody>
 </table>
 
-### 将数据保存到 [!DNL Platform] 数据集 {#save-data-to-a-platform-dataset}
+### 将数据保存到[!DNL Platform]数据集 {#save-data-to-a-platform-dataset}
 
-为了将数据存储到 [!DNL Platform] 数据集，必须在配置文件中提供或定义属性：
+要将数据存储到[!DNL Platform]数据集上，必须在配置文件中提供或定义属性：
 
-- 有效 [!DNL Platform] 数据存储到的数据集ID
+- 数据将存储到的有效[!DNL Platform]数据集ID
 - 属于您组织的租户ID
 
-以下示例存储数据(`prediction`)到 [!DNL Platform] 数据集，其中数据集ID (`datasetId`)和租户ID (`tenantId`)在配置文件中定义的属性。
+以下示例将数据(`prediction`)存储到[!DNL Platform]数据集上，其中数据集ID (`datasetId`)和租户ID (`tenantId`)是配置文件中定义的属性。
 
 
 **PySpark**
@@ -393,9 +393,9 @@ class ScoringDataSaver extends DataSaver {
 
 ## DatasetTransformer {#datasettransformer}
 
-DatasetTransformer类可修改和转换数据集的结构。 此 [!DNL Sensei Machine Learning Runtime] 不要求定义此组件，而是根据您的要求实施。
+DatasetTransformer类可修改和转换数据集的结构。 [!DNL Sensei Machine Learning Runtime]不需要定义此组件，而是根据您的要求实施。
 
-关于功能管道，数据集转换器可以与功能管道工厂协同使用，以便为功能工程准备数据。
+关于特征管道，数据集转换器可以与特征管道工厂协同使用，为特征工程准备数据。
 
 **PySpark**
 
@@ -412,13 +412,13 @@ DatasetTransformer类可修改和转换数据集的结构。 此 [!DNL Sensei Ma
         <tr>
             <td>
                 <p><i>摘要</i><br/><code>transform(self, configProperties, dataset)</code></p>
-                <p>将数据集作为输入并输出新的派生数据集</p>
+                <p>以数据集为输入，输出新的派生数据集</p>
             </td>
             <td>
                 <ul>
                     <li><code>self</code>：自引用</li>
                     <li><code>configProperties</code>：配置属性映射</li>
-                    <li><code>dataset</code>：用于转换的输入数据集</li>
+                    <li><code>dataset</code>：要转换的输入数据集</li>
                 </ul>
             </td>
         </tr>
@@ -427,7 +427,7 @@ DatasetTransformer类可修改和转换数据集的结构。 此 [!DNL Sensei Ma
 
 **Spark (Scala)**
 
-下表描述了的抽象方法 [!DNL Spark] 数据集转换器类：
+下表描述了[!DNL Spark]数据集转换器类的抽象方法：
 
 <table>
     <thead>
@@ -440,12 +440,12 @@ DatasetTransformer类可修改和转换数据集的结构。 此 [!DNL Sensei Ma
         <tr>
             <td>
                 <p><code>transform(configProperties, dataset)</code></p>
-                <p>将数据集作为输入并输出新的派生数据集</p>
+                <p>以数据集为输入，输出新的派生数据集</p>
             </td>
             <td>
                 <ul>
                     <li><code>configProperties</code>：配置属性映射</li>
-                    <li><code>dataset</code>：用于转换的输入数据集</li>
+                    <li><code>dataset</code>：要转换的输入数据集</li>
                 </ul>
             </td>
         </tr>
@@ -454,7 +454,7 @@ DatasetTransformer类可修改和转换数据集的结构。 此 [!DNL Sensei Ma
 
 ## 功能管道工厂 {#featurepipelinefactory}
 
-FeaturePipelineFactory类包含特征提取算法，并定义功能管道从开始到结束的各个阶段。
+FeaturePipelineFactory类包含特征提取算法，并定义特征管道从开始到结束的阶段。
 
 **PySpark**
 
@@ -489,7 +489,7 @@ FeaturePipelineFactory类包含特征提取算法，并定义功能管道从开�
                 <ul>
                     <li><code>self</code>：自引用</li>
                     <li><code>configProperties</code>：配置属性</li>
-                    <li><code>sparkSession</code>：Spark会话</li>
+                    <li><code>sparkSession</code>： Spark会话</li>
                 </ul>
             </td>
         </tr>
@@ -498,7 +498,7 @@ FeaturePipelineFactory类包含特征提取算法，并定义功能管道从开�
 
 **Spark (Scala)**
 
-下表介绍了的类方法 [!DNL Spark] FeaturePipelineFactory：
+下表描述了[!DNL Spark] FeaturePipelineFactory的类方法：
 
 <table>
     <thead>
@@ -511,7 +511,7 @@ FeaturePipelineFactory类包含特征提取算法，并定义功能管道从开�
         <tr>
             <td>
                 <p><i>摘要</i><br/><code>createPipeline(configProperties)</code></p>
-                <p>创建并返回包含一系列转换器的管道</p>
+                <p>创建和返回包含一系列转换器的管道</p>
             </td>
             <td>
                 <ul>
@@ -527,16 +527,16 @@ FeaturePipelineFactory类包含特征提取算法，并定义功能管道从开�
             <td>
                 <ul>
                     <li><code>configProperties</code>：配置属性</li>
-                    <li><code>sparkSession</code>：Spark会话</li>
+                    <li><code>sparkSession</code>： Spark会话</li>
                 </ul>
             </td>
         </tr>
     </tbody>
 </table>
 
-## Pipelinefactory {#pipelinefactory}
+## 管道工厂 {#pipelinefactory}
 
-PipelineFactory类封装用于模型训练和评分的方法和定义，其中训练逻辑和算法以 [!DNL Spark] 管道。
+PipelineFactory类封装用于模型训练和评分的方法和定义，其中训练逻辑和算法以[!DNL Spark]管道的形式定义。
 
 **PySpark**
 
@@ -553,7 +553,7 @@ PipelineFactory类封装用于模型训练和评分的方法和定义，其中�
         <tr>
             <td>
                 <p><i>摘要</i><br/><code>apply(self, configProperties)</code></p>
-                <p>创建和返回Spark管道，其中包含模型训练和评分的逻辑和算法</p>
+                <p>创建并返回Spark管道，其中包含模型训练和评分的逻辑和算法</p>
             </td>
             <td>
                 <ul>
@@ -585,7 +585,7 @@ PipelineFactory类封装用于模型训练和评分的方法和定义，其中�
                     <li><code>self</code>：自引用</li>
                     <li><code>configProperties</code>：配置属性</li>
                     <li><code>dataframe</code>：用于评分的输入数据集</li>
-                    <li><code>model</code>：用于评分的训练模型</li>
+                    <li><code>model</code>：用于评分的经过训练的模型</li>
                 </ul>
             </td>
         </tr>
@@ -598,7 +598,7 @@ PipelineFactory类封装用于模型训练和评分的方法和定义，其中�
                 <ul>
                     <li><code>self</code>：自引用</li>
                     <li><code>configProperties</code>：配置属性</li>
-                    <li><code>sparkSession</code>：Spark会话</li>
+                    <li><code>sparkSession</code>： Spark会话</li>
                 </ul>
             </td>
         </tr>
@@ -607,7 +607,7 @@ PipelineFactory类封装用于模型训练和评分的方法和定义，其中�
 
 **Spark (Scala)**
 
-下表介绍了的类方法 [!DNL Spark] PipelineFactory：
+下表描述了[!DNL Spark] PipelineFactory的类方法：
 
 <table>
     <thead>
@@ -636,7 +636,7 @@ PipelineFactory类封装用于模型训练和评分的方法和定义，其中�
             <td>
                 <ul>
                     <li><code>configProperties</code>：配置属性</li>
-                    <li><code>sparkSession</code>：Spark会话</li>
+                    <li><code>sparkSession</code>： Spark会话</li>
                 </ul>
             </td>
         </tr>
@@ -691,7 +691,7 @@ MLEvaluator类提供了用于定义评估指标以及确定训练和测试数据
 
 **Spark (Scala)**
 
-下表介绍了的类方法 [!DNL Spark] MLEvaluator：
+下表描述了[!DNL Spark] MLEvaluator的类方法：
 
 <table>
     <thead>

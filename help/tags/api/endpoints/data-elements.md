@@ -4,24 +4,24 @@ description: 了解如何在Reactor API中调用/data_elements端点。
 exl-id: ea346682-441b-415b-af06-094158eb7c71
 source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1368'
+source-wordcount: '1364'
 ht-degree: 4%
 
 ---
 
 # 数据元素端点
 
-数据元素具有变量功能，指向应用程序中的重要数据段。 数据元素在内使用 [规则](./rules.md) 和 [扩展](./extensions.md) 配置。 在运行时在浏览器或应用程序中触发规则时，将会解析数据元素的值并在规则中使用。 数据元素的功能与扩展配置相同。
+数据元素具有变量功能，指向应用程序中的重要数据段。 数据元素在[规则](./rules.md)和[扩展](./extensions.md)配置中使用。 在运行时在浏览器或应用程序中触发规则时，将会解析数据元素的值并在规则中使用。 数据元素的功能与扩展配置相同。
 
 将多个数据元素一起使用会导致数据字典或数据映射。 该词典代表Adobe Experience Platform知道并且可以利用的数据。
 
-数据元素只属于一个 [属性](./properties.md). 资产可以有许多数据元素。
+数据元素只属于一个[属性](./properties.md)。 资产可以有许多数据元素。
 
-有关数据元素及其在标记中的使用的更多常规信息，请参阅 [数据元素指南](../../ui/managing-resources/data-elements.md) 在UI文档中。
+有关数据元素及其在标记中的使用的更多常规信息，请参阅UI文档中的[数据元素指南](../../ui/managing-resources/data-elements.md)。
 
 ## 快速入门
 
-本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [快速入门指南](../getting-started.md) 有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续之前，请查看[快速入门指南](../getting-started.md)，以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索数据元素列表 {#list}
 
@@ -35,13 +35,13 @@ GET /properties/{PROPERTY_ID}/data_elements
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 此 `id` 拥有数据元素的属性的ID。 |
+| `PROPERTY_ID` | 拥有数据元素的属性的`id`。 |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性过滤列出的数据元素：<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [过滤响应](../guides/filtering.md) 以了解更多信息。
+>使用查询参数，可以根据以下属性过滤列出的数据元素：<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>有关详细信息，请参阅[筛选响应](../guides/filtering.md)指南。
 
 **请求**
 
@@ -174,7 +174,7 @@ curl -X GET \
 
 >[!NOTE]
 >
->删除数据元素时，会将它们标记为已删除，但实际上并不从系统中将其删除。 因此，可以查找已删除的数据元素。 删除的数据元素可以通过存在 `data.meta.deleted_at` 属性。
+>删除数据元素时，会将它们标记为已删除，但实际上并不从系统中将其删除。 因此，可以查找已删除的数据元素。 删除的数据元素可以通过存在`data.meta.deleted_at`属性来标识。
 
 **API格式**
 
@@ -184,7 +184,7 @@ GET /data_elements/{DATA_ELEMENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `DATA_ELEMENT_ID` | 此 `id` 要查找的数据元素对应的章节。 |
+| `DATA_ELEMENT_ID` | 要查找的数据元素的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -314,13 +314,13 @@ POST /properties/{PROPERTY_ID}/data_elements
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 此 `id` 的 [属性](./properties.md) 下定义数据元素的位置。 |
+| `PROPERTY_ID` | 您正在定义数据元素的[属性](./properties.md)的`id`。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求为指定属性创建新数据元素。 调用还会通过 `relationships` 属性。 请参阅指南，网址为 [关系](../guides/relationships.md) 以了解更多信息。
+以下请求为指定属性创建新数据元素。 调用还会通过`relationships`属性将数据元素与现有扩展关联。 有关详细信息，请参阅[关系](../guides/relationships.md)指南。
 
 ```shell
 curl -X POST \
@@ -355,14 +355,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes.name` | **（必需）** 易于用户识别的数据元素名称。 |
-| `attributes.delegate_descriptor_id` | **（必需）** 将数据元素与扩展包关联的带格式的字符串。 首次创建扩展包时，所有数据元素都必须与扩展包关联，因为每个扩展包都会为其委托数据元素定义兼容类型及其预期行为。 请参阅指南，网址为 [委托描述符ID](../guides/delegate-descriptor-ids.md) 以了解更多信息。 |
+| `attributes.name` | **（必需）**&#x200B;数据元素的人类可读名称。 |
+| `attributes.delegate_descriptor_id` | **（必需）**&#x200B;将数据元素与扩展包关联的格式化字符串。 首次创建扩展包时，所有数据元素都必须与扩展包关联，因为每个扩展包都会为其委托数据元素定义兼容类型及其预期行为。 有关详细信息，请参阅有关[委托描述符ID](../guides/delegate-descriptor-ids.md)的指南。 |
 | `attributes.settings` | 以字符串表示的设置JSON对象。 |
-| `attributes.default_value` | 数据元素的计算结果为时将返回的默认值 `undefined`. |
+| `attributes.default_value` | 数据元素的计算结果为`undefined`时要返回的默认值。 |
 | `attributes.enabled` | 一个布尔值，指示是否已启用数据元素。 |
 | `attributes.force_lower_case` | 布尔值，指示在存储数据元素值之前是否应将其转换为小写。 |
 | `attributes.clean_text` | 布尔值，指示在存储之前是否应从数据元素值中删除前导和尾随空格。 |
-| `type` | 正在更新的资源类型。 对于此端点，值必须为 `data_elements`. |
+| `type` | 正在更新的资源类型。 对于此终结点，值必须为`data_elements`。 |
 
 {style="table-layout:auto"}
 
@@ -480,13 +480,13 @@ PATCH /data_elements/{DATA_ELEMENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `DATA_ELEMENT_ID` | 此 `id` 要更新的数据元素的ID。 |
+| `DATA_ELEMENT_ID` | 要更新的数据元素的`id`。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求将更新 `name` 对于现有数据元素。
+以下请求更新现有数据元素的`name`。
 
 ```shell
 curl -X PATCH \
@@ -508,9 +508,9 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes` | 一个对象，其属性表示数据元素要更新的属性。 可以更新所有数据元素属性。 请参阅的示例调用 [创建数据元素](#create) 以获取属性及其用例的列表。 |
-| `id` | 此 `id` 要更新的数据元素的ID。 这应该匹配 `{DATA_ELEMENT_ID}` 请求路径中提供的值。 |
-| `type` | 正在更新的资源类型。 对于此端点，值必须为 `data_elements`. |
+| `attributes` | 一个对象，其属性表示数据元素要更新的属性。 可以更新所有数据元素属性。 有关属性及其用例的列表，请参阅[创建数据元素](#create)的示例调用。 |
+| `id` | 要更新的数据元素的`id`。 这应当与在请求路径中提供的`{DATA_ELEMENT_ID}`值匹配。 |
+| `type` | 正在更新的资源类型。 对于此终结点，值必须为`data_elements`。 |
 
 {style="table-layout:auto"}
 
@@ -620,7 +620,7 @@ curl -X PATCH \
 
 修订数据元素时，将使用当前（标题）修订创建数据元素的新修订版本。 数据元素的每个修订版都有自己的ID。 可以通过原始链接发现原始数据元素。
 
-可以通过提供 `meta.action` 值为的属性 `revise` 在PATCH请求正文中。
+可以通过在PATCH请求正文中提供值为`revise`的`meta.action`属性来修订数据元素。
 
 **API格式**
 
@@ -630,7 +630,7 @@ PATCH /data_elements/{DATA_ELEMENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `DATA_ELEMENT_ID` | 此 `id` 要修订的数据元素的ID。 |
+| `DATA_ELEMENT_ID` | 要修订的数据元素的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -659,16 +659,16 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes` | 一个对象，其属性表示数据元素要更新的属性。 可以更新所有数据元素属性。 请参阅的示例调用 [创建数据元素](#create) 以获取属性及其用例的列表。 |
-| `meta.action` | 当包含值时 `revise`，此属性指示应为数据元素创建新修订版本。 |
-| `id` | 此 `id` 要修订的数据元素的ID。 这应该匹配 `{DATA_ELEMENT_ID}` 请求路径中提供的值。 |
-| `type` | 正在修订的资源的类型。 对于此端点，值必须为 `data_elements`. |
+| `attributes` | 一个对象，其属性表示数据元素要更新的属性。 可以更新所有数据元素属性。 有关属性及其用例的列表，请参阅[创建数据元素](#create)的示例调用。 |
+| `meta.action` | 当包含值`revise`时，此属性指示应为数据元素创建新的修订版本。 |
+| `id` | 要修订的数据元素的`id`。 这应当与在请求路径中提供的`{DATA_ELEMENT_ID}`值匹配。 |
+| `type` | 正在修订的资源的类型。 对于此终结点，值必须为`data_elements`。 |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功响应将返回数据元素的新修订的详细信息，如增量所示 `meta.latest_revision_number` 属性。
+成功响应将返回数据元素的新修订的详细信息，如递增的`meta.latest_revision_number`属性所示。
 
 ```json
 {
@@ -780,7 +780,7 @@ DELETE /data_elements/{DATA_ELEMENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `DATA_ELEMENT_ID` | 此 `id` 要删除的数据元素的ID。 |
+| `DATA_ELEMENT_ID` | 要删除的数据元素的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -800,17 +800,17 @@ curl -X DELETE \
 
 ## 管理数据元素的注释 {#notes}
 
-数据元素是“重要”资源，这意味着您可以为每个单独资源创建和检索基于文本的注释。 请参阅 [注释端点指南](./notes.md) 有关如何管理数据元素和其他兼容资源的注释的更多信息。
+数据元素是“重要”资源，这意味着您可以为每个单独资源创建和检索基于文本的注释。 有关如何管理数据元素和其他兼容资源的注释的更多信息，请参阅[注释端点指南](./notes.md)。
 
 ## 检索数据元素的相关资源 {#related}
 
-以下调用演示了如何检索数据元素的相关资源。 时间 [查找数据元素](#lookup)，这些关系列在 `relationships` 属性。
+以下调用演示了如何检索数据元素的相关资源。 当[查找数据元素](#lookup)时，这些关系列在`relationships`属性下。
 
-请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
+有关Reactor API中关系的详细信息，请参阅[关系指南](../guides/relationships.md)。
 
 ### 列出数据元素的相关库 {#libraries}
 
-您可以通过附加以下内容来列出利用数据元素的库 `/libraries` 到查找请求的路径。
+您可以将`/libraries`附加到查找请求的路径中，以列出使用数据元素的库。
 
 **API格式**
 
@@ -820,7 +820,7 @@ GET  /data_elements/{DATA_ELEMENT_ID}/libraries
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DATA_ELEMENT_ID}` | 此 `id` 要列出其库的数据元素的。 |
+| `{DATA_ELEMENT_ID}` | 要列出其库的数据元素的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -932,7 +932,7 @@ curl -X GET \
 
 ### 列出数据元素的相关修订版本 {#revisions}
 
-您可以通过附加数据元素来列出其以前的修订版本 `/revisions` 到查找请求的路径。
+您可以通过将`/revisions`附加到查找请求的路径来列出数据元素的先前修订。
 
 **API格式**
 
@@ -942,7 +942,7 @@ GET  /data_elements/{DATA_ELEMENT_ID}/revisions
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DATA_ELEMENT_ID}` | 此 `id` 要列出其修订的数据元素的。 |
+| `{DATA_ELEMENT_ID}` | 要列出其修订的数据元素的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -1166,7 +1166,7 @@ curl -X GET \
 
 ### 查找数据元素的相关扩展 {#extension}
 
-您可以通过附加来查找使用数据元素的扩展 `/extension` 到GET请求的路径。
+您可以通过将`/extension`附加到GET请求的路径中来查找使用数据元素的扩展。
 
 **API格式**
 
@@ -1176,7 +1176,7 @@ GET  /data_elements/{DATA_ELEMENT_ID}/extension
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DATA_ELEMENT_ID}` | 此 `id` 要查找其扩展的数据元素的。 |
+| `{DATA_ELEMENT_ID}` | 要查找其扩展的数据元素的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -1286,7 +1286,7 @@ curl -X GET \
 
 ### 查找数据元素的相关来源 {#origin}
 
-您可以通过附加数据元素来查找数据元素的来源 `/origin` 到GET请求的路径。 数据元素的来源是先前修订版本，更新后创建了当前修订版本。
+您可以通过将`/origin`附加到GET请求的路径中来查找数据元素的来源。 数据元素的来源是先前修订版本，更新后创建了当前修订版本。
 
 **API格式**
 
@@ -1296,7 +1296,7 @@ GET  /data_elements/{DATA_ELEMENT_ID}/origin
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DATA_ELEMENT_ID}` | 此 `id` 要查找其来源的数据元素的。 |
+| `{DATA_ELEMENT_ID}` | 要查找其来源的数据元素的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -1416,7 +1416,7 @@ curl -X GET \
 
 ### 查找数据元素的相关属性 {#property}
 
-您可以通过附加来查找拥有数据元素的属性 `/property` 到GET请求的路径。
+您可以通过将`/property`附加到GET请求的路径中来查找拥有数据元素的属性。
 
 **API格式**
 
@@ -1426,7 +1426,7 @@ GET  /data_elements/{DATA_ELEMENT_ID}/property
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DATA_ELEMENT_ID}` | 此 `id` 要查找其属性的数据元素的。 |
+| `{DATA_ELEMENT_ID}` | 要查找其属性的数据元素的`id`。 |
 
 {style="table-layout:auto"}
 

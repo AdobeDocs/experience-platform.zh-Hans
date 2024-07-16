@@ -4,16 +4,16 @@ description: 了解如何将使用Data Distiller创建的准备好的训练数�
 exl-id: 75022acf-fafd-41d6-8dfa-ff3fd4c4fa7e
 source-git-commit: 7cde32f841497edca7de0c995cc4c14501206b1a
 workflow-type: tm+mt
-source-wordcount: '537'
-ht-degree: 3%
+source-wordcount: '457'
+ht-degree: 5%
 
 ---
 
 # 将数据导出到外部ML环境
 
-本文档演示如何将使用Data Distiller创建的准备好的训练数据集共享到ML环境可读取的云存储位置，以便训练和评分模型。 此示例将训练数据集导出到 [数据登陆区(DLZ)](../../../sources/tutorials/api/create/cloud-storage/data-landing-zone.md). 您可以根据需要更改存储目标，以便与机器学习环境配合使用。
+本文档演示如何将使用Data Distiller创建的准备好的训练数据集共享到ML环境可读取的云存储位置，以便训练和评分模型。 此示例将训练数据集导出到[数据登陆区(DLZ)](../../../sources/tutorials/api/create/cloud-storage/data-landing-zone.md)。 您可以根据需要更改存储目标，以便与机器学习环境配合使用。
 
-此 [目标的流服务](https://developer.adobe.com/experience-platform-apis/references/destinations/) 用于通过将计算功能的数据集登陆到适当的云存储位置来完成功能管道。
+目标的[流服务](https://developer.adobe.com/experience-platform-apis/references/destinations/)用于将计算功能的数据集登陆到适当的云存储位置，从而完成功能管道。
 
 ## 创建源连接 {#create-source-connection}
 
@@ -39,13 +39,13 @@ source_connection_id = source_res["id"]
 
 可用的云存储目标分别由连接规范ID标识：
 
-| 云存储类型 | 连接规范ID |
+| 云存储类型 | 连接特定 ID |
 |-----------------------|--------------------------------------|
 | Amazon S3 | 4fce964d-3f37-408f-9778-e597338a21ee |
-| Azure Blob 存储 | 6d6b59bf-fb58-4107-9064-4d246c0e5bb2 |
+| Azure Blob Storage | 6d6b59bf-fb58-4107-9064-4d246c0e5bb2 |
 | Azure数据湖 | be2c3209-53bc-47e7-ab25-145db8b873e1 |
 | 数据登陆区 | 10440537-2a7b-4583-ac39-ed38d4b848e8 |
-| Google云存储 | c5d93acb-ea8b-4b14-8f53-02138444ae99 |
+| Google 云存储 | c5d93acb-ea8b-4b14-8f53-02138444ae99 |
 | SFTP | 36965a81-b1c6-401b-99f8-22508f1e6a26 |
 
 ```python
@@ -88,10 +88,10 @@ target_connection_id = target_res["id"]
 | 云存储类型 | 流量规范ID |
 |-----------------------|--------------------------------------|
 | Amazon S3 | 269ba276-16fc-47db-92b0-c1049a3c131f |
-| Azure Blob 存储 | 95bd8965-fc8a-4119-b9c3-944c2c2df6d2 |
+| Azure Blob Storage | 95bd8965-fc8a-4119-b9c3-944c2c2df6d2 |
 | Azure数据湖 | 17be2013-2549-41ce-96e7-a70363bec293 |
 | 数据登陆区 | cd2fc47e-e838-4f38-a581-8fff2f99b63a |
-| Google云存储 | 585c15c4-6cbf-4126-8f87-e26bff78b657 |
+| Google 云存储 | 585c15c4-6cbf-4126-8f87-e26bff78b657 |
 | SFTP | 354d6aad-4754-46e4-a576-1b384561c440 |
 
 以下代码创建一个数据流，其中计划设置为在未来的很长时间开始。 这允许您在模型开发期间触发临时流。 获得经过训练的模型后，您可以更新数据流的计划，以按所需的计划共享功能数据集。
@@ -170,7 +170,7 @@ activation_res
 
 ## 简化共享到数据登陆区
 
-要更轻松地将数据集共享到数据登陆区，请 `aepp` 库提供 `exportDatasetToDataLandingZone` 在单个函数调用中执行上述步骤的函数：
+为了更轻松地将数据集共享到数据登陆区域，`aepp`库提供了一个`exportDatasetToDataLandingZone`函数，该函数在单个函数调用中执行上述步骤：
 
 ```python
 from aepp import exportDatasetToDataLandingZone

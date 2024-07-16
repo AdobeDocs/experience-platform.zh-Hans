@@ -7,37 +7,37 @@ description: 本教程涵盖了从第三方云存储检索数据，以及使用�
 exl-id: 95373c25-24f6-4905-ae6c-5000bf493e6f
 source-git-commit: 92f39f970402ab907f711d23a8f5f599668f0fe0
 workflow-type: tm+mt
-source-wordcount: '1765'
-ht-degree: 1%
+source-wordcount: '1741'
+ht-degree: 2%
 
 ---
 
-# 使用为云存储源创建数据流 [!DNL Flow Service] API
+# 使用[!DNL Flow Service] API为云存储源创建数据流
 
-本教程介绍了以下步骤：从云存储源检索数据，并使用将这些数据引入平台 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+本教程介绍从云存储源检索数据以及使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将数据引入平台的步骤。
 
 >[!NOTE]
 >
->要创建数据流，您必须已具有带云存储源的有效基本连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#cloud-storage) 以获取可创建基本连接的云存储源列表。
+>要创建数据流，您必须已具有带云存储源的有效基本连接ID。 如果您没有此ID，请参阅[源概述](../../../home.md#cloud-storage)，以了解可创建基础连接的云存储源的列表。
 
 ## 快速入门
 
 本教程要求您实际了解Adobe Experience Platform的以下组件：
 
 - [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
-   - [模式组合基础](../../../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
-   - [架构注册开发人员指南](../../../../xdm/api/getting-started.md)：包含成功执行对架构注册表API的调用所需了解的重要信息。 这包括您的 `{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（请特别注意“接受”标头及其可能的值）。
-- [[!DNL Catalog Service]](../../../../catalog/home.md)：目录是Experience Platform中数据位置和谱系的记录系统。
+   - [架构组合的基础知识](../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
+   - [架构注册表开发人员指南](../../../../xdm/api/getting-started.md)：包含成功执行对架构注册表API的调用所需了解的重要信息。 这包括您的`{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（请特别注意“接受”标头及其可能的值）。
+- [[!DNL Catalog Service]](../../../../catalog/home.md)：目录是Experience Platform中数据位置和历程的记录系统。
 - [[!DNL Batch ingestion]](../../../../ingestion/batch-ingestion/overview.md)：批量摄取API允许您将数据作为批处理文件摄取到Experience Platform中。
-- [沙盒](../../../../sandboxes/home.md)：Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+- [沙盒](../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ### 使用平台API
 
-有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../landing/api-guide.md).
+有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../landing/api-guide.md)指南。
 
 ## 创建源连接 {#source}
 
-您可以通过向以下对象发出POST请求来创建源连接： `sourceConnections` 端点 [!DNL Flow Service] 提供基本连接ID时的API、要摄取的源文件的路径以及源对应的连接规范ID。
+您可以在提供基本连接ID、要摄取的源文件的路径以及源对应的连接规范ID的同时，通过向[!DNL Flow Service] API的`sourceConnections`端点发出POST请求来创建源连接。
 
 创建源连接时，还必须为数据格式属性定义一个枚举值。
 
@@ -49,7 +49,7 @@ ht-degree: 1%
 | JSON | `json` |
 | Parquet | `parquet` |
 
-对于所有基于表的源，将值设置为 `tabular`.
+对于所有基于表的源，将该值设置为`tabular`。
 
 **API格式**
 
@@ -93,18 +93,18 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `baseConnectionId` | 云存储源的基本连接ID。 |
-| `data.format` | 您要带到Platform的数据的格式。 支持的值包括： `delimited`， `JSON`、和 `parquet`. |
+| `data.format` | 您要带到Platform的数据的格式。 支持的值为： `delimited`、`JSON`和`parquet`。 |
 | `data.properties` | （可选）在创建源连接时可应用于数据的一组属性。 |
-| `data.properties.columnDelimiter` | （可选）收集平面文件时可指定的单个字符列分隔符。 任何单个字符值都是允许的列分隔符。 如果未提供，则使用逗号(`,`)用作默认值。 **注意**：和 `columnDelimiter` 属性只能在摄取分隔文件时使用。 |
-| `data.properties.encoding` | （可选）一个属性，定义将数据摄取到Platform时要使用的编码类型。 支持的编码类型包括： `UTF-8` 和 `ISO-8859-1`. **注意**：和 `encoding` 参数仅在摄取分隔的CSV文件时可用。 将使用默认编码摄取其他文件类型。 `UTF-8`. |
-| `data.properties.compressionType` | （可选）一个属性，定义用于摄取的压缩文件类型。 支持的压缩文件类型为： `bzip2`， `gzip`， `deflate`， `zipDeflate`， `tarGzip`、和 `tar`. **注意**：和 `compressionType` 属性只能在引入分隔文件或JSON文件时使用。 |
-| `params.path` | 您正在访问的源文件的路径。 此参数指向单个文件或整个文件夹。  **注意**：您可以使用星号代替文件名来指定整个文件夹的摄取。 例如： `/acme/summerCampaign/*.csv` 将摄取整个 `/acme/summerCampaign/` 文件夹。 |
-| `params.type` | 您正在摄取的源数据文件的文件类型。 使用类型 `file` 摄取单个文件并使用类型 `folder` 摄取整个文件夹。 |
-| `connectionSpec.id` | 与特定云存储源关联的连接规范ID。 请参阅 [附录](#appendix) 以获取连接规范ID的列表。 |
+| `data.properties.columnDelimiter` | （可选）收集平面文件时可指定的单个字符列分隔符。 任何单个字符值都是允许的列分隔符。 如果未提供，则使用逗号(`,`)作为默认值。 **注意**： `columnDelimiter`属性只能在引入分隔文件时使用。 |
+| `data.properties.encoding` | （可选）一个属性，定义将数据摄取到Platform时要使用的编码类型。 支持的编码类型为： `UTF-8`和`ISO-8859-1`。 **注意**： `encoding`参数仅在摄取分隔的CSV文件时可用。 将使用默认编码`UTF-8`摄取其他文件类型。 |
+| `data.properties.compressionType` | （可选）一个属性，定义用于摄取的压缩文件类型。 支持的压缩文件类型为： `bzip2`、`gzip`、`deflate`、`zipDeflate`、`tarGzip`和`tar`。 **注意**： `compressionType`属性只能在引入分隔文件或JSON文件时使用。 |
+| `params.path` | 您正在访问的源文件的路径。 此参数指向单个文件或整个文件夹。  **注意**：您可以使用星号代替文件名来指定整个文件夹的摄取。 例如： `/acme/summerCampaign/*.csv`将摄取整个`/acme/summerCampaign/`文件夹。 |
+| `params.type` | 您正在摄取的源数据文件的文件类型。 使用类型`file`摄取单个文件，使用类型`folder`摄取整个文件夹。 |
+| `connectionSpec.id` | 与特定云存储源关联的连接规范ID。 有关连接规范ID的列表，请参阅[附录](#appendix)。 |
 
 **响应**
 
-成功的响应将返回唯一标识符(`id`)。 此ID是稍后步骤创建数据流所必需的。
+成功的响应返回新创建的源连接的唯一标识符(`id`)。 此ID是稍后步骤创建数据流所必需的。
 
 ```json
 {
@@ -125,7 +125,7 @@ POST /sourceConnections
 
 **请求**
 
-在以下示例中，文件路径中使用正则表达式，以指定摄取具有 `premium` 以他们的名义。
+在以下示例中，文件路径中使用正则表达式以指定摄取名称中包含`premium`的所有CSV文件。
 
 ```shell
 curl -X POST \
@@ -155,7 +155,7 @@ curl -X POST \
 
 ### 配置源连接以递归方式摄取数据
 
-在创建源连接时，可以使用 `recursive` 用于从深度嵌套文件夹摄取数据的参数。
+创建源连接时，可以使用`recursive`参数从深度嵌套的文件夹中摄取数据。
 
 **API格式**
 
@@ -165,7 +165,7 @@ POST /sourceConnections
 
 **请求**
 
-在以下示例中， `recursive: true` 参数信息 [!DNL Flow Service] 用于在摄取过程中递归读取所有子文件夹。
+在以下示例中，`recursive: true`参数通知[!DNL Flow Service]在摄取过程中以递归方式读取所有子文件夹。
 
 ```shell
 curl -X POST \
@@ -198,21 +198,21 @@ curl -X POST \
 
 为了在Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。
 
-可以通过向以下对象执行POST请求来创建目标XDM架构 [架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
+通过向[架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)执行POST请求，可以创建目标XDM架构。
 
-有关如何创建目标XDM架构的详细步骤，请参阅关于的教程 [使用API创建架构](../../../../xdm/api/schemas.md).
+有关如何创建目标XDM架构的详细步骤，请参阅有关使用API [创建架构的教程](../../../../xdm/api/schemas.md)。
 
 ## 创建目标数据集 {#target-dataset}
 
-可以通过向执行POST请求来创建目标数据集 [目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，在有效负载中提供目标架构的ID。
+可以通过向[目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)执行POST请求，在有效负载中提供目标架构的ID来创建目标数据集。
 
-有关如何创建目标数据集的详细步骤，请参阅关于的教程 [使用API创建数据集](../../../../catalog/api/create-dataset.md).
+有关如何创建目标数据集的详细步骤，请参阅有关[使用API创建数据集的教程](../../../../catalog/api/create-dataset.md)。
 
 ## 创建目标连接 {#target-connection}
 
-目标连接表示与所摄取数据所登陆的目标之间的连接。 要创建目标连接，您必须提供与数据湖关联的固定连接规范ID。 此连接规范ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
+目标连接表示与所摄取数据所登陆的目标之间的连接。 要创建目标连接，您必须提供与数据湖关联的固定连接规范ID。 此连接规范ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`。
 
-现在，您拥有目标架构、目标数据集以及到数据湖的连接规范ID。 使用这些标识符，您可以使用 [!DNL Flow Service] 用于指定将包含入站源数据的数据集的API。
+现在，您拥有目标架构、目标数据集以及到数据湖的连接规范ID。 使用这些标识符，您可以使用[!DNL Flow Service] API创建目标连接，以指定将包含入站源数据的数据集。
 
 **API格式**
 
@@ -251,14 +251,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `data.schema.id` | 此 `$id` 目标XDM架构的。 |
-| `data.schema.version` | 架构的版本。 必须设置此值 `application/vnd.adobe.xed-full+json;version=1`，返回架构的最新次版本。 |
+| `data.schema.id` | 目标XDM架构的`$id`。 |
+| `data.schema.version` | 架构的版本。 此值必须设置为`application/vnd.adobe.xed-full+json;version=1`，这将返回架构的最新次版本。 |
 | `params.dataSetId` | 上一步中生成的目标数据集的ID。 **注意**：创建目标连接时，必须提供有效的数据集ID。 无效的数据集ID将导致错误。 |
-| `connectionSpec.id` | 用于连接到数据湖的连接规范ID。 此ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
+| `connectionSpec.id` | 用于连接到数据湖的连接规范ID。 此ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`。 |
 
 **响应**
 
-成功的响应将返回新目标连接的唯一标识符(`id`)。 此ID在后续步骤中是必需的。
+成功的响应返回新目标连接的唯一标识符(`id`)。 此ID在后续步骤中是必需的。
 
 ```json
 {
@@ -271,7 +271,7 @@ curl -X POST \
 
 要将源数据摄取到目标数据集中，必须首先将其映射到目标数据集所遵循的目标架构。
 
-POST要创建映射集，请向 `mappingSets` 的端点 [[!DNL Data Prep] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-prep.yaml) 提供目标XDM架构时 `$id` 以及要创建的映射集的详细信息。
+要创建映射集，请在提供目标XDM架构`$id`和要创建的映射集的详细信息时，向[[!DNL Data Prep] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-prep.yaml)的`mappingSets`端点发出POST请求。
 
 >[!TIP]
 >
@@ -333,7 +333,7 @@ curl -X POST \
 
 **响应**
 
-成功响应将返回新创建映射的详细信息，包括其唯一标识符(`id`)。 在后续步骤中需要使用此值来创建数据流。
+成功的响应返回新创建的映射的详细信息，包括其唯一标识符(`id`)。 在后续步骤中需要使用此值来创建数据流。
 
 ```json
 {
@@ -374,7 +374,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回数据流规范的详细信息，该规范负责将数据从源引入Platform。 响应中包含唯一的流量规范 `id` 需要才能创建新数据流。
+成功的响应将返回数据流规范的详细信息，该规范负责将数据从源引入Platform。 响应包括创建新数据流所需的唯一流规范`id`。
 
 ```json
 {
@@ -591,7 +591,7 @@ curl -X GET \
 
 收集云存储数据的最后一步是创建数据流。 现在，您已准备以下必需值：
 
-- [源连接ID](#source)
+- [Source连接Id](#source)
 - [目标连接ID](#target)
 - [映射 ID](#mapping)
 - [数据流规范ID](#specs)
@@ -600,13 +600,13 @@ curl -X GET \
 
 >[!NOTE]
 >
->对于批量摄取，每个后续数据流都会根据文件所在的区域 **上次修改时间** 时间戳。 这意味着批处理数据流从源中选择新的文件，或者自上次数据流运行以来修改的文件。
+>对于批量摄取，每个后续数据流会根据其&#x200B;**上次修改时间**&#x200B;时间戳选择从源中摄取的文件。 这意味着批处理数据流从源中选择新的文件，或者自上次数据流运行以来修改的文件。
 
-要计划摄取，您必须先将开始时间值设置为纪元时间（以秒为单位）。 然后，必须将频率值设置为五个选项之一： `once`， `minute`， `hour`， `day`，或 `week`. 间隔值用于指定两次连续摄取之间的时间段，创建一次性摄取不需要设置间隔。 对于所有其他频率，间隔值必须设置为等于或大于 `15`.
+要计划摄取，您必须先将开始时间值设置为纪元时间（以秒为单位）。 然后，必须将频率值设置为五个选项之一： `once`、`minute`、`hour`、`day`或`week`。 间隔值用于指定两次连续摄取之间的时间段，创建一次性摄取不需要设置间隔。 对于所有其他频率，间隔值必须设置为等于或大于`15`。
 
 >[!IMPORTANT]
 >
->强烈建议在使用时安排数据流的一次性摄取 [FTP连接器](../../../connectors/cloud-storage/ftp.md).
+>强烈建议在使用[FTP连接器](../../../connectors/cloud-storage/ftp.md)时计划一次性摄取的数据流。
 
 **API格式**
 
@@ -655,17 +655,17 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `flowSpec.id` | 此 [流量规范ID](#specs) 在上一步中检索。 |
-| `sourceConnectionIds` | 此 [源连接ID](#source) 在之前的步骤中检索。 |
-| `targetConnectionIds` | 此 [目标连接Id](#target-connection) 在之前的步骤中检索。 |
-| `transformations.params.mappingId` | 此 [映射ID](#mapping) 在之前的步骤中检索。 |
+| `flowSpec.id` | 在上一步中检索到[流规范ID](#specs)。 |
+| `sourceConnectionIds` | 在之前的步骤中检索到[源连接ID](#source)。 |
+| `targetConnectionIds` | 在之前的步骤中检索到[目标连接ID](#target-connection)。 |
+| `transformations.params.mappingId` | 在之前的步骤中检索到[映射ID](#mapping)。 |
 | `scheduleParams.startTime` | 以纪元时间表示的数据流开始时间。 |
-| `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`， `minute`， `hour`， `day`，或 `week`. |
-| `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 间隔的值应为非零整数。 当频率设置为时，不需要间隔 `once` 并且应大于或等于 `15` 其他频率值。 |
+| `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`、`minute`、`hour`、`day`或`week`。 |
+| `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 间隔的值应为非零整数。 当频率设置为`once`时不需要间隔，其他频率值应大于或等于`15`。 |
 
 **响应**
 
-成功的响应会返回ID (`id`)。
+成功的响应返回新创建的数据流的ID (`id`)。
 
 ```json
 {
@@ -676,13 +676,13 @@ curl -X POST \
 
 ## 监测数据流
 
-创建数据流后，您可以监视通过它摄取的数据，以查看有关流运行、完成状态和错误的信息。 有关如何监视数据流的更多信息，请参阅关于的教程 [在API中监控数据流](../monitor.md)
+创建数据流后，您可以监视通过它摄取的数据，以查看有关流运行、完成状态和错误的信息。 有关如何监视数据流的详细信息，请参阅有关API中[监视数据流的教程](../monitor.md)
 
 ## 后续步骤
 
-在本教程之后，您已创建一个源连接器，以按计划从云存储中收集数据。 传入数据现在可供下游平台服务使用，例如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
+在本教程之后，您已创建一个源连接器，以按计划从云存储中收集数据。 传入数据现在可供下游平台服务（如[!DNL Real-Time Customer Profile]和[!DNL Data Science Workspace]）使用。 有关更多详细信息，请参阅以下文档：
 
-- [Real-time Customer Profile概述](../../../../profile/home.md)
+- [实时客户轮廓概述](../../../../profile/home.md)
 - [数据科学工作区概述](../../../../data-science-workspace/home.md)
 
 ## 附录 {#appendix}

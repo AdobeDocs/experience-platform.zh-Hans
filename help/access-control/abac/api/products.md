@@ -18,15 +18,15 @@ ht-degree: 3%
 >
 >如果传递的是用户令牌，则该令牌的用户必须具有所请求组织的“组织管理员”角色。
 
-此 `/products` 基于属性的访问控制API中的端点允许您以编程方式管理产品以及与组织中的产品关联的权限类别和权限集。
+基于属性的访问控制API中的`/products`端点允许您以编程方式管理产品以及与组织中的产品关联的权限类别和权限集。
 
 ## 快速入门
 
-本指南中使用的API端点属于基于属性的访问控制API。 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+本指南中使用的API端点属于基于属性的访问控制API。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
 
 ## 检索授权产品的列表 {#list}
 
-您可以通过向以下网站发出GET请求来检索授权产品的列表： `/products` 端点。
+您可以通过向`/products`端点发出GET请求来检索授权产品的列表。
 
 **API格式**
 
@@ -70,7 +70,7 @@ curl -X GET \
 
 ## 按产品ID查找权限类别
 
-您可以通过对以下网站发出GET请求，查找给定产品的权限类别： `/products/{PRODUCT_ID}/categories` 指定产品ID时的端点。
+您可以在指定产品ID时通过向`/products/{PRODUCT_ID}/categories`端点发出GET请求来查找给定产品的权限类别。
 
 **API格式**
 
@@ -84,7 +84,7 @@ GET /products/{PRODUCT_ID}/categories
 
 **请求**
 
-以下请求检索与关联的权限类别 `{PRODUCT_ID}`.
+以下请求检索与`{PRODUCT_ID}`关联的权限类别。
 
 ```shell
 curl -X GET \
@@ -145,7 +145,7 @@ curl -X GET \
 
 ## 按产品ID查找权限集
 
-您可以通过对以下对象发出GET请求，查找给定产品的权限集： `/products/{PRODUCT_ID}/permission-sets` 指定产品ID时的端点。
+您可以在指定产品ID时通过向`/products/{PRODUCT_ID}/permission-sets`端点发出GET请求来查找给定产品的权限集。
 
 **API格式**
 
@@ -159,7 +159,7 @@ GET /products/{PRODUCT_ID}/permission-sets
 
 **请求**
 
-以下请求检索与关联的权限集 `{PRODUCT_ID}`.
+以下请求检索与`{PRODUCT_ID}`关联的权限集。
 
 ```shell
 curl -X GET \
@@ -242,4 +242,4 @@ curl -X GET \
 | `category` | 可用的权限类别。 |
 | `permissions` | 权限包括查看和/或使用Platform功能的功能，例如创建沙盒、定义架构和管理数据集。 |
 | `permissions.resource` | 主体可以或无法访问的资源或对象。 资源可以是文件、应用程序、服务器甚至API。 |
-| `permissions.actions` | 允许主体对查询的资源执行的操作。 可能的值包括： `view`， `read`， `create`， `edit`、和 `delete` |
+| `permissions.actions` | 允许主体对查询的资源执行的操作。 可能的值包括： `view`、`read`、`create`、`edit`和`delete` |

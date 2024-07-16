@@ -15,12 +15,12 @@ ht-degree: 8%
 
 # Adobe Experience Platform Debugger概述
 
-的Adobe Experience Platform Debugger扩展 [铬黄](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob) 会检查您的网页，并帮助您发现Adobe Experience Cloud解决方案的实施存在哪些问题。
+[Chrome](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob)的Adobe Experience Platform Debugger扩展可检查您的网页，并帮助您发现Adobe Experience Cloud解决方案的实施存在哪些问题。
 
 您可以将Platform Debugger与其他Adobe激活解决方案结合使用，以执行以下操作：
 
-1. 使用 [标记](../tags/home.md) 插入激活的代码 [Adobe Experience Cloud](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html) 产品。
-1. 使用 [**[!UICONTROL Auditor ]**选项卡](./auditor/overview.md) （在Platform Debugger中）测试您的实施。
+1. 使用[标记](../tags/home.md)插入可在您的页面上激活[Adobe Experience Cloud](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html?lang=zh-Hans)产品的代码。
+1. 使用Platform Debugger中的[**[!UICONTROL Auditor ]**选项卡](./auditor/overview.md)测试您的实施。
 1. 在Platform Debugger中使用基于事件的工具和特定于解决方案的工具来调试Auditor发现的问题，或检查有关您实施的其他信息。
 
 >[!NOTE]
@@ -33,8 +33,8 @@ ht-degree: 8%
 
 您可以使用Platform Debugger收集的信息来更好地了解Experience Cloud解决方案的实施方式。 例如：
 
-* **标记**：查看页面上部署的资产、环境和内部版本。
-* **Adobe Target**：查看您有无资格执行哪些活动及其原因。
+* **标记**：查看页面上部署的属性、环境和内部版本。
+* **Adobe Target**：查看您有资格或没有资格参与的活动及其原因。
 * **Adobe Analytics**：查看当前页面上活动的报表包。
 
 ## 视频教程

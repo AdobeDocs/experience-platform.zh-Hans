@@ -1,6 +1,6 @@
 ---
 title: Experience Platform架构概述
-description: 本视频介绍了概述图表并说明Adobe Experience Platform的主要组件。
+description: 本视频介绍了概览图表以及Adobe Experience Platform的主要组件。
 kt: 4336
 audience: all
 doc-type: video

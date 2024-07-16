@@ -13,9 +13,9 @@ ht-degree: 1%
 
 ## 概述 {#overview}
 
-Adobe Analytics数据收集通过将XDM数据转换为Adobe Analytics可以理解的格式来工作。 多个XDM字段包括 [自动映射](https://experienceleague.adobe.com/docs/analytics/implementation/aep-edge/variable-mapping.html?lang=zh-Hans) 到Analytics变量。 您还可以手动将XDM值映射到旧版Analytics变量。
+Adobe Analytics数据收集通过将XDM数据转换为Adobe Analytics可以理解的格式来工作。 多个XDM字段[自动映射](https://experienceleague.adobe.com/docs/analytics/implementation/aep-edge/variable-mapping.html)到Analytics变量。 您还可以手动将XDM值映射到旧版Analytics变量。
 
-要使Adobe Analytics能够接收来自服务器API的数据，您需要 [配置数据流](../datastreams/overview.md#adobe-analytics-settings) 要在数据流配置页面中输入报表包ID，将事件转发到Adobe Analytics。
+要使Adobe Analytics能够接收来自服务器API的数据，您需要[配置数据流](../datastreams/overview.md#adobe-analytics-settings)，通过在数据流配置页面中输入报表包ID将事件转发到Adobe Analytics。
 
 ![Adobe Analytics数据流配置](assets/analytics-datastream.png)
 
@@ -29,7 +29,7 @@ POST /ee/v2/interact?dataStreamId={DATASTREAM_ID}
 
 ### 请求 {#request}
 
-下面的示例包含来自以下项的多个自动映射值： `_experience.analytics` 字段组。 它还包含基于JSON的数据层。 虽然这些数据层无法自动映射，但可以使用 [为数据收集准备数据](../datastreams/data-prep.md) 将这些值映射到包含上述字段组的架构。
+以下示例包括来自`_experience.analytics`字段组的多个自动映射的值。 它还包含基于JSON的数据层。 虽然这些数据层无法自动映射，但可以使用[数据收集](../datastreams/data-prep.md)的数据准备将这些值映射到包含上述字段组的架构。
 
 用户映射到这些字段的所有值都将自动映射到相应的Analytics值，就像它们包含在API请求中一样。
 

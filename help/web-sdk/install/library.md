@@ -11,18 +11,18 @@ ht-degree: 0%
 
 # 使用JavaScript库安装Web SDK
 
-安装Web SDK的替代方法 [使用标记扩展](extension.md) 是引用托管在CDN上的JavaScript库。 您可以直接引用库，也可以下载该库并将其托管在您自己的基础架构中。 它提供缩小的和完整的格式。
+不使用标记扩展](extension.md)安装Web SDK的替代方法是引用托管在CDN上的JavaScript库。 [您可以直接引用库，也可以下载该库并将其托管在您自己的基础架构中。 它提供缩小的和完整的格式。
 
 可以使用以下URL结构访问Web SDK库：
 
 * **缩小**： `https://cdn1.adoberesources.net/alloy/[VERSION]/alloy.min.js`
 * **完整**： `https://cdn1.adoberesources.net/alloy/[VERSION]/alloy.js`
 
-请参阅 [发行说明](../release-notes.md) ，以在URL中包含最新版本。 例如，版本2.19.1的完整版本的URL为 `https://cdn1.adoberesources.net/alloy/2.19.1/alloy.js`.
+有关要包含在URL中的最新版本，请参阅[发行说明](../release-notes.md)。 例如，版本2.19.1的完整版本的URL是`https://cdn1.adoberesources.net/alloy/2.19.1/alloy.js`。
 
 ## 添加代码
 
-将以下代码块添加到尽可能高的位置 `<head>` HTML的标记：
+在HTML的`<head>`标记中尽可能高地添加以下代码块：
 
 ```html
 <script>
@@ -34,4 +34,4 @@ ht-degree: 0%
 <script src="https://cdn1.adoberesources.net/alloy/2.19.1/alloy.min.js" async></script>
 ```
 
-此代码异步创建 `alloy` 用于调用任何Web SDK命令的对象。 如果要同步加载Web SDK，可以删除 `async` 代码块最后一行中的属性。 删除 `async` 属性会阻止浏览器解析和渲染HTML文档的其余部分，直到加载并执行库为止。 通常建议不要在向用户显示主要内容之前再出现这种延迟，但根据贵组织的需求，这样做可能比较合理。
+此代码异步创建一个`alloy`对象，该对象允许您调用任何Web SDK命令。 如果要同步加载Web SDK，可以删除代码块最后一行中的`async`属性。 删除`async`属性会阻止浏览器解析和渲染HTML文档的其余部分，直到加载和执行库为止。 通常建议不要在向用户显示主要内容之前再出现这种延迟，但根据贵组织的需求，这样做可能比较合理。

@@ -17,8 +17,8 @@ ht-degree: 3%
 
 * 额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#file-names)。
 * 可通过[改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)在您导出的文件中设置自定义文件头。
-* 能够选择 [文件类型](/help/destinations/ui/connect-destination.md#file-formatting-and-compression-options) 导出文件的属性。
-* [能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md).
+* 能够选择导出文件的[文件类型](/help/destinations/ui/connect-destination.md#file-formatting-and-compression-options)。
+* [能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md)。
 
 以下列出的六个云存储卡支持此功能：
 
@@ -29,11 +29,11 @@ ht-degree: 3%
 * [[!DNL Azure Blob]](../../destinations/catalog/cloud-storage/azure-blob.md#changelog)
 * [[!DNL SFTP]](../../destinations/catalog/cloud-storage/sftp.md#changelog)
 
-本文说明了使用 [流服务API](https://developer.adobe.com/experience-platform-apis/references/destinations/) 以将符合条件的配置文件从Adobe Experience Platform导出到上面链接的其中一个云存储位置。
+本文说明了使用[流服务API](https://developer.adobe.com/experience-platform-apis/references/destinations/)将符合条件的用户档案从Adobe Experience Platform导出到上面链接的某个云存储位置所需的工作流。
 
 >[!TIP]
 >
->您还可以使用Experience Platform用户界面将用户档案导出到云存储目标。 阅读 [激活基于文件的目标教程](/help/destinations/ui/activate-batch-profile-destinations.md) 以了解更多信息。
+>您还可以使用Experience Platform用户界面将用户档案导出到云存储目标。 有关详细信息，请阅读[激活基于文件的目标教程](/help/destinations/ui/activate-batch-profile-destinations.md)。
 
 <!--
 
@@ -45,57 +45,57 @@ If you were already using the Flow Service API to export profiles to the Amazon 
 
 ## 快速入门 {#get-started}
 
-![用于激活受众的步骤，其中突出显示用户正在执行的当前步骤](/help/destinations/assets/api/file-based-segment-export/segment-export-overview.png)
+![激活受众的步骤，突出显示用户所在的当前步骤](/help/destinations/assets/api/file-based-segment-export/segment-export-overview.png)
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
-* [[!DNL Segmentation Service]](../../segmentation/api/overview.md)： [!DNL Adobe Experience Platform Segmentation Service] 允许您在中构建受众并生成受众 [!DNL Adobe Experience Platform] 来自您的 [!DNL Real-Time Customer Profile] 数据。
-* [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个文件夹进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
+* [[!DNL Segmentation Service]](../../segmentation/api/overview.md)： [!DNL Adobe Experience Platform Segmentation Service]允许您根据[!DNL Real-Time Customer Profile]数据在[!DNL Adobe Experience Platform]中构建受众并生成受众。
+* [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform]提供了将单个[!DNL Platform]实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了您需要了解的其他信息，以便将数据激活到Platform中基于文件的目标。
 
 ### 所需的权限 {#permissions}
 
-要导出用户档案，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+要导出配置文件，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
-要导出 *身份*，您需要 **[!UICONTROL 查看身份图]** [访问控制权限](/help/access-control/home.md#permissions). <br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关文档中用于示例API调用的惯例的信息，请参阅 [如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中有关[如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。
 
 ### 收集必需标题和可选标题的值 {#gather-values-headers}
 
-为了调用 [!DNL Platform] API，您必须先完成 [Experience Platform身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+要调用[!DNL Platform] API，您必须先完成[Experience Platform身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
-* 授权：持有者 `{ACCESS_TOKEN}`
+* 授权：持有人`{ACCESS_TOKEN}`
 * x-api-key： `{API_KEY}`
 * x-gw-ims-org-id： `{ORG_ID}`
 
-中的资源 [!DNL Experience Platform] 可以隔离到特定的虚拟沙箱。 在请求中 [!DNL Platform] API中，您可以指定将在其中执行操作的沙盒的名称和ID。 这些是可选参数。
+[!DNL Experience Platform]中的资源可以隔离到特定的虚拟沙箱。 在对[!DNL Platform] API的请求中，您可以指定将在其中执行操作的沙盒的名称和ID。 这些是可选参数。
 
 * x-sandbox-name： `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关中沙箱的详细信息 [!DNL Experience Platform]，请参见 [沙盒概述文档](../../sandboxes/home.md).
+>有关[!DNL Experience Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
 
-包含有效负载的所有请求(`POST`， `PUT`， `PATCH`)需要额外的媒体类型标头：
+包含有效负载(`POST`、`PUT`、`PATCH`)的所有请求都需要额外的媒体类型标头：
 
 * 内容类型： `application/json`
 
 ### API参考文档 {#api-reference-documentation}
 
-您可以在本教程中找到所有API操作的随附参考文档。 请参阅 [Adobe Developer网站上的流服务 — 目标API文档](https://developer.adobe.com/experience-platform-apis/references/destinations/). 我们建议您并行使用此教程和API参考文档。
+您可以在本教程中找到所有API操作的随附参考文档。 请参阅Adobe Developer网站](https://developer.adobe.com/experience-platform-apis/references/destinations/)上的[流服务 — 目标API文档。 我们建议您并行使用此教程和API参考文档。
 
 ### 术语表 {#glossary}
 
-有关在此API教程中遇到的术语的描述，请参阅 [词汇表部分](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) API参考文档的URL名称。
+有关将在此API教程中遇到的术语的说明，请阅读API参考文档的[术语表部分](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary)。
 
 ## 选择要从中导出受众的目标 {#select-destination}
 
-![用于激活受众的步骤，其中突出显示用户正在执行的当前步骤](/help/destinations/assets/api/file-based-segment-export/step1.png)
+![激活受众的步骤，突出显示用户所在的当前步骤](/help/destinations/assets/api/file-based-segment-export/step1.png)
 
 在开始导出用户档案的工作流之前，请确定要将受众导出到的目标的连接规范和流量规范ID。 请参考下表。
 
@@ -118,7 +118,7 @@ If you were already using the Flow Service API to export profiles to the Amazon 
 
 **请求**
 
-+++Retrieve [!DNL connection spec] 对象 [!DNL Amazon S3]
++++检索[!DNL Amazon S3]的[!DNL connection spec]
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs/4fce964d-3f37-408f-9778-e597338a21ee' \
@@ -133,7 +133,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **响应**
 
-+++[!DNL Amazon S3]  — 连接规范
++++[!DNL Amazon S3] — 连接规范
 
 ```json
 {
@@ -152,7 +152,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **请求**
 
-+++Retrieve [!DNL connection spec] 对象 [!DNL Azure Blob Storage]
++++检索[!DNL Azure Blob Storage]的[!DNL connection spec]
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs/6d6b59bf-fb58-4107-9064-4d246c0e5bb2' \
@@ -186,7 +186,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **请求**
 
-+++Retrieve [!DNL connection spec] 对象 [!DNL Azure Data Lake Gen 2(ADLS Gen2])
++++检索[!DNL Azure Data Lake Gen 2(ADLS Gen2]的[!DNL connection spec])
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs/be2c3209-53bc-47e7-ab25-145db8b873e1' \
@@ -220,7 +220,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **请求**
 
-+++Retrieve [!DNL connection spec] 对象 [!DNL Data Landing Zone(DLZ)]
++++检索[!DNL Data Landing Zone(DLZ)]的[!DNL connection spec]
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs/10440537-2a7b-4583-ac39-ed38d4b848e8' \
@@ -254,7 +254,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **请求**
 
-+++Retrieve [!DNL connection spec] 对象 [!DNL Google Cloud Storage]
++++检索[!DNL Google Cloud Storage]的[!DNL connection spec]
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs/c5d93acb-ea8b-4b14-8f53-02138444ae99' \
@@ -288,7 +288,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **请求**
 
-+++Retrieve [!DNL connection spec] 对于SFTP
++++检索[!DNL connection spec]以获取SFTP
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs/36965a81-b1c6-401b-99f8-22508f1e6a26' \
@@ -320,13 +320,13 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 >[!ENDTABS]
 
-请按照以下步骤设置指向云存储目标的受众导出数据流。 对于某些步骤，不同云存储目标之间的请求和响应会有所不同。 在这些情况下，使用页面上的选项卡可检索特定于要连接并将受众导出到的目标的请求和响应。 请确保使用正确的 `connection spec` 和 `flow spec` （对于您正在配置的目标）。
+请按照以下步骤设置指向云存储目标的受众导出数据流。 对于某些步骤，不同云存储目标之间的请求和响应会有所不同。 在这些情况下，使用页面上的选项卡可检索特定于要连接并将受众导出到的目标的请求和响应。 请确保为您配置的目标使用正确的`connection spec`和`flow spec`。
 
-## 创建源连接 {#create-source-connection}
+## 创建Source连接 {#create-source-connection}
 
-![用于激活受众的步骤，其中突出显示用户正在执行的当前步骤](/help/destinations/assets/api/file-based-segment-export/step2.png)
+![激活受众的步骤，突出显示用户所在的当前步骤](/help/destinations/assets/api/file-based-segment-export/step2.png)
 
-在决定要将受众导出到哪个目标后，您需要创建源连接。 此 [源连接](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) 表示与内部 [Experience Platform配置文件存储](/help/profile/home.md#profile-data-store).
+在决定要将受众导出到哪个目标后，您需要创建源连接。 [源连接](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary)表示与内部[Experience Platform配置文件存储](/help/profile/home.md#profile-data-store)的连接。
 
 >[!BEGINSHADEBOX]
 
@@ -370,21 +370,21 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!ENDSHADEBOX]
 
-成功的响应会返回ID (`id`)和 `etag`. 记下源连接ID，因为稍后创建数据流时会需要它。
+成功的响应返回新创建的源连接的ID (`id`)和`etag`。 记下源连接ID，因为稍后创建数据流时会需要它。
 
 ## 创建基本连接 {#create-base-connection}
 
-![用于激活受众的步骤，其中突出显示用户正在执行的当前步骤](/help/destinations/assets/api/file-based-segment-export/step3.png)
+![激活受众的步骤，突出显示用户所在的当前步骤](/help/destinations/assets/api/file-based-segment-export/step3.png)
 
-A [基本连接](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) 安全地存储到目标的凭据。 根据目标类型，对该目标进行身份验证所需的凭据可能有所不同。 要查找这些验证参数，请先检索 `connection spec` （对于所需的目标，请参阅部分） [选择要从中导出受众的目标](#select-destination) 然后查看 `authSpec` 响应的。 请参考下面的选项卡 `authSpec` 所有受支持目标的属性。
+[基本连接](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary)安全地存储到目标的凭据。 根据目标类型，对该目标进行身份验证所需的凭据可能有所不同。 要查找这些身份验证参数，请首先按照[选择导出受众的目标](#select-destination)一节中所述检索所需目标的`connection spec`，然后查看响应的`authSpec`。 请引用下面的选项卡，以查看所有受支持目标的`authSpec`属性。
 
 >[!BEGINTABS]
 
 >[!TAB Amazon S3]
 
-+++[!DNL Amazon S3] - [!DNL Connection spec] 显示 [!DNL auth spec]
++++[!DNL Amazon S3] - [!DNL Connection spec]显示[!DNL auth spec]
 
-请注意中带有内联注释的高亮显示行 [!DNL connection spec] 下面示例，其中提供了有关在何处查找身份验证参数的更多信息， [!DNL connection spec].
+请注意下面[!DNL connection spec]示例中带有内联注释的高亮显示行，这些注释提供了有关在[!DNL connection spec]中何处查找身份验证参数的更多信息。
 
 ```json {line-numbers="true" start-line="1" highlight="8"}
 {
@@ -449,9 +449,9 @@ A [基本连接](https://developer.adobe.com/experience-platform-apis/references
 
 >[!TAB Azure Blob存储]
 
-+++[!DNL Azure Blob Storage] - [!DNL Connection spec] 显示 [!DNL auth spec]
++++[!DNL Azure Blob Storage] - [!DNL Connection spec]显示[!DNL auth spec]
 
-请注意中带有内联注释的高亮显示行 [!DNL connection spec] 下面示例，其中提供了有关在何处查找身份验证参数的更多信息， [!DNL connection spec].
+请注意下面[!DNL connection spec]示例中带有内联注释的高亮显示行，这些注释提供了有关在[!DNL connection spec]中何处查找身份验证参数的更多信息。
 
 ```json {line-numbers="true" start-line="1" highlight="8"}
 {
@@ -490,9 +490,9 @@ A [基本连接](https://developer.adobe.com/experience-platform-apis/references
 
 >[!TAB Azure Data Lake Gen 2(ADLS Gen2)]
 
-+++[!DNL Azure Data Lake Gen 2(ADLS Gen2)] - [!DNL Connection spec] 显示 [!DNL auth spec]
++++[!DNL Azure Data Lake Gen 2(ADLS Gen2)] - [!DNL Connection spec]显示[!DNL auth spec]
 
-请注意中带有内联注释的高亮显示行 [!DNL connection spec] 下面示例，其中提供了有关在何处查找身份验证参数的更多信息， [!DNL connection spec].
+请注意下面[!DNL connection spec]示例中带有内联注释的高亮显示行，这些注释提供了有关在[!DNL connection spec]中何处查找身份验证参数的更多信息。
 
 ```json {line-numbers="true" start-line="1" highlight="8"}
 {
@@ -546,11 +546,11 @@ A [基本连接](https://developer.adobe.com/experience-platform-apis/references
 
 >[!TAB 数据登陆区(DLZ)]
 
-+++[!DNL Data Landing Zone(DLZ)] - [!DNL Connection spec] 显示 [!DNL auth spec]
++++[!DNL Data Landing Zone(DLZ)] - [!DNL Connection spec]显示[!DNL auth spec]
 
 >[!NOTE]
 >
->数据登陆区目标不需要 [!DNL auth spec].
+>数据登陆区域目标不需要[!DNL auth spec]。
 
 ```json
 {
@@ -568,9 +568,9 @@ A [基本连接](https://developer.adobe.com/experience-platform-apis/references
 
 >[!TAB Google云存储]
 
-+++[!DNL Google Cloud Storage] - [!DNL Connection spec] 显示 [!DNL auth spec]
++++[!DNL Google Cloud Storage] - [!DNL Connection spec]显示[!DNL auth spec]
 
-请注意中带有内联注释的高亮显示行 [!DNL connection spec] 下面示例，其中提供了有关在何处查找身份验证参数的更多信息， [!DNL connection spec].
+请注意下面[!DNL connection spec]示例中带有内联注释的高亮显示行，这些注释提供了有关在[!DNL connection spec]中何处查找身份验证参数的更多信息。
 
 ```json {line-numbers="true" start-line="1" highlight="8"}
 {
@@ -613,13 +613,13 @@ A [基本连接](https://developer.adobe.com/experience-platform-apis/references
 
 >[!TAB SFTP]
 
-+++SFTP - [!DNL Connection spec] 显示 [!DNL auth spec]
++++SFTP - [!DNL Connection spec]显示[!DNL auth spec]
 
 >[!NOTE]
 >
->SFTP目标包含两个单独的项，分别位于 [!DNL auth spec]，因为它同时支持密码和SSH密钥身份验证。
+>SFTP目标在[!DNL auth spec]中包含两个单独的项，因为它同时支持密码和SSH密钥身份验证。
 
-请注意中带有内联注释的高亮显示行 [!DNL connection spec] 下面示例，其中提供了有关在何处查找身份验证参数的更多信息， [!DNL connection spec].
+请注意下面[!DNL connection spec]示例中带有内联注释的高亮显示行，这些注释提供了有关在[!DNL connection spec]中何处查找身份验证参数的更多信息。
 
 ```json {line-numbers="true" start-line="1" highlight="8"}
 {
@@ -703,7 +703,7 @@ A [基本连接](https://developer.adobe.com/experience-platform-apis/references
 
 >[!ENDTABS]
 
-使用身份验证规范中指定的属性(即 `authSpec` （从响应中）可以使用特定于每种目标类型的所需凭据创建基本连接，如下面的示例所示：
+使用身份验证规范中指定的属性（即响应中的`authSpec`），您可以使用特定于每个目标类型的所需凭据创建基本连接，如以下示例所示：
 
 >[!BEGINTABS]
 
@@ -711,11 +711,11 @@ A [基本连接](https://developer.adobe.com/experience-platform-apis/references
 
 **请求**
 
-+++[!DNL Amazon S3]  — 具有访问密钥和密钥身份验证的基本连接请求
++++[!DNL Amazon S3] — 具有访问密钥和密钥身份验证的基础连接请求
 
 >[!TIP]
 >
->有关如何获取所需身份验证凭据的信息，请参阅 [向目标进行身份验证](/help/destinations/catalog/cloud-storage/amazon-s3.md#authenticate) Amazon S3目标文档页面的部分。
+>有关如何获取所需身份验证凭据的信息，请参阅Amazon S3目标文档页面的[向目标身份验证](/help/destinations/catalog/cloud-storage/amazon-s3.md#authenticate)部分。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -745,11 +745,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++[!DNL Amazon S3]  — 具有承担角色身份验证的基本连接请求
++++[!DNL Amazon S3] — 具有假定角色身份验证的基础连接请求
 
 >[!TIP]
 >
->有关如何获取所需身份验证凭据的信息，请参阅 [向目标进行身份验证](/help/destinations/catalog/cloud-storage/amazon-s3.md#authenticate) Amazon S3目标文档页面的部分。
+>有关如何获取所需身份验证凭据的信息，请参阅Amazon S3目标文档页面的[向目标身份验证](/help/destinations/catalog/cloud-storage/amazon-s3.md#authenticate)部分。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -780,7 +780,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **响应**
 
-+++[!DNL Amazon S3] 基本连接响应
++++[!DNL Amazon S3]基本连接响应
 
 ```json
 {
@@ -795,11 +795,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **请求**
 
-+++[!DNL Azure Blob Storage]  — 基本连接请求
++++[!DNL Azure Blob Storage] — 基本连接请求
 
 >[!TIP]
 >
->有关如何获取所需身份验证凭据的信息，请参阅 [向目标进行身份验证](/help/destinations/catalog/cloud-storage/azure-blob.md#authenticate) Azure Blob存储目标文档页面的部分。
+>有关如何获取所需身份验证凭据的信息，请参阅Azure Blob存储目标文档页面的[向目标身份验证](/help/destinations/catalog/cloud-storage/azure-blob.md#authenticate)部分。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -830,7 +830,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **响应**
 
-+++[!DNL Azure Blob Storage]  — 基本连接响应
++++[!DNL Azure Blob Storage] — 基本连接响应
 
 ```json
 {
@@ -845,11 +845,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **请求**
 
-+++[!DNL Azure Data Lake Gen 2(ADLS Gen2)]  — 基本连接请求
++++[!DNL Azure Data Lake Gen 2(ADLS Gen2)] — 基本连接请求
 
 >[!TIP]
 >
->有关如何获取所需身份验证凭据的信息，请参阅 [向目标进行身份验证](/help/destinations/catalog/cloud-storage/adls-gen2.md#authenticate) Azure Data Lake Gen 2(ADLS Gen2)目标文档页面的部分。
+>有关如何获取所需身份验证凭据的信息，请参阅Azure Data Lake Gen 2(ADLS Gen2)目标文档页面的[对目标](/help/destinations/catalog/cloud-storage/adls-gen2.md#authenticate)进行身份验证。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -883,7 +883,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **响应**
 
-+++[!DNL Azure Data Lake Gen 2(ADLS Gen2)]  — 基本连接响应
++++[!DNL Azure Data Lake Gen 2(ADLS Gen2)] — 基本连接响应
 
 ```json
 {
@@ -898,11 +898,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **请求**
 
-+++[!DNL Data Landing Zone(DLZ)]  — 基本连接请求
++++[!DNL Data Landing Zone(DLZ)] — 基本连接请求
 
 >[!TIP]
 >
->数据登陆区目标不需要身份验证凭据。 欲了解更多信息，请参见 [向目标进行身份验证](/help/destinations/catalog/cloud-storage/data-landing-zone.md#authenticate) 数据登陆区目标文档页面的部分。
+>数据登陆区目标不需要身份验证凭据。 有关更多信息，请参阅数据登陆区目标文档页面的[对目标](/help/destinations/catalog/cloud-storage/data-landing-zone.md#authenticate)进行身份验证部分。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -921,7 +921,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **响应**
 
-+++[!DNL Data Landing Zone]  — 基本连接响应
++++[!DNL Data Landing Zone] — 基本连接响应
 
 ```json
 {
@@ -936,11 +936,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **请求**
 
-+++[!DNL Google Cloud Storage]  — 基本连接请求
++++[!DNL Google Cloud Storage] — 基本连接请求
 
 >[!TIP]
 >
->有关如何获取所需身份验证凭据的信息，请参阅 [向目标进行身份验证](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#authenticate) Google Cloud Storage目标文档页面的部分。
+>有关如何获取所需身份验证凭据的信息，请参阅Google Cloud Storage目标文档页面的[向目标身份验证](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#authenticate)部分。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -972,7 +972,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **响应**
 
-+++[!DNL Google Cloud Storage]  — 基本连接响应
++++[!DNL Google Cloud Storage] — 基本连接响应
 
 ```json
 {
@@ -991,7 +991,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->有关如何获取所需身份验证凭据的信息，请参阅 [向目标进行身份验证](/help/destinations/catalog/cloud-storage/sftp.md#authentication-information) SFTP目标文档页面的部分。
+>有关如何获取所需身份验证凭据的信息，请参阅SFTP目标文档页面的[向目标身份验证](/help/destinations/catalog/cloud-storage/sftp.md#authentication-information)部分。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -1023,7 +1023,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `specName` | 使用 `SFTP with Password`. |
+| `specName` | 使用`SFTP with Password`。 |
 | `domain` | SFTP存储位置的IP地址或域名。 |
 | `username` | 用于登录到SFTP存储位置的用户名。 |
 | `password` | 用于登录到SFTP存储位置的密码。 |
@@ -1037,7 +1037,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->有关如何获取所需身份验证凭据的信息，请参阅 [向目标进行身份验证](/help/destinations/catalog/cloud-storage/sftp.md#authentication-information) SFTP目标文档页面的部分。
+>有关如何获取所需身份验证凭据的信息，请参阅SFTP目标文档页面的[向目标身份验证](/help/destinations/catalog/cloud-storage/sftp.md#authentication-information)部分。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -1069,7 +1069,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `specName` | 使用 `SFTP with Password`. |
+| `specName` | 使用`SFTP with Password`。 |
 | `domain` | SFTP存储位置的IP地址或域名。 |
 | `username` | 用于登录到SFTP存储位置的用户名。 |
 | `sshKey` | 用于登录到SFTP存储位置的私有SSH密钥。 私钥必须采用Base64编码的字符串格式，且不得受密码保护。 |
@@ -1096,7 +1096,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 ### 向导出的文件添加加密
 
-或者，您也可以向导出的文件添加加密。 为此，您需要从以下位置添加项目： `encryptionSpecs`. 请查阅下面的请求示例，其中必填参数突出显示：
+或者，您也可以向导出的文件添加加密。 为此，您需要从`encryptionSpecs`添加项。 请查阅下面的请求示例，其中必填参数突出显示：
 
 
 >[!BEGINSHADEBOX]
@@ -1198,19 +1198,19 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 ## 创建目标连接 {#create-target-connection}
 
-![用于激活受众的步骤，其中突出显示用户正在执行的当前步骤](/help/destinations/assets/api/file-based-segment-export/step4.png)
+![激活受众的步骤，突出显示用户所在的当前步骤](/help/destinations/assets/api/file-based-segment-export/step4.png)
 
-接下来，您需要创建目标连接。 [Target连接](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) 存储导出受众的导出参数。 导出参数包括导出位置、文件格式、压缩和其他详细信息。 例如，对于CSV文件，您可以选择多个导出选项。 在中获取有关所有受支持的CSV导出选项的更多信息 [“文件格式配置”页](/help/destinations/ui/batch-destinations-file-formatting-options.md).
+接下来，您需要创建目标连接。 [Target连接](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary)存储导出受众的导出参数。 导出参数包括导出位置、文件格式、压缩和其他详细信息。 例如，对于CSV文件，您可以选择多个导出选项。 在[文件格式配置页面](/help/destinations/ui/batch-destinations-file-formatting-options.md)中获取有关所有支持的CSV导出选项的详细信息。
 
-请参阅 `targetSpec` 目标中提供的属性 `connection spec` 以了解每种目标类型支持的属性。 请参考下面的选项卡 `targetSpec` 所有受支持目标的属性。
+请参阅目标的`connection spec`中提供的`targetSpec`属性，以了解每个目标类型支持的属性。 请引用下面的选项卡，以查看所有受支持目标的`targetSpec`属性。
 
 >[!BEGINTABS]
 
 >[!TAB Amazon S3]
 
-+++[!DNL Amazon S3] - [!DNL Connection spec] 显示目标连接参数
++++[!DNL Amazon S3] - [!DNL Connection spec]显示目标连接参数
 
-请注意中带有内联注释的高亮显示行 [!DNL connection spec] 下面的示例，其中提供了有关在何处查找 [!DNL target spec] 连接规范中的参数。 您还可以在以下示例中看到以下目标参数 *非* 适用于受众导出目标。
+请注意下面[!DNL connection spec]示例中带有内联注释的高亮显示行，这些行提供了有关在连接规范中何处查找[!DNL target spec]参数的更多信息。 您还可以在以下示例中看到以下目标参数是&#x200B;*不适用于*&#x200B;受众导出目标。
 
 ```json {line-numbers="true" start-line="1" highlight="10,56"}
 {
@@ -1419,9 +1419,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TAB Azure Blob存储]
 
-+++[!DNL Azure Blob Storage] - [!DNL Connection spec] 显示目标连接参数
++++[!DNL Azure Blob Storage] - [!DNL Connection spec]显示目标连接参数
 
-请注意中带有内联注释的高亮显示行 [!DNL connection spec] 下面的示例，其中提供了有关在何处查找 [!DNL target spec] 连接规范中的参数。 您还可以在以下示例中看到以下目标参数 *非* 适用于受众导出目标。
+请注意下面[!DNL connection spec]示例中带有内联注释的高亮显示行，这些行提供了有关在连接规范中何处查找[!DNL target spec]参数的更多信息。 您还可以在以下示例中看到以下目标参数是&#x200B;*不适用于*&#x200B;受众导出目标。
 
 ```json {line-numbers="true" start-line="1" highlight="10,44"}
 {
@@ -1619,9 +1619,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TAB Azure Data Lake Gen 2(ADLS Gen2)]
 
-+++[!DNL Azure Data Lake Gen 2(ADLS Gen2)] - [!DNL Connection spec] 显示目标连接参数
++++[!DNL Azure Data Lake Gen 2(ADLS Gen2)] - [!DNL Connection spec]显示目标连接参数
 
-请注意中带有内联注释的高亮显示行 [!DNL connection spec] 下面的示例，其中提供了有关在何处查找 [!DNL target spec] 连接规范中的参数。 您还可以在以下示例中看到以下目标参数 *非* 适用于受众导出目标。
+请注意下面[!DNL connection spec]示例中带有内联注释的高亮显示行，这些行提供了有关在连接规范中何处查找[!DNL target spec]参数的更多信息。 您还可以在以下示例中看到以下目标参数是&#x200B;*不适用于*&#x200B;受众导出目标。
 
 ```json {line-numbers="true" start-line="1" highlight="10,22,37"}
 {
@@ -1810,9 +1810,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TAB 数据登陆区(DLZ)]
 
-+++[!DNL Data Landing Zone(DLZ)] - [!DNL Connection spec] 显示目标连接参数
++++[!DNL Data Landing Zone(DLZ)] - [!DNL Connection spec]显示目标连接参数
 
-请注意中带有内联注释的高亮显示行 [!DNL connection spec] 下面的示例，其中提供了有关在何处查找 [!DNL target spec] 连接规范中的参数。 您还可以在以下示例中看到以下目标参数 *非* 适用于受众导出目标。
+请注意下面[!DNL connection spec]示例中带有内联注释的高亮显示行，这些行提供了有关在连接规范中何处查找[!DNL target spec]参数的更多信息。 您还可以在以下示例中看到以下目标参数是&#x200B;*不适用于*&#x200B;受众导出目标。
 
 ```json {line-numbers="true" start-line="1" highlight="9,36"}
 "items": [
@@ -2000,9 +2000,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TAB Google云存储]
 
-+++[!DNL Google Cloud Storage] - [!DNL Connection spec] 显示目标连接参数
++++[!DNL Google Cloud Storage] - [!DNL Connection spec]显示目标连接参数
 
-请注意中带有内联注释的高亮显示行 [!DNL connection spec] 下面的示例，其中提供了有关在何处查找 [!DNL target spec] 连接规范中的参数。 您还可以在以下示例中看到以下目标参数 *非* 适用于受众导出目标。
+请注意下面[!DNL connection spec]示例中带有内联注释的高亮显示行，这些行提供了有关在连接规范中何处查找[!DNL target spec]参数的更多信息。 您还可以在以下示例中看到以下目标参数是&#x200B;*不适用于*&#x200B;受众导出目标。
 
 ```json {line-numbers="true" start-line="1" highlight="10,44"}
 {
@@ -2199,9 +2199,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TAB SFTP]
 
-+++SFTP - [!DNL Connection spec] 显示目标连接参数
++++SFTP - [!DNL Connection spec]显示目标连接参数
 
-请注意中带有内联注释的高亮显示行 [!DNL connection spec] 下面的示例，其中提供了有关在何处查找 [!DNL target spec] 连接规范中的参数。 您还可以在以下示例中看到以下目标参数 *非* 适用于受众导出目标。
+请注意下面[!DNL connection spec]示例中带有内联注释的高亮显示行，这些行提供了有关在连接规范中何处查找[!DNL target spec]参数的更多信息。 您还可以在以下示例中看到以下目标参数是&#x200B;*不适用于*&#x200B;受众导出目标。
 
 ```json {line-numbers="true" start-line="1" highlight="10,37"}
 {
@@ -2402,7 +2402,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->有关如何获取所需目标参数的信息，请参阅 [填写目标详细信息](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details) 的部分 [!DNL Amazon S3] 目标文档页面。
+>有关如何获取所需目标参数的信息，请参阅[!DNL Amazon S3]目标文档页面的[填写目标详细信息](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details)部分。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -2433,11 +2433,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++[!DNL Amazon S3]  — 具有CSV选项的Target连接请求
++++[!DNL Amazon S3] — 具有CSV选项的Target连接请求
 
 >[!TIP]
 >
->有关可用于文件导出的CSV选项的更多信息，请参阅 [“文件格式配置”页](/help/destinations/ui/batch-destinations-file-formatting-options.md) .
+>有关可用于文件导出的CSV选项的更多信息，请参阅[文件格式配置页面](/help/destinations/ui/batch-destinations-file-formatting-options.md) 。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -2494,7 +2494,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->有关如何获取所需目标参数的信息，请参阅 [填写目标详细信息](/help/destinations/catalog/cloud-storage/azure-blob.md#destination-details) 的部分 [!DNL Azure Blob Storage] 目标文档页面。
+>有关如何获取所需目标参数的信息，请参阅[!DNL Azure Blob Storage]目标文档页面的[填写目标详细信息](/help/destinations/catalog/cloud-storage/azure-blob.md#destination-details)部分。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -2525,11 +2525,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++[!DNL Azure Blob Storage]  — 具有CSV选项的Target连接请求
++++[!DNL Azure Blob Storage] — 具有CSV选项的Target连接请求
 
 >[!TIP]
 >
->有关可用于文件导出的CSV选项的更多信息，请参阅 [“文件格式配置”页](/help/destinations/ui/batch-destinations-file-formatting-options.md) .
+>有关可用于文件导出的CSV选项的更多信息，请参阅[文件格式配置页面](/help/destinations/ui/batch-destinations-file-formatting-options.md) 。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -2586,7 +2586,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->有关如何获取所需目标参数的信息，请参阅 [填写目标详细信息](/help/destinations/catalog/cloud-storage/adls-gen2.md#destination-details) Azure的部分 [!DNL Data Lake Gen 2(ADLS Gen2)] 目标文档页面。
+>有关如何获取所需目标参数的信息，请参阅Azure [!DNL Data Lake Gen 2(ADLS Gen2)]目标文档页面的[填写目标详细信息](/help/destinations/catalog/cloud-storage/adls-gen2.md#destination-details)部分。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -2616,11 +2616,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++[!DNL Azure Data Lake Gen 2(ADLS Gen2)]  — 具有CSV选项的Target连接请求
++++[!DNL Azure Data Lake Gen 2(ADLS Gen2)] — 具有CSV选项的Target连接请求
 
 >[!TIP]
 >
->有关可用于文件导出的CSV选项的更多信息，请参阅 [“文件格式配置”页](/help/destinations/ui/batch-destinations-file-formatting-options.md) .
+>有关可用于文件导出的CSV选项的更多信息，请参阅[文件格式配置页面](/help/destinations/ui/batch-destinations-file-formatting-options.md) 。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -2677,7 +2677,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->有关如何获取所需目标参数的信息，请参阅 [填写目标详细信息](/help/destinations/catalog/cloud-storage/data-landing-zone.md#destination-details) 的部分 [!DNL Data Landing Zone] 目标文档页面。
+>有关如何获取所需目标参数的信息，请参阅[!DNL Data Landing Zone]目标文档页面的[填写目标详细信息](/help/destinations/catalog/cloud-storage/data-landing-zone.md#destination-details)部分。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -2707,11 +2707,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++[!DNL Data Landing Zone]  — 具有CSV选项的Target连接请求
++++[!DNL Data Landing Zone] — 具有CSV选项的Target连接请求
 
 >[!TIP]
 >
->有关可用于文件导出的CSV选项的更多信息，请参阅 [“文件格式配置”页](/help/destinations/ui/batch-destinations-file-formatting-options.md) .
+>有关可用于文件导出的CSV选项的更多信息，请参阅[文件格式配置页面](/help/destinations/ui/batch-destinations-file-formatting-options.md) 。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -2768,7 +2768,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->有关如何获取所需目标参数的信息，请参阅 [填写目标详细信息](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#destination-details) 的部分 [!DNL Google Cloud Storage] 目标文档页面。
+>有关如何获取所需目标参数的信息，请参阅[!DNL Google Cloud Storage]目标文档页面的[填写目标详细信息](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#destination-details)部分。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -2799,11 +2799,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++[!DNL Google Cloud Storage]  — 具有CSV选项的Target连接请求
++++[!DNL Google Cloud Storage] — 具有CSV选项的Target连接请求
 
 >[!TIP]
 >
->有关可用于文件导出的CSV选项的更多信息，请参阅 [“文件格式配置”页](/help/destinations/ui/batch-destinations-file-formatting-options.md) .
+>有关可用于文件导出的CSV选项的更多信息，请参阅[文件格式配置页面](/help/destinations/ui/batch-destinations-file-formatting-options.md) 。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -2860,7 +2860,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->有关如何获取所需目标参数的信息，请参阅 [填写目标详细信息](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#destination-details) SFTP目标文档页面的部分。
+>有关如何获取所需目标参数的信息，请参阅SFTP目标文档页面的[填写目标详细信息](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#destination-details)部分。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -2894,7 +2894,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->有关可用于文件导出的CSV选项的更多信息，请参阅 [“文件格式配置”页](/help/destinations/ui/batch-destinations-file-formatting-options.md) .
+>有关可用于文件导出的CSV选项的更多信息，请参阅[文件格式配置页面](/help/destinations/ui/batch-destinations-file-formatting-options.md) 。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -2945,15 +2945,15 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!ENDTABS]
 
-请注意 `target connection ID` 从响应中。 创建数据流以导出受众时，在下一步中需要此ID。
+记下响应中的`target connection ID`。 创建数据流以导出受众时，在下一步中需要此ID。
 
-成功的响应会返回ID (`id`)和 `etag`. 记下目标连接ID，因为稍后创建数据流时会需要它。
+成功的响应返回新目标源连接的ID (`id`)和`etag`。 记下目标连接ID，因为稍后创建数据流时会需要它。
 
 ## 创建数据流 {#create-dataflow}
 
-![用于激活受众的步骤，其中突出显示用户正在执行的当前步骤](/help/destinations/assets/api/file-based-segment-export/step5.png)
+![激活受众的步骤，突出显示用户所在的当前步骤](/help/destinations/assets/api/file-based-segment-export/step5.png)
 
-目标配置的下一步是创建数据流。 A [数据流](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) 可将之前创建的实体绑定在一起，并提供用于配置受众导出计划的选项。 要创建数据流，请根据所需的云存储目标使用以下有效负载，并替换之前步骤中的流实体ID。 请注意，在此步骤中，您不会将任何与属性或标识映射相关的信息添加到数据流。 这将在下一步中进行。
+目标配置的下一步是创建数据流。 [数据流](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary)将以前创建的实体绑定在一起，还提供了用于配置受众导出计划的选项。 要创建数据流，请根据所需的云存储目标使用以下有效负载，并替换之前步骤中的流实体ID。 请注意，在此步骤中，您不会将任何与属性或标识映射相关的信息添加到数据流。 这将在下一步中进行。
 
 >[!BEGINTABS]
 
@@ -2961,7 +2961,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **请求**
 
-+++创建受众导出数据流到 [!DNL Amazon S3] 目标 — 请求
++++创建到[!DNL Amazon S3]目标的受众导出数据流 — 请求
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -3009,7 +3009,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **请求**
 
-+++创建受众导出数据流到 [!DNL Azure Blob Storage] 目标 — 请求
++++创建到[!DNL Azure Blob Storage]目标的受众导出数据流 — 请求
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -3069,7 +3069,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **请求**
 
-+++创建受众导出数据流到 [!DNL Azure Data Lake Gen 2(ADLS Gen2)] 目标 — 请求
++++创建到[!DNL Azure Data Lake Gen 2(ADLS Gen2)]目标的受众导出数据流 — 请求
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -3117,7 +3117,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **请求**
 
-+++创建受众导出数据流到 [!DNL Data Landing Zone] 目标 — 请求
++++创建到[!DNL Data Landing Zone]目标的受众导出数据流 — 请求
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -3165,7 +3165,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **请求**
 
-+++创建受众导出数据流到 [!DNL Google Cloud Storage] 目标 — 请求
++++创建到[!DNL Google Cloud Storage]目标的受众导出数据流 — 请求
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -3263,12 +3263,12 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 ### 将受众添加到导出
 
-在此步骤中，您还可以选择要导出到目标的受众。 有关此步骤以及将受众添加到数据流时的请求格式的更多信息，请查看中的示例 [更新目标数据流](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Dataflows/operation/patchFlowById) API参考文档中的部分。
+在此步骤中，您还可以选择要导出到目标的受众。 有关此步骤以及将受众添加到数据流的请求格式的更多信息，请查看API参考文档的[更新目标数据流](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Dataflows/operation/patchFlowById)部分中的示例。
 
 
 ## 设置属性和标识映射 {#attribute-and-identity-mapping}
 
-![用于激活受众的步骤，其中突出显示用户正在执行的当前步骤](/help/destinations/assets/api/file-based-segment-export/step6.png)
+![激活受众的步骤，突出显示用户所在的当前步骤](/help/destinations/assets/api/file-based-segment-export/step6.png)
 
 创建数据流后，您需要为要导出的属性和身份设置映射。 这包含三个步骤，如下所示：
 
@@ -3278,13 +3278,13 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 例如，要获取UI中显示的以下映射，您需要完成上面列出的三个步骤，并在下一个标题中详述。
 
-![映射步骤示例](/help/destinations/assets/api/file-based-segment-export/mapping-example.png)
+![映射步骤](/help/destinations/assets/api/file-based-segment-export/mapping-example.png)的示例
 
 ### 创建输入架构
 
-要创建输入架构，您首先需要检索 [合并架构](/help/profile/ui/union-schema.md) 以及可以导出到目标的身份。 这是属性和标识的架构，您可以选择它作为源映射。
+要创建输入架构，您首先需要检索[合并架构](/help/profile/ui/union-schema.md)以及可导出到目标的标识。 这是属性和标识的架构，您可以选择它作为源映射。
 
-![显示选择源字段视图中的属性和标识选项的录制](/help/destinations/assets/api/file-based-segment-export/select-source-field.gif)
+![显示选定源字段视图中的属性和标识选项的录制](/help/destinations/assets/api/file-based-segment-export/select-source-field.gif)
 
 查看以下用于检索属性和身份的请求和响应示例。
 
@@ -3477,7 +3477,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/idnamespace/i
 
 +++ 查看要在输入架构中使用的可用身份
 
-响应将返回在创建输入架构时可以使用的标识。 请注意，此响应会返回两者 [标准](/help/identity-service/features/namespaces.md#standard) 和 [自定义](/help/identity-service/features/namespaces.md#manage-namespaces) 您在Experience Platform中设置的身份命名空间。
+响应将返回在创建输入架构时可以使用的标识。 请注意，此响应返回您在Experience Platform中设置的[standard](/help/identity-service/features/namespaces.md#standard)和[custom](/help/identity-service/features/namespaces.md#manage-namespaces)身份命名空间。
 
 ```json
 [
@@ -3671,7 +3671,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/idnamespace/i
 
 >[!ENDSHADEBOX]
 
-接下来，您需要复制上面的响应，并使用它创建输入架构。 您可以复制上述响应的整个JSON响应，并将其放入 `jsonSchema` 对象如下所示。
+接下来，您需要复制上面的响应，并使用它创建输入架构。 您可以复制上述响应中的整个JSON响应，并将其放入下面指示的`jsonSchema`对象中。
 
 >[!BEGINSHADEBOX]
 
@@ -3728,7 +3728,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
 
 +++请求获取输出架构的合作伙伴架构
 
-请注意，以下示例使用 `connection spec ID` 适用于Amazon S3。 请将此值替换为特定于目标的连接规范ID。
+请注意，以下示例对Amazon S3使用`connection spec ID`。 请将此值替换为特定于目标的连接规范ID。
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs/4fce964d-3f37-408f-9778-e597338a21ee' \
@@ -3740,9 +3740,9 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 +++
 
-**具有示例架构的响应**
+**包含示例架构的响应**
 
-Inspect您执行上述调用时获得的响应。 您需要深入查看响应以查找对象 `targetSpec.attributes.partnerSchema.jsonSchema`
+Inspect您执行上述调用时获得的响应。 您需要深入到响应以查找对象`targetSpec.attributes.partnerSchema.jsonSchema`
 
 +++ 获取输出架构的合作伙伴架构的响应
 
@@ -4028,7 +4028,7 @@ Inspect您执行上述调用时获得的响应。 您需要深入查看响应以
 
 >[!ENDSHADEBOX]
 
-接下来，您需要创建输出架构。 复制您上面的JSON响应并将其粘贴到 `jsonSchema` 下方的对象。
+接下来，您需要创建输出架构。 复制上面的JSON响应并将其粘贴到下面的`jsonSchema`对象中。
 
 >[!BEGINSHADEBOX]
 
@@ -4364,7 +4364,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
 
 ### 创建映射集 {#create-mapping-set}
 
-接下来，使用 [数据准备API](https://developer.adobe.com/experience-platform-apis/references/data-prep/#tag/Mapping-sets/operation/createMappingSet) 使用输入架构ID、输出架构ID和所需的字段映射创建映射集。
+接下来，使用[数据准备API](https://developer.adobe.com/experience-platform-apis/references/data-prep/#tag/Mapping-sets/operation/createMappingSet)，使用输入架构ID、输出架构ID和所需的字段映射来创建映射集。
 
 >[!BEGINSHADEBOX]
 
@@ -4374,9 +4374,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
 
 >[!IMPORTANT]
 >
->* 在下面显示的映射对象中， `destination` 参数不接受点 `"."`. 例如，您需要使用personalEmail_address或segmentMembership_status ，如配置示例中突出显示的内容所示。
->* 当源属性是标识属性并包含点时，有一种特殊情况。 在这种情况下，属性需要转义 `//`，如下面突出显示的那样。
->* 另请注意，即使下面的示例配置包括 `Email` 和 `Phone_E.164`，则每个数据流只能导出一个标识属性。
+>* 在下面显示的映射对象中，`destination`参数不接受点`"."`。 例如，您需要使用personalEmail_address或segmentMembership_status ，如配置示例中突出显示的内容所示。
+>* 当源属性是标识属性并包含点时，有一种特殊情况。 在这种情况下，属性需要使用`//`进行转义，如下面突出显示的那样。
+>* 另请注意，即使下面的示例配置包括`Email`和`Phone_E.164`，您只能为每个数据流导出一个标识属性。
 
 ```shell {line-numbers="true" start-line="1" highlight="16-38"}
 curl --location --request POST 'https://platform.adobe.io/data/foundation/conversion/mappingSets' \
@@ -4450,11 +4450,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
 
 >[!BEGINSHADEBOX]
 
-请参阅 [检索目标数据流的详细信息](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Dataflows/operation/getFlowById) 以了解有关检索数据流ID的信息。
+有关检索数据流ID的信息，请参阅[检索目标数据流的详细信息](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Dataflows/operation/getFlowById)。
 
 >[!ENDSHADEBOX]
 
-最后，您需要 `PATCH` 包含刚刚创建的映射集信息的数据流。
+最后，您需要使用刚刚创建的映射集信息`PATCH`数据流。
 
 >[!BEGINSHADEBOX]
 
@@ -4502,21 +4502,21 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 ## 进行其他数据流更新 {#other-dataflow-updates}
 
-![用于激活受众的步骤，其中突出显示用户正在执行的当前步骤](/help/destinations/assets/api/file-based-segment-export/step7.png)
+![激活受众的步骤，突出显示用户所在的当前步骤](/help/destinations/assets/api/file-based-segment-export/step7.png)
 
-要更新数据流，请使用 `PATCH` 操作。 例如，您可以向数据流添加营销操作。 或者，您可以更新数据流以选择字段作为必需键或重复数据删除键。
+要对数据流进行任何更新，请使用`PATCH`操作。 例如，您可以向数据流添加营销操作。 或者，您可以更新数据流以选择字段作为必需键或重复数据删除键。
 
 ### 添加营销操作 {#add-marketing-action}
 
-添加 [营销活动](/help/data-governance/api/marketing-actions.md)，请参阅下面的请求和响应示例。
+要添加[营销操作](/help/data-governance/api/marketing-actions.md)，请参阅下面的请求和响应示例。
 
 >[!IMPORTANT]
 >
->此 `If-Match` 进行以下操作时需要标题： `PATCH` 请求。 此标头的值是要更新的数据流的唯一版本。 每次成功更新流实体（例如数据流、目标连接等）时，etag值都会更新。
+>发出`PATCH`请求时需要使用`If-Match`标头。 此标头的值是要更新的数据流的唯一版本。 每次成功更新流实体（例如数据流、目标连接等）时，etag值都会更新。
 >
-> GET要获取最新版本的etag值，请对 `https://platform.adobe.io/data/foundation/flowservice/flows/{ID}` 端点，其中 `{ID}` 是您要更新的数据流ID。
+> 要获取最新版本的etag值，请对`https://platform.adobe.io/data/foundation/flowservice/flows/{ID}`端点执行GET请求，其中`{ID}`是您要更新的数据流ID。
 >
-> 确保将 `If-Match` 标题加双引号，如下面的示例所示 `PATCH` 请求。
+> 在发出`PATCH`请求时，请确保将`If-Match`标头的值用双引号括起来，如以下示例中所示。
 
 >[!BEGINSHADEBOX]
 
@@ -4524,7 +4524,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 >[!TIP]
 >
->将营销操作添加到数据流之前，您可以查找现有的核心营销操作和自定义营销操作。 视图 [如何检索现有营销操作的列表](/help/data-governance/api/marketing-actions.md#list).
+>将营销操作添加到数据流之前，您可以查找现有的核心营销操作和自定义营销操作。 查看[如何检索现有营销操作的列表](/help/data-governance/api/marketing-actions.md#list)。
 
 +++将营销操作添加到目标数据流 — 请求
 
@@ -4562,7 +4562,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 +++添加营销操作 — 响应
 
-成功的响应返回响应代码 `200` 以及已更新数据流和已更新eTag的ID。
+成功的响应将返回响应代码`200`以及更新数据流的ID和更新的eTag。
 
 ```json
 {
@@ -4577,15 +4577,15 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 ### 添加必需键 {#add-mandatory-key}
 
-添加 [必需键](/help/destinations/ui/activate-batch-profile-destinations.md#mandatory-attributes)，请参阅下面的请求和响应示例。
+要添加[必需键](/help/destinations/ui/activate-batch-profile-destinations.md#mandatory-attributes)，请参阅下面的请求和响应示例。
 
 >[!IMPORTANT]
 >
->此 `If-Match` 进行以下操作时需要标题： `PATCH` 请求。 此标头的值是要更新的数据流的唯一版本。 每次成功更新流实体（例如数据流、目标连接等）时，etag值都会更新。
+>发出`PATCH`请求时需要使用`If-Match`标头。 此标头的值是要更新的数据流的唯一版本。 每次成功更新流实体（例如数据流、目标连接等）时，etag值都会更新。
 >
-> GET要获取最新版本的etag值，请对 `https://platform.adobe.io/data/foundation/flowservice/flows/{ID}` 端点，其中 `{ID}` 是您要更新的数据流ID。
+> 要获取最新版本的etag值，请对`https://platform.adobe.io/data/foundation/flowservice/flows/{ID}`端点执行GET请求，其中`{ID}`是您要更新的数据流ID。
 >
-> 确保将 `If-Match` 标题加双引号，如下面的示例所示 `PATCH` 请求。
+> 在发出`PATCH`请求时，请确保将`If-Match`标头的值用双引号括起来，如以下示例中所示。
 
 >[!BEGINSHADEBOX]
 
@@ -4656,15 +4656,15 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 ### 添加重复数据删除键 {#add-deduplication-key}
 
-添加 [重复数据删除键](/help/destinations/ui/activate-batch-profile-destinations.md#deduplication-keys)，请参阅下面的请求和响应示例
+要添加[重复数据删除键](/help/destinations/ui/activate-batch-profile-destinations.md#deduplication-keys)，请参阅下面的请求和响应示例
 
 >[!IMPORTANT]
 >
->此 `If-Match` 进行以下操作时需要标题： `PATCH` 请求。 此标头的值是要更新的数据流的唯一版本。 每次成功更新流实体（例如数据流、目标连接等）时，etag值都会更新。
+>发出`PATCH`请求时需要使用`If-Match`标头。 此标头的值是要更新的数据流的唯一版本。 每次成功更新流实体（例如数据流、目标连接等）时，etag值都会更新。
 >
-> GET要获取最新版本的etag值，请对 `https://platform.adobe.io/data/foundation/flowservice/flows/{ID}` 端点，其中 `{ID}` 是您要更新的数据流ID。
+> 要获取最新版本的etag值，请对`https://platform.adobe.io/data/foundation/flowservice/flows/{ID}`端点执行GET请求，其中`{ID}`是您要更新的数据流ID。
 >
-> 确保将 `If-Match` 标题加双引号，如下面的示例所示 `PATCH` 请求。
+> 在发出`PATCH`请求时，请确保将`If-Match`标头的值用双引号括起来，如以下示例中所示。
 
 >[!BEGINSHADEBOX]
 
@@ -4741,7 +4741,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 ## 验证数据流（获取数据流运行） {#get-dataflow-runs}
 
-![用于激活受众的步骤，其中突出显示用户正在执行的当前步骤](/help/destinations/assets/api/file-based-segment-export/step8.png)
+![激活受众的步骤，突出显示用户所在的当前步骤](/help/destinations/assets/api/file-based-segment-export/step8.png)
 
 要检查数据流的执行，请使用数据流运行API：
 
@@ -4813,11 +4813,11 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 >[!ENDSHADEBOX]
 
-您可以找到有关 [数据流运行API返回的各种参数](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Dataflow-runs/operation/getFlowRuns) API参考文档中的。
+您可以在API参考文档中找到有关数据流运行API](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Dataflow-runs/operation/getFlowRuns)返回的[各种参数的信息。
 
 ## API错误处理 {#api-error-handling}
 
-本教程中的API端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](/help/landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](/help/landing/troubleshooting.md#request-header-errors) 有关解释错误响应的更多信息，请参阅平台故障排除指南。
+本教程中的API端点遵循常规Experience PlatformAPI错误消息原则。 有关解释错误响应的详细信息，请参阅Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤 {#next-steps}
 

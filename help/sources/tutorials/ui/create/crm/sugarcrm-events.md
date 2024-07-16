@@ -4,29 +4,29 @@ description: 了解如何使用Adobe Experience Platform UI创建SugarCRM事件�
 exl-id: db346ec0-2c57-4b82-8a39-f15d4cd377d4
 source-git-commit: 68c14d7b187075b4af6b019a8bd1ca2625beabde
 workflow-type: tm+mt
-source-wordcount: '646'
-ht-degree: 1%
+source-wordcount: '648'
+ht-degree: 2%
 
 ---
 
-# 创建 [!DNL SugarCRM Events] UI中的源连接
+# 在用户界面中创建[!DNL SugarCRM Events]源连接
 
-本教程提供了用于创建 [!DNL SugarCRM Events] 源连接，使用Adobe Experience Platform用户界面。
+本教程提供了使用Adobe Experience Platform用户界面创建[!DNL SugarCRM Events]源连接的步骤。
 
 ## 快速入门
 
 本教程需要对以下Experience Platform组件有一定的了解：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
-   * [模式组合基础](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
+   * [架构组合的基础知识](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
 
-如果您已经拥有有效的 [!DNL SugarCRM] 帐户，您可以跳过本文档的其余部分，并继续阅读上的教程 [配置数据流](../../dataflow/crm.md).
+如果您已经拥有有效的[!DNL SugarCRM]帐户，则可以跳过本文档的其余部分，并转到有关[配置数据流](../../dataflow/crm.md)的教程。
 
 ### 收集所需的凭据
 
-为了连接 [!DNL SugarCRM Events] 到Platform时，必须提供以下连接属性的值：
+为了将[!DNL SugarCRM Events]连接到Platform，您必须提供以下连接属性的值：
 
 | 凭据 | 描述 | 示例 |
 | --- | --- | --- |
@@ -34,62 +34,62 @@ ht-degree: 1%
 | `Username` | 您的SugarCRM开发人员帐户用户名。 | `abc.def@example.com@sugarmarketdemo000.com` |
 | `Password` | 您的SugarCRM开发人员帐户密码。 | `123456789` |
 
-### 为创建平台架构 [!DNL SugarCRM]
+### 为[!DNL SugarCRM]创建平台架构
 
-创建之前 [!DNL SugarCRM] 源连接时，还必须确保首先创建用于源的Platform架构。 请参阅上的教程 [创建平台架构](../../../../../xdm/schema/composition.md) 以了解有关如何创建模式的完整步骤。
+在创建[!DNL SugarCRM]源连接之前，还必须确保首先创建用于源的Platform架构。 有关如何创建架构的完整步骤，请参阅有关[创建平台架构](../../../../../xdm/schema/composition.md)的教程。
 
-![显示SugarCRM事件示例架构的平台UI屏幕截图](../../../../images/tutorials/create/sugarcrm-events/sugarcrm-schema-events.png)
+![显示SugarCRM事件示例架构的Platform UI屏幕截图](../../../../images/tutorials/create/sugarcrm-events/sugarcrm-schema-events.png)
 
 >[!WARNING]
 >
->映射架构时，请确保同时映射必需 `event_id` 和 `timestamp` Platform所需的字段。
+>映射架构时，请确保同时映射Platform所需的必填`event_id`和`timestamp`字段。
 
-## 连接您的 [!DNL SugarCRM Events] 帐户
+## 连接您的[!DNL SugarCRM Events]帐户
 
-在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示了多种来源，您可以使用这些来源创建帐户。
+在Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
-在 *CRM* 类别，选择 **[!UICONTROL SugarCRM事件]**，然后选择 **[!UICONTROL 添加数据]**.
+在&#x200B;*CRM*&#x200B;类别下，选择&#x200B;**[!UICONTROL SugarCRM事件]**，然后选择&#x200B;**[!UICONTROL 添加数据]**。
 
-![带有SugarCRM事件信息卡的目录的Platform UI屏幕截图](../../../../images/tutorials/create/sugarcrm-events/catalog-sugarcrm-events.png)
+![带有SugarCRM事件信息卡的目录的Platform UI屏幕快照](../../../../images/tutorials/create/sugarcrm-events/catalog-sugarcrm-events.png)
 
-此 **[!UICONTROL 连接SugarCRM事件帐户]** 页面。 在此页上，您可以使用新凭据或现有凭据。
+出现&#x200B;**[!UICONTROL 连接SugarCRM事件帐户]**&#x200B;页面。 在此页上，您可以使用新凭据或现有凭据。
 
-### 现有帐户
+### 现有账户
 
-要使用现有帐户，请选择 [!DNL SugarCRM Events] 要用于创建新数据流的帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
+要使用现有帐户，请选择要用于创建新数据流的[!DNL SugarCRM Events]帐户，然后选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
 
-![将SugarCRM事件帐户与现有帐户进行连接的平台UI屏幕截图](../../../../images/tutorials/create/sugarcrm-events/existing.png)
+将SugarCRM事件帐户与现有帐户连接的![平台UI屏幕截图](../../../../images/tutorials/create/sugarcrm-events/existing.png)
 
 ### 新帐户
 
-如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后提供名称、可选描述和您的凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后等待一段时间以建立新连接。
+如果要创建新帐户，请选择&#x200B;**[!UICONTROL 新建帐户]**，然后提供名称、可选描述和凭据。 完成后，选择&#x200B;**[!UICONTROL 连接到源]**，然后留出一些时间来建立新连接。
 
 ![使用新帐户连接SugarCRM事件帐户的Platform UI屏幕截图](../../../../images/tutorials/create/sugarcrm-events/new.png)
 
 ## 后续步骤
 
-通过学习本教程，您已建立与的连接 [!DNL SugarCRM Events] 帐户。 您现在可以继续下一教程和 [配置数据流以将数据引入Platform](../../dataflow/crm.md).
+通过学习本教程，您已建立与[!DNL SugarCRM Events]帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入Platform](../../dataflow/crm.md)。
 
 ## 其他资源
 
-以下各节提供了在使用时，您可以参考的其他资源 [!DNL SugarCRM] 源。
+以下各节提供了在使用[!DNL SugarCRM]源时可以参考的其他资源。
 
 ### 护栏 {#guardrails}
 
-此 [!DNL SugarCRM] API限制速率为每分钟90次调用或每天2000次调用，以先发生者为准。 但是，通过在连接规范中添加参数来绕过此限制，该参数将延迟请求时间，从而永远不会达到速率限制。
+[!DNL SugarCRM] API限制速率是每分钟90次调用或每天2000次调用，以先发生者为准。 但是，通过在连接规范中添加参数来绕过此限制，该参数将延迟请求时间，从而永远不会达到速率限制。
 
 ### 验证 {#validation}
 
-验证是否已正确设置源和 [!DNL SugarCRM Events] 正在摄取数据，请执行以下步骤：
+要验证您是否已正确设置源，并且正在摄取[!DNL SugarCRM Events]数据，请执行以下步骤：
 
-* 在Platform UI中，选择 **[!UICONTROL 查看数据流]** 在 [!DNL SugarCRM Events] 源目录上的卡菜单。 接下来，选择 **[!UICONTROL 预览数据集]** 以验证已摄取的数据。
+* 在Platform UI中，选择源目录上[!DNL SugarCRM Events]卡片菜单旁边的&#x200B;**[!UICONTROL 查看数据流]**。 接下来，选择&#x200B;**[!UICONTROL 预览数据集]**&#x200B;以验证已摄取的数据。
 
-* 根据您所使用的对象类型，您可以根据 [!DNL SugarMarket] “事件”页面位于下方：
+* 根据您正在处理的对象类型，您可以根据以下[!DNL SugarMarket]事件页面上显示的计数验证聚合数据：
 
 ![SugarMarket帐户页面屏幕截图显示帐户列表](../../../../images/tutorials/create/sugarcrm-events/sugarmarket-events.png)
 
 >[!NOTE]
 >
->此 [!DNL SugarMarket] 页面不包含已删除的对象计数。 但是，通过此源检索的数据也将包含已删除的计数，这些计数将标有已删除的标志。
+>[!DNL SugarMarket]页不包含已删除的对象计数。 但是，通过此源检索的数据也将包含已删除的计数，这些计数将标有已删除的标志。

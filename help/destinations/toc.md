@@ -18,11 +18,11 @@ ht-degree: 5%
 * [目标概述](./home.md)
 * [目标类型和类别](./destination-types.md)
 * [目标（激活）护栏](./guardrails.md)
-* 目标的工作方式 {#how-destinations-work}
+* 目标的工作方式{#how-destinations-work}
    * [目标中的可配置和常用导出设置](./how-destinations-work/destinations-configurations.md)
    * [不同目标类型的配置文件导出行为](./how-destinations-work/profile-export-behavior.md)
    * [目标激活工作流中的身份处理](./how-destinations-work/identity-handling.md)
-* API教程 {#api}
+* API教程{#api}
    * [使用流服务API将数据激活到基于文件的目标](/help/destinations/api/activate-segments-file-based-destinations.md)
    * [连接到流目标并使用流服务API激活数据](./api/streaming-destinations.md)
    * [连接到基于文件的电子邮件营销目标，并使用流服务API激活数据](./api/connect-activate-batch-destinations.md)
@@ -33,7 +33,7 @@ ht-degree: 5%
    * [删除目标数据流](./api/delete-destination-dataflow.md)
    * [导出数据集](/help/destinations/api/export-datasets.md)
    * [排序和筛选目标的API响应](https://experienceleague.adobe.com/docs/experience-platform/dataflows/api/sort-and-filter.html#use-cases)
-* UI指南 {#ui}
+* UI指南{#ui}
    * [目标工作区](./ui/destinations-workspace.md)
    * [创建新的目标连接](./ui/connect-destination.md)
    * 将数据激活到目标{#activate}
@@ -57,7 +57,7 @@ ht-degree: 5%
    * [监测数据流](./ui/monitor-dataflows.md)
    * [为基于文件的目标配置文件格式选项](./ui/batch-destinations-file-formatting-options.md)
    * [订阅上下文目标警报](ui/alerts.md)
-* 目标目录 {#catalog}
+* 目标目录{#catalog}
    * [目标目录概述](./catalog/overview.md)
    * Adobe目标{#adobe}
       * [Adobe目标概述](./catalog/adobe/overview.md)
@@ -101,7 +101,7 @@ ht-degree: 5%
       * [(Beta)交易台CRM连接](./catalog/advertising/tradedesk-emails.md)
       * [twitter通用网站标记扩展](./catalog/advertising/twitter-uwt.md)
       * [Yahoo/Verizon DataX连接](./catalog/advertising/datax.md)
-   * Analytics目标 {#analytics}
+   * Analytics目标{#analytics}
       * [Analytics目标概述](./catalog/analytics/overview.md)
       * [Adform网站跟踪扩展](./catalog/analytics/adform.md)
       * [Adobe Analytics 扩展](./catalog/analytics/adobe-analytics.md)
@@ -123,7 +123,7 @@ ht-degree: 5%
       * [SessionCam扩展](./catalog/analytics/sessioncam.md)
       * [TMMData扩展](./catalog/analytics/tmmdata.md)
       * [Yext转化跟踪扩展](./catalog/analytics/yext.md)
-   * 云存储目标 {#cloud-storage}
+   * 云存储目标{#cloud-storage}
       * [云存储目标概述](./catalog/cloud-storage/overview.md)
       * [Amazon Kinesis连接](./catalog/cloud-storage/amazon-kinesis.md)
       * [Amazon S3连接](./catalog/cloud-storage/amazon-s3.md)
@@ -134,29 +134,29 @@ ht-degree: 5%
       * [Google 云存储](./catalog/cloud-storage/google-cloud-storage.md)
       * [SFTP连接](./catalog/cloud-storage/sftp.md)
       * [列入允许列表基于文件的云存储目标的IP地址](./catalog/cloud-storage/ip-address-allow-list.md)
-   * 客户关系管理(CRM)目标 {#crm}
+   * 客户关系管理(CRM)目标{#crm}
       * [Hubspot连接](./catalog/crm/hubspot.md)
       * [Salesforce CRM连接](./catalog/crm/salesforce.md)
       * [Microsoft Dynamics 365连接](./catalog/crm/microsoft-dynamics-365.md)
       * [外联联系](catalog/crm/outreach.md)
       * [Zendesk连接](catalog/crm/zendesk.md)
-   * 数据管理平台目标 {#data-management}
+   * 数据管理平台目标{#data-management}
       * [数据管理平台(DMP)目标概述](./catalog/data-management/overview.md)
       * [Audience ManagerDIL扩展](./catalog/data-management/aam-dil-extension.md)
       * [Zeta营销平台](/help/destinations/catalog/data-management/zeta-marketing-platform.md)
-   * 数据和身份合作伙伴 {#data-partner}
+   * 数据和身份合作伙伴{#data-partner}
       * [Acxiom潜在客户抑制](./catalog/data-partner/acxiom-prospect-suppression.md)
       * [Acxiom数据增强](./catalog/data-partner/acxiom-data-enhancement.md)
       * [Merkury Enterprise连接](/help/destinations/catalog/data-partners/merkury-enterprise-connections.md)
       * [Merkury企业标识](/help/destinations/catalog/data-partners/merkury-enterprise-identity.md)
-   * 电子商务目标 {#ecommerce}
+   * 电子商务目标{#ecommerce}
       * [SAP COMMERCE](./catalog/ecommerce/sap-commerce.md)
-   * 电子邮件目标 {#email}
+   * 电子邮件目标{#email}
       * [Bizible扩展](./catalog/email/bizible.md)
       * [Marketo扩展](./catalog/email/marketo.md)
       * [Marketo Munchkin 扩展](./catalog/email/marketo-munchkin.md)
       * [PebblePost扩展](./catalog/email/pebblepost.md)
-   * 电子邮件营销目标 {#email-marketing}
+   * 电子邮件营销目标{#email-marketing}
       * [电子邮件营销目标概述](./catalog/email-marketing/overview.md)
       * [Adobe Campaign连接](./catalog/email-marketing/adobe-campaign.md)
       * [Adobe Campaign Managed Cloud Services连接](./catalog/email-marketing/adobe-campaign-managed-services.md)
@@ -169,16 +169,16 @@ ht-degree: 5%
       * [（文件） SalesforceMarketing Cloud连接](./catalog/email-marketing/salesforce-marketing-cloud.md)
       * [[!DNL Salesforce Marketing Cloud Account Engagement]](./catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md)
       * [SendGrid连接](./catalog/email-marketing/sendgrid.md)
-   * 标记扩展 {#launch-extensions}
+   * 标记扩展{#launch-extensions}
       * [标记扩展概述](./catalog/launch-extensions/overview.md)
-   * 移动参与目标 {#mobile-engagement}
+   * 移动参与目标{#mobile-engagement}
       * [移动参与目标概述](./catalog/mobile-engagement/overview.md)
       * [飞艇属性连接](./catalog/mobile-engagement/airship-attributes.md)
       * [飞艇标记连接](./catalog/mobile-engagement/airship-tags.md)
       * [钎焊连接](./catalog/mobile-engagement/braze.md)
       * [线路连接](./catalog/mobile-engagement/line.md)
       * [Moengage连接](./catalog/mobile-engagement/moengage.md)
-   * Personalization目标 {#personalization}
+   * Personalization目标{#personalization}
       * [Personalization目标概述](./catalog/personalization/overview.md)
       * [（限量发布）受众分析](./catalog/personalization/audience-analysis.md)
       * [Adobe Commerce连接](./catalog/personalization/adobe-commerce.md)
@@ -199,38 +199,38 @@ ht-degree: 5%
       * [facebook连接](./catalog/social/facebook.md)
       * [linkedIn匹配受众连接](./catalog/social/linkedin.md)
       * [TikTok连接](./catalog/social/tiktok.md)
-      * [[!DNL Twitter Custom Audiences] 连接](./catalog/social/twitter.md)
-   * 流目标 {#streaming}
+      * [[!DNL Twitter Custom Audiences]连接](./catalog/social/twitter.md)
+   * 流目标{#streaming}
       * [HTTP API连接](./catalog/streaming/http-destination.md)
       * [列入允许列表流目的地的IP地址](./catalog/streaming/ip-address-allow-list.md)
-   * 调查目标 {#survey}
+   * 调查目标{#survey}
       * [调查目标概述](./catalog/survey/overview.md)
       * [Qualtrics自动化目标](./catalog/survey/qualtrics-automations.md)
       * [Foresee扩展目标](./catalog/survey/foresee.md)
       * [InMoment扩展](./catalog/survey/inmoment.md)
       * [Qualtrics网站反馈扩展](./catalog/survey/qualtrics.md)
       * [QuestionPro截取调查扩展](./catalog/survey/web-intercept-surveys.md)
-   * 客户目标的声音 {#voice}
+   * 客户目标{#voice}的声音
       * [客户之声目标概述](./catalog/voice/overview.md)
       * [确认数字反馈扩展](./catalog/voice/confirmit-digital-feedback.md)
       * [调用Tags扩展](./catalog/voice/invoca.md)
       * [Medallia连接](./catalog/voice/medallia-connector.md)
       * [Medallia扩展](./catalog/voice/medallia.md)
       * [Talk URL收件箱扩展](./catalog/voice/talkurl.md)
-* Destination SDK {#destination-sdk}
+* Destination SDK{#destination-sdk}
    * [概述](./destination-sdk/overview.md)
    * [集成先决条件](./destination-sdk/integration-prerequisites.md)
    * [Destination SDK快速入门](./destination-sdk/getting-started.md)
    * [术语表](/help/destinations/destination-sdk/glossary.md)
    * 功能 {#functionality}
       * [配置选项](./destination-sdk/functionality/configuration-options.md)
-      * 目标服务器组件 {#destination-server}
+      * 目标服务器组件{#destination-server}
          * [服务器规范](./destination-sdk/functionality/destination-server/server-specs.md)
          * [模板规范](./destination-sdk/functionality/destination-server/templating-specs.md)
          * [消息格式](./destination-sdk/functionality/destination-server/message-format.md)
          * [支持的转换函数](./destination-sdk/functionality/destination-server/supported-functions.md)
          * [文件格式配置](./destination-sdk/functionality/destination-server/file-formatting.md)
-      * 目标配置组件 {#destination-configuration}
+      * 目标配置组件{#destination-configuration}
          * [客户身份验证配置](./destination-sdk/functionality/destination-configuration/customer-authentication.md)
          * [OAuth2授权](./destination-sdk/functionality/destination-configuration/oauth2-authorization.md)
          * [客户数据字段](./destination-sdk/functionality/destination-configuration/customer-data-fields.md)
@@ -249,7 +249,7 @@ ht-degree: 5%
       * [使用Destination SDK配置流目标](./destination-sdk/guides/configure-destination-instructions.md)
       * [使用Destination SDK配置基于文件的目标](./destination-sdk/guides/configure-file-based-destination-instructions.md)
       * [提交在Destination SDK中创作的目标以供审查](./destination-sdk/guides/submit-destination.md)
-      * 配置基于文件的目标 {#configure-file-based-destinations}
+      * 配置基于文件的目标{#configure-file-based-destinations}
          * [配置文件格式选项](/help/destinations/destination-sdk/guides/batch/configure-file-formatting-options.md)
          * [使用预定义的文件格式选项和自定义文件名配置来配置Amazon S3目标](../destinations/destination-sdk/guides/batch/configure-amazon-s3-destination-with-predefined-file-formatting.md)
          * [使用自定义文件名和格式选项配置Amazon S3目标](../destinations/destination-sdk/guides/batch/configure-amazon-s3-destination-with-custom-file-formatting.md)
@@ -258,29 +258,29 @@ ht-degree: 5%
          * [使用自定义文件格式选项和自定义文件名配置配置数据登陆区(DLZ)目标](../destinations/destination-sdk/guides/batch/configure-dlz-destination-with-custom-file-formatting.md)
          * [使用预定义的文件格式选项和自定义文件名配置来配置SFTP目标](../destinations/destination-sdk/guides/batch/configure-sftp-destination-with-predefined-file-formatting.md)
          * [配置基于文件的目标以导出目标受众](/help/destinations/destination-sdk/guides/batch/configure-prospect-audience-destination.md)
-   * 目标创作API参考 {#authoring-api}
-      * [Destination SDK（目标创作） API参考](https://www.adobe.io/experience-platform-apis/references/destination-authoring/)
-      * 目标服务器操作 {#server-operations}
+   * 目标创作API引用{#authoring-api}
+      * [Destination SDK（目标创作） API引用](https://www.adobe.io/experience-platform-apis/references/destination-authoring/)
+      * 目标服务器操作{#server-operations}
          * [创建目标服务器配置](./destination-sdk/authoring-api/destination-server/create-destination-server.md)
          * [检索目标服务器配置](./destination-sdk/authoring-api/destination-server/retrieve-destination-server.md)
          * [更新目标服务器配置](./destination-sdk/authoring-api/destination-server/update-destination-server.md)
          * [删除目标服务器配置](./destination-sdk/authoring-api/destination-server/delete-destination-server.md)
-      * 目标配置操作 {#destination-operations}
+      * 目标配置操作{#destination-operations}
          * [创建目标配置](./destination-sdk/authoring-api/destination-configuration/create-destination-configuration.md)
          * [检索目标配置](./destination-sdk/authoring-api/destination-configuration/retrieve-destination-configuration.md)
          * [更新目标配置](./destination-sdk/authoring-api/destination-configuration/update-destination-configuration.md)
          * [删除目标配置](./destination-sdk/authoring-api/destination-configuration/delete-destination-configuration.md)
-   * 受众元数据API参考 {#audience-template-api}
+   * 受众元数据API引用{#audience-template-api}
       * [创建受众模板](./destination-sdk/metadata-api/create-audience-template.md)
       * [检索受众模板](./destination-sdk/metadata-api/retrieve-audience-template.md)
       * [更新受众模板](./destination-sdk/metadata-api/update-audience-template.md)
       * [删除受众模板](./destination-sdk/metadata-api/delete-audience-template.md)
-   * 凭据配置API引用 {#credentials-api}
+   * 凭据配置API引用{#credentials-api}
       * [创建凭据配置](./destination-sdk/credentials-api/create-credential-configuration.md)
       * [检索凭据配置](./destination-sdk/credentials-api/retrieve-credential-configuration.md)
       * [更新凭据配置](./destination-sdk/credentials-api/update-credential-configuration.md)
       * [删除凭据配置](./destination-sdk/credentials-api/delete-credential-configuration.md)
-   * 目标测试API参考 {#testing-api}
+   * 目标测试API引用{#testing-api}
       * 流式目标测试API {#streaming-destinations}
          * [流式目标测试API概述](./destination-sdk/testing-api/streaming-destinations/streaming-destination-testing-overview.md)
          * [根据源架构生成样本配置文件](./destination-sdk/testing-api/streaming-destinations/sample-profile-generation-api.md)
@@ -294,14 +294,14 @@ ht-degree: 5%
          * [使用示例配置文件测试基于文件的目标](./destination-sdk/testing-api/batch-destinations/file-based-destination-testing-api.md)
          * [查看详细的激活结果](./destination-sdk/testing-api/batch-destinations/file-based-destination-results-api.md)
          * [验证模板化的客户字段](./destination-sdk/testing-api/batch-destinations/file-based-render-template-api.md)
-   * 目标发布API参考 {#publishing-api}
+   * 目标发布API引用{#publishing-api}
       * [创建目标发布请求](./destination-sdk/publishing-api/create-publishing-request.md)
       * [检索目标发布请求](./destination-sdk/publishing-api/retrieve-publishing-request.md)
-   * 记录您的目标 {#document-destination}
+   * 记录您的目标{#document-destination}
       * [在Adobe Experience Platform中记录您的目标](./destination-sdk/docs-framework/documentation-instructions.md)
       * [使用GitHub Web界面创建目标文档页面](./destination-sdk/docs-framework/use-github-interface-to-create-documentation.md)
       * [在本地环境中使用文本编辑器创建目标文档页面](./destination-sdk/docs-framework/work-in-local-environment.md)
       * [文档自助服务模板](./destination-sdk/docs-framework/self-service-template.md)
       * [创作最佳实践](./destination-sdk/docs-framework/authoring-best-practices.md)
 * [常见问题解答](./destinations-faq.md)
-* [Platform发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
+* [平台发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

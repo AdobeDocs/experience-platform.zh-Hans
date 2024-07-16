@@ -1,25 +1,25 @@
 ---
 title: 审核事件API端点
-description: 了解如何使用审核查询API以Experience Platform检索审核事件。
+description: 了解如何使用审核查询API在Experience Platform中检索审核事件。
 exl-id: c365b6d8-0432-41a5-9a07-44a995f69b7d
 source-git-commit: c7887391481def872c40dd6ed1193bf562b9d0cf
 workflow-type: tm+mt
 source-wordcount: '474'
-ht-degree: 8%
+ht-degree: 1%
 
 ---
 
 # 审核事件端点
 
-审核日志用于提供各种服务和功能的用户活动的详细信息。 日志中记录的每个操作都包含元数据，这些元数据可指示操作类型、日期和时间、执行操作的用户的电子邮件 ID 以及与操作类型相关的其他属性。此 `/audit/events` 中的端点 [!DNL Audit Query] API允许您以编程方式为贵组织的活动检索事件数据，位于 [!DNL Platform].
+审核日志用于提供各种服务和功能的用户活动的详细信息。 日志中记录的每个操作都包含元数据，这些元数据指示操作类型、日期和时间、执行操作的用户的电子邮件ID以及与操作类型相关的其他属性。 [!DNL Audit Query] API中的`/audit/events`端点允许您以编程方式检索[!DNL Platform]中组织活动的事件数据。
 
 ## 快速入门
 
-本指南中使用的API端点是 [[!DNL Audit Query] API](https://developer.adobe.com/experience-platform-apis/references/audit-query/). 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接，请参阅本文档中的示例API调用指南，以及有关成功调用任何组件所需的所需标头的重要信息 [!DNL Experience Platform] API。
+本指南中使用的API端点是[[!DNL Audit Query] API](https://developer.adobe.com/experience-platform-apis/references/audit-query/)的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、此文档中示例API调用的阅读指南，以及有关成功调用任何[!DNL Experience Platform] API所需的所需标头的重要信息。
 
 ## 列出审核事件
 
-您可以通过向以下网站发出GET请求来检索事件数据： `/audit/events` 端点，指定要在有效负载中检索的事件。
+您可以通过向`/audit/events`端点发出GET请求，指定要在有效负载中检索的事件，来检索事件数据。
 
 **API格式**
 
@@ -27,12 +27,12 @@ ht-degree: 8%
 GET /audit/events
 ```
 
-此 [!DNL Audit Query] API支持在列出事件时使用查询参数来页面和筛选结果。
+[!DNL Audit Query] API支持在列出事件时使用查询参数来分页和筛选结果。
 
 | 参数 | 描述 |
 | --- | --- |
-| `limit` | 响应中返回的最大记录数。 默认 `limit` 是50 |
-| `start` | 指向返回搜索结果的第一个项的指针。 要访问结果的下一页，此参数应按限制指示的相同量递增。 示例：要访问limit=50的请求的下一页结果，请使用参数start=50，然后为之后的页面使用start=100，依此类推。 |
+| `limit` | 响应中返回的最大记录数。 默认`limit`为50。 |
+| `start` | 指向返回搜索结果的第一个项的指针。 要访问结果的下一页，此参数的增量应该与限制指示的增量相同。 示例：要访问限制为50的请求的下一页结果，请使用参数start=50，然后为之后的页面使用start=100，依此类推。 |
 | `queryId` | 向/audit/events端点发出查询时，响应将包含queryId字符串属性。 要在单独的调用中进行相同的查询，您可以将ID值包含为单个查询参数，而不是再次手动配置搜索参数。 |
 
 **请求**
@@ -49,7 +49,7 @@ curl -X POST \
 
 **响应**
 
-成功响应将返回请求中指定的量度和过滤器的结果数据点。
+成功的响应会返回请求中指定的量度和过滤器的结果数据点。
 
 ```json
 {
@@ -146,9 +146,9 @@ curl -X POST \
 | --- | --- |
 | `customerAuditLogList` | 一个数组，其对象表示请求中指定的每个事件。 每个对象都包含有关过滤器配置和返回的事件数据的信息。 |
 | `userEmail` | 执行事件的用户的电子邮件。 |
-| `eventType` | 事件的类型。 事件类型包括 `Core` 和 `Enhanced`. |
+| `eventType` | 事件的类型。 事件类型包括`Core`和`Enhanced`。 |
 | `imsOrgId` | 发生事件的组织的ID。 |
-| `permissionResource` | 提供权限的产品或功能会执行操作。 资源可以是以下任意一项： <ul><li>`Activation` </li><li>`ActivationAssociation` </li><li>`AnalyticSource` </li><li>`AudienceManagerSource` </li><li>`BizibleSource` </li><li>`CustomerAttributeSource` </li><li>`Dataset` </li><li>`EnterpriseSource` </li><li>`LaunchSource` </li><li>`MarketoSource` </li><li>`ProductProfile` </li><li>`ProfileConfig` </li><li>`Sandbox` </li><li>`Schema` </li><li>`Segment` </li><li>`StreamingSource` </li></ul> |
+| `permissionResource` | 提供权限的产品或功能会执行该操作。 资源可以是以下任一资源： <ul><li>`Activation` </li><li>`ActivationAssociation` </li><li>`AnalyticSource` </li><li>`AudienceManagerSource` </li><li>`BizibleSource` </li><li>`CustomerAttributeSource` </li><li>`Dataset` </li><li>`EnterpriseSource` </li><li>`LaunchSource` </li><li>`MarketoSource` </li><li>`ProductProfile` </li><li>`ProfileConfig` </li><li>`Sandbox` </li><li>`Schema` </li><li>`Segment` </li><li>`StreamingSource` </li></ul> |
 | `permissionType` | 操作涉及的权限类型。 |
 | `assetType` | 执行操作的平台资源的类型。 |
 | `assetId` | 执行操作的平台资源的唯一标识符。 |

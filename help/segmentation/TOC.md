@@ -44,7 +44,7 @@ ht-degree: 42%
    - [流分段（视频）](video/streaming-segmentation-overview.md)
    - [忽略年份时间限制更新](ui/ignore-year.md)
    - [时间约束重构](ui/segment-refactoring.md)
-   - 区段匹配 {#segment-match}
+   - 区段匹配{#segment-match}
       - [区段匹配概述](ui/segment-match/overview.md)
       - [故障排除](ui/segment-match/troubleshooting.md)
 - [尊重同意](consents.md)
@@ -74,4 +74,4 @@ ht-degree: 42%
    - [强制区段遵守数据使用规定](tutorials/governance.md)
 - [常见问题解答](./faq.md)
 - [API 参考](https://www.adobe.io/experience-platform-apis/references/segmentation/)
-- [Platform发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
+- [平台发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

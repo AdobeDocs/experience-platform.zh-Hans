@@ -9,60 +9,60 @@ ht-degree: 2%
 
 ---
 
-# 使用创建SFTP基本连接 [!DNL Flow Service] API
+# 使用[!DNL Flow Service] API创建SFTP基本连接
 
 基本连接表示源和Adobe Experience Platform之间的已验证连接。
 
-本教程将指导您完成创建基本连接的步骤。 [!DNL SFTP] （安全文件传输协议）使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+本教程将指导您完成使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)为[!DNL SFTP]（安全文件传输协议）创建基本连接的步骤。
 
 ## 快速入门
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
-* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 >[!IMPORTANT]
 >
->建议在使用引入JSON对象时避免换行符或回车符 [!DNL SFTP] 源连接。 要解决此限制，请每行使用一个JSON对象，并使用多行来生成文件。
+>建议在摄取具有[!DNL SFTP]源连接的JSON对象时避免换行符或回车符。 要解决此限制，请每行使用一个JSON对象，并使用多行来生成文件。
 
-以下部分提供成功连接到 [!DNL SFTP] 服务器使用 [!DNL Flow Service] API。
+以下部分提供使用[!DNL Flow Service] API成功连接到[!DNL SFTP]服务器所需了解的其他信息。
 
 ### 收集所需的凭据
 
-为了 [!DNL Flow Service] 以连接到 [!DNL SFTP]中，您必须提供以下连接属性的值：
+为了使[!DNL Flow Service]连接到[!DNL SFTP]，您必须提供以下连接属性的值：
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `host` | 与您的关联的名称或IP地址 [!DNL SFTP] 服务器。 |
-| `port` | 您连接到的SFTP服务器端口。 如果未提供，则值默认为 `22`. |
-| `username` | 对您的具有访问权限的用户名 [!DNL SFTP] 服务器。 |
-| `password` | 您的密码 [!DNL SFTP] 服务器。 |
+| `host` | 与您的[!DNL SFTP]服务器关联的名称或IP地址。 |
+| `port` | 您连接到的SFTP服务器端口。 如果未提供，则值默认为`22`。 |
+| `username` | 有权访问您的[!DNL SFTP]服务器的用户名。 |
+| `password` | [!DNL SFTP]服务器的密码。 |
 | `privateKeyContent` | Base64编码的SSH私钥内容。 OpenSSH密钥类型必须分类为RSA或DSA。 |
-| `passPhrase` | 如果密钥文件或密钥内容受密码词组保护，则使用密码词组或密码解密私钥。 如果 `privateKeyContent` 受密码保护，此参数需要作为私钥内容的密码短语值使用。 |
-| `maxConcurrentConnections` | 此参数允许您指定在连接到SFTP服务器时，平台将创建的并发连接数的最大限制。 必须将此值设置为小于SFTP设置的限制。 **注意**：为现有SFTP帐户启用此设置时，它仅影响未来的数据流，而不影响现有的数据流。 |
-| `folderPath` | 要提供访问权限的文件夹的路径。 [!DNL SFTP] 源，您可以提供文件夹路径以指定用户对所选子文件夹的访问权限。 |
-| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 的连接规范ID [!DNL SFTP] 为： `b7bf2577-4520-42c9-bae9-cad01560f7bc`. |
+| `passPhrase` | 如果密钥文件或密钥内容受密码词组保护，则使用密码词组或密码解密私钥。 如果`privateKeyContent`受密码保护，则此参数需要与私钥内容的密码短语一起使用，作为值。 |
+| `maxConcurrentConnections` | 此参数允许您指定在连接到SFTP服务器时，平台将创建的并发连接数的最大限制。 必须将此值设置为小于SFTP设置的限制。 **注意**：为现有SFTP帐户启用此设置时，它只影响未来的数据流，而不影响现有的数据流。 |
+| `folderPath` | 要提供访问权限的文件夹的路径。 [!DNL SFTP]源，您可以提供文件夹路径，以指定用户对您选择的子文件夹的访问权限。 |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL SFTP]的连接规范ID为： `b7bf2577-4520-42c9-bae9-cad01560f7bc`。 |
 
 ### 使用平台API
 
-有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
+有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../../landing/api-guide.md)指南。
 
 ## 创建基本连接
 
 >[!TIP]
 >
->创建后，便无法更改的身份验证类型 [!DNL SFTP] 基本连接。 要更改身份验证类型，必须创建新的基本连接。
+>创建后，无法更改[!DNL SFTP]基本连接的身份验证类型。 要更改身份验证类型，必须创建新的基本连接。
 
 基本连接会保留您的源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-此 [!DNL SFTP] 源支持基本身份验证和通过SSH公钥进行的身份验证。 在此步骤中，您还可以指定要提供访问权限的子文件夹的路径。
+[!DNL SFTP]源支持基本身份验证和通过SSH公钥的身份验证。 在此步骤中，您还可以指定要提供访问权限的子文件夹的路径。
 
-POST要创建基本连接ID，请向 `/connections` 端点，同时提供 [!DNL SFTP] 作为请求参数一部分的身份验证凭据。
+要创建基本连接ID，请在提供[!DNL SFTP]身份验证凭据作为POST参数的一部分时，向`/connections`端点请求请求。
 
 >[!IMPORTANT]
 >
->此 [!DNL SFTP] 连接器支持RSA或DSA类型的OpenSSH密钥。 确保您的关键文件内容开头为 `"-----BEGIN [RSA/DSA] PRIVATE KEY-----"` 结束于 `"-----END [RSA/DSA] PRIVATE KEY-----"`. 如果私钥文件是PPK格式文件，请使用PuTTY工具从PPK转换为OpenSSH格式。
+>[!DNL SFTP]连接器支持RSA或DSA类型的OpenSSH密钥。 确保您的密钥文件内容以`"-----BEGIN [RSA/DSA] PRIVATE KEY-----"`开头并以`"-----END [RSA/DSA] PRIVATE KEY-----"`结尾。 如果私钥文件是PPK格式文件，请使用PuTTY工具从PPK转换为OpenSSH格式。
 
 **API格式**
 
@@ -119,7 +119,7 @@ curl -X POST \
 
 +++响应
 
-成功的响应将返回唯一标识符(`id`)。 请在下一教程中探究您的SFTP服务器时，需要此ID。
+成功的响应返回新创建连接的唯一标识符(`id`)。 请在下一教程中探究您的SFTP服务器时，需要此ID。
 
 ```json
 {
@@ -166,20 +166,20 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `auth.params.host` | 的主机名 [!DNL SFTP] 服务器。 |
+| `auth.params.host` | [!DNL SFTP]服务器的主机名。 |
 | `auth.params.port` | SFTP服务器的端口。 此整数值默认为22。 |
-| `auth.params.username` | 与您的关联的用户名 [!DNL SFTP] 服务器。 |
+| `auth.params.username` | 与您的[!DNL SFTP]服务器关联的用户名。 |
 | `auth.params.privateKeyContent` | Base64编码的SSH私钥内容。 OpenSSH密钥类型必须分类为RSA或DSA。 |
 | `auth.params.passPhrase` | 如果密钥文件或密钥内容受密码词组保护，则使用密码词组或密码解密私钥。 如果PrivateKeyContent受密码保护，则此参数需要与PrivateKeyContent的密码短语（值）一起使用。 |
 | `auth.params.maxConcurrentConnections` | 在将Platform连接到SFTP时指定的最大并发连接数。 启用时，该值必须设置为至少1。 |
 | `auth.params.folderPath` | 要提供访问权限的文件夹的路径。 |
-| `connectionSpec.id` | 此 [!DNL SFTP] 服务器连接规范ID： `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
+| `connectionSpec.id` | [!DNL SFTP]服务器连接规范ID： `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
 
 +++
 
 +++响应
 
-成功的响应将返回唯一标识符(`id`)。 请在下一教程中探究您的SFTP服务器时，需要此ID。
+成功的响应返回新创建连接的唯一标识符(`id`)。 请在下一教程中探究您的SFTP服务器时，需要此ID。
 
 ```json
 {
@@ -194,4 +194,4 @@ curl -X POST \
 
 ## 后续步骤
 
-在本教程之后，您已创建一个 [!DNL SFTP] 连接使用 [!DNL Flow Service] API中，并获取了连接的唯一ID值。 您可以使用此连接ID来 [使用流服务API浏览云存储](../../explore/cloud-storage.md).
+通过完成本教程，您已使用[!DNL Flow Service] API创建了[!DNL SFTP]连接，并获得了此连接的唯一ID值。 您可以使用此连接ID以使用流服务API](../../explore/cloud-storage.md)来[浏览云存储。

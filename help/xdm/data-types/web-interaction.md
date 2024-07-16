@@ -7,20 +7,20 @@ exl-id: 772d96c5-9fa3-4fed-8b38-16b8e7101743
 source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
 source-wordcount: '164'
-ht-degree: 4%
+ht-degree: 10%
 
 ---
 
-# [!UICONTROL Web交互] 数据类型
+# [!UICONTROL Web交互]数据类型
 
-[!UICONTROL Web交互] 是一个标准的体验数据模型(XDM)数据类型，用于描述初始页面加载完成后在网页上发生的交互信息。 它用于记录富Web应用程序(例如单页Web应用程序(SPA))中不会触发新页面加载的交互。
+[!UICONTROL Web交互]是标准的体验数据模型(XDM)数据类型，用于描述初始页面加载完成后在网页上发生的交互信息。 它用于记录富Web应用程序(例如单页Web应用程序(SPA))中不会触发新页面加载的交互。
 
 <img src="../images/data-types/web-interaction.PNG" width="500" /><br />
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `linkClicks` | [[!UICONTROL 衡量]](./measure.md) | 跟踪Web链接点击的测量。 |
-| `URL` | 字符串 | 用于此Web交互的实际链接或URL。 |
+| `linkClicks` | [[!UICONTROL 度量值]](./measure.md) | 跟踪Web链接点击的测量。 |
+| `URL` | 字符串 | 用于此 Web 交互的实际链接或 URL。 |
 | `name` | 字符串 | 此Web链接使用的规范名称。 这用于分类目的。 |
 | `type` | 字符串 | 链接类型。 此属性必须等于以下枚举值之一： <li> `download` </li> <li> `exit` </li> <li> `other` </li> |
 
@@ -29,4 +29,4 @@ ht-degree: 4%
 有关数据类型的更多详细信息，请参阅公共XDM存储库：
 
 * [填充示例](https://github.com/adobe/xdm/blob/master/components/datatypes/deprecated/webinteraction.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/deprecated/webinteraction.schema.json)
+* [完整架构](https://github.com/adobe/xdm/blob/master/components/datatypes/deprecated/webinteraction.schema.json)

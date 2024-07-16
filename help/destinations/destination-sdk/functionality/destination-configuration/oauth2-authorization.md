@@ -5,20 +5,20 @@ exl-id: 280ecb63-5739-491c-b539-3c62bd74e433
 source-git-commit: 7ba9971b44410e609c64f4dcf956a1976207353e
 workflow-type: tm+mt
 source-wordcount: '2181'
-ht-degree: 3%
+ht-degree: 2%
 
 ---
 
 
 # OAuth 2授权
 
-Destination SDK支持对目标的多种授权方法。 其中一种是使用 [OAuth 2授权框架](https://tools.ietf.org/html/rfc6749).
+Destination SDK支持对目标的多种授权方法。 其中有一个选项可使用[OAuth 2授权框架](https://tools.ietf.org/html/rfc6749)向您的目标进行身份验证。
 
 本页介绍了Destination SDK支持的各种OAuth 2授权流程，并提供了有关为目标设置OAuth 2授权的说明。
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -46,7 +46,7 @@ Destination SDK支持对目标的多种授权方法。 其中一种是使用 [OA
 
 >[!IMPORTANT]
 >
->在系统中注册Adobe Experience Platform的重定向/回调URL的步骤仅需用于 [OAuth 2，带有授权代码](#authorization-code) 授予类型。 对于其他两种受支持的授权类型（密码和客户端凭据），您可以跳过此步骤。
+>只有授权代码为](#authorization-code)的[OAuth 2授予类型才需要执行在系统中注册Adobe Experience Platform的重定向/回调URL的步骤。 对于其他两种受支持的授权类型（密码和客户端凭据），您可以跳过此步骤。
 
 在此步骤结束时，您应该：
 * 客户端ID；
@@ -55,7 +55,7 @@ Destination SDK支持对目标的多种授权方法。 其中一种是使用 [OA
 
 ### 在Destination SDK中需要做什么 {#to-do-in-destination-sdk}
 
-要为Experience Platform中的目标设置OAuth 2授权，您必须将OAuth 2详细信息添加到 [目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)，位于 `customerAuthenticationConfigurations` 参数。 请参阅 [客户身份验证](../../functionality/destination-configuration/customer-authentication.md) 以了解详细示例。 根据您的OAuth 2授权授予类型，关于您需要向配置模板添加哪些字段的具体说明，请参阅本页下面的内容。
+要为Experience Platform中的目标设置OAuth 2授权，您必须在`customerAuthenticationConfigurations`参数下将OAuth 2详细信息添加到[目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)。 有关详细示例，请参阅[客户身份验证](../../functionality/destination-configuration/customer-authentication.md)。 根据您的OAuth 2授权授予类型，关于您需要向配置模板添加哪些字段的具体说明，请参阅本页下面的内容。
 
 ## 支持的OAuth 2授权类型 {#oauth2-grant-types}
 
@@ -64,7 +64,7 @@ Experience Platform支持下表中的三个OAuth 2授权类型。 如果您设�
 >[!IMPORTANT]
 >
 >* 您可以按照以下各节中的说明提供输入参数。 Adobe内部系统连接到您平台的授权系统并获取输出参数，这些参数用于验证用户并保持对目标的授权。
->* 表格中以粗体突出显示的输入参数是OAuth 2授权流中的必需参数。 其他参数是可选的。 还有其他自定义输入参数，这些参数未在此处显示，但将在各节中详细介绍 [自定义您的OAuth 2配置](#customize-configuration) 和 [访问令牌刷新](#access-token-refresh).
+>* 表格中以粗体突出显示的输入参数是OAuth 2授权流中的必需参数。 其他参数是可选的。 此处未显示其他自定义输入参数，但这些参数在[自定义您的OAuth 2配置](#customize-configuration)和[访问令牌刷新](#access-token-refresh)部分中有详细介绍。
 
 | OAuth 2授权 | 输入 | 输出 |
 |---------|----------|---------|
@@ -85,7 +85,7 @@ Experience Platform支持下表中的三个OAuth 2授权类型。 如果您设�
 
 ## OAuth 2，带有授权代码 {#authorization-code}
 
-如果您的目标支持标准OAuth 2.0授权代码流(请参阅 [RFC标准规范](https://tools.ietf.org/html/rfc6749#section-4.1))或其变体，请参考下面的必需和可选字段：
+如果您的目标支持标准OAuth 2.0授权代码流（请阅读[RFC标准规范](https://tools.ietf.org/html/rfc6749#section-4.1)）或其变体，请查阅下面的必需和可选字段：
 
 | OAuth 2授权 | 输入 | 输出 |
 |---------|----------|---------|
@@ -93,7 +93,7 @@ Experience Platform支持下表中的三个OAuth 2授权类型。 如果您设�
 
 {style="table-layout:auto"}
 
-要为您的目标设置此授权方法，请在配置中添加以下行 [创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)：
+要为您的目标设置此授权方法，请在您[创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)时，将以下行添加到您的配置中：
 
 ```json
 {
@@ -120,16 +120,16 @@ Experience Platform支持下表中的三个OAuth 2授权类型。 如果您设�
 | `grant` | 字符串 | 使用“OAUTH2_AUTHORIZATION_CODE”。 |
 | `accessTokenUrl` | 字符串 | 您这边的URL，用于发出访问令牌并（可选）刷新令牌。 |
 | `authorizationUrl` | 字符串 | 授权服务器的URL，您可以在其中将用户重定向到您的应用程序。 |
-| `refreshTokenUrl` | 字符串 | *可选。* 您这边的URL，会发出刷新令牌问题。 通常， `refreshTokenUrl` 与 `accessTokenUrl`. |
+| `refreshTokenUrl` | 字符串 | *可选。*&#x200B;您这边的URL，这会产生刷新令牌的问题。 通常，`refreshTokenUrl`与`accessTokenUrl`相同。 |
 | `clientId` | 字符串 | 系统分配给Adobe Experience Platform的客户端ID。 |
 | `clientSecret` | 字符串 | 系统分配给Adobe Experience Platform的客户端密码。 |
-| `scope` | 字符串列表 | *可选*. 设置访问令牌允许Experience Platform对您的资源执行的范围。 示例：“read， write”。 |
+| `scope` | 字符串列表 | *可选*。 设置访问令牌允许Experience Platform对您的资源执行的范围。 示例：“read， write”。 |
 
 {style="table-layout:auto"}
 
 ## 具有密码授予的OAuth 2
 
-用于OAuth 2密码授予(请阅读 [RFC标准规范](https://tools.ietf.org/html/rfc6749#section-4.3))，Experience Platform需要用户用户名和密码。 在授权流中，Experience Platform将这些凭据交换为访问令牌和（可选）刷新令牌。
+对于OAuth 2密码授予（请阅读[RFC标准规范](https://tools.ietf.org/html/rfc6749#section-4.3)），Experience Platform需要用户的用户名和密码。 在授权流中，Experience Platform将这些凭据交换为访问令牌和（可选）刷新令牌。
 Adobe使用以下标准输入来简化目标配置，并能够覆盖值：
 
 | OAuth 2授权 | 输入 | 输出 |
@@ -140,9 +140,9 @@ Adobe使用以下标准输入来简化目标配置，并能够覆盖值：
 
 >[!NOTE]
 >
-> 您无需为添加任何参数 `username` 和 `password` 在下面的配置中。 添加时 `"grant": "OAUTH2_PASSWORD"` 在目标配置中，当用户对您的目标进行身份验证时，系统将请求Experience Platform在UI中提供用户名和密码。
+> 您不需要在下面的配置中为`username`和`password`添加任何参数。 在目标配置中添加`"grant": "OAUTH2_PASSWORD"`时，当用户对您的目标进行验证时，系统将请求Experience Platform在UI中提供用户名和密码。
 
-要为您的目标设置此授权方法，请在配置中添加以下行 [创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)：
+要为您的目标设置此授权方法，请在您[创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)时，将以下行添加到您的配置中：
 
 ```json
 {
@@ -166,13 +166,13 @@ Adobe使用以下标准输入来简化目标配置，并能够覆盖值：
 | `accessTokenUrl` | 字符串 | 您这边的URL，用于发出访问令牌并（可选）刷新令牌。 |
 | `clientId` | 字符串 | 系统分配给Adobe Experience Platform的客户端ID。 |
 | `clientSecret` | 字符串 | 系统分配给Adobe Experience Platform的客户端密码。 |
-| `scope` | 字符串列表 | *可选*. 设置访问令牌允许Experience Platform对您的资源执行的范围。 示例：“read， write”。 |
+| `scope` | 字符串列表 | *可选*。 设置访问令牌允许Experience Platform对您的资源执行的范围。 示例：“read， write”。 |
 
 {style="table-layout:auto"}
 
 ## 具有客户端凭据授权的OAuth 2
 
-您可以配置OAuth 2客户端凭据(请参阅 [RFC标准规范](https://tools.ietf.org/html/rfc6749#section-4.4))目标，支持下面列出的标准输入和输出。 您可以自定义值。 请参阅 [自定义您的OAuth 2配置](#customize-configuration) 以了解详细信息。
+您可以配置OAuth 2客户端凭据（读取[RFC标准规范](https://tools.ietf.org/html/rfc6749#section-4.4)）目标，该目标支持下面列出的标准输入和输出。 您可以自定义值。 有关详细信息，请参阅[自定义您的OAuth 2配置](#customize-configuration)。
 
 | OAuth 2授权 | 输入 | 输出 |
 |---------|----------|---------|
@@ -180,7 +180,7 @@ Adobe使用以下标准输入来简化目标配置，并能够覆盖值：
 
 {style="table-layout:auto"}
 
-要为您的目标设置此授权方法，请在配置中添加以下行 [创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)：
+要为您的目标设置此授权方法，请在您[创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)时，将以下行添加到您的配置中：
 
 ```json
 {
@@ -205,20 +205,20 @@ Adobe使用以下标准输入来简化目标配置，并能够覆盖值：
 | `authType` | 字符串 | 使用“OAUTH2”。 |
 | `grant` | 字符串 | 使用“OAUTH2_CLIENT_CREDENTIALS”。 |
 | `accessTokenUrl` | 字符串 | 授权服务器的URL，它会颁发一个访问令牌和一个可选的刷新令牌。 |
-| `refreshTokenUrl` | 字符串 | *可选。* 您这边的URL，会发出刷新令牌问题。 通常， `refreshTokenUrl` 与 `accessTokenUrl`. |
+| `refreshTokenUrl` | 字符串 | *可选。*&#x200B;您这边的URL，这会产生刷新令牌的问题。 通常，`refreshTokenUrl`与`accessTokenUrl`相同。 |
 | `clientId` | 字符串 | 系统分配给Adobe Experience Platform的客户端ID。 |
 | `clientSecret` | 字符串 | 系统分配给Adobe Experience Platform的客户端密码。 |
-| `scope` | 字符串列表 | *可选*. 设置访问令牌允许Experience Platform对您的资源执行的范围。 示例：“read， write”。 |
+| `scope` | 字符串列表 | *可选*。 设置访问令牌允许Experience Platform对您的资源执行的范围。 示例：“read， write”。 |
 
 {style="table-layout:auto"}
 
 ## 自定义您的OAuth 2配置 {#customize-configuration}
 
-上节中描述的配置描述了标准OAuth 2授权。 但是，由Adobe设计的系统提供了灵活性，因此您可以将自定义参数用于OAuth 2授权中的任何变体。 要自定义标准OAuth 2设置，请使用 `authenticationDataFields` 参数，如以下示例所示。
+上节中描述的配置描述了标准OAuth 2授权。 但是，由Adobe设计的系统提供了灵活性，因此您可以将自定义参数用于OAuth 2授权中的任何变体。 要自定义标准OAuth 2设置，请使用`authenticationDataFields`参数，如以下示例所示。
 
-### 示例1：使用 `authenticationDataFields` 捕获来自授权响应的信息 {#example-1}
+### 示例1：使用`authenticationDataFields`捕获来自授权响应的信息 {#example-1}
 
-在此示例中，目标平台的刷新令牌在一定时间后过期。 在这种情况下，合作伙伴将设置 `refreshTokenExpiration` 用于从获取刷新令牌到期的自定义字段 `refresh_token_expires_in` API响应中的字段。
+在此示例中，目标平台的刷新令牌在一定时间后过期。 在这种情况下，合作伙伴设置`refreshTokenExpiration`自定义字段以从API响应中的`refresh_token_expires_in`字段获取刷新令牌过期时间。
 
 ```json
 {
@@ -254,7 +254,7 @@ Adobe使用以下标准输入来简化目标配置，并能够覆盖值：
 }  
 ```
 
-### 示例2：使用 `authenticationDataFields` 提供特殊的刷新令牌 {#example-2}
+### 示例2：使用`authenticationDataFields`提供特殊刷新令牌 {#example-2}
 
 在此示例中，合作伙伴设置其目标以提供特殊的刷新令牌。 此外，API响应中不会返回访问令牌的过期日期，因此它们可以对默认值进行硬编码，在本例中为3600秒。
 
@@ -273,7 +273,7 @@ Adobe使用以下标准输入来简化目标配置，并能够覆盖值：
 
 ### 示例3：用户在配置目标时输入客户端ID和客户端密码 {#example-3}
 
-在本例中，不会创建全局客户端ID和客户端密钥，如部分所示 [系统中的先决条件](#prerequisites)，客户需要输入客户端ID、客户端密钥和帐户ID（客户用于登录到目标的ID）
+在此示例中，客户需要输入客户端ID、客户端密钥和帐户ID（客户用于登录到目标的ID），而不是创建全局客户端ID和客户端密钥，如[系统必备项](#prerequisites)部分中所示
 
 ```json
 {
@@ -356,18 +356,18 @@ Adobe使用以下标准输入来简化目标配置，并能够覆盖值：
 
 
 
-可以在中使用以下参数 `authenticationDataFields` 要自定义OAuth 2配置，请执行以下操作：
+您可以在`authenticationDataFields`中使用以下参数来自定义OAuth 2配置：
 
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
 | `authenticationDataFields.name` | 字符串 | 自定义字段的名称。 |
 | `authenticationDataFields.title` | 字符串 | 可为自定义字段提供的标题。 |
 | `authenticationDataFields.description` | 字符串 | 您设置的自定义数据字段的描述。 |
-| `authenticationDataFields.type` | 字符串 | 定义自定义数据字段的类型。 <br> 接受的值： `string`， `boolean`， `integer` |
+| `authenticationDataFields.type` | 字符串 | 定义自定义数据字段的类型。 <br>接受的值： `string`、`boolean`、`integer` |
 | `authenticationDataFields.isRequired` | 布尔值 | 指定授权流中是否需要自定义数据字段。 |
-| `authenticationDataFields.format` | 字符串 | 当您选择时 `"format":"password"`，Adobe会加密授权数据字段的值。 使用时 `"fieldType": "CUSTOMER"`时，这也会在用户键入字段时隐藏UI中的输入。 |
+| `authenticationDataFields.format` | 字符串 | 当您选择`"format":"password"`时，Adobe将加密授权数据字段的值。 与`"fieldType": "CUSTOMER"`一起使用时，这也会在用户键入字段时隐藏UI中的输入。 |
 | `authenticationDataFields.fieldType` | 字符串 | 指示当合作伙伴（您）在Experience Platform中设置您的目标时，输入是来自合作伙伴还是用户。 |
-| `authenticationDataFields.value` | 字符串。 布尔型。 整数 | 自定义数据字段的值。 值与从中选择的类型匹配 `authenticationDataFields.type`. |
+| `authenticationDataFields.value` | 字符串。 布尔型。 整数 | 自定义数据字段的值。 该值与`authenticationDataFields.type`中选择的类型匹配。 |
 | `authenticationDataFields.authenticationResponsePath` | 字符串 | 指示您正在引用API响应路径中的哪个字段。 |
 
 {style="table-layout:auto"}
@@ -376,7 +376,7 @@ Adobe使用以下标准输入来简化目标配置，并能够覆盖值：
 
 Adobe设计了一个系统，该系统无需用户登录回您的平台，即可刷新过期的访问令牌。 系统能够生成新的令牌，以便客户能够继续无缝地激活您的目标。
 
-要设置访问令牌刷新，您可能需要配置一个模板化HTTP请求，以允许Adobe使用刷新令牌获取新的访问令牌。 如果访问令牌已过期，则Adobe会采用您提供的模板化请求，并添加您提供的参数。 使用 `accessTokenRequest` 用于配置访问令牌刷新机制的参数。
+要设置访问令牌刷新，您可能需要配置一个模板化HTTP请求，以允许Adobe使用刷新令牌获取新的访问令牌。 如果访问令牌已过期，则Adobe会采用您提供的模板化请求，并添加您提供的参数。 使用`accessTokenRequest`参数配置访问令牌刷新机制。
 
 
 ```json
@@ -446,31 +446,31 @@ Adobe设计了一个系统，该系统无需用户登录回您的平台，即可
 }
 ```
 
-可以在中使用以下参数 `accessTokenRequest` 要自定义令牌刷新过程，请执行以下操作：
+您可以在`accessTokenRequest`中使用以下参数自定义令牌刷新过程：
 
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
-| `accessTokenRequest.destinationServerType` | 字符串 | 使用 `URL_BASED`。 |
-| `accessTokenRequest.urlBasedDestination.url.templatingStrategy` | 字符串 | <ul><li>使用 `PEBBLE_V1` 如果将模板用于中的值 `accessTokenRequest.urlBasedDestination.url.value`.</li><li> 使用 `NONE` 如果字段中的值 `accessTokenRequest.urlBasedDestination.url.value` 是一个常量。 </li></li> |
+| `accessTokenRequest.destinationServerType` | 字符串 | 使用`URL_BASED`。 |
+| `accessTokenRequest.urlBasedDestination.url.templatingStrategy` | 字符串 | <ul><li>如果您对`accessTokenRequest.urlBasedDestination.url.value`中的值使用模板，请使用`PEBBLE_V1`。</li><li> 如果字段`accessTokenRequest.urlBasedDestination.url.value`中的值为常量，则使用`NONE`。 </li></li> |
 | `accessTokenRequest.urlBasedDestination.url.value` | 字符串 | Experience Platform请求访问令牌的URL。 |
-| `accessTokenRequest.httpTemplate.requestBody.templatingStrategy` | 字符串 | <ul><li>使用 `PEBBLE_V1` 如果对中的值使用模板 `accessTokenRequest.httpTemplate.requestBody.value`.</li><li> 使用 `NONE` 如果字段中的值 `accessTokenRequest.httpTemplate.requestBody.value` 是一个常量。 </li></li> |
-| `accessTokenRequest.httpTemplate.requestBody.value` | 字符串 | 使用模板化语言自定义访问令牌端点的HTTP请求中的字段。 有关如何使用模板自定义字段的信息，请参阅 [模板化惯例](#templating-conventions) 部分。 |
-| `accessTokenRequest.httpTemplate.httpMethod` | 字符串 | 指定用于调用访问令牌端点的HTTP方法。 在大多数情况下，此值为 `POST`. |
-| `accessTokenRequest.httpTemplate.contentType` | 字符串 | 指定对您的访问令牌端点的HTTP调用的内容类型。 <br> 例如： `application/x-www-form-urlencoded` 或 `application/json`. |
+| `accessTokenRequest.httpTemplate.requestBody.templatingStrategy` | 字符串 | <ul><li>如果您对`accessTokenRequest.httpTemplate.requestBody.value`中的值使用模板，请使用`PEBBLE_V1`。</li><li> 如果字段`accessTokenRequest.httpTemplate.requestBody.value`中的值为常量，则使用`NONE`。 </li></li> |
+| `accessTokenRequest.httpTemplate.requestBody.value` | 字符串 | 使用模板化语言自定义访问令牌端点的HTTP请求中的字段。 有关如何使用模板自定义字段的信息，请参阅[模板约定](#templating-conventions)部分。 |
+| `accessTokenRequest.httpTemplate.httpMethod` | 字符串 | 指定用于调用访问令牌端点的HTTP方法。 在大多数情况下，此值为`POST`。 |
+| `accessTokenRequest.httpTemplate.contentType` | 字符串 | 指定对您的访问令牌端点的HTTP调用的内容类型。 <br>例如： `application/x-www-form-urlencoded`或`application/json`。 |
 | `accessTokenRequest.httpTemplate.headers` | 字符串 | 指定是否应将任何标头添加到对访问令牌端点的HTTP调用中。 |
-| `accessTokenRequest.responseFields.templatingStrategy` | 字符串 | <ul><li>使用 `PEBBLE_V1` 如果对中的值使用模板 `accessTokenRequest.responseFields.value`.</li><li> 使用 `NONE` 如果字段中的值 `accessTokenRequest.responseFields.value` 是一个常量。 </li></li> |
-| `accessTokenRequest.responseFields.value` | 字符串 | 使用模板化语言从访问令牌端点访问HTTP响应中的字段。 有关如何使用模板自定义字段的信息，请参阅 [模板化惯例](#templating-conventions) 部分。 |
+| `accessTokenRequest.responseFields.templatingStrategy` | 字符串 | <ul><li>如果您对`accessTokenRequest.responseFields.value`中的值使用模板，请使用`PEBBLE_V1`。</li><li> 如果字段`accessTokenRequest.responseFields.value`中的值为常量，则使用`NONE`。 </li></li> |
+| `accessTokenRequest.responseFields.value` | 字符串 | 使用模板化语言从访问令牌端点访问HTTP响应中的字段。 有关如何使用模板自定义字段的信息，请参阅[模板约定](#templating-conventions)部分。 |
 | `accessTokenRequest.validations.name` | 字符串 | 指示为此验证提供的名称。 |
-| `accessTokenRequest.validations.actualValue.templatingStrategy` | 字符串 | <ul><li>使用 `PEBBLE_V1` 如果对中的值使用模板 `accessTokenRequest.validations.actualValue.value`.</li><li> 使用 `NONE` 如果字段中的值 `accessTokenRequest.validations.actualValue.value` 是一个常量。 </li></li> |
-| `accessTokenRequest.validations.actualValue.value` | 字符串 | 使用模板化语言访问HTTP响应中的字段。 有关如何使用模板自定义字段的信息，请参阅 [模板化惯例](#templating-conventions) 部分。 |
-| `accessTokenRequest.validations.expectedValue.templatingStrategy` | 字符串 | <ul><li>使用 `PEBBLE_V1` 如果对中的值使用模板 `accessTokenRequest.validations.expectedValue.value`.</li><li> 使用 `NONE` 如果字段中的值 `accessTokenRequest.validations.expectedValue.value` 是一个常量。 </li></li> |
-| `accessTokenRequest.validations.expectedValue.value` | 字符串 | 使用模板化语言访问HTTP响应中的字段。 有关如何使用模板自定义字段的信息，请参阅 [模板化惯例](#templating-conventions) 部分。 |
+| `accessTokenRequest.validations.actualValue.templatingStrategy` | 字符串 | <ul><li>如果您对`accessTokenRequest.validations.actualValue.value`中的值使用模板，请使用`PEBBLE_V1`。</li><li> 如果字段`accessTokenRequest.validations.actualValue.value`中的值为常量，则使用`NONE`。 </li></li> |
+| `accessTokenRequest.validations.actualValue.value` | 字符串 | 使用模板化语言访问HTTP响应中的字段。 有关如何使用模板自定义字段的信息，请参阅[模板约定](#templating-conventions)部分。 |
+| `accessTokenRequest.validations.expectedValue.templatingStrategy` | 字符串 | <ul><li>如果您对`accessTokenRequest.validations.expectedValue.value`中的值使用模板，请使用`PEBBLE_V1`。</li><li> 如果字段`accessTokenRequest.validations.expectedValue.value`中的值为常量，则使用`NONE`。 </li></li> |
+| `accessTokenRequest.validations.expectedValue.value` | 字符串 | 使用模板化语言访问HTTP响应中的字段。 有关如何使用模板自定义字段的信息，请参阅[模板约定](#templating-conventions)部分。 |
 
 {style="table-layout:auto"}
 
 ## 模板惯例 {#templating-conventions}
 
-根据您的授权自定义，您可能需要访问授权响应中的数据字段，如上一节所示。 为此，请熟悉 [卵石模板化语言](https://pebbletemplates.io/) 供Adobe使用，并参阅下面的模板惯例以自定义您的OAuth 2实施。
+根据您的授权自定义，您可能需要访问授权响应中的数据字段，如上一节所示。 为此，请熟悉Adobe使用的[Pebble模板语言](https://pebbletemplates.io/)，并参阅下面的模板惯例以自定义您的OAuth 2实施。
 
 
 | 前缀 | 描述 | 示例 |
@@ -485,4 +485,4 @@ Adobe设计了一个系统，该系统无需用户登录回您的平台，即可
 
 ## 后续步骤 {#next-steps}
 
-阅读本文后，您现在了解了Adobe Experience Platform支持的OAuth 2授权模式，并知道如何使用OAuth 2授权支持配置您的目标。 接下来，您可以使用Destination SDK设置支持OAuth 2的目标。 读取 [使用Destination SDK配置目标](../../guides/configure-destination-instructions.md) 以了解后续步骤。
+阅读本文后，您现在了解了Adobe Experience Platform支持的OAuth 2授权模式，并知道如何使用OAuth 2授权支持配置您的目标。 接下来，您可以使用Destination SDK设置支持OAuth 2的目标。 阅读[使用Destination SDK配置目标](../../guides/configure-destination-instructions.md)以了解后续步骤。

@@ -1,45 +1,45 @@
 ---
-title: Amazon Kinesis源连接器概述
+title: Amazon Kinesis Source连接器概述
 description: 了解如何使用API或用户界面将Amazon Kinesis连接到Adobe Experience Platform。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b71fc922-7722-4279-8fc6-e5d7735e1ebb
 source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
 workflow-type: tm+mt
-source-wordcount: '499'
+source-wordcount: '486'
 ht-degree: 1%
 
 ---
 
-# [!DNL Amazon Kinesis] 源
+# [!DNL Amazon Kinesis]源
 
 >[!IMPORTANT]
 >
->此 [!DNL Amazon Kinesis] 源目录中的源可供已购买Real-time Customer Data Platform Ultimate的用户使用。
+>[!DNL Amazon Kinesis]源在源目录中可供已购买Real-time Customer Data Platform Ultimate的用户使用。
 
-Adobe Experience Platform为云提供商(如AWS)提供本机连接， [!DNL Google Cloud Platform]、和 [!DNL Azure]. 您可以将来自这些系统的数据导入 [!DNL Platform].
+Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等云提供商提供本机连接。 您可以将来自这些系统的数据导入[!DNL Platform]。
 
-云存储源可以将您自己的数据导入 [!DNL Platform] 无需下载、格式化或上传。 引入的数据可以格式化为XDM JSON、XDM Parquet或分隔。 该过程的每个步骤都集成到源工作流中。 [!DNL Platform] 允许您从以下位置引入数据 [!DNL Amazon Kinesis] 实时。
+云存储源可以将您自己的数据导入[!DNL Platform]，而无需下载、格式化或上传。 引入的数据可以格式化为XDM JSON、XDM Parquet或分隔。 该过程的每个步骤都集成到源工作流中。 [!DNL Platform]允许您从[!DNL Amazon Kinesis]实时引入数据。
 
 >[!NOTE]
 >
->的缩放因子 [!DNL Kinesis] 如果您需要摄取大量数据，则必须增加。 目前，您可以从 [!DNL Kinesis] account到Platform的记录数是每秒4000条。 要扩展并摄取更大数量的数据，请联系您的Adobe代表。
+>如果需要摄取大量数据，必须增加[!DNL Kinesis]的缩放因子。 目前，您可以从[!DNL Kinesis]帐户向Platform引入的最大数据量为每秒4000条记录。 要扩展并摄取更大数量的数据，请联系您的Adobe代表。
 
 ## 先决条件
 
-以下部分提供了在创建之前所需的先决条件设置的详细信息 [!DNL Kinesis] 源连接。
+以下部分提供了在创建[!DNL Kinesis]源连接之前所需的先决条件设置的详细信息。
 
 ### 设置访问策略
 
-A [!DNL Kinesis] 流需要以下权限才能创建源连接：
+[!DNL Kinesis]流需要以下权限才能创建源连接：
 
 - `GetShardIterator`
 - `GetRecords`
 - `DescribeStream`
 - `ListStreams`
 
-这些权限是通过 [!DNL Kinesis] 控制台，并在输入凭据并选择数据流后由Platform检查。
+这些权限通过[!DNL Kinesis]控制台进行排列，并在输入凭据并选择数据流后由Platform检查。
 
-下面的示例显示了创建所需的最低访问权限 [!DNL Kinesis] 源连接。
+以下示例显示了创建[!DNL Kinesis]源连接所需的最低访问权限。
 
 ```json
 {
@@ -68,11 +68,11 @@ A [!DNL Kinesis] 流需要以下权限才能创建源连接：
 | `kinesis:DescribeStream` | 一个操作，用于返回有关流的信息，包括生成分片ID所需的分片映射。 |
 | `kinesis:ListStreams` | 列出可从UI中选择的可用流时需要执行的操作。 |
 
-有关控制对的访问权限的更多信息 [!DNL Kinesis] 数据流，请参阅以下内容 [[!DNL Kinesis] 文档](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html).
+有关控制[!DNL Kinesis]数据流的访问权限的详细信息，请参阅以下[[!DNL Kinesis] 文档](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html)。
 
 ### 配置迭代器类型
 
-[!DNL Kinesis] 支持以下迭代器类型，以便您指定读取数据的顺序：
+[!DNL Kinesis]支持以下迭代器类型，允许您指定读取数据的顺序：
 
 | 迭代器类型 | 描述 |
 | ------------- | ----------- |
@@ -82,13 +82,13 @@ A [!DNL Kinesis] 流需要以下权限才能创建源连接：
 | `TRIM_HORIZON` | 从最早的数据记录开始读取数据。 |
 | `LATEST` | 从最近的数据记录开始读取数据。 |
 
-A [!DNL Kinesis] UI源当前仅支持 `TRIM_HORIZON`，而API同时支持这两者 `TRIM_HORIZON` 和 `LATEST` 作为获取数据的模式。 Platform使用的默认迭代器值 [!DNL Kinesis] 源是 `TRIM_HORIZON`.
+[!DNL Kinesis] UI源当前仅支持`TRIM_HORIZON`，而API同时支持`TRIM_HORIZON`和`LATEST`作为获取数据的模式。 Platform为[!DNL Kinesis]源使用的默认迭代器值为`TRIM_HORIZON`。
 
-有关迭代器类型的详细信息，请参阅以下内容 [[!DNL Kinesis] 文档](https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#API_GetShardIterator_RequestSyntax).
+有关迭代器类型的详细信息，请参阅以下[[!DNL Kinesis] 文档](https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#API_GetShardIterator_RequestSyntax)。
 
-## 连接 [!DNL Amazon Kinesis] 到 [!DNL Platform]
+## 将[!DNL Amazon Kinesis]连接到[!DNL Platform]
 
-以下文档提供了有关如何连接的信息 [!DNL Amazon Kinesis] 到 [!DNL Platform] 使用API或用户界面：
+以下文档提供了有关如何使用API或用户界面将[!DNL Amazon Kinesis]连接到[!DNL Platform]的信息：
 
 ### 使用API
 

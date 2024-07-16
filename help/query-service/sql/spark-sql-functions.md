@@ -15,7 +15,7 @@ ht-degree: 1%
 
 您可以使用多个内置的Spark SQL函数，通过Adobe Experience Platform查询服务扩展SQL功能。 本文档列出了查询服务支持的Spark SQL函数。
 
-有关函数的更多详细信息，包括其语法、用法和示例，请参阅 [Spark SQL函数文档](https://spark.apache.org/docs/latest/api/sql/index.html).
+有关函数的更多详细信息，包括其语法、用法和示例，请阅读[Spark SQL函数文档](https://spark.apache.org/docs/latest/api/sql/index.html)。
 
 >[!NOTE]
 >
@@ -39,7 +39,7 @@ ht-degree: 1%
 | [`atan2`](https://spark.apache.org/docs/latest/api/sql/index.html#atan2) | 返回正x轴平面与坐标给定的点之间的角度 |
 | [`avg`](https://spark.apache.org/docs/latest/api/sql/index.html#avg) | 返回平均值 |
 | [`cbrt`](https://spark.apache.org/docs/latest/api/sql/index.html#cbrt) | 返回立方根 |
-| [`ceil`](https://spark.apache.org/docs/latest/api/sql/index.html#ceil) 或 [`ceiling`](https://spark.apache.org/docs/latest/api/sql/index.html#ceiling) | 返回不大于输入值的最小整数 |
+| [`ceil`](https://spark.apache.org/docs/latest/api/sql/index.html#ceil)或[`ceiling`](https://spark.apache.org/docs/latest/api/sql/index.html#ceiling) | 返回不大于输入值的最小整数 |
 | [`conv`](https://spark.apache.org/docs/latest/api/sql/index.html#conv) | 从一个基转换到另一个基 |
 | [`corr`](https://spark.apache.org/docs/latest/api/sql/index.html#corr) | 返回数字之间的皮尔逊系数 |
 | [`cos`](https://spark.apache.org/docs/latest/api/sql/index.html#cos) | 返回余弦值 |
@@ -71,13 +71,13 @@ ht-degree: 1%
 | [`pi`](https://spark.apache.org/docs/latest/api/sql/index.html#pi) | 返回pi |
 | [`pmod`](https://spark.apache.org/docs/latest/api/sql/index.html#pmod) | 返回两个值之间的正模 |
 | [`positive`](https://spark.apache.org/docs/latest/api/sql/index.html#positive) | 返回正值 |
-| [`pow`](https://spark.apache.org/docs/latest/api/sql/index.html#pow)， [`power`](https://spark.apache.org/docs/latest/api/sql/index.html#power) | 将第一个值返回为第二个值的幂 |
+| [`pow`](https://spark.apache.org/docs/latest/api/sql/index.html#pow)，[`power`](https://spark.apache.org/docs/latest/api/sql/index.html#power) | 将第一个值返回为第二个值的幂 |
 | [`radians`](https://spark.apache.org/docs/latest/api/sql/index.html#radians) | 将值转换为弧度 |
 | [`rand`](https://spark.apache.org/docs/latest/api/sql/index.html#rand) | 返回从0到1的随机数 |
 | [`randn`](https://spark.apache.org/docs/latest/api/sql/index.html#randn) | 返回随机值 |
 | [`rint`](https://spark.apache.org/docs/latest/api/sql/index.html#rint) | 返回最接近的双精度值 |
 | [`round`](https://spark.apache.org/docs/latest/api/sql/index.html#round) | 返回最接近的舍入值 |
-| [`sign`](https://spark.apache.org/docs/latest/api/sql/index.html#sign)， [`signum`](https://spark.apache.org/docs/latest/api/sql/index.html#signum) | 返回数字的符号 |
+| [`sign`](https://spark.apache.org/docs/latest/api/sql/index.html#sign)，[`signum`](https://spark.apache.org/docs/latest/api/sql/index.html#signum) | 返回数字的符号 |
 | [`sin`](https://spark.apache.org/docs/latest/api/sql/index.html#sin) | 返回值的正弦 |
 | [`sinh`](https://spark.apache.org/docs/latest/api/sql/index.html#sinh) | 返回值的双曲正弦 |
 | [`sqrt`](https://spark.apache.org/docs/latest/api/sql/index.html#sqrt) | 返回值的平方根 |
@@ -88,13 +88,13 @@ ht-degree: 1%
 | [`tan`](https://spark.apache.org/docs/latest/api/sql/index.html#tan) | 返回值的正切 |
 | [`tanh`](https://spark.apache.org/docs/latest/api/sql/index.html#tanh) | 返回值的双曲正切 |
 | [`var_pop`](https://spark.apache.org/docs/latest/api/sql/index.html#var_pop) | 返回计算得出的总体方差 |
-| [`var_samp`](https://spark.apache.org/docs/latest/api/sql/index.html#var_samp)， [`variance`](https://spark.apache.org/docs/latest/api/sql/index.html#variance) | 返回计算的样本方差 |
+| [`var_samp`](https://spark.apache.org/docs/latest/api/sql/index.html#var_samp)，[`variance`](https://spark.apache.org/docs/latest/api/sql/index.html#variance) | 返回计算的样本方差 |
 
 ### 逻辑运算符和函数 {#logical-operators}
 
 | 运算符/函数 | 描述 |
 | ----------------- | ----------- |
-| [`!`](https://spark.apache.org/docs/latest/api/sql/index.html#_1) 或 [`not`](https://spark.apache.org/docs/latest/api/sql/index.html#not) | 逻辑非 |
+| [`!`](https://spark.apache.org/docs/latest/api/sql/index.html#_1)或[`not`](https://spark.apache.org/docs/latest/api/sql/index.html#not) | 逻辑非 |
 | [`<`](https://spark.apache.org/docs/latest/api/sql/index.html#_8) | 小于 |
 | [`<=`](https://spark.apache.org/docs/latest/api/sql/index.html#_9) | 小于或等于 |
 | [`=`](https://spark.apache.org/docs/latest/api/sql/index.html#_12) | 等于 |
@@ -126,7 +126,7 @@ ht-degree: 1%
 | [`date_sub`](https://spark.apache.org/docs/latest/api/sql/index.html#date_sub) | 从日期减去天数 |
 | [`date_trunc`](https://spark.apache.org/docs/latest/api/sql/index.html#date_trunc) | 返回截断为指定单位的日期 |
 | [`datediff`](https://spark.apache.org/docs/latest/api/sql/index.html#datediff) | 返回日期之间的天数差 |
-| [`day`](https://spark.apache.org/docs/latest/api/sql/index.html#day)， [`dayofmonth`](https://spark.apache.org/docs/latest/api/sql/index.html#dayofmonth) | 返回月中日 |
+| [`day`](https://spark.apache.org/docs/latest/api/sql/index.html#day)，[`dayofmonth`](https://spark.apache.org/docs/latest/api/sql/index.html#dayofmonth) | 返回月中日 |
 | [`dayofweek`](https://spark.apache.org/docs/latest/api/sql/index.html#dayofweek) | 返回星期几(1-7) |
 | [`dayofyear`](https://spark.apache.org/docs/latest/api/sql/index.html#dayofyear) | 返回年中哪天 |
 | [`from_unixtime`](https://spark.apache.org/docs/latest/api/sql/index.html#from_unixtime) | 以UNIX®时间返回日期 |
@@ -139,8 +139,8 @@ ht-degree: 1%
 | [`next_day`](https://spark.apache.org/docs/latest/api/sql/index.html#next_day) | 返回比输入晚的第一天 |
 | [`quarter`](https://spark.apache.org/docs/latest/api/sql/index.html#quarter) | 返回输入的季度 |
 | [`second`](https://spark.apache.org/docs/latest/api/sql/index.html#second) | 返回字符串的秒数 |
-| [`to_date`](https://spark.apache.org/docs/latest/api/sql/index.html#to_date) | 将字符串转换为日期。 **注意：** 字符串 **必须** 采用格式 `yyyy-mm-ddTHH24:MM:SS`. |
-| [`to_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#to_timestamp) | 将字符串转换为时间戳。 **注意：** 字符串 **必须** 采用格式 `yyyy-mm-ddTHH24:MM:SS`. |
+| [`to_date`](https://spark.apache.org/docs/latest/api/sql/index.html#to_date) | 将字符串转换为日期。 **注意：**&#x200B;字符串&#x200B;**必须**&#x200B;的格式为`yyyy-mm-ddTHH24:MM:SS`。 |
+| [`to_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#to_timestamp) | 将字符串转换为时间戳。 **注意：**&#x200B;字符串&#x200B;**必须**&#x200B;的格式为`yyyy-mm-ddTHH24:MM:SS`。 |
 | [`to_unix_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#to_unix_timestamp) | 将字符串转换为UNIX®时间戳 |
 | [`to_utc_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#to_utc_timestamp) | 将字符串转换为UTC时间戳 |
 | [`trunc`](https://spark.apache.org/docs/latest/api/sql/index.html#trunc) | 截断日期 |
@@ -209,16 +209,16 @@ ht-degree: 1%
 | [`base64`](https://spark.apache.org/docs/latest/api/sql/index.html#base64) | 将参数更改为base64字符串 |
 | [`bin`](https://spark.apache.org/docs/latest/api/sql/index.html#bin) | 将参数更改为二进制值 |
 | [`bit_length`](https://spark.apache.org/docs/latest/api/sql/index.html#bit_length) | 返回位长度 |
-| [`char`](https://spark.apache.org/docs/latest/api/sql/index.html#char)， [`chr`](https://spark.apache.org/docs/latest/api/sql/index.html#chr) | 返回ASCII字符 |
-| [`char_length`](https://spark.apache.org/docs/latest/api/sql/index.html#char_length)， [`character_length`](https://spark.apache.org/docs/latest/api/sql/index.html#character_length) | 返回字符串长度 |
+| [`char`](https://spark.apache.org/docs/latest/api/sql/index.html#char)，[`chr`](https://spark.apache.org/docs/latest/api/sql/index.html#chr) | 返回ASCII字符 |
+| [`char_length`](https://spark.apache.org/docs/latest/api/sql/index.html#char_length)，[`character_length`](https://spark.apache.org/docs/latest/api/sql/index.html#character_length) | 返回字符串长度 |
 | [`crc32`](https://spark.apache.org/docs/latest/api/sql/index.html#crc32) | 返回循环冗余检查值 |
 | [`degrees`](https://spark.apache.org/docs/latest/api/sql/index.html#degrees) | 将弧度转换为度 |
 | [`format_number`](https://spark.apache.org/docs/latest/api/sql/index.html#format_number) | 更改号码的格式 |
-| [`from_json`](https://spark.apache.org/docs/latest/api/sql/index.html#from_json)， [`get_json_object`](https://spark.apache.org/docs/latest/api/sql/index.html#get_json_object) | 从JSON获取数据 |
+| [`from_json`](https://spark.apache.org/docs/latest/api/sql/index.html#from_json)，[`get_json_object`](https://spark.apache.org/docs/latest/api/sql/index.html#get_json_object) | 从JSON获取数据 |
 | [`hash`](https://spark.apache.org/docs/latest/api/sql/index.html#hash) | 返回哈希值 |
 | [`hex`](https://spark.apache.org/docs/latest/api/sql/index.html#hex) | 将参数转换为十六进制值 |
 | [`initcap`](https://spark.apache.org/docs/latest/api/sql/index.html#initcap) | 将字符串更改为字首大写 |
-| [`lcase`](https://spark.apache.org/docs/latest/api/sql/index.html#lcase)， [`lower`](https://spark.apache.org/docs/latest/api/sql/index.html#lower) | 将字符串更改为全部小写 |
+| [`lcase`](https://spark.apache.org/docs/latest/api/sql/index.html#lcase)，[`lower`](https://spark.apache.org/docs/latest/api/sql/index.html#lower) | 将字符串更改为全部小写 |
 | [`lpad`](https://spark.apache.org/docs/latest/api/sql/index.html#lpad) | 垫住线条的左侧 |
 | [`map`](https://spark.apache.org/docs/latest/api/sql/index.html#map) | 创建映射 |
 | [`map_from_arrays`](https://spark.apache.org/docs/latest/api/sql/index.html#map_from_arrays) | 从数组创建映射 |
@@ -226,15 +226,15 @@ ht-degree: 1%
 | [`md5`](https://spark.apache.org/docs/latest/api/sql/index.html#md5) | 返回md5值 |
 | [`rpad`](https://spark.apache.org/docs/latest/api/sql/index.html#rpad) | 垫住线条的右侧 |
 | [`rtrim`](https://spark.apache.org/docs/latest/api/sql/index.html#rtrim) | 删除尾随空格 |
-| [`sha`](https://spark.apache.org/docs/latest/api/sql/index.html#sha)， [`sha1`](https://spark.apache.org/docs/latest/api/sql/index.html#sha1) | 返回SHA1值 |
+| [`sha`](https://spark.apache.org/docs/latest/api/sql/index.html#sha)，[`sha1`](https://spark.apache.org/docs/latest/api/sql/index.html#sha1) | 返回SHA1值 |
 | [`sha2`](https://spark.apache.org/docs/latest/api/sql/index.html#sha2) | 返回SHA2值 |
 | [`soundex`](https://spark.apache.org/docs/latest/api/sql/index.html#soundex) | 返回soundex代码 |
 | [`stack`](https://spark.apache.org/docs/latest/api/sql/index.html#stack) | 将值分隔为行 |
-| [`substr`](https://spark.apache.org/docs/latest/api/sql/index.html#substr)， [`substring`](https://spark.apache.org/docs/latest/api/sql/index.html#substring) | 返回子字符串 |
+| [`substr`](https://spark.apache.org/docs/latest/api/sql/index.html#substr)，[`substring`](https://spark.apache.org/docs/latest/api/sql/index.html#substring) | 返回子字符串 |
 | [`to_json`](https://spark.apache.org/docs/latest/api/sql/index.html#to_json) | 返回JSON字符串 |
 | [`translate`](https://spark.apache.org/docs/latest/api/sql/index.html#translate) | 替换字符串中的值 |
 | [`trim`](https://spark.apache.org/docs/latest/api/sql/index.html#trim) | 删除前导和尾随字符 |
-| [`ucase`](https://spark.apache.org/docs/latest/api/sql/index.html#ucase)， [`upper`](https://spark.apache.org/docs/latest/api/sql/index.html#upper) | 将字符串更改为全部大写 |
+| [`ucase`](https://spark.apache.org/docs/latest/api/sql/index.html#ucase)，[`upper`](https://spark.apache.org/docs/latest/api/sql/index.html#upper) | 将字符串更改为全部大写 |
 | [`unbase64`](https://spark.apache.org/docs/latest/api/sql/index.html#unbase64) | 将base64字符串转换为二进制 |
 | [`unhex`](https://spark.apache.org/docs/latest/api/sql/index.html#unhex) | 将十六进制转换为二进制 |
 | [`uuid`](https://spark.apache.org/docs/latest/api/sql/index.html#uuid) | 返回UUID |
@@ -250,19 +250,19 @@ ht-degree: 1%
 | [`concat_ws`](https://spark.apache.org/docs/latest/api/sql/index.html#concat_ws) | 与分隔符连接 |
 | [`count`](https://spark.apache.org/docs/latest/api/sql/index.html#count) | 返回行的总计数 |
 | [`decode`](https://spark.apache.org/docs/latest/api/sql/index.html#decode) | 使用字符集解码 |
-| [`elt`](https://spark.apache.org/docs/latest/api/sql/index.html#elt) | 返回 [`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n)输入 |
+| [`elt`](https://spark.apache.org/docs/latest/api/sql/index.html#elt) | 返回第[`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n)个输入 |
 | [`encode`](https://spark.apache.org/docs/latest/api/sql/index.html#encode) | 使用字符集进行编码 |
-| [`first`](https://spark.apache.org/docs/latest/api/sql/index.html#first)， [`first_value`](https://spark.apache.org/docs/latest/api/sql/index.html#first_value) | 返回第一个值 |
+| [`first`](https://spark.apache.org/docs/latest/api/sql/index.html#first)，[`first_value`](https://spark.apache.org/docs/latest/api/sql/index.html#first_value) | 返回第一个值 |
 | [`grouping`](https://spark.apache.org/docs/latest/api/sql/index.html#grouping) | 指示列是否已分组 |
 | [`grouping_id`](https://spark.apache.org/docs/latest/api/sql/index.html#grouping_id) | 返回分组级别 |
 | [`instr`](https://spark.apache.org/docs/latest/api/sql/index.html#instr) | 返回从1开始的字符出现索引 |
 | [`json_tuple`](https://spark.apache.org/docs/latest/api/sql/index.html#json_tuple) | 从JSON输入返回元组 |
-| [`lag`](https://spark.apache.org/docs/latest/api/sql/index.html#lag)， [`lead`](https://spark.apache.org/docs/latest/api/sql/index.html#lead) | 返回偏移之前的值 |
-| [`last`](https://spark.apache.org/docs/latest/api/sql/index.html#last)， [`last_value`](https://spark.apache.org/docs/latest/api/sql/index.html#last_value) | 返回最后一个值 |
-| [`left`](https://spark.apache.org/docs/latest/api/sql/index.html#left) | 返回第一个 [`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n) 个字符 |
+| [`lag`](https://spark.apache.org/docs/latest/api/sql/index.html#lag)，[`lead`](https://spark.apache.org/docs/latest/api/sql/index.html#lead) | 返回偏移之前的值 |
+| [`last`](https://spark.apache.org/docs/latest/api/sql/index.html#last)，[`last_value`](https://spark.apache.org/docs/latest/api/sql/index.html#last_value) | 返回最后一个值 |
+| [`left`](https://spark.apache.org/docs/latest/api/sql/index.html#left) | 返回前[`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n)个字符 |
 | [`length`](https://spark.apache.org/docs/latest/api/sql/index.html#length) | 返回字符串的长度 |
 | [`levenshtein`](https://spark.apache.org/docs/latest/api/sql/index.html#levenshtein) | 返回字符串之间的列文氏距离 |
-| [`locate`](https://spark.apache.org/docs/latest/api/sql/index.html#locate)， [`position`](https://spark.apache.org/docs/latest/api/sql/index.html#position) | 返回子字符串第一次出现的位置 |
+| [`locate`](https://spark.apache.org/docs/latest/api/sql/index.html#locate)，[`position`](https://spark.apache.org/docs/latest/api/sql/index.html#position) | 返回子字符串第一次出现的位置 |
 | [`map_concat`](https://spark.apache.org/docs/latest/api/sql/index.html#map_concat) | 连接映射 |
 | [`map_keys`](https://spark.apache.org/docs/latest/api/sql/index.html#map_keys) | 返回映射的键 |
 | [`map_values`](https://spark.apache.org/docs/latest/api/sql/index.html#map_values) | 返回映射的值 |
@@ -285,12 +285,12 @@ ht-degree: 1%
 | [`shiftright`](https://spark.apache.org/docs/latest/api/sql/index.html#shiftright) | 带符号的右位偏移 |
 | [`shiftrightunsigned`](https://spark.apache.org/docs/latest/api/sql/index.html#shiftrightunsigned) | 无符号位右移 |
 | [`size`](https://spark.apache.org/docs/latest/api/sql/index.html#size) | 返回数组的大小 |
-| [`space`](https://spark.apache.org/docs/latest/api/sql/index.html#space) | 返回字符串，带有 [`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n) 空间 |
+| [`space`](https://spark.apache.org/docs/latest/api/sql/index.html#space) | 返回包含[`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n)个空格的字符串 |
 | [`split`](https://spark.apache.org/docs/latest/api/sql/index.html#split) | 拆分字符串 |
 | [`substring_index`](https://spark.apache.org/docs/latest/api/sql/index.html#substring_index) | 返回子字符串的索引 |
 | [`window`](https://spark.apache.org/docs/latest/api/sql/index.html#window) | 窗口 |
 | [`xpath`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath) | 解析XML节点 |
-| [`xpath_double`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath_double)， [`xpath_number`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath_number) | 解析XML节点以获取双精度类型 |
+| [`xpath_double`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath_double)，[`xpath_number`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath_number) | 解析XML节点以获取双精度类型 |
 | [`xpath_float`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath_float) | 解析浮点的XML节点 |
 | [`xpath_int`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath_int) | 解析XML节点的整数 |
 | [`xpath_long`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath_long) | 长时间解析XML节点 |
@@ -303,7 +303,7 @@ ht-degree: 1%
 | -------- | ----------- |
 | [`current_database`](https://spark.apache.org/docs/latest/api/sql/index.html#current_database) | 返回当前数据库 |
 | [`current_date`](https://spark.apache.org/docs/latest/api/sql/index.html#current_date) | 返回当前日期 |
-| [`current_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#current_timestamp)， [`now`](https://spark.apache.org/docs/latest/api/sql/index.html#now) | 返回当前时间戳 |
+| [`current_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#current_timestamp)，[`now`](https://spark.apache.org/docs/latest/api/sql/index.html#now) | 返回当前时间戳 |
 
 ### 高阶函数 {#higher-order}
 

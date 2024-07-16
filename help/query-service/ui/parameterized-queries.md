@@ -20,15 +20,15 @@ ht-degree: 11%
 
 ## 先决条件
 
-在继续本指南之前，请阅读 [查询编辑器UI指南](./user-guide.md). 查询编辑器指南提供了有关如何在Experience Platform用户界面中编写、验证和运行客户体验数据查询的详细信息。
+在继续本指南之前，请阅读[查询编辑器UI指南](./user-guide.md)。 查询编辑器指南提供了有关如何在Experience Platform用户界面中编写、验证和运行客户体验数据查询的详细信息。
 
 >[!NOTE]
 >
->在Adobe Experience Platform UI中，仅在内联模板的父级支持参数化查询。 这意味着参数化查询仅在原始模板中使用时才有效。 子模板必须是静态模板，不能具有动态参数。 请参阅 [内联模板文档](../key-concepts/inline-templates.md) 了解更多信息。
+>在Adobe Experience Platform UI中，仅在内联模板的父级支持参数化查询。 这意味着参数化查询仅在原始模板中使用时才有效。 子模板必须是静态模板，不能具有动态参数。 有关详细信息，请参阅[内联模板文档](../key-concepts/inline-templates.md)。
 
 ## 参数化查询语法 {#syntax}
 
-参数化查询使用格式 `'$YOUR_PARAMETER_NAME'` 可以使用点表示法连接和。 下面显示了使用参数化查询的示例SQL语句。
+参数化查询使用格式`'$YOUR_PARAMETER_NAME'`，并且可以使用点表示法连接。 下面显示了使用参数化查询的示例SQL语句。
 
 ```sql
 INSERT INTO
@@ -45,38 +45,38 @@ SELECT
 
 ## 创建参数化查询 {#create}
 
-要在UI中创建参数化查询，请导航到查询编辑器。 请参阅以下部分 [访问查询编辑器](./user-guide.md#accessing-query-editor) 以获取更多说明。
+要在UI中创建参数化查询，请导航到查询编辑器。 有关更多说明，请参阅[访问查询编辑器](./user-guide.md#accessing-query-editor)一节。
 
-在文本编辑器中使用 `'$'` 序言将查询参数输入到查询中。接下来，选择 **[!UICONTROL 查询参数]** 选项卡 [!UICONTROL 控制台] 添加键的缺失值。 如果您忽略向任何所需键添加值，则无法执行查询。 警报图标(![警报图标。](../images/ui/parameterized-queries/alert-icon.png))显示在Query Parameters部分的任何空值旁边 [!UICONTROL 值] 输入字段。
+在文本编辑器中使用 `'$'` 序言将查询参数输入到查询中。接下来，选择[!UICONTROL 控制台]旁边的&#x200B;**[!UICONTROL 查询参数]**&#x200B;选项卡，为键添加缺少的值。 如果您忽略向任何所需键添加值，则无法执行查询。 警报图标(![警报图标。](../images/ui/parameterized-queries/alert-icon.png))出现在“查询参数”部分的任何空[!UICONTROL 值]输入字段旁边。
 
 >[!NOTE]
 >
 >如果查询不采用参数，则仍可在查询编辑器中输入不必要的参数。 查询编辑器会忽略所有不必要的键值对，并且这些键值对查询的执行或结果没有影响。
 
-![带有参数化查询的查询编辑器和高亮显示的查询参数部分。](../images/ui/parameterized-queries/parameterized-query.png)
+![带有参数化查询的查询编辑器以及高亮显示的查询参数节。](../images/ui/parameterized-queries/parameterized-query.png)
 
 >[!TIP]
 >
->更改选项卡自 [!UICONTROL 查询参数] 到 [!UICONTROL 控制台] 查看查询的控制台输出。
+>将选项卡从[!UICONTROL 查询参数]更改为[!UICONTROL 控制台]以查看查询的控制台输出。
 
 ## 使用查询日志详细信息检查参数值 {#check-parameter-values}
 
-不能在模板中保存参数，因为使用的值不是永久性的。 但是，您可以检查 [!UICONTROL 查询日志详细信息] 页面查找查询运行中使用的参数值。 在这种情况下，日志不会指示查询是参数化查询。 请参阅 [查询日志文档](./query-logs.md) 以获取有关如何查找所用值的说明。
+不能在模板中保存参数，因为使用的值不是永久性的。 但是，您可以检查[!UICONTROL 查询日志详细信息]页面以查找查询运行中使用的参数值。 在这种情况下，日志不会指示查询是参数化查询。 有关如何查找所用值的说明，请参阅[查询日志文档](./query-logs.md)。
 
-![查询日志视图，其参数化查询的SQL在详细信息部分中突出显示。](../images/ui/parameterized-queries/parameterized-query-logs.png)
+![查询日志视图，其参数化查询的SQL在详细信息节中突出显示。](../images/ui/parameterized-queries/parameterized-query-logs.png)
 
 <!-- improve screenshot above ^ I am waiting for a scheduled run to complete -->
 
 ## 计划参数化查询 {#schedule}
 
-当您计划参数化查询时，将保存参数值。 要计划参数化查询，请按照指南中所述的典型过程创建计划查询 [创建查询计划](./query-schedules.md#create-schedule)，然后输入要在查询运行中使用的参数值。 此UI部分仅针对参数化查询显示。 请参阅以下部分 [为计划的参数化查询设置参数](./query-schedules.md#set-parameters) 以获取特定说明。
+当您计划参数化查询时，将保存参数值。 要计划参数化查询，请按照指南中介绍的典型过程创建计划查询[创建查询计划](./query-schedules.md#create-schedule)，然后输入要在查询运行中使用的参数值。 此UI部分仅针对参数化查询显示。 有关具体说明，请参阅有关[为计划的参数化查询](./query-schedules.md#set-parameters)设置参数的章节。
 
 >[!TIP]
 >
->查询服务通过使用参数化查询支持预准备语句。 请参阅 [预准备语句语法指南](../sql/prepared-statements.md) 有关涉及的SQL语法的详细信息。
+>查询服务通过使用参数化查询支持预准备语句。 有关涉及的SQL语法的详细信息，请参阅[预准备语句语法指南](../sql/prepared-statements.md)。
 
 ## 后续步骤
 
 通过阅读本文档，您已了解如何在Adobe Experience Platform UI中参数化查询并在计划的查询运行中使用它们。 本文档还重点说明了如何检查日志中查询执行中使用的参数值。
 
-接下来，建议您阅读 [监视计划查询](./monitor-queries.md) 以通过Platform UI更好地了解所有查询作业的状态。
+接下来，建议您阅读有关[监视计划查询](./monitor-queries.md)的指南，以便通过Platform UI更好地了解所有查询作业的状态。

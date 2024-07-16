@@ -4,7 +4,7 @@ description: 了解如何在Reactor API中调用/audit_events端点。
 exl-id: 59cd58dc-4085-47b7-846f-d3937740dd9b
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '259'
+source-wordcount: '254'
 ht-degree: 3%
 
 ---
@@ -13,11 +13,11 @@ ht-degree: 3%
 
 >[!WARNING]
 >
->实施 `/audit_events` 端点在添加、删除和重新加工特征时处于动态变化状态。
+>`/audit_events`终结点的实现在添加、删除和重新处理功能时处于非活动状态。
 
-审核事件是对Reactor API中的其他资源进行特定更改的记录，在作出更改时生成。 这些是可通过使用订阅的系统事件 [callback](./callbacks.md). 此 `/audit_events` reactor API中的端点允许您以编程方式管理体验应用程序中的审核事件。
+审核事件是对Reactor API中的另一个资源进行特定更改的记录，在做出更改时生成。 这些是可通过使用[回调](./callbacks.md)订阅的系统事件。 Reactor API中的`/audit_events`端点允许您以编程方式管理体验应用程序中的审核事件。
 
-审计事件的结构形式为 `{RESOURCE_TYPE}.{EVENT}`，例如 `build.created` 或 `rule.updated`.
+审核事件的结构形式为`{RESOURCE_TYPE}.{EVENT}`，如`build.created`或`rule.updated`。
 
 资源类型可以是以下任一类型：
 
@@ -39,11 +39,11 @@ ht-degree: 3%
 
 ## 快速入门
 
-本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [快速入门指南](../getting-started.md) 有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续之前，请查看[快速入门指南](../getting-started.md)，以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索审核事件列表 {#list}
 
-您可以通过对以下网站发出审核请求，检索贵组织拥有的所有资产的GET事件列表： `/audit_events` 端点。
+通过向`/audit_events`端点发出GET请求，您可以检索组织拥有的所有属性的审核事件列表。
 
 **API格式**
 
@@ -170,7 +170,7 @@ GET /audit_events/{AUDIT_EVENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `AUDIT_EVENT_ID` | 此 `id` 要查找的审核事件的日志。 |
+| `AUDIT_EVENT_ID` | 要查找的审核事件的`id`。 |
 
 {style="table-layout:auto"}
 

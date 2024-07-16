@@ -19,7 +19,7 @@ ht-degree: 64%
 * 数据生命周期UI {#ui}
    * [概述](./ui/overview.md)
    * [自动数据集过期](./ui/dataset-expiration.md)
-   * [（测试版）删除记录](./ui/record-delete.md)
+   * [(Beta)删除记录](./ui/record-delete.md)
    * [浏览数据生命周期工单](./ui/browse.md)
 * 数据卫生API {#api}
    * [概述](./api/overview.md)

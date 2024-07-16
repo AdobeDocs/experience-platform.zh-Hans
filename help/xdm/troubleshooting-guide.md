@@ -13,45 +13,45 @@ ht-degree: 0%
 
 # XDM系统故障排除指南
 
-本文档提供有关以下内容的常见问题解答： [!DNL Experience Data Model] Adobe Experience Platform中的(XDM)和XDM系统，包括常见错误的疑难解答指南。 有关其他Platform服务的问题和疑难解答，请参阅 [Experience Platform疑难解答指南](../landing/troubleshooting.md).
+本文档提供有关Adobe Experience Platform中[!DNL Experience Data Model] (XDM)和XDM系统的常见问题解答，包括常见错误的疑难解答指南。 有关其他Platform服务的问题和疑难解答，请参阅[Experience Platform疑难解答指南](../landing/troubleshooting.md)。
 
-**[!DNL Experience Data Model](XDM)** 是一个开源规范，为客户体验管理定义了标准化的架构。 用于以下项的方法 [!DNL Experience Platform] 已构建， **XDM系统**，可操作 [!DNL Experience Data Model] 供使用的架构 [!DNL Platform] 服务。 此 **[!DNL Schema Registry]** 提供用户界面和RESTful API以访问 **[!DNL Schema Library]** 范围 [!DNL Experience Platform]. 请参阅 [XDM文档](home.md) 以了解更多信息。
+**[!DNL Experience Data Model](XDM)**&#x200B;是一个开源规范，它定义了用于客户体验管理的标准化架构。 生成[!DNL Experience Platform]的方法&#x200B;**XDM系统**&#x200B;可使[!DNL Experience Data Model]架构可操作以供[!DNL Platform]服务使用。 **[!DNL Schema Registry]**&#x200B;提供用户界面和RESTful API以访问[!DNL Experience Platform]中的&#x200B;**[!DNL Schema Library]**。 有关详细信息，请参阅[XDM文档](home.md)。
 
 ## 常见问题解答
 
-以下是有关XDM系统和使用的常见问题解答列表。 [!DNL Schema Registry] API。
+以下是有关XDM系统和[!DNL Schema Registry] API用法的常见问题解答列表。
 
 ### 如何将字段添加到架构？
 
 您可以使用架构字段组向架构添加字段。 每个字段组都与一个或多个类兼容，允许字段组用于实现这些兼容类之一的任何架构中。 虽然Adobe Experience Platform为多个行业字段组提供了自己的预定义字段，但您可以通过使用API或用户界面创建自定义字段组，将自己的字段添加到架构中。
 
-有关在中创建字段组的详细信息 [!DNL Schema Registry] API，请参见 [字段组端点指南](api/field-groups.md#create). 如果您使用的是UI，请参阅 [架构编辑器教程](./tutorials/create-schema-ui.md).
+有关在[!DNL Schema Registry] API中创建字段组的详细信息，请参阅[字段组终结点指南](api/field-groups.md#create)。 如果您使用的是用户界面，请参阅[架构编辑器教程](./tutorials/create-schema-ui.md)。
 
 ### 与数据类型相比，字段组的最佳用途是什么？
 
-[字段组](./schema/composition.md#field-group) 是定义架构中一个或多个字段的组件。 字段组强制实施其字段在架构层次结构中的显示方式，因此它们包含的每个架构都具有相同的结构。 字段组仅与由其标识的特定类兼容 `meta:intendedToExtend` 属性。
+[字段组](./schema/composition.md#field-group)是定义架构中一个或多个字段的组件。 字段组强制实施其字段在架构层次结构中的显示方式，因此它们包含的每个架构都具有相同的结构。 字段组仅与由其`meta:intendedToExtend`属性标识的特定类兼容。
 
-[数据类型](./schema/composition.md#data-type) 还可以为架构提供一个或多个字段。 但是，与字段组不同，数据类型不受特定类的约束。 这使得数据类型成为描述通用数据结构的更灵活的选项，这些结构可以在具有不同类的多个架构中重用。
+[数据类型](./schema/composition.md#data-type)还可以为架构提供一个或多个字段。 但是，与字段组不同，数据类型不受特定类的约束。 这使得数据类型成为描述通用数据结构的更灵活的选项，这些结构可以在具有不同类的多个架构中重用。
 
 ### 架构的唯一ID是什么？
 
-全部 [!DNL Schema Registry] 资源（架构、字段组、数据类型、类）具有用作唯一ID的URI，以供参考和查找。 在API中查看架构时，可以在顶级找到它 `$id` 和 `meta:altId` 属性。
+所有[!DNL Schema Registry]资源（架构、字段组、数据类型、类）都有一个URI，该URI用作唯一ID以供参考和查找。 在API中查看架构时，可在顶级`$id`和`meta:altId`属性中找到该架构。
 
-欲了解更多信息，请参见 [资源识别](api/getting-started.md#resource-identification) 中的部分 [!DNL Schema Registry] API指南。
+有关详细信息，请参阅[!DNL Schema Registry] API指南中的[资源标识](api/getting-started.md#resource-identification)部分。
 
 ### 架构何时开始阻止重大更改？
 
-只要从未在创建数据集中使用架构或启用架构以用于中，就可以对架构进行重大更改 [[!DNL Real-Time Customer Profile]](../profile/home.md). 在数据集创建中使用架构或启用架构以便与一起使用后 [!DNL Real-Time Customer Profile]，的规则 [架构演变](schema/composition.md#evolution) 被系统严格执行。
+对架构进行重大更改时，前提是从未在创建数据集中使用过该架构，或者未启用该架构以便在[[!DNL Real-Time Customer Profile]](../profile/home.md)中使用。 一旦在数据集创建中使用了某个架构或启用了与[!DNL Real-Time Customer Profile]一起使用，系统就会严格实施[架构演变](schema/composition.md#evolution)的规则。
 
 ### 长字段类型的最大大小是多少？
 
-长字段类型是一个整数，最大大小为53(+1)位，其潜在范围介于 — 9007199254740992和9007199254740992之间。 这是由于JSON的JavaScript实施表示长整数的方式存在限制。
+长字段类型是一个整数，最大大小为53(+1)位，其潜在范围介于 — 9007199254740992和9007199254740992之间。 这是由于JavaScript的JSON实施表示长整数的方式存在限制。
 
-有关字段类型的更多信息，请参阅文档： [XDM字段类型约束](./schema/field-constraints.md).
+有关字段类型的详细信息，请参阅有关[XDM字段类型约束](./schema/field-constraints.md)的文档。
 
 ### 如何定义架构的身份？
 
-在 [!DNL Experience Platform]，身份用于标识主题（通常是个人），而不管所解释的数据源是什么。 它们通过在架构中将关键字段标记为“标识”来定义。 常用的身份字段包括电子邮件地址、电话号码、 [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html)、 CRM ID和其他唯一ID字段。
+在[!DNL Experience Platform]中，无论解释的数据源如何，标识都用于标识主题（通常是个人）。 它们通过在架构中将关键字段标记为“标识”来定义。 身份识别的常用字段包括电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html)、CRM ID和其他唯一ID字段。
 
 可使用API或用户界面将字段标记为标识。
 
@@ -61,48 +61,48 @@ ht-degree: 0%
 
 身份描述符是通过POST对/descriptors端点的请求创建的。 如果成功，您将收到HTTP状态201（已创建）和一个包含新描述符详细信息的响应对象。
 
-有关在API中创建身份描述符的更多详细信息，请参阅上的文档 [描述符](api/descriptors.md) 中的部分 [!DNL Schema Registry] 开发人员指南。
+有关在API中创建身份描述符的更多详细信息，请参阅[!DNL Schema Registry]开发人员指南中[描述符](api/descriptors.md)部分的文档。
 
 #### 在UI中定义身份
 
-在架构编辑器中打开架构后，选择 **[!UICONTROL 结构]** 您希望标记为标识的编辑器部分。 下 **[!UICONTROL 字段属性]** 在右侧，选择 **[!UICONTROL 标识]** 复选框。
+在架构编辑器中打开架构后，选择该编辑器的&#x200B;**[!UICONTROL 结构]**&#x200B;部分中要标记为标识的字段。 在右侧的&#x200B;**[!UICONTROL 字段属性]**&#x200B;下，选中&#x200B;**[!UICONTROL 标识]**&#x200B;复选框。
 
-有关在UI中管理身份的详细信息，请参阅 [定义标识字段](./tutorials/create-schema-ui.md#identity-field) 架构编辑器教程中的部分。
+有关在UI中管理标识的更多详细信息，请参阅架构编辑器教程中[定义标识字段](./tutorials/create-schema-ui.md#identity-field)部分的相关部分。
 
 ### 我的架构是否需要主身份？
 
-主身份是可选的，因为架构可能为零个或一个。 但是，架构必须具有主标识，才能启用架构以便用于 [!DNL Real-Time Customer Profile]. 请参阅 [身份](./tutorials/create-schema-ui.md#identity-field) 架构编辑器教程的部分以了解更多信息。
+主身份是可选的，因为架构可能为零个或一个。 但是，架构必须具有主标识，才能启用架构以在[!DNL Real-Time Customer Profile]中使用。 有关详细信息，请参阅架构编辑器教程中的[标识](./tutorials/create-schema-ui.md#identity-field)部分。
 
-### 如何启用架构以便在中使用 [!DNL Real-Time Customer Profile]？
+### 如何启用架构以在[!DNL Real-Time Customer Profile]中使用？
 
-已启用架构以便在 [[!DNL Real-Time Customer Profile]](../profile/home.md) 通过在 `meta:immutableTags` 模式的属性。 启用架构以用于 [!DNL Profile] 可使用API或用户界面完成。
+通过在架构的`meta:immutableTags`属性中添加“union”标记，启用架构以便在[[!DNL Real-Time Customer Profile]](../profile/home.md)中使用。 可以使用API或用户界面启用用于[!DNL Profile]的架构。
 
-#### 为启用现有架构 [!DNL Profile] 使用API
+#### 使用API启用[!DNL Profile]的现有架构
 
-发出PATCH请求以更新架构并添加 `meta:immutableTags` 特性作为包含“union”值的数组。 如果更新成功，响应将显示更新的架构，该架构现在包含合并标记。
+发出PATCH请求以更新架构，并将`meta:immutableTags`属性添加为包含值“union”的数组。 如果更新成功，响应将显示更新的架构，该架构现在包含合并标记。
 
-有关使用API启用架构以便在中使用的更多信息 [!DNL Real-Time Customer Profile]，请参见 [联合](./api/unions.md) 文档 [!DNL Schema Registry] 开发人员指南。
+有关使用API启用架构以在[!DNL Real-Time Customer Profile]中使用的详细信息，请参阅[!DNL Schema Registry]开发人员指南的[联合](./api/unions.md)文档。
 
-#### 为启用现有架构 [!DNL Profile] 使用UI
+#### 正在使用用户界面启用[!DNL Profile]的现有架构
 
-在 [!DNL Experience Platform]，选择 **[!UICONTROL 架构]** 在左侧导航中，从架构列表中选择要启用的架构的名称。 然后，在编辑器的右侧下 **[!UICONTROL 架构属性]**，选择 **[!UICONTROL 个人资料]** 以将其打开。
+在[!DNL Experience Platform]中，在左侧导航中选择&#x200B;**[!UICONTROL 架构]**，然后从架构列表中选择要启用的架构的名称。 然后，在编辑器的右侧&#x200B;**[!UICONTROL 架构属性]**&#x200B;下，选择&#x200B;**[!UICONTROL 配置文件]**&#x200B;以将其打开。
 
 
-有关更多信息，请参阅以下部分： [在实时客户档案中使用](./tutorials/create-schema-ui.md#profile) 在 [!UICONTROL 架构编辑器] 教程。
+有关详细信息，请参阅[!UICONTROL 架构编辑器]教程中有关[在实时客户个人资料中使用](./tutorials/create-schema-ui.md#profile)的部分。
 
 ### 能否直接编辑合并架构？
 
 合并模式是只读的，由系统自动生成。 不能直接编辑它们。 在将“union”标记添加到实现特定类的架构时，会为该类创建联合架构。
 
-有关XDM中合并的更多信息，请参见 [联合](./api/unions.md) 中的部分 [!DNL Schema Registry] API指南。
+有关XDM中联合的更多信息，请参阅[!DNL Schema Registry] API指南中的[联合](./api/unions.md)部分。
 
 ### 如何格式化数据文件以将数据摄取到我的架构中？
 
-[!DNL Experience Platform] 接受以下任一位置的数据文件： [!DNL Parquet] 或JSON格式。 这些文件的内容必须符合数据集引用的架构。 有关数据文件摄取最佳实践的详细信息，请参阅 [批量摄取概述](../ingestion/home.md).
+[!DNL Experience Platform]接受[!DNL Parquet]或JSON格式的数据文件。 这些文件的内容必须符合数据集引用的架构。 有关数据文件引入最佳实践的详细信息，请参阅[批次引入概述](../ingestion/home.md)。
 
 ## 错误和故障排除
 
-以下是使用时可能遇到的错误消息列表 [!DNL Schema Registry] API。
+以下是使用[!DNL Schema Registry] API时可能遇到的错误消息列表。
 
 ### 未找到资源
 
@@ -125,7 +125,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->根据所检索的资源类型，此错误可能使用以下任一选项 `type` URI：
+>根据正在检索的资源类型，此错误可以使用以下`type`个URI中的任意一个：
 >
 >* `http://ns.adobe.com/aep/errors/XDM-1010-404`
 >* `http://ns.adobe.com/aep/errors/XDM-1011-404`
@@ -136,7 +136,7 @@ ht-degree: 0%
 >* `http://ns.adobe.com/aep/errors/XDM-1016-404`
 >* `http://ns.adobe.com/aep/errors/XDM-1017-404`
 
-有关在API中构建查找路径的更多信息，请参阅 [容器](./api/getting-started.md#container) 和 [资源识别](api/getting-started.md#resource-identification) 中的部分 [!DNL Schema Registry] 开发人员指南。
+有关在API中构造查找路径的更多信息，请参阅[!DNL Schema Registry]开发人员指南中的[容器](./api/getting-started.md#container)和[资源标识](api/getting-started.md#resource-identification)部分。
 
 ### 标题不唯一
 
@@ -180,7 +180,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->根据命名空间错误的特定性质，此错误可能使用以下任一选项 `type` URI以及不同的消息详细信息：
+>根据命名空间错误的特定性质，此错误可以使用以下`type`个URI中的任意一个，以及不同的消息详细信息：
 >
 >* `http://ns.adobe.com/aep/errors/XDM-1020-400`
 >* `http://ns.adobe.com/aep/errors/XDM-1021-400`
@@ -211,24 +211,24 @@ ht-degree: 0%
 }
 ```
 
-中的GET请求 [!DNL Schema Registry] API需要 `Accept` 标头，以便系统确定如何设置响应的格式。 当需要时，会发生此错误 `Accept` 标头无效或缺失。
+[!DNL Schema Registry] API中的GET请求需要`Accept`标头，以便系统确定如何设置响应的格式。 当必需的`Accept`标头无效或缺少时，会发生此错误。
 
-根据您使用的端点， `detailed-message` 属性指明有效的 `Accept` 标头应看起来像是一个成功的响应。 确保您已正确输入 `Accept` 在重试之前，尝试发出的API请求兼容的标头。
+根据您使用的端点，`detailed-message`属性指示有效的`Accept`标头应是什么样的，才能获得成功的响应。 在重试之前，请确保已正确输入与尝试发出的API请求兼容的`Accept`标头。
 
 >[!NOTE]
 >
->根据所使用的端点，此错误可能使用以下任一项 `type` URI：
+>根据正在使用的端点，此错误可以使用以下`type`个URI中的任意一个：
 >
 >* `http://ns.adobe.com/aep/errors/XDM-1006-400`
 >* `http://ns.adobe.com/aep/errors/XDM-1007-400`
 >* `http://ns.adobe.com/aep/errors/XDM-1008-400`
 >* `http://ns.adobe.com/aep/errors/XDM-1009-400`
 
-有关不同API请求的兼容“接受”标头的列表，请参阅 [架构注册开发人员指南](./api/overview.md).
+有关不同API请求的兼容“接受”标头的列表，请参阅[架构注册表开发人员指南](./api/overview.md)中相应章节。
 
-### [!DNL Real-Time Customer Profile] 错误
+### [!DNL Real-Time Customer Profile]个错误
 
-以下错误消息与启用架构所涉及的操作相关联 [!DNL Real-Time Customer Profile]. 请参阅 [联合](./api/unions.md) 中的部分 [!DNL Schema Registry] API指南，以了解更多信息。
+以下错误消息与启用[!DNL Real-Time Customer Profile]的架构所涉及的操作相关联。 有关详细信息，请参阅[!DNL Schema Registry] API指南中的[联合](./api/unions.md)部分。
 
 #### 必须存在引用身份描述符
 
@@ -247,7 +247,7 @@ ht-degree: 0%
 }
 ```
 
-当您尝试为以下对象启用架构时，将显示此错误消息： [!DNL Profile] 并且其中一个属性包含没有引用身份描述符的关系描述符。 将引用身份描述符添加到有问题的架构字段以解决此错误。
+当您尝试启用[!DNL Profile]的架构并且其中一个属性包含没有引用标识描述符的关系描述符时，将显示此错误消息。 将引用身份描述符添加到有问题的架构字段以解决此错误。
 
 #### 引用身份描述符字段的命名空间与目标架构必须匹配
 
@@ -270,11 +270,11 @@ ht-degree: 0%
 >
 >对于此错误，“目标架构”引用关系中的引用架构。
 
-为了启用包含关系描述符的架构以便用于 [!DNL Profile]，源字段的命名空间和引用字段的主命名空间必须相同。 当您尝试启用一个方案（该方案的引用标识描述符包含不匹配的命名空间）时，将显示此错误消息。
+为了启用包含关系描述符的架构以便在[!DNL Profile]中使用，源字段的命名空间和引用字段的主命名空间必须相同。 当您尝试启用一个方案（该方案的引用标识描述符包含不匹配的命名空间）时，将显示此错误消息。
 
-确保 `xdm:namespace` 引用架构的标识字段的值与 `xdm:identityNamespace` 源字段的引用身份描述符中的属性以解决此问题。
+请确保引用架构标识字段的`xdm:namespace`值与源字段的引用标识描述符中的`xdm:identityNamespace`属性的值匹配以解决此问题。
 
-有关标准身份命名空间代码的列表，请参阅 [标准命名空间](../identity-service/features/namespaces.md) 在身份命名空间概述中。
+有关标准身份命名空间代码的列表，请参阅身份命名空间概述中有关[标准命名空间](../identity-service/features/namespaces.md)的部分。
 
 #### 架构必须包含identityMap或主标识
 
@@ -293,7 +293,7 @@ ht-degree: 0%
 }
 ```
 
-在为配置文件启用架构之前，必须首先 [创建主身份描述符](./api/descriptors.md#create) 用于模式，或包含身份映射字段以替代主身份。
+在为配置文件启用架构之前，必须首先[为该架构创建主标识描述符](./api/descriptors.md#create)，或包含标识映射字段以充当主标识。
 
 #### 无法合并不兼容的数据类型
 

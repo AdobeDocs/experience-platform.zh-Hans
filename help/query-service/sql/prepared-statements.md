@@ -6,14 +6,14 @@ description: 在SQL中，预准备语句用于模板类似的查询或更新。 
 exl-id: 7ee4a10e-2bfe-487f-a8c5-f03b5b1d77e3
 source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
-source-wordcount: '374'
-ht-degree: 11%
+source-wordcount: '364'
+ht-degree: 5%
 
 ---
 
 # 准备的语句
 
-在SQL中，预准备语句用于模板化类似的查询或更新。 Adobe Experience Platform [!DNL Query Service] 通过使用参数化查询支持预准备语句。 这可以优化性能，因为您不再需要重复地重新分析查询。
+在SQL中，预准备语句用于模板化类似的查询或更新。 Adobe Experience Platform [!DNL Query Service]通过使用参数化查询支持预准备语句。 这可以优化性能，因为您不再需要重复地重新分析查询。
 
 ## 使用预准备语句
 
@@ -25,7 +25,7 @@ ht-degree: 11%
 
 ### 准备准备准备的语句 {#prepare}
 
-此SQL查询将写入的SELECT查询保存为指定的名称 `PLAN_NAME`. 您可以使用变量，例如 `$1` 代替实际值。 此准备好的语句将在当前会话期间保存。 请注意，计划名称是 **非** 区分大小写。
+此SQL查询保存名为`PLAN_NAME`的已写入SELECT查询。 您可以使用变量（如`$1`代替实际值）。 此准备好的语句将在当前会话期间保存。 请注意，计划名称&#x200B;**不区分大小写**。
 
 #### SQL格式
 
@@ -41,7 +41,7 @@ PREPARE test AS SELECT * FROM table WHERE country = $1 AND city = $2;
 
 ### 执行预准备语句 {#execute}
 
-此SQL查询使用以前创建的准备语句。
+此SQL查询使用以前创建的预准备语句。
 
 #### SQL格式
 
@@ -81,7 +81,7 @@ SELECT * FROM table WHERE id >= 10000 AND id <= 10005;
 
 上述SQL查询将返回以下响应：
 
-| id | 名字 | 姓氏 | 生日 | 电子邮件 | city | 国家/地区 |
+| ID | 名字 | 姓氏 | 出生日期 | 电子邮件 | 城市 | 国家/地区 |
 |--- | --------- | -------- | --------- | ----- | ------- | ---- |
 | 10000 | 亚历山大 | 戴维斯 | 1993-09-15 | example@example.com | 温哥华 | 加拿大 |
 | 10001 | 安东尼 | 杜布瓦 | 1967-03-14 | example2@example.com | 巴黎 | 法国 |
@@ -104,7 +104,7 @@ EXECUTE getIdRange(10000, 10005);
 
 调用此选项时，您会看到与之前完全相同的结果：
 
-| id | 名字 | 姓氏 | 生日 | 电子邮件 | city | 国家/地区 |
+| ID | 名字 | 姓氏 | 出生日期 | 电子邮件 | 城市 | 国家/地区 |
 |--- | --------- | -------- | --------- | ----- | ------- | ---- |
 | 10000 | 亚历山大 | 戴维斯 | 1993-09-15 | example@example.com | 温哥华 | 加拿大 |
 | 10001 | 安东尼 | 杜布瓦 | 1967-03-14 | example2@example.com | 巴黎 | 法国 |

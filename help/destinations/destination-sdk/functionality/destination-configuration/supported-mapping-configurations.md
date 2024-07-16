@@ -23,7 +23,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 流媒体目标支持的映射 {#streaming-mappings}
 
@@ -68,7 +68,7 @@ ht-degree: 3%
 
 生成的UI体验如下图所示。
 
-![平台UI屏幕截图，其中显示了XDM属性映射到流目标的自定义属性。](../../assets/functionality/destination-configuration/mapping-streaming-xdm-custom.png)
+![Platform UI屏幕截图显示映射到流目标的自定义属性的XDM属性。](../../assets/functionality/destination-configuration/mapping-streaming-xdm-custom.png)
 
 ### 将身份命名空间映射到合作伙伴身份命名空间 {#streaming-identity-to-identity}
 
@@ -76,7 +76,7 @@ ht-degree: 3%
 
 生成的UI体验如下图所示。
 
-![平台UI屏幕截图，显示流目标的身份映射到身份。](../../assets/functionality/destination-configuration/mapping-streaming-identity-identity.png)
+![Platform UI屏幕截图显示流目标的身份映射到身份。](../../assets/functionality/destination-configuration/mapping-streaming-identity-identity.png)
 
 ## 基于文件的目标支持的映射 {#batch-mappings}
 
@@ -118,11 +118,11 @@ ht-degree: 3%
 
 生成的UI体验如下图所示。
 
-![平台UI屏幕截图，其中显示了XDM映射到基于文件的目标的自定义属性。](../../assets/functionality/destination-configuration/mapping-batch-xdm-custom.png)
+![Platform UI屏幕截图显示了XDM映射到基于文件的目标的自定义属性。](../../assets/functionality/destination-configuration/mapping-batch-xdm-custom.png)
 
 用户可以保留默认名称，也可以在目标字段选择屏幕中输入自定义属性名称。
 
-![显示基于文件的目标的自定义目标属性选择的平台UI屏幕截图。](../../assets/functionality/destination-configuration/mapping-batch-custom-attribute.png)
+![Platform UI屏幕截图，显示基于文件的目标的自定义目标属性选择。](../../assets/functionality/destination-configuration/mapping-batch-custom-attribute.png)
 
 ### 将身份命名空间映射到自定义属性 {#batch-identity-to-custom}
 
@@ -130,11 +130,11 @@ ht-degree: 3%
 
 选择身份命名空间作为源字段时，目标字段会自动填充等效的身份命名空间。 要将目标字段替换为自定义属性，用户必须在目标字段选择屏幕中输入自定义属性名称。
 
-![显示基于文件的目标的自定义目标属性选择的平台UI屏幕截图。](../../assets/functionality/destination-configuration/mapping-batch-custom-attribute.png)
+![Platform UI屏幕截图，显示基于文件的目标的自定义目标属性选择。](../../assets/functionality/destination-configuration/mapping-batch-custom-attribute.png)
 
 生成的UI体验如下图所示。
 
-![平台UI屏幕截图，其中显示标识映射到基于文件的目标的自定义属性。](../../assets/functionality/destination-configuration/mapping-batch-identity-custom.png)
+![Platform UI屏幕截图显示标识映射到基于文件的目标的自定义属性。](../../assets/functionality/destination-configuration/mapping-batch-identity-custom.png)
 
 ### 将身份命名空间映射到合作伙伴身份命名空间 {#batch-identity-to-identity}
 
@@ -144,7 +144,7 @@ ht-degree: 3%
 
 生成的UI体验如下图所示。
 
-![平台UI屏幕截图，其中显示了基于文件的目标的标识到标识的映射。](../../assets/functionality/destination-configuration/mapping-batch-identity-identity.png)
+![Platform UI屏幕截图，显示基于文件的目标的标识到标识的映射。](../../assets/functionality/destination-configuration/mapping-batch-identity-identity.png)
 
 
 ## 后续步骤 {#next-steps}

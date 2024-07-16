@@ -6,7 +6,7 @@ exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
 source-git-commit: c6019737e93756f3f524d5a85ea57383baa1a31d
 workflow-type: tm+mt
 source-wordcount: '776'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -24,7 +24,7 @@ ht-degree: 0%
 
 ## 连接 {#connections}
 
-**[!UICONTROL 配置文件导出]**， **[!UICONTROL 流受众导出]**、和 **[!DNL Edge Personalization]** Adobe Experience Platform中的目标会捕获事件数据，并将其与其他数据源结合以形成 [Real-time Customer Profile](../profile/home.md)，应用分段，并将受众和符合条件的配置文件导出到目标。
+Adobe Experience Platform捕获事件数据中的&#x200B;**[!UICONTROL 配置文件导出]**、**[!UICONTROL 流式受众导出]**&#x200B;和&#x200B;**[!DNL Edge Personalization]**&#x200B;目标，将其与其他数据源组合以形成[实时客户配置文件](../profile/home.md)，应用分段，并将受众和符合条件的配置文件导出到目标。
 
 ## 配置文件导出目标 {#profile-export}
 
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->企业目标或流配置文件导出目标可用于 [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) 仅限客户。
+>仅[Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户可以使用企业目标，或流式配置文件导出目标。
 
 使用企业目标Data Connectors近乎实时地将Adobe Real-time Customer Data Platform配置文件交付到内部系统或其他第三方系统，以便进行数据同步、分析和进一步扩充配置文件用例。
 
@@ -47,21 +47,21 @@ ht-degree: 0%
 
 * [HTTP API目标](catalog/streaming/http-destination.md)
 * [Amazon Kinesis](catalog/cloud-storage/amazon-kinesis.md)
-* [Azure事件中心](catalog/cloud-storage/azure-event-hubs.md)
+* [Azure 事件中心](catalog/cloud-storage/azure-event-hubs.md)
 
 ### 批处理（基于文件）目标 {#file-based}
 
-基于文件的目标将接收 `.csv` 包含配置文件和/或属性的文件。 [Amazon S3](catalog/cloud-storage/amazon-s3.md) 是一个目标示例，您可以在其中导出包含配置文件导出的文件。
+基于文件的目标接收包含配置文件和/或属性的`.csv`文件。 [Amazon S3](catalog/cloud-storage/amazon-s3.md)是导出包含配置文件导出的文件的目标示例。
 
 ## 流受众导出目标 {#streaming-destinations}
 
-受众导出目标接收Experience Platform的受众数据。 这些目标使用受众ID或用户ID。 广告和社交目标，如 [[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md)， [[!DNL Google Ads]](catalog/advertising/google-ads-destination.md)，或 [facebook](catalog/social/facebook.md) 是此类目标的示例。
+受众导出目标接收Experience Platform的受众数据。 这些目标使用受众ID或用户ID。 Advertising和社交目标(如[[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md)、[[!DNL Google Ads]](catalog/advertising/google-ads-destination.md)或[Facebook](catalog/social/facebook.md))就是此类目标的示例。
 
 ## Edge个性化目标 {#edge-personalization-destinations}
 
-Experience Platform中的边缘个性化目标包括 [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) 和 [自定义个性化目标](/help/destinations/catalog/personalization/custom-personalization.md). 通过使用这些目标，您可以为客户启用同一页面和下一页面个性化用例。
+Experience Platform中的Edge个性化目标包括[Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md)和[自定义个性化目标](/help/destinations/catalog/personalization/custom-personalization.md)。 通过使用这些目标，您可以为客户启用同一页面和下一页面个性化用例。
 
-详细了解如何 [为同一页面和下一页面个性化配置个性化目标](/help/destinations/ui/activate-edge-personalization-destinations.md).
+阅读有关如何[为同一页面和下一页面个性化](/help/destinations/ui/activate-edge-personalization-destinations.md)配置个性化目标的更多信息。
 
 ## 配置文件导出和受众导出目标 — 视频概述 {#video}
 
@@ -77,7 +77,7 @@ Experience Platform中的边缘个性化目标包括 [Adobe Target](/help/destin
 * 帐户受众
 * 潜在客户受众
 
-了解关于 [各种受众类型](/help/segmentation/ui/account-audiences.md#terminology).
+了解有关[各种受众类型](/help/segmentation/ui/account-audiences.md#terminology)的更多信息。
 
 目标卡上的符号显示了您可以导出到每个目标的受众类型。
 
@@ -88,7 +88,7 @@ Experience Platform中的边缘个性化目标包括 [Adobe Target](/help/destin
 
 目标目录中的某些云存储目标支持数据集导出。 使用这些目标可将原始数据集导出到云存储位置。
 
-详细了解如何 [导出数据集](/help/destinations/ui/export-datasets.md).
+阅读有关如何[导出数据集](/help/destinations/ui/export-datasets.md)的详细信息。
 
 ## 扩展 {#extensions}
 
@@ -96,11 +96,11 @@ Platform利用标记管理的强大功能和灵活性，允许您在UI中配置�
 
 >[!TIP]
 >
->有关标记扩展的详细信息（包括用例以及如何在界面中查找它们），请参阅 [标记扩展概述](./catalog/launch-extensions/overview.md).
+>有关标记扩展的详细信息，包括用例以及如何在界面中查找它们，请参阅[标记扩展概述](./catalog/launch-extensions/overview.md)。
 
-标记扩展可将原始事件数据转发到多种类型的目标。 将扩展视为 **事件转发** 目标的类型。 这是一种与目标平台更简单的集成，目标平台仅转发原始事件数据。 这些示例包括 [Gainsight个性化扩展](./catalog/personalization/gainsight.md) 或 [确认客户分机的声音](./catalog/voice/confirmit-digital-feedback.md).
+标记扩展可将原始事件数据转发到多种类型的目标。 将扩展视为&#x200B;**事件转发**&#x200B;类型的目标。 这是一种与目标平台更简单的集成，目标平台仅转发原始事件数据。 例如，[Gainsight个性化扩展](./catalog/personalization/gainsight.md)或客户扩展的[Confirmit Voice](./catalog/voice/confirmit-digital-feedback.md)。
 
-![将标记扩展与其他目标进行比较](./assets/common/launch-and-other-destinations.png)
+![标记扩展与其他目标的比较](./assets/common/launch-and-other-destinations.png)
 
 ## 何时使用连接和扩展 {#when-to-use}
 
@@ -112,6 +112,6 @@ Platform利用标记管理的强大功能和灵活性，允许您在UI中配置�
 
 ## 目标类别 {#categories}
 
-中的连接和扩展 [目标目录](https://platform.adobe.com/destination/catalog) 按目标类别分组(**广告**， **云存储**， **调查平台**， **电子邮件营销**&#x200B;等)，具体取决于他们帮助您实现的营销活动。 有关每个类别以及每个类别中包含的目标的详细信息，请参阅 [目标目录文档](./catalog/overview.md).
+[目标目录](https://platform.adobe.com/destination/catalog)中的连接和扩展按目标类别(**Advertising**、**Cloud Storage**、**调查平台**、**电子邮件营销**&#x200B;等)分组，具体取决于它们帮助您实现的营销操作。 有关每个类别以及每个类别中包含的目标的详细信息，请参阅[目标目录文档](./catalog/overview.md)。
 
-![目录页面中高亮显示的目标类别。](./assets/destination-types/destination-categories-menu.png)
+![目录页面中突出显示的目标类别。](./assets/destination-types/destination-categories-menu.png)

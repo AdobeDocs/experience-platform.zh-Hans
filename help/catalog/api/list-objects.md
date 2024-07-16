@@ -24,12 +24,12 @@ GET /{OBJECT_TYPE}?{FILTER}={VALUE}&{FILTER_2}={VALUE}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要列出的对象。 有效对象为： <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
-| `{FILTER}` | 用于筛选响应中返回结果的查询参数。 多个参数用&amp;符号(`&`)。 请参阅指南，网址为 [筛选目录数据](filter-data.md) 以了解更多信息。 |
+| `{OBJECT_TYPE}` | 要列出的[!DNL Catalog]对象的类型。 有效对象为： <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
+| `{FILTER}` | 用于筛选响应中返回结果的查询参数。 多个参数由&amp;符号(`&`)分隔。 有关详细信息，请参阅[筛选目录数据](filter-data.md)指南。 |
 
 **请求**
 
-下面的示例请求检索数据集列表，使用 `limit` 筛选条件将响应减少到五个结果，以及 `properties` 该过滤器限制为每个数据集显示的属性。
+下面的示例请求检索数据集列表，使用`limit`筛选器减少对5个结果的响应，使用`properties`筛选器限制为每个数据集显示的属性。
 
 ```shell
 curl -X GET \
@@ -42,11 +42,11 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回列表 [!DNL Catalog] 键值对形式的对象，按请求中提供的查询参数进行筛选。 对于每个键值对，键表示 [!DNL Catalog] 有问题的对象，随后可以在对的调用中使用 [查看该特定对象](look-up-object.md) 以了解更多详细信息。
+成功的响应以键值对的形式返回[!DNL Catalog]对象的列表，该列表按请求中提供的查询参数进行筛选。 对于每个键值对，该键代表所讨论的[!DNL Catalog]对象的唯一标识符，该唯一标识符随后可用于对[查看特定对象](look-up-object.md)的另一调用，以了解更多详细信息。
 
 >[!NOTE]
 >
->如果返回的对象不包含请求的一个或多个属性，这些属性由 `properties` 查询时，响应仅返回所请求的属性，如中所示 ***`Sample Dataset 3`*** 和 ***`Sample Dataset 4`*** 下。
+>如果返回的对象不包含`properties`查询指示的一个或多个请求属性，则响应仅返回它包含的一个或多个请求属性，如下面的&#x200B;***`Sample Dataset 3`***&#x200B;和&#x200B;***`Sample Dataset 4`***&#x200B;所示。
 
 ```json
 {

@@ -14,8 +14,8 @@ ht-degree: 0%
 
 # 使用UI创建流连接
 
-为了开始将数据流式传输到 [!DNL Experience Platform]，您必须首先创建流HTTP连接。 在创建流连接时，您需要提供关键详细信息，例如流数据的来源，以及您是否打算从受信任（已验证）或未受信任（未验证）的来源发送数据。
+要开始将数据流式传输到[!DNL Experience Platform]，您必须先创建流式传输HTTP连接。 在创建流连接时，您需要提供关键详细信息，例如流数据的来源，以及您是否打算从受信任（已验证）或未受信任（未验证）的来源发送数据。
 
-注册流连接后，您将拥有一个唯一的URL，可用于将数据流式传输到 [!DNL Platform].
+注册流连接后，您将拥有唯一的URL，可用于将数据流式传输到[!DNL Platform]。
 
-要了解如何创建流连接，请阅读 [HTTP API源UI指南](../../sources/tutorials/ui/create/streaming/http.md).
+要了解如何创建流连接，请阅读[HTTP API源UI指南](../../sources/tutorials/ui/create/streaming/http.md)。

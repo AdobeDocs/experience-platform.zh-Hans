@@ -3,8 +3,8 @@ title: Adobe Experience Platform Assurance 疑难解答指南
 description: 本文档概述了使用 Adobe Experience Platform Assurance 时常见问题的解决方案。
 exl-id: 8078e6f6-ca18-4939-a417-40ebf5a52e24
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
-workflow-type: ht
-source-wordcount: '526'
+workflow-type: tm+mt
+source-wordcount: '453'
 ht-degree: 100%
 
 ---

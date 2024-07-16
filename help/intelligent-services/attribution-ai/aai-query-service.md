@@ -1,8 +1,8 @@
 ---
-keywords: 分析；归因人工智能；归因人工智能分析；AAI查询服务；归因查询；归因分数
+keywords: 分析；归因人工智能；归因人工智能分析；AAI查询服务；归因查询；归因得分
 feature: Attribution AI
 title: 使用查询服务分析归因分数
-description: 了解如何使用Adobe Experience Platform查询服务分析Attribution AI分数。
+description: 了解如何使用Adobe Experience Platform查询服务分析Attribution AI得分。
 exl-id: 35d7f6f2-a118-4093-8dbc-cb020ec35e90
 source-git-commit: 66d20dc1141ff33211635ba74d320350f8b27fb7
 workflow-type: tm+mt
@@ -13,9 +13,9 @@ ht-degree: 0%
 
 # 使用查询服务分析归因分数
 
-数据中的每一行都表示一个转换，其中相关接触点的信息作为结构数组存储在 `touchpointsDetail` 列。
+数据中的每一行都表示一个转换，其中相关接触点的信息作为结构数组存储在`touchpointsDetail`列下。
 
-| 接触点信息 | 栏目 |
+| 接触点信息 | 列 |
 | ---------------------- | ------ |
 | 接触点名称 | `touchpointsDetail. touchpointName` |
 | 接触点渠道 | `touchpointsDetail.touchPoint.mediaChannel` |
@@ -23,49 +23,49 @@ ht-degree: 0%
 
 ## 查找数据路径
 
-在Adobe Experience Platform UI中，选择 **[!UICONTROL 数据集]** 左侧导航栏中。 此 **[!UICONTROL 数据集]** 页面。 接下来，选择 **[!UICONTROL 浏览]** tab键并查找Attribution AI分数的输出数据集。
+在Adobe Experience Platform UI的左侧导航中选择&#x200B;**[!UICONTROL 数据集]**。 此时会显示&#x200B;**[!UICONTROL 数据集]**&#x200B;页面。 接下来，选择&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡，并查找Attribution AI分数的输出数据集。
 
-![访问您的模型](./images/aai-query/datasets_browse.png)
+![正在访问您的模型](./images/aai-query/datasets_browse.png)
 
 选择您的输出数据集。 此时将显示数据集活动页面。
 
 ![数据集活动页面](./images/aai-query/select_preview.png)
 
-在数据集活动页面中，选择 **[!UICONTROL 预览数据集]** 以预览您的数据并确保数据已按预期摄取。
+在数据集活动页面中，选择右上角的&#x200B;**[!UICONTROL 预览数据集]**&#x200B;以预览您的数据，并确保数据已按预期摄取。
 
 ![预览数据集](./images/aai-query/preview_dataset.JPG)
 
-预览数据后，在右边栏中选择架构。 此时将显示一个弹出窗口，其中包含架构名称和描述。 选择架构名称超链接以重定向到评分架构。
+预览数据后，在右边栏中选择架构。 此时会出现一个弹出窗口，其中包含架构名称和描述。 选择架构名称超链接以重定向到评分架构。
 
 ![选择架构](./images/aai-query/select_schema.png)
 
-使用评分架构，您可以选择或搜索值。 一旦选定， **[!UICONTROL 字段属性]** 侧边栏打开，允许您复制路径以用于创建查询。
+使用评分架构，您可以选择或搜索值。 选择后，**[!UICONTROL 字段属性]**&#x200B;侧边栏将打开，允许您复制路径以用于创建查询。
 
 ![复制路径](./images/aai-query/copy_path.png)
 
 ## 访问查询服务
 
-要从Platform UI中访问查询服务，请首先选择 **[!UICONTROL 查询]** 在左侧导航中，然后选择 **[!UICONTROL 浏览]** 选项卡。 将加载以前保存的查询的列表。
+若要从Platform UI中访问查询服务，请选择左侧导航中的&#x200B;**[!UICONTROL 查询]**，然后选择&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡。 将加载以前保存的查询的列表。
 
 ![查询服务浏览](./images/aai-query/query_tab.png)
 
-接下来，选择 **[!UICONTROL 创建查询]** 在右上角。 将加载查询编辑器。 使用查询编辑器，您可以开始使用评分数据创建查询。
+接下来，选择右上角的&#x200B;**[!UICONTROL 创建查询]**。 将加载查询编辑器。 使用查询编辑器，您可以开始使用评分数据创建查询。
 
 ![查询编辑器](./images/aai-query/query_example.png)
 
-有关查询编辑器的更多信息，请访问 [查询编辑器用户指南](../../query-service/ui/user-guide.md).
+有关查询编辑器的详细信息，请访问[查询编辑器用户指南](../../query-service/ui/user-guide.md)。
 
-## 归因得分分析的查询模板
+## 用于归因得分分析的查询模板
 
-以下查询可用作不同分数分析方案的模板。 您需要替换 `_tenantId` 和 `your_score_output_dataset` 使用在评分输出架构中找到的正确值。
+以下查询可用作不同分数分析方案的模板。 您需要使用在评分输出架构中找到的正确值替换`_tenantId`和`your_score_output_dataset`。
 
 >[!NOTE]
 >
-> 根据数据的摄取方式，下面使用的值包括 `timestamp` 可能使用其他格式。
+> 根据您的数据摄取方式，下面使用的值（如`timestamp`）可能采用不同的格式。
 
 ### 验证示例
 
-**按转化事件分类的总转化次数（在转化窗口内）**
+**按转化事件分类的总转化次数（在转化时段内）**
 
 ```sql
     SELECT conversionName,
@@ -88,7 +88,7 @@ ht-degree: 0%
         conversionName
 ```
 
-**仅转化事件的总数（在转化窗口内）**
+**仅转化事件的总数（在转化时段内）**
 
 ```sql
     SELECT
@@ -155,7 +155,7 @@ ht-degree: 0%
 
 ### 洞察生成示例
 
-**按接触点和转化日期划分的增量单位细分（在转化窗口内）**
+**按接触点和转化日期划分的增量单位（在转化窗口内）**
 
 ```sql
     SELECT conversionName,
@@ -180,7 +180,7 @@ ht-degree: 0%
         conversionName, touchpointName, DATE(conversion_timestamp)
 ```
 
-**按接触点和接触点日期划分的增量单位细分（在转化窗口内）**
+**按接触点和接触点日期划分的增量单位（在转化窗口内）**
 
 ```sql
     SELECT conversionName,
@@ -206,7 +206,7 @@ ht-degree: 0%
     LIMIT 20
 ```
 
-**所有评分模型的某个类型接触点的汇总分数（在转化窗口中）**
+**所有评分模型（在转化时段内）的特定接触点类型汇总分数**
 
 ```sql
     SELECT
@@ -299,13 +299,13 @@ ht-degree: 0%
         conversionName, num_dist_tp
 ```
 
-### 架构拼合和爆炸示例
+### 架构拼合和分解示例
 
 此查询将结构列拼合为多个单数列，并将数组分解为多个行。 这有助于将归因得分转换为CSV格式。 此查询的输出具有一个转换和每行中与该转换对应的一个接触点。
 
 >[!TIP]
 >
-> 在本例中，您需要替换 `{COLUMN_NAME}` 除了 `_tenantId` 和 `your_score_output_dataset`. 此 `COLUMN_NAME` 变量可以获取在配置Attribution AI模型期间添加的可选传递列名称（报表列）的值。 请查看您的评分输出架构以查找 `{COLUMN_NAME}` 完成此查询所需的值。
+> 在此示例中，除`_tenantId`和`your_score_output_dataset`外，还需要替换`{COLUMN_NAME}`。 `COLUMN_NAME`变量可以使用在配置Attribution AI模型期间添加的可选传递列名称（报表列）的值。 请检查您的评分输出架构以查找完成此查询所需的`{COLUMN_NAME}`值。
 
 ```sql
 SELECT 

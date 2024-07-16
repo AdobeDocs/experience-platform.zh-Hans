@@ -14,36 +14,36 @@ ht-degree: 20%
 
 # [!DNL Access Control] API指南
 
-[!DNL Access control] 对象 [!DNL Experience Platform] 由本公司透过其 [Adobe Admin Console](https://adminconsole.adobe.com). 此功能利用Admin Console中的产品配置文件，它将用户与权限和沙盒关联起来。 请参阅 [访问控制概述](../home.md) 以了解更多信息。
+[!DNL Experience Platform]的[!DNL Access control]通过[Adobe Admin Console](https://adminconsole.adobe.com)进行管理。 此功能利用Admin Console中的产品配置文件，它将用户与权限和沙盒关联起来。 有关详细信息，请参阅[访问控制概述](../home.md)。
 
-本开发人员指南提供了有关如何将请求格式化的信息， [[!DNL Access Control API]](https://www.adobe.io/experience-platform-apis/references/access-control/)，并涵盖以下操作：
+此开发人员指南提供了有关如何格式化对[[!DNL Access Control API]](https://www.adobe.io/experience-platform-apis/references/access-control/)的请求的信息，并涵盖了以下操作：
 
 - [权限和资源类型的列表名称](./permissions-and-resource-types.md)
 - [查看当前用户的有效访问策略](./effective-policies.md)
 
 ## 快速入门
 
-以下部分提供成功调用 [!DNL Access Control] API。
+以下部分提供成功调用[!DNL Access Control] API所需了解的其他信息。
 
 ### 正在读取示例 API 调用
 
-本指南提供了示例 API 调用来演示如何格式化请求。这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关文档中用于示例API调用的惯例的信息，请参阅 [如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
+本指南提供了示例 API 调用来演示如何格式化请求。这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中有关[如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。
 
 ### 收集所需标头的值
 
-为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
-- 授权：持有者 `{ACCESS_TOKEN}`
+- 授权：持有人`{ACCESS_TOKEN}`
 - x-api-key： `{API_KEY}`
 - x-gw-ims-org-id： `{ORG_ID}`
 
-中的所有资源 [!DNL Experience Platform] 被隔离到特定的虚拟沙盒中。 所有请求 [!DNL Platform] API需要一个标头，该标头应指定将在其中执行操作的沙盒的名称：
+[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 - x-sandbox-name： `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关中沙箱的详细信息 [!DNL Platform]，请参见 [沙盒概述文档](../../sandboxes/home.md).
+>有关[!DNL Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
 
 包含负载 (POST、PUT、PATCH) 的所有请求都需要额外的标头：
 

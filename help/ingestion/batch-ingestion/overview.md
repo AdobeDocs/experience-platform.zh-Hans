@@ -13,9 +13,9 @@ ht-degree: 4%
 
 # 批量摄取API概述
 
-Adobe Experience Platform批量摄取API允许您将数据作为批处理文件接入Platform。 所摄取的数据可以是平面文件（如Parquet文件）的配置文件数据，也可以是与 [!DNL Experience Data Model] (XDM)注册表。
+Adobe Experience Platform批量摄取API允许您将数据作为批处理文件接入Platform。 所摄取的数据可以是平面文件（如Parquet文件）的配置文件数据，也可以是与[!DNL Experience Data Model] (XDM)注册表中的已知架构相符的数据。
 
-此 [批量摄取API参考](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) 提供了有关这些API调用的其他信息。
+[批次摄取API引用](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/)提供了有关这些API调用的其他信息。
 
 下图概述了批量摄取流程：
 
@@ -23,12 +23,12 @@ Adobe Experience Platform批量摄取API允许您将数据作为批处理文件�
 
 ## 快速入门
 
-本指南中使用的API端点是 [批量摄取API](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/). 在继续之前，请查看 [快速入门指南](getting-started.md) 有关相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+本指南中使用的API端点是[批次摄取API](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/)的一部分。 在继续之前，请查看[快速入门指南](getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
 
-### [!DNL Data Ingestion] 先决条件
+### [!DNL Data Ingestion]先决条件
 
 - 要上传的数据必须为Parquet或JSON格式。
-- 在中创建的数据集 [[!DNL Catalog services]](../../catalog/home.md).
+- 在[[!DNL Catalog services]](../../catalog/home.md)中创建了一个数据集。
 - Parquet文件的内容必须与要上传到的数据集的架构子集匹配。
 - 在身份验证后具有您的唯一访问令牌。
 
@@ -48,15 +48,15 @@ Adobe Experience Platform批量摄取API允许您将数据作为批处理文件�
 
 >[!NOTE]
 >
->要上载大于512MB的文件，需要将该文件分成较小的块。 有关上载大文件的说明，请参见 [本文档的大型文件上传部分](#large-file-upload---create-file).
+>要上载大于512MB的文件，需要将该文件分成较小的块。 上载大文件的说明可在本文档的[大文件上载部分找到](#large-file-upload---create-file)。
 
 ### 类型
 
-摄取数据时，请务必了解如何 [!DNL Experience Data Model] (XDM)架构有效。 有关XDM字段类型如何映射到不同格式的更多信息，请阅读 [架构注册开发人员指南](../../xdm/api/getting-started.md).
+摄取数据时，了解[!DNL Experience Data Model] (XDM)架构的工作方式很重要。 有关XDM字段类型如何映射到不同格式的详细信息，请阅读[架构注册开发人员指南](../../xdm/api/getting-started.md)。
 
-在摄取数据时有一定的灵活性 — 如果类型与目标架构中的类型不匹配，数据将转换为表达的目标类型。 如果失败，它将使批处理失败 `TypeCompatibilityException`.
+在摄取数据时有一定的灵活性 — 如果类型与目标架构中的类型不匹配，数据将转换为表达的目标类型。 如果失败，它将失败`TypeCompatibilityException`的批处理。
 
-例如，JSON和CSV均不具有 `date` 或 `date-time` 类型。 因此，这些值将使用 [ISO 8601格式字符串](https://www.iso.org/iso-8601-date-and-time-format.html) (“2018-07-10T15”:05:59.000-08:00”)或以毫秒(1531263959000)为单位的Unix时间，并在摄取时转换为目标XDM类型。
+例如，JSON和CSV都不具有`date`或`date-time`类型。 因此，这些值使用[ISO 8601格式字符串](https://www.iso.org/iso-8601-date-and-time-format.html)(&quot;2018-07-10T15:05:59.000-08:00&quot;)或以毫秒(1531263959000)为单位的Unix时间格式表示，并在摄取时转换为目标XDM类型。
 
 下表显示了摄取数据时支持的转化。
 
@@ -77,9 +77,9 @@ Adobe Experience Platform批量摄取API允许您将数据作为批处理文件�
 >
 >无法将布尔值和数组转换为其他类型。
 
-## 使用API
+## 使用 API
 
-此 [!DNL Data Ingestion] API允许您将数据作为批量（由要作为单个单元摄取的一个或多个文件组成的数据单元）摄取到 [!DNL Experience Platform] 在三个基本步骤中：
+[!DNL Data Ingestion] API允许您通过三个基本步骤将数据作为批次（由一个或多个要作为单个单元摄取的文件组成的数据单元）摄取到[!DNL Experience Platform]中：
 
 1. 创建新批次。
 2. 将文件上传到与数据的XDM架构匹配的指定数据集。
@@ -146,11 +146,11 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
 
 >[!NOTE]
 >
->批量摄取可用于以增量方式更新用户档案存储中的数据。 有关更多信息，请参阅以下部分： [更新批次](#patch-a-batch) 在 [批量摄取开发人员指南](api-overview.md).
+>批量摄取可用于以增量方式更新用户档案存储中的数据。 有关详细信息，请参阅[批次摄取开发人员指南](api-overview.md)中有关[更新批次](#patch-a-batch)的部分。
 
 >[!INFO]
 >
->下面的示例使用 [Apache Parquet](https://parquet.apache.org/docs/) 文件格式。 有关使用JSON文件格式的示例，请参见 [批量摄取开发人员指南](api-overview.md).
+>以下示例使用[Apache Parquet](https://parquet.apache.org/docs/)文件格式。 可以在[批量摄取开发人员指南](api-overview.md)中找到使用JSON文件格式的示例。
 
 ### 小文件上传
 
@@ -257,7 +257,7 @@ curl -X PATCH "https://platform.adobe.io/data/foundation/import/batches/{BATCH_I
 
 ## 信号批次完成
 
-将所有文件都上载到批处理之后，可以向批处理发出完成信号。 通过这样做， [!DNL Catalog] 为已完成的文件创建DataSetFile条目，并与上面生成的批处理关联。 此 [!DNL Catalog] 然后，将批处理标记为成功，这会触发下游流摄取可用数据。
+将所有文件都上载到批处理之后，可以向批处理发出完成信号。 通过这样做，将为已完成的文件创建[!DNL Catalog]个DataSetFile条目，并与上面生成的批次关联。 然后，[!DNL Catalog]批次被标记为成功，这会触发下游流摄取可用数据。
 
 **请求**
 
@@ -401,20 +401,20 @@ curl GET "https://platform.adobe.io/data/foundation/catalog/batch/{BATCH_ID}" \
 | -------- | ----------- |
 | `{USER_ID}` | 创建或更新批次的用户的ID。 |
 
-此 `"status"` 字段显示所请求批次的当前状态。 批次可以具有以下状态之一：
+`"status"`字段显示所请求批次的当前状态。 批次可以具有以下状态之一：
 
 ## 批量摄取状态
 
 | 状态 | 描述 |
 | ------ | ----------- |
 | 已放弃 | 该批次未在预期时间范围内完成。 |
-| 已中止 | 中止操作具有 **明确** 已为指定批次调用（通过批量摄取API）。 批次处于“已加载”状态后，无法中止。 |
+| 已中止 | 已显式调用指定批次的&#x200B;**中止操作**（通过批次摄取API）。 批次处于“已加载”状态后，无法中止。 |
 | 活动 | 已成功提升该批次，可用于下游使用。 此状态可与“Success”互换使用。 |
 | 已删除 | 批次的数据已完全删除。 |
-| 失败 | 因配置错误和/或数据错误导致的终端状态。 失败批次的数据将 **非** 出现。 此状态可与“失败”互换使用。 |
+| 失败 | 因配置错误和/或数据错误导致的终端状态。 失败批次的数据&#x200B;**不会**&#x200B;显示。 此状态可与“失败”互换使用。 |
 | 不活跃 | 批次已成功提升，但已还原或已过期。 该批次不再可用于下游消耗。 |
 | 已加载 | 批次的数据已完成，批次已准备好进行升级。 |
-| 正在加载 | 该批次的数据正在上传，该批次当前为 **非** 准备提升。 |
+| 正在加载 | 正在上载此批次的数据，批次当前为&#x200B;**未就绪**，无法升级。 |
 | 正在重试 | 正在处理此批次的数据。 但是，由于系统或临时错误，批次失败 — 因此，将重试此批次。 |
 | 已暂存 | 批次的升级过程的暂存阶段已完成，并且引入作业已运行。 |
 | 暂存 | 正在处理批次的数据。 |

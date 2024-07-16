@@ -11,28 +11,28 @@ ht-degree: 0%
 
 # `renderDecisions`
 
-此 `renderDecisions` 属性允许您强制Web SDK呈现任何符合自动呈现条件的个性化内容。
+`renderDecisions`属性允许您强制Web SDK呈现任何适于自动呈现的个性化内容。
 
 ## 使用Web SDK标记扩展呈现个性化内容
 
-选择 **[!UICONTROL 呈现可视化个性化决策]** 标记规则操作中的复选框。
+选中标记规则操作中的&#x200B;**[!UICONTROL 呈现可视化个性化决策]**&#x200B;复选框。
 
-1. 登录 [experience.adobe.com](https://experience.adobe.com) 使用您的Adobe ID凭据。
-1. 导航到 **[!UICONTROL 数据收集]** > **[!UICONTROL 标记]**.
+1. 使用您的Adobe ID凭据登录[experience.adobe.com](https://experience.adobe.com)。
+1. 导航到&#x200B;**[!UICONTROL 数据收集]** > **[!UICONTROL 标记]**。
 1. 选择所需的标记属性。
-1. 导航到 **[!UICONTROL 规则]**，然后选择所需的规则。
-1. 下 [!UICONTROL 操作]，选择现有操作或创建操作。
-1. 设置 [!UICONTROL 扩展名] 下拉字段至 **[!UICONTROL Adobe Experience Platform Web SDK]**，并设置 [!UICONTROL 操作类型] 到 **[!UICONTROL 发送事件]**.
-1. 向下滚动到 [!UICONTROL 个性化] 部分，然后选择 **[!UICONTROL 呈现可视化个性化决策]** 复选框。
-1. 单击 **[!UICONTROL 保留更改]**，然后运行发布工作流程。
+1. 导航到&#x200B;**[!UICONTROL 规则]**，然后选择所需的规则。
+1. 在[!UICONTROL 操作]下，选择现有操作或创建操作。
+1. 将[!UICONTROL 扩展]下拉字段设置为&#x200B;**[!UICONTROL Adobe Experience Platform Web SDK]**，并将[!UICONTROL 操作类型]设置为&#x200B;**[!UICONTROL 发送事件]**。
+1. 向下滚动到[!UICONTROL Personalization]部分，然后选择&#x200B;**[!UICONTROL 呈现可视化个性化决策]**&#x200B;复选框。
+1. 单击&#x200B;**[!UICONTROL 保留更改]**，然后运行发布工作流程。
 
 ## 使用Web SDK JavaScript库呈现个性化内容
 
-设置 `renderDecisions` 布尔值 `sendEvent` 命令。 如果忽略，则此属性默认为 `false`. 将此属性设置为 `true` （如果要自动渲染个性化内容）。
+运行`sendEvent`命令时设置`renderDecisions`布尔值。 如果忽略，则此属性默认为`false`。 如果要自动渲染个性化内容，请将此属性设置为`true`。
 
 >[!IMPORTANT]
 >
->此 `renderDecisions` 属性与 [`documentUnloading`](documentunloading.md) 属性。 您不应将两个属性都设置为 `true` 同时。
+>`renderDecisions`属性与[`documentUnloading`](documentunloading.md)属性不兼容。 您不应将两个属性同时设置为`true`。
 
 ```js
 alloy("sendEvent", {

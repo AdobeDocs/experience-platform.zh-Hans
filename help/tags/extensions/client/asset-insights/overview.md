@@ -1,19 +1,19 @@
 ---
-title: AEM Asset Insights扩展概述
+title: AEM资产分析扩展概述
 description: 了解Adobe Experience Platform中的AEM资产分析标记扩展。
 exl-id: 7d3edd42-09fe-4e40-93dc-1edd2fdbb121
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
-source-wordcount: '1118'
-ht-degree: 79%
+source-wordcount: '1062'
+ht-degree: 77%
 
 ---
 
-# AEM Asset Insights扩展概述
+# AEM资产分析扩展概述
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 这项扩展旨在与 [AEM 资产分析](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html)结合使用。更具体地说，它可以替换“pageTracker”进程和嵌入代码。当完成配置后，这项扩展会向 Adobe Analytics 发送资产“展示次数”和“单击次数”量度，随后，这些量度将导入 AEM 资产分析报表中。****&#x200B;接下来，可使用 AEM 资产分析或 Adobe Analytics 项目工作区来报告资产量度。
 
@@ -24,40 +24,40 @@ ht-degree: 79%
 Analytics 中的 AEM 资产报表包含三个 AEM 维度：
 
 * 资产 ID
-* 资产来源
+* 资源Source
 * 已单击资产
 
 另外，还包括两个量度：
 * 资产展示次数
 * 资产单击次数。
 
-必须使用Analytics管理员启用这些报表(选择 **[!UICONTROL 分析] > [!UICONTROL 管理员] > [!UICONTROL 报表包] > `<report suite>` > [!UICONTROL 编辑设置] > [!UICONTROL AEM] > [!UICONTROL AEM Assets报表]**)，然后可以使用此扩展填充这些区段。
+必须通过Analytics管理员来启用这些报表(选择&#x200B;**[!UICONTROL Analytics] > [!UICONTROL 管理员] > [!UICONTROL 报表包] > `<report suite>` > [!UICONTROL 编辑设置] > [!UICONTROL AEM] > [!UICONTROL AEM Assets报表]**)，然后才能使用此扩展填充这些报表。
 
-“*Adobe Analytics* Adobe Experience Platform的“ ”标记扩展必须安装到同一Web资产中。
+Adobe Experience Platform的“*Adobe Analytics*”标记扩展必须安装到同一Web属性中。
 
 ### Adobe Experience Manager (AEM)
 
-1. 启用 [AEM 资产分析](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html)。在AEM中，选择 **[!UICONTROL “工具”>“资产”]**，然后打开 **[!UICONTROL Insights配置]** 面板。
+1. 启用 [AEM 资产分析](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html)。在AEM中，选择&#x200B;**[!UICONTROL 工具> Assets]**，然后打开&#x200B;**[!UICONTROL 分析配置]**&#x200B;面板。
 
 1. 禁用 UUID 跟踪。
 
    >[!IMPORTANT]
    >
-   >此扩展将 *非* 函数(如果AEM Asset配置设置) **[!UICONTROL 禁用UUID跟踪]** 已选中。 默认情况下，该复选框处于未选中状态。
+   >如果选中AEM Asset配置设置&#x200B;**[!UICONTROL 禁用UUID跟踪]**，则此扩展将&#x200B;*不是*&#x200B;函数。 默认情况下，该复选框处于未选中状态。
 
    ![禁用 UUID 跟踪](images/disableassets.jpg)
 
 ## 配置 Adobe Experience Manager (AEM)
 
-本节介绍如何使用Adobe Experience Platform中的标记配置AEM，如何在AEM中启用资产分析，以及如何启用资产的UUID跟踪。
+本部分将介绍如何使用Adobe Experience Platform中的标记配置AEM，如何在AEM中启用资产分析，以及如何为Assets启用UUID跟踪。
 
 ### 将AEM与标记集成
 
-通过 Adobe I/O，完成了建议的 [Platform ](https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/experience-platform-launch/overview.html) 与 Adobe Experience Manager 的集成。
+通过Adobe I/O，完成了建议的[平台](https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/experience-platform-launch/overview.html)与Adobe Experience Manager的集成。
 
-1. [使用Adobe I/O连接AEM与标记](https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/experience-platform-launch/connect-aem-launch-adobe-io.html).
+1. [使用Adobe I/O](https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/experience-platform-launch/connect-aem-launch-adobe-io.html)连接AEM与标记。
 
-2. [创建Adobe Experience PlatformCloud Service配置](https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/experience-platform-launch/create-launch-cloud-service.html).
+2. [创建Adobe Experience PlatformCloud Service配置](https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/experience-platform-launch/create-launch-cloud-service.html)。
 
 ### 在 AEM 中启用资产分析
 

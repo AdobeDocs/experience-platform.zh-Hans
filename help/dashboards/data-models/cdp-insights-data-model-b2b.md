@@ -13,11 +13,11 @@ ht-degree: 0%
 
 # Real-time Customer Data Platform Insights数据模型B2B版本
 
-B2B版本的Real-time Customer Data Platform Insights数据模型公开了支持此类分析的数据模型和SQL [帐户配置文件](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/account/account-profile-overview). 您可以自定义这些SQL查询模板，以为B2B营销和关键绩效指标(KPI)用例创建Real-Time CDP报表。 这些见解随后可用作功能板的自定义构件。
+B2B版本的Real-time Customer Data Platform Insights数据模型公开了支持[帐户配置文件](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/account/account-profile-overview)的分析的数据模型和SQL。 您可以自定义这些SQL查询模板，以为B2B营销和关键绩效指标(KPI)用例创建Real-Time CDP报表。 这些见解随后可用作功能板的自定义构件。
 
 >[!AVAILABILITY]
 >
->已购买Real-Time CDP Prime和Ultimate包的客户可以使用此功能。 请参阅相关文档以了解 [Real-Time CDP版本](../../rtcdp/overview.md#rtcdp-editions) 有关更多信息，或与您的Adobe代表联系。
+>已购买Real-Time CDP Prime和Ultimate包的客户可以使用此功能。 有关更多信息，请参阅有关可用[Real-Time CDP版本](../../rtcdp/overview.md#rtcdp-editions)的文档，或与您的Adobe代表联系。
 
 <!-- 
 See the query accelerated store reporting insights documentation to learn [how to build a reporting insights data model through Query Service for use with accelerated store data and user-defined dashboards](../../query-service/data-distiller/customizable-insights/reporting-insights-data-model.md).
@@ -25,7 +25,7 @@ See the query accelerated store reporting insights documentation to learn [how t
 
 ## 先决条件
 
-本指南要求您对自定义功能板有一定的了解。 请阅读相关文档 [如何创建自定义功能板](../user-defined-dashboards.md) 然后再继续阅读本指南。
+本指南要求您对自定义功能板有一定的了解。 在继续阅读本指南之前，请阅读有关[如何创建自定义仪表板](../user-defined-dashboards.md)的文档。
 
 ## Real-Time CDP B2B分析报告和用例 {#B2B-insight-reports-and-use-cases}
 
@@ -52,13 +52,13 @@ Real-Time CDP B2B报表为您的帐户配置文件数据以及帐户与机会之
 
 #### 按行业用例划分的新客户 {#accounts-by-industry}
 
-用于的逻辑 [!UICONTROL 按行业划分的新客户] insight会根据帐户用户档案的数量以及彼此的相对大小返回排名前五的行业。 请参阅 [[!UICONTROL 按行业划分的新客户] 构件文档](../guides/account-profiles.md#accounts-by-industry) 以了解更多信息。
+用于[!UICONTROL 按行业划分的新帐户]分析的逻辑会根据帐户配置文件数及其相对大小返回排名前五的行业。 有关详细信息，请参阅[[!UICONTROL 按行业划分的新帐户]构件文档](../guides/account-profiles.md#accounts-by-industry)。
 
 >[!TIP]
 >
 >您可以自定义此SQL查询，以返回比前五个行业多或少的数据。
 
-生成 [!UICONTROL 按行业划分的新客户] 可在下方的可折叠部分中看到洞察。
+下面的可折叠部分中显示了按行业]分析生成[!UICONTROL 新帐户的SQL。
 
 +++SQL查询
 
@@ -97,9 +97,9 @@ LIMIT 5000;
 
 #### 新帐户（按类型）用例 {#accounts-by-type}
 
-用于的逻辑 [!UICONTROL 按类型的新帐户] insight会返回按帐户类型划分的数值细目。 此洞察力有助于指导业务策略和运营，包括资源分配或营销策略。 请参阅 [[!UICONTROL 按类型的新帐户] 构件文档](../guides/account-profiles.md#accounts-by-type) 以了解更多信息。
+用于[!UICONTROL 按类型]分析的新帐户的逻辑返回按类型划分的帐户的数值细目。 此洞察力有助于指导业务策略和运营，包括资源分配或营销策略。 有关详细信息，请参阅[[!UICONTROL 按类型新建帐户]构件文档](../guides/account-profiles.md#accounts-by-type)。
 
-生成 [!UICONTROL 按类型的新帐户] 可在下方的可折叠部分中看到洞察。
+在下面的可折叠部分中可以看到按类型]分析生成[!UICONTROL 新帐户的SQL。
 
 +++SQL查询
 

@@ -6,7 +6,7 @@ description: 各种提取、转换和加载(ETL)工具在格式上可能有所�
 exl-id: 09de6c50-ad04-4d7c-99e6-33784fb0dd58
 source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
-source-wordcount: '213'
+source-wordcount: '225'
 ht-degree: 0%
 
 ---
@@ -17,15 +17,15 @@ ht-degree: 0%
 
 ## ETL工具示例
 
-下图提供了常见ETL操作的模型以及基于标准交互的通用用户体验。 这些图像可以容易地适应特定的ETL用户体验。
+下图提供了常见ETL操作的模型和基于标准交互的常规用户体验。 这些图像可以容易地适应特定的ETL用户体验。
 
-在中概述的步骤中说明了以下操作 [ETL集成指南](home.md). 一些步骤引用了特定的“数字”，而另一些步骤则描述了与此处显示的工作流类似的操作。
+下面说明的操作在[ETL集成指南](home.md)中所述的步骤中进行了说明。 某些步骤引用了特定的“数字”，而其他步骤则描述了与此处显示的工作流类似的操作。
 
 ### 图1 — 配置新的Adobe Experience Platform连接器：
 
 ![](images/image2.png)
 
-### 图2 - [!DNL Experience Platform] 连接器已激活：
+### 图2 - [!DNL Experience Platform]连接器已激活：
 
 ![](images/image3.png)
 
@@ -33,11 +33,11 @@ ht-degree: 0%
 
 ![](images/image4.png)
 
-### 图4 — 新建转换UI，选择 [!DNL Experience Platform] 连接：
+### 图4 — 新建转换UI，选择[!DNL Experience Platform]连接：
 
 ![](images/image5.png)
 
-### 图5 — 浏览源 [!DNL Experience Platform] 数据集：
+### 图5 — 浏览源[!DNL Experience Platform]数据集：
 
 ![](images/image6.png)
 
@@ -57,7 +57,7 @@ ht-degree: 0%
 
 ![](images/image10.png)
 
-### 图10 — 定义 [!DNL Experience Data Model] (XDM)目标数据集：
+### 图10 — 定义[!DNL Experience Data Model] (XDM)目标数据集：
 
 ![](images/image11.png)
 

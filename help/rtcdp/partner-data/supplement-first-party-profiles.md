@@ -137,5 +137,5 @@ Commenting out links for now
 探索通过 Real-Time CDP 中的合作伙伴数据支持实现的更多用例：
 
 * 使用 Real-Time CDP 中的第三方数据支持，[通过数据合作伙伴提供的潜在客户配置文件扩充您的配置文件基础并与其交流以获取或接触新客户](/help/rtcdp/partner-data/prospecting.md)。
-* [使用合作伙伴辅助的访客识别功能，为未知访客提供个性化的现场体验](/help/rtcdp/partner-data/onsite-personalization.md) 在访问期间，用户不会进行身份验证或者没有品牌历史。
+* [在访问期间使用合作伙伴帮助的访客识别](/help/rtcdp/partner-data/onsite-personalization.md)为未知访客提供个性化现场体验，用户无需进行身份验证或没有您的品牌历史记录。
 * [扩大了潜在客户配置文件和潜在客户受众的激活范围](/help/destinations/ui/activate-prospect-audiences.md)，以选择目标。

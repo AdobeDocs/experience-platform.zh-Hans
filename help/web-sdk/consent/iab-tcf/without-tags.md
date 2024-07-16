@@ -12,27 +12,27 @@ ht-degree: 0%
 
 # 将IAB TCF 2.0支持与Platform Web SDK集成
 
-本指南演示了如何在不使用标记的情况下将交互式广告局透明度和同意框架版本2.0 (IAB TCF 2.0)与Adobe Experience Platform Web SDK集成。 有关与IAB TCF 2.0集成的概述，请参阅 [概述](./overview.md). 有关如何与标记集成的指南，请参阅 [IAB TCF 2.0标记指南](./with-tags.md).
+本指南将演示如何在不使用标记的情况下将Interactive Advertising Bureau Transparency &amp; Consent Framework版本2.0 (IAB TCF 2.0)与Adobe Experience Platform Web SDK集成。 有关与IAB TCF 2.0集成的概述，请阅读[概述](./overview.md)。 有关如何与标记集成的指南，请阅读标记的[IAB TCF 2.0指南](./with-tags.md)。
 
 ## 快速入门
 
-本指南使用 `__tcfapi` 用于访问同意信息的界面。 您可以更轻松地直接与云管理提供商(CMP)集成。 但是，本指南中的信息可能仍然有用，因为CMP通常提供与TCF API类似的功能。
+本指南使用`__tcfapi`界面访问同意信息。 您可以更轻松地直接与云管理提供商(CMP)集成。 但是，本指南中的信息可能仍然有用，因为CMP通常提供与TCF API类似的功能。
 
 >[!NOTE]
 >
->这些示例假定在运行代码时， `window.__tcfapi` 会在页面上定义。 CMP可以提供挂接，您可以在以下情况下运行这些函数： `__tcfapi` 对象已就绪。
+>这些示例假定在运行代码时，页面上定义了`window.__tcfapi`。 CMP可以提供挂接，您可以在`__tcfapi`对象就绪时运行这些函数。
 
 要将包含标记的IAB TCF 2.0和Adobe Experience Platform Web SDK扩展结合使用，您需要具有可用的XDM架构。 如果尚未设置这两个中的任何一个选项，请先查看此页面，然后再继续。
 
-此外，本指南要求您实际了解Adobe Experience Platform Web SDK。 如想快速了解最新信息，请阅读 [Adobe Experience Platform Web SDK概述](../../home.md) 和 [常见问题解答](../../faq.md) 文档。
+此外，本指南要求您实际了解Adobe Experience Platform Web SDK。 如需快速刷新，请阅读[Adobe Experience Platform Web SDK概述](../../home.md)和[常见问题解答](../../faq.md)文档。
 
 ## 启用默认同意
 
-如果要对所有未知用户一视同仁，可以设置 [`defaultConsent`](/help/web-sdk/commands/configure/defaultconsent.md) 到 `pending` 或 `out`. 在收到同意首选项之前，这将排队或丢弃体验事件。
+如果要对所有未知用户一视同仁，可将[`defaultConsent`](/help/web-sdk/commands/configure/defaultconsent.md)设置为`pending`或`out`。 在收到同意首选项之前，这将排队或丢弃体验事件。
 
-### 设置默认同意依据 `gdprApplies`
+### 根据`gdprApplies`设置默认同意
 
-某些CMP提供了确定《通用数据保护条例》(GDPR)是否适用于客户的能力。 如果您希望客户同意GDPR不适用的情况，则可以使用 `gdprApplies` TCF API调用中的标记。
+某些CMP提供了确定《通用数据保护条例》(GDPR)是否适用于客户的能力。 如果您希望客户同意不适用GDPR的情况，则可以在TCF API调用中使用`gdprApplies`标记。
 
 以下示例显示了执行此操作的一种方法：
 
@@ -46,11 +46,11 @@ window.__tcfapi('getTCData', 2, function (tcData, success) {
 });
 ```
 
-在此示例中， `configure` 命令是在以下语句之后调用的： `tcData` 从TCF API获取。 如果 `gdprApplies` 为true，则默认同意设置为 `pending`. 如果 `gdprApplies` 为false，默认同意设置为 `in`. 请务必填写 `alloyConfiguration` 变量填充文件路径。
+在此示例中，在从TCF API获取`tcData`之后调用`configure`命令。 如果`gdprApplies`为true，则默认同意设置为`pending`。 如果`gdprApplies`为false，则默认同意设置为`in`。 请确保使用您的配置填写`alloyConfiguration`变量。
 
 >[!NOTE]
 >
->默认同意设置为时 `in`， `setConsent` 命令仍可用于记录客户的同意首选项。
+>当默认同意设置为`in`时，`setConsent`命令仍可用于记录您的客户同意首选项。
 
 ## 使用setConsent事件
 
@@ -77,13 +77,13 @@ window.__tcfapi('addEventListener', 2, function (tcData, success) {
 });
 ```
 
-此代码块监听 `useractioncomplete` 事件，然后设置同意，传递同意字符串和 `gdprApplies` 标志。 如果您有客户的自定义身份，请务必填写 `identityMap` 变量。 请参阅指南，网址为 [setConsent](../../../web-sdk/commands/setconsent.md) 以了解更多信息。
+此代码块侦听`useractioncomplete`事件，然后设置同意，传递同意字符串和`gdprApplies`标记。 如果您有客户的自定义标识，请务必填写`identityMap`变量。 有关详细信息，请参阅[setConsent](../../../web-sdk/commands/setconsent.md)指南。
 
 ## 在sendEvent中包含同意信息
 
 在XDM架构中，您可以存储来自体验事件的同意偏好设置信息。 可通过两种方式将此信息添加到每个事件。
 
-首先，您可以在每 `sendEvent` 呼叫。 以下示例显示了执行此操作的一种方法：
+首先，您可以在每`sendEvent`次调用中提供相关的XDM架构。 以下示例显示了执行此操作的一种方法：
 
 ```javascript
 var sendEventOptions = { ... };
@@ -102,8 +102,8 @@ window.__tcfapi('getTCData', 2, function (tcData, success) {
 
 此示例获取TCF API的同意信息，然后发送一个事件，其中包含添加到XDM架构的同意信息。
 
-向每个请求添加同意信息的另一种方法是 [`onBeforeEventSend`](/help/web-sdk/commands/configure/onbeforeeventsend.md) 回调。
+向每个请求添加同意信息的另一种方法是使用[`onBeforeEventSend`](/help/web-sdk/commands/configure/onbeforeeventsend.md)回调。
 
 ## 后续步骤
 
-现在，您已了解如何将IAB TCF 2.0与Platform Web SDK扩展结合使用，您还可以选择与其他Adobe解决方案(如Adobe Analytics或Adobe Real-time Customer Data Platform)集成。 请参阅 [IAB透明度和同意框架2.0概述](./overview.md) 以了解更多信息。
+现在，您已了解如何将IAB TCF 2.0与Platform Web SDK扩展结合使用，您还可以选择与其他Adobe解决方案(如Adobe Analytics或Adobe Real-time Customer Data Platform)集成。 有关详细信息，请参阅[IAB透明度和同意框架2.0概述](./overview.md)。

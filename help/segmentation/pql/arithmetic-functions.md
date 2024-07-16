@@ -1,22 +1,22 @@
 ---
 solution: Experience Platform
 title: PAL算术函数
-description: 算术函数用于对配置文件查询语言(PQL)中的值进行基本计算。
+description: 算术函数用于对Profile Query Language (PQL)中的值执行基本计算。
 exl-id: 3540ef7c-dbe4-4302-a414-3cf85618f870
 source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
 source-wordcount: '243'
-ht-degree: 6%
+ht-degree: 4%
 
 ---
 
 # 算术函数
 
-算术函数用于对中的值进行基本计算 [!DNL Profile Query Language] (PQL)。 有关其他PQL函数的更多信息，请参见 [[!DNL Profile Query Language] 概述](./overview.md).
+算术函数用于对[!DNL Profile Query Language] (PQL)中的值执行基本计算。 有关其他PQL函数的详细信息，请参阅[[!DNL Profile Query Language] 概述](./overview.md)。
 
 ## Add
 
-此 `+` （加）函数用于求两个参数表达式之和。
+`+` （相加）函数用于求两个参数表达式的总和。
 
 **格式**
 
@@ -26,7 +26,7 @@ ht-degree: 6%
 
 **示例**
 
-以下PQL查询汇总了两个不同产品的价格。
+下面的PQL查询汇总了两个不同产品的价格。
 
 ```sql
 product1.price + product2.price
@@ -34,7 +34,7 @@ product1.price + product2.price
 
 ## 乘
 
-此 `*` （乘法）函数用于求两个参数表达式的乘积。
+`*` （乘法）函数用于查找两个参数表达式的乘积。
 
 **格式**
 
@@ -52,7 +52,7 @@ product.inventory * product.price
 
 ## 减
 
-此 `-` （减法）函数用于找出两个参数表达式的差异。
+`-` （减法）函数用于找出两个参数表达式的差异。
 
 **格式**
 
@@ -70,7 +70,7 @@ product1.price - product2.price
 
 ## 除
 
-此 `/` （除法）函数用于求两个参数表达式的商。
+`/` （除）函数用于查找两个参数表达式的商。
 
 **格式**
 
@@ -80,7 +80,7 @@ product1.price - product2.price
 
 **示例**
 
-以下PQL查询查找已售产品总数与已挣总金额之间的商数，以查看每项产品的平均成本。
+以下PQL查询查找已售产品总数与已挣总金额之间的商数，以查看每个项目的平均成本。
 
 ```sql
 totalProduct.price / totalProduct.sold
@@ -88,7 +88,7 @@ totalProduct.price / totalProduct.sold
 
 ## 余数
 
-此 `%` (modulo/remainer)函数用于在将两个参数表达式相除后找到余数。
+`%` （模/余数）函数用于求两个参数表达式相除后的余数。
 
 **格式**
 
@@ -106,4 +106,4 @@ person.age % 5 = 0
 
 ## 后续步骤
 
-现在，您已了解算术函数，可以在PQL查询中使用它们。 有关其他PQL功能的详细信息，请参阅 [配置文件查询语言概述](./overview.md).
+现在，您已了解算术函数，可以在PQL查询中使用它们。 有关其他PQL功能的更多信息，请阅读[Profile Query Language概述](./overview.md)。

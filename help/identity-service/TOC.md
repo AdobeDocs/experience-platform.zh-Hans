@@ -22,7 +22,7 @@ ht-degree: 29%
    - [身份链接逻辑](./features/identity-linking-logic.md)
    - [身份图查看器](./features/identity-graph-viewer.md)
    - [Identity Service中的删除](./features/deletion.md)
-   - 身份图链接规则 {#identity-graph-linking-rules}
+   - 身份图链接规则{#identity-graph-linking-rules}
       - [功能概述](./identity-graph-linking-rules/overview.md)
       - [身份优化算法](./identity-graph-linking-rules/identity-optimization-algorithm.md)
       - [命名空间优先级](./identity-graph-linking-rules/namespace-priority.md)
@@ -47,4 +47,4 @@ ht-degree: 29%
 - [在UI中定义标识字段](label-identities.md)
 - [隐私请求处理](privacy.md)
 - [疑难解答指南](troubleshooting-guide.md)
-- [Platform发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
+- [平台发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

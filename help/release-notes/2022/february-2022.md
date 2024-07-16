@@ -27,29 +27,29 @@ Adobe Experience Platform 中现有功能的更新：
 
 ## [!DNL Dashboards] {#dashboards}
 
-Adobe Experience Platform提供多个 [!DNL dashboards] 通过它，您可以查看有关组织数据的重要见解，如在每日快照期间捕获的数据。
+Adobe Experience Platform提供了多个[!DNL dashboards]，通过它们可以查看有关贵组织数据的重要见解，如在每日快照期间捕获的数据。
 
 **更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 新的标准目标构件 | 以下标准构件允许您可视化与目标相关的不同量度。<ul><li>目标最近激活的区段。 此构件根据所选目标以降序显示最近激活的前五个区段。</li><li>受众规模趋势。 此构件描述一段时间内映射到目标帐户的区段配置文件计数之间的关系。</li><li>按身份列出的未映射区段。 此构件列出给定目标和身份按身份数降序排列的前五个未映射区段。</li><li>按身份映射的区段。 此构件列出了前五个映射区段。 区段会根据它们各自的源ID计数（与从构件的下拉菜单中选择的目标ID相匹配）从高到低排序。</li><li>常见受众。 此小组件提供了在页面顶部选择的目标帐户中激活的前五个区段列表，以及在小组件下拉列表中选定的目标区段的列表。</li></ul> 有关可用标准构件的更多信息，请参见 [目标仪表板文档。](https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html#standard-widgets). |
+| 新的标准目标构件 | 以下标准构件允许您可视化与目标相关的不同量度。<ul><li>目标最近激活的区段。 此构件根据所选目标以降序显示最近激活的前五个区段。</li><li>受众规模趋势。 此构件描述一段时间内映射到目标帐户的区段配置文件计数之间的关系。</li><li>按身份列出的未映射区段。 此构件列出给定目标和身份按身份数降序排列的前五个未映射区段。</li><li>按身份映射的区段。 此构件列出了前五个映射区段。 区段会根据它们各自的源ID计数（与从构件的下拉菜单中选择的目标ID相匹配）从高到低排序。</li><li>常见受众。 此小组件提供了在页面顶部选择的目标帐户中激活的前五个区段列表，以及在小组件下拉列表中选定的目标区段的列表。</li></ul> 有关可用标准小组件的更多信息，请参阅[目标仪表板文档。](https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html#standard-widgets) |
 
-有关的详细信息 [!DNL Dashboards]，请参阅 [[!DNL Dashboards] 概述](../../dashboards/home.md).
+有关[!DNL Dashboards]的详细信息，请参阅[[!DNL Dashboards] 概述](../../dashboards/home.md)。
 
 ## 数据收集 {#data-collection}
 
-Platform提供了一套技术，可让您收集客户端客户体验数据并将该数据发送到Adobe Experience Platform Edge Network，可在其中丰富和转换数据，并将其分发到Adobe或非Adobe目标。
+Platform提供了一套技术，可让您收集客户端客户体验数据并将该数据发送到Adobe Experience PlatformEdge Network，可在其中丰富和转换数据，并将其分发到Adobe或非Adobe目标。
 
 **新增功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 改进了数据流配置的UI工作流 | 更新了在数据收集UI中创建新数据流的工作流。 将服务添加到数据流时，只有您有权访问的服务才会包含在选项列表中。 请参阅指南，网址为 [配置数据流](../../datastreams/overview.md) 以了解更多信息。 |
-| 为数据收集准备数据 | 如果您使用的是Adobe Experience Platform Web SDK，您现在可以利用数据准备功能将您的数据映射到服务器端的Experience Data Model (XDM)。 请参阅以下部分 [为数据收集准备数据](../../datastreams/data-prep.md) 数据流指南以了解更多信息。 |
-| 第一方设备Id | 在使用Adobe Experience Platform Web SDK收集客户数据时，您现在可以将自己的设备ID发送到Platform Edge Network，这提供了有关第三方Cookie生命周期的最近浏览器限制的解决方法。 请参阅指南，网址为 [第一方设备Id](../../web-sdk/identity/first-party-device-ids.md) 以了解更多信息。 |
+| 改进了数据流配置的UI工作流 | 更新了在数据收集UI中创建新数据流的工作流。 将服务添加到数据流时，只有您有权访问的服务才会包含在选项列表中。 有关详细信息，请参阅[配置数据流](../../datastreams/overview.md)指南。 |
+| 为数据收集准备数据 | 如果您使用的是Adobe Experience Platform Web SDK，您现在可以利用数据准备功能将您的数据映射到服务器端的Experience Data Model (XDM)。 有关详细信息，请参阅数据流指南中有关为数据收集准备[数据](../../datastreams/data-prep.md)的部分。 |
+| 第一方设备Id | 在使用Platform Web SDK收集客户数据时，您现在可以将自己的设备ID发送到Adobe Experience PlatformEdge Network，从而提供针对第三方Cookie生命周期的最近浏览器限制的一种解决方法。 有关详细信息，请参阅[第一方设备ID](../../web-sdk/identity/first-party-device-ids.md)上的指南。 |
 
-有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
+有关Platform中数据收集的详细信息，请参阅[数据收集概述](../../collection/home.md)。
 
 ## [!DNL Destinations] {#destinations}
 
@@ -59,21 +59,21 @@ Platform提供了一套技术，可让您收集客户端客户体验数据并将
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| (Beta)Destination SDK支持基于文件的目标 | [Destination SDK支持基于文件的目标](../../destinations/destination-sdk/functionality/destination-server/server-specs.md) 目前为私人测试版，仅向部分合作伙伴和客户提供。 在正式发布之前，功能和相关文档可能会发生更改。<br><br>请联系您的Adobe客户代表以了解如何访问该功能。 Adobe内部客户代表应联系Experience Platform目标产品和工程团队以讨论支持的用例。 <br><br> 在对基于文件的目标的Destination SDK支持测试阶段，测试版合作伙伴和客户可以使用 [Experience PlatformDestination SDK](../../destinations/destination-sdk/overview.md) 构建专用目标以从以下功能中受益： <ul><li>通过Amazon S3、SFTP服务器、Azure Blob、Azure Data Lake Storage、Data Landing Zone Storage创建基于文件的（批量）目标。</li><li>配置和设置默认文件导出计划和频率选项。</li><li>配置并设置用于设置导出CSV文件格式的选项（分隔符、转义字符和其他选项）。</li><li>能够设置和编辑自定义文件标头。</li><li>能够接收有关文件和区段导出的事件通知。</li><li>能够导出其他文件类型，如CSV、TSV、JSON、Parquet。</li></ul>  <br>要开始使用新功能，请阅读 [（测试版）使用Destination SDK配置基于文件的目标](../../destinations/destination-sdk/guides/configure-file-based-destination-instructions.md). <br><br> 创建私有或生产化的功能 *流式* 所有Experience Platform客户和合作伙伴均已可使用Destination SDK目标。 阅读操作方法指南 [使用Destination SDK配置流目标](../../destinations/destination-sdk/guides/configure-destination-instructions.md) 以了解详细信息。 |
+| (Beta)基于文件的目标的Destination SDK支持 | [基于文件的目标的Destination SDK支持](../../destinations/destination-sdk/functionality/destination-server/server-specs.md)当前为私人测试版，仅向部分合作伙伴和客户提供。 在正式发布之前，功能和相关文档可能会发生更改。<br><br>请联系您的Adobe客户代表以了解如何访问该功能。 Adobe内部客户代表应联系Experience Platform目标产品和工程团队以讨论支持的用例。 <br><br>在对基于文件的目标的Destination SDK支持测试阶段，测试版合作伙伴和客户可以使用[Experience PlatformDestination SDK](../../destinations/destination-sdk/overview.md)构建专用目标以从以下功能中获益： <ul><li>通过Amazon S3、SFTP服务器、Azure Blob、Azure Data Lake Storage、Data Landing Zone Storage创建基于文件的（批量）目标。</li><li>配置和设置默认文件导出计划和频率选项。</li><li>配置并设置用于设置导出CSV文件格式的选项（分隔符、转义字符和其他选项）。</li><li>能够设置和编辑自定义文件标头。</li><li>能够接收有关文件和区段导出的事件通知。</li><li>能够导出其他文件类型，如CSV、TSV、JSON、Parquet。</li></ul>  <br>要开始使用新功能，请阅读[(Beta)使用Destination SDK配置基于文件的目标](../../destinations/destination-sdk/guides/configure-file-based-destination-instructions.md)。 <br><br>所有Experience Platform客户和合作伙伴都可以使用使用Destination SDK创建私有或产品化的&#x200B;*流式传输*&#x200B;目标的功能。 有关详细信息，请参阅有关如何[使用Destination SDK配置流目标](../../destinations/destination-sdk/guides/configure-destination-instructions.md)的指南。 |
 
 ## [!DNL Identity Service] {#identity}
 
 提供相关的数字体验要求完全了解您的客户。 当您的客户数据分散在不同的系统中，导致每个客户似乎拥有多个“身份”时，就会更加困难。
 
-Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统桥接身份，允许您实时提供有影响力的个人数字体验，从而帮助您更好地了解客户及其行为。
+Adobe Experience Platform [!DNL Identity Service]通过跨设备和系统桥接身份，允许您实时提供有影响力的个人数字体验，从而帮助您更好地了解客户及其行为。
 
 **更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 的新权限 `view-identity-graph` | 您现在可以使用 `view-identity-graph` 控制组织中的用户是否可以查看身份图数据的权限。 将禁止没有此权限的用户在UI中或访问时访问身份图查看器 [!DNL Identity Service] 返回身份的API。 请参阅 [访问控制概述](../../access-control/home.md) 以了解有关权限的更多信息。 |
+| `view-identity-graph`的新权限 | 您现在可以使用`view-identity-graph`权限来控制组织中的用户是否可以查看身份图数据。 将禁止没有此权限的用户在UI中访问身份图形查看器，或在访问返回身份的[!DNL Identity Service] API时访问它们。 有关权限的更多信息，请参阅[访问控制概述](../../access-control/home.md)。 |
 
-有关以下内容的更多常规信息： [!DNL Identity Service]，请参阅 [Identity服务概述](../../identity-service/home.md).
+有关[!DNL Identity Service]的更多常规信息，请参阅[Identity Service概述](../../identity-service/home.md)。
 
 ## 源 {#sources}
 
@@ -85,6 +85,6 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 | 功能 | 描述 |
 | --- | --- |
-| Beta版源迁移到GA | 以下源已从Beta版升级到GA版： <ul><li>[[!DNL Mailchimp Campaigns]](../../sources/connectors/marketing-automation/mailchimp.md)</li><li>[[!DNL Mailchimp Members]](../../sources/connectors/marketing-automation/mailchimp.md)</li><li>[[!DNL Zoho CRM]](../../sources/connectors/crm/zoho.md)</li></ul> |
+| Beta源迁移到GA | 以下源已从Beta版升级到GA版： <ul><li>[[!DNL Mailchimp Campaigns]](../../sources/connectors/marketing-automation/mailchimp.md)</li><li>[[!DNL Mailchimp Members]](../../sources/connectors/marketing-automation/mailchimp.md)</li><li>[[!DNL Zoho CRM]](../../sources/connectors/crm/zoho.md)</li></ul> |
 
-要了解有关源的详细信息，请参阅 [源概述](../../sources/home.md).
+要了解有关源的更多信息，请参阅[源概述](../../sources/home.md)。

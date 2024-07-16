@@ -5,7 +5,7 @@ exl-id: 4bafa132-0d21-4140-ab46-f09cc20bce6f
 source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
 workflow-type: tm+mt
 source-wordcount: '1069'
-ht-degree: 72%
+ht-degree: 69%
 
 ---
 
@@ -13,11 +13,11 @@ ht-degree: 72%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 >[!NOTE]
 >
->此扩展已弃用，取而代之的是 [Adobe Experience Platform Web SDK](../web-sdk/overview.md).
+>此扩展已弃用，推荐使用[Adobe Experience Platform Web SDK](../web-sdk/overview.md)。
 
 此扩展的功能将移植到新扩展上。以下是当前功能的快速比较。
 
@@ -37,21 +37,21 @@ ht-degree: 72%
 
 此部分提供有关配置 Adobe Experience Platform 扩展时可用的选项的参考。
 
-如果尚未安装Adobe Experience Platform扩展，请打开您的资产，然后选择 **[!UICONTROL Extensions > Catalog]**，将鼠标悬停在Adobe Experience Platform扩展上，然后选择 **[!UICONTROL 安装]**.
+如果尚未安装Adobe Experience Platform扩展，请打开您的资产，然后选择&#x200B;**[!UICONTROL 扩展>目录]**，将鼠标悬停在Adobe Experience Platform扩展上，然后选择&#x200B;**[!UICONTROL 安装]**。
 
-要配置该扩展，请打开 [!UICONTROL 扩展] 选项卡，将鼠标悬停在该扩展上，然后选择 **[!UICONTROL 配置]**.
+要配置该扩展，请打开[!UICONTROL 扩展]选项卡，将鼠标悬停在该扩展上，然后选择&#x200B;**[!UICONTROL 配置]**。
 
 ![](../../../images/adobe-experience-platform-extension-configuration.png)
 
 ### 流连接
 
-要开始将数据流式传输到 Adobe Experience Platform，第一步便是选择一个流连接。您可以从流连接组合框中选择一个。流连接为必填字段。如果尚未创建任何流连接，则可以通过选择 **[!UICONTROL 创建流连接]** 按钮。
+要开始将数据流式传输到 Adobe Experience Platform，第一步便是选择一个流连接。您可以从流连接组合框中选择一个。流连接为必填字段。如果尚未创建任何流连接，则可以通过选择&#x200B;**[!UICONTROL 创建流连接]**&#x200B;按钮来创建一个。
 
-如果您选择 **[!UICONTROL 创建流连接]** 此时将显示一个模式窗口。
+如果选择&#x200B;**[!UICONTROL 创建流连接]**，将显示一个模式窗口。
 
 ![](../../../images/adobe-experienc-platform-create-streaming-connection.png)
 
-该模式窗口中包含预先填充了值的字段，您可以根据需要更改这些值。如果您计划创建多个流连接，则应当注意 **[!UICONTROL 数据源]** 字段必须唯一。 尝试使用创建另一个流连接 **[!UICONTROL 数据源]** 已用于其他连接将失败。
+该模式窗口中包含预先填充了值的字段，您可以根据需要更改这些值。如果您计划创建多个流连接，则应当注意&#x200B;**[!UICONTROL 数据Source]**&#x200B;字段必须是唯一的。 尝试使用已用于其他连接的&#x200B;**[!UICONTROL 数据Source]**&#x200B;创建另一个流连接时，操作将失败。
 
 选择流端点后，您将需要提供流端点 URL 和源。
 
@@ -61,7 +61,7 @@ ht-degree: 72%
 
 此部分介绍 Adobe Experience Platform 扩展中可用的操作类型。
 
-### Send Beacon {#send-beacon}
+### 发送信标 {#send-beacon}
 
 这是为将数据发送到 Adobe Experience Platform 而将使用的操作类型。
 
@@ -120,7 +120,7 @@ ht-degree: 72%
 
 如果标识映射部分中有多个标识，则只能将一个标识标记为主标识。
 
-如果您的架构具有 `xdm:identityMap` 字段并同时另一个字段标记为主标识字段时，标识映射部分内的主列将不可见。
+如果您的架构中有一个`xdm:identityMap`字段，同时另一个字段被标记为主标识字段，则不会显示标识映射部分内的主列。
 
 ![](../../../images/adobe-experience-platform-send-beacon-identity-section-not-primary.png)
 

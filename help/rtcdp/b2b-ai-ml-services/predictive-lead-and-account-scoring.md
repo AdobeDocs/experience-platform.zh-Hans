@@ -7,7 +7,7 @@ badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/lega
 exl-id: d3afbabb-005d-4537-831a-857c88043759
 source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
-source-wordcount: '869'
+source-wordcount: '859'
 ht-degree: 2%
 
 ---
@@ -26,7 +26,7 @@ B2B营销人员在营销漏斗顶部面临多种挑战。 为了变得有效，B
 
 >[!NOTE]
 >
->[!DNL Marketo] 数据源当前是必需的，因为它是唯一可以在人员配置文件级别提供转化事件的数据源。
+>[!DNL Marketo]数据源当前是必需的，因为它是唯一可以在人员配置文件级别提供转化事件的数据源。
 
 预测商机和帐户评分使用基于树的（随机森林/梯度提升）机器学习方法来构建预测商机评分模型。
 
@@ -37,13 +37,13 @@ B2B营销人员在营销漏斗顶部面临多种挑战。 为了变得有效，B
 | 目标类型 | 字段 |
 | --- | --- |
 | `leadOperation.convertLead` | <ul><li>`leadOperation.convertLead.convertedStatus`</li><li>`leadOperation.convertLead.assignTo`</li></ul> |
-| `opportunityEvent.opportunityUpdated` | <ul><li>`opportunityEvent.dataValueChanges.attributeName`</li><li>`opportunityEvent.dataValueChanges.newValue`</li><li>`opportunityEvent.dataValueChanges.oldValue`</li>示例： `opportunityEvent.dataValueChanges.attributeName` 等于 `Stage` 和 `opportunityEvent.dataValueChanges.newValue` 等于 `Contract`</ul> |
+| `opportunityEvent.opportunityUpdated` | <ul><li>`opportunityEvent.dataValueChanges.attributeName`</li><li>`opportunityEvent.dataValueChanges.newValue`</li><li>`opportunityEvent.dataValueChanges.oldValue`</li>示例： `opportunityEvent.dataValueChanges.attributeName`等于`Stage`，`opportunityEvent.dataValueChanges.newValue`等于`Contract`</ul> |
 
 该算法考虑了以下属性和输入数据：
 
 * 人员配置文件
 
-| XDM字段 | 必填/可选 |
+| XDM字段 | 必需/可选 |
 | --- | --- |
 | `personComponents.sourceAccountKey.sourceKey` | 必需 |
 | `workAddress.country` | 可选 |
@@ -52,11 +52,11 @@ B2B营销人员在营销漏斗顶部面临多种挑战。 为了变得有效，B
 
 >[!NOTE]
 > 
->算法仅检查 `sourceAccountKey.sourceKey` “人员：人员组件”字段组中的字段。
+>算法仅检查Person：personComponents字段组中的`sourceAccountKey.sourceKey`字段。
 
-* 帐户配置文件
+* 帐户轮廓
 
-| XDM字段 | 必填/可选 |
+| XDM字段 | 必需/可选 |
 | --- | --- |
 | `accountKey.sourceKey` | 必需 |
 | `extSourceSystemAudit.createdDate` | 必需 |
@@ -66,7 +66,7 @@ B2B营销人员在营销漏斗顶部面临多种挑战。 为了变得有效，B
 
 * 体验事件
 
-| XDM字段 | 必填/可选 |
+| XDM字段 | 必需/可选 |
 | --- | --- |
 | `_id` | 必需 |
 | `personKey.sourceKey` | 必需 |
@@ -86,11 +86,11 @@ B2B营销人员在营销漏斗顶部面临多种挑战。 为了变得有效，B
 
 评分作业每天运行，其结果将作为配置文件属性和帐户属性进行保存，然后可用于区段定义和个性化。 现成的Analytics Insights也可在帐户概述功能板上找到。
 
-有关如何执行操作的更多信息，请参阅文档 [管理预测性商机和客户评分](/help/rtcdp/b2b-ai-ml-services/manage-predictive-lead-and-account-scoring.md) 服务。
+请参阅文档以了解有关如何[管理预测商机和帐户评分](/help/rtcdp/b2b-ai-ml-services/manage-predictive-lead-and-account-scoring.md)服务的更多信息。
 
 ## 查看预测商机和客户评分结果 {#how-to-view}
 
-作业运行后，结果将以名称保存在每个模型的新系统数据集中 `LeadsAI.Scores` - ***得分名称***. 每个得分字段组可以位于 `{CUSTOM_FIELD_GROUP}.LeadsAI.the_score_name`.
+作业运行后，将结果保存在名为`LeadsAI.Scores` - ***得分名称***&#x200B;的每个模型的新系统数据集中。 每个得分字段组都可以位于`{CUSTOM_FIELD_GROUP}.LeadsAI.the_score_name`。
 
 | 属性 | 描述 |
 | --- | --- |
@@ -102,15 +102,15 @@ B2B营销人员在营销漏斗顶部面临多种挑战。 为了变得有效，B
 
 ### 查看客户个人资料分数
 
-要查看人员配置文件的预测分数，请选择 **[!UICONTROL 配置文件]** 在左侧面板的“客户”部分下，然后输入身份命名空间和身份值。 完成后，选择 **[!UICONTROL 视图]**.
+要查看人员配置文件的预测得分，请选择左侧面板中客户部分下的&#x200B;**[!UICONTROL 配置文件]**，然后输入身份命名空间和身份值。 完成后，选择&#x200B;**[!UICONTROL 视图]**。
 
 接下来，从列表中选择配置文件。
 
-![客户配置文件](/help/rtcdp/accounts/images/b2b-view-customer-profile.png)
+![客户个人资料](/help/rtcdp/accounts/images/b2b-view-customer-profile.png)
 
-此 **[!UICONTROL 详细信息]** 页面现在包含预测分数。 单击预测得分旁边的图表图标。
+**[!UICONTROL 详细信息]**&#x200B;页面现在包含预测得分。 单击预测得分旁边的图表图标。
 
-![客户配置文件预测分数](/help/rtcdp/accounts/images/b2b-view-customer-profile-predictive-score.png)
+![客户个人资料预测得分](/help/rtcdp/accounts/images/b2b-view-customer-profile-predictive-score.png)
 
 弹出对话框显示分数、总体分数分布、此分数的主要影响因素以及分数目标定义。
 
@@ -124,4 +124,4 @@ B2B营销人员在营销漏斗顶部面临多种挑战。 为了变得有效，B
 * 下一个评分作业（日期）
 * 下一个培训作业（日期）
 
-有关详细信息，请参阅以下文档： [监控预测性商机和客户评分的作业](/help/dataflows/ui/b2b/monitor-profile-enrichment.md).
+有关详细信息，请参阅有关[监控预测商机和帐户评分的作业](/help/dataflows/ui/b2b/monitor-profile-enrichment.md)的文档。

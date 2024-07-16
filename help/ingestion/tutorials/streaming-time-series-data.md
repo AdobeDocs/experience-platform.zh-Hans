@@ -7,32 +7,32 @@ description: 本教程将帮助您开始使用流摄取API，它是Adobe Experie
 exl-id: 720b15ea-217c-4c13-b68f-41d17b54d500
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1203'
+source-wordcount: '1210'
 ht-degree: 2%
 
 ---
 
 # 使用流式引入API流式传输时间序列数据
 
-本教程将帮助您开始使用Adobe Experience Platform中的流摄取API [!DNL Data Ingestion Service] API。
+本教程将帮助您开始使用流摄取API，它是Adobe Experience Platform [!DNL Data Ingestion Service] API的一部分。
 
 ## 快速入门
 
 本教程需要具备各种Adobe Experience Platform服务的实际操作知识。 在开始本教程之前，请查看以下服务的文档：
 
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Platform] 组织体验数据。
-- [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个源的聚合数据实时提供统一的用户配置文件。
-- [Schema Registry开发人员指南](../../xdm/api/getting-started.md)：一份全面的指南，涵盖了 [!DNL Schema Registry] API以及如何对它们进行调用。 这包括了解 `{TENANT_ID}`，本教程的调用中都会显示，并且了解如何创建架构，这用于创建摄取数据集。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： [!DNL Platform]用于组织体验数据的标准化框架。
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个源的汇总数据，实时提供统一的使用者配置文件。
+- [架构注册开发人员指南](../../xdm/api/getting-started.md)：一个全面的指南，涵盖[!DNL Schema Registry] API的每个可用端点以及如何调用它们。 这包括了解您在本教程的调用中显示的`{TENANT_ID}`，以及了解如何创建用于创建摄取数据集的架构。
 
-此外，本教程要求您已创建一个流连接。 有关创建流连接的详细信息，请阅读 [创建流连接教程](./create-streaming-connection.md).
+此外，本教程要求您已创建一个流连接。 有关创建流连接的详细信息，请参阅[创建流连接教程](./create-streaming-connection.md)。
 
 ### 使用平台API
 
-有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../landing/api-guide.md).
+有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../landing/api-guide.md)指南。
 
 ## 根据XDM ExperienceEvent类构建架构
 
-要创建数据集，您首先需要创建一个实施 [!DNL XDM ExperienceEvent] 类。 有关如何创建架构的更多信息，请阅读 [架构注册表API开发人员指南](../../xdm/api/getting-started.md).
+要创建数据集，您首先需要创建一个实现[!DNL XDM ExperienceEvent]类的新架构。 有关如何创建架构的更多信息，请参阅[架构注册API开发人员指南](../../xdm/api/getting-started.md)。
 
 **API格式**
 
@@ -76,12 +76,12 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/sch
 | 属性 | 描述 |
 | -------- | ----------- |
 | `title` | 要用于架构的名称。 此名称必须是唯一的。 |
-| `description` | 对您创建的架构的有意义描述。 |
-| `meta:immutableTags` | 在此示例中， `union` 标记用于将您的数据持久化到 [[!DNL Real-Time Customer Profile]](../../profile/home.md). |
+| `description` | 对您正在创建的架构的有意义的描述。 |
+| `meta:immutableTags` | 在此示例中，`union`标记用于将您的数据保留到[[!DNL Real-Time Customer Profile]](../../profile/home.md)中。 |
 
 **响应**
 
-成功响应会返回HTTP状态201以及新创建架构的详细信息。
+成功的响应返回HTTP状态201以及新创建架构的详细信息。
 
 ```json
 {
@@ -155,17 +155,17 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/sch
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{TENANT_ID}` | 此ID用于确保您创建的资源被正确命名并包含在您的组织中。 有关租户ID的更多信息，请阅读 [模式注册表指南](../../xdm/api/getting-started.md#know-your-tenant-id). |
+| `{TENANT_ID}` | 此ID用于确保您创建的资源被正确命名并包含在您的组织中。 有关租户ID的详细信息，请阅读[架构注册表指南](../../xdm/api/getting-started.md#know-your-tenant-id)。 |
 
-请记下 `$id` 以及 `version` 属性，因为创建数据集时将同时使用这两个属性。
+请记下`$id`和`version`属性，因为创建数据集时将同时使用这两个属性。
 
 ## 为架构设置主标识描述符
 
-接下来，添加 [身份描述符](../../xdm/api/descriptors.md) 以上创建的模式，使用工作电子邮件地址属性作为主要标识符。 执行此操作将导致两个更改：
+接下来，将[身份描述符](../../xdm/api/descriptors.md)添加到上面创建的架构中，使用工作电子邮件地址属性作为主要标识符。 执行此操作将导致两个更改：
 
 1. 工作电子邮件地址将成为必填字段。 这意味着在没有此字段的情况下发送的邮件将验证失败并且不会被摄取。
 
-2. [!DNL Real-Time Customer Profile] 将使用工作电子邮件地址作为标识符以帮助拼合有关该个人的更多信息。
+2. [!DNL Real-Time Customer Profile]将使用工作电子邮件地址作为标识符以帮助拼合有关该个人的更多信息。
 
 ### 请求
 
@@ -189,19 +189,19 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/des
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{SCHEMA_REF_ID}` | 此 `$id` 您之前在撰写架构时收到的内容。 它应该看起来像这样： `"https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}"` |
+| `{SCHEMA_REF_ID}` | 您之前在撰写架构时收到的`$id`。 它应类似于下面的样子： `"https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}"` |
 
 >[!NOTE]
 >
->&#x200B;**身份命名空间代码**
+>{0&#x200B;}身份命名空间代码&#x200B;****
 >
-> 请确保代码有效 — 上面的示例使用“email”，它是一个标准身份命名空间。 其他常用的标准身份命名空间可在中找到 [Identity服务常见问题解答](../../identity-service/troubleshooting-guide.md#what-are-the-standard-identity-namespaces-provided-by-experience-platform).
+> 请确保代码有效 — 上面的示例使用“email”，它是一个标准身份命名空间。 在[身份服务常见问题解答](../../identity-service/troubleshooting-guide.md#what-are-the-standard-identity-namespaces-provided-by-experience-platform)中可以找到其他常用的标准身份命名空间。
 >
-> 如果要创建自定义命名空间，请按照 [身份命名空间概述](../../identity-service/home.md).
+> 如果要创建自定义命名空间，请按照[身份命名空间概述](../../identity-service/home.md)中概述的步骤操作。
 
 **响应**
 
-成功的响应返回HTTP状态201，其中包含有关新创建的主要身份命名空间的信息。
+成功的响应返回HTTP状态201，其中包含有关新创建的架构主身份命名空间的信息。
 
 ```json
 {
@@ -225,7 +225,7 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/des
 
 >[!NOTE]
 >
->此数据集将启用 **[!DNL Real-Time Customer Profile]** 和 **[!DNL Identity]** 通过设置适当的标记。
+>通过设置适当的标记，将为&#x200B;**[!DNL Real-Time Customer Profile]**&#x200B;和&#x200B;**[!DNL Identity]**&#x200B;启用此数据集。
 
 **API格式**
 
@@ -258,7 +258,7 @@ curl -X POST https://platform.adobe.io/data/foundation/catalog/dataSets \
 
 **响应**
 
-成功的响应会返回HTTP状态201和一个数组，该数组包含格式中新创建的数据集的ID `@/dataSets/{DATASET_ID}`.
+成功的响应返回HTTP状态201和一个数组，该数组包含新创建的数据集的ID，格式为`@/dataSets/{DATASET_ID}`。
 
 ```json
 [
@@ -269,13 +269,13 @@ curl -X POST https://platform.adobe.io/data/foundation/catalog/dataSets \
 
 ## 创建流连接
 
-创建架构和数据集后，您将需要创建一个流连接来摄取数据。
+创建架构和数据集后，您需要创建流连接以摄取数据。
 
-有关创建流连接的详细信息，请阅读 [创建流连接教程](./create-streaming-connection.md).
+有关创建流连接的详细信息，请参阅[创建流连接教程](./create-streaming-connection.md)。
 
 ## 将时间序列数据摄取到流连接
 
-在创建数据集、流连接和数据流后，您可以摄取XDM格式的JSON记录以摄取中的时序数据 [!DNL Platform].
+创建数据集、流连接和数据流后，您可以摄取XDM格式的JSON记录以摄取[!DNL Platform]中的时序数据。
 
 **API格式**
 
@@ -285,22 +285,22 @@ POST /collection/{CONNECTION_ID}?syncValidation=true
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | 此 `id` 新创建的流连接的值。 |
-| `syncValidation` | 用于开发目的的可选查询参数。 如果设置为 `true`，它可用于即时反馈以确定请求是否已成功发送。 默认情况下，此值设置为 `false`. 请注意，如果您将此查询参数设置为 `true` 请求速率将限制为每分钟60次 `CONNECTION_ID`. |
+| `{CONNECTION_ID}` | 新创建的流连接的`id`值。 |
+| `syncValidation` | 用于开发目的的可选查询参数。 如果设置为`true`，则可用于即时反馈以确定请求是否成功发送。 默认情况下，此值设置为`false`。 请注意，如果您将此查询参数设置为`true`，则请求速率将限制为每`CONNECTION_ID`每分钟60次。 |
 
 **请求**
 
-可以将时间序列数据摄取到流连接，无论是否使用源名称。
+将时间序列数据摄取到流连接可以不使用源名称也可以使用源名称。
 
 下面的示例请求将缺少源名称的时间系列数据摄取到Platform。 如果数据缺少源名称，它将从流连接定义中添加源ID。
 
-两者 `xdmEntity._id` 和 `xdmEntity.timestamp` 是时间序列数据的必填字段。 此 `xdmEntity._id` 属性表示记录本身的唯一标识符， **非** 其记录所属的人员或设备的唯一ID。
+`xdmEntity._id`和`xdmEntity.timestamp`都是时间序列数据的必填字段。 `xdmEntity._id`属性表示记录本身的唯一标识符，**不是**&#x200B;记录所属人员或设备的唯一ID。
 
-您需要生成自己的 `xdmEntity._id` 和 `xdmEntity.timestamp` 以保持一致的方式获取记录，以便将来需要重新获取记录。 理想情况下，源系统将包含这些值。 如果ID不可用，请考虑关联记录中其他字段的值以创建一个唯一值，该值可在重新摄取时始终从记录中重新生成。
+如果需要重新摄取记录，您将需要为记录生成自己的`xdmEntity._id`和`xdmEntity.timestamp`，并且这种方式将保持一致性。 理想情况下，源系统将包含这些值。 如果ID不可用，请考虑关联记录中其他字段的值以创建一个唯一值，该值可在重新摄取时始终从记录中重新生成。
 
 >[!NOTE]
 >
->以下API调用执行 **非** 需要任何身份验证标头。
+>以下API调用&#x200B;**不**&#x200B;需要任何身份验证标头。
 
 ```shell
 curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?syncValidation=true \
@@ -373,7 +373,7 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?syncValidation=t
 }'
 ```
 
-如果要包含源名称，以下示例显示如何包含该源名称。
+如果要包含源名称，以下示例显示了如何包含该源名称。
 
 ```json
     "header": {
@@ -391,7 +391,7 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?syncValidation=t
 
 **响应**
 
-成功的响应返回HTTP状态200，其中包含新流式传输的详细信息 [!DNL Profile].
+成功的响应返回HTTP状态200，其中包含新流式传输[!DNL Profile]的详细信息。
 
 ```json
 {
@@ -406,18 +406,18 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?syncValidation=t
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{CONNECTION_ID}` | 此 `inletId` 之前创建的流连接的ID。 |
-| `xactionId` | 在服务器端为您刚刚发送的记录生成的唯一标识符。 此ID有助于Adobe通过各种系统和调试，跟踪此记录的生命周期。 |
-| `receivedTimeMs`：显示收到请求的时间的时间的时间戳（以毫秒为单位）。 |
-| `syncValidation.status` | 由于查询参数 `syncValidation=true` 添加，将显示此值。 如果验证成功，则状态将为 `pass`. |
+| `{CONNECTION_ID}` | 之前创建的流连接的`inletId`。 |
+| `xactionId` | 在服务器端为您刚刚发送的记录生成的唯一标识符。 此ID可帮助Adobe跟踪此记录的生命周期，包括各种系统和调试。 |
+| `receivedTimeMs`：时间戳（以毫秒为单位），显示收到请求的时间。 |
+| `syncValidation.status` | 由于添加了查询参数`syncValidation=true`，因此将显示此值。 如果验证成功，状态将为`pass`。 |
 
-## 检索新摄取的时间系列数据
+## 检索新摄取的时间序列数据
 
-要验证以前摄取的记录，您可以使用 [[!DNL Profile Access API]](../../profile/api/entities.md) 以检索时间序列数据。 这可以通过向发出的GET请求来完成 `/access/entities` 端点并使用可选的查询参数。 可以使用多个参数，以&amp;分隔。”
+要验证以前摄取的记录，您可以使用[[!DNL Profile Access API]](../../profile/api/entities.md)检索时间序列数据。 可以使用对`/access/entities`端点的GET请求并使用可选的查询参数来完成此操作。 可以使用多个参数，以&amp;分隔。”
 
 >[!NOTE]
 >
->如果未定义合并策略ID，并且 `schema.name` 或 `relatedSchema.name` 是 `_xdm.context.profile`， [!DNL Profile Access] 将获取 **所有** 相关身份。
+>如果未定义合并策略ID，并且`schema.name`或`relatedSchema.name`为`_xdm.context.profile`，则[!DNL Profile Access]将提取&#x200B;**所有**&#x200B;相关标识。
 
 **API格式**
 
@@ -429,8 +429,8 @@ GET /access/entities?schema.name=_xdm.context.experienceevent&relatedSchema.name
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `schema.name` | **必需。** 您正在访问的架构的名称。 |
-| `relatedSchema.name` | **必需。** 由于您正在访问 `_xdm.context.experienceevent`，此值指定与时序事件相关的配置文件实体的架构。 |
+| `schema.name` | **必填。**&#x200B;您正在访问的架构的名称。 |
+| `relatedSchema.name` | **必填。**&#x200B;由于您正在访问`_xdm.context.experienceevent`，此值指定与时间序列事件相关的配置文件实体的架构。 |
 | `relatedEntityId` | 相关实体的ID。 如果提供，则还必须提供实体命名空间。 |
 | `relatedEntityIdNS` | 您尝试检索的ID的命名空间。 |
 
@@ -515,6 +515,6 @@ curl -X GET \
 
 ## 后续步骤
 
-通过阅读本文档，您现在了解了如何将记录数据摄取到 [!DNL Platform] 使用流连接。 您可以尝试使用不同的值发出更多调用并检索更新的值。 此外，您还可以开始通过监视引入的数据 [!DNL Platform] UI。 欲知更多信息，请阅读 [监测数据摄取](../quality/monitor-data-ingestion.md) 指南。
+通过阅读本文档，您现在了解如何使用流连接将记录数据摄取到[!DNL Platform]。 您可以尝试使用不同的值发起更多调用并检索更新的值。 此外，您还可以通过[!DNL Platform] UI开始监视摄取的数据。 有关详细信息，请参阅[监视数据摄取](../quality/monitor-data-ingestion.md)指南。
 
-有关一般流式摄取的更多信息，请阅读 [流式摄取概述](../streaming-ingestion/overview.md).
+有关一般流式摄取的更多信息，请阅读[流式摄取概述](../streaming-ingestion/overview.md)。

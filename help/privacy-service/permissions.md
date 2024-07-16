@@ -4,7 +4,7 @@ description: 了解如何使用 Adobe Admin Console 管理 Adobe Experience Plat
 exl-id: 6aa81850-48d7-4fff-95d1-53b769090649
 source-git-commit: 20a737cf36bf08415a15db78599f36659207ace1
 workflow-type: tm+mt
-source-wordcount: '1504'
+source-wordcount: '1481'
 ht-degree: 95%
 
 ---
@@ -47,13 +47,13 @@ ht-degree: 95%
 
 要管理 Privacy Service 权限，请登录到 [Admin Console](https://adminconsole.adobe.com/)，并从顶部导航中选择&#x200B;**[!UICONTROL 产品]**。从此处选择 **[!UICONTROL Adobe Experience Platform Privacy Service]**。
 
-![突出显示Privacy Service产品卡的Admin Console。](./images/permissions/privacy-service-card.png)
+![高亮显示Privacy Service产品卡的Admin Console。](./images/permissions/privacy-service-card.png)
 
 ### 选择或创建产品配置文件
 
 下一个屏幕显示您组织下的 Privacy Service 的可用产品配置文件列表。如果不存在产品配置文件，请选择&#x200B;**[!UICONTROL 新的配置文件]**&#x200B;来创建一个。如果您的组织中有多个角色或用户组需要不同级别的访问权限，则应为每个角色或用户组创建单独的产品配置文件。
 
-![突出显示Privacy Service产品配置文件的Admin Console。](./images/permissions/select-or-create-profile.png)
+![Privacy Service产品配置文件突出显示的Admin Console。](./images/permissions/select-or-create-profile.png)
 
 选择某个产品配置文件后，可使用&#x200B;**[!UICONTROL 权限]**&#x200B;选项卡开始为该配置文件[编辑权限](#edit-permissions)，或选择&#x200B;**[!UICONTROL 用户]**&#x200B;选项卡以开始[将用户分配](#assign-users)给该配置文件。
 
@@ -69,21 +69,21 @@ ht-degree: 95%
 
 权限会按类别进行组织。要在类别之间切换，请从左侧导航中选择所需的类别。
 
-![此 [!UICONTROL 选择退出销售] 部分。](./images/permissions/switch-category.png)
+![权限下的[!UICONTROL 选择退出销售]部分。](./images/permissions/switch-category.png)
 
 配置完权限后，选择&#x200B;**[!UICONTROL 保存]**。
 
-![突出显示了具有保存的产品配置文件的权限配置。](./images/permissions/save-permissions.png)
+![突出显示“保存”的产品配置文件的权限配置。](./images/permissions/save-permissions.png)
 
 产品配置文件视图将重新出现，并会反映添加的权限。
 
-![为产品配置文件添加了权限。](./images/permissions/permissions-added.png)
+![为产品配置文件添加的权限。](./images/permissions/permissions-added.png)
 
 ### 将用户分配给配置文件 {#assign-users}
 
 要将用户分配给产品配置文件（并授予其为该配置文件配置的权限），请选择&#x200B;**[!UICONTROL 用户]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 添加用户]**。
 
-![Admin Console中产品配置文件的用户选项卡。](./images/permissions/manage-users.png)
+![Admin Console中产品配置文件的“用户”选项卡。](./images/permissions/manage-users.png)
 
 有关为产品配置文件管理用户的详细信息，请参阅 [Admin Console 文档](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html)。
 

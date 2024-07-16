@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform；Luma Web数据；数据科学工作区；热门主题；脚本；演示数据；演示Web数据；Luma数据
+keywords: Experience Platform；Luma Web数据；数据科学Workspace；热门主题；脚本；演示数据；演示Web数据；Luma数据
 solution: Experience Platform
 title: 创建Luma Web架构和数据集
 type: Tutorial
@@ -7,21 +7,21 @@ description: 本教程向您提供Luma演示倾向模型所需的先决条件和
 exl-id: a791e532-1116-4407-b745-fd6c2ac0d8f7
 source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '463'
-ht-degree: 1%
+source-wordcount: '456'
+ht-degree: 0%
 
 ---
 
 # 创建Luma倾向模型架构和数据集
 
-本教程向您提供所有其他项目所需的先决条件和资源 [!DNL Adobe Experience Platform] [!DNL Data Science Workspace] 教程。 完成后，您和您的组织可以使用以下架构和数据集。
+本教程提供了所有其他[!DNL Adobe Experience Platform] [!DNL Data Science Workspace]教程所需的先决条件和资源。 完成后，您和您的组织可以使用以下架构和数据集。
 
-**架构:**
+**架构：**
 
 - Luma Web数据架构
 - 倾向模型评分结果架构
 
-**数据集:**
+**数据集：**
 
 - Luma Web数据集
 - 倾向模型训练数据集
@@ -30,7 +30,7 @@ ht-degree: 1%
 
 ## 下载资源 {#assets}
 
-以下教程使用自定义Luma购买倾向模型。 在继续之前， [下载所需的资产](https://experienceleague.adobe.com/docs/platform-learn/assets/DSW-course-sample-assets.zip) zip文件夹。 此文件夹包含：
+以下教程使用自定义Luma购买倾向模型。 在继续之前，[下载所需的资产](https://experienceleague.adobe.com/docs/platform-learn/assets/DSW-course-sample-assets.zip) zip文件夹。 此文件夹包含：
 
 - 购买倾向模型笔记本
 - 用于将数据摄取到训练和评分数据集（Luma Web数据的子集）的笔记本
@@ -43,7 +43,7 @@ ht-degree: 1%
 
 ### 创建Luma Web数据架构并摄取数据
 
-为了创建模型，Platform中必须具有一个用于训练和评分模型的数据集。 以下视频教程来自 [数据科学工作区课程](https://experienceleague.adobe.com/?recommended=ExperiencePlatform-U-1-2021.1.dsw) 指导您逐步创建Luma架构和摄取购买倾向模型使用的数据。
+为了创建模型，Platform中必须具有一个用于训练和评分模型的数据集。 [数据科学Workspace课程](https://experienceleague.adobe.com/?recommended=ExperiencePlatform-U-1-2021.1.dsw)中的以下视频教程将指导您完成创建Luma架构以及摄取购买倾向模型使用的数据的过程。
 
 >[!VIDEO](https://video.tv.adobe.com/v/333312)
 
@@ -55,6 +55,6 @@ ht-degree: 1%
 
 ## 后续步骤
 
-通过阅读本教程，您已成功为Luma倾向模型创建所需的架构和数据集。 现在，您已准备好继续下一教程并使用创建模型 [方法生成器笔记本](../jupyterlab/create-a-model.md) 教程。
+通过阅读本教程，您已成功为Luma倾向模型创建所需的架构和数据集。 您现在已准备好继续下一教程，并使用[方法生成器笔记本](../jupyterlab/create-a-model.md)教程创建模型。
 
-此外，您可以使用提供的探索数据分析(EDA)笔记本浏览数据。 此笔记本可用于帮助了解Luma数据中的模式、检查数据健康度并总结预测倾向模型的相关数据。 要了解有关探索性数据分析的更多信息，请访问 [EDA文档](../jupyterlab/eda-notebook.md).
+此外，您可以使用提供的探索数据分析(EDA)笔记本浏览数据。 此笔记本可用于帮助了解Luma数据中的模式、检查数据健康度并总结预测倾向模型的相关数据。 若要了解有关探索性数据分析的更多信息，请访问[EDA文档](../jupyterlab/eda-notebook.md)。

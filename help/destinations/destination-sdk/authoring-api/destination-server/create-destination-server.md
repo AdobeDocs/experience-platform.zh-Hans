@@ -4,16 +4,16 @@ title: 创建目标服务器配置
 exl-id: 5c6b6cf5-a9d9-4c8a-9fdc-f8a95ab2a971
 source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
-source-wordcount: '2039'
-ht-degree: 9%
+source-wordcount: '2036'
+ht-degree: 5%
 
 ---
 
 # 创建目标服务器配置
 
-创建目标服务器是使用Destination SDK创建自己的目标的第一步。 目标服务器包括 [服务器](../../functionality/destination-server/server-specs.md) 和 [模板](../../functionality/destination-server/templating-specs.md) 规格， [消息格式](../../functionality/destination-server/message-format.md)，和 [文件格式](../../functionality/destination-server/file-formatting.md) 选项（适用于基于文件的目标）。
+创建目标服务器是使用Destination SDK创建自己的目标的第一步。 目标服务器包括[服务器](../../functionality/destination-server/server-specs.md)和[模板](../../functionality/destination-server/templating-specs.md)规范、[消息格式](../../functionality/destination-server/message-format.md)以及[文件格式](../../functionality/destination-server/file-formatting.md)选项（用于基于文件的目标）的配置选项。
 
-本页举例说明了API请求和有效负荷，您可以使用这些请求和有效负荷创建自己的目标服务器。 `/authoring/destination-servers` API端点。
+此页面展示了可用于使用`/authoring/destination-servers` API端点创建自己的目标服务器的API请求和有效负荷。
 
 有关可通过此端点配置的功能的详细说明，请参阅以下文章：
 
@@ -24,19 +24,19 @@ ht-degree: 9%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 目标服务器API操作快速入门 {#get-started}
 
-在继续之前，请查看 [快速入门指南](../../getting-started.md) 获取成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[入门指南](../../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 创建目标服务器配置 {#create}
 
-您可以通过创建 `POST` 请求 `/authoring/destination-servers` 端点。
+您可以通过向`/authoring/destination-servers`端点发出`POST`请求来创建新的目标服务器配置。
 
 >[!TIP]
 >
->**API端点**： `platform.adobe.io/data/core/activation/authoring/destination-servers`
+>**API终结点**： `platform.adobe.io/data/core/activation/authoring/destination-servers`
 
 **API格式**
 
@@ -48,7 +48,7 @@ POST /authoring/destination-servers
 
 ### 创建静态架构目标服务器 {#static-destination-servers}
 
-请参阅下面选项卡中目标服务器的使用示例 [静态架构](../../functionality/destination-configuration/schema-configuration.md#attributes-schema).
+在下面的选项卡中查看使用[静态架构](../../functionality/destination-configuration/schema-configuration.md#attributes-schema)的目标服务器的示例。
 
 以下示例负载包括每种目标服务器类型支持的所有参数。 您不需要在请求中包含所有参数。 负载可根据您的需求进行自定义。
 
@@ -94,14 +94,14 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 | 参数 | 类型 | 描述 |
 | -------- | ----------- | ----------- |
-| `name` | 字符串 | *必需.* 表示服务器的友好名称，仅对Adobe可见。 合作伙伴或客户看不到此名称。 示例 `Moviestar destination server`. |
-| `destinationServerType` | 字符串 | *必需.* 设置为 `URL_BASED` 适用于实时（流）目标。 |
-| `urlBasedDestination.url.templatingStrategy` | 字符串 | *必需.* <ul><li>使用 `PEBBLE_V1` 如果Adobe需要在 `value` 字段。 如果您拥有如下端点，请使用此选项 `https://api.moviestar.com/data/{{customerData.region}}/items`，其中 `region` 部分可能会因客户而异。 在这种情况下，您还需要配置 `region` as a [客户数据字段](../../functionality/destination-configuration/customer-data-fields.md) 在 [目标配置](../destination-configuration/create-destination-configuration.md. </li><li> 使用 `NONE` 如果不需要在Adobe端进行转换，例如，如果您有如下端点： `https://api.moviestar.com/data/items`.</li></ul> |
-| `urlBasedDestination.url.value` | 字符串 | *必需.* 填写Experience Platform应连接到的API端点的地址。 |
-| `httpTemplate.httpMethod` | 字符串 | *必需.* Adobe将在对服务器的调用中使用的方法。 选项包括 `GET`， `PUT`， `POST`， `DELETE`， `PATCH`. |
-| `httpTemplate.requestBody.templatingStrategy` | 字符串 | *必需.*&#x200B;使用 `PEBBLE_V1`。 |
-| `httpTemplate.requestBody.value` | 字符串 | *必需.* 此字符串是一个字符转义版本，用于将Platform客户的数据转换为您的服务所需的格式。 <br> <ul><li> 有关如何编写模板的信息，请阅读 [使用模板部分](../../functionality/destination-server/message-format.md#using-templating). </li><li> 有关字符转义的详细信息，请参阅 [RFC JSON标准，第七节](https://tools.ietf.org/html/rfc8259#section-7). </li><li> 有关简单转换的示例，请参阅 [配置文件属性](../../functionality/destination-server/message-format.md#attributes) 转换。 </li></ul> |
-| `httpTemplate.contentType` | 字符串 | *必需.* 您的服务器接受的内容类型。 此值极有可能 `application/json`. |
+| `name` | 字符串 | *必填。*&#x200B;表示您的服务器的友好名称，仅对Adobe可见。 合作伙伴或客户看不到此名称。 示例`Moviestar destination server`。 |
+| `destinationServerType` | 字符串 | *必填。对于实时（流）目标，*&#x200B;设置为`URL_BASED`。 |
+| `urlBasedDestination.url.templatingStrategy` | 字符串 | *必需。* <ul><li>如果Adobe需要转换以下`value`字段中的URL，请使用`PEBBLE_V1`。 如果您具有像`https://api.moviestar.com/data/{{customerData.region}}/items`这样的端点，其中`region`部分可以因客户而异，请使用此选项。 在这种情况下，您还需要在[目标配置](../destination-configuration/create-destination-configuration.md)中将`region`配置为[客户数据字段](../../functionality/destination-configuration/customer-data-fields.md)。 </li><li> 如果不需要在Adobe端进行转换，例如，如果您有类似`https://api.moviestar.com/data/items`的端点，则使用`NONE`。</li></ul> |
+| `urlBasedDestination.url.value` | 字符串 | *必填。*&#x200B;填写Experience Platform应连接到的API终结点的地址。 |
+| `httpTemplate.httpMethod` | 字符串 | *必填。* Adobe将在对服务器的调用中使用的方法。 选项为`GET`、`PUT`、`POST`、`DELETE`、`PATCH`。 |
+| `httpTemplate.requestBody.templatingStrategy` | 字符串 | *必填。*&#x200B;使用`PEBBLE_V1`。 |
+| `httpTemplate.requestBody.value` | 字符串 | *必填。*&#x200B;此字符串是字符转义版本，用于将Platform客户的数据转换为您的服务期望的格式。<br> <ul><li> 有关如何编写模板的信息，请阅读[使用模板部分](../../functionality/destination-server/message-format.md#using-templating)。 </li><li> 有关字符转义的更多信息，请参阅[RFC JSON标准第七节](https://tools.ietf.org/html/rfc8259#section-7)。 </li><li> 有关简单转换的示例，请参阅[配置文件属性](../../functionality/destination-server/message-format.md#attributes)转换。 </li></ul> |
+| `httpTemplate.contentType` | 字符串 | *必填。*&#x200B;您的服务器接受的内容类型。 此值很可能为`application/json`。 |
 
 {style="table-layout:auto"}
 
@@ -117,7 +117,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 **创建Amazon S3目标服务器**
 
-您需要创建 [!DNL Amazon S3] 目标服务器，类似于配置基于文件的服务器时所显示的服务器 [!DNL Amazon S3] 目标。
+您需要创建类似于以下所示的[!DNL Amazon S3]目标服务器，以便配置基于文件的[!DNL Amazon S3]目标。
 
 +++请求
 
@@ -208,12 +208,12 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | 参数 | 类型 | 描述 |
 |---|---|---|
 | `name` | 字符串 | 目标连接的名称。 |
-| `destinationServerType` | 字符串 | 根据目标平台设置此值。 对象 [!DNL Amazon S3]，将此参数设置为 `FILE_BASED_S3`. |
-| `fileBasedS3Destination.bucket.templatingStrategy` | 字符串 | *必需.*&#x200B;使用 `PEBBLE_V1`。 |
-| `fileBasedS3Destination.bucket.value` | 字符串 | 的名称 [!DNL Amazon S3] 要由此目标使用的存储桶。 |
-| `fileBasedS3Destination.path.templatingStrategy` | 字符串 | *必需.*&#x200B;使用 `PEBBLE_V1`。 |
+| `destinationServerType` | 字符串 | 根据目标平台设置此值。 对于[!DNL Amazon S3]，将此项设置为`FILE_BASED_S3`。 |
+| `fileBasedS3Destination.bucket.templatingStrategy` | 字符串 | *必填。*&#x200B;使用`PEBBLE_V1`。 |
+| `fileBasedS3Destination.bucket.value` | 字符串 | 此目标使用的[!DNL Amazon S3]存储段的名称。 |
+| `fileBasedS3Destination.path.templatingStrategy` | 字符串 | *必填。*&#x200B;使用`PEBBLE_V1`。 |
 | `fileBasedS3Destination.path.value` | 字符串 | 将托管导出文件的目标文件夹的路径。 |
-| `fileConfigurations` | 不适用 | 请参阅 [文件格式配置](../../functionality/destination-server/file-formatting.md) 有关如何配置这些设置的详细信息。 |
+| `fileConfigurations` | 不适用 | 有关如何配置这些设置的详细信息，请参阅[文件格式配置](../../functionality/destination-server/file-formatting.md)。 |
 
 {style="table-layout:auto"}
 
@@ -227,9 +227,9 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 >[!TAB SFTP]
 
-**创建 [!DNL SFTP] 目标服务器**
+**创建[!DNL SFTP]目标服务器**
 
-您需要创建 [!DNL SFTP] 目标服务器，类似于配置基于文件的服务器时所显示的服务器 [!DNL SFTP] 目标。
+您需要创建类似于以下所示的[!DNL SFTP]目标服务器，以便配置基于文件的[!DNL SFTP]目标。
 
 +++请求
 
@@ -318,14 +318,14 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | 参数 | 类型 | 描述 |
 |---|---|---|
 | `name` | 字符串 | 目标连接的名称。 |
-| `destinationServerType` | 字符串 | 根据目标平台设置此值。 对象 [!DNL SFTP] 目标，将其设置为 `FILE_BASED_SFTP`. |
-| `fileBasedSFTPDestination.rootDirectory.templatingStrategy` | 字符串 | *必需.*&#x200B;使用 `PEBBLE_V1`。 |
+| `destinationServerType` | 字符串 | 根据目标平台设置此值。 对于[!DNL SFTP]目标，请将此项设置为`FILE_BASED_SFTP`。 |
+| `fileBasedSFTPDestination.rootDirectory.templatingStrategy` | 字符串 | *必填。*&#x200B;使用`PEBBLE_V1`。 |
 | `fileBasedSFTPDestination.rootDirectory.value` | 字符串 | 目标存储的根目录。 |
-| `fileBasedSFTPDestination.hostName.templatingStrategy` | 字符串 | *必需.*&#x200B;使用 `PEBBLE_V1`。 |
+| `fileBasedSFTPDestination.hostName.templatingStrategy` | 字符串 | *必填。*&#x200B;使用`PEBBLE_V1`。 |
 | `fileBasedSFTPDestination.hostName.value` | 字符串 | 目标存储的主机名。 |
 | `port` | 整数 | SFTP文件服务器端口。 |
 | `encryptionMode` | 字符串 | 指示是否使用文件加密。 支持的值： <ul><li>PGP</li><li>None</li></ul> |
-| `fileConfigurations` | 不适用 | 请参阅 [文件格式配置](../../functionality/destination-server/file-formatting.md) 有关如何配置这些设置的详细信息。 |
+| `fileConfigurations` | 不适用 | 有关如何配置这些设置的详细信息，请参阅[文件格式配置](../../functionality/destination-server/file-formatting.md)。 |
 
 {style="table-layout:auto"}
 
@@ -337,11 +337,11 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 +++
 
->[!TAB Azure数据湖存储]
+>[!TAB Azure Data Lake Storage]
 
-**创建 [!DNL Azure Data Lake Storage] 目标服务器**
+**创建[!DNL Azure Data Lake Storage]目标服务器**
 
-您需要创建 [!DNL Azure Data Lake Storage] 目标服务器，类似于配置基于文件的服务器时所显示的服务器 [!DNL Azure Data Lake Storage] 目标。
+您需要创建类似于以下所示的[!DNL Azure Data Lake Storage]目标服务器，以便配置基于文件的[!DNL Azure Data Lake Storage]目标。
 
 +++请求
 
@@ -428,10 +428,10 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | 参数 | 类型 | 描述 |
 |---|---|---|
 | `name` | 字符串 | 目标连接的名称。 |
-| `destinationServerType` | 字符串 | 根据目标平台设置此值。 对象 [!DNL Azure Data Lake Storage] 目标，将其设置为 `FILE_BASED_ADLS_GEN2`. |
-| `fileBasedAdlsGen2Destination.path.templatingStrategy` | 字符串 | *必需.*&#x200B;使用 `PEBBLE_V1`。 |
+| `destinationServerType` | 字符串 | 根据目标平台设置此值。 对于[!DNL Azure Data Lake Storage]目标，请将此项设置为`FILE_BASED_ADLS_GEN2`。 |
+| `fileBasedAdlsGen2Destination.path.templatingStrategy` | 字符串 | *必填。*&#x200B;使用`PEBBLE_V1`。 |
 | `fileBasedAdlsGen2Destination.path.value` | 字符串 | 将托管导出文件的目标文件夹的路径。 |
-| `fileConfigurations` | 不适用 | 请参阅 [文件格式配置](../../functionality/destination-server/file-formatting.md) 有关如何配置这些设置的详细信息。 |
+| `fileConfigurations` | 不适用 | 有关如何配置这些设置的详细信息，请参阅[文件格式配置](../../functionality/destination-server/file-formatting.md)。 |
 
 {style="table-layout:auto"}
 
@@ -443,11 +443,11 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 +++
 
->[!TAB Azure Blob 存储]
+>[!TAB Azure Blob存储]
 
-**创建 [!DNL Azure Blob Storage] 目标服务器**
+**创建[!DNL Azure Blob Storage]目标服务器**
 
-您需要创建 [!DNL Azure Blob Storage] 目标服务器，类似于配置基于文件的服务器时所显示的服务器 [!DNL Azure Blob Storage] 目标。
+您需要创建类似于以下所示的[!DNL Azure Blob Storage]目标服务器，以便配置基于文件的[!DNL Azure Blob Storage]目标。
 
 +++请求
 
@@ -538,12 +538,12 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | 参数 | 类型 | 描述 |
 |---|---|---|
 | `name` | 字符串 | 目标连接的名称。 |
-| `destinationServerType` | 字符串 | 根据目标平台设置此值。 对象 [!DNL Azure Blob Storage] 目标，将其设置为 `FILE_BASED_AZURE_BLOB`. |
-| `fileBasedAzureBlobDestination.path.templatingStrategy` | 字符串 | *必需.*&#x200B;使用 `PEBBLE_V1`。 |
+| `destinationServerType` | 字符串 | 根据目标平台设置此值。 对于[!DNL Azure Blob Storage]目标，请将此项设置为`FILE_BASED_AZURE_BLOB`。 |
+| `fileBasedAzureBlobDestination.path.templatingStrategy` | 字符串 | *必填。*&#x200B;使用`PEBBLE_V1`。 |
 | `fileBasedAzureBlobDestination.path.value` | 字符串 | 将托管导出文件的目标文件夹的路径。 |
-| `fileBasedAzureBlobDestination.container.templatingStrategy` | 字符串 | *必需.*&#x200B;使用 `PEBBLE_V1`。 |
-| `fileBasedAzureBlobDestination.container.value` | 字符串 | 的名称 [!DNL Azure Blob Storage] 此目标要使用的容器。 |
-| `fileConfigurations` | 不适用 | 请参阅 [文件格式配置](../../functionality/destination-server/file-formatting.md) 有关如何配置这些设置的详细信息。 |
+| `fileBasedAzureBlobDestination.container.templatingStrategy` | 字符串 | *必填。*&#x200B;使用`PEBBLE_V1`。 |
+| `fileBasedAzureBlobDestination.container.value` | 字符串 | 此目标使用的[!DNL Azure Blob Storage]容器的名称。 |
+| `fileConfigurations` | 不适用 | 有关如何配置这些设置的详细信息，请参阅[文件格式配置](../../functionality/destination-server/file-formatting.md)。 |
 
 {style="table-layout:auto"}
 
@@ -557,9 +557,9 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 >[!TAB 数据登陆区(DLZ)]
 
-**创建 [!DNL Data Landing Zone (DLZ)] 目标服务器**
+**创建[!DNL Data Landing Zone (DLZ)]目标服务器**
 
-您需要创建 [!DNL Data Landing Zone (DLZ)] 目标服务器，类似于配置基于文件的服务器时所显示的服务器 [!DNL Data Landing Zone (DLZ)] 目标。
+您需要创建一个[!DNL Data Landing Zone (DLZ)]目标服务器，类似于配置基于文件的[!DNL Data Landing Zone (DLZ)]目标时所显示的目标服务器。
 
 +++请求
 
@@ -647,10 +647,10 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | 参数 | 类型 | 描述 |
 |---|---|---|
 | `name` | 字符串 | 目标连接的名称。 |
-| `destinationServerType` | 字符串 | 根据目标平台设置此值。 对象 [!DNL Data Landing Zone] 目标，将其设置为 `FILE_BASED_DLZ`. |
-| `fileBasedDlzDestination.path.templatingStrategy` | 字符串 | *必需.*&#x200B;使用 `PEBBLE_V1`。 |
+| `destinationServerType` | 字符串 | 根据目标平台设置此值。 对于[!DNL Data Landing Zone]目标，请将此项设置为`FILE_BASED_DLZ`。 |
+| `fileBasedDlzDestination.path.templatingStrategy` | 字符串 | *必填。*&#x200B;使用`PEBBLE_V1`。 |
 | `fileBasedDlzDestination.path.value` | 字符串 | 将托管导出文件的目标文件夹的路径。 |
-| `fileConfigurations` | 不适用 | 请参阅 [文件格式配置](../../functionality/destination-server/file-formatting.md) 有关如何配置这些设置的详细信息。 |
+| `fileConfigurations` | 不适用 | 有关如何配置这些设置的详细信息，请参阅[文件格式配置](../../functionality/destination-server/file-formatting.md)。 |
 
 {style="table-layout:auto"}
 
@@ -664,9 +664,9 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 >[!TAB Google云存储]
 
-**创建 [!DNL Google Cloud Storage] 目标服务器**
+**创建[!DNL Google Cloud Storage]目标服务器**
 
-您需要创建 [!DNL Google Cloud Storage] 目标服务器，类似于配置基于文件的服务器时所显示的服务器 [!DNL Google Cloud Storage] 目标。
+您需要创建一个[!DNL Google Cloud Storage]目标服务器，类似于配置基于文件的[!DNL Google Cloud Storage]目标时所显示的目标服务器。
 
 +++请求
 
@@ -757,12 +757,12 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | 参数 | 类型 | 描述 |
 |---|---|---|
 | `name` | 字符串 | 目标连接的名称。 |
-| `destinationServerType` | 字符串 | 根据目标平台设置此值。 对象 [!DNL Google Cloud Storage] 目标，将其设置为 `FILE_BASED_GOOGLE_CLOUD`. |
-| `fileBasedGoogleCloudStorageDestination.bucket.templatingStrategy` | 字符串 | *必需.*&#x200B;使用 `PEBBLE_V1`。 |
-| `fileBasedGoogleCloudStorageDestination.bucket.value` | 字符串 | 的名称 [!DNL Google Cloud Storage] 要由此目标使用的存储桶。 |
-| `fileBasedGoogleCloudStorageDestination.path.templatingStrategy` | 字符串 | *必需.*&#x200B;使用 `PEBBLE_V1`。 |
+| `destinationServerType` | 字符串 | 根据目标平台设置此值。 对于[!DNL Google Cloud Storage]目标，请将此项设置为`FILE_BASED_GOOGLE_CLOUD`。 |
+| `fileBasedGoogleCloudStorageDestination.bucket.templatingStrategy` | 字符串 | *必填。*&#x200B;使用`PEBBLE_V1`。 |
+| `fileBasedGoogleCloudStorageDestination.bucket.value` | 字符串 | 此目标使用的[!DNL Google Cloud Storage]存储段的名称。 |
+| `fileBasedGoogleCloudStorageDestination.path.templatingStrategy` | 字符串 | *必填。*&#x200B;使用`PEBBLE_V1`。 |
 | `fileBasedGoogleCloudStorageDestination.path.value` | 字符串 | 将托管导出文件的目标文件夹的路径。 |
-| `fileConfigurations` | 不适用 | 请参阅 [文件格式配置](../../functionality/destination-server/file-formatting.md) 有关如何配置这些设置的详细信息。 |
+| `fileConfigurations` | 不适用 | 有关如何配置这些设置的详细信息，请参阅[文件格式配置](../../functionality/destination-server/file-formatting.md)。 |
 
 {style="table-layout:auto"}
 
@@ -780,7 +780,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 动态架构允许您动态检索支持的目标属性，并根据自己的API生成架构。 您需要先为动态架构配置目标服务器，然后才能配置架构。
 
-在选项卡的下方查看目标服务器的示例，这些目标使用 [动态架构](../../functionality/destination-configuration/schema-configuration.md#dynamic-schema-configuration).
+在下面的选项卡中查看使用[动态架构](../../functionality/destination-configuration/schema-configuration.md#dynamic-schema-configuration)的目标服务器的示例。
 
 以下有效负载示例包含动态架构服务器所需的所有参数。
 
@@ -788,9 +788,9 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 >[!TAB 动态架构服务器]
 
-**创建动态模式服务器**
+**创建动态架构服务器**
 
-您需要创建类似于以下所示的动态架构服务器，以便配置从您自己的API端点检索其配置文件架构的目标。 与静态架构不同，动态架构不使用 `profileFields` 数组。 动态架构会改用动态架构服务器，该服务器会连接到您自己的API，并在其中检索架构配置。
+您需要创建类似于以下所示的动态架构服务器，以便配置从您自己的API端点检索其配置文件架构的目标。 与静态架构相反，动态架构不使用`profileFields`数组。 动态架构会改用动态架构服务器，该服务器会连接到您自己的API，并在其中检索架构配置。
 
 +++请求
 
@@ -826,13 +826,13 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 | 参数 | 类型 | 描述 |
 | -------- | ----------- | ----------- |
-| `name` | 字符串 | *必需.* 表示动态架构服务器的友好名称，仅对Adobe可见。 |
-| `destinationServerType` | 字符串 | *必需.* 设置为 `URL_BASED` 用于动态架构服务器。 |
-| `urlBasedDestination.url.templatingStrategy` | 字符串 | *必需.* <ul><li>使用 `PEBBLE_V1` 如果Adobe需要在 `value` 字段。 如果您拥有如下端点，请使用此选项： `https://api.moviestar.com/data/{{customerData.region}}/items`. </li><li> 使用 `NONE` 如果不需要在Adobe端进行转换，例如，如果您有如下端点： `https://api.moviestar.com/data/items`.</li></ul> |
-| `urlBasedDestination.url.value` | 字符串 | *必需.* 填写Experience Platform应连接到的API端点地址，并检索架构字段，以作为激活工作流映射步骤中的目标字段填充。 |
-| `httpTemplate.httpMethod` | 字符串 | *必需.* Adobe将在对服务器的调用中使用的方法。 对于动态模式服务器，使用 `GET`. |
-| `responseFields.templatingStrategy` | 字符串 | *必需.*&#x200B;使用 `PEBBLE_V1`。 |
-| `responseFields.value` | 字符串 | *必需.* 此字符串是一个字符转义转换模板，它将从合作伙伴API收到的响应转换为将在Platform UI中显示的合作伙伴架构。 <br> <ul><li> 有关如何编写模板的信息，请阅读 [使用模板部分](../../functionality/destination-server/message-format.md#using-templating). </li><li> 有关字符转义的详细信息，请参阅 [RFC JSON标准，第七节](https://tools.ietf.org/html/rfc8259#section-7). </li><li> 有关简单转换的示例，请参阅 [配置文件属性](../../functionality/destination-server/message-format.md#attributes) 转换。 </li></ul> |
+| `name` | 字符串 | *必填。*&#x200B;表示您的动态架构服务器的友好名称，仅对Adobe可见。 |
+| `destinationServerType` | 字符串 | *必填。对于动态架构服务器，*&#x200B;设置为`URL_BASED`。 |
+| `urlBasedDestination.url.templatingStrategy` | 字符串 | *必需。* <ul><li>如果Adobe需要转换以下`value`字段中的URL，请使用`PEBBLE_V1`。 如果您具有类似以下的端点，请使用此选项： `https://api.moviestar.com/data/{{customerData.region}}/items`。 </li><li> 如果不需要在Adobe端进行转换，例如，如果您有类似`https://api.moviestar.com/data/items`的端点，则使用`NONE`。</li></ul> |
+| `urlBasedDestination.url.value` | 字符串 | *必填。*&#x200B;填写Experience Platform应连接到的API终结点地址，并检索要作为目标字段填充到激活工作流的映射步骤中的架构字段。 |
+| `httpTemplate.httpMethod` | 字符串 | *必填。* Adobe将在对服务器的调用中使用的方法。 对于动态架构服务器，请使用`GET`。 |
+| `responseFields.templatingStrategy` | 字符串 | *必填。*&#x200B;使用`PEBBLE_V1`。 |
+| `responseFields.value` | 字符串 | *必填。*&#x200B;此字符串是一个字符转义转换模板，它将从合作伙伴API收到的响应转换为将在平台UI中显示的合作伙伴架构。<br> <ul><li> 有关如何编写模板的信息，请阅读[使用模板部分](../../functionality/destination-server/message-format.md#using-templating)。 </li><li> 有关字符转义的更多信息，请参阅[RFC JSON标准第七节](https://tools.ietf.org/html/rfc8259#section-7)。 </li><li> 有关简单转换的示例，请参阅[配置文件属性](../../functionality/destination-server/message-format.md#attributes)转换。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -850,7 +850,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 ### 创建动态下拉目标服务器 {#dynamic-dropdown-servers}
 
-使用 [动态下拉菜单](../../functionality/destination-configuration/customer-data-fields.md#dynamic-dropdown-selectors) 以根据您自己的API动态检索和填充下拉客户数据字段。 例如，您可以检索要用于目标连接的现有用户帐户列表。
+根据您自己的API，使用[动态下拉列表](../../functionality/destination-configuration/customer-data-fields.md#dynamic-dropdown-selectors)动态检索和填充下拉客户数据字段。 例如，您可以检索要用于目标连接的现有用户帐户列表。
 
 您需要先为动态下拉列表配置目标服务器，然后才能配置动态下拉列表客户数据字段。
 
@@ -923,14 +923,14 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 | 参数 | 类型 | 描述 |
 | -------- | ----------- | ----------- |
-| `name` | 字符串 | *必需.* 表示动态下拉服务器的友好名称，仅对Adobe可见。 |
-| `destinationServerType` | 字符串 | *必需.* 设置为 `URL_BASED` 用于动态下拉服务器。 |
-| `urlBasedDestination.url.templatingStrategy` | 字符串 | *必需.* <ul><li>使用 `PEBBLE_V1` 如果Adobe需要在 `value` 字段。 如果您拥有如下端点，请使用此选项： `https://api.moviestar.com/data/{{customerData.region}}/items`. </li><li> 使用 `NONE` 如果不需要在Adobe端进行转换，例如，如果您有如下端点： `https://api.moviestar.com/data/items`.</li></ul> |
-| `urlBasedDestination.url.value` | 字符串 | *必需.* 填写Experience Platform应连接到的API端点地址并检索下拉值。 |
-| `httpTemplate.httpMethod` | 字符串 | *必需.* Adobe将在对服务器的调用中使用的方法。 对于动态下拉服务器，使用 `GET`. |
-| `httpTemplate.headers` | 对象 | *选项a.l* 包括连接到动态下拉服务器所需的任何标头。 |
-| `responseFields.templatingStrategy` | 字符串 | *必需.*&#x200B;使用 `PEBBLE_V1`。 |
-| `responseFields.value` | 字符串 | *必需.* 此字符串是一个字符转义转换模板，它将从API收到的响应转换为将在Platform UI中显示的值。 <br> <ul><li> 有关如何编写模板的信息，请阅读 [使用模板部分](../../functionality/destination-server/message-format.md#using-templating). </li><li> 有关字符转义的详细信息，请参阅 [RFC JSON标准，第七节](https://tools.ietf.org/html/rfc8259#section-7). |
+| `name` | 字符串 | *必填。*&#x200B;表示动态下拉服务器的友好名称，仅对Adobe可见。 |
+| `destinationServerType` | 字符串 | *必填。对于动态下拉服务器，*&#x200B;设置为`URL_BASED`。 |
+| `urlBasedDestination.url.templatingStrategy` | 字符串 | *必需。* <ul><li>如果Adobe需要转换以下`value`字段中的URL，请使用`PEBBLE_V1`。 如果您具有类似以下的端点，请使用此选项： `https://api.moviestar.com/data/{{customerData.region}}/items`。 </li><li> 如果不需要在Adobe端进行转换，例如，如果您有类似`https://api.moviestar.com/data/items`的端点，则使用`NONE`。</li></ul> |
+| `urlBasedDestination.url.value` | 字符串 | *必填。*&#x200B;填写Experience Platform应连接到的API终结点地址并检索下拉值。 |
+| `httpTemplate.httpMethod` | 字符串 | *必填。* Adobe将在对服务器的调用中使用的方法。 对于动态下拉服务器，请使用`GET`。 |
+| `httpTemplate.headers` | 对象 | *Optiona.l*&#x200B;包含连接到动态下拉服务器所需的任何标头。 |
+| `responseFields.templatingStrategy` | 字符串 | *必填。*&#x200B;使用`PEBBLE_V1`。 |
+| `responseFields.value` | 字符串 | *必填。*&#x200B;此字符串是一个字符转义转换模板，它将从API收到的响应转换为将在Platform UI中显示的值。<br> <ul><li> 有关如何编写模板的信息，请阅读[使用模板部分](../../functionality/destination-server/message-format.md#using-templating)。 </li><li> 有关字符转义的更多信息，请参阅[RFC JSON标准第七节](https://tools.ietf.org/html/rfc8259#section-7)。 |
 
 {style="table-layout:auto"}
 
@@ -946,11 +946,11 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 ## API错误处理 {#error-handling}
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../../landing/troubleshooting.md#request-header-errors) ，位于平台疑难解答指南中。
+Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅平台疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤 {#next-steps}
 
-阅读本文档后，您现在知道如何通过Destination SDK创建新的目标服务器 `/authoring/destination-servers` API端点。
+阅读本文档后，您现在知道如何通过Destination SDK`/authoring/destination-servers` API端点创建新的目标服务器。
 
 要了解有关可使用此端点执行的操作的更多信息，请参阅以下文章：
 

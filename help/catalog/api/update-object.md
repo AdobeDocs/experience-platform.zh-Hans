@@ -13,7 +13,7 @@ ht-degree: 2%
 
 # 更新目录对象
 
-您可以更新部分 [!DNL Catalog] 对象，方法是在PATCH请求的路径中包含其ID。 本文档介绍了对目录对象执行PATCH操作的两种方法：
+您可以通过在PATCH请求的路径中包含其ID来更新[!DNL Catalog]对象的一部分。 本文档介绍了对目录对象执行PATCH操作的两种方法：
 
 * 使用字段
 * 使用JSON修补程序表示法
@@ -34,12 +34,12 @@ PATCH /{OBJECT_TYPE}/{OBJECT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要更新的对象。 有效对象为： <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
+| `{OBJECT_TYPE}` | 要更新的[!DNL Catalog]对象的类型。 有效对象为： <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
 | `{OBJECT_ID}` | 要更新的特定对象的标识符。 |
 
 **请求**
 
-以下请求将更新 `name` 和 `description` 数据集的字段到有效负荷中提供的值。 可以从有效负载中排除不更新的对象字段。
+以下请求将数据集的`name`和`description`字段更新为有效负载中提供的值。 可以从有效负载中排除不更新的对象字段。
 
 ```shell
 curl -X PATCH \
@@ -57,7 +57,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的响应会返回一个数组，其中包含已更新数据集的ID。 此ID应该与PATCH请求中发送的ID匹配。 现在，为此数据集执行GET请求会显示 `name` 和 `description` 已更新，而所有其他值保持不变。
+成功的响应会返回一个数组，其中包含已更新数据集的ID。 此ID应该与PATCH请求中发送的ID匹配。 现在，对此数据集执行GET请求会显示只有`name`和`description`已更新，而所有其他值保持不变。
 
 ```json
 [
@@ -67,9 +67,9 @@ curl -X PATCH \
 
 ## 使用JSON修补程序表示法更新
 
-以下示例调用演示了如何使用JSON修补程序更新对象，如中所述 [RFC-6902](https://tools.ietf.org/html/rfc6902).
+以下示例调用演示了如何使用JSON修补程序更新对象，如[RFC-6902](https://tools.ietf.org/html/rfc6902)中所述。
 
-有关JSON修补程序语法的更多信息，请参见 [API基础指南](../../landing/api-fundamentals.md#json-patch).
+有关JSON修补程序语法的详细信息，请参阅[API基础指南](../../landing/api-fundamentals.md#json-patch)。
 
 **API格式**
 
@@ -79,12 +79,12 @@ PATCH /{OBJECT_TYPE}/{OBJECT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要更新的对象。 有效对象为： <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
+| `{OBJECT_TYPE}` | 要更新的[!DNL Catalog]对象的类型。 有效对象为： <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
 | `{OBJECT_ID}` | 要更新的特定对象的标识符。 |
 
 **请求**
 
-以下请求将更新 `name` 和 `description` 数据集的字段与在每个JSON修补程序对象中提供的值相对应。 使用JSON修补程序时，还必须将Content-Type标头设置为 `application/json-patch+json`.
+以下请求将数据集的`name`和`description`字段更新为每个JSON修补程序对象中提供的值。 使用JSON修补程序时，还必须将Content-Type标头设置为`application/json-patch+json`。
 
 ```shell
 curl -X PATCH \
@@ -102,7 +102,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的响应会返回一个数组，其中包含已更新对象的ID。 此ID应该与PATCH请求中发送的ID匹配。 现在对此对象执行GET请求时，只会显示 `name` 和 `description` 已更新，而所有其他值保持不变。
+成功的响应会返回一个数组，其中包含已更新对象的ID。 此ID应该与PATCH请求中发送的ID匹配。 现在，对此对象执行GET请求会显示只有`name`和`description`已更新，而所有其他值保持不变。
 
 ```json
 [

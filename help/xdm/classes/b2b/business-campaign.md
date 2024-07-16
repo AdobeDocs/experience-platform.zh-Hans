@@ -9,21 +9,21 @@ ht-degree: 3%
 
 ---
 
-# [!UICONTROL XDM商业营销活动] 类
+# [!UICONTROL XDM商业营销活动]类
 
 >[!IMPORTANT]
 >
->此类由具有访问权限的组织使用 [Adobe Real-time Customer Data Platform B2B版本](../../../rtcdp/b2b-overview.md). 您必须有权访问Real-Time CDP B2B版本，此类才能参与 [Real-time Customer Profile](../../../profile/home.md).
+>此类供具有[Adobe Real-time Customer Data Platform B2B版本](../../../rtcdp/b2b-overview.md)访问权限的组织使用。 您必须有权访问Real-Time CDP B2B版本，此类才能参与[实时客户个人资料](../../../profile/home.md)。
 
-[!UICONTROL XDM商业营销活动] 是一个标准体验数据模型(XDM)类，可捕获商业营销活动的最低要求属性。
+[!UICONTROL XDM商业营销活动]是一个标准体验数据模型(XDM)类，可捕获商业营销活动的最低要求属性。
 
-![显示在UI中的XDM商业营销活动类的结构](../../images/classes/b2b/business-campaign.png)
+![ XDM商业营销活动类在UI中显示的结构](../../images/classes/b2b/business-campaign.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `campaignKey` | [[!UICONTROL B2B源]](../../data-types/b2b-source.md) | 营销活动实体的复合标识符。 |
-| `extSourceSystemAudit` | [[!UICONTROL 外部源系统审计属性]](../../data-types/external-source-system-audit-attributes.md) | 如果促销活动来自外部源系统，则此对象将捕获该系统的审核属性。 |
-| `_id` | 字符串 | 记录的唯一标识符。 这是系统生成的值，与 `campaignID`. |
+| `campaignKey` | [[!UICONTROL B2B Source]](../../data-types/b2b-source.md) | 营销活动实体的复合标识符。 |
+| `extSourceSystemAudit` | [[!UICONTROL 外部Source系统审核属性]](../../data-types/external-source-system-audit-attributes.md) | 如果促销活动来自外部源系统，则此对象将捕获该系统的审核属性。 |
+| `_id` | 字符串 | 记录的唯一标识符。 这是系统生成的值，与`campaignID`不同。 |
 | `campaignDescription` | 字符串 | 营销活动的描述。 |
 | `campaignID` | 字符串 | 营销活动实体的唯一标识符。 |
 | `campaignName` | 字符串 | 营销活动的名称。 |
@@ -31,6 +31,6 @@ ht-degree: 3%
 
 {style="table-layout:auto"}
 
-要了解此类如何在概念上与其他B2B类相关联，以及如何在Adobe Experience Platform UI中建立这些关系，请参阅以下指南： [Real-Time CDP B2B版本中的架构关系](../../tutorials/relationship-b2b.md)
+要了解此类如何在概念上与其他B2B类相关联，以及如何在Adobe Experience Platform UI中建立这些关系，请参阅Real-Time CDP B2B版本](../../tutorials/relationship-b2b.md)中有关[架构关系的指南
 
-有关与此类兼容的其他字段，请参阅字段组引用 [[!UICONTROL XDM商业营销活动详细信息]](../../field-groups/b2b-campaign/details.md).
+有关与此类兼容的其他字段，请参阅[[!UICONTROL XDM商业营销活动详细信息]](../../field-groups/b2b-campaign/details.md)的字段组引用。

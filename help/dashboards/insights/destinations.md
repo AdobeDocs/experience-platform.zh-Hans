@@ -5,7 +5,7 @@ exl-id: 762a9960-e7a5-4796-80c7-ef745157cc04
 source-git-commit: d4baf6cfaa772e5d46cef470fb35818c7af868b1
 workflow-type: tm+mt
 source-wordcount: '1139'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -15,11 +15,11 @@ ht-degree: 2%
 
 通过访问支持这些分析的SQL来了解您的目标分析，然后生成您自己的分析以进一步探索如何将数据从Adobe Experience Platform激活到您的目标平台。 通过使用现有的Real-Time CDP数据模型SQL作为灵感，根据独特的业务需求创建查询，将原始数据转换为新的可操作洞察。
 
-请参阅 [查看SQL文档](../view-sql.md) 有关如何直接通过Platform UI调整您的分析的SQL的详细信息。
+有关如何直接通过PLatform UI调整分析的SQL的详细信息，请参阅[查看SQL文档](../view-sql.md)。
 
-以下见解全部可供您用作 [目标仪表板](../guides/destinations.md) 或自定义 [用户定义的仪表板](../user-defined-dashboards.md). 请参阅 [自定义概述](../customize/overview.md) 有关如何自定义功能板的说明，或者 [创建和编辑新构件](../customize/custom-widgets.md) 在小组件库和 [用户定义的仪表板](../user-defined-dashboards.md#create-widget).
+以下分析均可用作[目标仪表板](../guides/destinations.md)或自定义[用户定义的仪表板](../user-defined-dashboards.md)的一部分。 有关如何自定义仪表板或[在构件库和[用户定义的仪表板](../user-defined-dashboards.md#create-widget)中创建和编辑新构件](../customize/custom-widgets.md)的说明，请参阅[自定义概述](../customize/overview.md)。
 
-## 激活的受众 {#activated-audiences}
+## 已激活的受众 {#activated-audiences}
 
 通过此洞察回答的问题：
 
@@ -48,9 +48,9 @@ WHERE
 
 +++
 
-请参阅 [激活的受众小组件文档](../guides/destinations.md#activated-audiences) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[激活的受众小组件文档](../guides/destinations.md#activated-audiences)。
 
-## 所有目标的激活受众 {#activated-audiences-across-all-destinations}
+## 所有目标的活跃受众 {#activated-audiences-across-all-destinations}
 
 通过此洞察回答的问题：
 
@@ -71,7 +71,7 @@ WHERE
 
 +++
 
-请参阅 [所有目标小组件文档的激活受众](../guides/destinations.md#activated-audiences-across-all-destinations) 以了解有关此分析的外观和功能的信息。
+有关此洞察的外观和功能的信息，请参阅所有目标构件文档中的[激活的受众](../guides/destinations.md#activated-audiences-across-all-destinations)。
 
 ## 按目标平台列出的活动目标 {#active-destinations-by-destination-platform}
 
@@ -96,7 +96,7 @@ SELECT destination_platform_name AS Destination_Platform_Name,
 
 +++
 
-请参阅 [按目标平台构件分类的活动目标文档](../guides/destinations.md#active-destinations-by-destination-platform) 以了解有关此分析的外观和功能的信息。
+有关此洞察的外观和功能的信息，请参阅[按目标平台划分的活动目标小组件文档](../guides/destinations.md#active-destinations-by-destination-platform)。
 
 ## 受众规模趋势 {#audience-size-trend}
 
@@ -142,7 +142,7 @@ SELECT d.destination_name,
 
 +++
 
-请参阅 [受众规模趋势小组件文档](../guides/destinations.md#audience-size-trend) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[受众规模趋势构件文档](../guides/destinations.md#audience-size-trend)。
 
 ## 普通受众 {#common-audiences}
 
@@ -214,7 +214,7 @@ SELECT k.destination_name1,
 
 +++
 
-请参阅 [常用受众小组件文档](../guides/destinations.md#common-audiences) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[常用受众小组件文档](../guides/destinations.md#common-audiences)。
 
 ## 目标状态 {#destination-status}
 
@@ -238,7 +238,7 @@ FROM qsaccel.profile_agg.adwh_dim_destination;
 
 +++
 
-请参阅 [目标状态构件文档](../guides/destinations.md#destination-status) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[目标状态构件文档](../guides/destinations.md#destination-status)。
 
 ## 目标计数 {#destinations-count}
 
@@ -256,7 +256,7 @@ SELECT count(destination_id) AS total_number_of_destinations
 
 +++
 
-请参阅 [目标计数构件文档](../guides/destinations.md#destinations-count) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[目标计数构件文档](../guides/destinations.md#destinations-count)。
 
 ## 映射的受众健康 {#mapped-audience-health}
 
@@ -325,9 +325,9 @@ SELECT destination_name,
 
 +++
 
-请参阅 [映射的受众运行状况小组件文档](../guides/destinations.md#mapped-audience-health) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[映射的受众运行状况小组件文档](../guides/destinations.md#mapped-audience-health)。
 
-## 映射的受众 {#mapped-audiences}
+## 已映射受众 {#mapped-audiences}
 
 通过此洞察回答的问题：
 
@@ -345,7 +345,7 @@ WHERE destination_id = 1458738325;
 
 +++
 
-请参阅 [映射的受众小组件文档](../guides/destinations.md#mapped-audiences) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[映射的受众小组件文档](../guides/destinations.md#mapped-audiences)。
 
 <!-- Commented out until the Jan release as the SQL IS MISSING:
 ## Mapped audiences by identity {#mapped-audiences-by-identity}
@@ -393,7 +393,7 @@ SELECT qsaccel.profile_agg.adwh_dim_destination.destination_name,
 
 +++
 
-请参阅 [最常用的目标构件文档](../guides/destinations.md#most-used-destinations) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[最常用的目标构件文档](../guides/destinations.md#most-used-destinations)。
 
 ## 最近激活的受众 {#recently-activated-audiences}
 
@@ -424,7 +424,7 @@ LIMIT
 
 +++
 
-请参阅 [最近激活的受众小组件文档](../guides/destinations.md#recently-activated-audiences) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[最近激活的受众小组件文档](../guides/destinations.md#recently-activated-audiences)。
 
 ## 最近激活的受众（按目标） {#recently-activated-audiences-by-destination}
 
@@ -455,7 +455,7 @@ SELECT c.destination_name,
 
 +++
 
-请参阅 [按目标构件文档列出的最近激活的受众](../guides/destinations.md#recently-activated-audiences-by-destination) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[目标构件最近激活的受众文档](../guides/destinations.md#recently-activated-audiences-by-destination)。
 
 ## 最近创建的目标 {#recently-created-destinations}
 
@@ -484,7 +484,7 @@ LIMIT
 
 +++
 
-请参阅 [最近创建的目标构件文档](../guides/destinations.md#recently-created-destinations) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[最近创建的目标构件文档](../guides/destinations.md#recently-created-destinations)。
 
 <!-- Commented out until the Jan release as SQL MISSING FROM WIKI:
 
@@ -511,6 +511,6 @@ See the [Unmapped audiences by identity widget documentation](../guides/destinat
 
 通过阅读本文档，您现在了解了生成仪表板分析的SQL以及此分析可以解决哪些常见问题。 您现在可以编辑和迭代这些SQL查询以生成您自己的见解。
 
-请参阅 [查看SQL文档](../view-sql.md) 有关如何直接通过Platform UI调整您的分析的SQL的详细信息。
+有关如何直接通过PLatform UI调整分析的SQL的详细信息，请参阅[查看SQL文档](../view-sql.md)。
 
-您还可以阅读并了解为生成分析的SQL [配置文件](./profiles.md)， [帐户配置文件](./account-profiles.md) 和 [受众](./audiences.md) 功能板。
+您还可以阅读并了解为[配置文件](./profiles.md)、[帐户配置文件](./account-profiles.md)和[受众](./audiences.md)仪表板生成分析的SQL。

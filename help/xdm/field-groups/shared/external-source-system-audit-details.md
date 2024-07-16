@@ -8,9 +8,9 @@ ht-degree: 6%
 
 ---
 
-# [!UICONTROL 外部Source系统审核详细信息] 字段组
+# [!UICONTROL 外部Source系统审核详细信息]字段组
 
-[!UICONTROL 外部Source系统审核详细信息] 是一个标准的体验数据模型(XDM)字段组，该字段组通过引用其属性并添加上下文元数据来扩展核心“外部Source系统审核属性”数据类型。 这样可以进行详细的审核跟踪，并灵活地集成来自外部源的数据。
+[!UICONTROL 外部Source系统审核详细信息]是一个标准的体验数据模型(XDM)字段组，该字段组通过引用核心“外部Source系统审核属性”的数据类型并添加上下文元数据来扩展该数据类型。 这样可以进行详细的审核跟踪，并灵活地集成来自外部源的数据。
 
 ![外部Source系统审核详细信息字段组的架构图。](../../images/field-groups/shared/external-source-system-audit-details.png)
 
@@ -22,4 +22,4 @@ ht-degree: 6%
 
 有关数据类型的更多详细信息，请参阅公共XDM存储库：
 
-* [完整模式](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/shared/external-source-system-audit-details.schema.json)
+* [完整架构](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/shared/external-source-system-audit-details.schema.json)

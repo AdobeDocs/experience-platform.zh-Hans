@@ -12,24 +12,24 @@ ht-degree: 2%
 
 ---
 
-# 使用为原始数据创建流式数据流 [!DNL Flow Service] API
+# 使用[!DNL Flow Service] API为原始数据创建流式数据流
 
-本教程介绍了以下步骤：从流源连接器检索原始数据，并使用来Experience Platform它们 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+本教程介绍从流源连接器检索原始数据以及使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将这些数据引入Experience Platform的步骤。
 
 ## 快速入门
 
 本教程要求您实际了解Adobe Experience Platform的以下组件：
 
 - [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
-   - [模式组合基础](../../../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
-   - [架构注册开发人员指南](../../../../xdm/api/getting-started.md)：包含成功执行对架构注册表API的调用所需了解的重要信息。 这包括您的 `{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（请特别注意“接受”标头及其可能的值）。
-- [[!DNL Catalog Service]](../../../../catalog/home.md)：目录是Experience Platform中数据位置和谱系的记录系统。
-- [[!DNL Streaming ingestion]](../../../../ingestion/streaming-ingestion/overview.md)：Platform的流式摄取为用户提供了一种实时将数据从客户端和服务器端设备发送到Experience Platform的方法。
-- [沙盒](../../../../sandboxes/home.md)：Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+   - [架构组合的基础知识](../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
+   - [架构注册表开发人员指南](../../../../xdm/api/getting-started.md)：包含成功执行对架构注册表API的调用所需了解的重要信息。 这包括您的`{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（请特别注意“接受”标头及其可能的值）。
+- [[!DNL Catalog Service]](../../../../catalog/home.md)：目录是Experience Platform中数据位置和历程的记录系统。
+- [[!DNL Streaming ingestion]](../../../../ingestion/streaming-ingestion/overview.md)： Platform流式摄取为用户提供了一种方法，可实时将数据从客户端和服务器端设备发送到Experience Platform。
+- [沙盒](../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ### 使用平台API
 
-有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../landing/api-guide.md).
+有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../landing/api-guide.md)指南。
 
 ### 创建源连接 {#source}
 
@@ -41,9 +41,9 @@ ht-degree: 2%
 
 ## 创建目标XDM架构 {#target-schema}
 
-为了在Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。 此目标XDM架构还扩展了XDM [!DNL Individual Profile] 类。
+为了在Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。 此目标XDM架构还扩展XDM [!DNL Individual Profile]类。
 
-POST要创建目标XDM架构，请向 `/schemas` 的端点 [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
+要创建目标XDM架构，请向[[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)的`/schemas`端点发出POST请求。
 
 **API格式**
 
@@ -53,7 +53,7 @@ POST /tenant/schemas
 
 **请求**
 
-以下示例请求创建一个扩展XDM的XDM架构 [!DNL Individual Profile] 类。
+以下示例请求创建扩展XDM [!DNL Individual Profile]类的XDM架构。
 
 ```shell
 curl -X POST \
@@ -87,7 +87,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回新创建架构的详细信息，包括其唯一标识符(`$id`)。 在后续步骤中，创建目标数据集、映射和数据流时需要此ID。
+成功的响应返回新创建架构的详细信息，包括其唯一标识符(`$id`)。 在后续步骤中，创建目标数据集、映射和数据流时需要此ID。
 
 ```json
 {
@@ -151,7 +151,7 @@ curl -X POST \
 
 ## 创建目标数据集
 
-创建了目标XDM架构，该架构具有 `$id` 您现在可以创建目标数据集以包含源数据。 POST要创建目标数据集，请向 `dataSets` 的端点 [目录服务API](https://www.adobe.io/experience-platform-apis/references/catalog/)，同时在有效负载中提供目标架构的ID。
+创建目标XDM架构及其唯一`$id`后，您现在可以创建目标数据集以包含源数据。 要创建目标数据集，请向[目录服务API](https://www.adobe.io/experience-platform-apis/references/catalog/)的`dataSets`端点发出POST请求，同时在有效负载中提供ID作为目标架构。
 
 **API格式**
 
@@ -189,12 +189,12 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `name` | 要创建的数据集的名称。 |
-| `schemaRef.id` | URI `$id` 对于XDM架构，数据集将基于该架构。 |
-| `schemaRef.contentType` | 架构的版本。 此值必须设置为 `application/vnd.adobe.xed-full-notext+json;version=1`，返回架构的最新次版本。 请参阅以下部分 [架构版本控制](../../../../xdm/api/getting-started.md#versioning) 有关更多信息，请参阅XDM API指南。 |
+| `schemaRef.id` | 数据集将基于的XDM架构的URI `$id`。 |
+| `schemaRef.contentType` | 架构的版本。 此值必须设置为`application/vnd.adobe.xed-full-notext+json;version=1`，这将返回架构的最新次版本。 有关详细信息，请参阅XDM API指南中有关[架构版本控制](../../../../xdm/api/getting-started.md#versioning)的部分。 |
 
 **响应**
 
-成功的响应会返回一个数组，该数组以格式包含新创建的数据集的ID `"@/datasets/{DATASET_ID}"`. 数据集ID是系统生成的只读字符串，用于在API调用中引用数据集。 在后续步骤中，需要目标数据集ID才能创建目标连接和数据流。
+成功的响应将返回一个数组，该数组包含新创建的数据集的ID，格式为`"@/datasets/{DATASET_ID}"`。 数据集ID是系统生成的只读字符串，用于在API调用中引用数据集。 在后续步骤中，需要目标数据集ID才能创建目标连接和数据流。
 
 ```json
 [
@@ -206,7 +206,7 @@ curl -X POST \
 
 Target连接可创建并管理到Platform的目标连接或传输的数据将要到达的任何位置。 目标连接包含有关创建数据流所需的数据目标、数据格式和目标连接ID的信息。 Target连接实例特定于租户和组织。
 
-POST要创建Target连接，请向 `/targetConnections` 的端点 [!DNL Flow Service] API。 作为请求的一部分，您必须提供数据格式 `dataSetId` 在上一步中检索，并且与关联的固定连接规范ID [!DNL Data Lake]. 此ID为 `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
+要创建Target连接，请向[!DNL Flow Service] API的`/targetConnections`端点发出POST请求。 作为请求的一部分，您必须提供数据格式、上一步中检索到的`dataSetId`以及绑定到[!DNL Data Lake]的固定连接规范ID。 此ID为`c604ff05-7f1a-43c0-8e18-33bf874cb11c`。
 
 **API格式**
 
@@ -248,11 +248,11 @@ curl -X POST \
 | -------- | ----------- |
 | `data.format` | 您带入数据湖的数据的指定格式。 |
 | `params.dataSetId` | 上一步中生成的目标数据集的ID。 **注意**：创建目标连接时，必须提供有效的数据集ID。 无效的数据集ID将导致错误。 |
-| `connectionSpec.id` | 用于连接到数据湖的连接规范ID。 此ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
+| `connectionSpec.id` | 用于连接到数据湖的连接规范ID。 此ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`。 |
 
 **响应**
 
-成功的响应将返回新目标连接的唯一标识符(`id`)。 此ID在后续步骤中是必需的。
+成功的响应返回新目标连接的唯一标识符(`id`)。 此ID在后续步骤中是必需的。
 
 ```json
 {
@@ -265,7 +265,7 @@ curl -X POST \
 
 要将源数据摄取到目标数据集中，必须首先将其映射到目标数据集所遵循的目标架构。
 
-POST要创建映射集，请向 `mappingSets` 的端点 [[!DNL Data Prep] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-prep.yaml) 提供目标XDM架构时 `$id` 以及要创建的映射集的详细信息。
+要创建映射集，请在提供目标XDM架构`$id`和要创建的映射集的详细信息时，向[[!DNL Data Prep] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-prep.yaml)的`mappingSets`端点发出POST请求。
 
 **API格式**
 
@@ -306,11 +306,11 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `xdmSchema` | 此 `$id` 目标XDM架构的。 |
+| `xdmSchema` | 目标XDM架构的`$id`。 |
 
 **响应**
 
-成功响应将返回新创建映射的详细信息，包括其唯一标识符(`id`)。 此ID是稍后步骤创建数据流所必需的。
+成功的响应返回新创建的映射的详细信息，包括其唯一标识符(`id`)。 此ID是稍后步骤创建数据流所必需的。
 
 ```json
 {
@@ -325,7 +325,7 @@ curl -X POST \
 
 ## 检索数据流规范列表 {#specs}
 
-数据流负责从源收集数据并将这些数据导入Platform。 GET要创建数据流，您必须首先通过对 [!DNL Flow Service] API。
+数据流负责从源收集数据并将这些数据导入Platform。 要创建数据流，您必须首先通过向[!DNL Flow Service] API执行GET请求来获取数据流规范。
 
 **API格式**
 
@@ -345,7 +345,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回数据流规范列表。 使用任意创建数据流时需要检索的数据流规范ID [!DNL Amazon Kinesis]， [!DNL Azure Event Hubs]，或  [!DNL Google PubSub]，是 `d69717ba-71b4-4313-b654-49f9cf126d7a`.
+成功的响应将返回数据流规范列表。 使用[!DNL Amazon Kinesis]、[!DNL Azure Event Hubs]或[!DNL Google PubSub]的任何一个创建数据流所需检索的数据流规范ID是`d69717ba-71b4-4313-b654-49f9cf126d7a`。
 
 ```json
 {
@@ -417,7 +417,7 @@ curl -X GET \
 
 收集流数据的最后一步是创建数据流。 现在，您已准备以下必需值：
 
-- [源连接ID](#source)
+- [Source连接Id](#source)
 - [目标连接ID](#target)
 - [映射 ID](#mapping)
 - [数据流规范ID](#specs)
@@ -466,14 +466,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `flowSpec.id` | 此 [流量规范ID](#specs) 在上一步中检索。 |
-| `sourceConnectionIds` | 此 [源连接ID](#source) 在之前的步骤中检索。 |
-| `targetConnectionIds` | 此 [目标连接Id](#target-connection) 在之前的步骤中检索。 |
-| `transformations.params.mappingId` | 此 [映射ID](#mapping) 在之前的步骤中检索。 |
+| `flowSpec.id` | 在上一步中检索到[流规范ID](#specs)。 |
+| `sourceConnectionIds` | 在之前的步骤中检索到[源连接ID](#source)。 |
+| `targetConnectionIds` | 在之前的步骤中检索到[目标连接ID](#target-connection)。 |
+| `transformations.params.mappingId` | 在之前的步骤中检索到[映射ID](#mapping)。 |
 
 **响应**
 
-成功的响应会返回ID (`id`)。
+成功的响应返回新创建的数据流的ID (`id`)。
 
 ```json
 {
@@ -482,7 +482,7 @@ curl -X POST \
 }
 ```
 
-## 发布要引入的数据
+## 用于摄取的Post数据
 
 查看以下有效负载示例，了解可发送以供摄取的原始或XDM兼容JSON的示例。
 
@@ -566,7 +566,7 @@ curl -X POST \
 
 ## 后续步骤
 
-通过阅读本教程，您已创建一个数据流以从流连接器收集流数据。 传入数据现在可供下游平台服务使用，例如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
+通过阅读本教程，您已创建一个数据流以从流连接器收集流数据。 传入数据现在可供下游平台服务（如[!DNL Real-Time Customer Profile]和[!DNL Data Science Workspace]）使用。 有关更多详细信息，请参阅以下文档：
 
-- [Real-time Customer Profile概述](../../../../profile/home.md)
+- [实时客户轮廓概述](../../../../profile/home.md)
 - [数据科学工作区概述](../../../../data-science-workspace/home.md)

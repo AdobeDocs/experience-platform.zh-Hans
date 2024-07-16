@@ -4,39 +4,39 @@ description: 了解如何在Reactor API中调用/environments端点。
 exl-id: 4c22f799-8338-4cf0-980a-3900d725ab5d
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '1002'
+source-wordcount: '999'
 ht-degree: 4%
 
 ---
 
 # 环境端点
 
-当 [库](./libraries.md) 编译为 [生成](./builds.md) 在Reactor API中，内部版本的确切内容取决于环境设置和库中包含的资源。 具体而言，环境会确定以下内容：
+在Reactor API中将[库](./libraries.md)编译为[内部版本](./builds.md)时，内部版本的确切内容取决于环境设置和库中包含的资源。 具体来说，环境会确定以下内容：
 
-1. **目标**：您希望部署内部版本的位置。 可通过选择 [主机](./hosts.md) 以方便环境使用。
-1. **存档**：您可以选择将内部版本检索为一组可部署的文件，或以存档格式压缩内部版本。 此项由 `archive` 设置。
+1. **目标**：您希望部署内部版本的位置。 可通过为要使用的环境选择一个[主机](./hosts.md)来控制这一点。
+1. **存档**：您可以选择将内部版本检索为一组可部署的文件，或以存档格式压缩该内部版本。 这是由环境上的`archive`设置控制的。
 
-环境配置的目标和存档格式会更改您在应用程序中引用内部版本的方式(即 [嵌入代码](../../ui/publishing/environments.md#embed-code))。 如果对目标格式或文件格式进行了任何更改，则必须对应用程序进行匹配的更新才能使用新引用。
+环境配置的目标和存档格式将更改您在应用程序中引用内部版本的方式（该引用是[嵌入代码](../../ui/publishing/environments.md#embed-code)）。 如果对目标或文件格式进行了任何更改，则必须对应用程序进行相应的更新才能使用新引用。
 
 环境分为三种类型（或阶段），每种类型对可以拥有的总数具有不同的限制：
 
 | 环境类型 | 允许的数量 |
 | --- | --- |
 | 开发 | （无限制） |
-| 暂存 | 一个 |
-| 生产 | 一个 |
+| 暂存 | 一 |
+| 生产 | 一 |
 
 {style="table-layout:auto"}
 
-这些环境类型的行为相似，但使用的阶段不同 [标记发布工作流程](../../ui/publishing/publishing-flow.md).
+这些环境类型的行为相似，但在[标记发布工作流](../../ui/publishing/publishing-flow.md)的不同阶段使用。
 
-一个环境只属于一个 [属性](./properties.md).
+环境只属于一个[属性](./properties.md)。
 
-有关环境的更多常规信息，请参阅以下部分： [环境](../../ui/publishing/environments.md) 在发布文档中。
+有关环境的更多常规信息，请参阅发布文档中有关[环境](../../ui/publishing/environments.md)的部分。
 
 ## 快速入门
 
-本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [快速入门指南](../getting-started.md) 有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续之前，请查看[快速入门指南](../getting-started.md)，以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索环境列表 {#list}
 
@@ -50,13 +50,13 @@ GET /properties/{PROPERTY_ID}/environments
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 此 `id` 拥有环境的资产的属性。 |
+| `PROPERTY_ID` | 拥有环境的属性的`id`。 |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性筛选列出的环境：<ul><li>`archive`</li><li>`created_at`</li><li>`name`</li><li>`stage`</li><li>`token`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [筛选响应](../guides/filtering.md) 了解更多信息。
+>使用查询参数，可以根据以下属性过滤列出的环境：<ul><li>`archive`</li><li>`created_at`</li><li>`name`</li><li>`stage`</li><li>`token`</li><li>`updated_at`</li></ul>有关详细信息，请参阅[筛选响应](../guides/filtering.md)指南。
 
 **请求**
 
@@ -174,7 +174,7 @@ GET /environments/{ENVIRONMENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `ENVIRONMENT_ID` | 此 `id` 您想要查找的环境的URL。 |
+| `ENVIRONMENT_ID` | 要查找的环境的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -283,13 +283,13 @@ POST /properties/{PROPERTY_ID}/environments
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 此 `id` 的 [属性](./properties.md) 您正在其下定义环境的环境。 |
+| `PROPERTY_ID` | 您正在定义环境的[属性](./properties.md)的`id`。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求为指定的属性创建新环境。 该调用还会通过 `relationships` 属性。 请参阅指南，网址为 [关系](../guides/relationships.md) 了解更多信息。
+以下请求为指定属性创建新环境。 调用还会通过`relationships`属性将环境与现有主机关联。 有关详细信息，请参阅[关系](../guides/relationships.md)指南。
 
 ```shell
 curl -X POST \
@@ -322,19 +322,19 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes.name` | **（必需）** 易于用户识别的环境名称。 |
+| `attributes.name` | **（必需）**&#x200B;易于用户识别的环境名称。 |
 | `attributes.archive` | 布尔值，指示内部版本是否为存档格式。 |
 | `attributes.archive_passphrase` | 可用于解锁存档文件的字符串密码。 |
 | `attributes.path` | 环境的主机URL中的路径。 |
 | `attributes.stage` | 环境的暂存（开发、暂存或生产）。 |
-| `id` | 此 `id` 环境的所有其他项。 这应该与 `{ENVIRONMENT_ID}` 请求路径中提供的值。 |
-| `type` | 正在更新的资源类型。 对于此端点，值必须为 `environments`. |
+| `id` | 要更新的环境的`id`。 这应当与在请求路径中提供的`{ENVIRONMENT_ID}`值匹配。 |
+| `type` | 正在更新的资源类型。 对于此终结点，值必须为`environments`。 |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的响应将返回新创建环境的详细信息。
+成功的响应会返回新创建环境的详细信息。
 
 ```json
 {
@@ -425,13 +425,13 @@ PATCH /environments/{ENVIRONMENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `ENVIRONMENT_ID` | 此 `id` 环境的所有其他项。 |
+| `ENVIRONMENT_ID` | 要更新的环境的`id`。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求将更新 `name` 对于现有环境。
+以下请求更新现有环境的`name`。
 
 ```shell
 curl -X PATCH \
@@ -453,15 +453,15 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes` | 一个对象，其属性表示要为环境更新的属性。 可以更新以下环境属性： <ul><li>`archive`</li><li>`archive_passphrase`</li><li>`include_debug_library`</li><li>`name`</li><li>`path`</li></ul> 查看的示例调用 [创建环境](#create) 以获取属性及其用例的列表。 |
-| `id` | 此 `id` 环境的所有其他项。 这应该与 `{ENVIRONMENT_ID}` 请求路径中提供的值。 |
-| `type` | 正在更新的资源类型。 对于此端点，值必须为 `environments`. |
+| `attributes` | 一个对象，其属性表示要为环境更新的属性。 可以更新以下环境属性： <ul><li>`archive`</li><li>`archive_passphrase`</li><li>`include_debug_library`</li><li>`name`</li><li>`path`</li></ul> 查看[创建环境](#create)的示例调用，以了解属性及其用例的列表。 |
+| `id` | 要更新的环境的`id`。 这应当与在请求路径中提供的`{ENVIRONMENT_ID}`值匹配。 |
+| `type` | 正在更新的资源类型。 对于此终结点，值必须为`environments`。 |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功响应将返回已更新环境的详细信息。
+成功的响应将返回已更新环境的详细信息。
 
 ```json
 {
@@ -552,7 +552,7 @@ DELETE /environments/{ENVIRONMENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `ENVIRONMENT_ID` | 此 `id` 删除环境的ID。 |
+| `ENVIRONMENT_ID` | 要删除的环境的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -572,13 +572,13 @@ curl -X DELETE \
 
 ## 检索环境的相关资源 {#related}
 
-以下调用演示了如何检索环境的相关资源。 时间 [查找环境](#lookup)，这些关系列在 `relationships` 属性。
+以下调用演示了如何检索环境的相关资源。 当[查找环境](#lookup)时，这些关系列在`relationships`属性下。
 
-请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
+有关Reactor API中关系的详细信息，请参阅[关系指南](../guides/relationships.md)。
 
 ### 列出环境的相关内部版本 {#builds}
 
-您可以通过附加来列出使用环境的内部版本 `/builds` 到查找请求的路径。
+您可以通过将`/builds`附加到查找请求的路径来列出使用环境的生成。
 
 **API格式**
 
@@ -588,7 +588,7 @@ GET  /environments/{ENVIRONMENT_ID}/builds
 
 | 参数 | 描述 |
 | --- | --- |
-| `{ENVIRONMENT_ID}` | 此 `id` 要列出其内部版本的环境。 |
+| `{ENVIRONMENT_ID}` | 要列出其内部版本的环境的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -606,7 +606,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回使用指定环境的内部版本列表。
+成功的响应将返回使用指定环境的内部版本的列表。
 
 ```json
 {
@@ -691,11 +691,11 @@ curl -X GET \
 
 ### 查找环境的相关主机 {#host}
 
-您可以通过附加来查找利用环境的主机 `/host` 到GET请求的路径。
+通过将`/host`附加到GET请求的路径中，您可以查找利用环境的主机。
 
 >[!NOTE]
 >
->您可以通过查找主机关系对象本身 [单独调用](#host-relationship).
+>您可以通过[单独的调用](#host-relationship)查找主机关系对象本身。
 
 **API格式**
 
@@ -705,7 +705,7 @@ GET  /environments/{ENVIRONMENT_ID}/host
 
 | 参数 | 描述 |
 | --- | --- |
-| `{ENVIRONMENT_ID}` | 此 `id` 要查找其主机的环境的ID。 |
+| `{ENVIRONMENT_ID}` | 要查找其主机的环境的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -762,7 +762,7 @@ curl -X GET \
 
 ### 查找环境的相关库 {#library}
 
-您可以通过附加来查找使用环境的库 `/library` 到GET请求的路径。
+您可以通过将`/library`附加到GET请求的路径来查找使用环境的库。
 
 **API格式**
 
@@ -772,7 +772,7 @@ GET  /environments/{ENVIRONMENT_ID}/library
 
 | 参数 | 描述 |
 | --- | --- |
-| `{ENVIRONMENT_ID}` | 此 `id` 要查找其库的环境的URL。 |
+| `{ENVIRONMENT_ID}` | 要查找其库的环境的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -790,7 +790,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回使用指定环境的库的详细信息。
+成功的响应将返回使用指定环境的库的详细信息。
 
 ```json
 {
@@ -877,7 +877,7 @@ curl -X GET \
 
 ### 查找环境的相关属性 {#property}
 
-您可以通过附加来查找拥有环境的资产 `/property` 到GET请求的路径。
+您可以通过将`/property`附加到GET请求的路径来查找拥有环境的属性。
 
 **API格式**
 
@@ -887,7 +887,7 @@ GET  /environments/{ENVIRONMENT_ID}/property
 
 | 参数 | 描述 |
 | --- | --- |
-| `{ENVIRONMENT_ID}` | 此 `id` 要查找其属性的环境的。 |
+| `{ENVIRONMENT_ID}` | 要查找其属性的环境的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -905,7 +905,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回拥有指定环境的属性的详细信息。
+成功的响应将返回拥有指定环境的属性的详细信息。
 
 ```json
 {

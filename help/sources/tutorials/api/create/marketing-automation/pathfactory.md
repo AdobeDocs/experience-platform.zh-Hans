@@ -10,24 +10,24 @@ ht-degree: 2%
 
 ---
 
-# 创建 [!DNL PathFactory] 基本连接使用 [!DNL Flow Service] API
+# 使用[!DNL Flow Service] API创建[!DNL PathFactory]基本连接
 
 基本连接表示源和Adobe Experience Platform之间的已验证连接。
 
-请阅读本文档，了解如何为创建基本连接 [!DNL PathFactory] 使用 [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>).
+阅读本文档以了解如何使用[[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>)为[!DNL PathFactory]创建基本连接。
 
 ## 快速入门
 
 本指南要求您对Experience Platform的以下组件有一定的了解：
 
-* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
-* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ### 使用平台API
 
-有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
+有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../../landing/api-guide.md)指南。
 
-以下部分提供了成功连接时需要了解的其他信息 [!DNL PathFactory] 使用 [!DNL Flow Service] API。
+以下部分提供了使用[!DNL Flow Service] API成功连接到[!DNL PathFactory]时需要了解的其他信息。
 
 ### 收集所需的凭据 {#gather-credentials}
 
@@ -35,19 +35,19 @@ ht-degree: 2%
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| 用户名 | 您的 [!DNL PathFactory] 帐户用户名。 这对于识别您在系统中的帐户至关重要。 |
-| 密码 | 与您的关联的密码 [!DNL PathFactory] 帐户。 确保此安全设置以防止未经授权的访问。 |
-| 域 | 与您的关联的域 [!DNL PathFactory] 帐户。 这通常指贵机构中 [!DNL PathFactory] URL。 |
-| 访问令牌 | 用于API身份验证的唯一令牌，确保您的系统与 [!DNL PathFactory]. |
-| API端点 | 用于访问数据的特定API端点：访客、会话和页面查看。 每个端点对应于可检索的不同数据集。 **注意：** 这些规则由预定义 [!DNL PathFactory] 特定于要访问的数据： <ul><li>**访客端点**： `/api/public/v3/data_lake_apis/visitors.json`</li><li>**会话端点**： `/api/public/v3/data_lake_apis/sessions.json`</li><li>**页面查看端点**： `/api/public/v3/data_lake_apis/page_views.json`</li></ul> |
+| 用户名 | 您的[!DNL PathFactory]帐户用户名。 这对于识别您在系统中的帐户至关重要。 |
+| 密码 | 与您的[!DNL PathFactory]帐户关联的密码。 确保此安全设置以防止未经授权的访问。 |
+| 域 | 与您的[!DNL PathFactory]帐户关联的域。 这通常指您的[!DNL PathFactory] URL中的唯一标识符。 |
+| 访问令牌 | 用于API身份验证的唯一令牌以确保您的系统与[!DNL PathFactory]之间的安全通信。 |
+| API端点 | 用于访问数据的特定API端点：访客、会话和页面查看。 每个端点对应于可检索的不同数据集。 **注意：**&#x200B;这些由[!DNL PathFactory]预定义，特定于您要访问的数据： <ul><li>**访客终结点**： `/api/public/v3/data_lake_apis/visitors.json`</li><li>**会话终结点**： `/api/public/v3/data_lake_apis/sessions.json`</li><li>**页面查看终结点**： `/api/public/v3/data_lake_apis/page_views.json`</li></ul> |
 
-有关如何保护和使用您的凭据以及如何获取和刷新访问令牌的更多信息，请访问 [[!DNL PathFactory] 支持中心](https://support.pathfactory.com/categories/adobe/). 此资源提供有关管理凭据以及确保有效且安全的API集成的综合指南。
+有关如何保护和使用凭据以及如何获取和刷新访问令牌的详细信息，请访问[[!DNL PathFactory] 支持中心](https://support.pathfactory.com/categories/adobe/)。 此资源提供有关管理凭据以及确保有效且安全的API集成的综合指南。
 
 ## 创建基本连接
 
 基本连接会保留您的源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-POST要创建基本连接ID，请向 `/connections` 端点，同时提供 [!DNL PathFactory] 作为请求正文一部分的身份验证凭据。
+要创建基本连接ID，请在将[!DNL PathFactory]身份验证凭据作为请求正文的一部分提供时，向`/connections`端点发出POST请求。
 
 **API格式**
 
@@ -57,7 +57,7 @@ POST /connections
 
 **请求**
 
-以下请求为创建基本连接 [!DNL PathFactory]：
+以下请求为[!DNL PathFactory]创建基本连接：
 
 ```shell
 curl -X POST \
@@ -87,13 +87,13 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `auth.params.clientId` | 与您的关联的客户端ID [!DNL PathFactory] 应用程序。 |
-| `auth.params.clientSecret` | 与您的关联的客户端密钥 [!DNL PathFactory] 应用程序。 |
-| `connectionSpec.id` | 此 [!DNL PathFactory] 连接规范ID： `ea1c2a08-b722-11eb-8529-0242ac130003`. |
+| `auth.params.clientId` | 与您的[!DNL PathFactory]应用程序关联的客户端ID。 |
+| `auth.params.clientSecret` | 与您的[!DNL PathFactory]应用程序关联的客户端密钥。 |
+| `connectionSpec.id` | [!DNL PathFactory]连接规范ID： `ea1c2a08-b722-11eb-8529-0242ac130003`。 |
 
 **响应**
 
-成功的响应会返回新创建的连接，包括其唯一连接标识符(`id`)。 在下个教程中，需要此ID才能浏览您的数据。
+成功的响应返回新创建的连接，包括其唯一连接标识符(`id`)。 在下个教程中，需要此ID才能浏览您的数据。
 
 ```json
 {
@@ -104,7 +104,7 @@ curl -X POST \
 
 ## 后续步骤
 
-在本教程之后，您已创建一个 [!DNL PathFactory] 基本连接使用 [!DNL Flow Service] API。 您可以在下列教程中使用此基本连接ID：
+通过完成本教程，您已使用[!DNL Flow Service] API创建了[!DNL PathFactory]基本连接。 您可以在下列教程中使用此基本连接ID：
 
-* [使用浏览数据表的结构和内容 [!DNL Flow Service] API](../../explore/tabular.md)
-* [使用创建数据流以将营销自动化数据引入Platform [!DNL Flow Service] API](../../collect/marketing-automation.md)
+* [使用 [!DNL Flow Service] API浏览数据表的结构和内容](../../explore/tabular.md)
+* [使用 [!DNL Flow Service] API创建数据流以将营销自动化数据引入平台](../../collect/marketing-automation.md)

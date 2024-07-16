@@ -1,5 +1,5 @@
 ---
-title: 使用流服务API创建Google PubSub源连接
+title: 使用流服务API创建Google PubSub Source连接
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Google PubSub帐户。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: f5b8f9bf-8a6f-4222-8eb2-928503edb24f
@@ -10,26 +10,26 @@ ht-degree: 2%
 
 ---
 
-# 创建 [!DNL Google PubSub] 使用流服务API的源连接
+# 使用流服务API创建[!DNL Google PubSub] Source连接
 
 >[!IMPORTANT]
 >
->此 [!DNL Google PubSub] 源目录中的源可供已购买Real-time Customer Data Platform Ultimate的用户使用。
+>[!DNL Google PubSub]源在源目录中可供已购买Real-time Customer Data Platform Ultimate的用户使用。
 
-本教程将指导您完成连接的步骤 [!DNL Google PubSub] (以下简称“[!DNL PubSub]“)Experience Platform，使用 [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>).
+本教程将指导您完成使用[[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>)将[!DNL Google PubSub]（以下称为“[!DNL PubSub]”）连接到Experience Platform的步骤。
 
 ## 快速入门
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
-* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-以下部分提供成功连接时需要了解的其他信息 [!DNL PubSub] 到平台，使用 [!DNL Flow Service] API。
+以下部分提供了使用[!DNL Flow Service] API成功将[!DNL PubSub]连接到Platform所需了解的其他信息。
 
 ### 收集所需的凭据
 
-您必须提供下面列出的连接属性的值才能连接 [!DNL PubSub] 帐户至 [!DNL Flow Service]. 有关身份验证和先决条件设置的详细信息，请参阅 [[!DNL PubSub source] 概述](../../../../connectors/cloud-storage/google-pubsub.md#prerequisites).
+您必须提供下面列出的连接属性的值，才能将您的[!DNL PubSub]帐户连接到[!DNL Flow Service]。 有关身份验证和先决条件设置的详细信息，请阅读[[!DNL PubSub source] 概述](../../../../connectors/cloud-storage/google-pubsub.md#prerequisites)。
 
 >[!BEGINTABS]
 
@@ -37,22 +37,22 @@ ht-degree: 2%
 
 | 凭据 | 描述 |
 | --- | --- |
-| `projectId` | 验证时需要项目ID [!DNL PubSub]. |
-| `credentials` | 身份验证所需的凭据 [!DNL PubSub]. 您必须确保从凭据中删除空格后放入完整的JSON文件。 |
-| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础和源目标连接相关的身份验证规范。 此 [!DNL PubSub] 连接规范ID为： `70116022-a743-464a-bbfe-e226a7f8210c`. |
+| `projectId` | 验证[!DNL PubSub]时需要项目ID。 |
+| `credentials` | 验证[!DNL PubSub]所需的凭据。 您必须确保从凭据中删除空格后放入完整的JSON文件。 |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础和源目标连接相关的身份验证规范。 [!DNL PubSub]连接规范ID为： `70116022-a743-464a-bbfe-e226a7f8210c`。 |
 
->[!TAB 主题和基于订阅的身份验证]
+>[!TAB 基于主题和订阅的身份验证]
 
 | 凭据 | 描述 |
 | --- | --- |
-| `credentials` | 身份验证所需的凭据 [!DNL PubSub]. 您必须确保从凭据中删除空格后放入完整的JSON文件。 |
-| `topicName` | 表示消息馈送的资源名称。 如果要提供对特定数据流的访问权限，您必须指定主题名称。 [!DNL PubSub] 源。 主题名称格式为： `projects/{PROJECT_ID}/topics/{TOPIC_ID}`. |
-| `subscriptionName` | 您的名称 [!DNL PubSub] 订阅。 在 [!DNL PubSub]，订阅允许您通过订阅消息已发布到的主题来接收消息。 **注意**：单个 [!DNL PubSub] 订阅只能用于一个数据流。 要创建多个数据流，您必须有多个订阅。 订阅名称格式为： `projects/{PROJECT_ID}/subscriptions/{SUBSCRIPTION_ID}`. |
-| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础和源目标连接相关的身份验证规范。 此 [!DNL PubSub] 连接规范ID为： `70116022-a743-464a-bbfe-e226a7f8210c`. |
+| `credentials` | 验证[!DNL PubSub]所需的凭据。 您必须确保从凭据中删除空格后放入完整的JSON文件。 |
+| `topicName` | 表示消息馈送的资源名称。 如果要提供对[!DNL PubSub]源中特定数据流的访问权限，必须指定主题名称。 主题名称格式为： `projects/{PROJECT_ID}/topics/{TOPIC_ID}`。 |
+| `subscriptionName` | [!DNL PubSub]订阅的名称。 在[!DNL PubSub]中，订阅允许您通过订阅消息已发布到的主题来接收消息。 **注意**：单个[!DNL PubSub]订阅只能用于一个数据流。 要创建多个数据流，您必须有多个订阅。 订阅名称格式为： `projects/{PROJECT_ID}/subscriptions/{SUBSCRIPTION_ID}`。 |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础和源目标连接相关的身份验证规范。 [!DNL PubSub]连接规范ID为： `70116022-a743-464a-bbfe-e226a7f8210c`。 |
 
 >[!ENDTABS]
 
-有关这些值的详细信息，请阅读此 [[!DNL PubSub] 身份验证](https://cloud.google.com/pubsub/docs/authentication) 文档。 要使用基于服务帐户的身份验证，请阅读此 [[!DNL PubSub] 创建服务帐户指南](https://cloud.google.com/docs/authentication/production#create_service_account) 以了解有关如何生成凭据的步骤。
+有关这些值的详细信息，请阅读此[[!DNL PubSub] 身份验证](https://cloud.google.com/pubsub/docs/authentication)文档。 若要使用基于服务帐户的身份验证，请阅读此[[!DNL PubSub] 创建服务帐户指南](https://cloud.google.com/docs/authentication/production#create_service_account)，以了解如何生成凭据的步骤。
 
 >[!TIP]
 >
@@ -60,23 +60,23 @@ ht-degree: 2%
 
 ### 使用平台API
 
-有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
+有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../../landing/api-guide.md)指南。
 
 ## 创建基本连接
 
 >[!TIP]
 >
->创建后，便无法更改的身份验证类型 [!DNL Google PubSub] 基本连接。 要更改身份验证类型，必须创建新的基本连接。
+>创建后，无法更改[!DNL Google PubSub]基本连接的身份验证类型。 要更改身份验证类型，必须创建新的基本连接。
 
-创建源连接的第一步是验证您的 [!DNL PubSub] 并生成基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并识别要摄取的特定项目，包括有关其数据类型和格式的信息。
+创建源连接的第一步是验证您的[!DNL PubSub]源并生成基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并识别要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-POST要创建基本连接ID，请向 `/connections` 端点，同时提供 [!DNL PubSub] 作为请求参数一部分的身份验证凭据。
+要创建基本连接ID，请在提供[!DNL PubSub]身份验证凭据作为POST参数的一部分时，向`/connections`端点请求请求。
 
-此 [!DNL PubSub] 源允许您指定在身份验证期间允许的访问类型。 您可以将帐户设置为具有超级用户访问权限或限制对特定用户的访问权限 [!DNL PubSub] 主题和订阅。
+[!DNL PubSub]源允许您指定身份验证期间允许的访问类型。 您可以将帐户设置为具有根访问权限或限制对特定[!DNL PubSub]主题和订阅的访问权限。
 
 >[!NOTE]
 >
->分配给的主体（角色） [!DNL PubSub] 项目继承于内创建的所有主题和订阅中 [!DNL PubSub] 项目。 如果希望主体（角色）可以访问特定主题，则还必须将该主体（角色）添加到主题的相应订阅中。 欲知更多信息，请参阅 [[!DNL PubSub] 关于访问控制的文档](<https://cloud.google.com/pubsub/docs/access-control>).
+>分配给[!DNL PubSub]项目的主体（角色）在[!DNL PubSub]项目内创建的所有主题和订阅中被继承。 如果希望主体（角色）可以访问特定主题，则还必须将该主体（角色）添加到主题的相应订阅中。 有关详细信息，请阅读有关访问控制](<https://cloud.google.com/pubsub/docs/access-control>)的[[!DNL PubSub] 文档。
 
 **API格式**
 
@@ -88,7 +88,7 @@ POST /connections
 
 >[!TAB 基于项目的身份验证]
 
-POST要创建基于项目的身份验证的基本连接，请向 `/connections` 端点并提供您的 `projectId` 和 `credentials` 请求正文中。
+若要创建基于项目的身份验证的基础连接，请向`/connections`端点发出POST请求，并在请求正文中提供您的`projectId`和`credentials`。
 
 +++请求
 
@@ -119,15 +119,15 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `auth.params.projectId` | 验证时需要项目ID [!DNL PubSub]. |
-| `auth.params.credentials` | 身份验证所需的凭据或密钥 [!DNL PubSub]. |
-| `connectionSpec.id` | 此 [!DNL PubSub] 连接规范ID： `70116022-a743-464a-bbfe-e226a7f8210c`. |
+| `auth.params.projectId` | 验证[!DNL PubSub]时需要项目ID。 |
+| `auth.params.credentials` | 验证[!DNL PubSub]所需的凭据或密钥。 |
+| `connectionSpec.id` | [!DNL PubSub]连接规范ID： `70116022-a743-464a-bbfe-e226a7f8210c`。 |
 
 ++++
 
 +++响应
 
-成功的响应会返回新创建连接的详细信息，包括其唯一标识符(`id`)。 在下一步创建源连接时需要此基本连接ID。
+成功的响应返回新创建的连接的详细信息，包括其唯一标识符(`id`)。 在下一步创建源连接时需要此基本连接ID。
 
 ```json
 {
@@ -138,9 +138,9 @@ curl -X POST \
 
 ++++
 
->[!TAB 主题和基于订阅的身份验证]
+>[!TAB 基于主题和订阅的身份验证]
 
-POST要创建与主题和基于订阅的身份验证的基本连接，请向 `/connections` 端点并提供您的 `credentials`， `topicName`、和 `subscriptionName` 请求正文中。
+若要创建具有主题和基于订阅的身份验证的基础连接，请向`/connections`端点发出POST请求，并在请求正文中提供您的`credentials`、`topicName`和`subscriptionName`。
 
 +++请求
 
@@ -172,16 +172,16 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `auth.params.credentials` | 身份验证所需的凭据或密钥 [!DNL PubSub]. |
-| `auth.params.topicName` | 的项目ID和主题ID对 [!DNL PubSub] 要提供访问权限的源。 |
-| `auth.params.subscriptionName` | 的项目ID和订阅ID对 [!DNL PubSub] 要提供访问权限的源。 |
-| `connectionSpec.id` | 此 [!DNL PubSub] 连接规范ID： `70116022-a743-464a-bbfe-e226a7f8210c`. |
+| `auth.params.credentials` | 验证[!DNL PubSub]所需的凭据或密钥。 |
+| `auth.params.topicName` | 要提供访问权限的[!DNL PubSub]源的项目ID和主题ID对。 |
+| `auth.params.subscriptionName` | 您要提供访问权限的[!DNL PubSub]源的项目ID和订阅ID对。 |
+| `connectionSpec.id` | [!DNL PubSub]连接规范ID： `70116022-a743-464a-bbfe-e226a7f8210c`。 |
 
 +++
 
 +++响应
 
-成功的响应会返回新创建连接的详细信息，包括其唯一标识符(`id`)。 在下一步创建源连接时需要此基本连接ID。
+成功的响应返回新创建的连接的详细信息，包括其唯一标识符(`id`)。 在下一步创建源连接时需要此基本连接ID。
 
 ```json
 {
@@ -199,7 +199,7 @@ curl -X POST \
 
 源连接创建和管理与摄取数据的外部源的连接。 源连接由数据源、数据格式和创建数据流所需的源连接ID等信息组成。 源连接实例特定于租户和组织。
 
-POST要创建源连接，请向 `/sourceConnections` 的端点 [!DNL Flow Service] API。
+要创建源连接，请向[!DNL Flow Service] API的`/sourceConnections`端点发出POST请求。
 
 **API格式**
 
@@ -240,16 +240,16 @@ curl -X POST \
 | --- | --- |
 | `name` | 源连接的名称。 请确保源连接的名称是描述性的，因为您可以使用此名称查找有关源连接的信息。 |
 | `description` | 可提供的可选值，用于包含有关源连接的更多信息。 |
-| `baseConnectionId` | 您的的基本连接ID [!DNL PubSub] 上一步中生成的源。 |
-| `connectionSpec.id` | 的固定连接规范ID [!DNL PubSub]. 此ID为： `70116022-a743-464a-bbfe-e226a7f8210c` |
-| `data.format` | 的格式 [!DNL PubSub] 要摄取的数据。 目前，唯一支持的数据格式为 `json`. |
-| `params.topicName` | 您的名称 [!DNL PubSub] 主题。 在 [!DNL PubSub]，主题是一个命名资源，表示消息馈送。 |
-| `params.subscriptionName` | 与给定主题对应的订阅名称。 在 [!DNL PubSub]，订阅允许您从主题中读取消息。 可以将一个或多个订阅分配给单个主题。 |
-| `params.dataType` | 此参数定义正在摄取的数据的类型。 支持的数据类型包括： `raw` 和 `xdm`. |
+| `baseConnectionId` | 在上一步中生成的[!DNL PubSub]源的基本连接ID。 |
+| `connectionSpec.id` | [!DNL PubSub]的固定连接规范ID。 此ID为： `70116022-a743-464a-bbfe-e226a7f8210c` |
+| `data.format` | 要摄取的[!DNL PubSub]数据的格式。 当前，唯一支持的数据格式为`json`。 |
+| `params.topicName` | [!DNL PubSub]主题的名称。 在[!DNL PubSub]中，主题是一个表示消息馈送的命名资源。 |
+| `params.subscriptionName` | 与给定主题对应的订阅名称。 在[!DNL PubSub]中，订阅允许您从主题中读取消息。 可以将一个或多个订阅分配给单个主题。 |
+| `params.dataType` | 此参数定义正在摄取的数据的类型。 支持的数据类型包括： `raw`和`xdm`。 |
 
 **响应**
 
-成功的响应将返回唯一标识符(`id`)。 在下一个教程中，创建数据流时需要此ID。
+成功的响应返回新创建的源连接的唯一标识符(`id`)。 在下一个教程中，创建数据流时需要此ID。
 
 ```json
 {
@@ -260,4 +260,4 @@ curl -X POST \
 
 ## 后续步骤
 
-在本教程之后，您已创建一个 [!DNL PubSub] 源连接使用 [!DNL Flow Service] API。 您可以在下一教程中使用此源连接ID [使用创建流数据流 [!DNL Flow Service] API](../../collect/streaming.md).
+通过学习本教程，您已使用[!DNL Flow Service] API创建了[!DNL PubSub]源连接。 您可以在下一个教程中使用此源连接ID来[使用 [!DNL Flow Service] API](../../collect/streaming.md)创建流式数据流。

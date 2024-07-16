@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform；主页；热门主题；经过身份验证的流连接；流连接；创建经过身份验证的流连接；流摄取；引入；
+keywords: Experience Platform；主页；热门主题；经过身份验证的流连接；流连接；创建经过身份验证的流连接；流摄取；摄取；
 solution: Experience Platform
 title: 创建经过身份验证的流连接
 type: Tutorial
@@ -14,6 +14,6 @@ ht-degree: 0%
 
 # 创建经过身份验证的流连接
 
-经过身份验证的数据收集允许Adobe Experience Platform服务，例如 [!DNL Real-Time Customer Profile] 和 [!DNL Identity]，以区分来自可信来源和不可信来源的记录。 想要发送个人身份信息(PII)的客户端可以通过在POST请求中发送访问令牌来实现此目的。
+经过身份验证的数据收集允许Adobe Experience Platform服务（如[!DNL Real-Time Customer Profile]和[!DNL Identity]）区分来自受信任来源和未受信任来源的记录。 想要发送个人身份信息(PII)的客户端可以通过在POST请求过程中发送访问令牌来实现此目的。
 
-要了解如何创建经过身份验证的流连接，请阅读 [HTTP API源API指南](../../sources/tutorials/api/create/streaming/http.md).
+要了解如何创建经过身份验证的流连接，请阅读[HTTP API源API指南](../../sources/tutorials/api/create/streaming/http.md)。

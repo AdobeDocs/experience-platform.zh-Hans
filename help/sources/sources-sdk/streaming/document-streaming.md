@@ -1,5 +1,5 @@
 ---
-title: 记录您的源(Streaming SDK)
+title: 记录您的Source (Streaming SDK)
 description: 在Adobe Experience Platform中启用新源之前的最后一步是记录新源。
 exl-id: 65ca7a4d-3e02-4f54-bf07-ea2c92b8dbf1
 badge: Beta 版
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->自助源流SDK处于测试阶段。 请阅读 [源概述](../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
+>自助源流SDK处于测试阶段。 有关使用测试版标记源的更多信息，请阅读[源概述](../../home.md#terms-and-conditions)。
 
 在Adobe Experience Platform中实时设置新源之前的最后一步是记录新源。
 
@@ -23,14 +23,14 @@ ht-degree: 0%
 * 接下来可以学习的教程，为您的新源创建文档页面；
 * 供您为新源填写的文档模板；
 * [有关如何使用Markdown编写技术文档的说明](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html)；
-* [关于了解AdobeMarkdown风格的说明](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html#custom-markdown-extensions).
+* [有关了解AdobeMarkdown风格的说明](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html#custom-markdown-extensions)。
 
 ## 先决条件
 
 在开始记录新源之前，需要以下项：
 
-* **有效的GitHub用户帐户**：如果您没有现有的GitHub帐户，则必须通过 [GitHub注册页面](https://github.com/)；
-* **访问GitHub Desktop**：您必须使用 [GitHub桌面应用程序](https://desktop.github.com/) 以便在本地环境中创建源文档；
+* **有效的GitHub用户帐户**：如果您没有现有的GitHub帐户，则必须通过[GitHub注册页面](https://github.com/)创建一个；
+* **访问GitHub Desktop**：若要在本地环境中创建源文档，您必须使用[GitHub Desktop应用程序](https://desktop.github.com/)；
 * 您与Adobe的集成必须处于测试阶段，并且您的源部署在Platform中的暂存环境中。
 
 ## 在Platform中为源创建文档的高级说明
@@ -39,7 +39,7 @@ ht-degree: 0%
 
 ## 文档模板
 
-您可以使用预填充 [API文档模板](streaming-template-api.md) 或 [UI文档模板](streaming-template-ui.md) 以帮助为您的源创建文档。 此外，您还可以找到有关如何编辑模板和打开拉取请求的说明。 为您的新源提交的文档将由Adobe文档团队审阅并发布。
+您可以使用预填充的[API文档模板](streaming-template-api.md)或[UI文档模板](streaming-template-ui.md)来协助创建源的文档。 此外，您还可以找到有关如何编辑模板和打开拉取请求的说明。 为您的新源提交的文档将由Adobe文档团队审阅并发布。
 
 您还可以下载以下文档模板：
 

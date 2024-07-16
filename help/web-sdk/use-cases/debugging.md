@@ -16,9 +16,9 @@ ht-degree: 0%
 
 默认情况下，调试处于禁用状态，但可以通过四种不同的方式切换调试。 您可以使用这些方法的任意组合来启用或禁用对开发工作流最方便的调试。
 
-## 使用 `debugEnabled` 在 `configure` 命令
+## 在`configure`命令中使用`debugEnabled`
 
-设置 `debugEnabled` 配置扩展时，布尔值为true。 此选项通常用于开发环境，因为它可为访问您网站上任何页面的每个人启用调试功能：
+配置扩展时，将`debugEnabled`布尔值设置为true。 此选项通常用于开发环境，因为它可为访问您网站上任何页面的每个人启用调试功能：
 
 ```js
 alloy("configure", {
@@ -28,9 +28,9 @@ alloy("configure", {
 });
 ```
 
-请参阅 [`debugEnabled`](../commands/configure/debugenabled.md) 以了解更多信息。
+有关详细信息，请参阅[`debugEnabled`](../commands/configure/debugenabled.md)。
 
-## 使用 `setDebug` 命令
+## 使用`setDebug`命令
 
 与上述布尔值类似，此命令支持在页面的所有访客中进行调试。
 
@@ -38,11 +38,11 @@ alloy("configure", {
 alloy("setDebug", {"enabled": true});
 ```
 
-请参阅 [`setDebug`](../commands/setdebug.md) 命令以了解更多信息。
+有关详细信息，请参阅[`setDebug`](../commands/setdebug.md)命令。
 
 ## 设置查询字符串参数
 
-您可以通过添加查询字符串来启用调试 `?alloy_debug=true` 到任意URL的结尾。 例如：
+可以通过将查询字符串`?alloy_debug=true`添加到任何URL的末尾来启用调试。 例如：
 
 `http://example.com/?alloy_debug=true`
 
@@ -54,4 +54,4 @@ alloy("setDebug", {"enabled": true});
 
 ![启用调试器](../assets/enable-debugging.png)
 
-请参阅 [Adobe Experience Platform Debugger概述](/help/debugger/home.md) 以了解更多信息。
+有关详细信息，请参阅[Adobe Experience Platform Debugger概述](/help/debugger/home.md)。

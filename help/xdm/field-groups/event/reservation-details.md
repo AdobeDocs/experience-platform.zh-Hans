@@ -6,22 +6,22 @@ exl-id: 06f9ee37-9879-4db2-af68-9336366f7521
 source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
 source-wordcount: '310'
-ht-degree: 5%
+ht-degree: 6%
 
 ---
 
-# [!UICONTROL 预订详细信息] 架构字段组
+# [!UICONTROL 保留详细信息]架构字段组
 
-[!UICONTROL 预订详细信息] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md) 用于捕获有关预订的信息，包括时长、修改、可退款状态和房间数。
+[!UICONTROL 预订详细信息]是[[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)的标准架构字段组，用于捕获有关预订的信息，包括时长、修改、可退款状态和房间数。
 
-字段组提供单个对象类型字段， `reservations`. 此对象中包含的属性说明如下。
+字段组提供单个对象类型字段`reservations`。 此对象中包含的属性说明如下。
 
 ![预订详细信息结构](../../images/field-groups/reservation-details.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
 | `nonRefundableAmount` | [货币](../../data-types/currency.md) | 标记为不可退款的预订价格的金额。 |
-| `transaction` | [交易](../../data-types/transaction.md) | 描述预订的货币交易记录。 |
+| `transaction` | [事务](../../data-types/transaction.md) | 描述预订的货币交易记录。 |
 | `id` | 字符串 | 预订的唯一标识符。 |
 | `cancellation` | 整数 | 此值在取消预订后捕获。 |
 | `confirmationNumber` | 字符串 | 预订的确认号或标识符。 |
@@ -42,11 +42,11 @@ ht-degree: 5%
 有关字段组的更多详细信息，请参阅公共XDM存储库：
 
 * [填充示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-reservation-details.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-reservation-details.schema.json)
+* [完整架构](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-reservation-details.schema.json)
 
 ## 行业特定的预订字段组
 
-还有其他几个标准字段组扩展了 [!UICONTROL 预订详细信息] 特定行业用例的架构。 有关更多详细信息，请参阅以下文档：
+还有其他几个标准字段组针对特定行业用例扩展了[!UICONTROL 保留详细信息]架构。 有关更多详细信息，请参阅以下文档：
 
 * [[!UICONTROL 餐饮预订]](./dining-reservation.md)
 * [[!UICONTROL 航班预订]](./flight-reservation.md)

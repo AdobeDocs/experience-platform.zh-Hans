@@ -13,11 +13,11 @@ ht-degree: 2%
 
 默认情况下，通过Destination SDK创建的所有目标都支持历史配置文件资格。 这意味着当用户首次设置到目标的激活数据流时，第一次导出包含曾经符合该区段资格的受众所有成员。
 
-此行为由 `"backfillHistoricalProfileData":true` 目标配置中的参数。
+此行为由目标配置中的`"backfillHistoricalProfileData":true`参数定义。
 
 >[!IMPORTANT]
 >
->对于通过Destination SDK创建的所有目标，都会启用历史配置文件资格， `backfillHistoricalProfileData` 参数不能由用户配置。
+>已为通过Destination SDK创建的所有目标启用历史配置文件资格，且`backfillHistoricalProfileData`参数不是用户可配置的。
 
 ## 支持的集成类型 {#supported-integration-types}
 

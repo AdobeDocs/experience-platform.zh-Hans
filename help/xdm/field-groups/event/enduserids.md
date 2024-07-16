@@ -12,13 +12,13 @@ ht-degree: 14%
 ---
 
 
-# [!UICONTROL 最终用户ID详细信息] 架构字段组
+# [!UICONTROL 最终用户ID详细信息]架构字段组
 
 >[!NOTE]
 >
->多个架构字段组的名称已更改。 查看文档 [字段组名称更新](../name-updates.md) 以了解更多信息。
+>多个架构字段组的名称已更改。 有关详细信息，请参阅有关[字段组名称更新](../name-updates.md)的文档。
 
-[!UICONTROL 最终用户ID详细信息] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)，用于跨多个Adobe应用程序描述个人的身份信息。 字段组提供根级别 `endUserIDs` 对象，其本身包含只读 `_experience` 其值会在摄取数据时自动更新的字段。
+[!UICONTROL 最终用户ID详细信息]是[[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)的标准架构字段组，用于描述跨多个Adobe应用程序的个人身份信息。 字段组提供了一个根级别`endUserIDs`对象，该对象本身包含一个只读`_experience`字段，其值会在摄取数据时自动更新。
 
 <img src="../../images/field-groups/enduserids.png" width="700" /><br />
 
@@ -38,4 +38,4 @@ ht-degree: 14%
 有关字段组的更多详细信息，请参阅公共XDM存储库：
 
 * [填充示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-enduserids.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-enduserids.schema.json)
+* [完整架构](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-enduserids.schema.json)

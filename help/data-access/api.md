@@ -13,13 +13,13 @@ ht-degree: 4%
 
 # Data Access API指南
 
-数据访问API通过为用户提供侧重于在中摄取的数据集的可发现性和可访问性的RESTful界面来支持Adobe Experience Platform [!DNL Experience Platform].
+数据访问API通过向用户提供侧重于在[!DNL Experience Platform]内摄取的数据集的可发现性和可访问性的RESTful接口来支持Adobe Experience Platform。
 
-![数据访问如何促进在Experience Platform内摄取的数据集的可发现性和可访问性的示意图。](images/Data_Access_Experience_Platform.png)
+![数据访问如何促进Experience Platform内摄取的数据集的可发现性和可访问性的图表。](images/Data_Access_Experience_Platform.png)
 
 ## API规范参考
 
-可以找到Swagger API参考文档 [此处](https://developer.adobe.com/experience-platform-apis/references/data-access/).
+可在[此处](https://developer.adobe.com/experience-platform-apis/references/data-access/)找到Swagger API参考文档。
 
 ## 术语 {#terminology}
 
@@ -93,7 +93,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/
 }
 ```
 
-此 `"data"` 数组包含指定批次中所有文件的列表。 每个返回的文件都有自己的唯一ID (`{FILE_ID}`)包含在 `"dataSetFileId"` 字段。 您可以使用此唯一ID来访问或下载文件。
+`"data"`数组包含指定批次中所有文件的列表。 返回的每个文件都有其自己的唯一ID (`{FILE_ID}`)，该ID包含在`"dataSetFileId"`字段中。 您可以使用此唯一ID来访问或下载文件。
 
 | 属性 | 描述 |
 | -------- | ----------- |
@@ -102,7 +102,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/
 
 ## 访问和下载批量文件
 
-要访问文件的特定详细信息，请使用文件标识符(`{FILE_ID}`)，包括其名称、大小（以字节为单位）和要下载的链接。
+要访问文件的特定详细信息，请将文件标识符(`{FILE_ID}`)与数据访问API一起使用，包括其名称、字节大小以及要下载的链接。
 
 响应包含数据数组。 根据ID指向的文件是单个文件还是目录，返回的数据阵列可能包含单个条目或属于该目录的文件列表。 每个文件元素都包含文件的详细信息。
 
@@ -114,7 +114,7 @@ GET /files/{FILE_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{FILE_ID}` | 等于 `"dataSetFileId"`，要访问的文件的ID。 |
+| `{FILE_ID}` | 等于`"dataSetFileId"`，即要访问的文件的ID。 |
 
 **请求**
 
@@ -150,7 +150,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID} \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `data.name` | 文件的名称(例如， `profiles.csv`)。 |
+| `data.name` | 文件的名称（例如，`profiles.csv`）。 |
 | `data.length` | 文件的大小（以字节为单位）。 |
 | `data._links.self.href` | 用于下载文件的URL。 |
 
@@ -197,12 +197,12 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID} \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `data.name` | 文件的名称(例如， `profiles.csv`)。 |
+| `data.name` | 文件的名称（例如，`profiles.csv`）。 |
 | `data._links.self.href` | 用于下载文件的URL。 |
 
 ## 访问文件的内容 {#access-file-contents}
 
-您也可以使用 [!DNL Data Access] 用于访问文件内容的API。 然后，您可以将内容下载到外部源。
+您还可以使用[!DNL Data Access] API访问文件的内容。 然后，您可以将内容下载到外部源。
 
 **API格式**
 
@@ -227,7 +227,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?pat
 | 属性 | 描述 |
 | -------- | ----------- |
 | `{FILE_ID}` | 数据集内文件的ID。 |
-| `{FILE_NAME}` | 文件的全名(例如， `profiles.csv`)。 |
+| `{FILE_NAME}` | 文件的全名（例如，`profiles.csv`）。 |
 
 **响应**
 
@@ -235,8 +235,8 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?pat
 
 ## 其他代码示例
 
-有关其他示例，请参阅 [数据访问教程](tutorials/dataset-data.md).
+有关其他示例，请参阅[数据访问教程](tutorials/dataset-data.md)。
 
 ## 订阅数据摄取事件 {#subscribe-to-data-ingestion-events}
 
-您可以通过，订阅特定的高价值事件 [Adobe Developer控制台](https://developer.adobe.com/console/). 例如，您可以订阅数据摄取事件，以接收潜在延迟和失败的通知。 请参阅上的教程 [订阅数据摄取通知](../ingestion/quality/subscribe-events.md) 以了解更多信息。
+您可以通过[Adobe Developer Console](https://developer.adobe.com/console/)订阅特定的高价值事件。 例如，您可以订阅数据摄取事件，以接收潜在延迟和失败的通知。 有关详细信息，请参阅有关[订阅数据摄取通知](../ingestion/quality/subscribe-events.md)的教程。

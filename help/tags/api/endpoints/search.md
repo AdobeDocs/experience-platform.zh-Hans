@@ -4,16 +4,16 @@ description: 了解如何在Reactor API中调用/search端点。
 exl-id: 14eb8d8a-3b42-42f3-be87-f39e16d616f4
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '655'
+source-wordcount: '652'
 ht-degree: 1%
 
 ---
 
 # 搜索端点
 
-此 `/search` Reactor API中的端点提供了一种查找符合所需条件的资源的方法，以查询形式表示。
+Reactor API中的`/search`端点提供了一种查找符合所需条件（以查询表示）的资源的方法。
 
-以下API资源类型可搜索，它们使用与通过API返回的基于资源的文档相同的数据结构：
+以下API资源类型是可搜索的，它们使用与通过API返回的基于资源的文档相同的数据结构：
 
 * `audit_events`
 * `builds`
@@ -28,21 +28,20 @@ ht-degree: 1%
 * `rule_components`
 * `rules`
 
-所有查询的范围都定在您当前公司和可访问的属性。
+所有查询的范围均为您当前的公司和可访问属性。
 
 >[!IMPORTANT]
 >
 >搜索功能具有以下注意事项和例外：
->* 元不可搜索，且未在搜索结果中返回。
->* 扩展包委派的架构字段（操作、条件等） 可以作为文本进行搜索，而不是作为嵌套数据结构进行搜索。
+>* meta不可搜索，且未在搜索结果中返回。
+>* 扩展包委托的架构字段（操作、条件等） 可作为文本进行搜索，而非作为嵌套数据结构搜索。
 >* 范围查询目前仅支持整数。
 
-
-有关如何使用此功能的更多详细信息，请参阅 [搜索指南](../guides/search.md).
+有关如何使用此功能的详细信息，请参阅[搜索指南](../guides/search.md)。
 
 ## 快速入门
 
-本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [快速入门指南](../getting-started.md) 有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续之前，请查看[快速入门指南](../getting-started.md)，以了解有关如何对API进行身份验证的重要信息。
 
 ## 执行搜索 {#perform}
 
@@ -95,16 +94,16 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `from` | 响应偏移所依据的结果数。 |
-| `size` | 要返回的结果的最大数量。 结果不能超过100项。 |
-| `query` | 表示搜索查询的对象。 对于此对象中的每个属性，键必须表示作为查询依据的字段路径，该值必须是其子属性决定要查询什么的对象。<br><br>对于每个字段路径，您可以使用以下子属性：<ul><li>`exists`：如果字段存在于资源中，则返回true。</li><li>`value`：如果字段的值与此属性的值匹配，则返回true。</li><li>`value_operator`：用于确定 `value` 应处理查询。 允许的值包括 `AND` 和 `OR`. 排除后， `AND` 逻辑是假定的。 请参阅以下部分： [值运算符逻辑](#value-operator) 了解更多信息。</li><li>`range` 如果字段的值在特定的数字范围内，则返回true。 范围本身由以下子属性决定：<ul><li>`gt`：大于提供的值，不包含。</li><li>`gte`：大于或等于提供的值。</li><li>`lt`：小于提供的值，不包含。</li><li>`lte`：小于或等于提供的值。</li></ul></li></ul> |
-| `sort` | 一个对象数组，指示对结果进行排序的顺序。 每个对象必须包含一个属性：键表示排序依据的字段路径，值表示排序顺序(`asc` 对于升序， `desc` （表示降序）。 |
+| `size` | 要返回的最大结果数量。 结果不能超过100项。 |
+| `query` | 表示搜索查询的对象。 对于此对象中的每个属性，键必须表示查询依据的字段路径，该值必须是其子属性决定查询对象的对象。<br><br>对于每个字段路径，您可以使用以下子属性：<ul><li>`exists`：如果资源中存在该字段，则返回true。</li><li>`value`：如果字段的值与此属性的值匹配，则返回true。</li><li>`value_operator`：布尔逻辑，用于确定应如何处理`value`查询。 允许值为`AND`和`OR`。 排除时，假定为`AND`逻辑。 有关详细信息，请参阅[值运算符逻辑](#value-operator)部分。</li><li>`range`如果字段的值在特定的数字范围内，则返回true。 范围本身由以下子属性决定：<ul><li>`gt`：大于提供的值，不包括。</li><li>`gte`：大于或等于提供的值。</li><li>`lt`：小于提供的值，不包括。</li><li>`lte`：小于或等于提供的值。</li></ul></li></ul> |
+| `sort` | 一个对象数组，指示对结果进行排序的顺序。 每个对象必须包含一个属性：键代表排序依据的字段路径，值代表排序顺序（`asc`表示升序，`desc`表示降序）。 |
 | `resource_types` | 字符串的数组，指示要搜索的特定资源类型。 |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的响应将返回查询的匹配资源列表。 有关API如何为特定值确定匹配项的详细信息，请参阅 [匹配约定](#conventions).
+成功的响应将返回查询的匹配资源列表。 有关API如何为特定值确定匹配的详细信息，请参阅[匹配约定](#conventions)的附录部分。
 
 ```json
 {
@@ -211,19 +210,19 @@ curl -X POST \
 
 ## 附录
 
-以下部分包含有关使用 `/search` 端点。
+以下部分包含有关使用`/search`终结点的其他信息。
 
 ### 值运算符逻辑 {#value-operator}
 
-搜索查询值将被拆分为多个搜索词，以便与已索引的文档匹配。 在每个术语之间， `AND` 假定关系。
+搜索查询值将被拆分为多个搜索词，以便与已编制索引的文档进行匹配。 每个术语之间假定有`AND`关系。
 
-使用时 `AND` 作为 `value_operator`，的查询值 `My Rule Holiday Sale` 解释为包含下列内容的字段的文档 `My AND Rule AND Holiday AND Sale`.
+使用`AND`作为`value_operator`时，`My Rule Holiday Sale`的查询值被解释为字段包含`My AND Rule AND Holiday AND Sale`的文档。
 
-使用时 `OR` 作为 `value_operator`，的查询值 `My Rule Holiday Sale` 解释为包含下列内容的字段的文档 `My OR Rule OR Holiday OR Sale`. 相符的术语越多，则越高 `match_score`. 由于部分术语匹配的性质，当没有与所需值接近匹配时，您可以获得一个结果集，其中值仅在非常基本的级别上匹配，例如几个字符的文本。
+使用`OR`作为`value_operator`时，`My Rule Holiday Sale`的查询值被解释为字段包含`My OR Rule OR Holiday OR Sale`的文档。 匹配的术语越多，`match_score`越高。 由于部分术语匹配的性质，当没有任何内容与所需值接近时，您可以获得一个结果集，其中值仅在非常基本的级别上匹配，例如文本的少数字符。
 
 ### 匹配约定 {#conventions}
 
-搜索涉及回答文档与提供的查询的相关程度。 文档数据的分析和索引方式直接影响着这一点。
+搜索涉及回答文档与所提供查询的相关程度。 文档数据的分析和索引方式直接影响着这一点。
 
 下表列出了常见字段类型的匹配约定：
 
@@ -233,7 +232,7 @@ curl -X POST \
 | 枚举值 | 完全匹配，区分大小写 |
 | 整数 | 完全匹配 |
 | 浮动 | 完全匹配 |
-| 时间戳 | 完全匹配（DateTime格式） |
+| 时间戳 | 完全匹配（日期时间格式） |
 | 显示名称 | 包含部分术语分析的文本，不区分大小写 |
 
 API中出现的特定字段还有其他约定：
@@ -241,7 +240,7 @@ API中出现的特定字段还有其他约定：
 | 字段 | 匹配惯例 |
 | --- | --- |
 | `id` | 完全匹配，区分大小写 |
-| `delegate_descriptor_id` | 完全匹配，区分大小写，术语拆分于 `::` |
+| `delegate_descriptor_id` | 完全匹配，区分大小写，术语在`::`上拆分 |
 | `name` | 完全匹配，区分大小写 |
 | `settings` | 包含部分术语分析的文本，不区分大小写 |
 | `type` | 完全匹配，区分大小写 |

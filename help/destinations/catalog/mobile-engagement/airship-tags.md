@@ -10,31 +10,31 @@ ht-degree: 2%
 
 ---
 
-# [!DNL Airship Tags] 连接 {#airship-tags-destination}
+# [!DNL Airship Tags]连接 {#airship-tags-destination}
 
 ## 概述
 
-[!DNL Airship] 是领先的客户参与平台，帮助您在客户生命周期的每个阶段都向用户传递有意义、个性化的全渠道信息。
+[!DNL Airship]是领先的客户参与平台，帮助您在客户生命周期的每个阶段都向用户传递有意义、个性化的全渠道信息。
 
-此集成将Adobe Experience Platform受众数据传递到 [!DNL Airship] 作为 [标记](https://docs.airship.com/guides/audience/tags/) 用于定位或触发。
+此集成将Adobe Experience Platform受众数据作为[标记](https://docs.airship.com/guides/audience/tags/)传递到[!DNL Airship]中，以进行定位或触发。
 
-要了解有关 [!DNL Airship]，请参见 [飞艇文档](https://docs.airship.com).
+若要了解有关[!DNL Airship]的更多信息，请参阅[飞艇文档](https://docs.airship.com)。
 
 
 >[!TIP]
 >
->此目标连接器和文档页面由 [!DNL Airship] 团队。 如有任何查询或更新请求，请直接通过以下电子邮件联系他们： [support.airship.com](https://support.airship.com/).
+>此目标连接器和文档页面由[!DNL Airship]团队创建和维护。 如有任何查询或更新请求，请直接通过[support.airship.com](https://support.airship.com/)联系他们。
 
 ## 先决条件
 
-将Adobe Experience Platform受众发送至 [!DNL Airship]，您必须：
+在将Adobe Experience Platform受众发送到[!DNL Airship]之前，您必须：
 
-* 在中创建标记组 [!DNL Airship] 项目。
+* 在您的[!DNL Airship]项目中创建标记组。
 * 生成持有者令牌以进行身份验证。
 
 >[!TIP]
 > 
->创建 [!DNL Airship] 帐户透过 [此注册链接](https://go.airship.eu/accounts/register/plan/starter/) 如果你还没有的话。
+>通过[此注册链接](https://go.airship.eu/accounts/register/plan/starter/)创建一个[!DNL Airship]帐户（如果尚未创建）。
 
 ## 支持的受众 {#supported-audiences}
 
@@ -42,8 +42,8 @@ ht-degree: 2%
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
+| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
 
 {style="table-layout:auto"}
 
@@ -54,39 +54,39 @@ ht-degree: 2%
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
 | 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出具有飞艇标记目标中所用标识符的受众的所有成员。 |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
 ## 标记组
 
-AdobeExperience Platform中的受众概念类似于 [标记](https://docs.airship.com/guides/audience/tags/) 在飞行任务中，实施方面略有不同。 此集成映射用户 [Experience Platform区段中的成员资格](../../../xdm/field-groups/profile/segmentation.md) 存在或不存在 [!DNL Airship] 标记之前。 例如，在Platform受众中， `xdm:status` 更改为 `realized`，则标记将添加到 [!DNL Airship] 此配置文件映射到的渠道或命名用户。 如果 `xdm:status` 更改为 `exited`，则标记会被删除。
+AdobeExperience Platform中的受众概念与Airship中的[标记](https://docs.airship.com/guides/audience/tags/)类似，在实施上略有差异。 此集成将用户[在Experience Platform区段](../../../xdm/field-groups/profile/segmentation.md)中的成员资格状态映射到[!DNL Airship]标记是否存在或不存在。 例如，在`xdm:status`更改为`realized`的Platform受众中，标记已添加到此配置文件映射到的[!DNL Airship]渠道或命名用户。 如果`xdm:status`更改为`exited`，则标记将被删除。
 
-要启用此集成，请创建 *标记组* 在 [!DNL Airship] 已命名 `adobe-segments`.
+要启用此集成，请在[!DNL Airship]中创建名为`adobe-segments`的&#x200B;*标记组*。
 
 >[!IMPORTANT]
 >
->创建新标记组时 **不检查** 单选按钮上显示“[!DNL Allow these tags to be set only from your server]“。 这样做会导致Adobe标记集成失败。
+>创建新标记组时&#x200B;**请勿选中**&#x200B;显示“[!DNL Allow these tags to be set only from your server]”的单选按钮。 这样做会导致Adobe标记集成失败。
 
-请参阅 [管理标记组](https://docs.airship.com/tutorials/manage-project/messaging/tag-groups) 以获取有关创建标记组的说明。
+有关创建标记组的说明，请参阅[管理标记组](https://docs.airship.com/tutorials/manage-project/messaging/tag-groups)。
 
 ## 生成持有者令牌
 
-转到 **[!UICONTROL 设置]** &quot; **[!UICONTROL API和集成]** 在 [飞艇仪表板](https://go.airship.com) 并选择 **[!UICONTROL 令牌]** 在左侧菜单中。
+转到[飞艇仪表板](https://go.airship.com)中的&#x200B;**[!UICONTROL 设置]** &quot; **[!UICONTROL API和集成]**，然后在左侧菜单中选择&#x200B;**[!UICONTROL 令牌]**。
 
-单击 **[!UICONTROL 创建令牌]**.
+单击&#x200B;**[!UICONTROL 创建令牌]**。
 
 为您的令牌提供用户友好的名称，例如“Adobe标记目标”，并为角色选择“完全访问”。
 
-单击 **[!UICONTROL 创建令牌]** 并将详细信息保存为机密。
+单击&#x200B;**[!UICONTROL 创建令牌]**&#x200B;并将详细信息保存为机密。
 
 ## 用例
 
-为了帮助您更好地了解您应该如何以及何时使用 [!DNL Airship Tags] 目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
+为了帮助您更好地了解您应如何以及何时使用[!DNL Airship Tags]目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
 
 ### 用例#1
 
-零售商或娱乐平台可以创建关于忠诚客户的用户配置文件，并将这些受众传递到 [!DNL Airship] 用于移动营销活动上的消息定位。
+零售商或娱乐平台可以创建其忠诚度客户的用户配置文件，并将这些受众传递到[!DNL Airship]中以针对移动营销活动进行消息定位。
 
 ### 用例#2
 
@@ -98,45 +98,45 @@ AdobeExperience Platform中的受众概念类似于 [标记](https://docs.airshi
 
 >[!IMPORTANT]
 > 
->要连接到目标，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
-要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两个部分中列出的字段。
+要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写下面两个部分中列出的字段。
 
 ### 验证目标 {#authenticate}
 
-要向目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
+要验证到目标，请填写必填字段并选择&#x200B;**[!UICONTROL 连接到目标]**。
 
-* **[!UICONTROL 持有者令牌]**：您从生成的持有者令牌 [!DNL Airship] 仪表板。
+* **[!UICONTROL 持有者令牌]**：从[!DNL Airship]仪表板生成的持有者令牌。
 
 ### 填写目标详细信息 {#destination-details}
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
-* **[!UICONTROL 名称]**：输入可帮助您识别此目标的名称。
+* **[!UICONTROL 名称]**：输入有助于识别此目标的名称。
 * **[!UICONTROL 描述]**：输入此目标的描述。
-* **[!UICONTROL 域]**：选择美国或欧盟的数据中心，具体取决于哪个 [!DNL Airship] 数据中心适用于此目标。
+* **[!UICONTROL 域]**：选择美国或欧盟数据中心，具体取决于哪个[!DNL Airship]数据中心适用于此目标。
 
 ### 启用警报 {#enable-alerts}
 
-您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅以下内容中的指南： [使用UI订阅目标警报](../../ui/alerts.md).
+您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
 
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
->要激活数据，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
-请参阅 [将受众数据激活到流式受众导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
+有关将受众激活到此目标的说明，请参阅[将受众数据激活到流式受众导出目标](../../ui/activate-segment-streaming-destinations.md)。
 
 ## 映射注意事项 {#mapping-considerations}
 
-[!DNL Airship] 标记可以在表示设备实例(如iPhone)的渠道上设置，也可以设置命名用户（将用户的所有设备映射到通用标识符，如客户ID）。 如果您的架构中将纯文本（未散列）电子邮件地址作为主要身份，请在 **[!UICONTROL Source属性]** 并将映射到 [!DNL Airship] 下右列的指定用户 **[!UICONTROL 目标身份]**，如下所示。
+[!DNL Airship]标记可以在渠道上设置，该渠道表示设备实例，如iPhone，也可以设置指定用户，该指定用户将用户的所有设备映射到通用标识符，如客户ID。 如果您的架构中将纯文本（未散列）电子邮件地址作为主标识，请选择&#x200B;**[!UICONTROL Source属性]**&#x200B;中的电子邮件字段，并映射到&#x200B;**[!UICONTROL Target标识]**&#x200B;下右列中的[!DNL Airship]指定用户，如下所示。
 
-![指定用户映射](../../assets/catalog/mobile-engagement/airship-tags/mapping-option-2.png)
+![命名用户映射](../../assets/catalog/mobile-engagement/airship-tags/mapping-option-2.png)
 
-对于应映射到通道（即设备）的标识符，请根据源映射到相应的通道。 下图显示了如何将Google Advertising ID映射到 [!DNL Airship] Android渠道。
+对于应映射到通道（即设备）的标识符，请根据源映射到相应的通道。 下图显示了如何将Google Advertising ID映射到[!DNL Airship] Android渠道。
 
 ![连接到飞艇标签](../../assets/catalog/mobile-engagement/airship-tags/select-source-identity.png)
 ![连接到飞艇标签](../../assets/catalog/mobile-engagement/airship-tags/select-target-identity.png)
@@ -144,4 +144,4 @@ AdobeExperience Platform中的受众概念类似于 [标记](https://docs.airshi
 
 ## 数据使用和治理 {#data-usage-governance}
 
-全部 [!DNL Adobe Experience Platform] 目标在处理您的数据时符合数据使用策略。 有关如何执行操作的详细信息 [!DNL Adobe Experience Platform] 实施数据管理，请参阅 [数据管理概述](../../../data-governance/home.md).
+在处理您的数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据治理的详细信息，请参阅[数据治理概述](../../../data-governance/home.md)。

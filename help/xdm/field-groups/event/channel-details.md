@@ -11,13 +11,13 @@ ht-degree: 3%
 
 ---
 
-# [!UICONTROL 渠道详细信息] 架构字段组
+# [!UICONTROL 渠道详细信息]架构字段组
 
 >[!NOTE]
 >
->多个架构字段组的名称已更改。 查看文档 [字段组名称更新](../name-updates.md) 以了解更多信息。
+>多个架构字段组的名称已更改。 有关详细信息，请参阅有关[字段组名称更新](../name-updates.md)的文档。
 
-[!UICONTROL 渠道详细信息] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)，用于描述渠道信息，如ID、渠道类型、媒体类型和位置类型。
+[!UICONTROL 渠道详细信息]是[[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)的标准架构字段组，用于描述ID、渠道类型、媒体类型和位置类型等渠道信息。
 
 ![](../../images/field-groups/channel-details.png)
 
@@ -30,4 +30,4 @@ ht-degree: 3%
 有关字段组的更多详细信息，请参阅公共XDM存储库：
 
 * [填充示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-channel.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-channel.schema.json)
+* [完整架构](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-channel.schema.json)

@@ -11,7 +11,7 @@ ht-degree: 3%
 
 # 创建目标配置
 
-本页举例说明了可用于创建自己的目标配置的API请求和有效负载，使用 `/authoring/destinations` API端点。
+此页面展示了可用于使用`/authoring/destinations` API端点创建自己的目标配置的API请求和有效负荷。
 
 有关可通过此端点配置的功能的详细说明，请参阅以下文章：
 
@@ -30,19 +30,19 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 目标配置API操作快速入门 {#get-started}
 
-在继续之前，请查看 [快速入门指南](../../getting-started.md) 获取成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[入门指南](../../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 创建目标配置 {#create}
 
-您可以通过向以下对象发出POST请求来创建新的目标配置： `/authoring/destinations` 端点。
+您可以通过向`/authoring/destinations`端点发出POST请求来创建新的目标配置。
 
 >[!TIP]
 >
->**API端点**： `platform.adobe.io/data/core/activation/authoring/destinations`
+>**API终结点**： `platform.adobe.io/data/core/activation/authoring/destinations`
 
 **API格式**
 
@@ -50,7 +50,7 @@ ht-degree: 3%
 POST /authoring/destinations
 ```
 
-以下请求创建一个新的 [!DNL Amazon S3] 目标配置，由有效负载中提供的参数配置。 以下有效负载包含由接受的基于文件的目标的所有参数 `/authoring/destinations` 端点。
+以下请求创建一个新的[!DNL Amazon S3]目标配置，该配置由有效负载中提供的参数配置。 以下有效负载包含`/authoring/destinations`端点接受的基于文件的目标的所有参数。
 
 请注意，您不必将所有参数添加到API调用，并且负载可以根据您的API要求进行自定义。
 
@@ -192,36 +192,36 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
 | `name` | 字符串 | 指示Experience Platform目录中目标的标题。 |
-| `description` | 字符串 | 提供Adobe将在目标卡的Experience Platform目标目录中使用的描述。 目标不超过4到5句。 ![显示目标描述的Platform UI图像。](../../assets/authoring-api/destination-configuration/destination-description.png "目标描述"){width="100" zoomable="yes"} |
-| `status` | 字符串 | 指示目标卡的生命周期状态。 接受的值包括 `TEST`， `PUBLISHED`、和 `DELETED`. 使用 `TEST` 当您首次配置目标时。 |
-| `customerAuthenticationConfigurations.authType` | 字符串 | 指示用于向目标服务器验证Experience Platform客户的配置。 请参阅 [客户身份验证配置](../../functionality/destination-configuration/customer-authentication.md) 以了解有关支持的身份验证类型的详细信息。 |
-| `customerDataFields.name` | 字符串 | 为您即将介绍的自定义字段提供一个名称。 <br/><br/> 请参阅 [客户数据字段](../../functionality/destination-configuration/customer-data-fields.md) 以了解有关这些设置的详细信息。 ![显示客户数据字段的Platform UI图像。](../../assets/authoring-api/destination-configuration/customer-data-fields.png "客户数据字段"){width="100" zoomable="yes"} |
-| `customerDataFields.type` | 字符串 | 指示您即将引入的自定义字段的类型。 接受的值包括 `string`， `object`， `integer`. <br/><br/> 请参阅 [客户数据字段](../../functionality/destination-configuration/customer-data-fields.md) 以了解有关这些设置的详细信息。 |
-| `customerDataFields.title` | 字符串 | 指示字段的名称，如客户在Experience Platform用户界面中所看到的。 <br/><br/> 请参阅 [客户数据字段](../../functionality/destination-configuration/customer-data-fields.md) 以了解有关这些设置的详细信息。 |
-| `customerDataFields.description` | 字符串 | 提供自定义字段的描述。 请参阅 [客户数据字段](../../functionality/destination-configuration/customer-data-fields.md) 以了解有关这些设置的详细信息。 |
-| `customerDataFields.isRequired` | 布尔值 | 指示目标设置工作流中是否需要此字段。 <br/><br/> 请参阅 [客户数据字段](../../functionality/destination-configuration/customer-data-fields.md) 以了解有关这些设置的详细信息。 |
-| `customerDataFields.enum` | 字符串 | 将自定义字段呈现为下拉菜单，并列出用户可用的选项。 <br/><br/> 请参阅 [客户数据字段](../../functionality/destination-configuration/customer-data-fields.md) 以了解有关这些设置的详细信息。 |
-| `customerDataFields.default` | 字符串 | 从定义默认值 `enum` 列表。 |
-| `customerDataFields.pattern` | 字符串 | 如果需要，为自定义字段实施模式。 使用正则表达式可强制实施模式。 例如，如果您的客户ID不包含数字或下划线，请输入 `^[A-Za-z]+$` 在此字段中。 <br/><br/> 请参阅 [客户数据字段](../../functionality/destination-configuration/customer-data-fields.md) 以了解有关这些设置的详细信息。 |
-| `uiAttributes.documentationLink` | 字符串 | 请参阅 [目标目录](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html#catalog) 到你的目的地去。 使用 `https://www.adobe.com/go/destinations-YOURDESTINATION-en`，其中 `YOURDESTINATION` 是目标的名称。 对于名为Moviestar的目标，您可以使用 `https://www.adobe.com/go/destinations-moviestar-en`. 请注意，只有在Adobe将您的目标设置为实时状态并发布文档后，此链接才有效。 <br/><br/> 请参阅 [UI属性](../../functionality/destination-configuration/ui-attributes.md) 以了解有关这些设置的详细信息。 ![平台UI图像显示了文档链接。](../../assets/authoring-api/destination-configuration/documentation-url.png "文档URL"){width="100" zoomable="yes"} |
-| `uiAttributes.category` | 字符串 | 是指在Adobe Experience Platform中分配给目标的类别。 有关详细信息，请阅读 [目标类别](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/destination-types.html#destination-categories). 使用以下值之一： `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`. <br/><br/> 请参阅 [UI属性](../../functionality/destination-configuration/ui-attributes.md) 以了解有关这些设置的详细信息。 |
+| `description` | 字符串 | 提供Adobe将在目标卡的Experience Platform目标目录中使用的描述。 目标不超过4到5句。 ![显示目标说明的平台UI图像。](../../assets/authoring-api/destination-configuration/destination-description.png "目标描述"){width="100" zoomable="yes"} |
+| `status` | 字符串 | 指示目标卡的生命周期状态。 接受的值为`TEST`、`PUBLISHED`和`DELETED`。 首次配置目标时使用`TEST`。 |
+| `customerAuthenticationConfigurations.authType` | 字符串 | 指示用于向目标服务器验证Experience Platform客户的配置。 有关支持的身份验证类型的详细信息，请参阅[客户身份验证配置](../../functionality/destination-configuration/customer-authentication.md)。 |
+| `customerDataFields.name` | 字符串 | 为您即将介绍的自定义字段提供一个名称。 <br/><br/>有关这些设置的详细信息，请参阅[客户数据字段](../../functionality/destination-configuration/customer-data-fields.md)。 ![显示客户数据字段的Platform UI图像。](../../assets/authoring-api/destination-configuration/customer-data-fields.png "客户数据字段"){width="100" zoomable="yes"} |
+| `customerDataFields.type` | 字符串 | 指示您即将引入的自定义字段的类型。 接受的值为`string`、`object`、`integer`。 <br/><br/>有关这些设置的详细信息，请参阅[客户数据字段](../../functionality/destination-configuration/customer-data-fields.md)。 |
+| `customerDataFields.title` | 字符串 | 指示字段的名称，如客户在Experience Platform用户界面中所看到的。 <br/><br/>有关这些设置的详细信息，请参阅[客户数据字段](../../functionality/destination-configuration/customer-data-fields.md)。 |
+| `customerDataFields.description` | 字符串 | 提供自定义字段的描述。 有关这些设置的详细信息，请参阅[客户数据字段](../../functionality/destination-configuration/customer-data-fields.md)。 |
+| `customerDataFields.isRequired` | 布尔值 | 指示目标设置工作流中是否需要此字段。 <br/><br/>有关这些设置的详细信息，请参阅[客户数据字段](../../functionality/destination-configuration/customer-data-fields.md)。 |
+| `customerDataFields.enum` | 字符串 | 将自定义字段呈现为下拉菜单，并列出用户可用的选项。 <br/><br/>有关这些设置的详细信息，请参阅[客户数据字段](../../functionality/destination-configuration/customer-data-fields.md)。 |
+| `customerDataFields.default` | 字符串 | 从`enum`列表中定义默认值。 |
+| `customerDataFields.pattern` | 字符串 | 如果需要，为自定义字段实施模式。 使用正则表达式可强制实施模式。 例如，如果您的客户ID不包含数字或下划线，请在此字段中输入`^[A-Za-z]+$`。 <br/><br/>有关这些设置的详细信息，请参阅[客户数据字段](../../functionality/destination-configuration/customer-data-fields.md)。 |
+| `uiAttributes.documentationLink` | 字符串 | 请参阅目标的[目标目录](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html#catalog)中的文档页面。 使用`https://www.adobe.com/go/destinations-YOURDESTINATION-en`，其中`YOURDESTINATION`是目标的名称。 对于名为Moviestar的目标，您将使用`https://www.adobe.com/go/destinations-moviestar-en`。 请注意，只有在Adobe将您的目标设置为实时状态并发布文档后，此链接才有效。 <br/><br/>有关这些设置的详细信息，请参阅[UI属性](../../functionality/destination-configuration/ui-attributes.md)。 ![Platform UI图像显示文档链接。](../../assets/authoring-api/destination-configuration/documentation-url.png "文档URL"){width="100" zoomable="yes"} |
+| `uiAttributes.category` | 字符串 | 是指在Adobe Experience Platform中分配给目标的类别。 有关详细信息，请阅读[目标类别](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/destination-types.html#destination-categories)。 使用以下值之一： `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`。 <br/><br/>有关这些设置的详细信息，请参阅[UI属性](../../functionality/destination-configuration/ui-attributes.md)。 |
 | `uiAttributes.connectionType` | 字符串 | 连接的类型，具体取决于目标。 支持的值： <ul><li>`Server-to-server`</li><li>`Cloud storage`</li><li>`Azure Blob`</li><li>`Azure Data Lake Storage`</li><li>`S3`</li><li>`SFTP`</li><li>`DLZ`</li></ul> |
-| `uiAttributes.frequency` | 字符串 | 是指目标支持的数据导出类型。 设置为 `Streaming` 对于基于API的集成，或者 `Batch` 将文件导出到目标时。 |
+| `uiAttributes.frequency` | 字符串 | 是指目标支持的数据导出类型。 对于基于API的集成，设置为`Streaming`；或者，在将文件导出到目标时，设置为`Batch`。 |
 | `identityNamespaces.externalId.acceptsAttributes` | 布尔值 | 指示客户是否可以将标准配置文件属性映射到您配置的身份。 |
-| `identityNamespaces.externalId.acceptsCustomNamespaces` | 布尔值 | 指示客户是否可以映射属于的身份 [自定义命名空间](/help/identity-service/features/namespaces.md#manage-namespaces) 到您正在配置的身份。 |
-| `identityNamespaces.externalId.transformation` | 字符串 | _未在示例配置中显示_. 例如，用于 [!DNL Platform] 客户将纯电子邮件地址作为属性，并且您的平台仅接受经过哈希处理的电子邮件。 在这里，您可以提供需要应用的转换（例如，将电子邮件转换为小写，然后进行哈希处理）。 |
-| `identityNamespaces.externalId.acceptedGlobalNamespaces` | - | 指示哪些 [标准身份命名空间](/help/identity-service/features/namespaces.md#standard) （例如，IDFA）客户可以映射到您正在配置的身份。 <br> 当您使用 `acceptedGlobalNamespaces`，您可以使用 `"requiredTransformation":"sha256(lower($))"` 更改为小写和散列电子邮件地址或电话号码。 |
-| `destinationDelivery.authenticationRule` | 字符串 | 指示方式 [!DNL Platform] 客户连接到您的目标。 接受的值包括 `CUSTOMER_AUTHENTICATION`， `PLATFORM_AUTHENTICATION`， `NONE`. <br> <ul><li>使用 `CUSTOMER_AUTHENTICATION` 如果Platform客户通过用户名和密码、持有者令牌或其他身份验证方法登录您的系统。 例如，如果您还选择了 `authType: OAUTH2` 或 `authType:BEARER` 在 `customerAuthenticationConfigurations`. </li><li> 使用 `PLATFORM_AUTHENTICATION` 如果Adobe与您的目的地之间有一个全局身份验证系统，并且 [!DNL Platform] 客户无需提供任何身份验证凭据即可连接到您的目标。 在这种情况下，必须使用创建凭据对象 [凭据API](../../credentials-api/create-credential-configuration.md) 配置。 </li><li>使用 `NONE` 如果不需要身份验证即可将数据发送到您的目标平台。 </li></ul> |
-| `destinationDelivery.destinationServerId` | 字符串 | 此 `instanceId` 的 [目标服务器模板](../destination-server/create-destination-server.md) 用于此目标。 |
-| `backfillHistoricalProfileData` | 布尔值 | 控制将受众激活到目标时是否导出历史配置文件数据。 始终将此项设置为 `true`. |
+| `identityNamespaces.externalId.acceptsCustomNamespaces` | 布尔值 | 指示客户是否可以将属于[自定义命名空间](/help/identity-service/features/namespaces.md#manage-namespaces)的标识映射到您配置的标识。 |
+| `identityNamespaces.externalId.transformation` | 字符串 | _未在示例配置中显示_。 例如，当[!DNL Platform]客户将纯电子邮件地址作为属性并且您的平台仅接受经过哈希处理的电子邮件时使用。 在这里，您可以提供需要应用的转换（例如，将电子邮件转换为小写，然后进行哈希处理）。 |
+| `identityNamespaces.externalId.acceptedGlobalNamespaces` | - | 指示客户可以将哪些[标准身份命名空间](/help/identity-service/features/namespaces.md#standard)（例如IDFA）映射到您配置的身份。 <br>当您使用`acceptedGlobalNamespaces`时，可以使用`"requiredTransformation":"sha256(lower($))"`将电子邮件地址或电话号码转换为小写和哈希值。 |
+| `destinationDelivery.authenticationRule` | 字符串 | 指示[!DNL Platform]客户如何连接到您的目标。 接受的值为`CUSTOMER_AUTHENTICATION`、`PLATFORM_AUTHENTICATION`、`NONE`。<br> <ul><li>如果Platform客户通过用户名和密码、持有者令牌或其他身份验证方法登录您的系统，请使用`CUSTOMER_AUTHENTICATION`。 例如，如果您还在`customerAuthenticationConfigurations`中选择了`authType: OAUTH2`或`authType:BEARER`，则可以选择此选项。 </li><li> 如果Adobe与您的目标之间存在全局身份验证系统，并且[!DNL Platform]客户不需要提供任何身份验证凭据即可连接到您的目标，则使用`PLATFORM_AUTHENTICATION`。 在这种情况下，您必须使用[凭据API](../../credentials-api/create-credential-configuration.md)配置创建凭据对象。 </li><li>如果不需要身份验证即可将数据发送到目标平台，请使用`NONE`。 </li></ul> |
+| `destinationDelivery.destinationServerId` | 字符串 | [目标服务器模板](../destination-server/create-destination-server.md)的`instanceId`用于此目标。 |
+| `backfillHistoricalProfileData` | 布尔值 | 控制将受众激活到目标时是否导出历史配置文件数据。 始终将此项设置为`true`。 |
 | `segmentMappingConfig.mapUserInput` | 布尔值 | 控制用户是否输入目标激活工作流中的受众映射ID。 |
 | `segmentMappingConfig.mapExperiencePlatformSegmentId` | 布尔值 | 控制目标激活工作流中的受众映射ID是否为Experience Platform受众ID。 |
 | `segmentMappingConfig.mapExperiencePlatformSegmentName` | 布尔值 | 控制目标激活工作流中的受众映射ID是否为Experience Platform受众名称。 |
-| `segmentMappingConfig.audienceTemplateId` | 字符串 | 此 `instanceId` 的 [受众元数据模板](../../metadata-api/create-audience-template.md) 用于此目标。 |
-| `schemaConfig.profileFields` | 数组 | 添加预定义时 `profileFields` 如上面的配置所示，用户可以选择将Experience Platform属性映射到目标端的预定义属性。 |
-| `schemaConfig.profileRequired` | 布尔值 | 使用 `true` 如果用户应能够将配置文件属性从Experience Platform映射到目标端的自定义属性，如上面的示例配置所示。 |
-| `schemaConfig.segmentRequired` | 布尔值 | 始终使用 `segmentRequired:true`. |
-| `schemaConfig.identityRequired` | 布尔值 | 使用 `true` 如果用户应该能够将身份命名空间从Experience Platform映射到所需的架构。 |
+| `segmentMappingConfig.audienceTemplateId` | 字符串 | [受众元数据模板](../../metadata-api/create-audience-template.md)的`instanceId`用于此目标。 |
+| `schemaConfig.profileFields` | 数组 | 添加如上配置所示的预定义`profileFields`时，用户可以选择将Experience Platform属性映射到目标端的预定义属性。 |
+| `schemaConfig.profileRequired` | 布尔值 | 如果用户应该能够将配置文件属性从Experience Platform映射到目标端的自定义属性，则使用`true`，如上面的示例配置所示。 |
+| `schemaConfig.segmentRequired` | 布尔值 | 始终使用`segmentRequired:true`。 |
+| `schemaConfig.identityRequired` | 布尔值 | 如果用户应该能够将身份命名空间从Experience Platform映射到所需的架构，请使用`true`。 |
 
 {style="table-layout:auto"}
 
@@ -235,11 +235,11 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 ## API错误处理
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../../landing/troubleshooting.md#request-header-errors) ，位于平台疑难解答指南中。
+Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅平台疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤
 
-阅读本文档后，您现在知道如何通过Destination SDK创建新的目标配置 `/authoring/destinations` API端点。
+阅读本文档后，您现在知道如何通过Destination SDK`/authoring/destinations` API端点创建新的目标配置。
 
 要了解有关可使用此端点执行的操作的更多信息，请参阅以下文章：
 

@@ -4,29 +4,29 @@ description: 架构注册表API中的/import端点允许您在组织和沙盒之
 exl-id: 30613535-4770-4f9c-9061-8e3efaf4de48
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '292'
+source-wordcount: '288'
 ht-degree: 1%
 
 ---
 
 # 导入端点
 
-此 `/rpc/import` 中的端点 [!DNL Schema Registry] API允许您从生成的导出有效负载创建Experience Data Model (XDM)资源。 导出有效负载可从两个源创建：
+[!DNL Schema Registry] API中的`/rpc/import`端点允许您根据生成的导出负载创建体验数据模型(XDM)资源。 导出负载可从两个源创建：
 
-* 此 [`/rpc/export` 端点](./export.md) 从现有XDM资源创建导出负载，允许您在沙盒之间共享资源。
-* 此 [`/rpc/csv2schema` 端点](./csv-to-schema.md) 从CSV模板创建导出负载。
+* [`/rpc/export`端点](./export.md)从现有XDM资源创建导出负载，允许您在沙盒之间共享资源。
+* [`/rpc/csv2schema`终结点](./csv-to-schema.md)从CSV模板创建导出负载。
 
-创建导出有效负载后，您可以使用 `/rpc/import` 端点，用于在您选择的沙盒中生成资源（以及所有依赖资源）。
+创建导出有效负载后，您可以使用`/rpc/import`端点在您选择的沙盒中生成资源（以及所有依赖的资源）。
 
 ## 快速入门
 
-此 `/rpc/import` 端点是 [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接，请参阅本文档中的示例API调用指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+`/rpc/import`终结点是[[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
 
-此 `/rpc/import` 终结点是远程过程调用(RPC)的一部分，该调用受 [!DNL Schema Registry]. 与中的其他端点不同 [!DNL Schema Registry] API、RPC端点不需要其他标头，例如 `Accept` 或 `Content-Type`，并且不要使用 `CONTAINER_ID`. 相反，他们必须使用 `/rpc` 命名空间，如下面的API调用中所示。
+`/rpc/import`端点是[!DNL Schema Registry]支持的远程过程调用(RPC)的一部分。 与[!DNL Schema Registry] API中的其他端点不同，RPC端点不需要`Accept`或`Content-Type`等其他标头，也不使用`CONTAINER_ID`。 相反，他们必须使用`/rpc`命名空间，如下面的API调用中所示。
 
 ## 导入资源 {#import}
 
-POST为XDM资源生成导出有效负载后，您可以在对 `/import` 端点，将该资源导入目标组织和沙盒中。
+生成了XDM资源的导出有效负载后，您可以在对`/import`端点的POST请求中使用该有效负载将该资源导入到目标组织和沙盒中。
 
 **API格式**
 
@@ -36,7 +36,7 @@ POST /rpc/import
 
 **请求**
 
-以下请求获取从对的调用返回的有效负载 [`/rpc/export` 端点](./export.md) 导入字段组(`Restaurant`)放入新组织和沙盒中，具体情况由 `x-gw-ims-org-id` 和 `x-sandbox-name` 标头。
+以下请求获取从对[`/rpc/export`端点](./export.md)的调用返回的有效负载，以将字段组(`Restaurant`)导入到新组织和沙盒中，具体情况分别由`x-gw-ims-org-id`和`x-sandbox-name`标头决定。
 
 ```shell
 curl -X POST \
@@ -187,7 +187,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应将返回导入资源的列表，并应用适当的租户ID和组织值。
+成功的响应会返回导入资源的列表，并应用适当的租户ID和组织值。
 
 ```json
 [

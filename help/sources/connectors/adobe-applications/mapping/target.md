@@ -5,7 +5,7 @@ description: 了解如何将Adobe Target事件字段映射到体验数据模型(
 exl-id: dab08ab6-6c1c-460a-bb52-8dcdb5709a34
 source-git-commit: 81412493b096264ce7a89e3ca2348edb2dcd1798
 workflow-type: tm+mt
-source-wordcount: '430'
+source-wordcount: '431'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 0%
 | ------------------------- | -------------------- | ----- |
 | **`id`** | 唯一请求标识符 |
 | **`dataSource`** | | 已配置所有客户端为“1”。 |
-| `dataSource._id` | 系统生成的值，无法随请求一起传入。 | 此数据源的唯一ID。 这将由创建数据源的个人或系统提供。 |
+| `dataSource._id` | 系统生成的值，无法随请求一起传入。 | 此数据源的唯一ID。这将由创建数据源的个人或系统提供。 |
 | `dataSource.code` | 系统生成的值，无法随请求一起传入。 | 完整@id的快捷方式。 至少可以使用代码或@id中的一个。 有时，此代码称为数据源集成代码。 |
 | `dataSource.tags` | 系统生成的值，无法随请求一起传入。 | 标记用于指示应用程序应如何解释由给定数据源表示的别名。<br><br>示例：<br><ul><li>`isAVID`：表示Analytics访客ID的数据源。</li><li>`isCRSKey`：表示应在CRS中用作键的别名的数据源。</li></ul>标记在创建数据源时设置，但在引用给定数据源时也包含在管道消息中。 |
 | **`timestamp`** | 事件时间戳 |
@@ -57,7 +57,7 @@ ht-degree: 0%
 | `experience.target.activities[i].activityEvents` | 包含用户通过此事件点击的活动事件的详细信息。 |
 | **`device`** |
 | `device.typeIDService` | `XDMDevice.Device.TypeIDService.typeIDService_deviceatlas` |
-| `device.type` | 的以下属性之一 `deviceAtlas` （或NULL）： <ul><li>`type_mobile`</li><li>`type_tablet`</li><li>`type_desktop`</li><li>`type_ereader`</li><li>`type_television`</li><li>`type_settop`</li><li>`type_mediaplayer`</li></ul> |
+| `device.type` | `deviceAtlas`（或NULL）的以下属性之一： <ul><li>`type_mobile`</li><li>`type_tablet`</li><li>`type_desktop`</li><li>`type_ereader`</li><li>`type_television`</li><li>`type_settop`</li><li>`type_mediaplayer`</li></ul> |
 | `device.typeID` | （空字符串） |
 | `device.manufacturer` | `deviceAtlas.manufacturer` |
 | `device.model` | `deviceAtlas.model` |

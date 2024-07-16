@@ -13,6 +13,6 @@ ht-degree: 0%
 
 # 使用API为配置文件配置数据集
 
-有关启用数据集以供在Real-time Customer Profile和Adobe Experience Platform Identity Service中使用的教程，包括创建新数据集和配置现有数据集的步骤。 本教程还介绍了将数据摄取到数据集以及确认将数据成功摄取到Profile和Identity Service的步骤。
+有关启用数据集以用于实时客户配置文件和Adobe Experience Platform Identity服务的教程，包括创建新数据集和配置现有数据集的步骤。 本教程还介绍了将数据摄取到数据集以及确认将数据成功摄取到Profile和Identity服务的步骤。
 
-要访问此教程，请访问 [使用API教程为配置文件和身份启用数据集](../../catalog/datasets/enable-for-profile.md)，数据集文档的一部分。
+要访问此教程，请访问[使用API为配置文件和身份启用数据集教程](../../catalog/datasets/enable-for-profile.md)（数据集文档的一部分）。

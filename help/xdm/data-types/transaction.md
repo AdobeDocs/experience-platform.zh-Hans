@@ -10,11 +10,11 @@ ht-degree: 7%
 
 ---
 
-# [!UICONTROL 交易] 数据类型
+# [!UICONTROL 事务]数据类型
 
-[!UICONTROL 交易] 是一种标准的体验数据模型(XDM)数据类型，用于描述货币交易的详细信息。
+[!UICONTROL 交易]是描述货币交易详细信息的标准体验数据模型(XDM)数据类型。
 
-![交易结构](../images/data-types/transaction.png)
+![事务结构](../images/data-types/transaction.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |

@@ -13,15 +13,15 @@ ht-degree: 5%
 
 # 批量摄取开发人员指南
 
-本文档提供了全面的使用指南 [批量摄取API端点](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) 在Adobe Experience Platform中。 有关批量摄取API的概述，包括先决条件和最佳实践，请从阅读 [批量摄取API概述](overview.md).
+本文档提供了在Adobe Experience Platform中使用[批量摄取API端点](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/)的全面指南。 有关批量摄取API的概述，包括先决条件和最佳实践，请从阅读[批量摄取API概述](overview.md)开始。
 
-本文档的附录提供 [格式化要用于摄取的数据](#data-transformation-for-batch-ingestion)，包括示例CSV和JSON数据文件。
+本文档的附录提供了有关[格式化用于摄取的数据](#data-transformation-for-batch-ingestion)的信息，包括示例CSV和JSON数据文件。
 
 ## 快速入门
 
-本指南中使用的API端点是 [批量摄取API](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/). 批量摄取通过RESTful API提供，您可以在其中对支持的对象类型执行基本CRUD操作。
+本指南中使用的API端点是[批次摄取API](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/)的一部分。 批量摄取通过RESTful API提供，您可以在其中对支持的对象类型执行基本CRUD操作。
 
-在继续之前，请查看 [批量摄取API概述](overview.md) 和 [快速入门指南](getting-started.md).
+在继续之前，请查看[批次摄取API概述](overview.md)和[入门指南](getting-started.md)。
 
 ## 摄取JSON文件
 
@@ -35,7 +35,7 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->以下示例适用于单行JSON。 要摄取多行JSON，请 `isMultiLineJson` 需要设置标志。 欲知更多信息，请阅读 [批量摄取疑难解答指南](./troubleshooting.md).
+>以下示例适用于单行JSON。 要摄取多行JSON，需要设置`isMultiLineJson`标志。 有关详细信息，请参阅[批处理摄取疑难解答指南](./troubleshooting.md)。
 
 **API格式**
 
@@ -97,7 +97,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 >[!NOTE]
 >
->请参阅附录部分，了解 [格式正确的JSON数据文件示例](#data-transformation-for-batch-ingestion).
+>请参阅附录部分，了解正确格式化的JSON数据文件](#data-transformation-for-batch-ingestion)的[示例。
 
 **API格式**
 
@@ -129,7 +129,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | 尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，例如 `acme/customers/campaigns/summer.json`. |
+| `{FILE_PATH_AND_NAME}` | 尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如`acme/customers/campaigns/summer.json`。 |
 
 **响应**
 
@@ -232,7 +232,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
 
 ### 上载文件
 
-现在您已创建了批次，接下来可以使用 `batchId` 从之前将文件上载到批处理。 您可以将多个文件上载到批处理。
+现在您已经创建了批次，可以使用之前的`batchId`将文件上载到批次。 您可以将多个文件上载到批处理。
 
 **API格式**
 
@@ -264,7 +264,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | 尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，例如 `acme/customers/campaigns/summer.parquet`. |
+| `{FILE_PATH_AND_NAME}` | 尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如`acme/customers/campaigns/summer.parquet`。 |
 
 **响应**
 
@@ -439,7 +439,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{CONTENT_RANGE}` | 用整数表示所请求范围的开始和结束。 |
-| `{FILE_PATH_AND_NAME}` | 尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，例如 `acme/customers/campaigns/summer.json`. |
+| `{FILE_PATH_AND_NAME}` | 尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如`acme/customers/campaigns/summer.json`。 |
 
 
 **响应**
@@ -450,7 +450,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 
 ### 完成大文件
 
-现在您已创建了批次，接下来可以使用 `batchId` 从之前将文件上载到批处理。 您可以将多个文件上载到批处理。
+现在您已经创建了批次，可以使用之前的`batchId`将文件上载到批次。 您可以将多个文件上载到批处理。
 
 **API格式**
 
@@ -513,7 +513,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ## 摄取CSV文件
 
-为了摄取CSV文件，您需要创建一个支持CSV的类、架构和数据集。 有关如何创建必要类和架构的详细信息，请按照 [临时架构创建教程](../../xdm/api/ad-hoc.md).
+为了摄取CSV文件，您需要创建一个支持CSV的类、架构和数据集。 有关如何创建必要类和架构的详细信息，请按照[临时架构创建教程](../../xdm/api/ad-hoc.md)中提供的说明操作。
 
 >[!NOTE]
 >
@@ -617,11 +617,11 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 ### 上载文件
 
-现在您已创建了批次，接下来可以使用 `batchId` 从之前将文件上载到批处理。 您可以将多个文件上载到批处理。
+现在您已经创建了批次，可以使用之前的`batchId`将文件上载到批次。 您可以将多个文件上载到批处理。
 
 >[!NOTE]
 >
->请参阅附录部分，了解 [格式正确的CSV数据文件示例](#data-transformation-for-batch-ingestion).
+>请参阅附录部分，了解格式正确的CSV数据文件](#data-transformation-for-batch-ingestion)的[示例。
 
 **API格式**
 
@@ -653,7 +653,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | 尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，例如 `acme/customers/campaigns/summer.csv`. |
+| `{FILE_PATH_AND_NAME}` | 尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如`acme/customers/campaigns/summer.csv`。 |
 
 
 **响应**
@@ -720,7 +720,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ## 删除批次 {#delete-a-batch}
 
-通过使用执行以下POST请求，可以删除批次 `action=REVERT` 查询参数到要删除的批的ID。 该批次被标记为“不活动”，因此可用于垃圾收集。 该批次将异步收集，然后将其标记为“已删除”。
+可以通过以下对要删除的批次ID使用`action=REVERT`查询参数执行的POST请求来删除批次。 该批次被标记为“不活动”，因此可用于垃圾收集。 该批次将异步收集，然后将其标记为“已删除”。
 
 **API格式**
 
@@ -758,10 +758,10 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 要修补批次，需要满足以下条件：
 
-- **为配置文件和属性更新启用的数据集。** 这是通过数据集标记完成的，需要特定 `isUpsert:true` 标记将添加到 `unifiedProfile` 数组。 有关说明如何创建数据集或配置现有数据集以进行更新插入的详细步骤，请阅读的教程 [为配置文件更新启用数据集](../../catalog/datasets/enable-upsert.md).
-- **Parquet文件，其中包含要修补的字段和配置文件的标识字段。** 为批次打补丁的数据格式与常规批次摄取过程类似。 必需的输入是一个Parquet文件，除了要更新的字段之外，上传的数据还必须包含身份字段，以便与配置文件存储中的数据匹配。
+- **为配置文件和属性更新启用的数据集。**&#x200B;这是通过数据集标记完成的，需要向`unifiedProfile`数组添加特定的`isUpsert:true`标记。 有关说明如何创建数据集或配置现有数据集以进行更新插入的详细步骤，请参阅[启用数据集以进行配置文件更新](../../catalog/datasets/enable-upsert.md)的教程。
+- **包含要修补的字段和配置文件标识字段的Parquet文件。**&#x200B;为批次打补丁的数据格式与常规批次摄取过程类似。 必需的输入是一个Parquet文件，除了要更新的字段之外，上传的数据还必须包含身份字段，以便与配置文件存储中的数据匹配。
 
-为配置文件和upsert启用了数据集，并且有一个Parquet文件，其中包含要修补的字段以及必需的标识字段，您就可以执行以下步骤 [正在摄取Parquet文件](#ingest-parquet-files) 以通过批量摄取完成修补程序。
+一旦为配置文件和upsert启用了数据集，并且有一个Parquet文件，其中包含要修补的字段以及必要的标识字段，则可以按照[摄取Parquet文件](#ingest-parquet-files)的步骤操作，以便通过批量摄取完成修补程序。
 
 ## 重播批次
 
@@ -769,7 +769,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ### 创建批次
 
-首先，您将需要创建一个以JSON作为输入格式的批次。 创建批次时，您需要提供数据集ID。 您还需要确保作为批次的一部分上传的所有文件符合链接到提供数据集的XDM架构。 此外，您还需要在重放部分提供旧批次作为参考。 在下面的示例中，您将使用ID重播批次 `batchIdA` 和 `batchIdB`.
+首先，您将需要创建一个以JSON作为输入格式的批次。 创建批次时，您需要提供数据集ID。 您还需要确保作为批次的一部分上传的所有文件符合链接到提供数据集的XDM架构。 此外，您还需要在重放部分提供旧批次作为参考。 在下面的示例中，您正在重播ID为`batchIdA`和`batchIdB`的批次。
 
 **API格式**
 
@@ -843,7 +843,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 ### 上载文件
 
-现在您已创建了批次，接下来可以使用 `batchId` 从之前将文件上载到批处理。 您可以将多个文件上载到批处理。
+现在您已经创建了批次，可以使用之前的`batchId`将文件上载到批次。 您可以将多个文件上载到批处理。
 
 **API格式**
 
@@ -875,7 +875,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | 尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，例如 `acme/customers/campaigns/summer.json`. |
+| `{FILE_PATH_AND_NAME}` | 尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如`acme/customers/campaigns/summer.json`。 |
 
 **响应**
 
@@ -919,9 +919,9 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ### 用于批量摄取的数据转换
 
-要将数据文件摄取到 [!DNL Experience Platform]，文件的层次结构必须符合 [体验数据模型(XDM)](../../xdm/home.md) 与要上载到的数据集关联的架构。
+为了将数据文件摄取到[!DNL Experience Platform]，文件的层次结构必须符合与要上载到的数据集关联的[体验数据模型(XDM)](../../xdm/home.md)架构。
 
-有关如何映射CSV文件以符合XDM架构的信息，请参阅 [示例转换](../../etl/transformations.md) 文档，以及格式正确的JSON数据文件示例。 文档中提供的示例文件可在此处找到：
+有关如何映射CSV文件以符合XDM架构的信息，请参阅[示例转换](../../etl/transformations.md)文档，以及格式正确的JSON数据文件示例。 文档中提供的示例文件可在此处找到：
 
 - [CRM_profiles.csv](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.csv)
 - [CRM_profiles.json](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.json)

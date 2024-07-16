@@ -5,7 +5,7 @@ exl-id: a49feb4e-f166-41d2-9f85-639f6ff8bb8f
 source-git-commit: 36ca1e63c043baa776f27b627cdbe493b2ced674
 workflow-type: tm+mt
 source-wordcount: '516'
-ht-degree: 90%
+ht-degree: 85%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 90%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 这个 `products` 变量可跟踪用户与网站产品的交互情况。例如，`products` 变量可跟踪产品被查看、添加到购物车、结帐以及购买的次数。它也可以跟踪网站上促销类别的相对效果。
 
@@ -81,7 +81,7 @@ digitalData.transaction.item.productInfo.productName
 
 如果您的实施使用自定义事件或促销 eVar，请遵循以下步骤：
 
-1. 选择关联的 **[!UICONTROL 添加]** 按钮。
+1. 选择关联的&#x200B;**[!UICONTROL 添加]**&#x200B;按钮。
 1. 从下拉菜单中选择您需要设置的事件 eVar。
 1. 使用上述的相同语法，输入相应数据层变量的路径。
 

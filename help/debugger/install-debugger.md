@@ -17,6 +17,6 @@ ht-degree: 13%
 
 Adobe Experience Platform Debugger可以安装在Google Chrome浏览器中。 请按照以下链接操作，在您的浏览器上安装扩展：
 
-* [铬黄](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob)
+* [Chrome](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob)
 
-安装Chrome扩展后，图标(![](images/start-icon.jpg))将添加到扩展栏中。 选择此图标以打开扩展。
+安装Chrome扩展后，会在扩展栏中添加一个图标(![](images/start-icon.jpg))。 选择此图标以打开扩展。

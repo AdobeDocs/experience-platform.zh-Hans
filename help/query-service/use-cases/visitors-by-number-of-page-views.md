@@ -5,16 +5,16 @@ description: 了解如何编写查询，这些查询使用体验事件检索按�
 exl-id: 6e8eed0c-838e-4cd0-ae8c-453114fbf4ea
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
-source-wordcount: '272'
+source-wordcount: '273'
 ht-degree: 1%
 
 ---
 
 # 按访客页面查看次数列出访客
 
-本文档提供了一个示例，说明检索按页面查看次数组织的访客列表所需的SQL。 借助Adobe Experience Platform查询服务，您可以编写使用 [!DNL Experience Events] 用于捕获各种用例。 体验事件由体验数据模型(XDM) ExperienceEvent类表示，该类捕获用户与网站或服务交互时系统的不可变且非聚合的快照。 体验事件甚至可用于时域分析。 请参阅 [“后续步骤”部分](#next-steps) 有关更多用例，包括 [!DNL Experience Events] 以生成访客报表。
+本文档提供了一个示例，说明检索按页面查看次数组织的访客列表所需的SQL。 使用Adobe Experience Platform查询服务，您可以编写使用[!DNL Experience Events]来捕获各种用例的查询。 体验事件由体验数据模型(XDM) ExperienceEvent类表示，该类捕获用户与网站或服务交互时系统的不可变和非聚合快照。 体验事件甚至可用于时域分析。 请参阅[后续步骤部分](#next-steps)以了解更多涉及[!DNL Experience Events]的用例以生成访客报告。
 
-有关XDM和的更多信息 [!DNL Experience Events] 可在以下位置找到： [[!DNL XDM System] 概述](../../xdm/home.md). 通过将查询服务与 [!DNL Experience Events]，您可以有效地跟踪用户之间的行为趋势。 以下文档提供了涉及以下内容的查询示例 [!DNL Experience Events].
+有关XDM和[!DNL Experience Events]的更多信息，请参阅[[!DNL XDM System] 概述](../../xdm/home.md)。 通过将查询服务与[!DNL Experience Events]相结合，您可以有效地跟踪用户之间的行为趋势。 以下文档提供了涉及[!DNL Experience Events]的查询示例。
 
 ## 目标
 
@@ -50,10 +50,10 @@ LIMIT 10;
 
 ## 后续步骤 {#next-steps}
 
-通过阅读本文档，您可以更好地了解如何将查询服务与 [!DNL Experience Events] 列出查看页面次数最多的用户。
+通过阅读本文档，您可以更好地了解如何将查询服务与[!DNL Experience Events]结合使用，以列出查看页面次数最多的用户。
 
-请参阅以下用例，以了解其他基于访客的用例：
+请参阅以下用例，了解其他基于访客的用例：
 
-- [列出访客的以前会话。](./list-visitor-sessions.md)
+- [列出访客以前的会话。](./list-visitor-sessions.md)
 - [查看访客的汇总报表。](./roll-up-report-of-a-visitor.md)
 - [按日期创建事件趋势报表。](./trended-report-of-events.md)

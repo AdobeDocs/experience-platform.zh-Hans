@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；experienceevent查询；experienceevent查询；Experience Event查询；
 title: 创建事件的趋势报表
-description: 了解如何使用体验事件编写查询，以创建指定日期范围内事件的趋势报表，并按日期分组。
+description: 了解如何使用体验事件编写查询以创建指定日期范围内的事件趋势报表，并按日期分组。
 exl-id: 8f7ed5b5-c265-4a1e-a360-4293d1e86e97
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
@@ -12,17 +12,17 @@ ht-degree: 0%
 
 # 创建事件的趋势报表
 
-本文档提供了一个所需的SQL示例，以按日期创建特定日期范围内的事件趋势报表。 借助Adobe Experience Platform查询服务，您可以编写使用 [!DNL Experience Events] 用于捕获各种用例。 体验事件由体验数据模型(XDM) ExperienceEvent类表示，该类捕获用户与网站或服务交互时系统的不可变且非聚合的快照。 体验事件甚至可用于时域分析。 请参阅 [“后续步骤”部分](#next-steps) 有关更多用例，包括 [!DNL Experience Events] 以生成访客报表。
+本文档提供了一个所需的SQL示例，用于按日期创建特定日期范围内的事件的趋势报表。 使用Adobe Experience Platform查询服务，您可以编写使用[!DNL Experience Events]来捕获各种用例的查询。 体验事件由体验数据模型(XDM) ExperienceEvent类表示，该类捕获用户与网站或服务交互时系统的不可变和非聚合快照。 体验事件甚至可用于时域分析。 请参阅[后续步骤部分](#next-steps)以了解更多涉及[!DNL Experience Events]的用例以生成访客报告。
 
-通过报表，您可以访问Platform数据，使贵组织的战略业务分析受益。 通过这些报表，您可以采用各种方式检查您的Platform数据，以易于理解的格式显示关键量度，并共享由此产生的见解。
+通过报表，您可以访问Platform数据，从而使贵组织的战略业务分析受益。 通过这些报表，您可以采用各种方式检查您的Platform数据，以易于理解的格式显示关键量度，以及共享生成的见解。
 
-有关XDM和的更多信息 [!DNL Experience Events] 可在以下位置找到： [[!DNL XDM System] 概述](../../xdm/home.md). 通过将查询服务与 [!DNL Experience Events]，您可以有效地跟踪用户之间的行为趋势。 以下文档提供了涉及以下内容的查询示例 [!DNL Experience Events].
+有关XDM和[!DNL Experience Events]的更多信息，请参阅[[!DNL XDM System] 概述](../../xdm/home.md)。 通过将查询服务与[!DNL Experience Events]相结合，您可以有效地跟踪用户之间的行为趋势。 以下文档提供了涉及[!DNL Experience Events]的查询示例。
 
 ## 目标
 
-以下示例创建指定日期范围内事件的趋势报表（按日期分组）。 具体而言，此SQL示例将各种Analytics值汇总为 `A`， `B`、和 `C`，然后汇总一个月内查看帕卡的次数。
+以下示例创建指定日期范围内事件的趋势报表，并按日期分组。 具体来说，此SQL示例汇总了各种analytics值，如`A`、`B`和`C`，然后汇总了在一个月内查看公园的次数。
 
-时间戳列位于 [!DNL Experience Event] 数据集为UTC格式。 此示例使用 `from_utc_timestamp()` 函数将时间戳从UTC转换为EDT，然后使用 `date_format()` 函数可将日期与时间戳的其余部分隔离。
+在[!DNL Experience Event]数据集中找到的时间戳列采用UTC格式。 该示例使用`from_utc_timestamp()`函数将时间戳从UTC转换为EDT，然后使用`date_format()`函数将日期与时间戳的其余部分隔离。
 
 ```sql
 SELECT 
@@ -84,10 +84,10 @@ ORDER BY Day ASC, pageViews DESC;
 
 ## 后续步骤 {#next-steps}
 
-通过阅读本文档，您可以更好地了解如何将查询服务与 [!DNL Experience Events] 以有效跟踪用户之间的行为趋势。
+通过阅读本文档，您可以更好地了解如何将查询服务与[!DNL Experience Events]结合使用，以有效地跟踪用户之间的行为趋势。
 
-了解使用的其他基于访客的用例 [!DNL Experience Events]，请阅读以下文档：
+要了解使用[!DNL Experience Events]的其他基于访客的用例，请阅读以下文档：
 
 - [检索按页面查看次数组织的访客列表。](./visitors-by-number-of-page-views.md)
-- [列出访客的以前会话。](./list-visitor-sessions.md)
+- [列出访客以前的会话。](./list-visitor-sessions.md)
 - [查看访客的汇总报表。](./roll-up-report-of-a-visitor.md)

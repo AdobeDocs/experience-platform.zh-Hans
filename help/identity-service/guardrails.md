@@ -10,20 +10,20 @@ ht-degree: 1%
 
 ---
 
-# 护栏 [!DNL Identity Service] 数据
+# [!DNL Identity Service]数据的护栏
 
-本文档提供了有关以下各项的使用和速率限制的信息： [!DNL Identity Service] 数据，以帮助您优化身份图的使用。 查看以下护栏时，假定您已正确建模数据。 如果您对如何建立数据模型有疑问，请联系您的客户服务代表。
+本文档提供了有关[!DNL Identity Service]数据的使用和速率限制的信息，以帮助您优化标识图的使用。 查看以下护栏时，假定您已正确建模数据。 如果您对如何建立数据模型有疑问，请联系您的客户服务代表。
 
 >[!IMPORTANT]
 >
->检查您的销售订单中的许可证权利以及相应的 [产品描述](https://helpx.adobe.com/legal/product-descriptions.html) 实际使用限制以及此护栏页面。
+>除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/legal/product-descriptions.html)中的实际使用限制。
 
 ## 快速入门
 
 以下Experience Platform服务与身份数据建模有关：
 
-* [身份](home.md)：在身份被摄取到Platform中时桥接来自不同数据源的身份。
-* [[!DNL Real-Time Customer Profile]](../profile/home.md)：使用来自多个源的数据创建统一的使用者配置文件。
+* [标识](home.md)：Bridge标识摄取到Platform时来自不同的数据源。
+* [[!DNL Real-Time Customer Profile]](../profile/home.md)：使用来自多个来源的数据创建统一的使用者配置文件。
 
 ## 数据模型限制
 
@@ -35,7 +35,7 @@ ht-degree: 1%
 
 | 护栏 | 限制 | 注释 |
 | --- | --- | --- |
-| 图形中的身份数 | 50 | 更新具有50个链接身份的图形时，Identity Service将应用“先进先出”机制并删除最早的身份，为此图形的最新身份腾出空间(**注意**：实时客户资料不受影响)。 删除基于身份类型和时间戳。 该限制在沙盒级别应用。 有关详细信息，请阅读以下部分： [了解删除逻辑](#deletion-logic). |
+| 图形中的身份数 | 50 | 更新具有50个链接标识的图形时，Identity Service将应用“先进先出”机制并删除最早的标识，以便为此图形的最新标识腾出空间（**注意**：实时客户资料不受影响）。 删除基于身份类型和时间戳。 该限制在沙盒级别应用。 有关详细信息，请阅读[上有关了解删除逻辑](#deletion-logic)的部分。 |
 | 单个批次摄取的标识链接数 | 50 | 单个批次可能包含异常身份，这些身份会导致不需要的图形合并。 为防止出现这种情况，Identity Service将不会摄取已链接到50个或更多标识的标识。 |
 | XDM记录中的标识数 | 20 | 所需的XDM记录的最小数量为2。 |
 | 自定义命名空间的数量 | None | 可创建的自定义命名空间数量没有限制。 |
@@ -56,7 +56,7 @@ ht-degree: 1%
 
 ### 身份命名空间摄取
 
-从2023年3月31日开始，Identity Service将阻止为新客户摄取Adobe Analytics ID (AAID)。 此身份通常通过 [Adobe Analytics源](../sources/connectors/adobe-applications/analytics.md) 和 [Adobe Audience Manager源](../sources//connectors/adobe-applications/audience-manager.md) 和是多余的，因为ECID表示相同的Web浏览器。 如果要更改此默认配置，请联系您的Adobe客户团队。
+从2023年3月31日开始，Identity Service将阻止为新客户摄取Adobe Analytics ID (AAID)。 此标识通常通过[Adobe Analytics源](../sources/connectors/adobe-applications/analytics.md)和[Adobe Audience Manager源](../sources//connectors/adobe-applications/audience-manager.md)摄取，并且是多余的，因为ECID表示相同的Web浏览器。 如果要更改此默认配置，请联系您的Adobe客户团队。
 
 ## 了解在容量中的身份图更新时的删除逻辑 {#deletion-logic}
 
@@ -98,27 +98,27 @@ Adobe如果您的生产沙盒包含：
 删除仅发生在Identity Service中的数据，而不发生在Real-time Customer Profile中。
 
 * 因此，如果只使用一个ECID，这种行为可能会创建更多配置文件，因为ECID不再是身份图的一部分。
-* 为了让您保持在可寻址受众权利文件数字范围内，建议启用 [假名配置文件数据过期](../profile/pseudonymous-profiles.md) 以删除旧配置文件。
+* 为了让您保持在可寻址受众权利数字范围内，建议启用[假名配置文件数据过期](../profile/pseudonymous-profiles.md)以删除旧配置文件。
 
 #### Real-Time Customer Profile和WebSDK：主身份删除
 
 如果您希望保留针对CRM ID的已验证事件，那么建议您将主ID从ECID更改为CRM ID。 有关如何实施此更改的步骤，请阅读以下文档：
 
-* [为Experience Platform标签配置身份映射](../tags/extensions/client/web-sdk/data-element-types.md#identity-map).
+* [为Experience Platform标记配置标识映射](../tags/extensions/client/web-sdk/data-element-types.md#identity-map)。
 * [Experience PlatformWeb SDK中的身份数据](../web-sdk/identity/overview.md#using-identitymap)
 
 ### 示例场景
 
 #### 示例一：典型的大型图表
 
-*图表说明：*
+*关系图备注：*
 
 * `t` =时间戳。
-* 时间戳的值对应于给定身份的回访间隔。 例如， `t1` 表示第一个链接的身份（最早的）和 `t51` 表示最新的链接身份。
+* 时间戳的值对应于给定身份的回访间隔。 例如，`t1`表示第一个链接的身份（最旧），`t51`表示最新的链接身份。
 
-在此示例中，在可以使用新标识更新左侧的图形之前，Identity Service会先删除具有最早时间戳的现有标识。 但是，由于最早的标识是设备ID，因此Identity Service会跳过该标识，直到到达删除优先级列表中具有更高类型的命名空间（在本例中为） `ecid-3`. 一旦删除了具有更高删除优先级类型的最旧身份，该图形就会更新为新链接， `ecid-51`.
+在此示例中，在可以使用新标识更新左侧的图形之前，Identity Service会先删除具有最早时间戳的现有标识。 但是，由于最早的标识是设备ID，因此，标识服务会跳过该标识，直到它到达删除优先级列表中类型较高的命名空间（本例中为`ecid-3`）。 删除删除优先级类型较高的最旧身份后，将更新图形，并添加一个新链接`ecid-51`。
 
-* 在极少数情况下，两个身份具有相同的时间戳和身份类型，Identity Service会根据这些ID进行排序 [XID](./api/list-native-id.md) 并执行删除。
+* 在极少数情况下，如果有两个具有相同时间戳和标识类型的标识，Identity Service将根据[XID](./api/list-native-id.md)对ID进行排序并进行删除。
 
 ![为容纳最新标识而删除的最旧标识的示例](./images/graph-limits-v3.png)
 
@@ -128,16 +128,16 @@ Adobe如果您的生产沙盒包含：
 
 >[!TAB 传入事件]
 
-*图表说明：*
+*关系图备注：*
 
-* 下图假设在 `timestamp=50`，标识图中有50个标识。
-* `(...)` 表示已在图形中链接的其他标识。
+* 下图假设在`timestamp=50`处，标识图中有50个标识。
+* `(...)`表示图形中已链接的其他标识。
 
-在此示例中，ECID：32110被摄取并链接到位于的大型图表 `timestamp=51`，从而超过了50个身份的限制。
+在此示例中，ECID：32110被摄取并链接到`timestamp=51`处的大型图形，从而超过了50个标识的限制。
 
 ![](./images/guardrails/before-split.png)
 
->[!TAB 删除过程]
+>[!TAB 删除进程]
 
 因此，Identity Service会根据时间戳和身份类型删除最早的身份。 在这种情况下，只会从身份图中删除ECID：35577。
 
@@ -157,23 +157,23 @@ Adobe如果您的生产沙盒包含：
 
 >[!TAB 传入事件]
 
-*图表说明：*
+*关系图备注：*
 
-* 下图假设在 `timestamp=50`，标识图中有50个标识。
-* `(...)` 表示已在图形中链接的其他标识。
+* 下图假设在`timestamp=50`处，标识图中有50个标识。
+* `(...)`表示图形中已链接的其他标识。
 
 借助删除逻辑，某些“中心”身份也可以被删除。 这些中心身份是指链接到多个单独身份（这些身份在其他情况下将被取消链接）的节点。
 
-在下面的示例中，ECID：21011被摄取并链接到上的图形 `timestamp=51`，从而超过了50个身份的限制。
+在下面的示例中，ECID：21011被摄取并链接到`timestamp=51`处的图形，从而超过了50个标识的限制。
 
 ![](./images/guardrails/hub-and-spoke-start.png)
 
->[!TAB 删除过程]
+>[!TAB 删除进程]
 
 因此，Identity Service仅会从身份图中删除最早的身份，在本例中为ECID：35577。 删除ECID：35577也会导致删除以下内容：
 
 * CRM ID：60013和现已删除的ECID：35577之间的链接，这会导致图形拆分情况。
-* IDFA：32110、IDFA：02383以及表示的其余身份 `(...)`. 这些标识会被删除，因为单个标识未链接到任何其他标识，因此无法在图形中表示它们。
+* IDFA： 32110、IDFA： 02383以及`(...)`表示的其余标识。 这些标识会被删除，因为单个标识未链接到任何其他标识，因此无法在图形中表示它们。
 
 ![](./images/guardrails/hub-and-spoke-process.png)
 
@@ -187,7 +187,7 @@ Adobe如果您的生产沙盒包含：
 
 ## 后续步骤
 
-有关以下内容的更多信息，请参阅以下文档 [!DNL Identity Service]：
+有关[!DNL Identity Service]的详细信息，请参阅以下文档：
 
 * [[!DNL Identity Service] 概述](home.md)
 * [身份图查看器](features/identity-graph-viewer.md)
@@ -195,7 +195,7 @@ Adobe如果您的生产沙盒包含：
 请参阅Real-Time CDP产品描述文档中的以下文档，了解有关其他Experience Platform服务护栏、端到端延迟信息和许可信息的更多信息：
 
 * [Real-Time CDP护栏](/help/rtcdp/guardrails/overview.md)
-* [端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) 用于各种Experience Platform服务。
+* [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams)。
 * [Real-time Customer Data Platform （B2C版本 — Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform （B2P — 主要和最终包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform （B2B - Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [Real-time Customer Data Platform （B2P — 主包和最终包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-time Customer Data Platform （B2B — 主包和最终包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)

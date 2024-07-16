@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Experience CloudID (ECID)是跨Adobe Experience Platform和Adobe Experience Cloud应用程序使用的共享身份命名空间。
 
-ECID为客户标识奠定了基础。 使用上下文 [[!DNL Identity Service]](../home.md)，ECID可用作设备的主ID以及身份图的基本节点。
+ECID为客户标识奠定了基础。 在[[!DNL Identity Service]](../home.md)的上下文中，ECID用作设备的主ID，并用作标识图的基节点。
 
 使用ECID，您可以：
 
@@ -31,8 +31,8 @@ ECID为客户标识奠定了基础。 使用上下文 [[!DNL Identity Service]](
 
 以下文档提供了有关跨不同平台和Experience Cloud应用程序了解ECID的进一步资源：
 
-* 要在网站实施中使用ECID，请参阅文档 [Experience Cloud标识服务](https://experienceleague.adobe.com/docs/id-service/using/home.html).
-* 要了解如何将ECID与应用程序和移动Web内容结合使用，请参阅此文档 [应用程序和移动Web之间的访客跟踪](https://experienceleague.adobe.com/docs/mobile-services/ios/sdk-reference-ios/hybrid-app.html#sdk-reference-ios).
-* 如果您使用，部署这些工具会非常简单且易于管理 [标记](../../tags/home.md).
-* 请参阅 [Privacy Service文档](../../privacy-service/identity-data.md) 有关使用ECID促进遵守GDPR等隐私法规的信息。
-* 有关包含Platform上下文的ECID的更多信息，请参阅 [Identity服务概述](../home.md) 和 [身份命名空间概述](./namespaces.md).
+* 若要将ECID与网站实现结合使用，请参阅有关[Experience Cloud身份服务](https://experienceleague.adobe.com/docs/id-service/using/home.html)的文档。
+* 要了解如何将ECID与应用程序和移动Web内容一起使用，请参阅有关应用程序和移动Web之间的[访客跟踪的文档](https://experienceleague.adobe.com/docs/mobile-services/ios/sdk-reference-ios/hybrid-app.html#sdk-reference-ios)。
+* 如果您使用[标记](../../tags/home.md)，则部署这些工具会非常简单且易于管理。
+* 有关使用ECID促进对GDPR等隐私法规的遵守的信息，请参阅[Privacy Service文档](../../privacy-service/identity-data.md)。
+* 有关包含Platform上下文的ECID的更多信息，请参阅[身份服务概述](../home.md)和[身份命名空间概述](./namespaces.md)。

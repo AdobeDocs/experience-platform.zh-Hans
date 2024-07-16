@@ -5,13 +5,13 @@ exl-id: 5df99f9a-b36a-4c2b-a4a4-d3cf054f09b8
 source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
 source-wordcount: '123'
-ht-degree: 4%
+ht-degree: 3%
 
 ---
 
-# [!UICONTROL 应用程序详细信息] 架构字段组
+# [!UICONTROL 应用程序详细信息]架构字段组
 
-[!UICONTROL 应用程序详细信息] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md). 字段组提供单个 `application` 架构的对象，用于捕获与应用程序相关的详细信息，例如崩溃、功能使用、启动和升级。
+[!UICONTROL 应用程序详细信息]是[[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)的标准架构字段组。 字段组为架构提供单个`application`对象，用于捕获与应用程序相关的详细信息，例如崩溃、功能使用、启动和升级。
 
 ![](../../images/field-groups/application-details.png)
 
@@ -21,4 +21,4 @@ ht-degree: 4%
 
 {style="table-layout:auto"}
 
-有关字段组的更多详细信息，请参阅 [公共XDM存储库](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/experienceevent-application.schema.json).
+有关字段组的更多详细信息，请参阅[公共XDM存储库](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/experienceevent-application.schema.json)。

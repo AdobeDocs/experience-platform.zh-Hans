@@ -15,7 +15,7 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 > * Adobe建议您将此页面加入书签，每三个月重新访问一次，以检查最新IP地址。 Adobe不提供新IP范围的通知。
-> * 虽然Adobe支持将数据导出到SFTP服务器，但建议用于导出数据的云存储位置为 [!DNL Amazon S3] 和 [!DNL Azure Blob].
+> * 虽然Adobe支持将数据导出到SFTP服务器，但建议用于导出数据的云存储位置为[!DNL Amazon S3]和[!DNL Azure Blob]。
 
 ## 适用性 {#applicability}
 
@@ -27,7 +27,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->本页记录的IP范围包括 *非* 对于以下基于文件的云存储目标支持： [!UICONTROL Azure Blob]， [!UICONTROL Azure Data Lake Storage Gen2] 和 [!UICONTROL 数据登陆区].
+>以下基于文件的云存储目标不支持此页面上记录的IP范围： *Azure Blob]、[!UICONTROL Azure Data Lake Storage Gen2]和[!UICONTROL Data Landing Zone]： [!UICONTROL 不支持*。
 
 ## 概述 {#overview}
 

@@ -13,11 +13,11 @@ ht-degree: 1%
 
 # 查找多个目录对象
 
-如果您希望查看多个特定对象，而不是为每个对象发出一个请求， [!DNL Catalog] 为请求同一类型的多个对象提供了简单的快捷方式。 您可以使用单个GET请求，通过包含以逗号分隔的ID列表来返回多个特定对象。
+如果要查看多个特定对象，而不是为每个对象发出一个请求，[!DNL Catalog]提供了一个简单的快捷方式，用于请求同一类型的多个对象。 您可以使用单个GET请求，通过包含以逗号分隔的ID列表来返回多个特定对象。
 
 >[!NOTE]
 >
->即使请求特定 [!DNL Catalog] 对象，最佳做法仍是 `properties` 查询参数以仅返回所需的属性。
+>即使请求特定[!DNL Catalog]对象，最佳做法仍是`properties`查询参数以仅返回您需要的属性。
 
 **API格式**
 
@@ -28,7 +28,7 @@ GET /{OBJECT_TYPE}/{ID_1},{ID_2},{ID_3},{ID_4}?properties={PROPERTY_1},{PROPERTY
 
 | 参数 | 描述 |
 | -------- | ----------- |
-| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要检索的对象。 有效对象为： <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
+| `{OBJECT_TYPE}` | 要检索的[!DNL Catalog]对象的类型。 有效对象为： <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
 | `{ID}` | 要检索的特定对象之一的标识符。 |
 
 **请求**
@@ -46,11 +46,11 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回指定数据集的列表，其中仅包含请求的属性(`name`， `description`、和 `files`)。
+成功的响应返回指定数据集的列表，其中仅包含每个数据集的请求属性（`name`、`description`和`files`）。
 
 >[!NOTE]
 >
->如果返回的对象不包含由指定的一个或多个请求属性， `properties` 查询时，响应仅返回所请求的属性，如中所示 ***`Sample Dataset 3`*** 和 ***`Sample Dataset 4`*** 下。
+>如果返回的对象不包含`properties`查询指示的一个或多个请求属性，则响应仅返回它包含的一个或多个请求属性，如下面的&#x200B;***`Sample Dataset 3`***&#x200B;和&#x200B;***`Sample Dataset 4`***&#x200B;所示。
 
 ```json
 {

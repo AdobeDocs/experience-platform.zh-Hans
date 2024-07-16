@@ -5,18 +5,18 @@ description: 您可以使用数据准备API中的“/functions”端点来验证
 exl-id: dc24bfb4-2d96-4757-a610-0c2ee960d41d
 source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
 workflow-type: tm+mt
-source-wordcount: '209'
+source-wordcount: '213'
 ht-degree: 2%
 
 ---
 
 # 函数端点
 
-利用映射集函数，可在源架构和目标架构之间转换数据。 您可以使用 `/languages/el` 端点，用于验证表达式并获取所有可用映射集函数的列表。
+利用映射集函数，可在源架构和目标架构之间转换数据。 您可以使用`/languages/el`端点来验证表达式，并获得所有可用映射集函数的列表。
 
 ## 验证表达式
 
-您可以通过对以下对象发出POST请求，来验证当前表达式是否有效 `/languages/el/validate` 端点。
+您可以通过向`/languages/el/validate`端点发出POST请求来验证当前表达式是否有效。
 
 **API格式**
 
@@ -41,7 +41,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/languages/el/v
 
 **响应**
 
-成功的响应会返回带有表达式验证状态的HTTP状态200。
+成功的响应会返回HTTP状态200以及表达式的验证状态。
 
 ```json
 {
@@ -52,7 +52,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/languages/el/v
 
 ## 列表映射集函数
 
-您可以通过对以下对象发出GET请求，检索所有可用的映射集函数的列表： `/languages/el/functions` 端点。
+通过向`/languages/el/functions`端点发出GET请求，您可以检索所有可用的映射集函数的列表。
 
 **API格式**
 
@@ -76,7 +76,7 @@ curl -X GET https://platform.adobe.io/data/foundation/conversion/languages/el/fu
 
 >[!NOTE]
 >
->此响应已因空间而被截断。
+>此响应的空间已被截断。
 
 ```json
 [
@@ -117,7 +117,7 @@ curl -X GET https://platform.adobe.io/data/foundation/conversion/languages/el/fu
 
 ## 列表映射集运算符
 
-您可以通过对以下对象发出GET请求，检索所有可用的映射集运算符的列表： `/languages/el/operators` 端点。
+通过向`/languages/el/operators`端点发出GET请求，您可以检索所有可用的映射集运算符的列表。
 
 **API格式**
 
@@ -141,7 +141,7 @@ curl -X GET https://platform.adobe.io/data/foundation/conversion/languages/el/op
 
 >[!NOTE]
 >
->此响应已因空间而被截断。
+>此响应的空间已被截断。
 
 ```json
 [

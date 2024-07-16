@@ -4,8 +4,8 @@ description: 了解如何在Reactor API中调用/callbacks端点。
 exl-id: dd980f91-89e3-4ba0-a6fc-64d66b288a22
 source-git-commit: 7f3b9ef9270b7748bc3366c8c39f503e1aee2100
 workflow-type: tm+mt
-source-wordcount: '600'
-ht-degree: 5%
+source-wordcount: '606'
+ht-degree: 6%
 
 ---
 
@@ -13,9 +13,9 @@ ht-degree: 5%
 
 回调是Reactor API发送到特定URL（通常由您的组织托管）的消息。
 
-回调旨在与结合使用 [审计事件](./audit-events.md) 以跟踪Reactor API中的活动。 每次生成特定类型的审核事件时，回调都会向指定的URL发送匹配消息。
+回调旨在与[审核事件](./audit-events.md)结合使用，以跟踪Reactor API中的活动。 每次生成特定类型的审核事件时，回调都会向指定的URL发送匹配消息。
 
-在回调中指定的URL背后的服务必须以HTTP状态代码200 （确定）或201 （已创建）作出响应。 如果服务未响应这些状态代码中的任何一个，则按以下时间间隔重试消息投放：
+位于回调中指定的URL后面的服务必须使用HTTP状态代码200 （确定）或201 （已创建）进行响应。 如果服务没有响应这两个状态代码中的任何一个，则按以下时间间隔重试消息投放：
 
 * 1分钟
 * 5 分钟
@@ -27,15 +27,15 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->重试间隔相对于上一个间隔。 例如，如果一分钟重试失败，则下一次尝试安排在失败一分钟后的5分钟内（生成消息后的6分钟）。
+>重试间隔相对于上一个间隔。 例如，如果在一分钟时重试失败，则下次尝试安排在一分钟尝试失败后（生成消息后6分钟）的5分钟内。
 
-如果所有投放尝试都不成功，则会丢弃消息。
+如果所有投放尝试都不成功，则消息将被丢弃。
 
-一个回调只属于一个 [属性](./properties.md). 资产可以有许多回调。
+回调只属于一个[属性](./properties.md)。 资产可以有许多回调。
 
 ## 快速入门
 
-本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [快速入门指南](../getting-started.md) 有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续之前，请查看[快速入门指南](../getting-started.md)，以了解有关如何对API进行身份验证的重要信息。
 
 ## 列出回调 {#list}
 
@@ -49,13 +49,13 @@ GET  /properties/{PROPERTY_ID}/callbacks
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 此 `id` 要列出其回调的属性的。 |
+| `{PROPERTY_ID}` | 要列出其回调的属性`id`。 |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性筛选列出的回调：<ul><li>`created_at`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [筛选响应](../guides/filtering.md) 了解更多信息。
+>使用查询参数，可以根据以下属性过滤列出的回调：<ul><li>`created_at`</li><li>`updated_at`</li></ul>有关详细信息，请参阅[筛选响应](../guides/filtering.md)指南。
 
 **请求**
 
@@ -128,7 +128,7 @@ GET /callbacks/{CALLBACK_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `CALLBACK_ID` | 此 `id` 要查找的回调的ID。 |
+| `CALLBACK_ID` | 要查找的回调的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -192,7 +192,7 @@ POST /properties/{PROPERTY_ID}/callbacks
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 此 `id` 的 [属性](./properties.md) 下定义回调的位置。 |
+| `PROPERTY_ID` | 您正在定义回调的[属性](./properties.md)的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -221,7 +221,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `url` | 回调消息的URL目标。 URL必须使用HTTPS协议扩展。 |
-| `subscriptions` | 一个字符串数组，指示将触发回调的审核事件类型。 请参阅 [审核事件端点指南](./audit-events.md) 以获取可能事件类型的列表。 |
+| `subscriptions` | 一个字符串数组，指示将触发回调的审核事件类型。 有关可能的事件类型列表，请参阅[审核事件终结点指南](./audit-events.md)。 |
 
 {style="table-layout:auto"}
 
@@ -263,7 +263,7 @@ curl -X POST \
 
 ## 更新回调
 
-您可以通过在PATCH请求的路径中包含回调的ID来更新该回调。
+您可以通过在PATCH请求的路径中包含回调的ID来更新回调。
 
 **API格式**
 
@@ -273,13 +273,13 @@ PATCH /callbacks/{CALLBACK_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `CALLBACK_ID` | 此 `id` 要更新的回调的ID。 |
+| `CALLBACK_ID` | 要更新的回调的`id`。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求将更新 `subscriptions` 现有回调的数组。
+以下请求更新现有回调的`subscriptions`数组。
 
 ```shell
 curl -X PATCH \
@@ -307,8 +307,8 @@ curl -X PATCH \
 | 属性 | 描述 |
 | --- | --- |
 | `attributes` | 一个对象，其属性表示要针对回调更新的属性。 每个键表示要更新的特定回调属性以及应更新到的相应值。<br><br>可以更新回调的以下属性：<ul><li>`subscriptions`</li><li>`url`</li></ul> |
-| `id` | 此 `id` 要更新的回调的。 这应该与 `{CALLBACK_ID}` 请求路径中提供的值。 |
-| `type` | 正在更新的资源类型。 对于此端点，值必须为 `callbacks`. |
+| `id` | 要更新的回调的`id`。 这应当与在请求路径中提供的`{CALLBACK_ID}`值匹配。 |
+| `type` | 正在更新的资源类型。 对于此终结点，值必须为`callbacks`。 |
 
 {style="table-layout:auto"}
 
@@ -361,7 +361,7 @@ DELETE /callbacks/{CALLBACK_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `CALLBACK_ID` | 此 `id` 要删除的回调的ID。 |
+| `CALLBACK_ID` | 要删除的回调的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -379,4 +379,4 @@ curl -X DELETE \
 
 **响应**
 
-成功的响应返回HTTP状态204（无内容），没有响应正文，这表示回调已被删除。
+成功的响应返回HTTP状态204（无内容），没有响应正文，这表示已删除回调。

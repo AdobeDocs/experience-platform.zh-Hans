@@ -5,7 +5,7 @@ exl-id: c8e26720-1976-48ec-8490-3d4ce587831e
 source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
 source-wordcount: '558'
-ht-degree: 79%
+ht-degree: 74%
 
 ---
 
@@ -13,9 +13,9 @@ ht-degree: 79%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-删除资源是从Adobe Experience Platform中永久移除该资源。 如果要从特定标记库中移除资源，但仍希望该资源在其他库中可用，请参阅上的指南 [从库中移除资源](remove-resources-from-library.md).
+删除资源是从Adobe Experience Platform中永久移除该资源。 如果要从特定标记库中移除资源，但仍希望该资源在其他库中可用，请参阅[从库中移除资源](remove-resources-from-library.md)指南。
 
 您可以删除数据元素、规则、扩展、主机、环境和资产。删除后，这些资源将无法恢复。
 
@@ -78,4 +78,4 @@ ht-degree: 79%
 
 ## 删除资源
 
-从相应的列表视图中，选择要删除的资源，然后选择 **[!UICONTROL 删除]**.
+从相应的列表视图中，选择要删除的资源，然后选择&#x200B;**[!UICONTROL 删除]**。

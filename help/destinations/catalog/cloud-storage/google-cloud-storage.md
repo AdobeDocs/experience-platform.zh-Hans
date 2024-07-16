@@ -10,16 +10,16 @@ ht-degree: 2%
 
 ---
 
-# [!DNL Google Cloud Storage] 连接
+# [!DNL Google Cloud Storage]连接
 
 ## 概述 {#overview}
 
-创建到以下对象的实时出站连接： [!DNL Google Cloud Storage] 定期将数据文件从Adobe Experience Platform导出到您自己的存储桶中。
+创建到[!DNL Google Cloud Storage]的实时出站连接，定期将数据文件从Adobe Experience Platform导出到您自己的存储桶中。
 
-## 连接到您的 [!DNL Google Cloud Storage] 通过API或用户界面进行存储 {#connect-api-or-ui}
+## 通过API或UI连接到您的[!DNL Google Cloud Storage]存储 {#connect-api-or-ui}
 
-* 要连接到 [!DNL Google Cloud Storage] 存储位置使用Platform用户界面，请阅读以下章节 [连接到目标](#connect) 和 [将受众激活到此目标](#activate) 下。
-* 要连接到 [!DNL Google Cloud Storage] 存储位置以编程方式读取 [使用流服务API教程将受众激活到基于文件的目标](../../api/activate-segments-file-based-destinations.md).
+* 要使用Platform用户界面连接到[!DNL Google Cloud Storage]存储位置，请阅读下面的[连接到目标](#connect)和[将受众激活到此目标](#activate)部分。
+* 若要以编程方式连接到[!DNL Google Cloud Storage]存储位置，请阅读[使用流服务API教程](../../api/activate-segments-file-based-destinations.md)将受众激活到基于文件的目标。
 
 ## 支持的受众 {#supported-audiences}
 
@@ -27,8 +27,8 @@ ht-degree: 2%
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
+| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
 
 {style="table-layout:auto"}
 
@@ -38,8 +38,8 @@ ht-degree: 2%
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有成员，以及适用的架构字段，如 [目标激活工作流](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
-| 导出频率 | **[!UICONTROL 批次]** | 批量目标以三、六、八、十二或二十四小时的增量将文件导出到下游平台。 详细了解 [批处理基于文件的目标](/help/destinations/destination-types.md#file-based). |
+| 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有成员，以及适用的架构字段，如[目标激活工作流](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes)的选择配置文件属性屏幕中所选。 |
+| 导出频率 | **[!UICONTROL 批次]** | 批量目标以三、六、八、十二或二十四小时的增量将文件导出到下游平台。 阅读有关[基于批处理文件的目标](/help/destinations/destination-types.md#file-based)的详细信息。 |
 
 {style="table-layout:auto"}
 
@@ -47,50 +47,50 @@ ht-degree: 2%
 
 此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
 
-* 操作方法 [使用Platform用户界面导出](/help/destinations/ui/export-datasets.md).
-* 操作方法 [使用流服务API以编程方式导出数据集](/help/destinations/api/export-datasets.md).
+* 如何使用Platform用户界面](/help/destinations/ui/export-datasets.md)导出数据集[。
+* 如何使用流服务API](/help/destinations/api/export-datasets.md)以编程方式[导出数据集。
 
 ## 导出数据的文件格式 {#file-format}
 
-导出时 *受众数据*，平台创建 `.csv`， `parquet`，或 `.json` 文件存储位置。 有关这些文件的详细信息，请参见 [支持的导出文件格式](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export) 部分。
+导出&#x200B;*受众数据*&#x200B;时，Platform会在您提供的存储位置创建一个`.csv`、`parquet`或`.json`文件。 有关这些文件的更多信息，请参阅Audience Activation教程中的[导出的支持文件格式](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export)部分。
 
-导出时 *数据集*，平台创建 `.parquet` 或 `.json` 文件存储位置。 有关这些文件的详细信息，请参见 [验证数据集导出是否成功](../../ui/export-datasets.md#verify) 导出数据集教程中的部分。
+导出&#x200B;*数据集*&#x200B;时，Platform会在您提供的存储位置创建一个`.parquet`或`.json`文件。 有关这些文件的更多信息，请参阅导出数据集教程中的[验证成功的数据集导出](../../ui/export-datasets.md#verify)部分。
 
-## 用于连接您的计算机的先决条件设置 [!DNL Google Cloud Storage] 帐户 {#prerequisites}
+## 用于连接[!DNL Google Cloud Storage]帐户的必备设置 {#prerequisites}
 
-为了将Platform连接到 [!DNL Google Cloud Storage]，您必须首先为以下各项启用互操作性： [!DNL Google Cloud Storage] 帐户。 要访问互操作性设置，请打开 [!DNL Google Cloud Platform] 并选择 **[!UICONTROL 设置]** 从 **[!UICONTROL 云存储]** 选项。
+为了将Platform连接到[!DNL Google Cloud Storage]，您必须首先为您的[!DNL Google Cloud Storage]帐户启用互操作性。 要访问互操作性设置，请打开[!DNL Google Cloud Platform]并从导航面板的&#x200B;**[!UICONTROL 云存储]**&#x200B;选项中选择&#x200B;**[!UICONTROL 设置]**。
 
-![Google Cloud Platform功能板，其中突出显示了云存储和设置。](../../../sources/images/tutorials/create/google-cloud-storage/nav.png)
+![突出显示了Cloud Storage和设置的Google Cloud Platform仪表板。](../../../sources/images/tutorials/create/google-cloud-storage/nav.png)
 
-此 **[!UICONTROL 设置]** 页面。 在此处，您可以查看关于您的 [!DNL Google] 项目ID和您的的详细信息 [!DNL Google Cloud Storage] 帐户。 要访问互操作性设置，请选择 **[!UICONTROL 互操作性]** 从顶部标题中。
+此时会显示&#x200B;**[!UICONTROL 设置]**&#x200B;页面。 在此处，您可以看到有关您的[!DNL Google]项目ID的信息以及有关您的[!DNL Google Cloud Storage]帐户的详细信息。 要访问互操作性设置，请从顶部标题中选择&#x200B;**[!UICONTROL 互操作性]**。
 
-![Google Cloud Platform功能板中突出显示的互操作性选项卡。](../../../sources/images/tutorials/create/google-cloud-storage/project-access.png)
+![ Google Cloud Platform仪表板中突出显示的“互操作性”选项卡。](../../../sources/images/tutorials/create/google-cloud-storage/project-access.png)
 
-此 **[!UICONTROL 互操作性]** 页面包含与您的服务帐户关联的身份验证、访问密钥和默认项目的信息。 要为服务帐户生成新的访问密钥ID和秘密访问密钥，请选择 **[!UICONTROL 为服务帐户创建密钥]**.
+**[!UICONTROL 互操作性]**&#x200B;页面包含有关身份验证、访问密钥以及与您的服务帐户关联的默认项目的信息。 要为您的服务帐户生成新的访问密钥ID和访问密钥，请选择&#x200B;**[!UICONTROL 为服务帐户创建密钥]**。
 
-![Google Cloud Platform功能板中高亮显示的为服务帐户控制创建密钥。](../../../sources/images/tutorials/create/google-cloud-storage/interoperability.png)
+![Google Cloud Platform仪表板中突出显示的服务帐户控制的创建密钥。](../../../sources/images/tutorials/create/google-cloud-storage/interoperability.png)
 
-您可以使用新生成的访问密钥ID和秘密访问密钥连接 [!DNL Google Cloud Storage] Platform帐户。
+您可以使用新生成的访问密钥ID和秘密访问密钥将[!DNL Google Cloud Storage]帐户连接到Platform。
 
 ## 连接到目标 {#connect}
 
 >[!IMPORTANT]
 > 
->要连接到目标，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
-要连接到此目标，请按照 [目标配置教程](/help/destinations/ui/connect-destination.md). 在目标配置工作流中，填写下面两个部分中列出的字段。
+要连接到此目标，请按照[目标配置教程](/help/destinations/ui/connect-destination.md)中描述的步骤操作。 在目标配置工作流中，填写下面两个部分中列出的字段。
 
 ### 验证目标 {#authenticate}
 
-要向目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
+要验证到目标，请填写必填字段并选择&#x200B;**[!UICONTROL 连接到目标]**。
 
-* **[!UICONTROL 访问密钥ID]**：由61个字符组成的字母数字字符串，用于验证您的 [!DNL Google Cloud Storage] Platform帐户。 有关如何获得此值的信息，请阅读 [先决条件](#prerequisites) 部分。
-* **[!UICONTROL 访问密钥]**：由40个字符组成的base64编码字符串，用于验证您的 [!DNL Google Cloud Storage] Platform帐户。 有关如何获得此值的信息，请阅读 [先决条件](#prerequisites) 部分。
-* **[!UICONTROL 加密密钥]**：（可选）您可以附加RSA格式公钥以向导出的文件添加加密。 查看下图中的加密密钥格式正确示例。
+* **[!UICONTROL 访问密钥ID]**：一个61字符的字母数字字符串，用于向Platform验证您的[!DNL Google Cloud Storage]帐户。 有关如何获取此值的信息，请阅读上面的[先决条件](#prerequisites)部分。
+* **[!UICONTROL 访问密钥]**：用于向Platform验证您的[!DNL Google Cloud Storage]帐户的40字符base64编码字符串。 有关如何获取此值的信息，请阅读上面的[先决条件](#prerequisites)部分。
+* **[!UICONTROL 加密密钥]**： （可选）您可以附加RSA格式的公钥以向导出的文件添加加密。 查看下图中的加密密钥格式正确示例。
 
   ![显示UI中格式正确的PGP密钥示例的图像](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
-有关这些值的详细信息，请参阅 [Google Cloud Storage HMAC密钥](https://cloud.google.com/storage/docs/authentication/hmackeys#overview) 指南。 有关如何生成自己的访问密钥ID和访问密钥的步骤，请参阅 [[!DNL Google Cloud Storage] 源概述](/help/sources/connectors/cloud-storage/google-cloud-storage.md).
+有关这些值的更多信息，请阅读[Google Cloud Storage HMAC密钥](https://cloud.google.com/storage/docs/authentication/hmackeys#overview)指南。 有关如何生成自己的访问密钥ID和访问密钥的步骤，请参阅[[!DNL Google Cloud Storage] 源概述](/help/sources/connectors/cloud-storage/google-cloud-storage.md)。
 
 ### 填写目标详细信息 {#destination-details}
 
@@ -98,44 +98,44 @@ ht-degree: 2%
 
 * **[!UICONTROL 名称]**：填写此目标的首选名称。
 * **[!UICONTROL 描述]**：可选。 例如，您可以提及要将此目标用于哪个营销活动。
-* **[!UICONTROL 存储段名称]**：输入 [!DNL Google Cloud Storage] 要由此目标使用的存储桶。
-* **[!UICONTROL 文件夹路径]**：输入目标文件夹的路径，该文件夹将托管导出的文件。
-* **[!UICONTROL 文件类型]**：选择导出的文件应使用的格式Experience Platform。 选择 [!UICONTROL CSV] 选项，您还可以 [配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md).
+* **[!UICONTROL Bucket名称]**：输入要由此目标使用的[!DNL Google Cloud Storage]存储段的名称。
+* **[!UICONTROL 文件夹路径]**：输入将承载导出文件的目标文件夹的路径。
+* **[!UICONTROL 文件类型]**：选择导出文件应使用的格式Experience Platform。 在选择[!UICONTROL CSV]选项时，您还可以[配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md)。
 * **[!UICONTROL 压缩格式]**：选择Experience Platform应用于导出文件的压缩类型。
-* **[!UICONTROL 包含清单文件]**：如果您希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。 清单的命名格式为 `manifest-<<destinationId>>-<<dataflowRunId>>.json`. 查看 [示例清单文件](/help/destinations/assets/common/manifest-d0420d72-756c-4159-9e7f-7d3e2f8b501e-0ac8f3c0-29bd-40aa-82c1-f1b7e0657b19.json). 清单文件包含以下字段：
-   * `flowRunId`：和 [数据流运行](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) 生成了导出的文件。
+* **[!UICONTROL 包含清单文件]**：如果希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。 清单的命名格式为`manifest-<<destinationId>>-<<dataflowRunId>>.json`。 查看[样本清单文件](/help/destinations/assets/common/manifest-d0420d72-756c-4159-9e7f-7d3e2f8b501e-0ac8f3c0-29bd-40aa-82c1-f1b7e0657b19.json)。 清单文件包含以下字段：
+   * `flowRunId`：生成导出文件的[数据流运行](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations)。
    * `scheduledTime`：导出文件时的时间（UTC时间）。
-   * `exportResults.sinkPath`：存储位置中存储导出文件的路径。
+   * `exportResults.sinkPath`：存储位置中保存导出文件的路径。
    * `exportResults.name`：导出文件的名称。
-   * `size`：导出文件的大小（以字节为单位）。
+   * `size`：导出文件的大小（字节）。
 
 ### 启用警报 {#enable-alerts}
 
-您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅以下内容中的指南： [使用UI订阅目标警报](../../ui/alerts.md).
+您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
 
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
->* 要激活数据，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
->* 要导出 *身份*，您需要 **[!UICONTROL 查看身份图]** [访问控制权限](/help/access-control/home.md#permissions). <br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+>* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
-请参阅 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
+有关将受众激活到此目标的说明，请参阅[将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md)。
 
 ### 计划中
 
-在 **[!UICONTROL 正在计划]** 步骤，您可以 [设置导出计划](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling) 您的 [!DNL Google Cloud Storage] 目标位置，您还可以 [配置导出文件的名称](/help/destinations/ui/activate-batch-profile-destinations.md#file-names).
+在&#x200B;**[!UICONTROL 计划]**&#x200B;步骤中，您可以[为[!DNL Google Cloud Storage]目标设置导出计划](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling)，还可以[配置导出文件的名称](/help/destinations/ui/activate-batch-profile-destinations.md#file-names)。
 
 ### 映射属性和身份 {#map}
 
-在 **[!UICONTROL 映射]** 步骤，您可以为配置文件选择要导出的属性和标识字段。 您还可以选择将导出文件中的标头更改为所需的任何友好名称。 有关详细信息，请查看 [映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping) 在激活批次目标UI教程中。
+在&#x200B;**[!UICONTROL 映射]**&#x200B;步骤中，您可以为配置文件选择要导出的属性和标识字段。 您还可以选择将导出文件中的标头更改为所需的任何友好名称。 有关详细信息，请查看激活批处理目标UI教程中的[映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)。
 
 ## 验证数据导出是否成功 {#exported-data}
 
-要验证数据是否已成功导出，请检查 [!DNL Google Cloud Storage] 存储桶并确保导出的文件包含预期的用户档案人口。
+要验证数据是否已成功导出，请检查您的[!DNL Google Cloud Storage]存储段并确保导出的文件包含预期的配置文件人口。
 
 ## IP地址允许列表 {#ip-address-allow-list}
 
-请参阅 [IP地址允许列表](ip-address-allow-list.md) 文章(如果需要将AdobeIP添加到允许列表)。
+如果需要将Adobe列入允许列表 IP添加到，请参阅[IP地址允许列表](ip-address-allow-list.md)一文。

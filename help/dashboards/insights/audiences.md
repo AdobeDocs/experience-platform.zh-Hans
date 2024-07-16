@@ -5,7 +5,7 @@ exl-id: 99624234-c4e1-44bb-9567-505bc0c4723e
 source-git-commit: 34eb9151cc6bb8551553b0a8427e58871acb4dbb
 workflow-type: tm+mt
 source-wordcount: '1124'
-ht-degree: 1%
+ht-degree: 3%
 
 ---
 
@@ -15,13 +15,13 @@ ht-degree: 1%
 
 通过访问支持受众分析的SQL来了解这些分析，然后生成您自己的分析，以进一步探索构成受众的身份和配置文件。 通过使用现有的Real-Time CDP数据模型SQL作为灵感，根据独特的业务需求创建查询，将原始数据转换为新的可操作洞察。
 
-请参阅 [查看SQL文档](../view-sql.md) 有关如何直接通过Platform UI调整您的分析的SQL的详细信息。
+有关如何直接通过PLatform UI调整分析的SQL的详细信息，请参阅[查看SQL文档](../view-sql.md)。
 
-以下见解全部可供您用作 [受众功能板](../guides/audiences.md) 或自定义 [用户定义的仪表板](../user-defined-dashboards.md). 请参阅 [自定义概述](../customize/overview.md) 有关如何自定义功能板的说明，或者 [创建和编辑新构件](../customize/custom-widgets.md) 在小组件库和 [用户定义的仪表板](../user-defined-dashboards.md#create-widget).
+以下分析均可用作[受众仪表板](../guides/audiences.md)或自定义[用户定义的仪表板](../user-defined-dashboards.md)的一部分。 有关如何自定义仪表板或[在构件库和[用户定义的仪表板](../user-defined-dashboards.md#create-widget)中创建和编辑新构件](../customize/custom-widgets.md)的说明，请参阅[自定义概述](../customize/overview.md)。
 
-以下见解全部可供您用作 [受众功能板](../guides/audiences.md) 或自定义功能板。
+以下分析均可用作[受众仪表板](../guides/audiences.md)或自定义仪表板的一部分。
 
-## 受众重叠报表 {#audience-overlap-report}
+## 受众重叠报告 {#audience-overlap-report}
 
 通过此洞察回答的问题：
 
@@ -86,7 +86,7 @@ SELECT source_segment_name,
 
 +++
 
-请参阅 [受众重叠报表小组件文档](../guides/audiences.md#audience-overlap-report) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[受众重叠报表构件文档](../guides/audiences.md#audience-overlap-report)。
 
 ## 受众重叠 {#audience-overlap}
 
@@ -133,7 +133,7 @@ SELECT Sum(overlap_col1) overlap_col1,
 
 +++
 
-请参阅 [受众重叠小组件文档](../guides/audiences.md#audience-overlap) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[受众重叠构件文档](../guides/audiences.md#audience-overlap)。
 
 ## 受众规模变化趋势 {#audience-size-change-trend}
 
@@ -174,9 +174,9 @@ SELECT date_key,
 
 +++
 
-请参阅 [受众规模变化趋势小组件文档](../guides/audiences.md#audience-size-change-trend) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[受众规模更改趋势构件文档](../guides/audiences.md#audience-size-change-trend)。
 
-## 按身份划分的受众规模趋势 {#audience-size-trend-by-identity}
+## 按标识划分的受众规模趋势 {#audience-size-trend-by-identity}
 
 通过此洞察回答的问题：
 
@@ -207,7 +207,7 @@ SELECT sum(count_of_profiles) AS identities,
 
 +++
 
-请参阅 [按身份构件文档划分的受众规模趋势](../guides/audiences.md#audience-size-trend-by-identity) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅按身份构件分类的[受众规模趋势](../guides/audiences.md#audience-size-trend-by-identity)。
 
 ## 受众规模趋势 {#audience-size-trend}
 
@@ -238,7 +238,7 @@ SELECT date_key,
 
 +++
 
-请参阅 [受众规模趋势小组件文档](../guides/audiences.md#audience-size-trend) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[受众规模趋势构件文档](../guides/audiences.md#audience-size-trend)。
 
 ## 受众规模 {#audience-size}
 
@@ -266,9 +266,9 @@ WHERE
 
 +++
 
-请参阅 [受众规模小组件文档](../guides/audiences.md#audience-size) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[受众大小小组件文档](../guides/audiences.md#audience-size)。
 
-## 得分的客户人工智能分布 {#customer-ai-distribution-of-scores}
+## 客户人工智能得分分布 {#customer-ai-distribution-of-scores}
 
 通过此洞察回答的问题：
 
@@ -409,9 +409,9 @@ SELECT b.model_name,
 
 +++
 
-请参阅 [得分构件文档的客户人工智能分发](../guides/audiences.md#customer-ai-distribution-of-scores) 以了解有关此分析的外观和功能的信息。
+有关此洞察的外观和功能的信息，请参阅[得分构件的Customer AI分发文档](../guides/audiences.md#customer-ai-distribution-of-scores)。
 
-## 客户人工智能评分摘要 {#customer-ai-scoring-summary}
+## 客户人工智能评分汇总 {#customer-ai-scoring-summary}
 
 通过此洞察回答的问题：
 
@@ -454,13 +454,13 @@ SELECT model_name,
 
 +++
 
-请参阅 [客户人工智能评分摘要小部件文档](../guides/audiences.md#customer-ai-scoring-summary) 以了解有关此分析的外观和功能的信息。
+有关此洞察的外观和功能的信息，请参阅[客户人工智能评分摘要构件文档](../guides/audiences.md#customer-ai-scoring-summary)。
 
 ## 标识重叠 {#identity-overlap}
 
 通过此洞察回答的问题：
 
-- 两者之间的共同交集是什么 [!UICONTROL 身份类型A] 和 [!UICONTROL 身份类型B] 过滤的受众？
+- 对于过滤的受众，[!UICONTROL 标识类型A]和[!UICONTROL 标识类型B]之间的公共交叉点是什么？
 - 如何根据特定身份类型的重叠情况优化客户受众，以增强有针对性的营销策略？
 - 评估交叉区域内的营销活动绩效可以获得哪些见解？
 - 根据这些见解，如何优化未来的营销工作？
@@ -514,7 +514,7 @@ SELECT Sum(overlap_col1) overlap_col1,
 
 +++
 
-请参阅 [身份重叠构件文档](../guides/audiences.md#identity-overlap) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[身份重叠构件文档](../guides/audiences.md#identity-overlap)。
 
 ## 按标识列出的配置文件 {#profiles-by-identity}
 
@@ -542,7 +542,7 @@ SELECT qsaccel.profile_agg.adwh_dim_namespaces.namespace_description,
 
 +++
 
-请参阅 [按身份构件列出的配置文件文档](../guides/audiences.md#profiles-by-identity) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[按身份构件列出的配置文件文档](../guides/audiences.md#profiles-by-identity)。
 
 ## 计划的激活 {#scheduled-activations}
 
@@ -577,12 +577,12 @@ SELECT p.destination_platform ,
 
 +++
 
-请参阅 [计划的激活小组件文档](../guides/audiences.md#scheduled-activations) 以了解有关此分析的外观和功能的信息。
+有关此分析的外观和功能的信息，请参阅[计划激活构件文档](../guides/audiences.md#scheduled-activations)。
 
 ## 后续步骤
 
 通过阅读本文档，您现在了解了生成仪表板分析的SQL以及此分析可以解决哪些常见问题。 您现在可以对SQL进行编辑和迭代，以生成您自己的见解。
 
-请参阅 [查看SQL文档](../view-sql.md) 有关如何直接通过Platform UI调整您的分析的SQL的详细信息。
+有关如何直接通过PLatform UI调整分析的SQL的详细信息，请参阅[查看SQL文档](../view-sql.md)。
 
-您还可以阅读并了解为生成分析的SQL [配置文件](./profiles.md)， [帐户配置文件](./account-profiles.md) 和 [目标](./destinations.md) 功能板。
+您还可以阅读并了解为[配置文件](./profiles.md)、[帐户配置文件](./account-profiles.md)和[目标](./destinations.md)仪表板生成分析的SQL。

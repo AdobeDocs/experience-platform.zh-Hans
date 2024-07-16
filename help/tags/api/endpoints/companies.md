@@ -4,24 +4,24 @@ description: 了解如何在Reactor API中调用/companies端点。
 exl-id: ee435358-ed34-4e0c-93af-796133fb11fc
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '239'
+source-wordcount: '237'
 ht-degree: 3%
 
 ---
 
 # 公司端点
 
-公司代表客户组织，通常是企业。 在Reactor API中，这些公司将1:1与组织ID进行匹配。 API用户只能查看他们有权访问的公司。 公司可能包含多个 [属性](./properties.md). 资产只属于一个公司。
+公司表示客户组织，通常是企业。 在Reactor API中，这些公司将1:1与组织ID匹配。 API用户只能查看他们有权访问的公司。 公司可能包含许多[属性](./properties.md)。 资产只属于一个公司。
 
-此 `/companies` Reactor API中的端点允许您以编程方式检索您在体验应用程序中有权访问的公司。
+Reactor API中的`/companies`端点允许您以编程方式检索您在体验应用程序中有权访问的公司。
 
 ## 快速入门
 
-本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [快速入门指南](../getting-started.md) 有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续之前，请查看[快速入门指南](../getting-started.md)，以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索公司列表 {#list}
 
-您可以向以下网站发出GET请求，列出您有权使用的公司： `/companies` 端点。 在大多数情况下，只有一个。
+您可以通过向`/companies`端点发出GET请求来列出您有权使用的公司。 在大多数情况下，只有一个。
 
 **API格式**
 
@@ -31,7 +31,7 @@ GET /companies
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性筛选上市公司：<ul><li>`created_at`</li><li>`name`</li><li>`org_id`</li><li>`token`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [筛选响应](../guides/filtering.md) 了解更多信息。
+>使用查询参数，可以根据以下属性筛选上市公司：<ul><li>`created_at`</li><li>`name`</li><li>`org_id`</li><li>`token`</li><li>`updated_at`</li></ul>有关详细信息，请参阅[筛选响应](../guides/filtering.md)指南。
 
 **请求**
 
@@ -109,7 +109,7 @@ curl -X GET \
 
 ## 查找公司 {#lookup}
 
-通过在GET请求的路径中包含特定公司的ID，您可以查找该公司。
+通过在GET请求的路径中包含其ID，您可以查找特定的公司。
 
 **API格式**
 
@@ -119,7 +119,7 @@ GET /companies/{COMPANY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{COMPANY_ID}` | 此 `id` 要查找的公司的价值。 |
+| `{COMPANY_ID}` | 要查找的公司的`id`值。 |
 
 {style="table-layout:auto"}
 
@@ -137,7 +137,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回公司的详细信息。
+成功的响应将返回公司的详细信息。
 
 ```json
 {

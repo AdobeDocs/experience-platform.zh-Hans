@@ -15,7 +15,7 @@ ht-degree: 69%
 
 >[!NOTE]
 >
->Analytics标记扩展(如果经常更新，以响应对 [AppMeasurementJavaScript库](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html). 请参阅 [AppMeasurement发行说明](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans) 有关下文所述特定版本的详细信息。
+>Analytics标记扩展(如果经常为响应[AppMeasurementJavaScript库](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html)的更新而更新)。 有关下面提及的特定版本的详细信息，请参阅[AppMeasurement发行说明](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans)。
 
 ## 2024年3月4日
 
@@ -23,7 +23,7 @@ ht-degree: 69%
 
 **功能**：
 
-* 已升级到 [AppMeasurement到v2.26.0](https://github.com/adobe/appmeasurement/releases/tag/v2.26.0).
+* 已升级到[AppMeasurement到v2.26.0](https://github.com/adobe/appmeasurement/releases/tag/v2.26.0)。
 
 ## 2023年9月15日
 
@@ -31,7 +31,7 @@ ht-degree: 69%
 
 **功能**：
 
-* 已升级到 [AppMeasurement到v2.25.0](https://github.com/adobe/appmeasurement/releases/tag/v2.25.0).
+* 已升级到[AppMeasurement到v2.25.0](https://github.com/adobe/appmeasurement/releases/tag/v2.25.0)。
 
 
 ## 2023年7月19日
@@ -40,13 +40,13 @@ ht-degree: 69%
 
 **功能**：
 
-* 已升级到 [AppMeasurementv2.24.0](https://github.com/adobe/appmeasurement/releases/tag/v2.24.0).
-* 添加了可选配置(`decodeLinkParameters` 默认 `false`)来对包含双字节编码字符的链接URL进行解码。
+* 已升级到[AppMeasurementv2.24.0](https://github.com/adobe/appmeasurement/releases/tag/v2.24.0)。
+* 添加了可选配置（`decodeLinkParameters`默认`false`），该配置对包含双字节编码字符的链接URL进行解码。
 
 **错误修复**：
 
-* 为具有错误高熵的浏览器添加了其他错误处理 [用户代理客户端提示](https://experienceleague.adobe.com/docs/analytics/technotes/client-hints.html) API的。
-* 已更改 [POST](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/POST) 要使用的内容类型标头 `x-www-form-urlencoded` 默认情况下。
+* 为具有错误的高熵[用户代理客户端提示](https://experienceleague.adobe.com/docs/analytics/technotes/client-hints.html) API的浏览器添加了其他错误处理。
+* 已将[POST](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/POST) Content-Type标头更改为默认使用`x-www-form-urlencoded`。
 
 ## 2022年9月23日
 
@@ -55,7 +55,7 @@ ht-degree: 69%
 **功能**：
 
 * 已升级到AppMeasurementv2.23.0。
-* 该扩展现在可以收集高熵 [用户代理客户端提示](https://developer.mozilla.org/en-US/docs/Web/HTTP/Client_hints#user-agent_client_hints) 最新版本的AppMeasurement支持。
+* 扩展现在可以收集最新版本的AppMeasurement所支持的高熵[用户代理客户端提示](https://developer.mozilla.org/en-US/docs/Web/HTTP/Client_hints#user-agent_client_hints)。
 
 ## 2022年2月28日
 
@@ -88,7 +88,7 @@ ht-degree: 69%
 
 **错误修复**：
 
-* 已升级 [AppMeasurement到v2.22.1](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans).
+* 已将[AppMeasurement升级到v2.22.1](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans)。
 * 更新了回退linkName以镜像Activity Map逻辑而不是使用innerHTML。
 
 ## 2020 年 8 月 6 日

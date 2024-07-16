@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # Real-time Customer Data Platform Insights数据模型B2C版本
 
-的Real-time Customer Data Platform分析数据模型 [B2C版本](../../rtcdp/overview.md#rtcdp-b2c) 公开支持各种用户档案、目标和分段构件洞察的数据模型和SQL。 您可以自定义这些SQL查询模板，以便为营销和关键绩效指标(KPI)用例创建Real-Time CDP报表。 这些见解随后可用作用户定义的功能板的自定义构件。 请参阅query accelerated store报告见解文档以了解 [如何通过查询服务构建报表见解数据模型，以便与加速的商店数据和用户定义的仪表板一起使用](../../query-service/data-distiller/customizable-insights/reporting-insights-data-model.md).
+[B2C版本](../../rtcdp/overview.md#rtcdp-b2c)的Real-time Customer Data Platform Insights数据模型公开了为各种个人资料、目标和分段构件提供分析功能的数据模型和SQL。 您可以自定义这些SQL查询模板，以便为营销和关键绩效指标(KPI)用例创建Real-Time CDP报表。 这些见解随后可用作用户定义的功能板的自定义构件。 请参阅查询加速商店报告分析文档，以了解[如何通过查询服务构建报告分析数据模型，以便与加速商店数据和用户定义的仪表板一起使用](../../query-service/data-distiller/customizable-insights/reporting-insights-data-model.md)。
 
 >[!NOTE]
 >
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## 先决条件
 
-本指南要求您对 [用户定义的仪表板功能](../user-defined-dashboards.md). 在继续阅读本指南之前，请先阅读文档。
+本指南要求您对[用户定义的仪表板功能](../user-defined-dashboards.md)有一定的了解。 在继续阅读本指南之前，请先阅读文档。
 
 ## Real-Time CDP分析报告和用例
 
@@ -41,13 +41,13 @@ Real-Time CDP报表可提供有关您的配置文件数据及其与受众和目�
 
 下图包含每个数据集中的相关数据字段。
 
-![轮廓模型的ERD。](../images/cdp-insights/profile-model.png)
+![配置文件模型的ERD。](../images/cdp-insights/profile-model.png)
 
 #### 用户档案计数用例 {#profile-count}
 
-用于的逻辑 [!UICONTROL 配置文件计数] widget返回拍摄快照时配置文件存储中合并的配置文件总数。 请参阅 [[!UICONTROL 配置文件计数] 构件文档](../guides/profiles.md#profile-count) 以了解更多信息。
+用于[!UICONTROL 配置文件计数]小组件的逻辑返回拍摄快照时配置文件存储中合并的配置文件总数。 有关详细信息，请参阅[[!UICONTROL 配置文件计数]构件文档](../guides/profiles.md#profile-count)。
 
-生成 [!UICONTROL 配置文件计数] 可以在下面的可折叠部分中看到构件。
+生成[!UICONTROL 配置文件计数]构件的SQL显示在下面的可折叠部分中。
 
 +++SQL查询
 
@@ -65,9 +65,9 @@ SELECT qsaccel.profile_agg.adwh_dim_merge_policies.merge_policy_name,
 
 #### 单一身份配置文件用例 {#single-identity-profiles}
 
-用于的逻辑 [!UICONTROL 单一身份配置文件] 小组件提供贵组织只有一种类型的ID类型来创建其身份的配置文件的计数。 请参阅 [[!UICONTROL 单一身份配置文件] 构件文档](../guides/profiles.md#single-identity-profiles) 以了解更多信息。
+用于[!UICONTROL 单一身份配置文件]小组件的逻辑提供了贵组织只有一种ID类型创建其身份的配置文件的计数。 有关详细信息，请参阅[[!UICONTROL 单一身份配置文件]构件文档](../guides/profiles.md#single-identity-profiles)。
 
-生成 [!UICONTROL 单一身份配置文件] 可以在下面的可折叠部分中看到构件。
+生成[!UICONTROL 单一身份配置文件]构件的SQL将显示在下面的可折叠部分中。
 
 +++SQL查询
 
@@ -98,9 +98,9 @@ SELECT qsaccel.profile_agg.adwh_dim_merge_policies.merge_policy_name,
 
 #### 按身份用例列出的配置文件 {#profiles-by-identity}
 
-此 [!UICONTROL 按身份列出的配置文件] 构件显示您的配置文件存储中所有合并配置文件的身份细分。 请参阅 [[!UICONTROL 按身份列出的配置文件] 构件文档](../guides/profiles.md#profiles-by-identity) 以了解更多信息。
+[!UICONTROL 按身份列出的配置文件]构件显示配置文件存储中所有合并配置文件的身份划分。 有关详细信息，请参阅[[!UICONTROL 按身份列出的配置文件]构件文档](../guides/profiles.md#profiles-by-identity)。
 
-生成 [!UICONTROL 按身份列出的配置文件] 可以在下面的可折叠部分中看到构件。
+下面的可折叠部分中显示了按标识]构件生成[!UICONTROL 配置文件的SQL。
 
 +++SQL查询
 
@@ -122,9 +122,9 @@ SELECT qsaccel.profile_agg.adwh_dim_namespaces.namespace_description,
 
 #### 按身份用例的单一身份配置文件 {#single-identity-profiles-by-identity}
 
-用于的逻辑 [!UICONTROL 按身份列出的单一身份配置文件] 构件说明仅使用单个唯一标识符标识的用户档案总数。 请参阅 [按身份构件文档的单一身份配置文件](../guides/profiles.md#single-identity-profiles-by-identity) 以了解更多信息。
+用于[!UICONTROL 按身份列出的单一身份配置文件]小组件的逻辑说明了仅使用单个唯一标识符识别的配置文件总数。 有关详细信息，请参阅[按身份小部件列出的单一身份配置文件](../guides/profiles.md#single-identity-profiles-by-identity)。
 
-生成 [!UICONTROL 按身份列出的单一身份配置文件] 可以在下面的可折叠部分中看到构件。
+下面的可折叠部分中显示了通过标识]构件生成[!UICONTROL 单一标识配置文件的SQL。
 
 +++SQL查询
 
@@ -157,13 +157,13 @@ SELECT qsaccel.profile_agg.adwh_dim_namespaces.namespace_description,
 
 下图包含每个数据集中的相关数据字段。
 
-![受众模型的ERD](../images/cdp-insights/audience-model.png)
+![受众模型的ERD。](../images/cdp-insights/audience-model.png)
 
 #### 受众规模用例 {#audience-size}
 
-用于的逻辑 [!UICONTROL 受众规模] 构件会返回在生成最新快照时选定受众中合并的配置文件总数。 请参阅 [[!UICONTROL 受众规模] 构件文档](../guides/audiences.md#audience-size) 以了解更多信息。
+用于[!UICONTROL 受众大小]小组件的逻辑返回在最近生成快照时选定受众中合并的配置文件总数。 有关详细信息，请参阅[[!UICONTROL 受众大小]构件文档](../guides/audiences.md#audience-size)。
 
-生成 [!UICONTROL 受众规模] 可以在下面的可折叠部分中看到构件。
+生成[!UICONTROL 受众大小]构件的SQL显示在下面的可折叠部分中。
 
 +++SQL查询
 
@@ -185,9 +185,9 @@ WHERE
 
 #### 受众规模变化趋势用例 {#audience-size-change-trend}
 
-用于的逻辑 [!UICONTROL 受众规模变化趋势] 构件以折线图说明了最近每日快照之间符合给定受众条件的配置文件总数的差异。 请参阅 [[!UICONTROL 受众规模变化趋势] 构件文档](../guides/audiences.md#audience-size-change-trend) 以了解更多信息。
+用于[!UICONTROL 受众规模变化趋势]小组件的逻辑以折线图形式显示了最近每日快照之间符合给定受众条件的配置文件总数的差异。 有关详细信息，请参阅[[!UICONTROL 受众规模变化趋势]构件文档](../guides/audiences.md#audience-size-change-trend)。
 
-生成 [!UICONTROL 受众规模变化趋势] 可以在下面的可折叠部分中看到构件。
+生成[!UICONTROL 受众规模变化趋势]构件的SQL将显示在下面的可折叠部分中。
 
 +++SQL查询
 
@@ -222,9 +222,9 @@ SELECT date_key,
 
 #### 最常用的目标用例 {#most-used-destinations}
 
-中使用的逻辑 [!UICONTROL 最常用的目标] 构件根据映射到贵组织最常用目标的受众数量列出这些目标。 此排名可让您深入了解哪些目标正在被利用，同时还可能会显示那些可能未被充分利用的目标。 请参阅有关以下内容的文档 [[!UICONTROL 最常用的目标] 构件](../guides/destinations.md#most-used-destinations) 以了解更多信息。
+[!UICONTROL 最常用的目标]构件中使用的逻辑根据映射到贵组织最常用的目标的受众数量列出这些目标。 此排名可让您深入了解哪些目标正在被利用，同时还可能会显示那些可能未被充分利用的目标。 有关详细信息，请参阅有关[[!UICONTROL 最常用的目标]小组件](../guides/destinations.md#most-used-destinations)的文档。
 
-生成 [!UICONTROL 最常用的目标] 可以在下面的可折叠部分中看到构件。
+生成[!UICONTROL 最常用的目标]构件的SQL显示在下面的可折叠部分中。
 
 +++SQL查询
 
@@ -247,9 +247,9 @@ SELECT qsaccel.profile_agg.adwh_dim_destination.destination_name,
 
 #### 最近激活的受众用例 {#recently-activated-audiences}
 
-的逻辑 [!UICONTROL 最近激活的受众] 构件提供最近映射到目标的受众列表。 此列表提供系统中正在积极使用的受众和目标快照，并帮助对任何错误的映射进行故障诊断。 请参阅 [[!UICONTROL 最近激活的受众] 构件文档](../guides/destinations.md#recently-activated-audiences) 以了解更多信息。
+[!UICONTROL 最近激活的受众]小组件的逻辑提供了最近映射到目标的受众列表。 此列表提供系统中正在积极使用的受众和目标快照，并帮助对任何错误的映射进行故障诊断。 有关详细信息，请参阅[[!UICONTROL 最近激活的受众]构件文档](../guides/destinations.md#recently-activated-audiences)。
 
-生成 [!UICONTROL 最近激活的受众] 可以在下面的可折叠部分中看到构件。
+生成[!UICONTROL 最近激活的受众]构件的SQL将显示在下面的可折叠部分中。
 
 +++SQL查询
 
@@ -291,9 +291,9 @@ namespace-audience模型包含以下数据集：
 
 #### 受众用例的按身份列出的配置文件 {#audience-profiles-by-identity}
 
-中使用的逻辑 [!UICONTROL 按身份列出的配置文件] 小组件提供给定受众的个人资料存储中所有合并个人资料的身份细分。 请参阅 [[!UICONTROL 按身份列出的配置文件] 构件文档](../guides/audiences.md#profiles-by-identity) 以了解更多信息。
+在[!UICONTROL 按身份列出的配置文件]小部件中使用的逻辑对给定受众的个人资料存储中的所有合并配置文件进行了身份划分。 有关详细信息，请参阅[[!UICONTROL 按身份列出的配置文件]构件文档](../guides/audiences.md#profiles-by-identity)。
 
-生成 [!UICONTROL 按身份列出的配置文件] 可以在下面的可折叠部分中看到构件。
+下面的可折叠部分中显示了按标识]构件生成[!UICONTROL 配置文件的SQL。
 
 +++SQL查询
 
@@ -327,9 +327,9 @@ SELECT qsaccel.profile_agg.adwh_dim_namespaces.namespace_description,
 
 #### 身份重叠（配置文件）用例 {#profiles-identity-overlap}
 
-中使用的逻辑 [!UICONTROL 身份重叠] 小组件显示您的配置文件中重叠的 **配置文件存储** 包含两个所选身份的文件。 欲了解更多信息，请参见 [[!UICONTROL 身份重叠] 的小组件部分 [!UICONTROL 配置文件] 仪表板文档](../guides/profiles.md#identity-overlap).
+[!UICONTROL 身份重叠]构件中使用的逻辑显示&#x200B;**配置文件存储区**&#x200B;中包含两个选定身份的配置文件重叠。 有关详细信息，请参阅[!UICONTROL 配置文件]仪表板文档](../guides/profiles.md#identity-overlap)的[[!UICONTROL 身份重叠]小组件部分。
 
-生成 [!UICONTROL 身份重叠] 可以在下面的可折叠部分中看到构件。
+生成[!UICONTROL 标识重叠]构件的SQL显示在下面的可折叠部分中。
 
 +++SQL查询
 
@@ -396,9 +396,9 @@ SELECT Sum(overlap_col1) overlap_col1,
 
 #### 身份重叠（受众）用例 {#audiences-identity-overlap}
 
-中使用的逻辑 [!UICONTROL 受众] 仪表板 [!UICONTROL 身份重叠] 构件展示包含特定受众的两个选定身份的用户档案重叠。 欲了解更多信息，请参见 [[!UICONTROL 身份重叠] 的小组件部分 [!UICONTROL 受众] 仪表板文档](../guides/audiences.md#identity-overlap).
+[!UICONTROL 受众]仪表板[!UICONTROL 身份重叠]小组件中使用的逻辑说明了包含特定受众的两个选定身份的配置文件重叠。 有关详细信息，请参阅[!UICONTROL 受众]仪表板文档](../guides/audiences.md#identity-overlap)的[[!UICONTROL 身份重叠]小组件部分。
 
-生成 [!UICONTROL 身份重叠] 可以在下面的可折叠部分中看到构件。
+生成[!UICONTROL 标识重叠]构件的SQL显示在下面的可折叠部分中。
 
 +++SQL查询
 

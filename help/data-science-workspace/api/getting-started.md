@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；开发人员指南；端点；数据科学工作区；热门主题；数据科学工作区；数据科学
+keywords: Experience Platform；开发人员指南；端点；数据科学Workspace；热门主题；数据科学工作区；数据科学
 solution: Experience Platform
 title: Sensei机器学习API指南
-description: Sensei机器学习API允许开发人员对各种数据科学工作区资源执行CRUD操作。 参阅本指南，了解如何使用 API 执行关键操作。
+description: Sensei机器学习API允许开发人员对各种数据科学Workspace资源执行CRUD操作。 参阅本指南，了解如何使用 API 执行关键操作。
 role: Developer
 exl-id: d51d0eb2-b1e9-4cc1-889a-9487395703b0
 source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
@@ -14,23 +14,23 @@ ht-degree: 14%
 
 # [!DNL Sensei Machine Learning] API指南
 
-此 [!DNL Sensei Machine Learning] API为数据科学家提供了一种组织和管理机器学习服务的机制，从算法载入到实验，再到服务部署。
+[!DNL Sensei Machine Learning] API为数据科学家提供了一种机制，可用于组织和管理机器学习服务，从算法载入到实验，再到服务部署。
 
-本开发人员指南提供了帮助您开始使用 [Sensei机器学习API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml)、和演示了对各种Data Science Workspace资源执行CRUD操作的API调用。
+本开发人员指南提供了帮助您开始使用[Sensei机器学习API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml)的步骤，并演示了对各种数据科学Workspace资源执行CRUD操作的API调用。
 
 ## 快速入门
 
-您必须完成 [身份验证](https://www.adobe.com/go/platform-api-authentication-en) 本教程中，用于访问以下请求标头以调用 [!DNL Adobe Experience Platform] API：
+您需要完成[身份验证](https://www.adobe.com/go/platform-api-authentication-en)教程才能访问以下请求标头以调用[!DNL Adobe Experience Platform] API：
 
-* 授权：持有者 `{ACCESS_TOKEN}`
+* 授权：持有人`{ACCESS_TOKEN}`
 * x-api-key： `{API_KEY}`
 * x-gw-ims-org-id： `{ORG_ID}`
 
-中的所有资源 [!DNL Experience Platform] 被隔离到特定的虚拟沙盒中。 所有请求 [!DNL Platform] API需要一个标头，该标头应指定将在其中执行操作的沙盒的名称：
+[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 * x-sandbox-name： `{SANDBOX_NAME}`
 
-有关中沙箱的详细信息 [!DNL Platform]，请参见 [沙盒概述文档](../../sandboxes/home.md).
+有关[!DNL Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
 
 包含负载 (POST、PUT、PATCH) 的所有请求都需要额外的标头：
 
@@ -42,7 +42,7 @@ ht-degree: 14%
 
 * [引擎](./engines.md)
 * [试验](./experiments.md)
-* [见解](./insights.md)
+* [Insights](./insights.md)
 * [MLInstances（配方）](./mlinstances.md)
 * [MLServices](./mlservices.md)
 * [模型](./models.md)

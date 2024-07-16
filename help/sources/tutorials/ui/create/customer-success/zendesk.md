@@ -1,71 +1,71 @@
 ---
-title: 在UI中创建Zendesk源连接
+title: 在UI中创建Zendesk Source连接
 description: 了解如何使用Adobe Experience Platform用户界面创建Zendesk源连接。
 exl-id: 75d303b0-2dcd-4202-987c-fe3400398d90
 source-git-commit: 6f8abca8f0db8a559fe62e6c143f2d0506d3b886
 workflow-type: tm+mt
-source-wordcount: '764'
+source-wordcount: '736'
 ht-degree: 7%
 
 ---
 
-# 创建 [!DNL Zendesk] UI中的源连接
+# 在用户界面中创建[!DNL Zendesk]源连接
 
-本教程提供了用于创建 [!DNL Zendesk] 源连接，使用Adobe Experience Platform用户界面。
+本教程提供了使用Adobe Experience Platform用户界面创建[!DNL Zendesk]源连接的步骤。
 
 ## 快速入门
 
 本教程需要对以下Adobe Experience Platform组件有一定的了解：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
-   * [模式组合基础](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
+   * [架构组合的基础知识](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
 
 ### 收集所需的凭据
 
-要访问 [!DNL Zendesk] 帐户，则必须提供以下凭据的值：
+要在Platform上访问您的[!DNL Zendesk]帐户，必须提供以下凭据的值：
 
 | 凭据 | 描述 | 示例 |
 | --- | --- | --- |
 | Subdomain | 在注册过程中创建的特定于您帐户的唯一域。 | `yoursubdomain` |
 | 访问令牌 | Zendesk API令牌。 | `0lZnClEvkJSTQ7olGLl7PMhVq99gu26GTbJtf` |
 
-有关验证您的身份的详细信息 [!DNL Zendesk] 源，请参见 [[!DNL Zendesk] 源概述](../../../../connectors/customer-success/zendesk.md).
+有关验证[!DNL Zendesk]源的更多信息，请参阅[[!DNL Zendesk] 源概述](../../../../connectors/customer-success/zendesk.md)。
 
 ![Zendesk API令牌](../../../../images/tutorials/create/zendesk/zendesk-api-tokens.png)
 
-### 为创建平台架构 [!DNL Zendesk]
+### 为[!DNL Zendesk]创建平台架构
 
-创建之前 [!DNL Zendesk] 源连接时，还必须确保首先创建用于源的Platform架构。 请参阅上的教程 [创建平台架构](../../../../../xdm/schema/composition.md) 以了解有关如何创建模式的完整步骤。
+在创建[!DNL Zendesk]源连接之前，还必须确保首先创建用于源的Platform架构。 有关如何创建架构的完整步骤，请参阅有关[创建平台架构](../../../../../xdm/schema/composition.md)的教程。
 
-欲知有关 [!DNL Zendesk] 架构对于 [!DNL Zendesk Search API]，请参阅 [限制](#limits) 部分。
+有关[!DNL Zendesk Search API]所需的[!DNL Zendesk]架构的其他指导，请参阅下面的[限制](#limits)部分。
 
 ![创建架构](../../../../images/tutorials/create/zendesk/schema.png)
 
-## 连接您的 [!DNL Zendesk] 帐户
+## 连接您的[!DNL Zendesk]帐户
 
-在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示了多种来源，您可以使用这些来源创建帐户。
+在Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
-在 *客户成功* 类别，选择 **[!UICONTROL Zendesk]**，然后选择 **[!UICONTROL 添加数据]**.
+在&#x200B;*客户成功*&#x200B;类别下，选择&#x200B;**[!UICONTROL Zendesk]**，然后选择&#x200B;**[!UICONTROL 添加数据]**。
 
 ![目录](../../../../images/tutorials/create/zendesk/catalog.png)
 
-此 **[!UICONTROL 连接Zendesk帐户]** 页面。 在此页上，您可以使用新凭据或现有凭据。
+出现&#x200B;**[!UICONTROL 连接Zendesk帐户]**&#x200B;页面。 在此页上，您可以使用新凭据或现有凭据。
 
-### 现有帐户
+### 现有账户
 
-要使用现有帐户，请选择 *Zendesk* 要用于创建新数据流的帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
+若要使用现有帐户，请选择您要用来创建新数据流的&#x200B;*Zendesk*&#x200B;帐户，然后选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
 
 ![现有](../../../../images/tutorials/create/zendesk/existing.png)
 
 ### 新帐户
 
-如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后提供名称、可选描述和您的凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后等待一段时间以建立新连接。
+如果要创建新帐户，请选择&#x200B;**[!UICONTROL 新建帐户]**，然后提供名称、可选描述和凭据。 完成后，选择&#x200B;**[!UICONTROL 连接到源]**，然后留出一些时间来建立新连接。
 
-![新建](../../../../images/tutorials/create/zendesk/new.png)
+![新](../../../../images/tutorials/create/zendesk/new.png)
 
 ### 选择数据
 
@@ -75,17 +75,17 @@ ht-degree: 7%
 
 ## 后续步骤
 
-通过学习本教程，您已验证并创建了 [!DNL Zendesk] 帐户和平台。 您现在可以继续下一教程和 [创建数据流以将客户成功数据引入Platform](../../dataflow/customer-success.md).
+通过学习本教程，您已验证并创建了[!DNL Zendesk]帐户和平台之间的源连接。 您现在可以继续下一教程并[创建数据流以将客户成功数据导入Platform](../../dataflow/customer-success.md)。
 
 ## 其他资源
 
-以下各节提供了在使用时，您可以参考的其他资源 [!DNL Zendesk] 源。
+以下部分提供了在使用[!DNL Zendesk]源时可以参考的其他资源。
 
 ### 验证 {#validation}
 
-下面概述了验证是否成功连接 [!DNL Zendesk] 来源和 [!DNL Zendesk] 配置文件正在被摄取到Platform。
+下面概述了验证是否成功连接[!DNL Zendesk]源以及是否正在将[!DNL Zendesk]配置文件摄取到Platform可以采取的步骤。
 
-在Platform UI中，选择 **[!UICONTROL 数据集]** 从左侧导航访问 [!UICONTROL 数据集] 工作区。 此 [!UICONTROL 数据集活动] 屏幕显示执行的详细信息。
+在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以访问[!UICONTROL 数据集]工作区。 [!UICONTROL 数据集活动]屏幕显示执行的详细信息。
 
 ![活动页面](../../../../images/tutorials/create/zendesk/dataset-activity.png)
 
@@ -93,11 +93,11 @@ ht-degree: 7%
 
 ![数据流页面](../../../../images/tutorials/create/zendesk/dataflow-monitoring.png)
 
-最后，选择 **[!UICONTROL 预览数据集]** 以显示所摄取的数据。
+最后，选择&#x200B;**[!UICONTROL 预览数据集]**&#x200B;以显示已摄取的数据。
 
 ![Zendesk数据集](../../../../images/tutorials/create/zendesk/preview-dataset.png)
 
-您还可以根据以下网站上的数据验证Platform数据： [!DNL Zendesk] > [!DNL Customers] 页面。
+您还可以根据[!DNL Zendesk] > [!DNL Customers]页面上的数据验证您的Platform数据。
 
 ![zendesk-customers](../../../../images/tutorials/create/zendesk/zendesk-customers.png)
 
@@ -107,7 +107,7 @@ ht-degree: 7%
 
 >[!TIP]
 >
->请参阅 [Zendesk搜索API >导出搜索结果](https://developer.zendesk.com/api-reference/ticketing/ticket-management/search/#export-search-results) 以了解有关API的更多信息。
+>有关API的更多信息，请参阅[Zendesk Search API >导出搜索结果](https://developer.zendesk.com/api-reference/ticketing/ticket-management/search/#export-search-results)。
 
 | 来源 | 类型 |
 |---|---|
@@ -132,13 +132,13 @@ ht-degree: 7%
 | `results.phone` | 字符串 |
 | `results.photo` | 字符串 |
 | `results.report_csv` | 布尔值 |
-| `results.restricted_agent` | 布尔型 |
+| `results.restricted_agent` | 布尔值 |
 | `results.result_type` | 字符串 |
 | `results.role` | 字符串 |
 | `results.role_type` | 整数 |
 | `results.shared` | 布尔值 |
-| `results.shared_agent` | 布尔型 |
-| `results.shared_phone_number` | 布尔型 |
+| `results.shared_agent` | 布尔值 |
+| `results.shared_phone_number` | 布尔值 |
 | `results.signature` | 字符串 |
 | `results.suspended` | 布尔值 |
 | `results.ticket_restriction` | 字符串 |
@@ -152,8 +152,8 @@ ht-degree: 7%
 
 ### 限制 {#limits}
 
-* 此 [Zendesk搜索API >导出搜索结果](https://developer.zendesk.com/api-reference/ticketing/ticket-management/search/#export-search-results) 每页最多返回1000条记录。
-   * 的值 ``filter[type]`` 参数设置为 ``user`` 因此，Zendesk连接仅返回用户。
-   * 每页的结果数由 ``page[size]`` 参数。 该值设置为 ``100``. 这样做是为了减少Zendesk设置的减速限制的影响。
-   * 请参阅 [限制](https://developer.zendesk.com/api-reference/ticketing/ticket-management/search/#limits) 和 [分页](https://developer.zendesk.com/api-reference/ticketing/ticket-management/search/#pagination-1).
-   * 您还可以参阅 [使用光标分页来分页列表](https://developer.zendesk.com/documentation/developer-tools/pagination/paginating-through-lists-using-cursor-pagination/).
+* [Zendesk搜索API >导出搜索结果](https://developer.zendesk.com/api-reference/ticketing/ticket-management/search/#export-search-results)每页最多返回1000条记录。
+   * ``filter[type]``参数的值设置为``user``，因此Zendesk连接仅返回用户。
+   * 每页的结果数由``page[size]``参数管理。 值设置为``100``。 这样做是为了减少Zendesk设置的减速限制的影响。
+   * 查看[限制](https://developer.zendesk.com/api-reference/ticketing/ticket-management/search/#limits)和[分页](https://developer.zendesk.com/api-reference/ticketing/ticket-management/search/#pagination-1)。
+   * 您还可以参考[使用游标分页](https://developer.zendesk.com/documentation/developer-tools/pagination/paginating-through-lists-using-cursor-pagination/)对列表进行分页。

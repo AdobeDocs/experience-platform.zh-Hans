@@ -6,33 +6,33 @@ description: 架构注册表API中的/behaviors端点允许您检索全局容器
 exl-id: 3b45431f-1d55-4279-8b62-9b27863885ec
 source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
-source-wordcount: '425'
+source-wordcount: '417'
 ht-degree: 2%
 
 ---
 
 # 行为端点
 
-在Experience Data Model (XDM)中，行为定义模式描述的数据的性质。 每个XDM类都必须引用一个特定行为，使用该类的所有架构都将继承该行为。 对于Platform中的几乎所有用例，有两种可用行为：
+在Experience Data Model (XDM)中，行为定义架构描述的数据的性质。 每个XDM类都必须引用一个特定行为，使用该类的所有架构都将继承该行为。 对于Platform中的几乎所有用例，有两种可用行为：
 
 * **[!UICONTROL 记录]**：提供有关主题属性的信息。 主体可以是组织，也可以是个人。
-* **[!UICONTROL 时间序列]**：提供记录主体直接或间接执行操作时的系统快照。
+* **[!UICONTROL 时间序列]**：提供记录主体直接或间接执行操作时系统的快照。
 
 >[!NOTE]
 >
->Platform中的一些用例需要使用未采用上述任一行为的架构。 对于这些情况，还有第三种“临时”行为可用。 请参阅上的教程 [创建临时架构](../tutorials/ad-hoc.md) 了解更多信息。
+>Platform中的一些用例需要使用未采用上述任一行为的架构。 对于这些情况，还有第三种“临时”行为可用。 有关详细信息，请参阅有关[创建临时架构](../tutorials/ad-hoc.md)的教程。
 >
->有关数据行为如何影响架构组合的更多常规信息，请参阅 [模式组合基础](../schema/composition.md).
+>有关数据行为如何影响架构合成的更多常规信息，请参阅[架构合成基础知识](../schema/composition.md)指南。
 
-此 `/behaviors` 中的端点 [!DNL Schema Registry] API允许您查看 `global` 容器。
+[!DNL Schema Registry] API中的`/behaviors`端点允许您查看`global`容器中的可用行为。
 
 ## 快速入门
 
-本指南中使用的端点是 [[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/behavior-registry.yaml). 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接，请参阅本文档中的示例API调用指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+本指南中使用的终结点是[[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/behavior-registry.yaml)的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
 
 ## 检索行为列表 {#list}
 
-您可以通过对以下对象发出GET请求，检索所有可用行为的列表： `/behaviors` 端点。
+您可以通过向`/behaviors`端点发出GET请求来检索所有可用行为的列表。
 
 **API格式**
 
@@ -89,7 +89,7 @@ curl -X GET \
 
 ## 查找行为 {#lookup}
 
-通过在GET请求的路径中提供特定行为的ID，您可以查找特定行为 `/behaviors` 端点。
+通过在`/behaviors`终结点的GET请求路径中提供特定行为的ID，您可以查找该行为。
 
 **API格式**
 
@@ -99,13 +99,13 @@ GET /global/behaviors/{BEHAVIOR_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BEHAVIOR_ID}` | 此 `meta:altId` 或URL编码 `$id` 您想要查找的行为。 |
+| `{BEHAVIOR_ID}` | 要查找的行为的`meta:altId`或URL编码的`$id`。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求通过提供以下内容来检索记录行为的详细信息： `meta:altId` 在请求路径中。
+以下请求通过在请求路径中提供其`meta:altId`来检索记录行为的详细信息。
 
 ```shell
 curl -X GET \
@@ -172,4 +172,4 @@ curl -X GET \
 
 ## 后续步骤
 
-本指南涵盖了 `/behaviors` 中的端点 [!DNL Schema Registry] API。 要了解如何使用API将行为分配给类，请参阅 [类端点指南](./classes.md).
+本指南介绍了[!DNL Schema Registry] API中`/behaviors`端点的使用。 要了解如何使用API将行为分配给类，请参阅[类端点指南](./classes.md)。

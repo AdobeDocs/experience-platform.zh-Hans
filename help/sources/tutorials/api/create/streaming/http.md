@@ -11,24 +11,24 @@ ht-degree: 3%
 ---
 
 
-# 使用创建HTTP API流连接 [!DNL Flow Service] API
+# 使用[!DNL Flow Service] API创建HTTP API流连接
 
 流量服务用于收集和集中Adobe Experience Platform中来自不同来源的客户数据。 该服务提供了一个用户界面和RESTful API，所有受支持的源均可从该API连接。
 
-本教程使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/) 引导您完成使用创建流连接的步骤。 [!DNL Flow Service] API。
+本教程使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)引导您完成使用[!DNL Flow Service] API创建流连接的步骤。
 
 ## 快速入门
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [[!DNL Experience Data Model (XDM)]](../../../../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Platform] 组织体验数据。
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，实时提供统一的用户配置文件。
+* [[!DNL Experience Data Model (XDM)]](../../../../../xdm/home.md)： [!DNL Platform]用于组织体验数据的标准化框架。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，实时提供统一的使用者配置文件。
 
-此外，创建流连接需要您具有目标XDM架构和数据集。 要了解如何创建这些组件，请阅读关于的教程 [流记录数据](../../../../../ingestion/tutorials/streaming-record-data.md) 或上的教程 [流式时间序列数据](../../../../../ingestion/tutorials/streaming-time-series-data.md).
+此外，创建流连接需要您具有目标XDM架构和数据集。 要了解如何创建这些数据，请阅读有关[流式处理记录数据](../../../../../ingestion/tutorials/streaming-record-data.md)的教程或有关[流式处理时间序列数据](../../../../../ingestion/tutorials/streaming-time-series-data.md)的教程。
 
 ### 使用平台API
 
-有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
+有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../../landing/api-guide.md)指南。
 
 ## 创建基本连接
 
@@ -38,7 +38,7 @@ ht-degree: 3%
 
 未经身份验证的连接是标准的流连接，当您想要将数据流式传输到Platform中时，可以创建。
 
-要创建未经身份验证的基本连接，请向以下地址发出POST请求： `/connections` 端点，同时为您的连接提供名称、数据类型和HTTP API连接规范ID。 此ID为 `bc7b00d6-623a-4dfc-9fdb-f1240aeadaeb`.
+要创建未经身份验证的基本连接，请在提供连接的名称、数据类型和HTTP API连接规范ID的同时向`/connections`端点发出POST请求。 此ID为`bc7b00d6-623a-4dfc-9fdb-f1240aeadaeb`。
 
 **API格式**
 
@@ -108,8 +108,8 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
 | --- | --- |
 | `name` | 基础连接的名称。 请确保该名称是描述性的，因为您可以使用此名称查找基础连接上的信息。 |
 | `description` | （可选）可包含的资产，用于提供有关基本连接的更多信息。 |
-| `connectionSpec.id` | 与HTTP API对应的连接规范ID。 此ID为 `bc7b00d6-623a-4dfc-9fdb-f1240aeadaeb`. |
-| `auth.params.dataType` | 流连接的数据类型。 支持的值包括： `xdm` 和 `raw`. |
+| `connectionSpec.id` | 与HTTP API对应的连接规范ID。 此ID为`bc7b00d6-623a-4dfc-9fdb-f1240aeadaeb`。 |
+| `auth.params.dataType` | 流连接的数据类型。 支持的值包括： `xdm`和`raw`。 |
 | `auth.params.name` | 要创建的流连接的名称。 |
 
 **响应**
@@ -125,14 +125,14 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `id` | 此 `id` 新创建的基本连接的属性。 |
+| `id` | 新创建的基本连接的`id`。 |
 | `etag` | 分配给连接的标识符，用于指定基本连接的版本。 |
 
 ### 已验证的连接
 
 当您需要区分来自受信任来源和不受信任来源的记录时，应使用经过身份验证的连接。 用户如果希望发送包含个人身份信息(PII)的信息，则应在将信息流式传输到Platform时创建一个经过身份验证的连接。
 
-要创建经过验证的基本连接，您必须包括 `authenticationRequired` 请求中的参数，并将其值指定为 `true`. 在此步骤中，您还可以为已验证的基本连接提供源ID。 此参数是可选的，将使用与 `name` 属性（如果未提供）。
+要创建经过身份验证的基本连接，您必须在请求中包含`authenticationRequired`参数，并将其值指定为`true`。 在此步骤中，您还可以为已验证的基本连接提供源ID。 此参数是可选的，如果未提供，它将使用与`name`属性相同的值。
 
 
 **API格式**
@@ -207,8 +207,8 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `auth.params.sourceId` | 创建经过身份验证的基本连接时可以使用的其他标识符。 此参数是可选的，将使用与 `name` 属性（如果未提供）。 |
-| `auth.params.authenticationRequired` | 此参数指定流连接是否需要身份验证。 如果 `authenticationRequired` 设置为 `true` 则必须为流连接提供身份验证。 如果 `authenticationRequired` 设置为 `false` 则不需要身份验证。 |
+| `auth.params.sourceId` | 创建经过身份验证的基本连接时可以使用的其他标识符。 此参数是可选的，如果未提供，它将使用与`name`属性相同的值。 |
+| `auth.params.authenticationRequired` | 此参数指定流连接是否需要身份验证。 如果`authenticationRequired`设置为`true`，则必须为流连接提供身份验证。 如果`authenticationRequired`设置为`false`，则不需要身份验证。 |
 
 **响应**
 
@@ -233,7 +233,7 @@ GET /flowservice/connections/{BASE_CONNECTION_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BASE_CONNECTION_ID}` | 此 `id` 您之前创建的连接的值。 |
+| `{BASE_CONNECTION_ID}` | 您之前创建的连接的`id`值。 |
 
 **请求**
 
@@ -247,7 +247,7 @@ curl -X GET https://platform.adobe.io/data/foundation/flowservice/connections/{B
 
 **响应**
 
-成功的响应返回HTTP状态200，其中包含有关所请求连接的详细信息。 流式端点URL自动随连接一起创建，并且可以使用进行检索。 `inletUrl` 值。
+成功的响应返回HTTP状态200，其中包含有关所请求连接的详细信息。 流端点URL自动创建连接，可以使用`inletUrl`值检索。
 
 ```json
 {
@@ -290,7 +290,7 @@ curl -X GET https://platform.adobe.io/data/foundation/flowservice/connections/{B
 
 ## 创建源连接 {#source}
 
-POST要创建源连接，请向 `/sourceConnections` 端点提供基本连接ID。
+要创建源连接，请在提供基本连接ID的同时向`/sourceConnections`端点发出POST请求。
 
 **API格式**
 
@@ -334,19 +334,19 @@ curl -X POST \
 
 为了在Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。
 
-可以通过向以下对象执行POST请求来创建目标XDM架构 [架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
+通过向[架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)执行POST请求，可以创建目标XDM架构。
 
-有关如何创建目标XDM架构的详细步骤，请参阅关于的教程 [使用API创建架构](../../../../../xdm/api/schemas.md).
+有关如何创建目标XDM架构的详细步骤，请参阅有关使用API [创建架构的教程](../../../../../xdm/api/schemas.md)。
 
 ### 创建目标数据集 {#target-dataset}
 
-可以通过向执行POST请求来创建目标数据集 [目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，在有效负载中提供目标架构的ID。
+可以通过向[目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)执行POST请求，在有效负载中提供目标架构的ID来创建目标数据集。
 
-有关如何创建目标数据集的详细步骤，请参阅关于的教程 [使用API创建数据集](../../../../../catalog/api/create-dataset.md).
+有关如何创建目标数据集的详细步骤，请参阅有关[使用API创建数据集的教程](../../../../../catalog/api/create-dataset.md)。
 
 ## 创建目标连接 {#target}
 
-目标连接表示与所摄取数据所登陆的目标之间的连接。 要创建Target连接，请向发出POST请求 `/targetConnections` 同时为您的目标数据集和目标XDM架构提供ID。 在此步骤中，您还必须提供数据湖连接规范ID。 此ID为 `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
+目标连接表示与所摄取数据所登陆的目标之间的连接。 要创建目标连接，请在为目标数据集和目标XDM架构提供ID时向`/targetConnections`发出POST请求。 在此步骤中，您还必须提供数据湖连接规范ID。 此ID为`c604ff05-7f1a-43c0-8e18-33bf874cb11c`。
 
 **API格式**
 
@@ -385,7 +385,7 @@ curl -X POST \
 
 **响应**
 
-成功响应会返回HTTP状态201，其中包含新创建的目标连接的详细信息，包括其唯一标识符(`id`)。
+成功的响应返回HTTP状态201，其中包含新创建的目标连接的详细信息，包括其唯一标识符(`id`)。
 
 ```json
 {
@@ -398,7 +398,7 @@ curl -X POST \
 
 要将源数据摄取到目标数据集中，必须首先将其映射到目标数据集所遵循的目标架构。
 
-POST要创建映射集，请向 `mappingSets` 的端点 [[!DNL Data Prep] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-prep.yaml) 提供目标XDM架构时 `$id` 以及要创建的映射集的详细信息。
+要创建映射集，请在提供目标XDM架构`$id`和要创建的映射集的详细信息时，向[[!DNL Data Prep] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-prep.yaml)的`mappingSets`端点发出POST请求。
 
 **API格式**
 
@@ -439,11 +439,11 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `xdmSchema` | 此 `$id` 目标XDM架构的。 |
+| `xdmSchema` | 目标XDM架构的`$id`。 |
 
 **响应**
 
-成功响应将返回新创建映射的详细信息，包括其唯一标识符(`id`)。 此ID是稍后步骤创建数据流所必需的。
+成功的响应返回新创建的映射的详细信息，包括其唯一标识符(`id`)。 此ID是稍后步骤创建数据流所必需的。
 
 ```json
 {
@@ -458,7 +458,7 @@ curl -X POST \
 
 ## 创建数据流
 
-创建源和目标连接后，您现在可以创建数据流。 数据流负责从源中计划和收集数据。 您可以通过对以下对象执行POST请求来创建数据流 `/flows` 端点。
+创建源和目标连接后，您现在可以创建数据流。 数据流负责从源中计划和收集数据。 您可以通过对`/flows`端点执行POST请求来创建数据流。
 
 **API格式**
 
@@ -470,7 +470,7 @@ POST /flows
 
 >[!BEGINTABS]
 
->[!TAB 不进行转换]
+>[!TAB 没有转换]
 
 以下请求为HTTP API创建流式数据流，而不进行数据转换。
 
@@ -498,11 +498,11 @@ curl -X POST \
     }'
 ```
 
->[!TAB 具有转换]
+>[!TAB 包含转换]
 
 以下请求为HTTP API创建一个流数据流，并将映射转换应用于您的数据。
 
-在创建包含转换的数据流时， `name` 无法更改参数。 此值必须始终设置为 `Mapping`.
+创建包含转换的数据流时，无法更改`name`参数。 此值必须始终设置为`Mapping`。
 
 ```shell
 curl -X POST \
@@ -543,14 +543,14 @@ curl -X POST \
 | --- | --- |
 | `name` | 您的数据流的名称。 确保数据流的名称是描述性的，因为您可以使用此名称查找数据流上的信息。 |
 | `description` | （可选）可包含的属性，用于提供有关数据流的更多信息。 |
-| `flowSpec.id` | 的流规范ID [!DNL HTTP API]. 要创建包含转换的数据流，您必须使用  `c1a19761-d2c7-4702-b9fa-fe91f0613e81`. 要创建不进行转换的数据流，请使用 `d8a6f005-7eaf-4153-983e-e8574508b877`. |
-| `sourceConnectionIds` | 此 [源连接ID](#source) 在之前的步骤中检索。 |
-| `targetConnectionIds` | 此 [目标连接Id](#target) 在之前的步骤中检索。 |
-| `transformations.params.mappingId` | 此 [映射ID](#mapping) 在之前的步骤中检索。 |
+| `flowSpec.id` | [!DNL HTTP API]的流规范ID。 要创建包含转换的数据流，必须使用`c1a19761-d2c7-4702-b9fa-fe91f0613e81`。 要创建不含转换的数据流，请使用`d8a6f005-7eaf-4153-983e-e8574508b877`。 |
+| `sourceConnectionIds` | 在之前的步骤中检索到[源连接ID](#source)。 |
+| `targetConnectionIds` | 在之前的步骤中检索到[目标连接ID](#target)。 |
+| `transformations.params.mappingId` | 在之前的步骤中检索到[映射ID](#mapping)。 |
 
 **响应**
 
-成功响应会返回HTTP状态201，其中包含新创建的数据流的详细信息，包括其唯一标识符(`id`)。
+成功的响应返回HTTP状态201，其中包含新创建的数据流的详细信息，包括其唯一标识符(`id`)。
 
 ```json
 {
@@ -559,7 +559,7 @@ curl -X POST \
 }
 ```
 
-## 发布要引入到Platform的数据 {#ingest-data}
+## 要引入到Platform的Post数据 {#ingest-data}
 
 >[!NOTE]
 >
@@ -575,7 +575,7 @@ POST /collection/{INLET_URL}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{INLET_URL}` | 您的流端点URL。 您可以通过向以下网站发出GET请求来检索此URL `/connections` 端点提供基本连接ID。 |
+| `{INLET_URL}` | 您的流端点URL。 您可以在提供基本连接ID的同时向`/connections`端点发出GET请求，以检索此URL。 |
 | `{FLOW_ID}` | HTTP API流数据流的ID。 XDM和RAW数据都需要此ID。 |
 
 **请求**
@@ -692,9 +692,9 @@ curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20
 
 ## 后续步骤
 
-通过学习本教程，您已创建一个流HTTP连接，从而能够使用流端点将数据摄取到Platform。 有关在UI中创建流连接的说明，请参阅 [创建流连接教程](../../../ui/create/streaming/http.md).
+通过学习本教程，您已创建一个流HTTP连接，从而能够使用流端点将数据摄取到Platform。 有关在UI中创建流连接的说明，请参阅[创建流连接教程](../../../ui/create/streaming/http.md)。
 
-要了解如何将数据流式传输到Platform，请阅读以下任一教程： [流式时间序列数据](../../../../../ingestion/tutorials/streaming-time-series-data.md) 或上的教程 [流记录数据](../../../../../ingestion/tutorials/streaming-record-data.md).
+要了解如何将数据流式传输到Platform，请阅读有关[流式传输时间序列数据](../../../../../ingestion/tutorials/streaming-time-series-data.md)的教程或有关[流式传输记录数据](../../../../../ingestion/tutorials/streaming-record-data.md)的教程。
 
 ## 附录
 
@@ -702,9 +702,9 @@ curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20
 
 ### 向经过身份验证的流连接发送消息
 
-如果流连接启用了身份验证，则客户端需要添加 `Authorization` 标头添加到他们的请求中。
+如果流连接启用了身份验证，则客户端需要将`Authorization`标头添加到其请求中。
 
-如果 `Authorization` 标头不存在或发送了无效/过期的访问令牌，将返回HTTP 401未授权响应，响应类似如下：
+如果`Authorization`标头不存在，或发送了无效/过期的访问令牌，则将返回HTTP 401未授权响应，其响应如下所示：
 
 **响应**
 

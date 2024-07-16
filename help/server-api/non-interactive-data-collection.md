@@ -1,6 +1,6 @@
 ---
 title: 非交互式数据收集
-description: 了解Adobe Experience Platform Edge Network服务器API如何执行非交互式数据收集。
+description: 了解Adobe Experience PlatformEdge Network服务器API如何执行非交互式数据收集。
 exl-id: 1a704e8f-8900-4f56-a843-9550007088fe
 source-git-commit: 3bf13c3f5ac0506ac88effc56ff68758deb5f566
 workflow-type: tm+mt
@@ -18,7 +18,7 @@ ht-degree: 4%
 
 当最终用户事件在本地排队较短时间（例如，当没有网络连接时）时，建议批量发送事件。
 
-批量事件不一定属于同一最终用户，这意味着事件可以在其内部包含不同的标识 `identityMap` 对象。
+批次事件不一定属于同一最终用户，这意味着事件在其`identityMap`对象中可以包含不同的标识。
 
 ## 非交互式API调用示例 {#example}
 
@@ -91,16 +91,16 @@ curl -X POST "https://server.adobedc.net/ee/v2/collect?dataStreamId={DATASTREAM_
 | 参数 | 类型 | 必需 | 描述 |
 | --- | --- | --- | --- |
 | `dataStreamId` | `String` | 是 | 数据收集端点使用的数据流的ID。 |
-| `requestId` | `String` | 否 | 提供外部请求跟踪ID。 如果未提供任何内容，Edge Network将为您生成一个，并将其返回至响应正文/标头。 |
-| `silent` | `Boolean` | 否 | 可选布尔参数，指示Edge Network是否应返回 `204 No Content` 是否具有空有效负载的响应。 使用相应的HTTP状态代码和有效负载报告严重错误。 |
+| `requestId` | `String` | 否 | 提供外部请求跟踪ID。 如果未提供，则Edge Network将为您生成一个，并将其返回至响应正文/标头。 |
+| `silent` | `Boolean` | 否 | 可选布尔参数，用于指示Edge Network是否应返回具有空负载的`204 No Content`响应。 使用相应的HTTP状态代码和有效负载报告严重错误。 |
 
 ### 响应 {#response}
 
-成功响应将返回以下状态之一，并且 `requestID` 请求中没有提供该请求的情况。
+成功的响应返回以下状态之一，如果请求中未提供任何状态，则返回`requestID`。
 
-* `202 Accepted` 成功处理请求时；
-* `204 No Content` 成功处理请求时，并且 `silent` 参数已设置为 `true`；
-* `400 Bad Request` 当请求格式不正确时（例如，未找到强制的主标识）。
+* 成功处理请求时的`202 Accepted`；
+* 成功处理请求且`silent`参数设置为`true`时的`204 No Content`；
+* `400 Bad Request`，因为请求格式不正确（例如，未找到必需的主标识）。
 
 ```json
 {

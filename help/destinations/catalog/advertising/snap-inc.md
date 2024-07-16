@@ -13,11 +13,11 @@ ht-degree: 2%
 
 ## 概述 {#overview}
 
-[Snapchat广告](https://forbusiness.snapchat.com/) 无论规模大小，行业各有不同。 Snapchatters每天都在与全屏数字广告对话，这些广告激发对您的业务最重要的人员采取行动。
+[Snapchat广告](https://forbusiness.snapchat.com/)是为每个企业制作的，无论其规模或行业如何。 Snapchatters每天都在与全屏数字广告对话，这些广告激发对您的业务最重要的人员采取行动。
 
 >[!IMPORTANT]
 >
->此目标连接器和文档页面由 *Snap Inc* 团队。 如有任何查询或更新请求，请直接通过以下电子邮件联系他们： *dev-support@snap.com*
+>此目标连接器和文档页面由&#x200B;*快照公司*&#x200B;团队创建和维护。 如有任何查询或更新请求，请直接通过&#x200B;*dev-support@snap.com*&#x200B;联系他们
 
 ## 用例 {#use-cases}
 
@@ -27,7 +27,7 @@ ht-degree: 2%
 
 要使用此目标，您必须具有Snapchat广告帐户。 有关如何创建规则库的信息，请参阅此文档：
 
-[Snapchat广告快速入门](https://businesshelp.snapchat.com/s/article/overview?language=en_US)
+[开始使用Snapchat Advertising](https://businesshelp.snapchat.com/s/article/overview?language=en_US)
 
 ## 限制 {#limitations}
 
@@ -37,9 +37,9 @@ ht-degree: 2%
 
 ## 支持的身份 {#supported-identities}
 
-此 *Snap Inc* 目标支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/features/namespaces.md).
+*Snap Inc*&#x200B;目标支持激活下表中描述的标识。 了解有关[标识](/help/identity-service/features/namespaces.md)的更多信息。
 
-所有发送到以下地址的标识符： *Snap Inc* 目标必须采用SHA-256格式进行哈希处理。 要在将纯文本标识符发送到目标之前对其进行哈希处理，请检查 **[!UICONTROL 应用转换]** 选项。
+发送到&#x200B;*Snap Inc*&#x200B;目标的所有标识符必须以SHA-256格式进行哈希处理。 要在将纯文本标识符发送到目标之前对其进行哈希处理，请在映射目标标识符到目标时选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项。
 
 >[!WARNING]
 > 
@@ -52,10 +52,10 @@ ht-degree: 2%
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| Email Address | SHA-256哈希电子邮件地址 | 将电子邮件地址映射到目标身份字段 *电子邮件地址*. |
-| 电话号码 | SHA-256散列电话号码 | 将电子邮件地址映射到目标身份字段 *phonenumber*. |
-| GAID | SHA-256哈希后的Google广告ID | 将Google Advertising ID映射到目标身份字段 *gaid*. |
-| IDFA | SHA-256哈希后的Apple广告ID | 将Apple Advertising ID映射到目标身份字段 *idfa*. |
+| 电子邮件地址 | SHA-256哈希电子邮件地址 | 将电子邮件地址映射到目标标识字段&#x200B;*emailAddress*。 |
+| 电话号码 | SHA-256散列电话号码 | 将电子邮件地址映射到目标标识字段&#x200B;*phoneNumber*。 |
+| GAID | SHA-256哈希后的Google Advertising ID | 将Google Advertising ID映射到目标标识字段&#x200B;*gaid*。 |
+| IDFA | SHA-256哈希后的Apple Advertising ID | 将Apple Advertising ID映射到目标标识字段&#x200B;*idfa*。 |
 
 {style="table-layout:auto"}
 
@@ -65,8 +65,8 @@ ht-degree: 2%
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 受众导出]** | 您正使用 *您的目标* 目标。 |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出具有&#x200B;*YOURDESTINATION*&#x200B;目标中使用的标识符（姓名、电话号码或其他）的受众的所有成员。 |
+| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -74,17 +74,17 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 > 
->要连接到目标，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 ### 验证目标 {#authenticate}
 
 要向目标进行身份验证，请执行以下步骤：
 
-1. 查找 *Snap Inc* 从Adobe Experience Platform的目标目录中选择目标，然后选择 **设置**.
-2. 选择 **[!UICONTROL 连接到目标]**. 您将被重定向到以下屏幕：
+1. 从Adobe Experience Platform的目标目录找到&#x200B;*快照公司*&#x200B;目标，然后选择&#x200B;**设置**。
+2. 选择&#x200B;**[!UICONTROL 连接到目标]**。 您将被重定向到以下屏幕：
    ![身份验证屏幕1](/help/destinations/assets/catalog/advertising/snapchat-ads/auth1.png)
-3. 输入您的Snapchat凭据并选择 **登录**.
-4. 您将看到Adobe Experience Platform能够访问的Snapchat数据。 选择 **继续** 以继续连接过程。
+3. 输入您的Snapchat凭据并选择&#x200B;**登录**。
+4. 您将看到Adobe Experience Platform能够访问的Snapchat数据。 选择&#x200B;**继续**&#x200B;以继续连接过程。
 
 ![身份验证屏幕2](/help/destinations/assets/catalog/advertising/snapchat-ads/auth2.png)
 
@@ -94,11 +94,11 @@ ht-degree: 2%
 
 ![目标详细信息](/help/destinations/assets/catalog/advertising/snapchat-ads/destinationdetails.png)
 
-要配置目标的详细信息，请填写必填字段并选择 **[!UICONTROL 下一个]**.
+要配置目标的详细信息，请填写必填字段并选择&#x200B;**[!UICONTROL 下一步]**。
 
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
-* **[!UICONTROL 帐户ID]**：与要将受众导入到的广告帐户关联的广告帐户ID。 有关如何查找的详细信息，请参阅 [此文档位于Snapchat业务帮助中心](https://businesshelp.snapchat.com/s/article/biz-acct-id?language=en_US).
+* **[!UICONTROL 帐户ID]**：与要将受众导入到的广告帐户关联的广告帐户ID。 有关如何查找的详细信息，请参阅Snapchat业务帮助中心](https://businesshelp.snapchat.com/s/article/biz-acct-id?language=en_US)上的[此文档。
 
 >[!IMPORTANT]
 > 
@@ -106,30 +106,30 @@ ht-degree: 2%
 
 ### 启用警报 {#enable-alerts}
 
-您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅以下内容中的指南： [使用UI订阅目标警报](../../ui/alerts.md).
+您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
 
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
->* 要激活数据，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
->* 要导出 *身份*，您需要 **[!UICONTROL 查看身份图]** [访问控制权限](/help/access-control/home.md#permissions). <br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+>* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
-读取 [将用户档案和受众激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
+有关将受众激活到此目标的说明，请阅读[将配置文件和受众激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md)。
 
 ## 验证数据导出 {#exported-data}
 
-将受众激活到之后 *Snap Inc* 目标，您将能够在快照广告管理器的 [**受众** 部分](https://businesshelp.snapchat.com/s/article/audience-sharing). 要导航到此部分，请执行以下步骤：
+将受众激活到&#x200B;*Snap Inc*&#x200B;目标后，您将能够在Snap Ads管理器的&#x200B;[**受众**&#x200B;部分](https://businesshelp.snapchat.com/s/article/audience-sharing)中查看受众。 要导航到此部分，请执行以下步骤：
 
-1. 登录 [对齐广告管理器](https://ads.snapchat.com/)
-2. 选择 **受众** 从屏幕左上角的下拉菜单中。 您将在受众库中看到在Adobe Experience Platform中激活的受众：
+1. 登录[快照广告管理器](https://ads.snapchat.com/)
+2. 从屏幕左上角的下拉菜单中选择&#x200B;**受众**。 您将在受众库中看到在Adobe Experience Platform中激活的受众：
 
 ![受众](/help/destinations/assets/catalog/advertising/snapchat-ads/audiences.png)
 
-请注意，当Adobe受众首次激活到Snap Inc时，您最初会将其视为空受众。 这是因为Adobe Experience Platform在评估受众之前，不会将成员数据导出到Snap Inc。 有关如何在Experience Platform中评估受众的更多信息，请参阅 [分段服务概述](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html#evaluate-segments).
+请注意，当Adobe受众首次激活到Snap Inc时，您最初会将其视为空受众。 这是因为Adobe Experience Platform在评估受众之前，不会将成员数据导出到Snap Inc。 有关如何在Experience Platform中评估受众的更多信息，请参阅[分段服务概述](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html#evaluate-segments)。
 
 ## 数据使用和治理 {#data-usage-governance}
 
-全部 [!DNL Adobe Experience Platform] 目标在处理您的数据时符合数据使用策略。 有关如何执行操作的详细信息 [!DNL Adobe Experience Platform] 强制执行数据管理，请参见 [数据管理概述](/help/data-governance/home.md).
+在处理您的数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据治理的详细信息，请参阅[数据治理概述](/help/data-governance/home.md)。

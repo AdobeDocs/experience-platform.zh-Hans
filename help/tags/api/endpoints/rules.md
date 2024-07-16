@@ -4,24 +4,24 @@ description: 了解如何在Reactor API中调用/rules端点。
 exl-id: 79ef4389-e4b7-461e-8579-16a1a78cdd43
 source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '896'
+source-wordcount: '893'
 ht-degree: 5%
 
 ---
 
 # 规则端点
 
-在数据收集标记的上下文中，规则控制已部署库中资源的行为。 规则由一个或多个规则组成 [规则组件](./rule-components.md)，以便以逻辑方式将规则组件绑定在一起。 此 `/rules` reactor API中的端点允许您以编程方式管理标记规则。
+在数据收集标记的上下文中，规则控制已部署库中资源的行为。 规则由一个或多个[规则组件](./rule-components.md)组成，以逻辑方式将这些规则组件绑定在一起。 Reactor API中的`/rules`端点允许您以编程方式管理标记规则。
 
 >[!NOTE]
 >
->本文档介绍如何管理Reactor API中的规则。 有关如何与UI中的规则进行交互的信息，请参阅 [UI指南](../../ui/managing-resources/rules.md).
+>本文档介绍如何管理Reactor API中的规则。 有关如何与UI中的规则交互的信息，请参阅[UI指南](../../ui/managing-resources/rules.md)。
 
-一个规则恰好属于一个 [属性](./properties.md). 资产可以有许多规则。
+规则只属于一个[属性](./properties.md)。 资产可以有许多规则。
 
 ## 快速入门
 
-本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [快速入门指南](../getting-started.md) 有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续之前，请查看[快速入门指南](../getting-started.md)，以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索规则列表 {#list}
 
@@ -35,13 +35,13 @@ GET /properties/{PROPERTY_ID}/rules
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 此 `id` 要列出其组件的属性的属性。 |
+| `PROPERTY_ID` | 要列出其组件的属性的`id`。 |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性过滤列出的规则：<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [过滤响应](../guides/filtering.md) 以了解更多信息。
+>使用查询参数，可以根据以下属性过滤列出的规则：<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>有关详细信息，请参阅[筛选响应](../guides/filtering.md)指南。
 
 **请求**
 
@@ -146,7 +146,7 @@ curl -X GET \
 
 >[!NOTE]
 >
->删除规则时，这些规则会被标记为已删除，但实际上并不从系统中删除。 因此，可以检索已删除的规则。 删除的规则可以通过存在 `meta.deleted_at` 属性。
+>删除规则时，这些规则会被标记为已删除，但实际上并不从系统中删除。 因此，可以检索已删除的规则。 删除的规则可以通过存在`meta.deleted_at`属性来识别。
 
 **API格式**
 
@@ -156,7 +156,7 @@ GET /rules/{RULE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `RULE_ID` | 此 `id` 您想要查找的规则的。 |
+| `RULE_ID` | 要查找的规则的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -258,7 +258,7 @@ POST /properties/{PROPERTY_ID}/rules
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 此 `id` ，您将在其中定义规则。 |
+| `PROPERTY_ID` | 您正在其下定义规则的属性的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -284,9 +284,9 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes.name` | **（必需）** 易于用户识别的规则名称。 |
+| `attributes.name` | **（必需）**&#x200B;易于用户识别的规则名称。 |
 | `attributes.enabled` | 布尔值，指示是否启用该规则。 |
-| `type` | 正在创建的资源的类型。 对于此端点，值必须为 `rules`. |
+| `type` | 正在创建的资源的类型。 对于此终结点，值必须为`rules`。 |
 
 {style="table-layout:auto"}
 
@@ -366,7 +366,7 @@ curl -X POST \
 
 ## 向规则添加事件、条件和操作 {#components}
 
-一旦 [已创建规则](#create)，您可以通过添加事件、条件和操作（统称为规则组件）来开始构建其逻辑。 请参阅以下部分： [创建规则组件](./rule-components.md#create) 在 `/rule_components` 端点指南，用于了解如何在Reactor API中执行此操作。
+创建规则](#create)后，您可以通过添加事件、条件和操作（统称为规则组件）来开始构建其逻辑。 [请参阅`/rule_components`端点指南中有关[创建规则组件](./rule-components.md#create)的部分，了解如何在Reactor API中执行此操作。
 
 ## 更新规则 {#update}
 
@@ -380,13 +380,13 @@ PATCH /rules/{RULE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `RULE_ID` | 此 `id` 要更新的规则的。 |
+| `RULE_ID` | 要更新的规则的`id`。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求将更新 `name` 现有规则的。
+以下请求更新现有规则的`name`。
 
 ```shell
 curl -X PATCH \
@@ -409,8 +409,8 @@ curl -X PATCH \
 | 属性 | 描述 |
 | --- | --- |
 | `attributes` | 一个对象，其规则表示要为规则更新的属性。 可以为规则更新以下属性： <ul><li>`name`</li><li>`enabled`</li></ul> |
-| `id` | 此 `id` 要更新的规则的。 这应该匹配 `{RULE_ID}` 请求路径中提供的值。 |
-| `type` | 正在更新的资源类型。 对于此端点，值必须为 `rules`. |
+| `id` | 要更新的规则的`id`。 这应当与在请求路径中提供的`{RULE_ID}`值匹配。 |
+| `type` | 正在更新的资源类型。 对于此终结点，值必须为`rules`。 |
 
 {style="table-layout:auto"}
 
@@ -500,7 +500,7 @@ DELETE /rules/{RULE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `RULE_ID` | 此 `id` 要删除的规则的。 |
+| `RULE_ID` | 要删除的规则的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -520,17 +520,17 @@ curl -X DELETE \
 
 ## 管理规则的注释 {#notes}
 
-规则是“重要”资源，这意味着您可以针对每个资源创建和检索基于文本的注释。 请参阅 [注释端点指南](./notes.md) 有关如何管理规则和其他兼容资源的注释的更多信息。
+规则是“重要”资源，这意味着您可以针对每个资源创建和检索基于文本的注释。 有关如何管理规则和其他兼容资源的注释的更多信息，请参阅[注释端点指南](./notes.md)。
 
 ## 检索规则的相关资源 {#related}
 
-以下调用演示了如何检索规则的相关资源。 时间 [查找规则](#lookup)，这些关系列在 `relationships` 规则。
+以下调用演示了如何检索规则的相关资源。 当[查找规则](#lookup)时，这些关系将列在`relationships`规则下。
 
-请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
+有关Reactor API中关系的详细信息，请参阅[关系指南](../guides/relationships.md)。
 
 ### 列出规则的相关库 {#libraries}
 
-您可以通过附加来列出利用特定规则的库 `/libraries` 到查找请求的路径。
+您可以将`/libraries`附加到查找请求的路径中，以列出使用特定规则的库。
 
 **API格式**
 
@@ -540,7 +540,7 @@ GET  /rules/{RULE_ID}/libraries
 
 | 参数 | 描述 |
 | --- | --- |
-| `{RULE_ID}` | 此 `id` 要列出其库的规则的。 |
+| `{RULE_ID}` | 要列出其库的规则的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -652,7 +652,7 @@ curl -X GET \
 
 ### 列出规则的相关修订版本 {#revisions}
 
-您可以通过附加来列出规则的修订版本 `/revisions` 到查找请求的路径。
+您可以通过将`/revisions`附加到查找请求的路径来列出规则的修订。
 
 **API格式**
 
@@ -662,7 +662,7 @@ GET  /rules/{RULE_ID}/revisions
 
 | 参数 | 描述 |
 | --- | --- |
-| `{RULE_ID}` | 此 `id` 要列出其修订版本的规则的。 |
+| `{RULE_ID}` | 要列出其修订的规则的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -830,7 +830,7 @@ curl -X GET \
 
 ### 查找规则的相关来源 {#origin}
 
-您可以通过附加来查找规则的来源（以前的版本） `/origin` 到查找请求的路径。
+您可以通过在查找请求的路径中附加`/origin`来查找规则的来源（以前的版本）。
 
 **API格式**
 
@@ -840,7 +840,7 @@ GET /rules/{RULE_ID}/origin
 
 | 参数 | 描述 |
 | --- | --- |
-| `{RULE_ID}` | 此 `id` 要查找其来源的规则。 |
+| `{RULE_ID}` | 要查找其来源的规则的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -932,7 +932,7 @@ curl -X GET \
 
 ### 查找规则的相关属性 {#property}
 
-您可以通过附加来查找拥有规则的资产 `/property` 到查找请求的路径。
+您可以通过将`/property`附加到查找请求的路径来查找拥有规则的属性。
 
 **API格式**
 
@@ -942,7 +942,7 @@ GET /rules/{RULE_ID}/property
 
 | 参数 | 描述 |
 | --- | --- |
-| `{RULE_ID}` | 此 `id` 要查找其属性的规则的。 |
+| `{RULE_ID}` | 要查找其属性的规则的`id`。 |
 
 {style="table-layout:auto"}
 

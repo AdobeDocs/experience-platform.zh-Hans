@@ -4,14 +4,14 @@ description: 了解如何在Reactor API中调用/properties端点。
 exl-id: 7830c519-312f-4f73-b3f5-64ab0420d902
 source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1103'
+source-wordcount: '1100'
 ht-degree: 6%
 
 ---
 
 # 属性端点
 
-资产是一个容器构造，它包含Reactor API中可用的大多数其他资源。 您可以使用以编程方式管理资产 `/properties` 端点。
+资产是一个容器构造，它包含Reactor API中可用的大多数其他资源。 您使用`/properties`端点以编程方式管理属性。
 
 在资源层次结构中，属性是以下项的所有者：
 
@@ -25,13 +25,13 @@ ht-degree: 6%
 * [规则组件](./rule-components.md)
 * [规则](./rules.md)
 
-资产只属于一个 [公司](./companies.md). 公司可以有许多资产。
+属性只属于一个[公司](./companies.md)。 公司可以有许多资产。
 
-有关属性及其在Tag Management中的角色的更多常规信息，请参阅 [公司和资产](../../ui/administration/companies-and-properties.md).
+有关属性及其在标签管理中的角色的更多常规信息，请参阅[公司和属性](../../ui/administration/companies-and-properties.md)的概述。
 
 ## 快速入门
 
-本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [快速入门指南](../getting-started.md) 有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续之前，请查看[快速入门指南](../getting-started.md)，以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索属性列表 {#list}
 
@@ -45,13 +45,13 @@ GET /companies/{COMPANY_ID}/properties
 
 | 参数 | 描述 |
 | --- | --- |
-| `COMPANY_ID` | 此 `id` 要列出的资产所属公司的名称。 |
+| `COMPANY_ID` | 拥有要列出的属性的公司的`id`。 |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性过滤列出的属性：<ul><li>`copying`</li><li>`created_at`</li><li>`enabled`</li><li>`name`</li><li>`platform`</li><li>`token`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [过滤响应](../guides/filtering.md) 以了解更多信息。
+>使用查询参数，可以根据以下属性过滤列出的属性：<ul><li>`copying`</li><li>`created_at`</li><li>`enabled`</li><li>`name`</li><li>`platform`</li><li>`token`</li><li>`updated_at`</li></ul>有关详细信息，请参阅[筛选响应](../guides/filtering.md)指南。
 
 **请求**
 
@@ -269,7 +269,7 @@ GET /properties/{PROPERTY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 此 `id` 要查找的属性的ID。 |
+| `PROPERTY_ID` | 要查找的属性`id`。 |
 
 {style="table-layout:auto"}
 
@@ -392,13 +392,13 @@ POST /company/{COMPANY_ID}/properties
 
 | 参数 | 描述 |
 | --- | --- |
-| `COMPANY_ID` | 此 `id` 要在其下定义属性的公司的名称。 |
+| `COMPANY_ID` | 您正在定义其属性的公司的`id`。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求为指定的属性创建新属性。 调用还会通过 `relationships` 属性。 请参阅指南，网址为 [关系](../guides/relationships.md) 以了解更多信息。
+以下请求为指定的属性创建新属性。 调用还会通过`relationships`属性将该属性与现有扩展关联。 有关详细信息，请参阅[关系](../guides/relationships.md)指南。
 
 ```shell
 curl -X POST \
@@ -427,15 +427,15 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes.name` | **（必需）** 易于用户识别的属性名称。 |
-| `attributes.platform` | **（必需）** 资产的平台。 可以是 `web` 对于Web资产，或者 `mobile` 或 `edge` 用于移动资产。 |
-| `attributes.domains` | **（Web属性需要）** 属性的URL域数组。 |
+| `attributes.name` | **（必需）**&#x200B;易于用户识别的属性名称。 |
+| `attributes.platform` | **（必需）**&#x200B;属性的平台。 对于Web属性，可以是`web`；对于移动属性，可以是`mobile`或`edge`。 |
+| `attributes.domains` | **（Web属性必需）**&#x200B;属性的URL域数组。 |
 | `attributes.development` | 指示这是否为开发属性的布尔值。 |
 | `attributes.privacy` | 一个字符串，可用于引用属性中与隐私相关的注意事项。 |
 | `attributes.rule_component_sequencing_enabled` | 一个布尔值，表示是否应为此属性启用规则组件排序。 |
 | `attributes.ssl_enabled` | 一个布尔值，表示是否应为此属性启用安全套接字层(SSL)。 |
 | `attributes.undefined_vars_return_empty` | 一个布尔值，用于指示是否应将这个属性的未定义变量返回为空。 |
-| `type` | 正在更新的资源类型。 对于此端点，值必须为 `properties`. |
+| `type` | 正在更新的资源类型。 对于此终结点，值必须为`properties`。 |
 
 {style="table-layout:auto"}
 
@@ -546,13 +546,13 @@ PATCH /properties/{PROPERTY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 此 `id` 要更新的属性的属性。 |
+| `PROPERTY_ID` | 要更新的属性的`id`。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求将更新 `name` 和 `domains` 对于现有属性。
+以下请求更新现有属性的`name`和`domains`。
 
 ```shell
 curl -X PATCH \
@@ -578,8 +578,8 @@ curl -X PATCH \
 | 属性 | 描述 |
 | --- | --- |
 | `attributes` | 一个对象，其属性表示要为该属性更新的属性。 可以为属性更新以下属性： <ul><li>`development`</li><li>`domains`</li><li>`name`</li><li>`platform`</li><li>`privacy`</li><li>`rule_component_sequencing_enabled`</li><li>`ssl_enabled`</li><li>`undefined_vars_return_empty`</li></ul> |
-| `id` | 此 `id` 要更新的属性的属性。 这应该匹配 `{PROPERTY_ID}` 请求路径中提供的值。 |
-| `type` | 正在更新的资源类型。 对于此端点，值必须为 `properties`. |
+| `id` | 要更新的属性的`id`。 这应当与在请求路径中提供的`{PROPERTY_ID}`值匹配。 |
+| `type` | 正在更新的资源类型。 对于此终结点，值必须为`properties`。 |
 
 {style="table-layout:auto"}
 
@@ -690,7 +690,7 @@ DELETE /properties/{PROPERTY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 此 `id` 要删除的属性的属性。 |
+| `PROPERTY_ID` | 要删除的属性`id`。 |
 
 {style="table-layout:auto"}
 
@@ -710,17 +710,17 @@ curl -X DELETE \
 
 ## 管理资产的注释 {#notes}
 
-属性是“重要”资源，这意味着您可以为每个资源创建和检索基于文本的注释。 请参阅 [注释端点指南](./notes.md) 有关如何管理资产和其他兼容资源的注释的更多信息。
+属性是“重要”资源，这意味着您可以为每个资源创建和检索基于文本的注释。 有关如何管理属性和其他兼容资源的注释的更多信息，请参阅[注释端点指南](./notes.md)。
 
 ## 检索资产的相关资源 {#related}
 
-以下调用演示了如何检索资产的相关资源。 时间 [查找资产](#lookup)，这些关系列在 `relationships` 属性。
+以下调用演示了如何检索资产的相关资源。 当[查找属性](#lookup)时，这些关系列在`relationships`属性下。
 
-请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
+有关Reactor API中关系的详细信息，请参阅[关系指南](../guides/relationships.md)。
 
 ### 列出属性的相关回调 {#callbacks}
 
-您可以列出 [回调](./callbacks.md) 在资产上注册的 `/callbacks` 到查找请求的路径。
+您可以通过在查找请求的路径中附加`/callbacks`，列出在属性中注册的[回调](./callbacks.md)。
 
 **API格式**
 
@@ -730,7 +730,7 @@ GET  /properties/{PROPERTY_ID}/callbacks
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 此 `id` 要列出其回调的属性的。 |
+| `{PROPERTY_ID}` | 要列出其回调的属性`id`。 |
 
 {style="table-layout:auto"}
 
@@ -795,7 +795,7 @@ curl -X GET \
 
 ### 列出属性的相关数据元素 {#data-elements}
 
-您可以列出 [数据元素](./data-elements.md) 通过追加资产拥有的资产 `/data_elements` 到查找请求的路径。
+您可以通过将`/data_elements`附加到查找请求的路径来列出属性拥有的[数据元素](./data-elements.md)。
 
 **API格式**
 
@@ -805,7 +805,7 @@ GET  /properties/{PROPERTY_ID}/data_elements
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 此 `id` 要列出其数据元素的属性的属性。 |
+| `{PROPERTY_ID}` | 要列出其数据元素的属性的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -936,7 +936,7 @@ curl -X GET \
 
 ### 列出资产的相关环境 {#environments}
 
-您可以列出 [环境](./environments.md) 通过追加资产拥有的资产 `/environments` 到查找请求的路径。
+您可以将`/environments`附加到查找请求的路径，以列出属性拥有的[环境](./environments.md)。
 
 **API格式**
 
@@ -946,7 +946,7 @@ GET  /properties/{PROPERTY_ID}/environments
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 此 `id` 要列出其环境的属性的。 |
+| `{PROPERTY_ID}` | 要列出其环境的属性的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -1056,7 +1056,7 @@ curl -X GET \
 
 ### 列出属性的相关扩展 {#extensions}
 
-您可以列出 [扩展](./extensions.md) 通过追加资产拥有的资产 `/extensions` 到查找请求的路径。
+您可以将`/extensions`附加到查找请求的路径，以列出属性拥有的[扩展](./extensions.md)。
 
 **API格式**
 
@@ -1066,7 +1066,7 @@ GET  /properties/{PROPERTY_ID}/extensions
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 此 `id` 要列出其扩展名的属性的。 |
+| `{PROPERTY_ID}` | 要列出其扩展名的属性的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -1187,7 +1187,7 @@ curl -X GET \
 
 ### 列出属性的相关主机 {#hosts}
 
-您可以列出 [主机](./hosts.md) 属性使用的URL路径 `/hosts` 到查找请求的路径。
+您可以通过将`/hosts`附加到查找请求的路径来列出属性使用的[主机](./hosts.md)。
 
 **API格式**
 
@@ -1197,7 +1197,7 @@ GET  /properties/{PROPERTY_ID}/hosts
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 此 `id` 要列出其主机的属性的。 |
+| `{PROPERTY_ID}` | 要列出其主机的属性的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -1265,7 +1265,7 @@ curl -X GET \
 
 ### 列出属性的相关规则 {#rules}
 
-您可以列出 [规则](./rules.md) 属性使用的URL路径 `/rules` 到查找请求的路径。
+您可以通过将`/rules`附加到查找请求的路径来列出属性使用的[规则](./rules.md)。
 
 **API格式**
 
@@ -1275,7 +1275,7 @@ GET  /properties/{PROPERTY_ID}/rules
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 此 `id` 要列出其规则的属性的属性。 |
+| `{PROPERTY_ID}` | 要列出其规则的属性的`id`。 |
 
 {style="table-layout:auto"}
 
@@ -1378,7 +1378,7 @@ curl -X GET \
 
 ### 查找资产的关联公司 {#company}
 
-您可以通过附加来查找拥有资产的公司 `/company` 到查找请求的路径。
+您可以通过将`/company`附加到查找请求的路径来查找拥有资产的公司。
 
 **API格式**
 
@@ -1388,7 +1388,7 @@ GET /properties/{PROPERTY_ID}/company
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 此 `id` 要查找其公司的资产的属性。 |
+| `{PROPERTY_ID}` | 要查找其公司的属性的`id`。 |
 
 {style="table-layout:auto"}
 
