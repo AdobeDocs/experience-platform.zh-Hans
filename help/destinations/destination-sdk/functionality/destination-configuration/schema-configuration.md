@@ -2,28 +2,28 @@
 description: 了解如何为使用Destination SDK构建的目标配置合作伙伴架构。
 title: 合作伙伴架构配置
 exl-id: 0548e486-206b-45c5-8d18-0d6427c177c5
-source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
+source-git-commit: f502631a3e97f3c90c13f188f3a4bb081f6db112
 workflow-type: tm+mt
-source-wordcount: '1897'
-ht-degree: 4%
+source-wordcount: '1939'
+ht-degree: 3%
 
 ---
 
 # 合作伙伴架构配置
 
-Experience Platform 会使用架构，以便以可重用的一致方式描述数据结构。当数据被摄取到Platform中时，它会根据XDM架构进行构建。 有关架构组合模型的更多信息，包括设计原则和最佳实践，请参阅 [模式组合基础](../../../../xdm/schema/composition.md).
+Experience Platform使用架构以一致且可重用的方式描述数据结构。 当数据被摄取到Platform中时，它会根据XDM架构进行构建。 有关架构组合模型的更多信息，包括设计原则和最佳实践，请参阅架构组合的[基础知识](../../../../xdm/schema/composition.md)。
 
 使用Destination SDK构建目标时，您可以定义自己的合作伙伴架构以供目标平台使用。 这使用户能够将配置文件属性从Platform映射到目标平台可识别的特定字段，所有这些字段均在Platform UI中。
 
 在为目标配置合作伙伴架构时，您可以优化目标平台支持的字段映射，例如：
 
-* 允许用户映射 `phoneNumber` XDM属性到 `phone` 目标平台支持的属性。
+* 允许用户将`phoneNumber` XDM属性映射到目标平台支持的`phone`属性。
 * 创建动态合作伙伴架构，Experience Platform可以动态调用这些架构以检索目标中所有受支持属性的列表。
 * 定义目标平台所需的必填字段映射。
 
-要了解此组件在何处适合使用Destination SDK创建的集成，请参阅中的图表 [配置选项](../configuration-options.md) 文档或参阅指南，了解如何 [使用Destination SDK配置基于文件的目标](../../guides/configure-file-based-destination-instructions.md#create-server-file-configuration).
+若要了解此组件在何处适合使用Destination SDK创建的集成，请参阅[配置选项](../configuration-options.md)文档中的关系图，或参阅如何[使用Destination SDK配置基于文件的目标](../../guides/configure-file-based-destination-instructions.md#create-server-file-configuration)的指南。
 
-您可以通过以下方式配置架构设置 `/authoring/destinations` 端点。 有关详细的API调用示例，请参阅以下API参考页面，您可以在其中配置此页面中显示的组件。
+您可以通过`/authoring/destinations`端点配置架构设置。 有关详细的API调用示例，请参阅以下API参考页面，您可以在其中配置此页面中显示的组件。
 
 * [创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)
 * [更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md)
@@ -32,7 +32,7 @@ Experience Platform 会使用架构，以便以可重用的一致方式描述数
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -47,15 +47,15 @@ Experience Platform 会使用架构，以便以可重用的一致方式描述数
 
 Destination SDK支持多种架构配置：
 
-* 静态架构是通过 `profileFields` 中的数组 `schemaConfig` 部分。 在静态架构中，您定义了应在Experience PlatformUI中显示的每个目标属性 `profileFields` 数组。 如果需要更新架构，您必须 [更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md).
-* 动态架构使用其他目标服务器类型，称为 [动态模式服务器](../../authoring-api/destination-server/create-destination-server.md#dynamic-schema-servers)，以动态检索支持的目标属性并根据您自己的API生成架构。 动态架构不使用 `profileFields` 数组。 如果需要更新架构，则无需 [更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md). 动态架构服务器而是从API中检索更新的架构。
+* 静态架构是通过`schemaConfig`部分中的`profileFields`数组定义的。 在静态架构中，您定义了`profileFields`数组中应显示在Experience PlatformUI中的每个目标属性。 如果需要更新架构，您必须[更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md)。
+* 动态架构使用名为[动态架构服务器](../../authoring-api/destination-server/create-destination-server.md#dynamic-schema-servers)的其他目标服务器类型来动态检索支持的目标属性，并根据您自己的API生成架构。 动态架构不使用`profileFields`数组。 如果需要更新架构，则无需[更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md)。 动态架构服务器而是从API中检索更新的架构。
 * 在架构配置中，您可以选择添加所需的（或预定义的）映射。 用户可以在Platform UI中查看这些映射，但在设置与目标的连接时，无法修改这些映射。 例如，您可以强制电子邮件地址字段始终发送到目标。
 
-此 `schemaConfig` 部分会根据所需的架构类型使用多个配置参数，如下部分所示。
+`schemaConfig`部分根据所需的架构类型使用多个配置参数，如下部分所示。
 
 ## 创建静态架构 {#attributes-schema}
 
-要创建具有配置文件属性的静态架构，请在 `profileFields` 数组，如下所示。
+要创建具有配置文件属性的静态架构，请在`profileFields`数组中定义目标属性，如下所示。
 
 ```json
 "schemaConfig":{
@@ -98,37 +98,37 @@ Destination SDK支持多种架构配置：
 }
 ```
 
-| 参数 | 类型 | 必填/可选 | 描述 |
+| 参数 | 类型 | 必需/可选 | 描述 |
 |---------|----------|------|---|
-| `profileFields` | 数组 | 可选 | 定义目标平台接受的目标属性数组，客户可以将其配置文件属性映射到这些目标属性。 使用 `profileFields` 数组，您可以忽略 `useCustomerSchemaForAttributeMapping` 参数。 |
-| `useCustomerSchemaForAttributeMapping` | 布尔值 | 可选 | 启用或禁用从客户架构到您在 `profileFields` 数组。 <ul><li>如果设置为 `true`，用户仅可在映射字段中看到源列。 `profileFields` 不适用于此情况。</li><li>如果设置为 `false`，用户可以将源属性从其架构映射到您在以下位置定义的属性： `profileFields` 数组。</li></ul> 默认值为 `false`。 |
-| `profileRequired` | 布尔值 | 可选 | 使用 `true` 用户是否应该能够将配置文件属性从Experience Platform映射到目标平台上的自定义属性。 |
-| `segmentRequired` | 布尔值 | 必需 | 此参数是Destination SDK的必需参数，应始终设置为 `true`. |
-| `identityRequired` | 布尔值 | 必需 | 设置为 `true` 用户是否应该能够映射 [身份类型](identity-namespace-configuration.md) 从Experience Platform到您在 `profileFields` 数组。 |
-| `segmentNamespaceAllowList` | 数组 | 可选 | 定义用户可以从中将受众映射到目标的特定受众命名空间。 使用此参数可限制Platform用户仅从您在数组中定义的受众命名空间导出受众。 此参数不能与一起使用 `segmentNamespaceDenyList`.<br> <br> 示例： `"segmentNamespaceAllowList": ["AudienceManager"]` 将允许用户仅映射以下目录中的受众： `AudienceManager` 命名空间指向此目标。 <br> <br> 要允许用户将任何受众导出到您的目标，您可以忽略此参数。 <br> <br> 如果两者 `segmentNamespaceAllowList` 和 `segmentNamespaceDenyList` 您的配置中缺少，用户将只能导出源自 [分段服务](../../../../segmentation/home.md). |
-| `segmentNamespaceDenyList` | 数组 | 可选 | 限制用户从数组中定义的受众命名空间将受众映射到目标。 不能与一起使用 `segmentNamespaceAllowed`. <br> <br> 示例： `"segmentNamespaceDenyList": ["AudienceManager"]` 将阻止用户从映射受众 `AudienceManager` 命名空间指向此目标。 <br> <br> 要允许用户将任何受众导出到您的目标，您可以忽略此参数。 <br> <br> 如果两者 `segmentNamespaceAllowed` 和 `segmentNamespaceDenyList` 您的配置中缺少，用户将只能导出源自 [分段服务](../../../../segmentation/home.md). <br> <br> 要允许导出所有受众，而不管其来源如何，请设置 `"segmentNamespaceDenyList":[]`. |
+| `profileFields` | 数组 | 可选 | 定义目标平台接受的目标属性数组，客户可以将其配置文件属性映射到这些目标属性。 使用`profileFields`数组时，可以完全省略`useCustomerSchemaForAttributeMapping`参数。 |
+| `useCustomerSchemaForAttributeMapping` | 布尔值 | 可选 | 启用或禁用从客户架构到您在`profileFields`数组中定义的属性的映射。 <ul><li>如果设置为`true`，则用户仅在映射字段中看到源列。 `profileFields`不适用于这种情况。</li><li>如果设置为`false`，则用户可以将源属性从其架构映射到您在`profileFields`数组中定义的属性。</li></ul> 默认值为 `false`。 |
+| `profileRequired` | 布尔值 | 可选 | 如果用户应该能够将配置文件属性从Experience Platform映射到目标平台上的自定义属性，请使用`true`。 |
+| `segmentRequired` | 布尔值 | 必需 | Destination SDK需要此参数，应始终将其设置为`true`。 |
+| `identityRequired` | 布尔值 | 必需 | 如果用户应该能够将[标识类型](identity-namespace-configuration.md)从Experience Platform映射到您在`profileFields`数组中定义的属性，则设置为`true`。 |
+| `segmentNamespaceAllowList` | 数组 | 可选 | 定义用户可以从中将受众映射到目标的特定受众命名空间。 使用此参数可限制Platform用户仅从您在数组中定义的受众命名空间导出受众。 此参数不能与`segmentNamespaceDenyList`.<br>一起使用 <br>示例： `"segmentNamespaceAllowList": ["AudienceManager"]`将允许用户仅将受众从`AudienceManager`命名空间映射到此目标。<br> <br>要允许用户将任何受众导出到您的目标，您可以忽略此参数。<br> <br>如果您的配置中同时缺少`segmentNamespaceAllowList`和`segmentNamespaceDenyList`，则用户将只能导出源自[分段服务](../../../../segmentation/home.md)的受众。 |
+| `segmentNamespaceDenyList` | 数组 | 可选 | 限制用户从数组中定义的受众命名空间将受众映射到目标。 不能与`segmentNamespaceAllowed`一起使用。<br> <br>示例： `"segmentNamespaceDenyList": ["AudienceManager"]`将阻止用户将受众从`AudienceManager`命名空间映射到此目标。<br> <br>要允许用户将任何受众导出到您的目标，您可以忽略此参数。<br> <br>如果您的配置中同时缺少`segmentNamespaceAllowed`和`segmentNamespaceDenyList`，则用户将只能导出源自[分段服务](../../../../segmentation/home.md)的受众。<br> <br>若要允许导出所有受众，而不管其来源如何，请设置`"segmentNamespaceDenyList":[]`。 |
 
 {style="table-layout:auto"}
 
 生成的UI体验如下图所示。
 
-当用户选择目标映射时，他们将会看到中定义的字段。 `profileFields` 数组。
+当用户选择目标映射时，他们可以看到`profileFields`数组中定义的字段。
 
 ![显示目标属性屏幕的UI图像。](../../assets/functionality/destination-configuration/select-attributes.png)
 
 选择属性后，他们可以在目标字段列中看到这些属性。
 
-![显示具有属性的静态目标架构的用户界面图像](../../assets/functionality/destination-configuration/static-schema-attributes.png)
+![UI图像显示具有属性的静态目标架构](../../assets/functionality/destination-configuration/static-schema-attributes.png)
 
 ## 创建动态架构 {#dynamic-schema-configuration}
 
-Destination SDK支持创建动态合作伙伴架构。 与静态架构不同，动态架构不使用 `profileFields` 数组。 动态架构会改用动态架构服务器，该服务器会连接到您自己的API，并在其中检索架构配置。
+Destination SDK支持创建动态合作伙伴架构。 与静态架构相反，动态架构不使用`profileFields`数组。 动态架构会改用动态架构服务器，该服务器会连接到您自己的API，并在其中检索架构配置。
 
 >[!IMPORTANT]
 >
->在创建动态架构之前，必须 [创建动态模式服务器](../../authoring-api/destination-server/create-destination-server.md#dynamic-schema-servers).
+>在创建动态架构之前，必须[创建动态架构服务器](../../authoring-api/destination-server/create-destination-server.md#dynamic-schema-servers)。
 
-在动态模式配置中， `profileFields` 数组被替换为 `dynamicSchemaConfig` 部分，如下所示。
+在动态架构配置中，`profileFields`数组已由`dynamicSchemaConfig`部分替换，如下所示。
 
 ```json
 "schemaConfig":{
@@ -146,15 +146,15 @@ Destination SDK支持创建动态合作伙伴架构。 与静态架构不同，�
 }
 ```
 
-| 参数 | 类型 | 必填/可选 | 描述 |
+| 参数 | 类型 | 必需/可选 | 描述 |
 |---------|----------|------|---|
-| `dynamicEnum.authenticationRule` | 字符串 | 必需 | 指示方式 [!DNL Platform] 客户连接到您的目标。 接受的值包括 `CUSTOMER_AUTHENTICATION`， `PLATFORM_AUTHENTICATION`， `NONE`. <br> <ul><li>使用 `CUSTOMER_AUTHENTICATION` 如果Platform客户通过所描述的任何身份验证方法登录到您的系统 [此处](customer-authentication.md). </li><li> 使用 `PLATFORM_AUTHENTICATION` 如果Adobe与您的目的地之间有一个全局身份验证系统，并且 [!DNL Platform] 客户无需提供任何身份验证凭据即可连接到您的目标。 在这种情况下，您必须 [创建凭据对象](../../credentials-api/create-credential-configuration.md) 使用凭据API。 </li><li>使用 `NONE` 如果不需要身份验证即可将数据发送到您的目标平台。 </li></ul> |
-| `dynamicEnum.destinationServerId` | 字符串 | 必需 | 此 `instanceId` 动态架构服务器中的。 此目标服务器包括API端点，Experience Platform将调用该API端点以检索动态架构。 |
+| `dynamicEnum.authenticationRule` | 字符串 | 必需 | 指示[!DNL Platform]客户如何连接到您的目标。 接受的值为`CUSTOMER_AUTHENTICATION`、`PLATFORM_AUTHENTICATION`、`NONE`。<br> <ul><li>如果Platform客户通过[此处](customer-authentication.md)描述的任何身份验证方法登录您的系统，请使用`CUSTOMER_AUTHENTICATION`。 </li><li> 如果Adobe与您的目标之间存在全局身份验证系统，并且[!DNL Platform]客户不需要提供任何身份验证凭据即可连接到您的目标，则使用`PLATFORM_AUTHENTICATION`。 在这种情况下，您必须使用凭据API [创建凭据对象](../../credentials-api/create-credential-configuration.md)。 </li><li>如果不需要身份验证即可将数据发送到目标平台，请使用`NONE`。 </li></ul> |
+| `dynamicEnum.destinationServerId` | 字符串 | 必需 | 动态架构服务器的`instanceId`。 此目标服务器包括API端点，Experience Platform将调用该API端点以检索动态架构。 |
 | `dynamicEnum.value` | 字符串 | 必需 | 动态架构的名称，如动态架构服务器配置中所定义。 |
-| `dynamicEnum.responseFormat` | 字符串 | 必需 | 始终设置为 `SCHEMA` 定义动态模式时。 |
-| `profileRequired` | 布尔值 | 可选 | 使用 `true` 用户是否应该能够将配置文件属性从Experience Platform映射到目标平台上的自定义属性。 |
-| `segmentRequired` | 布尔值 | 必需 | 此参数是Destination SDK的必需参数，应始终设置为 `true`. |
-| `identityRequired` | 布尔值 | 必需 | 设置为 `true` 用户是否应该能够映射 [身份类型](identity-namespace-configuration.md) 从Experience Platform到您在 `profileFields` 数组。 |
+| `dynamicEnum.responseFormat` | 字符串 | 必需 | 定义动态架构时，始终设置为`SCHEMA`。 |
+| `profileRequired` | 布尔值 | 可选 | 如果用户应该能够将配置文件属性从Experience Platform映射到目标平台上的自定义属性，请使用`true`。 |
+| `segmentRequired` | 布尔值 | 必需 | Destination SDK需要此参数，应始终将其设置为`true`。 |
+| `identityRequired` | 布尔值 | 必需 | 如果用户应该能够将[标识类型](identity-namespace-configuration.md)从Experience Platform映射到您在`profileFields`数组中定义的属性，则设置为`true`。 |
 
 {style="table-layout:auto"}
 
@@ -170,9 +170,9 @@ Destination SDK支持创建动态合作伙伴架构。 与静态架构不同，�
 >* 您可以配置必填源字段和必填目标字段。 在这种情况下，用户无法编辑或选择这两个字段中的任何一个，并且只能查看所选内容。
 >* 您只能配置必需的目标字段。 在这种情况下，允许用户选择要映射到目标的源字段。
 >
-> 仅配置必需源字段当前为 *非* 受支持。
+> 仅配置必需源字段当前是&#x200B;*不支持*。
 
-请参阅以下两个具有所需映射的架构配置示例，以及它们在的映射步骤中会是什么样子 [将数据激活到批处理目标工作流](../../../ui/activate-batch-profile-destinations.md).
+请参阅下面的两个架构配置示例，其中包含所需的映射，以及在[将数据激活到批处理目标工作流](../../../ui/activate-batch-profile-destinations.md)的映射步骤中这些配置的外观。
 
 
 >[!BEGINTABS]
@@ -194,16 +194,16 @@ Destination SDK支持创建动态合作伙伴架构。 与静态架构不同，�
 }
 ```
 
-| 参数 | 类型 | 必填/可选 | 描述 |
+| 参数 | 类型 | 必需/可选 | 描述 |
 |---|---|---|---|
-| `requiredMappingsOnly` | 布尔值 | 可选 | 当此项设置为true时，用户无法映射激活流中的其他属性和身份，除非您在 `requiredMappings` 数组。 |
-| `requiredMappings.sourceType` | 字符串 | 必需 | 指示 `source` 字段。 支持的值： <ul><li>`text/x.schema-path`：此值用于 `source` 字段是XDM架构中的配置文件属性。</li><li>`text/x.aep-xl`：在以下情况下使用此值： `source` 字段由正则表达式定义。 示例：`iif(segmentMembership.ups.aep_seg_id.status==\"exited\", \"1\", \"0\")`</li><li>`text/plain`：在以下情况下使用此值： `source` 字段由宏模板定义。 目前，唯一支持的宏模板是 `metadata.segment.alias`.</li></ul> |
-| `requiredMappings.source` | 字符串 | 必需 | 指示源字段的值。 支持的值类型： <ul><li>XDM配置文件属性。 示例: `personalEmail.address`. 当源属性是XDM配置文件属性时，设置 `sourceType` 参数至 `text/x.schema-path`.</li><li>正则表达式. 示例: `iif(segmentMembership.ups.aep_seg_id.status==\"exited\", \"1\", \"0\")`. 当源属性为正则表达式时，设置 `sourceType` 参数至 `text/x.aep-xl`.</li><li>宏模板。 示例:`metadata.segment.alias`. 当源属性是宏模板时，设置 `sourceType` 参数至 `text/plain`. 目前，唯一支持的宏模板是 `metadata.segment.alias`.</li></ul> |
+| `requiredMappingsOnly` | 布尔值 | 可选 | 当此项设置为true时，除了您在`requiredMappings`数组中定义的必需映射之外，用户无法映射激活流中的其他属性和身份。 |
+| `requiredMappings.sourceType` | 字符串 | 必需 | 指示`source`字段的类型。 支持的值： <ul><li>`text/x.schema-path`：当`source`字段是XDM架构中的配置文件属性时使用此值。</li><li>`text/x.aep-xl`：当您的`source`字段由正则表达式定义时，使用此值。 示例：`iif(segmentMembership.ups.aep_seg_id.status==\"exited\", \"1\", \"0\")`</li><li>`text/plain`：当您的`source`字段由宏模板定义时，使用此值。 当前，唯一支持的宏模板是`metadata.segment.alias`。</li></ul> |
+| `requiredMappings.source` | 字符串 | 必需 | 指示源字段的值。 支持的值类型： <ul><li>XDM配置文件属性。 示例： `personalEmail.address`。 当源属性是XDM配置文件属性时，将`sourceType`参数设置为`text/x.schema-path`。</li><li>正则表达式。 示例： `iif(segmentMembership.ups.aep_seg_id.status==\"exited\", \"1\", \"0\")`。 当源属性为正则表达式时，将`sourceType`参数设置为`text/x.aep-xl`。</li><li>宏模板。 示例： `metadata.segment.alias`。 当源属性是宏模板时，将`sourceType`参数设置为`text/plain`。 当前，唯一支持的宏模板是`metadata.segment.alias`。</li></ul> |
 | `requiredMappings.destination` | 字符串 | 必需 | 指示目标字段的值。 当源字段和目标字段均指定为必需映射时，用户无法选择或编辑这两个字段中的任何一个，并且只能查看所选内容。 |
 
 {style="table-layout:auto"}
 
-因此， **[!UICONTROL 源字段]** 和 **[!UICONTROL 目标字段]** Platform UI中的部分显示为灰色。
+因此，Platform UI中的&#x200B;**[!UICONTROL Source字段]**&#x200B;和&#x200B;**[!UICONTROL Target字段]**&#x200B;部分均呈灰显状态。
 
 ![UI激活流程中所需映射的图像。](../../assets/functionality/destination-configuration/required-mappings-2.png)
 
@@ -224,20 +224,33 @@ Destination SDK支持创建动态合作伙伴架构。 与静态架构不同，�
 }
 ```
 
-| 参数 | 类型 | 必填/可选 | 描述 |
+| 参数 | 类型 | 必需/可选 | 描述 |
 |---|---|---|---|
-| `requiredMappingsOnly` | 布尔值 | 可选 | 当此项设置为true时，用户无法映射激活流中的其他属性和身份，除非您在 `requiredMappings` 数组。 |
+| `requiredMappingsOnly` | 布尔值 | 可选 | 当此项设置为true时，除了您在`requiredMappings`数组中定义的必需映射之外，用户无法映射激活流中的其他属性和身份。 |
 | `requiredMappings.destination` | 字符串 | 必需 | 指示目标字段的值。 当仅指定目标字段时，用户可以选择要映射到目标的源字段。 |
-| `mandatoryRequired` | 布尔值 | 可选 | 指示映射是否应标记为 [必需属性](../../../ui/activate-batch-profile-destinations.md#mandatory-attributes). |
-| `primaryKeyRequired` | 布尔值 | 可选 | 指示映射是否应标记为 [重复数据删除键](../../../ui/activate-batch-profile-destinations.md#deduplication-keys). |
+| `mandatoryRequired` | 布尔值 | 可选 | 指示映射是否应标记为[必需属性](../../../ui/activate-batch-profile-destinations.md#mandatory-attributes)。 |
+| `primaryKeyRequired` | 布尔值 | 可选 | 指示映射是否应标记为[重复数据删除键](../../../ui/activate-batch-profile-destinations.md#deduplication-keys)。 |
 
 {style="table-layout:auto"}
 
-因此， **[!UICONTROL 目标字段]** Platform UI中的部分呈灰显状态，而 **[!UICONTROL 源字段]** 区域处于活动状态，用户可以与其进行交互。 此 **[!UICONTROL 必需键]** 和 **[!UICONTROL 重复数据删除键]** 选项处于活动状态，用户无法更改它们。
+因此，Platform UI中的&#x200B;**[!UICONTROL Target字段]**&#x200B;部分呈灰显状态，而&#x200B;**[!UICONTROL Source字段]**&#x200B;部分处于活动状态，用户可以与其进行交互。 **[!UICONTROL 必需键]**&#x200B;和&#x200B;**[!UICONTROL 重复数据删除键]**&#x200B;选项处于活动状态，用户无法更改它们。
 
 ![UI激活流程中所需映射的图像。](../../assets/functionality/destination-configuration/required-mappings-1.png)
 
 >[!ENDTABS]
+
+## 配置对外部受众的支持 {#external-audiences}
+
+要将您的目标配置为支持激活[外部生成的受众](../../../../segmentation/ui/audience-portal.md#import-audience)，请在`schemaConfig`部分中包含以下代码片段。
+
+```json
+"schemaConfig": {
+  "segmentNamespaceDenyList": [],
+  ...
+}
+```
+
+请参阅本页上面[表](#attributes-schema)中的属性说明，了解有关`segmentNamespaceDenyList`功能的更多信息。
 
 ## 后续步骤 {#next-steps}
 
