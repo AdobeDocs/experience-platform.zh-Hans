@@ -6,9 +6,9 @@ breadcrumb-title: Web SDK 指南
 user-guide-description: 通过边缘网络与 Experience Cloud 服务交互。
 feature: Web SDK
 role: Developer
-source-git-commit: 14f9c2240d1a650cc267bd997ea35d7923f71b2b
+source-git-commit: bb2c0b5483bf0b50e98e21bef23d1667660d1981
 workflow-type: tm+mt
-source-wordcount: '225'
+source-wordcount: '226'
 ht-degree: 22%
 
 ---
@@ -26,6 +26,7 @@ ht-degree: 22%
 * 命令{#commands}
    * 配置{#configure}
       * [概述](commands/configure/overview.md)
+      * [autoTrackPropositionInteractionsEnabled](commands/configure/autotrackpropositioninteractionsenabled.md)
       * [clickCollectionEnabled](commands/configure/clickcollectionenabled.md)
       * [clickCollection](commands/configure/clickcollection.md)
       * [上下文](commands/configure/context.md)
