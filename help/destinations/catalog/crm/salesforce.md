@@ -3,7 +3,7 @@ keywords: crm；CRM；CRM目标；salesforce crm；salesforce crm目标
 title: Salesforce CRM连接
 description: Salesforce CRM目标允许您导出帐户数据，并在Salesforce CRM中激活该数据，以满足您的业务需求。
 exl-id: bd9cb656-d742-4a18-97a2-546d4056d093
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: d9ff92138a5de774f011dd9b2e5f1cdc3371bacf
 workflow-type: tm+mt
 source-wordcount: '2821'
 ht-degree: 1%
@@ -134,7 +134,7 @@ ht-degree: 1%
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
----------|----------|---------|
+|---------|----------|---------|
 | 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在根据字段映射导出区段的所有成员，以及所需的架构字段&#x200B;*（例如：电子邮件地址、电话号码、姓氏）*。</li><li> 根据[受众计划](#schedule-segment-export-example)步骤期间提供的&#x200B;**[!UICONTROL 映射ID]**&#x200B;值，[!DNL Salesforce CRM]中的每个受众状态都将通过平台中的相应受众状态进行更新。</li></ul> |
 | 导出频率 | **[!UICONTROL 正在流式传输]** | <ul><li>流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。</li></ul> |
 
@@ -153,8 +153,9 @@ ht-degree: 1%
 ### 验证目标 {#authenticate}
 
 要验证到目标，请填写下面的必填字段，然后选择&#x200B;**[!UICONTROL 连接到目标]**。 有关任何指导，请参阅[收集 [!DNL Salesforce CRM] 凭据](#gather-credentials)部分。
+
 | 凭据 | 描述 |
-| — | — |
+| --- | --- |
 | **[!UICONTROL 用户名]** | 您的[!DNL Salesforce]帐户用户名。 |
 | **[!UICONTROL 密码]** | 由附加了[!DNL Salesforce]安全令牌的[!DNL Salesforce]帐户密码组成的连接字符串。<br>连接值采用`{PASSWORD}{TOKEN}`的形式。<br>注意，不要使用任何大括号或空格。<br>例如，如果您的[!DNL Salesforce]密码为`MyPa$$w0rd123`，[!DNL Salesforce]安全令牌为`TOKEN12345....0000`，则您在&#x200B;**[!UICONTROL 密码]**&#x200B;字段中使用的串联值为`MyPa$$w0rd123TOKEN12345....0000`。 |
 | **[!UICONTROL 自定义域]** | 您的[!DNL Salesforce]域前缀。 <br>例如，如果您的域是&#x200B;*`d5i000000isb4eak-dev-ed`.my.salesforce.com*，则需要提供`d5i000000isb4eak-dev-ed`作为值。 |
@@ -212,12 +213,13 @@ ht-degree: 1%
    * 如果您正在使用区段中的&#x200B;*联系人*，请参阅Salesforce中的[联系人](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_contact.htm)的对象引用以定义要更新的字段的映射。
    * 您可以通过搜索单词&#x200B;*必需*&#x200B;来标识必填字段，上述链接中的字段描述中提到了该单词。
    * 根据要导出或更新字段，在XDM配置文件架构和[!DNL (API) Salesforce CRM]之间添加映射：
-|Source字段|目标字段| 注释 |
-| — | — | — |
-|`IdentityMap: crmID`|`Identity: SalesforceId`|`Mandatory`|
-|`xdm: person.name.lastName`|`Attribute: LastName`| `Mandatory`。 联系人的姓氏，最多80个字符。 |\
-     |`xdm: person.name.firstName`|`Attribute: FirstName`| 联系人的名字最多可包含40个字符。 |
-|`xdm: personalEmail.address`|`Attribute: Email`| 联系人的电子邮件地址。 |
+
+     | 源字段 | 目标字段 | 注释 |
+     | --- | --- | --- |
+     | `IdentityMap: crmID` | `Identity: SalesforceId` | `Mandatory` |
+     | `xdm: person.name.lastName` | `Attribute: LastName` | `Mandatory`的问题。联系人的姓氏，最多80个字符。 |
+     | `xdm: person.name.firstName` | `Attribute: FirstName` | 联系人的名字最多可包含40个字符。 |
+     | `xdm: personalEmail.address` | `Attribute: Email` | 联系人的电子邮件地址。 |
 
    * 下面显示了使用这些映射的示例：
      ![显示Target映射的Platform UI屏幕快照示例。](../../assets/catalog/crm/salesforce/mappings-contacts.png)
@@ -227,12 +229,13 @@ ht-degree: 1%
    * 如果您正在区段中使用&#x200B;*潜在客户*，请参阅Salesforce中的[潜在客户](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_lead.htm)的对象引用，以便为要更新的字段定义映射。
    * 您可以通过搜索单词&#x200B;*必需*&#x200B;来标识必填字段，上述链接中的字段描述中提到了该单词。
    * 根据要导出或更新字段，在XDM配置文件架构和[!DNL (API) Salesforce CRM]之间添加映射：
-|Source字段|目标字段| 注释 |
-| — | — | — |
-|`IdentityMap: crmID`|`Identity: SalesforceId`|`Mandatory`|
-|`xdm: person.name.lastName`|`Attribute: LastName`| `Mandatory`。 潜在客户的姓氏最多为80个字符。 |\
-     |`xdm: b2b.companyName`|`Attribute: Company`| `Mandatory`。 潜在客户的公司。 |
-|`xdm: personalEmail.address`|`Attribute: Email`| 商机的电子邮件地址。 |
+
+     | 源字段 | 目标字段 | 注释 |
+     | --- | --- | --- |
+     | `IdentityMap: crmID` | `Identity: SalesforceId` | `Mandatory` |
+     | `xdm: person.name.lastName` | `Attribute: LastName` | `Mandatory`的问题。潜在客户的姓氏最多为80个字符。 |
+     | `xdm: b2b.companyName` | `Attribute: Company` | `Mandatory`的问题。潜在客户的公司。 |
+     | `xdm: personalEmail.address` | `Attribute: Email` | 商机的电子邮件地址。 |
 
    * 下面显示了使用这些映射的示例：
      ![显示Target映射的Platform UI屏幕快照示例。](../../assets/catalog/crm/salesforce/mappings-leads.png)
@@ -256,8 +259,9 @@ ht-degree: 1%
 如上所示，[!DNL Salesforce] **[!UICONTROL 字段名称]**&#x200B;与[!DNL Salesforce CRM] **[!UICONTROL 映射ID]**&#x200B;中指定的值完全匹配。
 
 根据您的用例，所有激活的受众都可以映射到同一[!DNL Salesforce]自定义字段或[!DNL Salesforce CRM]中的不同&#x200B;**[!UICONTROL 字段名称]**。 基于上述图像的典型示例可能是。
+
 | [!DNL Salesforce CRM]区段名称 | [!DNL Salesforce] **[!UICONTROL 字段名称]** | [!DNL Salesforce CRM] **[!UICONTROL 映射ID]** |
-| — | — | — |
+| --- | --- | --- |
 | crm_1_seg | `crm_1_seg` | `crm_1_seg` |
 | crm_2_seg | `crm_2_seg` | `crm_2_seg` |
 

@@ -1,7 +1,7 @@
 ---
 title: Merkury企业标识目标
 description: 了解如何使用Adobe Experience Platform UI创建Merkury Enterprise Identity目标连接。
-source-git-commit: 01ce38d26cf61706de84ec143e3dd8af720d0591
+source-git-commit: 0a1d024b5642c08cd9349220a9686d8d4cbfd55a
 workflow-type: tm+mt
 source-wordcount: '1469'
 ht-degree: 2%
@@ -75,10 +75,11 @@ ht-degree: 2%
 ## 导出类型和频率
 
 有关目标导出类型和频率的信息，请参阅下表。
-|**受众**|**支持**|**描述来源**|\
-|—|—|—|\
-✓ |分段服务||通过Experience Platform[[分段服务]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/home)生成的受众。|
-自定义上传|X|受众[[已导入]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience)以从CSV文件导入Experience Platform。
+
+| **受众** | **支持** | **描述来源** |
+|---|---|---|      
+| Segmentation Service | ✓ {\f13 } | 通过Experience Platform[[分段服务]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/home)生成的受众。 |
+| 自定义上传 | X | 受众[[已将]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience)从CSV文件导入到Experience Platform中。 |
 
 {style="table-layout:auto"}
 
