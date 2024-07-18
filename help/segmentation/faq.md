@@ -2,9 +2,9 @@
 title: 受众常见问题解答
 description: 了解有关受众的常见问题解答以及其他与分段相关的概念。
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: ca8f0c3df9581af7be37e242c9e300ef1b6ea814
 workflow-type: tm+mt
-source-wordcount: '4096'
+source-wordcount: '4092'
 ht-degree: 0%
 
 ---
@@ -317,7 +317,7 @@ Audience Portal和Audience Composition适用于所有Real-Time CDP Prime和Ultim
 
 在受众构成中创建受众时，会自动保存受众。 受众的创建时间将是第一次进行此自动保存。
 
-创建受众后，评估可能需要24小时。
+创建受众组合后，最多可能需要48小时才能评估和激活该组合，以供在下游服务(例如Real-Time CDP目标或Adobe Journey Optimizer渠道)中使用。
 
 ### 何时可以使用我创建的受众？
 
@@ -337,11 +337,7 @@ Audience Portal和Audience Composition适用于所有Real-Time CDP Prime和Ultim
 
 当按属性划分时，组之间存在互斥性。 这意味着，如果记录满足多个拆分路径的条件，将从左侧为其分配&#x200B;**第一个**&#x200B;路径，而不是向任何其他路径分配&#x200B;**个**。
 
-按百分比拆分时，拆分&#x200B;**随机**&#x200B;完成。 这意味着用户档案将随机分配给每个路径。 拆分&#x200B;**是**&#x200B;持续的，这意味着每次评估时配置文件将位于相同的子受众中。
-
->[!NOTE]
->
->以前，受众组合中的拆分是&#x200B;**而不是**&#x200B;持久的。
+按百分比拆分时，拆分&#x200B;**随机**&#x200B;完成。 这意味着用户档案将随机分配给每个路径。
 
 有关拆分块的更多信息，请阅读[受众合成UI指南](./ui/audience-composition.md#split)。
 

@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Audiences UI指南
 description: Adobe Experience Platform UI中的受众组合提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了一些直观的控件，可用于为贵组织构建和编辑受众。
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: 3852fc4eca8ea4b6b3fdcfb6aaa54315d83038b4
+source-git-commit: ca8f0c3df9581af7be37e242c9e300ef1b6ea814
 workflow-type: tm+mt
-source-wordcount: '1913'
+source-wordcount: '1951'
 ht-degree: 0%
 
 ---
@@ -268,14 +268,18 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 
 ## 发布受众
 
-合成受众后，您可以通过选择&#x200B;**[!UICONTROL Publish]**&#x200B;来保存和发布受众。
+>[!IMPORTANT]
+>
+>在发布受众构成时，请注意，评估和激活它以在下游服务(例如Real-Time CDP目标或Adobe Journey Optimizer渠道)中使用可能需要48小时。
 
-![Publish按钮突出显示，显示如何保存和发布受众。](../images/ui/audience-composition/publish.png)
+创建合成后，您可以通过选择&#x200B;**[!UICONTROL Publish]**&#x200B;来保存和发布合成。
+
+![Publish按钮突出显示，显示如何保存和发布您的合成。](../images/ui/audience-composition/publish.png)
 
 如果创建受众时出现任何错误，则会显示一条警报，让您知道如何解决此问题。
 
-![Publish按钮突出显示，显示如何保存和发布受众。](../images/ui/audience-composition/audience-alert.png)
+![Publish按钮突出显示，显示如何保存和发布您的合成。](../images/ui/audience-composition/audience-alert.png)
 
 ## 后续步骤
 
-受众构成提供了一个丰富的工作流，允许您从不同的块类型创建受众。 要了解有关Segmentation Service UI其他部分的更多信息，请参阅[Segmentation Service用户指南](./overview.md)。
+受众组合提供了一个丰富的工作流，允许您从不同的块类型创建组合。 要了解有关Segmentation Service UI其他部分的更多信息，请参阅[Segmentation Service用户指南](./overview.md)。

@@ -1,9 +1,9 @@
 ---
 title: 受众门户概述
 description: 了解如何使用Audience Portal在Adobe Experience Platform中查看、管理和创建受众。
-source-git-commit: c724baba6972e1a033c18b63ab824149567d20fb
+source-git-commit: ca8f0c3df9581af7be37e242c9e300ef1b6ea814
 workflow-type: tm+mt
-source-wordcount: '3673'
+source-wordcount: '3693'
 ht-degree: 3%
 
 ---
@@ -258,6 +258,10 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 ### 受众总数 {#audience-total}
 
 **[!UICONTROL 受众总计]**&#x200B;部分显示符合受众条件的配置文件总数。
+
+>[!NOTE]
+>
+>导出作业完成后，可能需要长达30分钟才能更新受众总数。
 
 通过使用当天样本数据的样本量生成预估。 如果您的配置文件存储中的实体少于100万，则使用完整数据集；对于100万到2,000万之间的实体，使用100万个实体；而对于2000多万个实体，使用总实体的5%。 有关生成估算的详细信息，请参阅受众创建教程的[估算生成部分](../tutorials/create-a-segment.md#estimate-and-preview-an-audience)。
 
