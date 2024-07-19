@@ -47,10 +47,10 @@ ht-degree: 67%
 * 护栏{#guardrails}
    * [Real-Time CDP护栏概述](guardrails/overview.md)
    * 用于数据引入的[护栏](https://experienceleague.adobe.com/docs/experience-platform/ingestion/guardrails.html){target="_blank"}
-   *  [!DNL Edge Network Server API]](https://experienceleague.adobe.com/docs/experience-platform/edge-network-server-api/guardrails.html){target="_blank"}的[护栏
+   * [[!DNL Edge Network Server API]的护栏](https://experienceleague.adobe.com/docs/experience-platform/edge-network-server-api/guardrails.html){target="_blank"}
    * [针对 [!DNL Real-Time Customer Profile] 数据和分段的护栏](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html?lang=zh-Hans){target="_blank"}
-   *  [!DNL Identity Service] 数据](https://experienceleague.adobe.com/docs/experience-platform/identity/guardrails.html){target="_blank"}的[护栏
-   *  [!DNL Query Service]](https://experienceleague.adobe.com/docs/experience-platform/query/guardrails.html){target="_blank"}的[护栏
+   * [[!DNL Identity Service] 数据的护栏](https://experienceleague.adobe.com/docs/experience-platform/identity/guardrails.html){target="_blank"}
+   * [[!DNL Query Service]的护栏](https://experienceleague.adobe.com/docs/experience-platform/query/guardrails.html){target="_blank"}
    * [通过目标激活数据的护栏](https://experienceleague.adobe.com/docs/experience-platform/destinations/guardrails.html){target="_blank"}
 * 标识 {#identity}
    * [标识和标识命名空间](profile/identities-overview.md)
