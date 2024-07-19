@@ -3,9 +3,9 @@ title: 数据集过期API端点
 description: 数据卫生API中的/ttl端点允许您在Adobe Experience Platform中以编程方式计划数据集过期时间。
 role: Developer
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: 4fb8313f8209b68acef1484fc873b9bd014492be
+source-git-commit: 911089ec641d9fbb436807b04dd38e00fd47eecf
 workflow-type: tm+mt
-source-wordcount: '2217'
+source-wordcount: '1964'
 ht-degree: 1%
 
 ---
@@ -388,88 +388,6 @@ curl -X DELETE \
 
 成功的响应返回HTTP状态204（无内容），并且过期的`status`属性设置为`cancelled`。
 
-## 检索数据集的到期状态历史记录 {#retrieve-expiration-history}
-
-要查找特定数据集的到期状态历史记录，请在查找请求中使用`{DATASET_ID}`和`include=history`查询参数。 结果包括关于创建数据集过期、已应用的任何更新及其取消或执行（如果适用）的信息。 您还可以使用`{DATASET_EXPIRATION_ID}`检索数据集到期状态历史记录。
-
-**API格式**
-
-```http
-GET /ttl/{DATASET_ID}?include=history
-GET /ttl/{DATASET_EXPIRATION_ID}?include=history
-```
-
-| 参数 | 描述 |
-| --- | --- |
-| `{DATASET_ID}` | 要查找其过期历史记录的数据集的ID。 |
-| `{DATASET_EXPIRATION_ID}` | 数据集过期的ID。 注意：这称为响应中的`ttlId`。 |
-
-{style="table-layout:auto"}
-
-**请求**
-
-```shell
-curl -X GET \
-  https://platform.adobe.io/data/core/hygiene/ttl/62759f2ede9e601b63a2ee14?include=history \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}'
-```
-
-**响应**
-
-成功的响应返回数据集到期的详细信息，其中`history`数组为它的每个记录更新提供其`status`、`expiry`、`updatedAt`和`updatedBy`属性的详细信息。
-
-```json
-{
-  "ttlId": "SD-b16c8b48-a15a-45c8-9215-587ea89369bf",
-  "datasetId": "62759f2ede9e601b63a2ee14",
-  "datasetName": "Example Dataset",
-  "sandboxName": "prod",
-  "displayName": "Expiration Request 123",
-  "description": "Expiration Request 123 Description",
-  "imsOrg": "0FCC747E56F59C747F000101@AdobeOrg",
-  "status": "cancelled",
-  "expiry": "2022-05-09T23:47:30.071186Z",
-  "updatedAt": "2022-05-09T23:47:30.071186Z",
-  "updatedBy": "Jane Doe <jdoe@adobe.com> 77A51F696282E48C0A494 012@64d18d6361fae88d49412d.e",
-  "history": [
-    {
-      "status": "created",
-      "expiry": "2032-12-31T23:59:59Z",
-      "updatedAt": "2022-05-09T22:38:40.393115Z",
-      "updatedBy": "Jane Doe <jdoe@adobe.com> 77A51F696282E48C0A494 012@64d18d6361fae88d49412d.e"
-    },
-    {
-      "status": "updated",
-      "expiry": "2032-12-31T23:59:59Z",
-      "updatedAt": "2022-05-09T22:41:46.731002Z",
-      "updatedBy": "Jane Doe <jdoe@adobe.com> 77A51F696282E48C0A494 012@64d18d6361fae88d49412d.e"
-    },
-    {
-      "status": "cancelled",
-      "expiry": "2022-05-09T23:47:30.071186Z",
-      "updatedAt": "2022-05-09T23:47:30.071186Z",
-      "updatedBy": "Jane Doe <jdoe@adobe.com> 77A51F696282E48C0A494 012@64d18d6361fae88d49412d.e"
-    }
-  ]
-}
-```
-
-| 属性 | 描述 |
-| --- | --- |
-| `ttlId` | 数据集过期的ID。 |
-| `datasetId` | 此到期应用于的数据集的ID。 |
-| `datasetName` | 此过期应用于的数据集的显示名称。 |
-| `sandboxName` | 目标数据集所在的沙盒的名称。 |
-| `displayName` | 到期请求的显示名称。 |
-| `description` | 到期请求的描述。 |
-| `imsOrg` | 您组织的ID。 |
-| `history` | 以对象数组形式列出到期的更新历史记录，每个对象包含在更新时到期的`status`、`expiry`、`updatedAt`和`updatedBy`属性。 |
-
-{style="table-layout:auto"}
-
 ## 附录
 
 ### 接受的查询参数 {#query-params}
@@ -482,18 +400,14 @@ curl -X GET \
 
 | 参数 | 描述 | 示例 |
 | --- | --- | --- |
-| `author` | 匹配`created_by`与搜索字符串匹配的过期时间。 如果搜索字符串以`LIKE`或`NOT LIKE`开头，则其余部分将被视为SQL搜索模式。 否则，整个搜索字符串将被视为必须完全匹配`created_by`字段的整个内容的文字字符串。 | `author=LIKE %john%`、`author=John Q. Public` |
-| `cancelledDate` / `cancelledToDate` / `cancelledFromDate` | 匹配在指定间隔内任何时间取消的过期日期。 即使稍后重新打开了过期时间（通过为同一数据集设置新过期时间），这也适用。 | `updatedDate=2022-01-01` |
-| `completedDate` / `completedToDate` / `completedFromDate` | 匹配在指定间隔内完成的过期时间。 | `completedToDate=2021-11-11-06:00` |
-| `createdDate` | 匹配在指定时间开始的24小时窗口中创建的过期时间。<br><br>请注意，没有时间的日期（如`2021-12-07`）表示当天开始的日期时间。 因此，`createdDate=2021-12-07`是指2021年12月7日创建的从`00:00:00`到`23:59:59.999999999` (UTC)的任何过期。 | `createdDate=2021-12-07` |
-| `createdFromDate` | 匹配在指定时间或之后创建的过期时间。 | `createdFromDate=2021-12-07T00:00:00Z` |
-| `createdToDate` | 匹配在指定时间或之前创建的过期日期。 | `createdToDate=2021-12-07T23:59:59.999999999Z` |
+| `author` | 使用`author`查询参数查找最近更新了数据集到期的人员。 如果自创建后未进行任何更新，则将与到期的原始创建者匹配。 此参数与`created_by`字段与搜索字符串对应的过期日期匹配。<br>如果搜索字符串以`LIKE`或`NOT LIKE`开头，则其余部分将被视为SQL搜索模式。 否则，整个搜索字符串将被视为必须完全匹配`created_by`字段的整个内容的文字字符串。 | `author=LIKE %john%`、`author=John Q. Public` |
 | `datasetId` | 匹配应用于特定数据集的过期时间。 | `datasetId=62b3925ff20f8e1b990a7434` |
 | `datasetName` | 匹配数据集名称包含提供的搜索字符串的过期时间。 匹配项不区分大小写。 | `datasetName=Acme` |
 | `description` |   | `description=Handle expiration of Acme information through the end of 2024.` |
 | `displayName` | 匹配显示名称包含提供的搜索字符串的过期时间。 匹配项不区分大小写。 | `displayName=License Expiry` |
 | `executedDate` / `executedFromDate` / `executedToDate` | 根据确切的执行日期、执行的结束日期或执行的开始日期过滤结果。 它们用于检索与特定日期、特定日期之前或特定日期之后执行操作相关联的数据或记录。 | `executedDate=2023-02-05T19:34:40.383615Z` |
-| `expiryDate` / `expiryToDate` / `expiryFromDate` | 匹配在指定间隔内即将执行或已执行的过期日期。 | `expiryFromDate=2099-01-01&expiryToDate=2100-01-01` |
+| `expiryDate` | 匹配在指定日期的24小时窗口内发生的过期。 | `2024-01-01` |
+| `expiryToDate` / `expiryFromDate` | 匹配在指定间隔内即将执行或已执行的过期日期。 | `expiryFromDate=2099-01-01&expiryToDate=2100-01-01` |
 | `limit` | 介于1和100之间的整数，它表示要返回的最大过期次数。 默认为25。 | `limit=50` |
 | `orderBy` | `orderBy`查询参数指定API返回结果的排序顺序。 使用它根据一个或多个字段以升序(ASC)或降序(DESC)顺序排列数据。 使用+或 — 前缀分别表示ASC、DESC。 接受以下值： `displayName`、`description`、`datasetName`、`id`、`updatedBy`、`updatedAt`、`expiry`、`status`。 | `-datasetName` |
 | `orgId` | 匹配其组织ID与参数的组织ID匹配的数据集过期日期。 此值默认为`x-gw-ims-org-id`标头的值，除非请求提供服务令牌，否则将忽略该值。 | `orgId=885737B25DC460C50A49411B@AdobeOrg` |
@@ -502,7 +416,8 @@ curl -X GET \
 | `search` | 匹配过期时间，其中指定的字符串与过期ID完全匹配，或者在以下任何字段中为&#x200B;**包含**：<br><ul><li>作者</li><li>显示名称</li><li>描述</li><li>显示名称</li><li>数据集名称</li></ul> | `search=TESTING` |
 | `status` | 以逗号分隔的状态列表。 包含后，响应将与当前状态位于所列数据集中的数据集过期日期相匹配。 | `status=pending,cancelled` |
 | `ttlId` | 将过期请求与给定ID匹配。 | `ttlID=SD-c8c75921-2416-4be7-9cfd-9ab01de66c5f` |
-| `updatedDate` / `updatedToDate` / `updatedFromDate` | 类似`createdDate` / `createdFromDate` / `createdToDate`，但与数据集到期的更新时间而非创建时间匹配。<br><br>每次编辑时都会将过期视为已更新，包括创建、取消或执行过期的时间。 | `updatedDate=2022-01-01` |
+| `updatedDate` | 匹配在指定日期的24小时窗口内更新的过期时间。 | `2024-01-01` |
+| `updatedToDate` / `updatedFromDate` | 匹配在指定时间开始的24小时窗口内更新的过期时间。<br><br>每次编辑时都会将过期视为已更新，包括创建、取消或执行过期的时间。 | `updatedDate=2022-01-01` |
 
 {style="table-layout:auto"}
 
