@@ -2,9 +2,9 @@
 title: 受众常见问题解答
 description: 了解有关受众的常见问题解答以及其他与分段相关的概念。
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: ca8f0c3df9581af7be37e242c9e300ef1b6ea814
+source-git-commit: 5e677e53677cd28787004043e9fcc9b94e631fc8
 workflow-type: tm+mt
-source-wordcount: '4092'
+source-wordcount: '4187'
 ht-degree: 0%
 
 ---
@@ -60,6 +60,10 @@ Audience Portal和Audience Composition适用于所有Real-Time CDP Prime和Ultim
 
 是，任何外部生成的受众都将显示在受众库存中，并且可用于在[区段生成器](./ui/segment-builder.md)中构建受众。
 
+### 多久评估一次外部生成的受众？
+
+导入期间只评估外部生成的受众&#x200B;**1}。**&#x200B;由于与这些导入受众关联的属性是非持久属性，且&#x200B;**不是**&#x200B;个人资料存储的一部分，因此，外部生成的受众唯一一次更新是手动更新现有受众。
+
 ### 我能否在分段过程中使用外部上传的属性？
 
 不行。 配置文件属性旨在成为持久属性，而上传的外部生成受众数据仅包含与该外部生成受众关联的上下文数据。
@@ -97,6 +101,10 @@ Audience Portal和Audience Composition适用于所有Real-Time CDP Prime和Ultim
 外部生成的受众的当前数据到期时间为&#x200B;**30天**。 选择此数据到期是为了减少存储在组织内的过量数据量。
 
 数据过期后，关联的数据集仍将显示在数据集清单中，但您&#x200B;**无法**&#x200B;激活受众，配置文件计数将显示为零。
+
+### 我可以导入的外部生成受众数量是否存在上限？
+
+您可以导入的外部生成受众数量没有限制。 但是，请注意，导入的受众&#x200B;**do**&#x200B;计入总体受众限制。
 
 ### Audience Portal和Audience Composition将如何与Real-Time CDP合作伙伴数据的发布进行交互？
 
