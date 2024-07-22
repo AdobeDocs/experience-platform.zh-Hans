@@ -4,14 +4,18 @@ solution: Experience Platform
 title: Data Access API指南
 description: 数据访问API通过为开发人员提供RESTful接口来支持Adobe Experience Platform，该接口侧重于在Experience Platform内摄取的数据集的可发现性和可访问性。
 exl-id: 278ec322-dafa-4e3f-ae45-2d20459c5653
-source-git-commit: d8694c094ae4a7284e4a3ed0ae5bc3dc198e501a
+source-git-commit: dbb96744c873d2bf656be03ebf1b8ea2fb08acf3
 workflow-type: tm+mt
-source-wordcount: '524'
+source-wordcount: '554'
 ht-degree: 4%
 
 ---
 
 # Data Access API指南
+
+>[!IMPORTANT]
+>
+>数据访问API现在&#x200B;**已弃用**。 建议使用目标从Adobe Experience Platform导出数据。 有关详细信息，请参阅[数据集导出目标文档](../destinations/destination-types.md#dataset-export-destinations)。
 
 数据访问API通过向用户提供侧重于在[!DNL Experience Platform]内摄取的数据集的可发现性和可访问性的RESTful接口来支持Adobe Experience Platform。
 
@@ -19,7 +23,7 @@ ht-degree: 4%
 
 ## API规范参考
 
-可在[此处](https://developer.adobe.com/experience-platform-apis/references/data-access/)找到Swagger API参考文档。
+可在[此处](https://developer.adobe.com/experience-platform-apis/references/data-access/)找到OpenAPI参考文档。
 
 ## 术语 {#terminology}
 

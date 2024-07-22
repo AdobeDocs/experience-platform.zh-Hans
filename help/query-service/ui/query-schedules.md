@@ -2,9 +2,9 @@
 title: 查询时间表
 description: 了解如何自动运行计划的查询、删除或禁用查询计划，以及通过Adobe Experience Platform UI利用可用的计划选项。
 exl-id: 984d5ddd-16e8-4a86-80e4-40f51f37a975
-source-git-commit: 41c069ef1c0a19f34631e77afd7a80b8967c5060
+source-git-commit: 0b056da8457010ce36efc48e3dd91f280a9b15c5
 workflow-type: tm+mt
-source-wordcount: '1822'
+source-wordcount: '1848'
 ht-degree: 0%
 
 ---
@@ -46,6 +46,10 @@ ht-degree: 0%
 ### 添加计划详细信息 {#schedule-details}
 
 此时将显示“调度详细资料”页。 在此页上，可以编辑计划查询的各种详细信息。 详细信息包括计划查询](#scheduled-query-frequency)运行的[频率和工作日、开始和结束日期、要将结果导出到的数据集以及[查询状态警报](#alerts-for-query-status)。
+
+>[!IMPORTANT]
+>
+>查询计划程序UI不支持无限期或永久计划。 必须指定结束日期。 结束日期没有上限。
 
 ![计划详细信息面板突出显示。](../images/ui/query-schedules/schedule-details.png)
 
