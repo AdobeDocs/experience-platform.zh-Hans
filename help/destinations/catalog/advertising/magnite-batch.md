@@ -1,34 +1,34 @@
 ---
-title: 菱形流批处理目标
+title: 菱镁矿批次目标
 description: 使用此目标可将AdobeCDP受众批量交付到Magnite流平台。
 badgeBeta: label="Beta 版" type="Informative"
 hide: true
 hidefromtoc: true
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: b8921e887b827fcc7b9115045a1954c41a37bce8
 workflow-type: tm+mt
-source-wordcount: '1685'
+source-wordcount: '1663'
 ht-degree: 1%
 
 ---
 
 
-# 菱形流：批量连接 {#magnite-streaming-batch}
+# 菱形：批处理连接 {#magnite-streaming-batch}
 
 ## 概述 {#overview}
 
-本文档介绍了Magnite流：批量目标，并提供了示例用例，以帮助您更好地了解如何激活受众并将其导出到其中。
+本文档介绍了Magnite：批量目标并提供示例用例，以帮助您更好地了解如何激活受众并将其导出到其中。
 
-Adobe Real-Time CDP受众可以通过两种方式交付到Magnite：流式平台 — 它们可以每天交付一次，也可以实时交付：
+Adobe Real-Time CDP受众可以通过两种方式交付到Magnite流平台：每天交付一次，或者实时交付：
 
-1. 如果您每天只需和/或需要交付受众一次，则可以使用Magnite：流式批处理目标，该目标通过每日S3批处理文件交付将受众交付给Magnite：流式处理。 这些批量受众会无限期地存储在我们的平台中，这与仅存储两天的实时受众不同。
+1. 如果您每天只需和/或需要交付受众一次，则可以使用Magnite：批量目标，该目标通过每天S3批量文件交付将受众交付到Magnite流。 这些批量受众会在Magnite平台中无限期存储，这与仅存储两天的实时受众不同。
 
-2. 但是，如果您希望和/或需要实时交付受众，则需要使用Magnite：流式实时目标。 在使用实时目标时，Magnite：流将实时接收受众，但我们只能暂时在我们的平台中存储实时受众，并且这些受众将在几天内从我们的系统中删除。 因此，如果您要使用Magnite：流式实时目标，您还需要使用Magnite：流式批处理目标 — 您激活到实时目标的每个受众，还需要激活到批处理目标。
+2. 但是，如果您希望或需要更频繁地交付受众，则需要使用[Magnite实时](/help/destinations/catalog/advertising/magnite-streaming.md)目标。 在使用实时目标时，Magnite流将实时接收受众，但Magnite只能暂时在其平台上存储实时受众，并且这些受众将在几天内从系统中删除。 因此，如果要使用Magnite实时目标，您&#x200B;*还*&#x200B;需要使用Magnite：批处理目标 — 您激活到实时目标的每个受众，还需要激活到批处理目标。
 
-回顾：如果您每天只想交付一次Adobe Real-Time CDP受众，您将只使用Magnite：流式批处理目标，并且每天将交付一次受众。 如果要实时交付Adobe Real-Time CDP受众，您将同时使用Magnite：流式批处理目标和Magnite：流式实时目标。 有关更多信息，请联系Magnite：流。
+回顾：如果您每天只想投放一次Adobe Real-Time CDP受众，则只需使用Magnite：批处理目标，并且每天会投放一次受众。 如果要实时交付Adobe Real-Time CDP受众，您将同时使用&#x200B;*和* Magnite：批处理目标以及Magnite实时目标。 有关更多信息，请联系Magnite：流。
 
 
-请继续阅读下文，了解有关Magnite：流式批处理目标、如何连接到该目标以及如何为其激活Adobe Real-Time CDP受众的更多信息。
-有关实时目标的详细信息，请参阅[此文档](magnite-streaming.md)。
+请继续阅读下文，了解有关Magnite：批处理目标、如何连接到该目标以及如何为其激活Adobe Real-Time CDP受众的更多信息。
+有关实时目标的详细信息，请参阅[此文档页面](magnite-streaming.md)。
 
 >[!IMPORTANT]
 >
@@ -38,31 +38,31 @@ Adobe Real-Time CDP受众可以通过两种方式交付到Magnite：流式平台
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解应如何以及何时使用Magnite流：批处理目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
+为了帮助您更好地了解应如何使用Magnite：批量目标以及何时使用，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
 
 ### 用例#1 {#use-case-1}
 
-您已在Magnite Streaming：实时目标上激活受众。
+您已在Magnite实时目标上激活受众。
 
-任何通过Magnite流：实时目标激活的受众还必须使用Magnite流：批量目标，因为批量交付的数据旨在替换/保留Magnite流平台中的实时交付数据。
+任何通过Magnite实时目标激活的受众还必须使用Magnite：批量目标，因为批量交付的数据旨在替换/保留Magnite流平台中的实时交付数据。
 
 ### 用例#2 {#use-case-2}
 
 您只想在Magnite流平台中以批量/每日节奏激活受众。
 
-通过Magnite流激活的任何受众：批次目标将以批处理/每日节奏交付，然后可以在Magnite流平台中定位。
+通过Magnite：批量目标激活的任何受众都将以批量/每日节奏交付，然后可以在Magnite流平台中进行定位。
 
 ## 先决条件 {#prerequisites}
 
-要在Adobe Experience Platform中使用Magnite目标，您必须首先拥有Magnite流帐户。 如果您有[!DNL Magnite Streaming]帐户，请联系您的[!DNL Magnite]帐户管理员，以获得访问[!DNL Magnite's]目标的凭据。 如果您没有[!DNL Magnite Streaming]帐户，请联系adobe-tech@magnite.com
+要在Adobe Experience Platform中使用[!DNL Magnite]目标，您必须首先拥有Magnite流帐户。 如果您有[!DNL Magnite Streaming]帐户，请联系您的[!DNL Magnite]帐户管理员，以获得访问[!DNL Magnite's]目标的凭据。 如果您没有[!DNL Magnite Streaming]帐户，请联系adobe-tech@magnite.com
 
 ## 支持的身份 {#supported-identities}
 
-Magnite流：批处理目标可以从AdobeCDP接收&#x200B;*任意*&#x200B;身份源。 目前，此目标具有三个目标标识字段可供您映射到。
+Magnite：批处理目标可以从AdobeCDP接收&#x200B;*任意*&#x200B;身份源。 目前，此目标具有三个目标标识字段可供您映射到。
 
 >[!NOTE]
 >
->*任何*&#x200B;标识源可以映射到任何magnite_deviceId目标标识。
+>*任何*&#x200B;标识源可以映射到任何`magnite_deviceId`目标标识。
 
 | 目标身份 | 描述 | 注意事项 |
 |:--------------------------- |:------------------------------------------------------------------------------------------------ |:------------------------------------------------------------------------------------- |
@@ -85,7 +85,7 @@ Magnite流：批处理目标可以从AdobeCDP接收&#x200B;*任意*&#x200B;身�
 
 | 项目 | 类型 | 注释 |
 |-----------------------------|----------|----------|
-| 导出类型 | 受众导出 | 您正在导出具有Magnite流：批处理目标中使用的标识符（姓名、电话号码或其他）的受众的所有成员。 |
+| 导出类型 | 受众导出 | 您正在导出具有Magnite：批处理目标中使用的标识符（姓名、电话号码或其他）的受众的所有成员。 |
 | 导出频率 | 批次 | 批量目标以三、六、八、十二或二十四小时的增量将文件导出到下游平台。 阅读有关批处理[基于文件的目标](/help/destinations/destination-types.md)的详细信息。 |
 
 {style="table-layout:auto"}
@@ -96,7 +96,7 @@ Magnite流：批处理目标可以从AdobeCDP接收&#x200B;*任意*&#x200B;身�
 
 ### 验证目标 {#authenticate}
 
-在Adobe体验目录中找到Magnite流：批处理目标。 单击其他选项按钮(\...)，然后配置目标连接/实例。
+在Adobe体验目录中找到Magnite：批处理目标。 单击其他选项按钮(\...)，然后配置目标连接/实例。
 
 如果您已经拥有现有帐户，则可以通过将“帐户类型”选项更改为“现有帐户”来查找该帐户。 否则，您将在下面创建一个帐户：
 
@@ -126,7 +126,7 @@ Magnite流：批处理目标可以从AdobeCDP接收&#x200B;*任意*&#x200B;身�
 
 然后，您可以通过选择&#x200B;**[!UICONTROL 下一步]**&#x200B;继续
 
-在标题为“治理策略和强制执行操作（可选）”的下一个屏幕上，您可以选择任意相关的数据治理策略。 通常，会为Magnite流批处理目标选择“数据导出”。
+在标题为“治理策略和强制执行操作（可选）”的下一个屏幕上，您可以选择任意相关的数据治理策略。 一般为Magnite：批处理目标选择“数据导出”。
 
 ![可选的治理策略和实施操作](../../assets/catalog/advertising/magnite/destination-batch-config-grouping-policy.png)
 
@@ -175,11 +175,11 @@ Magnite流：批处理目标可以从AdobeCDP接收&#x200B;*任意*&#x200B;身�
 
 上传受众后，您可以验证受众是否已正确创建和上传。
 
-* Magnite流批处理目标每天将S3文件交付给Magnite流。 投放和引入后，受众/区段预计会显示在Magnite流中，并可应用于交易。 您可以通过查找在Adobe Experience Platform中的激活步骤中共享的区段ID或区段名称来确认这一点。
+* Magnite：批处理目标每天将S3文件交付给Magnite流。 投放和引入后，受众/区段预计会显示在Magnite流中，并可应用于交易。 您可以通过查找在Adobe Experience Platform中的激活步骤中共享的区段ID或区段名称来确认这一点。
 
 >[!NOTE]
 >
->激活/交付到Magnite流批处理目标的受众将&#x200B;*替换*&#x200B;通过Magnite流实时目标激活/交付的相同受众。 如果您使用区段名称查找区段，则在Magnite流平台摄取并处理批次之前，可能无法实时找到该区段。
+>激活/交付到Magnite：批处理目标的受众将&#x200B;*替换*&#x200B;通过Magnite实时目标激活/交付的相同受众。 如果您使用区段名称查找区段，则在Magnite流平台摄取并处理批次之前，可能无法实时找到该区段。
 
 ## 数据使用和治理 {#data-usage-governance}
 

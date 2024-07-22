@@ -1,31 +1,31 @@
 ---
-title: Magnite流实时目标连接
+title: Magnite实时目标连接
 description: 使用此目标可将AdobeCDP受众实时交付到Magnite流平台。
 badgeBeta: label="Beta 版" type="Informative"
 hide: true
 hidefromtoc: true
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 8314aca706b47c4cbcb993418c287629f5563189
 workflow-type: tm+mt
-source-wordcount: '1306'
+source-wordcount: '1297'
 ht-degree: 1%
 
 ---
 
 
-# (Beta) Magnite流：实时目标连接
+# (Beta) Magnite：实时目标连接
 
 ## 概述 {#overview}
 
-Adobe Experience Platform中的[!DNL Magnite Streaming: Real-Time]和Magnite Streaming：批处理目标可帮助您映射和导出受众，以便在Magnite Streaming平台上定位和激活。
+Adobe Experience Platform中的[!DNL Magnite: Real-Time]和[Magnite：批处理](/help/destinations/catalog/advertising/magnite-batch.md)目标可帮助您映射和导出受众，以便在Magnite流平台上定位和激活。
 
-将受众激活到[!DNL Magnite Streaming]平台是一个两步过程，需要您同时使用Magnite流：实时和Magnite流：批处理目标。
+将受众激活到[!DNL Magnite Streaming]平台是一个两步过程，需要您同时使用Magnite： Real-Time和Magnite： Batch目标。
 
 要将受众激活到[!DNL Magnite Streaming]，您必须：
 
-* 激活[!DNL Magnite Streaming: Real-Time]目标上的受众，如本页所示。
-* 在Magnite流：批处理目标上激活相同受众。 [!DNL Magnite Streaming: Batch]目标是必需组件。 如果未在[!DNL Magnite Streaming]批处理目标上激活受众，则会导致集成失败，并且不会激活您的受众。
+* 激活[!DNL Magnite: Real-Time]目标上的受众，如本页所示。
+* 在Magnite：批处理目标上激活相同受众。 [!DNL Magnite: Batch]目标是必需组件。 如果未在[!DNL Magnite Streaming]批处理目标上激活受众，则会导致集成失败，并且不会激活您的受众。
 
-注意：使用实时目标时，[!DNL Magnite: Streaming]将实时接收受众，但我们只能暂时在我们的平台中存储实时受众，并且这些受众将在几天内从我们的系统中删除。 因此，如果您要使用Magnite：流实时目标，您&#x200B;*还*&#x200B;需要使用Magnite流：批处理目标 — 您激活到实时目标的每个受众，还需要激活到批处理目标。
+注意：使用实时目标时，[!DNL Magnite Streaming]将实时接收受众，但Magnite只能暂时在其平台上存储实时受众，并且这些受众将在几天内从系统中删除。 因此，如果您要使用Magnite：实时目标，您&#x200B;*还*&#x200B;需要使用Magnite：批处理目标 — 您激活到实时目标的每个受众，还需要激活到批处理目标。
 
 >[!IMPORTANT]
 >
@@ -35,7 +35,7 @@ Adobe Experience Platform中的[!DNL Magnite Streaming: Real-Time]和Magnite Str
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解您应如何以及何时使用[!DNL Magnite Streaming: Real-Time]目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
+为了帮助您更好地了解您应如何以及何时使用[!DNL Magnite: Real-Time]目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
 
 ### 激活和定位 {#activation-and-targeting}
 
@@ -48,11 +48,11 @@ Adobe Experience Platform中的[!DNL Magnite Streaming: Real-Time]和Magnite Str
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Magnite Streaming: Real-Time]目标支持激活下表中描述的标识。 了解有关[标识](/help/identity-service/features/namespaces.md)的更多信息。
+[!DNL Magnite: Real-Time]目标支持激活下表中描述的标识。 了解有关[标识](/help/identity-service/features/namespaces.md)的更多信息。
 
 | 目标身份 | 描述 | 注意事项 |
 |-------------------|--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
-| device_id | 设备或身份的唯一标识符。 我们接受任何设备ID和第一方ID，而不管类型如何。 | 我们支持的身份类型包括但不限于PPUID、GAID、IDFA和电视设备ID。 |
+| device_id | 设备或身份的唯一标识符。 我们接受任何设备ID和第一方ID，而不管类型如何。 | Magnite支持的身份类型包括但不限于PPUID、GAID、IDFA和电视设备ID。 |
 
 {style="table-layout:auto"}
 
@@ -73,7 +73,7 @@ Adobe Experience Platform中的[!DNL Magnite Streaming: Real-Time]和Magnite Str
 
 | 项目 | 类型 | 注释 |
 |------------------|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 导出类型 | **[!UICONTROL 区段导出]** | 您正在导出区段（受众）的所有成员以及[!DNL Magnite Streaming: Real-Time]目标中使用的标识符（姓名、电话号码或其他）。 |
+| 导出类型 | **[!UICONTROL 区段导出]** | 您正在导出区段（受众）的所有成员以及[!DNL Magnite: Real-Time]目标中使用的标识符（姓名、电话号码或其他）。 |
 | 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
@@ -162,13 +162,13 @@ Adobe Experience Platform中的[!DNL Magnite Streaming: Real-Time]和Magnite Str
 
 -->
 
-* Post引入后，受众应在几分钟内显示在[!DNL Magnite Streaming]中，并可应用于交易。 您可以通过查找在Adobe Experience Platform中的激活步骤中共享的区段ID来确认这一点。
+* 摄取后，受众应在几分钟内显示在[!DNL Magnite Streaming]中，并可应用于交易。 您可以通过查找在Adobe Experience Platform中的激活步骤中共享的区段ID来确认这一点。
 
-## 通过[!DNL Magnite Streaming: Batch]目标激活相同受众
+## 通过[!DNL Magnite: Batch]目标激活相同受众
 
-使用实时目标与[!DNL Magnite Streaming]共享的受众还需要使用Magnite Streaming：批处理目标进行共享。 正确配置后，[!DNL Magnite Streaming] UI中的区段名称会更新，以反映Adobe Experience Platform每日更新后使用的名称。
+使用实时目标与[!DNL Magnite Streaming]共享的受众还需要使用Magnite：批处理目标进行共享。 正确配置后，[!DNL Magnite Streaming] UI中的区段名称会更新，以反映Adobe Experience Platform每日更新后使用的名称。
 
-最后，如果尚未为您的集成配置批处理目标，请立即通过Magnite Streaming：批处理目标文档进行设置。
+最后，如果尚未为集成配置批处理目标，请立即通过Magnite：批处理目标文档进行设置。
 
 ## 数据使用和治理 {#data-usage-governance}
 

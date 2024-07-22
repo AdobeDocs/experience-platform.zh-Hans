@@ -3,9 +3,9 @@ keywords: 目标；目标；目标类型
 title: 目标类型和类别
 description: 了解Adobe Experience Platform中目标的各种类型和类别。
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: c6019737e93756f3f524d5a85ea57383baa1a31d
+source-git-commit: 8314aca706b47c4cbcb993418c287629f5563189
 workflow-type: tm+mt
-source-wordcount: '776'
+source-wordcount: '804'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 1%
 
 最后，还可以区分目标目录中所有组织内可用的公共目标与Real-Time CDP Ultimate客户为满足其特定导出用例而可以创建的专用目标。
 
-![目标图类型。](./assets/destination-types/types-of-destinations-no-highlight.png)
+![目标图类型。](./assets/destination-types/types-of-destinations-no-highlight.png "目标图类型。"){zoomable="yes"}
 
 ## 连接 {#connections}
 
@@ -33,17 +33,17 @@ Adobe Experience Platform捕获事件数据中的&#x200B;**[!UICONTROL 配置文
 * [流配置文件导出目标（企业目标）](#streaming-profile-export)
 * [批处理（基于文件）目标](#file-based)
 
-### 流配置文件导出目标（企业目标） {#streaming-profile-export}
+### 高级企业目标（流配置文件导出目标） {#streaming-profile-export}
 
 >[!IMPORTANT]
 >
->仅[Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户可以使用企业目标，或流式配置文件导出目标。
+>高级企业目标或流式配置文件导出目标仅适用于[Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
-使用企业目标Data Connectors近乎实时地将Adobe Real-time Customer Data Platform配置文件交付到内部系统或其他第三方系统，以便进行数据同步、分析和进一步扩充配置文件用例。
+使用高级企业目标数据连接器近乎实时地将Adobe Real-time Customer Data Platform配置文件交付给内部系统或其他第三方系统，以便进行数据同步、分析和进一步扩充配置文件用例。
 
 这些目标将接收受众和配置文件数据作为Experience Platform数据流。
 
-企业目标包括：
+高级企业目标包括：
 
 * [HTTP API目标](catalog/streaming/http-destination.md)
 * [Amazon Kinesis](catalog/cloud-storage/amazon-kinesis.md)
@@ -81,7 +81,7 @@ Experience Platform中的Edge个性化目标包括[Adobe Target](/help/destinati
 
 目标卡上的符号显示了您可以导出到每个目标的受众类型。
 
-![带有符号的目标卡片示例显示了可以导出的受众类型。](/help/destinations/assets/destination-types/types-of-audiences.png)
+![带有符号的目标卡片示例显示了可以导出的受众类型。](/help/destinations/assets/destination-types/types-of-audiences.png "带有符号的目标卡片示例显示了可以导出的受众类型。"){zoomable="yes"}
 
 
 ## 数据集导出目标 {#dataset-export-destinations}
@@ -114,4 +114,4 @@ Platform利用标记管理的强大功能和灵活性，允许您在UI中配置�
 
 [目标目录](https://platform.adobe.com/destination/catalog)中的连接和扩展按目标类别(**Advertising**、**Cloud Storage**、**调查平台**、**电子邮件营销**&#x200B;等)分组，具体取决于它们帮助您实现的营销操作。 有关每个类别以及每个类别中包含的目标的详细信息，请参阅[目标目录文档](./catalog/overview.md)。
 
-![目录页面中突出显示的目标类别。](./assets/destination-types/destination-categories-menu.png)
+![目录页面中突出显示的目标类别。](./assets/destination-types/destination-categories-menu.png "目录页面中突出显示的目标类别。"){zoomable="yes"}
