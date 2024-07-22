@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 5086e6419c14356b47963b8445389a0048ad11d7
+source-git-commit: e874459cd3018e0cf2358e590c6ec5eb0f7b4c98
 workflow-type: tm+mt
-source-wordcount: '2158'
+source-wordcount: '2192'
 ht-degree: 30%
 
 ---
@@ -13,6 +13,15 @@ ht-degree: 30%
 # Adobe Experience Platform Web SDK扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[平台Web SDK发行说明](/help/web-sdk/release-notes.md)。
+
+## 2.25.0版 — 2024年7月18日
+
+**新增功能**
+
+* 在Adobe Journey Optimizer中添加了对自动跟踪个性化的支持。
+* 引入了新设置，用于管理改进的点击收藏集。
+
+包含Adobe Experience Platform Web SDK版本2.21.1。
 
 ## 版本2.24.0 - 2024年6月5日
 
