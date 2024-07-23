@@ -2,9 +2,9 @@
 title: 将Adobe Target与Web SDK结合使用进行个性化
 description: 了解如何使用Adobe Target通过Experience PlatformWeb SDK呈现个性化内容
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: 69406293dce5fdfc832adff801f1991626dafae0
+source-git-commit: b50ea35bf0e394298c0c8f0ffb13032aaa1ffafb
 workflow-type: tm+mt
-source-wordcount: '1345'
+source-wordcount: '1364'
 ht-degree: 1%
 
 ---
@@ -192,77 +192,31 @@ alloy("sendEvent",
 
 例如，您的网站包含三个决策范围，分别对应于网站上的三个类别链接（“男性”、“女性”和“儿童”），并且您希望跟踪用户最终访问的类别。 发送这些请求，并将`__save`标志设置为`false`，以避免在请求内容时保留类别。 内容可视化后，为要记录的相应属性发送适当的负载（包括`eventToken`和`stateToken`）。
 
-<!--Save profile or entity attributes by default with:
-
-```js
-alloy ( "sendEvent" , {
-  renderDecisions : true,
-  data : {
-    __adobe : {
-      target : {
-        "__save" : true // Optional. __save=true is the default 
-        "profile.gender" : "female",
-        "profile.age" : 30,
-        "entity.name" : "T-shirt",
-        "entity.id" : "1234",
-      }
-    }
-  }
-} ) ; 
-```
--->
-
 以下示例发送trackEvent样式消息，执行配置文件脚本，保存属性，并立即记录事件。
 
 ```js
-alloy ( "sendEvent" , {
-  renderDecisions : true,
-  data : {
-    __adobe : {
-      target : {
-        "profile.gender" : "female",
-        "profile.age" : 30,
-        "entity.name" : "T-shirt" ,
-        "entity.id" : "1234" ,
-        "track": {
-          "scopes": [ "mbox1", "mbox2"],
-          "type": "display|click|..."
+alloy("sendEvent", {
+    "renderDecisions": true,
+    "data": {
+        "xdm": { // Experience Event XDM data },
+            "__adobe": {
+                "target": {
+                    " __save": true|false,
+                    //defaults to true if omitted 
+                    "profile.gender": "female",
+                    "profile.age": 30,
+                    "entity.name": "T-shirt",
+                    "entity.id": "1234"
+                }
+            }
         }
-      }
     }
-  }
-} ) ;
+})
 ```
 
 >[!NOTE]
 >
->如果省略`__save`指令，则会立即保存配置文件和实体属性，就像已执行请求一样，即使请求的其余部分是对个性化的预获取。 `__save`指令仅与配置文件和实体属性相关。 如果存在跟踪对象，则忽略`__save`指令。 数据会立即保存并记录通知。
-
-**`sendEvent`包含配置文件数据**
-
-```js
-alloy("sendEvent", {
-   renderDecisions: true|false,
-   xdm: { // Experience Event XDM data },
-   data: { // Freeform data }
-});
-```
-
-**如何将配置文件属性发送到Adobe Target：**
-
-```js
-alloy("sendEvent", {
-  "renderDecisions": true,
-  "data": {
-    "__adobe": {
-      "target": {
-        "profile.gender": "female",
-        "profile.age": 30
-      }
-    }
-  }
-});
-```
+>如果忽略`__save`指令，将立即保存配置文件和实体属性。 `__save`指令仅与配置文件属性和实体详细信息相关。
 
 ## 请求建议
 
@@ -302,6 +256,34 @@ alloy("sendEvent", {
   }
 });
 ```
+
+## 显示mbox转化量度 {#display-mbox-conversion-metrics}
+
+以下示例显示如何跟踪显示mbox转化并将配置文件参数发送到Adobe Target，而无需符合任何内容或活动的条件。
+
+```js
+alloy("sendEvent", {
+    "xdm": {
+        "_experience": {
+            "decisioning": {
+                "propositions": [{
+                    "scope": "conversion-step-1" //example scope name
+                }],
+                "propositionEventType": {
+                    "display": 1
+                }
+            }
+        },
+        "eventType": "decisioning.propositionDisplay"
+    }
+});
+```
+
+
+| 属性 | 描述 |
+|---------|----------|
+| `xdm._experience.decisioning.propositions[x].scope` | 将成功量度与关联的范围（该范围会将其归因于Target端的特定活动）。 |
+| `xdm._experience.decisioning.propositions[x].eventType` | 描述预期事件类型的字符串。 将此用例设置为`"decisioning.propositionDisplay"`。 |
 
 ## 调试
 
