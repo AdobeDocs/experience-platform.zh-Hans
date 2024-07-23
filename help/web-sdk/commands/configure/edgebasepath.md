@@ -2,7 +2,7 @@
 title: edgbasePath
 description: 用于与Adobe服务交互的端点的基本路径。
 exl-id: 3542575d-ad02-415c-8e47-97c877dfdd9d
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: 8fc0fd96f13f0642f7671d0e0f4ecfae8ab6761f
 workflow-type: tm+mt
 source-wordcount: '156'
 ht-degree: 0%
@@ -30,8 +30,8 @@ ht-degree: 0%
 
 ```js
 alloy("configure", {
-  "edgeConfigId": "ebebf826-a01f-4458-8cec-ef61de241c93",
-  "orgId": "ADB3LETTERSANDNUMBERS@AdobeOrg",
-  "edgeBasePath": "ee"
+  datastreamId: "ebebf826-a01f-4458-8cec-ef61de241c93",
+  orgId: "ADB3LETTERSANDNUMBERS@AdobeOrg",
+  edgeBasePath: "ee"
 });
 ```

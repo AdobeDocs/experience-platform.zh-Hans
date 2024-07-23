@@ -1,13 +1,13 @@
 ---
 title: clickCollectionEnabled
 description: 了解如何配置Web SDK以测试是否自动收集链接点击数据。
-source-git-commit: 660d4e72bd93ca65001092520539a249eae23bfc
+exl-id: e91b5bc6-8880-4884-87f9-60ec8787027e
+source-git-commit: d3be2a9e75514023a7732a1c3460f8695ef02e68
 workflow-type: tm+mt
-source-wordcount: '371'
+source-wordcount: '356'
 ht-degree: 0%
 
 ---
-
 
 # `clickCollectionEnabled`
 
@@ -33,14 +33,13 @@ ht-degree: 0%
 
 ## 使用Web SDK标记扩展启用自动链接跟踪 {#tag-extension}
 
-选中[配置标记扩展时&#x200B;**[!UICONTROL 启用“单击数据收集”]**&#x200B;复选框](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md)。
+此变量由标记扩展自动管理；您无需明确设置它。 如果在[配置标记扩展](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md)时选择以下任一项，则会收集适用的链接跟踪数据：
 
-1. 使用您的Adobe ID凭据登录[experience.adobe.com](https://experience.adobe.com)。
-1. 导航到&#x200B;**[!UICONTROL 数据收集]** > **[!UICONTROL 标记]**。
-1. 选择所需的标记属性。
-1. 导航到&#x200B;**[!UICONTROL 扩展]**，然后单击[!UICONTROL Adobe Experience Platform Web SDK]卡片上的&#x200B;**[!UICONTROL 配置]**。
-1. 向下滚动到[!UICONTROL 数据收集]部分，然后选中复选框&#x200B;**[!UICONTROL 启用“单击数据收集”]**。
-1. 单击&#x200B;**[!UICONTROL 保存]**，然后发布更改。
+* [!UICONTROL 收集内部链接点击次数]
+* [!UICONTROL 收集外部链接点击次数]
+* [!UICONTROL 收集下载链接点击次数]
+
+有关详细信息，请参阅[`clickCollection`](clickcollection.md)。
 
 ## 使用Web SDK JavaScript库启用自动链接跟踪 {#library}
 
@@ -48,7 +47,7 @@ ht-degree: 0%
 
 ```js
 alloy(configure, {
-  edgeConfigId: "ebebf826-a01f-4458-8cec-ef61de241c93",
+  datastreamId: "ebebf826-a01f-4458-8cec-ef61de241c93",
   orgId: "ADB3LETTERSANDNUMBERS@AdobeOrg",
   clickCollectionEnabled: false
 });

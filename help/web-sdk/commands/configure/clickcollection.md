@@ -1,13 +1,13 @@
 ---
 title: clickCollection
 description: 微调单击收藏集设置。
-source-git-commit: 660d4e72bd93ca65001092520539a249eae23bfc
+exl-id: 5a128b4a-4727-4415-87b4-4ae87a7e1750
+source-git-commit: d3be2a9e75514023a7732a1c3460f8695ef02e68
 workflow-type: tm+mt
-source-wordcount: '566'
+source-wordcount: '567'
 ht-degree: 0%
 
 ---
-
 
 # `clickCollection`
 
@@ -25,26 +25,27 @@ Web SDK 2.25.0或更高版本支持此功能。
 * **`clickCollection.eventGroupingEnabled`**：一个布尔值，用于确定库是否等到下一页发送链接跟踪数据。 加载下一页面时，将链接跟踪数据与页面加载事件相结合。 启用此选项可减少您发送到Adobe的事件数。 如果`internalLinkEnabled`被禁用，则此变量不执行任何操作。
 * **`clickCollection.sessionStorageEnabled`**：一个布尔值，用于确定链接跟踪数据是否存储在会话存储中而不是存储在本地变量中。 如果`internalLinkEnabled`或`eventGroupingEnabled`被禁用，则此变量不执行任何操作。
 
-  Adobe强烈建议在使用`eventGroupingEnabled`时启用此变量。 如果在`sessionStorageEnabled`被禁用时启用了`eventGroupingEnabled`，则单击到新页面会导致链接跟踪数据丢失，因为它未保留在会话存储中。 虽然可以在单页应用程序中禁用`sessionStorageEnabled`，但它不适用于非SPA页面。
+  Adobe强烈建议在使用`eventGroupingEnabled`的单页应用程序之外时启用此变量。 如果在`sessionStorageEnabled`被禁用时启用了`eventGroupingEnabled`，则单击到新页面会导致链接跟踪数据丢失，因为它未保留在会话存储中。 由于单页应用程序通常不会导航到新页面，因此SPA页面不需要会话存储。
 * **`filterClickDetails`**：回调函数，对您收集的链接跟踪数据提供完全控制。 您可以使用此回调函数来更改、模糊处理或中止发送链接跟踪数据。 当您要忽略特定信息（如链接中的个人身份信息）时，此回调很有用。
 
 ## 单击使用Web SDK标记扩展的收藏集设置
 
-选中[配置标记扩展时&#x200B;**[!UICONTROL 启用“单击数据收集”]**&#x200B;复选框](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md)。 启用此复选框将显示以下与点击收藏集相关的选项：
+在[配置标记扩展](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md)时，选择以下任一选项：
 
-* [!UICONTROL 内部链接]
-   * [!UICONTROL 启用事件分组]
-   * [!UICONTROL 启用会话存储]
-* [!UICONTROL 外部链接]
-* [!UICONTROL 下载链接]
+* [!UICONTROL 收集内部链接]
+   * [!UICONTROL 事件分组选项]：
+      * [!UICONTROL 无事件分组]
+      * [!UICONTROL 使用会话存储进行事件分组]
+      * [!UICONTROL 使用本地对象进行事件分组]
+* [!UICONTROL 收集外部链接]
+* [!UICONTROL 收集下载链接]
 * [!UICONTROL 筛选点击属性]
 
 1. 使用您的Adobe ID凭据登录[experience.adobe.com](https://experience.adobe.com)。
 1. 导航到&#x200B;**[!UICONTROL 数据收集]** > **[!UICONTROL 标记]**。
 1. 选择所需的标记属性。
 1. 导航到&#x200B;**[!UICONTROL 扩展]**，然后单击[!UICONTROL Adobe Experience Platform Web SDK]卡片上的&#x200B;**[!UICONTROL 配置]**。
-1. 向下滚动到[!UICONTROL 数据收集]部分，然后选中复选框&#x200B;**[!UICONTROL 启用“单击数据收集”]**。
-1. 选择所需的单击收藏集设置。
+1. 向下滚动到[!UICONTROL 数据收集]部分，然后选择所需的单击收集设置。
 1. 单击&#x200B;**[!UICONTROL 保存]**，然后发布更改。
 
 [!UICONTROL 过滤器单击属性]回调将打开一个自定义代码编辑器，允许您插入所需的代码。 在代码编辑器中，您可以访问以下变量：
@@ -72,11 +73,11 @@ Web SDK 2.25.0或更高版本支持此功能。
 * `filterClickDetails`：不包含函数；必须显式注册
 
 >[!TIP]
->Adobe建议启用`eventGroupingEnabled`，因为它有助于减少计入合同使用的事件数。
+>Adobe建议在启用`internalLinkEnabled`时启用`eventGroupingEnabled`，因为它减少了计入合同使用的事件数。
 
 ```js
 alloy("configure", {
-  edgeConfigId: "ebebf826-a01f-4458-8cec-ef61de241c93",
+  datastreamId: "ebebf826-a01f-4458-8cec-ef61de241c93",
   orgId: "ADB3LETTERSANDNUMBERS@AdobeOrg",
   clickCollectionEnabled: true,
   clickCollection: {
