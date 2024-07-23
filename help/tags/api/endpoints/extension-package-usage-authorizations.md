@@ -1,13 +1,13 @@
 ---
 title: 扩展包使用授权端点
 description: 了解如何在Reactor API中调用/extension_package_usage授权端点。
-source-git-commit: fdf01451527e2fab8eb6e6f9d7b4901a85381450
+exl-id: ad3fb704-7d2f-45ec-b80b-ea4d327f2205
+source-git-commit: 9cdd349e0eccb4498d88f24a84b0f1c116b0adfe
 workflow-type: tm+mt
 source-wordcount: '653'
 ht-degree: 4%
 
 ---
-
 
 # 扩展包使用授权端点
 
@@ -185,7 +185,7 @@ curl -X POST \
 >
 >在上述示例响应中，授权当前处于`pending_approval`阶段。 在使用扩展包之前，组织必须批准授权。 当授权正在等待审批时，组织的用户能够浏览专用扩展包，但他们无法安装该包，并且无法在扩展目录中找到它。
 
-## 检索扩展包使用授权列表 {#list_authorizations}
+## 检索扩展包使用授权列表 {#list-authorizations}
 
 您可以通过发出GET请求来检索扩展包使用授权的列表。
 
@@ -386,7 +386,7 @@ curl -X PATCH \
 >
 >授权获得批准后，您的组织便可以在您的资产上安装扩展包。
 
-## 为扩展包使用授权检索扩展包数据 {#retrieve_data}
+## 为扩展包使用授权检索扩展包数据 {#retrieve-data}
 
 您可以通过发出GET请求来检索扩展包使用授权的数据。
 
