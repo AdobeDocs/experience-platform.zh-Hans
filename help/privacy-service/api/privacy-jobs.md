@@ -5,7 +5,7 @@ title: 隐私作业API端点
 description: 了解如何使用Privacy ServiceAPI管理Experience Cloud应用程序的隐私作业。
 role: Developer
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
-source-git-commit: e8e8a9267ddcf7ee9d1d199da8d157ed5f36d344
+source-git-commit: 341cc4cb150717f08b2e59412ef58fbd6f7b3450
 workflow-type: tm+mt
 source-wordcount: '1821'
 ht-degree: 1%
@@ -42,7 +42,7 @@ GET /jobs?regulation={REGULATION}&fromDate={FROMDATE}&toDate={TODATE}&status={ST
 
 | 参数 | 描述 |
 | --- | --- |
-| `{REGULATION}` | 要查询的法规类型。 接受的值包括： <ul><li>`apa_aus`</li><li>`cpa_usa`</li><li>`cpra_usa`</li><li>`ctdpa_usa`</li><li>`gdpr` — 注意：这也用于与&#x200B;**ccpa**&#x200B;法规相关的请求。</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`mhmda_usa`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`ucpa_usa`</li><li>`vcdpa_usa`</li></ul><br>有关上述值表示的隐私法规的更多信息，请参阅[支持的法规](../regulations/overview.md)概述。 |
+| `{REGULATION}` | 要查询的法规类型。 接受的值包括： <ul><li>`apa_aus`</li><li>`cpa_usa`</li><li>`cpra_usa`</li><li>`ctdpa_usa`</li><li>`fdbr_usa`</li><li>`gdpr` — 注意：这也用于与&#x200B;**ccpa**&#x200B;法规相关的请求。</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`mhmda_usa`</li><li>`nzpa_nzl`</li><li>`ocpa_usa`</li><li>`pdpa_tha`</li><li>`tdpsa_usa`</li><li>`ucpa_usa`</li><li>`vcdpa_usa`</li></ul><br>有关上述值表示的隐私法规的更多信息，请参阅[支持的法规](../regulations/overview.md)概述。 |
 | `{PAGE}` | 要显示的数据页面，使用基于0的编号。 默认值为 `0`。 |
 | `{SIZE}` | 每页上显示的结果数。 默认值为`100`，最大值为`1000`。 超过最大值会导致API返回400代码错误。 |
 | `{status}` | 默认行为是包括所有状态。 如果指定状态类型，则请求将仅返回与该状态类型匹配的隐私作业。 接受的值包括： <ul><li>`processing`</li><li>`complete`</li><li>`error`</li></ul> |
@@ -51,10 +51,6 @@ GET /jobs?regulation={REGULATION}&fromDate={FROMDATE}&toDate={TODATE}&status={ST
 | `{filterDate}` | 此参数将结果限制为指定日期处理的结果。 它接受YYYY-MM-DD格式。 系统可以回顾过去45天。 |
 
 {style="table-layout:auto"}
-
-<!-- Not released yet:
-<li>`pdpd_vnm`</li> 
- -->
 
 **请求**
 
