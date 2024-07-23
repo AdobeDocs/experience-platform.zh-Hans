@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 批量摄取疑难解答指南
 description: 本文档将有助于解答有关Adobe Experience Platform批量数据摄取API的常见问题。
 exl-id: 0a750d7e-a4ee-4a79-a697-b4b732478b2b
-source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
+source-git-commit: 37b241f15f297263cc7aa20f382c115a2d131c7e
 workflow-type: tm+mt
-source-wordcount: '1418'
+source-wordcount: '1426'
 ht-degree: 1%
 
 ---
@@ -212,11 +212,11 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID
 
 ### 是否可以通过某种方式了解是否已成功摄取批次？
 
-当批次状态为“活动”时，表示已成功摄取批次。 要了解批次的状态，请按照[early](#how-is-batch-ingestion-monitored)中详述的步骤操作。
+是，当批状态为“有效”时，即表示已成功引入批。 要了解批次的状态，请按照[early](#how-is-batch-ingestion-monitored)中详述的步骤操作。
 
-### 批次失败后会发生什么情况？
+### 批次失败后会发生什么情况？ {#what-if-a-batch-fails}
 
-当批次失败时，可以在有效负荷的`errors`部分中识别失败的原因。 错误示例如下所示：
+当批次失败时，进程将停止并返回`Failure`状态。 可以在有效负荷的`errors`部分中识别失败的原因。 错误示例如下所示：
 
 ```json
     "errors":[
