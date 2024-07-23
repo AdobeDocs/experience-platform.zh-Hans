@@ -3,9 +3,9 @@ keywords: 目标；目标；目标类型
 title: 目标类型和类别
 description: 了解Adobe Experience Platform中目标的各种类型和类别。
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: 8314aca706b47c4cbcb993418c287629f5563189
+source-git-commit: 13ceaa53b53f17457c8d2c914b3fd05f6af2441b
 workflow-type: tm+mt
-source-wordcount: '804'
+source-wordcount: '805'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,11 @@ ht-degree: 1%
 
 最后，还可以区分目标目录中所有组织内可用的公共目标与Real-Time CDP Ultimate客户为满足其特定导出用例而可以创建的专用目标。
 
+>[!BEGINSHADEBOX]
+
 ![目标图类型。](./assets/destination-types/types-of-destinations-no-highlight.png "目标图类型。"){zoomable="yes"}
+
+>[!ENDSHADEBOX]
 
 ## 连接 {#connections}
 
@@ -30,8 +34,8 @@ Adobe Experience Platform捕获事件数据中的&#x200B;**[!UICONTROL 配置文
 
 配置文件导出目标会接收原始数据，通常使用电子邮件地址作为主键。 Experience Platform当前支持两种类型的配置文件导出目标：
 
-* [流配置文件导出目标（企业目标）](#streaming-profile-export)
 * [批处理（基于文件）目标](#file-based)
+* [高级企业目标（流配置文件导出目标）](#streaming-profile-export)
 
 ### 高级企业目标（流配置文件导出目标） {#streaming-profile-export}
 
