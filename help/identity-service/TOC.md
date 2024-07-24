@@ -5,7 +5,7 @@ breadcrumb-title: Platform Identity Service 指南
 user-guide-description: 跨设备和系统建立客户身份桥梁，以提供个性化的数字体验。
 feature: Identities
 role: Admin,Developer
-source-git-commit: 30e19f53bb29977cf4255cb2dba688d8bbbf6b2b
+source-git-commit: 536770d0c3e7e93921fe40887dafa5c76e851f5e
 workflow-type: tm+mt
 source-wordcount: '137'
 ht-degree: 29%
@@ -24,12 +24,13 @@ ht-degree: 29%
    - [Identity Service中的删除](./features/deletion.md)
    - 身份图链接规则{#identity-graph-linking-rules}
       - [功能概述](./identity-graph-linking-rules/overview.md)
+      - [配置指南](./identity-graph-linking-rules/configuration.md)
       - [身份优化算法](./identity-graph-linking-rules/identity-optimization-algorithm.md)
       - [命名空间优先级](./identity-graph-linking-rules/namespace-priority.md)
-      - [示例场景](./identity-graph-linking-rules/example-scenarios.md)
       - [图形模拟UI](./identity-graph-linking-rules/graph-simulation.md)
-      - [身份图链接规则配置指南](./identity-graph-linking-rules/configuration.md)
       - [标识设置](./identity-graph-linking-rules/identity-settings-ui.md)
+      - [示例客户方案](./identity-graph-linking-rules/example-scenarios.md)
+      - [示例图形配置](./identity-graph-linking-rules/example-configurations.md)
    - [ECID概述](./features/ecid.md)
 - [实施指南](implementation.md)
 - [身份数据的护栏](guardrails.md)

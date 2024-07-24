@@ -3,9 +3,9 @@ title: Graph Simulation UI指南
 description: 了解如何在Identity Service UI中使用图形模拟。
 badge: Beta 版
 exl-id: 89f0cf6e-c43f-40ec-859a-f3b73a6da8c8
-source-git-commit: 4c49bec7974dafe18d18deded6ddc936ece47dc3
+source-git-commit: 7daa9191f2e095f01c7c09f02f87aa8724e2e325
 workflow-type: tm+mt
-source-wordcount: '1438'
+source-wordcount: '1436'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 >[!AVAILABILITY]
 >
->此功能尚不可用；标识图链接规则的测试版计划预计于7月在开发沙盒上开始。 有关参与标准的信息，请与您的Adobe客户团队联系。
+>标识图链接规则当前处于测试阶段。 有关参与标准的信息，请与您的Adobe客户团队联系。 该功能和文档可能会发生更改。
 
 [!DNL Graph Simulation]是Identity Service UI中的一个工具，可用于模拟给定特定身份组合时身份图的行为方式以及配置[身份优化算法](./identity-optimization-algorithm.md)的方式。
 
@@ -172,6 +172,8 @@ ht-degree: 1%
 
 通过阅读本文档，您现在知道如何使用[!DNL Graph Simulation]工具来更好地了解在给定一组特定的规则和配置的情况下如何对待您的身份数据。 有关详细信息，请阅读以下文档：
 
-* [身份图链接规则](overview.md)
-* [身份优化算法](identity-optimization-algorithm.md)
-* [命名空间优先级](namespace-priority.md)
+* [身份图链接规则](./overview.md)
+* [配置指南](./configuration.md)
+* [身份优化算法](./identity-optimization-algorithm.md)
+* [命名空间优先级](./namespace-priority.md)
+* [示例图形配置](./example-configurations.md)

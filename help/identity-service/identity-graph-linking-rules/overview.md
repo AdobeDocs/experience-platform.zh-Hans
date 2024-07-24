@@ -3,9 +3,9 @@ title: 身份图链接规则概述
 description: 了解Identity Service中的Identity Graph链接规则。
 badge: Beta 版
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: 72773f9ba5de4387c631bd1aa0c4e76b74e5f1dc
+source-git-commit: 7daa9191f2e095f01c7c09f02f87aa8724e2e325
 workflow-type: tm+mt
-source-wordcount: '1173'
+source-wordcount: '1177'
 ht-degree: 1%
 
 ---
@@ -14,12 +14,16 @@ ht-degree: 1%
 
 >[!AVAILABILITY]
 >
->此功能尚不可用；标识图链接规则的测试版计划预计于7月在开发沙盒上开始。 有关参与标准的信息，请与您的Adobe客户团队联系。
+>标识图链接规则当前处于测试阶段。 有关参与标准的信息，请与您的Adobe客户团队联系。 该功能和文档可能会发生更改。
 
 ## 目录
 
 * [概述](./overview.md)
 * [身份优化算法](./identity-optimization-algorithm.md)
+* [命名空间优先级](./namespace-priority.md)
+* [图形模拟UI](./graph-simulation.md)
+* [身份设置UI](./identity-settings-ui.md)
+* [示例图形配置](./configuration.md)
 * [示例场景](./example-scenarios.md)
 
 通过Adobe Experience Platform Identity Service和实时客户个人资料，可以轻松假设您的数据已被完全摄取，并且所有合并的个人资料都通过人员标识符（如CRM ID）表示单个个人。 但是，在某些情况下，某些数据可能会尝试将多个不同的配置文件合并到单个配置文件中（“图形折叠”）。 要防止这些不需要的合并，您可以使用通过身份图链接规则提供的配置，并允许对用户进行准确的个性化。

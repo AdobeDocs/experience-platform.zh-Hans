@@ -3,9 +3,9 @@ title: 命名空间优先级
 description: 了解Identity Service中的命名空间优先级。
 badge: Beta 版
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 5d19a22dc8d1b7f0151008d14b2f5bf89c85c638
+source-git-commit: 536770d0c3e7e93921fe40887dafa5c76e851f5e
 workflow-type: tm+mt
-source-wordcount: '1574'
+source-wordcount: '1567'
 ht-degree: 2%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 >[!AVAILABILITY]
 >
->此功能尚不可用；标识图链接规则的测试版计划预计于7月在开发沙盒上开始。 有关参与标准的信息，请与您的Adobe客户团队联系。
+>标识图链接规则当前处于测试阶段。 有关参与标准的信息，请与您的Adobe客户团队联系。 该功能和文档可能会发生更改。
 
 每个客户实施都是独一无二的，并且是根据特定组织的目标而量身定制的，因此，给定命名空间的重要性因客户而异。 现实世界的例子包括：
 

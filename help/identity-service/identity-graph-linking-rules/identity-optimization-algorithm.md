@@ -3,9 +3,9 @@ title: 身份优化算法
 description: 了解Identity Service中的身份优化算法。
 badge: Beta 版
 exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
-source-git-commit: 5d19a22dc8d1b7f0151008d14b2f5bf89c85c638
+source-git-commit: 7daa9191f2e095f01c7c09f02f87aa8724e2e325
 workflow-type: tm+mt
-source-wordcount: '1570'
+source-wordcount: '1565'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 >[!AVAILABILITY]
 >
->此功能尚不可用；标识图链接规则的测试版计划预计于7月在开发沙盒上开始。 有关参与标准的信息，请与您的Adobe客户团队联系。
+>标识图链接规则当前处于测试阶段。 有关参与标准的信息，请与您的Adobe客户团队联系。 该功能和文档可能会发生更改。
 
 身份优化算法是Identity Service上的一个图算法，它帮助确保一个身份图代表一个人，因此防止了实时客户档案上不需要的身份合并。
 
@@ -162,6 +162,7 @@ ECID存储未经身份验证的（匿名）事件，而CRM ID存储经过身份�
 有关身份图链接规则的更多信息，请阅读以下文档：
 
 * [身份图链接规则概述](./overview.md)
+* [命名空间优先级](./namespace-priority.md)
 * [配置身份图链接规则的示例场景](./example-scenarios.md)
 * [身份链接逻辑](../features/identity-linking-logic.md)
 * [Identity Service和实时客户资料](../identity-and-profile.md)

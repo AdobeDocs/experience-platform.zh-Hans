@@ -2,14 +2,19 @@
 title: 身份图链接规则配置指南
 description: 了解在使用身份图链接规则配置实施数据时要遵循的建议步骤。
 badge: Beta 版
-source-git-commit: 72773f9ba5de4387c631bd1aa0c4e76b74e5f1dc
+exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
+source-git-commit: 536770d0c3e7e93921fe40887dafa5c76e851f5e
 workflow-type: tm+mt
-source-wordcount: '807'
-ht-degree: 4%
+source-wordcount: '1312'
+ht-degree: 2%
 
 ---
 
 # 身份图链接规则配置指南
+
+>[!AVAILABILITY]
+>
+>标识图链接规则当前处于测试阶段。 有关参与标准的信息，请与您的Adobe客户团队联系。 该功能和文档可能会发生更改。
 
 阅读本文档以了解在使用Adobe Experience Platform Identity服务实施数据时可以遵循的分步指南。
 
@@ -67,6 +72,11 @@ Identity Service实施流程的第一步是，确保将您的Experience Platform
 
 ## 引入数据 {#ingest}
 
+>[!WARNING]
+>
+>* 在实施前的过程中，您必须确保系统将发送到Experience Platform的经过身份验证的事件始终包含人员标识符，例如CRMID。
+>* 在实施过程中，您必须确保具有最高优先级的唯一命名空间始终存在于每个配置文件中。 请参阅[附录](#appendix)以了解通过确保每个配置文件都包含具有最高优先级的唯一命名空间而解决的图形场景示例。
+
 此时，您应该具备以下内容：
 
 * 访问Identity Service功能所需的权限。
@@ -86,3 +96,55 @@ Identity Service实施流程的第一步是，确保将您的Experience Platform
 >摄取数据后，XDM原始数据有效负载不会发生更改。 您仍可能会在UI中看到主要身份配置。 但是，这些配置将由身份设置覆盖。
 
 若要获得任何反馈，请使用Identity Service UI工作区中的&#x200B;**[!UICONTROL Beta反馈]**&#x200B;选项。
+
+## 附录 {#appendix}
+
+请参阅此部分以了解在实施身份设置和唯一命名空间时可以参考的其他信息。
+
+### 共享设备方案 {#shared-device-scenario}
+
+您必须确保在代表人员的所有配置文件中使用单个命名空间。 这样，Identity Service便可以检测给定图形中适当的人员标识符。
+
+>[!BEGINTABS]
+
+>[!TAB 没有单一人员标识符命名空间]
+
+如果没有用于表示人员标识符的唯一命名空间，您最终可能会看到一个将不同的人员标识符链接到同一ECID的图表。 在此示例中，B2BCRM和B2CCRM同时链接到同一ECID。 此图表建议Tom使用其B2C登录帐户与Summer使用其B2B登录帐户共享设备。 但是，系统将识别出这是一个配置文件（图形折叠）。
+
+![将两个人员标识符链接到同一ECID的图形方案。](../images/graph-examples/multi_namespaces.png)
+
+>[!TAB 具有单一人员标识符命名空间]
+
+给定唯一的命名空间（在本例中，是指CRMID而不是两个完全不同的命名空间），Identity Service能够识别上次与ECID关联的人员标识符。 在此示例中，由于存在唯一的CRMID，因此Identity Service能够识别“共享设备”方案，即两个实体共享同一设备。
+
+![共享设备图方案，其中两个人员标识符链接到同一ECID，但旧链接被删除。](../images/graph-examples/crmid_only_multi.png)
+
+>[!ENDTABS]
+
+### 挂起loginID方案 {#dangling-loginid-scenario}
+
+下图模拟了“悬挂”的loginID方案。 在此示例中，两个不同的loginID绑定到相同的ECID。 但是，`{loginID: ID_C}`未链接到CRMID。 因此，Identity Service无法检测到这两个loginID代表两个不同的实体。
+
+>[!BEGINTABS]
+
+>[!TAB 不明确的登录ID]
+
+在此示例中，`{loginID: ID_C}`悬空且未链接到CRMID。 因此，应与loginID关联的人员实体将变得模棱两可。
+
+![具有“悬挂”登录ID方案的图形示例。](../images/graph-examples/dangling_example.png)
+
+>[!TAB loginID链接到CRMID]
+
+在此示例中，`{loginID: ID_C}`链接到`{CRMID: Tom}`。 因此，系统能够识别此loginID与Tom相关联。
+
+![LoginID链接到CRMID。](../images/graph-examples/id_c_tom.png)
+
+>[!TAB loginID已链接到另一个CRMID]
+
+在此示例中，`{loginID: ID_C}`链接到`{CRMID: Summer}`。 因此，系统能够识别此loginID与另一个人员实体（在本例中为Summer）相关联。
+
+此示例还显示Tom和Summer是共享设备的不同人员实体，该设备由`{ECID: 111}`表示。
+
+![LoginID已链接到另一个CRMID。](../images/graph-examples/id_c_summer.png)
+
+>[!ENDTABS]

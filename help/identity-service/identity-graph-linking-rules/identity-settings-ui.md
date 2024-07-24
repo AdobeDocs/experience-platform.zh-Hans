@@ -2,9 +2,10 @@
 title: 身份设置UI
 description: 了解如何使用身份设置用户界面。
 badge: Beta 版
-source-git-commit: 72773f9ba5de4387c631bd1aa0c4e76b74e5f1dc
+exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
+source-git-commit: 536770d0c3e7e93921fe40887dafa5c76e851f5e
 workflow-type: tm+mt
-source-wordcount: '524'
+source-wordcount: '517'
 ht-degree: 0%
 
 ---
@@ -13,7 +14,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->此功能尚不可用；标识图链接规则的测试版计划预计于7月在开发沙盒上开始。 有关参与标准的信息，请与您的Adobe客户团队联系。
+>标识图链接规则当前处于测试阶段。 有关参与标准的信息，请与您的Adobe客户团队联系。 该功能和文档可能会发生更改。
 
 身份设置是Adobe Experience Platform Identity Service UI中的一项功能，可用于指定唯一的命名空间并配置命名空间优先级。
 
