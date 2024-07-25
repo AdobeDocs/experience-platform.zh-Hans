@@ -3,7 +3,7 @@ title: Google Cloud Storage连接
 description: 了解如何连接到Google Cloud Storage并激活受众或导出数据集。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: ab274270-ae8c-4264-ba64-700b118e6435
-source-git-commit: 679c1723965271b6a9c1b5b873cf8ac8de67458d
+source-git-commit: f652faac7d771b590b30f591616b53d0cd2ff1eb
 workflow-type: tm+mt
 source-wordcount: '1228'
 ht-degree: 2%
@@ -119,15 +119,15 @@ ht-degree: 2%
 
 要成功连接数据并将其导出到您的[!DNL Google Cloud Storage]存储位置，您需要对存储桶拥有以下[!DNL Google Cloud Storage]权限：
 
-*`orgpolicy.policy.get`
-*`resourcemanager.projects.get`
-*`resourcemanager.projects.list`
-*`storage.managedFolders.create`
-*`storage.multipartUploads.abort`
-*`storage.multipartUploads.create`
-*`storage.multipartUploads.listParts`
-*`storage.objects.create`
-*`storage.objects.list`
+* `orgpolicy.policy.get`
+* `resourcemanager.projects.get`
+* `resourcemanager.projects.list`
+* `storage.managedFolders.create`
+* `storage.multipartUploads.abort`
+* `storage.multipartUploads.create`
+* `storage.multipartUploads.listParts`
+* `storage.objects.create`
+* `storage.objects.list`
 
 详细了解[!DNL Google Cloud Storage]中的[访问控制和权限](https://cloud.google.com/storage/docs/access-control/iam-permissions)。
 

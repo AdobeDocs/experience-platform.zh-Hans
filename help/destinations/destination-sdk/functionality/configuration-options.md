@@ -2,7 +2,7 @@
 description: Adobe Experience Platform中的目标服务对构建目标功能的多个组件使用配置端点。 了解这些组件如何组合使Experience Platform能够连接到目标合作伙伴、发送自定义消息并在数字生态系统中激活配置文件数据。
 title: Destination SDK中的配置选项
 exl-id: 8890c70a-cdb9-4b9d-aa81-affe72b1fdc5
-source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
+source-git-commit: f652faac7d771b590b30f591616b53d0cd2ff1eb
 workflow-type: tm+mt
 source-wordcount: '828'
 ht-degree: 0%
@@ -17,7 +17,11 @@ Adobe Experience Platform中的目标服务对构建目标功能的多个组件�
 
 下图显示您可以通过Destination SDK配置以构建您自己的目标的组件的高级概述。 这些组件将在下面进一步说明。
 
-![显示Destination SDK组件、配置端点及其支持的操作的图表。](../assets/functionality/destination-sdk-components-diagram.png)
+>[!BEGINSHADEBOX]
+
+![显示Destination SDK组件、配置端点及其支持的操作的图表。](../assets/functionality/destination-sdk-components-diagram.png){zoomable="yes"}
+
+>[!ENDSHADEBOX]
 
 ## 服务器配置 {#server-configuration}
 

@@ -2,9 +2,9 @@
 description: 本页介绍如何验证并开始使用Adobe Experience Platform Destination SDK。 其中包括有关如何获取Adobe I/O身份验证凭据、沙盒名称和目标创作访问控制权限的说明。
 title: Destination SDK快速入门
 exl-id: f22c37a8-202d-49ac-9af0-545dfa9af8fd
-source-git-commit: 7c1d956e3b6a1314baa13fef823d73d42404516a
+source-git-commit: f652faac7d771b590b30f591616b53d0cd2ff1eb
 workflow-type: tm+mt
-source-wordcount: '583'
+source-wordcount: '593'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 ## 术语 {#terminology}
 
-本指南使用平台特定的概念，例如组织和沙盒。 请参阅[Experience Platform术语表](https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html)，了解这些术语和其他术语的定义。
+本指南使用平台特定的概念，例如组织和沙盒。 有关这些术语的定义，请参阅[Experience Platform术语表](https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html)。 请参阅[Destination SDK术语表](/help/destinations/destination-sdk/glossary.md)以了解与此功能直接相关的术语。
 
 ## 获取所需的身份验证凭据 {#obtain-authentication-credentials}
 
