@@ -3,7 +3,7 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 305aa7f44cd64d9a0ae704fe9aa01d2d1c536ade
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '3743'
 ht-degree: 6%
@@ -141,7 +141,7 @@ ht-degree: 6%
 
 ![如果插入的值不是枚举列表的一部分，则显示警告。](../images/ui/segment-builder/enum-warning.png)
 
-如果要创建多个值，则可以使用批量上传同时添加所有这些值。 选择![加号图标](../images/ui/segment-builder/plus-icon.png)以显示&#x200B;**[!UICONTROL 批量添加值]**&#x200B;弹出框。
+如果要创建多个值，则可以使用批量上传同时添加所有这些值。 选择![加号图标](/help/images/icons/add-circle.png)以显示&#x200B;**[!UICONTROL 批量添加值]**&#x200B;弹出框。
 
 ![加号图标突出显示，显示您可以选择用于访问批量上传弹出框的按钮。](../images/ui/segment-builder/add-bulk-values.png)
 
@@ -287,7 +287,7 @@ ht-degree: 6%
 >
 >有关为区段定义生成估算的详细信息，请参阅区段定义创建教程的[估算生成部分](../tutorials/create-a-segment.md#estimate-and-preview-an-audience)。
 
-您还可以选择评估方法。 如果您知道要使用哪种评估方法，则可以使用下拉列表选择所需的评估方法。 如果您想了解此区段定义符合什么评估类型，可以选择带有放大镜的浏览图标![文件夹图标](../images/ui/segment-builder/segment-evaluation-select-icon.png)以查看可用区段定义评估方法的列表。
+您还可以选择评估方法。 如果您知道要使用哪种评估方法，则可以使用下拉列表选择所需的评估方法。 如果您想了解此区段定义符合什么评估类型，可以选择带有放大镜的浏览图标![文件夹图标](/help/images/icons/folder-search.png)以查看可用区段定义评估方法的列表。
 
 出现[!UICONTROL 评估方法资格]弹出框。 此弹出框显示可用的评估方法，即批处理、流和边缘。 弹出框显示哪些评估方法符合条件以及哪些方法不符合条件。 根据您在区段定义中使用的参数，它可能不符合某些评估方法的条件。 有关每种评估方法的要求的更多信息，请阅读[流式分段](./streaming-segmentation.md#query-types)或[边缘分段](./edge-segmentation.md#query-types)概述。
 

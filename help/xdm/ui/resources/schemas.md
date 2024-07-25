@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建和编辑架构
 description: 了解如何在Experience Platform用户界面中创建和编辑架构的基础知识。
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 0f0842c1d14ce42453b09bf97e1f3690448f6e9a
+source-git-commit: 19f1f64434d655d3b19260460519018fc9c8e174
 workflow-type: tm+mt
-source-wordcount: '3732'
+source-wordcount: '3736'
 ht-degree: 2%
 
 ---
@@ -117,7 +117,7 @@ ht-degree: 2%
 
 >[!TIP]
 >
->对于任何列出的字段组，您可以将鼠标悬停在信息图标(![](../../images/ui/resources/schemas/info-icon.png))上或将其集中在该图标上，以查看字段组捕获的数据类型的简短说明。 您还可以选择预览图标(![](../../images/ui/resources/schemas/preview-icon.png))以查看字段组提供的字段结构，然后再决定将其添加到架构中。
+>对于任何列出的字段组，您可以将光标悬停在信息图标（![信息图标](/help/images/icons/info.png)）上或集中在该图标上，以查看字段组捕获的数据类型的简短说明。 您还可以选择预览图标（![预览图标](/help/images/icons/preview.png)）以查看字段组提供的字段结构，然后再决定将其添加到架构中。
 
 选择字段组后，选择&#x200B;**[!UICONTROL 添加字段组]**&#x200B;以将其添加到架构中。
 
@@ -129,7 +129,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->在架构编辑器中，标准(Adobe生成的)类和字段组以挂锁图标（![A挂锁图标）表示。](../../images/ui/explore/padlock-icon.png)的问题。挂锁显示在左边栏中的类或字段组名称旁边，以及架构图中作为系统生成资源一部分的任意字段旁边。
+>在架构编辑器中，标准(Adobe生成的)类和字段组以挂锁图标（![A挂锁图标）表示。](/help/images/icons/lock-closed.png)的问题。挂锁显示在左边栏中的类或字段组名称旁边，以及架构图中作为系统生成资源一部分的任意字段旁边。
 >
 >![带有挂锁图标的架构编辑器突出显示](../../images/ui/explore/schema-editor-padlock-icon.png)
 
@@ -189,7 +189,7 @@ ht-degree: 2%
 
 虽然某些标准字段具有相同的名称，但它们的结构可能会因它们来自的字段组而异。 如果标准字段嵌套在字段组结构的父对象中，则添加子字段时，该父字段也将包含在架构中。
 
-选择标准字段旁边的预览图标（![预览图标](../../images/ui/resources/schemas/preview-icon.png)）可查看其字段组的结构，并更好地了解其嵌套方式。 要将标准字段添加到架构，请选择加号图标（![加号图标](../../images/ui/resources/schemas/add-icon.png)）。
+选择标准字段旁边的预览图标（![预览图标](/help/images/icons/preview.png)）可查看其字段组的结构，并更好地了解其嵌套方式。 要将标准字段添加到架构，请选择加号图标（![加号图标](/help/images/icons/add-circle.png)）。
 
 ![添加标准字段](../../images/ui/resources/schemas/add-standard-field.png)
 

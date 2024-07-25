@@ -2,7 +2,7 @@
 title: 在Real-time Customer Data Platform B2B版本中定义两个架构之间的关系
 description: 了解如何在Adobe Real-time Customer Data Platform B2B版本中定义两个架构之间的多对一关系。
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1363'
 ht-degree: 15%
@@ -97,7 +97,7 @@ Adobe Real-time Customer Data Platform B2B版本提供了多个Experience Data M
 >
 >目前，只能定义从源架构到引用架构的多对一和一对一关系。 对于一对多关系，必须在表示“多个”的架构中定义关系字段。
 
-要设置关系字段，请选择画布中相关字段旁边的箭头图标（![箭头图标](../images/tutorials/relationship-b2b/arrow.png)）。 对于[!DNL Opportunities]架构，这是`accountKey.sourceKey`字段，因为目标是与帐户建立多对一关系。
+要设置关系字段，请选择画布中相关字段旁边的箭头图标（![箭头图标](/help/images/icons/alias.png)）。 对于[!DNL Opportunities]架构，这是`accountKey.sourceKey`字段，因为目标是与帐户建立多对一关系。
 
 ![关系按钮](../images/tutorials/relationship-b2b/relationship-button.png)
 

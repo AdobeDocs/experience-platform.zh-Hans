@@ -4,7 +4,7 @@ feature: Attribution AI
 title: Attribution AIUI指南
 description: 本文档可用作在Intelligent Services用户界面中与Attribution AI交互的指南。
 exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '2450'
 ht-degree: 0%
@@ -63,7 +63,7 @@ ht-degree: 0%
 
 ![选择数据集](./images/user-guide/select-datasets.png)
 
-选择数据集旁边的信息图标![信息图标](./images/user-guide/info-icon.png)将打开数据集预览弹出框。
+选择数据集旁边的信息图标![信息图标](/help/images/icons/info.png)将打开数据集预览弹出框。
 
 ![选择并搜索数据集](./images/user-guide/dataset-preview.png)
 

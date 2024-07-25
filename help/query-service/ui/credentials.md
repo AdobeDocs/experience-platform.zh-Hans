@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 查询服务凭据指南
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看先前执行的查询以及访问由您组织内的用户保存的查询。
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: ba4ff2715d4e3eb71377542ab2361b967cd3ac11
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1807'
 ht-degree: 2%
@@ -36,7 +36,7 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 - **[!UICONTROL 端口]**：要连接的主机端口号。
 - **[!UICONTROL 数据库]**：要连接客户端的数据库名称。
 - **[!UICONTROL 用户名]**：用于连接到查询服务的用户名。
-- **[!UICONTROL 密码]**：用于连接到查询服务的密码。 为了安全起见，UI中的密码已进行哈希处理。 选择复制图标(![复制图标。](../images/ui/credentials/copy-icon.png))以将完整的未散列凭据复制到剪贴板。
+- **[!UICONTROL 密码]**：用于连接到查询服务的密码。 为了安全起见，UI中的密码已进行哈希处理。 选择复制图标(![复制图标。](/help/images/icons/copy.png))以将完整的未散列凭据复制到剪贴板。
 - **[!UICONTROL PSQL命令]**：自动插入所有相关信息的命令，供您在命令行中使用PSQL连接到Query Service。
 - **[!UICONTROL 过期]**：过期凭据的过期日期和时间。 令牌的默认有效期为24小时，但可以在Admin Console的高级设置中更改。
 
@@ -126,7 +126,7 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 
 ![突出显示了“未过期的凭据”部分的“查询”仪表板凭据选项卡。](../images/ui/credentials/list-credentials.png)
 
-您可以编辑或删除未过期的凭据。 要编辑未过期的凭据，请选择铅笔图标（![铅笔图标）。](../images/ui/credentials/edit-icon.png))。 要删除未过期的凭据，请选择删除图标（![垃圾桶图标。](../images/ui/credentials/delete-icon.png)）。
+您可以编辑或删除未过期的凭据。 要编辑未过期的凭据，请选择铅笔图标（![铅笔图标）。](/help/images/icons/edit.png))。 要删除未过期的凭据，请选择删除图标（![垃圾桶图标。](/help/images/icons/delete.png)）。
 
 编辑未过期的凭据时，将显示一个模式窗口。 您可以提供以下详细信息以进行更新：
 

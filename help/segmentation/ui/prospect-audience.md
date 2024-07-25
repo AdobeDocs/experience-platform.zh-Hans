@@ -3,7 +3,7 @@ title: 潜在客户受众
 description: 了解如何使用第三方信息创建和使用潜在客户受众来定位未知客户。
 type: Documentation
 exl-id: b48cc0cf-f1c4-46fe-bb1d-cad53a9439dc
-source-git-commit: c2f9bcd9aeb0073b8b26413ec29e2dff1ee5c80d
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '395'
 ht-degree: 2%
@@ -26,7 +26,7 @@ Adobe Experience Platform可让您为[潜在客户个人资料](../../profile/ui
 
 此视图列出有关受众的信息，包括名称、配置文件计数、来源、生命周期状态、创建日期、上次更新日期和细分。
 
-您可以通过选择![筛选器属性图标](../images/ui/prospect-audience/filter-attribute.png)向此显示添加其他字段。 这些附加字段包括更新频率和上次更新者。
+您可以通过选择![筛选器属性图标](/help/images/icons/column-settings.png)向此显示添加其他字段。 这些附加字段包括更新频率和上次更新者。
 
 有关浏览页面的详细信息，包括所列字段的详细信息，可在[受众门户概述](./audience-portal.md#list)中找到。
 

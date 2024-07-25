@@ -3,7 +3,7 @@ title: 将数据集导出到云存储目标
 type: Tutorial
 description: 了解如何将数据集从Adobe Experience Platform导出到您首选的云存储位置。
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 9d3b6409013edc38ef41dd2a184ccbdcf7ab9edd
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1891'
 ht-degree: 4%
@@ -205,21 +205,21 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
    >[!TIP]
    > 
-   >选择左上角的过滤器图标![过滤器图标](../assets/ui/edit-activation/filter.png)以启动排序面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的过滤选择。
+   >选择左上角的过滤器图标![过滤器图标](/help/images/icons/filter.png)以启动排序面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的过滤选择。
 
-1. 从&#x200B;**[!UICONTROL 激活数据]**&#x200B;列中，选择数据集控件以查看映射到此导出数据流的所有数据集。
+2. 从&#x200B;**[!UICONTROL 激活数据]**&#x200B;列中，选择数据集控件以查看映射到此导出数据流的所有数据集。
 
    ![在“激活数据”列中突出显示的可用数据集导航选项。](../assets/ui/export-datasets/go-to-datasets-data.png)
 
-1. [!BADGE Beta]将显示目标的&#x200B;**[!UICONTROL 激活数据]**&#x200B;页面。 使用数据集列表左侧的复选框选择要删除的数据集，然后在右边栏中选择&#x200B;**[!UICONTROL 删除数据集]**&#x200B;以触发删除数据集确认对话框。
+3. [!BADGE Beta]将显示目标的&#x200B;**[!UICONTROL 激活数据]**&#x200B;页面。 使用数据集列表左侧的复选框选择要删除的数据集，然后在右边栏中选择&#x200B;**[!UICONTROL 删除数据集]**&#x200B;以触发删除数据集确认对话框。
 
    >[!NOTE]
    >
-   >此功能为测试版，仅向部分客户提供。 要请求访问此功能，请联系您的Adobe代表。
+此功能为测试版，仅向部分客户提供。 要请求访问此功能，请联系您的Adobe代表。
 
    ![在右边栏中显示删除数据集控件的“删除数据集”对话框。](../assets/ui/export-datasets/bulk-remove-datasets.png)
 
-1. 在确认对话框中，选择&#x200B;**[!UICONTROL 移除]**&#x200B;以立即从导出到目标的数据集中移除数据集。
+4. 在确认对话框中，选择&#x200B;**[!UICONTROL 移除]**&#x200B;以立即从导出到目标的数据集中移除数据集。
 
    ![显示从数据流中删除确认数据集选项的对话框。](../assets/ui/export-datasets/remove-dataset-confirm.png)
 

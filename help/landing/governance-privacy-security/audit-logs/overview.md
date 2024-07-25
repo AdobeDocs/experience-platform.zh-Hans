@@ -2,7 +2,7 @@
 title: 审核日志概述
 description: 了解如何通过审核日志查看谁在 Adobe Experience Platform 中执行了哪些操作。
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1291'
 ht-degree: 36%
@@ -94,7 +94,7 @@ ht-degree: 36%
 >由于这是一项新功能，显示的数据仅追溯到2022年3月。 根据所选资源，从2022年1月起，可能会提供以前的数据。
 
 
-选择漏斗图标（![筛选器图标](../../images/audit-logs/icon.png)）以显示筛选器控件列表，帮助缩小结果范围。 仅显示最后1000条记录，这与选择的各种过滤器无关。
+选择漏斗图标（![筛选器图标](/help/images/icons/filter.png)）以显示筛选器控件列表，帮助缩小结果范围。 仅显示最后1000条记录，这与选择的各种过滤器无关。
 
 ![已突出显示筛选活动日志的审核仪表板。](../../images/audit-logs/filters.png)
 

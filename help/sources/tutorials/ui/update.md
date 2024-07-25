@@ -5,7 +5,7 @@ solution: Experience Platform
 title: 在UI中更新Source连接帐户详细信息
 type: Tutorial
 exl-id: de264bd4-fe3d-4622-9f24-f1612d8334c9
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '452'
 ht-degree: 1%
@@ -33,7 +33,7 @@ ht-degree: 1%
 
 此时会显示&#x200B;**[!UICONTROL 帐户]**&#x200B;页面。 本页是可查看帐户的列表，包括有关其源、用户名、数据流数量和创建日期的信息。
 
-选择左上角的过滤器图标![过滤器](../../images/tutorials/update/filter.png)以启动排序面板。
+选择左上角的过滤器图标![过滤器](/help/images/icons/filter.png)以启动排序面板。
 
 ![帐户列表](../../images/tutorials/update/accounts-list.png)
 

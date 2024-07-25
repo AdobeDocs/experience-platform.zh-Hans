@@ -3,7 +3,7 @@ title: 删除记录
 description: 了解如何在Adobe Experience Platform UI中删除记录。
 badgeBeta: label="Beta 版" type="Informative"
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
-source-git-commit: 9981f35732b041a92c5a371e727a8facb6636cf5
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1567'
 ht-degree: 8%
@@ -51,7 +51,7 @@ ht-degree: 8%
 
 下一步是确定要从单个数据集还是从所有数据集删除记录。 如果此选项不可用，请继续阅读指南的[提供标识](#provide-identities)部分。
 
-在&#x200B;**[!UICONTROL 记录详细信息]**&#x200B;部分下，使用单选按钮在特定数据集和所有数据集之间进行选择。 如果选择&#x200B;**[!UICONTROL 选择数据集]**，请继续选择数据库图标（![数据库图标](../images/ui/record-delete/database-icon.png)）以打开一个提供可用数据集列表的对话框。 从列表中选择所需的数据集，然后选择&#x200B;**[!UICONTROL 完成]**。
+在&#x200B;**[!UICONTROL 记录详细信息]**&#x200B;部分下，使用单选按钮在特定数据集和所有数据集之间进行选择。 如果选择&#x200B;**[!UICONTROL 选择数据集]**，请继续选择数据库图标（![数据库图标](/help/images/icons/database.png)）以打开一个提供可用数据集列表的对话框。 从列表中选择所需的数据集，然后选择&#x200B;**[!UICONTROL 完成]**。
 
 ![包含选定数据集并突出显示[!UICONTROL 完成]的[!UICONTROL 选择数据集]对话框。](../images/ui/record-delete/select-dataset.png)
 
@@ -130,7 +130,7 @@ JSON文件必须格式化为一组对象，每个对象表示一个标识。
 
 ![手动添加了具有标识字段的请求创建工作流。](../images/ui/record-delete/identity-added.png)
 
-要添加更多标识，请选择加号图标(![A加号图标。](../images/ui/record-delete/plus-icon.png))，或选择&#x200B;**[!UICONTROL 添加标识]**。
+要添加更多标识，请选择加号图标(![A加号图标。](/help/images/icons/tree-expand-all.png))，或选择&#x200B;**[!UICONTROL 添加标识]**。
 
 ![加号图标和添加身份图标突出显示的请求创建工作流。](../images/ui/record-delete/more-identities.png)
 

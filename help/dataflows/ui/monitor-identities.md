@@ -4,7 +4,7 @@ description: Adobe Experience Platform Identity Service通过跨设备和系统�
 title: 在UI中监控数据流以查找身份
 type: Tutorial
 exl-id: 735b0e52-74f6-47fe-98c6-e12a633b6f57
-source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1151'
 ht-degree: 9%
@@ -62,7 +62,7 @@ Adobe Experience Platform 身份服务通过跨设备和系统桥接身份，使
 | **[!UICONTROL 图形已更新]** | 用新边更新的现有标识图的数量。 |
 | **[!UICONTROL 失败的数据流总数]** | 失败的数据流运行次数。 |
 
-您可以选择源名称旁边的过滤器图标![过滤器图标](../assets/ui/monitor-identities/filter.png)以查看所选源的数据流的标识处理信息。
+您可以选择源名称旁边的过滤器图标![过滤器图标](/help/images/icons/filter.png)以查看所选源的数据流的标识处理信息。
 
 ![筛选器图标高亮显示。 选择此图标可查看所选源的数据流。](../assets/ui/monitor-identities/sources-filter.png)
 
@@ -87,7 +87,7 @@ Adobe Experience Platform 身份服务通过跨设备和系统桥接身份，使
 | **[!UICONTROL 图形已更新]** | 用新边更新的现有标识图的数量。 |
 | **[!UICONTROL 失败的数据流总数]** | 失败的数据流运行次数。 |
 
-选择数据流运行开始时间旁边的过滤器图标![过滤器](../assets/ui/monitor-identities/filter.png)以查看有关您的[!DNL Identity]数据流运行的更多信息。
+选择数据流运行开始时间旁边的过滤器图标![过滤器](/help/images/icons/filter.png)以查看有关您的[!DNL Identity]数据流运行的更多信息。
 
 ![筛选器图标高亮显示。 选择此图标可查看有关所选数据流的详细信息。](../assets/ui/monitor-identities/dataflows-filter.png)
 

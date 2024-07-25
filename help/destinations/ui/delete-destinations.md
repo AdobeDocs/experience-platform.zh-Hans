@@ -4,7 +4,7 @@ title: 删除目标
 type: Tutorial
 description: 本教程列出了在Adobe Experience Platform UI中删除现有目标的步骤
 exl-id: 7b672859-e61a-4b3c-9db9-62048258f0aa
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '411'
 ht-degree: 0%
@@ -32,11 +32,11 @@ ht-degree: 0%
 
    ![浏览目标](../assets/ui/delete-destinations/browse-destinations.png)
 
-2. 选择左上角的过滤器图标![过滤器图标](../assets/ui/delete-destinations/filter.png)以启动排序面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的过滤选择。
+2. 选择左上角的过滤器图标![过滤器图标](/help/images/icons/filter.png)以启动排序面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的过滤选择。
 
    ![筛选目标](../assets/ui/delete-destinations/filter-destinations.png)
 
-3. 在“名称”列中选择![更多按钮](../assets/ui/delete-destinations/more-icon.png)按钮，然后选择![删除按钮](../assets/ui/delete-destinations/delete-icon.png) **[!UICONTROL 删除]**以删除现有目标连接。
+3. 在“名称”列中选择![更多按钮](/help/images/icons/more.png)按钮，然后选择![删除按钮](/help/images/icons/delete.png) **[!UICONTROL 删除]**以删除现有目标连接。
    ![删除目标](../assets/ui/delete-destinations/delete-destinations.png)
 
 4. 选择&#x200B;**[!UICONTROL 删除]**&#x200B;以确认删除目标连接。
@@ -51,7 +51,7 @@ ht-degree: 0%
 
    ![浏览目标](../assets/ui/delete-destinations/browse-destinations.png)
 
-2. 选择左上角的过滤器图标![过滤器图标](../assets/ui/delete-destinations/filter.png)以启动排序面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的过滤选择。
+2. 选择左上角的过滤器图标![过滤器图标](/help/images/icons/filter.png)以启动排序面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的过滤选择。
 
    ![筛选目标](../assets/ui/delete-destinations/filter-destinations.png)
 

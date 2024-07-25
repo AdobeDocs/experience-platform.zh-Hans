@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 自动策略实施
 description: 本文档介绍了在将受众激活到Experience Platform中的目标时，如何自动实施数据使用策略。
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: ea58ece75d2208ae96bd71c2f51e14279769640f
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '2109'
 ht-degree: 0%
@@ -104,7 +104,7 @@ ht-degree: 0%
 
 ![突出显示数据沿袭图的策略违规对话框。](../images/enforcement/data-lineage.png)
 
-您还可以使用&#x200B;**[!UICONTROL 筛选器]**&#x200B;图标（![A筛选器图标）。](../images/enforcement/filter.png))以按类别筛选显示的实体。 必须至少选择两个类别才能显示数据。
+您还可以使用&#x200B;**[!UICONTROL 筛选器]**&#x200B;图标（![A筛选器图标）。](/help/images/icons/filter.png))以按类别筛选显示的实体。 必须至少选择两个类别才能显示数据。
 
 ![策略违规对话框中的数据历程筛选器和下拉菜单突出显示。](../images/enforcement/lineage-filter.png)
 

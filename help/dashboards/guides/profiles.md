@@ -4,7 +4,7 @@ title: 配置文件仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板，您可以查看有关贵组织的实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '4997'
 ht-degree: 9%
@@ -470,7 +470,7 @@ The visualization allows you to monitor the overall health of audiences within A
 
 ![受众重叠报表构件，其中视图突出显示。](../images/profiles/profiles-audience-overlap-report.png)
 
-出现[!UICONTROL 受众重叠报表]对话框。 此对话框最多可包含50行受众重叠分析，这些分析划分为6列。 要从表中删除或添加列，请选择设置图标（![设置图标。](../images/profiles/settings-icon.png)）。
+出现[!UICONTROL 受众重叠报表]对话框。 此对话框最多可包含50行受众重叠分析，这些分析划分为6列。 要从表中删除或添加列，请选择设置图标（![设置图标。](/help/images/icons/settings.png)）。
 
 ![受众重叠报告对话框。](../images/profiles/profiles-audience-overlap-report-dialog.png)
 

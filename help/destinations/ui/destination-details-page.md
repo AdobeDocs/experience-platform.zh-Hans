@@ -3,7 +3,7 @@ keywords: 目标；目标；目标详细信息页面；目标详细信息页面
 title: 查看目标详细信息
 description: 单个目标的详细信息页面提供了目标详细信息的概览。 目标详细信息包括目标名称、ID、映射到目标的受众以及用于编辑激活以及启用和禁用数据流的控件。
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: de867c1747fcdb14d8eb72bd3432c177e680c4fa
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1189'
 ht-degree: 0%
@@ -28,19 +28,19 @@ ht-degree: 0%
 
    ![浏览目标](../assets/ui/details-page/browse-destinations.png)
 
-1. 选择左上角的过滤器图标![过滤器图标](../assets/ui/details-page/filter.png)以启动排序面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的过滤选择。
+2. 选择左上角的过滤器图标![过滤器图标](/help/images/icons/filter.png)以启动排序面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的过滤选择。
 
    ![筛选目标](../assets/ui/details-page/filter-destinations.png)
 
-1. 选择要显示其详细信息的目标行。 此时将显示一个右边栏，其中包含有关目标的信息，包括目标ID、创建目标连接的用户以及其他信息。
+3. 选择要显示其详细信息的目标行。 此时将显示一个右边栏，其中包含有关目标的信息，包括目标ID、创建目标连接的用户以及其他信息。
 
    右边栏中的![目标ID](../assets/ui/details-page/right-rail-info-including-destination-id.png)
 
-1. 或者，您可以通过选择要查看的目标&#x200B;*的名称*&#x200B;来显示有关目标的其他信息。
+4. 或者，您可以通过选择要查看的目标&#x200B;*的名称*&#x200B;来显示有关目标的其他信息。
 
    ![选择目标](../assets/ui/details-page/destination-select.png)
 
-1. 目标的详细信息页面将显示在右边栏中，并显示其可用的控件。
+5. 目标的详细信息页面将显示在右边栏中，并显示其可用的控件。
 
    ![目标详细信息](../assets/ui/details-page/destination-details.png)
 

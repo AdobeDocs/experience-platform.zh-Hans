@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Experience PlatformUI概述
 description: Adobe Experience Platform
 exl-id: 47f9a3fb-731d-4ade-8069-faaa18f224dc
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1795'
 ht-degree: 1%
@@ -75,17 +75,17 @@ Platform UI中的顶部导航栏显示您当前登录的组织，并提供几个
 
 ### 切换应用程序
 
-顶部导航右侧的下一个项目是&#x200B;**应用程序切换器**，由![应用程序切换器](./images/user-guide/app-switcher-icon.png)图标表示。 选择此图标后，您可以在组织有权访问的Adobe应用程序(如Experience Platform、Analytics、Assets等)之间进行切换。
+顶部导航右侧的下一个项目是&#x200B;**应用程序切换器**，由![应用程序切换器](/help/images/icons/apps.png)图标表示。 选择此图标后，您可以在组织有权访问的Adobe应用程序(如Experience Platform、Analytics、Assets等)之间进行切换。
 
 ### 帮助
 
-应用程序切换器的右侧是&#x200B;**帮助和支持菜单**，它由![问号/帮助](./images/user-guide/help-icon.png)图标表示。 选择此图标后，会显示一个弹出菜单，其中包含多个帮助和支持资源。 **[!UICONTROL 帮助]**&#x200B;选项卡显示当前所在页面的相关文档列表。 “**[!UICONTROL 支持]**”选项卡允许您与Adobe支持团队创建支持票证。 **[!UICONTROL 反馈]**&#x200B;选项卡允许您提交有关Platform的反馈以供Adobe。
+应用程序切换器的右侧是&#x200B;**帮助和支持菜单**，它由![问号/帮助](/help/images/icons/help.png)图标表示。 选择此图标后，会显示一个弹出菜单，其中包含多个帮助和支持资源。 **[!UICONTROL 帮助]**&#x200B;选项卡显示当前所在页面的相关文档列表。 “**[!UICONTROL 支持]**”选项卡允许您与Adobe支持团队创建支持票证。 **[!UICONTROL 反馈]**&#x200B;选项卡允许您提交有关Platform的反馈以供Adobe。
 
 ![](images/user-guide/homepage-help-clicked.png)
 
 ### 通知和公告
 
-在&#x200B;**通知部分**&#x200B;中，由![铃铛/通知和公告](images/user-guide/notification-icon.png)图标表示。 **[!UICONTROL 通知]**&#x200B;选项卡显示有关产品的重要信息以及其他相关更新，而&#x200B;**[!UICONTROL 公告]**&#x200B;选项卡显示有关服务维护的信息。
+在&#x200B;**通知部分**&#x200B;中，由![铃铛/通知和公告](/help/images/icons/bell.png)图标表示。 **[!UICONTROL 通知]**&#x200B;选项卡显示有关产品的重要信息以及其他相关更新，而&#x200B;**[!UICONTROL 公告]**&#x200B;选项卡显示有关服务维护的信息。
 
 ### 用户配置文件
 

@@ -2,7 +2,7 @@
 title: Query Pro模式
 description: 了解如何在Adobe Experience Platform UI中使用SQL查询为自定义仪表板生成图表。
 exl-id: 15c664c4-8546-4e04-b81d-c78bf83500d3
-source-git-commit: 5bb954da7c1e05922a4e0f8d0bc7d3ab5c8e0e58
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1060'
 ht-degree: 1%
@@ -35,7 +35,7 @@ Query pro模式是一个基于SQL编辑器的工作流，可指导您完成在Ad
 >
 >如果要使用全局筛选器，则必须在SQL中放置一个查询参数，然后将该查询参数链接到构件编辑器中的全局筛选器。 在下面的屏幕快照中，`CONSENT_VALUE_FILTER`在SQL中用作全局筛选器的查询参数。 有关如何执行此操作的详细信息，请参阅[全局筛选器文档](./filters/global-filter.md#enable-global-filter)。
 
-要执行查询，请选择运行图标（![运行图标）。](../../images/customizable-insights/run-icon.png))。 查询编辑器将显示结果选项卡。 接下来，要确认配置并打开构件编辑器，请选择&#x200B;**[!UICONTROL 选择]**。
+要执行查询，请选择运行图标（![运行图标）。](/help/images/icons/play.png))。 查询编辑器将显示结果选项卡。 接下来，要确认配置并打开构件编辑器，请选择&#x200B;**[!UICONTROL 选择]**。
 
 >[!TIP]
 >
@@ -45,7 +45,7 @@ Query pro模式是一个基于SQL编辑器的工作流，可指导您完成在Ad
 
 ## 填充构件 {#populate-widget}
 
-构件编辑器现在使用已执行SQL中的列进行填充。 仪表板类型在左上角显示，在此例中为[!UICONTROL 手动SQL条目]。 选择铅笔图标(![A铅笔图标。](../../images/customizable-insights/edit-icon.png))以随时编辑SQL。
+构件编辑器现在使用已执行SQL中的列进行填充。 仪表板类型在左上角显示，在此例中为[!UICONTROL 手动SQL条目]。 选择铅笔图标(![A铅笔图标。](/help/images/icons/edit.png))以随时编辑SQL。
 
 >[!TIP]
 >
@@ -57,13 +57,13 @@ Query pro模式是一个基于SQL编辑器的工作流，可指导您完成在Ad
 
 ### 添加属性 {#add-attributes}
 
-要向小组件添加属性，请选择加号图标(![A加号图标。](../../images/customizable-insights/add-icon.png))。 显示的下拉菜单允许您根据SQL确定的选项向图表添加属性。 不同的图表类型具有不同的选项，例如X轴和Y轴下拉列表。
+要向小组件添加属性，请选择加号图标(![A加号图标。](/help/images/icons/add-circle.png))。 显示的下拉菜单允许您根据SQL确定的选项向图表添加属性。 不同的图表类型具有不同的选项，例如X轴和Y轴下拉列表。
 
 在此圆环图示例中，选项包括大小和颜色。 颜色划分圆环图结果，大小是实际使用的量度。 向[!UICONTROL Color]字段添加一个属性，以根据结果的颜色组成将结果拆分为不同的颜色。
 
 >[!TIP]
 >
->选择向上和向下箭头图标(![向上和向下箭头图标。](../../images/customizable-insights/switch-axis-icon.png))以切换条形图或折线图上X轴和Y轴的排列。
+>选择向上和向下箭头图标(![向上和向下箭头图标。](/help/images/icons/switch.png))以切换条形图或折线图上X轴和Y轴的排列。
 
 ![带有添加图标下拉菜单和开关箭头的Widget Composer突出显示。](../../images/customizable-insights/add-icon-and-switch-arrows.png)
 
@@ -73,7 +73,7 @@ Query pro模式是一个基于SQL编辑器的工作流，可指导您完成在Ad
 
 ## 构件属性 {#properties}
 
-选择属性图标(![属性图标。](../../images/customizable-insights/properties-icon.png))以打开属性面板。 在[!UICONTROL 属性]面板的&#x200B;**[!UICONTROL 构件标题]**&#x200B;文本字段中输入构件的名称。 您还可以重命名图表的各个方面。
+选择属性图标(![属性图标。](/help/images/icons/properties.png))以打开属性面板。 在[!UICONTROL 属性]面板的&#x200B;**[!UICONTROL 构件标题]**&#x200B;文本字段中输入构件的名称。 您还可以重命名图表的各个方面。
 
 >[!NOTE]
 >
@@ -93,7 +93,7 @@ Query pro模式是一个基于SQL编辑器的工作流，可指导您完成在Ad
 
 ![突出显示编辑的自定义仪表板。](../../images/customizable-insights/edit-dashboard.png)
 
-选择&#x200B;**[!UICONTROL 添加筛选器]**&#x200B;以创建[[!UICONTROL 日期筛选器]](#create-date-filter)或[[!UICONTROL 全局筛选器]](#create-global-filter)。 创建后，所有全局和日期筛选器都可以从[筛选器图标](#select-global-filter) （![筛选器图标）中使用。](../../images/customizable-insights/filter.png))。
+选择&#x200B;**[!UICONTROL 添加筛选器]**&#x200B;以创建[[!UICONTROL 日期筛选器]](#create-date-filter)或[[!UICONTROL 全局筛选器]](#create-global-filter)。 创建后，所有全局和日期筛选器都可以从[筛选器图标](#select-global-filter) （![筛选器图标）中使用。](/help/images/icons/filter.png))。
 
 ![突出显示了“添加筛选器”下拉菜单的自定义仪表板。](../../images/customizable-insights/add-filter.png)
 

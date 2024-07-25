@@ -3,7 +3,7 @@ keywords: 平台；目标；目标工作区；工作区；ui；目标ui；目录
 title: 目标工作区
 description: 目标工作区包括五个部分：“概述”、“目录”、“浏览”、“帐户”和“系统视图”。 以下各节对这些要求进行了说明。
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: dad07add8c5f9cc98a187c2e2222a51611dbd1a2
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1231'
 ht-degree: 0%
@@ -69,9 +69,9 @@ ht-degree: 0%
 
 >[!TIP]
 >
-> * 选择[!UICONTROL Platform]列中的省略号(`...`)并使用![激活控件](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL 激活&#x200B;]**/**[!UICONTROL &#x200B;激活受众&#x200B;]**/**[!UICONTROL &#x200B;导出数据集&#x200B;]**控件将受众或数据集导出到该目标。
-> * 选择[!UICONTROL Platform]列中的省略号(`...`)并使用![编辑详细信息控件](../assets/ui/workspace/pencil-icon.png)**[!UICONTROL 编辑详细信息&#x200B;]**控件来[更新](update-accounts.md)现有目标帐户的详细信息。
-> * 选择[!UICONTROL Platform]列中的省略号(`...`)并使用![删除控件](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL 删除&#x200B;]**控件来[删除](delete-destination-account.md)现有目标帐户。
+> * 选择[!UICONTROL Platform]列中的省略号(`...`)并使用![激活控件](/help/images/icons/data-add.png)**[!UICONTROL 激活&#x200B;]**/**[!UICONTROL &#x200B;激活受众&#x200B;]**/**[!UICONTROL &#x200B;导出数据集&#x200B;]**控件将受众或数据集导出到该目标。
+> * 选择[!UICONTROL Platform]列中的省略号(`...`)并使用![编辑详细信息控件](/help/images/icons/edit.png)**[!UICONTROL 编辑详细信息&#x200B;]**控件来[更新](update-accounts.md)现有目标帐户的详细信息。
+> * 选择[!UICONTROL Platform]列中的省略号(`...`)并使用![删除控件](/help/images/icons/delete.png)**[!UICONTROL 删除&#x200B;]**控件来[删除](delete-destination-account.md)现有目标帐户。
 
 ![帐户选项卡](../assets/ui/workspace/destination-account-options.png)
 
@@ -91,10 +91,10 @@ ht-degree: 0%
 
 >[!TIP]
 >
-> * 选择[!UICONTROL 名称]列中的省略号(`...`)，然后使用![激活受众控件](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL 激活&#x200B;]**控件将受众或数据集导出到该目标。
-> * 选择[!UICONTROL Name]列中的省略号(`...`)并使用![Delete控件](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL Delete ]**控件来[删除](delete-destinations.md)到目标的现有连接。
-> * 选择[!UICONTROL Name]列中的省略号(`...`)并使用监视控件中的![视图&#x200B;]**监视控件中的](../assets/ui/workspace/monitoring-icon.png)**[!UICONTROL 视图，在[监视仪表板](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard)中查看此目标的激活信息。
-> * 选择[!UICONTROL Name]列中的省略号(`...`)并使用![订阅警报](../assets/ui/workspace/alerts-icon.png)**[!UICONTROL 订阅警报&#x200B;]**控件订阅目标数据流警报。 您可以订阅警报，以接收有关流运行的状态、成功或失败的消息。 有关目标数据流警报的详细信息，请参阅[订阅上下文中的目标警报](alerts.md)。
+> * 选择[!UICONTROL 名称]列中的省略号(`...`)，然后使用![激活受众控件](/help/images/icons/data-add.png)**[!UICONTROL 激活&#x200B;]**控件将受众或数据集导出到该目标。
+> * 选择[!UICONTROL Name]列中的省略号(`...`)并使用![Delete控件](/help/images/icons/delete.png)**[!UICONTROL Delete ]**控件来[删除](delete-destinations.md)到目标的现有连接。
+> * 选择[!UICONTROL Name]列中的省略号(`...`)并使用监视控件中的![视图&#x200B;]**监视控件中的](/help/images/icons/monitoring.png)**[!UICONTROL 视图，在[监视仪表板](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard)中查看此目标的激活信息。
+> * 选择[!UICONTROL Name]列中的省略号(`...`)并使用![订阅警报](/help/images/icons/alert-add.png)**[!UICONTROL 订阅警报&#x200B;]**控件订阅目标数据流警报。 您可以订阅警报，以接收有关流运行的状态、成功或失败的消息。 有关目标数据流警报的详细信息，请参阅[订阅上下文中的目标警报](alerts.md)。
 
 ![浏览选项卡](../assets/ui/workspace/browse-tab.png)
 

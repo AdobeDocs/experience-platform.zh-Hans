@@ -2,7 +2,7 @@
 title: 创建日期过滤器
 description: 了解如何按日期筛选自定义分析。
 exl-id: fa05d651-ea43-41f0-9b7d-f19c4a9ac256
-source-git-commit: 5bb954da7c1e05922a4e0f8d0bc7d3ab5c8e0e58
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '662'
 ht-degree: 0%
@@ -94,6 +94,6 @@ LIMIT  0;
 
 ## 删除日期过滤器 {#delete-date-filter}
 
-要删除您的日期筛选器，请选择删除筛选器图标（![删除筛选器图标。](../../../images/customizable-insights/delete-filter-icon.png)）。
+要删除您的日期筛选器，请选择删除筛选器图标（![删除筛选器图标。](/help/images/icons/filter-delete.png)）。
 
 ![突出显示筛选器删除图标的自定义仪表板。](../../../images/customizable-insights/delete-date-filter.png)

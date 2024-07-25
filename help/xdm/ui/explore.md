@@ -5,7 +5,7 @@ title: 浏览UI中的架构资源
 description: 了解如何在Experience Platform用户界面中探索现有架构、类、架构字段组和数据类型。
 type: Tutorial
 exl-id: b527b2a0-e688-4cfe-a176-282182f252f2
-source-git-commit: 0e1fb15cfa56fb4c2a4a645578327f0a4bd22e68
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1078'
 ht-degree: 0%
@@ -24,7 +24,7 @@ ht-degree: 0%
 
 ![](../images/ui/explore/tabs.png)
 
-筛选器图标（![筛选器图标图像](../images/ui/explore/icon.png)）在左边栏中显示控件，以缩小列出的结果的范围。 根据所列的资源类型，显示的控件会有所不同。
+筛选器图标（![筛选器图标图像](/help/images/icons/filter.png)）在左边栏中显示控件，以缩小列出的结果的范围。 根据所列的资源类型，显示的控件会有所不同。
 
 例如，要筛选列表以仅显示Adobe提供的标准数据类型，请分别在&#x200B;**[!UICONTROL 类型]**&#x200B;和&#x200B;**[!UICONTROL 所有者]**&#x200B;部分下选择&#x200B;**[!UICONTROL 数据类型]**&#x200B;和&#x200B;**[!UICONTROL Adobe]**。
 
@@ -56,7 +56,7 @@ ht-degree: 0%
 
 ### 标准类和字段组指示器 {#standard-class-and-field-group-indicator}
 
-在架构编辑器中，标准(Adobe生成的)类和字段组以挂锁图标（![A挂锁图标）表示。](../images/ui/explore/padlock-icon.png)的问题。挂锁显示在左边栏中的类或字段组名称旁边，以及架构图中作为系统生成资源一部分的任意字段旁边。
+在架构编辑器中，标准(Adobe生成的)类和字段组以挂锁图标（![A挂锁图标）表示。](/help/images/icons/lock-closed.png)的问题。挂锁显示在左边栏中的类或字段组名称旁边，以及架构图中作为系统生成资源一部分的任意字段旁边。
 
 ![带有挂锁图标的架构编辑器突出显示](../images/ui/explore/schema-editor-padlock-icon.png)
 
@@ -94,7 +94,7 @@ ht-degree: 0%
 
 检查包含身份字段的架构时，这些字段在左边栏中列在提供给架构的类或字段组下。 选择左边栏中的身份字段名称以显示画布中的字段，无论其嵌套深度如何。
 
-在画布中用指纹图标（![指纹图标图像](../images/ui/explore/identity-symbol.png)）突出显示身份字段。 如果选择身份字段的名称，则可以查看其他信息，如[身份命名空间](../../identity-service/features/namespaces.md)，以及该字段是否为架构的主要身份。
+在画布中用指纹图标（![指纹图标图像](/help/images/icons/identity-service.png)）突出显示身份字段。 如果选择身份字段的名称，则可以查看其他信息，如[身份命名空间](../../identity-service/features/namespaces.md)，以及该字段是否为架构的主要身份。
 
 ![](../images/ui/explore/identity-field.png)
 

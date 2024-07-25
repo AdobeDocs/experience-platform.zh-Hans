@@ -4,7 +4,7 @@ title: 许可证使用情况仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: b6811d447f76a671adc98bddef6e760c8be8cd9b
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '2103'
 ht-degree: 7%
@@ -101,7 +101,7 @@ ht-degree: 7%
 
 ![许可证使用情况仪表板的“详细信息”选项卡。](../images/license-usage/details-tab.png)
 
-从该视图中，您可以选择![检查图标。沙盒名称旁边的](../images/license-usage/inspect-icon.png)以查看该指标的可视化图表。 此时将打开一个对话框，其中包含该量度的可视化图表。
+从该视图中，您可以选择![检查图标。沙盒名称旁边的](/help/images/icons/inspect.png)以查看该指标的可视化图表。 此时将打开一个对话框，其中包含该量度的可视化图表。
 
 ### 可视化 {#visualizations}
 

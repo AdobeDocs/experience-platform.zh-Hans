@@ -2,7 +2,7 @@
 title: 自动化数据集过期时间
 description: 了解如何在Adobe Experience Platform UI中计划数据集过期。
 exl-id: 97db55e3-b5d6-40fd-94f0-2463fe041671
-source-git-commit: 2aba88ac657e73a12be14d2c3a67dd5714513c97
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '871'
 ht-degree: 18%
@@ -55,11 +55,11 @@ Adobe Experience Platform UI中的[[!UICONTROL 数据生命周期]工作区](./o
 
 ### 选择日期和数据集 {#select-date-and-dataset}
 
-在&#x200B;**[!UICONTROL 请求的操作]**&#x200B;部分下，选择要按其删除数据集的日期。 您可以手动输入日期（格式为`mm/dd/yyyy`）或选择日历图标（![日历图标）。](../images/ui/ttl/calendar-icon.png))以从对话框中选择日期。
+在&#x200B;**[!UICONTROL 请求的操作]**&#x200B;部分下，选择要按其删除数据集的日期。 您可以手动输入日期（格式为`mm/dd/yyyy`）或选择日历图标（![日历图标）。](/help/images/icons/calendar.png))以从对话框中选择日期。
 
 ![为数据集选择并突出显示过期日期的日历对话框。](../images/ui/ttl/select-date.png)
 
-接下来，在&#x200B;**[!UICONTROL 数据集详细信息]**&#x200B;下，选择数据库图标（![数据库图标）。](../images/ui/ttl/database-icon.png))以打开数据集选择对话框。 从列表中选择要应用到期的数据集，然后选择&#x200B;**[!UICONTROL 完成]**。
+接下来，在&#x200B;**[!UICONTROL 数据集详细信息]**&#x200B;下，选择数据库图标（![数据库图标）。](/help/images/icons/database.png))以打开数据集选择对话框。 从列表中选择要应用到期的数据集，然后选择&#x200B;**[!UICONTROL 完成]**。
 
 ![包含选定数据集并突出显示[!UICONTROL 完成]的[!UICONTROL 选择数据集]对话框。](../images/ui/ttl/select-dataset.png)
 

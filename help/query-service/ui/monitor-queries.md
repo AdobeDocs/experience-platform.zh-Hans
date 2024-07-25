@@ -2,7 +2,7 @@
 title: 监视计划的查询
 description: 了解如何通过查询服务UI监控查询。
 exl-id: 4640afdd-b012-4768-8586-32f1b8232879
-source-git-commit: 41c069ef1c0a19f34631e77afd7a80b8967c5060
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '2454'
 ht-degree: 0%
@@ -25,7 +25,7 @@ Adobe Experience Platform通过UI提高了所有查询作业状态的可见性�
 
 >[!NOTE]
 >
->警报订阅图标(![警报订阅图标。](../images/ui/monitor-queries/alert-subscription-icon.png))包含在无标题列的每一行中。 有关详细信息，请参阅[警报订阅](#alert-subscription)部分。
+>警报订阅图标(![警报订阅图标。](/help/images/icons/alert-add.png))包含在无标题列的每一行中。 有关详细信息，请参阅[警报订阅](#alert-subscription)部分。
 
 | 列 | 描述 |
 |---|---|
@@ -45,7 +45,7 @@ Adobe Experience Platform通过UI提高了所有查询作业状态的可见性�
 
 ## 自定义计划查询的表设置 {#customize-table}
 
-您可以根据需要调整[!UICONTROL 计划查询]选项卡上的列。 要打开[!UICONTROL 自定义表]设置对话框并编辑可用列，请选择设置图标（![A设置图标）。](../images/ui/monitor-queries/settings-icon.png))。
+您可以根据需要调整[!UICONTROL 计划查询]选项卡上的列。 要打开[!UICONTROL 自定义表]设置对话框并编辑可用列，请选择设置图标（![A设置图标）。](/help/images/icons/column-settings.png))。
 
 >[!NOTE]
 >
@@ -89,7 +89,7 @@ Adobe Experience Platform通过UI提高了所有查询作业状态的可见性�
 
 ### 订阅警报 {#alert-subscription}
 
-要订阅计划查询运行的警报，请选择`...` （省略号）或警报订阅图标（![警报订阅图标）。](../images/ui/monitor-queries/alert-subscription-icon.png))管理计划查询。 出现内联操作下拉菜单。 接下来，从可用选项中选择&#x200B;**[!UICONTROL 订阅]**。
+要订阅计划查询运行的警报，请选择`...` （省略号）或警报订阅图标（![警报订阅图标）。](/help/images/icons/alert-add.png))管理计划查询。 出现内联操作下拉菜单。 接下来，从可用选项中选择&#x200B;**[!UICONTROL 订阅]**。
 
 ![带有省略号、警报订阅图标和突出显示的内联操作下拉菜单的计划查询工作区。](../images/ui/monitor-queries/subscribe.png)
 
@@ -115,7 +115,7 @@ Adobe Experience Platform通过UI提高了所有查询作业状态的可见性�
 
 ### 查看查询详细信息 {#query-details}
 
-选择信息图标(![信息图标。](../images/ui/monitor-queries/information-icon.png))以查看查询的详细信息面板。 详细信息面板包含查询的所有相关信息，但不包括计划查询表中包含的事实信息。 其他信息包括查询ID、上次修改日期、查询的SQL、计划ID和当前设置的计划。
+选择信息图标(![信息图标。](/help/images/icons/info.png))以查看查询的详细信息面板。 详细信息面板包含查询的所有相关信息，但不包括计划查询表中包含的事实信息。 其他信息包括查询ID、上次修改日期、查询的SQL、计划ID和当前设置的计划。
 
 ![计划查询选项卡的信息图标和详细信息面板突出显示。](../images/ui/monitor-queries/details-panel.png)
 
@@ -151,7 +151,7 @@ Adobe Experience Platform通过UI提高了所有查询作业状态的可见性�
 
 ## 筛选查询 {#filter}
 
-您可以根据运行频率筛选查询。 从[!UICONTROL 计划查询]选项卡中，选择过滤器图标（![过滤器图标](../images/ui/monitor-queries/filter-icon.png)）以打开过滤器侧栏。
+您可以根据运行频率筛选查询。 从[!UICONTROL 计划查询]选项卡中，选择过滤器图标（![过滤器图标](/help/images/icons/filter.png)）以打开过滤器侧栏。
 
 ![筛选器图标突出显示的计划查询选项卡。](../images/ui/monitor-queries/filter-queries.png)
 

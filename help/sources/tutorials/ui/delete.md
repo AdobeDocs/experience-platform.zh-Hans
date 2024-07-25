@@ -5,7 +5,7 @@ solution: Experience Platform
 title: 删除UI中的数据流
 type: Tutorial
 exl-id: aa224467-7733-40de-aab7-0ff1c557abf2
-source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '367'
 ht-degree: 1%
@@ -33,7 +33,7 @@ ht-degree: 1%
 
 此时会显示&#x200B;**[!UICONTROL 数据流]**&#x200B;页面。 在此页面上是一个可查看的数据流列表，包括有关其目标数据集、源、帐户名称和创建日期的信息。
 
-选择左上角的过滤器图标（![过滤器图标](../../images/tutorials/delete/filter.png)）以启动排序面板。
+选择左上角的过滤器图标（![过滤器图标](/help/images/icons/filter.png)）以启动排序面板。
 
 ![数据流](../../images/tutorials/delete/dataflows.png)
 

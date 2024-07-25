@@ -2,7 +2,7 @@
 title: 查询日志
 description: 每次执行查询时都会自动生成查询日志，可以通过UI帮助进行疑难解答。 本文档概述了如何使用及导航UI的“查询服务日志”部分。
 exl-id: 929e9fba-a9ba-4bf9-a363-ca8657a84f75
-source-git-commit: 41c069ef1c0a19f34631e77afd7a80b8967c5060
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1012'
 ht-degree: 0%
@@ -31,7 +31,7 @@ Adobe Experience Platform维护通过API和UI发生的所有查询事件的日�
 
 ## 自定义和搜索 {#customize-and-search}
 
-查询服务日志以可自定义的表格式提供。 要自定义表格列，请选择设置图标（![A设置图标）。](../images/ui/query-log/settings-icon.png))。 将显示[!UICONTROL 自定义表]对话框，其中可以取消选择每个列。
+查询服务日志以可自定义的表格式提供。 要自定义表格列，请选择设置图标（![A设置图标）。](/help/images/icons/column-settings.png))。 将显示[!UICONTROL 自定义表]对话框，其中可以取消选择每个列。
 
 您还可以通过在搜索字段中键入模板名称来搜索与特定查询模板相关的日志。
 
@@ -67,13 +67,13 @@ Adobe Experience Platform维护通过API和UI发生的所有查询事件的日�
 
 ## 编辑日志 {#edit-logs}
 
-每行的模板名称或SQL代码片段旁边是一个铅笔图标（![铅笔图标）。](../images/ui/query-log/edit-icon.png))，可用于导航到查询编辑器。 然后，在编辑器中预填充该查询以进行编辑。
+每行的模板名称或SQL代码片段旁边是一个铅笔图标（![铅笔图标）。](/help/images/icons/edit.png))，可用于导航到查询编辑器。 然后，在编辑器中预填充该查询以进行编辑。
 
 ![查询日志工作区中铅笔图标突出显示。](../images/ui/query-log/edit-query.png)
 
 ## 筛选日志 {#filter-logs}
 
-您可以根据各种设置筛选查询日志列表。 选择过滤器图标(![过滤器图标。](../images/ui/query-log/filter-icon.png))，以在左边栏中打开一组筛选器选项。
+您可以根据各种设置筛选查询日志列表。 选择过滤器图标(![过滤器图标。](/help/images/icons/filter.png))，以在左边栏中打开一组筛选器选项。
 
 ![查询日志工作区中筛选器图标突出显示。](../images/ui/query-log/log-filter.png)
 

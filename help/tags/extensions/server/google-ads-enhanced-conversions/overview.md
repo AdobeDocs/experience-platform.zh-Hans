@@ -3,7 +3,7 @@ title: Google Ads增强型转化扩展
 description: 了解Adobe Experience Platform中用于事件转发的Google Ads增强型转化扩展。
 exl-id: 65cdff40-276f-4481-9621-6c6861dbd412
 last-substantial-update: 2022-11-23T00:00:00Z
-source-git-commit: 1c417744518a7ac7cfb9c65d6af8219dcbc70d46
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1296'
 ht-degree: 1%
@@ -103,7 +103,7 @@ ht-degree: 1%
 要配置扩展，必须填充两个必填字段：
 
 1. **[!UICONTROL 客户ID]**：唯一标识您的[!DNL Google Ads]帐户的ID。 要查找此值，请登录[!DNL Google Ads]并导航到&#x200B;**[!DNL Help]** > **[!DNL Customer ID]**。
-1. **[!UICONTROL 访问令牌数据元素]**：选择数据元素图标（![数据元素图标](../../../images/extensions/server/google-ads-enhanced-conversions/data-element-icon.png)）并从菜单中选择您[在上一步骤](#create-secret-data-element)中配置的Google OAuth 2机密数据元素。
+2. **[!UICONTROL 访问令牌数据元素]**：选择数据元素图标（![数据元素图标](/help/images/icons/database.png)）并从菜单中选择您[在上一步骤](#create-secret-data-element)中配置的Google OAuth 2机密数据元素。
 
 完成后，选择&#x200B;**[!UICONTROL 保存]**&#x200B;以安装扩展。
 

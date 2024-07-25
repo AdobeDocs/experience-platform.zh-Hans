@@ -2,7 +2,7 @@
 title: 查询时间表
 description: 了解如何自动运行计划的查询、删除或禁用查询计划，以及通过Adobe Experience Platform UI利用可用的计划选项。
 exl-id: 984d5ddd-16e8-4a86-80e4-40f51f37a975
-source-git-commit: 0b056da8457010ce36efc48e3dd91f280a9b15c5
+source-git-commit: 19f1f64434d655d3b19260460519018fc9c8e174
 workflow-type: tm+mt
 source-wordcount: '1848'
 ht-degree: 0%
@@ -75,7 +75,7 @@ ht-degree: 0%
 
 ![计划详细信息面板，其中包含数据集详细信息以及[!UICONTROL 创建并附加到新数据集中的]选项，突出显示。](../images/ui/query-schedules/dataset-details-create-and-append.png)
 
-或者，选择&#x200B;**[!UICONTROL 附加到现有数据集]**，后跟数据集图标（![数据集图标。](../images/ui/query-schedules/dataset-icon.png)）。
+或者，选择&#x200B;**[!UICONTROL 附加到现有数据集]**，后跟数据集图标（![数据集图标。](/help/images/icons/database.png)）。
 
 ![计划详细信息面板中突出显示了数据集详细信息并追加到现有数据集中。](../images/ui/query-schedules/dataset-details-existing.png)
 

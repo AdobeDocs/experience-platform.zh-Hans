@@ -3,7 +3,7 @@ title: Google Cloud Platform事件转发扩展
 description: 此Adobe Experience Platform事件转发扩展可将Edge Network事件发送到Google Cloud Platform。
 last-substantial-update: 2023-06-21T00:00:00Z
 exl-id: c5da1889-f917-42aa-b3a4-9557c31d6ee8
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '562'
 ht-degree: 1%
@@ -47,8 +47,8 @@ ht-degree: 1%
 | 输入 | 描述 |
 | --- | --- |
 | [!UICONTROL 主题] | 将从事件转发接收事件的主题。 值的格式必须为`projects/{projectName}/topics/{topicName}`。 |
-| [!UICONTROL 数据] | 此字段包含要以JSON格式转发到[!DNL Cloud Pub/Sub]主题的数据。<br><br>在&#x200B;**[!UICONTROL 原始]**&#x200B;选项下，您可以将JSON对象直接粘贴到提供的文本字段中，也可以选择数据元素图标（![数据集图标](../../../images/extensions/server/aws/data-element-icon.png)）以从现有数据元素列表中进行选择来表示数据。<br><br>您还可以使用&#x200B;**[!UICONTROL JSON键值对编辑器]**&#x200B;选项通过UI编辑器手动添加每个键值对。 每个值都可以用原始输入表示，也可以改为选择数据元素。 |
-| [!UICONTROL 属性] | 此字段包含具有额外属性的JSON对象，将与消息一起发送。<br><br>在&#x200B;**[!UICONTROL 原始]**&#x200B;选项下，您可以将JSON对象直接粘贴到提供的文本字段中，也可以选择数据元素图标（![数据集图标](../../../images/extensions/server/aws/data-element-icon.png)）以从现有数据元素列表中进行选择来表示数据。<br><br>您还可以使用&#x200B;**[!UICONTROL JSON键值对编辑器]**&#x200B;选项通过UI编辑器手动添加每个键值对。 每个值都可以用原始输入表示，也可以改为选择数据元素。 |
+| [!UICONTROL 数据] | 此字段包含要以JSON格式转发到[!DNL Cloud Pub/Sub]主题的数据。<br><br>在&#x200B;**[!UICONTROL 原始]**&#x200B;选项下，您可以将JSON对象直接粘贴到提供的文本字段中，也可以选择数据元素图标（![数据集图标](/help/images/icons/database.png)）以从现有数据元素列表中进行选择来表示数据。<br><br>您还可以使用&#x200B;**[!UICONTROL JSON键值对编辑器]**&#x200B;选项通过UI编辑器手动添加每个键值对。 每个值都可以用原始输入表示，也可以改为选择数据元素。 |
+| [!UICONTROL 属性] | 此字段包含具有额外属性的JSON对象，将与消息一起发送。<br><br>在&#x200B;**[!UICONTROL 原始]**&#x200B;选项下，您可以将JSON对象直接粘贴到提供的文本字段中，也可以选择数据元素图标（![数据集图标](/help/images/icons/database.png)）以从现有数据元素列表中进行选择来表示数据。<br><br>您还可以使用&#x200B;**[!UICONTROL JSON键值对编辑器]**&#x200B;选项通过UI编辑器手动添加每个键值对。 每个值都可以用原始输入表示，也可以改为选择数据元素。 |
 
 {style="table-layout:auto"}
 

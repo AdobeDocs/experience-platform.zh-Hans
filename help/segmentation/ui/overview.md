@@ -3,7 +3,7 @@ solution: Experience Platform
 title: 分段服务UI指南
 description: 了解如何在Adobe Experience Platform UI中创建和管理受众和区段定义。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: acfe91144175e136955ffd9f0cdae2c351217c16
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '959'
 ht-degree: 1%
@@ -69,7 +69,7 @@ ht-degree: 1%
 | 管理访问权限 | 管理属于受众的访问标签。 有关访问标签的详细信息，请阅读有关[管理标签](../../access-control/abac/ui/labels.md)的文档。 |
 | Delete | 删除所选受众。 不能删除在下游目标中使用或属于其他受众&#x200B;**中依赖的受众**。 有关受众删除的详细信息，请阅读[分段常见问题解答](../faq.md#lifecycle-states)。 |
 
-您可以选择![自定义表](../images/ui/overview/customize-table.png)图标来更改显示的字段。
+您可以选择![自定义表](/help/images/icons/column-settings.png)图标来更改显示的字段。
 
 ![自定义表按钮突出显示。 选择此按钮允许您自定义在受众组合页面上显示的字段。](../images/ui/overview/compositions-select-customize-table.png)
 

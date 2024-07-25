@@ -4,7 +4,7 @@ description: 实时客户配置文件允许您通过组合来自多个渠道的�
 title: 在UI中监控用户档案的数据流
 type: Tutorial
 exl-id: 00b624b2-f6d1-4ef2-abf2-52cede89b684
-source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1076'
 ht-degree: 7%
@@ -63,7 +63,7 @@ ht-degree: 7%
 | **[!UICONTROL 配置文件片段总数]** | 写入[!DNL Profile]的记录总数，包括所有已更新的现有[!DNL Profile]片段和已创建的新[!DNL Profile]片段。 |
 | **[!UICONTROL 失败的数据流总数]** | 失败的数据流运行次数。 |
 
-您可以选择源名称旁边的过滤器图标![过滤器图标](../assets/ui/monitor-profiles/filter.png)以查看所选源的数据流的配置文件处理信息。
+您可以选择源名称旁边的过滤器图标![过滤器图标](/help/images/icons/filter.png)以查看所选源的数据流的配置文件处理信息。
 
 ![筛选器图标高亮显示。 选择此图标可查看所选源的数据流。](../assets/ui/monitor-profiles/sources-filter.png)
 
@@ -86,7 +86,7 @@ ht-degree: 7%
 | **[!UICONTROL 失败的流运行总数]** | 失败的数据流运行次数。 |
 | **[!UICONTROL 上次活动时间]** | 上次运行数据流的时间戳。 |
 
-选择数据流运行开始时间旁边的过滤器图标![过滤器](../assets/ui/monitor-profiles/filter.png)以查看有关您的[!DNL Profile]数据流运行的更多信息。
+选择数据流运行开始时间旁边的过滤器图标![过滤器](/help/images/icons/filter.png)以查看有关您的[!DNL Profile]数据流运行的更多信息。
 
 ![筛选器图标高亮显示。 选择此图标可查看有关所选数据流的详细信息。](../assets/ui/monitor-profiles/dataflows-filter.png)
 

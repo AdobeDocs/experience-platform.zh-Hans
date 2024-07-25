@@ -2,7 +2,7 @@
 title: 架构编辑器中的基于字段的工作流
 description: 了解如何将现有字段组中的字段单独添加到您的体验数据模型(XDM)架构。
 exl-id: 0499ff30-a602-419b-b9d3-2defdd4354a7
-source-git-commit: 19e0a26958ec57ccbc614be53b5aaacce7ce9450
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1301'
 ht-degree: 0%
@@ -57,7 +57,7 @@ Adobe Experience Platform提供一组可靠的标准化[字段组](../schema/com
 
 虽然某些标准字段具有相同的名称，但它们的结构可能会因它们来自的字段组而异。 如果标准字段嵌套在字段组结构的父对象中，则添加子字段时，该父字段也将包含在架构中。
 
-选择标准字段旁边的预览图标（![预览图标](../images/ui/field-based-workflows/preview-icon.png)）可查看其字段组的结构，并更好地了解其嵌套方式。 要将标准字段添加到架构，请选择加号图标（![加号图标](../images/ui/field-based-workflows/add-icon.png)）。
+选择标准字段旁边的预览图标（![预览图标](/help/images/icons/preview.png)）可查看其字段组的结构，并更好地了解其嵌套方式。 要将标准字段添加到架构，请选择加号图标（![加号图标](/help/images/icons/add-circle.png)）。
 
 ![在建议标准字段的项上突出显示的“添加”图标。](../images/ui/field-based-workflows/add-standard-field.png)
 

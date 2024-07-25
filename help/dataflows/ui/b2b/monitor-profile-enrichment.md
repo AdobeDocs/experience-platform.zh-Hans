@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 监控配置文件扩充作业
 type: Tutorial
 exl-id: 096a2212-ed7f-4419-8ead-fa1ca01c2804
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '764'
 ht-degree: 2%
@@ -77,7 +77,7 @@ ht-degree: 2%
 
 此部分介绍监视界面中的各种用户界面(UI)选项，这些选项允许您过滤页面上显示的度量。
 
-使用箭头图标（![箭头图标](/help/dataflows/assets/ui/monitor-destinations/chevron-up.png)）展开或关闭屏幕顶部的信息卡，该信息卡会显示有关用户档案扩充作业的概览信息。
+使用箭头图标（![箭头图标](/help/images/icons/chevron-up.png)）展开或关闭屏幕顶部的信息卡，该信息卡会显示有关用户档案扩充作业的概览信息。
 
 ![显示箭头图标UI控件的屏幕录制。](/help/dataflows/assets/ui/b2b/use-arrow-control.gif)
 

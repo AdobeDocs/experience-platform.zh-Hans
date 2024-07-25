@@ -2,7 +2,7 @@
 title: 数据收集端到端概述
 description: 有关如何使用Adobe Experience Platform的数据收集功能将事件数据发送到Adobe Experience Cloud解决方案的高级别概述。
 exl-id: 01ddbb19-40bb-4cb5-bfca-b272b88008b3
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '2616'
 ht-degree: 0%
@@ -228,7 +228,7 @@ Adobe Experience Platform收集您的数据并将这些数据传输到其他Adob
 
 ![操作类型](./images/e2e/action-type.png)
 
-屏幕将更新，以显示用于配置发送事件操作的其他选项。 在&#x200B;**[!UICONTROL 类型]**&#x200B;下，您可以提供自定义类型值以填充`eventType` XDM字段。 在&#x200B;**[!UICONTROL XDM数据]**&#x200B;下，提供您之前创建的XDM数据类型的名称（由百分比符号括起来），或者选择数据库图标（![数据库图标](./images/e2e/database-symbol.png)）以从列表中选择它。 这是最终将发送到Edge Network的数据。
+屏幕将更新，以显示用于配置发送事件操作的其他选项。 在&#x200B;**[!UICONTROL 类型]**&#x200B;下，您可以提供自定义类型值以填充`eventType` XDM字段。 在&#x200B;**[!UICONTROL XDM数据]**&#x200B;下，提供您之前创建的XDM数据类型的名称（由百分比符号括起来），或者选择数据库图标（![数据库图标](/help/images/icons/database.png)）以从列表中选择它。 这是最终将发送到Edge Network的数据。
 
 完成时选择&#x200B;**[!UICONTROL 保留更改]**。
 

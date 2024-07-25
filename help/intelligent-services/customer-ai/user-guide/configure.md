@@ -5,7 +5,7 @@ feature: Customer AI
 title: 配置客户人工智能实例
 description: AI/ML服务将Customer AI作为易于使用的Adobe Sensei服务提供，可以针对不同用例进行配置。 以下部分提供了配置Customer AI实例的步骤。
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '2827'
 ht-degree: 0%
@@ -72,7 +72,7 @@ AI/ML服务将Customer AI作为易于使用的Adobe Sensei服务提供，可以�
 
 ![选择数据集](../images/user-guide/select-datasets.png)
 
-选择数据集旁边的信息图标![信息图标](../images/user-guide/info-icon.png)将打开数据集预览弹出框。
+选择数据集旁边的信息图标![信息图标](/help/images/icons/info.png)将打开数据集预览弹出框。
 
 ![选择并搜索数据集](../images/user-guide/dataset-info.png)
 

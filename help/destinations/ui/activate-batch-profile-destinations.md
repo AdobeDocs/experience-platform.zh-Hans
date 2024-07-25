@@ -3,7 +3,7 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 68781d27e374261108955b24dfb7b46141f5108b
 workflow-type: tm+mt
 source-wordcount: '3975'
 ht-degree: 11%
@@ -529,14 +529,14 @@ additional-url="https://experienceleague.adobe.com/docs/experience-platform/dest
 
 请按照以下步骤为每个外部受众选择扩充属性：
 
-1. 在&#x200B;**[!UICONTROL 扩充属性]**&#x200B;列中，选择![编辑按钮](../assets/ui/activate-batch-profile-destinations/edit-button.svg)（编辑）按钮。
-2. 选择&#x200B;**[!UICONTROL 添加扩充属性]**。 将显示一个新的空架构字段。
+1. 在&#x200B;**[!UICONTROL 扩充属性]**&#x200B;列中，选择![编辑按钮](/help/images/icons/edit.png)（编辑）按钮。
+1. 选择&#x200B;**[!UICONTROL 添加扩充属性]**。 将显示一个新的空架构字段。
    ![显示扩充属性模式屏幕的UI图像。](../assets/ui/activate-batch-profile-destinations/add-enrichment-attribute.png)
-3. 选择空字段右侧的按钮以打开字段选择屏幕。
-4. 选择要为受众导出的属性。
+1. 选择空字段右侧的按钮以打开字段选择屏幕。
+1. 选择要为受众导出的属性。
    ![显示扩充属性列表的UI图像。](../assets/ui/activate-batch-profile-destinations/select-enrichment-attributes.png)
-5. 添加所有要导出的属性后，选择&#x200B;**[!UICONTROL 保存并关闭]**。
-6. 对每个外部受众重复这些步骤。
+1. 添加所有要导出的属性后，选择&#x200B;**[!UICONTROL 保存并关闭]**。
+1. 对每个外部受众重复这些步骤。
 
 如果要在不导出任何属性的情况下将外部受众激活到目标，请启用&#x200B;**[!UICONTROL 排除扩充属性]**&#x200B;切换开关。 此选项会从外部受众导出用户档案，但不会将其任何相应的属性发送到您的目标。
 

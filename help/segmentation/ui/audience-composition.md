@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Audiences UI指南
 description: Adobe Experience Platform UI中的受众组合提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了一些直观的控件，可用于为贵组织构建和编辑受众。
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: ca8f0c3df9581af7be37e242c9e300ef1b6ea814
+source-git-commit: 8bc03889ff108630bd20fe47f2c2920ceba5069b
 workflow-type: tm+mt
 source-wordcount: '1951'
 ht-degree: 0%
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 ![受众合成UI。](../images/ui/audience-composition/audience-composition.png)
 
-要更改构成的详细信息（包括标题和描述），请选择![滑块](../images/ui/audience-composition/sliders.png)按钮。
+要更改构成的详细信息（包括标题和描述），请选择![滑块](/help/images/icons/properties.png)按钮。
 
 出现&#x200B;**[!UICONTROL 合成属性]**&#x200B;弹出框。 您可以在此处插入构图的详细信息，包括标题和描述。
 
@@ -114,7 +114,7 @@ ht-degree: 0%
 
 ### 按属性排除 {#exclude-attribute}
 
-如果按属性排除，则可以通过选择&#x200B;**[!UICONTROL 排除规则]**&#x200B;部分中的![过滤器](../images/ui/audience-composition/filter-attribute.png)图标来选择要排除的属性。
+如果按属性排除，则可以通过选择&#x200B;**[!UICONTROL 排除规则]**&#x200B;部分中的![过滤器](/help/images/icons/project-edit.png)图标来选择要排除的属性。
 
 ![属性部分高亮显示，显示从何处选择要排除的属性。](../images/ui/audience-composition/exclude-attribute.png)
 
@@ -140,7 +140,7 @@ ht-degree: 0%
 
 已添加&#x200B;**[!UICONTROL 扩充]**&#x200B;块。 选择此块后，有关扩充的详细信息将显示在右边栏中。 这包括块的标签和扩充数据集。
 
-要选择要扩充受众的数据集，请选择![过滤器](../images/ui/audience-composition/filter-attribute.png)图标。
+要选择要扩充受众的数据集，请选择![过滤器](/help/images/icons/project-edit.png)图标。
 
 ![筛选器按钮突出显示。 选择此选项将转到[!UICONTROL 选择数据集]弹出框。](../images/ui/audience-composition/enrich-select-dataset.png)
 
@@ -160,7 +160,7 @@ ht-degree: 0%
 
 ![已突出显示[!UICONTROL 扩充条件]区域。](../images/ui/audience-composition/enrichment-criteria.png)
 
-要选择&#x200B;**[!UICONTROL Source联接键]**，请选择![筛选器](../images/ui/audience-composition/filter-attribute.png)图标。
+要选择&#x200B;**[!UICONTROL Source联接键]**，请选择![筛选器](/help/images/icons/project-edit.png)图标。
 
 ![已突出显示[!UICONTROL Source联接键]的过滤器图标。](../images/ui/audience-composition/enrich-select-source-join-key.png)
 
@@ -168,7 +168,7 @@ ht-degree: 0%
 
 ![要用作源连接键的属性突出显示。](../images/ui/audience-composition/enrich-select-profile-attribute.png)
 
-要选择&#x200B;**[!UICONTROL 扩充数据集联接键]**，请选择![筛选器](../images/ui/audience-composition/filter-attribute.png)图标。
+要选择&#x200B;**[!UICONTROL 扩充数据集联接键]**，请选择![筛选器](/help/images/icons/project-edit.png)图标。
 
 ![已突出显示[!UICONTROL 扩充数据集联接键]的筛选器图标。](../images/ui/audience-composition/enrich-select-enrichment-dataset-join-key.png)
 
@@ -216,7 +216,7 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 
 ![已突出显示排名块，并突出显示排名块的详细信息。](../images/ui/audience-composition/rank.png)
 
-要选择受众排名所依据的属性，请选择![过滤器](../images/ui/audience-composition/filter-attribute.png)图标。
+要选择受众排名所依据的属性，请选择![过滤器](/help/images/icons/project-edit.png)图标。
 
 ![筛选器图标高亮显示，显示访问配置文件属性选择屏幕要选择的内容。](../images/ui/audience-composition/select-rank-attribute.png)
 
@@ -250,7 +250,7 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 
 ### 按属性拆分 {#split-attribute}
 
-按属性拆分时，将基于提供的属性拆分受众。 要选择要拆分的属性，请选择&#x200B;**[!UICONTROL 拆分]**&#x200B;块，后跟![筛选器](../images/ui/audience-composition/filter-attribute.png)图标。
+按属性拆分时，将基于提供的属性拆分受众。 要选择要拆分的属性，请选择&#x200B;**[!UICONTROL 拆分]**&#x200B;块，后跟![筛选器](/help/images/icons/project-edit.png)图标。
 
 ![已选择“筛选”按钮，显示如何按属性筛选。](../images/ui/audience-composition/select-split-attribute.png)
 

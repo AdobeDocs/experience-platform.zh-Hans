@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 查询服务UI指南
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看先前执行的查询以及访问由您组织内的用户保存的查询。
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1132'
 ht-degree: 1%
@@ -81,7 +81,7 @@ Adobe Experience Platform [!DNL Query Service]提供了一个用户界面，可�
 
 >
 >
->选择铅笔图标(![A铅笔图标。](../images/ui/overview/edit-icon.png))，以导航到[!DNL Query Editor]。 为方便编辑，已预填充查询。
+>选择铅笔图标(![A铅笔图标。](/help/images/icons/edit.png))，以导航到[!DNL Query Editor]。 为方便编辑，已预填充查询。
 
 有关查询事件自动生成的日志文件的详细信息，请参阅[查询日志文档](./query-logs.md)。
 

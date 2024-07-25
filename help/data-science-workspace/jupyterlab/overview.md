@@ -4,7 +4,7 @@ solution: Experience Platform
 title: JupyterLab UI概述
 description: JupyterLab是Project Jupyter的基于Web的用户界面，并且已紧密集成到Adobe Experience Platform中。 它为数据科学家提供了交互式开发环境，以便使用Jupyter Notebooks、代码和数据。 本文档概述了JupyterLab及其功能，并提供了执行常见操作的说明。
 exl-id: 13786fbd-ef16-49cd-8bcf-46320c33e902
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1812'
 ht-degree: 2%
@@ -116,9 +116,9 @@ Experience Platform的JupyterLab集成伴随着体系结构变化、设计注意
 
 ### 终止并重新启动[!DNL JupyterLab]
 
-在[!DNL JupyterLab]中，您可以终止会话以防止使用其他资源。 首先选择&#x200B;**电源图标** ![电源图标](../images/jupyterlab/user-guide/power_button.png)，然后从似乎将终止会话的弹出框中选择&#x200B;**[!UICONTROL 关闭]**。 笔记本会话在12小时不活动后自动终止。
+在[!DNL JupyterLab]中，您可以终止会话以防止使用其他资源。 首先选择&#x200B;**电源图标** ![电源图标](/help/images/icons/power.png)，然后从似乎将终止会话的弹出框中选择&#x200B;**[!UICONTROL 关闭]**。 笔记本会话在12小时不活动后自动终止。
 
-若要重新启动[!DNL JupyterLab]，请选择电源图标左边的&#x200B;**重新启动图标** ![重新启动图标](../images/jupyterlab/user-guide/restart_button.png)，然后从显示的弹出框中选择&#x200B;**[!UICONTROL 重新启动]**。
+若要重新启动[!DNL JupyterLab]，请选择电源图标左边的&#x200B;**重新启动图标** ![重新启动图标](/help/images/icons/restart.png)，然后从显示的弹出框中选择&#x200B;**[!UICONTROL 重新启动]**。
 
 ![终止jupyterlab](../images/jupyterlab/user-guide/shutdown-jupyterlab.gif)
 

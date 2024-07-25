@@ -4,7 +4,7 @@ title: 受众功能板
 description: Adobe Experience Platform提供了一个功能板，通过它可查看有关贵组织已创建受众的重要信息。
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: a8b5ed09e8e28075a3a4f37ad30f01c1cc389b9c
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '3132'
 ht-degree: 9%
@@ -235,7 +235,7 @@ Adobe提供了多个标准构件，可用于可视化与受众相关的各种指
 
 ![受众重叠报表构件，其中视图突出显示。](../images/audiences/audience-overlap-report.png)
 
-出现[!UICONTROL 受众重叠报表]对话框。 此对话框最多可包含50行受众重叠分析，这些分析划分为6列。 选择设置图标(![设置图标。](../images/audiences/settings-icon.png))以从表中移除或添加列。
+出现[!UICONTROL 受众重叠报表]对话框。 此对话框最多可包含50行受众重叠分析，这些分析划分为6列。 选择设置图标(![设置图标。](/help/images/icons/settings.png))以从表中移除或添加列。
 
 ![受众重叠报告对话框。](../images/audiences/audience-overlap-report-dialog.png)
 

@@ -3,7 +3,7 @@ title: AWS扩展概述
 description: 了解Adobe Experience Platform中用于事件转发的AWS扩展。
 exl-id: 826a96aa-2d64-4a8b-88cf-34a0b6c26df5
 last-substantial-update: 2022-11-23T00:00:00Z
-source-git-commit: 1c417744518a7ac7cfb9c65d6af8219dcbc70d46
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '810'
 ht-degree: 0%
@@ -66,7 +66,7 @@ ht-degree: 0%
 
 | 输入 | 描述 |
 | --- | --- |
-| [!UICONTROL 有效负荷] | 此字段包含将以JSON格式转发到[!DNL Kinesis]数据流的数据。<br><br>在&#x200B;**[!UICONTROL 原始]**&#x200B;选项下，您可以将JSON对象直接粘贴到提供的文本字段中，也可以选择数据元素图标（![数据集图标](../../../images/extensions/server/aws/data-element-icon.png)）以从现有数据元素列表中进行选择以表示有效负载。<br><br>您还可以使用&#x200B;**[!UICONTROL JSON键值对编辑器]**&#x200B;选项通过UI编辑器手动添加每个键值对。 每个值都可以用原始输入表示，也可以改为选择数据元素。 |
+| [!UICONTROL 有效负荷] | 此字段包含将以JSON格式转发到[!DNL Kinesis]数据流的数据。<br><br>在&#x200B;**[!UICONTROL 原始]**&#x200B;选项下，您可以将JSON对象直接粘贴到提供的文本字段中，也可以选择数据元素图标（![数据集图标](/help/images/icons/database.png)）以从现有数据元素列表中进行选择以表示有效负载。<br><br>您还可以使用&#x200B;**[!UICONTROL JSON键值对编辑器]**&#x200B;选项通过UI编辑器手动添加每个键值对。 每个值都可以用原始输入表示，也可以改为选择数据元素。 |
 
 {style="table-layout:auto"}
 

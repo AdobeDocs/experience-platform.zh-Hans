@@ -3,7 +3,7 @@ description: 了解如何使用Experience Platform用户界面在分段期间监
 title: 在UI中监控受众的数据流
 type: Tutorial
 exl-id: 32fd2ba1-0ff0-4ea7-8d55-80d53eebc02f
-source-git-commit: 716c14f29be24d084111864053e3e4ae884003f0
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1862'
 ht-degree: 4%
@@ -64,7 +64,7 @@ ht-degree: 4%
 | **[!UICONTROL 上次激活身份]** | 在受众的上次激活作业中激活的身份数。 |
 | **[!UICONTROL 上次激活目标]** | 受众的上次激活作业激活到的目标的名称。 |
 
-您可以通过选择过滤器图标（![过滤器图标）来将结果过滤到特定受众，并查看其分段作业。](../assets/ui/monitor-audiences/filter-icon.png))。 分段作业按时间顺序排序，最新的分段作业首先出现。
+您可以通过选择过滤器图标（![过滤器图标）来将结果过滤到特定受众，并查看其分段作业。](/help/images/icons/filter-add.png))。 分段作业按时间顺序排序，最新的分段作业首先出现。
 
 ![筛选器图标高亮显示。 选择此选项可查看指定受众的分段作业。](../assets/ui/monitor-audiences/filter-audience.png)
 
@@ -89,7 +89,7 @@ ht-degree: 4%
 | **[!UICONTROL 标识已激活]** | 分段作业正在激活的身份数。 每个配置文件都可以有多个身份。 例如，用户档案可能包含电子邮件、电话号码和忠诚度编号作为身份。 |
 | **[!UICONTROL 目标名称]** | 分段作业将激活到的目标的名称。 |
 
-您可以通过选择过滤器图标（![过滤器图标）来进一步过滤到特定的分段作业并查看其详细信息。](../assets/ui/monitor-audiences/filter-icon.png))。 有两种不同类型的分段作业可以过滤：激活作业和评估作业。
+您可以通过选择过滤器图标（![过滤器图标）来进一步过滤到特定的分段作业并查看其详细信息。](/help/images/icons/filter.png))。 有两种不同类型的分段作业可以过滤：激活作业和评估作业。
 
 ### 激活作业详细信息 {#activation-job-details}
 

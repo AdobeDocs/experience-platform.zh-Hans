@@ -3,7 +3,7 @@ description: 了解如何在Adobe Experience Platform UI中使用模板来加速
 title: 在 UI 中使用模板创建源数据流
 badge1: "Beta"
 exl-id: 48aa36ca-656d-4b9d-954c-48c8da9df1e9
-source-git-commit: 4a9cae014a8eba20f93023913f3a73103b16d944
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '2241'
 ht-degree: 10%
@@ -174,7 +174,7 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 
 +++
 
-根据您选择的业务类型，将显示模板列表。 选择模板名称旁边的预览图标![预览图标](../../images/tutorials/templates/preview-icon.png)以预览模板中的示例数据。
+根据您选择的业务类型，将显示模板列表。 选择模板名称旁边的预览图标![预览图标](/help/images/icons/preview.png)以预览模板中的示例数据。
 
 ![突出显示预览图标的模板列表。](../../images/tutorials/templates/templates.png)
 

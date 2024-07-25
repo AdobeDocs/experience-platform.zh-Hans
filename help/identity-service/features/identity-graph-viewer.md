@@ -2,7 +2,7 @@
 title: 身份图查看器
 description: 标识图是特定客户的不同标识之间的关系映射，为您提供客户如何跨不同渠道与您的品牌互动的可视表示形式。
 exl-id: ccd5f8d8-595b-4636-9191-553214e426bd
-source-git-commit: 3fe94be9f50d64fc893b16555ab9373604b62e59
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1402'
 ht-degree: 6%
@@ -46,7 +46,7 @@ ht-degree: 6%
 
 >[!TIP]
 >
->选择表图标![表图标](../images/identity-graph-viewer/table-icon.png)可查看包含组织中所有可用身份命名空间列表的面板。 只要连接了有效的标识值，您就可以使用任何标识命名空间。 有关详细信息，请阅读[身份命名空间指南](./namespaces.md)。
+>选择表图标![表图标](/help/images/icons/table.png)可查看包含组织中所有可用身份命名空间列表的面板。 只要连接了有效的标识值，您就可以使用任何标识命名空间。 有关详细信息，请阅读[身份命名空间指南](./namespaces.md)。
 
 ![身份命名空间及其对应的值，在身份图形查找屏幕中提供。](../images/graph-viewer/namespace-and-value.png)
 

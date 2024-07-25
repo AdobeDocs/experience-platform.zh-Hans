@@ -4,7 +4,7 @@ title: 删除目标帐户
 type: Tutorial
 description: 本教程列出了在Adobe Experience Platform UI中删除目标帐户的步骤
 exl-id: 9b39ba4b-19a4-48a8-a6f1-f860777cdb9e
-source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '305'
 ht-degree: 0%
@@ -33,11 +33,11 @@ ht-degree: 0%
 
    ![帐户选项卡](../assets/ui/delete-accounts/accounts-tab.png)
 
-2. 选择左上角的过滤器图标![过滤器图标](../assets/ui/update-accounts/filter.png)以启动排序面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的已过滤帐户选择。
+2. 选择左上角的过滤器图标![过滤器图标](/help/images/icons/filter.png)以启动排序面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的已过滤帐户选择。
 
    ![筛选目标](../assets/ui/delete-accounts/filter-accounts.png)
 
-3. 选择要删除的帐户名称旁边的省略号(`...`)。 此时会显示一个弹出面板，其中提供了&#x200B;**[!UICONTROL 激活受众]**、**[!UICONTROL 编辑详细信息]**&#x200B;和&#x200B;**[!UICONTROL 删除]**&#x200B;帐户的选项。 选择![删除按钮](../assets/ui/workspace/pencil-icon.png) **[!UICONTROL 删除]**&#x200B;按钮以删除所需的帐户。
+3. 选择要删除的帐户名称旁边的省略号(`...`)。 此时会显示一个弹出面板，其中提供了&#x200B;**[!UICONTROL 激活受众]**、**[!UICONTROL 编辑详细信息]**&#x200B;和&#x200B;**[!UICONTROL 删除]**&#x200B;帐户的选项。 选择![删除按钮](/help/images/icons/delete.png) **[!UICONTROL 删除]**&#x200B;按钮以删除所需的帐户。
 
    ![删除目标帐户](../assets/ui/delete-accounts/delete-accounts.png)
 

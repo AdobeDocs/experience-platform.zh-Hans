@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中创建和编辑类
 description: 了解如何在Experience Platform用户界面中创建和编辑类。
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
-source-git-commit: c04e5a49f2a4e90345ca20ecd0547d02b5004fcf
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1458'
 ht-degree: 5%
@@ -74,7 +74,7 @@ Adobe提供了多个标准（“核心”）Experience Data Model (XDM)类，包
 
 ![已突出显示[!UICONTROL 使用搜索栏[!UICONTROL 自定义]和[!UICONTROL 行业]创建架构]工作流。](../../images/ui/resources/classes/filter-and-search.png)
 
-为了帮助您确定相应的类，提供了信息(![信息图标。](../../images/ui/resources/classes/info.png))和预览(![预览图标。每个类的](../../images/ui/resources/classes/preview.png)个图标。 信息图标会打开一个对话框，其中提供了类及其关联的行业的说明。 预览图标将打开包含架构图及其属性的类的预览对话框。
+为了帮助您确定相应的类，提供了信息(![信息图标。](/help/images/icons/info.png))和预览(![预览图标。每个类的](/help/images/icons/preview.png)个图标。 信息图标会打开一个对话框，其中提供了类及其关联的行业的说明。 预览图标将打开包含架构图及其属性的类的预览对话框。
 
 ![选定类的预览，其中突出显示了架构图和类属性。](../../images/ui/resources/classes/class-preview.png)
 

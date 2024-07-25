@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据集UI指南
 description: 了解如何在Adobe Experience Platform用户界面中使用数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '3080'
 ht-degree: 3%
@@ -161,11 +161,11 @@ ht-degree: 3%
 
 >[!TIP]
 >
->您还可以直接从“移动数据集”对话框创建文件夹。 要创建文件夹，请选择创建文件夹图标（![创建文件夹图标）。](../images/datasets/user-guide/create-folder-icon.png))。
+>您还可以直接从“移动数据集”对话框创建文件夹。 要创建文件夹，请选择创建文件夹图标（![创建文件夹图标）。](/help/images/icons/folder-add.png))。
 >
 >![突出显示了[!UICONTROL 移动]数据集对话框（创建文件夹图标）。](/help/catalog/images/datasets/user-guide/create-folder.png)
 
-数据集位于文件夹中后，您可以选择仅显示属于特定文件夹的数据集。 要打开文件夹结构，请选择显示文件夹图标（![显示文件夹图标](../images/datasets/user-guide/show-folders-icon.png)）。 接下来，选择您选择的文件夹以查看所有关联的数据集。
+数据集位于文件夹中后，您可以选择仅显示属于特定文件夹的数据集。 要打开文件夹结构，请选择显示文件夹图标（![显示文件夹图标](/help/images/icons/rail-left.png)）。 接下来，选择您选择的文件夹以查看所有关联的数据集。
 
 ![显示数据集文件夹结构的[!UICONTROL 数据集]仪表板、显示文件夹图标和突出显示的选定文件夹。](../images/datasets/user-guide/folder-structure.png)
 
@@ -197,7 +197,7 @@ ht-degree: 3%
 
 ## 搜索和筛选数据集 {#search-and-filter}
 
-要搜索或筛选可用数据集的列表，请选择筛选器图标（![筛选器图标）。](../images/datasets/user-guide/icon.png))。 左边栏中显示一组过滤器选项。 有多种方法可用于筛选可用数据集。 这些包括：[[!UICONTROL 显示系统数据集]](#show-system-datasets)、[[!UICONTROL 包含在配置文件]](#filter-profile-enabled-datasets)中、[[!UICONTROL 标记]](#filter-by-tag)、[[!UICONTROL 创建日期]](#filter-by-creation-date)、[[!UICONTROL 修改日期]、[!UICONTROL 创建者]](#filter-by-creation-date)和[[!UICONTROL 架构]](#filter-by-schema)。
+要搜索或筛选可用数据集的列表，请选择筛选器图标（![筛选器图标）。](/help/images/icons/filter.png))。 左边栏中显示一组过滤器选项。 有多种方法可用于筛选可用数据集。 这些包括：[[!UICONTROL 显示系统数据集]](#show-system-datasets)、[[!UICONTROL 包含在配置文件]](#filter-profile-enabled-datasets)中、[[!UICONTROL 标记]](#filter-by-tag)、[[!UICONTROL 创建日期]](#filter-by-creation-date)、[[!UICONTROL 修改日期]、[!UICONTROL 创建者]](#filter-by-creation-date)和[[!UICONTROL 架构]](#filter-by-schema)。
 
 应用的过滤器列表显示在过滤结果上方。
 

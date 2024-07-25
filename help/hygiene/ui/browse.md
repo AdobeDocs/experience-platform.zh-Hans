@@ -2,7 +2,7 @@
 title: 浏览数据生命周期工作单
 description: 了解如何在Adobe Experience Platform用户界面中查看和管理现有数据生命周期工作单。
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: 566f1b6478cd0de0691cfb2301d5b86fbbfece52
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '841'
 ht-degree: 27%
@@ -31,7 +31,7 @@ ht-degree: 27%
 
 ![图像显示[!UICONTROL 数据集]选项卡](../images/ui/browse/dataset-tab.png)
 
-选择漏斗图标（![漏斗图标的图像](../images/ui/browse/funnel-icon.png)）以查看所显示工作单的过滤器列表。
+选择漏斗图标（![漏斗图标的图像](/help/images/icons/filter.png)）以查看所显示工作单的过滤器列表。
 
 ![显示的工作单过滤器图像](../images/ui/browse/filters.png)
 

@@ -4,7 +4,7 @@ title: 使用查询服务浏览、验证和处理功能板数据集
 type: Documentation
 description: 了解如何使用查询服务在Experience Platform中探索和处理为配置文件、受众和目标仪表板提供支持的原始数据集。
 exl-id: 0087dcab-d5fe-4a24-85f6-587e9ae74fb8
-source-git-commit: e0af1f0110ceb514a5b249c42a05bf780ea834c6
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '944'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Adobe Experience Platform [!DNL Query Service]支持营销人员通过使用标�
 >
 >默认情况下，系统生成的数据集处于隐藏状态。 默认情况下，[!UICONTROL 浏览]选项卡仅显示您已将数据摄取到的数据集。
 
-要查看系统生成的数据集，请选择过滤器图标（![A过滤器图标）。](./images/query/filter.png))。
+要查看系统生成的数据集，请选择过滤器图标（![A过滤器图标）。](/help/images/icons/filter.png))。
 
 ![突出显示筛选器图标的数据集浏览选项卡。](./images/query/filter-datasets.png)
 

@@ -4,7 +4,7 @@ title: 警报UI指南
 description: 了解如何在Experience Platform用户界面中管理警报。
 feature: Alerts
 exl-id: 4ba3ef2b-7394-405e-979d-0e5e1fe676f3
-source-git-commit: 8d63e9fa4c7eb09ffb90edca612a6e6d44dd18fa
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '626'
 ht-degree: 0%
@@ -71,7 +71,7 @@ Adobe Experience Platform用户界面允许您根据Adobe Experience Platform可
 
 警报通知可以直接发送到您的电子邮件。
 
-选择位于右上角功能区的铃铛图标（![铃铛图标](../images/alerts/ui/bell-icon.png)）以显示通知和公告。 在出现的下拉列表中，选择齿轮图标（![齿轮图标](../images/alerts/ui/cog-icon.png)）以访问“Experience Cloud首选项”页面。
+选择位于右上角功能区的铃铛图标（![铃铛图标](/help/images/icons/bell.png)）以显示通知和公告。 在出现的下拉列表中，选择齿轮图标（![齿轮图标](/help/images/icons/settings.png)）以访问“Experience Cloud首选项”页面。
 
 ![突出显示铃铛图标和齿轮图标的警报列表。](../images/alerts/ui/edit-preferences.png)
 

@@ -2,7 +2,7 @@
 title: 在UI中为自定义Marketo Engage数据创建Source连接和数据流
 description: 本教程提供了在UI中创建Marketo Engage源连接和数据流以将自定义活动数据引入Adobe Experience Platform的步骤。
 exl-id: 05a7b500-11d2-4d58-be43-a2c4c0ceeb87
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1470'
 ht-degree: 0%
@@ -127,7 +127,7 @@ ht-degree: 0%
 
 ![源数据结构。](../../../../images/tutorials/create/marketo-custom-activities/select-new-mapping-field.png)
 
-要添加目标字段，请选择架构图标![架构图标](../../../../images/tutorials/create/marketo-custom-activities/schema-icon.png)，然后从目标架构中选择自定义活动字段。
+要添加目标字段，请选择架构图标![架构图标](/help/images/icons/schema.png)，然后从目标架构中选择自定义活动字段。
 
 ![目标架构结构。](../../../../images/tutorials/create/marketo-custom-activities/add-target-mapping-field.png)
 

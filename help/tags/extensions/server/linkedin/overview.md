@@ -3,7 +3,7 @@ title: Linkedin转化API事件转发扩展
 description: 通过这个Adobe Experience Platform事件转发扩展，您可以衡量Linkedin营销活动的效果。
 last-substantial-update: 2023-10-25T00:00:00Z
 exl-id: 411e7b77-081e-4139-ba34-04468e519ea5
-source-git-commit: 0d6ade1a0b6c00a4f87395d476dd7e7915489ea5
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '790'
 ht-degree: 1%
@@ -52,7 +52,7 @@ ht-degree: 1%
 | --- | --- |
 | [!UICONTROL 电子邮件] | 与转化事件关联的联系人的电子邮件地址。 除非提供的值已经是SHA256字符串，否则电子邮件值将由SHA256中的扩展代码编码。 |
 | [!UICONTROL LinkedIn第一方广告跟踪UUID] | 这是第一方Cookie ID。 广告商需要启用来自[[!DNL LinkedIn Campaign Manager]](https://www.linkedin.com/help/lms/answer/a423304/enable-first-party-cookies-on-a-linkedin-insight-tag)的增强型转化跟踪，以激活将点击ID参数`li_fat_id`附加到点击URL的第一方Cookie。 |
-| [!UICONTROL 客户信息数据] | 此字段包含具有额外属性的JSON对象，这些属性将与消息一起发送。<br><br>在&#x200B;**[!UICONTROL 原始]**&#x200B;选项下，您可以将JSON对象直接粘贴到提供的文本字段中，也可以选择数据元素图标（![数据集图标](../../../images/extensions/server/aws/data-element-icon.png)）以从现有数据元素列表中进行选择来表示数据。<br><br>您还可以使用&#x200B;**[!UICONTROL JSON键值对编辑器]**&#x200B;选项通过UI编辑器手动添加每个键值对。 每个值都可以用原始输入表示，也可以改为选择数据元素。 接受的键值为： `firstName`、`lastName`、`companyName`、`title`和`country`。 |
+| [!UICONTROL 客户信息数据] | 此字段包含具有额外属性的JSON对象，这些属性将与消息一起发送。<br><br>在&#x200B;**[!UICONTROL 原始]**&#x200B;选项下，您可以将JSON对象直接粘贴到提供的文本字段中，也可以选择数据元素图标（![数据集图标](/help/images/icons/database.png)）以从现有数据元素列表中进行选择来表示数据。<br><br>您还可以使用&#x200B;**[!UICONTROL JSON键值对编辑器]**&#x200B;选项通过UI编辑器手动添加每个键值对。 每个值都可以用原始输入表示，也可以改为选择数据元素。 接受的键值为： `firstName`、`lastName`、`companyName`、`title`和`country`。 |
 
 {style="table-layout:auto"}
 

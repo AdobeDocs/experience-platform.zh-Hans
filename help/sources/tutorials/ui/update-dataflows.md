@@ -5,7 +5,7 @@ solution: Experience Platform
 title: 在UI中更新Source连接数据流
 type: Tutorial
 exl-id: 0499a2a3-5a22-47b1-ac0e-76a432bd26c0
-source-git-commit: cef5c203acf3318445399669336166e6627ebe66
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '782'
 ht-degree: 9%
@@ -36,7 +36,7 @@ ht-degree: 9%
 
 [!UICONTROL 数据流]页面包含所有现有数据流的列表，包括有关其相应的目标数据集、源和帐户名称的信息。
 
-要对列表进行排序，请选择左上角的过滤器图标![过滤器](../../images/tutorials/update/filter.png)以使用排序面板。
+要对列表进行排序，请选择左上角的过滤器图标![过滤器](/help/images/icons/filter.png)以使用排序面板。
 
 ![筛选数据流](../../images/tutorials/update-dataflows/filter-dataflows.png)
 

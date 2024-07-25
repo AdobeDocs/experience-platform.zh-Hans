@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中管理数据使用标签
 description: 本指南介绍在Adobe Experience Platform用户界面中使用数据使用标签的步骤。
 exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
-source-git-commit: ea58ece75d2208ae96bd71c2f51e14279769640f
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1538'
 ht-degree: 17%
@@ -71,7 +71,7 @@ ht-degree: 17%
 
 ![突出显示了[!UICONTROL 数据集]工作区的[!UICONTROL 数据管理]选项卡。](../images/labels/dataset-governance.png)
 
-若要在数据集级别编辑数据使用标签，请先选择铅笔图标（![A铅笔图标）。数据集名称行中的](../images/labels/edit-icon.png))。
+若要在数据集级别编辑数据使用标签，请先选择铅笔图标（![A铅笔图标）。数据集名称行中的](/help/images/icons/edit.png))。
 
 ![带有突出显示的编辑铅笔图标的[!UICONTROL 数据集]工作区的[!UICONTROL 数据管理]选项卡。](../images/labels/dataset-level-edit.png)
 

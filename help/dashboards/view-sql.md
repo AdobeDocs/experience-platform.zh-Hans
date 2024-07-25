@@ -2,7 +2,7 @@
 title: 查看分析SQL
 description: 查看您的配置文件、受众、目标和自定义见解背后的SQL，并通过查询编辑器按需执行查询。
 exl-id: fd728926-c113-4593-92b1-916a02d09d41
-source-git-commit: e0af1f0110ceb514a5b249c42a05bf780ea834c6
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '409'
 ht-degree: 0%
@@ -43,7 +43,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->通过选择复制图标（![复制图标），可以将整个SQL语句复制到剪贴板。](./images/view-sql/copy-icon.png))。
+>通过选择复制图标（![复制图标），可以将整个SQL语句复制到剪贴板。](/help/images/icons/copy.png))。
 
 ![突出显示了SQL语句的洞察对话框。](./images/view-sql/sql-dialog.png)
 

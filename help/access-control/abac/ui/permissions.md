@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制管理角色权限
 description: 本文档提供了有关通过Adobe Experience Cloud中的“权限”界面为角色配置权限的信息
 exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
-source-git-commit: c1c7a851315214e2362085d3283d144066d4dd8a
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '984'
 ht-degree: 2%
@@ -24,7 +24,7 @@ ht-degree: 2%
 
 ## 筛选器角色
 
-选择漏斗图标（![筛选器图标](../../images/icon.png)）以显示筛选器控件列表，帮助缩小结果范围。
+选择漏斗图标（![筛选器图标](/help/images/icons/filter.png)）以显示筛选器控件列表，帮助缩小结果范围。
 
 ![flac-filters](../../images/flac-ui/flac-filters.png)
 

@@ -2,7 +2,7 @@
 title: 自定义仪表板
 description: 了解如何构建和管理自定义仪表板，以便在其中创建、添加和编辑定制构件以可视化关键量度。
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: 17ad52864bbca09844c0241b6451e6811bd8f413
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1624'
 ht-degree: 3%
@@ -30,7 +30,7 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 <!-- >[!NOTE]
 >
->To edit an existing dashboard, select the dashboard name from the inventory list followed by the pencil icon (![A pencil icon.](./images/user-defined-dashboards/edit-icon.png))
+>To edit an existing dashboard, select the dashboard name from the inventory list followed by the pencil icon (![A pencil icon.](/help/images/icons/edit.png))
 >![A custom inventory listed in the dashboard inventory.](./images/user-defined-dashboards/dashbaord-inventory.png "A custom inventory listed in the dashboard inventory."){width="100" zoomable="yes"} -->
 
 出现[!UICONTROL 创建仪表板]对话框。 为要创建的构件集合输入一个人性化的描述性名称，然后选择&#x200B;**[!UICONTROL 保存]**。
@@ -68,7 +68,7 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 >[!TIP]
 >
->选择信息图标(![信息图标。](./images/user-defined-dashboards/info-icon.png))以查看完整的数据模型名称（如果它太长而无法显示在数据边栏中）。
+>选择信息图标(![信息图标。](/help/images/icons/info.png))以查看完整的数据模型名称（如果它太长而无法显示在数据边栏中）。
 
 ![选择数据对话框。](./images/user-defined-dashboards/select-data-model-dialog.png)
 
@@ -94,17 +94,17 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 构件编辑器现在填充了来自所选表的数据。
 
-数据模型和当前选定的表显示在左边栏顶部，可用于创建小组件的属性列在[!UICONTROL 属性]列中。 您可以使用搜索栏查找属性，而不是滚动列表，或通过选择铅笔图标（![铅笔图标）来更改所选的数据模型。](./images/user-defined-dashboards/edit-icon.png))。
+数据模型和当前选定的表显示在左边栏顶部，可用于创建小组件的属性列在[!UICONTROL 属性]列中。 您可以使用搜索栏查找属性，而不是滚动列表，或通过选择铅笔图标（![铅笔图标）来更改所选的数据模型。](/help/images/icons/edit.png))。
 
 ![小组件编辑器中填充了数据。](./images/user-defined-dashboards/populated-widget-composer.png)
 
 #### 添加和筛选属性 {#add-and-filter-attributes}
 
-选择添加图标（![添加图标）。](./images/user-defined-dashboards/add-icon.png))以向小部件中添加属性。 显示的下拉菜单允许您添加属性作为X轴、Y轴、颜色或小部件的过滤器。 [!UICONTROL Color]属性允许您根据颜色区分X轴和Y轴标记的结果。 它通过根据第三属性的组成将结果分割为不同的颜色来实现这一点。
+选择添加图标（![添加图标）。](/help/images/icons/add-circle.png))以向小部件中添加属性。 显示的下拉菜单允许您添加属性作为X轴、Y轴、颜色或小部件的过滤器。 [!UICONTROL Color]属性允许您根据颜色区分X轴和Y轴标记的结果。 它通过根据第三属性的组成将结果分割为不同的颜色来实现这一点。
 
 >[!TIP]
 >
->如果要翻转X轴和Y轴的排列，请选择向上和向下箭头图标（![向上和向下箭头图标）。](./images/user-defined-dashboards/switch-axis-icon.png))以切换其排列方式。
+>如果要翻转X轴和Y轴的排列，请选择向上和向下箭头图标（![向上和向下箭头图标）。](/help/images/icons/switch.png))以切换其排列方式。
 
 ![带有高亮显示添加图标下拉菜单的小组件编辑器。](./images/user-defined-dashboards/attributes-dropdown.png)
 
@@ -132,7 +132,7 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 ### 构件属性
 
-选择属性图标(![属性图标。](./images/user-defined-dashboards/properties-icon.png))以打开属性面板。 在[!UICONTROL 属性]面板的[!UICONTROL 构件标题]文本字段中输入构件的名称。
+选择属性图标(![属性图标。](/help/images/icons/properties.png))以打开属性面板。 在[!UICONTROL 属性]面板的[!UICONTROL 构件标题]文本字段中输入构件的名称。
 
 ![属性面板中突出显示了属性图标和小组件标题字段。](./images/user-defined-dashboards/properties-panel.png)
 
@@ -146,7 +146,7 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 >[!TIP]
 >
->选择属性图标(![属性图标。](./images/user-defined-dashboards/properties-icon.png))，查看有关其创建的详细信息。 您可以在显示的对话框中更改仪表板的名称。
+>选择属性图标(![属性图标。](/help/images/icons/properties.png))，查看有关其创建的详细信息。 您可以在显示的对话框中更改仪表板的名称。
 
 在此工作区中时，可以重新排列构件并调整其大小。 选择&#x200B;**[!UICONTROL 保存]**&#x200B;以保留您的仪表板名称和配置的布局。
 
@@ -162,7 +162,7 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 >
 >要在任何现有的自定义功能板之间切换，请在左侧导航栏中选择“功能板” ，然后从清单列表中选择该功能板名称。
 
-选择铅笔图标(![A铅笔图标。](./images/user-defined-dashboards/edit-icon.png))以进入编辑模式。
+选择铅笔图标(![A铅笔图标。](/help/images/icons/edit.png))以进入编辑模式。
 
 ![突出显示铅笔图标的自定义仪表板。](./images/user-defined-dashboards/edit-mode.png)
 

@@ -2,7 +2,7 @@
 description: 了解如何使用监控仪表板监控从源摄取的数据。
 title: 在UI中监控源的数据流
 exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
-source-git-commit: 51f8a8c77518a0b2e9e4b914c891f97433db1ef2
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1256'
 ht-degree: 11%
@@ -83,13 +83,13 @@ At the center of the dashboard is the [!UICONTROL Source ingestion] panel, which
 
 {style="table-layout:auto"}
 
-要监视特定数据流中摄取的数据，请选择源旁边的过滤器图标![过滤器](../assets/ui/monitor-sources/filter.png)。
+要监视特定数据流中摄取的数据，请选择源旁边的过滤器图标![过滤器](/help/images/icons/filter-add.png)。
 
 ![通过选择给定源旁边的过滤器图标来监视特定数据流。](../assets/ui/monitor-sources/monitor-dataflow.png)
 
 量度表将更新为活动数据流的表，这些数据流对应于您选择的源。 在此步骤中，您可以查看有关数据流的其他信息，包括其相应的数据集和数据类型，以及指示数据流上次处于活动状态的时间戳。
 
-要进一步检查数据流，请选择数据流旁边的过滤器图标![过滤器](../assets/ui/monitor-sources/filter.png)。
+要进一步检查数据流，请选择数据流旁边的过滤器图标![过滤器](/help/images/icons/filter-add.png)。
 
 ![监视仪表板中的数据流表。](../assets/ui/monitor-sources/select-dataflow.png)
 
@@ -97,7 +97,7 @@ At the center of the dashboard is the [!UICONTROL Source ingestion] panel, which
 
 数据流运行代表数据流执行的实例。 例如，如果数据流计划在早上9:00、晚上10:00和晚上11:00每小时运行，则您将有三次流运行实例。 流量运行特定于您的特定组织。
 
-要检查特定数据流运行迭代的量度，请选择数据流旁边的过滤器图标![过滤器](../assets/ui/monitor-sources/filter.png)。
+要检查特定数据流运行迭代的量度，请选择数据流旁边的过滤器图标![过滤器](/help/images/icons/filter-add.png)。
 
 ![数据流运行度量页。](../assets/ui/monitor-sources/dataflow-page.png)
 

@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中监视目标的数据流
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 93430a9ba5911bf8dc901ec3f82f06a6b25b8dc4
+source-git-commit: 19f1f64434d655d3b19260460519018fc9c8e174
 workflow-type: tm+mt
 source-wordcount: '3337'
 ht-degree: 10%
@@ -178,7 +178,7 @@ ht-degree: 10%
 >title="激活"
 >abstract="目标激活视图包含有关受众激活状态的信息，以及从实时客户配置文件中获取的量度，以生成唯一标识。"
 
-要访问[!UICONTROL 监视]仪表板，请在左侧导航中选择&#x200B;**[!UICONTROL 监视]** （![监视图标](../assets/ui/monitor-destinations/monitoring-icon.png)）。 在[!UICONTROL 监控]页面上，选择[!UICONTROL 目标]。 [!UICONTROL 监视]仪表板包含有关目标运行作业的量度和信息。
+要访问[!UICONTROL 监视]仪表板，请在左侧导航中选择&#x200B;**[!UICONTROL 监视]** （![监视图标](/help/images/icons/monitoring.png)）。 在[!UICONTROL 监控]页面上，选择[!UICONTROL 目标]。 [!UICONTROL 监视]仪表板包含有关目标运行作业的量度和信息。
 
 使用[!UICONTROL 目标]仪表板全面了解激活流的运行状况。 首先，获取有关所有批次和流目标的聚合级别的洞察，然后深入查看数据流、数据流运行和激活受众的详细视图，以深入了解您的激活数据。 [!UICONTROL 监控]仪表板中的屏幕通过量度和错误描述提供可操作的洞察，帮助您排除激活方案中可能出现的任何问题。
 
@@ -199,7 +199,7 @@ ht-degree: 10%
 
 ![更改为激活的目标高亮显示的回看日期范围控件](../assets/ui/monitor-destinations/dashboard-graph-change-date-range.png)
 
-使用箭头图标（![箭头图标](/help/dataflows/assets/ui/monitor-destinations/chevron-up.png)）展开或关闭屏幕顶部的信息卡，这些信息卡会根据目标类型（流或批处理）显示有关激活详细信息的概览信息：
+使用箭头图标（![箭头图标](/help/images/icons/chevron-up.png)）展开或关闭屏幕顶部的信息卡，这些信息卡会根据目标类型（流或批处理）显示有关激活详细信息的概览信息：
 
 - **[!UICONTROL 流式激活率]**：表示已成功激活或跳过接收标识的百分比。 用于计算此百分比的公式在上面的[数据流为流式目标](#dataflow-runs-for-streaming-destinations)部分中有进一步说明。
 - **[!UICONTROL 批处理失败的数据流运行]**：表示在所选时间间隔内失败的数据流运行的次数。
@@ -226,13 +226,13 @@ ht-degree: 10%
 
 ![使用下拉选择器筛选目标](../assets/ui/monitor-destinations/dashboard-destinations-filter-dropdown.png)
 
-此外，您可以在搜索栏中输入一个目标以隔离到单个目标。 如果要查看目标的数据流，可以选择其旁边的过滤器![过滤器](../assets/ui/monitor-destinations/filter-add.png)，以查看其活动数据流的列表。
+此外，您可以在搜索栏中输入一个目标以隔离到单个目标。 如果要查看目标的数据流，可以选择其旁边的过滤器![过滤器](/help/images/icons/filter-add.png)，以查看其活动数据流的列表。
 
 ![使用监视视图中突出显示的搜索栏筛选目标。](../assets/ui/monitor-destinations/filtered-destinations.png)
 
 如果要查看所有目标中的所有现有数据流，请选择&#x200B;**[!UICONTROL 数据流]**。
 
-此时将显示数据流列表，按上次数据流运行排序。 您可以查看特定数据流的其他详细信息，方法是找到要监视的目标，选择它旁边的过滤器![过滤器](../assets/ui/monitor-destinations/filter-add.png)，然后选择要了解详细信息的数据流旁边的过滤器![过滤器](../assets/ui/monitor-destinations/filter-add.png)。
+此时将显示数据流列表，按上次数据流运行排序。 您可以查看特定数据流的其他详细信息，方法是找到要监视的目标，选择它旁边的过滤器![过滤器](/help/images/icons/filter-add.png)，然后选择要了解详细信息的数据流旁边的过滤器![过滤器](/help/images/icons/filter-add.png)。
 
 ![监视仪表板中高亮显示的所有数据流。](../assets/ui/monitor-destinations/dashboard-dataflows.png)
 
@@ -269,7 +269,7 @@ ht-degree: 10%
 ![数据流面板中高亮显示的受众。](../assets/ui/monitor-destinations/dashboard-segments-view.png)
 
 在受众级别视图中，度量是在选定的时间范围内跨多个数据流运行汇总的。 如果有多个数据流运行，您可以从受众级别向下展开，以查看每个数据流运行的细分（按所选受众进行过滤）。
-使用筛选器按钮![筛选器](../assets/ui/monitor-destinations/filter-add.png)向下钻取数据流中每个受众的数据流运行视图。
+使用筛选器按钮![筛选器](/help/images/icons/filter-add.png)向下钻取数据流中每个受众的数据流运行视图。
 
 ### “数据流运行”页 {#dataflow-runs-page}
 
@@ -283,7 +283,7 @@ ht-degree: 10%
 
 ![显示如何筛选受众数据流运行的单选按钮。](/help/dataflows/assets/ui/monitor-destinations/dataflow-runs-segment-filter.png)
 
-要查看有关特定数据流运行的更多详细信息，请选择数据流运行开始时间旁边的筛选器![筛选器](../assets/ui/monitor-destinations/filter-add.png)，以查看数据流运行详细信息页面。
+要查看有关特定数据流运行的更多详细信息，请选择数据流运行开始时间旁边的筛选器![筛选器](/help/images/icons/filter-add.png)，以查看数据流运行详细信息页面。
 
 ![数据流在监视仪表板中运行筛选器，以深入了解特定数据流运行的更多信息。](../assets/ui/monitor-destinations/dataflow-runs-filter.png)
 

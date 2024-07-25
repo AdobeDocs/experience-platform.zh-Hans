@@ -2,7 +2,7 @@
 title: 创建全局过滤器
 description: 了解如何使用自定义的全局应用过滤器过滤数据分析。
 exl-id: a0084039-8809-4883-9f68-c666dcac5881
-source-git-commit: 5bb954da7c1e05922a4e0f8d0bc7d3ab5c8e0e58
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '482'
 ht-degree: 0%
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 您可以使用自定义的全局筛选器快速更改SQL提供的洞察。
 
-将打开[!UICONTROL 创建全局筛选器]对话框。 创建全局过滤器与使用SQL创建洞察的过程相同。 首先，选择要查询的数据库（见解数据模型），然后在查询编辑器中输入自定义SQL，最后选择运行图标（![A运行图标。](../../../images/customizable-insights/run-icon.png)）。
+将打开[!UICONTROL 创建全局筛选器]对话框。 创建全局过滤器与使用SQL创建洞察的过程相同。 首先，选择要查询的数据库（见解数据模型），然后在查询编辑器中输入自定义SQL，最后选择运行图标（![A运行图标。](/help/images/icons/play.png)）。
 
 >[!IMPORTANT]
 >
@@ -57,6 +57,6 @@ ht-degree: 0%
 
 ## 选择全局筛选器 {#select-global-filter}
 
-要打开列出所有自定义筛选器的[!UICONTROL 筛选器]对话框，请选择筛选器图标（![筛选器图标）。](../../../images/customizable-insights/filter.png))。 接下来，要应用对您的仪表板分析的影响，请从全局筛选器的下拉菜单中选择一个选项，然后选择&#x200B;**[!UICONTROL 应用]**。
+要打开列出所有自定义筛选器的[!UICONTROL 筛选器]对话框，请选择筛选器图标（![筛选器图标）。](/help/images/icons/filter.png))。 接下来，要应用对您的仪表板分析的影响，请从全局筛选器的下拉菜单中选择一个选项，然后选择&#x200B;**[!UICONTROL 应用]**。
 
 ![突出显示筛选对话框的自定义仪表板。](../../../images/customizable-insights/custom-filters.png)

@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中定义枚举字段和建议值
 description: 了解如何在Experience Platform用户界面中为字符串字段定义枚举和建议值。
 exl-id: 67ec5382-31de-4f8d-9618-e8919bb5a472
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1256'
 ht-degree: 8%
@@ -40,7 +40,7 @@ ht-degree: 8%
 
 在&#x200B;**[!UICONTROL 值]**&#x200B;列下，必须提供要将该字段约束到的确切值。 您还可以选择为约束提供人性化的&#x200B;**[!UICONTROL 显示名称]**，这会影响分段中值的表示方式。
 
-继续使用&#x200B;**[!UICONTROL 添加行]**&#x200B;将所需的约束和可选标签添加到枚举中，或选择以前添加的行旁边的删除图标（![删除图标的图像](../../images/ui/fields/enum/remove-icon.png)）以将其删除。 完成后，选择&#x200B;**[!UICONTROL 应用]**&#x200B;以将更改应用到架构。
+继续使用&#x200B;**[!UICONTROL 添加行]**&#x200B;将所需的约束和可选标签添加到枚举中，或选择以前添加的行旁边的删除图标（![删除图标的图像](/help/images/icons/remove-circle.png)）以将其删除。 完成后，选择&#x200B;**[!UICONTROL 应用]**&#x200B;以将更改应用到架构。
 
 ![显示为UI中的字符串字段填写的枚举值和显示名称的图像](../../images/ui/fields/enum/enum-confirm.png)
 
@@ -52,7 +52,7 @@ ht-degree: 8%
 
 ![显示在UI中选择的“建议值”选项的图像](../../images/ui/fields/enum/suggested-add-row.png)
 
-在&#x200B;**[!UICONTROL 显示名称]**&#x200B;列下，为值提供您希望在分段UI中显示的友好名称。 要添加更多建议值，请再次选择&#x200B;**[!UICONTROL 添加行]**&#x200B;并根据需要重复该过程。 要删除以前添加的行，请选择相关行旁边的![删除图标](../../images/ui/fields/enum/remove-icon.png)。
+在&#x200B;**[!UICONTROL 显示名称]**&#x200B;列下，为值提供您希望在分段UI中显示的友好名称。 要添加更多建议值，请再次选择&#x200B;**[!UICONTROL 添加行]**&#x200B;并根据需要重复该过程。 要删除以前添加的行，请选择相关行旁边的![删除图标](/help/images/icons/remove-circle.png)。
 
 完成后，选择&#x200B;**[!UICONTROL 应用]**&#x200B;以将更改应用到架构。
 
@@ -68,7 +68,7 @@ ht-degree: 8%
 
 ![显示为UI中的字符串字段填写的枚举值和显示名称的图像](../../images/ui/fields/enum/suggested-standard.png)
 
-要为标准字段添加新的建议值，请选择&#x200B;**[!UICONTROL 添加行]**。 要删除贵组织以前添加的建议值，请选择相关行旁边的![删除图标](../../images/ui/fields/enum/remove-icon.png)。
+要为标准字段添加新的建议值，请选择&#x200B;**[!UICONTROL 添加行]**。 要删除贵组织以前添加的建议值，请选择相关行旁边的![删除图标](/help/images/icons/remove-circle.png)。
 
 ![显示为UI中的字符串字段填写的枚举值和显示名称的图像](../../images/ui/fields/enum/suggested-standard-add.png)
 

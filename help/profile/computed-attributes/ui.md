@@ -2,7 +2,7 @@
 title: 计算属性UI指南
 description: 了解如何使用Adobe Experience Platform UI创建、查看和更新计算属性。
 exl-id: bc621167-6dba-473e-90e4-aac7ceb6579a
-source-git-commit: 762a7fc7dd00657e4e710eb763c5bb63b210593a
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1576'
 ht-degree: 6%
@@ -32,7 +32,7 @@ ht-degree: 6%
 
 ![突出显示[!UICONTROL 配置文件]部分和[!UICONTROL 计算属性]选项卡，向用户显示如何访问计算属性浏览页面。](./images/ui/browse.png)
 
-要选择哪些字段可见，您可以选择![配置列图标](./images/ui/configure-icon.png)来添加或删除要显示的字段。
+要选择哪些字段可见，您可以选择![配置列图标](/help/images/icons/column-settings.png)来添加或删除要显示的字段。
 
 | 字段 | 描述 |
 | ----- | ----------- |
@@ -47,7 +47,7 @@ ht-degree: 6%
 | [!UICONTROL 已创建] | 显示计算属性的创建日期和时间的时间戳。 |
 | [!UICONTROL 上次修改时间] | 显示上次修改计算属性的日期和时间的时间戳。 |
 
-您还可以根据生命周期状态筛选显示的计算属性。 选择![漏斗](./images/ui/filter-icon.png)图标。
+您还可以根据生命周期状态筛选显示的计算属性。 选择![漏斗](/help/images/icons/filter.png)图标。
 
 ![筛选器图标高亮显示。](./images/ui/select-filter.png)
 

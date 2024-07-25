@@ -4,7 +4,7 @@ title: 在UI中导出XDM架构
 description: 了解如何在Adobe Experience Platform用户界面中将现有架构导出到其他沙盒或组织。
 type: Tutorial
 exl-id: c467666d-55bc-4134-b8f4-7758d49c4786
-source-git-commit: 0f0842c1d14ce42453b09bf97e1f3690448f6e9a
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '655'
 ht-degree: 11%
@@ -40,7 +40,7 @@ ht-degree: 11%
 >
 >有关如何查找您所寻找的XDM资源的详细信息，请参阅[浏览XDM资源](./explore.md)指南。
 
-接下来，从可用选项中选择&#x200B;**[!UICONTROL 复制JSON]**&#x200B;图标（![复制图标](../images/ui/export/icon.png)）。
+接下来，从可用选项中选择&#x200B;**[!UICONTROL 复制JSON]**&#x200B;图标（![复制图标](/help/images/icons/copy.png)）。
 
 ![突出显示具有架构行和[!UICONTROL 复制到JSON]的架构工作区。](../images/ui/export/copy-json.png)
 

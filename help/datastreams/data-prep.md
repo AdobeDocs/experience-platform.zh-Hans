@@ -2,7 +2,7 @@
 title: 为数据收集准备数据
 description: 了解在为 Adobe Experience Platform Web 和 Mobile SDK 配置数据流时，如何将数据映射到 Experience Data Model (XDM) 事件架构。
 exl-id: 87a70d56-1093-445c-97a5-b8fa72a28ad0
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1183'
 ht-degree: 60%
@@ -173,11 +173,11 @@ ht-degree: 60%
 
 ![正在添加新映射。](assets/data-prep/add-new-mapping.png)
 
-选择源图标（![源图标](assets/data-prep/source-icon.png)），在出现的对话框中，选择要在提供的画布中映射的源字段。选择字段后，使用&#x200B;**[!UICONTROL 选择]**&#x200B;按钮以继续。
+选择源图标（![源图标](/help/images/icons/source.png)），在出现的对话框中，选择要在提供的画布中映射的源字段。选择字段后，使用&#x200B;**[!UICONTROL 选择]**&#x200B;按钮以继续。
 
 ![选择要在源架构中映射的字段。](assets/data-prep/source-mapping.png)
 
-接下来，选择架构图标（![架构图标](assets/data-prep/schema-icon.png)），打开类似的目标事件架构对话框。在确认之前，使用&#x200B;**[!UICONTROL 选择]**&#x200B;来选择要将数据映射到的字段。
+接下来，选择架构图标（![架构图标](/help/images/icons/schema.png)），打开类似的目标事件架构对话框。在确认之前，使用&#x200B;**[!UICONTROL 选择]**&#x200B;来选择要将数据映射到的字段。
 
 ![选择要在目标架构中映射的字段。](assets/data-prep/target-mapping.png)
 

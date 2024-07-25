@@ -2,9 +2,9 @@
 title: Platform功能板的Power BI报表模板
 description: 使用报表模板以使用Power BI浏览Experience Platform数据。
 exl-id: fb98a79f-3d82-4e11-b08a-b7cb06414462
-source-git-commit: 729d218f72a8caecc90a98810b973d0754f7757b
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
-source-wordcount: '1465'
+source-wordcount: '1467'
 ht-degree: 0%
 
 ---
@@ -144,7 +144,7 @@ Power BI应用程序的![权限请求。](../images/power-bi/permissions.png)
 
 ## 删除Power BI应用程序集成
 
-要删除仪表板，请导航到仪表板清单，然后选择仪表板名称旁边的删除图标(![](../images/power-bi/delete-icon.png))。
+要删除仪表板，请导航到仪表板清单，然后选择仪表板名称旁边的删除图标（![删除图标](/help/images/icons/delete.png)）。
 
 >[!NOTE]
 >

@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中创建和编辑架构字段组
 description: 了解如何在Experience Platform用户界面中创建和编辑架构字段组。
 exl-id: 928d70a6-0468-4fb7-a53a-6686ac77f2a3
-source-git-commit: 0e1fb15cfa56fb4c2a4a645578327f0a4bd22e68
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '999'
 ht-degree: 8%
@@ -56,7 +56,7 @@ Adobe Experience Platform提供了许多标准字段组，涵盖广泛的营销�
 
 >[!NOTE]
 >
->只能完全编辑和自定义由您的组织定义的自定义字段组。 对于由Adobe定义的核心字段组，只能在单个架构的上下文中编辑其字段的显示名称。 它们由挂锁图标（![挂锁图标）在架构编辑器中指示。](../../images/ui/explore/padlock-icon.png))。 有关详细信息，请参阅有关[编辑架构字段的显示名称](./schemas.md#display-names)的部分。
+>只能完全编辑和自定义由您的组织定义的自定义字段组。 对于由Adobe定义的核心字段组，只能在单个架构的上下文中编辑其字段的显示名称。 它们由挂锁图标（![挂锁图标）在架构编辑器中指示。](/help/images/icons/lock-closed.png))。 有关详细信息，请参阅有关[编辑架构字段的显示名称](./schemas.md#display-names)的部分。
 >
 >保存自定义字段组并在架构中使用它进行数据摄取后，以后只能对字段组进行附加更改。 有关详细信息，请参阅架构演变[规则](../../schema/composition.md#evolution)。
 

@@ -4,7 +4,7 @@ title: 编辑激活数据流
 type: Tutorial
 description: 按照本文中的步骤进行操作，以在Adobe Experience Platform中编辑现有的激活数据流。
 exl-id: 0d79fbff-bfde-4109-8353-c7530e9719fb
-source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '327'
 ht-degree: 0%
@@ -23,7 +23,7 @@ ht-degree: 0%
 
    ![浏览目标](../assets/ui/edit-activation/browse-destinations.png)
 
-2. 选择左上角的过滤器图标![过滤器图标](../assets/ui/edit-activation/filter.png)以启动排序面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的过滤选择。
+2. 选择左上角的过滤器图标![过滤器图标](/help/images/icons/filter.png)以启动排序面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的过滤选择。
 
    ![筛选目标](../assets/ui/edit-activation/filter-destinations.png)
 

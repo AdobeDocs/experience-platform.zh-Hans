@@ -2,7 +2,7 @@
 title: 对Ad Hoc架构的基于属性的访问控制支持
 description: 该指南用于限制对通过Adobe Experience Platform查询服务生成的临时架构中的数据字段的访问。
 exl-id: d675e3de-ab62-4beb-9360-1f6090397a17
-source-git-commit: 7cde32f841497edca7de0c995cc4c14501206b1a
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1013'
 ht-degree: 2%
@@ -42,7 +42,7 @@ ht-degree: 2%
 
 ## 在Platform UI的架构清单中发现临时架构 {#discover-ad-hoc-schemas}
 
-要在Platform UI中启用临时架构显示，请选择过滤器图标（![过滤器图标）。](../images/data-governance/filter.png))，然后在显示的左边栏中选择**[!UICONTROL 显示临时架构]。
+要在Platform UI中启用临时架构显示，请选择过滤器图标（![过滤器图标）。](/help/images/icons/filter.png))，然后在显示的左边栏中选择**[!UICONTROL 显示临时架构]。
 
 ![架构仪表板筛选器选项左边栏的“显示临时架构”切换已启用。](../images/data-governance/adhoc-schema-toggle.png)
 
@@ -56,7 +56,7 @@ ht-degree: 2%
 
 ## 编辑架构或字段的标签
 
-要编辑整个架构的标签，请选择铅笔图标（![A铅笔图标）。](../images/data-governance/edit-icon.png))到[!UICONTROL 标签]选项卡下的架构名称一侧。
+要编辑整个架构的标签，请选择铅笔图标（![A铅笔图标）。](/help/images/icons/edit.png))到[!UICONTROL 标签]选项卡下的架构名称一侧。
 
 ![架构工作区中突出显示铅笔图标的标签视图。](../images/data-governance/edit-entire-schema-labels.png)
 

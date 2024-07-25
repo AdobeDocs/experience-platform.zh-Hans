@@ -5,7 +5,7 @@ feature: Customer AI
 title: 用客户人工智能发掘见解
 description: 本文档用作在Intelligent Services客户人工智能用户界面中与服务实例见解交互的指南。
 exl-id: 8aaae963-4029-471e-be9b-814147a5f160
-source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '2098'
 ht-degree: 1%
@@ -180,7 +180,7 @@ ht-degree: 1%
 
 ![存储段示例](../images/insights/churn_tab.png)
 
-您可以筛选所显示的预期速率和实际速率的时间范围。 选择&#x200B;**日历图标** ![图标](../images/insights/calendar_icon.png)然后选择新的日期范围。 每个分段中的结果都会更新并在新日期范围内显示。
+您可以筛选所显示的预期速率和实际速率的时间范围。 选择&#x200B;**日历图标** ![图标](/help/images/icons/calendar.png)然后选择新的日期范围。 每个分段中的结果都会更新并在新日期范围内显示。
 
 ![日期选择器](../images/insights/date_selector.png)
 

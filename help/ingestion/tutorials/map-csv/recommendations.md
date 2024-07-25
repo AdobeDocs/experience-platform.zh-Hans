@@ -2,7 +2,7 @@
 title: 使用人工智能生成的Recommendations将CSV文件映射到XDM架构
 description: 本教程介绍如何使用人工智能生成的推荐将CSV文件映射到XDM架构。
 exl-id: 1daedf0b-5a25-4ca5-ae5d-e9ee1eae9e4d
-source-git-commit: 6632086641004c2b788a28cbc47ac6d8bd4eace3
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1100'
 ht-degree: 1%
@@ -90,7 +90,7 @@ CSV字段使用ML模型自动映射到现有XDM字段组。 如果要更改任�
 
 ![架构树旁边正在选择[!UICONTROL Edit]按钮。](../../images/tutorials/map-csv-recommendations/edit-schema-structure.png)
 
-此时将显示一个对话框，允许您编辑映射中任何字段的显示名称、数据类型和字段组。 选择源字段旁边的编辑图标（![编辑图标](../../images/tutorials/map-csv-recommendations/edit-icon.png)）以在选择&#x200B;**[!UICONTROL 应用]**&#x200B;之前编辑其右列的详细信息。
+此时将显示一个对话框，允许您编辑映射中任何字段的显示名称、数据类型和字段组。 选择源字段旁边的编辑图标（![编辑图标](/help/images/icons/edit.png)）以在选择&#x200B;**[!UICONTROL 应用]**&#x200B;之前编辑其右列的详细信息。
 
 ![要更改的源字段的建议字段组。](../../images/tutorials/map-csv-recommendations/select-schema-field.png)
 

@@ -2,7 +2,7 @@
 title: Adobe隐私扩展概述
 description: 了解Adobe Experience Platform中的Adobe隐私标记扩展。
 exl-id: 8401861e-93ad-48eb-8796-b26ed8963c32
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '900'
 ht-degree: 2%
@@ -95,7 +95,7 @@ Adobe隐私扩展提供了三种操作类型，当发生特定事件并且满足
 
 ![选择操作类型](../../../images/extensions/client/privacy/action-type.png)
 
-右侧面板提示您选择将用作操作回调的数据元素。 选择数据库图标（![数据库图标](../../../images/extensions/client/privacy/database.png)），然后从列表中选择您之前创建的数据元素。 选择&#x200B;**[!UICONTROL 保留更改]**&#x200B;以继续。
+右侧面板提示您选择将用作操作回调的数据元素。 选择数据库图标（![数据库图标](/help/images/icons/database.png)），然后从列表中选择您之前创建的数据元素。 选择&#x200B;**[!UICONTROL 保留更改]**&#x200B;以继续。
 
 ![选择数据元素](../../../images/extensions/client/privacy/add-data-element.png)
 

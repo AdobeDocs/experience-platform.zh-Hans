@@ -5,7 +5,7 @@ title: Jupyter Notebook中的查询服务
 type: Tutorial
 description: 通过将Query Service作为标准功能集成到JupyterLab中，Adobe Experience Platform允许您在数据科学Workspace中使用结构化查询语言(SQL)。 本教程演示了用于探索、转换和分析Adobe Analytics数据的常见用例的示例SQL查询。
 exl-id: c5ac7d11-a3bd-4ef8-a650-9f496a8bbaa7
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: d1b571fe72208cf2f2ae339273f05cc38dda9845
 workflow-type: tm+mt
 source-wordcount: '822'
 ht-degree: 0%
@@ -98,7 +98,7 @@ ht-degree: 0%
 
 在单个笔记本单元格中输入以下SQL查询。 选择查询的单元格，然后选择&#x200B;**[!UICONTROL 播放]**&#x200B;按钮，以执行查询。 成功的查询结果或错误日志显示在执行的单元格下方。
 
-当笔记本长时间处于非活动状态时，笔记本与[!DNL Query Service]之间的连接可能会中断。 在这种情况下，通过选择位于电源按钮右上角的&#x200B;**重新启动**&#x200B;按钮![重新启动按钮](../images/jupyterlab/user-guide/restart_button.png)来重新启动[!DNL JupyterLab]。
+当笔记本长时间处于非活动状态时，笔记本与[!DNL Query Service]之间的连接可能会中断。 在这种情况下，通过选择位于电源按钮右上角的&#x200B;**重新启动**&#x200B;按钮![重新启动按钮](/help/images/icons/restart.png)来重新启动[!DNL JupyterLab]。
 
 笔记本内核将重置，但单元格将保留，重新运行所有单元格以继续运行之前停止的操作。
 

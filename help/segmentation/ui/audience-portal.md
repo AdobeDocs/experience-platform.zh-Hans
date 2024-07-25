@@ -1,13 +1,13 @@
 ---
 title: 受众门户概述
 description: 了解如何使用Audience Portal在Adobe Experience Platform中查看、管理和创建受众。
-source-git-commit: ca8f0c3df9581af7be37e242c9e300ef1b6ea814
+exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
+source-git-commit: d1fbfe5dd887059a6aab96566311cbd63c5b091f
 workflow-type: tm+mt
 source-wordcount: '3693'
 ht-degree: 3%
 
 ---
-
 
 # 受众门户概述
 
@@ -90,7 +90,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 ### 自定义 {#customize}
 
-您可以通过选择![筛选器属性图标](../images/ui/audience-portal/filter-attribute.png)，向受众门户添加其他字段。 这些附加字段包括生命周期状态、更新频率、上次更新者、描述、创建者和访问标签。
+您可以通过选择![筛选器属性图标](/help/images/icons/column-settings.png)，向受众门户添加其他字段。 这些附加字段包括生命周期状态、更新频率、上次更新者、描述、创建者和访问标签。
 
 | 字段 | 描述 |
 | ----- | ----------- |
@@ -116,7 +116,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 | [!UICONTROL 现有] | 自上次批处理区段作业运行以来的最后24小时内，区段中仍有&#x200B;**保留**&#x200B;的用户档案数。 |
 | [!UICONTROL 正在退出] | 自上次批处理区段作业运行以来的最后24小时内&#x200B;**退出**&#x200B;区段的配置文件计数。 |
 
-选择要显示的字段后，您还可以重新调整所显示列的宽度。 可以通过拖动列之间的区域或选择要重新调整大小的列的![箭头图标](../images/ui/audience-portal/arrow-icon.png)以及随后的&#x200B;**[!UICONTROL 调整列大小]**&#x200B;来执行此操作。
+选择要显示的字段后，您还可以重新调整所显示列的宽度。 可以通过拖动列之间的区域或选择要重新调整大小的列的![箭头图标](/help/images/icons/chevron-down.png)以及随后的&#x200B;**[!UICONTROL 调整列大小]**&#x200B;来执行此操作。
 
 ![已突出显示“调整列大小”按钮。](../images/ui/audience-portal/browse-audience-resize-column.png)
 
@@ -177,7 +177,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 您还可以根据各种设置筛选受众。
 
-要筛选可用受众，请选择![筛选图标](../images/ui/audience-portal/filter-icon.png)。
+要筛选可用受众，请选择![筛选图标](/help/images/icons/filter.png)。
 
 ![将显示浏览受众页面，其中筛选器图标突出显示。](../images/ui/audience-portal/browse-select-filter.png)
 
