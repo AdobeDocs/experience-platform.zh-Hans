@@ -1,9 +1,10 @@
 ---
 title: 使用SQL浏览、排除和验证批量摄取
-description: 了解如何在Adobe Experience Platform中了解和管理数据摄取过程。 本文档包括如何验证批次、处理错误和查询摄取的数据。
-source-git-commit: 37b241f15f297263cc7aa20f382c115a2d131c7e
+description: 了解如何在Adobe Experience Platform中了解和管理数据摄取过程。 本文档包括如何验证批次和查询摄取的数据。
+exl-id: 8f49680c-42ec-488e-8586-50182d50e900
+source-git-commit: 692a061e3b2facbfafc65f966832230187f5244d
 workflow-type: tm+mt
-source-wordcount: '1215'
+source-wordcount: '1160'
 ht-degree: 0%
 
 ---
@@ -12,7 +13,6 @@ ht-degree: 0%
 
 本文档说明如何使用SQL验证和验证摄取的批次中的记录。 本文档教您如何：
 
-- 处理摄取过程中可能发生的错误
 - 访问数据集批次元数据
 - 通过查询批处理排除故障并确保数据完整性
 
@@ -26,7 +26,6 @@ ht-degree: 0%
 
 - **数据摄取**：请参阅[数据摄取概述](../../ingestion/home.md)，了解将数据摄取到Platform的基础知识，包括涉及的不同方法和流程。
 - **批次摄取**：请参阅[批次摄取API概述](../../ingestion/batch-ingestion/overview.md)，了解批次摄取的基本概念。 具体而言，“批处理”是什么以及它在Platform的数据摄取过程中如何发挥作用。
-- **数据摄取中的错误处理**：了解数据摄取期间可能发生[不同类型的错误](../../ingestion/quality/error-diagnostics.md#retrieve-errors)以及如何处理这些错误](../../ingestion/batch-ingestion/troubleshooting.md#what-if-a-batch-fails)。[
 - **数据集中的系统元数据**：请参阅[目录服务概述](../../catalog/home.md)，了解如何使用系统元数据字段跟踪和查询摄取的数据。
 - **体验数据模型(XDM)**：查看[架构UI概述](../../xdm/ui/overview.md)和架构组合的[&#39;基础知识&#39;](../../xdm/schema/composition.md)，了解XDM架构以及它们如何表示和验证引入到Platform的数据的结构和格式。
 
@@ -57,11 +56,7 @@ GROUP BY _acp_system_metadata
 
 这些结果表明，输入批次的数量与输出批次的数量并不一定匹配，因为系统决定了将数据分批并存储在数据湖中的最有效方式。
 
-以下示例使用不同的数据集来说明这一点。
-
->[!NOTE]
->
->如果要尝试此示例，可以将提供的示例文件([`drug_checkout_data`](../images/use-cases/drug_checkout_data.zip))摄取到Platform中并配置架构映射。
+在本例中，假定您已将CSV文件摄取到Platform并创建了一个名为`drug_checkout_data`的数据集。
 
 `drug_checkout_data`文件是35,000条记录的深度嵌套集。 使用SQL语句`SELECT * FROM drug_orders;`预览基于JSON的`drug_orders`数据集中的第一组记录。
 
@@ -97,7 +92,7 @@ GROUP  BY _acp_system_metadata
 
 >[!TIP]
 >
->要检索批次ID并查询与该批次ID关联的记录，必须先在Platform中创建批次。 如果您希望自行测试该过程，则可以将CSV数据摄取到Platform。 阅读有关如何使用AI生成的推荐](../../ingestion/tutorials/map-csv/recommendations.md)将CSV文件[映射到现有XDM架构的指南。 为方便起见，此处提供了[示例配置文件CSV文件](../images/use-cases/sample-profiles.csv)。
+>要检索批次ID并查询与该批次ID关联的记录，必须先在Platform中创建批次。 如果您希望自行测试该过程，则可以将CSV数据摄取到Platform。 阅读有关如何使用AI生成的推荐](../../ingestion/tutorials/map-csv/recommendations.md)将CSV文件[映射到现有XDM架构的指南。
 
 摄取批次后，您必须导航到将数据摄取到的数据集的[!UICONTROL 数据集活动选项卡]。
 
