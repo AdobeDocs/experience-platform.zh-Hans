@@ -2,9 +2,9 @@
 title: 受众常见问题解答
 description: 了解有关受众的常见问题解答以及其他与分段相关的概念。
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: 5e677e53677cd28787004043e9fcc9b94e631fc8
+source-git-commit: 2d15ba41ff326034a6f9a32301f67f5d3b2a1c14
 workflow-type: tm+mt
-source-wordcount: '4187'
+source-wordcount: '4362'
 ht-degree: 0%
 
 ---
@@ -56,6 +56,16 @@ Audience Portal和Audience Composition适用于所有Real-Time CDP Prime和Ultim
 
 可以，如果主标识符匹配，则外部生成的受众将与Platform中的现有配置文件合并。协调此数据最多可能需要24小时。 如果配置文件数据尚不存在，则会在摄取数据时创建新配置文件。
 
+### 对于导入到Audience Portal的外部生成的受众，如何遵循客户同意首选项？{#consent}
+
+在从多个渠道捕获客户数据时，标识拼接和合并策略允许将这些数据合并到单个实时客户配置文件中。 有关客户同意偏好设置的信息在用户档案级别存储和评估。
+
+下游目标在激活之前检查每个配置文件中的同意信息。 每个用户档案的同意信息会与特定目标的同意要求进行比较。 如果配置文件不满足要求，则该配置文件不会发送到目标。
+
+将外部受众摄取到Audience Portal后，他们会使用主ID（如电子邮件或ECID）与现有用户档案连接。 因此，现有的同意政策将在整个激活过程中保持有效。
+
+请注意，您应该&#x200B;**不**&#x200B;包含与外部生成的受众的同意信息，因为有效负载变量&#x200B;**不是**&#x200B;存储在配置文件存储中，而是存储在数据湖中。 相反，您&#x200B;**必须**&#x200B;使用导入了配置文件数据的Adobe Experience Platform摄取渠道。
+
 ### 我能否使用外部生成的受众来构建其他受众？
 
 是，任何外部生成的受众都将显示在受众库存中，并且可用于在[区段生成器](./ui/segment-builder.md)中构建受众。
@@ -80,7 +90,7 @@ Audience Portal和Audience Composition适用于所有Real-Time CDP Prime和Ultim
 
 ### 可在何处激活外部生成的受众？
 
-外部生成的受众可以映射到任何RTCDP目标，并且可以在Adobe Journey Optimizer营销活动中使用。
+外部生成的受众可以映射到任何目标，并且可以在Adobe Journey Optimizer营销活动中使用。
 
 ### 外部生成的受众多久才能准备好进行激活？
 

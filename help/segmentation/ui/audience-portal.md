@@ -2,9 +2,9 @@
 title: 受众门户概述
 description: 了解如何使用Audience Portal在Adobe Experience Platform中查看、管理和创建受众。
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: d1fbfe5dd887059a6aab96566311cbd63c5b091f
+source-git-commit: 2d15ba41ff326034a6f9a32301f67f5d3b2a1c14
 workflow-type: tm+mt
-source-wordcount: '3693'
+source-wordcount: '3725'
 ht-degree: 3%
 
 ---
@@ -391,7 +391,9 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 >
 >默认情况下，外部生成的受众的数据过期时间为30天。 如果以任何方式更新或修改受众，则会重置数据过期时间。
 >
->此外，如果您的外部生成的受众包含敏感信息和/或医疗保健相关信息，则在将其激活到任何目标之前，您&#x200B;**必须**&#x200B;应用必要的数据使用标签。 由于来自外部生成受众的变量存储在数据湖中而不是实时客户配置文件中，因此&#x200B;**不应**&#x200B;在CSV文件中包含同意数据。 有关应用数据使用标签的详细信息，请阅读有关[管理标签](../../access-control/abac/ui/labels.md)的文档。
+>此外，如果您的外部生成的受众包含敏感信息和/或医疗保健相关信息，则在将其激活到任何目标之前，您&#x200B;**必须**&#x200B;应用必要的数据使用标签。 由于来自外部生成受众的变量存储在数据湖中而不是实时客户配置文件中，因此&#x200B;**不应**&#x200B;在CSV文件中包含同意数据。
+>
+>有关应用数据使用标签的详细信息，请阅读有关[管理标签](../../access-control/abac/ui/labels.md)的文档。 要了解平台上的数据使用标签的一般信息，请阅读[数据使用标签概述](../../data-governance/labels/overview.md)。 要了解同意如何在外部生成的受众中起作用，请阅读[受众常见问题解答](../faq.md#consent)。
 
 ## 后续步骤
 
