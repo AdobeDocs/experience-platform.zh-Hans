@@ -2,9 +2,9 @@
 title: Adobe Experience Platform中的数据加密
 description: 了解如何在Adobe Experience Platform中加密传输数据和静态数据。
 exl-id: 184b2b2d-8cd7-4299-83f8-f992f585c336
-source-git-commit: 4f67df5d3667218c79504535534de57f871b0650
+source-git-commit: f0b9d414d7b08015478c132de6910629d86c9cf9
 workflow-type: tm+mt
-source-wordcount: '712'
+source-wordcount: '737'
 ht-degree: 0%
 
 ---
@@ -54,6 +54,8 @@ Platform与任何外部组件之间传输的所有数据都是使用HTTPS [TLS v
 
 - [Adobe Journey Optimizer公共证书](../images/governance-privacy-security/encryption/AJO-public-certificate.pem)
 - [目标服务公共证书](../images/governance-privacy-security/encryption/destinations-public-cert.pem)。
+
+您还可以通过对MTLS端点发出GET请求来安全地检索公共证书。 有关详细信息，请参阅[公共证书终结点文档](../../data-governance/mtls-api/public-certificate-endpoint.md)。
 
 ## 静态数据 {#at-rest}
 

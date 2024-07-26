@@ -5,10 +5,10 @@ breadcrumb-title: Data Governance 指南
 user-guide-description: 通过使用标签、营销操作和治理策略，施加数据使用限制。
 feature: Data Governance
 role: User,Developer,Admin
-source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
+source-git-commit: 8837d719fbdf2864995c0d73a87a41c4b119cfb7
 workflow-type: tm+mt
-source-wordcount: '90'
-ht-degree: 44%
+source-wordcount: '99'
+ht-degree: 43%
 
 ---
 
@@ -30,6 +30,10 @@ ht-degree: 44%
    * [概述](enforcement/overview.md)
    * [自动执行](enforcement/auto-enforcement.md)
    * [基于API的实施](enforcement/api-enforcement.md)
+* MTLS服务API {#mtls-api}
+   * [概述](mtls-api/overview.md)
+   * [快速入门](mtls-api/getting-started.md)
+   * [公共证书端点](mtls-api/public-certificate-endpoint.md)
 * 策略服务API {#api}
    * [概述](api/overview.md)
    * [快速入门](api/getting-started.md)
