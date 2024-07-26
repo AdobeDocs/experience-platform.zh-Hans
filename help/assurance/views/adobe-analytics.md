@@ -2,14 +2,18 @@
 title: Assurance 中的 Adobe Analytics 视图
 description: 本指南介绍如何将 Adobe Analytics 与 Adobe Experience Platform Assurance 配合使用。
 exl-id: e5cc72b0-d6d6-430b-9321-4835c1f77581
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 515f58175a8ccba03581ce4d7faf23fdfed3571e
 workflow-type: tm+mt
-source-wordcount: '352'
-ht-degree: 100%
+source-wordcount: '394'
+ht-degree: 89%
 
 ---
 
 # Assurance 中的 Adobe Analytics 视图
+
+>[!IMPORTANT]
+>
+>Analytics事件视图已合并到&#x200B;**Analytics Events 2.0 (Beta)插件**&#x200B;中。  它将在未来从“保证”中删除。 我们建议将&#x200B;**Analytics Events 2.0 (Beta)插件**&#x200B;用于针对保证会话的Analytics调试。
 
 Adobe Experience Platform Assurance 与 Adobe Analytics 集成为调试和验证其 Adobe Analytics 实施的用户提供一个内容更丰富的 SDK 事件视图。该视图现在显示从 [Adobe Experience Platform SDK](https://developer.adobe.com/client-sdks/documentation/adobe-analytics/) 发送到 Adobe Analytics 的生命周期和操作/状态事件。该视图还列举“响应”详细信息，其中提供在应用每个报表包的处理规则后如何处理事件的信息。
 
