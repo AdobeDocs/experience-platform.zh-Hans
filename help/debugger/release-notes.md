@@ -4,14 +4,20 @@ description: Adobe Experience Platform Debugger 的最新发行说明。
 keywords: debugger;experience Platform Debugger 扩展程序;chrome;扩展程序;发行说明
 uuid: 47a5d6f3-c074-4ad5-ad4b-e6030496689b
 exl-id: 3eed44da-5f85-413e-a783-3a0df03a2baf
-source-git-commit: c99234cf3f5af9abe590c90fbdefc7d50c1539da
+source-git-commit: 877e38154f6959d50bd0620290c2dce9decfc2b5
 workflow-type: tm+mt
-source-wordcount: '758'
+source-wordcount: '781'
 ht-degree: 5%
 
 ---
 
 # Adobe Experience Platform Debugger发行说明
+
+## 1.6.1版 — 2024年7月25日
+
+### 修复和改进功能
+
+* 修复了阻止用户向没有标记的页面添加新Tags嵌入代码的问题。
 
 ## 1.6.0版 — 2024年7月11日
 
@@ -31,7 +37,7 @@ ht-degree: 5%
 ### 修复和改进功能
 
 * 修复了设置未保留的问题。
-* 修复了在查看Analytics Post处理的点击时导致Debugger崩溃的问题。
+* 修复了在查看Analytics后处理的点击时导致Debugger崩溃的问题。
 
 ## 1.5.3版 — 2023年12月6日
 
