@@ -2,9 +2,9 @@
 description: 使用受众元数据模板以编程方式创建、更新或删除目标中的受众。 Adobe提供了一个可扩展的受众元数据模板，您可以根据营销API的规范配置该模板。 定义、测试和提交模板后，Adobe将使用该模板来构建对目标的这些API调用。
 title: 受众元数据管理
 exl-id: 795e8adb-c595-4ac5-8d1a-7940608d01cd
-source-git-commit: 3660c3a342af07268d2ca2c907145df8237872a1
+source-git-commit: 6c4a2f9f6b338ec03b99ee1d7e91f7d9c0347b08
 workflow-type: tm+mt
-source-wordcount: '1047'
+source-wordcount: '1308'
 ht-degree: 0%
 
 ---
@@ -53,11 +53,10 @@ ht-degree: 0%
 
 如果您的用例需要，Adobe工程团队可以与您一起使用自定义字段展开通用模板。
 
-## 配置示例 {#configuration-examples}
 
-本节包含三个通用受众元数据配置示例供您参考，以及对配置主要部分的描述。 请注意三个示例配置之间的url、标头、请求和响应正文有何不同。 这是因为三个示例平台的营销API的规范不同。
+## 支持的模板事件 {#supported-events}
 
-请注意，在一些示例中，URL中使用了`{{authData.accessToken}}`或`{{segment.name}}`等宏字段，而在其他示例中，标头或请求正文中使用这些宏字段。 这确实取决于您的营销API规范。
+下表描述了受众元数据模板支持的事件。
 
 | 模板部分 | 描述 |
 |--- |--- |
@@ -66,10 +65,21 @@ ht-degree: 0%
 | `delete` | 包括所有必需的组件（URL、HTTP方法、标头、请求和响应正文），以便对API进行HTTP调用，以编程方式删除平台中的区段/受众。 |
 | `validate` | 在对合作伙伴API进行调用之前，对模板配置中的任何字段运行验证。 例如，您可以验证是否正确输入了用户的帐户ID。 |
 | `notify` | 仅适用于基于文件的目标。 包括所有必需组件（URL、HTTP方法、标头、请求和响应正文），以便对您的API进行HTTP调用，通知您文件导出成功。 |
+| `createDestination` | 包括所有必需的组件（URL、HTTP方法、标头、请求和响应正文），以便对API进行HTTP调用，在平台中以编程方式创建数据流并将信息同步回Adobe Experience Platform。 |
+| `updateDestination` | 包含对API进行HTTP调用、以编程方式更新平台中的数据流并将信息同步回Adobe Experience Platform所需的所有组件（URL、HTTP方法、标头、请求和响应正文）。 |
+| `deleteDestination` | 包括所有必需的组件（URL、HTTP方法、标头、请求和响应正文），以便对API进行HTTP调用，以编程方式从平台中删除数据流。 |
 
 {style="table-layout:auto"}
 
-### 流示例1 {#example-1}
+## 配置示例 {#configuration-examples}
+
+本节包含常规受众元数据配置的示例，以供您参考。
+
+请注意三个示例配置之间的URL、标头和请求正文有何不同。 这是因为三个示例平台的营销API的规范不同。
+
+请注意，在一些示例中，URL中使用了`{{authData.accessToken}}`或`{{segment.name}}`等宏字段，而在其他示例中，标头或请求正文中使用这些宏字段。 其使用取决于您的营销API规范。
+
++++流示例1
 
 ```json
 {
@@ -178,7 +188,9 @@ ht-degree: 0%
 }
 ```
 
-### 流示例2 {#example-2}
++++
+
++++流示例2
 
 ```json
 {
@@ -272,7 +284,9 @@ ht-degree: 0%
 }
 ```
 
-### 流示例3 {#example-3}
++++
+
++++流示例3
 
 ```json
 {
@@ -374,8 +388,9 @@ ht-degree: 0%
 }
 ```
 
++++
 
-### 基于文件的示例 {#example-file-based}
++++基于文件的示例
 
 ```json
 {
@@ -521,6 +536,8 @@ ht-degree: 0%
 }
 ```
 
++++
+
 在[创建受众模板](../metadata-api/create-audience-template.md) API引用中查找模板中所有参数的描述。
 
 ## 受众元数据模板中使用的宏 {#macros}
@@ -537,5 +554,12 @@ ht-degree: 0%
 | `{{authData.accessToken}}` | 允许您将访问令牌传递到API端点。 如果Experience Platform应使用未过期的令牌连接到您的目标，请使用`{{authData.accessToken}}`，否则请使用`{{oauth2ServiceAccessToken}}`生成访问令牌。 |
 | `{{body.segments[0].segment.id}}` | 返回已创建受众的唯一标识符作为键`externalAudienceId`的值。 |
 | `{{error.message}}` | 返回将在Experience PlatformUI中向用户显示的错误消息。 |
+| `{{{segmentEnrichmentAttributes}}}` | 允许您访问特定受众的所有扩充属性。  `create`、`update`和`delete`事件支持此宏。 扩充属性仅可用于[自定义上传受众](destination-configuration/schema-configuration.md#external-audiences)。 请参阅[批受众激活指南](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes)，了解扩充属性选择的工作方式。 |
+| `{{destination.name}}` | 返回目标的名称。 |
+| `{{destination.sandboxName}}` | 返回配置目标的Experience Platform沙盒的名称。 |
+| `{{destination.id}}` | 返回目标配置的ID。 |
+| `{{destination.imsOrgId}}` | 返回配置目标的IMS组织ID。 |
+| `{{destination.enrichmentAttributes}}` | 允许您访问映射到目标的所有受众的所有扩充属性。 `createDestination`、`updateDestination`和`deleteDestination`事件支持此宏。 扩充属性仅可用于[自定义上传受众](destination-configuration/schema-configuration.md#external-audiences)。 请参阅[批受众激活指南](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes)，了解扩充属性选择的工作方式。 |
+| `{{destination.enrichmentAttributes.<namespace>.<segmentId>}}` | 允许您访问映射到目标的特定外部受众的扩充属性。 扩充属性仅可用于[自定义上传受众](destination-configuration/schema-configuration.md#external-audiences)。 请参阅[批受众激活指南](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes)，了解扩充属性选择的工作方式。 |
 
 {style="table-layout:auto"}
