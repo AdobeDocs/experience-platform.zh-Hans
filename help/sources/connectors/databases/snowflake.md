@@ -3,9 +3,9 @@ title: SnowflakeSource连接器概述
 description: 了解如何使用API或用户界面将Snowflake连接到Adobe Experience Platform。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: df066463-1ae6-4ecd-ae0e-fb291cec4bd5
-source-git-commit: 8b0f6eca87deedd8090830e3375d5099bfb0dfc0
+source-git-commit: 8d6baef1549498e137d336ac2c8a42428496dedf
 workflow-type: tm+mt
-source-wordcount: '303'
+source-wordcount: '689'
 ht-degree: 0%
 
 ---
@@ -21,6 +21,82 @@ ht-degree: 0%
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 
 Experience Platform支持从第三方数据库引入数据。 Platform可以连接到不同类型的数据库，如关系数据库、NoSQL数据库或数据仓库数据库。 对数据库提供程序的支持包括[!DNL Snowflake]。
+
+## 先决条件 {#prerequisites}
+
+本节概述在将[!DNL Snowflake]源连接到Experience Platform之前需要完成的设置任务。
+
+### 检索帐户标识符 {#retrieve-your-account-identifier}
+
+您必须从[!DNL Snowflake] UI仪表板中检索帐户标识符，因为您将使用该帐户标识符在Experience Platform上验证您的[!DNL Snowflake]实例。
+
+要检索您的帐户标识符，请执行以下操作：
+
+* 在[[!DNL Snowflake] 应用程序UI仪表板](https://app.snowflake.com/)上导航到您的帐户。
+* 在左侧导航中，选择&#x200B;**[!DNL Accounts]**，然后从标题中选择&#x200B;**[!DNL Active Accounts]**。
+* 接下来，选择信息图标，然后选择并复制当前URL的域名。
+
+![选定域名的SnowflakeUI仪表板。](../../images/tutorials/create/snowflake/snowflake-dashboard.png)
+
+### 检索您的私钥 {#retrieve-your-private-key}
+
+如果您正在对[!DNL Snowflake]连接使用密钥对身份验证，则还必须先生成私钥，然后才能连接到Experience Platform。
+
+>[!BEGINTABS]
+
+>[!TAB 创建加密的私钥]
+
+要生成加密的[!DNL Snowflake]私钥，请在终端上运行以下命令：
+
+```shell
+openssl genrsa 2048 | openssl pkcs8 -topk8 -v2 des3 -inform PEM -out rsa_key.p8
+```
+
+如果成功，您应会收到PEM格式的私钥。
+
+```shell
+-----BEGIN ENCRYPTED PRIVATE KEY-----
+MIIE6T...
+-----END ENCRYPTED PRIVATE KEY-----
+```
+
+>[!TAB 创建未加密的私钥]
+
+要生成未加密的[!DNL Snowflake]私钥，请在终端上运行以下命令：
+
+```shell
+openssl genrsa 2048 | openssl pkcs8 -topk8 -inform PEM -out rsa_key.p8 -nocrypt
+```
+
+如果成功，您应会收到PEM格式的私钥。
+
+```shell
+-----BEGIN PRIVATE KEY-----
+MIIE6T...
+-----END PRIVATE KEY-----
+```
+
+>[!ENDTABS]
+
+接下来，获取您的私钥并在[!DNL Base64]中进行编码。 请确保您未对[!DNL Snowflake]私钥进行任何转换或格式转换。 此外，您必须确保私钥的末尾没有尾随新行字符，然后才能在[!DNL Base64]中对其进行编码。
+
+### 验证配置
+
+在为[!DNL Snowflake]数据创建源连接之前，还必须确保满足以下配置：
+
+* 分配给给定Experience Platform的默认仓库必须与在验证用户身份时输入的仓库相同。
+* 分配给给定Experience Platform的默认角色必须有权访问在对用户进行身份验证时输入的同一数据库。
+
+要验证您的角色和仓库，请执行以下操作：
+
+* 在左侧导航中选择&#x200B;**[!DNL Admin]**，然后选择&#x200B;**[!DNL Users & Roles]**。
+* 选择相应的用户，然后选择右上角的省略号(`...`)。
+* 在出现的[!DNL Edit user]窗口中，导航到[!DNL Default Role]以查看与给定用户关联的角色。
+* 在同一窗口中，导航到[!DNL Default Warehouse]以查看与给定用户关联的仓库。
+
+![SnowflakeUI，您可以在其中验证您的角色和仓库。](../../images/tutorials/create/snowflake/snowflake-configs.png)
+
+成功编码后，您可以在Experience Platform上使用该已编码的[!DNL Base64]私钥来验证您的[!DNL Snowflake]帐户。
 
 ## IP地址允许列表
 
