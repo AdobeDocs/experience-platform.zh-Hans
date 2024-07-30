@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Experience PlatformUI概述
 description: Adobe Experience Platform
 exl-id: 47f9a3fb-731d-4ade-8069-faaa18f224dc
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 9844a7bf5e7198e7d5112ec924220aba71cdc14b
 workflow-type: tm+mt
-source-wordcount: '1795'
-ht-degree: 1%
+source-wordcount: '1947'
+ht-degree: 2%
 
 ---
 
@@ -29,13 +29,13 @@ ht-degree: 1%
 
 ![](images/user-guide/homepage-dashboard.png)
 
-**[!UICONTROL 数据集]**&#x200B;部分显示组织内的数据集数。 此数字将在创建新数据集时更新。 有关数据集的更多信息，请参阅[数据集概述](../catalog/datasets/overview.md)。
+**[!UICONTROL 数据集]**&#x200B;部分显示组织内的数据集数。 此数字将在创建新数据集时更新。 您可以在[数据集概述](../catalog/datasets/overview.md)中找到有关数据集的更多信息。
 
-**[!UICONTROL 配置文件]**&#x200B;部分显示贵组织中具有配置文件（不包括配置文件片段）的总人数。 此总人数表示可寻址受众总数，每24小时更新一次。 有关个人资料的详细信息，请参阅[实时客户个人资料概述](../profile/home.md)。
+**[!UICONTROL 配置文件]**&#x200B;部分显示贵组织中具有配置文件（不包括配置文件片段）的总人数。 此总人数表示可寻址受众总数，每24小时更新一次。 您可以在[实时客户个人资料概述](../profile/home.md)中找到有关个人资料的更多信息。
 
-**[!UICONTROL 区段]**&#x200B;部分显示在您的组织内创建的区段总数。 此数字将在创建新区段时更新。 有关区段的更多信息，请参阅[分段服务概述](../segmentation/home.md)。
+**[!UICONTROL 区段]**&#x200B;部分显示在您的组织内创建的区段总数。 此数字将在创建新区段时更新。 您可以在[分段服务概述](../segmentation/home.md)中找到有关区段的更多信息。
 
-**[!UICONTROL 目标]**&#x200B;部分显示为组织创建的目标总数。 此数字将在创建新目标时更新。 有关目标的详细信息，请参阅[目标概述](../destinations/home.md)。
+**[!UICONTROL 目标]**&#x200B;部分显示为组织创建的目标总数。 此数字将在创建新目标时更新。 您可以在[目标概述](../destinations/home.md)中找到有关目标的更多信息。
 
 ### 最新数据
 
@@ -43,13 +43,13 @@ ht-degree: 1%
 
 ![](images/user-guide/homepage-recent.png)
 
-**[!UICONTROL 最近数据集]**&#x200B;部分列出了贵组织内最近创建的五个数据集。 每次创建新数据集时，此列表都会更新。 您可以从列表中选择一个数据集以查看有关指定数据集的详细信息，或选择&#x200B;**[!UICONTROL 查看全部]**&#x200B;以查看所有已创建数据集的列表。 有关数据集的更多信息，请参阅[数据集概述](../catalog/datasets/overview.md)。
+**[!UICONTROL 最近数据集]**&#x200B;部分列出了贵组织内最近创建的五个数据集。 每次创建新数据集时，此列表都会更新。 您可以从列表中选择要查看的数据集可以查找有关指定数据集的详细信息，也可以选择&#x200B;**[!UICONTROL 查看全部]**&#x200B;以查看所有已创建的数据集的列表。 您可以在[数据集概述](../catalog/datasets/overview.md)中找到有关数据集的更多信息。
 
-**[!UICONTROL 最近的源]**&#x200B;部分列出了组织中最近创建的五个源连接器。 每次创建新源连接器时，此列表都会更新。 您可以从列表中选择源连接以查看有关指定连接器的详细信息，或选择&#x200B;**[!UICONTROL 查看全部]**&#x200B;以查看所有已创建的源连接的列表。 有关源的详细信息，请参阅[源概述](../sources/home.md)。
+**[!UICONTROL 最近的源]**&#x200B;部分列出了组织中最近创建的五个源连接器。 每次创建新源连接器时，此列表都会更新。 您可以从列表中选择要查看的源连接您可以找到有关指定连接器的详细信息，也可以选择&#x200B;**[!UICONTROL 查看全部]**&#x200B;查看所有已创建的源连接的列表。 您可以在[源概述](../sources/home.md)中找到有关源的更多信息。
 
-**[!UICONTROL 最近的区段]**&#x200B;部分列出了组织中最近创建的五个区段定义。 每次创建新区段定义时，此列表都会更新。 您可以从列表中选择区段定义以查看有关指定区段定义的详细信息，或者选择&#x200B;**[!UICONTROL 查看全部]**&#x200B;以查看所有已创建区段定义的列表。 有关区段的更多信息，请参阅[分段服务概述](../segmentation/home.md)。
+**[!UICONTROL 最近的区段]**&#x200B;部分列出了组织中最近创建的五个区段定义。 每次创建新区段定义时，此列表都会更新。 您可以从列表中选择要查看的区段定义您可以找到有关指定区段定义的详细信息，也可以选择&#x200B;**[!UICONTROL 查看全部]**&#x200B;以查看所有已创建区段定义的列表。 您可以在[分段服务概述](../segmentation/home.md)中找到有关区段的更多信息。
 
-**[!UICONTROL 最近的目标]**&#x200B;部分列出了组织中最近创建的五个目标。 每次创建新目标时，此列表都会更新。 您可以从列表中选择一个目标以查看有关指定目标的详细信息，或者选择&#x200B;**[!UICONTROL 查看全部]**&#x200B;以查看所有已创建目标的列表。 有关目标的详细信息，请参阅[目标概述](../destinations/home.md)。
+**[!UICONTROL 最近的目标]**&#x200B;部分列出了组织中最近创建的五个目标。 每次创建新目标时，此列表都会更新。 您可以从列表中选择要查看的目标您可以找到有关指定目标的详细信息，也可以选择&#x200B;**[!UICONTROL 查看全部]**&#x200B;查看所有已创建目标的列表。 您可以在[目标概述](../destinations/home.md)中找到有关目标的更多信息。
 
 ### 推荐学习
 
@@ -97,7 +97,7 @@ Platform UI中的顶部导航栏显示您当前登录的组织，并提供几个
 
 ### 沙盒
 
-顶部导航栏的正下方是沙盒栏。 此栏显示您当前用于Platform的沙盒。 有关沙箱的详细信息，请参阅[沙箱概述](../sandboxes/home.md)。
+顶部导航栏的正下方是沙盒栏。 此栏显示您当前用于Platform的沙盒。 您可以在[沙盒概述](../sandboxes/home.md)中找到有关沙盒的更多信息。
 
 ## 左侧导航栏 {#left-nav}
 
@@ -117,45 +117,58 @@ Platform UI中的顶部导航栏显示您当前登录的组织，并提供几个
 
 通过&#x200B;**[!UICONTROL 主页]**&#x200B;部分，可返回Platform UI主页。
 
-**[!UICONTROL 工作流]**&#x200B;部分显示了用于在Platform内执行操作的多步骤工作流列表。 有关工作流的详细信息，请参阅[工作流概述](./workflows.md)。
+**[!UICONTROL 工作流]**&#x200B;部分显示了用于在Platform内执行操作的多步骤工作流列表。 您可以在[工作流概述](./workflows.md)中找到有关工作流的更多信息。
 
 ### [!UICONTROL 连接]
 
-**[!UICONTROL 源]**&#x200B;部分允许您创建、更新和删除源连接，从而允许您将外部源中的数据摄取到Platform中。 有关源的详细信息，请参阅[源概述](../sources/home.md)。
+**[!UICONTROL 源]**&#x200B;部分允许您创建、更新和删除源连接，从而允许您将外部源中的数据摄取到Platform中。 您可以在[源概述](../sources/home.md)中找到有关源的更多信息。
 
-通过&#x200B;**[!UICONTROL 目标]**&#x200B;部分，您可以创建、更新和删除目标，以便将数据从Platform导出到多个外部目标。 有关目标的详细信息，请参阅[目标概述](../destinations/home.md)。
+通过&#x200B;**[!UICONTROL 目标]**&#x200B;部分，您可以创建、更新和删除目标，以便将数据从Platform导出到多个外部目标。 您可以在[目标概述](../destinations/home.md)中找到有关目标的更多信息。
 
 ### [!UICONTROL 客户]
 
-**[!UICONTROL 配置文件]**&#x200B;部分允许您浏览客户配置文件、查看配置文件量度、创建和管理合并策略以及查看合并架构。 若要了解有关使用[!UICONTROL 配置文件]部分的更多信息，请阅读[[!DNL Profile] 用户指南](../profile/ui/user-guide.md)。 有关Real-Time Customer Profile的详细信息，请参阅[Real-Time Customer Profile概述](../profile/home.md)。
+**[!UICONTROL 配置文件]**&#x200B;部分允许您浏览客户配置文件、查看配置文件量度、创建和管理合并策略以及查看合并架构。 若要了解有关使用[!UICONTROL 配置文件]部分的更多信息，请阅读[[!DNL Profile] 用户指南](../profile/ui/user-guide.md)。 您可以在[实时客户配置文件概述](../profile/home.md)中找到有关实时客户配置文件的更多信息。
 
-**[!UICONTROL 受众]**&#x200B;部分允许您创建和管理区段定义。 若要了解有关使用[!UICONTROL 受众]部分的更多信息，请阅读[分段用户指南](../segmentation/ui/overview.md)。 有关分段服务的更多信息，请参阅[分段服务概述](../segmentation/home.md)。
+**[!UICONTROL 受众]**&#x200B;部分允许您创建和管理区段定义。 若要了解有关使用[!UICONTROL 受众]部分的更多信息，请阅读[分段用户指南](../segmentation/ui/overview.md)。 您可以在[分段服务概述](../segmentation/home.md)中找到有关分段服务的更多信息。
 
 通过&#x200B;**[!UICONTROL 身份]**&#x200B;部分，您可以创建和管理身份命名空间。 有关[!UICONTROL 身份]部分的更多信息，包括身份命名空间以及如何在Platform UI中使用身份的信息，请参阅[身份命名空间概述](../identity-service/features/namespaces.md)。
 
 ### [!UICONTROL Privacy]
 
-**[!UICONTROL 策略]**&#x200B;部分允许您创建和管理数据使用策略。 若要了解有关使用“策略”部分的更多信息，请阅读[数据使用策略用户指南](../data-governance/policies/user-guide.md)。 有关数据使用策略的详细信息，请参阅[数据使用策略概述](../data-governance/policies/overview.md)。
+**[!UICONTROL 策略]**&#x200B;部分允许您创建和管理数据使用策略。 若要了解有关使用“策略”部分的更多信息，请阅读[数据使用策略用户指南](../data-governance/policies/user-guide.md)。 您可以在[数据使用策略概述](../data-governance/policies/overview.md)中找到有关数据使用策略的更多信息。
 
-通过&#x200B;**[!UICONTROL 请求]**&#x200B;部分，您可以创建和管理隐私请求。 请注意，您必须列入允许列表才能访问Privacy ServiceUI。 若要了解有关使用“请求”部分的更多信息，请阅读[Privacy Service用户指南](../privacy-service/ui/user-guide.md)。 有关Privacy Service的更多信息，请参阅[Privacy Service概述](../privacy-service/home.md)。
+通过&#x200B;**[!UICONTROL 请求]**&#x200B;部分，您可以创建和管理隐私请求。 请注意，您必须列入允许列表才能访问Privacy ServiceUI。 若要了解有关使用“请求”部分的更多信息，请阅读[Privacy Service用户指南](../privacy-service/ui/user-guide.md)。 您可以在[Privacy Service概述](../privacy-service/home.md)中找到有关Privacy Service的更多信息。
 
 ### [!UICONTROL 数据科学]
 
-**[!UICONTROL Notebooks]**&#x200B;部分提供了对JupyterLab的访问，这是一个交互式开发环境，允许您探索、分析和建模数据。 若要了解有关使用“笔记本”部分的更多信息，请阅读[JupyterLab用户指南](../data-science-workspace/jupyterlab/overview.md)。 有关数据科学Workspace的更多信息，请参阅[数据科学Workspace概述](../data-science-workspace/home.md)
+**[!UICONTROL Notebooks]**&#x200B;部分提供了对JupyterLab的访问，这是一个交互式开发环境，允许您探索、分析和建模数据。 若要了解有关使用“笔记本”部分的更多信息，请阅读[JupyterLab用户指南](../data-science-workspace/jupyterlab/overview.md)。 您可以在[数据科学Workspace概述](../data-science-workspace/home.md)中找到有关数据科学Workspace的更多信息
 
-**[!UICONTROL 模型]**&#x200B;部分允许您使用机器学习和人工智能来创建、开发、训练和调整模型以进行预测。 有关“模型”部分的详细信息，请参阅[培训和评估模型](../data-science-workspace/models-recipes/train-evaluate-model-ui.md)的教程。
+**[!UICONTROL 模型]**&#x200B;部分允许您使用机器学习和人工智能来创建、开发、训练和调整模型以进行预测。 您可以在有关[培训的教程中找到有关“模型”部分的详细信息，并评估模型](../data-science-workspace/models-recipes/train-evaluate-model-ui.md)。
 
-通过&#x200B;**[!UICONTROL 服务]**&#x200B;部分，您可以管理已发布的模型以进行计划的培训和评分，或者使用Adobe的智能服务（一组提供实时、个性化客户体验的AI服务）。 有关“服务”部分的详细信息，请参阅[将模型发布为服务教程](../data-science-workspace/models-recipes/publish-model-service-ui.md)。
+通过&#x200B;**[!UICONTROL 服务]**&#x200B;部分，您可以管理已发布的模型以进行计划的培训和评分，或者使用Adobe的智能服务（一组提供实时、个性化客户体验的AI服务）。 您可以在[将模型发布为服务教程](../data-science-workspace/models-recipes/publish-model-service-ui.md)中找到有关“服务”部分的更多信息。
 
 ### [!UICONTROL 数据管理]
 
-通过&#x200B;**[!UICONTROL 架构]**&#x200B;部分，您可以创建和管理Experience Data Model (XDM)架构。 若要了解有关架构的更多信息，请阅读有关[创建架构](../xdm/tutorials/create-schema-ui.md)的教程。 有关XDM的更多信息，请参阅[XDM系统概述](../xdm/home.md)。
+通过&#x200B;**[!UICONTROL 架构]**&#x200B;部分，您可以创建和管理Experience Data Model (XDM)架构。 若要了解有关架构的更多信息，请阅读有关[创建架构](../xdm/tutorials/create-schema-ui.md)的教程。 您可以在[XDM系统概述](../xdm/home.md)中找到有关XDM的更多信息。
 
-**[!UICONTROL 数据集]**&#x200B;部分允许您创建和管理数据集。 有关数据集的更多信息，请参阅[数据集用户指南](../catalog/datasets/user-guide.md)。
+**[!UICONTROL 数据集]**&#x200B;部分允许您创建和管理数据集。 您可以在[数据集用户指南](../catalog/datasets/user-guide.md)中找到有关数据集的更多信息。
 
-**[!UICONTROL 查询]**&#x200B;部分允许您创建和管理查询，记录由Adobe Experience Platform查询服务发出的SQL查询，以及查看您的[!DNL PostgreSQL]凭据。 有关查询的详细信息，请参阅[查询服务用户指南](../query-service/ui/overview.md)。
+**[!UICONTROL 查询]**&#x200B;部分允许您创建和管理查询，记录由Adobe Experience Platform查询服务发出的SQL查询，以及查看您的[!DNL PostgreSQL]凭据。 您可以在[查询服务用户指南](../query-service/ui/overview.md)中找到有关查询的详细信息。
 
-通过&#x200B;**[!UICONTROL 监控]**&#x200B;部分，您可以监控批次和流式摄取。 有关监视的详细信息，请参阅[监视数据摄取用户指南](../ingestion/quality/monitor-data-ingestion.md)。
+通过&#x200B;**[!UICONTROL 监控]**&#x200B;部分，您可以监控批次和流式摄取。 您可以在[监视数据摄取用户指南](../ingestion/quality/monitor-data-ingestion.md)中找到有关监视的详细信息。
+
+### [!UICONTROL 联合数据] （有限可用）
+
+**[!UICONTROL 模型]**&#x200B;部分允许您设计和创建定义数据的结构、关系和约束的数据模型和架构。 您可以在[联合受众组合用户指南](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/config/datamodel/schemas)中找到有关数据模型和架构的更多信息。
+
+**[!UICONTROL 审核跟踪]**&#x200B;部分提供了已实时对您的环境执行的所有操作和事件的详细时间顺序记录。 您可以在[联合受众组合用户指南](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/audit-trail/audit-trail)中找到有关审核跟踪的详细信息。
+
+
+通过&#x200B;**[!UICONTROL 联合数据库]**&#x200B;部分，您可以将Adobe Experience Platform连接到企业数据仓库。 您可以在[联合受众组合用户指南](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/config/federated-db)中找到有关连接到联合数据库的详细信息。
+
+>[!AVAILABILITY]
+>
+>目前，联合受众构成仅面向一部分组织提供（限量发布）。有关更多信息，请与您的 Adobe 代表联系。
 
 ### [!UICONTROL 决策]
 

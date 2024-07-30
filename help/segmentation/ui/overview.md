@@ -3,10 +3,10 @@ solution: Experience Platform
 title: 分段服务UI指南
 description: 了解如何在Adobe Experience Platform UI中创建和管理受众和区段定义。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 9844a7bf5e7198e7d5112ec924220aba71cdc14b
 workflow-type: tm+mt
-source-wordcount: '959'
-ht-degree: 1%
+source-wordcount: '1043'
+ht-degree: 2%
 
 ---
 
@@ -89,6 +89,12 @@ ht-degree: 1%
 要查看受众的构成方式，请在[!UICONTROL 受众]选项卡中选择受众的名称。
 
 此时将显示“受众构成”页面，其中包含构成受众的构建基块。 有关如何使用受众合成的更多详细信息，请参阅[受众合成UI指南](./audience-composition.md)。
+
+## 联合受众构成 {#fac}
+
+除了受众组合和区段定义之外，您还可以使用Adobe联合受众组合从企业数据集构建新受众，而无需复制基础数据并将这些受众存储在Adobe Experience Platform受众门户中。 您还可以通过利用从企业数据仓库联合的组合受众数据来扩充Adobe Experience Platform中的现有受众。 请阅读有关[联合受众组合](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/home)的指南。
+
+![在您的组织的联合受众组合中创建的受众列表。](../images/ui/overview/federated-audience-composition.png)
 
 ## 流式客户细分 {#streaming-segmentation}
 

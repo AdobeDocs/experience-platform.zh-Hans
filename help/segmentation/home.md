@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 分段服务概述
 description: 了解Adobe Experience Platform分段服务及其在Platform生态系统中发挥的作用。
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 515a7cc3ba12afe14aab3e882b7fd55d5cc09069
 workflow-type: tm+mt
-source-wordcount: '1607'
+source-wordcount: '1700'
 ht-degree: 14%
 
 ---
@@ -51,6 +51,14 @@ Adobe Experience Platform [!DNL Segmentation Service]提供了一个用户界面
 >在扩展架构时，所有未来上传必须相应地更新新添加的字段。 有关自定义[!DNL Experience Data Model] (XDM)的详细信息，请访问[架构编辑器教程](../xdm/tutorials/create-schema-ui.md)。
 >
 >此外，如果对数据集启用了体验事件过期值，这可能会影响所创建区段定义的成员资格。 请阅读[体验事件有效期](../profile/event-expirations.md)指南，以了解此功能如何影响分段的更多信息。
+
+### 联合受众构成 {#fac}
+
+除了受众组合和区段定义之外，您还可以使用Adobe联合受众组合从企业数据集构建新受众，而无需复制基础数据并将这些受众存储在Adobe Experience Platform受众门户中。 您还可以通过利用从企业数据仓库联合的组合受众数据来扩充Adobe Experience Platform中的现有受众。 请阅读有关[联合受众组合](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/home)的指南。
+
+>[!AVAILABILITY]
+>
+>目前，联合受众构成仅面向一部分组织提供（限量发布）。有关更多信息，请与您的 Adobe 代表联系。
 
 ## 评估受众 {#evaluate-segments}
 

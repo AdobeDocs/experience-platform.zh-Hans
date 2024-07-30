@@ -5,10 +5,10 @@ breadcrumb-title: Segmentation Service 指南
 user-guide-description: 使用 Adobe Experience Platform 生成的区段定义或外部来源，根据实时客户配置文件数据构建受众群体。
 feature: Segments
 role: User
-source-git-commit: 62a174e6f3b1bd1b0bc518ff7e5f236893e9e5d3
+source-git-commit: 515a7cc3ba12afe14aab3e882b7fd55d5cc09069
 workflow-type: tm+mt
-source-wordcount: '185'
-ht-degree: 42%
+source-wordcount: '191'
+ht-degree: 40%
 
 ---
 
@@ -36,6 +36,7 @@ ht-degree: 42%
    - [受众门户](ui/audience-portal.md)
    - [受众组合](ui/audience-composition.md)
    - [区段生成器](ui/segment-builder.md)
+   - [联合受众组合（有限可用性）](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/home)
    - [帐户受众](ui/account-audiences.md)
    - [相似受众](ui/lookalike-audiences.md)
    - [潜在客户受众](ui/prospect-audience.md)

@@ -2,9 +2,9 @@
 title: 受众门户概述
 description: 了解如何使用Audience Portal在Adobe Experience Platform中查看、管理和创建受众。
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: 2d15ba41ff326034a6f9a32301f67f5d3b2a1c14
+source-git-commit: 527c9bf7ff60ceb1e621ccac5a88b8e9eb32ebfb
 workflow-type: tm+mt
-source-wordcount: '3725'
+source-wordcount: '3826'
 ht-degree: 3%
 
 ---
@@ -25,6 +25,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 - [创建受众](#create-audience)
    - [使用区段生成器创建受众](#segment-builder)
    - [使用受众组合创建受众](#audience-composition)
+   - [使用联合受众合成使用来自您现有数据仓库的数据创建受众](#fac)（有限可用性）
 - [导入外部生成的受众](#import-audience)
 
 要打开Audience Portal，请选择“分段”部分中的&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡。
@@ -339,6 +340,12 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 选择&#x200B;**[!UICONTROL 生成规则]**&#x200B;将转到区段生成器。 此工作区为构建和编辑区段定义提供了直观的控件，例如用于表示数据属性的拖放图块。 要了解有关创建区段定义的更多信息，请参阅[区段生成器指南](./segment-builder.md)
 
 ![将显示区段生成器工作区。](../images/ui/audience-portal/segment-builder.png)
+
+### 联合受众构成 {#fac}
+
+除了受众组合和区段定义之外，您还可以使用Adobe联合受众组合从企业数据集构建新受众，而无需复制基础数据并将这些受众存储在Adobe Experience Platform受众门户中。 您还可以通过利用从企业数据仓库联合的组合受众数据来扩充Adobe Experience Platform中的现有受众。 请阅读有关[联合受众组合](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/home)的指南。
+
+![在您的组织的联合受众组合中创建的受众列表。](../images/ui/overview/federated-audience-composition.png)
 
 ## 导入受众 {#import-audience}
 
