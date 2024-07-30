@@ -3,9 +3,9 @@ keywords: Experience Platform；故障诊断；护栏；指南；
 title: 数据引入的护栏
 description: 了解Adobe Experience Platform中的数据摄取防护。
 exl-id: f07751cb-f9d3-49ab-bda6-8e6fec59c337
-source-git-commit: 583eb70235174825dd542b95463784638bdef235
+source-git-commit: a574e30a12f56618e8bfaff988aa095025b36a28
 workflow-type: tm+mt
-source-wordcount: '669'
+source-wordcount: '721'
 ht-degree: 0%
 
 ---
@@ -34,6 +34,9 @@ ht-degree: 0%
 | 使用批处理源摄取数据湖 | <ul><li>您可以使用批量摄取源（如[!DNL Azure Blob]、[!DNL Amazon S3]和[!DNL SFTP]）每小时最多可摄取200 GB的数据到数据湖。</li><li>批次大小应介于256 MB和100 GB之间。 这同时适用于未压缩数据和压缩数据。 在数据湖中解压缩压缩数据时，将应用这些限制。</li><li>每批次的最大文件数为1500。</li><li>文件或文件夹的最小大小为1字节。 无法摄取0字节大小的文件或文件夹。</li></ul> | 请阅读[源概述](../sources/home.md)，了解可用于数据摄取的源目录。 |
 | 将批量摄取到配置文件 | <ul><li>记录类的最大大小为100 KB (hard)。</li><li>ExperienceEvent类的最大大小为10 KB (hard)。</li></ul> | |
 | 每天摄取的配置文件或ExperienceEvent批次数 | **每天摄取的Profile或ExperienceEvent批次的最大数量为90。**&#x200B;这意味着每天摄取的Profile和ExperienceEvent批次总数不能超过90。 摄取其他批次将影响系统性能。 | 这是一个软限制。 可以超出软限制，但是，软限制提供了系统性能推荐准则。 |
+| 加密的数据摄取 | 单个加密文件的最大支持大小为1 GB。 例如，虽然您可以在单个数据流运行中摄取2 GB或更多GB的数据，但数据流运行中的任何单个文件都不能超过1 GB。 | 有关详细信息，请阅读[加密数据摄取API指南](../sources/tutorials/api/encrypt-data.md)。 |
+
+{style="table-layout:auto"}
 
 ## 流式摄取的护栏
 
@@ -46,6 +49,8 @@ ht-degree: 0%
 | 摄取类型 | 准则 | 注释 |
 | --- | --- | --- |
 | 流源 | <ul><li>最大记录大小为1 MB，建议的大小为10 KB。</li><li>在摄取到数据湖时，流媒体源支持每秒钟在4000到5000个请求之间。 除了现有的源连接外，这还适用于新创建的源连接。 **注意**：流式处理数据最多可能需要30分钟才能完全处理到数据湖。</li><li>当将数据摄取到用户档案或流式分段时，流式源支持每秒最多1500个请求。</li></ul> | 流源（如[!DNL Kafka]、[!DNL Azure Event Hubs]和[!DNL Amazon Kinesis]）不使用[!DNL Data Collection Core Service] (DCCS)路由，因此可能有不同的吞吐量限制。 有关可用于数据摄取的源的目录，请参阅[源概述](../sources/home.md)。 |
+
+{style="table-layout:auto"}
 
 ## 后续步骤
 
