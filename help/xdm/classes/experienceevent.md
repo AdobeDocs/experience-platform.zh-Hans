@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM ExperienceEvent类
 description: 了解XDM ExperienceEvent类和事件数据建模的最佳实践。
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: 5537485206c1625ca661d6b33f7bba08538a0fa3
 workflow-type: tm+mt
-source-wordcount: '2672'
+source-wordcount: '2761'
 ht-degree: 0%
 
 ---
@@ -105,6 +105,7 @@ Adobe提供了多个标准字段组以用于[!DNL XDM ExperienceEvent]类。 以
 | `advertising.timePlayed` | 此事件可跟踪用户在特定定时媒体资源上花费的时间。 |
 | `application.close` | 此事件跟踪应用程序何时关闭或发送到后台。 |
 | `application.launch` | 此事件跟踪应用程序启动或进入前台的时间。 |
+| `click` | **已弃用**，请改用`decisioning.propositionInteract`。 |
 | `commerce.backofficeCreditMemoIssued` | 此事件跟踪向客户发出信用通知的时间。 |
 | `commerce.backofficeOrderCancelled` | 此事件跟踪以前启动的购买流程在完成前何时终止。 |
 | `commerce.backofficeOrderItemsShipped` | 此事件会跟踪购买的项目实际发运给客户的时间。 |
@@ -119,11 +120,12 @@ Adobe提供了多个标准字段组以用于[!DNL XDM ExperienceEvent]类。 以
 | `commerce.productViews` | 此事件跟踪产品何时收到一个或多个视图。 |
 | `commerce.purchases` | 此事件跟踪订单何时被接受。 这是商业转换中唯一需要执行的操作。 购买事件必须具有引用的产品列表。 |
 | `commerce.saveForLaters` | 此事件会跟踪产品列表在保存以供将来使用，例如产品愿望清单。 |
-| `decisioning.propositionDisplay` | 此事件跟踪向人员显示决策建议的时间。 |
-| `decisioning.propositionDismiss` | 此事件会跟踪何时决定不与提供的优惠合作。 |
-| `decisioning.propositionInteract` | 此事件跟踪人员与决策建议交互的时间。 |
+| `decisioning.propositionDisplay` | 当Web SDK自动发送有关页面上所显示内容的信息时，将使用此事件。 但是，如果您已经以其他方式包括显示信息（例如通过页面点击的顶部和底部），则不需要此事件类型。 对于页面点击的底部，您可以选择喜欢的任何事件类型。 |
+| `decisioning.propositionDismiss` | 在取消Adobe Journey Optimizer应用程序内消息或内容卡时，将使用此事件类型。 |
+| `decisioning.propositionFetch` | 用于指示某个事件主要用于获取决策。 Adobe Analytics将自动删除此事件。 |
+| `decisioning.propositionInteract` | 此事件类型用于跟踪个性化内容上的交互（例如点击）。 |
 | `decisioning.propositionSend` | 此事件会跟踪何时决定向潜在客户发送推荐或选件以供考虑。 |
-| `decisioning.propositionTrigger` | 此事件跟踪建议流程的激活情况。 已发生特定条件或操作来提示提供选件。 |
+| `decisioning.propositionTrigger` | 此类型的事件由[Web SDK](../../web-sdk/home.md)存储在本地存储中，但未发送到Experience Edge。 每次满足规则集时，都会生成一个事件并将其存储在本地存储中（如果该设置已启用）。 |
 | `delivery.feedback` | 此事件跟踪投放的反馈事件，如电子邮件投放。 |
 | `directMarketing.emailBounced` | 此事件可跟踪发送给人员的电子邮件何时退回。 |
 | `directMarketing.emailBouncedSoft` | 此事件可跟踪发送给人员的电子邮件何时软退回。 |
@@ -132,6 +134,7 @@ Adobe提供了多个标准字段组以用于[!DNL XDM ExperienceEvent]类。 以
 | `directMarketing.emailOpened` | 此事件可跟踪人员何时打开营销电子邮件。 |
 | `directMarketing.emailSent` | 此事件可跟踪营销电子邮件何时发送给人员。 |
 | `directMarketing.emailUnsubscribed` | 此事件跟踪人员何时取消订阅营销电子邮件。 |
+| `display` | **已弃用**，请改用`decisioning.propositionDisplay`。 |
 | `inappmessageTracking.dismiss` | 此事件跟踪何时取消应用程序内消息。 |
 | `inappmessageTracking.display` | 此事件会跟踪应用程序内消息的显示时间。 |
 | `inappmessageTracking.interact` | 此事件会跟踪与应用程序内消息交互的时间。 |
@@ -146,33 +149,34 @@ Adobe提供了多个标准字段组以用于[!DNL XDM ExperienceEvent]类。 以
 | `leadOperation.statusInCampaignProgressionChanged` | 此事件跟踪营销活动中的商机状态何时已更改。 |
 | `listOperation.addToList` | 此事件会跟踪将人员添加到营销列表的时间。 |
 | `listOperation.removeFromList` | 此事件跟踪人员从营销列表中移除的时间。 |
-| `media.adBreakComplete` | 此事件跟踪何时发生`adBreakComplete`事件。 此事件在广告时间开始时触发。 |
-| `media.adBreakStart` | 此事件跟踪何时发生`adBreakStart`事件。 此事件在广告时间结束时触发。 |
-| `media.adComplete` | 此事件跟踪何时发生`adComplete`事件。 此事件在广告完成时触发。 |
-| `media.adSkip` | 此事件跟踪何时发生`adSkip`事件。 此事件在跳过广告时触发。 |
-| `media.adStart` | 此事件跟踪何时发生`adStart`事件。 当广告开始时，将触发此事件。 |
-| `media.bitrateChange` | 此事件跟踪何时发生`bitrateChange`事件。 此事件在比特率发生更改时触发。 |
-| `media.bufferStart` | 此事件跟踪何时发生`bufferStart`事件。 当媒体开始缓冲时，将触发此事件。 |
-| `media.chapterComplete` | 此事件跟踪何时发生`chapterComplete`事件。 此事件在媒体中的章节结束时触发。 |
-| `media.chapterSkip` | 此事件跟踪何时发生`chapterSkip`事件。 当用户向前或向后跳到媒体内容中的其他部分或章节时，将触发此事件。 |
-| `media.chapterStart` | 此事件跟踪何时发生`chapterStart`事件。 此事件在媒体内容中的特定部分或章节开始时触发。 |
+| `media.adBreakComplete` | 此事件表示广告时间的结束。 |
+| `media.adBreakStart` | 此事件表示广告时间的开始。 |
+| `media.adComplete` | 此事件表示广告结束。 |
+| `media.adSkip` | 此事件在跳过广告时发出信号。 |
+| `media.adStart` | 此事件表示广告的开始。 |
+| `media.bitrateChange` | 此事件在比特率发生更改时发出信号。 |
+| `media.bufferStart` | 缓冲开始时发送`media.bufferStart`事件类型。 没有特定的`bufferResume`事件类型；在发生`bufferStart`事件后发送`play`事件时，将视为已恢复缓冲。 |
+| `media.chapterComplete` | 此事件表示章节结束。 |
+| `media.chapterSkip` | 当用户向前或向后跳到其他部分或章节时，将触发此事件。 |
+| `media.chapterStart` | 此事件表示章节的开始。 |
 | `media.downloaded` | 此事件跟踪媒体下载内容的发生时间。 |
-| `media.error` | 此事件跟踪何时发生`error`事件。 当媒体播放期间发生错误或问题时，将触发此事件。 |
-| `media.pauseStart` | 此事件跟踪何时发生`pauseStart`事件。 当用户启动媒体播放暂停时，将触发此事件。 |
-| `media.ping` | 此事件跟踪何时发生`ping`事件。 这将验证介质资源的可用性。 |
-| `media.play` | 此事件跟踪何时发生`play`事件。 此事件在媒体内容播放时触发，表示用户正在使用。 |
-| `media.sessionComplete` | 此事件跟踪何时发生`sessionComplete`事件。 此事件标记媒体播放会话的结尾。 |
-| `media.sessionEnd` | 此事件跟踪何时发生`sessionEnd`事件。 此事件表示媒体会话结束。 此结论可能涉及关闭媒体播放器或停止播放。 |
-| `media.sessionStart` | 此事件跟踪何时发生`sessionStart`事件。 此事件标记媒体播放会话的开始。 当用户开始播放媒体文件时触发。 |
-| `media.statesUpdate` | 此事件跟踪何时发生`statesUpdate`事件。 播放器状态跟踪功能可以附加到音频或视频流。 标准状态为：fullscreen、mute、closedCaptioning、pictureInPicture和inFocus。 |
+| `media.error` | 此事件表示媒体播放期间发生错误。 |
+| `media.pauseStart` | 此事件跟踪何时发生`pauseStart`事件。 当用户启动媒体播放暂停时，将触发此事件。 没有恢复事件类型。 在`pauseStart`后发送播放事件时推断为恢复。 |
+| `media.ping` | `media.ping`事件类型用于指示正在进行的播放状态。 对于主内容，在播放期间必须每10秒发送一次此事件，从播放开始后的10秒开始。 对于广告内容，必须在广告跟踪期间每秒发送一次。 Ping事件不应在请求正文中包含参数映射。 |
+| `media.play` | 当播放器从其他状态(如`buffering,` `paused` （用户恢复时）或`error` （恢复时），包括自动播放等场景)转换为`playing`状态时发送`media.play`事件类型。 此事件由播放器的`on('Playing')`回调触发。 |
+| `media.sessionComplete` | 当到达主内容的结尾时，将发送此事件。 |
+| `media.sessionEnd` | 当用户放弃查看并且不太可能返回时，`media.sessionEnd`事件类型会通知Media Analytics后端立即关闭会话。 如果未发送此事件，则会话将在处于不活动状态10分钟后超时，或者播放头未移动30分钟后超时。 任何使用该会话ID的后续媒体调用都将被忽略。 |
+| `media.sessionStart` | `media.sessionStart`事件类型随会话启动调用一起发送。 在收到响应时，将从Location标头中提取会话ID，并将其用于对收集服务器的所有后续事件调用。 |
+| `media.statesUpdate` | 此事件跟踪何时发生`statesUpdate`事件。 播放器状态跟踪功能可以附加到音频或视频流。 标准状态为： `fullscreen`、`mute`、`closedCaptioning`、`pictureInPicture`和`inFocus`。 |
 | `opportunityEvent.addToOpportunity` | 此事件跟踪人员添加到商机的时间。 |
 | `opportunityEvent.opportunityUpdated` | 此事件跟踪销售机会的更新时间。 |
 | `opportunityEvent.removeFromOpportunity` | 此事件跟踪人员从机会中删除的时间。 |
+| `personalization.request` | **已弃用**，请改用`decisioning.propositionFetch`。 |
 | `pushTracking.applicationOpened` | 此事件跟踪人员从推送通知中打开应用程序的时间。 |
 | `pushTracking.customAction` | 此事件跟踪人员何时在推送通知中选择了自定义操作。 |
 | `web.formFilledOut` | 此事件跟踪人员在网页上填写表单的时间。 |
-| `web.webinteraction.linkClicks` | 此事件跟踪链接何时已被选择一次或多次。 |
-| `web.webpagedetails.pageViews` | 此事件跟踪网页何时收到一个或多个视图。 |
+| `web.webinteraction.linkClicks` | 事件表示Web SDK已自动记录链接点击。 |
+| `web.webpagedetails.pageViews` | 此事件类型是将点击标记为页面查看的标准方法。 |
 | `location.entry` | 此事件跟踪人员或设备在特定位置的进入。 |
 | `location.exit` | 此事件跟踪人员或设备从特定位置的退出。 |
 
