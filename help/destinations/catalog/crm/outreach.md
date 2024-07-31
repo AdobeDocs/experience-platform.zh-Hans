@@ -3,7 +3,7 @@ keywords: CRM；CRM；CRM目标；外联；外联CRM目标
 title: 外联联系
 description: 外联目标允许您导出帐户数据，并在外联中激活它以满足您的业务需求。
 exl-id: 7433933d-7a4e-441d-8629-a09cb77d5220
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
 workflow-type: tm+mt
 source-wordcount: '1678'
 ht-degree: 2%
@@ -155,18 +155,20 @@ ht-degree: 2%
      ![Platform UI屏幕截图显示使用ExcelerationId的Target映射。](../../assets/catalog/crm/outreach/target-mapping.png)
 
    * 在XDM配置文件架构和[!DNL Outreach]实例之间添加以下映射：
-|XDM配置文件架构|[!DNL Outreach]实例| 必填|
-|—|—|—|
-|`Oid`|`OutreachId`| 是 |
+
+     | XDM配置文件架构 | [!DNL Outreach]实例 | 必需 |
+     |---|---|---|
+     | `Oid` | `OutreachId` | 是 |
 
    * **[!UICONTROL 选择自定义属性]**：选择此选项可将源字段映射到您在[!UICONTROL 属性名称]字段中定义的自定义属性。 有关支持的属性的完整列表，请参阅[[!DNL Outreach] 潜在客户文档](https://api.outreach.io/api/v2/docs#prospect)。
      ![Platform UI屏幕截图，显示使用LastName的Target映射。](../../assets/catalog/crm/outreach/target-mapping-lastname.png)
 
    * 例如，根据要更新的值，在XDM配置文件架构和[!DNL Outreach]实例之间添加以下映射：
-|XDM配置文件架构|[!DNL Outreach]实例|
-|—|—|
-|`person.name.firstName`|`firstName`|
-|`person.name.lastName`|`lastName`|
+
+     | XDM配置文件架构 | [!DNL Outreach]实例 |
+     |---|---|
+     | `person.name.firstName` | `firstName` |
+     | `person.name.lastName` | `lastName` |
 
    * 下面显示了使用这些映射的示例：
      ![显示Target映射的Platform UI屏幕快照示例。](../../assets/catalog/crm/outreach/mappings.png)

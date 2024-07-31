@@ -3,7 +3,7 @@ title: Mailchimp标记
 description: 通过Mailchimp标记目标，可导出帐户数据并在Mailchimp中激活以与联系人接洽。
 last-substantial-update: 2024-02-20T00:00:00Z
 exl-id: 0f278ca8-4fcf-4c47-b538-9cffa45a3d90
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
 workflow-type: tm+mt
 source-wordcount: '1646'
 ht-degree: 2%
@@ -175,9 +175,10 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
    ![Platform UI屏幕截图，目标字段为来自身份命名空间的电子邮件。](../../assets/catalog/email-marketing/mailchimp-tags/target-field.png)
 
    XDM配置文件架构与[!DNL Mailchimp Tags]之间的映射将如下所示：
-| Source字段 | 目标字段 | 必需 |
-| — | — | — |
-|`IdentityMap: Email`|`Identity: Email`| 是 |
+
+   | 源字段 | 目标字段 | 必需 |
+   | --- | --- | --- |
+   | `IdentityMap: Email` | `Identity: Email` | 是 |
 
    下面显示了具有已完成映射的示例：
    ![显示字段映射的Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/mailchimp-tags/mappings.png)

@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；流服务；
 title: 使用流服务API为按需引入创建流运行
 description: 了解如何使用流服务API为按需引入创建流运行
 exl-id: a7b20cd1-bb52-4b0a-aad0-796929555e4a
-source-git-commit: cea12160656ba0724789db03e62213022bacd645
+source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
 workflow-type: tm+mt
 source-wordcount: '797'
 ht-degree: 1%
@@ -104,6 +104,7 @@ curl -X POST \
 | --- | --- |
 | `id` | 新创建的流运行的ID。 有关基于表的运行规范的详细信息，请参阅[检索流规范](../api/collect/database-nosql.md#specs)指南。 |
 | `etag` | 流运行的资源版本。 |
+
 <!-- 
 | `createdAt` | The unix timestamp that designates when the flow run was created. |
 | `updatedAt` | The unix timestamp that designates when the flow run was last updated. |

@@ -3,7 +3,7 @@ title: SAP Commerce连接
 description: 使用SAP Commerce目标连接器更新SAP帐户中的客户记录。
 last-substantial-update: 2024-02-20T00:00:00Z
 exl-id: 3bd1a2a7-fb56-472d-b9bd-603b94a8937e
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
 workflow-type: tm+mt
 source-wordcount: '2246'
 ht-degree: 3%
@@ -194,6 +194,7 @@ ht-degree: 3%
 #### 映射`customerNumberSAP`标识
 
 `customerNumberSAP`标识是此目标的必需映射。 请按照以下步骤对其进行映射：
+
 1. 在&#x200B;**[!UICONTROL 映射]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL 添加新映射]**。 您现在可以在屏幕上看到新的映射行。
    ![突出显示了“添加新映射”按钮的Platform UI屏幕截图。](../../assets/catalog/ecommerce/sap-commerce/mapping-add-new-mapping.png)
 1. 在&#x200B;**[!UICONTROL 选择源字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择身份命名空间]**&#x200B;并选择`customerNumberSAP`。
@@ -211,6 +212,7 @@ ht-degree: 3%
 #### 映射属性
 
 要添加任何其他要在XDM配置文件架构和[!DNL SAP Subscription Billing]帐户之间更新的属性，请重复以下步骤：
+
 1. 在&#x200B;**[!UICONTROL 映射]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL 添加新映射]**。 您现在可以在屏幕上看到新的映射行。
    ![突出显示了“添加新映射”按钮的Platform UI屏幕截图。](../../assets/catalog/ecommerce/sap-commerce/mapping-add-new-mapping.png)
 1. 在&#x200B;**[!UICONTROL 选择源字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择属性]**类别并选择XDM属性。
@@ -302,8 +304,9 @@ ht-degree: 3%
 对每个激活的Platform受众重复此部分。
 
 根据上图所示，您已选择两个受众，映射将如下所示：
-| [!DNL SAP Commerce]受众名称 | [!DNL SAP Subscription Billing] **[!UICONTROL 引用类型]** | [!DNL SAP Commerce] **[!UICONTROL 映射ID]**值 |
-| — | — | — |
+
+| [!DNL SAP Commerce]受众名称 | [!DNL SAP Subscription Billing] **[!UICONTROL 引用类型]** | [!DNL SAP Commerce] **[!UICONTROL 映射ID]**&#x200B;值 |
+| --- | --- | --- |
 | sap_audience1 | `SAP_1` | `SAP_1` |
 | SAP受众2 | `SAP_2` | `SAP_2` |
 

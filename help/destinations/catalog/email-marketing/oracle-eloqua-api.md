@@ -3,10 +3,10 @@ title: (API)OracleEloqua连接
 description: 通过(API)OracleEloqua目标，您可以导出帐户数据，并在OracleEloqua中激活该数据，以满足您的业务需求。
 last-substantial-update: 2023-03-14T00:00:00Z
 exl-id: 97ff41a2-2edd-4608-9557-6b28e74c4480
-source-git-commit: cf7ad18fa3d8f074371a0f03e09e218d37be5e01
+source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
 workflow-type: tm+mt
 source-wordcount: '2033'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
 
@@ -148,19 +148,21 @@ ht-degree: 3%
 1. 在&#x200B;**[!UICONTROL 映射]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL 添加新映射]**。 您将在屏幕上看到一个新映射行。
 1. 在&#x200B;**[!UICONTROL 选择源字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择属性]**&#x200B;类别并选择XDM属性，或选择&#x200B;**[!UICONTROL 选择身份命名空间]**&#x200B;并选择身份。
 1. 在&#x200B;**[!UICONTROL 选择目标字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择标识命名空间]**&#x200B;并选择标识，或选择&#x200B;**[!UICONTROL 选择自定义属性]**&#x200B;并在&#x200B;**[!UICONTROL 属性名称]**&#x200B;字段中键入所需的属性名称。 您提供的属性名称应与[!DNL Oracle Eloqua]中的现有联系人属性匹配。 有关您可以在[!DNL Oracle Eloqua]中使用的确切属性名称，请参阅[[!DNL create a contact]](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-post.html)。
+
    * 重复这些步骤以在XDM配置文件架构和[!DNL Oracle Eloqua]之间添加所需的和任何所需的属性映射：
-| Source字段 | 目标字段 | 必需 |
-|—|—|—|
-|`IdentityMap: Eid`|`Identity: EloquaId`| 是 |
-|`xdm: personalEmail.address`|`Attribute: emailAddress`| 是 |
-|`xdm: personName.firstName`|`Attribute: firstName`| |
-|`xdm: personName.lastName`|`Attribute: lastName`| |
-|`xdm: workAddress.street1`|`Attribute: address1`| |
-|`xdm: workAddress.street2`|`Attribute: address2`| |
-|`xdm: workAddress.street3`|`Attribute: address3`| |
-|`xdm: workAddress.postalCode`|`Attribute: postalCode`| |
-|`xdm: workAddress.country`|`Attribute: country`| |
-|`xdm: workAddress.city`|`Attribute: city`| |
+
+     | 源字段 | 目标字段 | 必需 |
+     |---|---|---|
+     | `IdentityMap: Eid` | `Identity: EloquaId` | 是 |
+     | `xdm: personalEmail.address` | `Attribute: emailAddress` | 是 |
+     | `xdm: personName.firstName` | `Attribute: firstName` | |
+     | `xdm: personName.lastName` | `Attribute: lastName` | |
+     | `xdm: workAddress.street1` | `Attribute: address1` | |
+     | `xdm: workAddress.street2` | `Attribute: address2` | |
+     | `xdm: workAddress.street3` | `Attribute: address3` | |
+     | `xdm: workAddress.postalCode` | `Attribute: postalCode` | |
+     | `xdm: workAddress.country` | `Attribute: country` | |
+     | `xdm: workAddress.city` | `Attribute: city` | |
 
    * 下面显示了具有上述映射的示例：
      ![具有属性映射的Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/oracle-eloqua-api/mappings.png)

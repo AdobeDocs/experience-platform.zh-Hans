@@ -4,7 +4,7 @@ title: Microsoft Dynamics 365连接
 description: Microsoft Dynamics 365目标允许您导出帐户数据，并在Microsoft Dynamics 365中激活该数据，以满足您的业务需求。
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 49bb5c95-f4b7-42e1-9aae-45143bbb1d73
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
 workflow-type: tm+mt
 source-wordcount: '2019'
 ht-degree: 1%
@@ -170,9 +170,10 @@ ht-degree: 1%
      ![Platform UI屏幕截图显示联系人的目标映射。](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-contactid.png)
 
    * 在XDM配置文件架构和[!DNL Dynamics 365]实例之间添加以下映射：
-|XDM配置文件架构|[!DNL Dynamics 365]实例| 必填|
-|—|—|—|
-|`contactid`|`contactid`| 是 |
+
+     | XDM配置文件架构 | [!DNL Dynamics 365]实例 | 必需 |
+     |---|---|---|
+     | `contactid` | `contactid` | 是 |
 
    * **[!UICONTROL 选择自定义属性]**：选择此选项可将源字段映射到您在&#x200B;**[!UICONTROL 属性名称]**&#x200B;字段中定义的自定义属性。 请参阅[[!DNL Dynamics 365] 文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1#entity-properties)，获取受支持属性的完整列表。
      ![显示电子邮件目标映射的Platform UI屏幕截图。](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-email.png)
@@ -183,14 +184,16 @@ ht-degree: 1%
      > * 此外，如果您具有映射到[!DNL Dynamics 365] [日期或时间戳](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/reference/timestampdatemapping?view=dataverse-latest)目标字段的日期或时间戳源字段，请确保映射的值不为空。 如果导出的字段值为空，您将遇到&#x200B;*`Bad request reported while pushing events to the destination. Please contact the administrator and try again.`*&#x200B;错误消息，并且不会更新数据。 这是[!DNL Dynamics 365]限制。
 
    * 例如，根据要更新的值，在XDM配置文件架构和[!DNL Dynamics 365]实例之间添加以下映射：
-|XDM配置文件架构|[!DNL Dynamics 365]实例|
-|—|—|
-|`person.name.firstName`|`firstname`|
-|`person.name.lastName`|`lastname`|
-|`personalEmail.address`|`emailaddress1`|
+
+     | XDM配置文件架构 | [!DNL Dynamics 365]实例 |
+     |---|---|
+     | `person.name.firstName` | `firstname` |
+     | `person.name.lastName` | `lastname` |
+     | `personalEmail.address` | `emailaddress1` |
 
    * 下面显示了使用这些映射的示例：
-     ![显示Target映射的Platform UI屏幕快照示例。](../../assets/catalog/crm/microsoft-dynamics-365/mappings.png)
+
+   ![显示Target映射的Platform UI屏幕快照示例。](../../assets/catalog/crm/microsoft-dynamics-365/mappings.png)
 
 ### 计划受众导出和示例 {#schedule-audience-export-example}
 

@@ -4,7 +4,7 @@ title: LINE连接
 description: 利用LINE目标，可向平台受众添加用户档案，并为连接的用户提供个性化体验。
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 9981798a-61f2-4a09-9a33-57e63eb36d43
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
 workflow-type: tm+mt
 source-wordcount: '1190'
 ht-degree: 2%
@@ -121,8 +121,9 @@ ht-degree: 2%
 要将受众数据从Adobe Experience Platform正确发送到[!DNL LINE]目标，您需要完成字段映射步骤。 映射包括在您的Platform帐户中的Experience Data Model (XDM)架构字段与其在目标目标中的相应等效字段之间创建链接。 要将XDM字段正确映射到[!DNL LINE]目标字段，请执行以下步骤：
 
 根据您的源身份，必须映射以下目标身份命名空间：
-| 目标身份 | Source字段 | 目标字段 |
-| — | — | — |
+
+| 目标身份 | 源字段 | 目标字段 |
+| --- | --- | --- |
 | 广告商ID(IFA) | `IDFA`或`GAID` | `LineId` |
 | 行用户ID | `UserID` | `LineId` |
 

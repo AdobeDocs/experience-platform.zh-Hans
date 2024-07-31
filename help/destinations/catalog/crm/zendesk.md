@@ -3,10 +3,10 @@ title: Zendesk连接
 description: Zendesk目标允许您导出帐户数据，并在Zendesk中激活该数据，以满足您的业务需求。
 last-substantial-update: 2023-03-14T00:00:00Z
 exl-id: e7fcbbf4-5d6c-4abb-96cb-ea5b67a88711
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
 workflow-type: tm+mt
 source-wordcount: '1469'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -121,12 +121,14 @@ ht-degree: 2%
 1. 在&#x200B;**[!UICONTROL 映射]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL 添加新映射]**。 您将在屏幕上看到一个新映射行。
 1. 在&#x200B;**[!UICONTROL 选择源字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择属性]**&#x200B;类别并选择XDM属性，或选择&#x200B;**[!UICONTROL 选择身份命名空间]**&#x200B;并选择身份。
 1. 在&#x200B;**[!UICONTROL 选择目标字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择身份命名空间]**&#x200B;类别并选择目标身份，或选择&#x200B;**[!UICONTROL 选择属性]**&#x200B;类别并选择支持的架构属性之一。
+
    * 重复这些步骤以添加以下强制映射，您还可以添加任何其他要在XDM配置文件架构和[!DNL Zendesk]实例之间更新的属性：
-|Source字段|目标字段| 必填|
-|—|—|—|
-|`xdm: person.name.lastName`|`xdm: last_name`| 是 |
-|`IdentityMap: Email`|`Identity: email`| 是 |
-|`xdm: person.name.firstName`|`xdm: first_name`| |
+
+     | 源字段 | 目标字段 | 必需 |
+     |---|---|---|
+     | `xdm: person.name.lastName` | `xdm: last_name` | 是 |
+     | `IdentityMap: Email` | `Identity: email` | 是 |
+     | `xdm: person.name.firstName` | `xdm: first_name` | |
 
    * 下面显示了使用这些映射的示例：
      ![具有属性映射的Platform UI屏幕快照示例。](../../assets/catalog/crm/zendesk/mappings.png)

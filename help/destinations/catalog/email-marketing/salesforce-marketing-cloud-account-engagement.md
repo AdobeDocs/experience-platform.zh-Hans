@@ -3,7 +3,7 @@ title: SalesforceMarketing Cloud帐户参与度
 description: 了解如何使用SalesforceMarketing Cloud帐户参与（以前称为Pardot）目标导出您的帐户数据，并在SalesforceMarketing Cloud帐户参与中激活该数据，以满足您的业务需求。
 last-substantial-update: 2023-04-14T00:00:00Z
 exl-id: fca9d4f4-8717-4bfa-9992-5164ba98bea4
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
 workflow-type: tm+mt
 source-wordcount: '1532'
 ht-degree: 2%
@@ -153,11 +153,12 @@ ht-degree: 2%
 1. 在&#x200B;**[!UICONTROL 选择目标字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择标识命名空间]**&#x200B;并选择标识，或选择&#x200B;**[!UICONTROL 选择自定义属性]**&#x200B;类别并从可用架构的[[!DNL Prospect API fields]](https://developer.salesforce.com/docs/marketing/pardot/guide/prospect-v5.html#fields)列表中指定。
 
    * 重复这些步骤以在XDM配置文件架构和[!DNL Marketing Cloud Account Engagement]之间添加任何映射：
-| Source字段 | 目标字段 | 必需 |
-| — | — | — |
-|`IdentityMap: Email`|`Identity: email`| 是 |
-|`xdm: MailingAddress.city`|`xdm: city`| |
-|`xdm: person.name.firstName`|`Attribute: firstName`| |
+
+     | 源字段 | 目标字段 | 必需 |
+     | --- | --- | --- |
+     | `IdentityMap: Email` | `Identity: email` | 是 |
+     | `xdm: MailingAddress.city` | `xdm: city` | |
+     | `xdm: person.name.firstName` | `Attribute: firstName` | |
 
    * 下面显示了具有上述映射的示例：
      ![显示Target映射的Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/mappings.png)

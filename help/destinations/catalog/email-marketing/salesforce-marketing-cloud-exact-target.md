@@ -2,7 +2,7 @@
 title: (API) SalesforceMarketing Cloud连接
 description: 通过SalesforceMarketing Cloud（以前称为ExactTarget）目标，您可以导出帐户数据，并在SalesforceMarketing Cloud中激活该数据，以满足您的业务需求。
 exl-id: 0cf068e6-8a0a-4292-a7ec-c40508846e27
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
 workflow-type: tm+mt
 source-wordcount: '2895'
 ht-degree: 1%
@@ -241,7 +241,8 @@ ht-degree: 1%
 以下显示了[!DNL Salesforce Marketing Cloud]中的示例属性：
 ![显示属性的SalesforceMarketing CloudUI屏幕截图。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/salesforce-custom-field.png)
 
-下面显示了一个示例，用于指示[!DNL (API) Salesforce Marketing Cloud] **[!UICONTROL 映射ID]**的位置：
+下面显示了一个示例，用于指示[!DNL (API) Salesforce Marketing Cloud] **[!UICONTROL 映射ID]**&#x200B;的位置：
+
 ![显示计划受众导出的Platform UI屏幕截图示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/schedule-segment-export.png)
 
 如图所示，[!DNL (API) Salesforce Marketing Cloud] **[!UICONTROL 映射ID]**&#x200B;应与[!DNL Salesforce Marketing Cloud] **[!UICONTROL FIELD NAME]**&#x200B;中指定的值完全匹配。
@@ -249,8 +250,9 @@ ht-degree: 1%
 对每个激活的Platform区段重复此部分。
 
 基于上述图像的典型示例可能是。
+
 | [!DNL (API) Salesforce Marketing Cloud]区段名称 | [!DNL Salesforce Marketing Cloud] **[!UICONTROL 字段名称]** | [!DNL (API) Salesforce Marketing Cloud] **[!UICONTROL 映射ID]** |
-| — | — | — |
+| --- | --- | --- |
 | salesforce mc audience 1 | `salesforce_mc_segment_1` | `salesforce_mc_segment_1` |
 | salesforce mc audience 2 | `salesforce_mc_segment_2` | `salesforce_mc_segment_2` |
 

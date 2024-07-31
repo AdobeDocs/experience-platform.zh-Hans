@@ -3,10 +3,10 @@ title: Mailchimp兴趣类别
 description: Mailchimp（也称为Intuit Mailchimp）是一种流行的营销自动化平台和电子邮件营销服务，企业使用它来管理联系人（客户、客户或其他利益相关方），并使用邮件列表和电子邮件营销活动与其交谈。 使用此连接器可以根据联系人的兴趣和偏好对他们进行排序。
 last-substantial-update: 2023-05-24T00:00:00Z
 exl-id: bdce8295-7305-4d54-81c1-7fa3e580ce70
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
 workflow-type: tm+mt
 source-wordcount: '2299'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -168,12 +168,13 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 1. 在&#x200B;**[!UICONTROL 选择目标字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择身份命名空间]**&#x200B;并选择身份，或选择&#x200B;**[!UICONTROL 选择属性]**&#x200B;类别并从从[!DNL Mailchimp] API填充的属性列表中进行选择。 *您添加到选定[!DNL Mailchimp]受众的任何自定义属性也可用作目标字段进行选择。*
 
    XDM配置文件架构与[!DNL Mailchimp Interest Categories]之间的可用映射如下：
-| Source字段 | 目标字段 | 注释 |
-| — | — | — |
-|`IdentityMap: Email`|`Identity: email`| 必需：是 |
-|`xdm: person.name.firstName`|`Attribute: FNAME`| |
-|`xdm: person.name.lastName`|`Attribute: LNAME`| |
-|`xdm: person.birthDayAndMonth`|`Attribute: BIRTHDAY`| |
+
+   | 源字段 | 目标字段 | 注释 |
+   | --- | --- | --- |
+   | `IdentityMap: Email` | `Identity: email` | 必需：是 |
+   | `xdm: person.name.firstName` | `Attribute: FNAME` | |
+   | `xdm: person.name.lastName` | `Attribute: LNAME` | |
+   | `xdm: person.birthDayAndMonth` | `Attribute: BIRTHDAY` | |
 
    此外，`ADDRESS`是您[!DNL Mailchimp]受众中称为`merge field`的特殊目标字段。 [[!DNL Mailchimp] 文档](https://mailchimp.com/developer/marketing/docs/merge-fields/)将必需键定义为`addr1`、`city`、`state`和`zip`，并将可选键定义为`addr2`和`country`。 这些字段的值必须为字符串。 如果存在任何`ADDRESS`字段映射，则目标会将`ADDRESS`对象传递到[!DNL Mailchimp] API进行更新。 除国家/地区默认为`US`外，任何未映射的`ADDRESS`字段的值均默认为`NULL`。
 
