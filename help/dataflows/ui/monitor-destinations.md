@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中监视目标的数据流
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 19f1f64434d655d3b19260460519018fc9c8e174
+source-git-commit: ee63f5ee6cca98e0b5838dc2de656d1d615a0b3a
 workflow-type: tm+mt
-source-wordcount: '3337'
+source-wordcount: '3549'
 ht-degree: 10%
 
 ---
@@ -86,7 +86,7 @@ ht-degree: 10%
 
 每次数据流运行都会显示以下详细信息：
 
-- **[!UICONTROL 数据流运行开始]**：数据流运行开始的时间。 对于流式数据流运行，Experience Platform会以小时量度的形式，根据数据流运行的开始捕获量度。 对于流数据流运行，如果数据流运行开始（例如，晚上10:30），指标会在UI中将开始时间显示为晚上10:00。
+- **[!UICONTROL 数据流运行开始]**：数据流运行开始的时间。 对于流式数据流运行，Experience Platform会以小时量度的形式，根据数据流运行的开始捕获量度。 这意味着对于流数据流运行，如果数据流运行在例如10:30PM开始，则量度在UI中将开始时间显示为晚上10:00。
 - **[!UICONTROL 处理时间]**：数据流运行处理所花费的时间。
    - 对于&#x200B;**[!UICONTROL 已完成]**&#x200B;的运行，处理时间量度始终显示一个小时。
    - 对于仍处于&#x200B;**[!UICONTROL 处理]**&#x200B;状态的数据流运行，捕获所有量度的窗口将保持打开超过一小时，以便处理与该数据流运行对应的所有量度。 例如，上午9:30开始的数据流运行可能会保持处理状态1小时30分钟，以捕获和处理所有量度。 然后，在处理窗口关闭且数据流运行状态更新为&#x200B;**已完成**&#x200B;后，显示的处理时间将更改为1小时。
@@ -107,6 +107,16 @@ ht-degree: 10%
 详细信息页面还会显示失败的身份和排除的身份的列表。 显示失败和排除的标识的信息，包括错误代码、标识计数和描述。 默认情况下，列表会显示失败的标识。 要显示跳过的身份，请选择&#x200B;**[!UICONTROL 排除的身份]**&#x200B;切换开关。
 
 ![流目标的数据流记录中突出显示了错误消息。](../assets/ui/monitor-destinations/dataflow-records-stream.png)
+
+#### (Beta)对流式目标的受众级别数据流运行监控 {#audience-level-dataflow-runs-for-streaming-destinations}
+
+您可以查看有关在受众级别划分的激活、排除或失败身份的信息，这些信息适用于作为数据流一部分的每个受众。 这有助于您了解流目标的受众级别监视当前仅适用于[[!DNL Google Customer Match + Display & Video 360] 目标](/help/destinations/catalog/advertising/google-customer-match-dv360.md)。
+
+![流目标的受众级监控。](/help/dataflows/assets/ui/monitor-destinations/audience-level-monitoring-streaming.png)
+
+>[!NOTE]
+>
+>受众选项卡中接收的&#x200B;**[!UICONTROL 个人资料数]**&#x200B;与数据流运行中接收的个人资料数可能并不总是匹配。 这是因为给定配置文件可能包含在数据流运行中激活的多个受众。
 
 ### 批处理目标的数据流运行 {#dataflow-runs-for-batch-destinations}
 
@@ -166,12 +176,25 @@ ht-degree: 10%
 
 ![批处理目标的数据流记录中突出显示了错误消息。](../assets/ui/monitor-destinations/dataflow-records-batch.png)
 
+### 在监控中查看 {#view-in-monitoring}
+
+您还可以选择在监视仪表板中查看有关特定数据流及其数据流运行的丰富信息。 要在监视仪表板中查看有关数据流的信息，请执行以下操作：
+
+1. 导航到&#x200B;**[!UICONTROL 连接]** > **[!UICONTROL 目标]** > **[!UICONTROL 浏览]**&#x200B;选项卡
+2. 导航到要检查的数据流。
+3. 选择省略号符号和![监视图标](/help/images/icons/monitoring.png) **[!UICONTROL 在监视中查看]**。
+
+![在目标工作流中选择监视中的查看以获取有关数据流的详细信息。](/help/dataflows/assets/ui/monitor-destinations/view-in-monitoring.png)
+
+>[!SUCCESS]
+>
+>现在，您可以在监视仪表板中查看有关数据流及其关联的数据流运行的信息。 有关详细信息，请阅读以下部分。
+
 ## 监控目标仪表板 {#monitoring-destinations-dashboard}
 
 >[!NOTE]
 >
->- Experience Platform *中除* [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md)和[自定义个性化](/help/destinations/catalog/personalization/custom-personalization.md)目标之外的所有目标当前都支持目标监视功能。
->- 对于[Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)、[Azure事件中心](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)和[HTTP API](/help/destinations/catalog/streaming/http-destination.md)目标，估计了与排除、失败和激活的标识相关的指标。 较大量的激活数据会导致量度的准确性较高。
+>Experience Platform *中除* [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md)和[自定义个性化](/help/destinations/catalog/personalization/custom-personalization.md)目标之外的所有目标当前都支持目标监视功能。
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_activation"
@@ -208,17 +231,20 @@ ht-degree: 10%
 
 默认情况下，将显示&#x200B;**[!UICONTROL 激活]**&#x200B;图形，您可以禁用该图形以展开下面的目标列表。 选择&#x200B;**[!UICONTROL 度量和图形]**&#x200B;切换可禁用图形。
 
-**[!UICONTROL 激活]**&#x200B;面板显示至少包含一个现有帐户的目标列表。 此列表还包含有关这些目标接收的用户档案、激活的身份、失败的身份、排除的身份、激活率、失败数据流总数以及上次更新日期的信息。 并非所有量度都可用于所有目标类型。 下表概述了每个目标类型（流或批处理）的可用量度和信息。
+**[!UICONTROL 激活]**&#x200B;面板显示至少包含一个现有帐户的目标列表。 此列表还包含有关这些目标接收的用户档案、激活的身份、失败的身份、排除的身份、激活率、失败数据流总数以及上次更新日期的信息。 并非所有量度都可用于所有目标类型。 下表概述了每种目标类型可用的量度和信息。
 
 | 量度 | 目标类型 |
----------|----------|
-| **[!UICONTROL 已接收配置文件]** | 流式处理和批处理 |
-| **[!UICONTROL 身份已激活]** | 流式处理和批处理 |
-| **[!UICONTROL 标识失败]** | 流式处理 |
-| **[!UICONTROL 身份已排除]** | 流式处理和批处理 |
+|--------------------------------------|-----------------------|
+| **[!UICONTROL 已接收的记录]** | 流式处理和批处理 |
+| **[!UICONTROL 个记录已激活]** | 流式处理和批处理 |
+| **[!UICONTROL 个记录失败]** | 流式处理 |
+| **[!UICONTROL 跳过的记录数]** | 流式处理和批处理 |
+| **[!UICONTROL 数据类型]** | 流式处理和批处理 |
 | **[!UICONTROL 激活率]** | 流式处理 |
 | **[!UICONTROL 失败的数据流总数]** | 批次 |
 | **[!UICONTROL 上次更新时间]** | 流式处理和批处理 |
+
+{style="table-layout:auto"}
 
 ![所有激活的目标都突出显示的监视仪表板。](../assets/ui/monitor-destinations/dashboard-destinations.png)
 
@@ -256,15 +282,15 @@ ht-degree: 10%
 
 ### 受众级别视图 {#segment-level-view}
 
-选择&#x200B;**[!UICONTROL 受众]**&#x200B;后，您会看到在选定时间范围内激活到选定数据流的受众列表。 此屏幕包括受众级别的信息，其中包括有关激活的身份、排除的身份，以及上次数据流运行的状态和时间。 通过查看排除和激活的标识的量度，您可以验证受众是否已成功激活。
+选择&#x200B;**[!UICONTROL 受众]**&#x200B;后，您会看到在选定时间范围内激活到选定数据流的受众列表。 此屏幕包括受众级别的信息，其中包括有关已激活记录、已排除记录以及上次数据流运行的状态和时间的信息。 通过查看排除和激活记录的量度，您可以验证受众是否已成功激活。
 
-例如，您正在将名为“加利福尼亚的忠诚会员”的受众激活到Amazon S3目标“加利福尼亚十二月的忠诚会员”。 假设所选受众中有100个配置文件，但100个配置文件中只有80个包含忠诚度ID属性，并且您已将导出映射规则定义为需要`loyalty.id`。 在这种情况下，在受众级别，您将看到激活了80个身份，排除了20个身份。
+例如，您正在将名为“加利福尼亚的忠诚会员”的受众激活到Amazon S3目标“加利福尼亚十二月的忠诚会员”。 假设所选受众中有100个配置文件，但100条记录中只有80条包含忠诚度ID属性，并且您已将导出映射规则定义为需要`loyalty.id`。 在这种情况下，在受众级别，您将看到激活了80条记录，排除了20条记录。
 
 >[!IMPORTANT]
 >
 >请注意与受众级别量度相关的当前限制：
->- 受众级别视图当前仅适用于批处理目标。
->- 当前仅记录成功的数据流运行的受众级别量度。 失败的数据流运行和排除的记录不会记录这些事件。
+>- 受众级别视图当前仅适用于批处理（基于文件）目标和[Google Customer Match DV 360](/help/destinations/catalog/advertising/google-customer-match-dv360.md)流目标。 计划推出更多流媒体目标。
+>- 对于批处理目标，当前仅记录成功数据流运行的受众级别量度。 失败的数据流运行和排除的记录不会记录这些事件。 对于流目标的数据流运行，将捕获并显示激活和排除的记录的量度。
 
 ![数据流面板中高亮显示的受众。](../assets/ui/monitor-destinations/dashboard-segments-view.png)
 
@@ -273,13 +299,13 @@ ht-degree: 10%
 
 ### “数据流运行”页 {#dataflow-runs-page}
 
-“数据流运行”页面显示有关数据流运行的信息，包括数据流运行开始时间、处理时间、收到的配置文件、激活的身份、排除的身份、失败的身份、激活率和状态。
+“数据流运行”页面显示有关数据流运行的信息，包括数据流运行开始时间、处理时间、收到的记录、激活的记录、排除的记录、失败的记录、激活率和状态。
 
 当您从[受众级别视图](#segment-level-view)向下钻取到数据流运行页面时，您可以通过以下选项筛选数据流运行：
 
-- **[!UICONTROL 数据流使用失败的标识运行]**：对于所选受众，此选项列出所有激活失败的数据流运行。 要检查特定数据流运行中的标识失败的原因，请查看该数据流运行的[数据流运行详细信息页面](#dataflow-run-details-page)。
-- **[!UICONTROL 跳过标识的数据流运行]**：对于所选受众，此选项列出了某些标识未完全激活且某些配置文件被跳过的所有数据流运行。 要检查跳过某个数据流运行中的标识的原因，请查看该数据流运行的[数据流运行详细信息页面](#dataflow-run-details-page)。
-- **[!UICONTROL 数据流使用激活的标识运行]**：对于所选受众，此选项列出了具有已成功激活的标识的所有数据流运行。
+- **[!UICONTROL 数据流运行中记录失败]**：对于所选受众，此选项列出所有激活失败的数据流运行。 要检查特定数据流运行中的记录失败的原因，请查看该数据流运行的[数据流运行详细信息页面](#dataflow-run-details-page)。
+- **[!UICONTROL 数据流运行中排除的记录]**：对于所选受众，此选项列出了所有数据流运行，其中某些记录未完全激活，某些配置文件被跳过。 要检查某个数据流运行中的记录被跳过的原因，请查看该数据流运行的[数据流运行详细信息页面](#dataflow-run-details-page)。
+- **[!UICONTROL 数据流运行中激活了记录]**：对于所选受众，此选项列出具有已成功激活的记录的所有数据流运行。
 
 ![显示如何筛选受众数据流运行的单选按钮。](/help/dataflows/assets/ui/monitor-destinations/dataflow-runs-segment-filter.png)
 
@@ -295,13 +321,13 @@ ht-degree: 10%
 - **[!UICONTROL IMS组织ID]**：数据流所属的组织。
 - **[!UICONTROL 上次更新时间]**：上次更新数据流运行的时间。
 
-详细信息页面还有切换功能，可在数据流运行错误和受众之间切换。 此选项仅适用于在批处理目标中运行的数据流。
+详细信息页面还有切换功能，可在数据流运行错误和受众之间切换。 此选项仅适用于批处理目标中的数据流运行以及[Google Customer Match DV 360](/help/destinations/catalog/advertising/google-customer-match-dv360.md)流目标。
 
-数据流运行错误视图显示失败的身份和排除的身份的列表。 显示失败和排除的标识的信息，包括错误代码、标识计数和描述。 默认情况下，列表会显示失败的标识。 要显示跳过的身份，请选择&#x200B;**[!UICONTROL 排除的身份]**&#x200B;切换开关。
+数据流运行错误视图显示失败的记录和跳过的记录的列表。 显示失败和跳过的记录的信息，包括错误代码、身份计数和描述。 默认情况下，该列表会显示失败的记录。 要显示跳过的记录，请选择&#x200B;**[!UICONTROL 跳过的记录]**&#x200B;切换开关。
 
 在监视视图中突出显示![排除的身份切换](../assets/ui/monitor-destinations/identities-excluded.png)
 
-选择&#x200B;**[!UICONTROL 受众]**&#x200B;后，您会看到在选定数据流运行中激活的受众列表。 此屏幕包括受众级别的信息，其中包括有关激活的身份、排除的身份，以及上次数据流运行的状态和时间。
+选择&#x200B;**[!UICONTROL 受众]**&#x200B;后，您会看到在选定数据流运行中激活的受众列表。 此屏幕包括受众级别的信息，其中包括有关已激活记录、已排除记录以及上次数据流运行的状态和时间的信息。
 
 ![数据流运行详细信息屏幕中的受众视图。](../assets/ui/monitor-destinations/dataflow-run-segments-view.png)
 

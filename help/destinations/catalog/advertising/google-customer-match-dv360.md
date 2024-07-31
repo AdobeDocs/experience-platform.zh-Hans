@@ -3,9 +3,9 @@ title: Google客户匹配+显示和视频360连接
 description: 借助Google Customer Match + Display & Video 360目标连接器，您可以使用Experience Platform中的在线和离线数据在Google自有和运营的资产(如Search、Shopping、Gmail和YouTube)中与客户联系并重新互动。
 badgeBeta: label="Beta 版" type="Informative"
 exl-id: f6da3eae-bf3f-401a-99a1-2cca9a9058d2
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: c3de72a0f90578803b969f32cc484047089099bd
 workflow-type: tm+mt
-source-wordcount: '1935'
+source-wordcount: '1999'
 ht-degree: 1%
 
 ---
@@ -222,6 +222,12 @@ For details on how to find the [!DNL App ID], refer to the [Google official docu
 属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。
 
 ![应用激活工作流的映射步骤中突出显示的转换控件。](../../assets/catalog/advertising/google-customer-match-dv360/transformation.png)
+
+## 监视目标
+
+连接到目标并建立目标数据流后，您可以使用Real-Time CDP中的[监视功能](/help/dataflows/ui/monitor-destinations.md)获取有关在每次数据流运行中激活到目标的配置文件记录的更多信息。
+
+[!DNL Google Customer Match + Display & Video 360]连接的监视信息包括与每个数据流和数据流运行中激活、排除和失败的身份相关的受众级别信息。 详细了解该功能。
 
 ## 验证受众激活是否成功 {#verify-activation}
 
