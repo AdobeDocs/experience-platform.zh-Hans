@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中监视目标的数据流
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: ee63f5ee6cca98e0b5838dc2de656d1d615a0b3a
+source-git-commit: 27802292a7a06f2edaea9efc39d4a63507e0e7e1
 workflow-type: tm+mt
-source-wordcount: '3549'
+source-wordcount: '3542'
 ht-degree: 10%
 
 ---
@@ -110,13 +110,13 @@ ht-degree: 10%
 
 #### (Beta)对流式目标的受众级别数据流运行监控 {#audience-level-dataflow-runs-for-streaming-destinations}
 
-您可以查看有关在受众级别划分的激活、排除或失败身份的信息，这些信息适用于作为数据流一部分的每个受众。 这有助于您了解流目标的受众级别监视当前仅适用于[[!DNL Google Customer Match + Display & Video 360] 目标](/help/destinations/catalog/advertising/google-customer-match-dv360.md)。
+您可以查看有关在受众级别划分的激活、排除或失败身份的信息，这些信息适用于作为数据流一部分的每个受众。 流目标的受众级别监视当前仅适用于[[!DNL Google Customer Match + Display & Video 360] 目标](/help/destinations/catalog/advertising/google-customer-match-dv360.md)。
 
 ![流目标的受众级监控。](/help/dataflows/assets/ui/monitor-destinations/audience-level-monitoring-streaming.png)
 
 >[!NOTE]
 >
->受众选项卡中接收的&#x200B;**[!UICONTROL 个人资料数]**&#x200B;与数据流运行中接收的个人资料数可能并不总是匹配。 这是因为给定配置文件可能包含在数据流运行中激活的多个受众。
+>**[!UICONTROL 受众]**&#x200B;选项卡中接收的&#x200B;**[!UICONTROL 配置文件数]**&#x200B;与数据流运行中接收的配置文件数可能并不总是匹配。 这是因为给定配置文件可能包含在数据流运行中激活的多个受众。
 
 ### 批处理目标的数据流运行 {#dataflow-runs-for-batch-destinations}
 
