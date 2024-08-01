@@ -5,10 +5,10 @@ title: 标签API端点
 description: 了解如何使用策略服务API管理Experience Platform中的数据使用标签。
 role: Developer
 exl-id: 9a01f65c-01f1-4298-bdcf-b7e00ccfe9f2
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 77d68a42b16c78cdc2b55f7776ba1c8ec98d8acd
 workflow-type: tm+mt
-source-wordcount: '504'
-ht-degree: 3%
+source-wordcount: '536'
+ht-degree: 2%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->`/labels`端点仅用于检索、创建和更新数据使用标签。 有关如何使用API调用向数据集和字段添加标签的步骤，请参阅[管理数据集标签](../labels/dataset-api.md)指南。
+>`/labels`端点仅用于检索、创建和更新数据使用标签。 您无法删除标签。 但是，您可以使用API调用向数据集和字段添加或删除标签。 有关说明，请参阅[管理数据集标签](../labels/dataset-api.md)文档。
 
 ## 快速入门
 
@@ -163,6 +163,10 @@ curl -X GET \
 ## 创建或更新自定义标签 {#create-update}
 
 要创建或更新自定义标签，您必须向[!DNL Policy Service] API发出PUT请求。
+
+>[!NOTE]
+>
+>如果要从数据集中删除标签，可以对数据集服务API](../labels/dataset-api.md#remove)执行[PUT请求，或者使用[数据集UI](../labels/user-guide.md#remove-labels-from-a-dataset)。
 
 **API格式**
 

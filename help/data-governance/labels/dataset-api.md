@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用API管理数据集的数据使用标签
 description: 数据集服务API允许您应用和编辑数据集的使用标签。 它是Adobe Experience Platform数据目录功能的一部分，但与管理数据集元数据的目录服务API不同。
 exl-id: 24a8d870-eb81-4255-8e47-09ae7ad7a721
-source-git-commit: 8db484e4a65516058d701ca972fcbcb6b73abb31
+source-git-commit: 9eda7068eb2a3fd5e59fbeff69c85abfad5ccf39
 workflow-type: tm+mt
-source-wordcount: '1314'
+source-wordcount: '1340'
 ht-degree: 1%
 
 ---
@@ -166,6 +166,10 @@ curl -X POST \
 ## 从数据集中删除标签 {#remove}
 
 您可以通过更新具有现有字段标签子集的现有`optionalLabels`值，或通过使用空列表完全删除它们，来删除任何以前应用的字段标签。 向[!DNL Dataset Service] API发出PUT请求以更新或删除以前应用的标签。
+
+>[!NOTE]
+>
+>通过为`labels`参数提供空列表，可以完全删除数据集的标签。 数据集不必保留任何标签。
 
 **API格式**
 
