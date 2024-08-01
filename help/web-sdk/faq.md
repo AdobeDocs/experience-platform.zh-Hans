@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK常见问题解答
 description: 获取有关Adobe Experience Platform Web SDK的常见问题解答。
 exl-id: 6ddb4b4d-c9b8-471a-bd2e-135dc4202876
-source-git-commit: 002a57d1d5cfb2e7bdbd9b587e77ca4487a28f65
+source-git-commit: cd2ac132c77d5d2e90c0f881d7b89a3c339fed6f
 workflow-type: tm+mt
-source-wordcount: '2268'
+source-wordcount: '2184'
 ht-degree: 2%
 
 ---
@@ -198,16 +198,6 @@ Adobe Experience Platform Web SDK旨在以最佳方式在Google Chrome、Safari�
 ```
 
 此标记将加载一个脚本以确保`window.Promise`是有效的Promise实施。
-
->[!NOTE]
->
->如果选择加载其他Promise实现，请确保它支持`Promise.prototype.finally`。
-
-### 支持Explorer
-
-Adobe Experience Platform SDK使用promise ，这是一种用于通信异步任务完成情况的方法。 除[!DNL Internet Explorer]之外，SDK使用的[Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)实现本身受所有目标浏览器支持。 要在[!DNL Internet Explorer]上使用SDK，您必须具有`window.Promise` [polyfilled](https://remysharp.com/2010/10/08/what-is-a-polyfill)。
-
-有一个可用于聚合填充promise的库是promise-polyfill。 有关如何使用NPM安装的更多信息，请参阅[promise-polyfill文档](https://www.npmjs.com/package/promise-polyfill)。
 
 >[!NOTE]
 >
