@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中管理数据使用标签
 description: 本指南介绍在Adobe Experience Platform用户界面中使用数据使用标签的步骤。
 exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
-source-git-commit: c1722c59c437215ce578a1a44cf0cad3b03ceca9
+source-git-commit: a5efc45f0043cd6eb4a209737b9e430c85ea2f14
 workflow-type: tm+mt
-source-wordcount: '1549'
+source-wordcount: '1548'
 ht-degree: 17%
 
 ---
@@ -36,7 +36,7 @@ ht-degree: 17%
 >
 >![检测到数据治理策略违规对话框，违规摘要和数据历程图突出显示。](../images/labels/policy-violation-dialog.png)
 >
->有关部分策略违规的详细信息，请参阅[数据使用策略违规文档](../enforcement/auto-enforcement.md#data-usage-violation)。
+>有关策略违规的详细信息，请参阅[数据使用策略违规文档](../enforcement/auto-enforcement.md#data-usage-violation)。
 
 要在架构级别管理数据使用标签，您必须选择现有架构或创建新架构。 登录Adobe Experience Platform后，在左侧导航中选择&#x200B;**[!UICONTROL 架构]**&#x200B;以打开&#x200B;**[!UICONTROL 架构]**&#x200B;工作区。 此页面列出了属于您组织的所有已创建的方案，以及与每个方案相关的有用详细信息。
 
