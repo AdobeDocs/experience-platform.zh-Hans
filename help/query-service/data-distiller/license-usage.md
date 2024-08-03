@@ -2,9 +2,9 @@
 title: 监控批量查询许可证使用情况
 description: Adobe Experience Platform UI提供了一个功能板，通过该功能板，您可以查看有关贵组织的Data Distiller许可证使用情况的重要信息。
 exl-id: a1e365a0-cc65-4fd6-b36f-8d79b7d9ec7c
-source-git-commit: f33629d73e9bc7273e6ee5170294618f3e9731a8
+source-git-commit: f3542105e423633e2bdf0f8e8501c1a1dc200f32
 workflow-type: tm+mt
-source-wordcount: '279'
+source-wordcount: '254'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->**[!UICONTROL 计算小时数]数据可用，但有限制**：数据从2023年10月1日开始，没有趋势。从合同开始日期算起的<br>数据的&#x200B;**回填**&#x200B;正在处理中。 预计在日历年年底之前提供。
+>**[!UICONTROL 计算小时数]数据可用，但有限制**：数据从2023年10月1日开始，没有趋势。
 
 ![已突出显示计算小时量度的许可证使用情况仪表板。](../images/data-distiller/compute-hours.png)
 
