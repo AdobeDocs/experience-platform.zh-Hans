@@ -3,9 +3,9 @@ title: 受众API端点
 description: 使用Adobe Experience Platform分段服务API中的受众端点，以编程方式创建、管理和更新贵组织的受众。
 role: Developer
 exl-id: cb1a46e5-3294-4db2-ad46-c5e45f48df15
-source-git-commit: 87b491339469e69653cad79b657bd1edfbca1de9
+source-git-commit: 914174de797d7d5f6c47769d75380c0ce5685ee2
 workflow-type: tm+mt
-source-wordcount: '1879'
+source-wordcount: '1869'
 ht-degree: 2%
 
 ---
@@ -73,7 +73,6 @@ curl -X GET https://platform.adobe.io/data/core/ups/audiences?limit=2 \
             "schema": {
                 "name": "_xdm.context.profile"
             },
-            "ttlInDays": 60,
             "profileInstanceId": "ups",
             "imsOrgId": "{ORG_ID}",
             "sandbox": {
@@ -236,8 +235,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences
         },
         "labels": [
           "core/C1"
-        ],
-        "ttlInDays": 60
+        ]
     }'
 ```
 
@@ -249,7 +247,6 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences
 | `expression` | 受众的Profile Query Language (PQL)表达式。 有关PQL表达式的详细信息，请参阅[PQL表达式指南](../pql/overview.md)。 |
 | `schema` | 受众的体验数据模型(XDM)架构。 |
 | `labels` | 与受众相关的对象级别数据使用和基于属性的访问控制标签。 |
-| `ttlInDays` | 表示受众的数据过期值（以天为单位）。 |
 
 +++
 
@@ -317,7 +314,6 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences
      "schema": {
       "name": "_xdm.context.profile"
     },
-    "ttlInDays": 60,
     "profileInstanceId": "ups",
     "imsOrgId": "{ORG_ID}",
     "sandbox": {
@@ -462,7 +458,6 @@ curl -X GET https://platform.adobe.io/data/core/ups/audiences/60ccea95-1435-4180
     "schema": {
         "name": "_xdm.context.profile"
     },
-    "ttlInDays": 60,
     "profileInstanceId": "ups",
     "imsOrgId": "{ORG_ID}",
     "sandbox": {
@@ -619,7 +614,6 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-45
     "schema": {
         "name": "_xdm.context.profile"
     },
-    "ttlInDays": 60,
     "profileInstanceId": "ups",
     "imsOrgId": "{ORG_ID}",
     "sandbox": {
@@ -845,7 +839,6 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences/bulk-get
          "schema": {
             "name": "_xdm.context.profile"
          },
-         "ttlInDays": 30,
          "imsOrgId": "{ORG_ID}",
          "sandbox": {
             "sandboxId": "6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
