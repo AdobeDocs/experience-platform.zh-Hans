@@ -2,9 +2,9 @@
 title: 使用流服务API创建Salesforce基本连接
 description: 了解如何使用Flow Service API将Adobe Experience Platform连接到Salesforce帐户。
 exl-id: 43dd9ee5-4b87-4c8a-ac76-01b83c1226f6
-source-git-commit: 7d450ba3357389a2934f187e4838e534d698dd4a
+source-git-commit: 5951b0f549c2fd2723945f8f4089d12f73b92e6c
 workflow-type: tm+mt
-source-wordcount: '774'
+source-wordcount: '782'
 ht-degree: 3%
 
 ---
@@ -36,7 +36,7 @@ ht-degree: 3%
 
 | 凭据 | 描述 |
 | --- | --- |
-| `environmentUrl` | [!DNL Salesforce]源实例的URL。 |
+| `environmentUrl` | [!DNL Salesforce]源实例的URL。 `environmentUrl`的格式为`https://[domain].my.salesforce.com`。 |
 | `username` | [!DNL Salesforce]用户帐户的用户名。 |
 | `password` | [!DNL Salesforce]用户帐户的密码。 |
 | `securityToken` | [!DNL Salesforce]用户帐户的安全令牌。 |
@@ -51,7 +51,7 @@ ht-degree: 3%
 
 | 凭据 | 描述 |
 | --- | --- |
-| `environmentUrl` | [!DNL Salesforce]源实例的URL。 |
+| `environmentUrl` | [!DNL Salesforce]源实例的URL。 `environmentUrl`的格式为`https://[domain].my.salesforce.com` |
 | `clientId` | 在OAuth2身份验证中，客户端ID与客户端密钥结合使用。 客户端ID和客户端密钥共同使您的应用程序能够代表您的帐户运行，方法是向[!DNL Salesforce]标识您的应用程序。 |
 | `clientSecret` | 客户端密钥与客户端ID结合使用，作为OAuth2身份验证的一部分。 客户端ID和客户端密钥共同使您的应用程序能够代表您的帐户运行，方法是向[!DNL Salesforce]标识您的应用程序。 |
 | `apiVersion` | 您正在使用的[!DNL Salesforce]实例的REST API版本。 API版本的值必须使用小数格式设置。 例如，如果您使用的是API版本`52`，则必须以`52.0`的形式输入值。 如果此字段留空，则Experience Platform将自动使用最新可用版本。 此值对于OAuth2客户端凭据身份验证是必需的。 |
