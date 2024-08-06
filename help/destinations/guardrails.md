@@ -6,7 +6,7 @@ product: experience platform
 type: Documentation
 description: 了解有关数据激活默认使用量和速率限制的更多信息。
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 5d6b70e397a252e037589c3200053ebcb7eb8291
+source-git-commit: 322510055bd8b8803292a2b4af9df9e1dbee7ffb
 workflow-type: tm+mt
 source-wordcount: '1685'
 ht-degree: 2%
@@ -92,7 +92,7 @@ ht-degree: 2%
 
 ### Edge个性化目标激活 {#edge-destinations-activation}
 
-以下护栏适用于通过[边缘个性化目标](/help/destinations/destination-types.md#streaming-profile-export)进行的激活。
+以下护栏适用于通过[边缘个性化目标](/help/destinations/destination-types.md#advanced-enterprise-destinations)进行的激活。
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |

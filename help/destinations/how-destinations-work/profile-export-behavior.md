@@ -2,7 +2,7 @@
 title: 配置文件导出行为
 description: 了解在Experience Platform目标中支持的各种集成模式之间，配置文件导出行为如何变化。
 exl-id: 2be62843-0644-41fa-a860-ccd65472562e
-source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
+source-git-commit: 322510055bd8b8803292a2b4af9df9e1dbee7ffb
 workflow-type: tm+mt
 source-wordcount: '2931'
 ht-degree: 0%
@@ -44,7 +44,7 @@ Experience Platform目标会以HTTPS调用的形式将数据导出到基于API�
 >
 > 企业目标仅适用于[Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
-Experience Platform中的[企业目标](/help/destinations/destination-types.md#streaming-profile-export)是Amazon Kinesis、Azure事件中心和HTTP API。
+Experience Platform中的[企业目标](/help/destinations/destination-types.md#advanced-enterprise-destinations)是Amazon Kinesis、Azure事件中心和HTTP API。
 
 Experience Platform可优化将配置文件导出到企业目标的行为，以便仅在符合受众资格或其他重要事件后对配置文件进行了相关更新时将数据导出到API端点。 在以下情况下，会将配置文件导出到您的目标：
 

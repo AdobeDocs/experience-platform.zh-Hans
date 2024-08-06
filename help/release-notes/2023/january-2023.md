@@ -2,7 +2,7 @@
 title: Adobe Experience Platform 发行说明（2023 年 1 月）
 description: Adobe Experience Platform 的 2023 年 1 月发行说明。
 exl-id: 461898ce-5683-4ab1-9167-ac25843a1ff8
-source-git-commit: d23f1cc9dd0155aceae78bf938d35463e9c38181
+source-git-commit: 322510055bd8b8803292a2b4af9df9e1dbee7ffb
 workflow-type: tm+mt
 source-wordcount: '2224'
 ht-degree: 99%
@@ -175,7 +175,7 @@ Adobe Experience Platform 使您能够为客户提供协调、一致且相关的
 
 启用后，一个区段中合格的配置文件将表示为 `Realized`，不合格的配置将继续表示为 `Exited`。这会为具有 `Active` 和 `Expired` 区段状态的基于文件的目标带来对等性。
 
-如果您正在使用[企业目标](../../destinations/destination-types.md#streaming-profile-export) (Amazon Kinesis, Azure Event Hubs, HTTP API)，并且可能已根据 `Existing` 状态将下游流程自动化，则此更改可能会对您产生影响。如果您属于这种情况，请检查您的下游集成。如果您有兴趣在一定时间后识别新获得资格的配置文件，请考虑在您的区段成员关系图中使用 `Realized` 状态和 `lastQualificationTime` 的组合。有关更多信息，请与您的 Adobe 代表联系。
+如果您正在使用[企业目标](../../destinations/destination-types.md#advanced-enterprise-destinations) (Amazon Kinesis, Azure Event Hubs, HTTP API)，并且可能已根据 `Existing` 状态将下游流程自动化，则此更改可能会对您产生影响。如果您属于这种情况，请检查您的下游集成。如果您有兴趣在一定时间后识别新获得资格的配置文件，请考虑在您的区段成员关系图中使用 `Realized` 状态和 `lastQualificationTime` 的组合。有关更多信息，请与您的 Adobe 代表联系。
 
 要详细了解实时客户配置文件，包括使用配置文件数据的教程和最佳实践，请首先阅读[实时客户配置文件概述](../../profile/home.md)。
 

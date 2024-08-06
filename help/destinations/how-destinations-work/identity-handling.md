@@ -2,7 +2,7 @@
 title: 目标激活工作流中的身份处理
 description: 了解如何在激活工作流中处理身份导出，具体取决于目标类型
 exl-id: f4894a08-c7a9-4d57-a6d3-660c49206d6a
-source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
+source-git-commit: 322510055bd8b8803292a2b4af9df9e1dbee7ffb
 workflow-type: tm+mt
 source-wordcount: '1163'
 ht-degree: 0%
@@ -92,7 +92,7 @@ ht-degree: 0%
 
 ## 企业目标 {#enterprise-destinations}
 
-[企业目标](/help/destinations/destination-types.md#streaming-profile-export) ([!DNL Amazon Kinesis]、[!DNL Azure Event Hubs]、HTTP API)在数据导出中不需要特定ID，因为这些是专为企业集成用例设计的。 但是，您可以根据需要将身份导出为XDM属性或从身份映射中导出。 查看导出到HTTP目标](/help/destinations/catalog/streaming/http-destination.md#exported-data)的数据的[示例，其中包含`personalEmail.address` XDM属性以及标识映射中的标识`ECID`和`email_lc_sha256`（经过哈希处理的电子邮件地址）。
+[企业目标](/help/destinations/destination-types.md#advanced-enterprise-destinations) ([!DNL Amazon Kinesis]、[!DNL Azure Event Hubs]、HTTP API)在数据导出中不需要特定ID，因为这些是专为企业集成用例设计的。 但是，您可以根据需要将身份导出为XDM属性或从身份映射中导出。 查看导出到HTTP目标](/help/destinations/catalog/streaming/http-destination.md#exported-data)的数据的[示例，其中包含`personalEmail.address` XDM属性以及标识映射中的标识`ECID`和`email_lc_sha256`（经过哈希处理的电子邮件地址）。
 
 ## Personalization目标 {#personalization-destinations}
 
