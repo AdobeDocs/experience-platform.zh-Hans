@@ -5,14 +5,20 @@ title: 在数据科学Workspace UI中为模型评分
 type: Tutorial
 description: 在Adobe Experience Platform数据科学Workspace中，可通过将输入数据馈送到现有的已训练模型来实现评分。 评分结果将作为新批次存储在指定的输出数据集中并可供查看。
 exl-id: 00d6a872-d71a-47f4-8625-92621d4eed56
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '647'
+source-wordcount: '670'
 ht-degree: 1%
 
 ---
 
 # 在数据科学Workspace UI中为模型评分
+
+>[!NOTE]
+>
+>数据科学Workspace不再可供购买。
+>
+>本文档面向之前有权访问数据科学Workspace的现有客户。
 
 通过将输入数据馈送到现有的经过训练的模型，可以达到Adobe Experience Platform [!DNL Data Science Workspace]中的得分。 评分结果将作为新批次存储在指定的输出数据集中并可供查看。
 
@@ -26,7 +32,7 @@ ht-degree: 1%
 
 ## 创建新的评分运行
 
-评分运行是使用先前完成并评估的训练运行中的优化配置创建的。 模型的最佳配置集通常通过查看训练运行评估指标来确定。
+使用先前完成和评估的培训运行中的优化配置来创建评分运行。 模型的最佳配置集通常通过查看培训运行评估指标来确定。
 
 找到最佳训练运行，以使用其配置进行评分。 然后，通过选择附加到其名称的超链接来打开所需的训练运行。
 
@@ -63,9 +69,9 @@ ht-degree: 1%
 
 ## 查看评分结果
 
-要查看评分结果，请从选择训练运行开始。
+要查看评分结果，请先选择培训运行。
 
-![选择训练运行](../images/models-recipes/score/select-run.png)
+![选择培训运行](../images/models-recipes/score/select-run.png)
 
 您将被重定向到训练运行&#x200B;**[!UICONTROL 评估]**&#x200B;页面。 在训练运行评估页面顶部附近，选择&#x200B;**[!UICONTROL 评分运行]**&#x200B;选项卡以查看现有评分运行的列表。
 
@@ -95,4 +101,4 @@ ht-degree: 1%
 
 ## 后续步骤
 
-本教程将指导您完成在[!DNL Data Science Workspace]中使用经过训练的模型为数据评分的步骤。 按照有关[在UI中发布模型即服务](./publish-model-service-ui.md)的教程进行操作，通过提供对机器学习服务的轻松访问，允许组织内的用户评分数据。
+本教程向您介绍了使用[!DNL Data Science Workspace]中经过培训的模型为数据分数的步骤。 按照[在UI中发布模型作为服务](./publish-model-service-ui.md)上的教程进行操作，通过提供对机器学习服务的轻松访问，组织内的用户可以对数据进行评分。

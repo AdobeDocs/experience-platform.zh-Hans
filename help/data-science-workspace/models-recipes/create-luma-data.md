@@ -5,14 +5,20 @@ title: 创建Luma Web架构和数据集
 type: Tutorial
 description: 本教程向您提供Luma演示倾向模型所需的先决条件和资产。
 exl-id: a791e532-1116-4407-b745-fd6c2ac0d8f7
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '456'
+source-wordcount: '479'
 ht-degree: 0%
 
 ---
 
 # 创建Luma倾向模型架构和数据集
+
+>[!NOTE]
+>
+>数据科学Workspace不再可供购买。
+>
+>本文档面向之前有权访问数据科学Workspace的现有客户。
 
 本教程提供了所有其他[!DNL Adobe Experience Platform] [!DNL Data Science Workspace]教程所需的先决条件和资源。 完成后，您和您的组织可以使用以下架构和数据集。
 

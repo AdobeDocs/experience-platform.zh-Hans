@@ -5,14 +5,20 @@ title: 使用Sensei机器学习API导入打包的方法
 type: Tutorial
 description: 本教程使用Sensei机器学习API创建引擎，在用户界面中也称为“方法”。
 exl-id: c8dde30b-5234-448d-a597-f1c8d32f23d4
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '995'
+source-wordcount: '1018'
 ht-degree: 3%
 
 ---
 
 # 使用Sensei机器学习API导入打包的方法
+
+>[!NOTE]
+>
+>数据科学Workspace不再可供购买。
+>
+>本文档面向之前有权访问数据科学Workspace的现有客户。
 
 本教程使用[[!DNL Sensei Machine Learning API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml)创建一个[引擎](../api/engines.md)，在用户界面中又称为“方法”。
 
@@ -43,15 +49,15 @@ ht-degree: 3%
 
 ## 创建引擎
 
-可以通过向/engines端点发出POST请求来创建引擎。 已创建引擎的配置基于打包的方法文件的形式，打包的方法文件必须作为API请求的一部分包含。
+可以通过向/engines端点发出POST请求来创建引擎。 创建的引擎会根据打包的Recipe文件的形式进行配置，该文件必须包含在API请求中。
 
-### 创建具有Docker URL的引擎 {#create-an-engine-with-a-docker-url}
+### 使用Docker URL创建引擎 {#create-an-engine-with-a-docker-url}
 
-要使用存储在Docker容器中的打包的配方文件创建引擎，您必须为打包的配方文件提供Docker URL。
+要使用存储在Docker容器中的打包的配方文件创建引擎，您必须提供指向打包的配方文件的Docker URL。
 
 >[!CAUTION]
 >
-> 如果您使用的是[!DNL Python]或R，请使用下面的请求。 如果您使用的是PySpark或Scala，请使用Python/R示例下方的PySpark/Scala请求示例。
+> 如果您使用的是[!DNL Python]或R，请使用下面的请求。 如果您使用的是PySpark或Scala，请使用位于Python/R示例下方的PySpark/Scala请求示例。
 
 **API格式**
 
@@ -87,12 +93,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------  | ----------- |
-| `engine.name` | 引擎所需的名称。 与此引擎对应的方法将继承此值，以方法名称的形式显示在[!DNL Data Science Workspace]用户界面中。 |
-| `engine.description` | 引擎的可选描述。 与此引擎对应的方法将继承此值，以方法说明的形式显示在[!DNL Data Science Workspace]用户界面中。 请勿删除此属性，如果您选择不提供描述，请将此值设置为空字符串。 |
+| `engine.name` | 引擎所需的名称。 与此引擎对应的处方将继承此值，以作为处方名称显示在[!DNL Data Science Workspace]用户界面中。 |
+| `engine.description` | 引擎的可选说明。 与此引擎对应的处方将继承此值，以作为处方说明显示在[!DNL Data Science Workspace]用户界面中。 请勿删除此属性，如果您选择不提供描述，请将此值设置为空字符串。 |
 | `engine.type` | 引擎的执行类型。 此值对应于在其中开发Docker图像的语言。 当提供Docker URL以创建引擎时，`type`是`Python`、`R`、`PySpark`、`Spark` (Scala)或`Tensorflow`。 |
 | `artifacts.default.image.location` | 您的`{DOCKER_URL}`转到此处。 完整的Docker URL具有以下结构： `your_docker_host.azurecr.io/docker_image_file:version` |
 | `artifacts.default.image.name` | Docker图像文件的附加名称。 不要删除此属性，如果您选择不提供额外的Docker图像文件名，请将此值设置为空字符串。 |
-| `artifacts.default.image.executionType` | 此引擎的执行类型。 此值对应于在其中开发Docker图像的语言。 当提供Docker URL以创建引擎时，`executionType`是`Python`、`R`、`PySpark`、`Spark` (Scala)或`Tensorflow`。 |
+| `artifacts.default.image.executionType` | 此引擎的执行类型。 此值对应于开发Docker图像时使用的语言。 当提供Docker URL以创建引擎时，`executionType`为`Python`、`R`、`PySpark`、`Spark` (Scala)或`Tensorflow`。 |
 
 **请求PySpark**
 
@@ -125,7 +131,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `name` | 引擎所需的名称。 与此引擎对应的方法将继承此值，以方法名称的形式显示在UI中。 |
-| `description` | 引擎的可选描述。 与此引擎对应的方法将继承此值，以作为方法的描述显示在UI中。 此属性是必需的。 如果您不想提供描述，请将其值设置为空字符串。 |
+| `description` | 引擎的可选描述。 与此引擎对应的处方将继承此值，以作为处方说明显示在UI中。 此属性为必填。 如果您不想提供描述，请将其值设置为空字符串。 |
 | `type` | 引擎的执行类型。 此值对应于在“PySpark”上构建Docker图像的语言。 |
 | `mlLibrary` | 创建PySpark和Scala配方的引擎时所需的字段。 |
 | `artifacts.default.image.location` | Docker URL链接到的Docker图像的位置。 |
@@ -163,10 +169,10 @@ curl -X POST \
 | --- | --- |
 | `name` | 引擎所需的名称。 与此引擎对应的方法将继承此值，以方法名称的形式显示在UI中。 |
 | `description` | 引擎的可选描述。 与此引擎对应的方法将继承此值，以作为方法的描述显示在UI中。 此属性是必需的。 如果您不想提供描述，请将其值设置为空字符串。 |
-| `type` | 引擎的执行类型。 此值对应于在“Spark”上构建Docker图像的语言。 |
-| `mlLibrary` | 创建PySpark和Scala配方的引擎时所需的字段。 |
-| `artifacts.default.image.location` | Docker URL链接到的Docker图像的位置。 |
-| `artifacts.default.image.executionType` | 引擎的执行类型。 此值对应于在“Spark”上构建Docker图像的语言。 |
+| `type` | 引擎的执行类型。 此值对应于在“Spark”上构建Docker图像所使用的语言。 |
+| `mlLibrary` | 为PySpark和Scala配方创建引擎时所需的字段。 |
+| `artifacts.default.image.location` | 通过Docker URL链接到的Docker图像的位置。 |
+| `artifacts.default.image.executionType` | 引擎的执行类型。 此值对应于在“Spark”上构建Docker图像所使用的语言。 |
 
 **响应**
 
@@ -197,8 +203,8 @@ curl -X POST \
 }
 ```
 
-成功的响应会显示包含有关新创建引擎的信息的JSON有效负荷。 `id`键代表唯一的引擎标识符，在下一个教程中需要使用该键来创建MLInstance。 在继续后续步骤之前，请确保已保存引擎标识符。
+成功的响应将显示JSON负载，其中包含有关新创建的引擎的信息。 `id`键表示唯一的引擎标识符，在下一个教程中需要使用此键来创建MLInstance。 确保已保存引擎标识符，然后再继续执行后续步骤。
 
 ## 后续步骤 {#next-steps}
 
-您已使用API创建引擎，并且在响应正文中获取了唯一的引擎标识符。 在学习如何使用API[创建、训练和评估模型时，可以在下一个教程中使用此引擎标识符](./train-evaluate-model-api.md)。
+您已使用API创建引擎，并且已获得唯一的引擎标识符作为响应正文的一部分。 在学习如何使用API[创建、训练和评估模型时，可以在下一个教程中使用此引擎标识符](./train-evaluate-model-api.md)。

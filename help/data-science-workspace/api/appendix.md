@@ -1,18 +1,24 @@
 ---
-keywords: Experience Platform；开发人员指南；端点；数据科学Workspace；热门主题；
+keywords: Experience Platform；开发人员指南；端点；数据科学工作区；热门主题；
 solution: Experience Platform
 title: Sensei机器学习API指南附录
-description: 以下部分提供Sensei机器学习API各种功能的参考信息。
+description: 以下章节提供了Sensei机器学习API各种功能的参考信息。
 role: Developer
 exl-id: 2c8d3ae8-7ad7-4ff6-8d6b-3a42d3eccdff
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '330'
+source-wordcount: '353'
 ht-degree: 1%
 
 ---
 
 # [!DNL Sensei Machine Learning] API指南附录
+
+>[!NOTE]
+>
+>Data Science Workspace不再可购买。
+>
+>本文档面向之前有权访问数据科学Workspace的现有客户。
 
 以下部分提供[!DNL Sensei Machine Learning] API各种功能的参考信息。
 
@@ -22,9 +28,9 @@ ht-degree: 1%
 
 | 查询参数 | 描述 | 默认值 |
 | --------------- | ----------- | ------- |
-| `start` | 指示分页的开始索引。 | `start=0` |
+| `start` | 指示分页的起始索引。 | `start=0` |
 | `limit` | 指示要返回的最大结果数。 | `limit=25` |
-| `orderby` | 指示用于按优先级排序的属性。 在属性名称前添加一个破折号(**-**)以按降序排序，否则结果将按升序排序。 | `orderby=created` |
+| `orderby` | 指示用于按优先级排序的属性。 在属性名称前包含破折号(**-**)可按降序排序，否则结果将按升序排序。 | `orderby=created` |
 | `property` | 指示对象必须满足才能返回的比较表达式。 | `property=deleted==false` |
 
 >[!NOTE]
@@ -74,7 +80,7 @@ Python引擎能够在CPU或GPU之间进行选择，用于训练或评分，并�
 
 ## PySpark和Spark资源配置 {#resource-config}
 
-Spark引擎能够修改计算资源以进行训练和评分。 下表介绍了这些资源：
+Spark Engines能够修改计算资源以进行培训和评分。 下表介绍了这些资源：
 
 | 资源 | 描述 | 类型 |
 | -------- | ----------- | ---- |

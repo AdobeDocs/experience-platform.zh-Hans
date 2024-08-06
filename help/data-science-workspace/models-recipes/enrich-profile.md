@@ -5,14 +5,20 @@ title: 利用机器学习见解丰富实时客户档案
 type: Tutorial
 description: 本文档提供了有关如何使用机器学习见解丰富Real-time Customer Profile的指南。
 exl-id: 397023c9-383d-4a21-b58a-0f920631ac56
-source-git-commit: afa27069c7490848398c92973dd77810564b5993
+source-git-commit: 923c6f2deb4d1199cfc5dc9dc4ca7b4da154aaaa
 workflow-type: tm+mt
-source-wordcount: '630'
+source-wordcount: '653'
 ht-degree: 0%
 
 ---
 
 # 使用机器学习见解丰富[!DNL Real-Time Customer Profile]
+
+>[!NOTE]
+>
+>数据科学Workspace不再可供购买。
+>
+>本文档面向之前有权访问数据科学Workspace的现有客户。
 
 Adobe Experience Platform [!DNL Data Science Workspace]提供了用于创建、评估和利用机器学习模型生成数据预测和洞察的工具和资源。 将机器学习分析摄取到启用了[!DNL Profile]的数据集时，还会将该相同数据作为[!DNL Profile]记录摄取，然后可以使用[!DNL Adobe Experience Platform Segmentation Service]对其进行分段。
 

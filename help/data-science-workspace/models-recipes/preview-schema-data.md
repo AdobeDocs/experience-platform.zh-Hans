@@ -5,14 +5,20 @@ title: 预览零售架构和数据集
 type: Tutorial
 description: 以下文档概述了在Adobe Experience Platform上预览架构和数据集。
 exl-id: dca9835b-4f76-42cc-b262-b20323bf4356
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '236'
+source-wordcount: '259'
 ht-degree: 3%
 
 ---
 
 # 预览零售架构和数据集
+
+>[!NOTE]
+>
+>数据科学Workspace不再可供购买。
+>
+>本文档面向之前有权访问数据科学Workspace的现有客户。
 
 成功完成[零售架构和数据集](./create-retails-sales-dataset.md)教程中的引导脚本后。 可以在[!DNL Experience Platform]上查看输出架构和数据集。 要查看架构和数据集，请执行以下步骤：
 

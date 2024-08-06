@@ -4,14 +4,20 @@ solution: Experience Platform
 title: Real-time Machine Learning入门
 description: 以下文档概述了在Adobe Experience Platform中创建实时机器学习模型所需的步骤。
 exl-id: 90a1c580-f6e7-4517-aa1e-da5092fbc4a2
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '438'
+source-wordcount: '461'
 ht-degree: 0%
 
 ---
 
 # Real-time Machine Learning入门(Alpha)
+
+>[!NOTE]
+>
+>数据科学Workspace不再可供购买。
+>
+>本文档面向之前有权访问数据科学Workspace的现有客户。
 
 >[!IMPORTANT]
 >

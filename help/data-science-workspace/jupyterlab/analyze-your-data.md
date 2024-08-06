@@ -5,14 +5,20 @@ title: 使用笔记本分析数据
 type: Tutorial
 description: 本教程重点介绍如何使用内置于Data Science Workspace中的Jupyter Notebooks来访问、探索和可视化您的数据。
 exl-id: 3b0148d1-9c08-458b-9601-979cb6c7a0fb
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '1706'
+source-wordcount: '1729'
 ht-degree: 0%
 
 ---
 
 # 使用笔记本分析数据
+
+>[!NOTE]
+>
+>数据科学Workspace不再可供购买。
+>
+>本文档面向之前有权访问数据科学Workspace的现有客户。
 
 本教程重点介绍如何使用内置于Data Science Workspace中的Jupyter Notebooks来访问、探索和可视化您的数据。 在本教程结束时，您应该了解Jupyter Notebooks提供的一些功能，以便更好地了解您的数据。
 

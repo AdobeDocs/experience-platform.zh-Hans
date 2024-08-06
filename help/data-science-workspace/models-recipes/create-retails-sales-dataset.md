@@ -5,15 +5,21 @@ title: 创建零售架构和数据集
 type: Tutorial
 description: 本教程提供了所有其他Adobe Experience Platform数据科学Workspace教程所需的先决条件和资源。 完成后，零售架构和数据集将可供您和贵组织的成员在Experience Platform时使用。
 exl-id: 1b868c8c-7c92-4f99-8486-54fd7aa1af48
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '534'
+source-wordcount: '557'
 ht-degree: 2%
 
 ---
 
 
 # 创建零售架构和数据集
+
+>[!NOTE]
+>
+>数据科学Workspace不再可供购买。
+>
+>本文档面向之前有权访问数据科学Workspace的现有客户。
 
 本教程提供了所有其他[!DNL Adobe Experience Platform] [!DNL Data Science Workspace]教程所需的先决条件和资源。 完成后，零售架构和数据集将在[!DNL Experience Platform]上为您和您的组织成员提供。
 

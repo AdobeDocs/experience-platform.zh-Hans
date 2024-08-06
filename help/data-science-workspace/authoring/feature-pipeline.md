@@ -2,20 +2,26 @@
 keywords: Experience Platform；教程；功能管道；数据科学Workspace；热门主题
 title: 使用模型创作SDK创建功能管道
 type: Tutorial
-description: Adobe Experience Platform允许您构建和创建自定义功能管道，以通过Sensei机器学习框架运行时大规模执行功能工程。 本文档介绍了功能管道中的各种类，并分步说明了如何使用PySpark中的模型创作SDK创建自定义功能管道。
+description: Adobe Experience Platform允许您构建和创建自定义功能管道，以通过Sensei机器学习框架运行时大规模执行功能工程。 本文档介绍在功能管道中找到的各种类，并提供使用PySpark中的模型创作SDK创建自定义功能管道的分步教程。
 exl-id: c2c821d5-7bfb-4667-ace9-9566e6754f98
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '1415'
+source-wordcount: '1438'
 ht-degree: 0%
 
 ---
 
-# 使用模型创作SDK创建功能管道
+# 使用模型创作SDK创建特征管线
+
+>[!NOTE]
+>
+>Data Science Workspace不再可购买。
+>
+>本文档适用于先前有权使用Data Science Workspace的现有客户。
 
 >[!IMPORTANT]
 >
-> 功能管道目前只能通过API使用。
+> 功能管道目前仅通过API提供。
 
 Adobe Experience Platform允许您构建和创建自定义功能管道，以通过Sensei机器学习框架运行时（以下简称“运行时”）大规模执行功能工程。
 
@@ -48,8 +54,8 @@ Adobe Experience Platform允许您构建和创建自定义功能管道，以通�
 | 抽象类 | 描述 |
 | -------------- | ----------- |
 | 数据加载程序 | DataLoader类提供用于检索输入数据的实现。 |
-| DatasetTransformer | DatasetTransformer类提供用于转换输入数据集的实现。 您可以选择不提供DatasetTransformer类，而是在FeaturePipelineFactory类中实施功能工程逻辑。 |
-| 功能管道工厂 | FeaturePipelineFactory类构建由一系列Spark转换器组成的Spark管线以执行特征工程。 您可以选择不提供FeaturePipelineFactory类，而是在DatasetTransformer类中实施功能工程逻辑。 |
+| DatasetTransformer | DatasetTransformer类提供转换输入数据集的实现。 您可以选择不提供DatasetTransformer类，而是在FeaturePipelineFactory类中实现您的功能工程逻辑。 |
+| FeaturePipesFactory | FeaturePipelineFactory类构建由一系列Spark变换器组成的Spark管道以执行功能工程。 您可以选择不提供FeaturePipelineFactory类，而是在DatasetTransformer类中实现您的功能工程逻辑。 |
 | DataSaver | DataSaver类为功能数据集的存储提供逻辑。 |
 
 启动功能管道作业时，运行时首先执行DataLoader以将输入数据作为DataFrame加载，然后通过执行DatasetTransformer和/或FeaturePipelineFactory来修改DataFrame。 最后，生成的功能数据集通过DataSaver进行存储。
@@ -61,7 +67,7 @@ Adobe Experience Platform允许您构建和创建自定义功能管道，以通�
 
 ## 实施功能管道类 {#implement-your-feature-pipeline-classes}
 
-以下部分提供了有关为功能管道实施所需类的详细信息和示例。
+以下各节提供了有关为“特征管线”实现所需类的详细信息和示例。
 
 ### 在配置JSON文件中定义变量 {#define-variables-in-the-configuration-json-file}
 
@@ -283,9 +289,9 @@ class MyFeaturePipelineFactory(FeaturePipelineFactory):
 
 ### 使用DataSaver存储您的功能数据集 {#store-your-feature-dataset-with-datasaver}
 
-DataSaver负责将生成的功能数据集存储到存储位置。 DataSaver的实现必须扩展抽象类`DataSaver`并覆盖抽象方法`save`。
+DataSaver负责将生成的功能数据集存储到一个存储位置。 DataSaver的实现必须扩展抽象类`DataSaver`并重写抽象方法`save`。
 
-以下示例扩展了按ID将数据存储到[!DNL Platform]数据集的DataSaver类，其中数据集ID (`featureDatasetId`)和租户ID (`tenantId`)在配置中定义了属性。
+以下示例扩展了按ID将数据存储到[!DNL Platform]数据集的DataSaver类，其中数据集ID (`featureDatasetId`)和租户ID (`tenantId`)是在配置中定义的属性。
 
 **PySpark示例**
 
@@ -416,15 +422,15 @@ https://www.postman.com/collections/c5fc0d1d5805a5ddd41a
 
 ### 指定试验运行训练任务 {#training}
 
-接下来，您需要[指定训练运行任务](../api/experiments.md#experiment-training-scoring)。 向`experiments/{EXPERIMENT_ID}/runs`发出POST，并在正文中将模式设置为`train`，并发送包含训练参数的任务数组。 成功的响应将返回包含所请求试验详细信息的有效负载。
+接下来，您需要[指定训练运行任务](../api/experiments.md#experiment-training-scoring)。 向`experiments/{EXPERIMENT_ID}/runs`发出POST，并在正文中将模式设置为`train`，并发送包含训练参数的任务数组。 成功的响应将返回包含所请求实验详细信息的有效负载。
 
-完成后，向`/experiments/{EXPERIMENT_ID}`发出GET请求以[检索试验状态](../api/experiments.md#retrieve-specific)，并等待试验状态更新完成。
+完成后，请向`/experiments/{EXPERIMENT_ID}`发出GET请求，以请求[检索实验状态](../api/experiments.md#retrieve-specific)，并等待实验状态更新以完成。
 
 ### 指定试验运行评分任务 {#scoring}
 
 >[!NOTE]
 >
-> 要完成此步骤，您需要至少有一个与试验关联的成功训练运行。
+> 要完成此步骤，您至少需要有一个与您的实验相关的成功培训运行。
 
 在训练运行成功后，您需要[指定评分运行任务](../api/experiments.md#experiment-training-scoring)。 向`experiments/{EXPERIMENT_ID}/runs`发出POST，并在正文中将`mode`属性设置为“score”。 这将开始您的评分实验运行。
 

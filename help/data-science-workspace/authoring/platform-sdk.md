@@ -4,14 +4,20 @@ solution: Experience Platform
 title: 使用Adobe Experience Platform Platform SDK创作模型
 description: 本教程向您提供有关在Python和R中将data_access_sdk_python转换为新Python platform_sdk的信息。
 exl-id: 20909cae-5cd2-422b-8dbb-35bc63e69b2a
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '486'
+source-wordcount: '509'
 ht-degree: 3%
 
 ---
 
 # 使用Adobe Experience Platform [!DNL Platform] SDK创作模型
+
+>[!NOTE]
+>
+>数据科学Workspace不再可供购买。
+>
+>本文档面向之前有权访问数据科学Workspace的现有客户。
 
 本教程为您提供有关在Python和R中将`data_access_sdk_python`转换为新Python `platform_sdk`的信息。本教程提供了有关以下操作的信息：
 

@@ -1,32 +1,38 @@
 ---
-keywords: Experience Platform；JupyterLab；笔记本；数据科学Workspace；热门主题；查询服务
+keywords: 体验平台;朱皮特实验室;笔记本;数据科学工作区;热门话题;查询服务
 solution: Experience Platform
-title: Jupyter Notebook中的查询服务
+title: Jupyter 笔记本中的查询服务
 type: Tutorial
 description: 通过将Query Service作为标准功能集成到JupyterLab中，Adobe Experience Platform允许您在数据科学Workspace中使用结构化查询语言(SQL)。 本教程演示了用于探索、转换和分析Adobe Analytics数据的常见用例的示例SQL查询。
 exl-id: c5ac7d11-a3bd-4ef8-a650-9f496a8bbaa7
-source-git-commit: d1b571fe72208cf2f2ae339273f05cc38dda9845
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '822'
+source-wordcount: '845'
 ht-degree: 0%
 
 ---
 
-# Jupyter Notebook中的查询服务
+# Jupyter 笔记本中的查询服务
 
-[!DNL Adobe Experience Platform]允许您通过将[!DNL Query Service]作为标准功能集成到[!DNL JupyterLab]中，在[!DNL Data Science Workspace]中使用结构化查询语言(SQL)。
+>[!NOTE]
+>
+>不再可供购买数据科学工作区。
+>
+>本文档适用于先前有权访问数据科学工作区的现有客户。
 
-本教程演示了用于探索、转换和分析[!DNL Adobe Analytics]数据的常见用例的示例SQL查询。
+[!DNL Adobe Experience Platform]允许您通过作为[!DNL Query Service][!DNL JupyterLab]标准功能集成到中使用结构化查询语言 （SQL[!DNL Data Science Workspace]）。
+
+本教程演示了常见用例的示例 SQL 查询，以探索、转换和分析 [!DNL Adobe Analytics] 数据。
 
 ## 快速入门
 
-在开始本教程之前，您必须满足以下先决条件：
+在开始本教程之前，您必须具备以下先决条件：
 
-- 访问[!DNL Adobe Experience Platform]。 如果您无权访问[!DNL Experience Platform]中的组织，请在继续之前与系统管理员交谈
+- 访问[!DNL Adobe Experience Platform]。 如果您在[!DNL Experience Platform]中无权访问某个组织，请在继续操作之前与系统管理员联系
 
 - [!DNL Adobe Analytics]数据集
 
-- 对本教程中使用的以下关键概念有了实际了解：
+- 了解本教程中使用的以下关键概念：
    - [[!DNL Experience Data Model (XDM) and XDM System]](../../xdm/home.md)
    - [[!DNL Query Service]](../../query-service/home.md)
    - [[!DNL Query Service SQL Syntax]](../../query-service/sql/overview.md)
@@ -48,15 +54,15 @@ ht-degree: 0%
 
    >[!NOTE]
    >
-   >Python 3是当前笔记本中唯一支持查询服务的环境。
+   >Python 3是目前唯一支持笔记本查询服务的环境。
 
-3. 在左选择边栏上，单击&#x200B;**[!UICONTROL 数据]**&#x200B;图标，然后双击&#x200B;**[!UICONTROL 数据集]**&#x200B;目录以列出所有数据集。
+3. 在左侧选择边栏上，单击 **[!UICONTROL 数据]** 图标，然后双击 **[!UICONTROL 数据集]** 目录以列出所有数据集。
 
    ![](../images/jupyterlab/query/dataset.png)
 
-4. 查找要浏览的[!DNL Adobe Analytics]数据集并右键单击列表，单击&#x200B;**[!UICONTROL 在笔记本中查询数据]**&#x200B;以在空笔记本中生成SQL查询。
+4. 找到要浏览的[!DNL Adobe Analytics]数据集并右键单击列表，单击“在笔记本&#x200B;]**中查询数据”**[!UICONTROL &#x200B;以在空笔记本中生成 SQL 查询。
 
-5. 单击包含函数`qs_connect()`的第一个生成的单元格，然后单击播放按钮执行该单元格。 此函数创建笔记本实例与[!DNL Query Service]之间的连接。
+5. 单击包含函数 `qs_connect()` 的第一个生成的单元格，并通过单击播放按钮执行它。 此函数创建笔记本实例与[!DNL Query Service]之间的连接。
 
    ![](../images/jupyterlab/query/execute.png)
 
@@ -68,7 +74,7 @@ ht-degree: 0%
 
    ![](../images/jupyterlab/query/insert_cell.gif)
 
-8. 在新单元格中复制、粘贴和执行以下import语句。 这些语句将用于可视化您的数据：
+8. 在新单元格中复制、粘贴并执行以下导入语句。 这些语句将用于可视化您的数据：
 
    ```python
    import plotly.plotly as py
@@ -76,7 +82,7 @@ ht-degree: 0%
    from plotly.offline import iplot
    ```
 
-9. 接下来，将以下变量复制并粘贴到新单元格中。 根据需要修改它们的值，然后执行它们。
+9. 接下来，将以下变量复制并粘贴到新单元格中。 根据需要修改其值，然后执行它们。
 
    ```python
    target_table = "your Adobe Analytics dataset name"
@@ -85,22 +91,22 @@ ht-degree: 0%
    target_day = "01"
    ```
 
-   - `target_table`： [!DNL Adobe Analytics]数据集的名称。
-   - `target_year`：目标数据来自的特定年份。
-   - `target_month`：目标来自的特定月份。
-   - `target_day`：目标数据来自的特定日期。
+   - `target_table`：数据集 [!DNL Adobe Analytics] 的名称。
+   - `target_year`：目标数据来源的特定年份。
+   - `target_month`：目标所在的特定月份。
+   - `target_day`：目标数据的来源日。
 
    >[!NOTE]
    >
    >您可以随时更改这些值。 执行此操作时，请确保执行变量单元格以应用更改。
 
-## 查询您的数据 {#query-your-data}
+## 查询数据 {#query-your-data}
 
-在单个笔记本单元格中输入以下SQL查询。 选择查询的单元格，然后选择&#x200B;**[!UICONTROL 播放]**&#x200B;按钮，以执行查询。 成功的查询结果或错误日志显示在执行的单元格下方。
+在单个笔记本单元格中输入以下SQL查询。 通过选择其单元格，然后选择&#x200B;**[!UICONTROL 播放]**&#x200B;按钮来执行查询。 成功的查询结果或错误日志显示在执行的单元格下方。
 
 当笔记本长时间处于非活动状态时，笔记本与[!DNL Query Service]之间的连接可能会中断。 在这种情况下，通过选择位于电源按钮右上角的&#x200B;**重新启动**&#x200B;按钮![重新启动按钮](/help/images/icons/restart.png)来重新启动[!DNL JupyterLab]。
 
-笔记本内核将重置，但单元格将保留，重新运行所有单元格以继续运行之前停止的操作。
+笔记本内核将重置，但单元格将保留，重新运行所有单元格以继续之前停止的位置。
 
 ### 每小时访客计数 {#hourly-visitor-count}
 
@@ -160,13 +166,13 @@ GROUP  BY Day, Hour
 ORDER  BY Hour;
 ```
 
-执行上述查询会将结果作为数据流存储在`hourly_actions`中。 在新单元格中执行以下函数以预览结果：
+执行上述查询会将结果作为数据帧存储在`hourly_actions`中。 在新单元格中执行以下函数以预览结果：
 
 ```python
 hourly_actions.head()
 ```
 
-可以修改上述查询，以便使用&#x200B;**WHERE**&#x200B;子句中的逻辑运算符返回指定日期范围内的每小时操作计数：
+可以修改上述查询，以使用&#x200B;**WHERE**&#x200B;子句中的逻辑运算符返回指定日期范围的每小时操作计数：
 
 #### 查询<!-- omit in toc -->
 
@@ -223,11 +229,11 @@ fig = go.Figure(data = data, layout = layout)
 iplot(fig)
 ```
 
-### 给定日期的受欢迎页面 {#popular-pages-for-a-given-day}
+### 给定日期的热门页面 {#popular-pages-for-a-given-day}
 
-以下查询返回指定日期十个最受欢迎的页面：
+以下查询返回指定日期内最热门的十个页面：
 
-#### 查询<!-- omit in toc -->
+#### 查询 <!-- omit in toc -->
 
 ```sql
 %%read_sql popular_pages -c QS_CONNECTION
@@ -240,11 +246,11 @@ ORDER  BY page_views DESC
 LIMIT  10;
 ```
 
-### 给定日的活动用户 {#active-users-for-a-given-day}
+### 给定日期的活动用户 {#active-users-for-a-given-day}
 
 以下查询返回指定日期内最活跃的十个用户：
 
-#### 查询<!-- omit in toc -->
+#### 查询 <!-- omit in toc -->
 
 ```sql
 %%read_sql active_users -c QS_CONNECTION
@@ -257,11 +263,11 @@ ORDER  BY Count DESC
 LIMIT  10;
 ```
 
-### 按用户活动列出的活跃城市 {#active-cities-by-user-activity}
+### 按用户活动划分的活跃城市 {#active-cities-by-user-activity}
 
 以下查询返回在指定日期生成大多数用户活动的十个城市：
 
-#### 查询<!-- omit in toc -->
+#### 查询 <!-- omit in toc -->
 
 ```sql
 %%read_sql active_cities -c QS_CONNECTION
@@ -276,4 +282,4 @@ LIMIT  10;
 
 ## 后续步骤
 
-本教程演示了在[!DNL Jupyter]笔记本中利用[!DNL Query Service]的一些示例用例。 请按照[使用Jupyter Notebooks分析数据](./analyze-your-data.md)教程中的说明，查看如何使用Data Access SDK执行类似的操作。
+本教程演示了一些在 [!DNL Query Service] 笔记本中使用的 [!DNL Jupyter] 示例用例。 按照[使用Jupyter笔记本](./analyze-your-data.md)分析您的数据教程查看如何使用Data Access SDK执行类似的操作。

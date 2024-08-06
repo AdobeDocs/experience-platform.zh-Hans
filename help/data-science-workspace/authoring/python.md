@@ -5,20 +5,26 @@ title: 在数据科学Workspace中使用Python访问数据
 type: Tutorial
 description: 以下文档包含有关如何在Python中访问数据以用于数据科学Workspace的示例。
 exl-id: 75aafd58-634a-4df3-a2f0-9311f93deae4
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '412'
+source-wordcount: '435'
 ht-degree: 0%
 
 ---
 
 # 在数据科学Workspace中使用Python访问数据
 
-以下文档包含有关如何使用Python访问数据以用于数据科学Workspace的示例。 有关使用JupyterLab笔记本访问数据的信息，请访问[JupyterLab笔记本数据访问](../jupyterlab/access-notebook-data.md)文档。
+>[!NOTE]
+>
+>Data Science Workspace不再可购买。
+>
+>本文档适用于先前有权使用Data Science Workspace的现有客户。
+
+以下文档包含有关如何使用Python访问数据以在Data Science Workspace中使用的示例。 有关使用JupyterLab笔记本访问数据的信息，请访问[JupyterLab笔记本数据访问](../jupyterlab/access-notebook-data.md)文档。
 
 ## 读取数据集
 
-在设置环境变量并完成安装后，现在可以将您的数据集读入pandas数据流。
+设置环境变量并完成安装后，现在可以将您的数据集读入pandas数据帧。
 
 ```python
 import pandas as pd
@@ -34,7 +40,7 @@ dataset_reader = DatasetReader(client_context, config_properties['DATASET_ID'])
 df = dataset_reader.read()
 ```
 
-### 从数据集中选择列
+### 从数据集中选择COLUMNS
 
 ```python
 df = dataset_reader.select(['column-a','column-b']).read()
@@ -61,7 +67,7 @@ df = dataset_reader.select(['column-a']).distinct().read()
 
 ### WHERE子句
 
-您可以在Python中使用某些运算符来帮助筛选数据集。
+您可以使用Python中的某些运算符来帮助筛选数据集。
 
 >[!NOTE]
 >
@@ -77,7 +83,7 @@ And = and operator
 Or = or operator
 ```
 
-下面显示了使用这些筛选函数的示例：
+下面是使用这些过滤函数的示例：
 
 ```python
 df = dataset_reader.where(experience_ds['timestamp'].gt(87879779797).And(experience_ds['timestamp'].lt(87879779797)).Or(experience_ds['a'].eq(123)))
@@ -85,7 +91,7 @@ df = dataset_reader.where(experience_ds['timestamp'].gt(87879779797).And(experie
 
 ### ORDER BY子句
 
-ORDER BY子句允许按指定列以特定顺序（升序或降序）对接收结果进行排序。 可使用`sort()`函数完成此操作。
+ORDER BY子句允许按特定顺序（升序或降序）按指定列对接收结果进行排序。 这是通过使用`sort()`函数完成的。
 
 下面显示了使用`sort()`函数的示例：
 
@@ -105,7 +111,7 @@ df = dataset_reader.limit(100).read()
 
 ### OFFSET子句
 
-OFFSET子句允许您从一开始就跳过行，以便从以后开始返回行。 在与LIMIT结合使用时，这可用于迭代块中的行。
+OFFSET子句允许您从头跳过行，以便从后面开始返回行。 与LIMIT结合使用，这可用于在块中迭代行。
 
 下面显示了使用`offset()`函数的示例：
 
@@ -113,11 +119,11 @@ OFFSET子句允许您从一开始就跳过行，以便从以后开始返回行�
 df = dataset_reader.offset(100).read()
 ```
 
-## 编写数据集
+## 写入数据集
 
-要写入数据集，您需要向数据集提供熊猫数据流。
+要写入数据集，您需要向数据集提供pandas数据帧。
 
-### 正在编写熊猫数据流
+### 编写大熊猫数据帧
 
 ```python
 client_context = get_client_context(config_properties)
@@ -130,7 +136,7 @@ dataset_writer = DatasetWriter(client_context, dataset)
 write_tracker = dataset_writer.write(<your_dataFrame>, file_format='json')
 ```
 
-## Userspace目录（检查点操作）
+## Userspace目录（检查点）
 
 要获得运行时间较长的作业，可能需要存储中间步骤。 在这种情况下，您可以对用户空间进行读写操作。
 
@@ -147,7 +153,7 @@ user_helper = UserSpaceHelper(client_context)
 user_helper.write(data_frame=<data_frame>, path=<path_to_directory>, ref_dataset_id=<ref_dataset_id>)
 ```
 
-### 从用户空间读取
+### 从用户空间中读取
 
 ```python
 client_context = get_client_context(config_properties)
@@ -158,4 +164,4 @@ my_df = user_helper.read(path=<path_to_directory>, ref_dataset_id=<ref_dataset_i
 
 ## 后续步骤
 
-Adobe Experience Platform数据科学Workspace提供了一个方法示例，它使用上述代码示例来读取和写入数据。 如果您想了解有关如何使用Python访问您的数据的更多信息，请查看[数据科学Workspace Python GitHub存储库](https://github.com/adobe/experience-platform-dsw-reference/tree/master/recipes/python/retail)。
+Adobe Experience Platform Data Science Workspace提供了一个使用上述代码示例来读取和写入数据的方法示例。 如果您想详细了解如何使用Python访问您的数据，请查看[Data Science Workspace Python GitHub存储库](https://github.com/adobe/experience-platform-dsw-reference/tree/master/recipes/python/retail)。

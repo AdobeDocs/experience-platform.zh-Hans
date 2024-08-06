@@ -5,14 +5,20 @@ title: MLServices API端点
 description: MLService是一个已发布的经过训练的模型，使您的组织能够访问和重复使用以前开发的模型。 MLServices的主要功能是能够按计划自动进行训练和评分。 计划的训练运行有助于保持模型的效率和准确性，而计划的得分运行可以确保始终如一地生成新见解。
 role: Developer
 exl-id: cd236e0b-3bfc-4d37-83eb-432f6ad5c5b6
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '887'
+source-wordcount: '910'
 ht-degree: 2%
 
 ---
 
 # MLServices端点
+
+>[!NOTE]
+>
+>数据科学Workspace不再可供购买。
+>
+>本文档面向之前有权访问数据科学Workspace的现有客户。
 
 MLService是一个已发布的经过训练的模型，使您的组织能够访问和重复使用以前开发的模型。 MLServices的主要功能是能够按计划自动进行训练和评分。 计划的训练运行有助于保持模型的效率和准确性，而计划的得分运行可以确保始终如一地生成新见解。
 

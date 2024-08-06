@@ -1,24 +1,30 @@
 ---
-keywords: Experience Platform；为模型评分；数据科学Workspace；热门主题；sensei机器学习api
+keywords: 体验平台;为模型评分;数据科学工作区;热门话题;Sensei 机器学习 API
 solution: Experience Platform
-title: 使用Sensei机器学习API对模型计分
+title: 使用 Sensei 机器学习 API 对模型进行评分
 type: Tutorial
-description: 本教程将向您展示如何利用Sensei机器学习API创建实验并运行实验。
+description: 本教程将介绍如何利用 Sensei 机器学习 API 来创建实验和实验运行。
 exl-id: 202c63b0-86d8-4a82-8ec8-d144a8911d08
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '547'
+source-wordcount: '570'
 ht-degree: 1%
 
 ---
 
-# 使用[!DNL Sensei Machine Learning API]为模型评分
+# 使用 [!DNL Sensei Machine Learning API]
 
-本教程将向您展示如何利用API创建试验和试验运行。 如需Sensei机器学习API中所有端点的列表，请参阅[本文档](https://developer.adobe.com/experience-platform-apis/references/sensei-machine-learning/)。
+>[!NOTE]
+>
+>不再可供购买数据科学工作区。
+>
+>本文档适用于先前有权访问数据科学工作区的现有客户。
 
-## 创建计划的评分试验
+本教程将介绍如何利用 API 创建试验和试验运行。 有关 Sensei 机器学习 API 中所有端点的列表，请参阅 [此文档](https://developer.adobe.com/experience-platform-apis/references/sensei-machine-learning/)。
 
-与计划的训练实验类似，为评分创建计划的实验也是通过在body参数中包含`template`部分来完成的。 此外，正文中`tasks`下的`name`字段设置为`score`。
+## 创建用于评分的计划实验
+
+与用于训练的计划实验类似，创建用于评分的计划实验也是通过在 body 参数中包含部分 `template` 来完成的。 此外，正文中`tasks`下的`name`字段设置为`score`。
 
 以下示例用于创建从`startTime`开始每隔20分钟运行一次并一直运行到`endTime`的试验。
 
@@ -36,7 +42,7 @@ curl -X POST \
 
 `{ORG_ID}`：在独特的Adobe Experience Platform集成中找到您的组织凭据。\
 `{ACCESS_TOKEN}`：在身份验证后提供的特定持有者令牌值。\
-`{API_KEY}`：在独特的Adobe Experience Platform集成中找到特定的API密钥值。\
+`{API_KEY}`：您的特定 API 密钥值，可在唯一的 Adobe Experience Platform 集成中找到。\
 `{JSON_PAYLOAD}`：要发送的试验运行对象。 我们在本教程中使用的示例如下所示：
 
 ```JSON
@@ -102,13 +108,13 @@ curl -X POST \
 }
 ```
 
-`{EXPERIMENT_ID}`：表示试验的ID。\
-`{INSTANCE_ID}`：表示MLInstance的ID。
+`{EXPERIMENT_ID}`：表示实验的 ID。\
+`{INSTANCE_ID}`：表示 MLInstance 的 ID。
 
 
-### 创建试验运行以进行评分
+### 创建用于评分的试验运行
 
-现在，使用经过训练的模型，我们可以创建一个用于评分的试验运行。 `modelId`参数的值是上述GET模型请求中返回的`id`参数。
+现在，使用经过训练的模型，我们可以创建用于评分的实验运行。 参数的值 `modelId` 是上述 GET 模型请求中返回的 `id` 参数。
 
 **请求**
 
@@ -122,10 +128,10 @@ curl -X POST \
   -d '{JSON_PAYLOAD}'
 ```
 
-`{ORG_ID}`：在独特的Adobe Experience Platform集成中找到您的组织凭据。\
-`{ACCESS_TOKEN}`：在身份验证后提供的特定持有者令牌值。\
-`{API_KEY}`：在独特的Adobe Experience Platform集成中找到特定的API密钥值。\
-`{EXPERIMENT_ID}`：对应于要定位的试验的ID。 可在创建试验时的响应中找到此响应。\
+`{ORG_ID}`：您的组织凭据可在唯一的 Adobe Experience Platform 集成中找到。\
+`{ACCESS_TOKEN}`：身份验证后提供的特定持有者令牌值。\
+`{API_KEY}`：您的特定 API 密钥值，可在唯一的 Adobe Experience Platform 集成中找到。\
+`{EXPERIMENT_ID}`：与要定位的实验对应的 ID。 这可以在创建实验时的响应中找到。\
 `{JSON_PAYLOAD}`：要发布的数据。 我们在本教程中使用的示例如下：
 
 ```JSON
@@ -169,7 +175,7 @@ curl -X POST \
 ```
 
 `{EXPERIMENT_ID}`：与运行所依据的试验相对应的ID。\
-`{EXPERIMENT_RUN_ID}`：与您刚刚创建的试验运行相对应的ID。
+`{EXPERIMENT_RUN_ID}`：与刚刚创建的试验运行对应的 ID。
 
 
 ### 为计划的试验运行检索试验运行状态
@@ -187,9 +193,9 @@ curl -X GET \
 
 `{EXPERIMENT_ID}`：与运行所依据的试验相对应的ID。\
 `{ACCESS_TOKEN}`：在身份验证后提供的特定持有者令牌值。\
-`{ORG_ID}`：在独特的Adobe Experience Platform集成中找到您的组织凭据。
+`{ORG_ID}`：您的组织凭据可在唯一的 Adobe Experience Platform 集成中找到。
 
-由于特定试验存在多个试验运行，因此返回的响应将具有运行ID数组。
+由于特定试验有多个试验运行，因此返回的响应将具有运行 ID 数组。
 
 **响应**
 
@@ -212,8 +218,8 @@ curl -X GET \
 }
 ```
 
-`{EXPERIMENT_RUN_ID}`：与试验运行对应的ID。\
-`{EXPERIMENT_ID}`：与运行所依据的试验相对应的ID。
+`{EXPERIMENT_RUN_ID}`：与实验运行对应的 ID。\
+`{EXPERIMENT_ID}`：与运行所在的实验对应的 ID。
 
 ### 停止并删除计划的试验
 

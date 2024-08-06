@@ -5,14 +5,20 @@ title: 在数据科学Workspace中使用Spark访问数据
 type: Tutorial
 description: 以下文档包含有关如何使用Spark访问数据以用于数据科学Workspace的示例。
 exl-id: 9bffb52d-1c16-4899-b455-ce570d76d3b4
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '444'
+source-wordcount: '467'
 ht-degree: 0%
 
 ---
 
 # 在数据科学Workspace中使用Spark访问数据
+
+>[!NOTE]
+>
+>数据科学Workspace不再可供购买。
+>
+>本文档面向之前有权访问数据科学Workspace的现有客户。
 
 以下文档包含有关如何使用Spark访问数据以用于数据科学Workspace的示例。 有关使用JupyterLab笔记本访问数据的信息，请访问[JupyterLab笔记本数据访问](../jupyterlab/access-notebook-data.md)文档。
 

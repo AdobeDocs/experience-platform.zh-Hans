@@ -1,28 +1,34 @@
 ---
-keywords: Experience Platform；开发人员指南；端点；数据科学Workspace；热门主题；引擎；sensei机器学习api
+keywords: Experience Platform；开发人员指南；端点；Data Science Workspace；热门主题；引擎；sensei机器学习api
 solution: Experience Platform
-title: 引擎API端点
-description: 引擎是数据科学Workspace中机器学习模型的基础。 它们包含用于解决特定问题的机器学习算法、用于执行特征工程的特征管道或两者。
+title: 引擎API终结点
+description: 引擎是数据科学工作区中机器学习模型的基础。 它们包含可解决特定问题的机器学习算法、用于执行特征工程的特征管道，或两者兼有。
 role: Developer
 exl-id: 7c670abd-636c-47d8-bd8c-5ce0965ce82f
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '1165'
+source-wordcount: '1188'
 ht-degree: 2%
 
 ---
 
-# 引擎端点
+# 引擎终结点
 
-引擎是数据科学Workspace中机器学习模型的基础。 它们包含用于解决特定问题的机器学习算法、用于执行特征工程的特征管道或两者。
+>[!NOTE]
+>
+>Data Science Workspace不再可购买。
+>
+>本文档适用于先前有权使用Data Science Workspace的现有客户。
+
+引擎是数据科学工作区中机器学习模型的基础。 它们包含可解决特定问题的机器学习算法、用于执行特征工程的特征管道，或两者兼有。
 
 ## 查找Docker注册表
 
 >[!TIP]
 >
->如果您没有Docker URL，请访问[将源文件打包到方法](../models-recipes/package-source-files-recipe.md)教程中，以了解有关创建Docker主机URL的分步说明。
+>如果您没有Docker URL，请访问[将源文件打包成配方](../models-recipes/package-source-files-recipe.md)教程，以了解创建Docker主机URL的分步演练。
 
-需要Docker注册表凭据才能上传打包的方法文件，包括Docker主机URL、用户名和密码。 您可以通过执行以下GET请求来查找此信息：
+需要提供Docker注册表凭据才能上传打包的配方文件，包括Docker主机URL、用户名和密码。 您可以通过执行以下GET请求来查找此信息：
 
 **API格式**
 
@@ -46,7 +52,7 @@ curl -X GET https://platform.adobe.io/data/sensei/engines/dockerRegistry \
 
 >[!NOTE]
 >
->每当`{ACCESS_TOKEN}`更新时，您的Docker密码都会更改。
+>更新您的`{ACCESS_TOKEN}`后，您的Docker密码即会更改。
 
 ```json
 {
@@ -58,7 +64,7 @@ curl -X GET https://platform.adobe.io/data/sensei/engines/dockerRegistry \
 
 ## 使用Docker URL创建引擎 {#docker-image}
 
-您可以创建引擎，方法是：在提供其元数据的同时执行POST请求，并提供在多部分表单中引用Docker图像的Docker URL。
+通过在提供引擎元数据和以多部分形式引用Docker图像的Docker URL时执行POST请求，可以创建引擎。
 
 **API格式**
 
@@ -104,7 +110,7 @@ curl -X POST \
 
 **请求PySpark/Scala**
 
-在请求PySpark配方时，`executionType`和`type`为“PySpark”。 在请求Scala配方时，`executionType`和`type`是“Spark”。 以下Scala方法示例使用Spark：
+在请求PySpark配方时，`executionType`和`type`是“PySpark”。 在请求Scala配方时，`executionType`和`type`是“Spark”。 以下Scala配方示例使用Spark：
 
 ```shell
 curl -X POST \
@@ -134,16 +140,16 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 引擎所需的名称。 与此引擎对应的方法将继承此值，以方法名称的形式显示在UI中。 |
-| `description` | 引擎的可选描述。 与此引擎对应的方法将继承此值，以作为方法的描述显示在UI中。 此属性是必需的。 如果您不想提供描述，请将其值设置为空字符串。 |
-| `type` | 引擎的执行类型。 此值对应于构建Docker图像时所用的语言。 该值可设置为Spark或PySpark。 |
-| `mlLibrary` | 创建PySpark和Scala配方的引擎时所需的字段。 此字段必须设置为`databricks-spark`。 |
-| `artifacts.default.image.location` | Docker图像的位置。 仅支持Azure ACR或公共（未经身份验证）Dockerhub。 |
-| `artifacts.default.image.executionType` | 引擎的执行类型。 此值对应于构建Docker图像时所用的语言。 这可以是“Spark”或“PySpark”。 |
+| `name` | 引擎所需的名称。 与此引擎对应的处方将继承此值，以作为处方名称显示在UI中。 |
+| `description` | 引擎的可选说明。 与此引擎对应的处方将继承此值，以作为处方说明显示在UI中。 此属性为必填。 如果您不想提供描述，请将其值设置为空字符串。 |
+| `type` | 引擎的执行类型。 此值对应于构建Docker图像所使用的语言。 值可以设置为Spark或PySpark。 |
+| `mlLibrary` | 为PySpark和Scala配方创建引擎时所需的字段。 此字段必须设置为`databricks-spark`。 |
+| `artifacts.default.image.location` | Docker图像的位置。 仅支持Azure ACR或Public （未经过身份验证的） Dockerhub。 |
+| `artifacts.default.image.executionType` | 引擎的执行类型。 此值对应于构建Docker图像所使用的语言。 这可以是“Spark”或“PySpark”。 |
 
 **响应**
 
-成功的响应将返回一个有效负载，其中包含新创建的引擎的详细信息，包括其唯一标识符(`id`)。 以下示例响应适用于Python引擎。 所有引擎响应都遵循以下格式：
+成功的响应将返回一个负载，其中包含新创建的引擎的详细信息，包括其唯一标识符(`id`)。 以下示例响应适用于Python引擎。 所有引擎响应均遵循以下格式：
 
 ```json
 {
@@ -172,7 +178,7 @@ curl -X POST \
 
 ## 使用Docker URL创建功能管道引擎 {#feature-pipeline-docker}
 
-可创建功能管道引擎，方法是在提供元数据并引用Docker图像的Docker URL的同时执行POST请求。
+通过在提供功能管道引擎的元数据和引用Docker图像的Docker URL时执行POST请求，可以创建功能管道引擎。
 
 **API格式**
 
@@ -213,19 +219,19 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `type` | 引擎的执行类型。 此值对应于构建Docker图像时所用的语言。 该值可设置为Spark或PySpark。 |
-| `algorithm` | 正在使用的算法，将此值设置为`fp` （功能管道）。 |
-| `name` | 功能管道引擎的所需名称。 与此引擎对应的方法将继承此值，以方法名称的形式显示在UI中。 |
-| `description` | 引擎的可选描述。 与此引擎对应的方法将继承此值，以作为方法的描述显示在UI中。 此属性是必需的。 如果您不想提供描述，请将其值设置为空字符串。 |
-| `mlLibrary` | 创建PySpark和Scala配方的引擎时所需的字段。 此字段必须设置为`databricks-spark`。 |
-| `artifacts.default.image.location` | Docker图像的位置。 仅支持Azure ACR或公共（未经身份验证）Dockerhub。 |
-| `artifacts.default.image.executionType` | 引擎的执行类型。 此值对应于构建Docker图像时所用的语言。 这可以是“Spark”或“PySpark”。 |
+| `type` | 引擎的执行类型。 此值对应于构建Docker图像所使用的语言。 值可以设置为Spark或PySpark。 |
+| `algorithm` | 正在使用的算法，将此值设置为`fp`（功能管道）。 |
+| `name` | 特征管线引擎所需的名称。 与此引擎对应的处方将继承此值，以作为处方名称显示在UI中。 |
+| `description` | 引擎的可选说明。 与此引擎对应的处方将继承此值，以作为处方说明显示在UI中。 此属性为必填。 如果您不想提供描述，请将其值设置为空字符串。 |
+| `mlLibrary` | 为PySpark和Scala配方创建引擎时所需的字段。 此字段必须设置为`databricks-spark`。 |
+| `artifacts.default.image.location` | Docker图像的位置。 仅支持Azure ACR或Public （未经过身份验证的） Dockerhub。 |
+| `artifacts.default.image.executionType` | 引擎的执行类型。 此值对应于构建Docker图像所使用的语言。 这可以是“Spark”或“PySpark”。 |
 | `artifacts.default.image.packagingType` | 引擎的包装类型。 此值应设置为`docker`。 |
 | `artifacts.default.defaultMLInstanceConfigs` | 您的`pipeline.json`配置文件参数。 |
 
 **响应**
 
-成功的响应将返回一个有效负载，其中包含新创建的功能管道引擎的详细信息，包括其唯一标识符(`id`)。 以下示例响应适用于PySpark特征管线引擎。
+成功的响应将返回一个有效负载，其中包含新创建的功能管道引擎的详细信息，包括其唯一标识符(`id`)。 以下示例响应适用于PySpark功能管道引擎。
 
 ```json
 {
@@ -277,7 +283,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回引擎列表及其详细信息。
+成功的响应将返回引擎及其详细信息的列表。
 
 ```json
 {
@@ -387,9 +393,9 @@ curl -X GET \
 
 >[!NOTE]
 >
->为确保此PUT请求成功，建议您首先执行GET请求，以[按ID](#retrieve-specific)检索引擎。 然后，修改并更新返回的JSON对象，并将修改后的整个JSON对象应用作PUT请求的有效负载。
+>为确保此PUT请求成功，建议您首先执行GET请求，以[按ID](#retrieve-specific)检索引擎。 然后，修改并更新返回的JSON对象，并将修改后的JSON对象的整个内容应用为PUT请求的有效负载。
 
-以下示例API调用最初具有这些属性时会更新引擎的名称和描述：
+以下示例API调用将在最初具有这些属性时更新引擎的名称和说明：
 
 ```json
 {

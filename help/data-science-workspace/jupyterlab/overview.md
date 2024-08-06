@@ -1,17 +1,23 @@
 ---
-keywords: Experience Platform；JupyterLab；笔记本；数据科学Workspace；热门主题；jupyterlab
+keywords: Experience Platform；JupyterLab；笔记本；Data Science Workspace；热门主题；jupyterlab
 solution: Experience Platform
 title: JupyterLab UI概述
 description: JupyterLab是Project Jupyter的基于Web的用户界面，并且已紧密集成到Adobe Experience Platform中。 它为数据科学家提供了交互式开发环境，以便使用Jupyter Notebooks、代码和数据。 本文档概述了JupyterLab及其功能，并提供了执行常见操作的说明。
 exl-id: 13786fbd-ef16-49cd-8bcf-46320c33e902
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '1812'
+source-wordcount: '1835'
 ht-degree: 2%
 
 ---
 
 # [!DNL JupyterLab] UI 概述
+
+>[!NOTE]
+>
+>Data Science Workspace不再可购买。
+>
+>本文档面向之前有权访问数据科学Workspace的现有客户。
 
 [!DNL JupyterLab]是[Project Jupyter](https://jupyter.org/)的基于Web的用户界面，已紧密集成到Adobe Experience Platform中。 它为数据科学家提供了交互式开发环境，以便使用Jupyter Notebooks、代码和数据。
 
@@ -21,7 +27,7 @@ ht-degree: 2%
 
 Experience Platform的JupyterLab集成伴随着体系结构变化、设计注意事项、自定义笔记本扩展、预安装的库和Adobe主题化界面。
 
-下表概述了JupyterLab on Platform的特有功能：
+以下列表概述了JupyterLab在平台上独有的一些功能：
 
 | 功能 | 描述 |
 | --- | --- |
@@ -43,7 +49,7 @@ Experience Platform的JupyterLab集成伴随着体系结构变化、设计注意
 * **[!DNL Catalog Service]：**&#x200B;访问和浏览具有读写功能的数据集。
 * **[!DNL Query Service]：**&#x200B;使用SQL访问和浏览数据集，在处理大量数据时提供较低的数据访问开销。
 * **[!DNL Sensei ML Framework]：**&#x200B;模型开发，能够训练数据和为数据评分，以及通过一次单击即可创建方法。
-* **[!DNL Experience Data Model (XDM)]：**&#x200B;标准化和互操作性是Adobe Experience Platform背后的关键概念。 [体验数据模型(XDM)](https://www.adobe.com/go/xdm-home-en)由Adobe驱动，旨在标准化客户体验数据并定义用于客户体验管理的架构。
+* **[!DNL Experience Data Model (XDM)]：**&#x200B;标准化和互操作性是Adobe Experience Platform背后的关键概念。 [体验数据模型(XDM)](https://www.adobe.com/go/xdm-home-en)由Adobe驱动，用于标准化客户体验数据和定义客户体验管理的架构。
 
 >[!NOTE]
 >
@@ -76,8 +82,8 @@ Experience Platform的JupyterLab集成伴随着体系结构变化、设计注意
 
 * **文件：**&#x200B;与文件和目录相关的操作
 * **编辑：**&#x200B;与编辑文档和其他活动相关的操作
-* **视图：**&#x200B;更改[!DNL JupyterLab]外观的操作
-* **运行：**&#x200B;在不同活动（如笔记本和代码控制台）中运行代码的操作
+* **视图：**&#x200B;改变[!DNL JupyterLab]外观的操作
+* **运行：**&#x200B;用于在不同的活动（如笔记本和代码控制台）中运行代码的操作
 * **内核：**&#x200B;用于管理内核的操作
 * **选项卡：**&#x200B;打开的文档和活动的列表
 * **设置：**&#x200B;常用设置和高级设置编辑器
@@ -164,14 +170,14 @@ Experience Platform的JupyterLab集成伴随着体系结构变化、设计注意
 
 [//]: # (Talk about the different Notebooks, introduce that certain starter notebooks are limited to particular kernels)
 
-自定义的&#x200B;*启动器*&#x200B;为您提供有用的笔记本模板，用于其受支持的核心，以帮助您启动任务，包括：
+自定义的&#x200B;*启动器*&#x200B;可为支持的内核提供有用的笔记本模板，以帮助您启动任务，包括：
 
 | 模板 | 描述 |
 | --- | --- |
-| 空白 | 空的笔记本。 |
-| 起始者 | 一个预填充的笔记本，演示使用示例数据探索数据。 |
+| 空白 | 一个空的笔记本文件。 |
+| 起始页 | 一个预填充的笔记本，演示使用示例数据探索数据。 |
 | 零售业 | 使用样本数据预填充的笔记本，其中包含[零售销售方法](../pre-built-recipes/retail-sales.md)。 |
-| 方法生成器 | 用于在[!DNL JupyterLab]中创建方法的笔记本模板。 它预先填充了代码和注释，用于演示和描述处方创建过程。 有关详细演练，请参阅[笔记本到方法教程](https://www.adobe.com/go/data-science-create-recipe-notebook-tutorial-en)。 |
+| Recipe Builder | 用于在[!DNL JupyterLab]中创建食法的笔记本模板。 它预先填充了说明和描述处方创建过程的代码和评注。 有关详细演练，请参阅[笔记本到方法教程](https://www.adobe.com/go/data-science-create-recipe-notebook-tutorial-en)。 |
 | [!DNL Query Service] | 预填充的笔记本，用于演示直接在[!DNL JupyterLab]中使用[!DNL Query Service]，并提供大规模分析数据的示例工作流。 |
 | XDM事件 | 一个预填充的笔记本，演示关于后值体验事件数据的数据探索，重点介绍整个数据结构中的共有功能。 |
 | XDM查询 | 一个预填充的笔记本，用于演示有关体验事件数据的示例业务查询。 |
@@ -257,7 +263,7 @@ Experience Platform的JupyterLab集成伴随着体系结构变化、设计注意
 
 ![示例](../images/jupyterlab/user-guide/libraries.PNG)
 
-此外，还使用了以下依赖项，但未列出这些依赖项：
+此外，还使用了下列依赖项，但未列出：
 * CUDA 11.2
 * CUDNN 8.1
 

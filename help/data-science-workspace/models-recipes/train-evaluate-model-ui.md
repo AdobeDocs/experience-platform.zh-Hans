@@ -5,14 +5,20 @@ title: 在数据科学Workspace UI中培训和评估模型
 type: Tutorial
 description: 在Adobe Experience Platform数据科学Workspace中，机器学习模型通过合并适用于模型意图的现有方法而创建。 然后对该模型进行训练和评估，以通过微调其相关的超参数来优化其运行效率和功效。 配方可重复使用，这意味着只需一个配方，即可创建多个模型并根据特定目的对其进行定制。
 exl-id: 6f674cfa-c123-46a3-80e2-9342fe687976
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '1084'
+source-wordcount: '1107'
 ht-degree: 1%
 
 ---
 
 # 在数据科学Workspace UI中培训和评估模型
+
+>[!NOTE]
+>
+>数据科学Workspace不再可供购买。
+>
+>本文档面向之前有权访问数据科学Workspace的现有客户。
 
 在Adobe Experience Platform数据科学Workspace中，机器学习模型通过合并适用于模型意图的现有方法而创建。 然后对该模型进行训练和评估，以通过微调其相关的超参数来优化其运行效率和功效。 配方可重复使用，这意味着只需一个配方，即可创建多个模型并根据特定目的对其进行定制。
 
@@ -20,25 +26,25 @@ ht-degree: 1%
 
 ## 快速入门
 
-要完成本教程，您必须拥有[!DNL Experience Platform]的访问权限。 如果您无权访问[!DNL Experience Platform]中的组织，请在继续之前与系统管理员交谈。
+要完成本教程，您必须拥有[!DNL Experience Platform]的访问权限。 如果您在[!DNL Experience Platform]中无权访问某个组织，请在继续操作之前与系统管理员联系。
 
 本教程需要现有方法。 如果您没有方法，请按照[在UI中导入打包的方法](./import-packaged-recipe-ui.md)教程中的说明继续操作。
 
 ## 创建模型
 
-在Experience Platform中，选择位于左侧导航栏中的&#x200B;**[!UICONTROL 模型]**&#x200B;选项卡，然后选择“浏览”选项卡以查看现有模型。 选择页面右上角附近的&#x200B;**[!UICONTROL 创建模型]**&#x200B;以开始模型创建过程。
+在Experience Platform中，选择位于左侧导航栏中的&#x200B;**[!UICONTROL 模型]**&#x200B;选项卡，然后选择“浏览”选项卡以查看现有模型。 选择页面右上角附近的&#x200B;**[!UICONTROL 创建模型]**&#x200B;以开始创建模型。
 
 ![](../images/models-recipes/train-evaluate-ui/models_browse.png)
 
-浏览现有方法列表，查找并选择要用于创建模型的方法并选择&#x200B;**[!UICONTROL 下一步]**。
+浏览现有配方列表，查找并选择用于创建模型的配方，然后选择&#x200B;**[!UICONTROL 下一步]**。
 ![](../images/models-recipes/train-evaluate-ui/select_recipe.png)
 
-选择适当的输入数据集并选择&#x200B;**[!UICONTROL 下一步]**。 这将为模型设置默认输入训练数据集。
+选择适当的输入数据集，然后选择&#x200B;**[!UICONTROL 下一步]**。 这将为模型设置默认输入培训数据集。
 ![](../images/models-recipes/train-evaluate-ui/select_dataset.png)
 
-提供模型的名称并查看默认模型配置。 在方法创建、查看和修改配置值期间应用了默认配置，方法是双击值。
+提供模型的名称并查看默认模型配置。 在创建处方期间应用了默认配置，通过双击这些值来审阅和修改配置值。
 
-要提供一组新配置，请选择&#x200B;**[!UICONTROL 上载新配置]**，然后将包含模型配置的JSON文件拖到浏览器窗口中。 选择&#x200B;**[!UICONTROL 完成]**&#x200B;以创建模型。
+若要提供一组新的配置，请选择&#x200B;**[!UICONTROL 上传新配置]**，然后将包含模型配置的JSON文件拖动到浏览器窗口中。 选择&#x200B;**[!UICONTROL 完成]**&#x200B;以创建模型。
 
 >[!NOTE]
 >
@@ -73,17 +79,17 @@ ht-degree: 1%
 
 ## 评估模型
 
-在Experience Platform中，选择位于左侧导航栏中的&#x200B;**[!UICONTROL 模型]**&#x200B;选项卡，然后选择“浏览”选项卡以查看现有模型。 查找并选择附加到要评估的模型名称的超链接。
+在Experience Platform中，选择位于左侧导航栏中的&#x200B;**[!UICONTROL 模型]**&#x200B;选项卡，然后选择浏览选项卡以查看现有模型。 查找并选择附加到要评估的模型名称的超链接。
 
 ![选择模型](../images/models-recipes/train-evaluate-ui/model-hyperlink.png)
 
 列出所有现有训练运行及其当前训练状态。 对于多个已完成的训练运行，可以在模型评估图表中跨不同的训练运行比较评估指标。 使用图表上方的下拉列表选择评估量度。
 
-平均绝对百分比误差(MAPE)度量以误差百分比表示精度。 这用于标识表现最佳的试验。 MAPE越低越好。
+平均绝对百分比误差(MAPE)度量以误差百分比表示精度。 这用于识别最佳性能试验。 MAPE越低越好。
 
-![训练运行概述](../images/models-recipes/train-evaluate-ui/complete_training_run.png)
+![培训运行概述](../images/models-recipes/train-evaluate-ui/complete_training_run.png)
 
-“精度”量度描述了相关实例与检索的&#x200B;*个*&#x200B;实例总数之间的百分比。 精度可以看作是随机选择结果正确的可能性。
+“精度”度量描述了相关实例与总共&#x200B;*个检索实例*&#x200B;的百分比之比。 精度可以看作是随机选择结果正确的可能性。
 
 ![正在运行多个运行](../images/models-recipes/train-evaluate-ui/multiple_training_runs.png)
 
@@ -95,7 +101,7 @@ ht-degree: 1%
 
 ![活动日志](../images/models-recipes/train-evaluate-ui/activity_logs.png)
 
-不能训练超参数，必须通过测试不同的超参数组合来优化模型。 重复此模型训练和评估过程，直到到达优化模型为止。
+不能训练超参数，必须通过测试不同超参数的组合来优化模型。 重复此模型训练和评估过程，直到到达优化模型为止。
 
 ## 后续步骤
 
@@ -103,11 +109,11 @@ ht-degree: 1%
 
 ## 参考 {#reference}
 
-### 零售方法配置
+### 零售方式配置
 
 超参数决定了模型的训练行为，修改超参数将会影响模型的精度和精度：
 
-| 超参数 | 描述 | 建议范围 |
+| 超参数 | 描述 | 建议的范围 |
 | --- | --- | --- |
 | learning_rate | 学习率通过learning_rate减小每个树的贡献。 学习速率和n估算之间存在一种权衡。 | 0.1 |
 | n_estimators | 要执行的提升阶段数。 梯度提升算法对于过拟合有很好的鲁棒性，因此大量梯度提升算法通常可以获得更好的性能。 | 100 |
@@ -119,8 +125,8 @@ ht-degree: 1%
 | ----- | ----- | ----- |
 | `ACP_DSW_INPUT_FEATURES` | 字符串 | 逗号分隔的输入架构属性列表。 |
 | `ACP_DSW_TARGET_FEATURES` | 字符串 | 逗号分隔的输出架构属性列表。 |
-| `ACP_DSW_FEATURE_UPDATE_SUPPORT` | 布尔值 | 确定输入和输出特征是否可修改 |
-| `tenantId` | 字符串 | 此ID可确保正确命名您创建的资源，并将其包含在您的组织中。 [按照此处](../../xdm/api/getting-started.md#know-your-tenant_id)的步骤查找您的租户ID。 |
+| `ACP_DSW_FEATURE_UPDATE_SUPPORT` | 布尔值 | 确定输入和输出功能是否可修改 |
+| `tenantId` | 字符串 | 此ID可确保正确存储您创建的资源，并将其包含在您的组织中。 [按照此处](../../xdm/api/getting-started.md#know-your-tenant_id)的步骤查找您的租户ID。 |
 | `ACP_DSW_TRAINING_XDM_SCHEMA` | 字符串 | 用于训练模型的输入架构。 |
 | `evaluation.labelColumn` | 字符串 | 评估可视化图表的列标签。 |
 | `evaluation.metrics` | 字符串 | 用于评估模型的评估指标列表（以逗号分隔）。 |

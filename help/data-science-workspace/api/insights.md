@@ -1,18 +1,24 @@
 ---
 keywords: Experience Platform；开发人员指南；端点；数据科学Workspace；热门主题；见解；sensei机器学习api
 solution: Experience Platform
-title: 分析API端点
-description: 分析包含一些量度，用于使数据科学家能够通过显示相关评估量度来评估和选择最佳的ML模型。
+title: Insights API终结点
+description: Insights包含一些指标，用于使数据科学家能够通过显示相关的评估指标来评估和选择最佳ML模型。
 role: Developer
 exl-id: 603546d6-5686-4b59-99a7-90ecc0db8de3
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '514'
+source-wordcount: '537'
 ht-degree: 3%
 
 ---
 
-# 分析端点
+# Insights终结点
+
+>[!NOTE]
+>
+>Data Science Workspace不再可购买。
+>
+>本文档面向之前有权访问数据科学Workspace的现有客户。
 
 分析包含一些量度，用于使数据科学家能够通过显示相关评估量度来评估和选择最佳的ML模型。
 
@@ -39,7 +45,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回一个有效负载，该有效负载包含分析列表，并且每个分析都有唯一标识符( `id` )。 此外，您将收到`context`，其中包含与随分析事件和量度数据一起跟踪的特定分析关联的唯一标识符。
+成功的响应将返回包含见解列表的有效负载，并且每个见解具有唯一标识符( `id` )。 此外，您将收到`context`，其中包含与随见解事件和度量数据一起显示的特定见解关联的唯一标识符。
 
 ```json
 {
@@ -108,7 +114,7 @@ curl -X GET \
 
 ## 检索特定分析
 
-要查找特定分析，请发出GET请求并在请求路径中提供有效的`{INSIGHT_ID}`。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅[用于资源检索的查询参数](./appendix.md#query)的附录部分。
+要查找特定分析，请发出GET请求并在请求路径中提供有效的`{INSIGHT_ID}`。 为帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅[用于资源检索的查询参数](./appendix.md#query)的附录部分。
 
 **API格式**
 
@@ -164,7 +170,7 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 与分析相对应的ID。 |
+| `id` | 与Insight对应的ID。 |
 | `experimentId` | 有效的试验ID。 |
 | `experimentRunId` | 有效的试验运行ID。 |
 | `modelId` | 有效的模型ID。 |
@@ -262,9 +268,9 @@ curl -X POST \
 | --- | --- |
 | `insightId` | 发出成功的POST请求时为此特定见解创建的唯一ID。 |
 
-## 检索算法的默认量度列表
+## 检索算法的默认度量列表
 
-您可以通过执行对指标端点的单个GET请求，检索所有算法和默认指标的列表。 要查询特定度量，请发出GET请求并在请求路径中提供有效的`{ALGORITHM}`。
+通过对度量端点执行单个GET请求，可以检索所有算法和默认度量的列表。 要查询特定度量，请发出GET请求并在请求路径中提供有效的`{ALGORITHM}`。
 
 **API格式**
 

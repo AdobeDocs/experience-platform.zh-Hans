@@ -5,9 +5,9 @@ title: 创建和Publish机器学习模型
 type: Tutorial
 description: 以下指南介绍了创建和发布机器学习模型所需的步骤。
 exl-id: f71e5a17-9952-411e-8e6a-aab46bc4c006
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '1073'
+source-wordcount: '1096'
 ht-degree: 0%
 
 ---
@@ -15,19 +15,25 @@ ht-degree: 0%
 
 # 创建和发布机器学习模型
 
+>[!NOTE]
+>
+>数据科学Workspace不再可供购买。
+>
+>本文档面向之前有权访问数据科学Workspace的现有客户。
+
 以下指南介绍了创建和发布机器学习模型所需的步骤。 每个部分都包含将要执行操作的描述，以及一个指向UI和API文档的链接，以便执行所述的步骤。
 
 ## 快速入门
 
 在开始本教程之前，您必须满足以下先决条件：
 
-- 访问[!DNL Adobe Experience Platform]。 如果您无权访问[!DNL Experience Platform]中的组织，请在继续之前与系统管理员交谈。
+- 访问[!DNL Adobe Experience Platform]。 如果您在[!DNL Experience Platform]中无权访问某个组织，请在继续操作之前与系统管理员联系。
 
-- 所有数据科学Workspace教程都使用Luma倾向模型。 为了遵循，您必须已创建[Luma倾向模型架构和数据集](./create-luma-data.md)。
+- 所有数据科学工作区教程均使用亮度倾向模型。 若要跟进，您必须已创建[亮度性征模型架构和数据集](./create-luma-data.md)。
 
 ### 浏览数据并了解架构
 
-登录到[Adobe Experience Platform](https://platform.adobe.com/)，然后选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以列出所有现有数据集，并选择要浏览的数据集。 在这种情况下，您应该选择&#x200B;**Luma Web数据**&#x200B;数据集。
+登录到[Adobe Experience Platform](https://platform.adobe.com/)并选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以列出所有现有数据集，并选择要浏览的数据集。 在这种情况下，您应选择&#x200B;**亮度Web数据**&#x200B;数据集。
 
 ![选择Luma Web数据集](../images/models-recipes/model-walkthrough/luma-dataset.png)
 
@@ -51,15 +57,15 @@ ht-degree: 0%
 
 ## 从外部源导入并打包配方（*可选*）
 
-如果您希望导入并打包方法以用于Data Science Workspace，则必须将源文件打包到存档文件中。 将源文件[打包到方法](./package-source-files-recipe.md)教程中。 本教程向您展示如何将源文件打包到方法中，这是将方法导入数据科学Workspace的先决步骤。 完成教程后，将在Azure容器注册表中为您提供Docker图像，以及相应的图像URL，即存档文件。
+如果您希望导入并打包方法以用于Data Science Workspace，则必须将源文件打包到存档文件中。 将源文件[打包到方法](./package-source-files-recipe.md)教程中。 本教程向您展示如何将源文件打包到处方中，这是将处方导入到Data Science Workspace的先决步骤。 教程完成后，您将获得一个Docker图像以及相应的图像URL（即，存档文件），并将在Azure容器注册表中提供。
 
-此存档文件可用于在数据科学Workspace中创建方法，方法是使用[UI工作流](./import-packaged-recipe-ui.md)或[API工作流](./import-packaged-recipe-api.md)遵循方法导入工作流。
+此存档文件可用于在Data Science Workspace中创建处方，方法是使用[UI工作流](./import-packaged-recipe-ui.md)或[API工作流](./import-packaged-recipe-api.md)遵循处方导入工作流。
 
 ## 训练和评估模型 {#train-and-evaluate-your-model}
 
-现在您的数据已准备好，方法已准备好，您能够进一步创建、培训和评估您的机器学习模型。 在使用方法生成器时，您应该在将模型打包到方法中之前对模型进行培训、评分和评估。
+现在，您的数据已经准备好，配方也已准备就绪，您可以进一步创建、训练和评估您的机器学习模型。 在使用“处方生成器”时，您应在将模型包装成处方之前，先对其进行培训、评分和评估。
 
-数据科学Workspace UI和API允许您将方法作为模型发布。 此外，还可进一步微调模型的特定方面，如添加、删除和更改超参数。
+数据科学工作区UI和API允许您将处方作为模型发布。 此外，还可进一步微调模型的特定方面，如添加、删除和更改超参数。
 
 ### 创建模型
 
@@ -85,7 +91,7 @@ ht-degree: 0%
 
 ### 安排服务的自动培训
 
-将模型发布为服务后，即可为机器学习服务设置计划的评分和训练运行。 自动化培训和评分过程有助于通过及时跟踪数据中的模式来维护和改善服务的效率。 访问数据科学Workspace UI](./schedule-models-ui.md)教程中的[计划模型。
+将模型发布为服务后，您可以为机器学习服务设置计划的评分和培训运行。 通过自动执行培训和评分流程，您可以随时跟踪数据中的模式，从而保持和提高服务的效率。 访问[在Data Science Workspace UI中安排模型](./schedule-models-ui.md)教程。
 
 >[!NOTE]
 >
