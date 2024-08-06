@@ -4,9 +4,9 @@ title: 用例战术手册概述
 description: 了解如何使用 Experience Platform 中的用例战术手册功能来使用各种营销用例
 role: Developer, User, Admin, Leader
 exl-id: 9c5c4f61-ea99-4f54-9b77-d486be29813c
-source-git-commit: 54b3d2ef22f7afb47fa8c9430c5c1645c94c837d
+source-git-commit: 152d7d29494d586016260ed6ed3d3f60e6bf766b
 workflow-type: tm+mt
-source-wordcount: '533'
+source-wordcount: '529'
 ht-degree: 30%
 
 ---
@@ -29,10 +29,12 @@ ht-degree: 30%
 
 ## 概述 {#overview}
 
-[!UICONTROL 用例行动手册]可帮助您在开始使用Real-Time CDP或Adobe Journey Optimizer时克服问题，当时您可能不知道从什么开始以及如何创建正确的资源以实现所需的用例。 用例行动手册可通过以下方式为您提供帮助：
+[!UICONTROL 用例行动手册]可帮助您在开始使用Real-Time CDP或Adobe Journey Optimizer时克服问题，当时您可能不知道从什么开始以及如何创建正确的资源以实现所需的用例。
 
-* 向您显示用于获取灵感的用例
-* 创建不同的资源以供您在准备就绪时使用、测试并提升至生产环境。
+用例行动手册可通过以下方式为您提供帮助：
+
+* [引入可用行动手册的目录，以更快地开始使用用例](../playbooks/playbooks-list.md)
+* [创建其他资源](../playbooks/create-share-reuse.md)
 
 ![查看所有战术手册](/help/use-case-playbooks/assets/playbooks/overview/playbooks-landing-page.png)
 

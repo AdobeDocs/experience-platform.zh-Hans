@@ -4,10 +4,10 @@ title: 用例行动手册入门
 description: 了解如何开始使用用例战术手册功能。
 role: Admin
 exl-id: 1c39792e-49fe-4c5f-9796-fa29f60b7461
-source-git-commit: 54b3d2ef22f7afb47fa8c9430c5c1645c94c837d
+source-git-commit: 152d7d29494d586016260ed6ed3d3f60e6bf766b
 workflow-type: tm+mt
-source-wordcount: '953'
-ht-degree: 15%
+source-wordcount: '990'
+ht-degree: 14%
 
 ---
 
@@ -19,6 +19,8 @@ ht-degree: 15%
 * 创建沙盒
 * 配置用户权限
 * 为电子邮件、推送和短信通知配置Journey Optimizer渠道界面(如果您计划使用Journey Optimizer行动手册)
+
+要在Experience PlatformUI中访问丰富的用例行动手册，请从左侧导航中选择&#x200B;**[!UICONTROL 行动手册]**。 阅读有关如何[导航用例行动手册](../playbooks/navigate.md)并开始使用[启发型沙盒](../playbooks/navigate.md)的文档。
 
 ## 配置用例行动手册 — 视频演练 {#video}
 
