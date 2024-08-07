@@ -4,16 +4,16 @@ title: 从一系列行动手册中进行选择
 description: 了解如何为您的用例选择正确的行动手册启用行动手册。
 role: User
 exl-id: 3dae6ad6-adb3-4606-ad63-c0d4ef6beeba
-source-git-commit: ea735c486ca88de05f2ee2a8e40c68e3ef29c4fd
+source-git-commit: 1781aa552107b6ca1fed357c053a4f892960dc55
 workflow-type: tm+mt
 source-wordcount: '757'
-ht-degree: 90%
+ht-degree: 88%
 
 ---
 
 # 从一系列行动手册中进行选择
 
-要使用战术手册，请导航至&#x200B;**[!UICONTROL 用例战术手册] > [!UICONTROL 战术手册]**。浏览并使用页面上的各种搜索和过滤选项来选择并开始使用特定的战术手册。
+若要使用行动手册，请从左侧导航中选择&#x200B;**[!UICONTROL 行动手册]**。 浏览并使用页面上的各种搜索和过滤选项来选择并开始使用特定的战术手册。
 
 ## 搜索和过滤 {#search-and-filter}
 
