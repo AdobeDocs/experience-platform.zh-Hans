@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK扩展中的操作类型
 description: 了解Adobe Experience Platform Web SDK标记扩展提供的各种操作类型。
 solution: Experience Platform
 exl-id: a4bf0bb9-59b4-4c43-97e6-387768176517
-source-git-commit: c3b05dfd57b3335230e9abb40de6f2e1ee5ee6fa
+source-git-commit: 760484bb7f95df97701f81f78783f0214aecaf5b
 workflow-type: tm+mt
-source-wordcount: '2114'
+source-wordcount: '2112'
 ht-degree: 1%
 
 ---
@@ -93,10 +93,6 @@ ht-degree: 1%
 
 * **[!UICONTROL 实例]**：选择要配置的Web SDK实例。 如果您只有一个实例，则将预先选择该实例。
 * **[!UICONTROL 使用引导式事件]**：启用此选项可自动填写或隐藏某些字段以启用特定用例。 启用此选项将触发以下设置的显示。
-
-  >[!NOTE]
-  >
-  >下面显示的引导事件与页面事件](../../../../web-sdk/use-cases/top-bottom-page-events.md)的[顶部和底部相关。
    * **[!UICONTROL 请求个性化]**：此事件将在页面顶部调用。 选中后，此事件将设置以下字段：
       * **[!UICONTROL 类型]**： **[!UICONTROL 决策建议提取]**
       * **[!UICONTROL 自动发送显示事件]**： **[!UICONTROL false]**
@@ -104,6 +100,10 @@ ht-degree: 1%
    * **[!UICONTROL 收集分析]**：此事件将在页面底部调用。 选中后，此事件将设置以下字段：
       * **[!UICONTROL 包含渲染的建议]**： **[!UICONTROL true]**
       * **[!UICONTROL Personalization]**&#x200B;设置已隐藏
+
+  >[!NOTE]
+  >
+  >引导事件与页面事件](../../../../web-sdk/use-cases/top-bottom-page-events.md)的[顶部和底部相关。
 
 
 ### 数据 {#data}
