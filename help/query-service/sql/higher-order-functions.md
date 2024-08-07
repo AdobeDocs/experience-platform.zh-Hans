@@ -1,17 +1,17 @@
 ---
 title: 使用高阶函数管理阵列和映射数据类型
-description: 了解如何使用查询服务中的高位函数管理数组并映射数据类型。 结合常见使用案例给出应用实例。
+description: 了解如何使用查询服务中的高位函数管理数组并映射数据类型。 示例与常见用例一起提供。
 exl-id: dec4e4f6-ad6b-4482-ae8c-f10cc939a634
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: d2bc580ba1cacdfab45bdc6356c630a63e7d0f6e
 workflow-type: tm+mt
-source-wordcount: '1471'
+source-wordcount: '1470'
 ht-degree: 0%
 
 ---
 
 # 使用高阶函数管理阵列和映射数据类型
 
-使用本指南了解高阶函数如何处理复杂的数据类型，如数组和映射。 这些函数免除了分解数组、执行函数以及合并结果的需要。 高阶函数对于分析或处理时间序列数据集和分析特别有用，这些数据集通常具有复杂的嵌套结构、数组、映射和多种用例。
+使用本指南了解高阶函数如何处理复杂的数据类型，如数组和映射。 这些函数免除了分解数组、执行函数以及合并结果的需要。 高阶函数对于分析或处理时间序列数据集和分析特别有用，这些数据集和分析通常具有复杂的嵌套结构、数组、映射和多种用例。
 
 以下用例列表包含高阶数组和映射操作函数的示例。
 
@@ -133,7 +133,7 @@ productListItems | _filter
 
 `aggregate(array<T>, A, function<A, T, A>[, function<A, R>]): R`
 
-此聚合操作将二元运算符应用于初始状态和数组中的所有元素。 它还会将多个值降为单个状态。 经过此缩减之后，最终状态通过使用finish函数转换为最终结果。 finish函数将二元算符应用于所有数组元素后得到的最后一个状态取出来，并对它做一些处理以产生最终结果。
+此聚合操作将二元运算符应用于初始状态和数组中的所有元素。 它还会将多个值减小到单个状态。 然后，使用finish函数将最终状态转换为最终结果。 finish函数将二元运算符应用于所有数组元素后得到的最后一个状态取出，并对其进行运算以产生最终结果。
 
 **示例**
 
@@ -172,7 +172,7 @@ productListItems | max_value
 
 `zip_with(array<T>, array<U>, function<T, U, R>): array<R>`
 
-此代码片段将两个数组的元素组合为一个新数组。 该操作在阵列的每个元素上独立地执行，并产生值对。 如果一个数组较短，则添加空值以匹配较长数组的长度。 这发生在应用函数之前。
+此代码段将两个数组的元素合并为一个新数组。 操作在阵列的每个元素上独立执行，并生成值对。 如果一个数组较短，则添加空值以匹配较长数组的长度。 这发生在应用该函数之前。
 
 **示例**
 
@@ -212,11 +212,11 @@ productListItems     | zip_with
 
 `map_from_entries(array<struct<K, V>>): map<K, V>`
 
-此代码片段将键值对数组转换为映射。 在处理键值对数据（可从更有条理、效率更高的结构中受益）时，此插件非常有用。
+此代码片段将键值对数组转换为映射。 在处理键值对数据时，该功能非常有用，因为这样有助于从更有条理和高效的结构中获益。
 
 **示例**
 
-以下查询从序列和productListItems数组创建值对，使用map_from_entries将这些值对转换为映射，然后选择原始productListItems列以及新创建的map_from_entries列。 系统会根据指定的时间戳范围对结果进行过滤和限制。
+以下查询从序列和productListItems数组创建值对，使用map_from_entries将这些值对转换为映射，然后选择原始productListItems列以及新创建的map_from_entries列。 根据指定的时间戳范围对结果进行筛选和限制。
 
 ```sql
 SELECT productListItems,      map_from_entries(zip_with(Sequence(1,Size(productListItems)), productListItems, (x,y) -> struct(x, y))) AS map_from_entries
@@ -228,7 +228,7 @@ LIMIT 10;
 
 **结果**
 
-此SQL的结果将与下面所示的结果类似。
+此SQL的结果与下面显示的结果类似。
 
 ```console
 productListItems     | map_from_entries
@@ -255,11 +255,11 @@ productListItems     | map_from_entries
 
 >[!IMPORTANT]
 >
->键中应该没有空元素。
+>键中不应存在空元素。
 
 **示例**
 
-下面的SQL创建了一个映射，其中键是使用`Sequence`函数生成的顺序数字，值是来自`productListItems`数组的元素。 查询选择`productListItems`列并使用`Map_from_arrays`函数根据生成的数字序列和数组的元素创建映射。 结果限制为10行，并根据时间戳范围进行筛选。
+下面的SQL将创建一个映射，其中键是使用`Sequence`函数生成的序列数字，而值是来自`productListItems`数组的元素。 查询选择`productListItems`列并使用`Map_from_arrays`函数根据生成的数字序列和数组的元素创建映射。 结果限制为十行，并根据时间戳范围进行筛选。
 
 ```sql
 SELECT productListItems,
@@ -301,7 +301,7 @@ productListItems     | map_from_entries
 
 **示例**
 
-下面的SQL创建一个映射，其中`productListItems`中的每个项都与一个序列号关联，该序列号随后与另一个映射关联，其中键在特定序列范围内生成。
+下面的SQL创建一个映射，其中`productListItems`中的每个项都与一个序列号相关联，该序列号随后与另一个映射连接，在该映射中键在特定序列范围内生成。
 
 ```sql
 SELECT productListItems,
@@ -460,6 +460,6 @@ productListItems     | array_distinct(productListItems)
 
 [`transform`函数示例](../use-cases/retrieve-similar-records.md#length-adjustment)涵盖了产品列表的标记化。
 
-[`filter`函数示例](../use-cases/retrieve-similar-records.md#filter-results)演示了从文本数据中更精细、更精确的相关信息提取。
+[`filter`函数示例](../use-cases/retrieve-similar-records.md#filter-results)演示了从文本数据中更精细、更精确地提取相关信息。
 
-[`reduce`函数](../use-cases/retrieve-similar-records.md#higher-order-function-solutions)提供了一种导出累计值或汇总的方法，这些值或汇总在各种分析和计划流程中可能至关重要。
+[`reduce`函数](../use-cases/retrieve-similar-records.md#higher-order-function-solutions)提供了导出累积值或聚合的方法，这在各种分析和规划过程中可能至关重要。

@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；故障排除指南；faq；故障排除；
 solution: Experience Platform
-title: 常见问题
+title: 常见问题解答
 description: 本文档包含与查询服务相关的常见问题和解答。 主题包括：导出数据、第三方工具和PSQL错误。
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
+source-git-commit: 84f30a47102a51b40d6811cd4815c36f6ffd34b5
 workflow-type: tm+mt
-source-wordcount: '4425'
+source-wordcount: '4564'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,11 @@ ht-degree: 0%
 下面的常见问题解答列表分为以下类别：
 
 - [General](#general)
+- [查询UI](#queries-ui) 
+- [数据集示例](#dataset-samples)
 - [导出数据](#exporting-data)
+- [SQL语法](#sql-syntax) 
+- [ITAS查询](#itas-queries)
 - [第三方工具](#third-party-tools)
 - [PostgreSQL API错误](#postgresql-api-errors)
 - [REST API错误](#rest-api-errors)
@@ -212,7 +216,7 @@ SELECT * FROM customers LIMIT 0;
 ### “验证架构时出错”是什么意思？
 
 +++回答
-“验证架构时出错”消息意味着系统无法找到架构中的字段。 您应该阅读[在查询服务中组织数据资产](./best-practices/organize-data-assets.md)的最佳实践文档，然后阅读[创建表作为选择文档](./sql/syntax.md#create-table-as-select)。
+“验证架构时出错”消息表示系统无法在架构内找到字段。 您应阅读[在查询服务中组织数据资源](./best-practices/organize-data-assets.md)的最佳实践文档，后跟[创建表作为选择文档](./sql/syntax.md#create-table-as-select)。
 
 以下示例演示了CTAS语法和结构数据类型的使用：
 
@@ -386,7 +390,7 @@ SELECT to_utc_timestamp('2021-08-31', 'Asia/Seoul');
 
 作为另一个示例，如果给定时间戳为`Asia/Seoul`时区的`2021-07-14 12:40:00.0`，则返回的UTC时间戳为`2021-07-14 03:40:00.0`
 
-查询服务UI中提供的控制台输出是更易于用户识别的格式：
+查询服务UI中提供的控制台输出是一种更易于人阅读的格式：
 
 ```
 8/30/2021, 3:00 PM
@@ -394,13 +398,13 @@ SELECT to_utc_timestamp('2021-08-31', 'Asia/Seoul');
 
 #### 从UTC时间戳转换
 
-`from_utc_timestamp()`方法从本地时区&#x200B;**的时间戳中解释给定参数**，并以UTC格式提供所需区域的等效时间戳。 在下面的示例中，小时是用户本地时区的下午2:40。 作为变量传递的首尔时区比当地时区早九小时。
+`from_utc_timestamp()`方法从本地时区&#x200B;**的时间戳解释给定参数**，并以UTC格式提供所需区域的等效时间戳。 在下面的示例中，小时是用户本地时区下午2:40。 首尔时区作为变量被列入时区范围，比当地时区早九小时。
 
 ```SQL
 SELECT from_utc_timestamp('2021-08-31 14:40:00.0', 'Asia/Seoul');
 ```
 
-查询会返回作为参数传递的时区的时间戳（UTC格式）。 结果比运行查询的时区早九小时。
+查询会返回作为参数传递的时区时间戳（UTC格式）。 结果比运行查询的时区早九小时。
 
 ```
 8/31/2021, 11:40 PM
@@ -570,13 +574,13 @@ WHERE T2.ID IS NULL
 ### 在端口80上建立的连接是否仍使用https？
 
 +++回答
-是的，在端口80上建立的连接仍使用SSL。 您也可以使用端口5432。
+是的，在端口80上建立的连接仍然使用SSL。 也可以使用端口5432。
 +++
 
-### 我是否可以控制对特定连接的特定数据集和列的访问？ 这是如何配置的？
+### 能否控制对特定连接的特定数据集和列的访问？ 这是如何配置的？
 
 +++回答
-是，如果进行了配置，将强制执行基于属性的访问控制。 有关详细信息，请参阅[基于属性的访问控制概述](../access-control/abac/overview.md)。
+是，如果配置了基于属性的访问控制，则会强制实施该控制。 有关详细信息，请参阅[基于属性的访问控制概述](../access-control/abac/overview.md)。
 +++
 
 ### 查询服务是否支持“INSERT OVERWRITE INTO”命令？
@@ -601,6 +605,22 @@ Data Distiller计算机小时的许可证使用情况仪表板每天更新四次
 
 +++回答
 是的。 但是，某些第三方客户端（如DbVisualizer）在SQL块之前和之后可能需要单独的标识符来指示脚本的一部分应作为单个语句处理。 可在[匿名块文档](./key-concepts/anonymous-block.md)或[官方的DbVisualizer文档](https://confluence.dbvis.com/display/UG120/Executing+Complex+Statements#ExecutingComplexStatements-UsinganSQLDialect)中找到更多详细信息。
++++
+
+## 查询Ui
+
+### 尝试连接到查询服务时，“创建查询”卡住“正在初始化连接……”。 如何修复此问题？
+
++++回答
+如果“创建查询”卡在“正在初始化连接……”上，则可能是连接或会话问题。 如果您使用的是Platform UI，请刷新浏览器并重试。
++++
+
+## 数据集示例
+
+### 是否可以在系统数据集中创建示例？
+
++++回答
+不适用。 系统数据集的写入权限受到限制，因此无法创建示例。
 +++
 
 ## 导出数据 {#exporting-data}
@@ -649,6 +669,22 @@ and timestamp < to_timestamp('2022-07-23');
 
 +++
 
+## SQL语法
+
+### Data Distiller或查询服务是否支持MERGE INTO？
+
++++回答
+Data Distiller或查询服务不支持MERGE INTO SQL构造。
++++
+
+## ITAS查询
+
+### 什么是ITAS查询？
+
++++回答
+INSERT INTO查询称为ITAS查询。 请注意，CREATE TABLE查询称为CTAS查询。
++++
+
 ## 第三方工具 {#third-party-tools}
 
 本节包含有关使用PSQL和Power BI等第三方工具的信息。
@@ -691,7 +727,7 @@ and timestamp < to_timestamp('2022-07-23');
 
 如果要缩短功能板的响应时间，应实施Business Intelligence(BI)服务器作为查询服务和BI工具之间的缓存层。 通常，大多数BI工具都为服务器提供了附加服务。
 
-添加缓存服务器层的目的是缓存来自查询服务的数据，并利用该缓存服务让仪表板加快响应。 这是可能的，因为执行的查询的结果每天都会缓存在BI服务器中。 然后，缓存服务器会为具有相同查询的任何用户提供这些结果，以减少延迟。 有关此类设置的说明，请参阅您所使用的实用程序或第三方工具的文档。
+添加缓存服务器层的目的是缓存查询服务中的数据，并将缓存服务器层用于仪表板以加快响应速度。 这是可能的，因为执行的查询的结果每天都会缓存在BI服务器中。 然后，缓存服务器会为具有相同查询的任何用户提供这些结果，以降低延迟。 请参阅您使用的实用程序或第三方工具文档，了解关于此设置的说明。
 +++
 
 ### 是否可以使用pgAdmin连接工具访问查询服务？
@@ -718,7 +754,7 @@ and timestamp < to_timestamp('2022-07-23');
 | **58000** | 查询 | 系统错误 | 内部系统故障 |
 | **0A000** | 查询/命令 | 不支持 | 不支持查询/命令中的特性/功能 |
 | **42501** | DROP TABLE查询 | 正在删除不是由查询服务创建的表 | 查询服务未使用`CREATE TABLE`语句创建要删除的表 |
-| **42501** | DROP TABLE查询 | 表不是由经过身份验证的用户创建的 | 当前正在删除的表不是由当前登录的用户创建的 |
+| **42501** | DROP表查询 | 表不是由经过身份验证的用户创建的 | 当前登录的用户未创建要删除的表 |
 | **42P01** | DROP TABLE查询 | 未找到表 | 找不到查询中指定的表 |
 | **42P12** | DROP TABLE查询 | 找不到`dbName`的表：请检查`dbName` | 在当前数据库中未找到表 |
 

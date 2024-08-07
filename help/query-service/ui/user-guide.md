@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询编辑器UI指南
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发，以及运行非交互式查询以在Experience Platform中填充数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: d2bc580ba1cacdfab45bdc6356c630a63e7d0f6e
 workflow-type: tm+mt
-source-wordcount: '2432'
+source-wordcount: '2430'
 ht-degree: 0%
 
 ---
@@ -223,9 +223,9 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 ![查询编辑器控制台的“结果”选项卡显示查询运行的结果。](../images/ui/query-editor/query-results.png)
 
-## 用例 {#use-cases}
+## 示例 {#examples}
 
-查询服务为跨行业和业务场景的各种用例提供解决方案。 这些实际示例展示了服务在满足各种需求方面的灵活性和影响。 要[揭示查询服务如何为您的特定业务需求带来价值](../use-cases/overview.md)，请探索使用案例文档的完整集合。 了解如何使用查询服务提供洞察信息和解决方案，以增强运营效率和业务成功。
+查询服务为跨行业和业务场景的各种用例提供解决方案。 这些示例显示了服务在满足各种需求方面的灵活性和影响。 要[揭示查询服务如何为您的特定业务需求带来价值](../use-cases/overview.md)，请探索使用案例文档的完整集合。 了解如何使用查询服务提供洞察信息和解决方案，以增强运营效率和业务成功。
 
 <!-- This video is from 2019. The logic is sounds but the workflow is too outdated. -->
 
