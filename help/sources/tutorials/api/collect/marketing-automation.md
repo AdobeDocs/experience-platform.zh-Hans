@@ -5,9 +5,9 @@ title: 使用流服务API为营销自动化源创建数据流
 type: Tutorial
 description: 本教程介绍了从营销自动化系统中检索数据以及使用源连接器和API将数据引入Adobe Experience Platform的步骤。
 exl-id: f3754bd0-ed31-4bf2-8f97-975bf6a9b076
-source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
+source-git-commit: 48aef63cffbdc52a6a96ef69e5db4f54274144b6
 workflow-type: tm+mt
-source-wordcount: '1349'
+source-wordcount: '1350'
 ht-degree: 2%
 
 ---
@@ -637,7 +637,7 @@ curl -X POST \
 | `transformations.params.mappingId` | 与数据库关联的映射ID。 |
 | `scheduleParams.startTime` | 以纪元时间表示的数据流开始时间。 |
 | `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`、`minute`、`hour`、`day`或`week`。 |
-| `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 间隔的值应为非零整数。 当频率设置为`once`时不需要间隔，其他频率值应大于或等于`15`。 |
+| `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 间隔的值应为非零整数。 每个频率的最小接受间隔值如下：<ul><li>**一次**：不适用</li><li>**分钟**： 15</li><li>**小时**： 1</li><li>**天**： 1</li><li>**周**： 1</li></ul> |
 
 **响应**
 

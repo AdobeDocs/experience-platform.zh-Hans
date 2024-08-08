@@ -3,9 +3,9 @@ title: 使用API将付款数据从您的 [!DNL Stripe] 帐户引入到Experience
 description: 了解如何使用流服务API将支付数据从您的Stripe帐户摄取到Experience Platform
 badge: Beta 版
 exl-id: a9cb3ef6-aab0-4a5b-894e-ce90b82f35a8
-source-git-commit: 62bcaa532cdec68a2f4f62e5784c35b91b7d5743
+source-git-commit: 48aef63cffbdc52a6a96ef69e5db4f54274144b6
 workflow-type: tm+mt
-source-wordcount: '1998'
+source-wordcount: '2020'
 ht-degree: 1%
 
 ---
@@ -881,7 +881,7 @@ curl -X POST \
 | `transformations.params.mappingVersion` | 映射ID的相应版本。 此值默认为`0`。 |
 | `scheduleParams.startTime` | 您的数据流将开始的时间。 必须以Unix时间戳的格式提供开始时间值。 |
 | `scheduleParams.frequency` | 数据流收集数据的频率。 您可以将摄取频率配置为：  <ul><li>**一次**：将频率设置为`once`以创建一次性引入。 创建一次性摄取数据流时，间隔和回填配置不可用。 默认情况下，调度频率设置为一次。</li><li>**分钟**：将频率设置为`minute`，以计划数据流以每分钟摄取数据。</li><li>**小时**：将频率设置为`hour`，以计划数据流每小时摄取数据。</li><li>**天**：将频率设置为`day`，以计划数据流每天摄取数据。</li><li>**周**：将频率设置为`week`，以计划数据流每周摄取数据。</li></ul> |
-| `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 例如，如果将频率设置为天并将间隔配置为15，则数据流将每15天运行一次。 间隔值应为非零整数。 |
+| `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 例如，如果将频率设置为天并将间隔配置为15，则数据流将每15天运行一次。 间隔值应为非零整数。 每个频率的最小接受间隔值如下：<ul><li>**一次**：不适用</li><li>**分钟**： 15</li><li>**小时**： 1</li><li>**天**： 1</li><li>**周**： 1</li></ul> |
 
 **响应**
 
