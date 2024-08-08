@@ -31,7 +31,7 @@ Adobe Experience Platform中的新增功能：
 
 联合受众组合允许企业组合数据以更好地在各种用例之间应用。 使用此新方法，作为Adobe Real-time Customer Data Platform和/或Adobe Journey Optimizer用户，您可以直接从现有数据仓库联合数据集，以在一个系统中创建和扩充Adobe Experience Platform受众和属性。
 
-有关详细信息，请阅读[联合受众组合文档](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/home)。
+有关详细信息，请阅读[联合受众组合文档](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/home)。
 
 ## 高级数据生命周期管理 {#advanced-data-lifecycle-management}
 
