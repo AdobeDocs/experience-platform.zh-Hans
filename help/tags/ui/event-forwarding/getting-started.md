@@ -3,14 +3,18 @@ title: 事件转发快速入门
 description: 按照此分步教程进行操作，以开始在Adobe Experience Platform中使用事件转发。
 feature: Event Forwarding
 exl-id: f82bfac9-dc2d-44de-a308-651300f107df
-source-git-commit: 05170986263b6eed2d19a65e34f70dc28eb8ba2f
+source-git-commit: 0a95d09eb1ce59e45d52372c4b08725c009001c3
 workflow-type: tm+mt
-source-wordcount: '864'
-ht-degree: 22%
+source-wordcount: '887'
+ht-degree: 21%
 
 ---
 
 # 事件转发快速入门
+
+>[!NOTE]
+>
+>事件转发是一项付费功能，包含在Adobe Real-time Customer Data Platform Connections、Prime或Ultimate产品中。
 
 >[!NOTE]
 >
