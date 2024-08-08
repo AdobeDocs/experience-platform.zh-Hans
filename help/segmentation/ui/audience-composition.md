@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Audiences UI指南
 description: Adobe Experience Platform UI中的受众组合提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了一些直观的控件，可用于为贵组织构建和编辑受众。
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: 8bc03889ff108630bd20fe47f2c2920ceba5069b
+source-git-commit: 44848a250cb6020744b51dc0d0247f5fa91ab2ef
 workflow-type: tm+mt
-source-wordcount: '1951'
+source-wordcount: '1952'
 ht-degree: 0%
 
 ---
@@ -232,7 +232,7 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 
 ## [!UICONTROL 拆分] {#split-block}
 
-**[!UICONTROL 拆分]**&#x200B;块类型允许您将新受众拆分为各种子受众。 您可以按百分比或属性拆分此受众。 将受众拆分为子受众时，此拆分为&#x200B;**永久拆分**。 这意味着每次评估时，用户档案都位于同一子受众中。
+**[!UICONTROL 拆分]**&#x200B;块类型允许您将新受众拆分为各种子受众。 您可以按百分比或属性拆分此受众。 将受众拆分为子受众时，此拆分为永久拆分&#x200B;**而非**。 这意味着每次评估时，用户档案可能位于不同的子受众中。
 
 要添加&#x200B;**[!UICONTROL Split]**&#x200B;块，请选择&#x200B;**+**&#x200B;图标，然后选择&#x200B;**[!UICONTROL Split]**。
 
