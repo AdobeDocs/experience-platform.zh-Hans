@@ -3,9 +3,9 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 68781d27e374261108955b24dfb7b46141f5108b
+source-git-commit: 14c534abe51a43d45f8709657a6049a463f35045
 workflow-type: tm+mt
-source-wordcount: '3975'
+source-wordcount: '4024'
 ht-degree: 11%
 
 ---
@@ -30,6 +30,11 @@ ht-degree: 11%
 要将受众激活到目标，您必须已成功[连接到目标](./connect-destination.md)。 如果您尚未这样做，请转到[目标目录](../catalog/overview.md)，浏览支持的目标，然后配置要使用的目标。
 
 ## 支持的导出文件格式 {#supported-file-formats-export}
+
+>[!CONTEXTUALHELP]
+>id="legacy_dataflow_needs_schedule_end_date"
+>title="更新此数据流的结束日期"
+>abstract="由于此目标最近进行了更新，数据流现在需要结束日期。 Adobe已将默认结束日期设置为2025年3月1日。 请更新到所需的结束日期，否则数据导出将在默认日期停止。"
 
 导出受众时支持以下文件格式：
 
