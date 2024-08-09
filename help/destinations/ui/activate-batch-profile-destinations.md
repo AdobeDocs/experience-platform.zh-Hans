@@ -3,9 +3,9 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 7a909c362b9e367fa4b86a8525fe98f203e3c2d5
+source-git-commit: dab3b432cac4ad416576f9d3d35e679d9483c816
 workflow-type: tm+mt
-source-wordcount: '4112'
+source-wordcount: '4077'
 ht-degree: 10%
 
 ---
@@ -34,7 +34,7 @@ ht-degree: 10%
 >[!CONTEXTUALHELP]
 >id="dataset_dataflow_needs_schedule_end_date_header"
 >title="更新此数据流的结束日期"
->abstract="由于此目标最近进行了更新，数据流现在需要结束日期。 Adobe已将默认结束日期设置为2025年3月1日。 请更新到所需的结束日期，否则数据导出将在默认日期停止。"
+>abstract="更新此数据流的结束日期"
 
 >[!CONTEXTUALHELP]
 >id="dataset_dataflow_needs_schedule_end_date_body"
