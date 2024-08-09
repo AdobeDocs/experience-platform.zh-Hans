@@ -3,9 +3,9 @@ keywords: Experience Platform；身份；身份服务；故障排除；护栏；
 title: Identity服务的护栏
 description: 本文档提供了有关Identity Service数据的使用和速率限制的信息，以帮助您优化身份图的使用。
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: 5d6b70e397a252e037589c3200053ebcb7eb8291
+source-git-commit: 6d36a6ff1243b15dcafc2f37d8bad982730f7a39
 workflow-type: tm+mt
-source-wordcount: '1549'
+source-wordcount: '1591'
 ht-degree: 1%
 
 ---
@@ -57,6 +57,10 @@ ht-degree: 1%
 ### 身份命名空间摄取
 
 从2023年3月31日开始，Identity Service将阻止为新客户摄取Adobe Analytics ID (AAID)。 此标识通常通过[Adobe Analytics源](../sources/connectors/adobe-applications/analytics.md)和[Adobe Audience Manager源](../sources//connectors/adobe-applications/audience-manager.md)摄取，并且是多余的，因为ECID表示相同的Web浏览器。 如果要更改此默认配置，请联系您的Adobe客户团队。
+
+## 性能护栏 {#performance-guardrails}
+
+Identity Service持续监视传入的数据，以确保大规模的高性能和可靠性。 但是，在短时间内大量涌入的体验事件数据可能会导致性能下降和延迟。 Adobe不对此类性能下降负责。
 
 ## 了解在容量中的身份图更新时的删除逻辑 {#deletion-logic}
 
