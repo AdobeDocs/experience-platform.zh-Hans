@@ -4,9 +4,9 @@ description: 开始使用Adobe Real-Time CDP，了解它提供的丰富功能以
 solution: Real-Time Customer Data Platform
 product: Real Time CDP
 exl-id: 92179d9a-be79-4a39-b2ab-9a85a542f53c
-source-git-commit: c9a954d2a78abcea67e68e5ae9563e6db1ae706c
+source-git-commit: 7a909c362b9e367fa4b86a8525fe98f203e3c2d5
 workflow-type: tm+mt
-source-wordcount: '1114'
+source-wordcount: '1175'
 ht-degree: 3%
 
 ---
@@ -21,6 +21,12 @@ ht-degree: 3%
 
 >[!BEGINTABS]
 
+>[!TAB 联合受众组合]
+
+联合受众组合允许企业组合数据以更好地在各种用例之间应用。 使用此新方法，作为Adobe Real-time Customer Data Platform和/或Adobe Journey Optimizer用户，您可以直接从现有数据仓库联合数据集，以在一个系统中创建和扩充Adobe Experience Platform受众和属性。
+
+[![图像](assets/do-not-localize/learn-more-button.svg)](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/home)
+
 >[!TAB 用例战术手册]
 
 [!UICONTROL 用例行动手册]功能现在普遍适用于所有Real-Time CDP和Adobe Journey Optimizer客户。 [!UICONTROL 用例行动手册]旨在帮助用户在开始使用Real-time Customer Data Platform或Adobe Journey Optimizer时克服挑战。 当您不确定从何处开始或如何为所需的用例创建正确的资产时，用例行动手册会提供灵感并创建不同的资产，以供您在准备就绪时测试并导入生产环境。
@@ -31,19 +37,19 @@ ht-degree: 3%
 
 使用沙盒工具功能可提高沙盒之间的配置准确性并在沙盒之间无缝导出和导入配置。 您可以使用沙盒工具功能选择不同的对象并将它们导出到包中。
 
-[![image](assets/do-not-localize/learn-more-button.svg)](/help/sandboxes/ui/sandbox-tooling.md)
+[![图像](assets/do-not-localize/learn-more-button.svg)](/help/sandboxes/ui/sandbox-tooling.md)
 
 >[!TAB 计算属性]
 
 通过直观的UI将事件数据轻松总结为配置文件属性，以增强基于行为的分段、个性化和激活。 借助此功能，您可以自助创建计算属性，管理这些属性，并在分段、Real-Time CDP目标或Adobe Journey Optimizer中使用它们。 此外，计算属性可简化分段和历程工作流，以帮助您无缝地提供相关体验。
 
-[![image](assets/do-not-localize/learn-more-button.svg)](/help/profile/computed-attributes/overview.md)
+[![图像](assets/do-not-localize/learn-more-button.svg)](/help/profile/computed-attributes/overview.md)
 
 >[!TAB 数据导出]
 
 数据集导出功能现已正式可用。 查看可根据您购买的Experience Platform应用](../destinations/ui/export-datasets.md#datasets-to-export)导出哪些数据集[，并查看用于导出数据集的[护栏](/help/destinations/guardrails.md#dataset-exports)。
 
-[![image](assets/do-not-localize/learn-more-button.svg)](../destinations/ui/export-datasets.md)
+[![图像](assets/do-not-localize/learn-more-button.svg)](../destinations/ui/export-datasets.md)
 
 >[!TAB 合作伙伴数据支持]
 
