@@ -2,10 +2,10 @@
 title: 沙盒工具包API端点
 description: 沙盒工具API中的/packages端点允许您以编程方式管理Adobe Experience Platform中的包。
 exl-id: 46efee26-d897-4941-baf4-d5ca0b8311f0
-source-git-commit: 8ff9c50b4999a49413f8c45274815225ba58361c
+source-git-commit: f81e15ccfd89e2d0cb450f596743341264187f52
 workflow-type: tm+mt
-source-wordcount: '1531'
-ht-degree: 6%
+source-wordcount: '1621'
+ht-degree: 8%
 
 ---
 
@@ -138,8 +138,23 @@ curl -X PUT \
 | --- | --- | --- | --- |
 | `id` | 要更新的程序包的ID。 | 字符串 | 是 |
 | `action` | 要将项目添加到包中，操作值应为&#x200B;**ADD**。 仅&#x200B;**PARTIAL**&#x200B;包类型支持此操作。 | 字符串 | 是 |
-| `artifacts` | 要添加到包中的项目列表。 如果列表为&#x200B;**null**&#x200B;或&#x200B;**empty**，则不会更改包。 在将工件添加到资源包之前，会先对其进行重复数据删除。 | 数组 | 否 |
+| `artifacts` | 要添加到包中的项目列表。 如果列表为&#x200B;**null**&#x200B;或&#x200B;**empty**，则不会更改包。 在将工件添加到资源包之前，会先对其进行重复数据删除。 请参阅下表，以查看支持的项目的完整列表。 | 数组 | 否 |
 | `expiry` | 定义包到期日期的时间戳。 如果在有效负载中未指定过期，则默认值为从调用PUTAPI时起90天。 响应到期字段将为纪元UTC时间。 | 字符串（UTC时间戳格式） | 否 |
+
+当前支持以下工件类型。
+
+| 工件 | 平台 | 对象 | 部分流量 | 完整沙盒 |
+| --- | --- | --- | --- | --- |
+| `JOURNEY` | Adobe Journey Optimizer | 历程 | 是 | 否 |
+| `ID_NAMESPACE` | 客户数据平台 | 标识 | 是 | 是 |
+| `REGISTRY_DATATYPE` | 客户数据平台 | 数据类型 | 是 | 是 |
+| `REGISTRY_CLASS` | 客户数据平台 | 类 | 是 | 是 |
+| `REGISTRY_MIXIN` | 客户数据平台 | 字段组 | 是 | 是 |
+| `REGISTRY_SCHEMA` | 客户数据平台 | 架构 | 是 | 是 |
+| `CATALOG_DATASET` | 客户数据平台 | 数据集 | 是 | 是 |
+| `DULE_CONSENT_POLICY` | 客户数据平台 | 同意和治理政策 | 是 | 是 |
+| `PROFILE_SEGMENT` | 客户数据平台 | 受众 | 是 | 是 |
+| `FLOW` | 客户数据平台 | 源数据流 | 是 | 是 |
 
 **响应**
 
