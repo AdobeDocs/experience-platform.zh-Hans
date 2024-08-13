@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据集UI指南
 description: 了解如何在Adobe Experience Platform用户界面中使用数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 10140efe33b42f9099b28564c9824839d83521a3
 workflow-type: tm+mt
-source-wordcount: '3080'
+source-wordcount: '3111'
 ht-degree: 3%
 
 ---
@@ -92,6 +92,10 @@ ht-degree: 3%
 ![选定数据集的“数据集”工作区的“浏览”选项卡，其中突出显示了省略号和预览数据集选项。](../images/datasets/user-guide/preview-dataset-option.png)
 
 这将打开预览窗口，其中数据集的架构的分层视图显示在右侧。
+
+>[!NOTE]
+>
+>视图左侧的架构图仅显示包含数据的字段。 无数据的字段会自动隐藏，以简化UI并专注于相关信息。
 
 ![将显示数据集预览对话框，其中包含有关数据集的结构信息以及示例值。](../images/datasets/user-guide/preview-dataset.png)
 
