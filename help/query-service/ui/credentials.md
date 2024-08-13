@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务凭据指南
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看先前执行的查询以及访问由您组织内的用户保存的查询。
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 569f8f96a1039e52ac374e2eb07fd96ad8138edd
 workflow-type: tm+mt
-source-wordcount: '1807'
+source-wordcount: '1828'
 ht-degree: 2%
 
 ---
@@ -76,7 +76,11 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 
 >[!NOTE]
 >
->未过期的凭据具有以下限制：<br><ul><li>用户必须使用由`{technicalAccountId}:{credential}`组成的用户名和密码登录。 可在[生成凭据](#generate-credentials)部分中找到更多信息。</li><li>创建过期凭据后，将创建具有一组基本权限的新角色，该角色允许用户查看架构和数据集。 “管理查询”权限也已分配给此角色，以与查询服务一起使用。</li><li>当列出查询对象时，第三方客户端可能会执行与预期不同的操作。 例如，某些第三方客户端（如[!DNL DB Visualizer]）将不会在左侧面板中显示视图名称。 但是，如果在SELECT查询中调用视图名称，则视图名称可访问。 同样，[!DNL PowerUI]可能不会列出通过SQL创建的要选择用于创建仪表板的临时视图。</li></ul>
+>未过期的凭据具有以下限制：
+>
+>- 用户必须使用`{technicalAccountId}:{credential}`格式的用户名和密码登录。 可在[生成凭据](#generate-credentials)部分中找到更多信息。
+>- 默认情况下，未过期的凭据仅被授予执行`SELECT`查询的权限。 要运行`CTAS`或`ITAS`查询，请手动将“管理数据集”和“管理架构”权限添加到与未过期凭据关联的角色。 “管理架构”权限位于“数据建模”部分下，而“管理数据集”权限位于[Adobe Developer Console](<https://developer.adobe.com/console/>)的“数据管理”部分下。
+>- 当列出查询对象时，第三方客户端可能会执行与预期不同的操作。 例如，某些第三方客户端（如[!DNL DB Visualizer]）将不会在左侧面板中显示视图名称。 但是，如果在`SELECT`查询中调用了视图名称，则视图名称可访问。 同样，[!DNL PowerUI]可能不会列出通过SQL创建的临时视图，以便在创建仪表板时进行选择。
 
 ### 先决条件
 
