@@ -5,10 +5,10 @@ breadcrumb-title: Segmentation Service 指南
 user-guide-description: 使用 Adobe Experience Platform 生成的区段定义或外部来源，根据实时客户配置文件数据构建受众群体。
 feature: Segments
 role: User
-source-git-commit: 515a7cc3ba12afe14aab3e882b7fd55d5cc09069
+source-git-commit: 0bbee2100ed6fdc0f40457965e195d07de6eb2a1
 workflow-type: tm+mt
-source-wordcount: '191'
-ht-degree: 40%
+source-wordcount: '194'
+ht-degree: 43%
 
 ---
 
@@ -36,7 +36,7 @@ ht-degree: 40%
    - [受众门户](ui/audience-portal.md)
    - [受众组合](ui/audience-composition.md)
    - [区段生成器](ui/segment-builder.md)
-   - [联合受众组合（有限可用性）](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/home)
+   - [联合受众构成（限量发布版）](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/home)
    - [帐户受众](ui/account-audiences.md)
    - [相似受众](ui/lookalike-audiences.md)
    - [潜在客户受众](ui/prospect-audience.md)
@@ -73,6 +73,7 @@ ht-degree: 40%
    - [导入和使用外部受众](tutorials/using-external-audiences.md)
    - [创建数据集以导出数据](tutorials/create-dataset-export-segment.md)
    - [强制区段遵守数据使用规定](tutorials/governance.md)
+- [资格标准更新](./eligibility-criteria-update.md)
 - [常见问题解答](./faq.md)
 - [API 参考](https://www.adobe.io/experience-platform-apis/references/segmentation/)
 - [平台发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
