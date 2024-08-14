@@ -4,9 +4,9 @@ title: 许可证使用情况仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 3e465803b6c8fe11cef1633c0f0624465086c2a3
+source-git-commit: 090b870dcfb16e59831f1e03eb46b22da4f24f0f
 workflow-type: tm+mt
-source-wordcount: '2328'
+source-wordcount: '2429'
 ht-degree: 6%
 
 ---
@@ -91,6 +91,16 @@ ht-degree: 6%
 此时将显示摘要选项卡。 您可以使用[!UICONTROL 摘要]和[!UICONTROL 详细信息]选项卡上提供的粒度预测以确保做出明智的决策，从而有效使用许可证。
 
 ![预测使用列突出显示的平台产品的摘要视图。](../images/license-usage/summary-predicted-usage.png)
+
+预计使用率的百分比确定如下：
+
+- 如果下限和上限有显着差异，则它们将显示为范围（例如，32% - 35%）。
+- 如果下限和上限几乎完全相同且不为零，则它们将显示为近似值（例如，~34%）。
+- 如果下限和上限几乎完全相同且为零，则它们将显示为0%。
+
+>[!NOTE]
+>
+在此上下文中，“几乎相同”意味着值对于小数点两位具有统计意义（例如，0.342的下限和0.344的上限都舍入到34%）。
 
 预测的使用量功能支持以下量度：
 
