@@ -3,7 +3,7 @@ title: 激活受众以边缘个性化目标
 description: 了解如何为同一页面和下一页面个性化用例将受众从Adobe Experience Platform激活到边缘个性化目标。
 type: Tutorial
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 14dccb993b38ca352c6de3ed851bafe7c44ca631
 workflow-type: tm+mt
 source-wordcount: '1957'
 ht-degree: 2%
@@ -47,7 +47,7 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/ui/edge-se
 
 ## 用例 {#use-cases}
 
-使用Adobe个性化解决方案(如Adobe Target)或您自己的个性化合作伙伴平台（例如，[!DNL Optimizely]、[!DNL Pega]）以及专有系统（例如，内部CMS），通过[自定义Personalization](../catalog/personalization/custom-personalization.md)目标提供更深入的客户个性化体验。 所有这些功能的同时还可利用Experience PlatformEdge Network数据收集和分段功能。
+使用Adobe个性化解决方案(如Adobe Target)或您自己的个性化合作伙伴平台（例如，[!DNL Optimizely]、[!DNL Pega]）以及专有系统(例如，内部CMS)，通过[自定义Personalization](../catalog/personalization/custom-personalization.md)目标提供更深入的客户个性化体验。 所有这些功能的同时还可利用Experience PlatformEdge Network数据收集和分段功能。
 
 下面介绍的使用案例包括网站个性化和有针对性的网站广告。
 
@@ -112,7 +112,7 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/ui/edge-se
 根据您配置的目标，请参阅以下文章以了解特定于目标的先决条件和相关信息：
 
 * [Adobe Target连接](../catalog/personalization/adobe-target-connection.md#parameters)
-* [自定义个性化连接](../catalog/personalization/custom-personalization.md##parameters)
+* [自定义个性化连接](../catalog/personalization/custom-personalization.md#parameters)
 
 ## 选择您的目标 {#select-destination}
 

@@ -2,7 +2,7 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 的 2024 年 4 月发行说明。
 exl-id: 86d72fd8-a464-4715-abc9-4177236e423c
-source-git-commit: 57d42d88ec9a93744450a2a352590ab57d9e5bb7
+source-git-commit: 14dccb993b38ca352c6de3ed851bafe7c44ca631
 workflow-type: tm+mt
 source-wordcount: '1895'
 ht-degree: 17%
@@ -74,7 +74,7 @@ Adobe Experience Platform提供了一套技术，可让您收集客户端客户�
 | 功能 | 描述 |
 | ----------- | ----------- |
 | `isRequired`参数现在可用于Destination SDK中的嵌套客户数据字段 | 在Destination SDK中配置目标时，您现在可以[根据需要设置嵌套的客户数据字段](/help/destinations/destination-sdk/functionality/destination-configuration/customer-data-fields.md#nested-fields)。 这样，设置目标的用户便无法继续其激活流程，除非为该字段选择值。 |
-| 使用Web SDK设置Edge目标时，Adobe Target分段不再是强制要求 | 以前，在使用Web SDK配置[Adobe Target目标](/help/destinations/catalog/personalization/adobe-target-connection.md)时，必须启用数据流以进行个性化和边缘分段。 现已删除为边缘分段[启用数据流的要求](/help/destinations/ui/activate-edge-personalization-destinations.md#configure-datastream)。 请注意，在将Adobe Target与Real-Time CDP结合使用时，此集成模式仅允许您从一部分个性化用例中受益。 阅读有关集成类型](/help/destinations/catalog/personalization/adobe-target-connection.md#parameters)启用的[用例的详细信息。 |
+| 使用Web SDK设置Edge目标时，Adobe Target分段不再是强制要求 | 以前，在使用Web SDK配置[Adobe Target目标](/help/destinations/catalog/personalization/adobe-target-connection.md)时，必须启用数据流以进行个性化和边缘分段。 现已删除为边缘分段[启用数据流的要求](/help/destinations/ui/activate-edge-personalization-destinations.md#configure-datastream)。 请注意，在将Adobe Target与Real-Time CDP结合使用时，此集成模式仅允许您从一部分个性化用例中受益。 阅读有关集成类型](/help/destinations/catalog/personalization/adobe-target-connection.md#supported-use-cases)启用的[用例的详细信息。 |
 | [!BADGE Beta]{type=Informative}从激活流中删除多个受众和数据集 | 您现在可以选择并从目标激活流中删除多个受众和数据集。 有关更多详细信息，请参阅[目标详细信息](../../destinations/ui/destination-details-page.md#bulk-remove)和[数据集导出](../../destinations/ui/export-datasets.md)文档。 |
 
 {style="table-layout:auto"}
