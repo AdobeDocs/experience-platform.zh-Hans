@@ -6,7 +6,7 @@ exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
 source-git-commit: dab3b432cac4ad416576f9d3d35e679d9483c816
 workflow-type: tm+mt
 source-wordcount: '4077'
-ht-degree: 12%
+ht-degree: 13%
 
 ---
 
@@ -44,12 +44,12 @@ ht-degree: 12%
 >[!CONTEXTUALHELP]
 >id="destinations_folder_name_template"
 >title="编辑文件夹路径"
->abstract="使用提供的多个宏来自定义导出数据集的文件夹路径。"
+>abstract="使用提供的几个宏来自定义导出数据集的文件夹路径。"
 
 >[!CONTEXTUALHELP]
 >id="destinations_folder_name_template_preview"
 >title="数据集文件夹路径预览"
->abstract="根据在此窗口中添加的宏，获取在存储位置创建的文件夹结构的预览。"
+>abstract="预览根据您在此窗口中添加的宏在您的存储位置中创建的文件夹结构。"
 
 导出受众时支持以下文件格式：
 
