@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM系统故障排除指南
 description: 查找有关Experience Data Model (XDM)的常见问题解答，包括解决常见API错误的步骤。
 exl-id: a0c7c661-bee8-4f66-ad5c-f669c52c9de3
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 83d3d31b2d24fd01876ff7b0f1c03a5670ed3845
 workflow-type: tm+mt
-source-wordcount: '1947'
+source-wordcount: '2446'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,10 @@ ht-degree: 0%
 ## 常见问题解答
 
 以下是有关XDM系统和[!DNL Schema Registry] API用法的常见问题解答列表。
+
+## 架构基础知识
+
+在此部分中，您可以找到有关XDM系统中的架构结构、字段使用和标识的基本问题的答案。
 
 ### 如何将字段添加到架构？
 
@@ -39,15 +43,59 @@ ht-degree: 0%
 
 有关详细信息，请参阅[!DNL Schema Registry] API指南中的[资源标识](api/getting-started.md#resource-identification)部分。
 
-### 架构何时开始阻止重大更改？
-
-对架构进行重大更改时，前提是从未在创建数据集中使用过该架构，或者未启用该架构以便在[[!DNL Real-Time Customer Profile]](../profile/home.md)中使用。 一旦在数据集创建中使用了某个架构或启用了与[!DNL Real-Time Customer Profile]一起使用，系统就会严格实施[架构演变](schema/composition.md#evolution)的规则。
-
 ### 长字段类型的最大大小是多少？
 
 长字段类型是一个整数，最大大小为53(+1)位，其潜在范围介于 — 9007199254740992和9007199254740992之间。 这是由于JavaScript的JSON实施表示长整数的方式存在限制。
 
 有关字段类型的详细信息，请参阅有关[XDM字段类型约束](./schema/field-constraints.md)的文档。
+
+### 什么是meta：AltId，如何检索它？
+
+`meta:altId`是架构的唯一标识符。 `meta:altId`提供了一个易于引用的ID以用于API调用。 此ID可避免在每次与JSON URI格式一起使用时进行编码/解码。
+<!-- (Needs clarification - How do I retrieve it INCOMPLETE) ... -->
+
+<!-- ### How can I generate a sample payload for a schema? -->
+
+<!-- No Answer available.  -->
+<!-- INCOMPLETE ... -->
+
+### 能否获取用于创建数据类型的示例JSON表示形式？
+
+可以同时使用架构注册表API和平台UI来创建数据类型。 有关如何完成以下操作的说明，请参阅文档：
+
+- [使用API创建数据类型](./api/data-types.md#create)
+- [使用用户界面创建数据类型](./ui/resources/data-types.md#create)
+
+### 地图数据类型的使用限制是什么？
+
+XDM对此数据类型的使用施加以下限制：
+
+- 映射类型必须是对象类型。
+- 映射类型不能定义属性（换句话说，它们定义“空”对象）。
+- 映射类型必须包含一个additionalProperties.type字段，该字段描述可以放置在映射中的值（字符串或整数）。
+- 多实体分段只能基于映射键而不是值定义。
+- 帐户受众不支持映射。
+
+有关更多详细信息，请参阅映射对象的[使用限制](./ui/fields/map.md#restrictions)。
+
+>[!NOTE]
+>
+>不支持多级别映射或映射映射。
+
+<!-- You cannot create a complex map object. However, you can define map fields in the Schema Editor. See the guide on [defining map fields in the UI](./ui/fields/map.md) for more information. -->
+
+<!-- ### How do I create a complex map object using APIs? -->
+
+<!-- You cannot create a complex map object. -->
+
+<!-- ### How can I manage schema inheritance in Adobe Experience Platform? -->
+
+<!-- No Answer available.  -->
+<!-- INCOMPLETE ... -->
+
+## 架构Identity Management
+
+此部分包含有关在架构中定义和管理标识的常见问题解答。
 
 ### 如何定义架构的身份？
 
@@ -55,7 +103,7 @@ ht-degree: 0%
 
 可使用API或用户界面将字段标记为标识。
 
-#### 在API中定义身份
+### 在API中定义身份
 
 在API中，身份是通过创建身份描述符来建立的。 身份描述符发出信号，表明模式的特定属性是唯一标识符。
 
@@ -63,7 +111,7 @@ ht-degree: 0%
 
 有关在API中创建身份描述符的更多详细信息，请参阅[!DNL Schema Registry]开发人员指南中[描述符](api/descriptors.md)部分的文档。
 
-#### 在UI中定义身份
+### 在UI中定义身份
 
 在架构编辑器中打开架构后，选择该编辑器的&#x200B;**[!UICONTROL 结构]**&#x200B;部分中要标记为标识的字段。 在右侧的&#x200B;**[!UICONTROL 字段属性]**&#x200B;下，选中&#x200B;**[!UICONTROL 标识]**&#x200B;复选框。
 
@@ -73,22 +121,49 @@ ht-degree: 0%
 
 主身份是可选的，因为架构可能为零个或一个。 但是，架构必须具有主标识，才能启用架构以在[!DNL Real-Time Customer Profile]中使用。 有关详细信息，请参阅架构编辑器教程中的[标识](./tutorials/create-schema-ui.md#identity-field)部分。
 
+## 架构配置文件启用
+
+此部分提供有关启用架构以用于Real-time Customer Profile的指南。
+
 ### 如何启用架构以在[!DNL Real-Time Customer Profile]中使用？
 
 通过在架构的`meta:immutableTags`属性中添加“union”标记，启用架构以便在[[!DNL Real-Time Customer Profile]](../profile/home.md)中使用。 可以使用API或用户界面启用用于[!DNL Profile]的架构。
 
-#### 使用API启用[!DNL Profile]的现有架构
+### 使用API启用[!DNL Profile]的现有架构
 
 发出PATCH请求以更新架构，并将`meta:immutableTags`属性添加为包含值“union”的数组。 如果更新成功，响应将显示更新的架构，该架构现在包含合并标记。
 
 有关使用API启用架构以在[!DNL Real-Time Customer Profile]中使用的详细信息，请参阅[!DNL Schema Registry]开发人员指南的[联合](./api/unions.md)文档。
 
-#### 正在使用用户界面启用[!DNL Profile]的现有架构
+### 正在使用用户界面启用[!DNL Profile]的现有架构
 
 在[!DNL Experience Platform]中，在左侧导航中选择&#x200B;**[!UICONTROL 架构]**，然后从架构列表中选择要启用的架构的名称。 然后，在编辑器的右侧&#x200B;**[!UICONTROL 架构属性]**&#x200B;下，选择&#x200B;**[!UICONTROL 配置文件]**&#x200B;以将其打开。
 
-
 有关详细信息，请参阅[!UICONTROL 架构编辑器]教程中有关[在实时客户个人资料中使用](./tutorials/create-schema-ui.md#profile)的部分。
+
+### 将Adobe Analytics数据作为源导入时，是否为配置文件启用自动创建的架构？
+
+架构未自动为实时客户配置文件启用。 您需要根据为配置文件启用的架构，为配置文件明确启用数据集。 请参阅文档，了解启用数据集以在Real-Time Customer Profile](../catalog/datasets/user-guide.md#enable-profile)中使用所需的[步骤和要求。
+
+### 我是否可以删除启用配置文件的架构？
+
+为实时客户配置文件启用架构后，您无法删除该架构。 为配置文件启用架构后，无法禁用或删除该架构，并且无法从架构中删除字段。 因此，在为配置文件启用架构配置之前，仔细规划和验证架构配置至关重要。 但是，您可以删除启用了配置文件的数据集。 在此处找到信息： <https://experienceleague.adobe.com/en/docs/experience-platform/catalog/datasets/user-guide#delete-a-profile-enabled-dataset>
+
+>[!IMPORTANT]
+>
+>要删除启用配置文件的架构，您需要获得XDM平台支持团队的帮助，并且必须执行以下步骤：
+>
+> 1. 删除与架构（为配置文件启用）关联的所有数据集
+> 2. 从沙盒中删除配置文件导出快照（这需要XDM平台支持团队的帮助）
+> 3. 强制从沙盒中删除架构（这只能由XDM平台支持团队完成）
+
+## 架构修改和限制
+
+此部分阐明模式修改规则和防止重大更改。
+
+### 架构何时开始阻止重大更改？
+
+对架构进行重大更改时，前提是从未在创建数据集中使用过该架构，或者未启用该架构以便在[[!DNL Real-Time Customer Profile]](../profile/home.md)中使用。 一旦在数据集创建中使用了某个架构或启用了与[!DNL Real-Time Customer Profile]一起使用，系统就会严格实施[架构演变](schema/composition.md#evolution)的规则。
 
 ### 能否直接编辑合并架构？
 
@@ -99,6 +174,10 @@ ht-degree: 0%
 ### 如何格式化数据文件以将数据摄取到我的架构中？
 
 [!DNL Experience Platform]接受[!DNL Parquet]或JSON格式的数据文件。 这些文件的内容必须符合数据集引用的架构。 有关数据文件引入最佳实践的详细信息，请参阅[批次引入概述](../ingestion/home.md)。
+
+### 如何将架构转换为只读架构？
+
+您当前无法将架构转换为只读。
 
 ## 错误和故障排除
 
@@ -127,14 +206,14 @@ ht-degree: 0%
 >
 >根据正在检索的资源类型，此错误可以使用以下`type`个URI中的任意一个：
 >
->* `http://ns.adobe.com/aep/errors/XDM-1010-404`
->* `http://ns.adobe.com/aep/errors/XDM-1011-404`
->* `http://ns.adobe.com/aep/errors/XDM-1012-404`
->* `http://ns.adobe.com/aep/errors/XDM-1013-404`
->* `http://ns.adobe.com/aep/errors/XDM-1014-404`
->* `http://ns.adobe.com/aep/errors/XDM-1015-404`
->* `http://ns.adobe.com/aep/errors/XDM-1016-404`
->* `http://ns.adobe.com/aep/errors/XDM-1017-404`
+>- `http://ns.adobe.com/aep/errors/XDM-1010-404`
+>- `http://ns.adobe.com/aep/errors/XDM-1011-404`
+>- `http://ns.adobe.com/aep/errors/XDM-1012-404`
+>- `http://ns.adobe.com/aep/errors/XDM-1013-404`
+>- `http://ns.adobe.com/aep/errors/XDM-1014-404`
+>- `http://ns.adobe.com/aep/errors/XDM-1015-404`
+>- `http://ns.adobe.com/aep/errors/XDM-1016-404`
+>- `http://ns.adobe.com/aep/errors/XDM-1017-404`
 
 有关在API中构造查找路径的更多信息，请参阅[!DNL Schema Registry]开发人员指南中的[容器](./api/getting-started.md#container)和[资源标识](api/getting-started.md#resource-identification)部分。
 
@@ -182,17 +261,17 @@ ht-degree: 0%
 >
 >根据命名空间错误的特定性质，此错误可以使用以下`type`个URI中的任意一个，以及不同的消息详细信息：
 >
->* `http://ns.adobe.com/aep/errors/XDM-1020-400`
->* `http://ns.adobe.com/aep/errors/XDM-1021-400`
->* `http://ns.adobe.com/aep/errors/XDM-1022-400`
->* `http://ns.adobe.com/aep/errors/XDM-1023-400`
->* `http://ns.adobe.com/aep/errors/XDM-1024-400`
+>- `http://ns.adobe.com/aep/errors/XDM-1020-400`
+>- `http://ns.adobe.com/aep/errors/XDM-1021-400`
+>- `http://ns.adobe.com/aep/errors/XDM-1022-400`
+>- `http://ns.adobe.com/aep/errors/XDM-1023-400`
+>- `http://ns.adobe.com/aep/errors/XDM-1024-400`
 
 有关XDM资源的正确数据结构的详细示例，请参阅架构注册表API指南：
 
-* [创建自定义类](./api/classes.md#create)
-* [创建自定义字段组](./api/field-groups.md#create)
-* [创建自定义数据类型](./api/data-types.md#create)
+- [创建自定义类](./api/classes.md#create)
+- [创建自定义字段组](./api/field-groups.md#create)
+- [创建自定义数据类型](./api/data-types.md#create)
 
 ### 接受标头无效
 
@@ -219,10 +298,10 @@ ht-degree: 0%
 >
 >根据正在使用的端点，此错误可以使用以下`type`个URI中的任意一个：
 >
->* `http://ns.adobe.com/aep/errors/XDM-1006-400`
->* `http://ns.adobe.com/aep/errors/XDM-1007-400`
->* `http://ns.adobe.com/aep/errors/XDM-1008-400`
->* `http://ns.adobe.com/aep/errors/XDM-1009-400`
+>- `http://ns.adobe.com/aep/errors/XDM-1006-400`
+>- `http://ns.adobe.com/aep/errors/XDM-1007-400`
+>- `http://ns.adobe.com/aep/errors/XDM-1008-400`
+>- `http://ns.adobe.com/aep/errors/XDM-1009-400`
 
 有关不同API请求的兼容“接受”标头的列表，请参阅[架构注册表开发人员指南](./api/overview.md)中相应章节。
 
