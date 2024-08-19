@@ -2,9 +2,9 @@
 title: 访问ECID
 description: 了解如何从数据准备或标记访问Experience CloudID
 exl-id: 8e63a873-d7b5-4c6c-b14d-3c3fbc82b62f
-source-git-commit: e01dfcf3cccea589083a23171f4b8d9ecad58233
+source-git-commit: e53ae6053a4b00e7e75242b95496c6795953005a
 workflow-type: tm+mt
-source-wordcount: '253'
+source-wordcount: '283'
 ht-degree: 1%
 
 ---
@@ -17,6 +17,10 @@ ht-degree: 1%
 您可以通过用于数据收集](../../../../datastreams/data-prep.md)的[数据准备（推荐）或通过标记来访问ECID。
 
 ## 通过数据准备访问ECID（首选方法） {#accessing-ecid-data-prep}
+
+此方法使用数据收集](../../../../datastreams/data-prep.md)的[数据准备来配置`ECID`的自定义映射。
+
+请参阅用于数据收集](../../../../datastreams/data-prep.md)的[数据准备文档，了解如何使用此功能。
 
 如果您要在自定义XDM字段中设置ECID，并且要在标识映射中设置ECID，则可以通过将`source`设置为以下路径来实现此目的：
 
