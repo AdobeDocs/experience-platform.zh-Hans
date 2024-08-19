@@ -3,9 +3,9 @@ title: 将数据集导出到云存储目标
 type: Tutorial
 description: 了解如何将数据集从Adobe Experience Platform导出到您首选的云存储位置。
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 938e4875318f07b296fc884487ca1c664be659ef
 workflow-type: tm+mt
-source-wordcount: '1891'
+source-wordcount: '1836'
 ht-degree: 4%
 
 ---
@@ -56,10 +56,10 @@ ht-degree: 4%
   <tr>
     <td>Customer Journey Analytics</td>
     <td>全部</td>
-    <td> 通过源、Web SDK、Mobile SDK、Analytics Data Connector和Audience Manager摄取或收集数据后，在Experience PlatformUI中创建的配置文件和体验事件数据集。 <br> <p> <b>可用性注意事项：</b>将数据集导出到云的功能处于版本的有限测试阶段，可能在您的环境中尚不可用。 当功能正式可用时，将删除此注释。 有关Customer Journey Analytics发布过程的信息，请参阅<a href="https://experienceleague.adobe.com/docs/analytics-platform/using/releases/releases.html">Customer Journey Analytics功能发布</a>。 </p> </td>
+    <td> 通过源、Web SDK、Mobile SDK、Analytics Data Connector和Audience Manager摄取或收集数据后，在Experience PlatformUI中创建的配置文件和体验事件数据集。</td>
   </tr>
   <tr>
-    <td>数据 Distiller</td>
+    <td>数据蒸馏器</td>
     <td>Data Distiller（加载项）</td>
     <td>通过查询服务创建的派生数据集。</td>
   </tr>
@@ -215,7 +215,7 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
    >[!NOTE]
    >
-   >此功能为测试版，仅向部分客户提供。 要请求访问此功能，请联系您的Adobe代表。
+此功能为测试版，仅向部分客户提供。 要请求访问此功能，请联系您的Adobe代表。
 
    ![在右边栏中显示删除数据集控件的“删除数据集”对话框。](../assets/ui/export-datasets/bulk-remove-datasets.png)
 
