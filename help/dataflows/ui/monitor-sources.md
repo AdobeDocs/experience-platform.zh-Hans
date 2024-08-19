@@ -2,9 +2,9 @@
 description: 了解如何使用监控仪表板监控从源摄取的数据。
 title: 在UI中监控源的数据流
 exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 9d9ae58997ec1c23af2a9124321fdfd9f03b7c4e
 workflow-type: tm+mt
-source-wordcount: '1256'
+source-wordcount: '1320'
 ht-degree: 11%
 
 ---
@@ -62,9 +62,9 @@ At the center of the dashboard is the [!UICONTROL Source ingestion] panel, which
 
 | 量度 | 描述 |
 | --- | --- |
-| 已接收的记录 | 从源接收的记录总数。 |
+| 已接收的记录 | 从给定源接收的记录总数。 |
 | 已提取的记录 | 摄取到数据湖的记录总数。 |
-| 跳过的记录 | 跳过的记录总数。 |
+| 跳过的记录 | 跳过的记录总数。 跳过的记录是指因不需要进行摄取而被跳过的字段。 例如，如果创建一个启用了部分摄取的源数据流，则可以配置一个可接受的错误率阈值。 在摄取流程中，摄取将跳过非必填字段（例如标识字段）的记录，只要它们在错误阈值内。 |
 | 失败的记录 | 由于错误而无法提取的记录总数。 |
 | 摄取率 | 根据接收的记录总数摄取的记录百分比。 |
 | 失败的数据流总数 | 失败的数据流总数。 |
