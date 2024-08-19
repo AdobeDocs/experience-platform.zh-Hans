@@ -3,9 +3,9 @@ title: 用户代理客户端提示
 description: 了解用户代理客户端提示在Web SDK中的工作方式。 客户端提示允许网站所有者访问用户代理字符串中提供的许多相同信息，但保护隐私的方式更加严格。
 keywords: 用户代理；客户端提示；字符串；用户代理字符串；低熵；高熵
 exl-id: a909b1d1-be9d-43ba-bb4b-d28b0c609f65
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 89dfe037e28bae51e335dc67185afa42b2c418e3
 workflow-type: tm+mt
-source-wordcount: '1152'
+source-wordcount: '1245'
 ht-degree: 3%
 
 ---
@@ -98,13 +98,16 @@ Adobe Experience Cloud解决方案以各种方式利用用户代理字符串。
 
 高熵客户端提示是有关客户端设备的更详细信息，例如平台版本、架构、模型、位（64位或32位平台）或完整操作系统版本。 这些信息可能被用于指纹。
 
-| HTTP标头 | JavaScript | 默认包含在用户代理中 | 默认情况下包含在客户端提示中 |
-|---|---|---|---|
-| `Sec-CH-UA-Platform-Version` | `platformVersion` | 是 | 否 |
-| `Sec-CH-UA-Arc` | `architecture` | 是 | 否 |
-| `Sec-CH-UA-Model` | `model` | 是 | 否 |
-| `Sec-CH-UA-Bitness` | `Bitness` | 是 | 否 |
-| `Sec-CH-UA-Full-Version-List` | `fullVersionList` | 是 | 否 |
+| 属性 | 描述 | HTTP标头 | XDM 路径 | 示例 | 默认包含在用户代理中 | 默认情况下包含在客户端提示中 |
+| --- | --- | --- | --- | --- |---|---|
+| 操作系统版本 | 操作系统的版本。 | `Sec-CH-UA-Platform-Version` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.platformVersion` | `10.15.7` | 是 | 否 |
+| 架构 | 底层CPU体系结构。 | `Sec-CH-UA-Arch` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.architecture` | `x86` | 是 | 否 |
+| 设备型号 | 使用的设备的名称。 | `Sec-CH-UA-Model` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.model` | `Intel Mac OS X 10_15_7` | 是 | 否 |
+| 位数 | 基础CPU体系结构支持的位数。 | `Sec-CH-UA-Bitness` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.bitness` | `64` | 是 | 否 |
+| 浏览器供应商 | 创建浏览器的公司。 低熵提示`Sec-CH-UA`也收集此元素。 | `Sec-CH-UA-Full-Version-List` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.vendor` | `Google` | 是 | 否 |
+| 浏览器名称 | 使用的浏览器。 低熵提示`Sec-CH-UA`也收集此元素。 | `Sec-UA-Full-Version-List` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.brand` | `Chrome` | 是 | 否 |
+| 浏览器版本 | 浏览器的重要版本。 低熵提示`Sec-CH-UA`也收集此元素。 不会自动收集确切的浏览器版本。 | `Sec-UA-Full-Version-List` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.version` | `105` | 是 | 否 |
+
 
 默认情况下，Web SDK中禁用高熵客户端提示。 要启用它们，您必须手动配置Web SDK以请求高熵客户端提示。
 

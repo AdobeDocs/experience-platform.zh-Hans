@@ -2,9 +2,9 @@
 title: 上下文
 description: 自动收集设备、环境或位置数据。
 exl-id: 911cabec-2afb-4216-b413-80533f826b0e
-source-git-commit: 8fc0fd96f13f0642f7671d0e0f4ecfae8ab6761f
+source-git-commit: 89dfe037e28bae51e335dc67185afa42b2c418e3
 workflow-type: tm+mt
-source-wordcount: '900'
+source-wordcount: '915'
 ht-degree: 7%
 
 ---
@@ -89,21 +89,25 @@ ht-degree: 7%
 | 环境 | 收集数据的环境。 此项始终设置为`browser`。 | `xdm.implementationDetails.environment` | `browser` |
 
 
-### 高熵客户端提示
+### 高熵客户端提示 {#high-entropy-client-hints}
+
+>[!TIP]
+>
+>有关如何配置[用户代理客户端提示](../../use-cases/client-hints.md)的详细信息，请参阅相关文档。
 
 `"highEntropyUserAgentHints"`关键字收集有关用户设备的详细信息。 此数据包含在发送到Adobe的请求的HTTP标头中。 数据抵达Edge网络后，XDM对象填充其各自的XDM路径。 如果您在`sendEvent`调用中设置相应的XDM路径，则该路径优先于HTTP标头值。
 
 如果在[配置数据流](/help/datastreams/configure.md)时使用设备查找，则可以清除数据，以支持设备查找值。 某些客户端提示字段和设备查找字段不能存在于同一点击中。
 
-| 维度 | 描述 | HTTP标头 | XDM 路径 | 示例值 |
+| 属性 | 描述 | HTTP标头 | XDM 路径 | 示例 |
 | --- | --- | --- | --- | --- |
-| 操作系统版本 | 操作系统的版本。 | `Sec-CH-UA-Platform-Version` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.platformVersion` | |
-| 架构 | 底层CPU体系结构。 | `Sec-CH-UA-Arch` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.architecture` | |
-| 设备型号 | 使用的设备的名称。 | `Sec-CH-UA-Model` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.model` | |
-| 位数 | 基础CPU体系结构支持的位数。 | `Sec-CH-UA-Bitness` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.bitness` | |
-| 浏览器供应商 | 创建浏览器的公司。 低熵提示`Sec-CH-UA`也收集此元素。 | `Sec-CH-UA-Full-Version-List` | | |
-| 浏览器名称 | 使用的浏览器。 低熵提示`Sec-CH-UA`也收集此元素。 | `Sec-UA-Full-Version-List` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.brand` | |
-| 浏览器版本 | 浏览器的重要版本。 低熵提示`Sec-CH-UA`也收集此元素。 不会自动收集确切的浏览器版本。 | `Sec-UA-Full-Version-List` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.version` | |
+| 操作系统版本 | 操作系统的版本。 | `Sec-CH-UA-Platform-Version` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.platformVersion` | `10.15.7` |
+| 架构 | 底层CPU体系结构。 | `Sec-CH-UA-Arch` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.architecture` | `x86` |
+| 设备型号 | 使用的设备的名称。 | `Sec-CH-UA-Model` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.model` | `Intel Mac OS X 10_15_7` |
+| 位数 | 基础CPU体系结构支持的位数。 | `Sec-CH-UA-Bitness` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.bitness` | `64` |
+| 浏览器供应商 | 创建浏览器的公司。 低熵提示`Sec-CH-UA`也收集此元素。 | `Sec-CH-UA-Full-Version-List` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.vendor` | `Google` |
+| 浏览器名称 | 使用的浏览器。 低熵提示`Sec-CH-UA`也收集此元素。 | `Sec-UA-Full-Version-List` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.brand` | `Chrome` |
+| 浏览器版本 | 浏览器的重要版本。 低熵提示`Sec-CH-UA`也收集此元素。 不会自动收集确切的浏览器版本。 | `Sec-UA-Full-Version-List` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.version` | `105` |
 
 {style="table-layout:auto"}
 
