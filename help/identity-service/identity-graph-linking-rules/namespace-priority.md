@@ -3,9 +3,9 @@ title: 命名空间优先级
 description: 了解Identity Service中的命名空间优先级。
 badge: Beta 版
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 536770d0c3e7e93921fe40887dafa5c76e851f5e
+source-git-commit: c9610f935a074adf82d96c1eb824c159b18f2837
 workflow-type: tm+mt
-source-wordcount: '1567'
+source-wordcount: '1639'
 ht-degree: 2%
 
 ---
@@ -78,13 +78,13 @@ ht-degree: 2%
 * 对于体验事件，一旦您为给定沙盒配置了身份设置，主身份将由未来最高的命名空间优先级决定。
    * 这是因为体验事件在本质上是动态的。 身份映射可以包含三个或更多身份，命名空间优先级可确保最重要的命名空间与体验事件相关联。
 * 因此，实时客户个人资料&#x200B;**将不再使用下列配置**：
-   * WebSDK中数据元素类型的“主”复选框。
+   * WebSDK中数据元素类型的“主要”复选框（在identityMap中转换为`primary=true`）。 **注意**：身份命名空间和身份值将继续在配置文件中使用。 此外，您仍然必须配置“主”复选框设置，因为Real-Time Customer Profile以外的服务将继续引用此配置。
    * 在XDM体验事件类架构中标记为主要标识的任何字段。
    * Adobe Analytics源连接器（ECID或AAID）中的默认主标识设置。
 * 另一方面，**命名空间优先级不能确定配置文件记录**&#x200B;的主要身份。
    * 对于配置文件记录，您可以使用Experience PlatformUI中的架构工作区来定义您的身份字段，包括主要身份。 有关详细信息，请阅读[在UI](../../xdm/ui/fields/identity.md)中定义标识字段的指南。
 
->[!NOTE]
+>[!TIP]
 >
 >* 命名空间优先级是&#x200B;**命名空间**&#x200B;的属性。 它是分配给命名空间以指示其相对重要性的数值。
 >
@@ -183,3 +183,7 @@ ht-degree: 2%
 * 数据湖：删除具有指定身份作为主身份或辅助身份的任何记录。
 
 有关详细信息，请阅读[Privacy Service概述](../../privacy-service/home.md)。
+
+### Adobe Target和边缘个性化
+
+[Edge个性化](../../server-api/personalization-target.md)将继续引用您如何在WebSDK中的数据元素类型上配置“主要”复选框（在identityMap中转换为`primary=true`）。
