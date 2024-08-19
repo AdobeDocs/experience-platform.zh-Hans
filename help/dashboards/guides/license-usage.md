@@ -4,9 +4,9 @@ title: 许可证使用情况仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 090b870dcfb16e59831f1e03eb46b22da4f24f0f
+source-git-commit: 41c2d8e28536a140136c7eb20c2a4c3dc343f5fa
 workflow-type: tm+mt
-source-wordcount: '2429'
+source-wordcount: '2466'
 ht-degree: 6%
 
 ---
@@ -89,6 +89,10 @@ ht-degree: 6%
 ![产品及预测使用列突出显示的[!UICONTROL 许可证使用情况] [!UICONTROL 概述]。](../images/license-usage/product-predicted-usage.png)
 
 此时将显示摘要选项卡。 您可以使用[!UICONTROL 摘要]和[!UICONTROL 详细信息]选项卡上提供的粒度预测以确保做出明智的决策，从而有效使用许可证。
+
+>[!NOTE]
+>
+请注意，许可证使用量预测是基于过去使用量的近似值。 您有责任了解贵组织的实际使用情况，并确保使用情况不会超出贵组织许可的Adobe范围。
 
 ![预测使用列突出显示的平台产品的摘要视图。](../images/license-usage/summary-predicted-usage.png)
 

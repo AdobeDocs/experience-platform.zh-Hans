@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据集UI指南
 description: 了解如何在Adobe Experience Platform用户界面中使用数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 10140efe33b42f9099b28564c9824839d83521a3
+source-git-commit: a168f61fabddd06d586f7909fd92c0409fd2f51e
 workflow-type: tm+mt
-source-wordcount: '3111'
+source-wordcount: '3203'
 ht-degree: 3%
 
 ---
@@ -38,6 +38,22 @@ ht-degree: 3%
 >id="platform_datasets_browse_daysRemaining"
 >title="数据集到期"
 >abstract="此列指示目标数据集在自动到期之前剩余的天数。"
+
+>[!CONTEXTUALHELP]
+>id="platform_datasets_browse_datalakeretention"
+>title="Datalake保留"
+>abstract="显示每个数据集的当前保留策略。 可以在每个数据集的保留设置中修改此值。 您只能为ExperienceEvent数据集设置保留时间。"
+
+>[!CONTEXTUALHELP]
+>id="platform_datasets_browse_profileretention"
+>title="配置文件保留"
+>abstract="显示每个数据集的当前保留策略。 可以在每个数据集的保留设置中修改此值。 您只能为ExperienceEvent数据集设置保留时间。"
+
+>[!CONTEXTUALHELP]
+>id="platform_datasets_datalakesettings_datasetretention"
+>title="数据集保留"
+>abstract="Datalake保留设置规则来确定数据存储的时间长度和应在不同服务中删除数据的时间。 这确保了法规遵从性，管理存储成本，并维护数据质量。"
+
 
 在[!DNL Experience Platform] UI中，从左侧导航中选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以打开&#x200B;**[!UICONTROL 数据集]**&#x200B;仪表板。 仪表板列出您组织的所有可用数据集。 会显示每个列出数据集的详细信息，包括其名称、数据集所遵循的架构以及最近摄取运行的状态。
 
