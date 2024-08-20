@@ -3,7 +3,7 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: dab3b432cac4ad416576f9d3d35e679d9483c816
+source-git-commit: d7a530c5ec2cad37b93273f5843609110d61cbfc
 workflow-type: tm+mt
 source-wordcount: '4077'
 ht-degree: 13%
@@ -346,7 +346,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
         "id": "johndoe_1@example.com"
       },
       {
-        "id": "johndoe_2@example.com"
+        "id": "doejohn_1@example.com"
       }
     ]
   },
@@ -377,10 +377,10 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
   "identityMap": {
     "Email": [
       {
-        "id": "johndoe_1@example.com"
+        "id": "johndoe_2@example.com"
       },
       {
-        "id": "johndoe_2@example.com"
+        "id": "doejohn_2@example.com"
       }
     ]
   },
@@ -420,8 +420,8 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
 | 电子邮件* | 个人电子邮件 | firstName | 姓氏 |
 |---|---|---|---|
-| johndoe_1@example.com | johndoe@example.com | John | D |
 | johndoe_2@example.com | johndoe@example.com | John | D |
+| doejohn_2@example.com | johndoe@example.com | John | D |
 
 ### 重复数据删除使用案例3：基于单个配置文件属性进行重复数据删除 {#deduplication-use-case-3}
 
