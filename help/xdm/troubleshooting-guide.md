@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM系统故障排除指南
 description: 查找有关Experience Data Model (XDM)的常见问题解答，包括解决常见API错误的步骤。
 exl-id: a0c7c661-bee8-4f66-ad5c-f669c52c9de3
-source-git-commit: 83d3d31b2d24fd01876ff7b0f1c03a5670ed3845
+source-git-commit: ae98a185fdfad5b6ba787e78ad17296928216d08
 workflow-type: tm+mt
-source-wordcount: '2446'
+source-wordcount: '2390'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ ht-degree: 0%
 
 有关字段类型的详细信息，请参阅有关[XDM字段类型约束](./schema/field-constraints.md)的文档。
 
-### 什么是meta：AltId，如何检索它？
+### 什么是meta：AltId？
 
 `meta:altId`是架构的唯一标识符。 `meta:altId`提供了一个易于引用的ID以用于API调用。 此ID可避免在每次与JSON URI格式一起使用时进行编码/解码。
 <!-- (Needs clarification - How do I retrieve it INCOMPLETE) ... -->
@@ -58,13 +58,6 @@ ht-degree: 0%
 
 <!-- No Answer available.  -->
 <!-- INCOMPLETE ... -->
-
-### 能否获取用于创建数据类型的示例JSON表示形式？
-
-可以同时使用架构注册表API和平台UI来创建数据类型。 有关如何完成以下操作的说明，请参阅文档：
-
-- [使用API创建数据类型](./api/data-types.md#create)
-- [使用用户界面创建数据类型](./ui/resources/data-types.md#create)
 
 ### 地图数据类型的使用限制是什么？
 
