@@ -2,9 +2,9 @@
 title: 受众门户概述
 description: 了解如何使用Audience Portal在Adobe Experience Platform中查看、管理和创建受众。
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: 56939b18d532f3c12ed8fdd76513d953ae74b613
+source-git-commit: 34964bc5af0676872fb472a7309aa99c21efdbc5
 workflow-type: tm+mt
-source-wordcount: '4125'
+source-wordcount: '4162'
 ht-degree: 3%
 
 ---
@@ -386,6 +386,10 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 >[!NOTE]
 >
 >外部生成的受众&#x200B;**必须**&#x200B;为CSV格式，其最大值为&#x200B;****，共25列，并且小于1GB。
+>
+>此外，您&#x200B;**不能**&#x200B;在CSV的第一行或关联的列中使用空格或破折号。
+>
+>例如，第一行的值可以是“FirstName”或“First_Name”，但不能是“First Name”或“First-Name”。
 
 选择要导入的CSV文件后，将显示此外部生成受众的示例数据列表。 确认样本数据正确后，选择&#x200B;**[!UICONTROL 下一步]**。
 
