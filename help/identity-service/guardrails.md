@@ -3,9 +3,9 @@ keywords: Experience Platform；身份；身份服务；故障排除；护栏；
 title: Identity服务的护栏
 description: 本文档提供了有关Identity Service数据的使用和速率限制的信息，以帮助您优化身份图的使用。
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: 6d36a6ff1243b15dcafc2f37d8bad982730f7a39
+source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
 workflow-type: tm+mt
-source-wordcount: '1591'
+source-wordcount: '1585'
 ht-degree: 1%
 
 ---
@@ -92,7 +92,7 @@ Identity Service持续监视传入的数据，以确保大规模的高性能和�
 
 Adobe如果您的生产沙盒包含：
 
-* 将人员标识符（如CRM ID）配置为Cookie/设备标识类型的自定义命名空间。
+* 将人员标识符（如CRMID）配置为Cookie/设备标识类型的自定义命名空间。
 * 将Cookie/设备标识符配置为跨设备标识类型的自定义命名空间。
 
 此功能可用后，超过50个标识限制的图形将减少到50个标识。 对于Real-Time CDP B2C版本，这可能会导致符合受众资格的用户档案数量最小化，因为以前分段和激活时会忽略这些用户档案。
@@ -106,7 +106,7 @@ Adobe如果您的生产沙盒包含：
 
 #### Real-Time Customer Profile和WebSDK：主身份删除
 
-如果您希望保留针对CRM ID的已验证事件，那么建议您将主ID从ECID更改为CRM ID。 有关如何实施此更改的步骤，请阅读以下文档：
+如果要保留针对CRMID的已验证事件，则建议您将主ID从ECID更改为CRMID。 有关如何实施此更改的步骤，请阅读以下文档：
 
 * [为Experience Platform标记配置标识映射](../tags/extensions/client/web-sdk/data-element-types.md#identity-map)。
 * [Experience PlatformWeb SDK中的身份数据](../web-sdk/identity/overview.md#using-identitymap)
@@ -149,7 +149,7 @@ Adobe如果您的生产沙盒包含：
 
 >[!TAB 图形输出]
 
-删除ECID：35577后，链接CRM ID：60013和CRM ID：25212以及现在已删除的ECID：35577的边缘也会被删除。 此删除过程会导致将图形拆分为两个较小的图形。
+删除ECID：35577后，将CRMID：60013和CRMID：25212与现在已删除的ECID：35577关联的边缘也会被删除。 此删除过程会导致将图形拆分为两个较小的图形。
 
 ![](./images/guardrails/after-split.png)
 
@@ -176,7 +176,7 @@ Adobe如果您的生产沙盒包含：
 
 因此，Identity Service仅会从身份图中删除最早的身份，在本例中为ECID：35577。 删除ECID：35577也会导致删除以下内容：
 
-* CRM ID：60013和现已删除的ECID：35577之间的链接，这会导致图形拆分情况。
+* CRMID：60013和现已删除的ECID：35577之间的链接，从而导致图形拆分方案。
 * IDFA： 32110、IDFA： 02383以及`(...)`表示的其余标识。 这些标识会被删除，因为单个标识未链接到任何其他标识，因此无法在图形中表示它们。
 
 ![](./images/guardrails/hub-and-spoke-process.png)

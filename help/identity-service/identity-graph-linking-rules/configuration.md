@@ -3,9 +3,9 @@ title: 身份图链接规则配置指南
 description: 了解在使用身份图链接规则配置实施数据时要遵循的建议步骤。
 badge: Beta 版
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 536770d0c3e7e93921fe40887dafa5c76e851f5e
+source-git-commit: e3568aa925661f4f519daf6572fd2df40b163cb5
 workflow-type: tm+mt
-source-wordcount: '1312'
+source-wordcount: '1357'
 ht-degree: 2%
 
 ---
@@ -76,6 +76,7 @@ Identity Service实施流程的第一步是，确保将您的Experience Platform
 >
 >* 在实施前的过程中，您必须确保系统将发送到Experience Platform的经过身份验证的事件始终包含人员标识符，例如CRMID。
 >* 在实施过程中，您必须确保具有最高优先级的唯一命名空间始终存在于每个配置文件中。 请参阅[附录](#appendix)以了解通过确保每个配置文件都包含具有最高优先级的唯一命名空间而解决的图形场景示例。
+>* 如果您使用[Adobe Analytics源连接器](../../sources/tutorials/ui/create/adobe-applications/analytics.md)来摄取数据，则必须为ECID指定比AAID更高的优先级，因为Identity Service阻止AAID。 通过优先处理ECID，您可以指示Identity Service将未经身份验证的事件存储到ECID而不是AAID。
 
 此时，您应该具备以下内容：
 

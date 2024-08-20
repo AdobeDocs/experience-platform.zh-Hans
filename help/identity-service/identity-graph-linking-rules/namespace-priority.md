@@ -3,9 +3,9 @@ title: 命名空间优先级
 description: 了解Identity Service中的命名空间优先级。
 badge: Beta 版
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: c9610f935a074adf82d96c1eb824c159b18f2837
+source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
 workflow-type: tm+mt
-source-wordcount: '1639'
+source-wordcount: '1626'
 ht-degree: 2%
 
 ---
@@ -18,8 +18,8 @@ ht-degree: 2%
 
 每个客户实施都是独一无二的，并且是根据特定组织的目标而量身定制的，因此，给定命名空间的重要性因客户而异。 现实世界的例子包括：
 
-* 一方面，您可能会将电子邮件命名空间视为代表人员实体，因此每个人的命名空间都是唯一的。 另一方面，另一个客户可能会将电子邮件命名空间视为不可靠的标识符，因此，他们可能会允许单个CRM ID与电子邮件命名空间中的多个身份相关联。
-* 您可能会使用“登录ID”命名空间收集在线行为。 此登录ID可能会与CRM ID保持1:1的关系，这样，CRM ID便会存储CRM系统中的属性，并且可能会被视为最重要的命名空间。 在这种情况下，您将确定CRM ID命名空间是人员的更准确表示形式，而登录ID命名空间是第二重要的。
+* 一方面，您可能会将电子邮件命名空间视为代表人员实体，因此每个人的命名空间都是唯一的。 另一方面，另一个客户可能会将电子邮件命名空间视为不可靠的标识符，因此，他们可能允许单个CRMID与电子邮件命名空间中的多个身份相关联。
+* 您可能会使用“登录ID”命名空间收集在线行为。 此登录ID可能与CRMID具有1:1关系，然后CRMID存储CRM系统中的属性，并且可能被视为最重要的命名空间。 在这种情况下，您需要确定CRMID命名空间是人员的更准确表示形式，而登录ID命名空间是第二重要的命名空间。
 
 您必须在Identity Service中进行反映命名空间重要性的配置，因为这会影响配置文件的形成和分段方式。
 
@@ -49,7 +49,7 @@ ht-degree: 2%
 
 人员命名空间与硬件设备（例如IDFA、GAID）相比相对不可变，而硬件设备与Web浏览器相比相对不可变。 基本上，您（人员）将始终是单一实体，可以拥有多个硬件设备（手机、笔记本电脑、平板电脑等），并且可以使用多个浏览器(Google Chrome、Safari、FireFox等)
 
-处理此主题的另一种方法是通过基数。 对于给定的人员实体，将创建多少个身份？ 在大多数情况下，人员将拥有一个CRM ID、多个硬件设备标识符（IDFA/GAID重置不应经常发生）以及更多Cookie（可以想象，个人可以在任何给定时间浏览多个设备、使用无痕模式或重置Cookie）。 通常，**较低的基数表示命名空间具有较高值**。
+处理此主题的另一种方法是通过基数。 对于给定的人员实体，将创建多少个身份？ 在大多数情况下，人员将拥有一个CRMID、多个硬件设备标识符（IDFA/GAID重置不应经常发生）以及更多Cookie（可以想象的是，个人可以在任何给定时间浏览多个设备、使用无痕模式或重置Cookie）。 通常，**较低的基数表示命名空间具有较高值**。
 
 ## 验证命名空间优先级设置
 
@@ -112,9 +112,9 @@ ht-degree: 2%
 | --- | --- | --- | --- | --- |
 | 查看信用卡优惠页面 | 未经身份验证（匿名） | Web SDK | {ECID} | ECID |
 | 查看帮助页面 | 未验证 | Mobile SDK | {ECID， IDFA} | IDFA |
-| 查看支票帐户余额 | Authenticated | Web SDK | {CRM ID， ECID} | CRM ID |
-| 注册家庭贷款 | Authenticated | Analytics源连接器 | {CRM ID， ECID， AAID} | CRM ID |
-| 将1,000美元从支票转帐到节省额 | Authenticated | Mobile SDK | {CRM ID， GAID， ECID} | CRM ID |
+| 查看支票帐户余额 | Authenticated | Web SDK | {CRMID， ECID} | CRMID |
+| 注册家庭贷款 | Authenticated | Analytics源连接器 | {CRMID， ECID， AAID} | CRMID |
+| 将1,000美元从支票转帐到节省额 | Authenticated | Mobile SDK | {CRMID， GAID， ECID} | CRMID |
 
 {style="table-layout:auto"}
 
@@ -148,7 +148,7 @@ ht-degree: 2%
 
 ### 计算属性
 
-计算属性不使用命名空间优先级来计算值。 如果您使用计算属性，则必须确保将CRM ID指定为WebSDK的主要标识。 这一限制预计将在2024年8月解决。
+计算属性不使用命名空间优先级来计算值。 如果您使用计算属性，则必须确保将CRMID指定为WebSDK的主要标识。 这一限制预计将在2024年8月解决。
 
 有关详细信息，请阅读[计算属性UI指南](../../profile/computed-attributes/ui.md)。
 
@@ -168,8 +168,8 @@ ht-degree: 2%
 
 在选择数据时，您需要指定一个命名空间，该命名空间将用于确定计算得分的事件和存储计算得分的事件。 建议您选择代表人员的命名空间。
 
-* 如果您使用WebSDk收集Web行为数据，则建议您在身份映射中选择CRM ID命名空间。
-* 如果您使用Analytics源连接器收集Web行为数据，则应当选择身份描述符(CRM ID)。
+* 如果您使用WebSDk收集Web行为数据，则建议您在身份映射中选择CRMID命名空间。
+* 如果您使用Analytics Source Connector收集Web行为数据，则应当选择身份描述符(CRMID)。
 
 此配置导致仅使用已验证的事件计算得分。
 

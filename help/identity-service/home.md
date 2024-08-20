@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Identity服务概述
 description: Adobe Experience Platform Identity Service通过跨设备和系统桥接身份，允许您实时提供有影响力的个人数字体验，从而帮助您更好地了解客户及其行为。
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: 16e49628df73d5ce97ef890dbc0a6f2c8e7de346
+source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
 workflow-type: tm+mt
-source-wordcount: '1560'
+source-wordcount: '1555'
 ht-degree: 2%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 2%
 
 为了提供相关的数字体验，您需要对构成客户群的真实实体进行全面而准确的呈现。
 
-如今，组织和企业面临着大量不同的数据集：您的个人客户由各种不同的标识符表示。 您的客户可以链接到不同的Web浏览器(Safari、Google Chrome)、硬件设备（电话、笔记本电脑）和其他人员标识符（CRM ID、电子邮件帐户）。 这会造成客户的视图脱节。
+如今，组织和企业面临着大量不同的数据集：您的个人客户由各种不同的标识符表示。 您的客户可以链接到不同的Web浏览器(Safari、Google Chrome)、硬件设备（电话、笔记本电脑）和其他人员标识符（CRMID、电子邮件帐户）。 这会造成客户的视图脱节。
 
 您可以使用Adobe Experience Platform Identity Service及其功能解决这些挑战，以便：
 
@@ -78,20 +78,20 @@ Identity Service为实现其任务提供了以下操作：
 
 典型的登录事件&#x200B;**将两个标识**&#x200B;发送到Experience Platform中：
 
-* 代表经过身份验证的用户的人员标识符（如CRM ID）。
+* 代表经过身份验证的用户的人员标识符（如CRMID）。
 * 表示Web浏览器的浏览器标识符（如ECID）。
 
 请仔细研究下面的示例：
 
-* 您使用笔记本电脑登录电子商务网站，并使用用户名和密码组合登录。 此事件使您符合经过身份验证的用户的资格，因此Identity Service可识别您的CRM ID。
+* 您使用笔记本电脑登录电子商务网站，并使用用户名和密码组合登录。 此事件使您符合身份验证用户的资格，因此Identity Service可识别您的CRMID。
 * 您使用浏览器访问电子商务网站的情况也会被Identity Service识别为事件。 此事件通过ECID在Identity Service中表示。
 * 在后台，Identity Service将以下列方式处理这两个事件： `CRM_ID:ABC, ECID:123`。
-   * CRM ID： ABC是代表您作为经过身份验证的用户的命名空间和值。
+   * CRMID： ABC是代表您作为经过身份验证的用户的命名空间和值。
    * ECID： 123是命名空间和值，表示您在笔记本电脑上使用Web浏览器的情况。
 * 接下来，如果您使用相同的凭据登录同一电子商务网站，但使用的是手机上的Web浏览器，而不是笔记本电脑上的Web浏览器，则将在Identity Service中注册一个新的ECID。
 * 在后台，Identity Service以`{CRM_ID:ABC, ECID:456}`形式处理此新事件，其中CRM_ID：ABC表示经过身份验证的客户ID，ECID：456表示移动设备上的Web浏览器。
 
-考虑到上述情况，Identity Service在`{CRM_ID:ABC, ECID:123}`和`{CRM_ID:ABC, ECID:456}`之间建立链接。 这将生成一个标识图，您“拥有”三个标识：一个用于人员标识符(CRM ID)，两个用于Cookie标识符(ECID)。
+考虑到上述情况，Identity Service在`{CRM_ID:ABC, ECID:123}`和`{CRM_ID:ABC, ECID:456}`之间建立链接。 这将生成一个标识图，其中您“拥有”三个标识：一个用于人员标识符(CRMID)，两个用于Cookie标识符(ECID)。
 
 有关详细信息，请阅读[Identity Service如何链接身份](./features/identity-linking-logic.md)的指南。
 

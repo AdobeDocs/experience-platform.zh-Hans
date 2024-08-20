@@ -5,9 +5,9 @@ description: 共享设备检测可识别同一设备的不同经过身份验证�
 hide: true
 hidefromtoc: true
 exl-id: 36318163-ba07-4209-b1be-dc193ab7ba41
-source-git-commit: d7c7bed74d746aba2330ecba62f9f810fbaf0d63
+source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
 workflow-type: tm+mt
-source-wordcount: '1360'
+source-wordcount: '1353'
 ht-degree: 0%
 
 ---
@@ -60,7 +60,7 @@ Adobe Experience Platform [!DNL Identity Service]通过跨设备和系统桥接�
 [!DNL Shared Device Detection]通过建立两个命名空间来工作：**共享身份命名空间**&#x200B;和&#x200B;**用户身份命名空间**。
 
 * 共享身份命名空间表示可供多个用户使用的设备。 Adobe建议客户使用ECID作为共享设备标识符。
-* 用户身份命名空间将映射到与用户的登录ID对应的身份命名空间，这可以是用户的CRM ID、电子邮件地址、散列电子邮件或电话号码。
+* 用户身份命名空间将映射到与用户的登录ID对应的身份命名空间，这可以是用户的CRMID、电子邮件地址、散列电子邮件或电话号码。
 
 共享设备（如平板电脑）具有单个&#x200B;**共享身份命名空间**。 另一方面，共享设备的每个用户都有自己的指定&#x200B;**用户标识命名空间**，该命名空间与其各自的登录ID相对应。 例如，Kevin和Nora共享用于电子商务的平板电脑具有自己的ECID `1234`，而Kevin具有映射到其`kevin@email.com`帐户的用户身份命名空间，并且Nora具有映射到其`nora@email.com`帐户的用户身份命名空间。
 
@@ -72,17 +72,17 @@ Adobe Experience Platform [!DNL Identity Service]通过跨设备和系统桥接�
 
 >[!NOTE]
 >
->在此图表中，共享身份命名空间配置为ECID，用户身份命名空间配置为CRM ID。
+>在此图表中，共享身份命名空间配置为ECID，用户身份命名空间配置为CRMID。
 
-![关系图](./images/shared-device/diagram.png)
+![图表](./images/shared-device/diagram.png)
 
 * Kevin和Nora共享平板电脑访问电子商务网站。 然而，他们都有自己的独立账户，用于在线浏览和购物；
    * 作为共享设备，平板电脑具有相应的ECID，它表示平板电脑的网页浏览器Cookie ID；
-* 假设Kevin使用平板电脑并&#x200B;**登录**&#x200B;到他的电子商务帐户来浏览耳机，这就意味着Kevin的CRM ID （**用户身份命名空间**）现在与平板电脑的ECID （**共享身份命名空间**）相关联。 现在，平板电脑的浏览数据已与Kevin的身份图相结合。
-   * 如果Kevin **注销**，且Nora使用平板电脑，**登录**&#x200B;到自己的帐户并购买摄像头，则其CRM ID现在链接到平板电脑的ECID。 因此，平板电脑的浏览数据现在与Nora的身份图相结合。
-   * 如果Nora **未注销**，而Kevin使用平板电脑，但&#x200B;**未登录**，则平板电脑的浏览数据仍会与Nora合并，因为她仍为经过身份验证的用户，并且她的CRM ID仍与平板电脑的ECID关联。
-   * 如果Nora **确实注销**，而Kevin使用平板电脑，但&#x200B;**没有登录**，则平板电脑的浏览数据仍会与Nora的标识图合并，因为作为&#x200B;**上次经过身份验证的用户**，她的CRM ID仍与平板电脑的ECID保持关联。
-   * 如果Kevin **再次登录**，则他的CRM ID现在链接到平板电脑的ECID，因为他是最后一个经过身份验证的用户，并且平板电脑的浏览数据现在已合并到他的身份图中。
+* 假设Kevin使用平板电脑并&#x200B;**登录**&#x200B;到他的电子商务帐户来浏览耳机，这就意味着Kevin的CRMID （**用户身份命名空间**）现在与平板电脑的ECID （**共享身份命名空间**）相关联。 现在，平板电脑的浏览数据已与Kevin的身份图相结合。
+   * 如果Kevin **注销**，且Nora使用平板电脑，**登录**&#x200B;到自己的帐户并购买摄像头，则其CRMID现在已链接到平板电脑的ECID。 因此，平板电脑的浏览数据现在与Nora的身份图相结合。
+   * 如果Nora **未注销**，而Kevin使用平板电脑，但&#x200B;**未登录**，则平板电脑的浏览数据仍会与Nora合并，因为她仍为经过身份验证的用户，并且她的CRMID仍与平板电脑的ECID关联。
+   * 如果Nora **确实注销**，而Kevin使用平板电脑，但&#x200B;**没有登录**，则平板电脑的浏览数据仍会与Nora的标识图合并，因为作为&#x200B;**上次经过身份验证的用户**，她的CRMID仍与平板电脑的ECID相关联。
+   * 如果Kevin **再次登录**，则他的CRMID现在链接到平板电脑的ECID，因为他是最后一个经过身份验证的用户，并且平板电脑的浏览数据现在已合并到他的身份图中。
 
 ### [!DNL Profile Service]如何在启用[!DNL Shared Device Detection]的情况下合并配置文件片段
 

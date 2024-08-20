@@ -2,9 +2,9 @@
 title: Identity Service中的删除
 description: 本文档概述了可用于在Experience Platform中删除身份数据的各种机制，并阐明身份图形可能受到哪些影响。
 exl-id: 0619d845-71c1-4699-82aa-c6436815d5b3
-source-git-commit: 576b17842ee1c5722332ba49e26b037537ec96ed
+source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
 workflow-type: tm+mt
-source-wordcount: '1199'
+source-wordcount: '1198'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Adobe Experience Platform Identity Service通过确定性地关联个人跨设�
 
 * [身份服务](../home.md)：通过跨设备和系统桥接身份，更好地了解个人客户及其行为。
    * [身份图](./identity-graph-viewer.md)：身份图是特定客户不同身份之间关系的映射，它为您提供了客户如何跨不同渠道与您的品牌互动的可视表示形式。
-   * [身份命名空间](./namespaces.md)：身份命名空间是Identity Service的组件，充当与身份相关的上下文的指示器。 例如，它们将“name<span>@email.com”的值区分为电子邮件地址或“443522”区分为数字CRM ID。
+   * [身份命名空间](./namespaces.md)：身份命名空间是Identity Service的组件，充当与身份相关的上下文的指示器。 例如，它们将“name<span>@email.com”的值区分为电子邮件地址或“443522”区分为数字CRMID。
 * [目录服务](../../catalog/home.md)：浏览数据湖中的数据谱系、元数据、文件描述、目录和数据集。
 * [数据卫生](../../hygiene/home.md)：通过计划自动数据集过期时间，或者从一个数据集或所有数据集中删除单个记录来管理存储的消费者数据。
 * [Adobe Experience Platform Privacy Service](../../privacy-service/home.md)：管理客户跨多个Adobe Experience Cloud应用程序访问、选择退出销售或删除其个人数据的请求。

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 为Adobe Experience Platform开发ETL集成
 description: ETL集成指南概述了创建高性能、安全连接器以进行Experience Platform并将数据摄取到Platform的一般步骤。
 exl-id: 7d29b61c-a061-46f8-a31f-f20e4d725655
-source-git-commit: b80d8349fc54a955ebb3362d67a482d752871420
+source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
 workflow-type: tm+mt
-source-wordcount: '3978'
+source-wordcount: '3977'
 ht-degree: 2%
 
 ---
@@ -789,5 +789,5 @@ Adobe Experience Platform当前未识别延迟数据，因此客户端实施必�
 | ---- | ------ | ----------- |
 | 2019-01-19 | 从数据集中删除了“fields”属性 | 数据集以前包含一个“字段”属性，该属性包含架构副本。 此功能不应再使用。 如果找到“fields”属性，则应忽略该属性，并改用“observedSchema”或“schemaRef”。 |
 | 2019-03-15 | 已将“schemaRef”属性添加到数据集 | 数据集的“schemaRef”属性包含引用数据集所基于的XDM架构的URI，并代表数据集可以使用的所有潜在字段。 |
-| 2019-03-15 | 所有最终用户标识符都映射到“identityMap”属性 | “identityMap”是主体所有唯一标识符的封装，例如CRM ID、ECID或忠诚度计划ID。 [[!DNL Identity Service]](../identity-service/home.md)使用此映射解析主体的所有已知和匿名身份，为每个最终用户形成一个身份图。 |
+| 2019-03-15 | 所有最终用户标识符都映射到“identityMap”属性 | “identityMap”是主体所有唯一标识符（如CRMID、ECID或忠诚度计划ID）的封装。 [[!DNL Identity Service]](../identity-service/home.md)使用此映射解析主体的所有已知和匿名身份，为每个最终用户形成一个身份图。 |
 | 2019-05-30 | 生命周期结束并删除数据集中的“架构”属性 | 数据集“架构”属性提供了对架构的引用链接，该链接使用[!DNL Catalog] API中已弃用的`/xdms`端点。 该架构已被提供新[!DNL Schema Registry] API中引用的架构的“id”、“version”和“contentType”的“schemaRef”所取代。 |

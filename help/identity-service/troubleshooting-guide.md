@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Identity Service故障排除指南
 description: 本文档提供了有关Adobe Experience Platform Identity服务的常见问题解答，以及常见错误的疑难解答指南。
 exl-id: dac31bc3-7003-46d6-9d41-9f6fd3645c2c
-source-git-commit: 3fe94be9f50d64fc893b16555ab9373604b62e59
+source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
 workflow-type: tm+mt
-source-wordcount: '2166'
+source-wordcount: '2165'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 0%
 
 ## 什么是已知身份和匿名身份？
 
-已知身份是指可以单独使用或与其他信息一起用于识别、联系或查找个人的身份值。 已知身份的示例可能包括电子邮件地址、电话号码和CRM ID。
+已知身份是指可以单独使用或与其他信息一起用于识别、联系或查找个人的身份值。 已知身份的示例可能包括电子邮件地址、电话号码和CRMID。
 
 匿名身份是指无法单独使用或与其他信息配合使用来识别、联系或查找个人（例如Cookie ID）的身份值。
 

@@ -2,9 +2,9 @@
 title: 身份命名空间概述
 description: 了解Identity Service中的身份命名空间。
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: 59ac3d8b7fee0327396c990ef309ca3a4f292a77
+source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
 workflow-type: tm+mt
-source-wordcount: '1862'
+source-wordcount: '1858'
 ht-degree: 16%
 
 ---
@@ -35,7 +35,7 @@ ht-degree: 16%
 >abstract="标识值是代表唯一个人、组织或资产的标识符。该值表示的标识的上下文或类型由相应的标识命名空间定义。在配置文件片段间匹配记录数据时，命名空间和标识的值必须相同。在配置文件片段间匹配记录数据时，命名空间和标识的值必须相同。"
 >text="Learn more in documentation"
 
-完全限定的身份包含两个组件： **身份值**&#x200B;和&#x200B;**身份命名空间**。 例如，如果标识的值为`scott@acme.com`，则命名空间会通过将其识别为电子邮件地址来为此值提供上下文。 同样，命名空间可以将`555-123-456`区分为电话号码，将`3126ABC`区分为CRM ID。 基本上，**命名空间为给定标识**&#x200B;提供上下文。 跨配置文件片段匹配记录数据时，如[!DNL Real-Time Customer Profile]合并配置文件数据时，标识值和命名空间必须匹配。
+完全限定的身份包含两个组件： **身份值**&#x200B;和&#x200B;**身份命名空间**。 例如，如果标识的值为`scott@acme.com`，则命名空间会通过将其识别为电子邮件地址来为此值提供上下文。 同样，命名空间可以将`555-123-456`区分为电话号码，将`3126ABC`区分为CRMID。 基本上，**命名空间为给定标识**&#x200B;提供上下文。 跨配置文件片段匹配记录数据时，如[!DNL Real-Time Customer Profile]合并配置文件数据时，标识值和命名空间必须匹配。
 
 例如，两个配置文件片段可能包含不同的主ID，但它们的“电子邮件”命名空间共享相同的值，因此Experience Platform能够看到这些片段实际上是同一个人，并在该人的身份图表中将数据汇总在一起。
 
@@ -47,8 +47,8 @@ ht-degree: 16%
 
 将相同的逻辑应用于Identity Service：
 
-* 一眼就知道：`1-234-567-8900`的标识值可能看起来像电话号码。 但是，从系统的角度来看，此值可以配置为CRM ID。 如果没有相应的命名空间，Identity Service无法将必要的上下文应用于此身份值。
-* 另一个示例是标识值： `john@gmail.com`。 虽然可以轻松将此标识值假定为电子邮件，但完全可以将其配置为自定义命名空间CRM ID。 使用命名空间，您可以区分`Email:john@gmail.com`和`CRM ID:john@gmail.com`。
+* 一眼就知道：`1-234-567-8900`的标识值可能看起来像电话号码。 但是，从系统的角度来看，此值可以配置为CRMID。 如果没有相应的命名空间，Identity Service无法将必要的上下文应用于此身份值。
+* 另一个示例是标识值： `john@gmail.com`。 虽然可以轻松将此标识值假定为电子邮件，但完全可以将其配置为自定义命名空间CRMID。 使用命名空间，您可以区分`Email:john@gmail.com`和`CRMID:john@gmail.com`。
 
 >[!ENDSHADEBOX]
 
@@ -81,7 +81,7 @@ Experience Platform中提供了以下标识类型：
 | 标识类型 | 描述 |
 | --- | --- |
 | Cookie ID | Cookie ID识别Web浏览器。 这些身份对于扩展至关重要，并构成身份图的大多数。 然而，它们自然会快速衰变，并随着时间而失去价值。 |
-| 跨设备ID | 跨设备ID识别个人，通常将其他ID绑定在一起。 例如，登录ID、CRM ID和忠诚度ID。 这是指示[!DNL Identity Service]敏感地处理该值。 |
+| 跨设备ID | 跨设备ID识别个人，通常将其他ID绑定在一起。 例如，登录ID、CRMID和忠诚度ID。 这是指示[!DNL Identity Service]敏感地处理该值。 |
 | 设备 ID | 设备 ID 识别硬件设备，如 IDFA（iPhone 和 iPad）、GAID (Android) 和 RIDA (Roku)，可以由多人在家庭中共享。 |
 | 电子邮件地址 | 电子邮件地址通常与单个人员关联，因此可用于跨不同渠道识别该人员。 此类型的身份包括个人身份信息(PII)。 这是指示[!DNL Identity Service]敏感地处理该值。 |
 | 非人员标识符 | 非人员 ID 用于存储需要命名空间但未连接到人员集群的标识符。例如，产品 SKU，与产品、组织或门店相关的数据。 |

@@ -3,9 +3,9 @@ title: 身份设置UI
 description: 了解如何使用身份设置用户界面。
 badge: Beta 版
 exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
-source-git-commit: 536770d0c3e7e93921fe40887dafa5c76e851f5e
+source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
 workflow-type: tm+mt
-source-wordcount: '517'
+source-wordcount: '515'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ ht-degree: 0%
 
 ![选定两个命名空间并将其定义为唯一。](../images/rules/unique-namespace.png)
 
-建立唯一的命名空间后，图形将不再能够拥有包含唯一命名空间的多个身份。 例如，如果您指定CRM ID作为唯一的命名空间，则图表只能有一个具有CRM ID命名空间的身份。 有关详细信息，请阅读[标识优化算法概述](./identity-optimization-algorithm.md#unique-namespace)。
+建立唯一的命名空间后，图形将不再能够拥有包含唯一命名空间的多个身份。 例如，如果将CRMID指定为唯一的命名空间，则图形只能有一个具有CRMID命名空间的身份。 有关详细信息，请阅读[标识优化算法概述](./identity-optimization-algorithm.md#unique-namespace)。
 
 完成配置后，选择&#x200B;**[!UICONTROL 下一步]**。 出现确认消息，请使用此机会验证您的配置是否正确，然后选择&#x200B;**[!UICONTROL 完成]**。
 
