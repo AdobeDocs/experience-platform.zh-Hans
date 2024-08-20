@@ -2,9 +2,9 @@
 title: 受众门户概述
 description: 了解如何使用Audience Portal在Adobe Experience Platform中查看、管理和创建受众。
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: 527c9bf7ff60ceb1e621ccac5a88b8e9eb32ebfb
+source-git-commit: 56939b18d532f3c12ed8fdd76513d953ae74b613
 workflow-type: tm+mt
-source-wordcount: '3826'
+source-wordcount: '4125'
 ht-degree: 3%
 
 ---
@@ -254,17 +254,39 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 选择&#x200B;**[!UICONTROL 编辑属性]**&#x200B;将允许您编辑受众的基本详细信息，如名称、描述和标记。
 
-![](../images/ui/audience-portal/audience-details-edit-properties.png)
+![受众详细信息页面中会突出显示“编辑属性”按钮。](../images/ui/audience-portal/audience-details-edit-properties.png)
 
 ### 受众总数 {#audience-total}
 
-**[!UICONTROL 受众总计]**&#x200B;部分显示符合受众条件的配置文件总数。
+对于平台生成的受众和合成，**[!UICONTROL 受众总计]**&#x200B;部分显示符合受众条件的配置文件总数。
 
 >[!NOTE]
 >
 >导出作业完成后，可能需要长达30分钟才能更新受众总数。
 
 通过使用当天样本数据的样本量生成预估。 如果您的配置文件存储中的实体少于100万，则使用完整数据集；对于100万到2,000万之间的实体，使用100万个实体；而对于2000多万个实体，使用总实体的5%。 有关生成估算的详细信息，请参阅受众创建教程的[估算生成部分](../tutorials/create-a-segment.md#estimate-and-preview-an-audience)。
+
+### 摄取详细信息 {#ingestion-details}
+
+对于源为&#x200B;**[!UICONTROL 自定义上传]**&#x200B;的受众，**[!UICONTROL 摄取详细信息]**&#x200B;部分既显示配置文件总数，也显示外部生成的受众被摄取到的数据集的详细信息。
+
+![将显示受众详细信息页面的摄取详细信息部分。](../images/ui/audience-portal/audience-details-ingestion-details.png)
+
+| 属性 | 描述 |
+| -------- | ----------- |
+| 配置文件计数 | 符合受众条件的配置文件总数。 |
+| 数据集名称 | 受众被摄取到的数据集的名称。 您可以选择数据集名称，以了解有关数据集的更多信息。 要了解有关数据集的更多信息，请阅读[数据集UI指南](../../catalog/datasets/user-guide.md)。 |
+| 数据集批次 | 受众被引入的数据集的ID。 您可以选择批次的ID，以了解有关批次的详细信息。 要了解有关批次的详细信息，请阅读[监视数据摄取指南](../../ingestion/quality/monitor-data-ingestion.md#viewing-batches)。 |
+| 轮廓批次 | 在Platform上创建配置文件的批次的ID。 您可以选择批次的ID，以了解有关批次的详细信息。 要了解有关批次的详细信息，请阅读[监视数据摄取指南](../../ingestion/quality/monitor-data-ingestion.md#viewing-batches)。 |
+| 架构 | 受众所属的架构的名称。 您可以选择架构的名称以查看有关架构的结构信息并应用数据使用标签。 有关详细信息，请阅读架构指南](../../xdm/tutorials/labels.md)的[管理数据使用标签。 |
+| 已提取的记录 | 摄取到数据集的记录数。 |
+| 失败的记录 | 无法引入数据集的记录数。 |
+| 新轮廓片段 | 已创建的新配置文件的数量。 |
+| 现有轮廓片段 | 已更新的现有配置文件的数量。 |
+
+>[!NOTE]
+>
+>将数据使用标签应用于架构是最佳实践。 您&#x200B;**无法**&#x200B;将数据使用标签直接应用于受众。
 
 ### 激活的目标 {#activated-destinations}
 
@@ -343,7 +365,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 ### 联合受众构成 {#fac}
 
-除了受众组合和区段定义之外，您还可以使用Adobe联合受众组合从企业数据集构建新受众，而无需复制基础数据并将这些受众存储在Adobe Experience Platform受众门户中。 您还可以通过利用从企业数据仓库联合的组合受众数据来扩充Adobe Experience Platform中的现有受众。 请阅读有关[联合受众组合](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/home)的指南。
+除了受众组合和区段定义之外，您还可以使用Adobe联合受众组合从企业数据集构建新受众，而无需复制基础数据并将这些受众存储在Adobe Experience Platform受众门户中。 您还可以通过利用从企业数据仓库联合的组合受众数据来扩充Adobe Experience Platform中的现有受众。 请阅读有关[联合受众组合](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/home)的指南。
 
 ![在您的组织的联合受众组合中创建的受众列表。](../images/ui/overview/federated-audience-composition.png)
 
