@@ -5,9 +5,9 @@ title: 使用架构编辑器创建架构
 type: Tutorial
 description: 本教程介绍了在 Experience Platform 中使用模式编辑器创建模式的步骤。
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 15de9351203f6b43653042ab73ede17781486160
 workflow-type: tm+mt
-source-wordcount: '4813'
+source-wordcount: '4922'
 ht-degree: 1%
 
 ---
@@ -46,14 +46,23 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 ![突出显示了[!UICONTROL 架构]工作区[!UICONTROL 浏览]选项卡和[!UICONTROL 创建架构]。](../images/tutorials/create-schema/create-schema-button.png)
 
+出现[!UICONTROL 创建架构]对话框。 在此对话框中，您可以选择通过添加字段和字段组手动创建架构，也可以上传CSV文件并使用ML算法生成架构。 从对话框中选择架构创建工作流。
+
+![使用工作流选项创建架构对话框并选择高亮显示。](../images/tutorials/create-schema/create-a-schema-dialog.png)
+
+### 手动或ML辅助模式创建 {#manual-or-assisted}
+
+要了解如何使用ML算法根据上传的文件推荐架构结构，请参阅[机器学习辅助架构创建指南](../ui/ml-assisted-schema-creation.md)。 本UI指南重点介绍手动创建工作流。
+
+### 选择基类 {#choose-a-class}
+
 出现[!UICONTROL 创建架构]工作流。 接下来，为架构选择一个基类。 您可以选择[!UICONTROL XDM Individual Profile]和[!UICONTROL XDM ExperienceEvent]的核心类，或者[!UICONTROL Other]（如果这些类不适合您的用途）。 [!UICONTROL Other]类选项允许您[创建新类](#create-new-class)或从其他预先存在的类中进行选择。
 
-有关这些类的详细信息，请参阅[XDM个人配置文件](../classes/individual-profile.md)和[XDM ExperienceEvent](../classes/experienceevent.md)文档。 在本教程中，请选择&#x200B;**[!UICONTROL XDM Individual Profile]**，然后选择&#x200B;**[!UICONTROL 下一步]**。
-
-<!-- You can  by selecting either **[!UICONTROL Individual Profile]**, **[!UICONTROL Experience Event]**, or **[!UICONTROL Other]**, followed by **[!UICONTROL Next]** to confirm your choice.  -->
-
+有关这些类的详细信息，请参阅[[!UICONTROL XDM个人配置文件]](../classes/individual-profile.md)和[[!UICONTROL XDM ExperienceEvent]](../classes/experienceevent.md)文档。 在本教程中，请选择&#x200B;**[!UICONTROL XDM Individual Profile]**，然后选择&#x200B;**[!UICONTROL 下一步]**。
 
 ![包含[!UICONTROL XDM单个配置文件]选项和[!UICONTROL 下一个]突出显示的[!UICONTROL 创建架构]工作流。](../images/tutorials/create-schema/individual-profile-base-class.png)
+
+### 命名并查看 {#name-and-review}
 
 选择类后，将显示[!UICONTROL 名称和审阅]部分。 在此部分中，您会提供用于标识架构的名称和描述。 在决定架构的名称时，需要考虑以下几个重要因素：
 
@@ -68,6 +77,8 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 在文本字段中输入人性化的[!UICONTROL 架构显示名称]。 接下来，输入适当的描述以帮助识别您的架构。 当您查看了架构结构并且满意您的设置时，请选择&#x200B;**[!UICONTROL 完成]**&#x200B;以创建您的架构。
 
 ![高亮显示[!UICONTROL 创建架构]工作流的[!UICONTROL 名称和审核]部分，该工作流具有[!UICONTROL 架构显示名称]、[!UICONTROL 描述]和[!UICONTROL 完成]。](../images/ui/resources/schemas/name-and-review.png)
+
+### 编写架构 {#compose-your-schema}
 
 出现[!DNL Schema Editor]。 这是您将在其中构建架构的画布。 当您到达编辑器时，会在画布的&#x200B;**[!UICONTROL 结构]**&#x200B;部分自动创建自标题架构，以及您选择的基类中包含的标准字段。 架构的分配类也在&#x200B;**[!UICONTROL 合成]**&#x200B;部分的&#x200B;**[!UICONTROL 类]**&#x200B;下列出。
 

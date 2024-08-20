@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据引入概述
 description: 本文档介绍了将数据摄取到Platform的三种主要方式，并提供了各自概述文档的链接，以详细了解相关信息。
 exl-id: c189dd4a-5c59-4189-a18c-a3e45a9ff01d
-source-git-commit: cde8db1f75cf83451e240f32a877b9d6d26a0e18
+source-git-commit: 15de9351203f6b43653042ab73ede17781486160
 workflow-type: tm+mt
-source-wordcount: '521'
+source-wordcount: '578'
 ht-degree: 0%
 
 ---
@@ -42,6 +42,12 @@ Adobe Experience Platform将来自多个来源的数据整合在一起，以帮�
 可以将Source连接配置为从其他Adobe应用程序(如Adobe Analytics和Adobe Audience Manager)、第三方云存储源（如[!DNL Azure Blob]、[!DNL Amazon] S3、FTP服务器和SFTP服务器）以及第三方CRM系统（如[!DNL Microsoft Dynamics]和[!DNL Salesforce]）收集数据。
 
 有关详细信息，请参阅[源概述](../sources/home.md)。
+
+### ML辅助模式创建 {#ml-assisted-schema-creation}
+
+为了快速集成新数据源，您现在可以使用机器学习算法从示例数据生成架构。 此自动化可简化准确架构的创建，减少错误，并加快从数据收集到分析和洞察的进程。
+
+有关此工作流的详细信息，请参阅[ML辅助模式创建指南](../xdm/ui/ml-assisted-schema-creation.md)。
 
 ## 后续步骤和其他资源
 

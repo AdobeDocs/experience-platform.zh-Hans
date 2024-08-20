@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 在UI中创建和编辑架构
 description: 了解如何在Experience Platform用户界面中创建和编辑架构的基础知识。
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 19f1f64434d655d3b19260460519018fc9c8e174
+source-git-commit: 15de9351203f6b43653042ab73ede17781486160
 workflow-type: tm+mt
-source-wordcount: '3736'
-ht-degree: 2%
+source-wordcount: '3861'
+ht-degree: 1%
 
 ---
 
@@ -29,13 +29,23 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->本节介绍如何在UI中手动创建新架构。 如果您要将CSV数据摄取到Platform，则可以选择将该数据[映射到由AI生成的推荐](../../../ingestion/tutorials/map-csv/recommendations.md)创建的XDM架构（当前为测试版），而无需自己手动创建架构。
+>本节介绍如何在UI中手动创建新架构。 如果您正在将CSV数据摄取到Platform，则可以使用机器学习(ML)算法&#x200B;**从示例CSV数据生成架构**。 此工作流可匹配您的数据格式，并根据CSV文件的结构和内容自动创建新架构。 有关此工作流的详细信息，请参阅[ML辅助模式创建指南](../ml-assisted-schema-creation.md)。
 
 在[!UICONTROL 架构]工作区中，选择右上角的&#x200B;**[!UICONTROL 创建架构]**。
 
 ![突出显示具有[!UICONTROL 创建架构]的架构工作区。](../../images/ui/resources/schemas/create-schema.png)
 
-出现[!UICONTROL 创建架构]工作流。 您可以通过选择&#x200B;**[!UICONTROL 个人资料]**、**[!UICONTROL 体验事件]**&#x200B;或&#x200B;**[!UICONTROL 其他]**&#x200B;为架构选择基类，然后依次选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以确认您的选择。 有关这些类的详细信息，请参阅[XDM个人配置文件](../../classes/individual-profile.md)和[XDM ExperienceEvent](../../classes/experienceevent.md)文档。
+出现[!UICONTROL 创建架构]对话框。 在此对话框中，您可以选择通过添加字段和字段组手动创建架构，也可以上传CSV文件并使用ML算法生成架构。 从对话框中选择架构创建工作流。
+
+![使用工作流选项创建架构对话框并选择高亮显示。](../../images/tutorials/create-schema/create-a-schema-dialog.png)
+
+### 手动或ML辅助模式创建 {#manual-or-assisted}
+
+要了解如何使用ML算法推荐基于csv文件的架构结构，请参阅[机器学习辅助架构创建指南](../ml-assisted-schema-creation.md)。 本UI指南重点介绍手动创建工作流。
+
+### 手动创建模式 {#manual-creation}
+
+出现[!UICONTROL 创建架构]工作流。 您可以通过选择&#x200B;**[!UICONTROL 个人资料]**、**[!UICONTROL 体验事件]**&#x200B;或&#x200B;**[!UICONTROL 其他]**&#x200B;为架构选择基类，然后依次选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以确认您的选择。 有关这些类的详细信息，请参阅[[!UICONTROL XDM个人配置文件]](../../classes/individual-profile.md)和[[!UICONTROL XDM ExperienceEvent]](../../classes/experienceevent.md)文档。
 
 ![使用三个类选项并突出显示[!UICONTROL 下一步]的[!UICONTROL 创建架构]工作流。](../../images/ui/resources/schemas/schema-class-options.png)
 

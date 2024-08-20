@@ -2,9 +2,9 @@
 title: 使用人工智能生成的Recommendations将CSV文件映射到XDM架构
 description: 本教程介绍如何使用人工智能生成的推荐将CSV文件映射到XDM架构。
 exl-id: 1daedf0b-5a25-4ca5-ae5d-e9ee1eae9e4d
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: cbebee894d68f60f82e1154f41dcecc76c706a3b
 workflow-type: tm+mt
-source-wordcount: '1100'
+source-wordcount: '1172'
 ht-degree: 1%
 
 ---
@@ -101,3 +101,5 @@ CSV字段使用ML模型自动映射到现有XDM字段组。 如果要更改任�
 本指南介绍了如何使用AI生成的推荐将CSV文件映射到XDM架构，从而允许您通过批量摄取将数据引入Platform。
 
 有关将CSV文件映射到现有架构的步骤，请参阅[现有架构映射工作流](./existing-schema.md)。 有关通过预建源连接将数据实时流式传输到Platform的信息，请参阅[源概述](../../../sources/home.md)。
+
+您还可以使用机器学习(ML)算法&#x200B;**根据示例CSV数据**&#x200B;生成架构。 此工作流会根据CSV文件的结构和内容自动创建新架构。 这个新创建的架构与您的数据格式匹配，可在为大型复杂数据集定义结构、字段和数据类型时为您节省时间并提高准确性。 有关此工作流的详细信息，请参阅[ML辅助模式创建指南](../../../xdm/ui/ml-assisted-schema-creation.md)。

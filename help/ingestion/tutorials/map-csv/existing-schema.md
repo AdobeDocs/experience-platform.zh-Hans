@@ -5,9 +5,9 @@ title: 将CSV文件映射到现有XDM架构
 type: Tutorial
 description: 本教程介绍如何使用Adobe Experience Platform用户界面将CSV文件映射到现有XDM架构。
 exl-id: 15f55562-269d-421d-ad3a-5c10fb8f109c
-source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
+source-git-commit: 15de9351203f6b43653042ab73ede17781486160
 workflow-type: tm+mt
-source-wordcount: '944'
+source-wordcount: '1018'
 ht-degree: 1%
 
 ---
@@ -121,3 +121,7 @@ ht-degree: 1%
 ## 后续步骤
 
 通过遵循本教程，您已成功将平面CSV文件映射到XDM架构并将其摄取到[!DNL Platform]。 此数据现在可以由下游[!DNL Platform]服务（如[!DNL Real-Time Customer Profile]）使用。 有关详细信息，请参阅[[!DNL Real-Time Customer Profile]](../../../profile/home.md)的概述。
+
+>[!TIP]
+>
+>您还可以使用机器学习(ML)算法，从架构工作区中&#x200B;**根据示例数据**&#x200B;生成架构。 此工作流会根据文件的结构和内容自动创建新架构，确保架构与数据的格式匹配。 在为大型复杂数据集定义结构、字段和数据类型时，这可以节省时间并提高准确性。 有关此工作流的详细信息，请参阅[ML辅助模式创建指南](../../../xdm/ui/ml-assisted-schema-creation.md)。

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建和编辑类
 description: 了解如何在Experience Platform用户界面中创建和编辑类。
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 15de9351203f6b43653042ab73ede17781486160
 workflow-type: tm+mt
-source-wordcount: '1458'
+source-wordcount: '1560'
 ht-degree: 5%
 
 ---
@@ -60,7 +60,15 @@ Adobe提供了多个标准（“核心”）Experience Data Model (XDM)类，包
 
 ### 创建或编辑类 {#create-or-edit}
 
-或者，如果您选择&#x200B;**[!UICONTROL 创建架构]**，则会显示[!UICONTROL 创建架构]工作流。 在[!UICONTROL 架构详细信息]部分中，选择&#x200B;**[!UICONTROL 其他]**。 此时将显示可用类的列表。 在此处，您可以浏览和筛选新类所基于的现有类。
+或者，如果您选择手动创建架构，则可以在该工作流中创建或编辑现有类。 在出现的[!UICONTROL 创建架构]对话框中选择&#x200B;**[!UICONTROL 创建架构]**，然后选择&#x200B;**[!UICONTROL 手动]**。
+
+>[!NOTE]
+>
+>如果使用ML辅助模式创建工作流，则可以上传文件并使用ML算法生成推荐的模式。 在该架构创建工作流中，您不需要为架构指定基类。 要了解ML如何推荐基于csv文件的架构结构，请参阅[机器学习辅助架构创建指南](../ml-assisted-schema-creation.md)。
+
+![使用工作流选项创建架构对话框并选择高亮显示。](../../images/ui/resources/classes/manually-create-a-schema.png)
+
+此时将显示架构创建工作流。 在[!UICONTROL 架构详细信息]部分中，选择&#x200B;**[!UICONTROL 其他]**。 此时将显示可用类的列表。 在此处，您可以浏览和筛选新类所基于的现有类。
 
 >[!NOTE]
 >
