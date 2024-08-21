@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform发行说明2024年8月
 description: Adobe Experience Platform 的 2024 年 8 月发行说明。
-source-git-commit: a44b7d5351168094041438c357dc47328975f70d
+source-git-commit: ab26566cb7f2586d709147686180625db4e920ec
 workflow-type: tm+mt
-source-wordcount: '1086'
-ht-degree: 25%
+source-wordcount: '1300'
+ht-degree: 28%
 
 ---
 
@@ -18,11 +18,28 @@ ht-degree: 25%
 
 对Experience Platform中现有功能和文档的更新：
 
+- [基于属性的访问控制](#abac)
 - [目标](#destinations)
 - [Experience Data Model (XDM)](#xdm)
 - [身份服务](#identity-service)
 - [Segmentation Service](#segmentation)
 - [源](#sources)
+
+## 基于属性的访问控制 {#abac}
+
+基于属性的访问控制是Adobe Experience Platform的一项功能，它使注重隐私的品牌在管理用户访问方面拥有更大的灵活性。 可以将架构字段和区段等单个对象分配给用户角色。此功能允许您授予或撤销组织中特定 Platform 用户对各个对象的访问权限。
+
+通过基于属性的访问控制，贵组织的管理员可以控制用户对所有平台工作流和资源中敏感个人数据(SPD)、个人身份信息(PII)和其他自定义类型数据的访问。 管理员可以定义只能访问特定字段以及与这些字段对应的数据的用户角色。
+
+**新增功能**
+
+| 功能更新 | 描述 |
+| --- | --- |
+| 新增权限管理器功能 | 您现在可以利用[权限管理器](../../access-control/abac/permission-manager/overview.md)通过简单的查询来生成报告，这将有助于您了解访问管理，并节省在几个工作流和粒度级别验证访问权限的时间。 有关创建用户和角色报告的详细信息，请参阅[权限管理器用户指南](../../access-control/abac/permission-manager/permissions.md)。 ![左侧导航中突出显示“权限管理器”的图像Experience Platform用户界面。用户界面中的](assets/august/permission-manager-rn.png "权限管理器。"){width="250" align="center" zoomable="yes"} |
+
+{style="table-layout:auto"}
+
+有关基于属性的访问控制的详细信息，请参阅[基于属性的访问控制概述](../../access-control/abac/overview.md)。有关基于属性的访问控制工作流程的综合指南，请阅读[基于属性的访问控制端到端指南](../../access-control/abac/end-to-end-guide.md)。
 
 ## 目标 {#destinations}
 
