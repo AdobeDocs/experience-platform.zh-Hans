@@ -2,10 +2,10 @@
 title: 会话详细信息收集数据类型
 description: 了解会话详细信息收集Experience Data Model (XDM)数据类型。
 exl-id: ffe6bcf7-61e1-4f7a-ba95-7fcb78683cc9
-source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
+source-git-commit: 9350cfc299c20bd63a2a559c177b3af02739e5b9
 workflow-type: tm+mt
-source-wordcount: '926'
-ht-degree: 15%
+source-wordcount: '857'
+ht-degree: 16%
 
 ---
 
@@ -31,7 +31,6 @@ ht-degree: 15%
 | [[!UICONTROL 广播内容类型]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#content-type) | `contentType` | 字符串 | 是 | 流投放的[!UICONTROL 广播内容类型]。 每个[!UICONTROL 流类型]的可用值包括：<br>音频：“song”、“podcast”、“audiobook”和“radio”；<br>视频：“VoD”、“Live”、“Linear”、“UGC”和“DVoD”。<br>客户可以为此参数提供自定义值。 |
 | [[!UICONTROL 广播网络]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#network) | `network` | 字符串 | 否 | 网络/渠道名称。 |
 | [[!UICONTROL 内容渠道]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#content-channel) | `channel` | 字符串 | 是 | [!UICONTROL 内容频道]是从中播放内容的分发频道。 |
-| [[!UICONTROL 内容完成]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#content-complete) | `isCompleted` | 布尔值 | 否 | [!UICONTROL 内容完成]指示定时媒体资源是否已观看完毕。 此事件并不一定意味着观看者观看了整个视频；观看者可以跳过前面。 |
 | [!UICONTROL 内容传递网络] | `cdn` | 字符串 | 否 | 已播放内容的[!UICONTROL 内容传递网络]。 |
 | [[!UICONTROL 内容ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#content-id) | `name` | 字符串 | 是 | [!UICONTROL 内容ID]是内容的唯一标识符。 它可用于链接回其他行业或CMS ID。 |
 | [[!UICONTROL 内容名称]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#content-name-(variable)) | `friendlyName` | 字符串 | 否 | [!UICONTROL 内容名称]是内容的“友好”（人类可读）名称。 |
@@ -45,7 +44,6 @@ ht-degree: 15%
 | [[!UICONTROL 流派]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#genre) | `genre` | 字符串 | 否 | 内容制作者定义的内容类型或分组。 变量实施中的值应以逗号分隔。 |
 | [[!UICONTROL 已授权的媒体]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#authorized) | `authorized` | 字符串 | 否 | 确认用户是否已通过Adobe身份验证获得授权。 |
 | [[!UICONTROL 媒体内容长度]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#content-length-(variable)) | `length` | 整数 | 是 | [!UICONTROL 媒体内容长度]包含剪辑长度/运行时间 — 这是所使用内容的最大长度（或持续时间）（以秒为单位）。 |
-| [[!UICONTROL 媒体开始]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#media-starts) | `isViewed` | 布尔值 | 否 | 媒体的载入事件。 当查看器选择播放按钮时，会发生这种情况。 即使存在前置广告、缓冲、错误等，也会将此计为视频载入事件。 |
 | [[!UICONTROL MVPD标识符]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#mvpd) | `mvpd` | 字符串 | 否 | 通过Adobe身份验证提供的多通道视频节目分发服务器(MVPD)标识符。 |
 | [[!UICONTROL 发布者]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#publisher) | `publisher` | 字符串 | 否 | 音频内容发布者的名称。 |
 | [[!UICONTROL 电台]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#station) | `station` | 字符串 | 否 | 播放音频的电台的名称。 |
@@ -60,10 +58,3 @@ ht-degree: 15%
 | [[!UICONTROL 版本]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#sdk-version) | `appVersion` | 字符串 | 否 | 播放器使用的SDK版本。 该参数可使用您的播放器支持的任何自定义值。 |
 
 {style="table-layout:auto"}
-
-<!-- This is required for sessionStart. 
-Q) How do I indicate that?
-Q) Do you know where to link for:
-Ad Load Type
-Content Delivery Network
- -->

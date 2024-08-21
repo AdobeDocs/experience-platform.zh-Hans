@@ -1,7 +1,7 @@
 ---
 title: Adobe Experience Platform发行说明2024年8月
 description: Adobe Experience Platform 的 2024 年 8 月发行说明。
-source-git-commit: 67152524c9448ad1c6cd1f25437e5ed69900ef84
+source-git-commit: d01e16938485f6648cc02ce1674e0e9e84d78147
 workflow-type: tm+mt
 source-wordcount: '1300'
 ht-degree: 28%
@@ -69,11 +69,9 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 功能 | 描述 |
 | --- | --- |
-| ML辅助模式创建流程 | 使用高级机器学习算法分析示例CSV数据文件，并使用标准和自定义字段自动创建优化架构。<br>主要功能：<br><ul><li>更快的架构创建：使用ML推荐和生成的XDM字段，直接从示例数据文件生成架构。</li><li>灵活的架构演变：在生成的架构中轻松添加或更新字段。</li><li>无缝集成：与Schema Ul中的核心架构创建流程完全集成，确保流畅而一致的用户体验。</li><li>高效的审查和编辑：使用平面视图编辑器快速查看和更新架构，从而使创建过程更高效且更便于用户使用。</li></ul> |
+| ML辅助模式创建流程 | 使用高级机器学习算法分析示例数据文件，并使用标准和自定义字段自动创建优化架构。<br>主要功能：<br><ul><li>更快的架构创建：使用ML推荐和生成的XDM字段，直接从示例数据文件生成架构。</li><li>灵活的架构演变：在生成的架构中轻松添加或更新字段。</li><li>无缝集成：与Schema Ul中的核心架构创建流程完全集成，确保流畅而一致的用户体验。</li><li>高效的审查和编辑：使用平面视图编辑器快速查看和更新架构，从而使创建过程更高效且更便于用户使用。</li></ul><br>要了解更多信息，请阅读[ML辅助模式创建工作流指南](../../xdm/ui/ml-assisted-schema-creation.md)。 |
 
 {style="table-layout:auto"}
-
-若要了解更多信息，请阅读[ML辅助模式创建概述](../../xdm/ui/ml-assisted-schema-creation.md)
 
 有关 Platform 中 XDM 的详细信息，请查看 [XDM 系统概述](../../xdm/home.md)。
 

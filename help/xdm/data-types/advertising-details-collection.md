@@ -2,7 +2,7 @@
 title: Advertising详细信息收藏集数据类型
 description: 了解Advertising详细信息收集Experience Data Model (XDM)数据类型。
 exl-id: 3f6bf1f9-c728-46af-804a-cb41eb29951b
-source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
+source-git-commit: 9350cfc299c20bd63a2a559c177b3af02739e5b9
 workflow-type: tm+mt
 source-wordcount: '338'
 ht-degree: 14%
@@ -22,7 +22,7 @@ ht-degree: 14%
 >每个显示名称都包含一个链接，指向有关其音频和视频参数的更多信息。 链接的页面包含有关Adobe收集的视频广告数据、实现值、网络参数、报表和重要注意事项的详细信息。
 
 | 显示名称 | 属性 | 数据类型 | 必需 | 描述 |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|-----------|----------------------------------------------------------------------------------------------------------------------------------|
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|-----------|----------|-----------------------------------------------------------------------------------------------------------------------|
 | [[!UICONTROL 广告商]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html#advertiser) | `advertiser` | 字符串 | 否 | 广告中展现的产品所属的公司或品牌。 |
 | [[!UICONTROL 广告营销活动]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html#campaign-id) | `campaignID` | 字符串 | 否 | 广告营销活动的ID。 |
 | [[!UICONTROL 广告创意ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html#creative-id) | `creativeID` | 字符串 | 否 | 广告创意的 ID。 |
@@ -33,3 +33,5 @@ ht-degree: 14%
 | [[!UICONTROL 广告投放ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html#placement-id) | `placementID` | 字符串 | 否 | 广告的版面ID。 |
 | [[!UICONTROL 广告播放器名称]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html#ad-player-name) | `playerName` | 字符串 | 是 | 负责呈现广告的播放器的名称。 |
 | [[!UICONTROL 广告站点ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html#site-id) | `siteID` | 字符串 | 否 | 广告网站的ID。 |
+
+{style="table-layout:auto"}

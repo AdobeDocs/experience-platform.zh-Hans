@@ -1,14 +1,19 @@
 ---
 title: 机器学习辅助模式创建
 description: 了解如何在Experience Platform用户界面中创建架构。
-source-git-commit: 15de9351203f6b43653042ab73ede17781486160
+badgeBeta: label="Beta 版" type="Informative"
+source-git-commit: f1db409a2af34ac66c81d7e5a11ee1bc8e5f4c9c
 workflow-type: tm+mt
-source-wordcount: '978'
-ht-degree: 1%
+source-wordcount: '996'
+ht-degree: 2%
 
 ---
 
 # 机器学习辅助模式创建
+
+>[!AVAILABILITY]
+>
+>* 机器学习辅助模式创建当前处于Beta阶段。 文档和功能可能会发生变化。
 
 使用ML算法从示例数据生成架构。 在为大型复杂数据集定义结构、字段和数据类型时，此过程可节省时间并提高准确性。
 
