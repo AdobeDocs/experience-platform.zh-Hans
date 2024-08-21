@@ -3,9 +3,9 @@ keywords: 目标；目标；目标详细信息页面；目标详细信息页面
 title: 查看目标详细信息
 description: 单个目标的详细信息页面提供了目标详细信息的概览。 目标详细信息包括目标名称、ID、映射到目标的受众以及用于编辑激活以及启用和禁用数据流的控件。
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 9ebdf6e675ddfe03f43b56ed10f625a7d000a662
 workflow-type: tm+mt
-source-wordcount: '1189'
+source-wordcount: '1310'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 0%
 
    ![浏览目标](../assets/ui/details-page/browse-destinations.png)
 
-2. 选择左上角的过滤器图标![过滤器图标](/help/images/icons/filter.png)以启动排序面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的过滤选择。
+2. 选择左上角的过滤器图标![过滤器图标](../../images/icons/filter.png)以启动排序面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的过滤选择。
 
    ![筛选目标](../assets/ui/details-page/filter-destinations.png)
 
@@ -103,33 +103,52 @@ ht-degree: 0%
 
 对于数据流运行到基于文件的目标，**[!UICONTROL 处理持续时间]**&#x200B;取决于要导出的数据的大小和系统加载。 另请注意，数据流运行到基于文件的目标，将按受众细分。
 
-![数据流运行页的图像，该页的“处理时间”列为基于文件的目标突出显示。](/help/destinations/assets/ui/details-page/processing-time-dataflow-run-file-based.png)
+![数据流运行页的图像，该页的“处理时间”列为基于文件的目标突出显示。](../assets/ui/details-page/processing-time-dataflow-run-file-based.png)
 
 有关详细信息，请参阅监视文档中的[数据流运行到批处理（基于文件）目标](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations)。
 
 ## [!UICONTROL 激活数据] {#activation-data}
 
-[!UICONTROL 激活数据]选项卡显示已映射到目标的受众列表，包括其开始日期和结束日期（如果适用），以及数据导出的其他相关信息，如导出类型、计划和频率。 要查看特定受众的详细信息，请从列表中选择其名称。
+**[!UICONTROL 激活数据]**&#x200B;选项卡显示已映射到目标的受众列表，包括其开始日期和结束日期（如果适用），以及数据导出的其他相关信息，如导出类型、计划和频率。 要查看特定受众的详细信息，请从列表中选择其名称。
 
 >[!TIP]
 >
 >要查看和编辑有关映射到目标的属性和身份的详细信息，请在[右边栏](#right-rail)中选择&#x200B;**[!UICONTROL 激活受众]**。
 
+>[!BEGINSHADEBOX]
+
+基于文件的目标的&#x200B;**[!UICONTROL 激活数据]**&#x200B;选项卡。
+
 ![激活数据视图批次目标](../assets/ui/details-page/activation-data-batch.png)
+
+>[!ENDSHADEBOX]
+
+
+>[!BEGINSHADEBOX]
+
+流目标的&#x200B;**[!UICONTROL 激活数据]**&#x200B;选项卡。
 
 ![激活数据视图流目标](../assets/ui/details-page/activation-data-streaming.png)
 
-### [!BADGE Beta]{type=Informational}从激活流程中删除多个受众 {#bulk-remove}
+>[!ENDSHADEBOX]
 
->[!NOTE]
->
-此功能为测试版，仅向部分客户提供。 要请求访问此功能，请联系您的Adobe代表。
+### 筛选激活的受众 {#filter-audiences}
+
+要筛选激活到目标的受众列表，请在搜索框中输入受众名称。 受众列表会自动随搜索结果更新。
+
+用于筛选受众的![搜索框。](../assets/ui/details-page/filter-audiences.png)
+
+### 从激活流中删除多个受众 {#bulk-remove}
 
 要从现有激活流中删除多个受众，请选择这些受众，然后选择&#x200B;**[!UICONTROL 删除受众]**。
 
 ![激活数据屏幕突出显示“删除受众”选项。](../assets/ui/details-page/bulk-remove-audiences.png)
 
-### 按需将多个文件导出到批处理目标 {#bulk-export}
+### [!BADGE Beta]{type=Informative}按需将多个文件导出到批处理目标 {#bulk-export}
+
+>[!NOTE]
+>
+此功能为测试版，仅向部分客户提供。 要请求访问此功能，请联系您的Adobe代表。
 
 您可以从&#x200B;**[!UICONTROL 激活数据]**&#x200B;页面[按需导出多个文件](../ui/export-file-now.md)。 为此，请选择要按需导出文件的受众，然后选择&#x200B;**[!UICONTROL 立即导出文件]**&#x200B;控件以触发一次性导出，该导出会将每个选定受众的文件传送到批处理目标。
 
@@ -144,3 +163,9 @@ ht-degree: 0%
 >[!NOTE]
 >
 有关浏览受众详细信息页面的详细信息，请参阅[受众门户概述](../../segmentation/ui/audience-portal.md#segment-details)。
+
+### 编辑导出到批处理目标的多个受众的文件名 {#bulk-edit-file-names}
+
+要同时编辑多个受众的导出文件名，请选择所需受众，然后选择&#x200B;**[!UICONTROL 编辑文件名]**。 有关如何定义或编辑文件名的详细信息，请阅读有关如何[配置文件名](../ui/activate-batch-profile-destinations.md#configure-file-names)部分的说明。
+
+![激活数据屏幕突出显示用于编辑多个受众的文件名的选项。](../assets/ui/details-page/bulk-edit-file-name.png)

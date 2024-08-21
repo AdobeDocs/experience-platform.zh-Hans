@@ -3,9 +3,9 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: d7a530c5ec2cad37b93273f5843609110d61cbfc
+source-git-commit: 85b69af6fd21cfa9712e9c57593cbf00a62837c8
 workflow-type: tm+mt
-source-wordcount: '4077'
+source-wordcount: '4202'
 ht-degree: 13%
 
 ---
@@ -110,6 +110,10 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
 ![编辑计划步骤中突出显示的计划控件。](../assets/ui/activate-batch-profile-destinations/edit-default-schedule.png)
 
+要同时编辑多个计划，请使用屏幕左侧的复选框选择受众，然后选择&#x200B;**[!UICONTROL 编辑计划]**。 然后，您配置的计划将被应用于选定受众的所有导出文件。
+
+![Experience Platform用户界面的图像，显示多个选定受众的“编辑计划”选项。](../assets/ui/activate-batch-profile-destinations/edit-schedule.png)
+
 >[!TIP]
 >
 >您可以从&#x200B;**[!UICONTROL 激活数据]**&#x200B;页面编辑现有激活流的受众激活计划。 有关详细信息，请参阅有关[批量编辑激活计划](../ui/destination-details-page.md#bulk-edit-schedule)的文档。
@@ -200,7 +204,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
 4. 选择&#x200B;**[!UICONTROL 创建]**&#x200B;以保存计划。
 
-### 配置文件名
+### 配置文件名 {#configure-file-names}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_filename"
@@ -234,6 +238,10 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 | **[!UICONTROL 沙盒名称]** | 用于导出受众的沙盒的ID。 |
 
 {style="table-layout:auto"}
+
+要同时编辑多个文件名，请使用屏幕左侧的复选框选择受众，然后选择&#x200B;**[!UICONTROL 编辑文件名]**。 然后，您配置的文件名选项将应用于所选受众的所有导出文件。
+
+![Experience Platform用户界面的图像，显示多个选定受众的“编辑文件名”选项。](../assets/ui/activate-batch-profile-destinations/edit-file-name.png)
 
 选择&#x200B;**[!UICONTROL 应用更改]**&#x200B;以确认您的选择。
 

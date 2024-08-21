@@ -1,16 +1,17 @@
 ---
-title: (Beta)使用Experience PlatformUI按需将文件导出到批处理目标
+title: 使用Experience PlatformUI按需将文件导出到批处理目标
 type: Tutorial
 description: 了解如何使用Experience PlatformUI将按需文件导出到批处理目标。
 exl-id: 0cbe5089-b73d-4584-8451-2fc34d47c357
-source-git-commit: 64833e29d062225bc774a14ae60b102b293bb5c4
+source-git-commit: 97ae720fa4d081fcf8d6b84c81a2131e55b9b1b5
 workflow-type: tm+mt
-source-wordcount: '722'
+source-wordcount: '720'
 ht-degree: 8%
 
 ---
 
-# (Beta)使用Experience PlatformUI按需将文件导出到批处理目标
+
+# 使用Experience PlatformUI按需将文件导出到批处理目标
 
 >[!IMPORTANT]
 >
