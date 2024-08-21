@@ -1,7 +1,7 @@
 ---
 title: Adobe Experience Platform发行说明2024年8月
 description: Adobe Experience Platform 的 2024 年 8 月发行说明。
-source-git-commit: d6eb2050cdc3d51cf8ff4189c6b9f78469f14fa9
+source-git-commit: 71c7a19b0ccadf26f415608488ec8f3799cae7bf
 workflow-type: tm+mt
 source-wordcount: '1037'
 ht-degree: 27%
@@ -33,12 +33,12 @@ ht-degree: 27%
 | 功能 | 描述 |
 | ----------- | ----------- |
 | 现在通常可以将按需文件导出到批处理目标。 | 所有客户现在都可以使用按需将文件导出到批处理目标的选项。 有关详细信息，请参阅[专用文档](../../destinations/ui/export-file-now.md)。 |
-| 在[计划步骤](../../destinations/ui/activate-batch-profile-destinations.md#scheduling)中编辑多个导出受众的导出计划。 | 现在，所有客户都可以使用选项，直接通过受众激活工作流的计划步骤编辑多个导出受众的导出计划。 ![Experience Platform用户界面的图像，突出显示计划步骤中的“编辑计划”选项。](assets/august/edit-schedule.png) {width="250" align="center" zoomable="yes"} |
-| 在[计划步骤](../../destinations/ui/activate-batch-profile-destinations.md#scheduling)中编辑多个导出受众的文件名。 | 现在，所有客户都可以使用直接从Audience Activation工作流的计划步骤编辑多个导出文件的名称的选项。 ![Experience Platform用户界面的图像，突出显示计划步骤中的“编辑文件名”选项。](assets/august/edit-file-name.png) {width="250" align="center" zoomable="yes"} |
-| 从[目标详细信息](../../destinations/ui/destination-details-page.md#bulk-remove)页面上的数据流中删除多个受众。 | 现在，所有客户都可以使用从&#x200B;**[!UICONTROL 目标详细信息]**&#x200B;页面中移除现有数据流多个受众的选项。 ![Experience Platform用户界面的图像，它突出显示“目标详细信息”页面中的“删除受众”选项。](assets/august/bulk-remove-audiences.png) {width="250" align="center" zoomable="yes"} |
-| 从[目标详细信息](../../destinations/ui/destination-details-page.md#bulk-export)页面按需将多个文件导出到批处理目标。 | 所有客户现在都可以使用按需将多个文件从&#x200B;**[!UICONTROL 目标详细信息]**&#x200B;页面导出到批处理目标的选项。 ![Experience Platform用户界面的图像，在“目标详细信息”页面中突出显示“立即导出文件”选项。](assets/august/bulk-export-file-now.png) {width="250" align="center" zoomable="yes"} |
-| 从[目标详细信息](../../destinations/ui/destination-details-page.md#bulk-edit-file-names)页面编辑多个导出受众的文件名。 | 您现在可以直接从&#x200B;**[!UICONTROL 目标详细信息]**&#x200B;页面编辑多个导出文件的名称。 ![Experience Platform用户界面的图像，在目标详细信息页面中突出显示编辑文件名选项。](assets/august/edit-file-name-destination-details.png) {width="250" align="center" zoomable="yes"} |
-| 从[目标详细信息](../../destinations/ui/export-datasets.md#remove-dataset)页面中移除数据流中的多个数据集。 | 现在，所有客户都可以使用从数据流中删除多个数据集的选项。 ![Experience Platform用户界面的图像，在目标详细信息页面中突出显示“删除数据集”选项。](assets/august/bulk-remove-datasets.png) {width="250" align="center" zoomable="yes"} |
+| 在[计划步骤](../../destinations/ui/activate-batch-profile-destinations.md#scheduling)中编辑多个导出受众的导出计划。 | 现在，所有客户都可以使用选项，直接通过受众激活工作流的计划步骤编辑多个导出受众的导出计划。 ![Experience Platform用户界面的图像，突出显示计划步骤中的“编辑计划”选项。](assets/august/edit-schedule.png){width="250" align="center" zoomable="yes"} |
+| 在[计划步骤](../../destinations/ui/activate-batch-profile-destinations.md#scheduling)中编辑多个导出受众的文件名。 | 现在，所有客户都可以使用直接从Audience Activation工作流的计划步骤编辑多个导出文件的名称的选项。 ![Experience Platform用户界面的图像，突出显示计划步骤中的“编辑文件名”选项。](assets/august/edit-file-name.png){width="250" align="center" zoomable="yes"} |
+| 从[目标详细信息](../../destinations/ui/destination-details-page.md#bulk-remove)页面上的数据流中删除多个受众。 | 现在，所有客户都可以使用从&#x200B;**[!UICONTROL 目标详细信息]**&#x200B;页面中移除现有数据流多个受众的选项。 ![Experience Platform用户界面的图像，它突出显示“目标详细信息”页面中的“删除受众”选项。](assets/august/bulk-remove-audiences.png){width="250" align="center" zoomable="yes"} |
+| 从[目标详细信息](../../destinations/ui/destination-details-page.md#bulk-export)页面按需将多个文件导出到批处理目标。 | 所有客户现在都可以使用按需将多个文件从&#x200B;**[!UICONTROL 目标详细信息]**&#x200B;页面导出到批处理目标的选项。 ![Experience Platform用户界面的图像，在“目标详细信息”页面中突出显示“立即导出文件”选项。](assets/august/bulk-export-file-now.png){width="250" align="center" zoomable="yes"} |
+| 从[目标详细信息](../../destinations/ui/destination-details-page.md#bulk-edit-file-names)页面编辑多个导出受众的文件名。 | 您现在可以直接从&#x200B;**[!UICONTROL 目标详细信息]**&#x200B;页面编辑多个导出文件的名称。 ![Experience Platform用户界面的图像，在目标详细信息页面中突出显示“编辑文件名”选项。](assets/august/edit-file-name-destination-details.png){width="250" align="center" zoomable="yes"} |
+| 从[目标详细信息](../../destinations/ui/export-datasets.md#remove-dataset)页面中移除数据流中的多个数据集。 | 现在，所有客户都可以使用从数据流中删除多个数据集的选项。 ![Experience Platform用户界面的图像，在目标详细信息页面中突出显示“删除数据集”选项。](assets/august/bulk-remove-datasets.png){width="250" align="center" zoomable="yes"} |
 
 {style="table-layout:auto"}
 
