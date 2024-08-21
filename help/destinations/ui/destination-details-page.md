@@ -3,9 +3,9 @@ keywords: 目标；目标；目标详细信息页面；目标详细信息页面
 title: 查看目标详细信息
 description: 单个目标的详细信息页面提供了目标详细信息的概览。 目标详细信息包括目标名称、ID、映射到目标的受众以及用于编辑激活以及启用和禁用数据流的控件。
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: 9ebdf6e675ddfe03f43b56ed10f625a7d000a662
+source-git-commit: 47d0e2a7fae973edfda035d046f66c88d34bf8b2
 workflow-type: tm+mt
-source-wordcount: '1310'
+source-wordcount: '1286'
 ht-degree: 0%
 
 ---
@@ -144,11 +144,7 @@ ht-degree: 0%
 
 ![激活数据屏幕突出显示“删除受众”选项。](../assets/ui/details-page/bulk-remove-audiences.png)
 
-### [!BADGE Beta]{type=Informative}按需将多个文件导出到批处理目标 {#bulk-export}
-
->[!NOTE]
->
-此功能为测试版，仅向部分客户提供。 要请求访问此功能，请联系您的Adobe代表。
+### 按需将多个文件导出到批处理目标 {#bulk-export}
 
 您可以从&#x200B;**[!UICONTROL 激活数据]**&#x200B;页面[按需导出多个文件](../ui/export-file-now.md)。 为此，请选择要按需导出文件的受众，然后选择&#x200B;**[!UICONTROL 立即导出文件]**&#x200B;控件以触发一次性导出，该导出会将每个选定受众的文件传送到批处理目标。
 
@@ -162,7 +158,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-有关浏览受众详细信息页面的详细信息，请参阅[受众门户概述](../../segmentation/ui/audience-portal.md#segment-details)。
+>有关浏览受众详细信息页面的详细信息，请参阅[受众门户概述](../../segmentation/ui/audience-portal.md#segment-details)。
 
 ### 编辑导出到批处理目标的多个受众的文件名 {#bulk-edit-file-names}
 
