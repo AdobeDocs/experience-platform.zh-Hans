@@ -2,9 +2,9 @@
 title: 受众门户概述
 description: 了解如何使用Audience Portal在Adobe Experience Platform中查看、管理和创建受众。
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: 34964bc5af0676872fb472a7309aa99c21efdbc5
+source-git-commit: b59f5ffeb8af6f3bab7ed79189219f39533d2f1b
 workflow-type: tm+mt
-source-wordcount: '4162'
+source-wordcount: '4250'
 ht-degree: 3%
 
 ---
@@ -161,6 +161,18 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 #### 文件夹 {#folders}
 
 您可以将受众放入文件夹中，以便更好地管理受众。
+
+若要创建用于保存受众的文件夹，请选择&#x200B;**[!UICONTROL 创建文件夹]**。
+
+![“创建文件夹”按钮高亮显示。](../images/ui/audience-portal/create-folder.png)
+
+>[!NOTE]
+>
+>仅当位于其他文件夹中时，才能创建文件夹。 这意味着，如果您在左侧导航栏上选择了&#x200B;**[!UICONTROL 所有受众]**，则&#x200B;**无法**&#x200B;创建文件夹。
+
+此时会出现一个弹出窗口，允许您命名新创建的文件夹。 在命名文件夹后选择&#x200B;**[!UICONTROL 保存]**&#x200B;以完成创建文件夹。 请注意，名称&#x200B;**必须**&#x200B;对于父文件夹是唯一的。
+
+![创建文件夹对话框上的“保存”按钮高亮显示。](../images/ui/audience-portal/create-folder-dialog.png)
 
 要将受众移动到文件夹中，请在要移动的受众上选择&#x200B;**[!UICONTROL 移动到文件夹]**。
 
