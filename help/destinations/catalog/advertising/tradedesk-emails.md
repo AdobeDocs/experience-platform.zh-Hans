@@ -3,9 +3,9 @@ title: (Beta)交易台 — CRM连接
 description: 激活交易台帐户中的配置文件，以根据CRM数据进行受众定位和抑制。
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 3c645ccf5b9dd17e4c3cc1267b60a9c4f1131668
 workflow-type: tm+mt
-source-wordcount: '1122'
+source-wordcount: '1148'
 ht-degree: 5%
 
 ---
@@ -25,6 +25,8 @@ ht-degree: 5%
 ## 概述 {#overview}
 
 此文档旨在帮助您向[!DNL Trade Desk]帐户激活配置文件，以便根据CRM数据进行受众定位和抑制。
+
+此连接器将数据发送到[!DNL The Trade Desk]第一方终结点。 Adobe Experience Platform与[!DNL The Trade Desk]之间的集成不支持将数据导出到[!DNL The Trade Desk]第三方端点。
 
 [!DNL The Trade Desk(TTD)]不会随时直接处理电子邮件地址的上传文件，[!DNL The Trade Desk]也不会存储您的原始（未散列）电子邮件。
 
@@ -138,9 +140,9 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 
 ## 验证数据导出 {#validate}
 
-要验证数据是否已正确地从Experience Platform导出到[!DNL The Trade Desk]，请在[!DNL The Trade Desk]数据管理平台(DMP)的Adobe1PD数据拼贴下找到受众。 以下是在[!DNL Trade Desk] UI中查找相应ID的步骤：
+要验证数据是否已从Experience Platform正确导出到[!DNL The Trade Desk]，请在[!DNL The Trade Desk]数据管理平台(DMP)的Adobe1PD数据拼贴下找到受众。 以下是在[!DNL Trade Desk] UI中查找相应ID的步骤：
 
-1. 首先，单击&#x200B;**[!UICONTROL 数据]**&#x200B;选项卡，然后查看&#x200B;**[!UICONTROL 第一方]**。
+1. 首先，选择&#x200B;**[!UICONTROL 数据]**&#x200B;选项卡，并查看&#x200B;**[!UICONTROL 第一方]**&#x200B;部分。
 2. 向下滚动页面，在&#x200B;**[!UICONTROL 导入的数据]**&#x200B;下，您会找到&#x200B;**[!UICONTROL Adobe1PD磁贴]**。
 3. 单击**[!UICONTROL Adobe1PD]**图块，它将列出激活到广告商的[!DNL Trade Desk]目标的所有受众。 您还可以使用搜索功能。
 4. Experience Platform中的区段ID #将显示为[!DNL Trade Desk] UI中的区段名称。
