@@ -5,9 +5,9 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: 515a7cc3ba12afe14aab3e882b7fd55d5cc09069
+source-git-commit: 029cd5bdf58a143f765b37190428b817825317b0
 workflow-type: tm+mt
-source-wordcount: '1248'
+source-wordcount: '1247'
 ht-degree: 5%
 
 ---
@@ -45,7 +45,7 @@ ht-degree: 5%
       * [根据LiveRamp标识符将受众激活到策划的目标](./ui/activate-curated-destinations.md)
       * [将目标受众激活到目标](./ui/activate-prospect-audiences.md)
       * [将帐户受众激活到目标](./ui/activate-account-audiences.md)
-      * [(Beta)使用Experience PlatformUI按需将文件导出到批处理目标](./ui/export-file-now.md)
+      * [使用Experience PlatformUI按需将文件导出到批处理目标](./ui/export-file-now.md)
       * [使用Experience PlatformUI导出数据集](./ui/export-datasets.md)
       * [(Beta)在新的Beta版云存储目标中使用上次资格授予时间XDM属性](./ui/activate-last-qualification-time.md)
       * [(Beta) 使用计算字段导出平面模式文件中的数组](/help/destinations/ui/export-arrays-calculated-fields.md)
