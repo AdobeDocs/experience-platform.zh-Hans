@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform发行说明2024年8月
 description: Adobe Experience Platform 的 2024 年 8 月发行说明。
-source-git-commit: d01e16938485f6648cc02ce1674e0e9e84d78147
+source-git-commit: bc09b03cf34c9da9a93e27b7d1a07b7a3bc7f0aa
 workflow-type: tm+mt
-source-wordcount: '1300'
-ht-degree: 28%
+source-wordcount: '1352'
+ht-degree: 27%
 
 ---
 
@@ -45,7 +45,16 @@ ht-degree: 28%
 
 [!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
-**新功能或更新功能**
+**新增或更新目标**{#new-updated-destinations}
+
+| 目标 | 描述 |
+| ----------- | ----------- |
+| [铜锣](/help/destinations/catalog/mobile-engagement/braze.md) | [!UICONTROL Braze]管理其仪表板和REST端点的多个不同实例。 [!UICONTROL Braze]客户应根据您预配到的实例使用正确的REST端点。 此版本添加了一个新的US-07端点，您可以在连接到[!UICONTROL Braze]时选择此端点。 |
+
+{style="table-layout:auto"}
+
+**新增或更新的功能**{#destinations-new-updated-functionality}
+
 
 | 功能 | 描述 |
 | ----------- | ----------- |
