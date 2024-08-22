@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK扩展中的事件类型
 description: 了解如何使用Adobe Experience Platform Launch中Adobe Experience Platform Web SDK扩展提供的事件类型。
 solution: Experience Platform
 exl-id: b3162406-c5ce-42ec-ab01-af8ac8c63560
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 666e8c6fcccf08d0841c5796677890409b22d794
 workflow-type: tm+mt
-source-wordcount: '1006'
+source-wordcount: '1127'
 ht-degree: 0%
 
 ---
@@ -260,3 +260,14 @@ if (propositions) {
   // them in some other way.
 }
 ```
+
+## [!UICONTROL 订阅规则集项] {#subscribe-ruleset-items}
+
+**[!UICONTROL 订阅规则集项]**&#x200B;事件类型允许您为表面订阅Adobe Journey Optimizer内容卡。 无论何时评估规则集，提供给此命令的回调都会接收一个结果对象，该结果对象具有保存内容卡数据的建议。
+
+![显示Experience Platform规则集项目事件类型的Subscribe Tags用户界面图像。](assets/subscribe-ruleset-items.png)
+
+此事件类型支持以下可配置的属性：
+
+* **[!UICONTROL 架构]**：要订阅内容卡的架构数组。 您可以手动输入架构，也可以通过提供数据元素来输入架构。
+* **[!UICONTROL Surfaces]**：要订阅内容卡片的表面数组。 可以手动输入曲面，也可以通过提供数据元素来输入曲面。
