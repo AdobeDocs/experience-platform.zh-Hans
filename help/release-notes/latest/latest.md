@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2024年8月
 description: Adobe Experience Platform 的 2024 年 8 月发行说明。
-source-git-commit: bc09b03cf34c9da9a93e27b7d1a07b7a3bc7f0aa
+source-git-commit: 6d91112654d08dd31e5334982e534ec42d9fc226
 workflow-type: tm+mt
-source-wordcount: '1352'
+source-wordcount: '1502'
 ht-degree: 27%
 
 ---
@@ -19,6 +19,7 @@ ht-degree: 27%
 对Experience Platform中现有功能和文档的更新：
 
 - [基于属性的访问控制](#abac)
+- [数据引入](#data-ingestion)
 - [目标](#destinations)
 - [Experience Data Model (XDM)](#xdm)
 - [身份服务](#identity-service)
@@ -40,6 +41,19 @@ ht-degree: 27%
 {style="table-layout:auto"}
 
 有关基于属性的访问控制的详细信息，请参阅[基于属性的访问控制概述](../../access-control/abac/overview.md)。有关基于属性的访问控制工作流程的综合指南，请阅读[基于属性的访问控制端到端指南](../../access-control/abac/end-to-end-guide.md)。
+
+## 数据摄取（更新日期：8月23日） {#data-ingestion}
+
+Adobe Experience Platform 提供了一组丰富的功能，以摄取任何类型和任何延迟的数据。您可以使用批处理或流式 API、Adobe 构建的源、数据集成合作伙伴或 Adobe Experience Platform UI 摄取数据。
+
+**更新批次数据摄取中的日期格式处理**
+
+此版本解决了批量数据摄取中&#x200B;*日期格式处理*&#x200B;的问题。 以前，系统将客户端作为`Date`插入的日期字段转换为`DateTime`格式。 这意味着时区自动添加到字段，并且给首选或要求`Date`格式的用户造成困难。 今后，时区将不会自动添加到`Date`类型的字段中。 此更新可确保导出的数据格式与客户请求的该字段的配置文件上表示的格式匹配。
+
+发布之前的`Date`字段：`"birthDate": "2018-01-12T00:00:00Z"`
+发布后的`Date`字段： `"birthDate": "2018-01-12"`
+
+详细了解[批次摄取](/help/ingestion/batch-ingestion/overview.md)。
 
 ## 目标 {#destinations}
 
