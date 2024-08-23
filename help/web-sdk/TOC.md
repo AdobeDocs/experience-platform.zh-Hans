@@ -6,9 +6,9 @@ breadcrumb-title: Web SDK 指南
 user-guide-description: 通过边缘网络与 Experience Cloud 服务交互。
 feature: Web SDK
 role: Developer
-source-git-commit: 86d46abe5a8da441e7c89d6dceb2ebca06d3c2af
+source-git-commit: 1a6d42fd1319828f5bb5d470f24ea5ee8bed4661
 workflow-type: tm+mt
-source-wordcount: '226'
+source-wordcount: '227'
 ht-degree: 22%
 
 ---
@@ -62,6 +62,7 @@ ht-degree: 22%
    * [setConsent](commands/setconsent.md)
    * [setDebug](commands/setdebug.md)
    * [sendMediaEvent](commands/sendmediaevent.md)
+   * [subscribeRulesetItems](commands/subscriberulesetitems.md)
    * [配置数据流覆盖](commands/datastream-overrides.md)
    * [命令响应](commands/command-responses.md)
 
@@ -108,5 +109,5 @@ ht-degree: 22%
    * [使用多个Web SDK实例](use-cases/multiple-instances.md)
    * [配置顶页面事件和底页面事件](use-cases/top-bottom-page-events.md)
 
-* [常见问题](faq.md)
+* [常见问题解答](faq.md)
 * [资源](resources.md)
