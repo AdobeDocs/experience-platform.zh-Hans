@@ -3,7 +3,7 @@ title: 使用Web SDK和Edge Network服务器API的混合个性化
 description: 本文演示了如何将Web SDK与服务器API结合使用，在Web资产上部署混合个性化。
 keywords: 个性化；混合；服务器API；服务器端；混合实现；
 exl-id: 506991e8-701c-49b8-9d9d-265415779876
-source-git-commit: ae6c6d21b1eea900d01be3287827296071429d30
+source-git-commit: 9489b5345c2b13b9d05b26d646aa7f1576840fb8
 workflow-type: tm+mt
 source-wordcount: '861'
 ht-degree: 2%
@@ -260,20 +260,21 @@ function sendDisplayEvent(decision) {
     const { id, scope, scopeDetails = {} } = decision;
 
     alloy("sendEvent", {
-        xdm: {
-            eventType: "decisioning.propositionDisplay",
-            _experience: {
-                decisioning: {
-                    propositions: [
-                        {
-                            id: id,
-                            scope: scope,
-                            scopeDetails: scopeDetails,
-                        },
-                    ],
-                },
-            },
-        },
+        "xdm": {
+            "eventType": "decisioning.propositionDisplay",
+            "_experience": {
+                "decisioning": {
+                    "propositions": [{
+                        "id": id,
+                        "scope": scope,
+                        "scopeDetails": scopeDetails
+                    }],
+                    "propositionEventType": {
+                        "display": 1
+                    }
+                }
+            }
+        }
     });
 }
 ```
