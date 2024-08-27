@@ -3,7 +3,7 @@ title: 身份优化算法
 description: 了解Identity Service中的身份优化算法。
 badge: Beta 版
 exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
-source-git-commit: 8762ea655399fbc82c63c87310337b8e875bd5bc
+source-git-commit: 84ad4a5f522b04430ee304f1a812da25e26f6954
 workflow-type: tm+mt
 source-wordcount: '1533'
 ht-degree: 1%
@@ -68,7 +68,7 @@ Identity Service中的命名空间具有隐式相对重要性顺序。 考虑一
 * 将基于上述顺序重新建立该图。 如果添加链接违反了限制约束（例如，图形包含两个或多个具有唯一命名空间的身份），则会删除链接。
 * 然后，生成的图形将与您配置的唯一命名空间约束兼容。
 
-![可视化标识优化算法的图表。](../images/ido.png)
+![可视化标识优化算法的图表。](../images/ido_algorithm.png)
 
 ## 身份优化算法的示例场景
 
