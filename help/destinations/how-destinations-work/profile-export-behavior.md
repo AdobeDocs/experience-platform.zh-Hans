@@ -2,9 +2,9 @@
 title: 配置文件导出行为
 description: 了解在Experience Platform目标中支持的各种集成模式之间，配置文件导出行为如何变化。
 exl-id: 2be62843-0644-41fa-a860-ccd65472562e
-source-git-commit: 322510055bd8b8803292a2b4af9df9e1dbee7ffb
+source-git-commit: 223734e2998568f3b9b78933fa5adf740b521f5f
 workflow-type: tm+mt
-source-wordcount: '2931'
+source-wordcount: '2930'
 ht-degree: 0%
 
 ---
@@ -145,9 +145,11 @@ Experience Platform会优化将配置文件导出到您的流目标的行为，�
 
 ### 增量文件导出 {#incremental-file-exports}
 
-并非配置文件的所有更新都允许在增量文件导出中包含配置文件。 例如，如果在配置文件中添加或删除了属性，则导出中不包含该配置文件。 导出文件中只包括`segmentMembership`属性已更改的配置文件。 换言之，仅当配置文件成为受众的一部分或从受众中删除时，它才会包含在增量文件导出中。
+并非配置文件的所有更新都允许在增量文件导出中包含配置文件。 例如，如果在配置文件中添加或删除了属性，则导出中不包含该配置文件。
 
-同样，如果在[身份图](/help/identity-service/features/identity-graph-viewer.md)中的配置文件中添加了新身份（新电子邮件地址、电话号码、ECID等），则不会表示有理由将该配置文件包含在新的增量文件导出中。
+但是，当配置文件的`segmentMembership`属性更改时，该配置文件将包含在导出的文件中。 换言之，如果配置文件成为受众的一部分或从受众中删除，则它将包含在增量文件导出中。
+
+同样，如果在[身份图](/help/identity-service/features/identity-graph-viewer.md)中的配置文件中添加了新身份（新电子邮件地址、电话号码、ECID等），则会触发将该配置文件包含在新的增量文件导出中。
 
 如果将新受众添加到目标映射，这不会影响其他区段的资格和导出。 每个受众单独配置导出计划，并且每个区段单独导出文件，即使已将受众添加到同一目标数据流也是如此。
 
@@ -157,10 +159,10 @@ Experience Platform会优化将配置文件导出到您的流目标的行为，�
 
 ![导出具有多个选定属性的设置。](/help/destinations/assets/how-destinations-work/export-selection-batch-destination.png)
 
-* 当配置文件符合或不符合区段的资格时，该配置文件会包含在增量文件导出中。
-* 向身份图中添加新电话号码时，配置文件是&#x200B;*不*&#x200B;包含在增量文件导出中。
-* 在配置文件上更新了任何映射的XDM字段（如`xdm: loyalty.points`、`xdm: loyalty.tier`、`xdm: personalEmail.address`）的值时，在增量文件导出中不包含配置文件&#x200B;*not*。
-* 每当在目标激活工作流中映射`segmentMembership.status` XDM字段时，退出受众的用户档案也包含在导出的增量文件中，其状态为`exited`。
+* 当配置文件&#x200B;*符合或不符合区段资格时，该配置文件包含在增量文件导出中*。
+* 向标识图中添加新电话号码时，增量文件导出中包含配置文件&#x200B;**。
+* 在配置文件上更新任何映射的XDM字段（如`xdm: loyalty.points`、`xdm: loyalty.tier`、`xdm: personalEmail.address`）的值时，增量文件导出中不包含配置文件&#x200B;**。
+* 无论何时在目标激活工作流中映射`segmentMembership.status` XDM字段，退出受众&#x200B;*的用户档案也包含在导出的增量文件中*，状态为`exited`。
 
 >[!ENDSHADEBOX]
 
@@ -184,7 +186,7 @@ Experience Platform会优化将配置文件导出到您的流目标的行为，�
 
 | 决定目标导出的因素 | 导出文件中包含的内容 |
 |---------|----------|
-| <ul><li>在UI或API中设置的导出计划决定了目标导出的开始。</li><li>无论用户档案符合还是不符合区段的条件，对其受众成员资格所做的任何更改都会使用户档案符合包含在增量导出中的条件。 配置文件&#x200B;*的属性或标识映射中的更改*&#x200B;不符合将配置文件包含在增量导出中的条件。</li></ul> | <p>受众成员资格发生更改的用户档案，以及每个选定用于导出的XDM属性的最新信息。</p><p>如果在映射步骤中选择了`segmentMembership.status` XDM字段，则具有已退出状态的配置文件将包含在目标导出中。</p> |
+| <ul><li>在UI或API中设置的导出计划决定了目标导出的开始。</li><li>无论用户档案的受众成员资格发生任何更改（包括符合或不符合区段的条件），还是标识映射发生更改，都会使用户档案符合包含在增量导出中的条件。 对配置文件&#x200B;*的属性所做的更改不符合增量导出中包括配置文件的条件。*</li></ul> | <p>受众成员资格发生更改的用户档案，以及每个选定用于导出的XDM属性的最新信息。</p><p>如果在映射步骤中选择了`segmentMembership.status` XDM字段，则具有已退出状态的配置文件将包含在目标导出中。</p> |
 
 {style="table-layout:fixed"}
 
