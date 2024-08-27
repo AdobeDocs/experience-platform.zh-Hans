@@ -4,7 +4,7 @@ description: 了解如何将SQL查询与Real-time Customer Data Platform分析�
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 61bc7f23-9f79-4c75-a515-85dd9dda2d02
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
 workflow-type: tm+mt
 source-wordcount: '1155'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # Real-time Customer Data Platform Insights数据模型B2C版本
 
-[B2C版本](../../rtcdp/overview.md#rtcdp-b2c)的Real-time Customer Data Platform Insights数据模型公开了为各种个人资料、目标和分段构件提供分析功能的数据模型和SQL。 您可以自定义这些SQL查询模板，以便为营销和关键绩效指标(KPI)用例创建Real-Time CDP报表。 这些见解随后可用作用户定义的功能板的自定义构件。 请参阅查询加速商店报告分析文档，以了解[如何通过查询服务构建报告分析数据模型，以便与加速商店数据和用户定义的仪表板一起使用](../../query-service/data-distiller/customizable-insights/reporting-insights-data-model.md)。
+[B2C版本](../../rtcdp/overview.md#rtcdp-b2c)的Real-time Customer Data Platform Insights数据模型公开了为各种个人资料、目标和分段构件提供分析功能的数据模型和SQL。 您可以自定义这些SQL查询模板，以便为营销和关键绩效指标(KPI)用例创建Real-Time CDP报表。 这些见解随后可用作用户定义的功能板的自定义构件。 请参阅查询加速商店报告分析文档，以了解[如何通过查询服务构建报告分析数据模型，以便与加速商店数据和用户定义的仪表板一起使用](../../query-service/data-distiller/sql-insights/reporting-insights-data-model.md)。
 
 >[!NOTE]
 >

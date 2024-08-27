@@ -5,7 +5,7 @@ breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
 role: User,Developer
-source-git-commit: d2bc580ba1cacdfab45bdc6356c630a63e7d0f6e
+source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
 workflow-type: tm+mt
 source-wordcount: '322'
 ht-degree: 19%
@@ -27,11 +27,11 @@ ht-degree: 19%
       - [概述](data-distiller/derived-datasets/overview.md)
       - [使用SQL创建派生数据集](data-distiller/derived-datasets/create-derived-datasets-with-sql.md)
       - [创建基于十分位数的派生数据集](data-distiller/derived-datasets/decile-based-derived-attributes.md)
-   - 扩展应用程序报表{#customizable-insights}的可自定义分析
-      - [概述](data-distiller/customizable-insights/overview.md)
-      - [查询专业模式](data-distiller/customizable-insights/query-pro-mode.md)
-      - [发送加速查询](data-distiller/customizable-insights/send-accelerated-queries.md)
-      - [报表见解数据模型指南](data-distiller/customizable-insights/reporting-insights-data-model.md)
+   - 扩展应用程序报表{#sql-insights}的SQL分析
+      - [概述](data-distiller/sql-insights/overview.md)
+      - [查询专业模式](data-distiller/sql-insights/query-pro-mode.md)
+      - [发送加速查询](data-distiller/sql-insights/send-accelerated-queries.md)
+      - [报表见解数据模型指南](data-distiller/sql-insights/reporting-insights-data-model.md)
    - AI/ML功能管道{#ml-feature-pipelines}
       - [概述](data-distiller/ml-feature-pipelines/overview.md)
       - [连接到Jupyter Notebooks](data-distiller/ml-feature-pipelines/establish-connection.md)

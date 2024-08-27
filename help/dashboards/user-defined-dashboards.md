@@ -2,7 +2,7 @@
 title: 自定义仪表板
 description: 了解如何构建和管理自定义仪表板，以便在其中创建、添加和编辑定制构件以可视化关键量度。
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 2ddfa221ecdebad81343516935e81691021e1fbc
 workflow-type: tm+mt
 source-wordcount: '1624'
 ht-degree: 3%
@@ -37,7 +37,7 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 ![创建仪表板对话框。](./images/user-defined-dashboards/create-dashboard-dialog.png)
 
-购买了Data Distiller SKU的用户可以选择使用自定义SQL查询创建其见解。 有关此工作流的说明，请参阅[可自定义分析创建指南](./data-distiller/customizable-insights/overview.md)。
+购买了Data Distiller SKU的用户可以选择使用自定义SQL查询创建其见解。 有关此工作流的说明，请参阅[SQL分析创建指南](./data-distiller/sql-insights/overview.md)。
 
 新创建的空白仪表板会在视图的左上角显示您选择的名称。
 

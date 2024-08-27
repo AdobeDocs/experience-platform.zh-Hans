@@ -2,9 +2,9 @@
 title: 管理架构的数据使用标签
 description: 了解如何在Adobe Experience Platform UI中将数据使用标签添加到Experience Data Model (XDM)架构字段。
 exl-id: 92284bf7-f034-46cc-b905-bdfb9fcd608a
-source-git-commit: 37395e5762c8d54e6fca5c3502bdbf56f5b5472c
+source-git-commit: 22233d2bda488aa223555f85215be31d007eaa37
 workflow-type: tm+mt
-source-wordcount: '806'
+source-wordcount: '804'
 ht-degree: 8%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 8%
 
 应用于架构字段的标签指示应用于该特定字段中包含的数据的使用策略。
 
-标签可应用于单个架构以及这些架构中的字段。 当标签直接应用于架构时，这些标签会传播到基于该架构的所有现有和未来数据集。
+标签可应用于单个架构，以及这些架构中的字段。 当标签直接应用于架构时，这些标签会传播到基于该架构的所有现有和未来数据集。
 
 此外，在一个架构中添加的任何字段标签会传播到使用来自共享类或字段组的相同字段的所有其他架构。 这有助于确保在整个数据模型中类似字段的使用规则保持一致。
 

@@ -4,7 +4,7 @@ description: 了解如何将SQL查询与Real-time Customer Data Platform分析�
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 7b77ca19-e4c6-4e93-b9e7-c4ef77d6d6d1
-source-git-commit: e94343e61e98f69fa28ecd61aec9267460a7f616
+source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
 workflow-type: tm+mt
 source-wordcount: '476'
 ht-degree: 0%
@@ -20,7 +20,7 @@ B2B版本的Real-time Customer Data Platform Insights数据模型公开了支持
 >已购买Real-Time CDP Prime和Ultimate包的客户可以使用此功能。 有关更多信息，请参阅有关可用[Real-Time CDP版本](../../rtcdp/overview.md#rtcdp-editions)的文档，或与您的Adobe代表联系。
 
 <!-- 
-See the query accelerated store reporting insights documentation to learn [how to build a reporting insights data model through Query Service for use with accelerated store data and user-defined dashboards](../../query-service/data-distiller/customizable-insights/reporting-insights-data-model.md).
+See the query accelerated store reporting insights documentation to learn [how to build a reporting insights data model through Query Service for use with accelerated store data and user-defined dashboards](../../query-service/data-distiller/sql-insights/reporting-insights-data-model.md).
  -->
 
 ## 先决条件

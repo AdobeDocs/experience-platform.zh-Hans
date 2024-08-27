@@ -2,7 +2,7 @@
 title: 查询服务打包
 description: 以下文档概述了可用于查询服务的功能和产品的打包，并着重说明了临时查询和批量查询之间的差异。
 exl-id: ba472d9e-afe6-423d-9abd-13ecea43f04f
-source-git-commit: 1e18a60478e2755f49d37d4d3bf4bd3ca6dbf23b
+source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
 workflow-type: tm+mt
 source-wordcount: '980'
 ht-degree: 2%
@@ -67,9 +67,9 @@ Experience Platform的访问控制通过[Adobe Admin Console](https://adminconso
 
 {style="table-layout:auto"}
 
-### 相关可自定义的分析权限 {#customizable-insights-permissions}
+### 相关的SQL分析权限 {#sql-insights-permissions}
 
-要在功能板中创建数据Distiller [可自定义的分析](./data-distiller/customizable-insights/overview.md)，必须在Admin Console中启用以下权限&#x200B;****。
+要在功能板中创建数据Distiller [SQL Insights](./data-distiller/sql-insights/overview.md)，必须在Admin Console中启用以下权限&#x200B;****。
 
 | 权限 | 函数 |
 |---|---|
