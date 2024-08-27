@@ -7,7 +7,7 @@ exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
 source-git-commit: a168f61fabddd06d586f7909fd92c0409fd2f51e
 workflow-type: tm+mt
 source-wordcount: '3203'
-ht-degree: 3%
+ht-degree: 6%
 
 ---
 
@@ -41,18 +41,18 @@ ht-degree: 3%
 
 >[!CONTEXTUALHELP]
 >id="platform_datasets_browse_datalakeretention"
->title="Datalake保留"
->abstract="显示每个数据集的当前保留策略。 可以在每个数据集的保留设置中修改此值。 您只能为ExperienceEvent数据集设置保留时间。"
+>title="数据湖保留情况"
+>abstract="显示每个数据集的当前保留策略。可以在每个数据集的保留设置中修改此值。您只能为 ExperienceEvent 数据集设置保留时间。"
 
 >[!CONTEXTUALHELP]
 >id="platform_datasets_browse_profileretention"
->title="配置文件保留"
->abstract="显示每个数据集的当前保留策略。 可以在每个数据集的保留设置中修改此值。 您只能为ExperienceEvent数据集设置保留时间。"
+>title="个人资料保留情况"
+>abstract="显示每个数据集的当前保留策略。可以在每个数据集的保留设置中修改此值。您只能为 ExperienceEvent 数据集设置保留时间。"
 
 >[!CONTEXTUALHELP]
 >id="platform_datasets_datalakesettings_datasetretention"
->title="数据集保留"
->abstract="Datalake保留设置规则来确定数据存储的时间长度和应在不同服务中删除数据的时间。 这确保了法规遵从性，管理存储成本，并维护数据质量。"
+>title="数据集保留情况"
+>abstract="数据湖保留为数据存储时间以及何时在不同服务中删除数据设置了规则。这可确保遵守法规、管理存储成本并保持数据质量。"
 
 
 在[!DNL Experience Platform] UI中，从左侧导航中选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以打开&#x200B;**[!UICONTROL 数据集]**&#x200B;仪表板。 仪表板列出您组织的所有可用数据集。 会显示每个列出数据集的详细信息，包括其名称、数据集所遵循的架构以及最近摄取运行的状态。

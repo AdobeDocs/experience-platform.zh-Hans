@@ -54,11 +54,11 @@ Adobe Experience Platform [!DNL Segmentation Service]提供了一个用户界面
 
 ### 联合受众构成 {#fac}
 
-除了受众组合和区段定义之外，您还可以使用Adobe联合受众组合从企业数据集构建新受众，而无需复制基础数据并将这些受众存储在Adobe Experience Platform受众门户中。 您还可以通过利用从企业数据仓库联合的组合受众数据来扩充Adobe Experience Platform中的现有受众。 请阅读有关[联合受众组合](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/home)的指南。
+除了受众组合和区段定义之外，您还可以使用Adobe联合受众组合从企业数据集构建新受众，而无需复制基础数据并将这些受众存储在Adobe Experience Platform受众门户中。 您还可以通过利用从企业数据仓库联合的组合受众数据来扩充Adobe Experience Platform中的现有受众。 请阅读有关[联合受众组合](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/home)的指南。
 
 >[!AVAILABILITY]
 >
->目前，联合受众构成仅面向一部分组织提供（限量发布）。有关更多信息，请与您的 Adobe 代表联系。
+>联合受众构成目前仅对一部分组织提供（限量发布）。有关更多信息，请与您的 Adobe 代表联系。
 
 ## 评估受众 {#evaluate-segments}
 
@@ -71,7 +71,7 @@ Adobe Experience Platform [!DNL Segmentation Service]提供了一个用户界面
 >id="platform_segments_evaluation_streaming"
 >title="流式评估"
 >abstract="流式分段是一个持续的数据选择过程，会更新受众以响应用户活动。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/api/streaming-segmentation.html?lang=zh-Hans" text="通过流式分段近乎实时地评估事件"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/api/streaming-segmentation.html#" text="通过流式分段近乎实时地评估事件"
 
 Platform 目前支持三种受众评估方法：流式分段、批量分段和边缘分段。
 
@@ -98,7 +98,7 @@ Platform 目前支持三种受众评估方法：流式分段、批量分段和�
 >id="platform_segments_evaluation_edge"
 >title="边缘评估"
 >abstract="边缘分段能够在 Edge Network 上即时评估 Platform 中的区段，从而实现同一页和下一页个性化用例。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/edge-segmentation.html?lang=zh-Hans" text="边缘分段 UI 指南"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/edge-segmentation.html#" text="边缘分段 UI 指南"
 
 Edge分段功能能够在Edge Network](../web-sdk/home.md)上即时评估Platform中的[区段，从而启用同页和下一页个性化用例。
 

@@ -4,7 +4,7 @@ description: 了解如何使用Adobe Experience Platform中的权限管理器来
 source-git-commit: 3f2a899705d2c05b12300b6d5b0b860ad2c05bfd
 workflow-type: tm+mt
 source-wordcount: '612'
-ht-degree: 1%
+ht-degree: 7%
 
 ---
 
@@ -21,7 +21,7 @@ ht-degree: 1%
 >[!CONTEXTUALHELP]
 >id="platform_permission_manager"
 >title="权限管理器"
->abstract="使用页面上的下拉选择器获取用户和角色的不同粒度级别的访问级别报表。"
+>abstract="使用页面上的下拉选择器来获取用户和角色的不同粒度的访问级别报告。"
 <!-- >additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-manager/permissions.html" text="Permission manager" -->
 
 使用下拉列表选择属性&#x200B;**[!UICONTROL 用户]**。

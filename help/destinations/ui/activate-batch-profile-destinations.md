@@ -130,7 +130,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >id="platform_destinations_activate_exportoptions"
 >title="文件导出选项"
 >abstract="选择&#x200B;**导出全部文件**&#x200B;以导出符合受众资格的所有配置文件的完整快照。选择&#x200B;**导出增量文件**&#x200B;以仅导出自上次导出后符合受众资格的配置文件。<br>第一个增量文件导出包括符合受众资格的所有配置文件，充当回填。后续增量文件仅包含自第一个增量文件导出后符合受众资格的配置文件。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=zh-Hans#export-incremental-files" text="导出增量文件"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#export-incremental-files" text="导出增量文件"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_aftersegmentevaluation"
