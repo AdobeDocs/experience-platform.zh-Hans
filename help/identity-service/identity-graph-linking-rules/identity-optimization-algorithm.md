@@ -3,7 +3,7 @@ title: 身份优化算法
 description: 了解Identity Service中的身份优化算法。
 badge: Beta 版
 exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
-source-git-commit: 84ad4a5f522b04430ee304f1a812da25e26f6954
+source-git-commit: d3b43c5fa90b67bcba6015d521b78998d50cc3d7
 workflow-type: tm+mt
 source-wordcount: '1533'
 ht-degree: 1%
@@ -53,7 +53,7 @@ Identity Service中的命名空间具有隐式相对重要性顺序。 考虑一
 
 ## 进程 {#process}
 
-在摄取新身份时，Identity Service会检查新身份及其对应的命名空间是否遵循唯一的命名空间配置。 如果遵循了配置，则会继续摄取，并将新身份链接到图表。 但是，如果未遵循配置，则身份优化算法将：
+在摄取新身份时，Identity Service会检查新身份及其对应的命名空间是否遵循唯一的命名空间配置。 如果遵循了配置，则会继续摄取，并且新身份将链接到图表。 但是，如果未遵循配置，则身份优化算法将：
 
 * 摄取最新事件，同时考虑命名空间优先级。
 * 删除将从相应的图层中合并两个人员实体的链接。
