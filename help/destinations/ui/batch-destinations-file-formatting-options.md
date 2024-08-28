@@ -2,10 +2,10 @@
 description: 了解在将数据激活到基于文件的目标时，如何配置文件格式选项
 title: 为基于文件的目标配置文件格式选项
 exl-id: f59b1952-e317-40ba-81d1-35535e132a72
-source-git-commit: 0eb17d4d7ad9db3737a14f383bdafe40d59eb12c
+source-git-commit: 4dd6e8685ff5cc61342b20e971216416918b95da
 workflow-type: tm+mt
-source-wordcount: '1193'
-ht-degree: 19%
+source-wordcount: '1228'
+ht-degree: 17%
 
 ---
 
@@ -68,17 +68,21 @@ ht-degree: 19%
 >title="引号字符"
 >abstract="如果要从导出的字符串中删除双引号，请使用此选项。查看每个选择的示例文档。"
 
-如果要从导出的字符串中删除双引号，请使用此选项。可用选项包括：
+使用此选项可控制是应删除双引号还是应将其保留在导出的字符串中。
+
+可用的选项包括：
 
 * **[!UICONTROL Null字符(\0000)]**。 使用此选项可从导出的CSV文件中删除双引号。
-* **[!UICONTROL 双引号(“)]**。 使用此选项可在导出的CSV文件中保留双引号。
+* **[!UICONTROL 双引号(“)]**。 当字符串值包含分隔符或双引号时，请使用此选项。 此选项可帮助您在导出的CSV文件中保留分隔符或双引号，以便您能够正确识别哪个值对应于哪个字段。
 
 #### 示例
 
+考虑输入值`Anna,"Doe,John"`。
+
 在UI中选择每个内容，查看导出CSV文件中的以下内容示例。
 
-* 已选择&#x200B;**[!UICONTROL Null字符(\0000)]**&#x200B;的输出示例： `Test,John,LastName`
-* 示例输出中选定了&#x200B;**[!UICONTROL 双引号(&quot;)]**： `"Test","John","LastName"`
+* 已选择&#x200B;**[!UICONTROL Null字符(\0000)]**&#x200B;的输出示例： `Anna,Doe,John`
+* 示例输出中选定了&#x200B;**[!UICONTROL 双引号(&quot;)]**： `Anna,"Doe,John"`
 
 ### 转义字符 {#escape-character}
 
