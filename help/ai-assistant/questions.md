@@ -2,7 +2,7 @@
 title: AI助手的问题指南
 description: 请阅读本文档，了解在查询AI助手时可以使用的示例问题。
 exl-id: d16d1262-cc2d-45c9-94c4-b86132183442
-source-git-commit: 196a39edd493dcc8296f4b6d2904393dd6f6cdd4
+source-git-commit: fc87c28d7019e123d974e4d2ad307928a3d3fe89
 workflow-type: tm+mt
 source-wordcount: '1524'
 ht-degree: 1%
@@ -33,6 +33,8 @@ ht-degree: 1%
 ## 按实体和产品知识问题列出的运营见解{#objects-questions}
 
 以下问题按数据对象分组，并被分类为[操作分析](./home.md#operational-insights)或[产品知识](./home.md#product-knowledge)。
+
+![](./images/prompt.png)
 
 * **受众 — 运营分析**
    * 哪些受众使用其他受众？
