@@ -4,9 +4,9 @@ type: Tutorial
 description: 了解如何将数据从Snwoflake数据库流式传输到Experience Platform
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 49d488f1-90d8-452a-9f3e-02afdcc79b09
-source-git-commit: 62bcaa532cdec68a2f4f62e5784c35b91b7d5743
+source-git-commit: f39ee3af176e3d9b8ad04bfad81793db0ebe71a7
 workflow-type: tm+mt
-source-wordcount: '1604'
+source-wordcount: '1648'
 ht-degree: 3%
 
 ---
@@ -54,7 +54,7 @@ ht-degree: 3%
 
 | 凭据 | 描述 |
 | --- | --- |
-| 帐户 | [!DNL Snowflake]帐户的名称。 |
+| 帐户 | [!DNL Snowflake]帐户的名称。 有关帐户名称的约定，请阅读[[!DNL Snowflake Streaming] 身份验证指南](../../../../connectors/databases/snowflake-streaming.md#gather-required-credentials)。 |
 | 仓库 | [!DNL Snowflake]仓库的名称。 仓库管理[!DNL Snowflake]中查询的执行。 每个[!DNL Snowflake]仓库彼此独立，必须单独访问才能将数据导入Experience Platform。 |
 | 数据库 | [!DNL Snowflake]数据库的名称。 数据库包含要带入Experience Platform的数据。 |
 | 架构 | （可选）与您的[!DNL Snowflake]帐户关联的数据库架构。 |
@@ -78,7 +78,9 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->时间戳列必须存在于源表中，才能创建流数据流。 Experience Platform需要时间戳才能知道何时摄取数据以及何时对增量数据进行流式处理。 您可以为现有连接逆向添加时间戳列并创建新数据流。
+>* 时间戳列必须存在于源表中，才能创建流数据流。 Experience Platform需要时间戳才能知道何时摄取数据以及何时对增量数据进行流式处理。 您可以为现有连接逆向添加时间戳列并创建新数据流。
+>
+>* 确保示例源数据文件中的数据字段的大小写符合[!DNL Snowflake]关于标识符的大小写解析的指南。 有关详细信息，请阅读标识符大小写](https://docs.snowflake.com/en/sql-reference/identifiers-syntax#label-identifier-casing)上的[[!DNL Snowflake] 文档。
 
 出现[!UICONTROL 选择数据]步骤。 在此步骤中，您必须选择要导入到Experience Platform中的数据，配置时间戳和时区，并提供用于摄取原始数据的示例源数据文件。
 

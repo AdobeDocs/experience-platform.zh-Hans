@@ -5,9 +5,9 @@ badgeBeta: label="Beta 版" type="Informative"
 badgeUltimate: label="Ultimate" type="Positive"
 last-substantial-update: 2023-05-25T00:00:00Z
 exl-id: ed937689-e844-487e-85fb-e3536c851fe5
-source-git-commit: c80535cbb5dda55f1cf145f9f40bbcd40c78e63e
+source-git-commit: e8ab39ce085a95eac898f65667706b71bdadd350
 workflow-type: tm+mt
-source-wordcount: '710'
+source-wordcount: '791'
 ht-degree: 1%
 
 ---
@@ -33,13 +33,19 @@ Experience Platform支持从[!DNL Snowflake]数据库流式传输数据。
 
 以下部分概述了从[!DNL Snowflake]数据库流式传输数据到Experience Platform之前需要完成的先决步骤：
 
+### 更新IP地址允许列表
+
+在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 有关详细信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md#ip-address-allow-list-for-streaming-sources)页。
+
+以下文档提供了有关如何使用API或用户界面将[!DNL Amazon Redshift]连接到Platform的信息：
+
 ### 收集所需的凭据
 
 为了使[!DNL Flow Service]与[!DNL Snowflake]连接，您必须提供以下连接属性：
 
 | 凭据 | 描述 |
 | --- | --- |
-| `account` | 与您的[!DNL Snowflake]帐户关联的完整帐户名。 完全限定的[!DNL Snowflake]帐户名称包括您的帐户名称、区域和云平台。 例如：`cj12345.east-us-2.azure`。有关帐户名称的详细信息，请参阅此[[!DNL Snowflake document on account identifiers]](<https://docs.snowflake.com/en/user-guide/admin-account-identifier.html>)。 |
+| `account` | [!DNL Snowflake]帐户的完整帐户标识符（帐户名称或帐户定位器）附加了后缀`snowflakecomputing.com`。 帐户标识符可以具有不同的格式： <ul><li>{ORG_NAME}-{ACCOUNT_NAME}.snowflakecomputing.com （如`acme-abc12345.snowflakecomputing.com`）</li><li>{ACCOUNT_LOCATOR}。{CLOUD_REGION_ID}.snowflakecomputing.com （如`acme12345.ap-southeast-1.snowflakecomputing.com`）</li><li>{ACCOUNT_LOCATOR}。{CLOUD_REGION_ID}。{CLOUD}.snowflakecomputing.com （如`acme12345.east-us-2.azure.snowflakecomputing.com`）</li></ul> 有关详细信息，请阅读[[!DNL Snowflake document on account identifiers]](<https://docs.snowflake.com/en/user-guide/admin-account-identifier.html>)。 |
 | `warehouse` | [!DNL Snowflake]仓库管理应用程序的查询执行过程。 每个[!DNL Snowflake]仓库彼此独立，在将数据传送到Platform时必须单独访问。 |
 | `database` | [!DNL Snowflake]数据库包含要带入Platform的数据。 |
 | `username` | [!DNL Snowflake]帐户的用户名。 |
@@ -47,6 +53,7 @@ Experience Platform支持从[!DNL Snowflake]数据库流式传输数据。
 | `role` | （可选）可以为给定连接的用户提供自定义角色。 如果未提供，此值默认为`public`。 |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL Snowflake]的连接规范ID为`51ae16c2-bdad-42fd-9fce-8d5dfddaf140`。 |
 
+{style="table-layout:auto"}
 
 ### 配置角色设置 {#configure-role-settings}
 
