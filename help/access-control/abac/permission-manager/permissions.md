@@ -1,9 +1,10 @@
 ---
 title: 基于属性的访问控制权限管理器
 description: 了解如何使用Adobe Experience Platform中的权限管理器来生成报表和验证访问权限。
-source-git-commit: 3f2a899705d2c05b12300b6d5b0b860ad2c05bfd
+exl-id: 4c2b8b8e-ac4f-4c6e-a23f-66f658bb6e24
+source-git-commit: 7e65e88bc49ea28d567e8204db877d22ddb8d9a6
 workflow-type: tm+mt
-source-wordcount: '612'
+source-wordcount: '603'
 ht-degree: 7%
 
 ---
@@ -40,7 +41,7 @@ ht-degree: 7%
 
 >[!INFO]
 >
->[!UICONTROL 资源]、[!UICONTROL 操作]和[!UICONTROL 沙盒]不是必填字段。 每个报表只能选择一个[!UICONTROL 资源]。 在添加操作或沙盒后，通过选择要删除的选择旁边的&#x200B;**&#39;x&#39;**，可以删除该操作或沙盒。
+>[!UICONTROL 资源]、[!UICONTROL 操作]和[!UICONTROL 沙盒]不是必填字段。 在添加操作或沙盒后，通过选择要删除的选择旁边的&#x200B;**&#39;x&#39;**，可以删除该操作或沙盒。
 
 ![资源、操作、沙盒下拉列表和显示突出显示的结果](../../images/permission-manager/users-additional-attributes-select.png)
 
