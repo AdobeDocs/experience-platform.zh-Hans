@@ -3,10 +3,10 @@ keywords: 云存储目标；云存储
 title: 云存储目标概述
 description: Adobe Experience Platform可以将受众作为数据文件交付到Amazon S3、AWS Kinesis、Azure事件中心或SFTP云存储位置。
 exl-id: d29f0a6e-b323-4f78-bbd0-dee2f1e0fedb
-source-git-commit: 8b8abea65ee0448594113ca77f75b84293646146
+source-git-commit: 9c1699471d5b3c3c725e46581e256a0c07f08a49
 workflow-type: tm+mt
-source-wordcount: '387'
-ht-degree: 6%
+source-wordcount: '453'
+ht-degree: 5%
 
 ---
 
@@ -62,6 +62,13 @@ Adobe Experience Platform支持将数据导出到以下云存储目标：
 
 输入： `acme/campaigns/2021/%SEGMENT_NAME%/%SEGMENT_ID%`
 存储位置中的文件夹路径： `acme/campaigns/2021/Luxury Audience/25768be6-ebd5-45cc-8913-12fb3f348615`
+
+**其他宏**
+
+与上面的示例类似，您可以使用其他宏在文件夹位置中创建自定义文件夹结构：
+
+* `%DATETIME%`或`%TIMESTAMP%`以根据文件的导出时间添加自定义文件夹名称。 第一个宏的格式为`MMDDYYYY_HHMMSS`，第二个宏的格式为UNIX 10位数。
+* `%DESTINATION_NAME%`添加基于目标数据流名称的自定义文件夹。
 
 ## 数据导出类型 {#export-type}
 
