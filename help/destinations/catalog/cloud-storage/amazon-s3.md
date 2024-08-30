@@ -2,10 +2,10 @@
 title: Amazon S3连接
 description: 创建到Amazon Web Services (AWS) S3存储的实时出站连接，定期将CSV数据文件从Adobe Experience Platform导出到您自己的S3存储桶中。
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 8dbdfb1e8e574647bf621a320ee07ecc7a653a6c
 workflow-type: tm+mt
-source-wordcount: '1440'
-ht-degree: 17%
+source-wordcount: '1499'
+ht-degree: 16%
 
 ---
 
@@ -109,7 +109,7 @@ ht-degree: 17%
 
 如果您不想与 Adobe 共享帐户密钥和私钥，请使用此身份验证类型。相反，Experience Platform会使用基于角色的访问连接到Amazon S3位置。
 
-为此，您需要在AWS控制台中创建一个假定的Adobe用户，该用户具有[写入Amazon S3存储桶所需的正确权限](#required-s3-permission)。 在AWS中创建具有Adobe帐户&#x200B;**[!UICONTROL 670664943635]**&#x200B;的&#x200B;**[!UICONTROL 受信任的实体]**。 有关更多信息，请参阅有关创建角色的[AWS文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html)。
+为此，您需要在AWS控制台中创建一个假定的Adobe用户，该用户具有[写入Amazon S3存储桶所需的正确权限](#minimum-permissions-iam-user)。 在AWS中创建具有Adobe帐户&#x200B;**[!UICONTROL 670664943635]**&#x200B;的&#x200B;**[!UICONTROL 受信任的实体]**。 有关更多信息，请参阅有关创建角色的[AWS文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html)。
 
 * **[!DNL Role]**：粘贴您在AWS中为Adobe用户创建的角色的ARN。 模式类似于`arn:aws:iam::800873819705:role/destinations-role-customer`。
 * **[!UICONTROL 加密密钥]**： （可选）您可以附加RSA格式的公钥以向导出的文件添加加密。 查看下图中的加密密钥格式正确示例。
@@ -162,6 +162,38 @@ ht-degree: 17%
 * `s3:ListBucket`
 * `s3:PutObject`
 * `s3:ListMultipartUploadParts`
+
+#### IAM角色身份验证所需的最低权限 {#minimum-permissions-iam-user}
+
+在将IAM角色配置为客户时，请确保与角色关联的权限策略包括存储段中目标文件夹的所需操作以及存储段根的`s3:ListBucket`操作。 查看以下此身份验证类型的最低权限策略示例：
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "s3:GetBucketLocation",
+                "s3:ListMultipartUploadParts"
+            ],
+            "Resource": "arn:aws:s3:::bucket/folder/*"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListBucket"
+            ],
+            "Resource": "arn:aws:s3:::bucket"
+        }
+    ]
+}  
+```
 
 <!--
 
