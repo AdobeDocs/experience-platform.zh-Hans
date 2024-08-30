@@ -4,7 +4,7 @@ title: 预览示例状态（配置文件预览） API端点
 description: 实时客户个人资料API的预览示例状态端点允许您预览个人资料数据的最新成功示例，按数据集和身份列出个人资料分发，并生成显示数据集重叠、身份重叠和未拼接个人资料的报告。
 role: Developer
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: 49196473f304585193e87393f8dc5dc37be7e4d9
 workflow-type: tm+mt
 source-wordcount: '2906'
 ht-degree: 1%
@@ -84,7 +84,7 @@ curl -X GET \
     "status": true,
     "submissionTimestamp": "2020-08-01 17:57:57.0"
   },
-  "cosmosDocCount": "\"300803\"",
+  "docCount": "\"300803\"",
   "totalFragmentCount": 47429,
   "lastSuccessfulBatchTimestamp": "\"null\"",
   "streamingDriven": "\"false\"",
@@ -101,7 +101,7 @@ curl -X GET \
 |---|---|
 | `numRowsToRead` | 示例中合并的配置文件总数。 |
 | `sampleJobRunning` | 一个布尔值，当示例作业正在进行时返回`true`。 将批处理文件实际添加到配置文件存储区后，可以透明地反映将文件上传到时发生的延迟。 |
-| `cosmosDocCount` | Cosmos中的文档总数。 |
+| `docCount` | 数据库中的文档总数。 |
 | `totalFragmentCount` | 配置文件存储中的配置文件片段总数。 |
 | `lastSuccessfulBatchTimestamp` | 上次成功的批次摄取时间戳。 |
 | `streamingDriven` | *此字段已弃用，对响应没有意义。* |

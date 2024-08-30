@@ -2,7 +2,7 @@
 title: 计算属性API端点
 description: 了解如何使用实时客户个人资料API创建、查看、更新和删除计算属性。
 exl-id: f217891c-574d-4a64-9d04-afc436cf16a9
-source-git-commit: 94c94b8a3757aca1a04ff4ffc3c62e84602805cc
+source-git-commit: 49196473f304585193e87393f8dc5dc37be7e4d9
 workflow-type: tm+mt
 source-wordcount: '1664'
 ht-degree: 1%
@@ -244,7 +244,7 @@ curl -X POST https://platform.adobe.io/data/core/ca/attributes \
         "expression": {
             "type": "PQL", 
             "format": "pql/text", 
-            "value": "xEvent[(commerce.checkouts.value > 0.0 or commerce.purchases.value > 1.0 or commerce.order.priceTotal >= 10.0)"
+            "value": "xEvent[(commerce.checkouts.value > 0.0 or commerce.purchases.value > 1.0 or commerce.order.priceTotal >= 10.0)].sum(commerce.order.priceTotal)"
         },
         "keepCurrent": false,
         "duration": {
@@ -297,7 +297,7 @@ curl -X POST https://platform.adobe.io/data/core/ca/attributes \
     "expression": {
         "type": "PQL",
         "format": "pql/text",
-        "value": "xEvent[(commerce.checkouts.value > 0.0 or commerce.purchases.value > 1.0 or commerce.order.priceTotal >= 10.0) and (timestamp occurs <= 7 days before now)].sum(commerce.order.priceTotal)"
+        "value": "xEvent[(commerce.checkouts.value > 0.0 or commerce.purchases.value > 1.0 or commerce.order.priceTotal >= 10.0)].sum(commerce.order.priceTotal)"
     },
     "mergeFunction": {
         "value": "SUM"
