@@ -3,10 +3,10 @@ keywords: facebook连接；facebook连接；facebook目标；facebook；instagra
 title: facebook连接
 description: 根据散列邮件激活 Facebook 营销活动的轮廓，以实现受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 742801c31a0371feb42df2c98b3a4ddb63ae2f48
 workflow-type: tm+mt
-source-wordcount: '1952'
-ht-degree: 7%
+source-wordcount: '1985'
+ht-degree: 6%
 
 ---
 
@@ -80,7 +80,7 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
   >[!IMPORTANT]
   >
   > 配置Adobe Experience Cloud的权限时，必须启用&#x200B;**管理营销活动**&#x200B;权限。 [!DNL Adobe Experience Platform]集成需要权限。
-* 阅读并签署[!DNL Facebook Custom Audiences]服务条款。 为此，请转到`https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]`，其中`accountID`是您的[!DNL Facebook Ad Account ID]。
+* 阅读并签署[!DNL Facebook Custom Audiences]服务条款。 为此，请转到`https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]&business_id=206617933627973`，其中`accountID`是您的[!DNL Facebook Ad Account ID]。 签署服务条款时，确保URL中存在`business_id=206617933627973`部分。
   >[!IMPORTANT]
   >
   >签署[!DNL Facebook Custom Audiences]服务条款时，请确保使用您在Facebook API中用于进行身份验证的相同用户帐户。
@@ -251,4 +251,10 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 当客户使用新创建的帐户，并且[!DNL Facebook]权限尚未处于活动状态时，会发生此错误。
 
+>[!IMPORTANT]
+>
+>确保您接受`business ID 206617933627973`下的[!DNL Facebook Custom Audience Terms of Service]，如[帐户先决条件](#facebook-account-prerequisites)部分中的URL模板所示。
+
 如果在执行[Facebook帐户先决条件](#facebook-account-prerequisites)中的步骤后收到`400 Bad Request`错误消息，请等几天时间，[!DNL Facebook]权限即可生效。
+
+
