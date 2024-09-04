@@ -4,10 +4,10 @@ title: 许可证使用情况仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: f9b7275a9cf066db8192be6a5b5528e19d18c313
+source-git-commit: c512cce90eaee407a3b101cbf819685f21760a91
 workflow-type: tm+mt
-source-wordcount: '2664'
-ht-degree: 5%
+source-wordcount: '2626'
+ht-degree: 6%
 
 ---
 
@@ -79,14 +79,14 @@ ht-degree: 5%
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseUsage_prediction"
 >title="预计使用情况"
->abstract="预测基于过去6-7个月的使用情况，并在每月15日生成。 预计使用率将达到介于{startDate}和{endDate}之间的预测值。 上次收集数据的日期为{collectionDate}。 请注意，许可证使用量预测是基于过去使用量的近似值。 您有责任了解贵组织的实际使用情况，并确保使用情况不会超出贵组织许可的Adobe范围。 为了减少使用，您可以为沙盒和数据集配置数据集或假名配置文件数据过期时间。"
+>abstract="预测基于过去6-7个月的使用情况，并在每月15日生成。 请注意，许可证使用量预测是基于过去使用量的近似值。 您有责任了解贵组织的实际使用情况，并确保使用情况不会超出贵组织许可的Adobe范围。 为了减少使用，您可以为沙盒和数据集配置数据集或假名配置文件数据过期时间。"
 >additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
 >additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/profile/pseudonymous-profiles" text="假名配置文件数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_licenseusage_prediction"
 >title="预计使用情况"
->abstract="预测基于过去6-7个月的使用情况，并在每月15日生成。 预计使用率将达到介于{startDate}和{endDate}之间的预测值。 上次收集数据的日期为{collectionDate}。 请注意，许可证使用量预测是基于过去使用量的近似值。 您有责任了解贵组织的实际使用情况，并确保使用情况不会超出贵组织许可的Adobe范围。 为了减少使用，您可以为沙盒和数据集配置数据集或假名配置文件数据过期时间。"
+>abstract="预测基于过去6-7个月的使用情况，并在每月15日生成。 请注意，许可证使用量预测是基于过去使用量的近似值。 您有责任了解贵组织的实际使用情况，并确保使用情况不会超出贵组织许可的Adobe范围。 为了减少使用，您可以为沙盒和数据集配置数据集或假名配置文件数据过期时间。"
 >additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
 >additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/profile/pseudonymous-profiles" text="假名配置文件数据过期"
 
