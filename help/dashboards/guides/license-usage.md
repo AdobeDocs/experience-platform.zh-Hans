@@ -4,10 +4,10 @@ title: 许可证使用情况仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 3ea67d5bcdaeefd26cd95b89c60d21bef34ecd53
+source-git-commit: f9b7275a9cf066db8192be6a5b5528e19d18c313
 workflow-type: tm+mt
-source-wordcount: '2646'
-ht-degree: 6%
+source-wordcount: '2664'
+ht-degree: 5%
 
 ---
 
@@ -66,7 +66,7 @@ ht-degree: 6%
 | **[!UICONTROL 许可证数量]** | 产品许可协议中约定的主要量度最大量的约定值。 |
 | **[!UICONTROL 用法]** | 您使用的主要量度的数量。 此值提供该量度在所有沙盒（生产沙盒或开发沙盒）中的总使用情况。 |
 | **[!UICONTROL 使用情况%]** | 根据您的许可证数量使用的主要量度的百分比。 |
-| **[!UICONTROL 预测使用情况]** | (**Beta**)根据您的许可证数量，您的主要量度的预计使用百分比。 |
+| **[!UICONTROL 预测使用情况]** | 根据您的许可证数量，您的主要量度的预测使用百分比。 |
 
 >[!NOTE]
 >
@@ -74,31 +74,27 @@ ht-degree: 6%
 
 该表指示了每个产品的主要量度，因为每个产品都可以跟踪大量量度。
 
-### [!BADGE Beta]{type=Informative}预测的使用情况 {#predicted-usage}
+### 预计使用情况 {#predicted-usage}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseUsage_prediction"
 >title="预计使用情况"
-abstract="预测基于过去6-7个月的使用情况，并在每月15日生成。 请注意，许可证使用量预测是基于过去使用量的近似值。 您有责任了解贵组织的实际使用情况，并确保使用情况不会超出贵组织许可的Adobe范围。 为了减少使用，您可以为沙盒和数据集配置数据集或假名配置文件数据过期时间。"
-additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
-additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/profile/pseudonymous-profiles" text="假名配置文件数据过期"
+>abstract="预测基于过去6-7个月的使用情况，并在每月15日生成。 预计使用率将达到介于{startDate}和{endDate}之间的预测值。 上次收集数据的日期为{collectionDate}。 请注意，许可证使用量预测是基于过去使用量的近似值。 您有责任了解贵组织的实际使用情况，并确保使用情况不会超出贵组织许可的Adobe范围。 为了减少使用，您可以为沙盒和数据集配置数据集或假名配置文件数据过期时间。"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/profile/pseudonymous-profiles" text="假名配置文件数据过期"
 
-[!CONTEXTUALHELP]
-id="platform_licenseusage_prediction"
-title="预计使用情况"
-abstract="预测基于过去6-7个月的使用情况，并在每月15日生成。 请注意，许可证使用量预测是基于过去使用量的近似值。 您有责任了解贵组织的实际使用情况，并确保使用情况不会超出贵组织许可的Adobe范围。 为了减少使用，您可以为沙盒和数据集配置数据集或假名配置文件数据过期时间。"
-additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
-additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/profile/pseudonymous-profiles" text="假名配置文件数据过期"
-
->[!AVAILABILITY]
->
-预测未来许可证使用的功能目前处于测试阶段。 文档和功能可能会发生变化。
+>[!CONTEXTUALHELP]
+>id="platform_licenseusage_prediction"
+>title="预计使用情况"
+>abstract="预测基于过去6-7个月的使用情况，并在每月15日生成。 预计使用率将达到介于{startDate}和{endDate}之间的预测值。 上次收集数据的日期为{collectionDate}。 请注意，许可证使用量预测是基于过去使用量的近似值。 您有责任了解贵组织的实际使用情况，并确保使用情况不会超出贵组织许可的Adobe范围。 为了减少使用，您可以为沙盒和数据集配置数据集或假名配置文件数据过期时间。"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/profile/pseudonymous-profiles" text="假名配置文件数据过期"
 
 根据深入的使用预测主动管理和优化您的许可资源。 [!UICONTROL 预测的使用量]列可以准确地预测您购买的所有产品在所有生产和开发沙盒中沙盒级别的未来许可证使用量。 此警报功能会根据您截至本日历月15日的使用情况，预测未来六周内的许可证使用情况。 预测提供有下限和上限。
 
 >[!IMPORTANT]
 >
-预测会每月更新。 刷新日期包含在信息图标（![此信息图标）中。](../images/license-usage/info-icon.png))位于列标题上方。
+>预测会每月更新。 刷新日期包含在信息图标（![此信息图标）中。](../images/license-usage/info-icon.png))位于列标题上方。
 
 要查看产品权利使用情况的摘要，请从[!UICONTROL 概述]列表中选择产品。
 
@@ -108,7 +104,7 @@ additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/p
 
 >[!NOTE]
 >
-请注意，许可证使用量预测是基于过去使用量的近似值。 您有责任了解贵组织的实际使用情况，并确保使用情况不会超出贵组织许可的Adobe范围。
+>请注意，许可证使用量预测是基于过去使用量的近似值。 您有责任了解贵组织的实际使用情况，并确保使用情况不会超出贵组织许可的Adobe范围。
 
 ![预测使用列突出显示的平台产品的摘要视图。](../images/license-usage/summary-predicted-usage.png)
 
@@ -120,7 +116,7 @@ additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/p
 
 >[!NOTE]
 >
-在此上下文中，“几乎相同”意味着值对于小数点两位具有统计意义（例如，0.342的下限和0.344的上限都舍入到34%）。
+>在此上下文中，“几乎相同”意味着值对于小数点两位具有统计意义（例如，0.342的下限和0.344的上限都舍入到34%）。
 
 预测的使用量功能支持以下量度：
 
@@ -136,23 +132,23 @@ additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/p
 
 ![显示产品所有可用量度的平台产品的摘要视图。](../images/license-usage/summary-tab.png)
 
-在“摘要”选项卡上，该表包含[!UICONTROL 量度]列。 这些易于用户识别的描述指示用于该类型的所有量度 of 沙盒。
+在“摘要”选项卡上，该表包含[!UICONTROL 量度]列。 这些易于用户识别的描述指示用于该类型沙盒的所有量度。
 
 ### 选择一个沙盒 {#select-sandbox}
 
-要更改生产沙盒类型与开发沙盒类型之间的视图， select [!UICONTROL 生产沙盒]或[!UICONTROL 开发沙盒]。 选定的沙盒类型 is 由沙盒名称旁边的单选按钮指示。
+要更改生产和开发沙盒类型之间的视图，请选择[!UICONTROL 生产沙盒]或[!UICONTROL 开发沙盒]。 沙盒名称旁边的单选按钮表示所选的沙盒类型。
 
-沙盒的使用情况报告对于同一类型的所有沙盒是累计的。 In 换句话说，选择[!UICONTROL 生产]或[!UICONTROL 开发]将分别提供所有生产沙盒或开发沙盒的使用报告。
+沙盒的使用情况报告对于同一类型的所有沙盒是累计的。 换句话说，选择[!UICONTROL 生产]或[!UICONTROL 开发]将分别提供所有生产沙盒或开发沙盒的使用报告。
 
 ![突出显示生产沙盒和开发沙盒的平台产品的摘要视图。](../images/license-usage/summary-tab-sandboxes.png)
 
 >[!WARNING]
 >
-必须在沙盒级别指定查看许可证使用情况仪表板的权限。 向每个沙盒添加权限，以便在功能板中查看它们。 此限制将在未来版本中解决。 同时，提供以下解决方法：
+>必须在沙盒级别指定查看许可证使用情况仪表板的权限。 向每个沙盒添加权限，以便在功能板中查看它们。 此限制将在未来版本中解决。 同时，提供以下解决方法：
 >
-1. 在Adobe Admin Console中创建产品配置文件。
-2. 在沙盒类别中的权限下，添加您希望在许可证使用情况仪表板中查看的所有沙盒。
-3. 在“用户仪表板权限”类别下，添加“查看许可证使用情况仪表板”权限。
+>1. 在Adobe Admin Console中创建产品配置文件。
+>2. 在沙盒类别中的权限下，添加您希望在许可证使用情况仪表板中查看的所有沙盒。
+>3. 在“用户仪表板权限”类别下，添加“查看许可证使用情况仪表板”权限。
 
 ## [!UICONTROL 详细信息]选项卡 {#details-tab}
 
@@ -213,7 +209,7 @@ additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/p
 
 >[!TIP]
 >
-您可以在销售订单中检查您的许可证权利以计算指标，如“存储容量”。<br>例如，<ul><li>存储容量=合同中“授权配置文件”的数量X平均配置文件丰富度</li></ul>
+>您可以在销售订单中检查您的许可证权利以计算指标，如“存储容量”。<br>例如，<ul><li>存储容量=合同中“授权配置文件”的数量X平均配置文件丰富度</li></ul>
 
 这些指标的可用性和每个指标的特定定义因贵组织购买的许可而异。 有关每个量度的详细定义，请参阅相应的产品描述文档：
 
@@ -228,7 +224,7 @@ additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/p
 
 >[!WARNING]
 >
-许可证使用仪表板仅报告为您的组织配置的最新许可证。 如果为贵组织配置的最新许可证未在上表中显示，则许可证使用情况仪表板可能无法正确显示。 计划在未来的版本中，支持单个组织中的其他许可证和多个许可证。
+>许可证使用仪表板仅报告为您的组织配置的最新许可证。 如果为贵组织配置的最新许可证未在上表中显示，则许可证使用情况仪表板可能无法正确显示。 计划在未来的版本中，支持单个组织中的其他许可证和多个许可证。
 
 ## 后续步骤
 
