@@ -6,7 +6,7 @@ exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
 source-git-commit: 21fd5957da8914be8b4abfad5c78d1929f76d6f6
 workflow-type: tm+mt
 source-wordcount: '4202'
-ht-degree: 12%
+ht-degree: 13%
 
 ---
 
@@ -39,7 +39,7 @@ ht-degree: 12%
 >[!CONTEXTUALHELP]
 >id="dataset_dataflow_needs_schedule_end_date_body"
 >title="更新此数据流主体的结束日期"
->abstract="由于此目标最近进行了更新，数据流现在需要结束日期。Adobe已将默认结束日期设置为2025年5月1日。 请更新为您希望的结束日期，否则数据导出将在默认日期停止。"
+>abstract="由于此目标最近进行了更新，数据流现在需要结束日期。Adobe 已将默认结束日期设置为 2025 年 5 月 1 日。请更新为您希望的结束日期，否则数据导出将在默认日期停止。"
 
 >[!CONTEXTUALHELP]
 >id="destinations_folder_name_template"
