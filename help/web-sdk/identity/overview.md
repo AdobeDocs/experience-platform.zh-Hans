@@ -2,7 +2,7 @@
 title: Web SDK中的身份数据
 description: 了解如何使用Adobe Experience Platform Web SDK检索和管理Adobe Experience Cloud ID (ECID)。
 exl-id: 03060cdb-becc-430a-b527-60c055c2a906
-source-git-commit: 1cb38e3eaa83f2ad0e7dffef185d5edaf5e6c38c
+source-git-commit: 3b0fa672c4befd8e17632e62b0eeb13b6b17bfb4
 workflow-type: tm+mt
 source-wordcount: '1472'
 ht-degree: 0%
@@ -146,7 +146,7 @@ alloy("sendEvent", {
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
 | `id` | 字符串 | **（必需）**&#x200B;要为给定的命名空间设置的ID。 |
-| `authenticationState` | 字符串 | **（必需）** ID的身份验证状态。 可能的值为`ambiguous`、`authenticated`和`loggedOut`。 |
+| `authenticatedState` | 字符串 | **（必需）** ID的身份验证状态。 可能的值为`ambiguous`、`authenticated`和`loggedOut`。 |
 | `primary` | 布尔值 | 确定是否应当将此标识用作配置文件中的主片段。 默认情况下，会将ECID设置为用户的主要标识符。 如果忽略，此值将默认为`false`。 |
 
 使用`identityMap`字段识别设备或用户产生的结果与使用[!DNL ID Service API]中的[`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/setcustomerids.html)方法产生的结果相同。 有关详细信息，请参阅[ID服务API文档](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/get-set.html)。
