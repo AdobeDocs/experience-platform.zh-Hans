@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据访问概述
 description: 数据访问通过为用户提供侧重于所摄取Platform数据集的可发现性和可访问性的工具来支持Adobe Experience Platform。
 exl-id: 76e3585b-44df-412e-9ac3-aeca5f85d403
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: 1070c34bcd4577fcc5f0ac160196450db3aab9b0
 workflow-type: tm+mt
 source-wordcount: '180'
 ht-degree: 0%
@@ -29,4 +29,4 @@ Experience Platform](images/Data_Access_Experience_Platform.png)上的![数据�
 
 ## 订阅数据摄取事件
 
-[!DNL Platform]通过[Adobe Developer Console](https://www.adobe.com/go/devs_console_ui)使特定的高值事件可用于订阅。 例如，您可以订阅数据摄取事件，以接收潜在延迟和失败的通知。 有关详细信息，请参阅有关[订阅数据摄取通知](../ingestion/quality/subscribe-events.md)的教程。
+[!DNL Platform]通过[Adobe Developer Console](https://www.adobe.com/go/devs_console_ui)使特定的高值事件可用于订阅。 例如，您可以订阅数据摄取事件，以接收潜在延迟和失败的通知。 有关详细信息，请参阅有关[订阅Adobe事件通知](../observability/alerts/subscribe.md)的教程。

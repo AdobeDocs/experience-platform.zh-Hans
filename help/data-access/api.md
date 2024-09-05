@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Data Access API指南
 description: 数据访问API通过为开发人员提供RESTful接口来支持Adobe Experience Platform，该接口侧重于在Experience Platform内摄取的数据集的可发现性和可访问性。
 exl-id: 278ec322-dafa-4e3f-ae45-2d20459c5653
-source-git-commit: dbb96744c873d2bf656be03ebf1b8ea2fb08acf3
+source-git-commit: 1070c34bcd4577fcc5f0ac160196450db3aab9b0
 workflow-type: tm+mt
 source-wordcount: '554'
 ht-degree: 4%
@@ -243,4 +243,4 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?pat
 
 ## 订阅数据摄取事件 {#subscribe-to-data-ingestion-events}
 
-您可以通过[Adobe Developer Console](https://developer.adobe.com/console/)订阅特定的高价值事件。 例如，您可以订阅数据摄取事件，以接收潜在延迟和失败的通知。 有关详细信息，请参阅有关[订阅数据摄取通知](../ingestion/quality/subscribe-events.md)的教程。
+您可以通过[Adobe Developer Console](https://developer.adobe.com/console/)订阅特定的高价值事件。 例如，您可以订阅数据摄取事件，以接收潜在延迟和失败的通知。 有关详细信息，请参阅有关[订阅Adobe事件通知](../observability/alerts/subscribe.md)的教程。

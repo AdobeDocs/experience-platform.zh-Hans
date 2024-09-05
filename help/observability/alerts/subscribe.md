@@ -4,9 +4,9 @@ title: 订阅Adobe I/O事件通知
 description: 本文档提供了有关如何订阅Adobe Experience Platform服务的Adobe I/O事件通知的步骤。 还提供了有关可用事件类型的参考信息，以及指向有关如何解释每个适用的 [!DNL Platform] 服务的返回事件数据的更多文档的链接。
 feature: Alerts
 exl-id: c0ad7217-ce84-47b0-abf6-76bcf280f026
-source-git-commit: 06ea57d41269e98ddd984c898f41c478ddefc618
+source-git-commit: 1070c34bcd4577fcc5f0ac160196450db3aab9b0
 workflow-type: tm+mt
-source-wordcount: '768'
+source-wordcount: '767'
 ht-degree: 1%
 
 ---
@@ -98,7 +98,6 @@ ht-degree: 1%
 通过学习本教程，您已注册webhook以接收[!DNL Experience Platform]和/或[!DNL Privacy Service]的[!DNL I/O Event]通知。 有关可用事件以及如何解释每个服务的通知负载的详细信息，请参阅以下文档：
 
 * [[!DNL Privacy Service] 通知](../../privacy-service/privacy-events.md)
-* [[!DNL Data Ingestion] 通知](../../ingestion/quality/subscribe-events.md)
 * [[!DNL Flow Service] （源）通知](../../sources/notifications.md)
 
 有关如何监视[!DNL Experience Platform]和[!DNL Privacy Service]上的活动的详细信息，请参阅[[!DNL Observability Insights] 概述](../home.md)。
