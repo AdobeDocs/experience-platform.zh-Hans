@@ -2,10 +2,10 @@
 title: 在UI中创建Adobe Analytics Source连接
 description: 了解如何在UI中创建Adobe Analytics源连接，将消费者数据接入Adobe Experience Platform。
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: f177a8058f6533151978bfd7b8bba4845792f5ed
+source-git-commit: 40ad3101f643e6ce1b24d2a02c1817cfe04bd5d5
 workflow-type: tm+mt
-source-wordcount: '2755'
-ht-degree: 4%
+source-wordcount: '2577'
+ht-degree: 3%
 
 ---
 
@@ -301,7 +301,7 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 
 ![您组织中现有Adobe Analytics数据流的列表。](../../../../images/tutorials/create/analytics/select-target-dataset.png)
 
-[!UICONTROL 数据集活动]页面提供了有关从Analytics发送到Experience Platform的数据进度的信息。 界面会显示一些量度，例如引入的记录数、引入的批次数量以及失败的批次数量。
+[!UICONTROL 数据集活动]页面提供了有关从Analytics发送到Experience Platform的数据进度的信息。 界面会显示一些量度，例如上个月的总记录数、过去七天摄取的记录数总数以及上个月的数据大小。
 
 源实例化两个数据集流。 一个流表示回填数据，另一个流表示实时数据。 回填数据未配置为摄取到Real-time Customer Profile，而是发送到数据湖，以用于分析和数据科学用例。
 
@@ -309,35 +309,9 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 
 ![给定目标数据集的数据集活动页面，用于Adobe Analytics数据。](../../../../images/tutorials/create/analytics/dataset-activity.png)
 
-+++使用旧版监控界面查看各个批次
-
-数据集活动页面不显示单个批次的列表。 要查看各个批次的列表，请在数据集活动界面中选择一个图表。
-
-![已选定图表的数据集活动页面。](../../../../images/tutorials/create/analytics/select-chart.png)
-
-此时您将转到监视仪表板。 接下来，选择&#x200B;**[!UICONTROL 仅摄取失败：是]**&#x200B;以清除筛选器并查看各个批次的列表。
-
-![选定了失败筛选器的监视仪表板。](../../../../images/tutorials/create/analytics/clear-filter.png)
-
-该界面更新为单个批次的列表，包括有关其各自量度的信息。
-
-![批处理数据的旧版监视页面。](../../../../images/tutorials/create/analytics/batch-end-to-end.png)
-
-| 量度 | 描述 |
-| --- | --- |
-| 批次 ID | 给定批次的ID。 此值在内部生成。 |
-| 数据集名称 | 用于Analytics数据的给定数据集名称。 |
-| 来源 | 所摄取数据的来源。 |
-| 更新 | 最近的流运行迭代的日期。 |
-| 数据集中的记录 | 数据集中的记录总数。 **注意**：此参数偶尔会显示`in-progress`状态。 此状态表示记录摄取过程尚未完成。 |
-| 新轮廓片段 | 已摄取的新配置文件片段的总数。 |
-| 现有轮廓片段 | 现有配置文件片段的总数。 |
-| 拼接的标识记录 | 摄取后拼合在一起的身份记录的总数。 |
-| 轮廓中的记录 | 引入到Real-time Customer Profile的记录总数。 |
-
-{style="table-layout:auto"}
-
-+++
+>[!NOTE]
+>
+>数据集活动页面不显示有关批次的信息，因为Analytics源连接器完全由Adobe管理。 您可以通过查看所摄取记录的相关量度来监控数据流动。
 
 ## 后续步骤和其他资源
 
