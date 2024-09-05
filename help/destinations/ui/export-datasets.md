@@ -3,9 +3,9 @@ title: 将数据集导出到云存储目标
 type: Tutorial
 description: 了解如何将数据集从Adobe Experience Platform导出到您首选的云存储位置。
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 85b69af6fd21cfa9712e9c57593cbf00a62837c8
+source-git-commit: e95c0e509931f141ff72c1defacebe5a29756157
 workflow-type: tm+mt
-source-wordcount: '1814'
+source-wordcount: '1845'
 ht-degree: 4%
 
 ---
@@ -234,6 +234,7 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 对于数据集导出的常规可用性版本，请牢记以下限制：
 
 * 目前，您只能导出增量文件，并且无法为数据集导出选择结束日期。
+* 即使对于小型数据集，Experience Platform也可能导出多个文件。 数据集导出旨在实现系统到系统的集成，并优化了性能，因此无法自定义导出的文件数量。
 * 当前无法自定义导出的文件名。
 * 通过API创建的数据集当前不可导出。
 * 目前，UI不会阻止您删除正在导出到目标的数据集。 请勿删除任何正在导出到目标的数据集。 [删除目标数据流中的数据集](#remove-dataset)之前。
