@@ -4,9 +4,9 @@ title: 区段定义API端点
 description: Adobe Experience Platform分段服务API中的区段定义端点允许您以编程方式管理组织的区段定义。
 role: Developer
 exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
-source-git-commit: 914174de797d7d5f6c47769d75380c0ce5685ee2
+source-git-commit: bf90e478b38463ec8219276efe71fcc1aab6b2aa
 workflow-type: tm+mt
-source-wordcount: '1228'
+source-wordcount: '1328'
 ht-degree: 3%
 
 ---
@@ -36,17 +36,23 @@ GET /segment/definitions?{QUERY_PARAMETERS}
 
 **查询参数**
 
++++ 可用查询参数的列表。
+
 | 参数 | 描述 | 示例 |
 | --------- | ----------- | ------- |
 | `start` | 为返回的段定义指定起始偏移。 | `start=4` |
 | `limit` | 指定每页返回的区段定义数。 | `limit=20` |
 | `page` | 指定区段定义的结果将从哪一页开始。 | `page=5` |
-| `sort` | 指定排序结果所依据的字段。 使用以下格式编写： `[attributeName]:[desc|asc]`。 | `sort=updateTime:desc` |
+| `sort` | 指定排序结果所依据的字段。 使用以下格式编写： `[attributeName]:[desc/asc]`。 | `sort=updateTime:desc` |
 | `evaluationInfo.continuous.enabled` | 指定区段定义是否启用流式处理。 | `evaluationInfo.continuous.enabled=true` |
+
++++
 
 **请求**
 
 以下请求将检索组织中发布的最后两个区段定义。
+
++++ 用于检索区段定义列表的示例请求。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/segment/definitions?limit=2 \
@@ -56,9 +62,13 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/definitions?limit=2 
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **响应**
 
 成功的响应返回HTTP状态200，其中包含指定组织的区段定义列表(JSON)。
+
++++ 检索区段定义列表时的示例响应。
 
 ```json
 {
@@ -148,6 +158,8 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/definitions?limit=2 
 }
 ```
 
++++
+
 ## 创建新的区段定义 {#create}
 
 您可以通过向`/segment/definitions`端点发出POST请求来创建新的区段定义。
@@ -163,6 +175,8 @@ POST /segment/definitions
 ```
 
 **请求**
+
++++ 创建区段定义的示例请求。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
@@ -209,15 +223,13 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
 | `expression.format` | 指示值中表达式的结构。 目前，支持以下格式： <ul><li>`pql/text`：区段定义的文本表示形式，根据发布的PQL语法。  例如：`workAddress.stateProvince = homeAddress.stateProvince`。</li></ul> |
 | `expression.value` | 符合`expression.format`中指示的类型的表达式。 |
 
-<!-- >[!NOTE]
->
->A segment definition expression may also reference a computed attribute. To learn more, please refer to the [computed attribute API endpoint guide](../../profile/computed-attributes/ca-api.md)
->
->Computed attribute functionality is in alpha and is not available to all users. Documentation and functionality are subject to change. -->
++++
 
 **响应**
 
 成功的响应会返回HTTP状态200以及新创建的区段定义的详细信息。
+
++++ 创建区段定义时的示例响应。
 
 ```json
 {
@@ -265,6 +277,8 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
 | `id` | 新创建的区段定义的系统生成的ID。 |
 | `evaluationInfo` | 一个对象，指明区段定义将进行的评估类型。 它可以是批处理、流（也称为连续）或边缘（也称为同步）分段。 |
 
++++
+
 ## 检索特定区段定义 {#get}
 
 您可以通过向`/segment/definitions`端点发出GET请求并提供要在请求路径中检索的区段定义的ID，来检索有关特定区段定义的详细信息。
@@ -281,6 +295,8 @@ GET /segment/definitions/{SEGMENT_ID}
 
 **请求**
 
++++ 用于检索区段定义的示例请求。
+
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/segment/definitions/4afe34ae-8c98-4513-8a1d-67ccaa54bc05 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -289,9 +305,13 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/definitions/4afe34ae
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **响应**
 
 成功的响应返回HTTP状态200，其中包含有关指定区段定义的详细信息。
+
++++ 检索区段定义时的示例响应。
 
 ```json
 {
@@ -346,6 +366,8 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/definitions/4afe34ae
 | `description` | 易于用户识别的定义描述。 |
 | `evaluationInfo` | 一个对象，可指示将接受区段定义的评估类型、批处理、流式处理（也称为连续）或边缘（也称为同步）。 |
 
++++
+
 ## 批量检索区段定义 {#bulk-get}
 
 通过向`/segment/definitions/bulk-get`端点发出POST请求并在请求正文中提供区段定义的`id`值，可以检索有关多个指定区段定义的详细信息。
@@ -357,6 +379,8 @@ POST /segment/definitions/bulk-get
 ```
 
 **请求**
+
++++ 使用批量获取端点时的示例请求。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions/bulk-get \
@@ -377,9 +401,13 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions/bulk-ge
     }'
 ```
 
++++
+
 **响应**
 
 成功的响应会返回包含所请求区段定义的HTTP状态207。
+
++++ 使用批量获取端点时的示例响应。
 
 ```json
 {
@@ -477,6 +505,8 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions/bulk-ge
 | `description` | 易于用户识别的定义描述。 |
 | `evaluationInfo` | 一个对象，可指示将接受区段定义的评估类型、批处理、流式处理（也称为连续）或边缘（也称为同步）。 |
 
++++
+
 ## 删除特定区段定义 {#delete}
 
 您可以通过向`/segment/definitions`端点发出DELETE请求并在请求路径中提供要删除的区段定义的ID，来请求删除特定区段定义。
@@ -497,6 +527,8 @@ DELETE /segment/definitions/{SEGMENT_ID}
 
 **请求**
 
++++ 删除区段定义的示例请求。
+
 ```shell
 curl -X DELETE https://platform.adobe.io/data/core/ups/segment/definitions/4afe34ae-8c98-4513-8a1d-67ccaa54bc05 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -504,6 +536,8 @@ curl -X DELETE https://platform.adobe.io/data/core/ups/segment/definitions/4afe3
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
+
++++
 
 **响应**
 
@@ -526,6 +560,8 @@ PATCH /segment/definitions/{SEGMENT_ID}
 **请求**
 
 以下请求会将工作地址所在国家/地区从美国更新为加拿大。
+
++++ 更新区段定义的示例请求。
 
 ```shell
 curl -X PATCH https://platform.adobe.io/data/core/ups/segment/definitions/4afe34ae-8c98-4513-8a1d-67ccaa54bc05 \
@@ -555,9 +591,13 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/segment/definitions/4afe34
 }'
 ```
 
++++
+
 **响应**
 
-成功的响应会返回HTTP状态200以及新更新的区段定义的详细信息。 请注意工作地址国家/地区如何从美国（美国）更新为加拿大(CA)。
+成功的响应会返回HTTP状态200以及新更新的区段定义的详细信息。
+
++++ 更新区段定义时的示例响应。
 
 ```json
 {
@@ -600,6 +640,8 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/segment/definitions/4afe34
 }
 ```
 
++++
+
 ## 转换区段定义
 
 您可以通过向`/segment/conversion`终结点发出POST请求，将`pql/text`和`pql/json`或`pql/json`之间的区段定义转换为`pql/text`。
@@ -613,6 +655,8 @@ POST /segment/conversion
 **请求**
 
 以下请求会将区段定义的格式从`pql/text`更改为`pql/json`。
+
++++ 转换区段定义的示例请求。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/segment/conversion \
@@ -637,9 +681,13 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/conversion \
     }'
 ```
 
++++
+
 **响应**
 
 成功的响应会返回HTTP状态200以及新转换的区段定义的详细信息。
+
++++ 转换区段定义时的示例响应。
 
 ```json
 {
@@ -658,6 +706,8 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/conversion \
     }
 }
 ```
+
++++
 
 ## 后续步骤
 

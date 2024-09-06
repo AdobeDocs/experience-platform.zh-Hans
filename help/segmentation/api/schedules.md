@@ -4,9 +4,9 @@ title: 计划API端点
 description: 计划是一种可用于每天自动运行一次批处理分段作业的工具。
 role: Developer
 exl-id: 92477add-2e7d-4d7b-bd81-47d340998ff1
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: bf90e478b38463ec8219276efe71fcc1aab6b2aa
 workflow-type: tm+mt
-source-wordcount: '2040'
+source-wordcount: '2104'
 ht-degree: 2%
 
 ---
@@ -29,18 +29,25 @@ ht-degree: 2%
 
 ```http
 GET /config/schedules
-GET /config/schedules?start={START}
-GET /config/schedules?limit={LIMIT}
+GET /config/schedules?{QUERY_PARAMETERS}
 ```
 
-| 参数 | 描述 |
-| --------- | ----------- |
-| `{START}` | 指定偏移将从哪一页开始。 默认情况下，该值将为0。 |
-| `{LIMIT}` | 指定返回的计划数。 默认情况下，该值将为100。 |
+**查询参数**
+
++++ 可用查询参数的列表。
+
+| 参数 | 描述 | 示例 |
+| --------- | ----------- | ------- |
+| `start` | 指定偏移将从哪一页开始。 默认情况下，该值将为0。 | `start=5` |
+| `limit` | 指定返回的计划数。 默认情况下，该值将为100。 | `limit=20` |
+
++++
 
 **请求**
 
 以下请求将检索您组织内发布的最近十个计划。
+
++++ 用于检索计划列表的示例请求。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/config/schedules?limit=10 \
@@ -50,6 +57,8 @@ curl -X GET https://platform.adobe.io/data/core/ups/config/schedules?limit=10 \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **响应**
 
 成功的响应会返回HTTP状态200，并将指定组织的计划列表作为JSON返回。
@@ -57,6 +66,8 @@ curl -X GET https://platform.adobe.io/data/core/ups/config/schedules?limit=10 \
 >[!NOTE]
 >
 >以下响应已截断空格，仅显示返回的第一个计划。
+
++++ 检索计划列表时的示例响应。
 
 ```json
 {
@@ -102,6 +113,8 @@ curl -X GET https://platform.adobe.io/data/core/ups/config/schedules?limit=10 \
 | `children.schedule` | 包含作业计划的字符串。 作业只能被安排每天运行一次，这意味着您不能将作业安排在24小时期间运行多次。 有关cron计划的详细信息，请阅读[cron表达式格式](#appendix)的附录。 在此示例中，“0 0 1 * *”表示此计划将在每天凌晨1:00运行。 |
 | `children.state` | 包含计划状态的字符串。 支持的两种状态分别为“活动”和“不活动”。 默认情况下，状态设置为“不活动”。 |
 
++++
+
 ## 创建新计划 {#create}
 
 您可以通过向`/config/schedules`端点发出POST请求来创建新计划。
@@ -113,6 +126,8 @@ POST /config/schedules
 ```
 
 **请求**
+
++++ 创建计划的示例请求。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/config/schedules \
@@ -144,9 +159,13 @@ curl -X POST https://platform.adobe.io/data/core/ups/config/schedules \
 | `schedule` | *可选。*&#x200B;包含作业计划的字符串。 作业只能被安排每天运行一次，这意味着您不能将作业安排在24小时期间运行多次。 有关cron计划的详细信息，请阅读[cron表达式格式](#appendix)的附录。 在此示例中，“0 0 1 * *”表示此计划将在每天凌晨1:00运行。 <br><br>如果未提供此字符串，将自动生成系统生成的计划。 |
 | `state` | *可选。*&#x200B;包含计划状态的字符串。 支持的两种状态分别为“活动”和“不活动”。 默认情况下，状态设置为“不活动”。 |
 
++++
+
 **响应**
 
 成功的响应返回HTTP状态200以及新创建计划的详细信息。
+
++++ 创建计划时的示例响应。
 
 ```json
 {
@@ -172,6 +191,8 @@ curl -X POST https://platform.adobe.io/data/core/ups/config/schedules \
 }
 ```
 
++++
+
 ## 检索特定计划 {#get}
 
 您可以通过向`/config/schedules`端点发出GET请求并在请求路径中提供要检索的调度的ID，来检索有关特定调度的详细信息。
@@ -188,6 +209,8 @@ GET /config/schedules/{SCHEDULE_ID}
 
 **请求**
 
++++ 用于检索计划的示例请求。
+
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/config/schedules/4e538382-dbd8-449e-988a-4ac639ebe72b
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -196,9 +219,13 @@ curl -X GET https://platform.adobe.io/data/core/ups/config/schedules/4e538382-db
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **响应**
 
 成功的响应返回HTTP状态200，其中包含有关指定调度的详细信息。
+
++++ 检索计划时的示例响应。
 
 ```json
 {
@@ -233,15 +260,13 @@ curl -X GET https://platform.adobe.io/data/core/ups/config/schedules/4e538382-db
 | `schedule` | 包含作业计划的字符串。 作业只能被安排每天运行一次，这意味着您不能将作业安排在24小时内运行多次。 有关cron计划的详细信息，请阅读[cron表达式格式](#appendix)的附录。 在此示例中，“0 0 1 * *”表示此计划将在每天凌晨1:00运行。 |
 | `state` | 包含计划状态的字符串。 两个支持的状态是`active`和`inactive`。 默认情况下，状态设置为`inactive`。 |
 
++++
+
 ## 更新特定计划的详细信息 {#update}
 
 您可以通过向`/config/schedules`端点发出PATCH请求并在请求路径中提供您尝试更新的计划的ID来更新特定计划。
 
 PATCH请求允许您更新单个计划的[状态](#update-state)或[cron计划](#update-schedule)。
-
-### 更新计划状态 {#update-state}
-
-您可以使用JSON修补程序操作来更新计划的状态。 要更新状态，请将`path`属性声明为`/state`并将`value`设置为`active`或`inactive`。 有关JSON修补程序的详细信息，请阅读[JSON修补程序](https://datatracker.ietf.org/doc/html/rfc6902)文档。
 
 **API格式**
 
@@ -253,7 +278,15 @@ PATCH /config/schedules/{SCHEDULE_ID}
 | --------- | ----------- |
 | `{SCHEDULE_ID}` | 要更新的计划的`id`值。 |
 
+>[!BEGINTABS]
+
+>[!TAB 更新计划状态]
+
+您可以使用JSON修补程序操作来更新计划的状态。 要更新状态，请将`path`属性声明为`/state`并将`value`设置为`active`或`inactive`。 有关JSON修补程序的详细信息，请阅读[JSON修补程序](https://datatracker.ietf.org/doc/html/rfc6902)文档。
+
 **请求**
+
++++ 更新计划状态的示例请求。
 
 ```shell
 curl -X PATCH https://platform.adobe.io/data/core/ups/config/schedules/4e538382-dbd8-449e-988a-4ac639ebe72b \
@@ -271,6 +304,8 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/config/schedules/4e538382-
 ]'
 ```
 
++++
+
 | 属性 | 描述 |
 | -------- | ----------- |
 | `path` | 要修补的值的路径。 在这种情况下，由于您正在更新计划的状态，因此需要将`path`的值设置为“/state”。 |
@@ -280,21 +315,15 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/config/schedules/4e538382-
 
 成功的响应返回HTTP状态204（无内容）。
 
-### 更新cron计划 {#update-schedule}
+>[!TAB 更新cron计划]
 
 您可以使用JSON修补程序操作来更新cron计划。 要更新计划，请将`path`属性声明为`/schedule`并将`value`设置为有效的cron计划。 有关JSON修补程序的详细信息，请阅读[JSON修补程序](https://datatracker.ietf.org/doc/html/rfc6902)文档。 有关cron计划的详细信息，请阅读[cron表达式格式](#appendix)的附录。
 
-**API格式**
-
-```http
-PATCH /config/schedules/{SCHEDULE_ID}
-```
-
-| 参数 | 描述 |
-| --------- | ----------- |
-| `{SCHEDULE_ID}` | 要更新的计划的`id`值。 |
+>[!ENDTABS]
 
 **请求**
+
++++ 更新计划的示例请求。
 
 ```shell
 curl -X PATCH https://platform.adobe.io/data/core/ups/config/schedules/4e538382-dbd8-449e-988a-4ac639ebe72b \
@@ -317,6 +346,8 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/config/schedules/4e538382-
 | `path` | 要更新的值的路径。 在这种情况下，由于您正在更新cron计划，因此需要将`path`的值设置为`/schedule`。 |
 | `value` | cron计划的更新值。 该值需要采用cron计划的形式。 在此示例中，计划将在每月的第二日运行。 |
 
++++
+
 **响应**
 
 成功的响应返回HTTP状态204（无内容）。
@@ -337,6 +368,8 @@ DELETE /config/schedules/{SCHEDULE_ID}
 
 **请求**
 
++++ 删除计划的示例请求。
+
 ```shell
 curl -X DELETE https://platform.adobe.io/data/core/ups/config/schedules/4e538382-dbd8-449e-988a-4ac639ebe72b \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -344,6 +377,8 @@ curl -X DELETE https://platform.adobe.io/data/core/ups/config/schedules/4e538382
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
+
++++
 
 **响应**
 

@@ -4,9 +4,9 @@ title: 区段导出作业API端点
 description: 导出作业是异步流程，用于将受众区段成员保留到数据集。 您可以使用Adobe Experience Platform Segmentation Service API中的/export/jobs端点，它允许您以编程方式检索、创建和取消导出作业。
 role: Developer
 exl-id: 5b504a4d-291a-4969-93df-c23ff5994553
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: bf90e478b38463ec8219276efe71fcc1aab6b2aa
 workflow-type: tm+mt
-source-wordcount: '1615'
+source-wordcount: '1678'
 ht-degree: 1%
 
 ---
@@ -33,20 +33,26 @@ ht-degree: 1%
 
 ```http
 GET /export/jobs
-GET /export/jobs?limit={LIMIT}
-GET /export/jobs?offset={OFFSET}
-GET /export/jobs?status={STATUS}
+GET /export/jobs?{QUERY_PARAMETERS}
 ```
 
-| 参数 | 描述 |
-| --------- | ----------- |
-| `{LIMIT}` | 指定返回的导出作业数。 |
-| `{OFFSET}` | 指定结果页面的偏移量。 |
-| `{STATUS}` | 根据状态筛选结果。 支持的值为“NEW”、“SUCCEEDED”和“FAILED”。 |
+**查询参数**
+
++++ 可用查询参数的列表。
+
+| 参数 | 描述 | 示例 |
+| --------- | ----------- | ------- |
+| `limit` | 指定返回的导出作业数。 | `limit=10` |
+| `offset` | 指定结果页面的偏移量。 | `offset=1540974701302_96` |
+| `status` | 根据状态筛选结果。 支持的值为“NEW”、“SUCCEEDED”和“FAILED”。 | `status=NEW` |
+
++++
 
 **请求**
 
 以下请求将检索组织内的最后两个导出作业。
+
++++ 用于检索导出作业的示例请求。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/export/jobs?limit=2 \
@@ -56,9 +62,13 @@ curl -X GET https://platform.adobe.io/data/core/ups/export/jobs?limit=2 \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **响应**
 
 以下响应根据请求路径中提供的查询参数，返回HTTP状态200，其中包含已成功完成的导出作业列表。
+
++++ 检索导出作业时的示例响应。
 
 ```json
 {
@@ -207,6 +217,8 @@ curl -X GET https://platform.adobe.io/data/core/ups/export/jobs?limit=2 \
 | `page` | 有关所请求的导出作业的分页的信息。 |
 | `link.next` | 指向导出作业下一页的链接。 |
 
++++
+
 ## 创建新的导出作业 {#create}
 
 您可以通过向`/export/jobs`端点发出POST请求来创建新的导出作业。
@@ -220,6 +232,8 @@ POST /export/jobs
 **请求**
 
 以下请求创建新的导出作业，该作业由有效负载中提供的参数配置。
+
++++ 创建导出作业的示例请求。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
@@ -290,9 +304,13 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
 | `schema.name` | **（必需）**&#x200B;与要导出数据的数据集关联的架构的名称。 |
 | `evaluationInfo.segmentation` | *（可选）*&#x200B;布尔值，如果未提供，则默认为`false`。 值为`true`表示需要对导出作业进行分段。 |
 
++++
+
 **响应**
 
 成功的响应返回HTTP状态200以及新创建的导出作业的详细信息。
+
++++ 创建导出作业时的示例响应。
 
 ```json
 {
@@ -380,6 +398,8 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
     }
 ```
 
++++
+
 ## 检索特定导出作业 {#get}
 
 您可以通过向`/export/jobs`端点发出GET请求并在请求路径中提供要检索的导出作业的ID，来检索有关特定导出作业的详细信息。
@@ -396,6 +416,8 @@ GET /export/jobs/{EXPORT_JOB_ID}
 
 **请求**
 
++++ 用于检索导出作业的示例请求。
+
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/export/jobs/11037 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -404,9 +426,13 @@ curl -X GET https://platform.adobe.io/data/core/ups/export/jobs/11037 \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **响应**
 
 成功的响应返回HTTP状态200，其中包含有关指定导出作业的详细信息。
+
++++ 检索导出作业时的示例响应。
 
 ```json
 {
@@ -476,6 +502,8 @@ curl -X GET https://platform.adobe.io/data/core/ups/export/jobs/11037 \
 | `metrics.profileExportTime` | 指示导出用户档案所用时间的字段。 |
 | `totalExportedProfileCounter` | 跨所有批次导出的配置文件总数。 |
 
++++
+
 ## 取消或删除特定导出作业 {#delete}
 
 您可以通过向`/export/jobs`端点发出DELETE请求并在请求路径中提供要删除的导出作业的ID来请求删除指定的导出作业。
@@ -492,6 +520,8 @@ DELETE /export/jobs/{EXPORT_JOB_ID}
 
 **请求**
 
++++ 删除导出作业的示例请求。
+
 ```shell
 curl -X DELETE https://platform.adobe.io/data/core/ups/export/jobs/{EXPORT_JOB_ID} \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -499,6 +529,8 @@ curl -X DELETE https://platform.adobe.io/data/core/ups/export/jobs/{EXPORT_JOB_I
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
+
++++
 
 **响应**
 

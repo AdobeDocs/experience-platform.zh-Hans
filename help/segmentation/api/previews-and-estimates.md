@@ -4,9 +4,9 @@ title: 预览和估算API端点
 description: 在开发区段定义时，您可以使用Adobe Experience Platform中的评估和预览工具来查看摘要级别的信息，从而帮助您隔离预期的受众。
 role: Developer
 exl-id: 2c204f29-825f-4a5e-a7f6-40fc69263614
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: bf90e478b38463ec8219276efe71fcc1aab6b2aa
 workflow-type: tm+mt
-source-wordcount: '971'
+source-wordcount: '1016'
 ht-degree: 2%
 
 ---
@@ -62,6 +62,8 @@ POST /preview
 
 **请求**
 
++++ 创建预览的示例请求。
+
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/preview \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -85,9 +87,13 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
 | `predicateModel` | 配置文件数据所基于的[!DNL Experience Data Model] (XDM)架构类的名称。 |
 | `graphType` | 您希望从中获取集群的图形类型。 支持的值为`none`（不执行身份拼接）和`pdg`（根据您的专用身份图形执行身份拼接）。 |
 
++++
+
 **响应**
 
 成功的响应返回HTTP状态201（已创建）以及新创建的预览的详细信息。
+
++++ 创建预览时的示例响应。
 
 ```json
 {
@@ -103,6 +109,8 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
 | -------- | ----------- |
 | `state` | 预览作业的当前状态。 最初创建时，它将处于“NEW”状态。 随后，它将处于“正在运行”状态，直到处理完成，此时它将变为“RESULT_READY”或“FAILED”。 |
 | `previewId` | 预览作业的ID，用于在查看估计或预览时查找，如下节所述。 |
+
++++
 
 ## 检索特定预览的结果 {#get-preview}
 
@@ -120,6 +128,8 @@ GET /preview/{PREVIEW_ID}
 
 **请求**
 
++++ 用于检索预览的示例请求。
+
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/preview/MDphcHAtMzJiZTAzMjgtM2YzMS00YjY0LThkODQtYWNkMGM0ZmJkYWQzOmU4OTAwNjhiLWY1Y2EtNGE4Zi1hNmI1LWFmODdmZjBjYWFjMzow \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -128,7 +138,11 @@ curl -X GET https://platform.adobe.io/data/core/ups/preview/MDphcHAtMzJiZTAzMjgt
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **响应**
+
++++ 检索预览时的示例响应。
 
 成功的响应返回HTTP状态200，其中包含有关指定预览的详细信息。
 
@@ -181,6 +195,8 @@ curl -X GET https://platform.adobe.io/data/core/ups/preview/MDphcHAtMzJiZTAzMjgt
 | -------- | ----------- |
 | `results` | 实体ID及其相关标识的列表。 提供的链接可用于使用[配置文件访问API终结点](../../profile/api/entities.md)查找指定的实体。 |
 
++++
+
 ## 检索特定估算作业的结果 {#get-estimate}
 
 创建预览作业后，您可以在指向`/estimate`端点的GET请求路径中使用其`previewId`来查看有关区段定义的统计信息，包括预计受众大小、置信区间和错误标准偏差。
@@ -199,6 +215,8 @@ GET /estimate/{PREVIEW_ID}
 
 以下请求检索特定估计作业的结果。
 
++++ 用于检索估计作业的示例请求。
+
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/estimate/MDoyOjRhNDVlODUzLWFjOTEtNGJiNy1hNDI2LTE1MDkzN2I2YWY1Yzo0Mg \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -207,9 +225,13 @@ curl -X GET https://platform.adobe.io/data/core/ups/estimate/MDoyOjRhNDVlODUzLWF
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **响应**
 
 成功的响应返回HTTP状态200以及估计作业的详细信息。
+
++++ 检索估计作业时的示例响应。
 
 ```json
 {
@@ -243,9 +265,11 @@ curl -X GET https://platform.adobe.io/data/core/ups/estimate/MDoyOjRhNDVlODUzLWF
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `estimatedNamespaceDistribution` | 一个对象数组，显示区段内按身份命名空间划分的配置文件数。 按命名空间列出的配置文件总数（将每个命名空间显示的值相加）可能高于配置文件计数量度，因为一个配置文件可能与多个命名空间关联。 例如，如果客户在多个渠道上与您的品牌互动，则多个命名空间将与该个人客户关联。 |
+| `estimatedNamespaceDistribution` | 一个对象数组，显示区段定义中按身份命名空间划分的配置文件数。 按命名空间列出的配置文件总数（将每个命名空间显示的值相加）可能高于配置文件计数量度，因为一个配置文件可能与多个命名空间关联。 例如，如果客户在多个渠道上与您的品牌互动，则多个命名空间将与该个人客户关联。 |
 | `state` | 预览作业的当前状态。 状态将为“正在运行”，直到处理完成，此时状态将变为“RESULT_READY”或“FAILED”。 |
 | `_links.preview` | 当`state`为“RESULT_READY”时，此字段提供一个URL以查看估计值。 |
+
++++
 
 ## 后续步骤
 

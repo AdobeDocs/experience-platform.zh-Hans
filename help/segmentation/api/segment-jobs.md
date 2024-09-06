@@ -4,9 +4,9 @@ title: 区段作业API端点
 description: Adobe Experience Platform Segmentation Service API中的区段作业端点允许您以编程方式管理组织的区段作业。
 role: Developer
 exl-id: 105481c2-1c25-4f0e-8fb0-c6577a4616b3
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: f22246dec74c20459e5ac53bedc16cb6e4fba56e
 workflow-type: tm+mt
-source-wordcount: '1524'
+source-wordcount: '1655'
 ht-degree: 2%
 
 ---
@@ -36,6 +36,8 @@ GET /segment/jobs?{QUERY_PARAMETERS}
 
 **查询参数**
 
++++ 可用查询参数的列表。
+
 | 参数 | 描述 | 示例 |
 | --------- | ----------- | ------- |
 | `start` | 为返回的区段作业指定起始偏移。 | `start=1` |
@@ -44,7 +46,11 @@ GET /segment/jobs?{QUERY_PARAMETERS}
 | `sort` | 区段作业返回的订单。 以`[attributeName]:[desc|asc]`格式编写。 | `sort=creationTime:desc` |
 | `property` | 过滤区段作业，并获取给定过滤器的精确匹配项。 可采用以下任一格式编写： <ul><li>`[jsonObjectPath]==[value]` — 在对象键上筛选</li><li>`[arrayTypeAttributeName]~[objectKey]==[value]` — 在数组中筛选</li></ul> | `property=segments~segmentId==workInUS` |
 
++++
+
 **请求**
+
++++ 查看区段作业列表的示例请求。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDED \
@@ -54,17 +60,23 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **响应**
 
 成功的响应返回HTTP状态200，并将指定组织的区段作业列表作为JSON。 但是，响应将有所不同，具体取决于区段作业中的区段定义数量。
 
-**区段作业中的区段定义少于或等于1500个**
+>[!BEGINTABS]
+
+>[!TAB 区段作业中的区段定义少于或等于1500个]
 
 如果区段作业中运行的区段定义少于1500个，则`children.segments`属性中将显示所有区段定义的完整列表。
 
 >[!NOTE]
 >
 >以下响应已截断空格，将仅显示返回的第一个作业。
+
++++ 检索区段作业列表时的示例响应。
 
 ```json
 {
@@ -166,13 +178,17 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
 }
 ```
 
-**超过1500个区段定义**
++++
+
+>[!TAB 超过1500个区段定义]
 
 如果区段作业中运行的区段定义超过1500个，则`children.segments`属性将显示`*`，指示正在评估所有区段定义。
 
 >[!NOTE]
 >
 >以下响应已截断空格，将仅显示返回的第一个作业。
+
++++ 查看区段作业列表时的示例响应。
 
 ```json
 {
@@ -276,6 +292,10 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
 | `metrics.segmentProfileByStatusCounter` | 每个状态的配置文件数。 支持以下三种状态： <ul><li>“已实现” — 符合区段定义资格的用户档案数。</li><li>“已退出” — 区段定义中不再存在的配置文件数。</li></ul> |
 | `metrics.totalProfilesByMergePolicy` | 基于每个合并策略的合并配置文件总数。 |
 
++++
+
+>[!ENDTABS]
+
 ## 创建新的区段作业 {#create}
 
 您可以通过向`/segment/jobs`端点发出POST请求并在正文中包含要从中创建新受众的区段定义的ID来创建新的区段作业。
@@ -288,9 +308,13 @@ POST /segment/jobs
 
 创建新区段作业时，请求和响应将因区段作业中的区段定义数量而异。
 
-**区段作业中的区段定义少于或等于1500个**
+>[!BEGINTABS]
+
+>[!TAB 您的区段作业中的区段少于或等于1500个]
 
 **请求**
+
++++用于创建新区段作业的示例请求
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
@@ -302,6 +326,9 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
  -d '[
     {
         "segmentId": "7863c010-e092-41c8-ae5e-9e533186752e"
+    },
+    {
+        "segmentId": "07d39471-05d1-4083-a310-d96978fd7c85"
     }
  ]'
 ```
@@ -310,9 +337,13 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 | -------- | ----------- |
 | `segmentId` | 要为其创建区段作业的区段定义的ID。 这些区段定义可以属于不同的合并策略。 有关区段定义的详细信息，请参阅[区段定义终结点指南](./segment-definitions.md)。 |
 
++++
+
 **响应**
 
 成功的响应返回HTTP状态200，其中包含有关新创建的区段作业的信息。
+
++++ 创建新区段作业时的示例响应。
 
 ```json
 {
@@ -335,6 +366,22 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
             "segmentId": "7863c010-e092-41c8-ae5e-9e533186752e",
             "segment": {
                 "id": "7863c010-e092-41c8-ae5e-9e533186752e",
+                "expression": {
+                    "type": "PQL",
+                    "format": "pql/json",
+                    "value": "workAddress.country = \"US\""
+                },
+                "mergePolicyId": "25c548a0-ca7f-4dcd-81d5-997642f178b9",
+                "mergePolicy": {
+                    "id": "25c548a0-ca7f-4dcd-81d5-997642f178b9",
+                    "version": 1
+                }
+            }
+        },
+        {
+            "segmentId": "07d39471-05d1-4083-a310-d96978fd7c85",
+            "segment": {
+                "id": "07d39471-05d1-4083-a310-d96978fd7c85",
                 "expression": {
                     "type": "PQL",
                     "format": "pql/json",
@@ -411,13 +458,17 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 | `segments.segment.id` | 您提供的区段定义的ID。 |
 | `segments.segment.expression` | 一个对象，其中包含有关在PQL中编写的区段定义表达式的信息。 |
 
-**超过1500个区段定义**
++++
+
+>[!TAB 区段作业中的区段定义超过1500个]
 
 **请求**
 
 >[!NOTE]
 >
 >虽然您可以创建具有超过1500个区段定义的区段作业，但&#x200B;**强烈不推荐**。
+
++++ 创建区段作业的示例请求。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
@@ -443,9 +494,13 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 | `schema.name` | 区段定义的架构名称。 |
 | `segments.segmentId` | 运行具有超过1500个区段的区段作业时，需要传递`*`作为区段ID，以表示您要运行具有所有区段的分段作业。 |
 
++++
+
 **响应**
 
 成功的响应返回HTTP状态200以及新创建的区段作业的详细信息。
+
++++ 创建区段作业时的示例响应。
 
 ```json
 {
@@ -530,6 +585,11 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 | `segments` | 一个对象，其中包含有关运行此区段作业的区段定义的信息。 |
 | `segments.segment.id` | `*`表示此区段作业正在运行，以用于贵组织内的所有区段定义。 |
 
++++
+
+>[!ENDTABS]
+
+
 ## 检索特定区段作业 {#get}
 
 您可以通过向`/segment/jobs`端点发出GET请求并在请求路径中提供要检索的区段作业的ID，来检索有关特定区段作业的详细信息。
@@ -546,6 +606,8 @@ GET /segment/jobs/{SEGMENT_JOB_ID}
 
 **请求**
 
++++ 用于检索区段作业的示例请求。
+
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfea-43eb-9fca-557ea53771fd \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -554,13 +616,19 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfea-4
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **响应**
 
 成功的响应返回HTTP状态200，其中包含有关指定区段作业的详细信息。  但是，响应将因区段作业中的区段定义数量而异。
 
-**区段作业中的区段定义少于或等于1500个**
+>[!BEGINTABS]
+
+>[!TAB 区段作业中的区段定义少于或等于1500个]
 
 如果区段作业中运行的区段定义少于1500个，则`children.segments`属性中将显示所有区段定义的完整列表。
+
++++ 用于检索区段作业的示例响应。
 
 ```json
 {
@@ -622,9 +690,13 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfea-4
 }
 ```
 
-**超过1500个区段定义**
++++
+
+>[!TAB 超过1500个区段定义]
 
 如果区段作业中运行的区段定义超过1500个，则`children.segments`属性将显示`*`，指示正在评估所有区段定义。
+
++++ 用于检索区段作业的示例响应。
 
 ```json
 {
@@ -711,6 +783,10 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfea-4
 | `segments.segment.expression` | 一个对象，其中包含有关在PQL中编写的区段定义表达式的信息。 |
 | `metrics` | 包含有关区段作业的诊断信息的对象。 |
 
++++
+
+>[!ENDTABS]
+
 ## 批量检索区段作业 {#bulk-get}
 
 通过向`/segment/jobs/bulk-get`端点发出POST请求并在请求正文中提供区段作业的`id`值，可以检索有关多个区段作业的详细信息。
@@ -722,6 +798,8 @@ POST /segment/jobs/bulk-get
 ```
 
 **请求**
+
++++ 使用批量检索端点的示例请求。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs/bulk-get \
@@ -742,6 +820,8 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs/bulk-get \
     }'
 ```
 
++++
+
 **响应**
 
 成功的响应会返回包含所请求区段作业的HTTP状态207。 但是，如果区段作业运行的区段定义超过1500个，则`children.segments`属性的值会有所不同。
@@ -749,6 +829,8 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs/bulk-get \
 >[!NOTE]
 >
 >以下响应已因空间而被截断，仅显示每个区段作业的部分详细信息。 完整响应将列出所请求区段作业的完整详细信息。
+
++++ 使用批量获取响应时的示例响应。
 
 ```json
 {
@@ -804,6 +886,8 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs/bulk-get \
 | `segments.segment.id` | 区段定义的ID。 |
 | `segments.segment.expression` | 一个对象，其中包含有关在PQL中编写的区段定义表达式的信息。 |
 
++++
+
 ## 取消或删除特定区段作业 {#delete}
 
 您可以通过向`/segment/jobs`端点发出DELETE请求并在请求路径中提供要删除的区段作业的ID来删除特定区段作业。
@@ -824,6 +908,8 @@ DELETE /segment/jobs/{SEGMENT_JOB_ID}
 
 **请求**
 
++++ 删除区段作业的示例请求。
+
 ```shell
 curl -X DELETE https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfea-43eb-9fca-557ea53771fd \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -832,9 +918,13 @@ curl -X DELETE https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfe
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **响应**
 
 成功的响应会返回包含以下信息的HTTP状态204。
+
++++ 删除区段作业时的示例响应。
 
 ```json
 {
@@ -842,6 +932,8 @@ curl -X DELETE https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfe
     "message": "Segment job with id 'd3b4a50d-dfea-43eb-9fca-557ea53771fd' has been marked for cancelling"
 }
 ```
+
++++
 
 ## 后续步骤
 

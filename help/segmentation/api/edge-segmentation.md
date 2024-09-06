@@ -4,9 +4,9 @@ title: 使用API的Edge分段
 description: 本文档包含有关如何将边缘分段与Adobe Experience Platform分段服务API一起使用的示例。
 role: Developer
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: 914174de797d7d5f6c47769d75380c0ce5685ee2
+source-git-commit: 057db1432493a8443eb91b0fc371d0bdffb3de86
 workflow-type: tm+mt
-source-wordcount: '1207'
+source-wordcount: '806'
 ht-degree: 1%
 
 ---
@@ -41,22 +41,15 @@ Edge分段功能能够在边缘即时评估Adobe Experience Platform中的区段
 
 为了使用边缘分段来评估区段，查询必须遵循以下准则：
 
-| 查询类型 | 详细信息 | 示例 | PQL示例 |
-| ---------- | ------- | ------- | ----------- |
-| 单个事件 | 任何引用没有时间限制的单个传入事件的区段定义。 | 将项目添加到购物车的人员。 | `chain(xEvent, timestamp, [A: WHAT(eventType = "addToCart")])` |
-| 单个配置文件 | 任何引用单个纯配置文件属性的区段定义 | 住在美国的人。 | `homeAddress.countryCode = "US"` |
-| 引用用户档案的单个事件 | 任何引用一个或多个用户档案属性和单个传入事件的区段定义，无时间限制。 | 在美国居住的人访问了该主页。 | `homeAddress.countryCode = "US" and chain(xEvent, timestamp, [A: WHAT(eventType = "addToCart")])` |
-| 否定了具有配置文件属性的单个事件 | 任何引用带反义的单个传入事件和一个或多个用户档案属性的区段定义 | 居住在美国且&#x200B;**未**&#x200B;访问过主页的人。 | `not(chain(xEvent, timestamp, [A: WHAT(eventType = "homePageView")]))` |
-| 时间范围内的单个事件 | 任何引用一段时间内单个传入事件的区段定义。 | 过去24小时内访问过主页的人。 | `chain(xEvent, timestamp, [X: WHAT(eventType = "addToCart") WHEN(< 24 hours before now)])` |
-| 在相对时间范围小于24小时内的配置文件属性为单个事件 | 任何涉及单个传入事件（具有一个或多个用户档案属性）且发生在小于24小时的相对时间范围内的区段定义。 | 居住在美国的人在过去24小时内访问了该主页。 | `homeAddress.countryCode = "US" and chain(xEvent, timestamp, [X: WHAT(eventType = "addToCart") WHEN(< 24 hours before now)])` |
-| 在一个时间范围内否定了具有配置文件属性的单个事件 | 任何引用一段时间内一个或多个用户档案属性和否定单个传入事件的区段定义。 | 居住在美国且&#x200B;**不**&#x200B;的人在过去24小时内访问了主页。 | `homeAddress.countryCode = "US" and not(chain(xEvent, timestamp, [X: WHAT(eventType = "addToCart") WHEN(< 24 hours before now)]))` |
-| 24小时时间范围内的频率事件 | 任何涉及在24小时的时间范围内发生特定次数的事件的区段定义。 | 过去24小时内访问过主页&#x200B;**至少**&#x200B;五次的用户。 | `chain(xEvent, timestamp, [A: WHAT(eventType = "homePageView") WHEN(< 24 hours before now) COUNT(5) ] )` |
-| 在24小时时间范围内具有配置文件属性的频率事件 | 任何区段定义，它是指一个或多个用户档案属性以及在24小时的时间范围内发生特定次数的事件。 | 过去24小时内访问过主页&#x200B;**至少**&#x200B;五次的美国人。 | `homeAddress.countryCode = "US" and chain(xEvent, timestamp, [A: WHAT(eventType = "homePageView") WHEN(< 24 hours before now) COUNT(5) ] )` |
-| 在24小时时间范围内具有配置文件的否定频率事件 | 任何引用一个或多个用户档案属性的区段定义，以及在24小时的时间范围内发生特定次数的否定事件。 | 过去24小时内未访问过主页&#x200B;**超过**&#x200B;五次的用户。 | `not(chain(xEvent, timestamp, [A: WHAT(eventType = "homePageView") WHEN(< 24 hours before now) COUNT(5) ] ))` |
-| 24小时时间配置文件内的多个传入点击 | 任何涉及在24小时的时间范围内发生的多个事件的区段定义。 | 访问主页&#x200B;**或**&#x200B;的人在过去24小时内访问了结账页面。 | `chain(xEvent, timestamp, [X: WHAT(eventType = "homePageView") WHEN(< 24 hours before now)]) and chain(xEvent, timestamp, [X: WHAT(eventType = "checkoutPageView") WHEN(< 24 hours before now)])` |
-| 一个配置文件在24小时时间范围内的多个事件 | 任何区段定义，它是指在24小时的时间范围内发生的一个或多个用户档案属性和多个事件。 | 美国人在过去24小时内访问了主页&#x200B;**和**&#x200B;并访问了结帐页面。 | `homeAddress.countryCode = "US" and chain(xEvent, timestamp, [X: WHAT(eventType = "homePageView") WHEN(< 24 hours before now)]) and chain(xEvent, timestamp, [X: WHAT(eventType = "checkoutPageView") WHEN(< 24 hours before now)])` |
-| 区段划分 | 包含一个或多个批次或流式客户细分的任何客户细分定义。 | 居住在美国、属于“现有区段”的人群。 | `homeAddress.countryCode = "US" and inSegment("existing segment")` |
-| 引用映射的查询 | 任何引用属性映射的区段定义。 | 根据外部区段数据添加到购物车的人员。 | `chain(xEvent, timestamp, [A: WHAT(eventType = "addToCart") WHERE(externalSegmentMapProperty.values().exists(stringProperty="active"))])` |
+| 查询类型 | 详细信息 |
+| ---------- | ------- |
+| 单个事件 | 任何引用没有时间限制的单个传入事件的区段定义。 |
+| 相对时间范围内的单个事件 | 任何引用单个传入事件的区段定义。 |
+| 具有时间范围的单个事件 | 任何涉及具有时间范围的单个传入事件的区段定义。 |
+| 仅配置文件 | 仅引用配置文件属性的任何区段定义。 |
+| 在相对时间范围小于24小时内的配置文件属性为单个事件 | 任何涉及单个传入事件（具有一个或多个用户档案属性）且发生在小于24小时的相对时间范围内的区段定义。 |
+| 区段划分 | 包含一个或多个批次或流式客户细分的任何客户细分定义。 **注意：**&#x200B;如果使用区段区段，则每24小时&#x200B;**将发生配置文件取消资格**。 |
+| 具有配置文件属性的多个事件 | 任何在过去24小时&#x200B;**内引用多个事件**&#x200B;且（可选）具有一个或多个配置文件属性的区段定义。 |
 
 此外，区段&#x200B;**必须**&#x200B;绑定到边缘上活动的合并策略。 有关合并策略的更多信息，请参阅[合并策略指南](../../profile/api/merge-policies.md)。
 
