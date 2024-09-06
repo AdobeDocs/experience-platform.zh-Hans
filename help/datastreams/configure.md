@@ -2,9 +2,9 @@
 title: 创建和配置数据流
 description: 了解如何将客户端 Web SDK 集成与其他 Adobe 产品和第三方目标连接起来。
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: f99370a9bff156b5cf9ecf286a1f8bc09eccc06a
+source-git-commit: b87cb25ac791bebbf865f8513f2b4b482a1531bc
 workflow-type: tm+mt
-source-wordcount: '2813'
+source-wordcount: '2817'
 ht-degree: 51%
 
 ---
@@ -49,7 +49,7 @@ ht-degree: 51%
 | 设置 | 描述 |
 | --- | --- |
 | [!UICONTROL 地理位置查找] | 根据访客的IP地址为所选选项启用地理位置查找。 可用选项包括： <ul><li>**国家/地区**：填充`xdm.placeContext.geo.countryCode`</li><li>**邮政编码**：填充`xdm.placeContext.geo.postalCode`</li><li>**州/省**：填充`xdm.placeContext.geo.stateProvince`</li><li>**DMA**：填充`xdm.placeContext.geo.dmaID`</li><li>**城市**：填充`xdm.placeContext.geo.city`</li><li>**纬度**：填充`xdm.placeContext.geo._schema.latitude`</li><li>**经度**：填充`xdm.placeContext.geo._schema.longitude`</li></ul>选择&#x200B;**[!UICONTROL 城市]**、**[!UICONTROL 纬度]**&#x200B;或&#x200B;**[!UICONTROL 经度]**&#x200B;将提供最多两位小数的坐标，而不管选择的其他选项如何。这被视为城市级别的粒度。<br> <br>不选择任何选项将禁用地理位置查找。 地理位置发生在[!UICONTROL IP模糊处理]之前，这意味着它不受[!UICONTROL IP模糊处理]设置的影响。 |
-| [!UICONTROL 网络查找] | 根据访客的IP地址启用所选选项的网络查找。 可用选项包括： <ul><li>**运营商**：填充`xdm.environment.carrier`</li><li>**域**：填充`xdm.environment.domain`</li><li>**ISP**：填充`xdm.environment.ISP`</li></ul> |
+| [!UICONTROL 网络查找] | 根据访客的IP地址启用所选选项的网络查找。 可用选项包括： <ul><li>**移动设备运营商**：填充`xdm.environment.carrier`</li><li>**域**：填充`xdm.environment.domain`</li><li>**ISP**：填充`xdm.environment.ISP`</li><li>**连接类型**：填充`xdm.environment.connectionType`</li></ul> |
 
 如果您为数据收集启用以上任何字段，请确保在配置Web SDK时正确设置[`context`](/help/web-sdk/commands/configure/context.md)数组属性。
 
