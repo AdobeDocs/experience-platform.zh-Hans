@@ -2,10 +2,10 @@
 title: 创建和配置数据流
 description: 了解如何将客户端 Web SDK 集成与其他 Adobe 产品和第三方目标连接起来。
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: 43d97ea4d850a36d350894d70a082464a21e449d
+source-git-commit: f99370a9bff156b5cf9ecf286a1f8bc09eccc06a
 workflow-type: tm+mt
-source-wordcount: '2753'
-ht-degree: 53%
+source-wordcount: '2813'
+ht-degree: 51%
 
 ---
 
@@ -189,7 +189,7 @@ ht-degree: 53%
 | --- | --- |
 | [!UICONTROL 属性令牌] | [!DNL Target]允许客户使用属性控制权限。 有关属性的更多信息，请参阅 [!DNL Target] 文档中有关[配置企业权限](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/properties-overview.html)的指南。<br><br>可以在 Adobe Target UI 中的[!UICONTROL 设置] > [!UICONTROL 属性]下找到属性令牌。 |
 | [!UICONTROL Target 环境 ID] | [Adobe Target 中的环境](https://experienceleague.adobe.com/docs/target/using/administer/hosts.html)可帮助您在开发过程的所有阶段管理实施。此设置指定您将用于此数据流的环境。<br><br>最佳实践是为每个 `dev`、`stage` 和 `prod` 数据流环境进行不同设置，以简化操作。但是，如果您已定义 Adobe Target 环境，则可以使用这些环境。 |
-| [!UICONTROL Target 第三方 ID 命名空间] | 要用于此数据流的 `mbox3rdPartyId` 的标识命名空间。有关更多信息，请参阅有关[使用 Web SDK 实施 `mbox3rdPartyId`](../web-sdk/personalization/adobe-target/using-mbox-3rdpartyid.md) 的指南。 |
+| [!UICONTROL Target 第三方 ID 命名空间] | 要用于此数据流的 `mbox3rdPartyId` 的标识命名空间。如果您使用与Adobe Target的[!DNL Customer Attributes]集成，或使用`thirdPartyId`通过[Adobe Target配置文件API](https://experienceleague.adobe.com/en/docs/target-dev/developer/api/profile-apis/profiles-api)更新或创建配置文件，则必须提供您选择的命名空间值。 您必须在XDM架构的`IdentityMap`部分使用此命名空间来发送在客户属性文件上传或配置文件更新API调用中使用的`customerID`或`thirdPartyId`。  有关更多信息，请参阅有关[使用 Web SDK 实施 `mbox3rdPartyId`](../web-sdk/personalization/adobe-target/using-mbox-3rdpartyid.md) 的指南。 |
 | [!UICONTROL 属性令牌覆盖] | 在此部分中，您可以定义其他可用于覆盖默认属性令牌的属性。 |
 
 ### [!UICONTROL 事件转发]设置
