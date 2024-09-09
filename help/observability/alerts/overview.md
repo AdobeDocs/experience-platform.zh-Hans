@@ -4,10 +4,10 @@ title: 警报概述
 description: 了解 Adobe Experience Platform 中的警报，包括有关如何定义警报规则的结构。
 feature: Alerts
 exl-id: c38a93c6-1618-4ef9-8f94-41c7ab4af43c
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 829d7da1dc53486eba1cdceddb7888b578e1c137
 workflow-type: tm+mt
-source-wordcount: '797'
-ht-degree: 3%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->在非生产沙盒中不支持警报。 要订阅警报，您必须确保使用生产沙盒。 当沙盒重置时，所有订阅警报都将重置。 同样，删除沙盒时将擦除所有订阅警报。
+>由于警报在生产沙盒和开发沙盒中均受支持，因此您可以在任意沙盒中订阅警报。 重置沙盒时，也将重置所有订阅警报；删除沙盒时，将删除所有订阅警报。
 
 通过Adobe Experience Platform，可订阅有关Adobe Experience Platform活动的基于事件的警报。 警报可减少或消除轮询[[!DNL Observability Insights] API](../api/overview.md)以检查作业是否已完成、是否已达到工作流中的某个里程碑或是否已发生任何错误的需要。
 
