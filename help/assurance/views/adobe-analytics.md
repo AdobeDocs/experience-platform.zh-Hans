@@ -2,35 +2,70 @@
 title: Assurance 中的 Adobe Analytics 视图
 description: 本指南介绍如何将 Adobe Analytics 与 Adobe Experience Platform Assurance 配合使用。
 exl-id: e5cc72b0-d6d6-430b-9321-4835c1f77581
-source-git-commit: 515f58175a8ccba03581ce4d7faf23fdfed3571e
+source-git-commit: 66c9b8c1489b86b0b928fc37380f2187a7d237cf
 workflow-type: tm+mt
-source-wordcount: '394'
-ht-degree: 89%
+source-wordcount: '912'
+ht-degree: 17%
 
 ---
 
-# Assurance 中的 Adobe Analytics 视图
+# Assurance中的Adobe Analytics事件视图
 
->[!IMPORTANT]
->
->Analytics事件视图已合并到&#x200B;**Analytics Events 2.0 (Beta)插件**&#x200B;中。  它将在未来从“保证”中删除。 我们建议将&#x200B;**Analytics Events 2.0 (Beta)插件**&#x200B;用于针对保证会话的Analytics调试。
-
-Adobe Experience Platform Assurance 与 Adobe Analytics 集成为调试和验证其 Adobe Analytics 实施的用户提供一个内容更丰富的 SDK 事件视图。该视图现在显示从 [Adobe Experience Platform SDK](https://developer.adobe.com/client-sdks/documentation/adobe-analytics/) 发送到 Adobe Analytics 的生命周期和操作/状态事件。该视图还列举“响应”详细信息，其中提供在应用每个报表包的处理规则后如何处理事件的信息。
-
-![](./images/adobe-analytics/overview.png)
+Analytics事件为用户调试和验证其Adobe Analytics实施提供了更丰富的SDK事件视图。 该视图显示从[Adobe Experience PlatformEdge NetworkSDK](https://developer.adobe.com/client-sdks/edge/edge-network/)以及[Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/solution/adobe-analytics/)发送到Adobe Analytics的事件。 该视图还具有一个详细信息面板，用于提供有关客户端SDK和上游服务在事件离开设备后如何处理事件的上下文。
 
 ## 快速入门
 
-在继续之前，请确保您拥有以下服务：
+要使用此视图，请完成以下步骤：
 
-- [Adobe Experience Platform 数据收藏集 UI](https://experience.adobe.com/#/data-collection/)
-- [Adobe Experience Platform Assurance](https://experience.adobe.com/assurance)
+1. [设置Adobe Experience Platform保证](../tutorials/implement-assurance.md)。
+2. [创建并连接到保证会话](../tutorials/using-assurance.md)。
+3. 在左侧导航&#x200B;**主页**&#x200B;视图菜单的Assurance UI中，选择&#x200B;**Analytics事件**。 如果未看到此选项，请选择窗口左下角的&#x200B;**配置**，添加&#x200B;**Analytics事件**，然后选择&#x200B;**保存**。
 
-要了解如何在您的应用程序中安装 Assurance，请阅读[实施 Assurance 指南](../tutorials/implement-assurance.md)。
+## Analytics Edge视图
 
-## 后处理状态
+如果您使用的是&#x200B;**Edge Network**&#x200B;或&#x200B;**Edge Bridge**&#x200B;移动扩展，请使用Analytics Edge视图。 当激活右上角的“Analytics Edge视图”切换开关，显示当前会话中通过Edge网络发送的Analytics事件时，将启用此视图。 这包括生命周期扩展、Edge扩展和/或Edge Bridge扩展触发的所有事件。
 
-当 SDK 向 Adobe Analytics 提出网络请求后，该状态将告知 Assurance 是否曾经能够检索该 Adobe Analytics 请求的后处理信息。
+![显示切换到Analytics Edge视图的切换的图像。](./images/adobe-analytics/edge-analytics-view-toggle.png)
+
+Analytics Edge视图包含有关客户端调度的与Analytics相关的Edge事件和生命周期事件的信息。 通过在列表中选择事件，右侧的事件详细信息视图面板将显示客户端SDK和上游服务在它们离开设备后处理的事件。 这样，您就可以轻松查看由调用产生的事件链。
+
+![此图像演示了Edge Bridge方案的Analytics Edge视图中的各个组件。](./images/adobe-analytics/edgebridge-analytics-events.png)
+
+列表中的后处理&#x200B;**数据**&#x200B;事件用于确认该数据已成功处理并发送到Adobe Analytics。 如果此事件或任何处理过的数据缺失，用户可展开列表中的每个事件以查看详细的调试信息。
+
+### Analytics Edge事件详细信息视图
+
+对于Edge请求事件或Analytics跟踪事件，详细视图包含以下信息：
+
+* 事件详细信息：发起SDK边缘请求事件。
+* Edge Bridge请求：一个专门用于Edge Bridge扩展工作流程的事件。
+* 数据流：表示此会话的数据流的事件。
+* 接收的Edge点击：表示从Edge接收的点击。
+* 已处理的Edge点击：表示在Edge中处理的点击。
+* Analytics点击：表示从Analytics收到的点击。
+* Analytics映射：表示Analytics中的数据映射状态。
+* Analytics已响应：来自Analytics的响应状态。
+* 后处理数据：关于包含逆差、evar和prop映射的事件信息。
+
+### Analytics Edge验证
+
+通过Analytics Edge验证视图，可轻松查看与Analytics Edge会话相关的验证脚本的结果。 验证器显示的错误可能包含指向应修复错误的链接或显示处于错误状态的事件。
+
+![在Analytics Edge视图中显示“验证器”选项卡的图像。](./images/adobe-analytics/edge-analytics-validation-view.png)
+
+## Analytics事件视图
+
+如果您使用的是&#x200B;**Adobe Analytics**&#x200B;移动扩展，请使用Analytics事件视图。 通过此视图，您可以轻松查看从连接的客户端发送的Analytics事件，包括跟踪操作、跟踪状态和生命周期事件。 禁用右上方的“Analytics Edge视图”切换功能时，此视图处于活动状态。
+
+![显示切换到Analytics视图的切换的图像。](./images/adobe-analytics/direct-analytics-view-toggle-button.png)
+
+通过在事件表中选择某个Analytics事件，可以在右侧面板上查看有关如何处理该事件的详细信息。
+
+![展示Analytics事件视图中不同组件的图像。](./images/adobe-analytics/analytics-events.png)
+
+### 后处理状态
+
+在SDK通过Adobe Analytics发出网络请求后，状态将告知您保障是否能够检索Adobe Analytics请求的后处理信息。 在触发请求后，当后处理状态为操作状态时，Analytics事件视图必须保持活动状态。
 
 请注意，若要检索后处理信息，已登录的用户必须有权访问相应的报表包。
 
@@ -45,10 +80,16 @@ Adobe Experience Platform Assurance 与 Adobe Analytics 集成为调试和验证
 | `No Debug Flag` | 当前的 Adobe Analytics 或 Assurance SDK 版本可能不支持 Analytics 调试功能。有关详细信息，请阅读[故障排除指南](../troubleshooting.md)。 |
 | `Expired` | `AnalyticsTrack` 或 `LifecycleStart` 事件发生时间超过 24 小时。 |
 
-## 事件详细信息视图
+### 事件详细信息视图
 
-对于 Analytics 跟踪事件，详细视图包含以下几个有用的部分：
+对于Analytics跟踪事件，详细视图包含以下部分：
 
-- 原始 SDK Analytics 请求事件。
-- 来自该请求的 OOTB 元和上下文数据，例如报表包 ID、SDK 扩展版本、OOTB 上下文数据等。
-- 有关 Analytics 事件的后处理信息，其中包含 revar、evar、prop 等的映射。
+* 原始 SDK Analytics 请求事件。
+* 请求中的元和上下文数据，例如报表包ID、SDK扩展版本和上下文数据。
+* 有关Analytics事件的后处理信息，包含revar、evar和prop的映射。
+
+### Analytics视图验证
+
+验证视图可让您轻松查看与Analytics相关的验证脚本的结果。 验证器显示的错误可能包含指向应修复错误的链接或显示处于错误状态的事件。
+
+![显示Analytics视图中的“验证器”选项卡的图像。](./images/adobe-analytics/analytics-validation-view.png)
