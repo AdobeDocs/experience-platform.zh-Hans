@@ -3,10 +3,10 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 7d2fe8d5e5abea768b3514d97ea7edfbb9334511
 workflow-type: tm+mt
-source-wordcount: '3743'
-ht-degree: 6%
+source-wordcount: '4767'
+ht-degree: 5%
 
 ---
 
@@ -212,6 +212,90 @@ ht-degree: 6%
 现在添加了count函数。 现在，您可以选择计数函数和函数的值。 下面的示例将包括至少单击一次的任何事件。
 
 ![显示并高亮显示计数函数的列表。](../images/ui/segment-builder/select-count.png)
+
+### 时间限制 {#time-constraints}
+
+时间限制允许您对基于时间的属性、事件以及事件之间的序列应用时间限制。
+
+>[!IMPORTANT]
+>
+>如果您在2024年6月之前创建的区段定义具有“本月”或“今年”时间限制，则需要重新保存区段定义。 2024年6月之前，“本月”以30天为基准，而“今年”则以365天为基准。
+
+可用时间约束的列表如下：
+
++++ 可用时间限制
+
+>[!NOTE]
+>
+>所有时间约束都基于UTC。
+>
+>此外，如果启用了[!UICONTROL 忽略年份]复选框，则年份将&#x200B;**不会**&#x200B;作为区段定义评估的一部分进行比较。
+
+| 时间约束 | 描述 | 可以启用忽略年份 | 示例 |
+| --------------- | ----------- | ------------------- | ------- |
+| 今天 | 正在比较的属性或事件必须&#x200B;**发生在今天。** | 是 | ![正在使用的“今天”时间限制的示例。](../images/ui/segment-builder/time-constraints/today.png){width="100" zoomable="yes"} |
+| 昨天 | 进行比较的属性或事件必须&#x200B;**发生在昨天。** | 是 | ![正在使用的“昨天”时间约束的示例。](../images/ui/segment-builder/time-constraints/yesterday.png){width="100" zoomable="yes"} |
+| 本月 | 正在比较的属性或事件必须&#x200B;**发生在此日历月。** | 是 | ![正在使用的“本月”时间限制示例。](../images/ui/segment-builder/time-constraints/this-month.png){width="100" zoomable="yes"} |
+| 今年 | 正在比较的属性或事件必须&#x200B;**发生在此日历年。** | 否 | ![正在使用的“今年”时间限制的示例。](../images/ui/segment-builder/time-constraints/this-year.png){width="100" zoomable="yes"} |
+| 自定义日期 | 进行比较的属性或事件必须&#x200B;**在给定的日期发生。** | 是 | ![正在使用的“自定义日期”时间约束的示例。](../images/ui/segment-builder/time-constraints/custom-date.png){width="100" zoomable="yes"} |
+| 最近 | 进行比较的属性或事件必须&#x200B;**发生在最后选定的时间段内。**&#x200B;在评估时间之前，此时间段为&#x200B;**inclusive**。 | 否 | ![正在使用的“最近”时间约束的示例。](../images/ui/segment-builder/time-constraints/in-last.png){width="100" zoomable="yes"} |
+| 从（到） | 正在比较的属性或事件&#x200B;**必须**&#x200B;在选定的两个日历日期内发生。 此时间段是两个日期的&#x200B;**包含**。 | 是，如果为自定义日期 | ![正在使用的“从”到“的示例。](../images/ui/segment-builder/time-constraints/from-to.png){width="100" zoomable="yes"} |
+| 时段 | 进行比较的属性或事件必须&#x200B;**在选定的月份或年份内发生。**&#x200B;如果选择月份，则需要同时选择属性或事件发生所在的月份和年份。  如果选择年份，则只需选择属性或事件发生的年份。 如果选择月份，您还可以启用[!UICONTROL 忽略年份]复选框。 | 是 | ![正在使用的“During”时间约束的示例。](../images/ui/segment-builder/time-constraints/during.png){width="100" zoomable="yes"} |
+| 范围(+/-) | 进行比较的属性或事件必须&#x200B;**在选定日期后的天、周、月或年内发生。**&#x200B;此时间段是两个日期的&#x200B;**包含**。 所选日期可以是今天、昨天或您选择的其他自定义日期。 | 是 | ![正在使用的“Within”时间约束的示例。](../images/ui/segment-builder/time-constraints/within.png){width="100" zoomable="yes"} |
+| 早于 | 要比较的属性或事件必须&#x200B;**发生在所选日期之前。**&#x200B;所选日期可以是您选择的自定义日期，也可以是在天、周、月或年之前的选择。 | 是 | ![正在使用的“之前”时间约束的示例。](../images/ui/segment-builder/time-constraints/before.png){width="100" zoomable="yes"} |
+| 之后 | 要比较的属性或事件必须&#x200B;**发生在所选日期之后。**&#x200B;所选日期可以是您选择的自定义日期，也可以是在天、周、月或年之前的选择。 | 是 | ![正在使用的“After”时间约束的示例。](../images/ui/segment-builder/time-constraints/after.png){width="100" zoomable="yes"} |
+| 滚动范围 | 要比较的属性或事件必须出现在两个相对日期之间。 日期可以用秒、分钟、小时、天、周、月或年表示。 | 否 | ![正在使用的“滚动范围”时间约束的示例。](../images/ui/segment-builder/time-constraints/rolling-range.png){width="100" zoomable="yes"} |
+| 下一 | 要比较的属性或事件必须在所选的下一个时间段内发生。 选定的时间段包括分钟、小时、天、周、月和年。 | 否 | ![正在使用的“下次”时间约束的示例。](../images/ui/segment-builder/time-constraints/in-next.png){width="100" zoomable="yes"} |
+| 存在 | 属性存在。 | 否 | ![正在使用“存在”时间约束的示例。](../images/ui/segment-builder/time-constraints/exists.png){width="100" zoomable="yes"} |
+| 不存在 | 属性不存在。 | 否 | ![正在使用“不存在”时间约束的示例。](../images/ui/segment-builder/time-constraints/does-not-exist.png){width="100" zoomable="yes"} |
+
++++
+
+对事件应用时间限制时，可以在画布级别、卡片级别或事件之间应用该时间限制。
+
+#### 画布级别约束
+
+要应用画布级别的时间限制，请选择事件时间线上方显示的时钟图标。
+
+![画布级别的时间限制选择器已突出显示。](../images/ui/segment-builder/time-constraints/canvas-level.png)
+
+在画布级别应用时间限制时，这会将时间限制应用于受众中的&#x200B;**所有**&#x200B;事件。
+
+#### 卡片级别约束
+
+要应用卡片级别限制，请选择要应用时间限制的卡片，后跟省略号图标，然后&#x200B;**[!UICONTROL 应用时间规则]**。 这允许您在&#x200B;**[!UICONTROL 事件规则]**&#x200B;容器中选择时间限制。
+
+![卡片级别的时间限制选择器已突出显示。](../images/ui/segment-builder/time-constraints/card-level.png)
+
+当您在卡片级别应用时间限制时，这会将时间限制应用于受众中的&#x200B;**指定**&#x200B;事件。
+
+#### Between事件约束
+
+要在事件之间应用时间约束，请在要应用时间约束的两个事件之间选择时钟图标。
+
+![事件之间的时间限制选择器已突出显示。](../images/ui/segment-builder/time-constraints/between-event.png)
+
+在事件之间应用时间约束时，这会将时间约束应用于事件之间&#x200B;**的时间**。
+
+此操作的可用时间约束列表与主时间约束列表不同，如下所示：
+
++++ 可用时间限制
+
+| 时间约束 | 描述 |
+| --------------- | ----------- |
+| 之后 | 后一个事件&#x200B;**必须至少**&#x200B;发生在前一个事件之后。 |
+| 范围 | 两个事件&#x200B;**必须**&#x200B;发生在时间限制内列出的时间段内。 |
+
+>[!NOTE]
+>
+>当使用“晚于”时间限制时，后一个事件发生的时间可能超过在时间限制内列出的时间量。 >
+>例如，如果您有一个页面查看事件和一个签出事件，并在这两个事件之间放置了“1小时后”时间限制，则一个在页面查看事件发生2小时后具有签出事件的区段定义符合条件。
+>
+>此外，这两个时间约束可以相互协调使用。
+>
+>例如，如果您具有页面查看事件和签出事件，并且同时设置了“1小时后”和“24小时内”时间约束，则在“页面查看”事件发生12小时后具有签出事件的区段定义将符合条件，而在“页面查看”事件发生36小时后具有签出事件的区段定义将不符合条件。
+
++++
 
 ## 容器
 
