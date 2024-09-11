@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 访问控制概述
 description: Adobe Experience Platform的访问控制是通过Adobe Admin Console提供的。 此功能利用Admin Console中的产品配置文件，它将用户与权限和沙盒关联起来。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: 734a34e9acf80300c28ca14587198fb7eaf83c17
+source-git-commit: 5d5c57dfb9e4abda6b1bca96147a95d063bc17c6
 workflow-type: tm+mt
-source-wordcount: '1731'
+source-wordcount: '1787'
 ht-degree: 1%
 
 ---
@@ -116,7 +116,11 @@ Experience Platform附带两个预配置的默认角色。 下表概述了每个
 | [!DNL Identity Management] | [!UICONTROL 管理身份命名空间] | 读取、创建、编辑和删除身份命名空间的权限。 |
 | [!DNL Identity Management] | [!UICONTROL 查看身份命名空间] | 对身份命名空间的只读访问。 |
 | [!DNL Identity Management] | [!UICONTROL 查看身份图] | 对标识图的只读访问。 |
-| [!DNL Profile Management] | [!UICONTROL 管理配置文件] | 有权读取、创建、编辑和删除用于客户配置文件的数据集。 对可用配置文件的只读访问权限。 |
+| [!DNL Intelligent Services] | [!UICONTROL 查看Attribution AI] | 对Attribution AI设置和分析的只读访问权限。 |
+| [!DNL Intelligent Services] | [!UICONTROL 管理Attribution AI] | 有权读取、创建、编辑和删除Attribution AI模型。 |
+| [!DNL Intelligent Services] | [!UICONTROL 查看客户人工智能] | 访问读取或查看客户AI模型。 |
+| [!DNL Intelligent Services] | [!UICONTROL 管理客户人工智能] | 有权创建、更新、删除、启用或禁用Customer AI模型。 |
+| [!DNL Profile Management] | [!UICONTROL 管理配置文件] | 从多个来源摄取数据，为个别客户构建强大的配置文件，并将启用配置文件的数据存储在Data Lake和Real-Time Customer Profile数据存储中。 |
 | [!DNL Profile Management] | [!UICONTROL 查看配置文件] | 对可用配置文件的只读访问权限。 |
 | [!DNL Profile Management] | [!UICONTROL 管理区段] | 有权读取、创建、编辑和删除区段。 |
 | [!DNL Profile Management] | [!UICONTROL 查看区段] | 对可用区段的只读访问权限。 |
