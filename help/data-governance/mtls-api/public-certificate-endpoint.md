@@ -2,7 +2,8 @@
 title: 公共证书端点
 description: 了解如何使用MTLS服务API的/public-certificate端点检索公共证书。
 role: Developer
-source-git-commit: ce02c1a15d4e87c130de5e6133edda6b66cc2196
+exl-id: 8369c783-e595-476f-9546-801cf4f10f71
+source-git-commit: 754044621cdaf1445f809bceaa3e865261eb16f0
 workflow-type: tm+mt
 source-wordcount: '358'
 ht-degree: 2%
@@ -51,7 +52,7 @@ GET /v1/certificate/public-certificate
 +++示例请求
 
 ```shell
-curl -X GET https://experience.adobe.io/data/core/mtls/v1/certificate/public-certificate
+curl -X GET https://platform.adobe.io/data/core/mtls/v1/certificate/public-certificate
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json' \
  -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -111,4 +112,3 @@ curl -X GET https://experience.adobe.io/data/core/mtls/v1/certificate/public-cer
 <!-- To test this API call, navigate to the [MTLS API reference page]() to interact with the Experience Platform API endpoints. -->
 
 <!-- Add link after developer page is live -->
-
