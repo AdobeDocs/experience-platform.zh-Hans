@@ -7,7 +7,7 @@ exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
 source-git-commit: dedffe90e9107b70d4ddf65a7bf8079396ff8e8b
 workflow-type: tm+mt
 source-wordcount: '2641'
-ht-degree: 6%
+ht-degree: 12%
 
 ---
 
@@ -22,15 +22,15 @@ ht-degree: 6%
 >id="platform_dashboards_licenseUsage"
 >title="许可证用量仪表板"
 >abstract="通过许可证用量仪表板，可了解已购买的 Adobe Experience Platform 产品。该仪表板概述显示产品的主要量度，包括您对每个主要量度的用量以及您的合同许可证数量。详细信息工作区显示特定沙盒中每个产品的量度细分。"
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/profile/pseudonymous-profiles" text="假名配置文件数据过期"
+>additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
+>additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/profile/pseudonymous-profiles" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_licenseusage"
 >title="许可证用量仪表板"
 >abstract="通过许可证用量仪表板，可了解已购买的 Adobe Experience Platform 产品。该仪表板概述显示产品的主要量度，包括您对每个主要量度的用量以及您的合同许可证数量。详细信息工作区显示特定沙盒中每个产品的量度细分。"
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/profile/pseudonymous-profiles" text="假名配置文件数据过期"
+>additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
+>additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/profile/pseudonymous-profiles" text="假名轮廓数据过期"
 
 您可以通过Adobe Experience Platform [!UICONTROL 许可证使用情况]仪表板查看有关贵组织许可证使用情况的重要信息。 此处显示的信息是在Platform实例的每日快照期间捕获的。
 
@@ -79,21 +79,21 @@ ht-degree: 6%
 
 该表指示了每个产品的主要量度，因为每个产品都可以跟踪大量量度。
 
-### 预计使用情况 {#predicted-usage}
+### 预测使用量 {#predicted-usage}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseUsage_prediction"
->title="预计使用情况"
->abstract="预测基于过去6-7个月的使用情况，并在每月15日生成。 请注意，许可证使用量预测是基于过去使用量的近似值。 您有责任了解贵组织的实际使用情况，并确保使用情况不会超出贵组织许可的Adobe范围。 为了减少使用，您可以为沙盒和数据集配置数据集或假名配置文件数据过期时间。"
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/profile/pseudonymous-profiles" text="假名配置文件数据过期"
+>title="预测使用量"
+>abstract="预测基于过去 6-7 个月的使用情况，并在每个月的 15 日生成。请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解您组织的实际使用情况，并确保使用不超出您与 Adobe 的许可证范围。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名个人资料的数据到期设置。"
+>additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
+>additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/profile/pseudonymous-profiles" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_licenseusage_prediction"
->title="预计使用情况"
->abstract="预测基于过去6-7个月的使用情况，并在每月15日生成。 请注意，许可证使用量预测是基于过去使用量的近似值。 您有责任了解贵组织的实际使用情况，并确保使用情况不会超出贵组织许可的Adobe范围。 为了减少使用，您可以为沙盒和数据集配置数据集或假名配置文件数据过期时间。"
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/profile/pseudonymous-profiles" text="假名配置文件数据过期"
+>title="预测使用量"
+>abstract="预测基于过去 6-7 个月的使用情况，并在每个月的 15 日生成。请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解您组织的实际使用情况，并确保使用不超出您与 Adobe 的许可证范围。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名个人资料的数据到期设置。"
+>additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
+>additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/profile/pseudonymous-profiles" text="假名轮廓数据过期"
 
 根据深入的使用预测主动管理和优化您的许可资源。 [!UICONTROL 预测的使用量]列可以准确地预测您购买的所有产品在所有生产和开发沙盒中沙盒级别的未来许可证使用量。 此警报功能会根据您截至本日历月15日的使用情况，预测未来六周内的许可证使用情况。 预测提供有下限和上限。
 
@@ -109,7 +109,7 @@ ht-degree: 6%
 
 >[!NOTE]
 >
->请注意，许可证使用量预测是基于过去使用量的近似值。 您有责任了解贵组织的实际使用情况，并确保使用情况不会超出贵组织许可的Adobe范围。
+>请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解贵组织的实际使用情况，并确保使用情况不会超出贵组织许可的Adobe范围。
 
 ![预测使用列突出显示的平台产品的摘要视图。](../images/license-usage/summary-predicted-usage.png)
 

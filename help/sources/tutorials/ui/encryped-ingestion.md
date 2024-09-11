@@ -8,7 +8,7 @@ exl-id: 34aaf9b6-5c39-404b-a70a-5553a4db9cdb
 source-git-commit: b4545943abbb68d36a64935feb4466d075331504
 workflow-type: tm+mt
 source-wordcount: '617'
-ht-degree: 7%
+ht-degree: 13%
 
 ---
 
@@ -56,8 +56,8 @@ ht-degree: 7%
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_encrypted_encryptionKeyId"
->title="加密密钥ID"
->abstract="提供与用于加密源数据的加密密钥对应的加密密钥ID。"
+>title="加密密钥 ID"
+>abstract="提供与用于加密您的源数据的加密密钥相对应的加密密钥 ID。"
 
 * 在Platform UI中，导航到源工作区，然后从顶部标题中选择[!UICONTROL 键对]。
 * 此时您会进入一个页面，该页面显示组织中现有加密密钥对的列表。 本页提供有关给定密钥的标题、ID、类型、加密算法、到期和状态的信息。 要创建新的密钥对，请选择&#x200B;**[!UICONTROL 创建密钥]**。
@@ -67,8 +67,8 @@ ht-degree: 7%
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_encrypted_signVerificationKeyId"
->title="签名验证密钥ID"
->abstract="提供与已签名加密的源数据对应的签名验证密钥ID。"
+>title="签名验证密钥 ID"
+>abstract="提供与您的签名加密源数据相对应的签名验证密钥 ID。"
 
 ## 提取加密数据 {#ingest-encrypted-data}
 
