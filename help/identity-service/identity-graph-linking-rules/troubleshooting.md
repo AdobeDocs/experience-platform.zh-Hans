@@ -3,9 +3,9 @@ title: 身份图形链接规则疑难解答指南
 description: 了解如何解决身份图关联规则中的常见问题。
 badge: Beta 版
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: edda302a1f24c9991074c16fd9e770f2bf262b7c
+source-git-commit: 7104781435c0cf3891f7216797af4e873b9b37f9
 workflow-type: tm+mt
-source-wordcount: '3181'
+source-wordcount: '3226'
 ht-degree: 0%
 
 ---
@@ -333,6 +333,8 @@ ORDER BY timestamp desc
 
 ### 身份优化算法 {#identity-optimization-algorithm}
 
+请阅读本节以获取有关[标识优化算法](./identity-optimization-algorithm.md)的常见问题解答。
+
 #### 我的每个业务单元都有一个CRMID(B2C CRMID、B2B CRMID)，但我的所有配置文件中没有唯一的命名空间。 如果我将B2C CRMID和B2B CRMID标记为唯一，并启用我的身份设置，会出现什么情况？
 
 此方案不受支持。 因此，当用户使用其B2C CRMID登录，而另一个用户使用其B2B CRMID登录时，您可能会看到图形折叠。 有关详细信息，请阅读实施页面中有关[单一人员命名空间要求](./configuration.md#single-person-namespace-requirement)的部分。
@@ -367,6 +369,8 @@ ORDER BY timestamp desc
 
 ### 命名空间优先级
 
+请阅读本节以获取有关[命名空间优先级](./namespace-priority.md)的常见问题解答。
+
 #### 我已启用我的身份设置。 如果在启用设置后添加自定义命名空间，我的设置会发生什么情况？
 
 存在两个命名空间的“存储桶”：人员命名空间和设备/Cookie命名空间。 新创建的自定义命名空间在每个“存储段”中的优先级最低，因此这个新的自定义命名空间不会影响现有的数据摄取。
@@ -384,6 +388,8 @@ ORDER BY timestamp desc
 首先应用身份优化算法，保证人物实体的表达； 之后，如果图形尝试超过[标识图形护栏](../guardrails.md)（每个图形50个标识），则将应用此逻辑。 命名空间优先级不会影响50身份/图形护栏的删除逻辑。
 
 ### 测试
+
+有关测试和调试身份图关联规则中功能的常见问题解答，请阅读此部分。
 
 #### 我应该在开发沙盒环境中测试哪些场景？
 
