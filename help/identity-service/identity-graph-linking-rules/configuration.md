@@ -1,16 +1,16 @@
 ---
-title: 身份图链接规则配置指南
+title: 身份图链接规则的实施指南
 description: 了解在使用身份图链接规则配置实施数据时要遵循的建议步骤。
 badge: Beta 版
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 3d96e057123a4dd0b4f6f34a64a93c756b583c9b
+source-git-commit: cfa2cd91f523d80fd42cb6fd2ba17e6eb3eca609
 workflow-type: tm+mt
-source-wordcount: '1358'
+source-wordcount: '1361'
 ht-degree: 2%
 
 ---
 
-# 身份图链接规则配置指南
+# 身份图链接规则的实施指南
 
 >[!AVAILABILITY]
 >
@@ -102,7 +102,7 @@ Identity Service实施流程的第一步是，确保将您的Experience Platform
 
 请参阅此部分以了解在实施身份设置和唯一命名空间时可以参考的其他信息。
 
-### 共享设备方案 {#shared-device-scenario}
+### 单一人员命名空间要求 {#single-person-namespace-requirement}
 
 您必须确保在代表人员的所有配置文件中使用单个命名空间。 这样，Identity Service便可以检测给定图形中适当的人员标识符。
 

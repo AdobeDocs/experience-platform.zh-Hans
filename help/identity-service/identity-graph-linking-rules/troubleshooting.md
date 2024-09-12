@@ -3,9 +3,9 @@ title: 身份图形链接规则疑难解答指南
 description: 了解如何解决身份图关联规则中的常见问题。
 badge: Beta 版
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: 56e2e359812fcbfd011505ad917403d6f5317b4a
+source-git-commit: edda302a1f24c9991074c16fd9e770f2bf262b7c
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '3181'
 ht-degree: 0%
 
 ---
@@ -132,12 +132,42 @@ ht-degree: 0%
 * [配置文件](../../xdm/classes/experienceevent.md)上可能发生了验证失败。
    * 例如，体验事件必须同时包含`_id`和`timestamp`。
    * 此外，每个事件（记录）的`_id`必须是唯一的。
+* 优先级最高的命名空间是空字符串。
 
-在命名空间优先级上下文中，配置文件将拒绝任何包含两个或更多具有最高命名空间优先级的身份的事件。 例如，如果GAID未标记为唯一的命名空间，并且有两个同时具有GAID命名空间和不同的标识值的标识，则Profile将不存储任何事件。
+在命名空间优先级上下文中，配置文件将拒绝：
+
+* 包含两个或更多具有最高命名空间优先级的身份的任何事件。 例如，如果GAID未标记为唯一的命名空间，并且有两个同时具有GAID命名空间和不同的标识值的标识，则Profile将不存储任何事件。
+* 具有最高优先级的命名空间为空字符串的任何事件。
 
 **疑难解答步骤**
 
-要解决此错误，请阅读上述指南中概述的有关[有关未摄取到Identity服务的数据的错误疑难解答的步骤](#my-identities-are-not-getting-ingested-into-identity-service)。
+如果您的数据被发送到Data Lake，但未发送到Profile，并且您认为这是因为在单个事件中发送了两个或更多具有最高命名空间优先级的身份，则可以运行以下查询来验证是否针对同一命名空间发送了两个不同的身份值：
+
+>[!TIP]
+>
+>在以下查询中，您必须：
+>
+>* 将`_testimsorg.identification.core.email`替换为发送标识的路径。
+>* 将`Email`替换为具有最高优先级的命名空间。 这是未被摄取的相同命名空间。
+>* 将`dataset_name`替换为您要查询的数据集。
+
+```sql
+  SELECT identityMap, key, col.id as identityValue, _testimsorg.identification.core.email, _id, timestamp 
+  FROM (SELECT key, explode(value), * 
+  FROM (SELECT explode(identityMap), * 
+  FROM dataset_name)) WHERE col.id != _testimsorg.identification.core.email and key = 'Email' 
+```
+
+您还可以运行以下查询来检查对配置文件的摄取是否由于最高的命名空间具有空字符串而未发生：
+
+```sql
+  SELECT identityMap, key, col.id as identityValue, _testimsorg.identification.core.email, _id, timestamp 
+  FROM (SELECT key, explode(value), * 
+  FROM (SELECT explode(identityMap), * 
+  FROM dataset_name)) WHERE (col.id = '' or _testimsorg.identification.core.email = '') and key = 'Email' 
+```
+
+这两个查询假定一个身份从identityMap发送，而另一个身份从身份描述符发送。 **注意**：在Experience Data Model (XDM)架构中，身份描述符是标记为身份的字段。
 
 ### 我的体验事件片段已摄取，但在配置文件中具有“错误”的主要身份
 
@@ -296,3 +326,79 @@ ORDER BY timestamp desc
 >[!TIP]
 >
 >如果没有为共享设备临时方法启用沙盒，上面列出的两个查询将产生预期结果，并且其行为与标识图链接规则有所不同。
+
+## 常见问题解答 {#faq}
+
+本节概述了有关身份图关联规则的常见问题解答列表。
+
+### 身份优化算法 {#identity-optimization-algorithm}
+
+#### 我的每个业务单元都有一个CRMID(B2C CRMID、B2B CRMID)，但我的所有配置文件中没有唯一的命名空间。 如果我将B2C CRMID和B2B CRMID标记为唯一，并启用我的身份设置，会出现什么情况？
+
+此方案不受支持。 因此，当用户使用其B2C CRMID登录，而另一个用户使用其B2B CRMID登录时，您可能会看到图形折叠。 有关详细信息，请阅读实施页面中有关[单一人员命名空间要求](./configuration.md#single-person-namespace-requirement)的部分。
+
+#### 标识优化算法是否“修复”现有的折叠图？
+
+只有在保存新设置后更新现有折叠图形时，这些图形才会受图形算法影响（“固定”）。
+
+#### 如果两个用户使用同一设备登录和注销，则事件会发生什么情况？ 所有事件都将转移到最后一个经过身份验证的用户吗？
+
+* 匿名事件（在Real-Time Customer Profile上将ECID作为主标识的事件）将传输给最后一个经过身份验证的用户。 这是因为ECID将链接到最后一个经过身份验证的用户的CRMID（在Identity Service上）。
+* 所有已验证的事件（CRMID定义为主身份的事件）将保留在人员内。
+
+有关详细信息，请阅读有关[确定体验事件](../identity-graph-linking-rules/namespace-priority.md#real-time-customer-profile-primary-identity-determination-for-experience-events)的主要标识的指南。
+
+#### 当ECID从一个人转移到另一个人时，Adobe Journey Optimizer中的旅程会受到什么影响？
+
+上次通过身份验证的用户的CRMID将链接到ECID（共享设备）。 可以根据用户行为将ECID从一个人重新分配给另一个人。 影响将取决于历程的构建方式，因此客户在开发沙盒环境中测试历程以验证行为非常重要。
+
+要强调的要点如下：
+
+* 用户档案进入历程后，ECID重新分配不会导致用户档案在历程中间退出。
+   * 图形更改不会触发历程退出。
+* 如果配置文件不再与ECID关联，则当存在使用受众鉴别的条件时，这可能会导致更改历程路径。
+   * ECID删除可能会更改与用户档案关联的事件，这可能导致受众资格发生更改。
+* 历程的重新进入取决于历程属性。
+   * 如果禁用历程的重新进入，则一旦某个配置文件从该历程退出，则同一配置文件将在91天内不会重新进入（基于全局历程超时）。
+* 如果历程以ECID命名空间开始，则进入的用户档案和收到操作的用户档案(例如 电子邮件、选件)可能会有所不同，具体取决于旅程的设计方式。
+   * 例如，如果操作之间存在等待条件，并且在等待期间传输ECID，则可能会定向不同的配置文件。
+   * 利用此功能，ECID不再总是与一个配置文件关联。
+   * 建议使用人员命名空间(CRMID)开始历程。
+
+### 命名空间优先级
+
+#### 我已启用我的身份设置。 如果在启用设置后添加自定义命名空间，我的设置会发生什么情况？
+
+存在两个命名空间的“存储桶”：人员命名空间和设备/Cookie命名空间。 新创建的自定义命名空间在每个“存储段”中的优先级最低，因此这个新的自定义命名空间不会影响现有的数据摄取。
+
+#### 如果Real-time Customer Profile不再使用identityMap上的“primary”标记，是否仍需要发送此值？
+
+是，identityMap上的“主要”标志由其他服务使用。 有关详细信息，请阅读关于[命名空间优先级对其他Experience Platform服务的影响](../identity-graph-linking-rules/namespace-priority.md#implications-on-other-experience-platform-services)的指南。
+
+#### 命名空间优先级是否适用于实时客户配置文件中的配置文件记录数据集？
+
+不会。命名空间优先级将仅适用于使用XDM ExperienceEvent类的体验事件数据集。
+
+#### 此功能如何与每个图50个身份的身份图护栏一起使用？ 命名空间优先级是否会影响此系统定义的护栏？
+
+首先应用身份优化算法，保证人物实体的表达； 之后，如果图形尝试超过[标识图形护栏](../guardrails.md)（每个图形50个标识），则将应用此逻辑。 命名空间优先级不会影响50身份/图形护栏的删除逻辑。
+
+### 测试
+
+#### 我应该在开发沙盒环境中测试哪些场景？
+
+通常，在开发沙盒上测试应模拟您打算在生产沙盒上执行的用例。 在执行全面测试时，请参阅下表以了解要验证的一些关键方面：
+
+| 测试用例 | 测试步骤 | 预期结果 |
+| --- | --- | --- |
+| 准确的人员实体表示 | <ul><li>模拟匿名浏览</li><li>模拟两个人(John、Jane)使用同一设备登录</li></ul> | <ul><li>John和Jane都应该与其属性和经过身份验证的事件相关联。</li><li>应将上次经过身份验证的用户与匿名浏览事件关联。</li></ul> |
+| 区段 | 创建四个区段定义（**注意**：每对区段定义应该使用批处理评估一个，使用另一个流评估。） <ul><li>区段定义A：基于John的已验证事件的区段鉴别。</li><li>区段定义B：基于Jane的已验证事件的区段鉴别。</li></ul> | 无论共享设备情况如何，John和Jane都应始终符合各自区段的条件。 |
+| Adobe Journey Optimizer上的受众资格/单一历程 | <ul><li>创建以受众资格活动（如上面创建的流分段）开始的历程。</li><li>创建以单一事件开始的历程。 此单一事件应为经过身份验证的事件。</li><li>创建这些历程时，必须禁用重新进入。</li></ul> | <ul><li>无论共享设备情况如何，John和Jane都应触发他们应输入的相应历程。</li><li>当ECID传回给John和Jane后，他们不应重新进入历程。</li></ul> |
+
+{style="table-layout:auto"}
+
+#### 如何验证此功能是否按预期工作？
+
+使用[图形模拟工具](./graph-simulation.md)验证该功能是否在单个图形级别工作。
+
+要在沙盒级别验证该功能，请参阅身份仪表板中的[!UICONTROL 具有多个命名空间的Graph计数]部分。

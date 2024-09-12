@@ -5,10 +5,10 @@ breadcrumb-title: Platform Identity Service 指南
 user-guide-description: 跨设备和系统建立客户身份桥梁，以提供个性化的数字体验。
 feature: Identities
 role: Admin,Developer
-source-git-commit: 16d29811715805e2f297836bf266c854db45d4c6
+source-git-commit: cfa2cd91f523d80fd42cb6fd2ba17e6eb3eca609
 workflow-type: tm+mt
-source-wordcount: '143'
-ht-degree: 28%
+source-wordcount: '149'
+ht-degree: 26%
 
 ---
 
@@ -24,14 +24,14 @@ ht-degree: 28%
    - [Identity Service中的删除](./features/deletion.md)
    - 身份图链接规则{#identity-graph-linking-rules}
       - [功能概述](./identity-graph-linking-rules/overview.md)
-      - [配置指南](./identity-graph-linking-rules/configuration.md)
       - [身份优化算法](./identity-graph-linking-rules/identity-optimization-algorithm.md)
-      - [命名空间优先级](./identity-graph-linking-rules/namespace-priority.md)
-      - [图形模拟UI](./identity-graph-linking-rules/graph-simulation.md)
-      - [标识设置](./identity-graph-linking-rules/identity-settings-ui.md)
-      - [示例客户方案](./identity-graph-linking-rules/example-scenarios.md)
+      - [身份图链接规则的实施指南](./identity-graph-linking-rules/configuration.md)
       - [示例图形配置](./identity-graph-linking-rules/example-configurations.md)
       - [身份图链接规则疑难解答](./identity-graph-linking-rules/troubleshooting.md)
+      - [命名空间优先级](./identity-graph-linking-rules/namespace-priority.md)
+      - [图形模拟UI](./identity-graph-linking-rules/graph-simulation.md)
+      - [身份设置UI](./identity-graph-linking-rules/identity-settings-ui.md)
+      - [示例客户方案](./identity-graph-linking-rules/example-scenarios.md)
    - [ECID概述](./features/ecid.md)
 - [实施指南](implementation.md)
 - [身份数据的护栏](guardrails.md)
