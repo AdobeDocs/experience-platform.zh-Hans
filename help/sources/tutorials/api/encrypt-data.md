@@ -2,9 +2,9 @@
 title: 加密的数据摄取
 description: 了解如何使用API通过云存储批处理源摄取加密文件。
 exl-id: 83a7a154-4f55-4bf0-bfef-594d5d50f460
-source-git-commit: adb48b898c85561efb2d96b714ed98a0e3e4ea9b
+source-git-commit: 9a5599473f874d86e2b3c8449d1f4d0cf54b672c
 workflow-type: tm+mt
-source-wordcount: '1736'
+source-wordcount: '1806'
 ht-degree: 3%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 3%
 
 加密数据摄取过程如下：
 
-1. [使用Experience PlatformAPI创建加密密钥对](#create-encryption-key-pair)。 加密密钥对由私钥和公钥组成。 创建后，您可以复制或下载公钥及其对应的公钥ID和到期时间。 在此过程中，私钥将通过Experience Platform存储在安全保险库中。 **注意：**&#x200B;响应中的公钥采用Base64编码，必须在使用之前解密。
+1. [使用Experience PlatformAPI创建加密密钥对](#create-encryption-key-pair)。 加密密钥对由私钥和公钥组成。 创建后，您可以复制或下载公钥及其对应的公钥ID和到期时间。 在此过程中，私钥将通过Experience Platform存储在安全保险库中。 **注意：**&#x200B;响应中的公钥采用Base64编码，必须在使用之前进行解码。
 2. 使用公钥加密要摄取的数据文件。
 3. 将加密文件放入云存储中。
 4. 加密文件准备就绪后，[为您的云存储源](#create-a-dataflow-for-encrypted-data)创建源连接和数据流。 在流创建步骤中，必须提供`encryption`参数并包含公钥ID。
@@ -64,6 +64,10 @@ ht-degree: 3%
 
 ## 创建加密密钥对 {#create-encryption-key-pair}
 
+>[!IMPORTANT]
+>
+>加密密钥特定于给定的沙盒。 因此，如果您希望将加密数据摄取到组织内其他沙盒中，则必须创建新的加密密钥。
+
 将加密数据提取到Experience Platform的第一步是通过向[!DNL Connectors] API的`/encryption/keys`端点发出POST请求来创建加密密钥对。
 
 **API格式**
@@ -87,6 +91,7 @@ curl -X POST \
   -H 'x-sandbox-name: {{SANDBOX_NAME}}' \
   -H 'Content-Type: application/json' 
   -d '{
+      "name": "acme-encryption",
       "encryptionAlgorithm": "PGP",
       "params": {
           "passPhrase": "{{PASSPHRASE}}"
@@ -96,6 +101,7 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --- | --- |
+| `name` | 加密密钥对的名称。 |
 | `encryptionAlgorithm` | 正在使用的加密算法类型。 支持的加密类型为`PGP`和`GPG`。 |
 | `params.passPhrase` | 密码短语为加密密钥提供了额外的保护层。 创建后，Experience Platform将该密码短语存储在与公钥不同的安全电子仓库中。 您必须提供非空字符串作为密码短语。 |
 
@@ -153,13 +159,15 @@ curl -X GET \
 
 +++查看示例响应
 
-成功的响应将返回您的加密算法、公共密钥、公共密钥ID以及相应的密钥到期时间。
+成功的响应将返回加密算法、名称、公共密钥、公共密钥ID、密钥类型以及相应的密钥到期时间。
 
 ```json
 {
     "encryptionAlgorithm": "{ENCRYPTION_ALGORITHM}",
+    "name": "{NAME}",
     "publicKeyId": "{PUBLIC_KEY_ID}",
     "publicKey": "{PUBLIC_KEY}",
+    "keyType": "{KEY_TYPE}",
     "expiryTime": "{EXPIRY_TIME}"
 }
 ```
@@ -194,13 +202,15 @@ curl -X GET \
 
 +++查看示例响应
 
-成功的响应将返回您的加密算法、公共密钥、公共密钥ID以及相应的密钥到期时间。
+成功的响应将返回加密算法、名称、公共密钥、公共密钥ID、密钥类型以及相应的密钥到期时间。
 
 ```json
 {
     "encryptionAlgorithm": "{ENCRYPTION_ALGORITHM}",
+    "name": "{NAME}",
     "publicKeyId": "{PUBLIC_KEY_ID}",
     "publicKey": "{PUBLIC_KEY}",
+    "keyType": "{KEY_TYPE}",
     "expiryTime": "{EXPIRY_TIME}"
 }
 ```
@@ -236,8 +246,12 @@ curl -X POST \
   -H 'x-sandbox-name: {{SANDBOX_NAME}}' \
   -H 'Content-Type: application/json' 
   -d '{
+      "name": "acme-sign-verification-keys"
       "encryptionAlgorithm": {{ENCRYPTION_ALGORITHM}},       
-      "publicKey": {{BASE_64_ENCODED_PUBLIC_KEY}}
+      "publicKey": {{BASE_64_ENCODED_PUBLIC_KEY}},
+      "params": {
+          "passPhrase": {{PASS_PHRASE}}
+      }
     }'
 ```
 
@@ -261,6 +275,48 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `publicKeyId` | 作为与Experience Platform共享您的客户管理的密钥的响应，将返回此公钥ID。 在为签名和加密数据创建数据流时，您可以提供此公钥ID作为签名验证密钥ID。 |
+
++++
+
+### 检索客户管理的密钥对
+
+要检索您的客户托管密钥，请向`/customer-keys`端点发出GET请求。
+
+**API格式**
+
+```http
+GET /data/foundation/connectors/encryption/customer-keys
+```
+
+**请求**
+
++++查看示例请求
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/connectors/encryption/customer-keys' \
+  -H 'Authorization: Bearer {{ACCESS_TOKEN}}' \
+  -H 'x-api-key: {{API_KEY}}' \
+  -H 'x-gw-ims-org-id: {{ORG_ID}}' \
+```
+
++++
+
+**响应**
+
++++查看示例响应
+
+```json
+[
+    {
+        "encryptionAlgorithm": "{ENCRYPTION_ALGORITHM}",
+        "name": "{NAME}",
+        "publicKeyId": "{PUBLIC_KEY_ID}",
+        "publicKey": "{PUBLIC_KEY}",
+        "keyType": "{KEY_TYPE}",
+    }
+]
+```
 
 +++
 
