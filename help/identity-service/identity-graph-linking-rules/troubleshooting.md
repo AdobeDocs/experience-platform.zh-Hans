@@ -3,7 +3,7 @@ title: 身份图形链接规则疑难解答指南
 description: 了解如何解决身份图关联规则中的常见问题。
 badge: Beta 版
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: 7104781435c0cf3891f7216797af4e873b9b37f9
+source-git-commit: 6cdb622e76e953c42b58363c98268a7c46c98c99
 workflow-type: tm+mt
 source-wordcount: '3226'
 ht-degree: 0%
@@ -176,7 +176,7 @@ ht-degree: 0%
 * 配置并保存给定沙盒的[身份设置](./identity-settings-ui.md)后，配置文件将使用[命名空间优先级](namespace-priority.md#real-time-customer-profile-primary-identity-determination-for-experience-events)确定主要身份。 在使用identityMap时，配置文件将不再使用`primary=true`标志。
 * 虽然配置文件将不再引用此标志，但Experience Platform上的其他服务可能会继续使用`primary=true`标志。
 
-为了将[经过身份验证的用户事件](configuration.md#ingest-your-data)绑定到人员命名空间，所有经过身份验证的事件都必须包含人员命名空间(CRMID)。 这意味着即使用户登录后，人员命名空间仍必须存在于每个已验证的事件中。
+为了将[经过身份验证的用户事件](implementation-guide.md#ingest-your-data)绑定到人员命名空间，所有经过身份验证的事件都必须包含人员命名空间(CRMID)。 这意味着即使用户登录后，人员命名空间仍必须存在于每个已验证的事件中。
 
 在配置文件查看器中查找配置文件时，您可能会继续看到`primary=true`个“事件”标记。 但是，这将被忽略并且不会被配置文件使用。
 
@@ -272,9 +272,9 @@ ORDER BY timestamp desc
 请参阅有关[标识优化算法](./identity-optimization-algorithm.md)的文档，以及支持的图形结构类型。
 
 * 有关支持的图形结构的示例，请阅读[图形配置指南](./example-configurations.md)。
-* 您还可以阅读[实施指南](./configuration.md#appendix)以了解不支持的图形结构的示例。 有两种情况可能会发生：
+* 您还可以阅读[实施指南](./implementation-guide.md#appendix)以了解不支持的图形结构的示例。 有两种情况可能会发生：
    * 您的所有配置文件中没有单个命名空间。
-   * 出现[“挂起ID”](./configuration.md#dangling-loginid-scenario)方案。 在此方案中，Identity Service无法确定挂起ID是否与图形中的任何人员实体相关联。
+   * 出现[“挂起ID”](./implementation-guide.md#dangling-loginid-scenario)方案。 在此方案中，Identity Service无法确定挂起ID是否与图形中的任何人员实体相关联。
 
 您还可以使用UI](./graph-simulation.md)中的[图形模拟工具来模拟事件并配置您自己的唯一命名空间和命名空间优先级设置。 这样做有助于您基本了解身份优化算法的行为。
 
@@ -331,26 +331,26 @@ ORDER BY timestamp desc
 
 本节概述了有关身份图关联规则的常见问题解答列表。
 
-### 身份优化算法 {#identity-optimization-algorithm}
+## 身份优化算法 {#identity-optimization-algorithm}
 
 请阅读本节以获取有关[标识优化算法](./identity-optimization-algorithm.md)的常见问题解答。
 
-#### 我的每个业务单元都有一个CRMID(B2C CRMID、B2B CRMID)，但我的所有配置文件中没有唯一的命名空间。 如果我将B2C CRMID和B2B CRMID标记为唯一，并启用我的身份设置，会出现什么情况？
+### 我的每个业务单元都有一个CRMID(B2C CRMID、B2B CRMID)，但我的所有配置文件中没有唯一的命名空间。 如果我将B2C CRMID和B2B CRMID标记为唯一，并启用我的身份设置，会出现什么情况？
 
-此方案不受支持。 因此，当用户使用其B2C CRMID登录，而另一个用户使用其B2B CRMID登录时，您可能会看到图形折叠。 有关详细信息，请阅读实施页面中有关[单一人员命名空间要求](./configuration.md#single-person-namespace-requirement)的部分。
+此方案不受支持。 因此，当用户使用其B2C CRMID登录，而另一个用户使用其B2B CRMID登录时，您可能会看到图形折叠。 有关详细信息，请阅读实施页面中有关[单一人员命名空间要求](./implementation-guide.md#single-person-namespace-requirement)的部分。
 
-#### 标识优化算法是否“修复”现有的折叠图？
+### 标识优化算法是否“修复”现有的折叠图？
 
 只有在保存新设置后更新现有折叠图形时，这些图形才会受图形算法影响（“固定”）。
 
-#### 如果两个用户使用同一设备登录和注销，则事件会发生什么情况？ 所有事件都将转移到最后一个经过身份验证的用户吗？
+### 如果两个用户使用同一设备登录和注销，则事件会发生什么情况？ 所有事件都将转移到最后一个经过身份验证的用户吗？
 
 * 匿名事件（在Real-Time Customer Profile上将ECID作为主标识的事件）将传输给最后一个经过身份验证的用户。 这是因为ECID将链接到最后一个经过身份验证的用户的CRMID（在Identity Service上）。
 * 所有已验证的事件（CRMID定义为主身份的事件）将保留在人员内。
 
 有关详细信息，请阅读有关[确定体验事件](../identity-graph-linking-rules/namespace-priority.md#real-time-customer-profile-primary-identity-determination-for-experience-events)的主要标识的指南。
 
-#### 当ECID从一个人转移到另一个人时，Adobe Journey Optimizer中的旅程会受到什么影响？
+### 当ECID从一个人转移到另一个人时，Adobe Journey Optimizer中的旅程会受到什么影响？
 
 上次通过身份验证的用户的CRMID将链接到ECID（共享设备）。 可以根据用户行为将ECID从一个人重新分配给另一个人。 影响将取决于历程的构建方式，因此客户在开发沙盒环境中测试历程以验证行为非常重要。
 
@@ -367,31 +367,31 @@ ORDER BY timestamp desc
    * 利用此功能，ECID不再总是与一个配置文件关联。
    * 建议使用人员命名空间(CRMID)开始历程。
 
-### 命名空间优先级
+## 命名空间优先级
 
 请阅读本节以获取有关[命名空间优先级](./namespace-priority.md)的常见问题解答。
 
-#### 我已启用我的身份设置。 如果在启用设置后添加自定义命名空间，我的设置会发生什么情况？
+### 我已启用我的身份设置。 如果在启用设置后添加自定义命名空间，我的设置会发生什么情况？
 
 存在两个命名空间的“存储桶”：人员命名空间和设备/Cookie命名空间。 新创建的自定义命名空间在每个“存储段”中的优先级最低，因此这个新的自定义命名空间不会影响现有的数据摄取。
 
-#### 如果Real-time Customer Profile不再使用identityMap上的“primary”标记，是否仍需要发送此值？
+### 如果Real-time Customer Profile不再使用identityMap上的“primary”标记，是否仍需要发送此值？
 
 是，identityMap上的“主要”标志由其他服务使用。 有关详细信息，请阅读关于[命名空间优先级对其他Experience Platform服务的影响](../identity-graph-linking-rules/namespace-priority.md#implications-on-other-experience-platform-services)的指南。
 
-#### 命名空间优先级是否适用于实时客户配置文件中的配置文件记录数据集？
+### 命名空间优先级是否适用于实时客户配置文件中的配置文件记录数据集？
 
 不会。命名空间优先级将仅适用于使用XDM ExperienceEvent类的体验事件数据集。
 
-#### 此功能如何与每个图50个身份的身份图护栏一起使用？ 命名空间优先级是否会影响此系统定义的护栏？
+### 此功能如何与每个图50个身份的身份图护栏一起使用？ 命名空间优先级是否会影响此系统定义的护栏？
 
 首先应用身份优化算法，保证人物实体的表达； 之后，如果图形尝试超过[标识图形护栏](../guardrails.md)（每个图形50个标识），则将应用此逻辑。 命名空间优先级不会影响50身份/图形护栏的删除逻辑。
 
-### 测试
+## 测试
 
 有关测试和调试身份图关联规则中功能的常见问题解答，请阅读此部分。
 
-#### 我应该在开发沙盒环境中测试哪些场景？
+### 我应该在开发沙盒环境中测试哪些场景？
 
 通常，在开发沙盒上测试应模拟您打算在生产沙盒上执行的用例。 在执行全面测试时，请参阅下表以了解要验证的一些关键方面：
 
@@ -403,7 +403,7 @@ ORDER BY timestamp desc
 
 {style="table-layout:auto"}
 
-#### 如何验证此功能是否按预期工作？
+### 如何验证此功能是否按预期工作？
 
 使用[图形模拟工具](./graph-simulation.md)验证该功能是否在单个图形级别工作。
 

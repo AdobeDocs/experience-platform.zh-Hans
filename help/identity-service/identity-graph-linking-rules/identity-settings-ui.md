@@ -3,9 +3,9 @@ title: 身份设置UI
 description: 了解如何使用身份设置用户界面。
 badge: Beta 版
 exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
-source-git-commit: 04b04807196bb5902e398403612429eae0de3988
+source-git-commit: 6cdb622e76e953c42b58363c98268a7c46c98c99
 workflow-type: tm+mt
-source-wordcount: '529'
+source-wordcount: '539'
 ht-degree: 0%
 
 ---
@@ -24,8 +24,10 @@ ht-degree: 0%
 
 在开始使用标识设置之前，请阅读以下文档：
 
-* [身份图链接规则配置指南](./configuration.md)
+* [身份图链接规则](./overview.md)
 * [身份优化算法](./identity-optimization-algorithm.md)
+* [实施指南](./implementation-guide.md)
+* [图形配置示例](./example-configurations.md)
 * [命名空间优先级](./namespace-priority.md)
 * [图形模拟](./graph-simulation.md)
 
@@ -61,4 +63,12 @@ ht-degree: 0%
 
 ## 后续步骤
 
-现在，您已配置命名空间优先级，并使用身份设置UI页面指定了唯一的命名空间。 有关详细信息，请阅读[标识图链接规则概述](./overview.md)。
+有关身份图链接规则的更多信息，请阅读以下文档：
+
+* [身份图链接规则概述](./overview.md)
+* [身份优化算法](./identity-optimization-algorithm.md)
+* [实施指南](./implementation-guide.md)
+* [图形配置示例](./example-configurations.md)
+* [疑难解答和常见问题](./troubleshooting.md)
+* [命名空间优先级](./namespace-priority.md)
+* [图形模拟UI](./graph-simulation.md)

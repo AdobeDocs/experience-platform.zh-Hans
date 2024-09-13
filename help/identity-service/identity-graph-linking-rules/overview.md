@@ -1,11 +1,11 @@
 ---
-title: 身份图链接规则概述
-description: 了解Identity Service中的Identity Graph链接规则。
+title: 身份图链接规则
+description: 了解Identity Service中的身份图链接规则。
 badge: Beta 版
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
+source-git-commit: 1ea840e2c6c44d5d5080e0a034fcdab4cbdc87f1
 workflow-type: tm+mt
-source-wordcount: '1170'
+source-wordcount: '1581'
 ht-degree: 1%
 
 ---
@@ -16,17 +16,19 @@ ht-degree: 1%
 >
 >标识图链接规则当前处于测试阶段。 有关参与标准的信息，请与您的Adobe客户团队联系。 该功能和文档可能会发生更改。
 
-## 目录
+通过Adobe Experience Platform Identity服务和实时客户个人资料，可以轻松假设您的数据被完全摄取，并且所有合并的个人资料都通过人员标识符（如CRMID）表示单个个人。 但是，在某些情况下，某些数据可能会尝试将多个不同的配置文件合并到单个配置文件中（“图形折叠”）。 要防止这些不需要的合并，您可以使用通过身份图链接规则提供的配置，并允许对用户进行准确的个性化。
 
-* [概述](./overview.md)
+## 快速入门
+
+以下文档对于了解身份图关联规则至关重要。
+
 * [身份优化算法](./identity-optimization-algorithm.md)
+* [实施指南](./implementation-guide.md)
+* [图形配置示例](./example-configurations.md)
+* [疑难解答和常见问题](./troubleshooting.md)
 * [命名空间优先级](./namespace-priority.md)
 * [图形模拟UI](./graph-simulation.md)
 * [身份设置UI](./identity-settings-ui.md)
-* [示例图形配置](./configuration.md)
-* [示例场景](./example-scenarios.md)
-
-通过Adobe Experience Platform Identity服务和实时客户个人资料，可以轻松假设您的数据被完全摄取，并且所有合并的个人资料都通过人员标识符（如CRMID）表示单个个人。 但是，在某些情况下，某些数据可能会尝试将多个不同的配置文件合并到单个配置文件中（“图形折叠”）。 要防止这些不需要的合并，您可以使用通过身份图链接规则提供的配置，并允许对用户进行准确的个性化。
 
 ## 可能发生图形折叠的示例方案
 
@@ -34,7 +36,7 @@ ht-degree: 1%
 * **电子邮件和电话号码错误**：电子邮件和电话号码错误是指最终用户注册无效的联系人信息，例如，“test<span>@test.com”代表电子邮件，“+1-111-111-1111”代表电话号码。
 * **标识值错误或错误**：标识值错误或错误是指可以合并CRMID的非唯一标识值。 例如，虽然IDFA要求具有36个字符（32个字母数字字符和4个连字符），但在某些情况下，可以摄取标识值为“user_null”的IDFA。 同样，电话号码仅支持数字字符，但可能会摄取标识值为“未指定”的电话命名空间。
 
-有关身份图形链接规则用例方案的详细信息，请阅读有关[示例方案](./example-scenarios.md)的文档。
+有关标识图链接规则用例方案的详细信息，请阅读有关[示例方案](#example-scenarios)的部分。
 
 ## 身份图链接规则 {#identity-graph-linking-rules}
 
@@ -94,10 +96,63 @@ ht-degree: 1%
 
 有关详细信息，请阅读有关[命名空间优先级](./namespace-priority.md)的指南。
 
+## 通过标识图链接规则解决的客户场景示例 {#example-scenarios}
+
+本节概述了配置身份图链接规则时可以考虑的示例场景。
+
+### 共享设备
+
+在某些情况下，单个设备可能会发生多次登录：
+
+| 共享设备 | 描述 |
+| --- | --- |
+| 家用计算机和平板电脑 | 丈夫和妻子均登录各自的银行账户。 |
+| 公共信息亭 | 在机场登机的旅客使用他们的忠诚身份证登记签到行李并打印登机牌。 |
+| 呼叫中心 | 呼叫中心人员代表致电客户支持以解决问题的客户在单个设备上登录。 |
+
+![一些常用共享设备的图表。](../images/identity-settings/shared-devices.png)
+
+在这些情况下，从图形的角度来看，未启用任何限制，单个ECID将链接到多个CRMID。
+
+利用身份图链接规则，您可以：
+
+* 配置用于作为唯一标识符登录的ID。 例如，您可以限制图形仅存储一个具有CRMID命名空间的身份，从而将CRMID定义为共享设备的唯一标识符。
+   * 通过这样做，您可以确保ECID不会合并CRMID。
+
+### 电子邮件/电话方案无效
+
+还有一些用户在注册时提供虚假值作为电话号码和/或电子邮件地址的实例。 在这些情况下，如果未启用限制，则电话/电子邮件相关的身份最终会链接到多个不同的CRMID。
+
+![表示无效电子邮件或电话方案的图表。](../images/identity-settings/invalid-email-phone.png)
+
+利用身份图链接规则，您可以：
+
+* 将CRMID、电话号码或电子邮件地址配置为唯一标识符，因此将一个人限制为只能有一个与其帐户关联的CRMID、电话号码和/或电子邮件地址。
+
+### 标识值错误或错误
+
+在某些情况下，会在系统中摄取非唯一、错误的标识值，而不管命名空间如何。 示例包括：
+
+* 标识值为“user_null”的IDFA命名空间。
+   * IDFA标识值应包含36个字符：32个字母数字字符和4个连字符。
+* 标识值为“未指定”的电话号码命名空间。
+   * 电话号码不应包含任何字母字符。
+
+这些标识可能会导致以下图表，其中多个CRMID与“坏”标识合并：
+
+![具有错误或错误标识值的标识数据的图形示例。](../images/identity-settings/bad-data.png)
+
+借助身份图链接规则，您可以将CRMID配置为唯一标识符，以防止由于此类数据而造成不需要的用户档案折叠。
+
+
 ## 后续步骤
 
 有关身份图链接规则的更多信息，请阅读以下文档：
 
-* [标识优化算法](./identity-optimization-algorithm.md)。
-* [命名空间优先级](./namespace-priority.md)。
-* [配置身份图形链接规则的示例方案](./example-scenarios.md)。
+* [身份优化算法](./identity-optimization-algorithm.md)
+* [实施指南](./implementation-guide.md)
+* [图形配置示例](./example-configurations.md)
+* [疑难解答和常见问题](./troubleshooting.md)
+* [命名空间优先级](./namespace-priority.md)
+* [图形模拟UI](./graph-simulation.md)
+* [身份设置UI](./identity-settings-ui.md)

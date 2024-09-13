@@ -1,15 +1,16 @@
 ---
-title: Graph配置指南
+title: Graph配置示例
 description: 了解在使用身份图形链接规则和身份数据时可能遇到的常见图形场景。
 badge: Beta 版
-source-git-commit: 90faa4079d8a58898774c1fbbae2adae01f7e0a2
+exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
+source-git-commit: 1ea840e2c6c44d5d5080e0a034fcdab4cbdc87f1
 workflow-type: tm+mt
-source-wordcount: '2749'
+source-wordcount: '2786'
 ht-degree: 6%
 
 ---
 
-# Graph配置指南
+# 图形配置示例
 
 >[!AVAILABILITY]
 >
@@ -19,6 +20,7 @@ ht-degree: 6%
 >
 >* “CRMID”和“loginID”是自定义命名空间。 在本文档中，“CRMID”是人员标识符，“loginID”是与给定人员关联的登录标识符。
 >* 要模拟本文档中概述的示例图形场景，您必须首先创建两个自定义命名空间，一个具有身份符号“CRMID”，另一个具有身份符号“loginID”。 标识符号区分大小写。
+
 
 本文档概述了图形配置示例，其中包含您在使用身份图形链接规则和身份数据时可能遇到的常见场景。
 
@@ -478,7 +480,7 @@ loginID: ID_C, ECID: 111
 
 | 使用的命名空间 | Web行为收集方法 |
 | --- | --- |
-| CRMID、Email_LC_SHA256、Phone_SHA256、loginID、ECID | Adobe Analytics源连接器。<br> **注意：**&#x200B;默认情况下，Identity Service中会阻止AAID，因此，在使用Analytics源时，您必须将ECID置于比AAID更高的优先级。 有关详细信息，请阅读[实施指南](configuration.md#ingest-your-data)。</br> |
+| CRMID、Email_LC_SHA256、Phone_SHA256、loginID、ECID | Adobe Analytics源连接器。<br> **注意：**&#x200B;默认情况下，Identity Service中会阻止AAID，因此，在使用Analytics源时，您必须将ECID置于比AAID更高的优先级。 有关详细信息，请阅读[实施指南](./implementation-guide.md#ingest-your-data)。</br> |
 
 **事件：**
 
@@ -756,3 +758,15 @@ CRMID: Tom, ECID: 111
 ```
 
 >[!ENDTABS]
+
+## 后续步骤
+
+有关身份图链接规则的更多信息，请阅读以下文档：
+
+* [身份图链接规则概述](./overview.md)
+* [身份优化算法](./identity-optimization-algorithm.md)
+* [实施指南](./implementation-guide.md)
+* [疑难解答和常见问题](./troubleshooting.md)
+* [命名空间优先级](./namespace-priority.md)
+* [图形模拟UI](./graph-simulation.md)
+* [身份设置UI](./identity-settings-ui.md)

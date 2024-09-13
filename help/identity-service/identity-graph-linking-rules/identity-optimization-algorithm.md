@@ -3,9 +3,9 @@ title: 身份优化算法
 description: 了解Identity Service中的身份优化算法。
 badge: Beta 版
 exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
-source-git-commit: d3b43c5fa90b67bcba6015d521b78998d50cc3d7
+source-git-commit: 1ea840e2c6c44d5d5080e0a034fcdab4cbdc87f1
 workflow-type: tm+mt
-source-wordcount: '1533'
+source-wordcount: '1531'
 ht-degree: 1%
 
 ---
@@ -162,7 +162,9 @@ ECID存储未经身份验证的（匿名）事件，而CRMID存储经过身份�
 有关身份图链接规则的更多信息，请阅读以下文档：
 
 * [身份图链接规则概述](./overview.md)
+* [实施指南](./implementation-guide.md)
+* [图形配置示例](./example-configurations.md)
+* [疑难解答和常见问题](./troubleshooting.md)
 * [命名空间优先级](./namespace-priority.md)
-* [配置身份图链接规则的示例场景](./example-scenarios.md)
-* [身份链接逻辑](../features/identity-linking-logic.md)
-* [Identity Service和实时客户资料](../identity-and-profile.md)
+* [图形模拟UI](./graph-simulation.md)
+* [身份设置UI](./identity-settings-ui.md)

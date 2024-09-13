@@ -3,9 +3,9 @@ title: Graph Simulation UI指南
 description: 了解如何在Identity Service UI中使用图形模拟。
 badge: Beta 版
 exl-id: 89f0cf6e-c43f-40ec-859a-f3b73a6da8c8
-source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
+source-git-commit: 6cdb622e76e953c42b58363c98268a7c46c98c99
 workflow-type: tm+mt
-source-wordcount: '1435'
+source-wordcount: '1443'
 ht-degree: 1%
 
 ---
@@ -172,8 +172,10 @@ ht-degree: 1%
 
 通过阅读本文档，您现在知道如何使用[!DNL Graph Simulation]工具来更好地了解在给定一组特定的规则和配置的情况下如何对待您的身份数据。 有关详细信息，请阅读以下文档：
 
-* [身份图链接规则](./overview.md)
-* [配置指南](./configuration.md)
+* [身份图链接规则概述](./overview.md)
 * [身份优化算法](./identity-optimization-algorithm.md)
+* [实施指南](./implementation-guide.md)
+* [疑难解答和常见问题](./troubleshooting.md)
+* [图形配置示例](./example-configurations.md)
 * [命名空间优先级](./namespace-priority.md)
-* [示例图形配置](./example-configurations.md)
+* [身份设置UI](./identity-settings-ui.md)
