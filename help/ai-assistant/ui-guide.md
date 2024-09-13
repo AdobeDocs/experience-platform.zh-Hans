@@ -2,9 +2,9 @@
 title: Adobe Experience Platform的人工智能助手
 description: 了解如何使用AI Assistant导航和了解Experience Platform和Real-time Customer Data Platform概念以及有关您的对象的使用信息。
 exl-id: 3fed2b1d-75fc-47ce-98d1-a811eb8a1d8e
-source-git-commit: 94245fe25828025b60ea57ddebede2b3ccf890eb
+source-git-commit: 6f95cae48b0f4c304eb3dbd2d95e01e00e0f01c9
 workflow-type: tm+mt
-source-wordcount: '1517'
+source-wordcount: '1505'
 ht-degree: 0%
 
 ---
@@ -12,10 +12,6 @@ ht-degree: 0%
 # AI助手UI指南
 
 阅读本指南，了解如何在Adobe Experience Platform UI中使用AI助手。
-
-以下视频旨在支持您了解AI助手。
-
->[!VIDEO](https://video.tv.adobe.com/v/3429845?learn=on)
 
 ## 在Experience PlatformUI中访问AI助手
 

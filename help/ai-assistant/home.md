@@ -2,14 +2,18 @@
 title: Adobe Experience Platform中的AI助手概述
 description: 了解 AI 助手、其细微差别和用例，以及如何使用它来通过 Adobe Experience Platform 和 Real-Time Customer Data Platform 加快工作流程。
 exl-id: cfd4ac22-fff3-4b50-bbc2-85b6328f603c
-source-git-commit: fc87c28d7019e123d974e4d2ad307928a3d3fe89
+source-git-commit: 6f95cae48b0f4c304eb3dbd2d95e01e00e0f01c9
 workflow-type: tm+mt
-source-wordcount: '915'
+source-wordcount: '927'
 ht-degree: 8%
 
 ---
 
 # Adobe Experience Platform的人工智能助手
+
+以下视频旨在支持您了解AI助手。
+
+>[!VIDEO](https://video.tv.adobe.com/v/3429845?learn=on)
 
 请阅读本文档，了解Adobe Experience Platform中的AI助手。
 
