@@ -1,25 +1,25 @@
 ---
-title: Adobe Experience Platform Debugger发行说明
+title: Adobe Experience Platform Debugger 发行说明
 description: Adobe Experience Platform Debugger 的最新发行说明。
 keywords: debugger;experience Platform Debugger 扩展程序;chrome;扩展程序;发行说明
 uuid: 47a5d6f3-c074-4ad5-ad4b-e6030496689b
 exl-id: 3eed44da-5f85-413e-a783-3a0df03a2baf
 source-git-commit: 877e38154f6959d50bd0620290c2dce9decfc2b5
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '781'
-ht-degree: 5%
+ht-degree: 100%
 
 ---
 
-# Adobe Experience Platform Debugger发行说明
+# Adobe Experience Platform Debugger 发行说明
 
-## 1.6.1版 — 2024年7月25日
+## 版本 1.6.1，2024 年 7 月 25 日
 
 ### 修复和改进功能
 
-* 修复了阻止用户向没有标记的页面添加新Tags嵌入代码的问题。
+* 修复了阻止用户向没有标记的页面添加新标记嵌入代码的问题。
 
-## 1.6.0版 — 2024年7月11日
+## 版本 1.6.0，2024 年 7 月 11 日
 
 ### 新增功能
 
@@ -27,116 +27,116 @@ ht-degree: 5%
 
 ### 修复和改进功能
 
-* 修复了Firefox脚本注入和隐私策略链接。
-* 捕获缺失的Analytics请求。
-* 修复包含大量复杂控制台消息的页面的崩溃情况。
-* 将Adobe Experience Platform Debugger更新为清单v3扩展。
+* 修复 Firefox 脚本注入和隐私政策链接。
+* 捕获缺失的 Analytics 请求。
+* 修复包含大量复杂控制台消息的页面崩溃问题。
+* 将 Adobe Experience Platform Debugger 更新为 Manifest v3 扩展。
 
-## 1.5.4版 — 2023年12月19日
+## 版本 1.5.4，2023 年 12 月 19 日
 
 ### 修复和改进功能
 
-* 修复了设置未保留的问题。
-* 修复了在查看Analytics后处理的点击时导致Debugger崩溃的问题。
+* 修复了无法保留设置的问题。
+* 修复了查看 Analytics 后处理命中时导致 Debugger 崩溃的问题。
 
-## 1.5.3版 — 2023年12月6日
+## 版本 1.5.3，2023 年 12 月 6 日
 
 ### 新增功能
 
-* 添加了“打开Debugger时锁定活动选项卡”设置。
+* 添加了“打开 Debugger 时锁定到活动选项卡”的设置。
 
 ### 修复和改进功能
 
-* 修复了专用域中缺少Analytics请求的问题。
-* 修复了Analytics请求表中缺少Activity Map数据的问题。
-* 修复了查看目标跟踪会导致崩溃的问题。
-* 当调试器无法在Firefox中设置页面上的基础结构时添加了警告。
+* 修复了专用域上缺少 Analytics 请求的问题。
+* 修复了 Analytics 请求表中缺少活动地图数据的问题。
+* 修复了查看 Target Trace 会导致崩溃的问题。
+* 添加了当 Debugger 无法在 Firefox 中设置页面基础结构时会发出的警告。
 
-## 版本1.5.2 - 2023年11月10日
+## 版本 1.5.2 - 2023 年 11 月 10 日
 
-（仅限Firefox）
-
-### 修复和改进功能
-
-* 更新了文件的组织。
-
-## 版本1.5.1 - 2023年11月2日
+（仅限 Firefox）
 
 ### 修复和改进功能
 
-* 修复了Analytics事件将被忽略或重复的问题。
+* 更新了对文件的组织形式。
+
+## 版本 1.5.1 - 2023 年 11 月 2 日
+
+### 修复和改进功能
+
+* 修复了 Analytics 事件被忽略或重复的问题。
 * 修复了超出最大状态存储大小的问题。
-* 修复了Edge日志搜索无法过滤事件的问题。
+* 修复了 Edge Logs 搜索无法过滤事件的问题。
 
-## 1.5.0版 — 2023年10月19日
+## 版本 1.5.0 - 2023 年 10 月 19 日
 
 ### 新增功能
 
-* 在标记摘要和日志中显示指向属性、环境和规则的链接。
+* 在标记摘要和日志中显示属性、环境和规则的链接。
 
 ### 修复和改进功能
 
-* 修复了标记摘要数据未发送的问题。
-* 修复了保障会话会发出CORS错误的问题
-* 修复了导致无法显示Target跟踪的问题。
+* 修复了未发送标记摘要数据的问题。
+* 修复了 Assurance 会话会出现 CORS 错误的问题
+* 修复了导致 Target Trace 无法出现的问题。
 * 修复了“发送反馈”按钮。
-* 修复了Web SDK摘要(版本≥2.18.0)中缺少“数据流ID”的问题。
-* 修复了Edge日志不可搜索的问题。
-* 添加了关于某些帐户类型的其他配置文件的说明。
+* 修复了 Web SDK 摘要中版本≥2.18.0 内缺少的“数据流 ID”。
+* 修复了 Edge 日志不可搜索的问题。
+* 添加了关于某些帐户类型的附加轮廓的注释。
 
-## 版本1.4.1 - 2022年11月1日
+## 版本 1.4.1 - 2022 年 11 月 1 日
 
-* 提高了包含许多Adobe Experience Platform保证事件的页面的性能。
+* 具有许多 Adobe Experience Platform Assurance 事件的页面的性能得到了提高。
 
-## 版本1.4.0 - 2022年10月3日
+## 版本 1.4.0 - 2022 年 10 月 3 日
 
-* 为Web SDK混合实施添加了AEP保障调试支持。
-* 在同一AEP保障会话中添加了对多个选项卡的支持。
-* 修复了用户在登录后无法切换用户档案/组织的问题。
+* 增加了对 Web SDK 混合实施的 AEP Assurance 调试支持。
+* 添加了对同一 AEP Assurance 会话中的多个选项卡的支持。
+* 修复了用户登录后无法切换个人资料/组织的问题。
    * 对于某些帐户，需要注销并重新登录才能切换组织。
-* 添加了启用Target跟踪失败时的错误消息。
-* 更新了依赖关系。
+* 添加了启用 Target Trace 失败时发出的错误信息。
+* 更新了依赖项。
 
-## 1.3.3版 — 2022年6月20日
+## 1.3.3 版，2022 年 6 月 20 日 
 
-* 修复了阻止从网络事件表中打开弹出窗口的问题。
-* 修复了阻止加载页面上Alloy信息的问题。
+* 修复了阻止从网络事件表打开弹出窗口的问题。
+* 修复了阻止页面 Alloy 信息加载的问题。
 
-## 版本1.3.2 - 2022年6月9日
+## 1.3.2 版，2022 年 6 月 9 日 
 
-* 添加了用户登录时的默认头像。
-* 为日志中的JSON对象添加了语法突出显示。
+* 增加了用户登录时的默认头像。
+* 为日志中的 JSON 对象添加了语法突出显示功能。
 
-## 1.3.1版 — 2022年5月24日
+## 1.3.1 版，2022 年 5 月 24 日 
 
-* 更新了依赖关系。
-* 修复了无法启用后处理点击的Analytics问题。
-* 修复了Debugger附加到Adobe登录窗口的问题。
-* 修复了日志消息无法在Debugger中显示的AT.js问题。
+* 更新了依赖项。
+* 修复了无法启用后处理命中功能的 Analytics 问题。
+* 修复了Debugger 会附加到 Adobe 登录窗口的问题。
+* 修复了 AT.js 问题，该问题导致日志消息无法在 Debugger 中显示。
 
-## 1.3.0版 — 2022年1月28日
+## 1.3.0 版，2022 年 1 月 28 日
 
-* 添加了关于链接以显示当前发行版本和说明。
-* 添加了用于查看Analytics请求的后处理点击的切换功能。 该切换在Analytics部分中可用。
-* 修复了在调试器之外关闭会话时的远程调试会话问题。
-* 修复了在Web SDK Edge的“交易”选项卡中显示的错误通知。
-* 修复了Adobe访问_satellite对象时出现的页面弃用警告。
-* 修复了在页面上找不到AppMeasurement实例的一些情况。
-* 修复了首次打开调试器窗口时发生的页面连接问题。
+* 添加了“关于”链接，以显示当前发布版本和说明。
+* 添加了切换按钮，以查看 Analytics 请求的后处理命中情况。该切换按钮可在“分析”部分中使用。
+* 修复了在 Debugger 外部关闭会话时会出现的远程调试会话问题。
+* 修复了 Web SDK Edge Transactions 选项卡中可以看到的错误通知。
+* 修复了当 Debugger 访问 _satellite 对象时页面上会出现 Adobe Tags 弃用警告的问题。
+* 修复了一些在页面上找不到 AppMeasurement 实例的情况。
+* 修复首次打开 Debugger 窗口时出现的页面连接问题。
 
-## 版本1.2.0 - 2021年10月26日
+## 版本 1.2.0 - 2021 年 10 月 26 日
 
-* 在网络视图中显示所有浏览器选项卡中的事件。 要仅查看当前选项卡中的事件，请选择Debugger右下角的锁定图标。
-* 更新了品牌。
+* 在网络视图中显示所有浏览器选项卡的事件。要仅查看当前选项卡的事件，请选择 Debugger 右下角的锁定图标。
+* 品牌化更新。
 
-## 版本1.1.0 - 2021年10月5日
+## 版本 1.1.0 - 2021 年 10 月 5 日
 
-* 远程调试可视化 — 在“Adobe Experience Platform Web SDK”>“Edge事务”部分将远程调试事件组织为可视化流程图。
-* 启动新的远程调试会话时，要求页面上使用的Adobe Experience Platform Web SDK组织与登录的组织匹配。
-* 仅显示已连接选项卡的边缘事务。 Target跟踪日志仍在“日志”>“Edge”部分可用。
-* 允许为页面上的每个Adobe Experience Platform Web SDK实例覆盖单独的数据流ID配置。 “添加调试已启用”切换开关。
-* 修复了Adobe Target跟踪令牌未始终随Adobe Experience Platform Web SDK的远程调试会话一起发送的问题。
+* 远程调试可视化功能：在 Adobe Experience Platform Web SDK > Edge Transactions 部分中将远程调试事件组织成可视化流程图。
+* 在启动新的远程调试会话时，要求页面上使用的 Adobe Experience Platform Web SDK 组织与登录的组织相匹配。
+* 仅显示已连接选项卡的 Edge Transactions。Target Trace 日志在“日志”>“边缘”部分中仍然可用。
+* 允许对页面上的每个 Adobe Experience Platform Web SDK 实例进行单独的数据流 ID 配置覆盖。添加启用调试的切换功能。
+* 修复了 Adobe Target 跟踪令牌并不总是通过 Adobe Experience Platform Web SDK 的远程调试会话发送的问题。
 
-## 1.0.0版 — 2021年5月5日
+## 1.0.0 版 — 2021 年 5 月 5 日 
 
-* Experience PlatformDebugger的第一个主要版本。 旨在更换Experience Cloud Debugger。
+* Experience Platform Debugger 的第一个主要版本。旨在取代 Experience Cloud Debugger。
