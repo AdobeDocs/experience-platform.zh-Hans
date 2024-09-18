@@ -4,9 +4,9 @@ title: 许可证使用情况仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: dedffe90e9107b70d4ddf65a7bf8079396ff8e8b
+source-git-commit: b1de61b2e7d0dedf2da8ef8ffb02fe5c15e82fb2
 workflow-type: tm+mt
-source-wordcount: '2641'
+source-wordcount: '2720'
 ht-degree: 13%
 
 ---
@@ -17,6 +17,16 @@ ht-degree: 13%
 >id="testy-mctestface"
 >title="不应显示的测试对话框"
 >abstract="对象 {name} 正在 {date} 被查看。"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_core"
+>title="核心产品表"
+>abstract="表中列出的核心产品在沙盒级别具有各自的量度、使用情况跟踪和穿透钻取视图。 这些核心产品提供了用于跟踪的关键量度，并且任何加载项都包含在这些量度中。"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_addons"
+>title="加载项表"
+>abstract="“插件”表列出了其许可证数量与核心产品所支持的量度相结合的产品。 这些加载项没有单独的量度，但增强了与其关联的核心产品的使用情况跟踪。"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseUsage"
