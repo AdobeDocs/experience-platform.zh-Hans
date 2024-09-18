@@ -7,7 +7,7 @@ exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
 source-git-commit: dedffe90e9107b70d4ddf65a7bf8079396ff8e8b
 workflow-type: tm+mt
 source-wordcount: '2641'
-ht-degree: 12%
+ht-degree: 13%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 12%
 >[!CONTEXTUALHELP]
 >id="testy-mctestface"
 >title="不应显示的测试对话框"
->abstract="正在{date}上查看对象{name}。"
+>abstract="对象 {name} 正在 {date} 被查看。"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseUsage"
