@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；平台Web SDK；Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 73a82825dd6c9ae97db76018df5462ab20c7d15e
+source-git-commit: c1fb9fe7d4863e316b824d6c8dd2ff0d3405d7ea
 workflow-type: tm+mt
-source-wordcount: '1882'
+source-wordcount: '1920'
 ht-degree: 2%
 
 ---
@@ -16,11 +16,21 @@ ht-degree: 2%
 本文档介绍Adobe Experience Platform Web SDK的发行说明。
 有关Web SDK标记扩展的最新发行说明，请参阅[Web SDK标记扩展发行说明](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md)。
 
+## 版本2.23.0 - 2024年9月19日
+
+**新增功能**
+
+- 在[getIdentity](commands/getidentity.md#get-identity-using-the-web-sdk-javascript-library)命令中添加了对请求[核心ID](identity/overview.md#tracking-coreid-web-sdk)的支持。
+
+**修复和改进**
+
+- 修复了在本地运行Web SDK时无法正确写入Cookie的问题。
+
 ## 版本2.22.0 - 2024年8月22日
 
 **新增功能**
 
-- 添加了个性化监视器。
+- 添加了对个性化监控挂接的支持。
 
 **修复和改进**
 
@@ -62,7 +72,7 @@ ht-degree: 2%
 - 修复了当`renderDecisions`设置为`false`的页面顶部调用时，页面底部调用绝不会发送的问题。
 - 修复了在存在多个`adobe_mc`查询字符串参数时Web SDK无法读取跨域标识的问题。
 
-## 版本2.19.1 - 2023年11月10日
+## 版本 2.19.1 - 2023 年 11 月 10 日
 
 **修复和改进**
 
@@ -194,7 +204,7 @@ ht-degree: 2%
 - 重命名了个性化事件类型。 （`display`和`click`成为`decisioning.propositionDisplay`和`decisioning.propositionInteract`）
 - 修复了具有内联脚本标记的HTML选件将脚本标记两次添加到页面的问题，即使脚本仅运行一次。
 
-## 版本2.7.0 - 2021年10月26日
+## 版本 2.7.0 - 2021 年 10 月 26 日
 
 - 在来自`sendEvent`的返回值中公开来自Edge Network的其他信息，包括`inferences`和`destinations`。 由于这些功能当前正在作为Beta的一部分推出，因此这些属性的格式可能会发生更改。
 

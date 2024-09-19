@@ -1,17 +1,25 @@
 ---
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
-source-git-commit: 73a82825dd6c9ae97db76018df5462ab20c7d15e
+exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
+source-git-commit: c1fb9fe7d4863e316b824d6c8dd2ff0d3405d7ea
 workflow-type: tm+mt
-source-wordcount: '2258'
+source-wordcount: '2291'
 ht-degree: 29%
 
 ---
 
-
 # Adobe Experience Platform Web SDK扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[平台Web SDK发行说明](/help/web-sdk/release-notes.md)。
+
+## 版本2.26.1 - 2024年9月19日
+
+**修复和改进**
+
+- 修复了在本地运行Web SDK时无法正确写入Cookie的问题。
+
+包含Adobe Experience Platform Web SDK版本2.23.0。
 
 ## 版本2.26.0 - 2024年8月22日
 
@@ -80,7 +88,7 @@ ht-degree: 29%
 
 包含Adobe Experience Platform Web SDK的版本2.19.2。
 
-## 版本2.21.3 - 2023年11月10日
+## 版本 2.21.3 - 2023 年 11 月 10 日
 
 包含2.19.1版本的Adobe Experience Platform Web SDK。
 
@@ -226,7 +234,7 @@ ht-degree: 29%
 
 包含 Adobe Experience Platform Web SDK 库的版本 2.8.0。
 
-## 版本2.8.0 - 2021年10月26日
+## 版本 2.8.0 - 2021 年 10 月 26 日
 
 包含 Adobe Experience Platform Web SDK 库的版本 2.7.0。
 
