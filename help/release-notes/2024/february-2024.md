@@ -3,17 +3,17 @@ title: Adobe Experience Platform 发行说明（2024 年 2 月）
 description: Adobe Experience Platform 的 2024 年 2 月发行说明。
 exl-id: 7e4b76b7-4027-4890-b869-1dbb79670c3e
 source-git-commit: aa33f7006b1a3abf7d19ffe3e0d5e5ee39fe9a5d
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1244'
-ht-degree: 22%
+ht-degree: 100%
 
 ---
 
 # Adobe Experience Platform 发行说明
 
-**发行日期： 2024年2月21日**
+**发行日期：2024 年 2 月 21 日**
 
-对Experience Platform中现有功能的更新：
+Experience Platform 中现有功能的更新：
 
 - [警报](#alerts)
 - [数据收集](#data-collection)
@@ -24,17 +24,17 @@ ht-degree: 22%
 
 ## 警报 {#alerts}
 
-Experience Platform允许您订阅各种Platform活动的基于事件的警报。 您可以通过Platform用户界面中的[!UICONTROL 警报]选项卡订阅不同的警报规则，还可以选择在UI中或通过电子邮件通知接收警报消息。
+Experience Platform 允许您订阅各种平台活动的基于事件的警报。您可以通过平台用户界面中的 [!UICONTROL 警报] 选项卡订阅不同的警报规则，并可以选择在用户界面内或通过电子邮件通知接收警报消息。
 
 **新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| “警报历史记录”选项卡 | 作为Experience Platform管理员，您可以使用管理警报订阅者功能将警报分配给Adobe用户ID、外部电子邮件地址或电子邮件组列表。 有关详细信息，请参阅[警报UI文档](../../observability/alerts/ui.md)，以了解有关“历史记录”选项卡的详细信息。 |
+| 警报历史记录选项卡 | 作为 Experience Platform 管理员，您可以使用管理警报订阅者功能将警报分配给 Adobe 用户 ID、外部电子邮件地址或电子邮件组列表。有关更多信息，请参阅[警报 UI 文档](../../observability/alerts/ui.md)，以获取有关历史记录选项卡的更多信息。 |
 
 {style="table-layout:auto"}
 
-若要了解有关警报的更多信息，请阅读[[!DNL Observability Insights] 概述](../../observability/home.md)。
+若要了解有关警报的更多信息，请阅读 [[!DNL Observability Insights] 概述](../../observability/home.md)。
 
 ## 数据收集 {#data-collection}
 
@@ -44,7 +44,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 功能 | 描述 |
 | --- | --- |
-| Web SDK中的[Web应用程序内消息传送支持](../../web-sdk/personalization/web-in-app-messaging.md) | Adobe Experience Platform Web SDK现在支持Adobe Journey Optimizer促销活动的Web应用程序内消息传递配置。 |
+| [Web SDK 中的 Web 应用内消息传递支持](../../web-sdk/personalization/web-in-app-messaging.md) | Adobe Experience Platform Web SDK 现在支持 Adobe Journey Optimizer 活动的 Web 应用内消息传递配置。 |
 
 {style="table-layout:auto"}
 
@@ -72,9 +72,9 @@ For more information on Data Prep, read the [Data Prep overview](../../data-prep
 
 | 目标 | 描述 |
 | ----------- | ----------- |
-| [Gainsight PX连接](../../destinations/catalog/analytics/gainsight-px.md) | Gainsight PX是一个产品体验平台，它使产品团队能够了解用户如何使用其产品、收集反馈和创建应用程序内参与（如产品演练）以推动用户入门和产品采用。 |
-| [Mailchimp标记连接](../../destinations/catalog/email-marketing/mailchimp-tags.md) | Mailchimp是一种流行的营销自动化平台和电子邮件营销服务。 您可以使用Mailchimp标记连接器来构建、标记或分类您的联系人。 |
-| [SAP Commerce连接](../../destinations/catalog/ecommerce/sap-commerce.md) | SAP Commerce是一个面向B2B和B2C企业的基于云的电子商务平台解决方案，作为SAP客户体验产品组合的一部分提供。 您可以使用此目标从现有Experience Platform受众更新SAP Commerce中的客户详细信息。 |
+| [Gainsight PX 连接](../../destinations/catalog/analytics/gainsight-px.md) | Gainsight PX 是一个产品体验平台，使产品团队能够了解用户如何使用他们的产品、收集反馈并创建应用内互动（如产品演示）以推动用户入职和产品采用。 |
+| [Mailchimp Tags 连接](../../destinations/catalog/email-marketing/mailchimp-tags.md) | Mailchimp 是一个流行的营销自动化平台和电子邮件营销服务。您可以使用 Mailchimp Tags 连接器来构造、标记或分类您的联系人。 |
+| [SAP Commerce 连接](../../destinations/catalog/ecommerce/sap-commerce.md) | SAP Commerce 是面向 B2B 和 B2C 企业的基于云的电子商务平台解决方案，作为 SAP 客户体验产品组合的一部分提供。您可以使用此目标从现有 Experience Platform 受众更新 SAP Commerce 中的客户详细信息。 |
 
 {style="table-layout:auto"}
 
@@ -82,30 +82,30 @@ For more information on Data Prep, read the [Data Prep overview](../../data-prep
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| 激活一般可用的帐户受众 | 向某些目标激活帐户受众的功能现在通常适用于购买[企业对企业](/help/rtcdp/overview.md#rtcdp-b2b)和[企业对个人](/help/rtcdp/overview.md#rtcdp-b2p)版本的Real-time Customer Data Platform的公司。 请阅读有关[激活帐户受众](/help/destinations/ui/activate-account-audiences.md)的教程，以获取完整的信息，包括支持的目标。 |
-| 适用于Google目标的Digital Markets Act同意执行工具 | Google将发布对[Google Ads API](https://developers.google.com/google-ads/api/docs/start)、[Customer Match](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html)和[Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview)的更改，以支持欧盟（[EU用户同意政策](https://www.google.com/about/company/user-consent-policy/)）中[Digital Markets Act](https://digital-markets-act.ec.europa.eu/index_en) (DMA)定义的合规性和同意相关要求。 预计这些对同意要求的更改将从2024年3月6日起生效。 <br/><br/>为了遵循欧盟用户同意策略并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保在上传受众数据时传递最终用户同意。 作为Google合作伙伴，Adobe会为您提供在欧洲的DMA中遵守这些同意要求的必要工具。<br/><br/>购买AdobePrivacy &amp; Security Shield并配置了[同意策略](../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉非同意配置文件的客户无需采取任何操作。<br/><br/>未购买AdobePrivacy &amp; Security Shield的客户必须使用[区段生成器](../../segmentation/ui/segment-builder.md)中的[区段定义](../../segmentation/home.md#segment-definitions)功能来筛选出未同意的用户档案，以便继续不间断地使用现有Real-Time CDP Google目标。 |
-| [!BADGE Beta]{type=Informative}对批处理目标的映射字段重新排序 | 现在，您可以通过拖放[映射](../../destinations/ui/activate-batch-profile-destinations.md#mapping)步骤中的映射字段来更改CSV导出中列的顺序。 UI中映射字段的顺序反映了导出CSV文件中列的顺序（从上到下），其中顶行是CSV文件中最左侧的列。 <br/><br/>此功能为测试版，仅适用于特定客户。 要请求访问此功能，请联系您的Adobe代表。 |
-| [!BADGE Beta]{type=Informative}预先为批处理目标选择了默认导出计划 | Experience Platform现在会自动为每个文件导出设置默认计划。 请参阅有关[计划受众导出](../../destinations/ui/activate-batch-profile-destinations.md#scheduling)的文档，了解如何修改默认计划。 <br/><br/>此功能为测试版，仅适用于特定客户。 要请求访问此功能，请联系您的Adobe代表。 |
-| [!BADGE Beta]{type=Informative}批量编辑批处理目标的受众激活计划 | 您现在可以从[激活数据](../../destinations/ui/destination-details-page.md#bulk-edit-schedule)页面批量编辑多个受众的激活计划。 <br/><br/>此功能为测试版，仅适用于特定客户。 要请求访问此功能，请联系您的Adobe代表。 |
-| [!BADGE Beta]{type=Informative}按需将文件批量导出到批处理目标 | 您现在可以通过[按需导出文件](../../destinations/ui/export-file-now.md)功能，将受众批量导出到批处理目标。 <br/><br/>此功能为测试版，仅适用于特定客户。 要请求访问此功能，请联系您的Adobe代表。 |
+| 激活帐户受众普遍可用 | 现在，购买 Real-time Customer Data Platform [企业对企业](/help/rtcdp/overview.md#rtcdp-b2b)和[企业对个人](/help/rtcdp/overview.md#rtcdp-b2p)版本的公司通常都可以使用激活帐户受众到特定目标的功能。阅读有关[激活帐户受众](/help/destinations/ui/activate-account-audiences.md)的教程，获取完整信息，包括支持的目标。 |
+| Google 目标的数字市场法案同意执行工具 | Google 正在发布对 [Google Ads API](https://developers.google.com/google-ads/api/docs/start)、[客户匹配](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html)和 [Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview) 的变更，以支持欧盟[数字市场法案](https://digital-markets-act.ec.europa.eu/index_en)（DMA）规定的合规性和同意相关要求（[欧盟用户同意政策](https://www.google.com/about/company/user-consent-policy/)）。这些同意要求的改变预计将于 2024 年 3 月 6 日开始生效。<br/><br/> 为了遵守欧盟用户同意政策并继续为欧洲经济区 (EEA) 的用户创建受众列表，广告商和合作伙伴必须确保在上传受众数据时获得最终用户的同意。作为 Google 合作伙伴，Adobe 为您提供必要的工具，以遵守欧盟 DMA 下的这些同意要求。<br/><br/>已购买 Adobe Privacy &amp; Security Shield 并配置了[同意政策](../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未经同意的配置文件的客户无需采取任何措施。<br/><br/>尚未购买 Adobe Privacy &amp; Security Shield 的客户必须使用 [Segment Builder](../../segmentation/ui/segment-builder.md) 中的[细分定义](../../segmentation/home.md#segment-definitions)功能来过滤掉未经同意的配置文件，以便继续不间断地使用现有的实时 CDP Google 目标。  |
+| [!BADGE Beta]{type=Informative} 重新排序批处理目标的映射字段 | 您现在可以通过在[映射](../../destinations/ui/activate-batch-profile-destinations.md#mapping)步骤中拖放映射字段来更改 CSV 导出中列的顺序。UI 中映射字段的顺序反映在导出的 CSV 文件中列的顺序中，从上到下，其中顶行是 CSV 文件中最左边的列。<br/><br/>此功能目前为 Beta 版，仅供 Beta 版客户使用。若要申请访问此项功能，请联系您的 Adobe 代表。 |
+| [!BADGE Beta]{type=Informative} 为批量目标预先选定的默认导出计划 | Experience Platform 现在会自动为每个文件导出设置一个默认计划。请参阅有关[安排受众导出](../../destinations/ui/activate-batch-profile-destinations.md#scheduling)的文档，了解如何修改默认时间表。<br/><br/>此功能目前为 Beta 版，仅供 Beta 版客户使用。若要申请访问此项功能，请联系您的 Adobe 代表。 |
+| [!BADGE Beta]{type=Informative} 批量修改批处理目标的受众激活时间表 | 您现在可以从[激活数据](../../destinations/ui/destination-details-page.md#bulk-edit-schedule)页面批量编辑多个受众的激活计划。<br/><br/>此功能目前为 Beta 版，仅供 Beta 版客户使用。若要申请访问此项功能，请联系您的 Adobe 代表。 |
+| [!BADGE Beta]{type=Informative} 按需批量导出文件至批量目标 | 您现在可以通过[按需导出文件](../../destinations/ui/export-file-now.md)功能将受众批量导出到批量目标。<br/><br/>此功能目前为 Beta 版，仅供 Beta 版客户使用。若要申请访问此项功能，请联系您的 Adobe 代表。 |
 
 {style="table-layout:auto"}
 
-有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
+有关目标的更多一般信息，请参阅[目标概述](../../destinations/home.md)。
 
 ## 沙盒 {#sandboxes}
 
-Adobe Experience Platform旨在丰富全球范围内的数字体验应用程序。 公司通常并行运行多个数字体验应用程序，需要满足这些应用程序的开发、测试和部署需要，同时确保操作法规遵从性。 为了满足此需求，Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的沙箱，以帮助开发和改进数字体验应用程序。
+Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。企业通常会同时运行多个数字体验应用程序，并且需要满足这些应用程序的开发、测试和部署要求，同时确保运营合规性。为了满足这一需求，Experience Platform 提供了可将单个 Platform 实例划分为多个单独的虚拟环境的沙盒，以帮助开发和改进数字体验应用程序。
 
 **新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 沙盒工具 | 除了现在支持同意和治理规则的对象类型外，使用沙盒工具还会导入未启用统一配置文件的架构，在导入区段时检查目标沙盒中是否缺少属性，默认情况下使用现有合并策略。 有关这些功能的详细信息，请参阅[沙盒工具UI指南](../../sandboxes/ui/sandbox-tooling.md)。 |
+| 沙盒工具 | 除了现在支持同意和治理规则的对象类型之外，还可以使用沙盒工具导入未启用统一配置文件的模式，在导入段时检查目标沙盒中缺少的属性，并默认使用现有的合并策略。有关这些功能的更多信息，请参阅[沙盒工具 UI 指南](../../sandboxes/ui/sandbox-tooling.md)。 |
 
 {style="table-layout:auto"}
 
-有关沙箱的详细信息，请阅读[沙箱概述](../../sandboxes/home.md)。
+有关沙盒的更多信息，请阅读[沙盒概述](../../sandboxes/home.md)。
 
 ## Segmentation Service {#segmentation}
 
@@ -115,7 +115,7 @@ Adobe Experience Platform旨在丰富全球范围内的数字体验应用程序�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 帐户受众 | 帐户受众现已正式可用！ 现在，您可以使用帐户分段功能在Real-time Customer Platform的B2B和B2P版本中从基于人员的受众到基于帐户的受众，来完全简化和完善营销分段体验。 此版本允许您使用基于人员的受众作为基于帐户的受众的谓词，添加搜索功能，支持使用自定义实体，并且与数据管理兼容。 有关此功能的详细信息，请阅读[帐户受众概述](../../segmentation/ui/account-audiences.md)。 |
+| 帐户受众 | 帐户受众现已普遍可用！现在，您可以使用帐户细分，在实时客户平台的 B2B 和 B2P 版本中，将营销细分体验从基于人的受众转移到基于帐户的受众，从而实现轻松而复杂的营销细分体验。此版本允许您使用基于人的受众作为基于帐户的受众的谓词，添加搜索功能，支持自定义实体的使用，并符合数据治理。有关此功能的更多信息，请阅读[帐户受众概览](../../segmentation/ui/account-audiences.md)。 |
 
 {style="table-layout:auto"}
 
@@ -127,8 +127,8 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 | 功能 | 描述 |
 | --- | --- |
-| [!BADGE Beta]{type=Informational} [!DNL Acxiom]源 | 使用[[!DNL Acxiom Prospecting Data Import] 源](../../sources/tutorials/ui/create/data-partners/acxiom-prospecting-data-import.md)从[!DNL Acxiom]目标客户服务检索数据并将其映射到Experience Platform。 |
+| [!BADGE Beta]{type=Informative} [!DNL Acxiom] 源 | 使用 [[!DNL Acxiom Prospecting Data Import] 源](../../sources/tutorials/ui/create/data-partners/acxiom-prospecting-data-import.md)从 [!DNL Acxiom] 潜在客户服务检索数据并将其映射到 Experience Platform。 |
 
 {style="table-layout:auto"}
 
-有关源的更多信息，请阅读[源概述](../../sources/home.md)。
+请参阅[源概述](../../sources/home.md)，了解有关源的更多信息。

@@ -3,21 +3,21 @@ title: Adobe Experience Platform 发行说明（2024 年 3 月）
 description: Adobe Experience Platform 的 2024 年 3 月发行说明。
 exl-id: cab47a76-04f3-48ec-82aa-d17645e4eb15
 source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1190'
-ht-degree: 33%
+ht-degree: 100%
 
 ---
 
 # Adobe Experience Platform 发行说明
 
-**发行日期： 2024年3月19日**
+**发布日期：2024 年 3 月19 日**
 
 >[!TIP]
 >
->使用[Adobe Experience Platform术语表](/help/landing/glossary.md)熟悉Real-time Customer Data Platform和Adobe Experience Platform中使用的术语。 如果找不到要查找的特定术语，请使用页面上的反馈选项来请求将新术语添加到术语表中。
+>使用 [Adobe Experience Platform 词汇表](/help/landing/glossary.md)，熟悉 Real-time Customer Data Platform 和 Adobe Experience Platform 中使用的术语。如果您找不到所需的特定术语，请使用页面上的反馈选项请求将新术语添加到词汇表中。
 
-对Experience Platform中现有功能的更新：
+Experience Platform 中现有功能的更新：
 
 - [目录服务](#catalog-service)
 - [数据收集](#data-collection)
@@ -29,11 +29,11 @@ ht-degree: 33%
 
 ## 目录服务 {#catalog-service}
 
-目录服务是 Adobe Experience Platform 中记录数据位置和沿袭的系统。虽然摄取到Experience Platform中的所有数据都作为文件和目录存储在数据湖中，但Catalog包含这些文件和目录的元数据和描述，以用于查找和监控目的。
+目录服务是 Adobe Experience Platform 中记录数据位置和沿袭的系统。虽然所有摄取到 Experience Platform 中的数据均作为文件和目录存储在数据湖中，但目录保存这些文件和目录的元数据和描述以供查找和监控目的。
 
 | 功能 | 描述 |
 | --- | --- |
-| 更多操作 | 为了使操作更灵活并帮助您管理数据，您现在可以使用详细信息视图中的“更多操作”功能来对数据集执行其他任务。 您可以从所选数据集的详细信息页面中删除该数据集或启用它以用于实时客户个人资料。<br>**注意：**&#x200B;如果为配置文件摄取启用数据集，则该数据集的架构必须与实时客户配置文件兼容。<br>![具有[!UICONTROL 的数据集工作区……其他]下拉菜单突出显示。](../2024/assets/march/more-actions.png "突出显示了“更多”下拉菜单的数据集工作区。"){width="100" zoomable="yes"}。<br>有关添加信息，请阅读[数据集用户指南](../../catalog/datasets/user-guide.md)文档。 |
+| 更多操作 | 为了使操作更加灵活并帮助您管理数据，您现在可以使用详细信息视图中的“更多操作”功能对数据集执行其他任务。您可以从所选数据集的详细信息页面删除数据集，也可以启用它以与实时客户配置文件一起使用。<br>**注意：** 如果启用数据集以进行轮廓提取，则数据集的架构必须与实时客户轮廓兼容。<br>![数据集工作区，其中 [!UICONTROL ...更多] 下拉菜单突出显示。](../2024/assets/march/more-actions.png "数据集工作区，其中突出显示了更多下拉菜单。"){width="100" zoomable="yes"}。<br>参阅[数据集用户指南](../../catalog/datasets/user-guide.md)文档以获取更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -47,11 +47,11 @@ ht-degree: 33%
 
 | 功能 | 描述 |
 | --- | --- |
-| Adobe Analytics的新映射器函数 | 现在，您可以使用以下函数从Adobe Analytics中提取事件数据： <ul><li>`aa_get_event_id`</li><li>`aa_get_event_value`</li><li>`aa_get_product_categories`</li><li>`aa_get_product_names`</li><li>`aa_get_product_quantities`</li><li>`aa_get_product_prices`</li><li>`aa_get_product_event_values`</li><li>`aa_get_product_evars`</li></ul> 有关这些函数的更多信息，请阅读[数据准备函数指南](../../data-prep/functions.md#analytics-functions) |
+| Adobe Analytics 的新映射器功能 | 您现在可以使用以下函数从 Adobe Analytics 中提取事件数据： <ul><li>`aa_get_event_id`</li><li>`aa_get_event_value`</li><li>`aa_get_product_categories`</li><li>`aa_get_product_names`</li><li>`aa_get_product_quantities`</li><li>`aa_get_product_prices`</li><li>`aa_get_product_event_values`</li><li>`aa_get_product_evars`</li></ul> 有关这些函数的更多信息，请参阅[数据准备函数指南](../../data-prep/functions.md#analytics-functions)。 |
 
 {style="table-layout:auto"}
 
-有关数据准备的更多信息，请阅读[数据准备概述](../../data-prep/home.md)。
+有关数据准备的详细信息，请参阅[数据准备概述](../../data-prep/home.md)。
 
 ## 数据收集 {#data-collection}
 
@@ -61,24 +61,24 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 类型 | 功能 | 描述 |
 | --- | --- | --- |
-| 扩展 | [!DNL Merkury]标记扩展 | [[!DNL Merkury] 标记扩展](https://exchange.adobe.com/apps/ec/600027/merkury-tag)为[!DNL Merkury] ID的匿名网站访客提供了业界领先的匹配率。 品牌商可以利用[!DNL Merkury]标记和Adobe的强大功能来提供实时的个性化网站体验。 此外，[!DNL Merkury]标记允许第一方数字数据以及连接的在线和离线客户个人资料一起增长。 |
+| 扩展 | [!DNL Merkury] 标记扩展 | [[!DNL Merkury]  标记扩展](https://exchange.adobe.com/apps/ec/600027/merkury-tag)为 [!DNL Merkury] ID 的匿名网站访问者提供了业界领先的匹配率。品牌可以利用 [!DNL Merkury] 标签和 Adobe 的强大功能来提供实时个性化的网站体验。此外，[!DNL Merkury] 标签还可以促进第一方数字数据以及线上和线下客户资料的增长。 |
 
 {style="table-layout:auto"}
 
-若要了解有关数据收集的更多信息，请阅读[数据收集概述](../../tags/home.md)。
+要详细了解数据收集，请阅读[数据收集概述](../../tags/home.md)。
 
 ## 目标 {#destinations}
 
 [!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
-**新的和更新的目标** {#new-updated-destinations}
+**新增和更新的目标**{#new-updated-destinations}
 
 | 目标 | 类型 | 描述 |
 | ----------- | --------- | ----------- |
-| [(Beta) Acxiom数据增强连接](../../destinations/catalog/data-partner/acxiom-data-enhancement.md) | 新增 | 使用此连接器可将第一方配置文件从Real-Time CDP激活到Acxiom，以便跨营销渠道扩充和使用该配置文件。 然后，您可以使用Acxiom源导入具有增强数据的用户档案，并在Real-Time CDP中使用这些用户档案。 |
-| [(Beta) Acxiom潜在客户抑制连接](../../destinations/catalog/data-partner/acxiom-prospect-suppression.md) | 新增 | 将您的第一方受众导出到Acxiom目标，以允许Acxiom抑制已知或转换的客户。 然后，使用[Acxiom潜在客户数据导入](../../sources/connectors/data-partners/acxiom-prospecting-data-import.md)源连接器从Acxiom中摄取和激活潜在客户列表，并删除已知或转换的客户。 |
-| [Amazon Ads连接](../../destinations/catalog/advertising/amazon-ads.md) | 更新 | 将数据导出到Amazon广告目标时，您现在可以将数据路由到Amazon DSP或AmazonMarketing Cloud（新）。 |
-| [LiveRamp登录连接](../../destinations/catalog/advertising/liveramp-onboarding.md) | 更新 | LiveRamp载入目标现在支持向欧洲和澳大利亚[!DNL LiveRamp]个[!DNL SFTP]实例的投放。 最大导出文件大小也增加到了1000万行（以前是500万行）。 |
+| [（Beta）Acxiom Data Enhancement 连接](../../destinations/catalog/data-partner/acxiom-data-enhancement.md) | 新增 | 使用此连接器将第一方配置文件从 Real-Time CDP 激活到 Acxiom，以丰富数据并跨营销渠道使用。然后，您可以使用 Acxiom 源导入具有增强数据的配置文件，并在 Real-Time CDP 中使用它们。 |
+| [（Beta）Acxiom Prospect Suppression 连接](../../destinations/catalog/data-partner/acxiom-prospect-suppression.md) | 新增 | 将您的第一方受众导出到 Acxiom 目标，以允许 Acxiom 抑制已知或转换的客户。然后，使用 [Acxiom 潜在客户数据导入](../../sources/connectors/data-partners/acxiom-prospecting-data-import.md)源连接器从 Acxiom 提取并激活潜在客户列表，并删除已知或已转换的客户。 |
+| [Amazon Ads 连接](../../destinations/catalog/advertising/amazon-ads.md) | 更新 | 将数据导出到 Amazon Ads 目标时，您现在可以将数据路由到 Amazon DSP 或 Amazon Marketing Cloud（新）。 |
+| [LiveRamp Onboarding 连接](../../destinations/catalog/advertising/liveramp-onboarding.md) | 更新 | LiveRamp Onboarding 目标现在支持向欧洲和澳大利亚 [!DNL LiveRamp] [!DNL SFTP] 实例进行传递。最大导出文件大小也增加到 1,000 万行（之前为 500 万行）。 |
 
 {style="table-layout:auto"}
 
@@ -88,7 +88,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 -->
 
-有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
+有关目标的更多一般信息，请参阅[目标概述](../../destinations/home.md)。
 
 ## Experience Data Model (XDM) {#xdm}
 
@@ -98,7 +98,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 功能 | 描述 |
 | --- | --- |
-| Experience PlatformUI映射数据类型支持 | 通过在Platform UI中定义映射字段，进一步自定义您的Experience Data Model (XDM)数据结构。 现在，您可以在架构编辑器中创建映射字段以建模灵活的数据结构或有效地存储键值对。 定义新字段时，从类型下拉列表中选择“映射”，以配置子字段并将它们分配给字段组。 支持的映射值类型为字符串和整数。<br>![架构编辑器的“类型”和“映射”值类型字段突出显示。](../2024/assets/march/maps.png "架构编辑器的“类型”和“映射”值类型字段突出显示。"){width="100" zoomable="yes"}<br>要了解如何[在用户界面中定义映射字段](../../xdm/ui/fields/map.md)，请参阅用户界面指南。 |
+| Experience Platform UI 映射数据类型支持 | 通过在 Platform UI 中定义映射字段进一步自定义您的体验数据模型（XDM）数据结构。您现在可以在 Schema Editor 中创建映射字段来建模灵活的数据结构或有效地存储键值对。定义新字段时，从类型下拉菜单中选择“映射”来配置子字段并将其分配给字段组。支持的映射值类型是字符串和整数。<br>![Schemas Editor 中类型和映射值类型字段突出显示。](../2024/assets/march/maps.png "Schemas Editor 中类型和映射值类型字段突出显示。"){width="100" zoomable="yes"}<br> 了解如何[在 UI 中定义映射字段](../../xdm/ui/fields/map.md)，请参阅 UI 指南。 |
 
 {style="table-layout:auto"}
 
@@ -112,24 +112,24 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 批量操作 | 受众库现在支持批量操作。 通过使用批量操作，您可以快速选择多个受众以将它们移动到文件夹、应用标记、应用访问标签或删除。<br> ![受众UI工作区中的批量操作。](../2024/assets/march/bulk-actions.png "受众UI工作区中的批量操作。"){width="100" zoomable="yes"} <br>有关此功能的详细信息，请阅读[受众门户概述](../../segmentation/ui/audience-portal.md#bulk-actions)。 |
+| 批量操作 | 受众库存现在支持批量操作。使用批量操作，您可以快速选择多个受众将其移动到文件夹、应用标签、应用访问标签或删除。<br> ![受众 UI 工作区中的批量操作。](../2024/assets/march/bulk-actions.png "受众 UI 工作区中的批量操作。"){width="100" zoomable="yes"} <br>有关此功能的更多信息，请阅读[受众门户概述](../../segmentation/ui/audience-portal.md#bulk-actions)。 |
 
 {style="table-layout:auto"}
 
-要了解有关分段服务的更多信息，请阅读[分段服务概述](../../segmentation/home.md)。
+要了解有关区段服务的更多信息，请阅读[区段服务概述](../../segmentation/home.md)。
 
 ## 源 {#sources}
 
 Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各种数据提供者设置源连接。这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 
-**新的和更新的源**
+**新的和更新的来源**
 
 | 功能 | 类型 | 描述 |
 | --- | --- | --- |
-| [!BADGE Beta]{type=Informational} [!DNL Acxiom Data Ingestion] | 新增 | 使用[[!DNL Acxiom Data Ingestion] 源](../../sources/tutorials/ui/create/data-partners/acxiom-data-ingestion.md)将[!DNL Acxiom]数据摄取到Real-time Customer Data Platform中并扩充第一方配置文件。 然后，您可以使用丰富[!DNL Acxiom]的第一方配置文件来改进受众并在营销渠道之间激活。<br> ![Acxiom数据摄取源。](../2024/assets/march/acxiom-data-ingestion.png "新Acxiom数据摄取源。"){width="100" zoomable="yes"} <br>阅读[[!DNL Acxiom Data Ingestion] 概述](../../sources/connectors/data-partners/acxiom-data-ingestion.md)以了解如何开始使用的信息。 |
-| [!BADGE Beta]{type=Informational} [!DNL Stripe] | 新增 | 使用[[!DNL Stripe] 源](../../sources/connectors/payments/stripe.md)将客户在购买流程中捕获的数据摄取到Experience Platform中。 摄取数据后，您即可使用此数据创建个性化优惠并解锁更丰富的业务洞察。<br> ![Stripe源。](../2024/assets/march/stripe.png "新Stripe源。"){width="100" zoomable="yes"} <br>阅读[[!DNL Stripe] 概述](../../sources/connectors/payments/stripe.md)以了解如何开始使用的信息。 |
-| 对[!DNL Snowflake Streaming]的UI支持 | 新增 | 您现在可以在Experience PlatformUI中使用[[!DNL Snowflake Streaming] 源](../../sources/tutorials/ui/create/databases/snowflake-streaming.md)流式传输[!DNL Snowflake]数据库中的数据。<br> ![Snowflake流源。](../2024/assets/march/snowflake-streaming.png "新Snowflake条纹源。"){width="100" zoomable="yes"} <br>阅读[[!DNL Snowflake Streaming] 概述](../../sources/connectors/databases/snowflake-streaming.md)以了解如何开始使用的信息。 |
+| [!BADGE Beta]{type=Informative} [!DNL Acxiom Data Ingestion] | 新增 | 使用 [[!DNL Acxiom Data Ingestion] 来源](../../sources/tutorials/ui/create/data-partners/acxiom-data-ingestion.md) 摄取 [!DNL Acxiom] 数据纳入 Real-time Customer Data Platform 并丰富第一方资料。然后，您可以使用您的 [!DNL Acxiom]- 丰富第一方资料，以扩大受众群体并激活整个营销渠道。 <br> ![Acxiom 数据提取源。](../2024/assets/march/acxiom-data-ingestion.png "新的Acxiom 数据提取源。"){width="100" zoomable="yes"} <br>参阅 [[!DNL Acxiom Data Ingestion] 概述](../../sources/connectors/data-partners/acxiom-data-ingestion.md)，了解如何开始的信息。 |
+| [!BADGE Beta]{type=Informative} [!DNL Stripe] | 新增 | 使用 [[!DNL Stripe] 来源](../../sources/connectors/payments/stripe.md)将客户在购买流程中捕获的数据导入 Experience Platform。一旦获取，您就可以使用这些数据来创建个性化服务并解锁更丰富的商业洞察力。 <br> ![Stripe 来源。](../2024/assets/march/stripe.png "新的 Stripe 源。"){width="100" zoomable="yes"} <br>参阅 [[!DNL Stripe] 概述](../../sources/connectors/payments/stripe.md)，了解如何开始的信息。 |
+| UI 支持 [!DNL Snowflake Streaming] | 新增 | 您现在可以使用 Experience Platform UI 中的 [[!DNL Snowflake Streaming]  源](../../sources/tutorials/ui/create/databases/snowflake-streaming.md)从 [!DNL Snowflake] 数据库<br>流式传输数据。 ![Snowflake Streaming 源。](../2024/assets/march/snowflake-streaming.png "新的雪花条纹源。"){width="100" zoomable="yes"} <br>参阅 [[!DNL Snowflake Streaming] 概述](../../sources/connectors/databases/snowflake-streaming.md)，了解如何开始的信息。 |
 
 {style="table-layout:auto"}
 
-有关源的更多信息，请阅读[源概述](../../sources/home.md)。
+请参阅[源概述](../../sources/home.md)，了解有关源的更多信息。
