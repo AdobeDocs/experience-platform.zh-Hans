@@ -2,9 +2,9 @@
 title: thirdPartyCookiesEnabled
 description: 允许使用第三方Cookie来识别访客。
 exl-id: f241a9ae-a892-46a5-b0dd-5ac72a44d4ac
-source-git-commit: 8fc0fd96f13f0642f7671d0e0f4ecfae8ab6761f
+source-git-commit: a884790aa48fb97eebe2421124fc5d5f76c8a79d
 workflow-type: tm+mt
-source-wordcount: '278'
+source-wordcount: '237'
 ht-degree: 0%
 
 ---
@@ -12,14 +12,9 @@ ht-degree: 0%
 
 # `thirdPartyCookiesEnabled`
 
->[!IMPORTANT]
->
->Google [已宣布](https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout)计划在2024年下半年停止Chrome对第三方Cookie的支持。 因此，任何主要浏览器将不再支持第三方Cookie。
->
->实施此更改后，Adobe将停止对Web SDK中当前支持的`demdex` Cookie的支持。
-
-
 `thirdPartyCookiesEnabled`属性是一个布尔值，用于确定Web SDK是否会在第三方上下文中设置Cookie。 如果要识别组织拥有的子域或域之间的访客，则启用此选项非常有用。 但是，许多现代浏览器会限制第三方Cookie的设置和过期。
+
+`thirdPartyCookiesEnabled`属性还控制能否在[`getIdentity`](../getidentity.md)调用中请求[`CORE ID`](../../identity/overview.md#tracking-coreid-web-sdk)。
 
 启用此选项后，Web SDK将使用Adobe Audience Manager帮助识别访客。 禁用此选项后，将禁用对Audience Manager的调用。 有关详细信息，请参阅Audience Manager用户指南中的[了解Demdex域调用](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/demdex-calls.html?lang=zh-Hans)。
 
