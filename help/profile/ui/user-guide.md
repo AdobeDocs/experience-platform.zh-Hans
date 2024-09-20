@@ -3,9 +3,9 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: 实时客户个人资料UI指南
 description: Real-time Customer Profile可以为每位客户创建整体视图，结合来自多个渠道（包括在线、离线、CRM和第三方数据）的数据。 本文档提供了在Adobe Experience Platform用户界面中与Real-time Customer Profile交互的指南。
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: e6c64ebbde0301c796a4d681d962f1edb3d79a12
+source-git-commit: dc31258dad5cf03a8f4f60db4d4aefc29e8157c8
 workflow-type: tm+mt
-source-wordcount: '2155'
+source-wordcount: '2212'
 ht-degree: 0%
 
 ---
@@ -127,6 +127,11 @@ ht-degree: 0%
 ![与标识值匹配的配置文件突出显示。](../images/user-guide/filtered-identity-value.png)
 
 ## 查看配置文件详细信息 {#profile-detail}
+
+>[!CONTEXTUALHELP]
+>id="platform_errors_uplib_201001_404"
+>title="未找到实体"
+>abstract="这意味着Platform无法找到请求的实体。 要解决此错误，请尝试以下解决方案之一：<ul><li>确保在您尝试访问的实体的URL中列出了正确的配置文件ID。</li><li>确保您对尝试访问的实体具有正确的组织和沙盒组合。</li></ul>"
 
 选择&#x200B;**[!UICONTROL 配置文件ID]**&#x200B;后，**[!UICONTROL 详细信息]**&#x200B;选项卡将打开。 显示在&#x200B;**[!UICONTROL 详细信息]**&#x200B;选项卡上的配置文件信息已从多个配置文件片段合并在一起，形成单个客户的视图。 这包括客户详细信息，如基本属性、链接身份和渠道偏好设置。
 
