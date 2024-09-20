@@ -4,10 +4,10 @@ title: Real-Time Customer Profile API指南
 description: 实时客户个人资料API允许开发人员浏览和使用个人资料数据，包括查看个人资料、创建和更新合并策略、导出或示例个人资料数据，以及删除不再需要或添加错误的个人资料数据。 参阅本指南，了解如何使用 API 执行关键操作。
 role: Developer
 exl-id: ce39b95b-cff7-46cf-a14c-8203017c8826
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: cb276c55c010aa7ccc936947ad87bf74239d6e99
 workflow-type: tm+mt
-source-wordcount: '883'
-ht-degree: 1%
+source-wordcount: '860'
+ht-degree: 2%
 
 ---
 
@@ -21,11 +21,7 @@ ht-degree: 1%
 
 有关在[!DNL Experience Platform] UI中使用[!DNL Real-Time Customer Profile]数据的指南，请参阅[配置文件用户指南](../ui/user-guide.md)。
 
-## [!BADGE Beta]{type=Informative}计算属性 {#computed-attributes}
-
->[!IMPORTANT]
->
-计算属性功能处于测试阶段，并非对所有用户都可用。 文档和功能可能会发生更改。
+## 计算属性 {#computed-attributes}
 
 计算属性是用于将事件级数据聚合到配置文件级属性的函数。 这些函数是自动计算的，以便在分段、激活和个性化中使用它们。
 
