@@ -3,20 +3,20 @@ title: 在UI中创建Google Big Query Source连接
 description: 了解如何使用Google UI创建Adobe Experience Platform Big Query源连接。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 3c0902de-48b9-42d8-a4bd-0213ca85fc7f
-source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
+source-git-commit: 55aaaa39659566de81bb161d704b6f8212e29a8b
 workflow-type: tm+mt
-source-wordcount: '449'
-ht-degree: 2%
+source-wordcount: '526'
+ht-degree: 1%
 
 ---
 
-# 在用户界面中创建[!DNL Google Big Query]源连接
+# 在用户界面中创建[!DNL Google BigQuery]源连接
 
 >[!IMPORTANT]
 >
 >[!DNL Google BigQuery]源在源目录中可供已购买Real-time Customer Data Platform Ultimate的用户使用。
 
-Adobe Experience Platform中的Source连接器提供了按计划摄取外部来源数据的功能。 本教程提供了使用Platform用户界面创建[!DNL Google Big Query]源连接的步骤。
+阅读本教程，了解如何使用用户界面将您的[!DNL Google BigQuery]帐户连接到Adobe Experience Platform。
 
 ## 快速入门
 
@@ -31,26 +31,19 @@ Adobe Experience Platform中的Source连接器提供了按计划摄取外部来�
 
 ### 收集所需的凭据
 
-要在Platform上访问您的[!DNL Google BigQuery]帐户，必须提供以下OAuth 2.0身份验证值：
-
-| 凭据 | 描述 |
-| ---------- | ----------- |
-| `project` | 要查询的默认[!DNL Google BigQuery]项目的项目ID。 |
-| `clientID` | 用于生成刷新令牌的ID值。 |
-| `clientSecret` | 用于生成刷新令牌的机密值。 |
-| `refreshToken` | 从[!DNL Google]获得的刷新令牌用于授权访问[!DNL Google BigQuery]。 |
-
-有关这些值的详细信息，请参阅[此 [!DNL Google BigQuery] 文档](https://cloud.google.com/storage/docs/json_api/v1/how-tos/authorizing)。
+有关收集所需凭据的详细步骤，请阅读[[!DNL Google BigQuery] 身份验证指南](../../../../connectors/databases/bigquery.md#generate-your-google-bigquery-credentials)。
 
 ## 连接您的Google BigQuery帐户
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
-
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索栏查找要使用的特定源。
+在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索栏查找要使用的特定源。
 
 在[!UICONTROL 数据库]类别下，选择&#x200B;**[!UICONTROL Google BigQuery]**，然后选择&#x200B;**[!UICONTROL 添加数据]**。
 
-![](../../../../images/tutorials/create/google-big-query/catalog.png)
+>[!TIP]
+>
+>当给定的源尚未具有经过身份验证的帐户时，源目录中的源会显示&#x200B;**[!UICONTROL 设置]**&#x200B;选项。 一旦存在经过身份验证的帐户，此选项将更改为&#x200B;**[!UICONTROL 添加数据]**。
+
+![已选择Google BigQuery的源目录。](../../../../images/tutorials/create/google-big-query/catalog.png)
 
 此时会显示&#x200B;**[!UICONTROL 连接到Google Big Query]**&#x200B;页面。 在此页上，您可以使用新凭据或现有凭据。
 
@@ -58,13 +51,29 @@ Adobe Experience Platform中的Source连接器提供了按计划摄取外部来�
 
 若要连接现有帐户，请选择您要连接的[!DNL Google BigQuery]帐户，然后选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
 
-![](../../../../images/tutorials/create/google-big-query/existing.png)
+![显示现有帐户列表的现有帐户页面。](../../../../images/tutorials/create/google-big-query/existing.png)
 
 ### 新帐户
 
-如果您正在使用新凭据，请选择&#x200B;**[!UICONTROL 新帐户]**。 在显示的输入表单上，提供名称、可选描述和您的[!DNL Google BigQuery]凭据。 完成后，选择&#x200B;**[!UICONTROL 连接到源]**，然后留出一些时间来建立新连接。
+如果要创建新帐户，请选择&#x200B;**[!UICONTROL 新帐户]**，然后为您的新[!DNL Google BigQuery]帐户提供名称和可选描述。
 
-![](../../../../images/tutorials/create/google-big-query/new.png)
+![源工作流中的新帐户接口。](../../../../images/tutorials/create/google-big-query/new.png)
+
+>[!BEGINTABS]
+
+>[!TAB 使用基本身份验证]
+
+要使用基本身份验证，请选择&#x200B;**[!UICONTROL 基本身份验证]**，并提供[项目、客户端ID、客户端密钥、刷新令牌和（可选）大型结果数据集ID](../../../../connectors/databases/bigquery.md#generate-your-google-bigquery-credentials)的值。 完成后，选择&#x200B;**[!UICONTROL 连接到源]**，等待一段时间以建立连接。
+
+![选择基本身份验证的新帐户接口。](../../../../images/tutorials/create/google-big-query/basic_auth.png)
+
+>[!TAB 使用服务身份验证]
+
+要使用服务身份验证，请选择&#x200B;**[!UICONTROL 服务身份验证]**，并提供[项目ID、密钥文件内容和（可选）大型结果数据集ID](../../../../connectors/databases/bigquery.md#generate-your-google-bigquery-credentials)的值。 完成后，选择&#x200B;**[!UICONTROL 连接到源]**，等待一段时间以建立连接。
+
+![选择服务身份验证的新帐户接口。](../../../../images/tutorials/create/google-big-query/service_auth.png)
+
+>[!ENDTABS]
 
 ## 后续步骤
 
