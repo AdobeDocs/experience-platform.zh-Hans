@@ -2,9 +2,9 @@
 title: 在UI中创建Adobe Analytics Source连接
 description: 了解如何在UI中创建Adobe Analytics源连接，将消费者数据接入Adobe Experience Platform。
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 40ad3101f643e6ce1b24d2a02c1817cfe04bd5d5
+source-git-commit: 71932d6f743d8cf767ce4e088231e61e9c2160e0
 workflow-type: tm+mt
-source-wordcount: '2577'
+source-wordcount: '2672'
 ht-degree: 3%
 
 ---
@@ -312,6 +312,13 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 >[!NOTE]
 >
 >数据集活动页面不显示有关批次的信息，因为Analytics源连接器完全由Adobe管理。 您可以通过查看所摄取记录的相关量度来监控数据流动。
+
+## 删除您的数据流 {#delete-dataflow}
+
+要删除您的Analytics数据流，请从源工作区的顶部标题中选择&#x200B;**[!UICONTROL 数据流]**。 使用数据流页面查找要删除的Analytics数据流，然后选择它旁边的省略号(`...`)。 接下来，使用下拉菜单并选择&#x200B;**[!UICONTROL 删除]**。
+
+* 删除实时Analytics数据流也将删除其基础数据集。
+* 删除回填Analytics数据流不会删除基础数据集，但将停止其相应报表包的回填过程。 如果删除回填数据流，则摄取的数据可能仍会通过数据集查看。
 
 ## 后续步骤和其他资源
 
