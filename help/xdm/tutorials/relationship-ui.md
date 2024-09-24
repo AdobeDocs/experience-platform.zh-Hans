@@ -5,10 +5,10 @@ title: 使用架构编辑器定义两个架构之间的关系
 description: 本文档提供了一个教程，介绍如何使用Experience Platform用户界面中的架构编辑器定义两个架构之间的关系。
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 5f9fdc9eff4d8bba049c03058d24e80e9b89e953
 workflow-type: tm+mt
-source-wordcount: '1158'
-ht-degree: 10%
+source-wordcount: '1376'
+ht-degree: 9%
 
 ---
 
@@ -109,19 +109,49 @@ ht-degree: 10%
 
 >[!NOTE]
 >
->以下步骤介绍了如何使用画布中的右边栏控件定义关系字段。 如果您有权访问Real-Time CDP B2B Edition，则还可以使用[相同的对话框](./relationship-b2b.md#relationship-field)定义一对一关系，就像创建多对一关系时一样。
+>只能对字符串或字符串数组字段支持关系。
 
-在画布中选择`preferredHotel`字段，然后向下滚动到&#x200B;**[!UICONTROL 字段属性]**&#x200B;下，直到出现&#x200B;**[!UICONTROL 关系]**&#x200B;复选框。 选中此复选框以显示配置关系字段所需的参数。
+在画布中选择`preferredHotel`字段，然后在&#x200B;**[!UICONTROL 字段属性]**&#x200B;侧边栏中选择&#x200B;**[!UICONTROL 添加关系]**。
 
-![](../images/tutorials/relationship/relationship-checkbox.png)
+![字段属性侧边栏中突出显示了具有Add关系的架构编辑器。](../images/tutorials/relationship/add-relationship.png)
 
-选择&#x200B;**[!UICONTROL 引用架构]**&#x200B;的下拉列表，然后选择关系的引用架构（本示例中为“[!DNL Hotels]”）。 在&#x200B;**[!UICONTROL 引用身份命名空间]**&#x200B;下，选择引用架构的身份字段的命名空间（在本例中为“[!DNL Hotel ID]”）。 完成时选择&#x200B;**[!UICONTROL 应用]**。
+出现[!UICONTROL 添加关系]对话框。 通过此对话框，您可以设置配置关系字段所需的参数。 对于Real-Time CDP B2C用户，您只能&#x200B;**1}在源架构和引用架构之间设置一对一关系。**
 
-![](../images/tutorials/relationship/reference-schema-id-namespace.png)
+>[!NOTE]
+>
+>如果您有权访问Real-Time CDP B2B Edition，则可以使用画布的右边栏控件定义关系字段，并使用[相同对话框](./relationship-b2b.md#relationship-field)构建多对一关系。
+
+![添加关系对话框。](../images/tutorials/relationship/add-relationship-dialog.png)
+
+使用&#x200B;**[!UICONTROL 引用架构]**&#x200B;的下拉列表并为关系选择引用架构（本示例中为“[!DNL Hotels]”）。
+
+>[!NOTE]
+>
+>只有包含主标识的架构才会包含在引用架构下拉菜单中。 此安全保护可防止您意外与尚未正确配置的架构创建关系。
+
+引用架构的标识命名空间（在本例中为“[!DNL Hotel ID]”）自动填充到&#x200B;**[!UICONTROL 引用标识命名空间]**&#x200B;下。 完成时选择&#x200B;**[!UICONTROL 应用]**。
+
+![已配置关系参数并突出显示了“添加关系”对话框。](../images/tutorials/relationship/apply-relationship.png)
 
 `preferredHotel`字段现在在画布中作为关系突出显示，显示引用架构的名称。 选择&#x200B;**[!UICONTROL 保存]**&#x200B;以保存更改并完成工作流。
 
-![](../images/tutorials/relationship/relationship-save.png)
+![突出显示关系引用和“保存”的架构编辑器。](../images/tutorials/relationship/relationship-save.png)
+
+### 编辑现有关系字段 {#edit-relationship}
+
+要更改引用架构，请选择具有现有关系的字段，然后在&#x200B;**[!UICONTROL 字段属性]**&#x200B;侧边栏中选择&#x200B;**[!UICONTROL 编辑关系]**。
+
+![已突出显示具有编辑关系的架构编辑器。](../images/tutorials/relationship/edit-relationship.png)
+
+出现[!UICONTROL 编辑关系]对话框。 从此处，您可以按照[中列出的流程定义关系字段](#relationship-field)或删除关系。 选择&#x200B;**[!UICONTROL 删除关系]**&#x200B;以删除与引用架构的关系。
+
+![编辑关系对话框。](../images/tutorials/relationship/edit-relationship-dialog.png)
+
+## 筛选和搜索关系 {#filter-and-search}
+
+您可以从[!UICONTROL 架构]工作区的[!UICONTROL 关系]选项卡筛选和搜索架构中的特定关系。 您可以使用此视图快速找到和管理您的关系。 有关筛选选项的详细说明，请阅读有关[浏览架构资源](../ui/explore.md#lookup)的文档。
+
+![架构工作区中的“关系”选项卡。](../images/tutorials/relationship-b2b/relationship-tab.png)
 
 ## 后续步骤
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 架构UI概述
 description: 此概述涵盖Experience Platform中架构工作区的主要功能。
 exl-id: b6e089ce-cf9e-4150-92ab-368382a75049
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: 16d6090bc71dbdc9ab42db98eafa0ea5afb5967b
 workflow-type: tm+mt
-source-wordcount: '295'
+source-wordcount: '307'
 ht-degree: 9%
 
 ---
@@ -17,7 +17,7 @@ Adobe Experience Platform用户界面中的[!UICONTROL 架构]工作区允许您
 
 要在平台UI中访问工作区，请在左边栏中选择&#x200B;**[!UICONTROL 架构]**。
 
-![](../images/ui/overview/schemas-tab.png)
+![在Platform UI左侧导航中突出显示了架构的架构工作区。](../images/ui/overview/schemas-tab.png)
 
 ## 快速入门
 

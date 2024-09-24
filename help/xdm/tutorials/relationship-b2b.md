@@ -2,10 +2,10 @@
 title: 在Real-time Customer Data Platform B2B版本中定义两个架构之间的关系
 description: 了解如何在Adobe Real-time Customer Data Platform B2B版本中定义两个架构之间的多对一关系。
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 85d6cf10599d153a15c1bd56067f57439ddd0133
 workflow-type: tm+mt
-source-wordcount: '1363'
-ht-degree: 15%
+source-wordcount: '1769'
+ht-degree: 12%
 
 ---
 
@@ -65,19 +65,19 @@ Adobe Real-time Customer Data Platform B2B版本提供了多个Experience Data M
 
 出于参考目的，以下几节介绍了在定义关系之前本教程中使用的每个架构的结构。 请注意在架构结构中定义主身份的位置以及它们使用的自定义命名空间。
 
-### [!DNL Opportunities]架构
+### 机会模式
 
 源架构“[!DNL Opportunities]”基于[!UICONTROL XDM业务机会]类。 类`opportunityKey`提供的字段之一用作架构的标识符。 具体而言，`opportunityKey`对象下的`sourceKey`字段在名为[!DNL B2B Opportunity]的自定义命名空间下设置为架构的主要标识。
 
-如&#x200B;**[!UICONTROL 架构属性]**&#x200B;下所示，此架构已在[!DNL Real-Time Customer Profile]中启用。
+如&#x200B;**[!UICONTROL 字段属性]**&#x200B;下所示，此架构已在[!DNL Real-Time Customer Profile]中启用。
 
-![机会架构](../images/tutorials/relationship-b2b/opportunities.png)
+![架构编辑器中的Opportunity架构带有opportunityKey对象和Enable for profile切换突出显示。](../images/tutorials/relationship-b2b/opportunities.png)
 
 ### [!DNL Accounts]架构
 
 引用架构“[!DNL Accounts]”基于[!UICONTROL XDM帐户]类。 根级别`accountKey`字段包含`sourceKey`，它在名为[!DNL B2B Account]的自定义命名空间下充当其主要标识。 此架构还被允许在配置文件中使用。
 
-![帐户架构](../images/tutorials/relationship-b2b/accounts.png)
+![架构编辑器中的“帐户”架构突出显示accountKey对象和“启用配置文件”切换。](../images/tutorials/relationship-b2b/accounts.png)
 
 ## 为源架构定义关系字段 {#relationship-field}
 
@@ -97,29 +97,64 @@ Adobe Real-time Customer Data Platform B2B版本提供了多个Experience Data M
 >
 >目前，只能定义从源架构到引用架构的多对一和一对一关系。 对于一对多关系，必须在表示“多个”的架构中定义关系字段。
 
-要设置关系字段，请选择画布中相关字段旁边的箭头图标（![箭头图标](/help/images/icons/alias.png)）。 对于[!DNL Opportunities]架构，这是`accountKey.sourceKey`字段，因为目标是与帐户建立多对一关系。
+要设置关系字段，请在画布中选择有问题的字段，然后在[!UICONTROL 架构属性]侧边栏中&#x200B;**[!UICONTROL 添加关系]**。 对于[!DNL Opportunities]架构，这是`accountKey.sourceKey`字段，因为目标是与帐户建立多对一关系。
 
-![关系按钮](../images/tutorials/relationship-b2b/relationship-button.png)
+![架构编辑器突出显示sourceKey字段和Add关系。](../images/tutorials/relationship-b2b/add-relationship.png)
 
-将显示一个对话框，允许您指定有关关系的详细信息。 关系类型自动设置为&#x200B;**[!UICONTROL 多对一]**。
+出现[!UICONTROL 添加关系]对话框。 使用此对话框指定关系详细信息。 默认情况下，关系类型设置为&#x200B;**[!UICONTROL 多对一]**。
 
-![关系对话框](../images/tutorials/relationship-b2b/relationship-dialog.png)
+![突出显示具有多对一架构关系的“添加关系”对话框。](../images/tutorials/relationship-b2b/relationship-dialog.png)
 
-在&#x200B;**[!UICONTROL 引用架构]**&#x200B;下，使用搜索栏查找引用架构的名称。 当您突出显示引用架构的名称时，**[!UICONTROL 引用身份命名空间]**&#x200B;字段会自动更新为架构主要身份的命名空间。
+在&#x200B;**[!UICONTROL 引用架构]**&#x200B;下，使用搜索栏或下拉菜单查找引用架构的名称。 当您突出显示引用架构的名称时，**[!UICONTROL 引用身份命名空间]**&#x200B;字段会自动更新为引用架构的主要身份的命名空间。
 
-![引用架构](../images/tutorials/relationship-b2b/reference-schema.png)
+>[!NOTE]
+>
+>将筛选可用引用架构列表，以仅包含合适的架构。 架构&#x200B;**必须**&#x200B;具有分配的主标识，并且是B2B类或个人资料类。 目标客户类架构不能具有关系。
 
-在&#x200B;**[!UICONTROL 来自当前架构的关系名称]**&#x200B;和来自引用架构的关系名称&#x200B;**[!UICONTROL 下，分别为源架构和引用架构上下文中的关系提供友好名称。]**&#x200B;完成后，选择&#x200B;**[!UICONTROL 保存]**&#x200B;以应用更改并保存架构。
+![突出显示了“引用架构”和“引用身份”命名空间字段的“添加关系”对话框。](../images/tutorials/relationship-b2b/reference-schema.png)
 
-![关系名称](../images/tutorials/relationship-b2b/relationship-name.png)
+在&#x200B;**[!UICONTROL 来自当前架构的关系名称]**&#x200B;和来自引用架构的关系名称&#x200B;**[!UICONTROL 下，分别为源架构和引用架构上下文中的关系提供友好名称。]**&#x200B;完成后，选择&#x200B;**[!UICONTROL 应用]**&#x200B;以确认更改并保存关系。
 
-画布会重新显示，其中关系字段现在使用您之前提供的友好名称进行标记。 关系名称还列在左边栏下方，以方便参考。
+>[!NOTE]
+>
+>关系名称不得超过35个字符。
 
-![已应用关系](../images/tutorials/relationship-b2b/relationship-applied.png)
+![突出显示了“关系名称”字段的“添加关系”对话框。](../images/tutorials/relationship-b2b/relationship-name.png)
+
+画布会重新显示，其中关系字段现在使用您之前提供的友好名称进行标记。 关系名称也会列在左边栏上以便参考。
+
+![应用了新关系名称的架构编辑器。](../images/tutorials/relationship-b2b/relationship-applied.png)
 
 如果您查看引用架构的结构，则关系标记将显示在架构的主标识字段旁边和左边栏中。
 
-![目标架构关系标记](../images/tutorials/relationship-b2b/destination-relationship.png)
+![架构编辑器中的目标架构突出显示了新关系标记。](../images/tutorials/relationship-b2b/destination-relationship.png)
+
+## 编辑B2B架构关系 {#edit-schema-relationship}
+
+建立架构关系后，请在源架构中选择关系字段，然后选择&#x200B;**[!UICONTROL 编辑关系]**。
+
+>[!NOTE]
+>
+>要查看所有关联关系，请选择引用架构中的主标识字段，后跟[!UICONTROL 查看关系]。
+>![架构编辑器，其中选定了relationship字段，并突出显示了View relationship。](../images/tutorials/relationship-b2b/view-relationships.png "架构编辑器选定了关系字段并突出显示了“视图”关系。"){width="100" zoomable="yes"}
+
+![架构编辑器突出显示了关系字段和编辑关系。](../images/tutorials/relationship-b2b/edit-b2b-relationship.png)
+
+出现[!UICONTROL 编辑关系]对话框。 从该对话框中，您可以更改引用架构和关系名称，或删除关系。 无法更改多对一关系类型。
+
+![编辑关系对话框。](../images/tutorials/relationship-b2b/edit-b2b-relationship-dialog.png)
+
+要维护数据完整性并避免分段和其他流程中出现中断，请在管理架构与链接数据集的关系时考虑以下准则：
+
+* 如果架构与数据集关联，请避免直接删除关系，因为这可能会对分段产生负面影响。 相反，请在删除关系之前删除关联的数据集。
+* 如果不先删除现有关系，则无法更改引用架构。 但是，应当谨慎执行此操作，因为删除与关联数据集的关系可能会产生意想不到的结果。
+* 向包含现有链接数据集的架构添加新关系可能无法按预期工作，并且可能会导致潜在冲突。
+
+## 筛选和搜索关系 {#filter-and-search}
+
+您可以从[!UICONTROL 架构]工作区的[!UICONTROL 关系]选项卡筛选和搜索架构中的特定关系。 您可以使用此视图快速找到和管理您的关系。 有关筛选选项的详细说明，请阅读有关[浏览架构资源](../ui/explore.md#lookup)的文档。
+
+![架构工作区中的“关系”选项卡。](../images/tutorials/relationship-b2b/relationship-tab.png)
 
 ## 后续步骤
 
