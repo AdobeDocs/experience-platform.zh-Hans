@@ -2,10 +2,10 @@
 title: 审核日志概述
 description: 了解如何通过审核日志查看谁在 Adobe Experience Platform 中执行了哪些操作。
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 7ae5e9dc79b4e1f08d2bf98876b02db1967ccbe1
 workflow-type: tm+mt
-source-wordcount: '1291'
-ht-degree: 36%
+source-wordcount: '1350'
+ht-degree: 35%
 
 ---
 
@@ -133,6 +133,22 @@ ht-degree: 36%
 在出现的对话框中，选择您首选的格式（**[!UICONTROL CSV]**&#x200B;或&#x200B;**[!UICONTROL JSON]**），然后选择&#x200B;**[!UICONTROL 下载]**。 浏览器下载生成的文件，并将其保存到您的计算机。
 
 ![带有[!UICONTROL 下载]的文件格式选择对话框突出显示。](../../images/audit-logs/select-download-format.png)
+
+## 启用警报 {#enable-alerts}
+
+您可以启用审计警报来接收以下规则的通知：
+
+* 受众创建
+* 受众更新
+* 受众删除
+* 数据集创建
+* 数据集更新
+* 数据集删除
+* 架构创建
+* 架构更新
+* 架构删除
+
+从列表中选择所需的警报以订阅接收通知。 有关警报的详细信息，请参阅[使用UI订阅警报](../../../observability/alerts/ui.md)指南。
 
 ## 在API中管理审核日志
 
