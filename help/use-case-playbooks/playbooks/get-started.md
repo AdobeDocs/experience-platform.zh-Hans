@@ -4,9 +4,9 @@ title: 用例行动手册入门
 description: 了解如何开始使用用例战术手册功能。
 role: Admin
 exl-id: 1c39792e-49fe-4c5f-9796-fa29f60b7461
-source-git-commit: 1781aa552107b6ca1fed357c053a4f892960dc55
+source-git-commit: 703c84e61af105bc3933e4750a3cb27df8ac19fe
 workflow-type: tm+mt
-source-wordcount: '990'
+source-wordcount: '989'
 ht-degree: 14%
 
 ---
@@ -105,11 +105,11 @@ ht-degree: 14%
 
 ### 推送渠道表面
 
-确认已在Experience Platform或数据收藏集界面中配置应用程序表面。 这就是应用程序表面在数据收集环境中的外观。
+确认已从Experience Platform或数据收集界面配置渠道配置。 渠道配置在数据收集环境中的外观如下。
 
-<!-- ![App surfaces in Data collections](/help/use-case-playbooks/assets/playbooks/get-started/.png) -->
+<!-- ![Channel configurations in Data collections](/help/use-case-playbooks/assets/playbooks/get-started/.png) -->
 
-接下来，选择您在应用程序表面配置中查看的渠道、平台和应用程序。 选择&#x200B;**提交**&#x200B;以创建推送渠道表面。
+接下来，选择您在渠道配置中查看的渠道、平台和应用程序。 选择&#x200B;**提交**&#x200B;以创建推送渠道表面。
 
 阅读有关[如何设置推送渠道界面](https://experienceleague.adobe.com/docs/journey-optimizer/using/push/push-config/push-configuration.html)的文档。
 

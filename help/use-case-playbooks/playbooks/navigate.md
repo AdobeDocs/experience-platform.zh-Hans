@@ -4,7 +4,7 @@ title: 导航到用例行动手册
 description: 了解如何在行动手册库中导航并开始使用启发性的沙盒。
 role: User
 exl-id: 1f5dae75-1136-4be3-9132-01d36a4066ca
-source-git-commit: 54b3d2ef22f7afb47fa8c9430c5c1645c94c837d
+source-git-commit: 703c84e61af105bc3933e4750a3cb27df8ac19fe
 workflow-type: tm+mt
 source-wordcount: '717'
 ht-degree: 2%
@@ -67,7 +67,7 @@ ht-degree: 2%
 
 ### 推送渠道表面
 
-确认已在Experience Platform或数据收藏集界面中配置应用程序表面。 这就是应用程序表面在数据收集环境中的外观。
+确认已从Experience Platform或数据收集界面配置渠道配置。 渠道配置在数据收集环境中的外观如下。
 
 ## 后续步骤 {#next-steps}
 
