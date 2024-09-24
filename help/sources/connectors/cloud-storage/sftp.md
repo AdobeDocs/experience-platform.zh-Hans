@@ -4,41 +4,49 @@ solution: Experience Platform
 title: SFTP Source连接器概述
 description: 了解如何使用API或用户界面将SFTP服务器连接到Adobe Experience Platform。
 exl-id: d5bced3d-cd33-40ea-bce0-32c76ecd2790
-source-git-commit: 6c22f8243269bb304b12a4e4978ed141ed092c67
+source-git-commit: 52c1c8e6bc332bd6ee579cad52a7343007615efd
 workflow-type: tm+mt
-source-wordcount: '750'
+source-wordcount: '1228'
 ht-degree: 0%
 
 ---
 
 # SFTP连接器
 
->[!IMPORTANT]
+Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
+
+阅读本文档以了解成功将[!DNL SFTP]帐户连接到Experience Platform所需的先决步骤。
+
+>[!TIP]
 >
->Adobe Experience Platform连接到的[!DNL SFTP]服务器必须能够支持分块，这意味着与单个文件的多个连接。 如果[!DNL SFTP]服务器不支持分块，则您可能会收到阻止文件摄取的错误。
+>在连接之前，必须在SFTP服务器配置中禁用键盘交互式身份验证。 禁用设置将允许手动输入密码，而不是通过服务或程序输入。
 
-Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等云提供商提供本机连接，允许您从这些系统引入数据。
+## 先决条件 {#prerequisites}
 
-云存储源可以将您自己的数据导入[!DNL Platform]，而无需下载、格式化或上传。 引入的数据可以格式化为XDM JSON、XDM Parquet或分隔。 该过程的每个步骤都集成到源工作流中。 [!DNL Platform]允许您通过批处理从FTP或SFTP服务器引入数据。
+阅读本节以了解必须完成的先决步骤，才能成功将[!DNL SFTP]源连接到Experience Platform。
 
-## IP地址允许列表
+### IP地址允许列表
 
 在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 有关详细信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md)页。
 
-## 文件和目录的命名约束
+### 文件和目录的命名约束
 
 以下是命名云存储文件或目录时必须考虑的约束列表。
 
-- 目录和文件组件名称不能超过255个字符。
-- 目录和文件名不能以正斜杠(`/`)结尾。 如果提供，它将自动删除。
-- 以下保留URL字符必须正确转义： `! ' ( ) ; @ & = + $ , % # [ ]`
-- 不允许使用以下字符： `" \ / : | < > * ?`。
-- 不允许使用非法的URL路径字符。 诸如`\uE000`之类的代码点虽然在NTFS文件名中有效，但不是有效的Unicode字符。 此外，不允许使用某些ASCII或Unicode字符，如控制字符（0x00到0x1F、\u0081等）。 有关HTTP/1.1中Unicode字符串的规则，请参阅[RFC 2616，第2.2节：基本规则](https://www.ietf.org/rfc/rfc2616.txt)和[RFC 3987](https://www.ietf.org/rfc/rfc3987.txt)。
-- 不允许使用以下文件名：LPT1、LPT2、LPT3、LPT4、LPT5、LPT6、LPT7、LPT8、LPT9、COM1、COM2、COM3、COM4、COM5、COM6、COM7、COM8、COM9、PRN、AUX、NUL、CON、CLOCK$、点字符(.)和两个点字符(..)。
+* 目录和文件组件名称不能超过255个字符。
+* 目录和文件名不能以正斜杠(`/`)结尾。 如果提供，它将自动删除。
+* 以下保留URL字符必须正确转义： `! ' ( ) ; @ & = + $ , % # [ ]`
+* 不允许使用以下字符： `" \ / : | < > * ?`。
+* 不允许使用非法的URL路径字符。 诸如`\uE000`之类的代码点虽然在NTFS文件名中有效，但不是有效的Unicode字符。 此外，不允许使用某些ASCII或Unicode字符，如控制字符（0x00到0x1F、\u0081等）。 有关HTTP/1.1中Unicode字符串的规则，请参阅[RFC 2616，第2.2节：基本规则](https://www.ietf.org/rfc/rfc2616.txt)和[RFC 3987](https://www.ietf.org/rfc/rfc3987.txt)。
+* 不允许使用以下文件名：LPT1、LPT2、LPT3、LPT4、LPT5、LPT6、LPT7、LPT8、LPT9、COM1、COM2、COM3、COM4、COM5、COM6、COM7、COM8、COM9、PRN、AUX、NUL、CON、CLOCK$、点字符(.)和两个点字符(..)。
 
-## 为[!DNL SFTP]设置Base64编码的OpenSSH私钥
+### 为[!DNL SFTP]设置Base64编码的OpenSSH私钥
 
 [!DNL SFTP]源支持使用[!DNL Base64]编码的OpenSSH私钥进行身份验证。 有关如何生成Base64编码的OpenSSH私钥并将[!DNL SFTP]连接到Platform的信息，请参阅以下步骤。
+
+>[!BEGINTABS]
+
+>[!TAB Windows]
 
 ### [!DNL Windows]用户
 
@@ -92,6 +100,8 @@ C:\Users\lucy> [convert]::ToBase64String((Get-Content -path "C:\Users\lucy\.ssh\
 
 上述命令将[!DNL Base64]编码的私钥保存在您指定的文件路径中。 然后，您可以使用该私钥对[!DNL SFTP]进行身份验证并连接到平台。
 
+>[!TAB Mac]
+
 ### [!DNL Mac]用户
 
 如果您使用的是[!DNL Mac]，请打开&#x200B;**终端**&#x200B;并运行以下命令来生成私钥（在这种情况下，私钥将保存在`/Documents/id_rsa`中）：
@@ -142,21 +152,59 @@ cat ~/id_rsa.pub >> ~/.ssh/authorized_keys
 more ~/.ssh/authorized_keys
 ```
 
-## 将SFTP连接到[!DNL Platform]
+>[!ENDTABS]
 
->[!IMPORTANT]
->
->用户需要在连接之前禁用SFTP服务器配置中的键盘交互式身份验证。 禁用设置将允许手动输入密码，而不是通过服务或程序输入。 有关键盘交互式身份验证的更多信息，请参阅[Component Pro文档](https://doc.componentpro.com/ComponentPro-Sftp/authenticating-with-a-keyboard-interactive-authentication)。
+### 收集所需的凭据 {#credentials}
 
-以下文档提供了有关如何使用API或用户界面将SFTP服务器连接到[!DNL Platform]的信息：
+必须提供以下凭据的值，才能将您的[!DNL SFTP]服务器连接到Experience Platform。
+
+>[!BEGINTABS]
+
+>[!TAB 基本身份验证]
+
+为以下凭据提供适当的值，以使用基本身份验证对您的[!DNL SFTP]服务器进行身份验证。
+
+| 凭据 | 描述 |
+| ---------- | ----------- |
+| `host` | 与您的[!DNL SFTP]服务器关联的名称或IP地址。 |
+| `port` | 您正在连接的[!DNL SFTP]服务器端口。 如果未提供，则值默认为`22`。 |
+| `username` | 有权访问您的[!DNL SFTP]服务器的用户名。 |
+| `password` | [!DNL SFTP]服务器的密码。 |
+| `maxConcurrentConnections` | 此参数允许您指定在连接到SFTP服务器时，平台将创建的并发连接数的最大限制。 必须将此值设置为小于SFTP设置的限制。 **注意**：为现有SFTP帐户启用此设置时，它只影响未来的数据流，而不影响现有的数据流。 |
+| `folderPath` | 要提供访问权限的文件夹的路径。 [!DNL SFTP]源，您可以提供文件夹路径，以指定用户对所选子文件夹的访问权限。 |
+| `disableChunking` | 在数据摄取期间，[!DNL SFTP]源可以首先检索文件长度，将文件划分为多个部分，然后并行读取。 您可以启用或禁用此值以指定[!DNL SFTP]服务器是否可以检索文件长度或从特定偏移读取数据。 |
+| `connectionSpec.id` | （仅限API）连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的身份验证规范。 [!DNL SFTP]的连接规范ID为： `b7bf2577-4520-42c9-bae9-cad01560f7bc`。 |
+
+>[!TAB SSH公钥身份验证]
+
+为以下凭据提供适当的值，以使用SSH公钥身份验证对您的[!DNL SFTP]服务器进行身份验证。
+
+| 凭据 | 描述 |
+| ---------- | ----------- |
+| `host` | 与您的[!DNL SFTP]服务器关联的名称或IP地址。 |
+| `port` | 您正在连接的[!DNL SFTP]服务器端口。 如果未提供，则值默认为`22`。 |
+| `username` | 有权访问您的[!DNL SFTP]服务器的用户名。 |
+| `password` | [!DNL SFTP]服务器的密码。 |
+| `privateKeyContent` | Base64编码的SSH私钥内容。 OpenSSH密钥类型必须分类为RSA或DSA。 |
+| `passPhrase` | 如果密钥文件或密钥内容受密码词组保护，则使用密码词组或密码解密私钥。 如果PrivateKeyContent受密码保护，则此参数需要与PrivateKeyContent的密码短语（值）一起使用。 |
+| `maxConcurrentConnections` | 此参数允许您指定在连接到SFTP服务器时，平台将创建的并发连接数的最大限制。 必须将此值设置为小于SFTP设置的限制。 **注意**：为现有SFTP帐户启用此设置时，它只影响未来的数据流，而不影响现有的数据流。 |
+| `folderPath` | 要提供访问权限的文件夹的路径。 [!DNL SFTP]源，您可以提供文件夹路径，以指定用户对所选子文件夹的访问权限。 |
+| `disableChunking` | 在数据摄取期间，[!DNL SFTP]源可以首先检索文件长度，将文件划分为多个部分，然后并行读取。 您可以启用或禁用此值以指定[!DNL SFTP]服务器是否可以检索文件长度或从特定偏移读取数据。 |
+| `connectionSpec.id` | （仅限API）连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的身份验证规范。 [!DNL SFTP]的连接规范ID为： `b7bf2577-4520-42c9-bae9-cad01560f7bc`。 |
+
+>[!ENDTABS]
+
+## 将SFTP连接到Experience Platform
+
+以下文档提供了有关如何使用API或用户界面将SFTP服务器连接到Experience Platform的信息：
 
 ### 使用API
 
-- [使用流服务API创建SFTP基本连接](../../tutorials/api/create/cloud-storage/sftp.md)
-- [使用流量服务API浏览云存储源的数据结构和内容](../../tutorials/api/explore/cloud-storage.md)
-- [使用流服务API为云存储源创建数据流](../../tutorials/api/collect/cloud-storage.md)
+* [使用流服务API创建SFTP基本连接](../../tutorials/api/create/cloud-storage/sftp.md)
+* [使用流量服务API浏览云存储源的数据结构和内容](../../tutorials/api/explore/cloud-storage.md)
+* [使用流服务API为云存储源创建数据流](../../tutorials/api/collect/cloud-storage.md)
 
 ### 使用UI
 
-- [在UI中创建SFTP源连接](../../tutorials/ui/create/cloud-storage/sftp.md)
-- [在UI中为云存储连接创建数据流](../../tutorials/ui/dataflow/batch/cloud-storage.md)
+* [在UI中创建SFTP源连接](../../tutorials/ui/create/cloud-storage/sftp.md)
+* [在UI中为云存储连接创建数据流](../../tutorials/ui/dataflow/batch/cloud-storage.md)

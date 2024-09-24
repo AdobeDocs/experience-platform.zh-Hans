@@ -2,9 +2,9 @@
 title: 使用流服务API创建SFTP基本连接
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到SFTP（安全文件传输协议）服务器。
 exl-id: b965b4bf-0b55-43df-bb79-c89609a9a488
-source-git-commit: f6d1cc811378f2f37968bf0a42b428249e52efd8
+source-git-commit: 919e2c34bf8b9b4646936fe8bfbd4ee33d44407a
 workflow-type: tm+mt
-source-wordcount: '938'
+source-wordcount: '753'
 ht-degree: 2%
 
 ---
@@ -30,19 +30,7 @@ ht-degree: 2%
 
 ### 收集所需的凭据
 
-为了使[!DNL Flow Service]连接到[!DNL SFTP]，您必须提供以下连接属性的值：
-
-| 凭据 | 描述 |
-| ---------- | ----------- |
-| `host` | 与您的[!DNL SFTP]服务器关联的名称或IP地址。 |
-| `port` | 您连接到的SFTP服务器端口。 如果未提供，则值默认为`22`。 |
-| `username` | 有权访问您的[!DNL SFTP]服务器的用户名。 |
-| `password` | [!DNL SFTP]服务器的密码。 |
-| `privateKeyContent` | Base64编码的SSH私钥内容。 OpenSSH密钥类型必须分类为RSA或DSA。 |
-| `passPhrase` | 如果密钥文件或密钥内容受密码词组保护，则使用密码词组或密码解密私钥。 如果`privateKeyContent`受密码保护，则此参数需要与私钥内容的密码短语一起使用，作为值。 |
-| `maxConcurrentConnections` | 此参数允许您指定在连接到SFTP服务器时，平台将创建的并发连接数的最大限制。 必须将此值设置为小于SFTP设置的限制。 **注意**：为现有SFTP帐户启用此设置时，它只影响未来的数据流，而不影响现有的数据流。 |
-| `folderPath` | 要提供访问权限的文件夹的路径。 [!DNL SFTP]源，您可以提供文件夹路径，以指定用户对您选择的子文件夹的访问权限。 |
-| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL SFTP]的连接规范ID为： `b7bf2577-4520-42c9-bae9-cad01560f7bc`。 |
+有关如何检索身份验证凭据的详细步骤，请阅读[[!DNL SFTP] 身份验证指南](../../../../connectors/cloud-storage/sftp.md#gather-required-credentials)。
 
 ### 使用平台API
 
@@ -95,7 +83,8 @@ curl -X POST \
               "userName": "{USERNAME}",
               "password": "{PASSWORD}",
               "maxConcurrentConnections": 5,
-              "folderPath": "acme/business/customers/holidaySales"
+              "folderPath": "acme/business/customers/holidaySales",
+              "disableChunking": "true"
           }
       },
       "connectionSpec": {
@@ -113,6 +102,7 @@ curl -X POST \
 | `auth.params.password` | 与您的SFTP服务器关联的密码。 |
 | `auth.params.maxConcurrentConnections` | 在将Platform连接到SFTP时指定的最大并发连接数。 启用时，该值必须设置为至少1。 |
 | `auth.params.folderPath` | 要提供访问权限的文件夹的路径。 |
+| `auth.params.disableChunking` | 一个布尔值，用于确定SFTP服务器是否支持分块。 |
 | `connectionSpec.id` | SFTP服务器连接规范ID： `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
 
 +++
@@ -154,7 +144,8 @@ curl -X POST \
               "privateKeyContent": "{PRIVATE_KEY_CONTENT}",
               "passPhrase": "{PASSPHRASE}",
               "maxConcurrentConnections": 5,
-              "folderPath": "acme/business/customers/holidaySales"
+              "folderPath": "acme/business/customers/holidaySales",
+              "disableChunking": "true"
           }
       },
       "connectionSpec": {
@@ -173,6 +164,7 @@ curl -X POST \
 | `auth.params.passPhrase` | 如果密钥文件或密钥内容受密码词组保护，则使用密码词组或密码解密私钥。 如果PrivateKeyContent受密码保护，则此参数需要与PrivateKeyContent的密码短语（值）一起使用。 |
 | `auth.params.maxConcurrentConnections` | 在将Platform连接到SFTP时指定的最大并发连接数。 启用时，该值必须设置为至少1。 |
 | `auth.params.folderPath` | 要提供访问权限的文件夹的路径。 |
+| `auth.params.disableChunking` | 一个布尔值，用于确定SFTP服务器是否支持分块。 |
 | `connectionSpec.id` | [!DNL SFTP]服务器连接规范ID： `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
 
 +++
