@@ -1,11 +1,11 @@
 ---
-title: 使用Experience Platform用户界面连接Salesforce帐户
-description: 了解如何使用用户界面连接您的Salesforce帐户并将您的CRM数据引入Experience Platform。
+title: 使用Experience Platform用户界面连接您的Salesforce帐户
+description: 了解如何使用用户界面连接您的Salesforce帐户并将CRM数据引入Experience Platform。
 exl-id: b67fa4c4-d8ff-4d2d-aa76-5d9d32aa22d6
-source-git-commit: 5951b0f549c2fd2723945f8f4089d12f73b92e6c
+source-git-commit: ae322ee421edd73cd5a3fb8499267cd417491318
 workflow-type: tm+mt
-source-wordcount: '841'
-ht-degree: 3%
+source-wordcount: '935'
+ht-degree: 2%
 
 ---
 
@@ -73,19 +73,19 @@ ht-degree: 3%
 
 ![已选择Salesforce源卡的Experience PlatformUI上的源目录。](../../../../images/tutorials/create/salesforce/catalog.png)
 
-将显示&#x200B;**[!UICONTROL 连接到Salesforce]**&#x200B;页。 在此页上，您可以使用新凭据或现有凭据。
+此时会显示&#x200B;**[!UICONTROL 连接到Salesforce]**&#x200B;页面。 在此页上，您可以使用新凭据或现有凭据。
 
 ### 使用现有帐户
 
 要使用现有帐户，请选择&#x200B;**[!UICONTROL 现有帐户]**，然后从显示的列表中选择要使用的帐户。 完成后，选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
 
-![组织中已存在的经过身份验证的Salesforce帐户的列表。](../../../../images/tutorials/create/salesforce/existing.png)
+![您的组织中已存在的经过身份验证的Salesforce帐户的列表。](../../../../images/tutorials/create/salesforce/existing.png)
 
 ### 创建新帐户
 
 要创建新帐户，请选择&#x200B;**[!UICONTROL 新帐户]**，并为您的新[!DNL Salesforce]帐户提供名称和描述。
 
-![提供适当的身份验证凭据以创建新Salesforce帐户的接口。](../../../../images/tutorials/create/salesforce/new.png)
+![通过提供适当的身份验证凭据来创建新的Salesforce帐户的界面。](../../../../images/tutorials/create/salesforce/new.png)
 
 接下来，选择要用于新帐户的身份验证类型。
 
@@ -102,7 +102,7 @@ ht-degree: 3%
 
 完成后，选择&#x200B;**[!UICONTROL 连接到源]**。
 
-![用于创建Salesforce帐户的基本身份验证接口。](../../../../images/tutorials/create/salesforce/basic.png)
+![用于创建Salesforce帐户的基本身份验证界面。](../../../../images/tutorials/create/salesforce/basic.png)
 
 >[!TAB OAuth2客户端凭据]
 
@@ -118,6 +118,12 @@ ht-degree: 3%
 ![用于创建Salesforce帐户的OAuth接口。](../../../../images/tutorials/create/salesforce/oauth2.png)
 
 >[!ENDTABS]
+
+### 跳过样本数据预览 {#skip-preview-of-sample-data}
+
+在数据选择步骤中，摄取大型表或数据文件时可能会遇到超时。 您可以跳过数据预览以规避超时，并且仍可以查看架构，尽管没有示例数据。 要跳过数据预览，请启用&#x200B;**[!UICONTROL 跳过预览样本数据]**&#x200B;切换开关。
+
+工作流的其余部分将保持不变。 唯一需要注意的是，跳过数据预览可能会阻止在映射步骤中自动验证已计算和必填字段，您随后必须在映射期间手动验证这些字段。
 
 ## 后续步骤
 

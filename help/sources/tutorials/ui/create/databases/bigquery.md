@@ -3,9 +3,9 @@ title: 在UI中创建Google Big Query Source连接
 description: 了解如何使用Google UI创建Adobe Experience Platform Big Query源连接。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 3c0902de-48b9-42d8-a4bd-0213ca85fc7f
-source-git-commit: 55aaaa39659566de81bb161d704b6f8212e29a8b
+source-git-commit: ae322ee421edd73cd5a3fb8499267cd417491318
 workflow-type: tm+mt
-source-wordcount: '526'
+source-wordcount: '620'
 ht-degree: 1%
 
 ---
@@ -74,6 +74,12 @@ ht-degree: 1%
 ![选择服务身份验证的新帐户接口。](../../../../images/tutorials/create/google-big-query/service_auth.png)
 
 >[!ENDTABS]
+
+### 跳过样本数据预览 {#skip-preview-of-sample-data}
+
+在数据选择步骤中，摄取大型表或数据文件时可能会遇到超时。 您可以跳过数据预览以规避超时，并且仍可以查看架构，尽管没有示例数据。 要跳过数据预览，请启用&#x200B;**[!UICONTROL 跳过预览样本数据]**&#x200B;切换开关。
+
+工作流的其余部分将保持不变。 唯一需要注意的是，跳过数据预览可能会阻止在映射步骤中自动验证已计算和必填字段，您随后必须在映射期间手动验证这些字段。
 
 ## 后续步骤
 
