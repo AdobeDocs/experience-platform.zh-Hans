@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 7d2fe8d5e5abea768b3514d97ea7edfbb9334511
+source-git-commit: 6e1fecf2f986cbb39a2a92c28b05131e22d14b6e
 workflow-type: tm+mt
-source-wordcount: '4767'
+source-wordcount: '4717'
 ht-degree: 5%
 
 ---
@@ -111,8 +111,6 @@ ht-degree: 5%
 
 ![展示文件夹层次结构如何为受众工作的图像。](../images/ui/segment-builder/audience-folder-structure.png)
 
-您还可以使用搜索栏搜索受众，该栏使用[Lucene的搜索语法](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax)。 在&#x200B;**[!UICONTROL 受众]**&#x200B;选项卡上，选择顶级文件夹将显示搜索栏，允许您在该文件夹中搜索。 只有在输入了整个单词后，搜索结果才会开始填充。 例如，要查找名为`Online Shoppers`的受众，请在搜索栏中开始输入“在线”。 一旦“在线”一词被完整输入，包含“在线”一词的搜索结果就会出现。
-
 ## 规则生成器画布 {#rule-builder-canvas}
 
 >[!IMPORTANT]
@@ -158,6 +156,11 @@ ht-degree: 5%
 ![将显示一个警告，指出您已达到最大值数。](../images/ui/segment-builder/maximum-values.png)
 
 ### 添加受众
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_segmentbuilder_addaudiences"
+>title="搜索更新"
+>abstract="现有搜索系统已更新为使用统一搜索。 统一搜索允许您更轻松、更稳健地搜索受众以查找区段成员资格。"
 
 您可以将受众从&#x200B;**[!UICONTROL 受众]**&#x200B;选项卡拖放到规则生成器画布上，以引用新区段定义中的受众成员资格。 这样，您就可以在新的区段定义规则中包含或排除作为属性的受众成员资格。
 
