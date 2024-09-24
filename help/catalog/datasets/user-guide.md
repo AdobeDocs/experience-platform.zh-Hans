@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 数据集UI指南
 description: 了解如何在Adobe Experience Platform用户界面中使用数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: a168f61fabddd06d586f7909fd92c0409fd2f51e
+source-git-commit: 0bb10754e2f5bc289567368c803d4397cec77bf6
 workflow-type: tm+mt
-source-wordcount: '3203'
-ht-degree: 6%
+source-wordcount: '3801'
+ht-degree: 5%
 
 ---
 
@@ -96,6 +96,7 @@ ht-degree: 6%
 * [[!UICONTROL 管理数据和访问标签]](#manage-and-enforce-data-governance)
 * [[!UICONTROL 启用统一配置文件]](#enable-profile)
 * [[!UICONTROL 管理标记]](#manage-tags)
+* [(Beta) [!UICONTROL 设置数据保留策略]](#data-retention-policy)
 * [[!UICONTROL 移动到文件夹]](#move-to-folders)
 * [[!UICONTROL 删除]](#delete)。
 
@@ -168,6 +169,53 @@ ht-degree: 6%
 将标记添加到数据集后，可以根据相应的标记过滤数据集。 有关详细信息，请参阅有关如何[按标记](#enable-profile)筛选数据集的部分。
 
 有关如何对业务对象进行分类以便于发现和分类的详细信息，请参阅[管理元数据分类](../../administrative-tags/ui/managing-tags.md)指南。 本指南详细介绍具有适当权限的用户如何在Platform UI中创建预定义标记、为标记分配类别以及执行标记和标记类别的所有相关CRUD操作。
+
+### (Beta)设置数据保留策略 {#data-retention-policy}
+
+>[!AVAILABILITY]
+> 
+>数据保留设置当前为测试版，仅在&#x200B;**有限版本**&#x200B;中可供选定组织使用。 您的UI可能无法反映下面描述的功能。
+
+从[!UICONTROL 数据集]工作区的[!UICONTROL 浏览]选项卡管理数据集级别的数据集到期和保留策略。 您可以使用此功能为已摄取到Data Lake和Profile Services中的数据配置保留策略。 到期日期基于数据摄取到Platform中的时间和您的保留规则。
+
+要打开[!UICONTROL 设置数据保留]对话框，请从下拉菜单中选择数据集旁边的省略号，然后选择&#x200B;**[!UICONTROL 设置数据保留策略]**。
+
+![带有省略号的数据集工作区的“浏览”选项卡和突出显示的设置数据保留策略选项。](../images/datasets/user-guide/set-data-retention-policy-dropdown.png)
+
+出现[!UICONTROL 设置数据保留]对话框。 该对话框显示沙盒级别的许可证使用量度、数据集级别的详细信息和数据湖设置。 这些量度显示您的使用情况与您的授权。 数据集详细信息包括数据集名称、类型、配置文件启用状态和当前数据湖存储使用情况。
+
+>[!NOTE]
+>
+>沙盒级别许可的数据湖存储指标仍在开发中，不可用。
+
+![设置数据保留对话框。](../images/datasets/user-guide/set-data-retention-dialog.png)
+
+在配置数据集保留策略之前，该对话框显示建议的保留设置。 默认建议保留期为一个月。 要调整标准保留策略，请选择并更新数字，然后选择所需的时段（天、月、年）。 您可以单独配置数据湖和配置文件服务的保留设置。
+
+>[!NOTE]
+> 
+>数据湖的最短数据保留时间为30天。 配置文件服务的最短数据保留持续时间为一天。
+
+![包含持续时间下拉列表和突出显示的保存的“设置数据保留”对话框。](../images/datasets/user-guide/time-unit-dropdown.png)
+
+有关定义数据集过期日期范围的规则和配置数据保留策略的最佳实践的更多信息，请参阅[常见问题页面](../catalog-faq.md)。
+
+#### (Beta)提高了保留期和存储指标的可见性 {#retention-and-storage-metrics}
+
+Beta版用户可以使用四个新列，以便更清楚地了解您的数据管理：**[!UICONTROL 数据湖存储]**、**[!UICONTROL 数据湖保留]**、**[!UICONTROL 配置文件存储]**&#x200B;和&#x200B;**[!UICONTROL 配置文件保留]**。 这些量度显示数据在Data Lake和Profile服务中占用的存储量及其保留持续时间。 这些详细信息可帮助您优化保留策略，根据权利跟踪使用情况，并确保遵守组织和法规标准。 这种更高的可见性使您能够做出明智的决策、管理成本、简化治理并清楚地了解您的数据环境。
+
+![数据集工作区的“浏览”选项卡，其中突出显示了四个新的存储和保留列。](../images/datasets/user-guide/storage-and-retention-columns.png)
+
+下表概述了测试版中可用的新保留和存储指标。 它详细介绍了每列的用途以及它如何帮助在Platform UI中管理数据保留和存储。
+
+| 列标题 | 描述 |
+|---|---|
+| [!UICONTROL 数据湖保留] | 显示每个数据集的当前保留持续时间。 可以在每个数据集的保留设置中修改此值。数据湖保留策略可设置规则来确定数据存储的时间长度以及应在不同服务中删除数据的时间。 |
+| [!UICONTROL 数据湖存储] | 显示数据湖中每个数据集的当前存储使用情况。 此量度有助于跟踪每个数据集占用的空间，从而有助于管理存储限制和优化利用率。 |
+| [!UICONTROL 配置文件存储] | 显示配置文件服务中每个数据集的当前存储使用情况。 使用此信息可监控存储消耗并确保它符合您的数据管理目标。 |
+| [!UICONTROL 配置文件保留] | 指示每个配置文件数据集的保留持续时间。 可以在数据集的保留设置中调整此值，帮助您控制配置文件数据在删除前的存储时间。 |
+
+{style="table-layout:auto"}
 
 ### 移至文件夹 {#move-to-folders}
 
@@ -344,3 +392,4 @@ ht-degree: 6%
 * [使用API创建数据集](create.md)
 * [使用数据访问API查询数据集数据](../../data-access/home.md)
 * [使用API为Real-time Customer Profile和Identity Service配置数据集](../../profile/tutorials/dataset-configuration.md)
+
