@@ -4,10 +4,10 @@ title: 警报UI指南
 description: 了解如何在Experience Platform用户界面中管理警报。
 feature: Alerts
 exl-id: 4ba3ef2b-7394-405e-979d-0e5e1fe676f3
-source-git-commit: 9004a2203996f0fd64833a03f211232ebf14e3e4
+source-git-commit: 2e0fc17fee9b1586b4c2b44c326e2c305c127fad
 workflow-type: tm+mt
-source-wordcount: '626'
-ht-degree: 0%
+source-wordcount: '797'
+ht-degree: 3%
 
 ---
 
@@ -23,7 +23,7 @@ Adobe Experience Platform用户界面允许您根据Adobe Experience Platform可
 
 在左侧导航中突出显示[!UICONTROL 警报]的![警报页面。](../images/alerts/ui/workspace.png)
 
-## 管理警报规则
+## 管理警报规则 {#manage-rules}
 
 **[!UICONTROL 浏览]**&#x200B;选项卡列出了可能触发警报的可用规则。
 
@@ -37,7 +37,7 @@ Adobe Experience Platform用户界面允许您根据Adobe Experience Platform可
 
 ![选定的省略号将显示下拉菜单。](../images/alerts/ui/disable-subscribe.png)
 
-## 管理警报订阅者
+## 管理警报订阅者 {#manage-subscribers}
 
 >[!NOTE]
 >
@@ -67,7 +67,7 @@ Adobe Experience Platform用户界面允许您根据Adobe Experience Platform可
 
 ![收到的警报通知的电子邮件示例。](../images/alerts/ui/manage-alert-subscribers-email.png)
 
-## 启用电子邮件警报
+## 启用电子邮件警报 {#enable-email}
 
 警报通知可以直接发送到您的电子邮件。
 
@@ -85,7 +85,35 @@ Adobe Experience Platform用户界面允许您根据Adobe Experience Platform可
 
 现在，您订阅的任何警报都将发送到连接到您的Adobe ID帐户的电子邮件地址。
 
-## 查看警报历史记录
+## 自定义警报阈值 {#alert-threshold}
+
+可以为以下警报类型自定义警报阈值：
+
+| 提醒类型 | 自定义参数 |
+|---|---|
+| 区段作业延迟 | 延迟阈值 |
+| 区段导出延迟 | 延迟阈值 |
+| 目标流运行延迟 | 延迟阈值 |
+| Identity服务流运行延迟 | 延迟阈值 |
+| 配置文件流运行延迟 | 延迟阈值 |
+| 源流量运行延迟 | 延迟阈值 |
+| 查询运行延迟 | 延迟阈值 |
+| 超出激活跳过率 | 错误阈值 |
+| 超出源摄取错误率 | 错误阈值 |
+
+选择规则名称旁边的省略号(**...**)，下拉菜单会显示控件。 选择&#x200B;**[!UICONTROL 编辑]**。
+
+![选定规则的[!UICONTROL 编辑]选项已突出显示。](../images/alerts/ui/threshold-edit.png)
+
+出现&#x200B;**[!UICONTROL 自定义警报]**&#x200B;页面。 将阈值更新为所需分钟数，然后选择&#x200B;**[!UICONTROL 确认]**。
+
+![自定义警报页面突出显示[!UICONTROL 阈值]和[!UICONTROL 确认]选项。](../images/alerts/ui/threshold-update.png)
+
+您返回到&#x200B;**[!UICONTROL 警报]**&#x200B;页面。 要查看警报的阈值设置，请从列表中选择规则。 您可以在右边栏中看到警报的阈值设置，包括状态和严重性等详细信息。
+
+![突出显示的警报在右边栏中显示详细信息，并突出显示[!UICONTROL 阈值]。](../images/alerts/ui/threshold-view.png)
+
+## 查看警报历史记录 {#alert-history}
 
 **[!UICONTROL History]**&#x200B;选项卡显示贵组织收到警报的历史记录，包括触发警报、触发日期和解决日期（如果适用）的规则。
 
