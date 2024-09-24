@@ -3,9 +3,9 @@ title: 身份图链接规则的实施指南
 description: 了解在使用身份图链接规则配置实施数据时要遵循的建议步骤。
 badge: Beta 版
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 1ea840e2c6c44d5d5080e0a034fcdab4cbdc87f1
+source-git-commit: 0dadff9e2719c9cd24dcc17b759ff7e732282888
 workflow-type: tm+mt
-source-wordcount: '1398'
+source-wordcount: '1470'
 ht-degree: 2%
 
 ---
@@ -20,16 +20,89 @@ ht-degree: 2%
 
 分步概述：
 
-1. [创建必要的身份命名空间](#namespace)
-2. [使用图形仿真工具熟悉身份优化算法](#graph-simulation)
-3. [使用身份设置工具指定唯一的命名空间并配置命名空间的优先级排名](#identity-settings)
-4. [创建Experience Data Model (XDM)架构](#schema)
-5. [创建数据集](#dataset)
-6. [将您的数据摄取到Experience Platform](#ingest)
 
-## 实施前先决条件
+1. [实施的完整先决条件](#prerequisites-for-implementation)
+2. [创建必要的身份命名空间](#namespace)
+3. [使用图形仿真工具熟悉身份优化算法](#graph-simulation)
+4. [使用身份设置工具指定唯一的命名空间并配置命名空间的优先级排名](#identity-settings)
+5. [创建Experience Data Model (XDM)架构](#schema)
+6. [创建数据集](#dataset)
+7. [将您的数据摄取到Experience Platform](#ingest)
 
-在开始之前，您必须首先确保系统中的已验证事件始终包含人员标识符。
+## 实施的先决条件 {#prerequisites-for-implementation}
+
+本节概述在实施身份图链接规则到数据之前必须完成的先决步骤。
+
+### 唯一命名空间
+
+#### 单一人员命名空间要求 {#single-person-namespace-requirement}
+
+您必须确保每个配置文件中始终存在具有最高优先级的唯一命名空间。 这样做可让Identity Service在给定图形中检测适当的人员标识符。
+
++++选择以查看没有单一人员标识符命名空间的图形示例
+
+如果没有用于表示人员标识符的唯一命名空间，您最终可能会看到一个将不同的人员标识符链接到同一ECID的图表。 在此示例中，B2BCRM和B2CCRM同时链接到同一ECID。 此图表建议Tom使用其B2C登录帐户与Summer使用其B2B登录帐户共享设备。 但是，系统将识别出这是一个配置文件（图形折叠）。
+
+![将两个人员标识符链接到同一ECID的图形方案。](../images/graph-examples/multi_namespaces.png)
+
++++
+
++++选择以查看具有单个人员标识符命名空间的图形示例
+
+给定唯一的命名空间（在本例中，是指CRMID而不是两个完全不同的命名空间），Identity Service能够识别上次与ECID关联的人员标识符。 在此示例中，由于存在唯一的CRMID，因此Identity Service能够识别“共享设备”方案，即两个实体共享同一设备。
+
+![共享设备图方案，其中两个人员标识符链接到同一ECID，但旧链接被删除。](../images/graph-examples/crmid_only_multi.png)
+
++++
+
+### 命名空间优先级配置
+
+如果您使用[Adobe Analytics源连接器](../../sources/tutorials/ui/create/adobe-applications/analytics.md)来摄取数据，则必须为您的ECID指定比Adobe Analytics ID (AAID)更高的优先级，因为Identity Service阻止AAID。 通过优先处理ECID，您可以指示Real-time Customer Profile将未经身份验证的事件存储到ECID而不是AAID。
+
+### XDM体验事件
+
+* 在实施前的过程中，您必须确保系统将发送到Experience Platform的经过身份验证的事件始终包含人员标识符，例如CRMID。
+* 使用XDM体验事件发送事件时，请勿发送空字符串作为标识值。 这样做会导致系统错误。
+
++++选择此选项可查看带有空字符串的有效负载示例
+
+以下示例返回错误，因为`Phone`的标识值作为空字符串提交。
+
+```json
+    "identityMap": {
+        "ECID": [
+            {
+                "id": "24165048599243194405404369473457348936",
+                "primary": false
+            }
+        ],
+        "Phone": [
+            {
+                "id": "",
+                "primary": true
+            }
+        ]
+    }
+```
+
++++
+
+在使用XDM体验事件发送事件时，必须确保您具有完全限定的身份。
+
++++选择以查看具有完全限定的标识的事件的示例
+
+```json
+    "identityMap": {
+        "ECID": [
+            {
+                "id": "24165048599243194405404369473457348936",
+                "primary": false
+            }
+        ]
+    }
+```
+
++++
 
 ## 设置权限 {#set-permissions}
 
@@ -72,12 +145,6 @@ Identity Service实施流程的第一步是，确保将您的Experience Platform
 
 ## 引入数据 {#ingest}
 
->[!WARNING]
->
->* 在实施前的过程中，您必须确保系统将发送到Experience Platform的经过身份验证的事件始终包含人员标识符，例如CRMID。
->* 在实施过程中，您必须确保具有最高优先级的唯一命名空间始终存在于每个配置文件中。 请参阅[附录](#appendix)以了解通过确保每个配置文件都包含具有最高优先级的唯一命名空间而解决的图形场景示例。
->* 如果您使用[Adobe Analytics源连接器](../../sources/tutorials/ui/create/adobe-applications/analytics.md)来摄取数据，则必须为ECID指定比AAID更高的优先级，因为Identity Service阻止AAID。 通过优先处理ECID，您可以指示Real-time Customer Profile将未经身份验证的事件存储到ECID而不是AAID。
-
 此时，您应该具备以下内容：
 
 * 访问Identity Service功能所需的权限。
@@ -101,26 +168,6 @@ Identity Service实施流程的第一步是，确保将您的Experience Platform
 ## 附录 {#appendix}
 
 请参阅此部分以了解在实施身份设置和唯一命名空间时可以参考的其他信息。
-
-### 单一人员命名空间要求 {#single-person-namespace-requirement}
-
-您必须确保在代表人员的所有配置文件中使用单个命名空间。 这样，Identity Service便可以检测给定图形中适当的人员标识符。
-
->[!BEGINTABS]
-
->[!TAB 没有单一人员标识符命名空间]
-
-如果没有用于表示人员标识符的唯一命名空间，您最终可能会看到一个将不同的人员标识符链接到同一ECID的图表。 在此示例中，B2BCRM和B2CCRM同时链接到同一ECID。 此图表建议Tom使用其B2C登录帐户与Summer使用其B2B登录帐户共享设备。 但是，系统将识别出这是一个配置文件（图形折叠）。
-
-![将两个人员标识符链接到同一ECID的图形方案。](../images/graph-examples/multi_namespaces.png)
-
->[!TAB 具有单一人员标识符命名空间]
-
-给定唯一的命名空间（在本例中，是指CRMID而不是两个完全不同的命名空间），Identity Service能够识别上次与ECID关联的人员标识符。 在此示例中，由于存在唯一的CRMID，因此Identity Service能够识别“共享设备”方案，即两个实体共享同一设备。
-
-![共享设备图方案，其中两个人员标识符链接到同一ECID，但旧链接被删除。](../images/graph-examples/crmid_only_multi.png)
-
->[!ENDTABS]
 
 ### 挂起loginID方案 {#dangling-loginid-scenario}
 
