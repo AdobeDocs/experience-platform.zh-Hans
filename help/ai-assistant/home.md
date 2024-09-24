@@ -2,10 +2,10 @@
 title: Adobe Experience Platform中的AI助手概述
 description: 了解 AI 助手、其细微差别和用例，以及如何使用它来通过 Adobe Experience Platform 和 Real-Time Customer Data Platform 加快工作流程。
 exl-id: cfd4ac22-fff3-4b50-bbc2-85b6328f603c
-source-git-commit: 6f95cae48b0f4c304eb3dbd2d95e01e00e0f01c9
+source-git-commit: 0926a0e8c7ae560bf5f4f9ff6853b191af047738
 workflow-type: tm+mt
-source-wordcount: '927'
-ht-degree: 8%
+source-wordcount: '926'
+ht-degree: 15%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 8%
 
 请阅读本文档，了解Adobe Experience Platform中的AI助手。
 
-Adobe Experience Platform中的AI助手是一种对话体验，可用于加快Adobe应用程序中的工作流程。 您可以使用AI Assistant更好地了解产品知识、排除问题或搜索信息并查找运营见解。 AI Assistant支持Experience Platform、Real-time Customer Data Platform、Adobe Journey Optimizer和Customer Journey Analytics。
+Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使用它来加速 Adobe 应用程序中的工作流程。您可以使用 AI 助手更好地了解产品知识、解决问题或搜索信息并找到运营洞察。AI 助手支持 Experience Platform、Real-time Customer Data Platform、Adobe Journey Optimizer 和 Customer Journey Analytics。
 
 ![首次触发用户体验的AI助手界面。](./images/ai-assistant-full.png)
 
@@ -53,7 +53,7 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 
 | 产品知识 | 示例 |
 | --- | --- |
-| 点式学习 | <ul><li>标识与主键或外键之间有何区别？</li><li>如何计算配置文件丰富度？</li></ul> |
+| 点式学习 | <ul><li>标识与主键或外键之间有何区别？</li><li>什么是相似受众？</li></ul> |
 | 打开发现 | <ul><li>如何导出此数据集？</li><li>是否有适用于医疗保健客户的架构？</li></ul> |
 | 故障排除 | <ul><li>为何我无法打开Adobe拥有的架构以访问配置文件？</li><li>为什么无法删除区段？</li></ul> |
 

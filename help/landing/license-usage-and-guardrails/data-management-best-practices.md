@@ -2,10 +2,10 @@
 title: 数据管理许可证权利最佳实践
 description: 了解可用来借助 Adobe Experience Platform 更好地管理您的许可证权利的最佳实践和工具。
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: 1b8fd7671146519fa66768aab3fe081adb0bd6c6
 workflow-type: tm+mt
-source-wordcount: '2237'
-ht-degree: 2%
+source-wordcount: '2145'
+ht-degree: 3%
 
 ---
 
@@ -42,12 +42,7 @@ Experience Platform主要由两个数据存储库组成：[!DNL data lake]和配
 
 **[!DNL Addressable Audience]** — 合同允许在Experience Platform中的客户配置文件总数，包括已知和假名配置文件。
 
-**[!DNL Profile Richness]** — 您的配置文件数据在Experience Platform中的平均大小。 您可以通过购买丰富包来增加您的[!DNL Profile Richness]权利。
-
-根据您购买的许可，[!DNL Profile Richness]量度会有所不同。 [!DNL Profile Richness]有两个可用计算：
-
-* 在任何时间点存储在Adobe Real-time Customer Data Platform中的所有生产数据的总和（即Real-time Customer Profile和Identity Service），除以[!DNL Addressable Audience]；
-* Platform内存储的所有数据（包括但不限于[!DNL data lake]、Real-time Customer Profile和Identity Service）以及过去12个月中您通过Platform流式传输（而不是存储在）的任何数据的总和，除以[!DNL Addressable Audience]。
+**[!DNL Total Data Volume]** — 可在参与工作流中使用的Adobe Experience Platform配置文件服务的数据总数。
 
 这些指标的可用性和每个指标的特定定义因贵组织购买的许可而异。
 
@@ -108,7 +103,7 @@ Adobe Experience Platform UI提供了一个功能板，通过该功能板，您�
 | --- | --- |
 | Adobe Audience Manager源筛选 | 在创建Adobe Audience Manager源连接时，您可以选择将哪些区段和特征引入[!DNL data lake]和实时客户个人资料中，而不是摄取整个Audience Manager数据。 有关详细信息，请参阅[创建Audience Manager源连接](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md)指南。 |
 | Adobe Analytics数据准备 | 在创建Analytics源连接时，您可以使用[!DNL Data Prep]功能来过滤掉用例不需要的数据。 通过[!DNL Data Prep]，您可以定义哪些属性/列需要发布到配置文件。 您还可以提供条件语句，以告知Platform数据是应发布到配置文件，还是仅发布到[!DNL data lake]。 有关详细信息，请参阅[创建Analytics源连接](../../sources/tutorials/ui/create/adobe-applications/analytics.md)指南。 |
-| 支持为配置文件启用/禁用数据集 | 要将数据摄取到Real-time Customer Profile，您必须启用要在配置文件存储中使用的数据集。 这样做会将添加到您的[!DNL Addressable Audience]和[!DNL Profile Richness]权利。 一旦客户个人资料用例不再需要某个数据集，您可以禁用该数据集与个人资料的集成，以确保您的数据仍然符合许可证要求。 有关详细信息，请参阅[启用和禁用配置文件](../../catalog/datasets/enable-for-profile.md)的数据集指南。 |
+| 支持为配置文件启用/禁用数据集 | 要将数据摄取到Real-time Customer Profile，您必须启用要在配置文件存储中使用的数据集。 这样做会将添加到您的[!DNL Addressable Audience]和[!DNL Total Data Volume]权利。 一旦客户个人资料用例不再需要某个数据集，您可以禁用该数据集与个人资料的集成，以确保您的数据仍然符合许可证要求。 有关详细信息，请参阅[启用和禁用配置文件](../../catalog/datasets/enable-for-profile.md)的数据集指南。 |
 | Web SDK和移动SDK数据排除 | Web和Mobile SDK收集的数据有两种类型：自动收集的数据和开发人员明确收集的数据。 为了更好地管理许可证合规性，您可以通过上下文设置在SDK的配置中禁用自动数据收集。 您的开发人员也可以删除或设置自定义数据。 |
 | 服务器端转发数据排除 | 如果您使用服务器端转发将数据发送到Platform，则可以通过以下方法排除发送的数据：在规则操作中删除映射以在所有事件中排除该数据，或者向规则添加条件，以便数据仅针对特定事件触发。 有关详细信息，请参阅有关[事件和条件](/help/tags/ui/managing-resources/rules.md#events-and-conditions-if)的文档。 |
 | 在源级别过滤数据 | 在创建连接并将数据摄取到Experience Platform之前，可以使用逻辑和比较运算符过滤源中的行级数据。 有关详细信息，请阅读有关使用 [!DNL Flow Service] API](../../sources/tutorials/api/filter.md)筛选源的行级数据的指南[。 |

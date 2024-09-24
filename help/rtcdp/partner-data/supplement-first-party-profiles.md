@@ -3,10 +3,10 @@ title: 使用合作伙伴提供的属性补充第一方配置文件
 description: 了解如何使用可信赖的数据合作伙伴的属性来补充第一方配置文件，以改善您的数据基础，获得对客户群的全新见解，并提升受众优化。
 feature: Use Cases, Profile Enrichment
 exl-id: ee21b988-88f9-4c8e-bd82-7fc55c37ec24
-source-git-commit: 9737508bd8435f4edf0e60a3559c1b4352ccb29f
+source-git-commit: 7ee472294e8f255d9de3c15982a6f5d2d3654755
 workflow-type: tm+mt
-source-wordcount: '1256'
-ht-degree: 80%
+source-wordcount: '1257'
+ht-degree: 78%
 
 ---
 
@@ -41,7 +41,7 @@ Adobe知道没有一种放之四海而皆准的方法，它允许与数据和身
 
 >[!WARNING]
 >
->Real-Time CDP 中包含的其他由合作伙伴提供的属性会影响您的&#x200B;*平均配置文件丰富度*。有关配置文件丰富度的更多信息，请阅读[ Real-Time Customer Data Platform 产品说明](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)。
+>摄取到Real-Time CDP中的其他合作伙伴提供的属性会影响您的&#x200B;*总数据量*。 阅读[Real-time Customer Data Platform产品说明](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)以了解有关总数据量的详细信息。
 
 ## 视频演练 {#video-walkthrough}
 
