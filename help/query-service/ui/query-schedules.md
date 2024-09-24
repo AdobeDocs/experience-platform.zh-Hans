@@ -2,9 +2,9 @@
 title: 查询时间表
 description: 了解如何自动运行计划的查询、删除或禁用查询计划，以及通过Adobe Experience Platform UI利用可用的计划选项。
 exl-id: 984d5ddd-16e8-4a86-80e4-40f51f37a975
-source-git-commit: 19f1f64434d655d3b19260460519018fc9c8e174
+source-git-commit: c69311b3188a8d066a24235466afad1e725d489c
 workflow-type: tm+mt
-source-wordcount: '1848'
+source-wordcount: '2051'
 ht-degree: 0%
 
 ---
@@ -141,7 +141,28 @@ ht-degree: 0%
 
 将显示该计划查询的查询运行列表。
 
+### 计算作业级别的小时数 {#compute-hours}
+
+跟踪CTAS/ITAS批处理查询的查询执行级别消耗的计算小时数。 此功能可提供计算使用情况的见解，帮助您优化资源分配并提高查询性能。
+
+>[!AVAILABILITY]
+>
+>计算小时数功能专用于已购买[Data Distiller SKU](../data-distiller/overview.md)的用户。 有关更多信息，请与您的Adobe代表联系。
+
 ![计划查询工作区的详细信息部分，其中包含为计划查询突出显示的查询运行列表。](../images/ui/query-schedules/list-of-scheduled-runs.png)
+
+下表提供了详细资料部分中每个可用列的说明，这些列列出了计划的查询运行。
+
+| 列标题 | 描述 |
+|---------------------|----------------------------------|
+| [!UICONTROL 查询运行ID] | 显示每个查询运行的唯一标识符，以便您跟踪和引用已计划查询的单独执行。 |
+| [!UICONTROL 查询运行开始] | 指示查询运行的开始日期和时间，以帮助您监视每次执行的开始时间。 |
+| [!UICONTROL 查询运行完成] | 显示查询运行的完成日期和时间，以深入了解执行持续时间和状态。 |
+| [!UICONTROL 状态] | 显示查询运行的当前状态，如`Completed,` `Running,`或`Failed,`以快速评估结果。 |
+| [!UICONTROL 数据集] | 列出查询运行中使用的数据集，以显示执行中涉及的数据源。 |
+| [!UICONTROL 计算小时数] | 显示每次查询运行使用的计算时间（以小时为单位）。 这有助于跟踪资源使用情况并优化查询性能。 |
+
+{style="table-layout:auto"}
 
 有关如何通过UI监视所有查询作业状态的完整信息，请参阅[监视器计划查询指南](./monitor-queries.md#inline-actions)。
 
