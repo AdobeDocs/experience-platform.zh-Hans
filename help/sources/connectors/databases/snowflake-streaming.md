@@ -1,13 +1,12 @@
 ---
 title: Snowflake流Source连接器概述
 description: 了解如何创建源连接和数据流，以将流数据从Snowflake实例摄取到Adobe Experience Platform
-badgeBeta: label="Beta 版" type="Informative"
 badgeUltimate: label="Ultimate" type="Positive"
-last-substantial-update: 2023-05-25T00:00:00Z
+last-substantial-update: 2023-09-24T00:00:00Z
 exl-id: ed937689-e844-487e-85fb-e3536c851fe5
-source-git-commit: e8ab39ce085a95eac898f65667706b71bdadd350
+source-git-commit: 34b1676ebb5405d73cf37cd786d1e6c26cb8fdaa
 workflow-type: tm+mt
-source-wordcount: '791'
+source-wordcount: '772'
 ht-degree: 1%
 
 ---
@@ -16,8 +15,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->* [!DNL Snowflake]流源为测试版。 有关使用测试版标记源的更多信息，请阅读[源概述](../../home.md#terms-and-conditions)。
->* 已购买Real-time Customer Data Platform Ultimate的用户可在API中使用[!DNL Snowflake]流源。
+> 已购买Real-time Customer Data Platform Ultimate的用户可在API中使用[!DNL Snowflake]流源。
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 
