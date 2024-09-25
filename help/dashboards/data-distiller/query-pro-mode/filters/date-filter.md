@@ -2,10 +2,10 @@
 title: 创建日期过滤器
 description: 了解如何按日期筛选自定义分析。
 exl-id: fa05d651-ea43-41f0-9b7d-f19c4a9ac256
-source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
+source-git-commit: 77cedd351b5628d15c279fceabde735f4f93f392
 workflow-type: tm+mt
-source-wordcount: '662'
-ht-degree: 0%
+source-wordcount: '922'
+ht-degree: 1%
 
 ---
 
@@ -22,6 +22,60 @@ ht-degree: 0%
 要应用日期筛选器，请从仪表板视图的下拉菜单中选择&#x200B;**[!UICONTROL 添加筛选器]**，然后选择&#x200B;**[!UICONTROL 日期筛选器]**。
 
 ![自定义仪表板的“添加筛选器”及其下拉菜单突出显示。](../../../images/query-pro-mode/add-filter.png)
+
+您会看到以下日期筛选选项。
+
+| 筛选条件 | 描述 |
+| --- | --- |
+| 没有自定义日期 | 从多个预设值中选择一个或多个自定义日期。 |
+| 自定义日期范围 | 从多个预设值中选择一个或多个自定义日期，或指定自定义日期范围。 |
+| 自定义日期 | 从预设值中选择或指定仪表板的开始日期。 |
+
+![创建日期筛选器对话框，其中突出显示了三个自定义日期选取器选项。](../../../images/query-pro-mode/create-date-filter.png)
+
+### 创建无自定义日期过滤器
+
+要应用预定义的日期过滤器，请选择&#x200B;**[!UICONTROL 无自定义日期]**，然后选择要包括的预定义日期选项。 最后，使用下拉菜单选择默认日期范围，然后选择&#x200B;**[!UICONTROL 保存]**。
+
+![创建日期筛选器对话框未使用自定义日期筛选器并突出显示。](../../../images/query-pro-mode/no-custom-date-filter.png)
+
+您将返回到仪表板，其中显示您之前选择的默认日期范围。 使用下拉菜单选择其他预设日期范围。
+
+![显示默认日期范围（下拉列表突出显示）的自定义仪表板。](../../../images/query-pro-mode/no-custom-date-filter-results.png)
+
+### 创建自定义日期范围过滤器
+
+要应用自定义日期范围筛选器，请选择&#x200B;**[!UICONTROL 自定义日期范围]**，然后选择要包括的预定义日期选项。 最后，选择&#x200B;**[!UICONTROL 自定义]**&#x200B;以设置默认日期范围。 使用日历指定日期范围，然后选择&#x200B;**[!UICONTROL 保存]**。
+
+>[!NOTE]
+>
+>无需选择预定义的日期选项。
+
+![创建日期筛选器对话框，其中自定义日期范围筛选器、自定义和保存突出显示。](../../../images/query-pro-mode/custom-date-range-filter.png)
+
+您将返回到仪表板，其中显示您之前指定的自定义数据范围。 使用下拉菜单选择其他预设日期范围。
+
+![自定义仪表板显示自定义日期突出显示的默认日期范围。](../../../images/query-pro-mode/custom-date-range-filter-results.png)
+
+### 创建自定义日期过滤器
+
+要应用自定义日期筛选器，请选择&#x200B;**[!UICONTROL 自定义日期]**，然后选择要包括的预定义日期选项。 最后，选择&#x200B;**[!UICONTROL 自定义]**，然后使用该日历选择开始日期。 最后，选择&#x200B;**[!UICONTROL 保存]**。
+
+>[!NOTE]
+>
+>无需选择预定义的日期选项。
+
+![创建日期筛选器对话框，其中自定义日期筛选器、自定义日期筛选器和保存筛选器突出显示。](../../../images/query-pro-mode/custom-date-filter.png)
+
+您将返回到仪表板，其中显示您之前指定的自定义数据。 使用下拉菜单选择其他日期。
+
+![自定义仪表板显示自定义日期突出显示的默认日期范围。](../../../images/query-pro-mode/custom-date-filter-results.png)
+
+## 删除日期过滤器 {#delete-date-filter}
+
+要删除您的日期筛选器，请选择删除筛选器图标（![删除筛选器图标。](/help/images/icons/filter-delete.png)）。
+
+![突出显示筛选器删除图标的自定义仪表板。](../../../images/query-pro-mode/delete-date-filter.png)
 
 ## 编辑SQL以包含日期查询参数 {#include-date-parameters}
 
@@ -75,25 +129,3 @@ LIMIT  0;
 ![Start_date下拉菜单突出显示的构件编辑器。](../../../images/sql-insights/widget-composer-date-filter-dropdown.png)
 
 最后，选择&#x200B;**[!UICONTROL 保存并关闭]**&#x200B;以返回到仪表板。 现在为所有具有开始和结束日期参数的分析启用日期过滤器。
-
-## 使用日期过滤器
-
-要使用自定义日期过滤器，请选择日历图标，然后从日历视图中选择开始和结束。
-
->[!IMPORTANT]
->
->仅添加日期过滤器不会更改图表。 您必须编辑每个见解以包括您选择的开始和结束日期。
-
-![日期筛选器日历突出显示的自定义仪表板。](../../../images/query-pro-mode/date-filter.png)
-
-从功能板中选择日期范围后，SQL中包含日期参数的分析将在小组件编辑器中看到日期过滤器选项。
-
->[!NOTE]
->
->在功能板中选择日期范围，会在分析创建工作流中显示日期过滤器的切换。
-
-## 删除日期过滤器 {#delete-date-filter}
-
-要删除您的日期筛选器，请选择删除筛选器图标（![删除筛选器图标。](/help/images/icons/filter-delete.png)）。
-
-![突出显示筛选器删除图标的自定义仪表板。](../../../images/query-pro-mode/delete-date-filter.png)

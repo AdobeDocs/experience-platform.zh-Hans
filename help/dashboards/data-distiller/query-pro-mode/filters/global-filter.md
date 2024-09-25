@@ -2,7 +2,7 @@
 title: 创建全局过滤器
 description: 了解如何使用自定义的全局应用过滤器过滤数据分析。
 exl-id: a0084039-8809-4883-9f68-c666dcac5881
-source-git-commit: 5dd821383e1b1a7bd4998a6cf14a941bfdf3f26c
+source-git-commit: 581eb2a33f9bdfddc89c9d8dbf9fca8eb3725b1d
 workflow-type: tm+mt
 source-wordcount: '507'
 ht-degree: 0%
@@ -66,4 +66,3 @@ ht-degree: 0%
 要清除所有自定义全局筛选器，请从[!UICONTROL 筛选器]对话框中选择&#x200B;**[!UICONTROL 全部清除]**。
 
 ![高亮显示带有“全部清除”的“筛选器”对话框。](../../../images/query-pro-mode/clear-all.png)
-
