@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询编辑器UI指南
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发，以及运行非交互式查询以在Experience Platform中填充数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: d2bc580ba1cacdfab45bdc6356c630a63e7d0f6e
+source-git-commit: 7ba9eb6891657e7f3d7ebbd41314b7973e31ea61
 workflow-type: tm+mt
-source-wordcount: '2430'
+source-wordcount: '2802'
 ht-degree: 0%
 
 ---
@@ -49,6 +49,12 @@ ht-degree: 0%
 
 使用查询编辑器，您可以编写、执行和保存客户体验数据的查询。 在查询编辑器中执行或保存的所有查询都可供贵组织中有权访问查询服务的所有用户使用。
 
+### 数据库选择器 {#database-selector}
+
+从查询编辑器右上角的下拉菜单中选择要查询的数据库。 所选数据库将显示在下拉列表中。
+
+![数据库下拉菜单突出显示的查询编辑器。](../images/ui/query-editor/database-dropdown.png)
+
 ### 设置 {#settings}
 
 查询编辑器输入字段上方的设置图标包括用于启用/禁用深色主题或禁用/启用自动完成的选项。
@@ -66,9 +72,6 @@ ht-degree: 0%
 查询编辑器会在您编写查询时，自动为查询建议潜在的SQL关键字以及表或列详细信息。 默认情况下，自动完成功能处于启用状态，可以随时从查询编辑器设置中禁用或启用该功能。
 
 自动完成配置设置针对每个用户，并在该用户的连续登录中被记住。 禁用此功能会阻止处理多个元数据命令，并提供通常有利于作者在编辑查询时提高速度的建议。
-
-<!-- Currently editing the auto complete setting info. -->
-
 
 
 ### 执行多个顺序查询 {#execute-multiple-sequential-queries}
@@ -112,17 +115,7 @@ ht-degree: 0%
 
 ## 在查询编辑器中编写工具 {#writing-tools}
 
-- **自动语法突出显示：**&#x200B;使读取和组织SQL更容易。
-
-![查询编辑器中的SQL语句演示语法颜色突出显示。](../images/ui/query-editor/syntax-highlight.png)
-
-- **SQL关键字自动完成：**&#x200B;开始键入您的查询，然后使用箭头键导航到所需的搜索词，然后按&#x200B;**Enter**。
-
-![带有自动完成下拉菜单的SQL的一些字符，该菜单提供查询编辑器中的选项。](../images/ui/query-editor/syntax-auto.png)
-
-- **表和字段自动完成：**&#x200B;开始键入要`SELECT`的表的名称，然后使用箭头键导航到要查找的表，然后按&#x200B;**Enter**。 选择表后，自动完成将识别该表中的字段。
-
-![显示下拉表名称建议的查询编辑器输入。](../images/ui/query-editor/tables-auto.png)
+使用查询编辑器的编写工具来增强查询创作过程。 这些功能包括设置文本格式、复制SQL、管理查询详细信息，以及保存或安排您正在进行的工作。
 
 ### 设置文本格式 {#format-text}
 
@@ -202,6 +195,43 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 >[!NOTE]
 >
 >日志不会保存未执行的查询。 为了使查询在查询服务中可用，必须在查询编辑器中运行或保存查询。
+
+### 对象浏览器 {#object-browser}
+
+>[!AVAILABILITY]
+>
+>数据集导航边栏仅适用于Data Distiller客户。 您的Platform UI可能不包含左侧数据集导航边栏。  此文档中的其他图像可能无法反映数据集导航边栏。 有关更多信息，请与您的Adobe代表联系。
+
+使用对象浏览器可轻松搜索和筛选数据集。 对象浏览器减少了在具有大量数据集的大型环境中搜索表和数据集所花费的时间。 通过简化对相关数据和元数据的访问，您可以将更多精力放在查询创作上，而较少精力放在导航上。
+
+要使用对象浏览器浏览数据库，请在搜索字段中输入表名，或选择&#x200B;**[!UICONTROL 表]**&#x200B;以展开可用数据集和表的列表。 使用搜索字段时，会根据您的输入动态筛选可用表列表。
+
+>[!NOTE]
+>
+>[所选数据库](#database-dropdown)中包含的每个数据集都列在查询编辑器左侧的导航边栏中。
+
+![查询编辑器数据集导航边栏中突出显示了搜索输入。](../images/ui/query-editor/search-tables.png)
+
+对象浏览器中显示的方案是一个可观察的方案。 这意味着，您可以在更改立即可见的情况下使用它实时监视更改和更新。 可观察的架构有助于确保数据同步，并有助于调试或分析任务。
+
+#### 当前限制 {#current-limitations}
+
+以下是当前限制的列表：
+
+- 连续查询执行：一次只能执行一个查询。 当查询正在进行时，由于按顺序处理查询，因此无法在左侧导航中打开其他表。
+- 查询日志中有额外的行：您可能会在日志中遇到标记为“SHOW TABLES”的无关查询。 这些功能将在未来版本中删除。
+
+#### 访问表元数据 {#table-metadata}
+
+除了快速搜索之外，您现在还可以通过选择表名称旁边的“i”图标来轻松访问任何表的元数据。 这将为您提供有关所选表的详细信息，以帮助您在编写查询时做出明智的决策。
+
+![查询编辑器数据集导航边栏中突出显示了搜索输入。](../images/ui/query-editor/table-metadata.png)
+
+#### 浏览子表
+
+要浏览子表或链接表，请选择列表中表名旁边的下拉箭头。 这将展开该表以显示任何关联的子表，并提供数据结构的清晰视图，并允许进行更复杂的查询构建。 字段名称旁边的图标表示列的数据类型，可帮助您在复杂查询期间识别它。
+
+![显示筛选表列表的查询编辑器。](../images/ui/query-editor/child-table-list.png)
 
 ## 使用查询编辑器执行查询 {#executing-queries}
 
