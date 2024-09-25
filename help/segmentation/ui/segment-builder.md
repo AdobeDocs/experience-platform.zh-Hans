@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 6e1fecf2f986cbb39a2a92c28b05131e22d14b6e
+source-git-commit: 6ceb28b2c9bab3b9df212764a43b202980ae239c
 workflow-type: tm+mt
-source-wordcount: '4717'
+source-wordcount: '4784'
 ht-degree: 5%
 
 ---
@@ -98,6 +98,11 @@ ht-degree: 5%
 | 多个报表包 | 泛型变量中未包含任何友好名称描述符。 <br><br>**示例：** eVar2 | <ul><li>任何具有多个描述符的字段均以通用形式显示。 这意味着UI中不会显示友好名称。</li><li>查询可以使用包含eVar的任何数据集中的数据，这可能会导致混合或不正确的结果。</li></ul> | 查询使用来自多个数据集的正确组合结果。 |
 
 ### 受众
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_segmentBuilder_b2b_decomposition"
+>title="复杂评估"
+>abstract="以下表达式过于复杂，无法表示为单个受众。 要在相同的区段定义中使用B2B规则和基于人员的事件，请执行以下步骤。<ol><li>创建仅引用基于人员的事件的区段定义，并将其另存为自己的区段定义。</li><li>在新区段定义中，在引用B2B规则时导入之前创建的区段定义。</li></ol>"
 
 >[!NOTE]
 >
