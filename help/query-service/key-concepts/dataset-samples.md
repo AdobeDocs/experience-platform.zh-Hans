@@ -2,10 +2,10 @@
 title: 数据集示例
 description: 查询服务示例数据集使您能够对大数据进行探索性查询，从而大大减少处理时间，而代价是查询准确性。 本指南提供了有关如何管理样本以进行近似查询处理的信息
 exl-id: 9e676d7c-c24f-4234-878f-3e57bf57af44
-source-git-commit: 28fe8ec5a589b8d181ba2f888d50fa9d2d7d4996
+source-git-commit: 5f2b44c364183b7becf69f491b41e9d5558accc2
 workflow-type: tm+mt
-source-wordcount: '643'
-ht-degree: 0%
+source-wordcount: '632'
+ht-degree: 1%
 
 ---
 
@@ -17,12 +17,13 @@ Adobe Experience Platform查询服务提供了示例数据集，作为其近似�
 
 为了帮助您管理用于近似查询处理的示例，查询服务支持对数据集示例执行以下操作：
 
-- [创建统一的随机数据集示例。](#create-a-sample)
-- [（可选）指定筛选条件](##optional-filter-criteria)
-- [查看ADLS表的示例列表。](#view-list-of-samples)
-- [直接查询示例数据集。](#query-sample-datasets)
-- [删除示例。](#delete-a-sample)
-- 删除原始ADLS表时删除关联的示例。
+- [数据集样本](#dataset-samples)
+   - [快速入门{#get-started}](#getting-started-get-started)
+   - [创建统一的随机数据集示例{#create-a-sample}](#create-a-uniform-random-dataset-sample-create-a-sample)
+   - [（可选）指定筛选条件{#optional-filter-criteria}](#optionally-specify-a-filter-criteria-optional-filter-criteria)
+   - [查看示例列表{#view-list-of-samples}](#view-the-list-of-samples-view-list-of-samples)
+   - [查询示例数据集{#query-sample-datasets}](#query-the-sample-dataset-query-sample-datasets)
+   - [删除数据集示例{#delete-a-sample}](#delete-dataset-samples-delete-a-sample)
 
 ## 快速入门 {#get-started}
 
@@ -32,7 +33,7 @@ Adobe Experience Platform查询服务提供了示例数据集，作为其近似�
 >
 >每次登录Platform时都必须启用会话标志。
 
-![突出显示了&#39;SET aqp=true；&#39;命令的查询编辑器。](../images/essential-concepts/set-session-flag.png)
+![突出显示了&#39;SET aqp=true；&#39;命令的查询编辑器。](../images/key-concepts/set-session-flag.png)
 
 ## 创建统一的随机数据集示例 {#create-a-sample}
 

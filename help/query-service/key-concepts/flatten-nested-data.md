@@ -3,7 +3,7 @@ keywords: Experience Platform；查询服务；查询服务；嵌套数据结构
 title: 拼合嵌套数据结构以用于BI工具
 description: 本文档介绍在将第三方BI工具与查询服务结合使用时，如何在会话期间拼合所有表和视图的XDM架构。
 exl-id: 7e534c0a-db6c-463e-85da-88d7b2534ece
-source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
+source-git-commit: 5f2b44c364183b7becf69f491b41e9d5558accc2
 workflow-type: tm+mt
 source-wordcount: '857'
 ht-degree: 0%
@@ -56,7 +56,7 @@ prod:all?FLATTEN
 
 本指南中使用的示例架构使用了标准字段组[!UICONTROL Commerce详细信息]，该组使用`commerce`对象结构和`productListItems`数组。 有关[!UICONTROL Commerce详细信息]字段组](../../xdm/field-groups/event/commerce-details.md)的[更多信息，请参阅XDM文档。 架构结构的表示形式可以在下图中看到。
 
-![Commerce详细信息字段组的架构图，包括`commerce`和`productListItems`结构。](../images/essential-concepts/commerce-details.png)
+![Commerce详细信息字段组的架构图，包括`commerce`和`productListItems`结构。](../images/key-concepts/commerce-details.png)
 
 如果BI工具不支持嵌套数据结构，则当嵌套字段包含序列化值（例如，示例架构中的`commerce`和`productListItems`）时，可能很难引用这些字段。 这些值可能会显示为单个编码的`commerce`字符串字段的一部分，并且实际上并非不可用。
 

@@ -5,10 +5,10 @@ breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
 role: User,Developer
-source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
+source-git-commit: a7796a93d588b4e41c668f1a0f60bffbcb291550
 workflow-type: tm+mt
-source-wordcount: '322'
-ht-degree: 19%
+source-wordcount: '325'
+ht-degree: 23%
 
 ---
 
@@ -39,6 +39,7 @@ ht-degree: 19%
       - [ML的工程师功能](data-distiller/ml-feature-pipelines/feature-engineering.md)
       - [将数据导出到ML环境](data-distiller/ml-feature-pipelines/export-data.md)
       - [AI/ML数据管道扩充端到端工作流](data-distiller/ml-feature-pipelines/end-to-end-notebook-workflow.md)
+- [数据Distiller超多维数据集](hypercubes.md)
 - 示例 {#use-cases}
    - [概述](use-cases/overview.md)
    - [已放弃的浏览](use-cases/abandoned-browse.md)
@@ -48,11 +49,11 @@ ht-degree: 19%
    - [同意分析](use-cases/consent-analysis.md)
    - [客户存留期值](use-cases/customer-lifetime-value.md)
    - [数据探索](./use-cases/data-exploration.md)
-   - [基于Decile的派生数据集](use-cases/deciles-use-case.md)
+   - [基于十分位的派生数据集](use-cases/deciles-use-case.md)
    - [模糊匹配](use-cases/fuzzy-match.md)
    - [列出用户的页面查看次数](use-cases/list-visitor-sessions.md)
    - [按访客的页面查看次数列出访客](use-cases/visitors-by-number-of-page-views.md)
-   - [倾向分数](use-cases/propensity-score.md)
+   - [倾向性得分](use-cases/propensity-score.md)
    - [使用高阶函数检索类似记录](use-cases/retrieve-similar-records.md)
    - [从Analytics数据返回和使用促销变量](use-cases/merchandising-variables.md)
    - [SQLAlchemy](use-cases/sqlalchemy.md)
