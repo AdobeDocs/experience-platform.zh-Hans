@@ -3,10 +3,10 @@ title: 将数据集导出到云存储目标
 type: Tutorial
 description: 了解如何将数据集从Adobe Experience Platform导出到您首选的云存储位置。
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: e95c0e509931f141ff72c1defacebe5a29756157
+source-git-commit: ad33eaa48928b25502ef279f000b92f31e1667ca
 workflow-type: tm+mt
-source-wordcount: '1845'
-ht-degree: 4%
+source-wordcount: '2573'
+ht-degree: 6%
 
 ---
 
@@ -24,7 +24,7 @@ ht-degree: 4%
 
 根据Experience Platform应用程序(Real-Time CDP、Adobe Journey Optimizer)、层（Prime或Ultimate）以及您购买的任何加载项(例如：Data Distiller)，您可以导出的数据集会有所不同。
 
-根据您购买的应用程序、产品层和任何加载项，从下表了解可以导出哪些数据集类型：
+使用下表了解根据您的应用程序、产品层和购买的任何加载项，您可以导出哪些数据集类型：
 
 <table>
 <thead>
@@ -137,11 +137,29 @@ Experience Platform目录中的一些基于文件的目标同时支持Audience A
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_datasets_exportoptions"
 >title="数据集的文件导出选项"
->abstract="选择&#x200B;**导出增量文件**&#x200B;以仅导出自上次导出后添加到数据集的数据。<br>第一个增量文件导出包括数据集中的所有数据，充当回填。后续增量文件仅包含自第一次导出后添加到数据集的数据。"
+>abstract="选择&#x200B;**导出增量文件**&#x200B;以仅导出自上次导出后添加到数据集的数据。<br>第一个增量文件导出包括数据集中的所有数据，充当回填。未来的增量文件仅包含自首次导出以来添加到数据集的数据。 <br>选择&#x200B;**导出完整文件**&#x200B;以导出每次导出时每个数据集的完整成员资格。 "
 
-在&#x200B;**[!UICONTROL 计划]**&#x200B;步骤中，您可以为数据集导出设置开始日期和导出节奏。
+>[!CONTEXTUALHELP]
+>id="dataset_dataflow_needs_schedule_end_date_header"
+>title="更新此数据流的结束日期"
+>abstract="更新此数据流的结束日期"
 
-已自动选择&#x200B;**[!UICONTROL 导出增量文件]**&#x200B;选项。 这会触发导出一个或多个表示数据集的完整快照的文件。 后续文件是自上次导出以来向数据集添加的增量文件。
+>[!CONTEXTUALHELP]
+>id="dataset_dataflow_needs_schedule_end_date_body"
+>title="更新此数据流主体的结束日期"
+>abstract="由于此目标最近进行了更新，数据流现在需要结束日期。Adobe 已将默认结束日期设置为 2025 年 5 月 1 日。请更新为您希望的结束日期，否则数据导出将在默认日期停止。"
+
+使用&#x200B;**[!UICONTROL 计划]**&#x200B;步骤可以：
+
+* 设置数据集导出的开始日期和结束日期以及导出节奏。
+* 配置导出的数据集文件是应导出数据集的完整成员资格，还是只应在每次导出时增量更改成员资格。
+* 自定义存储位置中应导出数据集的文件夹路径。 阅读有关如何[编辑导出文件夹路径](#edit-folder-path)的详细信息。
+
+使用页面上的&#x200B;**[!UICONTROL Edit schedule]**&#x200B;控件编辑导出的频率，并选择是导出完整文件还是增量文件。
+
+![编辑计划步骤中突出显示的计划控件。](/help/destinations/assets/ui/export-datasets/edit-schedule-control-highlight.png)
+
+默认情况下已选中&#x200B;**[!UICONTROL 导出增量文件]**&#x200B;选项。 这会触发导出一个或多个表示数据集的完整快照的文件。 后续文件是自上次导出以来向数据集添加的增量文件。 您还可以选择&#x200B;**[!UICONTROL 导出完整文件]**。 在这种情况下，选择频率&#x200B;**[!UICONTROL 一次]**&#x200B;以一次性完全导出数据集。
 
 >[!IMPORTANT]
 >
@@ -156,13 +174,37 @@ Experience Platform目录中的一些基于文件的目标同时支持Audience A
 
 2. 使用&#x200B;**[!UICONTROL Time]**&#x200B;选择器以[!DNL UTC]格式选择一天中何时进行导出。
 
-3. 使用&#x200B;**[!UICONTROL 日期]**&#x200B;选择器选择应执行导出的时间间隔。 请注意，您当前无法设置导出的结束日期。 有关详细信息，请查看[已知限制](#known-limitations)部分。
+3. 使用&#x200B;**[!UICONTROL 日期]**&#x200B;选择器选择应执行导出的时间间隔。
 
-4. 选择&#x200B;**[!UICONTROL 下一步]**&#x200B;保存计划并继续&#x200B;**[!UICONTROL 审阅]**&#x200B;步骤。
+4. 选择&#x200B;**[!UICONTROL 保存]**&#x200B;以保存计划并继续&#x200B;**[!UICONTROL 审阅]**&#x200B;步骤。
 
 >[!NOTE]
 > 
 >对于数据集导出，文件名具有无法修改的预设默认格式。 有关导出文件的更多信息和示例，请参阅[验证成功的数据集导出](#verify)部分。
+
+## 编辑文件夹路径 {#edit-folder-path}
+
+>[!CONTEXTUALHELP]
+>id="destinations_folder_name_template"
+>title="编辑文件夹路径"
+>abstract="使用提供的几个宏来自定义导出数据集的文件夹路径。"
+
+>[!CONTEXTUALHELP]
+>id="destinations_folder_name_template_preview"
+>title="数据集文件夹路径预览"
+>abstract="预览根据您在此窗口中添加的宏在您的存储位置中创建的文件夹结构。"
+
+选择&#x200B;**[!UICONTROL 编辑文件夹路径]**&#x200B;以自定义存储导出数据集的存储位置的文件夹结构。
+
+![编辑计划步骤中突出显示的文件夹路径控件。](/help/destinations/assets/ui/export-datasets/edit-folder-path.png)
+
+您可以使用多个可用的宏来自定义所需的文件夹名称。 双击宏以将其添加到文件夹路径，并在宏之间使用`/`以分隔文件夹。
+
+![自定义文件夹模式窗口中高亮显示的宏选择。](/help/destinations/assets/ui/export-datasets/custom-folder-path-macros.png)
+
+选择所需的宏后，您可以看到将在存储位置创建的文件夹结构的预览。 文件夹结构中的第一个级别表示您在[连接到目标](/help/destinations/ui/connect-destination.md##set-up-connection-parameters)以导出数据集时指示的&#x200B;**[!UICONTROL 文件夹路径]**。
+
+![自定义文件夹模式窗口中高亮显示的文件夹路径预览。](/help/destinations/assets/ui/export-datasets/custom-folder-path-preview.png)
 
 ## 审查 {#review}
 
@@ -174,7 +216,11 @@ Experience Platform目录中的一些基于文件的目标同时支持Audience A
 
 导出数据集时，Experience Platform会在您提供的存储位置中创建一个或多个文件`.json`或`.parquet`。 希望根据您提供的导出计划将新文件存储在您的存储位置。
 
-Experience Platform会在您指定的存储位置创建一个文件夹结构，存放导出的数据集文件。 每次导出时都会创建一个新文件夹，其模式如下所示：
+Experience Platform会在您指定的存储位置创建一个文件夹结构，存放导出的数据集文件。 默认文件夹导出模式如下所示，但您可以[使用首选宏](#edit-folder-path)自定义文件夹结构。
+
+>[!TIP]
+> 
+>此文件夹结构中的第一个级别 — `folder-name-you-provided` — 表示您[连接到目标](/help/destinations/ui/connect-destination.md##set-up-connection-parameters)以导出数据集时指示的&#x200B;**[!UICONTROL 文件夹路径]**。
 
 `folder-name-you-provided/datasetID/exportTime=YYYYMMDDHHMM`
 
@@ -194,6 +240,8 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
 * 导出压缩的JSON文件时，导出的文件格式为`json.gz`
 * 导出压缩的parquet文件时，导出的文件格式为`gz.parquet`
+
+仅支持在压缩模式下&#x200B;*导出到JSON文件*。 在压缩和未压缩模式下支持导出到Parquet文件。
 
 ## 从目标中删除数据集 {#remove-dataset}
 
@@ -227,7 +275,7 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
 另一方面，如果您购买了Data Distiller等加载项，则您有权获得的数据导出限制表示产品层和加载项的总和。
 
-您可以在许可控制面板中查看和跟踪配置文件导出是否符合合同限制。
+您可以在[许可证使用情况仪表板](/help/landing/license-usage-and-guardrails/license-usage-dashboard.md)中查看和跟踪配置文件导出是否符合合同限制。
 
 ## 已知限制 {#known-limitations}
 
@@ -240,3 +288,59 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 * 目前，UI不会阻止您删除正在导出到目标的数据集。 请勿删除任何正在导出到目标的数据集。 [删除目标数据流中的数据集](#remove-dataset)之前。
 * 数据集导出的监控量度当前与用户档案导出的数字混杂在一起，因此它们不反映真正的导出数字。
 * 时间戳超过365天的数据将从数据集导出中排除。 有关详细信息，请查看计划数据集导出的[护栏](/help/destinations/guardrails.md#guardrails-for-scheduled-dataset-exports)
+
+## 常见问题 {#faq}
+
+**如果我们仅在`/`处保存为文件夹路径，是否可以生成没有文件夹的文件？ 此外，如果我们不需要文件夹路径，如何在文件夹或位置中生成具有重复名称的文件？**
+
++++
+从2024年9月版开始，可以自定义文件夹名称，甚至可以使用`/`导出同一文件夹中所有数据集的文件。 Adobe不建议将这一点用于导出多个数据集的目标，因为属于不同数据集的系统生成的文件名将混合到同一文件夹中。
++++
+
+**是否可以将清单文件路由到一个文件夹，将数据文件路由到另一个文件夹？**
+
++++
+否，无法将清单文件复制到其他位置。
++++
+
+**我们可以控制文件传送的顺序或时间吗？**
+
++++
+有多种选项可用于计划导出。 没有用于延迟或排序文件副本的选项。 生成后，它们会立即复制到您的存储位置。
++++
+
+**清单文件有哪些格式可用？**
+
++++
+清单文件采用.json格式。
++++
+
+**清单文件是否有API可用性？**
+
++++
+清单文件没有API可用，但它包含构成导出的文件列表。
++++
+
+**能否向清单文件添加其他详细信息（即记录计数）？ 如果是，如何进行？**
+
++++
+无法向清单文件添加其他信息。 记录计数可通过`flowRun`实体获得（可通过API查询）。 有关更多信息，请参阅目标监控。
++++
+
+**数据文件如何拆分？ 每个文件有多少条记录？**
+
++++
+数据文件按Experience Platform数据湖中的默认分区进行拆分。 数据集越大，分区数量就越大。 由于默认分区已针对读取进行了优化，因此用户无法对其进行配置。
++++
+
+**是否可以设置阈值（每个文件的记录数）？**
+
++++
+不，这不可能。
++++
+
+**在初始发送错误时，我们如何重新发送数据集？**
+
++++
+对于大多数类型的系统错误，会自动进行重试。
++++

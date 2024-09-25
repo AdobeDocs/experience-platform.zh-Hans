@@ -4,10 +4,10 @@ title: 使用流服务API导出数据集
 description: 了解如何使用流服务API将数据集导出到所选目标。
 type: Tutorial
 exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
-source-git-commit: af705b8a77b2ea15b44b97ed3f1f2c5aa7433eb1
+source-git-commit: 22a752e28fe3cc4cb3337b456e80ef1b273f6a71
 workflow-type: tm+mt
-source-wordcount: '3524'
-ht-degree: 4%
+source-wordcount: '5107'
+ht-degree: 3%
 
 ---
 
@@ -16,6 +16,19 @@ ht-degree: 4%
 >[!AVAILABILITY]
 >
 >* 已购买Real-Time CDP Prime和Ultimate软件包、Adobe Journey Optimizer或Customer Journey Analytics的客户可以使用此功能。 有关更多信息，请与您的Adobe代表联系。
+
+>[!IMPORTANT]
+>
+>**操作项**： 2024年9月版本的Experience Platform](/help/release-notes/latest/latest.md#destinations)引入了为导出数据集数据流设置`endTime`日期的选项。 [对于在9月版本&#x200B;*之前创建*&#x200B;的所有数据集导出数据流，Adobe还引入了2025年5月1日的默认结束日期。 对于其中任何数据流，您需要手动更新数据流中的结束日期在结束日期之前，否则您的导出将停止在该日期。 使用Experience PlatformUI查看哪些数据流将设置为在5月1日停止。
+>
+>同样，对于您创建但未指定`endTime`日期的任何数据流，这些时间将默认为自其创建之日起六个月的结束时间。
+
+<!--
+
+>You can retrieve a list of such dataflows by performing the following API call: `https://platform.adobe.io/data/foundation/flowservice/flows?property=scheduleParams.endTime==UNIXTIMESTAMPTHATWEWILLUSE`
+>
+
+-->
 
 本文介绍使用[!DNL Flow Service API]将[数据集](/help/catalog/datasets/overview.md)从Adobe Experience Platform导出到首选云存储位置（如[!DNL Amazon S3]、SFTP位置或[!DNL Google Cloud Storage]）所需的工作流。
 
@@ -49,7 +62,7 @@ ht-degree: 4%
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
 * [[!DNL Experience Platform datasets]](/help/catalog/datasets/overview.md)：成功引入Adobe Experience Platform的所有数据将作为数据集保留在[!DNL Data Lake]中。 数据集是用于数据集合的存储和管理结构，通常是表格，其中包含架构（列）和字段（行）。数据集还包含描述其存储的数据的各个方面的元数据。
-* [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform]提供了将单个[!DNL Platform]实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+   * [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform]提供了将单个[!DNL Platform]实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了要将数据集导出到Platform中的云存储目标必须了解的其他信息。
 
@@ -1955,13 +1968,29 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
     ],
     "transformations": [],
     "scheduleParams": { // specify the scheduling info
+        "exportMode": DAILY_FULL_EXPORT or FIRST_FULL_THEN_INCREMENTAL
         "interval": 3, // also supports 6, 9, 12 hour increments
-        "timeUnit": "hour", // also supports "day" for daily increments. Use "interval": 1 when you select "timeUnit": "day"
-        "startTime": 1675901210 // UNIX timestamp start time (in seconds)
+        "timeUnit": "hour", // also supports "day" for daily increments. 
+        "interval": 1, // when you select "timeUnit": "day"
+        "startTime": 1675901210, // UNIX timestamp start time (in seconds)
+        "endTime": 1975901210, // UNIX timestamp end time (in seconds)
+        "foldernameTemplate": "%DESTINATION%_%DATASET_ID%_%DATETIME(YYYYMMdd_HHmmss)%"
     }
 }'
 ```
 
+下表提供了`scheduleParams`部分中所有参数的说明，这允许您自定义数据集导出的导出时间、频率、位置等。
+
+| 参数 | 描述 |
+|---------|----------|
+| `exportMode` | 选择`"DAILY_FULL_EXPORT"`或`"FIRST_FULL_THEN_INCREMENTAL"`。 有关这两个选项的更多信息，请参阅批处理目标激活教程中的[导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files)和[导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files)。 三个可用的导出选项为： <br> **完整文件 — 一次**： `"DAILY_FULL_EXPORT"`只能与`timeUnit`：`day`和`interval`：`0`一起使用，以一次性完整导出数据集。 不支持数据集的每日完整导出。 如果需要每日导出，请使用增量导出选项。<br> **每日增量导出**：为每日增量导出选择`"FIRST_FULL_THEN_INCREMENTAL"`、`timeUnit`：`day`和`interval`：`1`。<br> **每小时增量导出**：为每小时增量导出选择`"FIRST_FULL_THEN_INCREMENTAL"`、`timeUnit`：`hour`和`interval`：`3`、`6`、`9`或`12`。 |
+| `timeUnit` | 根据导出数据集文件的频率选择`day`或`hour`。 |
+| `interval` | 当`timeUnit`为天时，选择`1`；当时间单位为`hour`时，选择`3`，`6`，`9`，`12`。 |
+| `startTime` | 开始数据集导出的日期和时间（以UNIX秒为单位）。 |
+| `endTime` | 数据集导出应结束的日期和时间（以UNIX秒为单位）。 |
+| `foldernameTemplate` | 在要存放导出文件的存储位置中指定所需的文件夹名称结构。 <ul><li><code>DATASET_ID</code> = <span>数据集的唯一标识符。</span></li><li><code>目标</code> = <span>目标的名称。</span></li><li><code>日期时间</code> = <span>格式为yyyyMMdd_HHmmss.</span>的日期和时间</li><li><code>导出时间</code> = <span>格式为`exportTime=YYYYMMDDHHMM`的数据导出的计划时间。</span></li><li><code>目标实例名称</code> = <span>目标的特定实例的名称。</span></li><li><code>DESTINATION_INSTANCE_ID</code> = <span>目标实例的唯一标识符。</span></li><li><code>沙盒名称</code> = <span>沙盒环境的名称。</span></li><li><code>组织名称</code> = <span>组织的名称。</span></li></ul> |
+
+{style="table-layout:auto"}
 +++
 
 **响应**
@@ -2008,12 +2037,29 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
     ],
     "transformations": [],
     "scheduleParams": { // specify the scheduling info
-        "interval": 3, // also supports 6, 9, 12, 24 hour increments
-        "timeUnit": "hour",
-        "startTime": 1675901210 // UNIX timestamp start time(in seconds)
+        "exportMode": DAILY_FULL_EXPORT or FIRST_FULL_THEN_INCREMENTAL
+        "interval": 3, // also supports 6, 9, 12 hour increments
+        "timeUnit": "hour", // also supports "day" for daily increments. 
+        "interval": 1, // when you select "timeUnit": "day"
+        "startTime": 1675901210, // UNIX timestamp start time (in seconds)
+        "endTime": 1975901210, // UNIX timestamp end time (in seconds)
+        "foldernameTemplate": "%DESTINATION%_%DATASET_ID%_%DATETIME(YYYYMMdd_HHmmss)%"
     }
 }'
 ```
+
+下表提供了`scheduleParams`部分中所有参数的说明，这允许您自定义数据集导出的导出时间、频率、位置等。
+
+| 参数 | 描述 |
+|---------|----------|
+| `exportMode` | 选择`"DAILY_FULL_EXPORT"`或`"FIRST_FULL_THEN_INCREMENTAL"`。 有关这两个选项的更多信息，请参阅批处理目标激活教程中的[导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files)和[导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files)。 三个可用的导出选项为： <br> **完整文件 — 一次**： `"DAILY_FULL_EXPORT"`只能与`timeUnit`：`day`和`interval`：`0`一起使用，以一次性完整导出数据集。 不支持数据集的每日完整导出。 如果需要每日导出，请使用增量导出选项。<br> **每日增量导出**：为每日增量导出选择`"FIRST_FULL_THEN_INCREMENTAL"`、`timeUnit`：`day`和`interval`：`1`。<br> **每小时增量导出**：为每小时增量导出选择`"FIRST_FULL_THEN_INCREMENTAL"`、`timeUnit`：`hour`和`interval`：`3`、`6`、`9`或`12`。 |
+| `timeUnit` | 根据导出数据集文件的频率选择`day`或`hour`。 |
+| `interval` | 当`timeUnit`为天时，选择`1`；当时间单位为`hour`时，选择`3`，`6`，`9`，`12`。 |
+| `startTime` | 开始数据集导出的日期和时间（以UNIX秒为单位）。 |
+| `endTime` | 数据集导出应结束的日期和时间（以UNIX秒为单位）。 |
+| `foldernameTemplate` | 在要存放导出文件的存储位置中指定所需的文件夹名称结构。 <ul><li><code>DATASET_ID</code> = <span>数据集的唯一标识符。</span></li><li><code>目标</code> = <span>目标的名称。</span></li><li><code>日期时间</code> = <span>格式为yyyyMMdd_HHmmss.</span>的日期和时间</li><li><code>导出时间</code> = <span>格式为`exportTime=YYYYMMDDHHMM`的数据导出的计划时间。</span></li><li><code>目标实例名称</code> = <span>目标的特定实例的名称。</span></li><li><code>DESTINATION_INSTANCE_ID</code> = <span>目标实例的唯一标识符。</span></li><li><code>沙盒名称</code> = <span>沙盒环境的名称。</span></li><li><code>组织名称</code> = <span>组织的名称。</span></li></ul> |
+
+{style="table-layout:auto"}
 
 +++
 
@@ -2061,12 +2107,29 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
     ],
     "transformations": [],
     "scheduleParams": { // specify the scheduling info
-        "interval": 3, // also supports 6, 9, 12, 24 hour increments
-        "timeUnit": "hour",
-        "startTime": 1675901210 // UNIX timestamp start time(in seconds)
+        "exportMode": DAILY_FULL_EXPORT or FIRST_FULL_THEN_INCREMENTAL
+        "interval": 3, // also supports 6, 9, 12 hour increments
+        "timeUnit": "hour", // also supports "day" for daily increments. 
+        "interval": 1, // when you select "timeUnit": "day"
+        "startTime": 1675901210, // UNIX timestamp start time (in seconds)
+        "endTime": 1975901210, // UNIX timestamp end time (in seconds)
+        "foldernameTemplate": "%DESTINATION%_%DATASET_ID%_%DATETIME(YYYYMMdd_HHmmss)%"
     }
 }'
 ```
+
+下表提供了`scheduleParams`部分中所有参数的说明，这允许您自定义数据集导出的导出时间、频率、位置等。
+
+| 参数 | 描述 |
+|---------|----------|
+| `exportMode` | 选择`"DAILY_FULL_EXPORT"`或`"FIRST_FULL_THEN_INCREMENTAL"`。 有关这两个选项的更多信息，请参阅批处理目标激活教程中的[导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files)和[导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files)。 三个可用的导出选项为： <br> **完整文件 — 一次**： `"DAILY_FULL_EXPORT"`只能与`timeUnit`：`day`和`interval`：`0`一起使用，以一次性完整导出数据集。 不支持数据集的每日完整导出。 如果需要每日导出，请使用增量导出选项。<br> **每日增量导出**：为每日增量导出选择`"FIRST_FULL_THEN_INCREMENTAL"`、`timeUnit`：`day`和`interval`：`1`。<br> **每小时增量导出**：为每小时增量导出选择`"FIRST_FULL_THEN_INCREMENTAL"`、`timeUnit`：`hour`和`interval`：`3`、`6`、`9`或`12`。 |
+| `timeUnit` | 根据导出数据集文件的频率选择`day`或`hour`。 |
+| `interval` | 当`timeUnit`为天时，选择`1`；当时间单位为`hour`时，选择`3`，`6`，`9`，`12`。 |
+| `startTime` | 开始数据集导出的日期和时间（以UNIX秒为单位）。 |
+| `endTime` | 数据集导出应结束的日期和时间（以UNIX秒为单位）。 |
+| `foldernameTemplate` | 在要存放导出文件的存储位置中指定所需的文件夹名称结构。 <ul><li><code>DATASET_ID</code> = <span>数据集的唯一标识符。</span></li><li><code>目标</code> = <span>目标的名称。</span></li><li><code>日期时间</code> = <span>格式为yyyyMMdd_HHmmss.</span>的日期和时间</li><li><code>导出时间</code> = <span>格式为`exportTime=YYYYMMDDHHMM`的数据导出的计划时间。</span></li><li><code>目标实例名称</code> = <span>目标的特定实例的名称。</span></li><li><code>DESTINATION_INSTANCE_ID</code> = <span>目标实例的唯一标识符。</span></li><li><code>沙盒名称</code> = <span>沙盒环境的名称。</span></li><li><code>组织名称</code> = <span>组织的名称。</span></li></ul> |
+
+{style="table-layout:auto"}
 
 +++
 
@@ -2114,13 +2177,29 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
     ],
     "transformations": [],
     "scheduleParams": { // specify the scheduling info
-        "interval": 3, // also supports 6, 9, 12, 24 hour increments
-        "timeUnit": "hour",
-        "startTime": 1675901210 // UNIX timestamp start time(in seconds)
+        "exportMode": DAILY_FULL_EXPORT or FIRST_FULL_THEN_INCREMENTAL
+        "interval": 3, // also supports 6, 9, 12 hour increments
+        "timeUnit": "hour", // also supports "day" for daily increments. 
+        "interval": 1, // when you select "timeUnit": "day"
+        "startTime": 1675901210, // UNIX timestamp start time (in seconds)
+        "endTime": 1975901210, // UNIX timestamp end time (in seconds)
+        "foldernameTemplate": "%DESTINATION%_%DATASET_ID%_%DATETIME(YYYYMMdd_HHmmss)%"
     }
 }'
 ```
 
+下表提供了`scheduleParams`部分中所有参数的说明，这允许您自定义数据集导出的导出时间、频率、位置等。
+
+| 参数 | 描述 |
+|---------|----------|
+| `exportMode` | 选择`"DAILY_FULL_EXPORT"`或`"FIRST_FULL_THEN_INCREMENTAL"`。 有关这两个选项的更多信息，请参阅批处理目标激活教程中的[导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files)和[导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files)。 三个可用的导出选项为： <br> **完整文件 — 一次**： `"DAILY_FULL_EXPORT"`只能与`timeUnit`：`day`和`interval`：`0`一起使用，以一次性完整导出数据集。 不支持数据集的每日完整导出。 如果需要每日导出，请使用增量导出选项。<br> **每日增量导出**：为每日增量导出选择`"FIRST_FULL_THEN_INCREMENTAL"`、`timeUnit`：`day`和`interval`：`1`。<br> **每小时增量导出**：为每小时增量导出选择`"FIRST_FULL_THEN_INCREMENTAL"`、`timeUnit`：`hour`和`interval`：`3`、`6`、`9`或`12`。 |
+| `timeUnit` | 根据导出数据集文件的频率选择`day`或`hour`。 |
+| `interval` | 当`timeUnit`为天时，选择`1`；当时间单位为`hour`时，选择`3`，`6`，`9`，`12`。 |
+| `startTime` | 开始数据集导出的日期和时间（以UNIX秒为单位）。 |
+| `endTime` | 数据集导出应结束的日期和时间（以UNIX秒为单位）。 |
+| `foldernameTemplate` | 在要存放导出文件的存储位置中指定所需的文件夹名称结构。 <ul><li><code>DATASET_ID</code> = <span>数据集的唯一标识符。</span></li><li><code>目标</code> = <span>目标的名称。</span></li><li><code>日期时间</code> = <span>格式为yyyyMMdd_HHmmss.</span>的日期和时间</li><li><code>导出时间</code> = <span>格式为`exportTime=YYYYMMDDHHMM`的数据导出的计划时间。</span></li><li><code>目标实例名称</code> = <span>目标的特定实例的名称。</span></li><li><code>DESTINATION_INSTANCE_ID</code> = <span>目标实例的唯一标识符。</span></li><li><code>沙盒名称</code> = <span>沙盒环境的名称。</span></li><li><code>组织名称</code> = <span>组织的名称。</span></li></ul> |
+
+{style="table-layout:auto"}
 +++
 
 **响应**
@@ -2167,12 +2246,29 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
     ],
     "transformations": [],
     "scheduleParams": { // specify the scheduling info
-        "interval": 3, // also supports 6, 9, 12, 24 hour increments
-        "timeUnit": "hour",
-        "startTime": 1675901210 // UNIX timestamp start time(in seconds)
+        "exportMode": DAILY_FULL_EXPORT or FIRST_FULL_THEN_INCREMENTAL
+        "interval": 3, // also supports 6, 9, 12 hour increments
+        "timeUnit": "hour", // also supports "day" for daily increments. 
+        "interval": 1, // when you select "timeUnit": "day"
+        "startTime": 1675901210, // UNIX timestamp start time (in seconds)
+        "endTime": 1975901210, // UNIX timestamp end time (in seconds)
+        "foldernameTemplate": "%DESTINATION%_%DATASET_ID%_%DATETIME(YYYYMMdd_HHmmss)%"
     }
 }'
 ```
+
+下表提供了`scheduleParams`部分中所有参数的说明，这允许您自定义数据集导出的导出时间、频率、位置等。
+
+| 参数 | 描述 |
+|---------|----------|
+| `exportMode` | 选择`"DAILY_FULL_EXPORT"`或`"FIRST_FULL_THEN_INCREMENTAL"`。 有关这两个选项的更多信息，请参阅批处理目标激活教程中的[导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files)和[导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files)。 三个可用的导出选项为： <br> **完整文件 — 一次**： `"DAILY_FULL_EXPORT"`只能与`timeUnit`：`day`和`interval`：`0`一起使用，以一次性完整导出数据集。 不支持数据集的每日完整导出。 如果需要每日导出，请使用增量导出选项。<br> **每日增量导出**：为每日增量导出选择`"FIRST_FULL_THEN_INCREMENTAL"`、`timeUnit`：`day`和`interval`：`1`。<br> **每小时增量导出**：为每小时增量导出选择`"FIRST_FULL_THEN_INCREMENTAL"`、`timeUnit`：`hour`和`interval`：`3`、`6`、`9`或`12`。 |
+| `timeUnit` | 根据导出数据集文件的频率选择`day`或`hour`。 |
+| `interval` | 当`timeUnit`为天时，选择`1`；当时间单位为`hour`时，选择`3`，`6`，`9`，`12`。 |
+| `startTime` | 开始数据集导出的日期和时间（以UNIX秒为单位）。 |
+| `endTime` | 数据集导出应结束的日期和时间（以UNIX秒为单位）。 |
+| `foldernameTemplate` | 在要存放导出文件的存储位置中指定所需的文件夹名称结构。 <ul><li><code>DATASET_ID</code> = <span>数据集的唯一标识符。</span></li><li><code>目标</code> = <span>目标的名称。</span></li><li><code>日期时间</code> = <span>格式为yyyyMMdd_HHmmss.</span>的日期和时间</li><li><code>导出时间</code> = <span>格式为`exportTime=YYYYMMDDHHMM`的数据导出的计划时间。</span></li><li><code>目标实例名称</code> = <span>目标的特定实例的名称。</span></li><li><code>DESTINATION_INSTANCE_ID</code> = <span>目标实例的唯一标识符。</span></li><li><code>沙盒名称</code> = <span>沙盒环境的名称。</span></li><li><code>组织名称</code> = <span>组织的名称。</span></li></ul> |
+
+{style="table-layout:auto"}
 
 +++
 
@@ -2220,12 +2316,29 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
     ],
     "transformations": [],
     "scheduleParams": { // specify the scheduling info
-        "interval": 3, // also supports 6, 9, 12, 24 hour increments
-        "timeUnit": "hour",
-        "startTime": 1675901210 // UNIX timestamp start time(in seconds)
+        "exportMode": DAILY_FULL_EXPORT or FIRST_FULL_THEN_INCREMENTAL
+        "interval": 3, // also supports 6, 9, 12 hour increments
+        "timeUnit": "hour", // also supports "day" for daily increments. 
+        "interval": 1, // when you select "timeUnit": "day"
+        "startTime": 1675901210, // UNIX timestamp start time (in seconds)
+        "endTime": 1975901210, // UNIX timestamp end time (in seconds)
+        "foldernameTemplate": "%DESTINATION%_%DATASET_ID%_%DATETIME(YYYYMMdd_HHmmss)%"
     }
 }'
 ```
+
+下表提供了`scheduleParams`部分中所有参数的说明，这允许您自定义数据集导出的导出时间、频率、位置等。
+
+| 参数 | 描述 |
+|---------|----------|
+| `exportMode` | 选择`"DAILY_FULL_EXPORT"`或`"FIRST_FULL_THEN_INCREMENTAL"`。 有关这两个选项的更多信息，请参阅批处理目标激活教程中的[导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files)和[导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files)。 三个可用的导出选项为： <br> **完整文件 — 一次**： `"DAILY_FULL_EXPORT"`只能与`timeUnit`：`day`和`interval`：`0`一起使用，以一次性完整导出数据集。 不支持数据集的每日完整导出。 如果需要每日导出，请使用增量导出选项。<br> **每日增量导出**：为每日增量导出选择`"FIRST_FULL_THEN_INCREMENTAL"`、`timeUnit`：`day`和`interval`：`1`。<br> **每小时增量导出**：为每小时增量导出选择`"FIRST_FULL_THEN_INCREMENTAL"`、`timeUnit`：`hour`和`interval`：`3`、`6`、`9`或`12`。 |
+| `timeUnit` | 根据导出数据集文件的频率选择`day`或`hour`。 |
+| `interval` | 当`timeUnit`为天时，选择`1`；当时间单位为`hour`时，选择`3`，`6`，`9`，`12`。 |
+| `startTime` | 开始数据集导出的日期和时间（以UNIX秒为单位）。 |
+| `endTime` | 数据集导出应结束的日期和时间（以UNIX秒为单位）。 |
+| `foldernameTemplate` | 在要存放导出文件的存储位置中指定所需的文件夹名称结构。 <ul><li><code>DATASET_ID</code> = <span>数据集的唯一标识符。</span></li><li><code>目标</code> = <span>目标的名称。</span></li><li><code>日期时间</code> = <span>格式为yyyyMMdd_HHmmss.</span>的日期和时间</li><li><code>导出时间</code> = <span>格式为`exportTime=YYYYMMDDHHMM`的数据导出的计划时间。</span></li><li><code>目标实例名称</code> = <span>目标的特定实例的名称。</span></li><li><code>DESTINATION_INSTANCE_ID</code> = <span>目标实例的唯一标识符。</span></li><li><code>沙盒名称</code> = <span>沙盒环境的名称。</span></li><li><code>组织名称</code> = <span>组织的名称。</span></li></ul> |
+
+{style="table-layout:auto"}
 
 +++
 
@@ -2345,10 +2458,15 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
 * 导出压缩的JSON文件时，导出的文件格式为`json.gz`
 * 导出压缩的parquet文件时，导出的文件格式为`gz.parquet`
+* JSON文件只能在压缩模式下导出。
 
 ## API错误处理 {#api-error-handling}
 
 本教程中的API端点遵循常规Experience PlatformAPI错误消息原则。 有关解释错误响应的详细信息，请参阅Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
+
+## 常见问题 {#faq}
+
+查看有关数据集导出的[常见问题列表](/help/destinations/ui/export-datasets.md#faq)。
 
 ## 后续步骤 {#next-steps}
 

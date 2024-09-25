@@ -3,10 +3,10 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 21fd5957da8914be8b4abfad5c78d1929f76d6f6
+source-git-commit: ad33eaa48928b25502ef279f000b92f31e1667ca
 workflow-type: tm+mt
-source-wordcount: '4202'
-ht-degree: 13%
+source-wordcount: '4095'
+ht-degree: 11%
 
 ---
 
@@ -30,26 +30,6 @@ ht-degree: 13%
 要将受众激活到目标，您必须已成功[连接到目标](./connect-destination.md)。 如果您尚未这样做，请转到[目标目录](../catalog/overview.md)，浏览支持的目标，然后配置要使用的目标。
 
 ## 支持的导出文件格式 {#supported-file-formats-export}
-
->[!CONTEXTUALHELP]
->id="dataset_dataflow_needs_schedule_end_date_header"
->title="更新此数据流的结束日期"
->abstract="更新此数据流的结束日期"
-
->[!CONTEXTUALHELP]
->id="dataset_dataflow_needs_schedule_end_date_body"
->title="更新此数据流主体的结束日期"
->abstract="由于此目标最近进行了更新，数据流现在需要结束日期。Adobe 已将默认结束日期设置为 2025 年 5 月 1 日。请更新为您希望的结束日期，否则数据导出将在默认日期停止。"
-
->[!CONTEXTUALHELP]
->id="destinations_folder_name_template"
->title="编辑文件夹路径"
->abstract="使用提供的几个宏来自定义导出数据集的文件夹路径。"
-
->[!CONTEXTUALHELP]
->id="destinations_folder_name_template_preview"
->title="数据集文件夹路径预览"
->abstract="预览根据您在此窗口中添加的宏在您的存储位置中创建的文件夹结构。"
 
 导出受众时支持以下文件格式：
 
@@ -290,7 +270,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
    >[!NOTE]
    >
-   >此功能为测试版，仅向部分客户提供。 要请求访问此功能，请联系您的Adobe代表。
+   >此功能为测试版，仅向部分客户提供。 若要申请访问此项功能，请联系您的 Adobe 代表。
 
    ![显示通过拖放重新排序的映射字段的录制。](../assets/ui/activate-batch-profile-destinations/reorder-fields.gif)
 
