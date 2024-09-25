@@ -3,9 +3,9 @@ title: 在源UI Workspace中摄取加密数据
 description: 了解如何在源UI工作区中摄取加密数据。
 badge: Beta 版
 exl-id: 34aaf9b6-5c39-404b-a70a-5553a4db9cdb
-source-git-commit: 3eba8690dcf9c808495a00b7fd4558478606f628
+source-git-commit: 990be6351f1ea8b1a9288c55067bb81f075d1c4f
 workflow-type: tm+mt
-source-wordcount: '1458'
+source-wordcount: '1464'
 ht-degree: 6%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 6%
 * 使用Experience PlatformUI中的源工作区创建加密密钥对。
    * 或者，您也可以创建自己的签名验证密钥对，为加密数据提供额外的安全层。
 * 使用加密密钥对中的公钥加密数据。
-* 将加密数据放入云存储提供商中。 在此步骤中，还必须确保您有一个示例文件，该文件可用作参考，以将源数据映射到体验数据模型(XDM)架构。
+* 将加密数据放入云存储中。 在此步骤中，还必须确保在云存储中拥有数据的示例文件，该文件可用作参考，以将源数据映射到体验数据模型(XDM)架构。
 * 使用云存储批次源，在Experience PlatformUI的源工作区中开始数据摄取流程。
 * 在源连接创建过程中，提供与用于加密数据的公共密钥对应的密钥ID。
    * 如果您还使用签名验证密钥对机制，则还必须提供与加密数据对应的签名验证密钥ID。

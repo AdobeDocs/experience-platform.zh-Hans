@@ -3,9 +3,9 @@ title: 身份图链接规则的实施指南
 description: 了解在使用身份图链接规则配置实施数据时要遵循的建议步骤。
 badge: Beta 版
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 0dadff9e2719c9cd24dcc17b759ff7e732282888
+source-git-commit: 1e9d16c53100c1ee930cf4bf5e9a9a5b6bd9c347
 workflow-type: tm+mt
-source-wordcount: '1470'
+source-wordcount: '1526'
 ht-degree: 2%
 
 ---
@@ -164,6 +164,10 @@ Identity Service实施流程的第一步是，确保将您的Experience Platform
 >摄取数据后，XDM原始数据有效负载不会发生更改。 您仍可能会在UI中看到主要身份配置。 但是，这些配置将由身份设置覆盖。
 
 若要获得任何反馈，请使用Identity Service UI工作区中的&#x200B;**[!UICONTROL Beta反馈]**&#x200B;选项。
+
+## 验证图形 {#validate}
+
+使用身份仪表板可以查看身份图的状态，例如总体身份计数和图形计数趋势、按命名空间划分的身份计数以及按图形大小划分的图形计数。 您还可以使用身份仪表板查看具有两个或多个身份（按命名空间组织）的图形的趋势。
 
 ## 附录 {#appendix}
 

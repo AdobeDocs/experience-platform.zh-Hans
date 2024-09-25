@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform发行说明2024年9月
 description: Adobe Experience Platform 2024年9月版发行说明。
-source-git-commit: 50b0387dacb3e995d9c88206ef968ddc53edb14c
+source-git-commit: 1e9d16c53100c1ee930cf4bf5e9a9a5b6bd9c347
 workflow-type: tm+mt
-source-wordcount: '1823'
-ht-degree: 29%
+source-wordcount: '1975'
+ht-degree: 27%
 
 ---
 
@@ -111,6 +111,12 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 使用 Adobe Experience Platform 标识服务通过跨设备和系统桥接标识，全面了解您的客户及其行为，助您实时提供有影响力的个人数字体验。
 
+**更新的功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 标识图链接规则的可用性有限 | 身份图链接规则是Identity Service中的一套工具，可使用它们确保用户的准确个性化。 <ul><li>您现在可以使用[身份优化算法](../../identity-service/identity-graph-linking-rules/identity-optimization-algorithm.md)来确保身份图代表单个人员，从而防止在实时客户个人资料上不必要地合并身份。</li><li>配置[命名空间优先级](../../identity-service/identity-graph-linking-rules/namespace-priority.md)以定义各自命名空间的重要性并影响配置文件的形成和分段方式。</li><li>在UI](../../identity-service/identity-graph-linking-rules/graph-simulation.md)中使用[图形模拟工具来模拟具有不同配置的身份图形。</li><li>使用[身份设置界面](../../identity-service/identity-graph-linking-rules/identity-settings-ui.md)指定您的唯一命名空间并为组织中的所有命名空间建立优先级。</li><li>有关图形数据的量度和趋势，请参阅[身份仪表板](../../identity-service/identity-graph-linking-rules/implementation-guide.md#validate-your-graphs)。</li></ul> 要尝试使用身份图关联规则，请联系您的Adobe客户团队以获取开发沙盒的访问权限。 |
+
 **文档更新**
 
 | 功能 | 描述 |
@@ -130,7 +136,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 功能 | 描述 |
 | --- | --- |
-| 数据Distiller受众 | 通过Experience Platform Data Distiller中的SQL Audience扩展，轻松创建、管理和激活受众。 使用直接来自数据湖的SQL命令定义受众区段，而不需要用户档案中的原始数据。 通过这种灵活的数据驱动方法，优化定位策略并自动将受众同步到基于文件的目标。 简化工作流，优化受众管理，并释放数据的全部潜力。 阅读有关使用SQL受众扩展](../../query-service/home.md)提升受众策略的[指南。 |
+| 数据Distiller受众 | 通过Experience Platform Data Distiller中的SQL Audience扩展，轻松创建、管理和激活受众。 使用直接来自数据湖的SQL命令定义受众区段，而不需要用户档案中的原始数据。 通过这种灵活的数据驱动方法，优化定位策略并自动将受众同步到基于文件的目标。 简化工作流，优化受众管理，并释放数据的全部潜力。 阅读有关使用SQL受众扩展](../../query-service/data-distiller-audiences/overview.md)提升受众策略的[指南。 |
 | 数据Distiller统计数据 — 超多维数据集 | 使用超多维数据集优化大数据分析。 处理复杂的计算（如非重复计数和多维分析），无需重新处理历史数据。 以增量方式更新数据、简化工作流并缩短处理时间，同时保持准确性和效率。 获得更快、可扩展且经济高效的洞察信息，从而改变决策制定。 浏览有关使用超多维数据集](../../query-service/hypercubes.md)解锁高级分析的[指南。 |
 | 查询编辑器对象浏览器 | 在查询编辑器中使用新的对象浏览器提高查询效率。 快速搜索、筛选和访问数据集，以更快地编写和优化查询。 利用实时模式更新和即时表元数据，您可以简化工作流、缩短导航时间并增强查询体验。 释放数据的潜力并优化分析。 有关详细信息，请阅读有关使用对象浏览器](../../query-service/ui/user-guide.md#object-browser)的[指南。 |
 | 计算小时数 | 使用计划查询的新可见计算小时量度获得对资源使用情况的控制。 在查询执行级别查看计算小时数，以监视和优化CTAS/ITAS批处理查询的资源使用。 跟踪每次查询运行的开始时间、完成状态和计算时间。 轻松微调性能并降低成本。 有关如何最大限度地提高查询效率的信息，请阅读计算小时数](../../query-service/ui/query-schedules.md#compute-hours-at-job-level)上的[指南。 |
