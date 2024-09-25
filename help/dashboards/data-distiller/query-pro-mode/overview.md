@@ -2,9 +2,9 @@
 title: Query Pro模式概述
 description: 了解如何在Adobe Experience Platform UI中使用SQL查询为自定义仪表板生成图表。
 exl-id: 15c664c4-8546-4e04-b81d-c78bf83500d3
-source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
+source-git-commit: ed1565fad1c539d69b85fb644d4bc16d4a262673
 workflow-type: tm+mt
-source-wordcount: '1062'
+source-wordcount: '1212'
 ht-degree: 0%
 
 ---
@@ -68,6 +68,26 @@ Query pro模式是一个基于SQL编辑器的工作流，可指导您完成在Ad
 要更改小组件的图形或图表类型，请从[!UICONTROL 标记]下拉菜单的可用选项中进行选择。 选项包括[!UICONTROL Line]、[!UICONTROL Donut]、[!UICONTROL Big number]和[!UICONTROL Bar]。 选中后，将生成构件当前设置的预览可视化图表。
 
 ![突出显示具有构件预览的构件编辑器。](../../images/sql-insights/widget-preview.png)
+
+## 高级表属性 {#advanced-attributes}
+
+要对表中的任何列或所有列应用自动排序功能，请选择&#x200B;**[!UICONTROL 编辑]**&#x200B;以编辑整个仪表板。
+
+![突出显示编辑的自定义仪表板。](../../images/query-pro-mode/advanced-edit-dashboard.png)
+
+在表图中选择要添加列排序的省略号(`...`)，然后选择&#x200B;**[!UICONTROL 编辑]**。
+
+![显示突出显示“编辑”的省略号菜单的表。](../../images/query-pro-mode/advanced-table-edit.png)
+
+要为任何列启用排序，请选中&#x200B;**[!UICONTROL 可排序]**&#x200B;框。
+
+![突出显示可排序复选框的表编辑页。](../../images/query-pro-mode/advanced-table-sortable.png)
+
+选择属性图标(![属性图标。](/help/images/icons/properties.png))以打开[!UICONTROL 属性]面板。 在&#x200B;**[!UICONTROL 属性]**&#x200B;面板中，使用下拉菜单选择&#x200B;**[!UICONTROL 默认排序]**&#x200B;列，然后使用下拉菜单选择&#x200B;**[!UICONTROL 排序方向]**。 最后，选择&#x200B;**[!UICONTROL 保存并关闭]**。
+
+![带有属性图标、默认排序、排序方向以及保存并关闭的小组件编辑器突出显示。](../../images/query-pro-mode/advanced-table-properties.png)
+
+要了解有关使用排序、调整列大小和分页功能的详细信息，请参阅[查看更多](./view-more.md)。
 
 ## 构件属性 {#properties}
 

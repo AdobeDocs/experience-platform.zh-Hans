@@ -2,10 +2,10 @@
 title: 查看更多
 description: 了解用于SQL分析数据的不同查看选项。 从自定义仪表板中，您可以查看分析的列表化结果或以CSV格式下载已处理数据。
 exl-id: f57d85cf-dbd2-415c-bf01-8faa49871377
-source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
+source-git-commit: ed1565fad1c539d69b85fb644d4bc16d4a262673
 workflow-type: tm+mt
-source-wordcount: '286'
-ht-degree: 2%
+source-wordcount: '551'
+ht-degree: 1%
 
 ---
 
@@ -30,6 +30,38 @@ ht-degree: 2%
 >CSV下载限制为前500条记录。
 
 ![显示洞察预览和生成洞察的SQL结果的表格式化的对话框。](../../images/query-pro-mode/view-more-download-csv.png)
+
+## 按列排序 {#sort-column}
+
+查看列表化结果时，您可以使用排序功能按列升序或降序排序。 从您的自定义仪表板中，选择任意表上的省略号(`...`)以访问[!UICONTROL 查看更多]选项。
+
+![自定义仪表板，带有表格的省略号下拉菜单和突出显示的查看更多选项。](../../images/query-pro-mode/advanced-ellipses-dropdown.png)
+
+您可以通过选择列名称旁边的下拉菜单，然后选择&#x200B;**[!UICONTROL 升序排序]**&#x200B;或&#x200B;**[!UICONTROL 降序排序]**&#x200B;来对列进行排序。
+
+>[!NOTE]
+>
+>[!UICONTROL 升序排序]和[!UICONTROL 降序排序]选项将仅对配置了[排序功能](../overview.md/#advanced-attributes)的列显示。
+
+![一个表列下拉列表，其中突出显示“升序排序”和“降序排序”选项。](../../images/query-pro-mode/advanced-sort-dropdown.png)
+
+## 调整列大小 {#resize-column}
+
+您可以调整列表结果中的列大小以提高数据可读性。 从自定义仪表板中，选择表格的省略号(`...`)以访问[!UICONTROL 查看更多]选项。 使用列名称旁边的下拉菜单调整列大小，然后选择&#x200B;**[!UICONTROL 调整列大小]**。
+
+![显示“调整列大小”选项的表格列下拉列表突出显示。](../../images/query-pro-mode/advanced-resize-dropdown.png)
+
+选择滑块并向左或向右拖动以根据需要调整列大小。
+
+![显示突出显示的列大小调整栏的表。](../../images/query-pro-mode/advanced-resize-column.png)
+
+## 表格分页 {#table-pagination}
+
+分页功能会自动应用于[!UICONTROL 查看更多]功能中的表，无需手动修改SQL查询。 此功能可确保以更易于管理的格式显示数据，从而简化在大型数据集中导航的过程。
+
+每页最多可查看500条记录。 要浏览记录，请使用位于页面底部的&#x200B;**[!UICONTROL >]**。
+
+![突出显示结果和分页的列表结果。](../../images/query-pro-mode/advanced-table-pagination.png)
 
 ## 后续步骤
 
