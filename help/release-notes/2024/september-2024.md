@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform发行说明2024年9月
 description: Adobe Experience Platform 2024年9月版发行说明。
-source-git-commit: 1e9d16c53100c1ee930cf4bf5e9a9a5b6bd9c347
+source-git-commit: e93d27ef67802c5fbdffdacb3a0649d373a41a2d
 workflow-type: tm+mt
-source-wordcount: '1975'
-ht-degree: 27%
+source-wordcount: '2144'
+ht-degree: 25%
 
 ---
 
@@ -48,10 +48,12 @@ Experience Platform提供了多个功能板，通过该功能板可查看有关�
 **新增功能或更新后的功能**
 
 | 功能 | 描述 |
-| --- | --- |
+| ------- | ----------- |
+| “许可证使用情况”插件表 | 通过核心产品和加载项的专用表格精细地了解许可证使用情况，并管理您的平台资源。 在沙盒级别使用穿透钻取视图跟踪和分析每个核心产品的关键量度。 附加量度与核心产品量度无缝集成，提供了使用情况的全面视图。 增强的可见性可帮助您优化许可证管理，并使资源与组织需求相匹配。 有关详细信息，请参阅[[!UICONTROL 许可证使用情况]仪表板指南](../../dashboards/guides/license-usage.md#overview-tab)。 |
 | Query Pro模式 — 全局过滤器升级 | 使用Query Pro模式的新日期过滤器增强分析。 使用SQL查询中的动态日期参数优化洞察，并按特定时间范围过滤数据。 通过直观的UI选择预设或自定义日期范围，使功能板与所有用户保持关联。 简化工作流、保持精确度并及时做出决策。 有关详细信息，请阅读有关创建日期过滤器](../../dashboards/data-distiller/query-pro-mode/filters/global-filter.md)的[指南。 |
 | Query Pro模式 — 穿透钻取 | 利用Query Pro Mode的穿透钻取功能获得更深入的见解，并无缝地从高级别图表导航到详细仪表板。 使用此功能可毫不费力地从摘要转变为深入分析，并探索趋势、客户行为和KPI。 自动过滤直通和多级别钻取保持数据的一致性，确保顺利的探索。 简化工作流、保留上下文并加快决策速度。 有关详细信息，请阅读有关创建穿透钻取的[分步指南](../../dashboards/data-distiller/query-pro-mode/drill-through.md)。 |
 | Query Pro模式 — 高级表属性 | 使用Query Pro Mode高级表属性来简化数据可视化，提高工作流效率和数据清晰度。 直接从自定义功能板向表添加自动排序、调整大小和分页。 对列进行排序，以排定关键数据的优先级，调整大小以获得最佳可读性，以及无缝导航大型数据集，而无需修改SQL查询。 阅读“[查看更多](../../dashboards/data-distiller/query-pro-mode/view-more.md)”指南以了解如何集成这些功能并提升您的数据洞察。 |
+| 总数据量 | “平均配置文件丰富度”量度已替换为“总数据量”量度。 总数据量是指可用于实时客户档案以进行参与和个性化工作流的可用数据总量。 有关此更改的详细信息，请参阅[总数据卷指南](../../landing/license-usage-and-guardrails/total-data-volume.md)。 |
 
 {style="table-layout:auto"}
 
@@ -152,7 +154,8 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 **新增功能或更新后的功能**
 
 | 功能 | 描述 |
-| --- | --- |
+| ------- | ----------- |
+| 流式分段标准更新 | 从2024年9月版开始，更新了受众有资格进行流式客户细分的标准。 有关这些更改的详细信息，请参阅[流式分段资格标准更新](../../segmentation/eligibility-criteria-update.md)。 |
 | 统一搜索实施 | 现在，区段生成器中的搜索行为将使用统一搜索。 这样可在管理和搜索受众以重用区段成员资格时获得更强大的体验。 有关此更改的更多信息，请阅读[区段生成器指南](../../segmentation/ui/segment-builder.md#rule-builder-canvas)。 |
 
 {style="table-layout:auto"}
