@@ -4,9 +4,9 @@ title: 许可证使用情况仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 0926a0e8c7ae560bf5f4f9ff6853b191af047738
+source-git-commit: 3b4a38be9b47ca65dc142bff4800ef595d3cacca
 workflow-type: tm+mt
-source-wordcount: '2702'
+source-wordcount: '2739'
 ht-degree: 13%
 
 ---
@@ -44,7 +44,7 @@ ht-degree: 13%
 
 您可以通过Adobe Experience Platform [!UICONTROL 许可证使用情况]仪表板查看有关贵组织许可证使用情况的重要信息。 此处显示的信息是在Platform实例的每日快照期间捕获的。
 
-许可证使用情况报表可提供比许可证使用情况量度更高级别的粒度。 仪表板提供每个购买产品的使用情况量度、所有生产或开发沙盒中量度的综合使用情况，以及特定沙盒的使用情况量度。 可以使用使用情况量度跟踪以下Experience Platform应用程序：Real-time Customer Data Platform、Adobe Journey Optimizer和Customer Journey Analytics。
+许可证使用情况报表可提供比许可证使用情况量度更高级别的粒度。 仪表板提供每个购买的产品（及相关插件）的使用量度、所有生产或开发沙盒中量度的综合使用量度，以及特定沙盒的使用量度。 可以使用使用情况量度跟踪以下Experience Platform应用程序：Real-time Customer Data Platform、Adobe Journey Optimizer和Customer Journey Analytics。
 
 本指南概述如何在UI中访问和使用许可证使用情况仪表板，并提供有关仪表板中显示的可视化的更多信息。
 
@@ -52,7 +52,7 @@ ht-degree: 13%
 
 ## [!UICONTROL 许可证使用情况]仪表板数据
 
-[!UICONTROL 许可证使用情况]仪表板显示您已购买的所有Experience Platform产品的列表。 从该列表中，您可以找到您组织的许可证相关数据的快照，以便Experience Platform在任何关联的沙盒中。
+[!UICONTROL 许可证使用情况]仪表板显示您已购买的所有Experience Platform产品以及这些产品的任何加载项的列表。 在此功能板中，您可以找到组织的许可证相关数据的快照，以便Experience Platform任何关联的沙盒。
 
 此仪表板中的数据与拍摄快照的特定时间点完全相同。 换句话说，快照不是数据的近似值或样本，并且仪表板没有实时更新。
 
@@ -72,12 +72,16 @@ ht-degree: 13%
 
 ## [!UICONTROL 概述]选项卡 {#overview-tab}
 
-此仪表板以表格式显示您的所有许可Adobe Experience Platform产品，包括加载项。 该表提供了有关所有可用配置文件中许可证使用情况的关键信息。
+[!UICONTROL 许可证使用情况]仪表板显示两个单独的表：**核心产品**&#x200B;和&#x200B;**附加组件**。
+
+- **[!UICONTROL 核心产品]表**：此表列出了您的组织许可的主要Adobe Experience Platform产品。 每个核心产品在沙盒级别都有自己的量度、使用情况跟踪和穿透钻取视图。 这些核心产品提供了用于跟踪的关键量度，并且任何加载项都包含在这些量度中。
+
+- **[!UICONTROL 插件]表**：此表列出了许可证数量与核心产品所支持的量度相结合的其他产品。 加载项没有单独的量度，但可增强对其关联核心产品的使用跟踪。
 
 | 列名 | 描述 |
 |---|---|
 | **[!UICONTROL 产品]** | 由您的组织许可的Adobe解决方案。 |
-| **[!UICONTROL 主要指标]** | 用于在内跟踪该产品的主要量度。 |
+| **[!UICONTROL 主要指标]** | 用于跟踪该产品的主要指标。 |
 | **[!UICONTROL 许可证数量]** | 产品许可协议中约定的主要量度最大量的约定值。 |
 | **[!UICONTROL 用法]** | 您使用的主要量度的数量。 此值提供该量度在所有沙盒（生产沙盒或开发沙盒）中的总使用情况。 |
 | **[!UICONTROL 使用情况%]** | 根据您的许可证数量使用的主要量度的百分比。 |
@@ -85,9 +89,9 @@ ht-degree: 13%
 
 >[!NOTE]
 >
->由于附加组件而向[!UICONTROL 许可证金额]添加的附加组件已添加到基础产品(如Real-time Customer Data Platform、Adobe Journey Optimizer和Customer Journey Analytics)的[!UICONTROL 许可证金额]之上。 通过基础产品跟踪该许可数量（加载项后）的使用情况。 例如，如果您购买一包5个沙盒，则数量5将添加到基础产品的数量。在这种情况下，加载项显示一个[!UICONTROL 许可证金额]，并且该加载项的使用为“空白”，因为通过基本产品跟踪使用情况。
+>加载项的许可证金额包含在核心产品的[!UICONTROL 许可证金额]中。 例如，如果您购买一包5个沙盒作为附加产品，则金额将添加到基础产品的金额中。 加载项表显示特定于加载项的[!UICONTROL 许可证金额]，但实际使用情况是通过基本产品进行跟踪的。
 
-该表指示了每个产品的主要量度，因为每个产品都可以跟踪大量量度。
+这些表指示每个产品的主要量度，因为每个产品都可以跟踪大量量度。
 
 ### 预测使用量 {#predicted-usage}
 
@@ -111,8 +115,9 @@ ht-degree: 13%
 >
 >预测会每月更新。 刷新日期包含在信息图标（![此信息图标）中。](../images/license-usage/info-icon.png))位于列标题上方。
 
-要查看产品权利使用情况的摘要，请从[!UICONTROL 概述]列表中选择产品。
+要查看产品权利使用情况的摘要，请从[!UICONTROL 核心产品]表中选择产品。
 
+<!-- update image ... -->
 ![产品及预测使用列突出显示的[!UICONTROL 许可证使用情况] [!UICONTROL 概述]。](../images/license-usage/product-predicted-usage.png)
 
 此时将显示摘要选项卡。 您可以使用[!UICONTROL 摘要]和[!UICONTROL 详细信息]选项卡上提供的粒度预测以确保做出明智的决策，从而有效使用许可证。
@@ -121,6 +126,7 @@ ht-degree: 13%
 >
 >请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解贵组织的实际使用情况，并确保使用情况不会超出贵组织许可的Adobe范围。
 
+<!-- update image ... -->
 ![预测使用列突出显示的平台产品的摘要视图。](../images/license-usage/summary-predicted-usage.png)
 
 预计使用率的百分比确定如下：
@@ -229,7 +235,7 @@ ht-degree: 13%
 这些指标的可用性和每个指标的特定定义因贵组织购买的许可而异。 有关每个量度的详细定义，请参阅相应的产品描述文档：
 
 | 许可证 | 产品描述 |
-|---|---|
+| --- | --- |
 | <ul><li>Adobe Experience Platform：OD LITE</li><li>Adobe Experience Platform：OD STANDARD</li><li>Adobe Experience Platform：OD粗</li></ul> | [Adobe Experience Platform](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform.html) |
 | <ul><li>Adobe Experience Platform：OD</li></ul> | [Experience Platform、应用服务和智能服务](https://helpx.adobe.com/legal/product-descriptions/exp-platform-app-svcs.html) |
 | <ul><li>RT CUSTOMER DATA PLATFORM：OD</li><li>RT客户数据平台：OD PRFL到10M</li><li>RT客户数据平台：OD PRFL到50M</li></ul> | [Adobe Real-time Customer Data Platform](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) |
