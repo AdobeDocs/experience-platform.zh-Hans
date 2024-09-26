@@ -35,7 +35,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 >[!CONTEXTUALHELP]
 >id="platform_segments_browse_churncolumnname"
 >title="流失率"
->abstract="流失率表示与上次运行区段作业时相比，受众内正在更改的配置文件的百分比。"
+>abstract="流失率表示与上次运行区段作业时相比，受众内正在更改的轮廓的百分比。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_browse_evaluationmethodcolumnname"
@@ -96,7 +96,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 | 字段 | 描述 |
 | ----- | ----------- |
 | [!UICONTROL 名称] | 受众的名称。 |
-| [!UICONTROL 配置文件计数] | 符合受众条件的配置文件总数。 |
+| [!UICONTROL 轮廓计数] | 符合受众条件的配置文件总数。 |
 | [!UICONTROL Origin] | 受众的来源。 它指明了受众的来源。 可能的值包括分段服务、自定义上传、受众组合和Audience Manager。 |
 | [!UICONTROL 生命周期状态] | 受众的状态。 此字段的可能值包括`Draft`、`Inactive`和`Published`。 有关生命周期状态的更多信息，包括不同状态的含义以及如何将受众移动到不同生命周期状态，请阅读分段常见问题解答](../faq.md#lifecycle-status)中的[生命周期状态部分。 |
 | [!UICONTROL 更新频率] | 一个值，表示受众数据的更新频率。 此字段的可能值包括[!UICONTROL 批次]、[!UICONTROL 流式传输]、[!UICONTROL Edge]和[!UICONTROL 未计划]。 |
@@ -286,7 +286,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| 配置文件计数 | 符合受众条件的配置文件总数。 |
+| 轮廓计数 | 符合受众条件的配置文件总数。 |
 | 数据集名称 | 受众被摄取到的数据集的名称。 您可以选择数据集名称，以了解有关数据集的更多信息。 要了解有关数据集的更多信息，请阅读[数据集UI指南](../../catalog/datasets/user-guide.md)。 |
 | 数据集批次 | 受众被引入的数据集的ID。 您可以选择批次的ID，以了解有关批次的详细信息。 要了解有关批次的详细信息，请阅读[监视数据摄取指南](../../ingestion/quality/monitor-data-ingestion.md#viewing-batches)。 |
 | 轮廓批次 | 在Platform上创建配置文件的批次的ID。 您可以选择批次的ID，以了解有关批次的详细信息。 要了解有关批次的详细信息，请阅读[监视数据摄取指南](../../ingestion/quality/monitor-data-ingestion.md#viewing-batches)。 |

@@ -109,13 +109,13 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_exportoptions"
 >title="文件导出选项"
->abstract="选择&#x200B;**导出全部文件**&#x200B;以导出符合受众资格的所有配置文件的完整快照。选择&#x200B;**导出增量文件**&#x200B;以仅导出自上次导出后符合受众资格的配置文件。<br>第一个增量文件导出包括符合受众资格的所有配置文件，充当回填。后续增量文件仅包含自第一个增量文件导出后符合受众资格的配置文件。"
+>abstract="选择&#x200B;**导出全部文件**&#x200B;以导出符合受众资格的所有轮廓的完整快照。选择&#x200B;**导出增量文件**&#x200B;以仅导出自上次导出后符合受众资格的轮廓。<br>第一个增量文件导出包括符合受众资格的所有轮廓，充当回填。后续增量文件仅包含自第一个增量文件导出后符合受众资格的轮廓。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#export-incremental-files" text="导出增量文件"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_aftersegmentevaluation"
 >title="在受众评估后激活"
->abstract="在每日分段作业完成后立即运行激活。这将确保导出最新的配置文件。"
+>abstract="在每日分段作业完成后立即运行激活。这将确保导出最新的轮廓。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_scheduled"
@@ -158,7 +158,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_something"
->title="配置文件名"
+>title="轮廓名"
 >abstract="对于基于文件的目标，为每个受众生成一个唯一的文件名。使用文件名编辑器可创建和编辑唯一文件名或保留默认名称。"
 
 选择&#x200B;**[!UICONTROL 导出增量文件]**&#x200B;以触发导出，其中第一个文件是选定受众的所有配置文件资格的完整快照，后续文件是自上次导出以来的增量配置文件资格。
@@ -184,11 +184,11 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
 4. 选择&#x200B;**[!UICONTROL 创建]**&#x200B;以保存计划。
 
-### 配置文件名 {#configure-file-names}
+### 轮廓名 {#configure-file-names}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_filename"
->title="配置文件名"
+>title="轮廓名"
 >abstract="对于基于文件的目标，为每个受众生成一个唯一的文件名。使用文件名编辑器可创建和编辑唯一文件名或保留默认名称。"
 
 对于大多数目标，默认文件名由目标名称、受众ID以及日期和时间指示器组成。 例如，您可以编辑导出的文件名，以区分不同的促销活动，或者将数据导出时间附加到文件。 请注意，某些目标开发人员可能选择为其目标显示不同的默认文件名附加选项。
@@ -285,7 +285,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_mandatorykey"
 >title="关于强制属性"
->abstract="选择所有导出的配置文件应包含的 XDM 架构属性。不会将没有强制密钥的配置文件导出到目标。不选择强制密钥会导出所有合格的配置文件，而不管其属性如何。"
+>abstract="选择所有导出的轮廓应包含的 XDM 架构属性。不会将没有强制密钥的轮廓导出到目标。不选择强制密钥会导出所有合格的轮廓，而不管其属性如何。"
 
 必填属性是启用用户的复选框，可确保所有配置文件记录都包含所选属性。 例如：所有导出的用户档案都包含电子邮件地址&#x200B;。
 
@@ -300,7 +300,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_deduplicationkey"
 >title="关于删除重复项键"
->abstract="通过选择删除重复项键，消除导出文件中同一配置文件的多条记录。选择一个命名空间或最多两个 XDM 架构属性作为删除重复项键。不选择删除重复项键可能会导致导出文件中出现重复的配置文件条目。"
+>abstract="通过选择删除重复项键，消除导出文件中同一轮廓的多条记录。选择一个命名空间或最多两个 XDM 架构属性作为删除重复项键。不选择删除重复项键可能会导致导出文件中出现重复的轮廓条目。"
 
 重复数据删除键是用户定义的主键，可确定用户希望为其配置文件进行重复数据删除的身份&#x200B;。
 
@@ -524,7 +524,7 @@ Adobe Experience Platform使用架构中的四个推荐的常用属性预填充�
 [!CONTEXTUALHELP]
 id="platform_destinations_activate_exclude_enrichment_attributes"
 title="排除扩充属性"
-abstract="启用此选项可将所选自定义上传受众的配置文件导出到您的目的地，同时排除其所有属性。"
+abstract="启用此选项可将所选自定义上传受众的轮廓导出到您的目的地，同时排除其所有属性。"
 
 >[!IMPORTANT]
 >
@@ -562,9 +562,9 @@ abstract="启用此选项可将所选自定义上传受众的配置文件导出�
 [!CONTEXTUALHELP]
 id="platform_governance_policies_viewApplicableConsentPolicies"
 title="查看适用的同意策略"
-abstract="如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的配置文件数量。如果您的公司无权访问上述 SKU，则此控件将被禁用。"
+abstract="如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的轮廓数量。如果您的公司无权访问上述 SKU，则此控件将被禁用。"
 
-如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的配置文件数量。有关详细信息，请阅读[同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。
+如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的轮廓数量。有关详细信息，请阅读[同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。
 
 ### 数据使用策略检查 {#data-usage-policy-checks}
 

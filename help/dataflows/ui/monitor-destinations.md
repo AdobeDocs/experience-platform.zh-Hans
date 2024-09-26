@@ -50,27 +50,27 @@ ht-degree: 10%
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_activation_streaming"
 >title="数据流运行详细信息"
->abstract="目标数据流运行详细信息包含有关受众激活状态的信息，以及从实时客户配置文件中获取的量度，以生成唯一标识。若要了解更多信息，请查看量度定义指南。"
+>abstract="目标数据流运行详细信息包含有关受众激活状态的信息，以及从实时客户轮廓中获取的量度，以生成唯一标识。若要了解更多信息，请查看量度定义指南。"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_streaming"
->title="收到的配置文件"
->abstract="数据流中接收的配置文件总数。该值每 60 分钟更新一次。"
+>title="收到的轮廓"
+>abstract="数据流中接收的轮廓总数。该值每 60 分钟更新一次。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesactivated_streaming"
 >title="已激活的标识"
->abstract="成功激活到所选目标的配置文件标识的计数。此量度包括创建、更新和从导出的受众中移除的标识。"
+>abstract="成功激活到所选目标的轮廓标识的计数。此量度包括创建、更新和从导出的受众中移除的标识。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesexcluded_streaming"
 >title="排除的标识"
->abstract="根据缺少的属性和同意违规情况，从所选目标的激活中排除的个人配置文件记录的计数。"
+>abstract="根据缺少的属性和同意违规情况，从所选目标的激活中排除的个人轮廓记录的计数。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesfailed_streaming"
 >title="失败的标识"
->abstract="针对所选目标失败的单个配置文件标识的计数。请检查错误诊断，以获取详细信息。"
+>abstract="针对所选目标失败的单个轮廓标识的计数。请检查错误诊断，以获取详细信息。"
 
 对于流目标，[!UICONTROL 数据流运行]选项卡提供数据流运行中量度数据的每小时更新。 标记的最突出的统计数据是身份信息。
 
@@ -123,23 +123,23 @@ ht-degree: 10%
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_activation"
 >title="数据流运行详细信息"
->abstract="目标数据流运行详细信息包含有关受众激活状态的信息，以及从实时客户配置文件中获取的量度，以生成唯一标识。若要了解更多信息，请查看量度定义指南。"
+>abstract="目标数据流运行详细信息包含有关受众激活状态的信息，以及从实时客户轮廓中获取的量度，以生成唯一标识。若要了解更多信息，请查看量度定义指南。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html#dataflow-runs-for-streaming-destinations" text="流式处理目标的数据流运行"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_batch"
->title="收到的配置文件"
->abstract="数据流中接收的配置文件总数。该值每 60 分钟更新一次。"
+>title="收到的轮廓"
+>abstract="数据流中接收的轮廓总数。该值每 60 分钟更新一次。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesactivated_batch"
 >title="已激活的标识"
->abstract="成功激活到所选目标的配置文件标识的计数。此量度包括创建、更新和从导出的受众中移除的标识。"
+>abstract="成功激活到所选目标的轮廓标识的计数。此量度包括创建、更新和从导出的受众中移除的标识。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesexcluded_batch"
 >title="排除的标识"
->abstract="根据缺少的属性和同意违规情况，从所选目标的激活中排除的个人配置文件记录的计数。"
+>abstract="根据缺少的属性和同意违规情况，从所选目标的激活中排除的个人轮廓记录的计数。"
 
 对于批处理目标，[!UICONTROL 数据流运行]选项卡提供有关数据流运行的量度数据。 系统会显示各个运行及其特定量度的列表，以及以下身份总数：
 
@@ -199,7 +199,7 @@ ht-degree: 10%
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_activation"
 >title="激活"
->abstract="目标激活视图包含有关受众激活状态的信息，以及从实时客户配置文件中获取的量度，以生成唯一标识。"
+>abstract="目标激活视图包含有关受众激活状态的信息，以及从实时客户轮廓中获取的量度，以生成唯一标识。"
 
 要访问[!UICONTROL 监视]仪表板，请在左侧导航中选择&#x200B;**[!UICONTROL 监视]** （![监视图标](/help/images/icons/monitoring.png)）。 在[!UICONTROL 监控]页面上，选择[!UICONTROL 目标]。 [!UICONTROL 监视]仪表板包含有关目标运行作业的量度和信息。
 

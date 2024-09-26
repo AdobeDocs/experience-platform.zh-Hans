@@ -84,12 +84,12 @@ Adobe Real-time Customer Data Platform B2B版本提供了多个Experience Data M
 >[!CONTEXTUALHELP]
 >id="platform_xdm_b2b_relationship_name_current"
 >title="当前架构中的关系名称"
->abstract="描述当前架构与参考架构之间的关系的标签（例如，“相关帐户”）。此标签在配置文件和分段中用于为来自相关 B2B 实体的数据提供上下文。请参阅文档以了解有关构建 B2B 架构关系的更多信息。"
+>abstract="描述当前架构与参考架构之间的关系的标签（例如，“相关帐户”）。此标签在轮廓和分段中用于为来自相关 B2B 实体的数据提供上下文。请参阅文档以了解有关构建 B2B 架构关系的更多信息。"
 
 >[!CONTEXTUALHELP]
 >id="platform_xdm_b2b_relationship_name_reference"
 >title="参考架构中的关系名称"
->abstract="描述参考架构与当前架构之间的关系的标签（例如，“相关机会”）。此标签在配置文件和分段中用于为来自相关 B2B 实体的数据提供上下文。请参阅文档以了解有关构建 B2B 架构关系的更多信息。"
+>abstract="描述参考架构与当前架构之间的关系的标签（例如，“相关机会”）。此标签在轮廓和分段中用于为来自相关 B2B 实体的数据提供上下文。请参阅文档以了解有关构建 B2B 架构关系的更多信息。"
 
 为了定义两个架构之间的关系，源架构必须具有指示引用架构的主要标识的专用字段。 标准B2B类包括用于通常相关的业务实体的专用源密钥字段。 例如，[!UICONTROL XDM业务机会]类包含相关帐户(`accountKey`)和相关营销活动(`campaignKey`)的源键字段。 但是，如果您需要多个默认组件，则还可以使用自定义字段组将其他[!UICONTROL B2B Source]字段添加到架构中。
 

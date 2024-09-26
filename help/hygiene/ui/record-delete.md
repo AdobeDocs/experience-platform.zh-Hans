@@ -68,7 +68,7 @@ ht-degree: 8%
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_primaryidentity"
 >title="标识命名空间"
->abstract="标识命名空间是一个用于将记录与 Experience Platform 中的消费者配置文件相关联的属性。数据集的标识命名空间字段由数据集所基于的架构定义。在此列中，您必须为记录的标识命名空间提供类型（或命名空间），例如 `email`（对于电子邮件地址）和 `ecid`（对于 Experience Cloud ID）。要了解详情，请参阅《数据生命周期 UI 指南》。"
+>abstract="标识命名空间是一个用于将记录与 Experience Platform 中的消费者轮廓相关联的属性。数据集的标识命名空间字段由数据集所基于的架构定义。在此列中，您必须为记录的标识命名空间提供类型（或命名空间），例如 `email`（对于电子邮件地址）和 `ecid`（对于 Experience Cloud ID）。要了解详情，请参阅《数据生命周期 UI 指南》。"
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_identityvalue"

@@ -6,7 +6,7 @@ exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
 source-git-commit: dc31258dad5cf03a8f4f60db4d4aefc29e8157c8
 workflow-type: tm+mt
 source-wordcount: '2212'
-ht-degree: 0%
+ht-degree: 3%
 
 ---
 
@@ -52,7 +52,7 @@ ht-degree: 0%
 
 ![配置文件量度显示并突出显示。](../images/user-guide/browse-metrics.png)
 
-### 配置文件计数 {#profile-count}
+### 轮廓计数 {#profile-count}
 
 在您的组织默认合并Experience Platform将配置文件片段合并在一起，为每个单独的客户形成一个配置文件后，配置文件计数会显示您的组织在该策略中的配置文件总数。 换言之，您的组织可能具有多个与跨不同渠道与您的品牌互动的单个客户相关的配置文件片段，但这些片段将合并在一起（根据默认合并策略），并将返回计数“1”个配置文件，因为它们都与同一个人相关。
 
@@ -126,12 +126,12 @@ ht-degree: 0%
 
 ![与标识值匹配的配置文件突出显示。](../images/user-guide/filtered-identity-value.png)
 
-## 查看配置文件详细信息 {#profile-detail}
+## 查看轮廓详情 {#profile-detail}
 
 >[!CONTEXTUALHELP]
 >id="platform_errors_uplib_201001_404"
 >title="未找到实体"
->abstract="这意味着Platform无法找到请求的实体。 要解决此错误，请尝试以下解决方案之一：<ul><li>确保在您尝试访问的实体的URL中列出了正确的配置文件ID。</li><li>确保您对尝试访问的实体具有正确的组织和沙盒组合。</li></ul>"
+>abstract="这意味着平台找不到所请求的实体。要解决此错误，请尝试以下解决方案之一：<ul><li>确保您尝试访问的实体的 URL 中列出了正确的轮廓 ID。</li><li>确保您拥有适合您尝试访问的实体的相应的组织和沙盒组合。</li></ul>"
 
 选择&#x200B;**[!UICONTROL 配置文件ID]**&#x200B;后，**[!UICONTROL 详细信息]**&#x200B;选项卡将打开。 显示在&#x200B;**[!UICONTROL 详细信息]**&#x200B;选项卡上的配置文件信息已从多个配置文件片段合并在一起，形成单个客户的视图。 这包括客户详细信息，如基本属性、链接身份和渠道偏好设置。
 

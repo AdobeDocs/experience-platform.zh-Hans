@@ -84,7 +84,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过它可
 * [[!UICONTROL 受众规模]](#audience-size)
 * [[!UICONTROL 受众规模变化趋势]](#audience-size-change-trend)
 * [[!UICONTROL 标识重叠]](#identity-overlap)
-* [[!UICONTROL 按标识列出的配置文件]](#profiles-by-identity)
+* [[!UICONTROL 按标识列出的轮廓]](#profiles-by-identity)
 
 >[!NOTE]
 >
@@ -103,7 +103,7 @@ Customer AI 用于生成自定义倾向分数，如个人档案大规模的流�
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_segments_distributionOfScores"
 >title="分数分布"
->abstract="该构件通过倾向打分（以 5% 的增量）功能显示配置文件总数的分布。配置文件计数的分布由 AI 模型和所选的合并策略决定。您可以从构件标题下的下拉菜单中更改 AI 模型。"
+>abstract="该构件通过倾向打分（以 5% 的增量）功能显示轮廓总数的分布。轮廓计数的分布由 AI 模型和所选的合并策略决定。您可以从构件标题下的下拉菜单中更改 AI 模型。"
 
 分数]的[!UICONTROL 客户人工智能分布构件按倾向分数对配置文件总数进行分类。 用户档案计数的分布由AI模型和选定的合并策略确定，然后以5%的增量进行可视化以指示其倾向。 沿Y轴提供用户档案计数，沿X轴提供倾向分数。
 
@@ -132,7 +132,7 @@ Customer AI 用于生成自定义倾向分数，如个人档案大规模的流�
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_segments_scoringSummary"
 >title="评分汇总"
->abstract="该构件会显示经过评分的配置文件的总数，并将其分类为包含高、中、低倾向的存储桶。圆环图说明了高、中、低倾向的总体配置文件的比例构成。"
+>abstract="该构件会显示经过评分的轮廓的总数，并将其分类为包含高、中、低倾向的存储桶。圆环图说明了高、中、低倾向的总体轮廓的比例构成。"
 
 此构件显示已评分的用户档案总数，并将它们分类为分别包含高、中和低倾向性的绿色、黄色和红色存储桶。 使用圆环图说明高、中和低倾向性之间总轮廓的比例组成，分别表示为绿色、黄色和红色。 用户档案符合75岁以上的高倾向性、25至74岁之间的中倾向性和24岁以下的低倾向性条件。 图例指示颜色代码和倾向性阈值。 当光标悬停在圆环图的相应部分上时，会在对话框中显示高、中和低倾向的配置文件计数。
 
@@ -164,7 +164,7 @@ Adobe提供了多个标准构件，可用于可视化与受众相关的各种指
 * [[!UICONTROL 受众重叠]](#audience-overlap)
 * [[!UICONTROL 受众重叠报表]](#audience-overlap-report)
 * [[!UICONTROL 标识重叠]](#identity-overlap)
-* [[!UICONTROL 按标识列出的配置文件]](#profiles-by-identity)
+* [[!UICONTROL 按标识列出的轮廓]](#profiles-by-identity)
 * [[!UICONTROL 计划的激活]](#scheduled-activations)
 
 ### [!UICONTROL 受众规模] {#audience-size}
@@ -172,7 +172,7 @@ Adobe提供了多个标准构件，可用于可视化与受众相关的各种指
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_segments_audiencesize"
 >title="受众规模"
->abstract="此构件显示所选受众中合并的配置文件总数。此数目取决于应用于您的数据的合并策略，并且在生成最新快照时是正确的。"
+>abstract="此构件显示所选受众中合并的轮廓总数。此数目取决于应用于您的数据的合并策略，并且在生成最新快照时是正确的。"
 
 **[!UICONTROL 受众大小]**&#x200B;构件显示拍摄快照时选定受众中合并的配置文件总数。 此数字是将受众合并策略应用于配置文件数据以将配置文件片段合并在一起，并为受众中的每个人形成单个配置文件的结果。
 
@@ -185,7 +185,7 @@ Adobe提供了多个标准构件，可用于可视化与受众相关的各种指
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_segments_audiencesizetrend"
 >title="受众规模趋势"
->abstract="此构件提供有关符合&#x200B;**任意**&#x200B;区段定义标准的配置文件总数的信息，如在过去 30 天、90 天或 12 个月的每日快照期间捕获的配置文件。"
+>abstract="此构件提供有关符合&#x200B;**任意**&#x200B;区段定义标准的轮廓总数的信息，如在过去 30 天、90 天或 12 个月的每日快照期间捕获的轮廓。"
 
 **[!UICONTROL 受众规模趋势]**&#x200B;构件为给定时间段内符合&#x200B;**任何**&#x200B;受众条件的配置文件总数提供折线图说明。 可以在30天、90天和12个月的时段内可视化受众规模趋势。 从小组件中的下拉菜单中选择时间段。 受众规模反映在y轴上，时间反映在x轴上。
 
@@ -258,7 +258,7 @@ Adobe提供了多个标准构件，可用于可视化与受众相关的各种指
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_segments_identityoverlap"
 >title="标识重叠"
->abstract="此构件显示包含两个所选标识的受众中的配置文件的重叠。圆圈显示每个标识的相对大小。包含两个命名空间的配置文件的数量由圆圈之间的重叠部分表示。"
+>abstract="此构件显示包含两个所选标识的受众中的轮廓的重叠。圆圈显示每个标识的相对大小。包含两个命名空间的轮廓的数量由圆圈之间的重叠部分表示。"
 
 **[!UICONTROL 身份重叠]**&#x200B;构件显示维恩图或集图，显示包含多个身份的受众中配置文件重叠。
 
@@ -270,12 +270,12 @@ Adobe提供了多个标准构件，可用于可视化与受众相关的各种指
 
 ![突出显示具有身份重叠小部件的[!UICONTROL 受众]仪表板概述。](../images/audiences/identity-overlap.png)
 
-### [!UICONTROL 按标识列出的配置文件] {#profiles-by-identity}
+### [!UICONTROL 按标识列出的轮廓] {#profiles-by-identity}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_segments_profilesbyidentity"
->title="按标识列出的配置文件"
->abstract="此构件显示跨所选受众中每个合并配置文件的标识的细分。"
+>title="按标识列出的轮廓"
+>abstract="此构件显示跨所选受众中每个合并轮廓的标识的细分。"
 
 **[!UICONTROL 按身份列出的配置文件]**&#x200B;小组件显示选定受众中每个合并配置文件中的身份划分。 由于一个配置文件可能具有多个与其关联的身份，因此按身份列出的配置文件总数可能高于受众中的配置文件总数。 换言之，将每个身份显示的值相加可能总大于总受众大小。 这是因为，如果客户在多个渠道上与您的品牌互动，则多个身份可能会与该个人客户相关联。
 

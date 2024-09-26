@@ -7,7 +7,7 @@ exl-id: ced5b69c-5bb5-4e06-9cb4-938e36e6e5cc
 source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
 workflow-type: tm+mt
 source-wordcount: '919'
-ht-degree: 7%
+ht-degree: 9%
 
 ---
 
@@ -25,10 +25,10 @@ Real-Time CDP主页包括一个快速入门小组件，允许您快速访问多�
 
 [!UICONTROL Real-Time Customer Profile快速入门]构件分为四个部分：
 
-* **将数据摄取到Platform**：此构件会将您定向到源目录。 使用源目录选择源并摄取数据以Experience Platform。 选择&#x200B;**[配置源]**&#x200B;以导航到源目录。 有关详细信息，请阅读[源概述](../sources/home.md)。
+* **将数据摄取到Platform**：此构件会将您定向到源目录。 使用源目录选择源并摄取数据以Experience Platform。 选择&#x200B;**[配置源]**&#x200B;以导航到源目录。 有关更多信息，请阅读[源概述](../sources/home.md)。
 * **模型数据结构**：此构件引导您查看架构概述。 使用架构概述浏览现有架构或创建描述数据结构的Blueprint。 选择&#x200B;**[!UICONTROL 创建架构]**&#x200B;以导航到架构创建界面。 有关详细信息，请阅读[架构概述](../xdm/home.md)。
 * **构建受众**：此构件会将您定向到UI中的区段生成器。 使用区段生成器可与配置文件数据元素交互并定义区段定义的标准。 选择&#x200B;**[!UICONTROL 创建受众]**&#x200B;以导航到区段生成器。 有关详细信息，请阅读[分段服务概述](../segmentation/home.md)。
-* **将数据发送到目标**：此构件会将您定向到目标目录。 使用目标目录选择一个目标，然后您可以连接到该目标并将受众发送到该目标。 选择&#x200B;**[!UICONTROL 设置目标]**&#x200B;以导航到目标目录。 有关详细信息，请阅读[目标概述](../destinations/home.md)。
+* **将数据发送到目标**：此构件会将您定向到目标目录。 使用目标目录选择一个目标，然后您可以连接到该目标并将受众发送到该目标。 选择&#x200B;**[!UICONTROL 设置目标]**&#x200B;以导航到目标目录。 有关更多信息，请阅读[目标概述](../destinations/home.md)。
 
 ![Platform UI主页显示入门小组件](assets/platform-home/getting-started-widget.png)
 
@@ -36,8 +36,8 @@ Real-Time CDP主页包括一个快速入门小组件，允许您快速访问多�
 
 >[!CONTEXTUALHELP]
 >id="platform_home_metrics_totalProfiles"
->title="配置文件总数"
->abstract="您的组织在 Experience Platform 中拥有的配置文件的总数。此计数基于您组织的合并策略，并且不包括配置文件片段。每 24 小时更新一次配置文件数。"
+>title="轮廓总数"
+>abstract="您的组织在 Experience Platform 中拥有的轮廓的总数。此计数基于您组织的合并策略，并且不包括轮廓片段。每 24 小时更新一次轮廓数。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/ui/user-guide.html#profile-count" text="请在文档中了解详情"
 
 量度仪表板可显示有关Experience Platform数据的最新信息。 仪表板分为两个部分：
@@ -62,7 +62,7 @@ Real-Time CDP主页包括一个快速入门小组件，允许您快速访问多�
 * **最近的数据集**： **[!UICONTROL 最近的数据集]**&#x200B;卡片显示了在组织内创建的五个最近的数据集。 此列表会在创建新数据集时更新。 选择一个数据集以查看该项的详细信息，或选择&#x200B;**[!UICONTROL 查看全部]**&#x200B;以查看数据集列表。 从该位置，您可以选择特定源以了解详细信息。 有关数据集的更多信息，请参阅[数据集概述](../catalog/datasets/overview.md)。
 * **最近的源**：“**[!UICONTROL 最近的源]**”量度卡片显示了组织内创建的五个最近的源。 此列表会在创建新源时更新。 选择源以查看该项的详细信息，或选择&#x200B;**[!UICONTROL 查看全部]**&#x200B;以查看源列表。 从该位置，您可以选择特定源以了解详细信息。 有关源的更多信息，请参阅[源概述](../sources/home.md)。
 * **最近受众**： **[!UICONTROL 最近受众]**&#x200B;量度卡片显示了组织内创建的五个最近受众。 此列表会在创建新受众时更新。 选择一个受众以查看该项目的详细信息，或选择&#x200B;**[!UICONTROL 查看全部]**&#x200B;以查看受众列表。 有关受众的详细信息，请参阅[分段服务概述](../segmentation/home.md)。
-* **最近的目标**： **[!UICONTROL 最近的目标]**&#x200B;量度卡显示组织中创建的五个最近的目标。 此列表会在创建新目标时更新。 选择一个目标以查看该项目的详细信息，或选择&#x200B;**[!UICONTROL 查看全部]**&#x200B;以查看目标列表。 有关详细信息，请阅读[目标概述](../destinations/home.md)。
+* **最近的目标**： **[!UICONTROL 最近的目标]**&#x200B;量度卡显示组织中创建的五个最近的目标。 此列表会在创建新目标时更新。 选择一个目标以查看该项目的详细信息，或选择&#x200B;**[!UICONTROL 查看全部]**&#x200B;以查看目标列表。 有关更多信息，请阅读[目标概述](../destinations/home.md)。
 
 ## 资源
 

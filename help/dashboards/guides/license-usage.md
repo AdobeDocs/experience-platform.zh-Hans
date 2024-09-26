@@ -7,7 +7,7 @@ exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
 source-git-commit: 3b4a38be9b47ca65dc142bff4800ef595d3cacca
 workflow-type: tm+mt
 source-wordcount: '2739'
-ht-degree: 13%
+ht-degree: 16%
 
 ---
 
@@ -21,12 +21,12 @@ ht-degree: 13%
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_core"
 >title="核心产品表"
->abstract="表中列出的核心产品在沙盒级别具有各自的量度、使用情况跟踪和穿透钻取视图。 这些核心产品提供了用于跟踪的关键量度，并且任何加载项都包含在这些量度中。"
+>abstract="表中列出的核心产品在沙盒级别有各自的量度、使用情况跟踪和钻取视图。这些核心产品提供了用于跟踪的关键量度，并且任何附加组件都包含在这些量度中。"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_addons"
->title="加载项表"
->abstract="“插件”表列出了其许可证数量与核心产品所支持的量度相结合的产品。 这些加载项没有单独的量度，但增强了与其关联的核心产品的使用情况跟踪。"
+>title="附加组件表"
+>abstract="附加组件表列出了许可证数量与核心产品支持的量度相结合的产品。这些附加组件没有单独的量度，但增强了与其关联的核心产品的使用情况跟踪功能。"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseUsage"
@@ -74,7 +74,7 @@ ht-degree: 13%
 
 [!UICONTROL 许可证使用情况]仪表板显示两个单独的表：**核心产品**&#x200B;和&#x200B;**附加组件**。
 
-- **[!UICONTROL 核心产品]表**：此表列出了您的组织许可的主要Adobe Experience Platform产品。 每个核心产品在沙盒级别都有自己的量度、使用情况跟踪和穿透钻取视图。 这些核心产品提供了用于跟踪的关键量度，并且任何加载项都包含在这些量度中。
+- **[!UICONTROL 核心产品]表**：此表列出了您的组织许可的主要Adobe Experience Platform产品。 每个核心产品在沙盒级别都有自己的量度、使用情况跟踪和穿透钻取视图。 这些核心产品提供了用于跟踪的关键量度，并且任何附加组件都包含在这些量度中。
 
 - **[!UICONTROL 插件]表**：此表列出了许可证数量与核心产品所支持的量度相结合的其他产品。 加载项没有单独的量度，但可增强对其关联核心产品的使用跟踪。
 

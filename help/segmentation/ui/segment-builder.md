@@ -332,7 +332,7 @@ ht-degree: 5%
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_createSegment_segmentBuilder_mergePolicies"
 >title="合并策略"
->abstract="合并策略可以合并不同的数据集，以形成您的配置文件。Platform 已提供默认合并策略，您也可以在配置文件中创建新的默认合并策略。为该受众选择与您的营销目的相匹配的合并策略。"
+>abstract="合并策略可以合并不同的数据集，以形成您的轮廓。Platform 已提供默认合并策略，您也可以在轮廓中创建新的默认合并策略。为该受众选择与您的营销目的相匹配的合并策略。"
 
 [!DNL Experience Platform]使您能够将来自多个来源的数据集合起来并组合这些数据，以便查看每个客户的完整视图。 在汇总此数据时，合并策略是[!DNL Platform]用于确定数据优先顺序的规则以及将合并哪些数据以创建配置文件。
 
@@ -347,12 +347,12 @@ ht-degree: 5%
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_segmentproperties"
 >title="区段定义属性"
->abstract="区段定义属性部分显示生成的区段定义的大小估计值，并显示合格配置文件的数量与配置文件总数的比较情况。这允许您在构建受众本身之前根据需要调整区段定义。"
+>abstract="区段定义属性部分显示生成的区段定义的大小估计值，并显示合格轮廓的数量与轮廓总数的比较情况。这允许您在构建受众本身之前根据需要调整区段定义。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="刷新估计值"
->abstract="您可以刷新区段定义的估计值，以立即预览符合建议的区段定义资格的配置文件数目。受众估计值是通过使用当天的示例数据的示例大小生成的。"
+>abstract="您可以刷新区段定义的估计值，以立即预览符合建议的区段定义资格的轮廓数目。受众估计值是通过使用当天的示例数据的示例大小生成的。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="估计和预览受众"
 
 在构建区段定义时，工作区右侧的&#x200B;**[!UICONTROL 受众属性]**&#x200B;部分会显示所生成区段定义的大小估计值，这样您可以在构建受众本身之前根据需要调整区段定义。

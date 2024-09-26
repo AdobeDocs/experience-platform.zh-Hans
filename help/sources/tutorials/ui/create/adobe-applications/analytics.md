@@ -168,12 +168,12 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 
 ![complete-custom-mapping](../../../../images/tutorials/create/analytics/complete-custom-mapping.png) -->
 
-## 筛选实时客户配置文件 {#filtering-for-profile}
+## 筛选实时客户轮廓 {#filtering-for-profile}
 
 >[!CONTEXTUALHELP]
 >id="platform_data_prep_analytics_filtering"
 >title="创建筛选规则"
->abstract="在将数据发送到实时客户配置文件时定义行级和列级筛选规则。使用行级筛选来应用条件并指示要&#x200B;**为配置文件提取包含**&#x200B;的数据。使用列级筛选来选择要&#x200B;**为配置文件提取排除**&#x200B;的数据列。筛选规则不适用于发送到数据湖的数据。"
+>abstract="在将数据发送到实时客户轮廓时定义行级和列级筛选规则。使用行级筛选来应用条件并指示要&#x200B;**为轮廓提取包含**&#x200B;的数据。使用列级筛选来选择要&#x200B;**为轮廓提取排除**&#x200B;的数据列。筛选规则不适用于发送到数据湖的数据。"
 
 完成[!DNL Analytics]报表包数据的映射后，您可以应用筛选规则和条件以选择性地将数据包含或排除在摄取到Real-time Customer Profile的数据之外。 仅对[!DNL Analytics]数据提供筛选支持，并且仅在输入[!DNL Profile.]之前筛选数据。所有数据都已摄取到数据湖中。
 
@@ -200,7 +200,7 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 
 >[!IMPORTANT]
 >
->使用行级筛选来应用条件并指示要&#x200B;**为配置文件提取包含**&#x200B;的数据。使用列级筛选选择要&#x200B;**排除以进行配置文件摄取**&#x200B;的数据列。
+>使用行级筛选来应用条件并指示要&#x200B;**为轮廓提取包含**&#x200B;的数据。使用列级筛选选择要&#x200B;**排除以进行配置文件摄取**&#x200B;的数据列。
 
 您可以在行级别和列级别筛选[!DNL Profile]摄取的数据。 行级筛选允许您定义字符串包含、等于、开始或结束于等条件。 您还可以使用行级筛选来使用`AND`和`OR`连接条件，并使用`NOT`否定条件。
 

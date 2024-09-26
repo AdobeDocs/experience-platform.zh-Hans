@@ -26,18 +26,18 @@ ht-degree: 7%
 - [实时客户个人资料](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时客户个人资料。
 - [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-## 监控配置文件仪表板 {#profile-metrics}
+## 监控轮廓仪表板 {#profile-metrics}
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profile_processing"
->title="配置文件处理"
->abstract="配置文件处理视图包含有关提取到配置文件服务的记录的信息，包括创建的配置文件片段数、更新的配置文件片段数以及配置文件片段总数。"
+>title="轮廓处理"
+>abstract="轮廓处理视图包含有关提取到轮廓服务的记录的信息，包括创建的轮廓片段数、更新的轮廓片段数以及轮廓片段总数。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_profile"
 >title="数据流运行详细信息"
->abstract="数据流运行详细信息页面显示有关配置文件数据流运行的更多信息，包括其组织 ID 和数据流运行 ID。"
+>abstract="数据流运行详细信息页面显示有关轮廓数据流运行的更多信息，包括其组织 ID 和数据流运行 ID。"
 
 要访问&#x200B;**[!UICONTROL 配置文件]**&#x200B;仪表板，请在左侧导航中选择&#x200B;**[!UICONTROL 监视]**。 在&#x200B;**[!UICONTROL 监控]**&#x200B;页面上，选择&#x200B;**[!UICONTROL 配置文件]**&#x200B;信息卡。
 

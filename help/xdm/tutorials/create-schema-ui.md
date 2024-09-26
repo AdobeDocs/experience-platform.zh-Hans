@@ -369,12 +369,12 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 [!CONTEXTUALHELP]
 id="platform_schemas_delete_profileenabledwithdatasets"
 title="无法删除架构"
-abstract="无法删除该架构，因为它已为配置文件启用，并且具有关联的数据集。"
+abstract="无法删除该架构，因为它已为轮廓启用，并且具有关联的数据集。"
 
 [!CONTEXTUALHELP]
 id="platform_schemas_delete_profileenablednodatasets"
 title="无法删除架构"
-abstract="无法删除该架构，因为它已为配置文件启用。"
+abstract="无法删除该架构，因为它已为轮廓启用。"
 
 [!CONTEXTUALHELP]
 id="platform_schemas_delete_withdatasetsnotprofileenabled"

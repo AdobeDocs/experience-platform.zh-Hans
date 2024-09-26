@@ -109,8 +109,8 @@ ht-degree: 38%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_4cinsights_profile_id"
->title="4C 品牌配置文件 ID"
->abstract="输入与您的 4C 品牌配置文件关联的数字 ID。如果您没有此 ID，请联系您的 4C 客户服务代表。"
+>title="4C 品牌轮廓 ID"
+>abstract="输入与您的 4C 品牌轮廓关联的数字 ID。如果您没有此 ID，请联系您的 4C 客户服务代表。"
 
 要配置目标的详细信息，请填写以下字段。
 
