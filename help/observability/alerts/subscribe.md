@@ -4,9 +4,9 @@ title: 订阅Adobe I/O事件通知
 description: 本文档提供了有关如何订阅Adobe Experience Platform服务的Adobe I/O事件通知的步骤。 还提供了有关可用事件类型的参考信息，以及指向有关如何解释每个适用的 [!DNL Platform] 服务的返回事件数据的更多文档的链接。
 feature: Alerts
 exl-id: c0ad7217-ce84-47b0-abf6-76bcf280f026
-source-git-commit: 1070c34bcd4577fcc5f0ac160196450db3aab9b0
+source-git-commit: 8e6301c5f834465acff99b4cd668017581c1dfa9
 workflow-type: tm+mt
-source-wordcount: '767'
+source-wordcount: '781'
 ht-degree: 1%
 
 ---
@@ -64,6 +64,10 @@ ht-degree: 1%
 >
 >* [平台通知](./rules.md)
 >* [Privacy Service通知](../../privacy-service/privacy-events.md)
+
+>[!IMPORTANT]
+>
+>Edge相关警报当前为测试版，仅向部分测试版客户提供。
 
 ![](../images/notifications/choose-event-subscriptions.png)
 
