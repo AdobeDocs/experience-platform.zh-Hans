@@ -2,9 +2,9 @@
 title: 沙盒工具
 description: 在沙盒之间无缝导出和导入沙盒配置。
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: ac013f4a1b0f8053963771b66d0bd80111f7d215
+source-git-commit: 50f3976d73c8a34a51179157a7c93e3d9b1c0ff4
 workflow-type: tm+mt
-source-wordcount: '2314'
+source-wordcount: '2404'
 ht-degree: 7%
 
 ---
@@ -57,6 +57,9 @@ ht-degree: 7%
 | [!DNL Adobe Journey Optimizer] | 历程 — 画布详细信息 | 画布上的历程表示形式包括历程中的对象，如复制的条件、操作、事件、读取受众等。 跳转活动将从副本中排除。 |
 | [!DNL Adobe Journey Optimizer] | 活动 | 旅程中使用的事件和事件详细信息已复制。 它始终会在目标沙盒中创建新版本。 |
 | [!DNL Adobe Journey Optimizer] | 操作 | 历程中使用的电子邮件和推送消息可以作为依赖对象复制。 不检查消息中用于个性化的历程字段中使用的渠道操作活动的完整性。 不会复制内容块。<br><br>可以复制历程中使用的更新配置文件操作。 历程中使用的自定义操作和操作详细信息也会被复制。 它始终会在目标沙盒中创建新版本。 |
+| [!DNL Adobe Journey Optimizer] | 历程 | 将整个历程添加到资源包时，将复制历程所依赖的大多数对象，包括受众、架构、事件和操作。 |
+| [!DNL Adobe Journey Optimizer] | 内容模板 | 内容模板可以作为历程对象的依赖对象复制。 独立模板，让您能够轻松地在Journey Optimizer营销活动和历程中重用自定义内容。 |
+| [!DNL Adobe Journey Optimizer] | 片段 | 片段可以作为历程对象的依赖对象复制。 片段是可重用的组件，可以在各个Journey Optimizer营销活动和历程中的一个或多个电子邮件中引用。 |
 
 曲面（例如预设）不会被复制。 系统根据消息类型和表面名称，自动选择目标沙盒上最接近的匹配项。 如果在目标沙盒上未找到表面，则表面复制将失败，导致消息复制失败，因为消息需要表面才可供设置。 在这种情况下，需要为消息的正确渠道至少创建一个表面，以便副本正常工作。
 
