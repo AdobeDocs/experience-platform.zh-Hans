@@ -1,13 +1,14 @@
 ---
 title: Merkury Enterprise连接目标
 description: 了解如何使用Adobe Experience Platform UI创建Merkury Enterprise连接目标连接。
-source-git-commit: 01ce38d26cf61706de84ec143e3dd8af720d0591
+last-substantial-update: 2024-07-20T00:00:00Z
+exl-id: dffc6f4d-b756-4c13-96f3-b1cc57caacdb
+source-git-commit: 2b84b5106105339ab243a9f4412b47692caedf3c
 workflow-type: tm+mt
 source-wordcount: '1375'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
-
 
 # Merkury Enterprise连接目标
 
@@ -17,7 +18,7 @@ ht-degree: 3%
 
 ## 概述
 
-使用[!DNL Merkury Enterprise Connections]目标将受众安全地交付给[!DNL Merkury]。 [!DNL Merkury]为营销人员提供了基于人员的受众的轻松匹配和交付，这些受众可以与[!DNL Merkury]的80多个高级可寻址电视/电视、出版商和广告技术连接进行匹配和交付。 [!DNL Merkury]由2.68亿以上的美国成人消费者身份综合图表提供支持。
+使用 [!DNL Merkury Enterprise Connections] 安全地将观众送达目标 [!DNL Merkury]。[!DNL Merkury]为营销人员提供了基于人员的受众的轻松匹配和交付，这些受众可以与[!DNL Merkury]的80多个高级可寻址电视/电视、出版商和广告技术连接进行匹配和交付。 [!DNL Merkury] 由超过 2.68 亿人的美国成年消费者综合标识图提供支持。
 
 ![显示Merkury与Experience Platform之间互连的图表，包括引入和激活](../../assets/catalog/data-partners/merkury-connections/media/image1.png)
 
@@ -60,7 +61,7 @@ ht-degree: 3%
 
 | **受众** | **支持** | **描述来源** |
 |---|---|---|      
-| Segmentation Service | ✓ {\f13 } | 通过Experience Platform[[分段服务]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/home)生成的受众。 |
+| Segmentation Service | ✓ {\f13 } | 通过Experience Platform[[分段服务]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/segmentation/home)生成的受众。 |
 | 自定义上传 | X | 受众[[已将]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience)从CSV文件导入到Experience Platform中。 |
 
 {style="table-layout:auto"}

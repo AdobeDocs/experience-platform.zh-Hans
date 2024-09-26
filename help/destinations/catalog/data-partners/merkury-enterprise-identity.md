@@ -1,13 +1,14 @@
 ---
 title: Merkury企业标识目标
 description: 了解如何使用Adobe Experience Platform UI创建Merkury Enterprise Identity目标连接。
-source-git-commit: 0a1d024b5642c08cd9349220a9686d8d4cbfd55a
+last-substantial-update: 2024-07-20T00:00:00Z
+exl-id: a5452183-289c-49c3-9574-e09b0153dc00
+source-git-commit: 2b84b5106105339ab243a9f4412b47692caedf3c
 workflow-type: tm+mt
 source-wordcount: '1469'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
-
 
 # Merkury企业标识目标
 
@@ -17,7 +18,7 @@ ht-degree: 2%
 
 ## 概述
 
-使用[!DNL Merkury Enterprise Identity]目标构建更准确、更全面且有洞察力的消费者个人资料。 通过改进的配置文件数据，营销人员可以更好地提供见解、区段和模型，从而更准确地定位和预测建模。
+使用 [!DNL Merkury Enterprise Identity] 目标来建立更准确、更全面、更有洞察力的消费者档案。通过改进的配置文件数据，营销人员可以更好地提供见解、区段和模型，从而更准确地定位和预测建模。
 
 ![显示Merkury与Experience Platform之间互连的图表，包括引入和激活](../../assets/catalog/data-partners/merkury-identity/media/image1.png)
 
@@ -67,7 +68,7 @@ ht-degree: 2%
 
 | **受众** | **支持** | **描述** | **来源** |
 |---|---|---|---|
-| Segmentation Service | ✓ {\f13 } | 通过Experience Platform[[分段服务]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/home)生成的受众。 |
+| Segmentation Service | ✓ {\f13 } | 通过Experience Platform[[分段服务]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/segmentation/home)生成的受众。 |
 | 自定义上传 | x | 受众[[已将]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience)从CSV文件导入到Experience Platform中。 |
 
 {style="table-layout:auto"}
@@ -78,7 +79,7 @@ ht-degree: 2%
 
 | **受众** | **支持** | **描述来源** |
 |---|---|---|      
-| Segmentation Service | ✓ {\f13 } | 通过Experience Platform[[分段服务]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/home)生成的受众。 |
+| Segmentation Service | ✓ {\f13 } | 通过Experience Platform[[分段服务]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/segmentation/home)生成的受众。 |
 | 自定义上传 | X | 受众[[已将]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience)从CSV文件导入到Experience Platform中。 |
 
 {style="table-layout:auto"}
