@@ -2,9 +2,9 @@
 title: 查询服务中的增量加载
 description: 增量加载功能同时使用匿名块和快照功能，为在忽略匹配数据的同时将数据从数据湖移动到数据仓库提供了近乎实时的解决方案。
 exl-id: 1418d041-29ce-4153-90bf-06bd8da8fb78
-source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
+source-git-commit: 65eeeb1df1d512c4cd6c67892905a63cc1cc4fc5
 workflow-type: tm+mt
-source-wordcount: '688'
+source-wordcount: '671'
 ht-degree: 0%
 
 ---
@@ -125,10 +125,6 @@ ht-degree: 0%
 此逻辑可以应用于任何表以执行增量加载。
 
 ## 过期的快照
-
->[!IMPORTANT]
->
->快照元数据在&#x200B;**2**&#x200B;天后过期。 过期的快照会使上面提供的脚本的逻辑失效。
 
 要解决快照ID过期的问题，请在匿名块的开头插入以下命令。 以下代码行使用元数据中最早可用的`snapshot_id`覆盖`@from_snapshot_id`。
 

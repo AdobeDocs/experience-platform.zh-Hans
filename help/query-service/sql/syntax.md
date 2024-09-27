@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务中的SQL语法
 description: 本文档详细介绍并说明Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: d2cb7c3d1968a33300d480e63c4cb007df3cce7b
+source-git-commit: 65eeeb1df1d512c4cd6c67892905a63cc1cc4fc5
 workflow-type: tm+mt
-source-wordcount: '4305'
+source-wordcount: '4291'
 ht-degree: 2%
 
 ---
@@ -707,11 +707,7 @@ select inline(productListItems) from source_dataset limit 10;
 | product-id-2 | (“(”(“(AF， C， D，NULL)”)“)”) | 6 | 40 |
 | product-id-4 | (“(”(“(BM，pass， NA，NULL)”)”)”) | 3 | 12 |
 
-## [!DNL Spark] SQL命令
-
-以下子部分介绍了查询服务支持的Spark SQL命令。
-
-### 设置
+## 设置
 
 `SET`命令设置属性，并返回现有属性的值或列出所有现有属性。 如果为现有的属性键提供了值，则会覆盖旧值。
 

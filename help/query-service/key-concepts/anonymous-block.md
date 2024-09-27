@@ -2,9 +2,9 @@
 title: 查询服务中的匿名块
 description: 匿名块是Adobe Experience Platform查询服务支持的SQL语法，它允许您高效地执行一系列查询
 exl-id: ec497475-9d2b-43aa-bcf4-75a430590496
-source-git-commit: 9193ba821409806cd7b4667c5de73a0cf2660c66
+source-git-commit: 65eeeb1df1d512c4cd6c67892905a63cc1cc4fc5
 workflow-type: tm+mt
-source-wordcount: '616'
+source-wordcount: '603'
 ht-degree: 0%
 
 ---
@@ -44,9 +44,7 @@ $$;
 
 在以下示例中，`SET`在指定的局部变量中保留`SELECT`查询的结果。 变量的作用域为匿名块。
 
-快照ID存储为局部变量(`@current_sid`)。 然后，在下一个查询中使用它来返回来自同一数据集/表的基于SNAPSHOT的结果。
-
-数据库快照是SQL Server数据库的只读静态视图。 有关snapshot子句](../sql/syntax.md#SNAPSHOT-clause)的更多[信息，请参阅SQL语法文档。
+快照ID存储为局部变量(`@current_sid`)。 然后，在下一个查询中使用它来返回来自同一数据集/表的基于SNAPSHOT的结果。 有关snapshot子句](../sql/syntax.md#SNAPSHOT-clause)的更多[信息，请参阅SQL语法文档。
 
 ```SQL
 $$ BEGIN                                             
