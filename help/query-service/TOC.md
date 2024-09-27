@@ -5,9 +5,9 @@ breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
 role: User,Developer
-source-git-commit: bdd3d37baa05c8da3213f425657a00fef6afecb8
+source-git-commit: 67d4bcbf2a055d4427218ba7d98355f09d860a8c
 workflow-type: tm+mt
-source-wordcount: '333'
+source-wordcount: '339'
 ht-degree: 22%
 
 ---
@@ -41,7 +41,6 @@ ht-degree: 22%
       - [AI/ML数据管道扩充端到端工作流](data-distiller/ml-feature-pipelines/end-to-end-notebook-workflow.md)
 - 数据Distiller受众{#data-distiller-audiences}
    - [使用SQL构建外部受众](data-distiller-audiences/overview.md)
-- [数据DISTILLER超多维数据集](hypercubes.md)
 - 示例 {#use-cases}
    - [概述](use-cases/overview.md)
    - [已放弃的浏览](use-cases/abandoned-browse.md)
@@ -70,6 +69,8 @@ ht-degree: 22%
    - [重复数据删除](key-concepts/deduplication.md)
    - [数据集样本](key-concepts/dataset-samples.md)
    - [数据集统计信息计算](key-concepts/dataset-statistics.md)
+- 数据Distiller超多维数据集{#hypercubes}
+   - [使用超多维数据集进行高效的大数据分析](hypercubes/overview.md)
 - 将客户端连接到查询服务{#clients}
    - [客户端连接概述](clients/overview.md)
    - [SSL模式](./clients/ssl-modes.md)

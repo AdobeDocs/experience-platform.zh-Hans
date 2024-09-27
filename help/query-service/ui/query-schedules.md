@@ -2,9 +2,9 @@
 title: 查询时间表
 description: 了解如何自动运行计划的查询、删除或禁用查询计划，以及通过Adobe Experience Platform UI利用可用的计划选项。
 exl-id: 984d5ddd-16e8-4a86-80e4-40f51f37a975
-source-git-commit: c69311b3188a8d066a24235466afad1e725d489c
+source-git-commit: c0d2f4b4f8e294d5a7b0a519ab9dad8b78558b26
 workflow-type: tm+mt
-source-wordcount: '2051'
+source-wordcount: '2066'
 ht-degree: 0%
 
 ---
@@ -163,6 +163,11 @@ ht-degree: 0%
 | [!UICONTROL 计算小时数] | 显示每次查询运行使用的计算时间（以小时为单位）。 这有助于跟踪资源使用情况并优化查询性能。 |
 
 {style="table-layout:auto"}
+
+>[!NOTE]
+>
+>计算小时数据可从2024年8月15日开始提供。 此日期之前的数据显示为“不可用”。
+
 
 有关如何通过UI监视所有查询作业状态的完整信息，请参阅[监视器计划查询指南](./monitor-queries.md#inline-actions)。
 
