@@ -3,9 +3,9 @@ keywords: 广告目标；目标；平台目标
 title: Advertising目标概述
 description: 将Adobe Experience Platform连接到第三方广告平台(例如，DSP、广告网络、SSP)，并在这些平台上共享假名受众。
 exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
-source-git-commit: 2e8aac316f5e5edf169181b9e371dcd91e81c40d
+source-git-commit: 7db60161b638cce1845c430f6086441599a0bc61
 workflow-type: tm+mt
-source-wordcount: '263'
+source-wordcount: '267'
 ht-degree: 1%
 
 ---
@@ -26,6 +26,7 @@ ht-degree: 1%
 
 ### 连接
 
+* [(Beta) Acxiom Audience Distribution](acxiom-audience-distribution.md)
 * [Adobe Advertising Cloud连接](adobe-advertising-cloud-connection.md)
 * [(Beta) Amazon Ads连接](amazon-ads.md)
 * [(Beta)标准连接](criteo.md)

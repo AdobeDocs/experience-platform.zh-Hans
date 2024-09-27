@@ -5,9 +5,9 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: 029cd5bdf58a143f765b37190428b817825317b0
+source-git-commit: 7db60161b638cce1845c430f6086441599a0bc61
 workflow-type: tm+mt
-source-wordcount: '1247'
+source-wordcount: '1251'
 ht-degree: 5%
 
 ---
@@ -67,6 +67,7 @@ ht-degree: 5%
       * [Experience Platform受众共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
       * [联合受众组合连接（有限可用性）](https://www.adobe.com/go/destinations-federated-audience-composition)
    * Advertising目标{#advertising}
+      * [(Beta) Acxiom Audience Distribution](./catalog/advertising/acxiom-audience-distribution.md)
       * [Advertising目标概述](./catalog/advertising/overview.md)
       * [Adobe Advertising Cloud连接](./catalog/advertising/adobe-advertising-cloud-connection.md)
       * [Adobe Advertising Cloud扩展](./catalog/advertising/adobe-advertising-cloud.md)
@@ -167,7 +168,7 @@ ht-degree: 5%
       * [（文件）OracleEloqua连接](./catalog/email-marketing/oracle-eloqua.md)
       * [oracleResponsys连接](./catalog/email-marketing/oracle-responsys.md)
       * [(API) SalesforceMarketing Cloud连接](./catalog/email-marketing/salesforce-marketing-cloud-exact-target.md)
-      * [（文件） SalesforceMarketing Cloud连接](./catalog/email-marketing/salesforce-marketing-cloud.md)
+      * [（文件）SalesforceMarketing Cloud连接](./catalog/email-marketing/salesforce-marketing-cloud.md)
       * [[!DNL Salesforce Marketing Cloud Account Engagement]](./catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md)
       * [SendGrid连接](./catalog/email-marketing/sendgrid.md)
    * 标记扩展{#launch-extensions}
