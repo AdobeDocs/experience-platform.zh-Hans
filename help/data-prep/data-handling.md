@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用数据准备处理数据格式
 description: 本文档概述了数据准备中处理不同数据类型的方式。
 exl-id: 4ad253b7-3f83-48cd-9c46-8b5ba627c09e
-source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
+source-git-commit: a49140853124f4f7beee87a739c8e670838947f4
 workflow-type: tm+mt
-source-wordcount: '602'
+source-wordcount: '626'
 ht-degree: 8%
 
 ---
@@ -75,6 +75,10 @@ date({DATE}, {FORMAT}, {DEFAULT_DATE})
 > 数据准备将尝试尽可能将字符串转换为日期。 但是，这些转化可能会导致不良结果。 例如，字符串值“12112020”与模式“MMddyyyy”匹配，但用户可能希望以模式“ddMMyyyy”读取日期。 因此，用户应明确提及字符串的日期格式。
 
 ### 日期/时间格式字符串 {#format}
+
+>[!TIP]
+>
+>目前，如果日期值采用以下格式，批量摄取的日期函数将删除毫秒： `2024-05-05 20:39:00.005` PST。 要保留毫秒，请使用此格式： `2024-05-05 20:39:00.005-0800`
 
 下表显示了为格式字符串定义的样式字母。 请注意，这些字母区分大小写。
 

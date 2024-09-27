@@ -3,9 +3,9 @@ title: 在源UI Workspace中摄取加密数据
 description: 了解如何在源UI工作区中摄取加密数据。
 badge: Beta 版
 exl-id: 34aaf9b6-5c39-404b-a70a-5553a4db9cdb
-source-git-commit: 990be6351f1ea8b1a9288c55067bb81f075d1c4f
+source-git-commit: 70bfebc747c7e6267939eb313048cb2d0e132202
 workflow-type: tm+mt
-source-wordcount: '1464'
+source-wordcount: '1456'
 ht-degree: 6%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 6%
 
 >[!AVAILABILITY]
 >
->对源UI中加密数据摄取的支持处于测试阶段，您的组织可能无法获得这些支持。 该功能和文档可能会发生更改。
+>测试版支持在源UI中进行加密数据摄取。 该功能和文档可能会发生更改。
 
 您可以使用云存储批处理源将加密的数据文件和文件夹摄取到Adobe Experience Platform。 通过加密的数据摄取，您可以利用非对称加密机制将批量数据安全地传输到Experience Platform中。 支持的非对称加密机制为PGP和GPG。
 
