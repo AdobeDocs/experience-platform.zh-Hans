@@ -5,9 +5,9 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: 7db60161b638cce1845c430f6086441599a0bc61
+source-git-commit: 5e2e8996ee48d7816d78fc9cacf6ba102f7ae66f
 workflow-type: tm+mt
-source-wordcount: '1251'
+source-wordcount: '1253'
 ht-degree: 5%
 
 ---
@@ -77,6 +77,7 @@ ht-degree: 5%
       * [Bing Ads通用事件跟踪(UET)扩展](./catalog/advertising/bing-ads.md)
       * [分支扩展](./catalog/advertising/branch.md)
       * [(Beta)标准连接](./catalog/advertising/criteo.md)
+      * [Demandbase连接](./catalog/advertising/demandbase.md)
       * [DoubleClick Floodlight (Beta)扩展](./catalog/advertising/doubleclick-floodlight.md)
       * [facebook Pixel扩展](./catalog/advertising/facebook-pixel.md)
       * [Flashtalking OneTag扩展](./catalog/advertising/flashtalking.md)
