@@ -6,7 +6,7 @@ exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
 source-git-commit: 6ceb28b2c9bab3b9df212764a43b202980ae239c
 workflow-type: tm+mt
 source-wordcount: '4784'
-ht-degree: 5%
+ht-degree: 7%
 
 ---
 
@@ -102,7 +102,7 @@ ht-degree: 5%
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_segmentBuilder_b2b_decomposition"
 >title="复杂评估"
->abstract="以下表达式过于复杂，无法表示为单个受众。 要在相同的区段定义中使用B2B规则和基于人员的事件，请执行以下步骤。<ol><li>创建仅引用基于人员的事件的区段定义，并将其另存为自己的区段定义。</li><li>在新区段定义中，在引用B2B规则时导入之前创建的区段定义。</li></ol>"
+>abstract="下面的表达式太复杂，无法作为单个受众来表达。为了在同一个区段定义中同时使用 B2B 规则和基于人员的事件，请遵循以下步骤。<ol><li>创建仅引用基于人员的事件的区段定义，并将其保存为其自己的区段定义。</li><li>在新的区段定义中，参考 B2B 规则导入之前创建的区段定义。</li></ol>"
 
 >[!NOTE]
 >
@@ -165,7 +165,7 @@ ht-degree: 5%
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_segmentbuilder_addaudiences"
 >title="搜索更新"
->abstract="现有搜索系统已更新为使用统一搜索。 统一搜索允许您更轻松、更稳健地搜索受众以查找区段成员资格。"
+>abstract="现有的搜索系统经过更新会使用统一搜索。统一搜索可让您更轻松、更稳健地搜索受众群体的区段会员资格。"
 
 您可以将受众从&#x200B;**[!UICONTROL 受众]**&#x200B;选项卡拖放到规则生成器画布上，以引用新区段定义中的受众成员资格。 这样，您就可以在新的区段定义规则中包含或排除作为属性的受众成员资格。
 

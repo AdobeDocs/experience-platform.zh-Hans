@@ -6,7 +6,7 @@ exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
 source-git-commit: ad33eaa48928b25502ef279f000b92f31e1667ca
 workflow-type: tm+mt
 source-wordcount: '2573'
-ht-degree: 6%
+ht-degree: 8%
 
 ---
 
@@ -137,7 +137,7 @@ Experience Platform目录中的一些基于文件的目标同时支持Audience A
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_datasets_exportoptions"
 >title="数据集的文件导出选项"
->abstract="选择&#x200B;**导出增量文件**&#x200B;以仅导出自上次导出后添加到数据集的数据。<br>第一个增量文件导出包括数据集中的所有数据，充当回填。未来的增量文件仅包含自首次导出以来添加到数据集的数据。 <br>选择&#x200B;**导出完整文件**&#x200B;以导出每次导出时每个数据集的完整成员资格。 "
+>abstract="选择&#x200B;**导出增量文件**&#x200B;以仅导出自上次导出后添加到数据集的数据。<br>第一个增量文件导出包括数据集中的所有数据，充当回填。后续增量文件仅包含自第一次导出后添加到数据集的数据。<br> 选择&#x200B;**导出完整文件**，以在每次导出时导出每个数据集的完整成员信息。 "
 
 >[!CONTEXTUALHELP]
 >id="dataset_dataflow_needs_schedule_end_date_header"
