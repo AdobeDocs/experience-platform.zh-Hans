@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: 了解有关数据激活默认使用量和速率限制的更多信息。
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 322510055bd8b8803292a2b4af9df9e1dbee7ffb
+source-git-commit: 3ff20e51458cb9cccafb6da92414def9eeaaf821
 workflow-type: tm+mt
-source-wordcount: '1685'
+source-wordcount: '1686'
 ht-degree: 2%
 
 ---
@@ -178,7 +178,7 @@ The guardrails below are the same whether you are exporting parquet of JSON file
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
 | [私有自定义目标的最大数目](/help/destinations/destination-sdk/overview.md#productized-custom-integrations) | 5 | 性能护栏 | 您最多可以使用Destination SDK创建5个私有自定义流或批处理目标。 如果您需要创建5个以上的此类目标，请联系自定义关怀代表。 |
-| Destination SDK的配置文件导出策略 | <ul><li>`maxBatchAgeInSecs`（最小1.800，最大3.600）</li><li>`maxNumEventsInBatch` （最小1.000，最大10.000）</li></ul> | 系统强制的护栏 | 对您的目标使用[可配置的聚合](destination-sdk/functionality/destination-configuration/aggregation-policy.md#configurable-aggregation)选项时，请注意用于确定HTTP消息发送到基于API的目标的频率以及消息应包含的用户档案数的最小值和最大值。 |
+| Destination SDK的配置文件导出策略 | <ul><li>`maxBatchAgeInSecs`（最小1,800个，最大3,600个）</li><li>`maxNumEventsInBatch`（最小1,000个，最大10,000个）</li></ul> | 系统强制的护栏 | 对您的目标使用[可配置的聚合](destination-sdk/functionality/destination-configuration/aggregation-policy.md#configurable-aggregation)选项时，请注意用于确定HTTP消息发送到基于API的目标的频率以及消息应包含的用户档案数的最小值和最大值。 |
 
 {style="table-layout:auto"}
 

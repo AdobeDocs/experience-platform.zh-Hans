@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2024 年 9 月）
 description: Adobe Experience Platform 2024 年 9 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 059ed53ace6d54a0c0fb406c2f0379588fea2c44
+source-git-commit: a342f38f09b84ef720d6135bc555844df12ee251
 workflow-type: tm+mt
-source-wordcount: '2149'
-ht-degree: 84%
+source-wordcount: '2199'
+ht-degree: 82%
 
 ---
 
@@ -15,16 +15,15 @@ ht-degree: 84%
 
 Adobe Experience Platform 中现有功能和文档的更新：
 
-- [Adobe Experience Platform 发行说明](#adobe-experience-platform-release-notes)
-   - [警报 {#alerts}](#alerts-alerts)
-   - [仪表板{#dashboards}](#dashboards-dashboards)
-   - [数据准备{#data-prep}](#data-prep-data-prep)
-   - [目标 {#destinations}](#destinations-destinations)
-   - [体验数据模型(XDM) {#xdm}](#experience-data-model-xdm-xdm)
-   - [标识服务{#identity-service}](#identity-service-identity-service)
-   - [查询服务{#query-service}](#query-service-query-service)
-   - [分段服务{#segmentation-service}](#segmentation-service-segmentation-service)
-   - [源 {#sources}](#sources-sources)
+- [警报 {#alerts}](#alerts)
+- [仪表板{#dashboards}](#dashboards)
+- [数据准备{#data-prep}](#data-prep)
+- [目标 {#destinations}](#destinations)
+- [体验数据模型(XDM) {#xdm}](#xdm)
+- [标识服务{#identity-service}](#identity-service)
+- [查询服务{#query-service}](#query-service)
+- [分段服务{#segmentation-service}](#segmentation-service)
+- [源 {#sources}](#sources)
 
 ## 警报 {#alerts}
 
@@ -77,6 +76,8 @@ Experience Platform 提供了多个仪表板，您可以通过这些仪表板查
 
 ## 目标 {#destinations}
 
+**更新日期： 2024年9月30日**
+
 [!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
 **新增或更新目标**{#new-updated-destinations}
@@ -84,6 +85,7 @@ Experience Platform 提供了多个仪表板，您可以通过这些仪表板查
 | 目标 | 描述 |
 | --- | --- |
 | [Amazon 广告](/help/destinations/catalog/advertising/amazon-ads.md) | 2024 年 9 月的版本添加了将 `countryCode` 参数导出到 Amazon Ads 的映射选项。`countryCode` 在 [映射步骤](/help/destinations/catalog/advertising/amazon-ads.md#map) 中使用，以提高您与亚马逊的标识匹配率。 |
+| [[!BADGE B2B]{type=Informational} Demandbase](/help/destinations/catalog/advertising/demandbase.md) | 使用此目标可为Account-Based Marketing (ABM)用例激活帐户受众。 通过DemandBase的B2BDemand Side Platform(DSP)向目标帐户中的相关角色和角色播发。 Target帐户还可以使用Demandbase第三方数据进行扩充，以用于营销和销售中的其他下游用例。 |
 
 {style="table-layout:auto"}
 

@@ -2,7 +2,7 @@
 description: 了解如何设置聚合策略，以确定应如何对发往您目标的HTTP请求进行分组和批处理。
 title: 聚合策略
 exl-id: 2dfa8815-2d69-4a22-8938-8ea41be8b9c5
-source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
+source-git-commit: 3ff20e51458cb9cccafb6da92414def9eeaaf821
 workflow-type: tm+mt
 source-wordcount: '1006'
 ht-degree: 2%
@@ -109,8 +109,8 @@ ht-degree: 2%
 |---------|----------|------|
 | `aggregationType` | 字符串 | 指示目标应使用的聚合策略的类型。 支持的聚合类型： <ul><li>`BEST_EFFORT`</li><li>`CONFIGURABLE_AGGREGATION`</li></ul> |
 | `configurableAggregation.splitUserById` | 布尔值 | 如果对目标的调用应按身份拆分，则使用此标志。 如果您的服务器在每次调用中只接受一个给定身份命名空间中的身份，请将此标志设置为`true`。 |
-| `configurableAggregation.maxBatchAgeInSecs` | 整数 | 此参数与`maxNumEventsInBatch`结合使用，可决定Experience Platform在向端点发送API调用之前应等待的时间。 <ul><li>最小值（秒）：1800</li><li>最大值（秒）：3600</li></ul> 例如，如果为这两个参数使用最大值，则Experience Platform将等待3600秒或直到10000有符合条件的配置文件为止，然后再进行API调用（以先发生者为准）。 |
-| `configurableAggregation.maxNumEventsInBatch` | 整数 | 此参数与`maxBatchAgeInSecs`结合使用，可确定在API调用中应聚合多少个符合条件的配置文件。 <ul><li>最小值：1000</li><li>最大值：10000</li></ul> 例如，如果为这两个参数使用最大值，则Experience Platform将等待3600秒或直到10000有符合条件的配置文件为止，然后再进行API调用（以先发生者为准）。 |
+| `configurableAggregation.maxBatchAgeInSecs` | 整数 | 此参数与`maxNumEventsInBatch`结合使用，可决定Experience Platform在向端点发送API调用之前应等待的时间。 <ul><li>最小值（秒）：1,800</li><li>最大值（秒）：3,600</li></ul> 例如，如果为这两个参数使用最大值，则Experience Platform将等待3,600秒或直到10000有符合条件的配置文件为止，然后再进行API调用（以先发生者为准）。 |
+| `configurableAggregation.maxNumEventsInBatch` | 整数 | 此参数与`maxBatchAgeInSecs`结合使用，可确定在API调用中应聚合多少个符合条件的配置文件。 <ul><li>最小值：1,000</li><li>最大值：10,000</li></ul> 例如，如果为这两个参数使用最大值，则Experience Platform将等待3,600秒或直到具有10,000个符合条件的配置文件为止，然后再进行API调用（以先发生者为准）。 |
 | `configurableAggregation.aggregationKey` | - | 允许您根据下述参数聚合映射到目标的导出用户档案。 |
 | `configurableAggregation.aggregationKey.includeSegmentId` | 布尔值 | 如果要按受众ID对导出到目标的配置文件进行分组，请将此参数设置为`true`。 |
 | `configurableAggregation.aggregationKey.includeSegmentStatus` | 布尔值 | 如果要按受众ID和受众状态对导出到目标的配置文件进行分组，请将此参数和`includeSegmentId`设置为`true`。 |

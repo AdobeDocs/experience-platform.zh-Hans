@@ -3,7 +3,8 @@ title: Demandbase连接
 description: 使用此目标可为Account-Based Marketing (ABM)用例激活帐户受众。 通过DemandBase的B2BDemand Side Platform(DSP)向目标帐户中的相关角色和角色播发。 Target帐户还可以使用Demandbase第三方数据进行扩充，以用于营销和销售中的其他下游用例。
 badgeB2B: label="B2B版本" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
-source-git-commit: 5c694dfab7e53cf8a78500e3ecd086a3986b9b91
+last-substantial-update: 2024-09-30T00:00:00Z
+source-git-commit: 92abae6bc63c13f1103364ae82cc9c04459ce00f
 workflow-type: tm+mt
 source-wordcount: '696'
 ht-degree: 3%
