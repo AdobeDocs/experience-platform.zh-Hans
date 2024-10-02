@@ -3,9 +3,9 @@ keywords: IP地址， IP范围，允许列表，允许列表，查询服务，�
 title: 列入允许列表查询服务的IP地址
 description: 本页提供了更新的IP范围，可将其添加到允许列表中以安全访问查询服务。
 exl-id: f6745e0f-d387-45f2-9f72-054e721016ff
-source-git-commit: 029d0ad63460a71770e5ba3cd75a29cb04c0cb9c
+source-git-commit: a48b3995abc1ee2033e3827b12581f4771cdb2d7
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '268'
 ht-degree: 0%
 
 ---
@@ -15,14 +15,11 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > * Adobe建议您将此页面加入书签，每三个月重新访问一次，以检查最新IP地址。 Adobe不提供新IP范围的通知。
-> * 虽然Adobe支持将数据导出到SFTP服务器，但建议用于导出数据的云存储位置为[!DNL Amazon S3]和[!DNL Azure Blob]。
 > * 从2024年10月15日开始，新的IP范围已取代现有IP范围。 请确保在此日期之前将新IP和旧IP都添加到您的IP允许列表，以避免服务中断。
 
 ## 概述 {#overview}
 
-列入允许列表此页提供了可添加到Experience Platform的IP地址，以便安全地将数据从SFTP服务器导出到[SFTP服务器](../destinations/catalog/cloud-storage/sftp.md)。
-
-您可以通过网络防火墙定义网络访问控制。 通过指定适当的IP范围，您可以允许数据传输服务的通信。
+您可以通过网络防火墙定义网络访问控制。 通过指定适当的IP范围，您可以允许通信用于查询服务访问。
 
 作为持续改进的一部分，Adobe已于2024年10月15日更新了用于网络访问查询服务的IP范围。 现有的IP地址将被弃用，新的IP地址将取代它们。 列入允许列表在过渡期间，将旧的IP范围和新的IP范围都添加到中对于确保服务不中断至关重要。
 

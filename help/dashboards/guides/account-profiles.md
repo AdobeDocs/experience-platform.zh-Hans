@@ -2,14 +2,14 @@
 title: 帐户配置文件仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织的B2B帐户配置文件的重要信息。
 exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
-source-git-commit: b6811d447f76a671adc98bddef6e760c8be8cd9b
+source-git-commit: 8caa10010109f9936271cb45a2166455f3678687
 workflow-type: tm+mt
-source-wordcount: '1763'
+source-wordcount: '1827'
 ht-degree: 1%
 
 ---
 
-# [!UICONTROL 帐户配置文件]仪表板
+# 帐户配置文件仪表板
 
 Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功能板，您可以查看有关帐户配置文件的重要信息，在每日快照期间捕获了这些信息。 本指南概述如何在UI中访问和使用[!UICONTROL 帐户配置文件]仪表板，并提供有关仪表板中显示的可视化图表的更多信息。
 
@@ -64,6 +64,11 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 显示在[!UICONTROL 详细信息]选项卡上的帐户配置文件信息已从多个配置文件片段合并在一起，以形成单个帐户的单个视图。 请参阅有关[在Adobe Real-time Customer Data Platform中浏览帐户配置文件的文档](../../rtcdp/accounts/account-profile-ui-guide.md#browse-account-profiles)，了解更多有关在Platform UI中查看帐户配置文件的功能。
 
 ## 标准构件 {#standard-widgets}
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_accountprofiles_customersperaccountoverview"
+>title="每个帐户的客户概览"
+>abstract="这个穿透钻取小组件提供了对B2B数据结构的洞察。 它可帮助您识别有多少帐户配置文件没有链接客户配置文件或有一个或多个客户配置文件与其关联。<ul><li>直接客户：客户配置文件是否通过`personComponents`路由直接链接到帐户。</li><li>间接客户：客户配置文件是否通过`Account-Person`路由链接到帐户。</li></ul>"
 
 Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各种指标。
 
