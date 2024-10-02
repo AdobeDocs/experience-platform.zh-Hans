@@ -1,20 +1,19 @@
 ---
 title: 身份图形链接规则疑难解答指南
 description: 了解如何解决身份图关联规则中的常见问题。
-badge: Beta 版
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: 6cdb622e76e953c42b58363c98268a7c46c98c99
+source-git-commit: cfe0181104f09bfd91b22d165c23154a15cd5344
 workflow-type: tm+mt
-source-wordcount: '3226'
+source-wordcount: '3247'
 ht-degree: 0%
 
 ---
 
-# 身份图链接规则疑难解答指南
+# 标识图链接规则故障排除指南
 
 >[!AVAILABILITY]
 >
->身份图链接规则功能目前处于测试阶段。 有关参与标准的信息，请与您的Adobe客户团队联系。 该功能和文档可能会发生更改。
+>标识图链接规则当前处于“有限可用”状态。 有关如何访问开发沙盒中的功能的信息，请与您的Adobe客户团队联系。
 
 在测试和验证身份图形链接规则时，您可能会遇到一些与数据摄取和图形行为相关的问题。 请阅读本文档，了解如何解决您在使用身份图链接规则时可能遇到的一些常见问题。
 
@@ -167,7 +166,10 @@ ht-degree: 0%
   FROM dataset_name)) WHERE (col.id = '' or _testimsorg.identification.core.email = '') and key = 'Email' 
 ```
 
-这两个查询假定一个身份从identityMap发送，而另一个身份从身份描述符发送。 **注意**：在Experience Data Model (XDM)架构中，身份描述符是标记为身份的字段。
+这两个查询假定：
+
+* 一个标识从identityMap发送，另一个标识从标识描述符发送。 **注意**：在Experience Data Model (XDM)架构中，身份描述符是标记为身份的字段。
+* CRMID通过identityMap发送。 如果CRMID作为字段发送，请从WHERE子句中删除`key='Email'`。
 
 ### 我的体验事件片段已摄取，但在配置文件中具有“错误”的主要身份
 
@@ -398,7 +400,7 @@ ORDER BY timestamp desc
 | 测试用例 | 测试步骤 | 预期结果 |
 | --- | --- | --- |
 | 准确的人员实体表示 | <ul><li>模拟匿名浏览</li><li>模拟两个人(John、Jane)使用同一设备登录</li></ul> | <ul><li>John和Jane都应该与其属性和经过身份验证的事件相关联。</li><li>应将上次经过身份验证的用户与匿名浏览事件关联。</li></ul> |
-| 区段 | 创建四个区段定义（**注意**：每对区段定义应该使用批处理评估一个，使用另一个流评估。） <ul><li>区段定义A：基于John的已验证事件的区段鉴别。</li><li>区段定义B：基于Jane的已验证事件的区段鉴别。</li></ul> | 无论共享设备情况如何，John和Jane都应始终符合各自区段的条件。 |
+| 区段 | 创建四个区段定义（**注意**：每对区段定义应该使用批处理评估一个，使用另一个流评估。） <ul><li>区段定义A：基于John的已验证事件和/或属性的区段鉴别。</li><li>区段定义B：基于Jane的已验证事件和/或属性的区段鉴别。</li></ul> | 无论共享设备情况如何，John和Jane都应始终符合各自区段的条件。 |
 | Adobe Journey Optimizer上的受众资格/单一历程 | <ul><li>创建以受众资格活动（如上面创建的流分段）开始的历程。</li><li>创建以单一事件开始的历程。 此单一事件应为经过身份验证的事件。</li><li>创建这些历程时，必须禁用重新进入。</li></ul> | <ul><li>无论共享设备情况如何，John和Jane都应触发他们应输入的相应历程。</li><li>当ECID传回给John和Jane后，他们不应重新进入历程。</li></ul> |
 
 {style="table-layout:auto"}

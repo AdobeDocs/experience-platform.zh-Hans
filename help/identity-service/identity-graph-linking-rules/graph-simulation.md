@@ -1,11 +1,10 @@
 ---
 title: Graph Simulation UI指南
 description: 了解如何在Identity Service UI中使用图形模拟。
-badge: Beta 版
 exl-id: 89f0cf6e-c43f-40ec-859a-f3b73a6da8c8
-source-git-commit: 6cdb622e76e953c42b58363c98268a7c46c98c99
+source-git-commit: cfe0181104f09bfd91b22d165c23154a15cd5344
 workflow-type: tm+mt
-source-wordcount: '1443'
+source-wordcount: '1440'
 ht-degree: 1%
 
 ---
@@ -14,7 +13,7 @@ ht-degree: 1%
 
 >[!AVAILABILITY]
 >
->标识图链接规则当前处于测试阶段。 有关参与标准的信息，请与您的Adobe客户团队联系。 该功能和文档可能会发生更改。
+>标识图链接规则当前处于“有限可用”状态。 有关如何访问开发沙盒中的功能的信息，请与您的Adobe客户团队联系。
 
 [!DNL Graph Simulation]是Identity Service UI中的一个工具，可用于模拟给定特定身份组合时身份图的行为方式以及配置[身份优化算法](./identity-optimization-algorithm.md)的方式。
 

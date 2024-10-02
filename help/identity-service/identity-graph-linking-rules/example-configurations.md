@@ -1,11 +1,10 @@
 ---
 title: Graph配置示例
 description: 了解在使用身份图形链接规则和身份数据时可能遇到的常见图形场景。
-badge: Beta 版
 exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
-source-git-commit: 6ad4709d8d361c16c22eddeef5f7ccdd1f4b2fb3
+source-git-commit: cfe0181104f09bfd91b22d165c23154a15cd5344
 workflow-type: tm+mt
-source-wordcount: '2786'
+source-wordcount: '2783'
 ht-degree: 6%
 
 ---
@@ -14,13 +13,12 @@ ht-degree: 6%
 
 >[!AVAILABILITY]
 >
->标识图链接规则当前处于测试阶段。 有关参与标准的信息，请与您的Adobe客户团队联系。 该功能和文档可能会发生更改。
+>标识图链接规则当前处于“有限可用”状态。 有关如何访问开发沙盒中的功能的信息，请与您的Adobe客户团队联系。
 
 >[!NOTE]
 >
 >* “CRMID”和“loginID”是自定义命名空间。 在本文档中，“CRMID”是人员标识符，“loginID”是与给定人员关联的登录标识符。
 >* 要模拟本文档中概述的示例图形场景，您必须首先创建两个自定义命名空间，一个具有身份符号“CRMID”，另一个具有身份符号“loginID”。 标识符号区分大小写。
-
 
 本文档概述了图形配置示例，其中包含您在使用身份图形链接规则和身份数据时可能遇到的常见场景。
 

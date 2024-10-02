@@ -3,9 +3,9 @@ title: 身份图链接规则的实施指南
 description: 了解在使用身份图链接规则配置实施数据时要遵循的建议步骤。
 badge: Beta 版
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: adfb1e83289435e6991d4cdd2e2a45e3d5a9b32f
+source-git-commit: 0bb99a359e7331f2235cd5385dcf546ab4c2b494
 workflow-type: tm+mt
-source-wordcount: '1546'
+source-wordcount: '1635'
 ht-degree: 2%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 >[!AVAILABILITY]
 >
->标识图链接规则当前处于测试阶段。 有关参与标准的信息，请与您的Adobe客户团队联系。 该功能和文档可能会发生更改。
+>标识图链接规则当前处于“有限可用”状态。 有关如何访问开发沙盒中的功能的信息，请与您的Adobe客户团队联系。
 
 阅读本文档以了解在使用Adobe Experience Platform Identity服务实施数据时可以遵循的分步指南。
 
@@ -61,8 +61,67 @@ ht-degree: 2%
 
 ### XDM体验事件
 
-* 在实施前的过程中，您必须确保系统将发送到Experience Platform的经过身份验证的事件始终包含人员标识符，例如CRMID。
-* 使用XDM体验事件发送事件时，请勿发送空字符串作为标识值。 这样做会导致系统错误。
+在实施前的过程中，您必须确保系统将发送到Experience Platform的经过身份验证的事件始终包含人员标识符，例如CRMID。
+
+>[!BEGINTABS]
+
+>[!TAB 具有人员标识符的已验证事件]
+
+```json
+{
+  "_id": "test_id",
+  "identityMap": {
+      "ECID": [
+          {
+              "id": "62486695051193343923965772747993477018",
+              "primary": false
+          }
+      ],
+      "CRMID": [
+          {
+              "id": "John",
+              "primary": true
+          }
+      ]
+  },
+  "timestamp": "2024-09-24T15:02:32+00:00",
+  "web": {
+      "webPageDetails": {
+          "URL": "https://business.adobe.com/",
+          "name": "Adobe Business"
+      }
+  }
+}
+```
+
+>[!TAB 没有人员标识符的已验证事件]
+
+
+```json
+{
+    "_id": "test_id"
+    "identityMap": {
+        "ECID": [
+            {
+                "id": "62486695051193343923965772747993477018",
+                "primary": false
+            }
+        ]
+    },
+    "timestamp": "2024-09-24T15:02:32+00:00",
+    "web": {
+        "webPageDetails": {
+            "URL": "https://business.adobe.com/",
+            "name": "Adobe Business"
+        }
+    }
+}
+```
+
+
+>[!ENDTABS]
+
+使用XDM体验事件发送事件时，请勿发送空字符串作为标识值。 如果具有最高命名空间优先级的命名空间的身份值是空字符串，则将从实时客户档案中忽略该记录。 这适用于identityMap以及标记为标识的字段。
 
 +++选择此选项可查看带有空字符串的有效负载示例
 
@@ -170,6 +229,12 @@ Identity Service实施流程的第一步是，确保将您的Experience Platform
 使用身份仪表板可以查看身份图的状态，例如总体身份计数和图形计数趋势、按命名空间划分的身份计数以及按图形大小划分的图形计数。 您还可以使用身份仪表板查看具有两个或多个身份（按命名空间组织）的图形的趋势。
 
 选择省略号(`...`)，然后选择&#x200B;**[!UICONTROL 查看更多]**&#x200B;以获取详细信息，并验证没有折叠的图形。
+
+![Identity Service UI工作区中的身份仪表板。](../images/implementation/identity_dashboard.png)
+
+使用显示的窗口查看有关折叠图形的信息。 在此示例中，电子邮件和电话都标记为唯一的命名空间，因此，您的沙盒中没有折叠的图形。
+
+![具有多个标识的图形的弹出窗口。](../images/implementation/graphs.png)
 
 ## 附录 {#appendix}
 

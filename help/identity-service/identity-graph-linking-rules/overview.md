@@ -1,11 +1,10 @@
 ---
 title: 身份图链接规则
 description: 了解Identity Service中的身份图链接规则。
-badge: Beta 版
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: a4e5ab14904fe17aa8bab2f8555ae6d535c856e8
+source-git-commit: cfe0181104f09bfd91b22d165c23154a15cd5344
 workflow-type: tm+mt
-source-wordcount: '1427'
+source-wordcount: '1424'
 ht-degree: 2%
 
 ---
@@ -14,7 +13,7 @@ ht-degree: 2%
 
 >[!AVAILABILITY]
 >
->标识图链接规则当前处于测试阶段。 有关参与标准的信息，请与您的Adobe客户团队联系。 该功能和文档可能会发生更改。
+>标识图链接规则当前处于“有限可用”状态。 有关如何访问开发沙盒中的功能的信息，请与您的Adobe客户团队联系。
 
 通过Adobe Experience Platform Identity服务和实时客户个人资料，可以轻松假设您的数据被完全摄取，并且所有合并的个人资料都通过人员标识符（如CRMID）表示单个个人。 但是，在某些情况下，某些数据可能会尝试将多个不同的配置文件合并到单个配置文件中（“图形折叠”）。 要防止这些不需要的合并，您可以使用通过身份图链接规则提供的配置，并允许对用户进行准确的个性化。
 

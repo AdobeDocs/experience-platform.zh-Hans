@@ -1,11 +1,10 @@
 ---
 title: 命名空间优先级
 description: 了解Identity Service中的命名空间优先级。
-badge: Beta 版
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
+source-git-commit: cfe0181104f09bfd91b22d165c23154a15cd5344
 workflow-type: tm+mt
-source-wordcount: '1626'
+source-wordcount: '1605'
 ht-degree: 2%
 
 ---
@@ -14,7 +13,7 @@ ht-degree: 2%
 
 >[!AVAILABILITY]
 >
->标识图链接规则当前处于测试阶段。 有关参与标准的信息，请与您的Adobe客户团队联系。 该功能和文档可能会发生更改。
+>标识图链接规则当前处于“有限可用”状态。 有关如何访问开发沙盒中的功能的信息，请与您的Adobe客户团队联系。
 
 每个客户实施都是独一无二的，并且是根据特定组织的目标而量身定制的，因此，给定命名空间的重要性因客户而异。 现实世界的例子包括：
 
@@ -90,7 +89,7 @@ ht-degree: 2%
 >
 >* 主要身份是存储配置文件片段的身份。 配置文件片段是存储有关特定用户的信息的数据记录：属性（通常通过CRM记录摄取）或事件（通常从体验事件或在线数据中摄取）。
 
-### 示例图形场景
+### 示例场景
 
 本节提供了一个优先级配置如何影响数据的示例。
 
@@ -184,6 +183,6 @@ ht-degree: 2%
 
 有关详细信息，请阅读[Privacy Service概述](../../privacy-service/home.md)。
 
-### Adobe Target和边缘个性化
+### Adobe Target
 
-[Edge个性化](../../server-api/personalization-target.md)将继续引用您如何在WebSDK中的数据元素类型上配置“主要”复选框（在identityMap中转换为`primary=true`）。
+您只能向Adobe Target激活批量分段和流式分段。
