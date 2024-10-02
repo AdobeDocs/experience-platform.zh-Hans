@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 6ceb28b2c9bab3b9df212764a43b202980ae239c
+source-git-commit: e74d04119593dddcaf6a5c710b685c606f5998d6
 workflow-type: tm+mt
-source-wordcount: '4784'
+source-wordcount: '4955'
 ht-degree: 7%
 
 ---
@@ -28,6 +28,19 @@ ht-degree: 7%
 >abstract="构成区段定义的三种字段类型是属性、事件和受众。事件和受众。通过属性，您可以使用属于 XDM Individual Profile 类的 Profile属性；通过事件，可根据使用 XDM ExperienceEvent 数据元素生的操作或事件创建受众；而通过受众，可使用从外部源导入的受众。"
 
 区段定义的基本构建块是属性和事件。 此外，现有受众中包含的属性和事件还可以用作新定义的组件。
+
+>[!CONTEXTUALHELP]
+>id="platform_segments_createsegment_segmentbuilder_summarydata"
+>title="摘要数据"
+>abstract="摘要数据仅针对配置文件属性显示，对于事件或受众属性不会<b>显示</b>。<br/><br/>在以下情况下，配置文件属性的摘要数据可能不会显示： <ol><li>属性的某些值的长度超过100个字符。</li><li>属性的唯一值超过3000个。</li></ol>"
+
+>[!NOTE]
+>
+>如果选择属性的信息气泡，则可以查看字段的值分布（也称为摘要数据）。 这些属性在“属性”选项卡中仅可用&#x200B;**仅**，在“事件”或“受众”选项卡中不可用。
+>
+>如果属性满足以下条件，则会显示摘要数据：属性的所有值都在100个字符以内，并且属性的唯一值在3000个或更少。
+>
+>但是，如果属性是通过关系链接到配置文件的多实体数据，则它将&#x200B;**不**&#x200B;具有摘要数据。 例如，如果您有一个名为`Vehicle`的自定义架构，则`Vehicle`架构中的&#x200B;**属性**&#x200B;将&#x200B;**不**&#x200B;包含摘要数据。
 
 您可以在[!DNL Segment Builder]工作区左侧的&#x200B;**[!UICONTROL 字段]**&#x200B;部分中看到这些构建基块。 **[!UICONTROL 字段]**&#x200B;包含每个主要构建块的选项卡：“[!UICONTROL 属性]”、“[!UICONTROL 事件]”和“[!UICONTROL 受众]”。
 
