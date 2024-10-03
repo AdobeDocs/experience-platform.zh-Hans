@@ -2,9 +2,9 @@
 title: Web SDK中的第一方设备ID
 description: 了解如何在Adobe Experience Platform Web SDK中配置第一方设备ID (FPID)。
 exl-id: c3b17175-8a57-43c9-b8a0-b874fecca952
-source-git-commit: 1cb38e3eaa83f2ad0e7dffef185d5edaf5e6c38c
+source-git-commit: 04ef39cbfc614369cb15f4d947474b491c34ef33
 workflow-type: tm+mt
-source-wordcount: '1904'
+source-wordcount: '2055'
 ht-degree: 0%
 
 ---
@@ -219,6 +219,16 @@ Adobe Experience Platform Web SDK使用Cookie将[Adobe Experience Cloud ID (ECID
     }
 }
 ```
+
+## 在您自己的域上设置FPID {#setting-fpid-domain}
+
+除了在身份映射中设置[!DNL FPID]之外，如果您配置了第一方数据收集[!DNL CNAME]，则还可以在您自己的域上设置[!DNL FPID] Cookie。
+
+使用[!DNL CNAME]启用第一方数据收集后，将对向数据收集端点发出的请求发送您域的所有Cookie。
+
+所有与Adobe数据收集目的无关的Cookie都会被丢弃。 对于[!DNL FPID]，您可以在数据流配置中指定[!DNL FPID] Cookie的名称。 执行此操作时，Edge Network将读取[!DNL FPID] Cookie的内容，而不是在身份映射中查找[!DNL FPID]。
+
+要使用此功能，您需要在域的顶级设置[!DNL FPID]，而不是在特定的子域设置。 如果您在子域中设置它，则Cookie值将不会发送到Edge Network，并且[!DNL FPID]解决方案将无法按预期工作。
 
 ## ID层次结构 {#id-hierarchy}
 
