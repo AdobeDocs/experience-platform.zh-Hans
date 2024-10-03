@@ -2,7 +2,7 @@
 title: Adobe Experience Platform Web SDK扩展中的数据元素类型
 description: 了解Adobe Experience Platform Web SDK标记扩展提供的各种数据元素类型。
 exl-id: 3c2c257f-1fbc-4722-8040-61ad19aa533f
-source-git-commit: fbca8a47c500e89d82cf636e8cb639f2bb59c2e6
+source-git-commit: e34a9ee5b1a09ff3391e5b0e981215fefbc157fc
 workflow-type: tm+mt
 source-wordcount: '653'
 ht-degree: 5%
