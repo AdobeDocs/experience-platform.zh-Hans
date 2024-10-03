@@ -5,7 +5,7 @@ title: 使用流式引入API流式传输时间序列数据
 type: Tutorial
 description: 本教程将帮助您开始使用流摄取API，它是Adobe Experience Platform数据摄取服务API的一部分。
 exl-id: 720b15ea-217c-4c13-b68f-41d17b54d500
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: 35ccc39fdfef31ca1f59e2e11f0d3d762e423635
 workflow-type: tm+mt
 source-wordcount: '1210'
 ht-degree: 2%
@@ -307,12 +307,9 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?syncValidation=t
   -H "Content-Type: application/json" \
   -d '{
     "header": {
-        "schemaRef": {
-            "id": "{SCHEMA_REF_ID}",
-            "contentType": "application/vnd.adobe.xed-full+json;version=1"
-        },
-        "flowId": "{FLOW_ID}",
-        "datasetId": "{DATASET_ID}"
+    "datasetId": "{DATASET_ID}",
+    "flowId": "{FLOW_ID}",
+    "imsOrgID": "{ORG_ID}"
     },
     "body": {
         "xdmMeta": {
@@ -377,15 +374,12 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?syncValidation=t
 
 ```json
     "header": {
-        "schemaRef": {
-            "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-            "contentType": "application/vnd.adobe.xed-full+json;version=1"
-        },
-        "imsOrgId": "{ORG_ID}",
-        "datasetId": "{DATASET_ID}",
-        "source": {
-            "name": "Sample source name"
-        }
+    "datasetId": "{DATASET_ID}",
+    "flowId": "{FLOW_ID}",
+    "imsOrgID": "{ORG_ID}",
+      "source": {
+        "name": "ACME source"
+      }
     }
 ```
 

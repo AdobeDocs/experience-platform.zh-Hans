@@ -3,7 +3,7 @@ title: 身份图链接规则的实施指南
 description: 了解在使用身份图链接规则配置实施数据时要遵循的建议步骤。
 badge: Beta 版
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 0bb99a359e7331f2235cd5385dcf546ab4c2b494
+source-git-commit: 35ccc39fdfef31ca1f59e2e11f0d3d762e423635
 workflow-type: tm+mt
 source-wordcount: '1635'
 ht-degree: 2%
@@ -99,7 +99,7 @@ ht-degree: 2%
 
 ```json
 {
-    "_id": "test_id"
+    "_id": "test_id",
     "identityMap": {
         "ECID": [
             {
