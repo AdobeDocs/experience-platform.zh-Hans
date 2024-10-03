@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；流连接；创建流连
 title: 使用流服务API创建HTTP API流连接
 description: 本教程提供了有关如何使用HTTP API源通过流服务API为原始数据和XDM数据创建流连接的步骤
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-source-git-commit: 84ffbb86e8973c2795d19122d3866e980949759d
+source-git-commit: 6ea5eaf28f260f974d168db2bed9bc95fcfa52af
 workflow-type: tm+mt
-source-wordcount: '1658'
+source-wordcount: '1646'
 ht-degree: 3%
 
 ---
@@ -470,9 +470,9 @@ POST /flows
 
 >[!BEGINTABS]
 
->[!TAB 没有转换]
+>[!TAB XDM]
 
-以下请求为HTTP API创建流式数据流，而不进行数据转换。
+以下请求为XDM数据创建流式数据流。
 
 ```shell
 curl -X POST \
@@ -498,9 +498,9 @@ curl -X POST \
     }'
 ```
 
->[!TAB 包含转换]
+>[!TAB 原始]
 
-以下请求为HTTP API创建一个流数据流，并将映射转换应用于您的数据。
+以下请求为原始数据创建流式数据流。
 
 创建包含转换的数据流时，无法更改`name`参数。 此值必须始终设置为`Mapping`。
 
@@ -559,7 +559,7 @@ curl -X POST \
 }
 ```
 
-## 要引入到Platform的Post数据 {#ingest-data}
+## 发布要引入到Platform的数据 {#ingest-data}
 
 >[!NOTE]
 >
