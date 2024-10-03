@@ -2,9 +2,9 @@
 title: 使用沙盒工具跨组织共享包
 description: 了解如何使用Adobe Experience Platform中的沙盒工具在不同组织之间共享包。
 badge: Beta 版
-source-git-commit: 492f1d9dc08965dba3f1c5b6e1d479ef645afd04
+source-git-commit: 209aaaf0c2bfdb321f75257309980c7a48cb1eb4
 workflow-type: tm+mt
-source-wordcount: '651'
+source-wordcount: '646'
 ht-degree: 0%
 
 ---
@@ -15,29 +15,27 @@ ht-degree: 0%
 >
 >跨组织共享资源包目前处于Beta测试阶段，仅向部分测试版客户提供。
 
-本文档介绍如何使用Adobe Experience Platform中的沙盒工具在不同组织之间共享包。
+使用沙盒工具功能提高沙盒之间的配置准确性，并在不同组织的沙盒之间无缝导出和导入沙盒配置。 本文档介绍如何使用Adobe Experience Platform中的沙盒工具在不同组织之间共享包。 共享包有两种类型：
 
-使用沙盒工具功能提高沙盒之间的配置准确性，并在不同组织的沙盒之间无缝导出和导入沙盒配置。 共享包有两种类型：
+- **私有包**
 
-**私有包**
+[私有包](#private-packages)只能与已批准来自源组织的共享请求(通过选择加入允许列表)的组织共享。
 
-只能与通过选择加入允许列表从来源组织审批了共享请求的组织共享专用包。
+- **公共包**
 
-**公共包**
+[公共包](./sandbox-tooling.md/#export-and-import-an-entire-sandbox)无需任何其他批准即可导入。 这些资源包可以在合作伙伴的网站、博客或平台上共享。 包有效负载允许从这些渠道复制包并将其粘贴到目标组织。
 
-无需任何其他审批，即可导入公共包。 这些资源包可以在合作伙伴的网站、博客或平台上共享。 包有效负载允许从这些渠道复制包并将其粘贴到目标组织。
-
-## 私有包
+## 私有包 {#private-packages}
 
 >[!NOTE]
 >
 >要启动和批准共享请求并在组织间共享包，您需要具有基于&#x200B;**包共享**&#x200B;角色的访问控制权限。
 
-沙盒工具功能使您能够创建组织伙伴关系、跟踪伙伴关系请求的状态、管理现有伙伴关系并与合作伙伴组织共享包。
+使用“沙盒工具”功能创建伙伴关系、跟踪伙伴关系请求统计信息、管理现有伙伴关系并与合作伙伴组织共享包。
 
 ### 创建组织伙伴关系请求
 
-要创建组织伙伴关系请求，请导航到[!UICONTROL 沙盒] **[!UICONTROL 合作伙伴组织]**&#x200B;选项卡。 接下来，选择&#x200B;**[!UICONTROL 管理合作伙伴组织]**。
+要创建组织伙伴关系请求，请导航到&#x200B;**[!UICONTROL 沙盒]** **[!UICONTROL 合作伙伴组织]**&#x200B;选项卡。 接下来，选择&#x200B;**[!UICONTROL 管理合作伙伴组织]**。
 
 ![沙盒UI，突出显示了“合作伙伴组织”选项卡和“管理合作伙伴组织”。](../images/ui/sandbox-tooling/private-manage-partner-orgs.png)
 
@@ -53,13 +51,13 @@ ht-degree: 0%
 
 ![带有传出请求的“合作伙伴组织”选项卡突出显示。](../images/ui/sandbox-tooling/private-outgoing-request.png)
 
-### 授权伙伴关系请求
+### 授权伙伴关系请求 {#authorize-request}
 
 要授权组织伙伴关系请求，请导航到[!UICONTROL 沙盒] **[!UICONTROL 合作伙伴组织]**&#x200B;选项卡。 接下来，选择&#x200B;**[!UICONTROL 传入请求]**。
 
 ![高亮显示了“合作伙伴组织”选项卡和“传入请求”的沙盒UI。](../images/ui/sandbox-tooling/private-authorise-partner-org.png)
 
-请求的当前&#x200B;**[!UICONTROL 状态]**&#x200B;为&#x200B;**待处理**。 要批准请求，请选择所选请求旁边的省略号(`...`)，然后从下拉列表中选择&#x200B;**[!UICONTROL 批准]**。
+此阶段的请求的当前&#x200B;**[!UICONTROL 状态]**&#x200B;为&#x200B;**待处理**。 要批准请求，请选择所选请求旁边的省略号(`...`)，然后从下拉列表中选择&#x200B;**[!UICONTROL 批准]**。
 
 ![传入请求的列表，显示突出显示“批准”的下拉菜单。](../images/ui/sandbox-tooling/private-approve-partner-org.png)
 
@@ -71,9 +69,9 @@ ht-degree: 0%
 
 ![高亮显示已批准的传入请求的列表。](../images/ui/sandbox-tooling/private-approved-partner-org.png)
 
-现在，您可以在组织和源组织之间共享资源包。
+使用此工作流/进程可在您的组织与源组织之间共享包。
 
-### 将包共享到合作伙伴组织
+### 将包共享到合作伙伴组织 {#share-package}
 
 >[!NOTE]
 >
@@ -85,14 +83,14 @@ ht-degree: 0%
 
 在&#x200B;**[!UICONTROL 共享包]**&#x200B;对话框中，从&#x200B;**[!UICONTROL 共享设置]**&#x200B;下拉列表中选择要共享的包，然后选择&#x200B;**[!UICONTROL 确认]**。
 
-![带有“共享”设置和“确认”突出显示的“共享包”对话框。](../images/ui/sandbox-tooling/private-share-package-confirm.png)
-
 >[!TIP]
 >
 >可以选择多个组织。 选定的组织将显示在[!UICONTROL 共享设置]下拉列表下方。
 
-## 后续步骤
+![带有“共享”设置和“确认”突出显示的“共享包”对话框。](../images/ui/sandbox-tooling/private-share-package-confirm.png)
+
+## 后续步骤 {#next-steps}
 
 本文档演示如何使用沙盒工具功能在不同组织之间共享包。 有关详细信息，请参阅[沙盒工具指南](../ui/sandbox-tooling.md)。
 
-有关使用沙盒API执行不同操作的步骤，请参阅[沙盒开发人员指南](../api/getting-started.md)。 有关Experience Platform中沙盒的高级概述，请参阅[概述文档](../home.md)。
+要了解如何使用沙盒API执行不同的操作，请参阅[沙盒开发人员指南](../api/getting-started.md)。 有关Experience Platform中沙盒的高级概述，请参阅[概述文档](../home.md)。
