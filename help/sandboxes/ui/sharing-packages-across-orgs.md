@@ -2,9 +2,9 @@
 title: 使用沙盒工具跨组织共享包
 description: 了解如何使用Adobe Experience Platform中的沙盒工具在不同组织之间共享包。
 badge: Beta 版
-source-git-commit: 209aaaf0c2bfdb321f75257309980c7a48cb1eb4
+source-git-commit: 0e280972feb990221272d272aa2a9e3852beb5e8
 workflow-type: tm+mt
-source-wordcount: '646'
+source-wordcount: '650'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ ht-degree: 0%
 
 ![沙盒UI，突出显示了“合作伙伴组织”选项卡和“管理合作伙伴组织”。](../images/ui/sandbox-tooling/private-manage-partner-orgs.png)
 
-在[!UICONTROL 包合作伙伴管理]对话框中，在&#x200B;**[!UICONTROL 输入组织ID]**&#x200B;并按Enter。 组织ID显示在下面的&#x200B;**[!UICONTROL 选定的组织ID]**&#x200B;部分中。 添加ID后，选择&#x200B;**[!UICONTROL 确认]**。
+在[!UICONTROL 包合作伙伴管理]对话框中，在&#x200B;**[!UICONTROL 输入组织ID]**&#x200B;并按Enter (Windows)或return (Mac)。 组织ID显示在下面的&#x200B;**[!UICONTROL 选定的组织ID]**&#x200B;部分中。 添加ID后，选择&#x200B;**[!UICONTROL 确认]**。
 
 >[!TIP]
 >
