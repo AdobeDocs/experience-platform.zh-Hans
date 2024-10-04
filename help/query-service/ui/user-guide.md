@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询编辑器UI指南
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发，以及运行非交互式查询以在Experience Platform中填充数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 7ba9eb6891657e7f3d7ebbd41314b7973e31ea61
+source-git-commit: d83604b2bf6a8e2f2b5802a5e7f26447fbf7eb2e
 workflow-type: tm+mt
-source-wordcount: '2802'
+source-wordcount: '2821'
 ht-degree: 0%
 
 ---
@@ -102,6 +102,10 @@ ht-degree: 0%
 ### 结果计数 {#result-count}
 
 查询编辑器的行输出最多为50,000个。 您可以选择在查询编辑器控制台中一次显示的行数。 要更改控制台中显示的行数，请选择&#x200B;**[!UICONTROL 结果计数]**&#x200B;下拉列表，并从50、100、150、300和500选项中进行选择。
+
+>[!NOTE]
+>
+>由于Platform UI最多只能支持500行，因此如果传递LIMIT值超过500，则会被忽略。
 
 ![结果计数下拉列表突出显示的查询编辑器。](../images/ui/query-editor/result-count.png)
 
