@@ -1,11 +1,11 @@
 ---
-title: Adobe Experience Platform 发行说明
+title: Adobe Experience Platform发行说明2023年10月
 description: Adobe Experience Platform 的 2023 年 10 月发行说明。
 exl-id: e9cf5299-8350-4b40-8f56-05e598846875
-source-git-commit: f2d0848952902d94b441566da677ef174518192e
+source-git-commit: d6e306294d0a119108e2de7ba03ebed4f633fba1
 workflow-type: tm+mt
-source-wordcount: '1052'
-ht-degree: 32%
+source-wordcount: '1054'
+ht-degree: 39%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 32%
 
 **发行日期： 2023年10月25日**
 
-对Experience Platform中现有功能的更新：
+Experience Platform 中现有功能的更新：
 
 - [仪表板](#dashboards)
 - [数据收集](#data-collection)
@@ -76,11 +76,11 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 **修复和增强** {#destinations-fixes-and-enhancements}
 
-有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
+有关目标的更多一般信息，请参阅[目标概述](../../destinations/home.md)。
 
 ## 沙盒 {#sandboxes}
 
-Adobe Experience Platform旨在丰富全球范围内的数字体验应用程序。 公司通常并行运行多个数字体验应用程序，需要满足这些应用程序的开发、测试和部署需要，同时确保操作法规遵从性。 为了满足此需求，Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的沙箱，以帮助开发和改进数字体验应用程序。
+Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。企业通常会同时运行多个数字体验应用程序，并且需要满足这些应用程序的开发、测试和部署要求，同时确保运营合规性。为了满足这一需求，Experience Platform 提供了可将单个 Platform 实例划分为多个单独的虚拟环境的沙盒，以帮助开发和改进数字体验应用程序。
 
 **新增功能**
 
@@ -98,7 +98,7 @@ Adobe Experience Platform旨在丰富全球范围内的数字体验应用程序�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 帐户受众（限定GA） | 在Real-time Customer Data Platform B2B版本中，您现在可以使用帐户分段，从基于人员的受众到基于帐户的受众，全面简化营销分段体验。 有关此功能的详细信息，请阅读[帐户受众概述](../../segmentation/ui/account-audiences.md)。 |
+| 帐户受众（限定GA） | 在Real-time Customer Data Platform B2B edition中，您现在可以使用帐户分段功能实现从基于人员的受众到基于帐户的受众的营销分段体验的全部简易和复杂化。 有关此功能的更多信息，请阅读[帐户受众概览](../../segmentation/ui/account-audiences.md)。 |
 
 若要了解有关分段服务的更多信息，请阅读[分段服务概述](../../segmentation/home.md)。
 

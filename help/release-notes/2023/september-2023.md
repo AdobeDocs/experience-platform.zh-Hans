@@ -1,11 +1,11 @@
 ---
-title: Adobe Experience Platform 发行说明
-description: Adobe Experience Platform 2023年9月版发行说明。
+title: Adobe Experience Platform 发行说明（2023 年 9 月）
+description: Adobe Experience Platform 2023 年 9 月发行说明。
 exl-id: ff7fb0c1-6941-4339-8648-58f9b9e9a91f
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: d6e306294d0a119108e2de7ba03ebed4f633fba1
 workflow-type: tm+mt
-source-wordcount: '2263'
-ht-degree: 26%
+source-wordcount: '2265'
+ht-degree: 33%
 
 ---
 
@@ -13,16 +13,16 @@ ht-degree: 26%
 
 **发行日期： 2023年9月28日**
 
-Adobe Experience Platform中的新增功能：
+Adobe Experience Platform 的新功能：
 
 - [计算属性](#computed-attributes)
 
-对Experience Platform中现有功能的更新：
+Experience Platform 中现有功能的更新：
 
 - [警报](#alerts)
 - [仪表板](#dashboards)
 - [数据收集](#data-collection)
-- [数据管理](#data-governance)
+- [数据治理](#data-governance)
 - [数据卫生](#hygiene)
 - [目标](#destinations)
 - [Experience Data Model (XDM)](#xdm)
@@ -37,13 +37,13 @@ Adobe Experience Platform中的新增功能：
 
 ## 警报 {#alerts}
 
-Experience Platform允许您订阅各种Platform活动的基于事件的警报。 您可以通过Platform用户界面中的[!UICONTROL 警报]选项卡订阅不同的警报规则，还可以选择在UI中或通过电子邮件通知接收警报消息。
+Experience Platform 允许您订阅各种平台活动的基于事件的警报。您可以通过平台用户界面中的 [!UICONTROL 警报] 选项卡订阅不同的警报规则，并可以选择在用户界面内或通过电子邮件通知接收警报消息。
 
 **新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| “警报历史记录”选项卡 | 警报[!UICONTROL 历史记录]选项卡现在将包含所有事件，包括延迟、开始、成功和失败。 有关“历史记录”选项卡的详细信息，请阅读[警报UI文档](../../observability/alerts/ui.md)。 |
+| 警报历史记录选项卡 | 警报[!UICONTROL 历史记录]选项卡现在将包含所有事件，包括延迟、开始、成功和失败。 有关“历史记录”选项卡的详细信息，请阅读[警报UI文档](../../observability/alerts/ui.md)。 |
 
 {style="table-layout:auto"}
 
@@ -74,7 +74,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 {style="table-layout:auto"}
 
-若要了解有关数据收集的更多信息，请阅读[数据收集概述](../../tags/home.md)。
+要详细了解数据收集，请阅读[数据收集概述](../../tags/home.md)。
 
 ## 数据治理 {#data-governance}
 
@@ -92,7 +92,7 @@ Adobe Experience Platform 数据治理是一系列策略和技术，用于管理
 
 ## 数据卫生 {#hygiene}
 
-Experience Platform提供了一套数据卫生功能，允许您通过以编程方式删除消费者记录和数据集来管理存储的数据。 通过使用UI中的[!UICONTROL 数据生命周期]工作区，或通过调用数据卫生API，您可以有效地管理数据存储。 使用这些功能可确保按预期使用信息，在不正确的数据需要修复时更新信息，并在组织策略认为必要时删除信息。
+Experience Platform提供了一套数据卫生功能，允许您通过以编程方式删除消费者记录和数据集来管理存储的数据。 通过使用UI中的[!UICONTROL 数据生命周期]工作区，或通过调用数据卫生API，您可以有效地管理数据存储。 使用这些功能可确保信息按预期使用、在需要修复不正确的数据时进行更新以及在组织政策认为必要时进行删除。
 
 **新增功能**
 
@@ -142,7 +142,7 @@ Add these to release notes as they go out
 - 利用数据流运行级别上企业目标([HTTP API](../../destinations/catalog/streaming/http-destination.md)、[Amazon Kinesis](../../destinations/catalog/cloud-storage/amazon-kinesis.md)和[Azure事件中心](../../destinations/catalog/cloud-storage/azure-event-hubs.md))现在提供的[监视透明度](../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-streaming-destinations)，在[数据流详细信息视图](../../dataflows/ui/monitor-destinations.md#dataflow-run-details-page)中监视激活指标和状态，并通过错误代码和消息提供更多信息，以进行故障排除。
 - 当您更新映射到[Google广告管理器](../../destinations/catalog/advertising/google-ad-manager.md)、[Google显示和视频360](../../destinations/catalog/advertising/google-dv360.md)以及使用[受众更新模板](../../destinations/destination-sdk/metadata-api/update-audience-template.md)的其他目标的受众名称时，这些名称更改现在会反映到目标的下游位置。
 
-有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
+有关目标的更多一般信息，请参阅[目标概述](../../destinations/home.md)。
 
 ## Experience Data Model (XDM) {#xdm}
 
@@ -182,9 +182,9 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 有关 Platform 中 XDM 的详细信息，请查看 [XDM 系统概述](../../xdm/home.md)。
 
-## 身份服务 {#identity-service}
+## 标识服务 {#identity-service}
 
-Adobe Experience Platform 身份服务通过跨设备和系统桥接身份，使您能够全面了解您的客户及其行为，助您实时提供有影响力的个人数字体验。
+Adobe Experience Platform 标识服务通过跨设备和系统桥接标识，使您能够全面了解您的客户及其行为，助您实时提供有影响力的个人数字体验。
 
 **新增功能或更新后的功能**
 
@@ -195,11 +195,11 @@ Adobe Experience Platform 身份服务通过跨设备和系统桥接身份，使
 
 {style="table-layout:auto"}
 
-若要了解有关Identity Service的更多信息，请阅读[Identity Service概述](../../identity-service/home.md)。
+要了解有关标识服务的更多信息，请阅读[标识服务概述](../../identity-service/home.md)。
 
 ## 查询服务 {#query-service}
 
-查询服务允许您使用标准 SQL 查询 Adobe Experience Platform [!DNL Data Lake] 中的数据。您可以加入[!DNL Data Lake]中的任何数据集，并将查询结果捕获为新的数据集，以用于报表、数据科学Workspace或将其摄取到实时客户个人资料中。
+查询服务允许您使用标准 SQL 查询 Adobe Experience Platform [!DNL Data Lake] 中的数据。您可以加入来自 [!DNL Data Lake] 的任何任何数据集，并将查询结果捕获为新数据集，以用于报告、Data Science Workspace，或将数据摄取到实时客户轮廓。
 
 **更新的功能**
 

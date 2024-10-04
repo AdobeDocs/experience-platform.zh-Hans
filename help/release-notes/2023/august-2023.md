@@ -1,10 +1,10 @@
 ---
-title: Adobe Experience Platform 发行说明
+title: Adobe Experience Platform 发行说明（2023 年 8 月）
 description: Adobe Experience Platform 的 2023 年 8 月发行说明。
 exl-id: c67dca3a-eccb-427e-8ab3-b69c51b57938
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: d6e306294d0a119108e2de7ba03ebed4f633fba1
 workflow-type: tm+mt
-source-wordcount: '1739'
+source-wordcount: '1741'
 ht-degree: 92%
 
 ---
@@ -23,7 +23,7 @@ Adobe Experience Platform 中现有功能的更新：
 - [数据准备](#data-prep)
 - [目标](#destinations)
 - [Experience Data Model (XDM)](#xdm)
-- [身份服务](#identity-service)
+- [标识服务](#identity-service)
 - [Segmentation Service](#segmentation)
 - [源](#sources)
 
@@ -123,7 +123,7 @@ Adobe Experience Platform 提供了一组丰富的功能，以摄取任何类型
 - 您现在可以[将潜在客户受众](../../destinations/ui/activate-prospect-audiences.md)激活到云存储目标。
 - 每个沙盒最多100个目标的常规[激活护栏](../../destinations/guardrails.md#general-activation-guardrails)已更新为&#x200B;_硬限制_。
 
-有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
+有关目标的更多一般信息，请参阅[目标概述](../../destinations/home.md)。
 
 ## Experience Data Model (XDM) {#xdm}
 
@@ -148,9 +148,9 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 若要了解更多信息，请阅读[XDM 系统概述](../../xdm/home.md)。
 
-## 身份服务 {#identity-service}
+## 标识服务 {#identity-service}
 
-Adobe Experience Platform 身份服务通过跨设备和系统桥接身份，使您能够全面了解您的客户及其行为，助您实时提供有影响力的个人数字体验。
+Adobe Experience Platform 标识服务通过跨设备和系统桥接标识，使您能够全面了解您的客户及其行为，助您实时提供有影响力的个人数字体验。
 
 **新增功能或更新后的功能**
 

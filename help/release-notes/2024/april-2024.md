@@ -1,10 +1,10 @@
 ---
-title: Adobe Experience Platform 发行说明
+title: Adobe Experience Platform 发行说明（2024 年 4 月）
 description: Adobe Experience Platform 的 2024 年 4 月发行说明。
 exl-id: 86d72fd8-a464-4715-abc9-4177236e423c
-source-git-commit: 14dccb993b38ca352c6de3ed851bafe7c44ca631
-workflow-type: ht
-source-wordcount: '1895'
+source-git-commit: d6e306294d0a119108e2de7ba03ebed4f633fba1
+workflow-type: tm+mt
+source-wordcount: '1897'
 ht-degree: 100%
 
 ---
@@ -111,7 +111,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 ## 查询服务 {#query-service}
 
-查询服务允许您使用标准 SQL 查询 Adobe Experience Platform [!DNL Data Lake] 中的数据。您可以加入来自[!DNL Data Lake]的任何任何数据集，并将查询结果捕获为新数据集，以用于报告、Data Science Workspace，或将数据摄取到实时客户轮廓。
+查询服务允许您使用标准 SQL 查询 Adobe Experience Platform [!DNL Data Lake] 中的数据。您可以加入来自 [!DNL Data Lake] 的任何任何数据集，并将查询结果捕获为新数据集，以用于报告、Data Science Workspace，或将数据摄取到实时客户轮廓。
 
 **更新的功能**
 
