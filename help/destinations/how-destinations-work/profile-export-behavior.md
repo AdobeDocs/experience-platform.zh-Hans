@@ -2,9 +2,9 @@
 title: 配置文件导出行为
 description: 了解在Experience Platform目标中支持的各种集成模式之间，配置文件导出行为如何变化。
 exl-id: 2be62843-0644-41fa-a860-ccd65472562e
-source-git-commit: 223734e2998568f3b9b78933fa5adf740b521f5f
+source-git-commit: 6c2d10cffa30d9feb4d342014ea1b712094bb673
 workflow-type: tm+mt
-source-wordcount: '2930'
+source-wordcount: '2939'
 ht-degree: 0%
 
 ---
@@ -192,7 +192,7 @@ Experience Platform会优化将配置文件导出到您的流目标的行为，�
 
 >[!TIP]
 >
->提醒一下，配置文件的属性值或标识映射中的更改不符合将配置文件包含在增量文件导出中的条件。
+>提醒您，如果对配置文件的标识映射进行了更改，则该配置文件有资格包含在增量文件导出中。 属性值&#x200B;*中的更改不允许*&#x200B;包含在增量文件导出中。
 
 ## 后续步骤 {#next-steps}
 
