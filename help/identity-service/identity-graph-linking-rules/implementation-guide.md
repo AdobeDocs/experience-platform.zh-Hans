@@ -1,11 +1,10 @@
 ---
 title: 身份图链接规则的实施指南
 description: 了解在使用身份图链接规则配置实施数据时要遵循的建议步骤。
-badge: Beta 版
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 35ccc39fdfef31ca1f59e2e11f0d3d762e423635
+source-git-commit: 5d1bcaa84875e55595996253fb72cf768af16e05
 workflow-type: tm+mt
-source-wordcount: '1635'
+source-wordcount: '1634'
 ht-degree: 2%
 
 ---
