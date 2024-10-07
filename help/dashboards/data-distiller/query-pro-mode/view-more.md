@@ -2,7 +2,7 @@
 title: 查看更多
 description: 了解用于SQL分析数据的不同查看选项。 从自定义仪表板中，您可以查看分析的列表化结果或以CSV格式下载已处理数据。
 exl-id: f57d85cf-dbd2-415c-bf01-8faa49871377
-source-git-commit: ed1565fad1c539d69b85fb644d4bc16d4a262673
+source-git-commit: 1ef8208ccde2f44b6c5188bd5b9a57ff876da30f
 workflow-type: tm+mt
 source-wordcount: '551'
 ht-degree: 1%
@@ -41,7 +41,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->[!UICONTROL 升序排序]和[!UICONTROL 降序排序]选项将仅对配置了[排序功能](../overview.md/#advanced-attributes)的列显示。
+>[!UICONTROL 升序排序]和[!UICONTROL 降序排序]选项将仅对配置了[排序功能](./overview.md#advanced-attributes)的列显示。
 
 ![一个表列下拉列表，其中突出显示“升序排序”和“降序排序”选项。](../../images/query-pro-mode/advanced-sort-dropdown.png)
 

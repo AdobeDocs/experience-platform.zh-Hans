@@ -5,10 +5,10 @@ breadcrumb-title: 仪表板指南
 user-guide-description: 了解如何在 Experience Platform 中通过可自定义的仪表板将数据可视化。
 feature: Dashboards
 role: Developer,User
-source-git-commit: 18d768f296d1f7087d05208fdff317b2fd9770af
+source-git-commit: 06e319a6f7e2294a9c5daea0f41e89a09d93efd2
 workflow-type: tm+mt
-source-wordcount: '135'
-ht-degree: 36%
+source-wordcount: '134'
+ht-degree: 35%
 
 ---
 
@@ -21,7 +21,6 @@ ht-degree: 36%
 * [仪表板](user-defined-dashboards.md)
 * [下载功能板以PDF](download.md)
 * 数据Distiller {#data-distiller}
-   * [概述](data-distiller/overview.md)
    * 扩展应用程序报表{#sql-insights}的SQl分析
       * [概述](data-distiller/sql-insights/overview.md)
    * 查询专业模式{#query-pro-mode}
