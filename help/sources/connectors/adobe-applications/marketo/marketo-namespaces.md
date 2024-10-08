@@ -2,28 +2,32 @@
 title: B2B命名空间和架构
 description: 本文档概述了创建B2B源连接器时所需的自定义命名空间。
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: 5e8bb04ca18159eab98b2f7f0bba8cb1488a1f26
+source-git-commit: ebbed5c6ff7037b138588a79a05e6ef13d1856d7
 workflow-type: tm+mt
-source-wordcount: '1620'
+source-wordcount: '1651'
 ht-degree: 11%
 
 ---
 
 # B2B命名空间和架构
 
+>[!AVAILABILITY]
+>
+>您必须有权访问[Adobe Real-time Customer Data Platform B2B edition](../../../../rtcdp/b2b-overview.md)，您的B2B架构才能在[实时客户档案](../../../../profile/home.md)中获得资格。
+
 >[!NOTE]
 >
 >您可以使用Adobe Experience Platform UI中的模板来加速B2B和B2C数据的资源创建。 有关详细信息，请阅读有关[在Platform UI](../../../tutorials/ui/templates.md)中使用模板的指南。
 
-本文档提供了有关为要与B2B源一起使用的命名空间和架构进行的基础设置的信息。 本文档还提供了有关设置生成B2B命名空间和架构所需的Postman自动化实用程序的详细信息。
-
->[!IMPORTANT]
->
->您必须拥有[Adobe Real-time Customer Data Platform B2B Edition](../../../../rtcdp/b2b-overview.md)的访问权限，B2B架构才能参与[Real-Time Customer Profile](../../../../profile/home.md)。
+请阅读本文档，了解有关为要与B2B源一起使用的命名空间和模式设置的底层信息。 本文档还提供了有关设置生成B2B命名空间和架构所需的Postman自动化实用程序的详细信息。
 
 ## 设置B2B命名空间和模式自动生成实用程序
 
-使用B2B命名空间和架构自动生成实用工具的第一步是设置您的平台开发人员控制台和[!DNL Postman]环境。
+>[!IMPORTANT]
+>
+>已弃用服务帐户(JWT)凭据。 您必须确保在2025年1月27日之前将您的应用程序或集成迁移到新的OAuth服务器到服务器凭据。 请阅读以下文档，了解有关[如何将JWT凭据迁移到OAuth服务器到服务器凭据](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/)的详细步骤。
+
+请参阅以下文档，了解有关如何设置[!DNL Postman]环境以支持B2B命名空间和架构自动生成实用程序的先决条件信息。
 
 - 您可以从此[GitHub存储库](https://github.com/adobe/experience-platform-postman-samples/tree/master/Postman%20Collections/CDP%20Namespaces%20and%20Schemas%20Utility)下载命名空间和架构自动生成实用程序集合和环境。
 - 有关如何使用Platform API的信息，包括有关如何收集所需标头的值和读取示例API调用的详细信息，请参阅[Platform API快速入门](../../../../landing/api-guide.md)指南。
@@ -37,12 +41,10 @@ ht-degree: 11%
 | Variable | 描述 | 示例 |
 | --- | --- | --- |
 | `CLIENT_SECRET` | 用于生成`{ACCESS_TOKEN}`的唯一标识符。 有关如何检索`{CLIENT_SECRET}`的信息，请参阅有关[身份验证和访问Experience PlatformAPI](../../../../landing/api-authentication.md)的教程。 | `{CLIENT_SECRET}` |
-| `JWT_TOKEN` | JSON Web令牌(JWT)是用于生成{ACCESS_TOKEN}的身份验证凭据。 有关如何生成`{JWT_TOKEN}`的信息，请参阅有关[身份验证和访问Experience PlatformAPI](../../../../landing/api-authentication.md)的教程。 | `{JWT_TOKEN}` |
 | `API_KEY` | 用于对调用Experience PlatformAPI进行身份验证的唯一标识符。 有关如何检索`{API_KEY}`的信息，请参阅有关[身份验证和访问Experience PlatformAPI](../../../../landing/api-authentication.md)的教程。 | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
 | `ACCESS_TOKEN` | 完成对Experience PlatformAPI的调用所需的授权令牌。 有关如何检索`{ACCESS_TOKEN}`的信息，请参阅有关[身份验证和访问Experience PlatformAPI](../../../../landing/api-authentication.md)的教程。 | `Bearer {ACCESS_TOKEN}` |
 | `META_SCOPE` | 对于[!DNL Marketo]，此值是固定的，并且始终设置为： `ent_dataservices_sdk`。 | `ent_dataservices_sdk` |
 | `CONTAINER_ID` | `global`容器包含所有标准Adobe和Experience Platform合作伙伴提供的类、架构字段组、数据类型和架构。 对于[!DNL Marketo]，此值是固定的，并且始终设置为`global`。 | `global` |
-| `PRIVATE_KEY` | 用于向Experience PlatformAPI验证您的[!DNL Postman]实例的凭据。 有关如何检索{PRIVATE_KEY}的说明，请参阅有关设置开发人员控制台和[设置开发人员控制台和 [!DNL Postman]](../../../../landing/postman.md)的教程。 | `{PRIVATE_KEY}` |
 | `TECHNICAL_ACCOUNT_ID` | 用于集成到Adobe I/O的凭据。 | `D42AEVJZTTJC6LZADUBVPA15@techacct.adobe.com` |
 | `IMS` | Identity Management System (IMS)提供了对Adobe服务进行身份验证的框架。 对于[!DNL Marketo]，此值是固定的，并且始终设置为： `ims-na1.adobelogin.com`。 | `ims-na1.adobelogin.com` |
 | `IMS_ORG` | 公司实体，可以拥有产品或服务，也可以为其授予产品和服务许可证，并允许其成员访问。 有关如何检索`{ORG_ID}`信息的说明，请参阅有关[设置开发人员控制台和 [!DNL Postman]](../../../../landing/postman.md)的教程。 | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
@@ -58,11 +60,11 @@ ht-degree: 11%
 
 在[!DNL Postman]界面中，选择自动生成器实用工具的根文件夹，然后从顶部标题中选择&#x200B;**[!DNL Run]**。
 
-![根文件夹](../images/marketo/root-folder.png)
+![Postman UI中命名空间和架构生成器的根文件夹。 顶部菜单栏中高亮显示“运行”。](../images/marketo/root_folder.png)
 
 出现[!DNL Runner]接口。 在此处，确保选中所有复选框，然后选择&#x200B;**[!DNL Run Namespaces and Schemas Autogeneration Utility]**。
 
-![运行生成器](../images/marketo/run-generator.png)
+![已选中Postman UI的Runner界面，该界面的“命名空间和架构”集合中有多个请求，且右侧突出显示了“运行命名空间和架构”按钮。](../images/marketo/run_generator.png)
 
 成功的请求将创建B2B所需的命名空间和架构。
 
@@ -106,7 +108,7 @@ Experience Platform使用架构以一致且可重用的方式描述数据结构�
 >
 >请向左/向右滚动以查看表格的全部内容。
 
-| 架构名称 | 基类 | 字段组 | 架构中的[!DNL Profile] | 主要标识 | 主要身份命名空间 | 辅助标识 | 辅助身份命名空间 | 关系 | 注释 |
+| 架构名称 | 基类 | 字段组 | 架构中的[!DNL Profile] | 主要标识 | 主要标识命名空间 | 辅助标识 | 辅助身份命名空间 | 关系 | 注释 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | B2B 帐户 | [XDM业务帐户](../../../../xdm/classes/b2b/business-account.md) | XDM 业务帐户详细信息 | 已启用 | 基类中的`accountKey.sourceKey` | B2B 帐户 | 基类中的`extSourceSystemAudit.externalKey.sourceKey` | B2B 帐户 | <ul><li>XDM业务帐户详细信息字段组中的`accountParentKey.sourceKey`</li><li>目标属性： `/accountKey/sourceKey`</li><li>类型：一对一</li><li>引用架构：B2B帐户</li><li>命名空间： B2B帐户</li></ul> |
 | B2B人员 | [XDM 个人资料](../../../../xdm/classes/individual-profile.md) | <ul><li>XDM 业务人员详细信息</li><li>XDM 业务人员组件</li><li>IdentityMap</li><li>同意和偏好设置详细信息</li></ul> | 已启用 | XDM业务人员详细信息字段组中的`b2b.personKey.sourceKey` | B2B人员 | <ol><li>XDM业务人员详细信息字段组的`extSourceSystemAudit.externalKey.sourceKey`</li><li>XDM业务人员详细信息字段组的`workEmail.address`</ol></li> | <ol><li>B2B人员</li><li>电子邮件</li></ol> | <ul><li>XDM业务人员组件字段组的`personComponents.sourceAccountKey.sourceKey`</li><li>类型：多对一</li><li>引用架构：B2B帐户</li><li>命名空间： B2B帐户</li><li>目标属性： accountKey.sourceKey</li><li>来自当前架构的关系名称：帐户</li><li>引用架构中的关系名称：人员</li></ul> |
