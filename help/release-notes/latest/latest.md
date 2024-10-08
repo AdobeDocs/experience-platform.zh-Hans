@@ -3,9 +3,9 @@ title: Adobe Experience Platform 发行说明（2024 年 9 月）
 description: Adobe Experience Platform 2024 年 9 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: 33d1305aef7c763e7b0bd8c6db6a1a9417cc2a9d
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '2199'
-ht-degree: 97%
+ht-degree: 100%
 
 ---
 
@@ -76,7 +76,7 @@ Experience Platform 提供了多个仪表板，您可以通过这些仪表板查
 
 ## 目标 {#destinations}
 
-**更新日期： 2024年9月30日**
+**更新时间：2024 年 9 月 30 日**
 
 [!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
@@ -85,7 +85,7 @@ Experience Platform 提供了多个仪表板，您可以通过这些仪表板查
 | 目标 | 描述 |
 | --- | --- |
 | [Amazon 广告](/help/destinations/catalog/advertising/amazon-ads.md) | 2024 年 9 月的版本添加了将 `countryCode` 参数导出到 Amazon Ads 的映射选项。`countryCode` 在 [映射步骤](/help/destinations/catalog/advertising/amazon-ads.md#map) 中使用，以提高您与亚马逊的标识匹配率。 |
-| [[!BADGE B2B]{type=Informational} Demandbase](/help/destinations/catalog/advertising/demandbase.md) | 使用此目标可为Account-Based Marketing (ABM)用例激活帐户受众。 通过DemandBase的B2BDemand Side Platform(DSP)向目标帐户中的相关角色和角色播发。 Target帐户还可以使用Demandbase第三方数据进行扩充，以用于营销和销售中的其他下游用例。 |
+| [[!BADGE B2B]{type=Informative} 需求库](/help/destinations/catalog/advertising/demandbase.md) | 使用此目标来激活 Account-Based Marketing (ABM) 用例的帐户受众。通过 DemandBase 的 B2B Demand Side Platform（DSP）向目标帐户中的相关人物和角色投放广告。目标帐户还可以通过 Demandbase 第三方数据进行丰富，以用于营销和销售中的其他下游用例。 |
 
 {style="table-layout:auto"}
 
