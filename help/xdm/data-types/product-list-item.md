@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 产品列表项数据类型
 description: 了解产品列表项XDM数据类型。
 exl-id: 056fdb5b-6782-4e29-9d62-90b270c05795
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: ba6c6eb2c6b0fc1dfc4e7440fd16a85bc7b46457
 workflow-type: tm+mt
-source-wordcount: '342'
-ht-degree: 18%
+source-wordcount: '338'
+ht-degree: 20%
 
 ---
 
@@ -28,7 +28,7 @@ ht-degree: 18%
 | `discountAmount` | [!UICONTROL 双精度] | 如果产品打折，则表示产品正常价格与特价之间的差额。 |
 | `name` | [!UICONTROL 字符串] | 在此产品视图中向用户显示的产品显示名称。 |
 | `priceTotal` | [!UICONTROL 双精度] | 产品系列项目的总价。 |
-| `product` | [!UICONTROL 字符串] (URI) | 捕获产品本身的XDM架构的URI `$id`。 |
+| `product` | [!UICONTROL 字符串] (URI) | 产品本身的 XDM 标识符。 |
 | `productAddMethod` | [!UICONTROL 字符串] | 访客用来将产品项目添加到列表的方法。 |
 | `productImageUrl` | [!UICONTROL 字符串] | 产品主图像的URL。 |
 | `quantity` | [!UICONTROL 整数] | 客户表明的所需产品的单位数。 |
