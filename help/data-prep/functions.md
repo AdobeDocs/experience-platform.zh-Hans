@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据准备映射函数
 description: 本文档介绍了与数据准备一起使用的映射函数。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 1e06fa2f8a5685cf5debcc3b5279d7efab9af0c8
+source-git-commit: 830aa01828785a9ae4dea71078ee418fc510253c
 workflow-type: tm+mt
-source-wordcount: '6024'
+source-wordcount: '6028'
 ht-degree: 2%
 
 ---
@@ -178,10 +178,10 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | 大小_of | 返回输入的大小。 | <ul><li>INPUT： **必需**&#x200B;您尝试查找大小的对象。</li></ul> | size_of(INPUT) | `size_of([1, 2, 3, 4])` | 4 |
 | upsert_array_append | 此函数用于将整个输入数组中的所有元素附加到配置文件中数组的末尾。 此函数仅&#x200B;**适用**&#x200B;于更新期间。 如果在插入的上下文中使用，则此函数按原样返回输入。 | <ul><li>数组： **必需**&#x200B;要在配置文件中附加数组的数组。</li></ul> | upsert_array_append(ARRAY) | `upsert_array_append([123, 456])` | [123， 456] |
 | upsert_array_replace | 此函数用于替换数组中的元素。 此函数仅&#x200B;**适用**&#x200B;于更新期间。 如果在插入的上下文中使用，则此函数按原样返回输入。 | <ul><li>数组： **必需**&#x200B;要替换配置文件中数组的数组。</li></li> | upsert_array_replace(ARRAY) | `upsert_array_replace([123, 456], 1)` | [123， 456] |
-| [!BADGE Beta]{type=Informative} array_to_string | 使用指定的分隔符连接数组中元素的字符串表示形式。 如果数组是多维数组，则在连接前将其扁平化。 **注意**：此函数用于目标。 有关详细信息，请阅读[文档](../destinations/ui/export-arrays-calculated-fields.md)。 | <ul><li>SEPARATOR： **必需**&#x200B;用于连接数组中元素的分隔符。</li><li>数组： **必需**&#x200B;要连接的数组（拼合后）。</li></ul> | array_to_string(SEPARATOR， ARRAY) | `array_to_string(";", ["Hello", "world"])` | “Hello；world” |
-| [!BADGE Beta]{type=Informative} filterArray* | 基于谓词筛选给定数组。 **注意**：此函数用于目标。 有关详细信息，请阅读[文档](../destinations/ui/export-arrays-calculated-fields.md)。 | <ul><li>数组： **必需**&#x200B;要过滤的数组</li><li>谓词： **必需**&#x200B;要应用于给定数组的每个元素的谓词。 | filterArray(ARRAY， PREDICATE) | `filterArray([5, -6, 0, 7], x -> x > 0)` | [5， 7] |
-| [!BADGE Beta]{type=Informative} transformArray* | 基于谓词转换给定的数组。 **注意**：此函数用于目标。 有关详细信息，请阅读[文档](../destinations/ui/export-arrays-calculated-fields.md)。 | <ul><li>数组： **必需**&#x200B;要转换的数组。</li><li>谓词： **必需**&#x200B;要应用于给定数组的每个元素的谓词。 | transformArray(ARRAY， PREDICATE) | ` transformArray([5, 6, 7], x -> x + 1)` | [6， 7， 8] |
-| [!BADGE Beta]{type=Informative} flattenArray* | 将给定的（多维）数组平面化为一维数组。 **注意**：此函数用于目标。 有关详细信息，请阅读[文档](../destinations/ui/export-arrays-calculated-fields.md)。 | <ul><li>数组： **必需**&#x200B;要平面化的数组。</li></ul> | flattenArray(ARRAY) | flattenArray([[[&#39;a&#39;， &#39;b&#39;]， [&#39;c&#39;， &#39;d&#39;]]， [[&#39;e&#39;]， [&#39;f&#39;]]]) | [&#39;a&#39;、&#39;b&#39;、&#39;c&#39;、&#39;d&#39;、&#39;e&#39;、&#39;f&#39;] |
+| [!BADGE 仅限目标]{type=Informative} array_to_string | 使用指定的分隔符连接数组中元素的字符串表示形式。 如果数组是多维数组，则在连接前将其扁平化。 **注意**：此函数用于目标。 有关详细信息，请阅读[文档](../destinations/ui/export-arrays-calculated-fields.md)。 | <ul><li>SEPARATOR： **必需**&#x200B;用于连接数组中元素的分隔符。</li><li>数组： **必需**&#x200B;要连接的数组（拼合后）。</li></ul> | array_to_string(SEPARATOR， ARRAY) | `array_to_string(";", ["Hello", "world"])` | “Hello；world” |
+| [!BADGE 仅目标]{type=Informative} filterArray* | 基于谓词筛选给定数组。 **注意**：此函数用于目标。 有关详细信息，请阅读[文档](../destinations/ui/export-arrays-calculated-fields.md)。 | <ul><li>数组： **必需**&#x200B;要过滤的数组</li><li>谓词： **必需**&#x200B;要应用于给定数组的每个元素的谓词。 | filterArray(ARRAY， PREDICATE) | `filterArray([5, -6, 0, 7], x -> x > 0)` | [5， 7] |
+| [!BADGE 仅目标]{type=Informative} transformArray* | 基于谓词转换给定的数组。 **注意**：此函数用于目标。 有关详细信息，请阅读[文档](../destinations/ui/export-arrays-calculated-fields.md)。 | <ul><li>数组： **必需**&#x200B;要转换的数组。</li><li>谓词： **必需**&#x200B;要应用于给定数组的每个元素的谓词。 | transformArray(ARRAY， PREDICATE) | ` transformArray([5, 6, 7], x -> x + 1)` | [6， 7， 8] |
+| [!BADGE 仅目标]{type=Informatic} flattenArray* | 将给定的（多维）数组平面化为一维数组。 **注意**：此函数用于目标。 有关详细信息，请阅读[文档](../destinations/ui/export-arrays-calculated-fields.md)。 | <ul><li>数组： **必需**&#x200B;要平面化的数组。</li></ul> | flattenArray(ARRAY) | flattenArray([[[&#39;a&#39;， &#39;b&#39;]， [&#39;c&#39;， &#39;d&#39;]]， [[&#39;e&#39;]， [&#39;f&#39;]]]) | [&#39;a&#39;、&#39;b&#39;、&#39;c&#39;、&#39;d&#39;、&#39;e&#39;、&#39;f&#39;] |
 
 {style="table-layout:auto"}
 
