@@ -1,30 +1,29 @@
 ---
-title: (Beta) 使用计算字段导出平面模式文件中的数组
+title: 使用计算字段将数组导出为字符串
 type: Tutorial
-description: 了解如何使用计算字段将平面架构文件中的阵列从Real-Time CDP导出到云存储目标。
-badge: Beta 版
+description: 了解如何使用计算字段将阵列作为字符串从Real-Time CDP导出到云存储目标。
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: 787aaef26fab5ca3acff8303f928efa299cafa93
+source-git-commit: 6fec0432f71e58d0e17ac75121fb1028644016e1
 workflow-type: tm+mt
-source-wordcount: '1477'
-ht-degree: 5%
+source-wordcount: '1513'
+ht-degree: 0%
 
 ---
 
-# (Beta) 使用计算字段导出平面模式文件中的数组 {#use-calculated-fields-to-export-arrays-in-flat-schema-files}
+# 使用计算字段将数组导出为字符串{#use-calculated-fields-to-export-arrays-as-strings}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_flat_files"
->title="(Beta) 导出数组支持"
->abstract="使用&#x200B;**添加计算字段**&#x200B;控件，将整型、字符串或布尔值的简单数组从 Experience Platform 导出到所需的云存储目标。其中适用一些限制。查看文档以了解大量示例和支持的函数。"
+>title="导出阵列支持"
+>abstract="<p>使用&#x200B;**添加计算字段**&#x200B;控件将int、字符串、布尔和对象值的数组从Experience Platform导出到所需的云存储目标。</p><p> 必须使用`array_to_string`函数将数组导出为字符串。 查看文档以了解大量示例和更多受支持的函数。</p>"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html#examples" text="示例"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html#known-limitations" text="已知限制"
 
 >[!AVAILABILITY]
 >
->* Beta中当前提供了通过计算字段导出数组的功能。 文档和功能可能会发生变化。
+>* 通常提供通过计算字段导出数组的功能。
 
-了解如何通过计算字段将阵列从平面架构文件中的Real-Time CDP导出到[云存储目标](/help/destinations/catalog/cloud-storage/overview.md)。 请阅读本文档以了解此功能启用的用例。
+了解如何通过计算字段将阵列作为字符串从Real-Time CDP导出到[云存储目标](/help/destinations/catalog/cloud-storage/overview.md)。 请阅读本文档以了解此功能启用的用例。
 
 获取有关计算字段的丰富信息 — 这些字段是什么以及它们为什么重要。 请阅读以下链接页面，了解有关数据准备中计算字段的介绍以及有关所有可用函数的更多信息：
 
@@ -43,14 +42,34 @@ ht-degree: 5%
 
 在Experience Platform中，您可以使用[XDM架构](/help/xdm/home.md)管理不同的字段类型。 以前，您可以将简单的键值对类型字段(如字符串不Experience Platform)导出到所需的目标。 以前支持导出的此类字段示例为`personalEmail.address`：`johndoe@acme.org`。
 
-Experience Platform中的其他字段类型包括数组字段。 阅读有关Experience PlatformUI](/help/xdm/ui/fields/array.md)中[管理数组字段的更多信息。 除了以前支持的字段类型之外，您现在还可以导出数组对象，例如： `organizations:[marketing, sales, engineering]`。 请参阅下面的[大量示例](#examples)，了解如何使用各种函数访问数组的元素、将数组元素加入字符串等。
+Experience Platform中的其他字段类型包括数组字段。 阅读有关Experience PlatformUI](/help/xdm/ui/fields/array.md)中[管理数组字段的更多信息。 除了以前支持的字段类型之外，您现在还可以使用`array_to_string`函数将数组对象（如下面的示例）导出为字符串。
+
+```
+organizations = [{
+  id: 123,
+  orgName: "Acme Inc",
+  founded: 1990,
+  latestInteraction: "2024-02-16"
+}, {
+  id: 456,
+  orgName: "Superstar Inc",
+  founded: 2004,
+  latestInteraction: "2023-08-25"
+}, {
+  id: 789,
+  orgName: 'Energy Corp',
+  founded: 2021,
+  latestInteraction: "2024-09-08"
+}]
+```
+
+请参阅下面的[大量示例](#examples)，了解如何使用各种函数访问数组的元素、转换和筛选数组、将数组元素加入字符串等。
 
 ## 已知限制 {#known-limitations}
 
-请注意此功能测试版的以下已知限制：
+请注意当前适用于此功能的以下已知限制：
 
-* 目前不支持导出到具有分层架构的JSON或Parquet文件。 您只能将数组导出为平面架构CSV、JSON和Parquet文件。
-* 此时，*您只能将简单数组（或基元值数组）导出到云存储目标*。 这意味着您可以导出包含字符串、int或布尔值的数组对象。 无法导出映射或对象数组。计算字段模式窗口仅显示可导出的数组。
+* 目前不支持导出到具有分层架构&#x200B;*的JSON或Parquet文件*。 通过使用`array_to_string`函数，您可以将数组仅作为字符串&#x200B;*导出到CSV、JSON和Parquet文件*。
 
 ## 先决条件 {#prerequisites}
 
@@ -58,25 +77,21 @@ Experience Platform中的其他字段类型包括数组字段。 阅读有关Exp
 
 ## 如何导出计算字段 {#how-to-export-calculated-fields}
 
-在云存储目标的激活工作流的映射步骤中，选择&#x200B;**[!UICONTROL (Beta)添加计算字段]**。
+在云存储目标的激活工作流的映射步骤中，选择&#x200B;**[!UICONTROL 添加计算字段]**。
 
 ![添加在批处理激活工作流的映射步骤中突出显示的计算字段。](/help/destinations/assets/ui/export-arrays-calculated-fields/add-calculated-fields.png)
 
-这将打开一个模式窗口，您可以在其中选择可用于将属性导出到Experience Platform之外的属性。
-
->[!IMPORTANT]
->
->在&#x200B;**[!UICONTROL 字段]**&#x200B;视图中，XDM架构中的部分字段仅可用。 您可以看到字符串值以及字符串、整数和布尔值的数组。 例如，不会显示`segmentMembership`数组，因为它包含其他数组值。
+这将打开一个模式窗口，您可以在其中选择用于导出属性以免Experience Platform的函数和字段。
 
 ![尚未选择函数的计算字段功能的模式窗口。](/help/destinations/assets/ui/export-arrays-calculated-fields/add-calculated-fields-2.png)
 
-例如，使用如下所示的`loyaltyID`字段上的`join`函数将忠诚度ID数组导出为CSV文件中与下划线连接的字符串。 查看](#join-function-export-arrays)下方的[有关此示例和其他示例的详细信息。
+例如，使用如下所示的`organizations`字段上的`array_to_string`函数将组织数组导出为CSV文件中的字符串。 查看](#array-to-string-function-export-arrays)下方的[有关此示例和其他示例的详细信息。
 
-![选定联接函数的计算字段功能的模态窗口。](/help/destinations/assets/ui/export-arrays-calculated-fields/add-calculated-fields-3.png)
+![选定了数组到字符串函数的计算字段功能的模式窗口。](/help/destinations/assets/ui/export-arrays-calculated-fields/add-calculated-fields-3.png)
 
 选择&#x200B;**[!UICONTROL 保存]**&#x200B;以保留计算字段并返回映射步骤。
 
-![选定联接函数且突出显示“保存”控件的计算字段功能的模式窗口。](/help/destinations/assets/ui/export-arrays-calculated-fields/save-calculated-field.png)
+![选定了array-to-string函数且突出显示Save控件的计算字段功能的模式窗口。](/help/destinations/assets/ui/export-arrays-calculated-fields/save-calculated-field.png)
 
 返回工作流的映射步骤，使用导出文件中该字段所需的列标题值填写&#x200B;**[!UICONTROL 目标字段]**。
 
@@ -88,13 +103,16 @@ Experience Platform中的其他字段类型包括数组字段。 阅读有关Exp
 
 ![映射步骤，其中目标字段高亮显示且目标值已填充。](/help/destinations/assets/ui/export-arrays-calculated-fields/select-next-to-proceed.png)
 
-## 支持的函数 {#supported-functions}
+## 导出数组的支持的函数示例 {#supported-functions}
 
 将数据激活到基于文件的目标时，支持所有记录的[数据准备功能](/help/data-prep/functions.md)。
 
-但是，请注意，当前仅为以下函数提供了广泛的用例描述和示例输出信息，并且这些函数仅在计算字段的Beta版本中以及目标数组支持中提供：
+以下专门用于处理数组导出的函数与示例一起进行了说明。
 
-* `join`
+* `array_to_string`
+* `flattenArray`
+* `filterArray`
+* `transformArray`
 * `coalesce`
 * `size_of`
 * `iif`
@@ -103,31 +121,66 @@ Experience Platform中的其他字段类型包括数组字段。 阅读有关Exp
 * `to_array`
 * `first`
 * `last`
-* `sha256`
-* `md5`
 
 ## 用于导出数组的函数示例 {#examples}
 
 有关上面列出的某些函数，请参阅以下部分中的示例和更多信息。 对于列出的其余函数，请参阅数据准备部分](/help/data-prep/functions.md)中的[常规函数文档。
 
-### `join`函数以导出数组 {#join-function-export-arrays}
+### `array_to_string`函数以导出数组 {#array-to-string-function-export-arrays}
 
-使用所需的分隔符（如`_`或`|`），使用`join`函数将数组的元素连接到字符串中。
+使用所需的分隔符（如`_`或`|`），使用`array_to_string`函数将数组的元素连接到字符串中。
 
-例如，您可以使用`join('_',loyalty.loyaltyID)`语法将以下XDM字段组合在一起，如映射屏幕快照中所示：
+例如，您可以使用`array_to_string('_',organizations)`语法将以下XDM字段组合在一起，如映射屏幕快照中所示：
 
-* `"organizations": ["Marketing","Sales,"Finance"]`数组
+* `organizations`数组
 * `person.name.firstName`字符串
 * `person.name.lastName`字符串
 * `personalEmail.address`字符串
 
-![包含连接函数的映射示例。](/help/destinations/assets/ui/export-arrays-calculated-fields/mapping-join-function.png)
+![映射示例包括array_to_string函数。](/help/destinations/assets/ui/export-arrays-calculated-fields/mapping-array-to-string-function.png)
 
-在这种情况下，您的输出文件将如下所示。 请注意如何使用`_`字符将数组的三个元素连接到单个字符串中。
+在这种情况下，您的输出文件将如下所示。 请注意如何使用`_`字符将数组的元素连接到单个字符串中。
 
 ```
-`First_Name,Last_Name,Personal_Email,Organization
-John,Doe,johndoe@acme.org, "Marketing_Sales_Finance"
+First_Name,Last_Name,Personal_Email,Organization
+John,Doe,johndoe@acme.org, "{'id':123,'orgName':'Acme Inc','founded':1990,'latestInteraction':1708041600000}_{'id':456,'orgName':'Superstar Inc','founded':2004,'latestInteraction':1692921600000}_{'id':789,'orgName':'Energy Corp','founded':2021,'latestInteraction':1725753600000}"
+```
+
+### `flattenArray`函数以导出平面化数组
+
+使用`flattenArray`函数扁平化导出的多维数组。 您可以将此函数与上面进一步描述的`array_to_string`函数组合。
+
+继续使用上面的`organizations`数组对象，您可以编写函数，如`array_to_string('_', flattenArray(organizations))`。 请注意，`array_to_string`函数默认将输入数组扁平化为字符串。
+
+得到的输出与上面描述的`array_to_string`函数相同。
+
+
+### `filterArray`函数以导出筛选的数组
+
+使用`filterArray`函数筛选导出数组的元素。 您可以将此函数与上面进一步描述的`array_to_string`函数组合。
+
+继续使用上面的`organizations`数组对象，您可以编写一个函数，如`array_to_string('_', filterArray(organizations, org -> org.founded > 2021))`，并返回在2021年或更近年份具有`founded`值的组织。
+
+![filterArray函数的示例。](/help/destinations/assets/ui/export-arrays-calculated-fields/filter-array-function.png)
+
+在这种情况下，您的输出文件将如下所示。 请注意数组中满足条件的两个元素如何使用`_`字符连接为单个字符串。
+
+```
+John,Doe,johndoe@acme.org, "{'id':123,'orgName':'Acme Inc','founded':1990,'latestInteraction':1708041600000}_{'id':789,'orgName':'Energy Corp','founded':2021,'latestInteraction':1725753600000}"
+```
+
+### `transformArray`函数以导出转换后的数组
+
+使用`transformArray`函数转换导出数组的元素。 您可以将此函数与上面进一步描述的`array_to_string`函数组合。
+
+使用上面的`organizations`数组对象继续，您可以编写一个函数，如`array_to_string('_', transformArray(organizations, org -> ucase(org.orgName)))`，返回已转换为全部大写的组织名称。
+
+![TransformArray函数的示例。](/help/destinations/assets/ui/export-arrays-calculated-fields/transform-array-function.png)
+
+在这种情况下，您的输出文件将如下所示。 请注意如何使用`_`字符将数组的三个元素转换并连接为单个字符串。
+
+```
+John,Doe,johndoe@acme.org,ACME INC_SUPERSTAR INC_ENERGY CORP
 ```
 
 ### `iif`函数以导出数组 {#iif-function-export-arrays}
@@ -145,9 +198,9 @@ John,Doe, johndoe@acme.org, "isMarketing"
 
 ### `add_to_array`函数以导出数组 {#add-to-array-function-export-arrays}
 
-使用`add_to_array`函数将元素添加到导出的数组。 您可以将此函数与上面进一步描述的`join`函数组合。
+使用`add_to_array`函数将元素添加到导出的数组。 您可以将此函数与上面进一步描述的`array_to_string`函数组合。
 
-使用上面的`organizations`数组对象继续，您可以编写函数，如`source: join('_', add_to_array(organizations,"2023"))`，返回人员在2023年所属的组织。
+使用上面的`organizations`数组对象继续，您可以编写函数，如`source: array_to_string('_', add_to_array(organizations,"2023"))`，返回人员在2023年所属的组织。
 
 ![映射示例包括add_to_array函数。](/help/destinations/assets/ui/export-arrays-calculated-fields/mapping-add-to-array-function.png)
 
@@ -222,21 +275,25 @@ johndoe@acme.org,"1538097126"
 johndoe@acme.org,"1538097126","1664327526"
 ```
 
-### 哈希函数 {#hashing-functions}
+<!--
 
-除了从数组导出数组或元素的特定函数之外，您还可以使用散列函数对导出文件中的属性进行散列。 例如，如果您在属性中有任何个人身份信息，则可以在导出这些字段时对其进行哈希处理。
+### Hashing functions {#hashing-functions}
 
-您可以直接散列字符串值，例如`md5(personalEmail.address)`。 如果需要，您还可以散列数组字段的各个元素，假定数组中的元素是字符串，如下所示： `md5(purchaseTime[0])`
+In addition to the functions specific for exporting arrays or elements from an array, you can use hashing functions to hash attributes in the exported files. For example, if you have any personally identifiable information in attributes, you can hash those fields when exporting them. 
 
-支持的哈希函数包括：
+You can hash string values directly, for example `md5(personalEmail.address)`. If desired, you can also hash individual elements of array fields, assuming elements in the array are strings, like this: `md5(purchaseTime[0])`
 
-| 函数 | 示例表达式 |
+The supported hashing functions are:
+
+|Function | Sample expression |
 |---------|----------|
 | `sha1` | `sha1(organizations[0])` |
 | `sha256` | `sha256(organizations[0])` |
 | `sha512` | `sha512(organizations[0])` |
 | `hash` | `hash("crc32", organizations[0], "UTF-8")` |
-| `md5` | `md5(organizations[0], "UTF-8")` |
+| `md5` |  `md5(organizations[0], "UTF-8")` |
 | `crc32` | `crc32(organizations[0])` |
 
 {style="table-layout:auto"}
+
+-->
