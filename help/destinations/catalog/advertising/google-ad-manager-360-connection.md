@@ -2,10 +2,10 @@
 title: (Beta) [!DNL Google Ad Manager 360] 连接
 description: Google Ad Manager 360是Google的一个广告投放平台，它使发布者能够通过视频和移动应用程序管理其网站上的广告显示。
 exl-id: 3251145a-3e4d-40aa-b120-d79c8c9c7cae
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 21b76877e8b36d6b844d9c0726a2347b1fab170e
 workflow-type: tm+mt
-source-wordcount: '1206'
-ht-degree: 4%
+source-wordcount: '1217'
+ht-degree: 6%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 4%
 >
 > Google将发布对[Google Ads API](https://developers.google.com/google-ads/api/docs/start)、[Customer Match](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html)和[Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview)的更改，以支持欧盟（[EU用户同意政策](https://www.google.com/about/company/user-consent-policy/)）中[Digital Markets Act](https://digital-markets-act.ec.europa.eu/index_en) (DMA)定义的合规性和同意相关要求。 自2024年3月6日起，将开始实施对同意要求的这些更改。
 ><br/>
->为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为Google合作伙伴，Adobe会为您提供在欧洲的DMA中遵守这些同意要求的必要工具。
+>为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为 Google 合作伙伴，Adobe 为您提供必要的工具，以遵守欧盟 DMA 下的这些同意要求。
 ><br/>
 >购买AdobePrivacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未同意的配置文件的客户无需采取任何操作。
 ><br/>
@@ -35,6 +35,7 @@ ht-degree: 4%
 
 请注意以下特定于[!DNL Google Ad Manager 360]目标的详细信息。
 
+* 此目标当前不支持[按需导出文件](../../ui/export-file-now.md)功能。
 * 激活的受众是在Google平台中以编程方式创建的，并在CSV文件中填充。
 
 ## 支持的身份 {#supported-identities}
