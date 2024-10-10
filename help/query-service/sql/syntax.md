@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务中的SQL语法
 description: 本文档详细介绍并说明Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 65eeeb1df1d512c4cd6c67892905a63cc1cc4fc5
+source-git-commit: 654a8b6a3f961514ef96eaec879697cde36f8b1b
 workflow-type: tm+mt
-source-wordcount: '4291'
+source-wordcount: '4265'
 ht-degree: 2%
 
 ---
@@ -577,7 +577,7 @@ SELECT * FROM TABLE_WITH_COMPLEX_FIELDS LIMIT 2;
 
 ### 解决故障时的回退快照 {#resolve-fallback-snapshot-on-failure}
 
-`resolve_fallback_snapshot_on_failure`选项用于解决快照ID过期的问题。 快照元数据在两天后过期，过期的快照可能会使脚本的逻辑失效。 当使用匿名块时，可能会出现问题。
+`resolve_fallback_snapshot_on_failure`选项用于解决快照ID过期的问题。
 
 将`resolve_fallback_snapshot_on_failure`选项设置为true以使用以前的快照ID覆盖快照。
 

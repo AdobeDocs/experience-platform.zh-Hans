@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 在用户界面中定义XDM字段
 description: 了解如何在Experience Platform用户界面中定义XDM字段。
 exl-id: 2adb03d4-581b-420e-81f8-e251cf3d9fb9
-source-git-commit: 89519918aa830dc09365fa80449099229dc475d5
+source-git-commit: 807ce0b0304fd73a455f228529d75cfc68769bf5
 workflow-type: tm+mt
-source-wordcount: '1734'
-ht-degree: 1%
+source-wordcount: '1607'
+ht-degree: 2%
 
 ---
 
@@ -88,8 +88,7 @@ Adobe Experience Platform用户界面中的[!DNL Schema Editor]允许您在自�
 
 | 字段属性 | 兼容类型 | 描述 |
 | --- | --- | --- |
-| [!UICONTROL 映射值类型] | [!UICONTROL 地图] | 仅当您从[!UICONTROL 类型]下拉选项中选择映射值时，[!UICONTROL 映射值类型]属性才会出现在UI中。 您可以在String和Integer值类型之间为Map选择。<br>![架构编辑器的“类型”和“映射”值类型字段突出显示。](../../images/ui/fields/overview/map-type.png "架构编辑器的“类型”和“映射”值类型字段突出显示。"){width="100" zoomable="yes"}<br>注意：任何通过API创建的映射数据类型（不是String或Integer类型）均显示为“[!UICONTROL Complex]”数据类型。 您无法通过UI创建“[!UICONTROL 复杂]”数据类型。 |
-| [!UICONTROL 默认值] | [!UICONTROL 字符串]，[!UICONTROL 双精度浮点数]，[!UICONTROL 长整数]，[!UICONTROL 整数]，[!UICONTROL 短整数]，[!UICONTROL 字节]，[!UICONTROL 布尔值] | 如果在摄取期间没有提供其他值，则分配给此字段的默认值。 此值必须符合字段的选定类型。<br><br>默认值在摄取时不会保存在数据集中，因为它们可能会随着时间的推移而更改。 从数据集中读取数据时，下游平台服务和应用程序会推断架构中设置的默认值。 例如，在使用查询服务查询数据时，如果属性的值为NULL，但在架构级别默认设置为`5`，则查询服务应返回`5`而不是NULL。 请注意，此行为当前在所有AEP服务中并不一致。 |
+| [!UICONTROL 映射值类型] | [!UICONTROL 地图] | 仅当您从[!UICONTROL 类型]下拉选项中选择映射值时，[!UICONTROL 映射值类型]属性才会出现在UI中。 您可以在String和Integer值类型之间为Map选择。<br>![Schemas Editor 中类型和映射值类型字段突出显示。](../../images/ui/fields/overview/map-type.png "Schemas Editor 中类型和映射值类型字段突出显示。"){width="100" zoomable="yes"}<br>注意：任何通过API创建的映射数据类型（不是String或Integer类型）均显示为“[!UICONTROL Complex]”数据类型。 您无法通过UI创建“[!UICONTROL 复杂]”数据类型。 |
 | [!UICONTROL 模式] | [!UICONTROL 字符串] | 此字段的值必须符合的[正则表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)才能在摄取期间被接受。 |
 | [!UICONTROL 格式] | [!UICONTROL 字符串] | 从预定义的字符串格式列表中选取值必须符合的格式。 可用的格式包括： <ul><li>[[!UICONTROL 日期时间]](https://tools.ietf.org/html/rfc3339)</li><li>[[!UICONTROL 电子邮件]](https://tools.ietf.org/html/rfc2822)</li><li>[[!UICONTROL 主机名]](https://tools.ietf.org/html/rfc1123#page-13)</li><li>[[!UICONTROL ipv4]](https://tools.ietf.org/html/rfc791)</li><li>[[!UICONTROL ipv6]](https://tools.ietf.org/html/rfc2460)</li><li>[[!UICONTROL uri]](https://tools.ietf.org/html/rfc3986)</li><li>[[!UICONTROL uri引用]](https://tools.ietf.org/html/rfc3986#section-4.1)</li><li>[[!UICONTROL url-template]](https://tools.ietf.org/html/rfc6570)</li><li>[[!UICONTROL json-pointer]](https://tools.ietf.org/html/rfc6901)</li></ul> |
 | [!UICONTROL 最小长度] | [!UICONTROL 字符串] | 字符串必须包含的最小字符数才能在摄取期间接受该值。 |

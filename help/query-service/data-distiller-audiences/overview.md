@@ -1,9 +1,9 @@
 ---
 title: 使用SQL构建受众
 description: 了解如何在Adobe Experience Platform的Data Distiller中使用SQL受众扩展来使用SQL命令创建、管理和发布受众。 本指南涵盖受众生命周期的所有方面，包括创建、更新和删除用户档案，以及使用数据驱动的受众定义来定位基于文件的目标。
-source-git-commit: fbfd232c4e101f29ae01328c33763786a0e4a8cb
+source-git-commit: 8b9a46d9dd35a60fc3f3087d5fd3c4dad395b1aa
 workflow-type: tm+mt
-source-wordcount: '1267'
+source-wordcount: '1280'
 ht-degree: 1%
 
 ---
@@ -137,41 +137,103 @@ DROP AUDIENCE IF EXISTS aud_test;
 
 +++选择以显示问题和解答
 
+**问题**：
+
 - 是否仅支持为平面数据集创建受众？
-- 也支持嵌套的数据集，但受众中只有平面属性可用。
+
++++回答
+
+也支持嵌套的数据集，但受众中只有平面属性可用。
+
++++
 
 - 创建受众会生成单个数据集还是多个数据集，或者是否因配置而异？
-- 受众和数据集之间存在一对一的映射。
+
++++回答
+
+受众和数据集之间存在一对一的映射。
+
++++
 
 - 在受众创建期间创建的数据集是否标记为用户档案？
-- 不会，在创建受众期间创建的数据集不会标记为配置文件。
+
++++回答
+
+不会，在创建受众期间创建的数据集不会标记为配置文件。
+
++++
 
 - 是否在数据湖中创建数据集？
-- 是，会在数据湖上创建数据集。
+
++++回答
+
+是，会在数据湖上创建数据集。
+
++++
 
 - 受众中的属性是否限制为仅用于基于文件的企业批处理目标？ （是或否）
-- 是，受众中的属性限制为仅用于基于文件的企业批处理目标。
+
++++回答
+
+是，受众中的属性限制为仅用于基于文件的企业批处理目标。
+
++++
 
 - 我是否可以创建一个使用数据Distiller受众的受众？
-- 能，您可以创建使用数据Distiller受众的受众。
+
++++回答
+
+能，您可以创建使用数据Distiller受众的受众。
+
++++
 
 - 这些受众是否会显示在Adobe Journey Optimizer中？ 如果没有，那么在规则生成器中创建一个包含此受众所有成员的新受众时，会发生什么情况？
-- Data Distiller受众当前在Adobe Journey Optimizer中不可用。 您必须在Adobe Journey Optimizer规则生成器中创建新受众，使其在Adobe Journey Optimizer中可用。
+
++++回答
+
+Data Distiller受众当前在Adobe Journey Optimizer中不可用。 您必须在Adobe Journey Optimizer规则生成器中创建新受众，使其在Adobe Journey Optimizer中可用。
+
++++
 
 - 如何使用不同的计划创建两个Data Distiller受众？ 创建了多少数据集，它们是否标记为配置文件？
-- 由于每个受众都有一个基础数据集，因此将创建两个数据集。 但是，这些数据集不会标记为配置文件。 这两个数据集按各自的计划进行管理。
+
++++回答
+
+由于每个受众都有一个基础数据集，因此将创建两个数据集。 但是，这些数据集不会标记为配置文件。 这两个数据集按各自的计划进行管理。
+
++++
 
 - 如何删除受众？
-- 要删除受众，您可以在命令行界面中使用[`DROP AUDIENCE`命令](#delete-audience)或使用[受众工作区快速操作](../../segmentation/ui/audience-portal.md#quick-actions)。 注意：无法删除在下游目标中使用或者在其他受众中是从属的受众。
+
++++回答
+
+要删除受众，您可以在命令行界面中使用[`DROP AUDIENCE`命令](#delete-audience)或使用[受众工作区快速操作](../../segmentation/ui/audience-portal.md#quick-actions)。 注意：无法删除在下游目标中使用或者在其他受众中是从属的受众。
+
++++
 
 - 当我将受众发布到配置文件时，它多久才能在区段生成器UI中可用，以及它何时可在目标中可用？
-- 配置文件快照导出完成后，即可在受众中查看配置文件。
+
++++回答
+
+配置文件快照导出完成后，即可在受众中查看配置文件。
+
++++
 
 - Data Distiller受众是外部受众，是否每30天删除一次？
-- 是，由于数据Distiller受众是外部受众，因此每30天会删除一次这些受众。
+
++++回答
+
+是，由于数据Distiller受众是外部受众，因此每30天会删除一次这些受众。
+
++++
 
 - Data Distiller Audiences是否显示在Audiences清单中？
-- 是，Data Distiller Audiences显示在受众清单中，原始名称为“Data Distiller”。
+
++++回答
+
+是，Data Distiller Audiences显示在受众清单中，原始名称为“Data Distiller”。
+
++++
 
 +++
 
