@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform；主页；热门主题
+keywords: Experience Platform；首页；热门话题
 solution: Experience Platform
 title: 隐私作业API端点
 description: 了解如何使用Privacy ServiceAPI管理Experience Cloud应用程序的隐私作业。
 role: Developer
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
-source-git-commit: 341cc4cb150717f08b2e59412ef58fbd6f7b3450
+source-git-commit: 02a95212ff8a018b2b7f0a06978307d08a6915af
 workflow-type: tm+mt
 source-wordcount: '1821'
 ht-degree: 1%
@@ -42,7 +42,7 @@ GET /jobs?regulation={REGULATION}&fromDate={FROMDATE}&toDate={TODATE}&status={ST
 
 | 参数 | 描述 |
 | --- | --- |
-| `{REGULATION}` | 要查询的法规类型。 接受的值包括： <ul><li>`apa_aus`</li><li>`cpa_usa`</li><li>`cpra_usa`</li><li>`ctdpa_usa`</li><li>`fdbr_usa`</li><li>`gdpr` — 注意：这也用于与&#x200B;**ccpa**&#x200B;法规相关的请求。</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`mhmda_usa`</li><li>`nzpa_nzl`</li><li>`ocpa_usa`</li><li>`pdpa_tha`</li><li>`tdpsa_usa`</li><li>`ucpa_usa`</li><li>`vcdpa_usa`</li></ul><br>有关上述值表示的隐私法规的更多信息，请参阅[支持的法规](../regulations/overview.md)概述。 |
+| `{REGULATION}` | 要查询的法规类型。 接受的值包括： <ul><li>`apa_aus`</li><li>`cpa_usa`</li><li>`cpra_usa`</li><li>`ctdpa_usa`</li><li>`fdbr_usa`</li><li>`gdpr` — 注意：这也用于与&#x200B;**ccpa**&#x200B;法规相关的请求。</li><li>`hipaa_usa`</li><li>`icdpa_usa`</li><li>`lgpd_bra`</li><li>`mcdpa_usa`</li><li>`mhmda_usa`</li><li>`ndpa_usa`</li><li>`nhpa_usa`</li><li>`njdpa_usa`</li><li>`nzpa_nzl`</li><li>`ocpa_usa`</li><li>`pdpa_tha`</li><li>`tdpsa_usa`</li><li>`ucpa_usa`</li><li>`vcdpa_usa`</li></ul><br>有关上述值表示的隐私法规的更多信息，请参阅[支持的法规](../regulations/overview.md)概述。 |
 | `{PAGE}` | 要显示的数据页面，使用基于0的编号。 默认值为 `0`。 |
 | `{SIZE}` | 每页上显示的结果数。 默认值为`100`，最大值为`1000`。 超过最大值会导致API返回400代码错误。 |
 | `{status}` | 默认行为是包括所有状态。 如果指定状态类型，则请求将仅返回与该状态类型匹配的隐私作业。 接受的值包括： <ul><li>`processing`</li><li>`complete`</li><li>`error`</li></ul> |
@@ -172,7 +172,7 @@ curl -X POST \
 | `users` **（必需）** | 一个数组，其中包含您要访问或删除其信息的至少一个用户的集合。 单个请求最多可提供1000个用户。 每个用户对象包含以下信息： <ul><li>`key`：用于限定响应数据中各个作业ID的用户的标识符。 最好为此值选择一个唯一的、易于识别的字符串，以便稍后可以轻松引用或查找。</li><li>`action`：一个数组，列出了要对用户数据执行的所需操作。 根据您要执行的操作，此数组必须包括`access`和/或`delete`。</li><li>`userIDs`：用户的标识集合。 单个用户可以拥有的身份数限制为9个。 每个标识都包含`namespace`、`value`和命名空间限定符(`type`)。 有关这些所需属性的更多详细信息，请参阅[附录](appendix.md)。</li></ul> 有关`users`和`userIDs`的更详细说明，请参阅[疑难解答指南](../troubleshooting-guide.md#user-ids)。 |
 | `include` **（必需）** | 要包含在处理中的一系列Adobe产品。 如果此值缺失或为空，则将拒绝请求。 仅包括您的组织与之集成的产品。 有关详细信息，请参阅附录中有关[接受的产品值](appendix.md)的部分。 |
 | `expandIDs` | 一个可选属性，当设置为`true`时，表示对处理应用程序中的ID进行优化（当前仅受[!DNL Analytics]支持）。 如果忽略，此值将默认为`false`。 |
-| `priority` | Adobe Analytics使用的一个可选属性，用于设置处理请求的优先级。 接受的值为`normal`和`low`。 如果忽略`priority`，则默认行为是`normal`。 |
+| `priority` | Adobe Analytics使用的一个可选属性，用于设置处理请求的优先级。 接受的值包括 `normal` 和 `low`。如果忽略`priority`，则默认行为是`normal`。 |
 | `mergePolicyId` | 对实时客户个人资料(`profileService`)发出隐私请求时，您可以选择提供要用于ID拼接的特定[合并策略](../../profile/merge-policies/overview.md)的ID。 通过指定合并策略，隐私请求可以在返回客户数据时包含受众信息。 每个请求只能指定一个合并策略。 如果未提供合并策略，则响应中不包含分段信息。 |
 | `regulation` **（必需）** | 隐私工作的法规。 接受以下值： <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpra_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`vcdpa_usa`</li></ul><br>有关上述值表示的隐私法规的更多信息，请参阅[支持的法规](../regulations/overview.md)概述。 |
 
