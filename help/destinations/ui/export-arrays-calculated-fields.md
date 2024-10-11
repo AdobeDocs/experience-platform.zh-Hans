@@ -3,9 +3,9 @@ title: 使用计算字段将数组导出为字符串
 type: Tutorial
 description: 了解如何使用计算字段将阵列作为字符串从Real-Time CDP导出到云存储目标。
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: 6fec0432f71e58d0e17ac75121fb1028644016e1
+source-git-commit: ea3ff80ed1e1de37d5d96bff96f73183a6fa3927
 workflow-type: tm+mt
-source-wordcount: '1513'
+source-wordcount: '1520'
 ht-degree: 0%
 
 ---
@@ -40,7 +40,7 @@ ht-degree: 0%
 
 ## Platform中的数组和其他对象类型 {#arrays-strings-other-objects}
 
-在Experience Platform中，您可以使用[XDM架构](/help/xdm/home.md)管理不同的字段类型。 以前，您可以将简单的键值对类型字段(如字符串不Experience Platform)导出到所需的目标。 以前支持导出的此类字段示例为`personalEmail.address`：`johndoe@acme.org`。
+在Experience Platform中，您可以使用[XDM架构](/help/xdm/home.md)管理不同的字段类型。 在添加对数组导出的支持之前，您可以将简单的键值对类型字段(如字符串不Experience Platform)导出到所需的目标。 以前支持导出的此类字段示例为`personalEmail.address`：`johndoe@acme.org`。
 
 Experience Platform中的其他字段类型包括数组字段。 阅读有关Experience PlatformUI](/help/xdm/ui/fields/array.md)中[管理数组字段的更多信息。 除了以前支持的字段类型之外，您现在还可以使用`array_to_string`函数将数组对象（如下面的示例）导出为字符串。
 
@@ -146,15 +146,6 @@ First_Name,Last_Name,Personal_Email,Organization
 John,Doe,johndoe@acme.org, "{'id':123,'orgName':'Acme Inc','founded':1990,'latestInteraction':1708041600000}_{'id':456,'orgName':'Superstar Inc','founded':2004,'latestInteraction':1692921600000}_{'id':789,'orgName':'Energy Corp','founded':2021,'latestInteraction':1725753600000}"
 ```
 
-### `flattenArray`函数以导出平面化数组
-
-使用`flattenArray`函数扁平化导出的多维数组。 您可以将此函数与上面进一步描述的`array_to_string`函数组合。
-
-继续使用上面的`organizations`数组对象，您可以编写函数，如`array_to_string('_', flattenArray(organizations))`。 请注意，`array_to_string`函数默认将输入数组扁平化为字符串。
-
-得到的输出与上面描述的`array_to_string`函数相同。
-
-
 ### `filterArray`函数以导出筛选的数组
 
 使用`filterArray`函数筛选导出数组的元素。 您可以将此函数与上面进一步描述的`array_to_string`函数组合。
@@ -210,6 +201,14 @@ John,Doe, johndoe@acme.org, "isMarketing"
 `First_Name,Last_Name,Personal_Email,Organization_Member_2023
 John,Doe, johndoe@acme.org,"Marketing_Sales_Finance_2023"
 ```
+
+### `flattenArray`函数以导出平面化数组
+
+使用`flattenArray`函数扁平化导出的多维数组。 您可以将此函数与上面进一步描述的`array_to_string`函数组合。
+
+继续使用上面的`organizations`数组对象，您可以编写函数，如`array_to_string('_', flattenArray(organizations))`。 请注意，`array_to_string`函数默认将输入数组扁平化为字符串。
+
+结果输出与上面进一步描述的`array_to_string`函数输出相同。
 
 ### `coalesce`函数以导出数组 {#coalesce-function-export-arrays}
 
