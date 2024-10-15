@@ -2,7 +2,7 @@
 title: 目标分析
 description: 发现支持目标分析的SQL，并使用这些查询生成自定义分析，以进一步探索从Adobe Experience Platform激活数据的问题。
 exl-id: 762a9960-e7a5-4796-80c7-ef745157cc04
-source-git-commit: d4baf6cfaa772e5d46cef470fb35818c7af868b1
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '1139'
 ht-degree: 3%
@@ -17,7 +17,7 @@ ht-degree: 3%
 
 有关如何直接通过PLatform UI调整分析的SQL的详细信息，请参阅[查看SQL文档](../view-sql.md)。
 
-以下分析均可用作[目标仪表板](../guides/destinations.md)或自定义[用户定义的仪表板](../user-defined-dashboards.md)的一部分。 有关如何自定义仪表板或[在构件库和[用户定义的仪表板](../user-defined-dashboards.md#create-widget)中创建和编辑新构件](../customize/custom-widgets.md)的说明，请参阅[自定义概述](../customize/overview.md)。
+以下分析均可用作[目标仪表板](../guides/destinations.md)或自定义[用户定义的仪表板](../standard-dashboards.md)的一部分。 有关如何自定义仪表板或[在构件库和[用户定义的仪表板](../standard-dashboards.md#create-widget)中创建和编辑新构件](../customize/custom-widgets.md)的说明，请参阅[自定义概述](../customize/overview.md)。
 
 ## 已激活的受众 {#activated-audiences}
 

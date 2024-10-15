@@ -2,7 +2,7 @@
 title: Adobe Experience Platform 发行说明（2023 年 4 月）
 description: Adobe Experience Platform 的 2023 年 4 月发行说明。
 exl-id: 7b501467-99a7-4aee-ae86-66c851250ecf
-source-git-commit: 322510055bd8b8803292a2b4af9df9e1dbee7ffb
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '2038'
 ht-degree: 98%
@@ -37,7 +37,7 @@ Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查
 
 | 功能 | 描述 |
 | --- | --- |
-| 用户定义的仪表板 | 现在可从“见解”构件中&#x200B;**筛选历史数据**，并使用最近的数据或自定义的分析周期。有关详细信息，请参阅[用户定义的仪表板指南](../../dashboards/user-defined-dashboards.md#filter-historical-data)。<br>现在还可&#x200B;**复制现有构件**。通过自定义副本并编辑其属性，在创建新的独特构件时可避免从头开始创建。请阅读[构件复制指南](../../dashboards/user-defined-dashboards.md#duplicate-a-widget)以了解详情。 |
+| 用户定义的仪表板 | 现在可从“见解”构件中&#x200B;**筛选历史数据**，并使用最近的数据或自定义的分析周期。有关详细信息，请参阅[用户定义的仪表板指南](../../dashboards/standard-dashboards.md#filter-historical-data)。<br>现在还可&#x200B;**复制现有构件**。通过自定义副本并编辑其属性，在创建新的独特构件时可避免从头开始创建。请阅读[构件复制指南](../../dashboards/standard-dashboards.md#duplicate-a-widget)以了解详情。 |
 
 {style="table-layout:auto"}
 

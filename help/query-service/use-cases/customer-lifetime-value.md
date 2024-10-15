@@ -2,7 +2,7 @@
 title: 跟踪数据信号以生成客户存留期值
 description: 本指南提供了有关如何将Data Distiller和用户定义的功能板与Real-time Customer Data Platform结合使用来衡量和可视化客户存留期值的端到端演示。
 exl-id: c74b5bff-feb2-4e21-9ee4-1e0973192570
-source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '1263'
 ht-degree: 0%
@@ -62,7 +62,7 @@ ht-degree: 0%
 
 ## 构建用于捕获见解的功能板 {#build-a-custom-dashboard}
 
-现在您已经创建了自定义数据模型，接下来可以使用自定义查询和用户定义的仪表板可视化您的数据。 有关如何[构建自定义仪表板](../../dashboards/user-defined-dashboards.md)的完整指导，请参阅用户定义的仪表板概述。 UI指南包括以下方面的详细信息：
+现在您已经创建了自定义数据模型，接下来可以使用自定义查询和用户定义的仪表板可视化您的数据。 有关如何[构建自定义仪表板](../../dashboards/standard-dashboards.md)的完整指导，请参阅用户定义的仪表板概述。 UI指南包括以下方面的详细信息：
 
 * 如何创建构件。
 * 如何使用构件编辑器。

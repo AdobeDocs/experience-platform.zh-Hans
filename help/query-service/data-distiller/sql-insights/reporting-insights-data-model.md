@@ -2,7 +2,7 @@
 title: 查询Accelerated Store报告分析指南
 description: 了解如何通过查询服务构建报表见解数据模型，以便与加速的商店数据和用户定义的仪表板一起使用。
 exl-id: 216d76a3-9ea3-43d3-ab6f-23d561831048
-source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '1034'
 ht-degree: 0%
@@ -19,7 +19,7 @@ Adobe Experience Platform的Real-Time CDP数据模型提供了有关用户档案
 
 ## 先决条件
 
-本教程使用用户定义的功能板在Platform UI中可视化自定义数据模型中的数据。 请参阅[用户定义的功能板文档](../../../dashboards/user-defined-dashboards.md)以了解有关此功能的更多信息。
+本教程使用用户定义的功能板在Platform UI中可视化自定义数据模型中的数据。 请参阅[用户定义的功能板文档](../../../dashboards/standard-dashboards.md)以了解有关此功能的更多信息。
 
 ## 快速入门
 
@@ -228,4 +228,4 @@ LIMIT  5000
 
 ![根据新的报表分析数据模型创建的按目标和受众小部件划分的匹配计数。](../../images/data-distiller/sql-insights/user-defined-dashboard-widget.png)
 
-您的自定义数据模型可在用户定义的仪表板工作区中的可用数据模型列表中找到。 有关如何利用自定义数据模型的指导，请参阅[用户定义的仪表板指南](../../../dashboards/user-defined-dashboards.md)。
+您的自定义数据模型可在用户定义的仪表板工作区中的可用数据模型列表中找到。 有关如何利用自定义数据模型的指导，请参阅[用户定义的仪表板指南](../../../dashboards/standard-dashboards.md)。

@@ -4,7 +4,7 @@ description: 了解如何将SQL查询与Real-time Customer Data Platform分析�
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 7b77ca19-e4c6-4e93-b9e7-c4ef77d6d6d1
-source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '476'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # Real-time Customer Data Platform Insights数据模型B2B版本
 
-B2B版本的Real-time Customer Data Platform Insights数据模型公开了支持[帐户配置文件](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/account/account-profile-overview)的分析的数据模型和SQL。 您可以自定义这些SQL查询模板，以为B2B营销和关键绩效指标(KPI)用例创建Real-Time CDP报表。 这些见解随后可用作功能板的自定义构件。
+B2B edition的Real-time Customer Data Platform分析数据模型公开了支持[帐户配置文件](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/account/account-profile-overview)的分析的数据模型和SQL。 您可以自定义这些SQL查询模板，以为B2B营销和关键绩效指标(KPI)用例创建Real-Time CDP报表。 这些见解随后可用作功能板的自定义构件。
 
 >[!AVAILABILITY]
 >
@@ -25,7 +25,7 @@ See the query accelerated store reporting insights documentation to learn [how t
 
 ## 先决条件
 
-本指南要求您对自定义功能板有一定的了解。 在继续阅读本指南之前，请阅读有关[如何创建自定义仪表板](../user-defined-dashboards.md)的文档。
+本指南要求您对自定义功能板有一定的了解。 在继续阅读本指南之前，请阅读有关[如何创建自定义仪表板](../standard-dashboards.md)的文档。
 
 ## Real-Time CDP B2B分析报告和用例 {#B2B-insight-reports-and-use-cases}
 

@@ -1,11 +1,11 @@
 ---
-title: Adobe Experience Platform发行说明2022年9月
-description: Adobe Experience Platform 2022年9月版发行说明。
+title: Adobe Experience Platform 发行说明（2022 年 9 月）
+description: Adobe Experience Platform 2022 年 9 月发行说明。
 exl-id: a7a4dcf8-2cf3-4e39-879d-bdfcbacb737a
-source-git-commit: e0af1f0110ceb514a5b249c42a05bf780ea834c6
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '2762'
-ht-degree: 23%
+ht-degree: 26%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 23%
 
 **发行日期： 2022年9月28日**
 
-Adobe Experience Platform中的新增功能：
+Adobe Experience Platform 的新功能：
 
 - [基于属性的访问控制](#abac)
 
@@ -44,7 +44,7 @@ Adobe Experience Platform 中现有功能的更新：
 | 基于属性的访问控制 | 基于属性的访问控制允许您使用定义组织或数据使用范围的标签来标记Experience Data Model (XDM)架构字段和区段。 同时，管理员可以使用用户和角色管理界面定义涵盖XDM架构字段和区段的访问策略，以便更好地管理授予用户或用户组（内部、外部或第三方用户）的访问权限。 有关详细信息，请参阅[基于属性的访问控制概述](../../access-control/abac/overview.md)。 |
 | 权限 | 权限是Experience Cloud的区域，管理员可以在其中定义用户角色和访问策略，以管理产品应用程序中功能和对象的访问权限。 通过权限，您可以创建和管理角色、为这些角色分配所需的资源权限，以及构建策略以利用标签并定义哪些用户角色有权访问特定Platform资源。 权限还允许您管理与特定角色关联的标签、沙盒和用户。 有关详细信息，请参阅[权限UI指南](../../access-control/abac/ui/browse.md)。 |
 
-有关基于属性的访问控制的详细信息，请参阅[基于属性的访问控制概述](../../access-control/abac/overview.md)。有关基于属性的访问控制工作流程的综合指南，请阅读[基于属性的访问控制端到端指南](../../access-control/abac/end-to-end-guide.md)。
+有关基于属性的访问控制的详细信息，请参阅[基于属性的访问控制概述](../../access-control/abac/overview.md)。有关基于属性的访问控制工作流的综合指南，请阅读[基于属性的访问控制端到端指南](../../access-control/abac/end-to-end-guide.md)。
 
 ## [!DNL Artificial Intelligence/Machine Learning services] {#ai-and-ml-services}
 
@@ -93,7 +93,7 @@ Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查
 | 功能 | 描述 |
 | --- | --- |
 | 使用中标签 | 在构件库中查看时，使用中标签可轻松识别仪表板中现有构件的存在。 这样可轻松避免重复，不过您仍然可以根据需要多次添加同一构件。 |
-| 用户定义的仪表板 | 用户定义的功能板允许您构建和管理自定义功能板，从而帮助加快分析并自定义可视化图表。 通过用户定义的仪表板，您可以创建、添加和编辑定制构件，以可视化与您的组织相关的关键量度。 阅读[功能指南](../../dashboards/user-defined-dashboards.md)以了解更多信息。 |
+| 用户定义的仪表板 | 用户定义的功能板允许您构建和管理自定义功能板，从而帮助加快分析并自定义可视化图表。 通过用户定义的仪表板，您可以创建、添加和编辑定制构件，以可视化与您的组织相关的关键量度。 阅读[功能指南](../../dashboards/standard-dashboards.md)以了解更多信息。 |
 | 客户数据平台见解数据模型 | 客户数据平台(CDP)分析数据模型功能可公开支持各种用户档案、目标和分段构件分析的数据模型和SQL。 您可以自定义这些SQL查询模板，以便为您的营销和关键绩效指标用例创建CDP报表。 这些见解随后可用作用户定义的功能板的自定义构件。 阅读[CDP分析数据模型功能指南](../../dashboards/data-models/cdp-insights-data-model-b2c.md)以了解更多信息。 |
 | 受众重叠报表构件 | 此构件适用于[!UICONTROL 用户档案]和[!UICONTROL 区段]仪表板。 此报表为您选择的区段提供了一个按最高或最低重叠百分比排名的有序受众列表。 从[!UICONTROL 用户档案]仪表板中，您可以按合并策略从所有可用区段中过滤和查看受众重叠。 [!UICONTROL 区段]功能板允许您按特定区段过滤受众重叠。<br>使用此分析构建新的高性能区段，并避免将相同的受众发送到不同的目标。 此报表还有助于识别隐藏的洞察信息，以改进分段或找到要追求的独特用户档案。 阅读相应的[配置文件](../../dashboards/guides/profiles.md#audience-overlap-report)和[区段](../../dashboards/guides/audiences.md#audience-overlap-report)构件指南以了解更多信息。 |
 
@@ -107,9 +107,9 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 功能 | 描述 |
 | --- | --- |
-| Platform UI中的左侧导航集成 | 以前专用于数据收集UI的所有功能（包括标记、事件转发和数据流）现在也可通过Experience Platform中的左侧导航在&#x200B;**[!UICONTROL 数据收集]**&#x200B;类别下使用。 当在Platform中使用数据收集功能时，无需在UI之间进行切换。 |
+| Platform UI中的左侧导航集成 | 以前专用于数据收集UI的所有功能（包括标记、事件转发和数据流）现在也可通过Experience Platform中的左侧导航在&#x200B;**[!UICONTROL 数据收集]**&#x200B;类别下使用。 这样就无需在使用 Platform 中的数据收集功能时在 UI 之间切换。 |
 | 标记中的用户归因和事件转发 | 现在，当在标记和事件转发中列出可用的[!UICONTROL 属性]时，每个列出的属性都会显示上次更新的时间以及进行更新的用户。 |
-| 用于事件转发的[[!DNL Snap Conversions API] 扩展](https://exchange.adobe.com/apps/ec/108550) | 您现在可以使用[事件转发](../../tags/ui/event-forwarding/overview.md)扩展将数据发送到[!DNL Snapchat Conversions API]。 有关如何验证和使用API的更多信息，请参阅[[!DNL Snapchat Marketing API] 文档](https://marketingapi.snapchat.com/docs/conversion.html)。 |
+| 用于事件转发的[[!DNL Snap Conversions API] 扩展](https://exchange.adobe.com/apps/ec/108550) | 您现在可以使用[事件转发](../../tags/ui/event-forwarding/overview.md)扩展将数据发送到[!DNL Snapchat Conversions API]。 有关如何验证和使用 API 的更多信息，请参阅此[[!DNL Snapchat Marketing API] 文档](https://marketingapi.snapchat.com/docs/conversion.html)。 |
 | Web SDK中的[用户代理客户端提示](/help/web-sdk/use-cases/client-hints.md) | Web SDK现在支持[用户代理客户端提示](https://developer.chrome.com/docs/privacy-sandbox/user-agent/)。 客户端提示允许网站所有者访问[!DNL User-Agent]字符串中提供的许多相同信息，但保护隐私的方式更有效。 |
 | [Web SDK逐页迁移](../../web-sdk/home.md#migrating-to-web-sdk) | 您现在可以将现有Web资产从其他Experience Cloud库（如[!DNL at.js]）迁移到Web SDK，一次迁移一个页面。 这支持采用分阶段的方法进行Web SDK迁移，而无需一次性迁移所有页面。 |
 | [[!DNL Adobe Journey Optimizer] 支持数据流](../../datastreams/overview.md#aep) | 用于数据流的Adobe Experience Platform服务现在支持[!DNL Adobe Journey Optimizer]。 此选项允许您在[!DNL Adobe Journey Optimizer]中使用基于Web和应用程序的入站渠道。 |
@@ -139,13 +139,13 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 {style="table-layout:auto"}
 
-**新文档或更新文档**
+**新增或更新文档**
 
 | 文档 | 描述 |
 | ----------- | ----------- |
 | 目标流服务API文档 | [目标API参考文档](https://developer.adobe.com/experience-platform-apis/references/destinations/)已更新，包含有关如何对基于文件的目标执行操作的指导。 稍后将添加针对流目标的操作。 |
 
-有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
+有关目标的更多一般信息，请参阅[目标概述](../../destinations/home.md)。
 
 ## Experience Data Model (XDM) {#xdm}
 
@@ -192,7 +192,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 有关 Platform 中 XDM 的详细信息，请查看 [XDM 系统概述](../../xdm/home.md)。
 
-## 身份服务 {#identity-service}
+## 标识服务 {#identity-service}
 
 提供相关的数字体验要求完全了解您的客户。 当您的客户数据分散在不同的系统中，导致每个客户似乎拥有多个“身份”时，就会更加困难。
 
@@ -208,7 +208,7 @@ Adobe Experience Platform Identity Service通过跨设备和系统桥接身份�
 
 ## 查询服务 {#query-service}
 
-查询服务允许您使用标准 SQL 查询 Adobe Experience Platform [!DNL Data Lake] 中的数据。您可以加入[!DNL Data Lake]中的任何数据集，并将查询结果捕获为新的数据集，以用于报表、数据科学Workspace或将其摄取到实时客户个人资料中。
+查询服务允许您使用标准 SQL 查询 Adobe Experience Platform [!DNL Data Lake] 中的数据。您可以加入来自 [!DNL Data Lake] 的任何任何数据集，并将查询结果捕获为新数据集，以用于报告、Data Science Workspace，或将数据摄取到实时客户轮廓。
 
 **更新的功能**
 

@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明（2024 年 9 月）
 description: Adobe Experience Platform 2024 年 9 月发行说明。
-source-git-commit: 33d1305aef7c763e7b0bd8c6db6a1a9417cc2a9d
+source-git-commit: eac613434f631cab567ab3fa6e30d33acac79d2f
 workflow-type: tm+mt
 source-wordcount: '2199'
-ht-degree: 82%
+ht-degree: 100%
 
 ---
 
@@ -49,11 +49,11 @@ Experience Platform 提供了多个仪表板，您可以通过这些仪表板查
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| “许可证使用情况”插件表 | 通过核心产品和加载项的专用表格精细地了解许可证使用情况，并管理您的平台资源。 在沙盒级别使用穿透钻取视图跟踪和分析每个核心产品的关键量度。 附加量度与核心产品量度无缝集成，提供了使用情况的全面视图。 增强的可见性可帮助您优化许可证管理，并使资源与组织需求相匹配。 有关详细信息，请参阅[[!UICONTROL 许可证使用情况]仪表板指南](../../dashboards/guides/license-usage.md#overview-tab)。 |
-| Query Pro Mode - 全局过滤器升级 | 使用 Query Pro Mode 的新日期过滤器增强分析。使用 SQL 查询中的动态日期参数来细化洞察，并按特定时间范围过滤数据。通过直观的用户界面选择预设或自定义日期范围，确保仪表板与所有用户的相关性。简化工作流程、保持精确度并及时做出决策。请阅读 [创建日期过滤器的指南](../../dashboards/data-distiller/query-pro-mode/filters/global-filter.md)，了解更多信息。 |
-| Query Pro Mode - 深入钻取 | 使用 Query Pro Mode 的深入探究功能解锁更深入的洞察，并无缝地从高级图表导航到详细的仪表板。使用此功能可以轻松地从摘要转向深入分析，并探索趋势、客户行为和 KPI。自动过滤器传递和多级钻取保持数据一致，确保顺利探索。简化工作流程、保留背景并加快决策。请阅读 [有关创建钻取的分步指南](../../dashboards/data-distiller/query-pro-mode/drill-through.md) 以了解更多信息。 |
-| Query Pro Mode - 高级表属性 | 使用 Query Pro Mode 高级表属性来简化数据可视化、增强工作流效率并提高数据清晰度。直接从自定义仪表板向表格添加自动排序、调整大小和分页功能。对列进行排序以确定关键数据的优先级、调整大小以获得最佳可读性，并无缝浏览大型数据集而无需修改 SQL 查询。请阅读“[查看更多](../../dashboards/data-distiller/query-pro-mode/view-more.md)”指南，了解如何集成这些功能并提升您的数据洞察力。 |
-| 总数据量 | “平均配置文件丰富度”量度已替换为“总数据量”量度。 总数据量是指可用于实时客户档案以进行参与和个性化工作流的可用数据总量。 有关此更改的详细信息，请参阅[总数据卷指南](../../landing/license-usage-and-guardrails/total-data-volume.md)。 |
+| 许可证使用附加组件表 | 使用核心产品和附加组件的专用表来详细了解许可证使用情况并管理平台资源。通过沙盒级别的深入视图来跟踪和分析每个核心产品的关键量度。附加量度与核心产品量度无缝集成，提供了全面的使用情况视图。增强的可见性可帮助您优化许可证管理并使资源与组织需求保持一致。有关更多详细信息，请参阅 [[!UICONTROL 许可证使用情况] 仪表板指南](../../dashboards/guides/license-usage.md#overview-tab) 。 |
+| Query Pro Mode - 全局过滤器升级 | 使用 Query Pro Mode 的新日期过滤器增强分析。使用 SQL 查询中的动态日期参数来细化洞察，并按特定时间范围过滤数据。通过直观的用户界面选择预设或自定义日期范围，确保仪表板与所有用户的相关性。简化工作流程、保持精确度并及时做出决策。请阅读 [创建日期过滤器的指南](../../dashboards/sql-insights-query-pro-mode/filters/global-filter.md)，了解更多信息。 |
+| Query Pro Mode - 深入钻取 | 使用 Query Pro Mode 的深入探究功能解锁更深入的洞察，并无缝地从高级图表导航到详细的仪表板。使用此功能可以轻松地从摘要转向深入分析，并探索趋势、客户行为和 KPI。自动过滤器传递和多级钻取保持数据一致，确保顺利探索。简化工作流程、保留背景并加快决策。请阅读 [有关创建钻取的分步指南](../../dashboards/sql-insights-query-pro-mode/drill-through.md) 以了解更多信息。 |
+| Query Pro Mode - 高级表属性 | 使用 Query Pro Mode 高级表属性来简化数据可视化、增强工作流效率并提高数据清晰度。直接从自定义仪表板向表格添加自动排序、调整大小和分页功能。对列进行排序以确定关键数据的优先级、调整大小以获得最佳可读性，并无缝浏览大型数据集而无需修改 SQL 查询。请阅读“[查看更多](../../dashboards/sql-insights-query-pro-mode/view-more.md)”指南，了解如何集成这些功能并提升您的数据洞察力。 |
+| 总数据量 | “平均轮廓丰富度”量度已被“总数据量”量度取代。”总数据量“是指可与实时客户轮廓一起用于参与和个性化工作流程的可用数据总量。关于此变化的更多细节可以在 [总数据量指南中](../../landing/license-usage-and-guardrails/total-data-volume.md)找到。 |
 
 {style="table-layout:auto"}
 
@@ -75,7 +75,7 @@ Experience Platform 提供了多个仪表板，您可以通过这些仪表板查
 
 ## 目标 {#destinations}
 
-**更新日期： 2024年9月30日**
+**更新时间：2024 年 9 月 30 日**
 
 [!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
@@ -84,7 +84,7 @@ Experience Platform 提供了多个仪表板，您可以通过这些仪表板查
 | 目标 | 描述 |
 | --- | --- |
 | [Amazon 广告](/help/destinations/catalog/advertising/amazon-ads.md) | 2024 年 9 月的版本添加了将 `countryCode` 参数导出到 Amazon Ads 的映射选项。`countryCode` 在 [映射步骤](/help/destinations/catalog/advertising/amazon-ads.md#map) 中使用，以提高您与亚马逊的标识匹配率。 |
-| [[!BADGE B2B]{type=Informational} Demandbase](/help/destinations/catalog/advertising/demandbase.md) | 使用此目标可为Account-Based Marketing (ABM)用例激活帐户受众。 通过DemandBase的B2BDemand Side Platform(DSP)向目标帐户中的相关角色和角色播发。 Target帐户还可以使用Demandbase第三方数据进行扩充，以用于营销和销售中的其他下游用例。 |
+| [[!BADGE B2B]{type=Informative} 需求库](/help/destinations/catalog/advertising/demandbase.md) | 使用此目标来激活 Account-Based Marketing (ABM) 用例的帐户受众。通过 DemandBase 的 B2B Demand Side Platform（DSP）向目标帐户中的相关人物和角色投放广告。目标帐户还可以通过 Demandbase 第三方数据进行丰富，以用于营销和销售中的其他下游用例。 |
 
 {style="table-layout:auto"}
 
@@ -120,7 +120,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 功能 | 描述 |
 | --- | --- |
-| 标识图链接规则的可用性有限 | 身份图链接规则是Identity Service中的一套工具，可使用它们确保用户的准确个性化。 <ul><li>您现在可以使用[身份优化算法](../../identity-service/identity-graph-linking-rules/identity-optimization-algorithm.md)来确保身份图代表单个人员，从而防止在实时客户个人资料上不必要地合并身份。</li><li>配置[命名空间优先级](../../identity-service/identity-graph-linking-rules/namespace-priority.md)以定义各自命名空间的重要性并影响配置文件的形成和分段方式。</li><li>在UI](../../identity-service/identity-graph-linking-rules/graph-simulation.md)中使用[图形模拟工具来模拟具有不同配置的身份图形。</li><li>使用[身份设置界面](../../identity-service/identity-graph-linking-rules/identity-settings-ui.md)指定您的唯一命名空间并为组织中的所有命名空间建立优先级。</li><li>有关图形数据的量度和趋势，请参阅[身份仪表板](../../identity-service/identity-graph-linking-rules/implementation-guide.md#validate-your-graphs)。</li></ul> 要尝试使用身份图关联规则，请联系您的Adobe客户团队以获取开发沙盒的访问权限。 |
+| 标识图链接规则的可用性有限 | 标识图链接规则是标识服务中的一套工具，您可以使用它来确保为用户提供准确的个性化。 <ul><li>您现在可以使用 [标识优化算法](../../identity-service/identity-graph-linking-rules/identity-optimization-algorithm.md) 来确保标识图代表单个人，从而防止实时客户轮廓中不必要的标识合并。</li><li>配置 [命名空间优先级](../../identity-service/identity-graph-linking-rules/namespace-priority.md) 来定义各自命名空间的重要性，并影响你的配置文件的形成和分段方式。</li><li>使用 UI 中的 [图形模拟工具](../../identity-service/identity-graph-linking-rules/graph-simulation.md) 来模拟具有不同配置的标识图。</li><li>使用 [标识设置界面](../../identity-service/identity-graph-linking-rules/identity-settings-ui.md) 以指定您唯一的命名空间，并为组织中的所有命名空间建立优先级。</li><li>请参阅 [标识仪表板](../../identity-service/identity-graph-linking-rules/implementation-guide.md#validate-your-graphs)，了解有关图表数据的量度和趋势。</li></ul> 要尝试标识图链接规则，请联系您的 Adobe 帐户团队以获取开发沙盒的访问权限。 |
 
 **文档更新**
 
@@ -158,7 +158,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 流式分段标准更新 | 从2024年9月版开始，更新了受众有资格进行流式客户细分的标准。 有关这些更改的详细信息，请参阅[流式分段资格标准更新](../../segmentation/eligibility-criteria-update.md)。 |
+| 流媒体细分标准更新 | 从 2024 年 9 月的版本开始，您的受众有资格进行流媒体细分的标准已经更新。有关这些变化的更多信息，请参阅 [流媒体分段资格标准更新](../../segmentation/eligibility-criteria-update.md)。 |
 | 统一搜索实施 | Segment Builder 中的搜索行为现在将使用统一搜索。这样，在管理和搜索可供重复用于细分成员身份的受众时，可以获得更强大的体验。有关此更改的更多信息，请阅读[区段生成器指南](../../segmentation/ui/segment-builder.md#rule-builder-canvas)。 |
 
 {style="table-layout:auto"}
@@ -176,7 +176,7 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 | 功能 | 描述 |
 | --- | --- |
 | [!BADGE Beta]{type=Informative} 支持在 UI 中导入加密数据 | 您现在可以使用 Experience Platform 用户界面中的源工作区从云存储批处理源中提取加密数据。请阅读教程 [在 UI 中提取加密数据](../../sources/tutorials/ui/encryped-ingestion.md)，了解更多信息。 |
-| [!DNL Snowflake Streaming]源的正式可用性 | [!DNL Snowflake Streaming] 源现在处于 GA。 使用此源将数据从您的[!DNL Snowflake]帐户流式传输到到 Experience Platform。请参阅 [[!DNL Snowflake Streaming] 概述](../../sources/connectors/databases/snowflake-streaming.md)，了解更多信息。 |
+| [!DNL Snowflake Streaming] 源普遍可用 | [!DNL Snowflake Streaming] 源现在处于 GA。 使用此源将数据从您的[!DNL Snowflake]帐户流式传输到到 Experience Platform。请参阅 [[!DNL Snowflake Streaming] 概述](../../sources/connectors/databases/snowflake-streaming.md)，了解更多信息。 |
 | 支持服务帐户身份验证 [!DNL Google BigQuery] | 现在您可以连接您的 [!DNL Google BigQuery] 使用服务帐户身份验证将帐户添加到 Experience Platform。有关详细信息，请参阅 [[!DNL Google BigQuery] 概述](../../sources/connectors/databases/bigquery.md#generate-your-google-bigquery-credentials)。<br> ![Experience Platform 用户界面图像突出显示了计划步骤中的编辑计划和文件夹选项。](../2024/assets/september/service_auth.png "Google BigQuery 的服务身份验证。"){width="250" align="center" zoomable="yes"} |
 | 支持跳过示例数据预览 | 现在，您可以选择在与以下源创建源连接时跳过数据预览： <ul><li>[[!DNL Google BigQuery]](../../sources/tutorials/ui/create/databases/bigquery.md#skip-preview-of-sample-data)</li><li>[[!DNL Salesforce]](../../sources/tutorials/ui/create/crm/salesforce.md#skip-preview-of-sample-data)</li><li>[[!DNL Snowflake]](../../sources/tutorials/ui/create/databases/snowflake.md#skip-preview-of-sample-data)</li></ul> 您可以跳过数据预览以避免在提取大批量数据时可能出现的超时。这样做可能会阻止计算字段和必填字段的自动验证。如果您选择跳过数据预览，那么您可能必须在映射期间手动验证计算字段和必填字段。 |
 | 支持在[!DNL SFTP]中禁用分块 | 您现在可以配置一个设置，允许您禁用 [!DNL SFTP] 来源。请参阅 [[!DNL SFTP]  概述](../../sources/connectors/cloud-storage/sftp.md)，了解更多信息。 |

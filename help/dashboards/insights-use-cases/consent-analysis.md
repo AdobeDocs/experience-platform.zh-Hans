@@ -2,7 +2,7 @@
 title: 同意分析和跟踪
 description: 了解如何构建同意分析仪表板，以跟踪用户同意随时间变化的趋势。
 exl-id: 34accae5-8b4f-4281-8333-187a91db8199
-source-git-commit: e0af1f0110ceb514a5b249c42a05bf780ea834c6
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '1909'
 ht-degree: 0%
@@ -112,13 +112,13 @@ Adobe已创建各种见解，这些见解自动在Profiles、Audiences和Destina
 
 您还可以使用用户定义的仪表板构建自己的小组件。 通过构建您自己的构件，您可以完全控制构件的类型，还可以灵活地直接在Adobe Real-Time CDP中添加过滤器等。
 
-例如，如果您希望在同一图表中显示多个同意受众的趋势，以便了解每个同意偏好设置随时间的变化。 通过用户定义的功能板，只需最少的步骤和一次性设置即可实现此类型的可视化。 首先，在左侧导航中选择&#x200B;**[!UICONTROL 功能板]**。 将显示[!UICONTROL 功能板]工作区。 然后选择&#x200B;**[!UICONTROL 创建仪表板]**。 有关如何[创建功能板和自定义小组件](../user-defined-dashboards.md)的完整说明，请参阅用户定义的功能板指南。
+例如，如果您希望在同一图表中显示多个同意受众的趋势，以便了解每个同意偏好设置随时间的变化。 通过用户定义的功能板，只需最少的步骤和一次性设置即可实现此类型的可视化。 首先，在左侧导航中选择&#x200B;**[!UICONTROL 功能板]**。 将显示[!UICONTROL 功能板]工作区。 然后选择&#x200B;**[!UICONTROL 创建仪表板]**。 有关如何[创建功能板和自定义小组件](../standard-dashboards.md)的完整说明，请参阅用户定义的功能板指南。
 
-![突出显示包含功能板和创建功能板的功能板工作区。](../images/user-defined-dashboards/create-dashboard.png)
+![突出显示包含功能板和创建功能板的功能板工作区。](../images/standard-dashboards/create-dashboard.png)
 
-当在小组件编辑器中[选择数据模型](../user-defined-dashboards.md#select-data-model)时，依次选择`CDPInsights`和&#x200B;**[!UICONTROL 下一步]**。 出现[!UICONTROL 选择表]对话框。
+当在小组件编辑器中[选择数据模型](../standard-dashboards.md#select-data-model)时，依次选择`CDPInsights`和&#x200B;**[!UICONTROL 下一步]**。 出现[!UICONTROL 选择表]对话框。
 
-![突出显示了CDPInsights模型的“选择数据模型”对话框。](../images/user-defined-dashboards/select-data-model-dialog.png)
+![突出显示了CDPInsights模型的“选择数据模型”对话框。](../images/standard-dashboards/select-data-model-dialog.png)
 
 下一个视图在左边栏中显示可用表的列表。 选择 `adwh_fact_profile_by_segment_and_namespace_trendlines`。
 
@@ -126,16 +126,16 @@ Adobe已创建各种见解，这些见解自动在Profiles、Audiences和Destina
 
 使用所选表中的数据填充构件编辑器后，请执行以下步骤：
 
-- [搜索[!UICONTROL 属性]](../user-defined-dashboards.md#add-filter-attributes)以查找`[!UICONTROL date]`，然后使用+图标从下拉菜单中将`[!UICONTROL date]`属性添加到X轴。
-  ![突出显示添加图标和下拉菜单的小组件编辑器。](../images/user-defined-dashboards/attributes-dropdown.png)
+- [搜索[!UICONTROL 属性]](../standard-dashboards.md#add-filter-attributes)以查找`[!UICONTROL date]`，然后使用+图标从下拉菜单中将`[!UICONTROL date]`属性添加到X轴。
+  ![突出显示添加图标和下拉菜单的小组件编辑器。](../images/standard-dashboards/attributes-dropdown.png)
 - 在[!UICONTROL 属性]中搜索`[!UICONTROL count_of_profiles]`，然后使用+图标将`[!UICONTROL count_of_profiles]`属性从下拉菜单添加到Y轴。
 - 选择[!UICONTROL Y轴]字段中的`...`（省略号）图标，然后从下拉菜单中选择[!UICONTROL SUM]聚合函数。
   ![小组件编辑器同意显示小组件趋势，其中数据模型、表格和Y轴下拉菜单及SUM功能突出显示。](../images/insights-use-cases/consent-analysis/y-axis-sum-function.png)
 - 选择[!UICONTROL 标记]下拉菜单，并将图表类型更改为[!UICONTROL 线]。
 - 在[!UICONTROL 属性]中搜索`[!UICONTROL segment_name]`，然后使用+图标将`segment_name`添加为下拉菜单中的[!UICONTROL 筛选器]。 将显示[!UICONTROL 筛选器：区段名称]对话框。 选择之前创建的与同意相关的受众。 对于此示例，请选择&#x200B;**[!UICONTROL 用户同意呼叫]**、**[!UICONTROL 用户同意短信]**&#x200B;和&#x200B;**[!UICONTROL 用户同意电子邮件]**，然后依次选择&#x200B;**[!UICONTROL 应用]**。
 - 在[!UICONTROL 属性]中搜索`[!UICONTROL segment_name]`，然后从下拉菜单中选择+图标以将`segment_name`添加为[!UICONTROL 颜色]。
-- 打开[[!UICONTROL 属性]面板](../user-defined-dashboards.md#widget-properties)并提供适当的[!UICONTROL 小组件标题]和[!UICONTROL 轴标签]。
-  ![突出显示属性图标和小组件标题的小组件编辑器。](../images/user-defined-dashboards/properties-panel.png)
+- 打开[[!UICONTROL 属性]面板](../standard-dashboards.md#widget-properties)并提供适当的[!UICONTROL 小组件标题]和[!UICONTROL 轴标签]。
+  ![突出显示属性图标和小组件标题的小组件编辑器。](../images/standard-dashboards/properties-panel.png)
 - 选择&#x200B;**[!UICONTROL 保存并关闭]**&#x200B;以确认您的设置。
 
 >[!TIP]

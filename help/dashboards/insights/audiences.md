@@ -2,7 +2,7 @@
 title: 受众分析
 description: 发现支持受众分析的SQL，并使用这些查询生成自定义分析，以进一步探索Adobe Experience Platform中的受众数据。
 exl-id: 99624234-c4e1-44bb-9567-505bc0c4723e
-source-git-commit: 34eb9151cc6bb8551553b0a8427e58871acb4dbb
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '1124'
 ht-degree: 3%
@@ -17,7 +17,7 @@ ht-degree: 3%
 
 有关如何直接通过PLatform UI调整分析的SQL的详细信息，请参阅[查看SQL文档](../view-sql.md)。
 
-以下分析均可用作[受众仪表板](../guides/audiences.md)或自定义[用户定义的仪表板](../user-defined-dashboards.md)的一部分。 有关如何自定义仪表板或[在构件库和[用户定义的仪表板](../user-defined-dashboards.md#create-widget)中创建和编辑新构件](../customize/custom-widgets.md)的说明，请参阅[自定义概述](../customize/overview.md)。
+以下分析均可用作[受众仪表板](../guides/audiences.md)或自定义[用户定义的仪表板](../standard-dashboards.md)的一部分。 有关如何自定义仪表板或[在构件库和[用户定义的仪表板](../standard-dashboards.md#create-widget)中创建和编辑新构件](../customize/custom-widgets.md)的说明，请参阅[自定义概述](../customize/overview.md)。
 
 以下分析均可用作[受众仪表板](../guides/audiences.md)或自定义仪表板的一部分。
 
@@ -516,7 +516,7 @@ SELECT Sum(overlap_col1) overlap_col1,
 
 有关此分析的外观和功能的信息，请参阅[身份重叠构件文档](../guides/audiences.md#identity-overlap)。
 
-## 按标识列出的配置文件 {#profiles-by-identity}
+## 按标识列出的轮廓 {#profiles-by-identity}
 
 通过此洞察回答的问题：
 

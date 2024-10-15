@@ -2,7 +2,7 @@
 title: 查看已配置的仪表板
 description: 在Experience PlatformUI中查看贵组织配置的功能板列表。
 exl-id: b1fdb1aa-2d09-4c21-9c84-be379f34a9b7
-source-git-commit: bc3db67b5b9e3bfb98571541d6e4dd2ca19b3303
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '202'
 ht-degree: 0%
@@ -27,4 +27,4 @@ ht-degree: 0%
 
 ## 创建自定义仪表板
 
-Adobe Experience Platform功能板允许您构建和管理自定义功能板，您可以在其中创建、添加和编辑定制的小部件，以可视化与您的组织相关的关键指标。 有关创建和配置自定义功能板的完整说明，请参阅[用户定义的功能板指南](./user-defined-dashboards.md)。
+Adobe Experience Platform功能板允许您构建和管理自定义功能板，您可以在其中创建、添加和编辑定制的小部件，以可视化与您的组织相关的关键指标。 有关创建和配置自定义功能板的完整说明，请参阅[用户定义的功能板指南](./standard-dashboards.md)。

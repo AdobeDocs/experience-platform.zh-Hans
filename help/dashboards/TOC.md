@@ -5,9 +5,9 @@ breadcrumb-title: 仪表板指南
 user-guide-description: 了解如何在 Experience Platform 中通过可自定义的仪表板将数据可视化。
 feature: Dashboards
 role: Developer,User
-source-git-commit: 06e319a6f7e2294a9c5daea0f41e89a09d93efd2
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
-source-wordcount: '134'
+source-wordcount: '128'
 ht-degree: 35%
 
 ---
@@ -18,21 +18,18 @@ ht-degree: 35%
 * [功能板概述](home.md)
 * [仪表板访问权限](permissions.md)
 * [功能板库存](inventory.md)
-* [仪表板](user-defined-dashboards.md)
+* [标准仪表板](standard-dashboards.md)
 * [下载功能板以PDF](download.md)
-* 数据Distiller {#data-distiller}
-   * 扩展应用程序报表{#sql-insights}的SQl分析
-      * [概述](data-distiller/sql-insights/overview.md)
-   * 查询专业模式{#query-pro-mode}
-      * [概述](data-distiller/query-pro-mode/overview.md)
-      * 筛选器{#filters}
-         * [日期过滤器](data-distiller/query-pro-mode/filters/date-filter.md)
-         * [全局筛选器](data-distiller/query-pro-mode/filters/global-filter.md)
-      * [穿透钻取](data-distiller/query-pro-mode/drill-through.md)
-      * [查看更多信息](data-distiller/query-pro-mode/view-more.md)
-      * [查看 SQL](data-distiller/query-pro-mode/view-sql.md)
-      * [下载为CSV格式](data-distiller/query-pro-mode/download-csv.md)
-      * [导出为PDF](data-distiller/query-pro-mode/export-pdf.md)
+* SQL分析：查询专业模式{#sql-insights-query-pro-mode}
+   * [概述](sql-insights-query-pro-mode/overview.md)
+   * 筛选器{#filters}
+      * [日期过滤器](sql-insights-query-pro-mode/filters/date-filter.md)
+      * [全局筛选器](sql-insights-query-pro-mode/filters/global-filter.md)
+   * [穿透钻取](sql-insights-query-pro-mode/drill-through.md)
+   * [查看更多信息](sql-insights-query-pro-mode/view-more.md)
+   * [查看 SQL](sql-insights-query-pro-mode/view-sql.md)
+   * [下载为CSV格式](sql-insights-query-pro-mode/download-csv.md)
+   * [导出为PDF](sql-insights-query-pro-mode/export-pdf.md)
 * 可用仪表板{#guides}
    * [配置文件](guides/profiles.md)
    * [帐户轮廓](guides/account-profiles.md)

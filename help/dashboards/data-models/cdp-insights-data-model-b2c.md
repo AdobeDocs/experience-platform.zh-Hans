@@ -4,7 +4,7 @@ description: 了解如何将SQL查询与Real-time Customer Data Platform分析�
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 61bc7f23-9f79-4c75-a515-85dd9dda2d02
-source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '1155'
 ht-degree: 0%
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## 先决条件
 
-本指南要求您对[用户定义的仪表板功能](../user-defined-dashboards.md)有一定的了解。 在继续阅读本指南之前，请先阅读文档。
+本指南要求您对[用户定义的仪表板功能](../standard-dashboards.md)有一定的了解。 在继续阅读本指南之前，请先阅读文档。
 
 ## Real-Time CDP分析报告和用例
 

@@ -2,7 +2,7 @@
 title: SQL分析
 description: 了解用例、基本功能和使用Data Distiller开发SQL分析功能板的所需步骤。 了解Data Distiller中的SQL分析功能如何增强透明度并获得不同维度（如用户档案、受众、营销活动、历程、权利和同意）的操作分析。
 exl-id: f807d0fd-c8ec-42d4-96a0-5ffc5681943b
-source-git-commit: 4e78a7983fba492ded866a8f1fc6f98e20510b2b
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '941'
 ht-degree: 0%
@@ -13,13 +13,13 @@ ht-degree: 0%
 
 使用Data Distiller的SQL Insights创建定制的报表数据模型以提取更深入的见解、优化策略和调整分析以满足特定业务需求。 使用SQL分析功能可跨配置文件、受众、营销活动、历程、权利和同意等维度增强透明度并从Adobe Experience Platform数据中获得运营分析。 此功能提供了多功能、自适应解决方案，可定制贵组织的报表数据模型以符合您的特定业务需求。
 
-要[可视化您的SQL分析](../../../dashboards/data-distiller/sql-insights/overview.md)，您可以使用[query pro mode](../../../dashboards/data-distiller/query-pro-mode/overview.md)通过自定义SQL查询进行复杂分析，并将您的数据转换为易于理解的图表。 使用Query Pro模式在功能板上创建定制的分析见解和可视化图表，并将您的分析下载为CSV文件以满足技术和非技术受众的需求。
+要[可视化您的SQL分析](../../../dashboards/sql-insights-query-pro-mode/overview.md)，您可以使用[query pro mode](../../../dashboards/sql-insights-query-pro-mode/overview.md)通过自定义SQL查询进行复杂分析，并将您的数据转换为易于理解的图表。 使用Query Pro模式在功能板上创建定制的分析见解和可视化图表，并将您的分析下载为CSV文件以满足技术和非技术受众的需求。
 
 本文档介绍了使用数据Distiller开发SQL分析功能板的用例、基本功能和所需步骤。
 
 ## 先决条件
 
-本教程使用用户定义的功能板在Platform UI中可视化自定义数据模型中的数据。 有关此功能的更多信息，请参阅[用户定义的功能板文档](../../../dashboards/user-defined-dashboards.md)。
+本教程使用用户定义的功能板在Platform UI中可视化自定义数据模型中的数据。 有关此功能的更多信息，请参阅[用户定义的功能板文档](../../../dashboards/standard-dashboards.md)。
 
 ## 快速入门
 
@@ -72,7 +72,7 @@ ht-degree: 0%
 1. **临时查询探索：**&#x200B;首先执行临时`SELECT`查询以探索数据湖上的原始数据。 这允许对实验进行实时、探索性的数据分析，并且验证查询结果未存储在数据湖中的数据。
 1. **批处理查询利用率：**&#x200B;使用批处理查询[创建计划作业](../../api/scheduled-queries.md#create-a-new-scheduled-query)以生成分析汇总表，从而确保采用系统化和自动化的方法来处理数据。 批处理查询执行`INSERT TABLE AS SELECT`和`CREATE TABLE AS SELECT`查询以清理、形状、操作和扩充数据。 这些查询的结果存储在数据湖中。
 1. **聚合分析加载：**&#x200B;将生成的聚合分析加载到加速存储中，并使用SQL测试查询，并确保数据检索的准确性和效率。 要了解如何[对加速存储](../../api/accelerated-queries.md)进行无状态查询，请参阅文档。
-1. **访问和集成：**&#x200B;通过与Adobe Experience Platform [用户定义仪表板](../../../dashboards/user-defined-dashboards.md)或其他首选Business Intelligence(BI)工具集成，无缝访问存储在加速存储中的见解。 这些与第三方客户端的集成为用户提供了有凝聚力的直观体验。
+1. **访问和集成：**&#x200B;通过与Adobe Experience Platform [用户定义仪表板](../../../dashboards/standard-dashboards.md)或其他首选Business Intelligence(BI)工具集成，无缝访问存储在加速存储中的见解。 这些与第三方客户端的集成为用户提供了有凝聚力的直观体验。
 
 ![说明数据Distiller中SQL Insights四个步骤的信息图表。](../../images/data-distiller/sql-insights/steps-to-customizable-insights.png)
 

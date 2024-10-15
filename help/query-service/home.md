@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 查询服务概述
 description: 了解查询服务在Experience Platform中的角色。
 exl-id: fdaefc12-a97d-4e4e-9aed-d3dbd0f43ea0
-source-git-commit: e0af1f0110ceb514a5b249c42a05bf780ea834c6
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '860'
 ht-degree: 0%
@@ -54,7 +54,7 @@ Adobe Experience Platform [!DNL Data Science Workspace]使用机器学习和人�
 
 ## 使用自定义仪表板生成见解 {#custom-dashboards}
 
-借助Adobe Experience Platform，您可以摄取、存储、构造和提取所有存储的数据集，包括行为、CRM和销售点数据。 使用[!DNL Experience Platform's Query Service]，您可以查询这些数据集并回答有关业务的特定问题，然后开始生成有影响力的见解。 了解如何构建和管理自定义仪表板，以便在其中创建、添加和编辑定制的小组件通过[用户定义的仪表板](../dashboards/user-defined-dashboards.md)可视化关键量度。 您甚至还可以将SQL查询与Real-Time CDP分析数据模型结合使用，为营销和KPI用例[自定义您自己的Real-time Customer Data Platform报表](../dashboards/data-models/cdp-insights-data-model-b2c.md)。
+借助Adobe Experience Platform，您可以摄取、存储、构造和提取所有存储的数据集，包括行为、CRM和销售点数据。 使用[!DNL Experience Platform's Query Service]，您可以查询这些数据集并回答有关业务的特定问题，然后开始生成有影响力的见解。 了解如何构建和管理自定义仪表板，以便在其中创建、添加和编辑定制的小组件通过[用户定义的仪表板](../dashboards/standard-dashboards.md)可视化关键量度。 您甚至还可以将SQL查询与Real-Time CDP分析数据模型结合使用，为营销和KPI用例[自定义您自己的Real-time Customer Data Platform报表](../dashboards/data-models/cdp-insights-data-model-b2c.md)。
 
 ## 后续步骤和其他资源
 

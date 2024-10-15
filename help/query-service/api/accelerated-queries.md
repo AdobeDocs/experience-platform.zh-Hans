@@ -3,7 +3,7 @@ title: 加速查询端点
 description: 了解如何以无状态方式访问查询加速存储区，以根据聚合数据快速返回结果。 本文档提供了查询服务加速查询端点的示例HTTP请求和响应。
 role: Developer
 exl-id: 29ea4d25-9c46-4b29-a6d7-45ac33dcb0fb
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '560'
 ht-degree: 1%
@@ -12,7 +12,7 @@ ht-degree: 1%
 
 # 加速查询端点
 
-作为Data Distiller SKU的一部分，[查询服务API](https://developer.adobe.com/experience-platform-apis/references/query-service/)允许您对加速存储进行无状态查询。 返回的结果基于聚合的数据。 减少结果的延迟有助于进行更具互动性的信息交换。 加速查询API还用于增强[用户定义的仪表板](../../dashboards/user-defined-dashboards.md)。
+作为Data Distiller SKU的一部分，[查询服务API](https://developer.adobe.com/experience-platform-apis/references/query-service/)允许您对加速存储进行无状态查询。 返回的结果基于聚合的数据。 减少结果的延迟有助于进行更具互动性的信息交换。 加速查询API还用于增强[用户定义的仪表板](../../dashboards/standard-dashboards.md)。
 
 在继续本指南之前，请确保您已阅读并理解[查询服务API指南](./getting-started.md)，以便成功使用查询服务API。
 

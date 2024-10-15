@@ -2,7 +2,7 @@
 title: 配置文件分析
 description: 发现支持您的配置文件分析的SQL，并使用这些查询生成自定义分析，从而进一步探索您的客户及其消费者体验。
 exl-id: f3792076-3e01-4e26-8788-32927202a2e5
-source-git-commit: 34eb9151cc6bb8551553b0a8427e58871acb4dbb
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '1661'
 ht-degree: 3%
@@ -17,7 +17,7 @@ ht-degree: 3%
 
 有关如何直接通过Platform UI调整您的分析的SQL的详细信息，请参阅[查看SQL文档](../view-sql.md)。
 
-以下分析均可用作[用户档案仪表板](../guides/profiles.md)或自定义[用户定义仪表板](../user-defined-dashboards.md)的一部分。 有关如何自定义仪表板或[在构件库和[用户定义的仪表板](../user-defined-dashboards.md#create-widget)中创建和编辑新构件](../customize/custom-widgets.md)的说明，请参阅[自定义概述](../customize/overview.md)。
+以下分析均可用作[用户档案仪表板](../guides/profiles.md)或自定义[用户定义仪表板](../standard-dashboards.md)的一部分。 有关如何自定义仪表板或[在构件库和[用户定义的仪表板](../standard-dashboards.md#create-widget)中创建和编辑新构件](../customize/custom-widgets.md)的说明，请参阅[自定义概述](../customize/overview.md)。
 
 ## 按合并策略列出的受众重叠 {#audience-overlap-by-merge-policy}
 
@@ -461,7 +461,7 @@ SELECT Sum(overlap_col1) overlap_col1,
 
 有关此分析的外观和功能的信息，请参阅[身份重叠构件文档](../guides/profiles.md#identity-overlap)。
 
-## 配置文件计数 {#profile-count}
+## 轮廓计数 {#profile-count}
 
 通过此洞察回答的问题：
 
@@ -485,7 +485,7 @@ SELECT qsaccel.profile_agg.adwh_dim_merge_policies.merge_policy_name,
 
 有关此分析的外观和功能的信息，请参阅[配置文件计数构件文档](../guides/profiles.md#profile-count)。
 
-## 配置文件计数变化 {#profile-count-change}
+## 轮廓计数变化 {#profile-count-change}
 
 通过此洞察回答的问题：
 
@@ -595,7 +595,7 @@ SELECT date_key,
 
 有关此分析的外观和功能的信息，请参阅[配置文件计数趋势构件文档](../guides/profiles.md#profile-count-trend)。
 
-## 按标识列出的配置文件 {#profiles-by-identity}
+## 按标识列出的轮廓 {#profiles-by-identity}
 
 通过此洞察回答的问题：
 
@@ -624,7 +624,7 @@ SELECT qsaccel.profile_agg.adwh_dim_namespaces.namespace_description,
 
 有关此分析的外观和功能的信息，请参阅[按身份构件列出的配置文件文档](../guides/profiles.md#profiles-by-identity)。
 
-## 配置文件计数变化趋势 {#profiles-count-change-trend}
+## 轮廓计数变化趋势 {#profiles-count-change-trend}
 
 通过此洞察回答的问题：
 
@@ -699,7 +699,7 @@ SELECT date_key,
 
 有关此分析的外观和功能的信息，请参阅[按身份构件列出的配置文件计数变化趋势](../guides/profiles.md#profiles-count-change-trend-by-identity)。
 
-## 单一标识配置文件 {#single-identity-profiles}
+## 单一标识轮廓 {#single-identity-profiles}
 
 通过此洞察回答的问题：
 
@@ -751,7 +751,7 @@ SELECT qsaccel.profile_agg.adwh_dim_namespaces.namespace_description,
 
 有关此分析的外观和功能的信息，请参阅[按身份构件列出的单一身份配置文件](../guides/profiles.md#single-identity-profiles-by-identity)。
 
-## 未分段的配置文件 {#unsegmented-profiles}
+## 未分段的轮廓 {#unsegmented-profiles}
 
 通过此洞察回答的问题：
 
