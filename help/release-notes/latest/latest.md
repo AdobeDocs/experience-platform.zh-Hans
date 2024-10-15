@@ -2,7 +2,7 @@
 title: Adobe Experience Platform 发行说明（2024 年 9 月）
 description: Adobe Experience Platform 2024 年 9 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 33d1305aef7c763e7b0bd8c6db6a1a9417cc2a9d
+source-git-commit: eac613434f631cab567ab3fa6e30d33acac79d2f
 workflow-type: ht
 source-wordcount: '2199'
 ht-degree: 100%
@@ -51,9 +51,9 @@ Experience Platform 提供了多个仪表板，您可以通过这些仪表板查
 | 功能 | 描述 |
 | --- | --- |
 | 许可证使用附加组件表 | 使用核心产品和附加组件的专用表来详细了解许可证使用情况并管理平台资源。通过沙盒级别的深入视图来跟踪和分析每个核心产品的关键量度。附加量度与核心产品量度无缝集成，提供了全面的使用情况视图。增强的可见性可帮助您优化许可证管理并使资源与组织需求保持一致。有关更多详细信息，请参阅 [[!UICONTROL 许可证使用情况] 仪表板指南](../../dashboards/guides/license-usage.md#overview-tab) 。 |
-| Query Pro Mode - 全局过滤器升级 | 使用 Query Pro Mode 的新日期过滤器增强分析。使用 SQL 查询中的动态日期参数来细化洞察，并按特定时间范围过滤数据。通过直观的用户界面选择预设或自定义日期范围，确保仪表板与所有用户的相关性。简化工作流程、保持精确度并及时做出决策。请阅读 [创建日期过滤器的指南](../../dashboards/data-distiller/query-pro-mode/filters/global-filter.md)，了解更多信息。 |
-| Query Pro Mode - 深入钻取 | 使用 Query Pro Mode 的深入探究功能解锁更深入的洞察，并无缝地从高级图表导航到详细的仪表板。使用此功能可以轻松地从摘要转向深入分析，并探索趋势、客户行为和 KPI。自动过滤器传递和多级钻取保持数据一致，确保顺利探索。简化工作流程、保留背景并加快决策。请阅读 [有关创建钻取的分步指南](../../dashboards/data-distiller/query-pro-mode/drill-through.md) 以了解更多信息。 |
-| Query Pro Mode - 高级表属性 | 使用 Query Pro Mode 高级表属性来简化数据可视化、增强工作流效率并提高数据清晰度。直接从自定义仪表板向表格添加自动排序、调整大小和分页功能。对列进行排序以确定关键数据的优先级、调整大小以获得最佳可读性，并无缝浏览大型数据集而无需修改 SQL 查询。请阅读“[查看更多](../../dashboards/data-distiller/query-pro-mode/view-more.md)”指南，了解如何集成这些功能并提升您的数据洞察力。 |
+| Query Pro Mode - 全局过滤器升级 | 使用 Query Pro Mode 的新日期过滤器增强分析。使用 SQL 查询中的动态日期参数来细化洞察，并按特定时间范围过滤数据。通过直观的用户界面选择预设或自定义日期范围，确保仪表板与所有用户的相关性。简化工作流程、保持精确度并及时做出决策。请阅读 [创建日期过滤器的指南](../../dashboards/sql-insights-query-pro-mode/filters/global-filter.md)，了解更多信息。 |
+| Query Pro Mode - 深入钻取 | 使用 Query Pro Mode 的深入探究功能解锁更深入的洞察，并无缝地从高级图表导航到详细的仪表板。使用此功能可以轻松地从摘要转向深入分析，并探索趋势、客户行为和 KPI。自动过滤器传递和多级钻取保持数据一致，确保顺利探索。简化工作流程、保留背景并加快决策。请阅读 [有关创建钻取的分步指南](../../dashboards/sql-insights-query-pro-mode/drill-through.md) 以了解更多信息。 |
+| Query Pro Mode - 高级表属性 | 使用 Query Pro Mode 高级表属性来简化数据可视化、增强工作流效率并提高数据清晰度。直接从自定义仪表板向表格添加自动排序、调整大小和分页功能。对列进行排序以确定关键数据的优先级、调整大小以获得最佳可读性，并无缝浏览大型数据集而无需修改 SQL 查询。请阅读“[查看更多](../../dashboards/sql-insights-query-pro-mode/view-more.md)”指南，了解如何集成这些功能并提升您的数据洞察力。 |
 | 总数据量 | “平均轮廓丰富度”量度已被“总数据量”量度取代。”总数据量“是指可与实时客户轮廓一起用于参与和个性化工作流程的可用数据总量。关于此变化的更多细节可以在 [总数据量指南中](../../landing/license-usage-and-guardrails/total-data-volume.md)找到。 |
 
 {style="table-layout:auto"}
