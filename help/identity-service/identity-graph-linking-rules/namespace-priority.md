@@ -2,7 +2,7 @@
 title: 命名空间优先级
 description: 了解Identity Service中的命名空间优先级。
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: cfe0181104f09bfd91b22d165c23154a15cd5344
+source-git-commit: aae82bc84eff7584098ddb35a481d7349ff837c4
 workflow-type: tm+mt
 source-wordcount: '1605'
 ht-degree: 2%
@@ -185,4 +185,4 @@ ht-degree: 2%
 
 ### Adobe Target
 
-您只能向Adobe Target激活批量分段和流式分段。
+Adobe Target可能会导致针对共享设备场景的意外用户定位。
