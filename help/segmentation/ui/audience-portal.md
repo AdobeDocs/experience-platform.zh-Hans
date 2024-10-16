@@ -2,9 +2,9 @@
 title: 受众门户概述
 description: 了解如何使用Audience Portal在Adobe Experience Platform中查看、管理和创建受众。
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: 919e5c183296e3fbf1fc385c2a9c34dc36349660
+source-git-commit: f74e91ba1fe2be58e1e933fa81f590566f02fff7
 workflow-type: tm+mt
-source-wordcount: '4298'
+source-wordcount: '4320'
 ht-degree: 3%
 
 ---
@@ -286,6 +286,10 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 ### 摄取详细信息 {#ingestion-details}
 
 对于源为&#x200B;**[!UICONTROL 自定义上传]**&#x200B;的受众，**[!UICONTROL 摄取详细信息]**&#x200B;部分既显示配置文件总数，也显示外部生成的受众被摄取到的数据集的详细信息。
+
+>[!NOTE]
+>
+>导出作业后，最多可能需要30分钟才能完全更新受众的个人资料计数。
 
 ![将显示受众详细信息页面的摄取详细信息部分。](../images/ui/audience-portal/audience-details-ingestion-details.png)
 
