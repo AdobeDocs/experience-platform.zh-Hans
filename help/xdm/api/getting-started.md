@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 架构注册表API快速入门
 description: 本文档介绍了在尝试调用Schema Registry API之前需要了解的核心概念。
 exl-id: 7daebb7d-72d2-4967-b4f7-1886736db69f
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: eb1cf204e95591082b27dc97cd3c709a23b20b08
 workflow-type: tm+mt
-source-wordcount: '1345'
+source-wordcount: '1361'
 ht-degree: 5%
 
 ---
@@ -254,6 +254,7 @@ XDM资源使用URI形式的`$id`属性进行标识，如以下示例：
 * 字段对象的名称可以包含字母数字、短划线或下划线字符，但&#x200B;**不能**&#x200B;以下划线开头。
    * **正确：** `fieldName`，`field_name2`，`Field-Name`，`field-name_3`
    * **不正确：** `_fieldName`
+* 字段名称不区分大小写，并且在架构中的同一级别必须具有不同的名称。
 * 字段对象的名称首选camelCase。 示例：`fieldName`
 * 该字段应包含一个`title`，用大写字母写。 示例：`Field Name`
 * 该字段需要`type`。
