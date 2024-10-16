@@ -2,9 +2,9 @@
 title: 受众门户概述
 description: 了解如何使用Audience Portal在Adobe Experience Platform中查看、管理和创建受众。
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: b59f5ffeb8af6f3bab7ed79189219f39533d2f1b
+source-git-commit: 919e5c183296e3fbf1fc385c2a9c34dc36349660
 workflow-type: tm+mt
-source-wordcount: '4250'
+source-wordcount: '4298'
 ht-degree: 3%
 
 ---
@@ -209,6 +209,11 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 ![浏览受众页面上会显示并突出显示可用的筛选器。](../images/ui/audience-portal/filter-audiences.png)
 
 #### 批量操作 {#bulk-actions}
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_browse_flexibleaudienceevaluation"
+>title="灵活的受众评估限制"
+>abstract="在单个灵活的受众评估运行中，您最多可以评估20个受众。<br/><br/>此外，当评估作业尽快运行时，可能会出现系统延迟，因为按需评估<b>无法</b>与另一个按需评估或批处理评估同时运行。"
 
 此外，您最多可以选择25个不同的受众，并对这些受众执行各种操作。 这些操作包括[移动到文件夹](#folders)、[编辑或应用标记](#tags)、[应用访问标签](../../access-control/abac/ui/labels.md)和[删除](#browse)。
 
