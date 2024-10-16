@@ -3,9 +3,9 @@ keywords: Experience Platform；故障诊断；护栏；指南；
 title: 数据引入的护栏
 description: 了解Adobe Experience Platform中的数据摄取防护。
 exl-id: f07751cb-f9d3-49ab-bda6-8e6fec59c337
-source-git-commit: 9c3f7f522ce6451e1d312a0221cc34287d3e8ae3
+source-git-commit: b8f64793b7f869e50c33ead3a5f02f3a8af51ff4
 workflow-type: tm+mt
-source-wordcount: '737'
+source-wordcount: '810'
 ht-degree: 0%
 
 ---
@@ -35,6 +35,7 @@ ht-degree: 0%
 | 将批量摄取到配置文件 | <ul><li>记录类的最大大小为100 KB (hard)。</li><li>ExperienceEvent类的最大大小为10 KB (hard)。</li></ul> | |
 | 每天摄取的配置文件或ExperienceEvent批次数 | **每天摄取的Profile或ExperienceEvent批次的最大数量为90。**&#x200B;这意味着每天摄取的Profile和ExperienceEvent批次总数不能超过90。 摄取其他批次将影响系统性能。 | 这是一个软限制。 可以超出软限制，但是，软限制提供了系统性能推荐准则。 |
 | 加密的数据摄取 | 单个加密文件的最大支持大小为1 GB。 例如，虽然您可以在单个数据流运行中摄取2 GB或更多GB的数据，但数据流运行中的任何单个文件都不能超过1 GB。 | 摄取加密数据的过程可能需要比常规数据摄取更长的时间。 有关详细信息，请阅读[加密数据摄取API指南](../sources/tutorials/api/encrypt-data.md)。 |
+| 更新插入批次摄取 | 摄取upsert批次的速度最多可为常规批次的10倍，因此，您应&#x200B;**将您的upsert批次保留在200万条记录以下**，以确保高效的运行时并避免阻止在沙盒中处理其他批次。 | 虽然您毫无疑问可以摄取超过200万条记录的批次，但摄取时间会由于小沙盒的限制而显着延长。 |
 
 {style="table-layout:auto"}
 
