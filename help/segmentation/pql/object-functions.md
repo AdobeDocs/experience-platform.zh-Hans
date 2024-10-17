@@ -3,10 +3,10 @@ solution: Experience Platform
 title: PQL对象函数
 description: Profile Query Language (PQL)提供了一些函数，可简化与对象的交互。
 exl-id: e65257d8-5bc8-46c8-8487-33bc7ce4059b
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: c4d034a102c33fda81ff27bee73a8167e9896e62
 workflow-type: tm+mt
-source-wordcount: '121'
-ht-degree: 9%
+source-wordcount: '127'
+ht-degree: 8%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 9%
 
 ## 为空
 
-`isNull`函数确定对象引用是否不存在。
+`isNull`函数确定是否不存在作为布尔值的对象引用。
 
 **格式**
 
@@ -34,7 +34,7 @@ person.homeAddress.isNull()
 
 ## 不为空
 
-`isNotNull`函数确定是否存在对象引用。
+`isNotNull`函数确定对象引用是否作为布尔值存在。
 
 **格式**
 

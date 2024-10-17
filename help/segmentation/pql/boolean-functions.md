@@ -3,9 +3,9 @@ solution: Experience Platform
 title: PQL布尔函数
 description: 布尔函数用于对Profile Query Language (PQL)中的不同元素执行布尔逻辑。
 exl-id: 68a4a8cc-88ad-41b1-b9fc-c2b4ab7d0122
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: c4d034a102c33fda81ff27bee73a8167e9896e62
 workflow-type: tm+mt
-source-wordcount: '239'
+source-wordcount: '248'
 ht-degree: 4%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 4%
 
 ## 和
 
-`and`函数用于创建逻辑连接。
+`and`函数用于将逻辑连接创建为布尔值。
 
 **格式**
 
@@ -34,7 +34,7 @@ homeAddress.countryISO = "CA" and person.birthYear = 1985
 
 ## 或
 
-`or`函数用于创建逻辑分离。
+`or`函数用于将逻辑分离创建为布尔值。
 
 **格式**
 
@@ -71,7 +71,7 @@ not (homeAddress.countryISO = "CA")
 
 ## 如果
 
-`if`函数用于解析表达式，具体取决于指定的条件是否为true。
+`if`函数用于解析表达式，具体取决于指定的条件是否为布尔值。
 
 **格式**
 

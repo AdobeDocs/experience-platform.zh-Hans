@@ -3,10 +3,10 @@ solution: Experience Platform
 title: PQL Map函数
 description: Profile Query Language (PQL)提供了一些功能，可简化与地图的交互。
 exl-id: f23616f2-c0dd-40ce-8cfc-c757542fbd05
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: c4d034a102c33fda81ff27bee73a8167e9896e62
 workflow-type: tm+mt
-source-wordcount: '156'
-ht-degree: 6%
+source-wordcount: '169'
+ht-degree: 5%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 6%
 
 ## Get
 
-`get`函数用于检索给定键的映射值。
+`get`函数用于将给定键的映射值作为对象进行检索。
 
 **格式**
 
@@ -34,7 +34,7 @@ identityMap.get("example@example.com")
 
 ## 键
 
-`keys`函数用于检索给定映射的所有键。
+`keys`函数用于将给定映射的所有键检索为数组或列表。
 
 **格式**
 
@@ -52,7 +52,7 @@ identityMap.keys()
 
 ## 值
 
-`values`函数用于检索给定映射的所有值。
+`values`函数用于将给定映射的所有值检索为数组或列表。
 
 **格式**
 

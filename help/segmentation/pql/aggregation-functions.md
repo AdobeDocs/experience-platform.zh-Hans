@@ -3,10 +3,10 @@ solution: Experience Platform
 title: PQL聚合函数
 description: 聚合函数用于将Profile Query Language (PQL)数组中的多个值组合在一起，形成一个汇总值。
 exl-id: 6c0c0f6d-98c5-4b5d-b440-3e5e18c0f34b
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: c4d034a102c33fda81ff27bee73a8167e9896e62
 workflow-type: tm+mt
-source-wordcount: '227'
-ht-degree: 6%
+source-wordcount: '242'
+ht-degree: 5%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 6%
 
 ## 计数
 
-`count`函数返回给定数组中的元素数。
+`count`函数将给定数组中的元素数作为数字返回。
 
 **格式**
 
@@ -34,7 +34,7 @@ orders.count()
 
 ## Sum
 
-`sum`函数返回数组中所有选定值的总和。
+`sum`函数以数字形式返回数组中所有选定值的总和。
 
 **格式**
 
@@ -52,7 +52,7 @@ orders.sum(order.price)
 
 ## 平均
 
-`average`函数返回数组中所有选定值的算术平均值。
+`average`函数以数字形式返回数组中所有选定值的算术平均值。
 
 **格式**
 
@@ -70,7 +70,7 @@ orders.average(order.price)
 
 ## Minimum
 
-`min`函数返回数组中所有选定值中的最小值。
+`min`函数以数字形式返回数组中所有选定值中的最小值。
 
 **格式**
 
@@ -88,7 +88,7 @@ orders.min(order.price)
 
 ## Maximum
 
-`max`函数返回数组中所有选定值中的最大值。
+`max`函数以数字形式返回数组中所有选定值中的最大值。
 
 **格式**
 

@@ -3,9 +3,9 @@ solution: Experience Platform
 title: PQL字符串函数
 description: Profile Query Language (PQL)提供了一些函数，可简化与字符串的交互。
 exl-id: 9fd79d86-0802-4312-abce-f6ef5ba5bb34
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: c4d034a102c33fda81ff27bee73a8167e9896e62
 workflow-type: tm+mt
-source-wordcount: '815'
+source-wordcount: '848'
 ht-degree: 5%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 5%
 
 ## 喜欢
 
-`like`函数用于确定一个字符串是否与指定的模式匹配。
+`like`函数用于确定一个字符串是否与作为布尔值的指定模式匹配。
 
 **格式**
 
@@ -39,7 +39,7 @@ city like "%es%"
 
 ## 开始于
 
-`startsWith`函数用于确定一个字符串是否以指定的子字符串开头。
+`startsWith`函数用于确定一个字符串是否以指定的子字符串作为布尔值开头。
 
 **格式**
 
@@ -63,7 +63,7 @@ person.name.startsWith("Joe")
 
 ## Does not start with
 
-`doesNotStartWith`函数用于确定一个字符串是否不以指定的子字符串开头。
+`doesNotStartWith`函数用于确定一个字符串是否不以指定的子字符串作为布尔值开头。
 
 **格式**
 
@@ -87,7 +87,7 @@ person.name.doesNotStartWith("Joe")
 
 ## 结束于
 
-`endsWith`函数用于确定一个字符串是否以指定的子字符串结尾。
+`endsWith`函数用于确定一个字符串是否以指定的子字符串作为布尔值结尾。
 
 **格式**
 
@@ -111,7 +111,7 @@ person.emailAddress.endsWith(".com")
 
 ## Does not end with
 
-`doesNotEndWith`函数用于确定一个字符串是否不以指定的子字符串结尾。
+`doesNotEndWith`函数用于确定一个字符串是否不以指定的子字符串作为布尔值结尾。
 
 **格式**
 
@@ -135,7 +135,7 @@ person.emailAddress.doesNotEndWith(".com")
 
 ## Contains
 
-`contains`函数用于确定一个字符串是否包含指定的子字符串。
+`contains`函数用于确定一个字符串是否包含作为布尔值的指定子字符串。
 
 **格式**
 
@@ -159,7 +159,7 @@ person.emailAddress.contains("2010@gm")
 
 ## 不包含
 
-`doesNotContain`函数用于确定一个字符串是否不包含指定的子字符串。
+`doesNotContain`函数用于确定一个字符串是否不包含作为布尔值的指定子字符串。
 
 **格式**
 
@@ -183,7 +183,7 @@ person.emailAddress.doesNotContain("2010@gm")
 
 ## 等于
 
-`equals`函数用于确定一个字符串是否等于指定的字符串。
+`equals`函数用于确定一个字符串是否等于作为布尔值的指定字符串。
 
 **格式**
 
@@ -206,7 +206,7 @@ person.name.equals("John")
 
 ## 不等于
 
-`notEqualTo`函数用于确定一个字符串是否不等于指定的字符串。
+`notEqualTo`函数用于确定一个字符串是否不等于作为布尔值的指定字符串。
 
 **格式**
 
@@ -229,7 +229,7 @@ person.name.notEqualTo("John")
 
 ## Matches
 
-`matches`函数用于确定一个字符串是否与特定的正则表达式匹配。 有关正则表达式中匹配模式的详细信息，请参阅[本文档](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)。
+`matches`函数用于确定一个字符串是否与特定的正则表达式匹配。 请参阅[本文档](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)，了解有关正则表达式中匹配模式作为布尔值的详细信息。
 
 **格式**
 
@@ -251,7 +251,7 @@ person.name.matches("(?i)^John")
 
 ## 正则表达式组
 
-`regexGroup`函数用于根据提供的正则表达式提取特定信息。
+`regexGroup`函数用于根据作为字符串提供的正则表达式提取特定信息。
 
 **格式**
 

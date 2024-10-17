@@ -3,9 +3,9 @@ solution: Experience Platform
 title: PQL日期和时间函数
 description: 日期和时间函数用于对Profile Query Language (PQL)中的值执行日期和时间操作。
 exl-id: 8cbffcb6-1c25-454f-8f02-eca602318e5e
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: c4d034a102c33fda81ff27bee73a8167e9896e62
 workflow-type: tm+mt
-source-wordcount: '493'
+source-wordcount: '496'
 ht-degree: 2%
 
 ---
@@ -124,7 +124,7 @@ product.sale.getDayOfMonth() <= 15
 
 ## 发生
 
-`occurs`函数将给定时间戳函数与固定时间段进行比较。
+`occurs`函数将给定时间戳函数与固定时间段作为布尔值进行比较。
 
 **格式**
 

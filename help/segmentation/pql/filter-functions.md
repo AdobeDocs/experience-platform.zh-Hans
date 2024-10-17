@@ -3,9 +3,9 @@ solution: Experience Platform
 title: PQL筛选器函数
 description: 筛选器函数用于筛选Profile Query Language (PQL)中数组内的数据。
 exl-id: 09d66be3-30dc-4488-84a1-cfd09c44470d
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: 7c282594e66c8c7700471a94947448fd91596814
 workflow-type: tm+mt
-source-wordcount: '203'
+source-wordcount: '211'
 ht-degree: 2%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 ## 筛选条件
 
-`[]` （过滤器）函数允许将过滤器应用于数组，并返回与指定条件匹配的数组子集。
+`[]` （过滤器）函数允许将过滤器应用于数组，并返回与指定条件匹配的数组子集。 因此，此函数返回一个数组。
 
 **格式**
 

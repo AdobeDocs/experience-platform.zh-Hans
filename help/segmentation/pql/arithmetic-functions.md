@@ -3,10 +3,10 @@ solution: Experience Platform
 title: PAL算术函数
 description: 算术函数用于对Profile Query Language (PQL)中的值执行基本计算。
 exl-id: 3540ef7c-dbe4-4302-a414-3cf85618f870
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: c4d034a102c33fda81ff27bee73a8167e9896e62
 workflow-type: tm+mt
-source-wordcount: '243'
-ht-degree: 4%
+source-wordcount: '258'
+ht-degree: 3%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 4%
 
 ## Add
 
-`+` （相加）函数用于求两个参数表达式的总和。
+`+` （相加）函数用于将两个参数表达式求和为数字。
 
 **格式**
 
@@ -34,7 +34,7 @@ product1.price + product2.price
 
 ## 乘
 
-`*` （乘法）函数用于查找两个参数表达式的乘积。
+`*` （乘法）函数用于将两个参数表达式的乘积作为数字。
 
 **格式**
 
@@ -52,7 +52,7 @@ product.inventory * product.price
 
 ## 减
 
-`-` （减法）函数用于找出两个参数表达式的差异。
+`-`（减法）函数用于将两个参数表达式作为数字求差。
 
 **格式**
 
@@ -70,7 +70,7 @@ product1.price - product2.price
 
 ## 除
 
-`/` （除）函数用于查找两个参数表达式的商。
+`/` （除法）函数用于将两个参数表达式的商作为数字进行查找。
 
 **格式**
 
@@ -88,7 +88,7 @@ totalProduct.price / totalProduct.sold
 
 ## 余数
 
-`%` （模/余数）函数用于求两个参数表达式相除后的余数。
+`%` （模/余数）函数用于将两个参数表达式除以一个数字后求余数。
 
 **格式**
 

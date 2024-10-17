@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 数组、列表和设置PQL函数
 description: Profile Query Language (PQL)提供了一些功能，可简化与数组、列表和字符串的交互。
 exl-id: 5ff2b066-8857-4cde-9932-c8bf09e273d3
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: c4d034a102c33fda81ff27bee73a8167e9896e62
 workflow-type: tm+mt
-source-wordcount: '753'
+source-wordcount: '820'
 ht-degree: 4%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 4%
 
 ## In
 
-`in`函数用于确定一个项是数组还是列表的成员。
+`in`函数用于确定一个项是数组的成员，还是作为布尔值列表的成员。
 
 **格式**
 
@@ -34,7 +34,7 @@ person.birthMonth in [3, 6, 9]
 
 ## Not in
 
-`notIn`函数用于确定一个项是否不是一个数组或列表的成员。
+`notIn`函数用于确定一个项是否不是作为布尔值的数组或列表的成员。
 
 >[!NOTE]
 >
@@ -56,7 +56,7 @@ person.birthMonth notIn [3, 6, 9]
 
 ## Intersects
 
-`intersects`函数用于确定两个数组或列表是否至少有一个公共成员。
+`intersects`函数用于确定两个数组或列表是否至少有一个公共成员作为布尔值。
 
 **格式**
 
@@ -74,7 +74,7 @@ person.favoriteColors.intersects(["red", "blue", "green"])
 
 ## 交集
 
-`intersection`函数用于确定两个数组或列表的公用成员。
+`intersection`函数用于确定两个数组或列表作为列表的公用成员。
 
 **格式**
 
@@ -92,7 +92,7 @@ person1.favoriteColors.intersection(person2.favoriteColors) = ["red", "blue", "g
 
 ## Subset of
 
-`subsetOf`函数用于确定一个特定数组（数组A）是否是另一个数组（数组B）的子集。 换句话说，数组A中的所有元素都是数组B的元素。
+`subsetOf`函数用于确定一个特定数组（数组A）是否是另一个数组（数组B）的子集。 换句话说，数组A中的所有元素都是数组B的元素作为布尔值。
 
 **格式**
 
@@ -110,7 +110,7 @@ person.favoriteCities.subsetOf(person.visitedCities)
 
 ## Superset of
 
-`supersetOf`函数用于确定一个特定数组（数组A）是否是另一个数组（数组B）的超集。 换句话说，该数组A包含数组B中的所有元素。
+`supersetOf`函数用于确定一个特定数组（数组A）是否是另一个数组（数组B）的超集。 换句话说，该数组A包含数组B中的所有元素作为布尔值。
 
 **格式**
 
@@ -128,7 +128,7 @@ person.eatenFoods.supersetOf(["sushi", "pizza"])
 
 ## Includes
 
-`includes`函数用于确定一个数组或列表是否包含给定项。
+`includes`函数用于确定一个数组或列表是否包含作为布尔值的给定项。
 
 **格式**
 
@@ -146,7 +146,7 @@ person.favoriteColors.includes("red")
 
 ## Distinct
 
-`distinct`函数用于从数组或列表中删除重复的值。
+`distinct`函数用于从数组或作为数组的列表中删除重复的值。
 
 **格式**
 
@@ -164,12 +164,12 @@ person.orders.storeId.distinct().count() > 1
 
 ## 分组依据
 
-`groupBy`函数用于根据表达式的值将数组或列表的值分区为组。
+`groupBy`函数用于根据表达式的值将数组或列表的值分区为组，作为从分组表达式的唯一值到作为数组表达式值分区的数组的映射。
 
 **格式**
 
 ```sql
-{ARRAY}.groupBy({EXPRESSION)
+{ARRAY}.groupBy({EXPRESSION})
 ```
 
 | 参数 | 描述 |
@@ -182,12 +182,12 @@ person.orders.storeId.distinct().count() > 1
 以下PQL查询将存储下订单所依据的所有订单分组。
 
 ```sql
-orders.groupBy(storeId)
+xEvent[type="order"].groupBy(storeId)
 ```
 
 ## 筛选条件
 
-`filter`函数用于根据表达式筛选数组或列表。
+`filter`函数用于根据作为数组或列表的表达式筛选数组或列表，具体取决于输入。
 
 **格式**
 
@@ -210,7 +210,7 @@ person.filter(age >= 21)
 
 ## 地图
 
-`map`函数用于通过将表达式应用于给定数组中的每个项来创建新数组。
+`map`函数用于将表达式作为数组应用于给定数组中的每个项，从而创建新数组。
 
 **格式**
 
@@ -228,7 +228,7 @@ numbers.map(square)
 
 ## 数组中的前`n` {#first-n}
 
-`topN`函数用于返回数组中的前`N`项（当根据给定的数值表达式按升序排序时）。
+`topN`函数用于返回数组中的前`N`项（当根据给定的数值表达式作为数组按升序排序时）。
 
 **格式**
 
@@ -252,7 +252,7 @@ orders.topN(price, 5)
 
 ## 数组中的最后`n`
 
-`bottomN`函数用于返回数组中的最后`N`项（当根据给定的数值表达式按升序排序时）。
+`bottomN`函数用于返回数组中的最后`N`项（当根据给定的数值表达式作为数组按升序排序时）。
 
 **格式**
 
@@ -276,7 +276,7 @@ orders.bottomN(price, 5)
 
 ## First item
 
-`head`函数用于返回数组或列表中的第一个项。
+`head`函数用于将数组或列表中的第一个项作为对象返回。
 
 **格式**
 
