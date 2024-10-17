@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform；主页；热门主题
+keywords: Experience Platform；首页；热门话题
 solution: Experience Platform
 title: 量度API端点
 description: 了解如何使用可观察性分析API在Experience Platform中检索可观察性指标。
 exl-id: 08d416f0-305a-44e2-a2b7-d563b2bdd2d2
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 39eda018611d0244eaff908e924afa93dc46e14d
 workflow-type: tm+mt
-source-wordcount: '1360'
+source-wordcount: '1278'
 ht-degree: 3%
 
 ---
@@ -56,8 +56,7 @@ curl -X POST \
                 "groupBy": true
               }
             ],
-            "aggregator": "sum",
-            "downsample": "sum"
+            "aggregator": "sum"
           },
           {
             "name": "timeseries.ingestion.dataset.dailysize",
@@ -79,12 +78,11 @@ curl -X POST \
 | --- | --- |
 | `start` | 检索量度数据的最早日期/时间。 |
 | `end` | 从中检索量度数据的最新日期/时间。 |
-| `granularity` | 一个可选字段，它指明将度量数据除以的时间间隔。 例如，值`DAY`返回`start`到`end`日期之间每天的量度，而值`MONTH`将改为按月分组量度结果。 使用此字段时，还必须提供相应的`downsample`属性以指示用于分组数据的聚合函数。 |
+| `granularity` | 一个可选字段，它指明将度量数据除以的时间间隔。 例如，值`DAY`返回`start`到`end`日期之间每天的量度，而值`MONTH`将改为按月分组量度结果。 |
 | `metrics` | 一个对象数组，您要检索的每个量度对应一个对象。 |
 | `name` | 可观察性分析识别的指标的名称。 有关接受的量度名称的完整列表，请参阅[附录](#available-metrics)。 |
 | `filters` | 一个可选字段，允许您按特定数据集筛选量度。 字段是一个对象数组（每个过滤器对应一个对象），每个对象包含以下属性： <ul><li>`name`：要筛选量度的实体类型。 当前仅支持`dataSets`。</li><li>`value`：一个或多个数据集的标识。 可以将多个数据集ID作为单个字符串提供，每个ID都用竖条字符(`\|`)分隔。</li><li>`groupBy`：当设置为true时，指示相应的`value`表示多个数据集，这些数据集的度量结果应单独返回。 如果设置为false，则将这些数据集的度量结果分组在一起。</li></ul> |
-| `aggregator` | 指定应将多个时间序列记录分组为单个结果的聚合函数。 有关可用聚合器的详细信息，请参阅[OpenTSDB文档](https://docs.w3cub.com/opentsdb/user_guide/query/aggregators)。 |
-| `downsample` | 一个可选字段，可让您指定聚合函数，以便通过对字段进行排序来降低量度数据的采样率（或“分段”）。 缩减像素采样的间隔由`granularity`属性决定。 有关缩减取样的详细信息，请参阅[OpenTSDB文档](https://docs.w3cub.com/opentsdb/user_guide/query/aggregators)。 |
+| `aggregator` | 指定应将多个时间序列记录分组为单个结果的聚合函数。 当前支持的聚合器包括最小值、最大值、总和以及平均值，具体取决于量度的定义。 |
 
 {style="table-layout:auto"}
 
@@ -221,8 +219,7 @@ curl -X POST \
 | ---- | ---- | ---- |
 | timeseries.identity.dataset.recordsuccess.count | 一个数据集或所有数据集的[!DNL Identity Service]写入其数据源的记录数。 | 数据集 ID |
 | timeseries.identity.dataset.recordfailed.count | [!DNL Identity Service]失败的记录数（针对一个数据集或所有数据集）。 | 数据集 ID |
-| timeseries.identity.dataset.namespacecode.recordfailed.count | 命名空间失败的身份记录数。 | 命名空间ID （**必需**） |
-| timeseries.identity.dataset.namespacecode.recordskipped.count | 命名空间跳过的身份记录数。 | 命名空间ID （**必需**） |
+| timeseries.identity.dataset.namespacecode.recordskipped.count | 跳过的身份记录数。 | 组织 ID |
 | timeseries.identity.graph.imsorg.uniqueidentities.count | 存储在贵组织的身份图中的唯一身份数。 | 不适用 |
 | timeseries.identity.graph.imsorg.namespacecode.uniqueidentities.count | 存储在命名空间的身份图中的唯一身份数。 | 命名空间ID （**必需**） |
 | timeseries.identity.graph.imsorg.graphstrength.uniqueidentities.count | 组织中针对特定图形强度（“未知”、“弱”或“强”）存储在身份图中的唯一身份数。 | 图形强度（**必需**） |
