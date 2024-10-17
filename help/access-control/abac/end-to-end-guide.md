@@ -4,7 +4,7 @@ title: Attribute-Based Access Control端到端指南
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的端到端指南
 role: Developer
 exl-id: 7e363adc-628c-4a66-a3bd-b5b898292394
-source-git-commit: c89ae9befa3befbffab9d6468f3c207ab8e7b74f
+source-git-commit: 9c415b7721eeceff75d46463853f22dd3310cb9a
 workflow-type: tm+mt
 source-wordcount: '1736'
 ht-degree: 18%
@@ -45,8 +45,7 @@ ht-degree: 18%
 
 * [为用户的角色添加标签](#label-roles)：以营销组与外部代理合作的医疗保健提供商（ACME业务组）为例。
 * [为资源（架构字段和区段）添加标签](#label-resources)：将&#x200B;**[!UICONTROL PHI/监管的运行状况数据]**&#x200B;标签分配给架构资源和区段。
-* 
-   * [激活将它们链接在一起的策略：](#policy)：启用默认策略，通过将资源上的标签连接到角色中的标签来阻止对架构字段和区段的访问。 随后，具有匹配标签的用户将获得对架构字段的访问权限，并可在所有沙盒中进行分段。
+* [激活将它们链接在一起的策略](#policy)：启用默认策略，通过将资源上的标签连接到角色中的标签来阻止对架构字段和区段的访问。 随后，具有匹配标签的用户将获得对架构字段的访问权限，并可在所有沙盒中进行分段。
 
 ## 权限
 
