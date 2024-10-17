@@ -1,9 +1,9 @@
 ---
 title: 使用SQL构建受众
 description: 了解如何在Adobe Experience Platform的Data Distiller中使用SQL受众扩展来使用SQL命令创建、管理和发布受众。 本指南涵盖受众生命周期的所有方面，包括创建、更新和删除用户档案，以及使用数据驱动的受众定义来定位基于文件的目标。
-source-git-commit: 8b9a46d9dd35a60fc3f3087d5fd3c4dad395b1aa
+source-git-commit: b790dc0a485011022ac637f9d9c55f21c882d5fc
 workflow-type: tm+mt
-source-wordcount: '1280'
+source-wordcount: '1166'
 ht-degree: 1%
 
 ---
@@ -135,15 +135,13 @@ DROP AUDIENCE IF EXISTS aud_test;
 
 本节介绍有关在Data Distiller中使用SQL创建和管理外部受众的常见问题解答。
 
-+++选择以显示问题和解答
-
 **问题**：
 
 - 是否仅支持为平面数据集创建受众？
 
 +++回答
 
-也支持嵌套的数据集，但受众中只有平面属性可用。
+目前，在定义受众时，受众创建仅限于平面（根级别）属性。
 
 +++
 
@@ -167,15 +165,15 @@ DROP AUDIENCE IF EXISTS aud_test;
 
 +++回答
 
-是，会在数据湖上创建数据集。
+是，会在数据湖中创建与受众关联的数据集。 此数据集中的属性在受众编辑器和目标流中可以作为扩充属性使用。
 
 +++
 
-- 受众中的属性是否限制为仅用于基于文件的企业批处理目标？ （是或否）
+- 受众中的属性是否仅限于基于文件的企业批处理目标？ （是或否）
 
 +++回答
 
-是，受众中的属性限制为仅用于基于文件的企业批处理目标。
+不会。受众中扩充的属性可在企业批处理目标和基于文件的目标中使用。 如果您遇到错误，如“以下区段ID具有此目标不允许的命名空间： e917f626-a038-42f7-944c-xyxyx”，请在Data Distiller中创建一个新区段，并将其用于任何可用的目标。
 
 +++
 
@@ -195,45 +193,11 @@ Data Distiller受众当前在Adobe Journey Optimizer中不可用。 您必须在
 
 +++
 
-- 如何使用不同的计划创建两个Data Distiller受众？ 创建了多少数据集，它们是否标记为配置文件？
-
-+++回答
-
-由于每个受众都有一个基础数据集，因此将创建两个数据集。 但是，这些数据集不会标记为配置文件。 这两个数据集按各自的计划进行管理。
-
-+++
-
-- 如何删除受众？
-
-+++回答
-
-要删除受众，您可以在命令行界面中使用[`DROP AUDIENCE`命令](#delete-audience)或使用[受众工作区快速操作](../../segmentation/ui/audience-portal.md#quick-actions)。 注意：无法删除在下游目标中使用或者在其他受众中是从属的受众。
-
-+++
-
-- 当我将受众发布到配置文件时，它多久才能在区段生成器UI中可用，以及它何时可在目标中可用？
-
-+++回答
-
-配置文件快照导出完成后，即可在受众中查看配置文件。
-
-+++
-
 - Data Distiller受众是外部受众，是否每30天删除一次？
 
 +++回答
 
 是，由于数据Distiller受众是外部受众，因此每30天会删除一次这些受众。
-
-+++
-
-- Data Distiller Audiences是否显示在Audiences清单中？
-
-+++回答
-
-是，Data Distiller Audiences显示在受众清单中，原始名称为“Data Distiller”。
-
-+++
 
 +++
 
