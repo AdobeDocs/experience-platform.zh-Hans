@@ -1,21 +1,21 @@
 ---
-title: 使用计算字段将数组导出为字符串
+title: 使用计算出的字段将数组导出为字符串
 type: Tutorial
 description: 了解如何使用计算字段将阵列作为字符串从Real-Time CDP导出到云存储目标。
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
 source-git-commit: 849d42e36921e60b6ac3a5e89336b954e64a35d7
 workflow-type: tm+mt
 source-wordcount: '1556'
-ht-degree: 0%
+ht-degree: 4%
 
 ---
 
-# 使用计算字段将数组导出为字符串{#use-calculated-fields-to-export-arrays-as-strings}
+# 使用计算出的字段将数组导出为字符串{#use-calculated-fields-to-export-arrays-as-strings}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_flat_files"
->title="导出阵列支持"
->abstract="<p>使用&#x200B;**添加计算字段**&#x200B;控件将int、字符串、布尔和对象值的数组从Experience Platform导出到所需的云存储目标。</p><p> 必须使用`array_to_string`函数将数组导出为字符串。 查看文档以了解大量示例和更多受支持的函数。</p>"
+>title="导出数组支持"
+>abstract="<p>使用 **添加计算出的字段** 控件，将整型、字符串或布尔值的简单数组从 Experience Platform 导出到所需的云存储目标。</p><p> 必须使用 `array_to_string` 功能将数组导出为字符串。视图文档可提供大量示例和更多支持功能。</p>"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html#examples" text="示例"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html#known-limitations" text="已知限制"
 

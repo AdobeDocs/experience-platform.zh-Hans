@@ -5,7 +5,7 @@ exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
 source-git-commit: 8caa10010109f9936271cb45a2166455f3678687
 workflow-type: tm+mt
 source-wordcount: '1827'
-ht-degree: 1%
+ht-degree: 5%
 
 ---
 
@@ -67,8 +67,8 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_accountprofiles_customersperaccountoverview"
->title="每个帐户的客户概览"
->abstract="这个穿透钻取小组件提供了对B2B数据结构的洞察。 它可帮助您识别有多少帐户配置文件没有链接客户配置文件或有一个或多个客户配置文件与其关联。<ul><li>直接客户：客户配置文件是否通过`personComponents`路由直接链接到帐户。</li><li>间接客户：客户配置文件是否通过`Account-Person`路由链接到帐户。</li></ul>"
+>title="客户每帐户概述"
+>abstract="该钻透小组件可让您洞察 B2B 数据的结构。它可以帮助您确定有多少帐户轮廓没有链接客户轮廓，或者有一个或多个客户轮廓与之相关联。<ul><li>直接客户：是指通过帐户直接链接到帐户的客户轮廓。`personComponents` 路线。</li><li>间接客户：是指通过帐户链接到帐户的客户 轮廓`Account-Person` 路线</li></ul>"
 
 Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各种指标。
 

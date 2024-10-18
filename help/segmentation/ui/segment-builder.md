@@ -6,7 +6,7 @@ exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
 source-git-commit: e74d04119593dddcaf6a5c710b685c606f5998d6
 workflow-type: tm+mt
 source-wordcount: '4955'
-ht-degree: 7%
+ht-degree: 8%
 
 ---
 
@@ -32,7 +32,7 @@ ht-degree: 7%
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_summarydata"
 >title="摘要数据"
->abstract="摘要数据仅针对配置文件属性显示，对于事件或受众属性不会<b>显示</b>。<br/><br/>在以下情况下，配置文件属性的摘要数据可能不会显示： <ol><li>属性的某些值的长度超过100个字符。</li><li>属性的唯一值超过3000个。</li></ol>"
+>abstract="摘要数据只出现在个人资料属性中，<b>不</b> 出现在事件或受众属性中。<br/><br/>在以下情况下，可能不会出现个人资料属性的摘要数据： <ol><li>部分属性值的长度超过 100 个字符。</li><li>该属性的唯一值超过 3000 个。</li></ol>"
 
 >[!NOTE]
 >
