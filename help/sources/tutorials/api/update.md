@@ -1,22 +1,23 @@
 ---
-keywords: Experience Platform；主页；热门主题；流服务；更新帐户
-solution: Experience Platform
 title: 使用流服务API更新帐户
-type: Tutorial
 description: 本教程涵盖了使用流服务API更新帐户详细信息和凭据的步骤。
 exl-id: a93385fd-ed36-457f-8882-41e37f6f209d
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 9e1edaa4183a8025b8391f58d480063adc834616
 workflow-type: tm+mt
-source-wordcount: '519'
+source-wordcount: '539'
 ht-degree: 2%
 
 ---
 
 # 使用流服务API更新帐户
 
-在某些情况下，可能需要更新现有源连接的详细信息。 [!DNL Flow Service]允许您添加、编辑和删除现有批次或流连接的详细信息，包括其名称、描述和凭据。
+在某些情况下，可能需要更新现有基本连接的详细信息。 [!DNL Flow Service]允许您添加、编辑和删除现有批次或流连接的详细信息，包括其名称、描述和凭据。
 
 本教程介绍使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)更新连接的详细信息和凭据的步骤。
+
+>[!TIP]
+>
+>当需要更新时，您不需要创建新的基本连接。 对基本连接所做的任何更改都会反映在关联的数据流中。
 
 ## 快速入门
 

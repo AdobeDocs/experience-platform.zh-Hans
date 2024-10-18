@@ -1,13 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；流服务；更新数据流
-solution: Experience Platform
 title: 使用流服务API更新数据流
-type: Tutorial
-description: 本教程介绍了使用流服务API更新数据流的步骤，包括其名称、描述和计划。
+description: 了解如何使用流服务API创建数据流，包括其名称、描述和计划。
 exl-id: 367a3a9e-0980-4144-a669-e4cfa7a9c722
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 9e1edaa4183a8025b8391f58d480063adc834616
 workflow-type: tm+mt
-source-wordcount: '603'
+source-wordcount: '656'
 ht-degree: 2%
 
 ---
@@ -15,6 +12,10 @@ ht-degree: 2%
 # 使用流服务API更新数据流
 
 本教程介绍了使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)更新数据流的步骤，包括其基本信息、计划和映射集。
+
+>[!TIP]
+>
+>源连接和目标连接应映射到单个数据流。 您不应单独更新源连接和目标连接，因为所做更改将不会反映在其相应数据流中。 如果您的用例需要更新源连接和目标连接，则必须创建一对新源连接和目标连接，以及新的数据流。
 
 ## 快速入门
 
@@ -49,11 +50,11 @@ GET /flows/{FLOW_ID}
 
 ```shell
 curl -X GET \
-    'https://platform.adobe.io/data/foundation/flowservice/flows/2edc08ac-4df5-4fe6-936f-81a19ce92f5c' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}'
+  'https://platform.adobe.io/data/foundation/flowservice/flows/2edc08ac-4df5-4fe6-936f-81a19ce92f5c' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **响应**
