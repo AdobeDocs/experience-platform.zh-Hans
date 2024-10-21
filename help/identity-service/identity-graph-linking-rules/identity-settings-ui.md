@@ -2,9 +2,9 @@
 title: 身份设置UI
 description: 了解如何使用身份设置用户界面。
 exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
-source-git-commit: cfe0181104f09bfd91b22d165c23154a15cd5344
+source-git-commit: 32229555a8bad3632bde974e3d97772a8cb21b71
 workflow-type: tm+mt
-source-wordcount: '536'
+source-wordcount: '538'
 ht-degree: 1%
 
 ---
@@ -56,7 +56,7 @@ ht-degree: 1%
 
 ![已突出显示Finish的验证页面。](../images/rules/finish.png)
 
-出现警告消息，指示仅在保存设置后&#x200B;**更新图形时，现有图形才会受图形算法影响**，并且在命名空间优先级更改后，实时客户配置文件上事件片段的主要标识也不会更新。 此外，您会收到通知，新设置最多需要&#x200B;**6小时**&#x200B;才能生效。 要确认输入您的沙盒名称，然后选择&#x200B;**[!UICONTROL 确认]**。
+出现警告消息，指示仅在保存设置后&#x200B;**更新图形时，现有图形才会受图形算法影响**，并且在命名空间优先级更改后，实时客户配置文件上事件片段的主要标识也不会更新。 此外，您会收到通知，新设置或更新设置最多需要&#x200B;**6小时**&#x200B;才能生效。 要确认，请输入沙盒名称，然后选择&#x200B;**[!UICONTROL 确认]**。
 
 ![确认窗口，显示有关在处理配置之前延迟6小时的警告。](../images/rules/confirm-settings.png)
 

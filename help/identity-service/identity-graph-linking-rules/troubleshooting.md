@@ -2,9 +2,9 @@
 title: 身份图形链接规则疑难解答指南
 description: 了解如何解决身份图关联规则中的常见问题。
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: cfe0181104f09bfd91b22d165c23154a15cd5344
+source-git-commit: b50633a8518f32051549158b23dfc503db255a82
 workflow-type: tm+mt
-source-wordcount: '3247'
+source-wordcount: '3335'
 ht-degree: 0%
 
 ---
@@ -59,8 +59,8 @@ ht-degree: 0%
 
 用两个假设来考虑以下事件：
 
-* 字段名称CRMID标记为具有命名空间CRMID的标识。
-* 命名空间CRMID被定义为唯一的命名空间。
+1. 字段名称CRMID标记为具有命名空间CRMID的标识。
+2. 命名空间CRMID被定义为唯一的命名空间。
 
 以下事件将返回一条错误消息，指示引入失败。
 
@@ -123,6 +123,24 @@ ht-degree: 0%
 >
 >如果两个身份完全相同，并且事件是通过流式摄取的，则身份和配置文件都将删除重复身份。
 
+### 身份验证后ExperienceEvents被归因于错误的身份验证配置文件
+
+命名空间优先级在事件片段确定主要身份的方式中发挥重要作用。
+
+* 配置并保存给定沙盒的[身份设置](./identity-settings-ui.md)后，配置文件将使用[命名空间优先级](namespace-priority.md#real-time-customer-profile-primary-identity-determination-for-experience-events)确定主要身份。 在使用identityMap时，配置文件将不再使用`primary=true`标志。
+* 虽然配置文件将不再引用此标志，但Experience Platform上的其他服务可能会继续使用`primary=true`标志。
+
+为了将[经过身份验证的用户事件](implementation-guide.md#ingest-your-data)绑定到人员命名空间，所有经过身份验证的事件都必须包含人员命名空间(CRMID)。 这意味着即使用户登录后，人员命名空间仍必须存在于每个已验证的事件中。
+
+在配置文件查看器中查找配置文件时，您可能会继续看到`primary=true`个“事件”标记。 但是，这将被忽略并且不会被配置文件使用。
+
+默认情况下，会阻止AAID。 因此，如果您使用的是[Adobe Analytics源连接器](../../sources/tutorials/ui/create/adobe-applications/analytics.md)，则必须确保ECID的优先级高于ECID，以便未经身份验证的事件将具有ECID的主标识。
+
+**疑难解答步骤**
+
+1. 要验证经过身份验证的事件是否同时包含人员和Cookie命名空间，请阅读[中有关未摄取到Identity服务的数据的错误疑难解答部分概述的步骤](#my-identities-are-not-getting-ingested-into-identity-service)。
+2. 要验证经过身份验证的事件是否具有人员命名空间的主要身份（例如CRMID），请使用无拼接合并策略（这是不使用专用图的合并策略）在配置文件查看器中搜索人员命名空间。 此搜索将仅返回与人员命名空间关联的事件。
+
 ### 我的体验事件片段未摄取到配置文件 {#my-experience-event-fragments-are-not-getting-ingested-into-profile}
 
 您的体验事件片段未摄取到配置文件中的原因有多种，包括但不限于：
@@ -171,29 +189,11 @@ ht-degree: 0%
 * 一个标识从identityMap发送，另一个标识从标识描述符发送。 **注意**：在Experience Data Model (XDM)架构中，身份描述符是标记为身份的字段。
 * CRMID通过identityMap发送。 如果CRMID作为字段发送，请从WHERE子句中删除`key='Email'`。
 
-### 我的体验事件片段已摄取，但在配置文件中具有“错误”的主要身份
-
-命名空间优先级在事件片段确定主要身份的方式中发挥重要作用。
-
-* 配置并保存给定沙盒的[身份设置](./identity-settings-ui.md)后，配置文件将使用[命名空间优先级](namespace-priority.md#real-time-customer-profile-primary-identity-determination-for-experience-events)确定主要身份。 在使用identityMap时，配置文件将不再使用`primary=true`标志。
-* 虽然配置文件将不再引用此标志，但Experience Platform上的其他服务可能会继续使用`primary=true`标志。
-
-为了将[经过身份验证的用户事件](implementation-guide.md#ingest-your-data)绑定到人员命名空间，所有经过身份验证的事件都必须包含人员命名空间(CRMID)。 这意味着即使用户登录后，人员命名空间仍必须存在于每个已验证的事件中。
-
-在配置文件查看器中查找配置文件时，您可能会继续看到`primary=true`个“事件”标记。 但是，这将被忽略并且不会被配置文件使用。
-
-默认情况下，会阻止AAID。 因此，如果您使用的是[Adobe Analytics源连接器](../../sources/tutorials/ui/create/adobe-applications/analytics.md)，则必须确保ECID的优先级高于ECID，以便未经身份验证的事件将具有ECID的主标识。
-
-**疑难解答步骤**
-
-* 要验证经过身份验证的事件是否同时包含人员和Cookie命名空间，请阅读[中有关未摄取到Identity服务的数据的错误疑难解答部分概述的步骤](#my-identities-are-not-getting-ingested-into-identity-service)。
-* 要验证经过身份验证的事件是否具有人员命名空间的主要身份（例如CRMID），请使用无拼接合并策略（这是不使用专用图的合并策略）在配置文件查看器中搜索人员命名空间。 此搜索将仅返回与人员命名空间关联的事件。
-
 ## 与图表行为相关的问题 {#graph-behavior-related-issues}
 
 本节概述您可能会遇到的有关身份图行为方式的常见问题。
 
-### 该身份已链接到“错误”人员
+### 未经身份验证的ExperienceEvents被附加到错误的已身份验证配置文件
 
 标识优化算法将执行[最近建立的链接并删除最早的链接](./identity-optimization-algorithm.md#identity-optimization-algorithm-details)。 因此，启用此功能后，可以将ECID从一个人重新分配（重新链接）到另一个人。 要了解标识如何随时间链接的历史记录，请执行以下步骤：
 
@@ -209,11 +209,11 @@ ht-degree: 0%
 
 首先，您必须收集以下信息：
 
-* 已发送的Cookie命名空间（例如ECID）和人员命名空间（例如CRMID）的标识符号(namespaceCode)。
-   * 对于Web SDK实施，这些通常是identityMap中包含的命名空间。
-   * 对于Analytics源连接器实施，这些是identityMap中包含的Cookie标识符。 人员标识符是标记为身份的eVar字段。
-* 在中发送事件的数据集(dataset_name)。
-* 要查找的Cookie命名空间的身份值(identity_value)。
+1. 已发送的Cookie命名空间（例如ECID）和人员命名空间（例如CRMID）的标识符号(namespaceCode)。
+1.1.对于Web SDK实施，这些通常是identityMap中包含的命名空间。
+1.2.对于Analytics源连接器实施，这些是identityMap中包含的Cookie标识符。 人员标识符是标记为身份的eVar字段。
+2. 在中发送事件的数据集(dataset_name)。
+3. 要查找的Cookie命名空间的身份值(identity_value)。
 
 身份符号(namespaceCode)区分大小写。 要检索identityMap中给定数据集的所有标识符号，请运行以下查询：
 
@@ -241,7 +241,7 @@ SELECT distinct explode(*)FROM (SELECT map_keys(identityMap) FROM dataset_name)
 
 >[!ENDTABS]
 
-接下来，通过运行以下查询来按时间戳顺序检查Cookie命名空间的关联：
+现在，您已识别链接到多个人员ID的Cookie值，请从结果中获取一个，并在以下查询中使用它来获取有关该Cookie值何时链接到其他人员ID的时间顺序视图：
 
 >[!BEGINTABS]
 
@@ -368,6 +368,13 @@ ORDER BY timestamp desc
    * 例如，如果操作之间存在等待条件，并且在等待期间传输ECID，则可能会定向不同的配置文件。
    * 利用此功能，ECID不再总是与一个配置文件关联。
    * 建议使用人员命名空间(CRMID)开始历程。
+
+>[!TIP]
+>
+>历程应查找具有唯一命名空间的配置文件，因为会将非唯一命名空间重新分配给另一个用户。
+>
+>* ECID和非唯一电子邮件/电话命名空间可能会从一个人移动到另一个人。
+>* 如果历程具有等待条件，并且使用这些非唯一命名空间在历程中查找用户档案，则历程消息可能会发送给错误的人员。
 
 ## 命名空间优先级
 
