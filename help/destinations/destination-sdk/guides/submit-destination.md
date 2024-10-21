@@ -2,9 +2,9 @@
 description: 本页提供了您需要提交以供审阅使用Destination SDK创作的生产化目标的所有信息。
 title: 提交供审查在Destination SDK中创作的产品化目的地
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: 2c778f98815af87453e84f24ba8bf077774349a1
+source-git-commit: 756c14c67e349a9ca906c027a07766e952485525
 workflow-type: tm+mt
-source-wordcount: '1032'
+source-wordcount: '1052'
 ht-degree: 0%
 
 ---
@@ -32,6 +32,7 @@ ht-degree: 0%
 * 目标解决的使用案例描述。 只有在提交新的目标配置时才需要此操作。
 * 目标提交原因的描述。 只有在更新现有目标配置时才需要此项。
 * 使用测试目标API端点对目标执行HTTP调用后的测试结果。 请与Adobe共享对您的目标端点进行的API调用以及从目标端点接收的API响应。
+* 一个屏幕录制，用于显示连接到您的目标并完成激活步骤的用户体验。
 * 基于文件的目标的其他要求：
    * 使用测试API共享请求和响应示例以[使用示例配置文件测试基于文件的目标](../testing-api/batch-destinations/file-based-destination-testing-api.md)。
    * 附加由目标生成并导出到存储位置的样例文件。
