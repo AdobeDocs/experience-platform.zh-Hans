@@ -2,9 +2,9 @@
 title: Identity Service实施指南
 description: 了解提供给Adobe Experience Platform的数据在Identity Service用于构建身份图之前如何进行处理。
 exl-id: c961bbf6-6b46-470f-a671-93ff4173876c
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: 4ba25ed684ff126ab1c4f1a33e6503f0342e8720
 workflow-type: tm+mt
-source-wordcount: '581'
+source-wordcount: '600'
 ht-degree: 0%
 
 ---
@@ -46,6 +46,7 @@ ht-degree: 0%
 >
 >* 数组字段和映射类型字段不受支持，并且无法标记为标识字段。
 >* 在标记字段时，会提供生成的身份命名空间。
+>* 只要某个字段不在数组对象下，该字段就可以标记为标识。
 
 有关详细信息，请阅读[在UI中定义标识字段的指南](../xdm/ui/fields/identity.md)。
 
