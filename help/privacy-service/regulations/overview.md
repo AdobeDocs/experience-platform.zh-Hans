@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 隐私法规概述
 description: 本文档概述了Adobe Experience Cloud支持的各种隐私法规。
 exl-id: 2ca946cf-94f8-4fd8-bb1a-7f06a5ab1256
-source-git-commit: 6b0ac184d8859b770f69b4758fa1cfae006dd755
+source-git-commit: 0a8d7c4414f6091025d36ed85dc09e057ee24df9
 workflow-type: tm+mt
 source-wordcount: '1537'
 ht-degree: 0%
@@ -33,7 +33,7 @@ ht-degree: 0%
 | MCDPA （蒙大拿州） | [[!DNL The Montana Consumer Data Privacy Act]](https://legiscan.com/MT/text/SB384/id/2791095)使居民有权了解企业收集、共享和出售哪些个人数据及其用途。 它还赋予消费者更正、删除或获取所收集数据副本的能力。 该法适用于处理50,000多个蒙大拿州消费者数据的企业。 该法强调保护敏感的个人数据，包括生物统计和遗传信息。 |
 | NDPA （内布拉斯加州） | [[!DNL Nebraska Data Protection Act]](https://nebraskalegislature.gov/FloorDocs/108/PDF/Slip/LB1074.pdf)为内布拉斯加州人提供对其个人数据的权限，例如访问、更正、删除和选择退出其销售。 该法适用于满足数据处理特定门槛和个人信息销售收入的企业。 它还要求企业实施合理的数据安全做法，并规定30天的强制治疗期，以便在受到处罚之前解决法规遵从性问题。 |
 | 新西兰[!DNL Privacy Act] | [新西兰 [!DNL Privacy Act]](https://www.privacy.org.nz/privacy-act-2020/privacy-principles/)控制各机构如何收集、使用、披露、存储和访问新西兰公民和组织的个人信息。 2020年，最新版本的法案对这些隐私法进行了重大更新。 最新情况包括新犯罪、增加罚款、强制通知数据泄露，以及增加隐私专员的权力。 |
-| NHDPA （新罕布什尔州） | [[!DNL New Hampshire Data Privacy Act]](https://gencourt.state.nh.us/bill_status/billinfo.aspx?id=865&amp;inflect=1)通过建立与数据访问、删除和可移植性相关的消费者权利来保护新罕布什尔州居民的个人信息。 它要求组织披露其数据收集和共享做法，并允许消费者选择退出数据销售。 该法适用于达到某些数据处理阈值的企业。 |
+| NHDPA （新罕布什尔州） | [[!DNL New Hampshire Privacy Act]](https://gencourt.state.nh.us/bill_status/billinfo.aspx?id=865&amp;inflect=1)通过建立与数据访问、删除和可移植性相关的消费者权利来保护新罕布什尔州居民的个人信息。 它要求组织披露其数据收集和共享做法，并允许消费者选择退出数据销售。 该法适用于达到某些数据处理阈值的企业。 |
 | NJDPA （新泽西州） | [[!DNL New Jersey Data Protection Act]](https://pub.njleg.state.nj.us/Bills/2022/S0500/332_R6.PDF)通过提供访问、更正和删除其信息的权限，授予新泽西居民对其个人数据的控制权。 它包括用于数据销售和定向广告的选择退出机制。 该法涵盖处理大量消费者数据的企业，并要求数据使用透明。 |
 | OCPA （俄勒冈州） | [[!DNL Oregon Consumer Privacy Act]](https://olis.oregonlegislature.gov/liz/2023R1/Downloads/PublicTestimonyDocument/59856#:~:text=The%20Act%20requires%20controllers%20to,data%3B%20and%20%E2%80%A2%20Contact%20information.) (OCPA)为俄勒冈州居民提供了对其个人数据的基本权利，并要求处理此类数据的企业承担相关义务。 消费者有权了解、更正、删除和获取其数据的副本，以及选择退出针对性广告或销售的数据处理。 该法要求加强对敏感数据的保护，准许超出特定目的进行数据处理，并规定数据控制者发出全面的隐私声明。 |
 | PDPA （泰国） | 引入[[!DNL Personal Data Protection Act (PDPA)]](https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act)是为了保护泰国数据所有者免遭非法收集、使用或泄露其个人数据的行为。 受欧盟GDPR的启发，该法规授予泰国公民请求访问或删除其存储的个人数据的权利。 |

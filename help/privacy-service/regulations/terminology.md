@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 隐私法规术语
 description: 本文档提供了与Adobe Experience Cloud支持的隐私法规相关的主要术语的定义。
 exl-id: 9c0a7d26-0571-41d4-8cf5-6356025d51ef
-source-git-commit: c4ca3dc975b13e2dce2e12784480e53bd0c4ee02
+source-git-commit: 0a8d7c4414f6091025d36ed85dc09e057ee24df9
 workflow-type: tm+mt
 source-wordcount: '2301'
 ht-degree: 0%
@@ -113,7 +113,7 @@ ht-degree: 0%
 
 **[!DNL Nebraska Data Protection Act]**：一项隐私法律，为内布拉斯加人提供访问、更正、删除和选择退出出售其个人数据的权利。 它适用于满足特定数据处理和收入阈值的企业。 NDPA还要求企业实施合理的数据安全措施，并提供30天治疗期来解决违规行为，然后再实施处罚。
 
-**[!DNL New Hampshire Data Privacy Act]**：此法规通过授予新罕布什尔州居民访问、删除和传输其数据的权利来保护他们的个人数据。 它要求企业披露其数据收集和共享做法，并允许消费者选择退出数据销售。 NHDPA适用于符合指定数据处理阈值的公司。
+**[!DNL New Hampshire Privacy Act]**：此法规通过授予新罕布什尔州居民访问、删除和传输其数据的权利来保护他们的个人数据。 它要求企业披露其数据收集和共享做法，并允许消费者选择退出数据销售。 NHDPA适用于符合指定数据处理阈值的公司。
 
 **[!DNL New Jersey Data Protection Act]**：一项全面的州隐私法，为新泽西州居民提供访问、更正和删除个人数据的权利。 它包括用于数据销售和定向广告的选择退出机制。 NJDPA适用于处理大量消费者数据的企业，并要求企业处理个人信息的方式透明。
 
