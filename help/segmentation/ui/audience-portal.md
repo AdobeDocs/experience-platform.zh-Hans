@@ -5,7 +5,7 @@ exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
 source-git-commit: f74e91ba1fe2be58e1e933fa81f590566f02fff7
 workflow-type: tm+mt
 source-wordcount: '4320'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
 
@@ -213,7 +213,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_browse_flexibleaudienceevaluation"
 >title="灵活的受众评估限制"
->abstract="在单个灵活的受众评估运行中，您最多可以评估20个受众。<br/><br/>此外，当评估作业尽快运行时，可能会出现系统延迟，因为按需评估<b>无法</b>与另一个按需评估或批处理评估同时运行。"
+>abstract="您可以在一次灵活的受众评估中评估最多 20 位受众。<br/><br/>此外，虽然评估作业会尽快运行，但由于按需评估 <b>不能</b> 与另一个按需或批量评估同时运行，因此可能会出现系统延迟。"
 
 此外，您最多可以选择25个不同的受众，并对这些受众执行各种操作。 这些操作包括[移动到文件夹](#folders)、[编辑或应用标记](#tags)、[应用访问标签](../../access-control/abac/ui/labels.md)和[删除](#browse)。
 

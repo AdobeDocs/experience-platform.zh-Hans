@@ -6,7 +6,7 @@ exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
 source-git-commit: 849d42e36921e60b6ac3a5e89336b954e64a35d7
 workflow-type: tm+mt
 source-wordcount: '1556'
-ht-degree: 4%
+ht-degree: 7%
 
 ---
 
@@ -79,13 +79,13 @@ organizations = [{
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_control"
->title="启用分层输出架构"
->abstract="如果要导出分层结构（如数组），请启用此选项。"
+>title="启用分层输出模式"
+>abstract="如果您想导出像数组这样的层次结构，请打开。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_calculated_field_disabled"
->title="已禁用添加计算字段"
->abstract="此控件已禁用，因为您选择在连接到目标时导出平面结构。"
+>title="添加计算字段已禁用"
+>abstract="由于您选择在连接到目标时导出平面结构，因此此控件已被禁用。"
 
 在云存储目标的激活工作流的映射步骤中，选择&#x200B;**[!UICONTROL 添加计算字段]**。
 
