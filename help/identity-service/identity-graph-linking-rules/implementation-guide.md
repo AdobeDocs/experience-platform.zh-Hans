@@ -2,9 +2,9 @@
 title: 身份图链接规则的实施指南
 description: 了解在使用身份图链接规则配置实施数据时要遵循的建议步骤。
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 5d1bcaa84875e55595996253fb72cf768af16e05
+source-git-commit: 720ffa1ca0ee69cfc802cd50aef26b6f38d2142c
 workflow-type: tm+mt
-source-wordcount: '1634'
+source-wordcount: '1668'
 ht-degree: 2%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 2%
 1. [实施的完整先决条件](#prerequisites-for-implementation)
 2. [创建必要的身份命名空间](#namespace)
 3. [使用图形仿真工具熟悉身份优化算法](#graph-simulation)
-4. [使用身份设置工具指定唯一的命名空间并配置命名空间的优先级排名](#identity-settings)
+4. [使用身份设置UI指定唯一的命名空间并配置命名空间的优先级排名](#identity-settings)
 5. [创建Experience Data Model (XDM)架构](#schema)
 6. [创建数据集](#dataset)
 7. [将您的数据摄取到Experience Platform](#ingest)
@@ -183,9 +183,13 @@ Identity Service实施流程的第一步是，确保将您的Experience Platform
 
 ## 配置身份设置 {#identity-settings}
 
-了解图形的行为方式后，请导航到Identity Service UI工作区中的[身份设置工具](./identity-settings-ui.md)。
+了解图形的行为方式后，请导航到Identity Service UI工作区中的[身份设置UI](./identity-settings-ui.md)。 要访问身份设置UI，请从左侧导航中选择&#x200B;**[!UICONTROL 身份]**，然后选择&#x200B;**[!UICONTROL 设置]**。
 
-使用身份设置工具指定唯一的命名空间并按优先级配置命名空间。 完成应用设置后，必须至少等待六小时才能继续摄取数据，因为新设置至少需要六小时才能反映在Identity Service中。
+![身份浏览页面中突出显示了设置按钮。](../images/implementation/settings.png)
+
+使用身份设置UI指定唯一的命名空间并按优先级配置命名空间。 完成应用设置后，必须至少等待六小时才能继续摄取数据，因为新设置至少需要六小时才能反映在Identity Service中。
+
+有关详细信息，请阅读[身份设置UI指南](./identity-settings-ui.md)。
 
 ## 创建 XDM 架构 {#schema}
 

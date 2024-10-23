@@ -2,7 +2,7 @@
 title: 身份图链接规则
 description: 了解Identity Service中的身份图链接规则。
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: cfe0181104f09bfd91b22d165c23154a15cd5344
+source-git-commit: 5092421ed8d0ff61fb3ed7f0849d2271f1fa144c
 workflow-type: tm+mt
 source-wordcount: '1424'
 ht-degree: 2%
@@ -98,11 +98,11 @@ ht-degree: 2%
 
 请考虑以下方案：
 
-* Scott使用平板电脑打开Google Chrome浏览器前往nike<span>.com，登录并浏览新篮球鞋。
+* Scott使用平板电脑打开Google Chrome浏览器前往acme<span>.com，登录并浏览新篮球鞋。
    * 在幕后，此场景记录以下身份：
       * 用于表示浏览器使用情况的ECID命名空间和值
       * 用于表示经过身份验证的用户（Scott使用其用户名和密码组合登录）的CRMID命名空间和值。
-* 然后，他的儿子彼得使用同一台平板电脑，并使用Google Chrome访问耐克<span>.com，他在那里用自己的帐户登录以浏览足球设备。
+* 然后，他的儿子彼得使用同一台平板电脑，并使用Google Chrome访问acme<span>.com，他在那里使用自己的帐户登录以浏览足球设备。
    * 在幕后，此场景记录以下身份：
       * 表示浏览器的相同ECID命名空间和值。
       * 用于表示经过身份验证的用户的新CRMID命名空间和值。
