@@ -2,9 +2,9 @@
 title: 命名空间优先级
 description: 了解Identity Service中的命名空间优先级。
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: b50633a8518f32051549158b23dfc503db255a82
+source-git-commit: e8e8914c41d7a083395b0bf53aaac8021fcf9e9a
 workflow-type: tm+mt
-source-wordcount: '1700'
+source-wordcount: '1689'
 ht-degree: 2%
 
 ---
@@ -109,11 +109,11 @@ ht-degree: 2%
 
 | 用户操作（体验事件） | 身份验证状态 | 数据源 | 事件中的命名空间 | 主要身份的命名空间 |
 | --- | --- | --- | --- | --- |
-| 查看信用卡优惠页面 | 未经身份验证（匿名） | Web SDK | {ECID} | ECID |
-| 查看帮助页面 | 未验证 | Mobile SDK | {ECID， IDFA} | IDFA |
-| 查看支票帐户余额 | Authenticated | Web SDK | {CRMID， ECID} | CRMID |
-| 注册家庭贷款 | Authenticated | Analytics源连接器 | {CRMID， ECID， AAID} | CRMID |
-| 将1,000美元从支票转帐到节省额 | Authenticated | Mobile SDK | {CRMID， GAID， ECID} | CRMID |
+| 查看信用卡优惠页面 | 未经身份验证（匿名） | Web SDK | `{ECID}` | ECID |
+| 查看帮助页面 | 未验证 | Mobile SDK | `{ECID, IDFA}` | IDFA |
+| 查看支票帐户余额 | Authenticated | Web SDK | `{CRMID, ECID}` | CRMID |
+| 注册家庭贷款 | Authenticated | Analytics源连接器 | `{CRMID, ECID, AAID}` | CRMID |
+| 将1,000美元从支票转帐到节省额 | Authenticated | Mobile SDK | `{CRMID, GAID, ECID}` | CRMID |
 
 {style="table-layout:auto"}
 

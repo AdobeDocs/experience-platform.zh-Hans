@@ -2,7 +2,7 @@
 title: 使用流服务API筛选Source的行级数据
 description: 本教程介绍了有关如何使用流服务API在源级别过滤数据的步骤
 exl-id: 224b454e-a079-4df3-a8b2-1bebfb37d11f
-source-git-commit: 544bb7b5aff437fd49c30ac3d6261f103a609cac
+source-git-commit: e8e8914c41d7a083395b0bf53aaac8021fcf9e9a
 workflow-type: tm+mt
 source-wordcount: '1820'
 ht-degree: 4%
@@ -687,12 +687,12 @@ curl -X GET \
 **API格式**
 
 ```http
-GET /sourceConnections/{SOURCE_CONNECTION_ID}
+PATCH /sourceConnections/{SOURCE_CONNECTION_ID}
 ```
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SOURCE_CONNECTION_ID}` | 要检索的源连接的ID。 |
+| `{SOURCE_CONNECTION_ID}` | 要更新的源连接的ID |
 
 +++请求
 
