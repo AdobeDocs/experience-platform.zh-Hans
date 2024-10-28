@@ -2,10 +2,10 @@
 title: Adobe Analytics扩展概述
 description: 了解Adobe Experience Platform中的Adobe Analytics标记扩展。
 exl-id: 33ebdcb6-9bf0-44e6-b016-e93fe78af578
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 764a9a29df0be6064d36f952d2e8a61acfa9bd33
 workflow-type: tm+mt
-source-wordcount: '2105'
-ht-degree: 82%
+source-wordcount: '2331'
+ht-degree: 75%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 82%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用本参考可了解有关配置 Adobe Analytics 扩展以及使用此扩展构建规则时可用的选项的信息。
 
@@ -288,7 +288,19 @@ Analytics 扩展提供了以下操作：
 
 ### 设置变量 {#set-variables}
 
-重要信息：使用“set variables”操作不会发送信标。您必须使用“send beacon”操作才能实现此目的。
+>[!IMPORTANT]
+>
+>无法使用“set variables”操作发送信标。 要发送信标，必须选择“发送信标”操作。
+
+您可以在&#x200B;**设置变量**&#x200B;中的两个不同视图之间进行选择：
+
+>[!BEGINTABS]
+
+>[!TAB 提供单个属性]
+
+在此视图中，您可以指定不同的变量，如`eVars`、`Props`、`Events`。
+
+![Adobe Analytics表单视图页面，其中列出了其他属性。](../../../images/adobe_analytics_extension_form_view.png)
 
 #### eVar
 
@@ -318,6 +330,25 @@ Analytics 扩展提供了以下操作：
 1. （可选）选择或指定用于[事件序列化](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/events/event-serialization.html)的数据元素。
 1. （可选）选择&#x200B;**[!UICONTROL 添加事件]**&#x200B;以设置更多事件。
 1. 选择&#x200B;**[!UICONTROL 保留更改]**。
+
+>[!TAB JSON视图]
+
+在此视图中，您可以查看和编辑&#x200B;**设置变量**&#x200B;操作的JSON版本。
+
+![在Adobe Analytics扩展中以JSON格式表示当前集变量配置的视图。](../../../images/adobe_analytics_extension_json_view.png)
+
+#### JSON
+
+在&#x200B;**设置变量**&#x200B;操作中，使用JSON视图上传、复制或下载JSON数据并将其存储在您的设备上。
+
+但是，存在一些限制：
+
+* **自定义代码**：如果您使用自定义代码填充变量，它不会显示在JSON视图中。 相反，在查看、复制或下载JSON时会显示一个警报，指示通过自定义代码所做的修改将不会包含在内。
+* **从URL属性复制**： JSON视图不支持从URL复制值。 将显示一个警报来指示此限制。
+* **已弃用的变量**：已弃用或已弃用的变量将显示在JSON视图中，并会显示通知已设置已弃用变量的警报。
+* **数据元素**：数据元素在JSON视图中表示。 如果JSON数据复制到另一个Tags属性，则可能未在该属性中定义对应的数据元素，并且在运行时无法正确解析这些数据元素。
+
+>[!ENDTABS]
 
 #### 层级
 
