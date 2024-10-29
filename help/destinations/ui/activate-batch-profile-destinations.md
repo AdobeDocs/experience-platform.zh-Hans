@@ -3,9 +3,9 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: ad33eaa48928b25502ef279f000b92f31e1667ca
+source-git-commit: fdb92a0c03ce6a0d44cfc8eb20c2e3bd1583b1ce
 workflow-type: tm+mt
-source-wordcount: '4095'
+source-wordcount: '4151'
 ht-degree: 11%
 
 ---
@@ -133,11 +133,11 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
 2. 使用&#x200B;**[!UICONTROL 时间]**&#x200B;切换开关选择导出是在受众评估后立即执行，还是在指定时间按计划执行。 在选择&#x200B;**[!UICONTROL 已计划]**&#x200B;选项时，您可以使用选择器以[!DNL UTC]格式选择一天中何时进行导出。
 
-   >[!NOTE]
-   >
-   >下面介绍的&#x200B;**[!UICONTROL 区段评估后]**&#x200B;选项仅适用于选择Beta客户。
+   使用&#x200B;**[!UICONTROL 区段评估后]**&#x200B;选项可在每日平台批处理分段作业完成后立即运行激活作业。 此选项可确保当激活作业运行时，将最新的配置文件导出到您的目标。 这可能会导致根据您的操作，每天多次导出受众。
 
-   使用&#x200B;**[!UICONTROL 区段评估后]**&#x200B;选项可在每日平台批处理分段作业完成后立即运行激活作业。 此选项可确保当激活作业运行时，将最新的配置文件导出到您的目标。
+   >[!IMPORTANT]
+   >
+   >如果您对已设置为在区段评估后激活的受众运行[灵活受众评估](../../segmentation/ui/audience-portal.md#flexible-audience-evaluation)，则无论之前执行过任何每日激活作业，灵活受众评估作业完成后都将立即激活受众。 这可能会导致根据您的操作，每天多次导出受众。
 
    <!-- Batch segmentation currently runs at {{insert time of day}} and lasts for an average {{x hours}}. Adobe reserves the right to modify this schedule. -->
 
