@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 在UI中监视目标的数据流
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 27802292a7a06f2edaea9efc39d4a63507e0e7e1
+source-git-commit: 25dc27d890cb2e0e23f8fa797ac9edea929164fd
 workflow-type: tm+mt
-source-wordcount: '3542'
-ht-degree: 10%
+source-wordcount: '3639'
+ht-degree: 9%
 
 ---
 
@@ -94,6 +94,17 @@ ht-degree: 10%
 - **[!UICONTROL 已激活的身份]**：作为数据流运行的一部分成功激活到所选目标的配置文件身份总数。 此量度包括创建、更新和从导出的受众中移除的标识。
 - **[!UICONTROL 排除的身份]**：基于缺少属性和同意违规而从激活中排除的配置文件身份总数。
 - **[!UICONTROL 身份失败]**&#x200B;由于错误未激活到目标的配置文件身份总数。
+
+  >[!IMPORTANT]
+  >
+  > 从2024年10月开始，Adobe将推出一项更新，以提高流目标的报表准确性。 此增强功能可确保Experience Platform和目标平台报表之间更好地保持一致。
+  >
+  > 在此更新之前，**[!UICONTROL 失败的标识]**&#x200B;包括所有激活重试。 进行此更新后，总计数中仅包含上次激活重试。
+  > 
+  > 此增强功能目前适用于[Google客户匹配目标](../../destinations/catalog/advertising/google-customer-match.md)，但将逐步推广至其他Experience Platform流目标。
+  > 进行此增强后，[Google客户匹配目标](../../destinations/catalog/advertising/google-customer-match.md)的用户可能会看到其&#x200B;**[!UICONTROL 身份失败]**&#x200B;计数中预期的下降。
+
+
 - **[!UICONTROL 激活率]**：已成功激活或跳过的接收标识的百分比。 以下公式演示如何计算此值：
   ![激活率公式。](../assets/ui/monitor-destinations/activation-rate-formula.png)
 - **[!UICONTROL 状态]**：表示数据流所处的状态： [!UICONTROL 已完成]或[!UICONTROL 正在处理]。 [!UICONTROL 已完成]表示相应数据流运行的所有标识已在一小时内导出。 [!UICONTROL 正在处理]意味着数据流运行尚未完成。

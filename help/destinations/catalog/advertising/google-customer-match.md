@@ -3,10 +3,10 @@ keywords: google客户匹配；Google客户匹配；Google客户匹配
 title: Google Customer Match连接
 description: Google Customer Match允许您使用在线和离线数据，通过Google自有资产和运营资产(如Search、Shopping、Gmail和YouTube)与客户联系并重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 25dc27d890cb2e0e23f8fa797ac9edea929164fd
 workflow-type: tm+mt
-source-wordcount: '1969'
-ht-degree: 1%
+source-wordcount: '2100'
+ht-degree: 2%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 1%
 >
 > Google将发布对[Google Ads API](https://developers.google.com/google-ads/api/docs/start)、[Customer Match](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html)和[Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview)的更改，以支持欧盟（[EU用户同意政策](https://www.google.com/about/company/user-consent-policy/)）中[Digital Markets Act](https://digital-markets-act.ec.europa.eu/index_en) (DMA)定义的合规性和同意相关要求。 自2024年3月6日起，将开始实施对同意要求的这些更改。
 ><br/>
->为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为Google合作伙伴，Adobe会为您提供在欧洲的DMA中遵守这些同意要求的必要工具。
+>为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为 Google 合作伙伴，Adobe 为您提供必要的工具，以遵守欧盟 DMA 下的这些同意要求。
 ><br/>
 >购买AdobePrivacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未同意的配置文件的客户无需采取任何操作。
 ><br/>
@@ -215,6 +215,20 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。
 
 ![应用激活工作流的映射步骤中突出显示的转换控件。](../../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm-transformation.png)
+
+## 监视目标 {#monitor-destination}
+
+连接到目标并建立目标数据流后，您可以使用Real-Time CDP中的[监视功能](/help/dataflows/ui/monitor-destinations.md)获取有关在每次数据流运行中激活到目标的配置文件记录的更多信息。
+
+>[!IMPORTANT]
+>
+> 从2024年10月开始，Adobe将推出一项更新，以提高流目标的报表准确性。 此增强功能可确保Experience Platform和目标平台报表之间更好地保持一致。
+>
+> 在此更新之前，**[!UICONTROL 失败的标识]**&#x200B;包括所有激活重试。 进行此更新后，总计数中仅包含上次激活重试。
+>
+> 此增强功能目前适用于[Google客户匹配目标](google-customer-match.md)，但将逐步推广至其他Experience Platform流目标。
+> 进行此增强后，此目标的用户可能会看到其&#x200B;**[!UICONTROL 失败标识的预期下降]**。
+
 
 ## 验证受众激活是否成功 {#verify-activation}
 
