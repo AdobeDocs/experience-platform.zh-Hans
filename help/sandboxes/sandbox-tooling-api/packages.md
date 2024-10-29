@@ -2,9 +2,9 @@
 title: 沙盒工具包API端点
 description: 沙盒工具API中的/packages端点允许您以编程方式管理Adobe Experience Platform中的包。
 exl-id: 46efee26-d897-4941-baf4-d5ca0b8311f0
-source-git-commit: f81e15ccfd89e2d0cb450f596743341264187f52
+source-git-commit: 1e271a88890f41f66aad93d96dbef23a09d33077
 workflow-type: tm+mt
-source-wordcount: '1621'
+source-wordcount: '2541'
 ht-degree: 8%
 
 ---
@@ -58,7 +58,7 @@ curl -X POST \
 | `name` | 程序包的名称。 | 字符串 | 是 |
 | `description` | 用于提供有关包的更多信息的描述。 | 字符串 | 否 |
 | `packageType` | 包类型为&#x200B;**PARTIAL**，表示您在包中包含特定项目。 | 字符串 | 是 |
-| `sourceSandbox` | 包的源沙盒。 | 字符串 | 否 |
+| `sourceSandbox` | 包的源沙盒。 | 对象 | 否 |
 | `expiry` | 定义包到期日期的时间戳。 默认值为自创建日期起90天。 响应到期字段将为纪元UTC时间。 | 字符串（UTC时间戳格式） | 否 |
 | `artifacts` | 要导出到资源包中的项目列表。 当`packageType`为`FULL`时，`artifacts`值应为&#x200B;**null**&#x200B;或&#x200B;**empty**。 | 数组 | 否 |
 
@@ -200,7 +200,6 @@ curl -X PUT \
 
 若要从包中删除项目，必须提供`id`并包含`action`的&#x200B;**DELETE**。
 
-
 **API格式**
 
 ```http
@@ -308,7 +307,7 @@ curl -X PUT \
 | `id` | 要更新的程序包的ID。 | 字符串 | 是 |
 | `action` | 要更新包中的元数据字段，操作值应为&#x200B;**UPDATE**。 仅&#x200B;**PARTIAL**&#x200B;包类型支持此操作。 | 字符串 | 是 |
 | `name` | 包的更新名称。 不允许重复包名称。 | 数组 | 是 |
-| `sourceSandbox` | Source沙盒应属于在请求标头中指定的相同组织。 | 字符串 | 是 |
+| `sourceSandbox` | Source沙盒应属于在请求标头中指定的相同组织。 | 对象 | 是 |
 
 **响应**
 
@@ -356,7 +355,7 @@ DELETE /packages/{PACKAGE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| {PACKAGE_ID} | 要删除的程序包的ID。 |
+| `{PACKAGE_ID}` | 要删除的程序包的ID。 |
 
 **请求**
 
@@ -392,7 +391,7 @@ GET /packages/{PACKAGE_ID}/export
 
 | 参数 | 描述 |
 | --- | --- |
-| {PACKAGE_ID} | 要发布的包的ID。 |
+| `{PACKAGE_ID}` | 要发布的包的ID。 |
 
 **请求**
 
@@ -441,7 +440,7 @@ GET /packages/{PACKAGE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| {PACKAGE_ID} | 要查找的程序包的ID。 |
+| `{PACKAGE_ID}` | 要查找的程序包的ID。 |
 
 **请求**
 
@@ -508,7 +507,7 @@ GET /packages/?{QUERY_PARAMS}
 
 | 参数 | 描述 |
 | --- | --- |
-| {QUERY_PARAMS} | 用于筛选结果的可选查询参数。 有关详细信息，请参阅[查询参数](./appendix.md)上的部分。 |
+| `{QUERY_PARAMS}` | 用于筛选结果的可选查询参数。 有关详细信息，请参阅[查询参数](./appendix.md)上的部分。 |
 
 **请求**
 
@@ -613,7 +612,7 @@ GET /packages/{PACKAGE_ID}/import?targetSandbox=targetSandboxName
 
 | 参数 | 描述 |
 | --- | --- |
-| {PACKAGE_ID} | 要查找的程序包的ID。 |
+| `{PACKAGE_ID}` | 要查找的程序包的ID。 |
 
 **请求**
 
@@ -632,7 +631,7 @@ curl -X GET \
 
 响应中返回冲突。 响应将原始包加上`alternatives`片段显示为按排名排序的数组。
 
-查看响应+++
++++查看响应
 
 ```json
 [
@@ -826,7 +825,7 @@ POST /packages/{PACKAGE_ID}/children
 
 | 参数 | 描述 |
 | --- | --- |
-| {PACKAGE_ID} | 程序包的ID。 |
+| `{PACKAGE_ID}` | 程序包的ID。 |
 
 **请求**
 
@@ -905,7 +904,7 @@ GET /packages/preflight/{packageId}?targetSandbox=<sandbox_name
 
 | 参数 | 描述 |
 | --- | --- |
-| {PACKAGE_ID} | 要导入的资源包的ID。 |
+| `{PACKAGE_ID}` | 要导入的资源包的ID。 |
 
 **请求**
 
@@ -924,7 +923,7 @@ curl -X GET \
 
 成功的响应会返回目标沙盒的资源权限，包括所需的权限列表、缺少的权限、工件的类型以及是否允许创建的决定。
 
-查看响应+++
++++查看响应
 
 ```json
 {
@@ -1053,7 +1052,7 @@ GET /packages/jobs?{QUERY_PARAMS}
 
 | 参数 | 描述 |
 | --- | --- |
-| {QUERY_PARAMS} | 用于筛选结果的可选查询参数。 有关详细信息，请参阅[查询参数](./appendix.md)上的部分。 |
+| `{QUERY_PARAMS}` | 用于筛选结果的可选查询参数。 有关详细信息，请参阅[查询参数](./appendix.md)上的部分。 |
 
 **请求**
 
@@ -1150,5 +1149,867 @@ curl -X GET \
             "createdBy": "{CREATED_BY}"
         }
     ]
+}
+```
+
+## 跨组织共享包 {#org-linking}
+
+沙盒工具API中的`/handshake`端点允许您与其他组织合作以共享包。
+
+### 发送共享请求 {#send-request}
+
+通过向`/handshake/bulkCreate`端点发送POST请求，向目标合作伙伴组织发送共享批准请求。 在共享专用包之前，必须填写此字段。
+
+**API格式**
+
+```http
+POST /handshake/bulkCreate
+```
+
+**请求**
+
+以下请求将启动目标伙伴组织与来源组织之间的共享审批。
+
+```shell
+curl -X POST \
+  https://platform.adobe.io/data/foundation/exim/handshake/bulkCreate \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "targetIMSOrgIds":["acme@AdobeOrg"],
+      "sourceIMSDetails":{
+        "id":"acme@AdobeOrg",
+        "name":"acme_org"
+      } 
+  }' 
+```
+
+| 属性 | 描述 | 类型 | 必需 |
+| --- | --- | --- | --- |
+| `targetIMSOrgIds` | 要向其发送共享请求的目标组织的列表。 | 数组 | 是 |
+| `sourceIMSDetails` | 有关源组织的详细信息。 | 对象 | 是 |
+
+**响应**
+
+成功的响应将返回有关共享请求的详细信息。
+
+```json
+{
+    "successfulRequests": {
+        "acme@AdobeOrg": {
+            "id": "{ID}",
+            "version": 0,
+            "createdDate": 1724938816798,
+            "modifiedDate": 1724938816798,
+            "createdBy": "{CREATED_BY}",
+            "modifiedBy": "{MODIFIED_BY}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "sourceRegion": "va6",
+            "sourceIMSOrgName": "{SOURCE_NAME}",
+            "status": "APPROVAL_PENDING",
+            "createdByName": "{CREATED_BY}",
+            "modifiedByName": "{MODIFIED_BY}",
+            "modifiedByIMSOrgId": "{ORG_ID}",
+            "statusHistory": "[{\"actionTakenBy\":\"acme@98ff67fa661fdf6549420b.e\",\"actionTakenByName\":\"{NAME}\",\"actionTakenByImsOrgID\":\"{ORG_ID}\",\"action\":\"INITIATED\",\"actionTimeStamp\":1724938816885}]",
+            "linkingId": "{LINKIND_ID}"
+        }
+    },
+    "failedRequests": {}
+}
+```
+
+### 批准已接收的共享请求 {#approve-requests}
+
+通过向`/handshake/action`端点发出POST请求，批准来自目标伙伴组织的共享请求。 批准后，源合作伙伴组织可以共享私有包。
+
+**API格式**
+
+```http
+POST /handshake/action
+```
+
+**请求**
+
+以下请求批准来自目标合作伙伴组织的共享请求。
+
+```shell
+curl -X POST  \
+  https://platform.adobe.io/data/foundation/exim/handshake/action \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "linkingID":"{LINKING_ID}",
+      "status":"APPROVED",
+      "reason":"Done",
+      "targetIMSOrgDetails":{
+          "id":"acme@AdobeOrg",
+          "name":"acme",
+          "region":"va7"
+      }
+  }'
+```
+
+| 属性 | 描述 | 类型 | 必需 |
+| --- | --- | --- | --- |
+| `linkingID` | 您正在响应的共享请求的ID。 | 字符串 | 是 |
+| `status` | 对共享请求执行的操作。 | 字符串 | 是 |
+| `reason` | 执行操作的原因。 | 字符串 | 是 |
+| `targetIMSOrgDetails` | 有关ID值应为目标组织的&#x200B;**ID**、名称值应为目标组织的&#x200B;**NAME**&#x200B;以及区域值应为目标组织&#x200B;**REGION**&#x200B;的目标组织的详细信息。 | 对象 | 是 |
+
+**响应**
+
+成功的响应将返回有关批准的共享请求的详细信息。
+
+```json
+{
+    "id": "{ID}",
+    "version": 1,
+    "createdDate": 1726737474000,
+    "modifiedDate": 1726737541731,
+    "createdBy": "{CREATED_BY}",
+    "modifiedBy": "{MODIFIED_BY}",
+    "sourceIMSOrgId": "{ORG_ID}",
+    "targetIMSOrgId": "{TARGET_ID}",
+    "sourceRegion": "va7",
+    "targetRegion": "va7",
+    "sourceOrgName": "{SOURCE_ORG}",
+    "targetOrgName": "{TARGET_ORG}",
+    "status": "APPROVED",
+    "createdByName": "{CREATED_BY}",
+    "modifiedByIMSOrgId": "{MODIFIED_BY}",
+    "statusHistory": "[{\"actionTakenBy\":\"{ACTION_BY}\",\"actionTakenByName\":\"{NAME}\",\"actionTakenByImsOrgID\":\"acme@AdobeOrg\",\"action\":\"INITIATED\",\"actionTimeStamp\":1726737474450,\"reason\":null},{\"actionTakenBy\":null,\"actionTakenByName\":null,\"actionTakenByImsOrgID\":\"745F37C35E4B776E0A49421B@AdobeOrg\",\"action\":\"APPROVED\",\"actionTimeStamp\":1726737541818,\"reason\":\"Done\"}]",
+    "linkingId": "{LINKING_ID}"
+}
+```
+
+### 列出传出/传入的共享请求 {#outgoing-and-incoming-requests}
+
+通过向`handshake/list?property=status%3D%3DAPPROVED&requestType=INCOMING`端点发出GET请求，列出传出和传入的共享请求。
+
+**API格式**
+
+```http
+POST handshake/list?property=status%3D%3DAPPROVED&requestType=INCOMING
+```
+
+| 参数 | 接受/默认值 |
+| --- | --- |
+| `property` | 指定要作为筛选依据的属性，如状态。 状态的可接受值为： `APPROVED`、`REJECTED`和`IN_PROGRESS`。 |
+| `start` | start的默认值为`0`。 |
+| `limit` | 限制的默认值为`20`。 |
+| `orderBy` | 按升序或降序对记录进行排序。 |
+| `requestType` | 接受`INCOMING`或`OUTGOING`。 |
+
+**请求**
+
+以下请求返回所有传出和传入的共享请求的列表。
+
+```shell
+curl -X GET \
+  https://platform.adobe.io/data/foundation/exim/handshake/list?property=status%3D%3DAPPROVED&requestType=INCOMING \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id:{ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+```
+
+**响应**
+
+成功的响应将返回传出和传入共享请求的列表及其详细信息。
+
+```json
+{
+    "totalElements": 1,
+    "currentPage": 0,
+    "totalPages": 1,
+    "hasPreviousPage": false,
+    "hasNextPage": false,
+    "data": [
+        {
+            "id": "{ID}",
+            "version": 1,
+            "createdDate": 1724929446000,
+            "modifiedDate": 1724929617000,
+            "modifiedBy": "{MODIFIED_BY}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "sourceRegion": "va7",
+            "targetRegion": "va6",
+             "sourceOrgName": "{SOURCE_ORG}",
+            "targetOrgName": "{TARGET_ORG}",
+            "status": "APPROVED",
+            "createdByName": "{CREATED_BY}",
+            "modifiedByName": "{MODIFIED_BY}",
+            "modifiedByIMSOrgId": "{MODIFIED_BY}",
+            "statusHistory": "[{\"actionTakenBy\":\"{ACTION_BY}\",\"actionTakenByName\":\"{NAME}\",\"actionTakenByImsOrgID\":\"{ORG_ID}\",\"action\":\"INITIATED\",\"actionTimeStamp\":1724929442467,\"reason\":null},{\"actionTakenBy\":null,\"actionTakenByName\":\"{NAME}\",\"actionTakenByImsOrgID\":\"{ORG_ID}\",\"action\":\"APPROVED\",\"actionTimeStamp\":1724929617531,\"reason\":\"Done\"}]",
+            "linkingId": "{LINKING_ID}"
+        }
+    ],
+    "nextPage": null,
+    "pageSize": null
+}
+```
+
+## 传输包
+
+使用沙盒工具API中的`/transfer`端点获取和创建新的包共享请求。
+
+### 新建共享请求 {#share-request}
+
+获取已发布的源组织的包，并通过在提供包ID和目标组织的ID的同时向`/transfer`端点发出POST请求将其与目标组织共享。
+
+**API格式**
+
+```http
+POST /transfer
+```
+
+**请求**
+
+以下请求会获取一个源组织包并将其与目标组织共享。
+
+```shell
+curl -X POST \
+  https://platform.adobe.io/data/foundation/exim/transfer/ \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "packageId": "{PACKAGE_ID}",
+      "targets": [
+          {
+              "imsOrgId": "{TARGET_IMS_ORG}"
+          }
+      ]
+  }'
+```
+
+| 属性 | 描述 | 类型 | 必需 |
+| --- | --- | --- | --- |
+| `packageId` | 要共享的包的ID。 | 字符串 | 是 |
+| `targets` | 要与之共享的组织列表。 | 数组 | 是 |
+
+**响应**
+
+成功的响应会返回所请求资源包及其共享状态的详细信息。
+
+```json
+[
+    {
+        "id": "{ID}",
+        "version": 0,
+        "createdDate": 1726480559313,
+        "modifiedDate": 1726480559313,
+        "createdBy": "{CREATED_BY}",
+        "modifiedBy": "{MODIFIED_BY}",
+        "sourceIMSOrgId": "{ORG_ID}",
+        "targetIMSOrgId": "{TARGET_ID}",
+        "packageId": "{PACKAGE_ID}",
+        "status": "PENDING",
+        "initiatedBy": "acme@3ec9197a65a86f34494221.e",
+        "transferDetails": {
+            "messages": [
+                "Fetched Package",
+                "Fetched Manifest"
+            ],
+            "additionalMetadata": null
+        },
+        "requestType": "PRIVATE"
+    }
+]
+```
+
+### 按ID获取共享请求 {#fetch-transfer-by-id}
+
+在提供传输ID的同时，通过向`/transfer/{TRANSFER_ID}`端点发出GET请求来获取共享请求的详细信息。
+
+**API格式**
+
+```http
+GET /transfer/{TRANSFER_ID}
+```
+
+| 参数 | 描述 |
+| --- | --- |
+| `{TRANSFER_ID}` | 要获取的传输的ID。 |
+
+**请求**
+
+以下请求获取ID为{TRANSFER_ID}的传输。
+
+```shell
+curl -X GET \
+  https://platform.adobe.io/data/foundation/exim/transfer/0c843180a64c445ca1beece339abc04b \
+  -H 'x-api-key: {API__KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+**响应**
+
+成功响应会返回共享请求的详细信息。
+
+```json
+{
+    "id": "{ID}",
+    "sourceIMSOrgId": "{ORG_ID}",
+    "sourceOrgName": "{SOURCE_ORG}",
+    "targetIMSOrgId": "{TARGET_ID}",
+    "targetOrgName": "{TARGET_ORG}",
+    "packageId": "{PACKAGE_ID}",
+    "packageName": "{PACKAGE_NAME}",
+    "status": "COMPLETED",
+    "initiatedBy": "{INITIATED_BY}",
+    "createdDate": 1724442856000,
+    "transferDetails": {
+        "messages": [
+            "Fetched Package",
+            "Fetched Manifest",
+            "Tenant Identified",
+            "Fetched Sandbox Id",
+            "Fetched Blob Files",
+            "Message Published to Kafka",
+            "Completed Transfer"
+        ],
+        "additionalMetadata": null
+    },
+    "requestType": "PRIVATE"
+}
+```
+
+### 获取共享列表 {#transfers-list}
+
+通过向`/transfer/list?{QUERY_PARAMETERS}`端点发出GET请求并根据需要更改查询参数，获取传输请求的列表。
+
+**API格式**
+
+```http
+GET `/transfer/list?{QUERY_PARAMETERS}`
+```
+
+| 参数 | 接受/默认值 |
+| --- | --- |
+| `property` | 指定要作为筛选依据的属性，如状态。 状态的可接受值为： `COMPLETED`、`PENDING`、`IN_PROGRESS`、`FAILED`。 |
+| `start` | start的默认值为`0`。 |
+| `limit` | 限制的默认值为`20`。 |
+| `orderBy` | 排序仅接受`createdDate`字段。 |
+
+**请求**
+
+以下请求从提供的搜索参数中获取传输请求的列表。
+
+```shell
+curl -X GET \
+  https://platform.adobe.io/data/foundation/exim/transfer/list?property=status==COMPLETED&start=0&limit=2&orderBy=-createdDate \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+**响应**
+
+成功的响应会从提供的搜索参数返回所有传输请求的列表。
+
+```json
+{
+    "totalElements": 43,
+    "currentPage": 0,
+    "totalPages": 22,
+    "hasPreviousPage": false,
+    "hasNextPage": true,
+    "data": [
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_ORG}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_ORG}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "{PACKAGE_NAME}",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1726129077000,
+            "createdDate": 1726129062000,
+            "transferDetails": {
+                "messages": [
+                    "Fetched Package",
+                    "Fetched Manifest",
+                    "Tenant Identified",
+                    "Fetched Sandbox Id",
+                    "Fetched Blob Files",
+                    "Message Published to Kafka",
+                    "Completed Transfer",
+                    "Finished with status: COMPLETED"
+                ],
+                "additionalMetadata": null
+            },
+            "requestType": "PRIVATE"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_ORG}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_ORG}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "{PACKAGE_NAME}",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1726066046000,
+            "createdDate": 1726065936000,
+            "transferDetails": {
+                "messages": [
+                    "Fetched Package",
+                    "Fetched Manifest",
+                    "Tenant Identified",
+                    "Fetched Sandbox Id",
+                    "Fetched Blob Files",
+                    "Message Published to Kafka",
+                    "Completed Transfer",
+                    "Finished with status: COMPLETED"
+                ],
+                "additionalMetadata": null
+            },
+            "requestType": "PRIVATE"
+        }
+    ],
+    "nextPage": null,
+    "pageSize": null
+}
+```
+
+### 将程序包可用性从专用更新为公用 {#update-availability}
+
+通过向`/transfer/list?property=status%3D%3DCOMPLETED%2CFAILED&requestType=PUBLIC`端点发出GET请求，将包从专用更改为公用。 默认情况下，将使用专用可用性创建包。
+
+**请求**
+
+以下请求将包的可用性从专用更改为公用。
+
+```shell
+curl -X GET \
+  http://platform.adobe.io/data/foundation/transfer/list?property=status%3D%3DCOMPLETED%2CFAILED&requestType=PUBLIC \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-type: application/json' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -d '{
+      "id":"{ID}",
+      "action":"UPDATE",
+      "packageVisibility":"PUBLIC"
+  }'
+```
+
+| 属性 | 描述 | 类型 | 必需 |
+| --- | --- | --- | --- |
+| `id` | 要更新的程序包的ID。 | 字符串 | 是 |
+| `action` | 若要将可见性更新为公开，操作值应为&#x200B;**UPDATE**。 | 字符串 | 是 |
+| `packageVisbility` | 要更新可见性，packageVisibility值应为&#x200B;**PUBLIC**。 | 字符串 | 是 |
+
+**响应**
+
+成功的响应将返回有关包及其可见性的详细信息。
+
+```json
+{
+    "id": "{ID}",
+    "version": 7,
+    "createdDate": 1729624618000,
+    "modifiedDate": 1729658596340,
+    "createdBy": "{CREATED_BY}",
+    "modifiedBy": "{MODIFIED_BY}",
+    "name": "acme",
+    "imsOrgId": "{ORG_ID}",
+    "packageType": "PARTIAL",
+    "expiry": 1737434596325,
+    "status": "PUBLISH_FAILED",
+    "packageVisibility": "PUBLIC",
+    "artifactsList": [
+        {
+            "id": "{ID}",
+            "type": "PROFILE_SEGMENT",
+            "found": false,
+            "count": 0,
+            "title": "Acme Profile Segment"
+        }
+    ],
+    "schemaMapping": {},
+    "sourceSandbox": {
+        "name": "acme-sandbox",
+        "imsOrgId": "{ORG_ID}",
+        "empty": false
+    }
+}
+```
+
+### 请求导入公共资源包 {#pull-public-package}
+
+通过向`/transfer/pullRequest`端点发出POST请求，从具有公开可用性的源组织导入包。
+
+**API格式**
+
+```http
+POST /transfer/pullRequest
+```
+
+**请求**
+
+以下请求将导入资源包，并将它设置为对公众可用。
+
+```shell
+curl -X POST \
+  https://platform.adobe.io/data/foundation/exim/transfer/pullRequest \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "imsOrgId": "{ORG_ID}",
+      "packageId": "{PACKAGE_ID}"
+  }'
+```
+
+| 属性 | 描述 | 类型 | 必需 |
+| --- | --- | --- | --- |
+| `imsOrgId` | 程序包源组织的ID。 | 字符串 | 是 |
+| `packageId` | 要导入的资源包中的ID。 | 字符串 | 是 |
+
+**响应**
+
+成功响应将返回有关导入的公共包的详细信息。
+
+```json
+{
+    "id": "{ID}",
+    "version": 0,
+    "createdDate": 1729658890425,
+    "modifiedDate": 1729658890425,
+    "createdBy": "{CREATED_BY}",
+    "modifiedBy": "{MODIFIED_BY}",
+    "sourceIMSOrgId": "{ORG_ID}",
+    "targetIMSOrgId": "{TARGET_ID}",
+    "packageId": "{PACKAGE_ID}",
+    "status": "PENDING",
+    "initiatedBy": "{INITIATED_BY}",
+    "pipelineMessageId": "{MESSAGE_ID}",
+    "requestType": "PUBLIC"
+}
+```
+
+### 列出公共包 {#list-public-packages}
+
+通过向`/transfer/list?{QUERY_PARAMS}`端点发出GET请求获取具有公开可见性的包列表。
+
+**API格式**
+
+```http
+GET /transfer/list?{QUERY_PARAMS}
+```
+
+| 参数 | 接受/默认值 |
+| --- | --- |
+| `property` | 指定要作为筛选依据的属性，如状态。 状态的可接受值为： `COMPLETED`和`FAILED`。 |
+| `start` | start的默认值为`0`。 |
+| `limit` | 限制的默认值为`20`。 |
+| `orderBy` | 排序仅接受`createdDate`字段。 |
+| `requestType` | 接受`PUBLIC`或`PRIVATE`。 |
+
+**请求**
+
+以下请求会获取具有公共可用性的包的列表。
+
+```shell
+curl -X GET \
+  https://platform.adobe.io/data/foundation/exim/transfer/list?property=status%3D%3DCOMPLETED%2CFAILED&requestType=PUBLIC&orderby=-createdDate \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+```
+
+**响应**
+
+成功的响应将返回公共包及其详细信息的列表。
+
++++查看响应
+
+```json
+{
+    "totalElements": 14,
+    "currentPage": 0,
+    "totalPages": 1,
+    "hasPreviousPage": false,
+    "hasNextPage": false,
+    "data": [
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_ORG}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "Public package demo",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729359318000,
+            "createdDate": 1729359316000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "Public package demo",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729359284000,
+            "createdDate": 1729359283000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "Test Private Flow Final",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284462000,
+            "createdDate": 1729275962000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOUCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "Fest",
+            "status": "FAILED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284104000,
+            "createdDate": 1729253854000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "PublicPackageSharing",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284835000,
+            "createdDate": 1729253556000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "PublicPackageSharing",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284835000,
+            "createdDate": 1729253556000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "PublicPackageSharing",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284835000,
+            "createdDate": 1729253556000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "Public Package Audit Test",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284667000,
+            "createdDate": 1729253421000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "Public Package Audit Test",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284957000,
+            "createdDate": 1729253143000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "Public Package Audit Test",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284562000,
+            "createdDate": 1729252975000,
+            "requestType": "PUBLIC"
+        },
+        {
+               "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "Private Package Test 1",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284262000,
+            "createdDate": 1729229755000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "Demo Package 1016",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284784000,
+            "createdDate": 1729208888000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "Public Package test 1",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284934000,
+            "createdDate": 1729153097000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "Public Package test 1",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284912000,
+            "createdDate": 1729153043000,
+            "requestType": "PUBLIC"
+        }
+    ],
+    "nextPage": null,
+    "pageSize": null
+}
+```
+
++++
+
+## 复制包有效负载(#package-payload)
+
+您可以通过向`/packages/payload`端点发出GET请求来复制公共包的有效负载，该端点在请求路径中包含包的相应ID。
+
+**API格式**
+
+```http
+GET /packages/payload/{PACKAGE_ID}
+```
+
+| 参数 | 描述 |
+| --- | --- |
+| `{PACKAGE_ID}` | 要复制的包的ID。 |
+
+**请求**
+
+以下请求提取ID为{PACKAGE_ID}的包的有效负载。
+
+```shell
+curl -X GET \
+  https://platform.adobe.io/data/foundation/exim/packages/payload/{PACKAGE_ID} \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "imsOrgId": "{ORG_ID}",
+      "packageId": "{PACKAGE_ID}"
+  }'
+```
+
+| 属性 | 描述 | 类型 | 必需 |
+| --- | --- | --- | --- |
+| `imsOrdId` | 包所属的组织的ID。 | 字符串 | 是 |
+| `packageId` | 您请求的有效负载的程序包的ID。 | 字符串 | 是 |
+
+**响应**
+
+成功的响应将返回包的有效负载。
+
+```json
+{
+    "imsOrgId": "{ORG_ID}",
+    "packageId": "{PACKAGE_ID}"
 }
 ```
