@@ -2,7 +2,7 @@
 title: Adobe Experience Platform发行说明2024年10月
 description: Adobe Experience Platform 的 2024 年 10 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 5fc786058a187b161a147a8bd361d19c5f35105d
+source-git-commit: f30a124a40928abf69366d311131e353c2779191
 workflow-type: tm+mt
 source-wordcount: '1159'
 ht-degree: 35%
@@ -15,12 +15,12 @@ ht-degree: 35%
 
 Adobe Experience Platform 中现有功能和文档的更新：
 
-- [仪表板{#dashboards}](#dashboards-dashboards)<!-- omit in toc -->
-- [数据收集 {#collection}](#data-collection-collection)
-- [目标 {#destinations}](#destinations-destinations)
-- [分段服务{#segmentation-service}](#segmentation-service-segmentation-service)
-- [沙盒{#sandboxes}](#sandboxes-sandboxes)
-- [源 {#sources}](#sources-sources)
+- [仪表板](#dashboards)
+- [数据收集](#data-collection-)
+- [目标](#destinations)
+- [Segmentation Service](#segmentation-service)
+- [沙盒](#sandboxes)
+- [源](#sources)
 
 ## 仪表板 {#dashboards}
 
@@ -40,7 +40,7 @@ Experience Platform 提供了多个仪表板，您可以通过这些仪表板查
 
 有关仪表板的详细信息，包括如何授予访问权限和创建自定义构件，请首先阅读[仪表板概述](../../dashboards/home.md)。
 
-## 数据收集 {#collection}
+## 数据收集 {#data-collection}
 
 Adobe Experience Platform 提供一套技术，通过这些技术，可收集客户端客户体验数据，并将它发送到 Experience Platform Edge Network，从中可充实、转换数据和将数据分发到 Adobe 或非 Adobe 目标。
 

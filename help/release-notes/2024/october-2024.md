@@ -1,7 +1,7 @@
 ---
 title: Adobe Experience Platform发行说明2024年10月
 description: Adobe Experience Platform 的 2024 年 10 月发行说明。
-source-git-commit: 5fc786058a187b161a147a8bd361d19c5f35105d
+source-git-commit: f30a124a40928abf69366d311131e353c2779191
 workflow-type: tm+mt
 source-wordcount: '1159'
 ht-degree: 35%
@@ -14,12 +14,12 @@ ht-degree: 35%
 
 Adobe Experience Platform 中现有功能和文档的更新：
 
-- [仪表板{#dashboards}](#dashboards-dashboards)<!-- omit in toc -->
-- [数据收集 {#collection}](#data-collection-collection)
-- [目标 {#destinations}](#destinations-destinations)
-- [分段服务{#segmentation-service}](#segmentation-service-segmentation-service)
-- [沙盒{#sandboxes}](#sandboxes-sandboxes)
-- [源 {#sources}](#sources-sources)
+- [仪表板](#dashboards)
+- [数据收集](#data-collection-)
+- [目标](#destinations)
+- [Segmentation Service](#segmentation-service)
+- [沙盒](#sandboxes)
+- [源](#sources)
 
 ## 仪表板 {#dashboards}
 
