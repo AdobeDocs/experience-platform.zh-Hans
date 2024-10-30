@@ -5,10 +5,10 @@ breadcrumb-title: 仪表板指南
 user-guide-description: 了解如何在 Experience Platform 中通过可自定义的仪表板将数据可视化。
 feature: Dashboards
 role: Developer,User
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: cb3cc06a31c0390d9b1f152c2186da3847647f64
 workflow-type: tm+mt
-source-wordcount: '128'
-ht-degree: 35%
+source-wordcount: '142'
+ht-degree: 41%
 
 ---
 
@@ -22,6 +22,12 @@ ht-degree: 35%
 * [下载功能板以PDF](download.md)
 * SQL分析：查询专业模式{#sql-insights-query-pro-mode}
    * [概述](sql-insights-query-pro-mode/overview.md)
+   * 数据Distiller模板{#templates}
+      * [概述](sql-insights-query-pro-mode/templates/overview.md)
+      * [高级受众重叠](sql-insights-query-pro-mode/templates/overlaps.md)
+      * [受众对比](sql-insights-query-pro-mode/templates/comparison.md)
+      * [受众趋势](sql-insights-query-pro-mode/templates/trends.md)
+      * [受众标识重叠](sql-insights-query-pro-mode/templates/identity-overlaps.md)
    * 筛选器{#filters}
       * [日期过滤器](sql-insights-query-pro-mode/filters/date-filter.md)
       * [全局筛选器](sql-insights-query-pro-mode/filters/global-filter.md)
@@ -51,7 +57,7 @@ ht-degree: 35%
 * 分析用例{#insights-use-cases}
    * [同意分析](insights-use-cases/consent-analysis.md)
 * 可用的数据模型{#data-models}
-   * [Real-time Customer Data Platform Insights数据模型B2B版本](data-models/cdp-insights-data-model-b2b.md)
+   * [Real-time Customer Data Platform Insights数据模型B2B edition](data-models/cdp-insights-data-model-b2b.md)
    * [Real-time Customer Data Platform Insights数据模型B2C版本](data-models/cdp-insights-data-model-b2c.md)
 * 应用程序集成{#integrations}
    * [Power BI](integrations/power-bi.md)
