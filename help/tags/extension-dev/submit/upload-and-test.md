@@ -2,10 +2,10 @@
 title: 上载和实施扩展的端到端测试
 description: 了解如何在Adobe Experience Platform中验证、上传和测试您的扩展。
 exl-id: 6176a9e1-fa06-447e-a080-42a67826ed9e
-source-git-commit: 9b99ec5e526fcbe34a41d3ce397b34a9b4105819
+source-git-commit: 8e843ce14d726f18b77189b5523b823bfa4473be
 workflow-type: tm+mt
-source-wordcount: '2362'
-ht-degree: 23%
+source-wordcount: '2345'
+ht-degree: 22%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 23%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 要在Adobe Experience Platform中测试标记扩展，请使用标记API和/或命令行工具来上传扩展包。 接下来，使用Platform UI或数据收集UI将扩展包安装到资产，并在标记库和内部版本中执行其功能。
 
@@ -43,7 +43,7 @@ ht-degree: 23%
 
 >[!IMPORTANT]
 >
->要在 Adobe I/O 中创建集成，您必须是 Experience Cloud 组织管理员或 Experience Cloud 组织开发人员。
+>要在Adobe I/O中创建集成，您必须是Experience Cloud组织管理员或Experience Cloud组织开发人员。
 
 如果无法创建集成，则您可能没有正确的权限。 这需要组织管理员为您完成这些步骤或将您指定为开发人员。
 
@@ -61,14 +61,16 @@ npx @adobe/reactor-uploader
 
 `npx`允许您下载和运行npm包，而无需将其实际安装到计算机上。 这是运行 Uploader 的最简单方法。
 
-Uploader要求您输入几条信息。 技术帐户ID、API密钥和其他一些信息可以从Adobe I/O控制台中检索。 导航到I/O控制台中的[集成页面](https://console.adobe.io/integrations)。 从下拉菜单中选择正确的组织，找到正确的集成，然后选择&#x200B;**[!UICONTROL 查看]**。
+>[!NOTE]
+> 默认情况下，Uploader需要服务器到服务器Oauth流的Adobe I/O凭据。 旧版`jwt-auth`凭据
+> 通过运行`npx @adobe/reactor-uploader@v5.2.0`一直使用到2025年1月1日弃用。 所需的参数
+> [此处](https://github.com/adobe/reactor-uploader/tree/cdc27f4f0e9fa3136b8cd5ca8c7271428b842452)找到`jwt-auth`版本以运行。
 
-- 私钥的路径是什么？/path/to/private.key。这是您在上面步骤 2 中保存私钥的位置。
-- 您的组织 ID 是什么？请从之前保持打开状态的I/O控制台概述页面复制并粘贴此内容。
-- 您的技术帐户 ID 是什么？请从I/O控制台复制并粘贴此项。
-- 您的 API 密钥是什么？请从I/O控制台复制并粘贴此项。
-- 客户端密码是什么？ 请从I/O控制台复制并粘贴此项。
-- 要上载的extension_package的路径是什么？/path/to/extension_package.zip. 如果从包含 .zip 包的目录中调用 Uploader，则只需从列表中选择该包，而不需要键入路径。
+上传程序仅要求您输入几条信息。 可以从Adobe I/O控制台检索`clientId`和`clientSecret`。 导航到I/O控制台中的[集成页面](https://console.adobe.io/integrations)。 从下拉菜单中选择正确的组织，找到正确的集成，然后选择&#x200B;**[!UICONTROL 查看]**。
+
+- 您的`clientId`是什么？ 请从I/O控制台复制并粘贴此项。
+- 您的`clientSecret`是什么？ 请从I/O控制台复制并粘贴此项。
+- 如果从包含 .zip 包的目录中调用 Uploader，则只需从列表中选择该包，而不需要键入路径。
 
 随后将上载扩展包，并且 Uploader 将为您提供 extension_package 的 ID。
 
@@ -79,6 +81,8 @@ Uploader要求您输入几条信息。 技术帐户ID、API密钥和其他一些
 >[!NOTE]
 >
 >如果您打算经常运行Uploader，那么每次输入所有这些信息可能会造成负担。 您也可以从命令行将这些信息作为参数传入。 有关更多信息，请参阅 NPM 文档的[命令行参数](https://www.npmjs.com/package/@adobe/reactor-uploader#command-line-arguments)部分。
+
+如果您希望直接使用API管理扩展上传，请在API文档中参阅[创建](../../api/endpoints/extension-packages.md/#create)或[更新](../../api/endpoints/extension-packages.md#update)扩展包的示例调用，以获取更多详细信息。
 
 ## 创建开发资产 {#property}
 

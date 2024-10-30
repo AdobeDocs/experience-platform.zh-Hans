@@ -2,10 +2,10 @@
 title: 发布扩展
 description: 了解如何在Adobe Experience Platform中私密或公开发布标记扩展。
 exl-id: a5eb6902-4b0f-4717-a431-a290c50fb5a6
-source-git-commit: 60d88be5d710314cdc6900f4b63643c740b91fa6
+source-git-commit: 2152cf98d9809654cca7abd7b8469a72e8387b2a
 workflow-type: tm+mt
-source-wordcount: '303'
-ht-degree: 32%
+source-wordcount: '479'
+ht-degree: 25%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 32%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 测试和文档记录完成后，扩展即可发布。 当前，可执行两种类型的发布：
 
@@ -28,7 +28,26 @@ ht-degree: 32%
 
 ## 私密发布
 
-私密发布扩展的最简单方法是使用[标记扩展发布器](https://www.npmjs.com/package/@adobe/reactor-releaser)。 在其文档中，提供了更多的相关说明。
+私密发布扩展的最简单方法是使用[标记扩展发布器](https://www.npmjs.com/package/@adobe/reactor-releaser)。
+
+```bash
+npx @adobe/reactor-releaser
+```
+
+`npx`允许您下载和运行npm包，而无需将其实际安装到计算机上。 这是管理发布者的最简单方法。
+
+>[!NOTE]
+> 默认情况下，发布者需要服务器到服务器Oauth流的Adobe I/O凭据。 旧版`jwt-auth`凭据
+> 通过运行`npx @adobe/reactor-releaser@v3.1.3`一直使用到2025年1月1日弃用。 所需的参数
+> [此处](https://github.com/adobe/reactor-releaser/tree/9ea66aa2c683fe7da0cca50ff5c9b9372f183bb5)找到`jwt-auth`版本以运行。
+
+发行商仅要求您输入几条信息。 可以从Adobe I/O控制台检索`clientId`和`clientSecret`。 导航到I/O控制台中的[集成页面](https://console.adobe.io/integrations)。 从下拉菜单中选择正确的组织，找到正确的集成，然后选择&#x200B;**[!UICONTROL 查看]**。
+
+- 您的`clientId`是什么？ 请从I/O控制台复制并粘贴此项。
+- 您的`clientSecret`是什么？ 请从I/O控制台复制并粘贴此项。
+
+发布者将从扩展清单中读取`name`和`platform`字段，并在Development Availability中查询API以查找匹配的扩展包。
+然后，发布者将要求您确认它是否找到了要发布到私密可用环境的正确扩展包。
 
 如果您希望直接使用API以私密方式发布扩展，请参阅API文档中[私密发布扩展包](../../api/endpoints/extension-packages.md/#private-release)的示例调用，以获取更多详细信息。
 
