@@ -2,9 +2,9 @@
 title: 沙盒工具
 description: 在沙盒之间无缝导出和导入沙盒配置。
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: 209aaaf0c2bfdb321f75257309980c7a48cb1eb4
+source-git-commit: 85476ea8a667cf3e74cd7a24da07d81c635e1628
 workflow-type: tm+mt
-source-wordcount: '2403'
+source-wordcount: '2431'
 ht-degree: 7%
 
 ---
@@ -151,6 +151,8 @@ ht-degree: 7%
 >[!NOTE]
 >
 >依赖对象可以替换为目标沙盒中的现有对象，这允许您重用现有对象，而不是创建新版本。 例如，导入包含架构的包时，您可以在目标沙盒中重用现有的自定义字段组和身份命名空间。 或者，在导入包含历程的包时，您可以重复使用目标沙盒中的现有区段。
+>
+>沙盒工具当前不支持更新或覆盖现有对象。 您可以选择创建新对象，或继续使用现有对象而不进行修改。
 
 要使用现有对象，请选择从属对象旁边的铅笔图标。
 
