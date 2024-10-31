@@ -2,9 +2,9 @@
 title: 命名空间优先级
 description: 了解Identity Service中的命名空间优先级。
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: e8e8914c41d7a083395b0bf53aaac8021fcf9e9a
+source-git-commit: 07d54bf341ef2aacc6612ad323585609c0830824
 workflow-type: tm+mt
-source-wordcount: '1689'
+source-wordcount: '1732'
 ht-degree: 2%
 
 ---
@@ -150,6 +150,8 @@ ht-degree: 2%
 有关详细信息，请阅读[高级生命周期管理概述](../../hygiene/home.md)。
 
 ### 计算属性
+
+计算属性使用命名空间优先级存储计算属性值。 对于给定事件，具有最高命名空间优先级的身份将具有针对其写入的计算属性的值。 有关详细信息，请阅读[计算属性UI指南](../../profile/computed-attributes/ui.md)。
 
 计算属性不使用命名空间优先级来计算值。 如果您使用计算属性，则必须确保将CRMID指定为WebSDK的主要标识。 有关详细信息，请阅读[计算属性UI指南](../../profile/computed-attributes/ui.md)。
 
