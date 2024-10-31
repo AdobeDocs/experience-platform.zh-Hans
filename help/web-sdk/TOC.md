@@ -6,9 +6,9 @@ breadcrumb-title: Web SDK 指南
 user-guide-description: 通过边缘网络与 Experience Cloud 服务交互。
 feature: Web SDK
 role: Developer
-source-git-commit: da0d9d0976dc0f7244500e62bb364b11fab7baca
+source-git-commit: 02ae1fce01895d83d9c68248397e5288613ffe58
 workflow-type: tm+mt
-source-wordcount: '227'
+source-wordcount: '229'
 ht-degree: 23%
 
 ---
@@ -76,6 +76,7 @@ ht-degree: 23%
    * [呈现个性化内容](personalization/rendering-personalization-content.md)
    * [通过混合实施的Personalization](personalization/hybrid-personalization.md)
    * [管理闪烁](personalization/manage-flicker.md)
+   * [监控挂钩](monitoring-hooks.md)
    * Adobe Target {#adobe-target}
       * [概述](personalization/adobe-target/target-overview.md)
       * [单页应用程序实施](personalization/adobe-target/spa-implementation.md)

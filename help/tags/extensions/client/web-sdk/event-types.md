@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK扩展中的事件类型
 description: 了解如何使用Adobe Experience Platform Launch中Adobe Experience Platform Web SDK扩展提供的事件类型。
 solution: Experience Platform
 exl-id: b3162406-c5ce-42ec-ab01-af8ac8c63560
-source-git-commit: 666e8c6fcccf08d0841c5796677890409b22d794
+source-git-commit: b37bf09e3ec16f29d6acee3bca71463fa2c876ce
 workflow-type: tm+mt
-source-wordcount: '1127'
+source-wordcount: '1490'
 ht-degree: 0%
 
 ---
@@ -13,6 +13,34 @@ ht-degree: 0%
 # 事件类型
 
 本页介绍由Adobe Experience Platform Web SDK标记扩展提供的Adobe Experience Platform事件类型。 它们用于[生成规则](https://experienceleague.adobe.com/docs/platform-learn/data-collection/tags/build-rules.html?lang=zh-Hans)，不应与[`xdm`对象](/help/web-sdk/commands/sendevent/xdm.md)中的`eventType`字段混淆。
+
+## 监控挂接已触发 {#monitoring-hook-triggered}
+
+Adobe Experience Platform Web SDK包含监视挂钩，您可以使用这些挂钩监视各种系统事件。 这些工具可用于开发您自己的调试工具和捕获Web SDK日志。
+
+有关每个监视挂接事件包含哪些参数的完整详细信息，请参阅[Web SDK监视挂接文档](../../../../web-sdk/monitoring-hooks.md)。
+
+![显示监视挂接事件类型的Tags用户界面图像](assets/monitoring-hook-triggered.png)
+
+Web SDK标记扩展支持以下监视挂接：
+
+* **[!UICONTROL onInstanceCreated]**：当您成功创建新的Web SDK实例时，将触发此监视挂接事件。
+* **[!UICONTROL onInstanceConfigured]**：成功解析[`configure`](../../../../web-sdk/commands/configure/overview.md)命令时，此监视挂接事件由Web SDK触发
+* **[!UICONTROL onBeforeCommand]**：此监视挂接事件在执行任何其他命令之前由Web SDK触发。 可以使用此监视挂接检索特定命令的配置选项。
+* **[!UICONTROL onCommandResolved]**：此监视挂接事件是在解析命令promise之前触发的。 您可以使用此函数查看命令选项和结果。
+* **[!UICONTROL onCommandRejected]**：当命令promise被拒绝并且包含有关错误原因的信息时，将触发此监视挂接事件。
+* **[!UICONTROL onBeforeNetworkRequest]**：此监视挂接事件是在执行网络请求之前触发的。
+* **[!UICONTROL onNetworkResponse]**：浏览器收到响应时会触发此监视挂接事件。
+* **[!UICONTROL onNetworkError]**：此监视挂接事件在网络请求失败时触发。
+* **[!UICONTROL onBeforeLog]**：此监视挂接事件在Web SDK将任何内容记录到控制台之前触发。
+* **[!UICONTROL onContentRendering]**：此监视挂接事件由`personalization`组件触发，可帮助您调试个性化内容的呈现。 此事件可以具有不同的状态：
+   * `rendering-started`：指示Web SDK即将呈现建议。 在Web SDK开始呈现决策范围或视图之前，您可以在`data`对象中看到将由`personalization`组件和范围名称呈现的建议。
+   * `no-offers`：表示未收到所请求参数的有效负载。
+   * `rendering-failed`：表示Web SDK无法呈现建议。
+   * `rendering-succeeded`：表示已针对决策范围完成渲染。
+   * `rendering-redirect`：指示Web SDK将执行重定向建议。
+* **[!UICONTROL onContentHiding]**：在应用或删除预隐藏样式时触发此监视挂接事件。
+
 
 ## [!UICONTROL 发送事件完成]
 

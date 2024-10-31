@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；平台Web SDK；Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: f31d250cfbe42680ee6f4d1334bf04a2ee8643a1
+source-git-commit: 3dacc991fd7760c1c358bec07aca83ffeb4f4f4d
 workflow-type: tm+mt
-source-wordcount: '2044'
+source-wordcount: '2042'
 ht-degree: 2%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 2%
 
 - 现在启动媒体会话时支持[数据流覆盖](../datastreams/overrides.md)。
 
-- 在渲染成功监视挂接中添加了对Adobe Target响应令牌的支持。
+- 在[`onContentRendering`](monitoring-hooks.md#onContentRendering)监控挂接中添加了对Adobe Target响应令牌的支持。
 
 **修复和改进**
 
