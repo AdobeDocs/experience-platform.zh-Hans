@@ -2,16 +2,25 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: c1fb9fe7d4863e316b824d6c8dd2ff0d3405d7ea
+source-git-commit: c38456ab44f3e143a0120f1a756105213a46fab5
 workflow-type: tm+mt
-source-wordcount: '2291'
-ht-degree: 29%
+source-wordcount: '2332'
+ht-degree: 28%
 
 ---
 
 # Adobe Experience Platform Web SDK扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[平台Web SDK发行说明](/help/web-sdk/release-notes.md)。
+
+## 版本2.27.0 - 2024年10月31日
+
+**新增功能**
+
+- [数据流覆盖](../web-sdk/web-sdk-extension-configuration.md#datastream-overrides)现在包含用于禁用Experience Cloud解决方案和Adobe Experience Platform服务的设置。
+- 您现在可以为媒体会话创建[数据流覆盖](../web-sdk/web-sdk-extension-configuration.md)。
+
+包含Adobe Experience Platform Web SDK版本2.24.0。
 
 ## 版本2.26.1 - 2024年9月19日
 

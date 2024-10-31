@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；平台Web SDK；Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: c1fb9fe7d4863e316b824d6c8dd2ff0d3405d7ea
+source-git-commit: f31d250cfbe42680ee6f4d1334bf04a2ee8643a1
 workflow-type: tm+mt
-source-wordcount: '1920'
+source-wordcount: '2044'
 ht-degree: 2%
 
 ---
@@ -15,6 +15,26 @@ ht-degree: 2%
 
 本文档介绍Adobe Experience Platform Web SDK的发行说明。
 有关Web SDK标记扩展的最新发行说明，请参阅[Web SDK标记扩展发行说明](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md)。
+
+## 版本2.24.0 - 2024年10月31日
+
+**新增功能**
+
+- 现在启动媒体会话时支持[数据流覆盖](../datastreams/overrides.md)。
+
+- 在渲染成功监视挂接中添加了对Adobe Target响应令牌的支持。
+
+**修复和改进**
+
+- 当返回多个应用程序内消息时，只会显示具有最高优先级的消息。 其它则被记录为隐含。
+- 空的数据流覆盖不再发送到Edge Network，从而减少了与服务器端路由配置的潜在冲突。
+- 重命名了以下日志消息组件名称，以与其他AdobeSDK保持一致：
+   - `DecisioningEngine`已重命名为`RulesEngine`
+   - `LegacyMediaAnalytics`已重命名为`MediaAnalyticsBridge`
+   - `Privacy`已重命名为`Consent`
+- 修复了通过[`applyPropositions`](../web-sdk/commands/applypropositions.md)呈现默认内容项时发生的错误。
+- 修复了Adobe Target移动和调整操作大小时的CSS错误。
+- 已从[`sendEvent`](../web-sdk/commands/sendevent/overview.md)响应中删除`machineLearning`键。
 
 ## 版本2.23.0 - 2024年9月19日
 
