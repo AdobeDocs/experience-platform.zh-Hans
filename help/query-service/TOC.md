@@ -5,9 +5,9 @@ breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
 role: User,Developer
-source-git-commit: 3583f6e0ac72e4f813abd87949cb640d0b20b6e2
+source-git-commit: c94213b37813730911d207cb0de773d8aac22c13
 workflow-type: tm+mt
-source-wordcount: '341'
+source-wordcount: '357'
 ht-degree: 22%
 
 ---
@@ -39,6 +39,16 @@ ht-degree: 22%
       - [ML的工程师功能](data-distiller/ml-feature-pipelines/feature-engineering.md)
       - [将数据导出到ML环境](data-distiller/ml-feature-pipelines/export-data.md)
       - [AI/ML数据管道扩充端到端工作流](data-distiller/ml-feature-pipelines/end-to-end-notebook-workflow.md)
+- 数据Distiller统计数据{#advanced-statistics}
+   - [概述](advanced-statistics/overview.md)
+   - [特征工程](advanced-statistics/feature-engineering.md)
+   - [个模型](advanced-statistics/models.md)
+实施模型{#implement-models}
+      - [实施模型](advanced-statistics/implement-models/implement-models.md)
+      - [回归](advanced-statistics/implement-models/regression.md)
+      - [分类](advanced-statistics/implement-models/classification.md)
+      - [聚类](advanced-statistics/implement-models/clustering.md)
+   - [特征转换](advanced-statistics/feature-transformation.md)
 - 数据Distiller受众{#data-distiller-audiences}
    - [使用SQL构建外部受众](data-distiller-audiences/overview.md)
 - 示例 {#use-cases}
