@@ -1,24 +1,43 @@
 ---
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；故障排除指南；faq；故障排除；
 solution: Experience Platform
-title: 常见问题解答
-description: 本文档包含与查询服务相关的常见问题和解答。 主题包括：导出数据、第三方工具和PSQL错误。
+title: 查询服务和数据Distiller常见问题解答
+description: 本文档包含与查询服务和数据Distiller相关的常见问题和解答。 主题包括：导出数据、第三方工具和PSQL错误。
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 84f30a47102a51b40d6811cd4815c36f6ffd34b5
+source-git-commit: dc15ab9b94513d3acdf0e62ef0fec710c05a9fc9
 workflow-type: tm+mt
-source-wordcount: '4564'
+source-wordcount: '5055'
 ht-degree: 0%
 
 ---
 
-# 常见问题解答
+# 查询服务和数据Distiller常见问题解答
 
-本文档提供有关查询服务的常见问题解答，并提供使用查询服务时常见错误代码的列表。 有关Adobe Experience Platform中其他服务的问题和疑难解答，请参阅[Experience Platform疑难解答指南](../landing/troubleshooting.md)。
+本文档解答了有关查询服务和数据Distiller的常见问题。 它还包含使用“查询”产品进行数据验证或将转换后的数据写回数据湖时常见的错误代码。 有关其他Adobe Experience Platform服务的问题和疑难解答，请参阅[Experience Platform疑难解答指南](../landing/troubleshooting.md)。
+
+为了阐明Query Service和Data Distiller如何在Adobe Experience Platform中协同工作，下面是两个基本问题。
+
+## 查询服务与数据Distiller之间的关系是什么？
+
+查询服务和数据Distiller是两个截然不同的互补组件，可提供特定的数据查询功能。 查询服务专门为Ad Hoc查询而设计，用于探索、验证和试验摄取的数据，而无需更改数据湖。 相比之下，Data Distiller侧重于通过批量查询来转换和扩充数据，并将结果存储回数据湖以供将来使用。 Data Distiller中的批量查询可以计划、监控和管理，支持仅查询服务无法实现的更深入的数据处理和操作。
+
+查询服务可共同帮助实现快速见解，而数据Distiller支持深入、持久的数据转换。
+
+## 查询服务与数据Distiller之间有何区别？
+
+**查询服务**：用于侧重于数据探索、验证和试验的SQL查询。 输出不会存储在数据湖中，执行时间限制为10分钟。 临时查询适用于轻量级的交互式数据检查和分析。
+
+**数据Distiller**：启用批处理查询，以处理、清理和扩充数据，并将结果存储回数据湖。 这些查询支持更长的执行（最长24小时）和其他功能，如计划、监控和加速报告。 Data Distiller非常适合深入的数据处理和计划的数据处理任务。
+
+有关详细信息，请参阅[查询服务打包文档](./packaging.md)。
+
+## 问题类别 {#categories}
 
 下面的常见问题解答列表分为以下类别：
 
 - [General](#general)
-- [查询UI](#queries-ui) 
+- [数据蒸馏器](#data-distiller)
+- [查询Ui](#queries-ui)
 - [数据集示例](#dataset-samples)
 - [导出数据](#exporting-data)
 - [SQL语法](#sql-syntax) 
@@ -27,17 +46,17 @@ ht-degree: 0%
 - [PostgreSQL API错误](#postgresql-api-errors)
 - [REST API错误](#rest-api-errors)
 
-## 一般查询服务问题 {#general}
+## 常规查询服务问题 {#general}
 
-本节包含有关性能、限制和流程的信息。
+本节包括有关性能、限制和进程的信息。
 
-### 我可以在查询服务编辑器中关闭自动完成功能吗？
+### 能否关闭查询服务编辑器中的自动完成功能？
 
 +++回答
-不适用。 编辑器当前不支持关闭自动完成功能。
+不行。 编辑器当前不支持关闭自动完成功能。
 +++
 
-### 为什么在键入查询时，查询编辑器有时运行缓慢？
+### 键入查询时，为什么查询编辑器有时会变慢？
 
 +++回答
 一个潜在的原因是自动完成功能。 该功能会处理某些元数据命令，这些命令有时在查询编辑过程中会降低编辑器的速度。
@@ -120,19 +139,19 @@ SELECT * FROM customers LIMIT 0;
 
 ![平面化数据的XDM架构和表格视图。 嵌套数据集的列名称在UI中突出显示。](./images/troubleshooting/column-name.png)
 
-请参阅文档，了解有关[如何使用查询编辑器或第三方客户端处理嵌套数据结构](./key-concepts/nested-data-structures.md)的完整指南。
+请参阅文档以获取有关[如何使用查询编辑器或第三方客户端处理嵌套数据结构](./key-concepts/nested-data-structures.md)的完整指导。
 +++
 
-### 如何加快对包含数组的数据集的查询速度？
+### 如何加快对包含数组的数据集的查询？
 
 +++回答
-若要提高包含数组的数据集上的查询性能，您应在运行时[将数组](https://spark.apache.org/docs/latest/api/sql/index.html#explode)分解为[CTAS查询](./sql/syntax.md#create-table-as-select)，然后进一步探索以找出改进其处理时间的机会。
+若要提高包含数组的数据集上的查询性能，您应在运行时将数组](https://spark.apache.org/docs/latest/api/sql/index.html#explode)分解为[CTAS查询](./sql/syntax.md#create-table-as-select)，然后进一步探索该数组以寻找改进其处理时间的机会。[
 +++
 
-### 为什么我的CTAS查询仍在处理只有少量行的许多小时后？
+### 为什么我的CTAS查询仅针对少数行在几个小时后仍在处理？
 
 +++回答
-如果查询在非常小的数据集上花费了很长时间，请联系客户支持。
+If the query has taken a long time on a very small dataset, please contact customer support.
 
 查询在处理过程中可能卡住的原因有很多。 要确定确切的原因，需要逐案进行深入分析。 [联系Adobe客户支持](#customer-support)以成为此流程。
 +++
@@ -140,17 +159,17 @@ SELECT * FROM customers LIMIT 0;
 ### 如何联系Adobe客户支持？ {#customer-support}
 
 +++回答
-[Adobe客户支持电话号码的完整列表](https://helpx.adobe.com/ca/contact/phone.html)可在Adobe帮助页面上找到。 或者，可通过完成以下步骤在线查找帮助：
+[A complete list of Adobe customer support telephone numbers](https://helpx.adobe.com/ca/contact/phone.html) is available on the Adobe help page. 或者，可通过完成以下步骤在线查找帮助：
 
 - 在Web浏览器中导航到[https://www.adobe.com/](https://www.adobe.com/cn)。
-- 选择顶部导航栏右侧的&#x200B;**[!UICONTROL 登录]**。
+- 在顶部导航栏的右侧，选择&#x200B;**[!UICONTROL 登录]**。
 
-![登录的Adobe网站突出显示。](./images/troubleshooting/adobe-sign-in.png)
+![突出显示了“登录”的Adobe网站。](./images/troubleshooting/adobe-sign-in.png)
 
 - 使用已在您的Adobe许可证中注册的Adobe ID和密码。
 - 从顶部导航栏中选择&#x200B;**[!UICONTROL 帮助和支持]**。
 
-![顶部导航栏下拉菜单（包含帮助和支持、企业支持和联系我们）突出显示。](./images/troubleshooting/help-and-support.png)
+![顶部导航栏下拉菜单包含帮助和支持、企业支持以及联系我们，突出显示。](./images/troubleshooting/help-and-support.png)
 
 此时会出现一个下拉横幅，其中包含[!UICONTROL 帮助和支持]部分。 选择&#x200B;**[!UICONTROL 联系我们]**&#x200B;以打开Adobe客户关怀虚拟助手，或选择&#x200B;**[!UICONTROL 企业支持]**以获得大型组织的专用帮助。
 +++
@@ -216,7 +235,7 @@ SELECT * FROM customers LIMIT 0;
 ### “验证架构时出错”是什么意思？
 
 +++回答
-“验证架构时出错”消息表示系统无法在架构内找到字段。 您应阅读[在查询服务中组织数据资源](./best-practices/organize-data-assets.md)的最佳实践文档，后跟[创建表作为选择文档](./sql/syntax.md#create-table-as-select)。
+“验证架构时出错”消息意味着系统无法找到架构中的字段。 您应该阅读[在查询服务中组织数据资产](./best-practices/organize-data-assets.md)的最佳实践文档，然后阅读[创建表作为选择文档](./sql/syntax.md#create-table-as-select)。
 
 以下示例演示了CTAS语法和结构数据类型的使用：
 
@@ -297,15 +316,15 @@ SELECT count(1) FROM myTableName
 ### 用户能否定义自己的用户定义函数(UDF)，以便在其他查询中使用？
 
 +++回答
-出于数据安全考虑，不允许使用UDF的自定义定义。
+Due to data security considerations, the custom definition of UDFs is not allowed.
 +++
 
-### 如果我的计划查询失败，我应该怎么做？
+### 如果我的计划查询失败，该怎么办？
 
 +++回答
-首先，检查日志以了解错误的详细信息。 有关[在日志](#error-logs)中查找错误的常见问题解答部分提供了有关如何执行此操作的更多信息。
+首先，检查日志以了解该错误的详细信息。 有关[在日志中查找错误](#error-logs)的常见问题解答部分提供了有关如何执行此操作的详细信息。
 
-您还应该查看文档以了解有关如何在UI](./ui/user-guide.md#scheduled-queries)中以及通过[API](./api/scheduled-queries.md)执行[计划查询的指导。
+您还应查看文档，以获取有关如何在UI中执行[已计划的查询](./ui/user-guide.md#scheduled-queries)以及通过[API](./api/scheduled-queries.md)执行的查询的指导。
 
 请注意，使用[!DNL Query Editor]时，您只能向已创建并保存的查询添加计划。 这不适用于[!DNL Query Service] API。
 +++
@@ -319,7 +338,7 @@ SELECT count(1) FROM myTableName
 ### 查询日志如何处理与已删除的数据集相关的查询？
 
 +++回答
-查询服务从不删除查询历史记录。 这意味着任何引用已删除数据集的查询都会因此返回“无有效数据集”。
+Query Service never deletes query history. 这意味着任何引用已删除数据集的查询都会因此返回“无有效数据集”。
 +++
 
 ### 如何仅获取查询的元数据？
@@ -390,7 +409,7 @@ SELECT to_utc_timestamp('2021-08-31', 'Asia/Seoul');
 
 作为另一个示例，如果给定时间戳为`Asia/Seoul`时区的`2021-07-14 12:40:00.0`，则返回的UTC时间戳为`2021-07-14 03:40:00.0`
 
-查询服务UI中提供的控制台输出是一种更易于人阅读的格式：
+查询服务UI中提供的控制台输出是更易于用户识别的格式：
 
 ```
 8/30/2021, 3:00 PM
@@ -398,13 +417,13 @@ SELECT to_utc_timestamp('2021-08-31', 'Asia/Seoul');
 
 #### 从UTC时间戳转换
 
-`from_utc_timestamp()`方法从本地时区&#x200B;**的时间戳解释给定参数**，并以UTC格式提供所需区域的等效时间戳。 在下面的示例中，小时是用户本地时区下午2:40。 首尔时区作为变量被列入时区范围，比当地时区早九小时。
+`from_utc_timestamp()`方法从本地时区&#x200B;**的时间戳中解释给定参数**，并以UTC格式提供所需区域的等效时间戳。 在下面的示例中，小时是用户本地时区的下午2:40。 作为变量传递的首尔时区比当地时区早九小时。
 
 ```SQL
 SELECT from_utc_timestamp('2021-08-31 14:40:00.0', 'Asia/Seoul');
 ```
 
-查询会返回作为参数传递的时区时间戳（UTC格式）。 结果比运行查询的时区早九小时。
+查询会返回作为参数传递的时区的时间戳（UTC格式）。 结果比运行查询的时区早九小时。
 
 ```
 8/31/2021, 11:40 PM
@@ -574,13 +593,13 @@ WHERE T2.ID IS NULL
 ### 在端口80上建立的连接是否仍使用https？
 
 +++回答
-是的，在端口80上建立的连接仍然使用SSL。 也可以使用端口5432。
+是的，在端口80上建立的连接仍使用SSL。 您也可以使用端口5432。
 +++
 
-### 能否控制对特定连接的特定数据集和列的访问？ 这是如何配置的？
+### 我是否可以控制对特定连接的特定数据集和列的访问？ 这是如何配置的？
 
 +++回答
-是，如果配置了基于属性的访问控制，则会强制实施该控制。 有关详细信息，请参阅[基于属性的访问控制概述](../access-control/abac/overview.md)。
+是，如果进行了配置，将强制执行基于属性的访问控制。 有关详细信息，请参阅[基于属性的访问控制概述](../access-control/abac/overview.md)。
 +++
 
 ### 查询服务是否支持“INSERT OVERWRITE INTO”命令？
@@ -605,6 +624,38 @@ Data Distiller计算机小时的许可证使用情况仪表板每天更新四次
 
 +++回答
 是的。 但是，某些第三方客户端（如DbVisualizer）在SQL块之前和之后可能需要单独的标识符来指示脚本的一部分应作为单个语句处理。 可在[匿名块文档](./key-concepts/anonymous-block.md)或[官方的DbVisualizer文档](https://confluence.dbvis.com/display/UG120/Executing+Complex+Statements#ExecutingComplexStatements-UsinganSQLDialect)中找到更多详细信息。
++++
+
+## 数据蒸馏器 {#data-distiller}
+
+### 如何跟踪Data Distiller的许可证使用情况？可在何处查看此信息？
+
++++回答\
+用于跟踪批次查询使用情况的主要量度是计算小时。 您可以通过[许可证使用情况仪表板](../dashboards/guides/license-usage.md)访问此信息和当前使用情况。
++++
+
+### 什么是计算小时？
+
++++回答\
+计算小时数是衡量在执行批量查询时，查询服务引擎读取、处理数据并将其写回数据湖所花费的时间。
++++
+
+### 如何测量计算小时数？
+
++++回答\
+计算小时数是在所有授权的沙盒中累计测量的。
++++
+
+### 即使连续运行同一查询，为什么有时会注意到计算小时使用量存在差异？
+
++++回答\
+查询的计算小时数可能因多种因素而波动。 其中包括处理的数据量、SQL查询中转换操作的复杂性等。 查询服务会根据每个查询的上述参数缩放聚类，这可能会导致计算小时数存在差异。
++++
+
+### 如果我长时间使用相同数据运行相同的查询，会注意到计算小时数减少吗？ 为什么会出现这种情况？
+
++++回答\
+后端基础架构不断改进，以优化计算小时利用率和处理时间。 因此，随着性能的增强，您可能会注意到随着时间的推移而发生变化。
 +++
 
 ## 查询Ui
@@ -727,7 +778,7 @@ INSERT INTO查询称为ITAS查询。 请注意，CREATE TABLE查询称为CTAS查
 
 如果要缩短功能板的响应时间，应实施Business Intelligence(BI)服务器作为查询服务和BI工具之间的缓存层。 通常，大多数BI工具都为服务器提供了附加服务。
 
-添加缓存服务器层的目的是缓存查询服务中的数据，并将缓存服务器层用于仪表板以加快响应速度。 这是可能的，因为执行的查询的结果每天都会缓存在BI服务器中。 然后，缓存服务器会为具有相同查询的任何用户提供这些结果，以降低延迟。 请参阅您使用的实用程序或第三方工具文档，了解关于此设置的说明。
+添加缓存服务器层的目的是缓存来自查询服务的数据，并利用该缓存服务让仪表板加快响应。 这是可能的，因为执行的查询的结果每天都会缓存在BI服务器中。 然后，缓存服务器会为具有相同查询的任何用户提供这些结果，以减少延迟。 有关此类设置的说明，请参阅您所使用的实用程序或第三方工具的文档。
 +++
 
 ### 是否可以使用pgAdmin连接工具访问查询服务？
@@ -754,7 +805,7 @@ INSERT INTO查询称为ITAS查询。 请注意，CREATE TABLE查询称为CTAS查
 | **58000** | 查询 | 系统错误 | 内部系统故障 |
 | **0A000** | 查询/命令 | 不支持 | 不支持查询/命令中的特性/功能 |
 | **42501** | DROP TABLE查询 | 正在删除不是由查询服务创建的表 | 查询服务未使用`CREATE TABLE`语句创建要删除的表 |
-| **42501** | DROP表查询 | 表不是由经过身份验证的用户创建的 | 当前登录的用户未创建要删除的表 |
+| **42501** | DROP TABLE查询 | 表不是由经过身份验证的用户创建的 | 当前正在删除的表不是由当前登录的用户创建的 |
 | **42P01** | DROP TABLE查询 | 未找到表 | 找不到查询中指定的表 |
 | **42P12** | DROP TABLE查询 | 找不到`dbName`的表：请检查`dbName` | 在当前数据库中未找到表 |
 

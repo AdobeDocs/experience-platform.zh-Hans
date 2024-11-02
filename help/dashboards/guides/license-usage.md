@@ -4,9 +4,9 @@ title: 许可证使用情况仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 80380fb1287d710460ad2c75d73ea5c2c38f5ebd
+source-git-commit: 37192addffea094cb2d2f3b0201bb128c912e762
 workflow-type: tm+mt
-source-wordcount: '2855'
+source-wordcount: '2867'
 ht-degree: 15%
 
 ---
@@ -226,7 +226,7 @@ ht-degree: 15%
 | [!UICONTROL 包的配置文件丰富度] | 每个额外配置文件丰富度包的授权总数据量增加25 KB。 |
 | [!UICONTROL 查询服务计算小时数] | 测量在执行批量查询时，查询服务引擎读取、处理数据并将其写回数据湖所花费的时间。 |
 | [!UICONTROL 流式分段数（包）] | 当新数据通过流流进入分段服务时，包将更新人员配置文件的区段成员资格。 评估区段成员资格时，将基于当前人员配置文件属性和当前事件的值，而不考虑历史行为。 流式分段是一项共享功能。 |
-| [!UICONTROL 总数据量] | 可在参与工作流中使用的Adobe Experience Platform配置文件服务的数据总量。 |
+| [!UICONTROL 总数据量] | 可在参与工作流中使用的Adobe Experience Platform配置文件服务的数据总量。 请参阅有关总数据量](../../landing/license-usage-and-guardrails/total-data-volume.md)的[常见问题解答，以了解更多信息。 |
 
 <!-- |  [!UICONTROL Sandbox No of Packs] |  A logical separation within your instance of any Adobe On-demand Service that accesses Adobe Experience Platform isolating data and operations | -->
 
