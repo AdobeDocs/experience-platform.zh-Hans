@@ -2,10 +2,10 @@
 title: 帐户配置文件仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织的B2B帐户配置文件的重要信息。
 exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
-source-git-commit: 8caa10010109f9936271cb45a2166455f3678687
+source-git-commit: 442fcee17cbe38a9e1608324581ebedee4ba7fe6
 workflow-type: tm+mt
-source-wordcount: '1827'
-ht-degree: 5%
+source-wordcount: '2362'
+ht-degree: 4%
 
 ---
 
@@ -17,7 +17,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 
 ## 快速入门
 
-您必须有权使用[Adobe Real-time Customer Data Platform B2B版本](../../rtcdp/b2b-overview.md)才能访问B2B [!UICONTROL 帐户配置文件]仪表板。
+您必须具有[Adobe Real-time Customer Data Platform B2B edition](../../rtcdp/b2b-overview.md)的权限才能访问B2B [!UICONTROL 帐户配置文件]仪表板。
 
 ## 帐户配置文件数据 {#data}
 
@@ -79,6 +79,10 @@ Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各
 要了解有关每个可用标准构件的更多信息，请从以下列表中选择构件的名称：
 
 * [已添加帐户轮廓](#account-profiles-added)
+* [客户每帐户概述](#customers-per-account-overview)
+   * [每个客户的机会概述](#opportunities-per-account-overview)
+   * [每个帐户的业务机会详细信息](#opportunities-per-account-detail)
+   * [每个帐户的客户详细信息](#customers-per-account-detail)
 * [按行业划分的新客户](#accounts-by-industry)
 * [按类型的新帐户](#accounts-by-type)
 * [按人员角色显示的新机会](#opportunities-by-person-role)
@@ -94,6 +98,52 @@ Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各
 添加的[!UICONTROL 帐户配置文件]构件使用折线图显示一段时间内每天添加的帐户配置文件数。 使用位于仪表板顶部的全局日期过滤器来确定分析时段。 如果未提供日期过滤器，则默认行为会列出为今天之前的一年添加的帐户配置文件。 结果可用于推断添加的帐户配置文件数量的趋势。
 
 ![帐户配置文件已添加构件。](../images/account-profiles/account-profiles-added.png)
+
+### 客户每帐户概述 {#customers-per-account-overview}
+
+[!UICONTROL 每个帐户的客户概述]图表提供了基于客户类型的帐户摘要。 它显示一个四行表，将帐户分类为具有直接或间接客户或不具有直接或间接客户的帐户。 它提供每个类别的帐户总数。 该图表有助于识别具有直接客户与间接客户的客户分布。
+
+直接客户是通过`personComponents`路由直接链接到帐户的客户档案。 这种关系更为直接，涉及客户与客户之间的直接、明确的联系。
+
+间接客户是通过`Account-Person`路由链接到帐户的客户个人资料。 这种关系不那么直接，它涉及中间实体或客户与帐户之间的更复杂的连接，通常通过其他帐户或关系实现。
+
+![每个帐户的客户概述构件。](../images/account-profiles/customers-per-account-overview-widget.png)
+
+要访问更详细的见解，请选择[!UICONTROL 每个帐户的客户概览]图表上的椭圆(**...**)，然后从下拉菜单中选择&#x200B;**[!UICONTROL 穿透钻取]**。
+
+![每个帐户的客户概述小部件，其椭圆下拉菜单和穿透钻取突出显示。](../images/account-profiles/customers-per-account-overview-dropdown.png)
+
+此时将显示穿透钻取视图。 接下来，浏览可用的穿透钻取图表，以更深入地了解B2B数据的结构。 您可以使用这些穿透钻取图表确定有多少帐户配置文件没有链接或有一个或多个客户配置文件与其关联。 您还可以使用它们来确定与您的帐户关联的直接或间接客户数量。
+
+* [[!UICONTROL 每个帐户的客户详细信息]](#customers-per-account-detail)
+* [[!UICONTROL 每个机会的帐户概述]](#accounts-per-opportunity-overview)
+* [每个帐户详细信息的[!UICONTROL 机会]](#accounts-per-opportunity-detail)
+
+### [!UICONTROL 在仪表板视图之间导航] {#dashboard-view-navigation}
+
+要在穿透钻取和“帐户配置文件”仪表板之间切换，请选择文件夹图标（![A文件夹图标）。](../images/account-profiles/folder-icon.png))，随后显示下拉菜单中的正确视图。
+
+![帐户配置文件仪表板中的穿透钻取视图，导航下拉菜单突出显示。](../images/account-profiles/navigation-dropdown.png)
+
+要了解有关平台UI中穿透钻取的详细信息，请参阅[穿透钻取指南](../sql-insights-query-pro-mode/drill-through.md)。
+
+#### [!UICONTROL 每个帐户的客户详细信息] {#customers-per-account-detail}
+
+[!UICONTROL 每个帐户的客户详细信息]图表提供了有关与不同客户类型关联的帐户数的更细微的详细信息。 它显示一个三列表格，按客户类型（直接或间接）详细列出帐户数以及与帐户关联的客户范围。 此图表有助于您了解客户在不同客户类别中的分布情况以及与每个类别关联的帐户总数。
+
+![每个帐户的客户详细信息小组件。](../images/account-profiles/customers-per-account-detail.png)
+
+#### [!UICONTROL 每个帐户的机会概述] {#opportunities-per-account-overview}
+
+[!UICONTROL 每个帐户的机会概览]图表显示具有或没有机会的帐户的摘要。 此两行表有助于快速确定与业务机会关联的客户数量，从而提供跨客户的业务机会参与情况的快照。
+
+![每个帐户的机会概述构件。](../images/account-profiles/opportunities-per-account-overview.png)
+
+#### 每个帐户详细信息的[!UICONTROL 机会] {#opportunities-per-account-detail}
+
+[!UICONTROL 每个帐户的机会详细信息]图表根据帐户拥有的机会数提供了更详细的帐户细目。 此表显示按业务机会计数范围（如1-10个业务机会或100多个业务机会）分组的帐户数。 此图表可帮助您确定如何按客户所管理的机会数量分配客户。
+
+![每个帐户的机会详细信息构件。](../images/account-profiles/opportunities-per-account-detail.png)
 
 ### 按行业划分的新客户 {#accounts-by-industry}
 
@@ -185,4 +235,4 @@ Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各
 
 ## 后续步骤
 
-通过阅读本文档，您现在应该知道如何找到[!UICONTROL 帐户配置文件]仪表板，并且还应该了解可用构件中显示的量度。 要了解有关在Experience PlatformUI中使用帐户配置文件作为B2B数据一部分的更多信息，请参阅Adobe Real-Time CDP B2B版本的[帐户配置文件概述](../../rtcdp/accounts/account-profile-overview.md)。
+通过阅读本文档，您现在应该知道如何找到[!UICONTROL 帐户配置文件]仪表板，并且还应该了解可用构件中显示的量度。 要了解有关在Experience PlatformUI中使用作为B2B数据一部分的帐户配置文件的更多信息，请参阅Adobe Real-Time CDP、B2B edition的[帐户配置文件概述](../../rtcdp/accounts/account-profile-overview.md)。
