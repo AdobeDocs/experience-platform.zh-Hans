@@ -1,13 +1,13 @@
 ---
 title: 帐户受众
 description: 了解如何创建和使用帐户受众，以便在下游目标中定位帐户配置文件。
-badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 047930d6-939f-4418-bbcb-8aafd2cf43ba
-source-git-commit: c2f9bcd9aeb0073b8b26413ec29e2dff1ee5c80d
+source-git-commit: fd0a495d68d6a09ccca66c400993d2e72673321c
 workflow-type: tm+mt
-source-wordcount: '1130'
-ht-degree: 27%
+source-wordcount: '1518'
+ht-degree: 21%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 27%
 
 >[!AVAILABILITY]
 >
->帐户受众仅在Real-time Customer Data Platform](../../rtcdp/overview.md#rtcdp-b2b)的[B2B版本和Real-time Customer Data Platform](../../rtcdp/overview.md#rtcdp-b2p)的[B2P版本中可用。
+>帐户受众仅在Real-time Customer Data Platform的[B2B edition](../../rtcdp/overview.md#rtcdp-b2b)和Real-time Customer Data Platform的[B2P版本](../../rtcdp/overview.md#rtcdp-b2p)中可用。
 
 通过帐户分段，Adobe Experience Platform可让您从基于人员的受众到基于帐户的受众，全面轻松地体验营销分段。
 
@@ -66,6 +66,39 @@ ht-degree: 27%
 ![区段生成器中的“受众”选项卡高亮显示。](../images/ui/account-audiences/audiences.png)
 
 有关使用区段生成器的更多信息，请参阅[区段生成器UI指南](./segment-builder.md)。
+
+### 建立关系 {#relationships}
+
+默认情况下，对于帐户受众，区段生成器UI显示帐户与人员之间的直接关系。 但是，其他关系类型也可用于帐户受众。
+
+若要使用备用关系类型，请选择![设置图标](../../images/icons/settings.png)。
+
+![设置图标在“字段”部分突出显示。](../images/ui/account-audiences/select-settings.png)
+
+在[!UICONTROL 设置]选项卡上，在&#x200B;**[!UICONTROL 字段的关系]**&#x200B;部分中选择&#x200B;**[!UICONTROL 显示关系选择器]**。
+
+![在“设置”选项卡的“字段的关系”部分中选择了“显示关系选择器”切换开关。](../images/ui/account-audiences/show-relation-selectors.png)
+
+再次选择![设置图标](../../images/icons/settings.png)以返回[!UICONTROL 字段]选项卡。 您现在可以看到&#x200B;**[!UICONTROL 建立关系]**&#x200B;部分，该部分允许您建立帐户与人员的连接方式以及该人员与机会的连接方式。
+
+![已突出显示“建立关系”部分，其中显示了有关如何将帐户与人员连接以及如何将人员与机会连接的选项。](../images/ui/account-audiences/establish-relationships.png)
+
+将帐户连接到人员时，您可以从以下选项中进行选择：
+
+| 选项 | 描述 |
+| ------ | ----------- |
+| 直接关系 | 帐户和人员之间的直接连接。 这会指定每个人员通过人员架构上`personComponents`数组中的`accountID`值数组链接到哪些帐户。 此路径最常用。 |
+| 帐户 — 人员关系 | 帐户与人员之间的关系，由`accountPersonRelation`对象定义。 此路径还允许每个人连接到多个帐户。 当您的组织从源数据定义了显式关系表时，将使用该关系表。 |
+| 机会 — 人员关系 | 机会与人员之间的关系，由`opportunityPersonRelation`对象定义。 这会将人员从机会人员转到机会人员转到帐户以将人员连接到帐户。 这让您能够描述人员在哪些公司与销售机会相关。 |
+
+将商机与人员连接时，您可以从以下选项中进行选择：
+
+| 选项 | 描述 |
+| ------ | ----------- |
+| 帐户 | 帐户和机会之间的直接连接。 当您在帐户受众中使用此产品时，此路径会将公司中的所有人员都连接到该机会。 |
+| 机会 — 人员关系 | 机会与人员之间的关系，它基于机会 — 人员对象。 此路径只将那些被明确标识为与机会相关的人关联到该机会。 |
+
+建立所需的关系后，您可以在区段定义中添加所需的人员 — 受众。
 
 ## 激活受众 {#activate}
 
