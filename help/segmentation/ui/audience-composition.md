@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Audiences UI指南
 description: Adobe Experience Platform UI中的受众组合提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了一些直观的控件，可用于为贵组织构建和编辑受众。
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: e17403f0529c5b94869d3bd4e860c798db620d31
+source-git-commit: 3c0fdab5d7561238a64e79e5bab5fd4843fccb0a
 workflow-type: tm+mt
-source-wordcount: '1951'
+source-wordcount: '1952'
 ht-degree: 0%
 
 ---
