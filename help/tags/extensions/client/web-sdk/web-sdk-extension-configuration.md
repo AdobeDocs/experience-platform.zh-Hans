@@ -2,10 +2,10 @@
 title: 配置Web SDK标记扩展
 description: 了解如何在标记UI中配置Experience PlatformWeb SDK标记扩展。
 exl-id: 22425daa-10bd-4f06-92de-dff9f48ef16e
-source-git-commit: 660d4e72bd93ca65001092520539a249eae23bfc
+source-git-commit: f2f61c8e68fa794317e3b4f845f1950cebc59ec7
 workflow-type: tm+mt
-source-wordcount: '2012'
-ht-degree: 5%
+source-wordcount: '2525'
+ht-degree: 4%
 
 ---
 
@@ -170,6 +170,66 @@ Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参
 必须为每个环境配置数据流覆盖。 开发、暂存和生产环境都具有单独的覆盖。 您可以使用以下屏幕中显示的专用选项复制它们之间的设置。
 
 ![显示使用Web SDK标记扩展页的数据流配置覆盖的图像。](assets/datastream-overrides.png)
+
+默认情况下，数据流配置覆盖处于禁用状态。 默认情况下已选择&#x200B;**[!UICONTROL 匹配数据流配置]**&#x200B;选项。
+
+![显示数据流配置的Web SDK标记扩展用户界面将覆盖默认设置。](assets/datastream-override-default.png)
+
+要在标记扩展中启用数据流覆盖，请从下拉菜单中选择&#x200B;**[!UICONTROL 已启用]**。
+
+![Web SDK标记扩展用户界面显示数据流配置覆盖“已启用”设置。](assets/datastream-override-enabled.png)
+
+启用数据流配置覆盖后，可以为下述每项服务配置覆盖。
+
+以下数据流覆盖设置将覆盖所选环境的任何服务器端数据流配置和规则。
+
+### Adobe Analytics {#analytics}
+
+使用此部分中的设置可覆盖到Adobe Analytics服务的数据路由。
+
+![显示Adobe Analytics数据流覆盖设置的Web SDK标记扩展UI图像。](assets/datastream-override-analytics.png)
+
+* **[!UICONTROL 已启用]** / **[!UICONTROL 已禁用]**：使用此下拉菜单启用或禁用到Adobe Analytics服务的数据路由。
+* **[!UICONTROL 报表包]**： Adobe Analytics中目标报表包的ID。 该值必须是来自您的数据流配置的预配置覆盖报表包（或以逗号分隔的报表包列表）。 此设置将覆盖主报表包。
+* **[!UICONTROL 添加报表包]**：选择此选项可添加其他报表包。
+
+### Adobe Audience Manager {#audience-manager}
+
+使用此部分中的设置可覆盖到Adobe Audience Manager服务的数据路由。
+
+![显示Adobe Audience Manager数据流覆盖设置的Web SDK标记扩展UI图像。](assets/datastream-override-audience-manager.png)
+
+* **[!UICONTROL 已启用]** / **[!UICONTROL 已禁用]**：使用此下拉菜单启用或禁用到Adobe Audience Manager服务的数据路由。
+* **[!UICONTROL 第三方ID同步容器]**：Audience Manager中目标第三方ID同步容器的ID。 该值必须是来自数据流配置的预配置辅助容器，并覆盖主容器。
+
+### Adobe Experience Platform {#experience-platform}
+
+使用此部分中的设置可覆盖到Adobe Experience Platform服务的数据路由。
+
+![显示Adobe Experience Platform数据流覆盖设置的Web SDK标记扩展UI图像。](assets/datastream-override-experience-platform.png)
+
+* **[!UICONTROL 已启用]** / **[!UICONTROL 已禁用]**：使用此下拉菜单启用或禁用到Adobe Experience Platform服务的数据路由。
+* **[!UICONTROL 事件数据集]**： Adobe Experience Platform中目标事件数据集的ID。 该值必须是来自数据流配置的预配置辅助数据集。
+* **[!UICONTROL Offer decisioning]**：使用此下拉菜单启用或禁用到[!DNL Offer Decisioning]服务的数据路由。
+* **[!UICONTROL Edge分段]**：使用此下拉菜单启用或禁用到[!DNL Edge Segmentation]服务的数据路由。
+* **[!UICONTROL Personalization目标]**：使用此下拉菜单启用或禁用到个性化目标的数据路由。
+* **[!UICONTROL Adobe Journey Optimizer]**：使用此下拉菜单启用或禁用到[!DNL Adobe Journey Optimizer]服务的数据路由。
+
+### Adobe服务器端事件转发 {#ssf}
+
+使用此部分中的设置可覆盖发送到Adobe服务器端事件转发服务的数据路由。
+
+![Web SDK标记扩展UI图像显示Adobe服务器端事件转发数据流覆盖设置。](assets/datastream-override-ssf.png)
+
+* **[!UICONTROL 已启用]** / **[!UICONTROL 已禁用]**：使用此下拉菜单启用或禁用到Adobe服务器端事件转发服务的数据路由。
+
+### Adobe Target {#target}
+
+使用此部分中的设置可覆盖到Adobe Target服务的数据路由。
+
+![显示Adobe Target数据流覆盖设置的Web SDK标记扩展UI图像。](assets/datastream-override-target.png)
+
+* **[!UICONTROL 已启用]** / **[!UICONTROL 已禁用]**：使用此下拉菜单启用或禁用到Adobe Target服务的数据路由。
 
 ## 配置高级设置
 

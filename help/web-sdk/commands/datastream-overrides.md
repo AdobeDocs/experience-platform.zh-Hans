@@ -2,10 +2,10 @@
 title: 数据流配置覆盖
 description: 了解如何通过Web SDK配置数据流覆盖。
 exl-id: 8e327892-9520-43f5-abf4-d65a5ca34e6d
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: 2b8ca4bc1d5cf896820a5de95dcdfcd15edc2392
 workflow-type: tm+mt
-source-wordcount: '882'
-ht-degree: 14%
+source-wordcount: '1159'
+ht-degree: 10%
 
 ---
 
@@ -24,19 +24,14 @@ ht-degree: 14%
 1. 首先，必须在数据流UI中的[数据流配置页面](../../datastreams/configure.md)中定义数据流配置覆盖。 有关如何配置覆盖的说明，请参阅[数据流配置覆盖](../../datastreams/overrides.md#configure-overrides)文档。
 2. 在UI中配置数据流覆盖后，必须通过以下方式之一将覆盖发送到Edge Network：
    * 通过Web SDK [标记扩展](#tag-extension)。
-   * 通过`sendEvent`或`configure` Web SDK命令。
-   * 通过Mobile SDK `sendEvent`命令。
+   * 通过[`sendEvent`](../commands/sendevent/overview.md)或[`configure`](../commands/configure/overview.md) Web SDK命令。
+   * 通过Mobile SDK [`sendEvent`](https://developer.adobe.com/client-sdks/home/getting-started/track-events/#send-events-to-edge-network)命令。
 
 如果在Web SDK配置和特定命令（例如[`sendEvent`](sendevent/overview.md)）中设置覆盖，则特定命令中的覆盖优先。
 
-## 对象属性
-
-以下属性在此对象中可用：
-
-* **数据流覆盖**：将调用发送到其他数据流。 如果设置此值，则必须在此处设置的数据流中配置需要数据流配置的其他覆盖。
-* **第三方ID同步容器**： Adobe Audience Manager中目标第三方ID同步容器的ID。 使用此字段之前，需要在数据流的设置中配置第三方ID容器覆盖。
-* **目标属性令牌**： Adobe Target中目标属性的令牌。 使用此字段之前，需要先在数据流的设置中配置Target属性令牌覆盖。
-* **报表包**：要在Adobe Analytics中覆盖的报表包ID。 使用此字段之前，需要先在数据流的设置中配置报表包覆盖。
+>[!NOTE]
+>
+>如果希望配置覆盖为&#x200B;*禁用* Experience Cloud服务，则必须确保该服务在数据流配置中首先是&#x200B;*启用*。 有关如何向数据流添加服务的详细信息，请参阅有关如何[配置数据流](../../datastreams/configure.md#add-services)的文档。
 
 ## 通过Web SDK标记扩展向Edge Network发送数据流覆盖 {#tag-extension}
 
@@ -87,87 +82,143 @@ ht-degree: 14%
 
 ### 通过Web SDK `sendEvent`命令发送配置覆盖 {#send-event}
 
-以下示例显示 `sendEvent` 命令中的配置覆盖的情况。
+以下示例显示了`sendEvent`调用支持的所有动态数据流配置选项。
 
-```js {line-numbers="true" highlight="5-25"}
+如果您的数据流配置启用了所有受支持的服务，则以下示例将覆盖此设置并禁用所有服务（请参阅每个服务上的`enabled: false`设置）。
+
+```js
 alloy("sendEvent", {
-  xdm: {
-    /* ... */
-  },
+  renderDecisions: true,
   edgeConfigOverrides: {
-    datastreamId: "{DATASTREAM_ID}"
+    datastreamId: "bfa8fe21-6157-42d3-b47a-78310920b39d",
     com_adobe_experience_platform: {
+      enabled: false,
       datasets: {
         event: {
-          datasetId: "SampleEventDatasetIdOverride"
-        }
-      }
+          datasetId: "64b6f949a8a6891ca8a28911",
+        },
+      },
+      com_adobe_edge_ode: {
+        enabled: false,
+      },
+      com_adobe_edge_segmentation: {
+        enabled: false,
+      },
+      com_adobe_edge_destinations: {
+        enabled: false,
+      },
+      com_adobe_edge_ajo: {
+        enabled: false,
+      },
     },
     com_adobe_analytics: {
-      reportSuites: [
-        "MyFirstOverrideReportSuite",
-        "MySecondOverrideReportSuite",
-        "MyThirdOverrideReportSuite"
-        ]
+      enabled: false,
+      reportSuites: ["ujslconfigoverrides3"],
     },
     com_adobe_identity: {
-      idSyncContainerId: "1234567"
+      idSyncContainerId: 34374,
     },
     com_adobe_target: {
-      propertyToken: "63a46bbc-26cb-7cc3-def0-9ae1b51b6c62"
-    }
-  }
+      enabled: false,
+      propertyToken: "f3fd55e1-a06d-8650-9aa5-c8356c6e2223",
+    },
+    com_adobe_audience_manager: {
+      enabled: false,
+    },
+    com_adobe_launch_ssf: {
+      enabled: false,
+    },
+  },
 });
 ```
 
 | 参数 | 描述 |
 |---|---|
+| `renderDecisions` |  |
 | `edgeConfigOverrides.datastreamId` | 使用此参数可允许单个请求转到与 `configure`命令定义的数据流不同的数据流。 |
-| `com_adobe_analytics.reportSuites[]` | 一个字符串数组，它确定要将Analytics数据发送到哪些报表包。 |
-| `com_adobe_identity.idSyncContainerId` | 要在Audience Manager中使用的第三方ID同步容器。 |
+| `edgeConfigOverrides.com_adobe_experience_platform` | 定义Experience Platform服务的动态数据流配置。 |
+| `edgeConfigOverrides.com_adobe_experience_platform.enabled` | 定义是否将事件发送到Experience Platform服务。 |
+| `edgeConfigOverrides.com_adobe_experience_platform.datasets` | 定义用于事件的数据集。 |
+| `edgeConfigOverrides.com_adobe_experience_platform.com_adobe_edge_ode.enabled` | 定义是否将事件发送到Offer decisioning服务。 |
+| `edgeConfigOverrides.com_adobe_experience_platform.com_adobe_edge_segmentation.enabled` | 定义是否将事件发送到边缘分段服务。 |
+| `edgeConfigOverrides.com_adobe_experience_platform.com_adobe_edge_destinations.enabled` | 定义是否将事件数据发送到边缘目标。 |
+| `edgeConfigOverrides.com_adobe_experience_platform.com_adobe_edge_ajo.enabled` | 定义是否将事件数据发送到Adobe Journey Optimizer服务。 |
+| `com_adobe_analytics.enabled` | 定义是否将事件数据发送到Adobe Analytics。 |
+| `com_adobe_analytics.reportSuites[]` | 一个字符串数组，用于确定要将Analytics数据发送到哪些报表包。 |
+| `com_adobe_identity.idSyncContainerId` | 要在Audience Manager中使用的第三方ID同步容器。 要使此ID同步容器正常工作，必须将`com_adobe_audience_manager.enabled`设置为`true`。 否则，将禁用Audience Manager服务。 |
+| `com_adobe_target.enabled` | 定义是否将事件数据发送到Adobe Target。 |
 | `com_adobe_target.propertyToken` | Adobe Target目标资产的令牌。 |
+| `com_adobe_audience_manager.enabled` | 定义是否将事件数据发送到Audience Manager服务。 |
+| `com_adobe_launch_ssf` | 定义是否将事件数据发送到服务器端转发。 |
 
 ### 通过Web SDK `configure`命令发送配置覆盖 {#send-configure}
 
 以下示例显示 `configure` 命令中的配置覆盖的情况。
 
-```js {line-numbers="true" highlight="8-30"}
+如果您的数据流配置启用了所有受支持的服务，则以下示例将覆盖此设置并禁用所有服务（请参阅每个服务上的`enabled: false`设置）。
+
+```js
 alloy("configure", {
-  defaultConsent: "in",
-  edgeDomain: "etc",
-  edgeBasePath: "ee",
-  datastreamId: "{DATASTREAM_ID}",
-  orgId: "org",
-  debugEnabled: true,
+  orgId: "97D1F3F459CE0AD80A495CBE@AdobeOrg",
+  datastreamId: "db9c70a1-6f11-4563-b0e9-b5964ab3a858",
   edgeConfigOverrides: {
-    "com_adobe_experience_platform": {
-      "datasets": {
-        "event": {
-          datasetId: "SampleProfileDatasetIdOverride"
-        }
-      }
+    com_adobe_experience_platform: {
+      enabled: false,
+      datasets: {
+        event: {
+          datasetId: "64b6f930753dd41ca8d4fd77",
+        },
+      },
+      com_adobe_edge_ode: {
+        enabled: false,
+      },
+      com_adobe_edge_segmentation: {
+        enabled: false,
+      },
+      com_adobe_edge_destinations: {
+        enabled: false,
+      },
+      com_adobe_edge_ajo: {
+        enabled: false,
+      },
     },
-    "com_adobe_analytics": {
-      "reportSuites": [
-        "MyFirstOverrideReportSuite",
-        "MySecondOverrideReportSuite",
-        "MyThirdOverrideReportSuite"
-      ]
+    com_adobe_analytics: {
+      enabled: false,
+      reportSuites: ["ujslconfigoverrides2"],
     },
-    "com_adobe_identity": {
-      "idSyncContainerId": "1234567"
+    com_adobe_identity: {
+      idSyncContainerId: 34373,
     },
-    "com_adobe_target": {
-      "propertyToken": "63a46bbc-26cb-7cc3-def0-9ae1b51b6c62"
-    }
+    com_adobe_target: {
+      enabled: false,
+      propertyToken: "01dbc634-07c1-d8f9-ca69-b489a5ac5e94",
+    },
+    com_adobe_audience_manager: {
+      enabled: false,
+    },
+    com_adobe_launch_ssf: {
+      enabled: false,
+    },
   },
-  onBeforeEventSend: function() { /* … */ });
-};
+});
 ```
 
 | 参数 | 描述 |
 |---|---|
+| `orgId` | 与您的Adobe帐户对应的IMS组织ID。 |
 | `edgeConfigOverrides.datastreamId` | 使用此参数可允许单个请求转到与 `configure`命令定义的数据流不同的数据流。 |
-| `com_adobe_analytics.reportSuites[]` | 一个字符串数组，它确定要将Analytics数据发送到哪些报表包。 |
-| `com_adobe_identity.idSyncContainerId` | 要在Audience Manager中使用的第三方ID同步容器。 |
+| `edgeConfigOverrides.com_adobe_experience_platform` | 定义Experience Platform服务的动态数据流配置。 |
+| `edgeConfigOverrides.com_adobe_experience_platform.enabled` | 定义是否将事件发送到Experience Platform服务。 |
+| `edgeConfigOverrides.com_adobe_experience_platform.datasets` | 定义用于事件的数据集。 |
+| `edgeConfigOverrides.com_adobe_experience_platform.com_adobe_edge_ode.enabled` | 定义是否将事件发送到Offer decisioning服务。 |
+| `edgeConfigOverrides.com_adobe_experience_platform.com_adobe_edge_segmentation.enabled` | 定义是否将事件发送到边缘分段服务。 |
+| `edgeConfigOverrides.com_adobe_experience_platform.com_adobe_edge_destinations.enabled` | 定义是否将事件数据发送到边缘目标。 |
+| `edgeConfigOverrides.com_adobe_experience_platform.com_adobe_edge_ajo.enabled` | 定义是否将事件数据发送到Adobe Journey Optimizer服务。 |
+| `com_adobe_analytics.enabled` | 定义是否将事件数据发送到Adobe Analytics。 |
+| `com_adobe_analytics.reportSuites[]` | 一个字符串数组，用于确定要将Analytics数据发送到哪些报表包。 |
+| `com_adobe_identity.idSyncContainerId` | 要在Audience Manager中使用的第三方ID同步容器。 要使此ID同步容器正常工作，必须将`com_adobe_audience_manager.enabled`设置为`true`。 否则，将禁用Audience Manager服务。 |
+| `com_adobe_target.enabled` | 定义是否将事件数据发送到Adobe Target。 |
 | `com_adobe_target.propertyToken` | Adobe Target目标资产的令牌。 |
+| `com_adobe_audience_manager.enabled` | 定义是否将事件数据发送到Audience Manager服务。 |
+| `com_adobe_launch_ssf` | 定义是否将事件数据发送到服务器端转发。 |
+
