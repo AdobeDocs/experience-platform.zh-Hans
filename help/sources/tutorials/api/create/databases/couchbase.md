@@ -5,18 +5,18 @@ title: 使用流服务API创建Couchbase连接
 type: Tutorial
 description: 了解如何使用流服务API将Couchbase连接到Adobe Experience Platform。
 exl-id: 625e3acf-fc27-44cf-b4e6-becf1d107ff2
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 0e3fee4d78646b1d1d6730495358b3ced4127f4e
 workflow-type: tm+mt
-source-wordcount: '446'
+source-wordcount: '449'
 ht-degree: 5%
 
 ---
 
 # 使用[!DNL Flow Service] API创建[!DNL Couchbase]基本连接
 
->[!NOTE]
+>[!IMPORTANT]
 >
->[!DNL Couchbase]连接器处于Beta版。 有关使用带有Beta标记的连接器的更多信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
+>[!DNL Couchbase]源将于2025年5月底弃用。 作为替代方法，您可以使用[[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md)源。
 
 基本连接表示源和Adobe Experience Platform之间的已验证连接。
 

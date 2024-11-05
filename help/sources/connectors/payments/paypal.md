@@ -4,14 +4,18 @@ solution: Experience Platform
 title: PayPal Source连接器概述
 description: 了解如何使用API或用户界面将PayPal连接到Adobe Experience Platform。
 exl-id: c70a9b91-b883-4e58-9ec5-6fc9b2163efd
-source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
+source-git-commit: 0e3fee4d78646b1d1d6730495358b3ced4127f4e
 workflow-type: tm+mt
-source-wordcount: '220'
+source-wordcount: '239'
 ht-degree: 0%
 
 ---
 
 # [!DNL PayPal]连接器
+
+>[!IMPORTANT]
+>
+>[!DNL PayPal]源将于2025年5月底弃用。 作为替代方法，您可以使用[[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md)源。
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 

@@ -2,9 +2,9 @@
 title: 通过UI将您的SalesforceMarketing Cloud帐户连接到Experience Platform
 description: 了解如何通过UI将您的SalesforceMarketing Cloud帐户连接到Experience Platform。
 exl-id: 1d9bde60-31e0-489c-9c1c-b6471e0ea554
-source-git-commit: 30f1e8a0424ee0f81d8e98fb24886ad1480b270c
+source-git-commit: 0e3fee4d78646b1d1d6730495358b3ced4127f4e
 workflow-type: tm+mt
-source-wordcount: '498'
+source-wordcount: '517'
 ht-degree: 2%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->[!DNL Salesforce Marketing Cloud]源集成当前不支持自定义对象摄取。
+>[!DNL Salesforce Marketing Cloud]源将于2025年5月底弃用。 作为替代方法，您可以使用[[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md)源。
 
 本教程提供了有关如何通过UI将您的[!DNL Salesforce Marketing Cloud]帐户连接到Adobe Experience Platform的步骤。
 
@@ -42,6 +42,10 @@ ht-degree: 2%
 
 ## 连接您的[!DNL Salesforce Marketing Cloud]帐户
 
+>[!IMPORTANT]
+>
+>[!DNL Salesforce Marketing Cloud]源集成当前不支持自定义对象摄取。
+
 在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL 目录]显示Experience Platform支持的各种源。
 
 您可以从类别列表中选择相应的类别。 您还可以使用搜索栏筛选特定源。
@@ -50,7 +54,7 @@ ht-degree: 2%
 
 ![已选择SalesforceMarketing Cloud源的源目录。](../../../../images/tutorials/create/salesforce-marketing-cloud/catalog.png)
 
-此时会显示&#x200B;**[!UICONTROL 连接到SalesforceMarketing Cloud]**&#x200B;页。 在此页上，您可以创建新帐户或使用现有帐户。
+此时会显示&#x200B;**[!UICONTROL 连接到SalesforceMarketing Cloud]**&#x200B;页面。 在此页上，您可以创建新帐户或使用现有帐户。
 
 ### 新帐户
 
@@ -64,7 +68,7 @@ ht-degree: 2%
 
 如果您已经拥有现有帐户，请选择&#x200B;**[!UICONTROL 现有帐户]**，然后从显示的列表中选择您要使用的帐户。
 
-![可以从现有Salesforce帐户列表中选择的现有Marketing Cloud接口。](../../../../images/tutorials/create/salesforce-marketing-cloud/existing.png)
+![可以从现有SalesforceMarketing Cloud帐户的列表中选择的现有帐户界面。](../../../../images/tutorials/create/salesforce-marketing-cloud/existing.png)
 
 ## 后续步骤
 

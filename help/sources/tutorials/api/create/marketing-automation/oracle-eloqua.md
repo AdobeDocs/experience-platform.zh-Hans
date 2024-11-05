@@ -2,14 +2,18 @@
 title: 使用流服务API创建OracleEloqua基本连接
 description: 了解如何使用流服务API将Adobe Experience Platform连接到OracleEloqua。
 exl-id: 866e408f-6e0b-4e81-9ad8-9d74c485c89a
-source-git-commit: e8f54f06ad3431227e140219a9960e8e04f83ccc
+source-git-commit: 0e3fee4d78646b1d1d6730495358b3ced4127f4e
 workflow-type: tm+mt
-source-wordcount: '546'
+source-wordcount: '565'
 ht-degree: 1%
 
 ---
 
 # 使用[!DNL Flow Service] API创建[!DNL Oracle Eloqua]基本连接
+
+>[!IMPORTANT]
+>
+>[!DNL Oracle Eloqua]源将于2025年5月底弃用。 作为替代方法，您可以使用[[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md)源。
 
 基本连接表示源和Adobe Experience Platform之间的已验证连接。
 

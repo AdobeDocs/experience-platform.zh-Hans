@@ -4,14 +4,18 @@ title: oracle服务云Source连接器概述
 description: 了解如何使用API或用户界面将OracleService Cloud连接到Adobe Experience Platform。
 last-substantial-update: 2023-04-26T00:00:00Z
 exl-id: 5c914e8a-d8ed-469f-b17a-26a85705e9ef
-source-git-commit: cfe5f34316e9db072f0a320143354f2771b4a3a9
+source-git-commit: 0e3fee4d78646b1d1d6730495358b3ced4127f4e
 workflow-type: tm+mt
-source-wordcount: '249'
+source-wordcount: '268'
 ht-degree: 0%
 
 ---
 
 # oracle服务云源
+
+>[!IMPORTANT]
+>
+>[!DNL Oracle Service Cloud]源将于2025年5月底弃用。 作为替代方法，您可以使用[[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md)源。
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 

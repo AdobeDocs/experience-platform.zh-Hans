@@ -1,10 +1,10 @@
 ---
-title: 使用流服务API创建SalesforceMarketing Cloud基本连接
+title: 使用流服务API创建SalesforceMarketing Cloud基础连接
 description: 了解如何使用流服务API根据Experience Platform验证您的SalesforceMarketing Cloud帐户。
 exl-id: fbf68d3a-f8b1-4618-bd56-160cc6e3346d
-source-git-commit: 30f1e8a0424ee0f81d8e98fb24886ad1480b270c
+source-git-commit: 0e3fee4d78646b1d1d6730495358b3ced4127f4e
 workflow-type: tm+mt
-source-wordcount: '489'
+source-wordcount: '508'
 ht-degree: 4%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 4%
 
 >[!IMPORTANT]
 >
->[!DNL Salesforce Marketing Cloud]源集成当前不支持自定义对象摄取。
+>[!DNL Salesforce Marketing Cloud]源将于2025年5月底弃用。 作为替代方法，您可以使用[[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md)源。
 
 基本连接表示源和Adobe Experience Platform之间的已验证连接。
 
@@ -46,6 +46,10 @@ ht-degree: 4%
 有关入门的详细信息，请参阅此[[!DNL Salesforce Marketing Cloud] 文档](<https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/authentication.htm>)。
 
 ## 创建基本连接
+
+>[!IMPORTANT]
+>
+>[!DNL Salesforce Marketing Cloud]源集成当前不支持自定义对象摄取。
 
 基本连接会保留您的源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 

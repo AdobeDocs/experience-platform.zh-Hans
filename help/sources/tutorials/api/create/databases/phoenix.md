@@ -2,14 +2,18 @@
 title: 使用流服务API创建Phoenix Base连接
 description: 了解如何使用流服务API将Phoenix数据库连接到Adobe Experience Platform。
 exl-id: b69d9593-06fe-4fff-88a9-7860e4e45eb7
-source-git-commit: efffd6ce1ed541ce20ee6500e42165465f2fa6a0
+source-git-commit: 0e3fee4d78646b1d1d6730495358b3ced4127f4e
 workflow-type: tm+mt
-source-wordcount: '547'
+source-wordcount: '566'
 ht-degree: 1%
 
 ---
 
 # 使用[!DNL Flow Service] API创建[!DNL Phoenix]基本连接
+
+>[!IMPORTANT]
+>
+>[!DNL Phoenix]源将于2025年5月底弃用。 作为替代方法，您可以使用[[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md)源。
 
 基本连接表示源和Adobe Experience Platform之间的已验证连接。
 
