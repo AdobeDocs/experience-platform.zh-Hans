@@ -2,9 +2,9 @@
 title: 聚类算法
 description: 了解如何使用关键参数、描述和示例代码配置和优化各种聚类算法，以帮助您实施高级统计模型。
 role: Developer
-source-git-commit: 4d4e9ae527deb149f02edb39716851e995c23d21
+source-git-commit: 4ee7ce2468c1ea5f0960349c288d406f43a8bb91
 workflow-type: tm+mt
-source-wordcount: '878'
+source-wordcount: '874'
 ht-degree: 4%
 
 ---
@@ -112,7 +112,7 @@ Create MODEL modelname OPTIONS(
 
 **参数**
 
-| 参数 | 描述 | 默认值 | 可能值 |                                                                                                                                                                  | 默认值 | 可能值 |
+| 参数 | 描述 | 默认值 | 可能值 |
 |-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|------------------------------------------|
 | `MAX_ITER` | 算法运行的最大迭代次数。 | 20 | (>= 0) |
 | `OPTIMIZER` | 用于估计LDA模型的优化程序或推理算法。 支持的选项为`"online"`（在线变分贝叶斯）和`"em"`（期望最大化）。 | &quot;online&quot; | `online`、`em` |
@@ -127,6 +127,8 @@ Create MODEL modelname OPTIONS(
 | `SUBSAMPLING_RATE` | 对于`online`优化程序：在`(0, 1]`范围内，在每次小批次梯度下降迭代中采样和使用的语料的分数。 | 0.05 | `(0, 1]` |
 | `TOPIC_CONCENTRATION` | 先前在主题项分布上的集中度参数（“beta”或“eta”）。 | 自动 | (>= 0) |
 | `TOPIC_DISTRIBUTION_COL` | 带有每个文档的主题混合分布估计值的输出列。 | 未设置 | 任意字符串 |
+
+{style="table-layout:auto"}
 
 **示例**
 

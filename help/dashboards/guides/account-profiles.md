@@ -2,9 +2,9 @@
 title: 帐户配置文件仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织的B2B帐户配置文件的重要信息。
 exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
-source-git-commit: 442fcee17cbe38a9e1608324581ebedee4ba7fe6
+source-git-commit: a0b762cb89f45313724187ce36b80b2f3d0548eb
 workflow-type: tm+mt
-source-wordcount: '2362'
+source-wordcount: '2397'
 ht-degree: 4%
 
 ---
@@ -100,6 +100,10 @@ Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各
 ![帐户配置文件已添加构件。](../images/account-profiles/account-profiles-added.png)
 
 ### 客户每帐户概述 {#customers-per-account-overview}
+
+>[!NOTE]
+>
+>[!UICONTROL 每个帐户的客户概述]分析及其穿透钻取图表（[!UICONTROL 每个帐户的客户详细信息]，[!UICONTROL 每个帐户的机会概述]，[!UICONTROL 每个帐户的机会详细信息]）不受您可能设置的任何全局日期过滤器的影响。
 
 [!UICONTROL 每个帐户的客户概述]图表提供了基于客户类型的帐户摘要。 它显示一个四行表，将帐户分类为具有直接或间接客户或不具有直接或间接客户的帐户。 它提供每个类别的帐户总数。 该图表有助于识别具有直接客户与间接客户的客户分布。
 
