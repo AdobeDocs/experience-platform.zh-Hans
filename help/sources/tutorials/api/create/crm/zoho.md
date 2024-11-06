@@ -5,9 +5,9 @@ title: 使用流服务API创建Zoho CRM基本连接
 type: Tutorial
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Zoho CRM。
 exl-id: 33995927-8f5e-44c5-b809-4db8706bbd34
-source-git-commit: 0e3fee4d78646b1d1d6730495358b3ced4127f4e
+source-git-commit: 0781d04af12c4c11dfc917adfdec8673cf3be8de
 workflow-type: tm+mt
-source-wordcount: '657'
+source-wordcount: '658'
 ht-degree: 3%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->[!DNL Zoho CRM]源将于2025年5月底弃用。 作为替代方法，您可以使用[[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md)源。
+>[!DNL Zoho CRM]源将于2025年6月底弃用。 您可以使用[[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md)代替[!DNL Zoho CRM]源。
 
 基本连接表示源和Adobe Experience Platform之间的已验证连接。
 

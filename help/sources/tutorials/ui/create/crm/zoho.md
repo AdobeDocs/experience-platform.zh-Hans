@@ -5,9 +5,9 @@ title: 在UI中创建Zoho CRM Source连接
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建Zoho CRM源连接。
 exl-id: c648fc3e-beea-4030-8d36-dd8a7e2c281e
-source-git-commit: 0e3fee4d78646b1d1d6730495358b3ced4127f4e
+source-git-commit: 0781d04af12c4c11dfc917adfdec8673cf3be8de
 workflow-type: tm+mt
-source-wordcount: '558'
+source-wordcount: '559'
 ht-degree: 2%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->[!DNL Zoho CRM]源将于2025年5月底弃用。 作为替代方法，您可以使用[[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md)源。
+>[!DNL Zoho CRM]源将于2025年6月底弃用。 您可以使用[[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md)代替[!DNL Zoho CRM]源。
 
 Adobe Experience Platform中的Source连接器可按计划摄取外部源CRM数据。 本教程提供了使用[!DNL Platform]用户界面创建[!DNL Zoho CRM]源连接器的步骤。
 
