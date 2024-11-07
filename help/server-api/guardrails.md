@@ -2,9 +2,9 @@
 title: Edge Network服务器API的性能护栏
 description: 了解如何在最佳性能护栏中使用服务器API。
 exl-id: 063d0fbb-26d1-4727-9dea-8e7223b2173d
-source-git-commit: 5d6b70e397a252e037589c3200053ebcb7eb8291
+source-git-commit: 316efe577274b389bd1bf50e896ad6ef53e44b7b
 workflow-type: tm+mt
-source-wordcount: '531'
+source-wordcount: '569'
 ht-degree: 2%
 
 ---
@@ -21,6 +21,8 @@ Adobe对超出使用限制导致的性能下降不承担任何责任。 始终�
 >[!IMPORTANT]
 >
 >除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/legal/product-descriptions.html)中的实际使用限制。
+
+本页中介绍的所有性能护栏均适用于IMS组织级别。 对于配置了多个IMS组织的用户，每个组织分别遵循以下性能护栏。 有关[!DNL IMS Organizations]的更多详细信息，请参阅[Experience Platform词汇表](../landing/glossary.md)。
 
 ## 定义
 
