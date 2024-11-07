@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；Oracle服务云；oracle
 title: 在UI中创建Oracle服务Cloud Source连接
 description: 了解如何使用Adobe Experience Platform UI创建Oracle服务云源连接。
 exl-id: e5869c09-b61e-4d23-a594-5a07769da3c4
-source-git-commit: 0781d04af12c4c11dfc917adfdec8673cf3be8de
+source-git-commit: a32d0d7ed7d18454099d2b55b3f6809cfbcd9b62
 workflow-type: tm+mt
-source-wordcount: '488'
+source-wordcount: '479'
 ht-degree: 2%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->[!DNL Oracle Service Cloud]源将于2025年5月底弃用。 您可以使用[[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md)代替[!DNL Oracle Service Cloud]源。
+>[!DNL Oracle Service Cloud]源将于2025年5月底弃用。
 
 本教程提供了使用Adobe Experience Platform用户界面创建Oracle服务云源连接的步骤。
 

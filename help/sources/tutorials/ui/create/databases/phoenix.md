@@ -2,9 +2,9 @@
 title: 使用Experience Platform用户界面连接您的Phoenix帐户
 description: 了解如何使用用户界面连接您的Phoenix帐户，并将来自Phoenix数据库的数据引入Experience Platform。
 exl-id: 2ed469bc-1c72-4f04-a5f0-6a0bb519a6c2
-source-git-commit: 0781d04af12c4c11dfc917adfdec8673cf3be8de
+source-git-commit: a32d0d7ed7d18454099d2b55b3f6809cfbcd9b62
 workflow-type: tm+mt
-source-wordcount: '622'
+source-wordcount: '613'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->[!DNL Phoenix]源将于2025年5月底弃用。 您可以使用[[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md)代替[!DNL Phoenix]源。
+>[!DNL Phoenix]源将于2025年5月底弃用。
 
 本教程提供了有关如何连接[!DNL Phoenix]帐户以及将[!DNL Phoenix]数据库中的数据导入Experience Platform的步骤。
 

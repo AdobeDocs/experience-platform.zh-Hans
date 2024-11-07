@@ -2,9 +2,9 @@
 title: 使用Platform UI创建OracleEloqua源连接
 description: 了解如何使用Platform UI将Adobe Experience Platform连接到OracleEloqua。
 exl-id: c4431d85-5948-4122-9a99-dbacdde5a09f
-source-git-commit: 0781d04af12c4c11dfc917adfdec8673cf3be8de
+source-git-commit: a32d0d7ed7d18454099d2b55b3f6809cfbcd9b62
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '523'
 ht-degree: 2%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->[!DNL Oracle Eloqua]源将于2025年5月底弃用。 您可以使用[[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md)代替[!DNL Oracle Eloqua]源。
+>[!DNL Oracle Eloqua]源将于2025年5月底弃用。
 
 本教程提供了使用Adobe Experience Platform用户界面创建[!DNL Oracle Eloqua]源连接的步骤。
 
