@@ -2,9 +2,9 @@
 title: 命名空间优先级
 description: 了解Identity Service中的命名空间优先级。
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 07d54bf341ef2aacc6612ad323585609c0830824
+source-git-commit: a2a60f429836e26179f68a40fce91a90d73d8eee
 workflow-type: tm+mt
-source-wordcount: '1732'
+source-wordcount: '1788'
 ht-degree: 2%
 
 ---
@@ -177,6 +177,15 @@ ht-degree: 2%
 此配置导致仅使用已验证的事件计算得分。
 
 有关详细信息，请阅读[Attribution AI](../../intelligent-services/attribution-ai/overview.md)和[客户人工智能](../../intelligent-services/customer-ai/overview.md)上的文档。
+
+### 合作伙伴构建的目标
+
+与共享设备关联的用户档案的更新后受众资格取消结果可能不会发送到下游目标。 这种情况可能会在某些极少数情况下发生，例如：
+
+* 受众资格仅基于匿名活动。
+* 在短时间内跨多个用户档案登录。
+
+有关合作伙伴构建目标的详细信息，请阅读[目标概述](../../destinations/home.md#adobe-built-and-partner-built-destinations)。
 
 ### Privacy Service
 
