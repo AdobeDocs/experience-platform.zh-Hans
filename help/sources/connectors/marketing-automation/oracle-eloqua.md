@@ -2,7 +2,7 @@
 title: oracleEloqua连接器概述
 description: 了解如何使用API或用户界面将OracleEloqua连接到Adobe Experience Platform。
 exl-id: ebe16bff-4c89-4d45-9973-e5aa13b61a36
-source-git-commit: a32d0d7ed7d18454099d2b55b3f6809cfbcd9b62
+source-git-commit: 474b81aa8caf58013f8ea7cff9ad59d92466aac8
 workflow-type: tm+mt
 source-wordcount: '229'
 ht-degree: 0%
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # [!DNL Oracle Eloqua]连接器
 
->[!IMPORTANT]
+>[!WARNING]
 >
 >[!DNL Oracle Eloqua]源将于2025年5月底弃用。
 

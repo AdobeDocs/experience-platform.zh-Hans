@@ -5,7 +5,7 @@ title: 在UI中创建Zoho CRM Source连接
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建Zoho CRM源连接。
 exl-id: c648fc3e-beea-4030-8d36-dd8a7e2c281e
-source-git-commit: a32d0d7ed7d18454099d2b55b3f6809cfbcd9b62
+source-git-commit: 474b81aa8caf58013f8ea7cff9ad59d92466aac8
 workflow-type: tm+mt
 source-wordcount: '550'
 ht-degree: 2%
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # 在用户界面中创建[!DNL Zoho CRM]源连接
 
->[!IMPORTANT]
+>[!WARNING]
 >
 >[!DNL Zoho CRM]源将于2025年6月底弃用。
 

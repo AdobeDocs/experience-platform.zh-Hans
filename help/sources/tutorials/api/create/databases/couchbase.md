@@ -5,7 +5,7 @@ title: 使用流服务API创建Couchbase连接
 type: Tutorial
 description: 了解如何使用流服务API将Couchbase连接到Adobe Experience Platform。
 exl-id: 625e3acf-fc27-44cf-b4e6-becf1d107ff2
-source-git-commit: a32d0d7ed7d18454099d2b55b3f6809cfbcd9b62
+source-git-commit: 474b81aa8caf58013f8ea7cff9ad59d92466aac8
 workflow-type: tm+mt
 source-wordcount: '441'
 ht-degree: 5%
@@ -14,7 +14,7 @@ ht-degree: 5%
 
 # 使用[!DNL Flow Service] API创建[!DNL Couchbase]基本连接
 
->[!IMPORTANT]
+>[!WARNING]
 >
 >[!DNL Couchbase]源将于2025年5月底弃用。
 

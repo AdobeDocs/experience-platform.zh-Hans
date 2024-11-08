@@ -5,7 +5,7 @@ title: 在UI中创建Couchbase Source连接
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建Couchbase源连接。
 exl-id: 4270a48a-843c-4f1e-b280-35b620581d68
-source-git-commit: a32d0d7ed7d18454099d2b55b3f6809cfbcd9b62
+source-git-commit: 474b81aa8caf58013f8ea7cff9ad59d92466aac8
 workflow-type: tm+mt
 source-wordcount: '457'
 ht-degree: 2%
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # 在用户界面中创建[!DNL Couchbase]源连接
 
->[!IMPORTANT]
+>[!WARNING]
 >
 >[!DNL Couchbase]源将于2025年5月底弃用。
 
