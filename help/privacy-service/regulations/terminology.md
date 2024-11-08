@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 隐私法规术语
 description: 本文档提供了与Adobe Experience Cloud支持的隐私法规相关的主要术语的定义。
 exl-id: 9c0a7d26-0571-41d4-8cf5-6356025d51ef
-source-git-commit: 0a8d7c4414f6091025d36ed85dc09e057ee24df9
+source-git-commit: 16a3900e7cb54ae1525c11c9316b3928e5f43096
 workflow-type: tm+mt
-source-wordcount: '2301'
+source-wordcount: '2404'
 ht-degree: 0%
 
 ---
@@ -52,6 +52,8 @@ ht-degree: 0%
 **数据保护专员**：独立工作以确保实体遵守GDPR中详述的政策和程序的数据隐私专家。
 
 **数据主体**：其个人数据由控制者或处理者处理的自然人。
+
+**[!DNL Delaware Personal Data Privacy Act]**： [!DNL Delaware Personal Data Privacy Act]为特拉华州居民提供访问、更正、删除和选择退出个人数据销售和定向广告的权利。 该法适用于为至少35,000名消费者处理数据，或者从影响超过10,000名消费者的数据销售中获得20%以上收入的企业。 该法规由司法部实施，包括强制性数据保护做法和60天处理违规行为。
 
 **委托行为**：为补充现有立法而颁布的非立法行为，并提供标准或明确性。
 
@@ -141,6 +143,8 @@ ht-degree: 0%
 **假名**：处理个人数据，以便在不使用附加数据的情况下，不再将其归因到单个数据主体，只要附加数据保持单独以确保未归因。
 
 ## Q
+
+**[!DNL Quebec Law 25]**： [!DNL Quebec Law 25]增强了居民的隐私权，强制明确同意、数据最小化，以及访问、更正、删除和传输个人数据的权利。 组织必须任命一位隐私官员，进行隐私影响评估并报告违规行为。 遵守法规的最后期限和重大处罚适用于违规行为。
 
 ## R
 

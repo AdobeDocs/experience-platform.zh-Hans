@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 隐私法规概述
 description: 本文档概述了Adobe Experience Cloud支持的各种隐私法规。
 exl-id: 2ca946cf-94f8-4fd8-bb1a-7f06a5ab1256
-source-git-commit: 0a8d7c4414f6091025d36ed85dc09e057ee24df9
+source-git-commit: 26a50f21c1ebebf485eaf62712bd02de3406cceb
 workflow-type: tm+mt
-source-wordcount: '1537'
+source-wordcount: '1676'
 ht-degree: 0%
 
 ---
@@ -24,6 +24,7 @@ ht-degree: 0%
 | CCPA （加利福利亚州） | [[!DNL California Consumer Privacy Act (CCPA)]](https://oag.ca.gov/privacy/ccpa)增强了美国加利福尼亚州居民的隐私权和消费者保护。 CCPA为加利福尼亚州居民提供了新的数据隐私权。 其中包括访问和删除个人数据的权利，知晓其个人数据是否被出售或披露（以及披露给谁）的权利，以及选择不将其数据出售给第三方的权利。 |
 | CPRA （加利福利亚州） | [[!DNL California Consumer Privacy Rights Act (CPRA)]](https://cppa.ca.gov/regulations/consumer_privacy_act.html)扩展并修正了《加州消费者隐私法案》(CCPA)的部分内容。 CPRA通过增加消费者权利并扩展敏感个人信息更广泛的定义所涵盖的数据类型，为加州消费者数据隐私建立了新的基准。 此外，CPRA还成立了加州隐私保护局，这是一个致力于实施和实施数据隐私规则的新机构。 |
 | CTDPA （康涅狄格州） | [[!DNL Connecticut Data Privacy Act]](https://portal.ct.gov/AG/Sections/Privacy/The-Connecticut-Data-Privacy-Act)是适用于康涅狄格州居民的综合性消费者隐私法，授予他们对其个人数据的某些权利。 它还规定了数据控制者处理其个人数据的责任和隐私保护标准。 CTDPA保护康涅狄格州居民的个人或家庭。 CTDPA授予他们以下权利：访问、更正、删除、获取副本或选择退出销售；处理他们的个人数据；或分析他们的个人数据。 |
+| DPDPA （特拉华州） | [[!DNL Delaware Personal Data Privacy Act]](https://legis.delaware.gov/json/BillDetail/GenerateHtmlDocument?legislationId=140388&amp;legislationTypeId=1&amp;docTypeId=2&amp;legislationName=HB154) (DPDPA)授予特拉华州居民访问、更正、删除的权利，以及选择退出个人数据销售和定向广告的权利。 它适用于为至少3.5万名消费者处理数据，或者从影响1万多名消费者的数据销售中获得20%以上收入的企业。 该法规定消费者数据保护做法，对消费者请求做出及时回应，规定侵权行为需有60天的治疗期，并由司法部强制执行。 |
 | FDBR （佛罗里达州） | [[!DNL Florida Digital Bill of Rights]](https://flsenate.gov/Session/Bill/2023/262/BillText/er/HTML) (FDBR)为佛罗里达州居民提供全面的数据隐私权。 这项法律确保个人有权访问、更正、删除和获取其个人数据的副本。 该法规还禁止网络平台进行某些行为，例如未经消费者同意的监控，并要求数据行为透明，包括明确的隐私声明和选择退出针对性广告的个人数据出售或处理功能。 联邦难民局授权佛罗里达州法律事务部执行这些权利，并对违反这些权利的行为实施民事惩罚。 根据该法，数据控制者有义务在收到数据主体请求后45天内作出回应。 |
 | GDPR（欧盟） | [[!DNL General Data Protection Regulation (GDPR)]](https://gdpr-info.eu)为欧洲经济区(EEA)成员引入了几项新的数据隐私权，包括访问权和被遗忘权。 这些权限意味着在EEA中居住且企业已收集其个人数据的任何人均可随时请求访问或删除其数据。<br><br>英国（英国退欧后）有自己的监管版本，即UK-GDPR，该版本为其公民提供了与EEA版本相同的权利。 |
 | HIPAA（美利坚合众国） | [[!DNL Health Insurance Portability and Accountability Act (HIPAA)]](https://www.hhs.gov/hipaa/index.html)是美国联邦法律，旨在提高医疗保健效率、改善健康保险的可移植性，并保护患者和健康计划成员的隐私。 根据HIPAA，个人有权访问和修改其信息，并获得其医疗记录或健康信息的副本。 覆盖的实体和覆盖的实体的业务联系人必须遵守HIPAA规定。 |
@@ -37,6 +38,7 @@ ht-degree: 0%
 | NJDPA （新泽西州） | [[!DNL New Jersey Data Protection Act]](https://pub.njleg.state.nj.us/Bills/2022/S0500/332_R6.PDF)通过提供访问、更正和删除其信息的权限，授予新泽西居民对其个人数据的控制权。 它包括用于数据销售和定向广告的选择退出机制。 该法涵盖处理大量消费者数据的企业，并要求数据使用透明。 |
 | OCPA （俄勒冈州） | [[!DNL Oregon Consumer Privacy Act]](https://olis.oregonlegislature.gov/liz/2023R1/Downloads/PublicTestimonyDocument/59856#:~:text=The%20Act%20requires%20controllers%20to,data%3B%20and%20%E2%80%A2%20Contact%20information.) (OCPA)为俄勒冈州居民提供了对其个人数据的基本权利，并要求处理此类数据的企业承担相关义务。 消费者有权了解、更正、删除和获取其数据的副本，以及选择退出针对性广告或销售的数据处理。 该法要求加强对敏感数据的保护，准许超出特定目的进行数据处理，并规定数据控制者发出全面的隐私声明。 |
 | PDPA （泰国） | 引入[[!DNL Personal Data Protection Act (PDPA)]](https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act)是为了保护泰国数据所有者免遭非法收集、使用或泄露其个人数据的行为。 受欧盟GDPR的启发，该法规授予泰国公民请求访问或删除其存储的个人数据的权利。 |
+| ql25 （魁北克） | [[!DNL Quebec Law 25]](https://www.canlii.org/en/qc/laws/astat/sq-2021-c-25/latest/sq-2021-c-25.html) (QL25)增强了魁北克居民的隐私权，以符合全球标准。 该法明确规定居民必须明确同意、数据最小化和有权访问、更正、删除和传输其个人数据。 组织还必须指定一名隐私官员，进行隐私影响评估并通知泄露。 法律强制规定的遵守期限以及对违规行为的大量处罚。 |
 | TDPSA （得克萨斯州） | [[!DNL Texas Data Privacy and Security Act]](https://capitol.texas.gov/BillLookup/Text.aspx?LegSess=88R&amp;Bill=HB4) (TDPSA)管理得克萨斯州消费者个人数据的收集、使用、处理和处理。 自2024年7月1日起，它授予居民访问、更正、删除和获取其数据副本的权利，以及选择退出定向广告和数据销售的权利。 该法适用于在得克萨斯州开展业务或生产得克萨斯居民消费的产品/服务的实体，不包括小型企业和某些其他组织。 违反规定者可能受到民事处罚。 |
 | UCPA （犹他州） | [[!DNL Utah Consumer Privacy Act]](https://le.utah.gov/~2022/bills/static/SB0227.html)为消费者创建了解企业收集哪些个人数据、企业如何使用其个人数据以及企业是否出售其个人数据的权利。 消费者可以要求企业删除或停止出售其个人数据。 |
 | VCDPA （弗吉尼亚州） | [[!DNL Virginia Consumer Data Protection Act (VCDPA)]](https://lis.virginia.gov/cgi-bin/legp604.exe?212+sum+HB2307)为弗吉尼亚州居民（“消费者”）提供了新的数据隐私权，包括访问、删除和更正个人数据的权利。 消费者还有权选择退出个人数据销售、选择退出基于个人数据的分析和处理个人广告。 |

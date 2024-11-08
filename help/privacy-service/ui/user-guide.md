@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在Privacy ServiceUI中管理隐私作业
 description: 了解如何使用Privacy Service用户界面跨各种Experience Cloud应用程序协调和监视隐私请求。
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: 0a8d7c4414f6091025d36ed85dc09e057ee24df9
+source-git-commit: c870b6be603073d6dd909b272c619deb5b246f05
 workflow-type: tm+mt
-source-wordcount: '1765'
+source-wordcount: '1770'
 ht-degree: 11%
 
 ---
@@ -43,6 +43,7 @@ ht-degree: 11%
 | [!UICONTROL CPA_USA （科罗拉多）] | [!DNL Colorado Privacy Act] |
 | [!UICONTROL CPRA_USA（加利福尼亚）] | [!DNL California Consumer Privacy Rights Act (CPRA)] |
 | [!UICONTROL CTDPA_USA （康涅狄格州）] | [!DNL Connecticut Data Privacy Act] |
+| [!UICONTROL DPDPA_USA（特拉华州）] | [!DNL Delaware Personal Data Privacy Act] |
 | [!UICONTROL FDBR_USA（佛罗里达州）] | [!DNL Florida Digital Bill of Rights] |
 | [!UICONTROL GDPR （欧盟）] | 欧盟的[!DNL General Data Protection Regulation] |
 | [!UICONTROL HIPPA_USA（美国）] | [!DNL Health Insurance Portability and Accountability Act] |
@@ -56,6 +57,7 @@ ht-degree: 11%
 | [!UICONTROL NJDPA_USA（新泽西）] | [!DNL New Jersey Data Protection Act] |
 | [!UICONTROL OCPA USA （俄勒冈）] | [!DNL Oregon Consumer Privacy Act] |
 | [!UICONTROL PDPA_THA（泰国）] | 泰国的[!DNL Personal Data Protection Act] |
+| [!UICONTROL QL25_CAN （魁北克）] | [!DNL Quebec Law 25] |
 | [!UICONTROL TDPSA美国（得克萨斯州）] | [!DNL Texas Data Privacy and Security Act] |
 | [!UICONTROL UCPA_USA （犹他州）] | [!DNL Utah Consumer Privacy Act] |
 | [!UICONTROL VCDPA_USA（弗吉尼亚）] | [!DNL Virginia Consumer Data Protection Act] |
