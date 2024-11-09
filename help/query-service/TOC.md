@@ -5,9 +5,9 @@ breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
 role: User,Developer
-source-git-commit: c94213b37813730911d207cb0de773d8aac22c13
+source-git-commit: fed47e132e1ff46fdf3df1a5a3f9f3e99bd1340c
 workflow-type: tm+mt
-source-wordcount: '357'
+source-wordcount: '366'
 ht-degree: 22%
 
 ---
@@ -104,7 +104,7 @@ ht-degree: 22%
    - [监测计划查询](ui/monitor-queries.md)
    - [凭据指南](ui/credentials.md)
    - [从查询结果生成输出数据集](ui/create-datasets.md)
-- 查询服务API端点{#api}
+- 查询服务API {#api}
    - [快速入门](api/getting-started.md)
    - [查询](api/queries.md)
    - [连接参数](api/connection-parameters.md)
@@ -113,6 +113,11 @@ ht-degree: 22%
    - [查询模板](api/query-templates.md)
    - [加速查询](api/accelerated-queries.md)
    - [警报订阅](api/alert-subscriptions.md)
+- 查询服务身份验证API {#auth-api}
+   - [概述](auth-api/overview.md)
+   - [快速入门](auth-api/getting-started.md)
+   - [IP访问](auth-api/ip-access.md)
+   - [验证](auth-api/validate.md)
 - 数据管理{#data-governance}
    - [概述](data-governance/overview.md)
    - [审核日志指南](data-governance/audit-log-guide.md)

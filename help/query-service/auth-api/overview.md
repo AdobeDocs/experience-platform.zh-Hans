@@ -1,0 +1,37 @@
+---
+title: 查询服务授权API指南
+description: 了解如何使用查询服务授权API对通过SQL的安全连接实施基于网络的IP限制。 使用此API可增强对Adobe Experience Platform数据的数据访问控制。
+role: Developer
+source-git-commit: f673d0d71458fe87491318f06be59719e4c9d76c
+workflow-type: tm+mt
+source-wordcount: '365'
+ht-degree: 0%
+
+---
+
+# 查询服务授权API指南
+
+使用查询服务授权API强制执行基于IP的限制。 应用这些措施可以确保只有获得批准的网络和客户端计算机才能通过Adobe Experience Platform中的SQL访问数据。 这些控制可帮助您满足严格的安全标准，同时提供实时访问监控和警报。
+
+利用此API，您可以配置、强制执行并监视通过SQL接口访问数据的IP限制。 本文档全面概述了API的核心功能、端点功能和未来功能。
+
+## 主要功能
+
+通过下列功能，您可以定义基于IP的访问限制、监视访问尝试以及自定义查询服务的网络安全设置：
+
+- **定义基于网络的数据访问控制**：为查询服务访问指定允许的IP范围。 此限制特别适用于SQL数据库连接，包括通过Business Intelligence(BI)工具、数据库客户端或编程接口（如JDBC）建立的连接。
+- **启用全面监视和警报**：所有访问尝试（包括被拒绝的连接）都将被记录并发送到[Adobe Experience Platform审核日志](../../landing/governance-privacy-security/audit-logs/overview.md)以进行实时跟踪。 使用此功能可监控访问模式并检测潜在的安全漏洞。
+- **配置灵活的IP限制**：以单个IP和CIDR块格式指定允许的IP。 这些设置适用于每个沙盒，允许您根据特定安全需求定制网络限制。
+
+## 审计和监测能力
+
+为了支持安全的数据访问实践，查询服务会记录访问或尝试访问AEP的所有客户端IP。 审核事件（包括被拒绝的连接）将发送到Platform审核日志。 这可以启用：
+
+- **实时监控**：跟踪基于IP的访问模式以确保法规遵从性。
+- **未授权访问警报**：识别来自未授权IP的访问尝试并做出响应。
+
+有关审核日志记录的更多详细信息，请参阅[审核服务文档](https://experienceleague.adobe.com/docs/experience-platform/audit/audit-overview.html)。
+
+## 后续步骤
+
+通过查看[入门指南](./getting-started.md)开始使用查询服务授权API，以了解必要的设置步骤，包括所需的标头和API调用约定。 然后，探索特定于端点的[IP访问](./ip-access.md)和[IP验证](./validate.md)指南，以配置和管理安全数据访问。
