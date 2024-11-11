@@ -3,9 +3,9 @@ title: Adobe Experience Platform 发行说明（2024 年 10 月）
 description: Adobe Experience Platform 的 2024 年 10 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: f30a124a40928abf69366d311131e353c2779191
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1159'
-ht-degree: 78%
+ht-degree: 100%
 
 ---
 
@@ -30,11 +30,11 @@ Experience Platform 提供了多个仪表板，您可以通过这些仪表板查
 
 | 功能 | 描述 |
 | --- | --- |
-| 数据Distiller模板 | 探索多个模板以获得对受众数据的结构化见解。 使用诸如&#x200B;**高级[!UICONTROL 受众重叠]**、**[!UICONTROL 受众比较]**、**[!UICONTROL 受众趋势]**&#x200B;和&#x200B;**[!UICONTROL 受众身份重叠]**&#x200B;等功能板制定数据驱动型决策、优化分段并增强参与策略。 有关更多详细信息，请参阅[Data Distiller模板指南](../../dashboards/sql-insights-query-pro-mode/templates/overview.md)。 |
-| 高级受众重叠 | 快速分析特定受众的受众交叉点或查看所有重叠，以揭示整个受众集中的宝贵见解。 利用这些见解优化细分、减少冗余消息传送，并创建更有针对性的促销活动以提高营销效率。 有关详细信息，请参阅[高级受众重叠指南](../../dashboards/sql-insights-query-pro-mode/templates/overlaps.md)。 |
-| 受众比较增强功能 | 使用&#x200B;**受众比较**&#x200B;仪表板查看不同受众组之间关键量度的并排比较。 利用此功能板，您可以选择特定时间范围和KPI（如受众规模和身份构成），以针对受众分段和定位策略做出更明智的决策。 有关详细信息，请阅读[受众比较指南](../../dashboards/sql-insights-query-pro-mode/templates/comparison.md)。 |
-| 受众趋势可视化 | 使用&#x200B;**[!UICONTROL 受众趋势]**&#x200B;仪表板分析一段时间内的受众量度。 可视化受众规模、身份数和单一身份配置文件数的趋势，以帮助您监控受众演变、衡量增长并优化参与策略。 有关详细信息，请参阅[受众趋势指南](../../dashboards/sql-insights-query-pro-mode/templates/trends.md)。 |
-| 身份重叠分析 | 使用&#x200B;**[!UICONTROL 受众身份重叠]**&#x200B;仪表板分析选定受众中的身份重叠。 查看身份趋势和细分，以了解受众中不同身份类型的关系，从而增强身份拼接并提高客户分段准确性。 有关更多详细信息，请参阅[受众标识重叠指南](../../dashboards/sql-insights-query-pro-mode/templates/identity-overlaps.md)。 |
+| 数据蒸馏器模板 | 浏览多个模板以获得对受众数据的结构化洞察。使用&#x200B;**高级[!UICONTROL 受众重叠]**、**[!UICONTROL 受众比较]**、**[!UICONTROL 受众趋势]**&#x200B;和&#x200B;**[!UICONTROL 受众标识重叠]**&#x200B;等仪表板，做出数据驱动的决策，优化细分并增强参与策略。如需了解更多详细信息，请参阅[数据蒸馏器模板指南](../../dashboards/sql-insights-query-pro-mode/templates/overview.md)。 |
+| 高级受众重叠 | 快速分析特定受众交集或查看所有重叠部分，发现整个受众群体的宝贵洞察。利用这些洞察来优化细分、减少冗余消息并创建更有针对性的营销活动，从而提高营销效率。请参阅[高级受众重叠指南](../../dashboards/sql-insights-query-pro-mode/templates/overlaps.md)了解更多详情。 |
+| 受众比较增强功能 | 使用&#x200B;**受众比较**&#x200B;仪表板查看不同受众群体之间关键量度的并排比较。通过此仪表板，您可以选择特定的时间范围和 KPI（如受众规模和标识构成），从而就受众细分和目标市场选择策略做出更明智的决策。请阅读[受众比较指南](../../dashboards/sql-insights-query-pro-mode/templates/comparison.md)，获取更多信息。 |
+| 受众趋势可视化图表 | 使用&#x200B;**[!UICONTROL 受众趋势]**&#x200B;仪表板分析随时间变化的受众量度。可视化受众规模、标识数量和单一标识轮廓数量的趋势，帮助您监测受众演变、衡量增长情况并完善参与策略。请参阅[受众趋势指南](../../dashboards/sql-insights-query-pro-mode/templates/trends.md)，获取更多详细信息。 |
+| 标识重叠分析 | 使用&#x200B;**[!UICONTROL 受众标识重叠]**&#x200B;仪表板分析选定受众的标识重叠情况。查看标识趋势和细分，了解不同标识类型在受众中的关系，加强标识拼接，提高客户细分的准确性。请参阅[受众标识重叠指南](../../dashboards/sql-insights-query-pro-mode/templates/identity-overlaps.md)，获取更多详细信息。 |
 
 {style="table-layout:auto"}
 
