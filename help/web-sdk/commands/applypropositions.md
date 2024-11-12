@@ -2,7 +2,7 @@
 title: applyPropositions
 description: 重新呈现已使用sendEvent呈现的建议。
 exl-id: 6b79f334-4ea6-4ba4-8640-d35b7f90df98
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: 9aab41b338907f3c9fb15d08bfa877eb218f5627
 workflow-type: tm+mt
 source-wordcount: '352'
 ht-degree: 0%
@@ -46,7 +46,7 @@ ht-degree: 0%
 * **`viewName`**：要在单页应用程序中呈现的视图的名称。 已缓存这些决策的显示通知，可以使用`personalization.includePendingDisplayNotifications`将其包含在后续`sendEvent`命令中。
 
 ```js
-alloy("applyPropositiions",{
+alloy("applyPropositions",{
   "propositions": [],
   "metadata": {},
   "viewName": ""
