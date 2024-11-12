@@ -6,10 +6,10 @@ product: experience platform
 type: Documentation
 description: 了解有关数据激活默认使用量和速率限制的更多信息。
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 3ff20e51458cb9cccafb6da92414def9eeaaf821
+source-git-commit: d01e9b6d64e9040df11c45750c784079a0289477
 workflow-type: tm+mt
-source-wordcount: '1686'
-ht-degree: 2%
+source-wordcount: '1715'
+ht-degree: 1%
 
 ---
 
@@ -53,7 +53,7 @@ ht-degree: 2%
 | 映射到目标的最大属性数 | 50 | 性能护栏 | 如果存在多个目标和目标类型，则可以选择要映射以导出的配置文件属性和身份。 为获得最佳性能，数据流中应将最多50个属性映射到目标。 |
 | 最大目标数 | 100 | 系统强制的护栏 | 您最多可以创建100个可以连接和激活数据的目标，每个沙盒&#x200B;*为*。 [Edge个性化目标（自定义个性化）](#edge-destinations-activation)最多可以构成100个推荐目标中的10个。 |
 | 激活到目标的数据类型 | 配置文件数据，包括身份和身份映射 | 系统强制的护栏 | 目前，只能将&#x200B;*配置文件记录属性*&#x200B;导出到目标。 目前不支持导出描述事件数据的XDM属性。 |
-| 激活到目标的数据类型 — 阵列和映射属性支持 | 不可用 | 系统强制的护栏 | 此时，**无法**&#x200B;将&#x200B;*数组或映射属性*&#x200B;导出到目标。 此规则的例外是[标识映射](/help/xdm/field-groups/profile/identitymap.md)，它将在流激活和基于文件的激活中导出。 |
+| 激活到目标的数据类型 — 阵列和映射属性支持 | 部分可用 | 系统强制的护栏 | 您可以将数组属性导出到[基于文件的目标](/help/destinations/destination-types.md#file-based)。 您仍需要使用`array_to_string`函数将数组拼合到目标文件中的字符串中。 [阅读有关功能的更多信息](/help/release-notes/2024/october-2024.md#destinations-new-updated-functionality)。 <br><br>此时，**无法**&#x200B;将&#x200B;*映射属性*&#x200B;导出到目标。 此规则的例外是[标识映射](/help/xdm/field-groups/profile/identitymap.md)，它将在流激活和基于文件的激活中导出。 |
 
 {style="table-layout:auto"}
 
