@@ -4,9 +4,9 @@ title: 使用流服务API导出数据集
 description: 了解如何使用流服务API将数据集导出到所选目标。
 type: Tutorial
 exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
-source-git-commit: 22a752e28fe3cc4cb3337b456e80ef1b273f6a71
+source-git-commit: c32d2801fe38183225d24f38284b42e3d78e2631
 workflow-type: tm+mt
-source-wordcount: '5107'
+source-wordcount: '5138'
 ht-degree: 3%
 
 ---
@@ -1163,9 +1163,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 接下来，您需要创建一个目标连接，用于存储数据集的导出参数。 导出参数包括位置、文件格式、压缩和其他详细信息。 请参阅目标的连接规范中提供的`targetSpec`属性，以了解每个目标类型支持的属性。 请引用下面的选项卡，以查看所有受支持目标的`targetSpec`属性。
 
->[!WARNING]
+>[!IMPORTANT]
 >
->仅在压缩模式下支持导出到JSON文件。 在压缩和未压缩模式下支持导出到[!DNL Parquet]文件。
+>仅在压缩模式下支持导出到JSON文件。 在压缩模式和非压缩模式中均支持导出到[!DNL Parquet]文件。
+>
+>导出的JSON文件的格式为NDJSON，它是大数据生态系统中的标准交换格式。 Adobe建议使用与NDJSON兼容的客户端读取导出的文件。
 
 >[!BEGINTABS]
 

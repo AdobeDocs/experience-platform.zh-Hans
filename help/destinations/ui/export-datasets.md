@@ -3,9 +3,9 @@ title: 将数据集导出到云存储目标
 type: Tutorial
 description: 了解如何将数据集从Adobe Experience Platform导出到您首选的云存储位置。
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: ad33eaa48928b25502ef279f000b92f31e1667ca
+source-git-commit: 74dcaff91a264062feec262784e056a296072fd7
 workflow-type: tm+mt
-source-wordcount: '2573'
+source-wordcount: '2603'
 ht-degree: 8%
 
 ---
@@ -238,7 +238,7 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
 请注意两种文件类型在压缩后的文件格式差异：
 
-* 导出压缩的JSON文件时，导出的文件格式为`json.gz`
+* 导出压缩的JSON文件时，导出的文件格式为`json.gz`。 导出的JSON格式为NDJSON，它是大数据生态系统中的标准交换格式。 Adobe建议使用与NDJSON兼容的客户端读取导出的文件。
 * 导出压缩的parquet文件时，导出的文件格式为`gz.parquet`
 
 仅支持在压缩模式下&#x200B;*导出到JSON文件*。 在压缩和未压缩模式下支持导出到Parquet文件。
