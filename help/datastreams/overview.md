@@ -2,16 +2,18 @@
 title: 数据流概述
 description: 了解数据流如何帮助您将客户端Experience PlatformSDK集成与Adobe产品和第三方目标连接起来。
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 8fc0fd96f13f0642f7671d0e0f4ecfae8ab6761f
+source-git-commit: e3768a3f695abeedc9a3ce2fef591c6ecae9a897
 workflow-type: tm+mt
-source-wordcount: '727'
-ht-degree: 77%
+source-wordcount: '712'
+ht-degree: 70%
 
 ---
 
 # 数据流概述
 
-数据流表示实施 Adobe Experience Platform Web 和 Mobile SDK 时的服务器端配置。虽然SDK中的[`configure`](/help/web-sdk/commands/configure/overview.md)命令可控制必须在客户端（如`edgeDomain`）上处理的内容，但数据流可处理SDK的所有其他配置。 当请求发送到 Adobe Experience Platform Edge Network 时，`datastreamId` 用于引用数据流。这可让您更新服务器端配置，而无需在网站上进行代码更改。
+数据流表示Adobe Experience Platform Web和Mobile SDK的服务器端配置。 虽然SDK中的[`configure`](/help/web-sdk/commands/configure/overview.md)命令可处理客户端设置（如`edgeDomain`），但数据流可管理所有其他配置。
+
+向Edge Network发送请求时，`datastreamId`引用发送数据的数据流。 这允许您更新服务器端配置，而无需更改网站的代码。
 
 您可以通过在 Adobe Experience Platform UI 或数据收集 UI 的左侧导航中选择&#x200B;**[!UICONTROL 数据流]**&#x200B;来创建和管理数据流。
 

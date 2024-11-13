@@ -2,24 +2,22 @@
 title: 为数据流配置机器人检测
 description: 了解如何为数据流配置机器人检测，以区分人类和非人类流量。
 exl-id: 6b221d97-0145-4d3e-a32d-746d72534add
-source-git-commit: ff95e5e105f7b3e1213eab90456b9fa9000918d3
+source-git-commit: e3768a3f695abeedc9a3ce2fef591c6ecae9a897
 workflow-type: tm+mt
-source-wordcount: '1367'
+source-wordcount: '1358'
 ht-degree: 0%
 
 ---
 
 # 为数据流配置机器人检测
 
-源自非人类实体（如自动化程序、网页抓取程序、蜘蛛程序、脚本扫描程序）的流量，可能使识别来自人类访客的事件变得更加困难。 此类流量可能会对重要的业务量度产生负面影响，从而导致不正确的流量报表。
+来自自动化程序、网页抓取程序、蜘蛛程序和脚本扫描程序的非人为流量可能会使识别来自人为访客的事件变得困难。 此类流量可能会对重要的业务量度产生负面影响，从而导致不正确的流量报表。
 
 机器人检测允许您识别由已知蜘蛛程序和机器人生成的[Web SDK](../web-sdk/home.md)、[Mobile SDK](https://developer.adobe.com/client-sdks/home/)和[[!DNL Server API]](../server-api/overview.md)生成的事件。
 
-通过为数据流配置机器人检测，您可以识别要分类为机器人事件的特定IP地址、IP范围和请求标头。
+通过为数据流配置机器人检测，您可以识别特定的IP地址、IP范围和请求标头，以分类为机器人事件。 这有助于更准确地测量您的网站或移动应用程序上的用户活动。
 
-识别机器人流量可以为您提供对网站或移动应用程序上的用户活动的更准确测量。
-
-当对Edge Network的请求与任何机器人检测规则匹配时，使用机器人评分（始终设置为1）更新XDM架构，如下所示。
+当对Edge Network的请求与任何机器人检测规则匹配时，XDM架构将更新为机器人得分（始终设置为1），如下所示：
 
 ```json
 {
@@ -66,9 +64,12 @@ ht-degree: 0%
 
 ### 使用IAB/ABC国际蜘蛛程序和机器人列表 {#iab-list}
 
-[IAB/ABC国际蜘蛛程序和机器人列表](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/)是第三方、符合行业标准的互联网蜘蛛程序和机器人列表，可帮助您识别自动流量，例如搜索引擎爬网程序、监控工具和其他您可能不想显示在分析计数中的非人为流量。
+[IAB/ABC国际蜘蛛程序和机器人列表](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/)是第三方行业标准的网络蜘蛛程序和机器人列表。 此列表可帮助您识别自动流量，例如搜索引擎爬网程序、监控工具以及其他您可能不希望包含在分析计数中的非人为流量。
 
-要将数据流配置为使用[!DNL IAB/ABC International Spiders and Bots List]，请切换&#x200B;**[!UICONTROL 在此数据流上使用IAB/ABC国际蜘蛛程序和机器人列表进行机器人检测]**&#x200B;选项，然后选择“保存”以将机器人检测设置应用于数据流。
+要将数据流配置为使用IAB/ABC国际蜘蛛程序和机器人列表，请执行以下操作：
+
+1. 切换&#x200B;**[!UICONTROL 在此数据流上使用IAB/ABC国际蜘蛛程序和机器人列表进行机器人检测选项]**。
+2. 选择&#x200B;**[!UICONTROL 保存]**&#x200B;以将机器人检测设置应用于数据流。
 
 ![IAB蜘蛛程序和机器人列表已启用。](assets/bot-detection/bot-detection-list.png)
 
