@@ -1,13 +1,13 @@
 ---
 title: 帐户配置文件分析
 description: 发现支持您的帐户配置文件分析的SQL，并使用这些查询生成自定义分析，从而进一步探索您的客户及其消费者体验。
-badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: a953dd56-7dd8-4cd0-baa0-85f92d192789
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: f9ef0e25dac1715bbb6d73db52d6368c543bf7ec
 workflow-type: tm+mt
-source-wordcount: '549'
-ht-degree: 1%
+source-wordcount: '773'
+ht-degree: 0%
 
 ---
 
@@ -281,10 +281,232 @@ ORDER BY  d.date_key limit 5000;
 
 +++
 
+## 每个帐户的客户概述 {#customers-per-account-overview}
+
+>[!NOTE]
+>
+>[!UICONTROL 每个帐户的客户概述]图表包括三个穿透钻取见解：每个帐户的[!UICONTROL 客户详细信息]、[!UICONTROL 每个帐户的机会]和每个帐户的[!UICONTROL 机会]。 这些深入分析可提供更细粒度的洞察，按类别（如直接和间接客户）和范围（如客户和机会计数范围）划分客户和机会计数。 这些图表不受您可能已设置的任何全局日期过滤器的影响。
+
+通过此洞察回答的问题：
+
+- 根据客户是否有直接或间接客户，客户分配情况如何？
+
++++选择以显示生成此分析的SQL
+
+```sql
+WITH LatestDate AS (SELECT MAX(inserted_date) AS max_inserted_date FROM adwh_b2b_account_person_association),
+     CategorizedData AS (
+         SELECT CASE 
+                    WHEN is_direct = 'true' AND person_count = 0 THEN 'Accounts without Direct Customers' 
+                    WHEN is_direct = 'false' AND person_count = 0 THEN 'Accounts without Indirect Customers' 
+                    WHEN is_direct = 'true' AND person_count > 0 THEN 'Accounts with Direct Customers' 
+                    WHEN is_direct = 'false' AND person_count > 0 THEN 'Accounts with Indirect Customers' 
+                END AS Account_Category, 
+                account_count 
+         FROM adwh_b2b_account_person_association 
+         WHERE inserted_date = (SELECT max_inserted_date FROM LatestDate)
+     ),
+     AggregatedData AS (
+         SELECT Account_Category, SUM(account_count) AS Accounts 
+         FROM CategorizedData 
+         GROUP BY Account_Category
+     ),
+     AllCategories AS (
+         SELECT 'Accounts without Direct Customers' AS Account_Category 
+         UNION ALL SELECT 'Accounts without Indirect Customers' 
+         UNION ALL SELECT 'Accounts with Direct Customers' 
+         UNION ALL SELECT 'Accounts with Indirect Customers'
+     )
+SELECT ac.Account_Category AS Account_Category, COALESCE(ad.Accounts, 0) AS Accounts 
+FROM AllCategories ac 
+LEFT JOIN AggregatedData ad ON ac.Account_Category = ad.Account_Category 
+ORDER BY ac.Account_Category;
+```
+
++++
+
+## 每个帐户的客户详细信息 {#customers-per-account-detail}
+
+>[!NOTE]
+>
+>此洞察不受全局日期过滤器的影响。
+
+通过此洞察回答的问题：
+
+- 有多少客户拥有不同范围的直接或间接客户？
+
++++选择以显示生成此分析的SQL
+
+```sql
+WITH customer_ranges AS (
+    SELECT 'Direct Customer' AS customer_type, '1-10 Customers' AS person_range 
+    UNION ALL
+    SELECT 'Direct Customer', '11-100 Customers' 
+    UNION ALL
+    SELECT 'Direct Customer', '101-1000 Customers' 
+    UNION ALL
+    SELECT 'Direct Customer', '1000+ Customers' 
+    UNION ALL
+    SELECT 'Indirect Customer', '1-10 Customers' 
+    UNION ALL
+    SELECT 'Indirect Customer', '11-100 Customers' 
+    UNION ALL
+    SELECT 'Indirect Customer', '101-1000 Customers' 
+    UNION ALL
+    SELECT 'Indirect Customer', '1000+ Customers'
+)
+SELECT 
+    cr.customer_type, 
+    cr.person_range, 
+    COALESCE(SUM(ap.account_count), 0) AS Accounts
+FROM customer_ranges cr
+LEFT JOIN (
+    SELECT 
+        CASE 
+            WHEN is_direct = 'true' THEN 'Direct Customer' 
+            ELSE 'Indirect Customer' 
+        END AS customer_type,
+        CASE 
+            WHEN person_count BETWEEN 1 AND 10 THEN '1-10 Customers' 
+            WHEN person_count BETWEEN 11 AND 100 THEN '11-100 Customers' 
+            WHEN person_count BETWEEN 101 AND 1000 THEN '101-1000 Customers' 
+            WHEN person_count > 1000 THEN '1000+ Customers' 
+        END AS person_range,
+        SUM(account_count) AS account_count
+    FROM adwh_b2b_account_person_association 
+    WHERE inserted_date = (SELECT MAX(inserted_date) FROM adwh_b2b_account_person_association) 
+    GROUP BY 
+        CASE 
+            WHEN is_direct = 'true' THEN 'Direct Customer' 
+            ELSE 'Indirect Customer' 
+        END,
+        CASE 
+            WHEN person_count BETWEEN 1 AND 10 THEN '1-10 Customers' 
+            WHEN person_count BETWEEN 11 AND 100 THEN '11-100 Customers' 
+            WHEN person_count BETWEEN 101 AND 1000 THEN '101-1000 Customers' 
+            WHEN person_count > 1000 THEN '1000+ Customers' 
+        END
+) ap ON cr.customer_type = ap.customer_type AND cr.person_range = ap.person_range
+GROUP BY cr.customer_type, cr.person_range
+ORDER BY cr.customer_type, 
+    CASE cr.person_range 
+        WHEN '1-10 Customers' THEN 1 
+        WHEN '11-100 Customers' THEN 2 
+        WHEN '101-1000 Customers' THEN 3 
+        WHEN '1000+ Customers' THEN 4 
+    END;
+```
+
++++
+
+## 每个客户的机会概述 {#opportunities-per-account-overview}
+
+>[!NOTE]
+>
+>此洞察不受全局日期过滤器的影响。
+
+通过此洞察回答的问题：
+
+- 根据客户是否具有相关业务机会，客户分配情况如何？
+
++++选择以显示生成此分析的SQL
+
+```sql
+WITH LatestDate AS (
+    SELECT MAX(inserted_date) AS max_inserted_date 
+    FROM adwh_b2b_account_opportunity_association
+),
+CategorizedData AS (
+    SELECT 
+        CASE 
+            WHEN opportunity_count = 0 THEN 'Accounts without Opportunities'
+            WHEN opportunity_count > 0 THEN 'Accounts with Opportunities'
+        END AS Opportunity_Category, 
+        account_count 
+    FROM adwh_b2b_account_opportunity_association 
+    WHERE inserted_date = (SELECT max_inserted_date FROM LatestDate)
+),
+AggregatedData AS (
+    SELECT 
+        Opportunity_Category,
+        SUM(account_count) AS Accounts 
+    FROM CategorizedData 
+    GROUP BY Opportunity_Category
+),
+AllCategories AS (
+    SELECT 'Accounts without Opportunities' AS Opportunity_Category 
+    UNION ALL 
+    SELECT 'Accounts with Opportunities'
+)
+SELECT 
+    ac.Opportunity_Category AS Opportunity_Category, 
+    COALESCE(ad.Accounts, 0) AS Accounts 
+FROM AllCategories ac 
+LEFT JOIN AggregatedData ad 
+    ON ac.Opportunity_Category = ad.Opportunity_Category 
+ORDER BY ac.Opportunity_Category;
+```
+
++++
+
+## 每个客户的业务机会详细信息 {#opportunities-per-account-detail}
+
+>[!NOTE]
+>
+>此洞察不受全局日期过滤器的影响。
+
+通过此洞察回答的问题：
+
+- 有多少客户拥有不同范围的关联机会？
+
++++选择以显示生成此分析的SQL
+
+```sql
+WITH opportunity_ranges AS (
+    SELECT '1-10 Opportunities' AS opportunity_range 
+    UNION ALL 
+    SELECT '11-50 Opportunities' 
+    UNION ALL 
+    SELECT '51-100 Opportunities' 
+    UNION ALL 
+    SELECT '100+ Opportunities'
+)
+SELECT opportunity_ranges.opportunity_range AS OPPORTUNITIES, 
+       COALESCE(SUM(accounts.total_accounts), 0) AS ACCOUNTS 
+FROM opportunity_ranges 
+LEFT JOIN (
+    SELECT 
+        CASE 
+            WHEN opportunity_count BETWEEN 1 AND 10 THEN '1-10 Opportunities' 
+            WHEN opportunity_count BETWEEN 11 AND 50 THEN '11-50 Opportunities' 
+            WHEN opportunity_count BETWEEN 51 AND 100 THEN '51-100 Opportunities' 
+            WHEN opportunity_count > 100 THEN '100+ Opportunities' 
+        END AS opportunity_range, 
+        SUM(account_count) AS total_accounts 
+    FROM adwh_b2b_account_opportunity_association 
+    WHERE inserted_date = (SELECT MAX(inserted_date) FROM adwh_b2b_account_opportunity_association) 
+      AND opportunity_count > 0 
+    GROUP BY 
+        CASE 
+            WHEN opportunity_count BETWEEN 1 AND 10 THEN '1-10 Opportunities' 
+            WHEN opportunity_count BETWEEN 11 AND 50 THEN '11-50 Opportunities' 
+            WHEN opportunity_count BETWEEN 51 AND 100 THEN '51-100 Opportunities' 
+            WHEN opportunity_count > 100 THEN '100+ Opportunities' 
+        END
+) AS accounts ON opportunity_ranges.opportunity_range = accounts.opportunity_range 
+GROUP BY opportunity_ranges.opportunity_range 
+ORDER BY CASE opportunity_ranges.opportunity_range 
+            WHEN '1-10 Opportunities' THEN 1 
+            WHEN '11-50 Opportunities' THEN 2 
+            WHEN '51-100 Opportunities' THEN 3 
+            WHEN '100+ Opportunities' THEN 4 
+        END;
+```
+
++++
+
 ## 后续步骤
 
-通过阅读本文档，您现在了解了生成帐户个人资料仪表板分析的SQL以及此分析可解决哪些常见问题。 您现在可以对SQL进行编辑和迭代，以生成您自己的见解。
-
-<!-- Add link above Learn how to [generate insights with SQL](). after April release -->
+通过阅读本文档，您现在了解了生成帐户个人资料仪表板分析的SQL以及此分析可解决哪些常见问题。 您现在可以对SQL进行编辑和迭代，以生成您自己的见解。 请参阅[Query Pro模式概述](../sql-insights-query-pro-mode/overview.md)，了解如何使用SQL生成自定义分析。
 
 您还可以阅读并了解为[配置文件](./profiles.md)、[受众](./audiences.md)和[目标](./destinations.md)仪表板生成分析的SQL。
