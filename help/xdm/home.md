@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM系统概述
 description: 标准化和互操作性是Adobe Experience Platform背后的关键概念。 体验数据模型(XDM)由Adobe驱动，它致力于标准化客户体验数据并定义用于客户体验管理的架构。
 exl-id: 294d5f02-850f-47ea-9333-8b94a0bb291e
-source-git-commit: 48caa318f0e951979db4fd2c94624a73311422d6
+source-git-commit: 442df54080b08b7fc3888e8bd5c7bd3e8f301240
 workflow-type: tm+mt
-source-wordcount: '2101'
+source-wordcount: '2124'
 ht-degree: 4%
 
 ---
@@ -128,6 +128,10 @@ Real-Time Customer Profile为有针对性的个性化体验管理提供了一个
 有关详细信息，请参阅[实时客户资料概述](../profile/home.md)。
 
 ### 数据科学工作区 {#data-science-workspace}
+
+>[!NOTE]
+>
+>数据科学Workspace不再可供购买。 本文档面向之前有权访问数据科学Workspace的现有客户。
 
 Adobe Experience Platform数据科学Workspace使用机器学习和人工智能从Experience Platform中存储的数据获取见解。 数据科学Workspace允许数据科学家根据有关客户及其活动的[!UICONTROL XDM Individual Profile]和[!UICONTROL XDM ExperienceEvent]数据构建脚本。 这些配方有助于进行预测，例如购买倾向和个人可能会喜欢和使用的推荐选件。
 
