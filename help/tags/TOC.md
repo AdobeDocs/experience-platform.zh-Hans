@@ -6,7 +6,7 @@ user-guide-description: 了解如何部署和管理分析、营销和广告标�
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: fa50e101e5756923eddcd2cab409bda2a629a8a3
+source-git-commit: 82d6d2e7d0d7f0f9484c4ebcd34339fd63e04b59
 workflow-type: tm+mt
 source-wordcount: '778'
 ht-degree: 35%
@@ -261,7 +261,7 @@ ht-degree: 35%
    * [支持的浏览器](./extension-dev/browsers.md)
    * 提交流程 {#submit}
       * [概述](./extension-dev/submit/overview.md)
-      * [公司设置](./extension-dev/submit/setup.md)
+      * [组织设置](./extension-dev/submit/setup.md)
       * [授予用户访问权限](./extension-dev/submit/access.md)
       * [开发扩展](./extension-dev/submit/develop.md)
       * [创建 Exchange 列表](./extension-dev/submit/create-listing.md)
