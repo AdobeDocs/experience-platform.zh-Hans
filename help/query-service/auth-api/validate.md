@@ -3,14 +3,19 @@ keywords: Experience Platform；安全；ip访问；验证；API指南；查询�
 title: IP验证端点
 description: 了解如何使用IP验证API端点验证查询服务中沙盒的IP访问权限。
 role: Developer
-source-git-commit: ad1b6d8449a2a3ca9c8422e70769d12e33d8e255
+exl-id: 4ce9ab1c-e333-4ed5-a430-43ffec36a46d
+source-git-commit: bf696c8836407a2fea82e9078201cb1f5004bcf8
 workflow-type: tm+mt
-source-wordcount: '208'
-ht-degree: 0%
+source-wordcount: '229'
+ht-degree: 3%
 
 ---
 
 # IP验证端点
+
+>[!AVAILABILITY]
+>
+>此功能适用于购买了Data Distiller附加产品的客户。 有关更多信息，请与您的 Adobe 代表联系。
 
 使用IP验证API端点验证是否允许指定的IP地址访问查询服务中的指定沙盒。 此检查可确认访问限制是否适用，或是否允许IP地址访问沙盒中的数据。
 

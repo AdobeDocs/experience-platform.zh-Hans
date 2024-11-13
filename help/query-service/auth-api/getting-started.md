@@ -3,14 +3,19 @@ keywords: Experience Platform；查询服务；IP访问控制；授权；API；�
 title: 查询服务授权API指南
 description: 了解如何开始使用Adobe Experience Platform查询服务中的授权和IP范围限制来确保数据访问安全。
 role: Developer
-source-git-commit: eb6558c2cc3faebb2cb14f49f7517227d57f7162
+exl-id: d93ce774-c8b2-4f15-a4d9-117d9aa5d9e7
+source-git-commit: bf696c8836407a2fea82e9078201cb1f5004bcf8
 workflow-type: tm+mt
-source-wordcount: '461'
-ht-degree: 4%
+source-wordcount: '482'
+ht-degree: 6%
 
 ---
 
 # 查询服务授权API指南
+
+>[!AVAILABILITY]
+>
+>此功能适用于购买了Data Distiller附加产品的客户。 有关更多信息，请与您的 Adobe 代表联系。
 
 查询服务授权API通过Adobe Experience Platform中的SQL接口，为组织提供对数据访问的更严格控制。 您可以使用此API定义IP限制、限制对指定网络的数据访问以及增强安全监控。
 

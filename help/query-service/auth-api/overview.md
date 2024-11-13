@@ -2,14 +2,19 @@
 title: 查询服务授权API指南
 description: 了解如何使用查询服务授权API对通过SQL的安全连接实施基于网络的IP限制。 使用此API可增强对Adobe Experience Platform数据的数据访问控制。
 role: Developer
-source-git-commit: f673d0d71458fe87491318f06be59719e4c9d76c
+exl-id: bcc5ea0e-cb6d-4c7b-bf9f-a0336f76c4c8
+source-git-commit: bf696c8836407a2fea82e9078201cb1f5004bcf8
 workflow-type: tm+mt
-source-wordcount: '365'
-ht-degree: 0%
+source-wordcount: '386'
+ht-degree: 2%
 
 ---
 
 # 查询服务授权API指南
+
+>[!AVAILABILITY]
+>
+>此功能适用于购买了Data Distiller附加产品的客户。 有关更多信息，请与您的 Adobe 代表联系。
 
 使用查询服务授权API强制执行基于IP的限制。 应用这些措施可以确保只有获得批准的网络和客户端计算机才能通过Adobe Experience Platform中的SQL访问数据。 这些控制可帮助您满足严格的安全标准，同时提供实时访问监控和警报。
 

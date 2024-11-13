@@ -3,14 +3,19 @@ keywords: Experience Platform；安全性；ip-access；QS-Auth；API指南；�
 title: IP访问端点
 description: 了解如何使用IP访问API端点在查询服务中管理沙盒访问的IP范围。
 role: Developer
-source-git-commit: 23e5260133f0f16ac30d14346c227a21f251b7e1
+exl-id: fc15ab50-c125-4f00-a311-81fd41697c7d
+source-git-commit: bf696c8836407a2fea82e9078201cb1f5004bcf8
 workflow-type: tm+mt
-source-wordcount: '401'
-ht-degree: 2%
+source-wordcount: '422'
+ht-degree: 3%
 
 ---
 
 # IP访问端点
+
+>[!AVAILABILITY]
+>
+>此功能适用于购买了Data Distiller附加产品的客户。 有关更多信息，请与您的 Adobe 代表联系。
 
 要保护指定查询服务沙盒中的数据访问，请使用IP访问端点管理允许的IP范围。 您可以使用此API获取、配置或删除与组织ID关联的IP范围。
 
@@ -163,4 +168,3 @@ curl -X DELETE https://platform.adobe.io/data/foundation/query/security/ip-acces
   ]
 }
 ```
-
