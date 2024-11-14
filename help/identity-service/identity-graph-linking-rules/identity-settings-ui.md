@@ -2,7 +2,7 @@
 title: 身份设置UI
 description: 了解如何使用身份设置用户界面。
 exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
-source-git-commit: 32229555a8bad3632bde974e3d97772a8cb21b71
+source-git-commit: ee0f6d6dbbbdf55a1a0f10038b785e48f2b41474
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 1%
