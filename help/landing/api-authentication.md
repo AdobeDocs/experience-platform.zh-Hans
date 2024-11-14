@@ -4,9 +4,9 @@ title: 身份验证和访问Experience PlatformAPI
 type: Tutorial
 description: 此文档分步说明了如何获取 Adobe Experience Platform 开发人员帐户访问权限以调用 Experience Platform API。
 exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
-source-git-commit: 2fb0da385baeb96d5665ecc25bf353c7516ef9f7
+source-git-commit: a6da449725d0274ccacc6f6512c9ad395366b689
 workflow-type: tm+mt
-source-wordcount: '2149'
+source-wordcount: '2383'
 ht-degree: 2%
 
 ---
@@ -67,6 +67,10 @@ ht-degree: 2%
 >如果您是从[Privacy ServiceAPI指南](../privacy-service/api/getting-started.md)中跟踪此文档，则现在可以返回该指南以生成[!DNL Privacy Service]唯一的访问凭据。
 
 在通过[!DNL Admin Console]授予您开发人员和用户访问Platform的权限后，下一步是在Adobe Developer Console中生成您的`{ORG_ID}`和`{API_KEY}`凭据。 这些凭据只需生成一次，可在以后的Platform API调用中重复使用。
+
+>[!TIP]
+>
+>您可以直接从API参考文档页面获取使用Platform API所需的所有身份验证凭据，而不是转到Developer Console。 [阅读有关功能的更多信息](#get-credentials-functionality)。
 
 ### 将Experience Platform添加到项目 {#add-platform-to-project}
 
@@ -149,6 +153,26 @@ In addition to the above credentials, you also need the generated **[!UICONTROL 
 >[!TIP]
 >
 您还可以使用Postman环境和收藏集来生成访问令牌。 有关详细信息，请阅读有关[使用Postman进行身份验证和测试API调用](#use-postman)的部分。
+
+## 直接在API参考文档中创建和检索身份验证凭据 {#get-credentials-functionality}
+
+从2024年11月版的Experience Platform开始，您可以直接从API参考页面获取使用Experience PlatformAPI的凭据，而无需转到[!UICONTROL Developer Console]。 从[流服务API — 目标页面](https://developer.adobe.com/experience-platform-apis/references/destinations/)查看以下示例。
+
+![在API引用页面顶部高亮显示获取凭据功能。](././images/api-authentication/get-credentials-highlighted.png)
+
+要获取调用Platform API的凭据，请导航到任何Experience PlatformAPI引用页面，然后选择页面顶部的&#x200B;**[!UICONTROL 登录]**。 使用您的&#x200B;**[!UICONTROL 个人帐户]**&#x200B;或&#x200B;**[!UICONTROL 公司或学校帐户]**&#x200B;登录。
+
+登录后，选择&#x200B;**[!UICONTROL 新建凭据]**&#x200B;以新建一组凭据来访问Platform API。
+
+![创建新凭据以访问平台API。](././images/api-authentication/create-credentials.gif)
+
+接下来，使用下拉选择器打开凭据窗口，生成访问令牌，并获取您的API密钥和组织ID。 将凭据复制到API引用页面上的[**[!UICONTROL 尝试]**](/help/release-notes/2024/may-2024.md#interactive-api-documentation)块以开始使用平台API。
+
+![使用下拉选择器查看凭据并生成访问令牌。](././images/api-authentication/view-copy-credentials.gif)
+
+>[!TIP]
+>
+当您在Experience PlatformAPI参考文档中的其他端点页面之间导航时，页面顶部凭据块仍会显示。
 
 ## [!BADGE 已弃用]{type=negative}生成JSON Web令牌(JWT) {#jwt}
 
