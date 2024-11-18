@@ -2,9 +2,9 @@
 title: Azure Data Lake Storage Gen2 Source连接器概述
 description: 了解如何使用API或用户界面将Azure Data Lake Storage Gen2连接到Adobe Experience Platform。
 exl-id: 424d7278-44d9-4653-82c0-eb21cbb9b623
-source-git-commit: f879f2a627e55db96a89796b9f3308744bf93f67
+source-git-commit: 8877e7dceeebfb1d4f31b63fef4544a69c72b38e
 workflow-type: tm+mt
-source-wordcount: '488'
+source-wordcount: '465'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等
 
 >[!IMPORTANT]
 >
->[!DNL Azure Data Lake Storage Gen2]源不支持与Experience Platform的同一区域连接。 如果Azure实例使用的网络区域与Experience Platform相同，则无法建立与Experience Platform源的连接。 在设置[!DNL Azure Data Lake Storage Gen2]源时，请不要使用Azure East US 2、Azure West Europe和Azure Australia East区域。 目前，仅支持跨区域连接。
+>[!DNL Azure Data Lake Storage Gen2]源不支持与Experience Platform的同一区域连接。 如果[!DNL Azure]实例与Experience Platform使用相同的网络区域，则无法建立与Experience Platform源的连接。 目前，仅支持跨区域连接。
 
 ## 文件和目录的命名约束
 

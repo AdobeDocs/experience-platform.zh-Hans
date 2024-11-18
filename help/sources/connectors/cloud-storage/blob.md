@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Azure Blob Source连接器概述
 description: 了解如何使用API或用户界面将Azure Blob连接到Adobe Experience Platform。
 exl-id: 62adc74f-3570-42c7-9ae6-3ddbc09eccc7
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 8877e7dceeebfb1d4f31b63fef4544a69c72b38e
 workflow-type: tm+mt
-source-wordcount: '466'
+source-wordcount: '443'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等
 
 >[!IMPORTANT]
 >
->[!DNL Azure Blob]源不支持与Experience Platform的同一区域连接。 如果Azure实例使用的网络区域与Experience Platform相同，则无法建立与Experience Platform源的连接。 在设置[!DNL Azure Blob]源时，请不要使用Azure East US 2、Azure West Europe和Azure Australia East区域。 目前，仅支持跨区域连接。
+>[!DNL Azure Blob]源不支持与Experience Platform的同一区域连接。 如果[!DNL Azure]实例与Experience Platform使用相同的网络区域，则无法建立与Experience Platform源的连接。 目前，仅支持跨区域连接。
 
 ## 文件和目录的命名约束
 
