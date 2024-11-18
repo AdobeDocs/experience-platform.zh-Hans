@@ -5,9 +5,9 @@ product: experience platform
 type: Documentation
 description: 了解配置文件数据和分段的性能和系统强制护栏，以确保充分使用 Real-Time CDP 功能。
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 5d6b70e397a252e037589c3200053ebcb7eb8291
+source-git-commit: 6962bb0ba4968ed4860e95819ac2e949bf744d79
 workflow-type: tm+mt
-source-wordcount: '2457'
+source-wordcount: '2461'
 ht-degree: 2%
 
 ---
@@ -174,7 +174,7 @@ Dimension实体提供查找数据，这有助于并简化多实体区段定义�
 
 ### 合并策略 {#merge-policies}
 
-将来自多个来源的数据集合在一起时，合并策略是Platform用来确定数据优先顺序的规则以及将合并哪些数据以创建该统一视图。 例如，如果客户跨多个渠道与您的品牌互动，则您的组织将在多个数据集中显示多个与该单个客户相关的配置文件片段。 将这些片段摄取到Platform后，会合并在一起，以便为该客户创建一个配置文件。 当来自多个源的数据发生冲突时，合并策略会确定个人配置文件中要包含哪些信息。 每个组织最多允许五(5)个合并策略。 若要了解有关合并策略的更多信息，请阅读[合并策略概述](merge-policies/overview.md)。
+将来自多个来源的数据集合在一起时，合并策略是Platform用来确定数据优先顺序的规则以及将合并哪些数据以创建该统一视图。 例如，如果客户跨多个渠道与您的品牌互动，则您的组织将在多个数据集中显示多个与该单个客户相关的配置文件片段。 将这些片段摄取到Platform后，会合并在一起，以便为该客户创建一个配置文件。 当来自多个源的数据发生冲突时，合并策略会确定个人配置文件中要包含哪些信息。 每个沙盒最多允许五(5)个使用`_xdm.context.profile`架构的合并策略。 若要了解有关合并策略的更多信息，请阅读[合并策略概述](merge-policies/overview.md)。
 
 ### Platform中的Adobe Analytics报表包数据集 {#aa-datasets}
 
