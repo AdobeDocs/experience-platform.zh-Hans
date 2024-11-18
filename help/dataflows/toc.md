@@ -1,7 +1,7 @@
 ---
 audience: user
-user-guide-title: 数据流指南
-user-guide-description: 了解数据流以及如何在不同服务间配置它们。
+user-guide-title: Dataflows 指南
+user-guide-description: 了解 Dataflows 以及如何在不同服务间配置它们。
 feature: Dataflows
 role: Developer
 source-git-commit: 8d7bb7058df67526710936e330c69e524d18b709

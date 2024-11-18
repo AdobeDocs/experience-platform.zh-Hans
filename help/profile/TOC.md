@@ -1,7 +1,7 @@
 ---
 audience: user
 user-guide-title: 实时客户配置文件指南
-user-guide-description: 合并客户视图，跨渠道创建统一的客户互动视图。
+user-guide-description: 合并客户视图，跨渠道创建统一的客户参与视图。
 feature: Profiles
 role: User
 source-git-commit: e7af4992b1a2d4c9ada89dea474ce8e5412313f9
