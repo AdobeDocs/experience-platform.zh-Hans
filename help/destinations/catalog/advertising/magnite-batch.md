@@ -1,16 +1,14 @@
 ---
 title: 菱镁矿批次目标
 description: 使用此目标可将AdobeCDP受众批量交付到Magnite流平台。
-badgeBeta: label="Beta 版" type="Informative"
-hide: true
-hidefromtoc: true
-source-git-commit: b8921e887b827fcc7b9115045a1954c41a37bce8
+last-substantial-update: 2024-11-18T00:00:00Z
+exl-id: 8cc3890f-84f8-49d1-a329-322c13f9e5af
+source-git-commit: 57e6dc4252c031d993592b963efc089f8427ce25
 workflow-type: tm+mt
-source-wordcount: '1663'
+source-wordcount: '1680'
 ht-degree: 1%
 
 ---
-
 
 # 菱形：批处理连接 {#magnite-streaming-batch}
 
@@ -31,8 +29,6 @@ Adobe Real-Time CDP受众可以通过两种方式交付到Magnite流平台：每
 有关实时目标的详细信息，请参阅[此文档页面](magnite-streaming.md)。
 
 >[!IMPORTANT]
->
->此目标连接器为测试版，仅向部分客户提供。 要请求获取访问权限，请联系您的Adobe代表。
 >
 >目标连接器和文档页面由[!DNL Magnite]团队创建和维护。 如有任何查询或更新请求，请直接通过`adobe-tech@magnite.com`联系他们。
 
@@ -116,13 +112,17 @@ Magnite：批处理目标可以从AdobeCDP接收&#x200B;*任意*&#x200B;身份�
 未来。
 * **[!UICONTROL 描述]**：可帮助您识别此内容的描述
 未来的目标连接/实例。
-* **[!UICONTROL 源合作伙伴的名称]**：您希望作为Magnite Streaming平台中的源的名称
+* **[!UICONTROL 您的公司名称]**：您的客户/公司名称。 仅受支持的[!DNL Magnite Streaming]客户端可供选择。
+
+>[!NOTE]
+>
+>公司名称必须是与您使用Magnite配置并在[向目标身份验证](#authenticate)步骤中设置的Amazon S3投放存储段的名称匹配的字符串。 支持的字符包括“a-z”、“A-Z”、“0-9”、“ — ”（短划线）或“_”（下划线）。
 
 ![目标配置身份验证字段已填写](../../assets/catalog/advertising/magnite/destination-batch-config-auth-filled.png)
 
 >[!NOTE]
 >
->如果您计划发送多个ID类型（GAID、IDFA等） 使用批处理目标时，每个目标都需要新的目标连接/实例。 有关更多信息，请与您的Magnite客户代表联系。
+>如果您计划使用批处理目标发送多个ID类型（GAID、IDFA等），则每个类型都需要一个新的目标连接/实例。 有关更多信息，请与您的Magnite客户代表联系。
 
 然后，您可以通过选择&#x200B;**[!UICONTROL 下一步]**&#x200B;继续
 
@@ -158,7 +158,7 @@ Magnite：批处理目标可以从AdobeCDP接收&#x200B;*任意*&#x200B;身份�
 
 >[!NOTE]
 >
->如果您计划发送/映射多个ID类型（GAID、IDFA等） 使用批处理目标时，每个目标都需要新的目标连接/实例。 有关更多信息，请与您的Magnite客户代表联系。
+>如果您计划使用批处理目标发送/映射多个ID类型（GAID、IDFA等），则每个类型都需要一个新的目标连接/实例。 有关更多信息，请与您的Magnite客户代表联系。
 
 
 在“为每个受众配置文件名和导出计划”屏幕上，您现在必须为每个受众配置开始日期（必需）、结束日期（可选）和映射ID（必需）。
