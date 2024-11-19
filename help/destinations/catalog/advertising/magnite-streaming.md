@@ -1,18 +1,16 @@
 ---
 title: Magnite实时目标连接
 description: 使用此目标可将AdobeCDP受众实时交付到Magnite流平台。
-badgeBeta: label="Beta 版" type="Informative"
-hide: true
-hidefromtoc: true
-source-git-commit: 8314aca706b47c4cbcb993418c287629f5563189
+last-substantial-update: 2024-11-18T00:00:00Z
+exl-id: 4e08a14b-6800-41e1-95a5-826a6241144d
+source-git-commit: da05db9376893bdbe8f0aa291f19a507e4a73d4f
 workflow-type: tm+mt
-source-wordcount: '1297'
+source-wordcount: '1317'
 ht-degree: 1%
 
 ---
 
-
-# (Beta) Magnite：实时目标连接
+# Magnite：实时目标连接
 
 ## 概述 {#overview}
 
@@ -28,8 +26,6 @@ Adobe Experience Platform中的[!DNL Magnite: Real-Time]和[Magnite：批处理]
 注意：使用实时目标时，[!DNL Magnite Streaming]将实时接收受众，但Magnite只能暂时在其平台上存储实时受众，并且这些受众将在几天内从系统中删除。 因此，如果您要使用Magnite：实时目标，您&#x200B;*还*&#x200B;需要使用Magnite：批处理目标 — 您激活到实时目标的每个受众，还需要激活到批处理目标。
 
 >[!IMPORTANT]
->
->此目标连接器为测试版，仅向部分客户提供。 要请求获取访问权限，请联系您的Adobe代表。
 >
 >目标连接器和文档页面由[!DNL Magnite]团队创建和维护。 如有任何查询或更新请求，请直接通过`adobe-tech@magnite.com`联系他们。
 
@@ -101,7 +97,11 @@ Adobe Experience Platform中的[!DNL Magnite: Real-Time]和[Magnite：批处理]
 
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
-* **[!UICONTROL 源合作伙伴的名称]**：您的客户/公司名称。 仅受支持的[!DNL Magnite Streaming]客户端可供选择。
+* **[!UICONTROL 您的公司名称]**：您的客户/公司名称。 仅受支持的[!DNL Magnite Streaming]客户端可供选择。
+
+>[!NOTE]
+>
+>公司名称必须是与您使用Magnite配置并在[向目标身份验证](#authenticate)步骤中设置的Amazon S3投放存储段的名称匹配的字符串。 支持的字符包括“a-z”、“A-Z”、“0-9”、“ — ”（短划线）或“_”（下划线）。
 
 ![目标配置身份验证字段已填写](../../assets/catalog/advertising/magnite/destination-realtime-config-auth-filled.png)
 

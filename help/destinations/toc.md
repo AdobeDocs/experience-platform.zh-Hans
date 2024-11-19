@@ -5,9 +5,9 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: 8ccdf80885a04280c4a92e1cb3d18e45e2d9d9e5
+source-git-commit: 07e01847c6e24564682161e88122948d200ab733
 workflow-type: tm+mt
-source-wordcount: '1250'
+source-wordcount: '1248'
 ht-degree: 5%
 
 ---
@@ -48,7 +48,7 @@ ht-degree: 5%
       * [使用Experience PlatformUI按需将文件导出到批处理目标](./ui/export-file-now.md)
       * [使用Experience PlatformUI导出数据集](./ui/export-datasets.md)
       * [(Beta)在新的Beta版云存储目标中使用上次资格授予时间XDM属性](./ui/activate-last-qualification-time.md)
-      * [使用计算字段将数组导出为字符串](/help/destinations/ui/export-arrays-calculated-fields.md)
+      * [使用计算出的字段将数组导出为字符串](/help/destinations/ui/export-arrays-calculated-fields.md)
    * [查看目标详细信息](./ui/destination-details-page.md)
    * [更新目标帐户](./ui/update-accounts.md)
    * [删除目标帐户](./ui/delete-destination-account.md)
@@ -92,8 +92,8 @@ ht-degree: 5%
       * [linkedIn Insight Tag扩展](./catalog/advertising/linkedin.md)
       * [LiveRamp — 载入连接](./catalog/advertising/liveramp-onboarding.md)
       * [LiveRamp — 分发连接](./catalog/advertising/liveramp-distribution.md)
-      * [(Beta)菱镁矿批次](/help/destinations/catalog/advertising/magnite-batch.md)
-      * [(Beta) Magnite流实时连接](/help/destinations/catalog/advertising/magnite-streaming.md)
+      * [菱镁矿批次](/help/destinations/catalog/advertising/magnite-batch.md)
+      * [Magnite流实时连接](/help/destinations/catalog/advertising/magnite-streaming.md)
       * [Microsoft Bing连接](./catalog/advertising/bing.md)
       * [pinterest转化跟踪扩展](./catalog/advertising/pinterest-extension.md)
       * [pinterest客户列表连接](./catalog/advertising/pinterest.md)
