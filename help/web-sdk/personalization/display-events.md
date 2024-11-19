@@ -2,7 +2,7 @@
 title: 在Web SDK中管理显示事件
 description: 本文介绍了什么是显示事件以及如何在Web SDK中使用它们。
 exl-id: 7150ad6e-7693-4f4d-917e-8d08a39a0b41
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 4c7313afdce6645ab638b2998573e5a4f7c5de8f
 workflow-type: tm+mt
 source-wordcount: '351'
 ht-degree: 0%
@@ -31,7 +31,7 @@ Web SDK允许您通过两种方式发送显示事件：
 要在页面上呈现个性化内容后自动发送显示事件，必须配置以下参数：
 
 * `renderDecisions: true`
-* `personalization.sendDisplayNotifications: true`或未指定
+* `personalization.sendDisplayEvent: true`或未指定
 
 Web SDK在作为`sendEvent`调用的结果呈现任何个性化设置后立即发送显示事件。
 
@@ -50,9 +50,9 @@ Web SDK在作为`sendEvent`调用的结果呈现任何个性化设置后立即�
 要为自动呈现的建议发送显示事件，必须在`sendEvent`调用中配置以下参数：
 
 * `renderDecisions: true`
-* 页面点击顶部的`personalization.sendDisplayNotifications: false`
+* 页面点击顶部的`personalization.sendDisplayEvent: false`
 
-若要发送显示事件，请使用`personalization.includePendingDisplayNotifications: true`调用`sendEvent`
+若要发送显示事件，请使用`personalization.includeRenderedPropositions: true`调用`sendEvent`
 
 ### 发送手动呈现的建议的显示事件 {#manually-rendered-propositions}
 

@@ -2,7 +2,7 @@
 title: applyPropositions
 description: 重新呈现已使用sendEvent呈现的建议。
 exl-id: 6b79f334-4ea6-4ba4-8640-d35b7f90df98
-source-git-commit: 9aab41b338907f3c9fb15d08bfa877eb218f5627
+source-git-commit: 4c7313afdce6645ab638b2998573e5a4f7c5de8f
 workflow-type: tm+mt
 source-wordcount: '352'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 此命令支持以下字段：
 
 * **建议**：要重新渲染的建议对象的数组。
-* **视图名称**：要呈现的视图的名称。 已缓存这些决策的显示通知，可以使用`personalization.includePendingDisplayNotifications`选项将其包含在后续`sendEvent`命令中。
+* **视图名称**：要呈现的视图的名称。 已缓存这些决策的显示通知，可以使用`personalization.includeRenderedPropositions`选项将其包含在后续`sendEvent`命令中。
 * **元数据**：确定如何应用HTML选件的对象。 它包含以下属性：
    * 范围
    * 选择器
@@ -43,7 +43,7 @@ ht-degree: 0%
 * **`metadata`**：确定如何应用HTML选件。 这是一个映射，其中键是范围或表面，值是包含键`selector`和`actionType`的对象。
    * `selector`：一个字符串，其中包含应用HTML位置的CSS选择器。
    * `actionType`：要对HTML执行的操作。 有效值包括`setHtml`、`replaceHtml`和`appendHtml`。
-* **`viewName`**：要在单页应用程序中呈现的视图的名称。 已缓存这些决策的显示通知，可以使用`personalization.includePendingDisplayNotifications`将其包含在后续`sendEvent`命令中。
+* **`viewName`**：要在单页应用程序中呈现的视图的名称。 已缓存这些决策的显示通知，可以使用`personalization.includeRenderedPropositions`将其包含在后续`sendEvent`命令中。
 
 ```js
 alloy("applyPropositions",{
