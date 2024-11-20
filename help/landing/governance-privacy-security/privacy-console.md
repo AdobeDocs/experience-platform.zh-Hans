@@ -1,7 +1,8 @@
 ---
 title: 隐私控制台概述
 description: 了解如何在Adobe Experience Platform UI中监控与隐私相关的工作流。
-source-git-commit: 1fac36a0fd767add92283cd256d8bcea783ecf3b
+feature: Privacy
+source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
 workflow-type: tm+mt
 source-wordcount: '412'
 ht-degree: 4%

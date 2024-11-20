@@ -1,8 +1,10 @@
 ---
 title: 开始使用审计查询API
 description: 利用审核查询API，可检索各种Adobe Experience Platform功能的量度数据。 本文档介绍了在尝试调用“审核查询API”之前需要了解的核心概念。
+role: Developer
+feature: Audits, API
 exl-id: 20eab0a8-98f7-4fee-8f91-88324e54ab18
-source-git-commit: c2c5778e0a3fff7f488ad7a672123c813cca59f1
+source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
 workflow-type: tm+mt
 source-wordcount: '389'
 ht-degree: 11%

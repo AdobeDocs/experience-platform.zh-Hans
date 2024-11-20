@@ -1,13 +1,15 @@
 ---
-keywords: Experience Platform；主页；热门主题
+keywords: Experience Platform；首页；热门话题
 solution: Experience Platform
 title: Experience PlatformAPI基础知识
 description: 本文档简要概述了Experience PlatformAPI涉及的一些底层技术和语法。
+role: Developer
+feature: API
 exl-id: cd69ba48-f78c-4da5-80d1-efab5f508756
-source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
+source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
 workflow-type: tm+mt
 source-wordcount: '506'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 

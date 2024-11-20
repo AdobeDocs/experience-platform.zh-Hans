@@ -3,8 +3,10 @@ keywords: Experience Platform；主页；IAB；IAB 2.0；同意；同意
 solution: Experience Platform
 title: 创建数据集以捕获IAB TCF 2.0同意数据
 description: 本文档提供了设置两个所需数据集以收集IAB TCF 2.0同意数据的步骤。
+role: Developer
+feature: Consent, Schemas, Datasets
 exl-id: 36b2924d-7893-4c55-bc33-2c0234f1120e
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: bf651967714745a0b501dcb27373379fe014c9e1
 workflow-type: tm+mt
 source-wordcount: '1674'
 ht-degree: 0%

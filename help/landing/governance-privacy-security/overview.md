@@ -1,10 +1,11 @@
 ---
-keywords: Experience Platform；主页；热门主题
+keywords: Experience Platform；首页；热门话题
 solution: Experience Platform
 title: 管理、隐私和安全性概述
 description: Adobe Experience Platform提供了多种服务和工具，可让您自信地控制收集的体验数据，以符合您的业务实践、法律义务和开发过程。
+feature: Data Governance,Privacy
 exl-id: 1ab5a436-c5dd-4e7a-aba1-549f0613f224
-source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
+source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
 workflow-type: tm+mt
 source-wordcount: '857'
 ht-degree: 7%
@@ -19,11 +20,11 @@ Experience Platform提供了多种服务和工具，使您能够放心地控制�
 
 这些服务可以分为三个域：
 
-* [数据管理](#governance)
+* [数据治理](#governance)
 * [隐私](#privacy)
 * [安全性](#security)
 
-## 数据管理 {#governance}
+## 数据治理 {#governance}
 
 数据治理是一个基本概念，与Experience Platform中的每项功能交织在一起。 数据治理表示您能够控制和理解数据通过Platform的整个历程。 这包括维护数据质量、数据谱系、数据编目等。
 

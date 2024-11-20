@@ -1,8 +1,10 @@
 ---
 title: 使用Platform UI设置和配置客户管理的密钥
 description: 了解如何使用您的Azure租户设置您的CMK应用并将您的加密密钥ID发送到Adobe Experience Platform。
+role: Developer
+feature: Privacy
 exl-id: 5f38997a-66f3-4f9d-9c2f-fb70266ec0a6
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
 workflow-type: tm+mt
 source-wordcount: '1090'
 ht-degree: 0%

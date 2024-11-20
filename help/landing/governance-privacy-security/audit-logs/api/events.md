@@ -1,8 +1,10 @@
 ---
 title: 审核事件API端点
 description: 了解如何使用审核查询API在Experience Platform中检索审核事件。
+role: Developer
+feature: Audits, API
 exl-id: c365b6d8-0432-41a5-9a07-44a995f69b7d
-source-git-commit: c7887391481def872c40dd6ed1193bf562b9d0cf
+source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
 workflow-type: tm+mt
 source-wordcount: '474'
 ht-degree: 1%

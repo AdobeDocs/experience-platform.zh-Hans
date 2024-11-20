@@ -1,11 +1,13 @@
 ---
 title: 审核日志概述
 description: 了解如何通过审核日志查看谁在 Adobe Experience Platform 中执行了哪些操作。
+role: Admin,Developer
+feature: Audits
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: 7ae5e9dc79b4e1f08d2bf98876b02db1967ccbe1
+source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
 workflow-type: tm+mt
 source-wordcount: '1350'
-ht-degree: 35%
+ht-degree: 36%
 
 ---
 

@@ -1,8 +1,10 @@
 ---
 title: 配置Azure密钥库
 description: 了解如何使用Azure创建新的企业帐户，或使用现有企业帐户并创建密钥保管库。
+role: Developer
+feature: Privacy
 exl-id: 670e3ca3-a833-4b28-9ad4-73685fa5d74d
-source-git-commit: 4f08e8fcc8d53b981af60226f1397a1d1ac4d8dc
+source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
 workflow-type: tm+mt
 source-wordcount: '561'
 ht-degree: 0%
