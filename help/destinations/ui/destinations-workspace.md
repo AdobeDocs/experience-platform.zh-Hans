@@ -3,9 +3,9 @@ keywords: 平台；目标；目标工作区；工作区；ui；目标ui；目录
 title: 目标工作区
 description: 目标工作区包括五个部分：“概述”、“目录”、“浏览”、“帐户”和“系统视图”。 以下各节对这些要求进行了说明。
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 78168493d712d2ec0974b811d288902fd94f3e40
 workflow-type: tm+mt
-source-wordcount: '1231'
+source-wordcount: '1233'
 ht-degree: 0%
 
 ---
@@ -77,11 +77,11 @@ ht-degree: 0%
 
 | 元素 | 描述 |
 |---|---|
-| [!UICONTROL 平台] | 已为其设置连接的目标。 |
+| [!UICONTROL 目标] | 已为其设置连接的目标连接器。 |
 | [!UICONTROL 连接类型] | 表示与存储段或目标的帐户连接类型。 根据目标的不同，身份验证选项有： <ul><li>对于电子邮件营销目标：可以是S3、FTP或Azure Blob。</li><li>对于实时广告目标：服务器到服务器</li><li>对于Amazon S3云存储目标：访问密钥 </li><li>对于SFTP云存储目标：SFTP的基本身份验证</li><li>OAuth 1或OAuth 2身份验证</li><li>持有者令牌身份验证</li></ul> |
-| [!UICONTROL 用户名] | 您在[连接目标向导](../catalog/email-marketing/overview.md#connect-destination)中选择的用户名。 |
-| [!UICONTROL 目标] | 表示与为目标创建的基本信息连接的唯一成功目标数据流数。 |
-| [!UICONTROL 已授权] | 授权连接到此目标的日期。 |
+| [!UICONTROL 用户名] | 您在[连接目标工作流](../catalog/email-marketing/overview.md#connect-destination)中选择的用户名。 |
+| [!UICONTROL 连接] | 表示与为目标创建的基本信息连接的唯一成功目标数据流数。 |
+| [!UICONTROL 授权日期] | 授权连接到此目标的日期。 |
 
 {style="table-layout:auto"}
 
