@@ -2,18 +2,14 @@
 title: 管理架构的数据使用标签
 description: 了解如何在Adobe Experience Platform UI中将数据使用标签添加到Experience Data Model (XDM)架构字段。
 exl-id: 92284bf7-f034-46cc-b905-bdfb9fcd608a
-source-git-commit: 22233d2bda488aa223555f85215be31d007eaa37
+source-git-commit: ac6af3e90c417d1c97860394ce8afb07a0a7917d
 workflow-type: tm+mt
-source-wordcount: '804'
+source-wordcount: '766'
 ht-degree: 8%
 
 ---
 
 # 管理架构的数据使用标签
-
->[!IMPORTANT]
->
->基于架构的标签是[基于属性的访问控制](../../access-control/abac/overview.md)的一部分，目前面向美国医疗保健客户的有限版本中提供了该功能。 此功能在完全发布后将可供所有Adobe Real-time Customer Data Platform客户使用。
 
 所有带入Adobe Experience Platform的数据都受Experience Data Model (XDM)架构的约束。 贵组织或法律法规可能会对此数据设置使用限制。为此，平台允许您通过使用[数据使用标签](../../data-governance/labels/overview.md)来限制特定数据集和字段的使用。
 
