@@ -2,10 +2,10 @@
 title: SFTP 主机
 description: 了解如何在Adobe Experience Platform中配置标记，以将库内部版本交付到安全的自托管SFTP服务器。
 exl-id: 3c1dc43b-291c-4df4-94f7-a03b25dbb44c
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 85bd78928b1b503bbb6bbc44075ed0f66e046a4c
 workflow-type: tm+mt
 source-wordcount: '811'
-ht-degree: 5%
+ht-degree: 11%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 Adobe Experience Platform允许您将标记库内部版本传输到您托管的安全SFTP服务器，让您能够更好地控制如何存储和管理内部版本。 本指南介绍如何在Experience PlatformUI或数据收集UI中为标记属性设置SFTP主机。
 
@@ -70,7 +70,7 @@ Platform使用加密密钥连接到SFTP站点。 可以通过以下几步来正�
 | [!UICONTROL 不使用符号链接] | 默认情况下，所有SFTP主机都使用符号链接来引用保存到服务器的库[内部版本](../builds.md)。 但是，并非所有服务器都支持使用符号链接。 当选择此选项时，主机会使用复制操作直接更新构建资产，而不是使用符号链接。 |
 | [!UICONTROL SFTP服务器URL] | 服务器的URL基本路径。 |
 | [!UICONTROL 路径] | 附加到此主机的基本服务器URL的路径。 |
-| [!UICONTROL 端口] | 端口必须是以下端口之一：<ul><li>`21`</li><li>`22`</li><li>`80`</li><li>`200-299`</li><li>`443`</li><li>`2000-2999`</li><li>`4343`</li><li>`8080`</li><li>`8888`</li></ul>作为最佳安全做法，Adobe 会限制用于传出流量的端口数量。通常允许所选端口通过公司防火墙，这些端口包括一些灵活性范围。 |
+| [!UICONTROL 端口] | 端口必须是以下端口之一：<ul><li>`21`</li><li>`22`</li><li>`201`</li><li>`200`</li><li>`2002`</li><li>`2018`</li><li>`2022`</li><li>`2200`</li><li>`2222`</li><li>`2333`</li><li>`2939`</li><li>`443`</li><li>`4343`</li><li>`80`</li><li>`8080`</li><li>`8888`</li></ul>作为最佳安全做法，Adobe 会限制用于传出流量的端口数量。通常允许所选端口通过公司防火墙，这些端口包括一些灵活性范围。 |
 | [!UICONTROL 用户名] | 访问服务器时要使用的用户名。 |
 | [!UICONTROL 加密的私钥] | 您在[上一步](#access-key)中创建的加密私钥。 |
 
