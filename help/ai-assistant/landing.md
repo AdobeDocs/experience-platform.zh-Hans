@@ -3,9 +3,10 @@ title: Adobe Experience Platform产品文档中的AI助手
 description: Adobe Experience Platform中的AI助手入门
 hide: true
 hidefromtoc: true
-source-git-commit: 4db38ebceaa7ac4ac46b2ac122b5869e6b28cab3
+exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
+source-git-commit: 8d69d7010442519ce02bb9a504d4228742b4f092
 workflow-type: tm+mt
-source-wordcount: '523'
+source-wordcount: '549'
 ht-degree: 4%
 
 ---
@@ -23,15 +24,15 @@ AI 助手支持 Experience Platform、Real-time Customer Data Platform、Adobe J
 <table style="table-layout:fixed">
   <tr style="border: 0;">
     <td>
-    <a href="./home.md#operational-insights"><img src="./assets/landing/ai-get-started.png"></a>
+    <a href="./home.md#operational-insights"><img src="./assets/landing/ai-get-started.png" style="width:" 100%;max-height: 100%"></a>
     <div><strong>了解您的数据对象</strong><br/>检索与您的数据对象相关的操作分析，以便更好地查看其状态、使用情况和链接影响。</div>
     </td>
     <td>
-    <a href="./home.md#product-knowledge"><img src="./assets/landing/ai-audience.png"></a>
+    <a href="./home.md#product-knowledge"><img src="./assets/landing/ai-audience.png" style="width:" 100%;max-height: 100%"></a>
     <div><strong>加强您的学习</strong><br/>在不中断工作流程的情况下发现、排除故障并增强您对产品知识的理解。</div>
     </td>
     <td>
-    <a href="./access.md"><img src="./assets/landing/ai-access.png"></a>
+    <a href="./access.md"><img src="./assets/landing/ai-access.png" style="width:" 100%;max-height: 100%"></a>
     <div><strong>根据您的使用情况应用权限</strong><br/>根据团队成员的角色授予和撤销访问权限。</div>
     </td>
   </tr>
@@ -41,6 +42,7 @@ AI 助手支持 Experience Platform、Real-time Customer Data Platform、Adobe J
     <td align="center"><a href="./access.md"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
     </tr>
 </table>
+
 
 ## 新增功能
 
@@ -118,6 +120,14 @@ AI 助手支持 Experience Platform、Real-time Customer Data Platform、Adobe J
 >[!ENDTABS]
 
 ## 其他资源
+
+>[!BEGINSHADEBOX]
+
+**阅读AI Assistant安全情况说明书**
+
+有关AI助手的详细信息，请阅读[Adobe Experience Platform中AI助手的安全情况说明书](https://www.adobe.com/content/dam/cc/en/trust-center/ungated/whitepapers/experience-cloud/adobe-ai-assistant-in-aep-security-fact-sheet.pdf)。
+
+>[!ENDSHADEBOX]
 
 浏览以下链接，以进一步了解AI Assistant用例、功能等。
 

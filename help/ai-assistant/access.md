@@ -2,9 +2,9 @@
 title: 访问Experience Platform中的AI助手
 description: 了解如何在Experience CloudUI中访问AI助手。
 exl-id: c4cdff25-512c-4b4c-be91-ad9360067a0a
-source-git-commit: 706a20e70aa20adb0f4a554d0ec35518811ea9a1
+source-git-commit: 8d69d7010442519ce02bb9a504d4228742b4f092
 workflow-type: tm+mt
-source-wordcount: '341'
+source-wordcount: '364'
 ht-degree: 0%
 
 ---
@@ -32,6 +32,12 @@ ht-degree: 0%
 获得必要权限后，您可以通过选择正在使用的应用程序顶部标题上的AI助手图标来访问AI助手。
 
 ![具有首次用户体验的AI助手。](./images/ai-assistant.png)
+
+## 访问AI助手
+
+观看以下视频，了解如何为组织和用户配置对AI Assistant的访问权限。
+
+>[!VIDEO](https://video.tv.adobe.com/v/3436470/?learn=on)
 
 ## 后续步骤
 
