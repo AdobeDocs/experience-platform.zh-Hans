@@ -2,10 +2,10 @@
 title: 目标概述
 description: 目标是预先构建的与目标平台的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用Adobe Experience Platform中的“目标”来激活跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例的已知和未知数据。
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: 6dd6190f1b006ffb3346eea6dc917ce52e0aa1c6
+source-git-commit: 6d97f132788a249e0bf5c293e34d9d529325f099
 workflow-type: tm+mt
-source-wordcount: '1088'
-ht-degree: 4%
+source-wordcount: '1231'
+ht-degree: 3%
 
 ---
 
@@ -115,3 +115,13 @@ Adobe Experience Platform中基于属性的访问控制允许管理员根据属�
 * [将受众数据激活到流式受众导出目标](./ui/activate-segment-streaming-destinations.md#review)
 * [将受众数据激活到流式配置文件导出目标](./ui/activate-streaming-profile-destinations.md#review)
 * [将受众数据激活到批量配置文件导出目标](./ui/activate-batch-profile-destinations.md#review)
+
+## 条款和条件 {#terms-and-conditions}
+
+使用标记为Beta的任何目标(“Beta”)，即表示您在此确认Beta按“原样”提供，不提供任何形式的担保&#x200B;***。***
+
+Adobe没有义务维护、更正、更新、更改、修改或以其他方式支持Beta。 建议您使用信息性的，切勿依赖此类Beta和/或随附材料的正确功能或性能。 Beta被视为Adobe的机密信息。
+
+您向Adobe提供的任何“反馈”(关于Beta的信息，包括但不限于您在使用Beta时遇到的问题或缺陷、建议、改进和推荐)均分配给Adobe，包括此类反馈的所有权利、标题和兴趣。
+
+提交开放反馈或创建支持工单以共享您的建议或报告错误，寻求功能改进。
