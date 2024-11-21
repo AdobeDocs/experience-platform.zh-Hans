@@ -4,9 +4,9 @@ title: Attribute-Based Access Control端到端指南
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的端到端指南
 role: Developer
 exl-id: 7e363adc-628c-4a66-a3bd-b5b898292394
-source-git-commit: 9c415b7721eeceff75d46463853f22dd3310cb9a
+source-git-commit: b9ce27b6feb0300464507a21510f40900677c3be
 workflow-type: tm+mt
-source-wordcount: '1736'
+source-wordcount: '1762'
 ht-degree: 18%
 
 ---
@@ -156,6 +156,10 @@ Platform UI的“权限”工作区随即出现，并在&#x200B;**[!UICONTROL �
 ![显示所选的RHD标签并保存的图像](../images/abac-end-to-end-user-guide/abac-select-segment-labels.png)
 
 对&#x200B;**[!UICONTROL 胰岛素&lt;50]**&#x200B;重复上述步骤。
+
+>[!NOTE]
+>
+> 使用[对象级访问控制](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/access-control/object-based-access)，将在[!UICONTROL 权限]工作区中创建的标签（如上面的区段标签）分配给Adobe Journey Optimizer中的各种对象。
 
 ## 激活访问控制策略 {#policy}
 
