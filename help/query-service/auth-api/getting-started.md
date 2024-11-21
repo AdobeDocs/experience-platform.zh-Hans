@@ -1,29 +1,29 @@
 ---
 keywords: Experience Platform；查询服务；IP访问控制；授权；API；入门
-title: 查询服务授权API指南
+title: 数据Distiller授权API指南
 description: 了解如何开始使用Adobe Experience Platform查询服务中的授权和IP范围限制来确保数据访问安全。
 role: Developer
 exl-id: d93ce774-c8b2-4f15-a4d9-117d9aa5d9e7
-source-git-commit: bf696c8836407a2fea82e9078201cb1f5004bcf8
+source-git-commit: ac29d10d3774a736d1e54255508ba244ff72f278
 workflow-type: tm+mt
-source-wordcount: '482'
-ht-degree: 6%
+source-wordcount: '485'
+ht-degree: 5%
 
 ---
 
-# 查询服务授权API指南
+# 数据Distiller授权API入门
 
 >[!AVAILABILITY]
 >
 >此功能适用于购买了Data Distiller附加产品的客户。 有关更多信息，请与您的 Adobe 代表联系。
 
-查询服务授权API通过Adobe Experience Platform中的SQL接口，为组织提供对数据访问的更严格控制。 您可以使用此API定义IP限制、限制对指定网络的数据访问以及增强安全监控。
+Data Distiller Authorization API通过Adobe Experience Platform中的SQL接口，使组织能够更严格地控制数据访问。 您可以使用此API定义IP限制、限制对指定网络的数据访问以及增强安全监控。
 
-本指南概述了如何设置调用查询服务授权API所需的授权凭据和权限。
+本指南概述如何设置调用数据Distiller授权API所需的授权凭据和权限。
 
 ## 快速入门 {#getting-started}
 
-以下部分提供了有关准备所需的授权值以及对查询服务授权API发出第一个请求的信息。
+以下部分提供了有关准备所需的授权值和首次请求数据Distiller授权API的信息。
 
 ### 所需的权限 {#required-permissions}
 
@@ -41,7 +41,7 @@ ht-degree: 6%
 
 ### 收集所需标头的值 {#gather-values-for-required-headers}
 
-要调用查询服务授权API，您必须完成[平台API身份验证教程](../../landing/api-authentication.md)，该教程提供了API调用中所需标头的值。 在每个请求中包含以下标头：
+要调用Data Distiller Authorization API，您必须完成[Platform API身份验证教程](../../landing/api-authentication.md)，该教程为API调用中的所需标头提供了值。 在每个请求中包含以下标头：
 
 - **授权**： `Bearer {ACCESS_TOKEN}`
 - **x-api-key**： `{API_KEY}`

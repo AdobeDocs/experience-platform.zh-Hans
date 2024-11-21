@@ -3,7 +3,7 @@ keywords: IP地址， IP范围，允许列表，允许列表，查询服务，�
 title: 列入允许列表查询服务的IP地址
 description: 本页提供了更新的IP范围，可将其添加到允许列表中以安全访问查询服务。
 exl-id: f6745e0f-d387-45f2-9f72-054e721016ff
-source-git-commit: e6c148b943c68bff5330c7ff021ffa88ba131639
+source-git-commit: ac29d10d3774a736d1e54255508ba244ff72f278
 workflow-type: tm+mt
 source-wordcount: '312'
 ht-degree: 0%
@@ -47,7 +47,7 @@ Adobe列入允许列表建议您将以下特定于区域的IP范围添加到，�
 
 ## 设置基于IP的限制 {#set-ip-restrictions}
 
-使用[查询服务授权API指南](./auth-api/overview.md)设置基于IP的限制。 这些基于IP的限制可确保只有获得批准的网络和客户端计算机才能通过Adobe Experience Platform中的SQL访问数据。 了解如何配置、强制执行并监控IP限制以维护高安全标准，以及提供实时访问跟踪和警报功能。
+使用[Data Distiller Authorization API指南](./auth-api/overview.md)设置基于IP的限制。 这些基于IP的限制可确保只有获得批准的网络和客户端计算机才能通过Adobe Experience Platform中的SQL访问数据。 了解如何配置、强制执行并监控IP限制以维护高安全标准，以及提供实时访问跟踪和警报功能。
 
 * [快速入门指南](./auth-api/getting-started.md)
 * [IP访问端点指南](./auth-api/ip-access.md)

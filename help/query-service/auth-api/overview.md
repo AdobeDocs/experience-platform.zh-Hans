@@ -1,22 +1,22 @@
 ---
-title: 查询服务授权API指南
-description: 了解如何使用查询服务授权API对通过SQL的安全连接实施基于网络的IP限制。 使用此API可增强对Adobe Experience Platform数据的数据访问控制。
+title: 数据Distiller授权API指南
+description: 了解如何使用Data Distiller Authorization API对通过SQL的安全连接实施基于网络的IP限制。 使用此API可增强对Adobe Experience Platform数据的数据访问控制。
 role: Developer
 exl-id: bcc5ea0e-cb6d-4c7b-bf9f-a0336f76c4c8
-source-git-commit: bf696c8836407a2fea82e9078201cb1f5004bcf8
+source-git-commit: ac29d10d3774a736d1e54255508ba244ff72f278
 workflow-type: tm+mt
 source-wordcount: '386'
 ht-degree: 2%
 
 ---
 
-# 查询服务授权API指南
+# 数据Distiller授权API指南
 
 >[!AVAILABILITY]
 >
 >此功能适用于购买了Data Distiller附加产品的客户。 有关更多信息，请与您的 Adobe 代表联系。
 
-使用查询服务授权API强制执行基于IP的限制。 应用这些措施可以确保只有获得批准的网络和客户端计算机才能通过Adobe Experience Platform中的SQL访问数据。 这些控制可帮助您满足严格的安全标准，同时提供实时访问监控和警报。
+使用数据Distiller授权API强制执行基于IP的限制。 应用这些措施可以确保只有获得批准的网络和客户端计算机才能通过Adobe Experience Platform中的SQL访问数据。 这些控制可帮助您满足严格的安全标准，同时提供实时访问监控和警报。
 
 利用此API，您可以配置、强制执行并监视通过SQL接口访问数据的IP限制。 本文档全面概述了API的核心功能、端点功能和未来功能。
 
@@ -39,4 +39,4 @@ ht-degree: 2%
 
 ## 后续步骤
 
-通过查看[入门指南](./getting-started.md)开始使用查询服务授权API，以了解必要的设置步骤，包括所需的标头和API调用约定。 然后，探索特定于端点的[IP访问](./ip-access.md)和[IP验证](./validate.md)指南，以配置和管理安全数据访问。
+通过查看[入门指南](./getting-started.md)开始使用数据Distiller授权API，以了解必要的设置步骤，包括所需的标头和API调用约定。 然后，探索特定于端点的[IP访问](./ip-access.md)和[IP验证](./validate.md)指南，以配置和管理安全数据访问。
