@@ -2,9 +2,10 @@
 title: 模型
 description: 使用Data Distiller SQL扩展为生命周期管理建模。 了解如何使用SQL创建、培训和管理高级统计模型（包括模型版本控制、评估和预测等关键流程），以从数据中获得切实可行的见解。
 role: Developer
-source-git-commit: b248e8f8420b617a117d36aabad615e5bbf66b58
+exl-id: c609a55a-dbfd-4632-8405-55e99d1e0bd8
+source-git-commit: 6a61900b19543f110c47e30f4d321d0016b65262
 workflow-type: tm+mt
-source-wordcount: '1180'
+source-wordcount: '1229'
 ht-degree: 1%
 
 ---
@@ -76,19 +77,33 @@ ORDER BY period;
 
 ## 更新模型 {#update}
 
-了解如何通过应用新的特征工程转换并配置算法类型和标签列等选项来更新现有的机器学习模型。 以下SQL演示了如何在每次更新时增加模型的版本号，并确保跟踪更改，以便在以后的评估或预测步骤中可以重用模型。
+了解如何通过应用新的特征工程转换并配置算法类型和标签列等选项来更新现有的机器学习模型。 每次更新都会创建一个模型的新版本，该版本从上一个版本开始递增。 这样可以确保对更改进行跟踪，并且该模型可在未来的评估或预测步骤中重复使用。
+
+以下示例演示使用新的转换和选项更新模型：
 
 ```sql
-UPDATE model <model_alias> transform( one_hot_encoder(NAME) ohe_name, string_indexer(gender) gendersi) options ( type = 'LogisticRegression', label = <label-COLUMN>, ) ASSELECT col1,
-       col2,
-       col3
-FROM   training-dataset.
+UPDATE MODEL <model_alias> TRANSFORM (vector_assembler(array(current_customers, previous_customers)) features)  OPTIONS(MODEL_TYPE='logistic_reg', LABEL='churn_rate')  AS SELECT * FROM churn_with_rate ORDER BY period;
 ```
 
-为了帮助您了解如何管理模型版本和有效应用转换，以下注释解释了模型更新工作流中的关键组件和选项。
+**示例**
 
-- `UPDATE model <model_alias>`： update命令处理版本控制，并在每次更新时增加模型的版本号。
-- `version`：仅在更新期间用于创建新模型版本的可选关键字。
+为了帮助您了解版本控制过程，请考虑以下命令：
+
+```sql
+UPDATE MODEL model_vdqbrja OPTIONS(MODEL_TYPE='logistic_reg', LABEL='Survived') AS SELECT * FROM titanic_e2e_dnd;
+```
+
+执行此命令后，模型具有新版本，如下表所示：
+
+| 已更新模型ID | 已更新模型 | 新版本 |
+|--------------------------------------------|---------------|-------------|
+| a8f6a254-8f28-42ec-8b26-94edeb4698e8 | model_vdqbrja | 2 |
+
+以下注释说明了模型更新工作流中的关键组件和选项。
+
+- `UPDATE model <model_alias>`：更新命令处理版本控制并创建一个从上一个版本增加的新模型版本。
+- `version`：仅在更新期间使用的可选关键字，用于明确指定应创建新版本。 如果省略，系统会自动递增版本。
+
 
 ## 评估模型 {#evaluate-model}
 

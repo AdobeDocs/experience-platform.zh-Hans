@@ -2,9 +2,10 @@
 title: 功能工程SQL扩展
 description: 了解Data Distiller功能工程SQL扩展，用于预处理数据以实现高级统计建模。 它涵盖了可用的特征提取、转换和选择技术。
 role: Developer
-source-git-commit: 1fcfb5c41750e853daaf036ceaae3527b805391c
+exl-id: 622c8ef3-9651-46b3-ad22-021a93190149
+source-git-commit: e7bc30c153f67c59e9c04e8c8df60394f48871d0
 workflow-type: tm+mt
-source-wordcount: '717'
+source-wordcount: '735'
 ht-degree: 0%
 
 ---
@@ -41,9 +42,10 @@ ht-degree: 0%
 
 以下是处理各种数据类型的工具列表，以增强您的数据预处理工作流。
 
-- **[数值输入器](./feature-transformation.md#numeric-imputer)**：使用填充填充数值列中缺少的值
-- **[字符串输入器](./feature-transformation.md#string-imputer)**：将缺少的字符串值替换为指定的值
-- **[矢量组合器](./feature-transformation.md#vector-assembler)**：将多个列组合为一个矢量列。
+- **[数值输入器](./feature-transformation.md#numeric-imputer)**：使用指定的值（如平均值或中间值）填充数值列中缺少的值。
+- **[字符串输入器](./feature-transformation.md#string-imputer)**：将缺少的字符串值替换为指定的值，如列中最常见的字符串。
+- **[矢量组合器](./feature-transformation.md#vector-assembler)**：将多个列组合为一个矢量列，以便为机器学习模型准备数据。
+- **[布尔型输入器](./feature-transformation.md#boolean-imputer)**：使用指定的值（如`true`或`false`）填充缺少的布尔值。
 
 #### 数值转换器
 
@@ -88,7 +90,7 @@ Use a clustering algorithm to group data points into distinct clusters based on 
 
 ## 实施OPTIONS子句 {#options-clause}
 
-定义模型时，请使用`OPTIONS`子句指定算法及其参数。 首先设置`type`参数以指示您所使用的算法，如`K-Means`。 然后，将`OPTIONS`子句中的相关参数定义为键值对以微调模型。 了解某些参数可能是位置参数，如果提供了自定义值，则需要指定前面的所有参数。 如果选择不自定义某些参数，系统将应用默认设置。 请参阅相关文档以了解每个参数的函数和默认值。
+定义模型时，请使用`OPTIONS`子句指定算法及其参数。 首先设置`type`参数以指示您所使用的算法，如`K-Means`。 然后，将`OPTIONS`子句中的相关参数定义为键值对以微调模型。 如果选择不自定义某些参数，系统将应用默认设置。 请参阅相关文档以了解每个参数的函数和默认值。
 
 ### 后续步骤
 

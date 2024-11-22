@@ -2,9 +2,10 @@
 title: 特征转换技术
 description: 了解基本预处理技术（如数据转换、编码和特征缩放），这些技术为统计模型训练准备数据。 它涵盖了处理缺失值和转换分类数据以提高模型性能和准确性的重要性。
 role: Developer
-source-git-commit: b248e8f8420b617a117d36aabad615e5bbf66b58
+exl-id: ed7fa9b7-f74e-481b-afba-8690ce50c777
+source-git-commit: e7bc30c153f67c59e9c04e8c8df60394f48871d0
 workflow-type: tm+mt
-source-wordcount: '3437'
+source-wordcount: '3450'
 ht-degree: 8%
 
 ---
@@ -55,14 +56,14 @@ CREATE model modelname options(model_type='logistic_reg', label='rating') AS SEL
 
 若要在`CREATE MODEL`语句中定义自定义数据预处理，请将`TRANSFORM`子句与任意数量的可用转换函数结合使用。 这些手动预处理函数也可以在`TRANSFORM`子句之外使用。 可以使用下面](#available-transformations)的[转换器部分中讨论的所有转换来手动预处理数据。
 
-### 主要特性
+### 关键特性 {#key-characteristics}
 
 下面是定义预处理函数时要考虑的特征转换的主要特征：
 
 - **语法**： `TRANSFORM(functionName(colName, parameters) <aliasNAME>)`
    - 别名在语法中是必需的。 您必须提供别名，否则查询将失败。
 
-- **参数**：参数是位置参数。 这意味着每个参数只能取某些值。 有关哪个函数采用哪个参数的详细信息，请参阅相关文档。
+- **参数**：参数是位置参数。 这意味着，每个参数只能采用某些值，如果提供了自定义值，则需要指定前面的所有参数。 有关哪个函数采用哪个参数的详细信息，请参阅相关文档。
 
 - **链接转换器**：一个转换器的输出可以成为另一个转换器的输入。
 
@@ -180,7 +181,7 @@ transform(string_imputer(name, 'unknown_name') as name_imputed)
 | 1 | ml_unknown |
 | 2 | Alice |
 
-#### 布尔型输入器 {#imputer}
+#### 布尔型输入器 {#boolean-imputer}
 
 **Boolean输入器**&#x200B;转换器完成了一个布尔列的数据集中缺少值的操作。 输入列和输出列的类型应为`Boolean`。
 
