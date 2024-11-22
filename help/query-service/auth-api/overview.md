@@ -3,9 +3,9 @@ title: 数据Distiller授权API指南
 description: 了解如何使用Data Distiller Authorization API对通过SQL的安全连接实施基于网络的IP限制。 使用此API可增强对Adobe Experience Platform数据的数据访问控制。
 role: Developer
 exl-id: bcc5ea0e-cb6d-4c7b-bf9f-a0336f76c4c8
-source-git-commit: ac29d10d3774a736d1e54255508ba244ff72f278
+source-git-commit: 804eeb4ec976cf41fdd450bd8f307499c3ebae03
 workflow-type: tm+mt
-source-wordcount: '386'
+source-wordcount: '424'
 ht-degree: 2%
 
 ---
@@ -30,13 +30,17 @@ ht-degree: 2%
 
 ## 审计和监测能力
 
-为了支持安全的数据访问实践，查询服务会记录访问或尝试访问AEP的所有客户端IP。 审核事件（包括被拒绝的连接）将发送到Platform审核日志。 这可以启用：
+为了支持安全的数据访问实践，查询服务会记录所有访问或尝试访问Experience Platform的客户端IP。 审核事件（包括被拒绝的连接）将发送到Platform审核日志。 这可以启用：
 
 - **实时监控**：跟踪基于IP的访问模式以确保法规遵从性。
 - **未授权访问警报**：识别来自未授权IP的访问尝试并做出响应。
 
-有关审核日志记录的更多详细信息，请参阅[审核服务文档](https://experienceleague.adobe.com/docs/experience-platform/audit/audit-overview.html)。
+有关详细信息，请参阅[审核日志概述](../../landing/governance-privacy-security/audit-logs/overview.md)。
 
 ## 后续步骤
 
 通过查看[入门指南](./getting-started.md)开始使用数据Distiller授权API，以了解必要的设置步骤，包括所需的标头和API调用约定。 然后，探索特定于端点的[IP访问](./ip-access.md)和[IP验证](./validate.md)指南，以配置和管理安全数据访问。
+
+请参阅[Data Distiller Authorization OpenAPI参考文档](https://developer.adobe.com/experience-platform-apis/references/data-distiller-auth/)，查看易于集成、测试和探索的机器可读的标准化格式。
+
+有关每个返回的数据集的各种响应参数的信息，请参阅[数据集API开发人员文档](https://developer.adobe.com/experience-platform-apis/references/catalog/#tag/Datasets/operation/listDatasets)。

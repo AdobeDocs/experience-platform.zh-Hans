@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Data Access API指南
 description: 数据访问API通过为开发人员提供RESTful接口来支持Adobe Experience Platform，该接口侧重于在Experience Platform内摄取的数据集的可发现性和可访问性。
 exl-id: 278ec322-dafa-4e3f-ae45-2d20459c5653
-source-git-commit: 1070c34bcd4577fcc5f0ac160196450db3aab9b0
+source-git-commit: 804eeb4ec976cf41fdd450bd8f307499c3ebae03
 workflow-type: tm+mt
-source-wordcount: '554'
+source-wordcount: '566'
 ht-degree: 4%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 4%
 
 ## API规范参考
 
-可在[此处](https://developer.adobe.com/experience-platform-apis/references/data-access/)找到OpenAPI参考文档。
+请参阅[数据访问OpenAPI参考文档](https://developer.adobe.com/experience-platform-apis/references/data-access/)，查看易于集成、测试和探索的机器可读的标准化格式。
 
 ## 术语 {#terminology}
 

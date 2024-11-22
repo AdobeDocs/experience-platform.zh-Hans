@@ -4,9 +4,9 @@ title: 数据Distiller授权API指南
 description: 了解如何开始使用Adobe Experience Platform查询服务中的授权和IP范围限制来确保数据访问安全。
 role: Developer
 exl-id: d93ce774-c8b2-4f15-a4d9-117d9aa5d9e7
-source-git-commit: ac29d10d3774a736d1e54255508ba244ff72f278
+source-git-commit: 804eeb4ec976cf41fdd450bd8f307499c3ebae03
 workflow-type: tm+mt
-source-wordcount: '485'
+source-wordcount: '507'
 ht-degree: 5%
 
 ---
@@ -66,3 +66,5 @@ Data Distiller Authorization API通过Adobe Experience Platform中的SQL接口�
 每个API调用示例都演示了如何设置请求格式和解读响应，从而帮助您在查询服务中强制实施对数据的安全访问。
 
 有关配置和验证IP限制的特定说明，请参阅[IP访问端点文档](./ip-access.md)和[IP验证端点文档](./validate.md)。
+
+请参阅[Data Distiller Authorization OpenAPI参考文档](https://developer.adobe.com/experience-platform-apis/references/data-distiller-auth/)，查看易于集成、测试和探索的机器可读的标准化格式。
