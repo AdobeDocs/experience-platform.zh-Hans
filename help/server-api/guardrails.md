@@ -2,7 +2,7 @@
 title: Edge Network服务器API的性能护栏
 description: 了解如何在最佳性能护栏中使用服务器API。
 exl-id: 063d0fbb-26d1-4727-9dea-8e7223b2173d
-source-git-commit: 316efe577274b389bd1bf50e896ad6ef53e44b7b
+source-git-commit: 6414168c1deb047af30d8636ef8d61316f56aecf
 workflow-type: tm+mt
 source-wordcount: '569'
 ht-degree: 2%
@@ -58,7 +58,6 @@ Adobe对超出使用限制导致的性能下降不承担任何责任。 始终�
 | --- | --- |
 | `/v2/interact` | 4000 |
 | `/v2/collect` | 6000 |
-
 
 ### HTTP请求大小限制
 

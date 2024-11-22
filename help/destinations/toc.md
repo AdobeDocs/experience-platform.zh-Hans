@@ -5,9 +5,9 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: 07e01847c6e24564682161e88122948d200ab733
+source-git-commit: 6414168c1deb047af30d8636ef8d61316f56aecf
 workflow-type: tm+mt
-source-wordcount: '1248'
+source-wordcount: '1257'
 ht-degree: 5%
 
 ---
@@ -42,6 +42,7 @@ ht-degree: 5%
       * [将受众激活到流配置文件导出目标](./ui/activate-streaming-profile-destinations.md)
       * [将受众激活到批量配置文件导出目标](./ui/activate-batch-profile-destinations.md)
       * [激活受众以边缘个性化目标](./ui/activate-edge-personalization-destinations.md)
+      * [实时查找边缘上的配置文件属性](./ui/activate-edge-profile-lookup.md)
       * [根据LiveRamp标识符将受众激活到策划的目标](./ui/activate-curated-destinations.md)
       * [将目标受众激活到目标](./ui/activate-prospect-audiences.md)
       * [将帐户受众激活到目标](./ui/activate-account-audiences.md)
