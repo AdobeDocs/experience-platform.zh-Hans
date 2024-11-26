@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Privacy Service概述
 description: 了解Privacy Service如何促进在您的Experience Cloud数据操作中自动遵守隐私法规。
 exl-id: 585f7619-5072-413b-9a62-be0ea0cd4d1b
-source-git-commit: 19b33ddf2fc3f8d889d370eedfc732ac54178dcd
+source-git-commit: 61a5b4fd7af68e7379b456ddd37218d183e76256
 workflow-type: tm+mt
-source-wordcount: '1532'
+source-wordcount: '1660'
 ht-degree: 5%
 
 ---
@@ -68,6 +68,14 @@ Privacy Service提供了RESTful API和用户界面，帮助您管理客户数据
 
 一旦您确定了企业的隐私需求，并确定了要将哪些身份值发送到Privacy Service，就可以开始发出隐私请求。 使用Privacy Service通过API或UI发送隐私请求。
 
+#### 访问请求文件详细信息 {#access-requests}
+
+在响应成功的访问请求时，有一个&#x200B;**下载URL**&#x200B;包含多个文件。 为请求数据的每个Adobe应用程序提供一个文件。 请注意，每个应用程序的文件格式可能因应用程序的数据结构而异。
+
+#### 删除请求 — 无下载URL {#delete-requests}
+
+**删除请求**&#x200B;的响应中&#x200B;**没有下载URL**，因为未检索到任何客户数据。
+
 >[!IMPORTANT]
 >
 >以下部分提供了文档链接，这些文档涵盖如何在API或UI中发出通用隐私请求。 但是，根据您使用的[!DNL Experience Cloud]应用程序，您在请求有效负载中必须发送的字段可能与这些指南中显示的示例不同。
@@ -97,6 +105,10 @@ Privacy Service提供了RESTful API和用户界面，帮助您管理客户数据
 | PRIVACY SERVICEUI | 您可以使用Privacy ServiceUI监视仪表板查看所有活动请求状态的可视表示形式。 有关详细信息，请参阅[Privacy Service用户指南](ui/overview.md)。 |
 | PRIVACY SERVICEAPI | 您可以使用Privacy ServiceAPI提供的查找端点以编程方式监控隐私作业的状态。 有关如何使用API的详细步骤，请参阅[Privacy ServiceAPI指南](./api/overview.md)。 |
 | [!DNL Privacy Events] | [!DNL Privacy Events]使用发送到配置的webhook的Adobe I/O事件来促进高效的作业请求自动化。 它们可减少或消除轮询Privacy ServiceAPI以检查作业是否完成或工作流中是否已达到特定里程碑的需要。 有关详细信息，请参阅有关[订阅隐私事件](./privacy-events.md)的教程。 |
+
+#### 针对非现有用户的响应 {#non-existing-users}
+
+当您提交访问或删除请求时，即使找不到用户数据，如果调用成功完成，响应将始终返回`success`。 这意味着即使数据不存在，访问或删除也可以成功完成，而无需检索或删除任何数据。
 
 ## 后续步骤
 
