@@ -5,7 +5,7 @@ title: 使用流服务API创建PayPal基本连接
 type: Tutorial
 description: 了解如何使用流服务API将PayPal连接到Adobe Experience Platform。
 exl-id: 5e6ca7b4-5e2f-4706-a339-ac159e2e0938
-source-git-commit: 474b81aa8caf58013f8ea7cff9ad59d92466aac8
+source-git-commit: 9ca4f19f7b59f075250bce7035303e11d3f3710f
 workflow-type: tm+mt
 source-wordcount: '466'
 ht-degree: 4%
@@ -16,7 +16,7 @@ ht-degree: 4%
 
 >[!WARNING]
 >
->[!DNL PayPal]源将于2025年5月底弃用。
+>[!DNL PayPal]源将于2025年6月底弃用。
 
 基本连接表示源和Adobe Experience Platform之间的已验证连接。
 

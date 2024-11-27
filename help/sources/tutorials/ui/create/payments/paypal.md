@@ -5,7 +5,7 @@ title: 在UI中创建PayPal Source连接
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建PayPal源连接。
 exl-id: bbd3f634-cb28-45d8-9b7b-ed3873101882
-source-git-commit: 474b81aa8caf58013f8ea7cff9ad59d92466aac8
+source-git-commit: 9ca4f19f7b59f075250bce7035303e11d3f3710f
 workflow-type: tm+mt
 source-wordcount: '458'
 ht-degree: 2%
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 >[!WARNING]
 >
->[!DNL PayPal]源将于2025年5月底弃用。
+>[!DNL PayPal]源将于2025年6月底弃用。
 
 Adobe Experience Platform中的Source连接器提供了按计划摄取外部来源数据的功能。 本教程提供了使用Platform用户界面创建[!DNL PayPal]源连接器的步骤。
 

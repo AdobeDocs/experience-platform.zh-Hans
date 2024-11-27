@@ -3,7 +3,7 @@ title: Phoenix Source概述
 description: 了解如何使用API或用户界面将您的Phoenix帐户连接到Adobe Experience Platform。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: 45e6ef18-a0b7-4bb2-b099-b2a878e96637
-source-git-commit: 474b81aa8caf58013f8ea7cff9ad59d92466aac8
+source-git-commit: 9ca4f19f7b59f075250bce7035303e11d3f3710f
 workflow-type: tm+mt
 source-wordcount: '195'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!WARNING]
 >
->[!DNL Phoenix]源将于2025年5月底弃用。
+>[!DNL Phoenix]源将于2025年6月底弃用。
 
 Adobe Experience Platform源支持从第三方数据库（如[[!DNL Phoenix]](https://phoenix.apache.org/index.html)）摄取数据。 在通过[!DNL Flow Service] API或Experience Platform用户界面连接[!DNL Phoenix]帐户之前，本文档提供先决条件信息。
 
