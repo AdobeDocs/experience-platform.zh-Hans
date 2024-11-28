@@ -2,10 +2,10 @@
 title: 外部Source系统审计属性数据类型
 description: 了解外部Source系统审核属性Experience Data Model (XDM)数据类型。
 exl-id: ebdd8707-9675-4232-a5b7-4e4a481d706a
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 03735e7099ffb2cfd44fc7fffd35e3a4a858e3ba
 workflow-type: tm+mt
-source-wordcount: '168'
-ht-degree: 20%
+source-wordcount: '186'
+ht-degree: 18%
 
 ---
 
@@ -24,7 +24,7 @@ ht-degree: 20%
 | `lastActivityDate` | 日期时间 | 源系统的上次活动日期。 |
 | `lastReferencedDate` | 日期时间 | 源系统的最后引用日期。 |
 | `lastUpdatedBy` | 字符串 | 上次更新此记录的人员的姓名。 |
-| `lastUpdatedDate` | 日期时间 | 源系统的上次更新日期。 |
+| `lastUpdatedDate` | 日期时间 | 源系统的上次更新日期。 [属性合并策略](../../profile/api/merge-policies.md#attribute-merge)使用此值来确定发生合并冲突时的优先级。 |
 | `lastViewedDate` | 日期时间 | 源系统的上次查看日期。 |
 
 {style="table-layout:auto"}
