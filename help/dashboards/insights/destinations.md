@@ -2,16 +2,16 @@
 title: 目标分析
 description: 发现支持目标分析的SQL，并使用这些查询生成自定义分析，以进一步探索从Adobe Experience Platform激活数据的问题。
 exl-id: 762a9960-e7a5-4796-80c7-ef745157cc04
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: cce576c00823a0c02e4b639f0888a466a5af6a0c
 workflow-type: tm+mt
-source-wordcount: '1139'
+source-wordcount: '1137'
 ht-degree: 3%
 
 ---
 
 # 目标洞察
 
-通过分析数据模型而获得的见解，可使您的Adobe Real-time Customer Data Platform数据更易于访问、理解并影响决策。
+通过分析数据模型而获得的见解，可使您的Adobe Real-Time CDP数据更易于访问、理解并影响决策。
 
 通过访问支持这些分析的SQL来了解您的目标分析，然后生成您自己的分析以进一步探索如何将数据从Adobe Experience Platform激活到您的目标平台。 通过使用现有的Real-Time CDP数据模型SQL作为灵感，根据独特的业务需求创建查询，将原始数据转换为新的可操作洞察。
 

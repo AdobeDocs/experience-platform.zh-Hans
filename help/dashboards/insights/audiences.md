@@ -2,16 +2,16 @@
 title: 受众分析
 description: 发现支持受众分析的SQL，并使用这些查询生成自定义分析，以进一步探索Adobe Experience Platform中的受众数据。
 exl-id: 99624234-c4e1-44bb-9567-505bc0c4723e
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: cce576c00823a0c02e4b639f0888a466a5af6a0c
 workflow-type: tm+mt
-source-wordcount: '1124'
+source-wordcount: '1122'
 ht-degree: 3%
 
 ---
 
 # 受众分析
 
-通过分析数据模型而获得的见解，可使您的Adobe Real-time Customer Data Platform数据更易于访问、理解并影响决策。
+通过分析数据模型而获得的见解，可使您的Adobe Real-Time CDP数据更易于访问、理解并影响决策。
 
 通过访问支持受众分析的SQL来了解这些分析，然后生成您自己的分析，以进一步探索构成受众的身份和配置文件。 通过使用现有的Real-Time CDP数据模型SQL作为灵感，根据独特的业务需求创建查询，将原始数据转换为新的可操作洞察。
 

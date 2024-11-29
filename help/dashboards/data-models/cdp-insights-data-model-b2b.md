@@ -1,19 +1,19 @@
 ---
-title: Real-time Customer Data Platform Insights数据模型B2B版本
-description: 了解如何将SQL查询与Real-time Customer Data Platform分析数据模型（B2B版本）结合使用，以自定义您自己的营销和KPI用例的Real-Time CDP报表。
-badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+title: Real-time Customer Data Platform Insights数据模型B2B edition
+description: 了解如何将SQL查询与Real-time Customer Data Platform分析数据模型(B2B edition)结合使用，以自定义您自己的营销和KPI用例的Real-Time CDP报表。
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 7b77ca19-e4c6-4e93-b9e7-c4ef77d6d6d1
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: cce576c00823a0c02e4b639f0888a466a5af6a0c
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '472'
 ht-degree: 0%
 
 ---
 
-# Real-time Customer Data Platform Insights数据模型B2B版本
+# Real-Time CDP Insights数据模型B2B edition
 
-B2B edition的Real-time Customer Data Platform分析数据模型公开了支持[帐户配置文件](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/account/account-profile-overview)的分析的数据模型和SQL。 您可以自定义这些SQL查询模板，以为B2B营销和关键绩效指标(KPI)用例创建Real-Time CDP报表。 这些见解随后可用作功能板的自定义构件。
+B2B edition的Real-Time CDP分析数据模型公开了支持[帐户配置文件](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/account/account-profile-overview)的分析的数据模型和SQL。 您可以自定义这些SQL查询模板，以为B2B营销和关键绩效指标(KPI)用例创建Real-Time CDP报表。 这些见解随后可用作功能板的自定义构件。
 
 >[!AVAILABILITY]
 >

@@ -2,16 +2,16 @@
 title: 配置文件分析
 description: 发现支持您的配置文件分析的SQL，并使用这些查询生成自定义分析，从而进一步探索您的客户及其消费者体验。
 exl-id: f3792076-3e01-4e26-8788-32927202a2e5
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: cce576c00823a0c02e4b639f0888a466a5af6a0c
 workflow-type: tm+mt
-source-wordcount: '1661'
+source-wordcount: '1659'
 ht-degree: 3%
 
 ---
 
 # 配置文件分析
 
-通过分析数据模型而获得的见解，可使您的Adobe Real-time Customer Data Platform数据更易于访问、理解并影响决策。
+通过分析数据模型而获得的见解，可使您的Adobe Real-Time CDP数据更易于访问、理解并影响决策。
 
 通过访问为配置文件提供支持的SQL来了解配置文件洞察，然后生成您自己的洞察以进一步探索您的客户及其构成您配置文件的消费者体验。 通过使用现有的Real-Time CDP数据模型SQL作为灵感，根据独特的业务需求创建查询，将原始数据转换为新的可操作洞察。
 

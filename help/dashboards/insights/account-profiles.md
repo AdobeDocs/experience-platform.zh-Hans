@@ -4,16 +4,16 @@ description: 发现支持您的帐户配置文件分析的SQL，并使用这些�
 badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: a953dd56-7dd8-4cd0-baa0-85f92d192789
-source-git-commit: f9ef0e25dac1715bbb6d73db52d6368c543bf7ec
+source-git-commit: cce576c00823a0c02e4b639f0888a466a5af6a0c
 workflow-type: tm+mt
-source-wordcount: '773'
+source-wordcount: '771'
 ht-degree: 0%
 
 ---
 
 # 帐户配置文件分析
 
-[帐户配置文件](../../rtcdp/accounts/account-profile-overview.md)用于合并来自各种来源（包括多个营销渠道和组织系统）的帐户信息。 此统一视图允许全面了解客户帐户，从而增强B2B营销活动。 通过分析数据模型得出的洞察信息使Adobe Real-time Customer Data Platform B2B数据更易于访问、理解并具有更大的决策影响力。
+[帐户配置文件](../../rtcdp/accounts/account-profile-overview.md)用于合并来自各种来源（包括多个营销渠道和组织系统）的帐户信息。 此统一视图允许全面了解客户帐户，从而增强B2B营销活动。 通过分析数据模型得出的洞察信息使Adobe Real-Time CDP B2B数据更易于访问、理解并具有更大的决策影响力。
 
 通过访问提供见解的SQL，您可以更好地了解您的B2B数据并生成您自己的高度自定义的可重用见解，以进一步探索您的客户帐户信息。 通过使用现有的Real-Time CDP数据模型SQL作为灵感，根据独特的业务需求创建查询，将原始数据转换为新的可操作洞察。
 
