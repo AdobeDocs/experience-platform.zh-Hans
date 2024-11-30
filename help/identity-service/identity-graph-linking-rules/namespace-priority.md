@@ -2,9 +2,9 @@
 title: 命名空间优先级
 description: 了解Identity Service中的命名空间优先级。
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 893d8a089dee01e65436b7ac035233ba556b231b
+source-git-commit: 3efbb9614f08a74ad33eb1fbb4861c34c762b66b
 workflow-type: tm+mt
-source-wordcount: '1789'
+source-wordcount: '1788'
 ht-degree: 2%
 
 ---
@@ -48,7 +48,7 @@ ht-degree: 2%
 
 人员命名空间与硬件设备（例如IDFA、GAID）相比相对不可变，而硬件设备与Web浏览器相比相对不可变。 基本上，您（人员）将始终是单一实体，可以拥有多个硬件设备（手机、笔记本电脑、平板电脑等），并且可以使用多个浏览器(Google Chrome、Safari、FireFox等)
 
-处理此主题的另一种方法是通过基数。 对于给定的人员实体，将创建多少个身份？ 在大多数情况下，人员将拥有一个CRMID、多个硬件设备标识符（IDFA/GAID重置不应经常发生）以及更多Cookie（可以想象的是，个人可以在任何给定时间浏览多个设备、使用无痕模式或重置Cookie）。 通常，**较低的基数表示命名空间具有较高值**。
+处理此主题的另一种方法是通过基数。 对于给定的人员实体，将创建多少个身份？ 在大多数情况下，人员将拥有一个CRMID、多个硬件设备标识符（IDFA/GAID重置不应经常发生）以及更多Cookie（可以想象的是，个人可以在任意给定时间浏览多个设备、使用无痕模式或重置Cookie）。 通常，**较低的基数表示命名空间具有较高值**。
 
 ## 验证命名空间优先级设置
 
