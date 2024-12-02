@@ -74,7 +74,7 @@ Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使�
 | --- | --- |
 | 数据蒸馏器授权 API | 管理和实施基于 IP 的查询服务沙盒访问限制，以增强数据安全性，并确保遵守组织政策。请参阅[数据蒸馏器授权 API 指南](../../query-service/auth-api/overview.md)，了解有关其主要特性和功能的更多信息，或参阅 [OpenAPI 文档](https://developer.adobe.com/experience-platform-apis/references/data-distiller-auth/)，获取包括端点详细信息、参数列表、请求/响应示例和测试功能在内的全面信息。 |
 
-有关 [!DNL Query Service] 的详细信息，请查看[[!DNL Query Service] 概述](../../query-service/home.md)。
+有关 [!DNL Query Service] 的详细信息，请查看 [[!DNL Query Service] 概述](../../query-service/home.md)。
 
 ## 沙盒 {#sandboxes}
 
@@ -92,7 +92,7 @@ Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。企
 
 ### 交互式 Experience Platform API 文档 {#interactive-api-documentation}
 
-[Experience Platform API 文档](https://developer.adobe.com/experience-platform-apis/)现已完全实现交互，允许您直接在 API 参考文档页面上进行身份验证和探索 API。您现在可以转到所需的 API 参考文档页面，创建或获取您的 API 身份验证凭据，将其粘贴到&#x200B;**[!UICONTROL 尝试]**&#x200B;块中，然后执行调用。所有内容都在一个页面上。[参阅更多](/help/landing/api-authentication.md#get-credentials-functionality)关于该功能的信息。
+[Experience Platform API 文档](https://developer.adobe.com/experience-platform-apis/)现已完全实现交互，允许您直接在 API 参考文档页面上进行身份验证和探索 API。您现在可以转到所需的 API 参考文档页面，创建或获取您的 API 身份验证凭据，将其粘贴到 **[!UICONTROL 尝试]**&#x200B;块中，然后执行调用。所有内容都在一个页面上。[参阅更多](/help/landing/api-authentication.md#get-credentials-functionality)关于该功能的信息。
 
 ### Experience League 上的新目录 {#new-table-of-contents-on-experience-league}
 
