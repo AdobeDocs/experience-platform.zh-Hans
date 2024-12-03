@@ -2,9 +2,9 @@
 title: Adobe Experience Platform产品文档中的AI助手
 description: Adobe Experience Platform中的AI助手入门。
 exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
-source-git-commit: 3f43e120225bcca640cc46ebdce1e4d61100ad45
+source-git-commit: 830daf12b1ae9718a16308d16774f4357f431f6c
 workflow-type: tm+mt
-source-wordcount: '545'
+source-wordcount: '581'
 ht-degree: 1%
 
 ---
@@ -29,15 +29,10 @@ AI Assistant支持Experience Platform、Real-Time CDP、Adobe Journey Optimizer�
     <a href="./home.md#product-knowledge"><img src="./assets/landing/ai-audience.png" style="width:" 100%;max-height: 100%"></a>
     <div><strong>加强您的学习</strong><br/>在不中断工作流程的情况下发现、排除故障并增强您对产品知识的理解。</div>
     </td>
-    <td>
-    <a href="./access.md"><img src="./assets/landing/ai-access.png" style="width:" 100%;max-height: 100%"></a>
-    <div><strong>根据您的使用情况应用权限</strong><br/>根据团队成员的角色授予和撤销访问权限。</div>
-    </td>
   </tr>
   <tr style="border: 0;">
     <td align="center"><a href="./home.md"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
     <td align="center"><a href="./home.md#product-knowledge"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
-    <td align="center"><a href="./access.md"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
     </tr>
 </table>
 
@@ -84,11 +79,23 @@ AI Assistant支持Experience Platform、Real-Time CDP、Adobe Journey Optimizer�
 
 >[!VIDEO](https://video.tv.adobe.com/v/3429845?learn=on)
 
+有关详细信息，请阅读[AI助手UI指南](ui-guide.md)。
+
 ### 访问AI助手
 
 观看以下视频，了解如何为组织和用户配置对AI Assistant的访问权限。
 
 >[!VIDEO](https://video.tv.adobe.com/v/3436470/?learn=on)
+
+有关详细信息，请阅读[AI助手访问指南](access.md)。
+
+### 使用AI Assistant产品知识缩短入门时间
+
+观看以下视频，了解如何使用AI Assistant产品知识缩短载入时间。
+
+>[!VIDEO](https://video.tv.adobe.com/v/3438032/?learn=on)
+
+有关详细信息，请阅读AI助手中的[产品知识](home.md#product-knowledge)
 
 ### 使用AI Assistant整理受众
 

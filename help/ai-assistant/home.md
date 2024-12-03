@@ -2,9 +2,9 @@
 title: Adobe Experience Platform中的AI助手概述
 description: 了解 AI 助手、其细微差别和用例，以及如何使用它来通过 Adobe Experience Platform 和 Real-Time Customer Data Platform 加快工作流程。
 exl-id: cfd4ac22-fff3-4b50-bbc2-85b6328f603c
-source-git-commit: 0926a0e8c7ae560bf5f4f9ff6853b191af047738
+source-git-commit: 1910ac68be2c154467d250a614d0d13d62ef6875
 workflow-type: tm+mt
-source-wordcount: '926'
+source-wordcount: '938'
 ht-degree: 15%
 
 ---
@@ -59,6 +59,10 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 
 {style="table-layout:auto"}
 
+观看以下视频，了解有关AI Assistant产品知识的更多信息：
+
+>[!VIDEO](https://video.tv.adobe.com/v/3438032/?learn=on)
+
 ### 运营洞察 {#operational-insights}
 
 >[!IMPORTANT]
@@ -76,7 +80,7 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 | 域 | 支持的元数据 | 不支持的元数据 |
 | --- | --- | --- |
 | 属性 | <ul><li>属性名称搜索</li><li>属性 — 架构关系</li><li>属性 — 数据集关系</li><li>属性 — 受众关系</li><li>属性 — 目标关系</li></ul> | <ul><li>属性类</li><li>审核</li><li>弃用状态</li><li>标记</li><li>存储在属性中的值</li></ul> |
-| 受众 | <ul><li>受众人数</li><li>受众类型（流式传输或批处理）</li><li>创建/修改日期</li><li>激活状态</li><li>配置文件计数</li><li>复制受众</li><li>受众定义搜索</li><li>受众 — 受众关系</li><li>受众 — 属性关系</li><li>受众 — 数据集关系</li><li>受众 — 目标关系</li><li>名称搜索</li><li>名称和ID搜索 | <ul><li>受众重叠</li><li>受众激活</li><li>受众 — 营销活动关系</li><li>审核</li><li>创建/修改</li><li>标记</li><li>配置文件资格趋势</li></ul> |
+| 受众 | <ul><li>受众人数</li><li>受众类型（流式传输或批处理）</li><li>创建/修改日期</li><li>激活状态</li><li>轮廓计数</li><li>复制受众</li><li>受众定义搜索</li><li>受众 — 受众关系</li><li>受众 — 属性关系</li><li>受众 — 数据集关系</li><li>受众 — 目标关系</li><li>名称搜索</li><li>名称和ID搜索 | <ul><li>受众重叠</li><li>受众激活</li><li>受众 — 营销活动关系</li><li>审核</li><li>创建/修改</li><li>标记</li><li>配置文件资格趋势</li></ul> |
 | 数据流 | <ul><li>数据流计数</li><li>数据流状态</li><li>数据流 — 数据集关系</li><li>数据流 — 源关系</li></ul> | <ul><li>创建/修改</li><li>数据流 — 批次关系</li><li>摄取配置文件计数</li></ul> |
 | 数据集 | <ul><li>数据集计数</li><li>配置文件启用状态</li><li>创建/修改日期</li><li>数据集 — 架构关系</li><li>数据集 — 受众关系</li><li>数据集 — 属性关系</li><li>数据集 — 数据流关系</li><li>名称搜索 </li><li>名称和ID搜索</li></ul> | <ul><li>审核</li><li>创建者</li><li>数据集 — 批次关系</li><li>数据集创建/修改</li><li>数据集大小</li><li>配置文件数</li><li>行数</li><li>值搜索</li></ul> |
 | 目标 | <ul><li>已配置的目标计数</li><li>目标 — 受众关系</li><li>目标属性关系</li></ul> | <ul><li>帐户设置</li><li>帐户凭据信息</li><li>独特配置文件已激活</li></ul> |
