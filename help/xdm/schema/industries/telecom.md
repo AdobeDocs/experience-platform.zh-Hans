@@ -3,7 +3,7 @@ solution: Experience Platform
 title: 电信行业数据模型ERD
 description: 查看实体关系图(ERD)，它描述电信业的标准化数据模型，与Experience Data Model (XDM)兼容，用于Adobe Experience Platform。
 exl-id: 96f267ce-a177-4384-a512-841c89d942ba
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: 23bf89977b13a1f51e1ea7a0bb0561522a09745d
 workflow-type: tm+mt
 source-wordcount: '419'
 ht-degree: 0%
@@ -21,13 +21,13 @@ ht-degree: 0%
 使用以下图例来解释此ERD：
 
 * 中显示的每个实体都基于基础[体验数据模型(XDM)类](../composition.md#class)。
-* 对于给定实体，标记为&#x200B;**bold**&#x200B;的每一行表示一个字段组或数据类型，其提供的相关字段如下面的非粗体文本中所列。
+* 在父字段下缩进的字段表示属于父字段组的子字段或子字段。
 * 给定实体的最重要字段以红色突出显示。
 * 所有可用于识别单个客户的属性都标记为“身份”，其中某个属性标记为“主要身份”。
 * 实体关系将标记为非依赖关系，因为基于Cookie的事件通常无法确定执行事务的人员或个人。
 
 
-![](../../images/industries/telecom.png)
+![电信行业数据模型的ERD示例](../../images/industries/telecom.png)
 
 >[!NOTE]
 >

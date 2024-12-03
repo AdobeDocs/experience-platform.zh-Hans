@@ -3,7 +3,7 @@ solution: Experience Platform
 title: 旅游和酒店业数据模型ERD
 description: 查看实体关系图(ERD)，该关系图描述旅游和酒店业的标准化数据模型，与Experience Data Model (XDM)兼容，用于Adobe Experience Platform。
 exl-id: 4d454160-9066-4702-815b-9509942f709e
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: 23bf89977b13a1f51e1ea7a0bb0561522a09745d
 workflow-type: tm+mt
 source-wordcount: '448'
 ht-degree: 0%
@@ -21,12 +21,12 @@ ht-degree: 0%
 使用以下图例来解释此ERD：
 
 * 中显示的每个实体都基于基础[体验数据模型(XDM)类](../composition.md#class)。
-* 对于给定实体，标记为&#x200B;**bold**&#x200B;的每一行表示一个字段组或数据类型，其提供的相关字段如下面的非粗体文本中所列。
+* 在父字段下缩进的字段表示属于父字段组的子字段或子字段。
 * 给定实体的最重要字段以红色突出显示。
 * 所有可用于识别单个客户的属性都标记为“身份”，其中某个属性标记为“主要身份”。
 * 实体关系将标记为非依赖关系，因为基于Cookie的事件通常无法确定执行事务的人员或个人。
 
-![](../../images/industries/travel-hospitality.png)
+![旅游服务业数据模型的示例ERD](../../images/industries/travel-hospitality.png)
 
 >[!NOTE]
 >
