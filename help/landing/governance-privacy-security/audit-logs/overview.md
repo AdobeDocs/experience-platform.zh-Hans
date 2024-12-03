@@ -4,10 +4,10 @@ description: 了解如何通过审核日志查看谁在 Adobe Experience Platfor
 role: Admin,Developer
 feature: Audits
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
+source-git-commit: f6e413d2d8b644775b6714739113174f5d9cb0d9
 workflow-type: tm+mt
-source-wordcount: '1350'
-ht-degree: 36%
+source-wordcount: '1388'
+ht-degree: 35%
 
 ---
 
@@ -16,12 +16,12 @@ ht-degree: 36%
 >[!CONTEXTUALHELP]
 >id="platform_audits_privacyconsole_actions"
 >title="热门操作"
->abstract="此构件显示在选定时间范围内在 Experience Platform 中执行的最常见操作类型。要查看 Platform 中记录的操作的完整列表，请选择左侧导航中的&#x200B;**审计**。"
+>abstract="此小组件显示在选定时间范围内在 Experience Platform 中执行的最常见操作类型。要查看 Platform 中记录的操作的完整列表，请选择左侧导航中的&#x200B;**审计**。"
 
 >[!CONTEXTUALHELP]
 >id="platform_audits_privacyconsole_users"
 >title="热门用户"
->abstract="此构件显示在所选时间段内在 Experience Platform 中执行的操作最多的用户。要查看 Platform 中记录的操作的完整列表，请选择左侧导航中的&#x200B;**审计**。"
+>abstract="此小组件显示在所选时间段内在 Experience Platform 中执行的操作最多的用户。要查看 Platform 中记录的操作的完整列表，请选择左侧导航中的&#x200B;**审计**。"
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_audits_description"
@@ -31,6 +31,10 @@ ht-degree: 36%
 为了提高系统中执行的活动的透明度和可见性，Adobe Experience Platform允许您以“审核日志”的形式审核各种服务和功能的用户活动。 这些日志形成审核记录，可以帮助对Platform上的问题进行故障诊断，并帮助您的企业有效地遵守公司数据管理政策和法规要求。
 
 从基本意义上说，审核日志可告知&#x200B;**谁**&#x200B;执行了&#x200B;**什么**&#x200B;操作，以及&#x200B;**何时**。 日志中记录的每个操作都包含元数据，这些元数据指示操作类型、日期和时间、执行操作的用户的电子邮件ID以及与操作类型相关的其他属性。
+
+>[!NOTE]
+>
+> **角色**&#x200B;资源中操作&#x200B;**添加用户**&#x200B;和&#x200B;**删除用户**&#x200B;的元数据不包含执行该操作的用户的电子邮件ID。 相反，日志将显示系统生成的电子邮件ID (system@adobe.com)。
 
 本文档介绍Platform中的审核日志，包括如何在UI或API中查看和管理它们。
 
