@@ -2,24 +2,28 @@
 title: 使用SQL构建受众
 description: 了解如何在Adobe Experience Platform的Data Distiller中使用SQL受众扩展来使用SQL命令创建、管理和发布受众。 本指南涵盖受众生命周期的所有方面，包括创建、更新和删除用户档案，以及使用数据驱动的受众定义来定位基于文件的目标。
 exl-id: c35757c1-898e-4d65-aeca-4f7113173473
-source-git-commit: cce576c00823a0c02e4b639f0888a466a5af6a0c
+source-git-commit: 7db055f598e3fa7d5a50214a0cfa86e28e5bfe47
 workflow-type: tm+mt
-source-wordcount: '1164'
+source-wordcount: '1481'
 ht-degree: 1%
 
 ---
 
 # 使用SQL构建受众
 
-本文档介绍如何在Adobe Experience Platform的数据Distiller中使用SQL受众扩展来使用SQL命令创建、管理和发布受众。
+使用SQL受众扩展通过数据湖中的数据构建受众，包括任何现有的维度实体（例如客户属性或产品信息）。
 
-使用SQL受众扩展通过数据湖中的数据（包括任何现有的维度实体）构建受众。 通过此扩展，您可以使用SQL直接定义受众区段，从而提供灵活性，而无需在配置文件中使用原始数据。 使用此方法创建的受众会自动在受众工作区中注册，您可以进一步将这些受众定位到基于文件的目标。
+使用此SQL扩展可提高创建受众的能力，因为在定义受众区段时，您不需要在配置文件中使用原始数据。 使用此方法创建的受众会自动在受众工作区中注册，您可以进一步将这些受众定位到基于文件的目标。
 
 ![显示SQL受众扩展工作流程的信息图。 这些阶段包括：使用SQL命令通过查询服务构建受众，在平台UI中管理受众，以及在基于文件的目标中激活受众。](../images/data-distiller/sql-audiences/sql-audience-extension-workflow.png)
 
+本文档介绍如何在Adobe Experience Platform的数据Distiller中使用SQL受众扩展来使用SQL命令创建、管理和发布受众。
+
 ## Data Distiller中的受众创建生命周期 {#audience-creation-lifecycle}
 
-请按照以下步骤有效管理您的受众。 创建的受众可无缝集成到受众流中，从而允许您从这些基本受众构建区段，并定位基于文件的目标以实现客户定位。 使用以下SQL命令在Adobe Experience Platform中[创建](#create-audience)、[修改](#add-profiles-to-audience)和[删除](#delete-audience)受众。
+按照以下步骤创建、管理和激活受众。 创建的受众可无缝地集成到“受众流”中，因此您可以从基本受众构建区段，并定位基于文件的目标（例如，CSV上传或云存储位置）以进行客户外联。 “受众流”是指创建、管理和激活受众的完整过程，从而确保跨目标的无缝集成。
+
+作为“受众流”的一部分，使用以下SQL命令在Adobe Experience Platform中[创建](#create-audience)、[修改](#add-profiles-to-audience)和[删除](#delete-audience)受众。
 
 ### 创建受众 {#create-audience}
 
@@ -27,7 +31,7 @@ ht-degree: 1%
 
 ```sql
 CREATE AUDIENCE table_name  
-WITH (primary_identity='IdentitycolName', identity_namespace='Namespace for the identity used', [schema='target_schema_title']) 
+WITH (primary_identity='IdentitycolName', identity_namespace='Namespace for the identity used', [schema='target_schema_title'])
 AS (select_query)
 ```
 
@@ -40,35 +44,40 @@ AS (select_query)
 | `schema` | 可选。 为查询创建的数据集定义XDM架构。 |
 | `table_name` | 表和受众的名称。 |
 | `primary_identity` | 指定受众的主标识列。 |
-| `identity_namespace` | 标识的命名空间。 |
+| `identity_namespace` | 标识的命名空间。 您可以使用现有命名空间或创建新命名空间。 要查看可用的命名空间，请使用`SHOW NAMESPACE`命令。 要创建新命名空间，请使用`CREATE NAMESPACE`。 例如： `CREATE NAMESPACE lumaCrmId WITH (code='testns', TYPE='Email')`。 |
 | `select_query` | 定义受众的SELECT语句。 可在[SELECT查询](../sql/syntax.md#select-queries)部分找到SELECT查询的语法。 |
 
 {style="table-layout:auto"}
+
+>[!NOTE]
+>
+>要为复杂的数据结构提供更大的灵活性，您可以在定义受众时嵌套扩充属性。 扩充属性（如`orders`、`total_revenue`、`recency`、`frequency`和`monetization`）可用于根据需要筛选受众。
 
 **示例：**
 
 以下示例演示了如何构建SQL受众创建查询：
 
 ```sql
-CREATE Audience aud_test 
-WITH (primary_identity=month, identity_namespace=queryService) 
-AS SELECT month FROM profile_dim_date LIMIT 5;
+CREATE Audience aud_test
+WITH (primary_identity=userId, identity_namespace=lumaCrmId)
+AS SELECT userId, orders, total_revenue, recency, frequency, monetization FROM profile_dim_customer;
 ```
+
+在此示例中，`userId`列被标识为标识列，并且分配了适当的命名空间(`lumaCrmId`)。 其余列（`orders`、`total_revenue`、`recency`、`frequency`和`monetization`）是丰富属性，为受众提供额外的上下文。
 
 **限制：**
 
 使用SQL创建受众时，请注意以下限制：
 
-- 主标识列&#x200B;**必须**&#x200B;位于根级别。
-- 新批次会覆盖现有数据集；当前不支持追加功能。
-- 当前不支持嵌套属性。
+- 主标识列&#x200B;**必须**&#x200B;处于数据集的最高级别，且不能嵌套在其他属性或类别中。
+- 使用SQL命令创建的外部受众具有30天的保留期。 30天后，这些受众将自动删除，这是规划受众管理策略时考虑的重要事项。
 
-### 将配置文件添加到现有受众 {#add-profiles-to-audience}
+### 将用户档案添加到现有受众 {#add-profiles-to-audience}
 
-使用`INSERT INTO`命令将配置文件添加到现有受众。
+使用`INSERT INTO`命令将配置文件（或整个受众）添加到现有受众。
 
 ```sql
-INSERT INTO table_name 
+INSERT INTO table_name
 SELECT select_query
 ```
 
@@ -88,8 +97,80 @@ SELECT select_query
 以下示例演示了如何使用`INSERT INTO`命令将配置文件添加到现有受众：
 
 ```sql
-INSERT INTO Audience aud_test 
-SELECT month FROM profile_dim_date LIMIT 10;
+INSERT INTO Audience aud_test
+SELECT userId, orders, total_revenue, recency, frequency, monetization FROM customer_ds;
+```
+
+### RFM模型受众示例 {#rfm-model-audience-example}
+
+以下示例演示了如何使用“回访间隔”、“频度”和“盈利(RFM)”模型创建受众。 此示例根据回访间隔、频度和盈利得分划分客户，以确定关键群体，例如忠诚客户、新客户和高价值客户。
+
+<!--  Q) Since the focus of this document is on external audiences, or should I just include this temporarily? We could simply provide a link to the separate RFM modeling documentation rather than including the full example here. (Add link to new RFM document when it is published) -->
+
+以下查询为RFM受众创建架构。 该语句设置字段以保存客户信息，如`userId`、`days_since_last_purchase`、`orders`、`total_revenue`等。
+
+```sql
+CREATE Audience adls_rfm_profile
+WITH (primary_identity=userId, identity_namespace=lumaCrmId) AS
+SELECT
+    cast(NULL AS string) userId,
+    cast(NULL AS integer) days_since_last_purchase,
+    cast(NULL AS integer) orders,
+    cast(NULL AS decimal(18,2)) total_revenue,
+    cast(NULL AS integer) recency,
+    cast(NULL AS integer) frequency,
+    cast(NULL AS integer) monetization,
+    cast(NULL AS string) rfm_model
+WHERE false;
+```
+
+创建受众后，使用客户数据填充该受众，并根据其RFM得分划分用户档案。 以下SQL语句使用`NTILE(4)`函数根据客户的RFM（回访间隔、频度、盈利）得分将客户分到四分位数中。 这些分数将客户分为六个区段，例如“核心”、“忠诚度”和“鲸鱼”。 然后将分段客户数据插入到受众`adls_rfm_profile`表中。”
+
+```sql
+INSERT INTO Audience adls_rfm_profile
+SELECT
+    userId,
+    days_since_last_purchase,
+    orders,
+    total_revenue,
+    recency,
+    frequency,
+    monetization,
+    CASE
+        WHEN Recency=1 AND Frequency=1 AND Monetization=1 THEN '1. Core - Your Best Customers'
+        WHEN Recency IN(1,2,3,4) AND Frequency=1 AND Monetization IN (1,2,3,4) THEN '2. Loyal - Your Most Loyal Customers'
+        WHEN Recency IN(1,2,3,4) AND Frequency IN (1,2,3,4) AND Monetization=1 THEN '3. Whales - Your Highest Paying Customers'
+        WHEN Recency IN(1,2,3,4) AND Frequency IN(1,2,3) AND Monetization IN(2,3,4) THEN '4. Promising - Faithful Customers'
+        WHEN Recency=1 AND Frequency=4 AND Monetization IN (1,2,3,4) THEN '5. Rookies - Your Newest Customers'
+        WHEN Recency IN (2,3,4) AND Frequency=4 AND Monetization IN (1,2,3,4) THEN '6. Slipping - Once Loyal, Now Gone'
+    END AS rfm_model
+FROM (
+    SELECT
+        userId,
+        days_since_last_purchase,
+        orders,
+        total_revenue,
+        NTILE(4) OVER (ORDER BY days_since_last_purchase) AS recency,
+        NTILE(4) OVER (ORDER BY orders DESC) AS frequency,
+        NTILE(4) OVER (ORDER BY total_revenue DESC) AS monetization
+    FROM (
+        SELECT
+            userid,
+            DATEDIFF(current_date, MAX(purchase_date)) AS days_since_last_purchase,
+            COUNT(purchaseid) AS orders,
+            CAST(SUM(total_revenue) AS double) AS total_revenue
+        FROM (
+            SELECT DISTINCT
+                ENDUSERIDS._EXPERIENCE.EMAILID.ID AS userid,
+                commerce.`ORDER`.purchaseid AS purchaseid,
+                commerce.`ORDER`.pricetotal AS total_revenue,
+                TO_DATE(timestamp) AS purchase_date
+            FROM sample_data_for_ootb_templates
+            WHERE commerce.`ORDER`.purchaseid IS NOT NULL
+        ) AS b
+        GROUP BY userId
+    )
+);
 ```
 
 ### 删除受众（删除受众） {#delete-audience}
@@ -120,9 +201,11 @@ DROP AUDIENCE [IF EXISTS] [db_name.]table_name
 DROP AUDIENCE IF EXISTS aud_test;
 ```
 
-### 自动发布受众 {#auto-publish-audiences}
+### 自动受众注册和可用性 {#registration-and-availability}
 
-使用SQL扩展创建的受众会自动在受众工作区的Data Distiller下注册。 注册后，这些受众即可进行定位，并可用于基于文件的目标，从而增强您的分段和定位策略。
+使用SQL扩展创建的受众会自动注册到Audience工作区的Data Distiller [!UICONTROL Origin]中。 注册后，这些受众即可在基于文件的目标中进行定位，从而增强分段和定位策略。 此过程不需要额外配置，可简化受众管理。 有关如何在Platform UI中查看、管理和创建受众的详细信息，请参阅[受众门户概述](../../segmentation/ui/audience-portal.md)。
+
+<!-- Q) Do you know how long it takes for the audience to register? This info would help manage user expectations. -->
 
 ![Adobe Experience Platform中的Audience工作区，显示Distiller自动发布并可供使用的数据。](../images/data-distiller/sql-audiences/audiences.png)
 
@@ -190,7 +273,7 @@ DROP AUDIENCE IF EXISTS aud_test;
 
 +++回答
 
-Data Distiller受众当前在Adobe Journey Optimizer中不可用。 您必须在Adobe Journey Optimizer规则生成器中创建新受众，使其在Adobe Journey Optimizer中可用。
+Adobe Journey Optimizer中还提供了数据Distiller受众。 您可以在Adobe Journey Optimizer中使用Data Distiller受众，并根据扩充属性筛选结果。
 
 +++
 
@@ -211,3 +294,4 @@ Data Distiller受众当前在Adobe Journey Optimizer中不可用。 您必须在
 - **浏览受众评估**：了解Adobe Experience Platform中的[受众评估方法](../../segmentation/home.md#evaluate-segments)：用于实时更新的流式分段、用于计划或按需处理的批量分段以及用于在Edge Network上即时评估的边缘分段。
 - **与目标集成**：阅读有关如何使用Platform目标UI [按需将文件导出到批处理目标](../../destinations/ui/export-file-now.md)的指南。
 - **审核受众性能**：分析您的SQL定义的受众在不同渠道中的执行情况。 使用数据洞察来调整和改进受众定义和定位策略。 请阅读有关[受众分析](../../dashboards/insights/audiences.md)的文档，了解如何在Adobe Real-Time CDP中访问和调整SQL查询以获取受众分析。 然后，您可以通过自定义受众仪表板创建自己的见解并将原始数据转换为可操作的信息，从而有效地可视化并使用这些见解做出更好的决策。
+
