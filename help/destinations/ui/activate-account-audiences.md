@@ -2,12 +2,12 @@
 title: 将帐户受众激活到目标
 type: Tutorial
 description: 了解如何将帐户受众激活到目标
-badgeB2B: label="B2B版本" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 exl-id: ad69d0a8-bf5b-42ac-97a3-401eadda62cd
-source-git-commit: dff460f0b0d365d3d643744544642d9f9488e18a
+source-git-commit: 1c31dd978298191dd10500b60eb446d2ca37139c
 workflow-type: tm+mt
-source-wordcount: '834'
+source-wordcount: '836'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 ## 支持的目标 {#supported-destinations}
 
-转到&#x200B;**[!UICONTROL 连接]** > **[!UICONTROL 目标]**，然后选择&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡。 使用&#x200B;**[!UICONTROL 数据类型]**&#x200B;筛选器并选择&#x200B;**[!UICONTROL 帐户]**&#x200B;查看支持激活帐户受众的目标。 目前，导出帐户受众仅适用于特定云存储目标([Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md)、[ADLS Gen 2](/help/destinations/catalog/cloud-storage/adls-gen2.md)、[Azure Blob Storage](/help/destinations/catalog/cloud-storage/azure-blob.md)、[Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md)和[SFTP](/help/destinations/catalog/cloud-storage/sftp.md))以及[（公司）LinkedIn匹配的受众](/help/destinations/catalog/social/linkedin.md)目标。
+转到&#x200B;**[!UICONTROL 连接]** > **[!UICONTROL 目标]**，然后选择&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡。 使用&#x200B;**[!UICONTROL 数据类型]**&#x200B;筛选器并选择&#x200B;**[!UICONTROL 帐户]**&#x200B;查看支持激活帐户受众的目标。 目前，导出帐户受众仅适用于某些云存储目标([Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md)、[ADLS Gen 2](/help/destinations/catalog/cloud-storage/adls-gen2.md)、[Azure Blob Storage](/help/destinations/catalog/cloud-storage/azure-blob.md)、[数据登陆区域](/help/destinations/catalog/cloud-storage/data-landing-zone.md)和[SFTP](/help/destinations/catalog/cloud-storage/sftp.md))以及[Demandbase](/help/destinations/catalog/advertising/demandbase.md)和[（公司） LinkedIn匹配的受众](/help/destinations/catalog/social/linkedin-b2b.md)流目标。
 
 ![支持帐户受众的目标。](/help/destinations/assets/ui/activate-account-audiences/data-types-filter.png)
 
@@ -57,7 +57,7 @@ ht-degree: 0%
 >
 >可导出帐户受众的目标在卡片的右上角以图标指示，类似于下面高亮显示的目标，或者，您可以使用数据类型筛选器以仅显示可导出帐户受众的目标，如页面上较高位置显示的[](#supported-destinations)。
 
-![可导出突出显示的配置文件受众的Amazon S3目标页面。](/help/destinations/assets/ui/activate-account-audiences/amazon-s3-icon-activate-account-audiences.png)
+![可导出突出显示的配置文件受众的Demandbase目标页面。](/help/destinations/assets/ui/activate-account-audiences/demandbase-icon-activate-account-audiences.png)
 
 1. 选择&#x200B;**[!UICONTROL 数据类型帐户]**，然后选择要将数据集导出到的目标连接，然后选择&#x200B;**[!UICONTROL 下一步]**。
 

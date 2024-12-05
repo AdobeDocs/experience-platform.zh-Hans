@@ -5,9 +5,9 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: 6414168c1deb047af30d8636ef8d61316f56aecf
+source-git-commit: 3a66902ab169c555a52741e3630d2b9f50149155
 workflow-type: tm+mt
-source-wordcount: '1257'
+source-wordcount: '1262'
 ht-degree: 5%
 
 ---
@@ -201,6 +201,7 @@ ht-degree: 5%
    * 社交目标{#social}
       * [社交目标概述](./catalog/social/overview.md)
       * [facebook连接](./catalog/social/facebook.md)
+      * [（公司） LinkedIn匹配受众连接](./catalog/social/linkedin-b2b.md)
       * [linkedIn匹配受众连接](./catalog/social/linkedin.md)
       * [TikTok连接](./catalog/social/tiktok.md)
       * [[!DNL Twitter Custom Audiences]连接](./catalog/social/twitter.md)

@@ -3,9 +3,9 @@ keywords: linkedin连接；linkedin连接；linkedin目标；linkedin；
 title: Linkedin匹配的受众连接
 description: 基于哈希电子邮件激活LinkedIn营销活动的配置文件，以实现受众定位、个性化和抑制。
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 74d7c48042b0d2b938705b588c185f3c3f96f1cd
 workflow-type: tm+mt
-source-wordcount: '1099'
+source-wordcount: '1095'
 ht-degree: 4%
 
 ---
@@ -149,7 +149,7 @@ Adobe Experience Platform UI中的![LinkedIn目标](../../assets/catalog/social/
 
 ## 导出的数据 {#exported-data}
 
-成功激活意味着将在[[!DNL LinkedIn Campaign Manager]](https://www.linkedin.com/campaignmanager/login)中以编程方式创建[!DNL LinkedIn]自定义受众。 由于用户符合或不符合激活受众的资格，因此将添加和删除受众成员资格。
+成功激活意味着[!DNL LinkedIn]自定义受众是在[[!DNL LinkedIn Campaign Manager]](https://www.linkedin.com/campaignmanager/login)中以编程方式创建的。 当用户在激活的受众中符合资格或被取消资格时，会调整受众成员资格。
 
 >[!TIP]
 >
