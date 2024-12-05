@@ -2,7 +2,7 @@
 title: 医疗保健行业数据模型ERD
 description: 查看描述医疗保健行业标准化数据模型的实体关系图(ERD)。 此数据模型与Adobe Experience Platform中使用的Experience Data Model (XDM)兼容。
 exl-id: ebcf97ec-f5a4-46e5-b1ad-c80d55aa2c6e
-source-git-commit: 23bf89977b13a1f51e1ea7a0bb0561522a09745d
+source-git-commit: 8f026501cf5c8087cc512ac374163908cebd17c6
 workflow-type: tm+mt
 source-wordcount: '605'
 ht-degree: 0%
