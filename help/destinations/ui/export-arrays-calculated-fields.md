@@ -3,7 +3,7 @@ title: 使用计算出的字段将数组导出为字符串
 type: Tutorial
 description: 了解如何使用计算字段将阵列作为字符串从Real-Time CDP导出到云存储目标。
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: 849d42e36921e60b6ac3a5e89336b954e64a35d7
+source-git-commit: 9b64e39d25ad94aa834c8e207396b37c2a121243
 workflow-type: tm+mt
 source-wordcount: '1556'
 ht-degree: 7%
@@ -21,7 +21,7 @@ ht-degree: 7%
 
 >[!AVAILABILITY]
 >
->* 通常提供通过计算字段导出数组的功能。
+>通常提供通过计算字段导出数组的功能。
 
 了解如何通过计算字段将阵列作为字符串从Real-Time CDP导出到[云存储目标](/help/destinations/catalog/cloud-storage/overview.md)。 请阅读本文档以了解此功能启用的用例。
 
