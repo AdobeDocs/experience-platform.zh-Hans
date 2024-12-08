@@ -2,7 +2,7 @@
 title: 医疗保健行业数据模型ERD
 description: 查看描述医疗保健行业标准化数据模型的实体关系图(ERD)。 此数据模型与Adobe Experience Platform中使用的Experience Data Model (XDM)兼容。
 exl-id: ebcf97ec-f5a4-46e5-b1ad-c80d55aa2c6e
-source-git-commit: 8f026501cf5c8087cc512ac374163908cebd17c6
+source-git-commit: a4fc19599ea6639ee5762ee1542cb08b9ed3b6a8
 workflow-type: tm+mt
 source-wordcount: '605'
 ht-degree: 0%
@@ -42,3 +42,4 @@ ht-degree: 0%
 | 通过不同渠道跟踪保险营销，以了解客户如何发现保险公司，从而改进健康计划中的登记和帐户创建。 | <ul><li>**[[!UICONTROL XDM个人资料]](../../classes/individual-profile.md)**：<ul><li>[[!UICONTROL 医疗保健成员详细信息]](../../field-groups/profile/healthcare-member-details.md)</li></ul></li><li>**[[!UICONTROL 付款人]](../../classes/payer.md)**</li><li>**[[!UICONTROL 计划]](../../classes/plan.md)**：<ul><li>[[!UICONTROL 医疗保健计划详细信息]](../../field-groups/plan/healthcare-plan-details.md)</li></ul></li><li>**[[!UICONTROL XDM ExperienceEvent]](../../classes/experienceevent.md)**：<ul><li>[[!UICONTROL Web详细信息]](../../field-groups/event/web-details.md)</li><li>[[!UICONTROL Advertising详细信息]](../../field-groups/event/advertising-details.md)</li></ul></li></ul> |
 | 避免医疗保险中断。 | <ul><li>**[[!UICONTROL XDM个人资料]](../../classes/individual-profile.md)**：<ul><li>[[!UICONTROL 医疗保健成员详细信息]](../../field-groups/profile/healthcare-member-details.md)</li></ul></li><li>**[[!UICONTROL 计划]](../../classes/plan.md)**：<ul><li>[[!UICONTROL 医疗保健计划详细信息]](../../field-groups/plan/healthcare-plan-details.md)</li></ul></li></ul> |
 | 使用直接到客户(DTC)广告向提供商推广药物信息。 | <ul><li>**[[!UICONTROL XDM个人资料]](../../classes/individual-profile.md)**：<ul><li>[[!UICONTROL 医疗保健成员详细信息]](../../field-groups/profile/healthcare-member-details.md)</li></ul></li><li>**[[!UICONTROL 药物]](../../classes/medication.md)**：<ul><li>[[!UICONTROL 医疗保健药物]](../../field-groups/medication/healthcare-medication.md)</li></ul></li><li>**[[!UICONTROL XDM ExperienceEvent]](../../classes/experienceevent.md)**：<ul><li>[[!UICONTROL Web详细信息]](../../field-groups/event/web-details.md)</li><li>[[!UICONTROL Advertising详细信息]](../../field-groups/event/advertising-details.md)</li></ul></li></ul> |
+
