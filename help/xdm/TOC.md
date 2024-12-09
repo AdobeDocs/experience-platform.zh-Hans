@@ -5,10 +5,10 @@ breadcrumb-title: 体验数据模型 (XDM) 指南
 user-guide-description: 概括性地探索 Experience Platform 中的体验数据模型 (XDM) 系统，并了解如何使用类和架构字段组使体验数据标准化。
 feature: Schemas
 role: Developer
-source-git-commit: 15de9351203f6b43653042ab73ede17781486160
+source-git-commit: d2baf74bb5fd87045f5d25b2996911c7bce36f36
 workflow-type: tm+mt
-source-wordcount: '637'
-ht-degree: 45%
+source-wordcount: '719'
+ht-degree: 42%
 
 ---
 
@@ -29,6 +29,53 @@ ht-degree: 45%
       * [医疗保健](./schema/industries/healthcare.md)
       * [电信](./schema/industries/telecom.md)
       * [旅游与酒店](./schema/industries/travel-hospitality.md)
+   * 医疗保健数据模型V2 {#health-care-data-model-v2}
+      * [医疗保健V2](./schema/industries/healthcare-v2.md)
+      * 类 {#health-care-classes}
+         * [位置](./classes/location.md)
+      * 字段组{#health-care-v2-field-groups}
+         * XDM个人资料{#health-care-v2-profile}
+            * [医疗保健帐户](./field-groups/profile/healthcare-account.md)
+            * [医疗保健计划](./field-groups/profile/healthcare-care-plan.md)
+            * [医疗保健目标](./field-groups/profile/healthcare-goal.md)
+            * [医疗保健组织](./field-groups/profile/healthcare-organization.md)
+            * [医疗保健患者](./field-groups/profile/healthcare-patient.md)
+            * [医疗保健从业者](./field-groups/profile/healthcare-practioner.md)
+            * [医疗保健时间表](./field-groups/profile/healthcare-schedule.md)
+         * XDM体验事件{#health-care-v2-event}
+            * [医疗保健免疫](./field-groups/event/healthcare-immunization.md)
+         * 位置 {#health-care-v2-location}
+            * [医疗保健位置](./field-groups/location/healthcare-location.md)
+         * 药物{#health-care-v2-medication}
+            * [保健药物配给](./field-groups/medication/healthcare-medication-dispense.md)
+            * [医疗保健药物请求](./field-groups/medication/healthcare-medication-request.md)
+            * [保健药物](./field-groups/medication/healthcare-medication-v2.md)
+         * 计划{#health-care-v2-plans}
+            * [医疗保健覆盖](./field-groups/plan/healthcare-coverage.md)
+      * 数据类型{#health-care-v2-data-types}
+         * [地址](./data-types/healthcare/address.md)
+         * [注释](./data-types/healthcare/annotation.md)
+         * [可用性](./data-types/healthcare/availability.md)
+         * [可编码概念](./data-types/healthcare/codeable-concept.md)
+         * [可编码引用](./data-types/healthcare/codeable-reference.md)
+         * [编码](./data-types/healthcare/coding.md)
+         * [联系点](./data-types/healthcare/contact-point.md)
+         * [剂量](./data-types/healthcare/dosage.md)
+         * [持续时间](./data-types/healthcare/duration.md)
+         * [扩展的联系人详细信息](./data-types/healthcare/extended-contact-detail.md)
+         * [人名](./data-types/healthcare/human-name.md)
+         * [标识符](./data-types/healthcare/identifier.md)
+         * [货币](./data-types/healthcare/money.md)
+         * [期间](./data-types/healthcare/period.md)
+         * [人员](./data-types/healthcare/person.md)
+         * [数量](./data-types/healthcare/quantity.md)
+         * [Range](./data-types/healthcare/range.md)
+         * [比率](./data-types/healthcare/ratio.md)
+         * [参考](./data-types/healthcare/reference.md)
+         * [重复](./data-types/healthcare/repeat.md)
+         * [简单数量](./data-types/healthcare/simple-quantity.md)
+         * [计时](./data-types/healthcare/timing.md)
+         * [虚拟服务](./data-types/healthcare/virtual-service-detail.md)
    * [XDM字段字典](schema/field-dictionary.md)
 * 类 {#classes}
    * [XDM 轮廓](./classes/individual-profile.md)
@@ -54,9 +101,9 @@ ht-degree: 45%
    * XDM个人资料{#profile}
       * [同意和偏好设置](./field-groups/profile/consents.md)
       * [人口统计详细信息](./field-groups/profile/demographic-details.md)
+      * [医疗保健成员详细信息](./field-groups/profile/healthcare-member-details.md)
       * [IAB TCF 2.0 同意](./field-groups/profile/iab.md)
       * [IdentityMap](./field-groups/profile/identitymap.md)
-      * [医疗保健成员详细信息](./field-groups/profile/healthcare-member-details.md)
       * [忠诚度详细信息](./field-groups/profile/loyalty-details.md)
       * [个人联系人详细信息](./field-groups/profile/personal-contact-details.md)
       * [配置文件合作伙伴扩充（示例）](./field-groups/profile/profile-partner-enrichment.md)
@@ -236,7 +283,7 @@ ht-degree: 45%
    * [在API中弃用XDM字段](tutorials/field-deprecation-api.md)
    * [在UI中定义架构关系](tutorials/relationship-ui.md)
    * [在API中定义架构关系](tutorials/relationship-api.md)
-   * [在Real-Time CDP B2B版本中定义架构关系](tutorials/relationship-b2b.md)
+   * [在Real-Time CDP B2B edition中定义架构关系](tutorials/relationship-b2b.md)
    * [管理架构的数据使用标签](tutorials/labels.md)
    * [创建临时架构](tutorials/ad-hoc.md)
 * [疑难解答指南](troubleshooting-guide.md)
