@@ -5,10 +5,10 @@ breadcrumb-title: 体验数据模型 (XDM) 指南
 user-guide-description: 概括性地探索 Experience Platform 中的体验数据模型 (XDM) 系统，并了解如何使用类和架构字段组使体验数据标准化。
 feature: Schemas
 role: Developer
-source-git-commit: d2baf74bb5fd87045f5d25b2996911c7bce36f36
+source-git-commit: 670b8ed3abd0e6e9ab35a15ae47a524a2528eb44
 workflow-type: tm+mt
-source-wordcount: '719'
-ht-degree: 42%
+source-wordcount: '705'
+ht-degree: 44%
 
 ---
 
@@ -29,30 +29,30 @@ ht-degree: 42%
       * [医疗保健](./schema/industries/healthcare.md)
       * [电信](./schema/industries/telecom.md)
       * [旅游与酒店](./schema/industries/travel-hospitality.md)
-   * 医疗保健数据模型V2 {#health-care-data-model-v2}
-      * [医疗保健V2](./schema/industries/healthcare-v2.md)
-      * 类 {#health-care-classes}
+   * 医疗保健数据模型V2 {#healthcare}
+      * [医疗保健V2](./schema/healthcare-v2.md)
+      * 类 {#classes}
          * [位置](./classes/location.md)
-      * 字段组{#health-care-v2-field-groups}
-         * XDM个人资料{#health-care-v2-profile}
-            * [医疗保健帐户](./field-groups/profile/healthcare-account.md)
-            * [医疗保健计划](./field-groups/profile/healthcare-care-plan.md)
-            * [医疗保健目标](./field-groups/profile/healthcare-goal.md)
-            * [医疗保健组织](./field-groups/profile/healthcare-organization.md)
-            * [医疗保健患者](./field-groups/profile/healthcare-patient.md)
-            * [医疗保健从业者](./field-groups/profile/healthcare-practioner.md)
-            * [医疗保健时间表](./field-groups/profile/healthcare-schedule.md)
-         * XDM体验事件{#health-care-v2-event}
-            * [医疗保健免疫](./field-groups/event/healthcare-immunization.md)
-         * 位置 {#health-care-v2-location}
-            * [医疗保健位置](./field-groups/location/healthcare-location.md)
-         * 药物{#health-care-v2-medication}
-            * [保健药物配给](./field-groups/medication/healthcare-medication-dispense.md)
-            * [医疗保健药物请求](./field-groups/medication/healthcare-medication-request.md)
-            * [保健药物](./field-groups/medication/healthcare-medication-v2.md)
-         * 计划{#health-care-v2-plans}
-            * [医疗保健覆盖](./field-groups/plan/healthcare-coverage.md)
-      * 数据类型{#health-care-v2-data-types}
+      * 字段组{#field-groups}
+         * XDM个人资料{#profile}
+            * [帐户](./field-groups/profile/healthcare-account.md)
+            * [保护计划](./field-groups/profile/healthcare-care-plan.md)
+            * [目标](./field-groups/profile/healthcare-goal.md)
+            * [组织](./field-groups/profile/healthcare-organization.md)
+            * [患者](./field-groups/profile/healthcare-patient.md)
+            * [从业者](./field-groups/profile/healthcare-practioner.md)
+            * [计划](./field-groups/profile/healthcare-schedule.md)
+         * XDM体验事件{#event}
+            * [免疫](./field-groups/event/healthcare-immunization.md)
+         * 位置 {#location}
+            * [位置](./field-groups/location/healthcare-location.md)
+         * 药物{#medication}
+            * [药物分配](./field-groups/medication/healthcare-medication-dispense.md)
+            * [药物请求](./field-groups/medication/healthcare-medication-request.md)
+            * [药物](./field-groups/medication/healthcare-medication-v2.md)
+         * 计划{#plan}
+            * [覆盖率](./field-groups/plan/healthcare-coverage.md)
+      * 数据类型{#data-types}
          * [地址](./data-types/healthcare/address.md)
          * [注释](./data-types/healthcare/annotation.md)
          * [可用性](./data-types/healthcare/availability.md)
