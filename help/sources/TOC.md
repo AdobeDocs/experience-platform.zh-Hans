@@ -2,13 +2,13 @@
 audience: user
 user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
-user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
+user-guide-description: 从多种来源引入数据。了解如何构建、标记和增强已引入的数据。
 feature: Sources
 role: Developer
 source-git-commit: b18f93078d3cdbd0498b5b282236ac9b7bad153c
 workflow-type: tm+mt
-source-wordcount: '1043'
-ht-degree: 30%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -68,7 +68,7 @@ ht-degree: 30%
       - [Zoho CRM连接器](connectors/crm/zoho.md)
    - 客户成功{#customer-success}
       - [Oracle 服务云](connectors/customer-success/oracle-service-cloud.md)
-      - [Salesforce Service Cloud连接器](connectors/customer-success/salesforce-service-cloud.md)
+      - [Salesforce服务云连接器](connectors/customer-success/salesforce-service-cloud.md)
       - [ServiceNow连接器](connectors/customer-success/servicenow.md)
       - [Zendesk连接器](connectors/customer-success/zendesk.md)
    - 数据库{#databases}

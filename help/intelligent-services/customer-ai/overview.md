@@ -3,14 +3,14 @@ keywords: Experience Platform；概述；客户人工智能；热门主题；客
 solution: Experience Platform, Real-Time Customer Data Platform
 feature: Customer AI
 title: 客户人工智能概述
-description: Customer AI 用于生成自定义倾向分数，如个人档案大规模的流失率和转化率。这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
-landing-page-description: Customer AI 用于生成自定义倾向分数，如个人档案大规模的流失率和转化率。
-short-description: Customer AI 用于生成自定义倾向分数，如个人档案大规模的流失率和转化率。
+description: Customer AI 用于生成自定义倾向分数，如轮廓大规模的流失率和转化率。这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
+landing-page-description: Customer AI 用于生成自定义倾向分数，如轮廓大规模的流失率和转化率。
+short-description: Customer AI 用于生成自定义倾向分数，如轮廓大规模的流失率和转化率。
 exl-id: 3e668103-e2a2-4ce6-a40a-8029a6aaa8dd
 source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
 workflow-type: tm+mt
-source-wordcount: '571'
-ht-degree: 21%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -23,7 +23,7 @@ ht-degree: 21%
 
 ## 了解客户人工智能
 
-Customer AI 用于生成自定义倾向分数，如个人档案大规模的流失率和转化率。这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
+Customer AI 用于生成自定义倾向分数，如轮廓大规模的流失率和转化率。这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
 
 客户人工智能构建于：
 
