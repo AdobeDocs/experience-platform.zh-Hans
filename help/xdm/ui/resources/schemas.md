@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建和编辑架构
 description: 了解如何在Experience Platform用户界面中创建和编辑架构的基础知识。
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: f530e4ff755ac89141ee67bef80700b46acf0868
+source-git-commit: 02b709c01347c1d03f870132dff437b97f239a9c
 workflow-type: tm+mt
-source-wordcount: '3859'
+source-wordcount: '4056'
 ht-degree: 1%
 
 ---
@@ -37,7 +37,7 @@ ht-degree: 1%
 
 出现[!UICONTROL 创建架构]对话框。 在此对话框中，您可以选择通过添加字段和字段组手动创建架构，也可以上传CSV文件并使用ML算法生成架构。 从对话框中选择架构创建工作流。
 
-![使用工作流选项创建架构对话框并选择高亮显示。](../../images/tutorials/create-schema/create-a-schema-dialog.png)
+![使用工作流选项创建架构对话框并选择高亮显示。](../../images/ui/resources/schemas/create-a-schema-dialog.png)
 
 ### [!BADGE Beta]{type=Informative}手动或ML辅助的架构创建 {#manual-or-assisted}
 
@@ -49,15 +49,35 @@ ht-degree: 1%
 
 ![使用三个类选项并突出显示[!UICONTROL 下一步]的[!UICONTROL 创建架构]工作流。](../../images/ui/resources/schemas/schema-class-options.png)
 
+选择&#x200B;**[!UICONTROL 其他]**&#x200B;时，将显示可用类的列表。 在此处，您可以浏览和过滤预先存在的类。
+
+![在[!UICONTROL 架构详细信息]部分中突出显示[!UICONTROL 使用[!UICONTROL 其他]创建架构]工作流。](../../images/ui/resources/schemas/other-schema-details.png)
+
+选择一个单选按钮，以根据类是自定义类还是标准类来筛选这些类。 您还可以根据行业筛选可用的结果，或使用搜索字段搜索特定类。
+
+![已突出显示[!UICONTROL 使用搜索栏[!UICONTROL 自定义]和[!UICONTROL 行业]创建架构]工作流。](../../images/ui/resources/schemas/filter-and-search.png)
+
+为了帮助您确定相应的类，每个类都有信息和预览图标。 信息图标(![信息图标。](/help/images/icons/info.png))打开一个对话框，其中提供了类及其关联的行业的说明。
+
+![选定类的信息图标和工具提示突出显示。](../../images/ui/resources/schemas/class-info.png)
+
+预览图标(![预览图标。](/help/images/icons/preview.png))打开包含架构图及其属性的类的预览对话框。
+
+![包含架构图和类属性的选定类的预览。](../../images/ui/resources/schemas/class-preview.png)
+
+选择任意行以选择一个类，然后选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以确认您的选择。
+
+![使用从可用类表中选择的类并突出显示[!UICONTROL 下一步]的[!UICONTROL 创建架构]工作流。](../../images/ui/resources/schemas/select-class.png)
+
 选择类后，将显示[!UICONTROL 名称和审阅]部分。 在此部分中，您会提供用于标识架构的名称和描述。&#x200B;AEM架构的基本结构（由类提供）显示在画布中，供您查看和验证选定的类和架构结构。
 
 在文本字段中输入人性化的[!UICONTROL 架构显示名称]。 接下来，输入适当的描述以帮助识别您的架构。 当您查看了架构结构并且满意您的设置时，请选择&#x200B;**[!UICONTROL 完成]**&#x200B;以创建您的架构。
 
 ![高亮显示[!UICONTROL 创建架构]工作流的[!UICONTROL 名称和审核]部分，该工作流具有[!UICONTROL 架构显示名称]、[!UICONTROL 描述]和[!UICONTROL 完成]。](../../images/ui/resources/schemas/name-and-review.png)
 
-出现[!UICONTROL 架构] [!UICONTROL 浏览]选项卡。 您最近创建的架构现已列在架构库中，并且可在[!DNL Schema Editor]中编辑。
+此时将显示架构编辑器，其中架构的结构显示在画布中。 如果需要，您现在可以开始[向类](../../ui/resources/classes.md#add-fields)添加字段。
 
-![架构工作区的“浏览”选项卡显示您最近创建的架构。](../../images/ui/resources/schemas/example-schema.png)
+![画布中显示架构结构的架构编辑器。](../../images/ui/resources/schemas/edit.png)
 
 ## 编辑现有架构 {#edit}
 
