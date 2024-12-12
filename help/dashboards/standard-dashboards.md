@@ -41,18 +41,18 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 新创建的空白仪表板会在视图的左上角显示您选择的名称。
 
-## 创建构件 {#create-widget}
+## 创建小组件 {#create-widget}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_udd_maxwidgets"
->title="最大构件数"
->abstract="仪表板服务最多支持十个构件。将 10 个构件添加到仪表板后，[!UICONTROL 添加新构件]选项将被禁用并显示为灰色。"
+>title="最大小组件数"
+>abstract="仪表板服务最多支持十个小组件。将 10 个小组件添加到仪表板后，[!UICONTROL 添加新小组件]选项将被禁用并显示为灰色。"
 
 从新仪表板视图中，选择&#x200B;**[!UICONTROL 添加新构件]**&#x200B;以开始构件创建过程。
 
 >[!IMPORTANT]
 >
->每个仪表板最多支持10个小组件。 将 10 个构件添加到仪表板后，[!UICONTROL 添加新构件]选项将被禁用并显示为灰色。
+>每个仪表板最多支持10个小组件。 将 10 个小组件添加到仪表板后，[!UICONTROL 添加新小组件]选项将被禁用并显示为灰色。
 
 ![突出显示带有添加新小部件的新空仪表板。](./images/standard-dashboards/add-new-widget.png)
 
@@ -130,7 +130,7 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 ![带有单独日期复选框的[!UICONTROL 筛选器： date_key]对话框已选中和取消选中。](./images/standard-dashboards/select-dates.png)
 
-### 构件属性
+### 小组件属性
 
 选择属性图标(![属性图标。](/help/images/icons/properties.png))以打开属性面板。 在[!UICONTROL 属性]面板的[!UICONTROL 构件标题]文本字段中输入构件的名称。
 

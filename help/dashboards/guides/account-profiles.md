@@ -63,7 +63,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 
 显示在[!UICONTROL 详细信息]选项卡上的帐户配置文件信息已从多个配置文件片段合并在一起，以形成单个帐户的单个视图。 请参阅有关[在Adobe Real-time Customer Data Platform中浏览帐户配置文件的文档](../../rtcdp/accounts/account-profile-ui-guide.md#browse-account-profiles)，了解更多有关在Platform UI中查看帐户配置文件的功能。
 
-## 标准构件 {#standard-widgets}
+## 标准小组件 {#standard-widgets}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_accountprofiles_customersperaccountoverview"

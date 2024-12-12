@@ -46,7 +46,7 @@ ht-degree: 5%
 
 >[!CONTEXTUALHELP]
 >id="platform_datasets_browse_profileretention"
->title="个人资料保留情况"
+>title="轮廓保留情况"
 >abstract="显示每个数据集的当前保留策略。可以在每个数据集的保留设置中修改此值。您只能为 ExperienceEvent 数据集设置保留时间。"
 
 >[!CONTEXTUALHELP]

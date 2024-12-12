@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform；主页；热门主题
+keywords: Experience Platform；首页；热门话题
 solution: Experience Platform
 title: Privacy ServiceUI概述
 description: 开始使用Privacy Service用户界面来协调和监视各种Experience Cloud应用程序中的隐私请求。
@@ -7,7 +7,7 @@ exl-id: 5624691f-0b9a-4565-8277-ea273a0d239a
 source-git-commit: dbdeabf9036f1736a5b43d9057e77b82baf915cd
 workflow-type: tm+mt
 source-wordcount: '226'
-ht-degree: 18%
+ht-degree: 20%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 18%
 >[!CONTEXTUALHELP]
 >id="platform_privacy_privacyconsole_requests"
 >title="数据主体请求"
->abstract="此构件显示 Privacy Service 在给定日期处理的已提交和已完成数据主体请求的数目。有关 Privacy Service 流程的更多信息，请在左侧导航中选择&#x200B;**请求**。"
+>abstract="此小组件显示 Privacy Service 在给定日期处理的已提交和已完成数据主体请求的数目。有关 Privacy Service 流程的更多信息，请在左侧导航中选择&#x200B;**请求**。"
 
 Privacy ServiceUI允许您协调各种Adobe Experience Cloud应用程序中的隐私和合规请求。
 
