@@ -1,11 +1,11 @@
 ---
 title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
-keywords: Adobe Experience Platform Web SDK；平台Web SDK；Web SDK；发行说明；
+keywords: Adobe Experience Platform Web SDK；Platform Web SDK；Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 3dacc991fd7760c1c358bec07aca83ffeb4f4f4d
+source-git-commit: 3a50468a7596b9ba870920a8188ae50b40aaef69
 workflow-type: tm+mt
-source-wordcount: '2042'
+source-wordcount: '2085'
 ht-degree: 2%
 
 ---
@@ -15,6 +15,12 @@ ht-degree: 2%
 
 本文档介绍Adobe Experience Platform Web SDK的发行说明。
 有关Web SDK标记扩展的最新发行说明，请参阅[Web SDK标记扩展发行说明](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md)。
+
+## 版本2.24.1 - 2024年12月6日
+
+**已修复和改进**
+
+- 解决了与[Adobe Experience Platform规则引擎](https://github.com/adobe/aepsdk-rulesengine-typescript/)相关的依赖项问题，该问题会导致某些客户集成中出现错误。 Web SDK现在需要[Adobe Experience Platform Rules Engine](https://github.com/adobe/aepsdk-rulesengine-typescript/) 2.0.3或更高版本。
 
 ## 版本2.24.0 - 2024年10月31日
 
@@ -90,7 +96,7 @@ ht-degree: 2%
 
 - 修复了标识错误正在掩蔽其他错误，并将标识错误更改为警告的问题。
 - 修复了当`renderDecisions`设置为`false`的页面顶部调用时，页面底部调用绝不会发送的问题。
-- 修复了在存在多个`adobe_mc`查询字符串参数时Web SDK无法读取跨域标识的问题。
+- 修复了在存在多个`adobe_mc`查询字符串参数时，Web SDK无法读取跨域标识的问题。
 
 ## 版本 2.19.1 - 2023 年 11 月 10 日
 
@@ -121,7 +127,7 @@ ht-degree: 2%
 **修复和改进**
 
 - 修复了由于域是查询的一部分而导致退出链接不符合条件的问题。
-- 已弃用`edgeConfigId`，在Web SDK配置中支持`datastreamId`。
+- 在Web SDK配置中弃用`edgeConfigId`而支持`datastreamId`。
 
 ## 2.17.0版 — 2023年5月17日
 
@@ -264,7 +270,7 @@ ht-degree: 2%
 - [`getIdentity`](/help/web-sdk/commands/getidentity.md)命令现在会随身份一起返回边缘区域ID。
 - 从服务器收到的警告和错误已得到改进，并以更合适的方式进行处理。
 - 为[`setConsent`](/help/web-sdk/commands/setconsent.md)命令添加了对AdobeConsent 2.0标准的支持。
-- 同意首选项在收到后将进行哈希处理并存储在本地存储中，以实现CMP、Platform Web SDK和PlatformEdge Network之间的优化集成。 如果您正在收集同意首选项，我们现在鼓励您在每次加载页面时调用`setConsent`。
+- 收到同意首选项后，将对该首选项进行哈希处理并将其存储在本地存储中，以实现CMP、Platform Web SDK和PlatformEdge Network之间的优化集成。 如果您正在收集同意首选项，我们现在鼓励您在每次加载页面时调用`setConsent`。
 - 已添加两个[监视挂接](https://github.com/adobe/alloy/wiki/Monitoring-Hooks)、`onCommandResolved`和`onCommandRejected`。
 - 错误修复：当用户导航到新的单页应用程序视图、返回原始视图并单击符合转化条件的元素时，Personalization交互通知事件将包含有关相同活动的重复信息。
 - 错误修复：如果SDK发送的第一个事件将`documentUnloading`设置为`true`，则将使用[`sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon)发送该事件，从而导致有关未建立标识的错误。
