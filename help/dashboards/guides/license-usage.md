@@ -4,9 +4,9 @@ title: 许可证使用情况仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 37192addffea094cb2d2f3b0201bb128c912e762
+source-git-commit: 5d40af5c0645e9e4ee44f0c0c2133f3b3153bcb1
 workflow-type: tm+mt
-source-wordcount: '2867'
+source-wordcount: '2908'
 ht-degree: 15%
 
 ---
@@ -41,6 +41,11 @@ ht-degree: 15%
 >abstract="通过许可证用量仪表板，可了解已购买的 Adobe Experience Platform 产品。该仪表板概述显示产品的主要量度，包括您对每个主要量度的用量以及您的合同许可证数量。详细信息工作区显示特定沙盒中每个产品的量度细分。"
 >additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
 >additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/profile/pseudonymous-profiles" text="假名轮廓数据过期"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_predictedusage_computehours"
+>title="预测的计算小时数"
+>abstract="您的使用情况可能会达到许可数量。 要评估或缩短计算时间，请导航到查询>日志以查看查询历史记录。 如果您没有访问查询工作区的权限，请联系您的管理员。"
 
 您可以通过Adobe Experience Platform [!UICONTROL 许可证使用情况]仪表板查看有关贵组织许可证使用情况的重要信息。 此处显示的信息是在Platform实例的每日快照期间捕获的。
 
@@ -98,14 +103,14 @@ ht-degree: 15%
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseUsage_prediction"
 >title="预测使用量"
->abstract="预测基于过去 6-7 个月的使用情况，并在每个月的 15 日生成。请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解您组织的实际使用情况，并确保使用不超出您与 Adobe 的许可证范围。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名个人资料的数据到期设置。"
+>abstract="预测基于过去 6-7 个月的使用情况，并在每个月的 15 日生成。请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解您组织的实际使用情况，并确保使用不超出您与 Adobe 的许可证范围。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据到期设置。"
 >additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
 >additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/profile/pseudonymous-profiles" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_licenseusage_prediction"
 >title="预测使用量"
->abstract="预测基于过去 6-7 个月的使用情况，并在每个月的 15 日生成。请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解您组织的实际使用情况，并确保使用不超出您与 Adobe 的许可证范围。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名个人资料的数据到期设置。"
+>abstract="预测基于过去 6-7 个月的使用情况，并在每个月的 15 日生成。请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解您组织的实际使用情况，并确保使用不超出您与 Adobe 的许可证范围。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据到期设置。"
 >additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
 >additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/profile/pseudonymous-profiles" text="假名轮廓数据过期"
 
@@ -243,7 +248,7 @@ ht-degree: 15%
 | <ul><li>RT CUSTOMER DATA PLATFORM：OD</li><li>RT客户数据平台：OD PRFL到10M</li><li>RT客户数据平台：OD PRFL到50M</li></ul> | [Adobe Real-time Customer Data Platform](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) |
 | <ul><li>AEP：OD激活</li><li>AEP：OD激活PRFL至10M</li><li>AEP：OD激活PRFL，最长50米</li></ul> | [Adobe Experience Platform激活](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform0.html) |
 | <ul><li>AEP：OD INTELLIGENCE</li></ul> | [Adobe Experience Platform Intelligence](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform-intelligence---product-description.html) |
-| <ul><li>Journey Optimizer SELECT：OD</li><li>Journey Optimizer PRIME：OD</li><li>Journey Optimizer ULTIMATE：OD</li><li>UNP AJO PRIME简易版：OD</li><li>UNP AJO ULTIMATE STARTER：OD</li><li>UNP Real-Time CDP：OD配置文件编排</li></ul> | [Adobe Journey Optimizer](https://helpx.adobe.com/cn/legal/product-descriptions/adobe-journey-optimizer.html) |
+| <ul><li>Journey Optimizer SELECT：OD</li><li>Journey Optimizer PRIME：OD</li><li>Journey Optimizer ULTIMATE：OD</li><li>UNP AJO PRIME STARTER：OD</li><li>UNP AJO ULTIMATE STARTER：OD</li><li>UNP Real-Time CDP：OD配置文件编排</li></ul> | [Adobe Journey Optimizer](https://helpx.adobe.com/cn/legal/product-descriptions/adobe-journey-optimizer.html) |
 
 >[!WARNING]
 >
