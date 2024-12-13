@@ -2,9 +2,9 @@
 title: 受众门户概述
 description: 了解如何使用Audience Portal在Adobe Experience Platform中查看、管理和创建受众。
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: a48df00b61fd5736cfb6fd29c60cf73a02342451
+source-git-commit: 1aa10d9cbde66a174ddc64ba9ce11149436393c1
 workflow-type: tm+mt
-source-wordcount: '4547'
+source-wordcount: '4557'
 ht-degree: 4%
 
 ---
@@ -236,6 +236,7 @@ abstract="您可以在一次灵活的受众评估中评估最多 20 位受众。
 - 所有受众&#x200B;**都必须**&#x200B;具有“分段服务”的来源。
 - 必须使用批处理分段评估所有受众&#x200B;****。
 - 所有受众&#x200B;**必须**&#x200B;是基于人员的受众。
+- 受众&#x200B;**只能**&#x200B;激活到Platform中的目标。
 - 您最多只能选择20个受众。
 
 ![已选择您要对其使用灵活受众评估的受众。](../images/ui/audience-portal/evaluate-audiences.png)
