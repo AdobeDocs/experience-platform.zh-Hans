@@ -2,10 +2,10 @@
 title: 核心扩展的发行说明
 description: Adobe Experience Platform中的核心扩展的最新发行说明。
 exl-id: a049b2d5-7a00-435d-bcc7-112658a53a1e
-source-git-commit: 4f75bbfee6b550552d2c9947bac8540a982297eb
+source-git-commit: 1ce579fc1f8548d1eb5c01d63e9fa4e8b32e2a4f
 workflow-type: tm+mt
-source-wordcount: '1632'
-ht-degree: 46%
+source-wordcount: '1651'
+ht-degree: 48%
 
 ---
 
@@ -13,9 +13,15 @@ ht-degree: 46%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
-## 2023年3月29日
+## 2024年10月23日
+
+v3.4.2
+
+* 当“且具有特定属性值……”活动时，修复表单 — >更改事件的架构验证错误。
+
+## 2023 年 3 月 29 日
 
 v3.4.1
 
