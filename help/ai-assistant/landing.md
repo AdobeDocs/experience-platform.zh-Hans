@@ -2,7 +2,7 @@
 title: Adobe Experience Platform产品文档中的AI助手
 description: Adobe Experience Platform中的AI助手入门。
 exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
-source-git-commit: 86edf0c8eeca5b3d2be5776664c397fcf5028e29
+source-git-commit: d2de642b7e84d3c4fad57cf0052afa67878dcac0
 workflow-type: tm+mt
 source-wordcount: '688'
 ht-degree: 1%
@@ -150,7 +150,7 @@ AI Assistant支持Experience Platform、Real-Time CDP、Adobe Journey Optimizer�
 
 >[!ENDTABS]
 
-## 其他资源
+## 其他资源 {#additional-resources}
 
 >[!BEGINSHADEBOX]
 
