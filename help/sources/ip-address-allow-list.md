@@ -2,7 +2,7 @@
 description: 了解需要添加到允许列表才能成功使用Adobe Experience Platform源的IP地址。
 title: 源的IP地址允许列表
 exl-id: 40093c80-dbdb-4dc1-97bb-81a8200b731f
-source-git-commit: 2c069df7552b5f03f3edbbf0bccd4ba7cbe397d3
+source-git-commit: bb0e84ff26027e92d617b7fd0b85979dff501a7d
 workflow-type: tm+mt
 source-wordcount: '210'
 ht-degree: 0%
@@ -40,6 +40,11 @@ ht-degree: 0%
 - `20.232.89.104/29`
 - `20.98.195.172/32`
 - `172.210.218.144/28`
+- `48.211.4.136/29`
+- `48.211.4.144/28`
+- `48.211.4.160/29`
+- `40.84.85.144/28`
+- `40.84.85.192/28`
 
 >[!TAB NLD2：欧洲]
 
@@ -65,6 +70,8 @@ ht-degree: 0%
 - `20.53.46.0/26`
 - `40.79.163.80/28`
 - `40.79.171.160/28`
+- `20.213.194.144/29`
+- `20.227.120.32/27`
 
 >[!TAB CAN2：加拿大]
 
