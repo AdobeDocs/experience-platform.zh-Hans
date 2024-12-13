@@ -2,9 +2,9 @@
 title: Adobe Experience Platform产品文档中的AI助手
 description: Adobe Experience Platform中的AI助手入门。
 exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
-source-git-commit: 830daf12b1ae9718a16308d16774f4357f431f6c
+source-git-commit: 86edf0c8eeca5b3d2be5776664c397fcf5028e29
 workflow-type: tm+mt
-source-wordcount: '581'
+source-wordcount: '688'
 ht-degree: 1%
 
 ---
@@ -77,31 +77,57 @@ AI Assistant支持Experience Platform、Real-Time CDP、Adobe Journey Optimizer�
 
 观看以下视频，了解AI助手概述。
 
++++选择以查看AI助理的概述视频
+
 >[!VIDEO](https://video.tv.adobe.com/v/3429845?learn=on)
 
 有关详细信息，请阅读[AI助手UI指南](ui-guide.md)。
+
++++
 
 ### 访问AI助手
 
 观看以下视频，了解如何为组织和用户配置对AI Assistant的访问权限。
 
++++选择以查看有关如何访问AI助理的视频
+
 >[!VIDEO](https://video.tv.adobe.com/v/3436470/?learn=on)
 
 有关详细信息，请阅读[AI助手访问指南](access.md)。
+
++++
 
 ### 使用AI Assistant产品知识缩短入门时间
 
 观看以下视频，了解如何使用AI Assistant产品知识缩短载入时间。
 
++++选择以观看视频，了解如何使用AI Assistant缩短载入时间
+
 >[!VIDEO](https://video.tv.adobe.com/v/3438032/?learn=on)
 
 有关详细信息，请阅读AI助手中的[产品知识](home.md#product-knowledge)
+
++++
 
 ### 使用AI Assistant整理受众
 
 观看以下视频，了解如何使用AI Assistant去除受众的杂乱并优化营销操作。
 
++++选择以查看一段关于如何使用AI Assistant去除受众杂乱的视频
+
 >[!VIDEO](https://video.tv.adobe.com/v/3435532?learn=on)
+
++++
+
+### 使用可发现性面板帮助您入门
+
+观看以下视频，了解AI助手中的可发现面板，以及如何使用它开始使用AI助手
+
++++选择以查看有关可发现性的视频
+
+>[!VIDEO](https://video.tv.adobe.com/v/3440962/?learn=on)
+
++++
 
 ## AI Assistant用例库
 
@@ -133,6 +159,10 @@ AI Assistant支持Experience Platform、Real-Time CDP、Adobe Journey Optimizer�
 有关AI助手的详细信息，请阅读[Adobe Experience Platform中AI助手的安全情况说明书](https://www.adobe.com/content/dam/cc/en/trust-center/ungated/whitepapers/experience-cloud/adobe-ai-assistant-in-aep-security-fact-sheet.pdf)。
 
 >[!ENDSHADEBOX]
+
+观看以下视频，了解有关AI Assistant安全功能的更多信息：
+
+>[!VIDEO](https://video.tv.adobe.com/v/3441066/?learn=on)
 
 浏览以下链接，以进一步了解AI Assistant用例、功能等。
 
