@@ -4,7 +4,7 @@ title: 使用流服务API导出数据集
 description: 了解如何使用流服务API将数据集导出到所选目标。
 type: Tutorial
 exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
-source-git-commit: c32d2801fe38183225d24f38284b42e3d78e2631
+source-git-commit: 3bce663866e7a6e8288444121331fc931a74076a
 workflow-type: tm+mt
 source-wordcount: '5138'
 ht-degree: 3%
@@ -15,7 +15,7 @@ ht-degree: 3%
 
 >[!AVAILABILITY]
 >
->* 已购买Real-Time CDP Prime和Ultimate软件包、Adobe Journey Optimizer或Customer Journey Analytics的客户可以使用此功能。 有关更多信息，请与您的Adobe代表联系。
+>* 已购买Real-Time CDP Prime和Ultimate软件包、Adobe Journey Optimizer或Customer Journey Analytics的客户可使用此功能。 有关更多信息，请与您的Adobe代表联系。
 
 >[!IMPORTANT]
 >
@@ -38,7 +38,7 @@ ht-degree: 3%
 
 ## 可用于导出的数据集 {#datasets-to-export}
 
-您可以导出的数据集取决于Experience Platform应用程序(Real-Time CDP、Adobe Journey Optimizer)、层（Prime或Ultimate）以及您购买的任何加载项(例如：Data Distiller)。
+您可以导出的数据集取决于Experience Platform应用程序(Real-Time CDP、Adobe Journey Optimizer)、层(Prime或Ultimate)以及您购买的任何加载项(例如：数据Distiller)。
 
 请参阅UI教程页面](/help/destinations/ui/export-datasets.md#datasets-to-export)上的[表以了解可以导出哪些数据集。
 
@@ -996,7 +996,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'x-sandbox-name: <SANDBOX-NAME>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-  "name": "Data Landing Zone(DLZ) Base Connection"
+  "name": "Data Landing Zone Base Connection",
+  "connectionSpec": {
+    "id": "3567r537-2a7b-4583-ac39-ed38d4b848e8",
+    "version": "1.0"
+  }
 }'
 ```
 
