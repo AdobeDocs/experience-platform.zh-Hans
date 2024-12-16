@@ -7,7 +7,7 @@ exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
 source-git-commit: 5d40af5c0645e9e4ee44f0c0c2133f3b3153bcb1
 workflow-type: tm+mt
 source-wordcount: '2908'
-ht-degree: 15%
+ht-degree: 17%
 
 ---
 
@@ -44,8 +44,8 @@ ht-degree: 15%
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_computehours"
->title="预测的计算小时数"
->abstract="您的使用情况可能会达到许可数量。 要评估或缩短计算时间，请导航到查询>日志以查看查询历史记录。 如果您没有访问查询工作区的权限，请联系您的管理员。"
+>title="预测计算小时数"
+>abstract="您的使用量可能已达到已授予许可量。要评估或减少您的计算小时数，请导航至查询>日志以查看您的查询历史记录。如果您无权访问查询工作区，请联系您的管理员。"
 
 您可以通过Adobe Experience Platform [!UICONTROL 许可证使用情况]仪表板查看有关贵组织许可证使用情况的重要信息。 此处显示的信息是在Platform实例的每日快照期间捕获的。
 
@@ -103,14 +103,14 @@ ht-degree: 15%
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseUsage_prediction"
 >title="预测使用量"
->abstract="预测基于过去 6-7 个月的使用情况，并在每个月的 15 日生成。请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解您组织的实际使用情况，并确保使用不超出您与 Adobe 的许可证范围。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据到期设置。"
+>abstract="预测基于过去 6-7 个月的使用情况，并在每个月的 15 日生成。请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解您组织的实际使用情况，并确保使用不超出您与 Adobe 的许可证范围。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
 >additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
 >additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/profile/pseudonymous-profiles" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_licenseusage_prediction"
 >title="预测使用量"
->abstract="预测基于过去 6-7 个月的使用情况，并在每个月的 15 日生成。请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解您组织的实际使用情况，并确保使用不超出您与 Adobe 的许可证范围。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据到期设置。"
+>abstract="预测基于过去 6-7 个月的使用情况，并在每个月的 15 日生成。请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解您组织的实际使用情况，并确保使用不超出您与 Adobe 的许可证范围。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
 >additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
 >additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/profile/pseudonymous-profiles" text="假名轮廓数据过期"
 
