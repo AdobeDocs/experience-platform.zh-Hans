@@ -5,9 +5,9 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: 3a66902ab169c555a52741e3630d2b9f50149155
+source-git-commit: cc9c6f476a2b50e09cc14df915fc4dfa851a3bb9
 workflow-type: tm+mt
-source-wordcount: '1262'
+source-wordcount: '1267'
 ht-degree: 5%
 
 ---
@@ -175,6 +175,8 @@ ht-degree: 5%
       * [SendGrid连接](./catalog/email-marketing/sendgrid.md)
    * 标记扩展{#launch-extensions}
       * [标记扩展概述](./catalog/launch-extensions/overview.md)
+   * 营销自动化{#marketing-automation}
+      * [RainFocus与会者个人资料](/help/destinations/catalog/marketing-automation/rainfocus.md)
    * 移动参与目标{#mobile-engagement}
       * [移动参与目标概述](./catalog/mobile-engagement/overview.md)
       * [飞艇属性连接](./catalog/mobile-engagement/airship-attributes.md)
