@@ -5,9 +5,9 @@ breadcrumb-title: 体验数据模型 (XDM) 指南
 user-guide-description: 概括性地探索 Experience Platform 中的体验数据模型 (XDM) 系统，并了解如何使用类和架构字段组使体验数据标准化。
 feature: Schemas
 role: Developer
-source-git-commit: 3071d16b6b98040ea3f2e3a34efffae517253b8e
+source-git-commit: 25d74df335e3d7930b7f3a4f4836bd20556780ed
 workflow-type: tm+mt
-source-wordcount: '696'
+source-wordcount: '697'
 ht-degree: 44%
 
 ---
@@ -35,6 +35,7 @@ ht-degree: 44%
          * [位置](./schema/healthcare/classes/location.md)
       * 字段组{#field-groups}
          * [帐户](./schema/healthcare/field-groups/account.md)
+         * [约会](./schema/healthcare/field-groups/appointment.md)
          * [保护计划](./schema/healthcare/field-groups/care-plan.md)
          * [覆盖率](./schema/healthcare/field-groups/coverage.md)
          * [目标](./schema/healthcare/field-groups/goal.md)
@@ -190,7 +191,7 @@ ht-degree: 44%
    * [地理形状](./data-types/geo-shape.md)
    * [地理位置交互详细信息](./data-types/geo-interaction-details.md)
    * [地理](./data-types/geo.md)
-   * [标识](./data-types/identity.md)
+   * [身份标识](./data-types/identity.md)
    * [实施详细信息](./data-types/implementation-details.md)
    * [展示次数](./data-types/impressions.md)
    * [内部站点搜索](./data-types/internal-site-search.md)
@@ -241,7 +242,7 @@ ht-degree: 44%
       * [概述](./ui/fields/overview.md)
       * [数组字段](./ui/fields/array.md)
       * [枚举字段](./ui/fields/enum.md)
-      * [标识字段](./ui/fields/identity.md)
+      * [身份标识字段](./ui/fields/identity.md)
       * [地图](./ui/fields/map.md)
       * [对象字段](./ui/fields/object.md)
       * [关系字段](./ui/fields/relationship.md)
