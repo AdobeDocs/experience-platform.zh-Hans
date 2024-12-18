@@ -4,7 +4,8 @@ description: 了解约会架构字段组。
 badgePrivateBeta: label="Private Beta" type="Informative"
 hide: true
 hidefromtoc: true
-source-git-commit: 2a58f6f1663e95c1c7576cd4909fa937b41ae099
+exl-id: 8224a2ee-51ac-4512-b0e4-5f1ab6bfddc4
+source-git-commit: cb39966de77846758c16153f78fcf521f6a421e3
 workflow-type: tm+mt
 source-wordcount: '1227'
 ht-degree: 5%
@@ -120,3 +121,4 @@ ht-degree: 5%
 | 每月的第[!UICONTROL 周] | `nthWeekOfMonth` | [[!UICONTROL 编码]](../data-types/coding.md) | 指示约会应在一个月的第n周。 |
 | [!UICONTROL 日期] | `dayOfMonth` | 整数 | 指示约会应该发生在当月的这一天。 |
 | [!UICONTROL 月间隔] | `monthInterval` | 整数 | 指示定期约会应每隔n个月发生一次。 |
+

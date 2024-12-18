@@ -5,7 +5,7 @@ badgePrivateBeta: label="Private Beta" type="Informative"
 hide: true
 hidefromtoc: true
 exl-id: a796b58b-b36f-4277-870b-0d3939af8061
-source-git-commit: 8520be2a000edfd2d92bfbc6ebed41b1536fffc1
+source-git-commit: cb39966de77846758c16153f78fcf521f6a421e3
 workflow-type: tm+mt
 source-wordcount: '554'
 ht-degree: 3%
@@ -57,3 +57,4 @@ ht-degree: 3%
 | [[!UICONTROL 简单数量]](./data-types/simple-quantity.md) | 可衡量的金额。 |
 | [[!UICONTROL 计时]](./data-types/timing.md) | 有关可能发生多次的事件的信息。 |
 | [[!UICONTROL 虚拟服务详细信息]](./data-types/virtual-service-detail.md) | 虚拟服务联系人详细信息。 |
+
