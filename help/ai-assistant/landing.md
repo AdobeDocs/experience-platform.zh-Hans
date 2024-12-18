@@ -2,9 +2,9 @@
 title: Adobe Experience Platform产品文档中的AI助手
 description: Adobe Experience Platform中的AI助手入门。
 exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
-source-git-commit: 4d89ac33843acd536fbadc85a07bee90a50e6407
+source-git-commit: 38ce83fe0d1c5c558a2e03e0057ac4996097409b
 workflow-type: tm+mt
-source-wordcount: '657'
+source-wordcount: '712'
 ht-degree: 1%
 
 ---
@@ -66,6 +66,14 @@ AI Assistant支持Experience Platform、Real-Time CDP、Adobe Journey Optimizer�
 您可以使用AI Assistant帮助发现Experience Data Model (XDM)字段，然后使用这些字段在Experience Platform中创建目标受众。
 
 [![图像](../rtcdp/assets/do-not-localize/learn-more-button.svg)](./new-features/xdm-field-discovery.md)
+
+>用于客户支持的[!TAB AI助手]
+
+### 客户支持AI助理
+
+您可以使用客户支持的AI Assistant无缝进行故障排除，而无需离开您的工作流。 在需要时，支持管理员现在可以使用客户支持的AI助手创建客户支持工单，以及与AI助手交互时的上下文和会话详细信息。
+
+[![图像](../rtcdp/assets/do-not-localize/learn-more-button.svg)](./new-features/customer-support.md)
 
 >[!ENDTABS]
 

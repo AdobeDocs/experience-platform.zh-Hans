@@ -2,7 +2,8 @@
 title: 客户支持AI助理
 description: 了解如何使用AI Assistant简化故障排除和客户支持票证归档流程。
 badge: Alpha
-source-git-commit: 746c40902a052f99db28a629a8e9c4da0559037f
+exl-id: 263b8a44-8902-42b9-8390-d7da8e9b5129
+source-git-commit: 88c4ba5fd7d5cd4fdd1e1da3f2eac43b03149e5e
 workflow-type: tm+mt
 source-wordcount: '349'
 ht-degree: 0%
@@ -36,7 +37,7 @@ AI Assistant for Customer Support是AI Assistant的一项自助调试和故障�
 * **产品法律文档**，提供准确且面向许可的信息。
    * 示例问题：
       * “在Adobe Experience Platform Activation中批量分段作业的限制是多少？”
-“Adobe Experience Platform Activation中的平均配置文件丰富度限制是多少？”
+      * “Adobe Experience Platform Activation中的平均配置文件丰富度限制是多少？”
 
 ## 支持案例创建
 
