@@ -3,9 +3,9 @@ title: 将数据集导出到云存储目标
 type: Tutorial
 description: 了解如何将数据集从Adobe Experience Platform导出到您首选的云存储位置。
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 9b64e39d25ad94aa834c8e207396b37c2a121243
+source-git-commit: 5624dab337bcd27e28b4153459bb4e85fab22d6f
 workflow-type: tm+mt
-source-wordcount: '2612'
+source-wordcount: '2594'
 ht-degree: 8%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 8%
 
 ## 可用于导出的数据集 {#datasets-to-export}
 
-根据Experience Platform应用程序(Real-Time CDP、Adobe Journey Optimizer)、层（Prime或Ultimate）以及您购买的任何加载项(例如：Data Distiller)，您可以导出的数据集会有所不同。
+根据Experience Platform应用程序(Real-Time CDP、Adobe Journey Optimizer)、层(Prime或Ultimate)以及您购买的任何加载项(例如：数据Distiller)，您可以导出的数据集会有所不同。
 
 使用下表了解根据您的应用程序、产品层和购买的任何加载项，您可以导出哪些数据集类型：
 
@@ -271,7 +271,7 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
 请参阅产品描述文档，了解您每年有权为每个Experience Platform应用程序导出多少数据。 例如，您可以在[此处](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)查看Real-Time CDP产品说明。
 
-请注意，不同应用程序的数据导出权限不是累加的。 例如，这意味着如果您购买Real-Time CDP Ultimate和Adobe Journey Optimizer Ultimate，则根据产品描述，用户档案导出权利将是两个权利中较大的一个权利。 您的批量权利的计算方法是：获取许可配置文件的总数，然后乘以Real-Time CDP Prime的500 KB或Real-Time CDP Ultimate的700 KB，从而确定您有权获得的数据量。
+请注意，不同应用程序的数据导出权限不是累加的。 例如，这意味着如果您购买Real-Time CDP Ultimate和Adobe Journey Optimizer Ultimate，则根据产品描述，配置文件导出权利将是两个权利中的较大者。 您的卷权利的计算方法是：取用您的许可配置文件的总数，然后乘以Real-Time CDP Prime的500 KB或Real-Time CDP Ultimate的700 KB，从而确定您有权获得的数据量。
 
 另一方面，如果您购买了Data Distiller等加载项，则您有权获得的数据导出限制表示产品层和加载项的总和。
 
@@ -281,7 +281,6 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
 对于数据集导出的常规可用性版本，请牢记以下限制：
 
-* 目前，您只能导出增量文件，并且无法为数据集导出选择结束日期。
 * 即使对于小型数据集，Experience Platform也可能导出多个文件。 数据集导出旨在实现系统到系统的集成，并优化了性能，因此无法自定义导出的文件数量。
 * 当前无法自定义导出的文件名。
 * 通过API创建的数据集当前不可导出。

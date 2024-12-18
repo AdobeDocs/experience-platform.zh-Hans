@@ -4,9 +4,9 @@ title: 使用流服务API导出数据集
 description: 了解如何使用流服务API将数据集导出到所选目标。
 type: Tutorial
 exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
-source-git-commit: 3bce663866e7a6e8288444121331fc931a74076a
+source-git-commit: 6f8922f972546d8cceeba63e1bb4d1a75f7ef5c3
 workflow-type: tm+mt
-source-wordcount: '5138'
+source-wordcount: '5146'
 ht-degree: 3%
 
 ---
@@ -2469,6 +2469,10 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 ## API错误处理 {#api-error-handling}
 
 本教程中的API端点遵循常规Experience PlatformAPI错误消息原则。 有关解释错误响应的详细信息，请参阅Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
+
+## 已知限制 {#known-limitations}
+
+查看有关数据集导出的[已知限制](/help/destinations/ui/export-datasets.md#known-limitations)
 
 ## 常见问题 {#faq}
 
