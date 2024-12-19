@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 隐私法规常见问题解答
 description: 本文档提供有关受支持的隐私法规及其在Adobe Experience Cloud中实施的常见问题解答。
 exl-id: ec553e53-664b-4e18-abb1-4e4063fdd2c9
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: d643b2aeadd4080fa89d6a7b0f84a9f6882d7b89
 workflow-type: tm+mt
-source-wordcount: '1631'
+source-wordcount: '1606'
 ht-degree: 1%
 
 ---
@@ -87,7 +87,7 @@ ht-degree: 1%
 | 法规 | 做出响应的时间范围 | 注释 |
 | --- | --- | --- |
 | CCPA （加利福利亚州） | 45 天 | |
-| GDPR（欧盟） | 30 天 | 如果请求复杂，或同一数据主体提出了大量请求，则该请求可以延长到60天。 |
+| GDPR（欧盟） | 30 天 | |
 | LGPD （巴西） | 15 天 | |
 | PDPA （泰国） | 30 天 | 如果公司无法在合规期限内响应数据主体的请求，则从无法履行向数据主体作出书面响应的请求之日算起，公司还有另外30天时间。 |
 
