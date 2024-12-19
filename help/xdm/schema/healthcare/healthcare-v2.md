@@ -5,7 +5,7 @@ badgePrivateBeta: label="Private Beta" type="Informative"
 hide: true
 hidefromtoc: true
 exl-id: a796b58b-b36f-4277-870b-0d3939af8061
-source-git-commit: cb39966de77846758c16153f78fcf521f6a421e3
+source-git-commit: 6d1745b93d2ad7cf6ef96510bd5128a43de9ef03
 workflow-type: tm+mt
 source-wordcount: '554'
 ht-degree: 3%
@@ -26,7 +26,7 @@ ht-degree: 3%
 | **保险的消费者体验**：改善购买保险的消费者的数字获取和体验。 示例包括： <li> 了解消费者向访问包含常规信息（如计划、计划名称/层、Medicaid或健康计划）页面的用户发送促销电子邮件或定向第三方广告的行为</li><li> 向寻找心脏健康和疫苗信息的人发送有关心脏健康的疫苗信息，以建立品牌意识，或请求安排疫苗接种时间。 </li> | <ul><li>**[XDM个人资料](../../classes/individual-profile.md)**：<ul><li>[帐户](./field-groups/account.md)</li><li>[药物分配](./field-groups/medication-dispense.md)</li><li>[药物请求](./field-groups/medication-request.md)</li><li>[患者](./field-groups/patient.md)</li></ul></li><li>**[位置](./classes/location.md)**：<ul><li>[位置](./field-groups/location.md)</li></ul><li>**[药物](../../classes/medication.md)**：<ul><li>[药物](./field-groups/medication.md)</li><li>[药物分配](./field-groups/medication-dispense.md)</li><li>[药物请求](./field-groups/medication-request.md)</li></ul></li><li>**[提供程序](../../classes/provider.md)**：<ul><li>[帐户](./field-groups/account.md)</li><li>[药物分配](./field-groups/medication-dispense.md)</li><li>[药物请求](./field-groups/medication-request.md)</li></ul><li>**[计划](../../classes/plan.md)**：<ul><li>[目标](./field-groups/coverage.md)</li></ul></li></ul> |
 | **增强的提供程序体验**：使用EMR系统中的提供程序数据根据约会可用性、位置和专业建议替代提供程序。<br> <br>改进提供程序搜索以显示具有所需可用性的结果，验证所选提供程序是否为付款人网络的一部分，并提供成本估算。 | <ul><li>**[XDM个人资料](../../classes/individual-profile.md)**：<ul><li>[约会](./field-groups/appointment.md)</li><li>[组织](./field-groups/organization.md)</li><li>[患者](./field-groups/patient.md)</li><li>[从业者](./field-groups/practioner.md)</li><li>[计划](./field-groups/schedule.md)</li></ul></li><li>**[位置](./classes/location.md)**：<ul><li>[位置](./field-groups/location.md)</li></ul><li>**[提供程序](../../classes/provider.md)**：<ul><li>[约会](./field-groups/appointment.md)</li><li>[组织](./field-groups/organization.md)</li><li>[从业者](./field-groups/practioner.md)</li><li>[计划](./field-groups/schedule.md)</li></ul></li></ul> |
 
-{style="table-layout:auto"}
+{style="table-layout:fixed"}
 
 ## 数据类型 {#data-types}
 
