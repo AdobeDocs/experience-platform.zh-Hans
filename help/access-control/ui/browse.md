@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform；主页；热门主题
+keywords: Experience Platform；首页；热门话题
 solution: Experience Platform
 title: 选择产品配置文件以编辑访问控制权限
 description: 本文档介绍了浏览访问控制工作区所需的必要步骤。 要通过Adobe Admin Console配置对Experience Platform的访问控制，您必须是具有订阅Experience Platform的组织的管理员。
 exl-id: 1d3c894e-b412-43ba-ba91-ddfa35303d73
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: ca204a6bdbf867268e774d5db6f8e5941d38f0ae
 workflow-type: tm+mt
 source-wordcount: '302'
-ht-degree: 1%
+ht-degree: 3%
 
 ---
 
@@ -30,3 +30,4 @@ ht-degree: 1%
 ## 后续步骤
 
 导航访问控制工作区后，继续下一步以[创建新的产品配置文件](create-profile.md)
+
