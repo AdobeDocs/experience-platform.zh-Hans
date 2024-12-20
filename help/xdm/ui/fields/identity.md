@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中定义标识字段
 description: 了解如何在Experience Platform用户界面中定义标识字段。
 exl-id: 11a53345-4c3f-4537-b3eb-ee7a5952df2a
-source-git-commit: 6020f1c294f123cbf57629405128580efc5642ec
+source-git-commit: 0d16bbbaf81b2057c6b3518a5b8a8698920c36f7
 workflow-type: tm+mt
-source-wordcount: '609'
+source-wordcount: '651'
 ht-degree: 6%
 
 ---
@@ -43,6 +43,10 @@ ht-degree: 6%
 在&#x200B;**[!UICONTROL 身份命名空间]**&#x200B;下，使用下拉菜单为身份字段选择适当的命名空间。 列出了Adobe提供的标准命名空间以及您的组织定义的任何自定义命名空间。
 
 完成后，选择&#x200B;**[!UICONTROL 应用]**&#x200B;以将更改应用到架构。
+
+>[!IMPORTANT]
+>
+>如果已设置主标识字段，则可以按照上述步骤更改架构中的主标识字段。 但是，您必须先禁用配置文件中的任何关联数据集，然后再重新启用它们，更改才会生效。
 
 ![](../../images/ui/fields/special/identity-config.png)
 
