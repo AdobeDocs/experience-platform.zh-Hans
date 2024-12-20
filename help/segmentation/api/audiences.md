@@ -3,9 +3,9 @@ title: 受众API端点
 description: 使用Adobe Experience Platform分段服务API中的受众端点，以编程方式创建、管理和更新贵组织的受众。
 role: Developer
 exl-id: cb1a46e5-3294-4db2-ad46-c5e45f48df15
-source-git-commit: 9c50ca0db55ce4b21978273d7b4d1de9b5f9338d
+source-git-commit: 260d63d5eebd62cc5a617fccc189af52fd4d0b09
 workflow-type: tm+mt
-source-wordcount: '1438'
+source-wordcount: '1452'
 ht-degree: 2%
 
 ---
@@ -45,6 +45,7 @@ GET /audiences?{QUERY_PARAMETERS}
 | `property` | 允许您指定&#x200B;**与**&#x200B;属性值完全匹配的受众的筛选器。 这是以`property=`格式编写的 | `property=audienceId==test-audience-id` |
 | `name` | 允许您指定其名称&#x200B;**包含**&#x200B;所提供值的受众的筛选器。 此值不区分大小写。 | `name=Sample` |
 | `description` | 用于指定其描述&#x200B;**包含**&#x200B;所提供值的受众的筛选器。 此值不区分大小写。 | `description=Test Description` |
+| `entityType` | 允许您指定所查找的受众类型的过滤器。 | `entityType=_xdm.context.account` |
 
 **请求**
 

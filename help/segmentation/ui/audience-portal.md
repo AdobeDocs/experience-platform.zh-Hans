@@ -2,9 +2,9 @@
 title: 受众门户概述
 description: 了解如何使用Audience Portal在Adobe Experience Platform中查看、管理和创建受众。
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: 1aa10d9cbde66a174ddc64ba9ce11149436393c1
+source-git-commit: 260d63d5eebd62cc5a617fccc189af52fd4d0b09
 workflow-type: tm+mt
-source-wordcount: '4557'
+source-wordcount: '4571'
 ht-degree: 4%
 
 ---
@@ -249,7 +249,7 @@ abstract="您可以在一次灵活的受众评估中评估最多 20 位受众。
 
 >[!NOTE]
 >
-如果您对已设置为在区段评估](../../destinations/ui/activate-batch-profile-destinations.md#export-full-files)后[激活的受众运行灵活的受众评估，则无论之前执行过任何每日激活作业，灵活的受众评估作业都会在完成后立即激活受众。
+如果您运行灵活的受众评估，则需要确保将频率设置为&#x200B;**[!UICONTROL 在区段评估后]**。 对已设置为在区段评估](../../destinations/ui/activate-batch-profile-destinations.md#export-full-files)后[激活的受众运行灵活的受众评估，将在灵活的受众评估作业完成后立即激活受众，而不考虑任何之前的每日激活作业。
 
 ## 受众详情 {#audience-details}
 

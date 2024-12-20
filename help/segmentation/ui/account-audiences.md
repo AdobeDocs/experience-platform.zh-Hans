@@ -4,9 +4,9 @@ description: 了解如何创建和使用帐户受众，以便在下游目标中�
 badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 047930d6-939f-4418-bbcb-8aafd2cf43ba
-source-git-commit: fd0a495d68d6a09ccca66c400993d2e72673321c
+source-git-commit: 260d63d5eebd62cc5a617fccc189af52fd4d0b09
 workflow-type: tm+mt
-source-wordcount: '1518'
+source-wordcount: '1495'
 ht-degree: 21%
 
 ---
@@ -195,10 +195,6 @@ ht-degree: 21%
 >abstract="受众违反了约束。请参阅链接的文档以了解更多详细信息。"
 
 使用帐户受众时，受众&#x200B;**必须**&#x200B;符合以下约束：
-
->[!NOTE]
->
->以下列表显示了帐户受众的&#x200B;**default**&#x200B;约束。 这些值&#x200B;**可能**&#x200B;会发生变化，具体取决于组织管理员实施的设置。
 
 - 体验事件的最大回顾时间范围为&#x200B;**30天**。
 - 嵌套容器的最大深度为&#x200B;**5**。
