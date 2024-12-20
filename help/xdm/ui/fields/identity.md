@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中定义标识字段
 description: 了解如何在Experience Platform用户界面中定义标识字段。
 exl-id: 11a53345-4c3f-4537-b3eb-ee7a5952df2a
-source-git-commit: d1b571fe72208cf2f2ae339273f05cc38dda9845
+source-git-commit: 6020f1c294f123cbf57629405128580efc5642ec
 workflow-type: tm+mt
 source-wordcount: '609'
 ht-degree: 6%
@@ -23,11 +23,11 @@ ht-degree: 6%
    * [身份命名空间](../../../identity-service/features/namespaces.md)：身份命名空间定义可以与单个人员相关的不同类型的身份信息，并且是每个身份字段的必需组件。
 * [实时客户个人资料](../../../profile/home.md)：利用客户身份图根据来自多个来源的汇总数据提供近乎实时更新的统一客户个人资料。
 
-## 定义标识字段 {#define-a-identity-field}
+## 定义身份标识字段 {#define-a-identity-field}
 
 >[!CONTEXTUALHELP]
 >id="platform_schemas_identityField_primaryIdentityRestriction"
->title="对主要标识的限制"
+>title="对主要身份标识的限制"
 >abstract="此标识使用旨在用于特定源连接的字段组。该连接要求将 identityMap 用作主要标识并已自动设置。"
 
 在UI中[定义新字段](./overview.md#define)时，您可以通过选中右边栏中的&#x200B;**[!UICONTROL 标识]**&#x200B;复选框将其设置为标识字段。
@@ -59,3 +59,4 @@ ht-degree: 6%
 本指南介绍了如何在UI中定义标识字段。 使用此架构摄取数据时，您的客户身份图将进行更新以反映架构的身份字段。 请参阅[身份图形查看器](../../../identity-service/features/identity-graph-viewer.md)上的指南，了解如何在UI中浏览组织的专用图形。
 
 请参阅[在UI](./overview.md#special)中定义字段的概述，了解如何在[!DNL Schema Editor]中定义其他XDM字段类型。
+
