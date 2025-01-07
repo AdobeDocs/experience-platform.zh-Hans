@@ -2,9 +2,9 @@
 title: Adobe Experience Platform产品文档中的AI助手
 description: Adobe Experience Platform中的AI助手入门。
 exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
-source-git-commit: 38ce83fe0d1c5c558a2e03e0057ac4996097409b
+source-git-commit: 9a8b1527f932e8b0091af7fb999ed638e28de2d0
 workflow-type: tm+mt
-source-wordcount: '712'
+source-wordcount: '790'
 ht-degree: 1%
 
 ---
@@ -125,6 +125,20 @@ AI Assistant支持Experience Platform、Real-Time CDP、Adobe Journey Optimizer�
 
 >[!VIDEO](https://video.tv.adobe.com/v/3440962/?learn=on)
 
+### 使用AI Assistant验证响应
+
+观看以下视频，了解如何使用AI Assistant验证和验证响应。
+
+>[!VIDEO](https://video.tv.adobe.com/v/3441738/?learn=on)
+
+有关详细信息，请阅读有关[验证AI助手答案](ui-guide.md#verify-operational-insights-responses)的文档。
+
+### 使用AI助手进行影响分析
+
+观看以下视频，了解如何使用AI Assistant在数据对象发生任何更改之前执行更有效的影响分析。
+
+>[!VIDEO](https://video.tv.adobe.com/v/3441680/?learn=on)
+
 ## AI Assistant用例库
 
 >[!BEGINTABS]
@@ -136,6 +150,7 @@ AI Assistant支持Experience Platform、Real-Time CDP、Adobe Journey Optimizer�
 * [缩短团队新成员的入门时间](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/onboard-new-team-members-in-less-than-half-the-time-with-ai/ba-p/706153)
 * [清理受众并优化营销操作](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-helps-optimize-marketing-operations-by-de/ba-p/696002)
 * [检查依赖关系并在数据更新期间将风险降至最低](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-minimizes-risk-during-data-updates-by-checking/ba-p/713364)
+* [通过检查依赖关系（以秒为单位）将数据更新期间的风险降至最低](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-minimizes-risk-during-data-updates-by-checking/ba-p/713364)
 
 >[!TAB 其他视频内容]
 
