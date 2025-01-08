@@ -1,10 +1,10 @@
 ---
-title: Salesforce Source连接器概述
+title: Salesforce Source Connector概述
 description: 了解如何使用API或用户界面将Salesforce连接到Adobe Experience Platform。
 exl-id: 597778ad-3cf8-467c-ad5b-e2850967fdeb
-source-git-commit: 5d28db34edd377269e8710b1741098a08616ae5f
+source-git-commit: 258e54b969e7b392eec97459e0a51931f2109fe7
 workflow-type: tm+mt
-source-wordcount: '864'
+source-wordcount: '1483'
 ht-degree: 0%
 
 ---
@@ -65,7 +65,7 @@ Experience Platform支持从第三方CRM系统中摄取数据。 CRM提供商的
 | `munchkinId` | [!DNL Marketo]帐户的唯一ID。 有关如何检索`munchkinId`的信息，请参阅[验证 [!DNL Marketo] 实例](../adobe-applications/marketo/marketo-auth.md)的教程。 | `123-ABC-456` |
 | `sfdc_org_id` | 您的[!DNL Salesforce]帐户的组织ID。 有关获取[!DNL Salesforce]组织ID的更多信息，请参阅以下[[!DNL Salesforce] 指南](https://help.salesforce.com/articleView?id=000325251&amp;type=1&amp;mode=1)。 | `00D4W000000FgYJUA0` |
 | `has_abm` | 一个布尔值，指示您是否订阅了[!DNL Marketo Account-Based Marketing]。 | `false` |
-| `has_msi` | 指示您是否订阅[!DNL Marketo Sales Insight]的布尔值。 | `false` |
+| `has_msi` | 一个布尔值，指示您是否订阅了[!DNL Marketo Sales Insight]。 | `false` |
 
 {style="table-layout:auto"}
 
@@ -83,7 +83,183 @@ Experience Platform支持从第三方CRM系统中摄取数据。 CRM提供商的
 
 成功的请求将根据测试版规范创建B2B命名空间和架构。
 
-## 使用API将[!DNL Salesforce]连接到平台
+## 设置您的[!DNL Salesforce]源以便在Amazon Web Services上Experience Platform {#aws}
+
+>[!AVAILABILITY]
+>
+>本节适用于在Amazon Web Services (AWS)上运行的Experience Platform的实施。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform多云概述](../../../landing/multi-cloud.md)。
+
+请按照以下步骤了解如何设置您的[!DNL Salesforce]帐户以在Amazon Web Services (AWS)上Experience Platform。
+
+### 先决条件
+
+要将您的[!DNL Salesforce]帐户连接到AWS地区的Experience Platform，您必须具备以下条件：
+
+- 具有API访问权限的[!DNL Salesforce]帐户。
+- 随后可用于启用JWT_BEARER OAuth流的[!DNL Salesforce Connected App]。
+- [!DNL Salesforce]中访问数据所需的权限。
+
+列入允许列表您还必须将以下IP地址添加到IP帐户，以将您的[!DNL Salesforce]帐户连接到Amazon Web Services (AWS)上的Experience Platform：
+
+- `34.193.63.59`
+- `44.217.93.240`
+- `44.194.79.229`
+
+### 创建[!DNL Salesforce Connected App]
+
+首先，使用以下内容创建PEM文件的证书/密钥对。
+
+```shell
+openssl req -newkey rsa:4096 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem  
+```
+
+1. 在[!DNL Salesforce]仪表板中，选择设置(![设置图标。](/help/images/icons/settings.png))，然后选择&#x200B;**[!DNL Setup]**。
+2. 导航到[!DNL App Manager]，然后选择&#x200B;**[!DNL New Connection App]**。
+3. 为应用程序提供一个名称，并允许自动填写其余字段。
+4. 为[!DNL Enable OAuth Settings]启用该框。
+5. 设置回调URL。 由于这不会用于JWT，因此您可以使用`https://localhost`。
+6. 为[!DNL Use Digital Signatures]启用该框。
+7. 上载先前创建的cert.perm文件。
+
+#### 添加所需权限
+
+添加以下权限：
+
+1. 通过API (api)管理用户数据
+2. 访问自定义权限(custom_permissions)
+3. 访问身份URL服务（id、个人资料、电子邮件、地址、电话）
+4. 访问唯一标识符(openid)
+5. 随时执行请求(refresh_token、offline_access)
+
+添加权限后，请确保为&#x200B;**[!DNL Issue JSON Web Token (JWT)-based access tokens for named user]**&#x200B;启用该框。
+
+接下来，依次选择&#x200B;**[!DNL Save]**、**[!DNL Continue]**&#x200B;和&#x200B;**[!DNL Manage Customer Details]**。 使用使用者详细信息面板检索以下内容：
+
+- **使用者密钥**：稍后在对要Experience Platform的[!DNL Salesforce]帐户进行身份验证时，您将使用此使用者密钥作为您的客户端ID。
+- **使用者密码**：稍后在向Experience Platform验证您的[!DNL Salesforce]帐户时，您将使用此使用者密码作为您的客户端ID。
+
+### 授权您的[!DNL Salesforce]用户访问连接的应用程序
+
+请按照以下步骤获得使用连接的应用程序的授权：
+
+1. 导航到&#x200B;**[!DNL Manage Connected Apps]**。
+2. 选择 **[!DNL Edit]**。
+3. 将&#x200B;**[!DNL Permitted Users]**&#x200B;配置为&#x200B;**[!DNL Admin approved users are pre-authorized]**，然后选择&#x200B;**[!DNL Save]**。
+4. 导航到&#x200B;**[!DNL Settings]> [!DNL Manage Users] >[!DNL Profiles]**。
+5. 编辑与用户关联的配置文件。
+6. 导航到&#x200B;**[!DNL Connected App Access]**，然后选择在之前的步骤中创建的应用程序。
+
+### 生成JWT持有者令牌
+
+请按照以下步骤生成JWT持有者令牌。
+
+#### 将密钥对转换为pkcs12
+
+要生成JWT持有者令牌，您必须首先使用以下命令将证书/密钥对转换为pkcs12格式。 在此步骤中，您还必须在出现提示时&#x200B;**设置导出密码**。
+
+```shell
+openssl pkcs12 -export -in cert.pem -inkey key.pem -name jwtcert >jwtcert.p12
+```
+
+#### 基于pkcs12创建Java密钥库
+
+接下来，使用以下命令基于刚刚生成的pkcs12创建Java密钥库。 在此步骤中，您还必须在出现提示时&#x200B;**设置目标密钥库密码**。 此外，您必须提供以前的导出密码作为源密钥库密码。
+
+```shell
+keytool -importkeystore -srckeystore jwtcert.p12 -destkeystore keystore.jks -srcstoretype pkcs12 -alias jwtcert
+```
+
+#### 确认您的keystroke.jks包含jwtcert别名
+
+接下来，使用以下命令确认您的`keystroke.jks`包含`jwtcert`别名。 在此步骤中，系统将提示您提供上一步中生成的目标密钥库密码。
+
+```shell
+keytool -keystore keystore.jks -list
+```
+
+#### 生成签名令牌
+
+最后，使用下面的java类JWTExample生成您的签名令牌。
+
+```java
+package org.example;
+ 
+import org.apache.commons.codec.binary.Base64;
+ 
+import java.io.*;
+import java.security.*;
+import java.text.MessageFormat;
+ 
+public class Main {
+ 
+    public static void main(String[] args) {
+ 
+        String header = "{\"alg\":\"RS256\"}";
+        String claimTemplate = "'{'\"iss\": \"{0}\", \"sub\": \"{1}\", \"aud\": \"{2}\", \"exp\": \"{3}\"'}'";
+ 
+        try {
+            StringBuffer token = new StringBuffer();
+ 
+            //Encode the JWT Header and add it to our string to sign
+            token.append(Base64.encodeBase64URLSafeString(header.getBytes("UTF-8")));
+ 
+            //Separate with a period
+            token.append(".");
+ 
+            //Create the JWT Claims Object
+            String[] claimArray = new String[5];
+            claimArray[0] = "{CLIENT_ID}";
+            claimArray[1] = "{AUTHORIZED_SALESFORCE_USERNAME}";
+            claimArray[2] = "{SALESFORCE_LOGIN_URL}";
+            claimArray[3] = Long.toString((System.currentTimeMillis() / 1000) + 2629746*4);
+            MessageFormat claims;
+            claims = new MessageFormat(claimTemplate);
+            String payload = claims.format(claimArray);
+ 
+            //Add the encoded claims object
+            token.append(Base64.encodeBase64URLSafeString(payload.getBytes("UTF-8")));
+ 
+            //Load the private key from a keystore
+            KeyStore keystore = KeyStore.getInstance("JKS");
+            keystore.load(new FileInputStream("path/to/keystore"), "keystorepassword".toCharArray());
+            PrivateKey privateKey = (PrivateKey) keystore.getKey("jwtcert", "privatekeypassword".toCharArray());
+ 
+            //Sign the JWT Header + "." + JWT Claims Object
+            Signature signature = Signature.getInstance("SHA256withRSA");
+            signature.initSign(privateKey);
+            signature.update(token.toString().getBytes("UTF-8"));
+            String signedPayload = Base64.encodeBase64URLSafeString(signature.sign());
+ 
+            //Separate with a period
+            token.append(".");
+ 
+            //Add the encoded signature
+            token.append(signedPayload);
+ 
+            System.out.println(token.toString());
+ 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+| 属性 | 配置 |
+| --- | --- |
+| `claimArray[0]` | 使用您的客户端ID更新`claimArray[0]`。 |
+| `claimArray[1]` | 使用针对应用程序授权的[!DNL Salesforce]用户名更新`claimArray[1]`。 |
+| `claimArray[2]` | 使用您的[!DNL Salesforce]登录URL更新`claimArray[2]`。 |
+| `claimArray[3]` | 用自纪元以来毫秒的格式设置过期日期更新`claimArray[3]`。 例如，`3660624000000`为12-31-2085。 |
+| `/path/to/keystore` | 将`/path/to/keystore`替换为您的keystore.jks的正确路径 |
+| `keystorepassword` | 将`keystorepassword`替换为您的目标密钥库密码。 |
+| `privatekeypassword` | 将`privatekeypassword`替换为您的源密钥库密码。 |
+
+## 后续步骤
+
+完成为[!DNL Salesforce]帐户设置的先决条件后，您可以继续连接[!DNL Salesforce]帐户以Experience Platform和摄取CRM数据。 有关详细信息，请阅读下面的文档：
+
+### 使用API将[!DNL Salesforce]连接到平台
 
 以下文档提供了有关如何使用API或用户界面将[!DNL Salesforce]连接到Platform的信息：
 
@@ -91,7 +267,7 @@ Experience Platform支持从第三方CRM系统中摄取数据。 CRM提供商的
 - [使用流服务API浏览数据表](../../tutorials/api/explore/tabular.md)
 - [使用流服务API为CRM源创建数据流](../../tutorials/api/collect/crm.md)
 
-## 使用UI将[!DNL Salesforce]连接到平台
+### 使用UI将[!DNL Salesforce]连接到平台
 
 - [在UI中创建Salesforce源连接](../../tutorials/ui/create/crm/salesforce.md)
 - [在用户界面中为CRM连接创建数据流](../../tutorials/ui/dataflow/crm.md)
