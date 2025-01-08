@@ -3,9 +3,9 @@ title: Amazon Redshift Source连接器概述
 description: 了解如何使用API或用户界面将Amazon Redshift连接到Adobe Experience Platform。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 75e577dd-a0b0-4f82-a371-5ec9255544f8
-source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
+source-git-commit: dbeeab9182ae67e5c9c691707faeddf04f4e94b2
 workflow-type: tm+mt
-source-wordcount: '249'
+source-wordcount: '308'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,17 @@ Experience Platform支持从第三方数据库引入数据。 Platform可以连�
 
 在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 有关详细信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md)页。
 
-以下文档提供了有关如何使用API或用户界面将[!DNL Amazon Redshift]连接到Platform的信息：
+## 设置您的[!DNL Amazon Redshift]源以便在Amazon Web Services上Experience Platform {#aws}
+
+>[!AVAILABILITY]
+>
+>本节适用于在Amazon Web Services (AWS)上运行的Experience Platform的实施。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform多云概述](../../../landing/multi-cloud.md)。
+
+将以下IP地址添加到您的IP允许列表，以将您的[!DNL Amazon Redshift]帐户连接到Amazon Web Services (AWS)上的Experience Platform：
+
+- `34.193.63.59`
+- `44.217.93.240`
+- `44.194.79.229`
 
 ## 使用API将[!DNL Amazon Redshift]连接到平台
 
