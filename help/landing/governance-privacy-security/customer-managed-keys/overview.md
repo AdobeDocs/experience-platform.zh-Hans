@@ -4,9 +4,9 @@ description: 了解如何为Adobe Experience Platform中存储的数据设置您
 role: Developer
 feature: Privacy
 exl-id: cd33e6c2-8189-4b68-a99b-ec7fccdc9b91
-source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
+source-git-commit: f2737355ca0652f434bd5f86acc65139f767e56f
 workflow-type: tm+mt
-source-wordcount: '752'
+source-wordcount: '828'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 # Adobe Experience Platform中的客户管理的密钥
 
 存储在Adobe Experience Platform上的数据使用系统级别密钥静态加密。 如果您使用的是基于Platform构建的应用程序，则可以选择使用自己的加密密钥，从而更好地控制数据安全。
+
+>[!AVAILABILITY]
+>
+>如果您的Experience Platform实施在Amazon Web Services (AWS)上运行，则您可以选择使用密钥管理服务(KMS)进行平台数据加密。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform多云概述](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud)。 要了解如何在AWS KMS中创建和管理加密密钥，请参阅[AWS KMS数据加密指南](../key-management-service/overview.md)。
 
 >[!NOTE]
 >

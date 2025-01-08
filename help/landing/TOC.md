@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Adobe Experience Platform 概述
 breadcrumb-title: Experience Platform 概述
 user-guide-description: 通过指南、文档和教程了解 Experience Platform 如何让实时地为客户投放个性化体验成为可能。
-source-git-commit: dde5c1367706d015308ebea687d7f2a41947fb20
+source-git-commit: 37a94874d2c104c753b0f1efbae20c1cce0b29f3
 workflow-type: tm+mt
-source-wordcount: '282'
-ht-degree: 24%
+source-wordcount: '288'
+ht-degree: 25%
 
 ---
 
@@ -71,6 +71,8 @@ ht-degree: 24%
       * [配置Azure密钥库](./governance-privacy-security/customer-managed-keys/azure-key-vault-config.md)
       * [使用API设置CMK](./governance-privacy-security/customer-managed-keys/api-set-up.md)
       * [使用用户界面设置CMK](./governance-privacy-security/customer-managed-keys/ui-set-up.md)
+   * 密钥管理服务{#key-management-service}
+      * [密钥管理服务](./governance-privacy-security/key-management-service/overview.md)
 * 许可证使用和护栏{#license}
    * [数据管理许可证权利最佳实践](./license-usage-and-guardrails/data-management-best-practices.md)
    * [许可证用量仪表板](./license-usage-and-guardrails/license-usage-dashboard.md)
