@@ -3,10 +3,10 @@ keywords: linkedin连接；linkedin连接；linkedin目标；linkedin；
 title: Linkedin匹配的受众连接
 description: 基于哈希电子邮件激活LinkedIn营销活动的配置文件，以实现受众定位、个性化和抑制。
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
-source-git-commit: 74d7c48042b0d2b938705b588c185f3c3f96f1cd
+source-git-commit: 4f82aab78e74cb7cdd76b603a1e182fbd7fe627c
 workflow-type: tm+mt
-source-wordcount: '1095'
-ht-degree: 4%
+source-wordcount: '1201'
+ht-degree: 3%
 
 ---
 
@@ -118,6 +118,22 @@ Adobe Experience Platform UI中的![LinkedIn目标](../../assets/catalog/social/
 2. 选择&#x200B;**[!UICONTROL 连接到目标]**。
    ![向LinkedIn进行身份验证](/help/destinations/assets/catalog/social/linkedin/authenticate-linkedin-destination.png)
 3. 输入您的LinkedIn凭据并选择&#x200B;**登录**。
+
+### 刷新身份验证凭据 {#refresh-authentication-credentials}
+
+linkedIn令牌每60天过期一次。 令牌过期后，数据导出到目标的操作将停止。 要防止出现这种情况，请执行以下步骤以重新进行身份验证：
+
+1. 导航到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 帐户]**
+2. （可选）使用页面上可用的过滤器以仅显示LinkedIn帐户。
+   ![筛选以仅显示LinkedIn帐户](/help/destinations/assets/catalog/social/linkedin/refresh-oauth-filters.png)
+3. 选择要刷新的帐户，选择省略号并选择&#x200B;**[!UICONTROL 编辑详细信息]**。
+   ![选择“编辑详细信息”控件](/help/destinations/assets/catalog/social/linkedin/refresh-oauth-edit-details.png)
+4. 在模式窗口中，选择&#x200B;**[!UICONTROL 重新连接OAuth]**并使用您的LinkedIn凭据重新进行身份验证。
+   使用Reconnect OAuth选项的![模式窗口](/help/destinations/assets/catalog/social/linkedin/reconnect-oauth-control.png)
+
+>[!SUCCESS]
+> 
+>您的身份验证凭据已刷新，其过期时间将重置为60天。
 
 ### 填写目标详细信息 {#destination-details}
 

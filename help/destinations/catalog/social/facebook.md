@@ -3,9 +3,9 @@ keywords: facebook连接；facebook连接；facebook目标；facebook；instagra
 title: facebook连接
 description: 根据散列邮件激活 Facebook 营销活动的轮廓，以实现受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 742801c31a0371feb42df2c98b3a4ddb63ae2f48
+source-git-commit: 83e2c014e62509fee2843505d7975cde368665ef
 workflow-type: tm+mt
-source-wordcount: '1985'
+source-wordcount: '2091'
 ht-degree: 6%
 
 ---
@@ -151,6 +151,22 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 2. 选择&#x200B;**[!UICONTROL 连接到目标]**。
    ![对激活工作流中显示的Facebook步骤进行身份验证。](/help/destinations/assets/catalog/social/facebook/authenticate-facebook-destination.png)
 3. 输入您的Facebook凭据并选择&#x200B;**登录**。
+
+### 刷新身份验证凭据 {#refresh-authentication-credentials}
+
+facebook令牌每60天过期一次。 令牌过期后，数据导出到目标的操作将停止。 要防止出现这种情况，请执行以下步骤以重新进行身份验证：
+
+1. 导航到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 帐户]**
+2. （可选）使用页面上可用的过滤器以仅显示Facebook帐户。
+   ![筛选以仅显示Facebook帐户](/help/destinations/assets/catalog/social/facebook/refresh-oauth-filters.png)
+3. 选择要刷新的帐户，选择省略号并选择&#x200B;**[!UICONTROL 编辑详细信息]**。
+   ![选择“编辑详细信息”控件](/help/destinations/assets/catalog/social/facebook/refresh-oauth-edit-details.png)
+4. 在模式窗口中，选择&#x200B;**[!UICONTROL 重新连接OAuth]**并使用您的Facebook凭据重新进行身份验证。
+   使用Reconnect OAuth选项的![模式窗口](/help/destinations/assets/catalog/social/facebook/reconnect-oauth-control.png)
+
+>[!SUCCESS]
+> 
+>您的身份验证凭据已刷新，其过期时间将重置为60天。
 
 ### 填写目标详细信息 {#destination-details}
 
