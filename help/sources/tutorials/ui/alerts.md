@@ -3,18 +3,14 @@ keywords: Experience Platform；主页；热门主题；警报
 description: 您可以在创建数据流时订阅警报，以接收有关流运行的状态、成功或失败的警报消息。
 title: 在UI中订阅上下文警报
 exl-id: 5d51edaa-ecba-4ac0-8d3c-49010466b9a5
-source-git-commit: 9120377f5f2048579d7e2a4740cfcbc56d49d61a
+source-git-commit: 0165aa60ca865c6d1cf269b16068dffa9349214c
 workflow-type: tm+mt
-source-wordcount: '842'
+source-wordcount: '819'
 ht-degree: 7%
 
 ---
 
 # 订阅UI中源数据流的警报
-
->[!NOTE]
->
->在非生产沙盒中不支持警报。 要订阅警报，您必须确保使用生产沙盒。
 
 通过Adobe Experience Platform，可订阅有关Adobe Experience Platform活动的基于事件的警报。 警报可减少或消除轮询[[!DNL Observability Insights] API](../../../observability/api/overview.md)以检查作业是否已完成、是否已达到工作流中的某个里程碑或是否已发生任何错误的需要。
 
