@@ -4,14 +4,18 @@ solution: Experience Platform
 title: HTTP API Source连接器概述
 description: 了解如何使用API或用户界面创建流连接器以与Adobe Experience Platform连接。
 exl-id: 41e079f3-75b2-4033-8138-73162c31461a
-source-git-commit: 1127e85852b56cc9db3d1d0d483c1780c961b0bc
+source-git-commit: ee659ded9701132b12d5b93672b4c958e9720028
 workflow-type: tm+mt
-source-wordcount: '165'
+source-wordcount: '210'
 ht-degree: 0%
 
 ---
 
 # [!DNL HTTP API]连接器
+
+>[!IMPORTANT]
+>
+>在Amazon Web Services (AWS)上运行Adobe Experience Platform时，您现在可以使用[!DNL HTTP API]源。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform多云概述](../../../landing/multi-cloud.md)。
 
 Adobe Experience Platform允许从外部源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 

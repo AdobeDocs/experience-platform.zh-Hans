@@ -3,9 +3,9 @@ title: Amazon Redshift Source连接器概述
 description: 了解如何使用API或用户界面将Amazon Redshift连接到Adobe Experience Platform。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 75e577dd-a0b0-4f82-a371-5ec9255544f8
-source-git-commit: dbeeab9182ae67e5c9c691707faeddf04f4e94b2
+source-git-commit: 84d09038ded1f35269ebf67c6bc1a5dacaafe4ac
 workflow-type: tm+mt
-source-wordcount: '308'
+source-wordcount: '351'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,10 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Amazon Redshift]源在源目录中可供已购买Real-time Customer Data Platform Ultimate的用户使用。
+>- [!DNL Amazon Redshift]源在源目录中可供已购买Real-Time CDP Ultimate的用户使用。
+>
+>- 在Amazon Web Services (AWS)上运行Adobe Experience Platform时，您现在可以使用[!DNL Amazon Redshift]源。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform多云概述](../../../landing/multi-cloud.md)。
+
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 

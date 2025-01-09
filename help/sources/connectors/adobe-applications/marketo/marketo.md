@@ -4,14 +4,18 @@ solution: Experience Platform
 title: Marketo Engage连接器
 description: 本文档提供了Marketo Engage源连接器的概述，包括有关其身份验证、映射和数据延迟的信息。
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: 0c695e11e7d7c14ef7e047cd007668e1099bf127
+source-git-commit: 37e23b060c34c628b2be80256cffd1480c899ce7
 workflow-type: tm+mt
-source-wordcount: '683'
+source-wordcount: '728'
 ht-degree: 1%
 
 ---
 
 # [!DNL Marketo Engage]连接器
+
+>[!IMPORTANT]
+>
+>在Amazon Web Services (AWS)上运行Adobe Experience Platform时，您现在可以使用[!DNL Marketo Engage]源。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform多云概述](../../../../landing/multi-cloud.md)。
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 
@@ -21,7 +25,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 >[!IMPORTANT]
 >
->您必须有权访问[Adobe Real-time Customer Data Platform B2B Edition](../../../../rtcdp/b2b-overview.md)，才能将所有Marketo数据集与[实时客户个人资料](../../../../profile/home.md)一起用于分段。 如果没有Real-Time CDP B2B版本，您仍可以使用Marketo源将人员和活动数据集中的数据引入Real-time Customer Profile以进行分段。
+>您必须有权访问[Adobe Real-time Customer Data Platform B2B edition](../../../../rtcdp/b2b-overview.md)，才能将所有Marketo数据集与[实时客户个人资料](../../../../profile/home.md)一起用于分段。 如果没有Real-Time CDP B2B edition，您仍可以使用Marketo源将人员和活动数据集中的数据引入实时客户档案以进行分段。
 
 本文档提供了[!DNL Marketo Engage]源连接器的概述，包括有关如何对连接器进行身份验证、如何将[!DNL Marketo Engage]字段映射到体验数据模型(XDM)以及连接器的数据延迟的信息。
 

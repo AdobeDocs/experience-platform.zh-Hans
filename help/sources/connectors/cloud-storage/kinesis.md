@@ -3,10 +3,10 @@ title: Amazon Kinesis Source连接器概述
 description: 了解如何使用API或用户界面将Amazon Kinesis连接到Adobe Experience Platform。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b71fc922-7722-4279-8fc6-e5d7735e1ebb
-source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
+source-git-commit: 84d09038ded1f35269ebf67c6bc1a5dacaafe4ac
 workflow-type: tm+mt
-source-wordcount: '486'
-ht-degree: 1%
+source-wordcount: '529'
+ht-degree: 0%
 
 ---
 
@@ -14,7 +14,10 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->[!DNL Amazon Kinesis]源在源目录中可供已购买Real-time Customer Data Platform Ultimate的用户使用。
+>- [!DNL Amazon Kinesis]源在源目录中可供已购买Real-Time CDP Ultimate的用户使用。
+>
+>- 在Amazon Web Services (AWS)上运行Adobe Experience Platform时，您现在可以使用[!DNL Amazon Kinesis]源。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform多云概述](../../../landing/multi-cloud.md)。
+
 
 Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等云提供商提供本机连接。 您可以将来自这些系统的数据导入[!DNL Platform]。
 
