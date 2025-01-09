@@ -2,9 +2,9 @@
 title: Adobe Experience Platform的人工智能助手
 description: 了解如何使用AI Assistant导航和了解Experience Platform和Real-time Customer Data Platform概念以及有关您的对象的使用信息。
 exl-id: 3fed2b1d-75fc-47ce-98d1-a811eb8a1d8e
-source-git-commit: 6f95cae48b0f4c304eb3dbd2d95e01e00e0f01c9
+source-git-commit: 0ee9135b2b303f4abcc4d5e5c7345e2bff9332f3
 workflow-type: tm+mt
-source-wordcount: '1505'
+source-wordcount: '1759'
 ht-degree: 0%
 
 ---
@@ -75,10 +75,6 @@ AI Assistant会更新界面，并为您提供可证实初始响应的文档的�
 
 ![AI Assistant提供的概念问题引文的下拉菜单。](./images/citations.png)
 
-您还可以使用AI助手在&#x200B;**[!UICONTROL 相关建议]**&#x200B;下提供的建议来进一步探索与原始问题相关的主题。
-
-![由AI助手提供的建议列表。](./images/related-suggestions.png)
-
 +++
 
 ### 运营洞察 {#operational-insights}
@@ -127,9 +123,9 @@ AI Assistant会更新界面，并为您提供可证实初始响应的文档的�
 
 +++
 
-### 使用自动完成 {#use-auto-complete}
+### 使用实体自动完成 {#use-entity-auto-complete}
 
-您可以使用自动完成函数接收沙盒中存在的数据对象列表。 自动完成推荐适用于以下域：受众、架构、数据集、源和目标。
+您可以使用自动完成函数接收沙盒中存在的数据对象列表。 自动完成推荐适用于以下域：受众、架构、数据集、历程、源和目标。
 
 +++选择以查看自动完成的示例
 
@@ -176,6 +172,44 @@ AI Assistant会更新界面，并为您提供可证实初始响应的文档的�
 接下来，选择一个类别，然后从提供的列表中选择一个提示。 您可以使用此功能更好地了解AI助手可以回答的问题类型。 您还可以使用自由文本或[自动完成](#use-auto-complete)，用与沙盒相关的特定详细信息更新预先存在的提示。
 
 ![AI助手在可发现性中提示。](./images/prompt.png)
+
++++
+
+### 使用问题自动完成 {#use-question-autocomplete}
+
+您可以使用AI Assistant的问题自动完成功能从AI Assistant的推荐列表中选择问题。
+
++++选择以查看问题自动完成的示例
+
+要查看建议问题面板，请在输入框中至少键入七(7)个字符。 接下来，从出现的菜单中选择与您相关的问题。
+
+![包含AI助手建议问题的弹出面板。](./images/suggested_questions.png)
+
+在某些建议的问题涉及操作见解的情况下，您可能需要更新占位符。 例如，如果AI助手提供的建议包含占位符，则您可能需要添加数据集或受众的特定名称。
+
+![来自AI助手的建议，其中包括占位符。](./images/placeholder.png)
+
+占位符以蓝色突出显示。 选择占位符以开始更新其值。 要获得数字占位符的最佳效果，请确保使用数字而不是文本。 也可以使用图元自动完成功能来更新占位符值。 您无法发送具有未填充占位符的问题。
+
+**注意**：默认情况下启用建议。 选择&#x200B;**[!UICONTROL 建议想法]**&#x200B;切换开关以禁用该功能。
+
+![来自AI助手的建议，占位符已更新。](./images/updated_placeholder.png)
+
++++
+
+### 使用相关建议 {#use-related-suggestions}
+
+您可以使用每个AI助手响应的相关建议部分来继续您的对话。
+
++++选择以查看相关建议的示例
+
+AI助手每次响应时都会返回相关建议。 若要继续对话，请在相关建议部分中选择任意建议。
+
+![来自AI助手的相关建议列表。](./images/related_suggestions.png)
+
+与相关占位符自动完成类似，在提交查询之前，您需要更新相关建议中包含的占位符。
+
+![相关建议中带有占位符的查询已更新。](./images/related_suggestions_placeholder.png)
 
 +++
 
