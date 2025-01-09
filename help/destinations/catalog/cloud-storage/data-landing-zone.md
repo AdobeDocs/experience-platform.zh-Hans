@@ -3,10 +3,10 @@ title: 数据登陆区目标
 description: 了解如何连接到数据登陆区以激活受众和导出数据集。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: 5362690047be6dd1f2d8f6f18d633e0a903807d2
+source-git-commit: cc7c8c14fe5ee4bb9001cae84d28a385a3b4b448
 workflow-type: tm+mt
-source-wordcount: '1592'
-ht-degree: 4%
+source-wordcount: '1956'
+ht-degree: 2%
 
 ---
 
@@ -19,13 +19,13 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-[!DNL Data Landing Zone] 是 Adobe Experience Platform 提供的一个 [!DNL Azure Blob] 存储接口，它准许您访问安全、基于云的文件存储设施以将文件导出到 Platform 之外。您有权访问每个沙盒一个[!DNL Data Landing Zone]容器，所有容器的总数据量以您的Platform产品和服务许可证提供的总数据为限。 Platform及其应用程序（如[!DNL Customer Journey Analytics]、[!DNL Journey Orchestration]、[!DNL Intelligent Services]和[!DNL Real-Time Customer Data Platform]）的所有客户都为每个沙盒配置了一个[!DNL Data Landing Zone]容器。 您可以通过[!DNL Azure Storage Explorer]或命令行界面将文件读取和写入容器。
-
-[!DNL Data Landing Zone]支持基于SAS的身份验证，其数据受标准[!DNL Azure Blob]存储安全机制的静态和传输保护。 SAS代表[共享访问签名](https://learn.microsoft.com/en-us/azure/ai-services/translator/document-translation/how-to-guides/create-sas-tokens?tabs=Containers)。
-
-基于SAS的身份验证允许您通过公共Internet连接安全地访问[!DNL Data Landing Zone]容器。 访问[!DNL Data Landing Zone]容器不需要更改网络，这意味着您不需要为网络配置任何允许列表或跨区域设置。
+[!DNL Data Landing Zone]是由Adobe Experience Platform设置的云存储界面，它授予您一个安全、基于云的文件存储工具的访问权限，以便将文件导出到Platform之外。 您有权访问每个沙盒一个[!DNL Data Landing Zone]容器，所有容器的总数据量以您的Platform产品和服务许可证提供的总数据为限。 Platform及其应用程序（如[!DNL Customer Journey Analytics]、[!DNL Journey Orchestration]、[!DNL Intelligent Services]和[!DNL Real-Time Customer Data Platform]）的所有客户都为每个沙盒配置了一个[!DNL Data Landing Zone]容器。
 
 Platform对上传到[!DNL Data Landing Zone]容器的所有文件强制实施严格的七天生存时间(TTL)。 所有文件都会在七天后删除。
+
+使用Azure或Amazon Web服务云支持的客户可以使用[!DNL Data Landing Zone]目标连接器。 由于配置了目标的云不同，身份验证机制也不同，有关目标及其用例的所有其他内容都相同。 有关[对Azure Blob中配置的数据登陆区域进行身份验证]和[对AWS配置的数据登陆区域进行身份验证](#authenticate-dlz-aws)部分中提供的两个不同身份验证机制的更多信息。
+
+![显示基于云支持的数据登陆区域目标实施差异的图表。](/help/destinations/assets/catalog/cloud-storage/data-landing-zone/dlz-workflow-based-on-cloud-implementation.png)
 
 ## 通过API或UI连接到您的[!UICONTROL 数据登陆区]存储 {#connect-api-or-ui}
 
@@ -67,9 +67,17 @@ Platform对上传到[!DNL Data Landing Zone]容器的所有文件强制实施严
 
 导出&#x200B;*数据集*&#x200B;时，Platform会在您提供的存储位置创建一个`.parquet`或`.json`文件。 有关这些文件的更多信息，请参阅导出数据集教程中的[验证成功的数据集导出](../../ui/export-datasets.md#verify)部分。
 
-## 先决条件 {#prerequisites}
+## 对Azure Blob中配置的数据登陆区进行身份验证 {#authenticate-dlz-azure}
 
-请注意，在使用[!DNL Data Landing Zone]目标之前，必须满足以下先决条件。
+>[!AVAILABILITY]
+>
+>本节适用于在Microsoft Azure上运行的Experience Platform的实现。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform多云概述](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud)。
+
+您可以通过[!DNL Azure Storage Explorer]或命令行界面将文件读取和写入容器。
+
+[!DNL Data Landing Zone]支持基于SAS的身份验证，其数据受标准[!DNL Azure Blob]存储安全机制的静态和传输保护。 SAS代表[共享访问签名](https://learn.microsoft.com/en-us/azure/ai-services/translator/document-translation/how-to-guides/create-sas-tokens?tabs=Containers)。
+
+基于SAS的身份验证允许您通过公共Internet连接安全地访问[!DNL Data Landing Zone]容器。 访问[!DNL Data Landing Zone]容器不需要更改网络，这意味着您不需要为网络配置任何允许列表或跨区域设置。
 
 ### 将您的[!DNL Data Landing Zone]容器连接到[!DNL Azure Storage Explorer]
 
@@ -197,6 +205,76 @@ curl -X POST \
 ![Azure UI中突出显示的DLZ用户容器摘要。](/help/sources/images/tutorials/create/dlz/dlz-user-container.png)
 
 在将[!DNL Data Landing Zone]容器连接到[!DNL Azure Storage Explorer]后，您现在可以开始将文件从Experience Platform导出到[!DNL Data Landing Zone]容器。 要导出文件，必须在Experience PlatformUI中建立与[!DNL Data Landing Zone]目标的连接，如以下部分所述。
+
+## 对AWS设置的数据登陆区进行身份验证 {#authenticate-dlz-aws}
+
+>[!AVAILABILITY]
+>
+>本节适用于在Amazon Web Services (AWS)上运行的Experience Platform的实施。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform多云概述](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud)。
+
+执行以下操作，获取在AWS上配置的数据登陆区实例的凭据。 然后，使用选择的客户端连接到您的数据登陆区实例。
+
+>[!BEGINSHADEBOX]
+
+### 检索[!DNL Data Landing Zone]的凭据 {#retrieve-dlz-credentials-aws}
+
+您必须使用平台API来检索您的[!DNL Data Landing Zone]凭据。 用于检索凭据的API调用描述如下。 有关获取标头所需值的信息，请参阅[Adobe Experience Platform API快速入门](/help/landing/api-guide.md)指南。
+
+**API格式**
+
+```http
+GET /data/foundation/connectors/landingzone/credentials?type=dlz_destination'
+```
+
+| 查询参数 | 描述 |
+| --- | --- |
+| `dlz_destination` | `dlz_destination`类型允许API将登陆区域目标容器与您可用的其他类型容器区分开来。 |
+
+{style="table-layout:auto"}
+
+**请求**
+
+以下请求示例检索现有登陆区域的凭据。
+
+```shell
+curl --request GET \
+  --url 'https://platform.adobe.io/data/foundation/connectors/landingzone/credentials?type=dlz_destination' \
+  --header 'Authorization: Bearer ***' \
+  --header 'Content-Type: application/json' \
+  --header 'x-api-key: your_api_key' \
+  --header 'x-gw-ims-org-id: yourorg@AdobeOrg'
+```
+
+**响应**
+
+以下响应返回登陆区域的凭据信息，包括当前的`awsAccessKeyId`、`awsSecretAccessKey`和其他信息。
+
+```json
+{
+    "credentials": {
+        "awsAccessKeyId": "ABCDW3MEC6HE2T73ZVKP",
+        "awsSecretAccessKey": "A1B2Zdxj6y4xfR0QZGtf/phj/hNMAbOGtzM/JNeE",
+        "awsSessionToken": "***"
+    },
+    "dlzPath": {
+        "bucketName": "your-bucket-name",
+        "dlzFolder": "dlz-destination"
+    },
+    "dlzProvider": "Amazon S3",
+    "expiryTime": 1734494017
+}
+```
+
+| 属性 | 描述 |
+| --- | --- |
+| `credentials` | 此对象包括Experience Platform用来将文件导出到已设置的数据登录区位置的`awsAccessKeyId`、`awsSecretAccessKey`和`awsSessionToken`。 |
+| `dlzPath` | 此对象包括Adobe设置的AWS位置中的路径，导出的文件将存储在该位置。 |
+| `dlzProvider` | 指示这是由Amazon S3配置的数据登陆区。 |
+| `expiryTime` | 指示上述对象中的凭据何时过期。 您可以通过再次调用来刷新这些内容。 |
+
+{style="table-layout:auto"}
+
+>[!ENDSHADEBOX]
 
 ## 连接到目标 {#connect}
 
