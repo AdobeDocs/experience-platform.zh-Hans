@@ -1,16 +1,16 @@
 ---
-title: 使用计算出的字段将数组导出为字符串
+title: 将阵列对象从Real-Time CDP导出到云存储目标
 type: Tutorial
 description: 了解如何使用计算字段将阵列作为字符串从Real-Time CDP导出到云存储目标。
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: 9b64e39d25ad94aa834c8e207396b37c2a121243
+source-git-commit: a99fc58b8296b2b9ce6e30d14857529570cd3e8a
 workflow-type: tm+mt
-source-wordcount: '1556'
-ht-degree: 7%
+source-wordcount: '1622'
+ht-degree: 5%
 
 ---
 
-# 使用计算出的字段将数组导出为字符串{#use-calculated-fields-to-export-arrays-as-strings}
+# 将阵列对象从Real-Time CDP导出到云存储目标 {#export-arrays-cloud-storage}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_flat_files"
@@ -21,22 +21,16 @@ ht-degree: 7%
 
 >[!AVAILABILITY]
 >
->通常提供通过计算字段导出数组的功能。
+>通常提供将阵列导出到云存储目标的功能。
 
-了解如何通过计算字段将阵列作为字符串从Real-Time CDP导出到[云存储目标](/help/destinations/catalog/cloud-storage/overview.md)。 请阅读本文档以了解此功能启用的用例。
+了解如何将阵列从Real-Time CDP导出到[云存储目标](/help/destinations/catalog/cloud-storage/overview.md)。 阅读本文档以了解导出工作流、通过此功能启用的用例以及已知限制。
 
-获取有关计算字段的丰富信息 — 这些字段是什么以及它们为什么重要。 请阅读以下链接页面，了解有关数据准备中计算字段的介绍以及有关所有可用函数的更多信息：
+当前必须使用`array_to_string`函数将数组导出为字符串。
+
+要导出数组，必须在导出工作流的映射步骤中使用计算字段功能，除非您[导出数组的单个元素&#x200B;](#index-based-array-access)*。*&#x200B;有关计算字段的详细信息，请访问下面链接的页面。 其中包括对数据准备中计算字段的介绍，以及有关所有可用函数的更多信息：
 
 * [UI指南和概述](/help/data-prep/ui/mapping.md#calculated-fields)
 * [数据准备功能](/help/data-prep/functions.md)
-
-<!--
-
->[!IMPORTANT]
->
->Not all functions listed above are supported *when exporting fields to cloud storage destinations* using the calculated fields functionality. See the [supported functions section](#supported-functions) further below for more information.
-
--->
 
 ## Platform中的数组和其他对象类型 {#arrays-strings-other-objects}
 
@@ -259,6 +253,10 @@ johndoe@acme.org,"5"
 ```
 
 ### 基于索引的阵列访问 {#index-based-array-access}
+
+>[!IMPORTANT]
+>
+>与此页面上描述的其他函数不同，要导出数组的单个元素，您&#x200B;*不需要*&#x200B;在UI中使用&#x200B;**[!UICONTROL 计算字段]**&#x200B;控件。
 
 您可以访问数组的索引以从数组导出单个项。 例如，与上述针对`size_of`函数的示例类似，如果您只想在客户购买特定产品时访问和导出，则可以使用`purchaseTime[0]`导出时间戳的第一个元素，使用`purchaseTime[1]`导出时间戳的第二个元素，使用`purchaseTime[2]`导出时间戳的第三个元素，依此类推。
 

@@ -3,9 +3,9 @@ title: 数据登陆区目标
 description: 了解如何连接到数据登陆区以激活受众和导出数据集。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: cc7c8c14fe5ee4bb9001cae84d28a385a3b4b448
+source-git-commit: 5f932f3de2b875d77904582dfb320e0b6ce17afd
 workflow-type: tm+mt
-source-wordcount: '1956'
+source-wordcount: '1968'
 ht-degree: 2%
 
 ---
@@ -23,9 +23,9 @@ ht-degree: 2%
 
 Platform对上传到[!DNL Data Landing Zone]容器的所有文件强制实施严格的七天生存时间(TTL)。 所有文件都会在七天后删除。
 
-使用Azure或Amazon Web服务云支持的客户可以使用[!DNL Data Landing Zone]目标连接器。 由于配置了目标的云不同，身份验证机制也不同，有关目标及其用例的所有其他内容都相同。 有关[对Azure Blob中配置的数据登陆区域进行身份验证]和[对AWS配置的数据登陆区域进行身份验证](#authenticate-dlz-aws)部分中提供的两个不同身份验证机制的更多信息。
+使用Azure或Amazon Web服务云支持的客户可以使用[!DNL Data Landing Zone]目标连接器。 由于配置了目标的云不同，身份验证机制也不同，有关目标及其用例的所有其他内容都相同。 有关[对Azure Blob中配置的数据登陆区域进行身份验证](#authenticate-dlz-azure)和[对AWS配置的数据登陆区域进行身份验证](#authenticate-dlz-aws)部分中提供的两个不同身份验证机制的更多信息。
 
-![显示基于云支持的数据登陆区域目标实施差异的图表。](/help/destinations/assets/catalog/cloud-storage/data-landing-zone/dlz-workflow-based-on-cloud-implementation.png)
+![图表显示了基于云支持的数据登陆区目标实施有何不同。](/help/destinations/assets/catalog/cloud-storage/data-landing-zone/dlz-workflow-based-on-cloud-implementation.png "由云支持提供的Data Landing Zone目标实现"){zoomable="yes"}
 
 ## 通过API或UI连接到您的[!UICONTROL 数据登陆区]存储 {#connect-api-or-ui}
 
@@ -77,7 +77,7 @@ Platform对上传到[!DNL Data Landing Zone]容器的所有文件强制实施严
 
 [!DNL Data Landing Zone]支持基于SAS的身份验证，其数据受标准[!DNL Azure Blob]存储安全机制的静态和传输保护。 SAS代表[共享访问签名](https://learn.microsoft.com/en-us/azure/ai-services/translator/document-translation/how-to-guides/create-sas-tokens?tabs=Containers)。
 
-基于SAS的身份验证允许您通过公共Internet连接安全地访问[!DNL Data Landing Zone]容器。 访问[!DNL Data Landing Zone]容器不需要更改网络，这意味着您不需要为网络配置任何允许列表或跨区域设置。
+要通过公共Internet连接保护您的数据，请使用基于SAS的身份验证来安全地访问您的[!DNL Data Landing Zone]容器。 访问[!DNL Data Landing Zone]容器不需要更改网络，这意味着您不需要为网络配置任何允许列表或跨区域设置。
 
 ### 将您的[!DNL Data Landing Zone]容器连接到[!DNL Azure Storage Explorer]
 
@@ -212,7 +212,7 @@ curl -X POST \
 >
 >本节适用于在Amazon Web Services (AWS)上运行的Experience Platform的实施。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform多云概述](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud)。
 
-执行以下操作，获取在AWS上配置的数据登陆区实例的凭据。 然后，使用选择的客户端连接到您的数据登陆区实例。
+执行以下操作以获取在AWS上配置的[!DNL Data Landing Zone]实例的凭据。 然后，使用选择的客户端连接到[!DNL Data Landing Zone]实例。
 
 >[!BEGINSHADEBOX]
 
@@ -228,7 +228,7 @@ GET /data/foundation/connectors/landingzone/credentials?type=dlz_destination'
 
 | 查询参数 | 描述 |
 | --- | --- |
-| `dlz_destination` | `dlz_destination`类型允许API将登陆区域目标容器与您可用的其他类型容器区分开来。 |
+| `dlz_destination` | 添加`dlz_destination`查询参数以指定您希望检索[!DNL Data Landing Zone] *目标*&#x200B;类型的容器凭据。 要连接和检索数据登陆区域&#x200B;*源*&#x200B;的凭据，请查看[源文档](/help/sources/connectors/cloud-storage/data-landing-zone.md)。 |
 
 {style="table-layout:auto"}
 
@@ -270,7 +270,7 @@ curl --request GET \
 | `credentials` | 此对象包括Experience Platform用来将文件导出到已设置的数据登录区位置的`awsAccessKeyId`、`awsSecretAccessKey`和`awsSessionToken`。 |
 | `dlzPath` | 此对象包括Adobe设置的AWS位置中的路径，导出的文件将存储在该位置。 |
 | `dlzProvider` | 指示这是由Amazon S3配置的数据登陆区。 |
-| `expiryTime` | 指示上述对象中的凭据何时过期。 您可以通过再次调用来刷新这些内容。 |
+| `expiryTime` | 指示`credentials`对象中的凭据何时到期。 要刷新凭据，请再次执行请求。 |
 
 {style="table-layout:auto"}
 
