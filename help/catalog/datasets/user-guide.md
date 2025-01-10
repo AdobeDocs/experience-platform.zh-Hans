@@ -36,7 +36,7 @@ ht-degree: 5%
 
 >[!CONTEXTUALHELP]
 >id="platform_datasets_browse_daysRemaining"
->title="数据集到期"
+>title="数据集有效期限"
 >abstract="此列指示目标数据集在自动到期之前剩余的天数。"
 
 >[!CONTEXTUALHELP]

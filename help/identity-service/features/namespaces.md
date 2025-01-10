@@ -9,7 +9,7 @@ ht-degree: 16%
 
 ---
 
-# 标识命名空间概述
+# 身份标识命名空间概述
 
 请阅读以下文档，了解有关在Adobe Experience Platform Identity Service中可以使用身份命名空间执行的操作的更多信息。
 
@@ -21,18 +21,18 @@ ht-degree: 16%
 * [[!DNL Identity Service]](../home.md)：通过跨设备和系统桥接身份，更好地了解个人客户及其行为。
 * [[!DNL Privacy Service]](../../privacy-service/home.md)：身份命名空间用于隐私法规(如《通用数据保护条例》(GDPR))的合规请求中。 每个隐私请求都是相对于命名空间发出的，以确定哪些消费者的数据应该受到影响。
 
-## 了解标识命名空间 {#understanding-identity-namespaces}
+## 了解身份标识命名空间 {#understanding-identity-namespaces}
 
 >[!CONTEXTUALHELP]
 >id="platform_identity_namespace"
->title="身份命名空间"
->abstract="标识命名空间是给定标识的上下文。例如，`Email` 的命名空间可能类似于 **name<span>@acme.com**。同样，`Phone` 的命名空间可能类似于 `555-555-1234`。"
+>title="身份标识命名空间"
+>abstract="身份标识命名空间是给定身份标识的上下文。例如，`Email` 的命名空间可能类似于 **name<span>@acme.com**。同样，`Phone` 的命名空间可能类似于 `555-555-1234`。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_identity_value"
->title="标识值"
->abstract="标识值是代表唯一个人、组织或资产的标识符。该值表示的标识的上下文或类型由相应的标识命名空间定义。在轮廓片段间匹配记录数据时，命名空间和标识的值必须相同。在轮廓片段间匹配记录数据时，命名空间和标识的值必须相同。"
+>title="身份标识值"
+>abstract="身份标识值是代表唯一个人、组织或资产的身份标识符。该值表示的身份标识的上下文或类型由相应的身份标识命名空间定义。在轮廓片段间匹配记录数据时，命名空间和身份标识的值必须相同。在轮廓片段间匹配记录数据时，命名空间和身份标识的值必须相同。"
 >text="Learn more in documentation"
 
 完全限定的身份包含两个组件： **身份值**&#x200B;和&#x200B;**身份命名空间**。 例如，如果标识的值为`scott@acme.com`，则命名空间会通过将其识别为电子邮件地址来为此值提供上下文。 同样，命名空间可以将`555-123-456`区分为电话号码，将`3126ABC`区分为CRMID。 基本上，**命名空间为给定标识**&#x200B;提供上下文。 跨配置文件片段匹配记录数据时，如[!DNL Real-Time Customer Profile]合并配置文件数据时，标识值和命名空间必须匹配。
@@ -61,24 +61,24 @@ ht-degree: 16%
 * **身份类型**：给定命名空间的分类。
 * **描述**： （可选）您可以提供的有关给定命名空间的任何补充信息。
 
-### 标识类型 {#identity-type}
+### 身份标识类型 {#identity-type}
 
 >[!CONTEXTUALHELP]
 >id="platform_identity_create_namespace"
->title="指定标识类型"
->abstract="标识类型控制数据是否存储到标识图形中。对于以下标识类型不生成标识图：非个人标识符和合作伙伴 ID。"
+>title="指定身份标识类型"
+>abstract="身份标识类型控制数据是否存储到身份标识图形中。对于以下身份标识类型不生成身份标识图：非个人身份标识符和合作伙伴 ID。"
 >text="Learn more in documentation"
 
 标识命名空间的一个元素是&#x200B;**标识类型**。 身份类型确定：
 
 * 是否将生成身份图：
-   * 对于以下标识类型不生成标识图：非个人标识符和合作伙伴 ID。
+   * 对于以下身份标识类型不生成身份标识图：非个人身份标识符和合作伙伴 ID。
    * 为所有其他身份类型生成身份图。
 * 达到系统限制时，将从身份图中删除哪些身份。 有关详细信息，请阅读标识数据](../guardrails.md)的[护栏。
 
 Experience Platform中提供了以下标识类型：
 
-| 标识类型 | 描述 |
+| 身份标识类型 | 描述 |
 | --- | --- |
 | Cookie ID | Cookie ID识别Web浏览器。 这些身份对于扩展至关重要，并构成身份图的大多数。 然而，它们自然会快速衰变，并随着时间而失去价值。 |
 | 跨设备ID | 跨设备ID识别个人，通常将其他ID绑定在一起。 例如，登录ID、CRMID和忠诚度ID。 这是指示[!DNL Identity Service]敏感地处理该值。 |
@@ -114,12 +114,12 @@ Experience Platform提供了多个可用于所有组织的身份命名空间。 
 | TNTID | 表示Adobe Target的命名空间。 有关详细信息，请参阅[Target](https://experienceleague.adobe.com/docs/target/using/target-home.html)上的以下文档。 |
 | Windows AID | 表示Windows Advertising ID的命名空间。 有关详细信息，请参阅[Windows Advertising ID](https://docs.microsoft.com/en-us/uwp/api/windows.system.userprofile.advertisingmanager.advertisingid?view=winrt-19041)上的以下文档。 |
 
-### 查看标识命名空间 {#view-identity-namespaces}
+### 查看身份标识命名空间 {#view-identity-namespaces}
 
 >[!CONTEXTUALHELP]
 >id="platform_identity_view_integration_identities"
->title="查看集成标识"
->abstract="集成身份是用于连接其他系统的命名空间，不用于标识解析或拼接标识。<br>默认情况下，这些标识是隐藏的。使用切换功能来查看集成命名空间。"
+>title="查看集成身份标识"
+>abstract="集成身份标识是用于连接其他系统的命名空间，不用于身份标识解析或拼接身份标识。<br>默认情况下，这些身份标识是隐藏的。使用切换功能来查看集成命名空间。"
 
 要在UI中查看身份命名空间，请在左侧导航中选择&#x200B;**[!UICONTROL 身份]**，然后选择&#x200B;**[!UICONTROL 浏览]**。
 

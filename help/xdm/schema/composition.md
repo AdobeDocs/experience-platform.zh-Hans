@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform；主页；热门主题；架构；架构；枚举；mixin；字段组；字段组；mixin；数据类型；数据类型；数据类型；主要身份；XDM个人资料；XDM字段；枚举数据类型；体验事件；XDM体验事件；XDM ExperienceEvent；experienceevent；XDM Experienceevent；架构设计；类；类；类；数据类型；数据类型；数据类型；数据类型；架构；架构as；identityMap；身份映射；身份映射；架构设计；映射；合并架构；合并
+keywords: Experience Platform；主页；热门主题；架构；架构；枚举；mixin；字段组；字段组；mixin；数据类型；数据类型；数据类型；主要身份；XDM个人资料；XDM字段；枚举数据类型；体验事件；XDM体验事件；XDM ExperienceEvent；experienceevent；XDM Experienceevent；架构设计；类；类；类；数据类型；数据类型；数据类型；数据类型；数据类型；架构；Experienceevent架构；identityMap；身份映射；身份映射；架构设计；映射；合并架构；合并
 solution: Experience Platform
 title: 架构组合基础
 description: 了解Experience Data Model (XDM)架构以及在Adobe Experience Platform中构建架构的构建块、原则和最佳实践。
@@ -48,12 +48,12 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 
 记录和时间序列架构都包含标识映射(`xdm:identityMap`)。 此字段包含主体的身份表示形式，从标记为“身份”的字段绘制，如下节所述。
 
-### [!UICONTROL 标识] {#identity}
+### [!UICONTROL 身份标识] {#identity}
 
 >[!CONTEXTUALHELP]
 >id="platform_schemas_identities"
->title="架构内的标识"
->abstract="标识是架构中的关键字段，可用于识别主题，例如电子邮件地址或营销 ID。这些字段用于为每个人构建标识图并构建客户轮廓。有关架构中标识的更多信息，请参阅该文档。"
+>title="架构内的身份标识"
+>abstract="身份标识是架构中的关键字段，可用于识别主题，例如电子邮件地址或营销 ID。这些字段用于为每个人构建身份标识图并构建客户轮廓。有关架构中身份标识的更多信息，请参阅该文档。"
 
 架构用于将数据摄取到Experience Platform。 此数据可以跨多个服务使用，以创建单个实体的单个统一视图。 因此，在为客户身份设计架构时，重要的是要考虑哪些字段可用于识别主题，而不管数据可能来自何处。
 

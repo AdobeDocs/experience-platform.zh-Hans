@@ -99,7 +99,7 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 ![基本属性小组件。](../images/profiles/basic-attributes.png)
 
-#### 链接身份 {#linked-identities}
+#### 链接身份标识 {#linked-identities}
 
 [!UICONTROL 链接的身份]构件显示与配置文件关联的任何其他身份。
 
@@ -119,7 +119,7 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 * 要了解根据Adobe标准[收集同意数据所需的架构字段组](../../landing/governance-privacy-security/consent/adobe/overview.md)，请参阅有关这些启用配置文件的架构字段组的文档。
    * [[!UICONTROL 同意和偏好设置详细信息]](../../xdm/field-groups/profile/consents.md)
-   * [[!UICONTROL IdentityMap]](../../xdm/field-groups/profile/identitymap.md)（如果使用Platform Web或Mobile SDK发送同意信号，则需要）
+   * [[!UICONTROL IdentityMap]](../../xdm/field-groups/profile/identitymap.md)(如果使用Platform Web或Mobile SDK发送同意信号，则需要)
 * 要了解如何使用Adobe标准处理客户同意和偏好设置数据，请参阅有关Experience Platform](../../landing/governance-privacy-security/consent/adobe/overview.md)中的[同意处理的概述。
 * 组合的数据治理和同意策略可用于根据用户档案的同意偏好和您建立的组织规则筛选用户档案以进行分段。 要了解如何创建和使用这些组合策略，请参阅有关[管理数据使用策略](../../data-governance/policies/user-guide.md#combine-policies)的用户指南。
 
@@ -186,8 +186,8 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 * [[!UICONTROL 轮廓计数]](#profile-count)
 * [[!UICONTROL 轮廓计数变化]](#profile-count-change)
 * [[!UICONTROL 轮廓计数变化趋势]](#profiles-count-change-trend)
-* [[!UICONTROL 按标识列出的轮廓]](#profiles-by-identity)
-* [[!UICONTROL 标识重叠]](#identity-overlap)
+* [[!UICONTROL 按身份标识列出的轮廓]](#profiles-by-identity)
+* [[!UICONTROL 身份标识重叠]](#identity-overlap)
 
 >[!NOTE]
 >
@@ -263,13 +263,13 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 * [[!UICONTROL 轮廓计数变化]](#profile-count-change)
 * [[!UICONTROL 轮廓计数变化趋势]](#profiles-count-change-trend)
 * [[!UICONTROL 按身份列出的配置文件计数变化趋势]](#profiles-count-change-trend-by-identity)
-* [[!UICONTROL 按标识列出的轮廓]](#profiles-by-identity)
-* [[!UICONTROL 标识重叠]](#identity-overlap)
-* [[!UICONTROL 单一标识轮廓]](#single-identity-profiles)
+* [[!UICONTROL 按身份标识列出的轮廓]](#profiles-by-identity)
+* [[!UICONTROL 身份标识重叠]](#identity-overlap)
+* [[!UICONTROL 单一身份标识轮廓]](#single-identity-profiles)
 * [[!UICONTROL 按身份列出的单一身份配置文件]](#single-identity-profiles-by-identity)
 * [[!UICONTROL 未分段的轮廓]](#unsegmented-profiles)
 * [[!UICONTROL 未分段的轮廓变化趋势]](#unsegmented-profiles-change-trend)
-* [[!UICONTROL 按标识列出的未分段的轮廓]](#unsegmented-profiles-by-identity)
+* [[!UICONTROL 按身份标识列出的未分段的轮廓]](#unsegmented-profiles-by-identity)
 * [[!UICONTROL 受众]](#audiences)
 * [[!UICONTROL 映射到目标状态的受众]](#audiences-mapped-to-destination-status)
 * [[!UICONTROL 受众大小]](#audiences-size)
@@ -345,12 +345,12 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 ![按身份小组件的配置文件计数变化趋势。](../images/profiles/profiles-count-change-trend-by-identity.png)
 
-### [!UICONTROL 按标识列出的轮廓] {#profiles-by-identity}
+### [!UICONTROL 按身份标识列出的轮廓] {#profiles-by-identity}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_profilesbyidentity"
->title="按标识列出的轮廓"
->abstract="此小组件按标识显示您的轮廓存储中所有合并轮廓的明细。"
+>title="按身份标识列出的轮廓"
+>abstract="此小组件按身份标识显示您的轮廓存储中所有合并轮廓的明细。"
 
 **[!UICONTROL 按身份列出的配置文件]**&#x200B;构件显示配置文件存储中所有合并配置文件的身份划分。 按身份划分的配置文件总数（也就是为每个命名空间显示的值相加）可能高于合并的配置文件总数，因为一个配置文件可能具有多个与其关联的命名空间。 例如，如果客户在多个渠道上与您的品牌互动，则多个命名空间将与该个人客户关联。
 
@@ -366,12 +366,12 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 要了解有关身份的详细信息，请参阅[Adobe Experience Platform Identity Service文档](../../identity-service/home.md)。
 
-### [!UICONTROL 标识重叠] {#identity-overlap}
+### [!UICONTROL 身份标识重叠] {#identity-overlap}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_identityoverlap"
->title="标识重叠"
->abstract="此小组件使用维恩图显示您的轮廓存储中包含两个选定标识的轮廓的重叠。"
+>title="身份标识重叠"
+>abstract="此小组件使用维恩图显示您的轮廓存储中包含两个选定身份标识的轮廓的重叠。"
 
 **[!UICONTROL 身份重叠]**&#x200B;构件使用维恩图或集图显示配置文件存储中包含两个选定身份的配置文件重叠。
 
@@ -383,12 +383,12 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 ![突出显示具有身份重叠小部件的配置文件仪表板概述。](../images/profiles/identity-overlap.png)
 
-### [!UICONTROL 单一标识轮廓] {#single-identity-profiles}
+### [!UICONTROL 单一身份标识轮廓] {#single-identity-profiles}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_singleidentityprofiles"
->title="单一标识轮廓"
->abstract="此小组件提供您组织的只有一种类型的 ID 类型创建其标识的轮廓的计数。此 ID 类型可以是电子邮件或 ECID。"
+>title="单一身份标识轮廓"
+>abstract="此小组件提供您组织的只有一种类型的 ID 类型创建其身份标识的轮廓的计数。此 ID 类型可以是电子邮件或 ECID。"
 
 [!UICONTROL 单一身份配置文件]小组件提供贵组织只有一种ID类型用于创建其身份的配置文件的计数。 此ID类型可以是电子邮件或ECID。 配置文件计数是根据最新快照中包含的数据生成的。
 
@@ -424,7 +424,7 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 ![未分段的配置文件更改趋势小组件。](../images/profiles/unsegmented-profiles-change-trend.png)
 
-### [!UICONTROL 按标识列出的未分段的轮廓] {#unsegmented-profiles-by-identity}
+### [!UICONTROL 按身份标识列出的未分段的轮廓] {#unsegmented-profiles-by-identity}
 
 >[!NOTE]
 >

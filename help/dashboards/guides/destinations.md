@@ -89,8 +89,8 @@ Adobe提供了多个标准构件，可用于可视化与目标相关的各种指
 * [[!UICONTROL 最近激活的受众]](#recently-activated-audiences)
 * [[!UICONTROL 最近激活的受众（按目标）]](#recently-activated-audiences-by-destination)
 * [[!UICONTROL 受众规模趋势]](#audience-size-trend)
-* [[!UICONTROL 未映射的受众（按标识）]](#unmapped-audiences-by-identity)
-* [[!UICONTROL 映射的受众（按标识）]](#mapped-audiences-by-identity)
+* [[!UICONTROL 未映射的受众（按身份标识）]](#unmapped-audiences-by-identity)
+* [[!UICONTROL 映射的受众（按身份标识）]](#mapped-audiences-by-identity)
 * [[!UICONTROL 常用受众]](#common-audiences)
 * [[!UICONTROL 映射的受众]](#mapped-audiences)
 * [[!UICONTROL 映射的受众运行状况]](#mapped-audience-health)
@@ -187,12 +187,12 @@ Adobe提供了多个标准构件，可用于可视化与目标相关的各种指
 
 ![受众规模趋势小组件的自动字幕对话框。](../images/destinations/audience-size-trend-captions.png)
 
-### [!UICONTROL 未映射的受众（按标识）] {#unmapped-audiences-by-identity}
+### [!UICONTROL 未映射的受众（按身份标识）] {#unmapped-audiences-by-identity}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_unmappedsegmentsbyidentity"
->title="未映射的受众（按标识）"
->abstract="此小组件列出了前五个&#x200B;**未映射的**&#x200B;受众，它们按给定目标和标识的标识计数以降序顺序排名。小组件下拉列表中列出的筛选条件 ID 因概述页面顶部选择的目标帐户而异。"
+>title="未映射的受众（按身份标识）"
+>abstract="此小组件列出了前五个&#x200B;**未映射的**&#x200B;受众，它们按给定目标和身份标识的身份标识计数以降序顺序排名。小组件下拉列表中列出的筛选条件 ID 因概述页面顶部选择的目标帐户而异。"
 
 **[!UICONTROL 按身份未映射的受众]**&#x200B;小组件列出了给定目标和身份前五个&#x200B;**未映射的受众**（按身份计数降序排列）。 它会突出显示对于根据所选ID映射到所选目标帐户最有帮助的受众。
 
@@ -204,11 +204,11 @@ Adobe提供了多个标准构件，可用于可视化与目标相关的各种指
 
 请参阅此描述中所用术语的[定义](#prerequisites)的先决条件部分。
 
-### [!UICONTROL 映射的受众（按标识）] {#mapped-audiences-by-identity}
+### [!UICONTROL 映射的受众（按身份标识）] {#mapped-audiences-by-identity}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_mappedsegmentsbyidentity"
->title="映射的受众（按标识）"
+>title="映射的受众（按身份标识）"
 >abstract="此小组件提供前五个&#x200B;**映射的**&#x200B;受众的列表。此列表根据受众中包含的源 ID 的数量按从高到低的顺序进行排序。从小组件标题下方的下拉菜单中选择要计算的目标 ID。小组件下拉列表中可用的目标 ID 取决于在概述仪表板顶部选择的目标。"
 
 此小组件提供前五个&#x200B;**映射的**&#x200B;受众的列表。此列表根据受众中包含的源 ID 的数量按从高到低的顺序进行排序。从小组件标题下方的下拉菜单中选择要计算的目标 ID。从小组件中的下拉列表中可用的目标ID将根据在概述功能板顶部选择的目标帐户过滤器而发生更改。

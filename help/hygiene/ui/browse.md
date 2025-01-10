@@ -69,8 +69,8 @@ ht-degree: 27%
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_numberofidentities"
->title="标识数"
->abstract="其记录在此工单中被请求更新或删除的标识的数量。计数中包含的标识不一定存在于受影响的数据集中。要了解详情，请参阅《数据生命周期 UI 指南》。"
+>title="身份标识数"
+>abstract="其记录在此工单中被请求更新或删除的身份标识的数量。计数中包含的身份标识不一定存在于受影响的数据集中。要了解详情，请参阅《数据生命周期 UI 指南》。"
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_responsemessages"

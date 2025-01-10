@@ -26,8 +26,8 @@ ht-degree: 9%
 
 >[!CONTEXTUALHELP]
 >id="platform_xdm_1to1_identity_namespace"
->title="参考标识命名空间"
->abstract="参考架构的主要标识字段的命名空间（类型）。参考架构必须有一个建立的主要标识字段才能参与关系。有关架构关系的更多信息，请参阅文档。"
+>title="参考身份标识命名空间"
+>abstract="参考架构的主要身份标识字段的命名空间（类型）。参考架构必须有一个建立的主要身份标识字段才能参与关系。有关架构关系的更多信息，请参阅文档。"
 
 了解客户之间的关系以及客户在不同渠道中与您的品牌之间的互动是Adobe Experience Platform的重要组成部分。 通过在[!DNL Experience Data Model] (XDM)架构的结构中定义这些关系，您可以获得有关客户数据的复杂洞察。
 
@@ -41,7 +41,7 @@ ht-degree: 9%
 
 >[!NOTE]
 >
->有关如何在Adobe Real-time Customer Data Platform B2B版本中创建多对一关系的步骤，请参阅有关[创建B2B关系](./relationship-b2b.md)的指南。
+>有关如何在Adobe Real-time Customer Data Platform B2B edition中创建多对一关系的步骤，请参阅有关[创建B2B关系](./relationship-b2b.md)的指南。
 
 ## 快速入门
 
@@ -119,7 +119,7 @@ ht-degree: 9%
 
 >[!NOTE]
 >
->如果您有权访问Real-Time CDP B2B Edition，则可以使用画布的右边栏控件定义关系字段，并使用[相同对话框](./relationship-b2b.md#relationship-field)构建多对一关系。
+>如果您有权访问Real-Time CDP B2B edition，则可以使用画布的右边栏控件定义关系字段，并使用[相同对话框](./relationship-b2b.md#relationship-field)构建多对一关系。
 
 ![添加关系对话框。](../images/tutorials/relationship/add-relationship-dialog.png)
 

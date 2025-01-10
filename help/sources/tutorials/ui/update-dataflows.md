@@ -24,8 +24,8 @@ ht-degree: 8%
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_dataflows_daysRemaining"
->title="数据集到期"
->abstract="此列指示目标数据集在自动到期之前剩余的天数。<br>如果目标数据集到期，则数据流将失败。要防止数据流失败，请确保将目标数据集设置为在正确的日期到期。请参阅文档以了解如何更新到期日期。"
+>title="数据集有效期限"
+>abstract="此列指示目标数据集在自动到期之前剩余的天数。<br>如果目标数据集到期，则数据流将失败。要防止数据流失败，请确保将目标数据集设置为在正确的日期到期。请参阅文档以了解如何更新过期日期。"
 
 在Experience PlatformUI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**，然后从顶部标题中选择&#x200B;**[!UICONTROL 数据流]**。
 

@@ -63,17 +63,17 @@ ht-degree: 8%
 >
 >选择&#x200B;**[!UICONTROL 所有数据集]**&#x200B;选项可能会导致删除操作花费较长时间，并且可能不会导致准确的记录删除。
 
-## 提供标识 {#provide-identities}
+## 提供身份标识 {#provide-identities}
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_primaryidentity"
->title="标识命名空间"
->abstract="标识命名空间是一个用于将记录与 Experience Platform 中的消费者轮廓相关联的属性。数据集的标识命名空间字段由数据集所基于的架构定义。在此列中，您必须为记录的标识命名空间提供类型（或命名空间），例如 `email`（对于电子邮件地址）和 `ecid`（对于 Experience Cloud ID）。要了解详情，请参阅《数据生命周期 UI 指南》。"
+>title="身份标识命名空间"
+>abstract="身份标识命名空间是一个用于将记录与 Experience Platform 中的消费者轮廓相关联的属性。数据集的身份标识命名空间字段由数据集所基于的架构定义。在此列中，您必须为记录的身份标识命名空间提供类型（或命名空间），例如 `email`（对于电子邮件地址）和 `ecid`（对于 Experience Cloud ID）。要了解详情，请参阅《数据生命周期 UI 指南》。"
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_identityvalue"
->title="主要标识值"
->abstract="在此列中，您必须提供记录的标识命名空间的值，该值必须与左列中提供的标识类型相对应。如果标识命名空间类型是 `email`，则值应是记录的电子邮件地址。要了解详情，请参阅《数据生命周期 UI 指南》。"
+>title="主要身份标识值"
+>abstract="在此列中，您必须提供记录的身份标识命名空间的值，该值必须与左列中提供的身份标识类型相对应。如果身份标识命名空间类型是 `email`，则值应是记录的电子邮件地址。要了解详情，请参阅《数据生命周期 UI 指南》。"
 
 删除记录时，必须提供身份信息，以便系统能够确定要删除的记录。 对于Platform中的任何数据集，将根据该数据集的架构定义的&#x200B;**身份命名空间**&#x200B;字段删除记录。
 

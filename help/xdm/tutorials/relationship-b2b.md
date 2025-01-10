@@ -1,6 +1,6 @@
 ---
-title: 在Real-time Customer Data Platform B2B版本中定义两个架构之间的关系
-description: 了解如何在Adobe Real-time Customer Data Platform B2B版本中定义两个架构之间的多对一关系。
+title: 在Real-time Customer Data Platform B2B edition中定义两个架构之间的关系
+description: 了解如何在Adobe Real-time Customer Data Platform B2B edition中定义两个架构之间的多对一关系。
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
 source-git-commit: 85d6cf10599d153a15c1bd56067f57439ddd0133
 workflow-type: tm+mt
@@ -16,7 +16,7 @@ ht-degree: 12%
 >title="参考架构"
 >abstract="选择要与之建立关系的架构。根据架构的类，它还可能与 B2B 上下文中的其他实体存在现有关系。请参阅文档以了解 B2B 架构类如何相互关联。"
 
-Adobe Real-time Customer Data Platform B2B版本提供了多个Experience Data Model (XDM)类，这些类捕获基本B2B数据实体，包括[帐户](../classes/b2b/business-account.md)、[机会](../classes/b2b/business-opportunity.md)、[营销活动](../classes/b2b/business-campaign.md)等。 通过基于这些类构建架构并允许它们在[实时客户配置文件](../../profile/home.md)中使用，您可以将不同源中的数据合并到称为合并架构的统一表示中。
+Adobe Real-time Customer Data Platform B2B edition提供了多个可捕获基本B2B数据实体的体验数据模型(XDM)类，包括[帐户](../classes/b2b/business-account.md)、[机会](../classes/b2b/business-opportunity.md)、[营销活动](../classes/b2b/business-campaign.md)等。 通过基于这些类构建架构并允许它们在[实时客户配置文件](../../profile/home.md)中使用，您可以将不同源中的数据合并到称为合并架构的统一表示中。
 
 但是，合并架构只能包含由共享相同类的架构捕获的字段。 这就是架构关系发挥作用的地方。 通过在B2B架构中实施关系，您可以描述这些业务实体如何相互关联，并且可以在下游分段用例中包含来自多个类的属性。
 
@@ -24,11 +24,11 @@ Adobe Real-time Customer Data Platform B2B版本提供了多个Experience Data M
 
 ![B2B类关系](../images/tutorials/relationship-b2b/classes.png)
 
-本教程介绍了在Real-Time CDP B2B版本中定义两个架构之间的多对一关系的步骤。
+本教程介绍了在Real-Time CDP B2B edition中定义两个架构之间的多对一关系的步骤。
 
 >[!NOTE]
 >
->如果您未使用Real-time Customer Data Platform B2B Edition或希望创建一对一关系，请参阅[创建一对一关系](./relationship-ui.md)指南。
+>如果您未使用Real-time Customer Data Platform B2B edition或希望创建一对一关系，请另外参阅关于[创建一对一关系](./relationship-ui.md)的指南。
 >
 >本教程重点介绍如何在Platform UI中手动建立B2B架构之间的关系。 如果您从B2B源连接引入数据，则可以使用自动生成实用程序创建所需的架构、身份和关系。 有关[使用自动生成实用程序](../../sources/connectors/adobe-applications/marketo/marketo-namespaces.md)的更多信息，请参阅有关B2B命名空间和架构的源文档。
 
@@ -46,12 +46,12 @@ Adobe Real-time Customer Data Platform B2B版本提供了多个Experience Data M
 
 架构关系由&#x200B;**源架构**&#x200B;中的专用字段表示，该字段引用了&#x200B;**引用架构**&#x200B;的主要标识字段。 在接下来的步骤中，“[!DNL Opportunities]”用作源架构，而“[!DNL Accounts]”用作引用架构。
 
-### 了解 B2B 关系中的标识
+### 了解 B2B 关系中的身份标识
 
 >[!CONTEXTUALHELP]
 >id="platform_xdm_b2b_identity_namespace"
->title="参考标识命名空间"
->abstract="参考架构的主要标识字段的命名空间（类型）。参考架构必须有一个建立的主要标识字段才能参与关系。请参阅文档以了解有关 B2B 关系中的标识的更多信息。"
+>title="参考身份标识命名空间"
+>abstract="参考架构的主要身份标识字段的命名空间（类型）。参考架构必须有一个建立的主要身份标识字段才能参与关系。请参阅文档以了解有关 B2B 关系中的身份标识的更多信息。"
 
 为了建立关系，引用架构必须具有定义的主标识。 在为B2B实体设置主要标识时，请记住，如果在不同系统或位置上收集基于字符串的实体ID，则这些ID可能会重叠，这可能会导致Platform中的数据冲突。
 

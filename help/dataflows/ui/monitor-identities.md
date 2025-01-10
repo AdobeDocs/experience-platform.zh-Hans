@@ -13,7 +13,7 @@ ht-degree: 9%
 
 # 监测UI中标识的数据流
 
-Adobe Experience Platform 身份服务通过跨设备和系统桥接身份，使您能够全面了解您的客户及其行为，助您实时提供有影响力的个人数字体验。
+Adobe Experience Platform 身份标识服务通过跨设备和系统桥接身份标识，使您能够全面了解您的客户及其行为，助您实时提供有影响力的个人数字体验。
 
 监视功能板提供了数据在身份中的活动的可视表示形式，包括数据身份的状态。 本教程将介绍如何使用“监视仪表板”通过Experience Platform用户界面监视数据的身份，从而使您能够跟踪身份处理的状态。
 
@@ -24,18 +24,18 @@ Adobe Experience Platform 身份服务通过跨设备和系统桥接身份，使
 - [身份服务](../../identity-service/home.md)：通过跨设备和系统桥接身份，更好地了解个人客户及其行为。
 - [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-## 监控标识仪表板 {#identity-metrics}
+## 监控身份标识仪表板 {#identity-metrics}
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_identity_processing"
->title="标识处理"
->abstract="标识处理视图包含有关提取到标识服务的记录的信息，包括添加的标识数量、创建的图表数量和更新的图表数量。查看量度定义指南以了解有关量度和图表的更多信息。"
+>title="身份标识处理"
+>abstract="身份标识处理视图包含有关提取到身份标识服务的记录的信息，包括添加的身份标识数量、创建的图表数量和更新的图表数量。查看量度定义指南以了解有关量度和图表的更多信息。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_identity"
 >title="数据流运行详细信息"
->abstract="数据流运行详细信息页面显示有关标识数据流运行的更多信息，包括其组织 ID 和数据流运行 ID。"
+>abstract="数据流运行详细信息页面显示有关身份标识数据流运行的更多信息，包括其组织 ID 和数据流运行 ID。"
 
 要访问&#x200B;**[!UICONTROL 身份]**&#x200B;仪表板，请在左侧导航中选择&#x200B;**[!UICONTROL 监视]**。 在&#x200B;**[!UICONTROL 监视]**&#x200B;页面上，选择&#x200B;**[!UICONTROL 身份]**&#x200B;卡。
 

@@ -7,7 +7,7 @@ exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
 source-git-commit: 25dc27d890cb2e0e23f8fa797ac9edea929164fd
 workflow-type: tm+mt
 source-wordcount: '3639'
-ht-degree: 9%
+ht-degree: 10%
 
 ---
 
@@ -50,7 +50,7 @@ ht-degree: 9%
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_activation_streaming"
 >title="数据流运行详细信息"
->abstract="目标数据流运行详细信息包含有关受众激活状态的信息，以及从实时客户轮廓中获取的量度，以生成唯一标识。若要了解更多信息，请查看量度定义指南。"
+>abstract="目标数据流运行详细信息包含有关受众激活状态的信息，以及从实时客户轮廓中获取的量度，以生成唯一身份标识。若要了解更多信息，请查看量度定义指南。"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_streaming"
@@ -59,18 +59,18 @@ ht-degree: 9%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesactivated_streaming"
->title="已激活的标识"
->abstract="成功激活到所选目标的轮廓标识的计数。此量度包括创建、更新和从导出的受众中移除的标识。"
+>title="已激活的身份标识"
+>abstract="成功激活到所选目标的轮廓身份标识的计数。此量度包括创建、更新和从导出的受众中移除的身份标识。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesexcluded_streaming"
->title="排除的标识"
+>title="排除的身份标识"
 >abstract="根据缺少的属性和同意违规情况，从所选目标的激活中排除的个人轮廓记录的计数。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesfailed_streaming"
->title="失败的标识"
->abstract="针对所选目标失败的单个轮廓标识的计数。请检查错误诊断，以获取详细信息。"
+>title="失败的身份标识"
+>abstract="针对所选目标失败的单个轮廓身份标识的计数。请检查错误诊断，以获取详细信息。"
 
 对于流目标，[!UICONTROL 数据流运行]选项卡提供数据流运行中量度数据的每小时更新。 标记的最突出的统计数据是身份信息。
 
@@ -78,7 +78,7 @@ ht-degree: 9%
 
 系统会显示各个运行及其特定量度的列表，以及以下身份总数：
 
-- **[!UICONTROL 已激活身份]**：已成功激活到所选目标的配置文件身份总数。 此量度包括创建、更新和从导出的受众中移除的标识。
+- **[!UICONTROL 已激活身份]**：已成功激活到所选目标的配置文件身份总数。 此量度包括创建、更新和从导出的受众中移除的身份标识。
 - **[!UICONTROL 排除的身份]**：基于缺少属性和违反同意而跳过了激活的配置文件身份总数。
 - **[!UICONTROL 身份失败]**：由于错误而未激活到目标的配置文件身份总数。
 
@@ -91,18 +91,18 @@ ht-degree: 9%
    - 对于&#x200B;**[!UICONTROL 已完成]**&#x200B;的运行，处理时间量度始终显示一个小时。
    - 对于仍处于&#x200B;**[!UICONTROL 处理]**&#x200B;状态的数据流运行，捕获所有量度的窗口将保持打开超过一小时，以便处理与该数据流运行对应的所有量度。 例如，上午9:30开始的数据流运行可能会保持处理状态1小时30分钟，以捕获和处理所有量度。 然后，在处理窗口关闭且数据流运行状态更新为&#x200B;**已完成**&#x200B;后，显示的处理时间将更改为1小时。
 - **[!UICONTROL 已接收的配置文件]**：数据流中接收的配置文件总数。
-- **[!UICONTROL 已激活的身份]**：作为数据流运行的一部分成功激活到所选目标的配置文件身份总数。 此量度包括创建、更新和从导出的受众中移除的标识。
+- **[!UICONTROL 已激活的身份]**：作为数据流运行的一部分成功激活到所选目标的配置文件身份总数。 此量度包括创建、更新和从导出的受众中移除的身份标识。
 - **[!UICONTROL 排除的身份]**：基于缺少属性和同意违规而从激活中排除的配置文件身份总数。
 - **[!UICONTROL 身份失败]**&#x200B;由于错误未激活到目标的配置文件身份总数。
 
   >[!IMPORTANT]
   >
-  > 从2024年10月开始，Adobe将推出一项更新，以提高流目标的报表准确性。 此增强功能可确保Experience Platform和目标平台报表之间更好地保持一致。
+  > 从 2024 年 10 月开始，Adobe 将推出更新，以提高流式处理目标的报告准确性。此增强功能可确保Experience Platform和目标平台报表之间更好地保持一致。
   >
   > 在此更新之前，**[!UICONTROL 失败的标识]**&#x200B;包括所有激活重试。 进行此更新后，总计数中仅包含上次激活重试。
   > 
   > 此增强功能目前适用于[Google客户匹配目标](../../destinations/catalog/advertising/google-customer-match.md)，但将逐步推广至其他Experience Platform流目标。
-  > 进行此增强后，[Google客户匹配目标](../../destinations/catalog/advertising/google-customer-match.md)的用户可能会看到其&#x200B;**[!UICONTROL 身份失败]**&#x200B;计数中预期的下降。
+  > 随着增强功能的实施，[Google 目标客户匹配功能](../../destinations/catalog/advertising/google-customer-match.md)用户的&#x200B;**[!UICONTROL 身份标识信息失败]**&#x200B;次数可能会减少。
 
 
 - **[!UICONTROL 激活率]**：已成功激活或跳过的接收标识的百分比。 以下公式演示如何计算此值：
@@ -134,7 +134,7 @@ ht-degree: 9%
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_activation"
 >title="数据流运行详细信息"
->abstract="目标数据流运行详细信息包含有关受众激活状态的信息，以及从实时客户轮廓中获取的量度，以生成唯一标识。若要了解更多信息，请查看量度定义指南。"
+>abstract="目标数据流运行详细信息包含有关受众激活状态的信息，以及从实时客户轮廓中获取的量度，以生成唯一身份标识。若要了解更多信息，请查看量度定义指南。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html#dataflow-runs-for-streaming-destinations" text="流式处理目标的数据流运行"
 
 >[!CONTEXTUALHELP]
@@ -144,17 +144,17 @@ ht-degree: 9%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesactivated_batch"
->title="已激活的标识"
->abstract="成功激活到所选目标的轮廓标识的计数。此量度包括创建、更新和从导出的受众中移除的标识。"
+>title="已激活的身份标识"
+>abstract="成功激活到所选目标的轮廓身份标识的计数。此量度包括创建、更新和从导出的受众中移除的身份标识。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesexcluded_batch"
->title="排除的标识"
+>title="排除的身份标识"
 >abstract="根据缺少的属性和同意违规情况，从所选目标的激活中排除的个人轮廓记录的计数。"
 
 对于批处理目标，[!UICONTROL 数据流运行]选项卡提供有关数据流运行的量度数据。 系统会显示各个运行及其特定量度的列表，以及以下身份总数：
 
-- **[!UICONTROL 已激活身份]**：已成功激活到所选目标的配置文件身份总数。 此量度包括创建、更新和从导出的受众中移除的标识。
+- **[!UICONTROL 已激活身份]**：已成功激活到所选目标的配置文件身份总数。 此量度包括创建、更新和从导出的受众中移除的身份标识。
 - **[!UICONTROL 排除的身份]**：根据缺少属性和同意冲突，从选定目标的激活中排除的个人配置文件身份计数。
 
 ![数据流为批处理目标运行视图。](../assets/ui/monitor-destinations/dataflow-runs-batch.png)
@@ -165,7 +165,7 @@ ht-degree: 9%
 - **[!UICONTROL 受众]**：与每个数据流运行关联的受众的名称。
 - **[!UICONTROL 处理时间]**：处理数据流运行所花费的时间。
 - **[!UICONTROL 已接收的配置文件]**：数据流中接收的配置文件总数。 该值每 60 分钟更新一次。
-- **[!UICONTROL 已激活的身份]**：作为数据流运行的一部分成功激活到所选目标的配置文件身份总数。 此量度包括创建、更新和从导出的受众中移除的标识。
+- **[!UICONTROL 已激活的身份]**：作为数据流运行的一部分成功激活到所选目标的配置文件身份总数。 此量度包括创建、更新和从导出的受众中移除的身份标识。
 - **[!UICONTROL 排除的身份]**：基于缺少属性和同意违规而从激活中排除的配置文件身份总数。
 - **[!UICONTROL 状态]**：表示数据流所处的状态。 这可以是以下三种状态之一：[!UICONTROL 成功]、[!UICONTROL 失败]和[!UICONTROL 正在处理]。 [!UICONTROL 成功]表示数据流处于活动状态且正在根据其提供的计划导出数据。 [!UICONTROL 失败]表示数据激活因错误而暂停。 [!UICONTROL 正在处理]意味着数据流尚未处于活动状态，通常在创建新数据流时遇到。
 
@@ -210,13 +210,13 @@ ht-degree: 9%
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_activation"
 >title="激活"
->abstract="目标激活视图包含有关受众激活状态的信息，以及从实时客户轮廓中获取的量度，以生成唯一标识。"
+>abstract="目标激活视图包含有关受众激活状态的信息，以及从实时客户轮廓中获取的量度，以生成唯一身份标识。"
 
 要访问[!UICONTROL 监视]仪表板，请在左侧导航中选择&#x200B;**[!UICONTROL 监视]** （![监视图标](/help/images/icons/monitoring.png)）。 在[!UICONTROL 监控]页面上，选择[!UICONTROL 目标]。 [!UICONTROL 监视]仪表板包含有关目标运行作业的量度和信息。
 
 使用[!UICONTROL 目标]仪表板全面了解激活流的运行状况。 首先，获取有关所有批次和流目标的聚合级别的洞察，然后深入查看数据流、数据流运行和激活受众的详细视图，以深入了解您的激活数据。 [!UICONTROL 监控]仪表板中的屏幕通过量度和错误描述提供可操作的洞察，帮助您排除激活方案中可能出现的任何问题。
 
-您可以按数据类型(客户、帐户(仅适用于Adobe Real-Time CDP B2B版本)、潜在客户和帐户扩充来过滤显示的信息。 有关这些选项的更多信息，请参阅[监视仪表板指南](/help/dataflows/ui/monitor.md#monitoring-dashboard-overview)。
+您可以按数据类型(客户、帐户(仅适用于Adobe Real-Time CDP B2B edition)、潜在客户和帐户扩充)过滤显示的信息。 有关这些选项的更多信息，请参阅[监视仪表板指南](/help/dataflows/ui/monitor.md#monitoring-dashboard-overview)。
 
 ![在监视仪表板视图中突出显示的数据类型筛选器。](/help/dataflows/assets/ui/monitor-destinations/add-data-filter.png)
 

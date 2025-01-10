@@ -83,8 +83,8 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过它可
 
 * [[!UICONTROL 受众规模]](#audience-size)
 * [[!UICONTROL 受众规模变化趋势]](#audience-size-change-trend)
-* [[!UICONTROL 标识重叠]](#identity-overlap)
-* [[!UICONTROL 按标识列出的轮廓]](#profiles-by-identity)
+* [[!UICONTROL 身份标识重叠]](#identity-overlap)
+* [[!UICONTROL 按身份标识列出的轮廓]](#profiles-by-identity)
 
 >[!NOTE]
 >
@@ -163,8 +163,8 @@ Adobe提供了多个标准构件，可用于可视化与受众相关的各种指
 * [[!UICONTROL 按身份划分的受众规模趋势]](#audience-size-trend-by-identity)
 * [[!UICONTROL 受众重叠]](#audience-overlap)
 * [[!UICONTROL 受众重叠报表]](#audience-overlap-report)
-* [[!UICONTROL 标识重叠]](#identity-overlap)
-* [[!UICONTROL 按标识列出的轮廓]](#profiles-by-identity)
+* [[!UICONTROL 身份标识重叠]](#identity-overlap)
+* [[!UICONTROL 按身份标识列出的轮廓]](#profiles-by-identity)
 * [[!UICONTROL 计划的激活]](#scheduled-activations)
 
 ### [!UICONTROL 受众规模] {#audience-size}
@@ -253,12 +253,12 @@ Adobe提供了多个标准构件，可用于可视化与受众相关的各种指
 
 选择&#x200B;**[!UICONTROL 关闭]**&#x200B;以返回到[!UICONTROL 受众]仪表板。
 
-### [!UICONTROL 标识重叠] {#identity-overlap}
+### [!UICONTROL 身份标识重叠] {#identity-overlap}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_segments_identityoverlap"
->title="标识重叠"
->abstract="此小组件显示包含两个所选标识的受众中的轮廓的重叠。圆圈显示每个标识的相对大小。包含两个命名空间的轮廓的数量由圆圈之间的重叠部分表示。"
+>title="身份标识重叠"
+>abstract="此小组件显示包含两个所选身份标识的受众中的轮廓的重叠。圆圈显示每个身份标识的相对大小。包含两个命名空间的轮廓的数量由圆圈之间的重叠部分表示。"
 
 **[!UICONTROL 身份重叠]**&#x200B;构件显示维恩图或集图，显示包含多个身份的受众中配置文件重叠。
 
@@ -270,12 +270,12 @@ Adobe提供了多个标准构件，可用于可视化与受众相关的各种指
 
 ![突出显示具有身份重叠小部件的[!UICONTROL 受众]仪表板概述。](../images/audiences/identity-overlap.png)
 
-### [!UICONTROL 按标识列出的轮廓] {#profiles-by-identity}
+### [!UICONTROL 按身份标识列出的轮廓] {#profiles-by-identity}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_segments_profilesbyidentity"
->title="按标识列出的轮廓"
->abstract="此小组件显示跨所选受众中每个合并轮廓的标识的细分。"
+>title="按身份标识列出的轮廓"
+>abstract="此小组件显示跨所选受众中每个合并轮廓的身份标识的细分。"
 
 **[!UICONTROL 按身份列出的配置文件]**&#x200B;小组件显示选定受众中每个合并配置文件中的身份划分。 由于一个配置文件可能具有多个与其关联的身份，因此按身份列出的配置文件总数可能高于受众中的配置文件总数。 换言之，将每个身份显示的值相加可能总大于总受众大小。 这是因为，如果客户在多个渠道上与您的品牌互动，则多个身份可能会与该个人客户相关联。
 
