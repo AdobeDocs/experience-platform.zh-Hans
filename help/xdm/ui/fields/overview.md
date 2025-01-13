@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在用户界面中定义XDM字段
 description: 了解如何在Experience Platform用户界面中定义XDM字段。
 exl-id: 2adb03d4-581b-420e-81f8-e251cf3d9fb9
-source-git-commit: 807ce0b0304fd73a455f228529d75cfc68769bf5
+source-git-commit: 0360d0eb9f4a01e12ce8619e8d2c5bac9301631f
 workflow-type: tm+mt
-source-wordcount: '1607'
+source-wordcount: '1606'
 ht-degree: 2%
 
 ---
@@ -52,7 +52,7 @@ Adobe Experience Platform用户界面中的[!DNL Schema Editor]允许您在自�
 
 | 字段属性 | 描述 |
 | --- | --- |
-| [!UICONTROL 字段名称] | 字段的唯一描述性名称。 请注意，保存架构后，无法更改字段名称。 此值用于标识和引用代码和其他下游应用程序中的字段<br><br>最好以camelCase格式写入名称。 它可包含字母数字、短划线或下划线字符，但&#x200B;**不能**&#x200B;以下划线开头。<ul><li>**正确**： `fieldName`</li><li>**可接受：** `field_name2`，`Field-Name`，`field-name_3`</li><li>**不正确**： `_fieldName`</li></ul> |
+| [!UICONTROL 字段名称] | 字段的唯一描述性名称。 请注意，保存架构后，无法更改字段名称。 此值用于标识和引用代码和其他下游应用程序中的字段<br><br>最好以camelCase格式写入名称。 它可包含字母数字或下划线字符，但&#x200B;**不能**&#x200B;以下划线开头。<ul><li>**正确**： `fieldName`</li><li>**可接受：** `field_name2`，`fieldName_3`</li><li>**不正确**： `_fieldName`</li></ul> |
 | [!UICONTROL 显示名称] | 字段的显示名称。 该名称将用于表示架构编辑器画布中的字段。 可使用[显示名称切换](../resources/schemas.md#display-name-toggle)将字段名称更改为显示名称。 |
 | [!UICONTROL 类型] | 字段将包含的数据类型。 从该下拉菜单中，您可以选择XDM支持的[标准标量类型](../../schema/field-constraints.md)之一，或之前在[!DNL Schema Registry]中定义的多字段[数据类型](../resources/data-types.md)之一。<br>注意：如果选择“映射”数据类型，则会显示[!UICONTROL 映射值类型]属性。<br><br>您还可以选择&#x200B;**[!UICONTROL 高级类型搜索]**&#x200B;来搜索和筛选现有数据类型，并更轻松地找到所需类型。 |
 | [!UICONTROL 映射值类型] | 如果选择[!UICONTROL 映射]作为字段的数据类型，则需要此值。 映射的可用值为[!UICONTROL 字符串]和[!UICONTROL 整数]。 从可用选项的下拉列表中选择一个值。<br>要了解有关[特定于类型的字段属性](#type-specific-properties)的更多信息，请参阅定义字段概述。 |
