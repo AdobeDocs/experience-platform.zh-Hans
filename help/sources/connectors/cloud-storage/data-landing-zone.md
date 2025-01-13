@@ -1,12 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题
-solution: Experience Platform
 title: Data Landing Zone Source
 description: 了解如何将Data Landing Zone连接到Adobe Experience Platform
 exl-id: bdc10095-7de4-4183-bfad-a7b5c89197e3
-source-git-commit: ecef17ed454c7b1f30543278bba6b0e3b70399da
+source-git-commit: 1530d7b9815688ab58fb6349ef77e92124741883
 workflow-type: tm+mt
-source-wordcount: '889'
+source-wordcount: '1178'
 ht-degree: 0%
 
 ---
@@ -153,7 +151,149 @@ set srcFilePath=<PATH TO LOCAL FILE(S); WORKS WITH WILDCARD PATTERNS>
 azcopy copy "%srcFilePath%" "%sasUri%" --overwrite=true --recursive=true
 ```
 
-## 将[!DNL Data Landing Zone]连接到[!DNL Platform]
+## 设置您的[!DNL Data Landing Zone]源以便在Amazon Web Services上Experience Platform {#aws}
+
+>[!AVAILABILITY]
+>
+>本节适用于在Amazon Web Services (AWS)上运行的Experience Platform的实施。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform多云概述](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud)。
+
+请按照以下步骤了解如何设置您的[!DNL Data Landing Zone]帐户以在Amazon Web Services (AWS)上Experience Platform。
+
+### 设置AWS CLI并执行操作
+
+- 请阅读有关[安装或更新到AWS CLI最新版本的指南](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)。
+
+### 使用临时凭据配置AWS CLI
+
+使用AWS `configure`命令设置带有访问密钥和会话令牌的CLI。
+
+```shell
+aws configure
+```
+
+出现提示时，输入以下值：
+
+- AWS访问密钥ID： `{YOUR_ACCESS_KEY_ID}`
+- AWS访问密钥： `{YOUR_SECRET_ACCESS_KEY}`
+- 默认区域名称： `{YOUR_REGION}`（例如，`us-west-2`）
+- 默认输出格式： `json`
+
+接下来，设置会话令牌：
+
+```shell
+aws configure set aws_session_token your-session-token
+```
+
+### 处理[!DNL Amazon S3]上的文件
+
+>[!BEGINTABS]
+
+>[!TAB 将文件上传到Amazon S3]
+
+模板：
+
+```shell
+aws s3 cp local-file-path s3://bucketName/dlzFolder/remote-file-Name
+```
+
+示例：
+
+```shell
+aws s3 cp example.txt s3://bucketName/dlzFolder/example.txt
+```
+
+
+>[!TAB 从Amazon S3]下载文件
+
+模板：
+
+```shell
+aws s3 cp s3://bucketName/dlzFolder/remote-file local-file-path
+```
+
+示例：
+
+```shell
+aws s3 cp s3://bucketName/dlzFolder/example.txt example.txt
+```
+
+>[!ENDTABS]
+
+### 使用您的[!DNL Data Landing Zone]凭据登录到AWS控制台
+
+#### 提取您的凭据
+
+首先，您必须获得以下内容：
+
+- `awsAccessKeyId`
+- `awsSecretAccessKey`
+- `awsSessionToken`
+
+#### 生成登录令牌
+
+接下来，使用提取的凭据创建会话，并使用AWS联合端点生成登录令牌：
+
+```py
+import json
+import requests
+ 
+# Example DLZ response with credentials
+response_json = '''{
+    "credentials": {
+        "awsAccessKeyId": "your-access-key",
+        "awsSecretAccessKey": "your-secret-key",
+        "awsSessionToken": "your-session-token"
+    }
+}'''
+ 
+# Parse credentials
+response_data = json.loads(response_json)
+aws_access_key_id = response_data['credentials']['awsAccessKeyId']
+aws_secret_access_key = response_data['credentials']['awsSecretAccessKey']
+aws_session_token = response_data['credentials']['awsSessionToken']
+ 
+# Create session dictionary
+session = {
+    'sessionId': aws_access_key_id,
+    'sessionKey': aws_secret_access_key,
+    'sessionToken': aws_session_token
+}
+ 
+# Generate the sign-in token
+signin_token_url = "https://signin.aws.amazon.com/federation"
+signin_token_payload = {
+    "Action": "getSigninToken",
+    "Session": json.dumps(session)
+}
+signin_token_response = requests.post(signin_token_url, data=signin_token_payload)
+signin_token = signin_token_response.json()['SigninToken']
+```
+
+#### 构建AWS控制台登录URL
+
+一旦您拥有登录令牌，即可在AWS控制台中构建用于将您记录并直接指向所需[!DNL Amazon S3]存储段的URL。
+
+```py
+from urllib.parse import quote
+ 
+# Define the S3 bucket and folder path you want to access
+bucket_name = "your-bucket-name"
+bucket_path = "your-bucket-folder"
+ 
+# Construct the destination URL
+destination_url = f"https://s3.console.aws.amazon.com/s3/buckets/{bucket_name}?prefix={bucket_path}/&tab=objects"
+ 
+# Create the final sign-in URL
+signin_url = f"https://signin.aws.amazon.com/federation?Action=login&Issuer=YourAppName&Destination={quote(destination_url)}&SigninToken={signin_token}"
+ 
+print(f"Sign-in URL: {signin_url}")
+```
+
+#### 访问AWS Console
+
+最后，导航到生成的URL，以使用您的[!DNL Data Landing Zone]凭据直接登录AWS控制台，从而提供对[!DNL Amazon S3]存储段内特定文件夹的访问权限。 登录URL会将您直接转到该文件夹，确保您只能看到和管理允许的数据。
+
+## 将[!DNL Data Landing Zone]连接到Experience Platform
 
 以下文档提供了有关如何使用API或用户界面将数据从[!DNL Data Landing Zone]容器引入Adobe Experience Platform的信息。
 
