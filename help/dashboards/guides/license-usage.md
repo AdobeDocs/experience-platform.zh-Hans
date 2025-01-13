@@ -4,9 +4,9 @@ title: 许可证使用情况仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 5d40af5c0645e9e4ee44f0c0c2133f3b3153bcb1
+source-git-commit: 7605ccef8553fc775ea5496c73971f92ed4c06ab
 workflow-type: tm+mt
-source-wordcount: '2908'
+source-wordcount: '2947'
 ht-degree: 17%
 
 ---
@@ -46,6 +46,14 @@ ht-degree: 17%
 >id="platform_dashboards_licenseusage_predictedusage_computehours"
 >title="预测计算小时数"
 >abstract="您的使用量可能已达到已授予许可量。要评估或减少您的计算小时数，请导航至查询>日志以查看您的查询历史记录。如果您无权访问查询工作区，请联系您的管理员。"
+>additional-url="https://experience.adobe.com/#/platform/query/log" text="查询日志工作区"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_predictedusage_addressableaudience"
+>title="预测的可寻址受众"
+>abstract="您的使用量可能已达到已授予许可量。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/profile/event-expirations" text="体验事件过期时间"
+>additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/profile/pseudonymous-profiles" text="假名轮廓数据过期"
 
 您可以通过Adobe Experience Platform [!UICONTROL 许可证使用情况]仪表板查看有关贵组织许可证使用情况的重要信息。 此处显示的信息是在Platform实例的每日快照期间捕获的。
 
