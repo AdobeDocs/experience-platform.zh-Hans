@@ -1,19 +1,17 @@
 ---
-title: 使用流服务API创建Salesforce基本连接
-description: 了解如何使用Flow Service API将Adobe Experience Platform连接到Salesforce帐户。
+title: 使用流服务API将Salesforce连接到Experience Platform
+description: 了解如何使用流服务API将Adobe Experience Platform连接到Salesforce帐户。
 exl-id: 43dd9ee5-4b87-4c8a-ac76-01b83c1226f6
-source-git-commit: 5951b0f549c2fd2723945f8f4089d12f73b92e6c
+source-git-commit: 01f655df8679383f57d60796be5274acd9b5df68
 workflow-type: tm+mt
-source-wordcount: '782'
-ht-degree: 3%
+source-wordcount: '1077'
+ht-degree: 2%
 
 ---
 
-# 使用[!DNL Flow Service] API创建[!DNL Salesforce]基本连接
+# 使用[!DNL Flow Service] API连接[!DNL Salesforce]以Experience Platform
 
-基本连接表示源和Adobe Experience Platform之间的已验证连接。
-
-本教程将指导您完成使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)为[!DNL Salesforce]创建基本连接的步骤。
+阅读本指南，了解如何使用[[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/)将您的[!DNL Salesforce]源帐户连接到Adobe Experience Platform。
 
 ## 快速入门
 
@@ -22,7 +20,13 @@ ht-degree: 3%
 * [源](../../../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。
 * [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-以下部分提供了使用[!DNL Flow Service] API成功将[!DNL Platform]连接到[!DNL Salesforce]帐户所需了解的其他信息。
+### 使用平台API
+
+有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../../landing/api-guide.md)指南。
+
+## 将[!DNL Salesforce]连接到[!DNL Azure]上的Experience Platform {#azure}
+
+有关如何将[!DNL Salesforce]源连接到[!DNL Azure]上的Experience Platform的信息，请阅读以下步骤。
 
 ### 收集所需的凭据
 
@@ -61,15 +65,11 @@ ht-degree: 3%
 
 >[!ENDTABS]
 
-### 使用平台API
-
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../../landing/api-guide.md)指南。
-
-## 创建基本连接
+### 在[!DNL Azure]的Experience Platform中为[!DNL Salesforce]创建基本连接
 
 基本连接会保留您的源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-要创建基本连接ID，请向`/connections`端点发出POST请求，并在请求正文中提供您的[!DNL Salesforce]身份验证凭据。
+要创建基本连接并将您的[!DNL Salesforce]帐户连接到[!DNL Azure]上的Experience Platform，请向`/connections`端点发出POST请求，并在请求正文中提供您的[!DNL Salesforce]身份验证凭据。
 
 **API格式**
 
@@ -77,11 +77,11 @@ ht-degree: 3%
 POST /connections
 ```
 
-**请求**
-
 >[!BEGINTABS]
 
 >[!TAB 基本身份验证]
+
++++请求
 
 以下请求使用基本身份验证为[!DNL Salesforce]创建基本连接：
 
@@ -120,7 +120,24 @@ curl -X POST \
 | `auth.params.securityToken` | 与您的[!DNL Salesforce]帐户关联的安全令牌。 |
 | `connectionSpec.id` | [!DNL Salesforce]连接规范ID： `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`。 |
 
++++
+
++++响应
+
+成功的响应将返回您新创建的基本连接及其唯一ID。
+
+```json
+{
+    "id": "4cb0c374-d3bb-4557-b139-5712880adc55",
+    "etag": "\"1700df7b-0000-0200-0000-5e3b424f0000\""
+}
+```
+
++++
+
 >[!TAB OAuth 2客户端凭据]
+
++++请求
 
 以下请求使用OAuth 2客户端凭据为[!DNL Salesforce]创建基本连接：
 
@@ -159,9 +176,10 @@ curl -X POST \
 | `auth.params.apiVersion` | 您正在使用的[!DNL Salesforce]实例的REST API版本。 |
 | `connectionSpec.id` | [!DNL Salesforce]连接规范ID： `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`。 |
 
->[!ENDTABS]
++++
 
-**响应**
+
++++响应
 
 成功的响应将返回您新创建的基本连接及其唯一ID。
 
@@ -171,6 +189,205 @@ curl -X POST \
     "etag": "\"1700df7b-0000-0200-0000-5e3b424f0000\""
 }
 ```
+
++++
+
+>[!ENDTABS]
+
+## 连接[!DNL Salesforce]以在Amazon Web Services (AWS)上Experience Platform {#aws}
+
+>[!AVAILABILITY]
+>
+>本节适用于在Amazon Web Services (AWS)上运行的Experience Platform的实施。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform多云概述](../../../../../landing/multi-cloud.md)。
+
+有关如何将[!DNL Salesforce]源连接到AWS上的Experience Platform的信息，请阅读以下步骤。
+
+### 先决条件
+
+有关如何设置您的[!DNL Salesforce]帐户以便能够连接到AWS上的Experience Platform的信息，请阅读[[!DNL Salesforce] 概述](../../../../connectors/crm/salesforce.md#aws)。
+
+### 在AWS上Experience Platform为[!DNL Salesforce]创建基本连接
+
+要创建基本连接并将您的[!DNL Salesforce]帐户连接到AWS上的Experience Platform，请向`/connections`端点发出POST请求并提供适当的凭据值。
+
+**API格式**
+
+```http
+POST /connections
+```
+
+**请求**
+
++++选择以查看请求
+
+以下请求在AWS上的Experience Platform中为[!DNL Salesforce]源创建基本连接。
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "ACME Salesforce account on AWS",
+      "description": "ACME Salesforce account on AWS",
+      "auth": {
+          "specName": "OAuth2 JWT Token Credential",
+          "params":
+            "jwtToken": "{JWT_TOKEN},
+            "clientId": "xxxx",
+            "clientSecret": "xxxx",
+            "instanceUrl": "https://acme-enterprise-3126.my.salesforce.com"
+        }
+      },
+      "connectionSpec": {
+          "id": "cfc0fee1-7dc0-40ef-b73e-d8b134c436f5",
+          "version": "1.0"
+      }
+  }'
+```
+
+有关如何检索[!DNL Salesforce] `jwtToken`的信息，请阅读[上的指南，了解如何设置 [!DNL Salesforce] 源以连接到AWS](../../../../connectors/crm/salesforce.md#aws)上的Experience Platform。
+
++++
+
+**响应**
+
++++选择以查看响应
+
+成功的响应将返回您新创建的基本连接及其唯一ID。
+
+```json
+{
+    "id": "3e908d3f-c390-482b-9f44-43d3d4f2eb82",
+    "etag": "\"1700df7b-0000-0200-0000-5e3b424f0000\""
+}
+```
+
++++
+
+### 验证连接状态
+
+要验证连接状态，请向`/connections`端点发出GET请求，并提供在创建步骤中生成的基本连接ID。
+
+**API格式**
+
+```http
+GET /connections
+```
+
+**请求**
+
++++选择以查看请求
+
+以下请求检索基本连接ID的信息： `3e908d3f-c390-482b-9f44-43d3d4f2eb82`。
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/flowservice/connections/3e908d3f-c390-482b-9f44-43d3d4f2eb82' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'Content-Type: application/json' \
+```
+
++++
+
+**响应**
+
+>[!BEGINTABS]
+
+>[!TAB 正在初始化]
+
++++选择以查看响应示例
+
+以下响应显示处于`initializing`状态时基本连接ID的信息： `3e908d3f-c390-482b-9f44-43d3d4f2eb82`。
+
+```json
+{
+  "items": [
+    {
+      "id": "3e908d3f-c390-482b-9f44-43d3d4f2eb82",
+      "createdAt": 1736506325115,
+      "updatedAt": 1736506325717,
+      "createdBy": "acme@techacct.adobe.com",
+      "updatedBy": "acme@techacct.adobe.com",
+      "createdClient": "{CREATED_CLIENT}",
+      "updatedClient": "{UPDATED_CLIENT}",
+      "sandboxId": "{SANDBOX_ID}",
+      "sandboxName": "{SANDBOX_NAME}",
+      "imsOrgId": "{ORG_ID}",
+      "name": "JWT Token Auth Authentication E2E-1736506322",
+      "description": "Base Connection for salesforce E2E",
+      "connectionSpec": {
+        "id": "cfc0fee1-7dc0-40ef-b73e-d8b134c436f5",
+        "version": "1.0"
+      },
+      "state": "initializing",
+      "auth": {
+        "specName": "OAuth2 JWT Token Credential",
+        "params": {
+          "jwtToken": "{JWT_TOKEN}",
+          "clientId": "{CLIENT_ID}",
+          "clientSecret": "{CLIENT_SECRET}",
+          "instanceUrl": "https://acme-enterprise-3126.my.salesforce.com"
+        }
+      }
+    }
+  }
+]
+```
+
++++
+
+>[!TAB 已启用]
+
++++选择以查看响应示例
+
+以下响应显示处于`enabled`状态时基本连接ID的信息： `3e908d3f-c390-482b-9f44-43d3d4f2eb82`。
+
+```json
+{
+  "items": [
+      {
+        "id": "3e908d3f-c390-482b-9f44-43d3d4f2eb82",
+        "createdAt": 1736506325115,
+        "updatedAt": 1736506413299,
+        "createdBy": "acme@techacct.adobe.com",
+        "updatedBy": "acme@AdobeID",
+        "createdClient": "{CREATED_CLIENT}",
+        "updatedClient": "acme",
+        "sandboxId": "{SANDBOX_ID}",
+        "sandboxName": "{SANDBOX_NAME}",
+        "imsOrgId": "{ORG_ID}",
+        "name": "JWT Token Auth Authentication E2E-1736506322",
+        "description": "Base Connection for salesforce E2E",
+        "connectionSpec": {
+          "id": "cfc0fee1-7dc0-40ef-b73e-d8b134c436f5",
+          "version": "1.0"
+        },
+        "state": "enabled",
+        "auth": {
+          "specName": "OAuth2 JWT Token Credential",
+          "params": {
+            "jwtToken": "{JWT_TOKEN}",
+            "clientId": "{CLIENT_ID}",
+            "clientSecret": "{CLIENT_SECRET}",
+            "instanceUrl": "https://adb8-dev-ed.develop.my.salesforce.com",
+            "orgId": "00DdL000001iPRxUAM"
+          }
+        },
+        "version": "\"6d27f305-40be-41c3-97d4-a701827c34df\"",
+        "etag": "\"6d27f305-40be-41c3-97d4-a701827c34df\""
+    }
+  ]
+}
+```
+
++++
+
+>[!ENDTABS]
 
 ## 后续步骤
 

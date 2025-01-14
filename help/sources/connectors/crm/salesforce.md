@@ -2,9 +2,9 @@
 title: Salesforce Source Connector概述
 description: 了解如何使用API或用户界面将Salesforce连接到Adobe Experience Platform。
 exl-id: 597778ad-3cf8-467c-ad5b-e2850967fdeb
-source-git-commit: ee659ded9701132b12d5b93672b4c958e9720028
+source-git-commit: f62e13e97cc82fef759d06b94337f4cc25d4fb10
 workflow-type: tm+mt
-source-wordcount: '1528'
+source-wordcount: '1533'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,6 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 >在Amazon Web Services (AWS)上运行Adobe Experience Platform时，您现在可以使用[!DNL Salesforce]源。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform多云概述](../../../landing/multi-cloud.md)。
-
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 
@@ -50,6 +49,8 @@ Experience Platform支持从第三方CRM系统中摄取数据。 CRM提供商的
 
 通过平台开发人员控制台和[!DNL Postman]设置，您现在可以开始将相应的环境值应用到您的[!DNL Postman]环境。
 
++++查看变量表指南
+
 下表包含示例值以及有关填充[!DNL Postman]环境的其他信息：
 
 | Variable | 描述 | 示例 |
@@ -73,6 +74,8 @@ Experience Platform支持从第三方CRM系统中摄取数据。 CRM提供商的
 | `has_msi` | 一个布尔值，指示您是否订阅了[!DNL Marketo Sales Insight]。 | `false` |
 
 {style="table-layout:auto"}
+
++++
 
 ### 运行脚本
 
@@ -124,7 +127,7 @@ openssl req -newkey rsa:4096 -new -nodes -x509 -days 3650 -keyout key.pem -out c
 4. 为[!DNL Enable OAuth Settings]启用该框。
 5. 设置回调URL。 由于这不会用于JWT，因此您可以使用`https://localhost`。
 6. 为[!DNL Use Digital Signatures]启用该框。
-7. 上载先前创建的cert.perm文件。
+7. 上载先前创建的cert.pem文件。
 
 #### 添加所需权限
 
