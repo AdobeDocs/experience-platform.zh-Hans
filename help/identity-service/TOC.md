@@ -2,23 +2,23 @@
 audience: user
 user-guide-title: Adobe Experience Platform Identity Service
 breadcrumb-title: Platform Identity Service 指南
-user-guide-description: 跨设备和系统建立客户身份桥梁，以提供个性化的数字体验。
+user-guide-description: 跨设备和系统连接客户身份标识，以提供个性化的数字体验。
 feature: Identities
 role: Admin,Developer
 source-git-commit: 6cdb622e76e953c42b58363c98268a7c46c98c99
 workflow-type: tm+mt
 source-wordcount: '146'
-ht-degree: 26%
+ht-degree: 28%
 
 ---
 
 
 # Adobe Experience Platform Identity Service {#identity}
 
-- [标识服务概述](home.md)
+- [身份标识服务概述](home.md)
 - [Identity Service和实时客户资料](identity-and-profile.md)
 - 功能 {#features}
-   - [标识命名空间](./features/namespaces.md)
+   - [身份标识命名空间](./features/namespaces.md)
    - [身份链接逻辑](./features/identity-linking-logic.md)
    - [身份图查看器](./features/identity-graph-viewer.md)
    - [Identity Service中的删除](./features/deletion.md)
