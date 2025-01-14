@@ -1,12 +1,12 @@
 ---
 keywords: google客户匹配；Google客户匹配；Google客户匹配
 title: Google Customer Match连接
-description: Google Customer Match允许您使用在线和离线数据，通过Google自有资产和运营资产(如Search、Shopping、Gmail和YouTube)与客户联系并重新互动。
+description: Google Customer Match允许您使用在线和离线数据，通过Google自有资产和运营资产（如搜索、购物和Gmail）与客户联系并重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 25dc27d890cb2e0e23f8fa797ac9edea929164fd
+source-git-commit: bbf48bb3478e90c1502083d0ea97e3cc0aef1bb9
 workflow-type: tm+mt
-source-wordcount: '2100'
-ht-degree: 2%
+source-wordcount: '2140'
+ht-degree: 3%
 
 ---
 
@@ -22,7 +22,11 @@ ht-degree: 2%
 ><br/>
 >未购买AdobePrivacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/ui/segment-builder.md)中的[区段定义](../../../segmentation/home.md#segment-definitions)功能来过滤掉未经同意的用户档案，以便继续不间断地使用现有的Real-Time CDP Google目标。
 
-[[!DNL Google Customer Match]](https://support.google.com/google-ads/answer/6379332?hl=en)允许您使用在线和离线数据，通过Google拥有和运营的资产（如： [!DNL Search]、[!DNL Shopping]、[!DNL Gmail]和[!DNL YouTube]）联系客户并重新与其互动。
+[[!DNL Google Customer Match]](https://support.google.com/google-ads/answer/6379332?hl=en)允许您使用在线和离线数据，通过Google拥有和运营的资产（如： [!DNL Search]、[!DNL Shopping]和[!DNL Gmail]）联系客户并重新与其互动。
+
+>[!TIP]
+>
+>要通过[!DNL YouTube]清单联系客户，请使用[Google客户匹配+ DV360](/help/destinations/catalog/advertising/google-customer-match-dv360.md)目标，该目标使用Google受众合作伙伴API。
 
 Adobe Experience Platform UI中的![Google客户匹配目标。](../../assets/catalog/advertising/google-customer-match/catalog.png)
 
@@ -35,6 +39,10 @@ Adobe Experience Platform UI中的![Google客户匹配目标。](../../assets/ca
 运动服装品牌希望通过[!DNL Google Search]和[!DNL Google Shopping]联系现有客户，以根据优惠和项目的过去购买和浏览历史记录对其进行个性化设置。 服装品牌可以从自己的CRM中摄取电子邮件地址以进行Experience Platform，并从自己的离线数据中构建受众。 然后，他们可以将这些受众发送到[!DNL Google Customer Match]以在[!DNL Search]和[!DNL Shopping]中使用，从而优化其广告支出。
 
 ### 用例#2
+
+>[!TIP]
+>
+>要在[!DNL YouTube]清单中执行此用例，请使用新的[Google客户匹配+ DV360](/help/destinations/catalog/advertising/google-customer-match-dv360.md)目标，该目标使用Google受众合作伙伴API。
 
 一家知名科技公司发布了一款新手机。 为了推广这种新手机型号，他们正寻求让拥有旧款手机的客户了解手机的新特性和功能。
 
@@ -222,7 +230,7 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 
 >[!IMPORTANT]
 >
-> 从2024年10月开始，Adobe将推出一项更新，以提高流目标的报表准确性。 此增强功能可确保Experience Platform和目标平台报表之间更好地保持一致。
+> 从 2024 年 10 月开始，Adobe 将推出更新，以提高流式处理目标的报告准确性。此增强功能可确保Experience Platform和目标平台报表之间更好地保持一致。
 >
 > 在此更新之前，**[!UICONTROL 失败的标识]**&#x200B;包括所有激活重试。 进行此更新后，总计数中仅包含上次激活重试。
 >
