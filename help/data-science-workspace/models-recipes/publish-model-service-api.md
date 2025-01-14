@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform；发布模型；数据科学工作区；热门主题；sensei机器学习api
+keywords: Experience Platform；发布模型；数据科学Workspace；热门主题；sensei机器学习api
 solution: Experience Platform
 title: 使用Sensei机器学习API的Publish a Model as a Service
 type: Tutorial
-description: 本教程介绍使用Sensei机器学习API将模型发布为服务的过程。
+description: 本教程介绍了使用Sensei机器学习API将模型发布为服务的过程。
 exl-id: f78b1220-0595-492d-9f8b-c3a312f17253
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '1541'
 ht-degree: 1%
@@ -20,7 +20,7 @@ ht-degree: 1%
 >
 >本文档面向之前有权访问数据科学Workspace的现有客户。
 
-本教程介绍使用[[!DNL Sensei Machine Learning API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml)将模型发布为服务的过程。
+本教程介绍使用[[!DNL Sensei Machine Learning API]](https://developer.adobe.com/experience-platform-apis/references/sensei-machine-learning/)将模型发布为服务的过程。
 
 ## 快速入门
 
@@ -45,12 +45,12 @@ ht-degree: 1%
 | 搜索词 | 定义 |
 | --- | --- |
 | **机器学习实例（ML实例）** | 特定租户的[!DNL Sensei]引擎实例，包含特定数据、参数和[!DNL Sensei]代码。 |
-| **实验** | 用于举行训练实验运行和/或评分实验运行的伞形实体。 |
-| **预定实验** | 一个术语，用于描述训练或评分实验运行的自动化，受用户定义的计划约束。 |
-| **试验运行** | 训练或评分实验的特定实例。 来自特定试验的多个试验运行在用于训练或评分的数据集值方面可能有所不同。 |
-| **训练模型** | 在达到经过验证、评估和最终确定的模型之前，通过试验和特征工程过程创建的机器学习模型。 |
-| **已发布的模型** | 经过训练、验证和评估后得出的最终版本化模型。 |
-| **机器学习服务（ML 服务）** | 作为服务部署的ML实例，用于支持使用API端点进行培训和评分的按需请求。 ML服务也可以使用现有的经过训练的试验运行来创建。 |
+| **试验** | 用于举办培训实验运行、评分实验运行或两者的伞形实体。 |
+| **计划的试验** | 一个术语，用于描述训练或评分实验运行的自动化，受用户定义的计划约束。 |
+| **试验运行** | 训练或评分实验的特定实例。 特定实验中的多个实验运行在用于训练或评分的数据集值上可能有所不同。 |
+| **训练好的模型** | 在到达验证、评估和最终确定的模型之前，通过试验和特征工程过程创建的机器学习模型。 |
+| **已发布的模型** | 经过培训、验证和评估后，最终确定和版本化的模型最终形成。 |
+| **机器学习服务（ML服务）** | 作为服务部署的ML实例，用于支持使用API端点进行培训和评分的按需请求。 ML服务也可以使用现有的经过训练的试验运行来创建。 |
 
 ## 使用现有的训练实验运行和计划评分创建ML服务
 
@@ -91,10 +91,10 @@ curl -X POST
 | `mlInstanceId` | 现有的ML实例标识，用于创建ML服务的训练实验运行应该与此特定的ML实例对应。 |
 | `trainingExperimentId` | 与ML实例标识对应的试验标识。 |
 | `trainingExperimentRunId` | 用于发布ML服务的特定训练实验运行。 |
-| `scoringDataSetId` | 用于计划评分实验运行的特定数据集的标识。 |
-| `scoringTimeframe` | 一个整数值，表示筛选要用于评分实验运行的数据（以分钟为单位）。 例如，值`10080`表示将使用过去10080分钟或168小时内的数据来运行每次计划的计分实验。 请注意，`0`值不会筛选数据，数据集中的所有数据都将用于计分。 |
-| `scoringSchedule` | 包含有关计划评分实验运行的详细信息。 |
-| `scoringSchedule.startTime` | 指示何时开始计分的日期时间。 |
+| `scoringDataSetId` | 指将用于计划评分实验运行的特定数据集的标识。 |
+| `scoringTimeframe` | 一个整数值，表示用于筛选要用于评分试验运行的数据的分钟数。 例如，值`10080`表示将使用过去10080分钟或168小时的数据进行每次计划的评分试验运行。 请注意，值`0`不会过滤数据，数据集中的所有数据均用于评分。 |
+| `scoringSchedule` | 包含有关计划的评分试验运行的详细信息。 |
+| `scoringSchedule.startTime` | 指示何时开始评分的日期时间。 |
 | `scoringSchedule.endTime` | 指示何时开始评分的日期时间。 |
 | `scoringSchedule.cron` | Cron值，指示对试验运行进行评分的间隔。 |
 
@@ -135,7 +135,7 @@ curl -X POST
 
 ### 带有计划的评分试验的ML服务 {#ml-service-with-scheduled-experiment-for-scoring}
 
-可以通过发布包含为评分安排的实验运行的ML实例来创建ML服务，这将创建一个用于培训的普通实验实体。 将生成一个培训实验运行，并将用于所有计划的评分实验运行。 请确保您具有创建ML服务所需的`mlInstanceId`、`trainingDataSetId`和`scoringDataSetId`，并且它们存在且是有效值。
+您可以通过发布具有计划的试验运行以进行评分的ML实例来创建ML服务，这将创建一个用于培训的普通试验实体。 生成训练实验运行，并将用于所有计划的评分实验运行。 确保您具有创建ML服务所需的`mlInstanceId`、`trainingDataSetId`和`scoringDataSetId`，并且它们存在且是有效值。
 
 **API格式**
 
@@ -182,7 +182,7 @@ curl -X POST
 
 **响应**
 
-成功的响应将返回新创建的ML服务的详细信息。 这包括服务的唯一`id`，以及分别用于其相应培训和评分实验的`trainingExperimentId`和`scoringExperimentId`。
+成功的响应将返回新创建的ML服务的详细信息。 这包括服务的唯一`id`，以及分别用于其相应训练和评分实验的`trainingExperimentId`和`scoringExperimentId`。
 
 ```JSON
 {
@@ -206,11 +206,11 @@ curl -X POST
 }
 ```
 
-### 带有计划培训和评分实验的ML服务 {#ml-service-with-scheduled-experiments-for-training-and-scoring}
+### 包含用于训练和评分的计划实验的ML服务 {#ml-service-with-scheduled-experiments-for-training-and-scoring}
 
-要将现有ML实例发布为ML服务，并计划培训和评分实验运行，您需要提供培训和评分计划。 当创建此配置的ML服务时，还会创建用于训练和评分的计划试验实体。 请注意，培训计划和评分计划不必相同。 在评分作业执行期间，将提取计划训练试验运行生成的最新训练模型并将其用于计划的评分运行。
+要将现有ML实例发布为ML服务，并安排训练和评分实验运行，您需要提供训练和评分计划。 当创建此配置的ML服务时，还会创建用于训练和评分的计划试验实体。 请注意，训练和评分时间表不必相同。 在评分作业执行期间，将获取计划培训实验运行生成的最新已训练模型，并将其用于计划评分运行。
 
-**API 格式**
+**API格式**
 
 ```http
 POST /mlServices
@@ -248,10 +248,10 @@ curl -X POST 'https://platform.adobe.io/data/sensei/mlServices'
 | JSON键 | 描述 |
 | --- | --- |
 | `mlInstanceId` | 现有ML实例标识，表示用于创建ML服务的ML实例。 |
-| `trainingDataSetId` | 识别是指用于训练实验的特定数据集。 |
-| `trainingTimeframe` | 一个整数值，表示筛选要用于训练实验的数据的分钟数。 例如，过去 10080 分钟或 168 小时的平均数据值 `"10080"` 将用于训练实验运行。 请注意，值 不会 `"0"` 筛选数据，数据集中的所有数据都用于训练。 |
-| `scoringDataSetId` | 标识是指用于计划评分实验运行的特定数据集。 |
-| `scoringTimeframe` | 一个整数值，表示筛选要用于对试验运行评分的数据的分钟数。 例如，过去 10080 分钟或 168 小时的平均数据值 `"10080"` 将用于每个计划的评分实验运行。 请注意，值`"0"`不会过滤数据，数据集中的所有数据均用于评分。 |
+| `trainingDataSetId` | 指用于训练试验的特定数据集的标识。 |
+| `trainingTimeframe` | 一个整数值，表示用于筛选要用于训练试验的数据的分钟数。 例如，值`"10080"`表示将使用过去10080分钟或168小时的数据进行训练试验运行。 请注意，值`"0"`不会过滤数据，数据集中的所有数据都用于训练。 |
+| `scoringDataSetId` | 指将用于计划评分实验运行的特定数据集的标识。 |
+| `scoringTimeframe` | 一个整数值，表示用于筛选要用于评分试验运行的数据的分钟数。 例如，值`"10080"`表示将使用过去10080分钟或168小时的数据进行每次计划的评分试验运行。 请注意，值`"0"`不会过滤数据，数据集中的所有数据均用于评分。 |
 | `trainingSchedule` | 包含有关计划的培训试验运行的详细信息。 |
 | `scoringSchedule` | 包含有关计划的评分试验运行的详细信息。 |
 | `scoringSchedule.startTime` | 指示何时开始评分的日期时间。 |
@@ -260,7 +260,7 @@ curl -X POST 'https://platform.adobe.io/data/sensei/mlServices'
 
 **响应**
 
-成功的响应会返回新创建的 ML 服务的详细信息。 这包括服务的独特`id`性，以及`trainingExperimentId``scoringExperimentId`相应的训练和评分实验。在下面的示例响应中， `trainingSchedule` 存在并 `scoringSchedule` 表明用于训练和评分的实验实体是计划的试验。
+成功的响应将返回新创建的ML服务的详细信息。 这包括服务的唯一`id`，以及其相应的训练和评分实验的`trainingExperimentId`和`scoringExperimentId`。 在下面的示例响应中，`trainingSchedule`和`scoringSchedule`的存在表明用于训练和评分的试验实体是计划的试验。
 
 ```JSON
 {
@@ -289,11 +289,11 @@ curl -X POST 'https://platform.adobe.io/data/sensei/mlServices'
 }
 ```
 
-## 查找机器学习服务 {#retrieving-ml-services}
+## 查找ML服务 {#retrieving-ml-services}
 
-您可以通过向路径发出 `GET` 请求 `/mlServices` 并在路径中提供 ML 服务的唯一性 `id` 来查找现有 ML 服务。
+您可以通过向`/mlServices`发出`GET`请求并在路径中提供唯一的`id`ML服务来查找现有ML服务。
 
-**API 格式**
+**API格式**
 
 ```http
 GET /mlServices/{SERVICE_ID}
@@ -301,7 +301,7 @@ GET /mlServices/{SERVICE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SERVICE_ID}` | `id`您正在查找的 ML 服务的独特性。 |
+| `{SERVICE_ID}` | 您正在查找的ML服务的唯一`id`。 |
 
 **请求**
 
@@ -398,7 +398,7 @@ curl -X PUT 'https://platform.adobe.io/data/sensei/mlServices/{SERVICE_ID}'
 
 >[!WARNING]
 >
->不要尝试修改现有已排定培训和评分作业的`startTime`。 如果必须修改`startTime`，请考虑发布相同的模型并重新安排培训和评分作业。
+>不要尝试修改现有计划培训和评分作业上的`startTime`。 如果必须修改`startTime`，请考虑发布相同的模型并重新计划训练和评分作业。
 
 **响应**
 

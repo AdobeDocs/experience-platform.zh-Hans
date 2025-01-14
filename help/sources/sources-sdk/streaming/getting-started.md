@@ -1,22 +1,22 @@
 ---
-title: 自助源快速入门(Streaming SDK)
-description: 本文档介绍了在尝试使用自助源(Streaming SDK)创建新源之前需要了解的先决条件信息。
+title: 自助式源快速入门(流SDK)
+description: 本文档介绍了在尝试使用自助源(流SDK)创建新源之前需要了解的先决条件信息。
 exl-id: 6cc13279-ce0b-45bc-ad25-e2e6aafc2af0
 badge: Beta 版
-source-git-commit: 256857103b4037b2cd7b5b52d6c5385121af5a9f
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '543'
 ht-degree: 12%
 
 ---
 
-# 自助源快速入门(Streaming SDK)
+# 自助式源快速入门(流SDK)
 
 >[!NOTE]
 >
->自助源流SDK处于测试阶段。 有关使用测试版标记源的更多信息，请阅读[源概述](../../home.md#terms-and-conditions)。
+>自助来源流SDK处于测试阶段。 有关使用测试版标记源的更多信息，请阅读[源概述](../../home.md#terms-and-conditions)。
 
-自助式源（流SDK）允许您集成自己的源，以将流数据引入Adobe Experience Platform。 本文档介绍了在尝试调用[[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)之前需要了解的核心概念。
+自助式源(流SDK)允许您集成自己的源，将流数据引入到Adobe Experience Platform。 本文档介绍了在尝试调用[[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/)之前需要了解的核心概念。
 
 ## 高级流程
 
@@ -24,7 +24,7 @@ ht-degree: 12%
 
 ### 集成
 
-* [为流SDK创建新的连接规范](create.md)。
+* [为流式传输SDK创建新的连接规范](create.md)。
 * [使用新的连接规范ID](update-flow-specs.md)更新流流规范。
 * [测试并提交您的流源](submit.md)。
 
@@ -33,8 +33,8 @@ ht-degree: 12%
 * 要开始记录您的源，请阅读有关创建自助源文档的[概述](../documentation/doc-overview.md)。
 * 有关如何使用GitHub创建文档的步骤，请阅读有关[使用GitHub Web界面](../documentation/github.md)的指南。
 * 阅读有关[使用文本编辑器](../documentation/text-editor.md)的指南，了解如何使用本地计算机创建文档的步骤。
-* [使用流SDK API文档模板在API中记录您的源](streaming-template-api.md)。
-* [使用流SDK UI文档模板在UI中记录您的源](streaming-template-ui.md)。
+* [使用流式SDK API文档模板在API中记录您的源](streaming-template-api.md)。
+* [使用流式SDK UI文档模板在UI中记录您的源](streaming-template-ui.md)。
 
 您还可以下载以下文档模板：
 
@@ -47,7 +47,7 @@ ht-degree: 12%
 >
 >要发送更新，您与Experience Platform集成的源必须能够支持端点可以订阅的webhook。
 
-要使用自助源（流SDK），您必须确保您有权访问配置了Adobe Experience Platform源的沙盒组织。
+要使用自助源(流SDK)，您必须确保您有权访问配置了Adobe Experience Platform源的沙盒组织。
 
 此外，您还需要实际了解Adobe Experience Platform的以下组件：
 
@@ -56,7 +56,7 @@ ht-degree: 12%
 
 ## 正在读取示例 API 调用
 
-自助源（流SDK）和[!DNL Flow Service] API文档提供了示例API调用，以演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅Experience Platform疑难解答指南中有关[如何读取示例API调用](../../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。
+自助源(流SDK)和[!DNL Flow Service] API文档提供了示例API调用，以演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅Experience Platform疑难解答指南中有关[如何读取示例API调用](../../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。
 
 ## 收集所需标头的值
 
@@ -80,4 +80,4 @@ Platform中的所有资源（包括属于[!DNL Flow Service]的资源）都被�
 
 ## 后续步骤
 
-要开始使用自助源（流SDK）创建新源，请参阅有关[创建新源](./create.md)的教程。
+要开始使用自助源(流SDK)创建新源，请参阅有关[创建新源](./create.md)的教程。

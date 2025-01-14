@@ -3,7 +3,7 @@ title: 适用于流SDK API的文档自助服务模板
 description: 了解如何使用流服务API将流数据从源引入Adobe Experience Platform。
 exl-id: a06384a2-cd99-456d-9f00-babcf3f7b7d9
 badge: Beta 版
-source-git-commit: 256857103b4037b2cd7b5b52d6c5385121af5a9f
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '1638'
 ht-degree: 1%
@@ -47,7 +47,7 @@ ht-degree: 1%
 
 ### 将&#x200B;*YOURSOURCE*&#x200B;与webhook集成
 
-*流SDK要求您的源能够支持Webhook以便与Experience Platform通信。 在本节中，您必须提供用户必须遵循的步骤，才能将YOURSOURCE与webhook集成。*
+*流式传输SDK要求您的源能够支持Webhook以便与Experience Platform通信。 在本节中，您必须提供用户必须遵循的步骤，才能将YOURSOURCE与webhook集成。*
 
 ## 使用[!DNL Flow Service] API将&#x200B;*YOURSOURCE*&#x200B;连接到平台
 
@@ -117,7 +117,7 @@ curl -X POST \
 
 ### 创建目标数据集 {#target-dataset}
 
-可以通过向[目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)执行POST请求，在有效负载中提供目标架构的ID来创建目标数据集。
+可以通过向[目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)执行POST请求，在有效负载中提供目标架构的ID来创建目标数据集。
 
 有关如何创建目标数据集的详细步骤，请参阅有关[使用API创建数据集的教程](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html)。
 

@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；流连接；创建流连
 title: 使用流服务API创建HTTP API流连接
 description: 本教程提供了有关如何使用HTTP API源通过流服务API为原始数据和XDM数据创建流连接的步骤
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-source-git-commit: 6ea5eaf28f260f974d168db2bed9bc95fcfa52af
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '1646'
 ht-degree: 3%
@@ -340,7 +340,7 @@ curl -X POST \
 
 ### 创建目标数据集 {#target-dataset}
 
-可以通过向[目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)执行POST请求，在有效负载中提供目标架构的ID来创建目标数据集。
+可以通过向[目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)执行POST请求，在有效负载中提供目标架构的ID来创建目标数据集。
 
 有关如何创建目标数据集的详细步骤，请参阅有关[使用API创建数据集的教程](../../../../../catalog/api/create-dataset.md)。
 
@@ -398,7 +398,7 @@ curl -X POST \
 
 要将源数据摄取到目标数据集中，必须首先将其映射到目标数据集所遵循的目标架构。
 
-要创建映射集，请在提供目标XDM架构`$id`和要创建的映射集的详细信息时，向[[!DNL Data Prep] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-prep.yaml)的`mappingSets`端点发出POST请求。
+要创建映射集，请在提供目标XDM架构`$id`和要创建的映射集的详细信息时，向[[!DNL Data Prep] API](https://developer.adobe.com/experience-platform-apis/references/data-prep/)的`mappingSets`端点发出POST请求。
 
 **API格式**
 

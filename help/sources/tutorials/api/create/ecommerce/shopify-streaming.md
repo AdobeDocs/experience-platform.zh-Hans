@@ -3,7 +3,7 @@ title: 使用流服务API为Shopify数据创建流式Source连接和数据流
 description: 了解如何使用流服务API为Shopify数据创建流源连接和数据流。
 badge: Beta 版
 exl-id: 74660e27-49c0-415f-bd85-15f9d853daee
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '1421'
 ht-degree: 1%
@@ -97,7 +97,7 @@ curl -X POST \
 
 ### 创建目标数据集 {#target-dataset}
 
-可以通过向[目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)执行POST请求，在有效负载中提供目标架构的ID来创建目标数据集。
+可以通过向[目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)执行POST请求，在有效负载中提供目标架构的ID来创建目标数据集。
 
 有关如何创建目标数据集的详细步骤，请参阅有关[使用API创建数据集的教程](../../../../../catalog/api/create-dataset.md)。
 

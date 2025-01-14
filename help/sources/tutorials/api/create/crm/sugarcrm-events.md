@@ -2,7 +2,7 @@
 title: 使用流服务API为SugarCRM事件创建源连接和数据流
 description: 了解如何使用流服务API将Adobe Experience Platform连接到SugarCRM Events。
 exl-id: 12d08010-569c-4111-ba95-697c6ce6f637
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '1941'
 ht-degree: 1%
@@ -360,7 +360,7 @@ curl -X POST \
 
 ### 创建目标数据集 {#target-dataset}
 
-可以通过向[目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)执行POST请求，在有效负载中提供目标架构的ID来创建目标数据集。
+可以通过向[目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)执行POST请求，在有效负载中提供目标架构的ID来创建目标数据集。
 
 有关如何创建目标数据集的详细步骤，请参阅有关[使用API创建数据集的教程](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html)。
 

@@ -5,7 +5,7 @@ title: 使用流服务API为原始数据创建流数据流
 type: Tutorial
 description: 本教程涵盖了检索流数据以及使用源连接器和API将它们引入Platform的步骤。
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4
-source-git-commit: 39b5a2b76c28033b9e98dcefc4cdcaa9964f4d2e
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '1169'
 ht-degree: 2%
@@ -265,7 +265,7 @@ curl -X POST \
 
 要将源数据摄取到目标数据集中，必须首先将其映射到目标数据集所遵循的目标架构。
 
-要创建映射集，请在提供目标XDM架构`$id`和要创建的映射集的详细信息时，向[[!DNL Data Prep] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-prep.yaml)的`mappingSets`端点发出POST请求。
+要创建映射集，请在提供目标XDM架构`$id`和要创建的映射集的详细信息时，向[[!DNL Data Prep] API](https://developer.adobe.com/experience-platform-apis/references/data-prep/)的`mappingSets`端点发出POST请求。
 
 **API格式**
 
@@ -482,7 +482,7 @@ curl -X POST \
 }
 ```
 
-## 用于摄取的Post数据
+## 发布要引入的数据
 
 查看以下有效负载示例，了解可发送以供摄取的原始或XDM兼容JSON的示例。
 

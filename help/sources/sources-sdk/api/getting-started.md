@@ -1,23 +1,23 @@
 ---
-keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK；SDK
+keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源sdk；sdk；SDK
 solution: Experience Platform
-title: 自助源快速入门(Batch SDK)
-description: 本文档介绍了在尝试使用自助源（批处理SDK）创建新源之前需要了解的先决条件信息。
+title: 自助源快速入门(批处理SDK)
+description: 本文档介绍了在尝试使用自助源(批处理SDK)创建新源之前需要了解的先决条件信息。
 exl-id: ba131442-ff20-4854-87fe-918aa313382d
-source-git-commit: 2a5d545db18a5dd33c5ff2ac5c543ec35db4ca00
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '375'
 ht-degree: 17%
 
 ---
 
-# 自助源快速入门(Batch SDK)
+# 自助源快速入门(批处理SDK)
 
-自助式源（批处理SDK）允许您集成自己的基于REST的源，将批量数据引入到Adobe Experience Platform。 本文档介绍了在尝试调用[[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)之前需要了解的核心概念。
+自助式源(批处理SDK)允许您集成自己的基于REST的源，将批量数据引入到Adobe Experience Platform。 本文档介绍了在尝试调用[[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/)之前需要了解的核心概念。
 
 ## 先决条件
 
-要使用自助式源（批处理SDK），您必须确保您有权访问配置了Adobe Experience Platform源的组织沙盒。
+要使用自助源(批处理SDK)，您必须确保您有权访问配置了Adobe Experience Platform源的组织沙盒。
 
 此外，您还需要实际了解Adobe Experience Platform的以下组件：
 
@@ -26,7 +26,7 @@ ht-degree: 17%
 
 ## 正在读取示例 API 调用
 
-自助源（批处理SDK）和[!DNL Flow Service] API文档提供了示例API调用，以演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅Experience Platform疑难解答指南中有关[如何读取示例API调用](../../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。
+自助式源(批处理SDK)和[!DNL Flow Service] API文档提供了示例API调用，以演示如何设置请求的格式。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅Experience Platform疑难解答指南中有关[如何读取示例API调用](../../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。
 
 ## 收集所需标头的值
 
@@ -50,4 +50,4 @@ Platform中的所有资源（包括属于[!DNL Flow Service]的资源）都被�
 
 ## 后续步骤
 
-要开始使用自助源（批处理SDK）创建新源，请参阅有关[创建新源](./create.md)的教程。
+要开始使用自助源(批处理SDK)创建新源，请参阅有关[创建新源](./create.md)的教程。

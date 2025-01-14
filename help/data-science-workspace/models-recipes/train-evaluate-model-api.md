@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform；训练和评估；数据科学工作区；热门主题；Sensei机器学习API
+keywords: Experience Platform；训练和评估；数据科学Workspace；热门主题；Sensei机器学习API
 solution: Experience Platform
 title: 使用Sensei机器学习API训练和评估模型
 type: Tutorial
-description: 本教程将向您介绍如何使用Sensei机器学习API调用创建、训练和评估模型。
+description: 本教程将向您展示如何使用Sensei机器学习API调用创建、训练和评估模型。
 exl-id: 8107221f-184c-426c-a33e-0ef55ed7796e
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '1240'
 ht-degree: 1%
@@ -20,7 +20,7 @@ ht-degree: 1%
 >
 >本文档面向之前有权访问数据科学Workspace的现有客户。
 
-本教程将向您展示如何使用API调用创建、训练和评估模型。 有关API文档的详细列表，请参阅[此文档](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml)。
+本教程将向您展示如何使用API调用创建、训练和评估模型。 有关API文档的详细列表，请参阅[此文档](https://developer.adobe.com/experience-platform-apis/references/sensei-machine-learning/)。
 
 ## 先决条件
 
@@ -32,19 +32,19 @@ ht-degree: 1%
 
 - `{ACCESS_TOKEN}`：在身份验证后提供的特定持有者令牌值。
 - `{ORG_ID}`：在独特的Adobe Experience Platform集成中找到您的组织凭据。
-- `{API_KEY}`：在您的唯一Adobe Experience Platform集成中找到您的特定API密钥值。
+- `{API_KEY}`：在独特的Adobe Experience Platform集成中找到特定的API密钥值。
 
 - 链接到智能服务的Docker图像
 
-## API工作流程
+## API工作流
 
-我们将使用API创建用于培训的实验运行。 在本教程中，我们将重点介绍“引擎”、“实例”和“试验”端点。 下图概括了三者之间的关系，并介绍了“运行”和“模型”的概念。
+我们将使用API来创建用于训练的试验运行。 在本教程中，我们将重点介绍“引擎”、“实例”和“实验”端点。 下表概述了三者之间的关系，还介绍了运行和模型的想法。
 
 ![](../images/models-recipes/train-evaluate-api/engine_hierarchy_api.png)
 
 >[!NOTE]
 >
->术语“Engine”、“MLInstance”、“MLService”、“Experiment”和“Model”在UI中称为不同的术语。 如果您来自UI，下表列出了它们的区别。
+>术语“Engine”、“MLInstance”、“MLService”、“Experiment”和“Model”在UI中称为不同的术语。 如果您来自UI，下表将列出二者的差异。
 
 | UI术语 | API术语 |
 | --- | --- |
@@ -55,7 +55,7 @@ ht-degree: 1%
 
 ### 创建MLInstance
 
-可以使用以下请求来创建MLInstance。 您将使用通过[使用API导入打包的Recipe](./import-packaged-recipe-ui.md)教程创建引擎时返回的`{ENGINE_ID}`。
+可以使用以下请求来创建MLInstance。 您将使用通过[使用API导入打包的处方](./import-packaged-recipe-ui.md)教程创建引擎时返回的`{ENGINE_ID}`。
 
 **请求**
 
@@ -71,8 +71,8 @@ curl -X POST \
 
 `{ACCESS_TOKEN}`：在身份验证后提供的特定持有者令牌值。\
 `{ORG_ID}`：在独特的Adobe Experience Platform集成中找到您的组织凭据。\
-`{API_KEY}`：在您的唯一Adobe Experience Platform集成中找到您的特定API密钥值。\
-`{JSON_PAYLOAD}`：MLInstance的配置。 我们在本教程中使用的示例如下所示：
+`{API_KEY}`：在独特的Adobe Experience Platform集成中找到特定的API密钥值。\
+`{JSON_PAYLOAD}`：我们的MLInstance的配置。 我们在本教程中使用的示例如下所示：
 
 ```JSON
 {
@@ -127,9 +127,9 @@ curl -X POST \
 
 >[!NOTE]
 >
->在`{JSON_PAYLOAD}`中，我们定义在`tasks`数组中用于训练和计分的参数。 `{ENGINE_ID}`是要使用的引擎的ID，`tag`字段是用于标识实例的可选参数。
+>在`{JSON_PAYLOAD}`中，我们定义用于在`tasks`数组中训练和评分的参数。 `{ENGINE_ID}`是要使用的引擎的ID，`tag`字段是用于标识实例的可选参数。
 
-响应包含`{INSTANCE_ID}`，它表示创建的MLInstance。 可以创建具有不同配置的多模型MLInstance。
+响应包含表示所创建的MLInstance的`{INSTANCE_ID}`。 可以创建具有不同配置的多个模型MLI实例。
 
 **响应**
 
@@ -162,12 +162,12 @@ curl -X POST \
 }
 ```
 
-`{ENGINE_ID}`：此ID表示在其中创建MLInstance的引擎。\
+`{ENGINE_ID}`：此ID表示MLInstance是在其下创建的引擎。\
 `{INSTANCE_ID}`：表示MLInstance的ID。
 
 ### 创建试验
 
-数据科学家在训练时使用实验来得出一个高性能的模型。 多项实验包括更改数据集、功能、学习参数和硬件。 下面是创建“试验”的示例。
+数据科学家使用实验在训练时得出高性能模型。 多项实验包括更改数据集、特征、学习参数和硬件。 以下是创建试验的一个示例。
 
 **请求**
 
@@ -181,8 +181,8 @@ curl -X POST \
   -d `{JSON PAYLOAD}`
 ```
 
-`{ORG_ID}`：在您的唯一Adobe Experience Platform集成中找到您的组织凭据。\
-`{ACCESS_TOKEN}`：身份验证后提供的特定持有者令牌值。\
+`{ORG_ID}`：在独特的Adobe Experience Platform集成中找到您的组织凭据。\
+`{ACCESS_TOKEN}`：在身份验证后提供的特定持有者令牌值。\
 `{API_KEY}`：在独特的Adobe Experience Platform集成中找到特定的API密钥值。\
 `{JSON_PAYLOAD}`：创建的试验对象。 我们在本教程中使用的示例如下所示：
 
@@ -198,7 +198,7 @@ curl -X POST \
 
 `{INSTANCE_ID}`：表示MLInstance的ID。
 
-Experiment创建的响应如下所示。
+试验创建的响应如下所示。
 
 **响应**
 
@@ -216,14 +216,14 @@ Experiment创建的响应如下所示。
 }
 ```
 
-`{EXPERIMENT_ID}`：表示您刚刚创建的实验的ID。
+`{EXPERIMENT_ID}`：表示您刚刚创建的试验的ID。
 `{INSTANCE_ID}`：表示MLInstance的ID。
 
-### 创建计划的培训试验
+### 创建计划的试验以进行训练
 
 使用计划的实验，因此我们不需要通过API调用创建每个单独的实验运行。 相反，我们在试验创建期间提供了所有必需的参数，每次运行都将定期创建。
 
-为了指示创建计划试验，我们必须在请求正文中添加`template`部分。 在`template`中，包括计划运行的所有必要参数，例如`tasks`和`schedule`，前者表示什么操作，后者表示计划运行的时间。
+要指示计划试验的创建，我们必须在请求正文中添加`template`部分。 在`template`中，包含计划运行的所有必要参数，如`tasks`和`schedule`，前者指示执行的操作，后者指示计划运行的时间。
 
 **请求**
 
@@ -237,7 +237,7 @@ curl -X POST \
   -d '{JSON_PAYLOAD}`
 ```
 
-`{ORG_ID}`：在您的唯一Adobe Experience Platform集成中找到您的组织凭据。\
+`{ORG_ID}`：在独特的Adobe Experience Platform集成中找到您的组织凭据。\
 `{ACCESS_TOKEN}`：在身份验证后提供的特定持有者令牌值。\
 `{API_KEY}`：在独特的Adobe Experience Platform集成中找到特定的API密钥值。\
 `{JSON_PAYLOAD}`：要发布的数据集。 我们在本教程中使用的示例如下所示：
@@ -324,10 +324,10 @@ curl -X POST \
   -d '{JSON_PAYLOAD}'
 ```
 
-`{EXPERIMENT_ID}`：与要作为目标的实验对应的ID。 可在创建实验时的响应中找到。\
-`{ORG_ID}`：在您的唯一Adobe Experience Platform集成中找到您的组织凭据。\
-`{ACCESS_TOKEN}`：身份验证后提供的特定持有者令牌值。\
-`{API_KEY}`：在您的唯一Adobe Experience Platform集成中找到您的特定API密钥值。\
+`{EXPERIMENT_ID}`：对应于要定位的试验的ID。 可在创建试验时的响应中找到此响应。\
+`{ORG_ID}`：在独特的Adobe Experience Platform集成中找到您的组织凭据。\
+`{ACCESS_TOKEN}`：在身份验证后提供的特定持有者令牌值。\
+`{API_KEY}`：在独特的Adobe Experience Platform集成中找到特定的API密钥值。\
 `{JSON_PAYLOAD}`：要创建训练运行，您必须在正文中包含以下内容：
 
 ```JSON
@@ -336,7 +336,7 @@ curl -X POST \
 }
 ```
 
-还可以通过包含`tasks`数组来覆盖配置参数：
+您还可以通过包含`tasks`数组来覆盖配置参数：
 
 ```JSON
 {
@@ -355,7 +355,7 @@ curl -X POST \
 }
 ```
 
-您会收到以下响应，让您了解`{EXPERIMENT_RUN_ID}`和`tasks`下的配置。
+您将获得以下响应，此响应将让您知道`{EXPERIMENT_RUN_ID}`以及`tasks`下的配置。
 
 **响应**
 
@@ -377,11 +377,11 @@ curl -X POST \
 ```
 
 `{EXPERIMENT_RUN_ID}`：表示试验运行的ID。\
-`{EXPERIMENT_ID}`：表示实验运行所在实验的ID。
+`{EXPERIMENT_ID}`：表示试验运行所在试验的ID。
 
 ### 检索试验运行状态
 
-可使用`{EXPERIMENT_RUN_ID}`查询实验运行的状态。
+可使用`{EXPERIMENT_RUN_ID}`查询试验运行的状态。
 
 **请求**
 
@@ -395,8 +395,8 @@ curl -X GET \
 
 `{EXPERIMENT_ID}`：表示试验的ID。\
 `{EXPERIMENT_RUN_ID}`：表示试验运行的ID。\
-`{ACCESS_TOKEN}`：身份验证后提供的特定持有者令牌值。\
-`{ORG_ID}`：在您的唯一Adobe Experience Platform集成中找到您的组织凭据。\
+`{ACCESS_TOKEN}`：在身份验证后提供的特定持有者令牌值。\
+`{ORG_ID}`：在独特的Adobe Experience Platform集成中找到您的组织凭据。\
 `{API_KEY}`：在独特的Adobe Experience Platform集成中找到特定的API密钥值。
 
 **响应**
@@ -435,18 +435,18 @@ GET调用将在`state`参数中提供状态，如下所示：
 ```
 
 `{EXPERIMENT_RUN_ID}`：表示试验运行的ID。\
-`{EXPERIMENT_ID}`：表示实验运行所在实验的ID。
+`{EXPERIMENT_ID}`：表示试验运行所在试验的ID。
 
-除了`DONE`状态之外，其他状态还包括：
+除了`DONE`状态之外，其他状态包括：
 - `PENDING`
 - `RUNNING`
 - `FAILED`
 
-若要获取详细信息，可在`tasklogs`参数下找到详细日志。
+要获取更多信息，可以在`tasklogs`参数下找到详细的日志。
 
-### 检索经过培训的模型
+### 检索经过训练的模型
 
-为了得到上述训练中创建的训练模型，我们提出以下要求：
+为了在培训期间获得上面创建的经过培训的模型，我们提出了以下请求：
 
 **请求**
 
@@ -457,11 +457,11 @@ curl -X GET \
   -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
-`{EXPERIMENT_RUN_ID}`：与要作为目标的实验运行相对应的ID。 可在创建实验运行时的响应中找到。\
-`{ACCESS_TOKEN}`：身份验证后提供的特定持有者令牌值。\
-`{ORG_ID}`：在您的唯一Adobe Experience Platform集成中找到您的组织凭据。
+`{EXPERIMENT_RUN_ID}`：与要定位的试验运行相对应的ID。 这可以在创建试验运行时的响应中找到。\
+`{ACCESS_TOKEN}`：在身份验证后提供的特定持有者令牌值。\
+`{ORG_ID}`：在独特的Adobe Experience Platform集成中找到您的组织凭据。
 
-响应表示创建的已训练模型。
+响应表示已创建的经过训练的模型。
 
 **响应**
 
@@ -488,7 +488,7 @@ curl -X GET \
 ```
 
 `{MODEL_ID}`：与模型对应的ID。\
-`{EXPERIMENT_ID}`：与试验运行对应的ID位于。\
+`{EXPERIMENT_ID}`：与试验运行的试验相对应的ID。\
 `{EXPERIMENT_RUN_ID}`：与试验运行对应的ID。
 
 ### 停止并删除计划的试验
@@ -505,12 +505,12 @@ curl -X DELETE \
 ```
 
 `{EXPERIMENT_ID}`：与试验对应的ID。\
-`{ACCESS_TOKEN}`：身份验证后提供的特定持有者令牌值。\
-`{ORG_ID}`：在您的唯一Adobe Experience Platform集成中找到您的组织凭据。
+`{ACCESS_TOKEN}`：在身份验证后提供的特定持有者令牌值。\
+`{ORG_ID}`：在独特的Adobe Experience Platform集成中找到您的组织凭据。
 
 >[!NOTE]
 >
->该API调用将禁止创建新的实验运行。 但是，它不会停止已运行的实验运行的执行。
+>API调用将禁用创建新试验运行。 但是，它不会停止执行已运行的试验运行。
 
 以下是“响应”，通知已成功删除试验。
 
@@ -526,4 +526,4 @@ curl -X DELETE \
 
 ## 后续步骤
 
-本教程介绍了如何使用API创建引擎、实验、计划的实验运行和经过培训的模型。 在[下一个练习](./score-model-api.md)中，您将通过使用表现最好的训练模型来评分新数据集以进行预测。
+本教程介绍了如何使用API创建引擎、实验、计划的实验运行和经过训练的模型。 在[下一个练习](./score-model-api.md)中，您将通过使用表现最佳的训练模型来评分新的数据集，从而做出预测。

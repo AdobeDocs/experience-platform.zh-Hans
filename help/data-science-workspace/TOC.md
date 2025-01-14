@@ -6,7 +6,7 @@ user-guide-description: 借助机器学习技术，使用 Adobe Sensei 和 Jupyt
 feature: Data Science Workspace
 solution: Experience Platform
 role: User, Developer
-source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '225'
 ht-degree: 32%
@@ -64,5 +64,5 @@ ht-degree: 32%
    * [Publish a model as a service (API)](models-recipes/publish-model-service-api.md)
    * [安排服务的自动培训和评分(UI)](models-recipes/schedule-models-ui.md)
 * [疑难解答指南](troubleshooting-guide.md)
-* [API 参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml)
+* [API 参考](https://developer.adobe.com/experience-platform-apis/references/sensei-machine-learning/)
 * [平台发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

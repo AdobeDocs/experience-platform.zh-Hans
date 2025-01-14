@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 行为API端点
 description: 架构注册表API中的/behaviors端点允许您检索全局容器中的所有可用行为。
 exl-id: 3b45431f-1d55-4279-8b62-9b27863885ec
-source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '417'
 ht-degree: 2%
@@ -28,7 +28,7 @@ ht-degree: 2%
 
 ## 快速入门
 
-本指南中使用的终结点是[[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/behavior-registry.yaml)的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+本指南中使用的终结点是[[!DNL Schema Registry] API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/)的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
 
 ## 检索行为列表 {#list}
 

@@ -3,7 +3,7 @@ title: 使用API将付款数据从您的 [!DNL Stripe] 帐户引入到Experience
 description: 了解如何使用流服务API将支付数据从您的Stripe帐户摄取到Experience Platform
 badge: Beta 版
 exl-id: a9cb3ef6-aab0-4a5b-894e-ce90b82f35a8
-source-git-commit: 48aef63cffbdc52a6a96ef69e5db4f54274144b6
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '2020'
 ht-degree: 1%
@@ -471,7 +471,7 @@ curl -X POST \
 
 ### 创建目标数据集 {#target-dataset}
 
-可以通过向[目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)执行POST请求，在有效负载中提供目标架构的ID来创建目标数据集。
+可以通过向[目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)执行POST请求，在有效负载中提供目标架构的ID来创建目标数据集。
 
 有关如何创建目标数据集的详细步骤，请参阅有关[使用API创建数据集的教程](../../../../../catalog/api/create-dataset.md)。
 
