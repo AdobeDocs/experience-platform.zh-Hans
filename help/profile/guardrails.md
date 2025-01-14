@@ -5,10 +5,10 @@ product: experience platform
 type: Documentation
 description: 了解轮廓数据和分段的性能和系统强制护栏，以确保充分使用 Real-Time CDP 功能。
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 6962bb0ba4968ed4860e95819ac2e949bf744d79
+source-git-commit: 22daff3f422cd4ec5bbf5c77583e24dac6c53c76
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '2472'
+ht-degree: 2%
 
 ---
 
@@ -67,7 +67,7 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 | 多实体关系中使用的ID字段的JSON深度 | 4 | 性能护栏 | 对于在多实体关系中使用的ID字段，建议的最大JSON深度为4。 这意味着在高度嵌套的架构中，超过4级嵌套的字段不应用作关系中的ID字段。 |
 | 配置文件片段中的数组基数 | &lt;=500 | 性能护栏 | 配置文件片段（与时间无关的数据）中的最佳数组基数&lt;=500。 |
 | ExperienceEvent中的数组基数 | &lt;=10 | 性能护栏 | ExperienceEvent（时间序列数据）中的最佳数组基数&lt;=10。 |
-| 个人配置文件身份图的身份计数 | 50 | 系统强制的护栏 | **单个配置文件的标识图中的最大标识数为50。**&#x200B;任何标识超过50个的用户档案都将从分段、导出和查找中排除。 |
+| 个人配置文件身份图的身份计数 | 50 | 系统强制的护栏 | **单个配置文件的标识图中的最大标识数为50。**&#x200B;任何标识超过50个的用户档案都将从分段、导出和查找中排除。 有关详细信息，请阅读[了解身份删除逻辑](../identity-service/guardrails.md#understanding-the-deletion-logic-when-an-identity-graph-at-capacity-is-updated)的指南。 |
 
 {style="table-layout:auto"}
 
@@ -186,6 +186,6 @@ Dimension实体提供查找数据，这有助于并简化多实体区段定义�
 
 * [Real-Time CDP护栏](/help/rtcdp/guardrails/overview.md)
 * [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams)。
-* [Real-time Customer Data Platform （B2C版本 — Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform （B2P — 主包和最终包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform （B2B — 主包和最终包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [Real-time Customer Data Platform (B2C版本 — Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
