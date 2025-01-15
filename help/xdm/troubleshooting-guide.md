@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM系统故障排除指南
 description: 查找有关Experience Data Model (XDM)的常见问题解答，包括解决常见API错误的步骤。
 exl-id: a0c7c661-bee8-4f66-ad5c-f669c52c9de3
-source-git-commit: ae98a185fdfad5b6ba787e78ad17296928216d08
+source-git-commit: b345330595aadcfe2380dd1795802470b249cb4a
 workflow-type: tm+mt
-source-wordcount: '2390'
+source-wordcount: '2347'
 ht-degree: 0%
 
 ---
@@ -142,13 +142,7 @@ XDM对此数据类型的使用施加以下限制：
 
 为实时客户配置文件启用架构后，您无法删除该架构。 为配置文件启用架构后，无法禁用或删除该架构，并且无法从架构中删除字段。 因此，在为配置文件启用架构配置之前，仔细规划和验证架构配置至关重要。 但是，您可以删除启用了配置文件的数据集。 在此处找到信息： <https://experienceleague.adobe.com/en/docs/experience-platform/catalog/datasets/user-guide#delete-a-profile-enabled-dataset>
 
->[!IMPORTANT]
->
->要删除启用配置文件的架构，您需要获得XDM平台支持团队的帮助，并且必须执行以下步骤：
->
-> 1. 删除与架构（为配置文件启用）关联的所有数据集
-> 2. 从沙盒中删除配置文件导出快照（这需要XDM平台支持团队的帮助）
-> 3. 强制从沙盒中删除架构（这只能由XDM平台支持团队完成）
+如果您不再希望使用启用了配置文件的架构，建议将该架构重命名为包含&#x200B;**不使用**&#x200B;或&#x200B;**不活动**。
 
 ## 架构修改和限制
 
