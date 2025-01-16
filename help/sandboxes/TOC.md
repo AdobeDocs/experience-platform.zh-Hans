@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 中的沙盒帮助
 breadcrumb-title: 沙盒指南
 user-guide-description: 了解沙盒的工作方式及其如何将 Platform 实例分隔为若干虚拟环境，分别用于开发、测试和部署应用程序。
 feature: Sandboxes
-source-git-commit: 868800de5dc6dde6654ff5256c91bddc2997b11b
+source-git-commit: ecace5503fcd054ef992763044304b03b9661b3b
 workflow-type: tm+mt
-source-wordcount: '74'
-ht-degree: 66%
+source-wordcount: '82'
+ht-degree: 64%
 
 ---
 
@@ -33,6 +33,9 @@ ht-degree: 66%
    * [包](sandbox-tooling-api/packages.md)
    * [工具](sandbox-tooling-api/tools.md)
    * [附录](sandbox-tooling-api/appendix.md)
+* 用例 {#use-cases}
+   * [备份对象配置](use-cases/backup-object-configuration.md)
+   * [卓越中心](use-cases/center-of-excellence.md)
 * [疑难解答指南](troubleshooting-guide.md)
 * [API 参考](https://www.adobe.io/experience-platform-apis/references/sandbox)
 * [平台发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
