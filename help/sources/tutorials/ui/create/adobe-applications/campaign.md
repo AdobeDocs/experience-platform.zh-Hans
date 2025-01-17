@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；源；连接器；源连
 title: 使用Platform UI创建Adobe Campaign Managed Cloud Services源连接
 description: 了解如何使用Platform UI将Adobe Experience Platform连接到Adobe Campaign Managed Cloud Services。
 exl-id: 067ed558-b239-4845-8c85-3bf9b1d4caed
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 77d755e4ebf97521efa1dfdfe9ee40312800ad28
 workflow-type: tm+mt
-source-wordcount: '1149'
+source-wordcount: '1185'
 ht-degree: 6%
 
 ---
@@ -101,6 +101,8 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 >[!IMPORTANT]
 >
 >将源字段映射到目标XDM字段时，必须确保将指定的主标识字段映射到其相应的目标XDM字段。
+>
+>对于每个受众，您最多可以添加20个要映射到Adobe Campaign的字段。 您可以通过更新Campaign资源管理器的“管理” > “平台” > “选项”文件夹中`NmsCdp_Aep_Sources_Max_Columns`选项的值来更改此限制。
 
 成功映射源数据后，选择&#x200B;**[!UICONTROL 下一步]**。
 
