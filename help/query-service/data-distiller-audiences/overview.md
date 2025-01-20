@@ -2,7 +2,7 @@
 title: 使用SQL构建受众
 description: 了解如何在Adobe Experience Platform的Data Distiller中使用SQL受众扩展来使用SQL命令创建、管理和发布受众。 本指南涵盖受众生命周期的所有方面，包括创建、更新和删除用户档案，以及使用数据驱动的受众定义来定位基于文件的目标。
 exl-id: c35757c1-898e-4d65-aeca-4f7113173473
-source-git-commit: 7db055f598e3fa7d5a50214a0cfa86e28e5bfe47
+source-git-commit: c66a7cf779c1b6e55ace86916985087dfaa3363b
 workflow-type: tm+mt
 source-wordcount: '1481'
 ht-degree: 1%
@@ -44,7 +44,7 @@ AS (select_query)
 | `schema` | 可选。 为查询创建的数据集定义XDM架构。 |
 | `table_name` | 表和受众的名称。 |
 | `primary_identity` | 指定受众的主标识列。 |
-| `identity_namespace` | 标识的命名空间。 您可以使用现有命名空间或创建新命名空间。 要查看可用的命名空间，请使用`SHOW NAMESPACE`命令。 要创建新命名空间，请使用`CREATE NAMESPACE`。 例如： `CREATE NAMESPACE lumaCrmId WITH (code='testns', TYPE='Email')`。 |
+| `identity_namespace` | 标识的命名空间。 您可以使用现有命名空间或创建新命名空间。 要查看可用的命名空间，请使用`SHOW NAMESPACES`命令。 要创建新命名空间，请使用`CREATE NAMESPACE`。 例如： `CREATE NAMESPACE lumaCrmId WITH (code='testns', TYPE='Email')`。 |
 | `select_query` | 定义受众的SELECT语句。 可在[SELECT查询](../sql/syntax.md#select-queries)部分找到SELECT查询的语法。 |
 
 {style="table-layout:auto"}
