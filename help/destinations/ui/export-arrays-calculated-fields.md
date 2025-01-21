@@ -1,16 +1,16 @@
 ---
-title: 将阵列对象从Real-Time CDP导出到云存储目标
+title: 将数组对象从 Real-Time CDP 导出到云存储目标
 type: Tutorial
 description: 了解如何使用计算字段将阵列作为字符串从Real-Time CDP导出到云存储目标。
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
 source-git-commit: a99fc58b8296b2b9ce6e30d14857529570cd3e8a
 workflow-type: tm+mt
 source-wordcount: '1622'
-ht-degree: 5%
+ht-degree: 7%
 
 ---
 
-# 将阵列对象从Real-Time CDP导出到云存储目标 {#export-arrays-cloud-storage}
+# 将数组对象从 Real-Time CDP 导出到云存储目标 {#export-arrays-cloud-storage}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_flat_files"
@@ -73,7 +73,7 @@ organizations = [{
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_control"
->title="启用分层输出模式"
+>title="启用分层输出架构"
 >abstract="如果您想导出像数组这样的层次结构，请打开。"
 
 >[!CONTEXTUALHELP]
