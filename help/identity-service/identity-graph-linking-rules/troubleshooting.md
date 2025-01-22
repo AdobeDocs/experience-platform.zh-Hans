@@ -2,14 +2,14 @@
 title: 身份图形链接规则疑难解答指南
 description: 了解如何解决身份图关联规则中的常见问题。
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: b50633a8518f32051549158b23dfc503db255a82
+source-git-commit: 79efdff6f6068af4768fc4bad15c0521cca3ed2a
 workflow-type: tm+mt
-source-wordcount: '3335'
+source-wordcount: '3286'
 ht-degree: 0%
 
 ---
 
-# 标识图链接规则故障排除指南
+# 身份标识图链接规则故障排除指南
 
 >[!AVAILABILITY]
 >
@@ -149,12 +149,8 @@ ht-degree: 0%
 * [配置文件](../../xdm/classes/experienceevent.md)上可能发生了验证失败。
    * 例如，体验事件必须同时包含`_id`和`timestamp`。
    * 此外，每个事件（记录）的`_id`必须是唯一的。
-* 优先级最高的命名空间是空字符串。
 
-在命名空间优先级上下文中，配置文件将拒绝：
-
-* 包含两个或更多具有最高命名空间优先级的身份的任何事件。 例如，如果GAID未标记为唯一的命名空间，并且有两个同时具有GAID命名空间和不同的标识值的标识，则Profile将不存储任何事件。
-* 具有最高优先级的命名空间为空字符串的任何事件。
+在命名空间优先级上下文中，配置文件将拒绝任何包含两个或更多具有最高命名空间优先级的身份的事件。 例如，如果GAID未标记为唯一的命名空间，并且有两个同时具有GAID命名空间和不同的标识值的标识，则Profile将不存储任何事件。
 
 **疑难解答步骤**
 
@@ -175,16 +171,7 @@ ht-degree: 0%
   FROM dataset_name)) WHERE col.id != _testimsorg.identification.core.email and key = 'Email' 
 ```
 
-您还可以运行以下查询来检查对配置文件的摄取是否由于最高的命名空间具有空字符串而未发生：
-
-```sql
-  SELECT identityMap, key, col.id as identityValue, _testimsorg.identification.core.email, _id, timestamp 
-  FROM (SELECT key, explode(value), * 
-  FROM (SELECT explode(identityMap), * 
-  FROM dataset_name)) WHERE (col.id = '' or _testimsorg.identification.core.email = '') and key = 'Email' 
-```
-
-这两个查询假定：
+这些查询假定：
 
 * 一个标识从identityMap发送，另一个标识从标识描述符发送。 **注意**：在Experience Data Model (XDM)架构中，身份描述符是标记为身份的字段。
 * CRMID通过identityMap发送。 如果CRMID作为字段发送，请从WHERE子句中删除`key='Email'`。
@@ -225,7 +212,7 @@ SELECT distinct explode(*)FROM (SELECT map_keys(identityMap) FROM dataset_name)
 
 >[!BEGINTABS]
 
->[!TAB Web SDK实施]
+>[!TAB Web SDK实现]
 
 ```sql
   SELECT identityMap['ECID'][0]['id'], count(distinct identityMap['CRMID'][0]['id']) as crmidCount FROM dataset_name GROUP BY identityMap['ECID'][0]['id'] ORDER BY crmidCount desc 
@@ -245,7 +232,7 @@ SELECT distinct explode(*)FROM (SELECT map_keys(identityMap) FROM dataset_name)
 
 >[!BEGINTABS]
 
->[!TAB Web SDK实施]
+>[!TAB Web SDK实现]
 
 ```sql
   SELECT identityMap['CRMID'][0]['id'] as personEntity, * 

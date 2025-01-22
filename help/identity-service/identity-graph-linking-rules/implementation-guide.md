@@ -2,9 +2,9 @@
 title: 身份图链接规则的实施指南
 description: 了解在使用身份图链接规则配置实施数据时要遵循的建议步骤。
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 720ffa1ca0ee69cfc802cd50aef26b6f38d2142c
+source-git-commit: 79efdff6f6068af4768fc4bad15c0521cca3ed2a
 workflow-type: tm+mt
-source-wordcount: '1668'
+source-wordcount: '1585'
 ht-degree: 2%
 
 ---
@@ -119,31 +119,6 @@ ht-degree: 2%
 
 
 >[!ENDTABS]
-
-使用XDM体验事件发送事件时，请勿发送空字符串作为标识值。 如果具有最高命名空间优先级的命名空间的身份值是空字符串，则将从实时客户档案中忽略该记录。 这适用于identityMap以及标记为标识的字段。
-
-+++选择此选项可查看带有空字符串的有效负载示例
-
-以下示例返回错误，因为`Phone`的标识值作为空字符串提交。
-
-```json
-    "identityMap": {
-        "ECID": [
-            {
-                "id": "24165048599243194405404369473457348936",
-                "primary": false
-            }
-        ],
-        "Phone": [
-            {
-                "id": "",
-                "primary": true
-            }
-        ]
-    }
-```
-
-+++
 
 在使用XDM体验事件发送事件时，必须确保您具有完全限定的身份。
 
