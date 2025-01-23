@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询编辑器UI指南
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发，以及运行非交互式查询以在Experience Platform中填充数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: e66f3540d22a441089916183538921ea5654b312
+source-git-commit: 4c11a35ce914cd0b1aa0084368f5a5929f883963
 workflow-type: tm+mt
-source-wordcount: '2843'
+source-wordcount: '2807'
 ht-degree: 0%
 
 ---
@@ -217,12 +217,9 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 对象浏览器中显示的方案是一个可观察的方案。 这意味着，您可以在更改立即可见的情况下使用它实时监视更改和更新。 可观察的架构有助于确保数据同步，并有助于调试或分析任务。
 
-#### 当前限制 {#current-limitations}
+#### 当前限制 {#current-limitation}
 
-以下是当前限制的列表：
-
-- 连续查询执行：一次只能执行一个查询。 当查询正在进行时，由于按顺序处理查询，因此无法在左侧导航中打开其他表。
-- 查询日志中有额外的行：您可能会在日志中遇到标记为“SHOW TABLES”的无关查询。 这些功能将在未来版本中删除。
+系统按顺序处理查询，这意味着一次只能运行一个查询。 当查询正在进行时，无法在左侧导航中访问其他表。
 
 #### 访问表元数据 {#table-metadata}
 

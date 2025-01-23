@@ -5,10 +5,10 @@ breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
 role: User,Developer
-source-git-commit: 83d15e8d6488a400a87f111ec97f06401431b339
+source-git-commit: c3065710e5f50541b074fc493df07130221d8078
 workflow-type: tm+mt
-source-wordcount: '369'
-ht-degree: 22%
+source-wordcount: '382'
+ht-degree: 21%
 
 ---
 
@@ -42,13 +42,15 @@ ht-degree: 22%
 - 数据Distiller统计数据和机器学习{#advanced-statistics}
    - [概述](advanced-statistics/overview.md)
    - [特征工程](advanced-statistics/feature-engineering.md)
-   - [个模型](advanced-statistics/models.md)
+   - [模型](advanced-statistics/models.md)
+   - [功能转换](advanced-statistics/feature-transformation.md)
 实施模型{#implement-models}
       - [实施模型](advanced-statistics/implement-models/implement-models.md)
       - [回归](advanced-statistics/implement-models/regression.md)
       - [分类](advanced-statistics/implement-models/classification.md)
-      - [聚类](advanced-statistics/implement-models/clustering.md)
-   - [特征转换](advanced-statistics/feature-transformation.md)
+      - [群集](advanced-statistics/implement-models/clustering.md)
+示例{#examples}
+      - [使用基于SQL的Logistic回归预测客户流失](advanced-statistics/examples/predict-customer-churn.md)
 - 数据Distiller受众{#data-distiller-audiences}
    - [使用SQL构建外部受众](data-distiller-audiences/overview.md)
 - 示例 {#use-cases}
@@ -64,6 +66,7 @@ ht-degree: 22%
    - [模糊匹配](use-cases/fuzzy-match.md)
    - [列出用户的页面查看次数](use-cases/list-visitor-sessions.md)
    - [按访客的页面查看次数列出访客](use-cases/visitors-by-number-of-page-views.md)
+   - [使用SQL预测客户流失](use-cases/predict-customer-churn-stub.md)
    - [倾向性得分](use-cases/propensity-score.md)
    - [使用高阶函数检索类似记录](use-cases/retrieve-similar-records.md)
    - [从Analytics数据返回和使用促销变量](use-cases/merchandising-variables.md)
