@@ -5,9 +5,9 @@ breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
 role: User,Developer
-source-git-commit: c3065710e5f50541b074fc493df07130221d8078
+source-git-commit: 20869e76976ff3868f1d4dbc7c6d97b58682e5c3
 workflow-type: tm+mt
-source-wordcount: '382'
+source-wordcount: '397'
 ht-degree: 21%
 
 ---
@@ -50,6 +50,7 @@ ht-degree: 21%
       - [分类](advanced-statistics/implement-models/classification.md)
       - [群集](advanced-statistics/implement-models/clustering.md)
 示例{#examples}
+      - [使用统计和机器学习进行机器人过滤](advanced-statistics/examples/statistics-and-ml-bot-filtering.md)
       - [使用基于SQL的Logistic回归预测客户流失](advanced-statistics/examples/predict-customer-churn.md)
 - 数据Distiller受众{#data-distiller-audiences}
    - [使用SQL构建外部受众](data-distiller-audiences/overview.md)
@@ -58,6 +59,7 @@ ht-degree: 21%
    - [已放弃的浏览](use-cases/abandoned-browse.md)
    - [归因分析](use-cases/attribution-analysis.md)
    - [机器人过滤](use-cases/bot-filtering.md)
+   - [使用统计和机器学习介绍的机器人过滤](use-cases/statistics-and-ml-bot-filtering-stub.md)
    - [创建事件的趋势报表](use-cases/trended-report-of-events.md)
    - [同意分析](use-cases/consent-analysis.md)
    - [客户存留期值](use-cases/customer-lifetime-value.md)
