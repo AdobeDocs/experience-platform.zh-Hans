@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；Platform Web SDK；Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 3a50468a7596b9ba870920a8188ae50b40aaef69
+source-git-commit: 08b07aa874b9ca9b5ea76850d6c0320bddddc85e
 workflow-type: tm+mt
-source-wordcount: '2085'
+source-wordcount: '2149'
 ht-degree: 2%
 
 ---
@@ -15,6 +15,18 @@ ht-degree: 2%
 
 本文档介绍Adobe Experience Platform Web SDK的发行说明。
 有关Web SDK标记扩展的最新发行说明，请参阅[Web SDK标记扩展发行说明](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md)。
+
+## 版本2.25.0 - 2024年1月23日 {#2-25-0}
+
+**已修复和改进**
+
+- 向`setDebug`命令添加了选项验证。
+- 添加了一个警告，在禁用单击收集时配置`onBeforeLinkClickSend`函数或下载链接限定符。
+- 修复了呈现的建议未包含在显示通知中的问题
+
+**新增功能**
+
+- 在启用了第三方Cookie并阻止对adobedc.demdex.net的请求时，对配置的Edge域实施了回退。
 
 ## 版本2.24.1 - 2024年12月6日
 

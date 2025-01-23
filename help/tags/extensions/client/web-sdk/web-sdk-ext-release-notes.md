@@ -2,16 +2,29 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: c38456ab44f3e143a0120f1a756105213a46fab5
+source-git-commit: 08b07aa874b9ca9b5ea76850d6c0320bddddc85e
 workflow-type: tm+mt
-source-wordcount: '2332'
-ht-degree: 28%
+source-wordcount: '2413'
+ht-degree: 27%
 
 ---
 
 # Adobe Experience Platform Web SDK扩展发行说明
 
-本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[平台Web SDK发行说明](/help/web-sdk/release-notes.md)。
+本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[Platform Web SDK发行说明](/help/web-sdk/release-notes.md)。
+
+## 版本2.28.0 - 2024年1月23日
+
+**修复和改进**
+
+- 修复了在未启用Audience Manager的情况下无法设置ID同步容器覆盖的问题。
+- 修复了在升级到最新版本时禁用数据流配置覆盖的问题。
+- 修复了用户无法保存Target自动点击收藏集设置的问题。
+
+**新增功能**
+
+- 添加了新功能，以便在XDM对象中的技术名称和显示名称之间进行切换。
+- 包含Adobe Experience Platform Web SDK的[版本2.25.0](../../../../web-sdk/release-notes.md#2-25-0)。
 
 ## 版本2.27.0 - 2024年10月31日
 
@@ -20,7 +33,7 @@ ht-degree: 28%
 - [数据流覆盖](../web-sdk/web-sdk-extension-configuration.md#datastream-overrides)现在包含用于禁用Experience Cloud解决方案和Adobe Experience Platform服务的设置。
 - 您现在可以为媒体会话创建[数据流覆盖](../web-sdk/web-sdk-extension-configuration.md)。
 
-包含Adobe Experience Platform Web SDK版本2.24.0。
+包含2.24.0版本的Adobe Experience Platform Web SDK。
 
 ## 版本2.26.1 - 2024年9月19日
 
@@ -28,7 +41,7 @@ ht-degree: 28%
 
 - 修复了在本地运行Web SDK时无法正确写入Cookie的问题。
 
-包含Adobe Experience Platform Web SDK版本2.23.0。
+包含2.23.0版本的Adobe Experience Platform Web SDK。
 
 ## 版本2.26.0 - 2024年8月22日
 
@@ -42,7 +55,7 @@ ht-degree: 28%
 - 修复了重复的变量数据元素可能会相互覆盖的问题。
 - 使用[请求默认个性化](action-types.md#personalization)引导式事件时，现在会自动启用可视化个性化决策。
 
-包含Adobe Experience Platform Web SDK版本2.22.0。
+包含2.22.0版本的Adobe Experience Platform Web SDK。
 
 ## 2.25.0版 — 2024年7月18日
 
@@ -51,7 +64,7 @@ ht-degree: 28%
 - 在Adobe Journey Optimizer中添加了对自动跟踪个性化的支持。
 - 引入了新设置，用于管理改进的点击收藏集。
 
-包含Adobe Experience Platform Web SDK版本2.21.1。
+包含2.21.1版本的Adobe Experience Platform Web SDK。
 
 ## 版本2.24.0 - 2024年6月5日
 
@@ -62,7 +75,7 @@ ht-degree: 28%
 - 修复了在修改更新变量操作时发生的错误。
 - 允许重置配置覆盖中的ID同步容器。
 
-包含Adobe Experience Platform Web SDK版本2.20.0。
+包含2.20.0版本的Adobe Experience Platform Web SDK。
 
 ## 2.23.1版 — 2024年5月28日
 
@@ -72,7 +85,7 @@ ht-degree: 28%
 - 为[!DNL Streaming Media Collection]功能添加了[`Send Media Event`](action-types.md#send-media-event)操作。
 - 为[!DNL Streaming Media Collection]功能添加了[`Media: Quality of Experience`](data-element-types.md#quality-experience)数据元素。
 
-包含Adobe Experience Platform Web SDK版本2.20.0。
+包含2.20.0版本的Adobe Experience Platform Web SDK。
 
 **修复和改进**
 
@@ -86,7 +99,7 @@ ht-degree: 28%
 - 扩展变量数据元素以支持数据对象。
 - 更新变量操作现在支持修改传递的Adobe Analytics、Adobe Audience Manager和Adobe Target数据。
 
-包含Adobe Experience Platform Web SDK的版本2.19.2。
+包含2.19.2版本的Adobe Experience Platform Web SDK。
 
 ## 版本2.21.4 - 2024年1月10日
 
@@ -95,7 +108,7 @@ ht-degree: 28%
 - 修复了在未设置所有3个环境的情况下保存配置覆盖将会导致扩展UI崩溃的问题。
 - 修复了在编辑更新变量操作时，根清除现有值复选框未填充的问题。
 
-包含Adobe Experience Platform Web SDK的版本2.19.2。
+包含2.19.2版本的Adobe Experience Platform Web SDK。
 
 ## 版本 2.21.3 - 2023 年 11 月 10 日
 
@@ -117,7 +130,7 @@ ht-degree: 28%
 
 **修复和改进**
 
-- 包含Adobe Experience Platform Web SDK版本2.19.0。
+- 包含2.19.0版本的Adobe Experience Platform Web SDK。
 
 ## 版本2.20.3 - 2023年8月8日
 
@@ -139,7 +152,7 @@ ht-degree: 28%
 
 **修复和改进**
 
-- 在SDK配置中弃用`edgeConfigId`而支持`datastreamId`。
+- 已在SDK配置中弃用`edgeConfigId`以支持`datastreamId`。
 - 数据流配置的多个用户体验增强功能会覆盖用户界面。
 
 ## 2.19.0版 — 2023年6月21日
@@ -148,13 +161,13 @@ ht-degree: 28%
 
 ## 2.18.0版 — 2023年5月18日
 
-- 包含Adobe Experience Platform Web SDK版本2.17.0。
+- 包含2.17.0版本的Adobe Experience Platform Web SDK。
 
 ## 版本2.17.0 - 2023年4月25日
 
 **新增功能**
 
-- 包含Adobe Experience Platform Web SDK版本2.16.0。
+- 包含2.16.0版本的Adobe Experience Platform Web SDK。
 - 添加了对[数据流配置覆盖](/help/datastreams/overrides.md)的支持。
 - 向`sendEvent`命令上的`datasetId`选项添加弃用通知。
 
@@ -177,20 +190,20 @@ ht-degree: 28%
 
 - 修复了在使用具有标识&#x200B;]**的**[!UICONTROL &#x200B;重定向操作时，导致单击锚点标记中的元素无法正常工作的问题。
 - 修复了仅存在一个架构时，XDM对象数据元素无法工作的问题。
-- 包含Adobe Experience Platform Web SDK版本2.15.0。
+- 包含Adobe Experience Platform Web SDK的版本2.15.0。
 
 ## 版本2.15.1 - 2023年1月26日
 
 - 修复了无权访问数据流的用户无法编辑扩展配置的问题。
 - 在`sendEvent`操作中添加了对表面的支持。
 
-包含Adobe Experience Platform Web SDK版本2.14.0。
+包含Adobe Experience Platform Web SDK的版本2.14.0。
 
 ## 版本2.14.1 - 2022年10月13日
 
 - 修复了Web SDK不执行来自Experience CloudID服务的ID的问题。
 
-包含2.13.1版本的Adobe Experience Platform Web SDK库。
+包含Adobe Experience Platform Web SDK库的版本2.13.1。
 
 ## 版本2.14.0 - 2022年9月28日
 
@@ -198,7 +211,7 @@ ht-degree: 28%
 - 添加了应用响应操作以启用混合服务器 — 客户端实施。
 - 添加了高熵用户代理客户端提示上下文选项。
 
-包含2.13.0版本的Adobe Experience Platform Web SDK库。
+包含Adobe Experience Platform Web SDK库的版本2.13.0。
 
 ## 版本2.13.0 - 2022年6月29日
 
@@ -214,7 +227,7 @@ ht-degree: 28%
 - 升级了React Spectrum UI库。
 - 多个用户界面增强。
 
-包含2.11.0版本的Adobe Experience Platform Web SDK库。
+包含Adobe Experience Platform Web SDK库的版本2.11.0。
 
 ## 版本2.11.2 - 2022年5月3日
 
@@ -306,12 +319,12 @@ ht-degree: 28%
 包含 Adobe Experience Platform Web SDK 库的版本 2.3.0。
 
 - 添加了对配置默认同意的过程中使用数据元素的支持。
-- 添加了通过 XDM 对象数据元素类型搜索 XDM 模式的功能。
+- 添加了通过 XDM 对象数据元素类型搜索 XDM 架构的功能。
 - 将 XDM 数据克隆添加到“发送事件”操作类型中，以确保任何对 XDM 数据对象的后续更改将不会反映在请求中。
 
 ## 版本2.2.0 - 2020年10月1日
 
-- 当客户尝试按照沙盒模式创建 XDM 对象时，他们将会遇到身份验证问题。由于调用Platform的API现在能够识别环境，因此用户只会看到他们有权编辑的架构。
+- 当客户尝试按照沙盒架构创建 XDM 对象时，他们将会遇到身份验证问题。由于调用Platform的API现在能够识别环境，因此用户只会看到他们有权编辑的架构。
 - 使用`identityMap`数据元素时，命名空间现在会预填充到下拉列表中，因此您不必手动进行填充。
 - 翻新了 `xdmObject` 数据元素的 UI。在新的 UI 中，您无需输入对象中的每个项目，即可查看已填充字段。
 
@@ -326,7 +339,7 @@ ht-degree: 28%
 - 在 `setConsent` 操作中支持 IAB 2.0 Consent Standard。
 - 在 `sendEvent` 操作中支持覆盖数据集 ID。
 - 增加了 `IdentityMap` 类型的新数据元素，该数据元素可用于在（现已启用的）XDM 对象数据元素和 `setConsent` 操作中填充 `identityMap` 条目。
-- 在 `setConsent` 操作中支持传递标识映射。
+- 在 `setConsent` 操作中支持传递身份标识映射。
 - 支持在XDM对象数据元素中选择Platform沙盒。
 
 ## 1.0.0版 — 2020年5月26日
@@ -340,7 +353,8 @@ ht-degree: 28%
 - 与 `Get Decisions` 相关的更改：
    - 删除了 `getDecisions` 命令。
    - 为 `sendEvent` 命令添加了一个 `scopes` 选项。将在 `sendEvent` 已解决的承诺中返回决策。
-   - 添加了内置 `__view__` 范围，该范围将导致返回页面/视图范围的内容。（例如，Target 中的 VEC 内容。）仅当将 `renderDecisions` 设置为 false 时，才会从 `sendEvent` 命令返回这些决策。
+   - 添加了内置 `__view__` 范围，该范围将导致返回页面/视图范围的内容。（例如，Target中的VEC选件。）
+仅当`renderDecisions`设置为false时，才会从`sendEvent`命令返回这些决策。
    - 添加了一个 `Decisions Received` 事件，当决策可用时会触发此事件。
 - 在单个服务器调用下合并多个个性化通知。
 - 修复了每次引用数据元素时都会重置事件合并 ID 的问题。
