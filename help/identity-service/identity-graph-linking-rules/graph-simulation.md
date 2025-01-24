@@ -2,10 +2,10 @@
 title: Graph Simulation UI指南
 description: 了解如何在Identity Service UI中使用图形模拟。
 exl-id: 89f0cf6e-c43f-40ec-859a-f3b73a6da8c8
-source-git-commit: cfe0181104f09bfd91b22d165c23154a15cd5344
+source-git-commit: af36856dbf37e69cbc5c6952c583f583fd5b8e96
 workflow-type: tm+mt
-source-wordcount: '1440'
-ht-degree: 1%
+source-wordcount: '1489'
+ht-degree: 4%
 
 ---
 
@@ -51,6 +51,12 @@ ht-degree: 1%
 
 ## 添加事件 {#add-events}
 
+>[!CONTEXTUALHELP]
+>id="platform_identities_graphsimulation"
+>title="添加事件"
+>abstract="模拟图形以了解身份标识服务如何链接身份标识，以及身份标识优化算法如何工作。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html#understanding-data-usage-labels" text="数据使用标签概述"
+
 要开始，请选择&#x200B;**[!UICONTROL 添加事件]**。
 
 ![已选择“添加事件”按钮。](../images/graph-simulation/add-events.png)
@@ -91,7 +97,7 @@ ht-degree: 1%
 | --- | --- | --- |
 | 共享设备 | 共享设备是指两个不同的用户登录到同一台设备的情况。 | 夫妻共享一个iPad用于互联网浏览和电子商务。 |
 | 无效（非唯一）电话 | 无效或非唯一电话是指两个不同的用户使用相同的电话号码创建帐户的情况。 | 母亲和女儿使用共享的家庭电话号码注册任何电子商务帐户。 |
-| “坏”的标识值 | “错误”标识值是指标识服务因错误实施而生成非唯一IDFA的情况。 | 由于代码实施问题，WebSDK错误地为每个事件发送了`user_null`值。 |
+| “坏”的身份标识值 | “错误”标识值是指标识服务因错误实施而生成非唯一IDFA的情况。 | 由于代码实施问题，WebSDK错误地为每个事件发送了`user_null`值。 |
 
 ![显示可用预配置示例的窗口：共享设备、无效电话和错误标识值。](../images/graph-simulation/example-options.png)
 
@@ -126,6 +132,16 @@ ht-degree: 1%
 ![选择的删除事件图标。](../images/graph-simulation/delete.png)
 
 ## 配置算法 {#configure-algorithm}
+
+>[!CONTEXTUALHELP]
+>id="platform_identities_algorithmconfiguration"
+>title="算法配置"
+>abstract="配置根据您所引入的身份标识定制的唯一命名空间和命名空间优先级。"
+
+>[!CONTEXTUALHELP]
+>id="platform_identities_namespacepriority"
+>title="算法配置"
+>abstract="命名空间优先级决定如何从身份标识图中移除链接。"
 
 >[!IMPORTANT]
 >

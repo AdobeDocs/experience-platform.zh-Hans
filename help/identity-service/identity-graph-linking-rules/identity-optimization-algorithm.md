@@ -2,9 +2,9 @@
 title: 身份优化算法
 description: 了解Identity Service中的身份优化算法。
 exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
-source-git-commit: cfe0181104f09bfd91b22d165c23154a15cd5344
+source-git-commit: f067f8d4628d76b4a87b9dd97d1d703c54688871
 workflow-type: tm+mt
-source-wordcount: '1528'
+source-wordcount: '1560'
 ht-degree: 1%
 
 ---
@@ -22,6 +22,11 @@ ht-degree: 1%
 请阅读此部分以了解有关唯一命名空间和命名空间优先级的信息。 这两个概念作为身份优化算法所需的输入参数。
 
 ### 唯一命名空间 {#unique-namespace}
+
+>[!CONTEXTUALHELP]
+>id="platform_identities_uniquenamespace"
+>title="算法配置"
+>abstract="一个图形不能有两个具有唯一命名空间的标识。 如果图表尝试超过此限制，将保留最近的链接，并删除最早的链接。"
 
 唯一的命名空间可确定发生图形折叠时删除的链接。
 
