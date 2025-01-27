@@ -2,9 +2,9 @@
 title: SFTP 主机
 description: 了解如何在Adobe Experience Platform中配置标记，以将库内部版本交付到安全的自托管SFTP服务器。
 exl-id: 3c1dc43b-291c-4df4-94f7-a03b25dbb44c
-source-git-commit: 85bd78928b1b503bbb6bbc44075ed0f66e046a4c
+source-git-commit: b3c3bf0a39a30e8c9baf81ec20945497acef5465
 workflow-type: tm+mt
-source-wordcount: '811'
+source-wordcount: '810'
 ht-degree: 11%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 11%
 >
 >经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
-Adobe Experience Platform允许您将标记库内部版本传输到您托管的安全SFTP服务器，让您能够更好地控制如何存储和管理内部版本。 本指南介绍如何在Experience PlatformUI或数据收集UI中为标记属性设置SFTP主机。
+通过Experience Platform，您可以将标记库内部版本传输到您托管的安全SFTP服务器，从而更好地控制如何存储和管理内部版本。 本指南介绍如何在Experience PlatformUI或数据收集UI中为标记属性设置SFTP主机。
 
 >[!NOTE]
 >
