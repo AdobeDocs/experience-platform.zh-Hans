@@ -2,9 +2,9 @@
 title: 受众门户概述
 description: 了解如何使用Audience Portal在Adobe Experience Platform中查看、管理和创建受众。
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: 260d63d5eebd62cc5a617fccc189af52fd4d0b09
+source-git-commit: 4ef3f6dc07cb5d17146d48c7a41e3745fd9a3a58
 workflow-type: tm+mt
-source-wordcount: '4571'
+source-wordcount: '4569'
 ht-degree: 4%
 
 ---
@@ -25,7 +25,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 - [创建受众](#create-audience)
    - [使用区段生成器创建受众](#segment-builder)
    - [使用受众组合创建受众](#audience-composition)
-   - [使用联合受众合成使用来自您现有数据仓库的数据创建受众](#fac)（有限可用性）
+   - [使用联合受众合成以使用来自您现有数据仓库的数据创建受众](#fac)
 - [导入外部生成的受众](#import-audience)
 
 要打开Audience Portal，请选择“分段”部分中的&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡。

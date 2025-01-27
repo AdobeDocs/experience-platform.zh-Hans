@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Experience PlatformUI概述
 description: Adobe Experience Platform
 exl-id: 47f9a3fb-731d-4ade-8069-faaa18f224dc
-source-git-commit: 9844a7bf5e7198e7d5112ec924220aba71cdc14b
+source-git-commit: 6210f78e79c6c528296378756c9d11e35d092736
 workflow-type: tm+mt
-source-wordcount: '1947'
-ht-degree: 2%
+source-wordcount: '1924'
+ht-degree: 1%
 
 ---
 
@@ -157,7 +157,7 @@ Platform UI中的顶部导航栏显示您当前登录的组织，并提供几个
 
 通过&#x200B;**[!UICONTROL 监控]**&#x200B;部分，您可以监控批次和流式摄取。 您可以在[监视数据摄取用户指南](../ingestion/quality/monitor-data-ingestion.md)中找到有关监视的详细信息。
 
-### [!UICONTROL 联合数据] （有限可用）
+### [!UICONTROL 联合数据]
 
 **[!UICONTROL 模型]**&#x200B;部分允许您设计和创建定义数据的结构、关系和约束的数据模型和架构。 您可以在[联合受众组合用户指南](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/config/datamodel/schemas)中找到有关数据模型和架构的更多信息。
 
@@ -165,10 +165,6 @@ Platform UI中的顶部导航栏显示您当前登录的组织，并提供几个
 
 
 通过&#x200B;**[!UICONTROL 联合数据库]**&#x200B;部分，您可以将Adobe Experience Platform连接到企业数据仓库。 您可以在[联合受众组合用户指南](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/config/federated-db)中找到有关连接到联合数据库的详细信息。
-
->[!AVAILABILITY]
->
->目前，联合受众构成仅面向一部分组织提供（限量发布）。有关更多信息，请与您的 Adobe 代表联系。
 
 ### [!UICONTROL 决策]
 

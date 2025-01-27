@@ -5,9 +5,9 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: c5543997747daa336b0a5bb40c46aa720e8bcadd
+source-git-commit: 6210f78e79c6c528296378756c9d11e35d092736
 workflow-type: tm+mt
-source-wordcount: '1273'
+source-wordcount: '1271'
 ht-degree: 5%
 
 ---
@@ -67,7 +67,7 @@ ht-degree: 5%
       * [(Beta)Marketo Engage人员同步连接](./catalog/adobe/marketo-engage-person-sync.md)
       * [Marketo Measure Ultimate连接](./catalog/adobe/marketo-measure-ultimate.md)
       * [Experience Platform受众共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
-      * [联合受众组合连接（有限可用性）](https://www.adobe.com/go/destinations-federated-audience-composition)
+      * [联合受众组合连接](https://www.adobe.com/go/destinations-federated-audience-composition)
    * Advertising目标{#advertising}
       * [(Beta) Acxiom Audience Distribution](./catalog/advertising/acxiom-audience-distribution.md)
       * [Advertising目标概述](./catalog/advertising/overview.md)
