@@ -2,20 +2,15 @@
 title: 内容API端点
 description: 了解如何使用Privacy ServiceAPI检索您的访问数据。
 role: Developer
-badgePrivateBeta: label="Private Beta" type="Informative"
 exl-id: b3b7ea0f-957d-4e51-bf92-121e9ae795f5
-source-git-commit: e3a453ad166fe244b82bd1f90e669579fcf09d17
+source-git-commit: ac54398ae8e9e06ea3581baf867ab1cf650042a2
 workflow-type: tm+mt
-source-wordcount: '696'
+source-wordcount: '669'
 ht-degree: 0%
 
 ---
 
 # 内容端点
-
->[!IMPORTANT]
->
->`/content`终结点当前为测试版，您的组织可能尚未获得访问权限。 功能和文档可能会发生更改。
 
 使用`/content`端点安全地检索您客户的&#x200B;*访问信息*（隐私主体可以合法请求访问的信息）。 在响应`/jobs/{JOB_ID}`GET请求时提供的下载URL指向Adobe服务端点。 然后，您可以向`/jobs/:JOB_ID/content`发出GET请求，以JSON格式返回您的客户数据。 该接入方法实现了多层的认证和访问控制，增强了安全性。
 
