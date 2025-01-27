@@ -1,7 +1,8 @@
 ---
 title: 使用沙盒工具备份对象配置
 description: 要安全地重置沙盒并添加版本控制支持，请使用沙盒工具包备份对象配置（或元数据）。 备份包可防止丢失关键配置（如架构、数据集和受众），尤其是在开发迭代期间。
-source-git-commit: f0cbee2663682f0afae6d7e4b174f250fcb3df53
+exl-id: cccbaaf1-ee68-4a00-9a44-aa5db4a83a14
+source-git-commit: 2a700788d9b59bcdb4195e34d77eccd278803d42
 workflow-type: tm+mt
 source-wordcount: '1168'
 ht-degree: 3%
