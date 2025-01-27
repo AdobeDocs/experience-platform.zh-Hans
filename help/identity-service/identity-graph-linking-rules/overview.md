@@ -2,7 +2,7 @@
 title: 身份图链接规则
 description: 了解Identity Service中的身份图链接规则。
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: af36856dbf37e69cbc5c6952c583f583fd5b8e96
+source-git-commit: c1aaad7d7169e63c49d62ab8a7a06c4c11c85cb4
 workflow-type: tm+mt
 source-wordcount: '1440'
 ht-degree: 3%
@@ -37,7 +37,7 @@ ht-degree: 3%
 
 >[!CONTEXTUALHELP]
 >id="platform_identities_graphcollapsescenarios"
->title="图形折叠场景"
+>title="图形折叠方案"
 >abstract="图形可能“折叠”或代表多个人物实体的原因有多种。"
 
 在某些情况下，单个设备可能会发生多次登录：
