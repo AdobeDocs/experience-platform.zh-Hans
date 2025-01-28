@@ -2,14 +2,20 @@
 title: Graph Simulation UI指南
 description: 了解如何在Identity Service UI中使用图形模拟。
 exl-id: 89f0cf6e-c43f-40ec-859a-f3b73a6da8c8
-source-git-commit: c1aaad7d7169e63c49d62ab8a7a06c4c11c85cb4
+source-git-commit: 0c5924b4e47cf4afcf76080a10d142b3e280c4d8
 workflow-type: tm+mt
-source-wordcount: '1484'
-ht-degree: 4%
+source-wordcount: '1461'
+ht-degree: 2%
 
 ---
 
-# [!DNL Graph Simulation]用户界面指南
+# [!DNL Graph Simulation]用户界面指南 {#graph-simulation}
+
+>[!CONTEXTUALHELP]
+>id="platform_identities_graphsimulation"
+>title="图形模拟"
+>abstract="模拟图形以了解身份标识服务如何链接身份标识，以及身份标识优化算法如何工作。"
+>additional-url="http://www.adobe.com/go/identity-graph-simulation" text="了解详情"
 
 >[!AVAILABILITY]
 >
@@ -50,12 +56,6 @@ ht-degree: 4%
 >[!ENDTABS]
 
 ## 添加事件 {#add-events}
-
->[!CONTEXTUALHELP]
->id="platform_identities_graphsimulation"
->title="图形模拟"
->abstract="模拟图形以了解身份标识服务如何链接身份标识，以及身份标识优化算法如何工作。"
->text="Learn more in documentation"
 
 要开始，请选择&#x200B;**[!UICONTROL 添加事件]**。
 
@@ -132,16 +132,6 @@ ht-degree: 4%
 ![选择的删除事件图标。](../images/graph-simulation/delete.png)
 
 ## 配置算法 {#configure-algorithm}
-
->[!CONTEXTUALHELP]
->id="platform_identities_algorithmconfiguration"
->title="算法配置"
->abstract="配置根据您所引入的身份标识定制的唯一命名空间和命名空间优先级。"
-
->[!CONTEXTUALHELP]
->id="platform_identities_namespacepriority"
->title="命名空间优先级"
->abstract="命名空间优先级决定如何从身份标识图中移除链接。"
 
 >[!IMPORTANT]
 >

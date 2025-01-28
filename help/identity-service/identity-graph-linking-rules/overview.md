@@ -2,9 +2,9 @@
 title: 身份图链接规则
 description: 了解Identity Service中的身份图链接规则。
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: c1aaad7d7169e63c49d62ab8a7a06c4c11c85cb4
+source-git-commit: 42c2b2afff49422a539d573280e9bc3f30369c3f
 workflow-type: tm+mt
-source-wordcount: '1440'
+source-wordcount: '1443'
 ht-degree: 3%
 
 ---
@@ -33,12 +33,13 @@ ht-degree: 3%
 
 本节概述了配置身份图链接规则时可以考虑的示例场景。
 
-### 共享设备
+### 共享设备 {#shared-device}
 
 >[!CONTEXTUALHELP]
 >id="platform_identities_graphcollapsescenarios"
 >title="图形折叠方案"
 >abstract="图形可能“折叠”或代表多个人物实体的原因有多种。"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/identity/features/identity-graph-linking-rules/overview" text="了解详情"
 
 在某些情况下，单个设备可能会发生多次登录：
 

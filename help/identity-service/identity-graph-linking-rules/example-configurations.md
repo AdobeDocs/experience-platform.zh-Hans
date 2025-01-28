@@ -2,14 +2,20 @@
 title: Graph配置示例
 description: 了解在使用身份图形链接规则和身份数据时可能遇到的常见图形场景。
 exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
-source-git-commit: cfe0181104f09bfd91b22d165c23154a15cd5344
+source-git-commit: 0c5924b4e47cf4afcf76080a10d142b3e280c4d8
 workflow-type: tm+mt
-source-wordcount: '2783'
+source-wordcount: '2799'
 ht-degree: 6%
 
 ---
 
-# 图形配置示例
+# 图形配置示例 {#examples-of-graph-configurations}
+
+>[!CONTEXTUALHELP]
+>id="platform_identities_algorithmconfiguration"
+>title="算法配置"
+>abstract="配置根据您所引入的身份标识定制的唯一命名空间和命名空间优先级。"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/identity/features/identity-graph-linking-rules/example-configurations" text="了解详情"
 
 >[!AVAILABILITY]
 >
@@ -44,7 +50,7 @@ CRMID: Tom, ECID: 111
 
 您可以通过为算法配置以下设置，在图形模拟中创建此方案：
 
-| 优先级 | 显示名称 | 标识类型 | 每个图唯一 |
+| 优先级 | 显示名称 | 身份标识类型 | 每个图唯一 |
 | ---| --- | --- | --- |
 | 1 | CRMID | 跨设备 | 是 |
 | 2 | ECID | COOKIE | 否 |
@@ -53,7 +59,7 @@ CRMID: Tom, ECID: 111
 
 在此配置的上下文中，主标识的定义如下所示：
 
-| 身份验证状态 | 事件中的命名空间 | 主要标识 |
+| 身份验证状态 | 事件中的命名空间 | 主要身份标识 |
 | --- | --- | --- |
 | Authenticated | CRMID、ECID | CRMID |
 | 未验证 | ECID | ECID |
@@ -112,7 +118,7 @@ CRMID: Summer, ECID: 222
 
 您可以通过为算法配置以下设置，在图形模拟中创建此方案：
 
-| 优先级 | 显示名称 | 标识类型 | 每个图唯一 |
+| 优先级 | 显示名称 | 身份标识类型 | 每个图唯一 |
 | ---| --- | --- | --- |
 | 1 | CRMID | 跨设备 | 是 |
 | 2 | 电子邮件（SHA256，小写） | 电子邮件 | 否 |
@@ -122,7 +128,7 @@ CRMID: Summer, ECID: 222
 
 在此配置的上下文中，主标识的定义如下所示：
 
-| 身份验证状态 | 事件中的命名空间 | 主要标识 |
+| 身份验证状态 | 事件中的命名空间 | 主要身份标识 |
 | --- | --- | --- |
 | Authenticated | CRMID、ECID | CRMID |
 | 未验证 | ECID | ECID |
@@ -202,7 +208,7 @@ CRMID: Summer, ECID: 444, GAID:B-B-B
 
 您可以通过为算法配置以下设置，在图形模拟中创建此方案：
 
-| 优先级 | 显示名称 | 标识类型 | 每个图唯一 |
+| 优先级 | 显示名称 | 身份标识类型 | 每个图唯一 |
 | ---| --- | --- | --- |
 | 1 | CRMID | 跨设备 | 是 |
 | 2 | 电子邮件（SHA256，小写） | 电子邮件 | 否 |
@@ -215,7 +221,7 @@ CRMID: Summer, ECID: 444, GAID:B-B-B
 
 在此配置的上下文中，主标识的定义如下所示：
 
-| 身份验证状态 | 事件中的命名空间 | 主要标识 |
+| 身份验证状态 | 事件中的命名空间 | 主要身份标识 |
 | --- | --- | --- |
 | Authenticated | CRMID、IDFA、ECID | CRMID |
 | Authenticated | CRMID、GAID、ECID | CRMID |
@@ -382,7 +388,7 @@ loginID: ID_C, ECID: 222
 
 您可以通过为算法配置以下设置，在图形模拟中创建此方案：
 
-| 优先级 | 显示名称 | 标识类型 | 每个图唯一 |
+| 优先级 | 显示名称 | 身份标识类型 | 每个图唯一 |
 | ---| --- | --- | --- |
 | 1 | CRMID | 跨设备 | 是 |
 | 2 | loginID | 跨设备 | 否 |
@@ -392,7 +398,7 @@ loginID: ID_C, ECID: 222
 
 在此配置的上下文中，主标识的定义如下所示：
 
-| 身份验证状态 | 事件中的命名空间 | 主要标识 |
+| 身份验证状态 | 事件中的命名空间 | 主要身份标识 |
 | --- | --- | --- |
 | Authenticated | 登录ID，ECID | loginID |
 | Authenticated | 登录ID，ECID | loginID |
@@ -499,7 +505,7 @@ loginID: ID_C, ECID: 222
 
 您可以通过为算法配置以下设置，在图形模拟中创建此方案：
 
-| 优先级 | 显示名称 | 标识类型 | 每个图唯一 |
+| 优先级 | 显示名称 | 身份标识类型 | 每个图唯一 |
 | ---| --- | --- | --- | 
 | 1 | CRMID | 跨设备 | 是 |
 | 2 | Email_LC_SHA256 | 电子邮件 | 否 |
@@ -512,7 +518,7 @@ loginID: ID_C, ECID: 222
 
 在此配置的上下文中，主标识的定义如下所示：
 
-| 身份验证状态 | 事件中的命名空间 | 主要标识 |
+| 身份验证状态 | 事件中的命名空间 | 主要身份标识 |
 | --- | --- | --- |
 | Authenticated | 登录ID，ECID | loginID |
 | Authenticated | 登录ID，ECID | loginID |
@@ -664,7 +670,7 @@ CRMID: Tom, ECID: 111
 
 您可以通过为算法配置以下设置，在图形模拟中创建此方案：
 
-| 优先级 | 显示名称 | 标识类型 | 每个图唯一 |
+| 优先级 | 显示名称 | 身份标识类型 | 每个图唯一 |
 | ---| --- | --- | --- | 
 | 1 | CRMID | 跨设备 | 是 |
 | 2 | 电子邮件 | 电子邮件 | 是 |
@@ -674,7 +680,7 @@ CRMID: Tom, ECID: 111
 
 在此配置的上下文中，主标识的定义如下所示：
 
-| 用户活动 | 事件中的命名空间 | 主要标识 |
+| 用户活动 | 事件中的命名空间 | 主要身份标识 |
 | --- | --- | --- |
 | 经过身份验证的浏览 | CRMID、ECID | CRMID |
 | 来宾结帐 | 电子邮件、ECID | 电子邮件 |

@@ -2,14 +2,20 @@
 title: 标识服务链接逻辑
 description: 了解Identity Service如何链接不同的身份以创建客户的全面视图。
 exl-id: 1c958c0e-0777-48db-862c-eb12b2e7a03c
-source-git-commit: f067f8d4628d76b4a87b9dd97d1d703c54688871
+source-git-commit: 627b2e5ecde28b26e7d4717e13713c38c3c09651
 workflow-type: tm+mt
-source-wordcount: '968'
+source-wordcount: '971'
 ht-degree: 2%
 
 ---
 
-# 标识服务链接逻辑
+# 标识服务链接逻辑 {#identity-service-linking-logic}
+
+>[!CONTEXTUALHELP]
+>id="platform_identities_simulatedgraph"
+>title="模拟图"
+>abstract="当身份标识命名空间和身份标识值匹配时，就会将身份标识链接起来。"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/identity/features/identity-linking-logic" text="了解详情"
 
 当标识命名空间与标识值匹配时，将在两个标识之间建立链接。
 
@@ -29,12 +35,7 @@ ht-degree: 2%
 | 最终用户先使用Google Chrome登录，然后再使用Firefox登录。 | CRMID与两个不同的ECID相关联。 | 人员(CRMID)与2个Web浏览器相关联（**注意**：每个浏览器都有自己的ECID）。 |
 | 数据工程师摄取CRM记录，该记录包括两个标记为身份的字段：CRMID和电子邮件。 | CRMID和电子邮件已链接。 | 人员(CRMID)与电子邮件地址关联。 |
 
-## 了解Identity Service关联逻辑 {#identity-linking-logic}
-
->[!CONTEXTUALHELP]
->id="platform_identities_simulatedgraph"
->title="模拟图"
->abstract="当身份标识命名空间和身份标识值匹配时，就会将身份标识链接起来。"
+## 了解Identity Service关联逻辑
 
 身份由身份命名空间和身份值组成。
 

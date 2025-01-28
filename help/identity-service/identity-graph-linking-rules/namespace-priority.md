@@ -2,14 +2,20 @@
 title: 命名空间优先级
 description: 了解Identity Service中的命名空间优先级。
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 3efbb9614f08a74ad33eb1fbb4861c34c762b66b
+source-git-commit: 0c5924b4e47cf4afcf76080a10d142b3e280c4d8
 workflow-type: tm+mt
-source-wordcount: '1788'
-ht-degree: 2%
+source-wordcount: '1804'
+ht-degree: 3%
 
 ---
 
-# 命名空间优先级
+# 命名空间优先级 {#namespace-priority}
+
+>[!CONTEXTUALHELP]
+>id="platform_identities_namespacepriority"
+>title="命名空间优先级"
+>abstract="命名空间优先级决定如何从身份标识图中移除链接。"
+>additional-url="http://www.adobe.com/go/identity-namespace-priority" text="了解详情"
 
 >[!AVAILABILITY]
 >
@@ -77,7 +83,7 @@ ht-degree: 2%
 * 为给定沙盒配置身份设置后，体验事件的主要身份将由配置中的最高命名空间优先级确定。
    * 这是因为体验事件在本质上是动态的。 身份映射可以包含三个或更多身份，命名空间优先级可确保最重要的命名空间与体验事件相关联。
 * 因此，实时客户个人资料&#x200B;**将不再使用下列配置**：
-   * 使用Web SDK、Mobile SDK或Edge Network服务器API在identityMap中发送身份时的主要身份配置(`primary=true`)（将继续在配置文件中使用身份命名空间和身份值）。 **注意**： Real-time Customer Profile之外的服务(如Data Lake Storage或Adobe Target)将继续使用主标识配置(`primary=true`)。
+   * 使用Web SDK、Mobile SDK或Edge Network服务器API在identityMap中发送身份时的主要身份配置(`primary=true`)（身份命名空间和身份值将继续用于配置文件）。 **注意**： Real-time Customer Profile之外的服务(如Data Lake Storage或Adobe Target)将继续使用主标识配置(`primary=true`)。
    * 在XDM体验事件类架构中标记为主要标识的任何字段。
    * Adobe Analytics源连接器（ECID或AAID）中的默认主标识设置。
 * 另一方面，**命名空间优先级不能确定配置文件记录**&#x200B;的主要身份。
