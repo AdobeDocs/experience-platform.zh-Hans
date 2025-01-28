@@ -1,30 +1,28 @@
 ---
-title: (Beta)交易台 — CRM连接
+title: 交易台 — CRM连接
 description: 激活交易台帐户中的配置文件，以根据CRM数据进行受众定位和抑制。
-last-substantial-update: 2023-01-25T00:00:00Z
+last-substantial-update: 2025-01-16T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: 3c645ccf5b9dd17e4c3cc1267b60a9c4f1131668
+source-git-commit: a189a86749996c0ee7b6146bcd030d8495745e12
 workflow-type: tm+mt
-source-wordcount: '1148'
+source-wordcount: '1117'
 ht-degree: 5%
 
 ---
 
-# (Beta) [!DNL Trade Desk] - CRM连接
+# [!DNL Trade Desk] - CRM连接
 
 >[!IMPORTANT]
->
->Platform中的[!DNL The Trade Desk - CRM]目标当前为测试版。 文档和功能可能会发生更改。
 >
 >随着 EUID (European Unified ID) 的发布，现在您在[目标目录](/help/destinations/catalog/overview.md)中会看到两个 [!DNL The Trade Desk - CRM] 目标。
 >* 如果您在欧盟获取数据，请使用 **[!DNL The Trade Desk - CRM (EU)]** 目标。
 >* 如果您在 APAC 或 NAMER 地区获取数据，请使用 **[!DNL The Trade Desk - CRM (NAMER & APAC)]** 目标。
 >
->Experience Platform中的两个目标当前均处于Beta版。 此目标连接器和文档页面由&#x200B;*[!DNL Trade Desk]*&#x200B;团队创建和维护。 如有任何查询或更新请求，请联系您的[!DNL Trade Desk]代表，文档和功能可能会发生更改。
+>此目标连接器和文档页面由&#x200B;*[!DNL Trade Desk]*&#x200B;团队创建和维护。 有关查询或更新请求，请联系您的[!DNL Trade Desk]代表。
 
 ## 概述 {#overview}
 
-此文档旨在帮助您向[!DNL Trade Desk]帐户激活配置文件，以便根据CRM数据进行受众定位和抑制。
+了解如何根据CRM数据向[!DNL Trade Desk]帐户激活配置文件以进行受众定位和抑制。
 
 此连接器将数据发送到[!DNL The Trade Desk]第一方终结点。 Adobe Experience Platform与[!DNL The Trade Desk]之间的集成不支持将数据导出到[!DNL The Trade Desk]第三方端点。
 
@@ -36,7 +34,9 @@ ht-degree: 5%
 
 ## 先决条件 {#prerequisites}
 
-在将受众激活到[!DNL The Trade Desk]之前，您必须联系[!DNL The Trade Desk]客户经理以签署CRM入门培训合同。 然后，[!DNL The Trade Desk]将授予权限并共享您的广告商ID以配置您的目标。
+>[!IMPORTANT]
+>
+>您必须先联系[!DNL Trade Desk]客户经理以签署CRM载入合同，然后才能将受众激活到交易台。 [!DNL The Trade Desk]将允许使用UID2 / EUID并共享其他详细信息以帮助您配置目标。
 
 ## ID匹配要求 {#id-matching-requirements}
 

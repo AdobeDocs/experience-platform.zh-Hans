@@ -5,9 +5,9 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: 6210f78e79c6c528296378756c9d11e35d092736
+source-git-commit: e916488be3d10e47193e66c1f9516cb5da93c3a7
 workflow-type: tm+mt
-source-wordcount: '1271'
+source-wordcount: '1270'
 ht-degree: 5%
 
 ---
@@ -103,7 +103,7 @@ ht-degree: 5%
       * [PubMatic Connect连接](./catalog/advertising/pubmatic.md)
       * [Snapchat Ads连接](./catalog/advertising/snap-inc.md)
       * [交易台连接](./catalog/advertising/tradedesk.md)
-      * [(Beta)交易台CRM连接](./catalog/advertising/tradedesk-emails.md)
+      * [交易台CRM连接](./catalog/advertising/tradedesk-emails.md)
       * [twitter通用网站标记扩展](./catalog/advertising/twitter-uwt.md)
       * [Yahoo/Verizon DataX连接](./catalog/advertising/datax.md)
    * Analytics目标{#analytics}
