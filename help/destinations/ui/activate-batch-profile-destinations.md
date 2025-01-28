@@ -3,9 +3,9 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: fdb92a0c03ce6a0d44cfc8eb20c2e3bd1583b1ce
+source-git-commit: de9c838c8a9d07165b4cc8a602df0c627a8b749c
 workflow-type: tm+mt
-source-wordcount: '4151'
+source-wordcount: '4395'
 ht-degree: 11%
 
 ---
@@ -137,7 +137,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
    >[!IMPORTANT]
    >
-   >如果您对已设置为在区段评估后激活的受众运行[灵活受众评估](../../segmentation/ui/audience-portal.md#flexible-audience-evaluation)，则无论之前执行过任何每日激活作业，灵活受众评估作业完成后都将立即激活受众。 这可能会导致根据您的操作，每天多次导出受众。
+   >如果您对已设置为在区段评估后激活的受众运行[灵活受众评估](../../segmentation/ui/audience-portal.md#flexible-audience-evaluation)，则无论之前有任何每日激活作业，这些受众都会在灵活受众评估作业完成后立即激活。这可能会导致根据您的操作，每天多次导出受众。
 
    <!-- Batch segmentation currently runs at {{insert time of day}} and lasts for an average {{x hours}}. Adobe reserves the right to modify this schedule. -->
 
@@ -431,14 +431,31 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
 Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）作为重复数据删除键，以确保所有配置文件记录均被唯一识别。
 
->[!NOTE]
-> 
->如果有任何数据使用标签应用于数据集（而不是整个数据集）中的某些字段，则会在激活时强制实施这些字段级标签，具体情况如下：
->
->* 这些字段在受众定义中使用。
->* 这些字段配置为目标目标的投影属性。
->
-> 例如，如果字段`person.name.firstName`的某些数据使用标签与目标的营销操作冲突，您将在审核步骤中看到数据使用策略冲突。 有关详细信息，请参阅[Adobe Experience Platform中的数据管理](../../rtcdp/privacy/data-governance-overview.md#destinations)。
+### 具有相同时间戳的用户档案的重复数据删除行为 {#deduplication-same-timestamp}
+
+将用户档案导出到基于文件的目标时，重复数据删除可确保在多个用户档案共享相同的重复数据删除键和相同的引用时间戳时，仅导出一个用户档案。 此时间戳表示个人资料的受众成员资格或身份图的上次更新时间。 有关如何更新和导出配置文件的更多信息，请参阅[配置文件导出行为](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2)文档。
+
+#### 关键注意事项
+
+* **确定性选择**：当多个配置文件具有相同的重复数据删除键和相同的引用时间戳时，重复数据删除逻辑通过对其他选定列的值进行排序（不包括数组、映射或对象等复杂类型）来确定要导出的配置文件。 按词典顺序计算排序的值，并且选择第一个配置文件。
+
+* **示例方案**：\
+  请考虑以下数据，其中重复数据删除键是`Email`列：\
+  |电子邮件*|名字|姓氏|时间戳|\
+  |—|—|—|—|\
+  |test1@test.com|John|Morris|2024-10-12T09:50|\
+  |test1@test.com|John|Doe|2024-10-12T09:50|\
+  |test2@test.com|Frank|Smith|2024-10-12T09:50|
+
+  在重复数据删除之后，导出文件将包含：\
+  |电子邮件*|名字|姓氏|时间戳|\
+  |—|—|—|—|\
+  |test1@test.com|John|Doe|2024-10-12T09:50|\
+  |test2@test.com|Frank|Smith|2024-10-12T09:50|
+
+  **解释**：对于`test1@test.com`，两个配置文件共享相同的重复数据删除密钥和时间戳。 算法按词典对列值`first_name`和`last_name`进行排序。 由于名字相同，因此使用`last_name`列来解析连接，其中“Doe”在“Morris”之前。
+
+* **可靠性提高**：此更新的重复数据删除流程可确保使用相同坐标的连续运行始终产生相同的结果，从而提高一致性。
 
 ### [!BADGE Beta]{type=Informative}通过计算字段导出数组 {#export-arrays-calculated-fields}
 
@@ -552,6 +569,15 @@ abstract="启用此选项可将所选自定义上传受众的轮廓导出到您�
 选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以移至[审阅](#review)步骤。
 
 ## 审查 {#review}
+
+>[!NOTE]
+> 
+如果有任何数据使用标签应用于数据集（而不是整个数据集）中的某些字段，则会在激活时强制实施这些字段级标签，具体情况如下：
+>
+* 这些字段在受众定义中使用。
+* 这些字段配置为目标目标的投影属性。
+>
+例如，如果字段`person.name.firstName`的某些数据使用标签与目标的营销操作冲突，您将在审核步骤中看到数据使用策略冲突。 有关详细信息，请参阅[Adobe Experience Platform中的数据管理](../../rtcdp/privacy/data-governance-overview.md#destinations)。
 
 在&#x200B;**[!UICONTROL 审核]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL 取消]**&#x200B;以中断流，**[!UICONTROL 上一步]**&#x200B;以修改您的设置，或者选择&#x200B;**[!UICONTROL 完成]**&#x200B;以确认您的选择并开始将数据发送到目标。
 
