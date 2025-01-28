@@ -2,9 +2,9 @@
 title: 标识服务链接逻辑
 description: 了解Identity Service如何链接不同的身份以创建客户的全面视图。
 exl-id: 1c958c0e-0777-48db-862c-eb12b2e7a03c
-source-git-commit: 627b2e5ecde28b26e7d4717e13713c38c3c09651
+source-git-commit: 048d915d33a19a9d50a4951e165b5ade1b9d9734
 workflow-type: tm+mt
-source-wordcount: '971'
+source-wordcount: '968'
 ht-degree: 2%
 
 ---
@@ -15,7 +15,6 @@ ht-degree: 2%
 >id="platform_identities_simulatedgraph"
 >title="模拟图"
 >abstract="当身份标识命名空间和身份标识值匹配时，就会将身份标识链接起来。"
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/identity/features/identity-linking-logic" text="了解详情"
 
 当标识命名空间与标识值匹配时，将在两个标识之间建立链接。
 

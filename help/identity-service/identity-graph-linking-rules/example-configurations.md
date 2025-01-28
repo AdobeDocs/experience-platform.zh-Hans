@@ -2,9 +2,9 @@
 title: Graph配置示例
 description: 了解在使用身份图形链接规则和身份数据时可能遇到的常见图形场景。
 exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
-source-git-commit: 0c5924b4e47cf4afcf76080a10d142b3e280c4d8
+source-git-commit: 048d915d33a19a9d50a4951e165b5ade1b9d9734
 workflow-type: tm+mt
-source-wordcount: '2799'
+source-wordcount: '2796'
 ht-degree: 6%
 
 ---
@@ -15,7 +15,6 @@ ht-degree: 6%
 >id="platform_identities_algorithmconfiguration"
 >title="算法配置"
 >abstract="配置根据您所引入的身份标识定制的唯一命名空间和命名空间优先级。"
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/identity/features/identity-graph-linking-rules/example-configurations" text="了解详情"
 
 >[!AVAILABILITY]
 >
