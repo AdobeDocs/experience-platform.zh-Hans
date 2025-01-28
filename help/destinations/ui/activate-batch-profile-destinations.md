@@ -3,9 +3,9 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: de9c838c8a9d07165b4cc8a602df0c627a8b749c
+source-git-commit: b4b185cab4defbf9559089e5152075674dab52d1
 workflow-type: tm+mt
-source-wordcount: '4395'
+source-wordcount: '4387'
 ht-degree: 11%
 
 ---
@@ -439,25 +439,32 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 
 * **确定性选择**：当多个配置文件具有相同的重复数据删除键和相同的引用时间戳时，重复数据删除逻辑通过对其他选定列的值进行排序（不包括数组、映射或对象等复杂类型）来确定要导出的配置文件。 按词典顺序计算排序的值，并且选择第一个配置文件。
 
-* **示例方案**：\
-  请考虑以下数据，其中重复数据删除键是`Email`列：\
-  |电子邮件*|名字|姓氏|时间戳|\
-  |—|—|—|—|\
-  |test1@test.com|John|Morris|2024-10-12T09:50|\
-  |test1@test.com|John|Doe|2024-10-12T09:50|\
-  |test2@test.com|Frank|Smith|2024-10-12T09:50|
+* **示例方案**
 
-  在重复数据删除之后，导出文件将包含：\
-  |电子邮件*|名字|姓氏|时间戳|\
-  |—|—|—|—|\
-  |test1@test.com|John|Doe|2024-10-12T09:50|\
-  |test2@test.com|Frank|Smith|2024-10-12T09:50|
+请考虑以下数据，其中重复数据删除键是`Email`列：
 
-  **解释**：对于`test1@test.com`，两个配置文件共享相同的重复数据删除密钥和时间戳。 算法按词典对列值`first_name`和`last_name`进行排序。 由于名字相同，因此使用`last_name`列来解析连接，其中“Doe”在“Morris”之前。
+| 电子邮件* | 名字 | last_name | 时间戳 |
+|---|---|---|---|  
+| `test1@test.com` | John | 莫里斯 | 2024-10-12T09:50 |
+| `test1@test.com` | John | Doe | 2024-10-12T09:50 |
+| `test2@test.com` | 弗兰克 | Smith | 2024-10-12T09:50 |
 
-* **可靠性提高**：此更新的重复数据删除流程可确保使用相同坐标的连续运行始终产生相同的结果，从而提高一致性。
+{style="table-layout:auto"}
 
-### [!BADGE Beta]{type=Informative}通过计算字段导出数组 {#export-arrays-calculated-fields}
+在重复数据删除之后，导出文件将包含：
+
+| 电子邮件* | 名字 | last_name | 时间戳 |
+|---|---|---|---|  
+| `test1@test.com` | John | Doe | 2024-10-12T09:50 |
+| `test2@test.com` | 弗兰克 | Smith | 2024-10-12T09:50 |
+
+{style="table-layout:auto"}
+
+**解释**：对于`test1@test.com`，两个配置文件共享相同的重复数据删除密钥和时间戳。 算法按词典对列值`first_name`和`last_name`进行排序。 由于名字相同，因此使用`last_name`列来解析连接，其中“Doe”在“Morris”之前。
+
+**可靠性提高**：此更新的重复数据删除流程可确保使用相同坐标的连续运行始终产生相同的结果，从而提高一致性。
+
+### 通过计算字段导出数组 {#export-arrays-calculated-fields}
 
 部分测试版客户可以将阵列对象从Experience Platform导出到云存储目标。 阅读有关[导出数组和计算字段](/help/destinations/ui/export-arrays-calculated-fields.md)的更多信息，并联系您的Adobe代表以获取该功能的访问权限。
 
@@ -474,10 +481,10 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 
 >[!NOTE]
 >
-对于云存储目标，默认情况下会向映射中添加以下属性：
+>对于云存储目标，默认情况下会向映射中添加以下属性：
 >
-* `segmentMembership.seg_namespace.seg_id.status`
-* `segmentMembership.seg_namespace.seg_id.lastQualificationTime`
+>* `segmentMembership.seg_namespace.seg_id.status`
+>* `segmentMembership.seg_namespace.seg_id.lastQualificationTime`
 
 文件导出将因以下方式而异，具体取决于是否选择了`segmentMembership.seg_namespace.seg_id.status`：
 
@@ -500,9 +507,9 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 
 >[!IMPORTANT]
 > 
-目录中的所有云存储目标都可以查看改进的[[!UICONTROL 映射]步骤](#mapping)，该步骤取代了本节中描述的&#x200B;**[!UICONTROL 选择属性]**&#x200B;步骤。
+>目录中的所有云存储目标都可以查看改进的[[!UICONTROL 映射]步骤](#mapping)，该步骤取代了本节中描述的&#x200B;**[!UICONTROL 选择属性]**&#x200B;步骤。
 >
-对于Adobe Campaign、OracleResponsys、OracleEloqua和SalesforceMarketing Cloud电子邮件营销目标，仍会显示此&#x200B;**[!UICONTROL 选择属性]**&#x200B;步骤。
+>对于Adobe Campaign、OracleResponsys、OracleEloqua和SalesforceMarketing Cloud电子邮件营销目标，仍会显示此&#x200B;**[!UICONTROL 选择属性]**&#x200B;步骤。
 
 对于基于配置文件的目标，必须选择要发送到目标目标的配置文件属性。
 
@@ -522,15 +529,15 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 
 >[!NOTE]
 >
-Adobe Experience Platform使用架构中的四个推荐的常用属性预填充您的选择： `person.name.firstName`、`person.name.lastName`、`personalEmail.address`、`segmentMembership.seg_namespace.seg_id.status`。
+> Adobe Experience Platform使用架构中的四个推荐的常用属性预填充您的选择： `person.name.firstName`、`person.name.lastName`、`personalEmail.address`、`segmentMembership.seg_namespace.seg_id.status`。
 
 ![图像显示在受众激活工作流的映射步骤中预填充的建议属性。](../assets/ui/activate-batch-profile-destinations/prefilled-fields.png)
 
 >[!IMPORTANT]
 >
-由于已知限制，您当前无法使用&#x200B;**[!UICONTROL 选择字段]**&#x200B;窗口将`segmentMembership.seg_namespace.seg_id.status`添加到文件导出。 相反，您必须将值`xdm: segmentMembership.seg_namespace.seg_id.status`手动粘贴到架构字段中，如下所示。
+>由于已知限制，您当前无法使用&#x200B;**[!UICONTROL 选择字段]**&#x200B;窗口将`segmentMembership.seg_namespace.seg_id.status`添加到文件导出。 相反，您必须将值`xdm: segmentMembership.seg_namespace.seg_id.status`手动粘贴到架构字段中，如下所示。
 >
-![显示激活工作流映射步骤中受众成员资格解决方法的屏幕录制。](..//assets/ui/activate-batch-profile-destinations/segment-membership.gif)
+>![显示激活工作流映射步骤中受众成员资格解决方法的屏幕录制。](..//assets/ui/activate-batch-profile-destinations/segment-membership.gif)
 
 文件导出在以下方面有所不同，具体取决于是否选择了`segmentMembership.seg_namespace.seg_id.status`：
 * 如果选择了`segmentMembership.seg_namespace.seg_id.status`字段，则导出的文件在初始完整快照中包含&#x200B;**[!UICONTROL Active]**&#x200B;成员，在后续增量导出中包含&#x200B;**[!UICONTROL Active]**&#x200B;和&#x200B;**[!UICONTROL Expired]**&#x200B;成员。
@@ -538,14 +545,14 @@ Adobe Experience Platform使用架构中的四个推荐的常用属性预填充�
 
 ## 选择扩充属性 {#select-enrichment-attributes}
 
-[!CONTEXTUALHELP]
-id="platform_destinations_activate_exclude_enrichment_attributes"
-title="排除扩充属性"
-abstract="启用此选项可将所选自定义上传受众的轮廓导出到您的目的地，同时排除其所有属性。"
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_exclude_enrichment_attributes"
+>title="排除扩充属性"
+>abstract="启用此选项可将所选自定义上传受众的轮廓导出到您的目的地，同时排除其所有属性。"
 
 >[!IMPORTANT]
 >
-仅当您在[受众选择](#select-audiences)步骤中选择了&#x200B;**[!UICONTROL 自定义上传]**&#x200B;受众时，才会显示此步骤。
+>仅当您在[受众选择](#select-audiences)步骤中选择了&#x200B;**[!UICONTROL 自定义上传]**&#x200B;受众时，才会显示此步骤。
 
 扩充属性对应于Experience Platform中作为&#x200B;**[!UICONTROL 自定义上传]**&#x200B;摄取的自定义上传受众。 在此步骤中，您可以为每个选定的外部受众选择要导出到目标的属性。
 
@@ -572,12 +579,12 @@ abstract="启用此选项可将所选自定义上传受众的轮廓导出到您�
 
 >[!NOTE]
 > 
-如果有任何数据使用标签应用于数据集（而不是整个数据集）中的某些字段，则会在激活时强制实施这些字段级标签，具体情况如下：
+>如果有任何数据使用标签应用于数据集（而不是整个数据集）中的某些字段，则会在激活时强制实施这些字段级标签，具体情况如下：
 >
-* 这些字段在受众定义中使用。
-* 这些字段配置为目标目标的投影属性。
+>* 这些字段在受众定义中使用。
+>* 这些字段配置为目标目标的投影属性。
 >
-例如，如果字段`person.name.firstName`的某些数据使用标签与目标的营销操作冲突，您将在审核步骤中看到数据使用策略冲突。 有关详细信息，请参阅[Adobe Experience Platform中的数据管理](../../rtcdp/privacy/data-governance-overview.md#destinations)。
+> 例如，如果字段`person.name.firstName`的某些数据使用标签与目标的营销操作冲突，您将在审核步骤中看到数据使用策略冲突。 有关详细信息，请参阅[Adobe Experience Platform中的数据管理](../../rtcdp/privacy/data-governance-overview.md#destinations)。
 
 在&#x200B;**[!UICONTROL 审核]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL 取消]**&#x200B;以中断流，**[!UICONTROL 上一步]**&#x200B;以修改您的设置，或者选择&#x200B;**[!UICONTROL 完成]**&#x200B;以确认您的选择并开始将数据发送到目标。
 
@@ -585,10 +592,10 @@ abstract="启用此选项可将所选自定义上传受众的轮廓导出到您�
 
 ### 同意策略评估 {#consent-policy-evaluation}
 
-[!CONTEXTUALHELP]
-id="platform_governance_policies_viewApplicableConsentPolicies"
-title="查看适用的同意策略"
-abstract="如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的轮廓数量。如果您的公司无权访问上述 SKU，则此控件将被禁用。"
+>[!CONTEXTUALHELP]
+>id="platform_governance_policies_viewApplicableConsentPolicies"
+>title="查看适用的同意策略"
+>abstract="如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的轮廓数量。如果您的公司无权访问上述 SKU，则此控件将被禁用。"
 
 如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的轮廓数量。有关详细信息，请阅读[同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。
 
