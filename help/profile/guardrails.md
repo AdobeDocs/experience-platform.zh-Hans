@@ -5,9 +5,9 @@ product: experience platform
 type: Documentation
 description: 了解轮廓数据和分段的性能和系统强制护栏，以确保充分使用 Real-Time CDP 功能。
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 22daff3f422cd4ec5bbf5c77583e24dac6c53c76
+source-git-commit: 1f682fc5c109f3dc8a7ed8513260a1a3c3108bbb
 workflow-type: tm+mt
-source-wordcount: '2472'
+source-wordcount: '2511'
 ht-degree: 2%
 
 ---
@@ -118,12 +118,12 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --------- | ----- | ---------- | ----------- |
-| 每个沙盒的受众 | 4000 | 性能护栏 | 一个组织总共可以有4000多个受众，前提是每个沙盒中的受众少于4000个。 其中包括批量、流和边缘受众。 尝试创建其他受众可能会影响系统性能。 阅读有关[通过区段生成器创建受众](/help/segmentation/ui/segment-builder.md)的更多信息。 |
-| 每个沙盒的Edge受众 | 150 | 性能护栏 | 只要每个沙盒中的边缘受众少于150个，组织就可以总共拥有150个以上的边缘受众。 尝试创建其他Edge受众可能会影响系统性能。 了解有关[边缘受众](/help/segmentation/ui/edge-segmentation.md)的更多信息。 |
+| 每个沙盒的受众 | 4000 | 性能护栏 | 每个沙盒最多可以有4000个&#x200B;**活动**&#x200B;受众。 只要每个&#x200B;**个人**&#x200B;沙盒中有少于4000个受众，您每个组织的沙盒就可以超过4000个。 其中包括批量、流和边缘受众。 尝试创建其他受众可能会影响系统性能。 阅读有关[通过区段生成器创建受众](/help/segmentation/ui/segment-builder.md)的更多信息。 |
+| 每个沙盒的Edge受众 | 150 | 性能护栏 | 每个沙盒最多可以有150个&#x200B;**活动**&#x200B;边缘受众。 只要每个&#x200B;**个人**&#x200B;沙盒中的边缘受众少于150个，则每个组织可以拥有超过150个边缘受众。 尝试创建其他Edge受众可能会影响系统性能。 了解有关[边缘受众](/help/segmentation/ui/edge-segmentation.md)的更多信息。 |
 | 所有沙盒中的Edge吞吐量 | 1500 RPS | 性能护栏 | Edge分段支持每秒进入Adobe Experience PlatformEdge Network的入站事件峰值为1500个。 在集客事件进入Adobe Experience PlatformEdge Network后，Edge分段最多可能需要350毫秒来处理该事件。 了解有关[边缘受众](/help/segmentation/ui/edge-segmentation.md)的更多信息。 |
-| 每个沙盒的流受众 | 500 | 性能护栏 | 一个组织总共可以有500多个流受众，前提是每个沙盒中的流受众少于500个。 其中包括流受众和Edge受众。 尝试创建其他流受众可能会影响系统性能。 阅读有关[流式受众](/help/segmentation/ui/streaming-segmentation.md)的更多信息。 |
+| 每个沙盒的流受众 | 500 | 性能护栏 | 每个沙盒最多可以有500个&#x200B;**活动**&#x200B;流受众。 只要每个&#x200B;**个人**&#x200B;沙盒中的流受众少于500个，则每个组织可以拥有超过500个流受众。 其中包括流受众和Edge受众。 尝试创建其他流受众可能会影响系统性能。 阅读有关[流式受众](/help/segmentation/ui/streaming-segmentation.md)的更多信息。 |
 | 流传输所有沙盒的吞吐量 | 1500 RPS | 性能护栏 | 流式分段支持每秒1500个入站事件的峰值。 流式分段最多可能需要5分钟才能使配置文件获得区段成员资格。 阅读有关[流式受众](/help/segmentation/ui/streaming-segmentation.md)的更多信息。 |
-| 每个沙盒的批量受众 | 4000 | 性能护栏 | 一个组织总共可以有4000多个批次受众，前提是每个沙盒中的批次受众少于4000个。 尝试创建其他批处理受众可能会影响系统性能。 |
+| 每个沙盒的批量受众 | 4000 | 性能护栏 | 每个沙盒最多可以有4000个&#x200B;**活动**&#x200B;批次受众。 只要每个&#x200B;**个人**&#x200B;沙盒中有少于4000个批次受众，则每个组织可以有4000个以上的批次受众。 尝试创建其他批处理受众可能会影响系统性能。 |
 | 每个沙盒的帐户受众 | 50 | 系统强制的护栏 | 在一个沙盒中最多可创建50个帐户受众。 在一个沙盒中达到50个受众后，在尝试创建新帐户受众时，**[!UICONTROL 创建受众]**&#x200B;控件被禁用。 了解有关[帐户受众](/help/segmentation/ui/account-audiences.md)的更多信息。 |
 | 每个沙盒已发布的合成 | 10 | 性能护栏 | 一个沙盒中最多可以有10个已发布的合成。 有关UI指南](/help/segmentation/ui/audience-composition.md)中[受众组合的详细信息。 |
 | 最大受众规模 | 30% | 性能护栏 | 建议的最大受众成员数为系统中配置文件总数的30%。 将超过30%的用户档案创建为成员或多个大型受众是可行的，但将影响系统性能。 |
