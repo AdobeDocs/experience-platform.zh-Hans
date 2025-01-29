@@ -6,9 +6,9 @@ title: Attribution AI错误疑难解答
 description: 查找Attribution AI中常见错误的答案。
 type: Documentation
 exl-id: c2ff700a-1e36-4ba2-876c-9f8b56344241
-source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
+source-git-commit: e028fbb82b37b3940b308a860c26f8b5f9884d3a
 workflow-type: tm+mt
-source-wordcount: '167'
+source-wordcount: '171'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 由于Google Chrome无痕模式安全设置发生更新，导致Google Chrome无痕模式中存在加载错误。 Chrome正在积极处理此问题，以使experience.adobe.com成为受信任的域。
 
-<img src="./images/faq/error.PNG" width="500" /><br />
+![错误图像](./images/faq/error.PNG){width=500}
 
 ### 建议的修复
 

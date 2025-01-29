@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 人员数据类型
 description: 了解人员体验数据模型(XDM)数据类型。
 exl-id: f28a52be-90c7-4ed0-a460-97165bb58046
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: e028fbb82b37b3940b308a860c26f8b5f9884d3a
 workflow-type: tm+mt
-source-wordcount: '318'
+source-wordcount: '322'
 ht-degree: 3%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 3%
 
 [!UICONTROL 人员]是描述个人信息的标准体验数据模型(XDM)数据类型。 此数据类型可以表示担任各种角色的人员，例如客户、联系人或所有者。
 
-<img src="../images/data-types/person.PNG" width="500" /><br />
+![人员图像](../images/data-types/person.PNG){width=500}
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |

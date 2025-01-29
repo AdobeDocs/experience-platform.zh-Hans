@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 网页详细信息数据类型
 description: 了解网页详细信息Experience Data Model (XDM)数据类型。
 exl-id: 31108e57-d416-485b-a6c3-4ebc4f5b1152
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: e028fbb82b37b3940b308a860c26f8b5f9884d3a
 workflow-type: tm+mt
-source-wordcount: '383'
+source-wordcount: '386'
 ht-degree: 11%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 11%
 
 数据类型适用于单页Web应用程序(SPA)的完整页面详细信息和初始页面加载。 对于在加载的页面上发生的不会触发新页面加载的交互，请参阅[Web交互](./web-interaction.md)数据类型。
 
-<img src="../images/data-types/web-page-details.PNG" width="500" /><br />
+![网页详细信息](../images/data-types/web-page-details.PNG){width="500"}
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |

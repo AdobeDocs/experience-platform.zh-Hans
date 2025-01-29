@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 应用程序数据类型
 description: 了解应用程序体验数据模型(XDM)数据类型。
 exl-id: ac7d6761-7b58-4e0d-85e7-6f157fb2eea5
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: e028fbb82b37b3940b308a860c26f8b5f9884d3a
 workflow-type: tm+mt
-source-wordcount: '416'
+source-wordcount: '420'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 1%
 
 [!UICONTROL 应用程序]是一种标准的体验数据模型(XDM)数据类型，它描述了与应用程序生成的交互相关的详细信息。 应用程序是指软件体验，例如可由最终用户安装、运行、关闭或卸载的移动或桌面应用程序。 此数据类型的属性并非旨在描述代理，例如聊天机器人、基于浏览器的插件或其他不适用于应用程序的体验。
 
-<img src="../images/data-types/application.PNG" width="500" /><br />
+![应用程序图像](../images/data-types/application.PNG){width=500}
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
