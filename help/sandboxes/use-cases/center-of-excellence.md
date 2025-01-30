@@ -1,7 +1,8 @@
 ---
 title: 使用沙盒工具实现卓越中心
 description: 通过创建一个“黄金沙盒”包来标准化多个沙盒中的最佳实践，从而使用沙盒工具启用卓越中心。
-source-git-commit: f0cbee2663682f0afae6d7e4b174f250fcb3df53
+exl-id: 6f242ad5-bb02-4a6d-b255-d196dd5fe4b8
+source-git-commit: d4df5606228347b5fb69fdaa24c637c329099895
 workflow-type: tm+mt
 source-wordcount: '881'
 ht-degree: 7%
@@ -12,7 +13,7 @@ ht-degree: 7%
 
 通过创建一个“黄金沙盒”包来标准化多个沙盒中的最佳实践，从而使用沙盒工具启用卓越中心。
 
-![跨不同组织导出包的概述](../images/use-cases/packages-across-orgs.png)
+![跨不同组织导出包的概述](../images/use-cases/packages-across-orgs.png){zoomable="yes"}
 
 ## 为什么考虑此用例 {#why-this-use-case}
 
