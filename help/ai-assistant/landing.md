@@ -3,9 +3,9 @@ title: Adobe Experience Platform产品文档中的AI助手
 description: Adobe Experience Platform中的AI助手入门。
 feature: AI Assistant
 exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
-source-git-commit: 8022195e755df92b7ceacea52214f81593994e2a
+source-git-commit: 96e138cc12fdedaa73e3aaf69341806271413680
 workflow-type: tm+mt
-source-wordcount: '810'
+source-wordcount: '851'
 ht-degree: 1%
 
 ---
@@ -144,6 +144,14 @@ AI Assistant支持Experience Platform、Real-Time CDP、Adobe Journey Optimizer�
 观看以下视频，了解如何使用AI Assistant在数据对象发生任何更改之前执行更有效的影响分析。
 
 >[!VIDEO](https://video.tv.adobe.com/v/3441680/?learn=on)
+
+### 使用AI助手获取客户支持
+
+观看以下视频，了解如何使用AI Assistant进行客户支持无缝故障排除而不离开工作流。
+
+>[!VIDEO](https://video.tv.adobe.com/v/3443183?learn=on)
+
+有关详细信息，请阅读有关[使用AI助手获取客户支持](./new-features/customer-support.md)的文档。
 
 ## AI Assistant用例库
 
