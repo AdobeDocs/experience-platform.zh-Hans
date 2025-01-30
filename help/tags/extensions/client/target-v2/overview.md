@@ -2,10 +2,10 @@
 title: Adobe Target v2扩展概述
 description: 了解Adobe Experience Platform中的Adobe Target v2标记扩展。
 exl-id: 8f491d67-86da-4e27-92bf-909cd6854be1
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 5b88692117c984cd6331e7886d5bf0846309acee
 workflow-type: tm+mt
-source-wordcount: '1318'
-ht-degree: 58%
+source-wordcount: '1351'
+ht-degree: 60%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 58%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用本参考可了解有关使用此扩展构建规则时可用的选项的信息。
 
@@ -69,13 +69,15 @@ Target 扩展在规则的 Then 部分中提供了以下操作：
 
 无需进行配置。
 
-### 使用“设备端决策”加载Target
+### 通过设备上决策加载Target
 
-将此操作添加到标记规则中，其中加载在规则上下文中启用[设备上决策](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/on-device-decisioning/on-device-decisioning.html)的Target是可行的。 此操作会将启用了设备上决策的at.js库加载到页面中。 在大多数实施中，应在您网站的每个页面上加载 Target。Adobe建议，仅在执行Target调用之后再使用“通过设备上决策加载Target”操作。 否则，您可能会遇到 Analytics 调用延迟等问题。
+将此操作添加到标记规则中，其中加载在规则上下文中启用[设备上决策](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/on-device-decisioning/on-device-decisioning.html)的Target是可行的。 此操作会将启用了设备上决策的at.js库加载到页面中。 在大多数实施中，应在您网站的每个页面上加载 Target。Adobe建议，仅在执行Target调用之后再结合使用Load Target和“设备端决策”操作。 否则，您可能会遇到 Analytics 调用延迟等问题。
 
-无需进行配置。
+>[!IMPORTANT]
+>
+>仅将页面加载请求与设备上决策结合使用（如果已配置）。 将此操作添加到规则将增加最终Launch捆绑包的大小，因为它包含设备上决策规则引擎。
 
-### Add Params to All Requests
+### 向所有请求添加参数
 
 此操作类型允许将参数添加到所有Target请求。 必须先使用 Load Target 操作。
 
