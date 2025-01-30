@@ -2,10 +2,10 @@
 title: Adobe Analytics扩展的发行说明
 description: Adobe Experience Platform中的Adobe Analytics标记扩展的最新发行说明。
 exl-id: 3c7b4ec0-4b81-4ef4-b15f-6ad102525840
-source-git-commit: c783906b20db2b86d58aea7b3a94bde007c0a465
+source-git-commit: 5f4e157a39bf927b3821931d55f968862b2ed16d
 workflow-type: tm+mt
-source-wordcount: '1451'
-ht-degree: 68%
+source-wordcount: '1524'
+ht-degree: 65%
 
 ---
 
@@ -16,6 +16,14 @@ ht-degree: 68%
 >[!NOTE]
 >
 >Analytics标记扩展(如果经常为响应[AppMeasurementJavaScript库](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html)的更新而更新)。 有关下面提及的特定版本的详细信息，请参阅[AppMeasurement发行说明](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans)。
+
+## 2024年10月28日
+
+**Adobe Analytics扩展1.9.6**
+
+**功能**：
+
+* 添加了新功能，允许用户查看和编辑[设置变量操作](https://experienceleague.adobe.com/en/docs/experience-platform/tags/extensions/client/analytics/overview#set-variables)的JSON版本。 AdobeWeb SDK扩展还包括通过提供JSON [填充Analytics变量](https://experienceleague.adobe.com/en/docs/experience-platform/tags/extensions/client/web-sdk/data-element-types)的操作。 通过将JSON数据从AA扩展复制到Web SDK扩展，迁移客户可以轻松地同时传输多个设置，而不是手动添加每个变量。
 
 ## 2024年8月12日
 
