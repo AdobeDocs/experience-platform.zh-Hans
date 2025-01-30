@@ -5,9 +5,9 @@ breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
 role: User,Developer
-source-git-commit: 20869e76976ff3868f1d4dbc7c6d97b58682e5c3
+source-git-commit: e63ecbd14db2e9e4f35fb89aaaa406a4c584416a
 workflow-type: tm+mt
-source-wordcount: '397'
+source-wordcount: '402'
 ht-degree: 21%
 
 ---
@@ -23,6 +23,7 @@ ht-degree: 21%
 - 数据Distiller {#data-distiller}
    - [概述](data-distiller/overview.md)
    - [许可证使用](data-distiller/license-usage.md)
+   - [实现价值最大化的主要技巧](data-distiller/top-tips-to-maximize-value.md)
    - 派生的数据集{#derived-datasets}
       - [概述](data-distiller/derived-datasets/overview.md)
       - [使用SQL创建派生数据集](data-distiller/derived-datasets/create-derived-datasets-with-sql.md)
@@ -43,13 +44,13 @@ ht-degree: 21%
    - [概述](advanced-statistics/overview.md)
    - [特征工程](advanced-statistics/feature-engineering.md)
    - [模型](advanced-statistics/models.md)
-   - [功能转换](advanced-statistics/feature-transformation.md)
-实施模型{#implement-models}
+   - [特征转换](advanced-statistics/feature-transformation.md)
+   - 实施模型{#implement-models}
       - [实施模型](advanced-statistics/implement-models/implement-models.md)
       - [回归](advanced-statistics/implement-models/regression.md)
       - [分类](advanced-statistics/implement-models/classification.md)
-      - [群集](advanced-statistics/implement-models/clustering.md)
-示例{#examples}
+      - [聚类](advanced-statistics/implement-models/clustering.md)
+   - 示例 {#examples}
       - [使用统计和机器学习进行机器人过滤](advanced-statistics/examples/statistics-and-ml-bot-filtering.md)
       - [使用基于SQL的Logistic回归预测客户流失](advanced-statistics/examples/predict-customer-churn.md)
 - 数据Distiller受众{#data-distiller-audiences}
