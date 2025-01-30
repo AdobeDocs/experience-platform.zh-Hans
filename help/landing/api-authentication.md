@@ -6,9 +6,9 @@ description: 此文档分步说明了如何获取 Adobe Experience Platform 开�
 role: Developer
 feature: API
 exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
-source-git-commit: 48c75f88d6862fa602e43929b72a6eac27d20e07
+source-git-commit: 850a4ae82fda22a761a28ac9059d7dea57c9662a
 workflow-type: tm+mt
-source-wordcount: '2383'
+source-wordcount: '2487'
 ht-degree: 2%
 
 ---
@@ -30,7 +30,7 @@ ht-degree: 2%
 
 本教程介绍如何收集验证Platform API调用所需的凭据，如下面的流程图中所述。 您可以在初始一次性设置中收集大多数所需的凭据。 但是，必须每24小时刷新一次访问令牌。
 
-![](./images/api-authentication/authentication-flowchart.png)
+![一次性初始设置和每个后续会话的身份验证流程要求。](./images/api-authentication/authentication-flowchart.png)
 
 ## 先决条件 {#prerequisites}
 
@@ -52,15 +52,15 @@ ht-degree: 2%
 
 ### 获取开发人员访问权限 {#gain-developer-access}
 
-请联系贵组织的[!DNL Admin Console]管理员，以使用[[!DNL Admin Console]](https://adminconsole.adobe.com/)将您作为开发人员添加到Experience Platform产品配置文件中。 有关如何[管理产品配置文件的开发人员访问权限](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/manage-developers.ug.html)的特定说明，请参阅[!DNL Admin Console]文档。
+请联系贵企业的Admin Console管理员，将您作为开发人员添加到Experience Platform产品配置文件。 有关如何[管理产品配置文件的开发人员访问权限](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/manage-developers.ug.html)的特定说明，请参阅Admin Console文档。
 
 一旦您被指定为开发人员，就可以开始在[Adobe Developer Console](https://www.adobe.com/go/devs_console_ui)中创建集成。 这些集成是从外部应用程序和服务到AdobeAPI的管道。
 
 ### 获得用户访问权限 {#gain-user-access}
 
-您的[!DNL Admin Console]管理员还必须将您作为用户添加到同一产品配置文件。 凭借用户访问权限，您可以在UI中查看您执行的API操作的结果。
+您的Admin Console管理员还必须将您作为用户添加到同一产品配置文件。 凭借用户访问权限，您可以在UI中查看您执行的API操作的结果。
 
-有关详细信息，请参阅[在 [!DNL Admin Console]](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/user-groups.ug.html)中管理用户组的指南。
+有关详细信息，请参阅[管理Admin Console](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/user-groups.ug.html)中的用户组指南。
 
 ## 生成API密钥（客户端ID）和组织ID {#generate-credentials}
 
@@ -68,11 +68,11 @@ ht-degree: 2%
 >
 >如果您是从[Privacy ServiceAPI指南](../privacy-service/api/getting-started.md)中跟踪此文档，则现在可以返回该指南以生成[!DNL Privacy Service]唯一的访问凭据。
 
-在通过[!DNL Admin Console]授予您开发人员和用户访问Platform的权限后，下一步是在Adobe Developer Console中生成您的`{ORG_ID}`和`{API_KEY}`凭据。 这些凭据只需生成一次，可在以后的Platform API调用中重复使用。
+在您通过Admin Console获得对Platform的开发人员和用户访问权限后，下一步是在Adobe Developer Console中生成您的`{ORG_ID}`和`{API_KEY}`凭据。 这些凭据只需生成一次，可在以后的Platform API调用中重复使用。
 
 >[!TIP]
 >
->您可以直接从API参考文档页面获取使用Platform API所需的所有身份验证凭据，而不是转到Developer Console。 [阅读有关功能的更多信息](#get-credentials-functionality)。
+>您可以直接从API参考文档页面获取使用Platform API所需的所有身份验证凭据，而不是转到Developer Console。 [参阅更多](#get-credentials-functionality)关于该功能的信息。
 
 ### 将Experience Platform添加到项目 {#add-platform-to-project}
 
@@ -86,9 +86,9 @@ ht-degree: 2%
 
 突出显示了“添加API”选项的![Developer Console屏幕。](./images/api-authentication/add-api.png)
 
-出现&#x200B;**[!UICONTROL 添加API]**&#x200B;屏幕。 选择Adobe Experience Platform的产品图标，然后选择&#x200B;**[!UICONTROL Experience PlatformAPI]**，然后再选择&#x200B;**[!UICONTROL 下一步]**。
+出现&#x200B;**[!UICONTROL 添加API]**&#x200B;屏幕。 选择&#x200B;**[!UICONTROL Adobe Experience Platform]**&#x200B;的产品图标，然后选择&#x200B;**[!UICONTROL Experience PlatformAPI]**，然后再选择&#x200B;**[!UICONTROL 下一步]**。
 
-![选择Experience PlatformAPI。](./images/api-authentication/platform-api.png)
+![在“添加API”屏幕中选择Experience PlatformAPI。](./images/api-authentication/platform-api.png)
 
 >[!TIP]
 >
@@ -96,22 +96,17 @@ ht-degree: 2%
 
 ### 选择[!UICONTROL OAuth服务器到服务器]身份验证类型 {#select-oauth-server-to-server}
 
-接下来，选择[!UICONTROL OAuth服务器到服务器]身份验证类型以生成访问令牌并访问Experience PlatformAPI。
+接下来，选择&#x200B;**[!UICONTROL OAuth服务器到服务器]**&#x200B;身份验证类型以生成访问令牌并访问Experience PlatformAPI。 在选择&#x200B;**[!UICONTROL 下一步]**&#x200B;之前，请在&#x200B;**[!UICONTROL 凭据名称]**&#x200B;文本字段中为凭据指定有意义的名称。
 
 >[!IMPORTANT]
 >
->**[!UICONTROL OAuth Server-to-Server]**&#x200B;方法是唯一支持向前发展的令牌生成方法。 以前支持的&#x200B;**[!UICONTROL 服务帐户(JWT)]**&#x200B;方法已弃用，无法为新集成选择此方法。 虽然使用JWT身份验证方法的现有集成将继续工作到2025年1月1日，但Adobe强烈建议在该日期之前将现有集成迁移到新的[!UICONTROL OAuth Server-to-Server]方法。 在[!BADGE Deprecated]部分获取更多信息{type=negative}[生成JSON Web令牌(JWT)](#jwt)。
+>**[!UICONTROL OAuth Server-to-Server]**&#x200B;方法是唯一支持向前发展的令牌生成方法。 以前支持的&#x200B;**[!UICONTROL 服务帐户(JWT)]**&#x200B;方法已弃用，无法为新集成选择此方法。 虽然使用JWT身份验证方法的现有集成将继续工作到2025年6月30日，但Adobe强烈建议在该日期之前将现有集成迁移到新的[!UICONTROL OAuth服务器到服务器]方法。 在[!BADGE Deprecated]部分获取更多信息{type=negative}[生成JSON Web令牌(JWT)](#jwt)。
 
 ![为Experience PlatformAPI选择OAuth服务器到服务器身份验证方法。](./images/api-authentication/oauth-authentication-method.png)
 
 ### 为您的集成选择产品配置文件 {#select-product-profiles}
 
-在&#x200B;**[!UICONTROL 配置API]**&#x200B;屏幕中，选择&#x200B;**[!UICONTROL AEP-Default-All-Users]**。
-
-<!--
-Your integration's service account will gain access to granular features through the product profiles selected here.
-
--->
+在&#x200B;**[!UICONTROL 配置API]**&#x200B;屏幕中，选择&#x200B;**[!UICONTROL AEP-Default-All-Users]**&#x200B;以及您希望获得访问权限的任何其他产品配置文件。
 
 >[!IMPORTANT]
 >
@@ -127,7 +122,7 @@ Your integration's service account will gain access to granular features through
 
 ### 收集凭据 {#gather-credentials}
 
-将API添加到项目后，项目的&#x200B;**[!UICONTROL Experience PlatformAPI]**&#x200B;页面将显示所有调用Experience PlatformAPI时所需的以下凭据：
+将API添加到项目后，项目的&#x200B;**[!UICONTROL OAuth服务器到服务器]**&#x200B;页面将显示所有调用Experience PlatformAPI时所需的以下凭据：
 
 在Developer Consle中添加API后![集成信息。](./images/api-authentication/api-integration-information.png)
 
@@ -148,9 +143,9 @@ In addition to the above credentials, you also need the generated **[!UICONTROL 
 
 ## 生成访问令牌 {#generate-access-token}
 
-下一步是生成用于Platform API调用的`{ACCESS_TOKEN}`凭据。 与`{API_KEY}`和`{ORG_ID}`的值不同，必须每24小时生成一个新令牌才能继续使用平台API。 选择&#x200B;**[!UICONTROL 生成访问令牌]**，如下所示。
+下一步是生成用于Platform API调用的`{ACCESS_TOKEN}`凭据。 与`{API_KEY}`和`{ORG_ID}`的值不同，必须每24小时生成一个新令牌才能继续使用平台API。 选择&#x200B;**[!UICONTROL 生成访问令牌]**，这将生成您的访问令牌，如下所示。
 
-![显示如何生成访问令牌](././images/api-authentication/generate-access-token.gif)
+![显示如何生成访问令牌](././images/api-authentication/generate-access-token.png)
 
 >[!TIP]
 >
@@ -180,7 +175,7 @@ In addition to the above credentials, you also need the generated **[!UICONTROL 
 
 >[!WARNING]
 >
-已弃用用于生成访问令牌的JWT方法。 必须使用[OAuth服务器到服务器身份验证方法](#select-oauth-server-to-server)创建所有新集成。 Adobe还要求您在2025年1月1日之前将现有集成迁移到OAuth方法，以便集成继续工作。 请阅读以下重要文档：
+已弃用用于生成访问令牌的JWT方法。 必须使用[OAuth服务器到服务器身份验证方法](#select-oauth-server-to-server)创建所有新集成。 Adobe还要求您在2025年6月30日之前将现有集成迁移到OAuth方法，以便集成继续工作。 请阅读以下重要文档：
 > 
 * [您的应用程序从JWT迁移到OAuth的迁移指南](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/)
 * [使用OAuth的新旧应用程序的实施指南](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/implementation/)
@@ -331,71 +326,47 @@ This [Medium post](https://medium.com/adobetech/using-postman-for-jwt-authentica
 
 ## 系统管理员：通过Experience Platform权限授予开发人员和API访问控制 {#grant-developer-and-api-access-control}
 
+在Adobe Developer Console上创建集成之前，您的帐户必须具有Experience Platform产品配置文件的开发人员和用户权限。
+
 >[!NOTE]
 >
 只有系统管理员才能在“权限”中查看和管理API凭据。
 
-在Adobe Developer Console上创建集成之前，您的帐户必须具有Adobe Admin Console中Experience Platform产品配置文件的开发人员和用户权限。
-
 ### 将开发人员添加到产品配置文件 {#add-developers-to-product-profile}
 
-转到[[!DNL Admin Console]](https://adminconsole.adobe.com/)并使用您的Adobe ID登录。
+导航到[Admin Console](https://adminconsole.adobe.com/)并使用您的Adobe ID登录。
 
-选择&#x200B;**[!UICONTROL 产品]**，然后从产品列表中选择&#x200B;**[!UICONTROL Adobe Experience Platform]**。
+从导航栏中选择&#x200B;**[!UICONTROL 产品]**，然后从产品列表中选择&#x200B;**[!UICONTROL Adobe Experience Platform]**。
 
-Admin Console](././images/api-authentication/products.png)上的![产品列表
+![Adobe Admin Console上突出显示Adobe Experience Platform产品的产品页面。](././images/api-authentication/products.png)
 
 从&#x200B;**[!UICONTROL 产品配置文件]**&#x200B;选项卡中，选择&#x200B;**[!UICONTROL AEP-Default-All-Users]**。 或者，使用搜索栏通过输入名称来搜索产品配置文件。
 
-![搜索产品配置文件](././images/api-authentication/select-product-profile.png)
+![带有搜索栏和AEP-Default-All-Users产品的产品配置文件页面突出显示。](././images/api-authentication/select-product-profile.png)
 
 选择&#x200B;**[!UICONTROL 开发人员]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 添加开发人员]**。
 
-![从“开发人员”选项卡添加开发人员](././images/api-authentication/add-developer1.png)
+![显示“开发人员”选项卡，并突出显示“添加开发人员”选项，](././images/api-authentication/add-developer1.png)
 
-输入开发人员的&#x200B;**[!UICONTROL 电子邮件或用户名]**。 有效的[!UICONTROL 电子邮件或用户名]将显示开发人员详细信息。 选择&#x200B;**[!UICONTROL 保存]**。
+出现&#x200B;**[!UICONTROL 添加开发人员]**&#x200B;对话框。 输入开发人员的&#x200B;**[!UICONTROL 电子邮件或用户名]**。 有效的[!UICONTROL 电子邮件或用户名]显示开发人员详细信息。 选择&#x200B;**[!UICONTROL 保存]**。
 
-![使用开发人员的电子邮件或用户名添加开发人员](././images/api-authentication/add-developer-email.png)
+![添加开发人员对话框填写了开发人员信息，并且突出显示了“保存”选项。](././images/api-authentication/add-developer-email.png)
 
-已成功添加开发人员，该开发人员显示在[!UICONTROL 开发人员]选项卡上。
+已成功添加开发人员，该开发人员显示在&#x200B;**[!UICONTROL 开发人员]**&#x200B;选项卡上。
 
-![在“开发人员”选项卡上列出的开发人员](././images/api-authentication/developer-added.png)
+![“开发人员”选项卡显示所有已添加开发人员的列表，其中突出显示了新添加的开发人员。](././images/api-authentication/developer-added.png)
 
-<!--
+### 将API凭据分配给角色
 
-Commenting out this part since it duplicates information from the section Add Experience Platform to a project
+>[!NOTE]
+>
+只有系统管理员才能在Experience PlatformUI中将API分配给角色。
 
-### Set up an API
+要在Experience PlatformAPI上使用并执行操作，系统管理员需要在角色给定的权限集之外添加API凭据。 在部分中获取有关[管理角色](../access-control/abac/ui/permissions.md#manage-api-credentials-for-a-role)的API凭据的详细信息。
 
-A developer can add and configure an API within a project in the Adobe Developer Console.
+以下视频教程还提供了上述步骤的演练，这些步骤用于向产品配置文件添加开发人员并将API分配给角色：
 
-Select your project, then select **[!UICONTROL Add API]**.
-
-![Add API to a project](././images/api-authentication/add-api-project.png)
-
-In the **[!UICONTROL Add an API]** dialog box select **[!UICONTROL Adobe Experience Platform]**, then select **[!UICONTROL Experience Platform API]**.
-
-![Add an API in Experience Platform](././images/api-authentication/add-api-platform.png)
-
-In the **[!UICONTROL Configure API]** screen, select **[!UICONTROL AEP-Default-All-Users]**.
-
--->
-
-### 将API分配给角色
-
-系统管理员可以在Experience PlatformUI中将API分配给角色。
-
-选择&#x200B;**[!UICONTROL 权限]**&#x200B;以及要将API添加到的角色。 选择&#x200B;**[!UICONTROL API凭据]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 添加API凭据]**。
-
-所选角色中的![API凭据选项卡](././images/api-authentication/api-credentials.png)
-
-选择要添加到角色的API，然后选择&#x200B;**[!UICONTROL 保存]**。
-
-![可供选择的API列表](././images/api-authentication/select-api.png)
-
-您返回到[!UICONTROL API凭据]选项卡，其中列出了新添加的API。
-
-![API凭据选项卡包含新添加的API](././images/api-authentication/api-credentials-with-added-api.png)
+>[!VIDEO](https://video.tv.adobe.com/v/3426407/?learn=on)
 
 ## 其他资源 {#additional-resources}
 
