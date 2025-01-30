@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 沙盒UI指南
 description: 本文档提供了有关如何在Adobe Experience Platform用户界面中执行与沙盒相关的各种操作的步骤。
 exl-id: b258c822-5182-4217-9d1b-8196d889740f
-source-git-commit: c63de71c248e6a41dbbadbe8089156ee3c2829cf
+source-git-commit: f8c39d2cc12e77ebdc974f931880cdf0d6367591
 workflow-type: tm+mt
-source-wordcount: '1056'
+source-wordcount: '1066'
 ht-degree: 4%
 
 ---
@@ -81,6 +81,7 @@ ht-degree: 4%
 >
 >* 用于在警告消息后重置与Adobe Audience Manager或Audience Core Service进行双向区段共享的用户创建的生产沙盒。
 >* 在启动沙盒重置之前，您将需要手动删除合成，以确保正确清理关联的受众数据。
+>* 重置完成后，沙盒ID将更改。
 
 ### 删除受众合成
 
