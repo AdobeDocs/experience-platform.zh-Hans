@@ -1,16 +1,16 @@
 ---
 title: Amazon Ads
 description: Amazon Ads提供一系列选项，帮助您向注册销售商、供应商、图书供应商、Kindle Direct Publishing (KDP)作者、应用程序开发人员和/或代理商实现广告目标。 Amazon Ads与Adobe Experience Platform的集成提供了与Amazon Ads产品(包括Amazon DSP (ADSP))的统包集成。 通过使用Adobe Experience Platform中的Amazon广告目标，用户能够定义广告商受众，以便在Amazon DSP中进行定位和激活。
-last-substantial-update: 2024-09-20T00:00:00Z
+last-substantial-update: 2025-01-07T00:00:00Z
 exl-id: 724f3d32-65e0-4612-a882-33333e07c5af
-source-git-commit: 2b84b5106105339ab243a9f4412b47692caedf3c
+source-git-commit: 8543f76565f22b8cdfb0be71a1332696bc079ec7
 workflow-type: tm+mt
-source-wordcount: '1761'
+source-wordcount: '1837'
 ht-degree: 2%
 
 ---
 
-# (Beta) Amazon Ads连接 {#amazon-ads}
+# Amazon Ads连接 {#amazon-ads}
 
 ## 概述 {#overview}
 
@@ -24,7 +24,7 @@ AMC将来自Amazon自有资产和运营资产的独特信号整合在一起，�
 
 >[!IMPORTANT]
 >
->此目标连接器和文档页面由&#x200B;*[!DNL Amazon Ads]*&#x200B;团队创建和维护。 此产品目前为测试版，其功能可能会有变动。 如有任何查询或更新请求，请直接通过&#x200B;*`amc-support@amazon.com`.*&#x200B;联系他们
+>此目标连接器和文档页面由&#x200B;*[!DNL Amazon Ads]*&#x200B;团队创建和维护。 如有任何查询或更新请求，请直接通过&#x200B;*`amc-support@amazon.com`.*&#x200B;联系他们
 
 ## 用例 {#use-cases}
 
@@ -85,8 +85,6 @@ AMC将来自Amazon自有资产和运营资产的独特信号整合在一起，�
 
 您将转到[!DNL Amazon Ads]连接界面，在该界面中，您将首先选择要连接的广告商帐户。 建立连接后，系统会通过新连接将您重定向回Adobe Experience Platform，同时还会提供您选择的广告商帐户ID。 请在目标配置屏幕上选择相应的广告商帐户以继续。
 
-* **[!UICONTROL 持有者令牌]**：填写持有者令牌以对目标进行身份验证。
-
 ### 填写目标详细信息 {#destination-details}
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
@@ -101,9 +99,13 @@ AMC将来自Amazon自有资产和运营资产的独特信号整合在一起，�
 
 * **[!UICONTROL 广告商地区]**：选择您的广告商所在的适当地区。 有关每个地区支持的市场的详细信息，请访问[Amazon广告文档](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints)。
 
+>[!IMPORTANT]
+>
+>包含&#x200B;**[!UICONTROL Amazon广告同意信号]**&#x200B;的更新计划于2025年2月7日启用。
 
+* **[!UICONTROL Amazon广告同意信号]**：确认通过此连接发送的所有数据均已同意将个人数据用于广告目的。 “GRANTED”表示同意Amazon将客户的个人数据用于广告。 允许的值为“GRANTED”和“DENIED”。 任何通过连接发送的记录若具有“DENIED”，则将被拒绝，以便在Amazon Ads中进一步使用。
 
-![配置新目标](../../assets/catalog/advertising/amazon_ads_image_4.png)
+![配置新目标](../../assets/catalog/advertising/amazon-ads/amazon_ads_consent_input.png)
 
 ### 启用警报 {#enable-alerts}
 
@@ -124,7 +126,7 @@ AMC将来自Amazon自有资产和运营资产的独特信号整合在一起，�
 
 [!DNL Amazon Ads]连接支持散列电子邮件地址和散列电话号码，以便进行身份匹配。 下面的屏幕快照提供了与[!DNL Amazon Ads]连接兼容的匹配示例：
 
-![Adobe到Amazon Ads的映射](../../assets/catalog/advertising/amazon_ads_image_2.png)
+![Adobe到Amazon Ads的映射](../../assets/catalog/advertising/amazon-ads/amazon_ads_image_2.png)
 
 * 要映射经过哈希处理的电子邮件地址，请选择`Email_LC_SHA256`身份命名空间作为源字段。
 * 要映射经过哈希处理的电话号码，请选择`Phone_SHA256`身份命名空间作为源字段。
@@ -143,7 +145,7 @@ AMC将来自Amazon自有资产和运营资产的独特信号整合在一起，�
 
 导航到您的&#x200B;**[!UICONTROL 广告商ID]** > **[!UICONTROL 受众]** > **[!UICONTROL 广告商受众]**。 如果受众已成功创建并且满足最小受众成员数，您将看到`Active`状态。 有关受众规模和范围的其他详细信息，请参阅Amazon DSP用户界面右侧的预测范围面板。
 
-![Amazon DSP受众创建验证](../../assets/catalog/advertising/amazon_ads_image_3.png)
+![Amazon DSP受众创建验证](../../assets/catalog/advertising/amazon-ads/amazon_ads_image_3.png)
 
 [!DNL Amazon Marketing Cloud]**的**
 
@@ -151,8 +153,7 @@ AMC将来自Amazon自有资产和运营资产的独特信号整合在一起，�
 
 `select count(user_id) from adobeexperienceplatf_audience_view_000xyz where external_audience_segment_name = '1234567'`
 
-![AmazonMarketing Cloud受众创建验证](../../assets/catalog/advertising/amazon_ads_image_5.png)
-
+![AmazonMarketing Cloud受众创建验证](../../assets/catalog/advertising/amazon-ads/amazon_ads_image_5.png)
 
 ## 数据使用和治理 {#data-usage-governance}
 
@@ -172,7 +173,8 @@ AMC将来自Amazon自有资产和运营资产的独特信号整合在一起，�
 
 | 发行月份 | 更新类型 | 描述 |
 |---|---|---|
-| 2024 年 5 月 | 功能和文档更新 | 添加了映射选项，用于将`countryCode`参数导出到Amazon Ads中。 在[映射步骤](#map)中使用`countryCode`提高您与Amazon的标识匹配率。 |
+| 2025 年 2 月 | 添加了添加&#x200B;**[!UICONTROL Amazon广告同意信号]**&#x200B;以导出数据流的要求，并将目标从Beta版提升为正式可用。 |
+| 2024 年 5 月 | 功能和文档更新 | 添加了映射选项，用于将`countryCode`参数导出到Amazon Ads中。 `countryCode` 在 [映射步骤](#map) 中使用，以提高您与亚马逊的身份标识匹配率。 |
 | 2024 年 3 月 | 功能和文档更新 | 添加了导出要在[!DNL Amazon Marketing Cloud] (AMC)中使用的受众的选项。 |
 | 2023 年 5 月 | 功能和文档更新 | <ul><li>在[目标连接工作流](#destination-details)中添加了对广告商区域选择的支持。</li><li>更新了文档以反映添加了“广告商区域”选择。 有关选择正确的广告商地区的更多信息，请参阅[Amazon文档](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints)。</li></ul> |
 | 2023 年 3 月 | 初始版本 | 发布了初始目标版本和文档。 |
