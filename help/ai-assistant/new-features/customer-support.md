@@ -3,9 +3,9 @@ title: 客户支持AI助理
 description: 了解如何使用AI Assistant简化故障排除和客户支持票证归档流程。
 badge: Alpha
 exl-id: 263b8a44-8902-42b9-8390-d7da8e9b5129
-source-git-commit: 88c4ba5fd7d5cd4fdd1e1da3f2eac43b03149e5e
+source-git-commit: e224716f8fba59529c5d7634d4b4a3013a0986a3
 workflow-type: tm+mt
-source-wordcount: '349'
+source-wordcount: '374'
 ht-degree: 0%
 
 ---
@@ -56,3 +56,8 @@ AI Assistant for Customer Support是AI Assistant的一项自助调试和故障�
    * “票证E-67890有什么更新？”
 
 要访问AI助手获取客户支持，请联系您的Adobe客户团队。
+
+有关更多信息，请观看以下视频，了解如何使用AI客户支持助手在不离开工作流的情况下无缝进行故障排除。
+
+>[!VIDEO](https://video.tv.adobe.com/v/3443183?learn=on)
+
