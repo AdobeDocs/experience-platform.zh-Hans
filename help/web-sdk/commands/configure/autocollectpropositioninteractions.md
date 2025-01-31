@@ -2,7 +2,7 @@
 title: autoCollectPropositionInteractions
 description: 了解如何配置Experience PlatformWeb SDK以自动收集链接数据。
 exl-id: c70db76a-3f2f-45a6-86ab-36efcb18d20f
-source-git-commit: 405f161dee633b7230be944cd17093616826e27f
+source-git-commit: 55c656e7fd08e98b75c20f0688a6697baf533291
 workflow-type: tm+mt
 source-wordcount: '595'
 ht-degree: 1%
@@ -123,11 +123,11 @@ alloy("sendEvent", {
 ## 通过Web SDK标记扩展启用自动建议和交互点击跟踪 {#tag-extension}
 
 1. 使用您的Adobe ID凭据登录[experience.adobe.com](https://experience.adobe.com)。
-2. 导航到&#x200B;**数据收集** > **标记**。
-3. 选择所需的标记属性。
-4. 导航到&#x200B;**扩展**，然后在Adobe Experience Platform Web SDK卡片中选择&#x200B;**配置**。
-5. 向下滚动到&#x200B;**[!UICONTROL 数据收集]**&#x200B;部分，然后选中复选框&#x200B;**启用建议和交互链接跟踪**。
-6. 选择&#x200B;**保存**，然后发布更改。
+1. 导航到&#x200B;**数据收集** > **标记**。
+1. 选择所需的标记属性。
+1. 导航到&#x200B;**扩展**，然后在Adobe Experience Platform Web SDK卡片中选择&#x200B;**配置**。
+1. 向下滚动到&#x200B;**[!UICONTROL 数据收集]**&#x200B;部分，然后选中复选框&#x200B;**启用建议和交互链接跟踪**。
+1. 选择&#x200B;**保存**，然后发布更改。
 
 ## 通过Web SDK JavaScript库启用自动建议和交互链接跟踪 {#library}
 
