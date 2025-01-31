@@ -6,9 +6,9 @@ user-guide-description: 了解如何部署和管理分析、营销和广告标�
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: 82d6d2e7d0d7f0f9484c4ebcd34339fd63e04b59
+source-git-commit: 1b2f8e5a9cc85887efe9d623baa346956ae5d93d
 workflow-type: tm+mt
-source-wordcount: '778'
+source-wordcount: '775'
 ht-degree: 35%
 
 ---
@@ -84,7 +84,7 @@ ht-degree: 35%
          * [概述](./extensions/client/product-string/overview.md)
          * [发行说明](./extensions/client/product-string/release-notes.md)
       * [Adobe Analytics产品字符串生成器](https://exchange.adobe.com/apps/ec/101461)
-      * 通过Adobe Experience Platform Web SDK [Adobe Analytics](https://exchange.adobe.com/apps/ec/108985/search-discovery-for-adobe-analytics-via-aep-web-sdk)
+      * [通过Adobe Experience Platform Web SDK的Adobe Analytics](https://exchange.adobe.com/apps/ec/108985/search-discovery-for-adobe-analytics-via-aep-web-sdk)
       * Adobe Audience Manager {#audience-manager}
          * [概述](./extensions/client/audience-manager/overview.md)
       * Adobe客户端数据层{#client-data-layer}
@@ -206,9 +206,8 @@ ht-degree: 35%
       * [Vimeo播放](https://exchange.adobe.com/apps/ec/108937)
       * [Web重要信息](https://exchange.adobe.com/apps/ec/106769)
       * [XDM编辑器](https://exchange.adobe.com/apps/ec/106062)
-      * [Yahoo Dot](https://exchange.adobe.com/apps/ec/106062)
       * [Yext转化跟踪](https://exchange.adobe.com/apps/ec/103174)
-      * [[!DNL Youtube] 播放](https://exchange.adobe.com/apps/ec/103174)
+      * [[!DNL Youtube] 播放](https://exchange.adobe.com/apps/ec/104160)
       * [!DNL YouTube]视频跟踪{#youtube}
          * [概述](./extensions/client/youtube/overview.md)
          * [发行说明](./extensions/client/youtube/release-notes.md)
@@ -310,7 +309,7 @@ ht-degree: 35%
       * [审核事件](./api/endpoints/audit-events.md)
       * [回调](./api/endpoints/callbacks.md)
       * [注释](./api/endpoints/notes.md)
-      * [配置文件](./api/endpoints/profile.md)
+      * [轮廓](./api/endpoints/profile.md)
       * [搜索](./api/endpoints/search.md)
       * [密钥](./api/endpoints/secrets.md)
    * 指南 {#guides}
