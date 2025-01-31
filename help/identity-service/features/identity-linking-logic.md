@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!CONTEXTUALHELP]
 >id="platform_identities_simulatedgraph"
->title="模拟图"
+>title="模拟图形"
 >abstract="当身份标识命名空间和身份标识值匹配时，就会将身份标识链接起来。"
 
 当标识命名空间与标识值匹配时，将在两个标识之间建立链接。
@@ -34,7 +34,7 @@ ht-degree: 2%
 | 最终用户先使用Google Chrome登录，然后再使用Firefox登录。 | CRMID与两个不同的ECID相关联。 | 人员(CRMID)与2个Web浏览器相关联（**注意**：每个浏览器都有自己的ECID）。 |
 | 数据工程师摄取CRM记录，该记录包括两个标记为身份的字段：CRMID和电子邮件。 | CRMID和电子邮件已链接。 | 人员(CRMID)与电子邮件地址关联。 |
 
-## 了解Identity Service关联逻辑
+## 了解身份标识服务链接逻辑
 
 身份由身份命名空间和身份值组成。
 

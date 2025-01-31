@@ -79,7 +79,7 @@ Platform UI的权限工作区随即出现，并在&#x200B;**[!UICONTROL 概述]*
 >id="platform_permissions_roles_about"
 >title="角色是什么？"
 >abstract="角色是将与您的 Platform 实例交互的用户的类型分类的方法，还是访问控制策略的构建块。一个角色具有一组给定的权限，可将您组织的成员分配给一个或多个角色，具体取决于他们需要的查看或写入访问权限的范围。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html#" text="管理角色"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html" text="管理角色"
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_roles_about_create"

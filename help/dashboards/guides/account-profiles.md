@@ -68,7 +68,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_accountprofiles_customersperaccountoverview"
 >title="客户每帐户概述"
->abstract="该钻透小组件可让您洞察 B2B 数据的结构。它可以帮助您确定有多少帐户轮廓没有链接客户轮廓，或者有一个或多个客户轮廓与之相关联。<ul><li>直接客户：是指通过帐户直接链接到帐户的客户轮廓。`personComponents` 路线。</li><li>间接客户：是指通过帐户链接到帐户的客户 轮廓`Account-Person` 路线</li></ul>"
+>abstract="该钻透小组件可让您洞察 B2B 数据的结构。它可以帮助您确定有多少帐户轮廓没有链接客户轮廓，或者有一个或多个客户轮廓与之相关联。<ul><li>直接客户：是指通过 `personComponents` 路线直接链接到帐户的客户轮廓。</li><li>间接客户：是指通过 `Account-Person` 路线链接到帐户的客户轮廓。</li></ul>"
 
 Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各种指标。
 

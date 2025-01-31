@@ -51,7 +51,7 @@ ht-degree: 18%
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_addressableaudience"
 >title="预测的可寻址受众"
->abstract="您的使用量可能已达到已授予许可量。为了减少使用量，您可以为沙箱和数据集配置数据集或假名轮廓数据的有效期限。"
+>abstract="您的使用量可能已达到已授予许可量。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
 >additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/profile/event-expirations" text="体验事件过期"
 >additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/profile/pseudonymous-profiles" text="假名轮廓数据过期"
 

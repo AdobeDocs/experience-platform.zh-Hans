@@ -14,7 +14,7 @@ ht-degree: 2%
 >[!CONTEXTUALHELP]
 >id="platform_identities_namespacepriority"
 >title="命名空间优先级"
->abstract="命名空间优先级决定如何从身份标识图中移除链接。"
+>abstract="命名空间优先级决定如何从身份标识图形中移除链接。"
 
 >[!AVAILABILITY]
 >

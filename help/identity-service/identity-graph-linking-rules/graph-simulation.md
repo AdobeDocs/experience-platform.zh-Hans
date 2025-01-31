@@ -14,7 +14,7 @@ ht-degree: 2%
 >[!CONTEXTUALHELP]
 >id="platform_identities_graphsimulation"
 >title="图形模拟"
->abstract="模拟图形以了解身份标识服务如何链接身份标识，以及身份标识优化算法如何工作。"
+>abstract="模拟图形以了解身份标识服务如何链接身份标识，以及身份标识优化算法是如何工作的。"
 
 >[!AVAILABILITY]
 >

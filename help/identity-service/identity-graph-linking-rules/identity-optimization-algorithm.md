@@ -5,7 +5,7 @@ exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
 source-git-commit: 048d915d33a19a9d50a4951e165b5ade1b9d9734
 workflow-type: tm+mt
 source-wordcount: '1560'
-ht-degree: 1%
+ht-degree: 3%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 1%
 >[!CONTEXTUALHELP]
 >id="platform_identities_uniquenamespace"
 >title="唯一的命名空间"
->abstract="一个图形不能有两个具有唯一命名空间的标识。 如果图表尝试超过此限制，将保留最近的链接，并删除最早的链接。"
+>abstract="一个图形不能拥有两个具有唯一命名空间的身份标识。如果图形试图超过此限制，则保留最新的链接，并移除最旧的链接。"
 
 >[!AVAILABILITY]
 >
