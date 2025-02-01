@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 身份数据类型
 description: 了解Identity XDM数据类型。
 exl-id: fb02b6b4-255b-442f-895c-600022231a1c
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '262'
+source-wordcount: '264'
 ht-degree: 11%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 11%
 
 [!UICONTROL 标识]是一种标准XDM数据类型，用于明确区分与数字体验互动的人员。 标识由标识提供程序建立，该提供程序本身在`namespace`属性中被引用。 在每个`namespace`中，该标识都是唯一的。
 
-<img src="../images/data-types/identity.png" width="550" /><br />
+![](../images/data-types/identity.png){width=550}
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |

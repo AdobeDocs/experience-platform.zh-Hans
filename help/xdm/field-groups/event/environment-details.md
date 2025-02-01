@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 环境详细信息架构字段组
 description: 了解ExperienceEvent环境详细信息架构字段组。
 exl-id: 1d25b98f-66ac-443f-9b1c-dfd20a168c59
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '189'
+source-wordcount: '191'
 ht-degree: 2%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 2%
 
 [!UICONTROL 环境详细信息]是[[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)的标准架构字段组，用于捕获与体验事件相关的环境详细信息信息，如设备详细信息、浏览器信息、本地时间和其他地理信息。
 
-<img src="../../images/field-groups/environment-details.png" width="500" /><br />
+![](../../images/field-groups/environment-details.png){width=500}
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |

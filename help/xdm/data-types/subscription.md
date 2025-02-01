@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 订阅数据类型
 description: 了解订阅体验数据模型(XDM)数据类型。
 exl-id: 6fd1e073-441b-45f0-bb4f-54f51ab18694
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '388'
+source-wordcount: '390'
 ht-degree: 28%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 28%
 
 [!UICONTROL 订阅]是一个标准的体验数据模型(XDM)数据类型，它描述了对软件、服务或商品的许可权利，这些软件、服务或商品是根据时间或使用情况而使用的。
 
-<img src="../images/data-types/subscription-data-type.png" width="500" /><br />
+![](../images/data-types/subscription-data-type.png){width=500}
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |

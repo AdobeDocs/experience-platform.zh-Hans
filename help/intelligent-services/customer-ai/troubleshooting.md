@@ -6,9 +6,9 @@ title: Customer AI错误疑难解答
 description: 查找客户人工智能中常见错误的答案。
 type: Documentation
 exl-id: 37ff4e85-da92-41ca-afd4-b7f3555ebd43
-source-git-commit: e028fbb82b37b3940b308a860c26f8b5f9884d3a
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '1751'
+source-wordcount: '1755'
 ht-degree: 1%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 1%
 
 如果显示&#x200B;**[!UICONTROL 失败]**&#x200B;或&#x200B;**[!UICONTROL 培训问题]**，您可以选择运行状态以打开侧面板。 侧面板包含您的&#x200B;**[!UICONTROL 上次运行状态]**&#x200B;和&#x200B;**[!UICONTROL 上次运行详细信息]**。 **[!UICONTROL 上次运行详细信息]**&#x200B;包含有关运行失败原因的信息。 如果客户人工智能无法提供有关您的错误的详细信息，请与支持人员联系并提供错误代码。
 
-<img src="./images/errors/last-run-details.png" width="300" /><br />
+![](./images/errors/last-run-details.png){width=300}
 
 ## 无法无痕访问Chrome中的客户人工智能
 
@@ -39,7 +39,7 @@ ht-degree: 1%
 
 如果收到错误“[!UICONTROL 模型质量差”。 我们建议使用修改的配置]创建新应用程序。 请按照下面建议的步骤来帮助进行故障排除。
 
-<img src="./images/errors/model-quality.png" width="300" /><br />
+![](./images/errors/model-quality.png){width=300}
 
 ### 建议的修复
 

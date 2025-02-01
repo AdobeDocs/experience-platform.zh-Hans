@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 人员姓名数据类型
 description: 了解人员名称XDM数据类型。
 exl-id: 5cf55fb1-b6b0-4d1c-93c3-7e2b7766599e
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '230'
+source-wordcount: '232'
 ht-degree: 6%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 6%
 
 此外，数据类型提供了许多可选属性，可在只需要使用全名片段的情况（如创建正式或非正式问候语）中使用。
 
-<img src="../images/data-types/person-name.png" width="500" /><br />
+![](../images/data-types/person-name.png){width=500}
 
 | 属性 | 描述 |
 | --- | --- |

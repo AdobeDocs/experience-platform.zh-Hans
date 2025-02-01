@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 环境数据类型
 description: 了解环境XDM数据类型。
 exl-id: ec806ee5-ed65-4148-9dbe-e297d9e8cd73
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '440'
+source-wordcount: '442'
 ht-degree: 12%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 12%
 >
 >所有值都应与[DeviceAtlas](https://deviceatlas.com)数据库保持一致，并由Adobe授予许可。
 
-<img src="../images/data-types/environment.png" width="400" /><br />
+![](../images/data-types/environment.png){width=400}
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 浏览器详细信息数据类型
 description: 了解浏览器详细信息XDM数据类型。
 exl-id: c67ff8bc-0614-4422-9bb7-689b98d7086d
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '240'
+source-wordcount: '242'
 ht-degree: 27%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 27%
 
 [!UICONTROL 浏览器详细信息]是描述与浏览器或应用程序相关的详细信息的标准XDM数据类型。
 
-<img src="../images/data-types/browser-details.png" width="450" /><br />
+![](../images/data-types/browser-details.png){width=450}
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |

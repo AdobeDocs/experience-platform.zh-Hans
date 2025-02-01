@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 区段成员资格详细信息架构字段组
 description: 了解“区段成员资格详细信息”架构字段组。
 exl-id: 4d463f3a-2247-4307-8afe-9527e7fd72a7
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '398'
+source-wordcount: '402'
 ht-degree: 1%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 1%
 >
 >虽然`segmentMembership`字段必须使用此字段组手动添加到您的配置文件架构中，但您不应尝试手动填充或更新此字段。 在执行分段作业时，系统会自动更新每个配置文件的`segmentMembership`映射。
 
-<img src="../../images/data-types/profile-segmentation.png" width="400" /><br />
+![配置文件分段](../../images/data-types/profile-segmentation.png){width=400}
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |

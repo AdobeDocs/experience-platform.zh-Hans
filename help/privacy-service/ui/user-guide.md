@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在Privacy ServiceUI中管理隐私作业
 description: 了解如何使用Privacy Service用户界面跨各种Experience Cloud应用程序协调和监视隐私请求。
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: c870b6be603073d6dd909b272c619deb5b246f05
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '1770'
+source-wordcount: '1786'
 ht-degree: 11%
 
 ---
@@ -159,29 +159,29 @@ Waiting:
 
 将打开&#x200B;**[!UICONTROL 创建请求]**&#x200B;对话框，其中显示了用于提交当前所选法规类型的隐私作业请求的可用选项。
 
-<img src="../images/user-guide/request-builder.png" width="500" /><br/>
+![](../images/user-guide/request-builder.png){width=500}
 
 从列表中选择请求的&#x200B;**[!UICONTROL 作业类型]**（“删除”或“访问”）以及一个或多个可用产品。
 
 Privacy Service支持两种针对个人数据的作业请求：[!UICONTROL 访问] （读取）和/或[!UICONTROL 删除]。 您可以提交请求，以接收产品中保存的与查询主题相关的所有信息，也可以请求删除与查询主题相关的所有信息。
 
-<img src="../images/user-guide/type-and-products.png" width="500" /><br/>
+![](../images/user-guide/type-and-products.png){width=500}
 
 在&#x200B;**[!UICONTROL 命名空间类型]**&#x200B;下，为要发送到[!DNL Privacy Service]的客户ID选择适当的命名空间类型。
 
-<img src="../images/user-guide/namespace-type.png" width="500" /><br/>
+![](../images/user-guide/namespace-type.png){width=500}
 
 使用标准命名空间类型时，请从下拉菜单（电子邮件、ECID或AAID）中选择命名空间，然后在右侧的文本框中键入ID值，为每个ID按&#x200B;**\&lt;enter>**&#x200B;以将其添加到列表中。
 
-<img src="../images/user-guide/standard-namespace.png" width="500" /><br/>
+![](../images/user-guide/standard-namespace.png){width=500}
 
 使用自定义命名空间类型时，必须先手动键入命名空间，然后才能提供以下ID值。
 
-<img src="../images/user-guide/custom-namespace.png" width="500" /><br/>
+![](../images/user-guide/custom-namespace.png){width=500}
 
 完成后，选择&#x200B;**[!UICONTROL 创建]**。
 
-<img src="../images/user-guide/request-builder-create.png" width="500" /><br/>
+![](../images/user-guide/request-builder-create.png){width=500}
 
 该对话框消失，新作业（或多个作业）及其当前处理状态将列在作业请求小部件中。
 
@@ -195,12 +195,12 @@ Privacy Service支持两种针对个人数据的作业请求：[!UICONTROL 访�
 
 此时将显示&#x200B;**[!UICONTROL 上传JSON]**&#x200B;对话框，为您提供了一个将JSON文件拖放到中的窗口。
 
-<img src="../images/user-guide/upload-json.png" width="500" /><br/>
+![](../images/user-guide/upload-json.png){width=500}
 
 如果您没有要上载的JSON文件，请选择&#x200B;**[!UICONTROL 下载Adobe-GDPR-Request.json]**&#x200B;以下载一个模板，您可以根据从数据主体收集的值填充该模板。
 
 
-<img src="../images/user-guide/privacy-template.png" width="500" /><br/>
+![](../images/user-guide/privacy-template.png){width=500}
 
 
 在计算机上找到JSON文件，并将其拖到对话框窗口中。 如果上传成功，则文件名将显示在对话框中。 您可以通过将更多JSON文件拖放到对话框中，继续根据需要添加这些文件。

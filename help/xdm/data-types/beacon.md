@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 信标数据类型
 description: 了解XDM Individual Profile类。
 exl-id: a3767c8d-a009-49b4-81a4-b084b6e5101a
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '233'
+source-wordcount: '235'
 ht-degree: 17%
 
 ---
@@ -15,12 +15,12 @@ ht-degree: 17%
 
 [!UICONTROL 信标]是一种标准的XDM数据类型，它描述了在移动设备进入范围内时将身份信息传递给移动应用程序的无线设备。
 
-<img src="../images/data-types/beacon.png" width="450" /><br />
+![](../images/data-types/beacon.png){width=450}
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `beaconMajor` | 两次 | 主要值标识和区分 1 到 65,535 之间的一组无符号整数值。 |
-| `beaconMinor` | 两次 | 次要值标识和区分 1 到 65,535 之间的个别无符号整数值。 |
+| `beaconMajor` | 双精度 | 主要值标识和区分 1 到 65,535 之间的一组无符号整数值。 |
+| `beaconMinor` | 双精度 | 次要值标识和区分 1 到 65,535 之间的个别无符号整数值。 |
 | `proximity` | 字符串 | 距信标的估计距离。 有关接受的值和定义，请参阅[附录](#proximity)。 |
 | `proximityUUID` | 字符串 | 邻近UUID（通用唯一标识符）是一种特殊类型的标识符，用于将您的网络信标与非您控制网络中的所有其他信标区分开来。 邻近UUID被配置为信标，以发送到一定范围内的移动设备，以标识组织的信标。 |
 

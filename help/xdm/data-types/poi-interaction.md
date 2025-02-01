@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 兴趣点交互数据类型
 description: 了解兴趣点交互XDM数据类型。
 exl-id: 398f56d9-1802-458d-b565-4096beb5b014
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '162'
+source-wordcount: '164'
 ht-degree: 3%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 3%
 
 [!UICONTROL 兴趣点交互]是一种标准XDM数据类型，它描述了在移动设备进入范围内时将身份信息传递给移动应用程序的无线设备。
 
-<img src="../images/data-types/poi-interaction.png" width="400" /><br />
+![](../images/data-types/poi-interaction.png){width=400}
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |

@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 设备数据类型
 description: 了解设备XDM数据类型。
 exl-id: 049a2ca1-6bc3-4b9c-832a-77102e8a0ed2
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '305'
-ht-degree: 18%
+source-wordcount: '307'
+ht-degree: 17%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 18%
 
 [!UICONTROL 设备]是描述已识别设备的标准XDM数据类型。 设备是通常可通过Cookie跨会话跟踪的应用程序或浏览器实例。
 
-<img src="../images/data-types/device.png" width="450" /><br />
+![](../images/data-types/device.png){width=450}
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |

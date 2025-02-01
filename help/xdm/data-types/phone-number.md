@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 电话号码数据类型
 description: 了解电话号码XDM数据类型。
 exl-id: b84e48f9-bbb4-4b8b-9476-4bc1c455ecfd
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '187'
+source-wordcount: '189'
 ht-degree: 16%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 16%
 
 [!UICONTROL 电话号码]是描述电话号码详细信息的标准XDM数据类型。
 
-<img src="../images/data-types/phone-number.png" width="600" /><br />
+![](../images/data-types/phone-number.png){width=600}
 
 | 属性 | 描述 |
 | --- | --- |

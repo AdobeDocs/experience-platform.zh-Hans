@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 电子邮件地址数据类型
 description: 了解电子邮件地址XDM数据类型。
 exl-id: 1364df42-f89f-4f48-bcda-5332f3828326
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '207'
+source-wordcount: '209'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!UICONTROL 电子邮件地址]是描述电子邮件地址详细信息的标准体验数据模型(XDM)数据类型。
 
-<img src="../images/data-types/email-address.png" width="450" /><br />
+![](../images/data-types/email-address.png){width=450}
 
 | 属性 | 描述 |
 | --- | --- |
