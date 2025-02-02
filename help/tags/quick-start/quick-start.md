@@ -2,10 +2,10 @@
 title: 快速入门指南
 description: 了解如何快速启动并运行Adobe Experience Platform中的标记。
 exl-id: 490ee344-3b18-4189-9293-2378f86fb10d
-source-git-commit: 60d88be5d710314cdc6900f4b63643c740b91fa6
+source-git-commit: 8c881d99554a8694da79bdc29ad30ebbc870db20
 workflow-type: tm+mt
 source-wordcount: '1521'
-ht-degree: 41%
+ht-degree: 44%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 41%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../term-updates.md)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../term-updates.md)。
 
 标记是Adobe Experience Platform的下一代标记管理技术。 它从头开始构建，以支持开放且可持续的生态系统，在该生态系统中，任何人都可以构建自己的集成，供Adobe客户部署到其站点。 Launch 是一个以 API 为主导的应用程序，因此所有可以通过用户界面执行的操作也都可以通过 API 以编程方式执行。
 
@@ -134,6 +134,6 @@ Platform中标记真正的独特之处在于，这些扩展可由任何人构建
 
 要了解有关标记的更多信息，请参阅以下资源：
 
-* **[数据收集社区](https://forums.adobe.com/community/experience-cloud/platform/launch)**：提问或回答他人提出的问题、发表自己的意见、对他人的意见进行投票。 使用您的Adobe ID登录。
+* **[数据收集社区](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-data/ct-p/adobe-launch-community)**：提问或回答他人提出的问题、发表自己的意见、对他人的意见进行投票。 使用您的Adobe ID登录。
 * **[开发人员文档](../api/overview.md)**：加入标记开发人员社区，构建扩展或使用标记API
 * **[Tutorials概述](https://experienceleague.adobe.com/docs/core-services-learn/tutorials/overview.html)**：这些文档将向您介绍Android应用程序中的标记概念，包括事件转发和Mobile SDK。
