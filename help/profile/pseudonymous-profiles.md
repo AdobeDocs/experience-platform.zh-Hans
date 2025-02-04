@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 假名配置文件数据过期
 description: 本文档提供有关在Adobe Experience Platform中为假名配置文件配置数据过期的一般指导。
 exl-id: e8d31718-0b50-44b5-a15b-17668a063a9c
-source-git-commit: 9489156617f29d4aab2038b74f75a832ff4dc8eb
+source-git-commit: 208f327d35749c97ac77f337493d8759e8622dcd
 workflow-type: tm+mt
-source-wordcount: '1005'
+source-wordcount: '1039'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,12 @@ ht-degree: 0%
 在Adobe Experience Platform中，您可以为假名配置文件配置数据过期时间，从而允许您自动从配置文件存储中删除对您的用例不再有效或有用的数据。
 
 ## 假名配置文件 {#pseudonymous-profile}
+
+>[!CONTEXTUALHELP]
+>id="platform_profile_pseudonymousprofile"
+>title="什么是假名配置文件？"
+>abstract="假名配置文件是指具有假名或未知身份命名空间的配置文件，或在给定时间段内未发生活动的配置文件。"
+>text="Learn more in documentation"
 
 如果配置文件满足以下条件，则将其视为假名数据过期：
 
