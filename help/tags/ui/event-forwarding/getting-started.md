@@ -3,10 +3,10 @@ title: 事件转发快速入门
 description: 按照此分步教程进行操作，以开始在Adobe Experience Platform中使用事件转发。
 feature: Event Forwarding
 exl-id: f82bfac9-dc2d-44de-a308-651300f107df
-source-git-commit: 0a95d09eb1ce59e45d52372c4b08725c009001c3
+source-git-commit: e9f98e1f94aa6ae2ecf29940912d296813611d4c
 workflow-type: tm+mt
 source-wordcount: '887'
-ht-degree: 21%
+ht-degree: 26%
 
 ---
 
@@ -14,11 +14,11 @@ ht-degree: 21%
 
 >[!NOTE]
 >
->事件转发是一项付费功能，包含在Adobe Real-time Customer Data Platform Connections、Prime或Ultimate产品中。
+>事件转发是一项付费功能，包含在Adobe Real-time Customer Data Platform连接、Prime或Ultimate产品中。
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 要在Adobe Experience Platform中使用事件转发，必须使用以下三个选项中的一个或多个将数据发送到Adobe Experience PlatformEdge Network：
 
@@ -33,7 +33,7 @@ ht-degree: 21%
 
 ## 先决条件
 
-* Adobe Real-Time CDP Connections、Prime或Ultimate(联系您的Adobe客户团队获取定价信息)
+* Adobe Real-Time CDP Connections、Prime或Ultimate(有关定价，请联系您的Adobe客户团队)
 * Adobe Experience Platform中的事件转发
 * Adobe Experience Platform Web SDK、Mobile SDK或Edge Network服务器API配置为将数据发送到Edge Network
 * 将数据映射到Experience Data Model (XDM)（此映射可以使用标记完成）
@@ -82,7 +82,7 @@ ht-degree: 21%
 
 1. 选择&#x200B;**[!UICONTROL 保存]**。
 
-## 启用事件转发
+## 启用事件转发 {#enable-event-forwarding}
 
 接下来，配置Edge Network以将数据发送到事件转发和其他Adobe产品。
 
