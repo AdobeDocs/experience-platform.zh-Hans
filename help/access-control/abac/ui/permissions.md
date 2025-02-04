@@ -3,14 +3,20 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制管理角色权限
 description: 本文档提供了有关通过Adobe Experience Cloud中的“权限”界面为角色配置权限的信息
 exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
-source-git-commit: 0c275dc18dac101455f77aa58d33f0808122b77f
+source-git-commit: 207317d16a21cc2461ebd3f7867735735227c173
 workflow-type: tm+mt
-source-wordcount: '1476'
-ht-degree: 1%
+source-wordcount: '1608'
+ht-degree: 4%
 
 ---
 
-# 管理角色的权限
+# 管理角色的权限 {#manage-role-permissions}
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_roles_about"
+>title="角色是什么？"
+>abstract="角色定义了管理员、专家或最终用户对组织中资源的访问权限。 它们会对与Platform实例交互的用户进行分类，并且是访问控制策略的构建块。 一个角色具有一组给定的权限，可将您组织的成员分配给一个或多个角色，具体取决于他们需要的查看或写入访问权限的范围。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html" text="管理角色"
 
 >[!IMPORTANT]
 >
@@ -41,7 +47,14 @@ ht-degree: 1%
 
 ![权限UI中的“角色”仪表板在所选筛选器上突出显示X和“清除所有选择”。](../../images/flac-ui/flac-clear-filters.png)
 
-## 角色详细信息
+## 角色详细信息 {#role-details}
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_roles_details"
+>title="角色概述"
+>abstract="角色概述对话框显示角色的详细信息，包括给定角色有权访问的资源和沙盒。 您可以通过导航到角色工作区中的相应选项卡，来管理角色的标签、用户、用户组和API凭据。"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/permissions#manage-labels-for-a-role" text="管理角色的标签"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/permissions#manage-users-for-a-role" text="管理角色的用户"
 
 从&#x200B;**[!UICONTROL 角色]**&#x200B;选项卡中选择角色，这将打开角色的[!UICONTROL 详细信息]仪表板。
 

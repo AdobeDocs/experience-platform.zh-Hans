@@ -3,10 +3,10 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制管理标签
 description: 本文档提供了有关通过Adobe Experience Cloud中的权限界面管理标签的信息
 exl-id: c790f09c-fda6-48bf-95db-3f5053cd882e
-source-git-commit: 5810a7778d86db2720a0372ace33278348d1ffdf
+source-git-commit: 71a2e91b6c23021aa11c19d84096d6b23f0de112
 workflow-type: tm+mt
-source-wordcount: '209'
-ht-degree: 10%
+source-wordcount: '247'
+ht-degree: 24%
 
 ---
 
@@ -24,6 +24,12 @@ ht-degree: 10%
 >id="platform_abac_labelusage"
 >title="标签使用"
 >abstract="您可以使用自定义标签将数据治理和访问控制配置应用于您的数据。"
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_labels_about_create"
+>title="创建新标签"
+>abstract="可自行创建自定义标签以适合组织需求。自定义标签可用于将数据治理和访问控制配置应用于您的数据。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html#manage-labels" text="管理自定义标签"
 
 >[!NOTE]
 >
