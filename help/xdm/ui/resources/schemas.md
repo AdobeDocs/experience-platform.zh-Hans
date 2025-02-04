@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建和编辑架构
 description: 了解如何在Experience Platform用户界面中创建和编辑架构的基础知识。
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 02b709c01347c1d03f870132dff437b97f239a9c
+source-git-commit: 24b26e256fb346ccd1a03984f3e0d199c640159c
 workflow-type: tm+mt
-source-wordcount: '4056'
+source-wordcount: '4072'
 ht-degree: 1%
 
 ---
@@ -354,7 +354,7 @@ abstract="在为轮廓启用一个架构时，从该架构创建的任何数据�
 >
 更改架构字段的显示名称后，这些更改将立即反映在基于该架构的任何现有数据集中。
 
-要编辑架构字段的显示名称，请在画布中选择该字段。 在右边栏中，在&#x200B;**[!UICONTROL 显示名称]**&#x200B;下提供新名称。
+通过切换&#x200B;**[!UICONTROL 显示字段]**&#x200B;的显示名称，将字段名称更改为显示名称。 要编辑架构字段的显示名称，请在画布中选择该字段。 在右边栏中，在&#x200B;**[!UICONTROL 显示名称]**&#x200B;下提供新名称。
 
 ![](../../images/ui/resources/schemas/display-name.png)
 
