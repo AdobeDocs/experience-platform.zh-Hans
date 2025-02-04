@@ -2,7 +2,7 @@
 title: Web SDK中的身份数据
 description: 了解如何使用Adobe Experience Platform Web SDK检索和管理Adobe Experience Cloud ID (ECID)。
 exl-id: 03060cdb-becc-430a-b527-60c055c2a906
-source-git-commit: c99831cf2bb1b862d65851701b38c6d3dfe99000
+source-git-commit: 3724c43090e37d21384e9dfe45e60ee2eec68a81
 workflow-type: tm+mt
 source-wordcount: '1554'
 ht-degree: 0%
@@ -25,7 +25,7 @@ Web SDK使用Cookie分配和跟踪[!DNL ECIDs]，并使用多种可用方法来�
 * 对于首次访问者，在来自Experience PlatformEdge Network的首次响应中生成并返回[!DNL ECID]。
 * 对于回访访客，将从`kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` Cookie中检索[!DNL ECID]并由Edge Network添加到请求有效负载中。
 
-设置包含[!DNL ECID]的Cookie后，Web SDK生成的每个后续请求都将在`kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` Cookie中包含编码的[!DNL ECID]。
+设置包含[!DNL ECID]的Cookie后，Web SDK生成的每个后续请求在`kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` Cookie中包含编码的[!DNL ECID]。
 
 在使用Cookie进行设备识别时，您可以通过两种方式与Edge Network交互：
 
@@ -171,9 +171,9 @@ alloy("sendEvent", {
 
 从使用访客API进行迁移时，您还可以迁移现有AMCV Cookie。 要启用ECID迁移，请在配置中设置`idMigrationEnabled`参数。 ID迁移支持以下用例：
 
-* 当域的某些页面使用访客API，而其他页面使用此SDK时。 为了支持这种情况，SDK会读取现有AMCV Cookie并使用现有ECID写入新的Cookie。 此外，SDK还会写入AMCV Cookie，以便如果首先在通过SDK进行检测的页面上获取ECID，则通过访客API进行检测的后续页面将具有相同的ECID。
-* 在同时具有访客API的页面上设置Adobe Experience Platform Web SDK时。 为了支持这种情况，如果未设置AMCV Cookie，SDK将在页面上查找访客API并调用它以获取ECID。
-* 当整个网站都在使用Adobe Experience Platform Web SDK并且没有访客API时，迁移ECID以便保留返回的访客信息会很有用。 在与`idMigrationEnabled`一起部署SDK以便迁移大多数访客Cookie后，可以关闭此设置。
+* 当域的某些页面使用访客API，而其他页面使用此SDK时。 为了支持这种情况，SDK会读取现有AMCV Cookie并使用现有ECID写入新的Cookie。 此外，SDK会写入AMCV Cookie，这样如果首先在通过SDK检测的页面上获取ECID，则通过访客API检测的后续页面将具有相同的ECID。
+* 在也具有访客API的页面上设置Adobe Experience Platform Web SDK时。 为了支持这种情况，如果未设置AMCV Cookie，SDK会在页面上查找访客API，并调用它以获取ECID。
+* 当整个网站都在使用Adobe Experience Platform Web SDK并且没有访客API时，迁移ECID以便保留返回的访客信息会很有用。 在将SDK与`idMigrationEnabled`一起部署以便迁移大多数访客Cookie后，可以关闭此设置。
 
 ### 更新迁移特征
 
