@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 沙盒UI指南
 description: 本文档提供了有关如何在Adobe Experience Platform用户界面中执行与沙盒相关的各种操作的步骤。
 exl-id: b258c822-5182-4217-9d1b-8196d889740f
-source-git-commit: f8c39d2cc12e77ebdc974f931880cdf0d6367591
+source-git-commit: b9b00f41f146b34a1326c4c2ac104c022a416dc9
 workflow-type: tm+mt
-source-wordcount: '1066'
+source-wordcount: '1115'
 ht-degree: 4%
 
 ---
@@ -82,6 +82,7 @@ ht-degree: 4%
 >* 用于在警告消息后重置与Adobe Audience Manager或Audience Core Service进行双向区段共享的用户创建的生产沙盒。
 >* 在启动沙盒重置之前，您将需要手动删除合成，以确保正确清理关联的受众数据。
 >* 重置完成后，沙盒ID将更改。
+>* 对于[Journey Optimizer B2B edition](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer-b2b/user/guide-overview)，当前不支持&#x200B;**沙盒重置**。 重置或删除映射到Journey Optimizer B2B edition的沙盒可能会导致Journey Optimizer B2B edition中的数据永久丢失，并且可能需要配置新的Journey Optimizer B2B edition实例。
 
 ### 删除受众合成
 
