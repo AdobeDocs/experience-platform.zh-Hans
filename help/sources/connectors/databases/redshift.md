@@ -3,9 +3,9 @@ title: Amazon Redshift Source连接器概述
 description: 了解如何使用API或用户界面将Amazon Redshift连接到Adobe Experience Platform。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 75e577dd-a0b0-4f82-a371-5ec9255544f8
-source-git-commit: 84d09038ded1f35269ebf67c6bc1a5dacaafe4ac
+source-git-commit: 77941e08df893fab6dfdaf987c56c4d5a3fd4757
 workflow-type: tm+mt
-source-wordcount: '351'
+source-wordcount: '378'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,11 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 Experience Platform支持从第三方数据库引入数据。 Platform可以连接到不同类型的数据库，如关系数据库、NoSQL数据库或数据仓库数据库。 对数据库提供程序的支持包括[!DNL Amazon Redshift]。
 
-## IP地址允许列表
+## 设置您的[!DNL Amazon Redshift]源以在Azure上Experience Platform {#azure}
+
+请按照以下步骤了解如何设置您的[!DNL Amazon Redshift]帐户以在Azure上Experience Platform。
+
+### IP地址允许列表
 
 在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 有关详细信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md)页。
 
@@ -41,7 +45,7 @@ Experience Platform支持从第三方数据库引入数据。 Platform可以连�
 
 ## 使用API将[!DNL Amazon Redshift]连接到平台
 
-- [使用流服务API创建Amazon Redshift基本连接](../../tutorials/api/create/databases/redshift.md)
+- [使用流服务API将Amazon Redshift连接到Experience Platform](../../tutorials/api/create/databases/redshift.md)
 - [使用流服务API浏览数据表](../../tutorials/api/explore/tabular.md)
 - [使用流服务API为数据库源创建数据流](../../tutorials/api/collect/database-nosql.md)
 
