@@ -5,7 +5,7 @@ exl-id: 4885f60b-6401-4ec7-aa1a-29c135087847
 source-git-commit: 2d71eafb00098d958c8cff9350caa27bd3f0260d
 workflow-type: tm+mt
 source-wordcount: '1509'
-ht-degree: 36%
+ht-degree: 37%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 36%
 >[!CONTEXTUALHELP]
 >id="platform_tags_publishing_flow"
 >title="发布流"
->abstract="了解发布流所需的用户权限级别，包括开发、批准和Publish权限。"
+>abstract="了解发布流程所需的用户权限级别，包括开发、批准和发布权限。"
 
 >[!NOTE]
 >

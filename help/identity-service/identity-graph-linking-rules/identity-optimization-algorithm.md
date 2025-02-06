@@ -1,19 +1,19 @@
 ---
-title: 身份优化算法
+title: 身份标识优化算法
 description: 了解Identity Service中的身份优化算法。
 exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
 source-git-commit: 048d915d33a19a9d50a4951e165b5ade1b9d9734
 workflow-type: tm+mt
 source-wordcount: '1560'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
 
-# 身份优化算法 {#identity-optimization-algorithm}
+# 身份标识优化算法 {#identity-optimization-algorithm}
 
 >[!CONTEXTUALHELP]
 >id="platform_identities_uniquenamespace"
->title="唯一的命名空间"
+>title="唯一命名空间"
 >abstract="一个图形不能拥有两个具有唯一命名空间的身份标识。如果图形试图超过此限制，则保留最新的链接，并移除最旧的链接。"
 
 >[!AVAILABILITY]

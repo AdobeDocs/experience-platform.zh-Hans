@@ -5,7 +5,7 @@ exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
 source-git-commit: 048d915d33a19a9d50a4951e165b5ade1b9d9734
 workflow-type: tm+mt
 source-wordcount: '1436'
-ht-degree: 3%
+ht-degree: 5%
 
 ---
 
@@ -21,7 +21,7 @@ ht-degree: 3%
 
 以下文档对于了解身份图关联规则至关重要。
 
-* [身份优化算法](./identity-optimization-algorithm.md)
+* [身份标识优化算法](./identity-optimization-algorithm.md)
 * [实施指南](./implementation-guide.md)
 * [图形配置示例](./example-configurations.md)
 * [疑难解答和常见问题](./troubleshooting.md)
@@ -33,7 +33,7 @@ ht-degree: 3%
 
 >[!CONTEXTUALHELP]
 >id="platform_identities_graphcollapsescenarios"
->title="图形折叠方案"
+>title="图形折叠场景"
 >abstract="图形可能“折叠”或代表多个人物实体的原因有多种。"
 
 本节概述了配置身份图链接规则时可以考虑的示例场景。
@@ -95,7 +95,7 @@ ht-degree: 3%
 | --- | --- |
 | 唯一命名空间 | 唯一命名空间是已设置为在身份图上下文中不同的身份命名空间。 您可以使用UI将命名空间配置为唯一。 将命名空间定义为唯一后，图形只能有一个包含该命名空间的标识。 |
 | 命名空间优先级 | 命名空间优先级是指命名空间彼此相比的相对重要性。 命名空间优先级可通过UI进行配置。 您可以在给定的身份图中对命名空间进行排名。 启用后，名称优先级将在各种场景中使用，例如身份优化算法的输入以及确定体验事件片段的主要身份。 |
-| 身份优化算法 | 身份优化算法确保在给定的身份图中实施通过配置唯一的命名空间和命名空间优先级创建的准则。 |
+| 身份标识优化算法 | 身份优化算法确保在给定的身份图中实施通过配置唯一的命名空间和命名空间优先级创建的准则。 |
 
 ### 唯一命名空间 {#unique-namespace}
 
@@ -144,7 +144,7 @@ ht-degree: 3%
 
 有关身份图链接规则的更多信息，请阅读以下文档：
 
-* [身份优化算法](./identity-optimization-algorithm.md)
+* [身份标识优化算法](./identity-optimization-algorithm.md)
 * [实施指南](./implementation-guide.md)
 * [图形配置示例](./example-configurations.md)
 * [疑难解答和常见问题](./troubleshooting.md)

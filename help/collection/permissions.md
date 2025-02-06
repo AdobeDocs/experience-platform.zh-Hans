@@ -1,20 +1,20 @@
 ---
-title: Experience Platform中数据收集的权限管理
+title: Experience Platform 中数据收集的权限管理
 description: 有关如何在Adobe Experience Platform中管理权限和控制对数据收集功能的访问权限的高级概述。
 exl-id: 8426d54b-ec1d-475a-a769-f45a8c924fe7
 source-git-commit: 2d71eafb00098d958c8cff9350caa27bd3f0260d
 workflow-type: tm+mt
 source-wordcount: '1356'
-ht-degree: 25%
+ht-degree: 28%
 
 ---
 
-# Experience Platform中数据收集的权限管理 {#permission-management}
+# Experience Platform 中数据收集的权限管理 {#permission-management}
 
 >[!CONTEXTUALHELP]
 >id="platform_tags_permissions"
 >title="权限"
->abstract="了解在Adobe Experience Platform中使用数据流、架构、身份和沙盒所需的关键权限。"
+>abstract="了解在 Adobe Experience Platform 中使用数据流、模式、身份标识和沙盒所需的关键权限。"
 
 Adobe Experience Platform](./home.md)中的[数据收集由多种不同的技术组成，这些技术可共同收集和传输您的数据。 在Adobe Admin Console中，可通过基于角色的细粒度权限来控制对这些技术的访问。
 

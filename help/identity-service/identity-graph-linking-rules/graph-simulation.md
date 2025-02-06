@@ -5,11 +5,11 @@ exl-id: 89f0cf6e-c43f-40ec-859a-f3b73a6da8c8
 source-git-commit: 048d915d33a19a9d50a4951e165b5ade1b9d9734
 workflow-type: tm+mt
 source-wordcount: '1458'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
-# [!DNL Graph Simulation]用户界面指南 {#graph-simulation}
+# [!DNL Graph Simulation] UI 指南 {#graph-simulation}
 
 >[!CONTEXTUALHELP]
 >id="platform_identities_graphsimulation"
@@ -177,7 +177,7 @@ ht-degree: 2%
 通过阅读本文档，您现在知道如何使用[!DNL Graph Simulation]工具来更好地了解在给定一组特定的规则和配置的情况下如何对待您的身份数据。 有关详细信息，请阅读以下文档：
 
 * [身份图链接规则概述](./overview.md)
-* [身份优化算法](./identity-optimization-algorithm.md)
+* [身份标识优化算法](./identity-optimization-algorithm.md)
 * [实施指南](./implementation-guide.md)
 * [疑难解答和常见问题](./troubleshooting.md)
 * [图形配置示例](./example-configurations.md)
