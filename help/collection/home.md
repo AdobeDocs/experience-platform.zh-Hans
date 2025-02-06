@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据收集概述
 description: 了解在Adobe Experience Platform中收集客户体验数据涉及的各种技术。
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: b8332686043311c4dd3afeff12300fbd2827498c
 workflow-type: tm+mt
-source-wordcount: '489'
+source-wordcount: '472'
 ht-degree: 4%
 
 ---
@@ -31,14 +31,14 @@ Adobe Experience Platform提供了一套方法，可让您从客户端源收集�
 * [Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/)
 * [边缘网络服务器 API](../server-api/overview.md)
 * [Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob?hl=en)
-* [Experience Platform保证](../assurance/home.md)
+* [Experience PlatformAssurance](../assurance/home.md)
 
 
 本指南简要介绍数据收集以及如何通过PlatformEdge Network将数据发送到Adobe Experience Cloud产品和非Adobe应用程序。
 
-## 标记、Web SDK和移动SDK
+## 标记、Web SDK和Mobile SDK
 
-Platform Web SDK和Platform Mobile SDK可分别折叠所有Adobe产品库并将其压缩为用于Web和移动平台的单个开发工具包。 可以使用原始代码或通过数据收集UI或Adobe Experience Platform UI使用[标记](../tags/home.md)实现这些目标。
+Platform Web SDK和Platform Mobile SDK可折叠所有Adobe产品库，并将其分别压缩为用于Web平台和移动平台的单个开发工具包。 可以使用原始代码或通过数据收集UI或Adobe Experience Platform UI使用[标记](../tags/home.md)实现这些目标。
 
 压缩这些库可加快数据收集速度，并将从客户端设备到平台Edge Network的操作整合到单个流中。
 
@@ -52,10 +52,6 @@ Platform Web SDK和Platform Mobile SDK可分别折叠所有Adobe产品库并将�
 
 ![数据流和Adobe解决方案](./images/home/adobe-solutions.png)
 
->[!NOTE]
->
->有关平台Edge Network的高级介绍，请参阅以下[交互式产品导览](https://adobe-ideacloud.forgedx.com/adobe-adobe-edge-collection/adobe-experience-edge/public/mx?SUID=hgb1a48ICSCpbM6MzBYHbxnsh9DgjUy1)。
-
 ## 事件转发
 
 [事件转发](../tags/ui/event-forwarding/overview.md)可以进入任何Experience Platform数据流，从而允许您以极低的延迟转换和扩充数据，并将数据发送到任何非Adobe目标，而无需向客户端设备添加任何第三方代码。
@@ -64,7 +60,7 @@ Platform Web SDK和Platform Mobile SDK可分别折叠所有Adobe产品库并将�
 
 >[!NOTE]
 >
->事件转发是一项付费功能，包含在Adobe Real-time Customer Data Platform Connections、Prime或Ultimate产品中。
+>事件转发是一项付费功能，包含在Adobe Real-time Customer Data Platform连接、Prime或Ultimate产品中。
 
 ## 后续步骤
 
