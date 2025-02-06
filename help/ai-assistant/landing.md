@@ -3,9 +3,9 @@ title: Adobe Experience Platform产品文档中的AI助手
 description: Adobe Experience Platform中的AI助手入门。
 feature: AI Assistant
 exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
-source-git-commit: 96e138cc12fdedaa73e3aaf69341806271413680
+source-git-commit: 9a10db0da1985c5ccaaeb84e040eea9e76ec1ae4
 workflow-type: tm+mt
-source-wordcount: '851'
+source-wordcount: '899'
 ht-degree: 1%
 
 ---
@@ -109,7 +109,15 @@ AI Assistant支持Experience Platform、Real-Time CDP、Adobe Journey Optimizer�
 
 >[!VIDEO](https://video.tv.adobe.com/v/3441024?learn=on)
 
-有关详细信息，请阅读AI助手中的[产品知识](home.md#product-knowledge)
+有关详细信息，请参阅AI助手](home.md#product-knowledge)中的[产品知识。
+
+### AI Assistant中的操作见解
+
+观看以下视频，了解如何使用AI Assistant检索您的操作见解并获得有关数据对象的全面视图。
+
+>[!VIDEO](https://video.tv.adobe.com/v/3444031?learn=on&enablevpops)
+
+有关详细信息，请阅读AI助手中的[操作分析](home.md#operational-insights)。
 
 ### 使用AI Assistant产品知识缩短入门时间
 
@@ -165,6 +173,7 @@ AI Assistant支持Experience Platform、Real-Time CDP、Adobe Journey Optimizer�
 * [清理受众并优化营销操作](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-helps-optimize-marketing-operations-by-de/ba-p/696002)
 * [检查依赖关系并在数据更新期间将风险降至最低](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-minimizes-risk-during-data-updates-by-checking/ba-p/713364)
 * [更快地发现和部署新功能](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/discover-and-deploy-new-features-faster-with-ai-assistant-in/ba-p/731125)
+* [用AI助手实现客户支持的革新](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-in-adobe-experience-platform-revolutionizing/ba-p/735416)
 
 >[!TAB 其他视频内容]
 
