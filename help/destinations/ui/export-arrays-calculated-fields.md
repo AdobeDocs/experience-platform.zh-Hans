@@ -3,10 +3,10 @@ title: 将数组对象从 Real-Time CDP 导出到云存储目标
 type: Tutorial
 description: 了解如何使用计算字段将阵列作为字符串从Real-Time CDP导出到云存储目标。
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: a99fc58b8296b2b9ce6e30d14857529570cd3e8a
+source-git-commit: 6b182df562ea59d537050aa26e3c813fc2007e9f
 workflow-type: tm+mt
-source-wordcount: '1622'
-ht-degree: 7%
+source-wordcount: '1698'
+ht-degree: 6%
 
 ---
 
@@ -72,6 +72,11 @@ organizations = [{
 ## 如何导出计算字段 {#how-to-export-calculated-fields}
 
 >[!CONTEXTUALHELP]
+>id="platform_destinations_export_arrays_maps_objects"
+>title="启用分层输出架构"
+>abstract="<p> 切换此设置&#x200B;**on**&#x200B;以启用将数组、映射和对象导出到JSON或Parquet文件。</p><p>关闭此切换后，您可以在激活受众时使用计算字段选项，但无法将数组、映射和对象导出到JSON或Parquet文件</p>"
+
+>[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_control"
 >title="启用分层输出架构"
 >abstract="如果您想导出像数组这样的层次结构，请打开。"
@@ -79,7 +84,7 @@ organizations = [{
 >[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_calculated_field_disabled"
 >title="添加计算字段已禁用"
->abstract="由于您选择在连接到目标时导出平面结构，因此此控件已被禁用。"
+>abstract="此控件已禁用，因为您在设置此目标连接时选择了&#x200B;**导出数组、映射、对象**&#x200B;切换&#x200B;*开启*。 若要使用中可用的计算字段和函数，请使用&#x200B;**导出数组、映射、对象**&#x200B;切换&#x200B;*关*&#x200B;来设置新的目标连接。"
 
 在云存储目标的激活工作流的映射步骤中，选择&#x200B;**[!UICONTROL 添加计算字段]**。
 
