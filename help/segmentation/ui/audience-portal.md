@@ -225,7 +225,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_browse_flexibleaudienceevaluation"
 >title="灵活的受众评估限制"
-abstract="您可以在一次灵活的受众评估中评估最多 20 位受众。<br/><br/>此外，虽然评估作业会尽快运行，但由于按需评估 <b>不能</b> 与另一个按需或批量评估同时运行，因此可能会出现系统延迟。"
+abstract="您可以在一次灵活的受众评估中评估最多 20 位受众。<br/><br/>此外，虽然评估作业会尽快运行，但由于按需评估<b>不能</b>与另一个按需或批量评估同时运行，因此可能会出现系统延迟。"
 
 灵活的受众评估允许您按需运行分段作业。 选择您要评估的受众，然后选择&#x200B;**[!UICONTROL 评估受众]**。
 
