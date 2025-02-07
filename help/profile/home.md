@@ -2,7 +2,7 @@
 title: Real-time Customer Profile概述
 description: Real-time Customer Profile可合并来自各种来源的数据，并以单个客户配置文件和相关时间序列事件的形式提供对这些数据的访问。 此功能使营销人员能够跨多个渠道与其受众推动协调、一致且相关的体验。
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: 7d515401eb49ffd2ad5cf0bd074896b274c4fb05
 workflow-type: tm+mt
 source-wordcount: '1821'
 ht-degree: 1%
@@ -51,7 +51,7 @@ Adobe Experience Platform 使您能够为客户提供协调、一致且相关的
 
 Experience Platform提供了一系列护栏，帮助您避免创建Real-Time Customer Profile不支持的[Experience Data Model (XDM)架构](../xdm/home.md)。 这包括会导致性能下降的软限制，以及会导致错误和系统中断的硬限制。 有关详细信息（包括指南列表和示例用例），请阅读[个人资料护栏](guardrails.md)文档。
 
-### 个人资料仪表板 {#profile-dashboard}
+### 轮廓仪表板 {#profile-dashboard}
 
 Experience PlatformUI提供了一个仪表板，通过该仪表板可以查看有关实时客户配置文件数据的重要信息，在每日快照期间捕获了这些数据。 要了解如何在UI中访问和使用[!DNL Profile]仪表板，以及有关仪表板中显示的量度的详细信息，请参阅[配置文件仪表板UI指南](ui/profile-dashboard.md)。
 
@@ -71,7 +71,7 @@ Experience PlatformUI提供了一个仪表板，通过该仪表板可以查看�
 
 时序数据提供主体直接或间接执行操作时的系统快照，以及详细说明事件本身的数据。 时间序列数据由标准架构类XDM ExperienceEvent表示，它可以描述添加到购物车的项目、点击的链接以及查看的视频等事件。 时间序列数据可用于作为分段规则的基础，事件可在用户档案上下文中单独访问。
 
-### 标识
+### 身份标识
 
 每个企业都希望以个人化的方式与客户沟通。 但是，向客户提供相关数字体验的挑战之一是了解如何将他们的断开连接数据捆绑在一起，这通常散布在平板电脑、手机和笔记本电脑等不同的数字渠道中。 [!DNL Identity Service]允许您通过链接来自多个渠道的身份并为每个客户创建身份图，将客户的完整情况拼合在一起。 有关详细信息，请访问[Identity Service概述](../identity-service/home.md)。
 
@@ -97,7 +97,7 @@ Experience PlatformUI提供了一个仪表板，通过该仪表板可以查看�
 
 Computed attributes are functions used to aggregate event-level data into profile-level attributes. These functions are automatically computed so that they can be used across segmentation, activation, and personalization. These computations help you to easily answer questions related to things like lifetime purchase value, time between purchases, or number of application opens, without requiring you to manually perform complex calculations each time the information is needed. For more information on computed attributes, including understanding the role computed attributes play within Adobe Experience Platform, please begin by reading the [computed attributes overview](computed-attributes/overview.md). -->
 
-## 个人资料和受众
+## 轮廓和受众
 
 Adobe Experience Platform [!DNL Segmentation Service]会生成为您的个别客户提供体验所需的受众。 创建受众后，该受众的ID将会添加到所有符合条件的用户档案的受众成员资格列表中。 区段规则是使用RESTful API和区段生成器用户界面生成并应用于[!DNL Real-Time Customer Profile]数据的。 若要了解有关分段的更多信息，请先阅读[分段服务概述](../segmentation/home.md)。
 

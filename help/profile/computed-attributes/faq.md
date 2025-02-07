@@ -2,9 +2,9 @@
 title: 计算属性常见问题解答
 description: 了解有关使用计算属性的常见问题解答。
 exl-id: a4d3c06a-d135-453b-9637-4f98e62737a7
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 7d515401eb49ffd2ad5cf0bd074896b274c4fb05
 workflow-type: tm+mt
-source-wordcount: '1083'
+source-wordcount: '1091'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ ht-degree: 0%
 
 ## 我可以创建的计算属性数量是否存在任何限制？
 
-可以，您可以创建的计算属性数量存在限制。 请参阅产品描述或联系Adobe客户团队以获取更多信息。
+可以，您可以创建的计算属性数量存在限制。 此限制仅适用于&#x200B;**活动**&#x200B;计算属性。 请参阅产品描述或联系Adobe客户团队以获取更多信息。
 
 ## 禁用计算属性是否存在任何下游影响？
 
