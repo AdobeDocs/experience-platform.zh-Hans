@@ -2,9 +2,9 @@
 title: 使用流服务API将数据登陆区连接到Adobe Experience Platform
 description: 了解如何使用流服务API将Adobe Experience Platform连接到数据登陆区。
 exl-id: bdb60ed3-7c63-4a69-975a-c6f1508f319e
-source-git-commit: 527e62e5fb90bc32ef3788f261e0a24b680f29c0
+source-git-commit: 1d4dd60180ef2a3cbf6dcd565c2f09dd575716b9
 workflow-type: tm+mt
-source-wordcount: '1375'
+source-wordcount: '1410'
 ht-degree: 3%
 
 ---
@@ -31,6 +31,10 @@ ht-degree: 3%
 以下部分提供使用[!DNL Flow Service] API成功创建[!DNL Data Landing Zone]源连接所需了解的其他信息。
 
 ## 检索可用的登陆区域
+
+>[!IMPORTANT]
+>
+>您必须具有&#x200B;**[!UICONTROL 管理源]**&#x200B;访问控制权限才能使用[!DNL Data Landing Zone] API并检索`type=user_drop_zone`。 有关详细信息，请阅读[访问控制概述](../../../../../access-control/home.md)或联系您的产品管理员以获取所需的权限。
 
 使用API访问[!DNL Data Landing Zone]的第一步是向[!DNL Connectors] API的`/landingzone`端点发出GET请求，同时将`type=user_drop_zone`作为请求标头的一部分提供。
 

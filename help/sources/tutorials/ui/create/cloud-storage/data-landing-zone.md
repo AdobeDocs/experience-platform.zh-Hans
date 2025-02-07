@@ -2,9 +2,9 @@
 title: 使用UI将数据登陆区连接到Platform
 description: 了解如何使用Platform用户界面创建数据登陆区源连接器。
 exl-id: 653c9958-5d89-4b0c-af3d-a3e74aa47a08
-source-git-commit: 22f3b76c02e641d2f4c0dd7c0e5cc93038782836
+source-git-commit: cdcce07a5adf08bf9d5e6a08d6bc965d37458a5d
 workflow-type: tm+mt
-source-wordcount: '736'
+source-wordcount: '767'
 ht-degree: 0%
 
 ---
@@ -27,6 +27,10 @@ ht-degree: 0%
 * [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ## 将您的文件从[!DNL Data Landing Zone]带到Platform
+
+>[!IMPORTANT]
+>
+> 若要连接到源，您需要&#x200B;**[!UICONTROL 查看源]**&#x200B;和&#x200B;**[!UICONTROL 管理源]**&#x200B;访问控制权限。 阅读[访问控制概述](../../../../../access-control/home.md)或联系您的产品管理员以获取所需的权限。
 
 在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
 
