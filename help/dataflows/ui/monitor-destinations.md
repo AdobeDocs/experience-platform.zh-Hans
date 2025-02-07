@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 在UI中监视目标的数据流
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 25dc27d890cb2e0e23f8fa797ac9edea929164fd
+source-git-commit: f10706fbbde9cef112460f5431af24d09b0e0460
 workflow-type: tm+mt
-source-wordcount: '3639'
-ht-degree: 10%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -105,7 +105,7 @@ ht-degree: 10%
   > 随着增强功能的实施，[Google 目标客户匹配功能](../../destinations/catalog/advertising/google-customer-match.md)用户的&#x200B;**[!UICONTROL 身份标识信息失败]**&#x200B;次数可能会减少。
 
 
-- **[!UICONTROL 激活率]**：已成功激活或跳过的接收标识的百分比。 以下公式演示如何计算此值：
+- **[!UICONTROL 激活率]**：已成功激活的接收标识的百分比。 以下公式演示如何计算此值：
   ![激活率公式。](../assets/ui/monitor-destinations/activation-rate-formula.png)
 - **[!UICONTROL 状态]**：表示数据流所处的状态： [!UICONTROL 已完成]或[!UICONTROL 正在处理]。 [!UICONTROL 已完成]表示相应数据流运行的所有标识已在一小时内导出。 [!UICONTROL 正在处理]意味着数据流运行尚未完成。
 
