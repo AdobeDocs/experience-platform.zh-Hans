@@ -2,9 +2,9 @@
 title: 受众门户概述
 description: 了解如何使用Audience Portal在Adobe Experience Platform中查看、管理和创建受众。
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: 4ef3f6dc07cb5d17146d48c7a41e3745fd9a3a58
+source-git-commit: 9f4facebcd55dc15761db1bf744acfef9ccb15ff
 workflow-type: tm+mt
-source-wordcount: '4569'
+source-wordcount: '4597'
 ht-degree: 4%
 
 ---
@@ -233,6 +233,8 @@ abstract="您可以在一次灵活的受众评估中评估最多 20 位受众。
 >
 为灵活的受众评估选择受众时，需要满足以下条件：
 >
+- 您每天只能使用灵活的受众评估&#x200B;**两次**。 此限制在午夜(UTC)重置。
+- 您每年最多有&#x200B;**次**&#x200B;的灵活受众评估运行，共50次。
 - 所有受众&#x200B;**都必须**&#x200B;具有“分段服务”的来源。
 - 必须使用批处理分段评估所有受众&#x200B;****。
 - 所有受众&#x200B;**必须**&#x200B;是基于人员的受众。
