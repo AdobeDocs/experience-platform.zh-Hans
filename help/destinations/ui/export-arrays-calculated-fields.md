@@ -3,10 +3,10 @@ title: 将数组对象从 Real-Time CDP 导出到云存储目标
 type: Tutorial
 description: 了解如何使用计算字段将阵列作为字符串从Real-Time CDP导出到云存储目标。
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: 6b182df562ea59d537050aa26e3c813fc2007e9f
+source-git-commit: 546ef0f9a5a9c37de3891aba02491540a5c6f8c9
 workflow-type: tm+mt
-source-wordcount: '1698'
-ht-degree: 6%
+source-wordcount: '1730'
+ht-degree: 5%
 
 ---
 
@@ -73,8 +73,8 @@ organizations = [{
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_maps_objects"
->title="启用分层输出架构"
->abstract="<p> 切换此设置&#x200B;**on**&#x200B;以启用将数组、映射和对象导出到JSON或Parquet文件。</p><p>关闭此切换后，您可以在激活受众时使用计算字段选项，但无法将数组、映射和对象导出到JSON或Parquet文件</p>"
+>title="导出数组、映射和对象"
+>abstract="<p> 切换此设置<b>on</b>以启用将数组、映射和对象导出到JSON或Parquet文件。 您可以在映射步骤的源字段视图中选择这些对象类型。</p><p>通过此切换<b>关闭</b>，您可以在激活受众时使用计算字段选项并应用各种数据转换函数。 但是，您可以<i>不</i>将数组、映射和对象导出到JSON或Parquet文件，并且必须为此配置单独的目标。</p>"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_control"

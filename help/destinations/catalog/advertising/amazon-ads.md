@@ -3,9 +3,9 @@ title: Amazon Ads
 description: Amazon Ads提供一系列选项，帮助您向注册销售商、供应商、图书供应商、Kindle Direct Publishing (KDP)作者、应用程序开发人员和/或代理商实现广告目标。 Amazon Ads与Adobe Experience Platform的集成提供了与Amazon Ads产品(包括Amazon DSP (ADSP))的统包集成。 通过使用Adobe Experience Platform中的Amazon广告目标，用户能够定义广告商受众，以便在Amazon DSP中进行定位和激活。
 last-substantial-update: 2025-01-07T00:00:00Z
 exl-id: 724f3d32-65e0-4612-a882-33333e07c5af
-source-git-commit: 8543f76565f22b8cdfb0be71a1332696bc079ec7
+source-git-commit: 546ef0f9a5a9c37de3891aba02491540a5c6f8c9
 workflow-type: tm+mt
-source-wordcount: '1837'
+source-wordcount: '1819'
 ht-degree: 2%
 
 ---
@@ -98,10 +98,6 @@ AMC将来自Amazon自有资产和运营资产的独特信号整合在一起，�
 >保存目标配置后，您将无法更改[!DNL Amazon Ads]广告商ID，即使您通过Amazon帐户重新进行身份验证也是如此。 要使用其他[!DNL Amazon Ads]广告商ID，您必须创建新的目标连接。 已设置与ADSP集成以便能够将受众交付到AMC或其他ADSP帐户的广告商，必须创建新的目标流。
 
 * **[!UICONTROL 广告商地区]**：选择您的广告商所在的适当地区。 有关每个地区支持的市场的详细信息，请访问[Amazon广告文档](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints)。
-
->[!IMPORTANT]
->
->包含&#x200B;**[!UICONTROL Amazon广告同意信号]**&#x200B;的更新计划于2025年2月7日启用。
 
 * **[!UICONTROL Amazon广告同意信号]**：确认通过此连接发送的所有数据均已同意将个人数据用于广告目的。 “GRANTED”表示同意Amazon将客户的个人数据用于广告。 允许的值为“GRANTED”和“DENIED”。 任何通过连接发送的记录若具有“DENIED”，则将被拒绝，以便在Amazon Ads中进一步使用。
 
