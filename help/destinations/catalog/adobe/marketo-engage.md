@@ -1,10 +1,10 @@
 ---
 title: Marketo Engage目标
-description: Marketo Engage是唯一用于营销、广告、分析和商业的端到端客户体验管理(CXM)解决方案。 您可以从自动化和管理活动，从CRM商机管理和客户参与到基于帐户的营销和收入归因。
+description: Marketo Engage是唯一一款用于营销、广告、分析和商务的端到端客户体验管理(CXM)解决方案。 您可以从自动化和管理活动，从CRM商机管理和客户参与到基于帐户的营销和收入归因。
 exl-id: 5ae5f114-47ba-4ff6-8e42-f8f43eb079f7
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 58be4f2f44312116a3aa2e8f5a7889424000fd9f
 workflow-type: tm+mt
-source-wordcount: '885'
+source-wordcount: '903'
 ht-degree: 1%
 
 ---
@@ -49,7 +49,7 @@ Marketo V2目标中的改进包括：
 
 ### 支持的属性 {#supported-attributes}
 
-您可以将属性从Experience Platform映射到贵组织在Marketo中有权访问的任何属性。 在Marketo中，您可以使用[Describe API请求](https://developers.marketo.com/rest-api/lead-database/leads/#describe)来检索您的组织有权访问的属性字段。
+您可以将属性从Experience Platform映射到您的组织在Marketo中有权访问的任何属性。 在Marketo中，您可以使用[Describe API请求](https://developers.marketo.com/rest-api/lead-database/leads/#describe)来检索您的组织有权访问的属性字段。
 
 ## 支持的受众 {#supported-audiences}
 
@@ -57,8 +57,8 @@ Marketo V2目标中的改进包括：
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -69,7 +69,7 @@ Marketo V2目标中的改进包括：
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
 | 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出具有[!DNL Marketo Engage]目标中所用标识符（电子邮件、ECID）的受众的所有成员。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -88,8 +88,8 @@ Marketo V2目标中的改进包括：
 >
 >该视频未完全反映当前功能。 有关最新信息，请参阅上面链接的指南。 视频的以下部分已过时：
 > 
->* 您应在Experience PlatformUI中使用的目标卡是&#x200B;**[!UICONTROL Marketo V2]**。
->* 该视频未在“连接到目标工作流”中显示新的&#x200B;**[!UICONTROL 人员创建]**&#x200B;选择器字段。
+>* 您应在Experience Platform UI中使用的目标卡是&#x200B;**[!UICONTROL Marketo V2]**。
+>* 该视频未在“连接到目标工作流”中显示新的&#x200B;**[!UICONTROL 人员创建]**&#x200B;选择器字段。 要使用该字段，必须在属性映射步骤中同时映射名字和姓氏。
 >* 视频中调出的两个限制不再适用。 除了在录制视频时支持的受众成员资格信息之外，您现在可以映射许多其他配置文件属性字段。 您还可以将受众成员导出到Marketo，这些成员尚不存在于Marketo静态列表中，并且会添加到列表中。
 >* 在Marketo V1的激活工作流的&#x200B;**[!UICONTROL 计划受众步骤]**&#x200B;中，您需要手动添加&#x200B;**[!UICONTROL 映射ID]**&#x200B;以成功将数据导出到Marketo。 Marketo V2中不再需要此手动步骤。
 
