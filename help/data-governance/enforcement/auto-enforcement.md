@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 自动策略实施
 description: 本文档介绍了在将受众激活到Experience Platform中的目标时，如何自动实施数据使用策略。
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: b0c4a26c2e8bb90a3494fcd6eb76c4d0d7421219
+source-git-commit: f9072a0fc287c8061a3d28972096577317a0a2c9
 workflow-type: tm+mt
-source-wordcount: '2118'
+source-wordcount: '2116'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->同意策略和自动同意策略实施仅适用于已购买&#x200B;**AdobeHealthcare Shield**&#x200B;或&#x200B;**AdobePrivacy &amp; Security Shield**&#x200B;的企业。
+>同意策略和自动同意策略实施仅适用于已购买&#x200B;**Adobe Healthcare Shield**&#x200B;或&#x200B;**Adobe Privacy &amp; Security Shield**&#x200B;的组织。
 
 本文档重点介绍数据治理和同意政策的实施。 有关访问控制策略的信息，请参阅有关[基于属性的访问控制](../../access-control/abac/overview.md)的文档。
 
@@ -46,7 +46,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->如果有数据使用标签仅应用于数据集内的某些字段（而不是整个数据集），则仅在以下条件下才会在激活时实施这些字段级标签：
+>如果存在仅应用于某些字段的数据使用标签，则只有在满足以下至少一项条件时，才会在激活时强制实施这些字段级标签：
 >
 >* 这些字段在受众中使用。
 >* 这些字段配置为目标目标的投影属性。
@@ -57,7 +57,7 @@ ht-degree: 0%
 
 在数据治理的上下文中，谱系使数据使用标签能够从架构传播到使用其数据的下游服务，例如实时客户档案和目标。 这允许在数据通过Platform的历程中的几个关键点评估和实施策略，并向数据使用者提供上下文，说明策略违规发生的原因。
 
-在Experience Platform，政策的执行涉及以下血统：
+在Experience Platform，政策执行涉及以下族系：
 
 1. 数据被摄取到Platform并存储在&#x200B;**数据集**&#x200B;中。
 1. 根据&#x200B;**合并策略**&#x200B;合并数据片段，通过这些数据集识别和构建客户配置文件。
@@ -126,7 +126,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->同意策略仅适用于已购买AdobeHealthcare Shield或AdobePrivacy &amp; Security Shield的组织。
+>同意策略仅适用于已购买Adobe Healthcare Shield或Adobe Privacy &amp; Security Shield的组织。
 
 #### 付费媒体的同意策略增强 {#consent-policy-enhancement}
 
