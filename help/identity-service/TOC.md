@@ -5,10 +5,10 @@ breadcrumb-title: Platform Identity Service 指南
 user-guide-description: 跨设备和系统连接客户身份标识，以提供个性化的数字体验。
 feature: Identities
 role: Admin,Developer
-source-git-commit: 6cdb622e76e953c42b58363c98268a7c46c98c99
+source-git-commit: cbdfa76d546be631a8c1fa588896648835d2a159
 workflow-type: tm+mt
-source-wordcount: '146'
-ht-degree: 28%
+source-wordcount: '143'
+ht-degree: 30%
 
 ---
 
@@ -24,7 +24,7 @@ ht-degree: 28%
    - [Identity Service中的删除](./features/deletion.md)
    - 身份图链接规则{#identity-graph-linking-rules}
       - [功能概述](./identity-graph-linking-rules/overview.md)
-      - [身份优化算法](./identity-graph-linking-rules/identity-optimization-algorithm.md)
+      - [身份标识优化算法](./identity-graph-linking-rules/identity-optimization-algorithm.md)
       - [身份图链接规则的实施指南](./identity-graph-linking-rules/implementation-guide.md)
       - [示例图形配置](./identity-graph-linking-rules/example-configurations.md)
       - [身份图链接规则疑难解答](./identity-graph-linking-rules/troubleshooting.md)
@@ -44,7 +44,6 @@ ht-degree: 28%
    - [创建自定义命名空间](api/create-custom-namespace.md)
    - [列出标识的本机ID](api/list-native-id.md)
    - [API 参考](https://www.adobe.io/experience-platform-apis/references/identity-service)
-- [共享设备检测](shared-device-detection.md)
 - [在UI中定义标识字段](label-identities.md)
 - [隐私请求处理](privacy.md)
 - [疑难解答指南](troubleshooting-guide.md)

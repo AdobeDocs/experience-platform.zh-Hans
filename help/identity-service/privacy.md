@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform；主页；热门主题
+keywords: Experience Platform；首页；热门话题
 title: Identity Service中的隐私请求处理
 description: Adobe Experience Platform Privacy Service会处理客户访问、选择退出销售或删除其个人数据的请求，如大量隐私法规所述。 本文档介绍了与处理Identity Service的隐私请求相关的基本概念。
 exl-id: ab84450b-1a4b-4fdd-b77d-508c86bbb073
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: a75a5603eacc1b4625a19adfddbb2f4bb81f66d3
 workflow-type: tm+mt
-source-wordcount: '1016'
+source-wordcount: '1000'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,7 @@ Adobe Experience Platform [!DNL Privacy Service]处理客户访问、选择退�
 
 >[!NOTE]
 >
->本指南仅介绍如何对Experience Platform中的Identity数据存储进行隐私请求。 如果您还计划为Platform Data Lake或[!DNL Real-Time Customer Profile]提出隐私请求，请参阅关于在Data Lake中处理[隐私请求的指南](../catalog/privacy.md)，以及本教程之外的关于配置文件](../profile/privacy.md)的[隐私请求处理的指南。
+>本指南仅介绍如何在Experience Platform中对Identity数据存储区发出隐私请求。 如果您还计划为Platform Data Lake或[!DNL Real-Time Customer Profile]提出隐私请求，请参阅关于在Data Lake中处理[隐私请求的指南](../catalog/privacy.md)，以及本教程之外的关于配置文件](../profile/privacy.md)的[隐私请求处理的指南。
 >
 >有关如何为其他Adobe Experience Cloud应用程序提出隐私请求的步骤，请参阅[Privacy Service文档](../privacy-service/experience-cloud-apps.md)。
 
@@ -30,7 +30,7 @@ Adobe Experience Platform [!DNL Privacy Service]处理客户访问、选择退�
 * [[!DNL Identity Service]](../identity-service/home.md)：通过跨设备和系统桥接身份，解决了客户体验数据碎片化带来的基本挑战。
 * [[!DNL Real-Time Customer Profile]](home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
 
-## 了解标识命名空间 {#namespaces}
+## 了解身份标识命名空间 {#namespaces}
 
 Adobe Experience Platform [!DNL Identity Service]跨系统和设备桥接客户身份数据。 [!DNL Identity Service]使用&#x200B;**身份命名空间**&#x200B;将身份值与其原始系统相关联，从而为其提供上下文。 命名空间可以表示通用概念，例如电子邮件地址（“电子邮件”），也可以将身份与特定应用程序关联，例如Adobe Advertising Cloud ID (“AdCloud”)或Adobe Target ID (“TNTID”)。
 
@@ -40,7 +40,7 @@ Identity Service维护全局定义（标准）和用户定义（自定义）身�
 
 ## 提交请求 {#submit}
 
-以下各节概述了如何使用[!DNL Privacy Service] API或UI为[!DNL Identity Service]提出隐私请求。 在阅读这些部分之前，强烈建议您查看[Privacy ServiceAPI](../privacy-service/api/getting-started.md)或[Privacy ServiceUI](../privacy-service/ui/overview.md)文档，以了解有关如何提交隐私作业的完整步骤，包括如何正确设置请求负载中的用户数据的格式。
+以下各节概述了如何使用[!DNL Privacy Service] API或UI为[!DNL Identity Service]提出隐私请求。 在阅读这些部分之前，强烈建议您查看[Privacy Service API](../privacy-service/api/getting-started.md)或[Privacy Service UI](../privacy-service/ui/overview.md)文档，以了解有关如何提交隐私作业的完整步骤，包括如何正确格式化请求负载中的用户数据。
 
 ### 使用 API
 
@@ -52,7 +52,7 @@ Identity Service维护全局定义（标准）和用户定义（自定义）身�
 
 >[!TIP]
 >
->使用API删除自定义命名空间时，必须将身份符号指定为命名空间，而不是显示名称。
+>在使用GDPR删除身份时，必须将身份符号指定为命名空间，而不是显示名称。
 
 ```shell
 curl -X POST \
@@ -96,7 +96,7 @@ curl -X POST \
 
 >[!TIP]
 >
->使用UI删除自定义命名空间时，必须将身份符号指定为命名空间，而不是显示名称。 此外，您无法删除非生产沙盒用户界面中的自定义命名空间。
+>在使用GDPR删除身份时，必须将身份符号指定为命名空间，而不是显示名称。
 
 在UI中创建作业请求时，请确保选择&#x200B;**[!UICONTROL 产品]**&#x200B;下的&#x200B;**[!UICONTROL 标识]**，以便处理存储在[!DNL Identity Service]中的数据的作业。
 
