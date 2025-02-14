@@ -3,16 +3,16 @@ title: Adobe Experience Platform产品文档中的AI助手
 description: Adobe Experience Platform中的AI助手入门。
 feature: AI Assistant
 exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
-source-git-commit: 9a10db0da1985c5ccaaeb84e040eea9e76ec1ae4
+source-git-commit: 49c06a1dfb3431ce8fe416d35a22567ce614107a
 workflow-type: tm+mt
-source-wordcount: '899'
-ht-degree: 1%
+source-wordcount: '902'
+ht-degree: 0%
 
 ---
 
 # Adobe Experience Platform产品文档中的AI助手
 
-Adobe Experience Platform中的AI Assistant是一款对话工具，可用于通过Experience Platform应用程序和服务加速您的工作流程。 使用AI Assistant提高您的整体工作效率，加深您对产品知识和运营洞察的了解，并收集与查询和业务用例相关的建议。
+Adobe Experience Platform中的AI Assistant是一个对话工具，可用于加快您的Experience Platform应用程序和服务工作流程。 使用AI Assistant提高您的整体工作效率，加深您对产品知识和运营洞察的了解，并收集与查询和业务用例相关的建议。
 
 AI Assistant支持Experience Platform、Real-Time CDP、Adobe Journey Optimizer和Customer Journey Analytics。
 
@@ -41,7 +41,6 @@ AI Assistant支持Experience Platform、Real-Time CDP、Adobe Journey Optimizer�
     <td align="center"><a href="https://experienceleague.adobe.com/en/playlists/experience-platform-get-started-with-ai-assistant"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
     </tr>
 </table>
-
 
 ## 新增功能
 
@@ -82,6 +81,21 @@ AI Assistant支持Experience Platform、Real-Time CDP、Adobe Journey Optimizer�
 [![图像](../rtcdp/assets/do-not-localize/learn-more-button.svg)](./new-features/customer-support.md)
 
 >[!ENDTABS]
+
+## AI Assistant的安全功能 {#security}
+
+
+观看以下视频，了解有关AI Assistant安全功能的更多信息：
+
+>[!VIDEO](https://video.tv.adobe.com/v/3441066/?learn=on)
+
+>[!BEGINSHADEBOX]
+
+**阅读AI Assistant安全情况说明书**
+
+有关AI助手的详细信息，请阅读[Adobe Experience Platform中AI助手的安全情况说明书](https://www.adobe.com/content/dam/cc/en/trust-center/ungated/whitepapers/experience-cloud/adobe-ai-assistant-in-aep-security-fact-sheet.pdf)。
+
+>[!ENDSHADEBOX]
 
 ## 视频库
 
@@ -183,20 +197,6 @@ AI Assistant支持Experience Platform、Real-Time CDP、Adobe Journey Optimizer�
 * [了解受众的AI助手](https://www.youtube.com/live/DYsyii7ldck)
 
 >[!ENDTABS]
-
-## 其他资源
-
->[!BEGINSHADEBOX]
-
-**阅读AI Assistant安全情况说明书**
-
-有关AI助手的详细信息，请阅读[Adobe Experience Platform中AI助手的安全情况说明书](https://www.adobe.com/content/dam/cc/en/trust-center/ungated/whitepapers/experience-cloud/adobe-ai-assistant-in-aep-security-fact-sheet.pdf)。
-
->[!ENDSHADEBOX]
-
-观看以下视频，了解有关AI Assistant安全功能的更多信息：
-
->[!VIDEO](https://video.tv.adobe.com/v/3441066/?learn=on)
 
 浏览以下链接，以进一步了解AI Assistant用例、功能等。
 
