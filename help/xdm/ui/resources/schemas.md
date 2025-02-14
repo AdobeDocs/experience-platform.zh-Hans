@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中创建和编辑架构
 description: 了解如何在Experience Platform用户界面中创建和编辑架构的基础知识。
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 24b26e256fb346ccd1a03984f3e0d199c640159c
+source-git-commit: 9691ce1ca560acce7a9512df7eb92e61962bc467
 workflow-type: tm+mt
 source-wordcount: '4072'
 ht-degree: 1%
@@ -159,7 +159,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
-在架构编辑器中，标准(Adobe生成的)类和字段组以挂锁图标（![A挂锁图标）表示。](/help/images/icons/lock-closed.png)的问题。挂锁显示在左边栏中的类或字段组名称旁边，以及架构图中作为系统生成资源一部分的任意字段旁边。
+在架构编辑器中，标准(Adobe生成的)类和字段组以挂锁图标![挂锁图标表示。](/help/images/icons/lock-closed.png)的问题。挂锁显示在左边栏中的类或字段组名称旁边，以及架构图中作为系统生成资源一部分的任意字段旁边。
 >
 ![带有挂锁图标的架构编辑器突出显示](../../images/ui/explore/schema-editor-padlock-icon.png)
 
