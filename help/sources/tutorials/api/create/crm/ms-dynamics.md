@@ -1,29 +1,28 @@
 ---
-keywords: Experience Platform；主页；热门主题；Microsoft Dynamics；Microsoft Dynamics；Dynamics；Dynamics
-solution: Experience Platform
 title: 使用流服务API创建Microsoft Dynamics基本连接
-type: Tutorial
-description: 了解如何使用Flow Service API将Platform连接到Microsoft Dynamics帐户。
+description: 了解如何使用流服务API将Platform连接到Microsoft Dynamics帐户。
 exl-id: 423c6047-f183-4d92-8d2f-cc8cc26647ef
-source-git-commit: d22c71fb77655c401f4a336e339aaf8b3125d1b6
+source-git-commit: bda26fa4ecf4f54cb36ffbedf6a9aa13faf7a09d
 workflow-type: tm+mt
-source-wordcount: '728'
+source-wordcount: '1102'
 ht-degree: 3%
 
 ---
 
-# 使用[!DNL Flow Service] API创建[!DNL Microsoft Dynamics]基本连接
+# 使用[!DNL Flow Service] API将[!DNL Microsoft Dynamics]连接到Experience Platform
 
-基本连接表示源和Adobe Experience Platform之间的已验证连接。
-
-本教程将指导您完成使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)为[!DNL Microsoft Dynamics]（以下称为“[!DNL Dynamics]”）创建基础连接的步骤。
+阅读本指南，了解如何使用[[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/)将您的[!DNL Microsoft Dynamics]源连接到Adobe Experience Platform。
 
 ## 快速入门
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
-* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../../../sandboxes/home.md)： Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+
+### 使用平台API
+
+有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../../landing/api-guide.md)指南。
 
 以下部分提供了使用[!DNL Flow Service] API成功将Platform连接到Dynamics帐户所需了解的其他信息。
 
@@ -52,29 +51,15 @@ ht-degree: 3%
 
 有关入门的详细信息，请参阅[此 [!DNL Dynamics] 文档](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/authenticate-oauth)。
 
-### 使用平台API
-
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../../landing/api-guide.md)指南。
-
 ## 创建基本连接
 
 >[!TIP]
 >
 >创建后，无法更改[!DNL Dynamics]基本连接的身份验证类型。 要更改身份验证类型，必须创建新的基本连接。
 
-基本连接会保留您的源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
+基本连接会保留源与Experience Platform之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-要创建基本连接ID，请在提供[!DNL Dynamics]身份验证凭据作为POST参数的一部分时，向`/connections`端点请求请求。
-
-### 创建[!DNL Dynamics]基本连接
-
->[!TIP]
->
->创建后，无法更改[!DNL Dynamics]基本连接的身份验证类型。 要更改身份验证类型，必须创建新的基本连接。
-
-创建源连接的第一步是验证您的[!DNL Dynamics]源并生成基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并识别要摄取的特定项目，包括有关其数据类型和格式的信息。
-
-要创建基本连接ID，请在提供[!DNL Dynamics]身份验证凭据作为POST参数的一部分时，向`/connections`端点请求请求。
+要创建基本连接ID，请在提供您的[!DNL Dynamics]身份验证凭据作为请求参数的一部分时，向`/connections`端点发出POST请求。
 
 **API格式**
 
@@ -88,32 +73,36 @@ POST /connections
 
 要使用基本身份验证创建[!DNL Dynamics]基本连接，请在提供连接的`serviceUri`、`username`和`password`的值时向[!DNL Flow Service] API发出POST请求。
 
-+++请求
+**请求**
+
+以下请求使用基本身份验证为[!DNL Dynamics]源创建基本连接。
+
++++选择以查看请求示例
 
 ```shell
 curl -X POST \
-    'https://platform.adobe.io/data/foundation/flowservice/connections' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -H 'Content-Type: application/json' \
-    -d '{
-        "name": "Dynamics connection",
-        "description": "Dynamics connection using basic auth",
-        "auth": {
-            "specName": "Basic Authentication for Dynamics-Online",
-            "params": {
-                "serviceUri": "{SERVICE_URI}",
-                "username": "{USERNAME}",
-                "password": "{PASSWORD}"
-            }
-        },
-        "connectionSpec": {
-            "id": "38ad80fe-8b06-4938-94f4-d4ee80266b07",
-            "version": "1.0"
-        }
-    }'
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Dynamics connection",
+      "description": "Dynamics connection using basic auth",
+      "auth": {
+          "specName": "Basic Authentication for Dynamics-Online",
+          "params": {
+              "serviceUri": "{SERVICE_URI}",
+              "username": "{USERNAME}",
+              "password": "{PASSWORD}"
+          }
+      },
+      "connectionSpec": {
+          "id": "38ad80fe-8b06-4938-94f4-d4ee80266b07",
+          "version": "1.0"
+      }
+  }'
 ```
 
 | 属性 | 描述 |
@@ -125,9 +114,11 @@ curl -X POST \
 
 +++
 
-+++响应
+**响应**
 
-成功的响应返回新创建的连接，包括其唯一标识符(`id`)。 在下一步中探索您的CRM系统时需要此ID。
+成功的响应返回新创建的基本连接，包括其唯一标识符(`id`)。
+
++++选择以查看响应示例
 
 ```json
 {
@@ -140,9 +131,13 @@ curl -X POST \
 
 >[!TAB 基于服务主体密钥的身份验证]
 
-要使用基于服务主体密钥的身份验证创建[!DNL Dynamics]基本连接，请向[!DNL Flow Service] API发出POST请求，同时为您连接的`serviceUri`、`servicePrincipalId`和`servicePrincipalKey`提供值。
+要使用基于服务主体密钥的身份验证创建[!DNL Dynamics]基本连接，请在提供连接的`serviceUri`、`servicePrincipalId`和`servicePrincipalKey`的值时向[!DNL Flow Service] API发出POST请求。
 
-+++请求
+**请求**
+
+以下请求使用基于基本服务主体密钥的身份验证为[!DNL Dynamics]源创建基本连接。
+
++++选择以查看请求示例
 
 ```shell
 curl -X POST \
@@ -179,9 +174,11 @@ curl -X POST \
 
 +++
 
-+++响应
+**响应**
 
-成功的响应返回新创建的连接，包括其唯一标识符(`id`)。 在下一步中探索您的CRM系统时需要此ID。
+成功的响应返回新创建的连接，包括其唯一标识符(`id`)。
+
++++选择以查看响应示例
 
 ```json
 {
@@ -194,6 +191,396 @@ curl -X POST \
 
 >[!ENDTABS]
 
+## 浏览您的数据表
+
+要浏览[!DNL Dynamics]数据表，请向`/connections/{BASE_CONNECTION_ID}/explore`端点发出GET请求，并提供您的基本连接ID作为查询参数的一部分。
+
+**API格式**
+
+```http
+GET /connections/{BASE_CONNECTION_ID}/explore?objectType=root
+```
+
+| 查询参数 | 描述 |
+| --- | --- |
+| `{BASE_CONNECTION_ID}` | 基本连接的ID。 使用此ID浏览源的内容和结构。 |
+
+**请求**
+
+以下请求检索具有基础连接ID的[!DNL Dynamics]源的可用表和视图列表： `dd668808-25da-493f-8782-f3433b976d1e`。
+
++++选择以查看请求示例
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/flowservice/connections/dd668808-25da-493f-8782-f3433b976d1e/explore?objectType=root' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+```
+
++++
+
+**响应**
+
+成功的响应返回根级别的[!DNL Dynamics]表和视图目录。
+
++++选择以查看响应示例
+
+```json
+[
+    {
+        "type": "table",
+        "name": "systemuserlicenses",
+        "path": "systemuserlicenses",
+        "canPreview": true,
+        "canFetchSchema": true
+    },
+    {
+        "type": "table",
+        "name": "Process Dependency",
+        "path": "workflowdependency",
+        "canPreview": true,
+        "canFetchSchema": true
+    },
+    {
+        "type": "view",
+        "name": "accountView1",
+        "path": "accountView1",
+        "canPreview": true,
+        "canFetchSchema": true
+    },
+    {
+        "type": "view",
+        "name": "Inactive_ACC_custom",
+        "path": "Inactive_ACC_custom",
+        "canPreview": true,
+        "canFetchSchema": true
+    }
+]
+```
+
++++
+
+
+## 检查表的结构
+
+要检查特定表的结构，请向`/connections/{BASE_CONNECTION_ID}/explore`发出GET请求，并将特定表的路径作为查询参数提供。
+
+**API格式**
+
+```http
+GET /connections/{BASE_CONNECTION_ID}/explore?object={TABLE_PATH}&objectType=table
+```
+
+| 查询参数 | 描述 |
+| --- | --- |
+| `{BASE_CONNECTION_ID}` | 基本连接的ID。 使用此ID浏览源的内容和结构。 |
+| `{TABLE_PATH}` | 要浏览的特定表的路径。 |
+
+**请求**
+
+以下请求检索路径为`workflowdependency`的[!DNL Dynamics]表的结构和内容。
+
++++选择以查看请求示例
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/flowservice/connections/dd668808-25da-493f-8782-f3433b976d1e/explore?object=workflowdependency&objectType=table' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+```
+
++++
+
+**响应**
+
+成功的响应返回路径`workflowdependency`的内容。
+
++++选择以查看响应示例
+
+```json
+{
+    "format": "flat",
+    "schema": {
+        "columns": [
+            {
+                "name": "first_name",
+                "type": "string",
+                "meta": {
+                    "originalType": "String"
+                }
+            },
+            {
+                "name": "last_name",
+                "type": "string",
+                "meta": {
+                    "originalType": "String"
+                }
+            },
+            {
+                "name": "email",
+                "type": "string",
+                "meta": {
+                    "originalType": "String"
+                }
+            }
+        ]
+    }
+}
+```
+
++++
+
+## 检查视图的结构
+
+在[!DNL Dynamics]中，视图是指要显示的列、每列的宽度、对记录列表进行排序的默认系统以及应用于限制列表中将显示哪些记录的默认筛选器。
+
+要检查视图的结构，请向`/connections/{BASE_CONNECTION_ID}/explore`发出GET请求，并在查询参数中指定视图路径。 此外，您必须将`objectType`指定为`view`。
+
+**API格式**
+
+```http
+GET /connections/{BASE_CONNECTION_ID}/explore?object={VIEW_PATH}&objectType=view
+```
+
+| 查询参数 | 描述 |
+| --- | --- |
+| `{BASE_CONNECTION_ID}` | 基本连接的ID。 使用此ID浏览源的内容和结构。 |
+| `{VIEW_PATH}` | 要检查的视图的路径。 |
+
+**请求**
+
+以下请求检索`accountView1`。
+
++++选择以查看请求示例
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/flowservice/connections/dd668808-25da-493f-8782-f3433b976d1e/explore?object=accountView1&objectType=view' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+```
+
++++
+
+**响应**
+
+成功的响应返回`accountView1`的结构。
+
++++选择以查看响应示例
+
+```json
+{
+    "format": "flat",
+    "schema": {
+        "columns": [
+            {
+                "name": "name",
+                "type": "string",
+                "meta": {
+                    "originalType": "string"
+                },
+                "xdm": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "fetchxml",
+                "type": "string",
+                "meta": {
+                    "originalType": "string"
+                },
+                "xdm": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "querytype",
+                "type": "integer",
+                "meta": {
+                    "originalType": "int"
+                },
+                "xdm": {
+                    "type": "integer",
+                    "minimum": -2147483648,
+                    "maximum": 2147483647
+                }
+            },
+            {
+                "name": "userqueryid",
+                "type": "string",
+                "meta": {
+                    "originalType": "guid"
+                },
+                "xdm": {
+                    "type": "string"
+                }
+            }
+        ]
+    }
+}
+```
+
++++
+
+## 预览实体类型视图
+
+要预览视图的内容，请向`/connections/{BASE_CONNECTION_ID}/explore`发出GET请求，并在查询参数中包含视图路径和`preview=true`。
+
+**API格式**
+
+```http
+GET /connections/{BASE_CONNECTION_ID}/explore?object={VIEW_PATH}&preview=true&objectType=view
+```
+
+| 查询参数 | 描述 |
+| --- | --- |
+| `{BASE_CONNECTION_ID}` | 基本连接的ID。 使用此ID浏览源的内容和结构。 |
+| `{VIEW_PATH}` | 要检查的视图的路径。 |
+
+
+**请求**
+
+以下请求预览`accountView1`的内容。
+
++++选择以查看请求示例
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/flowservice/connections/dd668808-25da-493f-8782-f3433b976d1e/explore?object=accountView1&preview=true&objectType=view' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+```
+
++++
+
+**响应**
+
+成功的响应返回`accountView1`的内容。
+
++++选择以查看响应示例
+
+```json
+{
+    "format": "flat",
+    "schema": {
+        "columns": [
+            {
+                "name": "emailaddress1",
+                "type": "string",
+                "meta": {
+                    "originalType": "string"
+                },
+                "xdm": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "contactid",
+                "type": "string",
+                "meta": {
+                    "originalType": "guid"
+                },
+                "xdm": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "fullname",
+                "type": "string",
+                "meta": {
+                    "originalType": "string"
+                },
+                "xdm": {
+                    "type": "string"
+                }
+            }
+        ]
+    },
+    "data": [
+        {
+            "contactid": "396e19de-0852-ec11-8c62-00224808a1df",
+            "fullname": "Tim Barr",
+            "emailaddress1": "barrtim@googlemedia.com"
+        }
+    ]
+}
+```
+
++++
+
+## 创建源连接以摄取视图
+
+要创建源连接并摄取视图，请对`/sourceConnections`端点发出POST请求，提供表名称，并在请求正文中将`entityType`指定为`view`。
+
+**API格式**
+
+```http
+POST /sourceConnections
+```
+
+**请求**
+
+以下请求创建[!DNL Dynamics]源连接并摄取视图。
+
++++选择以查看请求示例
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Dynamics Source Connection",
+      "description": "Dynamics Source Connection",
+      "baseConnectionId": "dd668808-25da-493f-8782-f3433b976d1e",
+      "data": {
+          "format": "tabular",
+          "schema": null,
+          "properties": null
+      },
+      "params": {
+          "tableName": "Contacts with name TIM",
+          "entityType": "view"
+      },
+      "connectionSpec": {
+          "id": "38ad80fe-8b06-4938-94f4-d4ee80266b07",
+          "version": "1.0"
+      }
+  }'
+```
+
++++
+
+**响应**
+
+成功的响应会返回新生成的源连接ID及其相应的电子标记。
+
++++选择以查看响应示例
+
+```json
+{
+    "id": "e566bab3-1b58-428c-b751-86b8cc79a3b4",
+    "etag": "\"82009592-0000-0200-0000-678121030000\""
+}
+```
+
++++
 
 ## 后续步骤
 
