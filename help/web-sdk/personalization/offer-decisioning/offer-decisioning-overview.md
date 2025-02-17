@@ -1,22 +1,18 @@
 ---
-title: 在Platform Web SDK中使用Offer Decisioning
-description: Adobe Experience Platform Web SDK可以投放和呈现Offer Decisioning托管的个性化优惠。 您可以使用Offer decisioningUI或API创建优惠和其他相关对象。
-keywords: offer decisioning；决策；Web SDK；Platform Web SDK；个性化优惠；投放优惠；优惠投放；优惠个性化；
+title: 将Offer Decisioning与Platform Web SDK一起使用
+description: Adobe Experience Platform Web SDK可以交付和呈现Offer Decisioning中管理的个性化优惠。 您可以使用Offer Decisioning UI或API创建优惠和其他相关对象。
+keywords: offer decisioning；decisioning；Web SDK；Platform Web SDK；个性化优惠；投放优惠；优惠投放；优惠个性化；
 exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
-source-git-commit: 22477c11a977059849d9b47871a5c2aef1da4b24
+source-git-commit: b2c3b1160782a81ea66f42e21e494e0a7d90e037
 workflow-type: tm+mt
-source-wordcount: '818'
+source-wordcount: '791'
 ht-degree: 3%
 
 ---
 
-# 在Platform Web SDK中使用Offer Decisioning
+# 将Offer Decisioning与Platform Web SDK一起使用
 
->[!NOTE]
->
->可在Adobe Experience Platform Web SDK中使用Offer decisioning提前访问选定的用户。 此功能并非对所有组织都可用。
-
-Adobe Experience Platform [!DNL Web SDK]可以投放和渲染在Offer decisioning中管理的个性化优惠。 您可以使用Offer decisioning用户界面(UI)或API创建优惠和其他相关对象。
+Adobe Experience Platform [!DNL Web SDK]可以投放和渲染在Offer Decisioning中管理的个性化优惠。 您可以使用Offer Decisioning用户界面(UI)或API创建优惠和其他相关对象。
 
 ## 先决条件
 
@@ -26,9 +22,9 @@ Adobe Experience Platform [!DNL Web SDK]可以投放和渲染在Offer decisionin
 
 ## 术语
 
-在使用Offer decisioning时，请务必了解以下术语。 有关更多信息和查看其他术语，请访问[Offer decisioning术语表](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/glossary.html)。
+在使用Offer Decisioning时，请务必了解以下术语。 有关更多信息和查看更多术语，请访问[Offer Decisioning术语表](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/glossary.html)。
 
-* **决策范围：**&#x200B;对于Offer decisioning，决策范围是JSON的Base64编码字符串，其中包含希望offer decisioning服务用来建议优惠的活动和版面ID。
+* **决策范围：**&#x200B;对于Offer Decisioning，决策范围是JSON的Base64编码字符串，其中包含您希望优惠决策服务用来建议优惠的活动和版面ID。
 
   *决策范围JSON：*
 
@@ -53,20 +49,20 @@ Adobe Experience Platform [!DNL Web SDK]可以投放和渲染在Offer decisionin
 
 * **数据流：**&#x200B;有关详细信息，请阅读[数据流](/help/datastreams/overview.md)文档。
 
-* **标识**：有关详细信息，请阅读此文档，其中概述了[Platform Web SDK如何使用标识服务](../../identity/overview.md)。
+* **标识**：有关详细信息，请阅读此文档，其中概述了[平台Web SDK如何使用标识服务](../../identity/overview.md)。
 
-## 启用Offer decisioning
+## 启用Offer Decisioning
 
-要启用Offer decisioning，请执行以下步骤：
+要启用Offer Decisioning，请执行以下步骤：
 
-1. 已在[数据流](/help/datastreams/overview.md)中启用Adobe Experience Platform并选中“Offer decisioning”框
+1. 已在[数据流](/help/datastreams/overview.md)中启用Adobe Experience Platform并选中“Offer Decisioning”框
 
    ![offer-decisioning-edge-config](./assets/offer-decisioning-edge-config.png)
 
-1. 按照[安装SDK](/help/web-sdk/install/overview.md)的说明进行操作（SDK可以独立安装，也可以通过UI进行安装）。 有关详细信息，请参阅[标记快速入门指南](/help/tags/quick-start/quick-start.md)。
-1. 配置SDK以使用`personalization.decisionScopes`进行Offer decisioning。 下面提供了其他特定于Offer decisioning的步骤。
+1. 按照说明[安装SDK](/help/web-sdk/install/overview.md) (SDK可以独立安装，也可以通过UI安装。 有关详细信息，请参阅[标记快速入门指南](/help/tags/quick-start/quick-start.md)。
+1. 使用`personalization.decisionScopes`为Offer Decisioning配置SDK。 下面提供了其他Offer Decisioning特定步骤。
 
-   * 安装独立SDK
+   * 安装独立的SDK
 
       1. 使用`personalization.decisionScopes`配置“sendEvent”操作
 
@@ -332,4 +328,4 @@ Adobe Experience Platform [!DNL Web SDK]可以投放和渲染在Offer decisionin
 
 ## 限制
 
-移动Edge Network工作流当前不支持某些优惠限制，例如上限。 “上限”字段值指定选件在所有用户中显示的次数。 有关更多详细信息，请参阅[优惠资格规则和约束文档](https://experienceleague.adobe.com/docs/offer-decisioning/using/managing-offers-in-the-offer-library/creating-personalized-offers.html#eligibility)。
+当前移动设备Edge Network工作流不支持某些优惠限制，例如上限。 “上限”字段值指定选件在所有用户中显示的次数。 有关更多详细信息，请参阅[优惠资格规则和约束文档](https://experienceleague.adobe.com/docs/offer-decisioning/using/managing-offers-in-the-offer-library/creating-personalized-offers.html#eligibility)。
