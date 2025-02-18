@@ -7,7 +7,7 @@ exl-id: 7e363adc-628c-4a66-a3bd-b5b898292394
 source-git-commit: 74980c6108a32ec6736ab5892d89590e04e8a500
 workflow-type: tm+mt
 source-wordcount: '1593'
-ht-degree: 3%
+ht-degree: 7%
 
 ---
 
@@ -25,7 +25,7 @@ ht-degree: 3%
 
 本教程需要您实际了解以下平台组件：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM)] 系统](../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构编辑器教程](../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
 * [Adobe Experience Platform分段服务](../../segmentation/home.md)： [!DNL Platform]中的分段引擎用于根据客户行为和属性从客户配置文件创建受众区段。
@@ -49,7 +49,7 @@ ht-degree: 3%
 
 ## 权限
 
-[!UICONTROL 权限]是Experience Cloud区域，管理员可以在其中定义用户角色和策略，以管理产品应用程序内功能和对象的权限。
+[!UICONTROL 权限]是Experience Cloud的区域，管理员可以在其中定义用户角色和策略，以管理产品应用程序内功能和对象的权限。
 
 通过[!UICONTROL 权限]，您可以创建和管理角色，并为这些角色分配所需的资源权限。 [!UICONTROL 权限]还允许您管理与特定角色关联的标签、沙盒和用户。
 
@@ -66,7 +66,7 @@ Platform UI的权限工作区随即出现，并在&#x200B;**[!UICONTROL 概述]*
 >[!CONTEXTUALHELP]
 >id="platform_permissions_labels_about"
 >title="标签是什么？"
->abstract="使用标签可根据应用于该数据的使用情况和访问策略对数据集和字段进行分类。 Platform提供了多个Adobe定义的<strong>核心</strong>数据使用标签，这些标签涵盖了适用于数据治理的各种常见限制。 例如，敏感的<strong>S</strong>标签(如RHD（法规化的健康数据）)允许您对引用受保护的健康信息(PHI)的数据进行分类。 还可自行定义适合组织需求的自定义标签。"
+>abstract="使用标签，可根据适用于数据的使用及访问策略将数据集和字段分类。Platform 提供若干由 Adobe 定义的<strong>核心</strong>数据使用标签，这些标签涵盖适用于数据治理的多种常见限制。例如，通过 RHD（受监管的健康数据）等敏感的 <strong>S</strong> 标签，可将涉及受保护的健康信息 (PHI) 的数据分类。还可自行定义适合组织需求的自定义标签。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html#understanding-data-usage-labels" text="数据使用标签概述"
 
 角色是对与Platform实例交互的用户类型进行分类的方法，是访问控制策略的构建块。 角色具有给定的权限集，组织的成员可以根据所需的访问范围分配给一个或多个角色。
@@ -93,7 +93,7 @@ Platform UI的权限工作区随即出现，并在&#x200B;**[!UICONTROL 概述]*
 
 从顶部导航中，选择由![应用程序切换器](/help/images/icons/apps.png)图标表示的&#x200B;**应用程序切换器**，然后选择&#x200B;**[!UICONTROL Experience Platform]**。
 
-![显示从应用程序切换器的下拉菜单中选择Experience Platform的图像](../images/abac-end-to-end-user-guide/abac-select-experience-platform.png)
+![显示正在从应用程序切换器的下拉菜单中选择Experience Platform的图像](../images/abac-end-to-end-user-guide/abac-select-experience-platform.png)
 
 从左侧导航中选择&#x200B;**[!UICONTROL 架构]**，然后从显示的架构列表中选择&#x200B;**[!UICONTROL ACME Healthcare]**。
 

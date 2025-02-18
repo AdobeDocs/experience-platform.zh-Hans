@@ -6,22 +6,22 @@ exl-id: 85699716-339d-4992-8390-95563c7ea7fe
 source-git-commit: 74980c6108a32ec6736ab5892d89590e04e8a500
 workflow-type: tm+mt
 source-wordcount: '618'
-ht-degree: 7%
+ht-degree: 23%
 
 ---
 
 # 管理角色
 
-角色定义了管理员、专家或最终用户对组织中资源的访问权限。 在基于角色的访问控制环境中，用户访问设置是通过共同的责任和需求进行分组的。 一个角色具有一组给定的权限，可将您组织的成员分配给一个或多个角色，具体取决于他们需要的查看或写入访问权限的范围。
+角色定义了管理员、专家或最终用户对组织中的资源的访问权限。在基于角色的访问控制环境中，用户访问设置是通过共同的责任和需求进行分组的。 一个角色具有一组给定的权限，可将您组织的成员分配给一个或多个角色，具体取决于他们需要的查看或写入访问权限的范围。
 
 ## 创建新角色 {#create-new-role}
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_roles_about_create"
 >title="创建新角色"
->abstract="创建新角色以更好地对与Platform实例交互的用户进行分类。 例如，您可以为内部营销团队创建一个角色，并将管控的健康数据(RHD)标签应用于该角色，从而允许内部营销团队访问受保护的健康信息(PHI)。 或者，您也可以为外部机构创建角色，并通过不将RHD标签应用于该角色来拒绝该角色访问PHI数据。"
+>abstract="创建新角色以更好地对与您的平台实例交互的用户进行分类。例如，可为内部营销团队创建一个角色，并将受监管的健康数据 (RHD) 标签应用于该角色，使您的内部营销团队可访问受保护的健康信息 (PHI)。或者，还可为外部机构创建一个角色，并通过不将 RHD 标签应用于该角色而拒绝该角色访问 PHI 数据。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html" text="管理角色"
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/end-to-end-guide#label-roles" text="将标签应用于角色"
+>additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/abac/end-to-end-guide#label-roles" text="将标签应用于角色"
 
 要创建新角色，请选择侧边栏中的&#x200B;**[!UICONTROL 角色]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 创建角色]**。
 

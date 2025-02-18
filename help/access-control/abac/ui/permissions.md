@@ -6,23 +6,23 @@ exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
 source-git-commit: 207317d16a21cc2461ebd3f7867735735227c173
 workflow-type: tm+mt
 source-wordcount: '1608'
-ht-degree: 4%
+ht-degree: 11%
 
 ---
 
-# 管理角色的权限 {#manage-role-permissions}
+# 管理角色权限 {#manage-role-permissions}
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_roles_about"
 >title="角色是什么？"
->abstract="角色定义了管理员、专家或最终用户对组织中资源的访问权限。 它们会对与Platform实例交互的用户进行分类，并且是访问控制策略的构建块。 一个角色具有一组给定的权限，可将您组织的成员分配给一个或多个角色，具体取决于他们需要的查看或写入访问权限的范围。"
+>abstract="角色定义了管理员、专家或最终用户对组织中的资源的访问权限。它们将与您的 Platform 实例交互的用户分类，是访问控制策略的构建基块。一个角色具有一组给定的权限，可将您组织的成员分配给一个或多个角色，具体取决于他们需要的查看或写入访问权限的范围。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html" text="管理角色"
 
 >[!IMPORTANT]
 >
->访问控制使用用户ID（分配给用户的内部唯一ID）来授予权限。 当组织从Adobe ID迁移到Business ID时，为其用户设置的所有权限将丢失，因为用户ID发生更改，访问控制将使用新生成的用户ID。 如果贵组织迁移到Business ID，请联系您的Adobe代表以将用户ID从Adobe ID迁移到Business ID。
+>访问控制使用用户ID（分配给用户的内部唯一ID）来授予权限。 当组织从Adobe ID迁移到Business ID时，为其用户设置的所有权限将丢失，因为用户ID发生更改，访问控制将使用新生成的用户ID。 如果贵组织迁移到Business ID，请联系Adobe代表以将用户ID从Adobe ID迁移到Business ID。
 
-权限是Experience Cloud的区域，管理员可以在其中定义用户角色和访问策略，以管理产品应用程序中功能和对象的访问权限。
+权限是Experience Cloud中的一个区域，管理员可以在该区域中定义用户角色和访问策略，以管理产品应用程序中功能和对象的访问权限。
 
 通过权限，您可以创建和管理角色，并为这些角色分配所需的资源权限。 权限还允许您管理与特定角色关联的标签、沙盒和用户。
 
@@ -52,9 +52,9 @@ ht-degree: 4%
 >[!CONTEXTUALHELP]
 >id="platform_permissions_roles_details"
 >title="角色概述"
->abstract="角色概述对话框显示角色的详细信息，包括给定角色有权访问的资源和沙盒。 您可以通过导航到角色工作区中的相应选项卡，来管理角色的标签、用户、用户组和API凭据。"
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/permissions#manage-labels-for-a-role" text="管理角色的标签"
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/permissions#manage-users-for-a-role" text="管理角色的用户"
+>abstract="角色概述对话框显示角色的详细信息，包括允许给定角色访问的资源和沙盒。您可以通过导航到角色工作区内的相应选项卡来管理角色的标签、用户、用户组和 API 凭据。"
+>additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/abac/permissions-ui/permissions#manage-labels-for-a-role" text="管理角色的标签"
+>additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/abac/permissions-ui/permissions#manage-users-for-a-role" text="管理角色的用户"
 
 从&#x200B;**[!UICONTROL 角色]**&#x200B;选项卡中选择角色，这将打开角色的[!UICONTROL 详细信息]仪表板。
 
@@ -124,7 +124,7 @@ ht-degree: 4%
 >
 > 要在[!UICONTROL 权限]中使用和管理API凭据，用户必须具有系统管理员权限。
 
-要以用户或开发人员身份使用Experience PlatformAPI，系统管理员需要在角色的给定权限集之外添加API凭据。 有关创建和分配API凭据以及所需权限的完整指南，请参阅[身份验证和访问Experience PlatformAPI](../../../landing/api-authentication.md#generate-credentials)中的分步教程。
+要以用户或开发人员身份使用Experience Platform API，系统管理员需要在角色的给定权限集之外添加API凭据。 有关创建和分配API凭据以及所需权限的完整指南，请参阅[身份验证和访问Experience Platform API](../../../landing/api-authentication.md#generate-credentials)中的分步教程。
 
 选择&#x200B;**[!UICONTROL API凭据]**&#x200B;选项卡以打开角色API凭据工作区，然后选择&#x200B;**[!UICONTROL 添加API凭据]**&#x200B;以将API凭据分配给角色。
 

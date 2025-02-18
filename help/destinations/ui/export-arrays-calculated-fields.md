@@ -6,7 +6,7 @@ exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
 source-git-commit: 546ef0f9a5a9c37de3891aba02491540a5c6f8c9
 workflow-type: tm+mt
 source-wordcount: '1730'
-ht-degree: 5%
+ht-degree: 8%
 
 ---
 
@@ -34,9 +34,9 @@ ht-degree: 5%
 
 ## Platform中的数组和其他对象类型 {#arrays-strings-other-objects}
 
-在Experience Platform中，您可以使用[XDM架构](/help/xdm/home.md)管理不同的字段类型。 在添加对数组导出的支持之前，您可以将简单的键值对类型字段(如字符串不Experience Platform)导出到所需的目标。 以前支持导出的此类字段示例为`personalEmail.address`：`johndoe@acme.org`。
+在Experience Platform中，您可以使用[XDM架构](/help/xdm/home.md)管理不同的字段类型。 在添加对数组导出的支持之前，您可以将简单的键值对类型字段(例如Experience Platform中的字符串)导出到所需的目标。 以前支持导出的此类字段示例为`personalEmail.address`：`johndoe@acme.org`。
 
-Experience Platform中的其他字段类型包括数组字段。 阅读有关Experience PlatformUI](/help/xdm/ui/fields/array.md)中[管理数组字段的更多信息。 除了以前支持的字段类型之外，您现在还可以使用`array_to_string`函数将数组对象（如下面的示例）导出为字符串。
+Experience Platform中的其他字段类型包括数组字段。 阅读有关[在Experience Platform UI](/help/xdm/ui/fields/array.md)中管理数组字段的更多信息。 除了以前支持的字段类型之外，您现在还可以使用`array_to_string`函数将数组对象（如下面的示例）导出为字符串。
 
 ```
 organizations = [{
@@ -84,13 +84,13 @@ organizations = [{
 >[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_calculated_field_disabled"
 >title="添加计算字段已禁用"
->abstract="此控件已禁用，因为您在设置此目标连接时选择了&#x200B;**导出数组、映射、对象**&#x200B;切换&#x200B;*开启*。 若要使用中可用的计算字段和函数，请使用&#x200B;**导出数组、映射、对象**&#x200B;切换&#x200B;*关*&#x200B;来设置新的目标连接。"
+>abstract="此控件已被禁用，因为您在设置此目标连接时选择了将&#x200B;**导出数组、映射、对象** 切换为&#x200B;*开*。要使用计算字段及其中可用的功能，通过将&#x200B;**导出数组、映射、对象** 切换为&#x200B;*关*&#x200B;设置一个新的目标连接。"
 
 在云存储目标的激活工作流的映射步骤中，选择&#x200B;**[!UICONTROL 添加计算字段]**。
 
 ![添加在批处理激活工作流的映射步骤中突出显示的计算字段。](/help/destinations/assets/ui/export-arrays-calculated-fields/add-calculated-fields.png)
 
-这将打开一个模式窗口，您可以在其中选择用于导出属性以免Experience Platform的函数和字段。
+这将打开一个模式窗口，您可以在其中选择用于从Experience Platform中导出属性的函数和字段。
 
 ![尚未选择函数的计算字段功能的模式窗口。](/help/destinations/assets/ui/export-arrays-calculated-fields/add-calculated-fields-2.png)
 
