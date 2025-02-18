@@ -4,20 +4,20 @@ solution: Experience Platform
 title: 在UI中监视目标的数据流
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: f10706fbbde9cef112460f5431af24d09b0e0460
+source-git-commit: b814becaed88ce23527dc58f7ec056c05a48379f
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '3637'
+ht-degree: 10%
 
 ---
 
 # 在UI中监视目标的数据流
 
-使用Experience Platform目录中的各种目标，将您的数据从Platform激活到无数外部合作伙伴。 Platform通过提供数据流透明度，使跟踪流向目标的数据流的流程更加简单。
+使用Experience Platform目录中的各种目标将您的数据从Platform激活到无数外部合作伙伴。 Platform通过提供数据流透明度，使跟踪流向目标的数据流的流程更加简单。
 
 监视仪表板为您提供数据流历程的可视化表示形式，包括激活数据的目标、您查看的数据类型、每次数据流运行导出的数据等等。
 
-本教程提供了有关如何直接在目标工作区中监视数据流或者使用“监视”仪表板通过Experience Platform用户界面监视目标的数据流的说明。
+本教程提供了有关如何直接在目标工作区中监视数据流或者使用Experience Platform用户界面使用监视仪表板监视目标的数据流的说明。
 
 ## 快速入门 {#getting-started}
 
@@ -86,7 +86,7 @@ ht-degree: 0%
 
 每次数据流运行都会显示以下详细信息：
 
-- **[!UICONTROL 数据流运行开始]**：数据流运行开始的时间。 对于流式数据流运行，Experience Platform会以小时量度的形式，根据数据流运行的开始捕获量度。 这意味着对于流数据流运行，如果数据流运行在例如10:30PM开始，则量度在UI中将开始时间显示为晚上10:00。
+- **[!UICONTROL 数据流运行开始]**：数据流运行开始的时间。 对于流式数据流运行，Experience Platform会以每小时量度的形式，根据数据流运行的开始捕获量度。 这意味着对于流数据流运行，如果数据流运行在例如10:30PM开始，则量度在UI中将开始时间显示为晚上10:00。
 - **[!UICONTROL 处理时间]**：数据流运行处理所花费的时间。
    - 对于&#x200B;**[!UICONTROL 已完成]**&#x200B;的运行，处理时间量度始终显示一个小时。
    - 对于仍处于&#x200B;**[!UICONTROL 处理]**&#x200B;状态的数据流运行，捕获所有量度的窗口将保持打开超过一小时，以便处理与该数据流运行对应的所有量度。 例如，上午9:30开始的数据流运行可能会保持处理状态1小时30分钟，以捕获和处理所有量度。 然后，在处理窗口关闭且数据流运行状态更新为&#x200B;**已完成**&#x200B;后，显示的处理时间将更改为1小时。
@@ -121,7 +121,12 @@ ht-degree: 0%
 
 #### (Beta)对流式目标的受众级别数据流运行监控 {#audience-level-dataflow-runs-for-streaming-destinations}
 
-您可以查看有关在受众级别划分的激活、排除或失败身份的信息，这些信息适用于作为数据流一部分的每个受众。 流目标的受众级别监视当前仅适用于[[!DNL Google Customer Match + Display & Video 360] 目标](/help/destinations/catalog/advertising/google-customer-match-dv360.md)。
+您可以查看有关在受众级别划分的激活、排除或失败身份的信息，这些信息适用于作为数据流一部分的每个受众。
+
+流目标的受众级别监视当前仅适用于以下目标：
+
+- [[!DNL Google Customer Match + Display & Video 360]](/help/destinations/catalog/advertising/google-customer-match-dv360.md)
+- [[!DNL Marketo Engage]](/help/destinations/catalog/adobe/marketo-engage.md)
 
 ![流目标的受众级监控。](/help/dataflows/assets/ui/monitor-destinations/audience-level-monitoring-streaming.png)
 
