@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform的人工智能助手
-description: 了解如何使用AI Assistant导航和了解Experience Platform和Real-time Customer Data Platform概念以及有关您的对象的使用信息。
+description: 了解如何使用AI Assistant导航和了解Experience Platform和Real-Time Customer Data Platform概念以及有关您的对象的使用信息。
 exl-id: 3fed2b1d-75fc-47ce-98d1-a811eb8a1d8e
-source-git-commit: 0ee9135b2b303f4abcc4d5e5c7345e2bff9332f3
+source-git-commit: 4fd40d66ecc2fe7604e157fcd230883c6c48d761
 workflow-type: tm+mt
-source-wordcount: '1759'
+source-wordcount: '1734'
 ht-degree: 0%
 
 ---
@@ -13,11 +13,11 @@ ht-degree: 0%
 
 阅读本指南，了解如何在Adobe Experience Platform UI中使用AI助手。
 
-## 在Experience PlatformUI中访问AI助手
+## 在Experience Platform UI中访问AI助手
 
-要启动AI助手，请从Experience PlatformUI的顶部标题中选择&#x200B;**[!UICONTROL AI助手图标]**。
+要启动AI助手，请从Experience Platform UI的顶部标题中选择&#x200B;**[!UICONTROL AI助手图标]**。
 
-![Experience Platform主页，已选择AI助手图标并打开AI助手界面。](./images/ai-assistant-full-icon.png)
+![Experience Platform主页，选择AI助手图标并打开AI助手界面。](./images/ai-assistant-full-icon.png)
 
 此时将显示AI Assistant界面，它立即为您提供开始使用的信息。 您可以使用[!UICONTROL 想法下提供的选项来开始]，回答以下问题和命令：
 
@@ -29,23 +29,23 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->以下工作流是一个示例，它使用Experience Event架构创建过程来说明在使用Experience PlatformUI时如何使用AI Assistant。
+>以下工作流是一个示例，它使用Experience Event架构创建过程来说明如何在使用Experience Platform UI时使用AI Assistant。
 
 考虑您在事件架构&#x200B;**中创建**&#x200B;设备交易的用例。 在体验事件架构创建过程中，您遇到了`eventType`字段。 “此时，您可以选择退出工作流并参阅[架构组合基础知识](../xdm/schema/composition.md)文档，也可以使用AI助手检索问题的答案并通过AI助手推荐的文档链接查找其他资源。”
 
 首先，在提供的文本框中输入您的问题。 在下面的示例中，AI助手遇到以下问题：“**ExperienceEvent架构中的eventType字段是什么？**”
 
-![用于Experience Platform的AI助手，带有以下准备进行查询的问题：“ExperienceEvent架构中的eventType字段是什么？](./images/question.png)
+![Experience Platform的AI Assistant，带有以下准备进行查询的问题：“ExperienceEvent架构中的eventType字段是什么？](./images/question.png)
 
 然后，AI Assistant查询其知识库并计算答案。 片刻后，AI助手会返回一个答案和相关建议，您可以将其用作跟进提示。
 
-![带有上一个查询答案的Experience PlatformAI助手。](./images/answer.png)
+![带有上一个查询答案的Experience Platform AI助手。](./images/answer.png)
 
 从AI助手收到响应后，您可以从多个选项中进行选择，以确定如何继续。
 
 ### AI Assistant功能 {#features}
 
-此部分概述在Experience Platform工作流中可以使用的AI Assistant的各种功能。
+此部分概述可在Experience Platform上的工作流中使用的AI助手的各种功能。
 
 ### 查看操作数据对象 {#view-operational-data-objects}
 
@@ -87,7 +87,7 @@ AI Assistant会更新界面，并为您提供可证实初始响应的文档的�
 
 ![有关运营分析的问题。](./images/op-insights-question.png)
 
-然后，AI Assistant会使用一个表进行响应，该表列出了您的数据流及其对应的ID。 要查看整个数据表，请选择右上角的展开图标。
+然后，AI Assistant会使用一个表进行响应，该表列出了您的数据流及其对应的ID。 选择下载图标（![下载图标](/help/images/icons/download.png)）以将表下载为CSV文件。 要查看整个表，请选择展开图标（![展开图标](/help/images/icons/expand.png)）。
 
 ![操作见解答案](./images/op-insights-answer.png)
 
@@ -100,10 +100,6 @@ AI Assistant会更新界面，并为您提供可证实初始响应的文档的�
 ![AI助手提供了有关如何计算其答案的说明。](./images/answer-explained.png)
 
 您还可以提供筛选器和修改问题，并可以指示AI助手根据您包括的筛选器呈现其结果。 例如，您可以要求AI Assistant按区段定义的创建日期顺序显示区段定义计数的趋势，删除总配置文件为零的区段定义，并在显示数据时使用月名称而不是整数。
-
-**注意：**&#x200B;操作见解答案当前为测试版。 选择AI助手用户界面中的工具提示图标以查看Beta通知和文档的链接。
-
-已选择![AI助手工具提示图标。](./images/op-insights-beta-note.png)
 
 +++
 

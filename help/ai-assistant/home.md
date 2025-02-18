@@ -2,10 +2,10 @@
 title: Adobe Experience Platform中的AI助手概述
 description: 了解 AI 助手、其细微差别和用例，以及如何使用它来通过 Adobe Experience Platform 和 Real-Time Customer Data Platform 加快工作流程。
 exl-id: cfd4ac22-fff3-4b50-bbc2-85b6328f603c
-source-git-commit: 9a10db0da1985c5ccaaeb84e040eea9e76ec1ae4
+source-git-commit: e90333d09585c8aa0ef176dcfc4717e86364fd54
 workflow-type: tm+mt
-source-wordcount: '950'
-ht-degree: 14%
+source-wordcount: '927'
+ht-degree: 15%
 
 ---
 
@@ -43,7 +43,7 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 
 * 客户运营洞察。
 * 跨各种元存储区的客户运营洞察。
-* 文档Experience League。
+* Experience League文档。
 
 在查询AI Assistant之前，需要考虑两类问题：
 
@@ -55,7 +55,7 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 | --- | --- |
 | 点式学习 | <ul><li>标识与主键或外键之间有何区别？</li><li>什么是相似受众？</li></ul> |
 | 打开发现 | <ul><li>如何导出此数据集？</li><li>是否有适用于医疗保健客户的架构？</li></ul> |
-| 故障排除 | <ul><li>为何我无法打开Adobe拥有的架构以访问配置文件？</li><li>为什么无法删除区段？</li></ul> |
+| 故障排除 | <ul><li>为何我无法打开Adobe拥有的架构以获取配置文件？</li><li>为什么无法删除区段？</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -64,10 +64,6 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 >[!VIDEO](https://video.tv.adobe.com/v/3438032/?learn=on)
 
 ### 运营洞察 {#operational-insights}
-
->[!IMPORTANT]
->
->操作见解答案为测试版。 有权访问&#x200B;**查看运营分析**&#x200B;权限的任何人都有权访问运营分析答案。
 
 操作分析是指回答AI Assistant生成的有关元数据对象（属性、受众、数据流、数据集、目标、历程、架构和源）的答案，包括计数、查找和谱系影响。 它不会查看沙盒中的任何数据。
 
@@ -100,7 +96,7 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 
 目前，人工智能助理的范围如下：
 
-* [产品知识](./home.md#product-knowledge)： AI助手可以回答Experience Platform、Real-time Customer Data Platform和Adobe Journey Optimizer的产品知识问题。 您也可以深入探讨Customer Journey Analytics的产品知识主题，但只能通过Customer Journey AnalyticsUI进行探讨。
+* [产品知识](./home.md#product-knowledge)： AI助手可以回答Experience Platform、Real-Time Customer Data Platform和Adobe Journey Optimizer的产品知识问题。 您还可以深入探讨Customer Journey Analytics的产品知识主题，但只能通过Customer Journey Analytics UI进行探讨。
 * [操作分析](./home.md#operational-insights)：您可以向AI助手询问有关以下数据对象的操作分析的问题：属性、受众、数据流、数据集、目标、历程、架构和源。
 
 ## 后续步骤
