@@ -1,9 +1,9 @@
 ---
 keywords: facebook连接；facebook连接；facebook目标；facebook；instagram；messenger；facebook messenger
-title: facebook连接
+title: Facebook连接
 description: 根据散列邮件激活 Facebook 营销活动的轮廓，以实现受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 83e2c014e62509fee2843505d7975cde368665ef
+source-git-commit: 0d98183838125fac66768b94bc1993bde9a374b5
 workflow-type: tm+mt
 source-wordcount: '2091'
 ht-degree: 6%
@@ -54,8 +54,8 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -65,22 +65,25 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出具有Facebook目标中所用标识符（姓名、电话号码或其他）的受众所有成员。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出具有Facebook目标中所用标识符（姓名、电话号码或其他）的受众的所有成员。 |
+| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
-## facebook帐户先决条件 {#facebook-account-prerequisites}
+## Facebook帐户先决条件 {#facebook-account-prerequisites}
 
 在将受众发送到[!DNL Facebook]之前，请确保您满足以下要求：
 
 * 您的[!DNL Facebook]用户帐户必须具有对拥有您正在使用的广告帐户的[!DNL Facebook Business Account]的完全访问权限。
 * 您的[!DNL Facebook]用户帐户必须为计划使用的广告帐户启用&#x200B;**[!DNL Manage campaigns]**&#x200B;权限。
 * **Adobe Experience Cloud**&#x200B;商业帐户必须添加为您[!DNL Facebook Ad Account]中的广告合作伙伴。 使用`business ID=206617933627973`。 有关详细信息，请参阅Facebook文档中的[将合作伙伴添加到业务管理器](https://www.facebook.com/business/help/1717412048538897)。
+
   >[!IMPORTANT]
   >
   > 配置Adobe Experience Cloud的权限时，必须启用&#x200B;**管理营销活动**&#x200B;权限。 [!DNL Adobe Experience Platform]集成需要权限。
+
 * 阅读并签署[!DNL Facebook Custom Audiences]服务条款。 为此，请转到`https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]&business_id=206617933627973`，其中`accountID`是您的[!DNL Facebook Ad Account ID]。 签署服务条款时，确保URL中存在`business_id=206617933627973`部分。
+
   >[!IMPORTANT]
   >
   >签署[!DNL Facebook Custom Audiences]服务条款时，请确保使用您在Facebook API中用于进行身份验证的相同用户帐户。
@@ -104,7 +107,7 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 ## 电子邮件哈希处理要求 {#email-hashing-requirements}
 
-您可以在将电子邮件地址摄取到Adobe Experience Platform之前对其进行哈希处理，或者在Experience Platform中使用清晰的电子邮件地址，并在激活时对其进行[!DNL Platform]哈希处理。
+您可以在将电子邮件地址摄取到Adobe Experience Platform之前对其进行哈希处理，或者在Experience Platform中明确使用电子邮件地址，并在激活时对其进行[!DNL Platform]哈希处理。
 
 要了解如何在Experience Platform中摄取电子邮件地址，请参阅[批次摄取概述](/help/ingestion/batch-ingestion/overview.md)和[流式摄取概述](/help/ingestion/streaming-ingestion/overview.md)。
 
@@ -143,25 +146,25 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 >[!NOTE]
 >
->Experience Platform用户界面经常更新，自从录制此视频以来，该界面可能已发生更改。 有关最新信息，请参阅[目标配置教程](../../ui/connect-destination.md)。
+>Experience Platform用户界面经常更新，自从录制此视频以来，可能已经发生了变化。 有关最新信息，请参阅[目标配置教程](../../ui/connect-destination.md)。
 
 ### 验证目标 {#authenticate}
 
-1. 在目标目录中找到Facebook目标并选择&#x200B;**[!UICONTROL 设置]**。
+1. 在目标目录中查找Facebook目标，然后选择&#x200B;**[!UICONTROL 设置]**。
 2. 选择&#x200B;**[!UICONTROL 连接到目标]**。
    ![对激活工作流中显示的Facebook步骤进行身份验证。](/help/destinations/assets/catalog/social/facebook/authenticate-facebook-destination.png)
 3. 输入您的Facebook凭据并选择&#x200B;**登录**。
 
 ### 刷新身份验证凭据 {#refresh-authentication-credentials}
 
-facebook令牌每60天过期一次。 令牌过期后，数据导出到目标的操作将停止。 要防止出现这种情况，请执行以下步骤以重新进行身份验证：
+Facebook令牌每60天过期一次。 令牌过期后，数据导出到目标的操作将停止。 要防止出现这种情况，请执行以下步骤以重新进行身份验证：
 
 1. 导航到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 帐户]**
-2. （可选）使用页面上可用的过滤器以仅显示Facebook帐户。
+2. （可选）使用页面上的可用过滤器仅显示Facebook帐户。
    ![筛选以仅显示Facebook帐户](/help/destinations/assets/catalog/social/facebook/refresh-oauth-filters.png)
 3. 选择要刷新的帐户，选择省略号并选择&#x200B;**[!UICONTROL 编辑详细信息]**。
    ![选择“编辑详细信息”控件](/help/destinations/assets/catalog/social/facebook/refresh-oauth-edit-details.png)
-4. 在模式窗口中，选择&#x200B;**[!UICONTROL 重新连接OAuth]**并使用您的Facebook凭据重新进行身份验证。
+4. 在模式窗口中，选择&#x200B;**[!UICONTROL 重新连接OAuth]**并使用Facebook凭据重新进行身份验证。
    使用Reconnect OAuth选项的![模式窗口](/help/destinations/assets/catalog/social/facebook/reconnect-oauth-control.png)
 
 >[!SUCCESS]
@@ -218,7 +221,7 @@ facebook令牌每60天过期一次。 令牌过期后，数据导出到目标的
 
 在&#x200B;**[!UICONTROL 区段计划]**&#x200B;步骤中，在向[!DNL Facebook Custom Audiences]发送受众时，必须提供[!UICONTROL 受众来源]。
 
-在Facebook激活步骤中显示的![Origin of Audience下拉列表。](../../assets/catalog/social/facebook/facebook-origin-audience.png)
+![Facebook激活步骤中显示的“受众来源”下拉列表。](../../assets/catalog/social/facebook/facebook-origin-audience.png)
 
 ### 映射示例：在[!DNL Facebook Custom Audience]中激活受众数据 {#example-facebook}
 

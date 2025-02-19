@@ -2,10 +2,10 @@
 title: 为扩展创建Exchange列表
 description: 了解如何将扩展添加到Adobe Experience Platform中的公共目录。
 exl-id: 0395fc99-5e2b-46d6-a067-f8f167733e02
-source-git-commit: fcc586034317fb31122721fa9754b580c761a1da
+source-git-commit: 0d98183838125fac66768b94bc1993bde9a374b5
 workflow-type: tm+mt
 source-wordcount: '1193'
-ht-degree: 20%
+ht-degree: 24%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 20%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 Adobe Experience Platform具有单个统一的目录，用户可以在其中查看可用于安装的标记扩展。 此目录在产品中提供，并包含三种类型的扩展：
 
@@ -21,7 +21,7 @@ Adobe Experience Platform具有单个统一的目录，用户可以在其中查�
 1. **私有扩展**：这些是专为生产而设计的完整扩展，但由公司中的其他用户开发，仅对公司内的用户可用。
 1. **开发扩展**：这些扩展正在开发中，仅在公司内可用，并且仅在特别指定为开发资产的资产上可用。
 
-除了产品目录中的扩展之外，公共扩展在[Experience CloudExchange应用程序市场](https://exchange.adobe.com/apps/browse/ec)中也有列表。
+除了产品目录中的扩展之外，公共扩展在[Experience Cloud Exchange应用程序市场](https://exchange.adobe.com/apps/browse/ec)中也有列表。
 
 利用这些列表，扩展开发人员可以发布功能描述，提供指向其他支持和文档的链接，并向可能不知道您的公司或扩展功能的潜在用户营销扩展。 在该商城中，您的扩展将有一个可供查看的公开列表，用户无需进行Platform身份验证即可查看。 对于公共扩展，创建此Exchange列表是必需步骤。
 
@@ -37,14 +37,15 @@ Adobe Experience Platform具有单个统一的目录，用户可以在其中查�
 
 >[!NOTE]
 >
->以下过程详细说明了如何在Adobe Exchange程序中创建应用程序列表。 这是用于Adobe Experience Platform中各种集成和扩展的术语。
+>以下流程详细介绍了如何在Adobe Exchange程序中创建应用程序列表。 这是用于Adobe Experience Platform中各种集成和扩展的术语。
 
-![Experience Cloud的应用管理器链接位置](../images/getting-started/app-mgr-link.png)
+![Experience Cloud App Manager链接位置](../images/getting-started/app-mgr-link.png)
 
 1. 登录到 [Exchange 合作伙伴网站](https://partners.adobe.com/exchangeprogram/experiencecloud)。登录后，选择您姓名旁边的&#x200B;**应用程序管理器**&#x200B;链接。
 1. 选择&#x200B;**新建应用程序**&#x200B;选项卡，然后为自定义解决方案选择&#x200B;**新建应用程序**，或者选择适用的模板。
 1. 提供列表信息。有关应用程序管理器的详细信息，请查看完整的[文章](https://adobeexchangeec.zendesk.com/hc/en-us/articles/360024197931)。 列表信息应非常清楚扩展的功能及其用途。 列表可用作应用程序的营销空间。 通过清晰的描述、指向网站上登陆页面的链接、指向帮助文档的链接或支持电子邮件地址等，在此处推广您的扩展。 尽管扩展视图中的空间有限，但Exchange列表提供了同时推广您的扩展和您的公司的机会。 以下是有关改进扩展促销活动的建议：
    - **应用程序图标** — 确保用于Exchange列表的图标具有适当的尺寸，对于png图像，尺寸为512 x 512；或者，对于jpg图像，长宽比为1:1。
+
      >[!NOTE]
      >
      >这与扩展代码中使用的文件格式不同。 扩展本身将包含 svg 文件作为[图标](../manifest.md)。
@@ -55,7 +56,7 @@ Adobe Experience Platform具有单个统一的目录，用户可以在其中查�
    - **标记** - 在编辑列表的第一页，请确保在“自定义标记”字段中包含“Launch”一词。这将使您的列表显示在Exchange Marketplace的标记搜索中：
      ![](../images/getting-started/custom-tags.jpg)
    - **沙盒** — 您对Adobe解决方案的访问是通过沙盒帐户进行的，您可以在其中访问功能齐全的Adobe Experience Platform版本。 您可以在创建应用程序列表时申请这些沙盒帐户。在&#x200B;**连接**&#x200B;部分选择适用于您创建的应用程序（标记扩展）的特定连接，当您点击&#x200B;**保存**&#x200B;时，将根据需要生成沙盒请求。
-1. 提交列表。 Adobe Exchange 团队将审核您的应用程序，并在需要更新时向您提供反馈。如果您在提交列表时选中了&#x200B;**立即发布**&#x200B;复选框，则该列表会在获得批准后立即发布。 如果您希望稍后发布应用程序，请取消选中该复选框。 扩展列表获得批准后，应用（扩展）列表页面上该列表旁边将显示一个蓝色的&#x200B;**Publish**&#x200B;按钮。
+1. 提交列表。 Adobe Exchange 团队将审核您的应用程序，并在需要更新时向您提供反馈。如果您在提交列表时选中了&#x200B;**立即发布**&#x200B;复选框，则该列表会在获得批准后立即发布。 如果您希望稍后发布应用程序，请取消选中该复选框。 扩展列表获得批准后，您的应用程序（扩展）列表页面上会在该列表旁边显示一个蓝色的&#x200B;**发布**&#x200B;按钮。
 
 ### 创建有效列表
 

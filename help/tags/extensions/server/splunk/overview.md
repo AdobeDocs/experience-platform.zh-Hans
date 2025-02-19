@@ -2,7 +2,7 @@
 title: Splunk扩展概述
 description: 了解Adobe Experience Platform中用于事件转发的Splunk扩展。
 exl-id: 653b5897-493b-44f2-aeea-be492da2b108
-source-git-commit: bfbad3c11df64526627e4ce2d766b527df678bca
+source-git-commit: 0d98183838125fac66768b94bc1993bde9a374b5
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 1%
@@ -11,7 +11,7 @@ ht-degree: 1%
 
 # Splunk扩展概述
 
-[Splunk](https://www.splunk.com)是一个可观察性平台，可提供针对您的数据的可操作洞察的搜索、分析和可视化图表。 Splunk [事件转发](../../../ui/event-forwarding/overview.md)扩展利用[Splunk HTTP事件收集器REST API](https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/HECRESTendpoints)将事件从Adobe Experience PlatformEdge Network发送到[Splunk HTTP事件收集器](https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/UsetheHTTPEventCollector)。
+[Splunk](https://www.splunk.com)是一个可观察性平台，可提供针对您的数据的可操作洞察的搜索、分析和可视化图表。 Splunk [事件转发](../../../ui/event-forwarding/overview.md)扩展利用[Splunk HTTP事件收集器REST API](https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/HECRESTendpoints)将事件从Adobe Experience Platform Edge Network发送到[Splunk HTTP事件收集器](https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/UsetheHTTPEventCollector)。
 
 Splunk使用持有者令牌作为身份验证机制，与Splunk事件收集器API进行通信。
 
@@ -38,6 +38,7 @@ Splunk使用持有者令牌作为身份验证机制，与Splunk事件收集器AP
 
 * [事件收集器令牌](https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/UsetheHTTPEventCollector#Create_an_Event_Collector_token_on_Splunk_Cloud_Platform)。 令牌通常为UUIDv4格式，如下所示： `12345678-1234-1234-1234-1234567890AB`。
 * 贵组织的Splunk平台实例地址和端口。 平台实例地址和端口通常具有以下格式： `mysplunkserver.example.com:443`。
+
   >[!IMPORTANT]
   >
   > 在事件转发中引用的Splunk终结点应仅使用端口`443`。 当前事件转发实施不支持非标准端口。

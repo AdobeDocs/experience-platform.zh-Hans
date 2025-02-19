@@ -3,7 +3,7 @@ title: Google Ads增强型转化扩展
 description: 了解Adobe Experience Platform中用于事件转发的Google Ads增强型转化扩展。
 exl-id: 65cdff40-276f-4481-9621-6c6861dbd412
 last-substantial-update: 2022-11-23T00:00:00Z
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 0d98183838125fac66768b94bc1993bde9a374b5
 workflow-type: tm+mt
 source-wordcount: '1296'
 ht-degree: 1%
@@ -74,6 +74,7 @@ ht-degree: 1%
 1. **[!UICONTROL 事件名称（操作）]**：输入`conversion`作为值。
 1. 添加键为`transaction_id`且值为包含[交易ID](https://support.google.com/google-ads/answer/6386790)值的[数据元素](../../../ui/managing-resources/data-elements.md)的新字段。
 1. **[!UICONTROL 转化标签]**：输入您的[!DNL Google Ads]帐户中相应的转化标签。 要查找此值，请登录Google广告并导航到&#x200B;**[!DNL Tools and Settings]** > **[!DNL Conversions]** > **[!DNL Select a conversion action]** > **[!DNL Tag Setup]** > **[!DNL Use Google Tag Manager]**。 可以在[!DNL Instructions]下找到转换标签。
+
    >[!IMPORTANT]
    >
    >当您处于[!DNL Google Ads]帐户的标记设置区域时，请确保已启用增强型转化。 为此，请查看并接受服务条款，然后选择&#x200B;**[!DNL Turn on enhanced conversions]**&#x200B;和&#x200B;**[!DNL API]**&#x200B;作为实施方法。
@@ -142,4 +143,4 @@ ht-degree: 1%
 
 ## 后续步骤
 
-本指南介绍了如何使用[!DNL Enhanced Conversions]事件转发扩展将转化事件发送到[!DNL Google Ads]。 有关Experience Platform中事件转发功能的详细信息，请参阅[事件转发概述](../../../ui/event-forwarding/overview.md)。
+本指南介绍了如何使用[!DNL Enhanced Conversions]事件转发扩展将转化事件发送到[!DNL Google Ads]。 有关Experience Platform中事件转发功能的更多信息，请参阅[事件转发概述](../../../ui/event-forwarding/overview.md)。
