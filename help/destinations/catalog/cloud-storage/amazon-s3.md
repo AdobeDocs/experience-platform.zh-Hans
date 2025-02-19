@@ -4,7 +4,7 @@ description: 创建到Amazon Web Services (AWS) S3存储的实时出站连接，
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
 source-git-commit: 8dbdfb1e8e574647bf621a320ee07ecc7a653a6c
 workflow-type: tm+mt
-source-wordcount: '1499'
+source-wordcount: '1498'
 ht-degree: 16%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 16%
 | 发行月份 | 更新类型 | 描述 |
 |---|---|---|
 | 2024 年 1 月 | 功能和文档更新 | Amazon S3目标连接器现在支持新的假定角色身份验证类型。 有关详情，请参阅[身份验证部分](#assumed-role-authentication)。 |
-| 2023 年 7 月 | 功能和文档更新 | 在2023年7月Experience Platform版本中，[!DNL Amazon S3]目标提供了新的功能，如下所示： <br><ul><li>[数据集导出支持](/help/destinations/ui/export-datasets.md)</li><li>额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling)。</li><li>可通过[改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)在您导出的文件中设置自定义文件头。</li><li>[能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md)。</li></ul> |
+| 2023 年 7 月 | 功能和文档更新 | 在2023年7月发行的Experience Platform中，[!DNL Amazon S3]目标提供了新的功能，如下所示： <br><ul><li>[数据集导出支持](/help/destinations/ui/export-datasets.md)</li><li>额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling)。</li><li>可通过[改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)在您导出的文件中设置自定义文件头。</li><li>[能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md)。</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -36,8 +36,8 @@ ht-degree: 16%
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -107,11 +107,11 @@ ht-degree: 16%
 
 ![选择假定的角色身份验证时必填字段的图像。](/help/destinations/assets/catalog/cloud-storage/amazon-s3/assumed-role-authentication.png)
 
-如果您不想与 Adobe 共享帐户密钥和私钥，请使用此身份验证类型。相反，Experience Platform会使用基于角色的访问连接到Amazon S3位置。
+如果您不想与 Adobe 共享帐户密钥和私钥，请使用此身份验证类型。相反，Experience Platform会使用基于角色的访问连接到您的Amazon S3位置。
 
-为此，您需要在AWS控制台中创建一个假定的Adobe用户，该用户具有[写入Amazon S3存储桶所需的正确权限](#minimum-permissions-iam-user)。 在AWS中创建具有Adobe帐户&#x200B;**[!UICONTROL 670664943635]**&#x200B;的&#x200B;**[!UICONTROL 受信任的实体]**。 有关更多信息，请参阅有关创建角色的[AWS文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html)。
+为此，您需要在AWS控制台中创建一个假定的Adobe用户，该用户具有[写入Amazon S3存储桶所需的正确权限](#minimum-permissions-iam-user)。 在AWS中使用Adobe帐户&#x200B;**[!UICONTROL 670664943635]**&#x200B;创建一个&#x200B;**[!UICONTROL 受信任的实体]**。 有关更多信息，请参阅有关创建角色的[AWS文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html)。
 
-* **[!DNL Role]**：粘贴您在AWS中为Adobe用户创建的角色的ARN。 模式类似于`arn:aws:iam::800873819705:role/destinations-role-customer`。
+* **[!DNL Role]**：将您在AWS中为Adobe用户创建的角色的ARN粘贴。 模式类似于`arn:aws:iam::800873819705:role/destinations-role-customer`。
 * **[!UICONTROL 加密密钥]**： （可选）您可以附加RSA格式的公钥以向导出的文件添加加密。 查看下图中的加密密钥格式正确示例。
 
 ### 填写目标详细信息 {#destination-details}
@@ -119,7 +119,7 @@ ht-degree: 16%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_s3_bucket"
 >title="存储桶名称"
->abstract="长度必须介于 3 和 63 个字符之间。必须以字母或数字开头和结尾。必须仅包含小写字母、数字或连字符 (-)。不得格式化为 IP 地址（例如，192.100.1.1）。"
+>abstract="长度必须介于 3 和 63 个字符之间。必须以字母或数字开头和结尾。必须仅包含小写字母、数字或连字符 (-)。不得格式化为IP地址（例如，192.100.1.1）。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_s3_folderpath"
@@ -133,7 +133,7 @@ ht-degree: 16%
 * **[!UICONTROL 描述]**：输入此目标的描述。
 * **[!UICONTROL Bucket名称]**：输入要由此目标使用的[!DNL Amazon S3]存储段的名称。
 * **[!UICONTROL 文件夹路径]**：输入将承载导出文件的目标文件夹的路径。
-* **[!UICONTROL 文件类型]**：选择导出文件应使用的格式Experience Platform。 在选择[!UICONTROL CSV]选项时，您还可以[配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md)。
+* **[!UICONTROL 文件类型]**：选择Experience Platform应用于导出文件的格式。 在选择[!UICONTROL CSV]选项时，您还可以[配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md)。
 * **[!UICONTROL 压缩格式]**：选择Experience Platform应用于导出文件的压缩类型。
 * **[!UICONTROL 包含清单文件]**：如果希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。 清单的命名格式为`manifest-<<destinationId>>-<<dataflowRunId>>.json`。 查看[样本清单文件](/help/destinations/assets/common/manifest-d0420d72-756c-4159-9e7f-7d3e2f8b501e-0ac8f3c0-29bd-40aa-82c1-f1b7e0657b19.json)。 清单文件包含以下字段：
    * `flowRunId`：生成导出文件的[数据流运行](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations)。
@@ -220,4 +220,4 @@ Commenting out this note, as write permissions are assigned through the s3:PutOb
 
 ## IP地址允许列表 {#ip-address-allow-list}
 
-如果需要将Adobe列入允许列表 IP添加到，请参阅[IP地址允许列表](ip-address-allow-list.md)一文。
+如果您需要将Adobe 列入允许列表 IP添加到，请参阅[IP地址允许列表](ip-address-allow-list.md)一文。
