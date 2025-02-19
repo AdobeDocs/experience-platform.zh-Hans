@@ -1,21 +1,18 @@
 ---
 title: 使用访问标签管理用户对目标数据流的访问
 description: 了解如何使用访问标签来管理用户对目标数据流的访问，以便只有贵组织中的一部分用户有权访问特定的目标数据流。
-badgePrivateBeta: label="Private Beta" type="Informative"
-hide: true
-hidefromtoc: true
 role: Developer, Admin, User
 exl-id: 85944720-8551-491c-8991-dd9668beb0ca
-source-git-commit: 68781d27e374261108955b24dfb7b46141f5108b
+source-git-commit: e1b8ca463146d300b48257304778a82aa745df73
 workflow-type: tm+mt
-source-wordcount: '955'
+source-wordcount: '995'
 ht-degree: 1%
 
 ---
 
 # 使用访问标签管理用户对目标数据流的访问
 
-作为Real-Time CDP中基于[!UICONTROL 属性的访问控制]功能的一部分，您现在可以将访问标签应用于目标数据流。 因此，您可以确保组织中只有一部分用户有权访问特定的目标数据流。
+作为Real-Time CDP中基于[[!UICONTROL 属性的访问控制]](overview.md)功能的一部分，您现在可以对[目标数据流](../../dataflows/ui/monitor-destinations.md)应用访问标签。 这样，您就可以确保组织中只有一部分用户有权访问特定的目标数据流。
 
 向特定目标添加访问标签时，只有对分配了该标签的角色具有访问权限的用户才能查看和编辑该目标数据流。 如果目标数据流未标记任何标签，则属于您组织的所有用户都可看到它。
 
@@ -23,14 +20,14 @@ ht-degree: 1%
 
 ## 先决条件 {#prerequisites}
 
-在开始使用此功能之前，请注意要完成的以下先决条件。 要熟悉[!UICONTROL 基于属性的访问控制]功能，Adobe还建议您阅读以下文章：
+在开始使用此功能之前，请注意要完成的以下先决条件。 要熟悉[!UICONTROL 基于属性的访问控制]，Adobe还建议您阅读以下文章：
 
 * [基于属性的访问控制概述](/help/access-control/abac/overview.md)
 * [基于属性的访问控制端到端指南](/help/access-control/abac/end-to-end-guide.md)
 
 ### 访问权限UI {#access-permissions-ui}
 
-[!UICONTROL 权限]是Experience Cloud区域，管理员可以在其中定义用户角色和策略，以管理产品应用程序内功能和对象的权限。 阅读[权限部分](/help/access-control/abac/end-to-end-guide.md#permissions)以开始。
+[!UICONTROL 权限]是Experience Cloud的区域，管理员可以在其中定义用户角色和策略，以管理产品应用程序内功能和对象的权限。 阅读[权限部分](/help/access-control/abac/end-to-end-guide.md#permissions)以开始。
 
 ### 创建角色、标签和分配用户 {#create-roles-labels-assign-users}
 
@@ -48,7 +45,7 @@ ht-degree: 1%
 
 ## 已可用：将访问标签应用于其他Experience Platform资源 {#apply-labels-other-resources}
 
-虽然此版本允许您向用户授予对特定目标数据流的对象级访问权限，但授予对象级访问权限的功能通常已对其他Experience Platform资源（如[受众](/help/access-control/abac/end-to-end-guide.md#apply-labels-to-segments)）可用。
+虽然此版本允许您授予用户对象级别访问特定目标数据流的权限，但授予对象级别访问控制的功能通常已对其他Experience Platform资源（如[受众](/help/access-control/abac/end-to-end-guide.md#apply-labels-to-segments)）可用。
 
 ## 用例示例 {#use-case-example}
 
@@ -66,7 +63,7 @@ ht-degree: 1%
 1. 请注意数据流现在如何在UI中显示访问标签。
    ![具有选定数据流的多个目标数据流的视图如何显示访问标签。](/help/access-control/images/olac/dataflow-with-access-label.png)
 
-如果目标数据流未标记任何标签，则会向所有用户显示。 如果数据流标有一个或多个访问标签，则它只为属于具有相同标签或标签组合的角色的用户显示。
+如果目标数据流未标记任何标签，则它对所有用户可见。 如果数据流标有一个或多个访问标签，则它仅对属于具有相同标签或标签组合的角色的用户可见。
 
 您可以将标准和自定义标签添加到目标数据流。 将标签添加到目标数据流后：
 
@@ -76,11 +73,15 @@ ht-degree: 1%
 
 ## 要了解的重要标注和项 {#important-callouts}
 
-目前，访问标签只能应用于现有数据流。 这意味着在应用访问标签之前，需要创建到目标的数据流。
+目前，访问标签只能应用于现有数据流。 这意味着在应用访问标签之前，您需要创建指向目标的数据流。
 
 如果您无权访问某个访问标签，则无法将该访问标签应用于目标数据流。
 
 向目标数据流添加多个标签时，必须将应该能够查看和编辑数据流的用户添加到至少具有相同标签组合的角色中。 例如，如果将标签C1、I2和另一个自定义标签应用于目标数据流，则只有添加到角色且具有这三个标签组合访问权限的用户才能查看和编辑此特定目标数据流。
+
+>[!NOTE]
+>
+> 使用Experience Platform用户界面顶部的搜索框搜索目标数据流时，结果可能包括您的用户访问标签限制您查看的目标数据流。 此行为将在以后的更新中纠正。
 
 ![维恩图显示仅某些用户如何访问应用了多个标签的目标。](/help/access-control/images/olac/multiple-labels-venn.png)
 
