@@ -3,19 +3,14 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制概述
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的信息
 exl-id: 5495c55f-b808-40c1-8896-e03eace0ca4d
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 37131ce16b70bfaa737ee1cd896d0042e06bab15
 workflow-type: tm+mt
-source-wordcount: '1864'
+source-wordcount: '1860'
 ht-degree: 14%
 
 ---
 
 # 基于属性的访问控制概述 {#attribute-based-access-control-overview}
-
->[!CONTEXTUALHELP]
->id="platform_accesscontrol_abac_labelusageaccesspolicy"
->title="标签使用访问策略"
->abstract=""
 
 基于属性的访问控制是Adobe Experience Platform的一项功能，它使管理员能够根据属性控制对特定对象和/或功能的访问。 属性可以是添加到对象的元数据，例如添加到架构字段或区段的标签。 管理员定义包括管理用户访问权限的属性的访问策略。
 
@@ -53,7 +48,7 @@ ht-degree: 14%
 >
 >为您的组织启用了基于属性的访问控制后，您可以开始使用Adobe Experience Cloud上的权限而不是Adobe Admin Console中的角色来管理组织中用户、功能、标签和其他资源的权限。
 
-权限是Experience Cloud的区域，管理员可以在其中定义用户角色和访问策略，以管理产品应用程序中功能和对象的访问权限。
+权限是Experience Cloud中的一个区域，管理员可以在该区域中定义用户角色和访问策略，以管理产品应用程序中功能和对象的访问权限。
 
 通过权限，您可以创建和管理角色，并为这些角色分配所需的资源权限。 权限还允许您管理与特定角色关联的标签、沙盒和用户。 有关详细信息，请参阅[权限指南](ui/browse.md)。
 
@@ -75,7 +70,7 @@ Platform利用[Adobe Admin Console](https://adminconsole.adobe.com)角色将用�
 
 * 标签设置：为用户角色、架构字段、区段和其他支持的对象添加、编辑和删除标签，以便利用访问控制策略。 **注意：**&#x200B;如果您希望对使用已标记属性的任何区段应用相同的访问限制，则必须同样对其添加标记。
 
-正在切换从Admin Console到新权限界面的所有Experience Platform支持的应用程序的管理工作流。
+从Admin Console到新的权限界面的所有Experience Platform支持的应用程序管理工作流程正在切换中。
 
 >[!IMPORTANT]
 >
@@ -104,7 +99,7 @@ Platform利用[Adobe Admin Console](https://adminconsole.adobe.com)角色将用�
 
 有关[!DNL Destinations]的详细信息，请参阅[[!DNL Destinations] 概述](../../destinations/home.md)。
 
-### 身份服务
+### 身份标识服务
 
 Adobe Experience Platform [!DNL Identity Service]通过跨设备和系统桥接身份，允许您实时提供有影响力的个人数字体验，从而帮助您更好地了解客户及其行为。
 
@@ -112,9 +107,9 @@ Adobe Experience Platform [!DNL Identity Service]通过跨设备和系统桥接�
 
 有关[!DNL Identity Service]的详细信息，请参阅[[!DNL Identity Service] 概述](../../identity-service/home.md)。
 
-### 实时客户配置文件
+### 实时客户轮廓
 
-通过Platform，无论客户在何处或何时与您的品牌互动，您都可以为其推动协调、一致且相关的体验。 利用实时客户配置文件，您可以看到每个客户的整体视图，其中结合来自多个渠道的数据，包括在线、离线、CRM 和第三方数据。用户档案允许您将不同的客户数据整合到一个统一的视图中，并提供每个客户交互的带时间戳的可操作帐户。
+通过Platform，无论客户在何处或何时与您的品牌互动，您都可以为其推动协调、一致且相关的体验。 利用实时客户轮廓，您可以看到每个客户的整体视图，其中结合来自多个渠道的数据，包括在线、离线、CRM 和第三方数据。用户档案允许您将不同的客户数据整合到一个统一的视图中，并提供每个客户交互的带时间戳的可操作帐户。
 
 作为管理员，您可以使用基于属性的访问控制功能来：
 
@@ -127,7 +122,7 @@ Adobe Experience Platform [!DNL Identity Service]通过跨设备和系统桥接�
 
 ### Segmentation Service
 
-[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的配置文件子集。区段可以基于记录数据（例如人口统计信息）或代表客户与您的品牌互动的时间序列事件。
+[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的轮廓子集。区段可以基于记录数据（例如人口统计信息）或代表客户与您的品牌互动的时间序列事件。
 
 作为管理员，您可以使用基于属性的访问控制功能来：
 

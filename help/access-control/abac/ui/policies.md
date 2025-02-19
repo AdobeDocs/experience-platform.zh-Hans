@@ -3,16 +3,16 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 管理访问控制策略
 description: 本文档提供了有关通过Adobe Experience Cloud中的“权限”界面管理访问控制策略的信息。
 exl-id: 66820711-2db0-4621-908d-01187771de14
-source-git-commit: 7cafe1f7e9dd6789db4199631cb605be666ce48a
+source-git-commit: afd883c530ab1b335888e79b5f4075e774fced4b
 workflow-type: tm+mt
-source-wordcount: '613'
-ht-degree: 0%
+source-wordcount: '684'
+ht-degree: 2%
 
 ---
 
 # 管理访问控制策略
 
-访问控制策略是将属性集合在一起以建立允许和不允许的操作的语句。 访问策略可以是本地策略或全局策略，也可以覆盖其他策略。 Adobe提供了一个默认策略，可立即激活该策略，或者在您的组织准备好开始根据标签控制对特定对象的访问时激活该策略。 默认策略利用应用于资源的标签来拒绝访问，除非用户处于具有匹配标签的角色中。
+访问控制策略是将属性集合在一起以建立允许和不允许的操作的语句。 访问策略可以是本地策略或全局策略，也可以覆盖其他策略。 Adobe提供了一个默认策略，可立即激活该策略，或者在您的组织准备好开始根据标签控制对特定对象的访问时，激活该策略。 默认策略利用应用于资源的标签来拒绝访问，除非用户处于具有匹配标签的角色中。
 
 >[!IMPORTANT]
 >
@@ -184,7 +184,13 @@ You are returned to the **[!UICONTROL policies]** tab and a confirmation of dele
 >
 >已成功从策略中删除选定的沙盒。
 
-## 激活策略
+## 激活策略 {#activate-policy}
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_policies_about"
+>title="策略是什么？"
+>abstract="策略是一些语句，它将若干属性组合在一起以确定允许执行和不允许执行的操作。每个组织都附带一个默认策略，您必须激活该策略才能开始根据标签控制对特定对象的访问。 应用于资源的标签会拒绝访问，除非将用户分配给具有匹配标签的角色。 默认策略无法编辑或删除，但可以激活或停用。"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/labels" text="管理标签"
 
 要激活现有策略，请从&#x200B;**[!UICONTROL 策略]**&#x200B;选项卡中选择策略。
 

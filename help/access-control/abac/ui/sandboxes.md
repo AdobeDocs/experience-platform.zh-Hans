@@ -3,16 +3,22 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制沙盒
 description: 本文档提供了有关通过Adobe Experience Cloud中的“权限”界面管理沙箱的信息
 exl-id: c21eb319-fc0d-442a-b778-bbfa2d6bb22d
-source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
+source-git-commit: afd883c530ab1b335888e79b5f4075e774fced4b
 workflow-type: tm+mt
-source-wordcount: '217'
+source-wordcount: '259'
 ht-degree: 0%
 
 ---
 
-# 管理沙盒
+# 管理沙盒 {#mange-sandboxes}
 
-沙盒是单个Experience Platform实例中的虚拟分区，允许与数字体验应用程序的开发过程无缝集成。 在沙盒内执行的所有内容和操作仅受该沙盒限制，不会影响任何其他沙盒。 有关沙箱的详细信息，请参阅[沙箱概述](../../../sandboxes/home.md)。
+>[!CONTEXTUALHELP]
+>id="platform_permissions_sandboxes_about"
+>title="沙箱是什么？"
+>abstract="沙盒是Platform单个实例中的虚拟分区。 在沙盒内执行的所有内容和操作都限制在该沙盒内，不会影响其他沙盒。 沙盒的访问通过角色进行管理。"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/sandbox/home" text="沙盒概述"
+
+沙盒是Experience Platform单个实例中的虚拟分区，允许与数字体验应用程序的开发过程无缝集成。 在沙盒内执行的所有内容和操作仅受该沙盒限制，不会影响任何其他沙盒。 有关沙箱的详细信息，请参阅[沙箱概述](../../../sandboxes/home.md)。
 
 ## 配置沙盒
 

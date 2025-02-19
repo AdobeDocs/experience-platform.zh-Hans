@@ -3,10 +3,10 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制管理角色权限
 description: 本文档提供了有关通过Adobe Experience Cloud中的“权限”界面为角色配置权限的信息
 exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
-source-git-commit: 207317d16a21cc2461ebd3f7867735735227c173
+source-git-commit: afd883c530ab1b335888e79b5f4075e774fced4b
 workflow-type: tm+mt
-source-wordcount: '1608'
-ht-degree: 11%
+source-wordcount: '1699'
+ht-degree: 10%
 
 ---
 
@@ -120,6 +120,12 @@ ht-degree: 11%
 
 ## 管理角色的API凭据 {#manage-api-credentials-for-role}
 
+>[!CONTEXTUALHELP]
+>id="platform_permissions_apicredentials_about"
+>title="什么是API凭据？"
+>abstract="API凭据会分配给角色，以授予用户和开发人员访问Platform API的权限。 使用Platform API，您可以通过编程方式对数据执行基本CRUD（创建、读取、更新、删除）操作，例如配置计算属性、访问数据/实体、导出数据、删除不需要的数据或批次等。"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/landing/platform-apis/api-guide" text="平台API指南"
+
 >[!IMPORTANT]
 >
 > 要在[!UICONTROL 权限]中使用和管理API凭据，用户必须具有系统管理员权限。
@@ -148,7 +154,13 @@ ht-degree: 11%
 
 您将返回&#x200B;**[!UICONTROL API凭据]**&#x200B;选项卡。
 
-## 管理角色的用户组
+## 管理角色的用户组 {#manage-user-groups}
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_usergroups_about"
+>title="什么是用户组？"
+>abstract="用户组是多个用户的集合，这些用户共享对相同功能的访问权限。 组织内资源的访问权限通过分配给用户组的角色进行管理。"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/roles" text="管理角色"
 
 用户组是多个已分组在一起的用户，并且有权执行相同的功能。
 

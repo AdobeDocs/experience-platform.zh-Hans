@@ -3,14 +3,20 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制管理用户
 description: 本文档提供了有关通过Adobe Experience Cloud中的“权限”界面管理用户和用户组的信息
 exl-id: 16450867-040a-4be1-a6c0-f03d0a1b90ba
-source-git-commit: d410e7ea635471f2bbc93c9d332ad7e2f619d054
+source-git-commit: afd883c530ab1b335888e79b5f4075e774fced4b
 workflow-type: tm+mt
-source-wordcount: '257'
-ht-degree: 0%
+source-wordcount: '285'
+ht-degree: 1%
 
 ---
 
-# 管理用户
+# 管理用户 {#manage-users}
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_users_about"
+>title="什么是用户？"
+>abstract="用户是有权访问Experience Platform的个人。 单个用户对组织资源的访问权限通过角色进行管理。"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/roles" text="管理角色"
 
 如果要查看用户详细信息和分配给这些用户的角色，请选择&#x200B;**[!UICONTROL 用户]**&#x200B;选项卡。
 
