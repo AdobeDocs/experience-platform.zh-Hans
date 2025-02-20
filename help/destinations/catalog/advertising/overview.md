@@ -1,11 +1,11 @@
 ---
 keywords: 广告目标；目标；平台目标
 title: Advertising目标概述
-description: 将Adobe Experience Platform连接到第三方广告平台(例如，DSP、广告网络、SSP)，并在这些平台上共享假名受众。
+description: 将Adobe Experience Platform连接到第三方广告平台(例如DSP、广告网络、SSP)，并在这些平台上共享假名受众。
 exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
-source-git-commit: e2dfa2ee23d854ff3a8ecba4a1cf3e4a1e72f0f7
+source-git-commit: f6fb88cbc89d419e3dbb39c9cc8958f9455b2953
 workflow-type: tm+mt
-source-wordcount: '273'
+source-wordcount: '272'
 ht-degree: 1%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 1%
 * [(Beta) Acxiom Audience Distribution](acxiom-audience-distribution.md)
 * [Adobe Advertising Cloud连接](adobe-advertising-cloud-connection.md)
 * [Amazon Ads连接](amazon-ads.md)
-* [(Beta)标准连接](criteo.md)
+* [标准连接](criteo.md)
 * [Google显示和视频360连接](google-dv360.md)
 * [Google Ads连接](google-ads-destination.md)
 * [Google Ad Manager连接](google-ad-manager.md)
@@ -38,7 +38,7 @@ ht-degree: 1%
 * [菱镁矿批次连接](magnite-batch.md)
 * [Magnite流实时连接](magnite-streaming.md)
 * [Microsoft Bing连接](bing.md)
-* [pinterest客户列表连接](pinterest.md)
+* [Pinterest客户列表连接](pinterest.md)
 * [PubMatic Connect目标](pubmatic.md)
 * [(Beta) Snapchat Ads连接](snap-inc.md)
 * [交易台连接](tradedesk.md)
@@ -53,13 +53,13 @@ ht-degree: 1%
 * [Bing Ads通用事件跟踪扩展](bing-ads.md)
 * [分支扩展](branch.md)
 * [DoubleClick Floodlight扩展](doubleclick-floodlight.md)
-* [facebook Pixel扩展](facebook-pixel.md)
+* [Facebook Pixel扩展](facebook-pixel.md)
 * [Flashtalking OneTag扩展](flashtalking.md)
 * [Google Ads扩展](google-ads-extension.md)
 * [Google gtag扩展](gtag-advertising.md)
-* [linkedIn Insight Tag扩展](linkedin.md)
-* [pinterest转化跟踪扩展](pinterest-extension.md)
-* [twitter通用网站标记扩展](twitter-uwt.md)
+* [LinkedIn Insight标记扩展](linkedin.md)
+* [Pinterest转化跟踪扩展](pinterest-extension.md)
+* [Twitter通用网站标记扩展](twitter-uwt.md)
 
 ## 连接到新的广告目标 {#connect-destination}
 

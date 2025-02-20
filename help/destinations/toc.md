@@ -5,9 +5,9 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: e2dfa2ee23d854ff3a8ecba4a1cf3e4a1e72f0f7
+source-git-commit: f6fb88cbc89d419e3dbb39c9cc8958f9455b2953
 workflow-type: tm+mt
-source-wordcount: '1269'
+source-wordcount: '1268'
 ht-degree: 5%
 
 ---
@@ -46,8 +46,8 @@ ht-degree: 5%
       * [根据LiveRamp标识符将受众激活到策划的目标](./ui/activate-curated-destinations.md)
       * [将目标受众激活到目标](./ui/activate-prospect-audiences.md)
       * [将帐户受众激活到目标](./ui/activate-account-audiences.md)
-      * [使用Experience PlatformUI按需将文件导出到批处理目标](./ui/export-file-now.md)
-      * [使用Experience PlatformUI导出数据集](./ui/export-datasets.md)
+      * [使用Experience Platform UI按需将文件导出到批处理目标](./ui/export-file-now.md)
+      * [使用Experience Platform UI导出数据集](./ui/export-datasets.md)
       * [(Beta)在新的Beta版云存储目标中使用上次资格授予时间XDM属性](./ui/activate-last-qualification-time.md)
       * [使用计算出的字段将数组导出为字符串](/help/destinations/ui/export-arrays-calculated-fields.md)
    * [查看目标详细信息](./ui/destination-details-page.md)
@@ -64,7 +64,7 @@ ht-degree: 5%
       * [Adobe目标概述](./catalog/adobe/overview.md)
       * [Experience Cloud 受众](/help/destinations/catalog/adobe/experience-cloud-audiences.md)
       * [Marketo Engage连接](./catalog/adobe/marketo-engage.md)
-      * [(Beta)Marketo Engage人员同步连接](./catalog/adobe/marketo-engage-person-sync.md)
+      * [(Beta) Marketo Engage人员同步连接](./catalog/adobe/marketo-engage-person-sync.md)
       * [Marketo Measure Ultimate连接](./catalog/adobe/marketo-measure-ultimate.md)
       * [Experience Platform受众共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
       * [联合受众组合连接](https://www.adobe.com/go/destinations-federated-audience-composition)
@@ -78,10 +78,10 @@ ht-degree: 5%
       * [Awin广告商主标签扩展](./catalog/advertising/awin-mastertag.md)
       * [Bing Ads通用事件跟踪(UET)扩展](./catalog/advertising/bing-ads.md)
       * [分支扩展](./catalog/advertising/branch.md)
-      * [(Beta)标准连接](./catalog/advertising/criteo.md)
+      * [标准连接](./catalog/advertising/criteo.md)
       * [Demandbase连接](./catalog/advertising/demandbase.md)
       * [DoubleClick Floodlight (Beta)扩展](./catalog/advertising/doubleclick-floodlight.md)
-      * [facebook Pixel扩展](./catalog/advertising/facebook-pixel.md)
+      * [Facebook Pixel扩展](./catalog/advertising/facebook-pixel.md)
       * [Flashtalking OneTag扩展](./catalog/advertising/flashtalking.md)
       * [Google Ads连接](./catalog/advertising/google-ads-destination.md)
       * [Google Ads扩展](./catalog/advertising/google-ads-extension.md)
@@ -91,26 +91,26 @@ ht-degree: 5%
       * [(Beta) Google客户匹配+ DV360连接](./catalog/advertising/google-customer-match-dv360.md)
       * [Google显示和视频360连接](./catalog/advertising/google-dv360.md)
       * [Google gtag扩展](./catalog/advertising/gtag-advertising.md)
-      * [linkedIn Insight Tag扩展](./catalog/advertising/linkedin.md)
+      * [LinkedIn Insight标记扩展](./catalog/advertising/linkedin.md)
       * [LiveRamp — 载入连接](./catalog/advertising/liveramp-onboarding.md)
       * [LiveRamp — 分发连接](./catalog/advertising/liveramp-distribution.md)
       * [菱镁矿批次](/help/destinations/catalog/advertising/magnite-batch.md)
       * [Magnite流实时连接](/help/destinations/catalog/advertising/magnite-streaming.md)
       * [Microsoft Bing连接](./catalog/advertising/bing.md)
-      * [pinterest转化跟踪扩展](./catalog/advertising/pinterest-extension.md)
-      * [pinterest客户列表连接](./catalog/advertising/pinterest.md)
-      * [pinterest连接升级](./catalog/advertising/pinterest-upgrade.md)
+      * [Pinterest转化跟踪扩展](./catalog/advertising/pinterest-extension.md)
+      * [Pinterest客户列表连接](./catalog/advertising/pinterest.md)
+      * [Pinterest连接升级](./catalog/advertising/pinterest-upgrade.md)
       * [PubMatic Connect连接](./catalog/advertising/pubmatic.md)
       * [Snapchat Ads连接](./catalog/advertising/snap-inc.md)
       * [交易台连接](./catalog/advertising/tradedesk.md)
       * [交易台CRM连接](./catalog/advertising/tradedesk-emails.md)
-      * [twitter通用网站标记扩展](./catalog/advertising/twitter-uwt.md)
+      * [Twitter通用网站标记扩展](./catalog/advertising/twitter-uwt.md)
       * [Yahoo/Verizon DataX连接](./catalog/advertising/datax.md)
    * Analytics目标{#analytics}
       * [Analytics目标概述](./catalog/analytics/overview.md)
       * [Adform网站跟踪扩展](./catalog/analytics/adform.md)
       * [Adobe Analytics 扩展](./catalog/analytics/adobe-analytics.md)
-      * [Adobe Medium Analytics for Audio and Video扩展](./catalog/analytics/adobe-video-analytics.md)
+      * [Adobe Media Analytics for Audio and Video扩展](./catalog/analytics/adobe-video-analytics.md)
       * [Clicktale扩展](./catalog/analytics/clicktale.md)
       * [Contentsquare扩展](./catalog/analytics/contentsquare.md)
       * [Decibel扩展](./catalog/analytics/decibel.md)
@@ -147,7 +147,7 @@ ht-degree: 5%
       * [Zendesk连接](catalog/crm/zendesk.md)
    * 数据管理平台目标{#data-management}
       * [数据管理平台(DMP)目标概述](./catalog/data-management/overview.md)
-      * [Audience ManagerDIL扩展](./catalog/data-management/aam-dil-extension.md)
+      * [Audience Manager DIL扩展](./catalog/data-management/aam-dil-extension.md)
       * [Zeta营销平台](/help/destinations/catalog/data-management/zeta-marketing-platform.md)
    * 数据和身份合作伙伴{#data-partner}
       * [Acxiom潜在客户抑制](./catalog/data-partner/acxiom-prospect-suppression.md)
@@ -167,11 +167,11 @@ ht-degree: 5%
       * [Adobe Campaign Managed Cloud Services连接](./catalog/email-marketing/adobe-campaign-managed-services.md)
       * [Mailchimp兴趣类别](./catalog/email-marketing/mailchimp-interest-categories.md)
       * [Mailchimp标记](./catalog/email-marketing/mailchimp-tags.md)
-      * [(API)OracleEloqua连接](./catalog/email-marketing/oracle-eloqua-api.md)
-      * [（文件）OracleEloqua连接](./catalog/email-marketing/oracle-eloqua.md)
-      * [oracleResponsys连接](./catalog/email-marketing/oracle-responsys.md)
-      * [(API) SalesforceMarketing Cloud连接](./catalog/email-marketing/salesforce-marketing-cloud-exact-target.md)
-      * [（文件）SalesforceMarketing Cloud连接](./catalog/email-marketing/salesforce-marketing-cloud.md)
+      * [(API) Oracle Eloqua连接](./catalog/email-marketing/oracle-eloqua-api.md)
+      * [（文件）Oracle Eloqua连接](./catalog/email-marketing/oracle-eloqua.md)
+      * [Oracle Responsys连接](./catalog/email-marketing/oracle-responsys.md)
+      * [(API) Salesforce Marketing Cloud连接](./catalog/email-marketing/salesforce-marketing-cloud-exact-target.md)
+      * [（文件）Salesforce Marketing Cloud连接](./catalog/email-marketing/salesforce-marketing-cloud.md)
       * [[!DNL Salesforce Marketing Cloud Account Engagement]](./catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md)
       * [SendGrid连接](./catalog/email-marketing/sendgrid.md)
    * 标记扩展{#launch-extensions}
@@ -203,9 +203,9 @@ ht-degree: 5%
       * [Pega配置文件连接](./catalog/personalization/pega-profile.md)
    * 社交目标{#social}
       * [社交目标概述](./catalog/social/overview.md)
-      * [facebook连接](./catalog/social/facebook.md)
-      * [（公司） LinkedIn匹配受众连接](./catalog/social/linkedin-b2b.md)
-      * [linkedIn匹配受众连接](./catalog/social/linkedin.md)
+      * [Facebook连接](./catalog/social/facebook.md)
+      * [（公司） LinkedIn匹配的受众连接](./catalog/social/linkedin-b2b.md)
+      * [LinkedIn匹配的受众连接](./catalog/social/linkedin.md)
       * [TikTok连接](./catalog/social/tiktok.md)
       * [[!DNL Twitter Custom Audiences]连接](./catalog/social/twitter.md)
    * 流目标{#streaming}
@@ -225,7 +225,7 @@ ht-degree: 5%
       * [Medallia连接](./catalog/voice/medallia-connector.md)
       * [Medallia扩展](./catalog/voice/medallia.md)
       * [Talk URL收件箱扩展](./catalog/voice/talkurl.md)
-* Destination SDK{#destination-sdk}
+* Destination SDK {#destination-sdk}
    * [概述](./destination-sdk/overview.md)
    * [集成先决条件](./destination-sdk/integration-prerequisites.md)
    * [Destination SDK快速入门](./destination-sdk/getting-started.md)
@@ -267,7 +267,7 @@ ht-degree: 5%
          * [使用预定义的文件格式选项和自定义文件名配置来配置SFTP目标](../destinations/destination-sdk/guides/batch/configure-sftp-destination-with-predefined-file-formatting.md)
          * [配置基于文件的目标以导出目标受众](/help/destinations/destination-sdk/guides/batch/configure-prospect-audience-destination.md)
    * 目标创作API引用{#authoring-api}
-      * [Destination SDK（目标创作） API引用](https://www.adobe.io/experience-platform-apis/references/destination-authoring/)
+      * [Destination SDK （目标创作） API引用](https://www.adobe.io/experience-platform-apis/references/destination-authoring/)
       * 目标服务器操作{#server-operations}
          * [创建目标服务器配置](./destination-sdk/authoring-api/destination-server/create-destination-server.md)
          * [检索目标服务器配置](./destination-sdk/authoring-api/destination-server/retrieve-destination-server.md)
