@@ -3,10 +3,10 @@ solution: Experience Platform
 title: Audiences UI指南
 description: Adobe Experience Platform UI中的受众组合提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了一些直观的控件，可用于为贵组织构建和编辑受众。
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: 3c0fdab5d7561238a64e79e5bab5fd4843fccb0a
+source-git-commit: 65871f307468428ee0e3b67c1a6577e913f3a312
 workflow-type: tm+mt
-source-wordcount: '1952'
-ht-degree: 0%
+source-wordcount: '2228'
+ht-degree: 1%
 
 ---
 
@@ -36,7 +36,17 @@ ht-degree: 0%
 
 ## [!UICONTROL 受众] {#audience-block}
 
-**[!UICONTROL 受众]**&#x200B;块类型允许您添加要构成新的更大受众的子受众。 默认情况下，**[!UICONTROL 受众]**&#x200B;块包含在合成画布的顶部。
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_audience"
+>title="受众块"
+>abstract="利用受众块，可访问要用于构建新受众的子受众。"
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_merge_types"
+>title="合并类型"
+>abstract="合并类型确定合并所选子受众的方式。 支持的值包括“并集”、“交集”和“排除重叠”。"
+
+**[!UICONTROL 受众]**&#x200B;块类型允许您添加要用于构成新的更大受众的子受众。 默认情况下，**[!UICONTROL 受众]**&#x200B;块包含在合成画布的顶部。
 
 当您选择&#x200B;**[!UICONTROL 受众]**&#x200B;块时，右边栏会显示用于为受众设置标签、将受众添加到该块以及为受众块构建自定义规则的控件。
 
@@ -88,6 +98,16 @@ ht-degree: 0%
 
 ## [!UICONTROL 排除] {#exclude-block}
 
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_exclude"
+>title="排除块"
+>abstract="通过“排除”块，可从构成中排除指定的受众或属性。"
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_exclude_type"
+>title="排除类型"
+>abstract="您可以排除属于特定受众的用户档案（按受众排除）或根据特定属性排除用户档案（按属性排除）。"
+
 **[!UICONTROL 排除]**&#x200B;块类型允许您从新的较大受众中排除指定的子受众或属性。
 
 要添加&#x200B;**[!UICONTROL 排除]**&#x200B;块，请选择&#x200B;**+**&#x200B;图标，然后选择&#x200B;**[!UICONTROL 排除]**。
@@ -127,6 +147,26 @@ ht-degree: 0%
 >按属性排除时，只能指定要排除的&#x200B;**一个**&#x200B;值。 使用任何类型的分隔符（如逗号或分号）都只会导致排除该确切值。 例如，将该值设置为`red, blue`将导致从属性中排除术语`red, blue`，但&#x200B;**不会**&#x200B;导致排除术语`red`或`blue`。
 
 ## [!UICONTROL 扩充] {#enrich-block}
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_enrich"
+>title="丰富块"
+>abstract="通过“扩充”块，您可以使用来自Adobe Experience Platform数据集的其他属性扩充受众。"
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_dataset"
+>title="扩充数据集"
+>abstract="扩充数据集包含要与构成关联的数据。"
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_enrich_criteria"
+>title="扩充标准"
+>abstract="扩充条件包括Source联接键和扩充数据集联接键。 这两个键协调源数据集和扩充数据集。"
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_enrich_attributes"
+>title="扩充属性"
+>abstract="扩充属性是要与构成关联的属性。"
 
 >[!IMPORTANT]
 >
@@ -206,6 +246,16 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 
 ## [!UICONTROL 排名] {#rank-block}
 
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_ranking"
+>title="排名块"
+>abstract="通过“排名”块，可根据特定属性对配置文件进行排名，并将其包含在构成中。"
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_rank_profilelimit_text"
+>title="添加轮廓限制"
+>abstract="通过“添加配置文件限制”切换，可指定在排名过程中包含的最大配置文件数。"
+
 **[!UICONTROL 排名]**&#x200B;块类型允许您根据指定属性对配置文件进行排名和排序，并将这些排名配置文件包含在您的构成中。
 
 要添加&#x200B;**[!UICONTROL 排名]**&#x200B;块，请选择&#x200B;**+**&#x200B;图标，然后选择&#x200B;**[!UICONTROL 排名]**。
@@ -231,6 +281,21 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 ![高亮显示“添加配置文件限制”切换开关，该开关允许您限制返回的配置文件数。](../images/ui/audience-composition/add-profile-limit.png)
 
 ## [!UICONTROL 拆分] {#split-block}
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_split"
+>title="拆分块"
+>abstract="利用拆分块，可将合成划分为多个路径。"
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_split_type"
+>title="拆分类型"
+>abstract="您可以按“百分比”拆分或“属性”拆分拆分合成。 百分比拆分会随机将用户档案拆分为多个路径。 属性拆分允许您根据指定的属性拆分用户档案。"
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_split_otherprofiles_text"
+>title="其他轮廓"
+>abstract="通过其他配置文件切换，可使用不符合其他任何路径指定条件的剩余配置文件创建其他路径。"
 
 **[!UICONTROL 拆分]**&#x200B;块类型允许您将新受众拆分为各种子受众。 您可以按百分比或属性拆分此受众。 将受众拆分为子受众时，此拆分为永久拆分&#x200B;**而非**。 这意味着每次评估的用户档案可能位于不同的子受众中。
 
@@ -272,13 +337,13 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 >
 >在发布受众构成时，请注意，评估和激活它以在下游服务(例如Real-Time CDP目标或Adobe Journey Optimizer渠道)中使用可能需要48小时。
 
-创建合成后，您可以通过选择&#x200B;**[!UICONTROL Publish]**&#x200B;来保存和发布合成。
+创建合成后，您可以通过选择&#x200B;**[!UICONTROL 发布]**&#x200B;来保存和发布合成。
 
-![Publish按钮突出显示，显示如何保存和发布您的合成。](../images/ui/audience-composition/publish.png)
+![“发布”按钮突出显示，显示如何保存和发布您的合成。](../images/ui/audience-composition/publish.png)
 
 如果创建受众时出现任何错误，则会显示一条警报，让您知道如何解决此问题。
 
-![Publish按钮突出显示，显示如何保存和发布您的合成。](../images/ui/audience-composition/audience-alert.png)
+![“发布”按钮突出显示，显示如何保存和发布您的合成。](../images/ui/audience-composition/audience-alert.png)
 
 ## 后续步骤
 
