@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明（2025 年 2 月）
 description: Adobe Experience Platform 的 2025 年 2 月发行说明。
-source-git-commit: b29c63942b00fdf597ebfd3ab105519a6b05a476
+source-git-commit: 8786ac8ab42d2b9e0c43000bbc6604462ea06f64
 workflow-type: tm+mt
-source-wordcount: '1378'
-ht-degree: 22%
+source-wordcount: '1481'
+ht-degree: 21%
 
 ---
 
@@ -73,7 +73,7 @@ Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使�
 
 有关详细信息，请阅读[数据准备概述](../../data-prep/home.md)。
 
-## 目标 {#destinations}
+## 目标（更新日期：2月20日） {#destinations}
 
 [!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
@@ -96,6 +96,7 @@ Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使�
 | 使用访问标签管理用户对目标数据流的访问 | 作为Real-Time CDP中基于[[!UICONTROL 属性的访问控制]](/help/access-control/abac/overview.md)功能的一部分，您现在可以对[目标数据流](/help/dataflows/ui/monitor-destinations.md)应用访问标签。 这样，您就可以确保组织中只有一部分用户有权访问特定的目标数据流。<br> **重要信息**：使用Experience Platform用户界面顶部的搜索框搜索目标数据流时，结果可能包括您的用户访问标签限制您查看的目标数据流。 此行为将在以后的更新中纠正。 |
 | [Marketo Engage连接](/help/destinations/catalog/adobe/marketo-engage.md)的[受众级别报表](/help/dataflows/ui/monitor-destinations.md#audience-level-dataflow-runs-for-streaming-destinations) | 您现在可以[查看有关在受众级别划分的激活、排除或失败身份的信息](/help/dataflows/ui/monitor-destinations.md#audience-level-dataflow-runs-for-streaming-destinations)，这些信息针对属于此目标数据流一部分的每个受众。 |
 | 对[TikTok](/help/destinations/catalog/social/tiktok.md)和[Snap Inc](/help/destinations/catalog/advertising/snap-inc.md)连接的外部受众支持 | 您可以从[自定义上载](../../segmentation/ui/audience-portal.md#import-audience)和[联合受众合成](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/start/audiences)将外部受众激活到这些目标。 |
+| 将阵列、映射和对象导出到云存储目标 | 在连接到云存储目标时，通过使用新的&#x200B;**[!UICONTROL 导出阵列、映射、对象]**&#x200B;切换，您可以将复杂对象新导出到选定的目标。 [参阅更多](/help/destinations/ui/export-arrays-calculated-fields.md)关于该功能的信息。 |
 
 {style="table-layout:auto"}
 
@@ -103,6 +104,10 @@ Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使�
 
 - Destination SDK测试工具中的问题已修复。 某些客户或合作伙伴遇到了[示例配置文件生成工具](/help/destinations/destination-sdk/testing-api/streaming-destinations/sample-profile-generation-api.md)的问题，原因是在用于生成配置文件的架构包含具有`No format`选择器的数据类型时，该工具格式不受支持。
 - 修复了在使用流服务API更新`targetConnection`目标规范时出现的问题。 在某些情况下，PATCH操作的行为与POST操作类似，会损坏现有数据流。 此问题现已修复，所有客户都可以使用流服务API更新其`targetConnection`规范。 [了解更多信息](/help/destinations/api/edit-destination.md#patch-target-connection)。
+- 将用户档案导出到基于文件的目标时，重复数据删除可确保在多个用户档案共享相同的重复数据删除键和相同的引用时间戳时，仅导出一个用户档案。 此版本包括了对重复数据删除流程的更新，确保使用相同的坐标连续运行将始终产生相同的结果，从而提高一致性。 [了解更多信息](/help/destinations/ui/activate-batch-profile-destinations.md#deduplication-same-timestamp)。
+
+有关更多信息，请阅读[目标概述](../../destinations/home.md)。
+
 
 ## 源 {#sources}
 
