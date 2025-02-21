@@ -6,7 +6,7 @@ exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
 source-git-commit: 546ef0f9a5a9c37de3891aba02491540a5c6f8c9
 workflow-type: tm+mt
 source-wordcount: '1730'
-ht-degree: 8%
+ht-degree: 13%
 
 ---
 
@@ -74,7 +74,7 @@ organizations = [{
 >[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_maps_objects"
 >title="导出数组、映射和对象"
->abstract="<p> 切换此设置<b>on</b>以启用将数组、映射和对象导出到JSON或Parquet文件。 您可以在映射步骤的源字段视图中选择这些对象类型。</p><p>通过此切换<b>关闭</b>，您可以在激活受众时使用计算字段选项并应用各种数据转换函数。 但是，您可以<i>不</i>将数组、映射和对象导出到JSON或Parquet文件，并且必须为此配置单独的目标。</p>"
+>abstract="<p> 将此设置切换为 <b>开</b>，以启用将数组、映射和对象导出到 JSON 或 Parquet 文件的功能。您可以在映射步骤中的源字段视图中选择这些对象类型。</p><p><b>关闭</b>此开关后，您可以使用计算字段选项并在激活受众时应用各种数据转换函数。但是，您<i>不能</i>将数组、映射和对象导出到 JSON 或 Parquet 文件，并且必须为此目的配置单独的目标。</p>"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_control"
