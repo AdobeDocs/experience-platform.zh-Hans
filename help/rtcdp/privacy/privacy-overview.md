@@ -1,19 +1,19 @@
 ---
 keywords: 数据治理rtcdp；rtcdp数据治理；实时客户数据配置文件数据治理；隐私rtcdp；rtcdp隐私
-title: Real-time Customer Data Platform中的隐私
-description: Adobe Real-time Customer Data Platform允许您简化使数据操作符合隐私法规的过程。
+title: Real-Time Customer Data Platform中的隐私
+description: Adobe Real-Time Customer Data Platform允许您简化使数据操作符合隐私法规的过程。
 feature: Get Started, Privacy
 exl-id: bcb0e42e-4549-4952-bb69-5534aee353f8
-source-git-commit: 82535ec3ac2dd27e685bb591fdf661d3ab5dd2c9
+source-git-commit: adc6d50f2784fe665d0590c3af053a057f8e4e38
 workflow-type: tm+mt
 source-wordcount: '386'
 ht-degree: 0%
 
 ---
 
-# Real-time Customer Data Platform中的隐私
+# Real-Time Customer Data Platform中的隐私
 
-[!DNL Adobe Real-Time Customer Data Platform] ([!DNL Real-Time CDP])可帮助营销人员将来自多个企业系统的数据汇集在一起，使他们能够更好地识别、理解和吸引客户。 Adobe将消费者数据隐私作为基本设计原则并提供了各种控制来帮助营销人员管理其客户的数据隐私。
+[!DNL Adobe Real-Time Customer Data Platform] ([!DNL Real-Time CDP])可帮助营销人员将来自多个企业系统的数据汇集在一起，使他们能够更好地识别、理解和吸引客户。 Adobe将消费者数据隐私视为基本设计原则，并提供各种控制以帮助营销人员管理其客户的数据隐私。
 
 大多数[!DNL Real-Time CDP]功能由Adobe Experience Platform提供支持。 本文档提供了有关[!DNL Real-Time CDP]支持的各种隐私增强技术的信息，以及指向[!DNL Experience Platform]文档的链接以获取更多信息。
 
@@ -29,13 +29,13 @@ ht-degree: 0%
 
 [!DNL Real-Time CDP]允许客户选择不将其个人数据包含在分段用例中。 客户的选择退出偏好设置由[!DNL Real-Time Customer Profile]捕获和存储，并且可以通过在区段谓词中使用布尔逻辑(“AND NOT”)排除已选择退出受众的用户来强制执行。
 
-有关详细信息，请参阅Adobe Experience Platform Segmentation Service文档中有关[接受选择退出请求](../../segmentation/consents.md)的文档。
+有关详细信息，请参阅Adobe Experience Platform Segmentation Service文档中有关[接受选择退出请求](../../segmentation/tutorials/consents.md)的文档。
 
 ## IAB TCF 2.0支持
 
 [!DNL Real-Time CDP]基于Adobe Experience Platform构建，该列表是[!DNL Transparency & Consent Framework (TCF)]的已注册[供应商列表](https://iabeurope.eu/vendor-list-tcf/)的一部分，如[!DNL Interactive Advertising Bureau (IAB)]所述。 为符合TCF 2.0要求，Platform允许您收集详细的客户同意数据，并将其集成到存储的客户配置文件中。 然后，可以根据导出受众的用例将这些同意数据纳入特定用户档案是否包含在导出受众中。
 
-有关详细信息，请参阅Experience Platform](../../landing/governance-privacy-security/consent/iab/overview.md)中有关[IAB TCF 2.0支持的概述。
+有关详细信息，请参阅Experience Platform](../../landing/governance-privacy-security/consent/iab/overview.md)中对[IAB TCF 2.0支持的概述。
 
 ## 后续步骤
 

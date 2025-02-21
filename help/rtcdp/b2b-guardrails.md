@@ -1,25 +1,25 @@
 ---
-keywords: 配置文件；Real-time Customer Profile；故障排除；护栏；准则；限制；实体；主要实体；维度实体；RTCDP；CDP；B2B版本；Real-time Customer Data Platform；real time customer data platform；real time cdp；b2b；cdp；
-title: Real-time Customer Data Platform B2B版本的默认护栏
+keywords: 个人资料；实时客户个人资料；故障排除；护栏；指南；限制；实体；主要实体；维度实体；RTCDP；CDP；B2B edition；Real-Time Customer Data Platform；实时客户数据平台；实时cdp；b2b；cdp；
+title: Real-Time Customer Data Platform B2B edition的默认护栏
 type: Documentation
-description: Adobe Experience Platform 使用与传统关系数据模型不同的高度非规范化混合数据模型。本文档提供了默认的使用和速率限制，以帮助您使用Adobe Real-time Customer Data Platform B2B版本为数据建模，以获得最佳系统性能。
-badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+description: Adobe Experience Platform 使用与传统关系数据模型不同的高度非规范化混合数据模型。本文档提供了默认的使用和速率限制，以帮助您使用Adobe Real-Time Customer Data Platform B2B edition为数据建模，以获得最佳系统性能。
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 feature: Guardrails, B2B
 exl-id: 8eff8c3f-a250-4aec-92a1-719ce4281272
-source-git-commit: 5d6b70e397a252e037589c3200053ebcb7eb8291
+source-git-commit: bc399f3af0524232671af780ea1380f1a71a5b7e
 workflow-type: tm+mt
 source-wordcount: '1817'
 ht-degree: 2%
 
 ---
 
-# Real-time Customer Data Platform B2B版本的默认护栏
+# Real-Time Customer Data Platform B2B edition的默认护栏
 
 >[!NOTE]
 >
->本文档中概述的限制表示由Real-time Customer Data Platform B2B版本启用的更改。 要获取Real-Time CDP B2B版本的默认限制的完整列表，请将这些限制与[实时客户配置文件数据文档](../profile/guardrails.md)护栏中概述的一般Adobe Experience Platform限制结合使用。
+>本文档中概述的限制表示由Real-Time Customer Data Platform B2B edition启用的更改。 要获取Real-Time CDP B2B edition默认限制的完整列表，请将这些限制与[实时客户资料数据文档](../profile/guardrails.md)护栏中概述的一般Adobe Experience Platform限制结合使用。
 
-Real-time Customer Data Platform B2B Edition允许您以实时客户配置文件和帐户配置文件的形式，根据行为见解和客户属性提供个性化的跨渠道体验。 为了支持这种新的配置文件方法，Experience Platform使用与传统关系数据模型不同的高度非规范化混合数据模型。
+Real-Time Customer Data Platform B2B edition允许您以实时客户配置文件和帐户配置文件的形式，根据行为见解和客户属性提供个性化的跨渠道体验。 为了支持这种处理用户档案的新方法，Experience Platform使用与传统关系数据模型不同的高度非规范化混合数据模型。
 
 >[!IMPORTANT]
 >
@@ -52,11 +52,11 @@ Real-time Customer Data Platform B2B Edition允许您以实时客户配置文件
 
 >[!NOTE]
 >
->本节中概述的数据模型限制表示由Real-time Customer Data Platform B2B版本启用的更改。 要获取Real-Time CDP B2B版本的默认限制的完整列表，请将这些限制与[实时客户配置文件数据文档](../profile/guardrails.md)护栏中概述的一般Adobe Experience Platform限制结合使用。
+>本节中概述的数据模型限制表示由Real-Time Customer Data Platform B2B edition启用的更改。 要获取Real-Time CDP B2B edition默认限制的完整列表，请将这些限制与[实时客户资料数据文档](../profile/guardrails.md)护栏中概述的一般Adobe Experience Platform限制结合使用。
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --------- | ----- | ---------- | ----------- |
-| Real-Time CDP B2B版本标准XDM类数据集 | 60 | 性能护栏 | 建议最大使用Real-Time CDP B2B版本提供的标准Experience Data Model (XDM)类的数据集60个。 有关B2B用例的标准XDM类的完整列表，请参阅Real-Time CDP B2B版本文档](schemas/b2b.md)中的[架构。 <br/><br/>*注意：由于Experience Platform的非规范化混合数据模型的性质，大多数客户不会超过此限制。 有关如何建模数据的问题，或者如果您想了解有关自定义限制的更多信息，请联系您的客户关怀代表。* |
+| Real-Time CDP B2B edition标准XDM类数据集 | 60 | 性能护栏 | 建议使用最多60个利用Real-Time CDP B2B edition提供的标准Experience Data Model (XDM)类的数据集。 有关B2B用例的标准XDM类的完整列表，请参阅Real-Time CDP B2B edition文档中的[架构](schemas/b2b.md)。 <br/><br/>*注意：由于Experience Platform非规范化混合数据模型的性质，大多数客户不会超过此限制。 有关如何建模数据的问题，或者如果您想了解有关自定义限制的更多信息，请联系您的客户关怀代表。* |
 | 身份图中个人帐户的身份计数 | 50 | 性能护栏 | 单个帐户在身份图中的最大身份数为50。 任何标识超过50的用户档案都将从分段、导出和查找中排除。 |
 | 旧版多实体关系 | 20 | 性能护栏 | 建议在主要实体和维度实体之间最多定义20个多实体关系。 在删除或禁用现有关系之前，不应进行其他关系映射。 |
 | 每个XDM类的多对一关系 | 2 | 性能护栏 | 建议每个XDM类最多定义2个多对一关系。 在删除或禁用现有关系之前，不应建立其他关系。 有关如何创建两个架构之间关系的步骤，请参阅有关[定义B2B架构关系](../xdm/tutorials/relationship-b2b.md)的教程。 |
@@ -65,7 +65,7 @@ Real-time Customer Data Platform B2B Edition允许您以实时客户配置文件
 
 >[!NOTE]
 >
->本节中概述的数据模型限制表示由Real-time Customer Data Platform B2B版本启用的更改。 要获取Real-Time CDP B2B版本的默认限制的完整列表，请将这些限制与[实时客户配置文件数据文档](../profile/guardrails.md)护栏中概述的一般Adobe Experience Platform限制结合使用。
+>本节中概述的数据模型限制表示由Real-Time Customer Data Platform B2B edition启用的更改。 要获取Real-Time CDP B2B edition默认限制的完整列表，请将这些限制与[实时客户资料数据文档](../profile/guardrails.md)护栏中概述的一般Adobe Experience Platform限制结合使用。
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --------- | ----- | ---------- | ----------- |
@@ -86,7 +86,7 @@ Real-time Customer Data Platform B2B Edition允许您以实时客户配置文件
 
 >[!NOTE]
 >
->本节中概述的数据大小限制表示由Real-time Customer Data Platform B2B版本启用的更改。 要获取Real-Time CDP B2B版本的默认限制的完整列表，请将这些限制与[实时客户配置文件数据文档](../profile/guardrails.md)护栏中概述的一般Adobe Experience Platform限制结合使用。
+>本节中概述的数据大小限制表示由Real-Time Customer Data Platform B2B edition启用的更改。 要获取Real-Time CDP B2B edition默认限制的完整列表，请将这些限制与[实时客户资料数据文档](../profile/guardrails.md)护栏中概述的一般Adobe Experience Platform限制结合使用。
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --------- | ----- | ---------- | ----------- |
@@ -96,21 +96,21 @@ Real-time Customer Data Platform B2B Edition允许您以实时客户配置文件
 
 >[!NOTE]
 >
->本节中概述的数据大小限制表示由Real-time Customer Data Platform B2B版本启用的更改。 要获取Real-Time CDP B2B版本的默认限制的完整列表，请将这些限制与[实时客户配置文件数据文档](../profile/guardrails.md)护栏中概述的一般Adobe Experience Platform限制结合使用。
+>本节中概述的数据大小限制表示由Real-Time Customer Data Platform B2B edition启用的更改。 要获取Real-Time CDP B2B edition默认限制的完整列表，请将这些限制与[实时客户资料数据文档](../profile/guardrails.md)护栏中概述的一般Adobe Experience Platform限制结合使用。
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --------- | ----- | ---------- | ----------- |
 | 所有维实体的总大小 | 5GB | 性能护栏 | 建议所有维度实体的总大小为5GB。 摄取大尺寸实体可能会影响系统性能。 例如，不建议尝试将10GB的产品目录加载为维度实体。 |
 | 每个维度实体架构的数据集 | 5 | 性能护栏 | 建议最多5个与每个维度实体架构关联的数据集。 例如，如果您为“产品”创建架构，并添加五个参与数据集，则不应创建与产品架构绑定的第六个数据集。 |
-| 每日摄取的Dimension实体批次 | 每个实体4个 | 性能护栏 | 建议每天摄取的维度实体批次的最大数量为每个实体4个。 例如，您每天最多可以摄取4次产品目录的更新。 为同一实体摄取其他维度实体批次可能会影响系统性能。 |
+| 每天摄取的Dimension实体批次 | 每个实体4个 | 性能护栏 | 建议每天摄取的维度实体批次的最大数量为每个实体4个。 例如，您每天最多可以摄取4次产品目录的更新。 为同一实体摄取其他维度实体批次可能会影响系统性能。 |
 
 ## 分段护栏
 
-此部分中概述的护栏是指组织可以在Experience Platform中创建的受众的数量和性质，以及映射和激活受众到目标。
+本节中概述的护栏是指组织可以在Experience Platform中创建的受众的数量和性质，以及映射和激活受众到目标。
 
 >[!NOTE]
 >
->本节中概述的分段限制表示由Real-time Customer Data Platform B2B版本启用的更改。 要获取Real-Time CDP B2B版本的默认限制的完整列表，请将这些限制与[实时客户配置文件数据文档](../profile/guardrails.md)护栏中概述的一般Adobe Experience Platform限制结合使用。
+>本节中概述的分段限制表示由Real-Time Customer Data Platform B2B edition启用的更改。 要获取Real-Time CDP B2B edition默认限制的完整列表，请将这些限制与[实时客户资料数据文档](../profile/guardrails.md)护栏中概述的一般Adobe Experience Platform限制结合使用。
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --------- | ----- | ---------- | ----------- |
@@ -118,7 +118,7 @@ Real-time Customer Data Platform B2B Edition允许您以实时客户配置文件
 
 ## 后续步骤
 
-本文档中概述的限制表示由Real-time Customer Data Platform B2B版本启用的更改。 要获取Real-Time CDP B2B版本的默认限制的完整列表，请将这些限制与[实时客户配置文件数据文档](../profile/guardrails.md)护栏中概述的一般Adobe Experience Platform限制结合使用。
+本文档中概述的限制表示由Real-Time Customer Data Platform B2B edition启用的更改。 要获取Real-Time CDP B2B edition默认限制的完整列表，请将这些限制与[实时客户资料数据文档](../profile/guardrails.md)护栏中概述的一般Adobe Experience Platform限制结合使用。
 
 ## 附录
 
@@ -138,10 +138,10 @@ Real-time Customer Data Platform B2B Edition允许您以实时客户配置文件
 
 #### Dimension实体
 
-虽然维护用户档案数据的用户档案数据存储不是关系存储，但用户档案允许与小型维度实体集成，以便以简化且直观的方式创建受众。 此集成称为[多实体分段](../segmentation/multi-entity-segmentation.md)。
+虽然维护用户档案数据的用户档案数据存储不是关系存储，但用户档案允许与小型维度实体集成，以便以简化且直观的方式创建受众。 此集成称为[多实体分段](../segmentation/tutorials/multi-entity-segmentation.md)。
 
 您的组织还可以定义XDM类来描述个人以外的其他内容，如商店、产品或资产。 这些非[!DNL XDM Individual Profile]架构称为“维度实体”（也称为“查找实体”），不包含时间序列数据。 表示维度实体的架构通过使用[架构关系](../xdm/tutorials/relationship-ui.md)链接到配置文件实体。
 
-Dimension实体提供查找数据，这有助于并简化多实体区段定义，并且必须足够小，以便分段引擎可以将整个数据集加载到内存中以进行最佳处理（快速点查找）。
+Dimension实体提供查找数据，可帮助和简化多实体区段定义，并且必须足够小，以便分段引擎可以将整个数据集加载到内存中以进行优化处理（快速点查找）。
 
 ![显示配置文件实体由维度实体组成的信息图形。](../profile/images/guardrails/profile-and-dimension-entities.png)

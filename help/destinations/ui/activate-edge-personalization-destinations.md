@@ -3,7 +3,7 @@ title: 激活受众以边缘个性化目标
 description: 了解如何为同一页面和下一页面个性化用例将受众从Adobe Experience Platform激活到边缘个性化目标。
 type: Tutorial
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: 14dccb993b38ca352c6de3ed851bafe7c44ca631
+source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
 workflow-type: tm+mt
 source-wordcount: '1957'
 ht-degree: 2%
@@ -15,7 +15,7 @@ ht-degree: 2%
 
 ## 概述 {#overview}
 
-Adobe Experience Platform使用[edge segmentation](../../segmentation/ui/edge-segmentation.md)和[edge destinations](/help/destinations/destination-types.md#edge-personalization-destinations)使客户能够实时大规模创建和定位受众。 此功能可帮助您配置同页和下一页个性化用例。
+Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/edge-segmentation.md)和[edge destinations](/help/destinations/destination-types.md#edge-personalization-destinations)使客户能够实时大规模创建和定位受众。 此功能可帮助您配置同页和下一页个性化用例。
 
 边缘目标的示例有[Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md)和[自定义个性化](../../destinations/catalog/personalization/custom-personalization.md)连接。
 
@@ -31,13 +31,13 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/ui/edge-se
 > 
 > 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
-本文介绍了将受众激活到Adobe Experience Platform Edge目标所需的工作流。 当与[边缘分段](../../segmentation/ui/edge-segmentation.md)和可选的[配置文件属性映射](#mapping)一起使用时，这些目标会在您的Web和移动属性上启用同一页面和下一页面个性化用例。
+本文介绍了将受众激活到Adobe Experience Platform Edge目标所需的工作流。 当与[边缘分段](../../segmentation/methods/edge-segmentation.md)和可选的[配置文件属性映射](#mapping)一起使用时，这些目标会在您的Web和移动属性上启用同一页面和下一页面个性化用例。
 
 有关如何为Edge个性化配置Adobe Target连接的简短概述，请观看以下视频。
 
 >[!NOTE]
 >
->Experience Platform用户界面经常更新，自从录制此视频以来，该界面可能已发生更改。 有关最新信息，请参阅以下部分中描述的配置步骤。
+>Experience Platform用户界面经常更新，自从录制此视频以来，可能已经发生了变化。 有关最新信息，请参阅以下部分中描述的配置步骤。
 
 >[!VIDEO](https://video.tv.adobe.com/v/3418799/?quality=12&learn=on)
 
@@ -47,11 +47,11 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/ui/edge-se
 
 ## 用例 {#use-cases}
 
-使用Adobe个性化解决方案(如Adobe Target)或您自己的个性化合作伙伴平台（例如，[!DNL Optimizely]、[!DNL Pega]）以及专有系统(例如，内部CMS)，通过[自定义Personalization](../catalog/personalization/custom-personalization.md)目标提供更深入的客户个性化体验。 所有这些功能的同时还可利用Experience PlatformEdge Network数据收集和分段功能。
+使用Adobe个性化解决方案(如Adobe Target)或您自己的个性化合作伙伴平台（例如，[!DNL Optimizely]、[!DNL Pega]）以及专有系统(例如，内部CMS)，通过[自定义Personalization](../catalog/personalization/custom-personalization.md)目标提供更深入的客户个性化体验。 所有这些功能的同时还利用了Experience Platform Edge Network数据收集和分段功能。
 
 下面介绍的使用案例包括网站个性化和有针对性的网站广告。
 
-要启用这些用例，客户需要一种快速、简化的方式，以便从Experience Platform中检索受众和配置文件属性信息，并将这些信息发送到Experience PlatformUI中的[Adobe Target](../catalog/personalization/adobe-target-connection.md)或[自定义Personalization](../catalog/personalization/custom-personalization.md)连接。
+要启用这些用例，客户需要一种快速、简化的方式，以便从Experience Platform中检索受众和配置文件属性信息，并将这些信息发送到Experience Platform UI中的[Adobe Target](../catalog/personalization/adobe-target-connection.md)或[自定义Personalization](../catalog/personalization/custom-personalization.md)连接。
 
 ### 同一页面个性化 {#same-page}
 
@@ -75,7 +75,7 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/ui/edge-se
 
 ### 在数据收集UI中配置数据流 {#configure-datastream}
 
-设置个性化目标的第一步是为Experience PlatformWeb SDK配置数据流。 可在数据收集UI中完成此操作。
+设置个性化目标的第一步是为Experience Platform Web SDK配置数据流。 可在数据收集UI中完成此操作。
 
 配置数据流时，在&#x200B;**[!UICONTROL Adobe Experience Platform]**&#x200B;下，确保同时选择&#x200B;**[!UICONTROL Edge分段]**&#x200B;和&#x200B;**[!UICONTROL Personalization目标]**。
 
@@ -89,7 +89,7 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/ui/edge-se
 
 ### 创建[!DNL Active-On-Edge]合并策略 {#create-merge-policy}
 
-创建目标连接后，必须创建[!DNL Active-On-Edge]合并策略。 [!DNL Active-On-Edge]合并策略确保在](../../segmentation/ui/edge-segmentation.md)边缘上持续评估受众[，并且可用于实时和下一页个性化用例。
+创建目标连接后，必须创建[!DNL Active-On-Edge]合并策略。 [!DNL Active-On-Edge]合并策略确保在](../../segmentation/methods/edge-segmentation.md)边缘上持续评估受众[，并且可用于实时和下一页个性化用例。
 
 >[!IMPORTANT]
 >
@@ -120,7 +120,7 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/ui/edge-se
 
 1. 转到&#x200B;**[!UICONTROL 连接>目标]**，然后选择&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡。
 
-   在Experience PlatformUI中突出显示![目标目录选项卡。](../assets/ui/activate-edge-personalization-destinations/catalog-tab.png)
+   在Experience Platform UI中突出显示![目标目录选项卡。](../assets/ui/activate-edge-personalization-destinations/catalog-tab.png)
 
 1. 在与您要激活受众的个性化目标对应的卡片上，选择&#x200B;**[!UICONTROL 激活受众]**，如下图所示。
 
@@ -141,7 +141,7 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/ui/edge-se
 您可以从多种类型的受众中进行选择，具体取决于其来源：
 
 * **[!UICONTROL 分段服务]**：分段服务在Experience Platform中生成的受众。 有关详细信息，请参阅[分段文档](../../segmentation/ui/overview.md)。
-* **[!UICONTROL 自定义上传]**：在Experience Platform外部生成的受众，以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/audience-portal.md#import-audience)的文档。
+* **[!UICONTROL 自定义上传]**：受众在Experience Platform外部生成，并以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/audience-portal.md#import-audience)的文档。
 * 其他类型的受众，来自其他Adobe解决方案，如[!DNL Audience Manager]。
 
 ![在激活工作流中选择突出显示多个受众的受众步骤。](../assets/ui/activate-edge-personalization-destinations/select-audiences.png)
@@ -152,7 +152,7 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/ui/edge-se
 >
 >配置文件属性可能包含敏感数据。 为了保护此数据，**[!UICONTROL 自定义Personalization]**&#x200B;目标要求您在为基于属性的个性化配置目标时使用[Edge Network服务器API](../../server-api/overview.md)。 所有服务器API调用必须在[经过身份验证的上下文](../../server-api/authentication.md)中进行。
 >
-><br>如果您已在使用Web SDK或Mobile SDK进行集成，则可以通过添加服务器端集成通过服务器API检索属性。
+><br>如果您已在使用Web SDK或Mobile SDK进行集成，则可以通过添加服务器端集成来通过服务器API检索属性。
 >
 ><br>如果不遵循上述要求，则仅基于受众成员资格进行个性化。
 
@@ -200,7 +200,7 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/ui/edge-se
 
 ### 同意策略评估 {#consent-policy-evaluation}
 
-如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的配置文件数量。有关详细信息，请阅读[同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。
+如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的轮廓数量。有关详细信息，请阅读[同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。
 
 ### 数据使用策略检查 {#data-usage-policy-checks}
 

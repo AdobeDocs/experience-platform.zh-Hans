@@ -1,28 +1,28 @@
 ---
 title: Demandbase连接
-description: 使用此目标可为Account-Based Marketing (ABM)用例激活帐户受众。 通过DemandBase的B2BDemand Side Platform(DSP)向目标帐户中的相关角色和角色播发。 Target帐户还可以使用Demandbase第三方数据进行扩充，以用于营销和销售中的其他下游用例。
-badgeB2B: label="B2B版本" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+description: 使用此目标来激活 Account-Based Marketing (ABM) 用例的帐户受众。通过 DemandBase 的 B2B Demand Side Platform（DSP）向目标帐户中的相关人物和角色投放广告。目标帐户还可以通过 Demandbase 第三方数据进行丰富，以用于营销和销售中的其他下游用例。
+badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 last-substantial-update: 2024-09-30T00:00:00Z
-source-git-commit: 92abae6bc63c13f1103364ae82cc9c04459ce00f
+exl-id: a84609a2-f1d3-4998-9db4-ad59c0a0b631
+source-git-commit: 08c2c7f5080f0e6afb7be53aad9f88ba0fccf923
 workflow-type: tm+mt
 source-wordcount: '696'
-ht-degree: 3%
+ht-degree: 17%
 
 ---
-
 
 # Demandbase连接 {#demandbase}
 
 >[!AVAILABILITY]
 >
->>向Demandbase目标激活帐户受众的功能适用于购买[企业对企业](/help/rtcdp/overview.md#rtcdp-b2b)和[企业对个人](/help/rtcdp/overview.md#rtcdp-b2p)版本的Real-time Customer Data Platform的公司。
+>>向Demandbase目标激活帐户受众的功能适用于购买[企业对企业](/help/rtcdp/overview.md#rtcdp-b2b)和[企业对个人](/help/rtcdp/overview.md#rtcdp-b2p)版本的Real-Time Customer Data Platform的公司。
 
-根据[帐户受众](/help/segmentation/ui/account-audiences.md) ，激活Demandbase营销活动的配置文件以进行受众定位、个性化和抑制。
+根据[帐户受众](/help/segmentation/types/account-audiences.md) ，激活Demandbase营销活动的配置文件以进行受众定位、个性化和抑制。
 
 ## 用例 {#use-case}
 
-使用此目标可为Account-Based Marketing (ABM)用例激活帐户受众。 通过DemandBase的B2BDemand Side Platform(DSP)向目标帐户中的相关角色和角色播发。 Target帐户还可以使用Demandbase第三方数据进行扩充，以用于营销和销售中的其他下游用例。
+使用此目标来激活 Account-Based Marketing (ABM) 用例的帐户受众。通过 DemandBase 的 B2B Demand Side Platform（DSP）向目标帐户中的相关人物和角色投放广告。目标帐户还可以通过 Demandbase 第三方数据进行丰富，以用于营销和销售中的其他下游用例。
 
 例如，利用Demandbase的广告技术DSP来定位关键客户中的特定角色或角色，以实现漏斗顶级的商机开发，或创建并扩大购买群体。 使用Demandbase目标来探索其他用例，以有效定位您的帐户。
 
@@ -34,8 +34,8 @@ ht-degree: 3%
 
 | 受众来源 | 支持 | 描述 |
 ---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | X | 受众[已将](../../../segmentation/ui/overview.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | X | 受众[已从CSV文件将](../../../segmentation/ui/overview.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -97,4 +97,4 @@ ht-degree: 3%
 ## 其他注释和重要标注 {#additional-notes}
 
 * 如果之前已将具有相同名称的帐户受众激活到Demandbase，则无法再通过其他数据流将其激活到Demandbase目标。
-* 如果您已将受众导出到Demandbase，并且导出在Experience Platform中成功，但并非所有数据都会到达Demandbase，则您可能会在Demandbase端遇到API限制。 请联系他们以获取说明。
+* 如果您已将受众导出到Demandbase，并且在Experience Platform中成功导出，但并非所有数据都会到达Demandbase，则您可能会在Demandbase端遇到API限制。 请联系他们以获取说明。

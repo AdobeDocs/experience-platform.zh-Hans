@@ -3,14 +3,14 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: 实时客户个人资料UI指南
 description: Real-time Customer Profile可以为每位客户创建整体视图，结合来自多个渠道（包括在线、离线、CRM和第三方数据）的数据。 本文档提供了在Adobe Experience Platform用户界面中与Real-time Customer Profile交互的指南。
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: dc31258dad5cf03a8f4f60db4d4aefc29e8157c8
+source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
 workflow-type: tm+mt
 source-wordcount: '2212'
 ht-degree: 3%
 
 ---
 
-# [!DNL Real-Time Customer Profile]用户界面指南
+# [!DNL Real-Time Customer Profile] UI 指南
 
 [!DNL Real-Time Customer Profile]为每个客户创建整体视图，结合来自多个渠道的数据，包括在线、离线、CRM和第三方数据。 本文档用作在Adobe Experience Platform用户界面(UI)中与[!DNL Real-Time Customer Profile]数据交互的指南。
 
@@ -24,13 +24,13 @@ ht-degree: 3%
 
 ## [!UICONTROL 概述]
 
-在Experience PlatformUI中，从左侧导航中选择&#x200B;**[!UICONTROL 配置文件]**&#x200B;以打开显示配置文件仪表板的&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 配置文件]**&#x200B;以打开显示配置文件仪表板的&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡。
 
 >[!NOTE]
 >
 >如果您的组织是Platform的新用户，并且尚未创建活动配置文件数据集或合并策略，则[!UICONTROL 配置文件]仪表板不可见。 相反，[!UICONTROL 概述]选项卡显示链接和文档，以帮助您开始使用实时客户个人资料。
 
-### 个人资料仪表板 {#profile-dashboard}
+### 轮廓仪表板 {#profile-dashboard}
 
 配置文件仪表板概述了与组织配置文件数据相关的关键量度。
 
@@ -54,7 +54,7 @@ ht-degree: 3%
 
 ### 轮廓计数 {#profile-count}
 
-在您的组织默认合并Experience Platform将配置文件片段合并在一起，为每个单独的客户形成一个配置文件后，配置文件计数会显示您的组织在该策略中的配置文件总数。 换言之，您的组织可能具有多个与跨不同渠道与您的品牌互动的单个客户相关的配置文件片段，但这些片段将合并在一起（根据默认合并策略），并将返回计数“1”个配置文件，因为它们都与同一个人相关。
+配置文件计数显示贵组织在将默认合并策略与配置文件片段合并在一起，以便为每个单独客户形成一个配置文件后，在Experience Platform中拥有的配置文件总数。 换言之，您的组织可能具有多个与跨不同渠道与您的品牌互动的单个客户相关的配置文件片段，但这些片段将合并在一起（根据默认合并策略），并将返回计数“1”个配置文件，因为它们都与同一个人相关。
 
 配置文件计数还包括具有属性（记录数据）的用户档案，以及仅包含时间序列（事件）数据(如Adobe Analytics配置文件)的用户档案。 用户档案计数会定期刷新，以提供Platform内最新的用户档案总数。
 
@@ -171,11 +171,11 @@ ht-degree: 3%
 
 **[!UICONTROL 受众成员资格]**&#x200B;选项卡显示一个列表，其中包含单个客户配置文件当前所属受众的名称和描述。 当配置文件符合受众资格或过期时，此列表会自动更新。 配置文件当前符合条件的受众总数，将显示在选项卡的右侧。
 
-有关Experience Platform分段的更多信息，请参阅[AdobeExperience Platform分段服务文档](../../segmentation/home.md)。
+有关Experience Platform中分段的更多信息，请参阅[Adobes Experience Platform分段服务文档](../../segmentation/home.md)。
 
 ![受众成员资格选项卡突出显示。 将显示个人资料的受众成员资格详细信息。](../images/user-guide/audience-membership.png)
 
-要查看Edge上可用配置文件的受众成员资格，请在数据位置选择器中选择&#x200B;**[!UICONTROL Edge]**。 有关边缘分段的更多信息，请参阅[边缘分段指南](../../segmentation/ui/edge-segmentation.md)。
+要查看Edge上可用配置文件的受众成员资格，请在数据位置选择器中选择&#x200B;**[!UICONTROL Edge]**。 有关边缘分段的更多信息，请参阅[边缘分段指南](../../segmentation/methods/edge-segmentation.md)。
 
 ![受众成员资格选项卡中的数据位置选择器突出显示。](../images/user-guide/audience-membership-select.png)
 
@@ -205,4 +205,4 @@ ht-degree: 3%
 
 ## 后续步骤
 
-阅读本指南后，您将了解如何使用Experience PlatformUI查看和管理组织的配置文件数据。 有关如何使用Experience PlatformAPI处理配置文件数据的信息，请参阅[实时客户配置文件API指南](../api/overview.md)。
+通过阅读本指南，您可以了解如何使用Experience Platform UI查看和管理组织的配置文件数据。 有关如何使用Experience Platform API处理配置文件数据的信息，请参阅[实时客户配置文件API指南](../api/overview.md)。

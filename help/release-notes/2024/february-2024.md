@@ -2,8 +2,8 @@
 title: Adobe Experience Platform 发行说明（2024 年 2 月）
 description: Adobe Experience Platform 的 2024 年 2 月发行说明。
 exl-id: 7e4b76b7-4027-4890-b869-1dbb79670c3e
-source-git-commit: aa33f7006b1a3abf7d19ffe3e0d5e5ee39fe9a5d
-workflow-type: ht
+source-git-commit: 02f2082e695d157415c9e0c59ca5d371c94bb991
+workflow-type: tm+mt
 source-wordcount: '1244'
 ht-degree: 100%
 
@@ -101,7 +101,7 @@ Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。企
 
 | 功能 | 描述 |
 | --- | --- |
-| 沙盒工具 | 除了现在支持同意和治理规则的对象类型之外，还可以使用沙盒工具导入未启用统一配置文件的模式，在导入段时检查目标沙盒中缺少的属性，并默认使用现有的合并策略。有关这些功能的更多信息，请参阅[沙盒工具 UI 指南](../../sandboxes/ui/sandbox-tooling.md)。 |
+| 沙盒工具 | 除了现在支持同意和治理规则的对象类型之外，还可以使用沙盒工具导入未启用统一配置文件的架构，在导入段时检查目标沙盒中缺少的属性，并默认使用现有的合并策略。有关这些功能的更多信息，请参阅[沙盒工具 UI 指南](../../sandboxes/ui/sandbox-tooling.md)。 |
 
 {style="table-layout:auto"}
 
@@ -115,7 +115,7 @@ Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。企
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 帐户受众 | 帐户受众现已普遍可用！现在，您可以使用帐户细分，在实时客户平台的 B2B 和 B2P 版本中，将营销细分体验从基于人的受众转移到基于帐户的受众，从而实现轻松而复杂的营销细分体验。此版本允许您使用基于人的受众作为基于帐户的受众的谓词，添加搜索功能，支持自定义实体的使用，并符合数据治理。有关此功能的更多信息，请阅读[帐户受众概览](../../segmentation/ui/account-audiences.md)。 |
+| 帐户受众 | 帐户受众现已普遍可用！现在，您可以使用帐户细分，在实时客户平台的 B2B 和 B2P 版本中，将营销细分体验从基于人的受众转移到基于帐户的受众，从而实现轻松而复杂的营销细分体验。此版本允许您使用基于人的受众作为基于帐户的受众的谓词，添加搜索功能，支持自定义实体的使用，并符合数据治理。有关此功能的更多信息，请阅读[帐户受众概览](../../segmentation/types/account-audiences.md)。 |
 
 {style="table-layout:auto"}
 

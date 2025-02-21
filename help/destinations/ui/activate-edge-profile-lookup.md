@@ -1,14 +1,14 @@
 ---
 title: 实时查找边缘配置文件属性
-description: 了解如何使用自定义Personalization目标和Edge NetworkAPI实时查找边缘配置文件属性
+description: 了解如何使用自定义Personalization目标和Edge Network API实时查找边缘配置文件属性
 type: Tutorial
-source-git-commit: 6414168c1deb047af30d8636ef8d61316f56aecf
+exl-id: e185d741-af30-4706-bc8f-d880204d9ec7
+source-git-commit: 276fd7c532843c9589e1d51b0bc7a76cb5c3eb9f
 workflow-type: tm+mt
 source-wordcount: '1904'
 ht-degree: 3%
 
 ---
-
 
 # 实时查找边缘上的配置文件属性
 
@@ -27,19 +27,19 @@ Adobe Experience Platform使用[实时客户个人资料](../../profile/home.md)
 
 配置本页中所述的用例时，将使用以下平台组件：
 
-* [数据流](../../datastreams/overview.md)：数据流从Web SDK接收传入事件数据并使用边缘配置文件数据进行响应。
+* [数据流](../../datastreams/overview.md)：数据流接收来自Web SDK的传入事件数据并使用边缘配置文件数据进行响应。
 * [合并策略](../../segmentation/ui/segment-builder.md#merge-policies)：您将创建一个[!UICONTROL Edge上的Active-On]合并策略，以确保边缘配置文件使用正确的配置文件数据。
-* [自定义Personalization连接](../catalog/personalization/custom-personalization.md)：您将配置新的自定义个性化连接，该连接会将配置文件属性发送到Edge Network。
-* [Edge NetworkAPI](../../server-api/overview.md)：您将使用Edge NetworkAPI [交互式数据收集](../../server-api/interactive-data-collection.md)功能从Edge配置文件中快速检索配置文件属性。
+* [自定义Personalization连接](../catalog/personalization/custom-personalization.md)：您将配置新的自定义个性化连接，以将配置文件属性发送到Edge Network。
+* [Edge Network API](../../server-api/overview.md)：您将使用Edge Network API [交互式数据收集](../../server-api/interactive-data-collection.md)功能从Edge配置文件中快速检索配置文件属性。
 
 ## 性能护栏 {#guardrails}
 
-Edge配置文件查找用例受下表所述的特定性能护栏的约束。 有关Edge NetworkAPI护栏的更多详细信息，请参阅护栏[文档页面](https://developer.adobe.com/data-collection-apis/docs/getting-started/guardrails/)。
+Edge配置文件查找用例受下表所述的特定性能护栏的约束。 有关Edge Network API护栏的更多详细信息，请参阅护栏[文档页面](https://developer.adobe.com/data-collection-apis/docs/getting-started/guardrails/)。
 
 | Edge Network服务 | Edge区段 | 每秒请求数 |
 |---------|----------|---------|
-| 通过[Edge NetworkAPI](https://developer.adobe.com/data-collection-apis/docs/api/)的[自定义个性化目标](../catalog/personalization/custom-personalization.md) | 是 | 1500 |
-| 通过[Edge NetworkAPI](https://developer.adobe.com/data-collection-apis/docs/api/)的[自定义个性化目标](../catalog/personalization/custom-personalization.md) | 否 | 1500 |
+| 通过[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/)的[自定义个性化目标](../catalog/personalization/custom-personalization.md) | 是 | 1500 |
+| 通过[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/)的[自定义个性化目标](../catalog/personalization/custom-personalization.md) | 否 | 1500 |
 
 ## 步骤1：创建和配置数据流 {#create-datastream}
 
@@ -61,7 +61,7 @@ Edge配置文件查找用例受下表所述的特定性能护栏的约束。 有
 
 在Edge上查找配置文件属性时，需要配置受众以进行Edge评估。
 
-确保您计划激活的受众已将[Edge上的活动合并策略](../../segmentation/ui/segment-builder.md#merge-policies)设置为默认值。 [!DNL Active-On-Edge]合并策略确保在](../../segmentation/ui/edge-segmentation.md)边缘上持续评估受众[，并且可用于实时个性化用例。
+确保您计划激活的受众已将[Edge上的活动合并策略](../../segmentation/ui/segment-builder.md#merge-policies)设置为默认值。 [!DNL Active-On-Edge]合并策略确保在](../../segmentation/methods/edge-segmentation.md)边缘上持续评估受众[，并且可用于实时个性化用例。
 
 按照[创建合并策略](../../profile/merge-policies/ui-guide.md#create-a-merge-policy)中的说明进行操作，并确保启用&#x200B;**[!UICONTROL Edge上的活动合并策略]**&#x200B;切换开关。
 
@@ -79,13 +79,13 @@ Edge配置文件查找用例受下表所述的特定性能护栏的约束。 有
 
 配置新目标时，请在&#x200B;**[!UICONTROL 数据流ID]**&#x200B;字段中选择您在[步骤1](#create-datastream)中创建的数据流。 对于&#x200B;**[!UICONTROL 集成别名]**，您可以使用任何有助于将来识别此目标连接的值，如目标名称。
 
-![Experience PlatformUI图像显示“具有属性的自定义Personalization”配置屏幕。](../assets/ui/activate-edge-profile-lookup/destination-config.png)
+![Experience Platform UI图像显示“具有属性的自定义Personalization”配置屏幕。](../assets/ui/activate-edge-profile-lookup/destination-config.png)
 
 +++
 
 +++将受众激活到具有属性的自定义Personalization连接
 
-创建具有属性&#x200B;]**的**[!UICONTROL &#x200B;自定义Personalization连接后，现在即可将配置文件数据发送给Edge Network。
+创建具有属性&#x200B;]**的**[!UICONTROL &#x200B;自定义Personalization连接后，现在即可将配置文件数据发送到Edge Network。
 
 >[!IMPORTANT]
 > 
@@ -95,7 +95,7 @@ Edge配置文件查找用例受下表所述的特定性能护栏的约束。 有
 
 1. 转到&#x200B;**[!UICONTROL 连接>目标]**，然后选择&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡。
 
-   在Experience PlatformUI中突出显示![目标目录选项卡。](../assets/ui/activate-edge-personalization-destinations/catalog-tab.png)
+   在Experience Platform UI中突出显示![目标目录选项卡。](../assets/ui/activate-edge-personalization-destinations/catalog-tab.png)
 
 1. 找到&#x200B;**[!UICONTROL 具有属性的自定义Personalization]**&#x200B;目标卡，然后选择&#x200B;**[!UICONTROL 激活受众]**，如下图所示。
 
@@ -110,7 +110,7 @@ Edge配置文件查找用例受下表所述的特定性能护栏的约束。 有
    您可以从多种类型的受众中进行选择，具体取决于其来源：
 
    * **[!UICONTROL 分段服务]**：分段服务在Experience Platform中生成的受众。 有关详细信息，请参阅[分段文档](../../segmentation/ui/overview.md)。
-   * **[!UICONTROL 自定义上传]**：在Experience Platform外部生成的受众，以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/overview.md#import-audience)的文档。
+   * **[!UICONTROL 自定义上传]**：受众在Experience Platform外部生成，并以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/overview.md#import-audience)的文档。
    * 其他类型的受众，来自其他Adobe解决方案，如[!DNL Audience Manager]。
 
      ![在激活工作流中选择突出显示多个受众的受众步骤。](../assets/ui/activate-edge-personalization-destinations/select-audiences.png)
@@ -129,7 +129,7 @@ Edge配置文件查找用例受下表所述的特定性能护栏的约束。 有
 
 完成配置文件属性的映射后，选择&#x200B;**[!UICONTROL 下一步]**。
 
-在&#x200B;**[!UICONTROL 审核]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL 取消]**&#x200B;以中断流，**[!UICONTROL 上一步]**&#x200B;以修改您的设置，或者选择&#x200B;**[!UICONTROL 完成]**&#x200B;以确认您的选择并开始向Edge Network发送配置文件数据。
+在&#x200B;**[!UICONTROL 审核]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL 取消]**&#x200B;以中断流，**[!UICONTROL 上一步]**&#x200B;以修改您的设置，或者选择&#x200B;**[!UICONTROL 完成]**&#x200B;以确认您的选择并开始将配置文件数据发送到Edge Network。
 
 ![审核步骤中的选择摘要。](../assets/ui/activate-edge-personalization-destinations/review.png)
 
@@ -160,13 +160,13 @@ Edge配置文件查找用例受下表所述的特定性能护栏的约束。 有
 
 ## 步骤4：查找边缘上的配置文件属性 {#configure-edge-profile-lookup}
 
-到现在为止，您应该已经完成了[数据流的配置](#create-datastream)，您已经[创建了新的具有属性的自定义Personalization目标连接](#configure-destination)，并且您已使用此连接将[发送配置文件属性](#activate-audiences)，您将能够查找该Edge Network。
+到现在您应该已经完成了[数据流的配置](#create-datastream)，您已经[创建了新的具有属性的自定义Personalization目标连接](#configure-destination)，并且您已使用此连接将[发送配置文件属性](#activate-audiences)，您将能够查找到Edge Network。
 
 下一步是配置您的个性化解决方案，以从边缘配置文件中检索配置文件属性。
 
 >[!IMPORTANT]
 >
->配置文件属性可能包含敏感数据。 要保护此数据，必须通过[Edge NetworkAPI](../../server-api/overview.md)检索配置文件属性。 此外，必须通过Edge NetworkAPI [交互式数据收集终结点](../../server-api/interactive-data-collection.md)检索配置文件属性，才能对API调用进行身份验证。
+>配置文件属性可能包含敏感数据。 要保护此数据，必须通过[Edge Network API](../../server-api/overview.md)检索配置文件属性。 此外，您必须通过Edge Network API [交互式数据收集终结点](../../server-api/interactive-data-collection.md)检索配置文件属性，才能对API调用进行身份验证。
 ><br>如果您不遵循上述要求，则将仅基于受众成员资格进行个性化，并且用户档案属性将不可使用。
 
 您在[步骤1](#create-datastream)中配置的数据流现在已准备好接受传入事件数据并使用边缘配置文件信息进行响应。
@@ -307,7 +307,7 @@ curl -X POST "https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM
 |---------|----------|
 | `payload` | 当边缘上不存在该配置文件时，`payload`对象为空。 |
 | `type` | `payload`对象按类型分组。 对于边缘配置文件查找用例，`payload`对象的类型始终为`activation:pull`。 |
-| `eventIndex` | Edge Network以阵列的形式接收来自客户端的事件。 数组中的事件顺序在处理期间保持不变，并反映在此索引中。 事件索引从`0`开始。 |
+| `eventIndex` | Edge Network以数组的形式接收来自客户端的事件。 数组中的事件顺序在处理期间保持不变，并反映在此索引中。 事件索引从`0`开始。 |
 
 >[!ENDTABS]
 

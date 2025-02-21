@@ -3,7 +3,7 @@ solution: Experience Platform
 title: 分段服务UI指南
 description: 了解如何在Adobe Experience Platform UI中创建和管理受众和区段定义。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 9844a7bf5e7198e7d5112ec924220aba71cdc14b
+source-git-commit: 276fd7c532843c9589e1d51b0bc7a76cb5c3eb9f
 workflow-type: tm+mt
 source-wordcount: '1043'
 ht-degree: 2%
@@ -31,7 +31,7 @@ ht-degree: 2%
 
 ## 概述
 
-在Experience PlatformUI中，从左侧导航中选择&#x200B;**[!UICONTROL 受众]**&#x200B;以打开显示[!UICONTROL 受众]仪表板的&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 受众]**&#x200B;以打开显示[!UICONTROL 受众]仪表板的&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡。
 
 >[!NOTE]
 >
@@ -92,7 +92,7 @@ ht-degree: 2%
 
 ## 联合受众构成 {#fac}
 
-除了受众组合和区段定义之外，您还可以使用Adobe联合受众组合从企业数据集构建新受众，而无需复制基础数据并将这些受众存储在Adobe Experience Platform受众门户中。 您还可以通过利用从企业数据仓库联合的组合受众数据来扩充Adobe Experience Platform中的现有受众。 请阅读有关[联合受众组合](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/home)的指南。
+除了受众组合和区段定义之外，您还可以使用Adobe Federated Audience Composition从企业数据集构建新受众，而无需复制基础数据并将这些受众存储在Adobe Experience Platform受众门户中。 您还可以通过利用从企业数据仓库联合的组合受众数据来扩充Adobe Experience Platform中的现有受众。 请阅读有关[联合受众组合](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/home)的指南。
 
 ![在您的组织的联合受众组合中创建的受众列表。](../images/ui/overview/federated-audience-composition.png)
 
@@ -100,7 +100,7 @@ ht-degree: 2%
 
 流式分段是近乎实时地对[!DNL Platform]进行分段，同时侧重于数据丰富性的能力。 借助流式分段，现在可以在数据进入[!DNL Platform]时进行分段鉴别，从而无需安排和运行分段作业。
 
-有关流式客户细分的更多信息，请参阅[流式客户细分用户指南](./streaming-segmentation.md)。
+有关流式客户细分的更多信息，请参阅[流式客户细分用户指南](../methods/streaming-segmentation.md)。
 
 >[!NOTE]
 >
@@ -110,7 +110,7 @@ ht-degree: 2%
 
 Edge分段能够在边缘即时评估Platform中的受众，启用同一页面和下一页面个性化用例。
 
-有关边缘分段的更多信息，请参阅[边缘分段UI指南](./edge-segmentation.md)
+有关边缘分段的更多信息，请参阅[边缘分段UI指南](../methods/edge-segmentation.md)
 
 ## 策略违规
 

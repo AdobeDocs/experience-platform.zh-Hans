@@ -3,7 +3,7 @@ keywords: 目标；目标；目标类型
 title: 目标类型和类别
 description: 了解Adobe Experience Platform中目标的各种类型和类别。
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: 322510055bd8b8803292a2b4af9df9e1dbee7ffb
+source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
 workflow-type: tm+mt
 source-wordcount: '805'
 ht-degree: 1%
@@ -18,7 +18,7 @@ ht-degree: 1%
 
 在Adobe Experience Platform中，我们会区分不同的目标类型，即连接、数据集导出和扩展。 有多种类型的连接目标，可让您将数据导出到基于API的目标、社交目标、CRM平台等。
 
-最后，还可以区分目标目录中所有组织内可用的公共目标与Real-Time CDP Ultimate客户为满足其特定导出用例而可以创建的专用目标。
+最后，还可以区分目标目录中所有组织内可用的公共目标与Real-Time CDP Ultimate客户为满足其特定导出用例而可以创建的专用目标，这两者之间的连接。
 
 >[!BEGINSHADEBOX]
 
@@ -41,11 +41,11 @@ Adobe Experience Platform捕获事件数据中的&#x200B;**[!UICONTROL 配置文
 
 >[!IMPORTANT]
 >
->高级企业目标或流式配置文件导出目标仅适用于[Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+>高级企业目标或流式配置文件导出目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
-使用高级企业目标数据连接器近乎实时地将Adobe Real-time Customer Data Platform配置文件交付给内部系统或其他第三方系统，以便进行数据同步、分析和进一步扩充配置文件用例。
+使用高级企业目标数据连接器近乎实时地将Adobe Real-Time Customer Data Platform配置文件交付给内部系统或其他第三方系统，以便进行数据同步、分析和进一步扩充配置文件用例。
 
-这些目标将接收受众和配置文件数据作为Experience Platform数据流。
+这些目标会作为Experience Platform数据流接收受众和配置文件数据。
 
 高级企业目标包括：
 
@@ -59,7 +59,7 @@ Adobe Experience Platform捕获事件数据中的&#x200B;**[!UICONTROL 配置文
 
 ## 流受众导出目标 {#streaming-destinations}
 
-受众导出目标接收Experience Platform的受众数据。 这些目标使用受众ID或用户ID。 Advertising和社交目标(如[[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md)、[[!DNL Google Ads]](catalog/advertising/google-ads-destination.md)或[Facebook](catalog/social/facebook.md))就是此类目标的示例。
+受众导出目标接收Experience Platform受众数据。 这些目标使用受众ID或用户ID。 Advertising和社交目标（如[[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md)、[[!DNL Google Ads]](catalog/advertising/google-ads-destination.md)或[Facebook](catalog/social/facebook.md)）就是此类目标的示例。
 
 ## Edge个性化目标 {#edge-personalization-destinations}
 
@@ -81,7 +81,7 @@ Experience Platform中的Edge个性化目标包括[Adobe Target](/help/destinati
 * 帐户受众
 * 潜在客户受众
 
-了解有关[各种受众类型](/help/segmentation/ui/account-audiences.md#terminology)的更多信息。
+了解有关[各种受众类型](/help/segmentation/types/account-audiences.md#terminology)的更多信息。
 
 目标卡上的符号显示了您可以导出到每个目标的受众类型。
 

@@ -4,16 +4,16 @@ description: 开始使用Adobe Real-Time CDP，了解它提供的丰富功能以
 solution: Real-Time Customer Data Platform
 product: Real Time CDP
 exl-id: 92179d9a-be79-4a39-b2ab-9a85a542f53c
-source-git-commit: 7a909c362b9e367fa4b86a8525fe98f203e3c2d5
+source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
 workflow-type: tm+mt
 source-wordcount: '1175'
-ht-degree: 3%
+ht-degree: 15%
 
 ---
 
 # Adobe [!DNL Real-Time CDP] 文档 {#rtcdp-documentation}
 
-使用Adobe Real-time Customer Data Platform (Real-Time CDP)将来自多个企业来源的已知和匿名数据相结合，以创建可用于实时跨所有渠道和设备提供个性化客户体验的客户档案。 有关详细信息，请阅读[Real-Time CDP概述](/help/rtcdp/overview.md)。
+使用Adobe Real-Time Customer Data Platform (Real-Time CDP)将来自多个企业来源的已知和匿名数据相结合，以创建可用于实时跨所有渠道和设备提供个性化客户体验的客户档案。 有关详细信息，请阅读[Real-Time CDP概述](/help/rtcdp/overview.md)。
 
 ## 新增功能？ {#whats-new}
 
@@ -21,15 +21,15 @@ ht-degree: 3%
 
 >[!BEGINTABS]
 
->[!TAB 联合受众组合]
+>[!TAB 联合受众构成]
 
-联合受众组合允许企业组合数据以更好地在各种用例之间应用。 使用此新方法，作为Adobe Real-time Customer Data Platform和/或Adobe Journey Optimizer用户，您可以直接从现有数据仓库联合数据集，以在一个系统中创建和扩充Adobe Experience Platform受众和属性。
+联合受众构成允许企业构成数据，以便在各种用例中更好地应用。通过这种新方法，作为 Adobe Real-Time Customer Data Platform 和/或 Adobe Journey Optimizer 用户，您可以直接从现有数据仓库联合数据集，以便在一个系统中创建和丰富 Adobe Experience Platform 受众和属性。
 
 [![图像](assets/do-not-localize/learn-more-button.svg)](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/home)
 
 >[!TAB 用例战术手册]
 
-[!UICONTROL 用例行动手册]功能现在普遍适用于所有Real-Time CDP和Adobe Journey Optimizer客户。 [!UICONTROL 用例行动手册]旨在帮助用户在开始使用Real-time Customer Data Platform或Adobe Journey Optimizer时克服挑战。 当您不确定从何处开始或如何为所需的用例创建正确的资产时，用例行动手册会提供灵感并创建不同的资产，以供您在准备就绪时测试并导入生产环境。
+ [!UICONTROL 用例战术手册] 功能现已面向所有 Real-Time CDP 和 Adobe Journey Optimizer 客户开放。[!UICONTROL 用例战术手册] 旨在帮助用户克服使用 Real-Time Customer Data Platform 或 Adobe Journey Optimizer 时遇到的挑战。当您不确定从哪里开始或如何为所需用例创建正确的资产时，用例战术手册可以提供灵感，创建不同的资产供您测试，并在准备就绪时导入到生产环境中。
 
 [![image](assets/do-not-localize/learn-more-button.svg)](/help/use-case-playbooks/playbooks/overview.md)
 
@@ -47,7 +47,7 @@ ht-degree: 3%
 
 >[!TAB 数据导出]
 
-数据集导出功能现已正式可用。 查看可根据您购买的Experience Platform应用](../destinations/ui/export-datasets.md#datasets-to-export)导出哪些数据集[，并查看用于导出数据集的[护栏](/help/destinations/guardrails.md#dataset-exports)。
+数据集导出功能现已正式可用。 查看可根据您购买的Experience Platform应用程序](../destinations/ui/export-datasets.md#datasets-to-export)导出哪些数据集[，并查看用于导出数据集的[护栏](/help/destinations/guardrails.md#dataset-exports)。
 
 [![图像](assets/do-not-localize/learn-more-button.svg)](../destinations/ui/export-datasets.md)
 
@@ -136,11 +136,11 @@ ht-degree: 3%
     </td>
     <td>
       <img src="assets/do-not-localize/icon-cloud.svg" width="35px"><br/>
-      <strong>云和AI/ML功能</strong><br/>AI和ML功能可在多个仪表板中帮助您完成每一步骤。 一些亮点包括以下区域。 <br/> <a href="/help/segmentation/ui/lookalike-audiences.md">相似受众</a> - <a href="/help/rtcdp/segmentation/customer-ai.md">客户人工智能</a> - <a href="/help/rtcdp/b2b-ai-ml-services/related-accounts.md">相关帐户</a> - <a href="/help/rtcdp/b2b-ai-ml-services/predictive-lead-and-account-scoring.md">预测性商机和帐户得分</a> - <a href="/help/rtcdp/b2b-ai-ml-services/lead-to-account-matching.md">商机与帐户匹配</a>
+      <strong>云和AI/ML功能</strong><br/>AI和ML功能可在多个仪表板中帮助您完成每一步骤。 一些亮点包括以下区域。 <br/> <a href="/help/segmentation/types/account-audiences.md">相似受众</a> - <a href="/help/rtcdp/segmentation/customer-ai.md">客户人工智能</a> - <a href="/help/rtcdp/b2b-ai-ml-services/related-accounts.md">相关帐户</a> - <a href="/help/rtcdp/b2b-ai-ml-services/predictive-lead-and-account-scoring.md">预测性商机和帐户得分</a> - <a href="/help/rtcdp/b2b-ai-ml-services/lead-to-account-matching.md">商机与帐户匹配</a>
     </td>
     <td>
       <img src="assets/do-not-localize/icon-learn.svg" width="35px"><br/>
-      <strong>护栏和最佳实践</strong><br/>了解在Real-Time CDP中使用数据时的最佳实践和当前限制。<br/><a href="/help/rtcdp/guardrails/overview.md">护栏</a> - <a href="/help/landing/license-usage-and-guardrails/data-management-best-practices.md">数据管理许可证授权最佳实践</a> - <a href="/help/xdm/schema/best-practices.md">数据建模最佳实践</a> - <a href="/help/privacy-service/best-practices.md">Privacy Service最佳实践</a> 
+      <strong>护栏和最佳实践</strong><br/>了解在Real-Time CDP中使用数据时的最佳实践和当前限制。<br/><a href="/help/rtcdp/guardrails/overview.md">护栏</a> - <a href="/help/landing/license-usage-and-guardrails/data-management-best-practices.md">数据管理许可证权利最佳实践</a> - <a href="/help/xdm/schema/best-practices.md">数据建模最佳实践</a> - <a href="/help/privacy-service/best-practices.md">Privacy Service最佳实践</a> 
     </td>
     <td>
       <img src="assets/do-not-localize/icon-code.svg" width="35px"><br/>
@@ -203,7 +203,7 @@ ht-degree: 3%
 
 <table style="table-layout:fixed"><tr style="border: 0;">
 <td><strong>Real-Time CDP</strong><br/>
-<a href="https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html?lang=en" target="_blank">Tutorials</a> - <a href="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">产品说明Real-Time CDP B2C版本</a> - <a href="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">B2B版本</a> - <a href="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">B2B版本</a> - <a href="https://www.adobe.com/content/dam/cc/en/trust-center/ungated/whitepapers/experience-cloud/ADB_Experience_Platform_Security_Overview.pdf" target="_blank">安全概述(PDF)</a> - <a href="https://experienceleague.adobe.com/docs/blueprints-learn/architecture/overview.html?lang=zh-Hans" target="_blank">实现Blueprint</a> - <a href="https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html" target="_blank">术语表</a>
+<a href="https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html?lang=en" target="_blank">教程</a> - <a href="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">产品说明Real-Time CDP B2C版本</a> - <a href="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">B2B edition</a> - <a href="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">B2B edition</a> - <a href="https://www.adobe.com/content/dam/cc/en/trust-center/ungated/whitepapers/experience-cloud/ADB_Experience_Platform_Security_Overview.pdf" target="_blank">安全概述(PDF)</a> - <a href="https://experienceleague.adobe.com/docs/blueprints-learn/architecture/overview.html?lang=zh-Hans" target="_blank">实施Blueprint</a> - <a href="https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html" target="_blank">术语表</a>
 </td>
 <td><strong>Adobe Experience Platform</strong><br/>
 <a href="https://experienceleague.adobe.com/docs/experience-platform/landing/home.html?lang=zh-Hans" target="_blank">文档</a> - <a href="https://developer.adobe.com/experience-platform-apis/" target="_blank">API引用 — <a href="https://experienceleague.adobe.com/docs/courses/using/experienceplatform-u-1-2020-1.html" target="_blank">课程：Experience Platform简介</a></a>
@@ -211,4 +211,4 @@ ht-degree: 3%
 </tr></table>
 
 <table style="table-layout:auto"><tr style="border: 0;"><td><img src="assets/do-not-localize/newsletter.png"></td><td>
-<b>随时了解最新动态，为社区贡献力量，提升您的Adobe Real-Time CDP体验！</b><br/>访问Real-time Customer Data Platform社区，与其他从业人员讨论功能。 <a href="https://experienceleaguecommunities.adobe.com/t5/real-time-customer-data-platform/ct-p/Real-time-CDP">立即加入社区！</a></td></tr></table>
+<b>随时了解最新动态，为社区贡献力量，提升您的Adobe Real-Time CDP体验！</b><br/>访问Real-Time Customer Data Platform社区，与其他从业人员讨论功能。 <a href="https://experienceleaguecommunities.adobe.com/t5/real-time-customer-data-platform/ct-p/Real-time-CDP">立即加入社区！</a></td></tr></table>

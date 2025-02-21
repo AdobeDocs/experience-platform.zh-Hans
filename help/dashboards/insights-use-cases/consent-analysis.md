@@ -2,7 +2,7 @@
 title: 同意分析和跟踪
 description: 了解如何构建同意分析仪表板，以跟踪用户同意随时间变化的趋势。
 exl-id: 34accae5-8b4f-4281-8333-187a91db8199
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: adc6d50f2784fe665d0590c3af053a057f8e4e38
 workflow-type: tm+mt
 source-wordcount: '1909'
 ht-degree: 0%
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # 同意分析和跟踪
 
-在当今的营销形势下，您需要理解并尊重客户同意首选项。 Adobe Real-time Customer Data Platform为营销人员提供了分析客户同意以建立信任、遵守隐私法规并提供更个性化体验的功能。
+在当今的营销形势下，您需要理解并尊重客户同意首选项。 Adobe Real-Time Customer Data Platform为营销人员提供了分析客户同意以建立信任、遵守隐私法规并提供更个性化体验的功能。
 
 本文档详细介绍如何为Real-Time CDP数据的各种营销用例构建同意仪表板。 具体来说，它重点介绍如何根据您的业务需求创建具有适当属性的受众，然后通过在Adobe Experience Platform UI中使用预配置的构件来获取见解。 此外，还提供了使用用户定义的仪表板功能构建您自己的自定义小部件的另一种方法。
 
@@ -24,7 +24,7 @@ ht-degree: 0%
 
 ## 创建同意的受众 {#create-consent-audiences}
 
-要构建同意仪表板，您必须首先创建同意联系的所有用户档案的受众。 要导航到Real-time Customer Data Platform区段生成器，请在Platform UI的左侧导航中选择&#x200B;**[!UICONTROL 受众]**。 从[!UICONTROL 受众]仪表板的[!UICONTROL 客户]选项卡中，选择视图右上角的&#x200B;**[!UICONTROL 创建受众]**，然后选择&#x200B;**[!UICONTROL 生成规则]**。
+要构建同意仪表板，您必须首先创建同意联系的所有用户档案的受众。 要导航到Real-Time Customer Data Platform区段生成器，请在Platform UI的左侧导航中选择&#x200B;**[!UICONTROL 受众]**。 从[!UICONTROL 受众]仪表板的[!UICONTROL 客户]选项卡中，选择视图右上角的&#x200B;**[!UICONTROL 创建受众]**，然后选择&#x200B;**[!UICONTROL 生成规则]**。
 
 突出显示具有[!UICONTROL 客户]、[!UICONTROL 受众]和[!UICONTROL 创建区段]的[!UICONTROL 受众]仪表板。](../images/insights-use-cases/consent-analysis/create-audience.png)![
 
@@ -36,9 +36,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->如果您在与Adobe推荐字段组不同的属性中维护了您的用户同意，则必须选择这些属性，而不是下面显示的属性。
+>如果您在与Adobe推荐字段组不同的属性中维护了用户同意，则必须选择这些属性，而不是下面显示的属性。
 
-有关分段](../../segmentation/consents.md#handling-consent-in-segmentation)文档中[同意处理的更多信息。
+有关分段](../../segmentation/tutorials/consents.md#handling-consent-in-segmentation)文档中[同意处理的更多信息。
 
 ![带有[!UICONTROL 同意和首选项]属性文件夹的区段生成器突出显示。](../images/insights-use-cases/consent-analysis/consent-and-preferences.png)
 
@@ -68,7 +68,7 @@ ht-degree: 0%
 
 ## 使用洞察 {#consume-insights}
 
-Adobe已创建各种见解，这些见解自动在Profiles、Audiences和Destinations功能板中为您提供。 然后，您创建的任何受众都将自动可用于这些预配置的见解。 有关[配置文件](../guides/profiles.md#standard-widgets)、[受众](../guides/audiences.md#standard-widgets)和[目标](../guides/destinations.md)功能板中可用的分析列表，请参阅标准构件文档。
+Adobe已创建各种见解，这些见解自动在“用户档案”、“受众”和“目标”功能板中为您提供。 然后，您创建的任何受众都将自动可用于这些预配置的见解。 有关[配置文件](../guides/profiles.md#standard-widgets)、[受众](../guides/audiences.md#standard-widgets)和[目标](../guides/destinations.md)功能板中可用的分析列表，请参阅标准构件文档。
 
 ## 受众重叠 {#audience-overlap}
 
@@ -155,7 +155,7 @@ Adobe已创建各种见解，这些见解自动在Profiles、Audiences和Destina
 
 >[!NOTE]
 >
->对于&#x200B;**AdobeHealthcare Shield**&#x200B;或&#x200B;**AdobePrivacy &amp; Security Shield**&#x200B;的客户，这些功能板&#x200B;**不反映对同意政策的任何跟踪**。 可用跟踪包括已创建、已启用的策略的数量，以及对受众成员资格的影响。
+>对于&#x200B;**Adobe Healthcare Shield**&#x200B;或&#x200B;**Adobe Privacy &amp; Security Shield**&#x200B;的客户，这些功能板&#x200B;**不**&#x200B;反映对同意政策的任何跟踪。 可用跟踪包括已创建、已启用的策略的数量，以及对受众成员资格的影响。
 
 ## 后续步骤
 

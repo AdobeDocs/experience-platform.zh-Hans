@@ -3,7 +3,7 @@ title: 将目标受众激活到目标
 type: Tutorial
 description: 了解如何将潜在客户受众激活到目标
 exl-id: 3e034a14-09d0-4b08-b171-5afb62ae4b62
-source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
+source-git-commit: e7c0551276d31d6809ace096c00e0dc2665090e6
 workflow-type: tm+mt
 source-wordcount: '619'
 ht-degree: 16%
@@ -14,9 +14,9 @@ ht-degree: 16%
 
 >[!AVAILABILITY]
 >
->已购买Real-Time CDP Prime和Ultimate包的客户可以使用此功能。 有关更多信息，请与您的Adobe代表联系。
+>已购买Real-Time CDP Prime和Ultimate包的客户可以使用此功能。 有关更多信息，请与Adobe代表联系。
 
-本文介绍了将[潜在受众](/help/segmentation/ui/prospect-audience.md)从Adobe Experience Platform导出到您的首选目标所需的工作流。
+本文介绍了将[潜在受众](/help/segmentation/types/prospect-audiences.md)从Adobe Experience Platform导出到您的首选目标所需的工作流。
 
 ## 支持的目标 {#supported-destinations}
 
@@ -26,7 +26,7 @@ ht-degree: 16%
 
 ## 先决条件 {#prerequisites}
 
-* 必须先摄取[潜在客户配置文件](/help/profile/ui/prospect-profile.md)并创建[潜在客户受众](/help/segmentation/ui/prospect-audience.md)，然后才能将其激活到下游目标。
+* 必须先摄取[潜在客户配置文件](/help/profile/ui/prospect-profile.md)并创建[潜在客户受众](/help/segmentation/types/prospect-audiences.md)，然后才能将其激活到下游目标。
 * 要将潜在客户受众激活到目标，您必须已成功连接到目标。 如果您尚未这样做，请转到[目标目录](../catalog/overview.md)，浏览支持的目标，然后配置要使用的目标。 有关详细信息，请阅读有关[连接到目标](./connect-destination.md)的用户界面教程。
 
 ### 所需的权限 {#permissions}
@@ -85,6 +85,6 @@ Note that we will need to add links to other destination types here as more dest
 
 探索通过 Real-Time CDP 中的合作伙伴数据支持实现的更多用例：
 
-* [用受信任的数据合作伙伴提供的属性补充第一方配置文件](/help/rtcdp/partner-data/supplement-first-party-profiles.md)，以改善您的数据基础、了解客户群的新情况并获得更好的受众优化。
-* 使用 Real-Time CDP 中的第三方数据支持，[通过数据合作伙伴提供的潜在客户配置文件扩充您的配置文件基础并与其交流以获取或接触新客户](/help/rtcdp/partner-data/prospecting.md)。
+* [用受信任的数据合作伙伴提供的属性补充第一方轮廓](/help/rtcdp/partner-data/supplement-first-party-profiles.md)，以改善您的数据基础、了解客户群的新情况并获得更好的受众优化。
+* 使用 Real-Time CDP 中的第三方数据支持，[通过数据合作伙伴提供的潜在客户轮廓扩充您的轮廓基础并与其交流以获取或接触新客户](/help/rtcdp/partner-data/prospecting.md)。
 * [](/help/rtcdp/partner-data/onsite-personalization.md)利用合作伙伴辅助的认可在访问期间提供个性化现场体验，而无需用户进行身份验证或之前使用过您的品牌。

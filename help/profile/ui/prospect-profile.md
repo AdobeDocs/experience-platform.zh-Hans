@@ -3,14 +3,14 @@ title: 目标客户配置文件
 description: 了解如何使用第三方信息创建和使用潜在客户配置文件来收集有关未知客户的信息。
 type: Documentation
 exl-id: 194d25d6-88ae-4a7a-9b79-39120bced5c7
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: e7c0551276d31d6809ace096c00e0dc2665090e6
 workflow-type: tm+mt
 source-wordcount: '400'
 ht-degree: 1%
 
 ---
 
-# 潜在客户配置文件
+# 潜在客户轮廓
 
 通过Adobe Experience Platform，无论客户在何处或何时与您的品牌互动，您都可以为其推动协调、一致且相关的体验。
 
@@ -62,4 +62,4 @@ ht-degree: 1%
 
 ## 后续步骤
 
-阅读本指南后，您现在了解了如何在Adobe Experience Platform中使用潜在客户配置文件。 要了解如何在受众中使用这些潜在客户配置文件，请阅读[潜在客户受众指南](../../segmentation/ui/prospect-audience.md)。
+阅读本指南后，您现在了解了如何在Adobe Experience Platform中使用潜在客户配置文件。 要了解如何在受众中使用这些潜在客户配置文件，请阅读[潜在客户受众指南](../../segmentation/types/prospect-audiences.md)。

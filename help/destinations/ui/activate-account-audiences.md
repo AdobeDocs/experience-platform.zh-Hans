@@ -5,7 +5,7 @@ description: 了解如何将帐户受众激活到目标
 badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 exl-id: ad69d0a8-bf5b-42ac-97a3-401eadda62cd
-source-git-commit: 1c31dd978298191dd10500b60eb446d2ca37139c
+source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
 workflow-type: tm+mt
 source-wordcount: '836'
 ht-degree: 0%
@@ -16,13 +16,13 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->向目标激活帐户受众的功能适用于购买[企业对企业](/help/rtcdp/overview.md#rtcdp-b2b)和[企业对个人](/help/rtcdp/overview.md#rtcdp-b2p)版本的Real-time Customer Data Platform的公司。
+>向目标激活帐户受众的功能适用于购买[企业对企业](/help/rtcdp/overview.md#rtcdp-b2b)和[企业对个人](/help/rtcdp/overview.md#rtcdp-b2p)版本的Real-Time Customer Data Platform的公司。
 
-本文介绍了将[帐户受众](/help/segmentation/ui/account-audiences.md)从Adobe Experience Platform导出到您的首选目标所需的工作流。
+本文介绍了将[帐户受众](/help/segmentation/types/account-audiences.md)从Adobe Experience Platform导出到您的首选目标所需的工作流。
 
 ## 支持的目标 {#supported-destinations}
 
-转到&#x200B;**[!UICONTROL 连接]** > **[!UICONTROL 目标]**，然后选择&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡。 使用&#x200B;**[!UICONTROL 数据类型]**&#x200B;筛选器并选择&#x200B;**[!UICONTROL 帐户]**&#x200B;查看支持激活帐户受众的目标。 目前，导出帐户受众仅适用于某些云存储目标([Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md)、[ADLS Gen 2](/help/destinations/catalog/cloud-storage/adls-gen2.md)、[Azure Blob Storage](/help/destinations/catalog/cloud-storage/azure-blob.md)、[数据登陆区域](/help/destinations/catalog/cloud-storage/data-landing-zone.md)和[SFTP](/help/destinations/catalog/cloud-storage/sftp.md))以及[Demandbase](/help/destinations/catalog/advertising/demandbase.md)和[（公司） LinkedIn匹配的受众](/help/destinations/catalog/social/linkedin-b2b.md)流目标。
+转到&#x200B;**[!UICONTROL 连接]** > **[!UICONTROL 目标]**，然后选择&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡。 使用&#x200B;**[!UICONTROL 数据类型]**&#x200B;筛选器并选择&#x200B;**[!UICONTROL 帐户]**&#x200B;查看支持激活帐户受众的目标。 目前，导出帐户受众仅适用于某些云存储目标([Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md)、[ADLS Gen 2](/help/destinations/catalog/cloud-storage/adls-gen2.md)、[Azure Blob Storage](/help/destinations/catalog/cloud-storage/azure-blob.md)、[数据登陆区域](/help/destinations/catalog/cloud-storage/data-landing-zone.md)和[SFTP](/help/destinations/catalog/cloud-storage/sftp.md))以及[Demandbase](/help/destinations/catalog/advertising/demandbase.md)和[（公司）LinkedIn匹配的受众](/help/destinations/catalog/social/linkedin-b2b.md)流目标。
 
 ![支持帐户受众的目标。](/help/destinations/assets/ui/activate-account-audiences/data-types-filter.png)
 
@@ -34,7 +34,7 @@ ht-degree: 0%
 
 ## 先决条件 {#prerequisites}
 
-* 必须先摄取[帐户配置文件](/help/rtcdp/accounts/account-profile-overview.md)并创建[帐户受众](/help/segmentation/ui/account-audiences.md)，然后才能将其激活到下游目标。
+* 必须先摄取[帐户配置文件](/help/rtcdp/accounts/account-profile-overview.md)并创建[帐户受众](/help/segmentation/types/account-audiences.md)，然后才能将其激活到下游目标。
 * 要将帐户受众激活到目标，您必须已成功连接到目标。 如果您尚未这样做，请转到[目标目录](../catalog/overview.md)，浏览支持的目标，然后配置要使用的目标。 有关详细信息，请阅读有关[连接到目标](./connect-destination.md)的用户界面教程。
 
 ### 所需的权限 {#permissions}
@@ -77,7 +77,7 @@ ht-degree: 0%
 
 ## 计划和后续步骤
 
-有关导入帐户受众的其余激活工作流，请阅读有关将数据激活到基于文件的目标的教程。 从[计划受众导出步骤](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling)继续。 如果要将帐户受众激活到&#x200B;**[!UICONTROL （公司） LinkedIn匹配的受众]**&#x200B;目标，请阅读有关激活流目标的教程。 从[映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)继续。
+有关导入帐户受众的其余激活工作流，请阅读有关将数据激活到基于文件的目标的教程。 从[计划受众导出步骤](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling)继续。 如果您正在将帐户受众激活到&#x200B;**[!UICONTROL （公司） LinkedIn匹配的受众]**&#x200B;目标，请阅读有关激活流目标的教程。 从[映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)继续。
 
 >[!NOTE]
 >
@@ -89,7 +89,7 @@ ht-degree: 0%
 
 ### 将帐户受众激活到&#x200B;**[!UICONTROL （公司） LinkedIn匹配的受众]**&#x200B;目标时，映射步骤中需要映射对 {#required-mappings}
 
-将帐户受众激活到&#x200B;**[!UICONTROL （公司） LinkedIn Matched Audiences]**&#x200B;目标时，请注意，必须使用以下两个映射对才能成功导出数据：
+将帐户受众激活到&#x200B;**[!UICONTROL （公司） LinkedIn匹配的受众]**&#x200B;目标时，请注意，以下两个映射对是成功导出数据的必备项：
 
 ![LinkedIn映射必填字段。](/help/destinations/assets/ui/activate-account-audiences/linkedin-mapping-required-fields.png)
 

@@ -5,7 +5,7 @@ product: experience platform
 type: Documentation
 description: 了解轮廓数据和分段的性能和系统强制护栏，以确保充分使用 Real-Time CDP 功能。
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 1f682fc5c109f3dc8a7ed8513260a1a3c3108bbb
+source-git-commit: 1150b7726a7cabe6df6bbc7a850fb4d48afa208e
 workflow-type: tm+mt
 source-wordcount: '2511'
 ht-degree: 2%
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # [!DNL Real-Time Customer Profile]数据和分段的默认护栏
 
-Adobe Experience Platform允许您以实时客户配置文件的形式，根据行为见解和客户属性提供个性化的跨渠道体验。 为了支持这种新的配置文件方法，Experience Platform使用与传统关系数据模型不同的高度非规范化混合数据模型。
+Adobe Experience Platform允许您以实时客户配置文件的形式，根据行为见解和客户属性提供个性化的跨渠道体验。 为了支持这种处理用户档案的新方法，Experience Platform使用与传统关系数据模型不同的高度非规范化混合数据模型。
 
 >[!IMPORTANT]
 >
@@ -28,7 +28,7 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 
 ## 快速入门
 
-实时客户档案数据建模涉及以下Experience Platform服务：
+实时客户个人资料数据建模涉及以下Experience Platform服务：
 
 * [[!DNL Real-Time Customer Profile]](home.md)：使用来自多个来源的数据创建统一的使用者配置文件。
 * [标识](../identity-service/home.md)：Bridge标识摄取到Platform时来自不同的数据源。
@@ -108,23 +108,23 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 | --------- | ----- | ---------- | ----------- |
 | 所有维实体的总大小 | 5GB | 性能护栏 | 建议所有维度实体的总大小为5GB。 摄取大尺寸实体可能会影响系统性能。 例如，不建议尝试将10GB的产品目录加载为维度实体。 |
 | 每个维度实体架构的数据集 | 5 | 性能护栏 | 建议最多5个与每个维度实体架构关联的数据集。 例如，如果您为“产品”创建架构，并添加五个参与数据集，则不应创建与产品架构绑定的第六个数据集。 |
-| 每日摄取的Dimension实体批次 | 每个实体4个 | 性能护栏 | 建议每天摄取的维度实体批次的最大数量为每个实体4个。 例如，您每天最多可以摄取4次产品目录的更新。 为同一实体摄取其他维度实体批次可能会影响系统性能。 |
+| 每天摄取的Dimension实体批次 | 每个实体4个 | 性能护栏 | 建议每天摄取的维度实体批次的最大数量为每个实体4个。 例如，您每天最多可以摄取4次产品目录的更新。 为同一实体摄取其他维度实体批次可能会影响系统性能。 |
 
 {style="table-layout:auto"}
 
 ## 分段护栏 {#segmentation-guardrails}
 
-此部分中概述的护栏是指组织可以在Experience Platform中创建的受众的数量和性质，以及映射和激活受众到目标。
+本节中概述的护栏是指组织可以在Experience Platform中创建的受众的数量和性质，以及映射和激活受众到目标。
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --------- | ----- | ---------- | ----------- |
 | 每个沙盒的受众 | 4000 | 性能护栏 | 每个沙盒最多可以有4000个&#x200B;**活动**&#x200B;受众。 只要每个&#x200B;**个人**&#x200B;沙盒中有少于4000个受众，您每个组织的沙盒就可以超过4000个。 其中包括批量、流和边缘受众。 尝试创建其他受众可能会影响系统性能。 阅读有关[通过区段生成器创建受众](/help/segmentation/ui/segment-builder.md)的更多信息。 |
-| 每个沙盒的Edge受众 | 150 | 性能护栏 | 每个沙盒最多可以有150个&#x200B;**活动**&#x200B;边缘受众。 只要每个&#x200B;**个人**&#x200B;沙盒中的边缘受众少于150个，则每个组织可以拥有超过150个边缘受众。 尝试创建其他Edge受众可能会影响系统性能。 了解有关[边缘受众](/help/segmentation/ui/edge-segmentation.md)的更多信息。 |
-| 所有沙盒中的Edge吞吐量 | 1500 RPS | 性能护栏 | Edge分段支持每秒进入Adobe Experience PlatformEdge Network的入站事件峰值为1500个。 在集客事件进入Adobe Experience PlatformEdge Network后，Edge分段最多可能需要350毫秒来处理该事件。 了解有关[边缘受众](/help/segmentation/ui/edge-segmentation.md)的更多信息。 |
-| 每个沙盒的流受众 | 500 | 性能护栏 | 每个沙盒最多可以有500个&#x200B;**活动**&#x200B;流受众。 只要每个&#x200B;**个人**&#x200B;沙盒中的流受众少于500个，则每个组织可以拥有超过500个流受众。 其中包括流受众和Edge受众。 尝试创建其他流受众可能会影响系统性能。 阅读有关[流式受众](/help/segmentation/ui/streaming-segmentation.md)的更多信息。 |
-| 流传输所有沙盒的吞吐量 | 1500 RPS | 性能护栏 | 流式分段支持每秒1500个入站事件的峰值。 流式分段最多可能需要5分钟才能使配置文件获得区段成员资格。 阅读有关[流式受众](/help/segmentation/ui/streaming-segmentation.md)的更多信息。 |
+| 每个沙盒的Edge受众 | 150 | 性能护栏 | 每个沙盒最多可以有150个&#x200B;**活动**&#x200B;边缘受众。 只要每个&#x200B;**个人**&#x200B;沙盒中的边缘受众少于150个，则每个组织可以拥有超过150个边缘受众。 尝试创建其他Edge受众可能会影响系统性能。 了解有关[边缘受众](/help/segmentation/methods/edge-segmentation.md)的更多信息。 |
+| 所有沙盒中的Edge吞吐量 | 1500 RPS | 性能护栏 | Edge分段支持峰值为每秒1500个进入Adobe Experience Platform Edge Network的入站事件。 Edge分段在集客事件进入Adobe Experience Platform Edge Network后，可能需要长达350毫秒才能处理该事件。 了解有关[边缘受众](/help/segmentation/methods/edge-segmentation.md)的更多信息。 |
+| 每个沙盒的流受众 | 500 | 性能护栏 | 每个沙盒最多可以有500个&#x200B;**活动**&#x200B;流受众。 只要每个&#x200B;**个人**&#x200B;沙盒中的流受众少于500个，则每个组织可以拥有超过500个流受众。 其中包括流受众和Edge受众。 尝试创建其他流受众可能会影响系统性能。 阅读有关[流式受众](/help/segmentation/methods/streaming-segmentation.md)的更多信息。 |
+| 流传输所有沙盒的吞吐量 | 1500 RPS | 性能护栏 | 流式分段支持每秒1500个入站事件的峰值。 流式分段最多可能需要5分钟才能使配置文件获得区段成员资格。 阅读有关[流式受众](/help/segmentation/methods/streaming-segmentation.md)的更多信息。 |
 | 每个沙盒的批量受众 | 4000 | 性能护栏 | 每个沙盒最多可以有4000个&#x200B;**活动**&#x200B;批次受众。 只要每个&#x200B;**个人**&#x200B;沙盒中有少于4000个批次受众，则每个组织可以有4000个以上的批次受众。 尝试创建其他批处理受众可能会影响系统性能。 |
-| 每个沙盒的帐户受众 | 50 | 系统强制的护栏 | 在一个沙盒中最多可创建50个帐户受众。 在一个沙盒中达到50个受众后，在尝试创建新帐户受众时，**[!UICONTROL 创建受众]**&#x200B;控件被禁用。 了解有关[帐户受众](/help/segmentation/ui/account-audiences.md)的更多信息。 |
+| 每个沙盒的帐户受众 | 50 | 系统强制的护栏 | 在一个沙盒中最多可创建50个帐户受众。 在一个沙盒中达到50个受众后，在尝试创建新帐户受众时，**[!UICONTROL 创建受众]**&#x200B;控件被禁用。 了解有关[帐户受众](/help/segmentation/types/account-audiences.md)的更多信息。 |
 | 每个沙盒已发布的合成 | 10 | 性能护栏 | 一个沙盒中最多可以有10个已发布的合成。 有关UI指南](/help/segmentation/ui/audience-composition.md)中[受众组合的详细信息。 |
 | 最大受众规模 | 30% | 性能护栏 | 建议的最大受众成员数为系统中配置文件总数的30%。 将超过30%的用户档案创建为成员或多个大型受众是可行的，但将影响系统性能。 |
 
@@ -160,17 +160,17 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 
 #### Dimension实体
 
-虽然维护用户档案数据的用户档案数据存储不是关系存储，但用户档案允许与小型维度实体集成，以便以简化且直观的方式创建受众。 此集成称为[多实体分段](../segmentation/multi-entity-segmentation.md)。
+虽然维护用户档案数据的用户档案数据存储不是关系存储，但用户档案允许与小型维度实体集成，以便以简化且直观的方式创建受众。 此集成称为[多实体分段](../segmentation/tutorials/multi-entity-segmentation.md)。
 
 您的组织还可以定义XDM类来描述个人以外的其他内容，如商店、产品或资产。 这些非[!DNL XDM Individual Profile]架构称为“维度实体”（也称为“查找实体”），不包含时间序列数据。 表示维度实体的架构通过使用[架构关系](../xdm/tutorials/relationship-ui.md)链接到配置文件实体。
 
-Dimension实体提供查找数据，这有助于并简化多实体区段定义，并且必须足够小，以便分段引擎可以将整个数据集加载到内存中以进行最佳处理（快速点查找）。
+Dimension实体提供查找数据，可帮助和简化多实体区段定义，并且必须足够小，以便分段引擎可以将整个数据集加载到内存中以进行优化处理（快速点查找）。
 
 ![显示配置文件实体由维度实体组成的信息图形。](images/guardrails/profile-and-dimension-entities.png)
 
 ### 轮廓片段
 
-在本文档中，有多个护栏称为“配置文件片段”。 在Experience Platform中，多个配置文件片段合并在一起，形成Real-time Customer Profile。 每个片段表示给定数据集中该ID的唯一主标识以及相应的记录或完整的事件数据集。 要了解有关配置文件片段的更多信息，请参阅[配置文件概述](home.md#profile-fragments-vs-merged-profiles)。
+在本文档中，有多个护栏称为“配置文件片段”。 在Experience Platform中，多个配置文件片段合并在一起，形成实时客户配置文件。 每个片段表示给定数据集中该ID的唯一主标识以及相应的记录或完整的事件数据集。 要了解有关配置文件片段的更多信息，请参阅[配置文件概述](home.md#profile-fragments-vs-merged-profiles)。
 
 ### 合并策略 {#merge-policies}
 
@@ -186,6 +186,6 @@ Dimension实体提供查找数据，这有助于并简化多实体区段定义�
 
 * [Real-Time CDP护栏](/help/rtcdp/guardrails/overview.md)
 * [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams)。
-* [Real-time Customer Data Platform (B2C版本 — Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2C版本 — Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)

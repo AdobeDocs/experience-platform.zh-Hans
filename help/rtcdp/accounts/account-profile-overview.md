@@ -5,10 +5,10 @@ description: 了解如何通过 Adobe Real-Time Customer Data Platform B2B 版�
 badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 feature: Profiles, B2B
 exl-id: 67515fe0-975e-4ee1-b172-60bc93ba1010
-source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
+source-git-commit: 02f2082e695d157415c9e0c59ca5d371c94bb991
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '305'
+ht-degree: 7%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->帐户配置文件仅适用于Adobe Real-time Customer Data Platform B2B edition客户。 要进一步了解Real-Time CDP、B2B edition包括可用的特性和功能，请先阅读[Real-Time CDP、B2B edition概述](../b2b-overview.md)。
+>帐户配置文件仅适用于Adobe Real-Time Customer Data Platform B2B edition客户。 要进一步了解Real-Time CDP、B2B edition包括可用的特性和功能，请先阅读[Real-Time CDP、B2B edition概述](../b2b-overview.md)。
 
 使用帐户配置文件，您可以统一来自多个来源的帐户信息。 这个统一的帐户视图将来自您的多个营销渠道以及贵组织当前用于存储客户帐户数据的各种系统的数据整合在一起。 要了解有关如何在B2B工作流中创建帐户配置文件的更多信息，请参阅[端到端教程](../b2b-tutorial.md)。
 
@@ -30,5 +30,5 @@ ht-degree: 0%
 
 您可以创建包含帐户配置文件的受众，然后将它们激活到Real-Time CDP目标目录中的多个目标。 阅读以下更多内容：
 
-* [帐户受众](/help/segmentation/ui/account-audiences.md)
+* [帐户受众](/help/segmentation/types/account-audiences.md)
 * [激活帐户受众](/help/destinations/ui/activate-account-audiences.md)

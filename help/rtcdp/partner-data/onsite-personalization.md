@@ -3,7 +3,7 @@ title: 使用合作伙伴辅助的访客识别功能，为未知访客提供个�
 description: 了解如何使用合作伙伴辅助的访客识别为访客营造个性化的现场体验。
 feature: Use Cases, Personalization, Customer Acquisition
 exl-id: 99677988-1df8-47b1-96b1-0ef6db818a1d
-source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
+source-git-commit: 02f2082e695d157415c9e0c59ca5d371c94bb991
 workflow-type: tm+mt
 source-wordcount: '2673'
 ht-degree: 90%
@@ -14,7 +14,7 @@ ht-degree: 90%
 
 >[!AVAILABILITY]
 >
->此功能适用于已获得许可的Real-Time CDP（应用程序服务）、Adobe Experience Platform Activation、Real-Time CDP、Real-Time CDP Prime、Real-Time CDP Ultimate的客户。 阅读[产品说明](https://helpx.adobe.com/legal/product-descriptions.html)中关于这些软件包的详细信息，并联系您的 Adobe 代表了解更多信息。
+>已获得许可Real-Time CDP（应用程序服务）、Adobe Experience Platform Activation、Real-Time CDP、Real-Time CDP Prime、Real-Time CDP Ultimate的客户可以使用此功能。 阅读[产品说明](https://helpx.adobe.com/legal/product-descriptions.html)中关于这些软件包的详细信息，并联系您的 Adobe 代表了解更多信息。
 
 了解如何使用合作伙伴辅助的识别为您的 Web 资产访客营造个性化的体验。使用本教程了解为了向经过身份验证和未经身份验证的访客展现个性化体验，Experience Platform 和其他 Experience Cloud 解决方案中各个元素的实施顺序。
 
@@ -24,7 +24,7 @@ ht-degree: 90%
 
 随着消费者与品牌以各种方式互动，数字体验碎片化变得非常真实，并变得越来越难以解决。 用于具有凝聚力的体验、有针对性的推荐和量身定制的交互的最佳客户参与策略都受用户识别的约束。
 
-在这种情况下，合作伙伴辅助的实时识别可以产生有意义的改变。 通过Adobe，身份合作伙伴可以加入我们复杂的客户端数据收集和市场领先的体验优化产品，从第一次访问开始有效地提高体验交付标准，而无需先前历史记录或身份验证。
+在这种情况下，合作伙伴辅助的实时识别可以产生有意义的改变。 Adobe允许身份合作伙伴加入我们复杂的客户端数据收集和市场领先的体验优化产品，从第一次访问开始有效地提高体验交付标准，而无需先前历史记录或身份验证。
 
 这对于身份验证率较低的垂直行业（如包装消费品、在线零售等）特别有用。
 
@@ -51,12 +51,12 @@ ht-degree: 90%
    * [标记](/help/tags/home.md)
    * [数据流](/help/datastreams/overview.md)
 * Real-Time CDP 中的数据管理
-   * [标识](/help/identity-service/features/namespaces.md)
+   * [身份标识](/help/identity-service/features/namespaces.md)
    * [架构](/help/xdm/home.md)
    * [数据使用情况标签](/help/data-governance/labels/overview.md)
    * [数据集](/help/catalog/datasets/overview.md)
 * Web 资产个性化
-   * [边缘分段](/help/segmentation/ui/edge-segmentation.md)
+   * [边缘分段](/help/segmentation/methods/edge-segmentation.md)
    * [边缘个性化目标](/help/destinations/destination-types.md#edge-personalization-destinations)
    * [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md)（或您选择的个性化平台。本用例教程重点介绍 Adobe Target 作为个性化引擎）
 
@@ -81,17 +81,17 @@ ht-degree: 90%
 
 通读以下部分（其中包括指向更多文档的链接）以完成上方高级概述中的每个步骤。
 
-### 数据管理 - 创建标识命名空间、架构和数据集以管理数据属性 {#data-management}
+### 数据管理 - 创建身份标识命名空间、架构和数据集以管理数据属性 {#data-management}
 
-为实现使未经身份验证的访客体验个性化的用例做准备时，您必须首先在 Real-Time CDP 中设置数据管理结构以接收传入的实时事件和受众资格数据。
+为实现使未经身份验证的访客体验个性化的用例做准备时，您必须首先在 Real-Time CDP 中设置数据管理结构以接收传入的实时事件和受众资格筛选数据。
 
-#### 创建合作伙伴 ID 标识命名空间
+#### 创建合作伙伴 ID 身份标识命名空间
 
-首先，您需要创建合作伙伴 ID 标识命名空间。在左边栏中导航到&#x200B;**[!UICONTROL 客户]** > **[!UICONTROL 标识]**，然后在屏幕的右上角选择&#x200B;**[!UICONTROL 创建标识命名空间]**。
+首先，您需要创建合作伙伴 ID 身份标识命名空间。在左边栏中导航到&#x200B;**[!UICONTROL 客户]** > **[!UICONTROL 身份标识]**，然后在屏幕的右上角选择&#x200B;**[!UICONTROL 创建身份标识命名空间]**。
 
-![“创建标识命名空间”对话框，其中突出显示合作伙伴 ID。](/help/rtcdp/assets/partner-data/onsite-personalization/create-identity-namespace.png)
+![“创建身份标识命名空间”对话框，其中突出显示合作伙伴 ID。](/help/rtcdp/assets/partner-data/onsite-personalization/create-identity-namespace.png)
 
-详细阅读如何[创建合作伙伴 ID 标识命名空间](/help/rtcdp/partner-data/prospecting.md#create-partner-id-namespace)。
+详细阅读如何[创建合作伙伴 ID 身份标识命名空间](/help/rtcdp/partner-data/prospecting.md#create-partner-id-namespace)。
 
 #### 创建架构
 
@@ -99,11 +99,11 @@ ht-degree: 90%
 
 ![“架构”工作区，其中突出显示“创建架构”和“XDM ExperienceEvent”。](/help/rtcdp/assets/partner-data/onsite-personalization/create-experience-event-schema.png)
 
-当您创建架构并[将字段组添加到该架构](/help/xdm/ui/resources/schemas.md#add-field-groups)时，请考虑添加[访问网页](/help/xdm/field-groups/event/web-details.md)和[标识映射](/help/xdm/field-groups/profile/identitymap.md)字段组。除此之外，还有其他字段组适用于您的数字资产和数据收集实践。
+当您创建架构并[将字段组添加到该架构](/help/xdm/ui/resources/schemas.md#add-field-groups)时，请考虑添加[访问网页](/help/xdm/field-groups/event/web-details.md)和[身份标识映射](/help/xdm/field-groups/profile/identitymap.md)字段组。除此之外，还有其他字段组适用于您的数字资产和数据收集实践。
 
 此外，还可创建或重用现有的字段组并将它添加到您的架构以捕获合作伙伴关于访客提供的见解。阅读如何[创建字段组](/help/xdm/ui/resources/field-groups.md)和如何[将字段添加到字段组](/help/xdm/ui/resources/field-groups.md)。例如，如果预期要对照合作伙伴提供的见解（如年龄范围、就业状况、月消费能力或购买行为）进行个性化，请让您的字段组加入相应的字段。
 
-假设数据合作伙伴提供一个稳定的访客标识符，而您要将它引入到 Real-Time CDP 中，则务必在您的自定义字段组中为该标识符加入一个恰当命名的字段。您还应在早先创建的标识命名空间中将该字段标为标识。还要记得[使该架构可被包括在配置文件中](/help/xdm/ui/resources/schemas.md#profile)。
+假设数据合作伙伴提供一个稳定的访客标识符，而您要将它引入到 Real-Time CDP 中，则务必在您的自定义字段组中为该标识符加入一个恰当命名的字段。您还应在早先创建的身份标识命名空间中将该字段标为身份标识。还要记得[使该架构可被包括在轮廓中](/help/xdm/ui/resources/schemas.md#profile)。
 
 #### 创建数据集
 
@@ -111,7 +111,7 @@ ht-degree: 90%
 
 阅读有关[如何创建数据集](/help/catalog/datasets/user-guide.md#create)的教程，并记得选择从架构创建数据集的选项。根据您在上一步中创建的架构创建数据集。
 
-与创建架构的步骤类似，您需要使该数据集可被包括在[!UICONTROL 实时客户配置文件]中。有关使数据集可用于[!UICONTROL 实时客户配置文件]中的详细信息，请参阅[创建架构教程](/help/xdm/tutorials/create-schema-ui.md#profile)。
+与创建架构的步骤类似，您需要使该数据集可被包括在[!UICONTROL 实时客户轮廓]中。有关使数据集可用于[!UICONTROL 实时客户轮廓]中的详细信息，请参阅[创建架构教程](/help/xdm/tutorials/create-schema-ui.md#profile)。
 
 ### 在您的 Web 资产上实施事件数据收集 {#implement-data-collection}
 
@@ -143,7 +143,7 @@ UI 的&#x200B;**[!UICONTROL 数据收集]**&#x200B;部分看起来类似于下�
 
 [选择您早先从下拉列表中创建的事件数据集](/help/datastreams/configure.md#aep)，选中&#x200B;**[!UICONTROL 边缘分段]**&#x200B;和&#x200B;**[!UICONTROL 个性化目标]**&#x200B;旁的框，然后选择&#x200B;**[!UICONTROL 保存]**。
 
-请注意，在此场景中您不必选择配置文件数据集，因为您引入的是基于事件的时间序列数据。
+请注意，在此场景中您不必选择轮廓数据集，因为您引入的是基于事件的时间序列数据。
 
 #### 创建标记属性
 
@@ -179,7 +179,7 @@ UI 的&#x200B;**[!UICONTROL 数据收集]**&#x200B;部分看起来类似于下�
 
 #### 安装 ID 服务扩展
 
-使用 [Experience Cloud ID 服务扩展](/help/tags/extensions/client/id-service/overview.md)为所有 Experience Cloud 解决方案的访客创建基于设备的唯一第一方标识。在扩展目录中搜索 **[!UICONTROL ID 服务]**&#x200B;并安装它。安装扩展时保留所有默认设置。
+使用 [Experience Cloud ID 服务扩展](/help/tags/extensions/client/id-service/overview.md)为所有 Experience Cloud 解决方案的访客创建基于设备的唯一第一方身份标识。在扩展目录中搜索 **[!UICONTROL ID 服务]**&#x200B;并安装它。安装扩展时保留所有默认设置。
 
 ![在扩展目录中查看 ID 服务扩展。](/help/rtcdp/assets/partner-data/onsite-personalization/id-service-extension.png)
 
@@ -263,7 +263,7 @@ UI 的&#x200B;**[!UICONTROL 数据收集]**&#x200B;部分看起来类似于下�
 
 ![查看如何导航到受众。](/help/rtcdp/assets/partner-data/onsite-personalization/navigate-to-audiences.png)
 
-您必须使用[边缘分段](/help/segmentation/ui/edge-segmentation.md)设置受众，以便在访客访问您的Web资产时实时评估访客的受众成员资格。
+您必须使用[边缘分段](/help/segmentation/methods/edge-segmentation.md)设置受众，以便在访客访问您的Web资产时实时评估访客的受众成员资格。
 
 确保还要为边缘受众设置一个[活动边缘合并策略](/help/destinations/ui/activate-edge-personalization-destinations.md#create-merge-policy)。
 
@@ -279,12 +279,12 @@ UI 的&#x200B;**[!UICONTROL 数据收集]**&#x200B;部分看起来类似于下�
 
 在探索本页中描述的用例时，请注意以下限制：
 
-* 如果您使用合作伙伴 ID，请注意在构建您的[身份图](/help/identity-service/features/identity-graph-viewer.md)时不会使用这些 ID。
+* 如果您使用合作伙伴 ID，请注意在构建您的[身份标识图](/help/identity-service/features/identity-graph-viewer.md)时不会使用这些 ID。
 
 ## 由合作伙伴数据支持实现的其他用例 {#other-use-cases}
 
 探索通过 Real-Time CDP 中的合作伙伴数据支持实现的更多用例：
 
-* [用受信任的数据合作伙伴提供的属性补充第一方配置文件](/help/rtcdp/partner-data/supplement-first-party-profiles.md)，以改善您的数据基础、了解客户群的新情况并获得更好的受众优化。
-* 使用 Real-Time CDP 中的第三方数据支持，[通过数据合作伙伴提供的潜在客户配置文件扩充您的配置文件基础并与其交流以获取或接触新客户](/help/rtcdp/partner-data/prospecting.md)。
-* [扩大了潜在客户配置文件和潜在客户受众的激活范围](/help/destinations/ui/activate-prospect-audiences.md)，以选择目标。
+* [用受信任的数据合作伙伴提供的属性补充第一方轮廓](/help/rtcdp/partner-data/supplement-first-party-profiles.md)，以改善您的数据基础、了解客户群的新情况并获得更好的受众优化。
+* 使用 Real-Time CDP 中的第三方数据支持，[通过数据合作伙伴提供的潜在客户轮廓扩充您的轮廓基础并与其交流以获取或接触新客户](/help/rtcdp/partner-data/prospecting.md)。
+* [扩大了潜在客户轮廓和潜在客户受众的激活范围](/help/destinations/ui/activate-prospect-audiences.md)，以选择目标。

@@ -3,14 +3,14 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: e74d04119593dddcaf6a5c710b685c606f5998d6
+source-git-commit: e7c0551276d31d6809ace096c00e0dc2665090e6
 workflow-type: tm+mt
-source-wordcount: '4955'
+source-wordcount: '4976'
 ht-degree: 8%
 
 ---
 
-# [!DNL Segment Builder]用户界面指南
+# [!DNL Segment Builder] UI 指南
 
 >[!NOTE]
 >
@@ -101,7 +101,7 @@ ht-degree: 8%
 
 >[!NOTE]
 >
->虽然仍会填充通用eVar值，但&#x200B;**不应**&#x200B;在区段定义（如果可能）中使用它们，因为这些值的含义可能与其报表中的原始值不同。
+>虽然仍会填充通用eVar值，但您应&#x200B;**不应**&#x200B;在区段定义中使用它们（如果可能），因为这些值的含义可能与其报表中的原始值不同。
 
 映射报表包后，您可以在配置文件相关的工作流程和分段中使用这些新映射的字段。
 
@@ -241,6 +241,10 @@ ht-degree: 8%
 >[!IMPORTANT]
 >
 >如果您在2024年6月之前创建的区段定义具有“本月”或“今年”时间限制，则需要重新保存区段定义。 2024年6月之前，“本月”以30天为基准，而“今年”则以365天为基准。
+
+>[!NOTE]
+>
+>[忽略年份时间约束](./ignore-year.md)和[规则级别时间约束](./segment-refactoring.md)之前都已重构，在链接的概述中提供了更多信息。
 
 可用时间约束的列表如下：
 
@@ -394,7 +398,7 @@ ht-degree: 8%
 
 您还可以选择评估方法。 如果您知道要使用哪种评估方法，则可以使用下拉列表选择所需的评估方法。 如果您想了解此区段定义符合什么评估类型，可以选择带有放大镜的浏览图标![文件夹图标](/help/images/icons/folder-search.png)以查看可用区段定义评估方法的列表。
 
-出现[!UICONTROL 评估方法资格]弹出框。 此弹出框显示可用的评估方法，即批处理、流和边缘。 弹出框显示哪些评估方法符合条件以及哪些方法不符合条件。 根据您在区段定义中使用的参数，它可能不符合某些评估方法的条件。 有关每种评估方法的要求的更多信息，请阅读[流式分段](./streaming-segmentation.md#query-types)或[边缘分段](./edge-segmentation.md#query-types)概述。
+出现[!UICONTROL 评估方法资格]弹出框。 此弹出框显示可用的评估方法，即批处理、流和边缘。 弹出框显示哪些评估方法符合条件以及哪些方法不符合条件。 根据您在区段定义中使用的参数，它可能不符合某些评估方法的条件。 有关每种评估方法的要求的更多信息，请阅读[流式分段](../methods/streaming-segmentation.md#query-types)或[边缘分段](../methods/edge-segmentation.md#query-types)概述。
 
 完成创建段定义后，您还可以更改段定义的评估方法。 如果将评估方法从Edge或流更改为批处理，则&#x200B;**无法**&#x200B;将其更改回Edge或流。 在弹出框中选择&#x200B;**[!UICONTROL 保存]**&#x200B;后，对评估方法的更改将&#x200B;**仅**&#x200B;生效。 取消对话框将&#x200B;**保留**&#x200B;原始评估方法。
 

@@ -2,7 +2,7 @@
 title: Real-time Customer Profile概述
 description: Real-time Customer Profile可合并来自各种来源的数据，并以单个客户配置文件和相关时间序列事件的形式提供对这些数据的访问。 此功能使营销人员能够跨多个渠道与其受众推动协调、一致且相关的体验。
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: 7d515401eb49ffd2ad5cf0bd074896b274c4fb05
+source-git-commit: fc53d1b32eb3fc0251f307d5b2f076b1153a2931
 workflow-type: tm+mt
 source-wordcount: '1821'
 ht-degree: 1%
@@ -15,7 +15,7 @@ Adobe Experience Platform 使您能够为客户提供协调、一致且相关的
 
 ## Experience Platform中的[!DNL Profile]
 
-下图突出显示了Real-time Customer Profile与Experience Platform内其他服务之间的关系：
+下图突出显示了Real-time Customer Profile与Experience Platform中的其他服务之间的关系：
 
 ![实时客户个人资料与Adobe Experience Platform中的其他服务之间的关系。 此图显示配置文件是Adobe Experience Platform的核心组件之一。](images/profile-overview/profile-in-platform.png)
 
@@ -25,7 +25,7 @@ Adobe Experience Platform 使您能够为客户提供协调、一致且相关的
 
 ### 个人资料实体组合
 
-实时客户配置文件由一个名为&#x200B;**主实体**&#x200B;的主实体和各种支持实体组成。 在Experience Platform上下文中，主要实体通常是&#x200B;**个人资料实体**，它由个人特征、行为和受众成员资格组成。 其他实体允许分段引擎利用用户档案的主要实体以外的数据，并且包括以下内容：
+实时客户配置文件由一个名为&#x200B;**主实体**&#x200B;的主实体和各种支持实体组成。 在Experience Platform的上下文中，主要实体通常是&#x200B;**个人资料实体**，它由个人的特征、行为和受众成员资格组成。 其他实体允许分段引擎利用用户档案的主要实体以外的数据，并且包括以下内容：
 
 - **维实体**：用于简化跨事件或配置文件记录共享的信息的数据建模过程的实体。 这也称为查找实体或分类实体。
 - **B2B实体**：描述个人资料与企业对企业的帐户和商机关系的实体。
@@ -53,7 +53,7 @@ Experience Platform提供了一系列护栏，帮助您避免创建Real-Time Cus
 
 ### 轮廓仪表板 {#profile-dashboard}
 
-Experience PlatformUI提供了一个仪表板，通过该仪表板可以查看有关实时客户配置文件数据的重要信息，在每日快照期间捕获了这些数据。 要了解如何在UI中访问和使用[!DNL Profile]仪表板，以及有关仪表板中显示的量度的详细信息，请参阅[配置文件仪表板UI指南](ui/profile-dashboard.md)。
+Experience Platform UI提供了一个功能板，通过该功能板可查看有关实时客户配置文件数据的重要信息，如在每日快照期间捕获的数据。 要了解如何在UI中访问和使用[!DNL Profile]仪表板，以及有关仪表板中显示的量度的详细信息，请参阅[配置文件仪表板UI指南](ui/profile-dashboard.md)。
 
 ### 配置文件片段与合并的配置文件 {#profile-fragments-vs-merged-profiles}
 
@@ -81,7 +81,7 @@ Experience PlatformUI提供了一个仪表板，通过该仪表板可以查看�
 
 当多个数据集中存在冲突数据时，合并策略会确定应如何处理该数据以及应使用哪个值。 通过RESTful API或用户界面，您可以创建新的合并策略、管理现有策略以及为组织设置默认合并策略。
 
-要了解有关合并策略及其在Experience Platform中的角色的更多信息，请先阅读[合并策略概述](merge-policies/overview.md)。
+要了解有关合并策略及其在Experience Platform中的角色的更多信息，请从阅读[合并策略概述](merge-policies/overview.md)开始。
 
 ### 合并架构 {#profile-fragments-and-union-schemas}
 
@@ -111,7 +111,7 @@ Adobe Experience Platform [!DNL Segmentation Service]会生成为您的个别客
 
 >[!NOTE]
 >
->通过Adobe解决方案（包括[!DNL Analytics Cloud]、[!DNL Marketing Cloud]和[!DNL Advertising Cloud]）收集的数据流入到[!DNL Experience Platform]并被引入到[!DNL Profile]中。
+>通过Adobe解决方案（包括[!DNL Analytics Cloud]、[!DNL Marketing Cloud]和[!DNL Advertising Cloud]）收集的数据流入[!DNL Experience Platform]并已摄取到[!DNL Profile]。
 
 ### 配置文件摄取量度
 
@@ -135,8 +135,8 @@ Adobe Experience Platform [!DNL Segmentation Service]会生成为您的个别客
 
 ### 处理选择退出和数据隐私请求
 
-[!DNL Experience Platform]允许您的客户发送与[!DNL Real-Time Customer Profile]中其数据的使用和存储相关的选择退出请求。 有关如何处理选择退出请求的更多信息，请参阅有关[接受选择退出请求](../segmentation/consents.md)的文档。
+[!DNL Experience Platform]允许您的客户发送与[!DNL Real-Time Customer Profile]中其数据的使用和存储相关的选择退出请求。 有关如何处理选择退出请求的更多信息，请参阅有关[接受选择退出请求](../segmentation/tutorials/consents.md)的文档。
 
 ## 后续步骤和其他资源
 
-要了解有关使用Experience PlatformUI或配置文件API处理实时客户配置文件数据的更多信息，请先分别阅读[配置文件UI指南](ui/user-guide.md)或[API开发人员指南](api/overview.md)。
+要了解有关使用Experience Platform UI或配置文件API处理实时客户配置文件数据的更多信息，请先分别阅读[配置文件UI指南](ui/user-guide.md)或[API开发人员指南](api/overview.md)。
