@@ -5,9 +5,9 @@ product: experience platform
 type: Documentation
 description: 了解轮廓数据和分段的性能和系统强制护栏，以确保充分使用 Real-Time CDP 功能。
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 1150b7726a7cabe6df6bbc7a850fb4d48afa208e
+source-git-commit: 5d972b6b4f59ca58ff3c4b76383db9ee7667dba3
 workflow-type: tm+mt
-source-wordcount: '2511'
+source-wordcount: '2523'
 ht-degree: 2%
 
 ---
@@ -118,7 +118,7 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --------- | ----- | ---------- | ----------- |
-| 每个沙盒的受众 | 4000 | 性能护栏 | 每个沙盒最多可以有4000个&#x200B;**活动**&#x200B;受众。 只要每个&#x200B;**个人**&#x200B;沙盒中有少于4000个受众，您每个组织的沙盒就可以超过4000个。 其中包括批量、流和边缘受众。 尝试创建其他受众可能会影响系统性能。 阅读有关[通过区段生成器创建受众](/help/segmentation/ui/segment-builder.md)的更多信息。 |
+| 每个沙盒的受众 | 4000 | 性能护栏 | 每个沙盒最多可以有4000个&#x200B;**活动**&#x200B;受众。 只要每个&#x200B;**个人**&#x200B;沙盒中的受众少于4000个，则每个组织可以有4000个以上的受众。 其中包括批量、流和边缘受众。 尝试创建其他受众可能会影响系统性能。 阅读有关[通过区段生成器创建受众](/help/segmentation/ui/segment-builder.md)的更多信息。 |
 | 每个沙盒的Edge受众 | 150 | 性能护栏 | 每个沙盒最多可以有150个&#x200B;**活动**&#x200B;边缘受众。 只要每个&#x200B;**个人**&#x200B;沙盒中的边缘受众少于150个，则每个组织可以拥有超过150个边缘受众。 尝试创建其他Edge受众可能会影响系统性能。 了解有关[边缘受众](/help/segmentation/methods/edge-segmentation.md)的更多信息。 |
 | 所有沙盒中的Edge吞吐量 | 1500 RPS | 性能护栏 | Edge分段支持峰值为每秒1500个进入Adobe Experience Platform Edge Network的入站事件。 Edge分段在集客事件进入Adobe Experience Platform Edge Network后，可能需要长达350毫秒才能处理该事件。 了解有关[边缘受众](/help/segmentation/methods/edge-segmentation.md)的更多信息。 |
 | 每个沙盒的流受众 | 500 | 性能护栏 | 每个沙盒最多可以有500个&#x200B;**活动**&#x200B;流受众。 只要每个&#x200B;**个人**&#x200B;沙盒中的流受众少于500个，则每个组织可以拥有超过500个流受众。 其中包括流受众和Edge受众。 尝试创建其他流受众可能会影响系统性能。 阅读有关[流式受众](/help/segmentation/methods/streaming-segmentation.md)的更多信息。 |
@@ -162,7 +162,7 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 
 虽然维护用户档案数据的用户档案数据存储不是关系存储，但用户档案允许与小型维度实体集成，以便以简化且直观的方式创建受众。 此集成称为[多实体分段](../segmentation/tutorials/multi-entity-segmentation.md)。
 
-您的组织还可以定义XDM类来描述个人以外的其他内容，如商店、产品或资产。 这些非[!DNL XDM Individual Profile]架构称为“维度实体”（也称为“查找实体”），不包含时间序列数据。 表示维度实体的架构通过使用[架构关系](../xdm/tutorials/relationship-ui.md)链接到配置文件实体。
+您的组织还可以定义XDM类来描述个人以外的其他内容，如商店、产品或资产。 这些架构使用XDM个人资料类以外的XDM类进行建模，它们称为“维度实体”（也称为“查找实体”），不包含时间序列数据。 表示维度实体的架构通过使用[架构关系](../xdm/tutorials/relationship-ui.md)链接到配置文件实体。
 
 Dimension实体提供查找数据，可帮助和简化多实体区段定义，并且必须足够小，以便分段引擎可以将整个数据集加载到内存中以进行优化处理（快速点查找）。
 

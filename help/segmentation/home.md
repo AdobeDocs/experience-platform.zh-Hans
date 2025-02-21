@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 分段服务概述
 description: 了解Adobe Experience Platform分段服务及其在Platform生态系统中发挥的作用。
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: acc0c1b3f088e412c68557a4a7310889f2ad65a7
+source-git-commit: f981b26a468a1d5ab9931a9cce59b176cd0fd9b3
 workflow-type: tm+mt
-source-wordcount: '1665'
+source-wordcount: '1678'
 ht-degree: 13%
 
 ---
@@ -67,6 +67,7 @@ Adobe Experience Platform [!DNL Segmentation Service]提供了一个用户界面
 >id="platform_segments_evaluation_streaming"
 >title="流式评估"
 >abstract="流式分段是一个持续的数据选择过程，会更新受众以响应用户活动。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/methods/streaming-segmentation.html" text="通过流式分段近乎实时地评估事件"
 
 Platform 目前支持三种受众评估方法：流式分段、批量分段和边缘分段。
 
@@ -93,6 +94,7 @@ Platform 目前支持三种受众评估方法：流式分段、批量分段和�
 >id="platform_segments_evaluation_edge"
 >title="边缘评估"
 >abstract="边缘分段能够在 Edge Network 上即时评估 Platform 中的区段，从而实现同一页和下一页个性化用例。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/methods/edge-segmentation.html" text="Edge分段指南"
 
 Edge分段是在Edge Network](../landing/edge-and-hub-comparison.md)上即时评估Platform中的区段[的功能，从而启用同页和下一页个性化用例。
 
