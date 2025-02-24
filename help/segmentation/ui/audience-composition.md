@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Audiences UI指南
 description: Adobe Experience Platform UI中的受众组合提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了一些直观的控件，可用于为贵组织构建和编辑受众。
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: 65871f307468428ee0e3b67c1a6577e913f3a312
+source-git-commit: f2abd9445c6b725c166f031407e330a2c15e9edb
 workflow-type: tm+mt
-source-wordcount: '2228'
+source-wordcount: '2342'
 ht-degree: 1%
 
 ---
@@ -39,7 +39,7 @@ ht-degree: 1%
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_audience"
 >title="受众块"
->abstract="利用受众块，可访问要用于构建新受众的子受众。"
+>abstract="通过“受众”块，可添加要用于构成新受众的子受众。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_merge_types"
@@ -83,6 +83,11 @@ ht-degree: 1%
 | [!UICONTROL 排除重叠] | 这些受众将合并，只包含在&#x200B;**1中共享的受众，但不会添加其中的所有**&#x200B;受众。 这相当于XOR操作。 |
 
 ### [!UICONTROL 生成规则] {#build-rule}
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_rule_builder"
+>title="区段生成器"
+>abstract="您可以使用区段生成器为构成添加自定义规则。"
 
 若要向受众块添加自定义规则，请选择&#x200B;**[!UICONTROL 生成规则]**。
 
@@ -134,7 +139,12 @@ ht-degree: 1%
 
 ### 按属性排除 {#exclude-attribute}
 
-如果按属性排除，则可以通过选择&#x200B;**[!UICONTROL 排除规则]**&#x200B;部分中的![过滤器](/help/images/icons/project-edit.png)图标来选择要排除的属性。
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_exclude_attribute"
+>title="按属性排除"
+>abstract="当按属性排除时，您可以根据选定的属性排除构成中显示的特定配置文件。"
+
+如果按属性排除，则可以通过选择&#x200B;**[!UICONTROL 排除规则]**&#x200B;部分中的![过滤器](/help/images/icons/project-edit.png)图标来选择要排除的属性。 通过排除属性，您可以从生成的受众中排除任何包含此属性的配置文件。
 
 ![属性部分高亮显示，显示从何处选择要排除的属性。](../images/ui/audience-composition/exclude-attribute.png)
 
@@ -307,6 +317,16 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 
 ### 按百分比拆分 {#split-percentage}
 
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_split_percentage"
+>title="按百分比拆分"
+>abstract="您可以根据提供的路径数和百分比，将受众随机拆分为多个受众。"
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_split_persistent"
+>title="永久拆分"
+>abstract="通过启用此选项并选择哪个身份命名空间来保留拆分，可以使百分比拆分持续存在。"
+
 按百分比拆分时，将根据提供的路径数和百分比随机拆分受众。
 
 例如，您可以有三个路径，每个路径都具有不同的用户档案百分比。
@@ -331,7 +351,12 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 
 ![已突出显示“其他配置文件”切换开关。](../images/ui/audience-composition/split-other-profiles.png)
 
-## 发布受众
+## 发布受众 {#publish}
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_publish"
+>title="发布"
+>abstract="您可以发布合成，以在Adobe Experience Platform中创建生成的受众。"
 
 >[!IMPORTANT]
 >
