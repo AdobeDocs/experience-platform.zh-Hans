@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2025 年 2 月）
 description: Adobe Experience Platform 的 2025 年 2 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 8786ac8ab42d2b9e0c43000bbc6604462ea06f64
+source-git-commit: 300be2f922f81f0666a794815cb27777802efb60
 workflow-type: tm+mt
-source-wordcount: '1481'
-ht-degree: 21%
+source-wordcount: '1542'
+ht-degree: 20%
 
 ---
 
@@ -39,14 +39,13 @@ Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使�
 
 | 功能 | 描述 |
 | --- | --- |
+| 运营见解的正式发布 | 人工智能助手中的运营见解现在位于佐治亚州。 操作分析是指回答AI Assistant生成的有关元数据对象（属性、受众、数据流、数据集、目标、历程、架构和源）的答案，包括计数、查找和谱系影响。 操作分析不会查看沙盒中的任何数据。 有关详细信息，请阅读[AI助手UI指南](../../ai-assistant/ui-guide.md)。 |
 | 支持问题自动完成 | 向AI Assistant输入问题时，您现在可以从AI Assistant提供的推荐问题列表中进行选择。 使用此功能可进一步加快使用AI Assistant的工作流。 有关详细信息，请阅读有关[使用AI助手自动完成问题](../../ai-assistant/ui-guide.md#use-question-autocomplete)的指南。 |
 | 支持数据集可观察性 | 现在，您可以使用AI Assistant回答有关特定数据集量度（如存储大小和行计数）的问题。 数据可观察性问题支持可用于按特定时间段筛选查询的限定符。 有关详细信息，请阅读[AI助手问题指南](../../ai-assistant/questions.md)。 |
 
 {style="table-layout:auto"}
 
 有关详细信息，请阅读[AI助手概述](../../ai-assistant/home.md)。
-
-<!-- | General availability of operational insights | Operational insights in AI Assistant are now in GA. Operational insights refer to answers AI Assistant generates about your metadata objects (attributes, audiences, dataflows, datasets, destinations, journeys, schemas, and sources), including counts, lookups, and lineage impact. Operational insights does not look at any data within the sandbox. For more information, read the [AI Assistant UI guide](../../ai-assistant/ui-guide.md). | -->
 
 ## 目录服务 {#catalog-service}
 
