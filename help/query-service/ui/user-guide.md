@@ -2,20 +2,16 @@
 keywords: Experience Platform；主页；热门主题；查询编辑器；查询编辑器；查询服务；查询服务；
 solution: Experience Platform
 title: 查询编辑器UI指南
-description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发，以及运行非交互式查询以在Experience Platform中填充数据集。
+description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发以及非交互式查询，以填充Experience Platform中的数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 4c11a35ce914cd0b1aa0084368f5a5929f883963
+source-git-commit: e1ecdb5d701093d9c73b6a05dad9a4dd848e0083
 workflow-type: tm+mt
-source-wordcount: '2807'
+source-wordcount: '2745'
 ht-degree: 0%
 
 ---
 
 # 查询编辑器UI指南
-
->[!NOTE]
->
->旧版编辑器已于2024年5月24日弃用。 它不再可供使用。 您现在可以使用[增强型查询编辑器](#enhanced-editor-toggle)来编写、验证和运行查询
 
 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在[!DNL Experience Platform]用户界面中编写、验证和运行客户体验数据的查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发，以及运行非交互式查询以填充[!DNL Experience Platform]中的数据集。
 
@@ -42,10 +38,6 @@ ht-degree: 0%
 从查询编辑器执行的查询以交互方式运行，这意味着如果关闭浏览器或离开浏览器，查询将被取消。 对于通过查询输出生成数据集的查询，也是如此。
 
 ## 使用增强型查询编辑器创作查询 {#query-authoring}
-
->[!NOTE]
->
->旧版编辑器已于2024年5月24日弃用。 它不再可供使用。 您现在可以使用增强型查询编辑器来编写、验证和运行查询。
 
 使用查询编辑器，您可以编写、执行和保存客户体验数据的查询。 在查询编辑器中执行或保存的所有查询都可供贵组织中有权访问查询服务的所有用户使用。
 
@@ -101,11 +93,11 @@ ht-degree: 0%
 
 ### 结果计数 {#result-count}
 
-查询编辑器的行输出最多为50,000个。 您可以选择在查询编辑器控制台中一次显示的行数。 要更改控制台中显示的行数，请选择&#x200B;**[!UICONTROL 结果计数]**&#x200B;下拉列表，并从50、100、150、300和500选项中进行选择。
+查询编辑器的行输出最多为50,000个。 您可以选择在查询编辑器控制台中一次显示的行数。 要更改控制台中显示的行数，请选择&#x200B;**[!UICONTROL 结果计数]**&#x200B;下拉列表，并从50、100、150、300、500和1000选项中进行选择。
 
 >[!NOTE]
 >
->由于Platform UI最多只能支持500行，因此如果传递LIMIT值超过500，则会被忽略。
+>由于Platform UI最多可支持1000行，因此超过1000的LIMIT值将被忽略。
 
 ![结果计数下拉列表突出显示的查询编辑器。](../images/ui/query-editor/result-count.png)
 
@@ -204,8 +196,8 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 >[!AVAILABILITY]
 >
-数据集导航边栏仅适用于Data Distiller客户。 您的Platform UI可能不包含左侧数据集导航边栏。 此文档中的其他图像可能无法反映数据集导航边栏。 有关更多信息，请与您的Adobe代表联系。<br>
-对象浏览器当前仅在**有限版本**&#x200B;中可用。 请联系您的Adobe代表以提前获得发布权限。
+数据集导航边栏仅适用于Data Distiller客户。 您的Platform UI可能不包含左侧数据集导航边栏。 此文档中的其他图像可能无法反映数据集导航边栏。 有关更多信息，请与Adobe代表联系。<br>
+对象浏览器当前仅在**有限版本**&#x200B;中可用。 请联系您的Adobe代表以提前获取发布访问权限。
 
 使用对象浏览器可轻松搜索和筛选数据集。 对象浏览器减少了在具有大量数据集的大型环境中搜索表和数据集所花费的时间。 通过简化对相关数据和元数据的访问，您可以将更多精力放在查询创作上，而较少精力放在导航上。
 
@@ -249,7 +241,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 ### 查询结果 {#query-results}
 
-完成查询后，结果将显示在&#x200B;**[!UICONTROL 控制台]**&#x200B;选项卡旁边的&#x200B;**[!UICONTROL 结果]**&#x200B;选项卡中。 此视图显示查询的表格输出，根据您选择的[结果计数](#result-count)显示50到500行结果。 此视图允许您验证查询是否生成预期的输出。 要使用您的查询生成数据集，请删除对返回行的限制，然后使用`CREATE TABLE tablename AS SELECT`运行查询以使用输出生成数据集。 有关如何从查询编辑器中的查询结果生成数据集的说明，请参阅[生成数据集教程](./create-datasets.md)。
+完成查询后，结果将显示在&#x200B;**[!UICONTROL 控制台]**&#x200B;选项卡旁边的&#x200B;**[!UICONTROL 结果]**&#x200B;选项卡中。 此视图显示查询的表格输出，根据您选择的[结果计数](#result-count)显示50到1000行结果。 此视图允许您验证查询是否生成预期的输出。 要使用您的查询生成数据集，请删除对返回行的限制，然后使用`CREATE TABLE tablename AS SELECT`运行查询以使用输出生成数据集。 有关如何从查询编辑器中的查询结果生成数据集的说明，请参阅[生成数据集教程](./create-datasets.md)。
 
 ![查询编辑器控制台的“结果”选项卡显示查询运行的结果。](../images/ui/query-editor/query-results.png)
 
@@ -261,7 +253,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 ## 使用查询服务运行查询教程视频 {#query-tutorial-video}
 
-以下视频介绍了如何在Adobe Experience Platform界面和PSQL客户端中运行查询。 此视频还演示了如何在XDM对象中使用单个属性、Adobe定义的函数，以及如何使用CREATE TABLE AS SELECT (CTAS)查询。
+以下视频介绍了如何在Adobe Experience Platform界面和PSQL客户端中运行查询。 此视频还演示了如何在XDM对象中使用各个属性、Adobe定义的函数，以及如何使用CREATE TABLE AS SELECT (CTAS)查询。
 
 >[!NOTE]
 >
