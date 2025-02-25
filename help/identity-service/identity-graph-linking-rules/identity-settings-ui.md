@@ -2,10 +2,10 @@
 title: 身份设置UI
 description: 了解如何使用身份设置用户界面。
 exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
-source-git-commit: ee0f6d6dbbbdf55a1a0f10038b785e48f2b41474
+source-git-commit: 7c2e5cad997b7e7b9e0a08d3a3a1f5c9b218329e
 workflow-type: tm+mt
 source-wordcount: '538'
-ht-degree: 1%
+ht-degree: 4%
 
 ---
 
@@ -24,7 +24,7 @@ ht-degree: 1%
 在开始使用标识设置之前，请阅读以下文档：
 
 * [身份图链接规则](./overview.md)
-* [身份优化算法](./identity-optimization-algorithm.md)
+* [身份标识优化算法](./identity-optimization-algorithm.md)
 * [实施指南](./implementation-guide.md)
 * [图形配置示例](./example-configurations.md)
 * [命名空间优先级](./namespace-priority.md)
@@ -46,7 +46,7 @@ ht-degree: 1%
 
 ### 指定您的唯一命名空间
 
-要指定唯一的命名空间，请选中与该命名空间对应的[!UICONTROL 每个图形唯一]复选框。 可以为身份设置配置选择多个唯一的命名空间。
+要指定唯一的命名空间，请选中与该命名空间对应的[!UICONTROL 每个图形唯一]复选框。 您最多可以为身份设置配置选择三个唯一的命名空间。
 
 ![选定两个命名空间并将其定义为唯一。](../images/rules/unique-namespace.png)
 
@@ -65,7 +65,7 @@ ht-degree: 1%
 有关身份图链接规则的更多信息，请阅读以下文档：
 
 * [身份图链接规则概述](./overview.md)
-* [身份优化算法](./identity-optimization-algorithm.md)
+* [身份标识优化算法](./identity-optimization-algorithm.md)
 * [实施指南](./implementation-guide.md)
 * [图形配置示例](./example-configurations.md)
 * [疑难解答和常见问题](./troubleshooting.md)
