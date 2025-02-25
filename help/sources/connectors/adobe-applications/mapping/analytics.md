@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Analytics Source连接器的映射字段
 description: 使用Adobe Analytics Source Connector将Analytics字段映射到XDM字段。
 exl-id: 15dc1368-5cf1-42e1-9683-d5158f8aa2db
-source-git-commit: 6cbd902c6a1159d062fb38bf124a09bb18ad1ba8
+source-git-commit: 15d63db308ea9d2daf7660b463785d04ff94e296
 workflow-type: tm+mt
-source-wordcount: '2388'
+source-wordcount: '2415'
 ht-degree: 8%
 
 ---
@@ -172,11 +172,11 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 | `hitid_low` | `_id` | 字符串 | 与hitid_high一起使用，唯一标识点击。 |
 | `ip` | `environment.ipV4` | 字符串 | IP地址，基于图像请求的HTTP标头。 |
 | `j_jscript` | `environment.browserDetails.javaScriptEnabled` | 布尔 | 使用的JavaScript版本。 |
-| `mcvisid_high` + `mcvisid_low` | identityMap | 对象 | Experience Cloud的访客ID。 |
-| `mcvisid_high` + `mcvisid_low` | endUserIDs._experience.mcid.id | 字符串 | Experience CloudID (ECID)也称为MCID，有时用于命名空间。 |
-| `mcvisid_high` | `endUserIDs._experience.mcid.primary` | 布尔 | Experience CloudID (ECID)也称为MCID，有时用于命名空间。 |
-| `mcvisid_high` | `endUserIDs._experience.mcid.namespace.code` | 字符串 | Experience CloudID (ECID)也称为MCID，有时用于命名空间。 |
-| `mcvisid_low` | `identityMap` | 对象 | Experience Cloud的访客ID。 |
+| `mcvisid_high` + `mcvisid_low` | identityMap | 对象 | Experience Cloud访客ID。 |
+| `mcvisid_high` + `mcvisid_low` | endUserIDs._experience.mcid.id | 字符串 | Experience Cloud ID (ECID)也称为MCID，有时用于命名空间。 |
+| `mcvisid_high` | `endUserIDs._experience.mcid.primary` | 布尔 | Experience Cloud ID (ECID)也称为MCID，有时用于命名空间。 |
+| `mcvisid_high` | `endUserIDs._experience.mcid.namespace.code` | 字符串 | Experience Cloud ID (ECID)也称为MCID，有时用于命名空间。 |
+| `mcvisid_low` | `identityMap` | 对象 | Experience Cloud访客ID。 |
 | `sdid_high` + `sdid_low` | `_experience.target.supplementalDataID` | 字符串 | 点击拼接ID。 分析字段sdid_high和sdid_low是用于拼合两个（或更多）传入点击的补充数据ID。 |
 | `mobilebeaconproximity` | `placeContext.POIinteraction.POIDetail.`<br/>`beaconInteractionDetails.proximity` | 字符串 | Mobile Services信标邻近性。 |
 | `videochapter` | `media.mediaTimed.mediaChapter.`<br/>`chapterAssetReference._xmpDM.duration` | 整数 | 视频章节的名称。 |
@@ -186,7 +186,9 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 
 ## 高级映射字段
 
-选择字段（称为“post values”）包含Adobe使用处理规则、VISTA规则和查找表调整其值后的数据。 大多数post值具有预处理的对应项。 贵组织可以决定是使用预处理字段、后处理字段，还是同时使用两者。
+在Adobe使用处理规则、VISTA规则和查找表调整其值后，选择字段（称为“post values”）将包含数据。 大多数post值具有预处理的对应项。
+
+Analytics Source Connector将预处理的数据发送到Experience Platform的数据集中。 您可以使用转换将此数据转换为其经过后处理的对应数据。 要了解有关使用查询服务执行这些转换的更多信息，请参阅查询服务用户指南中的[Adobe定义的函数](/help/query-service/sql/adobe-defined-functions.md)。
 
 要了解有关使用查询服务执行这些转换的更多信息，请参阅查询服务用户指南中的[Adobe定义的函数](/help/query-service/sql/adobe-defined-functions.md)。
 
