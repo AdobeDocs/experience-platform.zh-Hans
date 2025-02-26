@@ -2,9 +2,9 @@
 description: 了解如何为使用Destination SDK构建的目标配置受众元数据设置。
 title: 受众元数据配置
 exl-id: ae71df4f-b753-4084-835f-03559b4986cb
-source-git-commit: 20cb2dbfbfc8e73c765073818c8e7e561d4e6629
+source-git-commit: 804370a778a4334603f3235df94edaa91b650223
 workflow-type: tm+mt
-source-wordcount: '405'
+source-wordcount: '406'
 ht-degree: 3%
 
 ---
@@ -13,11 +13,11 @@ ht-degree: 3%
 
 将数据从Experience Platform导出到目标时，您可能需要在Experience Platform和目标之间共享特定受众元数据，例如受众名称或受众ID。
 
-Destination SDK提供了一些工具，可用于以编程方式创建、更新或删除目标平台中的受众。
+Destination SDK提供了可用于以编程方式在目标平台中创建、更新或删除受众的工具。
 
-要了解此组件在何处适合使用Destination SDK创建的集成，请参阅[配置选项](../configuration-options.md)文档中的关系图，或查看有关如何[使用Destination SDK配置流目标](../../guides/configure-destination-instructions.md#create-destination-configuration)的指南。
+要了解此组件在何处适合使用Destination SDK创建的集成，请参阅[配置选项](../configuration-options.md)文档中的关系图，或参阅如何[使用Destination SDK配置流目标](../../guides/configure-destination-instructions.md#create-destination-configuration)的指南。
 
-您可以通过`/authoring/audience-templates`端点配置受众元数据模板。 创建受众元数据配置后，可以使用`/authoring/destinations`端点配置`audienceMetadataConfig`部分。 此部分将向您说明目标应将哪些受众元数据映射到您的受众模板。
+您可以通过`/authoring/audience-templates`端点配置受众元数据模板。 创建受众元数据配置后，您可以使用`/authoring/destinations`端点配置`segmentMappingConfig`和`audienceMetadataConfig`部分。 此部分将向您说明目标应将哪些受众元数据映射到您的受众模板。
 
 有关详细的API调用示例，请参阅以下API参考页面，您可以在其中配置此页面中显示的组件。
 
@@ -44,10 +44,12 @@ Destination SDK提供了一些工具，可用于以编程方式创建、更新�
 创建受众元数据配置时，您可以使用下表所述的参数来配置受众映射设置。
 
 ```json
-  "audienceMetadataConfig":{
+"segmentMappingConfig": {
    "mapExperiencePlatformSegmentName":false,
    "mapExperiencePlatformSegmentId":false,
    "mapUserInput":false,
+ },
+"audienceMetadataConfig":{
    "audienceTemplateId":"YOUR_AUDIENCE_TEMPLATE_ID"
 }
 ```
@@ -55,7 +57,7 @@ Destination SDK提供了一些工具，可用于以编程方式创建、更新�
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
 | `mapExperiencePlatformSegmentName` | 布尔值 | 指示目标激活工作流中的[[!UICONTROL 映射ID]](../../../ui/activate-segment-streaming-destinations.md#scheduling)值是否应是Experience Platform受众名称。 |
-| `mapExperiencePlatformSegmentId` | 布尔值 | 指示目标激活工作流中的[[!UICONTROL 映射ID]](../../../ui/activate-segment-streaming-destinations.md#scheduling)值是否应是Experience Platform的受众ID。 |
+| `mapExperiencePlatformSegmentId` | 布尔值 | 指示目标激活工作流中的[[!UICONTROL 映射ID]](../../../ui/activate-segment-streaming-destinations.md#scheduling)值是否应是Experience Platform受众ID。 |
 | `mapUserInput` | 布尔值 | 启用或禁用目标激活工作流中[[!UICONTROL 映射ID]](../../../ui/activate-segment-streaming-destinations.md#scheduling)值的用户输入。 如果设置为`true`，则不能存在`audienceTemplateId`。 |
 | `audienceTemplateId` | 字符串 | [受众元数据模板](../../metadata-api/create-audience-template.md)的`instanceId`用于您的目标。 |
 

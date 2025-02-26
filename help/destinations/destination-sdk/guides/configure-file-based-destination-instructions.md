@@ -1,8 +1,8 @@
 ---
-description: 此页列出并描述了使用Destination SDK配置基于文件的目标的步骤。
+description: 本页列出并描述了使用Destination SDK配置基于文件的目标的步骤。
 title: 使用Destination SDK配置基于文件的目标
 exl-id: 84d73452-88e4-4e0f-8fc7-d0d8e10f9ff5
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 804370a778a4334603f3235df94edaa91b650223
 workflow-type: tm+mt
 source-wordcount: '732'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## 先决条件 {#prerequisites}
 
-在继续执行以下步骤之前，请阅读[Destination SDK快速入门](../getting-started.md)页面，了解有关获取使用Destination SDKAPI所必需的Adobe I/O身份验证凭据和其他先决条件的信息。
+在继续执行以下说明的步骤之前，请阅读[Destination SDK快速入门](../getting-started.md)页面，了解有关获取使用Destination SDK API所需的必要Adobe I/O身份验证凭据和其他先决条件的信息。
 
 ## 在Destination SDK中使用配置选项设置目标的步骤 {#steps}
 
@@ -255,7 +255,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 ## 步骤3：创建受众元数据配置 {#create-audience-metadata-configuration}
 
-对于某些目标，Destination SDK需要您将受众元数据配置配置为以编程方式创建、更新或删除目标中的受众。 有关何时需要设置此配置以及如何设置的信息，请参阅[受众元数据管理](../functionality/audience-metadata-management.md)。
+对于某些目标，Destination SDK要求您将受众元数据配置配置为以编程方式创建、更新或删除目标中的受众。 有关何时需要设置此配置以及如何设置的信息，请参阅[受众元数据管理](../functionality/audience-metadata-management.md)。
 
 如果使用受众元数据配置，则必须将其连接到在步骤2中创建的目标配置。 将受众元数据配置的实例ID作为`audienceTemplateId`添加到目标配置中。
 
@@ -345,11 +345,13 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
             "destinationServerId": "eec25bde-4f56-4c02-a830-9aa9ec73ee9d"
         }
     ],
+    "segmentMappingConfig":{
+        "mapExperiencePlatformSegmentName":false,
+        "mapExperiencePlatformSegmentId":false,
+        "mapUserInput":false
+    },
     "audienceMetadataConfig":{
-    "mapExperiencePlatformSegmentName":false,
-    "mapExperiencePlatformSegmentId":false,
-    "mapUserInput":false,
-    "audienceTemplateId":"cbf90a70-96b4-437b-86be-522fbdaabe9c"
+        "audienceTemplateId":"cbf90a70-96b4-437b-86be-522fbdaabe9c"
     },   
     "schemaConfig": {
         "profileRequired": true,
@@ -402,7 +404,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 >
 >`CUSTOMER_AUTHENTICATION`是两个身份验证规则中比较常见的一个，如果您要求用户在设置连接和导出数据之前向您的目标提供某种形式的身份验证，则应该使用。
 
-* 如果您在目标配置中选择了`"authenticationRule": "CUSTOMER_AUTHENTICATION"`，请参阅以下部分，了解基于文件的目标的Destination SDK所支持的身份验证类型：
+* 如果您在目标配置中选择了`"authenticationRule": "CUSTOMER_AUTHENTICATION"`，请参阅以下部分，了解Destination SDK支持的基于文件的目标身份验证类型：
 
    * [Amazon S3身份验证](../functionality/destination-configuration/customer-authentication.md#s3)
    * [Azure Blob](../functionality/destination-configuration/customer-authentication.md#blob)
@@ -418,18 +420,18 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 使用前面步骤中的配置端点设置目标后，您可以使用[目标测试工具](../testing-api/batch-destinations/file-based-destination-testing-overview.md)来测试Adobe Experience Platform与您的目标之间的集成。
 
-在测试目标的过程中，您必须使用Experience PlatformUI创建受众，并将受众激活到目标。 有关如何在Experience Platform中创建受众的说明，请参阅以下两个资源：
+在测试目标的过程中，您必须使用Experience Platform UI创建受众，并将受众激活到目标。 有关如何在Experience Platform中创建受众的说明，请参阅以下两个资源：
 
 * [创建受众 — 文档页面](/help/segmentation/ui/audience-portal.md#create-audience)
 * [创建受众 — 视频演练](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)
 
-## 步骤6：Publish您的目标 {#publish-destination}
+## 步骤6：发布目标 {#publish-destination}
 
 >[!NOTE]
 >
 >如果您正在创建供自己使用的专用目标，并且不想将其发布到目标目录以供其他客户使用，则不需要执行此步骤。
 
-配置和测试目标后，使用[目标发布API](../publishing-api/create-publishing-request.md)将配置提交给Adobe进行审核。
+配置和测试目标后，使用[目标发布API](../publishing-api/create-publishing-request.md)将配置提交到Adobe以供审查。
 
 ## 步骤7：记录您的目标 {#document-destination}
 
@@ -439,10 +441,10 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 如果您是创建[产品化集成](../overview.md#productized-custom-integrations)的独立软件供应商(ISV)或系统集成商(SI)，请使用[自助文档流程](../docs-framework/documentation-instructions.md)在[Experience Platform目标目录](/help/destinations/catalog/overview.md)中为您的目标创建产品文档页面。
 
-## 步骤8：提交目标以供Adobe审核 {#submit-for-review}
+## 步骤8：提交目标以供Adobe审查 {#submit-for-review}
 
 >[!NOTE]
 >
 >如果您正在创建供自己使用的专用目标，并且不想将其发布到目标目录以供其他客户使用，则不需要执行此步骤。
 
-最后，在Experience Platform目录中发布目标并对所有Experience Platform客户可见之前，您需要正式提交目标以供Adobe审查。 查找有关如何[提交以供审阅在Destination SDK](../guides/submit-destination.md)中创作的产品化目标的完整信息。
+最后，在Experience Platform目录中发布目标并对所有Experience Platform客户可见之前，您需要正式提交目标以供Adobe审核。 查找有关如何[提交以供审阅在Destination SDK](../guides/submit-destination.md)中创作的产品化目标的完整信息。
