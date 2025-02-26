@@ -6,7 +6,7 @@ user-guide-description: 了解如何部署和管理分析、营销和广告标�
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: 77432a559009d29711a8afa4ca6d8f6ea11d70cf
+source-git-commit: 5e3f1517b321cab756305cd61ad5f1def93d3de7
 workflow-type: tm+mt
 source-wordcount: '776'
 ht-degree: 35%
@@ -90,7 +90,7 @@ ht-degree: 35%
       * Adobe客户端数据层{#client-data-layer}
          * [概述](./extensions/client/client-data-layer/overview.md)
          * [发行说明](./extensions/client/client-data-layer/release-notes.md)
-      * Adobe内容分析{#contentanalytics}
+      * Adobe内容分析{#content-analytics}
          * [概述](./extensions/client/content-analytics/overview.md)
       * Adobe ContextHub {#contexthub}
          * [概述](./extensions/client/contexthub/overview.md)
