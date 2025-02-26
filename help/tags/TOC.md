@@ -6,9 +6,9 @@ user-guide-description: 了解如何部署和管理分析、营销和广告标�
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: 18690a72c8a84c6426677b3e8993d8453a8e7cf1
+source-git-commit: 77432a559009d29711a8afa4ca6d8f6ea11d70cf
 workflow-type: tm+mt
-source-wordcount: '772'
+source-wordcount: '776'
 ht-degree: 35%
 
 ---
@@ -69,7 +69,7 @@ ht-degree: 35%
    * 标记扩展（客户端） {#client}
       * [概述](./extensions/client/overview.md)
       * [可访问的网站速度指标](https://exchange.adobe.com/apps/ec/103053)
-      * [自定义项Activity Map](https://exchange.adobe.com/apps/ec/101531)
+      * [Activity Map自定义程序](https://exchange.adobe.com/apps/ec/101531)
       * [操作页面刷新](https://exchange.adobe.com/apps/ec/102848)
       * [Adform网站跟踪](https://exchange.adobe.com/apps/ec/103195)
       * [Adobe Advertising Cloud](https://exchange.adobe.com/apps/ec/100155)
@@ -90,7 +90,9 @@ ht-degree: 35%
       * Adobe客户端数据层{#client-data-layer}
          * [概述](./extensions/client/client-data-layer/overview.md)
          * [发行说明](./extensions/client/client-data-layer/release-notes.md)
-      * Adobe的ContextHub {#contexthub}
+      * Adobe内容分析{#contentanalytics}
+         * [概述](./extensions/client/content-analytics/overview.md)
+      * Adobe ContextHub {#contexthub}
          * [概述](./extensions/client/contexthub/overview.md)
       * [Adobe Experience Manager Forms](https://exchange.adobe.com/apps/ec/107493)
       * Adobe Experience Cloud ID 服务 {#id-service}
@@ -112,10 +114,10 @@ ht-degree: 35%
          * [概述](./extensions/client/asset-insights/overview.md)
          * [发行说明](./extensions/client/asset-insights/release-notes.md)
       * [Adobe Fonts](https://exchange.adobe.com/apps/ec/101538)
-      * 音频和视频的Adobe Medium Analytics {#media-analytics}
+      * Adobe Media Analytics for Audio and Video {#media-analytics}
          * [概述](./extensions/client/media-analytics/overview.md)
          * [发行说明](./extensions/client/media-analytics/release-notes.md)
-      * Adobe Medium Analytics (3.x SDK) {#media-analytics-3x}
+      * Adobe Media Analytics (3.x SDK) {#media-analytics-3x}
          * [概述](./extensions/client/media-analytics-3x/overview.md)
          * [发行说明](./extensions/client/media-analytics-3x/release-notes.md)
       * Adobe隐私{#privacy}
@@ -220,7 +222,7 @@ ht-degree: 35%
          * [概述](./extensions/server/aws/overview.md)
       * [!DNL Braze] {#braze}
          * [概述](./extensions/server/braze/overview.md)
-      * Google Analytics的[云连接器](https://exchange.adobe.com/apps/ec/106542)
+      * 适用于Google Analytics的[Cloud Connector](https://exchange.adobe.com/apps/ec/106542)
       * 核心{#core}
          * [概述](./extensions/server/core/overview.md)
       * [Epsilon事件API](https://exchange.adobe.com/apps/ec/109127)
