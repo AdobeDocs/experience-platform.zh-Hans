@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Analytics Source连接器的映射字段
 description: 使用Adobe Analytics Source Connector将Analytics字段映射到XDM字段。
 exl-id: 15dc1368-5cf1-42e1-9683-d5158f8aa2db
-source-git-commit: 15d63db308ea9d2daf7660b463785d04ff94e296
+source-git-commit: ae8a54f8e9fafe782cb24e54e5b638d83d468e3a
 workflow-type: tm+mt
 source-wordcount: '2415'
 ht-degree: 8%
@@ -188,7 +188,7 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 
 在Adobe使用处理规则、VISTA规则和查找表调整其值后，选择字段（称为“post values”）将包含数据。 大多数post值具有预处理的对应项。
 
-Analytics Source Connector将预处理的数据发送到Experience Platform的数据集中。 您可以使用转换将此数据转换为其经过后处理的对应数据。 要了解有关使用查询服务执行这些转换的更多信息，请参阅查询服务用户指南中的[Adobe定义的函数](/help/query-service/sql/adobe-defined-functions.md)。
+Analytics Source Connector将预处理的数据发送到Experience Platform的数据集中。 您可以使用转换将此数据转换为经过后处理的对应数据。 要了解有关使用查询服务执行这些转换的更多信息，请参阅查询服务用户指南中的[Adobe定义的函数](/help/query-service/sql/adobe-defined-functions.md)。
 
 要了解有关使用查询服务执行这些转换的更多信息，请参阅查询服务用户指南中的[Adobe定义的函数](/help/query-service/sql/adobe-defined-functions.md)。
 
