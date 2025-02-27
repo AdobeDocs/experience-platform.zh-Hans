@@ -2,10 +2,10 @@
 title: 为数据收集准备数据
 description: 了解在为 Adobe Experience Platform Web 和 Mobile SDK 配置数据流时，如何将数据映射到 Experience Data Model (XDM) 事件架构。
 exl-id: 87a70d56-1093-445c-97a5-b8fa72a28ad0
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: e90bd5abe502a7638ae54fca5eb0f051a925a2d8
 workflow-type: tm+mt
-source-wordcount: '1183'
-ht-degree: 60%
+source-wordcount: '1199'
+ht-degree: 59%
 
 ---
 
@@ -13,11 +13,11 @@ ht-degree: 60%
 
 数据准备是一项 Adobe Experience Platform 服务，可让您从 [Experience Data Model (XDM)](../xdm/home.md)映射数据并将数据映射到它、转换和验证数据。如果配置支持 Platform 的[数据流](./overview.md)，可以在将源数据发送到 Platform Edge Network 时，使用数据准备函数将源数据映射到 XDM。
 
-所有从网页发送的数据必须以XDM形式登陆Experience Platform。 有3种方法可以将数据从页面上的数据层转换为Experience Platform接受的XDM：
+所有从网页发送的数据必须以XDM形式登陆Experience Platform。 有3种方法可将数据从页面上的数据层转换为Experience Platform接受的XDM：
 
 1. 在网页上将数据层重新格式化为XDM。
 2. 使用标记本机数据元素功能，将网页的现有数据层格式重新格式化为XDM。
-3. 使用用于数据收集的数据准备，通过Edge Network将网页的现有数据层格式重新格式化为XDM。
+3. 使用为数据收集准备数据，通过Edge Network将网页的现有数据层格式重新格式化为XDM。
 
 本指南重点介绍第三个选项。
 
@@ -166,6 +166,10 @@ ht-degree: 60%
 
 * [通过手动过程为此数据流创建映射规则](#create-mapping)。
 * 从现有数据流[导入映射规则](#import-mapping)。
+
+>[!IMPORTANT]
+>
+>数据准备映射将覆盖`identityMap`个XDM负载，这可能会进一步影响针对Real-Time CDP受众的配置文件匹配。
 
 ### 创建映射规则 {#create-mapping}
 
