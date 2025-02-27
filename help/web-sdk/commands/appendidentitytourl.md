@@ -2,7 +2,7 @@
 title: appendIdentityToUrl
 description: 在应用程序、Web和跨域之间更准确地交付个性化体验。
 exl-id: 09dd03bd-66d8-4d53-bda8-84fc4caadea6
-source-git-commit: 153c5bae42c027c25a38a8b63070249d1b1a8f01
+source-git-commit: 7c262e5819f8e3488c5ddd5a0221d1c52c28c029
 workflow-type: tm+mt
 source-wordcount: '412'
 ht-degree: 0%
@@ -77,7 +77,11 @@ ht-degree: 0%
 以URL作为参数运行`appendIdentityToUrl`命令。 此方法会返回一个标识符作为查询字符串附加的URL。
 
 ```js
-alloy("appendIdentityToUrl",document.location);
+alloy("appendIdentityToUrl",
+  {
+    url: document.location.href
+  }
+);
 ```
 
 您可以为页面上收到的所有点击添加事件侦听器，并检查URL是否与任何所需的域匹配。 如果超过100次，则将身份附加到URL并重定向用户。
