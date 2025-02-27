@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2025 年 2 月）
 description: Adobe Experience Platform 的 2025 年 2 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 300be2f922f81f0666a794815cb27777802efb60
+source-git-commit: c4064771a384a90d94903ba1761fc9ee20f47747
 workflow-type: tm+mt
-source-wordcount: '1542'
-ht-degree: 94%
+source-wordcount: '1645'
+ht-degree: 91%
 
 ---
 
@@ -24,6 +24,7 @@ Adobe Experience Platform 中现有功能和文档的更新：
 - [数据准备](#data-prep)
 - [目标](#destinations)
 - [源](#sources)
+- [Segmentation Service](#segmentation)
 - [文档更新](#documentation-updates)
    - [Edge Network 与 Hub Network 比较](#edge)
    - [扩展的源 Flow Service API](#flow-service)
@@ -107,6 +108,18 @@ Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使�
 - 将用户档案导出到基于文件的目标时，重复数据删除可确保在多个用户档案共享相同的重复数据删除键和相同的引用时间戳时，仅导出一个用户档案。 此版本包括了对重复数据删除流程的更新，确保使用相同的坐标连续运行将始终产生相同的结果，从而提高一致性。 [了解更多信息](/help/destinations/ui/activate-batch-profile-destinations.md#deduplication-same-timestamp)。
 
 有关更多信息，请阅读[目标概述](../../destinations/home.md)。
+
+## Segmentation Service {#segmentation-service}
+
+[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的轮廓子集。区段可以基于记录数据（例如人口统计信息）或代表客户与您的品牌互动的时间序列事件。
+
+**新增功能或更新后的功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 永久拆分 | 受众构成现在支持持久拆分。 通过向Split块中添加身份命名空间，您可以使拆分受众在按用户档案拆分时保持不变。 有关此功能的详细信息，请参阅[受众组合文档](../../segmentation/ui/audience-composition.md)。 |
+
+有关 [!DNL Segmentation Service] 的详细信息，请查看[分段概述](../../segmentation/home.md)。
 
 ## 源 {#sources}
 

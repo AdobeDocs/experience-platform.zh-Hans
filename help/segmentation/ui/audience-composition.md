@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Audiences UI指南
 description: Adobe Experience Platform UI中的受众组合提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了一些直观的控件，可用于为贵组织构建和编辑受众。
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: f2abd9445c6b725c166f031407e330a2c15e9edb
+source-git-commit: c4064771a384a90d94903ba1761fc9ee20f47747
 workflow-type: tm+mt
-source-wordcount: '2342'
+source-wordcount: '2313'
 ht-degree: 1%
 
 ---
@@ -60,7 +60,7 @@ ht-degree: 1%
 
 将受众添加到“受众”块。 选择&#x200B;**[!UICONTROL 添加受众]**。
 
-![“添加受众”按钮高亮显示。](../images/ui/audience-composition/add-audience.png)
+![“添加受众”按钮高亮显示。](../images/ui/audience-composition/select-add-audience.png)
 
 >[!IMPORTANT]
 >
@@ -91,7 +91,7 @@ ht-degree: 1%
 
 若要向受众块添加自定义规则，请选择&#x200B;**[!UICONTROL 生成规则]**。
 
-![“生成规则”按钮突出显示。](../images/ui/audience-composition/build-rule.png)
+![“生成规则”按钮突出显示。](../images/ui/audience-composition/select-build-rule.png)
 
 此时将显示“区段生成器”。 您可以使用区段生成器创建自定义规则，以供受众遵循。 有关使用区段生成器的更多信息，请参阅[区段生成器指南](./segment-builder.md)。
 
@@ -196,7 +196,7 @@ ht-degree: 1%
 
 出现&#x200B;**[!UICONTROL 选择数据集]**&#x200B;弹出框。 选择要添加以进行扩充的数据集，然后选择&#x200B;**[!UICONTROL 选择]**&#x200B;以添加数据集以进行扩充。
 
-![选定数据集。](../images/ui/audience-composition/enrich-dataset-selected.png)
+![选定数据集。](../images/ui/audience-composition/select-dataset.png)
 
 >[!IMPORTANT]
 >
@@ -212,27 +212,21 @@ ht-degree: 1%
 
 要选择&#x200B;**[!UICONTROL Source联接键]**，请选择![筛选器](/help/images/icons/project-edit.png)图标。
 
-![已突出显示[!UICONTROL Source联接键]的过滤器图标。](../images/ui/audience-composition/enrich-select-source-join-key.png)
-
 出现&#x200B;**[!UICONTROL 选择配置文件属性]**&#x200B;弹出框。 选择要用作源连接键的配置文件属性，然后选择&#x200B;**[!UICONTROL 选择]**&#x200B;以选择该属性作为源连接键。
 
-![要用作源连接键的属性突出显示。](../images/ui/audience-composition/enrich-select-profile-attribute.png)
+![要用作源连接键的属性突出显示。](../images/ui/audience-composition/select-source-join-key.png)
 
 要选择&#x200B;**[!UICONTROL 扩充数据集联接键]**，请选择![筛选器](/help/images/icons/project-edit.png)图标。
 
-![已突出显示[!UICONTROL 扩充数据集联接键]的筛选器图标。](../images/ui/audience-composition/enrich-select-enrichment-dataset-join-key.png)
-
 出现&#x200B;**[!UICONTROL 扩充属性]**&#x200B;弹出框。 选择要用作扩充数据集联接键的属性，然后选择&#x200B;**[!UICONTROL 选择]**&#x200B;以选择该属性作为扩充数据集联接键。
 
-![要用作扩充数据集联接键的属性突出显示。](../images/ui/audience-composition/enrich-select-enrichment-dataset-attribute.png)
+![要用作扩充数据集联接键的属性突出显示。](../images/ui/audience-composition/select-enrichment-dataset-join-key.png)
 
 现在，您已添加两个联接键，此时将显示&#x200B;**[!UICONTROL 扩充属性]**&#x200B;部分。 您现在可以添加要用于增强受众的属性。 要添加这些属性，请选择&#x200B;**[!UICONTROL 添加属性]**。
 
-![已突出显示[!UICONTROL 添加属性]按钮。](../images/ui/audience-composition/enrich-select-add-attribute.png)
-
 出现&#x200B;**[!UICONTROL 扩充属性]**&#x200B;弹出框。 您可以从数据集中选择用于扩充受众的属性，然后选择&#x200B;**[!UICONTROL 选择]**&#x200B;以将属性添加到受众。
 
-![要添加的扩充属性已突出显示。](../images/ui/audience-composition/enrich-add-enrichment-attributes.png)
+![要添加的扩充属性已突出显示。](../images/ui/audience-composition/select-enrichment-attribute.png)
 
 <!-- ## [!UICONTROL Join] {#join-block}
 
@@ -282,13 +276,13 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 
 此时将显示配置文件属性列表。 在此弹出窗口中，您可以选择要按其对受众进行排名的属性类型。 选择&#x200B;**[!UICONTROL 选择]**&#x200B;以将其添加到您的排名块。 请注意，所选属性&#x200B;**只能**&#x200B;是数字。
 
-![将显示属性列表。](../images/ui/audience-composition/select-attribute-rank.png)
+![将显示属性列表。](../images/ui/audience-composition/rank-attribute.png)
 
 选择属性后，您可以选择排序依据。 这是以升序（从最低到最高）或降序（从最高到最低）顺序显示的。
 
 此外，您还可以通过启用&#x200B;**[!UICONTROL 添加配置文件限制]**&#x200B;切换来限制返回的配置文件数。 启用此切换后，您可以在&#x200B;**[!UICONTROL 包含的用户档案]**&#x200B;字段中设置返回的用户档案的最大数量。
 
-![高亮显示“添加配置文件限制”切换开关，该开关允许您限制返回的配置文件数。](../images/ui/audience-composition/add-profile-limit.png)
+![高亮显示“添加配置文件限制”切换开关，该开关允许您限制返回的配置文件数。](../images/ui/audience-composition/add-profile-limit-rank.png)
 
 ## [!UICONTROL 拆分] {#split-block}
 
@@ -307,7 +301,7 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 >title="其他轮廓"
 >abstract="通过其他配置文件切换，可使用不符合其他任何路径指定条件的剩余配置文件创建其他路径。"
 
-**[!UICONTROL 拆分]**&#x200B;块类型允许您将新受众拆分为各种子受众。 您可以按百分比或属性拆分此受众。 将受众拆分为子受众时，此拆分为永久拆分&#x200B;**而非**。 这意味着每次评估的用户档案可能位于不同的子受众中。
+**[!UICONTROL 拆分]**&#x200B;块类型允许您将新受众拆分为各种子受众。 您可以按百分比或属性拆分此受众。
 
 要添加&#x200B;**[!UICONTROL Split]**&#x200B;块，请选择&#x200B;**+**&#x200B;图标，然后选择&#x200B;**[!UICONTROL Split]**。
 
@@ -325,23 +319,25 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_split_persistent"
 >title="永久拆分"
->abstract="通过启用此选项并选择哪个身份命名空间来保留拆分，可以使百分比拆分持续存在。"
+>abstract="通过启用此选项并选择身份命名空间，可以使百分比拆分永久化。"
 
 按百分比拆分时，将根据提供的路径数和百分比随机拆分受众。
 
-例如，您可以有三个路径，每个路径都具有不同的用户档案百分比。
+![百分比拆分高亮显示。](../images/ui/audience-composition/split-by-percentage.png)
 
-![将显示已保存受众数和百分比的细分。](../images/ui/audience-composition/percentages.png)
+或者，您也可以提供标识，这将使基于百分比的拆分永久化。 可用的身份类型包括组织中可用的所有身份命名空间。
+
+![已选中“按身份拆分”复选框。 此外，允许您选择要作为拆分依据的标识的下拉列表会突出显示。](../images/ui/audience-composition/split-by-identity.png)
 
 ### 按属性拆分 {#split-attribute}
 
 按属性拆分时，将基于提供的属性拆分受众。 要选择要拆分的属性，请选择&#x200B;**[!UICONTROL 拆分]**&#x200B;块，后跟![筛选器](/help/images/icons/project-edit.png)图标。
 
-![已选择“筛选”按钮，显示如何按属性筛选。](../images/ui/audience-composition/select-split-attribute.png)
+![已选择“筛选”按钮，显示如何按属性筛选。](../images/ui/audience-composition/split-by-attribute.png)
 
 此时将显示配置文件属性列表。 选择属性类型，然后选择&#x200B;**[!UICONTROL 选择]**&#x200B;以将其添加到拆分块。
 
-![将显示属性列表。](../images/ui/audience-composition/select-attribute-exclude.png)
+![将显示属性列表。](../images/ui/audience-composition/select-attribute.png)
 
 选择属性后，您可以通过在&#x200B;**[!UICONTROL 值]**&#x200B;字段中添加值来选择哪些配置文件将属于哪个子受众。
 
