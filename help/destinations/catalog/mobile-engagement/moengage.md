@@ -3,9 +3,9 @@ title: Moengage连接
 description: Moengage是一个客户参与平台，可实时支持消费者和品牌之间以客户为中心的互动。
 last-substantial-update: 2023-10-11T00:00:00Z
 exl-id: 051f1a10-3c41-4c0a-b187-bf80de0565f0
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: 1e22ad63414876af45d156ed030b8103908de8a1
 workflow-type: tm+mt
-source-wordcount: '996'
+source-wordcount: '1036'
 ht-degree: 2%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 使用[!DNL Moengage]目标将您的Adobe数据（用户属性、区段和事件）实时连接并映射到MoEngage。 然后，客户可以根据这些数据采取行动，提供个性化、有针对性的体验。
 
-通过Adobe，集成非常简单直观。 只需获取任何Adobe用户配置文件，并将其映射到MoEngage用户属性即可。
+与Adobe的集成非常简单直观。 只需获取任何Adobe用户配置文件，并将其映射到MoEngage用户属性。
 
 >[!IMPORTANT]
 >
@@ -143,7 +143,10 @@ ht-degree: 2%
 
 ## 导出的数据/验证数据导出 {#exported-data}
 
-要验证数据是否已成功导出到[!DNL Moengage]目标，请转到您[!DNL Moengage]帐户上的用户配置文件。 您将看到一个名为AEP区段的用户属性。
+要验证数据是否已成功导出到[!DNL Moengage]目标，请转到您[!DNL Moengage]帐户中的用户配置文件。 在这里，您应该找到名为`AEPSegments`的用户属性（自动创建）以及已在Adobe Experience Platform的前面步骤中映射的其他自定义属性。
+
+`AEPSegments`是[!DNL Moengage]中的数组类型特性。 其中列出了用户在Experience Platform中关联的所有Adobe受众名称。
+
 
 ![Moengage目标映射完成](../../assets/catalog/mobile-engagement/moengage/validation.png)
 
