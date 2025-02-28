@@ -1,18 +1,22 @@
 ---
-keywords: Experience Platform；配置文件；实时客户配置文件；故障排除；API
+keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API
 title: 实体（配置文件访问）API端点
 type: Documentation
 description: 通过Adobe Experience Platform，您可以使用RESTful API或用户界面访问实时客户配置文件数据。 本指南概述如何使用配置文件API访问实体（通常称为“配置文件”）。
 role: Developer
 exl-id: 06a1a920-4dc4-4468-ac15-bf4a6dc885d4
-source-git-commit: 9f9823a23c488e63b8b938cb885f050849836e36
+source-git-commit: efebf8e341b17fdd71586827753eadfe1c2cfa15
 workflow-type: tm+mt
-source-wordcount: '2181'
+source-wordcount: '1706'
 ht-degree: 3%
 
 ---
 
 # 实体端点（配置文件访问）
+
+>[!IMPORTANT]
+>
+>弃用使用配置文件访问API查找ExperienceEvent 。 请针对需要查找ExperienceEvents的用例使用计算属性等功能。 有关此更改的更多信息，请联系Adobe客户关怀团队。
 
 Adobe Experience Platform允许您使用RESTful API或用户界面访问[!DNL Real-Time Customer Profile]数据。 本指南概述了如何使用API访问实体（通常称为“用户档案”）。 有关使用[!DNL Platform] UI访问配置文件的详细信息，请参阅[配置文件用户指南](../ui/user-guide.md)。
 
@@ -22,7 +26,7 @@ Adobe Experience Platform允许您使用RESTful API或用户界面访问[!DNL Re
 
 ## 检索实体 {#retrieve-entity}
 
-通过向`/access/entities`端点发出GET请求以及必需的查询参数，您可以检索配置文件实体或其时序数据。
+您可以通过向`/access/entities`端点发出GET请求以及所需的查询参数来检索配置文件实体。
 
 >[!BEGINTABS]
 
@@ -138,100 +142,6 @@ curl -X GET 'https://platform.adobe.io/data/core/ups/access/entities?schema.name
 >[!NOTE]
 >
 >如果相关图形链接超过50个身份，此服务将返回HTTP状态422和消息“相关身份过多”。 如果收到此错误，请考虑添加更多查询参数以缩小搜索范围。
-
->[!TAB 时间序列事件]
-
-**API格式**
-
-```http
-GET /access/entities?{QUERY_PARAMETERS}
-```
-
-请求路径中提供的查询参数指定要访问的数据。 您可以包含多个参数，以&amp;分隔。
-
-要访问时间序列事件数据，您&#x200B;**必须**&#x200B;提供以下查询参数：
-
-- `schema.name`：实体的XDM架构的名称。 在此用例中，值为`schema.name=_xdm.context.experienceevent`。
-- `relatedSchema.name`：相关架构的名称。 由于架构名称为Experience Event，因此&#x200B;**的值必须**&#x200B;为`relatedSchema.name=_xdm.context.profile`。
-- `relatedEntityId`：相关实体的ID。
-- `relatedEntityIdNS`：相关实体的命名空间。 如果`relatedEntityId`是&#x200B;**而不是** XID，则必须提供此值。
-
-附录的[查询参数](#query-parameters)部分提供了有效参数的完整列表。
-
-**请求**
-
-以下请求按ID查找配置文件实体，并检索与该实体关联的所有时间序列事件的属性`endUserIDs`、`web`和`channel`的值。
-
-+++ 用于检索与实体关联的时间系列事件的示例请求
-
-```shell
-curl -X GET 'https://platform.adobe.io/data/core/ups/access/entities?schema.name=_xdm.context.experienceevent&relatedSchema.name=_xdm.context.profile&relatedEntityId=89149270342662559642753730269986316900&relatedEntityIdNS=ECID&fields=endUserIDs,web,channel&startTime=1531260476000&endTime=1531260480000&limit=1' \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}'
-```
-
-+++
-
-**响应**
-
-成功的响应会返回HTTP状态200，其中包含以分页方式列出的时序事件以及在请求查询参数中指定的关联字段。
-
->[!NOTE]
->
->请求指定了一个(`limit=1`)的限制，因此以下响应中的`count`为1，并且只返回了一个实体。
-
-+++ 包含所请求的时间系列事件数据的示例响应
-
-```json
-{
-    "_page": {
-        "orderby": "timestamp",
-        "start": "c8d11988-6b56-4571-a123-b6ce74236036",
-        "count": 1,
-        "next": "c8d11988-6b56-4571-a123-b6ce74236037"
-    },
-    "children": [
-        {
-            "relatedEntityId": "A29cgveD5y64e2RixjUXNzcm",
-            "entityId": "c8d11988-6b56-4571-a123-b6ce74236036",
-            "timestamp": 1531260476000,
-            "entity": {
-                "endUserIDs": {
-                    "_experience": {
-                        "ecid": {
-                            "id": "89149270342662559642753730269986316900",
-                            "namespace": {
-                                "code": "ecid"
-                            }
-                        }
-                    }
-                },
-                "channel": {
-                    "_type": "web"
-                },
-                "web": {
-                    "webPageDetails": {
-                        "name": "Fernie Snow",
-                        "pageViews": {
-                            "value": 1
-                        }
-                    }
-                }
-            },
-            "lastModifiedAt": "2018-08-21T06:49:02Z"
-        }
-    ],
-    "_links": {
-        "next": {
-            "href": "/entities?start=c8d11988-6b56-4571-a123-b6ce74236037&orderby=timestamp&schema.name=_xdm.context.experienceevent&relatedSchema.name=_xdm.context.profile&relatedEntityId=89149270342662559642753730269986316900&relatedEntityIdNS=ECID&fields=endUserIDs,web,channel&startTime=1531260476000&endTime=1531260480000&limit=1"
-        }
-    }
-}
-```
-
-+++
 
 >[!TAB B2B帐户]
 
@@ -427,7 +337,7 @@ curl -X GET 'https://platform.adobe.io/data/core/ups/access/entities?schema.name
 
 ## 检索多个实体 {#retrieve-entities}
 
-您可以通过向`/access/entities`端点发出POST请求并在有效负载中提供标识来检索多个配置文件实体或时序事件。
+您可以通过向`/access/entities`端点发出POST请求并在有效负载中提供标识来检索多个配置文件实体。
 
 >[!BEGINTABS]
 
@@ -648,290 +558,6 @@ curl -X POST https://platform.adobe.io/data/core/ups/access/entities \
 ```
 
 +++
-
->[!TAB 时间序列事件]
-
-**API格式**
-
-```http
-POST /access/entities
-```
-
-**请求**
-
-以下请求可检索与用户档案身份列表关联的时间系列事件的用户ID、本地时间和国家/地区代码。
-
-+++ 用于检索时间序列数据的示例请求
-
-```shell
-curl -X POST https://platform.adobe.io/data/core/ups/access/entities \
-  -H 'Content-Type: application/json' \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}' \
-  -d '{
-    "schema": {
-        "name": "_xdm.context.experienceevent"
-    },
-    "relatedSchema": {
-        "name": "_xdm.context.profile"
-    },
-    "identities": [
-        {
-            "relatedEntityId": "GkouAW-yD9aoRCPhRYROJ-TetAFW"
-        }
-        {
-            "relatedEntityId": "GkouAW-2u-7iWt5vQ9u2wm40JOZY"
-        }
-    ],
-    "fields": [
-        "endUserIDs",
-        "placeContext.localTime",
-        "placeContext.geo.countryCode"
-    ],
-    
-    "timeFilter": {
-        "startTime": 11539838505
-        "endTime": 1539838510
-    },
-    "limit": 10,
-    "orderby": "-timestamp"
-}'
-```
-
-| 属性 | 类型 | 描述 |
-| -------- | ---- | ----------- |
-| `schema.name` | 字符串 | **（必需）**&#x200B;实体所属的XDM架构的名称。 |
-| `relatedSchema.name` | 字符串 | 如果`schema.name`为`_xdm.context.experienceevent`，该值必须为时间序列事件相关的配置文件实体指定架构。 |
-| `identities` | 数组 | **（必需）**&#x200B;从中检索关联时间序列事件的配置文件数组列表。 数组中的每个条目均通过以下两种方式之一进行设置： <ol><li>使用由ID值和命名空间组成的完全限定的身份</li><li>提供XID</li></ol> |
-| `fields` | 字符串 | 要作为字符串数组返回的XDM字段。 默认情况下，将返回所有字段。 |
-| `orderby` | 字符串 | 按时间戳检索的体验事件的排序顺序，写为`(+/-)timestamp`，默认值为`+timestamp`。 |
-| `timeFilter.startTime` | 整数 | 指定过滤时间序列对象的开始时间（以毫秒为单位）。 默认情况下，此值设置为可用时间的开始。 |
-| `timeFilter.endTime` | 整数 | 指定过滤时间序列对象的结束时间（以毫秒为单位）。 默认情况下，此值设置为可用时间的结束。 |
-| `limit` | 整数 | 要返回的最大记录数。 默认情况下，此值设置为1,000。 |
-
-+++
-
-**响应**
-
-成功的响应会返回HTTP状态200，其中包含与请求中指定的多个配置文件关联的时间系列事件的分页列表。
-
-+++ 包含时间序列事件的示例响应
-
-```json
-{
-    "GkouAW-yD9aoRCPhRYROJ-TetAFW": {
-        "_page": {
-            "orderby": "timestamp",
-            "start": "ee0fa8eb-f09c-4d72-a432-fea7f189cfcd",
-            "count": 10,
-            "next": "40cb2fb3-78cd-49d3-806f-9bdb22748226"
-        },
-        "children": [
-            {
-                "relatedEntityId": "GkouAW-yD9aoRCPhRYROJ-TetAFW",
-                "entityId": "ee0fa8eb-f09c-4d72-a432-fea7f189cfcd",
-                "timestamp": 1537275882000,
-                "entity": {
-                    "endUserIDs": {
-                        "_experience": {
-                            "mcid": {
-                                "id": "67971860962043911970658021809222795905",
-                                "namespace": {
-                                    "code": "ECID"
-                                }
-                            },
-                            "aacustomid": {
-                                "id": "50353446361742744826197433431642033796",
-                                "namespace": {
-                                    "code": "CRMID"
-                                },
-                                "primary": true
-                            },
-                            "acid": {
-                                "id": "2de32e9a00003314-2fd9c00000000026",
-                                "namespace": {
-                                    "code": "AVID"
-                                }
-                            }
-                        }
-                    },
-                    "placeContext": {
-                        "localTime": "2018-09-18T13:04:42Z",
-                        "geo": {
-                            "countryCode": "MX"
-                        }
-                    }
-                },
-                "lastModifiedAt": "2018-10-24T17:35:01Z"
-            },
-            {
-                "relatedEntityId": "GkouAW-yD9aoRCPhRYROJ-TetAFW",
-                "entityId": "a9e137b4-1348-4878-8167-e308af523d8b",
-                "timestamp": 1537275889000,
-                "entity": {
-                    "endUserIDs": {
-                        "_experience": {
-                            "mcid": {
-                                "id": "67971860962043911970658021809222795905",
-                                "namespace": {
-                                    "code": "ECID"
-                                }
-                            },
-                            "aacustomid": {
-                                "id": "50353446361742744826197433431642033796",
-                                "namespace": {
-                                    "code": "CRMID"
-                                },
-                                "primary": true
-                            },
-                            "acid": {
-                                "id": "2de32e9a00003314-2fd9c00000000026",
-                                "namespace": {
-                                    "code": "AVID"
-                                }
-                            }
-                        }
-                    },
-                    "placeContext": {
-                        "localTime": "2018-09-18T13:04:49Z",
-                        "geo": {
-                            "countryCode": "MX"
-                        }
-                    }
-                },
-                "lastModifiedAt": "2018-10-24T17:35:01Z"
-            }
-        ],
-        "_links": {
-            "next": {
-                "href": "/entities",
-                "payload": {
-                    "schema": {
-                        "name": "_xdm.context.experienceevent"
-                    },
-                    "relatedSchema": {
-                        "name": "_xdm.context.profile"
-                    },
-                    "timeFilter": {
-                        "startTime": 1537275882000
-                    },
-                    "fields": [
-                        "endUserIDs",
-                        "placeContext.localTime",
-                        "placeContext.geo.countryCode"
-                    ],
-                    "identities": [
-                        {
-                            "relatedEntityId": "GkouAW-yD9aoRCPhRYROJ-TetAFW",
-                            "start": "40cb2fb3-78cd-49d3-806f-9bdb22748226"
-                        }
-                    ],
-                    "limit": 10
-                }
-            }
-        }
-    },
-    "GkouAW-2u-7iWt5vQ9u2wm40JOZY": {
-        "_page": {
-            "orderby": "timestamp",
-            "start": "2746d0db-fa64-4e29-b67e-324bec638816",
-            "count": 9,
-            "next": ""
-        },
-        "children": [
-            {
-                "relatedEntityId": "GkouAW-2u-7iWt5vQ9u2wm40JOZY",
-                "entityId": "2746d0db-fa64-4e29-b67e-324bec638816",
-                "timestamp": 1537559483000,
-                "entity": {
-                    "endUserIDs": {
-                        "_experience": {
-                            "mcid": {
-                                "id": "76436745599328540420034822220063618863",
-                                "namespace": {
-                                    "code": "ECID"
-                                }
-                            },
-                            "aacustomid": {
-                                "id": "48593470048917738786405847327596263131",
-                                "namespace": {
-                                    "code": "CRMID"
-                                },
-                                "primary": true
-                            },
-                            "acid": {
-                                "id": "2de32e9a80007451-03da600000000028",
-                                "namespace": {
-                                    "code": "AVID"
-                                }
-                            }
-                        }
-                    },
-                    "placeContext": {
-                        "localTime": "2018-09-21T19:51:23Z",
-                        "geo": {
-                            "countryCode": "US"
-                        }
-                    }
-                },
-                "lastModifiedAt": "2018-10-24T17:34:58Z"
-            },
-            {
-                "relatedEntityId": "GkouAW-2u-7iWt5vQ9u2wm40JOZY",
-                "entityId": "9bf337a1-3256-431e-a38c-5c0d42d121d1",
-                "timestamp": 1537559486000,
-                "entity": {
-                    "endUserIDs": {
-                        "_experience": {
-                            "mcid": {
-                                "id": "76436745599328540420034822220063618863",
-                                "namespace": {
-                                    "code": "ECID"
-                                }
-                            },
-                            "aacustomid": {
-                                "id": "48593470048917738786405847327596263131",
-                                "namespace": {
-                                    "code": "CRMID"
-                                },
-                                "primary": true
-                            },
-                            "acid": {
-                                "id": "2de32e9a80007451-03da600000000028",
-                                "namespace": {
-                                    "code": "AVID"
-                                }
-                            }
-                        }
-                    },
-                    "placeContext": {
-                        "localTime": "2018-09-21T19:51:26Z",
-                        "geo": {
-                            "countryCode": "US"
-                        }
-                    }
-                },
-                "lastModifiedAt": "2018-10-24T17:34:58Z"
-            }
-        ],
-        "_links": {
-            "next": {
-                "href": ""
-            }
-        }
-    }
-}`
-```
-
-+++
-
->[!NOTE]
->
->在此示例响应中，列出的第一个配置文件(“GkouAW-yD9aoRCPhRYROJ-TetAFW”)为`_links.next.payload`提供了一个值，这意味着此配置文件还有其他结果页。
->
->要访问这些结果，您可以对`/access/entities`端点执行额外的POST请求，并将列出的有效负载作为请求正文。
 
 >[!TAB B2B帐户]
 
@@ -1468,7 +1094,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/access/entities \
 
 ### 访问结果的后续页面
 
-检索时序事件时，结果将分页。 如果有后续结果页，则`_page.next`属性将包含ID。 此外，`_links.next.href`属性还提供用于检索下一页的请求URI。 要检索结果，请对`/access/entities`终结点发出另一个GET请求，并使用提供的URI的值替换`/entities`。
+检索时序事件时，结果将分页。 如果有后续结果页，则`_page.next`属性将包含ID。 此外，`_links.next.href`属性还提供用于检索下一页的请求URI。 要检索结果，请对`/access/entities`端点发出另一个GET请求，并使用提供的URI的值替换`/entities`。
 
 >[!NOTE]
 >
@@ -1605,11 +1231,11 @@ curl -X DELETE 'https://platform.adobe.io/data/core/ups/access/entities?schema.n
 
 ### 查询参数 {#query-parameters}
 
-在`/access/entities`终结点的GET请求路径中使用了以下参数。 它们用于标识要访问的配置文件实体，并筛选响应中返回的数据。 必填参数标有标签，其余参数为可选参数。
+在`/access/entities`终结点的GET请求的路径中使用了以下参数。 它们用于标识要访问的配置文件实体，并筛选响应中返回的数据。 必填参数标有标签，其余参数为可选参数。
 
 | 参数 | 描述 | 示例 |
 | --------- | ----------- | ------- |
-| `schema.name` | **（必需）**&#x200B;实体的XDM架构的名称。 | `schema.name=_xdm.context.experienceevent` |
+| `schema.name` | **（必需）**&#x200B;实体的XDM架构的名称。 | `schema.name=_xdm.context.profile` |
 | `relatedSchema.name` | 如果`schema.name`是`_xdm.context.experienceevent`，则此值&#x200B;**必须**&#x200B;为时间序列事件相关的配置文件实体指定架构。 | `relatedSchema.name=_xdm.context.profile` |
 | `entityId` | **（必需）**&#x200B;实体的ID。 如果此参数的值不是XID，则还必须提供标识命名空间参数(`entityIdNS`)。 | `entityId=janedoe@example.com` |
 | `entityIdNS` | 如果未将`entityId`作为XID提供，则字段&#x200B;**必须**&#x200B;指定标识命名空间。 | `entityIdNS=email` |
