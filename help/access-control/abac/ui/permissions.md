@@ -6,7 +6,7 @@ exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
 source-git-commit: afd883c530ab1b335888e79b5f4075e774fced4b
 workflow-type: tm+mt
 source-wordcount: '1699'
-ht-degree: 10%
+ht-degree: 16%
 
 ---
 
@@ -118,13 +118,13 @@ ht-degree: 10%
 
 >[!VIDEO](https://video.tv.adobe.com/v/336081/?learn=on)
 
-## 管理角色的API凭据 {#manage-api-credentials-for-role}
+## 管理角色的 API 凭据 {#manage-api-credentials-for-role}
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_apicredentials_about"
->title="什么是API凭据？"
->abstract="API凭据会分配给角色，以授予用户和开发人员访问Platform API的权限。 使用Platform API，您可以通过编程方式对数据执行基本CRUD（创建、读取、更新、删除）操作，例如配置计算属性、访问数据/实体、导出数据、删除不需要的数据或批次等。"
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/landing/platform-apis/api-guide" text="平台API指南"
+>title="什么是 API 凭据？"
+>abstract="API 凭据分配给角色，以授予用户和开发人员访问平台 API 的权限。使用平台 API，您可以通过编程方式对数据执行基本的 CRUD（创建、读取、更新、删除）操作，例如配置计算属性、访问数据/实体、导出数据、删除不需要的数据或批次等。"
+>additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/landing/platform-apis/api-guide" text="平台 API 指南"
 
 >[!IMPORTANT]
 >
@@ -159,8 +159,8 @@ ht-degree: 10%
 >[!CONTEXTUALHELP]
 >id="platform_permissions_usergroups_about"
 >title="什么是用户组？"
->abstract="用户组是多个用户的集合，这些用户共享对相同功能的访问权限。 组织内资源的访问权限通过分配给用户组的角色进行管理。"
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/roles" text="管理角色"
+>abstract="用户组是共享相同功能的访问权限的多个用户的集合。组织内资源的访问是通过分配给用户组的角色进行管理的。"
+>additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/abac/permissions-ui/roles" text="管理角色"
 
 用户组是多个已分组在一起的用户，并且有权执行相同的功能。
 

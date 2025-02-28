@@ -119,7 +119,7 @@ ht-degree: 16%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_s3_bucket"
 >title="存储桶名称"
->abstract="长度必须介于 3 和 63 个字符之间。必须以字母或数字开头和结尾。必须仅包含小写字母、数字或连字符 (-)。不得格式化为IP地址（例如，192.100.1.1）。"
+>abstract="长度必须介于 3 和 63 个字符之间。必须以字母或数字开头和结尾。必须仅包含小写字母、数字或连字符 (-)。不得格式化为 IP 地址（例如，192.100.1.1）。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_s3_folderpath"

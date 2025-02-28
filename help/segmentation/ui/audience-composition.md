@@ -6,7 +6,7 @@ exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
 source-git-commit: c4064771a384a90d94903ba1761fc9ee20f47747
 workflow-type: tm+mt
 source-wordcount: '2313'
-ht-degree: 1%
+ht-degree: 11%
 
 ---
 
@@ -44,7 +44,7 @@ ht-degree: 1%
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_merge_types"
 >title="合并类型"
->abstract="合并类型确定合并所选子受众的方式。 支持的值包括“并集”、“交集”和“排除重叠”。"
+>abstract="合并类型决定了所选子受众的组合方式。受支持的值包括并集、交叉和排除重叠。"
 
 **[!UICONTROL 受众]**&#x200B;块类型允许您添加要用于构成新的更大受众的子受众。 默认情况下，**[!UICONTROL 受众]**&#x200B;块包含在合成画布的顶部。
 
@@ -106,12 +106,12 @@ ht-degree: 1%
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_exclude"
 >title="排除块"
->abstract="通过“排除”块，可从构成中排除指定的受众或属性。"
+>abstract="使用排除块，您可以从构成中排除指定的受众或属性。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_exclude_type"
 >title="排除类型"
->abstract="您可以排除属于特定受众的用户档案（按受众排除）或根据特定属性排除用户档案（按属性排除）。"
+>abstract="您可以排除属于某个特定受众的轮廓（按受众排除），也可以根据某个特定属性排除轮廓（按属性排除）。"
 
 **[!UICONTROL 排除]**&#x200B;块类型允许您从新的较大受众中排除指定的子受众或属性。
 
@@ -160,23 +160,23 @@ ht-degree: 1%
 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_enrich"
->title="丰富块"
->abstract="通过“扩充”块，您可以使用来自Adobe Experience Platform数据集的其他属性扩充受众。"
+>title="扩充块"
+>abstract="使用扩充块，您可以通过来自 Adobe Experience Platform 数据集的其他属性来扩充您的受众。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_dataset"
 >title="扩充数据集"
->abstract="扩充数据集包含要与构成关联的数据。"
+>abstract="扩充数据集中包含了您希望与受众构成相关联的数据。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_enrich_criteria"
 >title="扩充标准"
->abstract="扩充条件包括Source联接键和扩充数据集联接键。 这两个键协调源数据集和扩充数据集。"
+>abstract="扩充标准包括源连接密钥和扩充数据集连接密钥。这两个密钥协调了源数据集和扩充数据集。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_enrich_attributes"
 >title="扩充属性"
->abstract="扩充属性是要与构成关联的属性。"
+>abstract="扩充属性是您希望与受众构成相关联的属性。"
 
 >[!IMPORTANT]
 >
@@ -253,12 +253,12 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_ranking"
 >title="排名块"
->abstract="通过“排名”块，可根据特定属性对配置文件进行排名，并将其包含在构成中。"
+>abstract="使用排名块，您可以根据某个特定属性对轮廓进行排名并将它们包含在受众构成中。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_rank_profilelimit_text"
 >title="添加轮廓限制"
->abstract="通过“添加配置文件限制”切换，可指定在排名过程中包含的最大配置文件数。"
+>abstract="通过“添加轮廓限制切换”，您可以指定在排名过程中要包含的最大轮廓数量。"
 
 **[!UICONTROL 排名]**&#x200B;块类型允许您根据指定属性对配置文件进行排名和排序，并将这些排名配置文件包含在您的构成中。
 
@@ -289,17 +289,17 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_split"
 >title="拆分块"
->abstract="利用拆分块，可将合成划分为多个路径。"
+>abstract="使用拆分块，您可以将受众构成拆分成多个路径。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_split_type"
 >title="拆分类型"
->abstract="您可以按“百分比”拆分或“属性”拆分拆分合成。 百分比拆分会随机将用户档案拆分为多个路径。 属性拆分允许您根据指定的属性拆分用户档案。"
+>abstract="您可以通过百分比拆分或属性拆分来拆分受众构成。百分比拆分类型可将轮廓随机拆分到多个路径中。属性拆分可以根据某个指定的属性拆分轮廓。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_split_otherprofiles_text"
 >title="其他轮廓"
->abstract="通过其他配置文件切换，可使用不符合其他任何路径指定条件的剩余配置文件创建其他路径。"
+>abstract="使用其他轮廓切换功能，您可以创建一个附加路径，其中包含与其他路径中指定的任何条件都不匹配的剩余轮廓。"
 
 **[!UICONTROL 拆分]**&#x200B;块类型允许您将新受众拆分为各种子受众。 您可以按百分比或属性拆分此受众。
 

@@ -6,7 +6,7 @@ exl-id: c21eb319-fc0d-442a-b778-bbfa2d6bb22d
 source-git-commit: afd883c530ab1b335888e79b5f4075e774fced4b
 workflow-type: tm+mt
 source-wordcount: '259'
-ht-degree: 0%
+ht-degree: 17%
 
 ---
 
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_sandboxes_about"
->title="沙箱是什么？"
->abstract="沙盒是Platform单个实例中的虚拟分区。 在沙盒内执行的所有内容和操作都限制在该沙盒内，不会影响其他沙盒。 沙盒的访问通过角色进行管理。"
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/sandbox/home" text="沙盒概述"
+>title="什么是沙盒？"
+>abstract="沙盒是一个平台实例内的虚拟分区。一个沙盒内的所有内容和操作都局限在该沙盒内，不会影响其他沙盒。对沙盒的访问权限通过角色进行管理。"
+>additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/sandbox/home" text="沙盒概述"
 
 沙盒是Experience Platform单个实例中的虚拟分区，允许与数字体验应用程序的开发过程无缝集成。 在沙盒内执行的所有内容和操作仅受该沙盒限制，不会影响任何其他沙盒。 有关沙箱的详细信息，请参阅[沙箱概述](../../../sandboxes/home.md)。
 

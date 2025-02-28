@@ -6,7 +6,7 @@ exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
 source-git-commit: 6122ddc078101c26061e8662de3fcdcb1cb65992
 workflow-type: tm+mt
 source-wordcount: '884'
-ht-degree: 7%
+ht-degree: 15%
 
 ---
 
@@ -61,12 +61,12 @@ organizations = [{
 
 [将](/help/destinations/ui/connect-destination.md)连接到所需的云存储目标，完成云存储目标的[激活步骤](/help/destinations/ui/activate-batch-profile-destinations.md)并转到[映射](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)步骤。 连接到所需的云目标时，必须选择&#x200B;**[!UICONTROL 导出数组、映射、对象]**&#x200B;切换开关。 有关更多信息，请参阅以下部分。
 
-## 导出数组、映射、对象切换 {#export-arrays-maps-objects-toggle}
+## 导出数组、映射和对象切换 {#export-arrays-maps-objects-toggle}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_maps_objects"
 >title="导出数组、映射和对象"
->abstract="<p> 将此设置切换为 <b>开</b>，以启用将数组、映射和对象导出到 JSON 或 Parquet 文件的功能。您可以在映射步骤的源字段视图中选择这些对象类型。 打开切换后，您无法在映射步骤中使用计算字段选项。</p><p>通过此切换<b>关闭</b>，您可以在激活受众时使用计算字段选项并应用各种数据转换函数。 但是，您<i>不能</i>将数组、映射和对象导出到 JSON 或 Parquet 文件，要达到此目的必须配置单独的目标。</p>"
+>abstract="<p> 将此设置切换为 <b>开</b>，以启用将数组、映射和对象导出到 JSON 或 Parquet 文件的功能。您可以在映射步骤中的源字段视图中选择这些对象类型。将其切换为开后，您就无法使用映射步骤中的计算字段选项。</p><p>将其切换为<b>关</b>后，您可以在激活受众时使用计算字段选项并应用各种数据转换功能。但是，您<i>不能</i>将数组、映射和对象导出到 JSON 或 Parquet 文件，要达到此目的必须配置单独的目标。</p>"
 
 在连接到云存储目标时，可以设置打开或关闭&#x200B;**[!UICONTROL 导出阵列、映射、对象]**&#x200B;的切换开关。
 
@@ -74,7 +74,7 @@ organizations = [{
 
 将此设置切换为 **开**，以启用将数组、映射和对象导出到 JSON 或 Parquet 文件的功能。将受众激活到云存储目标时，您可以在[映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)的源字段视图中选择这些对象类型。 但是，如果启用此设置，则不能在激活时使用计算字段选项来转换数据。
 
-通过此切换&#x200B;**关闭**，您可以在激活受众时使用计算字段选项并应用各种数据转换函数。 但是，您不能将数组、映射和对象导出到JSON或Parquet文件，并且必须为此配置单独的目标。
+将其切换为&#x200B;**关**&#x200B;后，您可以在激活受众时使用计算字段选项并应用各种数据转换功能。但是，您不能将数组、映射和对象导出到JSON或Parquet文件，并且必须为此配置单独的目标。
 
 ## 导出数组、映射、对象将&#x200B;*切换为* {#export-arrays-maps-objects-toggle-on}
 

@@ -6,7 +6,7 @@ exl-id: 16450867-040a-4be1-a6c0-f03d0a1b90ba
 source-git-commit: afd883c530ab1b335888e79b5f4075e774fced4b
 workflow-type: tm+mt
 source-wordcount: '285'
-ht-degree: 1%
+ht-degree: 11%
 
 ---
 
@@ -15,8 +15,8 @@ ht-degree: 1%
 >[!CONTEXTUALHELP]
 >id="platform_permissions_users_about"
 >title="什么是用户？"
->abstract="用户是有权访问Experience Platform的个人。 单个用户对组织资源的访问权限通过角色进行管理。"
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/roles" text="管理角色"
+>abstract="用户是有权访问体验平台的个人。个人用户对组织资源的访问权限通过角色进行管理。"
+>additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/abac/permissions-ui/roles" text="管理角色"
 
 如果要查看用户详细信息和分配给这些用户的角色，请选择&#x200B;**[!UICONTROL 用户]**&#x200B;选项卡。
 
