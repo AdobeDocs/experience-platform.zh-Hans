@@ -1,14 +1,15 @@
 ---
 title: PubMatic Connect
 description: PubMatic通过提供面向未来的程序化数字营销供应链，最大程度地实现客户价值。 PubMatic Connect将平台技术和专用服务相结合，以增强库存和数据打包和事务处理的方式。
-last-substantial-update: 2023-12-14T00:00:00Z
+last-substantial-update: 2025-02-12T00:00:00Z
 exl-id: 21e07d2c-9a6a-4cfa-a4b8-7ca48613956c
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 2041c06e660e24f63d4c44adc0e8f3082bb007ae
 workflow-type: tm+mt
-source-wordcount: '923'
+source-wordcount: '1056'
 ht-degree: 2%
 
 ---
+
 
 # PubMatic Connect目标 {#pubmatic-connect}
 
@@ -16,11 +17,21 @@ ht-degree: 2%
 
 使用[!DNL PubMatic Connect]通过交付未来的程序化数字营销供应链来最大化客户价值。 [!DNL PubMatic Connect]将平台技术和专用服务相结合，以改进库存和数据打包和事务的方式。
 
-使用此目标将受众数据发送到[!DNL PubMatic Connect]平台。
+有两个可用的目标可让您将受众数据发送到PubMatic Connect平台。 它们的功能稍有不同：
+
+1. PubMatic Connect
+
+   在初始激活期间，此目标将在PubMatic平台中自动注册受众，并使用内部Adobe Experience Platform ID进行映射。
+
+2. PubMatic Connect（自定义受众ID映射）
+
+   利用此目标，可选择在激活工作流程期间手动添加映射ID。 当应将数据发送到PubMatic平台中的现有受众时，或者在需要自定义“Source受众ID”时，使用此目标。
+
+![目标目录中的两个PubMatic连接器的并排视图。](/help/destinations/assets/catalog/advertising/pubmatic/two-pubmatic-connectors-side-by-side.png)
 
 >[!IMPORTANT]
 >
->目标连接器和文档页面由[!DNL PubMatic]团队创建和维护。 如有任何查询或更新请求，请直接通过`support@pubmatic.com`与他们联系。
+> 目标连接器和文档页面由[!DNL PubMatic]团队创建和维护。 如有任何查询或更新请求，请直接通过`support@pubmatic.com`与他们联系。
 
 ## 用例 {#use-cases}
 
@@ -39,7 +50,7 @@ ht-degree: 2%
 [!DNL PubMatic Connect]支持激活下表中描述的标识。 了解有关[标识](/help/identity-service/features/namespaces.md)的更多信息。
 
 | 目标身份 | 描述 | 注意事项 |
-| --------------- | ------ | --- |
+| --------------- | ------------------------ | ------------------------------------------------------------------------------- |
 | GAID | GOOGLE ADVERTISING ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |
 | IDFA | 广告商的Apple ID | 当源身份是IDFA命名空间时，选择IDFA目标身份。 |
 | extern_id | 自定义用户标识 | 当源身份是自定义命名空间时，请选择此目标身份。 |
@@ -51,9 +62,9 @@ ht-degree: 2%
 此部分介绍可将哪种类型的受众导出到此目标。
 
 | 受众来源 | 支持 | 描述 |
-| --- | --------- | ------ |
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| --------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------- |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -62,9 +73,9 @@ ht-degree: 2%
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
-| --- | --- | --- |
+| ---------------- | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 导出类型 | **[!UICONTROL 区段导出]** | 您正在导出具有PubMatic Connect目标中使用的标识符（名称、电话号码或其他）的区段（受众）的所有成员。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 当基于区段评估在Experience Platform中更新用户档案时，连接器将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 当基于区段评估在Experience Platform中更新用户档案时，连接器会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -124,10 +135,16 @@ ht-degree: 2%
 
 选择目标字段：
 
-- 请咨询您的[!DNL PubMatic]客户经理，以获取有关在此步骤中哪种UID类型将正确的信息。
+- 请咨询您的[!DNL PubMatic]客户经理，以获取有关在此步骤中哪种UID类型正确的信息。
 - 选择与您在第一步中选择的标识符匹配的[!DNL PubMatic UID]类型编号。
 
 ![映射属性和标识](../..//assets/catalog/advertising/pubmatic/export-identities-to-destination.png)
+
+### 受众计划
+
+如果您使用的是PubMatic Connect（自定义受众ID映射）目标，则必须为每个受众提供一个映射ID，以使其与PubMatic平台中的“Source受众ID”相对应。
+
+![受众计划](../..//assets/catalog/advertising/pubmatic/audience-scheduling-mapping-id.png)
 
 ## 导出的数据/验证数据导出 {#exported-data}
 
