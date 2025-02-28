@@ -1,9 +1,10 @@
 ---
 title: 使用TTL在数据湖中管理体验事件数据集保留
 description: 了解如何使用生存时间(TTL)配置和Adobe Experience Platform API评估、设置和管理Data Lake中的Experience Event数据集保留。 本指南介绍TTL行级到期如何支持数据保留策略、优化存储效率并确保有效的数据生命周期管理。 它还提供了用例和最佳实践，帮助您有效应用TTL。
-source-git-commit: 74b6e5f10f7532745180760adf1d96bc57e7b590
+exl-id: d688d4d0-aa8b-4e93-a74c-f1a1089d2df0
+source-git-commit: affaeb0869423292a44eb7ada8343482bb163ca6
 workflow-type: tm+mt
-source-wordcount: '2106'
+source-wordcount: '2196'
 ht-degree: 0%
 
 ---
@@ -28,6 +29,12 @@ TTL在管理随时间推移失去相关性的时效性数据时非常有用。 �
 - 通过最小化不相关数据来提高查询性能。
 - 通过仅保留相关信息来维护数据卫生。
 - 优化数据保留以支持业务目标。
+
+>[!NOTE]
+>
+>体验事件数据集保留适用于存储在数据湖中的事件数据。 如果您在Real-Time Customer Data Platform中管理保留，请考虑将[体验事件过期](../../profile/event-expirations.md)和[假名配置文件过期](../../profile/pseudonymous-profiles.md)与数据湖保留设置一起使用。
+>
+>TTL配置可帮助您根据权限优化存储。 虽然配置文件存储数据(用于Real-Time CDP)可被视为已过期并在30天后删除，但对于Analytics和Data Distiller用例，数据湖中的相同事件数据仍可在12-13个月（或更长时间，根据权限）内可用。
 
 ### 行业示例 {#industry-example}
 
@@ -121,7 +128,7 @@ curl -X GET \
                 "rowExpiration": {
                     "defaultValue": "P12M",
                     "maxValue": "P12M",
-                    "minValue": "P7D"
+                    "minValue": "P30D"
                 }
             },
             "adobe_unifiedProfile": {  
@@ -254,7 +261,7 @@ curl -X PATCH \
 | `extensions` | 与数据集相关的其他元数据的容器。 |
 | `extensions.adobe_lakeHouse` | 指定与存储体系结构相关的设置，包括行级过期配置 |
 | `rowExpiration` | 对象包含用于定义数据集的保留期的TTL设置。 |
-| `rowExpiration.ttlValue` | 定义自动移除数据集中的记录之前的持续时间。 使用ISO-8601期间格式（例如，`P3M`表示3个月，`P7D`表示一周）。 |
+| `rowExpiration.ttlValue` | 定义自动移除数据集中的记录之前的持续时间。 使用ISO-8601期间格式（例如，`P3M`表示3个月，`P30D`表示一周）。 |
 | `rowExpiration.valueStatus` | 该字符串指示TTL设置是默认的系统值还是用户设置的自定义值。 可能的值为： `default`，`custom`。 |
 | `rowExpiration.setBy` | 指定上次修改TTL设置的用户。 可能的值包括： `user`（手动设置）或`service`（自动分配）。 |
 | `rowExpiration.updated` | 上次TTL更新的时间戳。 此值指示上次修改TTL设置的时间。 |
@@ -418,4 +425,3 @@ curl -X PATCH \
 - 保留作业：了解如何使用[数据生命周期UI指南](../../hygiene/ui/dataset-expiration.md)在Platform UI中计划和自动化数据集过期，或检查数据集保留配置并验证是否删除了过期的记录。
 - [数据集过期API终结点指南](../../hygiene/api/dataset-expiration.md)：了解如何删除整个数据集，而不仅仅是删除行。 了解如何使用API计划、管理和自动化数据集过期以确保有效的数据保留。
 - [数据使用策略概述](../../data-governance/policies/overview.md)：了解如何使您的数据保留策略与更广泛的合规性要求和营销使用限制保持一致。
-
