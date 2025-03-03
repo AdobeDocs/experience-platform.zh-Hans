@@ -6,10 +6,10 @@ product: experience platform
 type: Documentation
 description: 了解有关数据激活默认使用量和速率限制的更多信息。
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: d01e9b6d64e9040df11c45750c784079a0289477
+source-git-commit: 818d751996cb84440f620ada50c6e6ec33cff40d
 workflow-type: tm+mt
-source-wordcount: '1715'
-ht-degree: 1%
+source-wordcount: '1666'
+ht-degree: 2%
 
 ---
 
@@ -53,7 +53,7 @@ ht-degree: 1%
 | 映射到目标的最大属性数 | 50 | 性能护栏 | 如果存在多个目标和目标类型，则可以选择要映射以导出的配置文件属性和身份。 为获得最佳性能，数据流中应将最多50个属性映射到目标。 |
 | 最大目标数 | 100 | 系统强制的护栏 | 您最多可以创建100个可以连接和激活数据的目标，每个沙盒&#x200B;*为*。 [Edge个性化目标（自定义个性化）](#edge-destinations-activation)最多可以构成100个推荐目标中的10个。 |
 | 激活到目标的数据类型 | 配置文件数据，包括身份和身份映射 | 系统强制的护栏 | 目前，只能将&#x200B;*配置文件记录属性*&#x200B;导出到目标。 目前不支持导出描述事件数据的XDM属性。 |
-| 激活到目标的数据类型 — 阵列和映射属性支持 | 部分可用 | 系统强制的护栏 | 您可以将数组属性导出到[基于文件的目标](/help/destinations/destination-types.md#file-based)。 您仍需要使用`array_to_string`函数将数组拼合到目标文件中的字符串中。 [阅读有关功能的更多信息](/help/release-notes/2024/october-2024.md#destinations-new-updated-functionality)。 <br><br>此时，**无法**&#x200B;将&#x200B;*映射属性*&#x200B;导出到目标。 此规则的例外是[标识映射](/help/xdm/field-groups/profile/identitymap.md)，它将在流激活和基于文件的激活中导出。 |
+| 激活到目标的数据类型 — 阵列和映射属性支持 | 部分可用 | 系统强制的护栏 | 您可以将数组属性导出到[基于文件的目标](/help/destinations/destination-types.md#file-based)。 [参阅更多](/help/destinations/ui/export-arrays-calculated-fields.md)关于该功能的信息。 |
 
 {style="table-layout:auto"}
 
@@ -126,7 +126,7 @@ ht-degree: 1%
 **基于XDM个人配置文件架构的数据集**
 对于基于XDM个人资料架构的数据集，数据集架构不包括顶级*时间戳*&#x200B;列。 数据以更新插入方式摄取。
 
-以下软护栏适用于从Experience Platform中导出的所有数据集。 此外，还请查看下面针对不同数据集和压缩类型的硬护栏。
+以下软护栏适用于从Experience Platform导出的所有数据集。 此外，还请查看下面针对不同数据集和压缩类型的硬护栏。
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
@@ -173,11 +173,11 @@ The guardrails below are the same whether you are exporting parquet of JSON file
 
 ### Destination SDK护栏 {#destination-sdk-guardrails}
 
-[Destination SDK](/help/destinations/destination-sdk/overview.md)是一套配置API，允许您配置目标集成模式，以便Experience Platform根据您选择的数据和身份验证格式将受众和配置文件数据传送到您的端点。 以下护栏适用于您使用Destination SDK配置的目标。
+[Destination SDK](/help/destinations/destination-sdk/overview.md)是一套配置API，允许您为Experience Platform配置目标集成模式，以根据您选择的数据和身份验证格式将受众和配置文件数据交付到您的端点。 以下护栏适用于您使用Destination SDK配置的目标。
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
-| [私有自定义目标的最大数目](/help/destinations/destination-sdk/overview.md#productized-custom-integrations) | 5 | 性能护栏 | 您最多可以使用Destination SDK创建5个私有自定义流或批处理目标。 如果您需要创建5个以上的此类目标，请联系自定义关怀代表。 |
+| [私有自定义目标的最大数目](/help/destinations/destination-sdk/overview.md#productized-custom-integrations) | 5 | 性能护栏 | 使用Destination SDK，您最多可以创建5个私有自定义流或批处理目标。 如果您需要创建5个以上的此类目标，请联系自定义关怀代表。 |
 | Destination SDK的配置文件导出策略 | <ul><li>`maxBatchAgeInSecs`（最小1,800个，最大3,600个）</li><li>`maxNumEventsInBatch`（最小1,000个，最大10,000个）</li></ul> | 系统强制的护栏 | 对您的目标使用[可配置的聚合](destination-sdk/functionality/destination-configuration/aggregation-policy.md#configurable-aggregation)选项时，请注意用于确定HTTP消息发送到基于API的目标的频率以及消息应包含的用户档案数的最小值和最大值。 |
 
 {style="table-layout:auto"}
@@ -188,7 +188,7 @@ The guardrails below are the same whether you are exporting parquet of JSON file
 
 | 目标类型 | 描述 |
 | --- | --- |
-| 企业目标(HTTP API、Amazon Kinesis、Azure EventHubs) | 在95%的时间中，Experience Platform会尝试为成功发送的消息提供少于10分钟的吞吐量延迟，每个数据流到企业目标的请求速率低于每秒10,000次。 <br>如果对您的企业目标的请求失败，则Experience Platform将存储失败的请求，并重试两次以将请求发送到您的端点。 |
+| 企业目标(HTTP API、Amazon Kinesis、Azure EventHubs) | 在95%的时间中，Experience Platform会尝试为成功发送的消息提供少于10分钟的吞吐量延迟，每个数据流向企业目标的请求速率低于每秒10,000次。 <br>如果对您的企业目标的请求失败，Experience Platform将存储失败的请求，并重试两次以将请求发送到您的端点。 |
 
 {style="table-layout:auto"}
 
@@ -198,6 +198,6 @@ The guardrails below are the same whether you are exporting parquet of JSON file
 
 * [Real-Time CDP护栏](/help/rtcdp/guardrails/overview.md)
 * [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams)。
-* [Real-time Customer Data Platform （B2C版本 — Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform （B2P — 主包和最终包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform （B2B — 主包和最终包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2C版本 — Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
