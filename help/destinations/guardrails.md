@@ -6,7 +6,7 @@ product: experience platform
 type: Documentation
 description: 了解有关数据激活默认使用量和速率限制的更多信息。
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 818d751996cb84440f620ada50c6e6ec33cff40d
+source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
 workflow-type: tm+mt
 source-wordcount: '1666'
 ht-degree: 2%
@@ -53,7 +53,7 @@ ht-degree: 2%
 | 映射到目标的最大属性数 | 50 | 性能护栏 | 如果存在多个目标和目标类型，则可以选择要映射以导出的配置文件属性和身份。 为获得最佳性能，数据流中应将最多50个属性映射到目标。 |
 | 最大目标数 | 100 | 系统强制的护栏 | 您最多可以创建100个可以连接和激活数据的目标，每个沙盒&#x200B;*为*。 [Edge个性化目标（自定义个性化）](#edge-destinations-activation)最多可以构成100个推荐目标中的10个。 |
 | 激活到目标的数据类型 | 配置文件数据，包括身份和身份映射 | 系统强制的护栏 | 目前，只能将&#x200B;*配置文件记录属性*&#x200B;导出到目标。 目前不支持导出描述事件数据的XDM属性。 |
-| 激活到目标的数据类型 — 阵列和映射属性支持 | 部分可用 | 系统强制的护栏 | 您可以将数组属性导出到[基于文件的目标](/help/destinations/destination-types.md#file-based)。 [参阅更多](/help/destinations/ui/export-arrays-calculated-fields.md)关于该功能的信息。 |
+| 激活到目标的数据类型 — 阵列和映射属性支持 | 部分可用 | 系统强制的护栏 | 您可以将数组属性导出到[基于文件的目标](/help/destinations/destination-types.md#file-based)。 [参阅更多](/help/destinations/ui/export-arrays-maps-objects.md)关于该功能的信息。 |
 
 {style="table-layout:auto"}
 

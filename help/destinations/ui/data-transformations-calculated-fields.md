@@ -3,9 +3,9 @@ title: 使用计算字段对导出到云存储目标的数据进行转换
 type: Tutorial
 description: 了解如何使用计算字段功能对导出到云存储目标的数据执行转换
 exl-id: 1e14f964-4c03-4d0c-be8d-c3dcb48a335a
-source-git-commit: 9ce451f54f180aa6ee1831ba08e178ba1a8c8e2f
+source-git-commit: 14c672ef57e0b0247020075552c782ed18db8484
 workflow-type: tm+mt
-source-wordcount: '1600'
+source-wordcount: '1595'
 ht-degree: 8%
 
 ---
@@ -16,8 +16,15 @@ ht-degree: 8%
 >id="platform_destinations_export_arrays_flat_files"
 >title="添加计算字段"
 >abstract="<p>使用&#x200B;**添加计算字段**&#x200B;控件对导出到云存储目标的数据进行各种数据转换。例如，您可以对数据进行哈希处理，将数组连接成字符串等。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html#examples" text="示例"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html#known-limitations" text="已知限制"
+
+<!--
+
+disable additional URLs for a while
+
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-maps-objects.html#examples" text="Examples"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-maps-objects.html#known-limitations" text="Known limitations"
+
+-->
 
 >[!AVAILABILITY]
 >
@@ -32,7 +39,7 @@ ht-degree: 8%
 
 要将计算字段用于数据转换：
 
-1. [将](/help/destinations/ui/connect-destination.md)连接到所需的云存储目标。 连接到所需的云目标时，将&#x200B;**[!UICONTROL 导出数组、映射、对象]** [选项切换为关闭](/help/destinations/ui/export-arrays-calculated-fields.md##export-arrays-maps-objects-toggle)。
+1. [将](/help/destinations/ui/connect-destination.md)连接到所需的云存储目标。 连接到所需的云目标时，将&#x200B;**[!UICONTROL 导出数组、映射、对象]** [选项切换为关闭](/help/destinations/ui/export-arrays-maps-objects.md##export-arrays-maps-objects-toggle)。
 2. 执行云存储目标](/help/destinations/ui/activate-batch-profile-destinations.md)的[激活步骤并转到[映射](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)步骤。
 
 ## 如何使用计算字段 {#how-to-export-calculated-fields}
@@ -51,7 +58,7 @@ ht-degree: 8%
 
 >[!TIP]
 >
->对于已关闭&#x200B;**[!UICONTROL 导出数组、映射和对象]**&#x200B;控件的目标连接，**[!UICONTROL 添加计算字段]**&#x200B;控件已禁用。 [了解更多信息](/help/destinations/ui/export-arrays-calculated-fields.md#export-arrays-maps-objects-toggle)。
+>对于已关闭&#x200B;**[!UICONTROL 导出数组、映射和对象]**&#x200B;控件的目标连接，**[!UICONTROL 添加计算字段]**&#x200B;控件已禁用。 [了解更多信息](/help/destinations/ui/export-arrays-maps-objects.md#export-arrays-maps-objects-toggle)。
 
 ![添加在批处理激活工作流的映射步骤中突出显示的计算字段。](/help/destinations/assets/ui/export-arrays-calculated-fields/add-calculated-fields.png)
 

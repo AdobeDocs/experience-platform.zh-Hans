@@ -2,7 +2,7 @@
 title: Adobe Experience Platform 发行说明（2023 年 10 月）
 description: Adobe Experience Platform 的 2023 年 10 月发行说明。
 exl-id: e9cf5299-8350-4b40-8f56-05e598846875
-source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
+source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
 workflow-type: tm+mt
 source-wordcount: '1054'
 ht-degree: 40%
@@ -69,7 +69,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| (Beta)计算字段中支持哈希函数 | 除了特定于[导出数组](../../destinations/ui/export-arrays-calculated-fields.md)或数组中的元素的函数之外，您现在还可以使用其他[散列函数](../../destinations/ui/export-arrays-calculated-fields.md#hashing-functions)对导出文件中的散列属性进行散列处理。 支持的哈希函数为： `sha`、`sha256`、`sha512`、`hash`、`md5`、`crc32`。 |
+| (Beta)计算字段中支持哈希函数 | 除了特定于[导出数组](../../destinations/ui/export-arrays-maps-objects.md)或数组中的元素的函数之外，您现在还可以使用其他[散列函数](../../destinations/ui/export-arrays-maps-objects.md#hashing-functions)对导出文件中的散列属性进行散列处理。 支持的哈希函数为： `sha`、`sha256`、`sha512`、`hash`、`md5`、`crc32`。 |
 | （有限GA）将帐户受众激活到某些目标 | Real-Time CDP B2B客户现在可以将[帐户受众](../../segmentation/types/account-audiences.md)激活到某些目标。 有关此功能的详细信息，请参阅[激活帐户受众教程](/help/destinations/ui/activate-account-audiences.md)。 |
 
 {style="table-layout:auto"}

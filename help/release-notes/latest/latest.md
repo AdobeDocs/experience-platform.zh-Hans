@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2025 年 2 月）
 description: Adobe Experience Platform 的 2025 年 2 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: c4064771a384a90d94903ba1761fc9ee20f47747
+source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
 workflow-type: tm+mt
 source-wordcount: '1645'
-ht-degree: 91%
+ht-degree: 97%
 
 ---
 
@@ -74,7 +74,7 @@ Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使�
 
 有关更多信息，请阅读[数据准备概述](../../data-prep/home.md)。
 
-## 目标（更新日期：2月20日） {#destinations}
+## 目标（2 月 20 日已更新） {#destinations}
 
 [!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
@@ -97,7 +97,7 @@ Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使�
 | 使用访问标签管理用户对目标数据流的访问权限 | 作为 Real-Time CDP 中[[!UICONTROL 基于属性的访问控制]](/help/access-control/abac/overview.md)功能的一部分，您现在可以将访问标签应用于[目标数据流](/help/dataflows/ui/monitor-destinations.md)。这样，您就可以确保组织中只有一部分用户可以访问特定的目标数据流。<br> **重要提示**：使用 Experience Platform 用户界面顶部的搜索框搜索目标数据流时，结果可能包括用户访问标签限制您查看的目标数据流。这种行为将在未来的更新中得到纠正。 |
 | 针对 [Marketo Engage 连接](/help/destinations/catalog/adobe/marketo-engage.md)的[受众级报告](/help/dataflows/ui/monitor-destinations.md#audience-level-dataflow-runs-for-streaming-destinations) | 您现在可以[查看](/help/dataflows/ui/monitor-destinations.md#audience-level-dataflow-runs-for-streaming-destinations)有关此目标数据流中每个受众的激活、排除或失败身份信息（按受众级细分）。 |
 | 为 [TikTok](/help/destinations/catalog/social/tiktok.md) 和 [Snap Inc](/help/destinations/catalog/advertising/snap-inc.md) 连接提供外部受众支持 | 您可以通过[自定义上传](../../segmentation/ui/audience-portal.md#import-audience)和[联合受众构成](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/start/audiences)将外部受众激活到这些目标。 |
-| 将阵列、映射和对象导出到云存储目标 | 在连接到云存储目标时，通过使用新的&#x200B;**[!UICONTROL 导出阵列、映射、对象]**&#x200B;切换，您可以将复杂对象新导出到选定的目标。 [参阅更多](/help/destinations/ui/export-arrays-calculated-fields.md)关于该功能的信息。 |
+| 将数组、映射和对象导出到云存储目标 | 在连接到某个云存储目标时使用新的&#x200B;**[!UICONTROL 导出数组、映射、对象]**&#x200B;切换功能，您可以将复杂对象导出到选定目标。[参阅更多](/help/destinations/ui/export-arrays-maps-objects.md)关于该功能的信息。 |
 
 {style="table-layout:auto"}
 
@@ -105,7 +105,7 @@ Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使�
 
 - Destination SDK 测试工具中的一个问题已修复。当用于生成轮廓的模式包含带有 `No format` 选择器的数据类型时，由于格式不受支持，一些客户或合作伙伴在使用[样本轮廓生成工具](/help/destinations/destination-sdk/testing-api/streaming-destinations/sample-profile-generation-api.md)时遇到了问题。
 - 修复了使用 Flow Service API 更新目标 `targetConnection` 规范时出现的问题。在某些情况下，PATCH 运行的行为与 POST 运行类似，会破坏现有的数据流。此问题现已修复，所有客户都可以使用 Flow Service API 来更新他们的 `targetConnection` 规范。[了解更多信息](/help/destinations/api/edit-destination.md#patch-target-connection)。
-- 将用户档案导出到基于文件的目标时，重复数据删除可确保在多个用户档案共享相同的重复数据删除键和相同的引用时间戳时，仅导出一个用户档案。 此版本包括了对重复数据删除流程的更新，确保使用相同的坐标连续运行将始终产生相同的结果，从而提高一致性。 [了解更多信息](/help/destinations/ui/activate-batch-profile-destinations.md#deduplication-same-timestamp)。
+- 将轮廓导出到基于文件的目标时，删除重复项可确保当多个轮廓共享相同的删除重复项键和相同的参考时间戳时仅导出一个轮廓。此版本包括删除重复项过程的更新，确保使用相同坐标的连续运行始终产生相同的结果，从而提高一致性。[了解更多信息](/help/destinations/ui/activate-batch-profile-destinations.md#deduplication-same-timestamp)。
 
 有关更多信息，请阅读[目标概述](../../destinations/home.md)。
 

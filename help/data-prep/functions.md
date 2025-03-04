@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据准备映射函数
 description: 本文档介绍了与数据准备一起使用的映射函数。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 830aa01828785a9ae4dea71078ee418fc510253c
+source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
 workflow-type: tm+mt
 source-wordcount: '6028'
 ht-degree: 2%
@@ -63,8 +63,8 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | ltrim | 删除字符串开头的空格。 | <ul><li>字符串： **必需**&#x200B;要删除空白的字符串。</li></ul> | ltrim(STRING) | ltrim(&quot; hello&quot;) | &quot;hello&quot; |
 | rtrim | 删除字符串末尾的空格。 | <ul><li>字符串： **必需**&#x200B;要删除空白的字符串。</li></ul> | rtrim(STRING) | rtrim(“hello ”) | &quot;hello&quot; |
 | trim | 删除字符串开头和结尾的空格。 | <ul><li>字符串： **必需**&#x200B;要删除空白的字符串。</li></ul> | trim(STRING) | trim(&quot; hello &quot;) | &quot;hello&quot; |
-| 等于 | 比较两个字符串以确认它们是否相等。 此函数区分大小写。 | <ul><li>STRING1： **必需**&#x200B;要比较的第一个字符串。</li><li>STRING2： **必需**&#x200B;要比较的第二个字符串。</li></ul> | STRING1. &#x200B;equals(&#x200B;STRING2) | “string1”。&#x200B;equals&#x200B;(&quot;STRING1&quot;) | false |
-| equalsIgnoreCase | 比较两个字符串以确认它们是否相等。 此函数为&#x200B;**而非**&#x200B;区分大小写。 | <ul><li>STRING1： **必需**&#x200B;要比较的第一个字符串。</li><li>STRING2： **必需**&#x200B;要比较的第二个字符串。</li></ul> | STRING1. &#x200B;equalsIgnoreCase&#x200B;(STRING2) | “string1”。&#x200B;equalsIgnoreCase&#x200B;(&quot;STRING1) | true |
+| 等于 | 比较两个字符串以确认它们是否相等。 此函数区分大小写。 | <ul><li>STRING1： **必需**&#x200B;要比较的第一个字符串。</li><li>STRING2： **必需**&#x200B;要比较的第二个字符串。</li></ul> | STRING1. &#x200B;equals(&#x200B;STRING2) | “string1”。&#x200B;equals&#x200B;(&quot;STRING1&quot;) | 错的 |
+| equalsIgnoreCase | 比较两个字符串以确认它们是否相等。 此函数为&#x200B;**而非**&#x200B;区分大小写。 | <ul><li>STRING1： **必需**&#x200B;要比较的第一个字符串。</li><li>STRING2： **必需**&#x200B;要比较的第二个字符串。</li></ul> | STRING1. &#x200B;equalsIgnoreCase&#x200B;(STRING2) | “string1”。&#x200B;equalsIgnoreCase&#x200B;(&quot;STRING1) | 对的 |
 
 {style="table-layout:auto"}
 
@@ -73,7 +73,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | extract_regex | 根据正则表达式从输入字符串中提取组。 | <ul><li>字符串： **必需**&#x200B;从中提取组的字符串。</li><li>REGEX： **必需**&#x200B;您希望组匹配的正则表达式。</li></ul> | extract_regex(STRING， REGEX) | extract_regex&#x200B;(&quot;E259，E259B_009,1_1&quot;&#x200B;， &quot;([^，]+)，[^，]*，([^，]+)&quot;) | [&quot;E259，E259B_009,1_1&quot;，&quot;E259&quot;，&quot;1_1&quot;] |
-| matches_regex | 检查字符串是否与输入的正则表达式匹配。 | <ul><li>字符串： **必需**&#x200B;要检查的字符串与正则表达式匹配。</li><li>REGEX： **必需**&#x200B;要与之进行比较的正则表达式。</li></ul> | matches_regex(STRING， REGEX) | matches_regex(&quot;E259，E259B_009,1_1&quot;， &quot;([^，]+)，[^，]*，([^，]+)&quot;) | true |
+| matches_regex | 检查字符串是否与输入的正则表达式匹配。 | <ul><li>字符串： **必需**&#x200B;要检查的字符串与正则表达式匹配。</li><li>REGEX： **必需**&#x200B;要与之进行比较的正则表达式。</li></ul> | matches_regex(STRING， REGEX) | matches_regex(&quot;E259，E259B_009,1_1&quot;， &quot;([^，]+)，[^，]*，([^，]+)&quot;) | 对的 |
 
 {style="table-layout:auto"}
 
@@ -87,7 +87,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | sha1 | 接受输入并使用安全哈希算法1 (SHA-1)生成哈希值。 | <ul><li>输入： **必需**&#x200B;要散列的纯文本。</li><li>CHARSET： *可选*&#x200B;字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。</li></ul> | sha1（输入，字符集） | sha1（“我的文本”，“UTF-8”） | c3599c11e47719df18a24&#x200B;48690840c5dfcce3c80 |
 | sha256 | 采用输入并使用安全哈希算法256 (SHA-256)生成哈希值。 | <ul><li>输入： **必需**&#x200B;要散列的纯文本。</li><li>CHARSET： *可选*&#x200B;字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。</li></ul> | sha256（输入，字符集） | sha256（“我的文本”，“UTF-8”） | 7330d2b39ca35eaf4cb95fc846c21&#x200B;ee6a39af698154a83a586ee270a0d372104 |
-| sha512 | 采用输入并使用安全哈希算法512 (SHA-512)生成哈希值。 | <ul><li>输入： **必需**&#x200B;要散列的纯文本。</li><li>CHARSET： *可选*&#x200B;字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。</li></ul> | sha512（输入，字符集） | sha512（“我的文本”，“UTF-8”） | a3d7e45a0d9be5fd4e4b9a3b8c9c2163c21ef&#x200B;708bf11b4232bb21d2a8704ada2cdcd7b367dd0788a89&#x200B;a5c908cfe377aceb1072a7b7d4fd2ff68a fd24d16 |
+| sha512 | 采用输入并使用安全哈希算法512 (SHA-512)生成哈希值。 | <ul><li>输入： **必需**&#x200B;要散列的纯文本。</li><li>CHARSET： *可选*&#x200B;字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。</li></ul> | sha512（输入，字符集） | sha512（“我的文本”，“UTF-8”） | A.B. a3d7e45a0d9be5fd4e4b9a3b8c9c2163c21ef&#x200B;708bf11b4232bb21d2a8704ada2cdcd7b367dd0788a89&#x200B;a5c908cfe377aceb1072a7b386d4fd2ff68a |
 | md5 | 接受输入并使用MD5生成哈希值。 | <ul><li>输入： **必需**&#x200B;要散列的纯文本。</li><li>CHARSET： *可选*&#x200B;字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。 </li></ul> | md5（输入，字符集） | md5（“我的文本”，“UTF-8”） | d3b96ce8c9fb4&#x200B;e9bd0198d03ba6852c7 |
 | crc32 | 取一个输入使用循环冗余校验(CRC)算法来生成32位循环代码。 | <ul><li>输入： **必需**&#x200B;要散列的纯文本。</li><li>CHARSET： *可选*&#x200B;字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。</li></ul> | crc32（输入，字符集） | crc32（“我的文本”，“UTF-8”） | 8df92e80 |
 
@@ -126,7 +126,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | 日期 | 将日期字符串转换为ZonedDateTime对象（ISO 8601格式）。 | <ul><li>日期： **必需**&#x200B;表示日期的字符串。</li><li>格式： **必需**&#x200B;表示源日期格式的字符串。**注意：**&#x200B;这&#x200B;**不**&#x200B;表示要将日期字符串转换为的格式。 </li><li>DEFAULT_DATE： **必需**&#x200B;如果提供的日期为null，则返回默认日期。</li></ul> | date(DATE， FORMAT， DEFAULT_DATE) | date(&quot;2019-10-23 11:24&quot;， &quot;yyyy-MM-dd HH：mm&quot;， now()) | `2019-10-23T11:24:00Z` |
 | 日期 | 将日期字符串转换为ZonedDateTime对象（ISO 8601格式）。 | <ul><li>日期： **必需**&#x200B;表示日期的字符串。</li><li>格式： **必需**&#x200B;表示源日期格式的字符串。**注意：**&#x200B;这&#x200B;**不**&#x200B;表示要将日期字符串转换为的格式。 </li></ul> | 日期（日期，格式） | date(&quot;2019-10-23 11:24&quot;， &quot;yyyy-MM-dd HH：mm&quot;) | `2019-10-23T11:24:00Z` |
 | 日期 | 将日期字符串转换为ZonedDateTime对象（ISO 8601格式）。 | <ul><li>日期： **必需**&#x200B;表示日期的字符串。</li></ul> | date(DATE) | date(&quot;2019-10-23 11:24&quot;) | “2019-10-23T11:24:00Z” |
-| date_part | 检索日期的各个部分。 支持以下组件值： <br><br>&quot;year&quot;<br>&quot;yyyy&quot;<br>&quot;yy&quot;<br><br>&quot;quarter&quot;<br>&quot;qq&quot;<br>&quot;q&quot;<br><br>&quot;month&quot;<br>&quot;mm&quot;<br>&quot;m&quot;<br><br>&quot;dayofyear&quot;<br>&quot;dy&quot;<br>&quot;y&quot;<br><br>&quot;day&quot;<br>&quot;dd&quot;<br>&quot;d&quot;<br><br>&quot;week&quot;<br>&quot;w&quot;<br><br>&quot;weekday&quot;<br>&quot;dw&quot;<br>&quot;w&quot;<br><br>&quot;hour&quot;<br>&quot;hh&quot;<br>&quot;hh24&quot;<br>&quot;hh12&quot;<br><br>&quot;minute&quot;<br>&quot;mi&quot;<br>&quot;n&quot;<br><br>&quot;second&quot;<br>&quot;ss&quot;<br>&quot;s&quot;<br><br>&quot;millisecond&quot;<br>&quot;SSS&quot;<br> | <ul><li>组件： **必需**&#x200B;表示日期部分的字符串。 </li><li>日期： **必需**&#x200B;标准格式的日期。</li></ul> | date_part&#x200B;(COMPONENT， DATE) | date_part(&quot;MM&quot;， date(&quot;2019-10-17 11:55:12&quot;) | 10 |
+| date_part | 检索日期的各个部分。 支持以下组件值： <br><br>&quot;year&quot;<br>&quot;yyyy&quot;<br>&quot;yy&quot;<br><br>&quot;quarter&quot;<br>&quot;qq&quot;<br>&quot;q&quot;<br><br>&quot;month&quot;<br>&quot;mm&quot;<br>&quot;m&quot;<br><br>&quot;dayofyear&quot;<br>&quot;dy&quot;<br>&quot;y&quot;<br><br>&quot;day&quot;<br>&quot;dd&quot;<br>&quot;d&quot;<br><br>&quot;week&quot;<br>&quot;ww&quot;<br>&quot;w&quot;<br><br>&quot;weekday&quot;<br>&quot;dw&quot;{20&quot;<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> | <ul><li>组件： **必需**&#x200B;表示日期部分的字符串。 </li><li>日期： **必需**&#x200B;标准格式的日期。</li></ul> | date_part&#x200B;(COMPONENT， DATE) | date_part(&quot;MM&quot;， date(&quot;2019-10-17 11:55:12&quot;) | 10 |
 | set_date_part | 替换给定日期中的组件。 接受以下组件： <br><br>&quot;year&quot;<br>&quot;yyyy&quot;<br>&quot;yy&quot;<br><br>&quot;month&quot;<br>&quot;mm&quot;<br>&quot;m&quot;<br><br>&quot;day&quot;<br>&quot;dd&quot;<br>&quot;d&quot;<br><br>&quot;hour&quot;<br>&quot;hh&quot;<br><br>&quot;minute&quot;<br>&quot;mi&quot;<br>&quot;n&quot;<br><br>&quot;second&quot;<br>&quot;ss&quot;<br>&quot;s&quot; | <ul><li>组件： **必需**&#x200B;表示日期部分的字符串。 </li><li>值： **必需**&#x200B;为给定日期的组件设置的值。</li><li>日期： **必需**&#x200B;标准格式的日期。</li></ul> | set_date_part&#x200B;(COMPONENT， VALUE， DATE) | set_date_part(&quot;m&quot;， 4， date(&quot;2016-11-09T11:44:44.797&quot;) | “2016-04-09T11:44:44Z” |
 | make_date_time | 从部件创建日期。 此函数也可以使用make_timestamp进行感应。 | <ul><li>YEAR： **必需**&#x200B;用四位数字表示的年份。</li><li>月份： **必需**&#x200B;月份。 允许的值为1到12。</li><li>日： **必需**&#x200B;日。 允许的值为1到31。</li><li>小时：**必需**&#x200B;小时。 允许的值为0到23。</li><li>MINUTE： **必需**&#x200B;分钟。 允许的值为0到59。</li><li>NANOSECOND： **必需**&#x200B;纳秒值。 允许的值为0到999999999。</li><li>时区： **必需**&#x200B;日期时间的时区。</li></ul> | make_date_time&#x200B;（年、月、日、小时、分钟、秒、纳秒、时区） | make_date_time&#x200B;（2019， 10， 17， 11， 55， 12， 999，“美国/洛杉矶”） | `2019-10-17T11:55:12Z` |
 | zone_date_to_utc | 将任何时区的日期转换为UTC格式的日期。 | <ul><li>日期： **必需**&#x200B;尝试转换的日期。</li></ul> | zone_date_to_utc&#x200B;(DATE) | `zone_date_to_utc&#x200B;(2019-10-17T11:55:&#x200B;12 PST` | `2019-10-17T19:55:12Z` |
@@ -142,11 +142,11 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
-| is_empty | 检查对象是否为空。 | <ul><li>输入： **必需**&#x200B;您尝试检查的对象为空。</li></ul> | is_empty(INPUT) | `is_empty([1, null, 2, 3])` | false |
+| is_empty | 检查对象是否为空。 | <ul><li>输入： **必需**&#x200B;您尝试检查的对象为空。</li></ul> | is_empty(INPUT) | `is_empty([1, null, 2, 3])` | 错的 |
 | arrays_to_object | 创建对象列表。 | <ul><li>输入： **必需**&#x200B;键和数组对的分组。</li></ul> | arrays_to_object(INPUT) | `arrays_to_objects('sku', explode("id1\|id2", '\\\|'), 'price', [22.5,14.35])` | ```[{ "sku": "id1", "price": 22.5 }, { "sku": "id2", "price": 14.35 }]``` |
 | to_object | 根据给定的平面键/值对创建对象。 | <ul><li>输入： **必需**&#x200B;键/值对的平面列表。</li></ul> | to_object(INPUT) | to_object&#x200B;(“firstName”、“John”、“lastName”、“Doe”) | `{"firstName": "John", "lastName": "Doe"}` |
 | str_to_object | 从输入字符串创建对象。 | <ul><li>字符串： **必需**&#x200B;正在分析以创建对象的字符串。</li><li>VALUE_DELIMITER： *可选*&#x200B;用于将字段与值分开的分隔符。 默认分隔符为`:`。</li><li>FIELD_DELIMITER： *可选*&#x200B;用于分隔字段值对的分隔符。 默认分隔符为`,`。</li></ul> | str_to_object&#x200B;(STRING， VALUE_DELIMITER， FIELD_DELIMITER) **注意**：您可以使用`get()`函数以及`str_to_object()`来检索字符串中键的值。 | <ul><li>示例#1： str_to_object(&quot;firstName - John ； lastName - ； - 123 345 7890&quot;， &quot;-&quot;， &quot;；&quot;)</li><li>示例#2： str_to_object(&quot;firstName - John ； lastName - ； phone - 123 456 7890&quot;， &quot;-&quot;， &quot;；&quot;)。get(&quot;firstName&quot;)</li></ul> | <ul><li>示例#1：`{"firstName": "John", "lastName": "Doe", "phone": "123 456 7890"}`</li><li>示例#2： &quot;John&quot;</li></ul> |
-| contains_key | 检查源数据中是否存在该对象。 **注意：**&#x200B;此函数替换已弃用的`is_set()`函数。 | <ul><li>输入： **必需**&#x200B;要检查的路径是否存在于源数据中。</li></ul> | contains_key(INPUT) | contains_key(&quot;evars.evar.field1&quot;) | true |
+| contains_key | 检查源数据中是否存在该对象。 **注意：**&#x200B;此函数替换已弃用的`is_set()`函数。 | <ul><li>输入： **必需**&#x200B;要检查的路径是否存在于源数据中。</li></ul> | contains_key(INPUT) | contains_key(&quot;evars.evar.field1&quot;) | 对的 |
 | 无效 | 将属性的值设置为`null`。 当您不想将字段复制到目标架构时，应使用此字段。 | | nullify() | nullify() | `null` |
 | get_keys | 解析键/值对并返回所有键。 | <ul><li>对象： **必需**&#x200B;从中提取键的对象。</li></ul> | get_keys(OBJECT) | get_keys({&quot;book1&quot;： “Pride and Visimit”， “book2”： “1984”}) | `["book1", "book2"]` |
 | get_values | 解析键/值对并根据给定的键返回字符串的值。 | <ul><li>字符串： **必需**&#x200B;要分析的字符串。</li><li>KEY： **必需**&#x200B;必须提取其值的键。</li><li>VALUE_DELIMITER： **必需**&#x200B;用于分隔字段和值的分隔符。 如果提供了`null`或空字符串，则此值为`:`。</li><li>FIELD_DELIMITER： *可选*&#x200B;用于分隔字段和值对的分隔符。 如果提供了`null`或空字符串，则此值为`,`。</li></ul> | get_values(STRING， KEY， VALUE_DELIMITER， FIELD_DELIMITER) | get_values(\&quot;firstName - John ， lastName - Cena ， phone - 555 420 8692\&quot;， \&quot;firstName\&quot;， \&quot;-\&quot;， \&quot;，\&quot;) | John |
@@ -178,10 +178,10 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | 大小_of | 返回输入的大小。 | <ul><li>INPUT： **必需**&#x200B;您尝试查找大小的对象。</li></ul> | size_of(INPUT) | `size_of([1, 2, 3, 4])` | 4 |
 | upsert_array_append | 此函数用于将整个输入数组中的所有元素附加到配置文件中数组的末尾。 此函数仅&#x200B;**适用**&#x200B;于更新期间。 如果在插入的上下文中使用，则此函数按原样返回输入。 | <ul><li>数组： **必需**&#x200B;要在配置文件中附加数组的数组。</li></ul> | upsert_array_append(ARRAY) | `upsert_array_append([123, 456])` | [123， 456] |
 | upsert_array_replace | 此函数用于替换数组中的元素。 此函数仅&#x200B;**适用**&#x200B;于更新期间。 如果在插入的上下文中使用，则此函数按原样返回输入。 | <ul><li>数组： **必需**&#x200B;要替换配置文件中数组的数组。</li></li> | upsert_array_replace(ARRAY) | `upsert_array_replace([123, 456], 1)` | [123， 456] |
-| [!BADGE 仅限目标]{type=Informative} array_to_string | 使用指定的分隔符连接数组中元素的字符串表示形式。 如果数组是多维数组，则在连接前将其扁平化。 **注意**：此函数用于目标。 有关详细信息，请阅读[文档](../destinations/ui/export-arrays-calculated-fields.md)。 | <ul><li>SEPARATOR： **必需**&#x200B;用于连接数组中元素的分隔符。</li><li>数组： **必需**&#x200B;要连接的数组（拼合后）。</li></ul> | array_to_string(SEPARATOR， ARRAY) | `array_to_string(";", ["Hello", "world"])` | “Hello；world” |
-| [!BADGE 仅目标]{type=Informative} filterArray* | 基于谓词筛选给定数组。 **注意**：此函数用于目标。 有关详细信息，请阅读[文档](../destinations/ui/export-arrays-calculated-fields.md)。 | <ul><li>数组： **必需**&#x200B;要过滤的数组</li><li>谓词： **必需**&#x200B;要应用于给定数组的每个元素的谓词。 | filterArray(ARRAY， PREDICATE) | `filterArray([5, -6, 0, 7], x -> x > 0)` | [5， 7] |
-| [!BADGE 仅目标]{type=Informative} transformArray* | 基于谓词转换给定的数组。 **注意**：此函数用于目标。 有关详细信息，请阅读[文档](../destinations/ui/export-arrays-calculated-fields.md)。 | <ul><li>数组： **必需**&#x200B;要转换的数组。</li><li>谓词： **必需**&#x200B;要应用于给定数组的每个元素的谓词。 | transformArray(ARRAY， PREDICATE) | ` transformArray([5, 6, 7], x -> x + 1)` | [6， 7， 8] |
-| [!BADGE 仅目标]{type=Informatic} flattenArray* | 将给定的（多维）数组平面化为一维数组。 **注意**：此函数用于目标。 有关详细信息，请阅读[文档](../destinations/ui/export-arrays-calculated-fields.md)。 | <ul><li>数组： **必需**&#x200B;要平面化的数组。</li></ul> | flattenArray(ARRAY) | flattenArray([[[&#39;a&#39;， &#39;b&#39;]， [&#39;c&#39;， &#39;d&#39;]]， [[&#39;e&#39;]， [&#39;f&#39;]]]) | [&#39;a&#39;、&#39;b&#39;、&#39;c&#39;、&#39;d&#39;、&#39;e&#39;、&#39;f&#39;] |
+| [!BADGE 仅限目标]{type=Informative} array_to_string | 使用指定的分隔符连接数组中元素的字符串表示形式。 如果数组是多维数组，则在连接前将其扁平化。 **注意**：此函数用于目标。 有关详细信息，请阅读[文档](../destinations/ui/export-arrays-maps-objects.md)。 | <ul><li>SEPARATOR： **必需**&#x200B;用于连接数组中元素的分隔符。</li><li>数组： **必需**&#x200B;要连接的数组（拼合后）。</li></ul> | array_to_string(SEPARATOR， ARRAY) | `array_to_string(";", ["Hello", "world"])` | “Hello；world” |
+| [!BADGE 仅目标]{type=Informative} filterArray* | 基于谓词筛选给定数组。 **注意**：此函数用于目标。 有关详细信息，请阅读[文档](../destinations/ui/export-arrays-maps-objects.md)。 | <ul><li>数组： **必需**&#x200B;要过滤的数组</li><li>谓词： **必需**&#x200B;要应用于给定数组的每个元素的谓词。 | filterArray(ARRAY， PREDICATE) | `filterArray([5, -6, 0, 7], x -> x > 0)` | [5， 7] |
+| [!BADGE 仅目标]{type=Informative} transformArray* | 基于谓词转换给定的数组。 **注意**：此函数用于目标。 有关详细信息，请阅读[文档](../destinations/ui/export-arrays-maps-objects.md)。 | <ul><li>数组： **必需**&#x200B;要转换的数组。</li><li>谓词： **必需**&#x200B;要应用于给定数组的每个元素的谓词。 | transformArray(ARRAY， PREDICATE) | ` transformArray([5, 6, 7], x -> x + 1)` | [6， 7， 8] |
+| [!BADGE 仅目标]{type=Informatic} flattenArray* | 将给定的（多维）数组平面化为一维数组。 **注意**：此函数用于目标。 有关详细信息，请阅读[文档](../destinations/ui/export-arrays-maps-objects.md)。 | <ul><li>数组： **必需**&#x200B;要平面化的数组。</li></ul> | flattenArray(ARRAY) | flattenArray([[[&#39;a&#39;， &#39;b&#39;]， [&#39;c&#39;， &#39;d&#39;]]， [[&#39;e&#39;]， [&#39;f&#39;]]]) | [&#39;a&#39;、&#39;b&#39;、&#39;c&#39;、&#39;d&#39;、&#39;e&#39;、&#39;f&#39;] |
 
 {style="table-layout:auto"}
 
@@ -220,8 +220,8 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
-| min | 返回给定参数的最小值。 使用自然排序。 | <ul><li>OPTIONS： **必需**&#x200B;可以相互比较的一个或多个对象。</li></ul> | min(OPTIONS) | min(3， 1， 4) | 1 |
-| max | 返回给定参数的最大值。 使用自然排序。 | <ul><li>OPTIONS： **必需**&#x200B;可以相互比较的一个或多个对象。</li></ul> | 最大(OPTIONS) | max(3， 1， 4) | 4 |
+| min | 返回给定参数的最小值。 使用自然排序。 | <ul><li>OPTIONS： **必需**&#x200B;一个或多个可以相互比较的对象。</li></ul> | min(OPTIONS) | min(3， 1， 4) | 1 |
+| max | 返回给定参数的最大值。 使用自然排序。 | <ul><li>OPTIONS： **必需**&#x200B;一个或多个可以相互比较的对象。</li></ul> | max(OPTIONS) | max(3， 1， 4) | 4 |
 
 {style="table-layout:auto"}
 
@@ -281,9 +281,9 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | ua_os_name | 从用户代理字符串中提取操作系统名称。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_os_name&#x200B;(USER_AGENT) | ua_os_name&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS |
-| ua_os_version_major | 从用户代理字符串中提取操作系统的主要版本。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_os_version_major&#x200B;(USER_AGENT) | ua_os_version_major&#x200B;s(&quot;Mozilla/5.0 (iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46 （KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS 5 |
+| ua_os_version_major | 从用户代理字符串中提取操作系统的主要版本。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_os_version_major&#x200B;(USER_AGENT) | ua_os_version_major&#x200B;s(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS 5 |
 | ua_os_version | 从用户代理字符串中提取操作系统的版本。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_os_version&#x200B;(USER_AGENT) | ua_os_version&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | 5.1.1 |
-| ua_os_name_version | 从用户代理字符串中提取操作系统的名称和版本。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_os_name_version&#x200B;(USER_AGENT) | ua_os_name_version&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS 5.1.1 |
+| ua_os_name_version | 从用户代理字符串中提取操作系统的名称和版本。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_os_name_version&#x200B;(USER_AGENT) | ua_os_name_version&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS 5.1.1 |
 | ua_agent_version | 从用户代理字符串中提取代理版本。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_agent_version&#x200B;(USER_AGENT) | ua_agent_version&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | 5.1 |
 | ua_agent_version_major | 从用户代理字符串中提取代理名称和主要版本。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_agent_version_major&#x200B;(USER_AGENT) | ua_agent_version_major&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Safari 5 |
 | ua_agent_name | 从用户代理字符串中提取代理名称。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_agent_name&#x200B;(USER_AGENT) | ua_agent_name&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Safari |
@@ -306,7 +306,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | aa_get_product_quantities | 从Analytics产品字符串中提取数量。 | <ul><li>PRODUCTS_STRING： **必需** Analytics产品字符串。</li></ul> | aa_get_product_quantities(PRODUCTS_STRING) | aa_get_product_quantities（&quot;；示例产品1；1；3.50，示例类别2；示例产品2&quot;） | [&quot;1&quot;，空] |
 | aa_get_product_prices | 从Analytics产品字符串中提取价格。 | <ul><li>PRODUCTS_STRING： **必需** Analytics产品字符串。</li></ul> | aa_get_product_prices(PRODUCTS_STRING) | aa_get_product_prices（&quot;；示例产品1；1；3.50，示例类别2；示例产品2&quot;） | [&quot;3.50&quot;，空] |
 | aa_get_product_event_values | 从products字符串中提取命名事件的值作为字符串数组。 | <ul><li>PRODUCTS_STRING： **必需** Analytics产品字符串。</li><li>EVENT_NAME： **必需**&#x200B;要从中提取值的事件名称。</li></ul> | aa_get_product_event_values(PRODUCTS_STRING， EVENT_NAME) | aa_get_product_event_values（&quot;；示例产品1；1；4.20；event1=2.3\|event2=5:1，；示例产品2；1；4.20；event1=3\|event2=2:2&quot;， &quot;event1&quot;） | [&quot;2.3&quot;，&quot;3&quot;] |
-| aa_get_product_evars | 从products字符串中抽取命名事件的evar值作为字符串数组。 | <ul><li>PRODUCTS_STRING： **必需** Analytics产品字符串。</li><li>eVar_名称： **必需**&#x200B;要提取的eVar名称。</li></ul> | aa_get_product_evars(PRODUCTS_STRING， EVENT_NAME) | aa_get_product_evars(&quot;；示例产品；1；6.69；；eVar1=促销值&quot;， &quot;eVar1&quot;) | [“促销值”] |
+| aa_get_product_evars | 从products字符串中抽取命名事件的evar值作为字符串数组。 | <ul><li>PRODUCTS_STRING： **必需** Analytics产品字符串。</li><li>eVar_NAME： **必需**&#x200B;要提取的eVar名称。</li></ul> | aa_get_product_evars(PRODUCTS_STRING， EVENT_NAME) | aa_get_product_evars(&quot;；示例产品；1；6.69；；eVar1=Merchandising value&quot;， &quot;eVar1&quot;) | [“促销值”] |
 
 {style="table-layout:auto"}
 

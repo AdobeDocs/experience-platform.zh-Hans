@@ -2,7 +2,7 @@
 title: Adobe Experience Platform 发行说明（2023 年 9 月）
 description: Adobe Experience Platform 2023 年 9 月发行说明。
 exl-id: ff7fb0c1-6941-4339-8648-58f9b9e9a91f
-source-git-commit: d6e306294d0a119108e2de7ba03ebed4f633fba1
+source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
 workflow-type: tm+mt
 source-wordcount: '2265'
 ht-degree: 33%
@@ -26,7 +26,7 @@ Experience Platform 中现有功能的更新：
 - [数据卫生](#hygiene)
 - [目标](#destinations)
 - [Experience Data Model (XDM)](#xdm)
-- [身份服务](#identity-service)
+- [身份标识服务](#identity-service)
 - [查询服务](#query-service)
 - [Segmentation Service](#segmentation)
 - [源](#sources)
@@ -55,7 +55,7 @@ Adobe Experience Platform提供了多个[!DNL dashboards]，您可以通过它�
 
 | 功能 | 描述 |
 | --- | --- |
-| [许可证使用情况仪表板改进](../../dashboards/guides/license-usage.md) | 通过改进的有关您组织许可证使用的报告和关键量度可视化图表，维护对您的许可证协议的控制。 这些改进针对您购买的所有Experience Platform产品提供了许可证使用量度的高度粒度。 |
+| [许可证使用情况仪表板改进](../../dashboards/guides/license-usage.md) | 通过改进的有关您组织许可证使用的报告和关键量度可视化图表，维护对您的许可证协议的控制。 这些改进功能可让您针对已购买的所有Experience Platform产品的许可证使用量度实现高度精细化。 |
 
 {style="table-layout:auto"}
 
@@ -70,7 +70,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 | 类型 | 功能 | 描述 |
 | --- | --- | --- |
 | 数据流 | 设备查找支持 | 在配置数据流时，您现在可以选择要收集的设备查找信息的级别。 设备查找信息包括有关用于与页面交互的设备、硬件、操作系统和浏览器的数据。 <br>设备查找信息无法与用户代理和客户端提示一起收集。 选择收集设备信息将禁用用户代理和客户端提示的收集，反之亦然。 所有设备查找信息都存储在`xdm:device`字段组中。 从有关[配置数据流](../../datastreams/configure.md#geolocation-device-lookup)的文档了解详情。 |
-| 扩展 | [!DNL TikTok] Web事件API扩展 | [[!DNL TikTok] Web事件API](https://exchange.adobe.com/apps/ec/109834/tiktok-web-events-api)扩展允许您利用Adobe Experience PlatformEdge Network中捕获的数据，并使用[!DNL TikTok] Web事件API以服务器端事件的形式将其发送到[!DNL TikTok]。 |
+| 扩展 | [!DNL TikTok] Web事件API扩展 | [[!DNL TikTok] Web事件API](https://exchange.adobe.com/apps/ec/109834/tiktok-web-events-api)扩展允许您利用Adobe Experience Platform Edge Network中捕获的数据，并使用[!DNL TikTok] Web事件API以服务器端事件的形式将其发送到[!DNL TikTok]。 |
 
 {style="table-layout:auto"}
 
@@ -99,7 +99,7 @@ Experience Platform提供了一套数据卫生功能，允许您通过以编程�
 | 功能 | 描述 |
 | --- | --- |
 | [!BADGE Beta]{type=Informative}记录删除（限量发布） | 使用Adobe Experience Platform中的高级数据生命周期管理功能跨所有数据存储管理您的数据生命周期，以满足客户承诺和许可协议要求：自动数据集到期和记录删除。<br>通过自动数据集过期，您可以删除整个数据集，并设置要删除数据集的日期和时间。通过<br>记录删除，您可以通过定向个别消费者个人资料的主要身份来删除其个人资料。 您可以通过UI或CSV/JSON文件上传分别提供主身份。 有关详细信息，请参阅[记录删除文档](../../hygiene/ui/record-delete.md) |
-| 数据集到期 | 通过自动数据集过期，最大程度地减少您的数据并控制您的许可协议。 通过删除整个数据集并设置要删除数据集的日期和时间来减少数据量。 有关详细信息，请参阅[数据集过期文档](../../hygiene/ui/dataset-expiration.md)。 |
+| 数据集有效期限 | 通过自动数据集过期，最大程度地减少您的数据并控制您的许可协议。 通过删除整个数据集并设置要删除数据集的日期和时间来减少数据量。 有关详细信息，请参阅[数据集过期文档](../../hygiene/ui/dataset-expiration.md)。 |
 
 {style="table-layout:auto"}
 
@@ -133,13 +133,13 @@ Add these to release notes as they go out
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| Real-Time CDP中的数据导出 | [数据集导出](../../destinations/ui/export-datasets.md)功能现已正式可用。 查看可根据您购买的Experience Platform应用](../../destinations/ui/export-datasets.md#datasets-to-export)导出哪些数据集[，并查看用于导出数据集的[护栏](/help/destinations/guardrails.md#dataset-exports)。 |
-| (Beta)支持导出数组类型的对象 | 将原始值（字符串、int或布尔值）的数组作为平面架构文件导出到云存储目标。 有关[文档](../../destinations/ui/export-arrays-calculated-fields.md)中功能的更多信息。 |
+| Real-Time CDP中的数据导出 | [数据集导出](../../destinations/ui/export-datasets.md)功能现已正式可用。 查看可根据您购买的Experience Platform应用程序](../../destinations/ui/export-datasets.md#datasets-to-export)导出哪些数据集[，并查看用于导出数据集的[护栏](/help/destinations/guardrails.md#dataset-exports)。 |
+| (Beta)支持导出数组类型的对象 | 将原始值（字符串、int或布尔值）的数组作为平面架构文件导出到云存储目标。 有关[文档](../../destinations/ui/export-arrays-maps-objects.md)中功能的更多信息。 |
 | Destination SDK中的动态下拉列表选择器 | 通过Destination SDK创建目标时，您现在可以使用[动态下拉选择器](../../destinations/destination-sdk/functionality/destination-configuration/customer-data-fields.md#dynamic-dropdown-selectors)使用从API检索的值填充下拉选择器的字段。 |
 
 **修复和增强** {#destinations-fixes-and-enhancements}
 
-- 利用数据流运行级别上企业目标([HTTP API](../../destinations/catalog/streaming/http-destination.md)、[Amazon Kinesis](../../destinations/catalog/cloud-storage/amazon-kinesis.md)和[Azure事件中心](../../destinations/catalog/cloud-storage/azure-event-hubs.md))现在提供的[监视透明度](../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-streaming-destinations)，在[数据流详细信息视图](../../dataflows/ui/monitor-destinations.md#dataflow-run-details-page)中监视激活指标和状态，并通过错误代码和消息提供更多信息，以进行故障排除。
+- 利用数据流运行级别的企业目标([HTTP API](../../destinations/catalog/streaming/http-destination.md)、[Amazon Kinesis](../../destinations/catalog/cloud-storage/amazon-kinesis.md)和[Azure事件中心](../../destinations/catalog/cloud-storage/azure-event-hubs.md))现在提供的[监视透明度](../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-streaming-destinations)，在[数据流详细信息视图](../../dataflows/ui/monitor-destinations.md#dataflow-run-details-page)中监视激活指标和状态，并通过错误代码和消息提供更多信息，以进行疑难解答。
 - 当您更新映射到[Google广告管理器](../../destinations/catalog/advertising/google-ad-manager.md)、[Google显示和视频360](../../destinations/catalog/advertising/google-dv360.md)以及使用[受众更新模板](../../destinations/destination-sdk/metadata-api/update-audience-template.md)的其他目标的受众名称时，这些名称更改现在会反映到目标的下游位置。
 
 有关目标的更多一般信息，请参阅[目标概述](../../destinations/home.md)。
@@ -153,7 +153,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 | 功能 | 描述 |
 | --- | --- |
 | 已将快速操作添加到架构编辑器 | 新的快速操作已添加到架构编辑器的画布中。 您现在可以直接从编辑器中复制JSON结构或删除架构。<br>![架构编辑器中的快速操作。](../2023/assets/schema-editor-copy-json.png "突出显示具有更多和复制到JSON的架构编辑器。"){width="100" zoomable="yes"} |
-| 按自定义或标准创建者筛选XDM资源 | 可用架构、字段组、数据类型和类的列表现在会根据其创建方法进行预筛选。 这允许您根据资源是自定义构建还是由Adobe创建来筛选资源。<br>![架构工作区中的标准筛选器和自定义筛选器。](../2023/assets/standard-and-custom-classes.png "标有标准和自定义筛选器的架构工作区。"){width="100" zoomable="yes"} <br>有关详细信息，请参阅[创建和编辑资源文档](../../xdm/ui/resources/classes.md#filter.md)。 |
+| 按自定义或标准创建者筛选XDM资源 | 可用架构、字段组、数据类型和类的列表现在会根据其创建方法进行预筛选。 这允许您根据资源是自定义的还是由Adobe创建的来筛选资源。<br>![架构工作区中的标准筛选器和自定义筛选器。](../2023/assets/standard-and-custom-classes.png "标有标准和自定义筛选器的架构工作区。"){width="100" zoomable="yes"} <br>有关详细信息，请参阅[创建和编辑资源文档](../../xdm/ui/resources/classes.md#filter.md)。 |
 
 **更新的功能**
 
@@ -182,20 +182,20 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 有关 Platform 中 XDM 的详细信息，请查看 [XDM 系统概述](../../xdm/home.md)。
 
-## 标识服务 {#identity-service}
+## 身份标识服务 {#identity-service}
 
-Adobe Experience Platform 标识服务通过跨设备和系统桥接标识，使您能够全面了解您的客户及其行为，助您实时提供有影响力的个人数字体验。
+Adobe Experience Platform 身份标识服务通过跨设备和系统桥接身份标识，使您能够全面了解您的客户及其行为，助您实时提供有影响力的个人数字体验。
 
 **新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| Identity Service UI增强功能 | 使用Experience PlatformUI中改进的自定义命名空间创建工具，更好地管理自定义命名空间及其相应的身份类型。 增强的Identity Service UI为您提供： <ul><li>上下文体验：视觉提示、清晰度，以及身份命名空间和身份类型的上下文。</li><li>准确性：更好地处理错误，不再有重复的标识名称。</li><li>可发现性：可在产品内对话框中访问文档。</li></ul> 有关详细信息，请阅读[创建自定义命名空间](../../identity-service/features/namespaces.md#create-namespaces)的指南。 |
-| 标识图形限制的更改 | 标识图限制已从150个标识更改为50个标识。 将新身份摄取到完整图形中时，将删除基于摄取时间戳和身份类型的最旧身份。 Cookie标识类型按优先顺序删除。 Adobe如果您的生产沙盒包含： <ul><li>自定义命名空间，其中人员标识符（例如 CRM ID）会被配置为 cookie/设备标识类型。</li><li>自定义命名空间，其中 cookie/设备标识符会被配置为跨设备标识类型。</li></ul> Adobe 工程人员会手动处理这些请求。有关详细信息，请阅读[Identity Service数据的护栏](../../identity-service/guardrails.md)以及有关[数据管理许可证权利最佳实践](../../landing/license-usage-and-guardrails/data-management-best-practices.md)的指南。 |
+| Identity Service UI增强功能 | 使用Experience Platform UI中改进的自定义命名空间创建工具，更好地管理自定义命名空间及其相应的身份类型。 增强的Identity Service UI为您提供： <ul><li>上下文体验：视觉提示、清晰度，以及身份命名空间和身份类型的上下文。</li><li>准确性：更好地处理错误，不再有重复的标识名称。</li><li>可发现性：可在产品内对话框中访问文档。</li></ul> 有关详细信息，请阅读[创建自定义命名空间](../../identity-service/features/namespaces.md#create-namespaces)的指南。 |
+| 身份标识图形限制的更改 | 标识图限制已从150个标识更改为50个标识。 将新身份摄取到完整图形中时，将删除基于摄取时间戳和身份类型的最旧身份。 Cookie标识类型按优先顺序删除。 Adobe如果您的生产沙盒包含： <ul><li>自定义命名空间，其中人员身份标识符（例如 CRM ID）会被配置为 cookie/设备身份标识类型。</li><li>自定义命名空间，其中 cookie/设备身份标识符会被配置为跨设备身份标识类型。</li></ul> Adobe 工程人员会手动处理这些请求。有关详细信息，请阅读[Identity Service数据的护栏](../../identity-service/guardrails.md)以及有关[数据管理许可证权利最佳实践](../../landing/license-usage-and-guardrails/data-management-best-practices.md)的指南。 |
 
 {style="table-layout:auto"}
 
-要了解有关标识服务的更多信息，请阅读[标识服务概述](../../identity-service/home.md)。
+要了解有关身份标识服务的更多信息，请阅读[身份标识服务概述](../../identity-service/home.md)。
 
 ## 查询服务 {#query-service}
 
@@ -233,7 +233,7 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 | 功能 | 描述 |
 | --- | --- |
-| 自助源（批处理SDK）中`offset`分页的新参数 | 使用`offset`分页时，您现在可以为源指定`endConditionName`和`endConditionValue`。 利用这些参数，可指示将在下一个HTTP请求中结束分页循环的条件。 有关详细信息，请阅读自助源（批处理SDK）的[分页指南](../../sources/sources-sdk/config/sourcespec.md#pagination)。 |
+| 自助源(批处理SDK)中`offset`分页的新参数 | 使用`offset`分页时，您现在可以为源指定`endConditionName`和`endConditionValue`。 利用这些参数，可指示将在下一个HTTP请求中结束分页循环的条件。 有关详细信息，请参阅[自助源(批处理SDK)的分页指南](../../sources/sources-sdk/config/sourcespec.md#pagination)。 |
 
 {style="table-layout:auto"}
 

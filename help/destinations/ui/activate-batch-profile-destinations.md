@@ -3,10 +3,10 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: b4b185cab4defbf9559089e5152075674dab52d1
+source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
 workflow-type: tm+mt
-source-wordcount: '4387'
-ht-degree: 11%
+source-wordcount: '4374'
+ht-degree: 12%
 
 ---
 
@@ -64,7 +64,7 @@ ht-degree: 11%
 您可以从多种类型的受众中进行选择，具体取决于其来源：
 
 * **[!UICONTROL 分段服务]**：分段服务在Experience Platform中生成的受众。 有关详细信息，请参阅[分段文档](../../segmentation/ui/overview.md)。
-* **[!UICONTROL 自定义上传]**：在Experience Platform外部生成的受众，以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/audience-portal.md#import-audience)的文档。
+* **[!UICONTROL 自定义上传]**：受众在Experience Platform外部生成，并以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/audience-portal.md#import-audience)的文档。
 * 其他类型的受众，来自其他Adobe解决方案，如[!DNL Audience Manager]。
 
 ![选择要激活的一个或多个受众时显示的复选框。](../assets/ui/activate-batch-profile-destinations/select-audiences.png)
@@ -92,7 +92,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
 要同时编辑多个计划，请使用屏幕左侧的复选框选择受众，然后选择&#x200B;**[!UICONTROL 编辑计划]**。 然后，您配置的计划将被应用于选定受众的所有导出文件。
 
-![Experience Platform用户界面的图像，显示多个选定受众的“编辑计划”选项。](../assets/ui/activate-batch-profile-destinations/edit-schedule.png)
+![显示多个选定受众的“编辑计划”选项的Experience Platform用户界面的图像。](../assets/ui/activate-batch-profile-destinations/edit-schedule.png)
 
 >[!TIP]
 >
@@ -214,14 +214,14 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 | **[!UICONTROL 自定义文本]** | 要添加到文件名的任何自定义文本。 |
 | **[!UICONTROL 目标ID]** | 用于导出受众的目标数据流的ID。 |
 | **[!UICONTROL 目标名称]** | 用于导出受众的目标数据流的名称。 |
-| **[!UICONTROL 组织名称]** | Experience Platform中的组织名称。 |
+| **[!UICONTROL 组织名称]** | 您在Experience Platform中的组织名称。 |
 | **[!UICONTROL 沙盒名称]** | 用于导出受众的沙盒的ID。 |
 
 {style="table-layout:auto"}
 
 要同时编辑多个文件名，请使用屏幕左侧的复选框选择受众，然后选择&#x200B;**[!UICONTROL 编辑文件名]**。 然后，您配置的文件名选项将应用于所选受众的所有导出文件。
 
-![Experience Platform用户界面的图像，显示多个选定受众的“编辑文件名”选项。](../assets/ui/activate-batch-profile-destinations/edit-file-name.png)
+![显示多个选定受众的“编辑文件名”选项的Experience Platform用户界面的图像。](../assets/ui/activate-batch-profile-destinations/edit-file-name.png)
 
 选择&#x200B;**[!UICONTROL 应用更改]**&#x200B;以确认您的选择。
 
@@ -429,11 +429,11 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 | johndoe@example.com | D | John |
 | johndoe@example.com | Doe | John |
 
-Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）作为重复数据删除键，以确保所有配置文件记录均被唯一识别。
+Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）作为重复数据删除键，以确保所有配置文件记录都可唯一识别。
 
 ### 具有相同时间戳的用户档案的重复数据删除行为 {#deduplication-same-timestamp}
 
-将用户档案导出到基于文件的目标时，重复数据删除可确保在多个用户档案共享相同的重复数据删除键和相同的引用时间戳时，仅导出一个用户档案。 此时间戳表示个人资料的受众成员资格或身份图的上次更新时间。 有关如何更新和导出配置文件的更多信息，请参阅[配置文件导出行为](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2)文档。
+将轮廓导出到基于文件的目标时，删除重复项可确保当多个轮廓共享相同的删除重复项键和相同的参考时间戳时仅导出一个轮廓。此时间戳表示个人资料的受众成员资格或身份图的上次更新时间。 有关如何更新和导出配置文件的更多信息，请参阅[配置文件导出行为](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2)文档。
 
 #### 关键注意事项
 
@@ -464,9 +464,9 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 
 **可靠性提高**：此更新的重复数据删除流程可确保使用相同坐标的连续运行始终产生相同的结果，从而提高一致性。
 
-### 通过计算字段导出数组 {#export-arrays-calculated-fields}
+### 通过计算字段执行数据转换 {#calculated-fields}
 
-部分测试版客户可以将阵列对象从Experience Platform导出到云存储目标。 阅读有关[导出数组和计算字段](/help/destinations/ui/export-arrays-calculated-fields.md)的更多信息，并联系您的Adobe代表以获取该功能的访问权限。
+您可以使用[计算字段](/help/destinations/ui/data-transformations-calculated-fields.md)控件对导出到基于文件的目标的数据执行各种数据转换。
 
 ### 已知限制 {#known-limitations}
 
@@ -509,7 +509,7 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 > 
 >目录中的所有云存储目标都可以查看改进的[[!UICONTROL 映射]步骤](#mapping)，该步骤取代了本节中描述的&#x200B;**[!UICONTROL 选择属性]**&#x200B;步骤。
 >
->对于Adobe Campaign、OracleResponsys、OracleEloqua和SalesforceMarketing Cloud电子邮件营销目标，仍会显示此&#x200B;**[!UICONTROL 选择属性]**&#x200B;步骤。
+>对于Adobe Campaign、Oracle Responsys、Oracle Eloqua和Salesforce Marketing Cloud电子邮件营销目标，仍会显示此&#x200B;**[!UICONTROL 选择属性]**&#x200B;步骤。
 
 对于基于配置文件的目标，必须选择要发送到目标目标的配置文件属性。
 
