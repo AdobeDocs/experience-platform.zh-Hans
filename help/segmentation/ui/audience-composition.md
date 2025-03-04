@@ -3,14 +3,24 @@ solution: Experience Platform
 title: Audiences UI指南
 description: Adobe Experience Platform UI中的受众组合提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了一些直观的控件，可用于为贵组织构建和编辑受众。
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: c4064771a384a90d94903ba1761fc9ee20f47747
+source-git-commit: 758ec9de9bf3e6bb9853c9455c69e0b5ca7948d5
 workflow-type: tm+mt
-source-wordcount: '2313'
+source-wordcount: '2344'
 ht-degree: 11%
 
 ---
 
 # 受众合成UI指南
+
+>[!AVAILABILITY]
+>
+>要使用此功能，您必须具有以下权限：
+>
+>- 管理区段
+>- 管理配置文件
+>- 管理合并策略
+>
+>有关Platform内权限的详细信息，请参阅[访问控制概述](../../access-control/home.md#permissions)。
 
 >[!NOTE]
 >
