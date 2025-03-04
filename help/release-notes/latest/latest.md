@@ -2,18 +2,14 @@
 title: Adobe Experience Platform 发行说明（2025 年 2 月）
 description: Adobe Experience Platform 的 2025 年 2 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
+source-git-commit: e8c1d7d3b5cc205b9258b4fec5dc7fa68d0d3b27
 workflow-type: tm+mt
-source-wordcount: '1645'
+source-wordcount: '1628'
 ht-degree: 97%
 
 ---
 
 # Adobe Experience Platform 发行说明
-
->[!TIP]
->
->此版本包括对联合受众构成附加组件的改进。如需了解更多信息，请阅读[联合受众构成发行说明](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/release-notes)。
 
 **发行日期：2025 年 2 月 18 日**
 
@@ -23,6 +19,7 @@ Adobe Experience Platform 中现有功能和文档的更新：
 - [目录服务](#catalog-service)
 - [数据准备](#data-prep)
 - [目标](#destinations)
+- [联合受众组合](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/release-notes){target="_blank"}
 - [源](#sources)
 - [Segmentation Service](#segmentation)
 - [文档更新](#documentation-updates)
