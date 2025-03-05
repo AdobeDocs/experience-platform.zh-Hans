@@ -6,10 +6,10 @@ breadcrumb-title: Web SDK 指南
 user-guide-description: 通过边缘网络与 Experience Cloud 服务交互。
 feature: Web SDK
 role: Developer
-source-git-commit: d5bf1b207900009829454d0b7aa095a08c1e1718
+source-git-commit: bed63cb9be1ffe39a538d1c3f8be9065ffb2ca28
 workflow-type: tm+mt
-source-wordcount: '229'
-ht-degree: 23%
+source-wordcount: '239'
+ht-degree: 22%
 
 ---
 
@@ -23,6 +23,7 @@ ht-degree: 23%
    * [使用标记扩展安装Web SDK](install/extension.md)
    * [使用JavaScript库安装Web SDK](install/library.md)
    * [使用NPM包安装Web SDK](install/npm.md)
+   * [使用NPM包创建自定义Web SDK内部版本](install/create-custom-build.md)
 * 命令{#commands}
    * 配置{#configure}
       * [概述](commands/configure/overview.md)
@@ -86,7 +87,7 @@ ht-degree: 23%
          * [概述](personalization/adobe-target/analytics-logging/overview.md)
          * [客户端日志记录](personalization/adobe-target/analytics-logging/client-side.md)
          * [服务器端日志记录](personalization/adobe-target/analytics-logging/server-side.md)
-   * offer decisioning{#offer-decisioning}
+   * Offer Decisioning {#offer-decisioning}
       * [概述](personalization/offer-decisioning/offer-decisioning-overview.md)
    * Adobe Journey Optimizer {#ajo}
       * [概述](personalization/ajo/overview.md)
