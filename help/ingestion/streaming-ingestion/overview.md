@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 流式摄取概述
 description: Adobe Experience Platform的流式摄取为用户提供了一种实时将数据从客户端和服务器端设备发送到Experience Platform的方法。
 exl-id: 851f15fd-7ac5-4a9f-934d-6b907057da87
-source-git-commit: d6424e2a9afc046f4bff329797954fd43939a819
+source-git-commit: 9b2d0c8fad1ed328725129664be94cf1800f6631
 workflow-type: tm+mt
 source-wordcount: '424'
 ht-degree: 1%
@@ -43,7 +43,7 @@ Adobe Experience Platform允许您通过为每个客户生成[!DNL Real-Time Cus
 
 | 目标 | 预期延迟 |
 | --------- | ---------------- |
-| 实时客户配置文件 | &lt; 15分钟，位于第95百分位数 |
+| 实时客户轮廓 | &lt; 15分钟，位于第95百分位数 |
 | 数据湖 | &lt; 60分钟 |
 
 ## 流摄取的每秒请求(RPS)指南
@@ -53,7 +53,7 @@ Adobe Experience Platform允许您通过为每个客户生成[!DNL Real-Time Cus
 | RPS限制 | 注释 |
 | --- | --- |
 | 每秒1000个请求 | 使用`/collection/batch`终结点时，这些消息可以包含多条消息。 |
-| 每秒10000封个别邮件 | 使用`/collection/batch`端点时，可以将消息分组为更少的实际请求。 |
+| 每秒10000封个别邮件 | 使用`/collection/`端点时，可以将消息分组为更少的实际请求。 |
 
 >[!IMPORTANT]
 >
