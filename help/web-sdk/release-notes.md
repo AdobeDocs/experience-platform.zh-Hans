@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；Platform Web SDK；Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 5bf69773d0502185bbe8db3b13cb2684d6d06ac4
+source-git-commit: 8fd86a170433c4eb07a7370dbd3aa2cb3ef10922
 workflow-type: tm+mt
-source-wordcount: '2149'
+source-wordcount: '2285'
 ht-degree: 2%
 
 ---
@@ -15,6 +15,18 @@ ht-degree: 2%
 
 本文档介绍Adobe Experience Platform Web SDK的发行说明。
 有关Web SDK标记扩展的最新发行说明，请参阅[Web SDK标记扩展发行说明](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md)。
+
+## 版本2.26.0 - 2025年3月5日
+
+**新增功能**
+
+- 您现在可以使用Web SDK NPM包创建自定义Web SDK内部版本，并仅选择所需的库组件。 这可以减小库大小并优化加载时间。 请参阅有关如何使用NPM包[创建自定义Web SDK内部版本的文档](install/create-custom-build.md)。
+- [`getIdentity`](commands/getidentity.md)命令现在会自动直接从`kndctr`身份Cookie中读取ECID。 如果您使用`ECID`命名空间调用`getIdentity`，并且已存在身份Cookie，则Web SDK不再向Edge Network发出获取身份的请求。 现在，它会从Cookie中读取身份。
+
+**修复和改进**
+
+- 修复了在发送`collect`调用后`getIdentity`命令未返回标识的问题。
+- 修复了个性化重定向导致内容在重定向发生之前闪烁的问题。
 
 ## 版本2.25.0 - 2025年1月23日
 
@@ -45,8 +57,8 @@ ht-degree: 2%
 **修复和改进**
 
 - 当返回多个应用程序内消息时，只会显示具有最高优先级的消息。 其它则被记录为隐含。
-- 空的数据流覆盖不再发送到Edge Network，从而减少了与服务器端路由配置的潜在冲突。
-- 重命名了以下日志消息组件名称，以与其他AdobeSDK保持一致：
+- 空数据流覆盖不再发送到Edge Network，从而减少与服务器端路由配置的潜在冲突。
+- 重命名了以下日志消息组件名称，以与其他Adobe SDK保持一致：
    - `DecisioningEngine`已重命名为`RulesEngine`
    - `LegacyMediaAnalytics`已重命名为`MediaAnalyticsBridge`
    - `Privacy`已重命名为`Consent`
@@ -145,7 +157,7 @@ ht-degree: 2%
 
 **修复和改进**
 
-- Web SDK现在对Audience ManagerCookie目标值进行编码，类似于[Data Integration Library(DIL)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=zh-Hans)。
+- Web SDK现在对Audience Manager Cookie目标值进行编码，类似于[Data Integration Library (DIL)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=zh-Hans)。
 
 ## 版本2.16.0 - 2023年4月25日
 
@@ -178,7 +190,7 @@ ht-degree: 2%
 
 ## 版本2.13.1 - 2022年10月13日
 
-- 修复了在配置后定义window.Visitor时访客迁移不起作用的问题。 当使用Adobe标签运行时，这个问题尤为突出。
+- 修复了在配置后定义window.Visitor时访客迁移不起作用的问题。 当使用Adobe标记运行时，这个问题尤为突出。
 - 修复了在某些环境中将`device.screenWidth`和`device.screenHeight`填充为字符串的问题。
 
 ## 版本2.13.0 - 2022年9月28日
@@ -200,7 +212,7 @@ ht-degree: 2%
 
 ## 版本2.12.0 - 2022年6月29日
 
-- 将请求更改为Edge Network以使用`cluster` Cookie位置提示作为URL的一部分。 这可确保会话期间更改其位置（例如，通过VPN或带着移动设备开车等）的用户点击同一边缘并具有相同的个性化配置文件。
+- 将对Edge Network的请求更改为使用`cluster` Cookie位置提示作为URL的一部分。 这可确保会话期间更改其位置（例如，通过VPN或带着移动设备开车等）的用户点击同一边缘并具有相同的个性化配置文件。
 - 在getLibraryInfo命令响应中字符串化已配置的函数。
 
 ## 版本2.11.0 - 2022年6月13日
@@ -215,7 +227,7 @@ ht-degree: 2%
 
 - 更新了Cookie设置以在[!DNL HTTPS]页面上使用`sameSite="none"`和`secure`标记。
 - 修复了在使用`eq`伪选择器时个性化内容未正确应用的问题。
-- 修复了`localTimezoneOffset`无法通过Experience Platform验证的问题。
+- 修复了`localTimezoneOffset`可能无法通过Experience Platform验证的问题。
 
 ## 版本2.10.1 - 2022年5月3日
 
@@ -232,7 +244,7 @@ ht-degree: 2%
 - 优化了单页应用程序的查看 — 更改事件。 现在，在呈现个性化体验时，显示通知包含在查看 — 更改事件中。
 - 已移除不存在`eventType`时的控制台警告。
 - 修复了在缓存中请求或检索体验时仅从`sendEvent`命令返回`propositions`属性的问题。 `propositions`属性现在将始终定义为数组。
-- 修复了从Edge Network返回错误时未显示隐藏容器的问题。
+- 修复了从Edge Network返回错误时，未显示隐藏容器的问题。
 - 修复了Adobe Target中未计算interact事件的问题。 通过将视图名称添加到XDM的web.webPageDetails.viewName中修复了此问题。
 - 修复控制台消息中损坏的文档链接。
 
@@ -240,15 +252,15 @@ ht-degree: 2%
 
 - 支持个性化的影子DOM选择器。
 - 重命名了个性化事件类型。 （`display`和`click`成为`decisioning.propositionDisplay`和`decisioning.propositionInteract`）
-- 修复了具有内联脚本标记的HTML选件将脚本标记两次添加到页面的问题，即使脚本仅运行一次。
+- 修复了以下问题：带有内联脚本标记的HTML选件将脚本标记两次添加到页面中，即使脚本只运行一次。
 
 ## 版本 2.7.0 - 2021 年 10 月 26 日
 
-- 在来自`sendEvent`的返回值中公开来自Edge Network的其他信息，包括`inferences`和`destinations`。 由于这些功能当前正在作为Beta的一部分推出，因此这些属性的格式可能会发生更改。
+- 在`sendEvent`的返回值中公开来自Edge Network的其他信息，包括`inferences`和`destinations`。 由于这些功能当前正在作为Beta的一部分推出，因此这些属性的格式可能会发生更改。
 
 ## 版本2.6.4 - 2021年9月7日
 
-- 修复了应用于`head`元素的设置HTMLAdobe Target操作将替换整个`head`内容的问题。 现在，将应用于`head`元素的HTML操作更改为附加HTML。
+- 修复了应用于`head`元素的设置HTML Adobe Target操作将替换整个`head`内容的问题。 现在，将应用于`head`元素的HTML操作更改为附加HTML。
 
 ## 版本2.6.3 - 2021年8月16日
 
@@ -281,8 +293,8 @@ ht-degree: 2%
 - 在发送有关正在呈现或单击的个性化内容的事件时，现在使用XDM架构字段组而不是`meta.personalization`。
 - [`getIdentity`](/help/web-sdk/commands/getidentity.md)命令现在会随身份一起返回边缘区域ID。
 - 从服务器收到的警告和错误已得到改进，并以更合适的方式进行处理。
-- 为[`setConsent`](/help/web-sdk/commands/setconsent.md)命令添加了对AdobeConsent 2.0标准的支持。
-- 收到同意首选项后，将对该首选项进行哈希处理并将其存储在本地存储中，以实现CMP、Platform Web SDK和PlatformEdge Network之间的优化集成。 如果您正在收集同意首选项，我们现在鼓励您在每次加载页面时调用`setConsent`。
+- 为[`setConsent`](/help/web-sdk/commands/setconsent.md)命令添加了对Adobe Consent 2.0标准的支持。
+- 收到同意首选项后，将对首选项进行哈希处理并将其存储在本地存储中，以实现CMP、Platform Web SDK和Platform Edge Network之间的优化集成。 如果您正在收集同意首选项，我们现在鼓励您在每次加载页面时调用`setConsent`。
 - 已添加两个[监视挂接](https://github.com/adobe/alloy/wiki/Monitoring-Hooks)、`onCommandResolved`和`onCommandRejected`。
 - 错误修复：当用户导航到新的单页应用程序视图、返回原始视图并单击符合转化条件的元素时，Personalization交互通知事件将包含有关相同活动的重复信息。
 - 错误修复：如果SDK发送的第一个事件将`documentUnloading`设置为`true`，则将使用[`sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon)发送该事件，从而导致有关未建立标识的错误。
@@ -295,7 +307,7 @@ ht-degree: 2%
 - 错误修复： `documentUnloading`设置为`true`或自动跟踪链接点击时，未使用`sendBeacon`。
 - 错误修复：如果锚点元素包含HTML内容，则不会自动跟踪链接。
 - 错误修复：某些包含只读`message`属性的浏览器错误未得到适当处理，从而导致向客户公开其他错误。
-- 错误修复：如果iframe的HTML页面来自与父窗口的HTML页面不同的子域，则在iframe中运行SDK会导致错误。
+- 错误修复：如果iframe的SDK页面来自与父窗口的HTML页面不同的子域，则在iframe中运行HTML会导致错误。
 
 ## 版本2.2.0 - 2020年10月
 

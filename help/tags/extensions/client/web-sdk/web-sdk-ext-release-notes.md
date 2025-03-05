@@ -2,16 +2,29 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 5bf69773d0502185bbe8db3b13cb2684d6d06ac4
+source-git-commit: 8fd86a170433c4eb07a7370dbd3aa2cb3ef10922
 workflow-type: tm+mt
-source-wordcount: '2413'
-ht-degree: 27%
+source-wordcount: '2580'
+ht-degree: 25%
 
 ---
 
 # Adobe Experience Platform Web SDK扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[Platform Web SDK发行说明](/help/web-sdk/release-notes.md)。
+
+## 版本2.29.0 - 2025年3月5日
+
+**新增功能**
+
+- 您现在可以创建自定义Web SDK内部版本，并从标记扩展用户界面中选择所需的组件。 通过排除未使用的组件，这可能会导致生成更小的版本。 请参阅有关[创建自定义Web SDK内部版本](web-sdk-extension-configuration.md#custom-build)的文档。
+- 包含Adobe Experience Platform Web SDK的[版本2.26.0](../../../../web-sdk/release-notes.md#2-26-0)。
+
+**修复和改进**
+
+- 在[更新变量](action-types.md#update-variable)操作中添加了对缺少的数据元素的正常处理。 以前，编辑缺少数据元素的更新变量操作会显示错误消息。 现在，您可以选择其他数据元素，并且更新变量操作的所有设置仍会应用。 如果删除数据元素或复制Tags属性，则可能缺少数据元素。
+- 添加了对使用[带有标识](action-types.md#redirect-with-identity)的重定向操作打开新选项卡的支持。 现在，使用操作时，在重定向浏览器时使用锚点标记的`target`属性。
+- 修复了在配置覆盖中无法禁用Adobe Audience Manager的问题。
 
 ## 版本2.28.0 - 2025年1月23日
 
@@ -201,7 +214,7 @@ ht-degree: 27%
 
 ## 版本2.14.1 - 2022年10月13日
 
-- 修复了Web SDK不执行来自Experience CloudID服务的ID的问题。
+- 修复了Web SDK不接受来自Experience Cloud ID服务的ID的问题。
 
 包含Adobe Experience Platform Web SDK库的版本2.13.1。
 
@@ -260,7 +273,7 @@ ht-degree: 27%
 
 包含 Adobe Experience Platform Web SDK 库的版本 2.7.0。
 
-- 发送事件完成事件中提供了该Edge Network的其他信息，包括`inferences`和`destinations`。 由于这些功能当前正在作为Beta的一部分推出，因此这些属性的格式可能会发生更改。
+- 发送事件完成事件中提供了来自Edge Network的其他信息，包括`inferences`和`destinations`。 由于这些功能当前正在作为Beta的一部分推出，因此这些属性的格式可能会发生更改。
 
 ## 版本2.7.3 - 2021年9月7日
 
@@ -310,7 +323,7 @@ ht-degree: 27%
 - 添加了[“文档卸载”](/help/web-sdk/commands/sendevent/documentunloading.md)复选框以发送事件操作UI。
 - 在[配置默认同意](/help/web-sdk/commands/configure/defaultconsent.md)时添加了对`out`选项的支持，该默认同意会丢弃所有事件直到收到同意为止（现有`pending`选项将事件排入队列，并在收到同意后发送这些事件）。
 - 向默认同意字段添加了工具提示。
-- 添加了对使用[`setConsent`](/help/web-sdk/commands/setconsent.md)命令时的AdobeConsent 2.0标准的支持。
+- 添加了对使用[`setConsent`](/help/web-sdk/commands/setconsent.md)命令时Adobe的Consent 2.0标准的支持。
 - 如果用户的访问令牌无效或配置不正确，则XDM对象数据元素UI中现在会显示更好的错误。
 - 修复了在查看XDM对象数据元素时浏览器开发人员控制台上显示的跨源错误（不会影响扩展的操作）。
 
