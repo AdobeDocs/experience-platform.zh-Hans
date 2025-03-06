@@ -2,9 +2,9 @@
 title: 受众常见问题解答
 description: 了解有关受众的常见问题解答以及其他与分段相关的概念。
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
+source-git-commit: 16ffdd0e28687c04b4b8a2b33f10ddceea9ec03a
 workflow-type: tm+mt
-source-wordcount: '4830'
+source-wordcount: '4832'
 ht-degree: 2%
 
 ---
@@ -83,7 +83,7 @@ Audience Portal和Audience Composition可供所有Real-Time CDP Prime和Ultimate
 
 ### 可在何处激活外部生成的受众？
 
-外部生成的受众可以映射到任何目标，并且可以在Adobe Journey Optimizer营销活动中使用。
+外部生成的受众可以映射到任何目标，并且可以在Adobe Journey Optimizer营销活动和历程中使用。
 
 ### 我是否可以删除外部生成的受众？
 
