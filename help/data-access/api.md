@@ -2,9 +2,9 @@
 keywords: Experience Platform；主页；热门主题；数据访问；python sdk；spark sdk；数据访问api；导出；导出
 solution: Experience Platform
 title: Data Access API指南
-description: 数据访问API通过为开发人员提供RESTful接口来支持Adobe Experience Platform，该接口侧重于在Experience Platform内摄取的数据集的可发现性和可访问性。
+description: 数据访问API通过为开发人员提供RESTful接口来支持Adobe Experience Platform，该接口侧重于在Experience Platform中摄取的数据集的可发现性和可访问性。
 exl-id: 278ec322-dafa-4e3f-ae45-2d20459c5653
-source-git-commit: 804eeb4ec976cf41fdd450bd8f307499c3ebae03
+source-git-commit: 78dbb735bad70e2115cbbaabb6cf74bf38983460
 workflow-type: tm+mt
 source-wordcount: '566'
 ht-degree: 4%
@@ -19,7 +19,7 @@ ht-degree: 4%
 
 数据访问API通过向用户提供侧重于在[!DNL Experience Platform]内摄取的数据集的可发现性和可访问性的RESTful接口来支持Adobe Experience Platform。
 
-![数据访问如何促进Experience Platform内摄取的数据集的可发现性和可访问性的图表。](images/Data_Access_Experience_Platform.png)
+![数据访问如何促进Experience Platform中已摄取数据集的可发现性和可访问性的图表。](images/Data_Access_Experience_Platform.png)
 
 ## API规范参考
 
@@ -154,7 +154,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID} \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `data.name` | 文件的名称（例如，`profiles.csv`）。 |
+| `data.name` | 文件的名称（例如，`profiles.parquet`）。 |
 | `data.length` | 文件的大小（以字节为单位）。 |
 | `data._links.self.href` | 用于下载文件的URL。 |
 
@@ -201,7 +201,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID} \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `data.name` | 文件的名称（例如，`profiles.csv`）。 |
+| `data.name` | 文件的名称（例如，`profiles.parquet`）。 |
 | `data._links.self.href` | 用于下载文件的URL。 |
 
 ## 访问文件的内容 {#access-file-contents}
@@ -231,7 +231,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?pat
 | 属性 | 描述 |
 | -------- | ----------- |
 | `{FILE_ID}` | 数据集内文件的ID。 |
-| `{FILE_NAME}` | 文件的全名（例如，`profiles.csv`）。 |
+| `{FILE_NAME}` | 文件的全名（例如，`profiles.parquet`）。 |
 
 **响应**
 
