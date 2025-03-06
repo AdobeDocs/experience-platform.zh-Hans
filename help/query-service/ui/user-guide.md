@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询编辑器UI指南
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发以及非交互式查询，以填充Experience Platform中的数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: e1ecdb5d701093d9c73b6a05dad9a4dd848e0083
+source-git-commit: ae189e2f6d303043e32e6ca658161bcdf4c28dc6
 workflow-type: tm+mt
-source-wordcount: '2745'
+source-wordcount: '2682'
 ht-degree: 0%
 
 ---
@@ -192,12 +192,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 >
 >日志不会保存未执行的查询。 为了使查询在查询服务中可用，必须在查询编辑器中运行或保存查询。
 
-### [!BADGE 有限可用性]{type=Informative}对象浏览器 {#object-browser}
-
->[!AVAILABILITY]
->
-数据集导航边栏仅适用于Data Distiller客户。 您的Platform UI可能不包含左侧数据集导航边栏。 此文档中的其他图像可能无法反映数据集导航边栏。 有关更多信息，请与Adobe代表联系。<br>
-对象浏览器当前仅在**有限版本**&#x200B;中可用。 请联系您的Adobe代表以提前获取发布访问权限。
+### 对象浏览器 {#object-browser}
 
 使用对象浏览器可轻松搜索和筛选数据集。 对象浏览器减少了在具有大量数据集的大型环境中搜索表和数据集所花费的时间。 通过简化对相关数据和元数据的访问，您可以将更多精力放在查询创作上，而较少精力放在导航上。
 
@@ -221,7 +216,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 #### 浏览子表
 
-要浏览子表或链接表，请选择列表中表名旁边的下拉箭头。 这将展开该表以显示任何关联的子表，并提供数据结构的清晰视图，并允许进行更复杂的查询构建。 字段名称旁边的图标表示列的数据类型， to 帮助您在复杂查询期间识别它。
+要浏览子表或链接表，请选择列表中表名旁边的下拉箭头。 这将展开该表以显示任何关联的子表，并提供数据结构的清晰视图，并允许进行更复杂的查询构建。 字段名称旁边的图标表示列的数据类型，可帮助您在复杂查询期间识别它。
 
 ![显示筛选表列表的查询编辑器。](../images/ui/query-editor/child-table-list.png)
 
@@ -237,7 +232,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 >[!NOTE]
 >
-控制台仅显示执行查询导致的错误。 它不显示查询执行前发生的查询验证错误。
+>控制台仅显示执行查询导致的错误。 它不显示查询执行前发生的查询验证错误。
 
 ### 查询结果 {#query-results}
 
@@ -257,7 +252,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 >[!NOTE]
 >
-视频中描述的UI已过时，但在工作流中使用的逻辑保持不变。
+>视频中描述的UI已过时，但在工作流中使用的逻辑保持不变。
 
 >[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)
 

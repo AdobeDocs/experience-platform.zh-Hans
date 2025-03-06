@@ -2,9 +2,9 @@
 title: 查询时间表
 description: 了解如何自动运行计划的查询、删除或禁用查询计划，以及通过Adobe Experience Platform UI利用可用的计划选项。
 exl-id: 984d5ddd-16e8-4a86-80e4-40f51f37a975
-source-git-commit: c0d2f4b4f8e294d5a7b0a519ab9dad8b78558b26
+source-git-commit: db0ba3bb32b5458ab3a32525c3c63939fe804ab4
 workflow-type: tm+mt
-source-wordcount: '2066'
+source-wordcount: '2027'
 ht-degree: 0%
 
 ---
@@ -119,10 +119,6 @@ ht-degree: 0%
 
 ### 为计划的参数化查询设置参数 {#set-parameters}
 
->[!IMPORTANT]
->
->参数化查询UI功能当前仅在&#x200B;**有限版本**&#x200B;中可用，并且不是所有客户都可用。 如果您无权访问参数化查询，请继续执行[删除或禁用计划](#delete-schedule)部分。
-
 如果要为参数化查询创建计划查询，现在必须为这些查询运行设置参数值。
 
 ![计划创建工作流的“计划详细信息”部分，其中突出显示了查询参数部分。](../images/ui/query-schedules/scheduled-query-parameter.png)
@@ -147,7 +143,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->计算小时数功能专用于已购买[Data Distiller SKU](../data-distiller/overview.md)的用户。 有关更多信息，请与您的Adobe代表联系。
+>计算小时数功能专用于已购买[Data Distiller SKU](../data-distiller/overview.md)的用户。 有关更多信息，请与Adobe代表联系。
 
 ![计划查询工作区的详细信息部分，其中包含为计划查询突出显示的查询运行列表。](../images/ui/query-schedules/list-of-scheduled-runs.png)
 

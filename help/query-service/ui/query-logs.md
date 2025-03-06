@@ -2,18 +2,14 @@
 title: 查询日志
 description: 每次执行查询时都会自动生成查询日志，可以通过UI帮助进行疑难解答。 本文档概述了如何使用及导航UI的“查询服务日志”部分。
 exl-id: 929e9fba-a9ba-4bf9-a363-ca8657a84f75
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: db0ba3bb32b5458ab3a32525c3c63939fe804ab4
 workflow-type: tm+mt
-source-wordcount: '1012'
+source-wordcount: '948'
 ht-degree: 0%
 
 ---
 
 # 查询日志
-
->[!IMPORTANT]
->
->某些查询日志功能当前为有限版本，并非对所有客户都可用。 在没有编辑图标的情况下，您的UI可能会以略有不同的方式显示。 此外，选择查询名称的过程可能会导航到查询编辑器，而不是[!UICONTROL 查询日志详细信息]视图。
 
 Adobe Experience Platform维护通过API和UI发生的所有查询事件的日志。 此信息可在[!UICONTROL 日志]选项卡的查询服务UI中获取。
 
@@ -52,10 +48,6 @@ Adobe Experience Platform维护通过API和UI发生的所有查询事件的日�
 >[!UICONTROL 以CTAS运行]的选项仅适用于SELECT查询。
 
 ![查询日志工作区中选定一行，运行为CTAS，删除查询并突出显示复制SQL图标。](../images/ui/query-log/edit-output-dataset.png)
-
->[!IMPORTANT]
->
->某些查询日志功能当前为有限版本，并非对所有客户都可用。
 
 您还可以从[!UICONTROL 名称]列中选择查询模板名称，以直接导航到[!UICONTROL 查询日志详细信息]视图。
 

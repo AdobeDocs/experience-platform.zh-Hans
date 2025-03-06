@@ -4,10 +4,10 @@ title: 许可证使用情况仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 7605ccef8553fc775ea5496c73971f92ed4c06ab
+source-git-commit: 1c31ef58eec727638cab28202afc762da0e226a2
 workflow-type: tm+mt
-source-wordcount: '2947'
-ht-degree: 18%
+source-wordcount: '3125'
+ht-degree: 22%
 
 ---
 
@@ -32,40 +32,75 @@ ht-degree: 18%
 >id="platform_dashboards_licenseUsage"
 >title="许可证用量仪表板"
 >abstract="通过许可证用量仪表板，可了解已购买的 Adobe Experience Platform 产品。该仪表板概述显示产品的主要量度，包括您对每个主要量度的用量以及您的合同许可证数量。详细信息工作区显示特定沙盒中每个产品的量度细分。"
->additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
->additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/profile/pseudonymous-profiles" text="假名轮廓数据过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html#" text="自动数据集过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_licenseusage"
 >title="许可证用量仪表板"
 >abstract="通过许可证用量仪表板，可了解已购买的 Adobe Experience Platform 产品。该仪表板概述显示产品的主要量度，包括您对每个主要量度的用量以及您的合同许可证数量。详细信息工作区显示特定沙盒中每个产品的量度细分。"
->additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
->additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/profile/pseudonymous-profiles" text="假名轮廓数据过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html#" text="自动数据集过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_computehours"
 >title="预测计算小时数"
 >abstract="您的使用量可能已达到已授予许可量。要评估或减少您的计算小时数，请导航至查询>日志以查看您的查询历史记录。如果您无权访问查询工作区，请联系您的管理员。"
->additional-url="https://experience.adobe.com/#/platform/query/log" text="查询日志工作区"
+>additional-url="https://experience.adobe.com/#/platform/query/log.html" text="查询日志工作区"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_addressableaudience"
 >title="预测的可寻址受众"
 >abstract="您的使用量可能已达到已授予许可量。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
->additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/profile/event-expirations" text="体验事件过期"
->additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/profile/pseudonymous-profiles" text="假名轮廓数据过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_predictedusage_engageableprofiles"
+>title="预测的可参与用户档案"
+>abstract="您的使用量可能已达到已授予许可量。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_predictedusage_businesspersonprofile"
+>title="预测的商业人员个人资料"
+>abstract="您的使用量可能已达到已授予许可量。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_predictedusage_corehours"
+>title="预测的核心小时数"
+>abstract="您的使用量可能已达到已授予许可量。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_predictedusage_totaldatavolume"
+>title="预测的总数据量"
+>abstract="您的使用量可能已达到已授予许可量。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_predictedusage_cjaRowsAvailable"
+>title="可用预测的CJA行"
+>abstract="您的使用量可能已达到已授予许可量。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
 
 您可以通过Adobe Experience Platform [!UICONTROL 许可证使用情况]仪表板查看有关贵组织许可证使用情况的重要信息。 此处显示的信息是在Platform实例的每日快照期间捕获的。
 
-许可证使用情况报表可提供比许可证使用情况量度更高级别的粒度。 仪表板提供每个购买的产品（及相关插件）的使用量度、所有生产或开发沙盒中量度的综合使用量度，以及特定沙盒的使用量度。 可以使用使用情况量度跟踪以下Experience Platform应用程序：Real-time Customer Data Platform、Adobe Journey Optimizer和Customer Journey Analytics。
+许可证使用情况报表可提供比许可证使用情况量度更高级别的粒度。 仪表板提供每个购买的产品（及相关插件）的使用量度、所有生产或开发沙盒中量度的综合使用量度，以及特定沙盒的使用量度。 可以使用使用情况量度跟踪以下Experience Platform应用程序：Real-Time Customer Data Platform、Adobe Journey Optimizer和Customer Journey Analytics。
 
 本指南概述如何在UI中访问和使用许可证使用情况仪表板，并提供有关仪表板中显示的可视化的更多信息。
 
-有关Platform UI的一般概述，请参阅[Experience PlatformUI指南](../../landing/ui-guide.md)。
+有关Platform UI的一般概述，请参阅[Experience Platform UI指南](../../landing/ui-guide.md)。
 
 ## [!UICONTROL 许可证使用情况]仪表板数据
 
-[!UICONTROL 许可证使用情况]仪表板显示您已购买的所有Experience Platform产品以及这些产品的任何加载项的列表。 在此功能板中，您可以找到组织的许可证相关数据的快照，以便Experience Platform任何关联的沙盒。
+[!UICONTROL 许可证使用情况]仪表板显示您已购买的所有Experience Platform产品以及这些产品的任何加载项的列表。 在此功能板中，您可以找到贵组织在任何关联沙盒中用于Experience Platform的许可证相关数据的快照。
 
 此仪表板中的数据与拍摄快照的特定时间点完全相同。 换句话说，快照不是数据的近似值或样本，并且仪表板没有实时更新。
 
@@ -112,15 +147,15 @@ ht-degree: 18%
 >id="platform_dashboards_licenseUsage_prediction"
 >title="预测使用量"
 >abstract="预测基于过去 6-7 个月的使用情况，并在每个月的 15 日生成。请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解您组织的实际使用情况，并确保使用不超出您与 Adobe 的许可证范围。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
->additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
->additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/profile/pseudonymous-profiles" text="假名轮廓数据过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html#" text="自动数据集过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_licenseusage_prediction"
 >title="预测使用量"
 >abstract="预测基于过去 6-7 个月的使用情况，并在每个月的 15 日生成。请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解您组织的实际使用情况，并确保使用不超出您与 Adobe 的许可证范围。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
->additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="自动数据集过期"
->additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/profile/pseudonymous-profiles" text="假名轮廓数据过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html#" text="自动数据集过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
 
 根据深入的使用预测主动管理和优化您的许可资源。 [!UICONTROL 预测的使用量]列可以准确地预测您购买的所有产品在所有生产和开发沙盒中沙盒级别的未来许可证使用量。 此警报功能会根据您截至本日历月15日的使用情况，预测未来六周内的许可证使用情况。 预测提供有下限和上限。
 
@@ -136,7 +171,7 @@ ht-degree: 18%
 
 >[!NOTE]
 >
->请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解贵组织的实际使用情况，并确保使用情况不会超出贵组织许可的Adobe范围。
+>请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解贵组织的实际使用情况，并确保使用情况不会超出贵组织获得Adobe许可证的范围。
 
 ![预测使用列突出显示的平台产品的摘要视图。](../images/license-usage/summary-predicted-usage.png)
 
@@ -226,16 +261,16 @@ ht-degree: 18%
 | [!UICONTROL 可寻址受众] | 您的业务受众权利和消费者受众权利的总和。 消费者受众定义为销售订单上标识为“消费者受众”的人员配置文件数。 业务受众定义为销售订单上标识为“业务受众”的业务人员个人资料数。 |
 | [!UICONTROL 临时查询服务用户包] | 一个附加功能，用于将您的授权并发查询服务用户权利增加5个额外的并发查询服务用户，每个包另加1个并发运行即席查询。 可以许可多个其他Ad Hoc Query用户包。 |
 | [!UICONTROL 平均配置文件丰富度] | **已弃用** — 在任何时间点存储在中心配置文件服务中的所有生产数据的总和除以授权的业务人员配置文件数量的五倍。 [!UICONTROL 平均配置文件丰富度]是共享功能。 |
-| [!UICONTROL 可用的CJA行] | 可用于在Customer Journey Analytics中分析的每日平均数据行数。 |
+| [!UICONTROL CJA行可用] | 可用于在Customer Journey Analytics中分析的每日平均数据行数。 |
 | [!UICONTROL 计算属性] | 汇总的配置文件行为数据的总数。 汇总的个人资料行为数据基于转换为个人资料属性的体验事件，并可包含在人员个人资料或商业人员个人资料中。 |
 | [!UICONTROL 使用者受众] | 销售订单上标识为“消费者受众”的人员配置文件数。 |
 | [!UICONTROL 数据导出大小] | 一年中通过数据集激活发送的数据量。 |
-| [!UICONTROL 数据导出] | 可在一年内（直接或间接）导出到任何非Adobe解决方案的数据集总大小。 |
+| [!UICONTROL 数据导出] | 一年中可以（直接或间接地）导出到任何非Adobe解决方案的数据集总大小。 |
 | [!UICONTROL 数据湖存储] | Adobe Experience Platform中分析数据存储所使用的数量。 |
 | [!UICONTROL 可参与受众] | 此量度是指可参与用户档案的受众。 可启用的用户档案是代表个人的信息记录，并在用户档案服务中显示。 这些记录是您在过去12个月内尝试使用Journey Optimizer的创作、决策、交付、实验或编排功能接触的用户档案。 |
 | [!UICONTROL 相似受众] | 通过模拟现有消费者受众以标识与现有消费者受众类似的人员配置文件而生成的受众计数。 |
-| [!UICONTROL AMM模型数] | 机器学习模型(内置Adobe Mix Modeler)的计数，用于根据您的投资测量和/或预测指定的结果。 |
-| [!UICONTROL 沙盒数] | 访问Adobe Experience Platform隔离数据和操作的任何Adobe按需服务的实例中的逻辑分隔计数。 |
+| [!UICONTROL AMM模型数] | 机器学习模型(在Adobe Mix Modeler中构建)的计数，用于根据您的投资测量和/或预测指定的结果。 |
+| [!UICONTROL 沙盒数] | 访问Adobe隔离数据和操作的任何Adobe Experience Platform On-demand Service实例中的逻辑分隔计数。 |
 | [!UICONTROL 包的配置文件丰富度] | 每个额外配置文件丰富度包的授权总数据量增加25 KB。 |
 | [!UICONTROL 查询服务计算小时数] | 测量在执行批量查询时，查询服务引擎读取、处理数据并将其写回数据湖所花费的时间。 |
 | [!UICONTROL 流式分段数（包）] | 当新数据通过流流进入分段服务时，包将更新人员配置文件的区段成员资格。 评估区段成员资格时，将基于当前人员配置文件属性和当前事件的值，而不考虑历史行为。 流式分段是一项共享功能。 |
@@ -252,9 +287,9 @@ ht-degree: 18%
 | 许可证 | 产品描述 |
 | --- | --- |
 | <ul><li>Adobe Experience Platform：OD LITE</li><li>Adobe Experience Platform：OD STANDARD</li><li>Adobe Experience Platform：OD粗</li></ul> | [Adobe Experience Platform](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform.html) |
-| <ul><li>Adobe Experience Platform：OD</li></ul> | [Experience Platform、应用服务和智能服务](https://helpx.adobe.com/legal/product-descriptions/exp-platform-app-svcs.html) |
-| <ul><li>RT CUSTOMER DATA PLATFORM：OD</li><li>RT客户数据平台：OD PRFL到10M</li><li>RT客户数据平台：OD PRFL到50M</li></ul> | [Adobe Real-time Customer Data Platform](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) |
-| <ul><li>AEP：OD激活</li><li>AEP：OD激活PRFL至10M</li><li>AEP：OD激活PRFL，最长50米</li></ul> | [Adobe Experience Platform激活](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform0.html) |
+| <ul><li>Adobe Experience Platform：OD</li></ul> | [Experience Platform、应用程序服务和智能服务](https://helpx.adobe.com/legal/product-descriptions/exp-platform-app-svcs.html) |
+| <ul><li>RT CUSTOMER DATA PLATFORM：OD</li><li>RT客户数据平台：OD PRFL到10M</li><li>RT客户数据平台：OD PRFL到50M</li></ul> | [Adobe Real-Time Customer Data Platform](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) |
+| <ul><li>AEP：OD激活</li><li>AEP：OD激活PRFL至10M</li><li>AEP：OD激活PRFL，最长可达50M</li></ul> | [Adobe Experience Platform激活](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform0.html) |
 | <ul><li>AEP：OD INTELLIGENCE</li></ul> | [Adobe Experience Platform Intelligence](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform-intelligence---product-description.html) |
 | <ul><li>Journey Optimizer SELECT：OD</li><li>Journey Optimizer PRIME：OD</li><li>Journey Optimizer ULTIMATE：OD</li><li>UNP AJO PRIME STARTER：OD</li><li>UNP AJO ULTIMATE STARTER：OD</li><li>UNP Real-Time CDP：OD配置文件编排</li></ul> | [Adobe Journey Optimizer](https://helpx.adobe.com/cn/legal/product-descriptions/adobe-journey-optimizer.html) |
 
@@ -266,4 +301,4 @@ ht-degree: 18%
 
 阅读本文档后，您可以找到许可证使用情况仪表板，并查看每个已购产品、所有生产或开发沙盒以及特定沙盒的使用量度。 您可以根据贵组织购买的许可协议，查找有关贵组织可用量度的更多信息。
 
-要了解有关Experience PlatformUI中其他可用功能的更多信息，请参阅[平台UI指南](../../landing/ui-guide.md)。
+要了解有关Experience Platform UI中其他可用功能的更多信息，请参阅[平台UI指南](../../landing/ui-guide.md)。

@@ -3,9 +3,9 @@ keywords: Experience Platform；查询；查询服务；故障排除；护栏；
 title: 查询服务的护栏
 description: 本文档提供有关查询服务数据使用限制的信息，以帮助您优化查询使用。
 exl-id: 1ad5dcf4-d048-49ff-97e3-07040392b65b
-source-git-commit: 5d6b70e397a252e037589c3200053ebcb7eb8291
+source-git-commit: 23c7a4590b365a49edb066567b6ebe2ac08c67e8
 workflow-type: tm+mt
-source-wordcount: '1181'
+source-wordcount: '1168'
 ht-degree: 2%
 
 ---
@@ -27,15 +27,13 @@ ht-degree: 2%
 
 * **批处理查询**：用于执行`INSERT TABLE AS SELECT`和`CREATE TABLE AS SELECT`查询以清理、形状、操作和扩充数据。 这些查询的结果&#x200B;**存储在数据湖中**。 用于测量此功能消耗的量度是计算小时数。
 
-* **查询服务用户**：在您当前许可证中为Customer Journey Analytics、Adobe Real-time Customer Data Platform和/或Adobe Journey Optimizer提供的查询服务用户也可以与Data Distiller一起使用。 查询服务用户在功能之间共享。
+* **查询服务用户**：在您当前许可证内提供的Customer Journey Analytics、Adobe Real-Time Customer Data Platform和/或Adobe Journey Optimizer的查询服务用户也可以与Data Distiller一起使用。 查询服务用户在功能之间共享。
 
 * **临时用户**：临时用户是执行临时查询的用户。
 
 * **批处理用户**：批处理用户是执行批处理查询的用户。
 
 * **报表API**：用于执行数据提取调用（内部或外部）的API。 扩展报表数据模型源自Adobe Experience Platform中的本机报表数据模型，如Real-Time CDP功能板数据模型。
-
-下图总结了查询服务功能当前打包和许可的方式：
 
 ## 护栏类型
 
@@ -105,6 +103,6 @@ ht-degree: 2%
 
 * [Real-Time CDP护栏](/help/rtcdp/guardrails/overview.md)
 * [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams)。
-* [Real-time Customer Data Platform （B2C版本 — Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform （B2P — 主包和最终包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform （B2B — 主包和最终包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2C版本 — Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
