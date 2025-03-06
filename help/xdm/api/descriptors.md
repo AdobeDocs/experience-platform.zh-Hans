@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform；主页；热门主题；API；API；XDM；XDM系统；体验数据模型；体验数据模型；数据模型；架构注册表；架构注册表；描述符；描述符；描述符；身份；身份；友好名称；友好名称；alternatedisplayinfo；引用；引用；关系；关系
+keywords: Experience Platform；主页；热门主题；API；API；XDM；XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；架构注册表；架构注册表；描述符；描述符；描述符；身份；身份；友好名称；友好名称；alternatedisplayinfo；引用；引用；关系；关系
 solution: Experience Platform
 title: 描述符API端点
 description: 架构注册API中的/descriptors端点允许您以编程方式管理体验应用程序中的XDM描述符。
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: 866e00459c66ea4678cd98d119a7451fd8e78253
+source-git-commit: d6015125e3e29bdd6a6c505b5f5ad555bd17a0e0
 workflow-type: tm+mt
-source-wordcount: '1920'
+source-wordcount: '2192'
 ht-degree: 1%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 1%
 
 ## 快速入门
 
-本指南中使用的终结点是[[!DNL Schema Registry] API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/)的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+本指南中使用的终结点是[[!DNL Schema Registry] API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/)的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience Platform API所需的所需标头的重要信息。
 
 ## 检索描述符列表 {#list}
 
@@ -139,7 +139,7 @@ curl -X GET \
 
 ## 创建描述符 {#create}
 
-您可以通过向`/tenant/descriptors`端点发出POST请求来创建新的描述符。
+您可以通过向`/tenant/descriptors`端点发出POST请求来创建新描述符。
 
 >[!IMPORTANT]
 >
@@ -364,12 +364,12 @@ curl -X DELETE \
 | `xdm:sourceProperty` | 要修改其详细信息的特定属性的路径。 路径应以斜杠(`/`)开头，而不是以斜杠结尾。 不要在路径中包含`properties`（例如，使用`/personalEmail/address`而不是`/properties/personalEmail/properties/address`）。 |
 | `xdm:title` | 您希望为此字段显示的新标题，以字首大写字母表示。 |
 | `xdm:description` | 可以在标题中添加可选描述。 |
-| `meta:enum` | 如果`xdm:sourceProperty`指示的字段为字符串字段，则可以使用`meta:enum`在分段UI中为字段添加建议值。 需要注意的是，`meta:enum`不会为XDM字段声明枚举或提供任何数据验证。<br><br>这只能用于Adobe定义的核心XDM字段。 如果源属性是由贵组织定义的自定义字段，则应直接通过对该字段父资源的PATCH请求编辑该字段的`meta:enum`属性。 |
+| `meta:enum` | 如果`xdm:sourceProperty`指示的字段为字符串字段，则可以使用`meta:enum`在分段UI中为字段添加建议值。 需要注意的是，`meta:enum`不会为XDM字段声明枚举或提供任何数据验证。<br><br>这只能用于Adobe定义的核心XDM字段。 如果源属性是您的组织定义的自定义字段，您应该直接通过PATCH请求编辑该字段的`meta:enum`属性，该请求是该字段的父资源。 |
 | `meta:excludeMetaEnum` | 如果由`xdm:sourceProperty`指示的字段是一个字符串字段，该字段具有在`meta:enum`字段下提供的现有建议值，则可以在友好名称描述符中包含此对象，以从分段中排除这些值的部分或全部。 每个条目的键和值必须与字段的原始`meta:enum`中包含的键和值匹配，才能排除该条目。 |
 
 {style="table-layout:auto"}
 
-#### 关系描述符
+#### 关系描述符 {#relationship-descriptor}
 
 关系描述符描述两个不同架构之间的关系，它们以`sourceProperty`和`destinationProperty`中描述的属性作为密钥。 有关详细信息，请参阅有关[定义两个架构](../tutorials/relationship-api.md)之间关系的教程。
 
@@ -389,13 +389,49 @@ curl -X DELETE \
 
 | 属性 | 描述 |
 | --- | --- |
-| `@type` | 正在定义的描述符类型。 对于关系描述符，此值必须设置为`xdm:descriptorOneToOne`。 |
+| `@type` | 正在定义的描述符类型。 对于关系描述符，该值必须设置为`xdm:descriptorOneToOne`，除非您有权访问Real-Time CDP B2B edition。 通过B2B edition，您可以选择使用`xdm:descriptorOneToOne`或[`xdm:descriptorRelationship`](#b2b-relationship-descriptor)。 |
 | `xdm:sourceSchema` | 正在定义描述符的架构的`$id` URI。 |
 | `xdm:sourceVersion` | 源架构的主要版本。 |
-| `xdm:sourceProperty` | 要定义关系的源架构中字段的路径。 应该以“/”开头，而不是以开头。 不要在路径中包含“properties”（例如，“/personalEmail/address”而不是“/properties/personalEmail/properties/address”）。 |
+| `xdm:sourceProperty` | 要定义关系的源架构中字段的路径。 应该以“/”开头，而不是以“/”结尾。 不要在路径中包含“properties”（例如，“/personalEmail/address”而不是“/properties/personalEmail/properties/address”）。 |
 | `xdm:destinationSchema` | 此描述符正在定义关系的参考架构的`$id` URI。 |
 | `xdm:destinationVersion` | 引用架构的主要版本。 |
-| `xdm:destinationProperty` | 引用架构中目标字段的可选路径。 如果忽略此属性，则包含匹配引用标识描述符的任何字段都会推断目标字段（请参阅下文）。 |
+| `xdm:destinationProperty` | （可选）引用架构中目标字段的路径。 如果忽略此属性，则包含匹配引用标识描述符的任何字段都会推断目标字段（请参阅下文）。 |
+
+{style="table-layout:auto"}
+
+##### B2B关系描述符 {#B2B-relationship-descriptor}
+
+Real-Time CDP B2B edition引入了一种定义架构之间关系的替代方法，该方法允许多对一关系。 此新关系必须具有`@type: xdm:descriptorRelationship`类型，并且有效负载必须包含比`@type: xdm:descriptorOneToOne`关系更多的字段。 有关详细信息，请参阅有关[为B2B edition](../tutorials/relationship-b2b.md)定义架构关系的教程。
+
+```json
+{
+   "@type": "xdm:descriptorRelationship",
+   "xdm:sourceSchema" : "https://ns.adobe.com/{TENANT_ID}/schemas/9f2b2f225ac642570a110d8fd70800ac0c0573d52974fa9a",
+   "xdm:sourceVersion" : 1,
+   "xdm:sourceProperty" : "/person-ref",
+   "xdm:destinationSchema" : "https://ns.adobe.com/{TENANT_ID/schemas/628427680e6b09f1f5a8f63ba302ee5ce12afba8de31acd7",
+   "xdm:destinationVersion" : 1,
+   "xdm:destinationProperty": "/personId",
+   "xdm:destinationNamespace" : "People", 
+   "xdm:destinationToSourceTitle" : "Opportunity Roles",
+   "xdm:sourceToDestinationTitle" : "People",
+   "xdm:cardinality": "M:1"
+}
+```
+
+| 属性 | 描述 |
+| --- | --- |
+| `@type` | 正在定义的描述符类型。 对于我们具有以下字段，该值必须设置为`xdm:descriptorRelationship`。 有关其他类型的信息，请参阅[关系描述符](#relationship-descriptor)部分。 |
+| `xdm:sourceSchema` | 正在定义描述符的架构的`$id` URI。 |
+| `xdm:sourceVersion` | 源架构的主要版本。 |
+| `xdm:sourceProperty` | 要定义关系的源架构中字段的路径。 应该以“/”开头，而不是以“/”结尾。 不要在路径中包含“properties”（例如，“/personalEmail/address”而不是“/properties/personalEmail/properties/address”）。 |
+| `xdm:destinationSchema` | 此描述符正在定义关系的参考架构的`$id` URI。 |
+| `xdm:destinationVersion` | 引用架构的主要版本。 |
+| `xdm:destinationProperty` | （可选）引用架构中目标字段的路径，该字段必须是架构的主ID。 如果忽略此属性，则包含匹配引用标识描述符的任何字段都会推断目标字段（请参阅下文）。 |
+| `xdm:destinationNamespace` | 引用架构中的主ID的命名空间。 |
+| `xdm:destinationToSourceTitle` | 从引用架构到源架构的关系显示名称。 |
+| `xdm:sourceToDestinationTitle` | 从源架构到引用架构的关系显示名称。 |
+| `xdm:cardinality` | 架构之间的连接关系。 此值应设置为`M:1`，表示多对一关系。 |
 
 {style="table-layout:auto"}
 
