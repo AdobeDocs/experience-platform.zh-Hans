@@ -3,9 +3,9 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
+source-git-commit: 8a1ac01c503bd1e5b9873714514d438b22f45cfb
 workflow-type: tm+mt
-source-wordcount: '4374'
+source-wordcount: '4405'
 ht-degree: 12%
 
 ---
@@ -64,18 +64,18 @@ ht-degree: 12%
 您可以从多种类型的受众中进行选择，具体取决于其来源：
 
 * **[!UICONTROL 分段服务]**：分段服务在Experience Platform中生成的受众。 有关详细信息，请参阅[分段文档](../../segmentation/ui/overview.md)。
-* **[!UICONTROL 自定义上传]**：受众在Experience Platform外部生成，并以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/audience-portal.md#import-audience)的文档。
+* **[!UICONTROL 自定义上传]**：受众在Experience Platform外部生成，并以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/audience-portal.md#import-audience)的文档。 选择源自&#x200B;**[!UICONTROL 自定义上传]**&#x200B;的受众会自动启用[选择扩充属性](#select-enrichment-attributes)步骤。
 * 其他类型的受众，来自其他Adobe解决方案，如[!DNL Audience Manager]。
+
+>[!IMPORTANT]
+>
+>将自定义上传受众激活到基于文件的批处理目标时，您可以在数据流中激活10个此类受众的限制。
 
 ![选择要激活的一个或多个受众时显示的复选框。](../assets/ui/activate-batch-profile-destinations/select-audiences.png)
 
 >[!TIP]
 >
->选择源自&#x200B;**[!UICONTROL 自定义上传]**&#x200B;的受众会自动启用[选择扩充属性](#select-enrichment-attributes)步骤。
-
->[!TIP]
->
->您可以从&#x200B;**[!UICONTROL 激活数据]**&#x200B;页面中移除现有激活流中的受众。 有关详细信息，请参阅[专用文档](../ui/destination-details-page.md#bulk-remove)。
+>要从现有激活流程中删除受众，请使用&#x200B;**[!UICONTROL 激活数据]**&#x200B;页面。 阅读有关如何[从激活流](../ui/destination-details-page.md#bulk-remove)中删除多个受众的部分以了解详细信息。
 
 ## 计划受众导出 {#scheduling}
 

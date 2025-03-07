@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: 了解有关数据激活默认使用量和速率限制的更多信息。
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
+source-git-commit: 8a1ac01c503bd1e5b9873714514d438b22f45cfb
 workflow-type: tm+mt
-source-wordcount: '1666'
+source-wordcount: '1718'
 ht-degree: 2%
 
 ---
@@ -76,6 +76,7 @@ ht-degree: 2%
 | 激活频率 | 每日一次完全导出或更频繁的增量导出，每3、6、8或12小时一次。 | 系统强制的护栏 | 有关批处理导出的频率递增的详细信息，请阅读[导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files)和[导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files)文档部分。 |
 | 在给定小时可导出的最大受众数 | 100 | 性能护栏 | 建议向批处理目标数据流添加最多100个受众。 |
 | 每个文件要激活的最大行数（记录） | 500万 | 系统强制的护栏 | Adobe Experience Platform会自动按每个文件500万条记录（行）拆分导出的文件。 每一行表示一个配置文件。 拆分文件名后附加一个数字，指示文件是较大导出的一部分，例如： `filename.csv`、`filename_2.csv`、`filename_3.csv`。 有关详细信息，请参阅激活批处理目标教程的[计划部分](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling)。 |
+| 数据流中激活的自定义上传受众的最大数量 | 10 | 系统强制的护栏 | 将[自定义上传受众](/help/segmentation/ui/audience-portal.md#import-audience)激活到基于文件的批处理目标时，您可以在数据流中激活10个此类受众的限制。 了解有关[将自定义上传受众激活到基于批处理文件的目标](/help/destinations/ui/activate-batch-profile-destinations.md#select-audiences)的工作流的详细信息。 |
 
 {style="table-layout:auto"}
 
