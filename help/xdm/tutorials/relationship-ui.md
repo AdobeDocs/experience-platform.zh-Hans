@@ -17,7 +17,7 @@ ht-degree: 9%
 >[!CONTEXTUALHELP]
 >id="platform_schemas_relationships"
 >title="架构关系"
->abstract="可以通过关系字段对属于不同类的架构进行上下文链接，从而构建更复杂的分段规则。有关架构关系的更多信息，请参阅文档。"
+>abstract="可以通过关系字段对属于不同类的架构进行上下文链接，从而生成更复杂的分段规则。有关架构关系的更多信息，请参阅文档。"
 
 >[!CONTEXTUALHELP]
 >id="platform_xdm_1to1_reference_schema"
@@ -41,13 +41,13 @@ ht-degree: 9%
 
 >[!NOTE]
 >
->有关如何在Adobe Real-time Customer Data Platform B2B edition中创建多对一关系的步骤，请参阅有关[创建B2B关系](./relationship-b2b.md)的指南。
+>有关如何在Adobe Real-Time Customer Data Platform B2B edition中创建多对一关系的步骤，请参阅有关[创建B2B关系](./relationship-b2b.md)的指南。
 
 ## 快速入门
 
 本教程需要您对[!DNL XDM System]和[!DNL Experience Platform] UI中的架构编辑器有一定的了解。 在开始本教程之前，请查看以下文档：
 
-* Experience Platform](../home.md)中的[XDM System： [!DNL Experience Platform]中的XDM及其实现概述。
+* Experience Platform中的[XDM System](../home.md)： [!DNL Experience Platform]中的XDM及其实现的概述。
 * [架构组合的基础知识](../schema/composition.md)： XDM架构的构建块简介。
 * [使用 [!DNL Schema Editor]](create-schema-ui.md)创建架构：介绍使用[!DNL Schema Editor]的基础知识的教程。
 

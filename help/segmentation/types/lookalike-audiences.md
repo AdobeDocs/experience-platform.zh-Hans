@@ -53,7 +53,7 @@ ht-degree: 9%
 >[!CONTEXTUALHELP]
 >id="platform_audiences_lookAlike_error"
 >title="错误"
->abstract="处理此模型时出错。请删除并重新构建此模型或稍后重试。"
+>abstract="处理此模型时出错。请删除并重新生成此模型或稍后重试。"
 
 在Adobe Experience Platform中，相似模型会使用三种不同类型的数据点：
 

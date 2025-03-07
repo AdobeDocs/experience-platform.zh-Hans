@@ -1,6 +1,6 @@
 ---
-title: 在Real-time Customer Data Platform B2B edition中定义两个架构之间的关系
-description: 了解如何在Adobe Real-time Customer Data Platform B2B edition中定义两个架构之间的多对一关系。
+title: 在Real-Time Customer Data Platform B2B edition中定义两个架构之间的关系
+description: 了解如何在Adobe Real-Time Customer Data Platform B2B edition中定义两个架构之间的多对一关系。
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
 source-git-commit: 85d6cf10599d153a15c1bd56067f57439ddd0133
 workflow-type: tm+mt
@@ -16,7 +16,7 @@ ht-degree: 12%
 >title="参考架构"
 >abstract="选择要与之建立关系的架构。根据架构的类，它还可能与 B2B 上下文中的其他实体存在现有关系。请参阅文档以了解 B2B 架构类如何相互关联。"
 
-Adobe Real-time Customer Data Platform B2B edition提供了多个可捕获基本B2B数据实体的体验数据模型(XDM)类，包括[帐户](../classes/b2b/business-account.md)、[机会](../classes/b2b/business-opportunity.md)、[营销活动](../classes/b2b/business-campaign.md)等。 通过基于这些类构建架构并允许它们在[实时客户配置文件](../../profile/home.md)中使用，您可以将不同源中的数据合并到称为合并架构的统一表示中。
+Adobe Real-Time Customer Data Platform B2B edition提供了多个可捕获基本B2B数据实体的体验数据模型(XDM)类，包括[帐户](../classes/b2b/business-account.md)、[机会](../classes/b2b/business-opportunity.md)、[营销活动](../classes/b2b/business-campaign.md)等。 通过基于这些类构建架构并允许它们在[实时客户配置文件](../../profile/home.md)中使用，您可以将不同源中的数据合并到称为合并架构的统一表示中。
 
 但是，合并架构只能包含由共享相同类的架构捕获的字段。 这就是架构关系发挥作用的地方。 通过在B2B架构中实施关系，您可以描述这些业务实体如何相互关联，并且可以在下游分段用例中包含来自多个类的属性。
 
@@ -28,7 +28,7 @@ Adobe Real-time Customer Data Platform B2B edition提供了多个可捕获基本
 
 >[!NOTE]
 >
->如果您未使用Real-time Customer Data Platform B2B edition或希望创建一对一关系，请另外参阅关于[创建一对一关系](./relationship-ui.md)的指南。
+>如果您未使用Real-Time Customer Data Platform B2B edition或希望创建一对一关系，请另外参阅关于[创建一对一关系](./relationship-ui.md)的指南。
 >
 >本教程重点介绍如何在Platform UI中手动建立B2B架构之间的关系。 如果您从B2B源连接引入数据，则可以使用自动生成实用程序创建所需的架构、身份和关系。 有关[使用自动生成实用程序](../../sources/connectors/adobe-applications/marketo/marketo-namespaces.md)的更多信息，请参阅有关B2B命名空间和架构的源文档。
 
@@ -36,7 +36,7 @@ Adobe Real-time Customer Data Platform B2B edition提供了多个可捕获基本
 
 本教程需要您对[!DNL XDM System]和[!DNL Experience Platform] UI中的架构编辑器有一定的了解。 在开始本教程之前，请查看以下文档：
 
-* Experience Platform](../home.md)中的[XDM System： [!DNL Experience Platform]中的XDM及其实现概述。
+* Experience Platform中的[XDM System](../home.md)： [!DNL Experience Platform]中的XDM及其实现的概述。
 * [架构组合的基础知识](../schema/composition.md)： XDM架构的构建块简介。
 * [使用 [!DNL Schema Editor]](create-schema-ui.md)创建架构：一个教程，其中包含有关如何在UI中构建和编辑架构的基础知识。
 
@@ -84,12 +84,12 @@ Adobe Real-time Customer Data Platform B2B edition提供了多个可捕获基本
 >[!CONTEXTUALHELP]
 >id="platform_xdm_b2b_relationship_name_current"
 >title="当前架构中的关系名称"
->abstract="描述当前架构与参考架构之间的关系的标签（例如，“相关帐户”）。此标签在轮廓和分段中用于为来自相关 B2B 实体的数据提供上下文。请参阅文档以了解有关构建 B2B 架构关系的更多信息。"
+>abstract="描述当前架构与参考架构之间的关系的标签（例如，“相关帐户”）。此标签在轮廓和分段中用于为来自相关 B2B 实体的数据提供上下文。请参阅文档以了解有关生成 B2B 架构关系的更多信息。"
 
 >[!CONTEXTUALHELP]
 >id="platform_xdm_b2b_relationship_name_reference"
 >title="参考架构中的关系名称"
->abstract="描述参考架构与当前架构之间的关系的标签（例如，“相关机会”）。此标签在轮廓和分段中用于为来自相关 B2B 实体的数据提供上下文。请参阅文档以了解有关构建 B2B 架构关系的更多信息。"
+>abstract="描述参考架构与当前架构之间的关系的标签（例如，“相关机会”）。此标签在轮廓和分段中用于为来自相关 B2B 实体的数据提供上下文。请参阅文档以了解有关生成 B2B 架构关系的更多信息。"
 
 为了定义两个架构之间的关系，源架构必须具有指示引用架构的主要标识的专用字段。 标准B2B类包括用于通常相关的业务实体的专用源密钥字段。 例如，[!UICONTROL XDM业务机会]类包含相关帐户(`accountKey`)和相关营销活动(`campaignKey`)的源键字段。 但是，如果您需要多个默认组件，则还可以使用自定义字段组将其他[!UICONTROL B2B Source]字段添加到架构中。
 

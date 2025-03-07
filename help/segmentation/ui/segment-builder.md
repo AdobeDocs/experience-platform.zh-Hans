@@ -20,7 +20,7 @@ ht-degree: 8%
 
 ![将显示区段生成器UI。](../images/ui/segment-builder/segment-builder.png)
 
-## 区段定义构建块 {#building-blocks}
+## 区段定义生成块 {#building-blocks}
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_fields"
@@ -364,7 +364,7 @@ ht-degree: 8%
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_segmentproperties"
 >title="区段定义属性"
->abstract="区段定义属性部分显示生成的区段定义的大小估计值，并显示合格轮廓的数量与轮廓总数的比较情况。这允许您在构建受众本身之前根据需要调整区段定义。"
+>abstract="区段定义属性部分显示生成的区段定义的大小估计值，并显示合格轮廓的数量与轮廓总数的比较情况。这允许您在生成受众本身之前根据需要调整区段定义。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"

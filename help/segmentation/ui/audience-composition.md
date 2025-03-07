@@ -6,7 +6,7 @@ exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
 source-git-commit: 758ec9de9bf3e6bb9853c9455c69e0b5ca7948d5
 workflow-type: tm+mt
 source-wordcount: '2344'
-ht-degree: 11%
+ht-degree: 16%
 
 ---
 
@@ -49,7 +49,7 @@ ht-degree: 11%
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_audience"
 >title="受众块"
->abstract="通过“受众”块，可添加要用于构成新受众的子受众。"
+>abstract="使用受众块，您可以添加用于组成新受众的子受众。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_merge_types"
@@ -97,7 +97,7 @@ ht-degree: 11%
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_rule_builder"
 >title="区段生成器"
->abstract="您可以使用区段生成器为构成添加自定义规则。"
+>abstract="您可以使用区段生成器，为您的构成添加自定义规则。"
 
 若要向受众块添加自定义规则，请选择&#x200B;**[!UICONTROL 生成规则]**。
 
@@ -152,7 +152,7 @@ ht-degree: 11%
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_exclude_attribute"
 >title="按属性排除"
->abstract="当按属性排除时，您可以根据选定的属性排除构成中显示的特定配置文件。"
+>abstract="按属性排除时，您可以根据所选属性排除特定轮廓出现在构成中。"
 
 如果按属性排除，则可以通过选择&#x200B;**[!UICONTROL 排除规则]**&#x200B;部分中的![过滤器](/help/images/icons/project-edit.png)图标来选择要排除的属性。 通过排除属性，您可以从生成的受众中排除任何包含此属性的配置文件。
 
@@ -324,12 +324,12 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_split_percentage"
 >title="按百分比拆分"
->abstract="您可以根据提供的路径数和百分比，将受众随机拆分为多个受众。"
+>abstract="您可以根据提供的路径数量和百分比，将受众随机拆分成多个受众。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_split_persistent"
->title="永久拆分"
->abstract="通过启用此选项并选择身份命名空间，可以使百分比拆分永久化。"
+>title="持久拆分"
+>abstract="启用此选项并选择一个身份标识命名空间，就可以使百分比拆分持久。"
 
 按百分比拆分时，将根据提供的路径数和百分比随机拆分受众。
 
@@ -362,7 +362,7 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_publish"
 >title="发布"
->abstract="您可以发布合成，以在Adobe Experience Platform中创建生成的受众。"
+>abstract="您可以发布构成，在 Adobe Experience Platform 中创建生成的受众。"
 
 >[!IMPORTANT]
 >

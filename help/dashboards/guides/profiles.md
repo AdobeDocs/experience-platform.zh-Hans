@@ -35,7 +35,7 @@ Adobe Experience Platform用户界面(UI)提供了一个仪表板，通过该仪
 >
 >如果您的组织是初次使用Platform，但尚未创建活动配置文件数据集或合并策略，则配置文件仪表板不可见。 相反，[!UICONTROL 概述]选项卡显示链接和文档，以帮助您开始使用实时客户个人资料。
 
-![突出显示了“配置文件和概述”的“Experience Platform配置文件”仪表板。](../images/profiles/dashboard-overview.png)
+![突出显示了“配置文件和概述”的Experience Platform配置文件仪表板。](../images/profiles/dashboard-overview.png)
 
 ### 修改用户档案仪表板 {#modify-dashboard}
 
@@ -120,7 +120,7 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 * 要了解根据Adobe标准[收集同意数据所需的架构字段组](../../landing/governance-privacy-security/consent/adobe/overview.md)，请参阅有关这些启用配置文件的架构字段组的文档。
    * [[!UICONTROL 同意和偏好设置详细信息]](../../xdm/field-groups/profile/consents.md)
    * [[!UICONTROL IdentityMap]](../../xdm/field-groups/profile/identitymap.md)(如果使用Platform Web或Mobile SDK发送同意信号，则需要)
-* 要了解如何使用Adobe标准处理客户同意和偏好设置数据，请参阅有关Experience Platform](../../landing/governance-privacy-security/consent/adobe/overview.md)中的[同意处理的概述。
+* 要了解如何使用Adobe标准处理客户同意和偏好设置数据，请参阅有关Experience Platform中的[同意处理](../../landing/governance-privacy-security/consent/adobe/overview.md)的概述。
 * 组合的数据治理和同意策略可用于根据用户档案的同意偏好和您建立的组织规则筛选用户档案以进行分段。 要了解如何创建和使用这些组合策略，请参阅有关[管理数据使用策略](../../data-governance/policies/user-guide.md#combine-policies)的用户指南。
 
 ### 添加构件 {#add-widgets}
@@ -254,7 +254,7 @@ Customer AI 用于生成自定义倾向分数，如轮廓大规模的流失率�
 
 ## 标准小组件 {#standard-widgets}
 
-Adobe提供了多个标准构件，可用于可视化与配置文件数据相关的各种指标。 您还可以使用[!UICONTROL 构件库]创建要与您的组织共享的自定义构件。 要了解有关创建自定义小组件的更多信息，请从阅读[小组件库概述](../customize/widget-library.md)开始。
+Adobe提供了多个标准构件，您可以使用这些构件可视化与配置文件数据相关的各种指标。 您还可以使用[!UICONTROL 构件库]创建要与您的组织共享的自定义构件。 要了解有关创建自定义小组件的更多信息，请从阅读[小组件库概述](../customize/widget-library.md)开始。
 
 要了解有关每个可用标准构件的更多信息，请从以下列表中选择构件的名称：
 
@@ -418,7 +418,7 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_unsegmentedprofilestrend"
 >title="未分段的轮廓趋势"
->abstract="此小组件为给定时间段内未附加到任何受众的轮廓数量提供了一个折线图说明。可以在 30 天、90 天和 12 个月的时间段内查看未附加到任何受众的轮廓的趋势。"
+>abstract="此小组件为给定时间段内未附加到任何受众的轮廓数量提供了一个线形图说明。可以在 30 天、90 天和 12 个月的时间段内查看未附加到任何受众的轮廓的趋势。"
 
 [!UICONTROL 未分段的配置文件变化趋势]构件使用线形图说明自上次未附加到任何受众的每日快照以来添加的配置文件数。 未附加到任何受众的用户档案的变化趋势可以在30天、90天和12个月的时段内可视化。 从小组件中的下拉菜单中选择时间段。 轮廓计数反映在y轴上，时间反映在x轴上。
 
@@ -587,4 +587,4 @@ The three levels of completeness are:
 
 ## 后续步骤
 
-通过阅读本文档，您现在应该能够找到用户档案仪表板，并了解可用构件中显示的量度。 要了解有关在Experience PlatformUI中使用[!DNL Profile]数据的更多信息，请参阅[实时客户个人资料UI指南](../../profile/ui/user-guide.md)。
+通过阅读本文档，您现在应该能够找到用户档案仪表板，并了解可用构件中显示的量度。 要了解有关在Experience Platform UI中使用[!DNL Profile]数据的更多信息，请参阅[实时客户个人资料UI指南](../../profile/ui/user-guide.md)。
