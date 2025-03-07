@@ -5,10 +5,10 @@ breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源引入数据。了解如何构建、标记和增强已引入的数据。
 feature: Sources
 role: Developer
-source-git-commit: b18f93078d3cdbd0498b5b282236ac9b7bad153c
+source-git-commit: b900ef8cbbab78071d462484f088e17eb20fe9b6
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '1047'
+ht-degree: 30%
 
 ---
 
@@ -38,7 +38,7 @@ ht-degree: 0%
          - [ECID映射迁移指南](connectors/adobe-applications/marketo/migration.md)
    - Advertising {#advertising}
       - [Google Ads连接器](connectors/advertising/ads.md)
-      - [pinterest Ads](connectors/advertising/pinterest-ads.md)
+      - [Pinterest Ads](connectors/advertising/pinterest-ads.md)
    - Analytics {#analytics}
       - [Mixpanel连接器](connectors/analytics/mixpanel.md)
       - [Pendo](connectors/analytics/pendo-webhook.md)
@@ -75,8 +75,8 @@ ht-degree: 0%
       - [Amazon Redshift连接器](connectors/databases/redshift.md)
       - [Azure HDInsights连接器上的Apache Hive](connectors/databases/hive.md)
       - [Azure HDInsights连接器上的Apache Spark](connectors/databases/spark.md)
-      - [AzureData Explorer连接器](connectors/databases/data-explorer.md)
-      - [azure synapseAnalytics连接器](connectors/databases/synapse-analytics.md)
+      - [Azure Data Explorer连接器](connectors/databases/data-explorer.md)
+      - [Azure Synapse Analytics连接器](connectors/databases/synapse-analytics.md)
       - [Azure表存储连接器](connectors/databases/ats.md)
       - [Couchbase连接器](connectors/databases/couchbase.md)
       - [Google BigQuery连接器](connectors/databases/bigquery.md)
@@ -86,12 +86,12 @@ ht-degree: 0%
       - [MariaDB连接器](connectors/databases/mariadb.md)
       - [Microsoft SQL Server连接器](connectors/databases/sql-server.md)
       - [MySQL连接器](connectors/databases/mysql.md)
-      - [oracle连接器](connectors/databases/oracle.md)
+      - [Oracle连接器](connectors/databases/oracle.md)
       - [Phoenix连接器](connectors/databases/phoenix.md)
       - [PostgreSQL连接器](connectors/databases/postgres.md)
       - [Snowflake流连接器](connectors/databases/snowflake-streaming.md)
       - [Snowflake连接器](connectors/databases/snowflake.md)
-      - [teradata优势连接器](connectors/databases/teradata-vantage.md)
+      - [Teradata Vantage连接器](connectors/databases/teradata-vantage.md)
    - 数据和身份合作伙伴{#data-partner}
       - [Acxiom 数据摄取](connectors/data-partners/acxiom-data-ingestion.md)
       - [Acxiom 潜在客户数据导入](connectors/data-partners/acxiom-prospecting-data-import.md)
@@ -108,9 +108,9 @@ ht-degree: 0%
       - [Customer.io](connectors/marketing-automation/customerio-webhook.md)
       - [HubSpot连接器](connectors/marketing-automation/hubspot.md)
       - [Mailchimp连接器](connectors/marketing-automation/mailchimp.md)
-      - [oracleEloqua连接器](connectors/marketing-automation/oracle-eloqua.md)
-      - [oracleNetSuite](connectors/marketing-automation/oracle-netsuite.md)
-      - [Responsys连接器Oracle](connectors/marketing-automation/oracle-responsys.md)
+      - [Oracle Eloqua连接器](connectors/marketing-automation/oracle-eloqua.md)
+      - [Oracle NetSuite](connectors/marketing-automation/oracle-netsuite.md)
+      - [Oracle Responsys连接器](connectors/marketing-automation/oracle-responsys.md)
       - [PathFactory](connectors/marketing-automation/pathfactory.md)
       - [Salesforce Marketing Cloud](connectors/marketing-automation/salesforce-marketing-cloud.md)
    - 付款{#payments}
@@ -126,7 +126,7 @@ ht-degree: 0%
    - 创建基本连接{#create}
       - Advertising {#advertising}
          - [Google Ads](tutorials/api/create/advertising/ads.md)
-         - [pinterest Ads](tutorials/api/create/advertising/pinterest-ads.md)
+         - [Pinterest Ads](tutorials/api/create/advertising/pinterest-ads.md)
       - Analytics {#analytics}
          - [Mixpanel](tutorials/api/create/analytics/mixpanel.md)
          - [Pendo](tutorials/api/create/analytics/pendo-webhook.md)
@@ -190,8 +190,8 @@ ht-degree: 0%
          - [MailChimp营销活动](tutorials/api/create/marketing-automation/mailchimp-campaign.md)
          - [MailChimp成员](tutorials/api/create/marketing-automation/mailchimp-members.md)
          - [Oracle Eloqua](tutorials/api/create/marketing-automation/oracle-eloqua.md)
-         - [oracleNetSuite活动](tutorials/api/create/marketing-automation/oracle-netsuite-activities.md)
-         - [oracleNetSuite实体](tutorials/api/create/marketing-automation/oracle-netsuite-entities.md)
+         - [Oracle NetSuite活动](tutorials/api/create/marketing-automation/oracle-netsuite-activities.md)
+         - [Oracle NetSuite实体](tutorials/api/create/marketing-automation/oracle-netsuite-entities.md)
          - [Oracle Responsys](tutorials/api/create/marketing-automation/oracle-responsys.md)
          - [PathFactory](tutorials/api/create/marketing-automation/pathfactory.md)
          - [Salesforce Marketing Cloud](tutorials/api/create/marketing-automation/salesforce-marketing-cloud.md)
@@ -248,7 +248,7 @@ ht-degree: 0%
          - [Marketo自定义活动](tutorials/ui/create/adobe-applications/marketo-custom-activities.md)
       - Advertising {#advertising}
          - [Google Ads](tutorials/ui/create/advertising/ads.md)
-         - [pinterest Ads](tutorials/ui/create/advertising/pinterest-ads.md)
+         - [Pinterest Ads](tutorials/ui/create/advertising/pinterest-ads.md)
       - Analytics {#analytics}
          - [Mixpanel](tutorials/ui/create/analytics/mixpanel.md)
          - [Pendo](tutorials/ui/create/analytics/pendo-webhook.md)
@@ -306,6 +306,8 @@ ht-degree: 0%
       - 数据和身份合作伙伴{#data-partner}
          - [Acxiom 数据摄取](tutorials/ui/create/data-partners/acxiom-data-ingestion.md)
          - [Acxiom 潜在客户数据导入](tutorials/ui/create/data-partners/acxiom-prospecting-data-import.md)
+         - [庞博拉意图](tutorials/ui/create/data-partners/bombora.md)
+         - [Demandbase意图](tutorials/ui/create/data-partners/demandbase.md)
          - [Merkury Enterprise Identity Resolution](tutorials/ui/create/data-partners/merkury.md)
       - 电子商务{#ecommerce}
          - [SAP COMMERCE](tutorials/ui/create/ecommerce/sap-commerce.md)
@@ -321,8 +323,8 @@ ht-degree: 0%
          - [Mailchimp 营销活动](tutorials/ui/create/marketing-automation/mailchimp-campaigns.md)
          - [Mailchimp 会员](tutorials/ui/create/marketing-automation/mailchimp-members.md)
          - [Oracle Eloqua](tutorials/ui/create/marketing-automation/oracle-eloqua.md)
-         - [oracleNetSuite活动](tutorials/ui/create/marketing-automation/oracle-netsuite-activities.md)
-         - [oracleNetSuite实体](tutorials/ui/create/marketing-automation/oracle-netsuite-entities.md)
+         - [Oracle NetSuite活动](tutorials/ui/create/marketing-automation/oracle-netsuite-activities.md)
+         - [Oracle NetSuite实体](tutorials/ui/create/marketing-automation/oracle-netsuite-entities.md)
          - [Oracle Responsys](tutorials/ui/create/marketing-automation/oracle-responsys.md)
          - [PathFactory](tutorials/ui/create/marketing-automation/pathfactory.md)
          - [Salesforce Marketing Cloud](tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
@@ -359,15 +361,15 @@ ht-degree: 0%
    - [删除数据流](tutorials/ui/delete.md)
    - [订阅源提醒](tutorials/ui/alerts.md)
    - [将数据流另存为草稿](tutorials/ui/draft.md)
-- 自助式源（批处理SDK） {#sdk}
+- 自助式源(批次SDK) {#sdk}
    - [概述](sources-sdk/overview.md)
    - 配置连接规范{#config}
       - [配置选项](sources-sdk/config/config.md)
       - [配置身份验证规范](sources-sdk/config/authspec.md)
       - [配置源规范](sources-sdk/config/sourcespec.md)
       - [配置浏览规范](sources-sdk/config/explorespec.md)
-   - 自助源（批处理SDK） API指南{#self-serve-api}
-      - [自助式源（批处理SDK） API概述](sources-sdk/api/api-overview.md)
+   - 自助源(批处理SDK) API指南{#self-serve-api}
+      - [自助式源(批处理SDK) API概述](sources-sdk/api/api-overview.md)
       - [快速入门](sources-sdk/api/getting-started.md)
       - [创建连接规范](sources-sdk/api/create.md)
       - [更新连接规范](sources-sdk/api/update-connection-specs.md)
@@ -379,13 +381,13 @@ ht-degree: 0%
       - [在本地环境中使用文本编辑器创建源文档页面](sources-sdk/documentation/text-editor.md)
       - [文档自助服务API模板](sources-sdk/documentation/template.md)
       - [文档自助服务UI模板](sources-sdk/documentation/ui-template.md)
-   - 流SDK {#streaming-sdk}
-      - [自助式源入门(Streaming SDK)](sources-sdk/streaming/getting-started.md)
+   - 流式传输SDK {#streaming-sdk}
+      - [自助式源入门(流SDK)](sources-sdk/streaming/getting-started.md)
       - [为流源创建连接规范](sources-sdk/streaming/create.md)
       - [更新流源的连接规范](sources-sdk/streaming/update-connection-specs.md)
       - [更新流规范](sources-sdk/streaming/update-flow-specs.md)
       - [测试并提交您的连接规范以进行验证](sources-sdk/streaming/submit.md)
-      - [记录您的源(Streaming SDK)](sources-sdk/streaming/document-streaming.md)
+      - [记录您的源(流SDK)](sources-sdk/streaming/document-streaming.md)
       - [文档自助服务API流模板](sources-sdk/streaming/streaming-template-api.md)
       - [文档自助服务UI流模板](sources-sdk/streaming/streaming-template-ui.md)
 - 错误消息{#errors}
