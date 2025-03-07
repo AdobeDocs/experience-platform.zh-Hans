@@ -3,9 +3,9 @@ title: Adobe Experience Platform 发行说明（2025 年 2 月）
 description: Adobe Experience Platform 的 2025 年 2 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: e8c1d7d3b5cc205b9258b4fec5dc7fa68d0d3b27
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1628'
-ht-degree: 97%
+ht-degree: 100%
 
 ---
 
@@ -19,7 +19,7 @@ Adobe Experience Platform 中现有功能和文档的更新：
 - [目录服务](#catalog-service)
 - [数据准备](#data-prep)
 - [目标](#destinations)
-- [联合受众组合](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/release-notes){target="_blank"}
+- [联合受众构成](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/release-notes){target="_blank"}
 - [源](#sources)
 - [Segmentation Service](#segmentation)
 - [文档更新](#documentation-updates)
@@ -114,7 +114,7 @@ Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 永久拆分 | 受众构成现在支持持久拆分。 通过向Split块中添加身份命名空间，您可以使拆分受众在按用户档案拆分时保持不变。 有关此功能的详细信息，请参阅[受众组合文档](../../segmentation/ui/audience-composition.md)。 |
+| 持久拆分 | 受众构成现在支持持久拆分。通过在拆分块中添加身份标识命名空间，您可以使拆分受众在按轮廓拆分时保持不变。有关此功能的更多信息，请参阅[受众构成文档](../../segmentation/ui/audience-composition.md)。 |
 
 有关 [!DNL Segmentation Service] 的详细信息，请查看[分段概述](../../segmentation/home.md)。
 
