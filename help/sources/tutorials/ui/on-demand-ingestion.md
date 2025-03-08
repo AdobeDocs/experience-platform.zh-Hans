@@ -2,9 +2,9 @@
 title: 在UI中按需引入源数据流
 description: 了解如何使用Experience Platform用户界面按需为源连接创建数据流。
 exl-id: e5a70044-2484-416a-8098-48e6d99c2d98
-source-git-commit: 38da1c1d5e563ea3f66cc25a69ad726f709784d0
+source-git-commit: 7a287c8de3c3fd0670cbdf29cd58558b30982122
 workflow-type: tm+mt
-source-wordcount: '522'
+source-wordcount: '549'
 ht-degree: 0%
 
 ---
@@ -31,9 +31,9 @@ ht-degree: 0%
 
 本文档要求您对Experience Platform的以下组件有一定的了解：
 
-* [源](../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
+* [源](../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
 * [数据流](../../../dataflows/home.md)：数据流是跨平台移动数据的数据作业的表示形式。 数据流在不同的服务中配置，帮助将数据从源连接器移动到目标数据集、身份服务和实时客户档案以及目标。
-* [沙盒](../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [沙盒](../../../sandboxes/home.md)： Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ## 按需创建数据流 {#create-a-dataflow-on-demand}
 
@@ -57,7 +57,7 @@ ht-degree: 0%
 
 ![按需引入的计划配置窗口。](../../images/tutorials/on-demand/configure-schedule.png)
 
-选择数据流名称以查看数据流活动。 在这里，您将看到已处理的数据流运行的列表。 选择一个数据流运行，然后从右边栏中选择&#x200B;**[!UICONTROL 重试]**&#x200B;以重试摄取所选数据流运行迭代。
+选择数据流名称以查看数据流活动。 在这里，您将看到已处理的数据流运行的列表。 无论数据流运行是失败还是成功，您都可以重新运行其各个迭代。 对于失败的运行迭代，您可以在诊断并解决创建过程中可能遇到的任何错误后，使用&#x200B;**[!UICONTROL 重试]**&#x200B;再次启动运行。
 
 ![所选数据流已处理的流运行列表。](../../images/tutorials/on-demand/processed.png)
 
