@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；源；连接器；源连
 title: 使用Platform UI创建Adobe Campaign Managed Cloud Services源连接
 description: 了解如何使用Platform UI将Adobe Experience Platform连接到Adobe Campaign Managed Cloud Services。
 exl-id: 067ed558-b239-4845-8c85-3bf9b1d4caed
-source-git-commit: 77d755e4ebf97521efa1dfdfe9ee40312800ad28
+source-git-commit: 67f42c155bf34f2b8adc3b08536bb3310bb77390
 workflow-type: tm+mt
-source-wordcount: '1185'
+source-wordcount: '1233'
 ht-degree: 6%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 6%
 本指南要求您对Experience Platform的以下组件有一定的了解：
 
 * [源](../../../../home.md)： Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
 * [沙盒](../../../../../sandboxes/home.md)： Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
@@ -136,6 +136,12 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 此页面还提供一个界面来更新数据流的元数据描述，启用部分摄取和错误诊断，以及向数据集添加新数据。
 
 ![具有图形的接口，该图形表示选定数据集的摄取率。](../../../../images/tutorials/create/campaign/dataset-activity.png)
+
+
+>[!IMPORTANT]
+>
+>无法使用Adobe Campaign Managed Cloud Services源回填旧的事件日志。 如果需要回填，请使用自定义工作流或自定义实现将数据导出到Amazon S3或Azure Blob，或者从Amazon S3或Azure Blob导出到Adobe Experience Platform数据集。
+
 
 ## 后续步骤
 
