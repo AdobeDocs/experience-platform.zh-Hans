@@ -1,10 +1,10 @@
 ---
 title: 访问Experience Platform中的AI助手
-description: 了解如何在Experience CloudUI中访问AI助手。
+description: 了解如何在Experience Cloud UI中访问AI助手。
 exl-id: c4cdff25-512c-4b4c-be91-ad9360067a0a
-source-git-commit: 8d69d7010442519ce02bb9a504d4228742b4f092
+source-git-commit: b26a1f12c9ea07d4dd077f1f3c1578e6c69866a7
 workflow-type: tm+mt
-source-wordcount: '364'
+source-wordcount: '539'
 ht-degree: 0%
 
 ---
@@ -25,13 +25,34 @@ ht-degree: 0%
    * 作为管理员，您可以将&#x200B;**启用AI助手**&#x200B;添加到给定角色，并将用户添加到该角色，以允许他们访问您组织中的AI助手。
    * 作为管理员，您可以将&#x200B;**查看操作分析**&#x200B;添加到给定角色，并将用户添加到该角色，以便他们能够使用AI助手的操作分析功能。 操作见解当前为测试版。
 
-![具有给定角色中包含的“启用AI助手”和“查看操作分析”权限的权限UI页面。](./images/permissions.png)
+使用[权限UI](../access-control/abac/ui/roles.md)授予在Experience Platform和Journey Optimizer中使用AI助理的权限。 有关如何在Customer Journey Analytics中访问AI助手的信息。 阅读[Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/ai-assistant)中的文档。
 
-使用权限UI授予在Experience Platform和Journey Optimizer中使用AI助手权限。 有关如何在Customer Journey Analytics中访问AI助手的信息。 以[Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/ai-assistant)阅读文档。
+![具有给定角色中包含的“启用AI助手”和“查看操作分析”权限的权限UI页面。](./images/access/access-permissions.png)
+
+无法访问AI助手的原因有两点：
+
+1. 您使用的组织在法律上不具备使用AI助理的资格；
+2. 您的管理员未授予您使用AI助手所需的相应权限。
+
+>[!BEGINTABS]
+
+>[!TAB 您的组织无法使用AI助手]
+
+如果您使用的组织在法律上无权使用AI助手，您将看到以下消息。 在这种情况下，您必须联系Adobe客户团队以解决访问权限问题。
+
+![如果组织无法使用AI助手，则在Experience Platform UI上显示的弹出消息。](./images/access/modal-one.png)
+
+>[!TAB 您没有正确的权限]
+
+如果贵组织在法律上符合使用AI助手的条件，但仍无法访问该功能，则您将在Experience Platform UI上看到以下消息。 这种情况意味着您没有足够的权限访问该功能，因此必须联系管理员以解决权限问题。
+
+![如果您没有AI助手所需的权限，Experience Platform UI上显示的弹出消息。](./images/access/modal-two.png)
+
+>[!ENDTABS]
 
 获得必要权限后，您可以通过选择正在使用的应用程序顶部标题上的AI助手图标来访问AI助手。
 
-![具有首次用户体验的AI助手。](./images/ai-assistant.png)
+![具有首次用户体验的AI助手。](./images/access/access-home.png)
 
 ## 访问AI助手
 
