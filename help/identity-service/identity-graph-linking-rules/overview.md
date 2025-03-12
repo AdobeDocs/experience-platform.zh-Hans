@@ -2,9 +2,9 @@
 title: 身份图链接规则
 description: 了解Identity Service中的身份图链接规则。
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: 048d915d33a19a9d50a4951e165b5ade1b9d9734
+source-git-commit: 31d4c895294e779ef39639710fad0e517fa03cf2
 workflow-type: tm+mt
-source-wordcount: '1436'
+source-wordcount: '1449'
 ht-degree: 5%
 
 ---
@@ -16,6 +16,10 @@ ht-degree: 5%
 >标识图链接规则当前处于“有限可用”状态。 有关如何访问开发沙盒中的功能的信息，请与您的Adobe客户团队联系。
 
 通过Adobe Experience Platform Identity服务和实时客户个人资料，可以轻松假设您的数据被完全摄取，并且所有合并的个人资料都通过人员标识符（如CRMID）表示单个个人。 但是，在某些情况下，某些数据可能会尝试将多个不同的配置文件合并到单个配置文件中（“图形折叠”）。 要防止这些不需要的合并，您可以使用通过身份图链接规则提供的配置，并允许对用户进行准确的个性化。
+
+观看以下视频，了解有关使用身份图链接规则的其他信息：
+
+>[!VIDEO](https://video.tv.adobe.com/v/3448250/?learn=on&enablevpops)
 
 ## 快速入门
 
@@ -135,7 +139,7 @@ ht-degree: 5%
 * **命名空间优先级是分配给命名空间的数值**，用于指示其相对重要性。 这是命名空间的属性。
 * **主标识是针对**&#x200B;存储配置文件片段的标识。 配置文件片段是存储有关特定用户的信息的数据记录：属性（通常通过CRM记录摄取）或事件（通常从体验事件或在线数据中摄取）。
 * 命名空间优先级确定体验事件片段的主要身份。
-   * 对于配置文件记录，您可以使用Experience PlatformUI中的架构工作区来定义身份字段，包括主要身份。 有关详细信息，请阅读[在UI](../../xdm/ui/fields/identity.md)中定义标识字段的指南。
+   * 对于配置文件记录，您可以使用Experience Platform UI中的架构工作区来定义身份字段，包括主要身份。 有关详细信息，请阅读[在UI](../../xdm/ui/fields/identity.md)中定义标识字段的指南。
 * 如果体验事件在identityMap中具有两个或多个具有最高命名空间优先级的身份，则该事件将被拒绝引入，因为它将被视为“错误数据”。 例如，如果identityMap包含`{ECID: 111, CRMID: John, CRMID: Jane}`，则整个事件将作为错误数据被拒绝，因为它意味着该事件同时与`CRMID: John`和`CRMID: Jane`相关联。
 
 有关详细信息，请阅读有关[命名空间优先级](./namespace-priority.md)的指南。
