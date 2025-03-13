@@ -2,7 +2,7 @@
 title: 受众门户概述
 description: 了解如何使用Audience Portal在Adobe Experience Platform中查看、管理和创建受众。
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: a862e532382472eadf29aee2568c550b1a71211a
+source-git-commit: 5220fa9be3f567d72f864d35596f6b219f15fb9d
 workflow-type: tm+mt
 source-wordcount: '4609'
 ht-degree: 4%
@@ -114,7 +114,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 | 状态 | 描述 |
 | ------ | ----------- |
 | [!UICONTROL 已实现] | 自上次批处理区段作业运行以来的最后24小时内&#x200B;**符合受众资格的**&#x200B;的用户档案计数。 |
-| [!UICONTROL 现有] | 自上次批处理区段作业运行以来的最后24小时内受众中仍有&#x200B;**保留**&#x200B;的用户档案数。 此字段为&#x200B;**已计算**，并且未显示在`segmentMembership`对象中。 |
+| [!UICONTROL 现有] | 自上次批处理区段作业运行以来的最后24小时内受众中仍有&#x200B;**保留**&#x200B;的用户档案数。 此字段为&#x200B;**已计算**，并且未显示在[`segmentMembership`对象](../../xdm/field-groups/profile/segmentation.md)中。 |
 | [!UICONTROL 正在退出] | 自上次批处理区段作业运行以来的最后24小时内&#x200B;**退出**&#x200B;受众的个人资料计数。 |
 
 选择要显示的字段后，您还可以重新调整所显示列的宽度。 可以通过拖动列之间的区域或选择要重新调整大小的列的![箭头图标](/help/images/icons/chevron-down.png)以及随后的&#x200B;**[!UICONTROL 调整列大小]**&#x200B;来执行此操作。
