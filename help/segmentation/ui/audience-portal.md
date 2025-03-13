@@ -2,9 +2,9 @@
 title: 受众门户概述
 description: 了解如何使用Audience Portal在Adobe Experience Platform中查看、管理和创建受众。
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: 9f4facebcd55dc15761db1bf744acfef9ccb15ff
+source-git-commit: a862e532382472eadf29aee2568c550b1a71211a
 workflow-type: tm+mt
-source-wordcount: '4597'
+source-wordcount: '4609'
 ht-degree: 4%
 
 ---
@@ -62,7 +62,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 | [!UICONTROL 移至文件夹] | 受众构成、自定义上传、分段服务 | 管理受众属于哪个文件夹。 有关此功能的详细信息，请阅读[筛选和标记](#manage-audiences)部分。 |
 | [!UICONTROL 副本] | Segmentation Service | 复制所选受众。 有关此函数的更多信息，请参阅[分段常见问题解答](../faq.md#copy)。 |
 | [!UICONTROL 应用访问标签] | 受众构成、自定义上传、分段服务 | 管理属于受众的访问标签。 有关访问标签的详细信息，请阅读有关[管理标签](../../access-control/abac/ui/labels.md)的文档。 |
-| [!UICONTROL Publish] | 自定义上传、分段服务 | 发布选定的受众。 有关生命周期状态管理的更多信息，请阅读分段常见问题解答](../faq.md#lifecycle-states)的[生命周期状态部分。 |
+| [!UICONTROL 发布] | 自定义上传、分段服务 | 发布选定的受众。 有关生命周期状态管理的更多信息，请阅读分段常见问题解答](../faq.md#lifecycle-states)的[生命周期状态部分。 |
 | [!UICONTROL 停用] | 自定义上传、分段服务 | 停用所选受众。 有关生命周期状态管理的更多信息，请阅读分段常见问题解答](../faq.md#lifecycle-states)的[生命周期状态部分。 |
 | [!UICONTROL 删除] | 受众构成、自定义上传、分段服务 | 删除所选受众。 不能删除在下游目标中使用或属于其他受众&#x200B;**中依赖的受众**。 有关受众删除的详细信息，请阅读[分段常见问题解答](../faq.md#lifecycle-states)。 |
 | [!UICONTROL 添加到包] | 受众构成、自定义上传、分段服务 | 在沙盒之间移动受众。 有关此功能的详细信息，请阅读[沙盒工具指南](../../sandboxes/ui/sandbox-tooling.md)。 |
@@ -113,9 +113,9 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 | 状态 | 描述 |
 | ------ | ----------- |
-| [!UICONTROL 已实现] | 自上次批处理区段作业运行以来的最后24小时内&#x200B;**符合**&#x200B;区段资格的用户档案计数。 |
-| [!UICONTROL 现有] | 自上次批处理区段作业运行以来的最后24小时内，区段中仍有&#x200B;**保留**&#x200B;的用户档案数。 |
-| [!UICONTROL 正在退出] | 自上次批处理区段作业运行以来的最后24小时内&#x200B;**退出**&#x200B;区段的配置文件计数。 |
+| [!UICONTROL 已实现] | 自上次批处理区段作业运行以来的最后24小时内&#x200B;**符合受众资格的**&#x200B;的用户档案计数。 |
+| [!UICONTROL 现有] | 自上次批处理区段作业运行以来的最后24小时内受众中仍有&#x200B;**保留**&#x200B;的用户档案数。 此字段为&#x200B;**已计算**，并且未显示在`segmentMembership`对象中。 |
+| [!UICONTROL 正在退出] | 自上次批处理区段作业运行以来的最后24小时内&#x200B;**退出**&#x200B;受众的个人资料计数。 |
 
 选择要显示的字段后，您还可以重新调整所显示列的宽度。 可以通过拖动列之间的区域或选择要重新调整大小的列的![箭头图标](/help/images/icons/chevron-down.png)以及随后的&#x200B;**[!UICONTROL 调整列大小]**&#x200B;来执行此操作。
 
@@ -414,7 +414,7 @@ abstract="启用以将使用批次处理分段评估的所有受众包括在每�
 
 ### 联合受众构成 {#fac}
 
-除了受众组合和区段定义之外，您还可以使用Adobe联合受众组合从企业数据集构建新受众，而无需复制基础数据并将这些受众存储在Adobe Experience Platform受众门户中。 您还可以通过利用从企业数据仓库联合的组合受众数据来扩充Adobe Experience Platform中的现有受众。 请阅读有关[联合受众组合](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/home)的指南。
+除了受众组合和区段定义之外，您还可以使用Adobe Federated Audience Composition从企业数据集构建新受众，而无需复制基础数据并将这些受众存储在Adobe Experience Platform受众门户中。 您还可以通过利用从企业数据仓库联合的组合受众数据来扩充Adobe Experience Platform中的现有受众。 请阅读有关[联合受众组合](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/home)的指南。
 
 ![在您的组织的联合受众组合中创建的受众列表。](../images/ui/overview/federated-audience-composition.png)
 
