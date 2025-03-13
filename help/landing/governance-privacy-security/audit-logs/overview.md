@@ -4,10 +4,10 @@ description: 了解如何通过审核日志查看谁在 Adobe Experience Platfor
 role: Admin,Developer
 feature: Audits
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: f6e413d2d8b644775b6714739113174f5d9cb0d9
+source-git-commit: acbd46b5810a491d838f1c4c3366d19c91c15d51
 workflow-type: tm+mt
-source-wordcount: '1388'
-ht-degree: 35%
+source-wordcount: '1466'
+ht-degree: 32%
 
 ---
 
@@ -46,7 +46,7 @@ ht-degree: 35%
 | --- | --- |
 | [访问控制策略（基于属性的访问控制）](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
 | [帐户(Adobe)](../../../sources/connectors/tutorials/ui/../../../tutorials/ui/update.md) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
-| [Attribution AI实例](../../../intelligent-services/attribution-ai/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用</li><li>禁用</li></ul> |
+| [归因人工智能实例](../../../intelligent-services/attribution-ai/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用</li><li>禁用</li></ul> |
 | [审核日志](../../../landing/governance-privacy-security/audit-logs/overview.md) | <ul><li>导出</li></ul> |
 | [类](../../../xdm/schema/composition.md#class) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
 | 计算属性 | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
@@ -87,7 +87,9 @@ ht-degree: 35%
 
 ![左侧菜单中突出显示“审核”的“审核”仪表板。](../../images/audit-logs/audits.png)
 
-审核日志会保留365天，之后将从系统中将其删除。 因此，只能回溯最长为期 365 天。如果您需要的数据超过365天，则应定期导出日志以满足内部策略要求。
+审核日志会保留365天，之后将从系统中将其删除。 如果您需要的数据超过365天，则应定期导出日志以满足内部策略要求。
+
+您请求审计日志的方法会更改允许的时间段以及您将有权访问的记录数。 [导出日志](#export-audit-logs)允许您返回365天（以90天为间隔），最多显示1000条记录，如Experience Platform中的[活动日志UI](#filter-audit-logs)显示过去90天，最多显示1000条记录。
 
 从列表中选择一个事件以在右边栏中查看其详细信息。
 
@@ -95,12 +97,11 @@ ht-degree: 35%
 
 ### 筛选审核日志
 
+选择漏斗图标（![筛选器图标](/help/images/icons/filter.png)）以显示筛选器控件列表，帮助缩小结果范围。
+
 >[!NOTE]
 >
->由于这是一项新功能，显示的数据仅追溯到2022年3月。 根据所选资源，从2022年1月起，可能会提供以前的数据。
-
-
-选择漏斗图标（![筛选器图标](/help/images/icons/filter.png)）以显示筛选器控件列表，帮助缩小结果范围。 仅显示最后1000条记录，这与选择的各种过滤器无关。
+>Experience Platform UI仅显示过去90天（最多1000条记录），而不管应用了什么过滤器。 如果您需要超过该期限的日志（最多365天），则需要[导出审核日志](#export-audit-logs)。
 
 ![已突出显示筛选活动日志的审核仪表板。](../../images/audit-logs/filters.png)
 
@@ -130,9 +131,13 @@ ht-degree: 35%
 
 ![已突出显示筛选活动日志的审核仪表板。](../../images/audit-logs/filtered.png)
 
-### 导出审核日志
+### 导出审核日志 {#export-audit-logs}
 
 要导出审核日志的当前列表，请选择&#x200B;**[!UICONTROL 下载日志]**。
+
+>[!NOTE]
+>
+>可以每90天请求一次日志，最多可请求过去365天内的日志。 但是，单次导出期间最多可返回10,000个日志。
 
 ![突出显示了[!UICONTROL 下载日志]的审核仪表板。](../../images/audit-logs/download.png)
 
@@ -166,7 +171,7 @@ ht-degree: 35%
 
 ## 后续步骤和其他资源
 
-本指南介绍了如何管理Experience Platform中的审核日志。 有关如何监视Platform活动的更多信息，请参阅有关[可观察性分析](../../../observability/home.md)和[监视数据摄取](../../../ingestion/quality/monitor-data-ingestion.md)的文档。
+本指南介绍了如何在Experience Platform中管理审核日志。 有关如何监视Platform活动的更多信息，请参阅有关[可观察性分析](../../../observability/home.md)和[监视数据摄取](../../../ingestion/quality/monitor-data-ingestion.md)的文档。
 
 要加深您对Experience Platform中审核日志的了解，请观看以下视频：
 
