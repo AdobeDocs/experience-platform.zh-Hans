@@ -1,19 +1,19 @@
 ---
 solution: Experience Platform
-title: 用例的AI助手 — 创作并共享您自己的行动手册。
+title: 了解如何使用AI助手创作和共享您自己的行动手册。
 description: 如何创作和共享您自己的用例行动手册。
 role: User
-source-git-commit: f813db7599409a8fc048480f7803ed86c9f397fe
+exl-id: 0bc49710-ad9e-4509-b7e6-55f9b9037aa9
+source-git-commit: f76db5c8d397c6c7b006c70147c054dc0a67be04
 workflow-type: tm+mt
-source-wordcount: '1111'
+source-wordcount: '1112'
 ht-degree: 0%
 
 ---
 
-
 # 创作并共享您自己的行动手册
 
-由Adobe的AI Assistant支持的&#x200B;**行动手册创作框架**&#x200B;允许您在Adobe Experience Platform中高效地创建、管理和共享行动手册。
+[!DNL Playbook Authoring Framework]由Adobe Experience Platform中的AI Assistant提供支持，允许您在Adobe Experience Platform中高效地创建、管理和共享行动手册。
 
 该框架遵循三步流程：
 
@@ -23,35 +23,33 @@ ht-degree: 0%
 
 3. **行动手册分发**：跨不同组织共享行动手册。 例如，ACME位于德国的Martech Center of Excellence可以制定一份“黄金”行动手册，并将其分发给泰国、澳大利亚等国的地区组织。 帮助标准化营销用例。
 
-## 使用Adobe的AI助手创建行动手册
+## 创建行动手册
+
+您可以通过两种方式创建行动手册：使用AI助手或手动。 请阅读以下部分以了解如何操作。
 
 ### 行动手册概述
 
-您可以通过两种方式创建行动手册：使用Adobe的AI助手或手动。
+按照以下步骤使用AI助手创建行动手册：
 
-按照以下步骤使用Adobe的AI Assistant创建行动手册：
-
-1. 在左侧导航窗格中，选择&#x200B;**行动手册**。
+在左侧导航面板中，选择&#x200B;**[!UICONTROL 行动手册]**。
 
 在UI的左侧导航窗格中突出显示![个“行动手册”。](/help/use-case-playbooks/assets/playbooks/authoring/playbooks.png)
 
-1. 选择&#x200B;**新建行动手册**，然后选择&#x200B;**使用AI助手生成行动手册**。
+选择&#x200B;**[!UICONTROL 新建行动手册]**，然后选择&#x200B;**使用AI助手生成行动手册**。
 
-![选择“新建行动手册”按钮。](/help/use-case-playbooks/assets/playbooks/authoring/new-playbook.png)
+![选择了“使用AI助手生成行动手册”的行动手册界面。](/help/use-case-playbooks/assets/playbooks/authoring/generate-playbook.png)
 
-![选择“使用AI助手生成行动手册”按钮突出显示。](/help/use-case-playbooks/assets/playbooks/authoring/generate-playbook.png)
-
-1. 在提示字段中，描述用例。
+在提示字段中，描述用例。
 
 **示例**：“与浏览跑鞋但未完成购买的ACME客户接洽。”
 
-![选择“使用AI助手生成行动手册”按钮。](/help/use-case-playbooks/assets/playbooks/authoring/prompt.png)
+![Web窗体区域突出显示的行动手册界面。](/help/use-case-playbooks/assets/playbooks/authoring/prompt.png)
 
-1. 选择&#x200B;**生成**&#x200B;以创建行动手册元数据。
+选择&#x200B;**[!UICONTROL 生成]**&#x200B;以创建行动手册元数据。
 
 ![提示区域突出显示“生成”行动手册按钮。](/help/use-case-playbooks/assets/playbooks/authoring/generate.png)
 
-1. 生成后，选择&#x200B;**[!UICONTROL 编辑]**&#x200B;以根据需要修改生成的标题、描述和元数据。
+生成后，选择&#x200B;**[!UICONTROL 编辑]**&#x200B;以根据需要修改生成的标题、描述和元数据。
 
 ![生成的、突出显示“编辑”按钮的行动手册。](/help/use-case-playbooks/assets/playbooks/authoring/edit.png)
 
@@ -61,17 +59,15 @@ ht-degree: 0%
 * **目标受众**
 * **营销渠道**
 
-![突出显示了“编辑”按钮的行动手册详细信息部分。](/help/use-case-playbooks/assets/playbooks/authoring/edit-details.png)
+![带有“编辑”按钮的剧本详细信息部分突出显示。](/help/use-case-playbooks/assets/playbooks/authoring/edit-details.png)
 
-生成元数据后，选择&#x200B;**编辑历程图**&#x200B;按钮以根据需要调整历程图中的步骤。
+生成元数据后，选择&#x200B;**[!UICONTROL 编辑历程图]**&#x200B;以根据需要调整历程图中的步骤。
 
 ![编辑历程图按钮。](/help/use-case-playbooks/assets/playbooks/authoring/edit-journey-map-button.png)
 
 ![捕获行动手册元数据后编辑历程图。](/help/use-case-playbooks/assets/playbooks/authoring/edit-journey-map.png)
 
-然后，继续将剧本与技术资产相关联。
-
-要手动创建行动手册，请选择&#x200B;**手动创建行动手册**。
+然后，继续将剧本与技术资产相关联。 要手动创建行动手册，请选择&#x200B;**[!UICONTROL 手动创建行动手册]**。
 
 ![手动创建行动手册](/help/use-case-playbooks/assets/playbooks/authoring/create-manually.png)
 
@@ -83,9 +79,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> 未来版本中将添加对Real-Time Customer Data Platform的支持。
+> 未来版本中将添加对Real-Time CDP的支持。
 
-![“技术资产”选项卡和“添加必需产品”按钮突出显示。](/help/use-case-playbooks/assets/playbooks/authoring/technical-assets-add-required-product.png)
+![突出显示了“技术资产”选项卡和“添加所需产品”按钮。](/help/use-case-playbooks/assets/playbooks/authoring/technical-assets-add-required-product.png)
 
 选择&#x200B;**[!UICONTROL 选择资产]**&#x200B;以将此剧本与历程关联，如下图所示。 然后选择&#x200B;**发布行动手册**&#x200B;以完成行动手册。
 
@@ -162,4 +158,4 @@ AI助手会删除所有不必要的详细信息，如“项目名称”或“背
 
 ## 后续步骤
 
-现在您已了解如何使用Adobe的AI Assistant创建和发布行动手册，了解如何开始使用可用的行动手册，并从[行动手册列表](/help/use-case-playbooks/playbooks/choose.md)为您的用例选择正确的行动手册。
+现在您已了解如何使用AI助手创建和发布行动手册，了解如何开始使用可用的行动手册，并从[行动手册列表](/help/use-case-playbooks/playbooks/choose.md)为您的用例选择正确的行动手册。
