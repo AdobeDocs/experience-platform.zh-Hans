@@ -4,14 +4,15 @@ title: 了解如何使用AI助手创作和共享您自己的行动手册。
 description: 如何创作和共享您自己的用例行动手册。
 role: User
 exl-id: 0bc49710-ad9e-4509-b7e6-55f9b9037aa9
-source-git-commit: f76db5c8d397c6c7b006c70147c054dc0a67be04
+source-git-commit: aa1e155fb8d71497958d0de1f6c10cf47e58dbf0
 workflow-type: tm+mt
-source-wordcount: '1112'
+source-wordcount: '1113'
 ht-degree: 0%
 
 ---
 
-# 创作并共享您自己的行动手册
+
+# 创作并共享您自己的行动手册(Beta)
 
 [!DNL Playbook Authoring Framework]由Adobe Experience Platform中的AI Assistant提供支持，允许您在Adobe Experience Platform中高效地创建、管理和共享行动手册。
 
