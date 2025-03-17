@@ -4,7 +4,7 @@ description: 了解如何通过审核日志查看谁在 Adobe Experience Platfor
 role: Admin,Developer
 feature: Audits
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: acbd46b5810a491d838f1c4c3366d19c91c15d51
+source-git-commit: 9bc80c2ee01e7a739db55cc7fc77ea19e609b265
 workflow-type: tm+mt
 source-wordcount: '1466'
 ht-degree: 32%
@@ -89,7 +89,7 @@ ht-degree: 32%
 
 审核日志会保留365天，之后将从系统中将其删除。 如果您需要的数据超过365天，则应定期导出日志以满足内部策略要求。
 
-您请求审计日志的方法会更改允许的时间段以及您将有权访问的记录数。 [导出日志](#export-audit-logs)允许您返回365天（以90天为间隔），最多显示1000条记录，如Experience Platform中的[活动日志UI](#filter-audit-logs)显示过去90天，最多显示1000条记录。
+您请求审计日志的方法会更改允许的时间段以及您将有权访问的记录数。 [导出日志](#export-audit-logs)允许您返回365天（以90天为间隔），最多返回10,000条记录，其中由于Experience Platform中的[活动日志UI](#filter-audit-logs)显示过去90天，最多返回1000条记录。
 
 从列表中选择一个事件以在右边栏中查看其详细信息。
 
