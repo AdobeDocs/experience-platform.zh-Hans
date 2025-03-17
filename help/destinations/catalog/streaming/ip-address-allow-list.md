@@ -4,9 +4,9 @@ title: 列入允许列表流目的地的IP地址
 type: Documentation
 description: 此页提供了可添加到允许列表的IP范围，以便安全地将数据从Experience Platform导出到HTTP REST API端点、Amazon Kinesis或Azure事件中心实例。
 exl-id: f41303bd-c886-4c67-9e39-21efc3f5b768
-source-git-commit: ccb0f80334241afd3f8d8b6ce2833cfd39b223ac
+source-git-commit: 118b0b5e6a1936b644da4153fe7bfeb872ae137e
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '307'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 0%
 
 从Experience Platform到这些目标的出站流量始终通过此页列出的IP地址。
 
-列入允许列表此页提供了可添加到IP范围的IP范围，以便安全地将数据从Experience Platform导出到HTTP端点[!DNL Amazon Kinesis]或[!DNL Azure Event Hubs]实例。 如果您的HTTP端点位于企业防火墙之后，或者您的公司安全和合规性标准要求将IP范围列表列入允许列表，则此功能特别有用。
+列入允许列表此页面提供了可添加到IP范围的IP范围，以便安全地将数据从Experience Platform导出到HTTP端点[!DNL Amazon Kinesis]或[!DNL Azure Event Hubs]实例。 如果您的HTTP端点位于企业防火墙之后，或者您的公司安全和合规性标准要求将IP范围列表列入允许列表，则此功能特别有用。
 
 您可以通过网络防火墙定义网络访问控制。 通过指定适当的IP范围，您可以允许数据传输服务的通信。
 
@@ -57,6 +57,12 @@ Adobe建议您在使用此页面上提到的目标之前，将以下IP范围添�
 `52.254.107.0/28`
 `52.254.107.144/28`
 `20.22.83.112`
+
+## VA6：在AWS上运行的美国和美洲客户 {#aws}
+
+以下IP范围适用于在Amazon Web Services (AWS)上运行的Experience Platform客户。 有关详细信息，请参阅[Experience Platform Multi-Cloud概述](../../../landing/multi-cloud.md)。
+
+`66.117.18.0/24`
 
 ## NLD2：EMEA客户 {#emea}
 

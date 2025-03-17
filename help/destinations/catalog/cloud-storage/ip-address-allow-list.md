@@ -3,9 +3,9 @@ title: 基于文件的云存储目标的IP地址允许列表
 type: Documentation
 description: 本页提供了可添加到允许列表的IP范围，以便安全地将数据从Experience Platform导出到云存储目标。
 exl-id: 0b8086aa-786e-4244-b2a5-a3f57ad59a8b
-source-git-commit: 1d8ba11b1043fa68bf3c0205e8cecc2de8910234
+source-git-commit: 118b0b5e6a1936b644da4153fe7bfeb872ae137e
 workflow-type: tm+mt
-source-wordcount: '249'
+source-wordcount: '299'
 ht-degree: 1%
 
 ---
@@ -31,15 +31,25 @@ ht-degree: 1%
 
 ## 概述 {#overview}
 
-列入允许列表本页提供了可添加到Experience Platform的IP范围，以便安全地将数据从云存储导出到多个云存储目标。
+列入允许列表本页提供了可添加到Experience Platform的IP范围，以便安全地将数据从Cloud导出到多个Cloud Storage目标。
 
 您可以通过网络防火墙定义网络访问控制。 通过指定适当的IP范围，您可以允许数据传输服务的通信。
 
-Adobe列入允许列表建议您在使用Cloud Storage目标连接之前，将以下IP范围添加到。 在使用Cloud Storage目标连接时，如果未能将特定于区域的IP范围添加到允许列表，可能会导致错误或性能下降。
+Adobe列入允许列表建议您在使用Cloud Storage目标连接之前，将以下IP范围添加到Storage 。 在使用Cloud Storage目标连接时，如果未能将特定于区域的IP范围添加到允许列表，可能会导致错误或性能下降。
 
 ## 所有客户均需要 {#all-customers}
 
 * `52.247.108.70`
+
+## 在AWS上运行的美国客户 {#aws}
+
+以下IP范围适用于在Amazon Web Services (AWS)上运行的Experience Platform客户。 有关详细信息，请参阅[Experience Platform Multi-Cloud概述](../../../landing/multi-cloud.md)。
+
+>[!NOTE]
+>
+>在AWS上运行、使用基于文件的目标将数据导出到Amazon S3的客户不支持此IP范围。
+
+* `66.117.18.0/24`
 
 ## 美国客户 {#us-customers}
 
