@@ -3,9 +3,9 @@ title: 基于文件的云存储目标的IP地址允许列表
 type: Documentation
 description: 本页提供了可添加到允许列表的IP范围，以便安全地将数据从Experience Platform导出到云存储目标。
 exl-id: 0b8086aa-786e-4244-b2a5-a3f57ad59a8b
-source-git-commit: 118b0b5e6a1936b644da4153fe7bfeb872ae137e
+source-git-commit: ee4c42a2298c588590b1535524ed8f3dfe13b603
 workflow-type: tm+mt
-source-wordcount: '299'
+source-wordcount: '249'
 ht-degree: 1%
 
 ---
@@ -40,14 +40,14 @@ Adobe列入允许列表建议您在使用Cloud Storage目标连接之前，将�
 ## 所有客户均需要 {#all-customers}
 
 * `52.247.108.70`
+<!-- 
+## US customers running on AWS {#aws}
 
-## 在AWS上运行的美国客户 {#aws}
-
-以下IP范围适用于在Amazon Web Services (AWS)上运行的Experience Platform客户。 有关详细信息，请参阅[Experience Platform Multi-Cloud概述](../../../landing/multi-cloud.md)。
+The IP range below applies to Experience Platform customers running on Amazon Web Services (AWS). See the [Experience Platform Multi-Cloud overview](../../../landing/multi-cloud.md) for more information.
 
 >[!NOTE]
 >
->在AWS上运行、使用基于文件的目标将数据导出到Amazon S3的客户不支持此IP范围。
+>This IP range is not supported for customers running on AWS who use file-based destinations to export data to Amazon S3. -->
 
 * `66.117.18.0/24`
 

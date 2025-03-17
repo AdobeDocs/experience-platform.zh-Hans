@@ -4,9 +4,9 @@ title: 列入允许列表流目的地的IP地址
 type: Documentation
 description: 此页提供了可添加到允许列表的IP范围，以便安全地将数据从Experience Platform导出到HTTP REST API端点、Amazon Kinesis或Azure事件中心实例。
 exl-id: f41303bd-c886-4c67-9e39-21efc3f5b768
-source-git-commit: 118b0b5e6a1936b644da4153fe7bfeb872ae137e
+source-git-commit: ee4c42a2298c588590b1535524ed8f3dfe13b603
 workflow-type: tm+mt
-source-wordcount: '307'
+source-wordcount: '275'
 ht-degree: 0%
 
 ---
@@ -57,12 +57,12 @@ Adobe建议您在使用此页面上提到的目标之前，将以下IP范围添�
 `52.254.107.0/28`
 `52.254.107.144/28`
 `20.22.83.112`
+<!-- 
+## VA6: US and Americas customers running on AWS {#aws}
 
-## VA6：在AWS上运行的美国和美洲客户 {#aws}
+The IP range below applies to Experience Platform customers running on Amazon Web Services (AWS). See the [Experience Platform Multi-Cloud overview](../../../landing/multi-cloud.md) for more information.
 
-以下IP范围适用于在Amazon Web Services (AWS)上运行的Experience Platform客户。 有关详细信息，请参阅[Experience Platform Multi-Cloud概述](../../../landing/multi-cloud.md)。
-
-`66.117.18.0/24`
+`66.117.18.0/24` -->
 
 ## NLD2：EMEA客户 {#emea}
 
