@@ -2,7 +2,7 @@
 title: 身份图形链接规则疑难解答指南
 description: 了解如何解决身份图关联规则中的常见问题。
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: 4d9954dd61b56125ae1e828432c8cc359806d280
+source-git-commit: 7174c2c0d8c4ada8d5bba334492bad396c1cfb34
 workflow-type: tm+mt
 source-wordcount: '3286'
 ht-degree: 0%
@@ -26,7 +26,7 @@ ht-degree: 0%
 请务必注意以下因素：
 
 * 对于流式传输数据，Real-time Customer Profile、Identity Service和Data Lake将在数据发送后开始处理数据。 但是，完成数据处理所需的延迟取决于该服务。 通常，与个人资料和身份相比，数据湖处理时间更长。
-   * 如果即使在数小时后，对数据集运行查询时也没有显示数据，则数据可能没有摄取到Experience Platform中。
+   * 如果即使在数小时后，对数据集运行查询时仍未显示数据，则数据可能未摄取到Experience Platform中。
 * 对于批处理数据，所有数据将先流入数据湖，然后如果为配置文件和身份启用数据集，数据将传播到配置文件和身份。
 * 对于摄取相关问题，请务必在服务级别隔离问题，以便进行准确调试和故障排除。 需要考虑三种潜在问题类型：
 
@@ -40,7 +40,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->* 此部分假设数据已成功摄取到数据湖中，并且没有语法或其他错误会阻止数据首先被摄取到Experience Platform中。
+>* 此部分假设数据已成功摄取到Data Lake中，并且没有语法或其他错误会阻止数据首先被摄取到Experience Platform中。
 >
 >* 这些示例使用ECID作为Cookie命名空间，使用CRMID作为人员命名空间。
 
@@ -128,7 +128,7 @@ ht-degree: 0%
 命名空间优先级在事件片段确定主要身份的方式中发挥重要作用。
 
 * 配置并保存给定沙盒的[身份设置](./identity-settings-ui.md)后，配置文件将使用[命名空间优先级](namespace-priority.md#real-time-customer-profile-primary-identity-determination-for-experience-events)确定主要身份。 在使用identityMap时，配置文件将不再使用`primary=true`标志。
-* 虽然配置文件将不再引用此标志，但Experience Platform上的其他服务可能会继续使用`primary=true`标志。
+* 虽然配置文件将不再引用此标记，但Experience Platform上的其他服务可能会继续使用`primary=true`标记。
 
 为了将[经过身份验证的用户事件](implementation-guide.md#ingest-your-data)绑定到人员命名空间，所有经过身份验证的事件都必须包含人员命名空间(CRMID)。 这意味着即使用户登录后，人员命名空间仍必须存在于每个已验证的事件中。
 
@@ -250,7 +250,7 @@ WHERE identitymap['ECID'][0].id ='identity_value'
 ORDER BY timestamp desc 
 ```
 
-**注意**：此示例假定`eVar10`被标记为身份。 对于配置，必须根据您自己组织的实施更改eVar。
+**注意**：此示例假定`eVar10`被标记为身份。 对于您的配置，必须根据您自己组织的实施更改eVar。
 
 >[!ENDTABS]
 
@@ -320,7 +320,7 @@ ORDER BY timestamp desc
 
 本节概述了有关身份图关联规则的常见问题解答列表。
 
-## 身份优化算法 {#identity-optimization-algorithm}
+## 身份标识优化算法 {#identity-optimization-algorithm}
 
 请阅读本节以获取有关[标识优化算法](./identity-optimization-algorithm.md)的常见问题解答。
 

@@ -2,9 +2,9 @@
 title: 身份图链接规则的实施指南
 description: 了解在使用身份图链接规则配置实施数据时要遵循的建议步骤。
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 79efdff6f6068af4768fc4bad15c0521cca3ed2a
+source-git-commit: 7174c2c0d8c4ada8d5bba334492bad396c1cfb34
 workflow-type: tm+mt
-source-wordcount: '1585'
+source-wordcount: '1688'
 ht-degree: 2%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 2%
 4. [使用身份设置UI指定唯一的命名空间并配置命名空间的优先级排名](#identity-settings)
 5. [创建Experience Data Model (XDM)架构](#schema)
 6. [创建数据集](#dataset)
-7. [将您的数据摄取到Experience Platform](#ingest)
+7. [将数据摄取到Experience Platform](#ingest)
 
 ## 实施的先决条件 {#prerequisites-for-implementation}
 
@@ -60,7 +60,7 @@ ht-degree: 2%
 
 ### XDM体验事件
 
-在实施前的过程中，您必须确保系统将发送到Experience Platform的经过身份验证的事件始终包含人员标识符，例如CRMID。
+在实施前的过程中，请确保系统将发送到Experience Platform的经过身份验证的事件始终包含人员标识符，例如CRMID。
 
 >[!BEGINTABS]
 
@@ -120,26 +120,28 @@ ht-degree: 2%
 
 >[!ENDTABS]
 
-在使用XDM体验事件发送事件时，必须确保您具有完全限定的身份。
+在预实施过程中，您必须确保系统将发送到Experience Platform的经过身份验证的事件始终包含&#x200B;**single**&#x200B;人员标识符，如CRMID。
 
-+++选择以查看具有完全限定的标识的事件的示例
+* （推荐）具有一个人员标识符的已验证事件。
+* （不推荐）具有两个人员标识符的已验证事件。
+* （不推荐）没有任何人员标识符的经过身份验证的事件。
 
-```json
-    "identityMap": {
-        "ECID": [
-            {
-                "id": "24165048599243194405404369473457348936",
-                "primary": false
-            }
-        ]
-    }
-```
+如果您的系统发送了两个人员标识符，则实施可能会不符合单人员命名空间要求。 例如，如果webSDK实施中的identityMap包含CRMID、客户ID和ECID命名空间，则共享设备的两个人可能会错误地与不同的命名空间关联。
+
+在Identity Service中，此实施可能如下所示：
+
+* `timestamp1` = John登录 — >系统捕获`CRMID: John, ECID: 111`。
+* `timestamp2` = Jane登录 — >系统捕获`customerID: Jane, ECID: 111`。
+
++++查看实施在图形模拟中的外观
+
+![呈现了图形示例的图形模拟UI。](../images/implementation/example-graph.png)
 
 +++
 
 ## 设置权限 {#set-permissions}
 
-Identity Service实施流程的第一步是，确保将您的Experience Platform帐户添加到设置了必要权限的角色中。 管理员可通过导航到Adobe Experience Cloud中的权限UI，配置您帐户的权限。 从那里，必须将您的帐户添加到具有以下权限的角色：
+Identity Service实施流程的第一步是，确保将您的Experience Platform帐户添加到配置了必要权限的角色。 管理员可通过导航到Adobe Experience Cloud中的权限UI，配置您帐户的权限。 从那里，必须将您的帐户添加到具有以下权限的角色：
 
 * [!UICONTROL 查看身份设置]：应用此权限以便在身份命名空间浏览页中查看唯一的命名空间和命名空间优先级。
 * [!UICONTROL 编辑身份设置]：应用此权限以便能够编辑和保存您的身份设置。
@@ -190,7 +192,7 @@ Identity Service实施流程的第一步是，确保将您的Experience Platform
 * 至少一个XDM架构。 （根据您的数据和特定用例，您可能需要创建用户档案和体验事件架构。）
 * 基于架构的数据集。
 
-完成上面列出的所有项目后，即可开始摄取数据以Experience Platform。 您可以通过多种不同的方式执行数据摄取。 您可以使用以下服务将数据引入Experience Platform：
+完成上面列出的所有项目后，即可开始将数据摄取到Experience Platform。 您可以通过多种不同的方式执行数据摄取。 您可以使用以下服务将数据导入Experience Platform：
 
 * [批处理摄取和流式摄取](../../ingestion/home.md)
 * [Experience Platform中的数据收集](../../collection/home.md)
@@ -251,7 +253,7 @@ Identity Service实施流程的第一步是，确保将您的Experience Platform
 有关身份图链接规则的更多信息，请阅读以下文档：
 
 * [身份图链接规则概述](./overview.md)
-* [身份优化算法](./identity-optimization-algorithm.md)
+* [身份标识优化算法](./identity-optimization-algorithm.md)
 * [图形配置示例](./example-configurations.md)
 * [疑难解答和常见问题](./troubleshooting.md)
 * [命名空间优先级](./namespace-priority.md)

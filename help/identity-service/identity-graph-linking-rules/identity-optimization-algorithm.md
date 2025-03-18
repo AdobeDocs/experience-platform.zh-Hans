@@ -2,7 +2,7 @@
 title: 身份标识优化算法
 description: 了解Identity Service中的身份优化算法。
 exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
-source-git-commit: 048d915d33a19a9d50a4951e165b5ade1b9d9734
+source-git-commit: 7174c2c0d8c4ada8d5bba334492bad396c1cfb34
 workflow-type: tm+mt
 source-wordcount: '1560'
 ht-degree: 4%

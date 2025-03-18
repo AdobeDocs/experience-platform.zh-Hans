@@ -2,10 +2,10 @@
 title: 命名空间优先级
 description: 了解Identity Service中的命名空间优先级。
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 048d915d33a19a9d50a4951e165b5ade1b9d9734
+source-git-commit: 7174c2c0d8c4ada8d5bba334492bad396c1cfb34
 workflow-type: tm+mt
 source-wordcount: '1801'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -162,7 +162,7 @@ ht-degree: 2%
 
 数据摄取到数据湖将继续遵循在[Web SDK](../../tags/extensions/client/web-sdk/data-element-types.md#identity-map)和架构上配置的主要身份设置。
 
-数据湖不会根据命名空间优先级确定主身份。 例如，即使在启用了命名空间优先级（例如，向新连接添加数据集）后，Adobe Customer Journey Analytics仍将继续使用身份映射中的值，因为Customer Journey Analytics会使用来自数据湖的数据。
+数据湖不会根据命名空间优先级确定主身份。 例如，即使在启用了命名空间优先级（例如，向新连接添加数据集），Adobe Customer Journey Analytics仍将继续使用身份映射中的值，因为Customer Journey Analytics会使用来自数据湖的数据。
 
 ### Experience Data Model (XDM)架构
 
@@ -179,7 +179,7 @@ ht-degree: 2%
 
 此配置导致仅使用已验证的事件计算得分。
 
-有关详细信息，请阅读[Attribution AI](../../intelligent-services/attribution-ai/overview.md)和[客户人工智能](../../intelligent-services/customer-ai/overview.md)上的文档。
+有关详细信息，请阅读[归因人工智能](../../intelligent-services/attribution-ai/overview.md)和[客户人工智能](../../intelligent-services/customer-ai/overview.md)上的文档。
 
 ### 合作伙伴构建的目标
 
@@ -192,7 +192,7 @@ ht-degree: 2%
 
 ### Privacy Service
 
-对于给定标识，[Privacy Service删除请求](../privacy.md)将以下列方式运行：
+对于给定标识，[Privacy Service删除请求](../privacy.md)将按以下方式运行：
 
 * Real-time Customer Profile：删除将指定标识值作为主标识的任何配置文件片段。 **现在将根据命名空间优先级确定配置文件上的主要身份。**
 * 数据湖：删除具有指定身份作为主身份或辅助身份的任何记录。
