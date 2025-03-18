@@ -3,10 +3,10 @@ title: 将阵列、映射和对象从Real-Time CDP导出到云存储目标
 type: Tutorial
 description: 了解如何将阵列、映射和对象从Real-Time CDP导出到云存储目标。
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
+source-git-commit: 99093e0bbcd3c3560ebe201fdac72e83e67dae43
 workflow-type: tm+mt
-source-wordcount: '884'
-ht-degree: 15%
+source-wordcount: '862'
+ht-degree: 16%
 
 ---
 
@@ -14,9 +14,9 @@ ht-degree: 15%
 
 >[!AVAILABILITY]
 >
->将阵列导出到云存储目标的功能通常适用于以下目标： [[!DNL Azure Data Lake Storage Gen2]](../../destinations/catalog/cloud-storage/adls-gen2.md)、[[!DNL Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md)、[[!DNL Google Cloud Storage]](../../destinations/catalog/cloud-storage/google-cloud-storage.md)、[[!DNL Amazon S3]](../../destinations/catalog/cloud-storage/amazon-s3.md)、[[!DNL Azure Blob]](../../destinations/catalog/cloud-storage/azure-blob.md)、[[!DNL SFTP]](../../destinations/catalog/cloud-storage/sftp.md)，
+>将阵列和其他复杂对象导出到云存储目标的功能通常适用于以下目标： [[!DNL Azure Data Lake Storage Gen2]](../../destinations/catalog/cloud-storage/adls-gen2.md)、[[!DNL Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md)、[[!DNL Google Cloud Storage]](../../destinations/catalog/cloud-storage/google-cloud-storage.md)、[[!DNL Amazon S3]](../../destinations/catalog/cloud-storage/amazon-s3.md)、[[!DNL Azure Blob]](../../destinations/catalog/cloud-storage/azure-blob.md)、[[!DNL SFTP]](../../destinations/catalog/cloud-storage/sftp.md)，
 
-了解如何将阵列从Real-Time CDP导出到[云存储目标](/help/destinations/catalog/cloud-storage/overview.md)。 阅读本文档以了解导出工作流、通过此功能启用的用例以及已知限制。
+了解如何将阵列、映射和对象从Real-Time CDP导出到[云存储目标](/help/destinations/catalog/cloud-storage/overview.md)。 阅读本文档以了解导出工作流、通过此功能启用的用例以及已知限制。
 
 您可以将此页面作为您希望了解有关从Experience Platform导出数组、映射和其他对象类型的所有信息的首选位置。
 
@@ -52,8 +52,6 @@ organizations = [{
   latestInteraction: "2024-09-08"
 }]
 ```
-
-请参阅下面的[大量示例](#examples)，了解如何使用各种函数访问数组的元素、转换和筛选数组、将数组元素加入字符串等。
 
 除了阵列之外，您还可以将映射和对象从Experience Platform导出到所需的云存储目标。 详细了解Experience Platform中的[映射](/help/xdm/ui/fields/map.md)和[对象](/help/xdm/ui/fields/object.md)。
 
