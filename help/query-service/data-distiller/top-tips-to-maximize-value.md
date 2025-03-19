@@ -1,17 +1,15 @@
 ---
-title: 使用Adobe Experience Platform Data Distiller实现价值最大的主要提示
+title: 使用Adobe Experience Platform Data Distiller最大化价值的关键提示 — OS656
 description: 了解如何通过Adobe Experience Platform Data Distiller丰富实时客户配置文件数据并使用行为分析构建目标受众，从而实现价值最大化。 该资源包括一个示例数据集和一个案例研究，演示如何应用回访间隔、频度、货币(RFM)模型进行客户分段。
-hide: true
-hidefromtoc: true
 exl-id: f3af4b9a-5024-471a-b740-a52fd226a985
-source-git-commit: c7a6a37679541dc37bdfed33b72d2396db7ce054
+source-git-commit: 9eee0f65c4aa46c61b699b734aba9fe2deb0f44a
 workflow-type: tm+mt
-source-wordcount: '3506'
+source-wordcount: '3657'
 ht-degree: 0%
 
 ---
 
-# 使用Adobe Experience Platform Data Distiller实现价值最大化的主要提示
+# 使用Adobe Experience Platform Data Distiller最大程度实现价值的重要提示 — OS656
 
 本页包含示例数据集，供您应用在Adobe Summit会话“OS656 — 使用Adobe Experience Platform Data Distiller实现最大价值的关键提示”中所学到的内容。 您将了解如何通过丰富实时客户档案数据来加快Adobe Real-Time Customer Data Platform和Journey Optimizer的实施。 此扩充利用对客户行为模式的深入洞察来构建受众，以实现体验交付和优化。
 
@@ -53,7 +51,7 @@ RFM模型使用三个关键参数根据事务性行为划分客户。
 
 #### 从CSV文件创建数据集 {#create-a-dataset}
 
-在Experience Platform UI中，导航到左侧导航栏中选择&#x200B;**[!UICONTROL 工作流]**，然后从可用选项中选择&#x200B;**[!UICONTROL 从CSV文件创建数据集]**。 屏幕右侧将显示一个新的侧栏，请选择&#x200B;**[!UICONTROL 启动]**。
+在Experience Platform UI中，在左侧导航边栏中选择&#x200B;**[!UICONTROL 数据集]**，然后选择&#x200B;**[!UICONTROL 创建数据集]**。 然后从可用选项中选择&#x200B;**[!UICONTROL 从CSV文件创建数据集]**。
 
 此时将显示[!UICONTROL 配置数据集]面板。 在&#x200B;**[!UICONTROL Name]**&#x200B;字段中，输入数据集名称为“luma_web_data”，然后选择&#x200B;**[!UICONTROL 下一步]**。
 
@@ -135,7 +133,7 @@ RFM模型会根据完成的购买评估回访间隔、频度和货币价值。 �
 第一个查询选择与取消关联的所有非null的购买ID，并使用`GROUP BY`聚合它们。 必须从数据集中排除生成的购买ID。
 
 ```sql
-CREATE OR replace VIEW orders_cancelled
+CREATE VIEW orders_cancelled
 AS
   SELECT purchase_id
   FROM   luma_web_data
@@ -241,7 +239,7 @@ GROUP BY userid;
 为了提高查询效率和可重用性，请创建`VIEW`以存储聚合的RFM值。
 
 ```sql
-CREATE OR replace VIEW rfm_values
+CREATE VIEW rfm_values
 AS
   SELECT userid,
          DATEDIFF(current_date, MAX(purchase_date)) AS days_since_last_purchase,
@@ -258,7 +256,7 @@ AS
 同样作为最佳实践，请运行简单的浏览查询以检查视图中的数据。 使用以下语句。
 
 ```sql
-SELECT * FROM RFM_Values;
+SELECT * FROM rfm_values;
 ```
 
 以下屏幕截图显示了查询的示例结果，其中显示了每个用户的已计算RFM值。 结果对应于`CREATE VIEW`查询中的视图ID。
@@ -289,7 +287,7 @@ SELECT userid,
        NTILE(4)
          OVER (
            ORDER BY total_revenue DESC)                AS monetization
-FROM   rfm_val ues; 
+FROM rfm_values; 
 ```
 
 结果如下图所示。
@@ -320,6 +318,10 @@ AS
              ORDER BY total_revenue DESC)                AS monetization
   FROM   rfm_values;
 ```
+
+结果类似于以下图像，但视图ID不同。
+
+![“rfm_scores”视图的“查询结果”对话框。](../images/data-distiller/top-tips-to-maximize-value/rfm_score-view-result.png)
 
 #### 模型RFM段 {#model-rfm-segments}
 
@@ -398,7 +400,7 @@ SELECT * FROM rfm_model_segment;
 
 ### 步骤4：使用SQL将RFM数据批量摄取到Real-Time Customer Profile {#sql-batch-ingest-rfm-data}
 
-可将RFM丰富的客户数据批量摄取到Real-Time Customer Profile。 首先，创建启用配置文件的数据集，然后使用SQL插入转换后的数据。
+接下来，将丰富RFM的客户数据批量摄取到Real-Time Customer Profile。 首先，创建启用配置文件的数据集，然后使用SQL插入转换后的数据。
 
 #### 创建派生的数据集以存储RFM属性 {#create-a-derived-dataset}
 
@@ -426,7 +428,13 @@ SELECT * FROM rfm_model_segment;
 >
 >有关定义身份字段和使用身份命名空间的更多信息，请参阅[Identity Service文档](../../identity-service/home.md)或[在Adobe Experience Platform UI中定义身份字段指南](../../xdm/ui/fields/identity.md)。
 
-以下SQL将创建一个启用配置文件的表来存储RFM属性
+由于查询编辑器支持顺序执行，因此您可以在单个会话中包含表创建查询和数据插入查询。 以下SQL首先创建启用配置文件的表来存储RFM属性。 然后，它将RFM丰富的客户数据从`rfm_model_segment`插入到`adls_rfm_profile`表中，并在租户特定的命名空间下构造实时客户配置文件摄取所需的每个记录。
+
+由于查询编辑器支持顺序执行，因此您可以在单个会话中运行表创建和数据插入查询。 以下SQL首先创建启用配置文件的表来存储RFM属性。 然后，它将RFM丰富的客户数据从`rfm_model_segment`插入到`adls_rfm_profile`表中，确保每个记录都在租户特定的命名空间(`_{TENANT_ID}`)下正确构建。 此命名空间对于实时客户配置文件摄取和准确的身份解析至关重要。
+
+>[!IMPORTANT]
+>
+>将`_{TENANT_ID}`替换为您组织的租户命名空间。 此命名空间是您的组织所独有的，可确保在Adobe Experience Platform中正确分配所有摄取的数据。
 
 ```sql
 CREATE TABLE IF NOT EXISTS adls_rfm_profile (
@@ -439,11 +447,16 @@ CREATE TABLE IF NOT EXISTS adls_rfm_profile (
     monetization INTEGER, -- Monetary score
     rfm_model TEXT -- RFM segment classification
 ) WITH (LABEL = 'PROFILE'); -- Enable the table for Real-Time Customer Profile
+
+INSERT INTO adls_rfm_profile
+SELECT STRUCT(userId, days_since_last_purchase, orders, total_revenue, recency,
+              frequency, monetization, rfm_model) _{TENANT_ID}
+FROM rfm_model_segment;
 ```
 
 此查询的结果与本剧本中以前创建的数据集类似，但ID不同。
 
-创建数据集后，导航到数据集>浏览> `adls_rfm_profile`以验证数据集为空。
+创建数据集后，导航到&#x200B;**[!UICONTROL 数据集]** > **[!UICONTROL 浏览]** > `adls_rfm_profile`以验证数据集是否为空。
 
 ![显示包含“adls_rfm_profile”数据集详细信息的数据集工作区，并突出显示启用配置文件的切换。](../images/data-distiller/top-tips-to-maximize-value/profile-enabled-toggle.png)
 
@@ -464,7 +477,7 @@ CREATE TABLE IF NOT EXISTS adls_rfm_profile (
 ```sql
 INSERT INTO adls_rfm_profile
 SELECT Struct(userid, days_since_last_purchase, orders, total_revenue, recency,
-              frequency, monetization, rfm_model) _pfreportingonprod
+              frequency, monetization, rfm_model) _{TENANT_ID}
 FROM   rfm_model_segment; 
 ```
 
@@ -490,10 +503,10 @@ FROM   rfm_model_segment;
 
 此时将显示[!UICONTROL 计划详细信息]视图。 在此处，输入以下详细信息以配置计划：
 
-- **[!UICONTROL 执行频率]**： **每年**
-- **[!UICONTROL 执行日]**： **4月30日**
-- **[!UICONTROL 计划执行时间]**： **11 PM UTC**
-- **[!UICONTROL 计划期间]**：**2024年4月1日至5月31日**
+- **[!UICONTROL 执行频率]**： **每周**
+- **[!UICONTROL 执行日]**：**星期一和星期二**
+- **[!UICONTROL 计划执行时间]**： **上午10:10 UTC**
+- **[!UICONTROL 计划期间]**：**2025年3月17日至4月30日**
 
 选择&#x200B;**[!UICONTROL 保存]**&#x200B;以确认计划。
 
@@ -518,11 +531,11 @@ FROM   rfm_model_segment;
 
 使用`CREATE AUDIENCE AS SELECT`命令定义新受众。 创建的受众保存在数据集中，并在&#x200B;**[!UICONTROL 数据Distiller]**&#x200B;下的&#x200B;**[!UICONTROL 受众]**&#x200B;工作区中注册。
 
-使用SQL扩展创建的受众自动在[!UICONTROL 受众]工作区的[!UICONTROL Data Distiller]源下注册。 通过[!UICONTROL 受众] UI，您可以根据需要查看、管理和激活受众。
+使用SQL扩展创建的受众自动在[!UICONTROL 受众]工作区的[!UICONTROL Data Distiller]源下注册。 通过[受众门户](../../segmentation/ui/audience-portal.md)，您可以根据需要查看、管理和激活受众。
 
-![显示可用受众的受众工作区。](../images/data-distiller/top-tips-to-maximize-value/audiences-workspace-1.png)
+![显示可用受众的受众门户。](../images/data-distiller/top-tips-to-maximize-value/audiences-workspace-1.png)
 
-![受众工作区显示具有筛选器侧栏和选定数据Distiller的可用受众。](../images/data-distiller/top-tips-to-maximize-value/audiences-workspace-2.png)
+![受众门户显示具有筛选器侧栏和选定数据Distiller的可用受众。](../images/data-distiller/top-tips-to-maximize-value/audiences-workspace-2.png)
 
 有关SQL受众的详细信息，请参阅[Data Distiller受众文档](../data-distiller-audiences/overview.md)。 要了解如何在UI中管理受众，请参阅[受众门户概述](../../segmentation/ui/audience-portal.md#audience-list)。
 
@@ -534,19 +547,19 @@ FROM   rfm_model_segment;
 -- Define an audience for best customers based on RFM scores
 CREATE AUDIENCE rfm_best_customer 
 WITH (
-    primary_identity = _pfreportingonprod.userId, 
+    primary_identity = _{TENANT_ID}.userId, 
     identity_namespace = queryService
 ) AS ( 
     SELECT * FROM adls_rfm_profile 
-    WHERE _pfreportingonprod.recency = 1 
-        AND _pfreportingonprod.frequency = 1 
-        AND _pfreportingonprod.monetization = 1 
+    WHERE _{TENANT_ID}.recency = 1 
+        AND _{TENANT_ID}.frequency = 1 
+        AND _{TENANT_ID}.monetization = 1 
 );
 
 -- Define an audience that includes all customers
 CREATE AUDIENCE rfm_all_customer 
 WITH (
-    primary_identity = _pfreportingonprod.userId, 
+    primary_identity = _{TENANT_ID}.userId, 
     identity_namespace = queryService
 ) AS ( 
     SELECT * FROM adls_rfm_profile 
@@ -555,33 +568,33 @@ WITH (
 -- Define an audience for core customers based on email identity
 CREATE AUDIENCE rfm_core_customer 
 WITH (
-    primary_identity = _pfreportingonprod.userId, 
+    primary_identity = _{TENANT_ID}.userId, 
     identity_namespace = Email
 ) AS ( 
     SELECT * FROM adls_rfm_profile 
-    WHERE _pfreportingonprod.recency = 1 
-        AND _pfreportingonprod.frequency = 1 
-        AND _pfreportingonprod.monetization = 1 
+    WHERE _{TENANT_ID}.recency = 1 
+        AND _{TENANT_ID}.frequency = 1 
+        AND _{TENANT_ID}.monetization = 1 
 );
 ```
 
 #### 插入受众 {#insert-an-audience}
 
-要将配置文件添加到现有受众，请使用`INSERT INTO`命令。 这样，您就可以将单个配置文件或整个受众区段添加到现有受众数据集。
+要将配置文件添加到现有受众，请使用`INSERT INTO`命令。 这样，您就可以将个人资料或整个受众添加到现有受众数据集。
 
 ```sql
 -- Insert profiles into the audience dataset
 INSERT INTO AUDIENCE adls_rfm_audience 
 SELECT 
-    _pfreportingonprod.userId, 
-    _pfreportingonprod.days_since_last_purchase, 
-    _pfreportingonprod.orders, 
-    _pfreportingonprod.total_revenue, 
-    _pfreportingonprod.recency, 
-    _pfreportingonprod.frequency, 
-    _pfreportingonprod.monetization 
+    _{TENANT_ID}.userId, 
+    _{TENANT_ID}.days_since_last_purchase, 
+    _{TENANT_ID}.orders, 
+    _{TENANT_ID}.total_revenue, 
+    _{TENANT_ID}.recency, 
+    _{TENANT_ID}.frequency, 
+    _{TENANT_ID}.monetization 
 FROM adls_rfm_profile 
-WHERE _pfreportingonprod.rfm_model = '6. Slipping - Once Loyal, Now Gone';
+WHERE _{TENANT_ID}.rfm_model = '6. Slipping - Once Loyal, Now Gone';
 ```
 
 #### 向受众添加用户档案 {#add-profiles-to-audience}

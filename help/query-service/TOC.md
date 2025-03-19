@@ -5,9 +5,9 @@ breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
 role: User,Developer
-source-git-commit: e63ecbd14db2e9e4f35fb89aaaa406a4c584416a
+source-git-commit: 9eee0f65c4aa46c61b699b734aba9fe2deb0f44a
 workflow-type: tm+mt
-source-wordcount: '402'
+source-wordcount: '400'
 ht-degree: 21%
 
 ---
@@ -23,7 +23,6 @@ ht-degree: 21%
 - 数据Distiller {#data-distiller}
    - [概述](data-distiller/overview.md)
    - [许可证使用](data-distiller/license-usage.md)
-   - [实现价值最大化的主要技巧](data-distiller/top-tips-to-maximize-value.md)
    - 派生的数据集{#derived-datasets}
       - [概述](data-distiller/derived-datasets/overview.md)
       - [使用SQL创建派生数据集](data-distiller/derived-datasets/create-derived-datasets-with-sql.md)
@@ -40,6 +39,7 @@ ht-degree: 21%
       - [ML的工程师功能](data-distiller/ml-feature-pipelines/feature-engineering.md)
       - [将数据导出到ML环境](data-distiller/ml-feature-pipelines/export-data.md)
       - [AI/ML数据管道扩充端到端工作流](data-distiller/ml-feature-pipelines/end-to-end-notebook-workflow.md)
+   - [Summit 2025会议](data-distiller/top-tips-to-maximize-value.md)
 - 数据Distiller统计数据和机器学习{#advanced-statistics}
    - [概述](advanced-statistics/overview.md)
    - [特征工程](advanced-statistics/feature-engineering.md)
