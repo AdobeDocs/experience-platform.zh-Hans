@@ -2,9 +2,9 @@
 title: 使用Adobe Experience Platform Data Distiller最大化价值的关键提示 — OS656
 description: 了解如何通过Adobe Experience Platform Data Distiller丰富实时客户配置文件数据并使用行为分析构建目标受众，从而实现价值最大化。 该资源包括一个示例数据集和一个案例研究，演示如何应用回访间隔、频度、货币(RFM)模型进行客户分段。
 exl-id: f3af4b9a-5024-471a-b740-a52fd226a985
-source-git-commit: fac4ca20f15bdfd765b73fde9db8dd7e2fc1a149
+source-git-commit: cfa8395e68ed828be5095a979d5bf0ea6e9a9ae9
 workflow-type: tm+mt
-source-wordcount: '3657'
+source-wordcount: '3658'
 ht-degree: 0%
 
 ---
@@ -438,15 +438,15 @@ SELECT * FROM rfm_model_segment;
 
 ```sql
 CREATE TABLE IF NOT EXISTS adls_rfm_profile (
-    userId TEXT PRIMARY IDENTITY NAMESPACE 'Email', -- Primary identity field using the 'Email' namespace
-    days_since_last_purchase INTEGER, -- Days since the last purchase
-    orders INTEGER, -- Total number of orders
-    total_revenue DECIMAL(18, 2), -- Total revenue with two decimal precision
-    recency INTEGER, -- Recency score
-    frequency INTEGER, -- Frequency score
-    monetization INTEGER, -- Monetary score
-    rfm_model TEXT -- RFM segment classification
-) WITH (LABEL = 'PROFILE'); -- Enable the table for Real-Time Customer Profile
+    userId TEXT PRIMARY IDENTITY NAMESPACE 'Email',
+    days_since_last_purchase INTEGER,
+    orders INTEGER,
+    total_revenue DECIMAL(18, 2),
+    recency INTEGER,
+    frequency INTEGER,
+    monetization INTEGER,
+    rfm_model TEXT
+) WITH (LABEL = 'PROFILE');
 
 INSERT INTO adls_rfm_profile
 SELECT STRUCT(userId, days_since_last_purchase, orders, total_revenue, recency,
@@ -578,28 +578,9 @@ WITH (
 );
 ```
 
-#### 插入受众 {#insert-an-audience}
+#### 创建空的受众数据集 {#create-empty-audience-dataset}
 
-要将配置文件添加到现有受众，请使用`INSERT INTO`命令。 这样，您就可以将个人资料或整个受众添加到现有受众数据集。
-
-```sql
--- Insert profiles into the audience dataset
-INSERT INTO AUDIENCE adls_rfm_audience 
-SELECT 
-    _{TENANT_ID}.userId, 
-    _{TENANT_ID}.days_since_last_purchase, 
-    _{TENANT_ID}.orders, 
-    _{TENANT_ID}.total_revenue, 
-    _{TENANT_ID}.recency, 
-    _{TENANT_ID}.frequency, 
-    _{TENANT_ID}.monetization 
-FROM adls_rfm_profile 
-WHERE _{TENANT_ID}.rfm_model = '6. Slipping - Once Loyal, Now Gone';
-```
-
-#### 向受众添加用户档案 {#add-profiles-to-audience}
-
-使用以下SQL命令创建和填充受众：
+添加用户档案之前，请创建一个空数据集以存储受众记录。
 
 ```sql
 -- Create an empty audience dataset
@@ -620,11 +601,28 @@ SELECT
 WHERE FALSE;
 ```
 
+#### 将配置文件插入到现有受众 {#insert-an-audience}
+
+要将配置文件添加到现有受众，请使用INSERT INTO命令。 这样，您就可以将单个配置文件或整个受众区段添加到现有受众数据集。
+
+```sql
+-- Insert profiles into the audience dataset
+INSERT INTO AUDIENCE adls_rfm_audience 
+SELECT 
+    _{TENANT_ID}.userId, 
+    _{TENANT_ID}.days_since_last_purchase, 
+    _{TENANT_ID}.orders, 
+    _{TENANT_ID}.total_revenue, 
+    _{TENANT_ID}.recency, 
+    _{TENANT_ID}.frequency, 
+    _{TENANT_ID}.monetization 
+FROM adls_rfm_profile 
+WHERE _{TENANT_ID}.rfm_model = '6. Slipping - Once Loyal, Now Gone';
+```
+
 #### 删除受众 {#delete-an-audience}
 
-要删除现有受众，请使用`DROP AUDIENCE`命令。 如果受众不存在，则除非指定`IF EXISTS`，否则会发生异常。
-
-使用以下SQL命令删除受众：
+要删除现有受众，请使用DROP AUDIENCE命令。 如果受众不存在，则除非指定了IF EXISTS，否则会发生异常。
 
 ```sql
 DROP AUDIENCE IF EXISTS adls_rfm_audience;
