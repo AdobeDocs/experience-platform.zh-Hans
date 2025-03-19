@@ -3,9 +3,10 @@ title: Adobe Content Analytics扩展概述
 description: 了解Adobe Experience Platform中的Adobe Content Analytics标记扩展。
 hide: true
 hidefromtoc: true
-source-git-commit: d6288d9515d7efaf874cb056f06d04b2002fd369
+exl-id: fcc46c86-e765-4bc7-bfdf-b8b10e8afacc
+source-git-commit: 80bfaeb7fec229e77c83230a01b75a200cf37e29
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '645'
 ht-degree: 0%
 
 ---
@@ -27,7 +28,7 @@ ht-degree: 0%
 
 ### 手动安装
 
-如果手动配置，则Adobe Content Analytics标记扩展需要安装资产。 如果您尚未这样做，请参阅有关[创建标记属性](https://experienceleague.adobe.com/en/docs/platform-learn/implement-in-websites/configure-tags/create-a-property)的文档。
+如果手动配置，Adobe Content Analytics标记扩展需要在上安装资产。 如果您尚未这样做，请参阅有关[创建标记属性](https://experienceleague.adobe.com/en/docs/platform-learn/implement-in-websites/configure-tags/create-a-property)的文档。
 
 创建属性后，或选择使用[Content Analytics引导式配置向导](https://experienceleague.adobe.com/en/docs/analytics-platform/using/content-analytics/configuration/guided)创建的属性时，请打开该属性并选择左侧栏上的&#x200B;**[!UICONTROL Extensions]**&#x200B;选项卡。
 
@@ -57,18 +58,29 @@ The [Content Analytics guided configuration wizard](https://experienceleague.ado
 
 ![在标记UI中显示Adobe Content Analytics标记扩展的数据流配置的图像](assets/aca-tag-datastreams.png)
 
-如果您想在不同的沙盒上对不同数据流使用内容分析，可以覆盖&#x200B;**[!UICONTROL 沙盒]**&#x200B;和&#x200B;**[!UICONTROL 生产数据流]**&#x200B;的自动选定值。 在执行此操作时，您可以从可用下拉菜单中选择沙盒和数据流，或选择&#x200B;**[!UICONTROL 输入值]**&#x200B;并为每个环境输入自定义数据流ID。
+如果您希望在其他沙盒上使用Content Analytics并使用不同的数据流，则可以覆盖&#x200B;**[!UICONTROL 沙盒]**&#x200B;和&#x200B;**[!UICONTROL 生产数据流]**&#x200B;的自动选定值。 在执行此操作时，您可以从可用下拉菜单中选择沙盒和数据流，或选择&#x200B;**[!UICONTROL 输入值]**&#x200B;并为每个环境输入自定义数据流ID。
 
 >[!IMPORTANT]
 >
 >配置另一个沙盒和数据流时，请确保
 >
 >* 选定的沙盒尚未与其他Content Analytics配置关联，并且
->* 任何选定的数据流都为Experience Platform服务配置了启用的Content Analytics体验事件数据集。
+>* 任何选定的数据流都为Experience Platform服务配置了启用的Content Analytics experience event数据集。
 
 请参阅[数据流](../../../../datastreams/overview.md)指南，了解如何配置数据流。
 
+## 配置体验捕获和定义
 
+在&#x200B;**[!UICONTROL 体验捕获和定义]**&#x200B;部分中，您可以启用&#x200B;**[!UICONTROL 包含体验]**&#x200B;以在为Content Analytics收集数据时包含体验。
+
+![图像显示扩展中的“体验捕获和定义”部分](assets/aca-tag-experiencecapture.png)
+
+1. 启用&#x200B;**[!UICONTROL 包含体验]**。
+1. （可选） 指定如何在您的网站上呈现内容的参数。 参数是&#x200B;**[!UICONTROL 域正则表达式]**&#x200B;和&#x200B;**[!UICONTROL 查询参数]**&#x200B;的零个或多个组合。
+   1. 输入&#x200B;**[!UICONTROL 域正则表达式]**，例如`^(?!.*\b(store|help|admin)\b)`。
+   1. 指定&#x200B;**[!UICONTROL 查询参数]**&#x200B;的逗号分隔列表，例如`outdoors, patio, kitchen`。
+1. 如果要删除域正则表达式和查询参数的组合，请选择&#x200B;**[!UICONTROL 删除]**。
+1. 如果要添加其他正则表达式和查询参数组合，请选择&#x200B;**[!UICONTROL 添加正则表达式]**。
 
 ## 配置事件筛选
 
