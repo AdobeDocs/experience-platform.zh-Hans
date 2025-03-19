@@ -2,7 +2,7 @@
 title: 使用Adobe Experience Platform Data Distiller最大化价值的关键提示 — OS656
 description: 了解如何通过Adobe Experience Platform Data Distiller丰富实时客户配置文件数据并使用行为分析构建目标受众，从而实现价值最大化。 该资源包括一个示例数据集和一个案例研究，演示如何应用回访间隔、频度、货币(RFM)模型进行客户分段。
 exl-id: f3af4b9a-5024-471a-b740-a52fd226a985
-source-git-commit: 9eee0f65c4aa46c61b699b734aba9fe2deb0f44a
+source-git-commit: fac4ca20f15bdfd765b73fde9db8dd7e2fc1a149
 workflow-type: tm+mt
 source-wordcount: '3657'
 ht-degree: 0%
@@ -328,11 +328,11 @@ AS
 通过计算RFM得分，可将客户分为以下六个优先级区段：
 
 1. `Core`：具有高回访间隔、频度和货币值（回访间隔= 1，频度= 1，货币= 1）的最佳客户。
-2. `Loyal`：一致但不是顶级消费者的频繁客户（频率= 1）。
-3. `Whales`：最高支出者，不考虑回访间隔和频率（货币= 1）。
-4. `Promising`：频繁但支出较低的用户（频率= 1、2、3；货币= 2、3、4）。
-5. `Rookies`：新客户的频度较低（回访间隔= 1，频度= 4）。
-6. `Slipping`：以前忠诚的客户，活动减少（回访间隔= 2、3、4；频率= 4）。
+1. `Loyal`：一致但不是顶级消费者的频繁客户（频率= 1）。
+1. `Whales`：最高支出者，不考虑回访间隔和频率（货币= 1）。
+1. `Promising`：频繁但支出较低的用户（频率= 1、2、3；货币= 2、3、4）。
+1. `Rookies`：新客户的频度较低（回访间隔= 1，频度= 4）。
+1. `Slipping`：以前忠诚的客户，活动减少（回访间隔= 2、3、4；频率= 4）。
 
 要简化访问和重新使用，请创建一个`VIEW`以存储RFM区段、分数和值。
 
