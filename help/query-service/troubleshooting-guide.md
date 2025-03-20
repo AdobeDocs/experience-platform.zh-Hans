@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务和数据Distiller常见问题解答
 description: 本文档包含与查询服务和数据Distiller相关的常见问题和解答。 主题包括：导出数据、第三方工具和PSQL错误。
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: dc15ab9b94513d3acdf0e62ef0fec710c05a9fc9
+source-git-commit: ef4c7f20710f56ca0de7c0dfdb99751ff2fe8ebe
 workflow-type: tm+mt
-source-wordcount: '5055'
+source-wordcount: '5024'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 0%
 
 **查询服务**：用于侧重于数据探索、验证和试验的SQL查询。 输出不会存储在数据湖中，执行时间限制为10分钟。 临时查询适用于轻量级的交互式数据检查和分析。
 
-**数据Distiller**：启用批处理查询，以处理、清理和扩充数据，并将结果存储回数据湖。 这些查询支持更长的执行（最长24小时）和其他功能，如计划、监控和加速报告。 Data Distiller非常适合深入的数据处理和计划的数据处理任务。
+**数据Distiller**：启用批处理查询，以处理、清理和扩充数据，并将结果存储回数据湖。 这些查询支持更长的执行（最长24小时）和其他功能，如计划、监控和加速报告。 Data Distiller非常适合进行深入的数据操作和计划的数据处理任务。
 
 有关详细信息，请参阅[查询服务打包文档](./packaging.md)。
 
@@ -46,17 +46,17 @@ ht-degree: 0%
 - [PostgreSQL API错误](#postgresql-api-errors)
 - [REST API错误](#rest-api-errors)
 
-## 常规查询服务问题 {#general}
+## 一般查询服务问题 {#general}
 
-本节包括有关性能、限制和进程的信息。
+本节包含有关性能、限制和流程的信息。
 
-### 能否关闭查询服务编辑器中的自动完成功能？
+### 我可以在查询服务编辑器中关闭自动完成功能吗？
 
 +++回答
-不行。 编辑器当前不支持关闭自动完成功能。
+不适用。 编辑器当前不支持关闭自动完成功能。
 +++
 
-### 键入查询时，为什么查询编辑器有时会变慢？
+### 为什么在键入查询时，查询编辑器有时运行缓慢？
 
 +++回答
 一个潜在的原因是自动完成功能。 该功能会处理某些元数据命令，这些命令有时在查询编辑过程中会降低编辑器的速度。
@@ -65,7 +65,7 @@ ht-degree: 0%
 ### 我可以将[!DNL Postman]用于查询服务API吗？
 
 +++回答
-可以，您可以使用[!DNL Postman]（免费的第三方应用程序）可视化所有AdobeAPI服务并与之交互。 请查看[[!DNL Postman] 设置指南](https://video.tv.adobe.com/v/28832)，了解有关如何在Adobe Developer Console中设置项目以及获取用于[!DNL Postman]的所有必要凭据的分步说明。 请参阅官方文档，了解有关启动、运行和共享 [!DNL Postman] 收藏集](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)的[指南。
+可以，您可以使用[!DNL Postman]（免费的第三方应用程序）可视化所有Adobe API服务并与之交互。 请查看[[!DNL Postman] 设置指南](https://video.tv.adobe.com/v/28832)，了解有关如何在Adobe Developer Console中设置项目以及获取用于[!DNL Postman]的所有必要凭据的分步说明。 请参阅官方文档，了解有关启动、运行和共享 [!DNL Postman] 收藏集](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)的[指南。
 +++
 
 ### 通过UI从查询返回的最大行数是否存在限制？
@@ -84,17 +84,6 @@ ht-degree: 0%
 
 +++回答
 不适用。 数据大小没有限制，但交互会话的查询超时限制为10分钟。 如果查询作为批量CTAS执行，则10分钟超时不适用。 有关更多详细信息，请参阅有关[交互式查询执行](./best-practices/writing-queries.md#interactive-query-execution)的指南。
-+++
-
-### 如何绕过对SELECT查询输出行数的限制？
-
-+++回答
-要绕过输出行限制，请在查询中应用“LIMIT 0”。 例如：
-
-```sql
-SELECT * FROM customers LIMIT 0;
-```
-
 +++
 
 ### 如何防止查询在10分钟内超时？
@@ -139,19 +128,19 @@ SELECT * FROM customers LIMIT 0;
 
 ![平面化数据的XDM架构和表格视图。 嵌套数据集的列名称在UI中突出显示。](./images/troubleshooting/column-name.png)
 
-请参阅文档以获取有关[如何使用查询编辑器或第三方客户端处理嵌套数据结构](./key-concepts/nested-data-structures.md)的完整指导。
+请参阅文档，了解有关[如何使用查询编辑器或第三方客户端处理嵌套数据结构](./key-concepts/nested-data-structures.md)的完整指南。
 +++
 
-### 如何加快对包含数组的数据集的查询？
+### 如何加快对包含数组的数据集的查询速度？
 
 +++回答
-若要提高包含数组的数据集上的查询性能，您应在运行时将数组](https://spark.apache.org/docs/latest/api/sql/index.html#explode)分解为[CTAS查询](./sql/syntax.md#create-table-as-select)，然后进一步探索该数组以寻找改进其处理时间的机会。[
+若要提高包含数组的数据集上的查询性能，您应在运行时[将数组](https://spark.apache.org/docs/latest/api/sql/index.html#explode)分解为[CTAS查询](./sql/syntax.md#create-table-as-select)，然后进一步探索以找出改进其处理时间的机会。
 +++
 
-### 为什么我的CTAS查询仅针对少数行在几个小时后仍在处理？
+### 为什么我的CTAS查询仍在处理只有少量行的许多小时后？
 
 +++回答
-If the query has taken a long time on a very small dataset, please contact customer support.
+如果查询在非常小的数据集上花费了很长时间，请联系客户支持。
 
 查询在处理过程中可能卡住的原因有很多。 要确定确切的原因，需要逐案进行深入分析。 [联系Adobe客户支持](#customer-support)以成为此流程。
 +++
@@ -159,17 +148,17 @@ If the query has taken a long time on a very small dataset, please contact custo
 ### 如何联系Adobe客户支持？ {#customer-support}
 
 +++回答
-[A complete list of Adobe customer support telephone numbers](https://helpx.adobe.com/ca/contact/phone.html) is available on the Adobe help page. 或者，可通过完成以下步骤在线查找帮助：
+[Adobe帮助页面上提供了Adobe客户支持电话号码的完整列表](https://helpx.adobe.com/ca/contact/phone.html)。 或者，可通过完成以下步骤在线查找帮助：
 
 - 在Web浏览器中导航到[https://www.adobe.com/](https://www.adobe.com/cn)。
-- 在顶部导航栏的右侧，选择&#x200B;**[!UICONTROL 登录]**。
+- 选择顶部导航栏右侧的&#x200B;**[!UICONTROL 登录]**。
 
-![突出显示了“登录”的Adobe网站。](./images/troubleshooting/adobe-sign-in.png)
+![登录的Adobe网站突出显示。](./images/troubleshooting/adobe-sign-in.png)
 
-- 使用已在您的Adobe许可证中注册的Adobe ID和密码。
+- 使用已在Adobe ID许可证中注册的Adobe和密码。
 - 从顶部导航栏中选择&#x200B;**[!UICONTROL 帮助和支持]**。
 
-![顶部导航栏下拉菜单包含帮助和支持、企业支持以及联系我们，突出显示。](./images/troubleshooting/help-and-support.png)
+![顶部导航栏下拉菜单（包含帮助和支持、企业支持和联系我们）突出显示。](./images/troubleshooting/help-and-support.png)
 
 此时会出现一个下拉横幅，其中包含[!UICONTROL 帮助和支持]部分。 选择&#x200B;**[!UICONTROL 联系我们]**&#x200B;以打开Adobe客户关怀虚拟助手，或选择&#x200B;**[!UICONTROL 企业支持]**以获得大型组织的专用帮助。
 +++
@@ -204,7 +193,7 @@ If the query has taken a long time on a very small dataset, please contact custo
 
 使用GET命令检索多个查询。 有关如何调用API的信息可在[示例API调用文档](./api/queries.md#sample-api-calls)中找到。
 
-从响应中，确定要调查的查询，并使用其`id`值发出另一个GET请求。 可以在[按ID检索查询](./api/queries.md#retrieve-a-query-by-id)中找到完整说明。
+从响应中，确定要调查的查询，并使用其`id`值提出另一个GET请求。 可以在[按ID检索查询](./api/queries.md#retrieve-a-query-by-id)中找到完整说明。
 
 成功的响应返回HTTP状态200并包含`errors`数组。 为简短起见，已缩短答复。
 
@@ -307,7 +296,7 @@ SELECT count(1) FROM myTableName
 查询服务提供多个内置的SQL帮助程序函数以扩展SQL功能。 有关查询服务](./sql/spark-sql-functions.md)支持的[SQL函数的完整列表，请参阅此文档。
 +++
 
-### 是否支持所有本机[!DNL Spark SQL]函数，或者用户是否仅受限于由Adobe提供的包装器[!DNL Spark SQL]函数？
+### 是否支持所有本机[!DNL Spark SQL]函数，或者用户是否仅限于Adobe提供的包装器[!DNL Spark SQL]函数？
 
 +++回答
 迄今为止，尚未在数据湖数据中测试所有开源[!DNL Spark SQL]函数。 经测试和确认后，它们将被添加到受支持列表中。 请参阅支持的 [!DNL Spark SQL] 函数的[列表](./sql/spark-sql-functions.md)以检查特定函数。
@@ -316,15 +305,15 @@ SELECT count(1) FROM myTableName
 ### 用户能否定义自己的用户定义函数(UDF)，以便在其他查询中使用？
 
 +++回答
-Due to data security considerations, the custom definition of UDFs is not allowed.
+出于数据安全考虑，不允许使用UDF的自定义定义。
 +++
 
-### 如果我的计划查询失败，该怎么办？
+### 如果我的计划查询失败，我应该怎么做？
 
 +++回答
-首先，检查日志以了解该错误的详细信息。 有关[在日志中查找错误](#error-logs)的常见问题解答部分提供了有关如何执行此操作的详细信息。
+首先，检查日志以了解错误的详细信息。 有关[在日志](#error-logs)中查找错误的常见问题解答部分提供了有关如何执行此操作的更多信息。
 
-您还应查看文档，以获取有关如何在UI中执行[已计划的查询](./ui/user-guide.md#scheduled-queries)以及通过[API](./api/scheduled-queries.md)执行的查询的指导。
+您还应该查看文档以了解有关如何在UI](./ui/user-guide.md#scheduled-queries)中以及通过[API](./api/scheduled-queries.md)执行[计划查询的指导。
 
 请注意，使用[!DNL Query Editor]时，您只能向已创建并保存的查询添加计划。 这不适用于[!DNL Query Service] API。
 +++
@@ -338,7 +327,7 @@ Due to data security considerations, the custom definition of UDFs is not allowe
 ### 查询日志如何处理与已删除的数据集相关的查询？
 
 +++回答
-Query Service never deletes query history. 这意味着任何引用已删除数据集的查询都会因此返回“无有效数据集”。
+查询服务从不删除查询历史记录。 这意味着任何引用已删除数据集的查询都会因此返回“无有效数据集”。
 +++
 
 ### 如何仅获取查询的元数据？
@@ -518,7 +507,7 @@ WHERE T2.ID IS NULL
 ### 我是否可以使用CTAS查询创建一个具有双下划线名称（与UI中显示的名称类似）的数据集？ 例如： `test_table_001`。
 
 +++回答
-不需要，这是跨Experience Platform的有意限制，适用于所有Adobe服务，包括查询服务。 带有两个下划线的名称可以作为架构和数据集名称，但数据集的表名称只能包含单个下划线。
+不是，这是跨Experience Platform的有意限制，适用于所有Adobe服务，包括查询服务。 带有两个下划线的名称可以作为架构和数据集名称，但数据集的表名称只能包含单个下划线。
 +++
 
 ### 一次可以运行多少个并发查询？
@@ -584,7 +573,7 @@ WHERE T2.ID IS NULL
 支持SSL模式。 请参阅[SSL模式文档](./clients/ssl-modes.md)，了解可用不同SSL模式的划分以及它们提供的保护级别。
 +++
 
-### 我们是否对从Power BI客户端到查询服务的所有连接使用TLS 1.2？
+### 我们是否对来自Power BI客户端的所有连接使用TLS 1.2来查询服务？
 
 +++回答
 是的。 传输中的数据始终符合HTTPS标准。 当前支持的版本为TLS1.2。
@@ -768,7 +757,7 @@ INSERT INTO查询称为ITAS查询。 请注意，CREATE TABLE查询称为CTAS查
 ### 能否将Power BI工具连接到查询服务？
 
 +++回答
-可以，您可以将Power BI连接到查询服务。 有关将Power BI桌面应用程序连接到查询服务](./clients/power-bi.md)的说明，请参阅文档[。
+是，您可以将Power BI连接到查询服务。 有关将Power BI桌面应用程序连接到查询服务](./clients/power-bi.md)的说明，请参阅文档[。
 +++
 
 ### 连接到查询服务时，为何需要很长时间才能加载功能板？
@@ -776,7 +765,7 @@ INSERT INTO查询称为ITAS查询。 请注意，CREATE TABLE查询称为CTAS查
 +++回答
 当系统连接到查询服务时，它会连接到交互式或批处理引擎。 这可能会导致加载时间较长以反映处理过的数据。
 
-如果要缩短功能板的响应时间，应实施Business Intelligence(BI)服务器作为查询服务和BI工具之间的缓存层。 通常，大多数BI工具都为服务器提供了附加服务。
+如果要缩短功能板的响应时间，应实施Business Intelligence (BI)服务器作为查询服务和BI工具之间的缓存层。 通常，大多数BI工具都为服务器提供了附加服务。
 
 添加缓存服务器层的目的是缓存来自查询服务的数据，并利用该缓存服务让仪表板加快响应。 这是可能的，因为执行的查询的结果每天都会缓存在BI服务器中。 然后，缓存服务器会为具有相同查询的任何用户提供这些结果，以减少延迟。 有关此类设置的说明，请参阅您所使用的实用程序或第三方工具的文档。
 +++

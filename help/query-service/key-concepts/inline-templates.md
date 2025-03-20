@@ -2,7 +2,7 @@
 title: 内联模板
 description: 了解如何使用内联模板在众多查询中重用多个条件。
 exl-id: 78959070-f9e5-4736-b72a-a8ef518bfa4f
-source-git-commit: 37aeff5131b9f67dbc99f6199918403e699478c8
+source-git-commit: ef4c7f20710f56ca0de7c0dfdb99751ff2fe8ebe
 workflow-type: tm+mt
 source-wordcount: '486'
 ht-degree: 1%
@@ -42,7 +42,7 @@ UI和查询服务API都支持内联模板。 在继续本指南之前，请阅�
 
 您可以使用模板存储一个或多个条件。 它们本身不需要是完整的查询。 如果模板包含有效的查询，则只需调用前面带有散列符号的模板名称即可执行查询。 例如，如果您将`SELECT * FROM JUNE_2023_LOYALTY_MEMBERS;`存储为名为`JUNE_2023_LOYALTY_MEMBERS`的模板，则命令`#JUNE_2023_LOYALTY_MEMBERS;`将执行模板中包含的有效查询。
 
->
+>[!NOTE]
 >
 >在Adobe Experience Platform UI中，仅在父级别支持参数化查询形式的内联模板。 这意味着参数化查询仅在原始模板中使用时才有效。 子模板必须是静态模板，不能具有动态参数。 有关详细信息，请参阅[参数化查询文档](../ui/parameterized-queries.md)。
 
