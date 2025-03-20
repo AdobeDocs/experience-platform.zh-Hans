@@ -3,10 +3,11 @@ title: 使用UI将Bombora的意图连接到Experience Platform
 description: 了解如何将Bombora Intent连接到Experience Platform
 hide: true
 hidefromtoc: true
-source-git-commit: 81a615b9826ed69bb050cae9c074a4e457ba128a
+exl-id: 76a4fed5-b2d5-46d5-9245-b52792a7d323
+source-git-commit: 911aad600dd2618ba98d2ccee737aaedea4f2735
 workflow-type: tm+mt
 source-wordcount: '365'
-ht-degree: 11%
+ht-degree: 36%
 
 ---
 
@@ -43,14 +44,14 @@ ht-degree: 11%
 >[!CONTEXTUALHELP]
 >id="platform_sources_bombora_domain"
 >title="域来源"
->abstract="虽然Adobe使用XDM accountOrganization.website，但可能有客户为其各自的网站使用自定义字段。 因此，您必须确保您的域源是域/网站字段，该字段会将您的Bombrora帐户记录与Experience Platform帐户相匹配。"
+>abstract="虽然 Adobe 使用 XDM accountOrganization.website，但可能有些客户会在其各自的网站上使用自定义字段。因此，您必须确保您的域来源是将您的 Bombora 帐户记录与 Experience Platform 帐户匹配的域/网站字段。"
 
 ## 计划数据流 {#schedule-dataflow}
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_bombora_schedule"
 >title="计划您的数据流"
->abstract="Bombora每周一次于周一上午5点（UTC时间）丢弃数据。 因此，您必须在UTC下午5:00之后配置摄取开始时间。 此外，您还必须向Bombora确认摄取时间，因为在将文件拖放到Adobe时，它们可能会更改其计划。"
+>abstract="Bombora 每周一早上 UTC 时间下午 5:00 投放一次数据。因此，您必须将摄取开始时间配置为 UTC 时间下午 5:00 之后。此外，您必须与 Bombora 确认摄取时间，因为他们可能会在将文件发送到 Adobe 时更改其计划。"
 
 
 ## 查看数据流 {#review-dataflow}

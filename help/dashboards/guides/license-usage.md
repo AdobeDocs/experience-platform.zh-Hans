@@ -32,14 +32,14 @@ ht-degree: 22%
 >id="platform_dashboards_licenseUsage"
 >title="许可证用量仪表板"
 >abstract="通过许可证用量仪表板，可了解已购买的 Adobe Experience Platform 产品。该仪表板概述显示产品的主要量度，包括您对每个主要量度的用量以及您的合同许可证数量。详细信息工作区显示特定沙盒中每个产品的量度细分。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html#" text="自动数据集过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html" text="自动数据集过期"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_licenseusage"
 >title="许可证用量仪表板"
 >abstract="通过许可证用量仪表板，可了解已购买的 Adobe Experience Platform 产品。该仪表板概述显示产品的主要量度，包括您对每个主要量度的用量以及您的合同许可证数量。详细信息工作区显示特定沙盒中每个产品的量度细分。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html#" text="自动数据集过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html" text="自动数据集过期"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
@@ -57,14 +57,14 @@ ht-degree: 22%
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_engageableprofiles"
->title="预测的可参与用户档案"
+>title="预测的可参与的轮廓"
 >abstract="您的使用量可能已达到已授予许可量。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_businesspersonprofile"
->title="预测的商业人员个人资料"
+>title="预测的商务人士轮廓"
 >abstract="您的使用量可能已达到已授予许可量。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
@@ -85,7 +85,7 @@ ht-degree: 22%
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_cjaRowsAvailable"
->title="可用预测的CJA行"
+>title="预测的 CJA 可用行"
 >abstract="您的使用量可能已达到已授予许可量。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
@@ -147,14 +147,14 @@ ht-degree: 22%
 >id="platform_dashboards_licenseUsage_prediction"
 >title="预测使用量"
 >abstract="预测基于过去 6-7 个月的使用情况，并在每个月的 15 日生成。请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解您组织的实际使用情况，并确保使用不超出您与 Adobe 的许可证范围。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html#" text="自动数据集过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html" text="自动数据集过期"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_licenseusage_prediction"
 >title="预测使用量"
 >abstract="预测基于过去 6-7 个月的使用情况，并在每个月的 15 日生成。请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解您组织的实际使用情况，并确保使用不超出您与 Adobe 的许可证范围。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html#" text="自动数据集过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html" text="自动数据集过期"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
 
 根据深入的使用预测主动管理和优化您的许可资源。 [!UICONTROL 预测的使用量]列可以准确地预测您购买的所有产品在所有生产和开发沙盒中沙盒级别的未来许可证使用量。 此警报功能会根据您截至本日历月15日的使用情况，预测未来六周内的许可证使用情况。 预测提供有下限和上限。
