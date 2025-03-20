@@ -2,9 +2,9 @@
 title: 身份图链接规则的实施指南
 description: 了解在使用身份图链接规则配置实施数据时要遵循的建议步骤。
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 7174c2c0d8c4ada8d5bba334492bad396c1cfb34
+source-git-commit: 9243da3ebe5e963ec457da5ae3e300e852787d37
 workflow-type: tm+mt
-source-wordcount: '1688'
+source-wordcount: '1725'
 ht-degree: 2%
 
 ---
@@ -58,7 +58,12 @@ ht-degree: 2%
 
 如果您使用[Adobe Analytics源连接器](../../sources/tutorials/ui/create/adobe-applications/analytics.md)来摄取数据，则必须为您的ECID指定比Adobe Analytics ID (AAID)更高的优先级，因为Identity Service阻止AAID。 通过优先处理ECID，您可以指示Real-time Customer Profile将未经身份验证的事件存储到ECID而不是AAID。
 
-### XDM体验事件
+### XDM体验事件 {#xdm-experience-events}
+
+>[!CONTEXTUALHELP]
+>id="platform_identities_linkingrules_xdm"
+>title="确保您只有一个人员标识符"
+>abstract="在预实施过程中，您必须确保系统将发送到Experience Platform的经过身份验证的事件始终包含&#x200B;**single**&#x200B;人员标识符，如CRMID。"
 
 在实施前的过程中，请确保系统将发送到Experience Platform的经过身份验证的事件始终包含人员标识符，例如CRMID。
 
