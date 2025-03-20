@@ -2,9 +2,9 @@
 title: 使用Adobe Experience Platform Data Distiller最大化价值的关键提示 — OS656
 description: 了解如何通过Adobe Experience Platform Data Distiller丰富实时客户配置文件数据并使用行为分析构建目标受众，从而实现价值最大化。 该资源包括一个示例数据集和一个案例研究，演示如何应用回访间隔、频度、货币(RFM)模型进行客户分段。
 exl-id: f3af4b9a-5024-471a-b740-a52fd226a985
-source-git-commit: cfa8395e68ed828be5095a979d5bf0ea6e9a9ae9
+source-git-commit: 30db967fc94d8f5b9ded22ce81da3d51001610af
 workflow-type: tm+mt
-source-wordcount: '3658'
+source-wordcount: '3704'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,16 @@ ht-degree: 0%
 ## 先决条件
 
 要执行此用例，您的Adobe Experience Platform实例必须获得[Data Distiller](./overview.md)的许可。 有关更多信息，请与Adobe代表联系。
+
+您还需要知道您的&#x200B;**组织的租户ID**，这是执行查询所必需的。 登录Experience Platform时，您的租户ID是URL的第一部分，紧跟在@符号之后。
+
+例如，在以下 URL 中：
+
+```http
+https://experience.adobe.com/#/@pfreportingonprod/sname:prod/platform/home
+```
+
+租户ID为`pfreportingonprod`。
 
 ## RFM模型概览 {#rfm-overview}
 
