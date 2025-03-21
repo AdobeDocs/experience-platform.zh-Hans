@@ -52,7 +52,7 @@ disable additional URLs for a while
 >[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_calculated_field_disabled"
 >title="添加计算字段已禁用"
->abstract="此控件已被禁用，因为您在设置此目标连接时选择了将&#x200B;**导出数组、映射、对象** 切换为&#x200B;*开*。要使用计算字段及其中可用的功能，通过将&#x200B;**导出数组、映射、对象** 切换为&#x200B;*关*&#x200B;设置一个新的目标连接。"
+>abstract="此控件已被禁用，因为您在设置此目标连接时选择了将&#x200B;**导出数组、映射、对象**&#x200B;切换为&#x200B;*开*。要使用计算字段及其中可用的功能，通过将&#x200B;**导出数组、映射、对象**&#x200B;切换为&#x200B;*关*&#x200B;设置一个新的目标连接。"
 
 在云存储目标的激活工作流的映射步骤中，选择&#x200B;**[!UICONTROL 添加计算字段]**。
 
