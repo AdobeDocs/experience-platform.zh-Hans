@@ -5,10 +5,10 @@ breadcrumb-title: Segmentation Service 指南
 user-guide-description: 使用 Adobe Experience Platform 生成的区段定义或外部来源，根据实时客户轮廓数据生成受众群体。
 feature: Segments
 role: User
-source-git-commit: be480fee733eb786c5488a9a10d04a62ef845566
+source-git-commit: a0543777e9a72f3a9ed6ff19e8b11973eb647b6b
 workflow-type: tm+mt
-source-wordcount: '200'
-ht-degree: 41%
+source-wordcount: '203'
+ht-degree: 40%
 
 ---
 
@@ -45,6 +45,7 @@ ht-degree: 41%
    - [批次分段](methods/batch-segmentation.md)
    - [流式客户细分](methods/streaming-segmentation.md)
    - [边缘分段](methods/edge-segmentation.md)
+   - [灵活的受众评估](methods/flexible-audience-evaluation.md)
 - 受众类型{#types}
    - [概述](types/overview.md)
    - [人员受众](types/people-audiences.md)
