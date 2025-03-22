@@ -2,9 +2,9 @@
 title: 身份设置UI
 description: 了解如何使用身份设置用户界面。
 exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
-source-git-commit: 7174c2c0d8c4ada8d5bba334492bad396c1cfb34
+source-git-commit: 0b4d9a493df6125decc6c46ddcd404f0bb1c9c6a
 workflow-type: tm+mt
-source-wordcount: '601'
+source-wordcount: '641'
 ht-degree: 3%
 
 ---
@@ -13,9 +13,7 @@ ht-degree: 3%
 
 >[!AVAILABILITY]
 >
->* 标识图链接规则当前处于“有限可用”状态。 有关如何访问开发沙盒中的功能的信息，请与您的Adobe客户团队联系。
->
->* 您的帐户必须具有&#x200B;**查看身份图形**&#x200B;权限才能访问用户界面中的身份设置。 有关详细信息，请阅读关于基于属性的访问控制中的权限的[指南](../../access-control/abac/ui/permissions.md)。
+>标识图链接规则当前处于“有限可用”状态。 有关如何访问开发沙盒中的功能的信息，请与您的Adobe客户团队联系。
 
 身份设置是Adobe Experience Platform Identity Service UI中的一项功能，可用于指定唯一的命名空间并配置命名空间优先级。
 
@@ -31,6 +29,15 @@ ht-degree: 3%
 * [图形配置示例](./example-configurations.md)
 * [命名空间优先级](./namespace-priority.md)
 * [图形模拟](./graph-simulation.md)
+
+### 设置权限 {#set-permissions}
+
+接下来，必须确保为帐户配置了以下权限：
+
+* **[!UICONTROL 查看身份设置]**：应用此权限以便在身份命名空间浏览页中查看唯一的命名空间和命名空间优先级。
+* **[!UICONTROL 编辑身份设置]**：应用此权限以便能够编辑和保存您的身份设置。
+
+如果您没有这些权限，请联系您的管理员。 有关详细信息，请阅读[权限指南](../../access-control/abac/ui/permissions.md)。
 
 ## 配置您的身份设置
 

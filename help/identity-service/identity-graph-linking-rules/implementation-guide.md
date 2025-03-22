@@ -2,9 +2,9 @@
 title: 身份图链接规则的实施指南
 description: 了解在使用身份图链接规则配置实施数据时要遵循的建议步骤。
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 9243da3ebe5e963ec457da5ae3e300e852787d37
+source-git-commit: 2dadb3a0a79f4d187dd096177130802f511a6917
 workflow-type: tm+mt
-source-wordcount: '1725'
+source-wordcount: '1778'
 ht-degree: 2%
 
 ---
@@ -65,11 +65,16 @@ ht-degree: 2%
 >title="确保您只有一个人员标识符"
 >abstract="在预实施过程中，您必须确保系统将发送到Experience Platform的经过身份验证的事件始终包含&#x200B;**single**&#x200B;人员标识符，如CRMID。"
 
-在实施前的过程中，请确保系统将发送到Experience Platform的经过身份验证的事件始终包含人员标识符，例如CRMID。
+在预实施过程中，您必须确保系统将发送到Experience Platform的经过身份验证的事件始终包含&#x200B;**single**&#x200B;人员标识符，如CRMID。
+
+* （推荐）具有一个人员标识符的已验证事件。
+* （不推荐）具有两个人员标识符的已验证事件。
+* （不推荐）没有任何人员标识符的经过身份验证的事件。
+
 
 >[!BEGINTABS]
 
->[!TAB 具有人员标识符的已验证事件]
+>[!TAB 具有一个人员标识符的已验证事件]
 
 ```json
 {
@@ -98,8 +103,57 @@ ht-degree: 2%
 }
 ```
 
->[!TAB 没有人员标识符的已验证事件]
+>[!TAB 具有两个人员标识符的已验证事件]
 
+如果您的系统发送了两个人员标识符，则实施可能会不符合单人员命名空间要求。 例如，如果webSDK实施中的identityMap包含CRMID、customerID和ECID命名空间，则无法保证每个事件都包含CRMID和customerID。
+
+理想情况下，您应发送类似于以下内容的有效负载：
+
+```json
+{
+  "_id": "test_id",
+  "identityMap": {
+      "ECID": [
+          {
+              "id": "62486695051193343923965772747993477018",
+              "primary": false
+          }
+      ],
+      "CRMID": [
+          {
+              "id": "John",
+              "primary": true
+          }
+      ],
+      "customerID": [
+          {
+            "id": "Jane",
+            "primary": false
+          }
+      ],
+  },
+  "timestamp": "2024-09-24T15:02:32+00:00",
+  "web": {
+      "webPageDetails": {
+          "URL": "https://business.adobe.com/",
+          "name": "Adobe Business"
+      }
+  }
+}
+```
+
+但是，请务必注意，虽然您可以发送两个人员标识符，但无法保证会由于实施或数据错误而阻止不需要的图形折叠。 请考虑以下方案：
+
+* `timestamp1` = John登录 — >系统捕获`CRMID: John, ECID: 111`。 但是，此事件有效负载中不存在`customerID: John`。
+* `timestamp2` = Jane登录 — >系统捕获`customerID: Jane, ECID: 111`。 但是，此事件有效负载中不存在`CRMID: Jane`。
+
+因此，最佳实践是只发送一个包含已验证事件的人员标识符。
+
+在图形模拟中，此摄取可能如下所示：
+
+![呈现了图形示例的图形模拟UI。](../images/implementation/example-graph.png)
+
+>[!TAB 没有任何人员标识符的已验证事件]
 
 ```json
 {
@@ -122,27 +176,7 @@ ht-degree: 2%
 }
 ```
 
-
 >[!ENDTABS]
-
-在预实施过程中，您必须确保系统将发送到Experience Platform的经过身份验证的事件始终包含&#x200B;**single**&#x200B;人员标识符，如CRMID。
-
-* （推荐）具有一个人员标识符的已验证事件。
-* （不推荐）具有两个人员标识符的已验证事件。
-* （不推荐）没有任何人员标识符的经过身份验证的事件。
-
-如果您的系统发送了两个人员标识符，则实施可能会不符合单人员命名空间要求。 例如，如果webSDK实施中的identityMap包含CRMID、客户ID和ECID命名空间，则共享设备的两个人可能会错误地与不同的命名空间关联。
-
-在Identity Service中，此实施可能如下所示：
-
-* `timestamp1` = John登录 — >系统捕获`CRMID: John, ECID: 111`。
-* `timestamp2` = Jane登录 — >系统捕获`customerID: Jane, ECID: 111`。
-
-+++查看实施在图形模拟中的外观
-
-![呈现了图形示例的图形模拟UI。](../images/implementation/example-graph.png)
-
-+++
 
 ## 设置权限 {#set-permissions}
 
