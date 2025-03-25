@@ -1,27 +1,29 @@
 ---
-description: 了解需要添加到允许列表才能成功使用Adobe Experience Platform源的IP地址。
-title: 源的IP地址允许列表
+description: 列入允许列表了解要成功使用Adobe Experience Platform源，需要添加到的IP地址。
+title: 列入允许列表源的IP地址
 exl-id: 40093c80-dbdb-4dc1-97bb-81a8200b731f
-source-git-commit: bb0e84ff26027e92d617b7fd0b85979dff501a7d
+source-git-commit: 719f1bca20d5118de14ebe324675bb0aab6161e8
 workflow-type: tm+mt
-source-wordcount: '210'
+source-wordcount: '242'
 ht-degree: 0%
 
 ---
 
 # IP地址允许列表
 
-您可以通过网络防火墙定义网络访问控制。 通过指定适当的源IP范围，您可以允许数据传输服务的通信流通过。 在使用源连接器之前，必须将以下IP地址添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。
+您可以通过网络防火墙定义网络访问控制。 通过指定适当的源IP范围，您可以允许数据传输服务的通信流通过。 在使用源连接器之前，必须将以下IP地址添加到允许列表。 未能将特定于地区的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。
 
-## 批处理源的IP地址允许列表 {#batch}
+## 列入允许列表连接到[!DNL Azure]上Experience Platform的源的IP地址 {#azure}
 
-您必须将以下IP地址添加到允许列表，以使批量源的数据传输服务的流量能够流动。
+### [!DNL Azure]上的Experience Platform上的批次源 {#batch}
+
+您必须将以下IP地址添加到允许列表中，以允许批量源的数据传输服务的流量流动。
 
 >[!BEGINTABS]
 
 >[!TAB VA7：北美]
 
-### VA7：北美
+#### VA7：北美
 
 - `20.42.2.0/23`
 - `20.42.4.0/26`
@@ -48,7 +50,7 @@ ht-degree: 0%
 
 >[!TAB NLD2：欧洲]
 
-### NLD2：欧洲
+#### NLD2：欧洲
 
 - `13.69.67.192/28`
 - `13.69.107.112/28`
@@ -60,7 +62,7 @@ ht-degree: 0%
 
 >[!TAB AUS5：澳大利亚]
 
-### AUS5：澳大利亚
+#### AUS5：澳大利亚
 
 - `13.70.74.144/28`
 - `20.37.193.0/25`
@@ -75,7 +77,7 @@ ht-degree: 0%
 
 >[!TAB CAN2：加拿大]
 
-### CAN2：加拿大
+#### CAN2：加拿大
 
 - `13.71.175.80/28`
 - `20.38.147.224/28`
@@ -88,7 +90,7 @@ ht-degree: 0%
 
 >[!TAB IND2：印度]
 
-### IND2：印度
+#### IND2：印度
 
 - `20.43.121.48/28`
 - `20.192.42.0/24`
@@ -102,15 +104,15 @@ ht-degree: 0%
 
 >[!ENDTABS]
 
-## 流源的IP地址允许列表 {#streaming}
+### 在[!DNL Azure]上的Experience Platform上流式传输源 {#streaming}
 
-您必须将以下IP地址添加到允许列表中，以允许流式源（如[[!DNL Amazon Kinesis]](./connectors/cloud-storage/kinesis.md)、[[!DNL Azure Event Hub]](./connectors/cloud-storage/eventhub.md)、[[!DNL Google PubSub]](./connectors/cloud-storage/google-pubsub.md)和[[!DNL Snowflake Streaming]](./connectors/databases/snowflake-streaming.md)）的数据传输服务的流量流动。
+您必须将以下IP地址添加到您的允许列表，以允许流式源（如[[!DNL Amazon Kinesis]](./connectors/cloud-storage/kinesis.md)、[[!DNL Azure Event Hub]](./connectors/cloud-storage/eventhub.md)、[[!DNL Google PubSub]](./connectors/cloud-storage/google-pubsub.md)和[[!DNL Snowflake Streaming]](./connectors/databases/snowflake-streaming.md)）的数据传输服务的流量流动。
 
 >[!BEGINTABS]
 
 >[!TAB VA7：北美]
 
-### VA7：北美
+#### VA7：北美
 
 - `52.254.106.240/28`
 - `52.254.107.144/28`
@@ -137,7 +139,7 @@ ht-degree: 0%
 
 >[!TAB NLD2：欧洲]
 
-### NLD2：欧洲
+#### NLD2：欧洲
 
 - `51.138.17.0/28`
 - `51.138.16.176/28`
@@ -164,7 +166,7 @@ ht-degree: 0%
 
 >[!TAB AUS5：澳大利亚]
 
-### AUS5：澳大利亚
+#### AUS5：澳大利亚
 
 - `20.40.188.194`
 - `20.53.206.128`
@@ -194,7 +196,7 @@ ht-degree: 0%
 
 >[!TAB CAN2：加拿大]
 
-### CAN2：加拿大
+#### CAN2：加拿大
 
 - `20.200.70.240/28`
 - `20.200.94.116`
@@ -224,7 +226,7 @@ ht-degree: 0%
 
 >[!TAB GBR9：英国]
 
-### GBR9：英国
+#### GBR9：英国
 
 - `20.254.2.128/28`
 - `20.26.131.71`
@@ -254,7 +256,7 @@ ht-degree: 0%
 
 >[!TAB IND2：印度]
 
-### IND2：印度
+#### IND2：印度
 
 - `4.224.74.0/28`
 - `20.244.79.80/28`
@@ -285,3 +287,9 @@ ht-degree: 0%
 - `4.188.4.138`
 
 >[!ENDTABS]
+
+## 用于允许列表源连接到[!DNL Amazon Web Services] (AWS)上Experience Platform的IP地址 {#aws}
+
+您必须将以下IP地址添加到允许列表，以将源连接到AWS上的Experience：
+
+- `66.117.18.0/24`
