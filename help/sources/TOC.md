@@ -5,10 +5,10 @@ breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源引入数据。了解如何构建、标记和增强已引入的数据。
 feature: Sources
 role: Developer
-source-git-commit: b900ef8cbbab78071d462484f088e17eb20fe9b6
+source-git-commit: 3ada2136e712abd1dad956cd579d6877b3e729c9
 workflow-type: tm+mt
-source-wordcount: '1047'
-ht-degree: 30%
+source-wordcount: '1059'
+ht-degree: 29%
 
 ---
 
@@ -236,6 +236,7 @@ ht-degree: 30%
    - [删除数据流](tutorials/api/delete-dataflows.md)
    - [提取加密数据](tutorials/api/encrypt-data.md)
    - [将数据流另存为草稿](tutorials/api/draft.md)
+   - [将访问标签应用于数据流](tutorials/api/labels.md)
 - UI教程{#ui-tutorials}
    - 创建源连接{#create}
       - Adobe应用程序{#adobe-applications}
@@ -361,6 +362,7 @@ ht-degree: 30%
    - [删除数据流](tutorials/ui/delete.md)
    - [订阅源提醒](tutorials/ui/alerts.md)
    - [将数据流另存为草稿](tutorials/ui/draft.md)
+   - [将访问标签应用于数据流](tutorials/ui/labels.md)
 - 自助式源(批次SDK) {#sdk}
    - [概述](sources-sdk/overview.md)
    - 配置连接规范{#config}
