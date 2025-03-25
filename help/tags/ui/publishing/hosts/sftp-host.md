@@ -2,10 +2,10 @@
 title: SFTP 主机
 description: 了解如何在Adobe Experience Platform中配置标记，以将库内部版本交付到安全的自托管SFTP服务器。
 exl-id: 3c1dc43b-291c-4df4-94f7-a03b25dbb44c
-source-git-commit: b3c3bf0a39a30e8c9baf81ec20945497acef5465
+source-git-commit: 5b362d28eb3be5e2a45464390c694f7ae59f899c
 workflow-type: tm+mt
-source-wordcount: '810'
-ht-degree: 11%
+source-wordcount: '875'
+ht-degree: 10%
 
 ---
 
@@ -15,11 +15,11 @@ ht-degree: 11%
 >
 >经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
-通过Experience Platform，您可以将标记库内部版本传输到您托管的安全SFTP服务器，从而更好地控制如何存储和管理内部版本。 本指南介绍如何在Experience PlatformUI或数据收集UI中为标记属性设置SFTP主机。
+Experience Platform允许您将标记库内部版本传输到您托管的安全SFTP服务器，让您能够更好地控制如何存储和管理内部版本。 本指南介绍如何在Experience Platform UI或数据收集UI中为标记属性设置SFTP主机。
 
 >[!NOTE]
 >
->您还可以选择改用由Adobe管理的主机。 有关详细信息，请参阅[Adobe管理的主机](./managed-by-adobe-host.md)指南。
+>您还可以选择改用Adobe管理的主机。 有关详细信息，请参阅[Adobe-managed主机](./managed-by-adobe-host.md)上的指南。
 >
 >有关自托管库的好处和限制的信息，请参阅[自托管指南](./self-hosting-libraries.md)。
 
@@ -36,6 +36,22 @@ Platform使用加密密钥连接到SFTP站点。 可以通过以下几步来正�
 私钥用于加密公钥。 在SFTP主机创建过程中，您需要提供私钥。 有关加密公钥的说明，请参阅Reactor API指南中有关[加密值](../../../api/guides/encrypting-values.md)的部分。 除非您知道自己需要特定密钥，否则请使用生产环境的GPG密钥。 最后，您可以从任何计算机加密私钥，因此无需在服务器上安装GPG即可完成此步骤。
 
 ### 允许列表平台IP地址
+
+>[!IMPORTANT]
+>
+> 2025年6月23日，Adobe Launch将更新用于支持SFTP主机类型和回调API功能的外部IP地址。 要继续使用这些功能中的任何一项，请确保您的防火墙规则允许来自新IP地址的通信。
+>
+> 为了保持访问不中断，我们建议立即添加新IP，并在2025年6月23日之后删除旧IP。
+>
+>**旧IP地址：**
+> * `184.72.239.68`
+> * `23.20.85.113`
+> * `54.226.193.184`
+>
+>**新IP地址：**
+> * `34.227.138.75 `
+> * `44.194.43.191`
+> * `3.215.163.18`
 
 您可能需要批准一组要在公司防火墙中使用的IP地址，以允许平台访问您的SFTP服务器并与之建立连接。 这些IP地址包括：
 
