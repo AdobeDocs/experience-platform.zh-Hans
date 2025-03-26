@@ -2,10 +2,10 @@
 title: 使用UI将Bombora的意图连接到Experience Platform
 description: 了解如何将Bombora Intent连接到Experience Platform
 exl-id: 76a4fed5-b2d5-46d5-9245-b52792a7d323
-source-git-commit: 9f6f84d16c30c1e32184007ebc2a401db5f8b9ac
+source-git-commit: 0a6a9fe759d71fd62e3eaf5c93a091614f3c76a0
 workflow-type: tm+mt
-source-wordcount: '942'
-ht-degree: 4%
+source-wordcount: '955'
+ht-degree: 5%
 
 ---
 
@@ -20,6 +20,10 @@ ht-degree: 4%
 * [Real-Time CDP B2B edition](../../../../../rtcdp/b2b-overview.md)： Real-Time CDP B2B edition专为以B2B服务模式运营的营销人员而构建。 它将来自多个来源的数据汇集在一起&#x200B;，并将其组合成人员和帐户轮廓的单一视图。这种统一的数据使营销人员能够精确锁定特定受众，并通过所有可用渠道吸引这些受众。
 * [源](../../../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
 * [沙盒](../../../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+
+### 先决条件
+
+有关如何检索身份验证凭据的信息，请阅读[[!DNL Bombora Intent] 概述](../../../../connectors/data-partners/bombora.md)。
 
 ## 导航源目录
 

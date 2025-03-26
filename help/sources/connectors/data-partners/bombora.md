@@ -2,9 +2,10 @@
 title: 庞博拉意图
 description: 了解Experience Platform上的Bombora Intent源。
 last-substantial-update: 2025-03-26T00:00:00Z
-source-git-commit: c558ed7c5ce5fcb26d98a47ad7b7c1461192dc9b
+exl-id: d2e81207-8ef5-4e52-bbac-a2fa262d8d08
+source-git-commit: 39bbd9505b931b82aa925cba0bf8675f25dbf498
 workflow-type: tm+mt
-source-wordcount: '1609'
+source-wordcount: '1605'
 ht-degree: 1%
 
 ---
@@ -41,7 +42,7 @@ ht-degree: 1%
 
 ### IP地址允许列表
 
-在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 有关详细信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md)页。
+在使用源连接器之前，必须将IP地址列表添加到允许列表。 未能将特定于地区的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 列入允许列表有关详细信息，请参阅[IP地址](../../ip-address-allow-list.md)页。
 
 ### 在Experience Platform上配置权限
 

@@ -2,11 +2,11 @@
 keywords: Experience Platform；主页；热门主题；源连接器；源连接器；源；数据源；数据源；数据源连接
 solution: Experience Platform
 title: Source连接器概述
-description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
+description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 8541af0e2c0a2f5709f1621877ca204b0d3d64bd
+source-git-commit: 0a6a9fe759d71fd62e3eaf5c93a091614f3c76a0
 workflow-type: tm+mt
-source-wordcount: '1548'
+source-wordcount: '1552'
 ht-degree: 2%
 
 ---
@@ -28,7 +28,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 ## 高级企业源 {#advanced-enterprise-sources}
 
-以下源仅供[Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)客户使用。
+以下源仅供[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)客户使用。
 
 - [[!DNL Amazon Kinesis]](connectors/cloud-storage/kinesis.md) [!BADGE 正在流式传输]{type=Positive}
 - [[!DNL Amazon Redshift]](connectors/databases/redshift.md) [!BADGE 批次]{type=Informative}
@@ -41,13 +41,13 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 ## Adobe构建和合作伙伴构建的源 {#adobe-and-partner-built-sources}
 
-Experience Platform源目录中的某些连接器由Adobe生成和维护，而其他连接器由合作伙伴公司使用[源SDK](/help/sources/sources-sdk/overview.md)生成和维护。 如果合作伙伴创建并维护了源，则每个合作伙伴构建的连接器在文档页面顶部的注释会标出。 例如，[Amazon S3连接器](/help/sources/connectors/cloud-storage/s3.md)由Adobe创建，而[RainFocus连接器](/help/sources/connectors/analytics/rainfocus.md)由RainFocus团队创建和维护。
+Experience Platform源目录中的某些连接器是由Adobe构建和维护的，而其他连接器是由合作伙伴公司使用[源SDK](/help/sources/sources-sdk/overview.md)构建和维护的。 如果合作伙伴创建并维护了源，则每个合作伙伴构建的连接器在文档页面顶部的注释会标出。 例如，[Amazon S3连接器](/help/sources/connectors/cloud-storage/s3.md)由Adobe创建，而[RainFocus连接器](/help/sources/connectors/analytics/rainfocus.md)由RainFocus团队创建和维护。
 
-对于合作伙伴创作并维护的连接器，这意味着连接器问题可能需要由合作伙伴团队解决（文档页面注释中提供的联系方法）。 有关Adobe创作和维护的连接器出现的问题，请联系您的Adobe代表或客户关怀团队。
+对于合作伙伴创作并维护的连接器，这意味着连接器问题可能需要由合作伙伴团队解决（文档页面注释中提供的联系方法）。 有关Adobe创作和维护的连接器出现的问题，请联系您的Adobe代表或客户关怀。
 
 ## 源类别
 
-Experience Platform中的源分为以下几类：
+Experience Platform中的源分为以下类别：
 
 ### Adobe 应用程序 {#adobe-applications}
 
@@ -70,7 +70,7 @@ Experience Platform允许从其他Adobe应用程序(包括Adobe Analytics和Adob
 
 ### Advertising {#advertising}
 
-Experience Platform支持从第三方广告系统摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
+Experience Platform支持从第三方广告系统中提取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
 - [Google广告](connectors/advertising/ads.md) [!BADGE 批次]{type=Informative}
 
@@ -142,12 +142,14 @@ Experience Platform支持从第三方数据库引入数据。 有关特定源连
 - [[!DNL PostgreSQL]](connectors/databases/postgres.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Teradata Vantage]](connectors/databases/teradata-vantage.md) [!BADGE 批次]{type=Informative}
 
-### 数据和身份合作伙伴 {#data-partner}
+### 数据和身份标识合作伙伴 {#data-partner}
 
-Experience Platform支持从第三方数据库引入数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
+Experience Platform支持从数据和身份合作伙伴中摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
 - [[!DNL Acxiom Data Ingestion]](connectors/data-partners/acxiom-data-ingestion.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Acxiom Prospecting Data Import]](connectors/data-partners/acxiom-prospecting-data-import.md) [!BADGE 批次]{type=Informative}
+- [[!DNL Bombora Intent]](connectors/data-partners/bombora.md) [!BADGE 批次]{type=Informative}
+- [[!DNL Demandbase Intent]](connectors/data-partners/demandbase.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Merkury Enterprise Identity Resolution]](connectors/data-partners/merkury.md) [!BADGE 批次]{type=Informative}
 
 ### 电子商务 {#ecommerce}
@@ -166,7 +168,7 @@ Experience Platform支持从本地系统中摄取数据。 有关特定源连接
 
 ### 营销自动化 {#marketing-automation}
 
-Experience Platform为从第三方营销自动化系统中引入数据提供支持。 有关特定源连接器的更多信息，请参阅以下相关文档：
+Experience Platform支持从第三方营销自动化系统中提取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
 - [[!DNL Braze]](connectors/marketing-automation/braze.md) [!BADGE 正在流式传输]{type=Positive}
 - [[!DNL Chatlio]](connectors/marketing-automation/chatlio-webhook.md) [!BADGE 正在流式传输]{type=Positive}
@@ -191,13 +193,13 @@ Experience Platform支持从第三方支付系统中提取数据。 有关特定
 
 ### 流式处理 {#streaming}
 
-Experience Platform支持从流源摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
+Experience Platform支持从流来源摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
 - [[!DNL HTTP API]](connectors/streaming/http.md) [!BADGE 正在流式传输]{type=Positive}
 
 ### 协议 {#protocols}
 
-Experience Platform支持从第三方协议系统中引入数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
+Experience Platform支持从第三方协议系统中摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
 - [[!DNL Generic OData]](connectors/protocols/odata.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Generic REST API]](connectors/protocols/generic-rest.md) [!BADGE 批次]{type=Informative}
@@ -240,6 +242,6 @@ Adobe Experience Platform中基于属性的访问控制允许管理员根据属�
 
 Adobe没有义务维护、更正、更新、更改、修改或以其他方式支持Beta。 建议您使用信息性的，切勿依赖此类Beta和/或随附材料的正确功能或性能。 Beta被视为Adobe的机密信息。
 
-您向Adobe提供的任何“反馈”(关于Beta的信息，包括但不限于您在使用Beta时遇到的问题或缺陷、建议、改进和推荐)均分配给Adobe，包括此类反馈的所有权利、标题和兴趣。
+您向Beta提供的任何“反馈”(有关Beta的信息，包括但不限于您在使用Adobe时遇到的问题或缺陷、建议、改进和推荐)均会分配给Adobe，其中包括针对该反馈的所有权利、标题和兴趣。
 
 提交开放反馈或创建支持工单以共享您的建议或报告错误，寻求功能改进。
