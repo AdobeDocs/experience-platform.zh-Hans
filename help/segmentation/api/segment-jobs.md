@@ -4,9 +4,9 @@ title: 区段作业API端点
 description: Adobe Experience Platform Segmentation Service API中的区段作业端点允许您以编程方式管理组织的区段作业。
 role: Developer
 exl-id: 105481c2-1c25-4f0e-8fb0-c6577a4616b3
-source-git-commit: f35fb6aae6aceb75391b1b615ca067a72918f4cf
+source-git-commit: 9eb5ccc24db58a887473f61c66a83aa92e16efa7
 workflow-type: tm+mt
-source-wordcount: '1648'
+source-wordcount: '1232'
 ht-degree: 2%
 
 ---
@@ -64,13 +64,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
 
 **响应**
 
-成功的响应返回HTTP状态200，并将指定组织的区段作业列表作为JSON。 但是，响应将有所不同，具体取决于区段作业中的区段定义数量。
-
->[!BEGINTABS]
-
->[!TAB 区段作业中的区段定义少于或等于1500个]
-
-如果区段作业中运行的区段定义少于1500个，则`children.segments`属性中将显示所有区段定义的完整列表。
+成功的响应返回HTTP状态200，并将指定组织的区段作业列表作为JSON。 所有区段定义的完整列表将显示在`children.segments`属性中。
 
 >[!NOTE]
 >
@@ -178,105 +172,6 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
 }
 ```
 
-+++
-
->[!TAB 超过1500个区段定义]
-
-如果区段作业中运行的区段定义超过1500个，则`children.segments`属性将显示`*`，指示正在评估所有区段定义。
-
->[!NOTE]
->
->以下响应已截断空格，将仅显示返回的第一个作业。
-
-+++ 查看区段作业列表时的示例响应。
-
-```json
-{
-    "_page": {
-        "totalCount": 14,
-        "pageSize": 14
-    },
-    "children": [
-        {
-            "id": "b31aed3d-b3b1-4613-98c6-7d3846e8d48f",
-            "imsOrgId": "E95186D65A28ABF00A495D82@AdobeOrg",
-            "sandbox": {
-                "sandboxId": "28e74200-e3de-11e9-8f5d-7f27416c5f0d",
-                "sandboxName": "prod",
-                "type": "production",
-                "default": true
-            },
-            "profileInstanceId": "ups",
-            "source": "scheduler",
-            "status": "SUCCEEDED",
-            "batchId": "678f53bc-e21d-4c47-a7ec-5ad0064f8e4c",
-            "computeJobId": 8811,
-            "computeGatewayJobId": "9ea97b25-a0f5-410e-ae87-b2d85e58f399",
-            "segments": [
-                {
-                    "segmentId": "*",
-                }
-            ],
-            "metrics": {
-                "totalTime": {
-                    "startTimeInMs": 1573203617195,
-                    "endTimeInMs": 1573204395655,
-                    "totalTimeInMs": 778460
-                },
-                "profileSegmentationTime": {
-                    "startTimeInMs": 1573204266727,
-                    "endTimeInMs": 1573204395655,
-                    "totalTimeInMs": 128928
-                },
-                "totalProfiles": 13146432,
-                "segmentedProfileCounter":{
-                    "94509dba-7387-452f-addc-5d8d979f6ae8":1033
-                },
-                "segmentedProfileByNamespaceCounter":{
-                    "94509dba-7387-452f-addc-5d8d979f6ae8":{
-                        "tenantiduserobjid":1033,
-                        "campaign_profile_mscom_mkt_prod2":1033
-                    }
-                },
-                "segmentedProfileByStatusCounter":{
-                    "94509dba-7387-452f-addc-5d8d979f6ae8":{
-                        "exited":144646,
-                        "realized":2056
-                    }
-                },
-                "totalProfilesByMergePolicy":{
-                    "25c548a0-ca7f-4dcd-81d5-997642f178b9":13146432
-                }
-            },
-            "requestId": "4e538382-dbd8-449e-988a-4ac639ebe72b-1573203600264",
-            "schema": {
-                "name": "_xdm.context.profile"
-            },
-            "properties": {
-                "scheduleId": "4e538382-dbd8-449e-988a-4ac639ebe72b",
-                "runId": "e6c1308d-0d4b-4246-b2eb-43697b50a149"
-            },
-            "_links": {
-                "cancel": {
-                    "href": "/segment/jobs/b31aed3d-b3b1-4613-98c6-7d3846e8d48f",
-                    "method": "DELETE"
-                },
-                "checkStatus": {
-                    "href": "/segment/jobs/b31aed3d-b3b1-4613-98c6-7d3846e8d48f",
-                    "method": "GET"
-                }
-            },
-            "updateTime": 1573204395000,
-            "creationTime": 1573203600535,
-            "updateEpoch": 1573204395
-        }
-    ],
-    "_links": {
-        "next": {}
-    }
-}
-```
-
 | 属性 | 描述 |
 | -------- | ----------- |
 | `id` | 区段作业的系统生成的只读标识符。 |
@@ -294,23 +189,15 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
 
 +++
 
->[!ENDTABS]
-
 ## 创建新的区段作业 {#create}
 
-您可以通过向`/segment/jobs`端点发出POST请求并在正文中包含要从中创建新受众的区段定义的ID来创建新的区段作业。
+您可以通过向`/segment/jobs`端点发出POST请求并在请求正文中包含区段定义的ID来创建新的区段作业。
 
 **API格式**
 
 ```http
 POST /segment/jobs
 ```
-
-创建新区段作业时，请求和响应将因区段作业中的区段定义数量而异。
-
->[!BEGINTABS]
-
->[!TAB 您的区段作业中的区段少于或等于1500个]
 
 **请求**
 
@@ -335,7 +222,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `segmentId` | 要为其创建区段作业的区段定义的ID。 这些区段定义可以属于不同的合并策略。 有关区段定义的详细信息，请参阅[区段定义终结点指南](./segment-definitions.md)。 |
+| `segmentId` | 要评估的区段定义的ID。 这些区段定义可以属于不同的合并策略。 有关区段定义的详细信息，请参阅[区段定义终结点指南](./segment-definitions.md)。 |
 
 +++
 
@@ -460,136 +347,6 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 
 +++
 
->[!TAB 区段作业中的区段定义超过1500个]
-
-**请求**
-
->[!NOTE]
->
->虽然您可以创建具有超过1500个区段定义的区段作业，但&#x200B;**强烈不推荐**。
-
-+++ 创建区段作业的示例请求。
-
-```shell
-curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
- -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {ORG_ID}' \
- -H 'x-api-key: {API_KEY}' \
- -H 'x-sandbox-name: {SANDBOX_NAME}' \
- -d '{
-    "schema": {
-        "name": "_xdm.context.profile"
-    },
-    "segments": [
-        {
-            "segmentId": "*"
-        }
-    ]
- }'
-```
-
-| 属性 | 描述 |
-| -------- | ----------- |
-| `schema.name` | 区段定义的架构名称。 |
-| `segments.segmentId` | 运行具有超过1500个区段的区段作业时，需要传递`*`作为区段ID，以表示您要运行具有所有区段的分段作业。 |
-
-+++
-
-**响应**
-
-成功的响应返回HTTP状态200以及新创建的区段作业的详细信息。
-
-+++ 创建区段作业时的示例响应。
-
-```json
-{
-    "id": "b31aed3d-b3b1-4613-98c6-7d3846e8d48f",
-    "imsOrgId": "E95186D65A28ABF00A495D82@AdobeOrg",
-    "sandbox": {
-        "sandboxId": "28e74200-e3de-11e9-8f5d-7f27416c5f0d",
-        "sandboxName": "prod",
-        "type": "production",
-        "default": true
-    },
-    "profileInstanceId": "ups",
-    "source": "scheduler",
-    "status": "PROCESSING",
-    "batchId": "678f53bc-e21d-4c47-a7ec-5ad0064f8e4c",
-    "computeJobId": 8811,
-    "computeGatewayJobId": "9ea97b25-a0f5-410e-ae87-b2d85e58f399",
-    "segments": [
-        {
-            "segmentId": "*"
-        }
-    ],
-    "metrics": {
-        "totalTime": {
-            "startTimeInMs": 1573203617195,
-            "endTimeInMs": 1573204395655,
-            "totalTimeInMs": 778460
-        },
-        "profileSegmentationTime": {
-            "startTimeInMs": 1573204266727,
-            "endTimeInMs": 1573204395655,
-            "totalTimeInMs": 128928
-        },
-        "segmentedProfileCounter":{
-            "7863c010-e092-41c8-ae5e-9e533186752e":1033
-        },
-        "segmentedProfileByNamespaceCounter":{
-            "7863c010-e092-41c8-ae5e-9e533186752e":{
-                "tenantiduserobjid":1033,
-                "campaign_profile_mscom_mkt_prod2":1033
-            }
-        },
-        "segmentedProfileByStatusCounter":{
-            "7863c010-e092-41c8-ae5e-9e533186752e":{
-                "exited":144646,
-                "realized":2056
-            }
-        },
-        "totalProfiles":13146432,
-        "totalProfilesByMergePolicy":{
-            "25c548a0-ca7f-4dcd-81d5-997642f178b9":13146432
-        }
-    },
-    "requestId": "4e538382-dbd8-449e-988a-4ac639ebe72b-1573203600264",
-    "schema": {
-        "name": "_xdm.context.profile"
-    },
-    "properties": {
-        "scheduleId": "4e538382-dbd8-449e-988a-4ac639ebe72b",
-        "runId": "e6c1308d-0d4b-4246-b2eb-43697b50a149"
-    },
-    "_links": {
-        "cancel": {
-            "href": "/segment/jobs/b31aed3d-b3b1-4613-98c6-7d3846e8d48f",
-            "method": "DELETE"
-        },
-        "checkStatus": {
-            "href": "/segment/jobs/b31aed3d-b3b1-4613-98c6-7d3846e8d48f",
-            "method": "GET"
-        }
-    },
-    "updateTime": 1573204395000,
-    "creationTime": 1573203600535,
-    "updateEpoch": 1573204395
-}
-```
-
-| 属性 | 描述 |
-| -------- | ----------- |
-| `id` | 系统为新创建的区段作业生成的只读标识符。 |
-| `status` | 区段作业的当前状态。 由于区段作业是新创建的，因此状态将始终为`NEW`。 |
-| `segments` | 一个对象，其中包含有关运行此区段作业的区段定义的信息。 |
-| `segments.segment.id` | `*`表示此区段作业正在运行，以用于贵组织内的所有区段定义。 |
-
-+++
-
->[!ENDTABS]
-
-
 ## 检索特定区段作业 {#get}
 
 您可以通过向`/segment/jobs`端点发出GET请求并在请求路径中提供要检索的区段作业的ID，来检索有关特定区段作业的详细信息。
@@ -620,13 +377,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfea-4
 
 **响应**
 
-成功的响应返回HTTP状态200，其中包含有关指定区段作业的详细信息。  但是，响应将因区段作业中的区段定义数量而异。
-
->[!BEGINTABS]
-
->[!TAB 区段作业中的区段定义少于或等于1500个]
-
-如果区段作业中运行的区段定义少于1500个，则`children.segments`属性中将显示所有区段定义的完整列表。
+成功的响应返回HTTP状态200，其中包含有关指定区段作业的详细信息。 所有区段定义的完整列表将显示在`children.segments`属性中。
 
 +++ 用于检索区段作业的示例响应。
 
@@ -690,90 +441,6 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfea-4
 }
 ```
 
-+++
-
->[!TAB 超过1500个区段定义]
-
-如果区段作业中运行的区段定义超过1500个，则`children.segments`属性将显示`*`，指示正在评估所有区段定义。
-
-+++ 用于检索区段作业的示例响应。
-
-```json
-{
-    "id": "b31aed3d-b3b1-4613-98c6-7d3846e8d48f",
-    "imsOrgId": "E95186D65A28ABF00A495D82@AdobeOrg",
-    "sandbox": {
-        "sandboxId": "28e74200-e3de-11e9-8f5d-7f27416c5f0d",
-        "sandboxName": "prod",
-        "type": "production",
-        "default": true
-    },
-    "profileInstanceId": "ups",
-    "source": "scheduler",
-    "status": "SUCCEEDED",
-    "batchId": "678f53bc-e21d-4c47-a7ec-5ad0064f8e4c",
-    "computeJobId": 8811,
-    "computeGatewayJobId": "9ea97b25-a0f5-410e-ae87-b2d85e58f399",
-    "segments": [
-        {
-            "segmentId": "*"
-        }
-    ],
-    "metrics": {
-        "totalTime": {
-            "startTimeInMs": 1573203617195,
-            "endTimeInMs": 1573204395655,
-            "totalTimeInMs": 778460
-        },
-        "profileSegmentationTime": {
-            "startTimeInMs": 1573204266727,
-            "endTimeInMs": 1573204395655,
-            "totalTimeInMs": 128928
-        },
-        "segmentedProfileCounter":{
-            "7863c010-e092-41c8-ae5e-9e533186752e":1033
-        },
-        "segmentedProfileByNamespaceCounter":{
-            "7863c010-e092-41c8-ae5e-9e533186752e":{
-                "tenantiduserobjid":1033,
-                "campaign_profile_mscom_mkt_prod2":1033
-            }
-        },
-        "segmentedProfileByStatusCounter":{
-            "7863c010-e092-41c8-ae5e-9e533186752e":{
-                "exited":144646,
-                "realized":2056
-            }
-        },
-        "totalProfiles":13146432,
-        "totalProfilesByMergePolicy":{
-            "25c548a0-ca7f-4dcd-81d5-997642f178b9":13146432
-        }
-    },
-    "requestId": "4e538382-dbd8-449e-988a-4ac639ebe72b-1573203600264",
-    "schema": {
-        "name": "_xdm.context.profile"
-    },
-    "properties": {
-        "scheduleId": "4e538382-dbd8-449e-988a-4ac639ebe72b",
-        "runId": "e6c1308d-0d4b-4246-b2eb-43697b50a149"
-    },
-    "_links": {
-        "cancel": {
-            "href": "/segment/jobs/b31aed3d-b3b1-4613-98c6-7d3846e8d48f",
-            "method": "DELETE"
-        },
-        "checkStatus": {
-            "href": "/segment/jobs/b31aed3d-b3b1-4613-98c6-7d3846e8d48f",
-            "method": "GET"
-        }
-    },
-    "updateTime": 1573204395000,
-    "creationTime": 1573203600535,
-    "updateEpoch": 1573204395
-}
-```
-
 | 属性 | 描述 |
 | -------- | ----------- |
 | `id` | 区段作业的系统生成的只读标识符。 |
@@ -824,7 +491,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs/bulk-get \
 
 **响应**
 
-成功的响应会返回包含所请求区段作业的HTTP状态207。 但是，如果区段作业运行的区段定义超过1500个，则`children.segments`属性的值会有所不同。
+成功的响应会返回包含所请求区段作业的HTTP状态207。
 
 >[!NOTE]
 >
@@ -867,7 +534,20 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs/bulk-get \
             "status": "SUCCEEDED",
             "segments": [
                 {
-                    "segmentId": "*"
+                    "segmentId": "30230300-d78c-48ad-8012-c5563a007069",
+                    "segment": {
+                        "id": "30230300-d78c-48ad-8012-c5563a007069",
+                        "expression": {
+                            "type": "PQL",
+                            "format": "pql/json",
+                            "value": "{PQL_EXPRESSION}"
+                        },
+                        "mergePolicyId": "b83185bb-0bc6-489c-9363-0075eb30b4c8",
+                        "mergePolicy": {
+                            "id": "b83185bb-0bc6-489c-9363-0075eb30b4c8",
+                            "version": 1
+                        }
+                    }
                 }
             ],
             "updateTime": 1573204395000,

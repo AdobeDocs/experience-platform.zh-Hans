@@ -5,9 +5,9 @@ product: experience platform
 type: Documentation
 description: 了解轮廓数据和分段的性能和系统强制护栏，以确保充分使用 Real-Time CDP 功能。
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 5d972b6b4f59ca58ff3c4b76383db9ee7667dba3
+source-git-commit: 31f725fc30b8fd9a045c0aac5ee65832cd995363
 workflow-type: tm+mt
-source-wordcount: '2523'
+source-wordcount: '2611'
 ht-degree: 2%
 
 ---
@@ -127,6 +127,9 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 | 每个沙盒的帐户受众 | 50 | 系统强制的护栏 | 在一个沙盒中最多可创建50个帐户受众。 在一个沙盒中达到50个受众后，在尝试创建新帐户受众时，**[!UICONTROL 创建受众]**&#x200B;控件被禁用。 了解有关[帐户受众](/help/segmentation/types/account-audiences.md)的更多信息。 |
 | 每个沙盒已发布的合成 | 10 | 性能护栏 | 一个沙盒中最多可以有10个已发布的合成。 有关UI指南](/help/segmentation/ui/audience-composition.md)中[受众组合的详细信息。 |
 | 最大受众规模 | 30% | 性能护栏 | 建议的最大受众成员数为系统中配置文件总数的30%。 将超过30%的用户档案创建为成员或多个大型受众是可行的，但将影响系统性能。 |
+| 灵活的受众评估运行 | 每年50（生产沙盒）<br/>100（开发沙盒） | 系统强制的护栏 | 您每年每个&#x200B;**生产**&#x200B;沙盒最多有50次灵活的受众评估运行。 每个&#x200B;**开发**&#x200B;沙盒每年最多可运行100次灵活受众评估。 |
+| 灵活的受众评估运行 | 每天2次 | 系统强制的护栏 | 每个沙盒每天最多运行2次。 |
+| 每次灵活受众评估运行的受众 | 20 | 系统强制的护栏 | 每个灵活受众评估运行最多可以有20个受众。 |
 
 {style="table-layout:auto"}
 

@@ -2,9 +2,9 @@
 title: 受众门户概述
 description: 了解如何使用Audience Portal在Adobe Experience Platform中查看、管理和创建受众。
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: a0543777e9a72f3a9ed6ff19e8b11973eb647b6b
+source-git-commit: 9eb5ccc24db58a887473f61c66a83aa92e16efa7
 workflow-type: tm+mt
-source-wordcount: '4561'
+source-wordcount: '4310'
 ht-degree: 3%
 
 ---
@@ -220,33 +220,9 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 - 您&#x200B;**无法**&#x200B;删除正在目标激活中使用的受众。
 - 如果选择筛选器，则所选受众&#x200B;**将**&#x200B;重置。
 
-#### [!BADGE 有限可用性]{type=Informative}灵活的受众评估 {#flexible-audience-evaluation}
+#### 灵活的受众评估 {#flexible-audience-evaluation}
 
-灵活的受众评估允许您按需运行分段作业。 选择您要评估的受众，然后选择&#x200B;**[!UICONTROL 评估受众]**。
-
->[!IMPORTANT]
->
-为灵活的受众评估选择受众时，需要满足以下条件：
->
-- 您每天只能使用灵活的受众评估&#x200B;**两次**。 此限制在午夜(UTC)重置。
-- 您每年最多有&#x200B;**次**&#x200B;的灵活受众评估运行，共50次。
-- 所有受众&#x200B;**都必须**&#x200B;具有“分段服务”的来源。
-- 必须使用批处理分段评估所有受众&#x200B;****。
-- 所有受众&#x200B;**必须**&#x200B;是基于人员的受众。
-- 受众&#x200B;**只能**&#x200B;激活到Platform中的目标。
-- 您最多只能选择20个受众。
-
-![已选择您要对其使用灵活受众评估的受众。](../images/ui/audience-portal/evaluate-audiences.png)
-
-此时将显示&#x200B;**[!UICONTROL 按需评估受众]**&#x200B;弹出框，其中显示了将使用按需区段作业评估的受众列表。 如果受众不符合按需评估的条件，则它将被自动从评估作业中删除。 确认列出的受众就是您要评估的受众。
-
-![显示可以使用灵活受众评估进行评估的受众。](../images/ui/audience-portal/evaluate-audiences-modal.png)
-
-确认列出了正确的受众后，您可以继续请求，并将开始灵活的受众评估。 您可以在[评估作业监视视图](../../dataflows/ui/monitor-audiences.md#evaluation-job-details)中查看此受众评估的状态。
-
->[!NOTE]
->
-如果您运行灵活的受众评估，则需要确保将频率设置为&#x200B;**[!UICONTROL 在区段评估后]**。 对已设置为在区段评估](../../destinations/ui/activate-batch-profile-destinations.md#export-full-files)后[激活的受众运行灵活的受众评估，将在灵活的受众评估作业完成后立即激活受众，而不考虑任何之前的每日激活作业。
+灵活的受众评估允许您按需运行分段作业。 要了解有关灵活受众评估的更多信息，请阅读[灵活受众评估指南](../methods/flexible-audience-evaluation.md)。
 
 ## 受众详情 {#audience-details}
 
@@ -302,7 +278,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 >[!NOTE]
 >
-导出作业完成后，可能需要长达30分钟才能更新受众总数。
+>导出作业完成后，可能需要长达30分钟才能更新受众总数。
 
 通过使用当天样本数据的样本量生成预估。 如果您的配置文件存储中的实体少于100万，则使用完整数据集；对于100万到2,000万之间的实体，使用100万个实体；而对于2000多万个实体，使用总实体的5%。 有关生成估算的详细信息，请参阅受众创建教程的[估算生成部分](../tutorials/create-a-segment.md#estimate-and-preview-an-audience)。
 
@@ -312,7 +288,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 >[!NOTE]
 >
-导出作业后，最多可能需要30分钟才能完全更新受众的个人资料计数。
+>导出作业后，最多可能需要30分钟才能完全更新受众的个人资料计数。
 
 ![将显示受众详细信息页面的摄取详细信息部分。](../images/ui/audience-portal/audience-details-ingestion-details.png)
 
@@ -330,7 +306,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 >[!NOTE]
 >
-将数据使用标签应用于架构是最佳实践。 您&#x200B;**无法**&#x200B;将数据使用标签直接应用于受众。
+>将数据使用标签应用于架构是最佳实践。 您&#x200B;**无法**&#x200B;将数据使用标签直接应用于受众。
 
 ### 激活的目标 {#activated-destinations}
 
@@ -338,7 +314,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 >[!NOTE]
 >
-目标是[!DNL Adobe Real-Time Customer Data Platform]提供的功能，允许您将数据导出到外部平台。 有关目标的详细信息，请阅读[目标概述](../../destinations/home.md)。 要了解如何将区段激活到目标，请参阅[激活概述](../../destinations/ui/activation-overview.md)。
+> 目标是[!DNL Adobe Real-Time Customer Data Platform]提供的功能，允许您将数据导出到外部平台。 有关目标的详细信息，请阅读[目标概述](../../destinations/home.md)。 要了解如何将区段激活到目标，请参阅[激活概述](../../destinations/ui/activation-overview.md)。
 
 ### 配置文件示例 {#profile-samples}
 
@@ -364,10 +340,10 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 ## 计划分段 {#scheduled-segmentation}
 
-[!CONTEXTUALHELP]
-id="platform_segments_browse_addallsegmentstoschedule"
-title="将所有受众添加到计划"
-abstract="启用以将使用批次处理分段评估的所有受众包括在每日计划更新中。禁用此项可从计划更新中删除所有受众。"
+>[!CONTEXTUALHELP]
+>id="platform_segments_browse_addallsegmentstoschedule"
+>title="将所有受众添加到计划"
+>abstract="启用以将使用批次处理分段评估的所有受众包括在每日计划更新中。禁用此项可从计划更新中删除所有受众。"
 
 创建受众后，您可以通过按需评估或计划（连续）评估来评估受众。 评估是指通过区段作业移动[!DNL Real-Time Customer Profile]数据以生成相应的受众。 创建受众后，将保存并存储这些受众，以便使用[!DNL Experience Platform] API导出它们。
 
@@ -379,7 +355,7 @@ abstract="启用以将使用批次处理分段评估的所有受众包括在每�
 
 >[!NOTE]
 >
-可以为[!DNL XDM Individual Profile]最多有五(5)个合并策略的沙盒启用计划评估。 如果贵组织在单个沙盒环境中为[!DNL XDM Individual Profile]提供了五个以上的合并策略，您将无法使用计划的评估。
+>可以为[!DNL XDM Individual Profile]最多有五(5)个合并策略的沙盒启用计划评估。 如果贵组织在单个沙盒环境中为[!DNL XDM Individual Profile]提供了五个以上的合并策略，您将无法使用计划的评估。
 
 当前只能使用API创建计划。 有关使用API创建、编辑和使用计划的详细步骤，请参阅有关评估和访问分段结果的教程，特别是有关使用API的[计划评估](../tutorials/evaluate-a-segment.md#scheduled-evaluation)的部分。
 
@@ -393,7 +369,7 @@ abstract="启用以将使用批次处理分段评估的所有受众包括在每�
 
 此时会出现一个弹出窗口，允许您在构成受众或构建规则之间进行选择。
 
-![显示这两种类型的弹出框 of 您可以创建受众。](../images/ui/audience-portal/create-audience-type.png)
+![显示您可以创建的两种受众类型的弹出框。](../images/ui/audience-portal/create-audience-type.png)
 
 ### 受众组合 {#audience-composition}
 
@@ -417,7 +393,7 @@ abstract="启用以将使用批次处理分段评估的所有受众包括在每�
 
 >[!IMPORTANT]
 >
-为了导入外部生成的受众，您&#x200B;**必须**&#x200B;具有以下权限：[!UICONTROL 查看区段]、[!UICONTROL 管理区段]和[!UICONTROL 导入受众]。 有关这些权限的详细信息，请阅读[访问控制概述](../../access-control/home.md#permissions)。
+>为了导入外部生成的受众，您&#x200B;**必须**&#x200B;具有以下权限：[!UICONTROL 查看区段]、[!UICONTROL 管理区段]和[!UICONTROL 导入受众]。 有关这些权限的详细信息，请阅读[访问控制概述](../../access-control/home.md#permissions)。
 
 您可以选择&#x200B;**[!UICONTROL 导入受众]**&#x200B;以导入外部生成的受众。
 
@@ -429,11 +405,11 @@ abstract="启用以将使用批次处理分段评估的所有受众包括在每�
 
 >[!NOTE]
 >
-外部生成的受众&#x200B;**必须**&#x200B;为CSV格式，其最大值为&#x200B;****，共25列，并且小于1GB。
+>外部生成的受众&#x200B;**必须**&#x200B;为CSV格式，其最大值为&#x200B;****，共25列，并且小于1GB。
 >
-此外，您&#x200B;**不能**&#x200B;在CSV的第一行或关联的列中使用空格或破折号。
+>此外，您&#x200B;**不能**&#x200B;在CSV的第一行或关联的列中使用空格或破折号。
 >
-例如，第一行的值可以是“FirstName”或“First_Name”，但不能是“First Name”或“First-Name”。
+>例如，第一行的值可以是“FirstName”或“First_Name”，但不能是“First Name”或“First-Name”。
 
 选择要导入的CSV文件后，将显示此外部生成受众的示例数据列表。 确认样本数据正确后，选择&#x200B;**[!UICONTROL 下一步]**。
 
@@ -449,10 +425,10 @@ abstract="启用以将使用批次处理分段评估的所有受众包括在每�
 
 >[!NOTE]
 >
-如果您使用自定义外部受众ID，则必须遵守以下准则：
+>如果您使用自定义外部受众ID，则必须遵守以下准则：
 >
-- **必须**&#x200B;以字母（a-z或A-Z）、下划线(_)或美元符号($)开头。
-- 所有后续字符都可以是字母数字(a-z、A-Z、0-9)、下划线(_)或美元符号($)。
+> - **必须**&#x200B;以字母（a-z或A-Z）、下划线(_)或美元符号($)开头。
+> - 所有后续字符都可以是字母数字(a-z、A-Z、0-9)、下划线(_)或美元符号($)。
 
 填写受众详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
 
@@ -466,11 +442,11 @@ abstract="启用以将使用批次处理分段评估的所有受众包括在每�
 
 >[!IMPORTANT]
 >
-默认情况下，外部生成的受众的数据过期时间为30天。 如果以任何方式更新或修改受众，则会重置数据过期时间。
+>默认情况下，外部生成的受众的数据过期时间为30天。 如果以任何方式更新或修改受众，则会重置数据过期时间。
 >
-此外，如果您的外部生成的受众包含敏感信息和/或医疗保健相关信息，则在将其激活到任何目标之前，您&#x200B;**必须**&#x200B;应用必要的数据使用标签。 由于来自外部生成受众的变量存储在数据湖中而不是实时客户配置文件中，因此&#x200B;**不应**&#x200B;在CSV文件中包含同意数据。
+>此外，如果您的外部生成的受众包含敏感信息和/或医疗保健相关信息，则在将其激活到任何目标之前，您&#x200B;**必须**&#x200B;应用必要的数据使用标签。 由于来自外部生成受众的变量存储在数据湖中而不是实时客户配置文件中，因此&#x200B;**不应**&#x200B;在CSV文件中包含同意数据。
 >
-有关应用数据使用标签的详细信息，请阅读有关[管理标签](../../access-control/abac/ui/labels.md)的文档。 要了解平台上的数据使用标签的一般信息，请阅读[数据使用标签概述](../../data-governance/labels/overview.md)。 要了解同意如何在外部生成的受众中起作用，请阅读[受众常见问题解答](../faq.md#consent)。
+>有关应用数据使用标签的详细信息，请阅读有关[管理标签](../../access-control/abac/ui/labels.md)的文档。 要了解平台上的数据使用标签的一般信息，请阅读[数据使用标签概述](../../data-governance/labels/overview.md)。 要了解同意如何在外部生成的受众中起作用，请阅读[受众常见问题解答](../faq.md#consent)。
 
 ## 后续步骤
 

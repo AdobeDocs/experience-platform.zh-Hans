@@ -2,12 +2,10 @@
 title: 灵活的受众评估指南
 description: 了解如何使用灵活的受众评估来按需运行批量分段作业。
 role: Developer, User
-hide: true
-hidefromtoc: true
-source-git-commit: a0543777e9a72f3a9ed6ff19e8b11973eb647b6b
+source-git-commit: 5c86161a2f9442d99426f2c05fb762cf50004049
 workflow-type: tm+mt
-source-wordcount: '893'
-ht-degree: 6%
+source-wordcount: '996'
+ht-degree: 5%
 
 ---
 
@@ -32,6 +30,10 @@ ht-degree: 6%
 - 必须使用批处理分段评估所有受众&#x200B;****。
 - 所有受众&#x200B;**必须**&#x200B;是基于人员的受众。
 - 每个灵活受众评估运行最多只能选择20个受众。
+
+>[!NOTE]
+>
+>您&#x200B;*可以*&#x200B;每年购买额外的灵活受众评估运行。 有关更多信息，请联系Adobe客户关怀部门。
 
 ## 访问 {#access}
 
@@ -308,11 +310,17 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/b31aed3d-b3b1-4
 
 >[!NOTE]
 >
->如果您运行灵活的受众评估，则需要确保将频率设置为&#x200B;**[!UICONTROL 在区段评估后]**。 对已设置为在区段评估](../../destinations/ui/activate-batch-profile-destinations.md#export-full-files)后[激活的受众运行灵活的受众评估，将在灵活的受众评估作业完成后立即激活受众，而不考虑任何之前的每日激活作业。
+>区段作业的状态可能会在监控仪表板中报告为“已排队”状态。 您可以查看区段作业的最新状态，方法是向`/segment/jobs`端点发出GET请求，并在请求路径中提供区段作业的ID。 在“API”选项卡中可找到有关使用此端点的更多信息。
+>
+>如果您运行灵活的受众评估并希望评估将受众激活到目标，则需要确保将频率设置为&#x200B;**[!UICONTROL 在区段评估后]**。 对已设置为在区段评估](../../destinations/ui/activate-batch-profile-destinations.md#export-full-files)后[激活的受众运行灵活的受众评估，将在灵活的受众评估作业完成后立即激活受众，而不考虑任何之前的每日激活作业。
 
 >[!ENDTABS]
 
-## 后续步骤 {#next-steps}
+## 视频 {#video}
+
+以下视频演示了如何在Experience Platform中访问和使用灵活的受众评估。
+
+>[!VIDEO](https://video.tv.adobe.com/v/3453640?)
 
 ## 常见问题解答 {#faq}
 
