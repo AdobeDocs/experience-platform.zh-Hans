@@ -3,7 +3,7 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: e7c0551276d31d6809ace096c00e0dc2665090e6
+source-git-commit: dc36c5e2eb109d1728f2290ee61e69f458929ba7
 workflow-type: tm+mt
 source-wordcount: '4976'
 ht-degree: 8%
@@ -322,7 +322,7 @@ ht-degree: 8%
 
 +++
 
-## 容器
+## 容器 {#containers}
 
 区段规则会按其列出的顺序进行评估。 容器允许通过使用嵌套查询来控制执行顺序。
 

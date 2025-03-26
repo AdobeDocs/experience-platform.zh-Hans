@@ -5,10 +5,10 @@ audience: user
 user-guide-title: Real-Time Customer Data Platform 指南
 user-guide-description: 合并多个企业来源的已知数据和匿名数据，以创建客户轮廓、从这些轮廓创建受众，以及将这些受众激活到第三方目标。
 role: Admin
-source-git-commit: 9327cf8545caa306acd8077d089041d50a30e556
+source-git-commit: 4c2431148f584f2ffd5de20b8880a6b4a10ff95e
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '301'
+ht-degree: 67%
 
 ---
 
@@ -35,7 +35,7 @@ ht-degree: 0%
    * [管理概述](administration/admin-overview.md)
 * 受众和分段{#segmentation}
    * [分段概述](segmentation/segmentation-overview.md)
-   * [区段生成器指南](segmentation/segment-builder-guide.md)
+   * [Audience Builder指南](segmentation/audience-builder.md)
    * [Real-Time CDP B2B 版本中的分段](segmentation/b2b.md)
    * [客户人工智能](segmentation/customer-ai.md)
 * 数据集 {#datasets}
@@ -52,8 +52,8 @@ ht-degree: 0%
    *  [!DNL Identity Service] 数据](https://experienceleague.adobe.com/docs/experience-platform/identity/guardrails.html){target="_blank"}的[护栏
    *  [!DNL Query Service]](https://experienceleague.adobe.com/docs/experience-platform/query/guardrails.html){target="_blank"}的[护栏
    * [通过目标激活数据的护栏](https://experienceleague.adobe.com/docs/experience-platform/destinations/guardrails.html){target="_blank"}
-* 标识 {#identity}
-   * [标识和标识命名空间](profile/identities-overview.md)
+* 身份标识 {#identity}
+   * [身份标识和身份标识命名空间](profile/identities-overview.md)
 * 合并策略{#merge-policies}
    * [合并策略概述](profile/merge-policies.md)
 * 隐私和数据治理{#privacy}

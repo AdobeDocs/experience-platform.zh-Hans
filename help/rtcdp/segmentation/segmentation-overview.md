@@ -1,10 +1,10 @@
 ---
 keywords: 分段；分段rtcdp；实时客户数据平台分段
-title: Real-time Customer Data Platform中的分段服务
-description: Adobe Real-time Customer Data Platform构建于Adobe Experience Platform之上，并利用了许多Experience Platform服务和功能。 使用分段服务，您可以将客户划分为具有相似特征的较小组，从而提供量身定制的营销。
+title: Real-Time Customer Data Platform中的分段服务
+description: Adobe Real-Time Customer Data Platform构建于Adobe Experience Platform之上，并利用了许多Experience Platform服务和功能。 使用分段服务，您可以将客户划分为具有相似特征的较小组，从而提供量身定制的营销。
 feature: Get Started, Audiences, Segments
 exl-id: 140667c0-e288-40c4-8c45-c275e348b84a
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: 96c5df4f172815d3b1904ab6614b1ce02d11dbaf
 workflow-type: tm+mt
 source-wordcount: '543'
 ht-degree: 0%
@@ -21,13 +21,13 @@ Real-Time CDP构建于Adobe Experience Platform之上，并利用了[!DNL Experi
 
 分段是定义由配置文件存储中的配置文件子集共享的特定属性或行为的过程，以区分可营销的人员组和您的客户群。 例如，在名为“您是否忘记购买运动鞋？”的电子邮件促销活动中，您可能希望受众包含在最近30天内搜索跑鞋但未完成购买的所有用户。 通过使用不同的区段定义，您可以专注于各种受众，从而提供更加定制的营销体验。
 
-## [!DNL Segment Builder]
+## [!DNL Audience Builder]
 
-[!DNL Platform]允许您轻松创建和访问区段定义，并使用不同的构建基块来进一步表示受众的特性。 有关如何使用区段生成器的更多信息，请参阅[区段生成器指南](./segment-builder-guide.md)。
+[!DNL Platform]允许您轻松创建和访问区段定义，并使用不同的构建基块来进一步表示受众的特性。 有关如何使用Audience Builder的详细信息，请阅读[Audience Builder指南](./audience-builder.md)。
 
 ## 客户人工智能
 
-Real-time Customer Data Platform附带的Customer AI为您提供了在个人层面生成客户预测并提供解释的能力。
+Real-Time Customer Data Platform附带的Customer AI为您提供了在个人层面生成客户预测并提供解释的能力。
 
 在影响因素的帮助下，客户人工智能可以告诉您客户可能会做什么以及为什么。 此外，您还可以从客户人工智能预测和洞察中受益，通过提供最合适的优惠和消息传递来个性化客户体验。 客户人工智能可以协助：
 
