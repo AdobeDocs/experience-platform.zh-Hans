@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 在UI中监视目标的数据流
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: b814becaed88ce23527dc58f7ec056c05a48379f
+source-git-commit: 7f3560eaccecc8f42bbfa7d27b82ad71397df035
 workflow-type: tm+mt
-source-wordcount: '3637'
-ht-degree: 10%
+source-wordcount: '3620'
+ht-degree: 9%
 
 ---
 
@@ -97,12 +97,12 @@ ht-degree: 10%
 
   >[!IMPORTANT]
   >
-  > 从 2024 年 10 月开始，Adobe 将推出更新，以提高流式处理目标的报告准确性。此增强功能可确保Experience Platform和目标平台报表之间更好地保持一致。
+  > 从2025年3月开始，Adobe将推出一项更新，以提高流目标的报表准确性。 此增强功能可确保Experience Platform中的报表与目标平台之间更好地保持一致。
   >
   > 在此更新之前，**[!UICONTROL 失败的标识]**&#x200B;包括所有激活重试。 进行此更新后，总计数中仅包含上次激活重试。
   > 
-  > 此增强功能目前适用于[Google客户匹配目标](../../destinations/catalog/advertising/google-customer-match.md)，但将逐步推广至其他Experience Platform流目标。
-  > 随着增强功能的实施，[Google 目标客户匹配功能](../../destinations/catalog/advertising/google-customer-match.md)用户的&#x200B;**[!UICONTROL 身份标识信息失败]**&#x200B;次数可能会减少。
+  > 此增强功能适用于所有流目标。
+  > 进行此增强后，流式目标用户在其&#x200B;**[!UICONTROL 失败身份数]**&#x200B;计数中可能会看到预期的下降。
 
 
 - **[!UICONTROL 激活率]**：已成功激活的接收标识的百分比。 以下公式演示如何计算此值：

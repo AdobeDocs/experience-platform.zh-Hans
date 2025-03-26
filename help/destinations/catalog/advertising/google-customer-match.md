@@ -3,10 +3,10 @@ keywords: google客户匹配；Google客户匹配；Google客户匹配
 title: Google Customer Match连接
 description: Google Customer Match允许您使用在线和离线数据，通过Google自有资产和运营资产（如搜索、购物和Gmail）与客户联系并重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: bbf48bb3478e90c1502083d0ea97e3cc0aef1bb9
+source-git-commit: 38c1020a7e7ff556ed16963239a30bf906ff79e7
 workflow-type: tm+mt
-source-wordcount: '2140'
-ht-degree: 3%
+source-wordcount: '2046'
+ht-degree: 2%
 
 ---
 
@@ -18,9 +18,9 @@ ht-degree: 3%
 ><br/>
 >为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为 Google 合作伙伴，Adobe 为您提供必要的工具，以遵守欧盟 DMA 下的这些同意要求。
 ><br/>
->购买AdobePrivacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未同意的配置文件的客户无需采取任何操作。
+>如果客户购买了Adobe Privacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未经同意的用户档案，则无需采取任何操作。
 ><br/>
->未购买AdobePrivacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/ui/segment-builder.md)中的[区段定义](../../../segmentation/home.md#segment-definitions)功能来过滤掉未经同意的用户档案，以便继续不间断地使用现有的Real-Time CDP Google目标。
+>未购买Adobe Privacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/ui/segment-builder.md)中的[区段定义](../../../segmentation/home.md#segment-definitions)功能来过滤掉未经同意的用户档案，以便继续使用现有的Real-Time CDP Google目标而不中断。
 
 [[!DNL Google Customer Match]](https://support.google.com/google-ads/answer/6379332?hl=en)允许您使用在线和离线数据，通过Google拥有和运营的资产（如： [!DNL Search]、[!DNL Shopping]和[!DNL Gmail]）联系客户并重新与其互动。
 
@@ -36,7 +36,7 @@ Adobe Experience Platform UI中的![Google客户匹配目标。](../../assets/ca
 
 ### 用例#1
 
-运动服装品牌希望通过[!DNL Google Search]和[!DNL Google Shopping]联系现有客户，以根据优惠和项目的过去购买和浏览历史记录对其进行个性化设置。 服装品牌可以从自己的CRM中摄取电子邮件地址以进行Experience Platform，并从自己的离线数据中构建受众。 然后，他们可以将这些受众发送到[!DNL Google Customer Match]以在[!DNL Search]和[!DNL Shopping]中使用，从而优化其广告支出。
+运动服装品牌希望通过[!DNL Google Search]和[!DNL Google Shopping]联系现有客户，以根据优惠和项目的过去购买和浏览历史记录对其进行个性化设置。 服装品牌可以从自己的CRM中将电子邮件地址摄取到Experience Platform，并从自己的离线数据中构建受众。 然后，他们可以将这些受众发送到[!DNL Google Customer Match]以在[!DNL Search]和[!DNL Shopping]中使用，从而优化其广告支出。
 
 ### 用例#2
 
@@ -46,11 +46,11 @@ Adobe Experience Platform UI中的![Google客户匹配目标。](../../assets/ca
 
 一家知名科技公司发布了一款新手机。 为了推广这种新手机型号，他们正寻求让拥有旧款手机的客户了解手机的新特性和功能。
 
-为了提升版本，客户需要使用电子邮件地址作为标识符，将电子邮件地址从CRM数据库上传到Experience Platform中。 受众是基于拥有旧版手机模型的客户创建的。 然后，受众会被发送到[!DNL Google Customer Match]，以便公司可以定位当前客户、拥有旧手机型号的客户以及[!DNL YouTube]上的类似客户。
+为了提升此版本，客户需要使用电子邮件地址作为标识符，将电子邮件地址从CRM数据库上传到Experience Platform。 受众是基于拥有旧版手机模型的客户创建的。 然后，受众会被发送到[!DNL Google Customer Match]，以便公司可以定位当前客户、拥有旧手机型号的客户以及[!DNL YouTube]上的类似客户。
 
 ## [!DNL Google Customer Match]目标的数据治理 {#data-governance}
 
-Experience Platform中的一些目标对于发送到目标平台或从目标平台接收的数据具有某些规则和义务。 您有责任了解数据的限制和义务，以及如何在Adobe Experience Platform和目标平台中使用该数据。 Adobe Experience Platform提供数据治理工具，帮助您管理其中一些数据使用义务。 [了解有关Data Governance工具和策略的更多信息](../../../data-governance/labels/overview.md)。
+Experience Platform中的某些目标对于发送到目标平台或从目标平台接收的数据具有某些规则和义务。 您有责任了解数据的限制和义务，以及如何在Adobe Experience Platform和目标平台中使用该数据。 Adobe Experience Platform提供数据治理工具，帮助您管理其中一些数据使用义务。 [了解有关Data Governance工具和策略的更多信息](../../../data-governance/labels/overview.md)。
 
 ## 支持的身份 {#supported-identities}
 
@@ -72,8 +72,8 @@ Experience Platform中的一些目标对于发送到目标平台或从目标平�
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -84,13 +84,13 @@ Experience Platform中的一些目标对于发送到目标平台或从目标平�
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
 | 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出具有[!DNL Google Customer Match]目标中使用的标识符（姓名、电话号码等）的受众的所有成员。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
 ## [!DNL Google Customer Match]帐户先决条件 {#google-account-prerequisites}
 
-在Experience Platform中设置[!DNL Google Customer Match]目标之前，请确保已阅读并遵循Google关于使用[!DNL Customer Match]的策略，该策略在[Google支持文档](https://support.google.com/google-ads/answer/6299717)中概述。
+在Experience Platform中设置[!DNL Google Customer Match]目标之前，请确保已阅读并遵守Google关于使用[!DNL Customer Match]的策略，如[Google支持文档](https://support.google.com/google-ads/answer/6299717)中所述。
 
 接下来，确保为您的[!DNL Google]帐户配置了[!DNL Standard]或更高权限级别。 有关详细信息，请参阅[Google广告文档](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1)。
 
@@ -119,7 +119,7 @@ Experience Platform中的一些目标对于发送到目标平台或从目标平�
 
 ### 电子邮件哈希处理要求 {#hashing-requirements}
 
-您可以在将电子邮件地址摄取到Adobe Experience Platform之前对其进行哈希处理，或者在Experience Platform中使用清晰的电子邮件地址，并在激活时对其进行[!DNL Platform]哈希处理。
+您可以在将电子邮件地址摄取到Adobe Experience Platform之前对其进行哈希处理，或者在Experience Platform中明确使用电子邮件地址，并在激活时对其进行[!DNL Platform]哈希处理。
 
 有关Google的哈希要求和其他激活限制的详细信息，请参阅Google文档中的以下部分：
 
@@ -227,16 +227,6 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 ## 监视目标 {#monitor-destination}
 
 连接到目标并建立目标数据流后，您可以使用Real-Time CDP中的[监视功能](/help/dataflows/ui/monitor-destinations.md)获取有关在每次数据流运行中激活到目标的配置文件记录的更多信息。
-
->[!IMPORTANT]
->
-> 从 2024 年 10 月开始，Adobe 将推出更新，以提高流式处理目标的报告准确性。此增强功能可确保Experience Platform和目标平台报表之间更好地保持一致。
->
-> 在此更新之前，**[!UICONTROL 失败的标识]**&#x200B;包括所有激活重试。 进行此更新后，总计数中仅包含上次激活重试。
->
-> 此增强功能目前适用于[Google客户匹配目标](google-customer-match.md)，但将逐步推广至其他Experience Platform流目标。
-> 进行此增强后，此目标的用户可能会看到其&#x200B;**[!UICONTROL 失败标识的预期下降]**。
-
 
 ## 验证受众激活是否成功 {#verify-activation}
 
