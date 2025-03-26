@@ -5,9 +5,9 @@ breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源引入数据。了解如何构建、标记和增强已引入的数据。
 feature: Sources
 role: Developer
-source-git-commit: 3ada2136e712abd1dad956cd579d6877b3e729c9
+source-git-commit: 86f17ed4dc012481c2b4a7f1a40b492bfac5e137
 workflow-type: tm+mt
-source-wordcount: '1059'
+source-wordcount: '1061'
 ht-degree: 29%
 
 ---
@@ -95,6 +95,7 @@ ht-degree: 29%
    - 数据和身份合作伙伴{#data-partner}
       - [Acxiom 数据摄取](connectors/data-partners/acxiom-data-ingestion.md)
       - [Acxiom 潜在客户数据导入](connectors/data-partners/acxiom-prospecting-data-import.md)
+      - [庞博拉意图](connectors/data-partners/bombora.md)
       - [Merkury Enterprise Identity Resolution](connectors/data-partners/merkury.md)
    - 电子商务{#ecommerce}
       - [SAP COMMERCE](connectors/ecommerce/sap-commerce.md)
