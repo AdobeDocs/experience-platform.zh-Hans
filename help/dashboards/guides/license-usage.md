@@ -4,10 +4,10 @@ title: 许可证使用情况仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 1c31ef58eec727638cab28202afc762da0e226a2
+source-git-commit: 7332b39b0e213632e595dc52eda390aa0b9a24ec
 workflow-type: tm+mt
-source-wordcount: '3125'
-ht-degree: 22%
+source-wordcount: '3483'
+ht-degree: 16%
 
 ---
 
@@ -45,48 +45,90 @@ ht-degree: 22%
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_computehours"
 >title="预测计算小时数"
->abstract="您的使用量可能已达到已授予许可量。要评估或减少您的计算小时数，请导航至查询>日志以查看您的查询历史记录。如果您无权访问查询工作区，请联系您的管理员。"
+>abstract="计算小时数用于测量运行批处理查询时查询服务引擎读取、处理和写入数据所花费的时间。<br>您的使用量可能达到许可数量。 要评估或减少使用，请转到“查询”>“日志”以查看查询历史记录。 如果您无权访问查询工作区，请联系您的管理员。"
 >additional-url="https://experience.adobe.com/#/platform/query/log.html" text="查询日志工作区"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_addressableaudience"
 >title="预测的可寻址受众"
->abstract="您的使用量可能已达到已授予许可量。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
+>abstract="可寻址受众是您的组织有权参与的Real-time Customer Profile中的人员配置文件集。 这包括直接可识别的用户档案和假名用户档案。<br>您的使用量可能达到许可数量。 要减少使用，请配置数据集或假名配置文件数据过期时间。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_engageableprofiles"
 >title="预测的可参与的轮廓"
->abstract="您的使用量可能已达到已授予许可量。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
+>abstract="可参与用户档案是实时客户档案中的人员用户档案，您的组织在过去12个月内尝试使用Journey Optimizer进行参与。<br>您的使用量可能达到许可数量。 要减少使用，请配置数据集或假名配置文件数据过期时间。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_businesspersonprofile"
 >title="预测的商务人士轮廓"
->abstract="您的使用量可能已达到已授予许可量。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
+>abstract="企业人员配置文件是实时客户配置文件中的记录，代表B2B上下文中的个人。<br>您的使用量可能达到许可数量。 要减少使用，请配置数据集或假名配置文件数据过期时间。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_corehours"
 >title="预测的核心小时数"
->abstract="您的使用量可能已达到已授予许可量。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
+>abstract="核心小时数表示跨Experience Platform服务使用的处理时间。<br>您的使用量可能达到许可数量。 要减少使用，请配置数据集或假名配置文件数据过期时间。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_totaldatavolume"
 >title="预测的总数据量"
->abstract="您的使用量可能已达到已授予许可量。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
+>abstract="总数据量是实时客户档案中可用于参与和个性化工作流程的数据量。<br>您的使用量可能达到许可数量。 要减少使用，请配置数据集或假名配置文件数据过期时间。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_cjaRowsAvailable"
 >title="预测的 CJA 可用行"
->abstract="您的使用量可能已达到已授予许可量。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
+>abstract="CJA可用行数是指可用于在Customer Journey Analytics中分析的每日平均数据行数。<br>您的使用量可能达到许可数量。 要减少使用，请配置数据集或假名配置文件数据过期时间。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_exceededusage_addressableaudience"
+>title="预测的可寻址受众"
+>abstract="可寻址受众是您的组织有权参与的Real-time Customer Profile中的人员配置文件集。 这包括直接可识别的用户档案和假名用户档案。<br>您的使用情况已超过许可数量。 要减少使用，请配置数据集或假名配置文件数据过期时间。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_exceededusage_engageableprofiles"
+>title="预测的可参与的轮廓"
+>abstract="可参与用户档案是实时客户档案中的人员用户档案，您的组织在过去12个月内尝试使用Journey Optimizer进行参与。<br>您的使用情况已超过许可数量。 要减少使用，请配置数据集或假名配置文件数据过期时间。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_exceededusage_businesspersonprofile"
+>title="预测的商务人士轮廓"
+>abstract="企业人员配置文件是实时客户配置文件中的记录，代表B2B上下文中的个人。<br>您的使用情况已超过许可数量。 要减少使用，请配置数据集或假名配置文件数据过期时间。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_exceededusage_corehours"
+>title="预测的核心小时数"
+>abstract="核心小时数表示跨Experience Platform服务使用的处理时间。<br>您的使用情况已超过许可数量。 要减少使用，请配置数据集或假名配置文件数据过期时间。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_exceededusage_totaldatavolume"
+>title="预测的总数据量"
+>abstract="总数据量是实时客户档案中可用于参与和个性化工作流程的数据量。<br>您的使用情况已超过许可数量。 要减少使用，请配置数据集或假名配置文件数据过期时间。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_exceededusage_cjaRowsAvailable"
+>title="预测的 CJA 可用行"
+>abstract="CJA可用行数是指可用于在Customer Journey Analytics中分析的每日平均数据行数。<br>您的使用情况已超过许可数量。 要减少使用，请配置数据集或假名配置文件数据过期时间。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
 
@@ -146,22 +188,22 @@ ht-degree: 22%
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseUsage_prediction"
 >title="预测使用量"
->abstract="预测基于过去 6-7 个月的使用情况，并在每个月的 15 日生成。请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解您组织的实际使用情况，并确保使用不超出您与 Adobe 的许可证范围。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
+>abstract="预测基于过去6-7个月的使用情况，每周于星期五生成。 请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解您组织的实际使用情况，并确保使用不超出您与 Adobe 的许可证范围。为了减少使用，您可以为沙盒和数据集配置数据集或假名配置文件数据过期时间。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html" text="自动数据集过期"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_licenseusage_prediction"
 >title="预测使用量"
->abstract="预测基于过去 6-7 个月的使用情况，并在每个月的 15 日生成。请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解您组织的实际使用情况，并确保使用不超出您与 Adobe 的许可证范围。为了减少使用量，您可以为沙箱和数据集配置数据集或匿名轮廓的数据有效期限设置。"
+>abstract="预测基于过去 6-7 个月的使用情况，并在每个月的 15 日生成。请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解您组织的实际使用情况，并确保使用不超出您与 Adobe 的许可证范围。为了减少使用，您可以为沙盒和数据集配置数据集或假名配置文件数据过期时间。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html" text="自动数据集过期"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
 
-根据深入的使用预测主动管理和优化您的许可资源。 [!UICONTROL 预测的使用量]列可以准确地预测您购买的所有产品在所有生产和开发沙盒中沙盒级别的未来许可证使用量。 此警报功能会根据您截至本日历月15日的使用情况，预测未来六周内的许可证使用情况。 预测提供有下限和上限。
+通过准确、最新的使用预测主动管理和优化您的许可资源。 [!UICONTROL 预测的使用量]列预测所有已购产品的所有生产和开发沙盒中沙盒级别的未来许可证使用量。 现在，预测每周更新，根据最新的使用情况数据提供六周的预测。 每个预测包括下限和上限以支持知情规划。
 
 >[!IMPORTANT]
 >
->预测会每月更新。 刷新日期包含在信息图标（![此信息图标）中。](../images/license-usage/info-icon.png))位于列标题上方。
+>预测每周五更新。 刷新日期包含在信息图标（![此信息图标）中。](../images/license-usage/info-icon.png))位于列标题上方。
 
 要查看产品权利使用情况的摘要，请从[!UICONTROL 核心产品]表中选择产品。
 
@@ -188,8 +230,10 @@ ht-degree: 22%
 预测的使用量功能支持以下量度：
 
 - [!UICONTROL 可寻址受众]
+- [!UICONTROL 业务人员配置文件]
 - [!UICONTROL 计算小时数]
 - [!UICONTROL 客户历程受众行数]
+- [!UICONTROL 可参与的配置文件]
 - [!UICONTROL 总数据量]
 
 ## [!UICONTROL 摘要]选项卡 {#summary-tab}
@@ -251,30 +295,34 @@ ht-degree: 22%
 
 >[!IMPORTANT]
 >
->从8月20日开始，有权使用“[!UICONTROL 平均配置文件丰富度]”和“[!UICONTROL 总存储量]”的客户在“许可证使用情况”仪表板中看到了“[!UICONTROL 总数据量]”。 客户权利没有变化，只是简化了跟踪量度。 [!UICONTROL 总数据量]表示Adobe Experience Platform配置文件服务中可用于参与和个性化工作流程的数据。 此简化的量度改进了用户档案服务使用的管理和测量。 我们鼓励客户联系其Adobe代表，以进一步了解这一更改。
+>从8月20日开始，有权使用“[!UICONTROL 平均配置文件丰富度]”和“[!UICONTROL 总存储量]”的客户在“许可证使用情况”仪表板中看到了“[!UICONTROL 总数据量]”。 客户权利没有变化，只是简化了跟踪量度。 [!UICONTROL 总数据量]表示参与和个性化工作流的实时客户配置文件中可用的数据。 此简化的量度改进了实时客户配置文件使用的管理和测量。 我们鼓励客户联系其Adobe代表，以进一步了解这一更改。
 
 许可证使用情况仪表板报告适用于组织中多个产品的多个唯一量度。 可用的量度包括：
 
 | 量度 | 描述 |
 |---|---|
 | [!UICONTROL Audience Activation大小] | 一年中激活到任何基于文件的目标的配置文件总数。 注意：这不包括通过流式目标发送的用户档案。 |
-| [!UICONTROL 可寻址受众] | 您的业务受众权利和消费者受众权利的总和。 消费者受众定义为销售订单上标识为“消费者受众”的人员配置文件数。 业务受众定义为销售订单上标识为“业务受众”的业务人员个人资料数。 |
+| [!UICONTROL 可寻址受众] | 您的组织有权参与的Real-time Customer Profile中的人员配置文件集，包括直接可识别的配置文件和假名配置文件。 这些配置文件可能包含属性、行为和区段成员资格数据。 配置文件卷使用Adobe Experience Platform的默认确定性标识图进行计算，并视为共享功能。 |
 | [!UICONTROL 临时查询服务用户包] | 一个附加功能，用于将您的授权并发查询服务用户权利增加5个额外的并发查询服务用户，每个包另加1个并发运行即席查询。 可以许可多个其他Ad Hoc Query用户包。 |
 | [!UICONTROL 平均配置文件丰富度] | **已弃用** — 在任何时间点存储在中心配置文件服务中的所有生产数据的总和除以授权的业务人员配置文件数量的五倍。 [!UICONTROL 平均配置文件丰富度]是共享功能。 |
 | [!UICONTROL CJA行可用] | 可用于在Customer Journey Analytics中分析的每日平均数据行数。 |
-| [!UICONTROL 计算属性] | 汇总的配置文件行为数据的总数。 汇总的个人资料行为数据基于转换为个人资料属性的体验事件，并可包含在人员个人资料或商业人员个人资料中。 |
+| [!UICONTROL 计算属性] | 整合的配置文件行为数据，该数据基于转换为配置文件属性并可以包含在人员配置文件中的体验事件。 |
 | [!UICONTROL 使用者受众] | 销售订单上标识为“消费者受众”的人员配置文件数。 |
 | [!UICONTROL 数据导出大小] | 一年中通过数据集激活发送的数据量。 |
 | [!UICONTROL 数据导出] | 一年中可以（直接或间接地）导出到任何非Adobe解决方案的数据集总大小。 |
 | [!UICONTROL 数据湖存储] | Adobe Experience Platform中分析数据存储所使用的数量。 |
-| [!UICONTROL 可参与受众] | 此量度是指可参与用户档案的受众。 可启用的用户档案是代表个人的信息记录，并在用户档案服务中显示。 这些记录是您在过去12个月内尝试使用Journey Optimizer的创作、决策、交付、实验或编排功能接触的用户档案。 |
-| [!UICONTROL 相似受众] | 通过模拟现有消费者受众以标识与现有消费者受众类似的人员配置文件而生成的受众计数。 |
+| [!UICONTROL 可参与受众] | 在过去的12个月中，您尝试使用Journey Optimizer的创作、决策、交付、试验或编排功能参与的一组Real-time Customer Profile人员配置文件。 |
+| [!UICONTROL 相似受众] | 消费者相似受众是通过建模现有消费者受众以识别具有相似属性或行为的人员配置文件而生成的受众。 |
 | [!UICONTROL AMM模型数] | 机器学习模型(在Adobe Mix Modeler中构建)的计数，用于根据您的投资测量和/或预测指定的结果。 |
 | [!UICONTROL 沙盒数] | 访问Adobe隔离数据和操作的任何Adobe Experience Platform On-demand Service实例中的逻辑分隔计数。 |
 | [!UICONTROL 包的配置文件丰富度] | 每个额外配置文件丰富度包的授权总数据量增加25 KB。 |
 | [!UICONTROL 查询服务计算小时数] | 测量在执行批量查询时，查询服务引擎读取、处理数据并将其写回数据湖所花费的时间。 |
 | [!UICONTROL 流式分段数（包）] | 当新数据通过流流进入分段服务时，包将更新人员配置文件的区段成员资格。 评估区段成员资格时，将基于当前人员配置文件属性和当前事件的值，而不考虑历史行为。 流式分段是一项共享功能。 |
-| [!UICONTROL 总数据量] | 可在参与工作流中使用的Adobe Experience Platform配置文件服务的数据总量。 请参阅有关总数据量](../../landing/license-usage-and-guardrails/total-data-volume.md)的[常见问题解答，以了解更多信息。 |
+| [!UICONTROL 总数据量] | 可用于参与工作流中的实时客户个人资料的数据总量。 请参阅有关总数据量](../../landing/license-usage-and-guardrails/total-data-volume.md)的[常见问题解答，以了解更多信息。 |
+| [!UICONTROL 总数据输出量] | 从Adobe Experience Platform导出到第三方数据仓库的累积年数据量。 |
+
+<!-- Approval needed on my revision above.
+Original PM version: | [!UICONTROL Total Volume of Data Egress] | The cumulative annual amount of data processed from third-party data warehouses. | -->
 
 <!-- |  [!UICONTROL Sandbox No of Packs] |  A logical separation within your instance of any Adobe On-demand Service that accesses Adobe Experience Platform isolating data and operations | -->
 
