@@ -2,7 +2,7 @@
 title: Adobe Experience Platform 发行说明（2025 年 3 月）
 description: Adobe Experience Platform 的 2025 年 3 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: b96e1186669c77530a10f1f177c1d99947c27f3b
+source-git-commit: 445bf302baadf478a39b0c11a31ccfe25d5dd726
 workflow-type: tm+mt
 source-wordcount: '1185'
 ht-degree: 26%
@@ -16,6 +16,7 @@ ht-degree: 26%
 Adobe Experience Platform 中现有功能和文档的更新：
 
 - [Adobe Experience Platform 发行说明](#adobe-experience-platform-release-notes)
+
    - [仪表板](#dashboards)
    - [目标](#destinations)
    - [Segmentation Service](#segmentation-service)
