@@ -5,9 +5,9 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: 26125b0496b8b08443e9a1ccb13a384bf33ab4be
+source-git-commit: 9b9cecc9e1a6e5979fa8eb454cef677b8995f1b6
 workflow-type: tm+mt
-source-wordcount: '1274'
+source-wordcount: '1276'
 ht-degree: 5%
 
 ---
@@ -139,6 +139,7 @@ ht-degree: 5%
       * [数据登陆区](./catalog/cloud-storage/data-landing-zone.md)
       * [Google 云存储](./catalog/cloud-storage/google-cloud-storage.md)
       * [SFTP连接](./catalog/cloud-storage/sftp.md)
+      * [Snowflake连接](./catalog/cloud-storage/snowflake.md)
       * [列入允许列表基于文件的云存储目标的IP地址](./catalog/cloud-storage/ip-address-allow-list.md)
    * 客户关系管理(CRM)目标{#crm}
       * [Hubspot连接](./catalog/crm/hubspot.md)
