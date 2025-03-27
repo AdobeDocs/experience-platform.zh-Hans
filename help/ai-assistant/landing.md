@@ -3,9 +3,9 @@ title: Adobe Experience Platform产品文档中的AI助手
 description: Adobe Experience Platform中的AI助手入门。
 feature: AI Assistant
 exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
-source-git-commit: b26a1f12c9ea07d4dd077f1f3c1578e6c69866a7
+source-git-commit: a34c3cae803c9e70530dbd382fbec2ece17fc71a
 workflow-type: tm+mt
-source-wordcount: '1059'
+source-wordcount: '1095'
 ht-degree: 0%
 
 ---
@@ -97,11 +97,9 @@ For more information about AI Assistant, read the [security fact sheet for AI As
 
 >[!ENDSHADEBOX] -->
 
-## 视频库
+## 了解基础知识
 
-观看以下视频，进一步丰富您对AI Assistant功能和用例的知识：
-
-### 了解基础知识
+观看以下视频，了解AI Assistant的一些基本方面。
 
 <!-- START CARDS HTML - DO NOT MODIFY BY HAND -->
 <div class="columns">
@@ -252,7 +250,9 @@ For more information about AI Assistant, read the [security fact sheet for AI As
 </div>
 <!-- END CARDS HTML - DO NOT MODIFY BY HAND -->
 
-### 用例库
+## 用例库
+
+观看以下视频，了解AI助手用例。
 
 <!-- START CARDS HTML - DO NOT MODIFY BY HAND -->
 <div class="columns">
@@ -416,7 +416,7 @@ For more information about AI Assistant, read the [security fact sheet for AI As
 </div>
 <!-- END CARDS HTML - DO NOT MODIFY BY HAND -->
 
-## AI Assistant用例库
+## 其他用例
 
 >[!BEGINTABS]
 
@@ -439,6 +439,14 @@ For more information about AI Assistant, read the [security fact sheet for AI As
 * [使用AI助手解锁操作分析](https://www.youtube.com/watch?v=fGgFwAOZle8)
 
 >[!ENDTABS]
+
+### 使用AI Assistant提高工作效率
+
+阅读以下内容，了解有关如何使用AI Assistant提高生产力的实践指南。
+
+* [使用AI Assistant大幅提高工作效率](./assets/landing/ai-assistant-lab-workbook.pdf)
+
+## 后续步骤
 
 浏览以下链接，以进一步了解AI Assistant用例、功能等。
 
