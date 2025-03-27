@@ -2,9 +2,9 @@
 title: 使用流服务API创建Microsoft Dynamics基本连接
 description: 了解如何使用流服务API将Platform连接到Microsoft Dynamics帐户。
 exl-id: 423c6047-f183-4d92-8d2f-cc8cc26647ef
-source-git-commit: bda26fa4ecf4f54cb36ffbedf6a9aa13faf7a09d
+source-git-commit: 4e119056c0ab89cfc79eeb46e6f870c89356dc7d
 workflow-type: tm+mt
-source-wordcount: '1102'
+source-wordcount: '1330'
 ht-degree: 3%
 
 ---
@@ -264,6 +264,44 @@ curl -X GET \
 
 +++
 
+### 使用主键优化数据探索
+
+>[!NOTE]
+>
+>在使用主键方法进行优化时，只能使用非查找属性。
+
+通过将`primaryKey`作为查询参数的一部分提供，您可以优化浏览查询。 将`primaryKey`作为查询参数加入时，必须指定[!DNL Dynamics]表的主键。
+
+**API格式**
+
+```http
+GET /connections/{BASE_CONNECTION_ID}/explore?preview=true&object={OBJECT}&objectType={OBJECT_TYPE}&previewCount=10&primaryKey={PRIMARY_KEY}
+```
+
+| 查询参数 | 描述 |
+| --- | --- |
+| `{BASE_CONNECTION_ID}` | 基本连接的ID。 使用此ID浏览源的内容和结构。 |
+| `preview` | 启用数据预览的布尔值。 |
+| `{OBJECT}` | 要浏览的[!DNL Dynamics]对象。 |
+| `{OBJECT_TYPE}` | 对象的类型。 |
+| `previewCount` | 一种限制，将返回的预览限制为仅特定数量的记录。 |
+| `{PRIMARY_KEY}` | 要检索以进行预览的表的主键。 |
+
+**请求**
+
++++选择以查看请求示例
+
+```shell
+curl -X GET \
+  'https://platform-stage.adobe.io/data/foundation/flowservice/connections/dd668808-25da-493f-8782-f3433b976d1e/explore?preview=true&object=lead&objectType=table&previewCount=10&primaryKey=leadid' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+```
+
++++
 
 ## 检查表的结构
 
@@ -581,6 +619,74 @@ curl -X POST \
 ```
 
 +++
+
+### 使用主密钥优化数据流
+
+您还可以通过指定主键作为请求正文参数的一部分来优化[!DNL Dynamics]数据流。
+
+**API格式**
+
+```http
+POST /sourceConnections
+```
+
+**请求**
+
+将主键指定为`contactid`时，以下请求创建[!DNL Dynamics]源连接。
+
++++选择以查看请求示例
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Dynamics Source Connection",
+      "description": "Dynamics Source Connection",
+      "baseConnectionId": "dd668808-25da-493f-8782-f3433b976d1e",
+      "data": {
+          "format": "tabular"
+      },
+      "params": {
+          "tableName": "contact",
+          "primaryKey": "contactid"
+      },
+      "connectionSpec": {
+          "id": "38ad80fe-8b06-4938-94f4-d4ee80266b07",
+          "version": "1.0"
+      }
+  }'
+```
+
+| 属性 | 描述 |
+| --- | --- |
+| `baseConnectionId` | 基本连接的ID。 |
+| `data.format` | 数据的格式。 |
+| `params.tableName` | [!DNL Dynamics]中表的名称。 |
+| `params.primaryKey` | 将优化查询的表的主键。 |
+| `connectionSpec.id` | 与[!DNL Dynamics]源对应的连接规范ID。 |
+
++++
+
+**响应**
+
+成功的响应会返回新生成的源连接ID及其相应的电子标记。
+
++++选择以查看响应示例
+
+```json
+{
+    "id": "e566bab3-1b58-428c-b751-86b8cc79a3b4",
+    "etag": "\"82009592-0000-0200-0000-678121030000\""
+}
+```
+
++++
+
 
 ## 后续步骤
 
