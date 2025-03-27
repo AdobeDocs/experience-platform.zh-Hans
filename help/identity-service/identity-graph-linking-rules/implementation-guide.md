@@ -2,10 +2,10 @@
 title: 身份图链接规则的实施指南
 description: 了解在使用身份图链接规则配置实施数据时要遵循的建议步骤。
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 2dadb3a0a79f4d187dd096177130802f511a6917
+source-git-commit: 83815c4911f867329d5fb7731763141d950f85bf
 workflow-type: tm+mt
-source-wordcount: '1778'
-ht-degree: 2%
+source-wordcount: '1819'
+ht-degree: 6%
 
 ---
 
@@ -58,19 +58,18 @@ ht-degree: 2%
 
 如果您使用[Adobe Analytics源连接器](../../sources/tutorials/ui/create/adobe-applications/analytics.md)来摄取数据，则必须为您的ECID指定比Adobe Analytics ID (AAID)更高的优先级，因为Identity Service阻止AAID。 通过优先处理ECID，您可以指示Real-time Customer Profile将未经身份验证的事件存储到ECID而不是AAID。
 
-### XDM体验事件 {#xdm-experience-events}
+### XDM 体验事件 {#xdm-experience-events}
 
 >[!CONTEXTUALHELP]
 >id="platform_identities_linkingrules_xdm"
->title="确保您只有一个人员标识符"
->abstract="在预实施过程中，您必须确保系统将发送到Experience Platform的经过身份验证的事件始终包含&#x200B;**single**&#x200B;人员标识符，如CRMID。"
+>title="确保您拥有单个用户标识符"
+>abstract="在预实施过程中，您必须确保系统发送到 Experience Platform 的经过身份验证的事件始终包含&#x200B;**单个**&#x200B;用户标识符，如 CRMID。"
 
-在预实施过程中，您必须确保系统将发送到Experience Platform的经过身份验证的事件始终包含&#x200B;**single**&#x200B;人员标识符，如CRMID。
+在预实施过程中，您必须确保系统发送到 Experience Platform 的经过身份验证的事件始终包含&#x200B;**单个**&#x200B;用户标识符，如 CRMID。
 
-* （推荐）具有一个人员标识符的已验证事件。
-* （不推荐）具有两个人员标识符的已验证事件。
-* （不推荐）没有任何人员标识符的经过身份验证的事件。
-
+* （推荐）具有一个唯一人员标识符的已验证事件。
+* （不推荐）具有两个唯一人员标识符的已验证事件。 如果您有多个唯一人员标识符，则可能会遇到不需要的图形折叠问题。
+* （不推荐）没有任何唯一人员标识符的经过身份验证的事件。 如果您没有任何唯一的人员标识符，则未经身份验证和经过身份验证的事件都将根据ECID进行存储。
 
 >[!BEGINTABS]
 
@@ -291,7 +290,7 @@ Identity Service实施流程的第一步是，确保将您的Experience Platform
 
 有关身份图链接规则的更多信息，请阅读以下文档：
 
-* [身份图链接规则概述](./overview.md)
+* [身份标识图链接规则概述](./overview.md)
 * [身份标识优化算法](./identity-optimization-algorithm.md)
 * [图形配置示例](./example-configurations.md)
 * [疑难解答和常见问题](./troubleshooting.md)
