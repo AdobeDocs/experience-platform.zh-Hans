@@ -1,34 +1,34 @@
 ---
 solution: Experience Platform
 title: 同意和偏好设置架构字段组
-description: 了解同意和偏好设置架构字段组。
+description: 了解“同意和首选项”架构字段组。
 exl-id: ec592102-a9d3-4cac-8b94-58296a138573
-source-git-commit: b08c6cf12a38f79e019544dea91913a77bd6490a
+source-git-commit: be35c5398cd96cdfe424c5088db288ba4061ac4a
 workflow-type: tm+mt
 source-wordcount: '933'
 ht-degree: 0%
 
 ---
 
-# [!UICONTROL 同意和偏好设置]字段组
+# [!UICONTROL 同意和首选项]字段组
 
-[!UICONTROL 同意和偏好设置]是[[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md)的标准字段组，用于捕获单个客户的同意和偏好设置信息。
+[!UICONTROL 同意和首选项]是[[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md)的标准字段组，用于捕获单个客户的同意和首选项信息。
 
 >[!NOTE]
 >
->由于此字段组仅与[!DNL XDM Individual Profile]兼容，因此无法用于[!DNL XDM ExperienceEvent]架构。 如果要在Experience Event架构中包含同意和偏好设置数据，请改为使用[自定义字段组](../../ui/resources/field-groups.md#create)将[[!UICONTROL 隐私同意、Personalization和营销偏好设置]数据类型](../../data-types/consents.md)添加到架构中。
+>由于该字段组仅与[!DNL XDM Individual Profile]兼容，因此不能用于[!DNL XDM ExperienceEvent]架构。 如果要在体验事件架构中包含同意和偏好设置数据，请改用[自定义字段组](../../ui/resources/field-groups.md#create)将[[!UICONTROL 同意隐私、个性化设置和营销偏好]数据类型](../../data-types/consents.md)添加到架构中。
 
 ## 字段组结构 {#structure}
 
-[!UICONTROL 同意和偏好设置]字段组提供单个对象类型字段`consents`以捕获同意和偏好设置信息。 此字段扩展了[[!UICONTROL 隐私、Personalization和营销偏好设置的同意]数据类型](../../data-types/consents.md)，删除了`adID`字段并添加了`idSpecific`映射字段。
+[!UICONTROL 同意和首选项]字段组提供一个对象类型字段`consents`以捕获同意和首选项信息。 此字段扩展了[[!UICONTROL 同意隐私、个性化和营销首选项]数据类型](../../data-types/consents.md)，删除了`adID`字段并添加了`idSpecific`映射字段。
 
 ![](../../images/field-groups/consent.png)
 
 >[!TIP]
 >
->有关如何在Platform UI中查找任何XDM资源并检查其结构的步骤，请参阅关于[探索XDM资源](../../ui/explore.md)的指南。
+>请参阅[探索XDM资源](../../ui/explore.md)的指南，了解如何查找任何XDM资源并在平台UI中检查其结构的步骤。
 
-以下JSON显示了[!UICONTROL 同意和偏好设置]字段组可以处理的数据类型示例。 有关如何使用字段组提供的大多数字段的信息，请参阅[同意和偏好设置数据类型](../../data-types/consents.md)的指南。 以下子部分重点介绍字段组添加到数据类型的唯一属性。
+The following JSON shows an example of the type of data that the [!UICONTROL Consents and Preferences] field group can process. For information on how to use most of the fields provided by the field group, refer to the guide on the [Consents and Preferences data type](../../data-types/consents.md). The subsections below focus on the unique attributes that the field group adds to the data type.
 
 ```json
 {
@@ -90,25 +90,25 @@ ht-degree: 0%
 
 >[!TIP]
 >
->您可以为在Experience Platform中定义的任何XDM架构生成示例JSON数据，以帮助可视化应如何映射客户同意和偏好设置数据。 有关更多信息，请参阅以下文档：
+>You can generate sample JSON data for any XDM schema that you define in Experience Platform in order to help visualize how your customer consent and preference data should be mapped. See the following documentation for more information:
 >
->* [在UI中生成示例数据](../../ui/sample.md)
+>* [Generate sample data in the UI](../../ui/sample.md)
 >* [在API中生成示例数据](../../api/sample-data.md)
 
 ### `idSpecific`
 
-当特定同意或偏好设置不是普遍适用于某个客户，而是仅限于单个设备或ID时，可以使用`idSpecific`。 例如，客户可以选择不接收发往一个地址的电子邮件，而可能允许发往另一个地址的电子邮件。
+`idSpecific` can be used when a particular consent or preference does not universally apply to a customer, but is restricted to a single device or ID. 例如，客户可以选择不接收发送到某个地址的电子邮件，而允许发送到另一个地址的电子邮件。
 
 >[!IMPORTANT]
 >
->渠道级别的同意和偏好设置（即`idSpecific`之外的`consents`下提供的同意和偏好设置）适用于该渠道内的所有ID。 因此，无论遵循等效的特定于ID还是特定于设备的设置，所有渠道级别的同意和偏好设置都会直接产生作用：
+>Channel-level consents and preferences (i.e. those provided under `consents` outside of `idSpecific`) apply to all IDs within that channel. Therefore, all channel-level consents and preferences directly effect whether equivalent ID- or device-specific settings are honored:
 >
->* 如果客户在渠道级别选择退出，则`idSpecific`中的任何等效同意或偏好设置都将被忽略。
->* 如果未设置渠道级别的同意或偏好设置，或者客户已选择加入，则会接受`idSpecific`中的等效同意或偏好设置。
+>* If the customer has opted out at the channel level, then any equivalent consents or preferences in `idSpecific` are ignored.
+>* If the channel-level consent or preference is not set, or the customer has opted in, then the equivalent consents or preferences in `idSpecific` are honored.
 
-`idSpecific`对象中的每个键代表Adobe Experience Platform Identity服务识别的特定身份命名空间。 虽然您可以定义自己的自定义命名空间来对不同的标识符进行分类，但建议您使用Identity Service提供的标准命名空间之一来减少实时客户档案的存储大小。 有关身份命名空间的详细信息，请参阅Identity Service文档中的[身份命名空间概述](../../../identity-service/features/namespaces.md)。
+Each key in the `idSpecific` object represents a specific identity namespace recognized by Adobe Experience Platform Identity Service. 虽然您可以定义自己的自定义命名空间来对不同的标识符进行分类，但建议您使用身份服务提供的标准命名空间之一来减小Real-Time Customer Profile的存储大小。 有关标识命名空间的详细信息，请参阅标识服务文档中的[标识命名空间概述](../../../identity-service/features/namespaces.md)。
 
-每个命名空间对象的键表示客户为其设置了首选项的唯一标识值。 每个标识值可以包含一组完整的同意和偏好设置，格式与`consents`相同。
+每个命名空间对象的键代表客户为其设置了首选项的唯一标识值。 每个标识值可以包含一组完整的同意和首选项，其格式与`consents`相同。
 
 ```json
 "idSpecific": {
@@ -139,13 +139,13 @@ ht-degree: 0%
 }
 ```
 
-在`idSpecific`部分中提供的`marketing`对象中，`any`和`preferred`字段不受支持。 这些字段只能在用户级别配置。 此外，`email`、`sms`和`push`的`idSpecific`营销首选项不支持`subscriptions`字段。
+在`idSpecific`部分提供的`marketing`对象中，`any`和`preferred`字段不受支持。 这些字段只能在用户级别配置。 此外，`email`、`sms`和`push`的`idSpecific`营销首选项不支持`subscriptions`字段。
 
-还有只能在`idSpecific`部分提供的同意： `adID`。 此字段将在以下子部分中介绍。
+还只能在`idSpecific`部分提供同意： `adID`。 下面的子部分介绍了此字段。
 
 #### `adID`
 
-`adID`同意表示客户同意是否可以使用广告商ID（IDFA或GAID）在此设备上跨应用程序链接客户。 此值只能在`idSpecific`部分中的`ECID`身份命名空间下配置，不能为其他命名空间或此字段组的用户级别设置。
+`adID`同意表示客户同意是否可以使用广告商ID（IDFA或GAID）在此设备上的应用程序间链接客户。 此值只能在`idSpecific`节中的`ECID`标识命名空间下配置，不能为其他命名空间或此字段组的用户级别进行设置。
 
 ```json
 "idSpecific": {
@@ -169,24 +169,24 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->您不应直接设置此值，因为Adobe Experience Platform Mobile SDK会在适当时自动设置此值。
+>您不应直接设置此值，因为Adobe Experience Platform Mobile SDK会在适当的时候自动设置它。
 
-## 使用字段组摄取数据 {#ingest}
+## 使用字段组收录数据 {#ingest}
 
-要使用[!UICONTROL 同意和偏好设置]字段组从客户中摄取同意数据，您必须基于包含该字段组的架构创建数据集。
+为了使用[!UICONTROL 同意和首选项]字段组从您的客户那里获取同意数据，您必须基于包含该字段组的架构创建数据集。
 
-有关如何将字段组分配给字段的步骤，请参阅有关[在UI](https://www.adobe.com/go/xdm-schema-editor-tutorial-en)中创建架构的教程。 创建架构后，该架构包含的字段具有[!UICONTROL 同意和偏好设置]字段组，请参阅数据集用户指南中有关[创建数据集](../../../catalog/datasets/user-guide.md#create)的部分，并按照使用现有架构创建数据集的步骤操作。
+See the tutorial on [creating a schema in the UI](https://www.adobe.com/go/xdm-schema-editor-tutorial-en) for steps on how to assign field groups to fields. Once you have created a schema containing a field with the [!UICONTROL Consents and Preferences] field group, refer to the section on [creating a dataset](../../../catalog/datasets/user-guide.md#create) in the dataset user guide, following the steps to create a dataset with an existing schema.
 
 >[!IMPORTANT]
 >
->如果要将同意数据发送到[!DNL Real-Time Customer Profile]，需要您根据包含[!UICONTROL 同意和偏好设置]字段组的[!DNL XDM Individual Profile]类创建启用[!DNL Profile]的架构。 还必须为[!DNL Profile]启用您根据该架构创建的数据集。 请参阅上面链接的教程，了解与架构和数据集的[!DNL Real-Time Customer Profile]要求相关的特定步骤。
+>If you want to send consent data to [!DNL Real-Time Customer Profile], it is required that you create a [!DNL Profile]-enabled schema based on the [!DNL XDM Individual Profile] class that contains the [!UICONTROL Consents and Preferences] field group. The dataset that you create based on that schema must also be enabled for [!DNL Profile]. Refer to the tutorials linked above for specific steps related to [!DNL Real-Time Customer Profile] requirements for schemas and datasets.
 >
->此外，您还必须确保将合并策略配置为优先考虑包含最新同意和偏好设置数据的数据集，以便正确更新客户配置文件。 有关详细信息，请参阅有关[合并策略](../../../rtcdp/profile/merge-policies.md)的概述。
+>In addition, you must also ensure that your merge policies are configured to prioritize the dataset(s) that contain the latest consent and preference data, in order for customer profiles to be updated correctly. See the overview on [merge policies](../../../rtcdp/profile/merge-policies.md) for more information.
 
-## 处理同意和偏好设置更改
+## Handling consent and preference changes
 
-当客户在您的网站上更改其同意或偏好设置时，应使用[Adobe Experience Platform Web SDK](../../../web-sdk/commands/setconsent.md)收集这些更改并立即实施。 如果客户选择退出数据收集，则必须立即停止所有数据收集。 如果客户选择退出个性化，则他们访问的下一个页面上应该不会显示个性化。
+When a customer changes their consents or preferences on your website, these changes should be collected and immediately enforced using the [Adobe Experience Platform Web SDK](../../../web-sdk/commands/setconsent.md). If a customer opts out of data collection, all data collection must immediately cease. If a customer opts out of personalization, then there should be no personalization present on the next page they load.
 
 ## 后续步骤
 
-本文档介绍了[!UICONTROL 同意和偏好设置]字段组的结构和用法。 有关字段组提供的其他字段的更多信息，请参阅有关[[!UICONTROL 隐私同意、Personalization和营销偏好设置]数据类型](../../data-types/consents.md)的文档。
+This document covered the structure and use of the [!UICONTROL Consents and Preferences] field group. For more information on the other fields provided by the field group, see the document on the [[!UICONTROL Consent for Privacy, Personalization and Marketing Preferences] data type](../../data-types/consents.md).
