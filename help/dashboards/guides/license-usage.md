@@ -4,9 +4,9 @@ title: 许可证使用情况仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 7332b39b0e213632e595dc52eda390aa0b9a24ec
+source-git-commit: 03b35ecf940f9b1cb40d8b1243ff530f38bcdcd4
 workflow-type: tm+mt
-source-wordcount: '3483'
+source-wordcount: '3367'
 ht-degree: 16%
 
 ---
@@ -51,7 +51,7 @@ ht-degree: 16%
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_addressableaudience"
 >title="预测的可寻址受众"
->abstract="可寻址受众是您的组织有权参与的Real-time Customer Profile中的人员配置文件集。 这包括直接可识别的用户档案和假名用户档案。<br>您的使用量可能达到许可数量。 要减少使用，请配置数据集或假名配置文件数据过期时间。"
+>abstract="可寻址受众是您的组织有权参与的Real-time Customer Profile中的人员配置文件集。 此量度包括可直接识别的配置文件和假名配置文件。<br>您的使用量可能达到许可数量。 要减少使用，请配置数据集或假名配置文件数据过期时间。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
 
@@ -134,7 +134,7 @@ ht-degree: 16%
 
 您可以通过Adobe Experience Platform [!UICONTROL 许可证使用情况]仪表板查看有关贵组织许可证使用情况的重要信息。 此处显示的信息是在Platform实例的每日快照期间捕获的。
 
-许可证使用情况报表可提供比许可证使用情况量度更高级别的粒度。 仪表板提供每个购买的产品（及相关插件）的使用量度、所有生产或开发沙盒中量度的综合使用量度，以及特定沙盒的使用量度。 可以使用使用情况量度跟踪以下Experience Platform应用程序：Real-Time Customer Data Platform、Adobe Journey Optimizer和Customer Journey Analytics。
+许可证使用情况报告提供了高度的粒度。 大多数量度是在多个产品之间共享的，反映的是使用它们的所有产品的汇总使用情况，而不是按产品计算的总数。 功能板提供这些指标在所有生产或开发沙盒中的综合使用情况，以及特定沙盒的使用情况指标。 可以使用使用情况量度跟踪以下Experience Platform应用程序：Real-Time Customer Data Platform、Adobe Journey Optimizer和Customer Journey Analytics。
 
 本指南概述如何在UI中访问和使用许可证使用情况仪表板，并提供有关仪表板中显示的可视化的更多信息。
 
@@ -144,7 +144,7 @@ ht-degree: 16%
 
 [!UICONTROL 许可证使用情况]仪表板显示您已购买的所有Experience Platform产品以及这些产品的任何加载项的列表。 在此功能板中，您可以找到贵组织在任何关联沙盒中用于Experience Platform的许可证相关数据的快照。
 
-此仪表板中的数据与拍摄快照的特定时间点完全相同。 换句话说，快照不是数据的近似值或样本，并且仪表板没有实时更新。
+此仪表板中的数据与拍摄快照的特定时间点完全相同。 换句话说，快照不是数据的近似值或样本，并且仪表板不会实时更新。
 
 >[!NOTE]
 >
@@ -152,36 +152,87 @@ ht-degree: 16%
 
 ## 浏览许可证使用情况仪表板 {#explore}
 
-要导航到平台UI中的许可证使用情况仪表板，请在左边栏中选择&#x200B;**[!UICONTROL 许可证使用情况]**。 将打开[!UICONTROL 概述]选项卡，显示可用产品的列表。
+要导航到平台UI中的许可证使用情况仪表板，请在左边栏中选择&#x200B;**[!UICONTROL 许可证使用情况]**。 仪表板包含两个选项卡：**[!UICONTROL Metrics]**&#x200B;和&#x200B;**[!UICONTROL Products]**。
 
 >[!NOTE]
 >
->默认情况下，许可证使用情况仪表板未启用。 必须向用户授予“查看许可证使用情况仪表板”权限，用户才能查看仪表板。 有关授予查看许可证使用仪表板的访问权限的步骤，请参阅[仪表板权限指南](../permissions.md)。
+>默认情况下，许可证使用情况仪表板未启用。 必须向用户授予“查看许可证使用情况仪表板”权限才能查看仪表板。 有关授予访问权限的步骤，请参阅[仪表板权限指南](../permissions.md)。
 
-![许可证使用情况仪表板概述选项卡，在左侧导航侧边栏中突出显示许可证使用情况。](../images/license-usage/dashboard-overview.png)
+## [!UICONTROL 量度]选项卡 {#metrics-tab}
 
-## [!UICONTROL 概述]选项卡 {#overview-tab}
+**[!UICONTROL 量度]**&#x200B;选项卡提供了整个组织内所有许可证使用量度的集中视图。 由于大多数量度在产品之间共享，因此这些量度没有单独的按产品细分。
 
-[!UICONTROL 许可证使用情况]仪表板显示两个单独的表：**核心产品**&#x200B;和&#x200B;**附加组件**。
+度量表包含以下列：
 
-- **[!UICONTROL 核心产品]表**：此表列出了您的组织许可的主要Adobe Experience Platform产品。 每个核心产品在沙盒级别都有自己的量度、使用情况跟踪和穿透钻取视图。 这些核心产品提供了用于跟踪的关键量度，并且任何附加组件都包含在这些量度中。
+| 列名 | 描述 |
+|---|---|
+| **[!UICONTROL 量度名称]** | 许可证使用量度的名称。 每个条目都包含一个信息图标(`ⓘ`)，该图标显示相关产品的说明和列表。 |
+| **[!UICONTROL 已许可]** | 您的组织有权使用的单位数（在合同中定义）。 此量度与“产品”选项卡中的&#x200B;**许可证数量**&#x200B;的值相同。 |
+| **[!UICONTROL 已测量]** | 您的组织当前使用的量度数量。 |
+| **[!UICONTROL 使用情况%]** | 当前使用的许可值的百分比。 |
+| **[!UICONTROL 预测的使用率%]** | 未来6周内量度使用的预测范围。 |
 
-- **[!UICONTROL 插件]表**：此表列出了许可证数量与核心产品所支持的量度相结合的其他产品。 加载项没有单独的量度，但可增强对其关联核心产品的使用跟踪。
+使用&#x200B;**[!UICONTROL 生产]**&#x200B;或&#x200B;**[!UICONTROL 开发]**&#x200B;沙盒切换开关筛选沙盒显示的量度。
+
+>[!NOTE]
+>
+>使用情况报告按沙盒类型累计。 选择[!UICONTROL 生产]或[!UICONTROL 开发]将显示该类型的所有沙盒的组合使用情况。
+
+![许可证使用情况仪表板的“量度”选项卡显示量度、许可证金额和使用数据列表。](../images/license-usage/metrics-tab.png)
+
+>[!WARNING]
+>
+>必须在沙盒级别指定查看许可证使用情况仪表板的权限。 向每个沙盒添加权限，以便在功能板中查看它们。 此限制将在未来版本中解决。 同时，提供以下解决方法：
+>
+>1. 在Adobe Admin Console中创建产品配置文件。
+>2. 在沙盒类别中的权限下，添加您希望在许可证使用情况仪表板中查看的所有沙盒。
+>3. 在“用户仪表板权限”类别下，添加“查看许可证使用情况仪表板”权限。
+
+### 查看量度详细信息 {#view-metric-details}
+
+要查看特定量度的使用情况详细信息，请在列表中选择量度名称。 此时将显示指标的详细视图，其中包括：
+
+- 显示一段时间内的使用情况的历史折线图
+- 许可值和测量值的比较
+- 按单个沙盒的使用情况
+- 用于筛选数据的沙盒选择器
+- 用于CSV下载的导出选项
+
+此可视化允许您跟踪趋势，了解每个沙盒对总体使用率的贡献情况，并导出数据以供离线分析。
+
+每个图表都包含用于筛选数据的下拉菜单。 使用日期范围下拉菜单调整回看时段（默认：过去30天），或使用沙盒下拉菜单查看特定生产或开发沙盒的使用情况。
+
+![包含历史使用图形、沙盒表和导出按钮的可寻址受众量度详细信息视图。](../images/license-usage/metric-details-view.png)
+
+您还可以选择&#x200B;**[!UICONTROL 自定义日期]**&#x200B;以选择显示的时间段。
+
+![突出显示自定义日期范围选项的“许可证使用情况”仪表板的“概述”选项卡。](../images/license-usage/custom-date-range.png)
+
+### CSV导出 {#export-metric-usage-data}
+
+您可以直接从量度详细信息视图将选定量度和沙盒的历史使用数据导出为CSV文件。 选择&#x200B;**[!UICONTROL 导出]**&#x200B;图标以表格格式下载图表数据。 利用导出的CSV，可轻松分析离线趋势或在团队之间共享使用见解。
+
+## [!UICONTROL 产品]选项卡 {#products-tab}
+
+**[!UICONTROL 产品]**&#x200B;选项卡显示按购买的产品和任何关联的加载项分组的许可证使用数据。 [!UICONTROL Products]选项卡包含两个表：
+
+- **[!UICONTROL 核心产品]表**：此表列出了您的组织许可的主要Adobe Experience Platform产品。 每个产品都列出了其主要量度、使用情况跟踪和预测使用情况。
+- **[!UICONTROL 附加组件]表**：列出许可证金额对核心产品量度有贡献的附加项目。 加载项没有单独的量度，但可增强对其关联核心产品的使用跟踪。
 
 | 列名 | 描述 |
 |---|---|
 | **[!UICONTROL 产品]** | 由您的组织许可的Adobe解决方案。 |
 | **[!UICONTROL 主要指标]** | 用于跟踪该产品的主要指标。 |
-| **[!UICONTROL 许可证数量]** | 产品许可协议中约定的主要量度最大量的约定值。 |
-| **[!UICONTROL 用法]** | 您使用的主要量度的数量。 此值提供该量度在所有沙盒（生产沙盒或开发沙盒）中的总使用情况。 |
+| **[!UICONTROL 许可证数量]** | 主要指标的最大值的约定值。 |
+| **[!UICONTROL 用法]** | 您使用的主要量度的数量。 |
 | **[!UICONTROL 使用情况%]** | 根据您的许可证数量使用的主要量度的百分比。 |
-| **[!UICONTROL 预测使用情况]** | 根据您的许可证数量，您的主要量度的预测使用百分比。 |
+| **[!UICONTROL 预测的使用量]** | 主要量度的预测使用百分比。 |
 
 >[!NOTE]
 >
->加载项的许可证金额包含在核心产品的[!UICONTROL 许可证金额]中。 例如，如果您购买一包5个沙盒作为附加产品，则金额将添加到基础产品的金额中。 加载项表显示特定于加载项的[!UICONTROL 许可证金额]，但实际使用情况是通过基本产品进行跟踪的。
+>加载项的[!UICONTROL 许可证金额]包含在核心产品的总许可证金额中。 加载项不会单独进行跟踪，但可以增强其关联产品的功能。 例如，如果您购买一包5个沙盒作为附加产品，则金额将添加到基础产品的金额中。 加载项表显示特定于加载项的[!UICONTROL 许可证金额]，但实际使用情况是通过基本产品进行跟踪的。
 
-这些表指示每个产品的主要量度，因为每个产品都可以跟踪大量量度。
+![许可证使用情况仪表板的“产品”选项卡，其中包含核心产品和加载项的表格。](../images/license-usage/products-tab.png)
 
 ### 预测使用量 {#predicted-usage}
 
@@ -205,17 +256,13 @@ ht-degree: 16%
 >
 >预测每周五更新。 刷新日期包含在信息图标（![此信息图标）中。](../images/license-usage/info-icon.png))位于列标题上方。
 
-要查看产品权利使用情况的摘要，请从[!UICONTROL 核心产品]表中选择产品。
+从[!UICONTROL 核心产品]表下的[!UICONTROL 产品]选项卡查看产品权利使用情况的摘要。
 
-![产品及预测使用列突出显示的[!UICONTROL 许可证使用情况] [!UICONTROL 概述]。](../images/license-usage/product-predicted-usage.png)
-
-此时将显示摘要选项卡。 您可以使用[!UICONTROL 摘要]和[!UICONTROL 详细信息]选项卡上提供的粒度预测以确保做出明智的决策，从而有效使用许可证。
+![产品及预测使用列突出显示的[!UICONTROL 许可证使用情况][!UICONTROL 产品]选项卡。](../images/license-usage/product-predicted-usage.png)
 
 >[!NOTE]
 >
 >请注意, 许可证使用预测是基于过去使用情况的近似值。您有责任了解贵组织的实际使用情况，并确保使用情况不会超出贵组织获得Adobe许可证的范围。
-
-![预测使用列突出显示的平台产品的摘要视图。](../images/license-usage/summary-predicted-usage.png)
 
 预计使用率的百分比确定如下：
 
@@ -236,73 +283,18 @@ ht-degree: 16%
 - [!UICONTROL 可参与的配置文件]
 - [!UICONTROL 总数据量]
 
-## [!UICONTROL 摘要]选项卡 {#summary-tab}
-
-要查看有关您的产品许可证使用情况的更多量度和详细分析，请从列表中选择产品名称。 将显示该产品的[!UICONTROL 摘要]视图。 所有可用量度都显示在[!UICONTROL 摘要]选项卡上。 可用的量度取决于许可的产品。 此视图提供了&#x200B;**跨所有生产或开发沙盒的所有量度的合并视图**。 为生产沙盒和开发沙盒提供相同级别的分析。
-
-![显示产品所有可用量度的平台产品的摘要视图。](../images/license-usage/summary-tab.png)
-
-在“摘要”选项卡上，该表包含[!UICONTROL 量度]列。 这些易于用户识别的描述指示用于该类型沙盒的所有量度。
-
-### 选择一个沙盒 {#select-sandbox}
-
-要更改生产和开发沙盒类型之间的视图，请选择[!UICONTROL 生产沙盒]或[!UICONTROL 开发沙盒]。 沙盒名称旁边的单选按钮表示所选的沙盒类型。
-
-沙盒的使用情况报告对于同一类型的所有沙盒是累计的。 换句话说，选择[!UICONTROL 生产]或[!UICONTROL 开发]将分别提供所有生产沙盒或开发沙盒的使用报告。
-
-![突出显示生产沙盒和开发沙盒的平台产品的摘要视图。](../images/license-usage/summary-tab-sandboxes.png)
-
->[!WARNING]
->
->必须在沙盒级别指定查看许可证使用情况仪表板的权限。 向每个沙盒添加权限，以便在功能板中查看它们。 此限制将在未来版本中解决。 同时，提供以下解决方法：
->
->1. 在Adobe Admin Console中创建产品配置文件。
->2. 在沙盒类别中的权限下，添加您希望在许可证使用情况仪表板中查看的所有沙盒。
->3. 在“用户仪表板权限”类别下，添加“查看许可证使用情况仪表板”权限。
-
-## [!UICONTROL 详细信息]选项卡 {#details-tab}
-
-要查看来自特定沙盒的&#x200B;**特定使用情况量度**，请导航到[!UICONTROL 详细信息]选项卡。 [!UICONTROL 详细信息]选项卡显示“生产”或“开发”沙盒中的所有可用沙盒。
-
-![许可证使用情况仪表板的“详细信息”选项卡。](../images/license-usage/details-tab.png)
-
-从该视图中，您可以选择![检查图标。沙盒名称旁边的](/help/images/icons/inspect.png)以查看该指标的可视化图表。 此时将打开一个对话框，其中包含该量度的可视化图表。
-
-### 可视化 {#visualizations}
-
-每个可视化小组件包括以下方面：
-
-- 跟踪量度随时间变化的折线图
-- 折线图的键
-- 沙盒名称
-- 用于调整折线图时段的下拉菜单
-
-线形图将贵组织的使用量数字与贵组织许可的总可用量进行比较，并提供总使用量的百分比。
-
-![量度的可视化图表。](../images/license-usage/visualization.png)
-
-可以从下拉菜单中调整分析的回顾时间段。 过去30天的默认值
-
-要选择日期范围，您可以使用日期范围下拉菜单选择要显示在仪表板中的时间段。 提供了多个选项，包括最近30天的默认值。
-
-![带有日期范围下拉菜单的可视化图表对话框突出显示。](../images/license-usage/date-range.png)
-
-您还可以选择&#x200B;**[!UICONTROL 自定义日期]**&#x200B;以选择显示的时间段。
-
-![突出显示自定义日期范围选项的“许可证使用情况”仪表板的“概述”选项卡。](../images/license-usage/custom-date-range.png)
-
 ## 可用量度 {#available-metrics}
 
 >[!IMPORTANT]
 >
->从8月20日开始，有权使用“[!UICONTROL 平均配置文件丰富度]”和“[!UICONTROL 总存储量]”的客户在“许可证使用情况”仪表板中看到了“[!UICONTROL 总数据量]”。 客户权利没有变化，只是简化了跟踪量度。 [!UICONTROL 总数据量]表示参与和个性化工作流的实时客户配置文件中可用的数据。 此简化的量度改进了实时客户配置文件使用的管理和测量。 我们鼓励客户联系其Adobe代表，以进一步了解这一更改。
+>从8月20日开始，有权使用“[!UICONTROL 平均配置文件丰富度]”和“[!UICONTROL 总存储量]”的客户在“许可证使用情况”仪表板中看到了“[!UICONTROL 总数据量]”。 客户权利没有变化，只是简化了跟踪量度。 [!UICONTROL 总数据量]表示参与和个性化工作流的实时客户配置文件中可用的数据。 此简化的量度改进了实时客户配置文件使用的管理和测量。 我们鼓励客户联系其Adobe代表，以进一步了解此更改。
 
 许可证使用情况仪表板报告适用于组织中多个产品的多个唯一量度。 可用的量度包括：
 
 | 量度 | 描述 |
 |---|---|
 | [!UICONTROL Audience Activation大小] | 一年中激活到任何基于文件的目标的配置文件总数。 注意：这不包括通过流式目标发送的用户档案。 |
-| [!UICONTROL 可寻址受众] | 您的组织有权参与的Real-time Customer Profile中的人员配置文件集，包括直接可识别的配置文件和假名配置文件。 这些配置文件可能包含属性、行为和区段成员资格数据。 配置文件卷使用Adobe Experience Platform的默认确定性标识图进行计算，并视为共享功能。 |
+| [!UICONTROL 可寻址受众] | 您的组织有权参与的Real-time Customer Profile中的人员配置文件集，包括直接可识别的配置文件和假名配置文件。 这些配置文件可能包含属性、行为和区段成员资格数据。 配置文件卷使用Adobe Experience Platform的默认确定性标识图进行计算，并被视为共享功能。 |
 | [!UICONTROL 临时查询服务用户包] | 一个附加功能，用于将您的授权并发查询服务用户权利增加5个额外的并发查询服务用户，每个包另加1个并发运行即席查询。 可以许可多个其他Ad Hoc Query用户包。 |
 | [!UICONTROL 平均配置文件丰富度] | **已弃用** — 在任何时间点存储在中心配置文件服务中的所有生产数据的总和除以授权的业务人员配置文件数量的五倍。 [!UICONTROL 平均配置文件丰富度]是共享功能。 |
 | [!UICONTROL CJA行可用] | 可用于在Customer Journey Analytics中分析的每日平均数据行数。 |
@@ -321,14 +313,11 @@ ht-degree: 16%
 | [!UICONTROL 总数据量] | 可用于参与工作流中的实时客户个人资料的数据总量。 请参阅有关总数据量](../../landing/license-usage-and-guardrails/total-data-volume.md)的[常见问题解答，以了解更多信息。 |
 | [!UICONTROL 总数据输出量] | 从Adobe Experience Platform导出到第三方数据仓库的累积年数据量。 |
 
-<!-- Approval needed on my revision above.
-Original PM version: | [!UICONTROL Total Volume of Data Egress] | The cumulative annual amount of data processed from third-party data warehouses. | -->
-
 <!-- |  [!UICONTROL Sandbox No of Packs] |  A logical separation within your instance of any Adobe On-demand Service that accesses Adobe Experience Platform isolating data and operations | -->
 
 >[!TIP]
 >
->您可以在销售订单中检查您的许可证权利以计算指标，如“存储容量”。<br>例如，<ul><li>存储容量=合同中“授权配置文件”的数量X平均配置文件丰富度</li></ul>
+>您可以检查销售订单中的许可证权利以计算指标，如“存储容量”。<br>例如，<ul><li>存储容量=合同中“授权配置文件”的数量X平均配置文件丰富度</li></ul>
 
 这些指标的可用性和每个指标的特定定义因贵组织购买的许可而异。 有关每个量度的详细定义，请参阅相应的产品描述文档：
 
