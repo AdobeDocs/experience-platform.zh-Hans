@@ -2,15 +2,19 @@
 title: 灵活的受众评估指南
 description: 了解如何使用灵活的受众评估来按需运行批量分段作业。
 role: Developer, User
-source-git-commit: 5c86161a2f9442d99426f2c05fb762cf50004049
+exl-id: b85bf735-be02-4bf7-bd63-8d74ae905e58
+source-git-commit: 71818ee273749bb5053286c5b8bbd07a4429c341
 workflow-type: tm+mt
-source-wordcount: '996'
+source-wordcount: '1049'
 ht-degree: 5%
 
 ---
 
-
 # 灵活的受众评估指南
+
+>[!AVAILABILITY]
+>
+>灵活的受众评估是&#x200B;**仅限**，在[!DNL Microsoft Azure]上运行的Experience Platform实例上可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](../../landing/multi-cloud.md)。
 
 灵活的受众评估允许您按需运行批量分段作业。 通过灵活的受众评估，您可以运行临时活动发布、及时通信或其他时效性活动。
 
@@ -33,7 +37,7 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->您&#x200B;*可以*&#x200B;每年购买额外的灵活受众评估运行。 有关更多信息，请联系Adobe客户关怀部门。
+>您可以每年购买额外的灵活受众评估运行。 有关更多信息，请联系Adobe客户关怀部门。
 
 ## 访问 {#access}
 
@@ -326,6 +330,14 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/b31aed3d-b3b1-4
 
 以下部分列出了与灵活受众评估相关的常见问题解答。
 
+### 使用灵活的受众评估多久才能激活受众？
+
++++ 回答
+
+您可以在创建受众后立即使用灵活的受众评估激活受众。
+
++++
+
 ### 我能否通过灵活的受众评估运行计划？
 
 +++ 回答
@@ -373,4 +385,3 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/b31aed3d-b3b1-4
 使用API或UI创建的灵活受众评估运行接近最大限制。 但是，夜间运行的每日批处理分段作业不会&#x200B;**导致**&#x200B;超出此限制。
 
 +++
-
