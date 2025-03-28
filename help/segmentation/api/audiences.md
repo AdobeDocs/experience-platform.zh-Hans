@@ -3,9 +3,9 @@ title: 受众API端点
 description: 使用Adobe Experience Platform分段服务API中的受众端点，以编程方式创建、管理和更新贵组织的受众。
 role: Developer
 exl-id: cb1a46e5-3294-4db2-ad46-c5e45f48df15
-source-git-commit: 260d63d5eebd62cc5a617fccc189af52fd4d0b09
+source-git-commit: 7b1dedeab8df9678134474045cb87b27550f7fb6
 workflow-type: tm+mt
-source-wordcount: '1452'
+source-wordcount: '1590'
 ht-degree: 2%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 2%
 
 ## 检索受众列表 {#list}
 
-您可以通过向`/audiences`端点发出GET请求来检索贵组织的所有受众的列表。
+您可以通过向`/audiences`端点发出GET请求来检索贵组织所有受众的列表。
 
 **API格式**
 
@@ -325,7 +325,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences
 
 ## 查找指定受众 {#get}
 
-您可以查找有关特定受众的详细信息，方法是向`/audiences`端点发出GET请求，并在请求路径中提供您希望检索的受众ID。
+您可以查找有关特定受众的详细信息，方法是向`/audiences`端点发出GET请求，并在请求路径中提供要检索的受众ID。
 
 **API格式**
 
@@ -422,9 +422,9 @@ curl -X GET https://platform.adobe.io/data/core/ups/audiences/60ccea95-1435-4180
 
 +++
 
-## 更新受众 {#put}
+## 覆盖受众 {#put}
 
-您可以通过向`/audiences`端点发出PUT请求并在请求路径中提供要更新的受众ID来更新（覆盖）特定受众。
+您可以通过向`/audiences`端点发出PUT请求并在请求路径中提供要更新的受众ID，来更新（覆盖）特定受众。
 
 **API格式**
 
@@ -453,6 +453,11 @@ curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513
     "namespace": "AEPSegments",
     "description": "Last 30 days",
     "type": "SegmentDefinition",
+    "expression": {
+        "type": "PQL",
+        "format": "pql/text",
+        "value": "workAddress.country=\"US\""
+    }
     "lifecycleState": "published",
     "datasetId": "6254cf3c97f8e31b639fb14d",
     "labels": [
@@ -468,6 +473,7 @@ curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513
 | `namespace` | 受众的命名空间。 |
 | `description` | 受众的描述。 |
 | `type` | 一个系统生成的字段，用于显示受众是平台生成的还是外部生成的受众。 可能的值包括`SegmentDefinition`和`ExternalSegment`。 `SegmentDefinition`引用在Platform中生成的受众，而`ExternalSegment`引用未在Platform中生成的受众。 |
+| `expression` | 包含受众的PQL表达式的对象。 |
 | `lifecycleState` | 受众的状态。 可能的值包括`draft`、`published`和`inactive`。 `draft`表示创建受众的时间、`published`表示发布受众的时间，以及`inactive`表示受众不再处于活动状态的时间。 |
 | `datasetId` | 可找到受众数据的数据集的ID。 |
 | `labels` | 与受众相关的对象级别数据使用和基于属性的访问控制标签。 |
@@ -496,6 +502,81 @@ curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513
     "description": "Last 30 days",
     "type": "SegmentDefinition",
     "lifecycleState": "published",
+    "createdBy": "{CREATED_BY_ID}",
+    "datasetId": "6254cf3c97f8e31b639fb14d",
+    "_etag": "\"f4102699-0000-0200-0000-625cd61a0000\"",
+    "creationTime": 1650251290000,
+    "updateEpoch": 1650251290,
+    "updateTime": 1650251290000,
+    "createEpoch": 1650251290
+}
+```
+
++++
+
+## 更新受众 {#patch}
+
+您可以通过向`/audiences`端点发出PATCH请求并在请求路径中提供要更新的受众ID来更新特定受众。
+
+**API格式**
+
+```http
+PATCH /audiences/{AUDIENCE_ID}
+```
+
+| 参数 | 描述 |
+| --------- | ----------- |
+| `{AUDIENCE_ID}` | 要更新的受众的ID。 请注意，这是`id`字段，是&#x200B;**而不是** `audienceId`字段。 |
+
+**请求**
+
++++ 更新受众的示例请求。
+
+```shell
+curl -X PATCH https://platform.adobe.io/data/core/ups/audiences/60ccea95-1435-4180-97a5-58af4aa285ab5
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}' \
+ -d '[
+    {
+        "op": "add",
+        "path": "/lifecycleState",
+        "value": "inactive"
+    }
+ ]'
+```
+
+| 属性 | 描述 |
+| -------- | ----------- |
+| `op` | 所执行的PATCH操作的类型。 对于此终结点，此值是&#x200B;**始终** `/add`。 |
+| `path` | 要更新的字段的路径。 无法编辑系统生成的字段，如`id`、`audienceId`和`namespace` ****。 |
+| `value` | 分配给`path`中指定的属性的新值。 |
+
++++
+
+**响应**
+
+成功的响应会返回包含已更新受众的HTTP状态200。
+
++++为受众中的字段打补丁时的示例响应。
+
+```json
+{
+    "id": "60ccea95-1435-4180-97a5-58af4aa285ab5",
+    "audienceId": "test-platform-audience-id",
+    "name": "New Platform audience",
+    "namespace": "AEPSegments",
+    "imsOrgId": "{ORG_ID}",
+    "sandbox": {
+        "sandboxId": "6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
+        "sandboxName": "prod",
+        "type": "production",
+        "default": true
+    },
+    "description": "Last 30 days",
+    "type": "SegmentDefinition",
+    "lifecycleState": "inactive",
     "createdBy": "{CREATED_BY_ID}",
     "datasetId": "6254cf3c97f8e31b639fb14d",
     "_etag": "\"f4102699-0000-0200-0000-625cd61a0000\"",
