@@ -4,10 +4,10 @@ title: 许可证使用情况仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 03b35ecf940f9b1cb40d8b1243ff530f38bcdcd4
+source-git-commit: 243a99748d31cddcb8a550d52f9bb390726644be
 workflow-type: tm+mt
-source-wordcount: '3367'
-ht-degree: 16%
+source-wordcount: '3408'
+ht-degree: 15%
 
 ---
 
@@ -144,11 +144,11 @@ ht-degree: 16%
 
 [!UICONTROL 许可证使用情况]仪表板显示您已购买的所有Experience Platform产品以及这些产品的任何加载项的列表。 在此功能板中，您可以找到贵组织在任何关联沙盒中用于Experience Platform的许可证相关数据的快照。
 
-此仪表板中的数据与拍摄快照的特定时间点完全相同。 换句话说，快照不是数据的近似值或样本，并且仪表板不会实时更新。
+此仪表板中的数据与拍摄快照的特定时间点所显示的数据完全相同。 它不是近似值或示例，但仪表板不会实时更新。
 
 >[!NOTE]
 >
->自拍摄快照以来对数据所做的任何更改或更新都不会反映在功能板中，直到拍摄下一个快照为止。
+>功能板中的大多数量度每天都会根据Platform实例的快照进行更新。 [!UICONTROL 可用的CJA行数]是一个异常，每月更新一次。 标记为“包”的量度，如[!UICONTROL Adhoc Query Service Users Packs]、[!UICONTROL Profile Richness No of Packs]和[!UICONTROL Streaming Segmentation No of Packs]，可反映附加组件产品的许可证权利，且不会跟踪日常使用情况。 在拍摄下一个快照之前，在快照之后所做的更改不可见。
 
 ## 浏览许可证使用情况仪表板 {#explore}
 
