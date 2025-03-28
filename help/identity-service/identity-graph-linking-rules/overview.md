@@ -5,22 +5,22 @@ exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
 source-git-commit: 9243da3ebe5e963ec457da5ae3e300e852787d37
 workflow-type: tm+mt
 source-wordcount: '1476'
-ht-degree: 4%
+ht-degree: 8%
 
 ---
 
-# 身份图链接规则概述 {#identity-graph-linking-rules-overview}
+# 身份标识图链接规则概述 {#identity-graph-linking-rules-overview}
 
 >[!CONTEXTUALHELP]
 >id="platform_identities_linkingrules_overview"
->title="身份图链接规则"
->abstract="要防止这些不需要的合并，您可以使用通过身份图链接规则提供的配置，并允许对用户进行准确的个性化。"
+>title="身份标识图链接规则"
+>abstract="要防止这些不必要的合并，您可以使用通过身份标识图链接规则提供的配置，并允许对用户进行准确的个性化设置。"
 
 >[!AVAILABILITY]
 >
 >标识图链接规则当前处于“有限可用”状态。 有关如何访问开发沙盒中的功能的信息，请与您的Adobe客户团队联系。
 
-通过Adobe Experience Platform Identity服务和实时客户个人资料，可以轻松假设您的数据被完全摄取，并且所有合并的个人资料都通过人员标识符（如CRMID）表示单个个人。 但是，在某些情况下，某些数据可能会尝试将多个不同的配置文件合并到单个配置文件中（“图形折叠”）。 要防止这些不需要的合并，您可以使用通过身份图链接规则提供的配置，并允许对用户进行准确的个性化。
+通过Adobe Experience Platform Identity服务和实时客户个人资料，可以轻松假设您的数据被完全摄取，并且所有合并的个人资料都通过人员标识符（如CRMID）表示单个个人。 但是，在某些情况下，某些数据可能会尝试将多个不同的配置文件合并到单个配置文件中（“图形折叠”）。 要防止这些不必要的合并，您可以使用通过身份标识图链接规则提供的配置，并允许对用户进行准确的个性化设置。
 
 观看以下视频，了解有关使用身份图链接规则的其他信息：
 
@@ -91,7 +91,7 @@ ht-degree: 4%
 
 借助身份图链接规则，您可以将CRMID配置为唯一标识符，以防止由于此类数据而造成不需要的用户档案折叠。
 
-## 身份图链接规则 {#identity-graph-linking-rules}
+## 身份标识图链接规则 {#identity-graph-linking-rules}
 
 通过身份图链接规则，您可以：
 
