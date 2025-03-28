@@ -3,9 +3,9 @@ title: Google BigQuery Source连接器概述
 description: 了解如何使用API或用户界面将Google BigQuery连接到Adobe Experience Platform。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 35c61382-a909-47f4-a937-15cb725ecbe3
-source-git-commit: 1fa79b31b5a257ebb3cbd60246b757d8a4a63d7c
+source-git-commit: 1900a8c6a3f3119c8b9049b12f5660cc9fd181a2
 workflow-type: tm+mt
-source-wordcount: '529'
+source-wordcount: '582'
 ht-degree: 0%
 
 ---
@@ -14,23 +14,21 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Google BigQuery]源在源目录中可供已购买Real-time Customer Data Platform Ultimate的用户使用。
+>[!DNL Google BigQuery]源在源目录中可供已购买Real-Time Customer Data Platform Ultimate的用户使用。
 
-Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
-
-阅读本文档以了解成功将[!DNL Google BigQuery]帐户连接到Experience Platform所需的先决步骤。
+请阅读本文档，了解成功将您的[!DNL Google BigQuery]帐户连接到Azure或Amazon Web Services (AWS)上的Adobe Experience Platform所需的先决步骤。
 
 ## 先决条件 {#prerequisites}
 
-以下部分提供了在创建[!DNL Google BigQuery]源连接之前所需的先决条件设置的详细信息。
+请阅读以下部分，了解必须先完成的先决条件设置，然后才能将您的[!DNL Google BigQuery]帐户连接到Experience Platform。
 
 ### IP地址允许列表
 
-在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 有关详细信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md)页。
+在Azure或Amazon Web Services (AWS)上将源连接到Experience Platform之前，必须将特定于区域的IP地址添加到您的允许列表。 有关详细信息，请阅读有关[列入允许列表IP地址以连接到Azure和AWS上的Experience Platform](../../ip-address-allow-list.md)的指南。
 
-### 生成您的[!DNL Google BigQuery]凭据 {#credentials}
+### 在Azure上对Experience Platform进行身份验证 {#azure}
 
-要将[!DNL Google BigQuery]连接到Experience Platform，您需要生成以下凭据的值：
+必须提供以下凭据，才能将您的[!DNL Google BigQuery]帐户连接到Azure上的Experience Platform。
 
 >[!BEGINTABS]
 
@@ -57,16 +55,26 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 | 凭据 | 描述 |
 | --- | --- |
 | `projectId` | 要查询的[!DNL Google BigQuery]的ID。 |
-| `keyFileContent` | 用于验证服务帐户的密钥文件。 您可以从[[!DNL Google Cloud service accounts] 仪表板](https://console.cloud.google.com)检索此值。 密钥文件内容采用JSON格式。 对Experience Platform进行身份验证时，必须在[!DNL Base64]中对此进行编码。 |
+| `keyFileContent` | 用于验证服务帐户的密钥文件。 您可以从[[!DNL Google Cloud service accounts] 仪表板](https://console.cloud.google.com)检索此值。 密钥文件内容采用JSON格式。 向Experience Platform进行身份验证时，必须在[!DNL Base64]中对此进行编码。 |
 | `largeResultsDataSetId` | （可选）启用大型结果集支持所需的预创建[!DNL Google BigQuery]数据集ID。 |
 
 有关在[!DNL Google BigQuery]中使用服务帐户的详细信息，请阅读[在 [!DNL Google BigQuery]](https://cloud.google.com/bigquery/docs/use-service-accounts)中使用服务帐户的指南。
 
 >[!ENDTABS]
 
-## 将[!DNL Google BigQuery]连接到平台
+### 在AWS上对Experience Platform进行身份验证 {#aws}
 
-以下文档提供了有关如何使用API或用户界面将[!DNL Google BigQuery]连接到Platform的信息：
+您必须提供以下凭据，才能将您的[!DNL Google BigQuery]帐户连接到AWS上的Experience Platform。
+
+| 凭据 | 描述 |
+| --- | --- |
+| `projectId` | 要查询的[!DNL Google BigQuery]的ID。 |
+| `keyFileContent` | 用于验证服务帐户的密钥文件。 您可以从[[!DNL Google Cloud service accounts] 仪表板](https://console.cloud.google.com)检索此值。 密钥文件内容采用JSON格式。 向Experience Platform进行身份验证时，必须在[!DNL Base64]中对此进行编码。 |
+| `datasetId` | [!DNL Google BigQuery]数据集ID。 此ID表示数据表所在的位置。 |
+
+## 将[!DNL Google BigQuery]连接到Experience Platform
+
+以下文档提供了有关如何使用API或用户界面将[!DNL Google BigQuery]连接到Experience Platform的信息：
 
 ### 使用API
 
