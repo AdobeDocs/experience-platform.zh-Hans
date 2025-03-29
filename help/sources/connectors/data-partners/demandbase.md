@@ -2,9 +2,10 @@
 title: Demandbase意图
 description: 了解Experience Platform上的Demandbase意图源。
 last-substantial-update: 2025-03-26T00:00:00Z
-source-git-commit: 0a6a9fe759d71fd62e3eaf5c93a091614f3c76a0
+exl-id: 62dd27e0-b846-4c04-977f-8a3ab99bc464
+source-git-commit: 78aae71ff48fc710aaaabf4ef71f6e50d2a8c12e
 workflow-type: tm+mt
-source-wordcount: '1488'
+source-wordcount: '1465'
 ht-degree: 1%
 
 ---
@@ -84,7 +85,7 @@ Experience Platform上的[!DNL Demandbase]由[!DNL Google Cloud Storage]托管�
 
 ## 在用户界面中将您的[!DNL Demandbase]帐户连接到Experience Platform
 
-现在您已完成[!DNL Demandbase]的必备项设置，接下来可以使用UI [将您的[!DNL Demandbase]帐户连接到Experience Platform]完成必备项设置后，请阅读有关[将您的 [!DNL Demandbase] 帐户连接到Experience Platform](../../tutorials/ui/create/data-partners/demandbase.md)的教程以开始集成。
+完成先决条件设置后，请阅读有关[将您的 [!DNL Demandbase] 帐户连接到Experience Platform](../../tutorials/ui/create/data-partners/demandbase.md)的教程以开始集成。
 
 ## 常见问题解答 {#faq}
 
