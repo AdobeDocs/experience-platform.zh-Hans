@@ -2,7 +2,7 @@
 title: 命名空间优先级
 description: 了解Identity Service中的命名空间优先级。
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 7174c2c0d8c4ada8d5bba334492bad396c1cfb34
+source-git-commit: 8157eaf3d79523995fd50d02234e7873cffcea14
 workflow-type: tm+mt
 source-wordcount: '1801'
 ht-degree: 3%
@@ -73,11 +73,11 @@ ht-degree: 3%
 
 ![命名空间优先级应用程序作用域的关系图](../images/namespace-priority/application-scope.png)
 
-### Identity Service：身份优化算法
+## Identity Service：身份优化算法
 
 对于相对复杂的图形结构，命名空间优先级在确保在图形折叠场景发生时删除正确链接方面发挥重要作用。 有关详细信息，请参阅[标识优化算法概述](../identity-graph-linking-rules/identity-optimization-algorithm.md)。
 
-### 实时客户个人资料：体验事件的主要身份确定
+## 实时客户个人资料：体验事件的主要身份确定
 
 * 为给定沙盒配置身份设置后，体验事件的主要身份将由配置中的最高命名空间优先级确定。
    * 这是因为体验事件在本质上是动态的。 身份映射可以包含三个或更多身份，命名空间优先级可确保最重要的命名空间与体验事件相关联。
@@ -122,7 +122,7 @@ ht-degree: 3%
 
 {style="table-layout:auto"}
 
-### 分段服务：分段成员资格元数据存储
+## 分段服务：分段成员资格元数据存储
 
 ![区段成员资格存储图表](../images/namespace-priority/segment-membership-storage.png)
 
@@ -139,7 +139,7 @@ ht-degree: 3%
 
 如果John和Jane共享设备，则ECID（网络浏览器）会从一个人转移到另一个人。 但是，这不会影响针对John和Jane存储的区段会员资格信息。
 
-如果区段资格标准完全基于针对ECID存储的匿名事件，则Jane将有资格使用该区段
+如果区段资格标准完全基于针对ECID存储的匿名事件，则Jane将有资格使用该区段。
 
 ## 对其他Experience Platform服务的影响 {#implications}
 

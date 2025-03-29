@@ -3,9 +3,9 @@ title: Adobe Experience Platform产品文档中的AI助手
 description: Adobe Experience Platform中的AI助手入门。
 feature: AI Assistant
 exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
-source-git-commit: a34c3cae803c9e70530dbd382fbec2ece17fc71a
+source-git-commit: eb62627e81f361d21026cba368802ebace4a8dde
 workflow-type: tm+mt
-source-wordcount: '1095'
+source-wordcount: '1156'
 ht-degree: 0%
 
 ---
@@ -441,6 +441,10 @@ For more information about AI Assistant, read the [security fact sheet for AI As
 >[!ENDTABS]
 
 ### 使用AI Assistant提高工作效率
+
+>[!NOTE]
+>
+>此工作簿的上次更新时间为2025年3月31日。 从那时起，一些能力可能已经演变或扩展。 此外，本指南中引用的某些功能可能仍处于早期访问阶段。 如果您遇到环境中尚未提供的某些内容，并且有兴趣探索这些内容，请联系您的Adobe客户团队以请求提前访问。
 
 阅读以下内容，了解有关如何使用AI Assistant提高生产力的实践指南。
 
