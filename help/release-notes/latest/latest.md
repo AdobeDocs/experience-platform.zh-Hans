@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2025 年 3 月）
 description: Adobe Experience Platform 的 2025 年 3 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 16056a35624b4a053e9f50acef0ec3f63254a065
+source-git-commit: edcdf84a8cb954c15f7dd235fb14cf14e11e22c8
 workflow-type: tm+mt
-source-wordcount: '1227'
-ht-degree: 25%
+source-wordcount: '1250'
+ht-degree: 26%
 
 ---
 
@@ -19,6 +19,7 @@ Adobe Experience Platform 中现有功能和文档的更新：
 
    - [仪表板](#dashboards)
    - [目标](#destinations)
+   - [联合受众构成](#federated-audience-composition)
    - [Segmentation Service](#segmentation-service)
    - [源](#sources)
 
@@ -62,6 +63,10 @@ Experience Platform 提供了多个仪表板，您可以通过这些仪表板查
 {style="table-layout:auto"}
 
 有关更多信息，请阅读[目标概述](../../destinations/home.md)。
+
+## 联合受众构成 {#federated-audience-composition}
+
+有关联合受众组合最新更新的信息，请在此处阅读[专用发行说明](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/release-notes)。
 
 ## Segmentation Service {#segmentation-service}
 
