@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；架构；架构；字段组；字段组；字段组；数据类型；数据类型；数据类型；架构设计；数据类型；数据类型；数据类型；数据类型；架构；架构；架构设计；映射；映射；
+keywords: Experience Platform；主页；热门主题；架构；架构；字段组；字段组；字段组；数据类型；数据类型；数据类型；架构设计；数据类型；数据类型；数据类型；架构；架构；架构设计；映射；映射；
 solution: Experience Platform
 title: XDM字段类型约束
 description: 参考体验数据模型(XDM)中的字段类型约束，包括它们可以映射到的其他序列化格式以及如何在API中定义您自己的字段类型。
 exl-id: 63839a28-6d26-46f1-8bbf-b524e82ac4df
-source-git-commit: eb1cf204e95591082b27dc97cd3c709a23b20b08
+source-git-commit: ca8859c7b71d1b0aad30880ff066d2b4b33b0a35
 workflow-type: tm+mt
 source-wordcount: '683'
 ht-degree: 1%
@@ -19,7 +19,7 @@ ht-degree: 1%
 
 在使用本指南之前，请查看架构组合的[基础知识](./composition.md)，以了解XDM架构、类和架构字段组的简介。
 
-如果您计划在API中定义自己的字段类型，强烈建议您从[架构注册表开发人员指南](../api/getting-started.md)开始，了解如何创建字段组和数据类型以包含您的自定义字段。 如果您使用Experience PlatformUI创建架构，请参阅[在UI中定义字段指南](../ui/fields/overview.md)，以了解如何对您在自定义字段组和数据类型中定义的字段实施约束。
+如果您计划在API中定义自己的字段类型，强烈建议您从[架构注册表开发人员指南](../api/getting-started.md)开始，了解如何创建字段组和数据类型以包含您的自定义字段。 如果您使用Experience Platform UI创建架构，请参阅[在UI中定义字段指南](../ui/fields/overview.md)，以了解如何对您在自定义字段组和数据类型中定义的字段实施约束。
 
 ## 基本结构和示例 {#basic-types}
 
@@ -130,7 +130,7 @@ XDM基于JSON架构构建，因此XDM字段在定义其类型时继承类似的�
       <td>[！UICONTROL Boolean]</td>
       <td>
         <pre class="JSON language-JSON hljs">
-{"type"： "string"}</pre>
+{"type"： "boolean"}</pre>
       </td>
       <td><code>true</code></td>
     </tr>
