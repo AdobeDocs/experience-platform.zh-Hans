@@ -1,9 +1,9 @@
 ---
-title: 使用Experience PlatformUI按需将文件导出到批处理目标
+title: 使用Experience Platform UI按需将文件导出到批处理目标
 type: Tutorial
-description: 了解如何使用Experience PlatformUI将按需文件导出到批处理目标。
+description: 了解如何使用Experience Platform UI将按需文件导出到批处理目标。
 exl-id: 0cbe5089-b73d-4584-8451-2fc34d47c357
-source-git-commit: 47d0e2a7fae973edfda035d046f66c88d34bf8b2
+source-git-commit: d3bd76f5b36b6a6afcb67fe923eb8e4f3d7a9415
 workflow-type: tm+mt
 source-wordcount: '690'
 ht-degree: 9%
@@ -11,7 +11,7 @@ ht-degree: 9%
 ---
 
 
-# 使用Experience PlatformUI按需将文件导出到批处理目标
+# 使用Experience Platform UI按需将文件导出到批处理目标
 
 >[!IMPORTANT]
 > 
@@ -24,11 +24,11 @@ ht-degree: 9%
 >title="立即导出文件"
 >abstract="选择此控件可交付完整文件导出以及任何之前计划的导出。将立即触发文件导出，并获取 Experience Platform 分段运行的最新结果。"
 
-本文介绍如何使用Experience PlatformUI将文件按需导出到批处理目标，如[云存储](/help/destinations/catalog/cloud-storage/overview.md)和[电子邮件营销](/help/destinations/catalog/email-marketing/overview.md)目标。
+本文介绍如何使用Experience Platform UI将文件按需导出到批处理目标，如[云存储](/help/destinations/catalog/cloud-storage/overview.md)和[电子邮件营销](/help/destinations/catalog/email-marketing/overview.md)目标。
 
 通过&#x200B;**[!UICONTROL 立即导出文件]**&#x200B;控件，可以在不中断先前计划受众的当前导出计划的情况下导出完整文件。 此导出操作在之前计划的导出之外进行，不会更改受众的导出频率。 将立即触发文件导出，并获取 Experience Platform 分段运行的最新结果。
 
-您还可以将Experience PlatformAPI用于此目的。 了解如何通过临时激活API](/help/destinations/api/ad-hoc-activation-api.md)将按需受众[激活到批处理目标。
+您还可以将Experience Platform API用于此目的。 了解如何通过临时激活API](/help/destinations/api/ad-hoc-activation-api.md)将按需受众[激活到批处理目标。
 
 ## 先决条件 {#prerequisites}
 
@@ -63,7 +63,7 @@ ht-degree: 9%
 使用&#x200B;**[!UICONTROL 立即导出文件]**&#x200B;控件时，请牢记以下注意事项：
 
 * **[!UICONTROL 立即导出文件]**&#x200B;仅适用于批次激活数据流中的计划与当前日期重叠的受众。 这包括计划没有结束日期（导出频率为&#x200B;**[!UICONTROL 次]**）的受众，或者结束日期尚未超过的受众。
-* 将受众添加到现有数据流时，请至少等待15分钟，直到使用“立即导出文件&#x200B;**[!UICONTROL ”控件]**。
+* 将受众添加到现有数据流时，至少等待&#x200B;**一小时**，然后再使用&#x200B;**[!UICONTROL 立即导出文件]**&#x200B;控件。
 * 如果更改受众的合并策略，或者创建使用新合并策略的受众，请等待24小时，直到使用&#x200B;**[!UICONTROL 立即导出文件]**&#x200B;控件。
 
 ## UI错误消息 {#ui-error-messages}
@@ -77,5 +77,5 @@ ht-degree: 9%
 
 ## 相关信息 {#related-information}
 
-* [使用Experience PlatformAPI按需将受众激活到批处理目标](/help/destinations/api/ad-hoc-activation-api.md)
+* [使用Experience Platform API按需将受众激活到批处理目标](/help/destinations/api/ad-hoc-activation-api.md)
 * [将受众数据激活到批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md)

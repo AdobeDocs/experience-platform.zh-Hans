@@ -3,10 +3,10 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 8a1ac01c503bd1e5b9873714514d438b22f45cfb
+source-git-commit: f01a044d3d12ef457c6242a0b93acbfeeaf48588
 workflow-type: tm+mt
-source-wordcount: '4405'
-ht-degree: 12%
+source-wordcount: '4452'
+ht-degree: 11%
 
 ---
 
@@ -145,6 +145,10 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 使用**[!UICONTROL 已计划]**&#x200B;选项使激活作业在固定时间运行。 此选项可确保每天在同一时间导出Experience Platform配置文件数据。 但是，您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。
 
    ![突出显示批处理目标激活流中的“已计划”选项并显示时间选择器的图像。](../assets/ui/activate-batch-profile-destinations/scheduled-option.png)
+
+   >[!IMPORTANT]
+   >
+   >在映射过去24小时内创建并通过[批量分段](../../segmentation/methods/batch-segmentation.md)评估的受众时，请将每日导出计划设置为至少从第二天开始。 这样可确保首先运行每日批次评估作业，并且您正在导出完整的受众数据。
 
 3. 使用&#x200B;**[!UICONTROL Date]**&#x200B;选择器选择应该执行导出的日期或时间间隔。 对于每日导出，最佳实践是将开始和结束日期设置为与下游平台中的促销活动持续时间一致。
 
