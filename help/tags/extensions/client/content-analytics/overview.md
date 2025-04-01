@@ -1,12 +1,10 @@
 ---
 title: Adobe Content Analytics扩展概述
 description: 了解Adobe Experience Platform中的Adobe Content Analytics标记扩展。
-hide: true
-hidefromtoc: true
 exl-id: fcc46c86-e765-4bc7-bfdf-b8b10e8afacc
-source-git-commit: 80bfaeb7fec229e77c83230a01b75a200cf37e29
+source-git-commit: 5f852b69b0eb0a5e6a9119f14eb9e1f51c8a2e33
 workflow-type: tm+mt
-source-wordcount: '645'
+source-wordcount: '658'
 ht-degree: 0%
 
 ---
@@ -79,6 +77,7 @@ The [Content Analytics guided configuration wizard](https://experienceleague.ado
 1. （可选） 指定如何在您的网站上呈现内容的参数。 参数是&#x200B;**[!UICONTROL 域正则表达式]**&#x200B;和&#x200B;**[!UICONTROL 查询参数]**&#x200B;的零个或多个组合。
    1. 输入&#x200B;**[!UICONTROL 域正则表达式]**，例如`^(?!.*\b(store|help|admin)\b)`。
    1. 指定&#x200B;**[!UICONTROL 查询参数]**&#x200B;的逗号分隔列表，例如`outdoors, patio, kitchen`。
+使用![Close](./assets/CrossSize300.svg)删除单个参数，或使用&#x200B;**[!UICONTROL 全部清除]**&#x200B;删除所有参数。
 1. 如果要删除域正则表达式和查询参数的组合，请选择&#x200B;**[!UICONTROL 删除]**。
 1. 如果要添加其他正则表达式和查询参数组合，请选择&#x200B;**[!UICONTROL 添加正则表达式]**。
 
