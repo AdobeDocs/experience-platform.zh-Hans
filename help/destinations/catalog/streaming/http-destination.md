@@ -1,12 +1,12 @@
 ---
 keywords: 流；HTTP目标
 title: HTTP API连接
-description: 使用Adobe Experience Platform中的HTTP API目标将配置文件数据发送到第三方HTTP端点，以运行您自己的Analytics或对从Experience Platform导出的配置文件数据执行任何其他您可能需要的操作。
+description: 使用Adobe Experience Platform中的HTTP API目标将配置文件数据发送到第三方HTTP端点，以运行您自己的Analytics或对从Experience Platform导出的配置文件数据执行您可能所需的任何其他操作。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: fffeb2221c4e25bae8386419de1646c89aa93a06
+source-git-commit: 2fa6997c043ef7ff24b1383dd8626cfe1cca4f54
 workflow-type: tm+mt
-source-wordcount: '2664'
+source-wordcount: '2701'
 ht-degree: 8%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 8%
 
 >[!IMPORTANT]
 >
-> 此目标仅适用于[Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
 HTTP API目标是一个[!DNL Adobe Experience Platform]流目标，可帮助您将配置文件数据发送到第三方HTTP端点。
 
@@ -25,7 +25,7 @@ HTTP API目标是一个[!DNL Adobe Experience Platform]流目标，可帮助您�
 
 ## 用例 {#use-cases}
 
-HTTP API目标允许您将XDM配置文件数据和受众导出到通用HTTP端点。 在那里，您可以运行自己的Analytics，或对从Experience Platform中导出的配置文件数据执行任何其他您可能需要的操作。
+HTTP API目标允许您将XDM配置文件数据和受众导出到通用HTTP端点。 在那里，您可以运行自己的分析，或对从Experience Platform导出的用户档案数据执行任何其他您可能需要的操作。
 
 HTTP端点可以是客户自己的系统或第三方解决方案。
 
@@ -35,8 +35,8 @@ HTTP端点可以是客户自己的系统或第三方解决方案。
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -47,13 +47,13 @@ HTTP端点可以是客户自己的系统或第三方解决方案。
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
 | 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如[目标激活工作流](../../ui/activate-segment-streaming-destinations.md#mapping)的映射屏幕中所选。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
 ## 先决条件 {#prerequisites}
 
-要使用HTTP API目标从Experience Platform中导出数据，您必须满足以下先决条件：
+要使用HTTP API目标将数据导出到Experience Platform中，您必须满足以下先决条件：
 
 * 您必须具有支持REST API的HTTP端点。
 * 您的HTTP端点必须支持Experience Platform配置文件架构。 HTTP API目标不支持转换到第三方有效负载架构。 有关Experience Platform输出架构的示例，请参阅[导出的数据](#exported-data)部分。
@@ -61,7 +61,7 @@ HTTP端点可以是客户自己的系统或第三方解决方案。
 
 >[!TIP]
 >
-> 您还可以使用[Adobe Experience Platform Destination SDK](/help/destinations/destination-sdk/overview.md)设置集成并将Experience Platform配置文件数据发送到HTTP端点。
+> 您还可以使用[Adobe Experience Platform Destination SDK](/help/destinations/destination-sdk/overview.md)来设置集成，并将Experience Platform配置文件数据发送到HTTP端点。
 
 ## mTLS协议支持和证书 {#mtls-protocol-support}
 
@@ -77,11 +77,11 @@ HTTP端点可以是客户自己的系统或第三方解决方案。
 
 * [HTTP API mTLS公共证书](../../../landing/images/governance-privacy-security/encryption/destinations-public-certificate.zip)
 
-您还可以通过对MTLS端点发出GET请求来安全地检索公共证书。 有关详细信息，请参阅[公共证书终结点文档](../../../data-governance/mtls-api/public-certificate-endpoint.md)。
+您还可以通过对MTLS端点发出GET请求来安全检索公共证书。 有关详细信息，请参阅[公共证书终结点文档](../../../data-governance/mtls-api/public-certificate-endpoint.md)。
 
 ## IP地址允许列表 {#ip-address-allowlist}
 
-为了满足客户的安全性和合规性要求，Experience Platform提供了您可以允许列表以用于HTTP API目标的静态IP列表。 有关要允许列表列入允许列表的IP的完整列表，请参阅[流目标的IP地址](/help/destinations/catalog/streaming/ip-address-allow-list.md)。
+为了满足客户的安全性和合规性要求，Experience Platform提供了您可以为HTTP API目标允许列表的静态IP列表。 有关要允许列表列入允许列表的IP的完整列表，请参阅[流目标的IP地址](/help/destinations/catalog/streaming/ip-address-allow-list.md)。
 
 ## 支持的身份验证类型 {#supported-authentication-types}
 
@@ -159,6 +159,10 @@ curl --location --request POST 'https://some-api.com/token' \
 
 ![UI屏幕的图像，在该屏幕中，您可以将OAuth 2与客户端凭据身份验证结合使用，连接到HTTP API目标。](../../assets/catalog/http/http-api-authentication-oauth2-client-credentials.png)
 
+>[!WARNING]
+> 
+>使用[!UICONTROL OAuth 2客户端凭据]身份验证时，[!UICONTROL 访问令牌URL]最多可以有一个查询参数。 添加具有更多查询参数的[!UICONTROL 访问令牌URL]可能会导致在连接到端点时出现问题。
+
 * **[!UICONTROL 访问令牌URL]**：您颁发访问令牌以及（可选）刷新令牌的一方URL。
 * **[!UICONTROL 客户端ID]**：系统分配给Adobe Experience Platform的[!DNL client ID]。
 * **[!UICONTROL 客户端密钥]**：系统分配给Adobe Experience Platform的[!DNL client secret]。
@@ -226,7 +230,7 @@ curl --location --request POST 'https://some-api.com/token' \
 
 ## 配置文件导出行为 {#profile-export-behavior}
 
-Experience Platform可优化将配置文件导出到HTTP API目标的行为，以便仅在符合受众资格或其他重要事件后对配置文件进行了相关更新时将数据导出到API端点。 在以下情况下，会将配置文件导出到您的目标：
+Experience Platform会优化将配置文件导出到HTTP API目标的行为，以便仅在符合受众资格或其他重要事件后对配置文件进行了相关更新时将数据导出到API端点。 在以下情况下，会将配置文件导出到您的目标：
 
 * 配置文件更新取决于映射到目标的至少一个受众的受众成员身份发生更改。 例如，配置文件已符合映射到目标的其中一个受众的条件，或已退出映射到目标的其中一个受众。
 * 配置文件更新由[标识映射](/help/xdm/field-groups/profile/identitymap.md)中的更改决定。 例如，对于已经符合映射到目标的其中一个受众资格的用户档案，在身份映射属性中添加了一个新身份。
@@ -358,6 +362,6 @@ Experience Platform可优化将配置文件导出到HTTP API目标的行为，�
 
 ## 限制和重试策略 {#limits-retry-policy}
 
-在95%的时间中，Experience Platform会尝试为成功发送的消息提供少于10分钟的吞吐量延迟，每个数据流向HTTP目的地的请求速率每秒少于10,000次。
+在95%的时间中，Experience Platform会尝试为成功发送的消息提供少于10分钟的吞吐量延迟，每个数据流向HTTP目标的请求速率每秒少于10,000次。
 
 如果对HTTP API目标的请求失败，Experience Platform将存储失败的请求，并重试两次以将请求发送到您的端点。
