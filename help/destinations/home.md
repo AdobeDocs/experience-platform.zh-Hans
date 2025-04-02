@@ -2,9 +2,9 @@
 title: 目标概述
 description: 目标是预先构建的与目标平台的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用Adobe Experience Platform中的“目标”来激活跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例的已知和未知数据。
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: 6d97f132788a249e0bf5c293e34d9d529325f099
+source-git-commit: 8d57694ffe0ac962b988ebcf9f35fbb7bf816c04
 workflow-type: tm+mt
-source-wordcount: '1231'
+source-wordcount: '1359'
 ht-degree: 3%
 
 ---
@@ -51,7 +51,7 @@ Platform的核心功能之一是摄取您的第一方数据，并根据您的业
 
 Experience Platform目标目录中的某些连接器是由Adobe生成和维护的，而其他连接器是由使用[Destination SDK](/help/destinations/destination-sdk/overview.md)的合作伙伴公司生成和维护的。 如果合作伙伴创建并维护了目标，则每个合作伙伴构建的连接器在文档页面顶部的注释会标出。 例如，[Amazon S3连接器](/help/destinations/catalog/cloud-storage/amazon-s3.md)由Adobe创建，而[TikTok连接器](/help/destinations/catalog/social/tiktok.md)由TikTok团队创建和维护。
 
-对于合作伙伴创作并维护的连接器，这意味着连接器问题可能需要由合作伙伴团队解决（文档页面注释中提供的联系方法）。 有关Adobe创作和维护的连接器出现的问题，请联系您的Adobe代表或客户关怀团队。
+对于合作伙伴创作并维护的连接器，这意味着连接器问题可能需要由合作伙伴团队解决（文档页面注释中提供的联系方法）。 有关Adobe创作和维护的连接器出现的问题，请联系您的Adobe代表或客户关怀。
 
 ## 目标和访问控制 {#access-controls}
 
@@ -61,7 +61,7 @@ Platform中的目标功能可与Adobe Experience Platform访问控制权限配�
 
 | 权限级别 | 描述 |
 | ---- | ---- |
-| **[!UICONTROL 查看目标]** | 要访问Experience PlatformUI中的“目标”选项卡，您需要&#x200B;**[!UICONTROL 查看目标]** [访问控制权限](/help/access-control/home.md#permissions)。 |
+| **[!UICONTROL 查看目标]** | 要访问Experience Platform UI中的“目标”选项卡，您需要&#x200B;**[!UICONTROL 查看目标]** [访问控制权限](/help/access-control/home.md#permissions)。 |
 | **[!UICONTROL 查看目标]**，**[!UICONTROL 管理目标]** | 若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 |
 | **[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** | 要将受众激活到目标并启用工作流的[映射步骤](ui/activate-batch-profile-destinations.md#mapping)，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 |
 | **[!UICONTROL 查看目标]**、**[!UICONTROL 激活没有映射的区段]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** | 要在没有访问工作流的[映射步骤](ui/activate-batch-profile-destinations.md#mapping)的情况下在现有数据流中添加或删除受众，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活没有映射的区段]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 |
@@ -83,6 +83,14 @@ Adobe Experience Platform中基于属性的访问控制允许管理员根据属�
 通过基于属性的访问控制，您可以将映射配置应用到您拥有权限的字段。 此外，如果您无权访问数据集中的所有字段，则无法将数据导出到目标。
 
 有关目标如何使用基于属性的访问控制的详细信息，请阅读[基于属性的访问控制概述](../access-control/abac/overview.md#destinations)。
+
+## 从目标中删除配置文件 {#profile-removal}
+
+在从激活到目标的受众中删除配置文件时，该配置文件也会从目标平台中的相应受众中删除。 例如，如果从先前激活到LinkedIn的受众中删除某个用户档案，则该用户档案将从关联的[!UICONTROL LinkedIn匹配的受众]中删除。
+
+从目标中删除配置文件（也称为取消分段）的频率与分段相同。 从Experience Platform的受众中删除配置文件后，下一个发送到目标的计划数据流就会反映该更改，并从目标受众中删除该配置文件。
+
+配置文件删除在目标平台中生效的实际速度可能会因目标的摄取和处理行为而异。
 
 ## 目标监控 {#destinations-monitoring}
 
@@ -122,6 +130,6 @@ Adobe Experience Platform中基于属性的访问控制允许管理员根据属�
 
 Adobe没有义务维护、更正、更新、更改、修改或以其他方式支持Beta。 建议您使用信息性的，切勿依赖此类Beta和/或随附材料的正确功能或性能。 Beta被视为Adobe的机密信息。
 
-您向Adobe提供的任何“反馈”(关于Beta的信息，包括但不限于您在使用Beta时遇到的问题或缺陷、建议、改进和推荐)均分配给Adobe，包括此类反馈的所有权利、标题和兴趣。
+您向Beta提供的任何“反馈”(有关Beta的信息，包括但不限于您在使用Adobe时遇到的问题或缺陷、建议、改进和推荐)均会分配给Adobe，其中包括针对该反馈的所有权利、标题和兴趣。
 
 提交开放反馈或创建支持工单以共享您的建议或报告错误，寻求功能改进。
