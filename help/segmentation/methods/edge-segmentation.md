@@ -1,15 +1,15 @@
 ---
 title: Edge Segmentation指南
-description: 了解如何使用边缘分段在边缘即时评估Platform中的受众，启用同一页面和下一页面个性化用例。
+description: 了解如何使用边缘分段在边缘即时评估Experience Platform中的受众，启用同一页面和下一页面个性化用例。
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: 7ed92ed7573f82a2da2fc96f0868fe6f97a61899
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '1152'
+source-wordcount: '1154'
 ht-degree: 1%
 
 ---
 
-# Edge分段指南
+# 边缘分段指南
 
 Edge分段功能能够在边缘](../../landing/edge-and-hub-comparison.md)上即时评估Adobe Experience Platform中的区段定义[，从而启用同一页面和下一页面个性化用例。
 
@@ -302,7 +302,7 @@ curl -X GET \
 
 ![已选择Edge更新频率，显示组织中使用边缘分段评估的所有受众。](../images/methods/edge/filter-edge.png)
 
-若要了解有关在Platform中查看受众的更多信息，请阅读[受众门户指南](../ui/audience-portal.md)。
+要了解有关在Experience Platform中查看受众的更多信息，请阅读[受众门户指南](../ui/audience-portal.md)。
 
 >[!ENDTABS]
 

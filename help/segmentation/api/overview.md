@@ -3,9 +3,9 @@ title: 分段服务API指南
 description: 分段服务API允许开发人员以编程方式管理Adobe Experience Platform中的分段操作。 参阅本指南，了解如何使用 API 执行关键操作。
 role: Developer
 exl-id: cebecaf3-9746-4b0b-9c50-11789fba66c3
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '556'
+source-wordcount: '557'
 ht-degree: 3%
 
 ---
@@ -20,7 +20,7 @@ Adobe Experience Platform [!DNL Segmentation Service]允许您通过Adobe Experi
 
 ## 受众
 
-受众是具有相同相似行为和/或特征的人群。 这些资源可以通过使用Platform或从外部源生成。 您可以使用`/audiences`端点检索所有受众、创建新受众、检索特定受众的详细信息、更新特定受众或删除特定受众。
+受众是具有相同相似行为和/或特征的人群。 这些资源可以通过使用Experience Platform或从外部源生成。 您可以使用`/audiences`端点检索所有受众、创建新受众、检索特定受众的详细信息、更新特定受众或删除特定受众。
 
 有关使用此端点的详细信息，请阅读[受众端点指南](./audiences.md)。
 
@@ -62,4 +62,4 @@ Adobe Experience Platform [!DNL Segmentation Service]允许您通过Adobe Experi
 
 ## 后续步骤
 
-要开始使用[!DNL Segmentation Service] API，请查看不同的端点指南，以了解有关如何调用服务的各种端点的详细步骤。 要了解有关使用[!DNL Platform] UI处理区段的更多信息，请参阅[分段用户指南](../ui/overview.md)。
+要开始使用[!DNL Segmentation Service] API，请查看不同的端点指南，以了解有关如何调用服务的各种端点的详细步骤。 要了解有关使用[!DNL Experience Platform] UI处理区段的更多信息，请参阅[分段用户指南](../ui/overview.md)。

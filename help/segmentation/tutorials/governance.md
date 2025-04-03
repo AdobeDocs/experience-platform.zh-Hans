@@ -4,7 +4,7 @@ title: 使用API强制实施受众区段的数据使用合规性
 type: Tutorial
 description: 本教程介绍了使用API强制实施数据使用合规性区段定义的步骤。
 exl-id: 2299328c-d41a-4fdc-b7ed-72891569eaf2
-source-git-commit: 914174de797d7d5f6c47769d75380c0ce5685ee2
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
 source-wordcount: '1348'
 ht-degree: 6%
@@ -19,16 +19,16 @@ ht-degree: 6%
 
 本教程需要您对[!DNL Adobe Experience Platform]的以下组件有一定的了解：
 
-- [[!DNL Real-Time Customer Profile]](../../profile/home.md)： [!DNL Real-Time Customer Profile]是通用查找实体存储，用于管理[!DNL Platform]中的[!DNL Experience Data Model (XDM)]数据。 配置文件跨各种企业数据资产合并数据，并以统一的呈现方式提供对这些数据的访问。
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md)： [!DNL Real-Time Customer Profile]是通用查找实体存储，用于管理[!DNL Experience Platform]中的[!DNL Experience Data Model (XDM)]数据。 配置文件跨各种企业数据资产合并数据，并以统一的呈现方式提供对这些数据的访问。
    - [合并策略](../../profile/api/merge-policies.md)： [!DNL Real-Time Customer Profile]用于确定在特定条件下可以将哪些数据合并到统一视图的规则。 可以为数据管理目的配置合并策略。
 - [[!DNL Segmentation]](../home.md)： [!DNL Real-Time Customer Profile]如何将个人资料存储区中包含的大量个人分组为具有相似特征且响应方式相似的较小组。
 - [数据管理](../../data-governance/home.md)：“数据管理”使用以下组件提供用于标记和实施数据使用的基础结构：
    - [数据使用标签](../../data-governance/labels/user-guide.md)：用于根据处理数据集和字段各自数据的敏感度级别描述数据集和字段的标签。
    - [数据使用策略](../../data-governance/policies/overview.md)：指示允许对按特定数据使用标签分类的数据执行哪些营销操作的配置。
    - [策略实施](../../data-governance/enforcement/overview.md)：允许您实施数据使用策略并阻止构成策略违规的数据操作。
-- [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+- [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-以下部分提供了成功调用[!DNL Platform] API所需了解的其他信息。
+以下部分提供了成功调用[!DNL Experience Platform] API所需了解的其他信息。
 
 ### 正在读取示例 API 调用
 
@@ -36,19 +36,19 @@ ht-degree: 6%
 
 ### 收集所需标头的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+要调用[!DNL Experience Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 - 授权：持有人`{ACCESS_TOKEN}`
 - x-api-key： `{API_KEY}`
 - x-gw-ims-org-id： `{ORG_ID}`
 
-[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
+[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Experience Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 - x-sandbox-name： `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关[!DNL Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
+>有关[!DNL Experience Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
 
 包含负载 (POST、PUT、PATCH) 的所有请求都需要额外的标头：
 
@@ -124,7 +124,7 @@ curl -X GET \
 
 ## 从合并策略中查找源数据集 {#datasets}
 
-合并策略包含有关其源数据集的信息，而这些源数据集又包含数据使用标签。 您可以通过在[!DNL Profile] API的GET请求中提供合并策略ID来查找合并策略的详细信息。 有关合并策略的详细信息，请参阅[合并策略终结点指南](../../profile/api/merge-policies.md)。
+合并策略包含有关其源数据集的信息，而这些源数据集又包含数据使用标签。 通过在GET请求中向[!DNL Profile] API提供合并策略ID，您可以查找合并策略的详细信息。 有关合并策略的详细信息，请参阅[合并策略终结点指南](../../profile/api/merge-policies.md)。
 
 **API格式**
 
@@ -198,7 +198,7 @@ POST /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MARKETING_ACTION_NAME}` | 与用于评估数据集的数据使用策略关联的营销操作的名称。 根据策略是由Adobe还是贵组织定义的，您必须分别使用`/marketingActions/core`或`/marketingActions/custom`。 |
+| `{MARKETING_ACTION_NAME}` | 与用于评估数据集的数据使用策略关联的营销操作的名称。 根据策略是由Adobe还是您的组织定义的，您必须分别使用`/marketingActions/core`或`/marketingActions/custom`。 |
 
 **请求**
 

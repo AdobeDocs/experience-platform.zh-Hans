@@ -4,9 +4,9 @@ title: 使用分段服务API创建区段定义
 type: Tutorial
 description: 按照本教程了解如何使用Adobe Experience Platform分段服务API来开发、测试、预览和保存区段定义。
 exl-id: 78684ae0-3721-4736-99f1-a7d1660dc849
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '1066'
+source-wordcount: '1067'
 ht-degree: 6%
 
 ---
@@ -23,9 +23,9 @@ ht-degree: 6%
 
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
 - [[!DNL Adobe Experience Platform Segmentation Service]](../home.md)：允许您使用区段定义或其他外部源从实时客户档案数据构建受众。
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： [!DNL Platform]用于组织客户体验数据的标准化框架。 为了更好地利用分段，请确保根据用于数据建模的[最佳实践](../../xdm/schema/best-practices.md)，将您的数据作为配置文件和事件摄取。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。 为了更好地利用分段，请确保根据用于数据建模的[最佳实践](../../xdm/schema/best-practices.md)，将您的数据作为配置文件和事件摄取。
 
-以下部分提供了成功调用[!DNL Platform] API所需了解的其他信息。
+以下部分提供了成功调用[!DNL Experience Platform] API所需了解的其他信息。
 
 ### 正在读取示例 API 调用
 
@@ -33,19 +33,19 @@ ht-degree: 6%
 
 ### 收集所需标头的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+要调用[!DNL Experience Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 - 授权：持有人`{ACCESS_TOKEN}`
 - x-api-key： `{API_KEY}`
 - x-gw-ims-org-id： `{ORG_ID}`
 
-[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
+[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Experience Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 - x-sandbox-name： `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关[!DNL Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
+>有关[!DNL Experience Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
 
 包含负载 (POST、PUT、PATCH) 的所有请求都需要额外的标头：
 
@@ -72,7 +72,7 @@ ht-degree: 6%
 
 ### 如何生成估算
 
-启用实时客户资料的数据被摄取到Platform后，将存储在资料数据存储中。 当将记录摄取到配置文件存储中增加或减少总配置文件计数超过5%时，将触发取样作业以更新计数。 如果配置文件数的变化不超过5%，则取样作业将每周自动运行。
+启用实时客户配置文件的数据被摄取到Experience Platform后，将存储在配置文件数据存储中。 当将记录摄取到配置文件存储中增加或减少总配置文件计数超过5%时，将触发取样作业以更新计数。 如果配置文件数的变化不超过5%，则取样作业将每周自动运行。
 
 触发示例的方式取决于所使用的摄取类型：
 
@@ -97,7 +97,7 @@ ht-degree: 6%
 
 ### 查看估计或预览
 
-估算和预览流程是异步运行的，因为不同的查询可能需要不同的时间长度才能完成。 启动查询后，您可以使用API调用在估计或预览的过程中检索(GET)其当前状态。
+估算和预览流程是异步运行的，因为不同的查询可能需要不同的时间长度才能完成。 查询启动后，您可以使用API调用在估计或预览的当前状态下检索(GET)。
 
 使用[!DNL Segmentation Service] API，您可以通过预览作业的ID来查找其当前状态。 如果状态为“RESULT_READY”，则可以查看结果。 要查找预览作业的当前状态，请阅读预览和估计端点指南中有关[检索预览作业部分](../api/previews-and-estimates.md#get-preview)的部分。 要查找估算作业的当前状态，请阅读预览和估算端点指南中有关[检索估算作业](../api/previews-and-estimates.md#get-estimate)的部分。
 

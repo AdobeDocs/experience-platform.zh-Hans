@@ -4,7 +4,7 @@ title: 评估和访问区段结果
 type: Tutorial
 description: 阅读本教程，了解如何使用Adobe Experience Platform分段服务API评估区段定义并访问分段结果。
 exl-id: 47702819-f5f8-49a8-a35d-034ecac4dd98
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
 source-wordcount: '1594'
 ht-degree: 1%
@@ -22,23 +22,23 @@ ht-degree: 1%
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个源的汇总数据，实时提供统一的客户个人资料。
 - [[!DNL Adobe Experience Platform Segmentation Service]](../home.md)：允许您从[!DNL Real-Time Customer Profile]数据构建受众。
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： Platform用于组织客户体验数据的标准化框架。 为了更好地利用分段，请确保根据用于数据建模的[最佳实践](../../xdm/schema/best-practices.md)，将您的数据作为配置文件和事件摄取。
-- [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+- [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ### 必需的标头
 
-本教程还要求您完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)，才能成功调用[!DNL Platform] API。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+本教程还要求您完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)，才能成功调用[!DNL Experience Platform] API。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 - 授权：持有人`{ACCESS_TOKEN}`
 - x-api-key： `{API_KEY}`
 - x-gw-ims-org-id： `{ORG_ID}`
 
-[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Platform] API的请求需要一个标头，该标头指定将在其中执行操作的沙盒的名称：
+[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Experience Platform] API的请求需要一个标头，该标头指定将在其中执行操作的沙盒的名称：
 
 - x-sandbox-name： `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关[!DNL Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
+>有关[!DNL Experience Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
 
 所有POST、PUT和PATCH请求都需要额外的标头：
 
@@ -68,7 +68,7 @@ ht-degree: 1%
 
 ### 启用计划
 
-默认情况下，创建计划时处于非活动状态，除非在创建(POST)请求正文中将`state`属性设置为`active`。 您可以启用计划（将`state`设置为`active`），方法是向`/config/schedules`端点发出PATCH请求，并在路径中包含计划的ID。
+默认情况下，创建计划时处于非活动状态，除非在创建(POST)请求正文中将`state`属性设置为`active`。 您可以通过向`/config/schedules`端点发出PATCH请求并在路径中包含计划的ID来启用计划（将`state`设置为`active`）。
 
 有关使用此端点的更多详细信息，请参阅[计划端点指南](../api/schedules.md#update-state)
 
@@ -92,13 +92,13 @@ ht-degree: 1%
 
 ### 查找区段作业状态
 
-您可以对特定区段作业使用`id`来执行查找请求(GET)，以查看作业的当前状态。
+您可以对特定区段作业使用`id`来执行查找请求(GET)以查看作业的当前状态。
 
 有关使用此端点的更多详细信息可在[区段作业端点指南](../api/segment-jobs.md#get)中找到
 
 ## 解释区段作业结果
 
-成功运行区段作业后，将为区段定义中包含的每个配置文件更新`segmentMembership`映射。 `segmentMembership`还存储了提取到[!DNL Platform]中的任何预评估受众，从而允许与其他解决方案（如[!DNL Adobe Audience Manager]）集成。
+成功运行区段作业后，将为区段定义中包含的每个配置文件更新`segmentMembership`映射。 `segmentMembership`还存储了提取到[!DNL Experience Platform]中的任何预评估受众，从而允许与其他解决方案（如[!DNL Adobe Audience Manager]）集成。
 
 以下示例显示了`segmentMembership`属性对于每个个人资料记录的外观：
 
@@ -212,7 +212,7 @@ curl -X POST \
 
 ### 为受众成员生成配置文件 {#generate-profiles}
 
-拥有一个合并持久化数据集后，您可以创建一个导出作业以将受众成员持久化到该数据集，具体方法是：向[!DNL Real-Time Customer Profile] API中的`/export/jobs`端点发出POST请求，并为要导出的区段定义提供数据集ID和区段定义信息。
+拥有一个合并持久化数据集后，您可以创建一个导出作业以将受众成员持久化到该数据集，具体方法是：对[!DNL Real-Time Customer Profile] API中的`/export/jobs`端点发起POST请求，并为要导出的区段定义提供数据集ID和区段定义信息。
 
 有关使用此端点的更多详细信息，请参阅[导出作业端点指南](../api/export-jobs.md#create)
 

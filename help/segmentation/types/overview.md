@@ -1,13 +1,13 @@
 ---
 title: 受众类型
 description: 了解您可以在Adobe Experience Platform中创建的各种类型的受众。
-source-git-commit: c7d71113ddcef6aca8b2637814b46e589a6b7fdf
+exl-id: c95c6276-d1a4-4d92-95cf-60d895c3fe10
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '250'
+source-wordcount: '251'
 ht-degree: 2%
 
 ---
-
 
 # 受众类型
 
@@ -19,7 +19,7 @@ Adobe Experience Platform提供多种受众类型，以便您最好地划分用�
 
 有关人员受众的更多详细信息，请阅读[人员受众概述](./people-audiences.md)。
 
-## [!BADGE B2C版本]相似受众
+## [!BADGE B2C Edition]相似受众
 
 相似受众是通过使用相似机器学习模型分析高价值受众而创建的受众。 相似人群拓展模型可创建与分析后高价值受众的相似阈值相匹配的受众。
 
@@ -39,4 +39,4 @@ Adobe Experience Platform提供多种受众类型，以便您最好地划分用�
 
 ## 后续步骤
 
-阅读本概述后，您现在可以更好地了解各种类型 of Platform上可用的受众。 若要了解不同的评估方法，请阅读[评估方法概述](../methods/overview.md)。
+阅读本概述后，您现在可以更好地了解各种类型 of Experience Platform上可用的受众。 若要了解不同的评估方法，请阅读[评估方法概述](../methods/overview.md)。

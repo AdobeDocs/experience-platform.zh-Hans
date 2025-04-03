@@ -3,10 +3,10 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: dc36c5e2eb109d1728f2290ee61e69f458929ba7
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '4976'
-ht-degree: 8%
+source-wordcount: '4980'
+ht-degree: 7%
 
 ---
 
@@ -76,11 +76,11 @@ ht-degree: 8%
 
 您可以将单个或多个Adobe Analytics报表包中的数据用作分段中的事件。
 
-使用来自单个Analytics报告包的数据时，Platform会自动将描述符和友好名称添加到eVar中，以便更轻松地在[!DNL Segment Builder]中查找这些字段。
+使用来自单个Analytics报表包的数据时，Experience Platform会自动将描述符和友好名称添加到eVar中，以便在[!DNL Segment Builder]中更轻松地查找这些字段。
 
 ![显示如何使用用户友好名称映射通用变量(eVar)的图像。](../images/ui/segment-builder/single-report-suite.png)
 
-使用来自多个Analytics报表包的数据时，平台&#x200B;**无法**&#x200B;自动将描述符或友好名称添加到eVar。 因此，在使用Analytics报表包中的数据之前，必须映射到XDM字段。 有关将Analytics变量映射到XDM的更多信息，请参阅[Adobe Analytics源连接指南](../../sources/tutorials/ui/create/adobe-applications/analytics.md#mapping)。
+使用多个Analytics报表包中的数据时，Experience Platform **无法**&#x200B;自动将描述符或友好名称添加到eVar。 因此，在使用Analytics报表包中的数据之前，必须映射到XDM字段。 有关将Analytics变量映射到XDM的更多信息，请参阅[Adobe Analytics源连接指南](../../sources/tutorials/ui/create/adobe-applications/analytics.md#mapping)。
 
 例如，假定您有两个包含以下变量的报表包：
 
@@ -119,7 +119,7 @@ ht-degree: 8%
 
 >[!NOTE]
 >
->对于在Platform中创建的受众，仅显示具有&#x200B;**same**&#x200B;合并策略的受众。
+>对于在Experience Platform中创建的受众，仅显示具有&#x200B;**same**&#x200B;合并策略的受众。
 
 **[!UICONTROL 受众]**&#x200B;选项卡列出了从外部源(如Adobe Audience Manager或Customer Journey Analytics)导入的所有受众，以及在[!DNL Experience Platform]内创建的受众。
 
@@ -182,7 +182,7 @@ ht-degree: 8%
 
 您可以将受众从&#x200B;**[!UICONTROL 受众]**&#x200B;选项卡拖放到规则生成器画布上，以引用新区段定义中的受众成员资格。 这样，您就可以在新的区段定义规则中包含或排除作为属性的受众成员资格。
 
-对于使用[!DNL Segment Builder]创建的[!DNL Platform]受众，您可以选择将该受众转换为在该受众的区段定义中使用的规则集。 此转换会生成规则逻辑的副本，之后可以修改该副本而不会影响原始区段定义。 在将区段定义转换为规则逻辑之前，请确保已保存对区段定义所做的任何最新更改。
+对于使用[!DNL Segment Builder]创建的[!DNL Experience Platform]受众，您可以选择将该受众转换为在该受众的区段定义中使用的规则集。 此转换会生成规则逻辑的副本，之后可以修改该副本而不会影响原始区段定义。 在将区段定义转换为规则逻辑之前，请确保已保存对区段定义所做的任何最新更改。
 
 >[!NOTE]
 >
@@ -349,11 +349,11 @@ ht-degree: 8%
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_createSegment_segmentBuilder_mergePolicies"
 >title="合并策略"
->abstract="合并策略可以合并不同的数据集，以形成您的轮廓。Platform 已提供默认合并策略，您也可以在轮廓中创建新的默认合并策略。为该受众选择与您的营销目的相匹配的合并策略。"
+>abstract="合并策略可以合并不同的数据集，以形成您的轮廓。Experience Platform提供了默认合并策略，您也可以在“配置文件”中创建新的默认合并策略。 为该受众选择与您的营销目的相匹配的合并策略。"
 
-[!DNL Experience Platform]使您能够将来自多个来源的数据集合起来并组合这些数据，以便查看每个客户的完整视图。 在汇总此数据时，合并策略是[!DNL Platform]用于确定数据优先顺序的规则以及将合并哪些数据以创建配置文件。
+[!DNL Experience Platform]使您能够将来自多个来源的数据集合起来并组合这些数据，以便查看每个客户的完整视图。 在汇总此数据时，合并策略是[!DNL Experience Platform]用于确定数据优先顺序的规则以及将合并哪些数据以创建配置文件。
 
-您可以为此受众选择与您的营销目的相匹配的合并策略，也可以使用[!DNL Platform]提供的默认合并策略。 您可以创建组织特有的多个合并策略，包括创建您自己的默认合并策略。 有关为组织创建合并策略的分步说明，请先阅读[合并策略概述](../../profile/merge-policies/overview.md)。
+您可以为此受众选择与您的营销目的相匹配的合并策略，也可以使用[!DNL Experience Platform]提供的默认合并策略。 您可以创建组织特有的多个合并策略，包括创建您自己的默认合并策略。 有关为组织创建合并策略的分步说明，请先阅读[合并策略概述](../../profile/merge-policies/overview.md)。
 
 要为区段定义选择合并策略，请选择&#x200B;**[!UICONTROL 字段]**&#x200B;选项卡上的齿轮图标，然后使用&#x200B;**[!UICONTROL 合并策略]**&#x200B;下拉菜单选择要使用的合并策略。
 

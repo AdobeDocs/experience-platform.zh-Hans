@@ -5,9 +5,9 @@ description: 阅读本教程，了解如何在Adobe Experience Platform中使用
 exl-id: 56fc8bd3-3e62-4a09-bb9c-6caf0523f3fe
 hide: true
 hidefromtoc: true
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '1724'
+source-wordcount: '1732'
 ht-degree: 0%
 
 ---
@@ -26,9 +26,9 @@ Adobe Experience Platform支持导入外部受众的功能，这些受众随后�
 
 - [分段服务](../home.md)：允许您根据实时客户个人资料数据构建受众。
 - [实时客户个人资料](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时客户个人资料。
-- [体验数据模型(XDM)](../../xdm/home.md)： Platform用于组织客户体验数据的标准化框架。 为了更好地利用分段，请确保根据用于数据建模的[最佳实践](../../xdm/schema/best-practices.md)，将您的数据作为配置文件和事件摄取。
-- [数据集](../../catalog/datasets/overview.md)：用于Experience Platform中数据持久性的存储和管理结构。
-- [流式引入](../../ingestion/streaming-ingestion/overview.md)：Experience Platform如何从客户端和服务器端设备实时引入和存储数据。
+- [体验数据模型(XDM)](../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。 为了更好地利用分段，请确保根据用于数据建模的[最佳实践](../../xdm/schema/best-practices.md)，将您的数据作为配置文件和事件摄取。
+- [数据集](../../catalog/datasets/overview.md)： Experience Platform中用于数据持久性的存储和管理结构。
+- [流式摄取](../../ingestion/streaming-ingestion/overview.md)： Experience Platform如何从客户端和服务器端设备实时摄取和存储数据。
 
 ### 受众与区段定义
 
@@ -44,7 +44,7 @@ Adobe Experience Platform支持导入外部受众的功能，这些受众随后�
 
 ## 为外部受众创建身份命名空间
 
-使用外部受众的第一步是创建身份命名空间。 身份命名空间允许Platform关联受众源自何处。
+使用外部受众的第一步是创建身份命名空间。 身份命名空间允许Experience Platform关联受众源自何处。
 
 要创建身份命名空间，请按照[身份命名空间指南](../../identity-service/features/namespaces.md#manage-namespaces)中的说明操作。 创建身份命名空间时，请将源详细信息添加到身份命名空间，并将其[!UICONTROL Type]标记为&#x200B;**[!UICONTROL 非人员标识符]**。
 
@@ -70,7 +70,7 @@ Adobe Experience Platform支持导入外部受众的功能，这些受众随后�
 
 ![在架构编辑器中高亮显示启用配置文件的架构的切换开关。](../images/tutorials/external-audiences/schema-profile.png)
 
-现在，为配置文件启用此架构，并将主标识分配给您创建的非人员身份命名空间。 因此，这意味着使用此架构导入到Platform的区段元数据将被摄取到配置文件中，而不会与其他人员相关的配置文件数据合并。
+现在，为配置文件启用此架构，并将主标识分配给您创建的非人员身份命名空间。 因此，这意味着使用此架构导入到Experience Platform的区段元数据将被摄取到配置文件中，而不会与其他人员相关的配置文件数据合并。
 
 ## 为架构创建数据集
 
@@ -86,7 +86,7 @@ Adobe Experience Platform支持导入外部受众的功能，这些受众随后�
 
 ## 设置和导入受众数据
 
-启用数据集后，现在可以通过UI或使用Experience PlatformAPI将数据发送到Platform。 您可以通过批量连接或流连接摄取此数据。
+启用数据集后，现在可以通过UI或使用Experience Platform API将数据发送到Experience Platform中。 您可以通过批量连接或流连接摄取此数据。
 
 ### 使用批处理连接摄取数据
 
@@ -102,7 +102,7 @@ Adobe Experience Platform支持导入外部受众的功能，这些受众随后�
 
 ## 受众元数据结构
 
-创建连接后，您现在可以将数据摄取到Platform。
+创建连接后，您现在可以将数据摄取到Experience Platform。
 
 下方显示了外部受众有效负载的元数据示例：
 
@@ -163,7 +163,7 @@ Adobe Experience Platform支持导入外部受众的功能，这些受众随后�
 
 ## 附录
 
-除了使用导入的外部受众元数据并使用它们创建区段之外，您还可以将外部区段成员资格导入到Platform。
+除了使用导入的外部受众元数据并使用它们创建区段之外，您还可以将外部区段成员资格导入到Experience Platform。
 
 ### 设置外部区段成员资格目标架构
 
@@ -193,7 +193,7 @@ Adobe Experience Platform支持导入外部受众的功能，这些受众随后�
 
 ## 设置和导入外部受众成员资格数据
 
-启用数据集后，现在可以通过UI或使用Experience PlatformAPI将数据发送到Platform。 您可以通过批量连接或流连接摄取此数据。
+启用数据集后，现在可以通过UI或使用Experience Platform API将数据发送到Experience Platform中。 您可以通过批量连接或流连接摄取此数据。
 
 ### 使用批处理连接摄取数据
 
@@ -209,7 +209,7 @@ Adobe Experience Platform支持导入外部受众的功能，这些受众随后�
 
 ## 区段成员资格结构
 
-创建连接后，您现在可以将数据摄取到Platform。
+创建连接后，您现在可以将数据摄取到Experience Platform。
 
 下面显示了外部受众成员资格有效负载的示例：
 

@@ -4,9 +4,9 @@ description: 了解如何创建和使用帐户受众，以便在下游目标中�
 badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 047930d6-939f-4418-bbcb-8aafd2cf43ba
-source-git-commit: 78cb7fd24b858859226c737affbb4e93783c884d
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '1494'
+source-wordcount: '1495'
 ht-degree: 21%
 
 ---
@@ -53,7 +53,7 @@ ht-degree: 21%
 
 ![帐户受众浏览页面上突出显示[!UICONTROL 创建受众]按钮。](../images/types/account/select-create-audience.png)
 
-此时将显示“区段生成器”。 帐户属性和受众将显示在左侧导航栏中。 在[!UICONTROL 属性]选项卡下，您可以添加Platform创建和自定义属性。
+此时将显示“区段生成器”。 帐户属性和受众将显示在左侧导航栏中。 在[!UICONTROL 属性]选项卡下，您可以同时添加Experience Platform创建的属性和自定义属性。
 
 ![将显示区段生成器。 请注意，仅显示属性和受众。](../images/types/account/segment-builder.png)
 
@@ -116,7 +116,7 @@ ht-degree: 21%
 
 ## 后续步骤 {#next-steps}
 
-阅读本指南后，您现在已更好地了解如何在Adobe Experience Platform中创建和使用帐户受众。 要了解如何在Platform中使用其他类型的受众，请阅读[受众类型概述](./overview.md)。
+阅读本指南后，您现在已更好地了解如何在Adobe Experience Platform中创建和使用帐户受众。 要了解如何在Experience Platform中使用其他类型的受众，请阅读[受众类型概述](./overview.md)。
 
 ## 附录 {#appendix}
 

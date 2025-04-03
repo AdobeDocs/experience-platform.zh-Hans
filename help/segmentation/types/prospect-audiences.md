@@ -3,9 +3,9 @@ title: 潜在客户受众
 description: 了解如何使用第三方信息创建和使用潜在客户受众来定位未知客户。
 type: Documentation
 exl-id: b48cc0cf-f1c4-46fe-bb1d-cad53a9439dc
-source-git-commit: 78cb7fd24b858859226c737affbb4e93783c884d
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '392'
+source-wordcount: '393'
 ht-degree: 2%
 
 ---
@@ -56,7 +56,7 @@ Adobe Experience Platform可让您为[潜在客户个人资料](../../profile/ui
 
 ## 建议的用例 {#use-cases}
 
-要了解如何在Experience Platform中将潜在客户受众功能与其他Platform功能结合使用，请阅读以下用例文档：
+要了解如何在Experience Platform中将潜在客户受众功能与其他Experience Platform功能结合使用，请阅读以下用例文档：
 
 - [通过潜在客户发现功能吸引和赢取新客户](../../rtcdp/partner-data/prospecting.md)
 

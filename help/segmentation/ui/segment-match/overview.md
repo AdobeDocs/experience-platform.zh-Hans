@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；区段匹配；区段匹配
+keywords: Experience Platform；主页；热门主题；分段；区段匹配；区段匹配
 solution: Experience Platform
 title: 区段匹配概述
-description: 区段匹配是Adobe Experience Platform中的区段共享服务，它允许两个或更多Platform用户以安全、受管理和隐私友好的方式交换区段数据。
+description: 区段匹配是Adobe Experience Platform中的区段共享服务，它允许两个或更多Experience Platform用户以安全、受管理和隐私友好的方式交换区段数据。
 exl-id: 4e6ec2e0-035a-46f4-b171-afb777c14850
-source-git-commit: b82bbdf7957e5a8d331d61f02293efdaf878971c
+source-git-commit: 0a9028beca36b46d6228c0038366bbac5d32603c
 workflow-type: tm+mt
-source-wordcount: '1968'
-ht-degree: 2%
+source-wordcount: '1978'
+ht-degree: 3%
 
 ---
 
 # [!DNL Segment Match] 概述
 
-Adobe Experience Platform区段匹配是一项区段共享服务，允许两个或更多Platform用户以安全、受管且有利于隐私的方式交换区段数据。 [!DNL Segment Match]使用Platform隐私标准和个人标识符，例如经过哈希处理的电子邮件、经过哈希处理的电话号码以及设备标识符（如IDFA和GAID）。
+Adobe Experience Platform区段匹配是一项区段共享服务，允许两个或更多Experience Platform用户以安全、受管且隐私友好的方式交换区段数据。 [!DNL Segment Match]使用Experience Platform隐私标准和个人标识符，例如经过哈希处理的电子邮件、经过哈希处理的电话号码以及设备标识符（如IDFA和GAID）。
 
 通过[!DNL Segment Match]，您可以：
 
@@ -44,9 +44,9 @@ Adobe Experience Platform区段匹配是一项区段共享服务，允许两个�
 
 | 命名空间 | 描述 |
 | --------- | ----------- |
-| 电子邮件（SHA256，小写） | 预哈希电子邮件地址的命名空间。 使用SHA256进行哈希处理之前，此命名空间中提供的值将转换为小写。 在规范化电子邮件地址之前，需要修剪前导空格和尾随空格。 此设置不能进行追溯性更改。 Platform提供了两种方法，通过[`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html#hashing-support)和通过[数据准备](../../../data-prep/functions.md#hashing)支持数据收集中的哈希处理。 |
-| 电话(SHA256_E.164) | 一个命名空间，表示需要使用SHA256和E.164格式进行哈希处理的原始电话号码。 |
-| ECID | 表示Experience CloudID (ECID)值的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 有关详细信息，请参阅[ECID概述](../../../identity-service/features/ecid.md)。 |
+| 电子邮件（SHA256，小写） | 预哈希电子邮件地址的命名空间。使用SHA256进行哈希处理之前，此命名空间中提供的值将转换为小写。 在规范化电子邮件地址之前，需要修剪前导空格和尾随空格。 此设置不能进行追溯性更改。 Experience Platform提供两种方法，通过[`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html#hashing-support)和通过[数据准备](../../../data-prep/functions.md#hashing)来支持数据收集中的哈希处理。 |
+| 电话(SHA256_E.164) | 表示需要使用 SHA256 和 E.164 格式进行哈希处理的原始电话号码的命名空间。 |
+| ECID | 表示Experience Cloud ID (ECID)值的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 有关详细信息，请参阅[ECID概述](../../../identity-service/features/ecid.md)。 |
 | Apple IDFA（广告商的ID） | 表示广告商的Apple ID的命名空间。 有关详细信息，请参阅以下有关[基于兴趣的广告](https://support.apple.com/en-us/HT202074)的文档。 |
 | Google Ad ID | 表示Google Advertising ID的命名空间。 有关详细信息，请参阅以下有关[Google Advertising ID](https://support.google.com/googleplay/android-developer/answer/6048248?hl=en)的文档。 |
 
@@ -64,7 +64,7 @@ Adobe Experience Platform区段匹配是一项区段共享服务，允许两个�
 
 您必须建立的最后一个先决条件是配置新的数据使用标签以防止数据共享。 通过数据使用标签，您可以管理允许通过[!DNL Segment Match]共享的数据。
 
-数据使用标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 您可以随时应用标签，灵活地选择管理数据的方式。 最佳实践鼓励在将数据摄取到Experience Platform中后立即标记数据，或者当数据在Platform中可用时立即标记数据。
+数据使用标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 您可以随时应用标签，灵活地选择管理数据的方式。 最佳实践鼓励在将数据摄取到Experience Platform中后立即为其设置标签，或者当数据在Experience Platform中可用时立即为其设置标签。
 
 [!DNL Segment Match]使用C11标签，这是特定于[!DNL Segment Match]的合同标签，您可以手动将其添加到任何数据集或属性，以确保它们从[!DNL Segment Match]合作伙伴共享进程中排除。 C11标签表示不应在[!DNL Segment Match]进程中使用的数据。 在确定要从[!DNL Segment Match]中排除的数据集和/或字段并相应地添加C11标签后，[!DNL Segment Match]工作流将自动强制使用该标签。 [!DNL Segment Match]自动启用[!UICONTROL 限制数据共享]核心策略。 有关如何将数据使用标签应用于数据集的特定说明，请参阅有关[在UI中管理数据使用标签的教程](../../../data-governance/labels/user-guide.md)。
 
@@ -87,7 +87,7 @@ Adobe Experience Platform区段匹配是一项区段共享服务，允许两个�
 
 ### 管理合作伙伴
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 区段]**，然后从顶部标题中选择&#x200B;**[!UICONTROL 馈送]**。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 区段]**，然后从顶部标题中选择&#x200B;**[!UICONTROL 馈送]**。
 
 ![segments-feed.png](./images/segments-feed.png)
 
@@ -95,7 +95,7 @@ Adobe Experience Platform区段匹配是一项区段共享服务，允许两个�
 
 ![manage-partners.png](./images/manage-partners.png)
 
-两个合作伙伴之间的连接是一种“双向握手”，作为一种自助方式，用户可以将其平台组织在沙盒级别连接在一起。 需要建立连接，以通知Platform已签订协议，并且Platform可以促进您与合作伙伴之间的共享服务。
+两个合作伙伴之间的连接是一种“双向握手”，作为一种自助方式，用户可在沙盒级别将其Experience Platform组织连接在一起。 需要建立连接，以通知Experience Platform已签订协议，并且Experience Platform可以促进您与合作伙伴之间共享服务。
 
 >[!NOTE]
 >
@@ -121,7 +121,7 @@ Adobe Experience Platform区段匹配是一项区段共享服务，允许两个�
 >abstract="受限的营销用例有助于为您的合作伙伴提供指导，确保根据您的数据治理限制正确使用共享区段。"
 >text="Learn more in documentation"
 
-**馈送**&#x200B;是一组数据（区段）、如何公开或使用该数据的规则以及确定如何将数据与合作伙伴的数据进行匹配的配置。 可通过[!DNL Segment Match]独立管理馈送并与其他Platform用户交换。
+**馈送**&#x200B;是一组数据（区段）、如何公开或使用该数据的规则以及确定如何将数据与合作伙伴的数据进行匹配的配置。 可通过[!DNL Segment Match]独立管理馈送并与其他Experience Platform用户交换。
 
 要创建新馈送，请从[!UICONTROL 馈送]仪表板中选择&#x200B;**[!UICONTROL 创建馈送]**。
 

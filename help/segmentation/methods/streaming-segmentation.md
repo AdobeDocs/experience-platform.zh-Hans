@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 流式分段指南
 description: 了解流式分段，包括内容、如何创建使用流式分段评估的受众，以及如何查看使用流式分段创建的受众。
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: 3f0cfd6c36344f481751bf05236df4fb288eab60
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '1253'
+source-wordcount: '1256'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 流式分段是在关注数据丰富性的同时，近乎实时地评估Adobe Experience Platform中的受众的能力。
 
-借助流式分段，现在可以在流式数据进入Platform时进行受众鉴别，从而消除计划和运行分段作业的需求。 这样，您就可以在数据传递到Platform时对其进行评估，从而使受众成员资格自动保持最新。
+借助流式分段，现在可以在流式数据进入Experience Platform时进行受众鉴别，从而消除计划和运行分段作业的需求。 这样，您就可以在数据传递到Experience Platform时对其进行评估，从而使受众成员资格自动保持最新。
 
 ## 符合条件的查询类型 {#query-types}
 
@@ -312,7 +312,7 @@ curl -X GET 'https://platform.adobe.io/data/core/ups/segment/definitions?evaluat
 
 ![选择了流式更新频率，显示组织中使用流式分段评估的所有受众。](../images/methods/streaming/filter-streaming.png)
 
-若要了解有关在Platform中查看受众的更多信息，请阅读[受众门户指南](../ui/audience-portal.md)。
+要了解有关在Experience Platform中查看受众的更多信息，请阅读[受众门户指南](../ui/audience-portal.md)。
 
 >[!ENDTABS]
 

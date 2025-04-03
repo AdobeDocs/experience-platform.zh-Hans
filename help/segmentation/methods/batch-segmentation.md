@@ -1,13 +1,13 @@
 ---
 title: 批量分段指南
 description: 了解批量分段，包括内容、如何创建使用批量分段评估的受众，以及如何查看使用批量分段创建的受众。
-source-git-commit: cffd7bad831f0f58bd2b62585bfd0b84280b1732
+exl-id: b6fba2fb-8eec-4429-92fd-ece5c79d379d
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '549'
+source-wordcount: '550'
 ht-degree: 2%
 
 ---
-
 
 # 批量分段指南
 
@@ -279,7 +279,7 @@ curl -X GET \
 
 ![选择了批次更新频率，显示组织中使用批次分段评估的所有受众。](../images/methods/batch/filter-batch.png)
 
-若要了解有关在Platform中查看受众的更多信息，请阅读[受众门户指南](../ui/audience-portal.md)。
+要了解有关在Experience Platform中查看受众的更多信息，请阅读[受众门户指南](../ui/audience-portal.md)。
 
 >[!ENDTABS]
 

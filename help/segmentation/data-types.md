@@ -1,11 +1,11 @@
 ---
 solution: Experience Platform
 title: 分段服务中支持的数据类型
-description: Adobe分段服务支持所有Experience Data Model (XDM)数据类型。 构成区段定义的规则由以下数据类型进行上下文化。
+description: Adobe Segmentation Service支持所有Experience Data Model (XDM)数据类型。 构成区段定义的规则由以下数据类型进行上下文化。
 exl-id: 73f932a7-f864-4566-ade7-c148a12dc83c
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: 0a9028beca36b46d6228c0038366bbac5d32603c
 workflow-type: tm+mt
-source-wordcount: '478'
+source-wordcount: '480'
 ht-degree: 3%
 
 ---
@@ -24,7 +24,7 @@ Adobe Experience Platform Segmentation Service支持所有Experience Data Model 
 | -------------- | -------- |
 | 逻辑 | `and`、`or`、`not` |
 | 包含/排除 | `include`，`must` `exist`，`exclude`，`must not exist` |
-| 比较 | `equals`，`does not equal`，`contains`，`starts with` |
+| 比较 | `equals`、`does not equal`、`contains`、`starts with` |
 
 ## 日期数据
 
@@ -32,12 +32,12 @@ Adobe Experience Platform Segmentation Service支持所有Experience Data Model 
 
 | 示例字段 | 日期相关报表 | 时间线 |
 | ------------- | ------------------------ | --------- |
-| person.firstPurchase | `today`，`yesterday`，`this month`，`this year` | 与生成区段定义的日期相关。 |
+| person.firstPurchase | `today`、`yesterday`、`this month`、`this year` | 与生成区段定义的日期相关。 |
 | person.lastPurchase | `in last`，`during`，`before`，`after`，`within` | 在任何给定周/月内相关。 |
 
 ## 体验事件
 
-作为Adobe Experience Platform架构，[!DNL XDM ExperienceEvents]记录与[!DNL Platform]集成应用程序的显式和隐式客户交互，包括在交互发生时系统的快照。 [!DNL ExperienceEvents]是事实记录。 因此，它们是在区段定义期间可供您使用的数据源。
+作为Adobe Experience Platform架构，[!DNL XDM ExperienceEvents]记录与Experience-Platform集成应用程序之间的显式和隐式客户交互，包括在交互发生时系统的快照。 [!DNL ExperienceEvents]是事实记录。 因此，它们是在区段定义期间可供您使用的数据源。
 
 如下表所示，使用关键字呈现事件数据，关键字有助于优化事件行为和指定事件属性。
 
@@ -52,11 +52,11 @@ Adobe Experience Platform Segmentation Service支持所有Experience Data Model 
 
 外部受众也可以用作新区段定义的组件，将其属性规则添加到新区段定义。
 
-目前，仅支持将Adobe Audience Manager作为外部受众，并且将来会启用其他源。 有关将Adobe Audience Manager受众与Platform结合使用的更多信息，请参阅Adobe Audience Manager文档中的[受众共享指南](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)。
+目前，仅支持将Adobe Audience Manager作为外部受众，并且将来会启用其他源。 有关将Adobe Audience Manager受众与Experience Platform结合使用的更多信息，请参阅Adobe Audience Manager文档中的[受众共享指南](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)。
 
 ### 区段定义共享
 
-在Platform中创建的区段定义可用于其他[Adobe Experience Cloud核心服务](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html?lang=zh-Hans)。 要启用此功能，您需要联系解决方案架构师或顾问。
+在Experience Platform中创建的区段定义可用于其他[Adobe Experience Cloud核心服务](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html?lang=zh-Hans)。 要启用此功能，您需要联系解决方案架构师或顾问。
 
 ## 其他数据类型
 

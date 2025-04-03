@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 分段服务UI指南
 description: 了解如何在Adobe Experience Platform UI中创建和管理受众和区段定义。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 276fd7c532843c9589e1d51b0bc7a76cb5c3eb9f
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '1043'
+source-wordcount: '1046'
 ht-degree: 2%
 
 ---
@@ -20,12 +20,12 @@ ht-degree: 2%
 
 - [[!DNL Segmentation Service]](../home.md)： [!DNL Segmentation Service]允许您将[!DNL Experience Platform]中存储的与个人（如客户、潜在客户、用户或组织）相关的数据划分到较小的组中。
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
-- [[!DNL Adobe Experience Platform Identity Service]](../../identity-service/home.md)：允许通过桥接从被摄取到[!DNL Platform]中的不同数据源的标识来创建客户配置文件。
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： [!DNL Platform]用于组织客户体验数据的标准化框架。 为了更好地利用分段，请确保根据用于数据建模的[最佳实践](../../xdm/schema/best-practices.md)，将您的数据作为配置文件和事件摄取。
+- [[!DNL Adobe Experience Platform Identity Service]](../../identity-service/home.md)：允许通过桥接从被摄取到[!DNL Experience Platform]中的不同数据源的标识来创建客户配置文件。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。 为了更好地利用分段，请确保根据用于数据建模的[最佳实践](../../xdm/schema/best-practices.md)，将您的数据作为配置文件和事件摄取。
 
 您还应该了解通过本文档使用的以下关键术语并了解它们之间的差异：
 
-- **受众**：一组具有相似行为和/或特征的人员。 此人员集合既可以通过Adobe Experience Platform使用区段定义（Platform生成的受众）生成并由受众组合生成，也可以从外部源(例如自定义上传（外部生成的受众）)生成。
+- **受众**：一组具有相似行为和/或特征的人员。 此人员集合既可以通过Adobe Experience Platform使用区段定义（Experience-Platform生成的受众）生成，也可以通过外部源（例如自定义上传）生成（外部生成的受众）。
 - **区段定义**： Adobe Experience Platform用于描述目标受众关键特征或行为的规则。
 - **区段**：将用户档案划分为受众的操作。
 
@@ -35,7 +35,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->如果您的组织是初次使用Platform，但尚未创建活动配置文件数据集或合并策略，则不会显示[!UICONTROL 受众]仪表板。 相反，[!UICONTROL 概述]选项卡会显示链接和文档，以帮助您开始使用受众。
+>如果您的组织是Experience Platform的新用户，并且尚未创建活动配置文件数据集或合并策略，则[!UICONTROL 受众]仪表板不可见。 相反，[!UICONTROL 概述]选项卡会显示链接和文档，以帮助您开始使用受众。
 
 ### [!UICONTROL 受众]仪表板 {#segments-dashboard}
 
@@ -49,7 +49,7 @@ ht-degree: 2%
 
 选择&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡以查看受众门户。 Audience Portal提供了属于您的组织和沙盒的所有受众的列表，并包括配置文件计数、来源、创建日期、上次修改日期、标记和划分等详细信息。
 
-此外，通过受众门户，您可以使用区段生成器或受众构成创建新受众，并将外部生成的受众导入Platform。
+此外，通过受众门户，您可以使用区段生成器或受众构成创建新受众，以及将外部生成的受众导入Experience Platform。
 
 有关受众门户的更多信息，请阅读[受众门户概述](./audience-portal.md)。
 
@@ -98,7 +98,7 @@ ht-degree: 2%
 
 ## 流式客户细分 {#streaming-segmentation}
 
-流式分段是近乎实时地对[!DNL Platform]进行分段，同时侧重于数据丰富性的能力。 借助流式分段，现在可以在数据进入[!DNL Platform]时进行分段鉴别，从而无需安排和运行分段作业。
+流式分段是近乎实时地对[!DNL Experience Platform]进行分段，同时侧重于数据丰富性的能力。 借助流式分段，现在可以在数据进入[!DNL Experience Platform]时进行分段鉴别，从而无需安排和运行分段作业。
 
 有关流式客户细分的更多信息，请参阅[流式客户细分用户指南](../methods/streaming-segmentation.md)。
 
@@ -108,7 +108,7 @@ ht-degree: 2%
 
 ## 边缘分段 {#edge-segmentation}
 
-Edge分段能够在边缘即时评估Platform中的受众，启用同一页面和下一页面个性化用例。
+Edge分段能够在边缘即时评估Experience Platform中的受众，启用同一页面和下一页面个性化用例。
 
 有关边缘分段的更多信息，请参阅[边缘分段UI指南](../methods/edge-segmentation.md)
 

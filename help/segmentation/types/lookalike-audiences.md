@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 相似受众
 description: 了解如何使用相似受众在Adobe Experience Platform中定位新的高价值受众。
 exl-id: c43dac6c-18a0-482f-803e-b75e1b211e98
-source-git-commit: f981b26a468a1d5ab9931a9cce59b176cd0fd9b3
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '2192'
+source-wordcount: '2193'
 ht-degree: 9%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 9%
 
 要使用相似见解，基本受众&#x200B;**必须**&#x200B;满足以下资格条件：
 
-- 必须在Platform中创建基础受众&#x200B;****。
+- 必须在Experience Platform中创建基础受众&#x200B;****。
    - 外部生成的受众&#x200B;**无**&#x200B;资格获得相似见解。
 - 基础受众&#x200B;**必须**&#x200B;使用默认合并策略。
 - 基础受众&#x200B;**必须**&#x200B;不使用数据治理所限制的字段。

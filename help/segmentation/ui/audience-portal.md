@@ -2,9 +2,9 @@
 title: 受众门户概述
 description: 了解如何使用Audience Portal在Adobe Experience Platform中查看、管理和创建受众。
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: 9eb5ccc24db58a887473f61c66a83aa92e16efa7
+source-git-commit: c1f06b14cb33a0fc29a50a2851c1fb52ae82c45d
 workflow-type: tm+mt
-source-wordcount: '4310'
+source-wordcount: '4356'
 ht-degree: 3%
 
 ---
@@ -26,6 +26,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
    - [使用区段生成器创建受众](#segment-builder)
    - [使用受众组合创建受众](#audience-composition)
    - [使用联合受众合成以使用来自您现有数据仓库的数据创建受众](#fac)
+   - [使用数据Distiller创建受众](#data-distiller)
 - [导入外部生成的受众](#import-audience)
 
 要打开Audience Portal，请选择“分段”部分中的&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡。
@@ -57,7 +58,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 | [!UICONTROL 编辑] | Segmentation Service | 打开区段生成器以编辑受众。 请注意，如果您的受众是通过API创建的，则&#x200B;**无法**&#x200B;使用区段生成器编辑它。 有关使用区段生成器的更多信息，请参阅[区段生成器UI指南](./segment-builder.md)。 |
 | [!UICONTROL 打开合成] | 受众组合 | 打开受众组合以查看受众。 有关受众组合的详细信息，请参阅[受众组合UI指南](./audience-composition.md)。 |
 | [!UICONTROL 激活到目标] | Segmentation Service | 激活目标受众。 有关将受众激活到目标的更多详细信息，请阅读[激活概述](../../destinations/ui/activation-overview.md)。 |
-| [!UICONTROL 与合作伙伴共享] | 受众构成、自定义上传、分段服务 | 与其他Platform用户共享您的受众。 有关此功能的更多信息，请阅读[区段匹配概述](./segment-match/overview.md)。 |
+| [!UICONTROL 与合作伙伴共享] | 受众构成、自定义上传、分段服务 | 与其他Experience Platform用户共享您的受众。 有关此功能的更多信息，请阅读[区段匹配概述](./segment-match/overview.md)。 |
 | [!UICONTROL 管理标记] | 受众构成、自定义上传、分段服务 | 管理属于受众的用户定义标记。 有关此功能的详细信息，请阅读[筛选和标记](#manage-audiences)部分。 |
 | [!UICONTROL 移至文件夹] | 受众构成、自定义上传、分段服务 | 管理受众属于哪个文件夹。 有关此功能的详细信息，请阅读[筛选和标记](#manage-audiences)部分。 |
 | [!UICONTROL 副本] | Segmentation Service | 复制所选受众。 有关此函数的更多信息，请参阅[分段常见问题解答](../faq.md#copy)。 |
@@ -274,7 +275,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 ### 受众总数 {#audience-total}
 
-对于平台生成的受众和合成，**[!UICONTROL 受众总计]**&#x200B;部分显示符合受众条件的配置文件总数。
+对于Experience Platform生成的受众和合成，**[!UICONTROL 受众总计]**&#x200B;部分显示符合受众条件的配置文件总数。
 
 >[!NOTE]
 >
@@ -297,7 +298,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 | 轮廓计数 | 符合受众条件的配置文件总数。 |
 | 数据集名称 | 受众被摄取到的数据集的名称。 您可以选择数据集名称，以了解有关数据集的更多信息。 要了解有关数据集的更多信息，请阅读[数据集UI指南](../../catalog/datasets/user-guide.md)。 |
 | 数据集批次 | 受众被引入的数据集的ID。 您可以选择批次的ID，以了解有关批次的详细信息。 要了解有关批次的详细信息，请阅读[监视数据摄取指南](../../ingestion/quality/monitor-data-ingestion.md#viewing-batches)。 |
-| 轮廓批次 | 在Platform上创建配置文件的批次的ID。 您可以选择批次的ID，以了解有关批次的详细信息。 要了解有关批次的详细信息，请阅读[监视数据摄取指南](../../ingestion/quality/monitor-data-ingestion.md#viewing-batches)。 |
+| 轮廓批次 | 在Experience Platform上创建配置文件的批次的ID。 您可以选择批次的ID，以了解有关批次的详细信息。 要了解有关批次的详细信息，请阅读[监视数据摄取指南](../../ingestion/quality/monitor-data-ingestion.md#viewing-batches)。 |
 | 架构 | 受众所属的架构的名称。 您可以选择架构的名称以查看有关架构的结构信息并应用数据使用标签。 有关详细信息，请阅读架构指南](../../xdm/tutorials/labels.md)的[管理数据使用标签。 |
 | 已提取的记录 | 摄取到数据集的记录数。 |
 | 失败的记录 | 无法引入数据集的记录数。 |
@@ -385,9 +386,17 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 ### 联合受众构成 {#fac}
 
-除了受众组合和区段定义之外，您还可以使用Adobe Federated Audience Composition从企业数据集构建新受众，而无需复制基础数据并将这些受众存储在Adobe Experience Platform受众门户中。 您还可以通过利用从企业数据仓库联合的组合受众数据来扩充Adobe Experience Platform中的现有受众。 请阅读有关[联合受众组合](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/home)的指南。
+您可以使用Adobe Federated Audience Composition从企业数据集构建新受众，而无需复制基础数据并将这些受众存储在Adobe Experience Platform Audience Portal中。
+
+您还可以通过利用从企业数据仓库联合的组合受众数据来扩充Adobe Experience Platform中的现有受众。 请阅读有关[联合受众组合](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/home)的指南。
 
 ![在您的组织的联合受众组合中创建的受众列表。](../images/ui/overview/federated-audience-composition.png)
+
+### 数据蒸馏器 {#data-distiller}
+
+您可以使用Data Distiller的SQL扩展从数据湖构建受众。 此数据包括现有的维度实体，例如客户属性或产品信息。
+
+有关数据Distiller的详细信息，请参阅[使用SQL指南构建受众](../../query-service/data-distiller-audiences/overview.md)。
 
 ## 导入受众 {#import-audience}
 
@@ -446,7 +455,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 >
 >此外，如果您的外部生成的受众包含敏感信息和/或医疗保健相关信息，则在将其激活到任何目标之前，您&#x200B;**必须**&#x200B;应用必要的数据使用标签。 由于来自外部生成受众的变量存储在数据湖中而不是实时客户配置文件中，因此&#x200B;**不应**&#x200B;在CSV文件中包含同意数据。
 >
->有关应用数据使用标签的详细信息，请阅读有关[管理标签](../../access-control/abac/ui/labels.md)的文档。 要了解平台上的数据使用标签的一般信息，请阅读[数据使用标签概述](../../data-governance/labels/overview.md)。 要了解同意如何在外部生成的受众中起作用，请阅读[受众常见问题解答](../faq.md#consent)。
+>有关应用数据使用标签的详细信息，请阅读有关[管理标签](../../access-control/abac/ui/labels.md)的文档。 要了解一般情况下Experience Platform上的数据使用标签，请阅读[数据使用标签概述](../../data-governance/labels/overview.md)。 要了解同意如何在外部生成的受众中起作用，请阅读[受众常见问题解答](../faq.md#consent)。
 
 ## 后续步骤
 
