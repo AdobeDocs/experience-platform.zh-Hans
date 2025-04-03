@@ -2,9 +2,9 @@
 title: 沙盒工具
 description: 在沙盒之间无缝导出和导入沙盒配置。
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: 85476ea8a667cf3e74cd7a24da07d81c635e1628
+source-git-commit: 3cedf019cff7ef0aa06da1242798a533196f9b2a
 workflow-type: tm+mt
-source-wordcount: '2431'
+source-wordcount: '2485'
 ht-degree: 7%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 7%
 
 沙盒工具功能允许您将[!DNL Adobe Real-Time Customer Data Platform]和[!DNL Adobe Journey Optimizer]对象导出到包中。
 
-### Real-time Customer Data Platform对象 {#real-time-cdp-objects}
+### 实时客户数据平台对象 {#real-time-cdp-objects}
 
 下表列出了当前支持沙盒工具的[!DNL Adobe Real-Time Customer Data Platform]对象：
 
@@ -31,7 +31,7 @@ ht-degree: 7%
 | --- | --- | --- |
 | 客户数据平台 | 源 | 出于安全原因，源帐户凭据未复制到目标沙盒中，需要手动更新。 默认情况下，源数据流将以草稿状态复制。 |
 | 客户数据平台 | 受众 | 仅支持&#x200B;**[!UICONTROL 客户受众]**&#x200B;类型&#x200B;**[!UICONTROL 分段服务]**。 用于同意和管理的现有标签将复制到同一导入作业中。 检查合并策略依赖关系时，系统将自动选择具有相同XDM类的目标沙盒中的默认合并策略。 |
-| 客户数据平台 | 标识 | 在Adobe沙盒中创建时，系统将自动删除重复的目标标准身份命名空间。 仅当在合并架构中启用受众规则中的所有属性时，才能复制受众。 必须先为统一配置文件移动和启用必要的架构。 |
+| 客户数据平台 | 身份标识 | 在Target沙盒中创建时，系统将自动删除重复的Adobe标准身份命名空间。 仅当在合并架构中启用受众规则中的所有属性时，才能复制受众。 必须先为统一配置文件移动和启用必要的架构。 |
 | 客户数据平台 | 架构 | 用于同意和管理的现有标签将复制到同一导入作业中。 用户可以灵活地导入未启用统一配置文件选项的架构。 架构关系边缘用例未包含在包中。 |
 | 客户数据平台 | 数据集 | 在复制数据集时，默认情况下将禁用统一配置文件设置。 |
 | 客户数据平台 | 同意和治理政策 | 将用户创建的自定义策略添加到包中，并在沙盒之间移动它们。 |
@@ -60,6 +60,7 @@ ht-degree: 7%
 | [!DNL Adobe Journey Optimizer] | 历程 | 将整个历程添加到资源包时，将复制历程所依赖的大多数对象，包括受众、架构、事件和操作。 |
 | [!DNL Adobe Journey Optimizer] | 内容模板 | 内容模板可以作为历程对象的依赖对象复制。 通过独立模板，可轻松地在Journey Optimizer营销活动和历程中重用自定义内容。 |
 | [!DNL Adobe Journey Optimizer] | 片段 | 片段可以作为历程对象的依赖对象复制。 片段是可重用的组件，可以在各个Journey Optimizer营销活动和历程中的一个或多个电子邮件中引用。 |
+| [!DNL Adobe Journey Optimizer] | 营销活动 | 营销活动可与所有与用户档案、受众、架构、内联消息和依赖对象相关的项目一起复制。 某些项目不会被复制，例如决策项目、数据使用标签和语言设置。 有关无法复制的对象的完整列表，请参阅[将对象导出到另一个沙盒](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox)指南。 |
 
 曲面（例如预设）不会被复制。 系统根据消息类型和表面名称，自动选择目标沙盒上最接近的匹配项。 如果在目标沙盒上未找到表面，则表面复制将失败，导致消息复制失败，因为消息需要表面才可供设置。 在这种情况下，需要为消息的正确渠道至少创建一个表面，以便副本正常工作。
 
@@ -114,13 +115,13 @@ ht-degree: 7%
 
 ![[!UICONTROL 添加到包]对话框，显示从下拉列表中选定的包。](../images/ui/sandbox-tooling/add-to-existing-package.png)
 
-将列出添加到包中的对象列表。 要发布包并使其可用于导入到沙盒中，请选择&#x200B;**[!UICONTROL Publish]**。
+将列出添加到包中的对象列表。 要发布包并使其可以导入到沙盒中，请选择&#x200B;**[!UICONTROL 发布]**。
 
-![包中的对象列表，突出显示[!UICONTROL Publish]选项。](../images/ui/sandbox-tooling/publish-package.png)
+![包中的对象列表，突出显示[!UICONTROL 发布]选项。](../images/ui/sandbox-tooling/publish-package.png)
 
-选择&#x200B;**[!UICONTROL Publish]**&#x200B;以确认发布包。
+选择&#x200B;**[!UICONTROL 发布]**&#x200B;以确认发布包。
 
-![Publish包确认对话框，突出显示[!UICONTROL Publish]选项。](../images/ui/sandbox-tooling/publish-package-confirmation.png)
+![发布包确认对话框，突出显示[!UICONTROL 发布]选项。](../images/ui/sandbox-tooling/publish-package-confirmation.png)
 
 >[!NOTE]
 >
@@ -191,7 +192,7 @@ ht-degree: 7%
 
 ![ [!UICONTROL 创建包]对话框显示已完成的字段并突出显示[!UICONTROL 创建]。](../images/ui/sandbox-tooling/create-package-dialog.png)
 
-已成功创建包，请选择&#x200B;**[!UICONTROL Publish]**&#x200B;以发布包。
+已成功创建包，请选择&#x200B;**[!UICONTROL 发布]**&#x200B;以发布包。
 
 ![突出显示新发布的包的沙盒包列表。](../images/ui/sandbox-tooling/publish-entire-sandbox-packages.png)
 
@@ -261,6 +262,6 @@ Use the arrows to expand objects to view the full list of fields that have been 
 
 ## 后续步骤
 
-本文档演示了如何在Experience PlatformUI中使用沙盒工具功能。 有关沙盒的信息，请参阅[沙盒用户指南](../ui/user-guide.md)。
+本文档演示了如何在Experience Platform UI中使用沙盒工具功能。 有关沙盒的信息，请参阅[沙盒用户指南](../ui/user-guide.md)。
 
 有关使用沙盒API执行不同操作的步骤，请参阅[沙盒开发人员指南](../api/getting-started.md)。 有关Experience Platform中沙盒的高级概述，请参阅[概述文档](../home.md)。
