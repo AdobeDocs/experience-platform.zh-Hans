@@ -3,10 +3,10 @@ description: 了解如何在Adobe Experience Platform UI中使用模板来加速
 title: 在 UI 中使用模板创建源数据流
 badge1: Beta 版
 exl-id: 48aa36ca-656d-4b9d-954c-48c8da9df1e9
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2241'
-ht-degree: 10%
+source-wordcount: '2250'
+ht-degree: 9%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 10%
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_marketo_mapping"
->title="Platform UI 中各种来源的模板"
+>title="Experience Platform UI中的源模板"
 >abstract="模板包括在将数据从来源引入到 Experience Platform 时可使用的自动生成的资源，如架构、数据集、身份标识、映射规则、身份标识命名空间和数据流。可更新自动生成的资源，以使自定义适合您的用例。"
 
 >[!IMPORTANT]
@@ -27,7 +27,7 @@ ht-degree: 10%
 >
 >文档和功能可能会发生更改。
 
-Adobe Experience Platform提供了预配置的模板，您可以使用这些模板加快数据摄取过程。 模板包括自动生成的资源，例如架构、数据集、身份、映射规则、身份命名空间和数据流，在将数据从源引入到Experience Platform时可以使用该资源。
+Adobe Experience Platform提供了预配置的模板，您可以使用这些模板加快数据摄取过程。 模板包括自动生成的资源，例如架构、数据集、身份、映射规则、身份命名空间以及可在将数据从源引入Experience Platform时使用的数据流。
 
 使用模板，您可以：
 
@@ -35,17 +35,17 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 * 最大程度地减少手动数据摄取过程中可能发生的错误。
 * 随时更新自动生成的资源以符合您的用例。
 
-以下教程提供了有关如何在Platform UI中使用模板的步骤。
+以下教程提供了有关如何在Experience Platform UI中使用模板的步骤。
 
 ## 开始使用
 
 本教程需要对以下Experience Platform组件有一定的了解：
 
-* [源](../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
-* [[!DNL Experience Data Model (XDM)] 系统](../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
-* [沙盒](../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
+* [沙盒](../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-## 在 Platform UI 中使用模板 {#use-templates-in-the-platform-ui}
+## 在Experience Platform UI中使用模板 {#use-templates-in-the-platform-ui}
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_templates_accounttype"
@@ -53,7 +53,7 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 >abstract="为您的用例选择适当的业务类型。您的访问权限可能因 Real-Time Customer Data Platform 订阅帐户而异。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#" text="Real-Time CDP 概述"
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区，并查看Experience Platform中可用的源目录。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区，并查看Experience Platform中可用的源目录。
 
 使用&#x200B;*[!UICONTROL 类别]*&#x200B;菜单按类别筛选源。 或者，在搜索栏中输入源名称，以从目录查找特定源。
 
@@ -137,7 +137,7 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 
 | [!DNL Salesforce]个B2C模板 | 描述 |
 | --- | --- |
-| 联系人 | Contact模板可捕获联系人的属性，如人口统计信息、联系人信息和相关业务实体。 |
+| 联系 | Contact模板可捕获联系人的属性，如人口统计信息、联系人信息和相关业务实体。 |
 | 潜在客户 | 商机模板捕获商机的属性，如人口统计详细信息、联系信息和相关业务实体。 |
 
 {style="table-layout:auto"}
@@ -167,7 +167,7 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 
 | [!DNL Microsoft Dynamics]个B2C模板 | 描述 |
 | --- | --- |
-| 联系人 | Contact模板可捕获联系人的属性，如人口统计信息、联系人信息和相关业务实体。 |
+| 联系 | Contact模板可捕获联系人的属性，如人口统计信息、联系人信息和相关业务实体。 |
 | 潜在客户 | 商机模板捕获商机的属性，如人口统计详细信息、联系信息和相关业务实体。 |
 
 {style="table-layout:auto"}
@@ -237,7 +237,7 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 >
 >![源工作区数据流目录中的现有数据流列表。](../../images/tutorials/templates/dataflows.png)
 
-### Publish您的数据流
+### 发布数据流
 
 通过浏览源工作流开始发布流程。 选择[!UICONTROL 更新数据流]后，您将进入工作流的&#x200B;*[!UICONTROL 添加数据]*&#x200B;步骤。 选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
 
@@ -267,8 +267,8 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 
 Adobe Experience Platform警报支持模板，您可以使用通知面板接收有关资源状态的更新，并导航回审核页面。
 
-选择Platform UI顶部标题中的通知图标，然后选择状态警报以查看要审阅的资产。
+选择Experience Platform UI顶部标题中的通知图标，然后选择状态警报以查看要审阅的资源。
 
-![Platform UI中带有通知的通知面板高亮显示，该通知提醒失败的数据流。](../../images/tutorials/templates/notifications.png)
+![高亮显示Experience Platform UI中通知面板，其中包含用于警报失败数据流的通知。](../../images/tutorials/templates/notifications.png)
 
-您可以更新模板的警报设置，以接收有关数据流状态的电子邮件和平台内通知。 有关配置警报的更多信息，请阅读有关[如何订阅源数据流的警报](../ui/alerts.md)的指南。
+您可以更新模板的警报设置，以接收有关数据流状态的电子邮件和Experience Platform内通知。 有关配置警报的更多信息，请阅读有关[如何订阅源数据流的警报](../ui/alerts.md)的指南。

@@ -3,10 +3,10 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制创建角色
 description: 本文档提供了有关通过Adobe Experience Cloud中的权限界面管理角色的信息
 exl-id: 85699716-339d-4992-8390-95563c7ea7fe
-source-git-commit: 74980c6108a32ec6736ab5892d89590e04e8a500
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '618'
-ht-degree: 23%
+source-wordcount: '619'
+ht-degree: 21%
 
 ---
 
@@ -19,7 +19,7 @@ ht-degree: 23%
 >[!CONTEXTUALHELP]
 >id="platform_permissions_roles_about_create"
 >title="创建新角色"
->abstract="创建新角色以更好地对与您的平台实例交互的用户进行分类。例如，可为内部营销团队创建一个角色，并将受监管的健康数据 (RHD) 标签应用于该角色，使您的内部营销团队可访问受保护的健康信息 (PHI)。或者，还可为外部机构创建一个角色，并通过不将 RHD 标签应用于该角色而拒绝该角色访问 PHI 数据。"
+>abstract="创建新角色，以便更好地对与Experience Platform实例交互的用户进行分类。 例如，可为内部营销团队创建一个角色，并将受监管的健康数据 (RHD) 标签应用于该角色，使您的内部营销团队可访问受保护的健康信息 (PHI)。或者，还可为外部机构创建一个角色，并通过不将 RHD 标签应用于该角色而拒绝该角色访问 PHI 数据。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html" text="管理角色"
 >additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/abac/end-to-end-guide#label-roles" text="将标签应用于角色"
 

@@ -4,10 +4,10 @@ description: 了解如何通过审核日志查看谁在 Adobe Experience Platfor
 role: Admin,Developer
 feature: Audits
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: 9bc80c2ee01e7a739db55cc7fc77ea19e609b265
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1466'
-ht-degree: 32%
+source-wordcount: '1476'
+ht-degree: 27%
 
 ---
 
@@ -16,19 +16,19 @@ ht-degree: 32%
 >[!CONTEXTUALHELP]
 >id="platform_audits_privacyconsole_actions"
 >title="热门操作"
->abstract="此小组件显示在选定时间范围内在 Experience Platform 中执行的最常见操作类型。要查看 Platform 中记录的操作的完整列表，请选择左侧导航中的&#x200B;**审计**。"
+>abstract="此小组件显示在选定时间范围内在 Experience Platform 中执行的最常见操作类型。要查看Experience Platform中记录的操作的完整列表，请在左侧导航中选择&#x200B;**审核**。"
 
 >[!CONTEXTUALHELP]
 >id="platform_audits_privacyconsole_users"
 >title="热门用户"
->abstract="此小组件显示在所选时间段内在 Experience Platform 中执行的操作最多的用户。要查看 Platform 中记录的操作的完整列表，请选择左侧导航中的&#x200B;**审计**。"
+>abstract="此小组件显示在所选时间段内在 Experience Platform 中执行的操作最多的用户。要查看Experience Platform中记录的操作的完整列表，请在左侧导航中选择&#x200B;**审核**。"
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_audits_description"
->title="在 Platform 中监测用户活动"
->abstract="<h2>描述</h2><p>可按审核日志的形式监测多种 Platform 服务和功能的用户活动。这些日志组成一条审核线索，其中记录<b>谁</b><b>何时</b>执行了<b>什么</b>。审核日志可帮助解决 Platform 上的问题以及帮助您的企业有效地遵守公司数据管理政策和监管要求。</p>"
+>title="监控Experience Platform中的用户活动"
+>abstract="<h2>描述</h2><p>您可以通过审核日志的形式监控各种Experience Platform服务和功能的用户活动。 这些日志组成一条审核线索，其中记录<b>谁</b><b>何时</b>执行了<b>什么</b>。审核日志可以帮助对Experience Platform问题进行故障诊断，并帮助您的企业有效地遵守公司数据管理政策和法规要求。</p>"
 
-为了提高系统中执行的活动的透明度和可见性，Adobe Experience Platform允许您以“审核日志”的形式审核各种服务和功能的用户活动。 这些日志形成审核记录，可以帮助对Platform上的问题进行故障诊断，并帮助您的企业有效地遵守公司数据管理政策和法规要求。
+为了提高系统中执行的活动的透明度和可见性，Adobe Experience Platform允许您以“审核日志”的形式审核各种服务和功能的用户活动。 这些日志形成审核记录，可以帮助对Experience Platform问题进行故障诊断，并帮助您的企业有效地遵守公司数据管理政策和法规要求。
 
 从基本意义上说，审核日志可告知&#x200B;**谁**&#x200B;执行了&#x200B;**什么**&#x200B;操作，以及&#x200B;**何时**。 日志中记录的每个操作都包含元数据，这些元数据指示操作类型、日期和时间、执行操作的用户的电子邮件ID以及与操作类型相关的其他属性。
 
@@ -36,7 +36,7 @@ ht-degree: 32%
 >
 > **角色**&#x200B;资源中操作&#x200B;**添加用户**&#x200B;和&#x200B;**删除用户**&#x200B;的元数据不包含执行该操作的用户的电子邮件ID。 相反，日志将显示系统生成的电子邮件ID (system@adobe.com)。
 
-本文档介绍Platform中的审核日志，包括如何在UI或API中查看和管理它们。
+本文档介绍Experience Platform中的审核日志，包括如何在UI或API中查看和管理它们。
 
 ## 审核日志记录的事件类型 {#category}
 
@@ -74,7 +74,7 @@ ht-degree: 32%
 
 为您的组织启用该功能后，系统会在活动发生时自动收集审核日志。 您无需手动启用日志收集。
 
-为了查看和导出审核日志，您必须授予&#x200B;**[!UICONTROL 查看用户活动日志]**&#x200B;访问控制权限（可在[!UICONTROL 数据管理]类别下找到）。 要了解如何管理Platform功能的各个权限，请参阅[访问控制文档](../../../access-control/home.md)。
+为了查看和导出审核日志，您必须授予&#x200B;**[!UICONTROL 查看用户活动日志]**&#x200B;访问控制权限（可在[!UICONTROL 数据管理]类别下找到）。 要了解如何管理Experience Platform功能的各个权限，请参阅[访问控制文档](../../../access-control/home.md)。
 
 ## 在 UI 中管理审核日志 {#managing-audit-logs-in-the-ui}
 
@@ -83,7 +83,7 @@ ht-degree: 32%
 >title="说明"
 >abstract="<ul><li>在左侧导航中选择<b>审核</b>。“审核”工作区显示记录日志的列表，默认按最新到最旧排序。</li>   <li> 注意：将审核日志保留 365 天，此后将从系统中删除审核日志。因此，只能回溯最长为期 365 天。如果需要回溯超过 365 天之前的数据，则应定期导出日志以满足您的内部政策要求。 </li><li>从列表中选择一个事件以在右边栏中查看其详细信息。 </li><li>选择漏斗图标以显示过滤器控件的列表，帮助缩小结果范围。无论选择什么过滤器，都仅显示最后 1000 条记录。 </li><li>要导出审核日志的当前列表，请选择&#x200B;**下载日志**。</li><li>有关此功能的更多帮助，请参阅 Experience League 上的<a href="https://experienceleague.adobe.com/docs/experience-platform/landing/governance-privacy-security/audit-logs/overview.html?lang=zh-Hans">审核日志概述</a>。</li></ul>"
 
-您可以在Platform UI的&#x200B;**[!UICONTROL 审核]**&#x200B;工作区中查看其他Experience Platform功能的审核日志。 工作区会显示记录的日志列表，默认情况下，这些日志按从最近到最近的顺序排序。
+您可以在Experience Platform UI的&#x200B;**[!UICONTROL 审核]**&#x200B;工作区中查看其他Experience Platform功能的审核日志。 工作区会显示记录的日志列表，默认情况下，这些日志按从最近到最近的顺序排序。
 
 ![左侧菜单中突出显示“审核”的“审核”仪表板。](../../images/audit-logs/audits.png)
 
@@ -171,7 +171,7 @@ ht-degree: 32%
 
 ## 后续步骤和其他资源
 
-本指南介绍了如何在Experience Platform中管理审核日志。 有关如何监视Platform活动的更多信息，请参阅有关[可观察性分析](../../../observability/home.md)和[监视数据摄取](../../../ingestion/quality/monitor-data-ingestion.md)的文档。
+本指南介绍了如何在Experience Platform中管理审核日志。 有关如何监视Experience Platform活动的更多信息，请参阅有关[可观察性分析](../../../observability/home.md)和[监视数据摄取](../../../ingestion/quality/monitor-data-ingestion.md)的文档。
 
 要加深您对Experience Platform中审核日志的了解，请观看以下视频：
 

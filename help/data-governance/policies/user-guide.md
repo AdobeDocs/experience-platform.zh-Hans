@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 在UI中管理数据使用策略
 description: Adobe Experience Platform Data Governance提供了一个用户界面，允许您创建和管理数据使用策略。 本文档概述了您可以在Experience Platform用户界面的“策略”工作区中执行的操作。
 exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1768'
-ht-degree: 16%
+source-wordcount: '1769'
+ht-degree: 15%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 16%
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataUsagePolicies_description"
 >title="在您的轮廓数据中集成并强制客户同意"
->abstract="<h2>描述</h2><p>通过 Platform，可将从客户收集的同意数据集成到其各自的轮廓中。然后可设置同意策略以确定能否在对于特定目标激活的区段中包括这些数据。</p>"
+>abstract="<h2>描述</h2><p>Experience Platform允许您将从客户那里收集的同意数据集成到他们各自的配置文件中。 然后可设置同意策略以确定能否在对于特定目标激活的区段中包括这些数据。</p>"
 
 本文档介绍如何在Adobe Experience Platform UI中使用&#x200B;**[!UICONTROL 策略]**&#x200B;工作区来创建和管理数据使用策略。
 
@@ -26,7 +26,7 @@ ht-degree: 16%
 
 >[!IMPORTANT]
 >
->默认情况下，将禁用所有数据使用策略(包括Adobe提供的核心策略)。 为了考虑实施单个策略，您必须手动启用该策略。 有关如何在UI中启用策略的步骤，请参阅[启用策略](#enable)的相关部分。
+>默认情况下，所有数据使用策略(包括Adobe提供的核心策略)都处于禁用状态。 为了考虑实施单个策略，您必须手动启用该策略。 有关如何在UI中启用策略的步骤，请参阅[启用策略](#enable)的相关部分。
 
 ## 先决条件
 
@@ -65,7 +65,7 @@ ht-degree: 16%
 
 >[!NOTE]
 >
->同意策略当前仅适用于已购买AdobeHealthcare Shield或AdobePrivacy &amp; Security Shield的组织。
+>同意策略当前仅适用于已购买Adobe Healthcare Shield或Adobe Privacy &amp; Security Shield的组织。
 
 治理和同意策略可结合使用，以创建强大的规则来管理映射到目标的受众。 同意策略本质上具有包容性，这意味着它们规定了每个营销体验中可以包含哪些用户档案。 反过来，治理策略会排除使用特定的已标记属性，无法对其进行配置以进行激活。
 
@@ -108,13 +108,13 @@ ht-degree: 16%
 
 >[!IMPORTANT]
 >
->同意政策仅适用于已购买&#x200B;**AdobeHealthcare Shield**&#x200B;或&#x200B;**AdobePrivacy &amp; Security Shield**&#x200B;的组织。
+>同意策略仅适用于已购买&#x200B;**Adobe Healthcare Shield**&#x200B;或&#x200B;**Adobe Privacy &amp; Security Shield**&#x200B;的组织。
 
 如果您选择创建同意策略，则会显示一个新屏幕，通过该屏幕可配置新策略。
 
 ![](../images/policies/consent-policy-dialog.png)
 
-要使用同意策略，您的配置文件数据中必须存在同意属性。 有关如何将所需属性包含在合并架构中的详细步骤，请参阅Experience Platform](../../landing/governance-privacy-security/consent/adobe/overview.md)中的[同意处理指南。
+要使用同意策略，您的配置文件数据中必须存在同意属性。 有关如何将所需属性包含在合并架构中的详细步骤，请参阅Experience Platform中的[同意处理](../../landing/governance-privacy-security/consent/adobe/overview.md)指南。
 
 同意策略由两个逻辑组件组成：
 
@@ -173,7 +173,7 @@ ht-degree: 16%
 
 ## 启用或禁用策略 {#enable}
 
-默认情况下，将禁用所有数据使用策略(包括Adobe提供的核心策略)。 对于要考虑实施的单个策略，您必须通过API或UI手动启用该策略。
+默认情况下，所有数据使用策略(包括Adobe提供的核心策略)都处于禁用状态。 对于要考虑实施的单个策略，您必须通过API或UI手动启用该策略。
 
 您可以在&#x200B;**[!UICONTROL 策略]**&#x200B;工作区的&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡中启用或禁用策略。 从列表中选择自定义策略，以在右侧显示其详细信息。 在&#x200B;**[!UICONTROL 状态]**&#x200B;下，选择切换按钮以启用或禁用策略。
 

@@ -2,16 +2,16 @@
 title: 在UI中创建Mixpanel Source连接
 description: 了解如何使用Adobe Experience Platform UI创建Mixpanel源连接。
 exl-id: 2a02f6a4-08ed-468c-8052-f5b7be82d183
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '797'
-ht-degree: 11%
+source-wordcount: '805'
+ht-degree: 8%
 
 ---
 
 # 在用户界面中创建[!DNL Mixpanel]源连接
 
-本教程提供了使用Adobe Experience Platform Platform用户界面创建[!DNL Mixpanel]源连接的步骤。
+本教程提供了使用Adobe Experience Platform Experience Platform用户界面创建[!DNL Mixpanel]源连接的步骤。
 
 ## 快速入门
 
@@ -24,7 +24,7 @@ ht-degree: 11%
 
 ### 收集所需的凭据
 
-为了将[!DNL Mixpanel]连接到Platform，您必须提供以下连接属性的值：
+为了将[!DNL Mixpanel]连接到Experience Platform，您必须提供以下连接属性的值：
 
 | 凭据 | 描述 | 示例 |
 | --- | --- | --- |
@@ -37,7 +37,7 @@ ht-degree: 11%
 
 ## 连接您的[!DNL Mixpanel]帐户
 
-在Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
+在Experience Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
@@ -64,12 +64,12 @@ ht-degree: 11%
 >[!CONTEXTUALHELP]
 >id="platform_sources_mixpanel_timezone"
 >title="为 Mixpanel 提取设置时区"
->abstract="时区必须与您的 Mixpanel 轮廓时区设置相同，因为 Platform 使用指定的项目时区来从 Mixpanel 提取相关数据。在将事件记录到 Mixpanel 数据存储之前，Mixpanel 将调整其时区以与您的项目时区协调。"
+>abstract="时区必须与您的Mixpanel用户档案时区设置相同，因为Experience Platform使用指定的项目时区从Mixpanel中摄取相关数据。 在将事件记录到 Mixpanel 数据存储之前，Mixpanel 将调整其时区以与您的项目时区协调。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/analytics/mixpanel.html#project-id-and-timezone" text="请在文档中了解详情"
 
 源通过身份验证后，请提供项目ID和时区，然后选择&#x200B;**[!UICONTROL 选择]**。
 
-将[!DNL Mixpanel]数据摄取到Platform之前指定的时区必须与您的[!DNL Mixpanel]配置文件时区设置相同。 对数据时区所做的任何更改将仅适用于新事件，旧事件将保留在您之前指定的时区中。 [!DNL Mixpanel]采用夏令时，并将相应地调整您的摄取时间戳。 有关时区如何影响您的数据的更多信息，请参阅[管理项目时区](https://help.mixpanel.com/hc/en-us/articles/115004547203-Manage-Timezones-for-Projects-in-Mixpanel)的[!DNL Mixpanel]指南。
+在将[!DNL Mixpanel]数据摄取到Experience Platform之前您指定的时区必须与您的[!DNL Mixpanel]配置文件时区设置相同。 对数据时区所做的任何更改将仅适用于新事件，旧事件将保留在您之前指定的时区中。 [!DNL Mixpanel]采用夏令时，并将相应地调整您的摄取时间戳。 有关时区如何影响您的数据的更多信息，请参阅[管理项目时区](https://help.mixpanel.com/hc/en-us/articles/115004547203-Manage-Timezones-for-Projects-in-Mixpanel)的[!DNL Mixpanel]指南。
 
 片刻后，正确的界面将更新为预览面板，允许您在创建数据流之前检查架构。 完成后，选择&#x200B;**[!UICONTROL 下一步]**。
 
@@ -77,7 +77,7 @@ ht-degree: 11%
 
 ## 后续步骤
 
-通过学习本教程，您已建立与[!DNL Mixpanel]帐户的连接。 您现在可以继续下一教程，并[配置数据流以将分析数据导入Platform](../../dataflow/analytics.md)。
+通过学习本教程，您已建立与[!DNL Mixpanel]帐户的连接。 您现在可以继续下一教程并[配置数据流以将Analytics数据引入Experience Platform](../../dataflow/analytics.md)。
 
 ## 其他资源 {#additional-resources}
 
@@ -85,9 +85,9 @@ ht-degree: 11%
 
 ### 验证 {#validation}
 
-下面概述了验证是否成功连接[!DNL Mixpanel]源以及是否正在将[!DNL Mixpanel]事件摄取到Platform可以采取的步骤。
+下面概述了验证是否成功连接[!DNL Mixpanel]源以及是否正在将[!DNL Mixpanel]事件摄取到Experience Platform可以采取的步骤。
 
-在Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以访问[!UICONTROL 数据集]工作区。 [!UICONTROL 数据集活动]屏幕显示执行的详细信息。
+在Experience Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以访问[!UICONTROL 数据集]工作区。 [!UICONTROL 数据集活动]屏幕显示执行的详细信息。
 
 ![数据集活动](../../../../images/tutorials/create/mixpanel-export-events/dataset-activity.png)
 

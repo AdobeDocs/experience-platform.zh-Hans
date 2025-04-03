@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 在UI中管理数据使用标签
 description: 本指南介绍在Adobe Experience Platform用户界面中使用数据使用标签的步骤。
 exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
-source-git-commit: a5efc45f0043cd6eb4a209737b9e430c85ea2f14
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1548'
-ht-degree: 17%
+source-wordcount: '1552'
+ht-degree: 14%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 17%
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataGovernance_description"
->title="在 Platform 中治理数据使用"
+>title="管理Experience Platform中的数据使用"
 >abstract="<h2>描述</h2><p>通过 Experience Platform 中的数据治理框架，可根据数据使用限制为属性和架构加标签，以及设置标识特定营销活动并为其遵守这些限制的策略。</p>"
 
 本用户指南介绍在[!DNL Experience Platform]用户界面中使用数据使用标签的步骤。
@@ -24,7 +24,7 @@ ht-degree: 17%
 
 要将标签应用于数据，您需要&#x200B;**[!UICONTROL 管理使用标签]**&#x200B;权限才能在名为“prod”的默认生产沙盒上使用。 要创建自定义标签，您还必须对产品配置文件具有管理权限。 每个组织只有一个适用的标签列表。 您&#x200B;**无法**&#x200B;删除标签。 相反，您可以从应用了这些指标的数据集或字段中将其删除。
 
-有关如何分配权限的更多信息，请参阅如何[配置权限](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/configure-permissions.html)的指南或[访问控制概述](../../access-control/home.md)。 如果您无权访问贵组织的Admin Console，请联系贵组织管理员。
+有关如何分配权限的更多信息，请参阅如何[配置权限](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/configure-permissions.html)的指南或[访问控制概述](../../access-control/home.md)。 如果您无权访问组织的Admin Console，请联系您的组织管理员。
 
 ## 在架构级别管理标签
 
@@ -61,11 +61,11 @@ ht-degree: 17%
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataGovernance_instructions"
 >title="说明"
->abstract="<ol><li>在左侧导航中选择<a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/user-guide.html?lang=zh-Hant">数据集</a>，然后选择要限制其数据的数据集。</li><li>从数据集详细信息视图中，选择<b>数据治理</b>选项卡。</li><li>选择要限制的数据集字段，然后选择<b>编辑治理标签</b>以根据使用限制为数据加标签。</li><li>为数据加标签后，在左侧导航中选择<a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html?lang=zh-Hans">策略</a>，然后选择<b>创建策略</b>。</li><li>选择创建一个<a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#create-governance-policy">数据治理策略</a>，然后选择将应用于该策略的数据使用标签。</li><li>选择该策略将拒绝对任何包含这些标签的数据执行的营销操作。创建该策略后，从列表中选择它，然后使用右边栏中的切换开关启用它。</li><li>对于每个启用的策略，Platform 阻止将任何包含指定标签的数据用于所定义的营销操作。当您尝试对于具有关联的营销操作（用例）的目标激活加了标签的数据时，将自动施加此强制。</li></ol>"
+>abstract="<ol><li>在左侧导航中选择<a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/user-guide.html?lang=zh-Hans">数据集</a>，然后选择要限制其数据的数据集。</li><li>从数据集详细信息视图中，选择<b>数据治理</b>选项卡。</li><li>选择要限制的数据集字段，然后选择<b>编辑治理标签</b>以根据使用限制为数据加标签。</li><li>为数据加标签后，在左侧导航中选择<a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html?lang=zh-Hans">策略</a>，然后选择<b>创建策略</b>。</li><li>选择创建一个<a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#create-governance-policy">数据治理策略</a>，然后选择将应用于该策略的数据使用标签。</li><li>选择该策略将拒绝对任何包含这些标签的数据执行的营销操作。创建该策略后，从列表中选择它，然后使用右边栏中的切换开关启用它。</li><li>对于每个启用的策略，Experience Platform阻止将包含指定标签的任何数据用于定义的营销操作。 当您尝试对于具有关联的营销操作（用例）的目标激活加了标签的数据时，将自动施加此强制。</li></ol>"
 
 >[!IMPORTANT]
 >
->标签无法再应用于数据集级别的字段。 此工作流已弃用，支持在架构级别应用标签。 在2024年5月31日之前，之前在数据集对象级别应用的任何标签仍将通过Platform UI受到支持。 要确保您的标签在所有架构中保持一致，在未来一年中，必须将之前附加到数据集级别字段的任何标签迁移到架构级别。 有关[如何将以前应用的标签从数据集迁移到架构级别](../e2e.md#migrate-labels)的说明，请参阅文档。
+>标签无法再应用于数据集级别的字段。 此工作流已弃用，支持在架构级别应用标签。 在2024年5月31日之前，之前在数据集对象级别应用的任何标签仍将通过Experience Platform UI受到支持。 要确保您的标签在所有架构中保持一致，在未来一年中，必须将之前附加到数据集级别字段的任何标签迁移到架构级别。 有关[如何将以前应用的标签从数据集迁移到架构级别](../e2e.md#migrate-labels)的说明，请参阅文档。
 
 标签可以从&#x200B;**[!UICONTROL 数据集]**&#x200B;工作区的&#x200B;**[!UICONTROL 数据管理]**&#x200B;选项卡应用于整个数据集。 工作区允许您在数据集级别管理数据使用标签。
 
@@ -120,7 +120,7 @@ The inherited labels beside each field do not have an "x" next to them and appea
 >[!CONTEXTUALHELP]
 >id="platform_governance_createlabels"
 >title="创建标签"
->abstract="通过标签，可根据适用于数据的使用策略将数据集和字段分类。Platform 提供了一组标准标签供您使用，但您也可以创建特定于您的组织的自定义标签。"
+>abstract="通过标签，可根据适用于数据的使用策略将数据集和字段分类。Experience Platform提供了一组标准标签供您使用，但您也可以创建特定于贵组织的自定义标签。"
 
 您可以在[!DNL Experience Platform] UI的&#x200B;**[!UICONTROL 策略]**&#x200B;工作区中创建自己的自定义使用标签。 在左侧导航中选择&#x200B;**[!UICONTROL 策略]**，然后选择&#x200B;**[!UICONTROL 标签]**&#x200B;以查看现有标签列表。 从此处选择&#x200B;**[!UICONTROL 创建标签]**。
 

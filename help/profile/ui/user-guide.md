@@ -3,9 +3,9 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: 实时客户个人资料UI指南
 description: Real-time Customer Profile可以为每位客户创建整体视图，结合来自多个渠道（包括在线、离线、CRM和第三方数据）的数据。 本文档提供了在Adobe Experience Platform用户界面中与Real-time Customer Profile交互的指南。
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2212'
+source-wordcount: '2219'
 ht-degree: 3%
 
 ---
@@ -19,8 +19,8 @@ ht-degree: 3%
 此UI指南要求您了解与管理[!DNL Real-Time Customer Profiles]有关的各种[!DNL Experience Platform]服务。 在阅读本指南或使用UI之前，请查看以下服务的文档：
 
 * [[!DNL Real-Time Customer Profile] 概述](../home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
-* [[!DNL Identity Service]](../../identity-service/home.md)：在将[!DNL Real-Time Customer Profile]引入到[!DNL Platform]中时，通过桥接来自不同数据源的标识来启用它们。
-* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： [!DNL Platform]用于组织客户体验数据的标准化框架。
+* [[!DNL Identity Service]](../../identity-service/home.md)：在将[!DNL Real-Time Customer Profile]引入到[!DNL Experience Platform]中时，通过桥接来自不同数据源的标识来启用它们。
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
 
 ## [!UICONTROL 概述]
 
@@ -28,7 +28,7 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->如果您的组织是Platform的新用户，并且尚未创建活动配置文件数据集或合并策略，则[!UICONTROL 配置文件]仪表板不可见。 相反，[!UICONTROL 概述]选项卡显示链接和文档，以帮助您开始使用实时客户个人资料。
+>如果您的组织是Experience Platform的新用户，并且尚未创建活动配置文件数据集或合并策略，则[!UICONTROL 配置文件]仪表板不可见。 相反，[!UICONTROL 概述]选项卡显示链接和文档，以帮助您开始使用实时客户个人资料。
 
 ### 轮廓仪表板 {#profile-dashboard}
 
@@ -56,7 +56,7 @@ ht-degree: 3%
 
 配置文件计数显示贵组织在将默认合并策略与配置文件片段合并在一起，以便为每个单独客户形成一个配置文件后，在Experience Platform中拥有的配置文件总数。 换言之，您的组织可能具有多个与跨不同渠道与您的品牌互动的单个客户相关的配置文件片段，但这些片段将合并在一起（根据默认合并策略），并将返回计数“1”个配置文件，因为它们都与同一个人相关。
 
-配置文件计数还包括具有属性（记录数据）的用户档案，以及仅包含时间序列（事件）数据(如Adobe Analytics配置文件)的用户档案。 用户档案计数会定期刷新，以提供Platform内最新的用户档案总数。
+配置文件计数还包括具有属性（记录数据）的用户档案，以及仅包含时间序列（事件）数据(如Adobe Analytics配置文件)的用户档案。 用户档案计数会定期刷新，以提供Experience Platform中最新的用户档案总数。
 
 #### 更新配置文件计数量度
 
@@ -96,7 +96,7 @@ ht-degree: 3%
 
 ![显示与合并策略匹配的样本配置文件。](../images/user-guide/sample-profiles.png)
 
-要了解有关合并策略及其在Platform中的角色的更多信息，请参阅[合并策略概述](../merge-policies/overview.md)。
+要了解有关合并策略及其在Experience Platform中的角色的更多信息，请参阅[合并策略概述](../merge-policies/overview.md)。
 
 ### 按[!UICONTROL 标识]浏览 {#browse-identity}
 
@@ -131,7 +131,7 @@ ht-degree: 3%
 >[!CONTEXTUALHELP]
 >id="platform_errors_uplib_201001_404"
 >title="未找到实体"
->abstract="这意味着平台找不到所请求的实体。要解决此错误，请尝试以下解决方案之一：<ul><li>确保您尝试访问的实体的 URL 中列出了正确的轮廓 ID。</li><li>确保您拥有适合您尝试访问的实体的相应的组织和沙盒组合。</li></ul>"
+>abstract="这意味着Experience Platform无法找到请求的实体。 要解决此错误，请尝试以下解决方案之一：<ul><li>确保您尝试访问的实体的 URL 中列出了正确的轮廓 ID。</li><li>确保您拥有适合您尝试访问的实体的相应的组织和沙盒组合。</li></ul>"
 
 选择&#x200B;**[!UICONTROL 配置文件ID]**&#x200B;后，**[!UICONTROL 详细信息]**&#x200B;选项卡将打开。 显示在&#x200B;**[!UICONTROL 详细信息]**&#x200B;选项卡上的配置文件信息已从多个配置文件片段合并在一起，形成单个客户的视图。 这包括客户详细信息，如基本属性、链接身份和渠道偏好设置。
 
@@ -149,7 +149,7 @@ ht-degree: 3%
 
 **[!UICONTROL 属性]**&#x200B;选项卡提供了一个列表视图，该视图汇总了应用指定的合并策略后与单个配置文件相关的所有属性。
 
-通过选择&#x200B;**[!UICONTROL 查看JSON]**，也可以将这些属性视为JSON对象。 对于希望更好地了解如何将配置文件属性摄取到Platform中的任何用户，此功能非常有用。
+通过选择&#x200B;**[!UICONTROL 查看JSON]**，也可以将这些属性视为JSON对象。 对于希望更好地了解如何将配置文件属性摄取到Experience Platform中的任何用户，此功能非常有用。
 
 ![“属性”选项卡高亮显示。 显示配置文件属性。](../images/user-guide/attributes.png)
 
@@ -163,7 +163,7 @@ ht-degree: 3%
 
 **[!UICONTROL 事件]**&#x200B;选项卡包含与客户关联的100个最新ExperienceEvents中的数据。 此数据可能包括电子邮件打开次数、购物车活动和页面查看次数。 为任何单个事件选择&#x200B;**[!UICONTROL 查看全部]**&#x200B;将提供附加字段和值作为事件的一部分捕获。
 
-通过选择以&#x200B;**[!UICONTROL 查看JSON]**，还可以将事件视为JSON对象。 这有助于了解如何在Platform中捕获事件。
+通过选择以&#x200B;**[!UICONTROL 查看JSON]**，还可以将事件视为JSON对象。 这有助于了解如何在Experience Platform中捕获事件。
 
 ![事件选项卡突出显示。 显示配置文件事件。](../images/user-guide/events.png)
 
@@ -187,7 +187,7 @@ ht-degree: 3%
 
 ![突出显示了“合并策略”选项卡。 将显示属于组织的合并策略。](../images/user-guide/merge-policies.png)
 
-## 合并架构 {#union-schema}
+## 并集架构 {#union-schema}
 
 从主&#x200B;**[!UICONTROL 配置文件]**&#x200B;菜单中，选择&#x200B;**[!UICONTROL 合并架构]**&#x200B;选项卡，以查看所摄取数据的可用合并架构。 合并架构是同一类下所有[!DNL Experience Data Model] (XDM)字段的合并，这些字段的架构已在[!DNL Real-Time Customer Profile]中启用。
 
@@ -201,7 +201,7 @@ ht-degree: 3%
 
 ![已突出显示“计算属性”选项卡。](../images/user-guide/computed-attributes.png)
 
-有关计算属性的详细信息，请阅读[计算属性概述](../computed-attributes/overview.md)。 有关如何在Platform UI中使用计算属性的更多信息，请参阅[计算属性UI指南](../computed-attributes/ui.md)。
+有关计算属性的详细信息，请阅读[计算属性概述](../computed-attributes/overview.md)。 有关如何在Experience Platform UI中使用计算属性的更多信息，请参阅[计算属性UI指南](../computed-attributes/ui.md)。
 
 ## 后续步骤
 

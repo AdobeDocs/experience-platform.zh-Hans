@@ -3,9 +3,9 @@ title: 合并策略UI指南
 type: Documentation
 description: 了解如何使用Adobe Experience Platform用户界面处理合并策略。
 exl-id: 0489217a-6a53-428c-a531-fd0a0e5bb71f
-source-git-commit: 400b20578e9a13fa2f41462b188707a34a462ea9
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2455'
+source-wordcount: '2458'
 ht-degree: 2%
 
 ---
@@ -13,26 +13,26 @@ ht-degree: 2%
 
 # 合并策略 UI 指南
 
-Adobe Experience Platform允许您从多个来源将数据片段整合在一起并组合它们，以便查看每个客户的完整视图。 在汇总此数据时，合并策略是[!DNL Platform]用于确定数据优先顺序的规则以及将合并哪些数据以创建统一视图。
+Adobe Experience Platform允许您从多个来源将数据片段整合在一起并组合它们，以便查看每个客户的完整视图。 在汇总此数据时，合并策略是[!DNL Experience Platform]用于确定数据优先顺序的规则以及将合并哪些数据以创建统一视图。
 
 使用RESTful API或用户界面，您可以创建新的合并策略、管理现有策略以及为组织设置默认合并策略。 本指南提供了使用Adobe Experience Platform用户界面(UI)处理合并策略的分步说明。
 
-要了解有关合并策略及其在Experience Platform中所扮演角色的更多信息，请先阅读[合并策略概述](overview.md)。
+要了解有关合并策略及其在Experience Platform中所扮演角色的更多信息，请从阅读[合并策略概述](overview.md)开始。
 
 ## 快速入门
 
 本指南要求您实际了解几项重要的[!DNL Experience Platform]功能。 在遵循本指南之前，请查看以下服务的文档：
 
 * [实时客户个人资料](../home.md)：根据来自多个来源的汇总数据提供统一的实时客户个人资料。
-* [Adobe Experience Platform Identity Service](../../identity-service/home.md)：通过桥接从被摄取到[!DNL Platform]中的不同数据源的标识来启用Real-time Customer Profile。
-* [体验数据模型(XDM)](../../xdm/home.md)： [!DNL Platform]用于组织客户体验数据的标准化框架。
+* [Adobe Experience Platform Identity Service](../../identity-service/home.md)：通过桥接从被摄取到[!DNL Experience Platform]中的不同数据源的标识来启用Real-time Customer Profile。
+* [体验数据模型(XDM)](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
 
 ## 查看合并策略 {#view-merge-policies}
 
 >[!CONTEXTUALHELP]
 >id="platform_errors_uplib_101221_404"
 >title="未找到合并策略"
->abstract="这意味着平台找不到所请求的合并策略。要解决此错误，请尝试以下解决方案之一：<ul><li>确保 URL 中列出了正确的合并策略 ID。</li><li>确保您尝试访问的合并策略具有正确的组织和沙盒组合。</li></ul>"
+>abstract="这意味着Experience Platform无法找到请求的合并策略。 要解决此错误，请尝试以下解决方案之一：<ul><li>确保 URL 中列出了正确的合并策略 ID。</li><li>确保您尝试访问的合并策略具有正确的组织和沙盒组合。</li></ul>"
 
 在[!DNL Experience Platform] UI中，您可以通过选择左侧导航中的&#x200B;**[!UICONTROL 配置文件]**，然后选择&#x200B;**[!UICONTROL 合并策略]**&#x200B;选项卡来开始使用合并策略。
 
@@ -77,7 +77,7 @@ Adobe Experience Platform允许您从多个来源将数据片段整合在一起�
 
 ![新建合并策略工作流中突出显示“查看合并架构”按钮。](../images/merge-policies/view-union-schema.png)
 
-这将打开[!UICONTROL 查看合并架构]对话框，其中显示与合并架构关联的所有参与架构、标识和关系。 您可以使用该对话框以与访问Platform UI [!UICONTROL 配置文件]部分中的[!UICONTROL 合并架构]选项卡相同的方式浏览合并架构。
+这将打开[!UICONTROL 查看合并架构]对话框，其中显示与合并架构关联的所有参与架构、标识和关系。 您可以使用该对话框以与访问Experience Platform UI [!UICONTROL 配置文件]部分中的[!UICONTROL 合并架构]选项卡相同的方式浏览合并架构。
 
 有关合并架构的详细信息，包括如何在合并策略工作流中显示的[!UICONTROL 合并架构]选项卡或[!UICONTROL 查看合并架构]对话框中与其交互，请访问[合并架构UI指南](../ui/union-schema.md)。
 
@@ -207,7 +207,7 @@ ExperienceEvent数据集无法手动排序，相反，如果ExperienceEvent数�
 
 ## 数据治理策略违规
 
-创建或更新合并策略时，将执行检查以确定合并策略是否违反了由您的组织定义的任何数据使用策略。 数据使用策略是Adobe Experience Platform数据管理的一部分，是描述允许或限制您对特定[!DNL Platform]数据执行的营销操作类型的规则。
+创建或更新合并策略时，将执行检查以确定合并策略是否违反了由您的组织定义的任何数据使用策略。 数据使用策略是Adobe Experience Platform数据管理的一部分，是描述允许或限制您对特定[!DNL Experience Platform]数据执行的营销操作类型的规则。
 
 例如，如果使用合并策略创建激活到第三方目标的受众，并且您的组织具有数据使用策略阻止将特定数据导出到第三方，则在尝试保存合并策略时，您将会收到&#x200B;**[!UICONTROL 检测到的数据治理策略违规]**&#x200B;通知。
 
@@ -217,4 +217,4 @@ ExperienceEvent数据集无法手动排序，相反，如果ExperienceEvent数�
 
 ## 后续步骤
 
-现在，您已为组织创建和配置合并策略，可以使用这些策略在Platform中调整客户配置文件视图，并根据配置文件数据创建受众。 有关如何使用[!DNL Experience Platform]用户界面和API创建和使用受众的更多信息，请参阅[分段概述](../../segmentation/home.md)。
+现在您已经为组织创建并配置了合并策略，接下来可以使用这些策略调整Experience Platform中客户配置文件的视图，并根据配置文件数据创建受众。 有关如何使用[!DNL Experience Platform]用户界面和API创建和使用受众的更多信息，请参阅[分段概述](../../segmentation/home.md)。
