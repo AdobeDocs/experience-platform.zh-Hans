@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 量度API端点
 description: 了解如何使用可观察性分析API在Experience Platform中检索可观察性指标。
 exl-id: 08d416f0-305a-44e2-a2b7-d563b2bdd2d2
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 3b217f7bcb60f762b5d380d82076cfb17d7a2d13
 workflow-type: tm+mt
-source-wordcount: '1278'
+source-wordcount: '1294'
 ht-degree: 3%
 
 ---
@@ -277,7 +277,7 @@ curl -X POST \
 
 | 错误代码 | 标题 | 描述 |
 | --- | --- | --- |
-| `INSGHT-1000-400` | 请求有效负载无效 | 请求有效负载出错。 请确保与上面显示的[有效负载格式完全匹配](#v2)。 触发此错误的可能原因有：<ul><li>缺少必填字段，如`aggregator`</li><li>量度无效</li><li>请求包含无效汇总</li><li>开始日期发生在结束日期之后</li></ul> |
+| `INSGHT-1000-400` | 请求有效负载无效 | 请求有效负载出错。 请确保与上面显示的[有效负载格式完全匹配](#v2)。 触发此错误的可能原因有：<ul><li>缺少必填字段，如`aggregator`</li><li>量度无效</li><li>请求包含无效汇总</li><li>开始日期发生在结束日期之后</li><li>The request has a time range (between start and end date) of more than 32 days</li></ul> |
 | `INSGHT-1001-400` | 量度查询失败 | 尝试查询量度数据库时出错，因为请求不正确或查询本身无法分析。 在重试之前，请确保您的请求格式正确。 |
 | `INSGHT-1001-500` | 量度查询失败 | 由于服务器错误，尝试查询量度数据库时出错。 请重试该请求，如果问题依然存在，请联系Adobe支持部门。 |
 | `INSGHT-1002-500` | 服务错误 | 由于内部错误，无法处理该请求。 请重试该请求，如果问题依然存在，请联系Adobe支持部门。 |
