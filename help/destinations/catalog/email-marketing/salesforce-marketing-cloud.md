@@ -1,10 +1,10 @@
 ---
-title: SalesforceMarketing Cloud连接
-description: SalesforceMarketing Cloud是一个数字营销套件，以前称为ExactTarget，通过它，可为访客和客户构建和自定义历程以个性化其体验。
+title: Salesforce Marketing Cloud连接
+description: Salesforce Marketing Cloud是一个数字营销套件，以前称为ExactTarget；它允许您为访客和客户构建和自定义历程，以个性化其体验。
 exl-id: e85049a7-eaed-4f8a-b670-9999d56928f8
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '798'
+source-wordcount: '801'
 ht-degree: 2%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 2%
 
 [[!DNL Salesforce Marketing Cloud]](https://www.salesforce.com/products/marketing-cloud/email-marketing/)是一个数字营销套件，以前称为ExactTarget，它允许您为访客和客户构建和自定义历程，以个性化其体验。
 
-若要将受众数据发送到[!DNL Salesforce Marketing Cloud]，您必须先[连接到Platform中的目标](#connect-destination)，然后[设置数据导入](#import-data-into-salesforce)（从您的存储位置导入[!DNL Salesforce Marketing Cloud]）。
+若要将受众数据发送到[!DNL Salesforce Marketing Cloud]，您必须先[连接到Experience Platform中的目标](#connect-destination)，然后[设置数据导入](#import-data-into-salesforce)（从您的存储位置导入[!DNL Salesforce Marketing Cloud]）。
 
 ## 支持的受众 {#supported-audiences}
 
@@ -23,8 +23,8 @@ ht-degree: 2%
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -43,7 +43,7 @@ ht-degree: 2%
 
 在使用SFTP存储设置电子邮件营销目标时，Adobe建议将某些IP范围添加到SFTP允许列表。
 
-如果需要将Adobe列入允许列表 IP添加到SFTP允许列表，请参阅[SFTP目标的IP地址](../cloud-storage/ip-address-allow-list.md)。
+如果您需要将Adobe 列入允许列表 IP添加到SFTP允许列表，请参阅[SFTP目标的IP地址](../cloud-storage/ip-address-allow-list.md)。
 
 ## 连接到目标 {#connect}
 
@@ -76,14 +76,14 @@ ht-degree: 2%
 * 或者，您可以附加RSA格式的公钥，以将使用PGP/GPG的加密添加到&#x200B;**[!UICONTROL 密钥]**&#x200B;部分下的导出文件。 您的公钥必须编写为[!DNL Base64]编码字符串。
 * **[!UICONTROL 名称]**：为您的目标选择相关的名称。
 * **[!UICONTROL 描述]**：输入目标的描述。
-* **[!UICONTROL 文件夹路径]**：提供存储位置中的路径，Platform会将您的导出数据存为CSV文件。
+* **[!UICONTROL 文件夹路径]**：提供Experience Platform将导出数据作为CSV文件存入的存储位置的路径。
 * **[!UICONTROL 文件格式]**：选择&#x200B;**CSV**&#x200B;以将CSV文件导出到您的存储位置。
 
 <!--
 
 Commenting out Amazon S3 bucket part for now until support is clarified
 
-- **[!UICONTROL Bucket name]**: Your Amazon S3 bucket, where Platform will deposit the data export. Your input must be between 3 and 63 characters long. Must begin and end with a letter or number. Must contain only lowercase letters, numbers, or hyphens ( - ). Must not be formatted as an IP address (for example, 192.100.1.1).
+- **[!UICONTROL Bucket name]**: Your Amazon S3 bucket, where Experience Platform will deposit the data export. Your input must be between 3 and 63 characters long. Must begin and end with a letter or number. Must contain only lowercase letters, numbers, or hyphens ( - ). Must not be formatted as an IP address (for example, 192.100.1.1).
 
 -->
 
@@ -108,8 +108,8 @@ Commenting out Amazon S3 bucket part for now until support is clarified
 
 ## 导出的数据 {#exported-data}
 
-对于[!DNL Salesforce Marketing Cloud]目标，Platform会在您提供的存储位置创建一个`.csv`文件。 有关这些文件的详细信息，请参阅受众激活教程中的[验证受众激活](../../ui/activate-batch-profile-destinations.md#verify)。
+对于[!DNL Salesforce Marketing Cloud]目标，Experience Platform会在您提供的存储位置创建一个`.csv`文件。 有关这些文件的详细信息，请参阅受众激活教程中的[验证受众激活](../../ui/activate-batch-profile-destinations.md#verify)。
 
 ## 设置数据导入到[!DNL Salesforce Marketing Cloud] {#import-data-into-salesforce}
 
-将[!DNL Platform]连接到[!DNL SFTP]存储后，您必须设置从存储位置到[!DNL Salesforce Marketing Cloud]的数据导入。 要了解如何完成此操作，请参阅[将订阅者从[!DNL Salesforce Help Center]中的文件](https://help.salesforce.com/articleView?id=mc_es_import_subscribers_from_file.htm&amp;type=5)导入Marketing Cloud。
+将[!DNL Experience Platform]连接到[!DNL SFTP]存储后，您必须设置从存储位置到[!DNL Salesforce Marketing Cloud]的数据导入。 要了解如何完成此操作，请参阅[将订阅者从[!DNL Salesforce Help Center]中的文件](https://help.salesforce.com/articleView?id=mc_es_import_subscribers_from_file.htm&amp;type=5)导入Marketing Cloud。

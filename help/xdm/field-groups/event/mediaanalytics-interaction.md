@@ -2,9 +2,9 @@
 title: MediaAnalytics交互详细信息架构字段组
 description: 了解MediaAnalytics交互详细信息架构字段组。
 exl-id: 1096d28a-5796-49cc-bd45-b3f5188f699e
-source-git-commit: b81afb8f6c4eaedb19a58b6fe3896286f1486804
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '233'
+source-wordcount: '234'
 ht-degree: 2%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 2%
 
 >[!TIP]
 >
->您可以隐藏Media Edge API未使用的字段。 隐藏这些字段使架构更易于阅读和理解，但并非必需。 这些字段仅引用[!UICONTROL MediaAnalytics交互详细信息]字段组中的字段。 要提高Platform UI中的可读性，请按照[Media Analytics文档中有关如何隐藏未使用字段的说明](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/edge-recommended/media-edge-sdk/implementation-edge.html#set-up-the-schema-in-adobe-experience-platform)操作。
+>您可以隐藏Media Edge API未使用的字段。 隐藏这些字段使架构更易于阅读和理解，但并非必需。 这些字段仅引用[!UICONTROL MediaAnalytics交互详细信息]字段组中的字段。 要提高Experience Platform UI中的可读性，请按照[Media Analytics文档中有关如何隐藏未使用字段的说明](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/edge-recommended/media-edge-sdk/implementation-edge.html#set-up-the-schema-in-adobe-experience-platform)操作。
 
 <!-- 
 >[!NOTE]

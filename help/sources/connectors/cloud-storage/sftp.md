@@ -2,18 +2,18 @@
 title: SFTP Source连接器概述
 description: 了解如何使用API或用户界面将SFTP服务器连接到Adobe Experience Platform。
 exl-id: d5bced3d-cd33-40ea-bce0-32c76ecd2790
-source-git-commit: 9e1edaa4183a8025b8391f58d480063adc834616
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1221'
+source-wordcount: '1226'
 ht-degree: 0%
 
 ---
 
 # SFTP连接器
 
-Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
+Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。 您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
 
-阅读本文档以了解成功将[!DNL SFTP]帐户连接到Experience Platform所需的先决步骤。
+请阅读本文档，了解成功将[!DNL SFTP]帐户连接到Experience Platform所需的先决步骤。
 
 >[!TIP]
 >
@@ -21,7 +21,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 ## 先决条件 {#prerequisites}
 
-阅读本节以了解必须完成的先决步骤，才能成功将[!DNL SFTP]源连接到Experience Platform。
+请阅读本节内容，了解成功将[!DNL SFTP]源连接到Experience Platform所必须完成的先决步骤。
 
 ### IP地址允许列表
 
@@ -40,7 +40,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 ### 为[!DNL SFTP]设置Base64编码的OpenSSH私钥
 
-[!DNL SFTP]源支持使用[!DNL Base64]编码的OpenSSH私钥进行身份验证。 有关如何生成Base64编码的OpenSSH私钥并将[!DNL SFTP]连接到Platform的信息，请参阅以下步骤。
+[!DNL SFTP]源支持使用[!DNL Base64]编码的OpenSSH私钥进行身份验证。 有关如何生成Base64编码的OpenSSH私钥并将[!DNL SFTP]连接到Experience Platform的信息，请参阅以下步骤。
 
 >[!BEGINTABS]
 
@@ -96,7 +96,7 @@ The key's randomart image is:
 C:\Users\lucy> [convert]::ToBase64String((Get-Content -path "C:\Users\lucy\.ssh\id_rsa" -Encoding byte)) > C:\Users\lucy\.ssh\id_rsa_base64
 ```
 
-上述命令将[!DNL Base64]编码的私钥保存在您指定的文件路径中。 然后，您可以使用该私钥对[!DNL SFTP]进行身份验证并连接到平台。
+上述命令将[!DNL Base64]编码的私钥保存在您指定的文件路径中。 然后，您可以使用该私钥对[!DNL SFTP]进行身份验证并连接到Experience Platform。
 
 >[!TAB Mac]
 
@@ -168,7 +168,7 @@ more ~/.ssh/authorized_keys
 | `port` | 您正在连接的[!DNL SFTP]服务器端口。 如果未提供，则值默认为`22`。 |
 | `username` | 有权访问您的[!DNL SFTP]服务器的用户名。 |
 | `password` | [!DNL SFTP]服务器的密码。 |
-| `maxConcurrentConnections` | 此参数允许您指定在连接到SFTP服务器时，平台将创建的并发连接数的最大限制。 必须将此值设置为小于SFTP设置的限制。 **注意**：为现有SFTP帐户启用此设置时，它只影响未来的数据流，而不影响现有的数据流。 |
+| `maxConcurrentConnections` | 利用此参数，可指定Experience Platform在连接到SFTP服务器时将创建的并发连接数的最大限制。 必须将此值设置为小于SFTP设置的限制。 **注意**：为现有SFTP帐户启用此设置时，它只影响未来的数据流，而不影响现有的数据流。 |
 | `folderPath` | 要提供访问权限的文件夹的路径。 [!DNL SFTP]源，您可以提供文件夹路径，以指定用户对所选子文件夹的访问权限。 |
 | `disableChunking` | 在数据摄取期间，[!DNL SFTP]源可以首先检索文件长度，将文件划分为多个部分，然后并行读取。 您可以启用或禁用此值以指定[!DNL SFTP]服务器是否可以检索文件长度或从特定偏移读取数据。 |
 | `connectionSpec.id` | （仅限API）连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的身份验证规范。 [!DNL SFTP]的连接规范ID为： `b7bf2577-4520-42c9-bae9-cad01560f7bc`。 |
@@ -185,7 +185,7 @@ more ~/.ssh/authorized_keys
 | `password` | [!DNL SFTP]服务器的密码。 |
 | `privateKeyContent` | Base64编码的SSH私钥内容。 OpenSSH密钥类型必须分类为RSA或DSA。 |
 | `passPhrase` | 如果密钥文件或密钥内容受密码词组保护，则使用密码词组或密码解密私钥。 如果PrivateKeyContent受密码保护，则此参数需要与PrivateKeyContent的密码短语（值）一起使用。 |
-| `maxConcurrentConnections` | 此参数允许您指定在连接到SFTP服务器时，平台将创建的并发连接数的最大限制。 必须将此值设置为小于SFTP设置的限制。 **注意**：为现有SFTP帐户启用此设置时，它只影响未来的数据流，而不影响现有的数据流。 |
+| `maxConcurrentConnections` | 利用此参数，可指定Experience Platform在连接到SFTP服务器时将创建的并发连接数的最大限制。 必须将此值设置为小于SFTP设置的限制。 **注意**：为现有SFTP帐户启用此设置时，它只影响未来的数据流，而不影响现有的数据流。 |
 | `folderPath` | 要提供访问权限的文件夹的路径。 [!DNL SFTP]源，您可以提供文件夹路径，以指定用户对所选子文件夹的访问权限。 |
 | `disableChunking` | 在数据摄取期间，[!DNL SFTP]源可以首先检索文件长度，将文件划分为多个部分，然后并行读取。 您可以启用或禁用此值以指定[!DNL SFTP]服务器是否可以检索文件长度或从特定偏移读取数据。 |
 | `connectionSpec.id` | （仅限API）连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的身份验证规范。 [!DNL SFTP]的连接规范ID为： `b7bf2577-4520-42c9-bae9-cad01560f7bc`。 |

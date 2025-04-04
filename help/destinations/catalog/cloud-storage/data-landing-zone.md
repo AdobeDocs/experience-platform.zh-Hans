@@ -3,9 +3,9 @@ title: 数据登陆区目标
 description: 了解如何连接到数据登陆区以激活受众和导出数据集。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: 5f932f3de2b875d77904582dfb320e0b6ce17afd
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1968'
+source-wordcount: '1978'
 ht-degree: 2%
 
 ---
@@ -19,9 +19,9 @@ ht-degree: 2%
 
 ## 概述 {#overview}
 
-[!DNL Data Landing Zone]是由Adobe Experience Platform设置的云存储界面，它授予您一个安全、基于云的文件存储工具的访问权限，以便将文件导出到Platform之外。 您有权访问每个沙盒一个[!DNL Data Landing Zone]容器，所有容器的总数据量以您的Platform产品和服务许可证提供的总数据为限。 Platform及其应用程序（如[!DNL Customer Journey Analytics]、[!DNL Journey Orchestration]、[!DNL Intelligent Services]和[!DNL Real-Time Customer Data Platform]）的所有客户都为每个沙盒配置了一个[!DNL Data Landing Zone]容器。
+[!DNL Data Landing Zone]是由Adobe Experience Platform设置的云存储界面，它授予您一个安全、基于云的文件存储工具的访问权限，以便将文件导出到Experience Platform中。 您有权访问每个沙盒一个[!DNL Data Landing Zone]容器，所有容器的总数据量以您的Experience Platform产品和服务许可证提供的总数据为限。 Experience Platform及其应用程序（如[!DNL Customer Journey Analytics]、[!DNL Journey Orchestration]、[!DNL Intelligent Services]和[!DNL Real-Time Customer Data Platform]）的所有客户都为每个沙盒配置一个[!DNL Data Landing Zone]容器。
 
-Platform对上传到[!DNL Data Landing Zone]容器的所有文件强制实施严格的七天生存时间(TTL)。 所有文件都会在七天后删除。
+Experience Platform对上传到[!DNL Data Landing Zone]容器的所有文件强制实施严格的七天生存时间(TTL)。 所有文件都会在七天后删除。
 
 使用Azure或Amazon Web服务云支持的客户可以使用[!DNL Data Landing Zone]目标连接器。 由于配置了目标的云不同，身份验证机制也不同，有关目标及其用例的所有其他内容都相同。 有关[对Azure Blob中配置的数据登陆区域进行身份验证](#authenticate-dlz-azure)和[对AWS配置的数据登陆区域进行身份验证](#authenticate-dlz-aws)部分中提供的两个不同身份验证机制的更多信息。
 
@@ -29,7 +29,7 @@ Platform对上传到[!DNL Data Landing Zone]容器的所有文件强制实施严
 
 ## 通过API或UI连接到您的[!UICONTROL 数据登陆区]存储 {#connect-api-or-ui}
 
-* 要使用Platform用户界面连接到[!UICONTROL 数据登陆区域]存储位置，请阅读下面的[连接到目标](#connect)和[将受众激活到此目标](#activate)部分。
+* 要使用Experience Platform用户界面连接到您的[!UICONTROL 数据登陆区域]存储位置，请阅读下面的[连接到目标](#connect)和[将受众激活到此目标](#activate)部分。
 * 若要以编程方式连接到[!UICONTROL 数据登陆区域]存储位置，请阅读[使用流服务API教程](../../api/activate-segments-file-based-destinations.md)将受众激活到基于文件的目标。
 
 ## 支持的受众 {#supported-audiences}
@@ -38,8 +38,8 @@ Platform对上传到[!DNL Data Landing Zone]容器的所有文件强制实施严
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -58,20 +58,20 @@ Platform对上传到[!DNL Data Landing Zone]容器的所有文件强制实施严
 
 此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
 
-* 如何使用Platform用户界面](/help/destinations/ui/export-datasets.md)导出数据集[。
+* 如何使用Experience Platform用户界面](/help/destinations/ui/export-datasets.md)导出数据集[。
 * 如何使用流服务API](/help/destinations/api/export-datasets.md)以编程方式[导出数据集。
 
 ## 导出数据的文件格式 {#file-format}
 
-导出&#x200B;*受众数据*&#x200B;时，Platform会在您提供的存储位置创建一个`.csv`、`parquet`或`.json`文件。 有关这些文件的更多信息，请参阅Audience Activation教程中的[导出的支持文件格式](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export)部分。
+导出&#x200B;*受众数据*&#x200B;时，Experience Platform会在您提供的存储位置创建一个`.csv`、`parquet`或`.json`文件。 有关这些文件的更多信息，请参阅Audience Activation教程中的[导出的支持文件格式](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export)部分。
 
-导出&#x200B;*数据集*&#x200B;时，Platform会在您提供的存储位置创建一个`.parquet`或`.json`文件。 有关这些文件的更多信息，请参阅导出数据集教程中的[验证成功的数据集导出](../../ui/export-datasets.md#verify)部分。
+导出&#x200B;*数据集*&#x200B;时，Experience Platform会在您提供的存储位置创建一个`.parquet`或`.json`文件。 有关这些文件的更多信息，请参阅导出数据集教程中的[验证成功的数据集导出](../../ui/export-datasets.md#verify)部分。
 
 ## 对Azure Blob中配置的数据登陆区进行身份验证 {#authenticate-dlz-azure}
 
 >[!AVAILABILITY]
 >
->本节适用于在Microsoft Azure上运行的Experience Platform的实现。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform多云概述](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud)。
+>本节适用于在Microsoft Azure上运行的Experience Platform的实施。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud)。
 
 您可以通过[!DNL Azure Storage Explorer]或命令行界面将文件读取和写入容器。
 
@@ -97,7 +97,7 @@ Platform对上传到[!DNL Data Landing Zone]容器的所有文件强制实施严
 
 ### 检索[!DNL Data Landing Zone]的凭据 {#retrieve-dlz-credentials}
 
-您必须使用平台API来检索您的[!DNL Data Landing Zone]凭据。 用于检索凭据的API调用描述如下。 有关获取标头所需值的信息，请参阅[Adobe Experience Platform API快速入门](/help/landing/api-guide.md)指南。
+您必须使用Experience Platform API检索您的[!DNL Data Landing Zone]凭据。 用于检索凭据的API调用描述如下。 有关获取标头所需值的信息，请参阅[Adobe Experience Platform API快速入门](/help/landing/api-guide.md)指南。
 
 **API格式**
 
@@ -204,13 +204,13 @@ curl -X POST \
 
 ![Azure UI中突出显示的DLZ用户容器摘要。](/help/sources/images/tutorials/create/dlz/dlz-user-container.png)
 
-在将[!DNL Data Landing Zone]容器连接到[!DNL Azure Storage Explorer]后，您现在可以开始将文件从Experience Platform导出到[!DNL Data Landing Zone]容器。 要导出文件，必须在Experience PlatformUI中建立与[!DNL Data Landing Zone]目标的连接，如以下部分所述。
+在将[!DNL Data Landing Zone]容器连接到[!DNL Azure Storage Explorer]后，您现在可以开始将文件从Experience Platform导出到[!DNL Data Landing Zone]容器。 要导出文件，必须在Experience Platform UI中建立与[!DNL Data Landing Zone]目标的连接，如以下部分所述。
 
 ## 对AWS设置的数据登陆区进行身份验证 {#authenticate-dlz-aws}
 
 >[!AVAILABILITY]
 >
->本节适用于在Amazon Web Services (AWS)上运行的Experience Platform的实施。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform多云概述](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud)。
+>本节适用于在Amazon Web Services (AWS)上运行的Experience Platform的实施。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud)。
 
 执行以下操作以获取在AWS上配置的[!DNL Data Landing Zone]实例的凭据。 然后，使用选择的客户端连接到[!DNL Data Landing Zone]实例。
 
@@ -218,7 +218,7 @@ curl -X POST \
 
 ### 检索[!DNL Data Landing Zone]的凭据 {#retrieve-dlz-credentials-aws}
 
-您必须使用平台API来检索您的[!DNL Data Landing Zone]凭据。 用于检索凭据的API调用描述如下。 有关获取标头所需值的信息，请参阅[Adobe Experience Platform API快速入门](/help/landing/api-guide.md)指南。
+您必须使用Experience Platform API检索您的[!DNL Data Landing Zone]凭据。 用于检索凭据的API调用描述如下。 有关获取标头所需值的信息，请参阅[Adobe Experience Platform API快速入门](/help/landing/api-guide.md)指南。
 
 **API格式**
 
@@ -267,8 +267,8 @@ curl --request GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `credentials` | 此对象包括Experience Platform用来将文件导出到已设置的数据登录区位置的`awsAccessKeyId`、`awsSecretAccessKey`和`awsSessionToken`。 |
-| `dlzPath` | 此对象包括Adobe设置的AWS位置中的路径，导出的文件将存储在该位置。 |
+| `credentials` | 此对象包括Experience Platform用来将文件导出到已设置数据登录区位置的`awsAccessKeyId`、`awsSecretAccessKey`和`awsSessionToken`。 |
+| `dlzPath` | 此对象包括在Adobe设置的AWS位置中存储导出文件的路径。 |
 | `dlzProvider` | 指示这是由Amazon S3配置的数据登陆区。 |
 | `expiryTime` | 指示`credentials`对象中的凭据何时到期。 要刷新凭据，请再次执行请求。 |
 
@@ -286,7 +286,7 @@ curl --request GET \
 
 ### 验证目标 {#authenticate}
 
-确保已按照[先决条件](#prerequisites)部分中的说明将您的[!DNL Data Landing Zone]容器连接到[!DNL Azure Storage Explorer]。 由于[!DNL Data Landing Zone]是Adobe配置的存储，您无需在Experience PlatformUI中执行任何进一步的步骤即可向目标进行身份验证。
+确保已按照[先决条件](#prerequisites)部分中的说明将您的[!DNL Data Landing Zone]容器连接到[!DNL Azure Storage Explorer]。 由于[!DNL Data Landing Zone]是Adobe配置的存储，您无需在Experience Platform UI中执行任何进一步步骤即可向目标进行身份验证。
 
 ### 填写目标详细信息 {#destination-details}
 
@@ -295,7 +295,7 @@ curl --request GET \
 * **[!UICONTROL 名称]**：填写此目标的首选名称。
 * **[!UICONTROL 描述]**：可选。 例如，您可以提及要将此目标用于哪个营销活动。
 * **[!UICONTROL 文件夹路径]**：输入将承载导出文件的目标文件夹的路径。
-* **[!UICONTROL 文件类型]**：选择导出文件应使用的格式Experience Platform。 在选择[!UICONTROL CSV]选项时，您还可以[配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md)。
+* **[!UICONTROL 文件类型]**：选择Experience Platform应用于导出文件的格式。 在选择[!UICONTROL CSV]选项时，您还可以[配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md)。
 * **[!UICONTROL 压缩格式]**：选择Experience Platform应用于导出文件的压缩类型。
 * **[!UICONTROL 包含清单文件]**：如果希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。 清单的命名格式为`manifest-<<destinationId>>-<<dataflowRunId>>.json`。 查看[样本清单文件](/help/destinations/assets/common/manifest-d0420d72-756c-4159-9e7f-7d3e2f8b501e-0ac8f3c0-29bd-40aa-82c1-f1b7e0657b19.json)。 清单文件包含以下字段：
    * `flowRunId`：生成导出文件的[数据流运行](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations)。

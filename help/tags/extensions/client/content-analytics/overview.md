@@ -2,9 +2,9 @@
 title: Adobe Content Analytics扩展概述
 description: 了解Adobe Experience Platform中的Adobe Content Analytics标记扩展。
 exl-id: fcc46c86-e765-4bc7-bfdf-b8b10e8afacc
-source-git-commit: 5f852b69b0eb0a5e6a9119f14eb9e1f51c8a2e33
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '658'
+source-wordcount: '659'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 [!DNL Adobe Content Analytics]标记扩展允许跟踪网站上的内容相关事件。 该扩展通过Experience Platform Edge Network，将内容数据（体验和资源）从Web资产发送到Adobe Experience Cloud中的数据流。
 
-通过扩展，可将与特定内容相关的事件数据流式传输到Platform，以便在Customer Journey Analytics的内容分析报表中使用该数据。
+通过扩展，可将与特定内容相关的事件数据流式传输到Experience Platform，以便在Customer Journey Analytics的内容分析报表中使用这些数据。
 
 本文档介绍如何在标记UI中配置标记扩展。
 

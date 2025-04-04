@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务和数据Distiller常见问题解答
 description: 本文档包含与查询服务和数据Distiller相关的常见问题和解答。 主题包括：导出数据、第三方工具和PSQL错误。
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: ef4c7f20710f56ca0de7c0dfdb99751ff2fe8ebe
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '5024'
+source-wordcount: '5029'
 ht-degree: 0%
 
 ---
@@ -118,7 +118,7 @@ ht-degree: 0%
 - 登录Experience Platform后，在UI的左侧导航中选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以导航到[!UICONTROL 数据集]仪表板。
 - 数据集[!UICONTROL 浏览]选项卡打开。 您可以使用搜索栏来优化可用选项。 从显示的列表中选择数据集。
 
-![Platform UI中的数据集仪表板，带有搜索栏和一个突出显示的数据集。](./images/troubleshooting/dataset-selection.png)
+![Experience Platform UI中的数据集仪表板，带有搜索栏和一个突出显示的数据集。](./images/troubleshooting/dataset-selection.png)
 
 - 将显示[!UICONTROL 数据集活动]屏幕。 选择&#x200B;**[!UICONTROL 预览数据集]**&#x200B;以打开XDM架构的对话框和选定数据集中拼合数据的表格视图。 有关更多详细信息，请参阅[预览数据集文档](../catalog/datasets/user-guide.md#preview-a-dataset)
 
@@ -287,7 +287,7 @@ SELECT count(1) FROM myTableName
 ### 我可以采样我的数据吗？
 
 +++回答
-此功能当前正在进行中。 在功能准备发布后，详细信息将在[发行说明](../release-notes/latest/latest.md)中以及通过Platform UI对话框提供。
+此功能当前正在进行中。 在功能准备发布后，详细信息将在[发行说明](../release-notes/latest/latest.md)中以及通过Experience Platform UI对话框提供。
 +++
 
 ### 查询服务支持哪些帮助程序函数？
@@ -522,7 +522,7 @@ WHERE T2.ID IS NULL
 有监控和警报功能来检查查询活动和状态。 有关详细信息，请参阅[查询服务审核日志集成](./data-governance/audit-log-guide.md)和[查询日志](./ui/overview.md#log)文档。
 +++
 
-### 是否可以回滚更新？ 例如，如果在将数据写回Platform时发生了错误或某些计算需要重新配置，应如何处理这种情况？
+### 是否可以回滚更新？ 例如，如果在将数据写回Experience Platform时发生了错误或某些计算需要重新配置，应如何处理这种情况？
 
 +++回答
 目前，我们不支持以这种方式进行回滚或更新。
@@ -563,7 +563,7 @@ WHERE T2.ID IS NULL
 
 +++
 
-### 查询服务返回数据后，Platform是否能够运行任何检查来确保未返回任何受保护的数据？
+### 查询服务返回数据后，Experience Platform是否可以运行任何检查来确保未返回任何受保护数据？
 
 - 查询服务支持基于属性的访问控制。 您可以在列/叶级别和/或结构级别限制对数据的访问。 请参阅文档，了解有关基于属性的访问控制的更多信息。
 
@@ -652,7 +652,7 @@ Data Distiller计算机小时的许可证使用情况仪表板每天更新四次
 ### 尝试连接到查询服务时，“创建查询”卡住“正在初始化连接……”。 如何修复此问题？
 
 +++回答
-如果“创建查询”卡在“正在初始化连接……”上，则可能是连接或会话问题。 如果您使用的是Platform UI，请刷新浏览器并重试。
+如果“创建查询”卡在“正在初始化连接……”上，则可能是连接或会话问题。 如果您使用的是Experience Platform UI，请刷新浏览器并重试。
 +++
 
 ## 数据集示例

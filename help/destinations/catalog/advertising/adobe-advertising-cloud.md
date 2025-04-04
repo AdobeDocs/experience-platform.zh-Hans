@@ -1,11 +1,11 @@
 ---
-keywords: Advertising Cloud；advertising cloud扩展；advertising cloud目标
+keywords: Advertising Cloud；Advertising Cloud扩展；Advertising Cloud目标
 title: Adobe Advertising Cloud扩展
 description: Adobe Advertising Cloud扩展是Adobe Experience Platform中的一个广告目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: 3415a85f-5678-4f5b-b7cf-e185a66d084f
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '437'
+source-wordcount: '441'
 ht-degree: 3%
 
 ---
@@ -14,25 +14,25 @@ ht-degree: 3%
 
 ## 概述 {#overview}
 
-这是用于为DSP和Search实现[!DNL Advertising Cloud]转化和受众标记的[!DNL Advertising Cloud]扩展（当前不支持DCO）。
+这是[!DNL Advertising Cloud]扩展，用于为DSP和Search实现[!DNL Advertising Cloud]转化和受众标记（当前不支持DCO）。
 
-Adobe Advertising Cloud是Adobe Experience Platform中的一项广告扩展。
+Adobe Advertising Cloud是Adobe Experience Platform中的一个广告扩展。
 
-此目标是标记扩展。 有关标记扩展如何在Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
+此目标是标记扩展。 有关标记扩展如何在Experience Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
 ![Adobe Advertising Cloud扩展](../../assets/catalog/advertising/adobe-advertising-cloud/catalog.png)
 
 ## 先决条件 {#prerequisites}
 
-所有购买了Platform的客户都可在“目标”目录中使用此扩展。
+所有已购买Experience Platform的客户都可以在“目标”目录中找到此扩展。
 
-要使用此扩展，您需要具有对Platform中标记的访问权限。 标记以内置增值功能的方式提供给Adobe Experience Cloud客户。 请联系您的组织管理员，以获取UI中数据收集功能的访问权限，并要求他们向您授予&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
+要使用此扩展，您需要具有对Experience Platform中标记的访问权限。 标记以内置增值功能的方式提供给Adobe Experience Cloud客户。 请联系您的组织管理员，以获取UI中数据收集功能的访问权限，并要求他们向您授予&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
 
 ## 安装扩展 {#install-extension}
 
-要安装Adobe Advertising Cloud扩展：
+安装Adobe Advertising Cloud扩展：
 
-在[平台接口](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**。
+在[Experience Platform界面](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**。
 
 从目录中选择扩展或使用搜索栏。
 

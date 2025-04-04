@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: January 15, 2020
 author: crhoades, ens28527
 exl-id: e488a50c-2a87-4649-b3a4-f9d45cb12fcb
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '890'
-ht-degree: 13%
+ht-degree: 24%
 
 ---
 
@@ -44,17 +44,17 @@ XDM是一个公开记录的规范，旨在提高数字体验的强大功能。 �
 
 ## [!DNL Privacy Service] {#privacy}
 
-新的法律和组织法规授予用户权利，允许他们根据请求从您的数据存储中访问或删除其个人数据。 Adobe Experience Platform [!DNL Privacy Service]提供RESTful API和用户界面，帮助您管理来自客户的这些数据请求。 借助[!DNL Privacy Service]，您可以提交访问和删除Adobe Experience Cloud应用程序中私人或个人客户数据的请求，从而促进自动遵守法律和组织隐私法规。
+新的法律和组织法规授予用户权利，允许他们根据请求从您的数据存储中访问或删除其个人数据。 Adobe Experience Platform [!DNL Privacy Service] 提供 RESTful API 和用户界面，帮助您管理客户数据请求。借助 [!DNL Privacy Service]，您可以提交从 Adobe Experience Cloud 应用程序访问和删除个人客户数据的请求，从而促进自动遵守法律和组织隐私法规。
 
 **新增功能**
 
 | 功能 | 描述 |
 |--- | ---|
-| [!DNL Privacy Service]品牌再造 | 以前称为“GDPR服务”的服务已更名为[!DNL Privacy Service]，因为该服务已扩展以支持除GDPR之外的其他法规。 |
-| 新API端点 | [!DNL Privacy Service] API的基本路径已从`/data/privacy/gdpr`更新为`/data/core/privacy/jobs`。 |
-| 新必需的`regulation`属性 | 在[!DNL Privacy Service] API中创建新作业时，必须在请求有效载荷中提供`regulation`属性，以指示要跟踪该作业的法规。 接受的值为`gdpr`和`ccpa`。 |
-| 支持 [!DNL Adobe Primetime Authentication] | [!DNL Privacy Service]现在接受来自Adobe[!DNL Primetime Authentication]的访问/删除请求，使用`primetimeAuthentication`作为其产品值。 |
-| Privacy ServiceUI增强功能 | 根据GDPR和CCPA法规，单独设置作业跟踪页面。 新的**法规类型**下拉列表，用于在GDPR和CCPA的跟踪数据之间切换。 |
+| [!DNL Privacy Service] 品牌重塑 | 之前的“GDPR 服务”现已更名为 [!DNL Privacy Service]，因为该服务经过发展现在支持 GDPR 之外的其他法规。 |
+| 新的 API 端点 | [!DNL Privacy Service] API的基本路径已从`/data/privacy/gdpr`更新为`/data/core/privacy/jobs`。 |
+| 新的必需 `regulation` 属性 | 在 [!DNL Privacy Service] API 中创建新作业时，必须在请求负载中提供 `regulation` 属性，以指示根据哪条规定跟踪该作业。接受的值为`gdpr`和`ccpa`。 |
+| 支持 [!DNL Adobe Primetime Authentication] | [!DNL Privacy Service]现在接受来自Adobe [!DNL Primetime Authentication]的访问/删除请求，使用`primetimeAuthentication`作为其产品值。 |
+| Privacy Service UI增强 | 根据GDPR和CCPA法规，单独设置作业跟踪页面。 新的**法规类型**下拉列表，用于在GDPR和CCPA的跟踪数据之间切换。 |
 
 **已知问题**
 
@@ -64,7 +64,7 @@ XDM是一个公开记录的规范，旨在提高数字体验的强大功能。 �
 
 ## 源 {#sources}
 
-Adobe Experience Platform可以从外部源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强该数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强该数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
 
 [!DNL Experience Platform]提供了一个RESTful API和一个交互式UI，可让您轻松为各种数据提供程序设置源连接。 这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 

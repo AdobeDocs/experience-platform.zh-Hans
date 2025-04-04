@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: December 9, 2020
 author: ens60013 & ens72471
 exl-id: 89d631f1-1b11-4a18-98e1-08e1d5bd8b0d
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '432'
-ht-degree: 11%
+source-wordcount: '433'
+ht-degree: 12%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 11%
 
 **发行日期： 2020年12月9日**
 
-Adobe Experience Platform中的新增功能：
+Adobe Experience Platform 的新功能：
 
 - [[!DNL Dataflows]](#dataflows)
 
@@ -27,7 +27,7 @@ Adobe Experience Platform 中现有功能的更新：
 
 ## [!DNL Dataflows] {#dataflows}
 
-数据流是跨Platform移动数据的数据作业的表示形式。 这些数据流在不同的服务中配置，有助于将数据从源连接器移动到目标数据集、身份和配置文件服务以及目标。
+数据流是跨Experience Platform移动数据的数据作业的表示形式。 这些数据流在不同的服务中配置，有助于将数据从源连接器移动到目标数据集、身份和配置文件服务以及目标。
 
 **关键功能**
 
@@ -39,7 +39,7 @@ Adobe Experience Platform 中现有功能的更新：
 
 ## [!DNL Data Science Workspace] {#dsw}
 
-数据科学Workspace使用机器学习和人工智能从您的数据创建见解。 数据科学Workspace已集成到Adobe Experience Platform中，可帮助您在各个Adobe解决方案中使用内容和数据资源做出预测。
+数据科学Workspace使用机器学习和人工智能从您的数据创建见解。 数据科学Workspace已集成到Adobe Experience Platform中，可帮助您在各个Adobe解决方案中使用您的内容和数据资产做出预测。
 
 **主要功能**
 
@@ -51,7 +51,7 @@ Adobe Experience Platform 中现有功能的更新：
 
 ## [!DNL Sources] {#sources}
 
-Adobe Experience Platform可以从外部源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强该数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强该数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
 
 [!DNL Experience Platform]提供了一个RESTful API和一个交互式UI，可让您轻松为各种数据提供程序设置源连接。 这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 

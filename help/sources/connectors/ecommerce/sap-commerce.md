@@ -4,9 +4,9 @@ description: 了解如何使用API或用户界面将SAP Commerce连接到Adobe E
 last-substantial-update: 2023-07-26T00:00:00Z
 badge: Beta 版
 exl-id: d2ddfec3-a421-48a7-b765-86ce9162f26f
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '347'
+source-wordcount: '351'
 ht-degree: 3%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 3%
 
 [[!DNL SAP Commerce]](https://www.sap.com/india/products/acquired-brands/what-is-hybris.html)，一种针对B2B和B2C企业的基于云的电子商务平台解决方案已作为SAP客户体验产品组合的一部分提供。 [[!DNL SAP] 订阅帐单](https://www.sap.com/products/financial-management/subscription-billing.html)是产品组合中的产品，通过标准化的集成，通过简化的销售和付款体验实现完整的订阅生命周期管理。
 
-[!DNL SAP Commerce]源允许您从以下[[!DNL SAP] 订阅计费](https://www.sap.com/products/financial-management/subscription-billing.html)业务合作伙伴API端点将客户和联系人信息摄取到Platform中：
+[!DNL SAP Commerce]源允许您从以下[[!DNL SAP] 订阅计费](https://www.sap.com/products/financial-management/subscription-billing.html)业务合作伙伴API端点将客户和联系人信息摄取到Experience Platform中：
 
 * [客户](https://api.sap.com/api/BusinessPartner_APIs/path/GET_customers)
 * [联系人](https://api.sap.com/api/BusinessPartner_APIs/path/GET_contacts)
@@ -32,14 +32,14 @@ ht-degree: 3%
 
 ## 先决条件 {#prerequisites}
 
-在将[!DNL SAP Commerce]数据引入Experience Platform之前，您必须首先确保具有以下各项：
+在将[!DNL SAP Commerce]数据带入Experience Platform之前，您必须首先确保您具备以下条件：
 
 * [!DNL SAP Subscription Billing]帐户。 如果您还没有有效的帐单帐户，请联系您的[!DNL SAP]帐户经理。 有关其他详细信息，请参阅[[!DNL SAP] 平台配置](https://help.sap.com/doc/5fd179965d5145fbbe7f2a7aa1272338/latest/en-US/PlatformConfiguration.pdf)文档。
 
 * [!DNL SAP]服务密钥。 [!DNL SAP]服务密钥允许您通过Experience Platform访问[!DNL SAP Subscription Billing] API。 [!DNL SAP Commerce] 要求您满足以下条件：
    * 客户端 ID
    * 客户端密码
-   * URL。 URL模式如下： `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`。 当您[使用API创建基本连接](../../tutorials/api/create/ecommerce/sap-commerce.md#base-connection)或当您[通过Platform UI连接 [!DNL SAP Commerce] 帐户](../../tutorials/ui/create/ecommerce/sap-commerce.md#connect-account)时，此值稍后将用于获取`region`和`tokenEndpoint`的值。
+   * URL。 URL模式如下： `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`。 当您使用API [创建基本连接](../../tutorials/api/create/ecommerce/sap-commerce.md#base-connection)或通过Experience Platform UI [连接您的 [!DNL SAP Commerce] 帐户](../../tutorials/ui/create/ecommerce/sap-commerce.md#connect-account)时，此值稍后将用于获取`region`和`tokenEndpoint`的值。
 
 +++选择以查看服务键的示例
 
@@ -71,8 +71,8 @@ ht-degree: 3%
 
 ## 后续步骤
 
-以下文档提供了有关如何使用API或用户界面将[!DNL SAP Commerce]连接到Platform的信息：
+以下文档提供了有关如何使用API或用户界面将[!DNL SAP Commerce]连接到Experience Platform的信息：
 
-* [创建源连接和数据流以使用API](../../tutorials/api/create/ecommerce/sap-commerce.md)将 [!DNL SAP Commerce] 数据引入Platform。
-* [使用UI](../../tutorials/ui/create/ecommerce/sap-commerce.md)连接你的 [!DNL SAP Commerce] 帐户以Experience Platform。
+* [创建源连接和数据流以使用API将 [!DNL SAP Commerce] 数据引入Experience Platform](../../tutorials/api/create/ecommerce/sap-commerce.md)。
+* 使用UI [将您的 [!DNL SAP Commerce] 帐户连接到Experience Platform](../../tutorials/ui/create/ecommerce/sap-commerce.md)。
 * [使用UI为源创建数据流](../../tutorials/ui/dataflow/ecommerce.md)

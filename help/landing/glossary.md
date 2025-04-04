@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform；主页；热门主题
+keywords: Experience Platform；首页；热门话题
 solution: Experience Platform
 title: Adobe Experience Platform术语表
 description: Experience Platform 中的重要术语的词汇表。
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: b16eae9698de6c20022fdf1a3ff659df35e440f6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '7996'
+source-wordcount: '8009'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 ## A
 
-**访问控制**：基于角色的访问控制使管理员能够向Experience Platform用户分配访问和权限。 权限包括查看和/或使用Experience Platform功能，如创建沙盒、定义架构和管理数据集。
+**访问控制**：基于角色的访问控制使管理员能够向Experience Platform用户分配访问和权限。 权限包括查看和/或使用Experience Platform功能的功能，例如创建沙盒、定义架构和管理数据集。
 
 **访问密钥ID**：访问密钥ID是与[!DNL Amazon] S3秘密访问密钥关联的唯一标识符。 访问密钥ID和访问密钥一起用于签署[!DNL Amazon Web Services] (AWS)请求。
 
@@ -25,9 +25,9 @@ ht-degree: 0%
 
 **活动**：在[!DNL Offer Decisioning]中，活动包含通知优惠选择的逻辑。
 
-**管理员**：您组织中可以为Adobe Admin Console中的Experience Platform配置和自定义权限的一个或多个个人。
+**管理员**：贵组织中可以为Adobe Admin Console中的Experience Platform配置和自定义权限的一个或多个个人。
 
-**Adobe Admin Console**： Adobe Admin Console提供了一个中心位置，用于管理组织的Adobe产品权利和访问权限。 通过该控制台，管理员可以授予用户组对各种平台功能的访问权限，例如“管理数据集”、“查看数据集”或“管理配置文件”。
+**Adobe Admin Console**： Adobe Admin Console提供了一个中心位置，用于管理您组织的Adobe产品权利和访问权限。 通过该控制台，管理员可以授予用户组访问各种Experience Platform功能的权限，例如“管理数据集”、“查看数据集”或“管理配置文件”。
 
 **Adobe Experience Platform**： Adobe Experience Platform实现了整个企业内的数据和内容的标准化，从而为实时使用者用户档案提供强大动力，支持数据科学，加速内容处理速度以推动客户历程中的体验个性化。
 
@@ -35,19 +35,19 @@ ht-degree: 0%
 
 **Adobe Experience Platform Segmentation Service**：支持根据实时客户档案数据构建区段并生成受众。 然后，可以将这些受众导出到数据湖中他们自己的数据集。
 
-**Adobe智能服务**：智能服务(如Attribution AI和客户人工智能)是基于人工智能的机器学习模型，这些模型是专门构建的，需要Experience Platform才能运行和操作。
+**Adobe智能服务**：智能服务（如Attribution AI和Customer AI）是基于人工智能的机器学习模型，这些模型是专门构建的，需要Experience Platform运行和操作。
 
-**Adobe I/O**：Adobe I/O是Experience Platform的一部分，提供开发人员集成、扩展和自定义Platform所需的所有功能，包括API、事件、开发人员控制台和有用的工具。
+**Adobe I/O**： Adobe I/O是Experience Platform的一部分，它提供开发人员集成、扩展和自定义Experience Platform所需的所有功能，包括API、事件、开发人员控制台和有用的工具。
 
 **Adobe Sensei**： Adobe Sensei是支持Experience Platform的智能框架。 它还提供了一组AI服务，使品牌能够增强其提供实时、个性化客户体验的能力。
 
 **Amazon S3存储段**： [!DNL Amazon S3]存储段是[!DNL Amazon]生态系统中存储的数据的基本容器。 存储桶包含对象，每个对象都使用开发人员分配的唯一键进行存储和检索。
 
-**Amazon S3连接器**： [!DNL Amazon] S3连接器允许Experience Platform客户安全地连接和访问其[!DNL Amazon] S3数据。
+**Amazon S3连接器**： [!DNL Amazon] S3连接器允许Experience Platform的客户安全地连接和访问其[!DNL Amazon] S3数据。
 
 **APA**： [[!DNL Australia Privacy Act (Privacy Act)]](https://www.oaic.gov.au/privacy/the-privacy-act)提升和保护个人隐私，并管理澳大利亚政府机构和组织处理个人信息的方式。 [!DNL Privacy Act]包含适用于私营部门组织的原则。 例如，个人有权了解为什么收集个人信息以及如何使用信息，有权访问、擦除其数据和更正个人信息。
 
-**附加保存策略**：“附加”保存策略是指定第三方数据通过连接进行摄取，并在数据集末尾附加任何新数据或行时使用的选项。 以前引入的行保持不变，只有自上次计划运行以来创建的行才会引入Experience Platform。 在Experience Platform时，源系统中更改的任何行都将保持不变。
+**附加保存策略**：“附加”保存策略是指定第三方数据通过连接进行摄取，并在数据集末尾附加任何新数据或行时使用的选项。 以前引入的行保持不变，只有自上次计划运行以来创建的行才会引入到Experience Platform。 在源系统中更改的任何行在Experience Platform上保持不变。
 
 **数组**：数组用于具有相同数据类型的有序元素。
 
@@ -55,9 +55,9 @@ ht-degree: 0%
 
 **属性**：属性是代表配置文件的指定特性。
 
-**属性合并**：使用实时客户个人资料API定义合并策略时，`attributeMerge`对象指示在数据冲突的情况下合并策略优先处理个人资料属性的方式。 此操作等同于在平台UI中定义合并策略时选择[!UICONTROL 合并方法]。
+**属性合并**：使用实时客户个人资料API定义合并策略时，`attributeMerge`对象指示在数据冲突的情况下合并策略优先处理个人资料属性的方式。 在Experience Platform UI中定义合并策略时，它等效于选择[!UICONTROL 合并方法]。
 
-**Attribution AI**： [!DNL Attribution AI]是一项由Adobe Sensei提供支持的智能服务，可在整个客户生命周期中提供算法多渠道归因功能。
+**归因人工智能**： [!DNL Attribution AI]是一项由Adobe Sensei提供支持的智能服务，可在整个客户生命周期中提供算法多渠道归因功能。
 
 **受众**：受众是符合区段定义条件的结果配置文件集。
 
@@ -69,7 +69,7 @@ ht-degree: 0%
 
 **回填**：对于计划的源，回填选项允许摄取历史数据。
 
-**回填时段**：回填时段是一个选项，可用于设置通过源连接摄取第三方历史数据的时长。 选择“永久”的回填时间将摄取要Experience Platform的源数据的整个历史记录。
+**回填时段**：回填时段是一个选项，可用于设置通过源连接摄取第三方历史数据的时长。 选择“永久”的回填时段会将源数据的整个历史记录摄取到Experience Platform。
 
 **批次**：批次是在一段时间内收集的一组数据，作为一个单元一起处理。 数据集由多个批次组成。
 
@@ -87,9 +87,9 @@ ht-degree: 0%
 
 **上限**：在[!DNL Offer Decisioning]中，决策规则中使用上限（也称为频率上限）来定义提供优惠的次数。 有两种类型的上限：在合并的目标受众中可以提议选件的次数（称为“全局上限”），以及向同一最终用户提议选件的次数（称为“用户档案上限”）。
 
-**目录**：在源和目标的上下文中，目录是一个图库，可以连接到Adobe应用程序和第三方技术。 不要与[!DNL Catalog Service]混淆。
+**目录**：在源和目标的上下文中，目录是一个库，可以连接到Adobe应用程序和第三方技术。 不要与[!DNL Catalog Service]混淆。
 
-**[!DNL Catalog Service]**： [!DNL Catalog Service] （有时称为[!DNL Catalog]）是Adobe Experience Platform中数据位置和族系的记录系统。 虽然所有引入Experience Platform的数据都作为文件和目录存储在数据湖中，但[!DNL Catalog]保留这些文件和目录的元数据和描述，以用于查找、监控和数据治理目的。
+**[!DNL Catalog Service]**： [!DNL Catalog Service] （有时称为[!DNL Catalog]）是Adobe Experience Platform中数据位置和族系的记录系统。 虽然摄取到Experience Platform中的所有数据都作为文件和目录存储在数据湖中，但[!DNL Catalog]保留这些文件和目录的元数据和描述，以用于查找、监控和数据治理目的。
 
 **CCPA**： [[!DNL California Consumer Privacy Act (CCPA)]](https://oag.ca.gov/privacy/ccpa)增强了美国加利福尼亚州居民的隐私权和消费者保护。 CCPA为加州居民提供了新的数据隐私权，包括访问和删除个人数据的权利，知晓其个人数据是否被出售或披露（包括披露给谁）的权利，以及选择退出将其数据出售给第三方的权利。
 
@@ -155,17 +155,17 @@ ht-degree: 0%
 
 **数据元素**：在标记的上下文中，数据元素是规则和扩展中使用的指针，用于指向客户端设备上存在的特定数据段。
 
-**数据摄取**：数据摄取是将数据从源添加到Experience Platform的过程。 可以通过多种方式将数据摄取到Platform中，包括流式传输、批量传输或通过源连接器添加。
+**数据摄取**：数据摄取是将数据从源添加到Experience Platform的过程。 数据可以通过多种方式摄取到Experience Platform中，包括流式传输、批量摄取或通过源连接器添加。
 
 **数据层**：在标记的上下文中，数据层是客户端设备上存在的数据结构，其中包含有关查看页面或屏幕的上下文的元数据。
 
 **数据治理**：数据治理包括使用的策略和技术，以确保数据在数据使用方面符合法规和组织策略。
 
-**数据集成合作伙伴**：数据集成合作伙伴简化并自动加载和转换从200多个源到Experience Platform的大量数据，而无需编写代码。
+**数据集成合作伙伴**：数据集成合作伙伴可简化并自动加载和转换从200多个源到Experience Platform的大量数据，而无需编写代码。
 
 **数据集标签**：可以将数据使用标签添加到数据集。 该数据集中的所有字段将继承数据集的标签。
 
-**数据科学Workspace**： Experience Platform中的[!DNL Data Science Workspace]使客户能够利用Platform和Adobe应用程序中的数据创建机器学习模型，以创建智能区段、生成见解和提供预测，从而极大地增强最终用户数字体验。
+**数据科学Workspace**： Experience Platform中的[!DNL Data Science Workspace]使客户能够利用Experience Platform和Adobe应用程序中的数据创建机器学习模型，以创建智能区段、生成见解和提供预测，从而极大地增强最终用户数字体验。
 
 **数据源**：数据源是用户指定的数据来源。 数据源的示例包括移动设备应用程序、配置文件和/或体验事件、网站配置文件事件或CRM。
 
@@ -177,13 +177,13 @@ ht-degree: 0%
 
 **数据使用标签**：数据使用标签允许您对反映隐私相关考虑因素和合同条件的数据进行分类，以符合法规和公司政策。 添加到数据集的数据使用标签将会向下继承或应用于该数据集中的所有字段。 数据使用标签也可以直接应用于字段。
 
-**数据流**：数据流是从源流向平台以及从源流向目标的虚拟数据管道。
+**数据流**：数据流是从源流入Experience Platform并从源流向目标的虚拟数据管道。
 
-**数据流运行**：数据流运行是根据用户指定的计划登陆Experience Platform的数据流。
+**数据流运行**：数据流运行是基于用户指定的计划登陆Experience Platform的数据流。
 
 **数据集**：数据集是数据集合的存储和管理结构，通常是包含架构（列）和字段（行）的表。
 
-**数据集ID**：所摄取数据集的Adobe生成的标识符。
+**数据集ID**： Adobe为引入的数据集生成的标识符。
 
 **数据集输出**：数据集输出提供了一种机制，用于确定对于特定[!DNL Query Service]运行将使用“创建表作为选择”选项。
 
@@ -191,7 +191,7 @@ ht-degree: 0%
 
 **增量列**：增量列允许您选择源数据字段来表示增量摄取的时间戳。
 
-**增量保存策略**：增量保存策略是通过源连接引入第三方数据的选项。 利用选项，用户可以指定将源数据的新行或更改行摄取到Experience Platform。 新行会添加到数据集的结尾，而更改的行会在Experience Platform时更新数据集中的。
+**增量保存策略**：增量保存策略是通过源连接引入第三方数据的选项。 利用选项，用户可指定将源数据的新行或更改的行摄取到Experience Platform。 新行会添加到数据集的结尾，而更改的行会在Experience Platform上的数据集中更新。
 
 **描述符**：在Experience Data Model (XDM)中，描述符是额外的架构相关元数据集，用于描述字段的特定行为。 Experience Platform可以使用描述符来了解预期的架构行为，例如两个架构之间的关系。
 
@@ -213,7 +213,7 @@ ht-degree: 0%
 
 **电子邮件定位营销活动**：在电子邮件定位营销活动中使用数据的营销活动。
 
-**嵌入代码**：在tags的上下文中，嵌入代码是放置在网站或环境上的HTML中的脚本标记。 嵌入代码会指示浏览器在何处检索内部版本。
+**嵌入代码**：在tags的上下文中，嵌入代码是放置在HTML中的网站或环境的脚本标记。 嵌入代码会指示浏览器在何处检索内部版本。
 
 **枚举**：枚举（枚举）是限制为一组预定义值的XDM字段。
 
@@ -259,7 +259,7 @@ ht-degree: 0%
 
 ## G
 
-**地理围栏**：地理围栏是由GPS或RFID技术定义的虚拟地理边界，它使软件能够在移动设备进入或离开特定区域时触发响应。
+**地理围栏**：地理围栏是由GPS或RFID技术定义的虚拟地理边界，它允许软件在移动设备进入或离开特定区域时触发响应。
 
 **GDPR（通用数据保护条例）**：“通用数据保护条例”(GDPR)是一个法律框架，它规定了收集和处理欧盟(EU)境内个人信息的准则。 GDPR规定了数据管理原则和个人权利，并涵盖处理欧盟公民数据的所有公司。
 
@@ -305,7 +305,7 @@ ht-degree: 0%
 
 **输入功能**：在功能映射中指定了输入功能，机器学习模型使用该输入功能进行预测。
 
-**[!DNL Intelligent Services]**： [!DNL Intelligent Services]（如[!DNL Attribution AI]和[!DNL Customer AI]）是基于机器学习、人工智能的模型，需要Experience Platform(或基于Adobe Real-time Customer Data Platform等平台构建的应用程序)才能运行和操作。
+**[!DNL Intelligent Services]**： [!DNL Intelligent Services]（如[!DNL Attribution AI]和[!DNL Customer AI]）是基于机器学习、人工智能的模型，需要Experience Platform(或基于Experience Platform构建的应用程序，如Adobe Real-Time Customer Data Platform)运行和操作。
 
 **基于兴趣的定位或个性化**：如果满足以下三个条件，则会发生基于兴趣的定位，也称为个性化：
 
@@ -315,9 +315,9 @@ ht-degree: 0%
 
 ## J
 
-**[!DNL JupyterLab]**：集成到Platform UI中的项目[!DNL Jupyter]的开源、基于Web的界面。
+**[!DNL JupyterLab]**：集成到Experience Platform UI中的项目[!DNL Jupyter]的开源、基于Web的界面。
 
-**[!DNL Jupyter Notebook]**：与JupyterLab集成，Jupyter Notebooks使您能够使用Python、Scala和PySpark等多种语言对Experience Platform数据执行数据清理和转换、数字模拟、统计建模、数据可视化、机器学习等。
+**[!DNL Jupyter Notebook]**：与JupyterLab集成，Jupyter Notebooks允许您使用Python、Scala和PySpark等多种语言，对Experience Platform数据执行数据清理和转换、数字模拟、统计建模、数据可视化、机器学习等。
 
 ## K
 
@@ -339,11 +339,11 @@ ht-degree: 0%
 
 **映射**：数据映射是将源数据字段映射到目标中相关目标字段的过程。
 
-**营销操作**：在数据管理框架中，营销操作（也称为营销用例）是Experience Platform数据使用者执行的操作，需要检查是否存在违反数据使用策略的操作。
+**营销操作**：在数据治理框架中，营销操作（也称为营销用例）是Experience Platform数据使用者执行的操作，需要检查是否存在违反数据使用策略的操作。
 
-**合并方法**：使用Platform UI定义合并策略时，合并方法会指定发生冲突时数据片段的优先顺序。 使用实时客户个人资料API定义合并策略时，使用`attributeMerge`对象确定合并方法。
+**合并方法**：使用Experience Platform UI定义合并策略时，合并方法会指定发生冲突时数据片段的优先顺序。 使用实时客户个人资料API定义合并策略时，使用`attributeMerge`对象确定合并方法。
 
-**合并策略**：合并策略是Experience Platform用来确定如何合并来自多个来源的客户数据片段以创建单个配置文件的规则。 当发生数据冲突时，合并策略会确定哪些数据应优先包含在配置文件中。
+**合并策略**：合并策略是Experience Platform用于确定如何合并来自多个来源的客户数据片段以创建单个配置文件的规则。 当发生数据冲突时，合并策略会确定哪些数据应优先包含在配置文件中。
 
 **MHMDAa**： [[!DNL Washington My Health My Data Act]](https://app.leg.wa.gov/RCW/default.aspx?cite=19.373&amp;full=true)增强了消费者对其健康数据的隐私权。 它规定健康数据的披露、消费者同意和删除权利，并禁止未经授权销售健康数据。 此外，该法还规定，在保健设施周围使用地理围栏是非法的。
 
@@ -389,11 +389,11 @@ ht-degree: 0%
 
 **个性化优惠**：个性化优惠是基于资格规则和约束的可自定义营销消息。
 
-**投放位置**：投放位置是为最终用户显示优惠的位置和/或上下文。
+**放置环境**：放置环境是为最终用户显示产品建议的位置和/或上下文。
 
-**策略工作区**： Platform UI中的工作区，它允许数据管理员查看和管理组织的数据使用标签和策略。
+**策略工作区**： Experience Platform UI中的工作区，它允许数据管理员查看和管理组织的数据使用标签和策略。
 
-**策略**：数据使用策略是指定营销操作的规则，该操作基于应用应用到Platform数据的使用标签而受限制。
+**策略**：数据使用策略是指定营销操作的规则，该操作基于应用应用到Experience Platform数据的使用标签而受到限制。
 
 **策略实施**：允许您通过应用的营销操作实施数据使用策略，以防止在组织内构成策略违规的数据操作。
 
@@ -403,7 +403,7 @@ ht-degree: 0%
 
 **专用标识图**：专用标识图（有时称为专用图）是缝合标识和链接标识之间关系的专用映射，它基于第一方数据构建，并且仅对您的组织可见。 每个组织只能有一个专用图，并且可用作为每个客户生成的与您的品牌互动的个人身份图的结构蓝图。
 
-**产品配置文件**：通过产品配置文件，管理员可授予用户访问与Experience Platform相关联的所有或一部分服务的权限。
+**产品配置文件**：通过产品配置文件，管理员可授予用户访问与Experience Platform关联的所有或一部分服务的权限。
 
 **生产沙盒**：生产沙盒是要在生产环境中使用的沙盒。 与非生产沙盒不同，生产沙盒无法重置或删除。
 
@@ -433,11 +433,11 @@ ht-degree: 0%
 
 ## R
 
-**Real-time Customer Data Platform**： Adobe Real-time Customer Data Platform (Real-Time CDP)将已知和未知的客户数据相结合，通过简化集成、智能细分和跨数字客户历程的实时激活创建可信的客户个人资料。
+**Real-Time Customer Data Platform**： Adobe Real-Time Customer Data Platform (Real-Time CDP)将已知和未知的客户数据相结合，通过简化集成、智能细分和跨数字客户历程的实时激活创建可信的客户个人资料。
 
 **实时客户个人资料**：实时客户个人资料（有时称为个人资料）通过组合来自多个渠道（包括在线、离线、CRM和第三方）的数据来提供每个客户的整体视图。 用户档案允许您将客户数据整合到单个用户档案中，并提供每个客户互动的可操作、带时间戳的帐户。
 
-**方法**：方法是Adobe对模型规范的术语，它是一个顶级容器，表示构建和执行经过训练的模型所需的特定机器学习流程、AI算法、处理逻辑和配置参数，从而帮助解决特定的业务问题。
+**方法**：方法是Adobe对模型规范的术语，它是一个顶级容器，表示构建和执行经过训练的模型从而帮助解决特定业务问题所需的特定机器学习流程、AI算法、处理逻辑和配置参数。
 
 **记录**：记录是作为数据集中的行保留的数据。
 
@@ -449,7 +449,7 @@ ht-degree: 0%
 
 **资源**：在标记上下文中，资源是一个通用术语，它引用tagsa用户在客户端环境中可以配置的选项，包括扩展、数据元素和规则。
 
-**基于角色的访问控制**：基于角色的访问控制使管理员能够向Experience Platform用户分配访问和权限。 权限包括查看和/或使用Experience Platform功能，如创建沙盒、定义架构和管理数据集。
+**基于角色的访问控制**：基于角色的访问控制使管理员能够向Experience Platform用户分配访问和权限。 权限包括查看和/或使用Experience Platform功能的功能，例如创建沙盒、定义架构和管理数据集。
 
 **规则**：在标记的上下文中，规则是定义应在逻辑上分组的特定事件、条件和操作集的组件集合。
 
@@ -461,11 +461,11 @@ ht-degree: 0%
 
 **示例数据**：示例数据是数据文件（通常是前100行）的预览，它使数据科学家或工程师能够了解数据文件中包含什么架构或数据。
 
-**沙盒**：沙盒是一种虚拟构造，它将单个Platform实例分区为单独的虚拟环境，以帮助开发和改进数字体验应用程序。
+**沙盒**：沙盒是一种虚拟构造，它将单个Experience Platform实例分区为单独的虚拟环境，以帮助开发和改进数字体验应用程序。
 
 **沙盒重置**：沙盒重置将删除沙盒中的所有数据，包括数据、配置文件和区段。 沙盒重置可能会影响连接到内部或外部目标的数据。
 
-**沙盒切换器**：Experience Platform中的沙盒切换器控件允许用户在其有权访问的沙盒之间导航。 切换沙盒将更改所有内容，并且可能会根据权限更改功能访问。
+**沙盒切换器**： Experience Platform中的沙盒切换器控件允许用户在其有权访问的沙盒之间导航。 切换沙盒将更改所有内容，并且可能会根据权限更改功能访问。
 
 **计划**：计划是用户定义的有关从第三方数据源摄取数据到Adobe Experience Platform的频率或节奏的规范。
 
@@ -489,7 +489,7 @@ ht-degree: 0%
 
 **区段评估方法**：有两种区段评估方法：计划评估方法和按需评估方法。 计划的评估启用在特定时间运行导出作业的定期计划，而按需评估涉及创建区段作业以立即构建受众。
 
-**区段导出**：区段导出是Experience Platform中两种类型目标之一。 通过区段导出，您可以发送符合条件并已映射到目标的用户档案。 使用区段和用户ID以及假名数据，通常与社交网络和其他数字媒体目标平台集成。
+**区段导出**：区段导出是Experience Platform中的两种目标类型之一。 通过区段导出，您可以发送符合条件并已映射到目标的用户档案。 使用区段和用户ID以及假名数据，通常与社交网络和其他数字媒体目标平台集成。
 
 **区段ID**：区段ID是与区段关联的自动生成的标识符。
 
@@ -503,7 +503,7 @@ ht-degree: 0%
 
 **敏感(“S”)标签**：敏感(“S”)标签用于对被视为敏感的数据进行分类，例如要标记为敏感的不同类型的行为或地理数据。
 
-**服务**：通过利用Adobe智能服务使AI和ML服务可操作化的强大框架。 服务可提供实时、个性化的客户体验或操作化定制智能服务。
+**服务**：一个功能强大的框架，可利用Adobe智能服务使AI和ML服务可操作化。 服务可提供实时、个性化的客户体验或操作化定制智能服务。
 
 **单一身份个性化营销操作**：营销操作，使用数据实现现场内容个性化。 现场个性化是用于推断用户兴趣的任何数据，并用于根据这些推断选择提供哪些内容或广告。
 
@@ -511,7 +511,7 @@ ht-degree: 0%
 
 **S2数据使用标签**： `S2`数据使用标签用于对可用于确定广泛定义的地理围栏区域的数据进行分类。
 
-**Source**：源是Platform中任何输入连接器的常规术语。 另请参阅： Source连接器
+**Source**：源是Experience Platform中任何输入连接器的常规术语。 另请参阅： Source连接器
 
 **Source属性**：源属性是源数据集中的一个字段。 Source属性将映射到目标架构字段。
 
@@ -525,7 +525,7 @@ ht-degree: 0%
 
 **标准身份命名空间**：标准身份命名空间是Adobe提供的预定义身份命名空间，它表示通常用于识别客户的行业标准解决方案。
 
-**流式摄取**：流式摄取允许您从客户端和服务器端设备实时发送数据以Experience Platform。
+**流式摄取**：流式摄取允许您实时将数据从客户端和服务器端设备发送到Experience Platform。
 
 **流式分段**：流式分段是一个持续的数据选择流程，它会更新分段以响应用户活动。 生成并保存区段后，区段定义将应用于[!DNL Real-Time Customer Profile]的传入数据。 定期处理区段的添加和移除，确保您的目标受众仍然相关。
 
@@ -565,7 +565,7 @@ ht-degree: 0%
 
 **XDM个人资料**： XDM [!DNL Individual Profile]是一个基于记录的类，它构成已识别和部分识别主体的属性的单一表示形式。 高度识别的用户档案可用于个人通信或定向参与，并且可以包含详细的个人信息，例如姓名、性别、出生日期、位置以及联系信息（包括电话号码和电子邮件地址）。
 
-**XDM System**： XDM System表示可将XDM架构操作用于下游Experience Platform服务的框架。
+**XDM System**： XDM System表示可将XDM架构可操作用于下游Experience Platform服务的框架。
 
 ## Y
 

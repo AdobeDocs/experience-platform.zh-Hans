@@ -2,10 +2,10 @@
 title: 内部版本
 description: 了解内部版本的概念以及它们在Adobe Experience Platform中的运行方式。
 exl-id: af899282-aa2d-4395-8dbd-18d91be3f041
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '784'
-ht-degree: 48%
+source-wordcount: '791'
+ht-degree: 54%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 48%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 内部版本是一组文件，其中包含在客户端设备上运行的所有代码。
 
@@ -56,15 +56,15 @@ ht-degree: 48%
 
 通过缩小，可以从文件中去除执行操作不需要的数据，从而降低带宽成本并提高运行速度。
 
-为了提高性能，Platform将缩小所有内容，包括：
+为了提高性能，Experience Platform将缩小所有内容，包括：
 
 * 主标记库
 * 扩展开发人员提供的作为扩展一部分的模块代码
-* Platform用户提供自定义代码
+* Experience Platform用户提供的自定义代码
 
 >[!NOTE]
 >
->如果您的模块代码和自定义代码已经缩小，Platform仍会再次缩小它们。 第二次缩小没有其他好处，但也不会造成任何损害，它可以简化Platform，使其更易于维护。
+>如果您的模块代码和自定义代码已经缩小，Experience Platform仍会再次缩小它们。 第二次缩小没有其他好处，但也不会造成任何损害，它可以简化Experience Platform，使其更易于维护。
 
 提供的任何客户端代码都指向代码的缩小版本。 这在遵循缩小文件的标准命名约定的文件名中可见：
 
@@ -74,7 +74,7 @@ ht-degree: 48%
 
 `launch-%environment_id%.js`
 
-如果扩展开发人员为其扩展提供缩小的代码，则Platform不会在未缩小的内部版本中提供未缩小的代码。 同样，如果Platform用户将缩小的代码放入自定义代码框中，则该代码在未缩小的内部版本中仍为缩小版本。 Platform不会缩小任何内容。
+如果扩展开发人员为其扩展提供缩小的代码，则Experience Platform不会在未缩小的内部版本中提供未缩小的代码。 同样，如果Experience Platform用户将缩小的代码放入自定义代码框中，则该代码在未缩小的内部版本中仍为缩小版本。 Experience Platform不会缩小任何内容。
 
 有关缩小的详细信息，请参阅[此栈栈路径文章](https://blog.stackpath.com/glossary/minification/)。
 

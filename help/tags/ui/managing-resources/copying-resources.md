@@ -2,10 +2,10 @@
 title: 复制资源
 description: 了解如何使用Adobe Experience Platform中现有标记资源的设置创建新标记资源。
 exl-id: 7e52ceae-97df-4c64-aba3-4f5ba6018a47
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '780'
-ht-degree: 73%
+source-wordcount: '781'
+ht-degree: 79%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 73%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 有时，使用现有资源的设置制作新资源会很方便。 在这些情况下，您可以制作副本。
 
@@ -60,7 +60,7 @@ ht-degree: 73%
 
 ## 复制规则和数据元素
 
-所有规则和数据元素均由扩展提供，因此当您跨资产复制时，Platform必须考虑这些底层扩展。
+所有规则和数据元素均由扩展提供，因此当您跨资产复制时，Experience Platform必须考虑这些底层扩展。
 
 ![将规则复制到演示资产](../../images/copy-rules-dialog1.png)
 

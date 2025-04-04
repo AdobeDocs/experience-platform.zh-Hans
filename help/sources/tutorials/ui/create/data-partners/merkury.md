@@ -4,9 +4,9 @@ description: 了解如何使用Adobe Experience Platform UI创建Merkury企业�
 last-substantial-update: 2023-12=12
 badge: Beta 版
 exl-id: 2af48c18-76f9-4615-8e76-8f030a312a8f
-source-git-commit: d048109141168b33795753c4706dac64cdf29ca5
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2143'
+source-wordcount: '2146'
 ht-degree: 1%
 
 ---
@@ -23,14 +23,14 @@ ht-degree: 1%
 
 本教程需要对以下Experience Platform组件有一定的了解：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
 
 ### 收集所需的凭据
 
-要在Experience Platform时访问存储段，您需要为以下凭据提供有效值：
+要在Experience Platform上访问存储段，您需要为以下凭据提供有效值：
 
 | 凭据 | 描述 |
 | --- | --- |
@@ -42,7 +42,7 @@ ht-degree: 1%
 
 ## 连接您的Merkury帐户
 
-在Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以为其创建帐户的各种源。
+在Experience Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以为其创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
@@ -79,7 +79,7 @@ ht-degree: 1%
 
 ## 添加数据
 
-创建您的[!DNL Merkury]帐户后，将显示&#x200B;**[!UICONTROL 添加数据]**&#x200B;步骤，该步骤为您提供了一个界面，让您能够探索[!DNL Merkury]文件层次结构并选择要带入Experience Platform的文件夹或特定文件。
+创建您的[!DNL Merkury]帐户后，将显示&#x200B;**[!UICONTROL 添加数据]**&#x200B;步骤，该步骤为您提供了一个界面来探索[!DNL Merkury]文件层次结构并选择要带到Experience Platform的文件夹或特定文件。
 
 * 界面的左侧是目录浏览器，显示您的[!DNL Merkury]文件层次结构。
 * 界面的右侧部分允许您预览兼容文件夹或文件中最多100行数据。
@@ -121,7 +121,7 @@ ht-degree: 1%
 
 在[!UICONTROL 选择数据]步骤中，选择要摄取的压缩文件，然后选择其相应的文件类型以及是否符合XDM。 接下来，选择&#x200B;**[!UICONTROL 压缩类型]**，然后为您的源数据选择适当的压缩文件类型。
 
-要将特定文件带入Platform，请选择一个文件夹，然后选择要摄取的文件。 在此步骤中，还可以使用文件名旁边的预览图标预览给定文件夹中其他文件的文件内容。
+要将特定文件带入Experience Platform，请选择一个文件夹，然后选择要摄取的文件。 在此步骤中，还可以使用文件名旁边的预览图标预览给定文件夹中其他文件的文件内容。
 
 完成后，选择&#x200B;**[!UICONTROL 下一步]**。
 
@@ -167,7 +167,7 @@ ht-degree: 1%
 
 此时将显示[!UICONTROL 映射]步骤，该步骤为您提供了一个接口，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
 
-Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](../../../../../data-prep/ui/mapping.md)。
+Experience Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](../../../../../data-prep/ui/mapping.md)。
 
 成功映射源数据后，选择&#x200B;**[!UICONTROL 下一步]**。
 
@@ -216,7 +216,7 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 ## 后续步骤
 
-通过完成本教程，您已成功地创建了一个数据流以将批次数据从[!DNL Merkury]源引入Experience Platform。 有关其他资源，请访问下面列出的文档。
+通过学习本教程，您已成功地创建了一个数据流，以将批次数据从[!DNL Merkury]源引入Experience Platform。 有关其他资源，请访问下面列出的文档。
 
 ### 监测数据流
 

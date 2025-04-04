@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 映射集概述
 description: 了解如何将映射集与Adobe Experience Platform数据准备结合使用。
 exl-id: b45545b7-3ae7-400d-b6fd-b2cb76061093
-source-git-commit: 660948b7a43ed3c18feb74cccf8f9c607470759c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '959'
+source-wordcount: '960'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 0%
 此概述需要您对Adobe Experience Platform的以下组件有一定的了解：
 
 - [数据准备](./home.md)：数据准备允许数据工程师映射、转换和验证与体验数据模型(XDM)之间的数据。
-- [数据流](../dataflows/home.md)：数据流是跨平台移动数据的数据作业的表示形式。 数据流在不同服务之间配置，帮助将数据从源连接器移动到目标数据集、[!DNL Identity]和[!DNL Profile]以及[!DNL Destinations]。
+- [数据流](../dataflows/home.md)：数据流是跨Experience Platform移动数据的数据作业的表示形式。 数据流在不同服务之间配置，帮助将数据从源连接器移动到目标数据集、[!DNL Identity]和[!DNL Profile]以及[!DNL Destinations]。
 - [[!DNL Adobe Experience Platform Data Ingestion]](../ingestion/home.md)：将数据发送到[!DNL Experience Platform]的方法。
 - [[!DNL Experience Data Model (XDM) System]](../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
 

@@ -2,24 +2,24 @@
 title: 数据收集端到端概述
 description: 有关如何使用Adobe Experience Platform的数据收集功能将事件数据发送到Adobe Experience Cloud解决方案的高级别概述。
 exl-id: 01ddbb19-40bb-4cb5-bfca-b272b88008b3
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2616'
+source-wordcount: '2624'
 ht-degree: 0%
 
 ---
 
 # 数据收集端到端概述
 
-Adobe Experience Platform收集您的数据并将这些数据传输到其他Adobe产品和第三方目标。 要将应用程序中的事件数据发送到Experience PlatformEdge Network，请务必了解这些核心技术以及如何配置这些技术，以在需要时将数据交付到所需的目的地。
+Adobe Experience Platform收集您的数据并将这些数据传输到其他Adobe产品和第三方目标。 要将应用程序中的事件数据发送到Experience Platform Edge Network，请务必了解这些核心技术以及如何配置这些技术，以在需要时将数据交付到所需的目标。
 
-本指南提供了有关如何使用Platform的数据收集功能通过Edge Network发送事件的高级教程。 具体而言，本教程将介绍在数据收集UI(以前称为Adobe Experience Platform Launch)中安装和配置Adobe Experience Platform Web SDK标记扩展的步骤。
+本指南提供了有关如何使用Experience Platform的数据收集功能通过Edge Network发送事件的高级教程。 具体而言，本教程将介绍在数据收集UI(以前称为Adobe Experience Platform Launch)中安装和配置Adobe Experience Platform Web SDK标记扩展的步骤。
 
 >[!NOTE]
 >
 >如果您不想使用标记，也可以选择手动安装和配置SDK，但周围的步骤仍必须按照以下所述完成。
 >
->所有涉及数据收集UI的步骤也可以在Experience PlatformUI中执行。
+>所有涉及数据收集UI的步骤也可以在Experience Platform UI中执行。
 
 ## 先决条件
 
@@ -30,28 +30,28 @@ Adobe Experience Platform收集您的数据并将这些数据传输到其他Adob
 
 请参阅有关[管理数据收集的权限](./permissions.md)的指南，了解如何授予对属性和属性权限的访问权限。
 
-要使用本指南中提到的各种数据收集产品，您还必须有权访问数据流，并能够创建和管理架构。 如果您需要访问其中任何一项功能，请联系您的Adobe帐户团队以帮助您获得必要的访问权限。 请注意，如果您尚未购买Adobe Experience Platform，Adobe将为您提供免费使用SDK所需的访问权限。
+要使用本指南中提到的各种数据收集产品，您还必须有权访问数据流，并能够创建和管理架构。 如果您需要访问其中任何一项功能，请联系您的Adobe帐户团队帮助您获得所需的访问权限。 请注意，如果您尚未购买Adobe Experience Platform，Adobe将为您提供使用SDK所需的访问权限，而不需支付额外费用。
 
-如果您已经有权访问Platform，则必须确保已启用以下类别下的所有[权限](../access-control/home.md#permissions)：
+如果您已经有权访问Experience Platform，则必须确保已启用以下类别下的所有[权限](../access-control/home.md#permissions)：
 
 * 数据建模
-* 标识
+* 身份标识
 
-请参阅[访问控制UI概述](../access-control/ui/overview.md)，了解如何向用户授予Platform功能的权限。
+请参阅[访问控制UI概述](../access-control/ui/overview.md)，了解如何向用户授予Experience Platform功能的权限。
 
 ## 流程摘要
 
 为您的网站配置数据收集的过程可概括如下：
 
-1. [创建架构](#schema)以确定将数据发送到Edge Network时如何构建数据。
+1. [创建架构](#schema)，以确定将数据发送到Edge Network时的结构方式。
 1. [创建数据流](#datastream)以配置要将数据发送到哪些目标。
 1. [安装并配置Web SDK](#sdk)，以便在网站上发生某些事件时将数据发送到数据流。
 
-如果贵组织拥有事件转发的许可证，则在能够向Edge Network发送数据后，您也可选择[配置事件转发](#event-forwarding)。
+将数据发送到Edge Network后，如果贵组织拥有事件转发的许可证，您还可以选择[配置事件转发](#event-forwarding)。
 
 ## 创建架构 {#schema}
 
-[体验数据模型(XDM)](../xdm/home.md)是一个开源规范，为架构形式的数据提供通用结构和定义。 换句话说，XDM是一种以可由Edge Network和其他Adobe Experience Cloud应用程序操作的方式构造和格式化您的数据的方式。
+[体验数据模型(XDM)](../xdm/home.md)是一个开源规范，为架构形式的数据提供通用结构和定义。 换言之，XDM是一种以可由Edge Network和其他Adobe Experience Cloud应用程序操作的方式构造和格式化您的数据的方式。
 
 设置数据收集操作的第一步是创建XDM架构来表示您的数据。 在本教程的后一步中，您将将要发送的数据映射到此架构的结构。
 
@@ -69,9 +69,9 @@ Adobe Experience Platform收集您的数据并将这些数据传输到其他Adob
 
 ![架构工作区](./images/e2e/add-field-group.png)
 
-此时将显示架构画布，其中显示XDM架构的树结构，包括Web SDK字段组提供的字段。
+此时会出现架构画布，显示XDM架构的树结构，包括Web SDK字段组提供的字段。
 
-![模式结构](./images/e2e/schema-structure.png)
+![架构结构](./images/e2e/schema-structure.png)
 
 选择树中的根字段以打开右边栏中的&#x200B;**[!UICONTROL 架构属性]**，您可以在其中提供架构的名称和可选描述。
 
@@ -93,11 +93,11 @@ Adobe Experience Platform收集您的数据并将这些数据传输到其他Adob
 
 ## 创建数据流 {#datastream}
 
-数据流是一种配置，用于告知Edge Network您希望将数据发送到何处。 具体而言，数据流指定要将数据发送到哪些Experience Cloud产品，以及您希望如何处理和存储每个产品中的数据。
+数据流是一种配置，用于告知Edge Network您希望将数据发送到的位置。 具体而言，数据流会指定要将数据发送到哪些Experience Cloud产品，以及您希望如何在每个产品中处理和存储数据。
 
 >[!NOTE]
 >
->如果要使用[事件转发](../tags/ui/event-forwarding/overview.md)（假设您的组织已获得使用相关功能的许可），则必须以启用Adobe产品的相同方式，为数据流启用该功能。 有关此进程的详细信息，请参阅[后面的部分](#event-forwarding)。
+>如果要使用[事件转发](../tags/ui/event-forwarding/overview.md)（假设您的组织已获得使用相关功能的许可），则必须使用启用Adobe产品的相同方式为数据流启用该功能。 有关此进程的详细信息，请参阅[后面的部分](#event-forwarding)。
 
 在左侧导航中选择&#x200B;**[!UICONTROL 数据流]**。 在此处，您可以从列表中选择要编辑的现有数据流，也可以通过选择&#x200B;**[!UICONTROL 新建数据流]**&#x200B;来创建新的配置。
 
@@ -107,7 +107,7 @@ Adobe Experience Platform收集您的数据并将这些数据传输到其他Adob
 
 ## 安装和配置Web SDK {#install}
 
-创建架构和数据流后，下一步是安装和配置Platform Web SDK以开始向Edge Network发送数据。
+创建架构和数据流后，下一步是安装和配置Experience Platform Web SDK，以开始将数据发送到Edge Network。
 
 >[!NOTE]
 >
@@ -120,7 +120,7 @@ Adobe Experience Platform收集您的数据并将这些数据传输到其他Adob
 
 该过程可概括如下：
 
-1. [在标记属性](#install-sdk)上安装Adobe Experience Platform Web SDK以访问其功能。
+1. [在标记属性](#install-sdk)上安装Adobe Experience Platform Web SDK以获取其功能的访问权限。
 1. [创建XDM对象数据元素](#data-element)以将网站上的变量映射到您之前创建的XDM架构的结构。
 1. [创建规则](#rule)以告知SDK应何时将数据发送到Edge Network。
 1. [生成并安装库](#library)以在您的网站上实施该规则。
@@ -135,7 +135,7 @@ Adobe Experience Platform收集您的数据并将这些数据传输到其他Adob
 
 ![创建属性](./images/e2e/create-property.png)
 
-此时会显示该资产的概述页面。 在此处，在左侧导航中选择&#x200B;**[!UICONTROL 扩展]**，然后选择&#x200B;**[!UICONTROL 目录]**。 查找Platform Web SDK的列表（可以选择使用搜索栏缩小结果范围），然后选择&#x200B;**[!UICONTROL 安装]**。
+此时会显示该资产的概述页面。 在此处，在左侧导航中选择&#x200B;**[!UICONTROL 扩展]**，然后选择&#x200B;**[!UICONTROL 目录]**。 查找Experience Platform Web SDK的列表（可以选择使用搜索栏缩小结果范围）并选择&#x200B;**[!UICONTROL 安装]**。
 
 ![安装Web SDK](./images/e2e/install-sdk.png)
 
@@ -159,7 +159,7 @@ Adobe Experience Platform收集您的数据并将这些数据传输到其他Adob
 
 ![XDM对象类型](./images/e2e/xdm-object.png)
 
-此时会出现XDM对象类型的配置对话框。 该对话框会自动选择您的Platform沙盒，在这里，您可以看到在该沙盒中创建的所有架构。 从列表中选择您之前创建的XDM架构。
+此时会出现XDM对象类型的配置对话框。 该对话框会自动选择您的Experience Platform沙盒，在这里，您可以看到在该沙盒中创建的所有架构。 从列表中选择您之前创建的XDM架构。
 
 ![XDM对象类型](./images/e2e/select-schema.png)
 
@@ -179,9 +179,9 @@ Adobe Experience Platform收集您的数据并将这些数据传输到其他Adob
 
 ### 创建规则
 
-保存数据元素后，下一步是创建一个规则，每当网站上发生特定事件（例如，当客户将产品添加到购物车时）时，该规则就会将其发送到Edge Network。
+保存数据元素后，下一步是创建一个规则，每当网站上发生特定事件（例如，当客户将产品添加到购物车时）时，该规则会将其发送到Edge Network。
 
-您可以为网站上发生的几乎任何事件设置规则。 例如，本节将演示如何创建客户提交表单时将触发的规则。 以下HTML表示具有“添加到购物车”表单的简单网页，该表单将是规则的主题：
+您可以为网站上发生的几乎任何事件设置规则。 例如，本节将演示如何创建客户提交表单时将触发的规则。 以下HTML表示一个具有“添加到购物车”表单的简单网页，该表单将是规则的主题：
 
 ```html
 <!DOCTYPE html>
@@ -212,7 +212,7 @@ Adobe Experience Platform收集您的数据并将这些数据传输到其他Adob
 
 >[!NOTE]
 >
->有关AdobeWeb扩展提供的各种事件类型（包括如何配置它们）的更多信息，请参阅Adobe文档中的[标记扩展引用](../tags/extensions/client/overview.md)。
+>有关Adobe Web扩展提供的各种事件类型（包括如何配置它们）的更多信息，请参阅标记文档中的[Adobe扩展参考](../tags/extensions/client/overview.md)。
 
 表单提交事件允许您使用[CSS选择器](https://www.w3schools.com/css/css_selectors.asp)引用要触发的规则的特定元素。 在下面的示例中，使用了ID `add-to-cart-form`，因此此规则仅在“添加到购物车”表单中触发。 选择&#x200B;**[!UICONTROL Keep Changes]**&#x200B;以将事件添加到规则。
 
@@ -224,11 +224,11 @@ Adobe Experience Platform收集您的数据并将这些数据传输到其他Adob
 
 ![添加操作](./images/e2e/add-action.png)
 
-此时将显示操作配置页面。 若要获取将数据发送到Edge Network的规则，请为扩展选择&#x200B;**[!UICONTROL Adobe Experience Platform Web SDK]**，为操作类型选择&#x200B;**[!UICONTROL 发送事件]**。
+此时将显示操作配置页面。 要获取将数据发送到Edge Network的规则，请为扩展选择&#x200B;**[!UICONTROL Adobe Experience Platform Web SDK]**，为操作类型选择&#x200B;**[!UICONTROL 发送事件]**。
 
 ![操作类型](./images/e2e/action-type.png)
 
-屏幕将更新，以显示用于配置发送事件操作的其他选项。 在&#x200B;**[!UICONTROL 类型]**&#x200B;下，您可以提供自定义类型值以填充`eventType` XDM字段。 在&#x200B;**[!UICONTROL XDM数据]**&#x200B;下，提供您之前创建的XDM数据类型的名称（由百分比符号括起来），或者选择数据库图标（![数据库图标](/help/images/icons/database.png)）以从列表中选择它。 这是最终将发送到Edge Network的数据。
+屏幕将更新，以显示用于配置发送事件操作的其他选项。 在&#x200B;**[!UICONTROL 类型]**&#x200B;下，您可以提供自定义类型值以填充`eventType` XDM字段。 在&#x200B;**[!UICONTROL XDM数据]**&#x200B;下，提供您之前创建的XDM数据类型的名称（由百分比符号括起来），或者选择数据库图标（![数据库图标](/help/images/icons/database.png)）以从列表中选择它。 最终发送到Edge Network的数据。
 
 完成时选择&#x200B;**[!UICONTROL 保留更改]**。
 
@@ -246,11 +246,11 @@ Adobe Experience Platform收集您的数据并将这些数据传输到其他Adob
 >
 >如果尚未在数据收集UI中设置环境，则必须先设置环境，然后才能创建内部版本。 有关详细信息，请参阅标记文档中有关[为Web属性配置环境](../tags/ui/publishing/environments.md#web-configuration)的部分。
 
-要了解如何创建库、将扩展和规则添加到库以及将该库生成到环境，请参阅标记文档中的[管理库](../tags/ui/publishing/libraries.md)指南。 创建库时，请确保包含Platform Web SDK扩展以及您之前创建的数据收集规则。
+要了解如何创建库、将扩展和规则添加到库以及将该库生成到环境，请参阅标记文档中的[管理库](../tags/ui/publishing/libraries.md)指南。 创建库时，请确保包含Experience Platform Web SDK扩展以及您之前创建的数据收集规则。
 
 创建库并将其内部版本分配给环境后，便可以在网站的客户端上安装该环境。 有关详细信息，请参阅有关[安装环境](../tags/ui/publishing/environments.md#installation)的部分。
 
-在网站上安装环境后，您可以[使用Adobe Experience Platform Debugger测试实施](../tags/ui/publishing/embed-code-testing.md)。
+在网站上安装环境后，您可使用Adobe Experience Platform Debugger [测试实施](../tags/ui/publishing/embed-code-testing.md)。
 
 ## 配置事件转发（可选） {#event-forwarding}
 
@@ -258,7 +258,7 @@ Adobe Experience Platform收集您的数据并将这些数据传输到其他Adob
 >
 >事件转发仅适用于已获得相应许可的组织。
 
-在将SDK配置为将数据发送到Edge Network后，您可以设置事件转发，以告知Edge Network您希望将数据发送到何处。
+在配置SDK以将数据发送到Edge Network后，您可以设置事件转发以告知Edge Network您希望将数据发送到何处。
 
 要使用事件转发，必须先创建事件转发属性。 在左侧导航中选择&#x200B;**[!UICONTROL 事件转发]**，然后选择&#x200B;**[!UICONTROL 新建属性]**。 在选择&#x200B;**[!UICONTROL 保存]**&#x200B;之前提供属性的名称。
 
@@ -274,4 +274,4 @@ Adobe Experience Platform收集您的数据并将这些数据传输到其他Adob
 
 ## 后续步骤
 
-本指南提供了有关如何使用Platform Web SDK向Edge Network发送数据的高级端到端概述。 请参阅本指南中链接的文档，了解有关所涉及各种组件和服务的更多信息。
+本指南提供了有关如何使用Experience Platform Web SDK将数据发送到Edge Network的高级端到端概述。 请参阅本指南中链接的文档，了解有关所涉及各种组件和服务的更多信息。

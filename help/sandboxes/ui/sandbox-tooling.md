@@ -2,9 +2,9 @@
 title: 沙盒工具
 description: 在沙盒之间无缝导出和导入沙盒配置。
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: 3cedf019cff7ef0aa06da1242798a533196f9b2a
+source-git-commit: 480785dc17ab27df5544524cf08baa9150fe426f
 workflow-type: tm+mt
-source-wordcount: '2485'
+source-wordcount: '2486'
 ht-degree: 7%
 
 ---
@@ -252,7 +252,7 @@ Use the arrows to expand objects to view the full list of fields that have been 
 
 ![显示导入明细的[!UICONTROL 导入详细信息]对话框。](../images/ui/sandbox-tooling/import-details.png)
 
-导入完成后，将在Platform UI中收到通知。 您可以通过警报图标访问这些通知。 如果作业不成功，您可以在此处导航到疑难解答。
+导入完成后，将在Experience Platform UI中收到通知。 您可以通过警报图标访问这些通知。 如果作业不成功，您可以在此处导航到疑难解答。
 
 ## 视频教程
 

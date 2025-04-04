@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；API；API；XDM；XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；架构注册表；架构注册表；架构；架构；架构；架构；关系；关系描述符；关系描述符；引用身份；引用身份；
+keywords: Experience Platform；主页；热门主题；API；API；XDM；XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；架构注册表；架构注册表；架构；架构；架构；架构；关系；关系；关系描述符；关系描述符；引用身份；引用身份；
 title: 使用架构注册表API定义两个架构之间的关系
 description: 本文档提供了一个教程，用于定义贵组织使用架构注册表API定义的两个架构之间的一对一关系。
 type: Tutorial
 exl-id: ef9910b5-2777-4d8b-a6fe-aee51d809ad5
-source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1379'
 ht-degree: 1%
@@ -27,10 +27,10 @@ ht-degree: 1%
 
 本教程需要对[!DNL Experience Data Model] (XDM)和[!DNL XDM System]有一定的了解。 在开始本教程之前，请查看以下文档：
 
-* Experience Platform](../home.md)中的[XDM System： [!DNL Experience Platform]中的XDM及其实现概述。
+* Experience Platform中的[XDM System](../home.md)： [!DNL Experience Platform]中的XDM及其实现的概述。
    * [架构组合的基础知识](../schema/composition.md)： XDM架构的构建块简介。
 * [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
-* [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 在开始本教程之前，请查看[开发人员指南](../api/getting-started.md)以了解成功调用[!DNL Schema Registry] API所需了解的重要信息。 这包括您的`{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（请特别注意[!DNL Accept]标头及其可能的值）。
 
@@ -238,7 +238,7 @@ curl -X POST\
 
 ### 将字段组添加到源架构
 
-创建字段组后，可以通过向`/tenant/schemas/{SCHEMA_ID}`端点发出PATCH请求将其添加到源架构中。
+创建字段组后，您可以通过向`/tenant/schemas/{SCHEMA_ID}`端点发出PATCH请求来将其添加到源架构中。
 
 **API格式**
 
@@ -405,7 +405,7 @@ curl -X POST \
 
 ## 创建关系描述符 {#create-descriptor}
 
-关系描述符在源架构和引用架构之间建立一对一的关系。 一旦在源架构中为相应的字段定义了引用标识描述符，就可以通过对`/tenant/descriptors`端点发出POST请求来创建新的关系描述符。
+关系描述符在源架构和引用架构之间建立一对一的关系。 一旦在源架构中为相应的字段定义了引用身份描述符，就可以通过对`/tenant/descriptors`端点发起POST请求来创建新的关系描述符。
 
 **API格式**
 

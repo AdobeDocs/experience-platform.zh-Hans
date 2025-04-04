@@ -4,16 +4,16 @@ description: 了解如何使用您的Azure租户设置您的CMK应用并将您�
 role: Developer
 feature: API, Privacy
 exl-id: c9a1888e-421f-4bb4-b4c7-968fb1d61746
-source-git-commit: 53598f86e1876bc6d1807e95a26584da4d7db3f2
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1029'
+source-wordcount: '1035'
 ht-degree: 1%
 
 ---
 
 # 使用API为Azure设置和配置客户管理的密钥
 
-本文档介绍了有关使用API在Adobe Experience Platform中启用客户管理的密钥(CMK)的Azure特定说明。 有关如何使用Azure托管的Platform实例的UI完成此过程的说明，请参阅[UI CMK设置文档](./ui-set-up.md)。
+本文档介绍了有关使用API在Adobe Experience Platform中启用客户管理的密钥(CMK)的Azure特定说明。 有关如何使用Azure托管的Experience Platform实例的UI完成此过程的说明，请参阅[UI CMK设置文档](./ui-set-up.md)。
 
 有关特定于AWS的说明，请参阅[AWS安装指南](../aws/ui-set-up.md)。
 
@@ -23,7 +23,7 @@ ht-degree: 1%
 
 有关在Experience Platform中分配角色和权限的详细信息，请参阅[配置权限文档](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/configure-permissions.html)。
 
-若要为Azure托管的Platform实例启用CMK，必须使用以下设置配置您的[[!DNL Azure] 密钥保管库](./azure-key-vault-config.md)：
+若要为Azure托管的Experience Platform实例启用CMK，必须使用以下设置配置您的[[!DNL Azure] 密钥保管库](./azure-key-vault-config.md)：
 
 * [启用清除保护](https://learn.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview#purge-protection)
 * [启用软删除](https://learn.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview)
@@ -36,7 +36,7 @@ ht-degree: 1%
 
 ### 快速入门
 
-注册CMK应用程序需要您调用平台API。 有关如何收集进行这些调用所需的身份验证标头的详细信息，请参阅[平台API身份验证指南](../../../api-authentication.md)。
+注册CMK应用程序需要您调用Experience Platform API。 有关如何收集进行这些调用所需的身份验证标头的详细信息，请参阅[Experience Platform API身份验证指南](../../../api-authentication.md)。
 
 虽然身份验证指南提供了有关如何为所需的`x-api-key`请求标头生成您自己的唯一值的说明，但本指南中的所有API操作都使用静态值`acp_provisioning`。 但是，您仍然必须提供自己的`{ACCESS_TOKEN}`和`{ORG_ID}`值。
 
@@ -44,7 +44,7 @@ ht-degree: 1%
 
 ### 获取身份验证URL {#fetch-authentication-url}
 
-要开始注册流程，请向应用程序注册端点发出GET请求，以获取您组织所需的身份验证URL。
+要开始注册流程，请向应用程序注册端点发出GET请求，以获取贵组织所需的身份验证URL。
 
 **请求**
 
@@ -110,11 +110,11 @@ curl -X GET \
 
 ![Microsoft Azure功能板密钥详细信息中突出显示[!DNL Permitted operations]和复制密钥URL部分。](../../../images/governance-privacy-security/customer-managed-keys/copy-key-url.png)
 
-获取密钥保管库URI后，可以使用POST请求将其发送到CMK配置端点。
+获得密钥保管库URI后，可以使用POST请求将其发送到CMK配置端点。
 
 >[!NOTE]
 >
->只有密钥保管库和密钥名称与Adobe一起存储，而非密钥版本。
+>Adobe中只存储密钥保管库和密钥名称，而不存储密钥版本。
 
 **请求**
 
@@ -221,13 +221,13 @@ curl -X GET \
 
 `status`属性可以具有以下含义的四个值之一：
 
-1. `RUNNING`：验证平台是否可以访问密钥和密钥保管库。
+1. `RUNNING`：验证Experience Platform是否可以访问密钥和密钥保管库。
 1. `UPDATE_EXISTING_RESOURCES`：系统正在将密钥保管库和密钥名称添加到组织中所有沙盒的数据存储中。
 1. `COMPLETED`：密钥保管库和密钥名称已成功添加到数据存储。
 1. `FAILED`：出现问题，主要与密钥、密钥保管库或多租户应用设置有关。
 
 ## 后续步骤
 
-通过完成上述步骤，您已成功为组织启用CMK。 对于Azure托管的Platform实例，现在将使用[!DNL Azure]密钥保管库中的密钥对摄取到主数据存储中的数据加密和解密。
+通过完成上述步骤，您已成功为组织启用CMK。 对于Azure托管的Experience Platform实例，现在将使用[!DNL Azure]密钥保管库中的密钥对摄取到主数据存储中的数据加密和解密。
 
 要了解有关Adobe Experience Platform中数据加密的更多信息，请参阅[加密文档](../../encryption.md)。

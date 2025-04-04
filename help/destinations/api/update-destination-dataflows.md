@@ -5,16 +5,16 @@ title: 使用流服务API更新目标数据流
 type: Tutorial
 description: 本教程介绍了更新目标数据流的步骤。 了解如何使用流服务API启用或禁用数据流、更新其基本信息或添加和删除受众和属性。
 exl-id: 3f69ad12-940a-4aa1-a1ae-5ceea997a9ba
-source-git-commit: c1d4a0586111d9cd8a66f4239f67f2f7e6ac8633
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2404'
+source-wordcount: '2410'
 ht-degree: 3%
 
 ---
 
 # 使用流服务API更新目标数据流
 
-本教程介绍了更新目标数据流的步骤。 了解如何使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)启用或禁用数据流、更新其基本信息或添加和删除受众和属性。 有关使用Experience Platform用户界面编辑目标数据流的信息，请阅读[编辑激活流](/help/destinations/ui/edit-activation.md)。
+本教程介绍了更新目标数据流的步骤。 了解如何使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)启用或禁用数据流、更新其基本信息或添加和删除受众和属性。 有关使用Experience Platform UI编辑目标数据流的信息，请阅读[编辑激活流](/help/destinations/ui/edit-activation.md)。
 
 ## 快速入门 {#get-started}
 
@@ -27,7 +27,7 @@ ht-degree: 3%
 本教程还要求您实际了解Adobe Experience Platform的以下组件：
 
 * [目标](../home.md)： [!DNL Destinations]是预先构建的与目标平台的集成，可无缝激活Adobe Experience Platform中的数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
-* [沙盒](../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [沙盒](../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了您需要了解的其他信息，以便使用[!DNL Flow Service] API成功更新数据流。
 
@@ -37,13 +37,13 @@ ht-degree: 3%
 
 ### 收集所需标头的值 {#gather-values-for-required-headers}
 
-要调用Platform API，必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程将为所有Experience PlatformAPI调用中的每个所需标头提供值，如下所示：
+要调用Experience Platform API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程将为所有Experience Platform API调用中的每个所需标头提供值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-Experience Platform中的所有资源（包括属于[!DNL Flow Service]的资源）都被隔离到特定的虚拟沙盒中。 所有对Platform API的请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
+Experience Platform中的所有资源（包括属于[!DNL Flow Service]的资源）都被隔离到特定的虚拟沙盒中。 对Experience Platform API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -51,7 +51,7 @@ Experience Platform中的所有资源（包括属于[!DNL Flow Service]的资源
 >
 >如果未指定`x-sandbox-name`标头，则在`prod`沙盒下解析请求。
 
-所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
+所有包含有效负载(POST、PUT、PATCH)的请求都需要一个额外的媒体类型标头：
 
 * `Content-Type: application/json`
 
@@ -349,7 +349,7 @@ curl -X GET \
 
 >[!IMPORTANT]
 >
->发出PATCH请求时需要`If-Match`标头。 此标头的值是要更新的数据流的唯一版本。 每次成功更新数据流时，etag值都会更新。
+>发出PATCH请求时需要使用`If-Match`标头。 此标头的值是要更新的数据流的唯一版本。 每次成功更新数据流时，etag值都会更新。
 
 **API格式**
 
@@ -391,7 +391,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的响应将返回您的流ID和更新的电子标记。 您可以在提供流ID的同时向[!DNL Flow Service] API发出GET请求，以验证更新。
+成功的响应将返回您的流ID和更新的电子标记。 您可以向[!DNL Flow Service] API发出GET请求，同时提供流ID来验证更新。
 
 ```json
 {
@@ -438,7 +438,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应将返回您的流ID和更新的电子标记。 您可以在提供流ID的同时向[!DNL Flow Service] API发出GET请求，以验证更新。
+成功的响应将返回您的流ID和更新的电子标记。 您可以向[!DNL Flow Service] API发出GET请求，同时提供流ID来验证更新。
 
 ```json
 {
@@ -449,7 +449,7 @@ curl -X POST \
 
 ## 将受众添加到数据流 {#add-segment}
 
-要将受众添加到目标数据流，请在提供流ID、版本和要添加的受众的同时对[!DNL Flow Service] API执行PATCH请求。
+要将受众添加到目标数据流，请在提供您的流ID、版本和要添加的受众的同时对[!DNL Flow Service] API执行PATCH请求。
 
 **API格式**
 
@@ -499,17 +499,17 @@ curl -X PATCH \
 | `value` | 要用于更新参数的新值。 |
 | `id` | 指定要添加到目标数据流的受众的ID。 |
 | `name` | **（可选）**。 指定要添加到目标数据流的受众的名称。 请注意，此字段不是必填字段，您无需提供名称即可将受众成功添加到目标数据流。 |
-| `filenameTemplate` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要使用此字段。 <br>此字段确定导出到目标的文件的文件名格式。 <br>以下选项可用： <br> <ul><li>`%DESTINATION_NAME%`：必填。 导出的文件包含目标名称。</li><li>`%SEGMENT_ID%`：必填。 导出的文件包含导出受众的ID。</li><li>`%SEGMENT_NAME%`： **（可选）**。 导出的文件包含导出的受众的名称。</li><li>`DATETIME(YYYYMMdd_HHmmss)`或`%TIMESTAMP%`： **（可选）**。 为文件选择这两个选项之一，以包括通过Experience Platform生成文件的时间。</li><li>`custom-text`： **（可选）**。 将此占位符替换为要在文件名末尾追加的任何自定义文本。</li></ul> <br>有关配置文件名的详细信息，请参阅批量目标激活教程中的[配置文件名](/help/destinations/ui/activate-batch-profile-destinations.md#file-names)部分。 |
+| `filenameTemplate` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要使用此字段。 <br>此字段确定导出到目标的文件的文件名格式。 <br>以下选项可用： <br> <ul><li>`%DESTINATION_NAME%`：必填。 导出的文件包含目标名称。</li><li>`%SEGMENT_ID%`：必填。 导出的文件包含导出受众的ID。</li><li>`%SEGMENT_NAME%`： **（可选）**。 导出的文件包含导出的受众的名称。</li><li>`DATETIME(YYYYMMdd_HHmmss)`或`%TIMESTAMP%`： **（可选）**。 为文件选择这两个选项之一，以包含Experience Platform生成文件的时间。</li><li>`custom-text`： **（可选）**。 将此占位符替换为要在文件名末尾追加的任何自定义文本。</li></ul> <br>有关配置文件名的详细信息，请参阅批量目标激活教程中的[配置文件名](/help/destinations/ui/activate-batch-profile-destinations.md#file-names)部分。 |
 | `exportMode` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要使用此字段。 <br>必填。 选择`"DAILY_FULL_EXPORT"`或`"FIRST_FULL_THEN_INCREMENTAL"`。 有关这两个选项的更多信息，请参阅批处理目标激活教程中的[导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files)和[导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files)。 |
 | `startDate` | 选择受众应开始将用户档案导出到目标的日期。 |
 | `frequency` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要使用此字段。 <br>必填。<br> <ul><li>对于`"DAILY_FULL_EXPORT"`导出模式，您可以选择`ONCE`或`DAILY`。</li><li>对于`"FIRST_FULL_THEN_INCREMENTAL"`导出模式，您可以选择`"DAILY"`、`"EVERY_3_HOURS"`、`"EVERY_6_HOURS"`、`"EVERY_8_HOURS"`、`"EVERY_12_HOURS"`。</li></ul> |
-| `triggerType` | 仅适用于&#x200B;*批次目标*。 仅当在`frequency`选择器中选择`"DAILY_FULL_EXPORT"`模式时，才需要此字段。 <br>必填。<br> <ul><li>选择`"AFTER_SEGMENT_EVAL"`以使激活作业在每日平台批处理分段作业完成后立即运行。 这可确保在激活作业运行时，将最新的配置文件导出到您的目标。</li><li>选择`"SCHEDULED"`以使激活作业在固定时间运行。 这可确保每天在同一时间导出Experience Platform配置文件数据，但您导出的配置文件可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。 当选择此选项时，还必须添加`startTime`以指示每日导出应在UTC时段的哪个时间发生。</li></ul> |
+| `triggerType` | 仅适用于&#x200B;*批次目标*。 仅当在`frequency`选择器中选择`"DAILY_FULL_EXPORT"`模式时，才需要此字段。 <br>必填。<br> <ul><li>选择`"AFTER_SEGMENT_EVAL"`以使激活作业在每日Experience Platform批处理分段作业完成后立即运行。 这可确保在激活作业运行时，将最新的配置文件导出到您的目标。</li><li>选择`"SCHEDULED"`以使激活作业在固定时间运行。 这可确保每天在同一时间导出Experience Platform用户档案数据，但您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。 当选择此选项时，还必须添加`startTime`以指示每日导出应在UTC时段的哪个时间发生。</li></ul> |
 | `endDate` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要使用此字段。 选择`"exportMode":"DAILY_FULL_EXPORT"`和`"frequency":"ONCE"`时，<br>不适用。 <br>设置受众成员停止导出到目标的日期。 |
 | `startTime` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要使用此字段。 <br>必填。 选择应生成包含受众成员的文件并将其导出到目标的时间。 |
 
 **响应**
 
-成功的响应将返回您的流ID和更新的电子标记。 您可以在提供流ID的同时向[!DNL Flow Service] API发出GET请求，以验证更新。
+成功的响应将返回您的流ID和更新的电子标记。 您可以向[!DNL Flow Service] API发出GET请求，同时提供流ID来验证更新。
 
 ```json
 {
@@ -520,7 +520,7 @@ curl -X PATCH \
 
 ## 从数据流中删除受众 {#remove-segment}
 
-要从现有目标数据流中删除受众，请在提供流ID、版本和要删除的受众的索引选择器的同时，对[!DNL Flow Service] API执行PATCH请求。 索引从`0`开始。 例如，下面的示例请求从数据流中删除第一和第二受众。
+要从现有目标数据流中删除受众，请提供要移除的受众的流ID、版本和索引选择器，同时对[!DNL Flow Service] API执行PATCH请求。 索引从`0`开始。 例如，下面的示例请求从数据流中删除第一和第二受众。
 
 **API格式**
 
@@ -570,7 +570,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的响应将返回您的流ID和更新的电子标记。 您可以在提供流ID的同时向[!DNL Flow Service] API发出GET请求，以验证更新。
+成功的响应将返回您的流ID和更新的电子标记。 您可以向[!DNL Flow Service] API发出GET请求，同时提供流ID来验证更新。
 
 ```json
 {
@@ -581,7 +581,7 @@ curl -X PATCH \
 
 ## 更新数据流中受众的组件 {#update-segment}
 
-您可以更新现有目标数据流中受众的组件。 例如，可以更改导出频率或编辑文件名模板。 为此，请在提供流ID、版本和要更新受众的索引选择器的同时，对[!DNL Flow Service] API执行PATCH请求。 索引从`0`开始。 例如，下面的请求会更新数据流中的第九个受众。
+您可以更新现有目标数据流中受众的组件。 例如，可以更改导出频率或编辑文件名模板。 为此，请提供要更新的受众的流ID、版本和索引选择器，同时对[!DNL Flow Service] API执行PATCH请求。 索引从`0`开始。 例如，下面的请求会更新数据流中的第九个受众。
 
 **API格式**
 
@@ -591,7 +591,7 @@ PATCH /flows/{FLOW_ID}
 
 **请求**
 
-在现有的目标数据流中更新受众时，您应该首先执行GET操作以检索要更新的受众的详细信息。 然后，在有效负荷中提供所有受众信息，而不仅仅是要更新的字段。 在以下示例中，自定义文本会添加到文件名模板的末尾，导出计划频率会从6小时更新为12小时。
+在现有目标数据流中更新受众时，您应该首先执行GET操作，以检索要更新的受众的详细信息。 然后，在有效负荷中提供所有受众信息，而不仅仅是要更新的字段。 在以下示例中，自定义文本会添加到文件名模板的末尾，导出计划频率会从6小时更新为12小时。
 
 ```shell
 curl -X PATCH \
@@ -631,7 +631,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的响应将返回您的流ID和更新的电子标记。 您可以在提供流ID的同时向[!DNL Flow Service] API发出GET请求，以验证更新。
+成功的响应将返回您的流ID和更新的电子标记。 您可以向[!DNL Flow Service] API发出GET请求，同时提供流ID来验证更新。
 
 ```json
 {
@@ -644,7 +644,7 @@ curl -X PATCH \
 
 ## 在受众评估后将受众的导出模式从计划的更新为的 {#update-export-mode}
 
-+++ 单击以查看示例，其中受众导出从每天在指定时间激活更新为每天在Platform批量分段作业完成后激活。
++++ 单击以查看示例，其中受众导出从每天在指定时间激活更新为在Experience Platform批量分段作业完成后每天激活。
 
 每天的16:00 UTC导出受众。
 
@@ -790,7 +790,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的响应将返回您的流ID和更新的电子标记。 您可以在提供流ID的同时向[!DNL Flow Service] API发出GET请求，以验证更新。
+成功的响应将返回您的流ID和更新的电子标记。 您可以向[!DNL Flow Service] API发出GET请求，同时提供流ID来验证更新。
 
 ```json
 {
@@ -801,7 +801,7 @@ curl -X PATCH \
 
 ## 从数据流中删除配置文件属性 {#remove-profile-attribute}
 
-要从现有目标数据流中删除配置文件属性，请在提供流ID、版本和要删除的配置文件属性的索引选择器的同时，对[!DNL Flow Service] API执行PATCH请求。 索引从`0`开始。 例如，下面的示例请求从数据流中删除第五个配置文件属性。
+要从现有目标数据流中删除配置文件属性，请在提供流ID、版本以及要删除的配置文件属性的索引选择器的同时，对[!DNL Flow Service] API执行PATCH请求。 索引从`0`开始。 例如，下面的示例请求从数据流中删除第五个配置文件属性。
 
 
 **API格式**
@@ -844,7 +844,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的响应将返回您的流ID和更新的电子标记。 您可以在提供流ID的同时向[!DNL Flow Service] API发出GET请求，以验证更新。
+成功的响应将返回您的流ID和更新的电子标记。 您可以向[!DNL Flow Service] API发出GET请求，同时提供流ID来验证更新。
 
 ```json
 {
@@ -855,7 +855,7 @@ curl -X PATCH \
 
 ## API错误处理 {#api-error-handling}
 
-本教程中的API端点遵循常规Experience PlatformAPI错误消息原则。 有关解释错误响应的详细信息，请参阅Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
+本教程中的API端点遵循常规Experience Platform API错误消息原则。 有关解释错误响应的详细信息，请参阅Experience Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤 {#next-steps}
 

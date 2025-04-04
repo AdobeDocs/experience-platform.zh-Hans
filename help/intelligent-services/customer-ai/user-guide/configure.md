@@ -5,9 +5,9 @@ feature: Customer AI
 title: 配置客户人工智能实例
 description: AI/ML服务将Customer AI作为易于使用的Adobe Sensei服务提供，可以针对不同用例进行配置。 以下部分提供了配置Customer AI实例的步骤。
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2827'
+source-wordcount: '2829'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ AI/ML服务将Customer AI作为易于使用的Adobe Sensei服务提供，可以�
 
 ## 创建实例 {#set-up-your-instance}
 
-在Platform UI的左侧导航中选择&#x200B;**[!UICONTROL 服务]**。 此时会出现&#x200B;**[!UICONTROL 服务]**&#x200B;浏览器，并显示您可以使用的全部可用服务。 在客户人工智能的容器中，选择&#x200B;**[!UICONTROL 打开]**。
+在Experience Platform UI的左侧导航中选择&#x200B;**[!UICONTROL 服务]**。 此时会出现&#x200B;**[!UICONTROL 服务]**&#x200B;浏览器，并显示您可以使用的全部可用服务。 在客户人工智能的容器中，选择&#x200B;**[!UICONTROL 打开]**。
 
 ![](../images/user-guide/navigate-to-service.png)
 
@@ -35,7 +35,7 @@ AI/ML服务将Customer AI作为易于使用的Adobe Sensei服务提供，可以�
 
 - **[!UICONTROL 编辑]**：选择&#x200B;**[!UICONTROL 编辑]**&#x200B;允许您修改现有的服务实例。 您可以编辑实例的名称、描述和评分频率。
 - **[!UICONTROL 克隆]**：选择&#x200B;**[!UICONTROL 克隆]**&#x200B;将复制当前选择的服务实例安装程序。 然后，您可以修改工作流以进行细微的调整，并将其重命名为新实例。
-- **[!UICONTROL 删除]**：您可以删除包含任何历史运行的服务实例。 相应的输出数据集将从Platform中删除。 但是，同步到实时客户档案的分数不会被删除。
+- **[!UICONTROL 删除]**：您可以删除包含任何历史运行的服务实例。 相应的输出数据集将从Experience Platform中删除。 但是，同步到实时客户档案的分数不会被删除。
 - **[!UICONTROL 数据源]**：此实例使用的数据集的链接。 如果正在使用多个数据集，则选择超链接文本将打开数据集预览弹出框。
 - **[!UICONTROL 上次运行详细信息]**：仅当运行失败时才会显示此信息。 有关运行失败原因的信息（如错误代码），将显示在此处。
 - **[!UICONTROL 得分定义]**：您为此实例配置的目标快速概述。

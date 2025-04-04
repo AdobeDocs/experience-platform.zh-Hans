@@ -1,17 +1,17 @@
 ---
 title: 在UI中创建Azure Blob Source连接
-description: 了解如何使用Platform用户界面创建Azure Blob源连接器。
+description: 了解如何使用Experience Platform用户界面创建Azure Blob源连接器。
 exl-id: 0e54569b-7305-4065-981e-951623717648
-source-git-commit: d22c71fb77655c401f4a336e339aaf8b3125d1b6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '815'
+source-wordcount: '819'
 ht-degree: 2%
 
 ---
 
 # 在用户界面中创建[!DNL Azure Blob]源连接
 
-本教程提供了使用Platform用户界面创建[!DNL Azure Blob]（以下称为“[!DNL Blob]”）源连接的步骤。
+本教程提供了使用Experience Platform用户界面创建[!DNL Azure Blob]（以下称为“[!DNL Blob]”）源连接的步骤。
 
 ## 快速入门
 
@@ -26,7 +26,7 @@ ht-degree: 2%
 
 ### 支持的文件格式
 
-Experience Platform支持从外部存储摄取的以下文件格式：
+Experience Platform支持从外部存储摄取以下文件格式：
 
 * 分隔符分隔值(DSV)：可使用任何单列分隔符（如制表符、逗号、竖线、分号或哈希）收集任何格式的平面文件。
 * JavaScript对象表示法(JSON)： JSON格式的数据文件必须符合XDM。
@@ -42,7 +42,7 @@ Experience Platform支持从外部存储摄取的以下文件格式：
 
 | 凭据 | 描述 |
 | --- | --- |
-| 连接字符串 | 一个字符串，其中包含验证[!DNL Blob]以Experience Platform所需的授权信息。 [!DNL Blob]连接字符串模式为： `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`。 有关连接字符串的详细信息，请参阅[配置连接字符串](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string)上的此[!DNL Blob]文档。 |
+| 连接字符串 | 一个字符串，其中包含向Experience Platform验证[!DNL Blob]所需的授权信息。 [!DNL Blob]连接字符串模式为： `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`。 有关连接字符串的详细信息，请参阅[配置连接字符串](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string)上的此[!DNL Blob]文档。 |
 
 >[!TAB SAS URI身份验证]
 
@@ -58,13 +58,13 @@ Experience Platform支持从外部存储摄取的以下文件格式：
 
 ## 连接您的[!DNL Blob]帐户
 
-在Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
+在Experience Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索栏查找要使用的特定源。
 
 在[!UICONTROL 云存储]类别下，选择&#x200B;**[!UICONTROL Azure Blob存储]**，然后选择&#x200B;**[!UICONTROL 添加数据]**。
 
-![已选择Azure BlobExperience Platform源的存储源目录。](../../../../images/tutorials/create/blob/catalog.png)
+![已选择Azure Blob Storage源的Experience Platform源目录。](../../../../images/tutorials/create/blob/catalog.png)
 
 将显示&#x200B;**[!UICONTROL 连接到Azure Blob存储]**&#x200B;页。 在此页上，您可以使用新凭据或现有凭据。
 
@@ -108,4 +108,4 @@ Experience Platform支持从外部存储摄取的以下文件格式：
 
 ## 后续步骤
 
-通过学习本教程，您已建立与[!DNL Blob]帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据从云存储引入Platform](../../dataflow/batch/cloud-storage.md)。
+通过学习本教程，您已建立与[!DNL Blob]帐户的连接。 您现在可以继续阅读下一教程，并[配置数据流以将数据从云存储引入Experience Platform](../../dataflow/batch/cloud-storage.md)。

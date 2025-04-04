@@ -2,24 +2,24 @@
 title: 架构编辑器中的基于字段的工作流
 description: 了解如何将现有字段组中的字段单独添加到您的体验数据模型(XDM)架构。
 exl-id: 0499ff30-a602-419b-b9d3-2defdd4354a7
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1301'
+source-wordcount: '1305'
 ht-degree: 0%
 
 ---
 
 # 架构编辑器中的基于字段的工作流
 
-Adobe Experience Platform提供一组可靠的标准化[字段组](../schema/composition.md#field-group)，用于体验数据模型(XDM)架构。 这些字段组背后的结构和语义经过仔细设计，可满足各种分段用例和Platform中的其他下游应用程序。 您还可以定义自己的自定义字段组，以满足独特的业务需求。
+Adobe Experience Platform提供一组可靠的标准化[字段组](../schema/composition.md#field-group)，用于体验数据模型(XDM)架构。 这些字段组背后的结构和语义经过仔细设计，可满足Experience Platform中的各种分段用例和其他下游应用程序。 您还可以定义自己的自定义字段组，以满足独特的业务需求。
 
 将字段组添加到架构时，该架构会继承该组中包含的所有字段。 但是，您现在可以将单个字段添加到架构中，而无需包含您可能不一定使用的关联字段组中的其他字段。
 
-本指南介绍了在Platform UI中将各个字段添加到架构的不同方法。
+本指南介绍了在Experience Platform UI中将各个字段添加到架构的各种方法。
 
 ## 先决条件
 
-本教程假设您熟悉XDM架构的[构成](../schema/composition.md)以及如何在平台UI中使用架构编辑器。 若要继续，您应该开始[创建新架构](./resources/schemas.md)并将其分配给标准类的过程，然后再继续本指南。
+本教程假设您熟悉XDM架构的[构成](../schema/composition.md)以及如何在Experience Platform UI中使用架构编辑器。 若要继续，您应该开始[创建新架构](./resources/schemas.md)并将其分配给标准类的过程，然后再继续本指南。
 
 ## 移除从标准字段组添加的字段 {#remove-field-group}
 
@@ -111,4 +111,4 @@ Adobe Experience Platform提供一组可靠的标准化[字段组](../schema/com
 
 ## 后续步骤
 
-本指南介绍了Platform UI中模式编辑器的新的基于字段的工作流。 有关在UI中管理架构的更多信息，请参阅[UI概述](./overview.md)。
+本指南介绍了Experience Platform UI中模式编辑器的新的基于字段的工作流。 有关在UI中管理架构的更多信息，请参阅[UI概述](./overview.md)。

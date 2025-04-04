@@ -5,7 +5,7 @@ title: 在API中创建数据管理策略
 type: Tutorial
 description: 了解如何使用策略服务API创建数据管理策略。
 exl-id: 8483f8a1-efe8-4ebb-b074-e0577e5a81a4
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1199'
 ht-degree: 2%
@@ -26,10 +26,10 @@ ht-degree: 2%
 
 本教程需要对创建和评估策略所涉及的以下关键概念有一定的了解：
 
-* [Adobe Experience Platform数据管理](../home.md)： [!DNL Platform]强制数据使用合规性的框架。
+* [Adobe Experience Platform数据管理](../home.md)： [!DNL Experience Platform]强制数据使用合规性的框架。
    * [数据使用标签](../labels/overview.md)：数据使用标签应用于XDM数据字段，指定访问数据的方式限制。
-* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： [!DNL Platform]用于组织客户体验数据的标准化框架。
-* [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
+* [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 在开始本教程之前，请查看[开发人员指南](../api/getting-started.md)以了解成功调用[!DNL Policy Service] API所需了解的重要信息，包括所需的标头以及如何读取示例API调用。
 
@@ -225,7 +225,7 @@ curl -X PUT \
 >
 >仅支持OR和AND运算符。
 
-配置策略表达式后，可以通过向`/policies/custom`端点发出POST请求来创建新策略。
+配置策略表达式后，您可以通过向`/policies/custom`端点发出POST请求来创建新策略。
 
 **API格式**
 

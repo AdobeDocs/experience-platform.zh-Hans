@@ -3,16 +3,16 @@ description: 了解如何使用Experience Platform用户界面在分段期间监
 title: 在UI中监控受众的数据流
 type: Tutorial
 exl-id: 32fd2ba1-0ff0-4ea7-8d55-80d53eebc02f
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1862'
+source-wordcount: '1864'
 ht-degree: 4%
 
 ---
 
 # 在UI中监控受众的数据流
 
-分段服务允许您通过[!DNL Real-Time Customer Profile]数据的区段定义或其他来源创建受众。 Platform提供数据流以透明地跟踪从源到目标的这种数据流。
+分段服务允许您通过[!DNL Real-Time Customer Profile]数据的区段定义或其他来源创建受众。 Experience Platform提供数据流，用于透明地跟踪从源到目标的这种数据流。
 
 使用监视仪表板可查看受众中数据活动的可视表示形式，包括数据分段的状态。 阅读教程，了解如何使用监视仪表板通过Experience Platform用户界面监视数据分段，从而跟踪受众激活、评估和导出作业的状态。
 
@@ -20,13 +20,13 @@ ht-degree: 4%
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-- [数据流](../home.md)：数据流是跨平台移动数据的数据作业的表示形式。 数据流在不同服务之间配置，帮助将数据从源连接器移动到目标数据集、[!DNL Identity]和[!DNL Profile]以及[!DNL Destinations]。
+- [数据流](../home.md)：数据流是跨Experience Platform移动数据的数据作业的表示形式。 数据流在不同服务之间配置，帮助将数据从源连接器移动到目标数据集、[!DNL Identity]和[!DNL Profile]以及[!DNL Destinations]。
    - [数据流运行](../../sources/notifications.md)：数据流运行是基于所选数据流的频率配置的周期性计划作业。
 - [分段](../../segmentation/home.md)：分段允许您根据实时客户档案数据创建受众。
    - [激活作业](../../destinations/ui/activation-overview.md)：激活作业用于将受众激活到指定的目标。
    - [评估作业](../../segmentation/tutorials/evaluate-a-segment.md#evaluate-a-segment)：评估作业是评估受众的异步进程。
    - [导出作业](../../segmentation/api/export-jobs.md)：导出作业是用于将受众成员保留到数据集的异步进程。
-- [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+- [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ## 监控受众仪表板 {#monitoring-audiences-dashboard}
 
@@ -85,7 +85,7 @@ ht-degree: 4%
 | **[!UICONTROL 作业完成]** | 分段作业完成的日期和时间。 |
 | **[!UICONTROL 处理时间]** | 完成分段作业所用的时间。 |
 | **[!UICONTROL 作业状态]** | 分段作业的状态。 支持的值包括&#x200B;**[!UICONTROL Success]**、**[!UICONTROL In Progress]**&#x200B;和&#x200B;**[!UICONTROL Failed]**。 |
-| **[!UICONTROL 配置文件计数]** | 分段作业正在评估的配置文件数。 每个用户应具有唯一的配置文件。 |
+| **[!UICONTROL 轮廓计数]** | 分段作业正在评估的配置文件数。 每个用户应具有唯一的配置文件。 |
 | **[!UICONTROL 标识已激活]** | 分段作业正在激活的身份数。 每个配置文件都可以有多个身份。 例如，用户档案可能包含电子邮件、电话号码和忠诚度编号作为身份。 |
 | **[!UICONTROL 目标名称]** | 分段作业将激活到的目标的名称。 |
 
@@ -163,7 +163,7 @@ ht-degree: 4%
 | 量度 | 描述 |
 | ------ | ----------- |
 | **[!UICONTROL 名称]** | 正在评估的受众的名称。 |
-| **[!UICONTROL 配置文件计数]** | 正在评估的配置文件数。 |
+| **[!UICONTROL 轮廓计数]** | 正在评估的配置文件数。 |
 
 ## 监控分段作业仪表板 {#monitoring-segmentation-jobs-dashboard}
 

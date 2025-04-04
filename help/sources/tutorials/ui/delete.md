@@ -5,7 +5,7 @@ solution: Experience Platform
 title: 删除UI中的数据流
 type: Tutorial
 exl-id: aa224467-7733-40de-aab7-0ff1c557abf2
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '367'
 ht-degree: 1%
@@ -22,12 +22,12 @@ ht-degree: 1%
 
 本教程需要对以下Adobe Experience Platform组件有一定的了解：
 
-- [源](../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。
-- [沙盒](../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+- [源](../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强传入数据。
+- [沙盒](../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ## 删除数据流
 
-在[Experience PlatformUI](https://platform.adobe.com)中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区，然后从顶部标题中选择&#x200B;**[!UICONTROL 数据流]**。
+在[Experience Platform UI](https://platform.adobe.com)中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区，然后从顶部标题中选择&#x200B;**[!UICONTROL 数据流]**。
 
 ![目录](../../images/tutorials/delete/catalog.png)
 

@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；查询服务；查询服
 title: 查询服务SSL选项
 description: 了解对Adobe Experience Platform查询服务的第三方连接的SSL支持，以及如何使用验证完全SSL模式进行连接。
 exl-id: 41b0a71f-165e-49a2-8a7d-d809f5f683ae
-source-git-commit: 37c30fc1a040efbce0c221c10b36e105d5b1a962
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1008'
+source-wordcount: '1011'
 ht-degree: 1%
 
 ---
@@ -16,11 +16,11 @@ ht-degree: 1%
 
 ## 先决条件
 
-本文档假设您已经下载了第三方桌面客户端应用程序以用于您的Platform数据。 有关在与第三方客户端连接时如何合并SSL安全性的具体说明，请参阅各自的连接指南文档。 有关所有[!DNL Query Service]支持的客户端的列表，请参阅[客户端连接概述](./overview.md)。
+本文档假设您已经下载了第三方桌面客户端应用程序以用于Experience Platform数据。 有关在与第三方客户端连接时如何合并SSL安全性的具体说明，请参阅各自的连接指南文档。 有关所有[!DNL Query Service]支持的客户端的列表，请参阅[客户端连接概述](./overview.md)。
 
 ## 可用的SSL选项 {#available-ssl-options}
 
-Platform支持各种SSL选项，以满足您的数据安全需求并平衡加密和密钥交换的处理开销。
+Experience Platform支持各种SSL选项，以满足您的数据安全需求并平衡加密和密钥交换的处理开销。
 
 不同的`sslmode`参数值提供了不同的保护级别。 通过使用SSL证书对您的数据进行动态加密，这有助于防止“中间人”(MITM)攻击、窃听和模拟。 下表提供了可用不同SSL模式的划分以及它们提供的保护级别。
 
@@ -40,13 +40,13 @@ Platform支持各种SSL选项，以满足您的数据安全需求并平衡加密
 >
 >`verify-ca`和`verify-full`之间的差异取决于根证书颁发机构(CA)的策略。 如果您已经创建自己的本地CA来为您的应用程序颁发私有证书，则使用`verify-ca`通常会提供足够的保护。 如果使用公共CA，`verify-ca`允许连接到其他人可能已向CA注册的服务器。 `verify-full`应始终与公共根CA一起使用。
 
-在建立与平台数据库的第三方连接时，建议您至少使用`sslmode=require`，以确保移动数据的安全连接。 建议将`verify-full` SSL模式用于大多数安全敏感型环境。
+在建立与Experience Platform数据库的第三方连接时，建议您至少使用`sslmode=require`，以确保移动数据的安全连接。 建议将`verify-full` SSL模式用于大多数安全敏感型环境。
 
 ## 设置根证书以进行服务器验证 {#root-certificate}
 
 >[!IMPORTANT]
 >
->查询服务Interactive Postgres API的生产环境上的TLS/SSL证书已于2024年1月24日星期三更新。<br>尽管这是年度要求，但此时链中的根证书也发生了更改，因为Adobe的TLS/SSL证书提供商更新了其证书层次结构。 如果某些Postgres客户端的证书颁发机构列表缺少根证书，这可能会影响这些客户端。 例如，PSQL CLI客户端可能需要将根证书添加到显式文件`~/postgresql/root.crt`中，否则可能会导致错误。 例如：`psql: error: SSL error: certificate verify failed`。有关此问题的更多信息，请参阅[官方的PostgreSQL文档](https://www.postgresql.org/docs/current/libpq-ssl.html#LIBQ-SSL-CERTIFICATES)。<br>可以从[https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem)下载要添加的根证书。
+>查询服务Interactive Postgres API的生产环境上的TLS/SSL证书已于2024年1月24日星期三更新。<br>尽管这是年度要求，但此时链中的根证书也已更改，因为Adobe的TLS/SSL证书提供商已更新其证书层次结构。 如果某些Postgres客户端的证书颁发机构列表缺少根证书，这可能会影响这些客户端。 例如，PSQL CLI客户端可能需要将根证书添加到显式文件`~/postgresql/root.crt`中，否则可能会导致错误。 例如：`psql: error: SSL error: certificate verify failed`。有关此问题的更多信息，请参阅[官方的PostgreSQL文档](https://www.postgresql.org/docs/current/libpq-ssl.html#LIBQ-SSL-CERTIFICATES)。<br>可以从[https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem)下载要添加的根证书。
 
 为确保安全连接，在连接之前，必须在客户端和服务器上配置SSL用法。 如果只在服务器上配置了SSL，则客户端可能会在确定服务器要求高安全性之前发送敏感信息，如密码。
 

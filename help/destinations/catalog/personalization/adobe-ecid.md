@@ -1,11 +1,11 @@
 ---
 Keywords: ECID;ecid
 title: Experience Cloud ID 服务扩展
-description: Experience CloudID服务扩展是Adobe Experience Platform中的个性化目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
+description: Experience Cloud ID服务扩展是Adobe Experience Platform中的个性化目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: 4cc49c14-66ec-43e0-a106-70d9c3646d87
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '457'
+source-wordcount: '461'
 ht-degree: 4%
 
 ---
@@ -16,23 +16,23 @@ ht-degree: 4%
 
 此扩展实施[!DNL Experience Cloud] ID服务，该服务在所有[!DNL Experience Cloud]解决方案中标识访客。
 
-[!DNL Experience Cloud] ID服务是Adobe Experience Platform中的个性化扩展。 有关扩展功能的更多信息，请参阅Experience Cloud文档中的[标记标识服务扩展页](../../../tags/extensions/client/id-service/overview.md)。
+[!DNL Experience Cloud] ID服务是Adobe Experience Platform中的个性化扩展。 有关扩展功能的更多信息，请参阅标记文档中的[Experience Cloud ID服务扩展页面](../../../tags/extensions/client/id-service/overview.md)。
 
-此目标是标记扩展。 有关标记扩展如何在Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
+此目标是标记扩展。 有关标记扩展如何在Experience Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
-![Adobe的ECID扩展](../../assets/catalog/personalization/adobe-ecid/catalog.png)
+![Adobe ECID扩展](../../assets/catalog/personalization/adobe-ecid/catalog.png)
 
 ## 先决条件 {#prerequisites}
 
-所有购买了Platform的客户都可在“目标”目录中使用此扩展。
+所有已购买Experience Platform的客户都可以在“目标”目录中找到此扩展。
 
-要使用此扩展，您需要具有对Platform中标记的访问权限。 标记以内置增值功能的方式提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取数据收集UI的访问权限，并让他们向您授予&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
+要使用此扩展，您需要具有对Experience Platform中标记的访问权限。 标记以内置增值功能的方式提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取数据收集UI的访问权限，并让他们向您授予&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
 
 ## 安装扩展 {#install-extension}
 
 要安装[!DNL Experience Cloud] ID服务扩展，请执行以下操作：
 
-在[平台接口](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**。
+在[Experience Platform界面](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**。
 
 从目录中选择扩展或使用搜索栏。
 
@@ -42,7 +42,7 @@ ht-degree: 4%
 
 工作流会将您转到数据收集UI以完成安装。
 
-有关扩展配置选项和安装支持的信息，请参阅标记文档中的[Experience CloudID服务扩展页](../../../tags/extensions/client/id-service/overview.md)。
+有关扩展配置选项和安装支持的信息，请参阅标记文档中的[Experience Cloud ID服务扩展页面](../../../tags/extensions/client/id-service/overview.md)。
 
 您还可以直接在[数据收集UI](https://experience.adobe.com/#/data-collection/)中安装该扩展。 有关详细信息，请参阅有关[添加新扩展](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension)的指南。
 

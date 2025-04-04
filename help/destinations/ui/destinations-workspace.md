@@ -3,7 +3,7 @@ keywords: 平台；目标；目标工作区；工作区；ui；目标ui；目录
 title: 目标工作区
 description: 目标工作区包括五个部分：“概述”、“目录”、“浏览”、“帐户”和“系统视图”。 以下各节对这些要求进行了说明。
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: 78168493d712d2ec0974b811d288902fd94f3e40
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1233'
 ht-degree: 0%
@@ -24,19 +24,19 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->如果您的组织是Experience Platform的新用户，并且还没有有效的目标，则[!UICONTROL 目标]仪表板和[!UICONTROL 概述]选项卡将不可见。 从左侧导航中选择[!UICONTROL 目标]将显示[[!UICONTROL 目录]选项卡](#catalog)。
+>如果您的组织是Experience Platform的新用户，并且还没有活动的目标，则[!UICONTROL 目标]仪表板和[!UICONTROL 概述]选项卡将不可见。 从左侧导航中选择[!UICONTROL 目标]将显示[[!UICONTROL 目录]选项卡](#catalog)。
 
 ![目标仪表板概述选项卡。](../../dashboards/images/destinations/dashboard-overview.png)
 
 ## [!UICONTROL 目录] {#catalog}
 
-**[!UICONTROL 目录]**&#x200B;选项卡显示[!DNL Platform]中所有可用目标的列表，您可以将这些目标发送到这些目标。
+**[!UICONTROL 目录]**&#x200B;选项卡显示[!DNL Experience Platform]中所有可用目标的列表，您可以将这些目标发送到这些目标。
 
-[!DNL Platform]用户界面在目标目录页面上提供了多个搜索和筛选选项：
+[!DNL Experience Platform]用户界面在目标目录页面上提供了多个搜索和筛选选项：
 
 * 使用页面上的搜索功能来查找特定目标。
 * 使用[!UICONTROL 类别]控件筛选目标。
-* 在[!UICONTROL 所有目标]和[!UICONTROL 我的目标]之间切换。 当您选择&#x200B;**[!UICONTROL 所有目标]**&#x200B;时，将显示所有可用的[!DNL Platform]目标。 选择&#x200B;**[!UICONTROL 我的目标]**&#x200B;后，您只能查看已与之建立连接的目标。
+* 在[!UICONTROL 所有目标]和[!UICONTROL 我的目标]之间切换。 当您选择&#x200B;**[!UICONTROL 所有目标]**&#x200B;时，将显示所有可用的[!DNL Experience Platform]目标。 选择&#x200B;**[!UICONTROL 我的目标]**&#x200B;后，您只能查看已与之建立连接的目标。
 * 选择以查看&#x200B;**[!UICONTROL 连接]**&#x200B;和/或&#x200B;**[!UICONTROL 扩展]**&#x200B;类型。 若要了解这两个类别之间的差异，请阅读[目标类型和类别](../destination-types.md)。
 
 ![目标目录显示一些广告和云存储目标。](../assets/ui/workspace/catalog.png)

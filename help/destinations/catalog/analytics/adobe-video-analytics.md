@@ -1,30 +1,30 @@
 ---
 keywords: media analytics扩展；media analytics；audio and video扩展
-title: Adobe Medium Analytics for Audio and Video扩展
-description: Adobe Medium Analytics for Audio and Video扩展是Adobe Experience Platform中的分析目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
+title: Adobe Media Analytics for Audio and Video扩展
+description: Adobe Media Analytics for Audio and Video扩展是Adobe Experience Platform中的分析目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: bf33e3e8-a95b-47e3-a1dc-c8f68f80b080
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '497'
+source-wordcount: '500'
 ht-degree: 5%
 
 ---
 
-# Adobe Medium Analytics for Audio and Video扩展 {#adobe-analytics-for-video-extension}
+# Adobe Media Analytics for Audio and Video扩展 {#adobe-analytics-for-video-extension}
 
 ## 概述 {#overview}
 
-Adobe Medium Analytics for Audio and Video是基础Analytics产品的附加产品，可提供针对视频、音频和广告的可靠测量。
+Adobe Media Analytics for Audio and Video是基础Analytics产品的附加产品，可提供针对视频、音频和广告的可靠测量。
 
-Adobe Medium Analytics for Audio and Video是Adobe Experience Platform中的一个Analytics扩展。 有关扩展功能的详细信息，请参阅[Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100157.html)上的扩展页面。
+Adobe Media Analytics for Audio and Video是Adobe Experience Platform中的一个Analytics扩展。 有关扩展功能的更多信息，请参阅[Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100157.html)上的扩展页面。
 
-此目标是标记扩展。 有关标记扩展如何在Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
+此目标是标记扩展。 有关标记扩展如何在Experience Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
 ![Adobe Media Analytics for Audio and Video 扩展](../../assets/catalog/analytics/adobe-video-analytics/catalog.png)
 
 ## 先决条件 {#prerequisites}
 
-此扩展在[!DNL Destinations]目录中提供，适用于已购买Platform的所有客户。
+此扩展位于[!DNL Destinations]目录中，适用于已购买Experience Platform的所有客户。
 
 要使用此扩展，您需要具有对Adobe Experience Platform中标记的访问权限。 标记以内置增值功能的方式提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
 
@@ -32,7 +32,7 @@ Adobe Medium Analytics for Audio and Video是Adobe Experience Platform中的一�
 
 要安装Adobe Analytics for Video扩展，请执行以下操作：
 
-在[平台接口](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**。
+在[Experience Platform界面](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**。
 
 从目录中选择扩展或使用搜索栏。
 
@@ -42,7 +42,7 @@ Adobe Medium Analytics for Audio and Video是Adobe Experience Platform中的一�
 
 工作流会将您转到数据收集UI以完成安装。
 
-有关扩展配置选项的信息，请参阅Adobe Medium文档中的[Analytics for Audio and Video扩展页](../../../tags/extensions/client/media-analytics/overview.md)。
+有关扩展配置选项的信息，请参阅标记文档中的[Adobe Media Analytics for Audio and Video扩展页面](../../../tags/extensions/client/media-analytics/overview.md)。
 
 您还可以直接在[数据收集UI](https://experience.adobe.com/#/data-collection/)中安装该扩展。 有关详细信息，请参阅有关[添加新扩展](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension)的指南。
 

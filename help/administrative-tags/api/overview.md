@@ -3,16 +3,16 @@ title: 统一标记API概述
 description: 了解如何使用统一标记API来管理Adobe Experience Platform中的统一标记和文件夹。
 role: Developer
 exl-id: f4da5850-d5b0-4746-9f28-88ce836db800
-source-git-commit: 717a4ea0568200c940cf9b8f26f4dd2aa9c00a3e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '235'
+source-wordcount: '236'
 ht-degree: 2%
 
 ---
 
 # 统一标记API概述
 
-统一标记API允许您在Adobe Experience Platform中对业务对象进行分类和管理。 您可以创建文件夹和标记，用于通过使用此API中的端点更好地组织Platform对象，例如受众或数据集。
+统一标记API允许您在Adobe Experience Platform中对业务对象进行分类和管理。 您可以创建文件夹和标记，它们可用于通过使用此API中的端点更好地整理Experience Platform对象，例如受众或数据集。
 
 在阅读各个端点指南之前，请参阅[入门指南](./getting-started.md)，了解有关所需标头、阅读示例API调用等的重要信息。
 

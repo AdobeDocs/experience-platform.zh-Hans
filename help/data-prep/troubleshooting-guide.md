@@ -1,18 +1,18 @@
 ---
-keywords: Experience Platform；主页；热门主题；
+keywords: Experience Platform；home；popular topics；
 title: 数据准备疑难解答指南
 description: 本文档提供了有关Adobe Experience Platform数据准备的常见问题解答。
 exl-id: 810cfb2f-f80a-4aa7-ab3c-beb5de78708e
-source-git-commit: ff8f660c2b3a04d8b4b9d4f19891816a44069088
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1256'
+source-wordcount: '1257'
 ht-degree: 0%
 
 ---
 
 # [!DNL Data Prep]疑难解答指南
 
-本文档提供了有关Adobe Experience Platform [!DNL Data Prep]的常见问题解答以及常见错误的疑难解答指南。 有关一般平台API的问题和疑难解答信息，请参阅[Adobe Experience Platform API疑难解答指南](../landing/troubleshooting.md)。
+本文档提供了有关Adobe Experience Platform [!DNL Data Prep]的常见问题解答以及常见错误的疑难解答指南。 有关Experience Platform API的一般问题和疑难解答信息，请参阅[Adobe Experience Platform API疑难解答指南](../landing/troubleshooting.md)。
 
 ## 常见问题解答
 
@@ -38,7 +38,7 @@ ht-degree: 0%
 
 确保每个字段的数据类型与架构中定义的类型匹配。 此外，必须遵守“Required”、“enum”和“format”等约束。
 
-所摄取的数据必须符合Experience Platform中定义的Experience Data Model (XDM)架构。 如果属性与架构中指定的预期类型或格式不匹配，摄取将失败。
+所摄取的数据必须符合Experience Platform中定义的体验数据模型(XDM)架构。 如果属性与架构中指定的预期类型或格式不匹配，摄取将失败。
 
 如果正在使用数据准备函数，请确保转换产生正确的属性。 您可以在源工作流的设置过程中查看属性。 在映射步骤中，选择&#x200B;**[!UICONTROL 新字段类型]**，然后选择&#x200B;**[!UICONTROL 添加计算字段]**。 接下来，使用计算字段界面预览每个函数。
 
@@ -98,7 +98,7 @@ iif(marketing_type.equals("phyMail"), nullify(), marketing_type)
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | --- | --- | --- | --- | --- | --- |
 | iif | 计算给定的布尔表达式并根据结果返回指定的值。 | <ul><li>表达式： **必需**&#x200B;正在计算的布尔表达式。</li><li>TRUE_VALUE： **必需**&#x200B;如果表达式的计算结果为true，则返回的值。</li><li>FALSE_VALUE： **必需**&#x200B;表达式计算结果为false时返回的值。</li></ul> | iif（表达式， TRUE_VALUE， FALSE_VALUE） | iif(&quot;s&quot;。equalsIgnoreCase(&quot;S&quot;)， &quot;True&quot;， &quot;False&quot;) | &quot;True&quot; |
-| 等于 | 比较两个字符串以确认它们是否相等。 此函数区分大小写。 | <ul><li>STRING1： **必需**&#x200B;要比较的第一个字符串。</li><li>STRING2： **必需**&#x200B;要比较的第二个字符串。 | STRING1. &#x200B;equals(&#x200B;STRING2) | “string1”。&#x200B;equals&#x200B;(&quot;STRING1&quot;) | false |
+| 等于 | 比较两个字符串以确认它们是否相等。 此函数区分大小写。 | <ul><li>STRING1： **必需**&#x200B;要比较的第一个字符串。</li><li>STRING2： **必需**&#x200B;要比较的第二个字符串。 | STRING1. &#x200B;equals(&#x200B;STRING2) | “string1”。&#x200B;equals&#x200B;(&quot;STRING1&quot;) | 错的 |
 | 无效 | 将属性的值设置为null。 当您不想将字段复制到目标架构时，应使用此字段。 | | nullify() | nullify() | null |
 
 {style="table-layout:auto"}

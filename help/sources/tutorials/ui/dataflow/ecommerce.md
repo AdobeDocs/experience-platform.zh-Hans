@@ -3,30 +3,30 @@ keywords: Experience Platform；主页；热门主题；电子商务连接器；
 solution: Experience Platform
 title: 在用户界面中使用E-Commerce Source创建数据流
 type: Tutorial
-description: 数据流是一种计划任务，用于在源中检索数据并将其摄取到Platform数据集。 本教程提供了有关如何使用Platform UI为电子商务源创建数据流的步骤。
+description: 数据流是一种计划任务，用于在源中检索数据并将其摄取到Experience Platform数据集。 本教程提供了有关如何使用Experience Platform UI为电子商务源创建数据流的步骤。
 exl-id: ee1382c5-78ac-4765-8883-0a922772bb20
-source-git-commit: d048109141168b33795753c4706dac64cdf29ca5
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1578'
+source-wordcount: '1586'
 ht-degree: 1%
 
 ---
 
 # 在UI中使用电子商务源创建数据流
 
-数据流是一种计划任务，用于在源中检索数据并将其摄取到Adobe Experience Platform中的数据集。 本教程提供了有关如何使用Platform UI为电子商务源创建数据流的步骤。
+数据流是一种计划任务，用于在源中检索数据并将其摄取到Adobe Experience Platform中的数据集。 本教程提供了有关如何使用Experience Platform UI为电子商务源创建数据流的步骤。
 
 >[!NOTE]
 >
 >* 要创建数据流，您必须已拥有具有电子商务源的经过身份验证的帐户。 在[源概述](../../../home.md#ecommerce)中可找到在UI中创建不同电子商务源帐户的教程列表。
->* 要使Experience Platform摄取数据，必须将所有基于表的批处理源的时区配置为UTC时区。
+>* 要让Experience Platform摄取数据，必须将所有基于表的批处理源的时区配置为UTC时区。
 
 ## 快速入门
 
-本教程需要您对Platform的以下组件有一定的了解：
+本教程需要对以下Experience Platform组件有一定的了解：
 
-* [源](../../../home.md)：平台允许从各种源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+* [源](../../../home.md)： Experience Platform允许从各种源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强传入数据。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构编辑器教程](../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
 * [[!DNL Real-Time Customer Profile]](../../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
@@ -85,7 +85,7 @@ ht-degree: 1%
 
 此时将显示[!UICONTROL 映射]步骤，该步骤为您提供了一个接口，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
 
-Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](../../../../data-prep/ui/mapping.md)。
+Experience Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](../../../../data-prep/ui/mapping.md)。
 
 成功映射源数据后，选择&#x200B;**[!UICONTROL 下一步]**。
 
@@ -139,7 +139,7 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 ## 后续步骤
 
-通过学习本教程，您已成功创建了一个数据流，将数据从电子商务来源引入Platform。 下游[!DNL Platform]服务（如[!DNL Real-Time Customer Profile]和[!DNL Data Science Workspace]）现在可以使用传入数据。 有关更多详细信息，请参阅以下文档：
+通过学习本教程，您已成功创建了一个数据流，将数据从电子商务来源引入Experience Platform。 下游[!DNL Experience Platform]服务（如[!DNL Real-Time Customer Profile]和[!DNL Data Science Workspace]）现在可以使用传入数据。 有关更多详细信息，请参阅以下文档：
 
 * [[!DNL Real-Time Customer Profile] 概述](../../../../profile/home.md)
 * [[!DNL Data Science Workspace] 概述](../../../../data-science-workspace/home.md)
@@ -147,7 +147,7 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 >[!WARNING]
 >
-> 以下视频中显示的Platform UI已过期。 有关最新的UI屏幕截图和功能，请参阅上述文档。
+> 以下视频中显示的Experience Platform UI已过期。 有关最新的UI屏幕截图和功能，请参阅上述文档。
 >
 >[!VIDEO](https://video.tv.adobe.com/v/29711?quality=12&learn=on)
 

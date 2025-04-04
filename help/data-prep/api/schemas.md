@@ -2,10 +2,10 @@
 keywords: Experience Platform；主页；热门主题；数据准备；API指南；架构；
 solution: Experience Platform
 title: 架构API端点
-description: 您可以使用Adobe Experience Platform API中的“/schemas”端点以编程方式检索、创建和更新架构，以便在Platform中与映射器一起使用。
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+description: 您可以使用Adobe Experience Platform API中的“/schemas”端点以编程方式检索、创建和更新架构，以便与Experience Platform中的映射器一起使用。
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '616'
+source-wordcount: '619'
 ht-degree: 3%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 3%
 
 # 架构端点
 
-架构可与映射器一起使用，以确保您摄取到Adobe Experience Platform的数据与您要摄取的数据相匹配。 您可以使用`/schemas`端点以编程方式创建、列出和获取自定义架构，以便在Platform中与映射器一起使用。
+架构可与映射器一起使用，以确保您摄取到Adobe Experience Platform的数据与您要摄取的数据相匹配。 您可以使用`/schemas`端点以编程方式创建、列出和获取自定义架构，以便与Experience Platform中的映射器一起使用。
 
 >[!NOTE]
 >
->使用此端点创建的架构仅与映射器和映射集一起使用。 若要创建可由其他Platform服务访问的架构，请阅读[架构注册开发人员指南](../../xdm/api/schemas.md)。
+>使用此端点创建的架构仅与映射器和映射集一起使用。 若要创建其他Experience Platform服务可访问的架构，请阅读[架构注册开发人员指南](../../xdm/api/schemas.md)。
 
 ## 获取所有架构
 
@@ -334,7 +334,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas/upload
 
 ## 检索特定架构
 
-您可以通过向`/schemas`端点发出GET请求并在请求路径中提供要检索的架构的ID来检索有关特定架构的信息。
+您可以通过向`/schemas`端点发出GET请求并在请求路径中提供要检索的架构的ID，来检索有关特定架构的信息。
 
 **API格式**
 

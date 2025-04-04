@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 部分批量摄取概述
 description: 本文档提供了有关管理部分批处理摄取的教程。
 exl-id: 25a34da6-5b7c-4747-8ebd-52ba516b9dc3
-source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '946'
 ht-degree: 7%
@@ -21,10 +21,10 @@ ht-degree: 7%
 
 本教程需要具备与部分批量摄取相关的各种Adobe Experience Platform服务的实际操作知识。 在开始本教程之前，请查看以下服务的文档：
 
-- [批量摄取](./overview.md)： [!DNL Platform]从数据文件（如CSV和Parquet）摄取和存储数据的方法。
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： [!DNL Platform]用于组织客户体验数据的标准化框架。
+- [批量摄取](./overview.md)： [!DNL Experience Platform]从数据文件（如CSV和Parquet）摄取和存储数据的方法。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
 
-以下部分提供成功调用[!DNL Platform] API所需了解的其他信息。
+以下部分提供成功调用[!DNL Experience Platform] API所需了解的其他信息。
 
 ### 正在读取示例 API 调用
 
@@ -32,19 +32,19 @@ ht-degree: 7%
 
 ### 收集所需标头的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+要调用[!DNL Experience Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 - 授权：持有人`{ACCESS_TOKEN}`
 - x-api-key： `{API_KEY}`
 - x-gw-ims-org-id： `{ORG_ID}`
 
-[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
+[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Experience Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 - x-sandbox-name： `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关[!DNL Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
+>有关[!DNL Experience Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
 
 ## 在API中为部分批次摄取启用批次 {#enable-api}
 
@@ -65,7 +65,7 @@ ht-degree: 7%
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `enableErrorDiagnostics` | 允许[!DNL Platform]生成有关批次的详细错误消息的标志。 |
+| `enableErrorDiagnostics` | 允许[!DNL Experience Platform]生成有关批次的详细错误消息的标志。 |
 | `partialIngestionPercent` | 整个批次失败之前可接受的错误百分比。 因此，在此示例中，最多有5%的批次可能是错误，然后才会失败。 |
 
 
@@ -75,7 +75,7 @@ ht-degree: 7%
 >
 >本节介绍如何使用UI为部分批次摄取启用批处理。 如果已使用API为部分批次摄取启用批次，则可以跳至下一部分。
 
-要通过[!DNL Platform] UI为部分摄取启用批次，您可以通过源连接创建新批次、在现有数据集中创建新批次或通过“[!UICONTROL 将CSV映射到XDM流]”创建新批次。
+要通过[!DNL Experience Platform] UI为部分摄取启用批次，您可以通过源连接创建新批次、在现有数据集中创建新批次或通过“[!UICONTROL 将CSV映射到XDM流]”创建新批次。
 
 ### 创建新的源连接 {#new-source}
 
@@ -85,7 +85,7 @@ ht-degree: 7%
 
 通过&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换，您可以启用或禁用部分批次摄取。
 
-仅当&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换关闭时，才会显示&#x200B;**[!UICONTROL 错误诊断]**&#x200B;切换。 此功能允许[!DNL Platform]生成有关您摄取的批次的详细错误消息。 如果启用了&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换，则会自动强制实施增强的错误诊断。
+仅当&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换关闭时，才会显示&#x200B;**[!UICONTROL 错误诊断]**&#x200B;切换。 此功能允许[!DNL Experience Platform]生成有关您摄取的批次的详细错误消息。 如果启用了&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换，则会自动强制实施增强的错误诊断。
 
 ![](../images/batch-ingestion/partial-ingestion/configure-batch-partial-ingestion-focus.png)
 
@@ -99,7 +99,7 @@ ht-degree: 7%
 
 通过&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换，您可以启用或禁用部分批次摄取。
 
-仅当&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换关闭时，才会显示&#x200B;**[!UICONTROL 错误诊断]**&#x200B;切换。 此功能允许[!DNL Platform]生成有关您摄取的批次的详细错误消息。 如果启用了&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换，则会自动强制实施增强的错误诊断。
+仅当&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换关闭时，才会显示&#x200B;**[!UICONTROL 错误诊断]**&#x200B;切换。 此功能允许[!DNL Experience Platform]生成有关您摄取的批次的详细错误消息。 如果启用了&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换，则会自动强制实施增强的错误诊断。
 
 ![](../images/batch-ingestion/partial-ingestion/monitor-dataset-partial-ingestion-focus.png)
 
@@ -115,7 +115,7 @@ ht-degree: 7%
 
 通过&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换，您可以启用或禁用部分批次摄取。
 
-仅当&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换关闭时，才会显示&#x200B;**[!UICONTROL 错误诊断]**&#x200B;切换。 此功能允许[!DNL Platform]生成有关您摄取的批次的详细错误消息。 如果启用了&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换，则会自动强制实施增强的错误诊断。
+仅当&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换关闭时，才会显示&#x200B;**[!UICONTROL 错误诊断]**&#x200B;切换。 此功能允许[!DNL Experience Platform]生成有关您摄取的批次的详细错误消息。 如果启用了&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换，则会自动强制实施增强的错误诊断。
 
 ![](../images/batch-ingestion/partial-ingestion/xdm-csv-workflow-partial-ingestion-focus.png)
 

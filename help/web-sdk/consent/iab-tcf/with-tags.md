@@ -1,15 +1,15 @@
 ---
-title: 使用标记和Platform Web SDK扩展集成IAB TCF 2.0支持
+title: 使用标记和Experience Platform Web SDK扩展集成IAB TCF 2.0支持
 description: 了解如何使用标记和Adobe Experience Platform Web SDK扩展设置IAB TCF 2.0同意。
 exl-id: dc0e6b68-8257-4862-9fc4-50b370ef204f
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '833'
+source-wordcount: '838'
 ht-degree: 0%
 
 ---
 
-# 使用标记和Platform Web SDK扩展集成IAB TCF 2.0支持
+# 使用标记和Experience Platform Web SDK扩展集成IAB TCF 2.0支持
 
 Adobe Experience Platform Web SDK支持交互式Advertising Bureau Transparency &amp; Consent Framework版本2.0 (IAB TCF 2.0)。 本指南向您展示了如何使用Adobe Experience Platform Web SDK标记扩展设置标记属性，以将IAB TCF 2.0同意信息发送到Adobe。
 
@@ -17,7 +17,7 @@ Adobe Experience Platform Web SDK支持交互式Advertising Bureau Transparency 
 
 ## 快速入门
 
-要将包含标记和Platform Web SDK扩展的IAB TCF 2.0结合使用，您需要具有XDM模式和数据集。
+要将包含标记的IAB TCF 2.0和Experience Platform Web SDK扩展结合使用，您需要具有XDM架构和数据集。
 
 此外，本指南要求您实际了解Adobe Experience Platform Web SDK。 如需快速刷新，请阅读[Adobe Experience Platform Web SDK概述](../../home.md)和[常见问题解答](../../faq.md)文档。
 
@@ -66,7 +66,7 @@ addEventListener();
 
 >[!IMPORTANT]
 >
->无法使用数据元素选择器选择这些数据元素，因为它们是通过自定义代码创建的。 您必须键入带有百分比符号的数据元素名称。 此代码会在客户发生更改时用他们的新同意首选项更新他们的配置文件。 此外，服务器会返回一个Cookie值，这可能会阻止Adobe Experience Platform Web SDK记录Experience事件。
+>无法使用数据元素选择器选择这些数据元素，因为它们是通过自定义代码创建的。 您必须键入带有百分比符号的数据元素名称。 此代码会在客户发生更改时用他们的新同意首选项更新他们的配置文件。 此外，服务器会返回一个Cookie值，这可能会阻止Adobe Experience Platform Web SDK记录体验事件。
 
 ## 为体验事件创建XDM数据元素
 
@@ -113,7 +113,7 @@ addEventListener();
 
 此代码与以前的自定义代码相同，不同之处在于`useractioncomplete`和`tcloaded`事件均已处理。 [previous自定义代码](#consent-code-1)仅在客户首次选择其偏好设置时触发。 当客户已选择其偏好设置时，也会触发此代码。 例如，在第二次加载页面时。
 
-从Platform Web SDK扩展添加“发送事件”操作。 在XDM字段中，选择您在上一部分中创建的XDM数据元素。
+从Experience Platform Web SDK扩展添加“发送事件”操作。 在XDM字段中，选择您在上一部分中创建的XDM数据元素。
 
 ## 使用IAB TCF 2.0同意信息发送其他事件
 
@@ -121,4 +121,4 @@ addEventListener();
 
 ## 后续步骤
 
-现在，您已了解如何将IAB TCF 2.0与Platform Web SDK扩展结合使用，您还可以选择与其他Adobe解决方案(如Adobe Analytics或Adobe Real-time Customer Data Platform)集成。 有关详细信息，请参阅[IAB透明度和同意框架2.0概述](./overview.md)。
+现在，您已了解如何将IAB TCF 2.0与Experience Platform Web SDK扩展一起使用，您还可以选择与其他Adobe解决方案(如Adobe Analytics或Adobe Real-Time Customer Data Platform)集成。 有关详细信息，请参阅[IAB透明度和同意框架2.0概述](./overview.md)。

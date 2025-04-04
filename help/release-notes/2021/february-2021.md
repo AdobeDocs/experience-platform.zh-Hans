@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: February 24, 2021
 author: ens70167
 exl-id: 8c3142af-4021-4f7e-acbd-c5277dd188d1
-source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1137'
-ht-degree: 22%
+source-wordcount: '1141'
+ht-degree: 23%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 22%
 
 **发行日期： 2021年2月24日**
 
-Adobe Experience Platform中的新增功能：
+Adobe Experience Platform 的新功能：
 
 - [(Beta)功能板](#dashboards)
 
@@ -38,11 +38,11 @@ Adobe Experience Platform提供了多个功能板，您可以通过这些功能�
 
 | 功能 | 描述 |
 | --- | --- |
-| 配置文件、区段、目标和许可证使用情况仪表板(Beta) | **注意：功能板功能当前为测试版，并非对所有用户都可用。 文档和功能可能会发生变化。**<br/><br/>&#x200B;功能板提供有关您组织数据的现成报告，并直接内置到Platform中的营销人员工作流程中。 这些仪表板无需额外的IT支持，也不需要通过额外的数据仓库设计和实施来导出和处理数据所需的时间和精力。 |
+| 配置文件、区段、目标和许可证使用情况仪表板(Beta) | **注意：功能板功能当前为测试版，并非对所有用户都可用。 文档和功能可能会发生变化。**<br/><br/>&#x200B;功能板提供有关您组织数据的现成报表，并直接内置到Experience Platform中的营销人员工作流程中。 这些仪表板无需额外的IT支持，也不需要通过额外的数据仓库设计和实施来导出和处理数据所需的时间和精力。 |
 
 ## [!DNL Data Science Workspace] {#dsw}
 
-数据科学Workspace使用机器学习和人工智能从您的数据创建见解。 数据科学Workspace已集成到Adobe Experience Platform中，可帮助您在各个Adobe解决方案中使用内容和数据资源做出预测。
+数据科学Workspace使用机器学习和人工智能从您的数据创建见解。 数据科学Workspace已集成到Adobe Experience Platform中，可帮助您在各个Adobe解决方案中使用您的内容和数据资产做出预测。
 
 **新增功能**
 
@@ -54,9 +54,9 @@ Adobe Experience Platform提供了多个功能板，您可以通过这些功能�
 
 ## [!DNL Dataflows] {#dataflows}
 
-在Adobe Experience Platform中，数据从各种来源摄取，在Experience Platform中进行分析，并激活到各种目的地。 Platform通过提供数据流透明度，使跟踪这种潜在非线性数据流的过程更容易。
+在Adobe Experience Platform中，数据从各种源摄取，在Experience Platform中进行分析，并激活到各种目标。 Experience Platform通过提供数据流透明度，使跟踪这种潜在非线性数据流的过程更容易。
 
-数据流是跨Platform移动数据的数据作业的表示形式。 这些数据流在不同的服务中配置，有助于将数据从源连接器移动到目标数据集，然后由[!DNL Identity Service]和[!DNL Real-Time Customer Profile]使用它，最后激活到[!DNL Destinations]。
+数据流是跨Experience Platform移动数据的数据作业的表示形式。 这些数据流在不同的服务中配置，有助于将数据从源连接器移动到目标数据集，然后由[!DNL Identity Service]和[!DNL Real-Time Customer Profile]使用它，最后激活到[!DNL Destinations]。
 
 **新增功能**
 
@@ -76,7 +76,7 @@ Adobe Experience Platform提供了多个功能板，您可以通过这些功能�
 | ----------- | ----------- |
 | [[!DNL LinkedIn Matched Audiences]](../../destinations/catalog/social/linkedin.md) | [!DNL LinkedIn Matched Audiences]连接允许您在[!DNL LinkedIn]社交平台中激活受众。 |
 
-有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
+有关目标的更多一般信息，请参阅[目标概述](../../destinations/home.md)。
 
 ## [!DNL Experience Data Model (XDM) System] {#xdm}
 
@@ -106,9 +106,9 @@ Adobe Experience Platform [!DNL Identity Service]通过跨设备和系统桥接�
 
 有关[!DNL Identity Service]的更多常规信息，请参阅[Identity Service概述](../../identity-service/home.md)。
 
-## 实时客户配置文件 {#profile}
+## 实时客户轮廓 {#profile}
 
-Adobe Experience Platform 使您能够为客户提供协调、一致且相关的体验，无论他们何时何地与您的品牌互动均是如此。利用实时客户配置文件，您可以看到每个客户的整体视图，其中结合来自多个渠道的数据，包括在线、离线、CRM 和第三方数据。[!DNL Profile]允许您将客户数据整合到一个统一视图中，并提供每个客户交互的带时间戳的可操作帐户。
+Adobe Experience Platform 使您能够为客户提供协调、一致且相关的体验，无论他们何时何地与您的品牌互动均是如此。利用实时客户轮廓，您可以看到每个客户的整体视图，其中结合来自多个渠道的数据，包括在线、离线、CRM 和第三方数据。[!DNL Profile]允许您将客户数据整合到一个统一视图中，并提供每个客户交互的带时间戳的可操作帐户。
 
 **新增功能**
 
@@ -120,11 +120,11 @@ Adobe Experience Platform 使您能够为客户提供协调、一致且相关的
 
 ## [!DNL Sources] {#sources}
 
-Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强这些数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Experience Platform服务来构建、标记和增强这些数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
 
 Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各种数据提供者设置源连接。这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 
-**新源**
+**新来源**
 
 | 功能 | 描述 |
 | --- | --- |

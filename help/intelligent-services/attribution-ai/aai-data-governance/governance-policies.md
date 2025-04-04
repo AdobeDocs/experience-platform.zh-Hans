@@ -4,16 +4,16 @@ feature: Attribution AI
 title: Attribution AI的治理策略
 description: Adobe Experience Platform提供了多项服务和工具，使您能够放心地控制收集的体验数据。
 exl-id: 448b10c8-8eac-41cb-9b77-66aa283c0a9d
-source-git-commit: eba23d39ade399f7df058da103fbd54883dc5b65
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '193'
+source-wordcount: '194'
 ht-degree: 0%
 
 ---
 
-# Attribution AI中的治理政策
+# Attribution AI中的治理策略
 
-完成工作流创建模型并提交模型的配置后，[策略实施](../../../data-governance/enforcement/auto-enforcement.md)将检查是否存在任何违规。 如果发生策略冲突，则会出现一个弹出窗口，指示已违反一个或多个策略。 这是为了确保您的Platform中的数据操作和营销操作符合数据使用策略。
+完成工作流创建模型并提交模型的配置后，[策略实施](../../../data-governance/enforcement/auto-enforcement.md)将检查是否存在任何违规。 如果发生策略冲突，则会出现一个弹出窗口，指示已违反一个或多个策略。 这是为了确保您的Experience Platform中的数据操作和营销操作符合数据使用策略。
 
 ## 策略违规弹出框
 

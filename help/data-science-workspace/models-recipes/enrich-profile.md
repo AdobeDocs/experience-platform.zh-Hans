@@ -5,9 +5,9 @@ title: 利用机器学习见解丰富实时客户档案
 type: Tutorial
 description: 本文档提供了有关如何使用机器学习见解丰富Real-time Customer Profile的指南。
 exl-id: 397023c9-383d-4a21-b58a-0f920631ac56
-source-git-commit: 923c6f2deb4d1199cfc5dc9dc4ca7b4da154aaaa
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '653'
+source-wordcount: '655'
 ht-degree: 0%
 
 ---
@@ -31,8 +31,8 @@ Adobe Experience Platform [!DNL Data Science Workspace]提供了用于创建、�
 要完成下面的教程，您需要对摄取[!DNL Profile]数据和创建受众有一定的了解。 在开始本教程之前，请查看以下服务的文档：
 
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个来源的汇总数据，为每个单独的客户提供完整、统一的表示形式。
-- [[!DNL Identity Service]](../../identity-service/home.md)：通过桥接正在引入到Platform中的不同数据源中的标识来启用[!DNL Real-Time Customer Profile]。
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： Platform用于组织客户体验数据的标准化框架。
+- [[!DNL Identity Service]](../../identity-service/home.md)：通过桥接被摄取到Experience Platform中的不同数据源中的标识来启用[!DNL Real-Time Customer Profile]。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
 
 除了上述文档之外，还强烈建议您查看有关架构和架构编辑器的以下指南：
 

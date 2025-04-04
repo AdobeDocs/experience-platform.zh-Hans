@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中定义标识字段
 description: 了解如何在Experience Platform用户界面中定义标识字段。
 exl-id: 11a53345-4c3f-4537-b3eb-ee7a5952df2a
-source-git-commit: 0d16bbbaf81b2057c6b3518a5b8a8698920c36f7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '651'
+source-wordcount: '652'
 ht-degree: 6%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 6%
 
 ## 先决条件
 
-标识字段是在Platform中构建客户标识图的关键组件，它最终影响Real-time Customer Profile如何将不同的数据片段合并在一起，从而获得客户的完整视图。 在定义架构中的身份字段之前，请参阅以下文档以了解与身份字段相关的关键服务和概念：
+标识字段是如何在Experience Platform中构建客户标识图的关键组件，它最终影响Real-time Customer Profile如何将不同的数据片段合并到一起，从而获得客户的完整视图。 在定义架构中的身份字段之前，请参阅以下文档以了解与身份字段相关的关键服务和概念：
 
 * [Adobe Experience Platform Identity服务](../../../identity-service/home.md)：跨设备和系统桥接身份，根据数据集所遵循的XDM架构定义的身份字段将数据集链接在一起。
    * [身份命名空间](../../../identity-service/features/namespaces.md)：身份命名空间定义可以与单个人员相关的不同类型的身份信息，并且是每个身份字段的必需组件。

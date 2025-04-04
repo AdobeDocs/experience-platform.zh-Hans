@@ -2,9 +2,9 @@
 title: (Beta) [!DNL Google Ad Manager 360] 连接
 description: Google Ad Manager 360是Google的一个广告投放平台，它使发布者能够通过视频和移动应用程序管理其网站上的广告显示。
 exl-id: 3251145a-3e4d-40aa-b120-d79c8c9c7cae
-source-git-commit: 21b76877e8b36d6b844d9c0726a2347b1fab170e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1217'
+source-wordcount: '1221'
 ht-degree: 6%
 
 ---
@@ -17,9 +17,9 @@ ht-degree: 6%
 ><br/>
 >为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为 Google 合作伙伴，Adobe 为您提供必要的工具，以遵守欧盟 DMA 下的这些同意要求。
 ><br/>
->购买AdobePrivacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未同意的配置文件的客户无需采取任何操作。
+>如果客户购买了Adobe Privacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未经同意的用户档案，则无需采取任何操作。
 ><br/>
->未购买AdobePrivacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/ui/segment-builder.md)中的[区段定义](../../../segmentation/home.md#segment-definitions)功能来过滤掉未经同意的用户档案，以便继续不间断地使用现有的Real-Time CDP Google目标。
+>未购买Adobe Privacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/ui/segment-builder.md)中的[区段定义](../../../segmentation/home.md#segment-definitions)功能来过滤掉未经同意的用户档案，以便继续使用现有的Real-Time CDP Google目标而不中断。
 
 [!DNL Google Ad Manager 360]连接允许通过[!DNL Google Cloud Storage]将[!DNL publisher provided identifiers] (PPID)的批次上载到[!DNL Google Ad Manager 360]。
 
@@ -54,8 +54,8 @@ ht-degree: 6%
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -74,13 +74,13 @@ ht-degree: 6%
 
 ### 允许列表 {#allow-listing}
 
-在Platform中设置您的第一个[!DNL Google Ad Manager 360]目标之前，必须首先列入允许列表。 在创建目标之前，请确保完成如下所述的允许列表流程。
+在Experience Platform中设置您的第一个[!DNL Google Ad Manager 360]目标之前，必须将该目标列入允许列表。 在创建目标之前，请确保完成如下所述的允许列表流程。
 
 >[!NOTE]
 >
 >此规则的例外适用于现有[Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html)客户。 如果您已在Audience Manager中创建了到此Google目标的连接，则无需再次完成允许列表流程，您可以继续后续步骤。
 
-1. 按照[Google Ad Manager文档](https://support.google.com/admanager/answer/3289669?hl=en)中描述的步骤将Adobe添加为链接的数据管理平台(DMP)。
+1. 按照[Google Ad Manager文档](https://support.google.com/admanager/answer/3289669?hl=en)中描述的步骤，将Adobe添加为链接的数据管理平台(DMP)。
 2. 在[!DNL Google Ad Manager]界面中，转到&#x200B;**[!UICONTROL 管理员]** > **[!UICONTROL 全局设置]** > **[!UICONTROL 网络设置]**，并启用&#x200B;**[!UICONTROL API访问]**&#x200B;滑块。
 
 
@@ -96,8 +96,8 @@ ht-degree: 6%
 
 要验证到目标，请填写必填字段并选择&#x200B;**[!UICONTROL 连接到目标]**。
 
-* **[!UICONTROL 访问密钥ID]**：一个61字符的字母数字字符串，用于向Platform验证您的[!DNL Google Cloud Storage]帐户。
-* **[!UICONTROL 访问密钥]**：用于向Platform验证您的[!DNL Google Cloud Storage]帐户的40字符base64编码字符串。
+* **[!UICONTROL 访问密钥ID]**：一个由61个字符组成的字母数字字符串，用于向Experience Platform验证您的[!DNL Google Cloud Storage]帐户。
+* **[!UICONTROL 访问密钥]**：用于向Experience Platform验证您的[!DNL Google Cloud Storage]帐户的40字符base64编码字符串。
 
 有关这些值的更多信息，请参阅[Google Cloud Storage HMAC密钥](https://cloud.google.com/storage/docs/authentication/hmackeys#overview)指南。 有关如何生成自己的访问密钥ID和访问密钥的步骤，请参阅[[!DNL Google Cloud Storage] 源概述](/help/sources/connectors/cloud-storage/google-cloud-storage.md)。
 
@@ -139,7 +139,7 @@ ht-degree: 6%
 
 | 预填充映射 | 描述 |
 |---------|----------|
-| `ECID` -> `ppid` | 这是唯一一个用户可编辑的预填充映射。 您可以从Platform中选择任何属性或身份命名空间并将它们映射到`ppid`。 |
+| `ECID` -> `ppid` | 这是唯一一个用户可编辑的预填充映射。 您可以从Experience Platform中选择任何属性或身份命名空间并将它们映射到`ppid`。 |
 | `metadata.segment.alias` -> `list_id` | 将Experience Platform受众名称映射到Google平台中的受众ID。 |
 | `iif(${segmentMembership.ups.seg_id.status}=="exited", "1","0")` -> `delete` | 告知Google平台何时从区段中删除不符合条件的用户。 |
 
@@ -153,7 +153,7 @@ ht-degree: 6%
 
 ## 故障排除 {#troubleshooting}
 
-如果您在使用此目标时遇到任何错误，并且需要联系Adobe或Google，请随时保留以下ID。
+如果您在使用此目标时遇到任何错误，并且需要访问Adobe或Google，请保留以下ID。
 
 这些是Adobe的Google帐户ID：
 

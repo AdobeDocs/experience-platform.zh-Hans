@@ -1,12 +1,12 @@
 ---
 keywords: 事件转发扩展；mixpanel；mixpanel事件转发扩展
 title: Mixpanel跟踪事件API事件转发扩展
-description: 此Adobe Experience Platform事件转发扩展可将Edge Network事件发送到Mixpanel。
+description: 此Adobe Experience Platform事件转发扩展将Edge Network事件发送到Mixpanel。
 last-substantial-update: 2023-03-29T00:00:00Z
 exl-id: 21e2e0fa-4949-4be4-859f-d449d21d8f41
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '892'
+source-wordcount: '893'
 ht-degree: 1%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 1%
 
 ## 用例
 
-如果要使用[!DNL Mixpanel]中Edge Network的数据以利用其产品分析功能，应使用此扩展。
+如果要在[!DNL Mixpanel]中使用Edge Network中的数据以利用其产品分析功能，则应该使用此扩展。
 
 例如，以具有多渠道存在（网站和移动设备）的零售组织为例。 组织从其平台捕获事务性或对话性输入作为事件数据，并使用事件转发扩展将其加载到[!DNL Mixpanel]中。
 
@@ -47,7 +47,7 @@ ht-degree: 1%
 
 [!DNL Mixpanel]通过两种方法解析标识群集：
 
-* **标识** ： [!DNL Mixpanel]将您选择的标识连接到匿名`distinct_id`。 如果您的网站启用了[!DNL Mixpanel] SDK，则平台将使用分配给当前登录用户的`distinct_id`。
+* **标识** ： [!DNL Mixpanel]将您选择的标识连接到匿名`distinct_id`。 如果您的网站启用了[!DNL Mixpanel] SDK，Experience Platform将使用分配给当前登录用户的`distinct_id`。
 * **别名**： [!DNL Mixpanel]在满足其他合并条件时将两个非匿名`distinct id`合并在一起。
 
 >[!NOTE]
@@ -58,7 +58,7 @@ ht-degree: 1%
 
 ### 收集所需的配置详细信息 {#configuration-details}
 
-要将Experience Platform连接到[!DNL Mixpanel]，您必须具有以下输入：
+要将Experience Platform连接到[!DNL Mixpanel]，您必须输入以下内容：
 
 | 键类型 | 描述 | 示例 |
 | --- | --- | --- |
@@ -110,4 +110,4 @@ ht-degree: 1%
 * [[!DNL Mixpanel] SDK](https://developer.mixpanel.com/docs/nodejs)
 * [[!DNL Mixpanel] JavaScript API](https://developer.mixpanel.com/docs/javascript-full-api-reference#mixpanelidentify)
 
-有关Experience Platform中事件转发功能的详细信息，请参阅[事件转发概述](../../../ui/event-forwarding/overview.md)。
+有关Experience Platform中事件转发功能的更多信息，请参阅[事件转发概述](../../../ui/event-forwarding/overview.md)。

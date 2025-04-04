@@ -2,9 +2,9 @@
 description: 了解如何在UI中创建Adobe Analytics源连接器，以将分类数据引入Adobe Experience Platform。
 title: 在UI中为分类数据创建Adobe Analytics Source连接
 exl-id: d606720d-f1ca-47cc-919b-643a8fc61e07
-source-git-commit: 02b5c5f963c21247adbb1d13114f92b22f8758de
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '513'
+source-wordcount: '514'
 ht-degree: 0%
 
 ---
@@ -21,15 +21,15 @@ ht-degree: 0%
 
 本教程需要对以下Adobe Experience Platform组件有一定的了解：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
-* [[!DNL Sandboxes]](../../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+* [[!DNL Sandboxes]](../../../../../sandboxes/home.md)： Experience Platform提供了可将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
 Analytics Classifications Source Connector要求在使用之前，将您的数据迁移到Adobe Analytics的新分类基础架构。 要确认数据的迁移状态，请联系您的Adobe客户团队。
 
 ## 选择您的分类
 
-在Experience PlatformUI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
 在&#x200B;*Adobe应用程序*&#x200B;类别下，选择&#x200B;**[!UICONTROL Adobe Analytics]**，然后选择&#x200B;**[!UICONTROL 设置]**。
 
@@ -37,7 +37,7 @@ Analytics Classifications Source Connector要求在使用之前，将您的数�
 >
 >如果没有经过身份验证的帐户，源目录中的源将显示&#x200B;**[!UICONTROL 设置]**&#x200B;选项。 帐户通过身份验证后，该选项将更改为&#x200B;**[!UICONTROL 添加数据]**。
 
-![已选择Adobe Analytics源的Experience PlatformUI中的源目录。](../../../../images/tutorials/create/classifications/catalog.png)
+![已选择Adobe Analytics源的Experience Platform UI中的源目录。](../../../../images/tutorials/create/classifications/catalog.png)
 
 接下来，选择[!UICONTROL 分类]，然后选择要摄取到Experience Platform的分类数据集。
 
@@ -59,7 +59,7 @@ Analytics Classifications Source Connector要求在使用之前，将您的数�
 
 ## 后续步骤
 
-通过学习本教程，您已创建一个Analytics Classifications Sata连接器，该连接器可将分类数据引入Experience Platform。 有关[!DNL Analytics]和分类数据的详细信息，请参阅以下文档：
+通过学习本教程，您已创建一个Analytics分类SATA连接器，它将分类数据引入到Experience Platform中。 有关[!DNL Analytics]和分类数据的详细信息，请参阅以下文档：
 
 * [Adobe Analytics源连接器概述](../../../../connectors/adobe-applications/analytics.md)
 * [在UI中为报表包数据创建Analytics源连接](./analytics.md)

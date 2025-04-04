@@ -2,9 +2,9 @@
 title: SQL分析
 description: 了解用例、基本功能和使用Data Distiller开发SQL分析功能板的所需步骤。 了解Data Distiller中的SQL分析功能如何增强透明度并获得不同维度（如用户档案、受众、营销活动、历程、权利和同意）的操作分析。
 exl-id: f807d0fd-c8ec-42d4-96a0-5ffc5681943b
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '941'
+source-wordcount: '943'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,11 @@ ht-degree: 0%
 
 ## 先决条件
 
-本教程使用用户定义的功能板在Platform UI中可视化自定义数据模型中的数据。 有关此功能的更多信息，请参阅[用户定义的功能板文档](../../../dashboards/standard-dashboards.md)。
+本教程使用用户定义的功能板在Experience Platform UI中可视化自定义数据模型中的数据。 有关此功能的更多信息，请参阅[用户定义的功能板文档](../../../dashboards/standard-dashboards.md)。
 
 ## 快速入门
 
-要构建用于报表分析的自定义数据模型，并扩展包含扩充的Platform数据的Real-Time CDP数据模型，需要数据Distiller SKU。 请参阅与Data Distiller SKU相关的[打包](../../packaging.md)、[护栏](../../guardrails.md#query-accelerated-store)和[许可](../../data-distiller/license-usage.md)文档。 如果您没有Data Distiller SKU，请联系您的Adobe客户服务代表以了解更多信息。
+要构建用于报表分析的自定义数据模型，并扩展包含扩充的Distiller数据的Real-Time CDP数据模型，需要数据Experience Platform SKU。 请参阅与Data Distiller SKU相关的[打包](../../packaging.md)、[护栏](../../guardrails.md#query-accelerated-store)和[许可](../../data-distiller/license-usage.md)文档。 如果您没有Data Distiller SKU，请联系您的Adobe客户服务代表以了解更多信息。
 
 ## SQL Insights用例 {#use-cases}
 
@@ -61,7 +61,7 @@ ht-degree: 0%
 1. **功能板创作：**&#x200B;允许创建针对特定用例的自定义功能板，以提供更加个性化和更有针对性的分析体验。
 1. **灵活的SQL数据建模：**&#x200B;使用通用的SQL数据建模方法，该方法允许用户无缝地组合和处理不同的数据集，增强适应性和分析深度。
 1. **加速存储：**&#x200B;实施加速存储机制以通过SQL高效地提供聚合见解，从而确保简化和快速访问有价值的信息。
-1. **BI连接：**&#x200B;促进与常用Business Intelligence(BI)工具(包括Power BI、Tableau、Looker和Apache Superset)的无缝集成。 该连接确保与多种BI环境兼容，使用户能够灵活地使用他们选择的工具进行深入分析和报告。
+1. **BI连接：**&#x200B;促进与常用Business Intelligence (BI)工具(包括Power BI、Tableau、Looker和Apache Superset)的无缝集成。 该连接确保与多种BI环境兼容，使用户能够灵活地使用他们选择的工具进行深入分析和报告。
 
 ![数据Distiller SQL Insights的主要功能的可视表示形式。](../../images/data-distiller/sql-insights/key-capabilities-of-customizable-insights.png)
 
@@ -72,7 +72,7 @@ ht-degree: 0%
 1. **临时查询探索：**&#x200B;首先执行临时`SELECT`查询以探索数据湖上的原始数据。 这允许对实验进行实时、探索性的数据分析，并且验证查询结果未存储在数据湖中的数据。
 1. **批处理查询利用率：**&#x200B;使用批处理查询[创建计划作业](../../api/scheduled-queries.md#create-a-new-scheduled-query)以生成分析汇总表，从而确保采用系统化和自动化的方法来处理数据。 批处理查询执行`INSERT TABLE AS SELECT`和`CREATE TABLE AS SELECT`查询以清理、形状、操作和扩充数据。 这些查询的结果存储在数据湖中。
 1. **聚合分析加载：**&#x200B;将生成的聚合分析加载到加速存储中，并使用SQL测试查询，并确保数据检索的准确性和效率。 要了解如何[对加速存储](../../api/accelerated-queries.md)进行无状态查询，请参阅文档。
-1. **访问和集成：**&#x200B;通过与Adobe Experience Platform [用户定义仪表板](../../../dashboards/standard-dashboards.md)或其他首选Business Intelligence(BI)工具集成，无缝访问存储在加速存储中的见解。 这些与第三方客户端的集成为用户提供了有凝聚力的直观体验。
+1. **访问和集成：**&#x200B;通过与Adobe Experience Platform [用户定义的仪表板](../../../dashboards/standard-dashboards.md)或其他首选的Business Intelligence (BI)工具集成，可无缝访问存储在加速存储中的见解。 这些与第三方客户端的集成为用户提供了有凝聚力的直观体验。
 
 ![说明数据Distiller中SQL Insights四个步骤的信息图表。](../../images/data-distiller/sql-insights/steps-to-customizable-insights.png)
 

@@ -2,16 +2,16 @@
 title: 查看分析SQL
 description: 查看您的配置文件、受众、目标和自定义见解背后的SQL，并通过查询编辑器按需执行查询。
 exl-id: fd728926-c113-4593-92b1-916a02d09d41
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '409'
+source-wordcount: '410'
 ht-degree: 0%
 
 ---
 
 # 查看分析SQL
 
-使用[!UICONTROL 查看SQL]功能查看您的个人资料、受众、目标和自定义分析背后的SQL，并通过查询编辑器按需执行查询。 从SQL中获取40多种现有见解作为灵感，以创建新查询，这些查询可根据您的业务需求从Platform数据获取独特的见解。
+使用[!UICONTROL 查看SQL]功能查看您的个人资料、受众、目标和自定义分析背后的SQL，并通过查询编辑器按需执行查询。 从SQL中获取40多种现有见解作为灵感，以创建新查询，这些查询可根据您的业务需求从Experience Platform数据获取独特的见解。
 
 ## 导航到功能板概述 {#navigate-to-overview}
 
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 或者，从左侧导航中选择&#x200B;**[!UICONTROL 功能板]**，后跟自定义功能板的名称。 此时将显示用户定义的仪表板的概述。
 
-![突出显示具有[!UICONTROL 配置文件]、[!UICONTROL 受众]、[!UICONTROL 目标]和[!UICONTROL 仪表板]的Experience PlatformUI。](./images/view-sql/dashboard-navigation.png)
+![突出显示具有[!UICONTROL 配置文件]、[!UICONTROL 受众]、[!UICONTROL 目标]和[!UICONTROL 仪表板]的Experience Platform UI。](./images/view-sql/dashboard-navigation.png)
 
 ## 查看SQL切换 {#toggle}
 
@@ -59,4 +59,4 @@ ht-degree: 0%
 
 ## 后续步骤
 
-阅读本文档后，您现在了解如何在标准功能板或用户定义的功能板中访问SQL以获得任何见解。 如果您尚未这样做，则建议阅读[Real-time Customer Data Platform分析数据模型文档](./data-models/cdp-insights-data-model-b2c.md)。 该文档包含有关根据您的营销和KPI需求为Real-Time CDP报表自定义SQL模板的见解。
+阅读本文档后，您现在了解如何在标准功能板或用户定义的功能板中访问SQL以获得任何见解。 如果您尚未这样做，则建议阅读[Real-Time Customer Data Platform分析数据模型文档](./data-models/cdp-insights-data-model-b2c.md)。 该文档包含有关根据您的营销和KPI需求为Real-Time CDP报表自定义SQL模板的见解。

@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform；主页；热门主题；API；API；XDM；XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；架构注册表；Schema注册表；联合；联合；联合；区段成员资格；timeSeriesEvents；
+keywords: Experience Platform；主页；热门主题；API；API；XDM；XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；架构注册表；架构注册表；联合；联合；联合；区段成员资格；timeSeriesEvents；
 solution: Experience Platform
 title: 联合API端点
 description: 架构注册API中的/unions端点允许您以编程方式管理体验应用程序中的XDM合并架构。
 exl-id: d0ece235-72e8-49d9-856b-5dba44e16ee7
-source-git-commit: 3da2e8f66f08a7bb9533795f7854ad583734911c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '899'
+source-wordcount: '900'
 ht-degree: 1%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 1%
 
 ### 区段成员关系图
 
-`segmentMembership`映射存储评估区段定义的结果。 使用[分段API](https://www.adobe.io/experience-platform-apis/references/segmentation/)成功运行区段作业后，映射将更新。 `segmentMembership`还会存储提取到Platform中的任何预评估受众，从而允许与其他解决方案(如Adobe Audience Manager)集成。 有关详细信息，请参阅有关[使用API创建受众](../../segmentation/tutorials/create-a-segment.md)的教程。
+`segmentMembership`映射存储评估区段定义的结果。 使用[分段API](https://www.adobe.io/experience-platform-apis/references/segmentation/)成功运行区段作业后，映射将更新。 `segmentMembership`还会存储提取到Experience Platform中的任何预评估受众，以便与其他解决方案(如Adobe Audience Manager)集成。 有关详细信息，请参阅有关[使用API创建受众](../../segmentation/tutorials/create-a-segment.md)的教程。
 
 ## 检索联合列表 {#list}
 
@@ -91,7 +91,7 @@ curl -X GET \
 
 ## 查找联合 {#lookup}
 
-通过执行包含`$id`的GET请求，您可以查看特定的并集，并根据Accept标头，查看并集的部分或全部详细信息。
+通过执行包含`$id`的GET请求，您可以查看特定的并集，并根据“接受”标头，查看并集的部分或全部详细信息。
 
 >[!NOTE]
 >

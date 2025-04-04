@@ -2,16 +2,16 @@
 title: Data Lake迁移到Gen2
 description: 了解Adobe Experience Platform中将Data Lake迁移到Gen2提供的新功能。
 exl-id: 56d9c77a-d7eb-498d-994f-b15d150dedb7
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '286'
+source-wordcount: '288'
 ht-degree: 0%
 
 ---
 
 # Adobe Experience Platform Data Lake迁移到Gen2
 
-Adobe Experience Platform正在迁移到Gen2数据湖。 这是新一代的数据湖，可为Platform用户提供地理区域复制、更精细的基于角色的访问控制(RBAC)以及更好的扩展等优势。
+Adobe Experience Platform正在迁移到Gen2数据湖。 这是新一代的数据湖，可为Experience Platform用户提供地域复制、更精细的基于角色的访问控制(RBAC)和更强大的扩展能力等优势。
 
 ## 用户影响
 
@@ -22,8 +22,8 @@ Adobe Experience Platform正在迁移到Gen2数据湖。 这是新一代的数�
 - **实时客户个人资料**：在迁移期间，通过&#x200B;**批处理**&#x200B;引入引入到个人资料存储的数据将不可用。 但是，通过&#x200B;**流式摄取**&#x200B;引入的数据将在迁移期间可用。 此外，配置文件导出在迁移期间不可用。
 - **数据科学Workspace**：从数据科学Workspace写入将失败。
 - **分段服务**：迁移期间无法激活从&#x200B;**批次**&#x200B;分段派生的受众。 从&#x200B;**流**&#x200B;分段派生的受众不会受到影响。
-- **Customer Journey Analytics**：Customer Journey Analytics报表数据可能已过期，在迁移期间不会刷新，因为批次未摄取到Data Lake。
+- **Customer Journey Analytics**： Customer Journey Analytics报表数据可能已过期，在迁移期间不会刷新，因为批次未摄取到Data Lake。
 
-## 与Platform用户的通信
+## 与Experience Platform用户的通信
 
 Adobe将与系统管理员联系以详细讨论迁移的影响，并确认特定组织的迁移日期和时间。

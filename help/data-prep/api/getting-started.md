@@ -3,9 +3,9 @@ keywords: Experience Platform；数据准备；数据准备API；故障排除；
 title: 数据准备API快速入门
 description: 了解要使用数据准备API端点执行与映射器一起使用的基本CRUD操作所需了解的关键概念和基本功能。
 exl-id: 027e6fbe-9a0d-420b-8d67-659ca7f5ec22
-source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '186'
+source-wordcount: '187'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 1%
 - [[!DNL Adobe Experience Platform Data Ingestion]](../../ingestion/home.md)：将数据发送到[!DNL Experience Platform]的方法。
 - [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
 
-为了成功调用[!DNL Data Prep] API端点，请阅读[Platform API快速入门](../../landing/api-guide.md)指南，了解所需的标头以及如何读取示例API调用。
+为了成功调用[!DNL Data Prep] API端点，请阅读[Experience Platform API快速入门](../../landing/api-guide.md)指南，了解所需的标头以及如何读取示例API调用。
 
 ## 后续步骤
 

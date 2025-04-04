@@ -1,11 +1,11 @@
 ---
-title: (API)OracleEloqua连接
-description: 通过(API)OracleEloqua目标，您可以导出帐户数据，并在OracleEloqua中激活该数据，以满足您的业务需求。
+title: (API) Oracle Eloqua连接
+description: (API) Oracle Eloqua目标允许您导出帐户数据，并在Oracle Eloqua中激活该数据，以满足您的业务需求。
 last-substantial-update: 2023-03-14T00:00:00Z
 exl-id: 97ff41a2-2edd-4608-9557-6b28e74c4480
-source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2033'
+source-wordcount: '2044'
 ht-degree: 4%
 
 ---
@@ -29,11 +29,11 @@ ht-degree: 4%
 
 在将数据激活到[!DNL Oracle Eloqua]目标之前，您必须在[!DNL Experience Platform]中创建一个[架构](/help/xdm/schema/composition.md)、[数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)和[区段](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)。
 
-如果您需要受众状态的指导，请参阅[受众成员资格详细信息架构字段组](/help/xdm/field-groups/profile/segmentation.md)的Experience Platform文档。
+如果您需要受众状态指南，请参阅Experience Platform有关[受众成员资格详细信息架构字段组](/help/xdm/field-groups/profile/segmentation.md)的文档。
 
 ### [!DNL Oracle Eloqua]先决条件 {#prerequisites-destination}
 
-若要将数据从Platform导出到您的[!DNL Oracle Eloqua]帐户，您需要拥有[!DNL Oracle Eloqua]帐户。
+要将数据从Experience Platform导出到您的[!DNL Oracle Eloqua]帐户，您需要拥有[!DNL Oracle Eloqua]帐户。
 
 此外，您至少需要[!DNL Oracle Eloqua]实例的&#x200B;*“高级用户 — 营销权限”*。 有关指导，请参阅[安全用户访问](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-user/Help/SecurityOverview/SecuredUserAccess.htm)页面上的&#x200B;*“安全组”*&#x200B;部分。 目标需要在调用[!DNL Oracle Eloqua] API时以编程方式[确定您的基本URL](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/DeterminingBaseURL.html)，也需要该访问权限。
 
@@ -57,7 +57,7 @@ ht-degree: 4%
 >* 使用在&#x200B;**[!UICONTROL 选择区段]**&#x200B;步骤期间选择的受众的名称自动创建[!DNL Oracle Eloqua]自定义联系人字段。
 
 * [!DNL Oracle Eloqua]的最大限制为250个自定义联系人字段。
-* 在导出新受众之前，请确保[!DNL Oracle Eloqua]内的Platform受众数和现有受众数不超过此限制。
+* 在导出新受众之前，请确保[!DNL Oracle Eloqua]内的Experience Platform受众数和现有受众数不超过此限制。
 * 如果超过此限制，您将在Experience Platform中遇到错误。 这是因为[!DNL Oracle Eloqua] API无法验证请求，并以 — *400做出响应：存在验证错误* — 描述问题的错误消息。
 * 如果您已达到以上指定的限制，则需要从目标中删除现有映射，并删除[!DNL Oracle Eloqua]帐户中相应的自定义联系人字段，然后才能导出更多区段。
 
@@ -77,8 +77,8 @@ ht-degree: 4%
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在根据字段映射导出区段的所有成员，以及所需的架构字段&#x200B;*（例如：电子邮件地址、电话号码、姓氏）*。</li><li> 对于Platform中的每个选定受众，相应的[!DNL Oracle Eloqua]区段状态将通过Platform中的受众状态进行更新。</li></ul> |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | <ul><li>流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。</li></ul> |
+| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在根据字段映射导出区段的所有成员，以及所需的架构字段&#x200B;*（例如：电子邮件地址、电话号码、姓氏）*。</li><li> 对于Experience Platform中的每个选定受众，相应的[!DNL Oracle Eloqua]区段状态将从Experience Platform中更新为其受众状态。</li></ul> |
+| 导出频率 | **[!UICONTROL 正在流式传输]** | <ul><li>流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -104,7 +104,7 @@ ht-degree: 4%
 * **[!UICONTROL 用户名]**：由[!DNL Oracle Eloqua]公司名称和[!DNL Oracle Eloqua]用户名组成的连接字符串。<br>连接值采用`{COMPANY_NAME}\{USERNAME}`的形式。<br>注意，不要使用任何大括号或空格并保留`\`。 <br>例如，如果您的[!DNL Oracle Eloqua]公司名称为`MyCompany`，[!DNL Oracle Eloqua]用户名为`Username`，则您在&#x200B;**[!UICONTROL 用户名]**&#x200B;字段中使用的串联值为`MyCompany\Username`。
 
 要验证到目标，请选择&#x200B;**[!UICONTROL 连接到目标]**。
-![显示如何进行身份验证的平台UI屏幕截图。](../../assets/catalog/email-marketing/oracle-eloqua-api/authenticate-destination.png)
+![Experience Platform UI屏幕截图显示如何进行身份验证。](../../assets/catalog/email-marketing/oracle-eloqua-api/authenticate-destination.png)
 
 如果提供的详细信息有效，则UI会显示&#x200B;**[!UICONTROL 已连接]**&#x200B;状态，并带有绿色复选标记。 然后，您可以继续执行下一步。
 
@@ -118,7 +118,7 @@ ht-degree: 4%
 <!-- >additional-url="https://support.oracle.com/knowledge/Oracle%20Cloud/2307176_1.html" text="Oracle Knowledge base - find out your Pod number" -->
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
-![显示目标详细信息的平台UI屏幕截图。](../../assets/catalog/email-marketing/oracle-eloqua-api/destination-details.png)
+![Experience Platform UI屏幕截图显示目标详细信息。](../../assets/catalog/email-marketing/oracle-eloqua-api/destination-details.png)
 
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
@@ -141,7 +141,7 @@ ht-degree: 4%
 
 ### 映射注意事项和示例 {#mapping-considerations-example}
 
-要将受众数据从Adobe Experience Platform正确发送到[!DNL Oracle Eloqua]目标，您需要完成字段映射步骤。 映射包括在您的Platform帐户中的Experience Data Model (XDM)架构字段与其在目标目标中的相应等效字段之间创建链接。
+要将受众数据从Adobe Experience Platform正确发送到[!DNL Oracle Eloqua]目标，您需要完成字段映射步骤。 映射包括在Experience Platform帐户中的Experience Data Model (XDM)架构字段与其与目标中的相应等效字段之间创建链接。
 
 要将XDM字段映射到[!DNL Oracle Eloqua]目标字段，请执行以下步骤：
 
@@ -165,7 +165,7 @@ ht-degree: 4%
      | `xdm: workAddress.city` | `Attribute: city` | |
 
    * 下面显示了具有上述映射的示例：
-     ![具有属性映射的Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/oracle-eloqua-api/mappings.png)
+     ![具有属性映射的Experience Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/oracle-eloqua-api/mappings.png)
 
 >[!IMPORTANT]
 >
@@ -201,14 +201,14 @@ ht-degree: 4%
 
 1. 选择&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**&#x200B;并导航到目标列表。
 1. 接下来，选择目标并切换到&#x200B;**[!UICONTROL 激活数据]**选项卡，然后选择受众名称。
-   ![显示目标激活数据的Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/oracle-eloqua-api/destinations-activation-data.png)
+   ![显示目标激活数据的Experience Platform UI屏幕截图示例。](../../assets/catalog/email-marketing/oracle-eloqua-api/destinations-activation-data.png)
 
 1. 监控受众摘要，并确保用户档案计数对应于区段中的计数。
-   ![显示区段的Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/oracle-eloqua-api/segment.png)
+   ![显示区段的Experience Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/oracle-eloqua-api/segment.png)
 
 1. 登录到[!DNL Oracle Eloqua]网站，然后导航到&#x200B;**[!UICONTROL 联系人概述]**&#x200B;页面以检查是否已添加受众中的配置文件。 要查看受众状态，请深入到&#x200B;**[!UICONTROL 联系人详细信息]**&#x200B;页面，并检查是否创建了以选定受众名称作为其前缀的联系人字段。
 
-![OracleEloqua UI屏幕截图显示“联系人详细信息”页面，该页面具有使用受众名称创建的自定义联系人字段。](../../assets/catalog/email-marketing/oracle-eloqua-api/contact.png)
+![Oracle Eloqua UI屏幕截图显示“联系人详细信息”页面，该页面带有使用受众名称创建的自定义联系人字段。](../../assets/catalog/email-marketing/oracle-eloqua-api/contact.png)
 
 ## 数据使用和治理 {#data-usage-governance}
 
@@ -217,7 +217,7 @@ ht-degree: 4%
 ## 错误和故障排除 {#errors-and-troubleshooting}
 
 创建目标时，您可能会收到以下错误消息之一： `400: There was a validation error`或`400 BAD_REQUEST`。 当您超过[护栏](#guardrails)部分中所述的250个自定义联系人字段限制时，会发生这种情况。 要修复此错误，请确保在[!DNL Oracle Eloqua]中未超出自定义联系人字段限制。
-![平台UI屏幕快照显示错误。](../../assets/catalog/email-marketing/oracle-eloqua-api/error.png)
+![Experience Platform UI屏幕快照显示错误。](../../assets/catalog/email-marketing/oracle-eloqua-api/error.png)
 
 请参阅[[!DNL Oracle Eloqua] HTTP状态代码](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/APIRequests_HTTPStatusCodes.html)和[[!DNL Oracle Eloqua] 验证错误](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/APIRequests_HTTPValidationErrors.html)页，获取包含说明的状态和错误代码的完整列表。
 
@@ -225,8 +225,8 @@ ht-degree: 4%
 
 有关其他详细信息，请参阅[!DNL Oracle Eloqua]文档：
 
-* [OracleEloqua Marketing Automation](https://docs.oracle.com/en/cloud/saas/marketing/eloqua.html)
-* 用于OracleEloquaMarketing Cloud服务的[REST API](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/rest-endpoints.html)
+* [Oracle Eloqua Marketing Automation](https://docs.oracle.com/en/cloud/saas/marketing/eloqua.html)
+* [适用于Oracle Eloqua Marketing Cloud服务的REST API](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/rest-endpoints.html)
 
 ### Changelog
 

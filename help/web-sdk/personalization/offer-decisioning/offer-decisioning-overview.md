@@ -1,16 +1,16 @@
 ---
-title: 将Offer Decisioning与Platform Web SDK一起使用
+title: 将Offer Decisioning与Experience Platform Web SDK一起使用
 description: Adobe Experience Platform Web SDK可以交付和呈现Offer Decisioning中管理的个性化优惠。 您可以使用Offer Decisioning UI或API创建优惠和其他相关对象。
-keywords: offer decisioning；decisioning；Web SDK；Platform Web SDK；个性化优惠；投放优惠；优惠投放；优惠个性化；
+keywords: offer decisioning；decisioning；Web SDK；Experience Platform Web SDK；个性化优惠；投放优惠；优惠投放；优惠个性化；
 exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
-source-git-commit: b2c3b1160782a81ea66f42e21e494e0a7d90e037
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '791'
+source-wordcount: '799'
 ht-degree: 3%
 
 ---
 
-# 将Offer Decisioning与Platform Web SDK一起使用
+# 将Offer Decisioning与Experience Platform Web SDK一起使用
 
 Adobe Experience Platform [!DNL Web SDK]可以投放和渲染在Offer Decisioning中管理的个性化优惠。 您可以使用Offer Decisioning用户界面(UI)或API创建优惠和其他相关对象。
 
@@ -49,7 +49,7 @@ Adobe Experience Platform [!DNL Web SDK]可以投放和渲染在Offer Decisionin
 
 * **数据流：**&#x200B;有关详细信息，请阅读[数据流](/help/datastreams/overview.md)文档。
 
-* **标识**：有关详细信息，请阅读此文档，其中概述了[平台Web SDK如何使用标识服务](../../identity/overview.md)。
+* **标识**：有关详细信息，请阅读此文档，其中概述了[Experience Platform Web SDK如何使用标识服务](../../identity/overview.md)。
 
 ## 启用Offer Decisioning
 
@@ -82,13 +82,13 @@ Adobe Experience Platform [!DNL Web SDK]可以投放和渲染在Offer Decisionin
 
       1. [创建标记属性](/help/tags/ui/administration/companies-and-properties.md)
       1. [添加嵌入代码](https://experienceleague.adobe.com/docs/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
-      1. 通过从“数据流”下拉列表中选择配置，使用您创建的数据流安装并配置Platform Web SDK扩展。 请参阅有关[扩展](/help/tags/ui/managing-resources/extensions/overview.md)的文档。
+      1. 通过从“数据流”下拉列表中选择配置，使用您创建的数据流安装和配置Experience Platform Web SDK扩展。 请参阅有关[扩展](/help/tags/ui/managing-resources/extensions/overview.md)的文档。
 
          ![install-aep-web-sdk-extension](./assets/install-aep-web-sdk-extension.png)
 
          ![configure-aep-web-sdk-extension](./assets/configure-aep-web-sdk-extension.png)
 
-      1. 创建必要的[数据元素](/help/tags/ui/managing-resources/data-elements.md)。 您必须至少创建一个Platform Web SDK标识映射和一个Platform Web SDK XDM对象数据元素。
+      1. 创建必要的[数据元素](/help/tags/ui/managing-resources/data-elements.md)。 您必须至少创建一个Experience Platform Web SDK标识映射和一个Experience Platform Web SDK XDM对象数据元素。
 
          ![identity-map-data-element](./assets/identity-map-data-element.png)
 
@@ -96,7 +96,7 @@ Adobe Experience Platform [!DNL Web SDK]可以投放和渲染在Offer Decisionin
 
       1. 创建您的[规则](/help/tags/ui/managing-resources/rules.md)。
 
-         * 添加Platform Web SDK发送事件操作并将相关的`decisionScopes`添加到该操作的配置
+         * 添加Experience Platform Web SDK“发送事件”操作，并将相关的`decisionScopes`添加到该操作的配置
 
          ![send-event-action-decisionScopes](./assets/send-event-action-decisionScopes.png)
 

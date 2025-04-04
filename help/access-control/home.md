@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 访问控制概述
 description: Adobe Experience Platform的访问控制是通过Adobe Admin Console提供的。 此功能利用Admin Console中的产品配置文件，它将用户与权限和沙盒关联起来。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: 50d768eeb0dc8fa85af113db7790ad3e3258ea64
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '3816'
+source-wordcount: '3818'
 ht-degree: 0%
 
 ---
@@ -202,7 +202,7 @@ Experience Platform附带两个预配置的默认角色。 下表概述了每个
 | [!DNL Data Governance] | [!UICONTROL 管理使用标签] | 有权读取、创建和删除使用标签。 |
 | [!DNL Data Governance] | [!UICONTROL 管理数据使用策略] | 有权读取、创建、编辑和删除数据使用策略。 |
 | [!DNL Data Governance] | [!UICONTROL 查看数据使用策略] | 对属于您组织的数据使用策略的只读访问权限。 |
-| [!DNL Data Governance] | [!UICONTROL 查看用户活动日志] | 只读访问权限，用于查看平台活动中记录的[审核日志](../landing/governance-privacy-security/audit-logs/overview.md)。 |
+| [!DNL Data Governance] | [!UICONTROL 查看用户活动日志] | 只读访问权限，可查看Experience Platform活动中记录的[审核日志](../landing/governance-privacy-security/audit-logs/overview.md)。 |
 | [!DNL Data Governance] | [!UICONTROL 查看隐私控制台] | 对隐私控制台的只读访问权限。 |
 | [!DNL Data Ingestion] | [!UICONTROL 管理源] | 有权读取、创建、编辑和禁用源。 |
 | [!DNL Data Ingestion] | [!UICONTROL 查看源] | 对&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡中的可用源以及&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡中的已验证源的只读访问权限。 |
@@ -281,7 +281,7 @@ Experience Platform附带两个预配置的默认角色。 下表概述了每个
 | [!DNL Profile Management] | [!UICONTROL 管理配置文件设置] | 有权读取和编辑所有配置文件设置。 |
 | [!DNL Prospects] | [!UICONTROL 查看潜在客户] | 对潜在客户架构、用户档案、受众和潜在客户折叠面板的只读访问权限。 |
 | [!DNL Prospects] | [!UICONTROL 管理潜在客户] | 能够创建和管理潜在客户架构、用户档案和受众。 对潜在客户折叠的只读访问权限。 |
-| [!DNL Query Service] | [!UICONTROL 管理查询] | 访问Platform数据的读取、创建、编辑和删除结构化SQL查询。 |
+| [!DNL Query Service] | [!UICONTROL 管理查询] | 有权读取、创建、编辑和删除Experience Platform数据的结构化SQL查询。 |
 | [!DNL Query Service] | [!UICONTROL 管理查询服务集成] | 访问创建、更新和删除未过期的凭据以访问查询服务。 |
 | [!DNL Query Service] | [!UICONTROL 管理查询会话] | 能够逐出现有会议。 |
 | [!DNL Query Service] | [!UICONTROL 管理允许列表] | 能够管理组织的IP限制。 |

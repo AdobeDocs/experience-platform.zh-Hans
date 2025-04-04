@@ -1,21 +1,21 @@
 ---
 keywords: Experience Platform；主页；热门主题；Oracle对象存储；oracle对象存储
 solution: Experience Platform
-title: oracle对象存储Source连接器概述
+title: Oracle对象存储Source连接器概述
 description: 了解如何使用API或用户界面将Oracle对象存储连接到Adobe Experience Platform。
 exl-id: 5e8b85c8-9f01-49a6-9556-7b9c7518fb4b
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '421'
+source-wordcount: '425'
 ht-degree: 0%
 
 ---
 
-# oracle对象存储连接器
+# Oracle对象存储连接器
 
-Adobe Experience Platform为云提供商(如AWS [!DNL Google Cloud Platform])提供本机连接，允许您将这些系统中的数据引入平台以用于下游服务和目标。
+Adobe Experience Platform为云提供商(如AWS [!DNL Google Cloud Platform])提供本机连接，允许您将这些系统中的数据引入Experience Platform以用于下游服务和目标。
 
-云存储源可以将您的数据导入Platform，而无需下载、格式化或上传。 引入的数据可以格式化为XDM JSON、XDM Parquet或分隔。 该过程的每个步骤都集成到源工作流中。 平台允许您通过批处理从[!DNL Oracle Object Storage]引入数据。
+云存储源可以将您的数据导入Experience Platform，而无需下载、设置格式或上传。 引入的数据可以格式化为XDM JSON、XDM Parquet或分隔。 该过程的每个步骤都集成到源工作流中。 Experience Platform允许您通过批处理从[!DNL Oracle Object Storage]引入数据。
 
 ## IP地址允许列表
 
@@ -32,7 +32,7 @@ Adobe Experience Platform为云提供商(如AWS [!DNL Google Cloud Platform])提
 - 不允许使用非法的URL路径字符。 诸如`\uE000`之类的代码点虽然在NTFS文件名中有效，但不是有效的Unicode字符。 此外，还不允许使用某些ASCII或Unicode字符，例如控制字符（0x00到0x1F、\u0081等）。 有关HTTP/1.1中Unicode字符串的规则，请参阅[RFC 2616，第2.2节：基本规则](https://www.ietf.org/rfc/rfc2616.txt)和[RFC 3987](https://www.ietf.org/rfc/rfc3987.txt)。
 - 不允许使用以下文件名：LPT1、LPT2、LPT3、LPT4、LPT5、LPT6、LPT7、LPT8、LPT9、COM1、COM2、COM3、COM4、COM5、COM6、COM7、COM8、COM9、PRN、AUX、NUL、CON、CLOCK$、点字符(.)和两个点字符(..)。
 
-## 将[!DNL Oracle Object Storage]连接到平台
+## 将[!DNL Oracle Object Storage]连接到Experience Platform
 
 以下文档提供了有关如何使用API或用户界面将Oracle对象存储连接到Adobe Experience Platform的信息：
 

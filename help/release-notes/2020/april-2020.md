@@ -6,10 +6,10 @@ last-update: April 13, 2020
 author: ens71067
 keywords: 发行说明；
 exl-id: 0f68c71e-3c9d-453b-a953-1cd1b6ca2e35
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '985'
-ht-degree: 14%
+ht-degree: 28%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 14%
 
 **发行日期： 2020年4月8日**
 
-Adobe Experience Platform中的新增功能：
+Adobe Experience Platform 的新功能：
 * [[!DNL Intelligent Services]](#intelligent)
 
 现有功能更新：
@@ -68,7 +68,7 @@ XDM是一个公开记录的规范，旨在提高数字体验的强大功能。 �
 
 ## 数据治理 {#governance}
 
-Adobe Experience Platform 数据治理是一系列策略和技术，用于管理客户数据并确保遵守适用于数据使用的法规、限制和政策。它在各个级别的[!DNL Experience Platform]内扮演着关键角色，包括编目、数据谱系、数据使用标签、数据访问策略和对营销操作数据的访问控制。
+Adobe Experience Platform 数据治理是一系列策略和技术，用于管理客户数据并确保遵守适用于数据使用的法规、限制和政策。它在 Experience Platform 的 [!DNL Experience Platform] 各个层面中发挥着关键作用，包括编目、数据谱系、数据使用标记、数据访问策略和营销操作数据访问控制。
 
 开始使用数据治理需要彻底了解适用于您的客户数据的管理法规、合同义务和企业政策。 从那里，可以通过应用适当的数据使用标签对数据进行分类，并且可以通过定义数据使用策略来控制其使用。
 
@@ -89,7 +89,7 @@ Adobe Experience Platform 数据治理是一系列策略和技术，用于管理
 
 ## 目标 {#destinations}
 
-在[Real-time Customer Data Platform](../../rtcdp/overview.md)中，目标是与目标平台预先构建的集成，这些平台以无缝方式向这些合作伙伴激活数据。
+在[Real-Time Customer Data Platform](../../rtcdp/overview.md)中，目标是与目标平台预先构建的集成，这些平台以无缝方式向这些合作伙伴激活数据。
 
 **新目标**
 
@@ -104,15 +104,15 @@ Real-Time CDP现在支持数据激活超过50个[!DNL Experience Cloud Launch]�
 
 ## [!DNL Privacy Service] {#privacy}
 
-新的法律和组织法规授予用户权利，允许他们根据请求从您的数据存储中访问或删除其个人数据。 Adobe Experience Platform [!DNL Privacy Service]提供RESTful API和用户界面，帮助您管理来自客户的这些数据请求。 借助[!DNL Privacy Service]，您可以提交访问和删除Adobe Experience Cloud应用程序中私人或个人客户数据的请求，从而促进自动遵守法律和组织隐私法规。
+新的法律和组织法规授予用户权利，允许他们根据请求从您的数据存储中访问或删除其个人数据。 Adobe Experience Platform [!DNL Privacy Service] 提供 RESTful API 和用户界面，帮助您管理客户数据请求。借助 [!DNL Privacy Service]，您可以提交从 Adobe Experience Cloud 应用程序访问和删除个人客户数据的请求，从而促进自动遵守法律和组织隐私法规。
 
 **新增功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| PDPA支持 | 现在，泰国可以根据个人数据保护法(PDPA)创建和跟踪隐私请求。 在API中发出隐私请求时，`regulation`数组接受值“pdpa_tha”。 |
-| UI中的命名空间类型 | 您现在可以在[!DNL Privacy Service] UI的请求生成器中指定不同的命名空间类型。 有关详细信息，请参阅[用户指南](../../privacy-service/ui/user-guide.md)。 |
-| 弃用旧端点 | 已弃用旧的API终结点(`data/privacy/gdpr`)。 |
+| PDPA 支持 | 现在，泰国可以根据个人数据保护法(PDPA)创建和跟踪隐私请求。 在 API 中发出隐私请求时，`regulation` 数组接受值“pdpa_tha”。 |
+| UI 中的命名空间类型 | 您现在可以在 [!DNL Privacy Service] UI 中的请求构建器中指定不同的命名空间类型。请参阅[用户指南](../../privacy-service/ui/user-guide.md)，获取更多信息。 |
+| 旧端点弃用 | 已弃用旧的 API 端点 (`data/privacy/gdpr`)。 |
 
 已知问题
 
@@ -122,7 +122,7 @@ Real-Time CDP现在支持数据激活超过50个[!DNL Experience Cloud Launch]�
 
 ## 源 {#sources}
 
-Adobe Experience Platform可以从外部源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强该数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强该数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
 
 [!DNL Experience Platform]提供了一个RESTful API和一个交互式UI，可让您轻松为各种数据提供程序设置源连接。 这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 

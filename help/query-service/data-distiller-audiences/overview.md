@@ -2,9 +2,9 @@
 title: 使用SQL构建受众
 description: 了解如何在Adobe Experience Platform的Data Distiller中使用SQL受众扩展来使用SQL命令创建、管理和发布受众。 本指南涵盖受众生命周期的所有方面，包括创建、更新和删除用户档案，以及使用数据驱动的受众定义来定位基于文件的目标。
 exl-id: c35757c1-898e-4d65-aeca-4f7113173473
-source-git-commit: c66a7cf779c1b6e55ace86916985087dfaa3363b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1481'
+source-wordcount: '1485'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 1%
 
 使用此SQL扩展可提高创建受众的能力，因为在定义受众区段时，您不需要在配置文件中使用原始数据。 使用此方法创建的受众会自动在受众工作区中注册，您可以进一步将这些受众定位到基于文件的目标。
 
-![显示SQL受众扩展工作流程的信息图。 这些阶段包括：使用SQL命令通过查询服务构建受众，在平台UI中管理受众，以及在基于文件的目标中激活受众。](../images/data-distiller/sql-audiences/sql-audience-extension-workflow.png)
+![显示SQL受众扩展工作流程的信息图。 这些阶段包括：使用SQL命令通过查询服务构建受众，在Experience Platform UI中管理受众，以及在基于文件的目标中激活受众。](../images/data-distiller/sql-audiences/sql-audience-extension-workflow.png)
 
 本文档介绍如何在Adobe Experience Platform的数据Distiller中使用SQL受众扩展来使用SQL命令创建、管理和发布受众。
 
@@ -203,7 +203,7 @@ DROP AUDIENCE IF EXISTS aud_test;
 
 ### 自动受众注册和可用性 {#registration-and-availability}
 
-使用SQL扩展创建的受众会自动注册到Audience工作区的Data Distiller [!UICONTROL Origin]中。 注册后，这些受众即可在基于文件的目标中进行定位，从而增强分段和定位策略。 此过程不需要额外配置，可简化受众管理。 有关如何在Platform UI中查看、管理和创建受众的详细信息，请参阅[受众门户概述](../../segmentation/ui/audience-portal.md)。
+使用SQL扩展创建的受众会自动注册到Audience工作区的Data Distiller [!UICONTROL Origin]中。 注册后，这些受众即可在基于文件的目标中进行定位，从而增强分段和定位策略。 此过程不需要额外配置，可简化受众管理。 有关如何在Experience Platform UI中查看、管理和创建受众的详细信息，请参阅[受众门户概述](../../segmentation/ui/audience-portal.md)。
 
 <!-- Q) Do you know how long it takes for the audience to register? This info would help manage user expectations. -->
 
@@ -289,9 +289,9 @@ Adobe Journey Optimizer中还提供了数据Distiller受众。 您可以在Adobe
 
 在阅读本文档后，您已了解如何在Data Distiller中使用SQL受众扩展，以使用SQL命令有效创建、管理和发布受众。 您现在可以根据独特的业务需求自定义受众定义，并在各种目标中激活这些定义，从而优化营销策略和数据驱动型决策。
 
-接下来，您可以阅读以下文档，以进一步开发和优化您的Platform受众管理策略：
+接下来，您可以阅读以下文档，以进一步开发和优化Experience Platform受众管理策略：
 
-- **浏览受众评估**：了解Adobe Experience Platform中的[受众评估方法](../../segmentation/home.md#evaluate-segments)：用于实时更新的流式分段、用于计划或按需处理的批量分段以及用于在Edge Network上即时评估的边缘分段。
-- **与目标集成**：阅读有关如何使用Platform目标UI [按需将文件导出到批处理目标](../../destinations/ui/export-file-now.md)的指南。
+- **浏览受众评估**：了解Adobe Experience Platform中的[受众评估方法](../../segmentation/home.md#evaluate-segments)：用于实时更新的流式分段、用于计划或按需处理的批处理分段，以及用于在Edge Network上即时评估的边缘分段。
+- **与目标集成**：阅读有关如何使用Experience Platform目标UI [按需将文件导出到批处理目标](../../destinations/ui/export-file-now.md)的指南。
 - **审核受众性能**：分析您的SQL定义的受众在不同渠道中的执行情况。 使用数据洞察来调整和改进受众定义和定位策略。 请阅读有关[受众分析](../../dashboards/insights/audiences.md)的文档，了解如何在Adobe Real-Time CDP中访问和调整SQL查询以获取受众分析。 然后，您可以通过自定义受众仪表板创建自己的见解并将原始数据转换为可操作的信息，从而有效地可视化并使用这些见解做出更好的决策。
 

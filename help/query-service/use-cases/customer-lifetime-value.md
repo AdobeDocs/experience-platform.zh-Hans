@@ -1,17 +1,17 @@
 ---
 title: 跟踪数据信号以生成客户存留期值
-description: 本指南提供了有关如何将Data Distiller和用户定义的功能板与Real-time Customer Data Platform结合使用来衡量和可视化客户存留期值的端到端演示。
+description: 本指南提供了有关如何将Data Distiller和用户定义的功能板与Real-Time Customer Data Platform结合使用来衡量和可视化客户存留期值的端到端演示。
 exl-id: c74b5bff-feb2-4e21-9ee4-1e0973192570
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1263'
+source-wordcount: '1266'
 ht-degree: 0%
 
 ---
 
 # 跟踪数据信号以生成客户存留期值
 
-您可以使用Real-time Customer Data Platform跟踪客户存留期值(CLV)，并通过用户定义的功能板可视化该指标。 通过使用Data Distiller和用户定义的功能板，您可以测量客户在您的整个关系中对您公司的价值。 了解CLV可以帮助您制定企业策略，在吸引新客户的同时保留现有客户并保持利润率。
+您可以使用Real-Time Customer Data Platform跟踪客户存留期值(CLV)，并通过用户定义的功能板可视化该指标。 通过使用Data Distiller和用户定义的功能板，您可以测量客户在您的整个关系中对您公司的价值。 了解CLV可以帮助您制定企业策略，在吸引新客户的同时保留现有客户并保持利润率。
 
 以下信息图表描述了数据收集、操作、分析和操作的周期，可生成高性能数据以改进营销活动。
 
@@ -56,7 +56,7 @@ ht-degree: 0%
 * 创建维度表以扩展您的报表分析模型。
 * 查询您的扩展加速商店报告见解数据模型
 
-请参阅Real-time Customer Data Platform分析数据模型文档，了解如何[自定义您的SQL查询模板，以便为您的营销和关键绩效指标(KPI)用例创建Real-Time CDP报告](../../dashboards/data-models/cdp-insights-data-model-b2c.md)。
+请参阅Real-Time Customer Data Platform分析数据模型文档，了解如何[自定义您的SQL查询模板，以便为您的营销和关键绩效指标(KPI)用例创建Real-Time CDP报告](../../dashboards/data-models/cdp-insights-data-model-b2c.md)。
 
 确保设置定期刷新自定义数据模型的计划。 这可确保根据需要将数据作为摄取管道的一部分返回，并填充用户定义的仪表板。 请参阅[计划查询指南](../ui/query-schedules.md#create-schedule)，了解如何设置计划。
 
@@ -73,7 +73,7 @@ ht-degree: 0%
 
 ## 创建和激活高性能受众 {#create-and-activate-audiences}
 
-下一步是构建区段定义，并根据实时客户档案数据生成受众。 请参阅区段生成器UI指南，了解如何[在Platform](../../segmentation/ui/segment-builder.md)中创建和激活受众。 该指南提供了有关如何完成以下操作的部分：
+下一步是构建区段定义，并根据实时客户档案数据生成受众。 请参阅区段生成器UI指南，了解如何[在Experience Platform](../../segmentation/ui/segment-builder.md)中创建和激活受众。 该指南提供了有关如何完成以下操作的部分：
 
 * 将属性、事件和现有受众的组合用作构建块来创建区段定义。
 * 使用规则生成器画布和容器可控制分段规则的执行顺序。
@@ -85,9 +85,9 @@ ht-degree: 0%
 
 ## 为电子邮件营销活动激活受众 {#activate-audience-for-campaign}
 
-构建受众后，便可以将其激活到目标。 Platform支持各种电子邮件服务提供商(ESP)，使您能够管理电子邮件营销活动，如发送促销电子邮件营销活动。
+构建受众后，便可以将其激活到目标。 Experience Platform支持各种电子邮件服务提供商(ESP)，使您能够管理电子邮件营销活动，如发送促销电子邮件营销活动。
 
-查看[电子邮件营销目标概述](../../destinations/catalog/email-marketing/overview.md#connect-destination)，以查看要将数据导出到的受支持目标的列表(例如[OracleEloqua](../../destinations/catalog/email-marketing/oracle-eloqua-api.md)页面)。
+查看[电子邮件营销目标概述](../../destinations/catalog/email-marketing/overview.md#connect-destination)，以查看要将数据导出到的受支持目标的列表(例如[Oracle Eloqua](../../destinations/catalog/email-marketing/oracle-eloqua-api.md)页面)。
 
 ## 查看从营销活动返回的分析数据 {#post-campaign-data-analysis}
 
@@ -107,11 +107,11 @@ ht-degree: 0%
 
 ## 后续步骤
 
-通过阅读本文档，您应该更好地了解如何使用Real-time Customer Data Platform跟踪和可视化客户存留期值(CLV)指标。 要了解有关通过查询服务和Experience Platform提供的许多业务用例的更多信息，建议您阅读以下文档：
+通过阅读本文档，您应该更好地了解如何使用Real-Time Customer Data Platform跟踪和可视化客户存留期值(CLV)指标。 要了解有关通过查询服务和Experience Platform提供的许多业务用例的更多信息，建议您阅读以下文档：
 
 * [一个关于已放弃的浏览用例的端到端示例，该示例演示了查询服务的通用性和好处。](./abandoned-browse.md)
 * [如何使用查询服务和机器学习从真正的在线网站访客流量中确定并过滤机器人活动](./bot-filtering.md)
-* [如何对您的Platform数据执行匹配，该匹配通过大致匹配您选择的字符串来组合来自多个数据集的结果。](./fuzzy-match.md)
+* [如何对Experience Platform数据执行匹配，该匹配方式通过大致匹配所选字符串来组合来自多个数据集的结果。](./fuzzy-match.md)
 
 <!-- "Data signals are actions taken by consumers while online that offer clues about intent that can be acted upon. This includes anything from visiting a website to filling out a change of address or clicking an ad."  -->
 

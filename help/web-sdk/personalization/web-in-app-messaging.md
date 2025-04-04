@@ -2,9 +2,9 @@
 title: 在Web SDK中配置Web应用程序内消息传送支持
 description: 了解如何配置Web SDK标记扩展以支持Web应用程序内消息传递。
 exl-id: 90a19ef4-e94c-4f16-a26a-8919ad2dbd6f
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '967'
+source-wordcount: '969'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ default-src  blob:;
 
 请参阅[Web SDK标记扩展配置页面](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md)，了解可在何处找到下述设置。
 
-在您[安装](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md#install-the-web-sdk-tag-extension)Web SDK标记扩展后，请按照以下步骤配置Web应用程序内消息传送的扩展。
+在您[安装](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md#install-the-web-sdk-tag-extension) Web SDK标记扩展后，请按照以下步骤配置Web应用程序内消息传送的扩展。
 
 在&#x200B;**[!UICONTROL Personalization]**&#x200B;部分中，选中&#x200B;**[!UICONTROL 启用个性化存储]**&#x200B;选项。 此选项允许Web SDK跟踪用户在页面加载过程中看到了哪些体验。
 
@@ -53,14 +53,14 @@ default-src  blob:;
 
 Web应用程序内消息传送支持两种类型的触发器：
 
-* [将数据发送到Platform](#send-data-platform)
+* [将数据发送到Experience Platform](#send-data-platform)
 * [手动触发消息](#manual-trigger)
 
 请参阅以下部分，以根据要使用的触发器配置Web SDK标记扩展。
 
-### **[!UICONTROL 将数据发送到Platform]**&#x200B;触发器的配置步骤 {#send-data-platform}
+### **[!UICONTROL 将数据发送到Experience Platform]**&#x200B;触发器的配置步骤 {#send-data-platform}
 
-选择包含Web SDK扩展的标记属性，然后[使用以下设置创建新规则](../../tags/ui/managing-resources/rules.md##create-a-rule)：
+选择包含您的Web SDK扩展的标记属性，然后[使用以下设置创建一个新规则](../../tags/ui/managing-resources/rules.md##create-a-rule)：
 
 1. **[!UICONTROL 扩展]**： [!UICONTROL 核心]
 2. **[!UICONTROL 事件类型]**：[!UICONTROL 已加载库（页面顶部）]
@@ -101,7 +101,7 @@ Web应用程序内消息传送支持两种类型的触发器：
 
 ### 使用手动触发器的配置步骤 {#manual-trigger}
 
-选择包含Web SDK扩展的标记属性，然后[使用以下设置创建新规则](../../tags/ui/managing-resources/rules.md##create-a-rule)：
+选择包含您的Web SDK扩展的标记属性，然后[使用以下设置创建一个新规则](../../tags/ui/managing-resources/rules.md##create-a-rule)：
 
 1. **[!UICONTROL 扩展]**： [!UICONTROL 核心]
 2. **[!UICONTROL 事件类型]**：[!UICONTROL 点击]

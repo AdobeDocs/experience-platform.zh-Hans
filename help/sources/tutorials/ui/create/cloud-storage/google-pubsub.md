@@ -1,11 +1,11 @@
 ---
 title: 在UI中创建Google PubSub Source连接
-description: 了解如何使用Platform用户界面创建Google PubSub源连接器。
+description: 了解如何使用Google用户界面创建Experience Platform PubSub源连接器。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: fb8411f2-ccae-4bb5-b1bf-52b1144534ed
-source-git-commit: fcac805e151d6142886eb8e05da0eb1babad2f69
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1098'
+source-wordcount: '1106'
 ht-degree: 1%
 
 ---
@@ -14,16 +14,16 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->[!DNL Google PubSub]源在源目录中可供已购买Real-time Customer Data Platform Ultimate的用户使用。
+>[!DNL Google PubSub]源在源目录中可供已购买Real-Time Customer Data Platform Ultimate的用户使用。
 
-本教程提供了使用Platform用户界面创建[!DNL Google PubSub]（以下称为“[!DNL PubSub]”）的步骤。
+本教程提供了使用Experience Platform用户界面创建[!DNL Google PubSub]（以下称为“[!DNL PubSub]”）的步骤。
 
 ## 快速入门
 
 本教程需要对以下Adobe Experience Platform组件有一定的了解：
 
-* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
-* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 如果您已经拥有有效的[!DNL PubSub]连接，则可以跳过本文档的其余部分，并转到有关[配置数据流](../../dataflow/batch/cloud-storage.md)的教程。
 
@@ -57,17 +57,17 @@ ht-degree: 1%
 >
 >如果您使用的是基于服务帐户的身份验证，请确保在复制和粘贴凭据时，您已经向服务帐户授予了足够的用户访问权限，并且JSON中没有额外的空格。
 
-收集所需的凭据后，您可以按照以下步骤将您的[!DNL PubSub]帐户关联到Platform。
+收集所需的凭据后，您可以按照以下步骤将您的[!DNL PubSub]帐户关联到Experience Platform。
 
 ## 连接您的[!DNL PubSub]帐户
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL 目录]屏幕显示您可以用来创建帐户的各种来源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL 目录]屏幕显示您可以用来创建帐户的各种来源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
 在[!UICONTROL Cloud Storage]类别下，选择&#x200B;**[!UICONTROL Google PubSub]**，然后选择&#x200B;**[!UICONTROL 添加数据]**。
 
-![Experience PlatformUI上的源目录。](../../../../images/tutorials/create/google-pubsub/catalog.png)
+![Experience Platform UI上的源目录。](../../../../images/tutorials/create/google-pubsub/catalog.png)
 
 此时会显示&#x200B;**[!UICONTROL 连接到Google PubSub]**&#x200B;页。 在此页上，您可以使用新凭据或现有凭据。
 
@@ -112,7 +112,7 @@ ht-degree: 1%
 
 ## 选择数据
 
-成功的身份验证将您带入[!UICONTROL 选择数据]步骤，您可以在此步骤中导航[!DNL PubSub]数据层次结构并选择您要带入Experience Platform的数据。
+成功的身份验证将您带入[!UICONTROL 选择数据]步骤，您可以在该步骤中导航[!DNL PubSub]数据层次结构并选择要带入Experience Platform的数据。
 
 >[!BEGINTABS]
 
@@ -136,4 +136,4 @@ ht-degree: 1%
 
 ## 后续步骤
 
-通过完成本教程，您已在[!DNL PubSub]帐户和平台之间创建了连接。 您现在可以继续下一教程，并[配置数据流以将云存储中的流数据引入Platform](../../dataflow/streaming/cloud-storage-streaming.md)。
+通过学习本教程，您已在[!DNL PubSub]帐户与Experience Platform之间创建了连接。 您现在可以继续下一教程并[配置数据流以将流数据从云存储引入Experience Platform](../../dataflow/streaming/cloud-storage-streaming.md)。

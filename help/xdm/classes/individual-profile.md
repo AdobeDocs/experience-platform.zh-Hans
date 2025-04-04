@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM个人配置文件类
 description: 了解XDM Individual Profile类。
 exl-id: 83b22462-79ce-4024-aa50-a9bd800c0f81
-source-git-commit: ce937f1335283382189fa40f65aa268735c02715
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '552'
+source-wordcount: '553'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!DNL XDM Individual Profile]是一个标准体验数据模型(XDM)类，它构成个人的单一呈现（或“个人资料”）。 具体而言，类（及其兼容的字段组）捕获与您的品牌互动的已识别和部分识别的个人的属性和兴趣。
 
-用户档案的范围可以从匿名行为信号（如浏览器Cookie），到包含姓名、出生日期、位置和电子邮件地址等详细信息的高度识别用户档案。 随着个人资料的增长，它将成为包含个人信息、身份、联系人详细信息和个人通信偏好设置的强大存储库。 有关在平台生态系统中使用此类的详细信息，请参阅[XDM概述](../home.md#data-behaviors)。
+用户档案的范围可以从匿名行为信号（如浏览器Cookie），到包含姓名、出生日期、位置和电子邮件地址等详细信息的高度识别用户档案。 随着个人资料的增长，它将成为包含个人信息、身份、联系人详细信息和个人通信偏好设置的强大存储库。 有关在Experience Platform生态系统中使用此类的更多高级信息，请参阅[XDM概述](../home.md#data-behaviors)。
 
 ![XDM个人配置文件类的架构图。](../images/classes/individual-profile.png)
 
@@ -50,6 +50,6 @@ Adobe提供了多个标准字段组以用于[!DNL XDM Individual Profile]类。 
 * [[!UICONTROL XDM业务人员组件]](../field-groups/profile/business-person-components.md)\*
 * [[!UICONTROL XDM业务人员详细信息]](../field-groups/profile/business-person-details.md)\*
 
-*\*此字段组仅适用于有权访问Adobe Real-time Customer Data Platform B2B版本的组织。*
+*\*此字段组仅适用于有权访问Adobe Real-Time Customer Data PlatformB2B edition的组织。*
 
 有关[!DNL XDM Individual Profile]的所有兼容字段组的完整列表，请参阅[XDM GitHub存储库](https://github.com/adobe/xdm/tree/master/components/fieldgroups/profile)。

@@ -1,11 +1,11 @@
 ---
-title: 使用用户界面从Stripe帐户摄取支付数据以Experience Platform。
-description: 了解如何使用用户界面将支付数据从您的Stripe账户摄取到Experience Platform。
+title: 使用用户界面将支付数据从Stripe帐户摄取到Experience Platform。
+description: 了解如何使用用户界面将支付数据从Stripe帐户摄取到Experience Platform。
 badge: Beta 版
 exl-id: f20c5935-a7c0-4387-b29e-73e78cab4972
-source-git-commit: dd9afe650f4c83b3877f980acac66e703e9ae5d8
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1657'
+source-wordcount: '1658'
 ht-degree: 3%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 3%
 
 ## 连接您的[!DNL Stripe]帐户 {#connect}
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
 在&#x200B;*付款*&#x200B;类别下，选择&#x200B;**[!DNL Stripe]**，然后选择&#x200B;**[!UICONTROL 设置]**。
 
@@ -41,9 +41,9 @@ ht-degree: 3%
 >
 >当给定的源尚未具有经过身份验证的帐户时，源目录中的源会显示&#x200B;**[!UICONTROL 设置]**&#x200B;选项。 一旦存在经过身份验证的帐户，此选项将更改为&#x200B;**[!UICONTROL 添加数据]**。
 
-![Experience PlatformUI中的源目录，已选择Stripe源卡。](../../../../images/tutorials/create/stripe/catalog.png)
+![已选择Stripe源卡的Experience Platform UI中的源目录。](../../../../images/tutorials/create/stripe/catalog.png)
 
-出现&#x200B;**[!UICONTROL ConnectStripe帐户]**&#x200B;页。 在此页上，您可以使用新的或现有的身份证明。
+此时会显示&#x200B;**[!UICONTROL Connect Stripe帐户]**&#x200B;页面。 在此页上，您可以使用新的或现有的身份证明。
 
 >[!BEGINTABS]
 
@@ -121,7 +121,7 @@ ht-degree: 3%
 如果您的数据集启用了实时客户个人资料，那么在此步骤中，您可以切换&#x200B;**[!UICONTROL 个人资料数据集]**&#x200B;以启用您的数据以进行个人资料摄取。 您还可以使用此步骤启用&#x200B;**[!UICONTROL 错误诊断]**&#x200B;和&#x200B;**[!UICONTROL 部分摄取]**。
 
 * **[!UICONTROL 错误诊断]**：选择&#x200B;**[!UICONTROL 错误诊断]**&#x200B;以指示源生成错误诊断，以便以后在监视数据集活动和数据流状态时可以引用这些诊断。
-* **[!UICONTROL 部分摄取]**：部分批次摄取是摄取包含错误的数据的能力，最多可摄取特定可配置阈值。 此功能允许您成功地将所有准确的数据提取到Experience Platform中，同时所有不正确的数据将单独进行批处理并显示有关其无效原因的信息。
+* **[!UICONTROL 部分摄取]**：部分批次摄取是摄取包含错误的数据的能力，最多可摄取特定可配置阈值。 此功能允许您成功地将所有准确的数据提取到Experience Platform中，同时将所有不正确的数据与有关其无效原因的信息单独进行批处理。
 
 +++
 
@@ -135,13 +135,13 @@ ht-degree: 3%
 | --- | --- |
 | 数据流名称 | 数据流的名称。  默认情况下，这将使用正在导入的文件的名称。 |
 | 描述 | （可选）数据流的简短说明。 |
-| 警报 | Experience Platform可以生成基于事件的警报，供用户订阅。 这些选项都需要一个正在运行的数据流来触发它们。  有关详细信息，请阅读[警报概述](../../alerts.md) <ul><li>**源数据流运行开始**：选择此警报以在数据流运行开始时接收通知。</li><li>**源数据流运行成功**：选择此警报以在数据流结束且没有任何错误时接收通知。</li><li>**源数据流运行失败**：选择此警报以在数据流运行结束时发生任何错误时接收通知。</li></ul> |
+| 警报 | Experience Platform可生成用户可以订阅的基于事件的警报。 这些选项都需要一个正在运行的数据流来触发它们。  有关详细信息，请阅读[警报概述](../../alerts.md) <ul><li>**源数据流运行开始**：选择此警报以在数据流运行开始时接收通知。</li><li>**源数据流运行成功**：选择此警报以在数据流结束且没有任何错误时接收通知。</li><li>**源数据流运行失败**：选择此警报以在数据流运行结束时发生任何错误时接收通知。</li></ul> |
 
 完成后，选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
 
 ## 将字段映射到XDM架构 {#mapping}
 
-出现&#x200B;**[!UICONTROL 映射]**&#x200B;步骤。 使用映射界面将源数据映射到相应的架构字段，然后再将该数据摄取到Experience Platform中。 有关如何使用映射界面的详细指南，请阅读[数据准备UI指南](../../../../../data-prep/ui/mapping.md)以了解更多信息。
+出现&#x200B;**[!UICONTROL 映射]**&#x200B;步骤。 使用映射界面将源数据映射到相应的架构字段，然后再将该数据摄取到Experience Platform。 有关如何使用映射界面的详细指南，请阅读[数据准备UI指南](../../../../../data-prep/ui/mapping.md)以了解更多信息。
 
 ![源工作流的映射接口。](../../../../images/tutorials/create/stripe/mapping.png)
 
@@ -182,7 +182,7 @@ ht-degree: 3%
 
 ## 后续步骤
 
-通过完成本教程，您已成功地创建了一个数据流以将付款数据从[!DNL Stripe]源引入Experience Platform。 有关其他资源，请访问下面列出的文档。
+通过学习本教程，您已成功创建了一个数据流，以将付款数据从[!DNL Stripe]源引入Experience Platform。 有关其他资源，请访问下面列出的文档。
 
 ### 监测数据流
 

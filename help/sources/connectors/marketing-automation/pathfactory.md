@@ -4,9 +4,9 @@ description: 了解如何使用API或用户界面将PathFactory连接到Adobe Ex
 last-substantial-update: 2024-04-30T00:00:00Z
 badge: Beta 版
 exl-id: befb73c4-fd6a-4512-9124-d23a1c27e0e0
-source-git-commit: ca17854830edabaf2bd74265258d6f0096f2888e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '464'
+source-wordcount: '467'
 ht-degree: 3%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 3%
 >
 >[!DNL PathFactory]源为测试版。 有关使用测试版标记源的更多信息，请阅读[源概述](../../home.md#terms-and-conditions)。
 
-[[!DNL PathFactory]](https://www.pathfactory.com/)提供了一个基于云的平台，可帮助企业管理内容历程并通过智能内容见解促进参与。 本指南详细介绍如何利用PathFactory的连接器将来自PathFactory的数据集成到Experience Platform中，以实现最佳数据摄取。
+[[!DNL PathFactory]](https://www.pathfactory.com/)提供了一个基于云的平台，可帮助企业管理内容历程并通过智能内容见解促进参与。 本指南详细介绍如何利用PathFactory的连接器将数据从PathFactory集成到Experience Platform中，以实现最佳数据摄取。
 
 您可以使用三个主要源从[[!DNL PathFactory]](https://www.pathfactory.com/)中摄取数据：
 
@@ -33,7 +33,7 @@ ht-degree: 3%
 
 ## 先决条件 {#prerequisites}
 
-在开始将[[!DNL PathFactory]](https://www.pathfactory.com/)连接器与Experience Platform集成之前，请确保满足以下先决条件：
+开始将[[!DNL PathFactory]](https://www.pathfactory.com/)连接器与Experience Platform集成之前，请确保满足以下先决条件：
 
 * **一个[PathFactory帐户]**。
    * 如果您还没有有效的帐户，请联系[[!DNL PathFactory]](https://www.pathfactory.com/portal/company/contactus.shtml)。
@@ -59,14 +59,14 @@ ht-degree: 3%
 
 有关如何获取用户名、密码、域和访问令牌的详细说明，请访问[[!DNL PathFactory] 支持中心](https://support.pathfactory.com/categories/adobe/)。 此资源提供有关检索和管理凭据的全面指南。
 
-### 配置Experience Platform权限
+### 在Experience Platform上配置权限
 
 若要将您的[!DNL PathFactory]帐户连接到Experience Platform，您必须同时为您的帐户启用&#x200B;**[!UICONTROL 查看源]**&#x200B;和&#x200B;**[!UICONTROL 管理源]**&#x200B;权限。 请联系您的产品管理员以获取必要的权限。 有关详细信息，请阅读[访问控制UI指南](../../../access-control/ui/overview.md)。
 
-## 将[!DNL PathFactory]连接到平台 {#pathfactory-connect}
+## 将[!DNL PathFactory]连接到Experience Platform {#pathfactory-connect}
 
-以下文档提供了有关如何使用API或用户界面将[!DNL PathFactory]连接到Platform的信息：
+以下文档提供了有关如何使用API或用户界面将[!DNL PathFactory]连接到Experience Platform的信息：
 
-* [创建源连接和数据流以使用API](../../tutorials/api/create/marketing-automation/pathfactory.md)将 [!DNL PathFactory] 数据引入Platform。
-* [使用UI](../../tutorials/ui/create/marketing-automation/pathfactory.md)连接你的 [!DNL PathFactory] 帐户以Experience Platform。
+* [创建源连接和数据流以使用API将 [!DNL PathFactory] 数据引入Experience Platform](../../tutorials/api/create/marketing-automation/pathfactory.md)。
+* 使用UI [将您的 [!DNL PathFactory] 帐户连接到Experience Platform](../../tutorials/ui/create/marketing-automation/pathfactory.md)。
 * [使用UI](../../tutorials/ui/dataflow/marketing-automation.md)为源连接创建数据流。

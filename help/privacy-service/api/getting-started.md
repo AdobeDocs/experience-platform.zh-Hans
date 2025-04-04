@@ -1,11 +1,11 @@
 ---
 title: 验证并访问 Privacy Service API
-description: 在文档中了解如何对Privacy ServiceAPI进行身份验证以及如何解释示例API调用。
+description: 在文档中了解如何对Privacy Service API进行身份验证以及如何解释示例API调用。
 role: Developer
 exl-id: c1d05e30-ef8f-4adf-87e0-1d6e3e9e9f9e
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '851'
+source-wordcount: '852'
 ht-degree: 5%
 
 ---
@@ -18,11 +18,11 @@ ht-degree: 5%
 
 本指南需要您对[Privacy Service](../home.md)以及它如何允许您跨Adobe Experience Cloud应用程序管理来自数据主体（客户）的访问和删除请求有一定的了解。
 
-为了创建API的访问凭据，贵组织中的管理员以前必须设置产品配置文件以在Adobe Admin Console中Privacy Service。 您分配给API集成的产品配置文件决定了集成在访问Privacy Service功能时具有的权限。 有关详细信息，请参阅[管理Privacy Service权限](../permissions.md)指南。
+要创建API的访问凭据，贵组织中的管理员之前必须在Adobe Admin Console中为Privacy Service设置产品配置文件。 您分配给API集成的产品配置文件决定了集成在访问Privacy Service功能时具有的权限。 有关详细信息，请参阅[管理Privacy Service权限](../permissions.md)指南。
 
 ## 收集所需标头的值 {#gather-values-required-headers}
 
-要调用Privacy ServiceAPI，您必须首先收集要在所需标头中使用的访问凭据：
+要调用Privacy Service API，您必须首先收集要在所需标头中使用的访问凭据：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
@@ -40,17 +40,17 @@ ht-degree: 5%
 
 ![从Developer Console中项目详细信息页面的[!UICONTROL 添加到项目]下拉列表中选择API选项](../images/api/getting-started/add-api-button.png)
 
-#### 选择Privacy ServiceAPI {#select-privacy-service-api}
+#### 选择Privacy Service API {#select-privacy-service-api}
 
-出现&#x200B;**[!UICONTROL 添加API]**&#x200B;屏幕。 选择&#x200B;**[!UICONTROL Experience Cloud]**&#x200B;以缩小可用API的列表，然后选择&#x200B;**[!UICONTROL Privacy ServiceAPI]**&#x200B;的卡片，然后再选择&#x200B;**[!UICONTROL 下一步]**。
+出现&#x200B;**[!UICONTROL 添加API]**&#x200B;屏幕。 选择&#x200B;**[!UICONTROL Experience Cloud]**&#x200B;以缩小可用API的列表，然后选择&#x200B;**[!UICONTROL Privacy Service API]**&#x200B;的卡，然后再选择&#x200B;**[!UICONTROL 下一步]**。
 
-![正在从可用API列表中选择的Privacy ServiceAPI卡](../images/api/getting-started/add-privacy-service-api.png)
+![从可用API列表中选择的Privacy Service API卡](../images/api/getting-started/add-privacy-service-api.png)
 
 >[!TIP]
 >
->选择&#x200B;**[!UICONTROL 查看文档]**&#x200B;选项可在单独的浏览器窗口中导航到完整的[Privacy ServiceAPI参考文档](https://developer.adobe.com/experience-platform-apis/references/privacy-service/)。
+>选择&#x200B;**[!UICONTROL 查看文档]**&#x200B;选项可在单独的浏览器窗口中导航到完整的[Privacy Service API参考文档](https://developer.adobe.com/experience-platform-apis/references/privacy-service/)。
 
-接下来，选择身份验证类型以生成访问令牌并访问Privacy ServiceAPI。
+接下来，选择身份验证类型以生成访问令牌并访问Privacy Service API。
 
 >[!IMPORTANT]
 >
@@ -70,7 +70,7 @@ ht-degree: 5%
 
 ![在保存配置之前，将从列表中选择单个产品配置文件](../images/api/getting-started/select-product-profiles.png)
 
-将API添加到项目后，项目的&#x200B;**[!UICONTROL Privacy ServiceAPI]**&#x200B;页面将显示所有调用Privacy ServiceAPI时所需的以下凭据：
+将API添加到项目后，项目的&#x200B;**[!UICONTROL Privacy Service API]**&#x200B;页面将显示所有调用Privacy Service API所需的以下凭据：
 
 * `{API_KEY}` （[!UICONTROL 客户端ID]）
 * `{ORG_ID}` （[!UICONTROL 组织ID]）
@@ -96,15 +96,15 @@ ht-degree: 5%
 
 #### 自动生成令牌 {#auto-token}
 
-您还可以使用Postman环境和收藏集来生成访问令牌。 有关详细信息，请阅读Experience PlatformAPI身份验证指南中有关[使用Postman进行身份验证和测试API调用](/help/landing/api-authentication.md#use-postman)的部分。
+您还可以使用Postman环境和收藏集来生成访问令牌。 有关详细信息，请阅读Experience Platform API身份验证指南中有关[使用Postman进行身份验证和测试API调用](/help/landing/api-authentication.md#use-postman)的部分。
 
 ## 正在读取示例 API 调用 {#read-sample-api-calls}
 
-每个端点指南都提供了示例API调用，以演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅Platform API快速入门指南中有关[如何读取示例API调用](../../landing/api-guide.md#sample-api)的部分。
+每个端点指南都提供了示例API调用，以演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅Experience Platform API快速入门指南中有关[如何读取示例API调用](../../landing/api-guide.md#sample-api)的部分。
 
 ## 后续步骤 {#next-steps}
 
-现在，您已了解要使用哪些标头，可以开始调用Privacy ServiceAPI了。 选择其中一个端点指南以开始：
+现在，您已了解要使用哪些标头，可以开始调用Privacy Service API了。 选择其中一个端点指南以开始：
 
 * [隐私任务](./privacy-jobs.md)
 * [同意](./consent.md)

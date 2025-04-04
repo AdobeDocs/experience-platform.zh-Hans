@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据湖中的隐私请求处理
 description: Adobe Experience Platform Privacy Service会根据法律和组织隐私法规处理客户访问、选择退出销售或删除其个人数据的请求。 本文档介绍了与处理存储在数据湖中的客户数据的隐私请求相关的基本概念。
 exl-id: c06b0a44-be1a-4938-9c3e-f5491a3dfc19
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1429'
+source-wordcount: '1430'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ Adobe Experience Platform [!DNL Privacy Service]处理客户访问、选择退�
 
 >[!NOTE]
 >
->本指南仅介绍如何在Experience Platform中针对Data Lake发出隐私请求。 如果您还计划向Real-time Customer Profile数据存储区发出隐私请求，请参阅本教程和关于[个人资料隐私请求处理](../profile/privacy.md)的指南。
+>本指南仅介绍如何在Experience Platform中向Data Lake发出隐私请求。 如果您还计划向Real-time Customer Profile数据存储区发出隐私请求，请参阅本教程和关于[个人资料隐私请求处理](../profile/privacy.md)的指南。
 >
 >有关如何为其他Adobe Experience Cloud应用程序提出隐私请求的步骤，请参阅[Privacy Service文档](../privacy-service/experience-cloud-apps.md)。
 
@@ -32,7 +32,7 @@ Adobe Experience Platform [!DNL Privacy Service]处理客户访问、选择退�
 * [[!DNL Experience Data Model (XDM) System]](../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
 * [[!DNL Identity Service]](../identity-service/home.md)：通过跨设备和系统桥接身份，解决了客户体验数据碎片化带来的基本挑战。
 
-## 了解标识命名空间 {#namespaces}
+## 了解身份标识命名空间 {#namespaces}
 
 Adobe Experience Platform [!DNL Identity Service]跨系统和设备桥接客户身份数据。 [!DNL Identity Service]使用身份命名空间通过将身份值与原始系统关联来提供身份值的上下文。 命名空间可以表示通用概念，例如电子邮件地址（“电子邮件”），也可以将身份与特定应用程序关联，例如Adobe Advertising Cloud ID (“AdCloud”)或Adobe Target ID (“TNTID”)。
 
@@ -73,7 +73,7 @@ Adobe Experience Platform [!DNL Identity Service]跨系统和设备桥接客户�
 >
 >本节还假定您知道如何调用架构注册表API。 有关使用API的重要信息，包括了解您的`{TENANT_ID}`和容器的概念，请参阅API指南的[快速入门](../xdm/api/getting-started.md)部分。
 
-您可以通过向[!DNL Schema Registry] API中的`/descriptors`端点发出POST请求，将标识描述符添加到数据集的XDM架构中。
+您可以通过向[!DNL Schema Registry] API中的`/descriptors`端点发出POST请求，将身份描述符添加到数据集的XDM架构中。
 
 **API格式**
 
@@ -147,7 +147,7 @@ curl -X POST \
 
 ### 使用UI
 
-在UI中创建作业请求时，请确保选择&#x200B;**[!UICONTROL 产品]**&#x200B;下的&#x200B;**[!UICONTROL AEP数据湖]**，以便处理存储在数据湖中的数据的作业。
+在UI中创建作业请求时，请确保选择&#x200B;**[!UICONTROL 产品]**&#x200B;下的&#x200B;**[!UICONTROL AEP Data Lake]**，以便处理存储在数据湖中的数据的作业。
 
 ![显示在隐私请求创建对话框中选择的数据湖产品的图像](./images/privacy/product-value.png)
 
@@ -200,11 +200,11 @@ curl -X POST \
 
 >[!IMPORTANT]
 >
->Platform跨所有属于您组织的[沙盒](../sandboxes/home.md)处理隐私请求。 因此，请求中包含的任何`x-sandbox-name`标头都会被系统忽略。
+>Experience Platform跨所有属于您组织的[沙盒](../sandboxes/home.md)处理隐私请求。 因此，请求中包含的任何`x-sandbox-name`标头都会被系统忽略。
 
 ## 正在处理删除请求
 
-当[!DNL Experience Platform]收到来自[!DNL Privacy Service]的删除请求时，[!DNL Platform]向[!DNL Privacy Service]发送确认，确认已收到该请求并且受影响的数据已标记为删除。 然后，这些记录会在七天内从数据湖中删除。 在这七天窗口内，数据将被软删除，因此任何[!DNL Platform]服务都无法访问。
+当[!DNL Experience Platform]收到来自[!DNL Privacy Service]的删除请求时，[!DNL Experience Platform]向[!DNL Privacy Service]发送确认，确认已收到该请求并且受影响的数据已标记为删除。 然后，这些记录会在七天内从数据湖中删除。 在这七天窗口内，数据将被软删除，因此任何[!DNL Experience Platform]服务都无法访问。
 
 如果您还在隐私请求中包含`ProfileService`或`identity`，则其关联的数据将单独进行处理。 有关详细信息，请参阅有关配置文件](../profile/privacy.md#delete)的[删除请求处理的部分。
 

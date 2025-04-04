@@ -1,16 +1,16 @@
 ---
-title: 使用自我识别调查构建Experience Platform个人资料
+title: 使用自我识别调查构建您的Experience Platform个人配置文件
 description: 了解如何使用自我识别调查UI，根据您的工作职能和相关目标接收相关内容。
 badge: Beta 版
 exl-id: 80b3f55f-1eab-4a99-be75-49bd091f9739
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '560'
+source-wordcount: '569'
 ht-degree: 16%
 
 ---
 
-# 使用自我识别调查构建Experience Platform个人资料
+# 使用自我识别调查构建您的Experience Platform个人配置文件
 
 >[!NOTE]
 >
@@ -18,17 +18,17 @@ ht-degree: 16%
 
 自我认同调查是 Adobe Experience Platform UI 主页中提供的简短调查问卷。您可以填写调查表以提供有关您的工作职能和一般目标的信息。 然后，可使用此信息更好地调整产品内指南，最终提供与您的目标更相关的内容。
 
-本文档介绍了如何在Platform UI中使用自我识别调查来根据您的目标和任务接收相关内容，以及如何使用UI重新配置个人配置文件属性。
+本文档介绍了如何在Experience Platform UI中使用自我识别调查来根据您的目标和任务接收相关内容，以及如何使用UI重新配置个人配置文件属性。
 
 若要了解有关Adobe Experience Platform的更多信息，请阅读[Experience Platform概述](home.md)。
 
-## Platform UI中的自我识别调查
+## Experience Platform UI中的自我识别调查
 
-登录后，自我识别调查提示将显示在Platform UI主页的右下方。
+登录后，自我识别调查提示将显示在Experience Platform UI主页的右下方。
 
 要开始调查，请选择&#x200B;**[!UICONTROL 开始]**。
 
-![Platform UI主页，该主页中包含Toast消息，提示您开始自我识别调查。](./images/survey/survey-prompt.png)
+![包含Toast消息的Experience Platform UI主页，提示您开始自我识别调查。](./images/survey/survey-prompt.png)
 
 对于第一个调查问题，请选择最能描述您工作的函数。
 
@@ -81,16 +81,16 @@ ht-degree: 16%
 
 使用Experience Cloud首选项菜单更新您的工作函数和对象。 要访问首选项菜单，请选择顶部导航上的配置文件图标，然后选择&#x200B;**[!UICONTROL 首选项]**。
 
-![Platform UI主页，其中包含选定的配置文件图标和首选项按钮。](./images/survey/preferences.png)
+![Experience Platform UI主页，其中包含选定的配置文件图标和首选项按钮。](./images/survey/preferences.png)
 
 接下来，在配置文件首选项菜单的[!UICONTROL 常规]部分中，选择&#x200B;**[!UICONTROL 更新您的工作职能和目标]**。
 
-![Platform UI配置文件首选项页面的“常规”部分](./images/survey/update.png)
+![Experience Platform UI配置文件首选项页面的“常规”部分](./images/survey/update.png)
 
 此时会显示自我识别调查，允许您重新配置响应并更新配置文件。
 
-![显示自我识别调查的Platform UI配置文件首选项页面，允许用户更新其个人配置文件。](./images/survey/new-survey.png)
+![显示自我识别调查的Experience Platform UI配置文件首选项页面，允许用户更新其个人配置文件。](./images/survey/new-survey.png)
 
 ## 后续步骤
 
-通过阅读本文档，您现在已提交并更新了有关工作职能和目标的信息，以便在使用Platform UI时接收更相关的内容。 有关Platform UI的详细信息，请阅读[Experience Platform概述](home.md)。
+通过阅读本文档，您现在已提交并更新了有关工作职能和目标的信息，以便在使用Experience Platform UI时接收更相关的内容。 有关Experience Platform UI的详细信息，请阅读[Experience Platform概述](home.md)。

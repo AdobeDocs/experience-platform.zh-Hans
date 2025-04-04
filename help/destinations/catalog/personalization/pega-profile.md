@@ -3,9 +3,9 @@ title: Pega配置文件连接器
 description: 使用Adobe Experience Platform中Amazon S3的Pega配置文件连接器将完整的或增量的（或同时使用两者）配置文件数据导出到Amazon S3云存储。 在Pega客户决策中心中，可以安排客户配置文件Designer中的数据作业，以定期从Amazon S3存储导入配置文件数据。
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: f422f21b-174a-4b93-b05d-084b42623314
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1115'
+source-wordcount: '1116'
 ht-degree: 4%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-在Adobe Experience Platform中使用[!DNL Pega Profile Connector]创建到[!DNL Amazon Web Services] (AWS) S3存储的实时出站连接，定期将配置文件数据导出到Adobe Experience Platform中的CSV文件，并导入到您自己的S3存储桶中。 在 [!DNL Pega Customer Decision Hub] 中，您可以安排数据作业从 S3 存储中导入该配置文件数据，以更新[!DNL Pega Customer Decision Hub]配置文件。
+在Adobe Experience Platform中使用[!DNL Pega Profile Connector]创建到[!DNL Amazon Web Services] (AWS) S3存储的实时出站连接，定期将配置文件数据导出到Adobe Experience Platform中的CSV文件，并导入到您自己的S3存储桶中。 在 [!DNL Pega Customer Decision Hub] 中，您可以安排数据作业从 S3 存储中导入该轮廓数据，以更新[!DNL Pega Customer Decision Hub]轮廓。
 
 此连接器可帮助设置配置文件数据的初始导出，并帮助定期将新配置文件同步到[!DNL Pega Customer Decision Hub]中。  在客户决策中心保存最新数据可让您更好地了解客户群，从而做出下一个最佳决策。
 
@@ -39,8 +39,8 @@ ht-degree: 4%
 使用此目标将数据从Adobe Experience Platform导出并将配置文件导入[!DNL Pega Customer Decision Hub]之前，请确保您完成以下先决条件：
 
 * 配置[!DNL Amazon S3]存储段以及要用于导出和导入数据文件的文件夹路径。
-* 配置[!DNL Amazon S3]访问密钥和[!DNL Amazon S3]密钥：在[!DNL Amazon S3]中，生成一个`access key - secret access key`对以向您的[!DNL Amazon S3]帐户授予Platform访问权限。
-* 若要成功连接数据并将其导出到您的[!DNL Amazon S3]存储位置，请在[!DNL Amazon S3]中为[!DNL Platform]创建标识和访问管理(IAM)用户，并分配`s3:DeleteObject`、`s3:GetBucketLocation`、`s3:GetObject`、`s3:ListBucket`、`s3:PutObject`、`s3:ListMultipartUploadParts`等权限
+* 配置[!DNL Amazon S3]访问密钥和[!DNL Amazon S3]密钥：在[!DNL Amazon S3]中，生成一个`access key - secret access key`对以授予Experience Platform对您的[!DNL Amazon S3]帐户的访问权限。
+* 若要成功连接数据并将其导出到您的[!DNL Amazon S3]存储位置，请在[!DNL Amazon S3]中为[!DNL Experience Platform]创建标识和访问管理(IAM)用户，并分配`s3:DeleteObject`、`s3:GetBucketLocation`、`s3:GetObject`、`s3:ListBucket`、`s3:PutObject`、`s3:ListMultipartUploadParts`等权限
 * 确保您的[!DNL Pega Customer Decision Hub]实例已升级到8.8或更高版本。
 
 ## 支持的身份 {#supported-identities}
@@ -117,7 +117,7 @@ ht-degree: 4%
 
 ## 验证数据导出 {#exported-data}
 
-对于[!DNL Pega Profile Connector]目标，[!DNL Platform]会在您提供的Amazon S3存储位置中创建一个`.csv`文件。 有关这些文件的详细信息，请参阅受众激活教程中的[将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md)。
+对于[!DNL Pega Profile Connector]目标，[!DNL Experience Platform]会在您提供的Amazon S3存储位置中创建一个`.csv`文件。 有关这些文件的详细信息，请参阅受众激活教程中的[将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md)。
 
 从S3成功导入配置文件数据会在[!DNL Pega Customer]配置文件数据存储中插入数据。 可以在[!DNL Pega Customer Profile Designer]中验证导入的客户配置文件数据，如下图所示。
 ![UI屏幕的图像，您可以在其中验证客户个人资料Designer中的Adobe个人资料数据](../../assets/catalog/personalization/pega-profile/pega-profile-data.png)

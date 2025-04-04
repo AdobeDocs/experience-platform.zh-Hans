@@ -5,24 +5,24 @@ title: 沙盒管理API端点
 description: 沙盒API中的/sandboxes端点允许您在Adobe Experience Platform中以编程方式管理沙盒。
 role: Developer
 exl-id: 0ff653b4-3e31-4ea5-a22e-07e18795f73e
-source-git-commit: c15b24990835746a51a50a3e7e7b6a85701c0eb9
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1474'
+source-wordcount: '1477'
 ht-degree: 3%
 
 ---
 
 # 沙盒管理端点
 
-Adobe Experience Platform中的沙盒提供了独立的开发环境，允许您在不影响生产环境的情况下测试功能、运行实验以及进行自定义配置。 [!DNL Sandbox] API中的`/sandboxes`端点允许您以编程方式管理Platform中的沙盒。
+Adobe Experience Platform中的沙盒提供了独立的开发环境，允许您在不影响生产环境的情况下测试功能、运行实验以及进行自定义配置。 [!DNL Sandbox] API中的`/sandboxes`端点允许您以编程方式管理Experience Platform中的沙盒。
 
 ## 快速入门
 
-本指南中使用的API端点是[[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox)的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+本指南中使用的API端点是[[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox)的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience Platform API所需的所需标头的重要信息。
 
 ## 检索沙盒列表 {#list}
 
-通过向`/sandboxes`端点发出GET请求，您可以列出属于您组织（活动或其他组织）的所有沙盒。
+通过向`/sandboxes`端点发出GET请求，您可以列出属于您组织的所有沙盒（处于活动状态或其他状态）。
 
 **API格式**
 
@@ -136,7 +136,7 @@ curl -X GET \
 
 ## 查找沙盒 {#lookup}
 
-您可通过在请求路径中包含沙盒的`name`属性的GET请求来查找单个沙盒。
+您可以通过发出在请求路径中包含沙盒的`name`属性的GET请求来查找单个沙盒。
 
 **API格式**
 
@@ -228,7 +228,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `name` | 将在未来请求中用于访问沙盒的标识符。 该值必须唯一，最佳做法是使其尽可能具有描述性。 此值不能包含任何空格或特殊字符。 |
-| `title` | 易于用户识别的名称，用于平台用户界面中的显示目的。 |
+| `title` | 易于用户识别的名称，用于在Experience Platform用户界面中进行显示。 |
 | `type` | 要创建的沙盒的类型。 对于非生产沙盒，此值必须为`development`。 |
 
 **响应**
@@ -281,7 +281,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `name` | 将在未来请求中用于访问沙盒的标识符。 该值必须唯一，最佳做法是使其尽可能具有描述性。 此值不能包含任何空格或特殊字符。 |
-| `title` | 易于用户识别的名称，用于平台用户界面中的显示目的。 |
+| `title` | 易于用户识别的名称，用于在Experience Platform用户界面中进行显示。 |
 | `type` | 要创建的沙盒的类型。 对于生产沙盒，此值必须为`production`。 |
 
 **响应**
@@ -304,7 +304,7 @@ curl -X POST \
 
 ## 更新沙盒 {#put}
 
-您可以通过发出PATCH请求来更新沙盒中的一个或多个字段，该请求请求在请求路径中包含沙盒的`name`，并在请求有效负载中包含要更新的属性。
+您可以通过发出PATCH请求（请求路径中包含沙盒的`name`以及在请求有效载荷中要更新的属性）来更新沙盒中的一个或多个字段。
 
 >[!NOTE]
 >
@@ -352,7 +352,7 @@ curl -X PATCH \
 
 ## 重置沙盒 {#reset}
 
-沙盒具有“工厂重置”功能，可从沙盒中删除所有非默认资源。 您可以通过在PUT路径中包含沙盒的`name`来重置沙盒。
+沙盒具有“工厂重置”功能，可从沙盒中删除所有非默认资源。 您可以通过发出在请求路径中包含沙盒的`name`的PUT请求来重置沙盒。
 
 **API格式**
 

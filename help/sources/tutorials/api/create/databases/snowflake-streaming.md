@@ -1,21 +1,21 @@
 ---
 title: 将您的Snowflake流帐户连接到Adobe Experience Platform
-description: 了解如何使用Flow Service API将Adobe Experience Platform连接到Snowflake流。
+description: 了解如何使用流服务API将Adobe Experience Platform连接到Snowflake Streaming。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 3fc225a4-746c-4a91-aa77-bbeb091ec364
-source-git-commit: 34b1676ebb5405d73cf37cd786d1e6c26cb8fdaa
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '845'
+source-wordcount: '852'
 ht-degree: 4%
 
 ---
 
-# 使用[!DNL Flow Service] API流式传输[!DNL Snowflake]数据以Experience Platform
+# 使用[!DNL Flow Service] API将[!DNL Snowflake]数据流式传输到Experience Platform
 
 >[!IMPORTANT]
 >
 >
-> 已购买Real-time Customer Data Platform Ultimate的用户可在API中使用[!DNL Snowflake]流源。
+> [!DNL Snowflake]流源在API中可供已购买Real-Time Customer Data Platform Ultimate的用户使用。
 
 本教程提供了有关如何使用[[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>)将数据从[!DNL Snowflake]帐户连接并流式传输到Adobe Experience Platform的步骤。
 
@@ -23,20 +23,20 @@ ht-degree: 4%
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [源](../../../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。
-* [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强传入数据。
+* [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 有关[!DNL Snowflake]流源的先决条件设置和信息。 请阅读[[!DNL Snowflake] 流源概述](../../../../connectors/databases/snowflake-streaming.md)。
 
-### 使用平台API
+### 使用Experience Platform API
 
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../../landing/api-guide.md)指南。
+有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../../../landing/api-guide.md)指南。
 
 ## 创建基本连接 {#create-a-base-connection}
 
-基本连接会保留您的源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
+基本连接会保留源与Experience Platform之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-要创建基本连接ID，请在将[!DNL Snowflake]身份验证凭据作为请求正文的一部分提供时，向`/connections`端点发出POST请求。
+要创建基本连接ID，请在提供您的[!DNL Snowflake]身份验证凭据作为请求正文的一部分时，向`/connections`端点发出POST请求。
 
 **API格式**
 
@@ -86,7 +86,7 @@ curl -X POST \
 | --- | --- |
 | `auth.params.account` | 您的[!DNL Snowflake]流帐户的名称。 |
 | `auth.params.database` | 将从其中提取数据的[!DNL Snowflake]数据库的名称。 |
-| `auth.params.warehouse` | [!DNL Snowflake]仓库的名称。 [!DNL Snowflake]仓库管理应用程序的查询执行过程。 每个仓库彼此独立，在将数据传送到Platform时必须单独访问。 |
+| `auth.params.warehouse` | [!DNL Snowflake]仓库的名称。 [!DNL Snowflake]仓库管理应用程序的查询执行过程。 每个仓库彼此独立，在将数据传送到Experience Platform时必须单独访问。 |
 | `auth.params.username` | 您的[!DNL Snowflake]流帐户的用户名。 |
 | `auth.params.schema` | （可选）与您的[!DNL Snowflake]流帐户关联的数据库架构。 |
 | `auth.params.password` | 您的[!DNL Snowflake]流帐户的密码。 |
@@ -195,7 +195,7 @@ curl -X POST \
 | --- | --- |
 | `baseConnectionId` | [!DNL Snowflake]流源的已验证基本连接ID。 此ID是在前面的步骤中生成的。 |
 | `connectionSpec.id` | [!DNL Snowflake]流源的连接规范ID。 |
-| `params.tableName` | [!DNL Snowflake]数据库中要带到Platform的表名称。 |
+| `params.tableName` | [!DNL Snowflake]数据库中要带到Experience Platform的表的名称。 |
 | `params.timestampColumn` | 用于获取增量值的时间戳列的名称。 |
 | `params.backfill` | 一个布尔标志，用于确定是从开始（0纪元时间）还是从启动源时获取数据。 有关此值的详细信息，请阅读[[!DNL Snowflake] 流源概述](../../../../connectors/databases/snowflake-streaming.md)。 |
 | `params.timezoneValue` | 时区值指示在查询[!DNL Snowflake]数据库时应获取哪个时区的当前时间。 如果配置中的时间戳列设置为`TIMESTAMP_NTZ`，则应提供此参数。 如果未提供，`timezoneValue`将默认为UTC。 |
@@ -213,7 +213,7 @@ curl -X POST \
 
 ## 创建数据流
 
-要创建数据流以将数据从导览[!DNL Snowflake]帐户流式传输到Platform，您必须在提供以下值时向`/flows`端点发出POST请求：
+要创建数据流以将数据从导览[!DNL Snowflake]帐户流式传输到Experience Platform，您必须在提供以下值时向`/flows`端点发出POST请求：
 
 >[!TIP]
 >

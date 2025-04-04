@@ -4,13 +4,13 @@ description: 使用专用列表将数据导出到您的Snowflake帐户。
 hide: true
 hidefromtoc: true
 badgeBeta: label="Beta 版" type="Informative"
-source-git-commit: 2893356e36fde4759ffe76e01296fcb8811ab8e7
+exl-id: 4a00e46a-dedb-4dd3-b496-b0f4185ea9b0
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '675'
+source-wordcount: '676'
 ht-degree: 6%
 
 ---
-
 
 # Snowflake连接 {#snowflake-destination}
 
@@ -99,7 +99,7 @@ ht-degree: 6%
 
 Snowflake目标支持将配置文件属性映射到自定义属性。
 
-![显示Snowflake目标映射屏幕的Platform用户界面图像。](../../assets/catalog/cloud-storage/snowflake/mapping.png)
+![Experience Platform用户界面图像，显示Snowflake目标的映射屏幕。](../../assets/catalog/cloud-storage/snowflake/mapping.png)
 
 使用您在&#x200B;**[!UICONTROL 属性名称]**&#x200B;字段中提供的属性名称，在Snowflake中自动创建目标属性。
 

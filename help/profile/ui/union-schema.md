@@ -2,26 +2,26 @@
 keywords: Experience Platform；配置文件；实时客户配置文件；统一配置文件；统一配置文件；配置文件；rtcp；启用配置文件；启用配置文件；合并架构；UNION PROFILE；合并配置文件
 title: 合并架构UI指南
 type: Documentation
-description: 在Adobe Experience Platform用户界面(UI)中，您可以轻松查看组织内的任何合并架构，并预览特定类的字段、身份、关系和参与架构。 本指南提供了有关如何使用Platform UI查看和浏览合并架构的详细信息。
+description: 在Adobe Experience Platform用户界面(UI)中，您可以轻松查看组织内的任何合并架构，并预览特定类的字段、身份、关系和参与架构。 本指南提供了有关如何使用Experience Platform UI查看和浏览合并架构的详细信息。
 exl-id: 52af0d77-e37d-4ed8-9dee-71a50b337b4e
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1199'
+source-wordcount: '1204'
 ht-degree: 0%
 
 ---
 
 # [!UICONTROL 合并架构] UI指南
 
-在Adobe Experience Platform用户界面(UI)中，您可以轻松查看组织内的任何合并架构，并预览特定类的字段、身份、关系和参与架构。 本指南提供了有关如何使用Platform UI查看和浏览合并架构的详细信息。
+在Adobe Experience Platform用户界面(UI)中，您可以轻松查看组织内的任何合并架构，并预览特定类的字段、身份、关系和参与架构。 本指南提供了有关如何使用Experience Platform UI查看和浏览合并架构的详细信息。
 
 ## 快速入门
 
 本UI指南要求您了解与管理Real-time Customer Profile数据有关的各种[!DNL Experience Platform]服务。 在阅读本指南或使用UI之前，请查看以下服务的文档：
 
 * [[!DNL Real-Time Customer Profile]](../home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
-* [[!DNL Identity Service]](../../identity-service/home.md)：在将[!DNL Real-Time Customer Profile]引入到[!DNL Platform]中时，通过桥接来自不同数据源的标识来启用它们。
-* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： [!DNL Platform]用于组织客户体验数据的标准化框架。
+* [[!DNL Identity Service]](../../identity-service/home.md)：在将[!DNL Real-Time Customer Profile]引入到[!DNL Experience Platform]中时，通过桥接来自不同数据源的标识来启用它们。
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
 
 ## 了解合并架构
 
@@ -33,7 +33,7 @@ Real-Time Customer Profile使您能够创建强大、集中的用户档案，其
 
 ## 查看合并架构
 
-要导航到Platform UI中的合并架构，请从左侧导航中选择&#x200B;**[!UICONTROL 配置文件]**，然后选择&#x200B;**[!UICONTROL 合并架构]**&#x200B;选项卡。 将打开[!UICONTROL 合并架构]选项卡以显示当前选定类的合并架构。
+要导航到Experience Platform UI中的合并架构，请从左侧导航中选择&#x200B;**[!UICONTROL 配置文件]**，然后选择&#x200B;**[!UICONTROL 合并架构]**&#x200B;选项卡。 将打开[!UICONTROL 合并架构]选项卡以显示当前选定类的合并架构。
 
 ![将显示“合并架构”页面，并突出显示“配置文件和合并架构”选项卡。](../images/union-schema/landing.png)
 
@@ -63,7 +63,7 @@ Real-Time Customer Profile使您能够创建强大、集中的用户档案，其
 
 ## 查看参与架构
 
-您还可以通过选择&#x200B;**[!UICONTROL 所有参与架构]**&#x200B;来展开架构列表，以查看哪些特定架构正在参与合并架构。 根据您选择的类以及贵组织在Platform中创建的架构数，该列表可以是包含单个架构的简短列表，也可以是包含多个架构的较长列表。
+您还可以通过选择&#x200B;**[!UICONTROL 所有参与架构]**&#x200B;来展开架构列表，以查看哪些特定架构正在参与合并架构。 根据您选择的类以及贵组织在Experience Platform中创建的架构数，该列表可以是包含单个架构的简短列表，也可以是包含多个架构的较长列表。
 
 ![对合并架构有贡献的架构列表已突出显示。](../images/union-schema/contributing-schemas.png)
 
@@ -99,4 +99,4 @@ Real-Time Customer Profile使您能够创建强大、集中的用户档案，其
 
 ## 后续步骤
 
-通过阅读本指南，您现在知道如何使用[!DNL Experience Platform] UI查看和导航合并架构。 有关架构的更多信息，包括如何在整个Platform中使用它们，请从阅读[XDM系统概述](../../xdm/home.md)开始。
+通过阅读本指南，您现在知道如何使用[!DNL Experience Platform] UI查看和导航合并架构。 有关架构的更多信息，包括如何在整个Experience Platform中使用它们，请从阅读[XDM系统概述](../../xdm/home.md)开始。

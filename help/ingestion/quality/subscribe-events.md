@@ -4,24 +4,24 @@ solution: Experience Platform
 title: 数据摄取通知
 description: 为了协助监控摄取过程，Adobe Experience Platform允许订阅由流程的每个步骤发布的一组事件，向您通知摄取数据的状态和任何可能的失败。
 exl-id: fd34e1ab-f6f6-44f0-88ee-7020e9322c39
-source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '650'
+source-wordcount: '651'
 ht-degree: 1%
 
 ---
 
 # 数据摄取通知
 
-将数据摄取到Adobe Experience Platform的过程包括多个步骤。 确定需要摄取到[!DNL Platform]中的数据文件后，摄取过程将开始，每个步骤将连续进行，直到数据成功摄取或失败。 可以使用[Adobe Experience Platform批量摄取API](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/)或使用[!DNL Experience Platform]用户界面启动摄取过程。
+将数据摄取到Adobe Experience Platform的过程包括多个步骤。 确定需要摄取到[!DNL Experience Platform]中的数据文件后，摄取过程将开始，每个步骤将连续进行，直到数据成功摄取或失败。 可以使用[Adobe Experience Platform批量摄取API](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/)或使用[!DNL Experience Platform]用户界面启动摄取过程。
 
-加载到[!DNL Platform]的数据必须经过多个步骤才能到达其目标、[!DNL Data Lake]或[!DNL Real-Time Customer Profile]数据存储。 每个步骤都涉及处理数据、验证数据，然后存储数据，然后再将其传递到下一个步骤。 根据摄取的数据量，此过程可能会成为一个耗时的过程，并且始终存在因验证、语义或处理错误而失败的可能性。 如果失败，则需要修复数据问题，然后必须使用更正的数据文件重新启动整个摄取过程。
+加载到[!DNL Experience Platform]的数据必须经过多个步骤才能到达其目标、[!DNL Data Lake]或[!DNL Real-Time Customer Profile]数据存储。 每个步骤都涉及处理数据、验证数据，然后存储数据，然后再将其传递到下一个步骤。 根据摄取的数据量，此过程可能会成为一个耗时的过程，并且始终存在因验证、语义或处理错误而失败的可能性。 如果失败，则需要修复数据问题，然后必须使用更正的数据文件重新启动整个摄取过程。
 
 为了协助监视摄取过程，[!DNL Experience Platform]允许订阅由过程的每个步骤发布的一组事件，通知您摄取数据的状态和任何可能的失败。
 
 ## 注册webhook以获取数据摄取通知
 
-若要接收数据摄取通知，您必须使用[Adobe Developer Console](https://www.adobe.com/go/devs_console_ui)将webhook注册到Experience Platform集成。
+若要接收数据摄取通知，您必须使用[Adobe Developer Console](https://www.adobe.com/go/devs_console_ui)注册webhook以将其添加到您的Experience Platform集成。
 
 请阅读有关[订阅 [!DNL Adobe I/O Event] 通知](../../observability/alerts/subscribe.md)的教程，以了解有关如何完成此操作的详细步骤。
 
@@ -71,7 +71,7 @@ ht-degree: 1%
 
 ## 后续步骤
 
-向项目注册[!DNL Platform]通知后，您可以从[!UICONTROL 项目概述]查看接收的事件。 有关如何跟踪Adobe I/O的详细说明，请参阅[跟踪事件指南](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/support/tracing.md)。
+向项目注册[!DNL Experience Platform]通知后，您可以从[!UICONTROL 项目概述]查看接收的事件。 有关如何跟踪事件的详细说明，请参阅[跟踪Adobe I/O Events](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/support/tracing.md)指南。
 
 ## 附录
 
@@ -81,7 +81,7 @@ ht-degree: 1%
 
 下表列出了您可以订阅的可用数据摄取状态通知。
 
-| 事件代码 | 平台服务 | 状态 | 事件描述 |
+| 事件代码 | Experience Platform服务 | 状态 | 事件描述 |
 | --- | ---------------- | ------ | ----------------- |
 | `ing_load_success` | [!DNL Data Ingestion] | success | 已成功将批次摄取到[!DNL Data Lake]内的数据集。 |
 | `ing_load_failure` | [!DNL Data Ingestion] | 失败 | 无法将批次摄取到[!DNL Data Lake]内的数据集。 |

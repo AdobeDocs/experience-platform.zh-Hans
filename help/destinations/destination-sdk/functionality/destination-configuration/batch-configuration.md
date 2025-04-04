@@ -2,34 +2,34 @@
 description: 了解如何为使用Destination SDK构建的目标配置文件导出设置。
 title: 批次配置
 exl-id: 0ffbd558-a83c-4c3d-b4fc-b6f7a23a163a
-source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1052'
+source-wordcount: '1058'
 ht-degree: 2%
 
 ---
 
 # 批次配置 {#batch-configuration}
 
-使用Destination SDK中的批处理配置选项，允许用户自定义导出的文件名，并根据自己的偏好配置导出计划。
+使用Destination SDK中的批量配置选项，用户可以自定义导出的文件名，并根据自己的偏好配置导出计划。
 
-通过Destination SDK创建基于文件的目标时，可以配置默认的文件命名和导出计划，也可以为用户提供从Platform UI配置这些设置的选项。 例如，您可以配置行为，例如：
+通过Destination SDK创建基于文件的目标时，您可以配置默认的文件命名和导出计划，也可以为用户提供从Experience Platform UI配置这些设置的选项。 例如，您可以配置行为，例如：
 
 * 在文件名中包括特定信息，例如受众ID、目标ID或自定义信息。
-* 允许用户从Platform UI自定义文件命名。
+* 允许用户从Experience Platform UI自定义文件命名。
 * 将文件导出配置为在设定的时间间隔内进行。
-* 定义用户可以在Platform UI中看到的文件命名和导出计划自定义选项。
+* 定义用户可以在Experience Platform UI中看到的文件命名和导出计划自定义选项。
 
 批量配置设置是基于文件的目标的目标配置的一部分。
 
-若要了解此组件在何处适合使用Destination SDK创建的集成，请参阅[配置选项](../configuration-options.md)文档中的关系图，或参阅如何[使用Destination SDK配置基于文件的目标](../../guides/configure-file-based-destination-instructions.md#create-server-file-configuration)的指南。
+要了解此组件在何处适合使用Destination SDK创建的集成，请参阅[配置选项](../configuration-options.md)文档中的关系图，或参阅如何[使用Destination SDK配置基于文件的目标](../../guides/configure-file-based-destination-instructions.md#create-server-file-configuration)的指南。
 
 您可以通过`/authoring/destinations`端点配置文件命名和导出计划设置。 有关详细的API调用示例，请参阅以下API参考页面，您可以在其中配置此页面中显示的组件。
 
 * [创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)
 * [更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md)
 
-本文介绍了可用于目标的所有受支持的批处理配置选项，并显示了客户将在Platform UI中看到的内容。
+本文介绍了可用于目标的所有受支持的批处理配置选项，并显示了客户将在Experience Platform UI中看到的内容。
 
 >[!IMPORTANT]
 >
@@ -95,7 +95,7 @@ ht-degree: 2%
 | `allowedScheduleFrequency` | 列表 | 定义客户可用的文件导出频率。 支持的值：<ul><li>`ONCE`</li><li>`EVERY_3_HOURS`</li><li>`EVERY_6_HOURS`</li><li>`EVERY_8_HOURS`</li><li>`EVERY_12_HOURS`</li><li>`DAILY`</li></ul> |
 | `defaultFrequency` | 枚举 | 定义默认文件导出频率。支持的值：<ul><li>`ONCE`</li><li>`EVERY_3_HOURS`</li><li>`EVERY_6_HOURS`</li><li>`EVERY_8_HOURS`</li><li>`EVERY_12_HOURS`</li><li>`DAILY`</li></ul> 默认值为 `DAILY`。 |
 | `defaultStartTime` | 字符串 | 定义文件导出的默认开始时间。 使用24小时文件格式。 默认值为“00:00”。 |
-| `filenameConfig.allowedFilenameAppendOptions` | 字符串 | *必需*。 可供用户选择的可用文件名宏列表。 这会确定哪些项目已附加到导出的文件名（受众ID、组织名称、导出日期和时间等）。 设置`defaultFilename`时，请确保避免复制宏。 <br><br>支持的值： <ul><li>`DESTINATION`</li><li>`SEGMENT_ID`</li><li>`SEGMENT_NAME`</li><li>`DESTINATION_INSTANCE_ID`</li><li>`DESTINATION_INSTANCE_NAME`</li><li>`ORGANIZATION_NAME`</li><li>`SANDBOX_NAME`</li><li>`DATETIME`</li><li>`CUSTOM_TEXT`</li></ul>无论定义宏的顺序如何，Experience PlatformUI将始终按此处显示的顺序显示它们。 <br><br>如果`defaultFilename`为空，`allowedFilenameAppendOptions`列表必须至少包含一个宏。 |
+| `filenameConfig.allowedFilenameAppendOptions` | 字符串 | *必需*。 可供用户选择的可用文件名宏列表。 这会确定哪些项目已附加到导出的文件名（受众ID、组织名称、导出日期和时间等）。 设置`defaultFilename`时，请确保避免复制宏。 <br><br>支持的值： <ul><li>`DESTINATION`</li><li>`SEGMENT_ID`</li><li>`SEGMENT_NAME`</li><li>`DESTINATION_INSTANCE_ID`</li><li>`DESTINATION_INSTANCE_NAME`</li><li>`ORGANIZATION_NAME`</li><li>`SANDBOX_NAME`</li><li>`DATETIME`</li><li>`CUSTOM_TEXT`</li></ul>无论定义宏的顺序如何，Experience Platform UI将始终按此处显示的顺序显示它们。 <br><br>如果`defaultFilename`为空，`allowedFilenameAppendOptions`列表必须至少包含一个宏。 |
 | `filenameConfig.defaultFilenameAppendOptions` | 字符串 | *必需*。 预先选定的默认文件名宏，用户可以取消选中该宏。<br><br>此列表中的宏是`allowedFilenameAppendOptions`中定义的宏的子集。 |
 | `filenameConfig.defaultFilename` | 字符串 | *可选*。 为导出的文件定义默认文件名宏。 用户无法覆盖这些内容。 <br><br>由`allowedFilenameAppendOptions`定义的任何宏都将附加到`defaultFilename`宏之后。 <br><br>如果`defaultFilename`为空，则必须在`allowedFilenameAppendOptions`中至少定义一个宏。 |
 | `segmentGroupingEnabled` | 布尔值 | 根据受众[合并策略](../../../../profile/merge-policies/overview.md)，定义激活的受众是应导出到单个文件还是多个文件中。 支持的值： <ul><li>`true`：每个合并策略导出一个文件。</li><li>`false`：每个受众导出一个文件，不考虑合并策略。 这是默认行为。 完全忽略此参数也可以获得相同的结果。</li></ul> |
@@ -113,9 +113,9 @@ ht-degree: 2%
 | 宏 | UI标签 | 描述 | 示例 |
 |---|---|---|---|
 | `DESTINATION` | [!UICONTROL 目标] | UI中的目标名称。 | Amazon S3 |
-| `SEGMENT_ID` | [!UICONTROL 区段ID] | 平台生成的唯一受众ID | ce5c5482-2813-4a80-99bc-57113f6acde2 |
+| `SEGMENT_ID` | [!UICONTROL 区段ID] | Experience Platform生成的唯一受众ID | ce5c5482-2813-4a80-99bc-57113f6acde2 |
 | `SEGMENT_NAME` | [!UICONTROL 区段名称] | 用户定义的受众名称 | VIP订阅者 |
-| `DESTINATION_INSTANCE_ID` | [!UICONTROL 目标ID] | 目标实例的平台生成的唯一ID | 7b891e5f-025a-4f0d-9e73-1919e71da3b0 |
+| `DESTINATION_INSTANCE_ID` | [!UICONTROL 目标ID] | Experience Platform生成的唯一目标实例ID | 7b891e5f-025a-4f0d-9e73-1919e71da3b0 |
 | `DESTINATION_INSTANCE_NAME` | [!UICONTROL 目标名称] | 用户定义的目标实例名称。 | 我的2022 Advertising目标 |
 | `ORGANIZATION_NAME` | [!UICONTROL 组织名称] | Adobe Experience Platform中的客户组织的名称。 | 我的组织名称 |
 | `SANDBOX_NAME` | [!UICONTROL 沙盒名称] | 客户使用的沙盒的名称。 | prod |

@@ -2,11 +2,11 @@
 keywords: Experience Platform；主页；热门主题；日期范围
 solution: Experience Platform
 title: Observability Insights API指南
-description: 可观察性分析是一个RESTful API，它允许开发人员在Adobe Experience Platform中公开关键可观察性指标。 这些量度可深入分析平台使用统计数据、Platform服务的运行状况检查、历史趋势和各种Platform功能的性能指标。
+description: 可观察性分析是一个RESTful API，它允许开发人员在Adobe Experience Platform中公开关键可观察性指标。 这些指标可深入分析Experience Platform使用统计数据、Experience Platform服务的运行状况检查、历史趋势和各种Experience Platform功能的性能指标。
 exl-id: 3dee20e2-0551-43db-ba89-bc049b56af08
-source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '151'
+source-wordcount: '154'
 ht-degree: 0%
 
 ---

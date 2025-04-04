@@ -2,9 +2,9 @@
 title: 查询日志
 description: 每次执行查询时都会自动生成查询日志，可以通过UI帮助进行疑难解答。 本文档概述了如何使用及导航UI的“查询服务日志”部分。
 exl-id: 929e9fba-a9ba-4bf9-a363-ca8657a84f75
-source-git-commit: db0ba3bb32b5458ab3a32525c3c63939fe804ab4
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '948'
+source-wordcount: '949'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Adobe Experience Platform维护通过API和UI发生的所有查询事件的日�
 >
 >默认情况下，系统查询和仪表板查询都被排除。 有关如何根据您的设置优化显示的日志的信息，请参阅[筛选器](#filter-logs)部分。
 
-![已突出显示查询和日志的Platform UI。](../images/ui/query-log/logs.png)
+![突出显示查询和日志的Experience Platform UI。](../images/ui/query-log/logs.png)
 
 ## 自定义和搜索 {#customize-and-search}
 

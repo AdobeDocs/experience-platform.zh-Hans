@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用流服务API浏览数据库
 description: 本教程使用流服务API来探索第三方数据库的内容和文件结构。
 exl-id: 94935492-a7be-48dc-8089-18476590bf98
-source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '560'
+source-wordcount: '561'
 ht-degree: 9%
 
 ---
@@ -19,8 +19,8 @@ ht-degree: 9%
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [源](../../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。
-* [沙盒](../../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强传入数据。
+* [沙盒](../../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了使用[!DNL Flow Service] API成功连接到第三方数据库所需了解的其他信息。
 
@@ -34,23 +34,23 @@ ht-degree: 9%
 
 ### 收集所需标头的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程将为所有E[!DNL xperience Platform] API调用中的每个所需标头提供值，如下所示：
+要调用[!DNL Experience Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程将为所有E[!DNL xperience Experience Platform] API调用中的每个所需标头提供值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-[!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都被隔离到特定的虚拟沙盒中。 对[!DNL Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
+[!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都被隔离到特定的虚拟沙盒中。 对[!DNL Experience Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
-所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
+所有包含有效负载(POST、PUT、PATCH)的请求都需要一个额外的媒体类型标头：
 
 * `Content-Type: application/json`
 
 ## 浏览您的数据表
 
-使用数据库的连接ID，可以通过执行GET请求来浏览数据表。 使用以下调用查找要检查或纳入[!DNL Platform]的表的路径。
+使用数据库的连接ID，您可以通过执行GET请求来浏览数据表。 使用以下调用查找要检查或纳入[!DNL Experience Platform]的表的路径。
 
 **API格式**
 
@@ -75,7 +75,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会从数据库中返回表数组。 查找要引入[!DNL Platform]的表并记下其`path`属性，因为您需要在下一步中提供该表以检查其结构。
+成功的响应会从数据库中返回表数组。 查找要引入[!DNL Experience Platform]的表并记下其`path`属性，因为您需要在下一步中提供该表以检查其结构。
 
 ```json
 [
@@ -96,7 +96,7 @@ curl -X GET \
 ]
 ```
 
-## Inspect表的结构
+## 检查表的结构
 
 要从数据库中检查表的结构，请在将表的路径指定为查询参数时执行GET请求。
 
@@ -152,4 +152,4 @@ curl -X GET \
 
 ## 后续步骤
 
-通过阅读本教程，您已浏览数据库，找到要摄取到[!DNL Platform]中的表的路径，并获取有关其结构的信息。 您可以在下一个教程中使用此信息从数据库[收集数据并将其导入Platform](../collect/database-nosql.md)。
+通过阅读本教程，您已浏览数据库，找到要摄取到[!DNL Experience Platform]中的表的路径，并获取有关其结构的信息。 您可以在下一个教程中使用此信息从数据库[收集数据并将其导入Experience Platform](../collect/database-nosql.md)。

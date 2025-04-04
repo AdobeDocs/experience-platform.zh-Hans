@@ -2,9 +2,9 @@
 title: 快速入门指南
 description: 了解如何快速启动并运行Adobe Experience Platform中的标记。
 exl-id: 490ee344-3b18-4189-9293-2378f86fb10d
-source-git-commit: 8c881d99554a8694da79bdc29ad30ebbc870db20
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1521'
+source-wordcount: '1522'
 ht-degree: 44%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 44%
 
 ## 1. 设置组和用户
 
-标记已与您的Adobe ID完全集成。 用户权限是通过Admin Console与[!DNL Creative Cloud]、[!DNL Document Cloud]和Experience Cloud中的其他Adobe产品和解决方案一起管理的。
+标记已与您的Adobe ID完全集成。 用户权限可与[!DNL Creative Cloud]、[!DNL Document Cloud]和Experience Cloud中的其他Adobe产品和解决方案一同通过Admin Console进行管理。
 
 标记具有基于权限的用户管理系统。 这意味着必须明确授予个人权限。 这些权限会分配给组，然后会将用户添加到相应的组，从而获取访问权限。即使您的组织有权访问数据收集，个人用户仍必须等待管理员向其明确授予一些权限，否则将无法执行任何操作。
 
@@ -37,7 +37,7 @@ ht-degree: 44%
 
 ## 2. 登录
 
-将标记权限添加到Adobe ID后，您需要登录到Experience PlatformUI或数据收集UI。 为此，您可以直接导航到[Experience Cloud登录屏幕](https://experience.adobe.com/)，然后选择&#x200B;**[!UICONTROL 数据收集]**&#x200B;或&#x200B;**[!UICONTROL Experience Platform]**。
+将标记权限添加到Adobe ID后，您需要登录到Experience Platform UI或数据收集UI。 为此，您可以直接导航到[Experience Cloud登录屏幕](https://experience.adobe.com/)，然后选择&#x200B;**[!UICONTROL 数据收集]**&#x200B;或&#x200B;**[!UICONTROL Experience Platform]**。
 
 >[!NOTE]
 >
@@ -55,7 +55,7 @@ ht-degree: 44%
 
 所有新资产均随安装的[核心扩展](../extensions/client/core/overview.md)一起提供。移动资产则随其他扩展一起提供。核心扩展由Adobe构建，可提供一组可靠的默认数据元素类型和事件类型，分别供数据层和规则使用。 您要执行的大多数操作（获取 ECID、发送 [!DNL Adobe Analytics] 信标、加载 [!DNL Target] 全局 mbox 等等）都来自于您从目录安装的扩展。
 
-Platform中标记真正的独特之处在于，这些扩展可由任何人构建。 您是否需要丢弃网站上的 Facebook 再营销像素？可考虑使用 Facebook 构建的扩展。您是否希望对 Twitter 或 Linked In 执行相同的操作？可使用这些扩展。您是否需要运行调查？可考虑使用 Question Pro 或 Foresee。您是否需要管理最终用户的隐私和同意，以帮助遵循[!DNL GDPR]？ 可认真考虑使用 Evidon 和 Trust Arc。您是否希望对网站上各个用户的行为有细致入微的了解？ 或许可以考虑使用 Clicktale。有关详细信息，请参阅有关[添加新扩展](../ui/managing-resources/extensions/overview.md#add-a-new-extension)的部分。
+Experience Platform中的标记之所以真正独特，是因为这些扩展可由任何人构建。 您是否需要丢弃网站上的 Facebook 再营销像素？可考虑使用 Facebook 构建的扩展。您是否希望对 Twitter 或 Linked In 执行相同的操作？可使用这些扩展。您是否需要运行调查？可考虑使用 Question Pro 或 Foresee。您是否需要管理最终用户的隐私和同意，以帮助遵循[!DNL GDPR]？ 可认真考虑使用 Evidon 和 Trust Arc。您是否希望对网站上各个用户的行为有细致入微的了解？ 或许可以考虑使用 Clicktale。有关详细信息，请参阅有关[添加新扩展](../ui/managing-resources/extensions/overview.md#add-a-new-extension)的部分。
 
 ## 5. 创建数据元素和规则
 
@@ -83,7 +83,7 @@ Platform中标记真正的独特之处在于，这些扩展可由任何人构建
 
    每个环境都与主机有关系，主机会提供一个端点，指示将内部版本交付到何处。 虽然一个资产可以具有多个主机，但主机只能属于一个资产。
 
-2. 以格式`<script>`标记提供了嵌入代码，该格式会进入网站HTML的`<head>`部分。
+2. 以表格`<script>`标记的形式提供了嵌入代码，该表格会放入您网站HTML的`<head>`部分。
 
    在创建环境并附加主机时，该环境会自动生成唯一的嵌入代码，以便您将其分配的内部版本集成到网站中。 `<script>`代码用于在运行时部署库内部版本。
 
@@ -136,4 +136,4 @@ Platform中标记真正的独特之处在于，这些扩展可由任何人构建
 
 * **[数据收集社区](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-data/ct-p/adobe-launch-community)**：提问或回答他人提出的问题、发表自己的意见、对他人的意见进行投票。 使用您的Adobe ID登录。
 * **[开发人员文档](../api/overview.md)**：加入标记开发人员社区，构建扩展或使用标记API
-* **[Tutorials概述](https://experienceleague.adobe.com/docs/core-services-learn/tutorials/overview.html)**：这些文档将向您介绍Android应用程序中的标记概念，包括事件转发和Mobile SDK。
+* **[教程概述](https://experienceleague.adobe.com/docs/core-services-learn/tutorials/overview.html)**：这些文档将向您介绍Android应用程序中的标记概念，包括事件转发和Mobile SDK。

@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform；配置文件；实时客户配置文件；故障排除；API
+keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API
 title: 配置文件导出作业API端点
 type: Documentation
 description: Real-Time Customer Profile通过将来自多个来源的数据（包括属性数据和行为数据）整合在一起，使您能够在Adobe Experience Platform中构建单个客户视图。 然后，可将用户档案数据导出到数据集以供进一步处理。
 role: Developer
 exl-id: d51b1d1c-ae17-4945-b045-4001e4942b67
-source-git-commit: fd5042bee9b09182ac643bcc69482a0a2b3f8faa
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1512'
 ht-degree: 2%
@@ -30,7 +30,7 @@ ht-degree: 2%
 
 ## 创建导出作业
 
-导出[!DNL Profile]数据首先需要创建数据将导出到的数据集，然后启动新的导出作业。 这两个步骤都可以使用Experience PlatformAPI来完成，前者使用目录服务API，后者使用实时客户档案API。 以下各节概述了完成每个步骤的详细说明。
+导出[!DNL Profile]数据首先需要创建数据将导出到的数据集，然后启动新的导出作业。 这两个步骤都可以使用Experience Platform API来完成，前者使用目录服务API，后者使用实时客户档案API。 以下各节概述了完成每个步骤的详细说明。
 
 ### 创建目标数据集
 
@@ -38,7 +38,7 @@ ht-degree: 2%
 
 关键注意事项之一是数据集所基于的架构（以下API示例请求中的`schemaRef.id`）。 为了导出配置文件数据，数据集必须基于[!DNL XDM Individual Profile]联合架构(`https://ns.adobe.com/xdm/context/profile__union`)。 合并架构是系统生成的只读架构，它聚合共享相同类的架构的字段。 在这种情况下，它是[!DNL XDM Individual Profile]类。 有关合并视图架构的详细信息，请参阅架构组合基础指南](../../xdm/schema/composition.md#union)中的[合并部分。
 
-本教程中接下来的步骤概述了如何使用[!DNL Catalog] API创建引用[!DNL XDM Individual Profile]合并架构的数据集。 您还可以使用[!DNL Platform]用户界面创建引用合并架构的数据集。 此[有关导出受众的UI教程](../../segmentation/tutorials/create-dataset-export-segment.md)中概述了使用UI的步骤，但此处也适用。 完成后，您可以返回本教程以继续执行[启动新导出作业](#initiate)的步骤。
+本教程中接下来的步骤概述了如何使用[!DNL Catalog] API创建引用[!DNL XDM Individual Profile]合并架构的数据集。 您还可以使用[!DNL Experience Platform]用户界面创建引用合并架构的数据集。 此[有关导出受众的UI教程](../../segmentation/tutorials/create-dataset-export-segment.md)中概述了使用UI的步骤，但此处也适用。 完成后，您可以返回本教程以继续执行[启动新导出作业](#initiate)的步骤。
 
 如果您已经具有兼容的数据集并且知道其ID，则可以直接进入[启动新导出作业](#initiate)的步骤。
 
@@ -85,7 +85,7 @@ curl -X POST https://platform.adobe.io/data/foundation/catalog/dataSets \
 
 ### 启动导出作业 {#initiate}
 
-拥有合并持久化数据集后，您可以创建一个导出作业以将配置文件数据持久化到数据集，方法是：向实时客户配置文件API中的`/export/jobs`端点发出POST请求，并在请求正文中提供要导出的数据的详细信息。
+拥有合并持久化数据集后，您可以创建一个导出作业以将配置文件数据持久化到数据集，方法是对实时客户配置文件API中的`/export/jobs`端点发出POST请求，并在请求正文中提供要导出的数据的详细信息。
 
 **API格式**
 
@@ -179,7 +179,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
 
 ## 列出所有导出作业
 
-通过向`export/jobs`端点执行GET请求，可以返回特定组织的所有导出作业的列表。 该请求还支持查询参数`limit`和`offset`，如下所示。
+通过向`export/jobs`端点执行GET请求，您可以返回特定组织的所有导出作业列表。 该请求还支持查询参数`limit`和`offset`，如下所示。
 
 **API格式**
 
@@ -400,7 +400,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/export/jobs/24115 \
 
 ## 取消导出作业
 
-Experience Platform允许您取消现有的导出作业，这可能由于许多原因而很有用，包括导出作业未完成或卡在处理阶段。 要取消导出作业，您可以对`/export/jobs`端点执行DELETE请求，并将要取消的导出作业的`id`包含到请求路径。
+Experience Platform允许您取消现有的导出作业，这可能会对许多原因非常有用，包括导出作业未完成或卡在处理阶段。 要取消导出作业，您可以对`/export/jobs`端点执行DELETE请求，并将要取消的导出作业的`id`包含到请求路径。
 
 **API格式**
 
@@ -428,7 +428,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs/726 \
 
 ## 后续步骤
 
-成功完成导出后，您的数据将在Experience Platform的数据湖中可用。 然后，您可以使用[数据访问API](https://www.adobe.io/experience-platform-apis/references/data-access/)，通过与导出关联的`batchId`来访问数据。 根据导出的大小，数据可能以块为单位，批量可能包含多个文件。
+成功完成导出后，您的数据即可在Experience Platform的数据湖中使用。 然后，您可以使用[数据访问API](https://www.adobe.io/experience-platform-apis/references/data-access/)，通过与导出关联的`batchId`来访问数据。 根据导出的大小，数据可能以块为单位，批量可能包含多个文件。
 
 有关如何使用数据访问API访问和下载批处理文件的分步说明，请按照[数据访问教程](../../data-access/tutorials/dataset-data.md)操作。
 

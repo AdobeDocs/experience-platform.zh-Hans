@@ -2,9 +2,9 @@
 title: B2B Source数据类型
 description: 了解B2B Source Experience Data Model (XDM)数据类型。
 exl-id: 01b7d41c-1ab6-4cbc-b9b3-77b6af69faf3
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '236'
+source-wordcount: '237'
 ht-degree: 3%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 3%
 
 如果仅依赖基于字符串的标识符，则跨多个系统的ID之间可能会重叠（例如，可以在一个CRM系统上为某个机会指定字符串ID，但同一ID可能引用完全不同的机会）。 这可能会导致在[实时客户个人资料](../../profile/home.md)中合并数据时发生数据冲突。
 
-[!UICONTROL B2B Source]数据类型允许您使用实体的原始字符串ID，并将其与特定于源的上下文信息相结合，以确保它在Platform系统中保持完全唯一，而不管它来自哪个源。
+[!UICONTROL B2B Source]数据类型允许您使用实体的原始字符串ID，并将其与特定于源的上下文信息相结合，以确保它在Experience Platform系统中保持完全唯一，而不管它来自哪个源。
 
 ![B2B Source结构](../images/data-types/b2b-source.png)
 

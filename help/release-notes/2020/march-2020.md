@@ -6,10 +6,10 @@ last-update: March 10, 2020
 author: ens71067
 keywords: 发行说明；
 exl-id: 407c2bac-4c8a-4939-b3dd-788250f15650
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '858'
-ht-degree: 16%
+source-wordcount: '859'
+ht-degree: 20%
 
 ---
 
@@ -27,9 +27,9 @@ Adobe Experience Platform 中现有功能的更新：
 
 ## 数据治理 {#governance}
 
-[!DNL Experience Platform]允许公司将来自多个企业系统的数据汇集在一起，以便更好地让营销人员识别、理解和吸引客户。 [!DNL Experience Platform]包括端到端的数据治理基础结构，以确保在[!DNL Platform]内以及在系统之间共享数据时正确使用数据。
+[!DNL Experience Platform]允许公司将来自多个企业系统的数据汇集在一起，以便更好地让营销人员识别、理解和吸引客户。 [!DNL Experience Platform]包括端到端的数据治理基础结构，以确保在[!DNL Experience Platform]内以及在系统之间共享数据时正确使用数据。
 
-Adobe Experience Platform 数据治理是一系列策略和技术，用于管理客户数据并确保遵守适用于数据使用的法规、限制和政策。它在各个级别的[!DNL Experience Platform]内扮演着关键角色，包括编目、数据谱系、数据使用标签、数据访问策略和对营销操作数据的访问控制。
+Adobe Experience Platform 数据治理是一系列策略和技术，用于管理客户数据并确保遵守适用于数据使用的法规、限制和政策。它在 Experience Platform 的 [!DNL Experience Platform] 各个层面中发挥着关键作用，包括编目、数据谱系、数据使用标记、数据访问策略和营销操作数据访问控制。
 
 **新增功能**
 
@@ -63,12 +63,12 @@ Adobe Experience Platform提供了一组丰富的功能，可用于摄取任何�
 
 * None
 
-若要了解有关将数据摄取到Platform的更多信息，请访问[数据摄取文档](../../ingestion/home.md)。
+要了解有关将数据摄取到Experience Platform的更多信息，请访问[数据摄取文档](../../ingestion/home.md)。
 
 
 ## 目标 {#destinations}
 
-在[Real-time Customer Data Platform](../../rtcdp/overview.md)中，目标是与目标平台预先构建的集成，这些平台以无缝方式向这些合作伙伴激活数据。
+在[Real-Time Customer Data Platform](../../rtcdp/overview.md)中，目标是与目标平台预先构建的集成，这些平台以无缝方式向这些合作伙伴激活数据。
 
 **新目标**
 
@@ -101,7 +101,7 @@ Adobe Experience Platform [!DNL Identity Service]通过跨设备和系统桥接�
 
 ## 源 {#sources}
 
-Adobe Experience Platform可以从外部源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强该数据。 您可以从各种来源获取数据，例如 Adobe 应用程序、基于云的存储、第三方软件和 CRM 系统。
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强该数据。 您可以从各种来源获取数据，例如 Adobe 应用程序、基于云的存储、第三方软件和 CRM 系统。
 
 [!DNL Experience Platform]提供了一个RESTful API和一个交互式UI，可让您轻松为各种数据提供程序设置源连接。 这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 

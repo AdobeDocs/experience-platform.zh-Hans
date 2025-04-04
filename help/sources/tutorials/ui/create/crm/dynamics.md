@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform；主页；热门主题；Microsoft Dynamics；Microsoft Dynamics；Dynamics；Dynamics
+keywords: Experience Platform；主页；热门主题；Microsoft Dynamics；microsoft dynamics；Dynamics；Dynamics
 solution: Experience Platform
 title: 在UI中创建Microsoft Dynamics Source连接
 type: Tutorial
-description: 了解如何使用Microsoft UI创建Adobe Experience Platform Dynamics源连接。
+description: 了解如何使用Microsoft Dynamics UI创建Adobe Experience Platform源连接。
 exl-id: 1a7a66de-dc57-4a72-8fdd-5fd80175db69
-source-git-commit: d22c71fb77655c401f4a336e339aaf8b3125d1b6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '614'
+source-wordcount: '617'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 1%
 
 本教程需要对以下Adobe Experience Platform组件有一定的了解：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
@@ -54,7 +54,7 @@ ht-degree: 1%
 
 ## 连接您的[!DNL Dynamics]帐户
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL 目录]屏幕显示您可以用来创建帐户的各种来源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL 目录]屏幕显示您可以用来创建帐户的各种来源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
@@ -62,7 +62,7 @@ ht-degree: 1%
 
 ![已选择Microsoft Dynamics的源目录。](../../../../images/tutorials/create/ms-dynamics/catalog.png)
 
-此时会显示&#x200B;**[!UICONTROL 连接Microsoft Dynamics帐户]**&#x200B;页面。 在此页上，您可以使用新凭据或现有凭据。
+此时会显示&#x200B;**[!UICONTROL Connect Microsoft Dynamics帐户]**&#x200B;页面。 在此页上，您可以使用新凭据或现有凭据。
 
 ### 现有账户
 
@@ -86,7 +86,7 @@ ht-degree: 1%
 
 >[!TAB 基本身份验证]
 
-若要创建具有基本身份验证的[!DNL Dynamics]帐户，请选择[!UICONTROL 基本身份验证]，然后为您的[!UICONTROL 服务URI]、[!UICONTROL 用户名]和[!UICONTROL 密码]提供值。 **注意**： [!DNL Dynamics]中的基本身份验证可能被双重身份验证阻止，Platform当前不支持双重身份验证。 在这种情况下，建议使用基于密钥的身份验证来创建使用[!DNL Dynamics]的源连接器。
+若要创建具有基本身份验证的[!DNL Dynamics]帐户，请选择[!UICONTROL 基本身份验证]，然后为您的[!UICONTROL 服务URI]、[!UICONTROL 用户名]和[!UICONTROL 密码]提供值。 **注意**： [!DNL Dynamics]中的基本身份验证可能被Experience Platform当前不支持的双重身份验证阻止。 在这种情况下，建议使用基于密钥的身份验证来创建使用[!DNL Dynamics]的源连接器。
 
 完成后，选择&#x200B;**[!UICONTROL 连接到源]**，然后留出一些时间来建立新帐户。
 
@@ -104,4 +104,4 @@ ht-degree: 1%
 
 ## 后续步骤
 
-通过学习本教程，您已建立与[!DNL Dynamics]帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入Platform](../../dataflow/crm.md)。
+通过学习本教程，您已建立与[!DNL Dynamics]帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入Experience Platform](../../dataflow/crm.md)。

@@ -2,16 +2,16 @@
 title: 管理架构的数据使用标签
 description: 了解如何在Adobe Experience Platform UI中将数据使用标签添加到Experience Data Model (XDM)架构字段。
 exl-id: 92284bf7-f034-46cc-b905-bdfb9fcd608a
-source-git-commit: ac6af3e90c417d1c97860394ce8afb07a0a7917d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '766'
+source-wordcount: '770'
 ht-degree: 8%
 
 ---
 
 # 管理架构的数据使用标签
 
-所有带入Adobe Experience Platform的数据都受Experience Data Model (XDM)架构的约束。 贵组织或法律法规可能会对此数据设置使用限制。为此，平台允许您通过使用[数据使用标签](../../data-governance/labels/overview.md)来限制特定数据集和字段的使用。
+所有带入Adobe Experience Platform的数据都受Experience Data Model (XDM)架构的约束。 贵组织或法律法规可能会对此数据设置使用限制。为此，Experience Platform允许您通过使用[数据使用标签](../../data-governance/labels/overview.md)来限制特定数据集和字段的使用。
 
 应用于架构字段的标签指示应用于该特定字段中包含的数据的使用策略。
 
@@ -19,15 +19,15 @@ ht-degree: 8%
 
 此外，在一个架构中添加的任何字段标签会传播到使用来自共享类或字段组的相同字段的所有其他架构。 这有助于确保在整个数据模型中类似字段的使用规则保持一致。
 
-本教程介绍了在Platform UI中使用架构编辑器向架构添加标签的步骤。
+本教程介绍了在Experience Platform UI中使用“架构编辑器”向架构添加标签的步骤。
 
 ## 快速入门
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
 * [[!DNL Experience Data Model (XDM) System]](../home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
-   * [架构编辑器](../ui/overview.md)：了解如何在Platform UI中创建和管理架构和其他资源。
-* [[!DNL Adobe Experience Platform Data Governance]](../../data-governance/home.md)：提供用于强制对Platform操作执行数据使用限制的基础结构，使用策略定义可以（或不能）对标记的数据执行哪些营销操作。
+   * [架构编辑器](../ui/overview.md)：了解如何在Experience Platform UI中创建和管理架构和其他资源。
+* [[!DNL Adobe Experience Platform Data Governance]](../../data-governance/home.md)：提供用于强制对Experience Platform操作实施数据使用限制的基础结构，其中使用策略定义可以（或不能）对标记的数据执行哪些营销操作。
 
 ## 选择要将标签添加到的架构或字段 {#select-schema-field}
 

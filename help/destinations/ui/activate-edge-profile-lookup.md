@@ -3,9 +3,9 @@ title: 实时查找边缘配置文件属性
 description: 了解如何使用自定义Personalization目标和Edge Network API实时查找边缘配置文件属性
 type: Tutorial
 exl-id: e185d741-af30-4706-bc8f-d880204d9ec7
-source-git-commit: 276fd7c532843c9589e1d51b0bc7a76cb5c3eb9f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1904'
+source-wordcount: '1907'
 ht-degree: 3%
 
 ---
@@ -25,7 +25,7 @@ Adobe Experience Platform使用[实时客户个人资料](../../profile/home.md)
 
 ## 术语和先决条件 {#prerequisites}
 
-配置本页中所述的用例时，将使用以下平台组件：
+在配置本页中所述的用例时，您将使用以下Experience Platform组件：
 
 * [数据流](../../datastreams/overview.md)：数据流接收来自Web SDK的传入事件数据并使用边缘配置文件数据进行响应。
 * [合并策略](../../segmentation/ui/segment-builder.md#merge-policies)：您将创建一个[!UICONTROL Edge上的Active-On]合并策略，以确保边缘配置文件使用正确的配置文件数据。
@@ -54,7 +54,7 @@ Edge配置文件查找用例受下表所述的特定性能护栏的约束。 有
     >
     >Enabling edge segmentation limits the maximum number of lookup requests to 1500 request per second. If you need a higher request throughput, disable edge segmentation for your datastream. See the [guardrails documentation](../guardrails.md#edge-destinations-activation) for detailed information. -->
 
-  ![显示数据流配置屏幕的平台UI图像。](../assets/ui/activate-edge-profile-lookup/datastream-config.png)
+  ![显示数据流配置屏幕的Experience Platform UI图像。](../assets/ui/activate-edge-profile-lookup/datastream-config.png)
 
 
 ## 步骤2：配置受众以进行Edge评估 {#audience-edge-evaluation}
@@ -110,7 +110,7 @@ Edge配置文件查找用例受下表所述的特定性能护栏的约束。 有
    您可以从多种类型的受众中进行选择，具体取决于其来源：
 
    * **[!UICONTROL 分段服务]**：分段服务在Experience Platform中生成的受众。 有关详细信息，请参阅[分段文档](../../segmentation/ui/overview.md)。
-   * **[!UICONTROL 自定义上传]**：受众在Experience Platform外部生成，并以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/overview.md#import-audience)的文档。
+   * **[!UICONTROL 自定义上传]**：受众在Experience Platform外部生成，并以CSV文件形式上传到Experience Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/overview.md#import-audience)的文档。
    * 其他类型的受众，来自其他Adobe解决方案，如[!DNL Audience Manager]。
 
      ![在激活工作流中选择突出显示多个受众的受众步骤。](../assets/ui/activate-edge-personalization-destinations/select-audiences.png)

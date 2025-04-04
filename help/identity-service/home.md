@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Identity服务概述
 description: Adobe Experience Platform Identity Service通过跨设备和系统桥接身份，允许您实时提供有影响力的个人数字体验，从而帮助您更好地了解客户及其行为。
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1555'
+source-wordcount: '1556'
 ht-degree: 2%
 
 ---
@@ -31,21 +31,21 @@ ht-degree: 2%
 
 | 搜索词 | 定义 |
 | --- | --- |
-| 标识 | 身份是实体特有的数据。 通常，这是一个现实世界中的对象，例如个人、硬件设备或Web浏览器（由Cookie表示）。 完全限定的标识由两个元素组成：**标识命名空间**&#x200B;和&#x200B;**标识值**。 |
-| 标识命名空间 | 标识命名空间是给定标识的上下文。例如，`Email`的命名空间可能与标识值&#x200B;**julien<span>@acme.com**&#x200B;相对应。 同样，`Phone`的命名空间可以与标识值`555-555-1234`对应。 有关详细信息，请阅读[身份命名空间概述](./features/namespaces.md)。 |
-| 标识值 | 身份值是一个字符串，它表示真实世界的实体，并通过命名空间在Identity Service中分类。 例如，标识值（字符串） **julien<span>@acme.com**&#x200B;可以分类为`Email`命名空间。 |
-| 标识类型 | 身份类型是身份命名空间的组件。 身份类型指定是否在身份图中链接身份数据。 |
+| 身份标识 | 身份是实体特有的数据。 通常，这是一个现实世界中的对象，例如个人、硬件设备或Web浏览器（由Cookie表示）。 完全限定的标识由两个元素组成：**标识命名空间**&#x200B;和&#x200B;**标识值**。 |
+| 身份标识命名空间 | 身份标识命名空间是给定身份标识的上下文。例如，`Email`的命名空间可能与标识值&#x200B;**julien<span>@acme.com**&#x200B;相对应。 同样，`Phone`的命名空间可以与标识值`555-555-1234`对应。 有关详细信息，请阅读[身份命名空间概述](./features/namespaces.md)。 |
+| 身份标识值 | 身份值是一个字符串，它表示真实世界的实体，并通过命名空间在Identity Service中分类。 例如，标识值（字符串） **julien<span>@acme.com**&#x200B;可以分类为`Email`命名空间。 |
+| 身份标识类型 | 身份类型是身份命名空间的组件。 身份类型指定是否在身份图中链接身份数据。 |
 | 链接 | 链接或链接是一种确定两个不同的身份表示同一实体的方法。 例如，“`Email` = julien<span>@acme.com”和“`Phone` = 555-555-1234”之间的链接意味着两个身份代表同一实体。 这表明，与您的品牌互动的电子邮件地址为julien<span>@acme.com且电话号码为555-555-1234的客户是相同的。 |
-| 身份服务 | Identity Service是Experience Platform中的一项服务，用于链接（或取消链接）身份以维护身份图。 |
-| 身份图 | 身份图是表示单个客户的身份集合。 有关详细信息，请阅读[上的使用身份图查看器](./features/identity-graph-viewer.md)的指南。 |
-| 实时客户配置文件 | 实时客户资料是Adobe Experience Platform中的一项服务，该服务： <ul><li>合并配置文件片段以基于身份图创建配置文件。</li><li>对配置文件进行分段，以便随后将这些配置文件发送到目标进行激活。</li></ul> |
-| 配置文件 | 用户档案是主题、组织或个人的表示形式。 用户档案由四个元素组成： <ul><li>属性：属性提供姓名、年龄或性别等信息。</li><li>行为：行为提供有关给定用户档案活动的信息。 例如，配置文件行为可以判断给定配置文件是“搜索凉鞋”还是“订购T恤”。</li><li>身份：对于合并的个人资料，这将提供与人员关联的所有身份的信息。 身份可分为三类：人员（CRMID、电子邮件、电话）、设备(IDFA、GAID)和Cookie(ECID、AAID)。</li><li>受众成员资格：配置文件所属的组（忠诚用户、住在加利福尼亚的用户等）</li></ul> |
+| 身份标识服务 | Identity Service是Experience Platform中的一项服务，用于链接（或取消链接）身份以维护身份图。 |
+| 身份标识图 | 身份图是表示单个客户的身份集合。 有关详细信息，请阅读[上的使用身份图查看器](./features/identity-graph-viewer.md)的指南。 |
+| 实时客户轮廓 | 实时客户资料是Adobe Experience Platform中的一项服务，该服务： <ul><li>合并配置文件片段以基于身份图创建配置文件。</li><li>对配置文件进行分段，以便随后将这些配置文件发送到目标进行激活。</li></ul> |
+| 轮廓 | 用户档案是主题、组织或个人的表示形式。 用户档案由四个元素组成： <ul><li>属性：属性提供姓名、年龄或性别等信息。</li><li>行为：行为提供有关给定用户档案活动的信息。 例如，配置文件行为可以判断给定配置文件是“搜索凉鞋”还是“订购T恤”。</li><li>身份：对于合并的个人资料，这将提供与人员关联的所有身份的信息。 身份可分为三类：人员（CRMID、电子邮件、电话）、设备(IDFA、GAID)和Cookie(ECID、AAID)。</li><li>受众成员资格：配置文件所属的组（忠诚用户、住在加利福尼亚的用户等）</li></ul> |
 
 {style="table-layout:auto"}
 
 ## 什么是Identity Service？
 
-在平台](./images/identity-service-stitching.png)上进行![身份拼接
+在Experience Platform上进行![身份拼接](./images/identity-service-stitching.png)
 
 在“企业对客户”(B2C)上下文中，客户与您的业务进行交互，并与您的品牌建立关系。 典型客户可能在您组织的数据基础架构内的任意数量的系统中处于活动状态。 任何给定客户都可能在您的电子商务、忠诚度和技术支持系统中处于活动状态。 同一客户还可以在任意数量的不同设备上匿名或通过身份验证方式进行互动。
 
@@ -103,13 +103,13 @@ Identity Service为实现其任务提供了以下操作：
 
 >[!VIDEO](https://video.tv.adobe.com/v/27841?quality=12&learn=on)
 
-## 了解Identity Service在Experience Platform基础设施中的作用
+## 了解Identity Service在Experience Platform基础架构中的角色
 
-Identity Service在Experience Platform中扮演着至关重要的角色。 其中一些关键集成包括：
+Identity服务在Experience Platform中起着至关重要的作用。 其中一些关键集成包括：
 
 * [架构](../xdm/home.md)：在给定的架构中，标记为标识的架构字段允许生成标识图。
 * [数据集](../catalog/datasets/overview.md)：启用数据集以摄取到Real-time Customer Profile时，将从该数据集生成身份图，假定该数据集至少有两个标记为身份的字段。
-* [Web SDK](../web-sdk/home.md)： Web SDK向Adobe Experience Platform发送体验事件，如果事件中存在两个或多个标识，Identity Service将生成图形。
+* [Web SDK](../web-sdk/home.md)： Web SDK将体验事件发送到Adobe Experience Platform，当事件中存在两个或多个标识时，标识服务会生成图形。
 * [实时客户个人资料](../profile/home.md)：在合并给定个人资料的属性和事件之前，实时客户个人资料可以引用标识图。 有关详细信息，请阅读[上的指南，以了解Identity Service与Real-Time Customer Profile](./identity-and-profile.md)之间的关系。
 * [目标](../destinations/home.md)：目标可以根据身份命名空间将配置文件信息发送到其他系统，如经过哈希处理的电子邮件。
 * [区段匹配](../segmentation/ui/segment-match/overview.md)：区段匹配在两个不同沙盒中匹配两个配置文件，这两个沙盒具有相同的标识命名空间和标识值。

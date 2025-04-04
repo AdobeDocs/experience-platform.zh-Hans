@@ -4,16 +4,16 @@ title: 使用流服务API将受众激活到基于文件的目标
 description: 了解如何使用流服务API将包含合格配置文件的文件导出到云存储目标。
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: df7b9bb0c5dc4348e8be7a0ea93296e24bc0fb1d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '4760'
+source-wordcount: '4763'
 ht-degree: 3%
 
 ---
 
 # 使用流服务API将受众激活到基于文件的目标
 
-使用增强的文件导出功能，可在导出文件时访问增强的自定义功能Experience Platform：
+从Experience Platform导出文件时，使用增强的文件导出功能可访问增强的自定义功能：
 
 * 额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#file-names)。
 * 可通过[改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)在您导出的文件中设置自定义文件头。
@@ -51,9 +51,9 @@ If you were already using the Flow Service API to export profiles to the Amazon 
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
 * [[!DNL Segmentation Service]](../../segmentation/api/overview.md)： [!DNL Adobe Experience Platform Segmentation Service]允许您根据[!DNL Real-Time Customer Profile]数据在[!DNL Adobe Experience Platform]中构建受众并生成受众。
-* [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform]提供了将单个[!DNL Platform]实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+* [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform]提供了将单个[!DNL Experience Platform]实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
-以下部分提供了您需要了解的其他信息，以便将数据激活到Platform中基于文件的目标。
+以下部分提供了在Experience Platform中将数据激活到基于文件的目标时需要了解的其他信息。
 
 ### 所需的权限 {#permissions}
 
@@ -67,13 +67,13 @@ If you were already using the Flow Service API to export profiles to the Amazon 
 
 ### 收集必需标题和可选标题的值 {#gather-values-headers}
 
-要调用[!DNL Platform] API，您必须先完成[Experience Platform身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+要调用[!DNL Experience Platform] API，您必须先完成[Experience Platform身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 * 授权：持有人`{ACCESS_TOKEN}`
 * x-api-key： `{API_KEY}`
 * x-gw-ims-org-id： `{ORG_ID}`
 
-[!DNL Experience Platform]中的资源可以隔离到特定的虚拟沙箱。 在对[!DNL Platform] API的请求中，您可以指定将在其中执行操作的沙盒的名称和ID。 这些是可选参数。
+[!DNL Experience Platform]中的资源可以隔离到特定的虚拟沙箱。 在对[!DNL Experience Platform] API的请求中，您可以指定将在其中执行操作的沙盒的名称和ID。 这些是可选参数。
 
 * x-sandbox-name： `{SANDBOX_NAME}`
 
@@ -326,7 +326,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 ![激活受众的步骤，突出显示用户所在的当前步骤](/help/destinations/assets/api/file-based-segment-export/step2.png)
 
-在决定要将受众导出到哪个目标后，您需要创建源连接。 [源连接](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary)表示与内部[Experience Platform配置文件存储](/help/profile/home.md#profile-data-store)的连接。
+在决定要将受众导出到哪个目标后，您需要创建源连接。 [源连接](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary)表示与内部[Experience Platform配置文件存储区](/help/profile/home.md#profile-data-store)的连接。
 
 >[!BEGINSHADEBOX]
 
@@ -3477,7 +3477,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/idnamespace/i
 
 +++ 查看要在输入架构中使用的可用身份
 
-响应将返回在创建输入架构时可以使用的标识。 请注意，此响应返回您在Experience Platform中设置的[standard](/help/identity-service/features/namespaces.md#standard)和[custom](/help/identity-service/features/namespaces.md#manage-namespaces)身份命名空间。
+响应将返回在创建输入架构时可以使用的标识。 请注意，此响应会返回您在Experience Platform中设置的[standard](/help/identity-service/features/namespaces.md#standard)和[custom](/help/identity-service/features/namespaces.md#manage-namespaces)身份命名空间。
 
 ```json
 [
@@ -3742,7 +3742,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **包含示例架构的响应**
 
-Inspect您执行上述调用时获得的响应。 您需要深入到响应以查找对象`targetSpec.attributes.partnerSchema.jsonSchema`
+检查执行上述调用时获得的响应。 您需要深入到响应以查找对象`targetSpec.attributes.partnerSchema.jsonSchema`
 
 +++ 获取输出架构的合作伙伴架构的响应
 
@@ -4817,11 +4817,11 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 ## API错误处理 {#api-error-handling}
 
-本教程中的API端点遵循常规Experience PlatformAPI错误消息原则。 有关解释错误响应的详细信息，请参阅Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
+本教程中的API端点遵循常规Experience Platform API错误消息原则。 有关解释错误响应的详细信息，请参阅Experience Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤 {#next-steps}
 
-通过学习本教程，您已成功将Platform连接到其中一个首选云存储目标，并将数据流设置到相应的目标以导出受众。 有关更多详细信息，请参阅以下页面，例如如何使用流服务API编辑现有数据流：
+通过学习本教程，您已成功将Experience Platform连接到其中一个首选云存储目标，并设置了到相应目标的数据流以导出受众。 有关更多详细信息，请参阅以下页面，例如如何使用流服务API编辑现有数据流：
 
 * [目标概述](../home.md)
 * [目标目录概述](../catalog/overview.md)

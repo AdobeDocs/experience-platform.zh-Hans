@@ -5,16 +5,16 @@ feature: Customer AI
 title: 用客户人工智能发掘见解
 description: 本文档用作在Intelligent Services客户人工智能用户界面中与服务实例见解交互的指南。
 exl-id: 8aaae963-4029-471e-be9b-814147a5f160
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '2098'
+source-wordcount: '2099'
 ht-degree: 1%
 
 ---
 
 # 用Customer AI发现见解
 
-客户人工智能，作为智能服务的一部分，为营销人员提供了利用Adobe Sensei来预测客户下一步动向的能力。 Customer AI 用于生成自定义倾向分数，如个人档案大规模的流失率和转化率。无需将业务需求转换为机器学习问题、选择算法、培训或部署，即可实现上述目标。
+客户人工智能，作为智能服务的一部分，为营销人员提供了利用Adobe Sensei来预测客户下一步动向的能力。 Customer AI 用于生成自定义倾向分数，如轮廓大规模的流失率和转化率。无需将业务需求转换为机器学习问题、选择算法、培训或部署，即可实现上述目标。
 
 本文档用作在Intelligent Services客户人工智能用户界面中与服务实例见解交互的指南。
 
@@ -164,7 +164,7 @@ ht-degree: 1%
 
 ![区段填写](../images/insights/segment-saving.png)
 
-要在Platform UI中查看新区段，请在左侧导航中选择&#x200B;**[!UICONTROL 区段]**。 此时会显示&#x200B;**[!UICONTROL 浏览]**&#x200B;页面并显示所有可用区段。
+要在Experience Platform UI中查看新区段，请在左侧导航中选择&#x200B;**[!UICONTROL 区段]**。 此时会显示&#x200B;**[!UICONTROL 浏览]**&#x200B;页面并显示所有可用区段。
 
 ![您的所有区段](../images/insights/Segments-dashboard.png)
 
@@ -225,7 +225,7 @@ AUC反映了得分排名与预测目标发生之间的关系强度。 0.5的&#x2
 
 ## 后续步骤
 
-本文档概述了客户人工智能服务实例提供的见解。 您现在可以继续阅读有关[在客户人工智能中下载得分](./download-scores.md)的教程，或浏览提供的其他[Adobe智能服务](../../home.md)指南。
+本文档概述了客户人工智能服务实例提供的见解。 您现在可以继续阅读有关[在客户人工智能中下载得分](./download-scores.md)的教程，或者浏览提供的其他[Adobe Intelligent Services](../../home.md)指南。
 
 ## 其他资源
 

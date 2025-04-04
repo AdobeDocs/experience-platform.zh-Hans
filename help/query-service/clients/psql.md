@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 将PSQL连接到查询服务
 description: PSQL是在计算机上安装PostgreSQL时提供的命令行接口。 您可以按照以下说明安装它。
 exl-id: ceb07128-409e-42be-8143-0cf681d435de
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '292'
 ht-degree: 0%
@@ -19,7 +19,7 @@ PSQL是在计算机上安装[!DNL PostgreSQL]时安装的命令行接口。 本�
 >
 > 本指南假定您已经有权访问[!DNL PSQL]并熟悉其使用方法。 有关[!DNL PSQL]的详细信息，请参阅[官方 [!DNL PSQL] 文档](https://www.postgresql.org/docs/current/app-psql.html)。
 
-在计算机上安装PSQL后，就可以将PSQL与查询服务连接起来。 返回到[!DNL Platform] UI，然后选择&#x200B;**[!UICONTROL 查询]**，随后选择&#x200B;**[!UICONTROL 凭据]**。
+在计算机上安装PSQL后，就可以将PSQL与查询服务连接起来。 返回到[!DNL Experience Platform] UI，然后选择&#x200B;**[!UICONTROL 查询]**，随后选择&#x200B;**[!UICONTROL 凭据]**。
 
 在&#x200B;**[!UICONTROL PSQL命令]**&#x200B;部分下，选择&#x200B;**[!UICONTROL 复制到剪贴板]**&#x200B;图标（![复制图标](/help/images/icons/copy.png)）以复制命令字符串。
 

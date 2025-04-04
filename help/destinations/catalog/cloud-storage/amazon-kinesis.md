@@ -4,9 +4,9 @@ title: Amazon Kinesis连接
 description: 创建到Amazon Kinesis存储的实时出站连接，以从Adobe Experience Platform流式传输数据。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1984'
+source-wordcount: '1989'
 ht-degree: 5%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
-> 此目标仅适用于[Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
 由[!DNL Amazon Web Services]提供的[!DNL Kinesis Data Streams]服务允许您实时收集和处理大量数据记录流。
 
@@ -25,9 +25,9 @@ ht-degree: 5%
 
 * 有关[!DNL Amazon Kinesis]的详细信息，请参阅[Amazon文档](https://docs.aws.amazon.com/streams/latest/dev/introduction.html)。
 * 要以编程方式连接到[!DNL Amazon Kinesis]，请参阅[流式目标API教程](../../api/streaming-destinations.md)。
-* 要使用Platform用户界面连接到[!DNL Amazon Kinesis]，请参阅以下部分。
+* 要使用Experience Platform用户界面连接到[!DNL Amazon Kinesis]，请参阅以下部分。
 
-在UI中![Amazon Kinesis](../../assets/catalog/cloud-storage/amazon-kinesis/catalog.png)
+UI中的![Amazon Kinesis](../../assets/catalog/cloud-storage/amazon-kinesis/catalog.png)
 
 ## 用例 {#use-cases}
 
@@ -41,8 +41,8 @@ ht-degree: 5%
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -53,7 +53,7 @@ ht-degree: 5%
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
 | 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如[目标激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes)的选择配置文件属性屏幕中所选。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -69,7 +69,7 @@ ht-degree: 5%
 * `kinesis:PutRecord`
 * `kinesis:PutRecords`
 
-这些权限通过[!DNL Kinesis]控制台进行排列，一旦您在Platform用户界面中配置了Kinesis目标，Platform就会检查这些权限。
+这些权限是通过[!DNL Kinesis]控制台进行排列的，一旦您在Experience Platform用户界面中配置了Experience Platform目标，这些权限就会由检查。
 
 以下示例显示了将数据成功导出到[!DNL Kinesis]目标所需的最低访问权限。
 
@@ -96,7 +96,7 @@ ht-degree: 5%
 | -------- | ----------- |
 | `kinesis:ListStreams` | 一个列出您的Amazon Kinesis数据流的操作。 |
 | `kinesis:PutRecord` | 将单个数据记录写入Kinesis数据流的操作。 |
-| `kinesis:PutRecords` | 一个在单个调用中将多个数据记录写入Kinesis数据流的操作。 |
+| `kinesis:PutRecords` | 在单个调用中将多个数据记录写入Kinesis数据流的操作。 |
 
 {style="table-layout:auto"}
 
@@ -116,7 +116,7 @@ ht-degree: 5%
 
 ![显示Amazon Kinesis身份验证详细信息已完成字段的UI屏幕图像](../../assets/catalog/cloud-storage/amazon-kinesis/kinesis-authentication-fields.png)
 
-* **[!DNL Amazon Web Services]访问密钥和密钥**：在[!DNL Amazon Web Services]中，生成一个`access key - secret access key`对以向您的[!DNL Amazon Kinesis]帐户授予Platform访问权限。 请参阅[Amazon Web Services文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)以了解详情。
+* **[!DNL Amazon Web Services]访问密钥和密钥**：在[!DNL Amazon Web Services]中，生成`access key - secret access key`对以授予Experience Platform对您[!DNL Amazon Kinesis]帐户的访问权限。 请参阅[Amazon Web Services文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)以了解详情。
 * **[!UICONTROL 区域]**：指示要将数据流式传输到哪个[!DNL Amazon Web Services]区域。
 
 ### 填写目标详细信息 {#destination-details}
@@ -133,11 +133,11 @@ ht-degree: 5%
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
-![显示Amazon Kinesis目标详细信息中已完成字段的UI屏幕图像](../../assets/catalog/cloud-storage/amazon-kinesis/kinesis-destination-details.png)
+![显示Amazon Kinesis目标详细信息已完成字段的UI屏幕图像](../../assets/catalog/cloud-storage/amazon-kinesis/kinesis-destination-details.png)
 
 * **[!UICONTROL 名称]**：为与[!DNL Amazon Kinesis]的连接提供一个名称
 * **[!UICONTROL 描述]**：提供您与[!DNL Amazon Kinesis]的连接描述。
-* **[!UICONTROL 流]**：提供您[!DNL Amazon Kinesis]帐户中现有数据流的名称。 Platform会将数据导出到此流。
+* **[!UICONTROL 流]**：提供您[!DNL Amazon Kinesis]帐户中现有数据流的名称。 Experience Platform会将数据导出到此流。
 * **[!UICONTROL 包括区段名称]**：如果希望数据导出包括正在导出的受众的名称，请切换。 有关选择此选项的数据导出示例，请参阅下面的[导出的数据](#exported-data)部分。
 * **[!UICONTROL 包括区段时间戳]**：如果要在数据导出时包括创建和更新受众时的UNIX时间戳，以及在将受众映射到目标以进行激活时的UNIX时间戳，请切换此选项。 有关选择此选项的数据导出示例，请参阅下面的[导出的数据](#exported-data)部分。
 
@@ -145,7 +145,7 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
->Platform needs `write` permissions on the bucket object where the export files will be delivered.
+>Experience Platform needs `write` permissions on the bucket object where the export files will be delivered.
 
 -->
 
@@ -160,7 +160,7 @@ ht-degree: 5%
 >[!IMPORTANT]
 > 
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 当前在导出到Amazon Kinesis目标时不支持[同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。 [了解详情](/help/destinations/ui/activate-streaming-profile-destinations.md#consent-policy-evaluation)。
+>* 当前在导出到Amazon Kinesis目标时不支持[同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。 [了解更多信息](/help/destinations/ui/activate-streaming-profile-destinations.md#consent-policy-evaluation)。
 
 有关将受众激活到此目标的说明，请参阅[将受众数据激活到流式配置文件导出目标](../../ui/activate-streaming-profile-destinations.md)。
 
@@ -298,12 +298,12 @@ Experience Platform会优化将配置文件导出到[!DNL Amazon Kinesis]目标�
 
 ## 限制和重试策略 {#limits-retry-policy}
 
-在95%的时间中，Experience Platform会尝试为成功发送的消息提供少于10分钟的吞吐量延迟，每个数据流向HTTP目的地的请求速率每秒少于10,000次。
+在95%的时间中，Experience Platform会尝试为成功发送的消息提供少于10分钟的吞吐量延迟，每个数据流向HTTP目标的请求速率每秒少于10,000次。
 
 如果对HTTP API目标的请求失败，Experience Platform将存储失败的请求，并重试两次以将请求发送到您的端点。
 
 >[!MORELIKETHIS]
 >
->* [连接到Amazon Kinesis并使用流服务API激活数据](../../api/streaming-destinations.md)
+>* [使用流服务API连接到Amazon Kinesis并激活数据](../../api/streaming-destinations.md)
 >* [Azure事件中心目标](./azure-event-hubs.md)
 >* [目标类型和类别](../../destination-types.md)

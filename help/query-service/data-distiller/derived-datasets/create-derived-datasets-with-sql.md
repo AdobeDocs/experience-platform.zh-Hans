@@ -2,9 +2,9 @@
 title: 使用SQL创建派生数据集
 description: 了解如何使用SQL创建为用户档案启用的派生数据集，以及如何将该数据集用于Real-time Customer Profile和Segmentation Service。
 exl-id: bb1a1d8d-4662-40b0-857a-36efb8e78746
-source-git-commit: 5bf54374773fd95ae1c40dd00b5dbe633031b70e
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1235'
+source-wordcount: '1238'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 了解如何使用SQL查询处理和转换现有数据集的数据，以创建为用户档案启用的派生数据集。 此工作流提供了一种高效、替代的方法，可为您的Real-time Customer Profile业务用例创建派生数据集。
 
-本文档概述了各种方便的SQL扩展，这些扩展可生成派生的数据集以用于Real-time Customer Profile。 该工作流简化了原本必须通过各种API调用或Platform UI交互完成的流程。
+本文档概述了各种方便的SQL扩展，这些扩展可生成派生的数据集以用于Real-time Customer Profile。 该工作流简化了您必须通过各种API调用或Experience Platform UI交互完成的流程。
 
 通常，生成和发布针对Real-time Customer Profile的派生数据集需要以下步骤：
 
@@ -35,7 +35,7 @@ ht-degree: 1%
 >
 >下面提供的SQL查询假定使用预先存在的命名空间。
 
-使用创建表作为选择(CTAS)查询创建数据集、分配数据类型、设置主标识、创建架构并将其标记为启用配置文件。 下面的示例SQL语句创建一个数据集，并将其用于Real-time Customer Data Platform (Real-Time CDP)。 您的SQL查询将遵循以下示例中显示的格式：
+使用创建表作为选择(CTAS)查询创建数据集、分配数据类型、设置主标识、创建架构并将其标记为启用配置文件。 下面的示例SQL语句创建一个数据集，并将其用于Real-Time Customer Data Platform (Real-Time CDP)。 您的SQL查询将遵循以下示例中显示的格式：
 
 ```sql
 CREATE TABLE <your_table_name> [IF NOT EXISTS] (fieldname <your_data_type> primary identity namespace <your_namespace>, [field_name2 <your_data_type>]) [WITH(LABEL='PROFILE')];
@@ -51,7 +51,7 @@ MAP <data_type, data_type>
 ARRAY <data_type>
 ```
 
-或者，也可以通过Platform UI为配置文件启用数据集。 有关将数据集标记为已为配置文件启用的详细信息，请参阅[为实时客户配置文件启用数据集文档](../../../catalog/datasets/user-guide.md#enable-profile)。
+或者，也可以通过Experience Platform UI为配置文件启用数据集。 有关将数据集标记为已为配置文件启用的详细信息，请参阅[为实时客户配置文件启用数据集文档](../../../catalog/datasets/user-guide.md#enable-profile)。
 
 在下面的示例查询中，`decile_table`数据集是以`id`作为主标识列创建的，具有命名空间`IDFA`。 它还具有映射数据类型的名为`decile1Month`的字段。 已为配置文件启用创建的表(`decile_table`)。
 
@@ -178,7 +178,7 @@ ALTER TABLE table_with_a_decile DROP label 'UPSERT';
 
 ### 使用SQL创建字段组
 
-现在可以通过使用SQL创建字段组。 为在平台UI中使用架构编辑器或对架构注册表进行API调用提供了替代方法。
+现在可以通过使用SQL创建字段组。 这提供了在Experience Platform UI中使用架构编辑器或对架构注册表进行API调用的替代方法。
 
 下面显示了创建字段组的示例语句。
 

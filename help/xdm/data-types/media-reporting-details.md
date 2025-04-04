@@ -2,9 +2,9 @@
 title: 媒体报告详细信息数据类型
 description: 了解Media Reporting Details Experience Data Model (XDM)数据类型。
 exl-id: e8bf20a9-9ac0-4339-8200-5d6d9328ce3b
-source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '493'
+source-wordcount: '494'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->以下提及的字段不直接用于创建请求。 实际上，发送到Adobe Experience Platform或Adobe Analytics的字段集是根据您的请求数据组合在一起的，然后，服务器基础架构会合并或处理这些量度。 在Platform收集各种类型的用户事件时，返回给您的报告侧重于特定事件，如`media.sessionStart`、`media.adStart`和`media.sessionComplete`。 这意味着，虽然您在收集期间传输了12种类型的事件，但您的报表将仅呈现基于下面列出的五个事件的细分。
+>以下提及的字段不直接用于创建请求。 实际上，发送到Adobe Experience Platform或Adobe Analytics的字段集是根据您的请求数据组合在一起的，然后，服务器基础架构会合并或处理这些量度。 在Experience Platform收集各种类型的用户事件时，返回给您的报告将侧重于特定事件，如`media.sessionStart`、`media.adStart`和`media.sessionComplete`。 这意味着，虽然您在收集期间传输了12种类型的事件，但您的报表将仅呈现基于下面列出的五个事件的细分。
 
 +++选择以显示[!UICONTROL 媒体报告详细信息]数据类型的图表。
 ![ [!UICONTROL 媒体报告详细信息]数据类型的图表。](../images/data-types/media-reporting-details.png)

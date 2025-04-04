@@ -2,9 +2,9 @@
 title: 从Jupyter笔记本连接到Data Distiller
 description: 了解如何从Jupyter Notebook连接到Data Distiller。
 exl-id: e6238b00-aaeb-40c0-a90f-9aebb1a1c421
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '684'
+source-wordcount: '685'
 ht-degree: 0%
 
 ---
@@ -19,9 +19,9 @@ ht-degree: 0%
 
 ### 获取连接凭据 {#obtain-credentials}
 
-要连接到Data Distiller和其他Adobe Experience Platform服务，您需要Experience PlatformAPI凭据。 具有该Experience Platform开发人员访问权限的用户可以在[Adobe Developer Console](https://developer.adobe.com/console/home)中创建API凭据。 建议您创建专门用于数据科学工作流的Oauth2 API凭据，并让贵组织的Adobe系统管理员将该凭据分配给具有适当权限的角色。
+要连接到Data Distiller和其他Adobe Experience Platform服务，您需要Experience Platform API凭据。 有权访问Experience Platform的用户可以在[Adobe Developer Console](https://developer.adobe.com/console/home)中创建API凭据。 建议您创建专门用于数据科学工作流的Oauth2 API凭据，并让贵组织的Adobe系统管理员将该凭据分配给具有适当权限的角色。
 
-有关创建API凭据和获取所需权限的详细说明，请参阅[身份验证和访问Experience PlatformAPI](../../../landing/api-authentication.md)。
+有关创建API凭据和获取所需权限的详细说明，请参阅[身份验证和访问Experience Platform API](../../../landing/api-authentication.md)。
 
 数据科学的推荐权限包括：
 
@@ -32,7 +32,7 @@ ht-degree: 0%
 - 目标： [!UICONTROL 管理和激活数据集目标]
 - 查询服务： [!UICONTROL 管理查询]
 
-默认情况下，阻止某个角色（以及分配给该角色的API凭据）访问任何标记的数据。 根据组织的数据治理策略，系统管理员可以向角色授予对某些被视为适合数据科学使用的已标记数据的访问权限。 Platform客户有责任适当地管理标签访问和政策，以遵守相关法规和组织政策。
+默认情况下，阻止某个角色（以及分配给该角色的API凭据）访问任何标记的数据。 根据组织的数据治理策略，系统管理员可以向角色授予对某些被视为适合数据科学使用的已标记数据的访问权限。 Experience Platform客户有责任适当地管理标签访问和政策，以遵守相关法规和组织政策。
 
 ### 将凭据存储在单独的配置文件中 {#store-credentials}
 
@@ -69,7 +69,7 @@ org_id = config.get('Credential', 'ims_org_id')
 
 ## 安装aepp Python库 {#install-python-library}
 
-[aepp](https://github.com/adobe/aepp/tree/main)是Adobe管理的开源[!DNL Python]库，它提供连接到Data Distiller和提交查询的功能，以及向其他Experience Platform服务发出请求的功能。 `aepp`库依赖于PostgreSQL数据库适配器包`psycopg2`来进行Interactive Data Distiller查询。 可以单独使用`psycopg2`连接到数据Distiller和查询Experience Platform数据集，但`aepp`为向所有Experience PlatformAPI服务发出请求提供了更大的便利性和附加功能。
+[aepp](https://github.com/adobe/aepp/tree/main)是Adobe管理的开源[!DNL Python]库，它提供连接到Data Distiller和提交查询的功能，以及向其他Experience Platform服务发出请求的功能。 `aepp`库依赖于PostgreSQL数据库适配器包`psycopg2`来进行Interactive Data Distiller查询。 可以单独使用`psycopg2`连接到Data Distiller并查询Experience Platform数据集，但`aepp`为向所有Experience Platform API服务发出请求提供了更大的便利性和附加功能。
 
 要在您的环境中安装或升级`aepp`和`psycopg2`，您可以在笔记本中使用`%pip` magic命令：
 
@@ -137,4 +137,4 @@ dd_cursor = queryservice.InteractiveQuery2(dd_conn)
 
 ## 后续步骤
 
-通过阅读本文档，您已了解如何从机器学习环境中的[!DNL Python]笔记本连接到Data Distiller。 在机器学习环境中创建从Experience Platform到馈送自定义模型的功能管道的下一步是[浏览和分析数据集](./exploratory-analysis.md)。
+通过阅读本文档，您已了解如何从机器学习环境中的[!DNL Python]笔记本连接到Data Distiller。 从Experience Platform创建功能管道以在机器学习环境中馈送自定义模型的下一步是[浏览和分析数据集](./exploratory-analysis.md)。

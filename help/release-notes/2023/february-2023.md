@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2023 年 2 月）
 description: Adobe Experience Platform 的 2023 年 2 月发行说明。
 exl-id: 1c30a646-d9f8-4749-ac25-40bc48365a40
-source-git-commit: 5bf54374773fd95ae1c40dd00b5dbe633031b70e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1255'
-ht-degree: 97%
+source-wordcount: '1259'
+ht-degree: 91%
 
 ---
 
@@ -28,7 +28,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 ### Assurance {#assurance}
 
-Adobe Assurance 可帮助您检查、证明、模拟和验证您在移动应用程序中收集数据或提供体验的方式。
+Adobe Assurance 可帮助您检查、校对、模拟和验证您在移动应用程序中收集数据或提供体验的方式。
 
 **新增功能或更新后的功能**
 
@@ -48,7 +48,7 @@ Adobe Assurance 可帮助您检查、证明、模拟和验证您在移动应用�
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| [同意策略增强](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-enhancement)用于与[基于文件（批次）的目标](/help/destinations/destination-types.md#file-based)集成 | <p> 当配置文件不再符合同意策略时，Experience Platform 现在会主动将其策略退出通知给基于文件的目标。这是在[ 2023 年 2 月发布](/help/release-notes/2023/january-2023.md#destinations-new-updated-functionality)用于流媒体目标的相同功能后推出的。 </p> <p> <b>注释</b>：此功能仅适用于&#x200B;**[!UICONTROL Privacy and Security Shield]**&#x200B;以及&#x200B;**[!UICONTROL Healthcare Shield]**&#x200B;的客户。 </p> |
+| [同意策略增强](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-enhancement)用于与[基于文件（批次）的目标](/help/destinations/destination-types.md#file-based)集成 | <p> 当轮廓不再符合同意策略时，Experience Platform 现在会主动将其策略退出通知给基于文件的目标。这是在[ 2023 年 2 月发布](/help/release-notes/2023/january-2023.md#destinations-new-updated-functionality)用于流媒体目标的相同功能后推出的。 </p> <p> <b>注释</b>：此功能仅适用于&#x200B;**[!UICONTROL Privacy and Security Shield]**&#x200B;以及&#x200B;**[!UICONTROL Healthcare Shield]**&#x200B;的客户。 </p> |
 
 {style="table-layout:auto"}
 
@@ -56,7 +56,7 @@ Adobe Assurance 可帮助您检查、证明、模拟和验证您在移动应用�
 
 | 文档 | 描述 |
 | ----------- | ----------- |
-| 目标如何运作文档 | <p>我们根据用户的常见问题发布了三篇关于目标如何运作的新文章：</p> <p><ul><li>[目标中可配置的通用导出设置](/help/destinations/how-destinations-work/destinations-configurations.md)</li><li>[不同目标类型的配置文件导出行为](/help/destinations/how-destinations-work/profile-export-behavior.md)</li><li>[目标激活工作流程中的身份处理](/help/destinations/how-destinations-work/identity-handling.md)</li></p> |
+| 目标如何运作文档 | <p>我们根据用户的常见问题发布了三篇关于目标如何运作的新文章：</p> <p><ul><li>[目标中可配置的通用导出设置](/help/destinations/how-destinations-work/destinations-configurations.md)</li><li>[不同目标类型的轮廓导出行为](/help/destinations/how-destinations-work/profile-export-behavior.md)</li><li>[目标激活工作流程中的身份标识处理](/help/destinations/how-destinations-work/identity-handling.md)</li></p> |
 
 有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
 
@@ -76,7 +76,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 组件类型 | 名称 | 描述 |
 | --- | --- | --- |
-| 类 | [[!UICONTROL XDM 单个潜在客户配置文件]](https://github.com/adobe/xdm/pull/1669/files) | XDM 单个潜在客户配置文件类引入了合作伙伴提供的 ID。 |
+| 类 | [[!UICONTROL XDM 单个潜在客户轮廓]](https://github.com/adobe/xdm/pull/1669/files) | XDM 单个潜在客户轮廓类引入了合作伙伴提供的 ID。 |
 
 {style="table-layout:auto"}
 
@@ -92,17 +92,17 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 {style="table-layout:auto"}
 
-有关 Platform 中 XDM 的详细信息，请阅读 [XDM 系统概述](../../xdm/home.md)。
+有关Experience Platform中XDM的更多信息，请阅读[XDM系统概述](../../xdm/home.md)&#x200B;。
 
 ## 查询服务 {#query-service}
 
-查询服务允许您使用标准 SQL 查询 Adobe Experience Platform [!DNL Data Lake] 中的数据。您可以加入数据湖的任何数据集，并作为新数据集获取查询结果，以用于报表、Data Science Workspace，或将数据摄取到实时客户配置文件。
+查询服务允许您使用标准 SQL 查询 Adobe Experience Platform [!DNL Data Lake] 中的数据。您可以加入数据湖的任何数据集，并作为新数据集获取查询结果，以用于报表、Data Science Workspace，或将数据摄取到实时客户轮廓。
 
 **更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 使用 SQL 为配置文件启用数据集 | [在 CTAS 查询中使用 LABEL 使数据集“启用配置文件”](../../query-service/sql/syntax.md#create-table-as-select)，或使用 ALTER 更新要为配置文件启用的现有数据集。您可以使用此扩展的SQL构造为Real-time Customer Profile业务用例提供对派生数据集的无缝支持。 有关更多详细信息，请参阅派生数据集的[无缝SQL流文档](../../query-service/data-distiller/derived-datasets/create-derived-datasets-with-sql.md)。 |
+| 使用 SQL 为轮廓启用数据集 | [在 CTAS 查询中使用 LABEL 使数据集“启用轮廓”](../../query-service/sql/syntax.md#create-table-as-select)，或使用 ALTER 更新要为轮廓启用的现有数据集。您可以使用此扩展的SQL构造为Real-time Customer Profile业务用例提供对派生数据集的无缝支持。 有关更多详细信息，请参阅派生数据集的[无缝SQL流文档](../../query-service/data-distiller/derived-datasets/create-derived-datasets-with-sql.md)。 |
 | 监测计划查询 | 使用[计划查询选项卡](../../query-service/ui/monitor-queries.md)，查找有关查询运行的重要信息并订阅警报。监测查询以获取计划详细信息、状态和错误消息/代码（如果失败）。 |
 | 切换自动完成功能 | [切换查询编辑器自动完成功能](../../query-service/ui/user-guide.md#auto-complete)，消除某些元数据命令并缩短处理时间。此功能会在您编写查询时自动建议潜在的 SQL 关键字和表详细信息。 |
 | 数据集样本 | 在查询中指定采样率，[使用数据集样本创建统一随机样本](../../query-service/key-concepts/dataset-samples.md)，或根据特定标准创建条件样本。 |
@@ -114,7 +114,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 ## Real-Time Customer Data Platform B2B 版 {#b2b}
 
-Real-Time CDP B2B 版本基于 Real-Time Customer Data Platform (Real-Time CDP) 构建，专为采用业务对业务服务模式运营的营销人员而构建。它将来自多个来源的数据汇集在一起&#x200B;，并将其组合成人员和帐户配置文件的单一视图。这种统一的数据使营销人员能够精确定位特定受众，并通过所有可用渠道吸引这些受众。
+Real-Time CDP B2B 版本基于 Real-Time Customer Data Platform (Real-Time CDP) 构建，专为采用业务对业务服务模式运营的营销人员而构建。它将来自多个来源的数据汇集在一起&#x200B;，并将其组合成人员和帐户轮廓的单一视图。这种统一的数据使营销人员能够精确锁定特定受众，并通过所有可用渠道吸引这些受众。
 
 **更新的功能**
 
@@ -128,7 +128,7 @@ Real-Time CDP B2B 版本基于 Real-Time Customer Data Platform (Real-Time CDP) 
 
 ## 源 {#sources}
 
-Adobe Experience Platform 可以从外部源获取数据，并允许您使用 Platform 服务构建、标记和增强该数据。您可以从各种来源获取数据，例如 Adobe 应用程序、基于云的存储、第三方软件和 CRM 系统。
+Adobe Experience Platform可以从外部源摄取数据，并允许您使用Experience Platform服务来构建、标记和增强这些数据。 您可以从各种来源获取数据，例如 Adobe 应用程序、基于云的存储、第三方软件和 CRM 系统。
 
 Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各种数据提供者设置源连接。这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 
@@ -136,8 +136,8 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 | 功能 | 描述 |
 | --- | --- |
-| 用 [!DNL Google PubSub] 指定订阅级访问权限 | 现在，您可以通过在身份验证时提供订阅 ID 来定义在使用 [!DNL Google PubSub] 源时对特定主题订阅的访问权限。有关更多信息，请[使用工作流服务 API](../../sources/tutorials/api/create/cloud-storage/google-pubsub.md) 或[ Platform UI](../../sources/tutorials/ui/create/cloud-storage/google-pubsub.md) 阅读[!DNL Google PubSub]身份验证教程。 |
-| 从 [!DNL Marketo] 提取自定义活动数据 | 您现在可以将自定义活动数据从 [!DNL Marketo] 实例带到 Experience Platform。要提取自定义活动数据，您必须在 B2B 活动架构中设置自定义活动字段组，并使用活动数据集创建数据流。完成数据流后，摄取的数据集将会包含来自 [!DNL Marketo] 实例的标准和自定义活动。然后，您可以使用[查询服务](../../query-service/home.md)来访问您在 Platform 上的自定义活动记录。若要了解更多信息，请阅读有关[为自定义活动数据创建数据流](../../sources/tutorials/ui/create/adobe-applications/marketo-custom-activities.md)的指南。 |
+| 用 [!DNL Google PubSub] 指定订阅级访问权限 | 现在，您可以通过在身份验证时提供订阅 ID 来定义在使用 [!DNL Google PubSub] 源时对特定主题订阅的访问权限。有关详细信息，请使用流服务API](../../sources/tutorials/api/create/cloud-storage/google-pubsub.md)或[Experience Platform UI](../../sources/tutorials/ui/create/cloud-storage/google-pubsub.md)阅读[!DNL Google PubSub]身份验证教程[。 |
+| 从 [!DNL Marketo] 提取自定义活动数据 | 您现在可以将自定义活动数据从 [!DNL Marketo] 实例带到 Experience Platform。要提取自定义活动数据，您必须在 B2B 活动架构中设置自定义活动字段组，并使用活动数据集创建数据流。完成数据流后，摄取的数据集将会包含来自 [!DNL Marketo] 实例的标准和自定义活动。然后，您可以使用[查询服务](../../query-service/home.md)来访问Experience Platform上的自定义活动记录。 若要了解更多信息，请阅读有关[为自定义活动数据创建数据流](../../sources/tutorials/ui/create/adobe-applications/marketo-custom-activities.md)的指南。 |
 | 从 [!DNL Marketo] 中排除无人认领的帐户 | 现在，您可以配置在为公司数据创建数据流时是否要排除或包含无人认领的帐户。若要了解更多信息，请阅读有关[为  [!DNL Marketo]](../../sources/tutorials/ui/create/adobe-applications/marketo.md) 创建源连接和数据流的指南。 |
 
 {style="table-layout:auto"}

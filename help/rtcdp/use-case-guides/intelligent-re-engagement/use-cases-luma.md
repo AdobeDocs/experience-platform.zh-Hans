@@ -3,16 +3,16 @@ title: 智能重新参与Luma示例
 description: 智能重新参与用例的示例视频。
 feature: Use Cases
 exl-id: 635ac7ce-2059-4fed-8a4a-e32b2cd7ceea
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '60'
+source-wordcount: '61'
 ht-degree: 1%
 
 ---
 
 # 智能地重新吸引客户：Luma示例
 
-了解Adobe如何基于数据架构师和数据工程师教程以及Platform Web SDK教程中记录的基础实施，调整智能重新参与用例以用于Luma演示站点。
+了解Adobe如何基于数据架构师和数据工程师教程以及Experience Platform Web SDK教程中记录的基础实施，调整智能重新参与用例以用于Luma演示站点。
 
 ## 实施
 

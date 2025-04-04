@@ -1,18 +1,18 @@
 ---
 title: LiveRamp — 载入连接
-description: 了解如何使用LiveRamp连接器将受众从Adobe Real-time Customer Data Platform载入LiveRamp Connect。
+description: 了解如何使用LiveRamp连接器将受众从Adobe Real-Time Customer Data Platform载入LiveRamp Connect。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: b8ce7ec2-7af9-4d26-b12f-d38c85ba488a
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1941'
+source-wordcount: '1948'
 ht-degree: 3%
 
 ---
 
 # [!DNL LiveRamp - Onboarding]连接 {#liveramp-onboarding}
 
-使用[!DNL LiveRamp - Onboarding]连接将受众从Adobe Real-time Customer Data Platform载入[!DNL LiveRamp Connect]。
+使用[!DNL LiveRamp - Onboarding]连接将受众从Adobe Real-Time Customer Data Platform载入[!DNL LiveRamp Connect]。
 
 ## 用例 {#use-cases}
 
@@ -38,8 +38,8 @@ ht-degree: 3%
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -50,7 +50,7 @@ ht-degree: 3%
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
 | 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出具有[!DNL LiveRamp - Onboarding]目标中使用的标识符（姓名、电话号码或其他）的受众的所有成员。 |
-| 导出频率 | **[!UICONTROL 每日批次]** | 由于用户档案是根据受众评估在Experience Platform中进行更新的，因此用户档案（身份）每天都会更新一次以流向目标平台。 阅读有关[基于批处理文件的目标](/help/destinations/destination-types.md#file-based)的详细信息。 |
+| 导出频率 | **[!UICONTROL 每日批次]** | 由于是根据受众评估在Experience Platform中更新用户档案的，因此用户档案（身份）每天都会在目标平台下游更新一次。 阅读有关[基于批处理文件的目标](/help/destinations/destination-types.md#file-based)的详细信息。 |
 
 {style="table-layout:auto"}
 
@@ -104,7 +104,7 @@ ht-degree: 3%
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
-![Platform UI屏幕截图显示如何填写目标的详细信息](../../assets/catalog/advertising/liveramp-onboarding/liveramp-sftp-destination-details.png)
+![Experience Platform UI屏幕截图显示如何填写目标的详细信息](../../assets/catalog/advertising/liveramp-onboarding/liveramp-sftp-destination-details.png)
 
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
@@ -135,13 +135,13 @@ ht-degree: 3%
 * **[!UICONTROL 频率]**：[!UICONTROL 每日]
 * **[!UICONTROL 日期]**：根据需要选择导出开始时间和结束时间。
 
-![显示受众计划步骤的Platform UI屏幕截图。](../../assets/catalog/advertising/liveramp-onboarding/liveramp_scheduling_screenshot.png)
+![显示受众计划步骤的Experience Platform UI屏幕截图。](../../assets/catalog/advertising/liveramp-onboarding/liveramp_scheduling_screenshot.png)
 
 导出的文件名当前不可由用户配置。 导出到[!DNL LiveRamp - Onboarding]目标的所有文件都会根据以下模板自动命名：
 
 `%ORGANIZATION_NAME%_%DESTINATION%_%DESTINATION_INSTANCE_ID%_%DATETIME%`
 
-![显示导出的文件名模板的平台UI屏幕截图。](../../assets/catalog/advertising/liveramp-onboarding/liveramp-file-name.png)
+![Experience Platform UI屏幕截图显示了导出的文件名模板。](../../assets/catalog/advertising/liveramp-onboarding/liveramp-file-name.png)
 
 例如，名为[!DNL Luma]的组织的导出文件的名称可能类似于以下内容：
 
@@ -165,19 +165,19 @@ Luma_LiveRamp_52137231-4a99-442d-804c-39a09ddd005d_20230330_153857.csv
 
 1. 在&#x200B;**[!UICONTROL 映射]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL 添加新映射]**。 您将在屏幕上看到一个新映射行。
 
-   ![显示映射屏幕的Experience PlatformUI屏幕快照。](../../assets/catalog/advertising/liveramp-onboarding/liveramp-add-new-mapping.png)
+   ![显示映射屏幕的Experience Platform UI屏幕快照。](../../assets/catalog/advertising/liveramp-onboarding/liveramp-add-new-mapping.png)
 
 2. 在&#x200B;**[!UICONTROL 选择源字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择属性]**&#x200B;类别并选择要映射的XDM属性，或选择&#x200B;**[!UICONTROL 选择身份命名空间]**&#x200B;类别并选择要映射到目标的身份。
 
-   ![Experience PlatformUI屏幕显示源映射屏幕。](../../assets/catalog/advertising/liveramp-onboarding/liveramp-source-mapping.png)
+   ![显示源映射屏幕的Experience Platform UI屏幕快照。](../../assets/catalog/advertising/liveramp-onboarding/liveramp-source-mapping.png)
 
 3. 在&#x200B;**[!UICONTROL 选择目标字段]**&#x200B;窗口中，输入要映射选定源字段的属性名称。 此处定义的属性名称将在导出的CSV文件中反映为列标题。
 
-   ![Experience PlatformUI屏幕快照显示目标映射屏幕。](../../assets/catalog/advertising/liveramp-onboarding/liveramp-target-mapping.png)
+   ![Experience Platform UI屏幕快照显示目标映射屏幕。](../../assets/catalog/advertising/liveramp-onboarding/liveramp-target-mapping.png)
 
    也可以直接在&#x200B;**[!UICONTROL 目标字段]**&#x200B;中输入属性名称。
 
-   ![Experience PlatformUI屏幕快照显示目标映射屏幕。](../../assets/catalog/advertising/liveramp-onboarding/liveramp-target-field.png)
+   ![Experience Platform UI屏幕快照显示目标映射屏幕。](../../assets/catalog/advertising/liveramp-onboarding/liveramp-target-field.png)
 
 添加所有所需映射后，选择&#x200B;**[!UICONTROL 下一步]**&#x200B;并完成激活工作流。
 
@@ -185,9 +185,9 @@ Luma_LiveRamp_52137231-4a99-442d-804c-39a09ddd005d_20230330_153857.csv
 
 您的数据将导出到您配置的[!DNL LiveRamp - Onboarding]存储位置，即CSV文件。
 
-导出的文件最大行数为1000万。 如果所选受众超过1000万行，则Experience Platform每次投放生成多个文件。 如果您希望超过单个文件限制，请联系您的[!DNL LiveRamp]代表，让他们为您配置批量摄取。
+导出的文件最大行数为1000万。 如果所选受众超过1000万行，则Experience Platform每次投放会生成多个文件。 如果您希望超过单个文件限制，请联系您的[!DNL LiveRamp]代表，让他们为您配置批量摄取。
 
-将文件导出到[!DNL LiveRamp - Onboarding]目标时，Platform为每个[合并策略ID](../../../profile/merge-policies/overview.md)生成一个CSV文件。
+将文件导出到[!DNL LiveRamp - Onboarding]目标时，Experience Platform为每个[合并策略ID](../../../profile/merge-policies/overview.md)生成一个CSV文件。
 
 例如，我们来考虑以下受众：
 
@@ -196,7 +196,7 @@ Luma_LiveRamp_52137231-4a99-442d-804c-39a09ddd005d_20230330_153857.csv
 * 受众C（合并策略1）
 * 受众D（合并策略1）
 
-Platform会将两个CSV文件导出到[!DNL LiveRamp - Onboarding]：
+Experience Platform会将两个CSV文件导出到[!DNL LiveRamp - Onboarding]：
 
 * 一个包含受众A、C和D的CSV文件；
 * 一个包含受众B的CSV文件。
@@ -211,7 +211,7 @@ Platform会将两个CSV文件导出到[!DNL LiveRamp - Onboarding]：
 * `Expired`：配置文件不再符合受众条件，但以前符合条件。
 * `""`（空字符串）：个人资料从未符合受众的条件。
 
-例如，如果导出的CSV文件具有一个`email`属性、两个源自Experience Platform[分段服务](../../../segmentation/home.md)的受众和一个[导入的](../../../segmentation/ui/audience-portal.md#import-audience)外部受众，则该文件可能如下所示：
+例如，如果导出的CSV文件具有一个`email`属性、两个源自Experience Platform [分段服务](../../../segmentation/home.md)的受众和一个[导入的](../../../segmentation/ui/audience-portal.md#import-audience)外部受众，则该文件可能如下所示：
 
 ```csv
 email,ups_aa2e3d98-974b-4f8b-9507-59f65b6442df,ups_45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f,CustomerAudienceUpload_7729e537-4e42-418e-be3b-dce5e47aaa1e
@@ -223,15 +223,15 @@ abc107@testemailabc.com,active,expired,active
 abc101@testemailabc.com,active,active,
 ```
 
-在上述示例中，`ups_aa2e3d98-974b-4f8b-9507-59f65b6442df`和`ups_45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f`部分描述了源自分段服务的受众，而`CustomerAudienceUpload_7729e537-4e42-418e-be3b-dce5e47aaa1e`描述了作为[自定义上传](../../../segmentation/ui/audience-portal.md#import-audience)导入到Platform中的受众。
+在上述示例中，`ups_aa2e3d98-974b-4f8b-9507-59f65b6442df`和`ups_45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f`部分描述了源自分段服务的受众，而`CustomerAudienceUpload_7729e537-4e42-418e-be3b-dce5e47aaa1e`描述了作为[自定义上传](../../../segmentation/ui/audience-portal.md#import-audience)导入到Experience Platform中的受众。
 
-由于Platform为每个[合并策略ID](../../../profile/merge-policies/overview.md)生成一个CSV文件，因此它还为每个合并策略ID生成单独的数据流运行。
+由于Experience Platform为每个[合并策略ID](../../../profile/merge-policies/overview.md)生成一个CSV文件，因此它还为每个合并策略ID生成单独的数据流运行。
 
 这意味着[数据流运行](../../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations)页面中的&#x200B;**[!UICONTROL 激活的身份]**&#x200B;和&#x200B;**[!UICONTROL 接收的用户档案]**&#x200B;指标将使用相同合并策略的每个受众组进行聚合，而不是针对每个受众显示。
 
 由于正在为使用相同合并策略的受众组生成数据流运行，因此受众名称不会显示在[监视仪表板](../../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations)中。
 
-![Experience PlatformUI屏幕快照显示已激活身份指标。](../../assets/catalog/advertising/liveramp-onboarding/liveramp-metrics.png)
+![Experience Platform UI屏幕快照显示已激活身份指标。](../../assets/catalog/advertising/liveramp-onboarding/liveramp-metrics.png)
 
 ## 将导出的数据上传到LiveRamp {#upload-to-liveramp}
 

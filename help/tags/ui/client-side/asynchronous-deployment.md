@@ -2,10 +2,10 @@
 title: 异步部署
 description: 了解如何在您的网站上异步部署Adobe Experience Platform标记库。
 exl-id: ed117d3a-7370-42aa-9bc9-2a01b8e7794e
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1045'
-ht-degree: 56%
+source-wordcount: '1046'
+ht-degree: 60%
 
 ---
 
@@ -18,9 +18,9 @@ ht-degree: 56%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-我们的产品需要提高JavaScript库的性能和对其进行无阻塞部署，这对于Adobe Experience Cloud用户而言越来越重要。 诸如[[!DNL Google PageSpeed]](https://developers.google.com/speed/pagespeed/insights/)之类的工具建议用户更改他们在网站上部署Adobe库的方式。 本文介绍了如何以异步方式使用AdobeJavaScript库。
+我们的产品需要提高JavaScript库的性能和对其进行无阻塞部署，这对于Adobe Experience Cloud用户而言越来越重要。 诸如[[!DNL Google PageSpeed]](https://developers.google.com/speed/pagespeed/insights/)之类的工具建议用户更改他们在网站上部署Adobe库的方式。 本文介绍了如何以异步方式使用Adobe JavaScript库。
 
 ## 同步与异步
 
@@ -106,4 +106,4 @@ ht-degree: 56%
    <script type="text/javascript">_satellite.pageBottom();</script>
    ```
 
-   此代码可告知Platform浏览器解析器已到达页面底部。 在此之前可能未加载和执行标记，因此调用`_satellite.pageBottom()`会导致错误，并且Page Bottom事件类型可能无法按预期运行。
+   此代码可告知Experience Platform浏览器解析器已到达页面底部。 在此之前可能未加载和执行标记，因此调用`_satellite.pageBottom()`会导致错误，并且Page Bottom事件类型可能无法按预期运行。

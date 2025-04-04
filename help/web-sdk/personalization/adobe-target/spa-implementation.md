@@ -1,11 +1,11 @@
 ---
-title: 适用于Adobe Experience Platform Web SDK的单页应用程序实施
+title: Adobe Experience Platform Web SDK的单页应用程序实施
 description: 了解如何使用Adobe Target创建Adobe Experience Platform Web SDK的单页应用程序(SPA)实施。
-keywords: Target；Adobe Target；XDM视图；视图；单页应用程序；SPA；SPA生命周期；客户端；AB测试；AB；体验定位；XT；VEC
+keywords: target；adobe target；xdm视图；视图；单页应用程序；SPA；SPA生命周期；客户端；AB测试；AB；体验定位；XT；VEC
 exl-id: cc48c375-36b9-433e-b45f-60e6c6ea4883
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1817'
+source-wordcount: '1818'
 ht-degree: 0%
 
 ---
@@ -21,13 +21,13 @@ Adobe Experience Platform Web SDK提供了丰富的功能，使您的企业能�
 
 ![与传统页面生命周期相比显示SPA生命周期的图表。](assets/spa-vs-traditional-lifecycle.png)
 
-## Platform Web SDK for SPA的优势
+## 适用于SPA的Experience Platform Web SDK的优势
 
-以下是为单页应用程序使用Adobe Experience Platform Web SDK的一些好处：
+在单页应用程序中使用Adobe Experience Platform Web SDK具有以下好处：
 
 * 能够在页面加载时缓存所有选件，将多次服务器调用减少至一次服务器调用。
 * 由于选件是通过缓存立即显示的，不存在传统服务器调用引入的时间延迟，因此极大地提升了网站上的用户体验。
-* 通过一行代码和一次性开发人员设置，营销人员可以在您的SPA上通过可视化体验编辑器(VEC)创建和运行A/B和体验定位(XT)活动。
+* 通过一行代码和一次性开发人员设置，营销人员能够通过SPA上的可视化体验编辑器(VEC)创建和运行A/B和体验定位(XT)活动。
 
 ## XDM视图和单页应用程序
 
@@ -215,7 +215,7 @@ class Checkout extends Component {
 } 
 ```
 
-## 使用SPA的可视化体验编辑器
+## 使用适用于SPA的可视化体验编辑器
 
 当您完成定义XDM视图并使用传入的XDM视图实施`sendEvent()`时，VEC将能够检测到这些视图，并允许用户为A/B或XT活动创建操作和修改。
 
@@ -243,7 +243,7 @@ class Checkout extends Component {
 | 移动 | 将操作移动到页面加载事件或修改面板中已存在的任何其他视图。<br/><br/>**页面加载事件：**&#x200B;与页面加载事件对应的任何操作会应用于Web应用程序的初始页面加载。 <br/><br/>**注意：**&#x200B;完成移动操作后，必须通过“浏览”导航到VEC中的视图，以查看移动操作是否有效。 如果该操作未应用到视图，您将看到一个错误。 |
 | Delete | 删除操作。 |
 
-## 使用VEC for SPA示例
+## 使用SPA VEC示例
 
 此部分概述了三个使用可视化体验编辑器为A/B或XT活动创建操作和修改的示例。
 

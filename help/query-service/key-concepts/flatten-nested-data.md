@@ -3,9 +3,9 @@ keywords: Experience Platform；查询服务；查询服务；嵌套数据结构
 title: 拼合嵌套数据结构以用于BI工具
 description: 本文档介绍在将第三方BI工具与查询服务结合使用时，如何在会话期间拼合所有表和视图的XDM架构。
 exl-id: 7e534c0a-db6c-463e-85da-88d7b2534ece
-source-git-commit: 5f2b44c364183b7becf69f491b41e9d5558accc2
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '857'
+source-wordcount: '858'
 ht-degree: 0%
 
 ---
@@ -22,11 +22,11 @@ ht-degree: 0%
 
 使用`FLATTEN`设置需要您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [XDM System](../../xdm/home.md)： XDM及其在Experience Platform中的实现的高级概述。
+* [XDM System](../../xdm/home.md)： XDM及其在Experience Platform中实现的高级概述。
 
-   * [创建临时架构](../../xdm/tutorials/ad-hoc.md)：具有仅供单个数据集使用的命名字段的XDM架构称为临时架构。 临时架构用于各种数据摄取工作流中，用于Experience Platform和创建特定类型的源连接。
+   * [创建临时架构](../../xdm/tutorials/ad-hoc.md)：具有仅供单个数据集使用的命名字段的XDM架构称为临时架构。 临时架构用于Experience Platform的各种数据摄取工作流以及创建特定类型的源连接。
 
-* [沙盒](../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [沙盒](../../sandboxes/home.md)： Experience Platform提供了可将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 * [嵌套数据结构](./nested-data-structures.md)：此文档提供了如何使用复杂数据类型（包括嵌套数据结构）创建、处理或转换数据集的示例。
 
@@ -109,7 +109,7 @@ GROUP BY 1;
 | 数组 | 使用显式数组索引或`EXPLODE`函数访问数组。 |
 | 地图 | 使用字符串键访问映射下的值以访问映射。 |
 
-要解决Map和Array的限制，您需要使用BI工具原始SQL编辑，如Power BI中的“高级选项” — > SQL语句。
+要解决Map和Array限制，您需要使用BI工具原始SQL编辑，如Power BI中的“高级选项” — > SQL语句。
 
 需要使用BI工具（如原始SQL编辑）来解决映射和数组限制。 请参阅有关如何[使用Power BI高级选项在SQL语句部分中输入自定义SQL查询](../clients/power-bi.md#import-tables-using-custom-sql)的指南。
 

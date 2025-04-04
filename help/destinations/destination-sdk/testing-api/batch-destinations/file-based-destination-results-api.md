@@ -2,9 +2,9 @@
 description: 此页说明如何使用/testing/destinationInstance API端点查看测试结果的完整详细信息。 此API端点返回的结果与使用流服务API监视数据流时获得的结果相同。
 title: 查看详细的激活结果
 exl-id: a7b27beb-825e-47fd-8939-f499c3298f68
-source-git-commit: 9ac6b075af3805da4dad0dd6442d026ae96ab5c7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '545'
+source-wordcount: '547'
 ht-degree: 1%
 
 ---
@@ -32,8 +32,8 @@ ht-degree: 1%
 在使用`/testing/destinationInstance`端点之前，请确保您满足以下条件：
 
 * 您有一个通过Destination SDK创建的基于文件的现有目标，您可以在[目标目录](../../../ui/destinations-workspace.md)中看到该目标。
-* 您已在Experience PlatformUI中为目标创建至少一个激活流程。
-* 要成功发出API请求，您需要与要测试的目标实例对应的目标实例ID。 在Platform UI中浏览与目标之间的连接时，从URL获取应在API调用中使用的目标实例ID。
+* 您已在Experience Platform UI中为目标创建至少一个激活流程。
+* 要成功发出API请求，您需要与要测试的目标实例对应的目标实例ID。 在Experience Platform UI中浏览与目标之间的连接时，从URL获取应在API调用中使用的目标实例ID。
 
   ![UI图像，显示如何从URL获取目标实例ID。](../../assets/testing-api/get-destination-instance-id.png)
 * 您以前已[测试过目标配置](file-based-destination-testing-api.md)，并且收到了有效的API响应，其中包含`results`属性。 您将使用此`results`值进一步测试您的目标。
@@ -213,10 +213,10 @@ curl -X GET 'https://platform.adobe.io/data/core/activation/authoring/testing/de
 
 ## API错误处理 {#api-error-handling}
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅平台疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
+Destination SDK API端点遵循常规Experience Platform API错误消息原则。 请参阅Experience Platform疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤
 
 阅读本文档后，您现在知道如何测试基于文件的目标配置并查看激活结果的完整详细信息。
 
-如果您正在构建公共目标，您现在可以[提交目标配置](../../guides/submit-destination.md)以Adobe审查。
+如果您正在构建公共目标，您现在可以[将目标配置](../../guides/submit-destination.md)提交到Adobe以供审查。

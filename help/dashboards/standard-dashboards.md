@@ -2,9 +2,9 @@
 title: 标准仪表板
 description: 了解如何构建和管理自定义仪表板，以便在其中创建、添加和编辑定制构件以可视化关键量度。
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1624'
+source-wordcount: '1625'
 ht-degree: 3%
 
 ---
@@ -22,7 +22,7 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 ## 创建自定义仪表板
 
-要创建自定义功能板，请先导航到功能板清单。 从Platform UI的左侧导航中选择&#x200B;**[!UICONTROL 仪表板]**，然后选择&#x200B;**[!UICONTROL 创建仪表板]**。
+要创建自定义功能板，请先导航到功能板清单。 从Experience Platform UI的左侧导航中选择&#x200B;**[!UICONTROL 仪表板]**，然后选择&#x200B;**[!UICONTROL 创建仪表板]**。
 
 ![左侧导航中包含功能板的功能板清单和“创建功能板”突出显示。](./images/standard-dashboards/create-dashboard.png)
 
@@ -64,7 +64,7 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 #### 选择数据模型 {#select-data-model}
 
-出现[!UICONTROL 选择数据模型]对话框。 从左列中选择一个数据模型，以显示所有可用表的预览列表。 Real-time Customer Data Platform的预配置数据模型名为[!UICONTROL CDPInsights]。
+出现[!UICONTROL 选择数据模型]对话框。 从左列中选择一个数据模型，以显示所有可用表的预览列表。 Real-Time Customer Data Platform的预配置数据模型名为[!UICONTROL CDPInsights]。
 
 >[!TIP]
 >
@@ -152,7 +152,7 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 ![带有自定义小部件和突出显示“保存”按钮的用户定义仪表板。](./images/standard-dashboards/user-defined-dashboard.png)
 
-为了确保Adobe Real-time Customer Data Platform分析功能板的每个查询都有足够的资源来高效执行，API会通过为每个查询分配并发插槽来跟踪资源使用情况。 系统最多可以处理4个并发查询，因此可以在任意给定时间使用4个并发查询插槽。 查询基于并发插槽放入队列中，然后在队列中等待，直到有足够的并发插槽可用。
+为了确保Adobe Real-Time Customer Data Platform分析功能板的每个查询都有足够的资源来高效执行，API会通过为每个查询分配并发插槽来跟踪资源使用情况。 系统最多可以处理4个并发查询，因此可以在任意给定时间使用4个并发查询插槽。 查询基于并发插槽放入队列中，然后在队列中等待，直到有足够的并发插槽可用。
 
 ### 编辑、复制或删除构件 {#duplicate}
 
@@ -180,6 +180,6 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 要发现[配置文件](./guides/profiles.md#standard-widgets)、[区段](./guides/audiences.md#standard-widgets)和[目标](./guides/destinations.md#standard-widgets)功能板的可用预配置量度和可视化图表，请参阅其各自文档中的标准构件列表。
 
-要加深您对Experience Platform中功能板的了解，请观看以下视频：
+要加深您对Experience Platform中的功能板的了解，请观看以下视频：
 
 >[!VIDEO](https://video.tv.adobe.com/v/3409637?quality=12&learn=on)

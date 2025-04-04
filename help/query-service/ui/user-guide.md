@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询编辑器UI指南
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发以及非交互式查询，以填充Experience Platform中的数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: ae189e2f6d303043e32e6ca658161bcdf4c28dc6
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '2682'
+source-wordcount: '2683'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在[!DNL Experience Platform]用户界面中编写、验证和运行客户体验数据的查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发，以及运行非交互式查询以填充[!DNL Experience Platform]中的数据集。
 
-有关查询服务的概念和功能的详细信息，请参阅[查询服务概述](../home.md)。 要了解有关如何在[!DNL Platform]上导航查询服务用户界面的详细信息，请参阅[查询服务UI概述](./overview.md)。
+有关查询服务的概念和功能的详细信息，请参阅[查询服务概述](../home.md)。 要了解有关如何在[!DNL Experience Platform]上导航查询服务用户界面的详细信息，请参阅[查询服务UI概述](./overview.md)。
 
 ## 快速入门 {#getting-started}
 
@@ -97,7 +97,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->由于Platform UI最多可支持1000行，因此超过1000的LIMIT值将被忽略。
+>由于Experience Platform UI最多可支持1000行，因此超过1000的LIMIT值将被忽略。
 
 ![结果计数下拉列表突出显示的查询编辑器。](../images/ui/query-editor/result-count.png)
 
@@ -258,4 +258,4 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 ## 后续步骤
 
-现在您已经知道查询编辑器中提供了哪些功能以及如何导航应用程序，您可以开始直接在[!DNL Platform]中创作自己的查询。 有关对[!DNL Data Lake]中的数据集运行SQL查询的详细信息，请参阅[运行查询](../best-practices/writing-queries.md)指南。
+现在您已经知道查询编辑器中提供了哪些功能以及如何导航应用程序，您可以开始直接在[!DNL Experience Platform]中创作自己的查询。 有关对[!DNL Data Lake]中的数据集运行SQL查询的详细信息，请参阅[运行查询](../best-practices/writing-queries.md)指南。

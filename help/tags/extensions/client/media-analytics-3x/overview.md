@@ -1,19 +1,19 @@
 ---
-title: Adobe Medium Analytics (3.x SDK) for Audio and Video扩展概述
-description: 了解Adobe Experience Platform中的Adobe Medium Analytics (3.x SDK) for Audio and Video标记扩展。
+title: Adobe Media Analytics (3.x SDK) for Audio and Video扩展概述
+description: 了解Adobe Experience Platform中的Adobe Media Analytics (3.x SDK) for Audio and Video标记扩展。
 exl-id: 7289d57d-7e7f-4832-9469-3b5a62183a32
-source-git-commit: e21ed1e9fd0c2678551cfc664b611076c198a157
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '707'
-ht-degree: 66%
+source-wordcount: '708'
+ht-degree: 72%
 
 ---
 
-# Adobe Medium Analytics (3.x SDK) for Audio and Video扩展概述
+# Adobe Media Analytics (3.x SDK) for Audio and Video扩展概述
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用本文档了解有关安装、配置和实施 Adobe Media Analytics (3.x SDK) for Audio and Video 扩展（Media Analytics 扩展）的信息。其中包括使用此扩展构建规则时可用的选项，以及一些示例和指向示例的链接。
 
@@ -33,7 +33,7 @@ Media Analytics (MA) 扩展添加了核心 JavaScript Media SDK (Media 3.x SDK)�
 
 ## 安装和配置 MA 扩展
 
-* **安装：**&#x200B;要安装MA扩展，请打开您的扩展属性，选择&#x200B;**[!UICONTROL Extensions > Catalog]**，将鼠标悬停在&#x200B;**[!UICONTROL Adobe Medium Analytics (3.x SDK) for Audio and Video]**&#x200B;扩展上，然后选择&#x200B;**[!UICONTROL 安装]**。
+* **安装：**&#x200B;要安装MA扩展，请打开您的扩展属性，选择&#x200B;**[!UICONTROL Extensions > Catalog]**，将鼠标悬停在&#x200B;**[!UICONTROL Adobe Media Analytics (3.x SDK) for Audio and Video]**&#x200B;扩展上，然后选择&#x200B;**[!UICONTROL 安装]**。
 
 * **配置：**&#x200B;要配置MA扩展，请打开[!UICONTROL 扩展]选项卡，将鼠标悬停在该扩展上，然后选择&#x200B;**[!UICONTROL 配置]**：
 
@@ -110,4 +110,4 @@ MA扩展会将`media`作为共享模块公开给其他扩展。 （有关共享�
 
 >[!NOTE]
 >
->**测试：**&#x200B;对于此版本，要测试您的扩展，必须将其上传到[平台](../../../extension-dev/submit/upload-and-test.md)，您可以在其中访问所有依赖的扩展。
+>**测试：**&#x200B;对于此版本，要测试您的扩展，必须将其上传到[Experience Platform](../../../extension-dev/submit/upload-and-test.md)，您可以在其中访问所有依赖的扩展。

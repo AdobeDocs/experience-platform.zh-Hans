@@ -2,9 +2,9 @@
 title: 目标概述
 description: 目标是预先构建的与目标平台的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用Adobe Experience Platform中的“目标”来激活跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例的已知和未知数据。
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: 8d57694ffe0ac962b988ebcf9f35fbb7bf816c04
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1359'
+source-wordcount: '1368'
 ht-degree: 3%
 
 ---
@@ -24,11 +24,11 @@ ht-degree: 3%
 
 ## 目标和源 {#destinations-and-sources}
 
-Platform的核心功能之一是摄取您的第一方数据，并根据您的业务需求激活该数据。 使用[源](../sources/home.md)将数据摄取到Platform中，并使用目标从Platform导出数据。
+Experience Platform的核心功能之一是摄取您的第一方数据，并根据您的业务需求激活它。 使用[源](../sources/home.md)将数据摄取到Experience Platform中，并使用目标从Experience Platform导出数据。
 
 ## 目标步骤 {#steps}
 
-* 从Platform中所有可用目标的[自助服务目录](./catalog/overview.md)中进行选择。
+* 从Experience Platform中可用的所有目标的[自助服务目录](./catalog/overview.md)中进行选择。
 * 使用目标将受众或数据集发送到营销自动化平台、数字广告平台等。
 * 定期安排数据导出到您的首选目标。
 
@@ -38,7 +38,7 @@ Platform的核心功能之一是摄取您的第一方数据，并根据您的业
 
 * 浏览可在其中激活数据的目标平台目录；
 * 创建、编辑、激活和禁用流向目录中的目标的数据流；
-* 在存储位置创建一个帐户，或将Platform链接到目标平台中的帐户；
+* 在存储位置创建一个帐户，或将Experience Platform关联到目标平台中的帐户；
 * 选择应将哪些受众或数据集激活到目标；
 * 选择在将受众激活到某些目标（如电子邮件营销目标、CRM平台、云存储位置等）时要导出的[体验数据模型(XDM)字段](../xdm/home.md)。
 * 将不同类型的用户档案和受众激活到目标 — 人员、帐户和潜在客户。
@@ -55,7 +55,7 @@ Experience Platform目标目录中的某些连接器是由Adobe生成和维护�
 
 ## 目标和访问控制 {#access-controls}
 
-Platform中的目标功能可与Adobe Experience Platform访问控制权限配合使用。 根据用户的权限级别，您可以查看、管理和激活目标。 有关各个权限的信息，请转到Adobe Experience Platform中的[访问控制](../access-control/home.md)，然后向下滚动到页面底部的表。
+Experience Platform中的目标功能可与Adobe Experience Platform访问控制权限配合使用。 根据用户的权限级别，您可以查看、管理和激活目标。 有关各个权限的信息，请转到Adobe Experience Platform中的[访问控制](../access-control/home.md)，然后向下滚动到页面底部的表。
 
 下表概述了对目标执行某些操作所需的权限和权限组合。
 
@@ -102,14 +102,14 @@ Adobe Experience Platform中基于属性的访问控制允许管理员根据属�
 
 ## 将数据激活到目标的数据治理限制 {#data-governance}
 
-通过以下方式为Platform目标强制执行数据管理：
+通过以下方式为Experience Platform目标强制执行数据管理：
 
 * 可在创建目标工作流中选择的&#x200B;*营销操作*；
 * *数据使用策略*，用于限制将包含特定使用标签的数据激活到具有特定营销操作的目标。
 
-有关[营销操作](../data-governance/policies/overview.md)和[解决数据策略违规](../data-governance/enforcement/auto-enforcement.md)的更多信息，请参阅Platform文档中的数据治理。
+有关[营销操作](../data-governance/policies/overview.md)和[解决数据策略冲突](../data-governance/enforcement/auto-enforcement.md)的更多信息，请参阅Experience Platform中的“数据管理”文档。
 
-有关在创建目标工作流中选择营销操作的更多信息，请参阅Platform中不同目标类型的以下页面：
+有关在创建目标工作流中选择营销操作的更多信息，请参阅以下页面，了解Experience Platform中的各种目标类型：
 
 * [Advertising目标 — Google Ad Manager](./catalog/advertising/google-ad-manager.md)
 * [Advertising目标 — Google Ads](./catalog/advertising/google-ads-destination.md)

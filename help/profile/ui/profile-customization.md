@@ -3,16 +3,16 @@ keywords: Experience Platform；配置文件；实时客户配置文件；用户
 title: UI中的配置文件详细信息自定义
 description: 本指南提供了分步说明，用于自定义在Adobe Experience Platform UI中实时客户个人资料数据的显示方式。
 exl-id: 76cf8420-cc50-4a56-9f6d-5bfc01efcdb3
-source-git-commit: 69ac6d3f98675df11183082ecbbb49d18ddb57af
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1394'
+source-wordcount: '1395'
 ht-degree: 0%
 
 ---
 
 # [!DNL Real-Time Customer Profile]详细信息自定义 {#profile-detail-customization}
 
-在Adobe Experience Platform用户界面中，您可以以客户配置文件的形式查看并与[!DNL Real-Time Customer Profile]数据进行交互。 UI中显示的配置文件信息已从多个配置文件片段合并在一起，形成每个客户的单个视图。 这包括基本属性、链接身份和渠道偏好设置等详细信息。 用户档案中显示的默认字段也可以在组织级别更改为显示首选[!DNL Profile]属性。 本指南提供了分步说明，用于自定义[!DNL Profile]数据在Platform UI中的显示方式。
+在Adobe Experience Platform用户界面中，您可以以客户配置文件的形式查看并与[!DNL Real-Time Customer Profile]数据进行交互。 UI中显示的配置文件信息已从多个配置文件片段合并在一起，形成每个客户的单个视图。 这包括基本属性、链接身份和渠道偏好设置等详细信息。 用户档案中显示的默认字段也可以在组织级别更改为显示首选[!DNL Profile]属性。 本指南提供了分步说明，用于自定义在Experience Platform UI中显示[!DNL Profile]数据的方式。
 
 有关配置文件UI的完整指南，请访问[配置文件UI指南](user-guide.md)。
 
@@ -74,7 +74,7 @@ ht-degree: 0%
 
 ## 添加新信息卡 {#add-a-new-card}
 
-要进一步自定义Experience Platform中配置文件的外观，您可以选择向功能板添加新信息卡，并选择希望在这些信息卡上显示的属性。 要开始，请在&#x200B;**[!UICONTROL 详细信息]**&#x200B;选项卡上选择&#x200B;**[!UICONTROL 修改仪表板]**。
+要进一步自定义Experience Platform中配置文件的外观，您可以选择向功能板添加新信息卡，并选择您希望在这些信息卡上显示的属性。 要开始，请在&#x200B;**[!UICONTROL 详细信息]**&#x200B;选项卡上选择&#x200B;**[!UICONTROL 修改仪表板]**。
 
 ![自定义配置文件详细信息按钮突出显示。](../images/profile-customization/customize-profile-details.png)
 
@@ -110,4 +110,4 @@ ht-degree: 0%
 
 ## 后续步骤
 
-通过阅读本文档，您现在应该能够更新组织的配置文件视图，包括添加和删除信息卡、编辑信息卡详细信息和属性，以及重新排序信息卡和调整信息卡大小。 要了解有关在Experience PlatformUI中使用[!DNL Profile]数据的更多信息，请参阅[[!DNL Profile] 用户指南](user-guide.md)。
+通过阅读本文档，您现在应该能够更新组织的配置文件视图，包括添加和删除信息卡、编辑信息卡详细信息和属性，以及重新排序信息卡和调整信息卡大小。 要了解有关在Experience Platform UI中使用[!DNL Profile]数据的更多信息，请参阅[[!DNL Profile] 用户指南](user-guide.md)。

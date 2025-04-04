@@ -3,9 +3,9 @@ title: 适用于流SDK UI的文档自助服务模板
 description: 了解如何使用UI将流数据从源引入Adobe Experience Platform。
 exl-id: 82254be0-fa31-4114-a0ec-179a990e0904
 badge: Beta 版
-source-git-commit: 256857103b4037b2cd7b5b52d6c5385121af5a9f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1187'
+source-wordcount: '1194'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 *从更新页面顶部的元数据（标题和描述）开始。 请忽略此页面上的所有UICONTROL实例。 此标记可帮助我们的机器翻译流程将页面正确翻译为我们支持的多种语言。 我们将在您提交文档后向文档中添加标记。*
 
-本教程提供了使用Platform用户界面创建&#x200B;*YOURSOURCE*&#x200B;源连接器的步骤。
+本教程提供了使用Experience Platform用户界面创建&#x200B;*YOURSOURCE*&#x200B;源连接器的步骤。
 
 ## 概述
 
@@ -37,7 +37,7 @@ ht-degree: 1%
 
 ### 收集所需的凭据
 
-要将&#x200B;*YOURSOURCE*&#x200B;连接到Platform，必须提供以下连接属性的值：
+要将&#x200B;*YOURSOURCE*&#x200B;连接到Experience Platform，必须提供以下连接属性的值：
 
 | 凭据 | 描述 | 示例 |
 | --- | --- | --- |
@@ -49,11 +49,11 @@ ht-degree: 1%
 
 ### 将&#x200B;*YOURSOURCE*&#x200B;与webhook集成
 
-*流SDK要求您的源能够支持Webhook以便与Experience Platform通信。 在本节中，您必须提供用户必须遵循的步骤，才能将YOURSOURCE与webhook集成。*
+*流式传输SDK要求您的源能够支持Webhook以便与Experience Platform通信。 在本节中，您必须提供用户必须遵循的步骤，才能将YOURSOURCE与webhook集成。*
 
 ## 连接您的&#x200B;*YOURSOURCE*&#x200B;帐户
 
-在Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
+在Experience Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
@@ -61,13 +61,13 @@ ht-degree: 1%
 
 >[!TIP]
 >
->下面使用的屏幕截图是示例。 在创建文档时，请将图像替换为实际源的屏幕快照。 您可以使用相同的标记模式和颜色，也可以使用相同的文件名。 请确保屏幕快照会捕获整个Platform UI屏幕。 有关如何上载屏幕截图的信息，请参阅[提交文档以供审阅](../documentation/github.md)上的指南。
+>下面使用的屏幕截图是示例。 在创建文档时，请将图像替换为实际源的屏幕快照。 您可以使用相同的标记模式和颜色，也可以使用相同的文件名。 请确保屏幕截图会捕获整个Experience Platform UI屏幕。 有关如何上载屏幕截图的信息，请参阅[提交文档以供审阅](../documentation/github.md)上的指南。
 
 ![Experience Platform源目录](../assets/streaming/catalog.png)
 
 ## 选择数据
 
-此时将显示&#x200B;**[!UICONTROL 选择数据]**&#x200B;步骤，该步骤为您提供了一个用于选择将数据带到Platform的界面。
+此时将显示&#x200B;**[!UICONTROL 选择数据]**&#x200B;步骤，该步骤为您提供了一个界面来选择将带到Experience Platform的数据。
 
 * 界面的左侧是一个浏览器，允许您查看帐户内的可用数据流；
 * 界面的右侧部分允许您预览JSON文件中最多100行数据。
@@ -94,7 +94,7 @@ ht-degree: 1%
 
 此时将显示[!UICONTROL 映射]步骤，该步骤为您提供了一个接口，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
 
-Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](https://experienceleague.adobe.com/docs/experience-platform/data-prep/ui/mapping.html)。
+Experience Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](https://experienceleague.adobe.com/docs/experience-platform/data-prep/ui/mapping.html)。
 
 成功映射源数据后，选择&#x200B;**[!UICONTROL 下一步]**。
 
@@ -123,7 +123,7 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 *用于创建数据流的其余步骤的工作流将被模块化。 如果您想针对您的源发起任何特定的号召，请参阅下面的其他资源部分。*
 
-通过学习本教程，您已建立与&#x200B;*YOURSOURCE*&#x200B;帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入Platform](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/crm.html)。
+通过学习本教程，您已建立与&#x200B;*YOURSOURCE*&#x200B;帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/crm.html)。
 
 ## 其他资源
 

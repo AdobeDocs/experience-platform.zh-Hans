@@ -4,9 +4,9 @@ description: Adobe Experience Platform Identity Service通过跨设备和系统�
 title: 在UI中监控数据流以查找身份
 type: Tutorial
 exl-id: 735b0e52-74f6-47fe-98c6-e12a633b6f57
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1151'
+source-wordcount: '1155'
 ht-degree: 9%
 
 ---
@@ -15,14 +15,14 @@ ht-degree: 9%
 
 Adobe Experience Platform 身份标识服务通过跨设备和系统桥接身份标识，使您能够全面了解您的客户及其行为，助您实时提供有影响力的个人数字体验。
 
-监视功能板提供了数据在身份中的活动的可视表示形式，包括数据身份的状态。 本教程将介绍如何使用“监视仪表板”通过Experience Platform用户界面监视数据的身份，从而使您能够跟踪身份处理的状态。
+监视功能板提供了数据在身份中的活动的可视表示形式，包括数据身份的状态。 本教程将介绍如何使用Experience Platform用户界面使用监视仪表板监视数据的身份，从而使您能够跟踪身份处理的状态。
 
 ## 快速入门 {#getting-started}
 
-- [数据流](../home.md)：数据流是跨平台移动数据的数据作业的表示形式。 数据流在不同服务之间配置，帮助将数据从源连接器移动到目标数据集、[!DNL Identity]和[!DNL Profile]以及[!DNL Destinations]。
+- [数据流](../home.md)：数据流是跨Experience Platform移动数据的数据作业的表示形式。 数据流在不同服务之间配置，帮助将数据从源连接器移动到目标数据集、[!DNL Identity]和[!DNL Profile]以及[!DNL Destinations]。
    - [数据流运行](../../sources/notifications.md)：数据流运行是基于所选数据流的频率配置的周期性计划作业。
 - [身份服务](../../identity-service/home.md)：通过跨设备和系统桥接身份，更好地了解个人客户及其行为。
-- [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+- [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ## 监控身份标识仪表板 {#identity-metrics}
 
@@ -54,7 +54,7 @@ Adobe Experience Platform 身份标识服务通过跨设备和系统桥接身份
 | 身份量度 | 描述 |
 | ---------------- | ----------- |
 | **[!UICONTROL 已接收的记录]** | 从数据湖接收的记录数。 |
-| **[!UICONTROL 个记录失败]** | 由于数据错误而未引入到Platform中的记录数。 |
+| **[!UICONTROL 个记录失败]** | 由于数据错误而未引入Experience Platform的记录数。 |
 | **[!UICONTROL 跳过的记录数]** | 由于记录行中只有一个标识符而引入但不引入[!DNL Identity Service]中的记录数。 |
 | **[!UICONTROL 条记录已摄取]** | 摄取到[!DNL Identity Service]中的记录数。 |
 | 已添加&#x200B;**[!UICONTROL 个身份]** | 添加到[!DNL Identity Service]的净新标识符数。 |
@@ -78,7 +78,7 @@ Adobe Experience Platform 身份标识服务通过跨设备和系统桥接身份
 | **[!UICONTROL 数据集]** | 数据流正在插入的数据集的名称。 |
 | **[!UICONTROL Source名称]** | 数据流所属的源的名称。 |
 | **[!UICONTROL 已接收的记录]** | 从数据湖接收的记录数。 |
-| **[!UICONTROL 个记录失败]** | 由于数据错误而未引入到Platform中的记录数。 |
+| **[!UICONTROL 个记录失败]** | 由于数据错误而未引入Experience Platform的记录数。 |
 | **[!UICONTROL 跳过的记录数]** | 由于记录行中只有一个标识符而引入但不引入[!DNL Identity Service]中的记录数。 |
 | **[!UICONTROL 条记录已摄取]** | 摄取到[!DNL Identity Service]中的记录数。 |
 | **[!UICONTROL 总记录数]** | 所有记录的总数，包括失败的记录、跳过的记录、添加的身份和重复的记录。 |
@@ -100,7 +100,7 @@ Adobe Experience Platform 身份标识服务通过跨设备和系统桥接身份
 | 量度 | 描述 |
 | -------| ----------- |
 | **[!UICONTROL 已接收的记录]** | 从数据湖接收的记录数。 |
-| **[!UICONTROL 个记录失败]** | 由于数据错误而未引入到Platform中的记录数。 |
+| **[!UICONTROL 个记录失败]** | 由于数据错误而未引入Experience Platform的记录数。 |
 | **[!UICONTROL 跳过的记录数]** | 由于记录行中只有一个标识符而引入但不引入[!DNL Identity Service]中的记录数。 |
 | **[!UICONTROL 条记录已摄取]** | 摄取到[!DNL Identity Service]中的记录数。 |
 | 已添加&#x200B;**[!UICONTROL 个身份]** | 添加到[!DNL Identity Service]的净新标识符数。 |

@@ -1,17 +1,17 @@
 ---
 keywords: rtcdp管理概述；管理概述
-title: Real-time Customer Data Platform管理概述
-description: 本文档概述了由Adobe Experience Platform提供支持的Adobe Real-time Customer Data Platform管理功能。
+title: Real-Time Customer Data Platform管理概述
+description: 本文档概述了由Adobe Experience Platform提供支持的Adobe Real-Time Customer Data Platform管理功能。
 feature: Access Control, Get Started, Sandboxes
 exl-id: c5bdeac6-345a-4ef1-bc5a-a993f565b9d6
-source-git-commit: a8c9543bb003a99dcd85712d202482511c0a5608
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '316'
 ht-degree: 0%
 
 ---
 
-# Real-time Customer Data Platform管理概述
+# Real-Time Customer Data Platform管理概述
 
 本文档概述了[!DNL Adobe Real-Time Customer Data Platform]的管理功能，由Adobe Experience Platform提供支持。
 
@@ -33,6 +33,6 @@ ht-degree: 0%
 
 Adobe Experience Platform(以及扩展后的Real-Time CDP)可在全球范围内丰富数字体验应用程序。 公司通常并行运行多个数字体验应用程序，并且需要满足这些应用程序的开发、测试和部署需要，同时确保操作法规遵从性。
 
-为了满足此需求，Adobe Experience Platform提供了&#x200B;*沙盒*，使您能够将单个[!DNL Platform]实例分区到单独的虚拟环境中，以用于开发和改进数字体验应用程序。 您可以使用沙盒工具功能提高沙盒之间的配置准确性并在沙盒之间无缝导出和导入沙盒配置。 按照[沙盒工具UI指南](../../sandboxes/ui/sandbox-tooling.md)中提供的步骤操作。
+为了满足此需求，Adobe Experience Platform提供了&#x200B;*沙盒*，使您能够将单个[!DNL Experience Platform]实例分区到单独的虚拟环境中，以用于开发和改进数字体验应用程序。 您可以使用沙盒工具功能提高沙盒之间的配置准确性并在沙盒之间无缝导出和导入沙盒配置。 按照[沙盒工具UI指南](../../sandboxes/ui/sandbox-tooling.md)中提供的步骤操作。
 
 有关沙箱的详细信息，请参阅[!DNL Experience Platform]文档中的[沙箱概述](../../sandboxes/home.md)。

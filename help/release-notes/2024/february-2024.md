@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2024 年 2 月）
 description: Adobe Experience Platform 的 2024 年 2 月发行说明。
 exl-id: 7e4b76b7-4027-4890-b869-1dbb79670c3e
-source-git-commit: 02f2082e695d157415c9e0c59ca5d371c94bb991
-workflow-type: ht
-source-wordcount: '1244'
-ht-degree: 100%
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+workflow-type: tm+mt
+source-wordcount: '1248'
+ht-degree: 91%
 
 ---
 
@@ -24,7 +24,7 @@ Experience Platform 中现有功能的更新：
 
 ## 警报 {#alerts}
 
-Experience Platform 允许您订阅各种平台活动的基于事件的警报。您可以通过平台用户界面中的 [!UICONTROL 警报] 选项卡订阅不同的警报规则，并可以选择在用户界面内或通过电子邮件通知接收警报消息。
+通过Experience Platform，您可以为各种Experience Platform活动订阅基于事件的警报。 您可以通过Experience Platform用户界面中的[!UICONTROL 警报]选项卡订阅不同的警报规则，还可以选择在UI中或通过电子邮件通知接收警报消息。
 
 **新增功能或更新后的功能**
 
@@ -95,7 +95,7 @@ For more information on Data Prep, read the [Data Prep overview](../../data-prep
 
 ## 沙盒 {#sandboxes}
 
-Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。企业通常会同时运行多个数字体验应用程序，并且需要满足这些应用程序的开发、测试和部署要求，同时确保运营合规性。为了满足这一需求，Experience Platform 提供了可将单个 Platform 实例划分为多个单独的虚拟环境的沙盒，以帮助开发和改进数字体验应用程序。
+Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。企业通常会同时运行多个数字体验应用程序，并且需要满足这些应用程序的开发、测试和部署要求，同时确保运营合规性。为了满足此需求，Experience Platform提供了可将单个Experience Platform实例划分为多个单独的虚拟环境的沙盒，以帮助开发和改进数字体验应用程序。
 
 **新增功能或更新后的功能**
 
@@ -109,13 +109,13 @@ Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。企
 
 ## Segmentation Service {#segmentation}
 
-[!DNL Segmentation Service] 允许您对存储在 [!DNL Experience Platform] 中的与个人（例如客户、潜在客户、用户或组织）相关的数据划分到受众区段中。您可以通过区段定义或其他源从 [!DNL Real-Time Customer Profile] 数据创建受众。这些受众在 [!DNL Platform] 上集中配置和维护，并且可以通过任何 Adobe 解决方案轻松访问。
+[!DNL Segmentation Service] 允许您对存储在 [!DNL Experience Platform] 中的与个人（例如客户、潜在客户、用户或组织）相关的数据划分到受众区段中。您可以通过区段定义或其他源从 [!DNL Real-Time Customer Profile] 数据创建受众。这些受众在 [!DNL Experience Platform] 上集中配置和维护，并且可以通过任何 Adobe 解决方案轻松访问。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 帐户受众 | 帐户受众现已普遍可用！现在，您可以使用帐户细分，在实时客户平台的 B2B 和 B2P 版本中，将营销细分体验从基于人的受众转移到基于帐户的受众，从而实现轻松而复杂的营销细分体验。此版本允许您使用基于人的受众作为基于帐户的受众的谓词，添加搜索功能，支持自定义实体的使用，并符合数据治理。有关此功能的更多信息，请阅读[帐户受众概览](../../segmentation/types/account-audiences.md)。 |
+| 帐户受众 | 帐户受众现已普遍可用！现在，您可以使用帐户分段功能在Real-time Customer Experience Platform的B2B和B2P版本中从基于人员的受众到基于帐户的受众，轻松而完善地实现营销分段体验。 此版本允许您使用基于人的受众作为基于帐户的受众的谓词，添加搜索功能，支持自定义实体的使用，并符合数据治理。有关此功能的更多信息，请阅读[帐户受众概览](../../segmentation/types/account-audiences.md)。 |
 
 {style="table-layout:auto"}
 

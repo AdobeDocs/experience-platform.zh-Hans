@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 假名配置文件数据过期
 description: 本文档提供有关在Adobe Experience Platform中为假名配置文件配置数据过期的一般指导。
 exl-id: e8d31718-0b50-44b5-a15b-17668a063a9c
-source-git-commit: 9d38fdae0fc65048d02a4337375004edafedd1b6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1065'
+source-wordcount: '1068'
 ht-degree: 6%
 
 ---
@@ -37,7 +37,7 @@ ht-degree: 6%
 
 ## 访问 {#access}
 
-无法通过Platform UI或API配置假名配置文件数据过期。 相反，您必须联系支持人员才能启用此功能。 在联系支持人员时，请包括以下信息：
+无法通过Experience Platform UI或API配置假名配置文件数据过期。 相反，您必须联系支持人员才能启用此功能。 在联系支持人员时，请包括以下信息：
 
 - 要考虑用于假名配置文件删除的标识命名空间。
    - 例如：仅`ECID`、仅`AAID`或`ECID`和`AAID`的组合。
@@ -75,11 +75,11 @@ Experience Event数据过期时间&#x200B;**仅**&#x200B;删除事件并&#x200B;
 
 您应根据保留已知客户数据的需要，在数据集中&#x200B;**始终**&#x200B;设置体验事件数据过期时间。 设置体验事件数据过期后，您可以使用假名配置文件数据过期自动删除假名配置文件。 通常，假名配置文件的数据过期时间短于体验事件的数据过期时间。
 
-对于典型用例，您可以根据已知用户数据的值设置Experience Event数据过期时间，还可以将假名配置文件数据过期时间设置为更短的持续时间，以限制假名配置文件对您的Platform许可证合规性的影响。
+对于典型用例，您可以根据已知用户数据的值设置Experience Event数据过期时间，还可以将假名配置文件数据过期时间设置为更短的持续时间，以限制假名配置文件对Experience Platform许可证合规性的影响。
 
 ### 哪些用户应该使用假名配置文件数据过期？
 
-- 如果您使用Web SDK直接将数据发送到Platform。
+- 如果您使用Web SDK直接将数据发送到Experience Platform。
 - 如果您有一个网站，为未经身份验证的客户集体提供服务。
 - 如果您的数据集中存在过多的配置文件计数，并且已确认这种过多的配置文件计数是因为匿名基于Cookie的标识命名空间。
    - 要确定这一点，您应使用身份命名空间重叠报表。 有关此报告的详细信息，可在预览示例状态API指南的[身份重叠报告部分](./api/preview-sample-status.md#identity-overlap-report)中找到。

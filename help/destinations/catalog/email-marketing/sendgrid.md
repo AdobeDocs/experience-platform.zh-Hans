@@ -3,7 +3,7 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；发�
 title: SendGrid连接
 description: SendGrid目标允许您导出第一方数据，并在SendGrid中激活它以满足您的业务需求。
 exl-id: 6f22746f-2043-4a20-b8a6-097d721f2fe7
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1510'
 ht-degree: 3%
@@ -40,7 +40,7 @@ SendGrid使用API持有者令牌作为与SendGrid API通信的身份验证机制
 >
 >* 用于从电子邮件配置文件创建邮件列表的SendGrid API要求在每个配置文件中提供唯一的电子邮件地址。 这与其是否用作&#x200B;*电子邮件*&#x200B;或&#x200B;*备用电子邮件*&#x200B;的值无关。 由于SendGrid连接支持电子邮件和备用电子邮件值的映射，因此请确保在&#x200B;*数据集*&#x200B;的每个配置文件中使用的所有电子邮件地址都应是唯一的。 否则，在将电子邮件配置文件发送到SendGrid时，这将导致错误，并且数据导出中不会出现该电子邮件配置文件。
 >
->* 目前，从Experience Platform的受众中删除配置文件时，没有相应的功能可从SendGrid中删除这些配置文件。
+>* 目前，从Experience Platform中的受众删除配置文件时，没有相应的功能可从SendGrid中删除这些配置文件。
 
 ## 支持的身份 {#supported-identities}
 
@@ -48,7 +48,7 @@ SendGrid支持激活下表中描述的标识。 了解有关[标识](/help/ident
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| 电子邮件 | 电子邮件地址 | 请注意，[!DNL Adobe Experience Platform]支持纯文本和SHA256哈希电子邮件地址。 如果Experience Platform源字段包含未哈希处理的属性，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以便在激活时让[!DNL Platform]自动对数据进行哈希处理。<br/><br/>请注意，**SendGrid**&#x200B;不支持经过哈希处理的电子邮件地址，因此只会将未经转换的纯文本数据发送到目标。 |
+| 电子邮件 | 电子邮件地址 | 请注意，[!DNL Adobe Experience Platform]支持纯文本和SHA256哈希电子邮件地址。 如果Experience Platform源字段包含未哈希处理的属性，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以便在激活时让[!DNL Experience Platform]自动对数据进行哈希处理。<br/><br/>请注意，**SendGrid**&#x200B;不支持经过哈希处理的电子邮件地址，因此只会将未经转换的纯文本数据发送到目标。 |
 
 {style="table-layout:auto"}
 
@@ -59,7 +59,7 @@ SendGrid支持激活下表中描述的标识。 了解有关[标识](/help/ident
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
 | 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如[目标激活工作流](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes)的选择配置文件属性屏幕中所选。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -125,7 +125,7 @@ SendGrid支持激活下表中描述的标识。 了解有关[标识](/help/ident
 1. 选择一个或多个要导出到SendGrid的受众。
    ![](../../assets/catalog/email-marketing/sendgrid/11.jpg)
 
-1. 在&#x200B;**[!UICONTROL 映射]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL 添加新映射]**&#x200B;后，将显示映射页面，以将源XDM字段映射到SendGrid API目标字段。 下图演示了如何在Experience Platform和SendGrid之间映射标识命名空间。 请确保&#x200B;**[!UICONTROL Source字段]** *电子邮件*&#x200B;应映射到&#x200B;**[!UICONTROL 目标字段]** *external_id*，如下所示。
+1. 在&#x200B;**[!UICONTROL 映射]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL 添加新映射]**&#x200B;后，将显示映射页面，以将源XDM字段映射到SendGrid API目标字段。 下图演示了如何在Experience Platform和SendGrid之间映射身份命名空间。 请确保&#x200B;**[!UICONTROL Source字段]** *电子邮件*&#x200B;应映射到&#x200B;**[!UICONTROL 目标字段]** *external_id*，如下所示。
    ![](../../assets/catalog/email-marketing/sendgrid/13.jpg)
    ![](../../assets/catalog/email-marketing/sendgrid/14.jpg)
    ![](../../assets/catalog/email-marketing/sendgrid/15.jpg)

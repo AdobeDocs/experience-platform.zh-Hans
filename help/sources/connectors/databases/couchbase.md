@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Couchbase Source连接器概述
 description: 了解如何使用API或用户界面将Couchbase连接到Adobe Experience Platform。
 exl-id: 4b1cc352-3b1a-4015-baee-b1d42c15a400
-source-git-commit: 9ca4f19f7b59f075250bce7035303e11d3f3710f
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '203'
 ht-degree: 0%
@@ -23,15 +23,15 @@ Adobe Experience Platform为数据库提供程序（如[!DNL Microsoft]、MySQL�
 
 在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 有关详细信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md)页。
 
-以下文档提供了有关如何使用API或用户界面将[!DNL Couchbase]连接到[!DNL Platform]的信息：
+以下文档提供了有关如何使用API或用户界面将[!DNL Couchbase]连接到[!DNL Experience Platform]的信息：
 
-## 使用API将[!DNL Couchbase]连接到[!DNL Platform]
+## 使用API将[!DNL Couchbase]连接到[!DNL Experience Platform]
 
 - [使用流服务API创建Couchbase连接](../../tutorials/api/create/databases/couchbase.md)
 - [使用流服务API浏览数据表](../../tutorials/api/explore/tabular.md)
 - [使用流服务API为数据库源创建数据流](../../tutorials/api/collect/database-nosql.md)
 
-## 使用UI将[!DNL Couchbase]连接到[!DNL Platform]
+## 使用UI将[!DNL Couchbase]连接到[!DNL Experience Platform]
 
 - [在UI中创建Couchbase源连接](../../tutorials/ui/create/databases/couchbase.md)
 - [在用户界面中为数据库源连接创建数据流](../../tutorials/ui/dataflow/databases.md)

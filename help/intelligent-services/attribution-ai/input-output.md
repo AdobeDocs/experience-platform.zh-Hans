@@ -2,12 +2,12 @@
 keywords: Experience Platform；快速入门；归因人工智能；热门主题；归因人工智能输入；归因人工智能输出；
 feature: Attribution AI
 title: Attribution AI中的输入和输出
-description: 以下文件概述了Attribution AI中使用的各种输入和输出。
+description: 以下文档概述了归因人工智能中使用的不同输入和输出。
 exl-id: d6dbc9ee-0c1a-4a5f-b922-88c7a36a5380
-source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2467'
-ht-degree: 2%
+source-wordcount: '2474'
+ht-degree: 3%
 
 ---
 
@@ -17,13 +17,13 @@ ht-degree: 2%
 
 ## [!DNL Attribution AI]输入数据
 
-Attribution AI通过分析以下数据集计算算法分数来工作：
+归因人工智能通过分析以下数据集计算算法分数：
 
 - 使用[Analytics源连接器](../../sources/tutorials/ui/create/adobe-applications/analytics.md)的Adobe Analytics数据集
 - Adobe Experience Platform架构中的Experience Event (EE)数据集
 - Consumer Experience Event (CEE)数据集
 
-如果每个数据集共享相同的身份类型（命名空间）（如ECID），您现在可以基于&#x200B;**身份映射** （字段）从不同来源添加多个数据集。 选择身份和命名空间后，将显示ID列完整性量度，这些量度指示要拼合的数据量。 要了解有关添加多个数据集的更多信息，请访问[Attribution AI用户指南](./user-guide.md#identity)。
+如果每个数据集共享相同的身份类型（命名空间）（如ECID），您现在可以基于&#x200B;**身份映射** （字段）从不同来源添加多个数据集。 选择身份和命名空间后，将显示ID列完整性量度，这些量度指示要拼合的数据量。 要了解有关添加多个数据集的更多信息，请访问[归因人工智能用户指南](./user-guide.md#identity)。
 
 默认情况下，并不总是映射渠道信息。 在某些情况下，如果mediaChannel（字段）为空，则在将字段映射到mediaChannel之前，您将无法“继续”，因为它是必需列。 如果在数据集中检测到渠道，则默认情况下会将其映射到mediaChannel。 其他列（如&#x200B;**媒体类型**&#x200B;和&#x200B;**媒体操作**）仍是可选的。
 
@@ -31,11 +31,11 @@ Attribution AI通过分析以下数据集计算算法分数来工作：
 
 >[!IMPORTANT]
 >
->Adobe Analytics Source Connector最多可能需要四周才能回填数据。 如果最近设置了连接器，则应验证数据集是否具有Attribution AI所需的最小数据长度。 请查看[历史数据](#data-requirements)部分，以验证您是否有足够的数据来计算准确的算法分数。
+>Adobe Analytics Source Connector最多可能需要四周才能回填数据。 如果您最近设置了连接器，则应验证数据集是否具有归因人工智能所需的最小数据长度。 请查看[历史数据](#data-requirements)部分，以验证您是否有足够的数据来计算准确的算法分数。
 
 有关设置[!DNL Consumer Experience Event] (CEE)架构的更多详细信息，请参阅[Intelligent Services数据准备](../data-preparation.md)指南。 有关映射Adobe Analytics数据的更多信息，请访问[Analytics字段映射](../../sources/connectors/adobe-applications/analytics.md)文档。
 
-并非所有[!DNL Consumer Experience Event] (CEE)架构中的列都是Attribution AI的必要列。
+并非所有[!DNL Consumer Experience Event] (CEE)架构中的列都是归因人工智能的必要列。
 
 您可以使用架构或选定数据集中下面推荐的任何字段配置接触点。
 
@@ -51,7 +51,7 @@ Attribution AI通过分析以下数据集计算算法分数来工作：
 | Marketing.campaigngroup | 接触点 |
 | Commerce | 转化 |
 
-通常，归因在“商务”下的订单、购买和结账等转化列上运行。 “渠道”和“营销”列用于定义Attribution AI的接触点（例如，`channel._type = 'https://ns.adobe.com/xdm/channel-types/email'`）。 为获得最佳结果和见解，强烈建议您包含尽可能多的转化和接触点列。 此外，您不仅可以使用上述列。 您可以包含任何其他推荐列或自定义列作为转化或接触点定义。
+通常，归因在“商务”下的订单、购买和结账等转化列上运行。 “渠道”和“营销”列用于定义归因人工智能的接触点（例如，`channel._type = 'https://ns.adobe.com/xdm/channel-types/email'`）。 为获得最佳结果和见解，强烈建议您包含尽可能多的转化和接触点列。 此外，您不仅可以使用上述列。 您可以包含任何其他推荐列或自定义列作为转化或接触点定义。
 
 只要与配置接触点相关的渠道或营销活动信息存在于某个mixin或传递字段中，体验事件(EE)数据集就不需要显式地包含渠道和营销mixin。
 
@@ -63,15 +63,15 @@ Attribution AI通过分析以下数据集计算算法分数来工作：
 
 >[!IMPORTANT]
 >
-> Attribution AI运行所需的最小数据量如下：
+> Attribution AI运行所需的最少数据量如下所示：
 > - 您需要提供至少3个月（90天）的数据才能运行良好的模型。
 > - 您至少需要1000次转化。
 
-Attribution AI需要历史数据作为模型训练的输入。 所需的数据持续时间主要取决于两个关键因素：训练窗口和回顾窗口。 训练窗口较短的输入对近期趋势更敏感，而训练窗口较长的输入有助于生成更稳定、更准确的模型。 使用最能代表您的业务目标的历史数据为目标建模非常重要。
+归因人工智能需要历史数据作为模型训练的输入。 所需的数据持续时间主要取决于两个关键因素：训练窗口和回顾窗口。 训练窗口较短的输入对近期趋势更敏感，而训练窗口较长的输入有助于生成更稳定、更准确的模型。 使用最能代表您的业务目标的历史数据为目标建模非常重要。
 
 [训练窗口配置](./user-guide.md#training-window)根据发生时间筛选设置为用于模型训练的转化事件。 目前，最低培训时段为1季度（90天）。 [回顾时间范围](./user-guide.md#lookback-window)提供了一个时间范围，用于指示应包含与转化事件相关的转化事件接触点之前的天数。 这两个概念共同决定了应用程序所需的输入数据量（以天为单位测量）。
 
-默认情况下，Attribution AI将培训时段定义为最近的2个季度（6个月），回顾时段定义为56天。 换言之，该模型将考虑过去2个季度发生的所有已定义转化事件，并查找在相关转化事件之前56天内发生的所有接触点。
+默认情况下，归因人工智能将培训时段定义为最近的2季度（6个月），回顾时段定义为56天。 换言之，该模型将考虑过去2个季度发生的所有已定义转化事件，并查找在相关转化事件之前56天内发生的所有接触点。
 
 **公式**：
 
@@ -85,9 +85,9 @@ Attribution AI需要历史数据作为模型训练的输入。 所需的数据�
 
 - 您要归因最近90天（3个月）内发生的转化事件，并跟踪在转化事件之前4周内发生的所有接触点。 输入数据持续时间应跨越过去90天+ 28天（4周）。 培训时段为90天，回顾时段为28天，共计118天。
 
-## 输出数据Attribution AI
+## 归因人工智能输出数据
 
-Attribution AI输出以下内容：
+归因人工智能输出以下内容：
 
 - [原始粒度分数](#raw-granular-scores)
 - [汇总分数](#aggregated-attribution-scores)
@@ -98,7 +98,7 @@ Attribution AI输出以下内容：
 
 ### 原始粒度分数 {#raw-granular-scores}
 
-Attribution AI会尽可能以最精细的粒度级别输出归因分数，这样您就可以按任意分数列对分数进行细分。 要在UI中查看这些得分，请阅读[查看原始得分路径](#raw-score-path)中的部分。 要使用API下载得分，请访问[在Attribution AI](./download-scores.md)中下载得分。
+归因人工智能尽可能输出最细粒度级别的归因分数，以便您按任意分数列对分数进行细分。 要在UI中查看这些得分，请阅读[查看原始得分路径](#raw-score-path)中的部分。 要使用API下载得分，请访问[在归因人工智能](./download-scores.md)文档中下载得分。
 
 >[!NOTE]
 >
@@ -116,7 +116,7 @@ Attribution AI会尽可能以最精细的粒度级别输出归因分数，这样
 | eventMergeId（字符串） | True | 一个ID，用于将多个[!DNL Experience Events]关联或合并到一起，这些ID基本上是同一事件或应合并的事件。 这旨在摄取之前由数据制作者填充。<br> **示例：** 575525617716-0-edc2ed37-1aab-4750-a820-1c2b3844b8c4 |
 | _id（字符串） | False | 时间序列事件的唯一标识符。<br> **示例：** 4461-edc2ed37-1aab-4750-a820-1c2b3844b8c4 |
 | _tenantId（对象） | False | 与您的暂时ID对应的顶级对象容器。<br> **示例：** _atsdsnrmmsv2 |
-| your_schema_name（对象） | False | 使用转化事件对行进行评分，包括与行及其元数据关联的所有接触点事件。<br> **示例：** Attribution AI分数 — 模型名称__2020 |
+| your_schema_name（对象） | False | 使用转化事件对行进行评分，包括与行及其元数据关联的所有接触点事件。<br> **示例：**&#x200B;归因人工智能分数 — 模型名称__2020 |
 | 分段（字符串） | True | 转化区段，例如构建模型所针对的地理分段。 如果缺少区段，则区段与conversionName相同。<br> **示例：** ORDER_US |
 | conversionName（字符串） | True | 在安装期间配置的转换的名称。<br> **示例：**&#x200B;订单，潜在客户，访问 |
 | 转换（对象） | False | 转换元数据列。 |
@@ -135,7 +135,7 @@ Attribution AI会尽可能以最精细的粒度级别输出归因分数，这样
 | commerce_order_purchaseCity（字符串） | True | 其他得分数据集列。<br> **示例：**&#x200B;城市：圣何塞 |
 | customerProfile（对象） | False | 用于构建模型的用户的身份详细信息。 |
 | identity（对象） | False | 包含用于构建模型的用户的详细信息，如`id`和`namespace`。 |
-| id（字符串） | True | 用户的身份ID，如Cookie ID、Adobe Analytics ID (AAID)或Experience CloudID （ECID，也称为MCID或访客ID）等。<br> **示例：** 17348762725408656344688320891369597404 |
+| id（字符串） | True | 用户的身份ID，如Cookie ID、Adobe Analytics ID (AAID)或Experience Cloud ID （ECID，也称为MCID或访客ID）等。<br> **示例：** 17348762725408656344688320891369597404 |
 | 命名空间（字符串） | True | 用于构建路径并因此构建模型的身份命名空间。<br> **示例：** aaid |
 | touchpointsDetail（对象数组） | True | 导致转化的接触点详细信息列表，排序方式： | 接触点发生次数或时间戳。 |
 | touchpointName（字符串） | True | 在安装期间配置的接触点的名称。<br> **示例：** PAID_SEARCH_CLICK |
@@ -144,7 +144,7 @@ Attribution AI会尽可能以最精细的粒度级别输出归因分数，这样
 
 ### 查看原始得分路径(UI) {#raw-score-path}
 
-您可以在UI中查看原始分数的路径。 首先，在Platform UI中选择&#x200B;**[!UICONTROL 架构]**，然后在&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡中搜索并选择您的归因人工智能得分架构。
+您可以在UI中查看原始分数的路径。 首先，在Experience Platform UI中选择&#x200B;**[!UICONTROL 架构]**，然后在&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡中搜索并选择您的归因人工智能得分架构。
 
 ![选择您的架构](./images/input-output/schemas_browse.png)
 
@@ -154,13 +154,13 @@ Attribution AI会尽可能以最精细的粒度级别输出归因分数，这样
 
 ### 总归因分数 {#aggregated-attribution-scores}
 
-如果日期范围少于30天，则可以从Platform UI以CSV格式下载汇总分数。
+如果日期范围少于30天，则可以从Experience Platform UI以CSV格式下载汇总分数。
 
-Attribution AI支持两类归因分数：算法分数和基于规则的分数。
+归因人工智能支持两类归因分数：算法分数和基于规则的分数。
 
-Attribution AI生成两种不同类型的算法分数：增量分数和影响分数。 影响分数是每个营销接触点负责的转化率部分。 增量分数是营销接触点直接造成的边际影响量。 增量分数和影响分数之间的主要区别在于，增量分数将基线影响考虑在内。 它不假设转化完全由先前的营销接触点引起。
+归因人工智能生成两种不同类型的算法分数，增量分数和影响分数。 影响分数是每个营销接触点负责的转化率部分。 增量分数是营销接触点直接造成的边际影响量。 增量分数和影响分数之间的主要区别在于，增量分数将基线影响考虑在内。 它不假设转化完全由先前的营销接触点引起。
 
-以下是Adobe Experience Platform UI中Attribution AI架构输出示例的快速查看：
+下面快速查看Adobe Experience Platform UI中的归因人工智能架构输出示例：
 
 ![](./images/input-output/schema_screenshot.png)
 
@@ -178,7 +178,7 @@ Attribution AI生成两种不同类型的算法分数：增量分数和影响分
 
 **原始得分参考（归因得分）**
 
-下表将归因分数映射到原始分数。 如果要下载原始分数，请访问[Attribution AI下载分数](./download-scores.md)文档。
+下表将归因分数映射到原始分数。 如果要下载原始分数，请访问Attribution AI中的[下载分数](./download-scores.md)文档。
 
 | 归因分数 | 原始得分引用列 |
 | --- | --- |
@@ -192,7 +192,7 @@ Attribution AI生成两种不同类型的算法分数：增量分数和影响分
 
 ### 汇总分数 {#aggregated-scores}
 
-如果日期范围少于30天，则可以从Platform UI以CSV格式下载汇总分数。 有关每个聚合列的更多详细信息，请参阅下表。
+如果日期范围少于30天，则可以从Experience Platform UI以CSV格式下载汇总分数。 有关每个聚合列的更多详细信息，请参阅下表。
 
 | 列名称 | 约束 | 可为空 | 描述 |
 | --- | --- | --- | --- |
@@ -213,7 +213,7 @@ Attribution AI生成两种不同类型的算法分数：增量分数和影响分
 
 **原始得分参考（汇总）**
 
-下表将汇总分数映射到原始分数。 如果要下载原始分数，请访问[Attribution AI下载分数](./download-scores.md)文档。 若要从UI中查看原始得分路径，请访问此文档中[查看原始得分路径](#raw-score-path)上的部分。
+下表将汇总分数映射到原始分数。 如果要下载原始分数，请访问Attribution AI中的[下载分数](./download-scores.md)文档。 若要从UI中查看原始得分路径，请访问此文档中[查看原始得分路径](#raw-score-path)上的部分。
 
 | 列名称 | 原始得分引用列 |
 | --- | --- |
@@ -235,9 +235,9 @@ Attribution AI生成两种不同类型的算法分数：增量分数和影响分
 >[!IMPORTANT]
 >
 > - Attribution AI仅使用更新的数据进行进一步的训练和评分。 同样，当您请求删除数据时，客户人工智能会限制使用已删除的数据。
-> - Attribution AI可利用Platform数据集。 为了支持品牌可能收到的消费者权限请求，品牌应使用平台Privacy Service提交消费者访问和删除请求，以通过数据湖、身份服务和实时客户配置文件删除他们的数据。
-> - 我们用于模型输入/输出的所有数据集都将遵循Platform准则。 Platform Data Encryption适用于静态和传输中的数据。 请参阅文档以了解有关[数据加密](../../../help/landing/governance-privacy-security/encryption.md)的更多信息
+> - 归因人工智能利用Experience Platform数据集。 为了支持品牌可能收到的消费者权限请求，品牌应使用Experience Platform Privacy Service提交消费者访问和删除请求，以通过数据湖、身份服务和实时客户配置文件删除他们的数据。
+> - 我们用于模型输入/输出的所有数据集将遵循Experience Platform准则。 Experience Platform数据加密适用于静态和传输中的数据。 请参阅文档以了解有关[数据加密](../../../help/landing/governance-privacy-security/encryption.md)的更多信息
 
 ## 后续步骤 {#next-steps}
 
-准备好数据并准备好所有凭据和架构后，请按照[Attribution AI用户指南](./user-guide.md)开始。 本指南将指导您完成创建Attribution AI实例。
+准备好数据并准备好所有凭据和架构后，请按照[归因人工智能用户指南](./user-guide.md)开始。 本指南将指导您为归因人工智能创建实例。

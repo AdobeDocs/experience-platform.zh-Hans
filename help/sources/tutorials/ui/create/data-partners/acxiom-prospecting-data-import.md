@@ -4,9 +4,9 @@ description: 了解如何使用 UI 将 Acxiom 潜在客户数据连接到 Adobe 
 last-substantial-update: 2024-02-21T00:00:00Z
 badge: Beta 版
 exl-id: cde0bfe9-0604-41d3-8422-114f58a74d04
-source-git-commit: d048109141168b33795753c4706dac64cdf29ca5
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1861'
+source-wordcount: '1862'
 ht-degree: 5%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 5%
 >
 >[!DNL Acxiom Prospecting Data Import]源为测试版。 有关使用测试版标记源的更多信息，请阅读[源概述](../../../../home.md#terms-and-conditions)。
 
-[!DNL Acxiom]的Adobe Real-time Customer Data Platform潜在客户数据导入是一个尽可能提供最多生产力的潜在客户受众的过程。 [!DNL Acxiom]通过安全导出获取Real-Time CDP第一方数据，并通过屡获殊荣的卫生和身份解析系统运行该数据。 这将生成一个用作禁止列表的数据文件。 然后，此数据文件将与Acxiom全局数据库匹配，这样就可以定制目标客户列表以进行导入。
+[!DNL Acxiom]的Adobe Real-Time Customer Data Platform潜在客户数据导入是一个尽可能提供最多生产力的潜在客户受众的过程。 [!DNL Acxiom]通过安全导出获取Real-Time CDP第一方数据，并通过屡获殊荣的卫生和身份解析系统运行该数据。 这将生成一个用作禁止列表的数据文件。 然后，此数据文件将与Acxiom全局数据库匹配，这样就可以定制目标客户列表以进行导入。
 
 您可以使用[!DNL Acxiom]源检索和映射Acxiom目标客户服务的响应，并将Amazon S3用作放置点。
 
@@ -27,7 +27,7 @@ ht-degree: 5%
 
 本教程需要对以下Experience Platform组件有一定的了解：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
@@ -35,7 +35,7 @@ ht-degree: 5%
 
 ### 收集所需的凭据
 
-要在Experience Platform时访问存储段，您需要为以下凭据提供有效值：
+要在Experience Platform上访问存储段，您需要为以下凭据提供有效值：
 
 | 凭据 | 描述 |
 | --- | --- |
@@ -50,7 +50,7 @@ ht-degree: 5%
 
 ## 连接您的[!DNL Acxiom]帐户
 
-在Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以为其创建帐户的各种源。
+在Experience Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以为其创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
@@ -141,11 +141,11 @@ ht-degree: 5%
 | --- | --- |
 | 数据流名称 | 数据流的名称。  默认情况下，这将使用正在导入的文件的名称。 |
 | 描述 | （可选）数据流的简短说明。 |
-| 警报 | Experience Platform可以生成基于事件的警报，供用户订阅，这些选项全部为正在运行的数据流以触发这些警报。  有关详细信息，请阅读[警报概述](../../alerts.md) <ul><li>**源数据流运行开始**：选择此警报以在数据流运行开始时接收通知。</li><li>**源数据流运行成功**：选择此警报以在数据流结束且没有任何错误时接收通知。</li><li>**源数据流运行失败**：选择此警报以在数据流运行结束时发生任何错误时接收通知。</li></ul> |
+| 警报 | Experience Platform可生成用户可以订阅的基于事件的警报，这些选项全部为正在运行的数据流以触发这些警报。  有关详细信息，请阅读[警报概述](../../alerts.md) <ul><li>**源数据流运行开始**：选择此警报以在数据流运行开始时接收通知。</li><li>**源数据流运行成功**：选择此警报以在数据流结束且没有任何错误时接收通知。</li><li>**源数据流运行失败**：选择此警报以在数据流运行结束时发生任何错误时接收通知。</li></ul> |
 
 ## 映射
 
-在将数据引入到Experience Platform之前，使用映射界面将源数据映射到相应的架构字段。  有关详细信息，请阅读UI中的[映射指南](../../../../../data-prep/ui/mapping.md)
+在将数据摄取到Experience Platform之前，使用映射界面将源数据映射到相应的架构字段。  有关详细信息，请阅读UI中的[映射指南](../../../../../data-prep/ui/mapping.md)
 
 ![映射接口。](../../../../images/tutorials/create/acxiom-prospect-suppression-data-sourcing/image-source-mapping.png)
 
@@ -175,7 +175,7 @@ ht-degree: 5%
 
 ## 后续步骤
 
-通过完成本教程，您已成功地创建了一个数据流以将批次数据从[!DNL Acxiom]源引入Experience Platform。 有关其他资源，请访问下面列出的文档。
+通过学习本教程，您已成功地创建了一个数据流，以将批次数据从[!DNL Acxiom]源引入Experience Platform。 有关其他资源，请访问下面列出的文档。
 
 ### 监测数据流
 

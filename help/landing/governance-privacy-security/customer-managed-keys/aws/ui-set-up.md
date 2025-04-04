@@ -1,16 +1,17 @@
 ---
-title: 使用Platform UI在AWS中设置并配置客户管理的密钥
+title: 使用Experience Platform UI在AWS中设置并配置客户管理的密钥
 description: 了解如何使用Amazon资源名称(ARN)设置您的CMK应用程序，并将您的加密密钥ID发送到Adobe Experience Platform。
-source-git-commit: e67aed9e8072bcd531d5aa6ce5b631c910a1812a
+exl-id: f0e38a60-d448-4975-977e-1367fca10515
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1246'
+source-wordcount: '1263'
 ht-degree: 0%
 
 ---
 
-# 使用Platform UI在AWS中设置并配置客户管理的密钥
+# 使用Experience Platform UI在AWS中设置并配置客户管理的密钥
 
-使用本指南可通过Platform UI为AWS上托管的Platform实例启用客户管理的密钥(CMK)。
+使用本指南可通过Experience Platform UI为AWS上托管的Experience Platform实例启用客户管理的密钥(CMK)。
 
 >[!IMPORTANT]
 >
@@ -40,11 +41,11 @@ ht-degree: 0%
 }
 ```
 
-在上述示例中，同一帐户(`Principal.AWS`)中的所有资源(`"Resource": "*"`)都可以访问该密钥。 此策略允许帐户中的服务执行加密和解密操作，但仅限于指定的帐户。 要授予您的Platform单租户帐户访问此密钥的权限，请向默认AWS策略添加新语句。 您可以从Platform UI获取所需的JSON策略，并将其应用于AWS KMS密钥，以与Adobe Experience Platform建立安全连接。
+在上述示例中，同一帐户(`Principal.AWS`)中的所有资源(`"Resource": "*"`)都可以访问该密钥。 此策略允许帐户中的服务执行加密和解密操作，但仅限于指定的帐户。 要授予您的Experience Platform单租户帐户对此密钥的访问权限，请向默认AWS策略添加新语句。 您可以从Experience Platform UI获取所需的JSON策略，并将其应用于AWS KMS密钥，以与Adobe Experience Platform建立安全连接。
 
-在Platform UI中，转到左侧导航边栏中的&#x200B;**[!UICONTROL 管理]**&#x200B;部分，然后选择&#x200B;**[!UICONTROL 加密]**。 在[!UICONTROL 加密配置]工作区中，选择[!UICONTROL 客户托管密钥]卡片中的&#x200B;**[!UICONTROL 配置]**。
+在Experience Platform UI中，转到左侧导航边栏中的&#x200B;**[!UICONTROL 管理]**&#x200B;部分，然后选择&#x200B;**[!UICONTROL 加密]**。 在[!UICONTROL 加密配置]工作区中，选择[!UICONTROL 客户托管密钥]卡片中的&#x200B;**[!UICONTROL 配置]**。
 
-![客户管理的密钥卡中突出显示的配置平台加密配置工作区。](../../../images/governance-privacy-security/key-management-service/encryption-configuration.png)
+![客户托管密钥卡中突出显示的配置为Experience Platform加密配置工作区。](../../../images/governance-privacy-security/key-management-service/encryption-configuration.png)
 
 出现[!UICONTROL 客户托管密钥配置]。 从[!UICONTROL 客户管理的密钥] [!UICONTROL 加密配置]中显示的CMK KMS策略复制`statement`对象。
 
@@ -159,9 +160,9 @@ ht-degree: 0%
 
 将显示AWS [!DNL Key Management Service]的已更新[!DNL Customer Managed Keys]工作区。
 
-### 将AWS加密密钥详细信息添加到平台
+### 将AWS加密密钥详细信息添加到Experience Platform
 
-接下来，要启用加密，请将密钥的Amazon资源名称(ARN)添加到平台[!UICONTROL 客户托管密钥配置]。 在AWS的[!DNL Customer Managed Keys]部分中，从[!DNL Key Management Service]的列表中选择新密钥的别名。
+接下来，要启用加密，请将该密钥的Amazon资源名称(ARN)添加到您的Experience Platform [!UICONTROL 客户托管密钥配置]。 在AWS的[!DNL Customer Managed Keys]部分中，从[!DNL Key Management Service]的列表中选择新密钥的别名。
 
 ![高亮显示新密钥别名的AWS KMS客户托管密钥工作区。](../../../images/governance-privacy-security/key-management-service/customer-managed-keys-on-aws.png)
 
@@ -172,17 +173,17 @@ ht-degree: 0%
 
 ![突出显示了ARN的AWS KMS客户管理的密钥的密钥详细信息。](../../../images/governance-privacy-security/key-management-service/keys-details-arn.png)
 
-现在，导航回平台[!UICONTROL 客户托管密钥配置] UI。 在&#x200B;**[!UICONTROL 添加AWS加密密钥详细信息]**&#x200B;部分中，添加从AWS UI复制的&#x200B;**[!UICONTROL 配置名称]**&#x200B;和&#x200B;**[!UICONTROL KMS密钥ARN]**。
+现在，导航回Experience Platform [!UICONTROL 客户托管密钥配置] UI。 在&#x200B;**[!UICONTROL 添加AWS加密密钥详细信息]**&#x200B;部分中，添加从AWS UI复制的&#x200B;**[!UICONTROL 配置名称]**&#x200B;和&#x200B;**[!UICONTROL KMS密钥ARN]**。
 
-![在“添加AWS加密密钥详细信息”部分中突出显示的具有配置名称和KMS密钥ARN的平台加密配置工作区。](../../../images/governance-privacy-security/key-management-service/add-encryption-key-details.png)
+![在“添加Experience Platform加密密钥详细信息”部分中突出显示的具有配置名称和KMS密钥ARN的AWS加密配置工作区。](../../../images/governance-privacy-security/key-management-service/add-encryption-key-details.png)
 
 接下来，选择&#x200B;**[!UICONTROL SAVE]**&#x200B;以提交配置名称、KMS密钥ARN，并开始验证密钥。
 
-![已高亮显示保存的Platform Encryption Configuration工作区。](../../../images/governance-privacy-security/key-management-service/save.png)
+![已突出显示Experience Platform加密配置工作区的“保存”。](../../../images/governance-privacy-security/key-management-service/save.png)
 
 返回[!UICONTROL 加密配置]工作区。 加密配置的状态显示在&#x200B;**[!UICONTROL 客户管理的密钥]**&#x200B;卡的底部。
 
-![客户管理的密钥卡上突出显示的带处理功能的平台UI中的加密配置工作区。](../../../images/governance-privacy-security/key-management-service/configuration-status.png)
+![客户托管密钥卡上突出显示的带处理的Experience Platform UI中的加密配置工作区。](../../../images/governance-privacy-security/key-management-service/configuration-status.png)
 
 验证密钥后，密钥保管库标识符将添加到所有沙盒的数据湖和配置文件数据存储中。
 
@@ -198,7 +199,7 @@ ht-degree: 0%
 
 以下是密钥撤销的关键注意事项：
 
-- 撤销或禁用密钥将导致无法访问您的Platform数据。 此操作不可逆，应谨慎执行。
+- 撤销或禁用密钥将导致无法访问您的Experience Platform数据。 此操作不可逆，应谨慎执行。
 - 在撤销对加密密钥的访问时，请考虑传播时间线。 在几分钟到24小时内无法访问主数据存储。 缓存或临时数据存储在7天内变得不可访问。
 
 要撤销密钥，请导航到AWS KMS工作区。 **[!DNL Customer managed keys]**&#x200B;部分显示您的AWS帐户的所有可用密钥。 从列表中选择密钥的别名。
@@ -209,7 +210,7 @@ ht-degree: 0%
 
 ![AWS KMS UI中AWS键的详细信息，其中突出显示了键操作和禁用。](../../../images/governance-privacy-security/key-management-service/disable-key.png)
 
-将显示确认对话框。 选择&#x200B;**[!DNL Disable key]**&#x200B;以确认您的选择。 禁用键的影响应在大约五分钟内反映在Platform应用程序和UI中。
+将显示确认对话框。 选择&#x200B;**[!DNL Disable key]**&#x200B;以确认您的选择。 禁用键的影响应在大约5分钟内反映在Experience Platform应用程序和UI中。
 
 >[!NOTE]
 >
@@ -217,11 +218,11 @@ ht-degree: 0%
 
 ![突出显示了“禁用键”的“禁用键”对话框。](../../../images/governance-privacy-security/key-management-service/disable-key-dialog.png)
 
-或者，如果您的密钥跨其他服务使用，则可以直接从密钥策略中删除Experience Platform的访问权限。 在&#x200B;**[!DNL Key Policy]**&#x200B;部分中选择&#x200B;**[!UICONTROL 编辑]**。
+或者，如果您的密钥在其他服务中使用，您可以直接从密钥策略中删除Experience Platform的访问权限。 在&#x200B;**[!DNL Key Policy]**&#x200B;部分中选择&#x200B;**[!UICONTROL 编辑]**。
 
 ![在“键策略”部分中突出显示了“编辑的AWS键的详细信息部分。](../../../images/governance-privacy-security/key-management-service/edit-key-policy.png)
 
-此时会显示&#x200B;**[!DNL Edit key policy]**&#x200B;页面。 突出显示并删除从Platform UI复制的策略语句，以删除客户管理的密钥应用程序的权限。 然后，选择&#x200B;**[!DNL Save changes]**&#x200B;以完成该过程。
+此时会显示&#x200B;**[!DNL Edit key policy]**&#x200B;页面。 突出显示并删除从Experience Platform UI复制的策略语句，以删除客户管理的密钥应用程序的权限。 然后，选择&#x200B;**[!DNL Save changes]**&#x200B;以完成该过程。
 
 ![AWS上的Edit key policy工作区中突出显示了语句JSON对象和Save更改。](../../../images/governance-privacy-security/key-management-service/delete-statement-and-save-changes.png)
 

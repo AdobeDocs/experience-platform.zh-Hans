@@ -2,26 +2,26 @@
 keywords: Experience Platform；教程；功能管道；数据科学Workspace；热门主题
 title: 使用模型创作SDK创建功能管道
 type: Tutorial
-description: Adobe Experience Platform允许您构建和创建自定义功能管道，以通过Sensei机器学习框架运行时大规模执行功能工程。 本文档介绍在功能管道中找到的各种类，并提供使用PySpark中的模型创作SDK创建自定义功能管道的分步教程。
+description: Adobe Experience Platform允许您构建和创建自定义功能管道，以通过Sensei机器学习框架运行时大规模执行功能工程。 本文档介绍了功能管道中的各种类，并分步说明了如何使用PySpark中的“模型创作SDK”创建自定义功能管道。
 exl-id: c2c821d5-7bfb-4667-ace9-9566e6754f98
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1438'
 ht-degree: 0%
 
 ---
 
-# 使用模型创作SDK创建特征管线
+# 使用模型创作SDK创建功能管道
 
 >[!NOTE]
 >
->Data Science Workspace不再可购买。
+>数据科学Workspace不再可供购买。
 >
->本文档适用于先前有权使用Data Science Workspace的现有客户。
+>本文档面向之前有权访问数据科学Workspace的现有客户。
 
 >[!IMPORTANT]
 >
-> 功能管道目前仅通过API提供。
+> 功能管道目前只能通过API使用。
 
 Adobe Experience Platform允许您构建和创建自定义功能管道，以通过Sensei机器学习框架运行时（以下简称“运行时”）大规模执行功能工程。
 
@@ -45,7 +45,7 @@ Adobe Experience Platform允许您构建和创建自定义功能管道，以通�
 - 转换后的架构和基于该架构的空数据集。
 - 输出架构和基于该架构的空数据集。
 
-以上所有数据集都需要上传到[!DNL Platform] UI。 若要进行此设置，请使用Adobe提供的[引导脚本](https://github.com/adobe/experience-platform-dsw-reference/tree/master/bootstrap)。
+以上所有数据集都需要上传到[!DNL Experience Platform] UI。 若要进行此设置，请使用Adobe提供的[引导脚本](https://github.com/adobe/experience-platform-dsw-reference/tree/master/bootstrap)。
 
 ## 功能管道类
 
@@ -54,8 +54,8 @@ Adobe Experience Platform允许您构建和创建自定义功能管道，以通�
 | 抽象类 | 描述 |
 | -------------- | ----------- |
 | 数据加载程序 | DataLoader类提供用于检索输入数据的实现。 |
-| DatasetTransformer | DatasetTransformer类提供转换输入数据集的实现。 您可以选择不提供DatasetTransformer类，而是在FeaturePipelineFactory类中实现您的功能工程逻辑。 |
-| FeaturePipesFactory | FeaturePipelineFactory类构建由一系列Spark变换器组成的Spark管道以执行功能工程。 您可以选择不提供FeaturePipelineFactory类，而是在DatasetTransformer类中实现您的功能工程逻辑。 |
+| DatasetTransformer | DatasetTransformer类提供用于转换输入数据集的实现。 您可以选择不提供DatasetTransformer类，而是在FeaturePipelineFactory类中实施功能工程逻辑。 |
+| 功能管道工厂 | FeaturePipelineFactory类构建由一系列Spark转换器组成的Spark管线以执行特征工程。 您可以选择不提供FeaturePipelineFactory类，而是在DatasetTransformer类中实施功能工程逻辑。 |
 | DataSaver | DataSaver类为功能数据集的存储提供逻辑。 |
 
 启动功能管道作业时，运行时首先执行DataLoader以将输入数据作为DataFrame加载，然后通过执行DatasetTransformer和/或FeaturePipelineFactory来修改DataFrame。 最后，生成的功能数据集通过DataSaver进行存储。
@@ -67,7 +67,7 @@ Adobe Experience Platform允许您构建和创建自定义功能管道，以通�
 
 ## 实施功能管道类 {#implement-your-feature-pipeline-classes}
 
-以下各节提供了有关为“特征管线”实现所需类的详细信息和示例。
+以下部分提供了有关为功能管道实施所需类的详细信息和示例。
 
 ### 在配置JSON文件中定义变量 {#define-variables-in-the-configuration-json-file}
 
@@ -113,7 +113,7 @@ dataset_id = str(config_properties.get(dataset_id))
 
 DataLoader负责检索和过滤输入数据。 DataLoader的实现必须扩展抽象类`DataLoader`并覆盖抽象方法`load`。
 
-以下示例按ID检索[!DNL Platform]数据集并将其作为DataFrame返回，其中数据集ID (`dataset_id`)是配置文件中定义的属性。
+以下示例按ID检索[!DNL Experience Platform]数据集并将其作为DataFrame返回，其中数据集ID (`dataset_id`)是配置文件中定义的属性。
 
 **PySpark示例**
 
@@ -289,9 +289,9 @@ class MyFeaturePipelineFactory(FeaturePipelineFactory):
 
 ### 使用DataSaver存储您的功能数据集 {#store-your-feature-dataset-with-datasaver}
 
-DataSaver负责将生成的功能数据集存储到一个存储位置。 DataSaver的实现必须扩展抽象类`DataSaver`并重写抽象方法`save`。
+DataSaver负责将生成的功能数据集存储到存储位置。 DataSaver的实现必须扩展抽象类`DataSaver`并覆盖抽象方法`save`。
 
-以下示例扩展了按ID将数据存储到[!DNL Platform]数据集的DataSaver类，其中数据集ID (`featureDatasetId`)和租户ID (`tenantId`)是在配置中定义的属性。
+以下示例扩展了按ID将数据存储到[!DNL Experience Platform]数据集的DataSaver类，其中数据集ID (`featureDatasetId`)和租户ID (`tenantId`)在配置中定义了属性。
 
 **PySpark示例**
 
@@ -404,7 +404,7 @@ https://www.postman.com/collections/c5fc0d1d5805a5ddd41a
 
 ### 创建功能管道引擎 {#create-engine-api}
 
-获得Docker图像位置后，可通过执行POST`/engines`来使用[!DNL Sensei Machine Learning] API [创建功能管道引擎](../api/engines.md#feature-pipeline-docker)。 成功创建功能管道引擎将为您提供引擎唯一标识符(`id`)。 请确保保存此值后再继续。
+获得Docker图像位置后，可通过对`/engines`执行POST，使用[!DNL Sensei Machine Learning] API [创建功能管道引擎](../api/engines.md#feature-pipeline-docker)。 成功创建功能管道引擎将为您提供引擎唯一标识符(`id`)。 请确保保存此值后再继续。
 
 ### 创建MLInstance {#create-mlinstance}
 
@@ -412,29 +412,29 @@ https://www.postman.com/collections/c5fc0d1d5805a5ddd41a
 
 ### 创建试验 {#create-experiment}
 
-接下来，您需要[创建试验](../api/experiments.md#create-an-experiment)。 要创建试验，您需要具有MLIstance唯一标识符(`id`)并向`/experiment`端点发出POST请求。 成功的响应将返回一个有效负载，该有效负载包含新创建的试验的详细信息，包括其在下一个API调用中使用的唯一标识符(`id`)。
+接下来，您需要[创建试验](../api/experiments.md#create-an-experiment)。 要创建试验，您需要具有MLIstance唯一标识符(`id`)，并对`/experiment`端点发出POST请求。 成功的响应将返回一个有效负载，该有效负载包含新创建的试验的详细信息，包括其在下一个API调用中使用的唯一标识符(`id`)。
 
 ### 指定试验运行功能管道任务 {#specify-feature-pipeline-task}
 
-创建试验后，必须将试验的模式更改为`featurePipeline`。 要更改模式，请使用您的`EXPERIMENT_ID`额外POST到[`experiments/{EXPERIMENT_ID}/runs`](../api/experiments.md#experiment-training-scoring)，并在正文发送`{ "mode":"featurePipeline"}`中指定功能管道试验运行。
+创建试验后，必须将试验的模式更改为`featurePipeline`。 要更改模式，请使用您的`EXPERIMENT_ID`进行额外的POST为[`experiments/{EXPERIMENT_ID}/runs`](../api/experiments.md#experiment-training-scoring)，并在正文中发送`{ "mode":"featurePipeline"}`以指定功能管道试验运行。
 
-完成后，向`/experiments/{EXPERIMENT_ID}`发出GET请求以[检索试验状态](../api/experiments.md#retrieve-specific)，并等待试验状态更新完成。
+完成后，向`/experiments/{EXPERIMENT_ID}`发出GET请求以[检索试验状态](../api/experiments.md#retrieve-specific)，并等待试验状态更新以完成。
 
 ### 指定试验运行训练任务 {#training}
 
-接下来，您需要[指定训练运行任务](../api/experiments.md#experiment-training-scoring)。 向`experiments/{EXPERIMENT_ID}/runs`发出POST，并在正文中将模式设置为`train`，并发送包含训练参数的任务数组。 成功的响应将返回包含所请求实验详细信息的有效负载。
+接下来，您需要[指定训练运行任务](../api/experiments.md#experiment-training-scoring)。 将POST设为`experiments/{EXPERIMENT_ID}/runs`，在正文中将模式设置为`train`，并发送包含训练参数的任务数组。 成功的响应将返回包含所请求试验详细信息的有效负载。
 
-完成后，请向`/experiments/{EXPERIMENT_ID}`发出GET请求，以请求[检索实验状态](../api/experiments.md#retrieve-specific)，并等待实验状态更新以完成。
+完成后，向`/experiments/{EXPERIMENT_ID}`发出GET请求以[检索试验状态](../api/experiments.md#retrieve-specific)，并等待试验状态更新以完成。
 
 ### 指定试验运行评分任务 {#scoring}
 
 >[!NOTE]
 >
-> 要完成此步骤，您至少需要有一个与您的实验相关的成功培训运行。
+> 要完成此步骤，您需要至少有一个与试验关联的成功训练运行。
 
-在训练运行成功后，您需要[指定评分运行任务](../api/experiments.md#experiment-training-scoring)。 向`experiments/{EXPERIMENT_ID}/runs`发出POST，并在正文中将`mode`属性设置为“score”。 这将开始您的评分实验运行。
+在训练运行成功后，您需要[指定评分运行任务](../api/experiments.md#experiment-training-scoring)。 将POST设置为`experiments/{EXPERIMENT_ID}/runs`，并在正文中将`mode`属性设置为“score”。 这将开始您的评分实验运行。
 
-完成后，向`/experiments/{EXPERIMENT_ID}`发出GET请求以[检索试验状态](../api/experiments.md#retrieve-specific)，并等待试验状态更新完成。
+完成后，向`/experiments/{EXPERIMENT_ID}`发出GET请求以[检索试验状态](../api/experiments.md#retrieve-specific)，并等待试验状态更新以完成。
 
 评分完成后，您的功能管道应可运行。
 
@@ -442,4 +442,4 @@ https://www.postman.com/collections/c5fc0d1d5805a5ddd41a
 
 [//]: # (Next steps section should refer to tutorials on how to score data using the feature pipeline Engine. Update this document once those tutorials are available)
 
-通过阅读此文档，您已使用模型创作SDK创作功能管道，创建了Docker图像，并使用Docker图像URL使用[!DNL Sensei Machine Learning] API创建了功能管道模型。 您现在可以使用[[!DNL Sensei Machine Learning API]](../api/getting-started.md)继续转换数据集和大规模提取数据功能。
+通过阅读本文档，您已使用模型创作SDK创作功能管道，创建了Docker图像，并使用Docker图像URL使用[!DNL Sensei Machine Learning] API创建了功能管道模型。 您现在可以使用[[!DNL Sensei Machine Learning API]](../api/getting-started.md)继续转换数据集和大规模提取数据功能。

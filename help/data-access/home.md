@@ -2,11 +2,11 @@
 keywords: Experience Platform；主页；热门主题；数据访问；python sdk；spark sdk；数据访问api
 solution: Experience Platform
 title: 数据访问概述
-description: 数据访问通过为用户提供侧重于所摄取Platform数据集的可发现性和可访问性的工具来支持Adobe Experience Platform。
+description: 数据访问通过为用户提供侧重于摄取的Adobe Experience Platform数据集的可发现性和可访问性的工具来支持Experience Platform。
 exl-id: 76e3585b-44df-412e-9ac3-aeca5f85d403
-source-git-commit: 1070c34bcd4577fcc5f0ac160196450db3aab9b0
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '180'
+source-wordcount: '181'
 ht-degree: 0%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 0%
 
 [!DNL Data Access]通过提供侧重于在[!DNL Experience Platform]内摄取的数据集的可发现性和可访问性的用户工具来支持Adobe Experience Platform。
 
-Experience Platform](images/Data_Access_Experience_Platform.png)上的![数据访问
+在Experience Platform上![数据访问](images/Data_Access_Experience_Platform.png)
 
 ## [!DNL Data Access] API
 
-有关使用[!DNL Data Access] API与[!DNL Platform]连接的详细信息，请参阅[数据访问开发人员指南](api.md)。
+有关使用[!DNL Data Access] API与[!DNL Experience Platform]连接的详细信息，请参阅[数据访问开发人员指南](api.md)。
 
 ## 在数据科学Workspace中访问数据
 
@@ -29,4 +29,4 @@ Experience Platform](images/Data_Access_Experience_Platform.png)上的![数据�
 
 ## 订阅数据摄取事件
 
-[!DNL Platform]通过[Adobe Developer Console](https://www.adobe.com/go/devs_console_ui)使特定的高值事件可用于订阅。 例如，您可以订阅数据摄取事件，以接收潜在延迟和失败的通知。 有关详细信息，请参阅有关[订阅Adobe事件通知](../observability/alerts/subscribe.md)的教程。
+[!DNL Experience Platform]通过[Adobe Developer Console](https://www.adobe.com/go/devs_console_ui)使特定的高值事件可用于订阅。 例如，您可以订阅数据摄取事件，以接收潜在延迟和失败的通知。 有关详细信息，请参阅有关[订阅Adobe事件通知](../observability/alerts/subscribe.md)的教程。

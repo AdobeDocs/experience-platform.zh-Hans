@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform；主页；热门主题；Marketo Engage；marketo engage；Marketo；映射
 solution: Experience Platform
-title: Marketo EngageSource的映射字段
+title: Marketo Engage Source的映射字段
 description: 下表包含Marketo数据集中的字段与其对应的XDM字段之间的映射。
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: 3084ed50f3665c7b33863f3a1aab4236c182c503
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '890'
+source-wordcount: '891'
 ht-degree: 2%
 
 ---
@@ -21,13 +21,13 @@ ht-degree: 2%
 
 ## 活动 {#activities}
 
-[!DNL Marketo]源现在支持其他标准活动。 要使用标准活动，必须使用[架构自动生成实用程序](../marketo/marketo-namespaces.md)更新架构，因为如果您创建新的`activities`数据流而不更新架构，则映射模板将失败，因为新的目标字段将不会出现在架构中。 如果选择不更新架构，您仍然可以创建新数据流并消除任何错误。 但是，任何新字段或更新字段都不会引入Platform。
+[!DNL Marketo]源现在支持其他标准活动。 要使用标准活动，必须使用[架构自动生成实用程序](../marketo/marketo-namespaces.md)更新架构，因为如果您创建新的`activities`数据流而不更新架构，则映射模板将失败，因为新的目标字段将不会出现在架构中。 如果选择不更新架构，您仍然可以创建新数据流并消除任何错误。 但是，任何新字段或更新字段都不会引入Experience Platform。
 
 有关XDM类和XDM字段组的更多信息，请阅读有关[XDM体验事件类](../../../../xdm/classes/experienceevent.md)的文档。
 
 >[!NOTE]
 >
->`iif(${web\.ecid} != null, to_object('ECID', arrays_to_objects('id', explode(last(split(${web\.ecid}, ":")), " "))), null)`源字段是计算字段，必须使用Experience PlatformUI中的&#x200B;**[!UICONTROL 添加计算字段]**&#x200B;选项进行添加。 阅读有关[添加计算字段](../../../../data-prep/ui/mapping.md#calculated-fields)的教程以了解更多信息。
+>`iif(${web\.ecid} != null, to_object('ECID', arrays_to_objects('id', explode(last(split(${web\.ecid}, ":")), " "))), null)`源字段是计算字段，必须使用Experience Platform UI中的&#x200B;**[!UICONTROL 添加计算字段]**&#x200B;选项添加该字段。 阅读有关[添加计算字段](../../../../data-prep/ui/mapping.md#calculated-fields)的教程以了解更多信息。
 
 | Source数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |

@@ -1,22 +1,22 @@
 ---
-keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK；SDK
-title: 自助源（批处理SDK） API指南
+keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源sdk；sdk；SDK
+title: 自助源(批处理SDK) API指南
 description: 本文档概述了创建新源的过程，包括有关如何使用Flow Service API检索、编写和提交新连接规范的步骤。
 exl-id: 7e827989-207b-41e2-84d6-5ecb754bebb6
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '483'
+source-wordcount: '484'
 ht-degree: 0%
 
 ---
 
-# 自助源（批处理SDK） API指南
+# 自助源(批处理SDK) API指南
 
 本文档概述了创建新源的过程，包括有关如何使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)编写并提交新连接规范的步骤。
 
-[!DNL Flow Service]用于收集和集中来自Platform内各种不同来源的客户数据。 该服务提供了一个用户界面和RESTful API，可让您轻松设置到各种数据提供商的源连接。 通过这些源连接，您可以验证第三方系统、设置摄取运行的时间，以及管理数据摄取吞吐量。
+[!DNL Flow Service]用于收集和集中Experience Platform中各种不同来源的客户数据。 该服务提供了一个用户界面和RESTful API，可让您轻松设置到各种数据提供商的源连接。 通过这些源连接，您可以验证第三方系统、设置摄取运行的时间，以及管理数据摄取吞吐量。
 
-[!DNL Flow Service] API提供了多个端点，允许您以编程方式管理通过自助源(Batch SDK)集成的新源的连接和流量规范。
+[!DNL Flow Service] API提供了多个端点，允许您以编程方式管理通过自助源(批处理SDK)集成的新源的连接和流量规范。
 
 ## 创建新的连接规范
 
@@ -40,8 +40,8 @@ ht-degree: 0%
 
 ## 提交您的源
 
-要提交源以集成到Experience Platform，您必须首先完成源的整个[!DNL Flow Service] API工作流，以确保源成功工作。 如果源成功运行，则可以继续并联系Adobe代表进行验证和提升。 有关详细信息，请参阅[测试和提交源](./submit.md)指南
+要将您的源提交到Experience Platform进行集成，您必须首先完成源的整个[!DNL Flow Service] API工作流，以确保您的源成功工作。 如果源成功运行，则可以继续并联系Adobe代表进行验证和提升。 有关详细信息，请参阅[测试和提交源](./submit.md)指南
 
 ## 后续步骤
 
-要开始使用[!DNL Flow Service] API并通过自助源（批处理SDK）创建新源，请阅读[入门指南](./getting-started.md)，然后选择其中一个端点指南以了解如何使用特定端点。
+要开始使用[!DNL Flow Service] API并通过自助源(批处理SDK)创建新源，请阅读[入门指南](./getting-started.md)，然后选择其中一个端点指南以了解如何使用特定端点。

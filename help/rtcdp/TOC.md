@@ -5,10 +5,10 @@ audience: user
 user-guide-title: Real-Time Customer Data Platform 指南
 user-guide-description: 合并多个企业来源的已知数据和匿名数据，以创建客户轮廓、从这些轮廓创建受众，以及将这些受众激活到第三方目标。
 role: Admin
-source-git-commit: 4c2431148f584f2ffd5de20b8880a6b4a10ff95e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '301'
-ht-degree: 67%
+source-wordcount: '302'
+ht-degree: 65%
 
 ---
 
@@ -40,7 +40,7 @@ ht-degree: 67%
    * [客户人工智能](segmentation/customer-ai.md)
 * 数据集 {#datasets}
    * [数据集](datasets/dataset.md)
-   * [Platform 上的数据质量](datasets/data-quality.md)
+   * [Experience Platform上的数据质量](datasets/data-quality.md)
 * 目标 {#destinations}
    * [目标概述](destinations/overview.md)
    * [Real-Time CDP B2B 版本中的目标](destinations/b2b.md)

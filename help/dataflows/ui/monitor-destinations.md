@@ -4,16 +4,16 @@ solution: Experience Platform
 title: 在UI中监视目标的数据流
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 7f3560eaccecc8f42bbfa7d27b82ad71397df035
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '3620'
-ht-degree: 9%
+source-wordcount: '3626'
+ht-degree: 10%
 
 ---
 
 # 在UI中监视目标的数据流
 
-使用Experience Platform目录中的各种目标将您的数据从Platform激活到无数外部合作伙伴。 Platform通过提供数据流透明度，使跟踪流向目标的数据流的流程更加简单。
+使用Experience Platform目录中的各种目标，将您的数据从Experience Platform激活到无数外部合作伙伴。 Experience Platform通过提供数据流透明度，使跟踪流向目标的数据流的流程更加简单。
 
 监视仪表板为您提供数据流历程的可视化表示形式，包括激活数据的目标、您查看的数据类型、每次数据流运行导出的数据等等。
 
@@ -23,14 +23,14 @@ ht-degree: 9%
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-- [数据流](../home.md)：数据流是跨平台移动数据的数据作业的表示形式。 数据流在不同服务之间配置，帮助将数据从源连接器移动到目标数据集、[!DNL Identity]和[!DNL Profile]以及[!DNL Destinations]。
+- [数据流](../home.md)：数据流是跨Experience Platform移动数据的数据作业的表示形式。 数据流在不同服务之间配置，帮助将数据从源连接器移动到目标数据集、[!DNL Identity]和[!DNL Profile]以及[!DNL Destinations]。
    - [数据流运行](../../sources/notifications.md)：数据流运行是基于所选数据流的频率配置的周期性计划作业。
-- [目标](../../destinations/home.md)：目标是预建的与常用应用程序的集成，允许从Platform无缝激活数据，以用于跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例。
-- [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+- [目标](../../destinations/home.md)：目标是预建的与常用应用程序的集成，可无缝激活Experience Platform中的数据，以用于跨渠道营销活动、电子邮件活动、定向广告和许多其他用例。
+- [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ## 在目标工作区中监视数据流 {#monitor-dataflows-in-the-destinations-workspace}
 
-在Platform UI的&#x200B;**[!UICONTROL 目标]**&#x200B;工作区中，导航到&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡，然后选择要查看的目标名称。
+在Experience Platform UI的&#x200B;**[!UICONTROL 目标]**&#x200B;工作区中，导航到&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡，然后选择要查看的目标名称。
 
 ![选择目标连接突出显示的目标视图](../assets/ui/monitor-destinations/select-destination.png)
 
@@ -97,7 +97,7 @@ ht-degree: 9%
 
   >[!IMPORTANT]
   >
-  > 从2025年3月开始，Adobe将推出一项更新，以提高流目标的报表准确性。 此增强功能可确保Experience Platform中的报表与目标平台之间更好地保持一致。
+  > 从 2025 年 3 月开始，Adobe 将推出一项更新，以提高流式处理目标的报告准确性。此增强功能可确保Experience Platform中的报表与目标平台之间更好地保持一致。
   >
   > 在此更新之前，**[!UICONTROL 失败的标识]**&#x200B;包括所有激活重试。 进行此更新后，总计数中仅包含上次激活重试。
   > 
@@ -349,4 +349,4 @@ ht-degree: 9%
 
 ## 后续步骤 {#next-steps}
 
-通过遵循本指南，您现在了解如何监控批量目标和流式目标的数据流，包括所有相关信息，如处理时间、激活率和状态。 要详细了解Platform中的数据流，请阅读[数据流概述](../home.md)。 若要了解有关目标的更多信息，请阅读[目标概述](../../destinations/home.md)。
+通过遵循本指南，您现在了解如何监控批量目标和流式目标的数据流，包括所有相关信息，如处理时间、激活率和状态。 要详细了解Experience Platform中的数据流，请阅读[数据流概述](../home.md)。 若要了解有关目标的更多信息，请阅读[目标概述](../../destinations/home.md)。

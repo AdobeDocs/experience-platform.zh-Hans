@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Privacy Service和Experience Cloud应用程序
 description: 本文档提供了有关如何为隐私相关操作配置各种Experience Cloud应用程序的参考。
 exl-id: da21c15f-0b99-4eb7-ac9a-f0fe5e3ba842
-source-git-commit: c524e4533f2ebcc6fd27b5ec7f5ac622107a371b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '901'
+source-wordcount: '903'
 ht-degree: 8%
 
 ---
@@ -38,7 +38,7 @@ Adobe Experience Platform [!DNL Privacy Service]构建用于支持多个Adobe Ex
 | Adobe Campaign Classic | ✓ | ✓ | 从系统中删除数据主体的存储数据。 | <ul><li>[隐私管理](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/privacy/privacy-management.html?lang=zh-Hans)</li></ul> |
 | Adobe Campaign Standard | ✓ | ✓ | 从系统中删除数据主体的存储数据。 | <ul><li>[访问/删除文档](https://experienceleague.adobe.com/en/docs/campaign-standard/using/getting-started/privacy/privacy-management#right-access-forgotten)</li><li>[选择退出文档](https://experienceleague.adobe.com/en/docs/campaign-standard/using/profiles-and-audiences/understanding-opt-in-and-opt-out-processes/about-opt-in-and-opt-out-in-campaign)</li></ul> |
 | Adobe客户属性(CRS) | ✓ | 不适用 | 从系统中删除数据主体的属性。 | <ul><li>[访问/删除GDPR文档](https://experienceleague.adobe.com/docs/core-services/interface/customer-attributes/gdpr.html)</li><li>[访问/删除CCPA文档](https://experienceleague.adobe.com/docs/core-services/interface/customer-attributes/ccpa.html)</li><li>客户属性无法传输数据，因此选择退出销售请求不适用。</li></ul> |
-| Adobe Experience Platform | ✓ | ✓ | 当Experience Platform收到来自Privacy Service的删除请求时，Platform会向Privacy Service发送确认，确认已收到该请求并且受影响的数据已标记为删除。 隐私作业完成后，记录将从数据湖或配置文件存储中删除。 在作业完成之前，数据会被软删除，因此任何平台服务都无法访问。 | <ul><li>[访问/删除数据湖的文档](../catalog/privacy.md)</li><li>[访问/删除Identity服务的文档](../identity-service/privacy.md)</li><li>[访问/删除实时客户个人资料的文档](../profile/privacy.md)</li><li>[!DNL Experience Platform]执行受众区段的[选择退出请求](../segmentation/tutorials/consents.md)。</li></ul> |
+| Adobe Experience Platform | ✓ | ✓ | 当Experience Platform收到来自Privacy Service的删除请求时，Experience Platform会向Privacy Service发送确认，确认已收到该请求并且已将受影响的数据标记为删除。 隐私作业完成后，记录将从数据湖或配置文件存储中删除。 在作业完成之前，数据会被软删除，因此任何Experience Platform服务都无法访问。 | <ul><li>[访问/删除数据湖的文档](../catalog/privacy.md)</li><li>[访问/删除Identity服务的文档](../identity-service/privacy.md)</li><li>[访问/删除实时客户个人资料的文档](../profile/privacy.md)</li><li>[!DNL Experience Platform]执行受众区段的[选择退出请求](../segmentation/tutorials/consents.md)。</li></ul> |
 | Adobe Journey Optimizer | ✓ | 不适用 | 从系统中删除数据主体的存储数据。 | <ul><li>[访问/删除文档](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/privacy/requests)</li></ul> |
 | Adobe Pass 身份验证 | ✓ | 不适用 | 从系统中删除数据主体的存储数据。 | <ul><li>[访问/删除文档](https://tve.helpdocsonline.com/how-to-make-a-privacy-request)</li><li>Pass无法传输数据，因此选择退出销售请求不适用。</li></ul> |
 | Adobe Target | ✓ | 不适用 | 与数据主体ID关联的所有数据都会从其访客配置文件中删除。 无法识别个人或无其他关联的聚合或匿名数据（例如内容数据）不适用于删除请求。 | <ul><li>[访问/删除文档](https://experienceleague.adobe.com/docs/target/using/implement-target/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.html)</li><li>[!DNL Target]没有传输数据的功能，因此选择退出销售请求不适用。</li></ul> |

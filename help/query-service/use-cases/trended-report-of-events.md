@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform；主页；热门主题；查询服务；查询服务；experienceevent查询；experienceevent查询；Experience Event查询；
+keywords: Experience Platform；主页；热门主题；查询服务；查询服务；experienceevent查询；experienceevent查询；体验事件查询；
 title: 创建事件的趋势报表
 description: 了解如何使用体验事件编写查询以创建指定日期范围内的事件趋势报表，并按日期分组。
 exl-id: 8f7ed5b5-c265-4a1e-a360-4293d1e86e97
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '379'
+source-wordcount: '381'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 本文档提供了一个所需的SQL示例，用于按日期创建特定日期范围内的事件的趋势报表。 使用Adobe Experience Platform查询服务，您可以编写使用[!DNL Experience Events]来捕获各种用例的查询。 体验事件由体验数据模型(XDM) ExperienceEvent类表示，该类捕获用户与网站或服务交互时系统的不可变和非聚合快照。 体验事件甚至可用于时域分析。 请参阅[后续步骤部分](#next-steps)以了解更多涉及[!DNL Experience Events]的用例以生成访客报告。
 
-通过报表，您可以访问Platform数据，从而使贵组织的战略业务分析受益。 通过这些报表，您可以采用各种方式检查您的Platform数据，以易于理解的格式显示关键量度，以及共享生成的见解。
+通过报表，您可以访问Experience Platform数据，从而有利于您组织的战略业务洞察。 借助这些报表，您可以通过多种方式检查Experience Platform数据，以易于理解的格式显示关键量度，以及共享生成的见解。
 
 有关XDM和[!DNL Experience Events]的更多信息，请参阅[[!DNL XDM System] 概述](../../xdm/home.md)。 通过将查询服务与[!DNL Experience Events]相结合，您可以有效地跟踪用户之间的行为趋势。 以下文档提供了涉及[!DNL Experience Events]的查询示例。
 

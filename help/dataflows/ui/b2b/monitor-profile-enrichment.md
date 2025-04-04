@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 监控配置文件扩充作业
 type: Tutorial
 exl-id: 096a2212-ed7f-4419-8ead-fa1ca01c2804
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '764'
+source-wordcount: '765'
 ht-degree: 2%
 
 ---
@@ -15,13 +15,13 @@ ht-degree: 2%
 
 使用[!UICONTROL 配置文件扩充]仪表板了解配置文件扩充作业是否已成功运行和完成，并查看基本量度以衡量扩充的有效性。
 
-在[Platform UI](https://platform.adobe.com)中，从左侧导航中选择&#x200B;**[!UICONTROL 监视]**&#x200B;以访问[!UICONTROL 监视]仪表板。 在视图选择器中，选择&#x200B;**B2B流量**&#x200B;以查看特定于[Real-Time CDP B2B](/help/rtcdp/b2b-overview.md)的仪表板元素。  [!UICONTROL 监控]仪表板包括最近一次成功运行的基本量度，以及过去90天内的每日作业状态。
+在[Experience Platform UI](https://platform.adobe.com)中，从左侧导航中选择&#x200B;**[!UICONTROL 监视]**&#x200B;以访问[!UICONTROL 监视]仪表板。 在视图选择器中，选择&#x200B;**B2B流量**&#x200B;以查看特定于[Real-Time CDP B2B](/help/rtcdp/b2b-overview.md)的仪表板元素。  [!UICONTROL 监控]仪表板包括最近一次成功运行的基本量度，以及过去90天内的每日作业状态。
 
 ## 相关帐户配置文件扩充 {#related-accounts}
 
 [!UICONTROL 相关帐户]仪表板显示特定于[相关帐户](/help/rtcdp/b2b-ai-ml-services/related-accounts.md)配置文件扩充的基本指标和每日作业状态。
 
-![关于如何进入Experience PlatformUI中的配置文件扩充作业监视屏幕的可视指示。](/help/dataflows/assets/ui/b2b/monitoring-profile-enrichment-jobs.png)
+![有关如何在Experience Platform UI中访问配置文件扩充作业监视屏幕的可视指示。](/help/dataflows/assets/ui/b2b/monitoring-profile-enrichment-jobs.png)
 
 **[!UICONTROL Metrics]**&#x200B;卡中的数据包含最近成功运行相关帐户作业的基本量度。
 

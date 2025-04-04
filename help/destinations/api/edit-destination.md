@@ -4,9 +4,9 @@ title: 使用流服务API编辑目标连接
 type: Tutorial
 description: 了解如何使用流服务API编辑目标连接的各种组件。
 exl-id: d6d27d5a-e50c-4170-bb3a-c4cbf2b46653
-source-git-commit: 2a72f6886f7a100d0a1bf963eedaed8823a7b313
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1605'
+source-wordcount: '1609'
 ht-degree: 5%
 
 ---
@@ -30,7 +30,7 @@ ht-degree: 5%
 本教程还要求您实际了解Adobe Experience Platform的以下组件：
 
 * [目标](../home.md)： [!DNL Destinations]是预先构建的与目标平台的集成，可无缝激活Adobe Experience Platform中的数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
-* [沙盒](../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [沙盒](../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了您需要了解的其他信息，以便使用[!DNL Flow Service] API成功更新数据流。
 
@@ -40,13 +40,13 @@ ht-degree: 5%
 
 ### 收集所需标头的值 {#gather-values-for-required-headers}
 
-要调用Platform API，必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程将为所有Experience PlatformAPI调用中的每个所需标头提供值，如下所示：
+要调用Experience Platform API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程将为所有Experience Platform API调用中的每个所需标头提供值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-Experience Platform中的所有资源（包括属于[!DNL Flow Service]的资源）都被隔离到特定的虚拟沙盒中。 所有对Platform API的请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
+Experience Platform中的所有资源（包括属于[!DNL Flow Service]的资源）都被隔离到特定的虚拟沙盒中。 对Experience Platform API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -64,9 +64,9 @@ Experience Platform中的所有资源（包括属于[!DNL Flow Service]的资源
 
 >[!TIP]
 >
->您可以使用Experience PlatformUI获取目标所需的数据流ID。 转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**，选择所需的目标数据流并在右边栏中找到目标ID。 目标ID是您将在下一步中用作流ID的值。
+>您可以使用Experience Platform UI获取目标的数据流ID。 转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**，选择所需的目标数据流并在右边栏中找到目标ID。 目标ID是您将在下一步中用作流ID的值。
 >
-> ![使用Experience PlatformUI获取目标ID](/help/destinations/assets/api/edit-destination/get-destination-id.png)
+> ![使用Experience Platform UI获取目标ID](/help/destinations/assets/api/edit-destination/get-destination-id.png)
 
 >[!BEGINSHADEBOX]
 
@@ -394,7 +394,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的响应将返回您的基本连接ID和更新的电子标记。 您可以在提供基本连接ID的同时向[!DNL Flow Service] API发出GET请求，以验证更新。
+成功的响应将返回您的基本连接ID和更新的电子标记。 您可以向[!DNL Flow Service] API发出GET请求来验证更新，同时提供基本连接ID。
 
 ```json
 {
@@ -436,7 +436,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的响应将返回您的基本连接ID和更新的电子标记。 您可以在提供基本连接ID的同时向[!DNL Flow Service] API发出GET请求，以验证更新。
+成功的响应将返回您的基本连接ID和更新的电子标记。 您可以向[!DNL Flow Service] API发出GET请求来验证更新，同时提供基本连接ID。
 
 ```json
 {
@@ -451,7 +451,7 @@ curl -X PATCH \
 
 ## API错误处理 {#api-error-handling}
 
-本教程中的API端点遵循常规Experience PlatformAPI错误消息原则。 有关解释错误响应的详细信息，请参阅Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
+本教程中的API端点遵循常规Experience Platform API错误消息原则。 有关解释错误响应的详细信息，请参阅Experience Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤 {#next-steps}
 

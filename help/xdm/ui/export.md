@@ -4,9 +4,9 @@ title: 在UI中导出XDM架构
 description: 了解如何在Adobe Experience Platform用户界面中将现有架构导出到其他沙盒或组织。
 type: Tutorial
 exl-id: c467666d-55bc-4134-b8f4-7758d49c4786
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '655'
+source-wordcount: '657'
 ht-degree: 11%
 
 ---
@@ -28,11 +28,11 @@ ht-degree: 11%
 
 ## 先决条件
 
-虽然Platform UI允许您导出XDM资源，但必须使用架构注册表API将这些资源导入其他沙盒或组织以完成工作流。 在遵循本指南之前，请参阅[架构注册表API快速入门](../api/getting-started.md)指南，以了解有关所需身份验证标头的重要信息。
+虽然Experience Platform UI允许您导出XDM资源，但必须使用架构注册表API将这些资源导入其他沙盒或组织以完成工作流。 在遵循本指南之前，请参阅[架构注册表API快速入门](../api/getting-started.md)指南，以了解有关所需身份验证标头的重要信息。
 
 ## 生成导出有效负载 {#generate-export-payload}
 
-可以在Platform UI中通过[!UICONTROL 浏览]选项卡的详细信息面板生成导出负载，也可以直接从架构编辑器的架构画布生成导出负载。
+可以在Experience Platform UI中通过[!UICONTROL 浏览]选项卡中的详细信息面板生成导出负载，也可以直接从架构编辑器的架构画布生成导出负载。
 
 要生成导出有效负载，请在左侧导航中选择&#x200B;**[!UICONTROL 架构]**。 在[!UICONTROL 架构]工作区中，选择要导出的架构的行以在右侧边栏中显示架构详细信息。
 

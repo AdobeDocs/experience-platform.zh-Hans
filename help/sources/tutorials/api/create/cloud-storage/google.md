@@ -2,9 +2,9 @@
 title: 使用流服务API创建Google云存储基本连接
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Google Cloud Storage帐户。
 exl-id: 321d15eb-82c0-45a7-b257-1096c6db6b18
-source-git-commit: 3636b785d82fa2e49f76825650e6159be119f8b4
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '550'
+source-wordcount: '556'
 ht-degree: 4%
 
 ---
@@ -19,8 +19,8 @@ ht-degree: 4%
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [源](../../../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。
-* [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强传入数据。
+* [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了使用[!DNL Flow Service] API成功连接到Google云存储帐户所需了解的其他信息。
 
@@ -30,22 +30,22 @@ ht-degree: 4%
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `accessKeyId` | 61个字符的字母数字字符串，用于向Platform验证您的[!DNL Google Cloud Storage]帐户。 |
-| `secretAccessKey` | 用于向Platform验证您的[!DNL Google Cloud Storage]帐户的40个字符Base-64编码字符串。 |
+| `accessKeyId` | 一个由61个字符组成的字母数字字符串，用于向Experience Platform验证您的[!DNL Google Cloud Storage]帐户。 |
+| `secretAccessKey` | 用于向Experience Platform验证您的[!DNL Google Cloud Storage]帐户的40个字符Base-64编码字符串。 |
 | `bucketName` | [!DNL Google Cloud Storage]存储段的名称。 如果要提供对云存储中特定子文件夹的访问权限，则必须指定存储段名称。 |
 | `folderPath` | 要提供访问权限的文件夹的路径。 |
 
 有关这些值的更多信息，请参阅[Google Cloud Storage HMAC密钥](https://cloud.google.com/storage/docs/authentication/hmackeys#overview)指南。 有关如何生成自己的访问密钥ID和访问密钥的步骤，请参阅[[!DNL Google Cloud Storage] 概述](../../../../connectors/cloud-storage/google-cloud-storage.md)。
 
-### 使用平台API
+### 使用Experience Platform API
 
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../../landing/api-guide.md)指南。
+有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../../../landing/api-guide.md)指南。
 
 ## 创建基本连接
 
-基本连接会保留您的源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
+基本连接会保留源与Experience Platform之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-要创建基本连接ID，请在提供[!DNL Google Cloud Storage]身份验证凭据作为POST参数的一部分时，向`/connections`端点请求请求。
+要创建基本连接ID，请在提供您的[!DNL Google Cloud Storage]身份验证凭据作为请求参数的一部分时，向`/connections`端点发出POST请求。
 
 >[!TIP]
 >

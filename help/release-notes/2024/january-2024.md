@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2024 年 1 月）
 description: Adobe Experience Platform 的 2024 年 1 月发行说明。
 exl-id: d4b3c5b2-3adb-41fd-91ad-f4c0f21d2325
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
-workflow-type: ht
-source-wordcount: '1659'
-ht-degree: 100%
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+workflow-type: tm+mt
+source-wordcount: '1662'
+ht-degree: 95%
 
 ---
 
@@ -23,9 +23,9 @@ Experience Platform 中现有功能的更新：
 - [数据准备](#data-prep)
 - [仪表板](#dashboards)
 - [目标](#destinations)
-- [标识服务](#identity-service)
+- [身份标识服务](#identity-service)
 - [Real-Time Customer Data Platform](#rtcdp)
-- [实时客户配置文件](#profile)
+- [实时客户轮廓](#profile)
 - [Segmentation Service](#segmentation)
 - [源](#sources)
 
@@ -43,9 +43,9 @@ Experience Platform 中现有功能的更新：
 
 ## 基于属性的访问控制 {#abac}
 
-基于属性的访问控制是 Adob&#x200B;&#x200B;e Experience Platform 的一项功能，它为注重隐私的品牌在管理用户访问权限方面提供了更大的灵活性。可以将架构字段和区段等单个对象分配给用户角色。此功能允许您授予或撤销组织中特定 Platform 用户对各个对象的访问权限。
+基于属性的访问控制是 Adob&#x200B;&#x200B;e Experience Platform 的一项功能，它为注重隐私的品牌在管理用户访问权限方面提供了更大的灵活性。可以将架构字段和区段等单个对象分配给用户角色。通过此功能，您可以授予或撤销组织中特定Experience Platform用户访问单个对象的权限。
 
-通过基于属性的访问控制，您组织的管理员可以控制用户对所有 Platform 工作流程和资源中的敏感个人数据 (SPD)、个人身份信息 (PII) 和其他自定义类型数据的访问。管理员可以定义只能访问特定字段以及与这些字段对应的数据的用户角色。
+通过基于属性的访问控制，贵组织的管理员可以控制用户对所有Experience Platform工作流和资源中的敏感个人数据(SPD)、个人身份信息(PII)和其他自定义类型数据的访问。 管理员可以定义只能访问特定字段以及与这些字段对应的数据的用户角色。
 
 **新增或更新文档**
 
@@ -55,7 +55,7 @@ Experience Platform 中现有功能的更新：
 
 {style="table-layout:auto"}
 
-有关基于属性的访问控制的详细信息，请参阅[基于属性的访问控制概述](../../access-control/abac/overview.md)。有关基于属性的访问控制工作流程的综合指南，请阅读[基于属性的访问控制端到端指南](../../access-control/abac/end-to-end-guide.md)。
+有关基于属性的访问控制的详细信息，请参阅[基于属性的访问控制概述](../../access-control/abac/overview.md)。有关基于属性的访问控制工作流的综合指南，请阅读[基于属性的访问控制端到端指南](../../access-control/abac/end-to-end-guide.md)。
 
 ## 数据准备 {#data-prep}
 
@@ -79,11 +79,11 @@ Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查
 
 | 功能 | 描述 |
 | --- | --- |
-| 查看 SQL | 您现在可以使用查看 SQL 切换按钮查看配置文件、受众、目标和自定义洞察背后的 SQL，然后通过查询编辑器按需执行查询。访问支持 Real-time Customer Data Platform 洞察的 SQL 有助于您了解数据模型分析背后的逻辑。这种透明度使您的 Adobe Real-time CDP 数据更易于访问、理解，并且对决策更具影响力。<br>从超过 40 个现有洞察的 SQL 中获取灵感，创建新的查询，根据您的业务需求从平台数据中获取独特的洞察。该 SQL 还适用于 Experience League 文档中的[轮廓](../../dashboards/insights/profiles.md)、[受众](../../dashboards/insights/audiences.md)和[目标](../../dashboards/insights/destinations.md)洞察。这些文档重点介绍了可以用标准洞察回答的业务用例。如需了解更多信息，请阅读[查看洞察 SQL](../../dashboards/view-sql.md) 指南。 |
+| 查看 SQL | 您现在可以使用查看 SQL 切换按钮查看配置文件、受众、目标和自定义洞察背后的 SQL，然后通过查询编辑器按需执行查询。访问支持 Real-time Customer Data Platform 洞察的 SQL 有助于您了解数据模型分析背后的逻辑。这种透明度使您的 Adobe Real-time CDP 数据更易于访问、理解，并且对决策更具影响力。<br>从SQL中获取40多种现有见解作为灵感，以创建新的查询，这些查询可根据您的业务需求从Experience Platform数据获取独特的见解。 该 SQL 还适用于 Experience League 文档中的[轮廓](../../dashboards/insights/profiles.md)、[受众](../../dashboards/insights/audiences.md)和[目标](../../dashboards/insights/destinations.md)洞察。这些文档重点介绍了可以用标准洞察回答的业务用例。如需了解更多信息，请阅读[查看洞察 SQL](../../dashboards/view-sql.md) 指南。 |
 
 {style="table-layout:auto"}
 
-有关仪表板的详细信息，包括如何授予访问权限和创建自定义构件，请首先阅读[仪表板概述](../../dashboards/home.md)。
+有关仪表板的详细信息，包括如何授予访问权限和创建自定义小组件，请首先阅读[仪表板概述](../../dashboards/home.md)。
 
 ## 目标 {#destinations}
 
@@ -107,29 +107,29 @@ Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查
 
 有关目标的更多一般信息，请参阅[目标概述](../../destinations/home.md)。
 
-## 标识服务 {#identity-service}
+## 身份标识服务 {#identity-service}
 
-Adobe Experience Platform 标识服务通过跨设备和系统桥接标识，使您能够全面了解您的客户及其行为，助您实时提供有影响力的个人数字体验。
+Adobe Experience Platform 身份标识服务通过跨设备和系统桥接身份标识，使您能够全面了解您的客户及其行为，助您实时提供有影响力的个人数字体验。
 
 **新增或更新文档**
 
 | 文档更新 | 描述 |
 | --- | --- |
-| 文档重组 | 标识服务文档已重组，以改善标识服务中概念的呈现和清晰度：<ul><li>访问[标识服务概述页面](../../identity-service/home.md)，获取详细的术语指南、详细介绍典型客户历程的用例示例、标识服务如何将身份链接在一起的细分，以及标识服务在 Experience Platform 生态系统中所扮演的角色的摘要。</li><li>参阅[了解标识服务和实时客户轮廓之间的关系](../../identity-service/identity-and-profile.md)指南，详细了解这两种服务如何协同工作，以及它们的目的、流程、输入和输出之间的差异。</li><li>请参阅[标识服务链接逻辑指南](../../identity-service/features/identity-linking-logic.md)，了解标识图在不同场景和时间戳下的行为方式的解释和可视化。</li></ul> |
+| 文档重组 | 身份标识服务文档已重组，以改善身份标识服务中概念的呈现和清晰度：<ul><li>访问[身份标识服务概述页面](../../identity-service/home.md)，获取详细的术语指南、详细介绍典型客户历程的用例示例、身份标识服务如何将身份标识链接在一起的细分，以及身份标识服务在 Experience Platform 生态系统中所扮演的角色的摘要。</li><li>参阅[了解身份标识服务和实时客户轮廓之间的关系](../../identity-service/identity-and-profile.md)指南，详细了解这两种服务如何协同工作，以及它们的目的、流程、输入和输出之间的差异。</li><li>请参阅[身份标识服务链接逻辑指南](../../identity-service/features/identity-linking-logic.md)，了解身份标识图在不同场景和时间戳下的行为方式的解释和可视化。</li></ul> |
 
 {style="table-layout:auto"}
 
-要了解有关标识服务的更多信息，请阅读[标识服务概述](../../identity-service/home.md)。
+要了解有关身份标识服务的更多信息，请阅读[身份标识服务概述](../../identity-service/home.md)。
 
 ## Real-Time Customer Data Platform {#rtcdp}
 
-建立在 Experience Platform 上的 Real-Time Customer Data Platform ([!DNL Real-Time CDP]) 可以帮助公司汇集已知和未知数据，通过整个客户历程中通过智能决策激活客户配置文件。[!DNL Real-Time CDP] 结合多个企业数据源来实时创建客户配置文件。然后，根据这些配置文件构建的区段可以发送到下游目标，以便跨所有渠道和设备提供一对一的个性化客户体验。
+建立在 Experience Platform 上的 Real-Time Customer Data Platform ([!DNL Real-Time CDP]) 可以帮助公司汇集已知和未知数据，通过整个客户历程中通过智能决策激活客户轮廓。[!DNL Real-Time CDP] 结合多个企业数据源来实时创建客户轮廓。然后，根据这些轮廓构建的区段可以发送到下游目标，以便跨所有渠道和设备提供一对一的个性化客户体验。
 
 **新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 更新 [Real-Time CDP 主页](https://experience.adobe.com) | <ul><li>**轮廓小部件**：您现在可以使用轮廓小部件导航到轮廓概览页面并查看组织的轮廓指标。</li><li>**轮廓指标卡**：主页仪表板中的轮廓指标卡现在显示您组织中的个人资料总数，具体取决于您各自的合并策略。</li><li>**模式小部件**：您现在可以使用模式小部件导航到 UI 中的模式创建工作流程。</li></ul> |
+| 更新 [Real-Time CDP 主页](https://experience.adobe.com) | <ul><li>**轮廓小组件**：您现在可以使用轮廓小组件导航到轮廓概览页面并查看组织的轮廓指标。</li><li>**轮廓指标卡**：主页仪表板中的轮廓指标卡现在显示您组织中的个人资料总数，具体取决于您各自的合并策略。</li><li>**架构小组件**：您现在可以使用架构小组件导航到 UI 中的架构创建工作流程。</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -144,9 +144,9 @@ Adobe Experience Platform 标识服务通过跨设备和系统桥接标识，使
 
 要了解有关 Real-Time CDP 的更多信息，请阅读 [Real-Time CDP 概述](../../rtcdp/overview.md)。
 
-## 实时客户配置文件 {#profile}
+## 实时客户轮廓 {#profile}
 
-Adobe Experience Platform 使您能够为客户提供协调、一致且相关的体验，无论他们何时何地与您的品牌互动均是如此。利用实时客户配置文件，您可以看到每个客户的整体视图，其中结合来自多个渠道的数据，包括在线、离线、CRM 和第三方数据。配置文件允许您将客户数据整合到一个统一视图中，并为每一次客户交互提供可操作的、有时间戳的描述。
+Adobe Experience Platform 使您能够为客户提供协调、一致且相关的体验，无论他们何时何地与您的品牌互动均是如此。利用实时客户轮廓，您可以看到每个客户的整体视图，其中结合来自多个渠道的数据，包括在线、离线、CRM 和第三方数据。轮廓允许您将客户数据整合到一个统一视图中，并为每一次客户交互提供可操作的、有时间戳的描述。
 
 **更新的功能**
 
@@ -160,7 +160,7 @@ Adobe Experience Platform 使您能够为客户提供协调、一致且相关的
 
 ## Segmentation Service {#segmentation}
 
-[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的配置文件子集。区段可以基于记录数据（例如人口统计信息）或代表客户与您的品牌互动的时间序列事件。
+[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的轮廓子集。区段可以基于记录数据（例如人口统计信息）或代表客户与您的品牌互动的时间序列事件。
 
 **新增功能或更新后的功能**
 

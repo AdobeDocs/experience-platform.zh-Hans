@@ -3,9 +3,9 @@ keywords: 梅德拉利亚；梅德拉利亚
 title: Medallia扩展
 description: Medallia扩展是Adobe Experience Platform中客户目的地的声音。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: c28cf31a-890c-4dcd-b936-5a030dc6e83e
-source-git-commit: b4e869f9bc29122db4fc66ccda752a50c7db729f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '469'
+source-wordcount: '473'
 ht-degree: 3%
 
 ---
@@ -16,15 +16,15 @@ ht-degree: 3%
 
 在Web资产上快速、无缝地部署[!DNL Medallia]。 该扩展还允许您检测调查事件，通过数据元素实时捕获客户反馈，在规则中使用它来个性化客户体验并与Adobe Analytics共享数据。
 
-[!DNL Medallia]是Adobe Experience Platform中客户分机的声音。 有关扩展功能的详细信息，请参阅[Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.103279.medallia-for-adobe-launch.html)上的扩展页面。
+[!DNL Medallia]是Adobe Experience Platform中客户分机的声音。 有关扩展功能的更多信息，请参阅[Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.103279.medallia-for-adobe-launch.html)上的扩展页面。
 
-此目标是标记扩展。 有关标记扩展如何在Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
+此目标是标记扩展。 有关标记扩展如何在Experience Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
 ![Medallia扩展](../../assets/catalog/voice/medallia/catalog.png)
 
 ## 先决条件 {#prerequisites}
 
-此扩展在[!DNL Destinations]目录中提供，适用于已购买Platform的所有客户。
+此扩展位于[!DNL Destinations]目录中，适用于已购买Experience Platform的所有客户。
 
 要使用此扩展，您需要具有对Adobe Experience Platform中标记的访问权限。 标记以内置增值功能的方式提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
 
@@ -32,7 +32,7 @@ ht-degree: 3%
 
 要安装[!DNL Medallia]扩展，请执行以下操作：
 
-在[平台接口](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**。
+在[Experience Platform界面](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**。
 
 从目录中选择扩展或使用搜索栏。
 
@@ -42,7 +42,7 @@ ht-degree: 3%
 
 该工作流将指导您完成安装步骤。
 
-有关扩展配置选项和安装支持的信息，请参阅Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.103279.medallia-for-adobe-launch.html)上的[Medallia页。
+有关扩展配置选项和安装支持的信息，请参阅Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.103279.medallia-for-adobe-launch.html)上的[Medallia页面。
 
 您还可以直接在[数据收集UI](https://experience.adobe.com/#/data-collection/)中安装该扩展。 有关详细信息，请参阅标记文档中有关[添加新扩展](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension)的部分。
 
@@ -58,6 +58,6 @@ ht-degree: 3%
 
 >[!TIP]
 >
->如果扩展已安装在您的某个资产上，则平台UI仍会显示该扩展的&#x200B;**[!UICONTROL Install]**。 按照[安装扩展](#install-extension)中的说明启动安装工作流，以配置或删除您的扩展。
+>如果某个资产上已安装该扩展，则Experience Platform UI仍会显示该扩展的&#x200B;**[!UICONTROL Install]**。 按照[安装扩展](#install-extension)中的说明启动安装工作流，以配置或删除您的扩展。
 
 要升级扩展，请参阅标记文档中的[扩展升级过程](../../../tags/ui/managing-resources/extensions/extension-upgrade.md)指南。

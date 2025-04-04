@@ -1,23 +1,23 @@
 ---
 keywords: Experience Platform；配置文件；实时客户配置文件；故障排除；API；统一配置文件；统一配置文件；配置文件；rtcp；XDM图
-title: Platform中的常规辅助功能
+title: Experience Platform中的常规辅助功能
 type: Documentation
 description: 详细了解Adobe Experience Platform支持的常规辅助功能，包括键盘导航、调色板和对比度以及辅助技术支持。
 exl-id: 4b7e2f2b-af51-4376-8a63-16c921cc7135
-source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '481'
+source-wordcount: '483'
 ht-degree: 0%
 
 ---
 
 # Experience Platform中的辅助功能
 
-Adobe Experience Platform致力于为所有用户提供无障碍和具有包容性的功能，包括使用语音识别软件和屏幕阅读器等辅助设备的用户。 本文档概述了Platform支持的一般辅助功能，包括键盘导航、语义结构、前景元素和背景元素之间的充分对比度以及支持辅助技术。
+Adobe Experience Platform致力于为所有用户提供无障碍和具有包容性的功能，包括使用语音识别软件和屏幕阅读器等辅助设备的用户。 本文档概述了Experience Platform支持的一般辅助功能，包括键盘导航、语义结构、前景元素和背景元素之间的充分对比度以及支持辅助技术。
 
 ## 辅助技术
 
-残障用户经常依赖硬件和软件（称为辅助技术）来访问数字内容和使用软件产品。 Adobe Experience Platform通过遵循辅助功能最佳实践（如使用语义代码、等效文本、标签和在需要时使用ARIA），支持多种类型的辅助技术(AT)，如屏幕阅读器、缩放和语音识别软件。 Experience Platform用户界面(UI)中的交互式元素使用相应的标签、可访问名称和角色，这些标签和角色可标识它们的用途及其当前状态。 这可确保辅助技术（如屏幕阅读器）可以向用户朗读标签和其他信息，以便他们能够轻松地与应用程序控件交互。
+残障用户经常依赖硬件和软件（称为辅助技术）来访问数字内容和使用软件产品。 Adobe Experience Platform通过遵循辅助功能最佳实践（如使用语义代码、等效文本、标签和在需要时使用ARIA），支持多种类型的辅助技术(AT)，如屏幕阅读器、缩放和语音识别软件。 Experience Platform用户界面(UI)中的交互式元素使用相应的标签、可访问名称和角色，来标识其用途及其当前状态。 这可确保辅助技术（如屏幕阅读器）可以向用户朗读标签和其他信息，以便他们能够轻松地与应用程序控件交互。
 
 ## 键盘辅助功能
 
@@ -35,9 +35,9 @@ Experience Platform致力于支持完整的键盘辅助功能。
 
 ## 调色板和对比度
 
-Experience Platform努力符合[WCAG 2.1 AA](https://www.w3.org/TR/WCAG/)，包括对颜色对比度的要求。 Experience PlatformUI在应用程序中提供了足够的对比度，可确保视力低下或色觉缺失的用户获得可访问的查看体验。
+Experience Platform致力于符合[WCAG 2.1 AA](https://www.w3.org/TR/WCAG/)，包括对颜色对比度的要求。 Experience Platform UI在应用程序中提供了足够的对比度，可确保视力低下或色觉缺失的用户获得可访问的查看体验。
 
-![Experience PlatformUI的主页上显示的调色板和对比度。](images/homepage.png)
+![Experience Platform UI的主页上显示的调色板和对比度。](images/homepage.png)
 
 ## 必填字段验证
 

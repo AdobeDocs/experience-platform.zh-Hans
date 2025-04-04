@@ -1,11 +1,11 @@
 ---
 title: 配置测试参考
-description: 了解Auditor功能如何在Adobe Experience Platform Debugger中测试配置。
+description: 了解Auditor功能如何测试Adobe Experience Platform Debugger中的配置。
 exl-id: 92b07224-57f1-4891-9923-aa079945e6bc
-source-git-commit: 797d4f305b4a6884ada4e0619beadff6a45ab42d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '705'
-ht-degree: 52%
+source-wordcount: '707'
+ht-degree: 50%
 
 ---
 
@@ -15,9 +15,9 @@ ht-degree: 52%
 
 >[!NOTE]
 >
->有关Platform Debugger中Auditor测试的更多信息，请参阅[Auditor功能概述](./overview.md)。
+>有关Experience Platform Debugger中Auditor测试的更多信息，请参阅[Auditor功能概述](./overview.md)。
 
-配置测试会扫描实施中的特定设置、值，或者有无潜在冲突。Platform Auditor 会根据其他规则和推荐的最佳做法来评估标记。
+配置测试会扫描实施中的特定设置、值，或者有无潜在冲突。Experience Platform Auditor会根据其他规则和建议的最佳实践来评估标记。
 
 | 测试 | 粗细 | 标准 | 推荐 |
 | --- | --- | --- | --- |
@@ -28,7 +28,7 @@ ht-degree: 52%
 | Analytics — 实例化一次 | 5 | 在页面上多次检测到 Adobe Analytics 代码。在网页上找不到A-Analytics代码时返回0。 | 确保页面上仅有一个 Analytics 标记。<br><br>[其他信息](https://experienceleague.adobe.com/docs/analytics/implementation/home.html) |
 | Analytics — 最新版本 | 3 | 您的页面没有运行最新版本的 Analytics 代码库。为了利用性能改进并提供最新功能，我们会不断地更新和调整旨在支持 Experience Cloud 技术的代码库。在网页上找不到Analytics代码时，返回0。 | 安装最新版本的 Analytics 代码库。<br><br>[其他信息](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans) |
 | Launch - DOM就绪后，异步加载第三方标记 | 3 | 为了在良好的用户体验与收集准确的数据之间取得平衡，应在DOM准备就绪时触发第三方标记。 这将可以确保执行相关的跟踪脚本，同时又不会影响站点的正常运转。 | 解决此问题的方法是：调整所有执行第三方像素的规则，使其在DOM就绪时触发。<br><br>[其他信息](../../tags/ui/managing-resources/rules.md) |
-| Experience CloudID服务 — 最新版本 | 2 | 您的页面没有运行最新版本的访客ID服务代码库visitorAPI.js。 为了利用性能改进并提供最新功能，我们会不断地更新和调整旨在支持 Experience Cloud 技术的代码库。 | 安装最新版本的访客 ID 服务代码库。<br><br>[其他信息](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/library.html) |
+| Experience Cloud ID服务 — 最新版本 | 2 | 您的页面没有运行最新版本的访客ID服务代码库visitorAPI.js。 为了利用性能改进并提供最新功能，我们会不断地更新和调整旨在支持 Experience Cloud 技术的代码库。 | 安装最新版本的访客 ID 服务代码库。<br><br>[其他信息](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/library.html) |
 | Launch — 最新版本 | 2 | 这些页面未运行最新版本的标记代码库(Turbine)。 为了利用性能改进并提供最新功能，我们会不断地更新和调整旨在支持 Experience Cloud 技术的代码库。 | 重建并发布标记库。<br><br>[其他信息](../../tags/quick-start/quick-start.md) |
 | Target — 最新版本 | 2 | 您的页面没有运行最新版本的 Target 代码库。为了利用性能改进并提供最新功能，我们会不断地更新和调整旨在支持 Experience Cloud 技术的代码库。 | 安装最新版本的 Target 代码库。<br><br>[其他信息](https://developer.adobe.com/target/implement/client-side/) |
 | Target - mboxDefault先于mboxCreate | 5 | mboxCreate的正确用法类似于下面的示例：<br><br> `<div class="mboxDefault"><!-Customer content--></div><script>mboxCreate('myMboxName')</script>` | 调用mboxCreate()之前，请务必包含`<div class="mboxDefault"></div>`标记。 at.js 并不会为您添加此标记。<br><br>[其他信息](https://developer.adobe.com/target/implement/client-side/) |

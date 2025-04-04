@@ -4,9 +4,9 @@ title: 标准警报规则
 description: 本文档介绍了Experience Platform提供的预定义警报规则。
 feature: Alerts
 exl-id: b4af1c15-b1bc-4e4b-a447-09cc17a63988
-source-git-commit: 3a800560376973a85f9f77a481ffead3c28a05aa
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '4277'
+source-wordcount: '4279'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 1%
 
 Adobe Experience Platform提供了多个预定义警报规则，您可以为组织启用这些规则。 本文档介绍了这些Adobe提供的警报规则的详细信息。 有关Experience Platform中警报的更多常规信息，请参阅[警报概述](./overview.md)。
 
-在Platform UI](./ui.md)中[查看警报规则时，您可以单独订阅每个规则。 但是，当通过[I/O事件通知](./subscribe.md)订阅警报时，警报规则会整理到不同的订阅包中。 在下表中，每个规则都显示为其对应的I/O事件订阅名称。
+在Experience Platform UI中[查看警报规则](./ui.md)时，您可以单独订阅每个规则。 但是，当通过[I/O事件通知](./subscribe.md)订阅警报时，警报规则会整理到不同的订阅包中。 在下表中，每个规则都显示为其对应的I/O事件订阅名称。
 
 ## 源 {#sources}
 
@@ -36,7 +36,7 @@ Adobe Experience Platform提供了多个预定义警报规则，您可以为组�
 
 | I/O事件订阅 | 警报规则 | 描述 |
 | --- | --- | --- |
-| Source流运行延迟、失败和错误 | 缺乏摄取 | 如果摄取延迟超过7个小时并且没有数据摄取到Platform，则此警报会向您发送消息。 |
+| Source流运行延迟、失败和错误 | 缺乏摄取 | 如果摄取延迟超过7个小时并且没有数据被摄取到Experience Platform，则此警报会向您发送消息。 |
 
 {style="table-layout:auto"}
 

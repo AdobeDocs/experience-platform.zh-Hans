@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建和编辑类
 description: 了解如何在Experience Platform用户界面中创建和编辑类。
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
-source-git-commit: 02b709c01347c1d03f870132dff437b97f239a9c
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1689'
+source-wordcount: '1692'
 ht-degree: 5%
 
 ---
@@ -20,25 +20,25 @@ ht-degree: 5%
 
 在Adobe Experience Platform中，模式的类定义模式将包含的数据（记录或时间序列）的行为方面。 除此之外，类还描述了基于该类的所有架构所需包含的最少数量的公共属性，并提供了一种合并多个兼容数据集的方法。
 
-Adobe提供了多个标准（“核心”）体验数据模型(XDM)类，包括[XDM个人资料](../../classes/individual-profile.md)和[XDM ExperienceEvent](../../classes/experienceevent.md)。 除了这些核心类之外，您还可以创建自己的自定义类，以描述组织更具体的用例。
+Adobe提供了多个标准（“核心”）体验数据模型(XDM)类，包括[XDM Individual Profile](../../classes/individual-profile.md)和[XDM ExperienceEvent](../../classes/experienceevent.md)。 除了这些核心类之外，您还可以创建自己的自定义类，以描述组织更具体的用例。
 
-本文档概述了如何在Experience PlatformUI中创建、编辑和管理自定义类。
+本文档概述如何在Experience Platform UI中创建、编辑和管理自定义类。
 
 ## 先决条件 {#prerequisites}
 
-本指南要求您对XDM系统有一定的了解。 请参阅[XDM概述](../../home.md)，了解XDM在Experience Platform生态系统中的作用以及[架构组合的基础知识](../../schema/composition.md)，了解类对XDM架构的贡献。
+本指南要求您对XDM系统有一定的了解。 请参阅[XDM概述](../../home.md)，了解XDM在Experience Platform生态系统中的角色以及[架构组合的基础知识](../../schema/composition.md)，了解类如何对XDM架构做出贡献。
 
 虽然本指南并非必需，但建议您也学习有关[在UI](../../tutorials/create-schema-ui.md)中撰写架构的教程，以熟悉架构编辑器的各种功能。
 
 ## 快速入门 {#getting-started}
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 架构]**&#x200B;以打开[!UICONTROL 架构]工作区，然后选择&#x200B;**[!UICONTROL 类]**&#x200B;选项卡。 此时将显示可用类的列表。
+在Experience Platform UI中，选择左侧导航栏中的&#x200B;**[!UICONTROL 架构]**&#x200B;以打开[!UICONTROL 架构]工作区，然后选择&#x200B;**[!UICONTROL 类]**&#x200B;选项卡。 此时将显示可用类的列表。
 
 ![已突出显示[!UICONTROL 架构]工作区[!UICONTROL 类]和[!UICONTROL 架构]的[!UICONTROL 类]选项卡中的类的。](../../images/ui/resources/classes/available-classes.png)
 
 ## 筛选类 {#filter}
 
-系统会根据类的创建方式自动筛选类列表。 默认设置显示由Adobe定义的类。 您还可以筛选列表以显示您的组织创建的那些列表。 选择单选按钮以在[!UICONTROL 标准]和[!UICONTROL 自定义]选项之间进行选择。 [!UICONTROL Standard]选项显示由Adobe创建的实体，[!UICONTROL Custom]选项显示组织内创建的实体。
+系统会根据类的创建方式自动筛选类列表。 默认设置显示由Adobe定义的类。 您还可以筛选列表以显示您的组织创建的那些列表。 选择单选按钮以在[!UICONTROL 标准]和[!UICONTROL 自定义]选项之间进行选择。 [!UICONTROL Standard]选项显示Adobe创建的实体，[!UICONTROL Custom]选项显示组织内创建的实体。
 
 ![已突出显示[!UICONTROL 架构]工作区的[!UICONTROL 类]选项卡，其中包含[!UICONTROL 标准]和[!UICONTROL 自定义]。](../../images/ui/resources/classes/standard-and-custom-classes.png)
 
@@ -48,7 +48,7 @@ Adobe提供了多个标准（“核心”）体验数据模型(XDM)类，包括[
 
 ## 创建新类 {#create}
 
-在Platform UI中创建类的方法有两种：通过&#x200B;**[!UICONTROL 创建类]**&#x200B;或&#x200B;**[!UICONTROL 创建架构]**。
+在Experience Platform UI中创建类的方法有两种：通过&#x200B;**[!UICONTROL 创建类]**&#x200B;或&#x200B;**[!UICONTROL 创建架构]**。
 
 ### 创建类
 
@@ -156,6 +156,6 @@ Adobe提供了多个标准（“核心”）体验数据模型(XDM)类，包括[
 
 ## 后续步骤 {#next-steps}
 
-本文档介绍了如何使用Platform UI创建和编辑类。 有关[!UICONTROL 架构]工作区的功能的更多信息，请参阅[[!UICONTROL 架构]工作区概述](../overview.md)。
+本文档介绍了如何使用Experience Platform UI创建和编辑类。 有关[!UICONTROL 架构]工作区的功能的更多信息，请参阅[[!UICONTROL 架构]工作区概述](../overview.md)。
 
 要了解如何使用架构注册表API管理类，请参阅[类端点指南](../../api/classes.md)。

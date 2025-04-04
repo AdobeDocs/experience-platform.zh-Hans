@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在用户界面中定义XDM字段
 description: 了解如何在Experience Platform用户界面中定义XDM字段。
 exl-id: 2adb03d4-581b-420e-81f8-e251cf3d9fb9
-source-git-commit: 0360d0eb9f4a01e12ce8619e8d2c5bac9301631f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1606'
+source-wordcount: '1607'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ Adobe Experience Platform用户界面中的[!DNL Schema Editor]允许您在自�
 
 ## 先决条件
 
-本指南要求您对XDM系统有一定的了解。 请参阅[XDM概述](../../home.md)，了解XDM在Experience Platform生态系统中的作用以及[架构组合的基础知识](../../schema/composition.md)，了解类和字段组如何为XDM架构贡献字段。
+本指南要求您对XDM系统有一定的了解。 请参阅[XDM概述](../../home.md)，了解XDM在Experience Platform生态系统中的角色以及[架构组合的基础知识](../../schema/composition.md)，了解类和字段组如何为XDM架构贡献字段。
 
 虽然本指南并非必需，但建议您也学习有关[在UI](../../tutorials/create-schema-ui.md)中撰写架构的教程，以熟悉[!DNL Schema Editor]的各种功能。
 
@@ -102,7 +102,7 @@ Adobe Experience Platform用户界面中的[!DNL Schema Editor]允许您在自�
 
 ## 特殊字段类型 {#special}
 
-右边栏提供了多个复选框，用于为所选字段指定特殊角色。 其中一些选项的用例涉及有关数据建模策略以及如何使用下游平台服务的重要注意事项。
+右边栏提供了多个复选框，用于为所选字段指定特殊角色。 其中一些选项的用例涉及有关数据建模策略以及如何使用下游Experience Platform服务的重要注意事项。
 
 要了解有关这些特殊类型的更多信息，请参阅以下文档：
 

@@ -1,10 +1,10 @@
 ---
-title: 在UI中创建Marketo EngageSource连接和数据流
+title: 在UI中创建Marketo Engage Source连接和数据流
 description: 本教程提供了在UI中创建Marketo Engage源连接和数据流以将B2B数据引入Adobe Experience Platform的步骤。
 exl-id: a6aa596b-9cfa-491e-86cb-bd948fb561a8
-source-git-commit: 744098777141c61ac27fe6f150c05469d5705dee
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1831'
+source-wordcount: '1836'
 ht-degree: 2%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->在创建[!DNL Marketo Engage]源连接和数据流之前，您必须首先确保已在[!DNL Marketo]中映射[您的Adobe组织ID](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html)。 此外，您还必须确保在创建源连接和数据流之前已完成[自动填充 [!DNL Marketo] B2B命名空间和架构](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md)。
+>在创建[!DNL Marketo Engage]源连接和数据流之前，必须首先确保已在[!DNL Marketo]中映射[您的Adobe组织ID](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html)。 此外，您还必须确保在创建源连接和数据流之前已完成[自动填充 [!DNL Marketo] B2B命名空间和架构](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md)。
 
 本教程提供了在UI中创建[!DNL Marketo Engage]（以下简称“[!DNL Marketo]”）源连接器以将B2B数据引入Adobe Experience Platform的步骤。
 
@@ -22,12 +22,12 @@ ht-degree: 2%
 本教程需要对以下Adobe Experience Platform组件有一定的了解：
 
 * [B2B命名空间和架构自动生成实用程序](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md)： B2B命名空间和架构自动生成实用程序允许您使用[!DNL Postman]自动生成B2B命名空间和架构的值。 必须先完成B2B命名空间和架构，然后才能创建[!DNL Marketo]源连接和数据流。
-* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
-* [体验数据模型(XDM)](../../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+* [源](../../../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
+* [体验数据模型(XDM)](../../../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
    * [在UI中创建和编辑架构](../../../../../xdm/ui/resources/schemas.md)：了解如何在UI中创建和编辑架构。
 * [身份命名空间](../../../../../identity-service/features/namespaces.md)：身份命名空间是[!DNL Identity Service]的组件，充当与身份相关的上下文的指示器。 完全限定的身份包括ID值和命名空间。
 * [[!DNL Real-Time Customer Profile]](/help/profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
-* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [沙盒](../../../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ### 收集所需的凭据
 
@@ -45,7 +45,7 @@ ht-degree: 2%
 
 ## 连接您的[!DNL Marketo]帐户
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
 在&#x200B;*Adobe应用程序*&#x200B;类别下，选择&#x200B;**[!UICONTROL Marketo Engage]**，然后选择&#x200B;**[!UICONTROL 添加数据]**。
 
@@ -55,7 +55,7 @@ ht-degree: 2%
 
 ![已选择Marketo Engage源的源目录。](../../../../images/tutorials/create/marketo/catalog.png)
 
-出现&#x200B;**[!UICONTROL ConnectMarketo Engage帐户]**&#x200B;页。 在此页面上，您可以使用新帐户或访问现有帐户。
+此时会显示&#x200B;**[!UICONTROL Connect Marketo Engage帐户]**&#x200B;页面。 在此页面上，您可以使用新帐户或访问现有帐户。
 
 >[!BEGINTABS]
 
@@ -124,7 +124,7 @@ ht-degree: 2%
 如果您的数据集启用了实时客户个人资料，那么在此步骤中，您可以切换&#x200B;**[!UICONTROL 个人资料数据集]**&#x200B;以启用您的数据以进行个人资料摄取。 您还可以使用此步骤启用&#x200B;**[!UICONTROL 错误诊断]**&#x200B;和&#x200B;**[!UICONTROL 部分摄取]**。
 
 * **[!UICONTROL 错误诊断]**：选择&#x200B;**[!UICONTROL 错误诊断]**&#x200B;以指示源生成错误诊断，以便以后在监视数据集活动和数据流状态时可以引用这些诊断。
-* **[!UICONTROL 部分摄取]**： [部分批次摄取](../../../../../ingestion/batch-ingestion/partial.md)能够摄取包含错误的数据，最多可达到特定可配置阈值。 此功能允许您成功地将所有准确的数据提取到Experience Platform中，同时所有不正确的数据将单独进行批处理并显示有关其无效原因的信息。
+* **[!UICONTROL 部分摄取]**： [部分批次摄取](../../../../../ingestion/batch-ingestion/partial.md)能够摄取包含错误的数据，最多可达到特定可配置阈值。 此功能允许您成功地将所有准确的数据提取到Experience Platform中，同时将所有不正确的数据与有关其无效原因的信息单独进行批处理。
 
 在此步骤中，您可以启用&#x200B;**[!UICONTROL 示例数据流]**&#x200B;以限制数据摄取，并避免摄取所有历史数据（包括人员身份）所产生的额外成本。
 
@@ -132,7 +132,7 @@ ht-degree: 2%
 
 **使用示例数据流的快速指南**
 
-示例数据流是您可以为[!DNL Marketo]数据流设置的配置，以限制摄取率，然后尝试Experience Platform功能而不必摄取大量数据。
+示例数据流是您可以为[!DNL Marketo]数据流设置的配置，用于限制摄取率，然后尝试使用Experience Platform功能而无需摄取大量数据。
 
 * 启用示例数据流，通过在回填作业期间摄取最多10万条记录（从最大的记录ID）或最多10天的活动，来限制历史数据。
 * 为所有B2B实体使用示例数据流配置时，您必须考虑可能缺少某些相关记录，因为未摄取源数据的整个历史记录。
@@ -203,11 +203,11 @@ ht-degree: 2%
 
 ### UI中的错误消息 {#error-messages}
 
-当Platform检测到您的设置存在问题时，UI中会显示以下错误消息：
+当Experience Platform检测到您的设置存在问题时，UI中会显示以下错误消息：
 
 #### [!DNL Munchkin ID]未映射到相应的组织
 
-如果您的[!DNL Munchkin ID]未映射到您正在使用的平台组织，则身份验证将被拒绝。 使用[[!DNL Marketo] 接口](https://app-sjint.marketo.com/#MM0A1)配置[!DNL Munchkin ID]与组织之间的映射。
+如果您的[!DNL Munchkin ID]未映射到您正在使用的Experience Platform组织，则身份验证将被拒绝。 使用[[!DNL Marketo] 接口](https://app-sjint.marketo.com/#MM0A1)配置[!DNL Munchkin ID]与组织之间的映射。
 
 ![显示未将Marketo实例正确映射到Adobe组织的错误消息。](../../../../images/tutorials/create/marketo/munchkin-not-mapped.png)
 

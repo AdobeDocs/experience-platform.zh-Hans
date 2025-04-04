@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform；入门；客户人工智能；热门主题；客户人工智能输入；客户人工智能输出；数据要求
+keywords: Experience Platform；快速入门；客户人工智能；热门主题；客户人工智能输入；客户人工智能输出；数据要求
 solution: Experience Platform, Real-Time Customer Data Platform
 feature: Customer AI
 title: 客户人工智能中的数据要求
 topic-legacy: Getting started
 description: 进一步了解客户人工智能使用的所需事件、输入和输出。
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
-source-git-commit: 63bdb48936070d23d1801d8e6143db3aefad5f6e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2545'
+source-wordcount: '2551'
 ht-degree: 1%
 
 ---
@@ -48,7 +48,7 @@ ht-degree: 1%
 客户人工智能通过分析以下数据集来预测客户流失（客户何时可能停止使用产品）或转化（客户何时可能购买）倾向分数：
 
 - 使用[Analytics源连接器](../../sources/tutorials/ui/create/adobe-applications/analytics.md)的Adobe Analytics数据
-- 使用[Audience Manager源连接器](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md)的Adobe Audience Manager数据
+- 使用[Adobe Audience Manager源连接器](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md)的Audience Manager数据
 - [体验事件数据集](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/experienceevent.html)
 - [使用者体验事件数据集](https://experienceleague.adobe.com/docs/experience-platform/intelligent-services/data-preparation.html#cee-schema)
 
@@ -62,20 +62,20 @@ ht-degree: 1%
 
 | 搜索词 | 定义 |
 | --- | --- |
-| [体验数据模型(XDM)](../../xdm/home.md) | XDM是一个基础框架，它允许由Adobe Experience Platform提供支持的Adobe Experience Cloud在正确的时间通过正确的渠道向正确的人员传递正确的信息。 Platform使用XDM系统以特定方式组织数据，使其更易于用于Platform服务。 |
-| [XDM架构](../../xdm/schema/composition.md) | Experience Platform使用架构以一致且可重用的方式描述数据结构。 通过在系统中以一致的方式定义数据，更容易保留含义并因此从数据中获取价值。 在将数据引入Platform之前，必须组合模式以描述数据的结构并对每个字段中可以包含的数据类型提供约束。 架构由一个基本XDM类以及零个或多个架构字段组组成。 |
+| [体验数据模型(XDM)](../../xdm/home.md) | XDM是一个基础框架，它允许由Adobe Experience Platform提供支持的Adobe Experience Cloud在正确的时间通过正确的渠道向正确的人员传递正确的信息。 Experience Platform使用XDM系统以特定方式整理数据，以便更轻松地用于Experience Platform服务。 |
+| [XDM架构](../../xdm/schema/composition.md) | Experience Platform使用架构，以一致且可重用的方式描述数据结构。 通过在系统中以一致的方式定义数据，更容易保留含义并因此从数据中获取价值。 将数据引入Experience Platform之前，必须构建架构以描述数据的结构并对每个字段中可以包含的数据类型提供约束。 架构由一个基本XDM类以及零个或多个架构字段组组成。 |
 | [XDM类](../../xdm/schema/field-constraints.md) | 所有XDM架构都描述了可分类为`Experience Event`的数据。 架构的数据行为由架构的类定义，该类在首次创建架构时分配给架构。 XDM类描述架构必须包含的最小属性数，以便表示特定数据行为。 |
 | [字段组](../../xdm/schema/composition.md) | 定义架构中一个或多个字段的组件。 字段组强制实施其字段在架构层次结构中的显示方式，因此它们包含的每个架构都具有相同的结构。 字段组仅与由其`meta:intendedToExtend`属性标识的特定类兼容。 |
 | [数据类型](../../xdm/schema/composition.md) | 还可以为架构提供一个或多个字段的组件。 但是，与字段组不同，数据类型不受特定类的约束。 这使得数据类型成为描述通用数据结构的更灵活的选项，这些结构可以在具有不同类的多个架构中重用。 CEE和Adobe Analytics架构均支持本文档中概述的数据类型。 |
-| [实时客户资料](../../profile/home.md) | Real-time Customer Profile为有针对性的个性化体验管理提供了一个集中式客户配置文件。 每个用户档案都包含跨所有系统汇总的数据，以及在您用于Experience Platform的任何系统中发生的涉及个人事件的可操作时间戳帐户。 |
+| [实时客户轮廓](../../profile/home.md) | Real-time Customer Profile为有针对性的个性化体验管理提供了一个集中式客户配置文件。 每个用户档案都包含跨所有系统汇总的数据，以及在您用于Experience Platform的任意系统中发生的涉及个人事件的可操作时间戳帐户。 |
 
 ## 客户人工智能输入数据 {#customer-ai-input-data}
 
 对于输入数据集(如Adobe Analytics和Adobe Audience Manager)，默认情况下，源连接器在连接过程中直接映射这些标准字段组(Commerce、Web、应用程序和搜索)中的事件。 下表显示了Customer AI的默认标准字段组中的事件字段。
 
-有关映射Adobe Analytics数据或Audience Manager数据的详细信息，请访问Analytics字段映射或Audience Manager[字段映射指南](../../sources/connectors/adobe-applications/mapping/audience-manager.md)。
+有关映射Adobe Analytics数据或Audience Manager数据的详细信息，请访问Analytics字段映射或Audience Manager [字段映射指南](../../sources/connectors/adobe-applications/mapping/audience-manager.md)。
 
-您可以将体验事件或使用者体验事件XDM架构用于未通过以上连接器之一填充的输入数据集。 可在架构创建过程中添加其他XDM字段组。 字段组可由标准字段组或自定义字段组等Adobe提供，这与平台中的数据表示形式匹配。
+您可以将体验事件或使用者体验事件XDM架构用于未通过以上连接器之一填充的输入数据集。 可在架构创建过程中添加其他XDM字段组。 字段组可由Adobe提供，例如标准字段组或自定义字段组，它们与Experience Platform中的数据表示形式匹配。
 
 >[!IMPORTANT]
 >
@@ -91,7 +91,7 @@ ht-degree: 1%
 
 默认情况下，客户人工智能使用四个标准字段组中的事件：Commerce、Web、Application和Search。 无需在下面列出的标准字段组中为每个事件提供数据，但在某些情况下需要某些事件。 如果标准字段组中有任何可用事件，建议将其包含在架构中。 例如，如果要创建用于预测购买事件的客户人工智能模型，则从Commerce和网页详细信息字段组获得数据会很有用。
 
-要在Platform UI中查看字段组，请选择左边栏上的&#x200B;**[!UICONTROL 架构]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 字段组]**&#x200B;选项卡。
+要在Experience Platform UI中查看字段组，请选择左边栏上的&#x200B;**[!UICONTROL 架构]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 字段组]**&#x200B;选项卡。
 
 | 字段组 | 事件类型 | XDM字段路径 |
 | --- | --- | --- |
@@ -146,7 +146,7 @@ ht-degree: 1%
 | 零售 | 店内交易<br>注册会员卡<br>剪辑移动优惠券。 |
 | 娱乐 | 购买季成员资格<br>流视频。 |
 | 招待 | 进行餐厅预订<br>购买会员积分。 |
-| 旅游 | 添加已知的旅行者信息购买英里数。 |
+| 旅行 | 添加已知的旅行者信息购买英里数。 |
 | 通信 | 升级/降级/取消计划。 |
 
 要选择自定义事件，必须表示用户启动的操作。 例如，“电子邮件发送”是由营销人员而不是用户启动的操作，因此不应将其用作自定义事件。
@@ -211,7 +211,7 @@ ht-degree: 1%
 
 客户人工智能为被认为符合条件的个人资料生成多个属性。 根据您配置的内容，可通过两种方式使用得分（输出）。 如果您拥有启用实时客户配置文件的数据集，则可以在[区段生成器](../../segmentation/ui/segment-builder.md)中使用来自实时客户配置文件的见解。 如果您没有启用配置文件的数据集，您可以[下载可在数据湖中使用的客户人工智能输出](./user-guide/download-scores.md)数据集。
 
-您可以在Platform **数据集**&#x200B;工作区中找到输出数据集。 所有客户人工智能输出数据集都以名称&#x200B;**客户人工智能分数 — NAME_OF_APP**&#x200B;开头。 同样，所有客户人工智能输出架构都以名称&#x200B;**客户人工智能架构 — Name_of_app**&#x200B;开头。
+您可以在Experience Platform **数据集**&#x200B;工作区中找到输出数据集。 所有客户人工智能输出数据集都以名称&#x200B;**客户人工智能分数 — NAME_OF_APP**&#x200B;开头。 同样，所有客户人工智能输出架构都以名称&#x200B;**客户人工智能架构 — Name_of_app**&#x200B;开头。
 
 ![客户人工智能中输出数据集的名称](./images/user-guide/cai-schema-name-of-app.png)
 
@@ -221,7 +221,7 @@ ht-degree: 1%
 | ----- | ----------- |
 | [!UICONTROL 得分] | 客户在定义的时间范围内实现预测目标的相对可能性。 这个值不应被视为概率百分比，而应被视为个体相对于群体总数的可能性。 此得分从0到100不等。 |
 | 概率 | 此属性是用户档案在定义的时间范围内实现预测目标的真实概率。 在比较不同目标的输出时，建议您考虑百分比或得分上的概率。 在确定合格群体的平均概率时，应始终使用概率，因为对于不频繁发生的事件，概率往往位于较低侧。 概率范围在0和1之间的值。 |
-| 百分点值 | 此值提供有关用户档案相对于其他类似评分的用户档案的性能信息。 例如，百分位数等级为99的客户档案流失率表明，其流失风险高于所有其他已评分客户档案的99%。 百分位数的范围是1到100。 |
+| 百分位数 | 此值提供有关用户档案相对于其他类似评分的用户档案的性能信息。 例如，百分位数等级为99的客户档案流失率表明，其流失风险高于所有其他已评分客户档案的99%。 百分位数的范围是1到100。 |
 | 倾向性类型 | 选定的倾向性类型。 |
 | 得分日期 | 评分发生的日期。 |
 | 影响因素 | 这些是个人资料可能会发生转化或流失的预测原因。 这些因素由以下属性组成：<ul><li>代码：对个人资料的预测得分产生积极影响的个人资料或行为属性。 </li><li>值：配置文件或行为属性的值。</li><li>重要性：表示配置文件或行为属性对预测分数（低、中、高）的权重</li></ul> |

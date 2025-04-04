@@ -6,9 +6,9 @@ description: 了解如何在Adobe Experience Platform中配置体验数据模型
 role: Developer
 feature: Consent, Schemas, Datasets
 exl-id: 61ceaa2a-c5ac-43f5-b118-502bdc432234
-source-git-commit: bf651967714745a0b501dcb27373379fe014c9e1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1573'
+source-wordcount: '1581'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 为了让Adobe Experience Platform处理您的客户同意/偏好设置数据，必须将该数据发送到数据集，其架构包含与同意和其他权限相关的字段。 具体来说，此数据集必须基于[!DNL XDM Individual Profile]类，并启用以便在[!DNL Real-Time Customer Profile]中使用。
 
-本文档提供了配置数据集以在Experience Platform中处理同意数据的步骤。 有关在Platform中处理同意/偏好设置数据的完整工作流的概述，请参阅[同意处理概述](./overview.md)。
+本文档提供了配置数据集以在Experience Platform中处理同意数据的步骤。 有关Experience Platform中处理同意/偏好设置数据的完整工作流的概述，请参阅[同意处理概述](./overview.md)。
 
 >[!IMPORTANT]
 >
@@ -39,7 +39,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->本教程假定您知道Platform中要用于捕获客户属性信息的[!DNL Profile]架构。 无论您使用何种方法收集同意数据，必须为Real-time Customer Profile](../../../../xdm/ui/resources/schemas.md#profile)启用此架构[。 此外，架构的主要身份不能是禁止在基于兴趣的广告（如电子邮件地址）中使用的直接可识别字段。 如果您不确定哪些字段受限，请咨询您的法律顾问。
+>本教程假定您知道Experience Platform中要用于捕获客户属性信息的[!DNL Profile]架构。 无论您使用何种方法收集同意数据，必须为Real-time Customer Profile](../../../../xdm/ui/resources/schemas.md#profile)启用此架构[。 此外，架构的主要身份不能是禁止在基于兴趣的广告（如电子邮件地址）中使用的直接可识别字段。 如果您不确定哪些字段受限，请咨询您的法律顾问。
 
 ## [!UICONTROL 同意和偏好设置详细信息]字段组结构 {#structure}
 
@@ -99,9 +99,9 @@ ht-degree: 0%
 要使用Adobe标准收集同意数据，您必须具有启用配置文件的架构，该架构包含以下两个字段组：
 
 * [[!UICONTROL 同意和偏好设置详细信息]](../../../../xdm/field-groups/profile/consents.md)
-* [[!UICONTROL IdentityMap]](../../../../xdm/field-groups/profile/identitymap.md)（如果使用Platform Web或Mobile SDK发送同意信号，则需要）
+* [[!UICONTROL IdentityMap]](../../../../xdm/field-groups/profile/identitymap.md)(如果使用Experience Platform Web或Mobile SDK发送同意信号，则需要)
 
-在Platform UI中，在左侧导航中选择&#x200B;**[!UICONTROL 架构]**，然后选择&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡以显示现有架构列表。 在此处，选择要向其添加同意字段的启用了[!DNL Profile]的架构的名称。 本节中的屏幕截图以[架构创建教程](../../../../xdm/tutorials/create-schema-ui.md)中构建的“忠诚会员”架构为例。
+在Experience Platform UI中，在左侧导航中选择&#x200B;**[!UICONTROL 架构]**，然后选择&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡以显示现有架构列表。 在此处，选择要向其添加同意字段的启用了[!DNL Profile]的架构的名称。 本节中的屏幕截图以[架构创建教程](../../../../xdm/tutorials/create-schema-ui.md)中构建的“忠诚会员”架构为例。
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/select-schema.png)
 
@@ -129,7 +129,7 @@ ht-degree: 0%
 >
 >如果要创建新架构，或编辑尚未为配置文件启用的现有架构，则保存之前必须[为配置文件](../../../../xdm/ui/resources/schemas.md#profile)启用架构。
 
-如果您编辑的架构由在Platform Web SDK数据流中指定的[!UICONTROL 配置文件数据集]使用，则该数据集现在将包含新的同意字段。 您现在可以返回[同意处理指南](./overview.md#merge-policies)继续配置Experience Platform以处理同意数据的过程。 如果尚未为此架构创建数据集，请按照下一部分中的步骤操作。
+如果您编辑的架构由在Experience Platform Web SDK数据流中指定的[!UICONTROL 配置文件数据集]使用，则该数据集现在将包含新的同意字段。 您现在可以返回[同意处理指南](./overview.md#merge-policies)以继续配置Experience Platform以处理同意数据的过程。 如果尚未为此架构创建数据集，请按照下一部分中的步骤操作。
 
 ## 根据您的同意模式创建数据集 {#dataset}
 
@@ -161,13 +161,13 @@ ht-degree: 0%
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/enable-dataset.png)
 
-数据集现已保存并启用以便在[!DNL Profile]中使用。 如果您计划使用Platform Web SDK将同意数据发送到配置文件，则在设置[数据流](../../../../datastreams/overview.md)时，必须选择此数据集作为[!UICONTROL 配置文件数据集]。
+数据集现已保存并启用以便在[!DNL Profile]中使用。 如果您计划使用Experience Platform Web SDK将同意数据发送到配置文件，则在设置[数据流](../../../../datastreams/overview.md)时，必须选择此数据集作为[!UICONTROL 配置文件数据集]。
 
 ## 后续步骤
 
-通过学习本教程，您已向启用了[!DNL Profile]的架构添加同意字段，该架构的数据集将用于使用Platform Web SDK或直接XDM摄取来摄取同意数据。
+通过学习本教程，您已向启用了[!DNL Profile]的架构添加同意字段，该架构的数据集将用于使用Experience Platform Web SDK或直接XDM摄取来摄取同意数据。
 
-您现在可以返回[同意处理概述](./overview.md#merge-policies)，继续配置Experience Platform以处理同意数据。
+现在，您可以返回[同意处理概述](./overview.md#merge-policies)，继续配置Experience Platform以处理同意数据。
 
 ## 附录
 
@@ -179,7 +179,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Platform Web和Mobile SDK在其同意更改命令中不支持自定义字段。 目前，将自定义同意字段摄取到配置文件中的唯一方法是通过[批次摄取](../../../../ingestion/batch-ingestion/overview.md)或[源连接](../../../../sources/home.md)。
+>Experience Platform Web和Mobile SDK在其同意更改命令中不支持自定义字段。 目前，将自定义同意字段摄取到配置文件中的唯一方法是通过[批次摄取](../../../../ingestion/batch-ingestion/overview.md)或[源连接](../../../../sources/home.md)。
 
 强烈建议您使用[!UICONTROL 同意和偏好设置详细信息]字段组作为同意数据结构的基线，并根据需要添加其他字段，而不是尝试从头开始创建整个结构。
 

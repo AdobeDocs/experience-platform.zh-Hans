@@ -3,9 +3,9 @@ title: 删除记录
 description: 了解如何在Adobe Experience Platform UI中删除记录。
 badgeBeta: label="Beta 版" type="Informative"
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1567'
+source-wordcount: '1574'
 ht-degree: 8%
 
 ---
@@ -23,19 +23,19 @@ ht-degree: 8%
 
 ## 先决条件 {#prerequisites}
 
-删除记录需要深入了解身份字段在Experience Platform中的工作原理。 具体而言，您必须知道要删除其记录的实体的身份命名空间值，具体取决于从中删除这些记录的数据集（或数据集）。
+删除记录需要深入了解标识字段在Experience Platform中的工作原理。 具体而言，您必须知道要删除其记录的实体的身份命名空间值，具体取决于从中删除这些记录的数据集（或数据集）。
 
-有关Platform中标识的更多信息，请参阅以下文档：
+有关Experience Platform中标识的更多信息，请参阅以下文档：
 
 * [Adobe Experience Platform Identity服务](../../identity-service/home.md)：跨设备和系统桥接身份，根据数据集所遵循的XDM架构定义的身份字段将数据集链接在一起。
 * [身份命名空间](../../identity-service/features/namespaces.md)：身份命名空间定义可以与单个人员相关的不同类型的身份信息，并且是每个身份字段的必需组件。
 * [实时客户个人资料](../../profile/home.md)：使用标识图根据来自多个来源的汇总数据提供统一的使用者个人资料，这些数据近乎实时更新。
-* [体验数据模型(XDM)](../../xdm/home.md)：通过使用架构为Platform数据提供标准定义和结构。 所有Platform数据集都符合特定的XDM架构，该架构定义哪些字段是身份。
+* [体验数据模型(XDM)](../../xdm/home.md)：通过使用架构为Experience Platform数据提供标准定义和结构。 所有Experience Platform数据集都符合特定的XDM架构，该架构定义哪些字段是身份。
 * [标识字段](../../xdm/ui/fields/identity.md)：了解如何在XDM架构中定义标识字段。
 
 ## 创建请求 {#create-request}
 
-要启动该流程，请在Platform UI的左侧导航中选择&#x200B;**[!UICONTROL 数据生命周期]**。 出现[!UICONTROL 数据生命周期请求]工作区。 接下来，从工作区的主页中选择&#x200B;**[!UICONTROL 创建请求]**。
+要开始此过程，请在Experience Platform UI的左侧导航中选择&#x200B;**[!UICONTROL 数据生命周期]**。 出现[!UICONTROL 数据生命周期请求]工作区。 接下来，从工作区的主页中选择&#x200B;**[!UICONTROL 创建请求]**。
 
 ![已选择[!UICONTROL 创建请求]的[!UICONTROL 数据生命周期请求]工作区。](../images/ui/record-delete/create-request-button.png)
 
@@ -75,13 +75,13 @@ ht-degree: 8%
 >title="主要身份标识值"
 >abstract="在此列中，您必须提供记录的身份标识命名空间的值，该值必须与左列中提供的身份标识类型相对应。如果身份标识命名空间类型是 `email`，则值应是记录的电子邮件地址。要了解详情，请参阅《数据生命周期 UI 指南》。"
 
-删除记录时，必须提供身份信息，以便系统能够确定要删除的记录。 对于Platform中的任何数据集，将根据该数据集的架构定义的&#x200B;**身份命名空间**&#x200B;字段删除记录。
+删除记录时，必须提供身份信息，以便系统能够确定要删除的记录。 对于Experience Platform中的任何数据集，会根据由该数据集的架构定义的&#x200B;**身份命名空间**&#x200B;字段删除记录。
 
-与Platform中的所有身份字段一样，身份命名空间由两部分组成：**类型**（有时也称为身份命名空间）和&#x200B;**值**。 标识类型提供有关字段如何标识记录的上下文（如电子邮件地址）。 该值表示该类型记录的特定标识（例如，`email`标识类型的`jdoe@example.com`）。 用作标识的常见字段包括帐户信息、设备ID和Cookie ID。
+与Experience Platform中的所有身份字段一样，身份命名空间由两部分组成：**类型**（有时也称为身份命名空间）和&#x200B;**值**。 标识类型提供有关字段如何标识记录的上下文（如电子邮件地址）。 该值表示该类型记录的特定标识（例如，`email`标识类型的`jdoe@example.com`）。 用作标识的常见字段包括帐户信息、设备ID和Cookie ID。
 
 >[!TIP]
 >
->如果您不知道特定数据集的身份命名空间，则可以在Platform UI中找到它。 在&#x200B;**[!UICONTROL 数据集]**&#x200B;工作区中，从列表中选择相关数据集。 在数据集的详细信息页面上，将鼠标悬停在右边栏中数据集架构的名称上。 身份命名空间与架构名称和描述一起显示。
+>如果您不知道特定数据集的身份命名空间，则可以在Experience Platform UI中找到它。 在&#x200B;**[!UICONTROL 数据集]**&#x200B;工作区中，从列表中选择相关数据集。 在数据集的详细信息页面上，将鼠标悬停在右边栏中数据集架构的名称上。 身份命名空间与架构名称和描述一起显示。
 >
 >![已选定数据集的数据集仪表板，并从数据集详细信息面板中打开了架构对话框。 数据集的主ID已突出显示。](../images/ui/record-delete/dataset-primary-identity.png)
 
@@ -140,7 +140,7 @@ JSON文件必须格式化为一组对象，每个对象表示一个标识。
 
 >[!IMPORTANT]
 > 
->对于每月可以提交的唯一身份记录删除总数，存在不同的限制。 这些限制基于您的许可协议。 如果组织购买了Adobe Real-time Customer Data Platform或Adobe Journey Optimizer的所有版本，则每月最多可以提交100,000个身份记录删除。 已购买&#x200B;**AdobeHealthcare Shield**&#x200B;或&#x200B;**AdobePrivacy &amp; Security Shield**&#x200B;的组织每月最多可提交600,000个身份记录删除。<br>通过用户界面发出的单个记录删除请求允许您同时提交10,000个ID。 用于删除记录的[API方法](../api/workorder.md#create)允许一次提交100,000个ID。<br>最佳实践是，根据您的ID限制，为每个请求提交尽可能多的ID。 当您打算删除大量ID时，应避免提交小量ID，或每个记录删除请求只提交一个ID。
+>对于每月可以提交的唯一身份记录删除总数，存在不同的限制。 这些限制基于您的许可协议。 如果组织购买了Adobe Real-Time Customer Data Platform或Adobe Journey Optimizer的所有版本，则每月最多可以提交100,000个身份记录删除。 已购买&#x200B;**Adobe Healthcare Shield**&#x200B;或&#x200B;**Adobe Privacy &amp; Security Shield**&#x200B;的组织每月最多可提交600,000个身份记录删除。<br>通过用户界面发出的单个记录删除请求允许您同时提交10,000个ID。 用于删除记录的[API方法](../api/workorder.md#create)允许一次提交100,000个ID。<br>最佳实践是，根据您的ID限制，为每个请求提交尽可能多的ID。 当您打算删除大量ID时，应避免提交小量ID，或每个记录删除请求只提交一个ID。
 
 ![请求设置的[!UICONTROL Name]和[!UICONTROL Description]字段已突出显示[!UICONTROL Submit]。](../images/ui/record-delete/submit.png)
 
@@ -158,6 +158,6 @@ JSON文件必须格式化为一组对象，每个对象表示一个标识。
 
 ## 后续步骤
 
-本文档介绍了如何删除Experience PlatformUI中的记录。 有关如何在UI中执行其他数据生命周期管理任务的信息，请参阅[数据生命周期UI概述](./overview.md)。
+本文档介绍了如何在Experience Platform UI中删除记录。 有关如何在UI中执行其他数据生命周期管理任务的信息，请参阅[数据生命周期UI概述](./overview.md)。
 
 要了解如何使用数据卫生API删除记录，请参阅[工作单终结点指南](../api/workorder.md)。

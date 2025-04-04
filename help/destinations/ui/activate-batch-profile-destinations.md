@@ -3,9 +3,9 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: f01a044d3d12ef457c6242a0b93acbfeeaf48588
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '4452'
+source-wordcount: '4454'
 ht-degree: 11%
 
 ---
@@ -64,7 +64,7 @@ ht-degree: 11%
 您可以从多种类型的受众中进行选择，具体取决于其来源：
 
 * **[!UICONTROL 分段服务]**：分段服务在Experience Platform中生成的受众。 有关详细信息，请参阅[分段文档](../../segmentation/ui/overview.md)。
-* **[!UICONTROL 自定义上传]**：受众在Experience Platform外部生成，并以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/audience-portal.md#import-audience)的文档。 选择源自&#x200B;**[!UICONTROL 自定义上传]**&#x200B;的受众会自动启用[选择扩充属性](#select-enrichment-attributes)步骤。
+* **[!UICONTROL 自定义上传]**：受众在Experience Platform外部生成，并以CSV文件形式上传到Experience Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/audience-portal.md#import-audience)的文档。 选择源自&#x200B;**[!UICONTROL 自定义上传]**&#x200B;的受众会自动启用[选择扩充属性](#select-enrichment-attributes)步骤。
 * 其他类型的受众，来自其他Adobe解决方案，如[!DNL Audience Manager]。
 
 >[!IMPORTANT]
@@ -133,7 +133,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
 2. 使用&#x200B;**[!UICONTROL 时间]**&#x200B;切换开关选择导出是在受众评估后立即执行，还是在指定时间按计划执行。 在选择&#x200B;**[!UICONTROL 已计划]**&#x200B;选项时，您可以使用选择器以[!DNL UTC]格式选择一天中何时进行导出。
 
-   使用&#x200B;**[!UICONTROL 区段评估后]**&#x200B;选项可在每日平台批处理分段作业完成后立即运行激活作业。 此选项可确保当激活作业运行时，将最新的配置文件导出到您的目标。 这可能会导致根据您的操作，每天多次导出受众。
+   使用&#x200B;**[!UICONTROL 区段评估后]**&#x200B;选项可在每日Experience Platform批处理分段作业完成后立即运行激活作业。 此选项可确保当激活作业运行时，将最新的配置文件导出到您的目标。 这可能会导致根据您的操作，每天多次导出受众。
 
    >[!IMPORTANT]
    >
@@ -293,7 +293,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
 必填属性是启用用户的复选框，可确保所有配置文件记录都包含所选属性。 例如：所有导出的用户档案都包含电子邮件地址&#x200B;。
 
-您可以将属性标记为必需，以确保[!DNL Platform]仅导出包含特定属性的配置文件。 因此，它可以用作附加的筛选形式。 将属性标记为必需是&#x200B;**非**&#x200B;必需的。
+您可以将属性标记为必需，以确保[!DNL Experience Platform]仅导出包含特定属性的配置文件。 因此，它可以用作附加的筛选形式。 将属性标记为必需是&#x200B;**非**&#x200B;必需的。
 
 不选择强制属性会导出所有符合条件的配置文件，而不管其属性如何。
 
@@ -310,7 +310,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
 重复数据删除键消除了在一个导出文件中拥有同一配置文件的多个记录的可能性。
 
-有三种方法可以在[!DNL Platform]中使用重复数据删除键：
+有三种方法可以在[!DNL Experience Platform]中使用重复数据删除键：
 
 * 将单个身份命名空间用作[!UICONTROL 重复数据删除键]
 * 将[!DNL XDM]配置文件中的单个配置文件属性用作[!UICONTROL 重复数据删除键]

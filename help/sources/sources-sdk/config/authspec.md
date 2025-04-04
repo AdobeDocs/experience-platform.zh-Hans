@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；源；连接器；源连
 title: 为自助源配置身份验证规范(批处理SDK)
 description: 本文档概述了为使用自助源(批处理SDK)而需要准备的配置。
 exl-id: 68ed22fe-1f22-46d2-9d58-72ad8a9e6b98
-source-git-commit: 8517532f991413a239e0da890bf53b1bf5b621f0
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '770'
+source-wordcount: '772'
 ht-degree: 3%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 3%
 
 身份验证规范定义Adobe Experience Platform用户可以如何连接到您的源。
 
-`authSpec`数组包含有关将源连接到平台所需的身份验证参数的信息。 任何给定的源都可以支持多种不同类型的身份验证。
+`authSpec`数组包含有关将源连接到Experience Platform所需的身份验证参数的信息。 任何给定的源都可以支持多种不同类型的身份验证。
 
 ## 身份验证规范
 
@@ -340,4 +340,4 @@ GET /data?X-Auth-Key1={YOUR_AUTH_KEY1}&X-Auth-Key2={YOUR_AUTH_KEY2}
 
 ## 后续步骤
 
-填充身份验证规范后，您可以继续配置要集成到Platform的源的源规范。 有关详细信息，请参阅[配置源规范](./sourcespec.md)上的文档。
+填充身份验证规范后，您可以继续为要集成到Experience Platform的源配置源规范。 有关详细信息，请参阅[配置源规范](./sourcespec.md)上的文档。

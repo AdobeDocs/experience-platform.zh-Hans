@@ -3,9 +3,9 @@ title: SAP Commerce连接
 description: 使用SAP Commerce目标连接器更新SAP帐户中的客户记录。
 last-substantial-update: 2024-02-20T00:00:00Z
 exl-id: 3bd1a2a7-fb56-472d-b9bd-603b94a8937e
-source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2246'
+source-wordcount: '2268'
 ht-degree: 3%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 3%
 
 [!DNL SAP Commerce] （以前称为[[!DNL Hybris]](https://www.sap.com/india/products/acquired-brands/what-is-hybris.html)）是适用于B2B和B2C企业的基于云的电子商务平台解决方案，作为SAP客户体验产品组合的一部分提供。 [[!DNL SAP] 订阅帐单](https://www.sap.com/products/financial-management/subscription-billing.html)是产品组合中的产品，通过标准化的集成，通过简化的销售和付款体验实现完整的订阅生命周期管理。
 
-此[!DNL Adobe Experience Platform] [目标](/help/destinations/home.md)使用[[!DNL SAP Subscription Billing] 客户管理API](https://api.sap.com/api/BusinessPartner_APIs/path/PUT_customers-customerNumber)，在激活后在[!DNL SAP Commerce]内从现有Experience Platform受众更新您的客户详细信息。
+此[!DNL Adobe Experience Platform] [目标](/help/destinations/home.md)使用[[!DNL SAP Subscription Billing] 客户管理API](https://api.sap.com/api/BusinessPartner_APIs/path/PUT_customers-customerNumber)，在激活后从现有Experience Platform受众在[!DNL SAP Commerce]内更新您的客户详细信息。
 
 下面的[向目标身份验证](#authenticate)部分中进一步提供了向您的[!DNL SAP Commerce]实例进行身份验证的说明。
 
@@ -32,15 +32,15 @@ ht-degree: 3%
 
 在将数据激活到[!DNL SAP Commerce]目标之前，您必须在[!DNL Experience Platform]中创建一个[架构](/help/xdm/schema/composition.md)、[数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)和[受众](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html)。
 
-如果您需要受众状态的指导，请参阅[受众成员资格详细信息架构字段组](/help/xdm/field-groups/profile/segmentation.md)的Experience Platform文档。
+如果您需要有关受众状态的指导，请参阅Experience Platform文档，了解[受众成员资格详细信息架构字段组](/help/xdm/field-groups/profile/segmentation.md)。
 
 ### [!DNL SAP Commerce]目标的先决条件 {#prerequisites-destination}
 
-请注意以下先决条件，以便将数据从Platform导出到您的[!DNL SAP Commerce]帐户：
+请注意以下先决条件，以便将数据从Experience Platform导出到您的[!DNL SAP Commerce]帐户：
 
 #### 您必须拥有[!DNL SAP Subscription Billing]帐户 {#prerequisites-account}
 
-若要将数据从Platform导出到您的[!DNL SAP Commerce]帐户，您需要拥有[!DNL SAP Subscription Billing]帐户。 如果您没有有效的帐单帐户，请与您的[!DNL SAP]帐户管理员联系。 有关其他详细信息，请参阅[[!DNL SAP] 平台配置](https://help.sap.com/doc/5fd179965d5145fbbe7f2a7aa1272338/latest/en-US/PlatformConfiguration.pdf)文档。
+要将数据从Experience Platform导出到您的[!DNL SAP Commerce]帐户，您需要拥有[!DNL SAP Subscription Billing]帐户。 如果您没有有效的帐单帐户，请与您的[!DNL SAP]帐户管理员联系。 有关其他详细信息，请参阅[[!DNL SAP] 平台配置](https://help.sap.com/doc/5fd179965d5145fbbe7f2a7aa1272338/latest/en-US/PlatformConfiguration.pdf)文档。
 
 #### 生成服务密钥 {#prerequisites-service-key}
 
@@ -79,9 +79,9 @@ ht-degree: 3%
 
 #### 在[!DNL SAP Subscription Billing]中创建自定义引用 {#prerequisites-custom-reference}
 
-要在[!DNL SAP Subscription Billing]中更新Experience Platform受众状态，您需要为在Platform中选择的每个受众都提供一个自定义引用字段。
+要在[!DNL SAP Subscription Billing]中更新Experience Platform受众状态，您需要为Experience Platform中选择的每个受众都提供一个自定义参考字段。
 
-要创建自定义引用，请登录到您的[!DNL SAP Subscription Billing]帐户并导航到&#x200B;**[主数据和配置]** > **[自定义引用]**&#x200B;页面。 接下来，选择&#x200B;**[!UICONTROL 创建]**&#x200B;以为Platform中选定的每个受众添加新引用。 在随后的[计划受众导出和示例](#schedule-segment-export-example)步骤中，您将需要这些参考字段名称。
+要创建自定义引用，请登录到您的[!DNL SAP Subscription Billing]帐户并导航到&#x200B;**[主数据和配置]** > **[自定义引用]**&#x200B;页面。 接下来，选择&#x200B;**[!UICONTROL 创建]**&#x200B;以为Experience Platform中选择的每个受众添加新引用。 在随后的[计划受众导出和示例](#schedule-segment-export-example)步骤中，您将需要这些参考字段名称。
 
 下面显示了如何在[!DNL SAP Subscription Billing]中创建自定义&#x200B;**[!UICONTROL 引用类型]**的示例：
 ![显示在SAP订阅帐单中创建自定义引用的位置的图像。](../../assets/catalog/ecommerce/sap-commerce/create-custom-reference.png)
@@ -115,14 +115,14 @@ ht-degree: 3%
 
 此部分介绍可导出到此目标的所有受众。
 
-此目标支持激活通过Experience Platform[分段服务](../../../segmentation/home.md)生成的所有受众。
+此目标支持激活通过Experience Platform [分段服务](../../../segmentation/home.md)生成的所有受众。
 
 此目标还支持激活下表所述的受众。
 
 | 受众类型 | 支持 | 描述 |
 | ------------- | --------- | ----------- |
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -132,8 +132,8 @@ ht-degree: 3%
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在导出受众的所有成员，以及所需的架构字段&#x200B;*（例如：电子邮件地址、电话号码、姓氏）*（根据字段映射）。</li><li> 对于Platform中的每个选定受众，相应的[!DNL SAP Commerce]附加属性将通过Platform中的受众状态进行更新。</li></ul> |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | <ul><li>流目标为基于API的“始终运行”连接。 当基于受众评估在Experience Platform中更新用户档案时，连接器将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。</li></ul> |
+| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在导出受众的所有成员，以及所需的架构字段&#x200B;*（例如：电子邮件地址、电话号码、姓氏）*（根据字段映射）。</li><li> 对于Experience Platform中的每个选定受众，相应的[!DNL SAP Commerce]附加属性将从Experience Platform中更新为其受众状态。</li></ul> |
+| 导出频率 | **[!UICONTROL 正在流式传输]** | <ul><li>流目标为基于API的“始终运行”连接。 当基于受众评估在Experience Platform中更新用户档案时，连接器会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -159,14 +159,14 @@ ht-degree: 3%
 | **[!UICONTROL 地区]** | 您的数据中心位置。 该区域存在于`url`中，其值类似于`eu10`或`us10`。 例如，如果`url`是`https://eu10.revenue.cloud.sap/api`，您需要`eu10`。 |
 
 要验证到目标，请选择&#x200B;**[!UICONTROL 连接到目标]**。
-![Platform UI中显示如何向目标进行身份验证的图像。](../../assets/catalog/ecommerce/sap-commerce/authenticate-destination.png)
+![来自Experience Platform UI的图像，显示如何对目标进行身份验证。](../../assets/catalog/ecommerce/sap-commerce/authenticate-destination.png)
 
 如果提供的详细信息有效，则UI会显示&#x200B;**[!UICONTROL 已连接]**&#x200B;状态，并带有绿色复选标记。 然后，您可以继续执行下一步。
 
 ### 填写目标详细信息 {#destination-details}
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
-![来自Platform UI的图像，显示身份验证后要填充的目标详细信息。](../../assets/catalog/ecommerce/sap-commerce/destination-details.png)
+![Experience Platform UI中的图像，显示身份验证后要填充的目标详细信息。](../../assets/catalog/ecommerce/sap-commerce/destination-details.png)
 
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
@@ -189,36 +189,36 @@ ht-degree: 3%
 
 ### 映射属性和身份 {#map}
 
-要将受众数据从Adobe Experience Platform正确发送到[!DNL SAP Commerce]目标，您必须完成字段映射步骤。 映射包括在您的Platform帐户中的Experience Data Model (XDM)架构字段与其在目标目标中的相应等效字段之间创建链接。 要将XDM字段正确映射到[!DNL SAP Commerce]目标字段，请执行以下步骤：
+要将受众数据从Adobe Experience Platform正确发送到[!DNL SAP Commerce]目标，您必须完成字段映射步骤。 映射包括在Experience Platform帐户中的Experience Data Model (XDM)架构字段与其与目标中的相应等效字段之间创建链接。 要将XDM字段正确映射到[!DNL SAP Commerce]目标字段，请执行以下步骤：
 
 #### 映射`customerNumberSAP`标识
 
 `customerNumberSAP`标识是此目标的必需映射。 请按照以下步骤对其进行映射：
 
 1. 在&#x200B;**[!UICONTROL 映射]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL 添加新映射]**。 您现在可以在屏幕上看到新的映射行。
-   ![突出显示了“添加新映射”按钮的Platform UI屏幕截图。](../../assets/catalog/ecommerce/sap-commerce/mapping-add-new-mapping.png)
+   ![突出显示了“添加新映射”按钮的Experience Platform UI屏幕截图。](../../assets/catalog/ecommerce/sap-commerce/mapping-add-new-mapping.png)
 1. 在&#x200B;**[!UICONTROL 选择源字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择身份命名空间]**&#x200B;并选择`customerNumberSAP`。
-   ![Platform UI屏幕截图选择电子邮件作为要映射为标识的源属性。](../../assets/catalog/ecommerce/sap-commerce/mapping-select-source-identity.png)
+   ![Experience Platform UI屏幕截图选择电子邮件作为要映射为标识的源属性。](../../assets/catalog/ecommerce/sap-commerce/mapping-select-source-identity.png)
 1. 在&#x200B;**[!UICONTROL 选择目标字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择身份命名空间]**&#x200B;并选择`customerNumber`身份。
-   ![Platform UI屏幕截图选择电子邮件作为要映射为身份的目标属性。](../../assets/catalog/ecommerce/sap-commerce/mapping-select-target-identity.png)
+   ![Experience Platform UI屏幕截图选择电子邮件作为要映射为身份的目标属性。](../../assets/catalog/ecommerce/sap-commerce/mapping-select-target-identity.png)
 
 | 源字段 | 目标字段 | 必需 |
 | --- | --- | --- |
 | `IdentityMap: customerNumberSAP` | `Identity: customerNumber` | 是 |
 
 下面显示了具有标识映射的示例：
-![来自Platform UI的图像显示customerNumber标识映射示例。](../../assets/catalog/ecommerce/sap-commerce/mapping-identities.png)
+![Experience Platform UI中的图像显示customerNumber标识映射示例。](../../assets/catalog/ecommerce/sap-commerce/mapping-identities.png)
 
 #### 映射属性
 
 要添加任何其他要在XDM配置文件架构和[!DNL SAP Subscription Billing]帐户之间更新的属性，请重复以下步骤：
 
 1. 在&#x200B;**[!UICONTROL 映射]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL 添加新映射]**。 您现在可以在屏幕上看到新的映射行。
-   ![突出显示了“添加新映射”按钮的Platform UI屏幕截图。](../../assets/catalog/ecommerce/sap-commerce/mapping-add-new-mapping.png)
+   ![突出显示了“添加新映射”按钮的Experience Platform UI屏幕截图。](../../assets/catalog/ecommerce/sap-commerce/mapping-add-new-mapping.png)
 1. 在&#x200B;**[!UICONTROL 选择源字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择属性]**类别并选择XDM属性。
-   ![Platform UI屏幕截图选择“姓氏”作为源属性。](../../assets/catalog/ecommerce/sap-commerce/mapping-select-source-attribute.png)
+   ![选择“姓氏”作为源属性的Experience Platform UI屏幕截图。](../../assets/catalog/ecommerce/sap-commerce/mapping-select-source-attribute.png)
 1. 在&#x200B;**[!UICONTROL 选择目标字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择自定义属性]**&#x200B;类别并从客户[架构](https://api.sap.com/api/BusinessPartner_APIs/schema)属性列表中键入[!DNL SAP Subscription Billing]属性的名称。
-   ![Platform UI屏幕截图，其中lastName被定义为target属性。](../../assets/catalog/ecommerce/sap-commerce/mapping-select-target-attribute.png)
+   ![Experience Platform UI屏幕截图，其中lastName被定义为target属性。](../../assets/catalog/ecommerce/sap-commerce/mapping-select-target-attribute.png)
 
 >[!IMPORTANT]
 >
@@ -261,7 +261,7 @@ ht-degree: 3%
 | `xdm: workAddress.city` | `Attribute: city` | 否 |
 
 下面显示了客户为个人的具有强制和可选属性映射的示例：
-![Platform UI中的图像显示了一个具有强制和可选属性映射的示例，其中客户是个人。](../../assets/catalog/ecommerce/sap-commerce/mapping-attributes-individual.png)
+![Experience Platform UI中的图像显示了一个具有强制和可选属性映射的示例，其中客户是个人。](../../assets/catalog/ecommerce/sap-commerce/mapping-attributes-individual.png)
 
 >[!TAB 公司客户]
 
@@ -271,7 +271,7 @@ ht-degree: 3%
 | `xdm: workAddress.city` | `Attribute: city` | 否 |
 
 下面显示了客户为公司的具有强制和可选属性映射的示例：
-![来自Platform UI的图像显示了一个具有强制和可选属性映射的示例，其中客户是公司。](../../assets/catalog/ecommerce/sap-commerce/mapping-attributes-corporate.png)
+![Experience Platform UI中的图像显示了一个具有强制和可选属性映射的示例，其中客户是公司。](../../assets/catalog/ecommerce/sap-commerce/mapping-attributes-corporate.png)
 
 >[!ENDTABS]
 
@@ -279,10 +279,10 @@ ht-degree: 3%
 
 ### 计划受众导出和示例 {#schedule-segment-export-example}
 
-执行[计划受众导出](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling)步骤时，必须手动将Platform受众映射到[!DNL SAP Subscription Billing]中的[属性](#prerequisites-attribute)。
+执行[计划受众导出](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling)步骤时，必须手动将Experience Platform受众映射到[!DNL SAP Subscription Billing]中的[属性](#prerequisites-attribute)。
 
 下面显示了突出显示[!DNL SAP Commerce] **[!UICONTROL 映射ID]**位置的计划受众导出步骤示例：
-![Platform中的图像显示计划受众导出，其中填充了映射ID。](../../assets/catalog/ecommerce/sap-commerce/schedule-segment-export.png)
+![Experience Platform中的图像显示了填充了映射ID的计划受众导出。](../../assets/catalog/ecommerce/sap-commerce/schedule-segment-export.png)
 
 为此，请选择每个区段，然后在[!DNL SAP Commerce] **[!UICONTROL 映射ID]**&#x200B;目标连接器字段中输入来自[!DNL SAP Subscription Billing]的自定义引用的名称。 有关创建自定义引用的指导，请参阅[在 [!DNL SAP Subscription Billing]](#prerequisites-custom-reference)中创建自定义引用。
 
@@ -297,11 +297,11 @@ ht-degree: 3%
 ![显示在SAP订阅帐单中创建自定义引用的位置的图像。](../../assets/catalog/ecommerce/sap-commerce/create-custom-reference.png)
 
 下面显示了一个计划受众导出步骤的示例，该步骤选择了一个受众，并突出显示了其对应的[!DNL SAP Commerce] **[!UICONTROL 映射ID]**：
-![Platform中的图像显示计划受众导出，其中填充了映射ID。](../../assets/catalog/ecommerce/sap-commerce/schedule-segment-export-example.png)
+![Experience Platform中的图像显示了填充了映射ID的计划受众导出。](../../assets/catalog/ecommerce/sap-commerce/schedule-segment-export-example.png)
 
 如上所示，**[!UICONTROL 映射ID]**&#x200B;字段中的值应与[!DNL SAP Subscription Billing] **[!UICONTROL 引用类型]**&#x200B;值完全匹配。
 
-对每个激活的Platform受众重复此部分。
+对每个激活的Experience Platform受众重复此部分。
 
 根据上图所示，您已选择两个受众，映射将如下所示：
 

@@ -4,9 +4,9 @@ title: 使用流服务API导出数据集
 description: 了解如何使用流服务API将数据集导出到所选目标。
 type: Tutorial
 exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
-source-git-commit: 6f8922f972546d8cceeba63e1bb4d1a75f7ef5c3
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '5146'
+source-wordcount: '5149'
 ht-degree: 3%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 3%
 
 >[!AVAILABILITY]
 >
->* 已购买Real-Time CDP Prime和Ultimate软件包、Adobe Journey Optimizer或Customer Journey Analytics的客户可使用此功能。 有关更多信息，请与您的Adobe代表联系。
+>* 已购买Real-Time CDP Prime和Ultimate软件包、Adobe Journey Optimizer或Customer Journey Analytics的客户可以使用此功能。 有关更多信息，请与Adobe代表联系。
 
 >[!IMPORTANT]
 >
->**操作项**： 2024年9月版本的Experience Platform](/help/release-notes/latest/latest.md#destinations)引入了为导出数据集数据流设置`endTime`日期的选项。 [对于在9月版本&#x200B;*之前创建*&#x200B;的所有数据集导出数据流，Adobe还引入了2025年5月1日的默认结束日期。 对于其中任何数据流，您需要手动更新数据流中的结束日期在结束日期之前，否则您的导出将停止在该日期。 使用Experience PlatformUI查看哪些数据流将设置为在5月1日停止。
+>**操作项**： Experience Platform的[2024年9月版本](/help/release-notes/latest/latest.md#destinations)引入了为导出数据集数据流设置`endTime`日期的选项。 对于在9月版本&#x200B;*之前创建*&#x200B;的所有数据集导出数据流，Adobe还将2025年5月1日作为默认结束日期。 对于其中任何数据流，您需要手动更新数据流中的结束日期在结束日期之前，否则您的导出将停止在该日期。 使用Experience Platform UI查看哪些数据流将设置为在5月1日停止。
 >
 >同样，对于您创建但未指定`endTime`日期的任何数据流，这些时间将默认为自其创建之日起六个月的结束时间。
 
@@ -38,7 +38,7 @@ ht-degree: 3%
 
 ## 可用于导出的数据集 {#datasets-to-export}
 
-您可以导出的数据集取决于Experience Platform应用程序(Real-Time CDP、Adobe Journey Optimizer)、层(Prime或Ultimate)以及您购买的任何加载项(例如：数据Distiller)。
+您可以导出的数据集取决于Experience Platform应用程序(Real-Time CDP、Adobe Journey Optimizer)、层(Prime或Ultimate)以及您购买的任何加载项(例如：Data Distiller)。
 
 请参阅UI教程页面](/help/destinations/ui/export-datasets.md#datasets-to-export)上的[表以了解可以导出哪些数据集。
 
@@ -62,9 +62,9 @@ ht-degree: 3%
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
 * [[!DNL Experience Platform datasets]](/help/catalog/datasets/overview.md)：成功引入Adobe Experience Platform的所有数据将作为数据集保留在[!DNL Data Lake]中。 数据集是用于数据集合的存储和管理结构，通常是表格，其中包含架构（列）和字段（行）。数据集还包含描述其存储的数据的各个方面的元数据。
-   * [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform]提供了将单个[!DNL Platform]实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+   * [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform]提供了将单个[!DNL Experience Platform]实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
-以下部分提供了要将数据集导出到Platform中的云存储目标必须了解的其他信息。
+以下部分提供了要将数据集导出到Experience Platform中的云存储目标，您必须了解的其他信息。
 
 ### 所需的权限 {#permissions}
 
@@ -78,13 +78,13 @@ ht-degree: 3%
 
 ### 收集必需标题和可选标题的值 {#gather-values-headers}
 
-要调用[!DNL Platform] API，您必须先完成[Experience Platform身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+要调用[!DNL Experience Platform] API，您必须先完成[Experience Platform身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 * 授权：持有人`{ACCESS_TOKEN}`
 * x-api-key： `{API_KEY}`
 * x-gw-ims-org-id： `{ORG_ID}`
 
-[!DNL Experience Platform]中的资源可以隔离到特定的虚拟沙箱。 在对[!DNL Platform] API的请求中，您可以指定将在其中执行操作的沙盒的名称和ID。 这些是可选参数。
+[!DNL Experience Platform]中的资源可以隔离到特定的虚拟沙箱。 在对[!DNL Experience Platform] API的请求中，您可以指定将在其中执行操作的沙盒的名称和ID。 这些是可选参数。
 
 * x-sandbox-name： `{SANDBOX_NAME}`
 
@@ -92,7 +92,7 @@ ht-degree: 3%
 >
 >有关[!DNL Experience Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
 
-所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
+所有包含有效负载(POST、PUT、PATCH)的请求都需要一个额外的媒体类型标头：
 
 * 内容类型： `application/json`
 
@@ -2444,7 +2444,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 ## 验证是否成功导出数据集 {#verify}
 
-导出数据集时，Experience Platform会在您提供的存储位置中创建`.json`或`.parquet`文件。 根据您在[创建数据流](#create-dataflow)时提供的导出计划，期望将新文件存储在您的存储位置。
+导出数据集时，Experience Platform会在您提供的存储位置创建一个`.json`或`.parquet`文件。 根据您在[创建数据流](#create-dataflow)时提供的导出计划，期望将新文件存储在您的存储位置。
 
 Experience Platform会在您指定的存储位置创建一个文件夹结构，存放导出的数据集文件。 每次导出时都会创建一个新文件夹，其模式如下所示：
 
@@ -2468,7 +2468,7 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
 ## API错误处理 {#api-error-handling}
 
-本教程中的API端点遵循常规Experience PlatformAPI错误消息原则。 有关解释错误响应的详细信息，请参阅Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
+本教程中的API端点遵循常规Experience Platform API错误消息原则。 有关解释错误响应的详细信息，请参阅Experience Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
 
 ## 已知限制 {#known-limitations}
 
@@ -2480,7 +2480,7 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
 ## 后续步骤 {#next-steps}
 
-通过学习本教程，您已成功将Platform连接到其中一个首选批量云存储目标，并将数据流设置到相应的目标以导出数据集。 有关更多详细信息，请参阅以下页面，例如如何使用流服务API编辑现有数据流：
+通过学习本教程，您已成功将Experience Platform连接到其中一个首选批量云存储目标，并将数据流设置到相应的目标以导出数据集。 有关更多详细信息，请参阅以下页面，例如如何使用流服务API编辑现有数据流：
 
 * [目标概述](../home.md)
 * [目标目录概述](../catalog/overview.md)

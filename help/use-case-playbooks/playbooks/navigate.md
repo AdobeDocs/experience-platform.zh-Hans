@@ -4,16 +4,16 @@ title: 导航到用例行动手册
 description: 了解如何在行动手册库中导航并开始使用启发性的沙盒。
 role: User
 exl-id: 1f5dae75-1136-4be3-9132-01d36a4066ca
-source-git-commit: 703c84e61af105bc3933e4750a3cb27df8ac19fe
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '717'
+source-wordcount: '718'
 ht-degree: 2%
 
 ---
 
 # 导航到用例行动手册
 
-所有Adobe Experience Platform客户均可免费获得用例行动手册。 要在Experience PlatformUI中访问丰富的用例行动手册，请从左侧导航中选择&#x200B;**[!UICONTROL 行动手册]**。
+所有Adobe Experience Platform客户均可免费获得用例行动手册。 要在Experience Platform UI中访问丰富的用例行动手册，请从左侧导航中选择&#x200B;**[!UICONTROL 行动手册]**。
 
 ![用例剧本库。](/help/use-case-playbooks/assets/playbooks/discover/playbooks-gallery.png)
 
@@ -71,4 +71,4 @@ ht-degree: 2%
 
 ## 后续步骤 {#next-steps}
 
-现在您已阅读本文档，您应该知道如何设置启发性的沙盒，并熟悉访问Platform中的用例行动手册的不同方式。 接下来，阅读如何[选择](/help/use-case-playbooks/playbooks/choose.md)正确的剧本。
+现在您已阅读本文档，您应该知道如何设置启发性的沙盒，并熟悉访问Experience Platform中的用例行动手册的各种方式。 接下来，阅读如何[选择](/help/use-case-playbooks/playbooks/choose.md)正确的剧本。

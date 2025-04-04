@@ -2,9 +2,9 @@
 title: XDM中的敏感信息和个人信息
 description: 了解关于Experience Data Model (XDM)中敏感个人信息(SPI)和个人身份信息(PII)的关键注意事项。
 exl-id: 92a8b6ad-3c45-4772-8178-60f857ab13e2
-source-git-commit: 302dca9a9f834dba1fd3fdac15284ea4e2fba282
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '568'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Experience Data Model (XDM)提供在Adobe Experience Platform中使用的标准�
 
 XDM提供了各种标准字段组和数据类型，用于描述可增强客户体验的相关常用数据结构。 但是，如果推荐的标准资源包含您不希望包含在架构中的受限字段，则不必使用该资源。
 
-Platform允许您定义自己的自定义字段组和数据类型，这样，如果任何可用的标准资源无法满足您的需求，您就可以完全控制数据的结构方式。 有关如何定义这些自定义资源的更多信息，请参阅以下文档：
+Experience Platform允许您定义自己的自定义字段组和数据类型，这样，如果任何可用的标准资源无法满足您的需求，您就可以完全控制数据的结构方式。 有关如何定义这些自定义资源的更多信息，请参阅以下文档：
 
 * [创建自定义字段组](../ui/resources/field-groups.md#create)
 * [创建自定义数据类型](../ui/resources/data-types.md#create)
@@ -54,4 +54,4 @@ Platform允许您定义自己的自定义字段组和数据类型，这样，如
 
 本文档介绍了有关XDM中的敏感数据和个人数据的主要注意事项。 有关如何对架构进行建模以最好地满足您的业务用例的更多信息，请参阅[数据建模最佳实践指南](./best-practices.md)。
 
-有关Experience Platform中的数据治理和隐私功能的更多信息，请参阅[治理、隐私和安全性](../../landing/governance-privacy-security/overview.md)概述。
+有关Experience Platform中的数据治理和隐私功能的更多信息，请参阅有关[治理、隐私和安全性](../../landing/governance-privacy-security/overview.md)的概述。

@@ -3,9 +3,9 @@ title: 目标客户配置文件
 description: 了解如何使用第三方信息创建和使用潜在客户配置文件来收集有关未知客户的信息。
 type: Documentation
 exl-id: 194d25d6-88ae-4a7a-9b79-39120bced5c7
-source-git-commit: e7c0551276d31d6809ace096c00e0dc2665090e6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '400'
+source-wordcount: '401'
 ht-degree: 1%
 
 ---
@@ -56,7 +56,7 @@ ht-degree: 1%
 
 ## 建议的用例 {#use-cases}
 
-要了解如何在Experience Platform中将目标客户配置文件功能与其他Platform功能结合使用，请阅读以下用例文档：
+要了解如何在Experience Platform中将目标客户配置文件功能与其他Experience Platform功能结合使用，请阅读以下用例文档：
 
 - [通过潜在客户发现功能吸引和赢取新客户](../../rtcdp/partner-data/prospecting.md)
 

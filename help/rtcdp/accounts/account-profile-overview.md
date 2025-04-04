@@ -5,9 +5,9 @@ description: 了解如何通过 Adobe Real-Time Customer Data Platform B2B 版�
 badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 feature: Profiles, B2B
 exl-id: 67515fe0-975e-4ee1-b172-60bc93ba1010
-source-git-commit: 02f2082e695d157415c9e0c59ca5d371c94bb991
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '305'
+source-wordcount: '306'
 ht-degree: 7%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 7%
 
 ## 帐户个人资料查看器
 
-借助Real-Time CDP和B2B edition，您可以使用Experience Platform用户界面查看帐户配置文件，并使用连接的企业源中的帐户ID或直接输入源详细信息来搜索特定帐户。 有关如何在Platform UI中查看帐户配置文件的详细信息，请参阅[帐户配置文件UI指南](account-profile-ui-guide.md)。
+借助Real-Time CDP和B2B edition，您可以使用Experience Platform用户界面查看帐户配置文件，并使用连接的企业源中的帐户ID或直接输入源详细信息来搜索特定帐户。 有关如何在Experience Platform UI中查看帐户配置文件的更多信息，请参阅[帐户配置文件UI指南](account-profile-ui-guide.md)。
 
 ## 创建和激活帐户受众
 

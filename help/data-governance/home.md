@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据管理概述
 description: Adobe Experience Platform数据管理允许您管理客户数据，并确保遵守适用于数据使用的法规、限制和策略。 它在 Experience Platform 的各个层面中发挥着关键作用，包括编目、数据谱系、数据使用标签、数据使用策略以及控制营销活动数据的使用。
 exl-id: 00ca6bc2-1c58-4ea2-8bb5-30fd3fa5944a
-source-git-commit: 1a050cfb41a28053606f07931c7c97d15989ac3e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1623'
+source-wordcount: '1624'
 ht-degree: 9%
 
 ---
@@ -20,13 +20,13 @@ ht-degree: 9%
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=zh-Hans" text="数据治理概述"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html?lang=zh-Hans" text="数据治理标签概述"
 
-Adobe Experience Platform的核心功能之一是将来自多个企业系统的数据整合在一起，以便更好地让营销人员识别、理解客户并与他们互动。 贵组织或法律法规可能会对此数据设置使用限制。因此，确保[!DNL Platform]中的数据操作符合数据使用策略非常重要。
+Adobe Experience Platform的核心功能之一是将来自多个企业系统的数据整合在一起，以便更好地让营销人员识别、理解客户并与他们互动。 贵组织或法律法规可能会对此数据设置使用限制。因此，确保[!DNL Experience Platform]中的数据操作符合数据使用策略非常重要。
 
-通过Adobe Experience Platform数据管理来管理客户数据，并确保遵守适用于数据使用的法规、限制和政策。 数据治理在Experience Platform中的各个级别扮演着关键角色，包括编目、数据谱系、数据使用标签、数据使用策略，以及控制营销活动的数据使用。
+通过Adobe Experience Platform数据管理来管理客户数据，并确保遵守适用于数据使用的法规、限制和政策。 数据治理在Experience Platform中的各个级别扮演着关键角色，包括编目、数据谱系、数据使用标签、数据使用策略和控制营销活动的数据使用。
 
 >[!NOTE]
 >
->在Experience Platform中，数据管理只关心数据的使用或激活方式，而不管用户是否执行操作。 有关如何控制组织内特定Platform用户访问特定数据字段的信息，请参阅有关[基于属性的访问控制](../access-control/abac/overview.md)的文档。
+>在Experience Platform中，数据管理只关心数据的使用或激活方式，而不管执行操作的用户是谁。 有关如何控制组织中某些Experience Platform用户访问特定数据字段的信息，请参阅有关[基于属性的访问控制](../access-control/abac/overview.md)的文档。
 
 ## 数据治理角色 {#data-governance-roles}
 
@@ -77,13 +77,13 @@ Adobe Experience Platform的核心功能之一是将来自多个企业系统的�
 >
 >有关可用标签的完整列表以及每种标签类型的定义，请参阅[支持的数据使用标签](labels/reference.md)指南。
 
-您可以随时应用标签，灵活地选择管理数据的方式。 最佳实践鼓励在将数据摄取到Experience Platform中时或在数据在[!DNL Platform]中可用时立即为数据设置标签。
+您可以随时应用标签，灵活地选择管理数据的方式。 最佳实践鼓励在将数据摄取到Experience Platform中时或数据在[!DNL Experience Platform]中可用时为其设置标签。
 
 有关如何使用数据使用标签帮助强制实现数据管理合规性的更多信息，请参阅[数据使用标签](./labels/overview.md)概述。
 
 ## 数据使用策略 {#data-usage-policies}
 
-为了使数据使用标签有效地支持数据合规性，必须实施数据使用策略。 数据使用策略是描述允许或限制您对Experience Platform内的数据执行的营销操作类型的规则。
+为了使数据使用标签有效地支持数据合规性，必须实施数据使用策略。 数据使用策略是描述允许或限制您对Experience Platform中的数据执行的营销操作类型的规则。
 
 营销操作的示例可能是希望将数据集导出到第三方服务。 如果制定了声明个人身份信息(PII)无法导出的策略，并且已将“I”标签（身份数据）从其架构应用于字段级别。 然后，策略服务会阻止任何会将此数据集导出到第三方目标的操作。 如果发生其中一次操作尝试，策略服务将发送一条消息，告知您数据使用策略已被违反。
 
@@ -97,7 +97,7 @@ Adobe Experience Platform的核心功能之一是将来自多个企业系统的�
 
 >[!IMPORTANT]
 >
->默认情况下，将禁用所有数据使用策略(包括Adobe提供的核心策略)。 对于要考虑强制执行的单个策略，您必须手动启用该策略。
+>默认情况下，所有数据使用策略(包括Adobe提供的核心策略)都处于禁用状态。 对于要考虑强制执行的单个策略，您必须手动启用该策略。
 
 ## 后续步骤
 
@@ -123,7 +123,7 @@ Adobe Experience Platform的核心功能之一是将来自多个企业系统的�
 | **地理围栏** | 地理围栏是由GPS或RFID技术定义的虚拟地理边界，它使软件能够在移动设备进入或离开特定区域时触发响应。 |
 | **身份标签** | “I”身份标识标签用于对可以识别或联系特定人员的数据进行分类。 |
 | **基于兴趣的定位** | 如果满足以下三个条件，则会发生基于兴趣的定位（也称为个性化）：<br>现场收集的数据为，<br><ul><li>用于推断用户的兴趣，</li><li>用于其他上下文，例如在其他网站或应用程序（站外）上</li><li>用于根据这些推断选择提供哪些内容或广告。</li></ul> |
-| **营销操作** | 在数据治理框架上下文中，营销操作是Experience Platform数据使用者采取的操作，需要检查是否存在违反数据使用策略的操作 |
+| **营销操作** | 在数据治理框架的上下文中，营销操作是Experience Platform数据使用者采取的操作，需要检查是否存在违反数据使用策略的操作 |
 | **策略** | 在数据治理框架中，策略是一种规则，用于描述允许或不允许对特定数据执行哪种类型的营销操作。 |
 | **架构标签** | 在架构级别管理数据管理、同意和访问控制的标签。 这会将标签传播到使用该架构的每个数据集。 |
 | **敏感标签** | “S”敏感标签用于对您和您的组织认为敏感的数据进行分类。 |
@@ -134,6 +134,6 @@ Adobe Experience Platform的核心功能之一是将来自多个企业系统的�
 
 >[!VIDEO](https://video.tv.adobe.com/v/29708?quality=12&enable10seconds=on&speedcontrol=on)
 
-以下视频提供了有关如何将数据使用标签应用于架构或Experience Platform中的整个数据集的指南。
+以下视频提供了有关如何将数据使用标签应用于您的架构或Experience Platform中的整个数据集的指南。
 
 >[!VIDEO](https://video.tv.adobe.com/v/29709/?learn=on)

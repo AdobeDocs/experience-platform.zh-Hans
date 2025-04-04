@@ -4,10 +4,10 @@ title: 警报UI指南
 description: 了解如何在Experience Platform用户界面中管理警报。
 feature: Alerts
 exl-id: 4ba3ef2b-7394-405e-979d-0e5e1fe676f3
-source-git-commit: 2e0fc17fee9b1586b4c2b44c326e2c305c127fad
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '797'
-ht-degree: 3%
+source-wordcount: '798'
+ht-degree: 7%
 
 ---
 
@@ -41,7 +41,7 @@ Adobe Experience Platform用户界面允许您根据Adobe Experience Platform可
 
 >[!NOTE]
 >
-> 要将警报分配给Adobe用户ID、外部电子邮件地址或电子邮件组列表，您必须是管理员。
+> 要将警报分配给Adobe用户ID、外部电子邮件地址或电子邮件群组列表，您必须是管理员。
 
 **[!UICONTROL 浏览]**&#x200B;选项卡列出了可能触发警报的可用规则。
 
@@ -51,7 +51,7 @@ Adobe Experience Platform用户界面允许您根据Adobe Experience Platform可
 
 ![选择省略号以显示下拉菜单。 [!UICONTROL 管理警报订阅者]选项已突出显示。](../images/alerts/ui/manage-alert-subscribers.png)
 
-此时会显示[!UICONTROL 管理警报订阅者]页。 要向特定用户分配通知，请输入其Adobe用户ID、外部电子邮件地址或电子邮件组列表，然后按Enter键。
+此时会显示[!UICONTROL 管理警报订阅者]页。 要向特定用户分配通知，请输入其Adobe用户ID、外部电子邮件地址或电子邮件组列表，然后按Enter。
 
 >[!NOTE]
 >
@@ -71,7 +71,7 @@ Adobe Experience Platform用户界面允许您根据Adobe Experience Platform可
 
 警报通知可以直接发送到您的电子邮件。
 
-选择位于右上角功能区的铃铛图标（![铃铛图标](/help/images/icons/bell.png)）以显示通知和公告。 在出现的下拉列表中，选择齿轮图标（![齿轮图标](/help/images/icons/settings.png)）以访问“Experience Cloud首选项”页面。
+选择位于右上角功能区的铃铛图标（![铃铛图标](/help/images/icons/bell.png)）以显示通知和公告。 在出现的下拉菜单中，选择齿轮图标（![齿轮图标](/help/images/icons/settings.png)）以访问Experience Cloud首选项页面。
 
 ![突出显示铃铛图标和齿轮图标的警报列表。](../images/alerts/ui/edit-preferences.png)
 
@@ -94,12 +94,12 @@ Adobe Experience Platform用户界面允许您根据Adobe Experience Platform可
 | 区段作业延迟 | 延迟阈值 |
 | 区段导出延迟 | 延迟阈值 |
 | 目标流运行延迟 | 延迟阈值 |
-| Identity服务流运行延迟 | 延迟阈值 |
-| 配置文件流运行延迟 | 延迟阈值 |
+| 身份标识服务流量运行延迟 | 延迟阈值 |
+| 轮廓流量运行延迟 | 延迟阈值 |
 | 源流量运行延迟 | 延迟阈值 |
 | 查询运行延迟 | 延迟阈值 |
-| 超出激活跳过率 | 错误阈值 |
-| 超出源摄取错误率 | 错误阈值 |
+| 激活跳过率超出范围 | 错误阈值 |
+| 源引入错误率超出范围 | 错误阈值 |
 
 选择规则名称旁边的省略号(**...**)，下拉菜单会显示控件。 选择&#x200B;**[!UICONTROL 编辑]**。
 
@@ -125,4 +125,4 @@ Adobe Experience Platform用户界面允许您根据Adobe Experience Platform可
 
 ## 后续步骤
 
-本文档概述了如何在Platform UI中查看和管理警报。 有关服务功能的更多信息，请参阅[可观察性分析](../home.md)的概述。
+本文档概述了如何在Experience Platform UI中查看和管理警报。 有关服务功能的更多信息，请参阅[可观察性分析](../home.md)的概述。

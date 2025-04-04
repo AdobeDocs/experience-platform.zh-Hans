@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK；SDK
+keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源sdk；sdk；SDK
 solution: Experience Platform
 title: 使用GitHub Web界面创建源文档页面
 description: 本文档提供了有关如何使用GitHub Web界面创作文档并提交拉取请求(PR)的步骤。
 exl-id: 84b4219c-b3b2-4d0a-9a65-f2d5cd989f95
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '564'
+source-wordcount: '565'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->Adobe投稿指南中的以下文档可用于进一步支持您的文档流程： <ul><li>[安装Git和Markdown创作工具](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html)</li><li>[在本地为文档设置Git存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html)</li><li>针对主要更改的[GitHub贡献工作流](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html)</li></ul>
+>可以使用Adobe参与指南中的以下文档来进一步支持您的文档流程： <ul><li>[安装Git和Markdown创作工具](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html)</li><li>[在本地为文档设置Git存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html)</li><li>针对主要更改的[GitHub贡献工作流](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html)</li></ul>
 
 ## 设置GitHub环境
 
@@ -45,7 +45,7 @@ ht-degree: 0%
 
 ![create-new-file](../assets/create-new-file.png)
 
-命名源文件`YOURSOURCE.md`，其中YOURSOURCE是您在Platform中的源名称。 例如，如果您的公司是ACME CRM，则您的文件名应为`acme-crm.md`。
+将源文件命名为`YOURSOURCE.md`，其中YOURSOURCE是您在Experience Platform中的源名称。 例如，如果您的公司是ACME CRM，则您的文件名应为`acme-crm.md`。
 
 ![git-interface](../assets/git-interface.png)
 
@@ -63,11 +63,11 @@ ht-degree: 0%
 
 ## 提交文档以供审阅
 
-提交文件后，您可以打开拉取Adobe(PR)，将您的工作分支合并到分支文档存储库的主分支中。 请确保已选择您正在处理的分支，然后选择&#x200B;**比较和拉取请求**。
+提交文件后，您可以打开拉取请求(PR)，将工作分支合并到Adobe文档存储库的主分支。 请确保已选择您正在处理的分支，然后选择&#x200B;**比较和拉取请求**。
 
 ![比较 — pr](../assets/compare-pr.png)
 
-确保基础分支和比较分支正确。 向PR添加描述更新的注释，然后选择&#x200B;**创建拉取请求**。 这将打开一个PR，以将您工作的工作分支合并到Adobe存储库的主分支。
+确保基础分支和比较分支正确。 向PR添加描述更新的注释，然后选择&#x200B;**创建拉取请求**。 这将打开PR，以将您工作的工作分支合并到Adobe存储库的主分支。
 
 >[!TIP]
 >

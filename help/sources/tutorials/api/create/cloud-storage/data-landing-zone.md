@@ -2,9 +2,9 @@
 title: 使用流服务API将数据登陆区连接到Adobe Experience Platform
 description: 了解如何使用流服务API将Adobe Experience Platform连接到数据登陆区。
 exl-id: bdb60ed3-7c63-4a69-975a-c6f1508f319e
-source-git-commit: 1d4dd60180ef2a3cbf6dcd565c2f09dd575716b9
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1410'
+source-wordcount: '1419'
 ht-degree: 3%
 
 ---
@@ -23,10 +23,10 @@ ht-degree: 3%
 
 本指南要求您对Experience Platform的以下组件有一定的了解：
 
-* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
-* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-本教程还要求您阅读[Platform API快速入门](../../../../../landing/api-guide.md)指南，了解如何对Platform API进行身份验证并解释文档中提供的示例调用。
+本教程还要求您阅读[Experience Platform API快速入门](../../../../../landing/api-guide.md)指南，了解如何对Experience Platform API进行身份验证并解释文档中提供的示例调用。
 
 以下部分提供使用[!DNL Flow Service] API成功创建[!DNL Data Landing Zone]源连接所需了解的其他信息。
 
@@ -150,7 +150,7 @@ curl -X GET \
 | `SASToken` | [!DNL Data Landing Zone]的共享访问签名令牌。 此字符串包含授权请求所需的所有信息。 |
 | `storageAccountName` | 存储帐户的名称。 |
 | `SASUri` | [!DNL Data Landing Zone]的共享访问签名URI。 此字符串是您正在接受身份验证的[!DNL Data Landing Zone]的URI及其对应的SAS令牌的组合。 |
-| `expiryDate` | SAS令牌的过期日期。 您必须在到期日期之前刷新您的令牌，以便继续在您的应用程序中使用它来将数据上载到[!DNL Data Landing Zone]。 如果您未在规定的到期日期之前手动刷新令牌，则会在执行GET凭据调用时自动刷新并提供新令牌。 |
+| `expiryDate` | SAS令牌的过期日期。 您必须在到期日期之前刷新您的令牌，以便继续在您的应用程序中使用它来将数据上载到[!DNL Data Landing Zone]。 如果您没有在规定的到期日之前手动刷新令牌，则会在执行GET凭据调用时自动刷新并提供新令牌。 |
 
 >在AWS上[!TAB 响应]
 
@@ -385,7 +385,7 @@ curl -X GET \
 
 ## 预览登陆区域文件结构和内容
 
-要在登陆区域中检查文件的结构，请在提供文件路径并键入作为查询参数的同时执行GET请求。
+要在登陆区域中检查文件的结构，请在提供文件的路径和类型作为查询参数的同时执行GET请求。
 
 **API格式**
 
@@ -479,7 +479,7 @@ curl -X GET \
 
 ### 使用`determineProperties`自动检测[!DNL Data Landing Zone]的文件属性信息
 
-在进行GET调用以探索源的内容和结构时，可以使用`determineProperties`参数自动检测[!DNL Data Landing Zone]文件内容的属性信息。
+在进行GET调用以浏览源的内容和结构时，可以使用`determineProperties`参数自动检测[!DNL Data Landing Zone]文件内容的属性信息。
 
 #### `determineProperties`用例
 
@@ -656,8 +656,8 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `name` | [!DNL Data Landing Zone]源连接的名称。 |
-| `data.format` | 您要带到Platform的数据的格式。 |
-| `params.path` | 要带到Platform的文件的路径。 |
+| `data.format` | 要带入Experience Platform的数据的格式。 |
+| `params.path` | 要带到Experience Platform的文件的路径。 |
 | `connectionSpec.id` | 对应于[!DNL Data Landing Zone]的连接规范ID。 此固定ID为： `26f526f2-58f4-4712-961d-e41bf1ccc0e8`。 |
 
 **响应**
@@ -673,4 +673,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过完成本教程，您已检索到[!DNL Data Landing Zone]凭据，探索了其文件结构以查找要带到Platform的文件，并创建了源连接以开始将您的数据带到Platform。 您现在可以继续下一教程，其中您将学习如何[创建数据流以使用 [!DNL Flow Service] API](../../collect/cloud-storage.md)将云存储数据引入平台。
+通过完成本教程，您已检索到[!DNL Data Landing Zone]凭据，探索了其文件结构以查找要带到Experience Platform的文件，并创建了源连接以开始将您的数据带到Experience Platform。 您现在可以继续下一教程，其中您将了解如何使用 [!DNL Flow Service] API](../../collect/cloud-storage.md)创建数据流以将云存储数据引入Experience Platform。[

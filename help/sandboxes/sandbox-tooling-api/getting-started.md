@@ -2,9 +2,9 @@
 title: 沙盒工具API快速入门
 description: 使用沙盒工具API检查项目并在沙盒之间导出和导入沙盒配置的快照。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: 0b34d153-a603-4397-a375-9cc846efe23a
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '311'
+source-wordcount: '312'
 ht-degree: 15%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 15%
 
 ## 收集所需标头的值 {#headers}
 
-本指南要求您完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)，才能成功调用平台API。 完成身份验证教程将为所有Experience PlatformAPI调用中的每个所需标头提供值，如下所示：
+本指南要求您完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)，才能成功调用Experience Platform API。 完成身份验证教程将为所有Experience Platform API调用中的每个所需标头提供值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
@@ -29,7 +29,7 @@ ht-degree: 15%
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
-包含有效负载(POST、PUT和PATCH)的所有请求都需要额外的标头：
+所有包含有效负载(POST、PUT和PATCH)的请求都需要额外的标头：
 
 * `Content-Type: application/json`
 

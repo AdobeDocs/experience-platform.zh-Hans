@@ -3,9 +3,9 @@ title: mbox3rdPartyId的实时配置文件同步
 description: 了解如何将mbox3rdPartyId用于Adobe Experience Platform Web SDK。
 keywords: 个性化；target；adobe target；renderDecisions；sendEvent；mbox3rdPartyId；
 exl-id: 677d1054-0769-4ec6-811e-e02d4b247c2a
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '156'
+source-wordcount: '157'
 ht-degree: 1%
 
 ---
@@ -24,7 +24,7 @@ Adobe Target中的mbox3rdPartyId是您公司的访客ID，例如您公司的忠�
 使用要用作mbox第三方ID的ID命名空间，在[数据流](../../../datastreams/overview.md)中配置`Target Third Party ID Namespace`。
 [了解有关ID命名空间的更多信息](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=zh-Hans)
 
-![平台UI显示Target第三方ID命名空间字段。](assets/mbox3rdpartyid.png)
+![Experience Platform UI显示Target第三方ID命名空间字段。](assets/mbox3rdpartyid.png)
 
 ### 步骤2：将`mbox3rdpartyId`发送到Target
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Zoho CRM Source连接器概述
 description: 了解如何使用API或用户界面将Zoho CRM连接到Adobe Experience Platform。
 exl-id: 4a010453-3d09-4a47-b04e-5789ae4af48c
-source-git-commit: 474b81aa8caf58013f8ea7cff9ad59d92466aac8
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '507'
+source-wordcount: '509'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 >
 >[!DNL Zoho CRM]源将于2025年6月底弃用。
 
-Adobe Experience Platform允许从外部源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
+Adobe Experience Platform允许从外部源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强传入数据。 您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
 
 Experience Platform支持从第三方CRM系统中摄取数据。 CRM提供商的支持包括[!DNL Zoho CRM]。
 
@@ -27,7 +27,7 @@ Experience Platform支持从第三方CRM系统中摄取数据。 CRM提供商的
 
 ## 检索[!DNL Zoho CRM]的身份验证凭据
 
-在将数据从[!DNL Zoho CRM]帐户引入Platform之前，必须首先检索凭据以验证您的[!DNL Zoho CRM]源。 按照以下步骤检索您的客户端ID、客户端密钥、访问令牌和刷新令牌。
+在将数据从[!DNL Zoho CRM]帐户引入Experience Platform之前，必须首先检索凭据以验证您的[!DNL Zoho CRM]源。 按照以下步骤检索您的客户端ID、客户端密钥、访问令牌和刷新令牌。
 
 ### 注册您的应用程序
 
@@ -49,15 +49,15 @@ Experience Platform支持从第三方CRM系统中摄取数据。 CRM提供商的
 
 有关获取凭据的详细步骤，请参阅[[!DNL Zoho CRM] 身份验证指南](https://www.zoho.com/crm/developer/docs/api/v2/oauth-overview.html)。
 
-## 使用API将[!DNL Zoho CRM]连接到[!DNL Platform]
+## 使用API将[!DNL Zoho CRM]连接到[!DNL Experience Platform]
 
-以下文档提供了有关如何使用API或用户界面将[!DNL Zoho CRM]连接到Platform的信息：
+以下文档提供了有关如何使用API或用户界面将[!DNL Zoho CRM]连接到Experience Platform的信息：
 
 - [使用流服务API创建 [!DNL Zoho CRM] 基本连接](../../tutorials/api/create/crm/zoho.md)
 - [使用流服务API浏览数据表](../../tutorials/api/explore/tabular.md)
 - [使用流服务API为CRM源创建数据流](../../tutorials/api/collect/crm.md)
 
-## 使用UI将[!DNL Zoho CRM]连接到[!DNL Platform]
+## 使用UI将[!DNL Zoho CRM]连接到[!DNL Experience Platform]
 
 - [在UI中创建 [!DNL Zoho CRM] 源连接](../../tutorials/ui/create/crm/zoho.md)
 - [在用户界面中为CRM源连接创建数据流](../../tutorials/ui/dataflow/crm.md)

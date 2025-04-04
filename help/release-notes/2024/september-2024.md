@@ -1,10 +1,11 @@
 ---
 title: Adobe Experience Platform 发行说明（2024 年 9 月）
 description: Adobe Experience Platform 2024 年 9 月发行说明。
-source-git-commit: eac613434f631cab567ab3fa6e30d33acac79d2f
+exl-id: e5b40712-2a54-4c6f-a4a1-2f078305da59
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2199'
-ht-degree: 100%
+source-wordcount: '2202'
+ht-degree: 97%
 
 ---
 
@@ -19,14 +20,14 @@ Adobe Experience Platform 中现有功能和文档的更新：
 - [数据准备](#data-prep)
 - [目标](#destinations)
 - [Experience Data Model (XDM)](#xdm)
-- [身份服务](#identity-service)
+- [身份标识服务](#identity-service)
 - [查询服务](#query-service)
 - [Segmentation Service](#segmentation-service)
 - [源](#sources)
 
 ## 警报 {#alerts}
 
-Experience Platform 允许您订阅各种平台活动的基于事件的警报。您可以通过平台用户界面中的 [!UICONTROL 警报] 选项卡订阅不同的警报规则，并可以选择在用户界面内或通过电子邮件通知接收警报消息。
+通过Experience Platform，您可以为各种Experience Platform活动订阅基于事件的警报。 您可以通过Experience Platform用户界面中的[!UICONTROL 警报]选项卡订阅不同的警报规则，还可以选择在UI中或通过电子邮件通知接收警报消息。
 
 **新增功能或更新后的功能**
 
@@ -34,7 +35,7 @@ Experience Platform 允许您订阅各种平台活动的基于事件的警报。
 | --- | --- |
 | 开发沙盒支持 | 您现在可以在生产和开发沙盒中 [订阅警报](../../observability/alerts/ui.md) ，从而实现在所有环境中的无缝监控。 |
 | 电子邮件模板 | [电子邮件提醒](../../observability/alerts/ui.md) 现在包含详细的资产信息，确保您随时掌握所有关键详细信息。 |
-| 增强定制 | 您现在可以配置 [警报阈值](../../observability/alerts/ui.md#alert-threshold) ，从而提供更大的灵活性，根据您的特定需求定制以下警报类型的警报：<br><ul><li>区段作业延迟</li><li>区段导出延迟</li><li>目标流量运行延迟</li><li>标识服务流量运行延迟</li><li>轮廓流量运行延迟</li><li>源流量运行延迟</li><li>查询运行延迟</li><li>激活跳过率超出范围</li><li>源引入错误率超出范围</ul> |
+| 增强定制 | 您现在可以配置 [警报阈值](../../observability/alerts/ui.md#alert-threshold) ，从而提供更大的灵活性，根据您的特定需求定制以下警报类型的警报：<br><ul><li>区段作业延迟</li><li>区段导出延迟</li><li>目标流量运行延迟</li><li>身份标识服务流量运行延迟</li><li>轮廓流量运行延迟</li><li>源流量运行延迟</li><li>查询运行延迟</li><li>激活跳过率超出范围</li><li>源引入错误率超出范围</ul> |
 | 扩展警报 | 现可订阅以下 [警报规则](../../observability/alerts/rules.md)的审核事件信息警报：<br><ul><li>受众创建</li><li>受众更新</li><li>受众删除</li><li>数据集创建</li><li>数据集更新</li><li>数据集删除</li><li>架构创建</li><li>架构更新</li><li>架构删除 |
 
 {style="table-layout:auto"}
@@ -49,7 +50,7 @@ Experience Platform 提供了多个仪表板，您可以通过这些仪表板查
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 许可证使用附加组件表 | 使用核心产品和附加组件的专用表来详细了解许可证使用情况并管理平台资源。通过沙盒级别的深入视图来跟踪和分析每个核心产品的关键量度。附加量度与核心产品量度无缝集成，提供了全面的使用情况视图。增强的可见性可帮助您优化许可证管理并使资源与组织需求保持一致。有关更多详细信息，请参阅 [[!UICONTROL 许可证使用情况] 仪表板指南](../../dashboards/guides/license-usage.md#overview-tab) 。 |
+| 许可证使用附加组件表 | 通过核心产品和加载项的专用表，精细地了解许可证使用情况并管理Experience Platform资源。 通过沙盒级别的深入视图来跟踪和分析每个核心产品的关键量度。附加量度与核心产品量度无缝集成，提供了全面的使用情况视图。增强的可见性可帮助您优化许可证管理并使资源与组织需求保持一致。有关更多详细信息，请参阅 [[!UICONTROL 许可证使用情况] 仪表板指南](../../dashboards/guides/license-usage.md#overview-tab) 。 |
 | Query Pro Mode - 全局过滤器升级 | 使用 Query Pro Mode 的新日期过滤器增强分析。使用 SQL 查询中的动态日期参数来细化洞察，并按特定时间范围过滤数据。通过直观的用户界面选择预设或自定义日期范围，确保仪表板与所有用户的相关性。简化工作流程、保持精确度并及时做出决策。请阅读 [创建日期过滤器的指南](../../dashboards/sql-insights-query-pro-mode/filters/global-filter.md)，了解更多信息。 |
 | Query Pro Mode - 深入钻取 | 使用 Query Pro Mode 的深入探究功能解锁更深入的洞察，并无缝地从高级图表导航到详细的仪表板。使用此功能可以轻松地从摘要转向深入分析，并探索趋势、客户行为和 KPI。自动过滤器传递和多级钻取保持数据一致，确保顺利探索。简化工作流程、保留背景并加快决策。请阅读 [有关创建钻取的分步指南](../../dashboards/sql-insights-query-pro-mode/drill-through.md) 以了解更多信息。 |
 | Query Pro Mode - 高级表属性 | 使用 Query Pro Mode 高级表属性来简化数据可视化、增强工作流效率并提高数据清晰度。直接从自定义仪表板向表格添加自动排序、调整大小和分页功能。对列进行排序以确定关键数据的优先级、调整大小以获得最佳可读性，并无缝浏览大型数据集而无需修改 SQL 查询。请阅读“[查看更多](../../dashboards/sql-insights-query-pro-mode/view-more.md)”指南，了解如何集成这些功能并提升您的数据洞察力。 |
@@ -57,7 +58,7 @@ Experience Platform 提供了多个仪表板，您可以通过这些仪表板查
 
 {style="table-layout:auto"}
 
-有关仪表板的详细信息，包括如何授予访问权限和创建自定义构件，请首先阅读[仪表板概述](../../dashboards/home.md)。
+有关仪表板的详细信息，包括如何授予访问权限和创建自定义小组件，请首先阅读[仪表板概述](../../dashboards/home.md)。
 
 ## 数据准备 {#data-prep}
 
@@ -83,7 +84,7 @@ Experience Platform 提供了多个仪表板，您可以通过这些仪表板查
 
 | 目标 | 描述 |
 | --- | --- |
-| [Amazon 广告](/help/destinations/catalog/advertising/amazon-ads.md) | 2024 年 9 月的版本添加了将 `countryCode` 参数导出到 Amazon Ads 的映射选项。`countryCode` 在 [映射步骤](/help/destinations/catalog/advertising/amazon-ads.md#map) 中使用，以提高您与亚马逊的标识匹配率。 |
+| [Amazon 广告](/help/destinations/catalog/advertising/amazon-ads.md) | 2024 年 9 月的版本添加了将 `countryCode` 参数导出到 Amazon Ads 的映射选项。`countryCode` 在 [映射步骤](/help/destinations/catalog/advertising/amazon-ads.md#map) 中使用，以提高您与亚马逊的身份标识匹配率。 |
 | [[!BADGE B2B]{type=Informative} 需求库](/help/destinations/catalog/advertising/demandbase.md) | 使用此目标来激活 Account-Based Marketing (ABM) 用例的帐户受众。通过 DemandBase 的 B2B Demand Side Platform（DSP）向目标帐户中的相关人物和角色投放广告。目标帐户还可以通过 Demandbase 第三方数据进行丰富，以用于营销和销售中的其他下游用例。 |
 
 {style="table-layout:auto"}
@@ -106,44 +107,44 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 功能 | 描述 |
 | --- | --- |
-| Schema Editor 的增强功能 | 使用 Schema Editor 中更新的关系工作流来控制您的模式关系。直接从 Experience Platform UI 轻松更新或删除现有关系，使模式管理更顺畅、更直观。调整参考模式并自信地重命名关系，确保跨分段和其他关键流程的无缝数据完整性。要了解有关有效管理模式关系的更多信息，请参阅有关 [在 UI 中定义关系字段](../../xdm/tutorials/relationship-ui.md#create-a-relationship-field-group) 和 [B2B 关系](../../xdm/tutorials/relationship-b2b.md#edit-a-b2b-schema-relationship)的指南。 |
+| Schema Editor 的增强功能 | 使用 Schema Editor 中更新的关系工作流来控制您的架构关系。直接从 Experience Platform UI 轻松更新或删除现有关系，使架构管理更顺畅、更直观。调整参考架构并自信地重命名关系，确保跨分段和其他关键流程的无缝数据完整性。要了解有关有效管理架构关系的更多信息，请参阅有关 [在 UI 中定义关系字段](../../xdm/tutorials/relationship-ui.md#create-a-relationship-field-group) 和 [B2B 关系](../../xdm/tutorials/relationship-b2b.md#edit-a-b2b-schema-relationship)的指南。 |
 
 {style="table-layout:auto"}
 
 有关 XDM 更多信息，请阅读[XDM 系统概述](../../xdm/home.md)。
 
-## 标识服务 {#identity-service}
+## 身份标识服务 {#identity-service}
 
-使用 Adobe Experience Platform 标识服务通过跨设备和系统桥接标识，全面了解您的客户及其行为，助您实时提供有影响力的个人数字体验。
+使用 Adobe Experience Platform 身份标识服务通过跨设备和系统桥接身份标识，全面了解您的客户及其行为，助您实时提供有影响力的个人数字体验。
 
 **更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 标识图链接规则的可用性有限 | 标识图链接规则是标识服务中的一套工具，您可以使用它来确保为用户提供准确的个性化。 <ul><li>您现在可以使用 [标识优化算法](../../identity-service/identity-graph-linking-rules/identity-optimization-algorithm.md) 来确保标识图代表单个人，从而防止实时客户轮廓中不必要的标识合并。</li><li>配置 [命名空间优先级](../../identity-service/identity-graph-linking-rules/namespace-priority.md) 来定义各自命名空间的重要性，并影响你的配置文件的形成和分段方式。</li><li>使用 UI 中的 [图形模拟工具](../../identity-service/identity-graph-linking-rules/graph-simulation.md) 来模拟具有不同配置的标识图。</li><li>使用 [标识设置界面](../../identity-service/identity-graph-linking-rules/identity-settings-ui.md) 以指定您唯一的命名空间，并为组织中的所有命名空间建立优先级。</li><li>请参阅 [标识仪表板](../../identity-service/identity-graph-linking-rules/implementation-guide.md#validate-your-graphs)，了解有关图表数据的量度和趋势。</li></ul> 要尝试标识图链接规则，请联系您的 Adobe 帐户团队以获取开发沙盒的访问权限。 |
+| 身份标识图链接规则的可用性有限 | 身份标识图链接规则是身份标识服务中的一套工具，您可以使用它来确保为用户提供准确的个性化。 <ul><li>您现在可以使用 [身份标识优化算法](../../identity-service/identity-graph-linking-rules/identity-optimization-algorithm.md) 来确保身份标识图代表单个人，从而防止实时客户轮廓中不必要的身份标识合并。</li><li>配置 [命名空间优先级](../../identity-service/identity-graph-linking-rules/namespace-priority.md) 来定义各自命名空间的重要性，并影响你的配置文件的形成和分段方式。</li><li>使用 UI 中的 [图形模拟工具](../../identity-service/identity-graph-linking-rules/graph-simulation.md) 来模拟具有不同配置的身份标识图。</li><li>使用 [身份标识设置界面](../../identity-service/identity-graph-linking-rules/identity-settings-ui.md) 以指定您唯一的命名空间，并为组织中的所有命名空间建立优先级。</li><li>请参阅 [身份标识仪表板](../../identity-service/identity-graph-linking-rules/implementation-guide.md#validate-your-graphs)，了解有关图表数据的量度和趋势。</li></ul> 要尝试身份标识图链接规则，请联系您的 Adobe 帐户团队以获取开发沙盒的访问权限。 |
 
 **文档更新**
 
 | 功能 | 描述 |
 | --- | --- |
-| 标识图链接规则故障排除指南 | 阅读新的 [标识图链接规则故障排除指南](../../identity-service/identity-graph-linking-rules/troubleshooting.md)，了解您可以采取的方法和调试解决方案，以解决使用标识图链接规则时可能遇到的常见问题。 |
-| 标识图链接规则常见问题解答 | 阅读新的 [标识图链接规则常见问题解答](../../identity-service/identity-graph-linking-rules/troubleshooting.md#frequently-asked-questions)，获取有关命名空间优先级、标识优化算法和标识图链接规则其他方面的常见问题的解答列表。 |
+| 身份标识图链接规则故障排除指南 | 阅读新的 [身份标识图链接规则故障排除指南](../../identity-service/identity-graph-linking-rules/troubleshooting.md)，了解您可以采取的方法和调试解决方案，以解决使用身份标识图链接规则时可能遇到的常见问题。 |
+| 身份标识图链接规则常见问题解答 | 阅读新的 [身份标识图链接规则常见问题解答](../../identity-service/identity-graph-linking-rules/troubleshooting.md#frequently-asked-questions)，获取有关命名空间优先级、身份标识优化算法和身份标识图链接规则其他方面的常见问题的解答列表。 |
 
 {style="table-layout:auto"}
 
-有关标识服务的更多信息，请参阅[标识服务概述](../../identity-service/home.md)。
+有关身份标识服务的更多信息，请参阅[身份标识服务概述](../../identity-service/home.md)。
 
 ## 查询服务 {#query-service}
 
-查询服务允许您使用标准 SQL 查询 Adobe Experience Platform [!DNL data lake] 中的数据。您可以加入数据湖的任何数据集，并作为新数据集获取查询结果，以用于报表、Data Science Workspace，或将数据摄取到实时客户配置文件。
+查询服务允许您使用标准 SQL 查询 Adobe Experience Platform [!DNL data lake] 中的数据。您可以加入数据湖的任何数据集，并作为新数据集获取查询结果，以用于报表、Data Science Workspace，或将数据摄取到实时客户轮廓。
 
 **更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| Data Distiller 受众 | 使用 Experience Platform 的 Data Distiller 中的 SQL 受众扩展轻松创建、管理和激活受众。直接从数据湖中使用 SQL 命令定义受众群体，无需在配置文件中使用原始数据。通过这种灵活的数据驱动方法，优化定位策略并自动将受众同步到基于文件的目的地。简化工作流程，优化受众管理并充分发挥数据的潜力。阅读 [有关使用 SQL 受众扩展的指南](../../query-service/data-distiller-audiences/overview.md) 来提升您的受众策略。 |
-| Data Distiller Statistics - 超立方体 | 使用超立方体优化大数据分析。处理复杂的计算（例如不同计数和多维分析），无需重新处理历史数据。逐步更新数据，简化工作流程并缩短处理时间，同时保持准确性和效率。获得更快、可扩展且经济高效的洞察力，从而改变决策。探索 [超立方体使用指南](../../query-service/hypercubes/overview.md)，解锁高级分析。 |
-| Query Editor Object 浏览器 | 使用查询编辑器中的新对象浏览器提高查询效率。快速搜索、过滤和访问数据集以更快地编写和优化查询。通过实时模式更新和即时表元数据，您可以简化工作流程、缩短导航时间并增强查询体验。释放数据潜力并优化分析。若要了解更多信息，请阅读有关[使用对象浏览器](../../query-service/ui/user-guide.md#object-browser)的指南。 |
+| 数据蒸馏器受众 | 使用 Experience Platform 的数据蒸馏器中的 SQL 受众扩展轻松创建、管理和激活受众。直接从数据湖中使用 SQL 命令定义受众群体，无需在配置文件中使用原始数据。通过这种灵活的数据驱动方法，优化定位策略并自动将受众同步到基于文件的目的地。简化工作流程，优化受众管理并充分发挥数据的潜力。阅读 [有关使用 SQL 受众扩展的指南](../../query-service/data-distiller-audiences/overview.md) 来提升您的受众策略。 |
+| 数据蒸馏器数据 - 超立方体 | 使用超立方体优化大数据分析。处理复杂的计算（例如不同计数和多维分析），无需重新处理历史数据。逐步更新数据，简化工作流程并缩短处理时间，同时保持准确性和效率。获得更快、可扩展且经济高效的洞察力，从而改变决策。探索 [超立方体使用指南](../../query-service/hypercubes/overview.md)，解锁高级分析。 |
+| Query Editor Object 浏览器 | 使用查询编辑器中的新对象浏览器提高查询效率。快速搜索、过滤和访问数据集以更快地编写和优化查询。通过实时架构更新和即时表元数据，您可以简化工作流程、缩短导航时间并增强查询体验。释放数据潜力并优化分析。若要了解更多信息，请阅读有关[使用对象浏览器](../../query-service/ui/user-guide.md#object-browser)的指南。 |
 | 计算小时数 | 使用新显示的计划查询的计算小时数指标来控制资源使用情况。在查询执行级别查看计算小时数，以监控和优化 CTAS/ITAS 批量查询的资源使用情况。跟踪每次查询运行的开始时间、完成状态和计算时间。轻松微调性能并降低成本。阅读 [计算小时数指南](../../query-service/ui/query-schedules.md#compute-hours-at-job-level) 了解有关如何最大限度提高查询效率的信息。 |
 
 {style="table-layout:auto"}
@@ -152,7 +153,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 ## Segmentation Service {#segmentation-service}
 
-[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的配置文件子集。区段可以基于记录数据（例如人口统计信息）或代表客户与您的品牌互动的时间序列事件。
+[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的轮廓子集。区段可以基于记录数据（例如人口统计信息）或代表客户与您的品牌互动的时间序列事件。
 
 **新增功能或更新后的功能**
 

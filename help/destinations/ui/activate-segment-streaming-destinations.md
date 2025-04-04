@@ -3,9 +3,9 @@ title: 将受众数据激活到流目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将现有受众映射到流目标来激活这些受众。
 exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1188'
+source-wordcount: '1189'
 ht-degree: 6%
 
 ---
@@ -52,7 +52,7 @@ ht-degree: 6%
 您可以从多种类型的受众中进行选择，具体取决于其来源：
 
 * **[!UICONTROL 分段服务]**：分段服务在Experience Platform中生成的受众。 有关详细信息，请参阅[分段文档](../../segmentation/ui/overview.md)。
-* **[!UICONTROL 自定义上传]**：在Experience Platform外部生成的受众，以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/audience-portal.md#import-audience)的文档。
+* **[!UICONTROL 自定义上传]**：受众在Experience Platform外部生成，并以CSV文件形式上传到Experience Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/audience-portal.md#import-audience)的文档。
 * 其他类型的受众，来自其他Adobe解决方案，如[!DNL Audience Manager]。
 
 ![在选择受众步骤中突出显示的多个受众。](../assets/ui/activate-segment-streaming-destinations/select-audiences.png)
@@ -125,7 +125,7 @@ ht-degree: 6%
 
      ![映射ID下拉列表突出显示。](../assets/ui/activate-segment-streaming-destinations/origin-of-audience.png)
 
-   * 某些目标要求您手动将[!DNL Platform]受众映射到其在目标目标中的对应受众。 为此，请选择每个受众，然后在&#x200B;**[!UICONTROL 映射ID]**&#x200B;字段中输入目标平台中对应的受众ID。 如果您的目标不包含此字段，请跳过此步骤。
+   * 某些目标要求您手动将[!DNL Experience Platform]受众映射到其在目标目标中的对应受众。 为此，请选择每个受众，然后在&#x200B;**[!UICONTROL 映射ID]**&#x200B;字段中输入目标平台中对应的受众ID。 如果您的目标不包含此字段，请跳过此步骤。
 
      ![突出显示的受众来源下拉列表。](../assets/ui/activate-segment-streaming-destinations/mapping-id.png)
 
@@ -143,7 +143,7 @@ ht-degree: 6%
 
 ### 同意策略评估 {#consent-policy-evaluation}
 
-如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的配置文件数量。有关详细信息，请阅读[同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。
+如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的轮廓数量。有关详细信息，请阅读[同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。
 
 ### 数据使用策略检查 {#data-usage-policy-checks}
 

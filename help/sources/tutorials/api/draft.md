@@ -2,9 +2,9 @@
 title: 创建流服务实体API的草稿
 description: 了解如何使用流服务API创建基本连接、源连接、目标连接和数据流的草稿
 exl-id: aad6a302-1905-4a23-bc3d-39e76c9a22da
-source-git-commit: 9c40f6254b548027d271e5831bd1b03aec98df77
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1188'
+source-wordcount: '1193'
 ht-degree: 3%
 
 ---
@@ -21,12 +21,12 @@ ht-degree: 3%
 
 本教程要求您实际了解Adobe Experience Platform的以下组件：
 
-* [源](../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
-* [沙盒](../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-### 使用平台API
+### 使用Experience Platform API
 
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../landing/api-guide.md)指南。
+有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../landing/api-guide.md)指南。
 
 ### 检查草稿模式支持
 
@@ -624,7 +624,7 @@ curl -X POST \
 }
 ```
 
-## Publish您的草稿基本连接 {#publish-your-draft-base-connection}
+## 发布草稿基本连接 {#publish-your-draft-base-connection}
 
 准备好发布草稿后，向`/connections`端点发出POST请求并提供要发布的草稿基础连接的ID以及用于发布的操作操作。
 
@@ -716,13 +716,13 @@ curl -X POST \
 }
 ```
 
-## Publish您的草稿源连接 {#publish-your-draft-source-connection}
+## 发布草稿源连接 {#publish-your-draft-source-connection}
 
 >[!NOTE]
 >
 >如果与源连接关联的基本连接仍处于草稿状态，则无法发布源连接。 请确保先发布基本连接，然后再发布源连接。
 
-准备好发布草稿后，请向`/sourceConnections`端点发出POST请求，并提供要发布的草稿源连接的ID以及用于发布的操作操作。
+准备好发布草稿后，向`/sourceConnections`端点发出POST请求，并提供要发布的草稿源连接的ID以及用于发布的操作操作。
 
 **API格式**
 
@@ -761,7 +761,7 @@ curl -X POST \
 
 ## 创建草稿目标连接 {#create-a-draft-target-connection}
 
-要创建草稿POST连接，请向[!DNL Flow Service] API的`/targetConnections`端点发出目标请求，并提供`mode=draft`作为查询参数。
+要创建草稿目标连接，请向[!DNL Flow Service] API的`/targetConnections`端点发出POST请求，并提供`mode=draft`作为查询参数。
 
 **API格式**
 
@@ -813,13 +813,13 @@ curl -X POST \
 }
 ```
 
-## Publish草稿target连接 {#publish-your-draft-target-connection}
+## 发布草稿目标连接 {#publish-your-draft-target-connection}
 
 >[!NOTE]
 >
 >如果关联的基本连接仍处于草稿状态，则无法发布目标连接。 请确保先发布基本连接，然后再发布目标连接。
 
-准备好发布草稿后，向`/targetConnections`端点发出POST请求并提供要发布的草稿ID以及用于发布的操作操作。
+准备好发布草稿后，向`/targetConnections`端点发出POST请求并提供要发布的草稿目标连接的ID以及用于发布的操作操作。
 
 **API格式**
 
@@ -908,13 +908,13 @@ POST /flows?mode=draft
 }
 ```
 
-## Publish您的草稿数据流 {#publish-your-draft-dataflow}
+## 发布草稿数据流 {#publish-your-draft-dataflow}
 
 >[!NOTE]
 >
 >如果数据流的关联源连接和目标连接仍处于草稿状态，则无法发布数据流。 请确保先发布源连接和目标连接，然后再发布数据流。
 
-准备好发布草稿后，在提供要发布的草稿数据流的ID的同时向`/flows`端点发出POST请求并进行发布操作操作。
+准备好发布草稿后，在提供要发布的草稿数据流的ID的同时向`/flows`端点发出POST请求，并进行发布操作操作。
 
 **API格式**
 

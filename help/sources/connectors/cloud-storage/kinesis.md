@@ -3,9 +3,9 @@ title: Amazon Kinesis Source连接器概述
 description: 了解如何使用API或用户界面将Amazon Kinesis连接到Adobe Experience Platform。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b71fc922-7722-4279-8fc6-e5d7735e1ebb
-source-git-commit: 84d09038ded1f35269ebf67c6bc1a5dacaafe4ac
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '529'
+source-wordcount: '532'
 ht-degree: 0%
 
 ---
@@ -16,16 +16,16 @@ ht-degree: 0%
 >
 >- [!DNL Amazon Kinesis]源在源目录中可供已购买Real-Time CDP Ultimate的用户使用。
 >
->- 在Amazon Web Services (AWS)上运行Adobe Experience Platform时，您现在可以使用[!DNL Amazon Kinesis]源。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform多云概述](../../../landing/multi-cloud.md)。
+>- 在Amazon Web Services (AWS)上运行Adobe Experience Platform时，您现在可以使用[!DNL Amazon Kinesis]源。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](../../../landing/multi-cloud.md)。
 
 
-Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等云提供商提供本机连接。 您可以将来自这些系统的数据导入[!DNL Platform]。
+Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等云提供商提供本机连接。 您可以将来自这些系统的数据导入[!DNL Experience Platform]。
 
-云存储源可以将您自己的数据导入[!DNL Platform]，而无需下载、格式化或上传。 引入的数据可以格式化为XDM JSON、XDM Parquet或分隔。 该过程的每个步骤都集成到源工作流中。 [!DNL Platform]允许您从[!DNL Amazon Kinesis]实时引入数据。
+云存储源可以将您自己的数据导入[!DNL Experience Platform]，而无需下载、格式化或上传。 引入的数据可以格式化为XDM JSON、XDM Parquet或分隔。 该过程的每个步骤都集成到源工作流中。 [!DNL Experience Platform]允许您从[!DNL Amazon Kinesis]实时引入数据。
 
 >[!NOTE]
 >
->如果需要摄取大量数据，必须增加[!DNL Kinesis]的缩放因子。 目前，您可以从[!DNL Kinesis]帐户向Platform引入的最大数据量为每秒4000条记录。 要扩展并摄取更大数量的数据，请联系您的Adobe代表。
+>如果需要摄取大量数据，必须增加[!DNL Kinesis]的缩放因子。 目前，您可以从[!DNL Kinesis]帐户向Experience Platform引入的最大数据量为每秒4000条记录。 要扩展并摄取更大数量的数据，请联系您的Adobe代表。
 
 ## 先决条件
 
@@ -40,7 +40,7 @@ Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等
 - `DescribeStream`
 - `ListStreams`
 
-这些权限通过[!DNL Kinesis]控制台进行排列，并在输入凭据并选择数据流后由Platform检查。
+这些权限通过[!DNL Kinesis]控制台进行排列，并在输入凭据并选择数据流后由Experience Platform检查。
 
 以下示例显示了创建[!DNL Kinesis]源连接所需的最低访问权限。
 
@@ -85,13 +85,13 @@ Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等
 | `TRIM_HORIZON` | 从最早的数据记录开始读取数据。 |
 | `LATEST` | 从最近的数据记录开始读取数据。 |
 
-[!DNL Kinesis] UI源当前仅支持`TRIM_HORIZON`，而API同时支持`TRIM_HORIZON`和`LATEST`作为获取数据的模式。 Platform为[!DNL Kinesis]源使用的默认迭代器值为`TRIM_HORIZON`。
+[!DNL Kinesis] UI源当前仅支持`TRIM_HORIZON`，而API同时支持`TRIM_HORIZON`和`LATEST`作为获取数据的模式。 Experience Platform用于[!DNL Kinesis]源的默认迭代器值为`TRIM_HORIZON`。
 
 有关迭代器类型的详细信息，请参阅以下[[!DNL Kinesis] 文档](https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#API_GetShardIterator_RequestSyntax)。
 
-## 将[!DNL Amazon Kinesis]连接到[!DNL Platform]
+## 将[!DNL Amazon Kinesis]连接到[!DNL Experience Platform]
 
-以下文档提供了有关如何使用API或用户界面将[!DNL Amazon Kinesis]连接到[!DNL Platform]的信息：
+以下文档提供了有关如何使用API或用户界面将[!DNL Amazon Kinesis]连接到[!DNL Experience Platform]的信息：
 
 ### 使用API
 

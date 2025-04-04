@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK扩展中的操作类型
 description: 了解Adobe Experience Platform Web SDK标记扩展提供的各种操作类型。
 solution: Experience Platform
 exl-id: a4bf0bb9-59b4-4c43-97e6-387768176517
-source-git-commit: 760484bb7f95df97701f81f78783f0214aecaf5b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2112'
+source-wordcount: '2119'
 ht-degree: 1%
 
 ---
@@ -25,14 +25,14 @@ ht-degree: 1%
 
 您可以将此操作类型用于各种用例，例如：
 
-1. **渲染mboxHTML选件**。 无法自动呈现通过&#x200B;**[!UICONTROL 发送事件]**&#x200B;操作的作用域或表面显式请求的建议。 您可以使用&#x200B;**[!UICONTROL 应用建议]**&#x200B;操作类型通过指定建议元数据来告知Web SDK在何处渲染它们。
+1. **呈现mbox HTML选件**。 无法自动呈现通过&#x200B;**[!UICONTROL 发送事件]**&#x200B;操作的作用域或表面显式请求的建议。 您可以使用&#x200B;**[!UICONTROL 应用建议]**&#x200B;操作类型通过指定建议元数据来告知Web SDK在何处渲染它们。
 2. **在单页应用程序上渲染视图的选件**。 在呈现视图更改事件时，如果分析数据尚未准备就绪，则可以使用&#x200B;**[!UICONTROL 应用建议]**&#x200B;操作在页面顶部呈现视图建议。 有关更多详细信息，请参阅[页面事件的顶部和底部（第二个页面视图 — 选项2）](../../../../web-sdk/use-cases/top-bottom-page-events.md)。 要使用此项，请在表单中输入&#x200B;**[!UICONTROL 视图名称]**。
 3. **重新呈现建议**。 当网站使用React等框架重新呈现内容时，您可能需要重新应用个性化。 在这种情况下，您可以使用&#x200B;**[!UICONTROL 应用建议]**&#x200B;操作类型来执行此操作。
 
 此操作类型不会为渲染的建议发送显示事件。 它将跟踪渲染的建议，以便将其包含在后续&#x200B;**[!UICONTROL 发送事件]**&#x200B;调用中。
 
 
-![显示“应用建议”操作类型的Platform Tags UI。](assets/apply-propositions.png)
+![显示“应用建议”操作类型的Experience Platform Tags UI。](assets/apply-propositions.png)
 
 此操作类型支持以下字段：
 
@@ -49,14 +49,14 @@ ht-degree: 1%
 
 使用此操作类型可能会缩短混合个性化用例的客户端加载时间。
 
-![显示“应用响应”操作类型的Experience Platform用户界面图像。](assets/apply-response.png)
+![显示“应用响应”操作类型的Experience Platform用户界面的图像。](assets/apply-response.png)
 
 此操作类型支持以下配置选项：
 
 * **[!UICONTROL 实例]**：选择您正在使用的Web SDK实例。
 * **[!UICONTROL 响应标头]**：选择数据元素，该数据元素将返回包含从Edge Network服务器调用返回的标头键和值的对象。
 * **[!UICONTROL 响应正文]**：选择数据元素，该数据元素将返回包含Edge Network响应所提供的JSON有效负载的对象。
-* **[!UICONTROL 呈现可视化个性化决策]**：启用此选项可自动呈现Edge Network提供的个性化内容并预隐藏内容以防止闪烁。
+* **[!UICONTROL 呈现可视化个性化决策]**：启用此选项可自动呈现Edge Network提供的个性化内容，并预隐藏内容以防止闪烁。
 
 ## 评估规则集 {#evaluate-rulesets}
 
@@ -73,7 +73,7 @@ ht-degree: 1%
 
 此操作用于获取旧版Media Analytics API。 配置操作并提供对象名称时，旧版Media Analytics API将导出到该窗口对象。 如果未提供，它将像当前媒体JS库那样导出到`window.Media`。
 
-![Platform UI图像显示“获取Media Analytics跟踪器”操作类型。](assets/get-media-analytics-tracker.png)
+![Experience Platform UI图像显示“获取Media Analytics跟踪器”操作类型。](assets/get-media-analytics-tracker.png)
 
 ## 带标识的重定向 {#redirect-with-identity}
 
@@ -81,7 +81,7 @@ ht-degree: 1%
 
 ## 发送事件 {#send-event}
 
-向Experience Platform发送事件，以便Platform能够收集您发送的数据并对该信息执行相应的操作。 您要发送的任何数据均可通过&#x200B;**[!UICONTROL XDM数据]**&#x200B;字段发送。 使用符合[!DNL XDM]架构结构的[!DNL JSON]对象。 此对象可以在您的页面上创建，也可以通过&#x200B;**[!UICONTROL 自定义代码]** **[!UICONTROL 数据元素]**&#x200B;创建。
+向Experience Platform发送事件，以便Experience Platform可以收集您发送的数据并对该信息执行相应的操作。 您要发送的任何数据均可通过&#x200B;**[!UICONTROL XDM数据]**&#x200B;字段发送。 使用符合[!DNL XDM]架构结构的[!DNL JSON]对象。 此对象可以在您的页面上创建，也可以通过&#x200B;**[!UICONTROL 自定义代码]** **[!UICONTROL 数据元素]**&#x200B;创建。
 
 **[!UICONTROL 发送事件]**&#x200B;操作类型支持下述字段和设置。 这些字段都是可选的。
 
@@ -89,7 +89,7 @@ ht-degree: 1%
 
 使用&#x200B;**[!UICONTROL 实例]**&#x200B;选择器选择要配置的Web SDK实例。 如果您只有一个实例，则它是预选的。
 
-![显示“发送事件”操作类型实例设置的Platform Tags UI图像。](assets/instance-settings.png)
+![Experience Platform Tags UI图像显示“发送事件”操作类型的实例设置。](assets/instance-settings.png)
 
 * **[!UICONTROL 实例]**：选择要配置的Web SDK实例。 如果您只有一个实例，则将预先选择该实例。
 * **[!UICONTROL 使用引导式事件]**：启用此选项可自动填写或隐藏某些字段以启用特定用例。 启用此选项将触发以下设置的显示。
@@ -108,18 +108,18 @@ ht-degree: 1%
 
 ### 数据 {#data}
 
-![显示“发送事件”操作类型的数据元素设置的Platform Tags UI图像。](assets/data.png)
+![显示“发送事件”操作类型的数据元素设置的Experience Platform Tags UI图像。](assets/data.png)
 
 * **[!UICONTROL 类型]**：此字段允许您指定将记录在XDM架构中的事件类型。 有关详细信息，请参阅`sendEvent`命令中的[`type`](/help/web-sdk/commands/sendevent/type.md)。
 * **[!UICONTROL XDM]**：
-* **[!UICONTROL 数据]**：使用此字段发送不符合XDM架构的数据。 如果您尝试更新Adobe Target配置文件或发送Target Recommendations属性，则此字段非常有用。 有关详细信息，请参阅`sendEvent`命令中的[`data`](/help/web-sdk/commands/sendevent/data.md)。
+* **[!UICONTROL 数据]**：使用此字段发送不符合XDM架构的数据。 如果您尝试更新Adobe Target配置文件或发送Target推荐属性，则此字段非常有用。 有关详细信息，请参阅`sendEvent`命令中的[`data`](/help/web-sdk/commands/sendevent/data.md)。
 * **[!UICONTROL 包含已渲染的建议]**：启用此选项可包含已渲染但尚未发送显示事件的所有建议。 将此项与&#x200B;**[!UICONTROL 结合使用。自动发送已禁用的显示事件]**。 此设置使用有关渲染建议的信息更新`_experience.decisioning` XDM字段。
 * **[!UICONTROL 文档将卸载]**：启用此选项以确保事件到达服务器，即使用户离开页面也一样。 这允许事件访问服务器，但响应将被忽略。
 * **[!UICONTROL 合并ID]**： **此字段已弃用**。 这将填充`eventMergeId` XDM字段。
 
 ### 个性化 {#personalization}
 
-![显示“发送事件”操作类型的Personalization设置的Platform Tags UI图像。](assets/personalization-settings.png)
+![Experience Platform Tags UI图像显示“发送事件”操作类型的Personalization设置。](assets/personalization-settings.png)
 
 * **[!UICONTROL 范围]**：选择要从个性化显式请求的范围(Adobe Target [!DNL mboxes])。 您可以手动输入范围，也可以通过提供数据元素来输入范围。
 * **[!UICONTROL 界面]**：设置页面上可用于个性化的Web界面。 有关更多详细信息，请参阅[Adobe Journey Optimizer文档](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html)。
@@ -140,7 +140,7 @@ ht-degree: 1%
 
 向Adobe Experience Platform和/或Adobe Analytics发送媒体事件。 当您跟踪网站上的媒体事件时，此操作很有用。 选择一个实例（如果有多个实例）。 该操作需要一个`playerId`，它表示跟踪的媒体会话的唯一标识符。 启动媒体会话时，它还需要&#x200B;**[!UICONTROL 体验质量]**&#x200B;和`playhead`数据元素。
 
-![显示发送媒体事件屏幕的平台UI图像。](assets/send-media-event.png)
+![Experience Platform UI图像显示“发送媒体”事件屏幕。](assets/send-media-event.png)
 
 **[!UICONTROL 发送媒体事件]**&#x200B;操作类型支持以下属性：
 

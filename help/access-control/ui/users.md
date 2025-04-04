@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 管理产品配置文件的用户
 description: 本文档说明如何在Adobe Experience Platform UI中管理产品配置文件的用户。
 exl-id: 1a35f2e4-cb33-4625-92ec-98e615607a8b
-source-git-commit: ea79ac7fecd980aba87d003c8c23f271c74ec23d
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '228'
+source-wordcount: '230'
 ht-degree: 0%
 
 ---
@@ -33,4 +33,4 @@ ht-degree: 0%
 
 ## 后续步骤
 
-现在您已了解如何通过[!DNL Admin Console]控制对Platform功能的访问，请参阅[访问控制概述](../home.md)中的附录部分，了解有关每个权限及其授予访问权限的Platform功能的更多信息。
+现在您已了解如何通过[!DNL Admin Console]控制对Experience Platform功能的访问，请参阅[访问控制概述](../home.md)中的附录部分，了解有关每个权限及其授予访问权限的Experience Platform功能的更多信息。

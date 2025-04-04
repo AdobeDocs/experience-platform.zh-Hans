@@ -2,9 +2,9 @@
 title: SFTP 主机
 description: 了解如何在Adobe Experience Platform中配置标记，以将库内部版本交付到安全的自托管SFTP服务器。
 exl-id: 3c1dc43b-291c-4df4-94f7-a03b25dbb44c
-source-git-commit: 5b362d28eb3be5e2a45464390c694f7ae59f899c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '875'
+source-wordcount: '880'
 ht-degree: 10%
 
 ---
@@ -25,7 +25,7 @@ Experience Platform允许您将标记库内部版本传输到您托管的安全S
 
 ## 为您的服务器设置访问密钥 {#access-key}
 
-Platform使用加密密钥连接到SFTP站点。 可以通过以下几步来正确设置此操作：
+Experience Platform使用加密密钥连接到SFTP站点。 可以通过以下几步来正确设置此操作：
 
 ### 创建公钥/私钥对
 
@@ -35,7 +35,7 @@ Platform使用加密密钥连接到SFTP站点。 可以通过以下几步来正�
 
 私钥用于加密公钥。 在SFTP主机创建过程中，您需要提供私钥。 有关加密公钥的说明，请参阅Reactor API指南中有关[加密值](../../../api/guides/encrypting-values.md)的部分。 除非您知道自己需要特定密钥，否则请使用生产环境的GPG密钥。 最后，您可以从任何计算机加密私钥，因此无需在服务器上安装GPG即可完成此步骤。
 
-### 允许列表平台IP地址
+### 允许列表Experience Platform IP地址
 
 >[!IMPORTANT]
 >
@@ -53,7 +53,7 @@ Platform使用加密密钥连接到SFTP站点。 可以通过以下几步来正�
 > * `44.194.43.191`
 > * `3.215.163.18`
 
-您可能需要批准一组要在公司防火墙中使用的IP地址，以允许平台访问您的SFTP服务器并与之建立连接。 这些IP地址包括：
+您可能需要批准一组要在公司防火墙中使用的IP地址，以便Experience Platform能够访问您的SFTP服务器并与之建立连接。 这些IP地址包括：
 
 * `184.72.239.68`
 * `23.20.85.113`
@@ -94,7 +94,7 @@ Platform使用加密密钥连接到SFTP站点。 可以通过以下几步来正�
 
 ![显示正在保存的SFTP主机的图像](../../../images/ui/publishing/sftp-hosts/save-host.png)
 
-选择&#x200B;**[!UICONTROL 保存]**&#x200B;后，将测试连接以及将文件传送到SFTP服务器的能力。 Platform会创建一个文件夹，在该文件夹中写入文件，检查以确保该文件存在，然后自行清理。 如果SFTP服务器上的用户帐户（连接到您提供给Platform的安全证书的用户帐户）没有执行此操作所需的权限，则主机将进入“失败”状态。
+选择&#x200B;**[!UICONTROL 保存]**&#x200B;后，将测试连接以及将文件传送到SFTP服务器的能力。 Experience Platform会创建一个文件夹，并在该文件夹中写入文件，然后检查以确保该文件存在，最后自行清理。 如果SFTP服务器上的用户帐户(连接到您提供给Experience Platform的安全证书的用户帐户)没有执行此操作所需的权限，则主机将进入“失败”状态。
 
 ## 后续步骤
 

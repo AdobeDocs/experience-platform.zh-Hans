@@ -4,23 +4,23 @@ solution: Experience Platform
 title: 行为API端点
 description: 架构注册表API中的/behaviors端点允许您检索全局容器中的所有可用行为。
 exl-id: 3b45431f-1d55-4279-8b62-9b27863885ec
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '417'
+source-wordcount: '419'
 ht-degree: 2%
 
 ---
 
 # 行为端点
 
-在Experience Data Model (XDM)中，行为定义架构描述的数据的性质。 每个XDM类都必须引用一个特定行为，使用该类的所有架构都将继承该行为。 对于Platform中的几乎所有用例，有两种可用行为：
+在Experience Data Model (XDM)中，行为定义架构描述的数据的性质。 每个XDM类都必须引用一个特定行为，使用该类的所有架构都将继承该行为。 对于Experience Platform中的几乎所有用例，有两种可用行为：
 
 * **[!UICONTROL 记录]**：提供有关主题属性的信息。 主体可以是组织，也可以是个人。
 * **[!UICONTROL 时间序列]**：提供记录主体直接或间接执行操作时系统的快照。
 
 >[!NOTE]
 >
->Platform中的一些用例需要使用未采用上述任一行为的架构。 对于这些情况，还有第三种“临时”行为可用。 有关详细信息，请参阅有关[创建临时架构](../tutorials/ad-hoc.md)的教程。
+>Experience Platform中的一些用例需要使用未采用上述任一行为的架构。 对于这些情况，还有第三种“临时”行为可用。 有关详细信息，请参阅有关[创建临时架构](../tutorials/ad-hoc.md)的教程。
 >
 >有关数据行为如何影响架构合成的更多常规信息，请参阅[架构合成基础知识](../schema/composition.md)指南。
 
@@ -28,7 +28,7 @@ ht-degree: 2%
 
 ## 快速入门
 
-本指南中使用的终结点是[[!DNL Schema Registry] API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/)的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+本指南中使用的终结点是[[!DNL Schema Registry] API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/)的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience Platform API所需的所需标头的重要信息。
 
 ## 检索行为列表 {#list}
 
@@ -89,7 +89,7 @@ curl -X GET \
 
 ## 查找行为 {#lookup}
 
-通过在`/behaviors`终结点的GET请求路径中提供特定行为的ID，您可以查找该行为。
+通过在`/behaviors`端点的GET请求路径中提供其ID，您可以查找特定行为。
 
 **API格式**
 

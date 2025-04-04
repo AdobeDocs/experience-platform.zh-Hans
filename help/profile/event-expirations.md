@@ -4,18 +4,18 @@ solution: Experience Platform
 title: 体验事件过期时间
 description: 本文档提供了有关为Adobe Experience Platform数据集中的单个Experience事件配置过期时间的常规指南。
 exl-id: a91f2cd2-3a5d-42e6-81c3-0ec5bc644f5f
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '855'
+source-wordcount: '858'
 ht-degree: 0%
 
 ---
 
-# 体验事件过期时间
+# 体验事件过期
 
 在Adobe Experience Platform中，您可以为摄取到为[实时客户个人资料](./home.md)启用的数据集的所有Experience事件配置过期时间。 这允许您自动从配置文件存储中删除对您的用例不再有效或有用的数据。
 
-无法通过Platform UI或API配置Experience Event过期时间。 相反，您必须联系支持人员，才能在所需的数据集上启用体验事件过期功能。
+无法通过Experience Platform UI或API配置Experience Event过期时间。 相反，您必须联系支持人员，才能在所需的数据集上启用体验事件过期功能。
 
 >[!IMPORTANT]
 >
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ## 自动过期流程
 
-在启用配置文件的数据集上启用体验事件过期后，Platform会分两步自动为每个捕获的事件应用过期值：
+在启用配置文件的数据集上启用体验事件过期后，Experience Platform会分两步自动为每个捕获的事件应用过期值：
 
 1. 摄取到数据集中的所有新数据具有基于事件时间戳的摄取时应用的到期值。
 1. 数据集中所有现有数据的过期值都作为一次性回填系统作业逆向应用。 在数据集上放置过期值后，过期值之前的事件将在系统作业运行时立即删除。 所有其他事件在到达事件时间戳的过期值后将立即丢弃。 删除所有Experience事件后，如果配置文件不再具有任何配置文件属性，则该配置文件将不再存在。
@@ -76,4 +76,4 @@ Experience Event数据过期时间&#x200B;**仅**&#x200B;删除事件并&#x200B;
 
 您应根据保留已知客户数据的需要，在数据集中&#x200B;**始终**&#x200B;设置体验事件数据过期时间。 设置Experience Event数据过期后，您可以使用假名配置文件数据过期自动删除假名配置文件。 通常，假名配置文件的数据过期期限短于体验事件的数据过期期限。
 
-对于典型用例，您可以根据已知用户数据的值设置Experience Event数据过期，还可以将假名配置文件数据过期设置为更短的持续时间，以限制假名配置文件对您的Platform许可证合规性的影响。
+对于典型用例，您可以根据已知用户数据的值设置Experience Event数据过期，还可以将假名配置文件数据过期设置为更短的持续时间，以限制假名配置文件对Experience Platform许可证合规性的影响。

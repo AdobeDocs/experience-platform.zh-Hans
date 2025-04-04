@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；流服务；
 title: 使用流服务API为按需引入创建流运行
 description: 了解如何使用流服务API为按需引入创建流运行
 exl-id: a7b20cd1-bb52-4b0a-aad0-796929555e4a
-source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '797'
+source-wordcount: '801'
 ht-degree: 1%
 
 ---
@@ -26,12 +26,12 @@ ht-degree: 1%
 
 本教程要求您实际了解Adobe Experience Platform的以下组件：
 
-* [源](../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。
-* [沙盒](../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强传入数据。
+* [沙盒](../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-### 使用平台API
+### 使用Experience Platform API
 
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../landing/api-guide.md)指南。
+有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../landing/api-guide.md)指南。
 
 ## 为基于表的源创建流运行
 
@@ -189,4 +189,4 @@ curl -X POST \
 
 ## 监测流量运行
 
-创建流运行后，您可以监视通过它摄取的数据，以查看有关流运行、完成状态和错误的信息。 若要使用API监视您的流运行，请参阅有关API中[监视数据流的教程](./monitor.md)。 要使用Platform UI监视流量运行，请参阅有关使用监视仪表板](../../../dataflows/ui/monitor-sources.md)监视源数据流的[指南。
+创建流运行后，您可以监视通过它摄取的数据，以查看有关流运行、完成状态和错误的信息。 若要使用API监视您的流运行，请参阅有关API中[监视数据流的教程](./monitor.md)。 要使用Experience Platform UI监视流量运行，请参阅[使用监视仪表板](../../../dataflows/ui/monitor-sources.md)监视源数据流的指南。

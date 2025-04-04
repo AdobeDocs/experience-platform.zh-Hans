@@ -1,18 +1,18 @@
 ---
-title: 将Adobe Journey Optimizer与Platform Web SDK一起使用
-description: 了解如何使用Adobe Journey Optimizer通过Experience PlatformWeb SDK呈现个性化内容
+title: 将Adobe Journey Optimizer与Experience Platform Web SDK一起使用
+description: 了解如何使用Adobe Journey Optimizer在Experience Platform Web SDK中呈现个性化内容
 keywords: ajo；ajo web；adobe journey optimizer；renderDecisions；表面；决策；建议；范围；架构
 exl-id: 3f28e2bc-2c4b-4400-8f69-c7316449ff4f
-source-git-commit: ae6c6d21b1eea900d01be3287827296071429d30
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '390'
+source-wordcount: '391'
 ht-degree: 0%
 
 ---
 
-# 将[!DNL Adobe Journey Optimizer]与[!DNL Platform Web SDK]一起使用
+# 将[!DNL Adobe Journey Optimizer]与[!DNL Experience Platform Web SDK]一起使用
 
-[!DNL Adobe Experience Platform] [!DNL Web SDK]可以将在[!DNL Adobe Journey Optimizer]中管理的个性化体验交付并渲染到Web渠道。 您可以使用WYSIWYG编辑器[!DNL Adobe Journey Optimizer] [Web渠道](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html)，或者非可视化界面[基于代码的体验渠道](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based)创建、激活和提供[!DNL Journey Optimizer Web]营销活动和个性化体验。
+[!DNL Adobe Experience Platform] [!DNL Web SDK]可以将在[!DNL Adobe Journey Optimizer]中管理的个性化体验交付并渲染到Web渠道。 您可以使用WYSIWYG编辑器[!DNL Adobe Journey Optimizer] [Web渠道](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html)或非可视化界面[基于代码的体验渠道](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based)创建、激活和提供[!DNL Journey Optimizer Web]营销活动和个性化体验。
 
 >[!IMPORTANT]
 >
@@ -42,7 +42,7 @@ ht-degree: 0%
    })
    ```
 
-3. （可选）在事件中指定其他表面。 默认情况下，Web SDK将自动为当前网页生成Web表面，并将其包含在对Edge Network的请求中。 如果需要，可以通过在`sendEvent`命令的`personalization.surfaces`选项中或Web SDK扩展的相应&#x200B;**[!UICONTROL Surfaces]** [[!UICONTROL 发送事件]操作](../../../tags/extensions/client/web-sdk/action-types.md#send-event)配置中指定这些表面来在请求中包含其他表面。
+3. （可选）在事件中指定其他表面。 默认情况下，Web SDK将自动为当前网页生成Web表面，并将其包含在Edge Network请求中。 如果需要，可以通过在`sendEvent`命令的`personalization.surfaces`选项中或在Web SDK扩展的相应&#x200B;**[!UICONTROL Surfaces]** [[!UICONTROL 发送事件]操作](../../../tags/extensions/client/web-sdk/action-types.md#send-event)配置中指定这些表面来在请求中包含其他表面。
 
    ```javascript
    alloy("sendEvent", {

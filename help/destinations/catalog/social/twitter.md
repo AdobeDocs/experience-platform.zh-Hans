@@ -1,8 +1,8 @@
 ---
-title: twitter自定义受众连接
-description: 在Twitter中定位现有关注者和客户，并通过激活在Adobe Experience Platform中构建的受众来创建相关的再营销活动
+title: Twitter自定义受众连接
+description: 在Twitter中定位现有的关注者和客户，并通过激活在Adobe Experience Platform中构建的受众来创建相关的再营销活动
 exl-id: fd244e58-cd94-4de7-81e4-c321eb673b65
-source-git-commit: ba9b59a24079b61a0f5d6076f3acfd83fc8f4092
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '857'
 ht-degree: 5%
@@ -13,14 +13,14 @@ ht-degree: 5%
 
 ## 概述 {#overview}
 
-在Twitter中定位现有关注者和客户，并通过激活在Adobe Experience Platform中构建的受众来创建相关的再营销活动。
+在Twitter中定位现有的关注者和客户，并通过激活在Adobe Experience Platform中构建的受众来创建相关的再营销活动。
 
 ## 先决条件 {#prerequisites}
 
 在配置[!DNL Twitter Custom Audiences]目标之前，请确保查看需要满足的以下Twitter先决条件。
 
 1. 您的[!DNL Twitter Ads]帐户必须适用于广告。 新[!DNL Twitter Ads]帐户在创建后的前2周内没有资格进行广告。
-2. 您在[!DNL Twitter Audience Manager]中授权访问的Twitter用户帐户必须启用&#x200B;*[!DNL Partner Audience Manager]*&#x200B;权限。
+2. 您在[!DNL Twitter Audience Manager]中授权访问的Twitter用户帐户必须已启用&#x200B;*[!DNL Partner Audience Manager]*&#x200B;权限。
 
 ## 支持的身份 {#supported-identities}
 
@@ -29,7 +29,7 @@ ht-degree: 5%
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
 | device_id | IDFA/AdID/Android ID | Adobe Experience Platform支持Google Advertising ID (GAID)和广告商Apple ID (IDFA)。 请在目标激活工作流的[映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)中相应地映射源架构中的这些命名空间和/或属性。 |
-| 电子邮件 | 用户的电子邮件地址 | 请将纯文本电子邮件地址和SHA256散列电子邮件地址映射到此字段。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。 如果您在上传到Adobe Experience Platform之前对客户电子邮件地址进行了哈希处理，请注意，必须使用SHA256对这些身份进行哈希处理，而不需使用Salt。 |
+| 电子邮件 | 用户的电子邮件地址 | 请将纯文本电子邮件地址和SHA256散列电子邮件地址映射到此字段。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 如果您在上传到Adobe Experience Platform之前对客户电子邮件地址进行了哈希处理，请注意，必须使用SHA256对这些身份进行哈希处理，而不需使用Salt。 |
 
 {style="table-layout:auto"}
 
@@ -39,8 +39,8 @@ ht-degree: 5%
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -50,8 +50,8 @@ ht-degree: 5%
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出具有Twitter自定义受众目标中所用标识符的受众的所有成员。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出类型 | **[!UICONTROL 受众导出]** | 您正在使用Twitter自定义受众目标中使用的标识符导出受众的所有成员。 |
+| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -61,7 +61,7 @@ ht-degree: 5%
 
 ### 用例#1
 
-在Twitter中定位现有关注者和客户，并通过在Twitter中将Adobe Experience Platform中构建的受众激活为[!DNL List Custom Audiences]来创建相关的再营销活动。
+在Twitter中定位现有的关注者和客户，并通过在Twitter中将Adobe Experience Platform中构建的受众激活为[!DNL List Custom Audiences]来创建相关的再营销活动。
 
 ## 连接到目标 {#connect}
 
@@ -75,8 +75,8 @@ ht-degree: 5%
 
 1. 在目标目录中找到[!DNL Twitter Custom Audiences]目标并选择&#x200B;**[!UICONTROL 设置]**。
 2. 选择&#x200B;**[!UICONTROL 连接到目标]**。
-   ![向LinkedIn进行身份验证](/help/destinations/assets/catalog/social/twitter/authenticate-twitter-destination.png)
-3. 输入Twitter凭据并选择&#x200B;**登录**。
+   ![对LinkedIn进行身份验证](/help/destinations/assets/catalog/social/twitter/authenticate-twitter-destination.png)
+3. 输入您的Twitter凭据并选择&#x200B;**登录**。
 
 ### 填写目标详细信息 {#destination-details}
 
@@ -93,7 +93,7 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
->请勿使用特殊字符(+ &amp; ， % ： ； @ / = ？ $ \n)（受众、描述和受众映射名称中）。 如果您的Experience Platform受众名称包含这些字符，请先删除这些字符，然后再将受众映射到Twitter目标。
+>请勿使用特殊字符(+ &amp; ， % ： ； @ / = ？ $ \n)（受众、描述和受众映射名称中）。 如果您的Experience Platform受众名称包含这些字符，请在将受众映射到Twitter目标之前删除它们。
 
 ### 启用警报 {#enable-alerts}
 
@@ -112,7 +112,7 @@ ht-degree: 5%
 
 ### 映射注意事项 {#mapping-considerations}
 
-将受众映射到Twitter时，提供易于用户识别的受众映射名称。 我们建议使用与Experience Platform区段相同的名称。
+将受众映射到Twitter时，提供人类可读的受众映射名称。 我们建议您使用与Experience Platform区段相同的名称。
 
 ## 数据使用和治理 {#data-usage-governance}
 

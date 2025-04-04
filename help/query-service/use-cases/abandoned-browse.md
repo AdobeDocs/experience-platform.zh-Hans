@@ -3,9 +3,9 @@ keywords: Experience Platform；查询服务；查询服务
 title: Adobe Experience Platform查询服务的示例用例
 description: 一个端到端示例，用于演示Adobe Experience Platform查询服务的通用性和好处。
 exl-id: 00bdae47-71b7-44ea-9365-a1d64c88d2bf
-source-git-commit: 38689125a43ad0b1a12a00efe6800bb310d7557c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '695'
+source-wordcount: '696'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ ht-degree: 0%
 * [区段](../../segmentation/home.md)
 * [目标](../../destinations/home.md)
 
-浏览放弃示例以使用Adobe[!DNL Analytics]数据创建特定可操作的受众为中心。 优化后的受众包括过去四天浏览网站但未购买的每位客户。 然后，受众中的每个用户档案均会定位到由客户行为模式产生的最高价格SKU。
+浏览放弃示例的中心内容是使用Adobe [!DNL Analytics]数据创建特定可操作的受众。 优化后的受众包括过去四天浏览网站但未购买的每位客户。 然后，受众中的每个用户档案均会定位到由客户行为模式产生的最高价格SKU。
 
 查询本身具有非常强的规范性并且只包括符合区段定义用例标准的数据。 这通过最大限度地减少正在处理的[!DNL Analytics]数据来提高性能。 它还按价格从高到低对数据排序，并选择用户浏览的最高价格SKU。
 
@@ -57,7 +57,7 @@ order by price desc)D;
 
 ## 使用adobe analytics的[!DNL Query Service]浏览放弃示例 {#video-example}
 
-下面看到的视频演示提供了围绕[!DNL Query Service]和Adobe分析集成的Experience Platform数据的真实整体用例。
+下面看到的视频演示提供了围绕[!DNL Query Service]和Adobe Analytics集成的Experience Platform数据的真实整体用例。
 
 >[!VIDEO](https://video.tv.adobe.com/v/342533?quality=12&learn=on)
 
@@ -69,7 +69,7 @@ order by price desc)D;
 
 此外，通过在查询中包含满足任何循环或静态条件的逻辑，[!DNL Query Service]可以减轻精细分段的负担。
 
-Adobe Experience Platform提供了一个数据存储库和必要的工具，用于以高效、可靠的方式激活您的数据。 通过将数据保留在Platform中，它允许您在运行其他进程时派生属性，并且消除将数据导出到第三方工具进行操作和处理的需要。 在处理数百个属性或营销策划时，此类处理间接费用会极大地影响项目时间表。 这为营销人员提供了访问其数据和构建营销活动的单一位置，以及一种非常动态的方式，可用于对消息进行分段和个性化。
+Adobe Experience Platform提供了一个数据存储库和必要的工具，用于以高效、可靠的方式激活您的数据。 通过将数据保留在Experience Platform中，它允许您在运行其他流程时派生属性，并且消除将数据导出到第三方工具进行操作和处理的需要。 在处理数百个属性或营销策划时，此类处理间接费用会极大地影响项目时间表。 这为营销人员提供了访问其数据和构建营销活动的单一位置，以及一种非常动态的方式，可用于对消息进行分段和个性化。
 
 ## 后续步骤
 

@@ -3,9 +3,9 @@ keywords: Experience Platform；配置文件；实时客户配置文件；疑难
 title: 同意和偏好设置数据类型
 description: 隐私同意、Personalization和营销偏好设置数据类型旨在支持从您的数据操作中收集由同意管理平台(CMP)和其他源生成的客户权限和偏好设置。
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
-source-git-commit: 7a2b6c1033ad9e78b049857b9b4e6fc3708ed36c
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '2332'
+source-wordcount: '2334'
 ht-degree: 0%
 
 ---
@@ -38,13 +38,13 @@ ht-degree: 0%
 * **Personalization首选项**：关于品牌应如何个性化向客户提供体验的首选项。
 * **营销偏好设置**：有关是否允许品牌通过各种渠道联系客户的偏好设置。
 
-以下屏幕截图显示了数据类型结构在Platform UI中的表示方式：
+以下屏幕截图显示了数据类型的结构在Experience Platform UI中的表示方式：
 
 ![](../images/data-types/consents.png)
 
 >[!TIP]
 >
->有关如何在Platform UI中查找任何XDM资源并检查其结构的步骤，请参阅关于[探索XDM资源](../ui/explore.md)的指南。
+>有关如何在Experience Platform UI中查找任何XDM资源并检查其结构的步骤，请参阅关于[探索XDM资源](../ui/explore.md)的指南。
 
 以下JSON显示了[!UICONTROL 同意和偏好设置]数据类型可以处理的数据类型示例。 有关这些字段中每个字段的特定用途的信息，请参见以下部分。
 
@@ -267,7 +267,7 @@ ht-degree: 0%
 
 ## 处理同意和偏好设置更改
 
-当客户在您的网站上更改其同意或偏好设置时，应使用[Adobe Experience Platform Web SDK](../../web-sdk/commands/setconsent.md)收集这些更改并立即实施。 如果客户选择退出数据收集，则必须立即停止所有数据收集。 如果客户选择退出个性化，则他们访问的下一个页面上应该不会显示个性化。
+当客户在您的网站上更改其同意或偏好设置时，应使用[Adobe Experience Platform Web SDK](../../web-sdk/commands/setconsent.md)收集并立即实施这些更改。 如果客户选择退出数据收集，则必须立即停止所有数据收集。 如果客户选择退出个性化，则他们访问的下一个页面上应该不会显示个性化。
 
 ## 附录 {#appendix}
 

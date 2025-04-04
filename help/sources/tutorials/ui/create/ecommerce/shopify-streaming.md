@@ -1,18 +1,18 @@
 ---
 title: 在UI中创建Shopify流连接和数据流
-description: 了解如何使用Platform用户界面创建Shopify流源连接和数据流
+description: 了解如何使用Experience Platform用户界面创建Shopify流源连接和数据流
 badge: Beta 版
 exl-id: d53f4ab5-8bdc-4647-83d5-ee898abda0f2
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '785'
+source-wordcount: '790'
 ht-degree: 1%
 
 ---
 
 # 使用UI为[!DNL Shopify Streaming]数据创建源连接和数据流
 
-本教程提供了使用Platform用户界面创建[!DNL Shopify Streaming]源连接和数据流的步骤。
+本教程提供了使用Experience Platform用户界面创建[!DNL Shopify Streaming]源连接和数据流的步骤。
 
 ## 快速入门 {#getting-started}
 
@@ -29,7 +29,7 @@ ht-degree: 1%
 
 ## 连接您的[!DNL Shopify Streaming]帐户
 
-在Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
+在Experience Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
@@ -39,7 +39,7 @@ ht-degree: 1%
 
 ## 选择数据
 
-此时将显示&#x200B;**[!UICONTROL 选择数据]**&#x200B;步骤，该步骤为您提供了一个用于选择将数据带到Platform的界面。
+此时将显示&#x200B;**[!UICONTROL 选择数据]**&#x200B;步骤，该步骤为您提供了一个界面来选择将带到Experience Platform的数据。
 
 * 界面的左侧是一个浏览器，允许您查看帐户内的可用数据流；
 * 界面的右侧部分允许您预览JSON文件中最多100行数据。
@@ -66,7 +66,7 @@ ht-degree: 1%
 
 此时将显示[!UICONTROL 映射]步骤，该步骤为您提供了一个接口，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
 
-Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](https://experienceleague.adobe.com/docs/experience-platform/data-prep/ui/mapping.html)。
+Experience Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](https://experienceleague.adobe.com/docs/experience-platform/data-prep/ui/mapping.html)。
 
 成功映射源数据后，选择&#x200B;**[!UICONTROL 下一步]**。
 

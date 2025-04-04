@@ -3,10 +3,10 @@ keywords: google广告管理器；google广告；doubleclick；DoubleClick AdX�
 title: Google Ad Manager连接
 description: Google Ad Manager（以前称为DoubleClick for Publishers或DoubleClick AdX）是Google的一个广告投放平台，它使发布者能够通过视频和移动应用程序管理其网站上的广告显示。
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1119'
-ht-degree: 4%
+source-wordcount: '1121'
+ht-degree: 7%
 
 ---
 
@@ -16,11 +16,11 @@ ht-degree: 4%
 >
 > Google将发布对[Google Ads API](https://developers.google.com/google-ads/api/docs/start)、[Customer Match](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html)和[Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview)的更改，以支持欧盟（[EU用户同意政策](https://www.google.com/about/company/user-consent-policy/)）中[Digital Markets Act](https://digital-markets-act.ec.europa.eu/index_en) (DMA)定义的合规性和同意相关要求。 自2024年3月6日起，将开始实施对同意要求的这些更改。
 ><br/>
->为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为Google合作伙伴，Adobe会为您提供在欧洲的DMA中遵守这些同意要求的必要工具。
+>为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为 Google 合作伙伴，Adobe 为您提供必要的工具，以遵守欧盟 DMA 下的这些同意要求。
 ><br/>
->购买AdobePrivacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未同意的配置文件的客户无需采取任何操作。
+>如果客户购买了Adobe Privacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未经同意的用户档案，则无需采取任何操作。
 ><br/>
->未购买AdobePrivacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/ui/segment-builder.md)中的[区段定义](../../../segmentation/home.md#segment-definitions)功能来过滤掉未经同意的用户档案，以便继续不间断地使用现有的Real-Time CDP Google目标。
+>未购买Adobe Privacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/ui/segment-builder.md)中的[区段定义](../../../segmentation/home.md#segment-definitions)功能来过滤掉未经同意的用户档案，以便继续使用现有的Real-Time CDP Google目标而不中断。
 
 
 [!DNL Google Ad Manager] (以前称为[!DNL DoubleClick for Publishers] (DFP)或[!DNL DoubleClick AdX])是来自[!DNL Google]的广告投放平台，它使发布者能够通过视频和移动应用程序管理在其网站上显示的广告。
@@ -30,7 +30,7 @@ ht-degree: 4%
 请注意以下特定于[!DNL Google Ad Manager]目标的详细信息：
 
 * 在[!DNL Google]平台中以编程方式创建激活的受众。
-* [!DNL Platform]当前不包括用于验证激活是否成功的度量指标。 请参阅Google中的受众计数，以验证集成并了解受众定位大小。
+* [!DNL Experience Platform]当前不包括用于验证激活是否成功的度量指标。 请参阅Google中的受众计数，以验证集成并了解受众定位大小。
 * 将受众映射到[!DNL Google Ad Manager]目标后，受众名称会立即出现在[!DNL Google Ad Manager]用户界面中。
 * 区段填充需要24-48小时才能显示在[!DNL Google Ad Manager]中。 此外，受众必须具有至少50个配置文件才能在[!DNL Google Ad Manager]中显示。 不会在[!DNL Google Ad Manager]中填充配置文件小于50的受众。
 
@@ -38,11 +38,11 @@ ht-degree: 4%
 
 [!DNL Google Ad Manager]支持根据下表所示的标识激活受众。 了解有关[标识](/help/identity-service/features/namespaces.md)的更多信息。
 
-| 标识 | 描述 | 注意事项 |
+| 身份标识 | 描述 | 注意事项 |
 |---|---|---|
 | GAID | [!DNL Google Advertising ID] |  |
 | IDFA | [!DNL Apple ID for Advertisers] |  |
-| AAM UUID | [Adobe Audience Manager [!DNL Unique User ID]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html)，也称为[!DNL Device ID]。 38位数的设备ID，Audience Manager与每台与其交互的设备相关联。 | Google使用[AAM UUID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html)来定位加利福尼亚州的用户，并使用Google Cookie ID来定位所有其他用户。 |
+| AAM UUID | [Adobe Audience Manager [!DNL Unique User ID]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html)，也称为[!DNL Device ID]。 Audience Manager与其交互的每个设备相关联的38位数字设备ID。 | Google使用[AAM UUID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html)来定位加利福尼亚州的用户，并使用Google Cookie ID来定位所有其他用户。 |
 | [!DNL Google] Cookie ID | [!DNL Google] Cookie ID | [!DNL Google]使用此ID定位加州以外的用户。 |
 | RIDA | Advertising的Roku ID。 此ID唯一标识Roku设备。 |  |
 | 女佣 | Microsoft Advertising ID。 此ID唯一标识运行Windows 10的设备。 |  |
@@ -56,8 +56,8 @@ ht-degree: 4%
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -68,19 +68,19 @@ ht-degree: 4%
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
 | 导出类型 | **[!UICONTROL 受众导出]** | 您要将受众的所有成员导出到Google目标。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
 ## 先决条件 {#prerequisites}
 
-如果您希望使用[!DNL Google Ad Manager]创建您的第一个目标，并且以前未在Experience CloudID服务(使用Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL Google]集成，则您设置的ID同步将转移到平台。
+如果您希望使用[!DNL Google Ad Manager]创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL Google]集成，则您设置的ID同步将会转移到Experience Platform。
 
 ### 允许列表 {#allow-listing}
 
-在Platform中设置您的第一个[!DNL Google Ad Manager]目标之前，必须首先列入允许列表。 在创建目标之前，请确保完成如下所述的允许列表流程。
+在Experience Platform中设置您的第一个[!DNL Google Ad Manager]目标之前，必须将该目标列入允许列表。 在创建目标之前，请确保完成如下所述的允许列表流程。
 
-1. 按照[Google Ad Manager文档](https://support.google.com/admanager/answer/3289669?hl=en)中描述的步骤将Adobe添加为链接的数据管理平台(DMP)。
+1. 按照[Google Ad Manager文档](https://support.google.com/admanager/answer/3289669?hl=en)中描述的步骤，将Adobe添加为链接的数据管理平台(DMP)。
 2. 在[!DNL Google Ad Manager]界面中，转到&#x200B;**[!UICONTROL 管理员]** > **[!UICONTROL 全局设置]** > **[!UICONTROL 网络设置]**，并启用&#x200B;**[!UICONTROL API访问]**&#x200B;滑块。
 
 ## 连接到目标 {#connect}
@@ -106,7 +106,7 @@ ht-degree: 4%
 * **[!UICONTROL 帐户类型]**：根据您在Google中的帐户，选择一个选项：
    * 将`DFP by Google`用于[!DNL DoubleClick]发布者
    * 将`AdX buyer`用于[!DNL Google AdX]
-* **[!UICONTROL 将受众ID附加到受众名称]**：选择此选项可使Google广告管理器中的受众名称包含来自Experience Platform的受众ID，如下所示： `Audience Name (Audience ID)`。
+* **[!UICONTROL 将受众ID附加到受众名称]**：选择此选项可使Google广告管理器中的受众名称包含Experience Platform中的受众ID，如下所示： `Audience Name (Audience ID)`。
 
 >[!NOTE]
 >
@@ -132,7 +132,7 @@ ht-degree: 4%
 
 ## 故障排除 {#troubleshooting}
 
-如果您在使用此目标时遇到任何错误，并且需要联系Adobe或Google，请随时保留以下ID。
+如果您在使用此目标时遇到任何错误，并且需要访问Adobe或Google，请保留以下ID。
 
 这些是Adobe的Google帐户ID：
 

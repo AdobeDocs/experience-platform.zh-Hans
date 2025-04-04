@@ -1,10 +1,10 @@
 ---
 title: 身份验证
-description: 了解如何为Adobe Experience PlatformEdge Network服务器API配置身份验证。
+description: 了解如何为Adobe Experience Platform Edge Network服务器API配置身份验证。
 exl-id: 73c7a186-9b85-43fe-a586-4c6260b6fa8c
-source-git-commit: 3bf13c3f5ac0506ac88effc56ff68758deb5f566
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '633'
+source-wordcount: '636'
 ht-degree: 7%
 
 ---
@@ -38,13 +38,13 @@ ht-degree: 7%
 
 ## 收集凭据 {#credentials}
 
-要调用Platform API，必须先完成[身份验证教程](../landing/api-authentication.md)。 完成身份验证教程将为所有Experience PlatformAPI调用中的每个所需标头提供值，如下所示：
+要调用Experience Platform API，您必须先完成[身份验证教程](../landing/api-authentication.md)。 完成身份验证教程将为所有Experience Platform API调用中的每个所需标头提供值，如下所示：
 
 * 授权：持有人`{ACCESS_TOKEN}`
 * x-api-key： `{API_KEY}`
 * x-gw-ims-org-id： `{ORG_ID}`
 
-Experience Platform中的资源可以隔离到特定的虚拟沙箱。 在对Platform API的请求中，您可以指定将执行操作的沙盒的名称和ID。 这些是可选参数。
+Experience Platform中的资源可以隔离到特定的虚拟沙箱。 在对Experience Platform API的请求中，您可以指定将执行操作的沙盒的名称和ID。 这些是可选参数。
 
 * x-sandbox-name： `{SANDBOX_NAME}`
 
@@ -52,7 +52,7 @@ Experience Platform中的资源可以隔离到特定的虚拟沙箱。 在对Pla
 >
 >有关Experience Platform中沙盒的更多信息，请参阅[沙盒概述文档](../sandboxes/home.md)。
 
-所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
+所有包含有效负载(POST、PUT、PATCH)的请求都需要一个额外的媒体类型标头：
 
 * 内容类型： `application/json`
 
@@ -71,6 +71,6 @@ Experience Platform中的资源可以隔离到特定的虚拟沙箱。 在对Pla
 | `EXEG-0501-401` | 用户授权令牌无效 | 此错误消息会在以下任意情况下显示： <ul><li>API调用缺少所需的`x-user-token`标头。</li><li>提供的用户令牌的格式无效。</li></ul> |
 | `EXEG-0502-401` | 授权标记无效 | 当提供的授权令牌具有有效格式(JWT)，但其签名无效时，会显示此错误消息。 查看[身份验证教程](../landing/api-authentication.md)，了解如何获取有效的JWT令牌。 |
 | `EXEG-0503-401` | 授权标记无效 | 提供的授权令牌过期时，会显示此错误消息。 请完成[身份验证教程](../landing/api-authentication.md)以生成新令牌。 |
-| `EXEG-0504-401` | 缺少所需的产品上下文。 | 此错误消息会在以下任意情况下显示：  <ul><li>开发人员帐户无权访问Adobe Experience Platform产品上下文。</li><li>公司帐户尚无权使用AdobeExperience Platform。</li></ul> |
+| `EXEG-0504-401` | 缺少所需的产品上下文。 | 此错误消息会在以下任意情况下显示：  <ul><li>开发人员帐户无权访问Adobe Experience Platform产品上下文。</li><li>公司帐户尚无权使用Adobe Experience Experience Platform。</li></ul> |
 | `EXEG-0505-401` | 缺少所需的授权令牌范围 | 此错误仅适用于服务帐户身份验证。 当调用中包含的服务授权令牌属于无权访问`acp.foundation` IMS范围的服务帐户时，将显示错误消息。 |
-| `EXEG-0506-401` | 无法访问沙盒进行写入 | 当开发人员帐户对定义数据流的Experience Platform沙盒没有`WRITE`访问权限时，会显示此错误消息。 |
+| `EXEG-0506-401` | 无法访问沙盒进行写入 | 当开发人员帐户对定义数据流的Experience Platform沙盒没有`WRITE`访问权限时，将显示此错误消息。 |

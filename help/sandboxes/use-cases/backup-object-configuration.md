@@ -2,10 +2,10 @@
 title: 使用沙盒工具备份对象配置
 description: 要安全地重置沙盒并添加版本控制支持，请使用沙盒工具包备份对象配置（或元数据）。 备份包可防止丢失关键配置（如架构、数据集和受众），尤其是在开发迭代期间。
 exl-id: cccbaaf1-ee68-4a00-9a44-aa5db4a83a14
-source-git-commit: d4df5606228347b5fb69fdaa24c637c329099895
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1166'
-ht-degree: 3%
+source-wordcount: '1167'
+ht-degree: 4%
 
 ---
 
@@ -30,7 +30,7 @@ ht-degree: 3%
 - 根据要备份的范围元数据，请确保您了解如何手动[将对象添加到包](../ui/sandbox-tooling.md#add-object-to-a-new-package)或如何[导出整个沙盒](../ui/sandbox-tooling.md#export-an-entire-sandbox)。
 - 确保您有权以正确的权限访问组织中的沙盒工具。
 
-### 您将使用的 UI 功能、Platform 组件和 Experience Cloud 产品 {#ui-functionality-and-elements}
+### 用户界面功能、Experience Platform组件以及您将使用的Experience Cloud产品 {#ui-functionality-and-elements}
 
 要成功实施此用例，您必须使用Adobe Experience Platform的多个区域。 确保您具有所有这些区域所需的[基于属性的访问控制权限](../../access-control/abac/overview.md)，或要求系统管理员授予您必要的权限。
 
@@ -125,4 +125,4 @@ ht-degree: 3%
 
 探索通过沙盒工具启用的更多用例：
 
-- [使用沙盒工具实现卓越中心](./center-of-excellence.md)
+- [使用沙盒工具启用卓越中心](./center-of-excellence.md)

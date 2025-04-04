@@ -5,9 +5,9 @@ product: experience platform
 type: Documentation
 description: 了解轮廓数据和分段的性能和系统强制护栏，以确保充分使用 Real-Time CDP 功能。
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 31f725fc30b8fd9a045c0aac5ee65832cd995363
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2611'
+source-wordcount: '2617'
 ht-degree: 2%
 
 ---
@@ -31,9 +31,9 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 实时客户个人资料数据建模涉及以下Experience Platform服务：
 
 * [[!DNL Real-Time Customer Profile]](home.md)：使用来自多个来源的数据创建统一的使用者配置文件。
-* [标识](../identity-service/home.md)：Bridge标识摄取到Platform时来自不同的数据源。
-* [架构](../xdm/home.md)： Experience Data Model (XDM)架构是Platform用于组织客户体验数据的标准化框架。
-* [受众](../segmentation/home.md)： Platform中的分段引擎用于根据客户行为和属性从客户配置文件创建受众。
+* [标识](../identity-service/home.md)：Bridge标识摄取到Experience Platform时，来自不同的数据源。
+* [架构](../xdm/home.md)： Experience Data Model (XDM)架构是Experience Platform用于组织客户体验数据的标准化框架。
+* [受众](../segmentation/home.md)： Experience Platform中的分段引擎用于根据客户行为和属性从客户配置文件创建受众。
 
 ## 限制类型
 
@@ -177,9 +177,9 @@ Dimension实体提供查找数据，可帮助和简化多实体区段定义，�
 
 ### 合并策略 {#merge-policies}
 
-将来自多个来源的数据集合在一起时，合并策略是Platform用来确定数据优先顺序的规则以及将合并哪些数据以创建该统一视图。 例如，如果客户跨多个渠道与您的品牌互动，则您的组织将在多个数据集中显示多个与该单个客户相关的配置文件片段。 将这些片段摄取到Platform后，会合并在一起，以便为该客户创建一个配置文件。 当来自多个源的数据发生冲突时，合并策略会确定个人配置文件中要包含哪些信息。 每个沙盒最多允许五(5)个使用`_xdm.context.profile`架构的合并策略。 若要了解有关合并策略的更多信息，请阅读[合并策略概述](merge-policies/overview.md)。
+将来自多个来源的数据汇总在一起时，合并策略是Experience Platform使用的规则，用于确定数据优先顺序设置以及哪些数据将合并以创建该统一视图。 例如，如果客户跨多个渠道与您的品牌互动，则您的组织将在多个数据集中显示多个与该单个客户相关的配置文件片段。 将这些片段摄取到Experience Platform后，会合并在一起，以便为该客户创建一个配置文件。 当来自多个源的数据发生冲突时，合并策略会确定个人配置文件中要包含哪些信息。 每个沙盒最多允许五(5)个使用`_xdm.context.profile`架构的合并策略。 若要了解有关合并策略的更多信息，请阅读[合并策略概述](merge-policies/overview.md)。
 
-### Platform中的Adobe Analytics报表包数据集 {#aa-datasets}
+### Experience Platform中的Adobe Analytics报表包数据集 {#aa-datasets}
 
 只需解决所有数据冲突，即可为配置文件启用多个报表包。 您可以使用数据准备功能解决eVar、列表和Prop之间的数据冲突。 要了解有关如何使用数据准备功能的更多信息，请阅读[Adobe Analytics连接器UI指南](../sources/tutorials/ui/create/adobe-applications/analytics.md)。
 

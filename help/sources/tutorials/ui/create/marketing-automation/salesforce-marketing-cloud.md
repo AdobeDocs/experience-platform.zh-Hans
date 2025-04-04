@@ -1,15 +1,15 @@
 ---
-title: 通过UI将您的SalesforceMarketing Cloud帐户连接到Experience Platform
-description: 了解如何通过UI将您的SalesforceMarketing Cloud帐户连接到Experience Platform。
+title: 通过UI将您的Salesforce Marketing Cloud帐户连接到Experience Platform
+description: 了解如何通过UI将您的Salesforce Marketing Cloud帐户连接到Experience Platform。
 exl-id: 1d9bde60-31e0-489c-9c1c-b6471e0ea554
-source-git-commit: 9ca4f19f7b59f075250bce7035303e11d3f3710f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '509'
+source-wordcount: '511'
 ht-degree: 2%
 
 ---
 
-# 通过UI连接你的[!DNL Salesforce Marketing Cloud]帐户以Experience Platform
+# 通过UI将您的[!DNL Salesforce Marketing Cloud]帐户连接到Experience Platform
 
 >[!WARNING]
 >
@@ -26,11 +26,11 @@ ht-degree: 2%
    * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
 
-如果您已经拥有[!DNL Salesforce Marketing Cloud]帐户，则可以跳过本文档的其余部分，继续学习有关[使用UI](../../dataflow/marketing-automation.md)Experience Platform营销自动化数据的教程。
+如果您已经拥有[!DNL Salesforce Marketing Cloud]帐户，则可以跳过本文档的其余部分，并继续学习关于使用UI](../../dataflow/marketing-automation.md)将营销自动化数据引入Experience Platform的[教程。
 
 ### 收集所需的凭据
 
-要在Platform上访问您的[!DNL Salesforce Marketing Cloud]帐户，必须提供以下值：
+要在Experience Platform上访问您的[!DNL Salesforce Marketing Cloud]帐户，必须提供以下值：
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
@@ -46,15 +46,15 @@ ht-degree: 2%
 >
 >[!DNL Salesforce Marketing Cloud]源集成当前不支持自定义对象摄取。
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL 目录]显示Experience Platform支持的各种源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL 目录]显示Experience Platform支持的各种源。
 
 您可以从类别列表中选择相应的类别。 您还可以使用搜索栏筛选特定源。
 
-在[!UICONTROL 营销自动化]类别下，选择&#x200B;**[!UICONTROL SalesforceMarketing Cloud]**，然后选择&#x200B;**[!UICONTROL 设置]**。
+在[!UICONTROL 营销自动化]类别下，选择&#x200B;**[!UICONTROL Salesforce Marketing Cloud]**，然后选择&#x200B;**[!UICONTROL 设置]**。
 
-![已选择SalesforceMarketing Cloud源的源目录。](../../../../images/tutorials/create/salesforce-marketing-cloud/catalog.png)
+![已选择Salesforce Marketing Cloud源的源目录。](../../../../images/tutorials/create/salesforce-marketing-cloud/catalog.png)
 
-此时会显示&#x200B;**[!UICONTROL 连接到SalesforceMarketing Cloud]**&#x200B;页面。 在此页上，您可以创建新帐户或使用现有帐户。
+此时会显示&#x200B;**[!UICONTROL 连接到Salesforce Marketing Cloud]**&#x200B;页面。 在此页上，您可以创建新帐户或使用现有帐户。
 
 ### 新帐户
 
@@ -62,13 +62,13 @@ ht-degree: 2%
 
 完成后，选择&#x200B;**[!UICONTROL 连接到源]**，然后留出一些时间来建立新连接。
 
-![新帐户界面，您可以在其中验证SalesforceMarketing Cloud的新帐户。](../../../../images/tutorials/create/salesforce-marketing-cloud/new.png)
+![新帐户界面，您可以在其中验证Salesforce Marketing Cloud的新帐户。](../../../../images/tutorials/create/salesforce-marketing-cloud/new.png)
 
 ### 现有账户
 
 如果您已经拥有现有帐户，请选择&#x200B;**[!UICONTROL 现有帐户]**，然后从显示的列表中选择您要使用的帐户。
 
-![可以从现有SalesforceMarketing Cloud帐户的列表中选择的现有帐户界面。](../../../../images/tutorials/create/salesforce-marketing-cloud/existing.png)
+![可以从现有Salesforce Marketing Cloud帐户列表中选择的现有帐户界面。](../../../../images/tutorials/create/salesforce-marketing-cloud/existing.png)
 
 ## 后续步骤
 

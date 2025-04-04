@@ -5,7 +5,7 @@ title: 将CSV文件映射到现有XDM架构
 type: Tutorial
 description: 本教程介绍如何使用Adobe Experience Platform用户界面将CSV文件映射到现有XDM架构。
 exl-id: 15f55562-269d-421d-ad3a-5c10fb8f109c
-source-git-commit: 15de9351203f6b43653042ab73ede17781486160
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1018'
 ht-degree: 1%
@@ -18,14 +18,14 @@ ht-degree: 1%
 >
 >本文档介绍如何将CSV文件映射到现有XDM架构。 有关如何使用AI生成的架构推荐工具（当前为测试版）的信息，请参阅[使用机器学习推荐映射CSV文件](./recommendations.md)上的文档。
 
-为了将CSV数据摄取到[!DNL Adobe Experience Platform]，该数据必须映射到[!DNL Experience Data Model] (XDM)架构。 本教程介绍如何使用[!DNL Platform]用户界面将CSV文件映射到XDM架构。
+为了将CSV数据摄取到[!DNL Adobe Experience Platform]，该数据必须映射到[!DNL Experience Data Model] (XDM)架构。 本教程介绍如何使用[!DNL Experience Platform]用户界面将CSV文件映射到XDM架构。
 
 ## 快速入门
 
-本教程需要您对[!DNL Platform]的以下组件有一定的了解：
+本教程需要您对[!DNL Experience Platform]的以下组件有一定的了解：
 
-- [[!DNL Experience Data Model (XDM System)]](../../../xdm/home.md)： [!DNL Platform]用于组织客户体验数据的标准化框架。
-- [批量摄取](../../batch-ingestion/overview.md)： [!DNL Platform]从用户提供的数据文件中摄取数据的方法。
+- [[!DNL Experience Data Model (XDM System)]](../../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
+- [批量摄取](../../batch-ingestion/overview.md)： [!DNL Experience Platform]从用户提供的数据文件中摄取数据的方法。
 - [Adobe Experience Platform数据准备](../../batch-ingestion/overview.md)：一套功能，允许您映射和转换摄取的数据以符合XDM架构。 有关[数据准备函数](../../../data-prep/functions.md)的文档与架构映射特别相关。
 
 此外，本教程还要求您已创建一个数据集以将CSV数据摄取到中。 有关在UI中创建数据集的步骤，请参阅[数据引入教程](../ingest-batch-data.md)。
@@ -64,7 +64,7 @@ ht-degree: 1%
 
 出现&#x200B;**[!UICONTROL 映射]**&#x200B;步骤。 CSV文件的列列列在&#x200B;**[!UICONTROL Source字段]**&#x200B;下，其对应的XDM架构字段列在&#x200B;**[!UICONTROL 目标字段]**&#x200B;下。
 
-[!DNL Platform]会根据您选择的目标架构或数据集，自动为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。
+[!DNL Experience Platform]会根据您选择的目标架构或数据集，自动为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。
 
 ![](../../images/tutorials/map-a-csv-file/mapping-with-suggestions.png)
 
@@ -120,7 +120,7 @@ ht-degree: 1%
 
 ## 后续步骤
 
-通过遵循本教程，您已成功将平面CSV文件映射到XDM架构并将其摄取到[!DNL Platform]。 此数据现在可以由下游[!DNL Platform]服务（如[!DNL Real-Time Customer Profile]）使用。 有关详细信息，请参阅[[!DNL Real-Time Customer Profile]](../../../profile/home.md)的概述。
+通过遵循本教程，您已成功将平面CSV文件映射到XDM架构并将其摄取到[!DNL Experience Platform]。 此数据现在可以由下游[!DNL Experience Platform]服务（如[!DNL Real-Time Customer Profile]）使用。 有关详细信息，请参阅[[!DNL Real-Time Customer Profile]](../../../profile/home.md)的概述。
 
 >[!TIP]
 >

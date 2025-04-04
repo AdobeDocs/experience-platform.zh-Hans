@@ -4,28 +4,28 @@ description: 了解如何为Adobe Experience Platform中存储的数据设置您
 role: Developer
 feature: Privacy
 exl-id: cd33e6c2-8189-4b68-a99b-ec7fccdc9b91
-source-git-commit: c1a28a4b1ce066a87bb7b34b2524800f9d8f1ca0
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1098'
+source-wordcount: '1111'
 ht-degree: 0%
 
 ---
 
 # Adobe Experience Platform中的客户管理的密钥
 
-存储在Adobe Experience Platform上的数据使用系统级别密钥静态加密。 如果您使用的是基于Platform构建的应用程序，则可以选择使用自己的加密密钥，从而更好地控制数据安全。
+存储在Adobe Experience Platform上的数据使用系统级别密钥静态加密。 如果您使用的是基于Experience Platform构建的应用程序，则可以选择使用自己的加密密钥，从而更好地控制数据安全。
 
 >[!AVAILABILITY]
 >
->Adobe Experience Platform支持Microsoft Azure和Amazon Web Services (AWS)的客户托管密钥(CMK)。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 如果您的实施在AWS上运行，您可以选择使用密钥管理服务(KMS)进行Platform数据加密。 有关所支持的基础结构的详细信息，请参阅[Experience Platform多云概述](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud)。
+>Adobe Experience Platform支持Microsoft Azure和Amazon Web Services (AWS)的客户托管密钥(CMK)。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 如果您的实施在AWS上运行，您可以选择使用密钥管理服务(KMS)进行Experience Platform数据加密。 有关所支持的基础结构的更多信息，请参阅[Experience Platform multi-cloud概述](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud)。
 >
 >要了解如何在AWS KMS中创建和管理加密密钥，请参阅[AWS KMS数据加密指南](./aws/configure-kms.md)。 有关Azure实施的信息，请参阅[Azure Key Vault配置指南](./azure/azure-key-vault-config.md)。
 
 >[!NOTE]
 >
->对于[!DNL Azure]托管的Platform实例，存储在Platform的[!DNL Azure Data Lake]和[!DNL Azure Cosmos DB]配置文件存储中的客户配置文件数据在启用后仅使用CMK进行加密。 对于临时或辅助数据存储，主数据存储中的密钥吊销可能需要&#x200B;**几分钟到24小时**&#x200B;和&#x200B;**最多7天**&#x200B;的时间。 有关其他详细信息，请参阅[撤销密钥访问权限的影响部分](#revoke-access)。
+>对于[!DNL Azure]托管的Experience Platform实例，存储在Experience Platform的[!DNL Azure Data Lake]和[!DNL Azure Cosmos DB]配置文件存储中的客户配置文件数据在启用后将使用CMK进行独占加密。 对于临时或辅助数据存储，主数据存储中的密钥吊销可能需要&#x200B;**几分钟到24小时**&#x200B;和&#x200B;**最多7天**&#x200B;的时间。 有关其他详细信息，请参阅[撤销密钥访问权限的影响部分](#revoke-access)。
 
-本文档提供了在Platform中通过[!DNL Azure]和AWS启用客户管理的密钥(CMK)功能的过程的高级概述，以及完成这些步骤所需的先决条件信息。
+本文档提供了在Experience Platform中通过[!DNL Azure]和AWS启用客户管理的密钥(CMK)功能的过程的高级概述，以及完成这些步骤所需的先决条件信息。
 
 >[!NOTE]
 >
@@ -58,7 +58,7 @@ ht-degree: 0%
 
 ## 流程摘要 {#process-summary}
 
-客户管理的密钥(CMK)可通过Adobe的Healthcare Shield和Privacy and Security Shield产品获得。 在Azure上，Healthcare Shield和Privacy and Security Shield都支持CMK。 在AWS上，CMK仅受Privacy and Security Shield支持，不适用于Healthcare Shield。 贵组织在购买其中一种产品的许可证后，即可开始一次性设置过程以启用CMK。
+客户管理的密钥(CMK)可通过Adobe的Healthcare Shield和Privacy and Security Shield产品获取。 在Azure上，Healthcare Shield和Privacy and Security Shield都支持CMK。 在AWS上，CMK仅受Privacy and Security Shield支持，不适用于Healthcare Shield。 贵组织在购买其中一种产品的许可证后，即可开始一次性设置过程以启用CMK。
 
 >[!WARNING]
 >
@@ -73,23 +73,23 @@ ht-degree: 0%
 1. 将您的加密密钥ID发送到Adobe，并通过UI](./azure/ui-set-up.md#send-to-adobe)中的[或通过[API调用](./azure/api-set-up.md#send-to-adobe)启动该功能的启用过程。
 1. 检查配置的状态以验证UI](./azure/ui-set-up.md#check-status)中的[或通过[API调用](./azure/api-set-up.md#check-status)是否启用了CMK。
 
-在Azure托管的Platform实例的设置过程完成后，所有沙盒上载到Platform的所有数据将使用您的[!DNL Azure]密钥设置进行加密。 若要使用CMK，您将利用可能属于其[公共预览计划](https://azure.microsoft.com/en-ca/support/legal/preview-supplemental-terms/)的[!DNL Microsoft Azure]功能。
+一旦完成Azure托管的Experience Platform实例的设置过程，所有沙盒中载入到Experience Platform的所有数据将使用您的[!DNL Azure]密钥设置进行加密。 若要使用CMK，您将利用可能属于其[公共预览计划](https://azure.microsoft.com/en-ca/support/legal/preview-supplemental-terms/)的[!DNL Microsoft Azure]功能。
 
 ### 适用于AWS的 {#aws-process-summary}
 
-1. [通过配置要与Adobe共享的加密密钥来设置AWS KMS](./aws/configure-kms.md)。
+1. [通过配置要与AWS共享的加密密钥来设置Adobe KMS](./aws/configure-kms.md)。
 2. 按照[UI设置指南](./aws/ui-set-up.md)中特定于AWS的说明进行操作。
-3. 验证设置，以确认已使用AWS托管的密钥对Platform数据进行加密。
+3. 验证设置，以确认已使用AWS托管的密钥对Experience Platform数据进行加密。
 
 <!--  Pending: or [API setup guide]() -->
 
-一旦完成AWS托管的Platform实例的设置过程，所有沙盒上载到Platform的所有数据都将使用您的AWS密钥管理服务(KMS)配置进行加密。 要在AWS上使用CMK，您将使用AWS密钥管理服务根据贵组织的安全要求创建和管理加密密钥。
+一旦完成AWS托管的Experience Platform实例的设置过程，所有沙盒中载入到Experience Platform的所有数据都将使用您的AWS密钥管理服务(KMS)配置进行加密。 要在AWS上使用CMK，您将使用AWS密钥管理服务根据贵组织的安全要求创建和管理加密密钥。
 
 ## 撤销关键访问权限的影响 {#revoke-access}
 
-撤销或禁用对Azure中的密钥保管库、密钥或CMK应用程序或AWS中的加密密钥的访问权限可能会导致重大中断，包括对平台运营的重大更改。 禁用键后，Platform中的数据可能会变得不可访问，并且任何依赖此数据的下游操作都将停止运行。 在对关键配置进行任何更改之前，充分了解下游影响至关重要。
+撤销或禁用对Azure中的密钥保管库、密钥或CMK应用程序或AWS中的加密密钥的访问权限可能会导致严重中断，包括对您的Experience Platform操作进行的重大更改。 禁用键后，Experience Platform中的数据可能会变得不可访问，并且任何依赖此数据的下游操作都将停止运行。 在对关键配置进行任何更改之前，充分了解下游影响至关重要。
 
-要撤销平台对[!DNL Azure]中数据的访问权限，请从密钥保管库中删除与应用程序关联的用户角色。 对于AWS，您可以禁用键或更新策略语句。 有关AWS进程的详细说明，请参阅[密钥吊销部分](./aws/ui-set-up.md#key-revocation)。
+要撤销Experience Platform对[!DNL Azure]中数据的访问权限，请从密钥保管库中删除与应用程序关联的用户角色。 对于AWS，您可以禁用键或更新策略语句。 有关AWS进程的详细说明，请参阅[密钥吊销部分](./aws/ui-set-up.md#key-revocation)。
 
 
 ### 传播时间线 {#propagation-timelines}

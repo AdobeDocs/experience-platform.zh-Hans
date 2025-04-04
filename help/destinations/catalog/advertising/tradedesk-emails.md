@@ -3,9 +3,9 @@ title: 交易台 — CRM连接
 description: 激活交易台帐户中的配置文件，以根据CRM数据进行受众定位和抑制。
 last-substantial-update: 2025-01-16T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: a189a86749996c0ee7b6146bcd030d8495745e12
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1117'
+source-wordcount: '1122'
 ht-degree: 5%
 
 ---
@@ -95,9 +95,9 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
 * **[!UICONTROL 广告商ID]**：您的[!DNL Trade Desk Advertiser ID]，可以由您的[!DNL Trade Desk]帐户管理员共享，也可以在[!DNL Trade Desk] UI中的[!DNL Advertiser Preferences]下找到。
 
-![Platform UI屏幕截图显示如何填写目标详细信息。](/help/destinations/assets/catalog/advertising/tradedesk/configuredestination2.png)
+![Experience Platform UI屏幕截图显示如何填写目标详细信息。](/help/destinations/assets/catalog/advertising/tradedesk/configuredestination2.png)
 
-连接到目标时，设置数据管理策略是完全可选的。 有关更多详细信息，请查看Experience Platform[数据管理概述](/help/data-governance/policies/overview.md)。
+连接到目标时，设置数据管理策略是完全可选的。 有关更多详细信息，请查看Experience Platform [数据管理概述](/help/data-governance/policies/overview.md)。
 
 ## 激活此目标的受众 {#activate}
 
@@ -110,17 +110,17 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 
 在&#x200B;**[!UICONTROL 计划]**&#x200B;页面中，您可以为要导出的每个受众配置计划和文件名。 配置时间表是强制性的，但配置文件名是可选的。
 
-![用于计划受众激活的平台UI屏幕截图。](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment1.png)
+![Experience Platform UI屏幕截图以安排Audience Activation。](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment1.png)
 
 >[!NOTE]
 >
 >激活到[!DNL The Trade Desk] CRM目标的所有受众都会自动设置为每日频率和完整文件导出。
 
-![用于计划受众激活的平台UI屏幕截图。](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment2.png)
+![Experience Platform UI屏幕截图以安排Audience Activation。](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment2.png)
 
 在&#x200B;**[!UICONTROL 映射]**&#x200B;页中，必须从源列中选择特性或身份命名空间并映射到目标列。
 
-![用于映射受众激活的平台UI屏幕截图。](/help/destinations/assets/catalog/advertising/tradedesk/mappingsegment1.png)
+![用于映射受众激活的Experience Platform UI屏幕截图。](/help/destinations/assets/catalog/advertising/tradedesk/mappingsegment1.png)
 
 以下是激活受众到[!DNL The Trade Desk] CRM目标时正确标识映射的示例。
 
@@ -131,7 +131,7 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 选择源字段：
 
 * 如果在数据摄取时使用原始电子邮件地址，请选择`Email`命名空间或属性作为源标识。
-* 如果您在数据摄取到Platform时散列了客户电子邮件地址，请选择`Email_LC_SHA256`命名空间或属性作为源标识。
+* 如果您在数据摄取到Experience Platform时经过哈希处理的客户电子邮件地址，请选择`Email_LC_SHA256`命名空间或属性作为源身份。
 
 选择目标字段：
 
@@ -140,11 +140,11 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 
 ## 验证数据导出 {#validate}
 
-要验证数据是否已从Experience Platform正确导出到[!DNL The Trade Desk]，请在[!DNL The Trade Desk]数据管理平台(DMP)的Adobe1PD数据拼贴下找到受众。 以下是在[!DNL Trade Desk] UI中查找相应ID的步骤：
+要验证数据是否已从Experience Platform正确导出到[!DNL The Trade Desk]，请在[!DNL The Trade Desk]数据管理平台(DMP)的Adobe 1PD数据拼贴下找到受众。 以下是在[!DNL Trade Desk] UI中查找相应ID的步骤：
 
 1. 首先，选择&#x200B;**[!UICONTROL 数据]**&#x200B;选项卡，并查看&#x200B;**[!UICONTROL 第一方]**&#x200B;部分。
-2. 向下滚动页面，在&#x200B;**[!UICONTROL 导入的数据]**&#x200B;下，您会找到&#x200B;**[!UICONTROL Adobe1PD磁贴]**。
-3. 单击**[!UICONTROL Adobe1PD]**图块，它将列出激活到广告商的[!DNL Trade Desk]目标的所有受众。 您还可以使用搜索功能。
+2. 向下滚动该页面，在&#x200B;**[!UICONTROL 导入的数据]**&#x200B;下，您会找到&#x200B;**[!UICONTROL Adobe 1PD磁贴]**。
+3. 单击**[!UICONTROL Adobe 1PD]**图块，它会列出激活到广告商的[!DNL Trade Desk]目标的所有受众。 您还可以使用搜索功能。
 4. Experience Platform中的区段ID #将显示为[!DNL Trade Desk] UI中的区段名称。
 
 ## 数据使用和治理 {#data-usage-governance}

@@ -6,9 +6,9 @@ description: 了解如何配置数据操作和架构，以在将Adobe Experience
 role: Developer
 feature: Consent
 exl-id: af787adf-b46e-43cf-84ac-dfb0bc274025
-source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2492'
+source-wordcount: '2524'
 ht-degree: 0%
 
 ---
@@ -21,13 +21,13 @@ ht-degree: 0%
 >
 >有关TCF 2.0的更多信息，请访问[IAB Europe网站](https://iabeurope.eu/)，包括支持材料和技术规范。
 
-Adobe Experience Platform是已注册的[IAB TCF 2.0供应商列表](https://iabeurope.eu/vendor-list-tcf/)的一部分，ID为&#x200B;**565**。 为符合TCF 2.0要求，Platform允许您收集客户同意数据并将其集成到存储的客户配置文件中。 然后，可以根据用户档案的用例将此同意数据纳入导出受众区段中是否包含用户档案。
+Adobe Experience Platform是已注册的[IAB TCF 2.0供应商列表](https://iabeurope.eu/vendor-list-tcf/)的一部分，ID为&#x200B;**565**。 为符合TCF 2.0要求，Experience Platform允许您收集客户同意数据并将其集成到存储的客户配置文件中。 然后，可以根据用户档案的用例将此同意数据纳入导出受众区段中是否包含用户档案。
 
 >[!IMPORTANT]
 >
->Platform只能符合TCF版本2.0（或更高版本）。 不支持TCF的早期版本。
+>Experience Platform只能遵守TCF版本2.0（或更高版本）。 不支持TCF的早期版本。
 
-本文档概述了如何配置数据操作和配置文件架构，以接受同意管理平台(CMP)生成的客户同意数据。 此外，还介绍了Platform在导出区段时如何传达用户同意选择。
+本文档概述了如何配置数据操作和配置文件架构，以接受同意管理平台(CMP)生成的客户同意数据。 此外，还介绍了Experience Platform在导出区段时如何传达用户同意选择。
 
 ## 先决条件
 
@@ -35,18 +35,18 @@ Adobe Experience Platform是已注册的[IAB TCF 2.0供应商列表](https://iab
 
 >[!IMPORTANT]
 >
->如果CMP的ID无效，则Platform会继续按原样处理您的数据。 要实施TCF 2.0，您必须先确认CMP具有已在IAB TCF 2.0中注册的有效ID，然后才能将数据发送到Platform。
+>如果CMP的ID无效，Experience Platform将按原样继续处理您的数据。 要实施TCF 2.0，在向Experience Platform发送数据之前，必须确认CMP具有已在IAB TCF 2.0中注册的有效ID。
 
-本指南还要求您实际了解以下Platform服务：
+此外，您还需要实际了解以下Experience Platform服务：
 
-* [体验数据模型(XDM)](/help/xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+* [体验数据模型(XDM)](/help/xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
 * [Adobe Experience Platform Identity Service](/help/identity-service/home.md)：通过跨设备和系统桥接身份，解决了客户体验数据碎片化带来的基本挑战。
 * [实时客户个人资料](/help/profile/home.md)：使用[!DNL Identity Service]从您的数据集实时创建详细的客户个人资料。 [!DNL Real-Time Customer Profile]从数据湖中提取数据，并将客户配置文件保留在其自己的单独数据存储中。
-* [Adobe Experience Platform Web SDK](/help/web-sdk/home.md)：客户端JavaScript库，它允许您将各种Platform服务集成到面向客户的网站上。
+* [Adobe Experience Platform Web SDK](/help/web-sdk/home.md)：客户端JavaScript库，它允许您将各种Experience Platform服务集成到面向客户的网站上。
    * [SDK同意命令](../../../../web-sdk/commands/setconsent.md)：本指南中显示的与同意相关的SDK命令的用例概述。
 * [Adobe Experience Platform分段服务](/help/segmentation/home.md)：允许您将[!DNL Real-Time Customer Profile]数据划分为共享相似特征并对营销策略做出类似响应的个人组。
 
-除了上面列出的Platform服务之外，您还应熟悉[目标](/help/data-governance/home.md)及其在Platform生态系统中的角色。
+除了上面列出的Experience Platform服务之外，您还应熟悉[目标](/help/data-governance/home.md)及其在Experience Platform生态系统中的角色。
 
 ## 客户同意流程摘要 {#summary}
 
@@ -54,26 +54,26 @@ Adobe Experience Platform是已注册的[IAB TCF 2.0供应商列表](https://iab
 
 ### 同意数据收集
 
-Platform允许您通过以下流程收集客户同意数据：
+Experience Platform允许您通过下列流程收集客户同意数据：
 
 1. 客户通过网站上的对话框提供其关于数据收集的同意首选项。
 1. 您的CMP会检测同意首选项更改，并相应地生成TCF同意数据。
-1. 使用Platform Web SDK，生成的同意数据（由CMP返回）发送到Adobe Experience Platform。
+1. 使用Experience Platform Web SDK，生成的同意数据（由CMP返回）发送到Adobe Experience Platform。
 1. 收集的同意数据将摄取到启用了[!DNL Profile]的数据集，其架构包含TCF同意字段。
 
-除了CMP同意更改挂接触发的SDK命令外，同意数据还可以通过客户生成的任何直接上传到启用了[!DNL Profile]的数据集的XDM数据流入Experience Platform。
+除了CMP同意更改挂接触发的SDK命令之外，同意数据还可以通过任何客户生成的XDM数据流入Experience Platform，这些数据直接上传到启用了[!DNL Profile]的数据集。
 
-如果通过[!DNL Experience Cloud Identity Service]对由Adobe Audience Manager与Platform共享的任何区段应用了相应的字段，则这些区段（通过[!DNL Audience Manager]源连接器或其他方式）也可能包含同意数据。 有关在[!DNL Audience Manager]中收集同意数据的更多信息，请参阅适用于IAB TCF的[Adobe Audience Manager插件上的文档](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/consent-management/aam-iab-plugin.html?lang=zh-Hans)。
+如果通过[!DNL Experience Cloud Identity Service]将相应字段应用于由Adobe Audience Manager与Experience Platform共享的任何区段（通过[!DNL Audience Manager]源连接器或其他方式），则这些区段也可能会包含同意数据。 有关在[!DNL Audience Manager]中收集同意数据的更多信息，请参阅适用于IAB TCF的[Adobe Audience Manager插件上的文档](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/consent-management/aam-iab-plugin.html?lang=zh-Hans)。
 
 ### 下游同意执行
 
-成功摄取TCF同意数据后，下游Platform服务中将执行以下流程：
+成功摄取TCF同意数据后，下游Experience Platform服务中将执行以下流程：
 
 1. [!DNL Real-Time Customer Profile]更新该客户个人资料的已存储同意数据。
-1. 只有在为群集中的每个ID提供了Platform (565)的供应商权限时，Platform才会处理客户ID。
-1. 将区段导出到属于TCF 2.0供应商列表成员的目标时，只有在为群集中的每个ID提供平台(565) *和*&#x200B;的供应商权限时，Platform才会包含配置文件。
+1. 仅当为集群中的每个ID提供了Experience Platform (565)的供应商权限时，Experience Platform才会处理客户ID。
+1. 将区段导出到属于TCF 2.0供应商列表成员的目标时，仅当为群集中的每个ID提供了Experience Platform (565) *和*&#x200B;的供应商权限时，Experience Platform才包括配置文件。
 
-本文档中的其余部分提供了有关如何配置Platform和数据操作以满足上述收集和实施要求的指导。
+本文档中的其余部分提供了有关如何配置Experience Platform和数据操作以满足上述收集和实施要求的指导。
 
 ## 确定如何在CMP中生成客户同意数据 {#consent-data}
 
@@ -85,14 +85,14 @@ Platform允许您通过以下流程收集客户同意数据：
 
 | 同意选项 | 描述 |
 | --- | --- |
-| **目的** | 用途定义品牌可以将客户数据用于哪些广告技术目的。 要处理Platform客户ID，必须选择实现以下目的： <ul><li>**目的1**：在设备上存储和/或访问信息</li><li>**目的10**：开发和改进产品</li></ul> |
+| **目的** | 用途定义品牌可以将客户数据用于哪些广告技术目的。 为了使Experience Platform能够处理客户ID，必须选择实现以下目的： <ul><li>**目的1**：在设备上存储和/或访问信息</li><li>**目的10**：开发和改进产品</li></ul> |
 | **供应商权限** | 除了广告技术目的之外，该对话框还必须允许客户选择加入或退出让其数据由特定供应商使用，包括Adobe Experience Platform (565)。 |
 
 ### 同意字符串 {#consent-strings}
 
 无论您使用何种方法收集数据，目的都是根据客户选择的同意选项生成一个字符串值，称为同意字符串。
 
-在TCF规范中，同意字符串用于根据策略和供应商定义的特定营销目的，编码有关客户同意设置的相关详细信息。 Platform使用这些字符串来存储每个客户的同意设置，因此，每次这些设置发生更改时，都必须生成一个新的同意字符串。
+在TCF规范中，同意字符串用于根据策略和供应商定义的特定营销目的，编码有关客户同意设置的相关详细信息。 Experience Platform使用这些字符串来存储每个客户的同意设置，因此，每次这些设置发生更改时，都必须生成一个新的同意字符串。
 
 同意字符串只能由在IAB TCF中注册的CMP创建。 有关如何使用特定CMP生成同意字符串的更多信息，请参阅IAB TCF GitHub存储库中的[同意字符串格式指南](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20Consent%20string%20and%20vendor%20list%20formats%20v2.md)。
 
@@ -106,30 +106,30 @@ Platform允许您通过以下流程收集客户同意数据：
 
 有关如何使用合并策略的更多信息，请参阅[合并策略概述](/help/profile/merge-policies/overview.md)。 在设置合并策略时，必须确保区段包含由[XDM隐私架构字段组](./dataset.md#privacy-field-group)提供的所有必需同意属性，如数据集准备指南中所述。
 
-## 集成Experience PlatformWeb SDK以收集客户同意数据 {#sdk}
+## 集成Experience Platform Web SDK以收集客户同意数据 {#sdk}
 
 >[!NOTE]
 >
->需要使用Experience PlatformWeb SDK才能直接在Adobe Experience Platform中处理同意数据。 不支持[!DNL Experience Cloud Identity Service]。
+>需要使用Experience Platform Web SDK才能直接在Adobe Experience Platform中处理同意数据。 不支持[!DNL Experience Cloud Identity Service]。
 >
 >在Adobe Audience Manager中仍支持[!DNL Experience Cloud Identity Service]进行同意处理，但只需将库更新到[版本5.0](https://github.com/Adobe-Marketing-Cloud/id-service/releases)才能符合TCF 2.0的要求。
 
-配置CMP以生成同意字符串后，必须集成Experience PlatformWeb SDK以收集这些字符串并将它们发送到Platform。 Platform SDK提供了两个可用于将TCF同意数据发送到Platform的命令（下面各子部分进行了说明）。 当客户首次提供同意信息时，以及同意信息在以后任何时候发生更改时，都应使用这些命令。
+配置CMP以生成同意字符串后，必须集成Experience Platform Web SDK以收集这些字符串并将它们发送到Experience Platform。 Experience Platform SDK提供了两个可用于将TCF同意数据发送到Experience Platform的命令（以下子部分中有说明）。 当客户首次提供同意信息时，以及同意信息在以后任何时候发生更改时，都应使用这些命令。
 
 **SDK未与任何开箱即用的CMP接口**。 您可以自行决定如何将SDK集成到您的网站中，监听CMP中的同意更改，并调用相应的命令。
 
 ### 创建数据流
 
-为了使SDK将数据发送到Experience Platform，您必须首先为Platform创建数据流。 [SDK文档](/help/datastreams/overview.md)中提供了有关如何创建数据流的特定步骤。
+为了让SDK将数据发送到Experience Platform，您必须首先为Experience Platform创建数据流。 [SDK文档](/help/datastreams/overview.md)中提供了有关如何创建数据流的特定步骤。
 
 为数据流提供唯一名称后，选择&#x200B;**[!UICONTROL Adobe Experience Platform]**&#x200B;旁边的切换按钮。 接下来，使用以下值完成表单的其余部分：
 
 | 数据流字段 | 值 |
 | --- | --- |
-| [!UICONTROL 沙盒] | 平台[沙盒](/help/sandboxes/home.md)的名称，该沙盒包含设置数据流所需的流连接和数据集。 |
+| [!UICONTROL 沙盒] | 包含设置数据流所需的流连接和数据集的Experience Platform [沙盒](/help/sandboxes/home.md)的名称。 |
 | [!UICONTROL 流式入口] | Experience Platform的有效流连接。 如果您没有现有的流入口，请参阅有关[创建流连接](/help/ingestion/tutorials/create-streaming-connection-ui.md)的教程。 |
 | [!UICONTROL 事件数据集] | 选择在[上一步](#datasets)中创建的[!DNL XDM ExperienceEvent]数据集。 如果在此数据集的架构中包含[[!UICONTROL IAB TCF 2.0同意]字段组](/help/xdm/field-groups/event/iab.md)，则可以使用[`sendEvent`](#sendEvent)命令跟踪一段时间的同意更改事件，并将该数据存储在此数据集中。 请记住，此数据集中存储的同意值&#x200B;**不在自动实施工作流中使用**。 |
-| [!UICONTROL 配置文件数据集] | 选择在[上一步](#datasets)中创建的[!DNL XDM Individual Profile]数据集。 使用[`setConsent`](#setConsent)命令响应CMP同意更改挂接时，收集的数据将存储在此数据集中。 由于此数据集启用了配置文件，在自动实施工作流期间，将遵循此数据集中存储的同意值。 |
+| [!UICONTROL 轮廓数据集] | 选择在[上一步](#datasets)中创建的[!DNL XDM Individual Profile]数据集。 使用[`setConsent`](#setConsent)命令响应CMP同意更改挂接时，收集的数据将存储在此数据集中。 由于此数据集启用了配置文件，在自动实施工作流期间，将遵循此数据集中存储的同意值。 |
 
 ![](../../../images/governance-privacy-security/consent/iab/overview/edge-config.png)
 
@@ -137,7 +137,7 @@ Platform允许您通过以下流程收集客户同意数据：
 
 ### 发出consent-change命令
 
-创建上一部分所述的数据流后，您可以开始使用SDK命令将同意数据发送到Platform。 以下部分提供了如何在不同的场景中使用每个SDK命令的示例。
+创建上一部分所述的数据流后，您可以开始使用SDK命令将同意数据发送到Experience Platform。 以下部分提供了如何在各种场景中使用每个SDK命令的示例。
 
 #### 使用CMP同意更改挂接 {#setConsent}
 
@@ -193,7 +193,7 @@ OneTrust.OnConsentChanged(function () {
 
 #### 使用事件 {#sendEvent}
 
-您还可以使用`sendEvent`命令收集Platform中触发的每个事件的TCF 2.0同意数据。
+您还可以使用`sendEvent`命令收集在Experience Platform中触发的每个事件的TCF 2.0同意数据。
 
 >[!NOTE]
 >
@@ -241,11 +241,11 @@ alloy("sendEvent", {
 * **目的1**：在设备上存储和/或访问信息
 * **目的10**：开发和改进产品
 
-TCF 2.0还要求在将数据发送到目标之前，数据源必须检查目标的供应商权限。 因此，在包含绑定到该目标的数据之前，Platform会检查是否针对群集中的所有ID选择加入目标的供应商权限。
+TCF 2.0还要求在将数据发送到目标之前，数据源必须检查目标的供应商权限。 因此，在包含绑定到该目标的数据之前，Experience Platform会检查是否针对群集中的所有ID选择加入目标的供应商权限。
 
 >[!NOTE]
 >
->与Adobe Audience Manager共享的任何区段包含与其Platform对应区段相同的TCF 2.0同意值。 由于[!DNL Audience Manager]与平台(565)共享相同的供应商ID，因此需要相同的目的和供应商权限。 有关详细信息，请参阅适用于IAB TCF的[Adobe Audience Manager插件](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/consent-management/aam-iab-plugin.html?lang=zh-Hans)上的文档。
+>与Adobe Audience Manager共享的任何区段都包含与其Experience Platform对应区段相同的TCF 2.0同意值。 由于[!DNL Audience Manager]与Experience Platform (565)共享相同的供应商ID，因此需要相同的目的和供应商权限。 有关详细信息，请参阅适用于IAB TCF的[Adobe Audience Manager插件](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/consent-management/aam-iab-plugin.html?lang=zh-Hans)上的文档。
 
 ## 测试实施 {#test-implementation}
 
@@ -257,4 +257,4 @@ TCF 2.0还要求在将数据发送到目标之前，数据源必须检查目标�
 
 ## 后续步骤
 
-本文档介绍了配置Platform数据操作以履行TCF 2.0概述的业务义务的过程。有关Platform隐私相关功能的详细信息，请参阅[治理、隐私和安全性](../../overview.md)概述。
+本文档介绍了配置Experience Platform数据操作以履行TCF 2.0概述的业务义务的过程。有关Experience Platform隐私相关功能的更多信息，请参阅[治理、隐私和安全性](../../overview.md)概述。

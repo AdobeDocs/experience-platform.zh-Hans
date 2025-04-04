@@ -2,9 +2,9 @@
 title: 查询时间表
 description: 了解如何自动运行计划的查询、删除或禁用查询计划，以及通过Adobe Experience Platform UI利用可用的计划选项。
 exl-id: 984d5ddd-16e8-4a86-80e4-40f51f37a975
-source-git-commit: db0ba3bb32b5458ab3a32525c3c63939fe804ab4
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '2027'
+source-wordcount: '2028'
 ht-degree: 0%
 
 ---
@@ -113,7 +113,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->如果选择设置[!UICONTROL 查询运行延迟]警报，则必须在Platform UI中设置所需的延迟时间（以分钟为单位）。 以分钟为单位输入持续时间。 最大延迟为24小时（1440分钟）。
+>如果您选择设置[!UICONTROL 查询运行延迟]警报，则必须在Experience Platform UI中设置所需的延迟时间（以分钟为单位）。 以分钟为单位输入持续时间。 最大延迟为24小时（1440分钟）。
 
 有关Adobe Experience Platform中警报的概述，包括警报规则的定义结构，请参阅[警报概述](../../observability/alerts/overview.md)。 有关在Adobe Experience Platform UI中管理警报和警报规则的指导，请参阅[警报UI指南](../../observability/alerts/ui.md)。
 

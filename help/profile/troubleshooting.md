@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform；配置文件；实时客户配置文件；故障排除；API
+keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API
 title: 实时客户资料故障排除指南
 type: Documentation
 description: 本文档提供有关实时客户个人资料的常见问题解答，以及有关使用Adobe Experience Platform处理个人资料数据时常见错误的疑难解答指南。
 exl-id: 0b340025-093b-41e4-8053-969a8e80e889
-source-git-commit: dde38e230a6bcb10cd38a12f644f2dd03f0cebaf
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '964'
+source-wordcount: '968'
 ht-degree: 1%
 
 ---
@@ -25,15 +25,15 @@ ht-degree: 1%
 
 配置文件同时接受&#x200B;**记录**&#x200B;和&#x200B;**时间系列**&#x200B;数据，但前提是相关数据至少包含一个标识值，用于将数据与个人唯一性关联。
 
-与所有Platform服务一样，用户档案要求其数据在语义上采用体验数据模型(XDM)架构进行结构化。 反过来，此架构必须定义一个&#x200B;**主标识**，并且启用它才能在配置文件中使用。
+与所有Experience Platform服务一样，用户档案要求其数据在Experience Data Model (XDM)架构下进行语义结构化。 反过来，此架构必须定义一个&#x200B;**主标识**，并且启用它才能在配置文件中使用。
 
 如果您不熟悉XDM，请从[XDM概述](../xdm/home.md)开始了解更多信息。 接下来，请参阅XDM用户指南，以了解如何[设置标识字段](../xdm/tutorials/create-schema-ui.md#identity-field)和[为配置文件启用架构](../xdm/tutorials/create-schema-ui.md#profile)的步骤。
 
 ### 配置文件数据存储在何处？
 
-Real-time Customer Profile维护其自己的数据存储（称为“配置文件存储”），独立于包含其他摄取的Platform数据的数据湖。
+Real-time Customer Profile维护其自己的数据存储（称为“配置文件存储”），独立于包含其他摄取的Experience Platform数据的数据湖。
 
-### 如果我已经将数据摄取到Platform，是否可以在配置文件存储区中提供该数据？
+### 如果我已经将数据摄取到Experience Platform，是否可以在配置文件存储区中提供该数据？
 
 如果数据被摄取到非配置文件数据集，您必须将该数据重新摄取到启用配置文件的数据集，才能使其在配置文件存储中可用。 可以为配置文件启用现有数据集，但是在该配置之前摄取的任何数据仍将不会显示在配置文件存储中。
 
@@ -51,13 +51,13 @@ Real-time Customer Profile维护其自己的数据存储（称为“配置文件
 
 #### 使用UI
 
-在Experience PlatformUI中，**[!UICONTROL 配置文件]**&#x200B;工作区中的&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡允许您查看配置文件总数并按其标识值搜索各个配置文件。 有关详细信息，请参阅[配置文件用户指南](./ui/user-guide.md)。
+在Experience Platform UI中，**[!UICONTROL 配置文件]**&#x200B;工作区中的&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡允许您查看配置文件总数并按其标识值搜索各个配置文件。 有关详细信息，请参阅[配置文件用户指南](./ui/user-guide.md)。
 
 您还可以在&#x200B;**[!UICONTROL 受众]**&#x200B;工作区的&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡下查看受众列表。 选择受众后，将显示符合该受众条件的配置文件示例。 然后，您可以选择列出的任意配置文件以查看其详细信息。 有关详细信息，请参阅[分段UI概述](../segmentation/ui/overview.md)。
 
 ## 错误代码
 
-以下是使用Real-time Customer Profile API时可能遇到的错误消息列表。 如果此处未列出您遇到的错误，您可以在一般的[平台故障排除指南](../landing/troubleshooting.md)中找到该错误。
+以下是使用Real-time Customer Profile API时可能遇到的错误消息列表。 如果此处未列出您遇到的错误，您可能会在一般的[Experience Platform疑难解答指南](../landing/troubleshooting.md)中找到该错误。
 
 ### 无法为提供的路径查找计算属性的架构
 
@@ -133,7 +133,7 @@ Real-time Customer Profile维护其自己的数据存储（称为“配置文件
 }
 ```
 
-发送具有无效Content-Type标头的POST或PUT请求时，会发生此错误。 双击是否为您使用的端点提供有效的Content-Type值。
+发送带有无效Content-Type标头的POST或PUT请求时，会发生此错误。 双击是否为您使用的端点提供有效的Content-Type值。
 
 大多数配置文件端点都接受将“application/json”作为其Content-Type标头，但以下情况除外：
 

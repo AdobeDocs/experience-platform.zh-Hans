@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 流式摄取概述
 description: Adobe Experience Platform的流式摄取为用户提供了一种实时将数据从客户端和服务器端设备发送到Experience Platform的方法。
 exl-id: 851f15fd-7ac5-4a9f-934d-6b907057da87
-source-git-commit: 9b2d0c8fad1ed328725129664be94cf1800f6631
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '424'
 ht-degree: 1%
@@ -25,7 +25,7 @@ Adobe Experience Platform允许您通过为每个客户生成[!DNL Real-Time Cus
 
 ### 流配置文件记录和[!DNL ExperienceEvents]
 
-通过流式摄取，用户可在几秒内流式传输配置文件记录和[!DNL ExperienceEvents]到[!DNL Platform]，以帮助实现实时个性化。 发送到流式引入API的所有数据都会自动保留在[!DNL Data Lake]中。
+通过流式摄取，用户可在几秒内流式传输配置文件记录和[!DNL ExperienceEvents]到[!DNL Experience Platform]，以帮助实现实时个性化。 发送到流式引入API的所有数据都会自动保留在[!DNL Data Lake]中。
 
 有关详细信息，请参阅[创建流连接指南](../tutorials/create-streaming-connection.md)。
 

@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2023 年 10 月）
 description: Adobe Experience Platform 的 2023 年 10 月发行说明。
 exl-id: e9cf5299-8350-4b40-8f56-05e598846875
-source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1054'
-ht-degree: 40%
+source-wordcount: '1057'
+ht-degree: 37%
 
 ---
 
@@ -30,7 +30,7 @@ Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查
 
 | 功能 | 描述 |
 | --- | --- |
-| 目标使用情况量度 | 新的计数指标已添加到许可证使用情况仪表板。 **[!UICONTROL Audience Activation Size]**&#x200B;和&#x200B;**[!UICONTROL Data Export Size]**&#x200B;量度提供了一种方便的方法来跟踪您已从Platform导出多少数据以及您的许可证使用授权。 有关这些量度和其他许可证使用量度的说明，请参阅[可用量度](../../dashboards/guides/license-usage.md#available-metrics)文档。 |
+| 目标使用情况量度 | 新的计数指标已添加到许可证使用情况仪表板。 **[!UICONTROL Audience Activation Size]**&#x200B;和&#x200B;**[!UICONTROL Data Export Size]**&#x200B;量度提供了一种方便的方法来跟踪您已从Experience Platform导出多少数据以及您的许可证使用授权。 有关这些量度和其他许可证使用量度的说明，请参阅[可用量度](../../dashboards/guides/license-usage.md#available-metrics)文档。 |
 
 {style="table-layout:auto"}
 
@@ -47,7 +47,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 | 扩展 | [!DNL Meta]转化API增强 | [Meta Conversions API](/help/tags/extensions/server/meta/overview.md)扩展有三个增强功能： <ul><li>与[[!DNL Meta Business Extension (MBE)]](/help/tags/extensions/server/meta/overview.md#integration-with-meta-business-extension-mbe)集成：通过允许您共享您的像素ID并访问与Adobe的转化API集成的令牌，创建无缝登录体验。</li><li>与[[!DNL Event Match Quality Score (EMQ)]](/help/tags/extensions/server/meta/overview.md#integration-with-event-quality-match-score-emq)集成：允许您向更有可能完成所需操作的人员投放广告，并将操作链接回所投放的广告。</li><li>与[[!DNL LiveRamp (Alpha)]](/help/tags/extensions/server/meta/overview.md#integration-with-liveramp-alpha)集成：允许您在CIP字段中传递LiveRamp的RampID，而无需直接与合作伙伴或Meta共享PII。 </li></ul> |
 | 扩展 | [!DNL LinkedIn]转化API | [[!DNL LinkedIn] 转化API](../../tags/extensions/server/linkedin/overview.md)扩展允许您通过将Experience Platform事件数据转发到LinkedIn来评估LinkedIn营销活动的有效性。 |
 | 机密 | [!DNL LinkedIn] OAuth 2密码 | [[!DNL LinkedIn] OAuth 2密钥](../../tags/ui/event-forwarding/secrets.md#linkedin-oauth-2)允许您在事件转发中将服务器与服务器的交互发送到[!DNL LinkedIn]。 |
-| 事件转发 | 标记和事件转发的更新 | 为了在Platform中保留[标记](https://experienceleague.adobe.com/docs/experience-platform/tags/home.html)和[事件转发](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/overview.html)性能，将仅保留最近成功和不成功的开发和暂存构建。 将删除所有不再使用的内部版本。 此外，还实施了限制和速率限制以确保一些较重的API使用不会降低其他应用程序的API性能。 |
+| 事件转发 | 标记和事件转发的更新 | 为了在Experience Platform中保留[标记](https://experienceleague.adobe.com/docs/experience-platform/tags/home.html)和[事件转发](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/overview.html)性能，将仅保留最近成功和不成功的开发和暂存构建。 将删除所有不再使用的内部版本。 此外，还实施了限制和速率限制以确保一些较重的API使用不会降低其他应用程序的API性能。 |
 | 扩展 | 元素、规则和扩展 | [元素、规则和扩展](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/overview.html)现在在库输出中排序，以确保同一库的多个生成和部署之间更加一致。 |
 
 有关数据收集的更多信息，请参阅[数据收集概述](../../tags/home.md)。
@@ -80,7 +80,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 ## 沙盒 {#sandboxes}
 
-Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。企业通常会同时运行多个数字体验应用程序，并且需要满足这些应用程序的开发、测试和部署要求，同时确保运营合规性。为了满足这一需求，Experience Platform 提供了可将单个 Platform 实例划分为多个单独的虚拟环境的沙盒，以帮助开发和改进数字体验应用程序。
+Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。企业通常会同时运行多个数字体验应用程序，并且需要满足这些应用程序的开发、测试和部署要求，同时确保运营合规性。为了满足此需求，Experience Platform提供了可将单个Experience Platform实例划分为多个单独的虚拟环境的沙盒，以帮助开发和改进数字体验应用程序。
 
 **新增功能**
 
@@ -92,7 +92,7 @@ Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。企
 
 ## Segmentation Service {#segmentation}
 
-[!DNL Segmentation Service] 允许您对存储在 [!DNL Experience Platform] 中的与个人（例如客户、潜在客户、用户或组织）相关的数据划分到受众区段中。您可以通过区段定义或其他源从 [!DNL Real-Time Customer Profile] 数据创建受众。这些受众在 [!DNL Platform] 上集中配置和维护，并且可以通过任何 Adobe 解决方案轻松访问。
+[!DNL Segmentation Service] 允许您对存储在 [!DNL Experience Platform] 中的与个人（例如客户、潜在客户、用户或组织）相关的数据划分到受众区段中。您可以通过区段定义或其他源从 [!DNL Real-Time Customer Profile] 数据创建受众。这些受众在 [!DNL Experience Platform] 上集中配置和维护，并且可以通过任何 Adobe 解决方案轻松访问。
 
 **新增功能**
 

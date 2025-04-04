@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务UI指南
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看先前执行的查询以及访问由您组织内的用户保存的查询。
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: a4fc19599ea6639ee5762ee1542cb08b9ed3b6a8
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '2275'
+source-wordcount: '2276'
 ht-degree: 1%
 
 ---
@@ -36,7 +36,7 @@ Adobe Experience Platform查询服务提供了一个用户界面，可用于编�
 [!UICONTROL 数据Distiller功能]部分提供了指向更高级数据Distiller功能的文档链接：
 
 - **[[!UICONTROL 数据探索]](../use-cases/data-exploration.md)**：了解如何使用SQL探索、排查和验证批次摄取的数据。
-- **[[!UICONTROL Experience Platform应用程序派生的数据集]](../data-distiller/derived-datasets/overview.md)**：了解如何创建派生的数据集以支持复杂而多样的用例，从而最大限度地发挥数据效用。
+- **[[!UICONTROL Experience Platform应用程序的派生数据集]](../data-distiller/derived-datasets/overview.md)**：了解如何创建派生数据集，以支持复杂而多样的用例，从而最大限度地发挥数据实用工具的作用。
 - **[[!UICONTROL AI/ML管道]](../data-distiller/ml-feature-pipelines/overview.md)**：了解首选机器学习工具背后的重要概念，以及如何构建支持营销用例的自定义模型。 本指南系列描述了构建功能管道的必要步骤，这些管道用于准备来自Experience Platform的数据以馈送机器学习环境中的自定义模型。
 - **[[!UICONTROL SQL分析]](../data-distiller/sql-insights/overview.md)**：了解使用Data Distiller从SQL开发分析仪表板所需的主要功能和步骤。
 
@@ -62,7 +62,7 @@ Adobe Experience Platform查询服务提供了一个用户界面，可用于编�
 - **[[!UICONTROL 客户存留期值]](../use-cases/customer-lifetime-value.md)**：了解如何使用Real-Time CDP和自定义仪表板跟踪和可视化客户存留期值。 利用这些见解制定吸引新客户、留住现有客户并最大化利润率的策略。
 - **[[!UICONTROL 倾向得分]](../use-cases/propensity-score.md)**：了解如何使用机器学习预测模型确定倾向得分。 本指南包括发送培训数据、将经过培训的模型与SQL一起应用以及预测客户购买可能性。
 - **[[!UICONTROL 同意分析]](../../dashboards/insights-use-cases/consent-analysis.md)**：了解如何使用Real-Time CDP、查询服务和数据Distiller来分析和跟踪客户同意。 本指南涵盖构建同意功能板、优化分段、跟踪趋势和确保合规性，帮助您建立信任并提供个性化体验。
-- **[[!UICONTROL 模糊匹配]](../use-cases/fuzzy-match.md)**：了解如何对Experience Platform数据执行“模糊”匹配以查找近似匹配并分析数据集间的字符串相似度。 遵循本指南以节省时间并使您的数据更易于访问。 该示例演示了如何在两个旅行社数据集之间匹配酒店房间属性，说明如何高效地匹配、比较和协调大型复杂数据集，以获得一致性和准确性。
+- **[[!UICONTROL 模糊匹配]](../use-cases/fuzzy-match.md)**：了解如何对Experience Platform数据执行“模糊”匹配以查找近似匹配并分析数据集之间的字符串相似度。 遵循本指南以节省时间并使您的数据更易于访问。 该示例演示了如何在两个旅行社数据集之间匹配酒店房间属性，说明如何高效地匹配、比较和协调大型复杂数据集，以获得一致性和准确性。
 
 ![突出显示包含数据Distiller示例部分的查询服务工作区。](../images/ui/overview/data-distiller-examples.png)
 
@@ -142,7 +142,7 @@ Adobe Experience Platform查询服务提供了一个用户界面，可用于编�
 | **[!UICONTROL 修改者]** | 上次修改查询的用户。 贵组织中有权访问查询服务的任何用户都可以修改查询。 |
 | **[!UICONTROL 上次修改时间]** | 上次修改查询的日期和时间，以浏览器的时区表示。 |
 
-有关Platform UI中模板的详细信息，请参阅[查询模板](./query-templates.md)文档。
+有关Experience Platform UI中模板的更多信息，请参阅[查询模板](./query-templates.md)文档。
 
 ## 日志 {#log}
 
@@ -174,4 +174,4 @@ Adobe Experience Platform查询服务提供了一个用户界面，可用于编�
 
 ## 后续步骤
 
-现在您已经熟悉[!DNL Platform]上的查询服务用户界面，您可以访问查询编辑器以开始创建自己的查询项目并与组织中的其他用户共享。 有关在查询编辑器中创作和运行查询的详细信息，请参阅[查询编辑器用户指南](./user-guide.md)。
+现在您已经熟悉[!DNL Experience Platform]上的查询服务用户界面，您可以访问查询编辑器以开始创建自己的查询项目并与组织中的其他用户共享。 有关在查询编辑器中创作和运行查询的详细信息，请参阅[查询编辑器用户指南](./user-guide.md)。

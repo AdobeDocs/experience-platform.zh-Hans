@@ -2,12 +2,12 @@
 keywords: Experience Platform；主页；热门主题；策略实施；基于API的实施；数据治理
 solution: Experience Platform
 title: 数据管理策略API端点
-description: 数据治理策略是您的组织采用的规则，用于描述允许或限制您对Experience Platform内的数据执行的营销操作类型。 /policies端点用于与查看、创建、更新或删除数据治理策略相关的所有API调用。
+description: 数据治理策略是您的组织采用的规则，用于描述允许或限制您对Experience Platform中的数据执行的营销操作类型。 /policies端点用于与查看、创建、更新或删除数据治理策略相关的所有API调用。
 role: Developer
 exl-id: 62a6f15b-4c12-4269-bf90-aaa04c147053
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1863'
+source-wordcount: '1864'
 ht-degree: 2%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->不要将治理策略与访问控制策略混为一谈，访问控制策略确定组织中的某些Platform用户可以访问的特定数据属性。 有关如何以编程方式管理访问控制策略的详细信息，请参阅[访问控制API](../../access-control/abac/api/policies.md)的`/policies`端点指南。
+>切勿将治理策略与访问控制策略混为一谈，访问控制策略确定组织中的某些Experience Platform用户可以访问的特定数据属性。 有关如何以编程方式管理访问控制策略的详细信息，请参阅[访问控制API](../../access-control/abac/api/policies.md)的`/policies`端点指南。
 
 ## 快速入门
 
@@ -378,7 +378,7 @@ curl -X POST \
 >
 >您只能更新自定义策略。 如果要启用或禁用核心策略，请参阅[更新已启用的核心策略列表](#update-enabled-core)中的部分。
 
-您可以更新现有的自定义策略，方法是：在PUT请求的路径中提供其ID，有效负载中包含完整的已更新策略形式。 换句话说，PUT请求实际上重写了策略。
+您可以通过在PUT请求的路径中提供其ID来更新现有的自定义策略，该策略的有效负载包含完整的已更新策略形式。 换句话说，PUT请求实际上会重写策略。
 
 >[!NOTE]
 >
@@ -502,7 +502,7 @@ PATCH /policies/custom/{POLICY_ID}
 
 >[!IMPORTANT]
 >
->在单个请求中发送多个PATCH操作时，将按照这些操作在数组中的出现顺序进行处理。 确保在必要时按正确的顺序发送请求。
+>在单个请求中发送多个PATCH操作时，将按它们在数组中的显示顺序处理它们。 确保在必要时按正确的顺序发送请求。
 
 ```SHELL
 curl -X PATCH \
@@ -580,7 +580,7 @@ curl -X PATCH \
 
 >[!WARNING]
 >
->一旦删除，策略将无法恢复。 最佳做法是先[执行查找(GET)请求](#lookup)以查看策略，并确认您要删除的策略是否正确。
+>一旦删除，策略将无法恢复。 最佳做法是先[执行查找(GET)请求](#lookup)以查看策略并确认它是您要删除的正确策略。
 
 **API格式**
 
@@ -611,7 +611,7 @@ curl -X DELETE \
 
 ## 检索已启用的核心策略的列表 {#list-enabled-core}
 
-默认情况下，只有启用的数据治理策略才参与评估。 您可以通过向`/enabledCorePolicies`端点发出GET请求，检索贵组织当前启用的核心策略的列表。
+默认情况下，只有启用的数据治理策略才参与评估。 通过向`/enabledCorePolicies`端点发出GET请求，您可以检索贵组织当前启用的核心策略列表。
 
 **API格式**
 
@@ -663,7 +663,7 @@ curl -X GET \
 
 ## 更新已启用的核心策略的列表 {#update-enabled-core}
 
-默认情况下，只有启用的数据治理策略才参与评估。 通过向`/enabledCorePolicies`端点发出PUT请求，您可以使用单个调用更新组织中启用的核心策略的列表。
+默认情况下，只有启用的数据治理策略才参与评估。 通过向`/enabledCorePolicies`端点发出PUT请求，您可以使用单个调用更新贵组织启用的核心策略列表。
 
 >[!NOTE]
 >

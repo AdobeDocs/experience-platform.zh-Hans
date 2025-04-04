@@ -1,26 +1,26 @@
 ---
-keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK；SDK
+keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源sdk；sdk；SDK
 title: 提交您的Source
-description: 以下文档提供了有关如何使用Flow Service API测试和验证新源，以及通过自助源(Batch SDK)集成新源的步骤。
+description: 以下文档提供了有关如何使用Flow Service API测试和验证新源，以及通过自助源(批处理SDK)集成新源的步骤。
 exl-id: 9e945ba1-51b6-40a9-b92f-e0a52b3f92fa
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '823'
+source-wordcount: '829'
 ht-degree: 0%
 
 ---
 
 # 提交您的源
 
-使用自助式源（批处理SDK）将新源集成到Adobe Experience Platform的最后一步是测试源以供验证。 成功后，您可以联系Adobe代表以提交新的源。
+使用自助式源(批量SDK)将新源集成到Adobe Experience Platform的最后一步是测试源以供验证。 成功后，您可以联系Adobe代表以提交新的源。
 
 以下文档提供了有关如何使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)测试和调试源的步骤。
 
 ## 快速入门
 
-* 有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../landing/api-guide.md)指南。
-* 有关如何为平台API生成凭据的信息，请参阅有关[身份验证和访问Experience PlatformAPI](../../../landing/api-authentication.md)的教程。
-* 有关如何为平台API设置[!DNL Postman]的信息，请参阅[设置开发人员控制台和 [!DNL Postman]](../../../landing/postman.md)上的教程。
+* 有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../landing/api-guide.md)指南。
+* 有关如何生成Experience Platform API凭据的信息，请参阅有关[身份验证和访问Experience Platform API](../../../landing/api-authentication.md)的教程。
+* 有关如何为Experience Platform API设置[!DNL Postman]的信息，请参阅[设置开发人员控制台和 [!DNL Postman]](../../../landing/postman.md)上的教程。
 * 为帮助进行测试和调试，请在此处](../assets/sdk-verification.zip)下载[自助式源验证集合和环境，然后执行下面列出的步骤。
 
 ## 测试源
@@ -59,10 +59,10 @@ ht-degree: 0%
 
 | 参数 | 描述 | 示例 |
 | --- | --- | --- |
-| `x-api-key` | 用于对调用Experience PlatformAPI进行身份验证的唯一标识符。 有关如何检索`x-api-key`的信息，请参阅有关[身份验证和访问Experience PlatformAPI](../../../landing/api-authentication.md)的教程。 | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
+| `x-api-key` | 用于对调用Experience Platform API进行身份验证的唯一标识符。 有关如何检索`x-api-key`的信息，请参阅有关[身份验证和访问Experience Platform API](../../../landing/api-authentication.md)的教程。 | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
 | `x-gw-ims-org-id` | 公司实体，可以拥有产品或服务，也可以为其授予产品和服务许可证，并允许其成员访问。 有关如何检索`x-gw-ims-org-id`信息的说明，请参阅有关[设置开发人员控制台和 [!DNL Postman]](../../../landing/postman.md)的教程。 | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
-| `authorizationToken` | 完成对Experience PlatformAPI的调用所需的授权令牌。 有关如何检索`authorizationToken`的信息，请参阅有关[身份验证和访问Experience PlatformAPI](../../../landing/api-authentication.md)的教程。 | `Bearer authorizationToken` |
-| `schemaId` | 为了在Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 有关如何创建目标XDM架构的详细步骤，请参阅有关使用API [创建架构的教程](../../../xdm/api/schemas.md)。 | `https://ns.adobe.com/{TENANT_ID}.schemas.0ef4ce0d390f0809fad490802f53d30b` |
+| `authorizationToken` | 完成对Experience Platform API的调用所需的授权令牌。 有关如何检索`authorizationToken`的信息，请参阅有关[身份验证和访问Experience Platform API](../../../landing/api-authentication.md)的教程。 | `Bearer authorizationToken` |
+| `schemaId` | 为了在Experience Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 有关如何创建目标XDM架构的详细步骤，请参阅有关使用API [创建架构的教程](../../../xdm/api/schemas.md)。 | `https://ns.adobe.com/{TENANT_ID}.schemas.0ef4ce0d390f0809fad490802f53d30b` |
 | `schemaVersion` | 与您的架构对应的唯一版本。 | `application/vnd.adobe.xed-full-notext+json; version=1` |
 | `schemaAltId` | 创建新架构时与`schemaId`一起返回的`meta:altId`。 | `_{TENANT_ID}.schemas.0ef4ce0d390f0809fad490802f53d30b` |
 | `dataSetId` | 有关如何创建目标数据集的详细步骤，请参阅有关[使用API创建数据集的教程](../../../catalog/api/create-dataset.md)。 | `5f3c3cedb2805c194ff0b69a` |
@@ -82,7 +82,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->如果您希望在Platform UI中使用源监视仪表板，则可以禁用运行订单清单中的&#x200B;**删除流**。 但是，测试完成后，必须确保删除测试流。
+>如果您希望在Experience Platform UI中使用源监视仪表板，则可以禁用运行订单清单中的&#x200B;**删除流**。 但是，测试完成后，必须确保删除测试流。
 
 ![运行集合](../assets/run-collection.png)
 

@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；通用REST API
 title: 在UI中创建通用REST API Source连接
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建通用REST API源连接。
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '641'
+source-wordcount: '647'
 ht-degree: 3%
 
 ---
@@ -20,14 +20,14 @@ ht-degree: 3%
 
 ## 快速入门
 
-本教程需要您对Platform的以下组件有一定的了解：
+本教程需要对以下Experience Platform组件有一定的了解：
 
-* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
-* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ### 收集所需的凭据
 
-为了在Platform上访问您的[!DNL Generic REST API]帐户，您必须为您选择的身份验证类型提供有效凭据。 通用REST API支持OAuth 2刷新代码和基本身份验证。 有关两种受支持的身份验证类型的凭据的信息，请参见下表。
+要在Experience Platform上访问您的[!DNL Generic REST API]帐户，您必须为您选择的身份验证类型提供有效凭据。 通用REST API支持OAuth 2刷新代码和基本身份验证。 有关两种受支持的身份验证类型的凭据的信息，请参见下表。
 
 #### OAuth 2刷新代码
 
@@ -53,7 +53,7 @@ ht-degree: 3%
 
 ## 连接您的通用REST API帐户
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索栏查找要使用的特定源。
 
@@ -89,4 +89,4 @@ ht-degree: 3%
 
 ## 后续步骤
 
-通过学习本教程，您已建立与通用REST API帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入Platform](../../dataflow/protocols.md)。
+通过学习本教程，您已建立与通用REST API帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入Experience Platform](../../dataflow/protocols.md)。

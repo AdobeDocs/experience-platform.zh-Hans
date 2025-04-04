@@ -2,11 +2,11 @@
 keywords: Experience Platform；主页；热门主题；沙盒；沙盒；测试；测试
 solution: Experience Platform
 title: 沙盒概述
-description: 沙盒是单个Experience Platform实例中的虚拟分区，允许与数字体验应用程序的开发过程无缝集成。
+description: 沙盒是Experience Platform单个实例中的虚拟分区，允许与数字体验应用程序的开发过程无缝集成。
 exl-id: b760a979-8134-4a44-8433-ec6fb49bc508
-source-git-commit: 7ee472294e8f255d9de3c15982a6f5d2d3654755
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '971'
+source-wordcount: '976'
 ht-degree: 2%
 
 ---
@@ -15,25 +15,25 @@ ht-degree: 2%
 
 Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。公司通常并行运行多个数字体验应用程序，需要满足这些应用程序的开发、测试和部署需要，同时确保操作法规遵从性。
 
-为了满足此需求，Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的沙箱，以帮助开发和改进数字体验应用程序。
+为了满足此需求，Experience Platform提供了可将单个Experience Platform实例划分为多个单独的虚拟环境的沙箱，以帮助开发和改进数字体验应用程序。
 
-本文档提供了Experience Platform沙盒的高级概述。
+本文档全面概述了Experience Platform中的沙盒。
 
 ## 了解沙盒
 
-沙盒是单个Experience Platform实例中的虚拟分区，允许与数字体验应用程序的开发过程无缝集成。 在沙盒内执行的所有内容和操作仅受该沙盒限制，不会影响任何其他沙盒。 Experience Platform支持两种沙盒：
+沙盒是Experience Platform单个实例中的虚拟分区，允许与数字体验应用程序的开发过程无缝集成。 在沙盒内执行的所有内容和操作仅受该沙盒限制，不会影响任何其他沙盒。 Experience Platform支持两种沙盒：
 
-* **生产沙盒**：生产沙盒应该与生产环境中的用户档案一起使用。 Platform允许您创建多个生产沙盒，以便在保持操作隔离的同时为数据提供适当的功能。 此功能允许您为不同的业务线、品牌、项目或区域指定特定的生产沙箱。 生产沙盒支持大量生产配置文件，最多不超过您的许可[!DNL Profile]承诺（在所有授权的生产沙盒中累积测量）。 您有权使用整个许可的总数据量（在所有授权的生产沙盒中累积测量）。
+* **生产沙盒**：生产沙盒应该与生产环境中的用户档案一起使用。 Experience Platform允许您创建多个生产沙盒，以便在保持操作隔离的同时为数据提供适当的功能。 此功能允许您为不同的业务线、品牌、项目或区域指定特定的生产沙箱。 生产沙盒支持大量生产配置文件，最多不超过您的许可[!DNL Profile]承诺（在所有授权的生产沙盒中累积测量）。 您有权使用整个许可的总数据量（在所有授权的生产沙盒中累积测量）。
 
 * **开发沙盒**：开发沙盒是一个沙盒，可专门用于开发和测试非生产配置文件。 开发沙盒支持大量非生产配置文件，最多占您许可的[!DNL Profile]承诺的10%（在所有授权的开发沙盒中累积测量）。 您有权获得以下权限：
    * 每个开发沙盒每天一个批量分段作业；
    * 每[!DNL Profile]年平均120次[!DNL Profile] API调用（在所有授权的开发沙盒中累积测量）。
 
-Experience Platform实例支持多个生产和开发沙盒，每个沙盒维护其自身独立的Platform资源库（包括架构、数据集、配置文件等）。 此外，生产和开发沙盒都具有重置功能，可从沙盒中删除所有客户创建的资源。 无法将开发沙盒转换为生产沙盒。
+Experience Platform实例支持多个生产和开发沙盒，每个沙盒维护其自身的Experience Platform资源（包括架构、数据集、配置文件等）独立库。 此外，生产和开发沙盒都具有重置功能，可从沙盒中删除所有客户创建的资源。 无法将开发沙盒转换为生产沙盒。
 
-默认Experience Platform许可证总共授予您5个沙盒，您可以将其分类为生产或开发。 您可以额外许可包含10个沙盒的包，最多总共75个沙盒。 这些额外的沙盒可用于创建生产和开发沙盒。 有关更多详细信息，请联系您的组织管理员或您的Adobe销售代表。
+默认的Experience Platform许可证总共授予您5个沙盒，您可以将其分类为生产或开发。 您可以额外许可包含10个沙盒的包，最多总共75个沙盒。 这些额外的沙盒可用于创建生产和开发沙盒。 有关更多详细信息，请联系您的组织管理员或Adobe销售代表。
 
-最后，默认的生产沙盒是在首次创建组织时创建的第一个生产沙盒。 默认的生产沙盒允许您从Platform摄取或使用数据，以及接受不包含沙盒名称或沙盒ID值的请求。
+最后，默认的生产沙盒是在首次创建组织时创建的第一个生产沙盒。 默认的生产沙盒允许您从Experience Platform摄取或使用数据，以及接受不包含沙盒名称或沙盒ID值的请求。
 
 >[!NOTE]
 >
@@ -53,13 +53,13 @@ Experience Platform实例支持多个生产和开发沙盒，每个沙盒维护�
 
 有关管理沙盒的角色和权限的详细信息，请参阅[访问控制概述](../access-control/home.md)。
 
-## Experience PlatformUI中的沙盒
+## Experience Platform UI中的沙盒
 
-在[Experience Platform用户界面](https://platform.adobe.com)中，用户可以使用屏幕左上角的&#x200B;**沙盒切换器**&#x200B;控件在自己有权访问的沙盒之间切换。  具有沙盒管理权限的用户还可以访问左侧导航中的&#x200B;**[!UICONTROL 沙盒]**&#x200B;选项卡，他们可以在其中查看和管理组织的沙盒。 有关如何在UI中使用沙盒的更多信息，请参阅[沙盒用户指南](ui/overview.md)。
+在[Experience Platform用户界面](https://platform.adobe.com)中，用户可以使用屏幕左上角的&#x200B;**沙盒切换器**&#x200B;控件在它们有权访问的沙盒之间切换。  具有沙盒管理权限的用户还可以访问左侧导航中的&#x200B;**[!UICONTROL 沙盒]**&#x200B;选项卡，他们可以在其中查看和管理组织的沙盒。 有关如何在UI中使用沙盒的更多信息，请参阅[沙盒用户指南](ui/overview.md)。
 
-## Experience PlatformAPI中的沙盒
+## Experience Platform API中的沙盒
 
-调用Experience PlatformAPI时，必须在标头`x-sandbox-name`下提供沙盒名称。 例如，在调用[[!DNL Catalog Service API]](https://www.adobe.io/experience-platform-apis/references/catalog/)以查看生产沙盒内的所有数据集时，沙盒的名称(“prod”)作为API请求中的标头提供：
+调用Experience Platform API时，必须在标头`x-sandbox-name`下提供沙盒名称。 例如，在调用[[!DNL Catalog Service API]](https://www.adobe.io/experience-platform-apis/references/catalog/)以查看生产沙盒内的所有数据集时，沙盒的名称(“prod”)作为API请求中的标头提供：
 
 ```shell
 curl -X GET \
@@ -80,4 +80,4 @@ curl -X GET \
 
 通过阅读本文档，您已了解有关Experience Platform中沙盒的基本概念。 有关如何管理沙盒的详细步骤，请参阅UI的[用户指南](ui/overview.md)或API的[开发人员指南](./api/getting-started.md)。
 
-虽然沙盒是一种用于为开发团队隔离平台环境的有用工具，但您也可以使用Adobe Admin Console管理更精细的访问控制。 有关详细信息，请参阅[访问控制概述](../access-control/home.md)。
+虽然沙盒是一种用于为开发团队隔离Experience Platform环境的有用工具，但您也可以使用Adobe Admin Console管理更精细的访问控制。 有关详细信息，请参阅[访问控制概述](../access-control/home.md)。

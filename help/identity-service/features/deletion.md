@@ -2,10 +2,10 @@
 title: Identity Service中的删除
 description: 本文档概述了可用于在Experience Platform中删除身份数据的各种机制，并阐明身份图形可能受到哪些影响。
 exl-id: 0619d845-71c1-4699-82aa-c6436815d5b3
-source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1198'
-ht-degree: 0%
+source-wordcount: '1201'
+ht-degree: 1%
 
 ---
 
@@ -31,13 +31,13 @@ Adobe Experience Platform Identity Service通过确定性地关联个人跨设�
 
 ## 单个身份删除
 
-通过单个身份删除请求可以删除图形中的身份，从而删除与与身份命名空间关联的单个用户身份关联的链接。 您可以将[Privacy Service](../../privacy-service/home.md)提供的机制用于用户案例，例如客户请求删除数据以及遵守《通用数据保护条例》(GDPR)等隐私法规。
+通过单个身份删除请求可以删除图形中的身份，从而删除与与身份命名空间关联的单个用户身份关联的链接。 您可以将[Privacy Service](../../privacy-service/home.md)提供的机制用于用例，例如客户请求删除数据以及遵守《通用数据保护条例》(GDPR)等隐私法规。
 
-以下各节概述了可用于Experience Platform中单个身份删除请求的机制。
+以下各节概述了可以在Experience Platform中用于单个身份删除请求的机制。
 
 ### 在Privacy Service中删除单个身份
 
-Privacy Service会处理客户访问、选择退出销售或删除其个人数据的请求，这些请求由隐私法规(例如，《通用数据保护条例》(GDPR)和《加州消费者隐私法案》(CCPA)来规定。 借助Privacy Service，您可以使用API或UI提交作业请求。 当Experience Platform收到来自Privacy Service的删除请求时，平台会向Privacy Service发送确认，确认请求已收到，并且受影响的数据已标记为删除。 个人身份的删除基于提供的命名空间和/或ID值。 此外，还会删除与给定组织关联的所有沙盒。 有关详细信息，请参阅Identity Service](../privacy.md)中的[隐私请求处理指南。
+Privacy Service会根据隐私法规(例如，《通用数据保护条例》(GDPR)和《加州消费者隐私法案》(CCPA))的规定，处理客户访问、选择退出销售或删除其个人数据的请求。 借助Privacy Service，您可以使用API或UI提交作业请求。 当Experience Platform收到来自Privacy Service的删除请求时，Experience Platform会向Privacy Service发送确认，确认已收到该请求并且已将受影响的数据标记为删除。 个人身份的删除基于提供的命名空间和/或ID值。 此外，还会删除与给定组织关联的所有沙盒。 有关详细信息，请参阅Identity Service](../privacy.md)中的[隐私请求处理指南。
 
 下表提供了Privacy Service中单个身份删除的划分信息：
 
@@ -56,7 +56,7 @@ Privacy Service会处理客户访问、选择退出销售或删除其个人数�
 
 ### 在目录服务中删除数据集
 
-您可以使用目录服务提交数据集删除请求。 有关如何使用目录服务删除数据集的更多信息，请阅读有关使用目录服务API [删除对象的指南](../../catalog/api/delete-object.md)。 或者，您可以使用Platform UI提交数据集删除请求。 有关详细信息，请阅读[数据集用户指南](../../catalog/datasets/user-guide.md#delete-a-dataset)。
+您可以使用目录服务提交数据集删除请求。 有关如何使用目录服务删除数据集的更多信息，请阅读有关使用目录服务API [删除对象的指南](../../catalog/api/delete-object.md)。 或者，您可以使用Experience Platform UI提交数据集删除请求。 有关详细信息，请阅读[数据集用户指南](../../catalog/datasets/user-guide.md#delete-a-dataset)。
 
 ### 数据保健中的数据集过期时间
 
@@ -66,7 +66,7 @@ Adobe Experience Platform UI中的[[!UICONTROL 数据卫生]工作区](../../hyg
 
 | 数据集删除 | 目录服务 | 数据卫生 |
 | --- | --- | --- |
-| 已接受的用例 | 删除Platform中的完整数据集及其关联的身份信息。 | 管理Experience Platform中存储的数据。 |
+| 已接受的用例 | 在Experience Platform中删除完整数据集及其关联的身份信息。 | 管理Experience Platform中存储的数据。 |
 | 估计延迟 | Days | Days |
 | 受影响的服务 | 通过目录服务删除数据集将从Identity Service、实时客户个人资料和数据湖中删除数据。 | 通过数据卫生删除数据集会从Identity Service、实时客户个人资料和数据湖中删除数据。 |
 | 删除模式 | 从由特定数据集建立的Identity Service中删除链接身份。 | 根据到期计划，从由特定数据集建立的Identity Service中删除链接身份。 |
@@ -89,7 +89,7 @@ Adobe Experience Platform UI中的[[!UICONTROL 数据卫生]工作区](../../hyg
 
 ## 后续步骤
 
-本文档介绍了可用于在Experience Platform上删除身份和数据集的各种机制。 本文档还概述了身份和数据集删除如何影响身份图。 有关Identity服务的详细信息，请阅读[Identity服务概述](../home.md)。
+本文档介绍了可用于删除Experience Platform上的身份和数据集的各种机制。 本文档还概述了身份和数据集删除如何影响身份图。 有关身份标识服务的更多信息，请参阅[身份标识服务概述](../home.md)。
 
 <!--
 
@@ -97,7 +97,7 @@ You can use [Data hygiene](../hygiene/home.md) for data cleansing, removing anon
 
 ### Single identity deletion in the [!UICONTROL Data Hygiene] workspace
 
-The [[!UICONTROL Data Hygiene] workspace](../hygiene/ui/overview.md) in the Platform UI allows you to delete consumer records that are participating in Identity Service and Real-Time Customer Profile. For a comprehensive guide on using the [!UICONTROL Data Hygiene] workspace, see the tutorial on [deleting consumer records](../hygiene/ui/record-delete.md).
+The [[!UICONTROL Data Hygiene] workspace](../hygiene/ui/overview.md) in the Experience Platform UI allows you to delete consumer records that are participating in Identity Service and Real-Time Customer Profile. For a comprehensive guide on using the [!UICONTROL Data Hygiene] workspace, see the tutorial on [deleting consumer records](../hygiene/ui/record-delete.md).
 
 The table below provides a breakdown of differences between single identity deletion in Privacy Service and Data hygiene:
 

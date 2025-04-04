@@ -1,11 +1,11 @@
 ---
-title: Adobe Experience Platform发行说明2021年11月
-description: Adobe Experience Platform 2021年11月版发行说明。
+title: Adobe Experience Platform 发行说明（2021 年 11 月）
+description: Adobe Experience Platform 2021 年 11 月发行说明。
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '776'
-ht-degree: 20%
+source-wordcount: '781'
+ht-degree: 23%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 20%
 
 ## 新增功能
 
-Adobe Experience Platform中的新增功能：
+Adobe Experience Platform 的新功能：
 
 - [Real-Time Customer Data Platform B2B 版](#B2B)
 - [(Beta)通过临时激活API将受众区段激活到批处理目标](#ad-hoc-activation)
@@ -31,9 +31,9 @@ Adobe Experience Platform 中现有功能的更新：
 
 **发行日期： 2021年11月12日**
 
-Real-Time CDP B2B 版本基于 Real-Time Customer Data Platform (Real-Time CDP) 构建，专为采用业务对业务服务模式运营的营销人员而构建。它将来自多个来源的数据汇集在一起&#x200B;，并将其组合成人员和帐户配置文件的单一视图。这种统一的数据使营销人员能够精确定位特定受众，并通过所有可用渠道吸引这些受众。
+Real-Time CDP B2B 版本基于 Real-Time Customer Data Platform (Real-Time CDP) 构建，专为采用业务对业务服务模式运营的营销人员而构建。它将来自多个来源的数据汇集在一起&#x200B;，并将其组合成人员和帐户轮廓的单一视图。这种统一的数据使营销人员能够精确锁定特定受众，并通过所有可用渠道吸引这些受众。
 
-Adobe Experience Platform的各项功能都有改进，可将Real-Time CDP B2B版本与其对应版本B2C区分开来。 其中包括改进用于B2B用例的Experience Data Model (XDM)，升级身份解析和用户档案分段，以及自定义的连接器和用于Marketo Engage的目标。 Marketo连接器允许B2B品牌将其行业领先的B2B参与数据与行为信息连接起来，以培育潜在客户并加强基于帐户的营销运营。
+Adobe Experience Platform的各项功能都有改进，可将Real-Time CDP B2B edition与其B2C对应功能区分开来。 其中包括改进用于B2B用例的体验数据模型(XDM)、升级身份解析和用户档案分段，以及适用于Marketo Engage的自定义连接器和目标。 Marketo连接器允许B2B品牌将其行业领先的B2B参与数据与行为信息连接起来，以培育潜在客户并加强基于帐户的营销运营。
 
 -[新的B2B和B2P版本](#editions)
 -[新的Marketo数据源和目标连接器](#marketo)
@@ -41,13 +41,13 @@ Adobe Experience Platform的各项功能都有改进，可将Real-Time CDP B2B�
 
 ### 新的B2B和B2P版本 {#editions}
 
-现已推出新的B2B和B2P版本，这些版本将B2B数据和功能引入Real-Time CDP和Platform Activation产品中，可供购买。
+现已推出新的B2B和B2P版本，这些版本将B2B数据和功能引入Real-Time CDP和Experience Platform激活产品，可供您购买。
 
-要了解有关Real-Time CDP B2B版本的更多信息，请参阅[概述](../../rtcdp/overview.md)。
+要进一步了解Real-Time CDP B2B edition，请参阅[概述](../../rtcdp/overview.md)。
 
 ### 新的Marketo数据源和目标连接器 {#marketo}
 
-新的Marketo数据源和目标连接器可将Marketo数据流式传输到Platform，并将Platform受众返回到Marketo。 适用于所有Platform用户。
+新的Marketo数据源和目标连接器可将Marketo数据流式传输到Experience Platform，并将Experience Platform受众返回到Marketo。 适用于所有Experience Platform用户。
 
 | 功能 | 描述 |
 |----------|-------------|
@@ -56,13 +56,13 @@ Adobe Experience Platform的各项功能都有改进，可将Real-Time CDP B2B�
 
 ### 标准B2B XDM {#XDM}
 
-标准B2B XDM类、字段组和数据类型适用于所有Platform用户。
+标准B2B XDM类、字段组和数据类型适用于所有Experience Platform用户。
 
 | 功能 | 描述 |
 |-----------|--------------|
-| 标准B2B XDM类 | Real-time Customer Data Platform B2B版本提供了多个标准XDM，用于捕获有关基本B2B数据实体（如客户、机会、活动等）的详细信息。 |
+| 标准B2B XDM类 | Real-Time Customer Data Platform B2B edition提供了多个标准XDM，可捕获有关基本B2B数据实体（如帐户、机会、营销活动等）的详细信息。 |
 
-请参阅Real-time Customer Data Platform B2B版本](../../rtcdp/schemas/b2b.md)中的[架构文档，了解有关捕获B2B数据实体的更多信息。
+请参阅Real-Time Customer Data Platform B2B edition中的[架构](../../rtcdp/schemas/b2b.md)文档，了解有关捕获B2B数据实体的更多信息。
 
 ### (Beta)通过临时激活API将受众区段激活到批处理目标 {#ad-hoc-activation}
 
@@ -74,14 +74,14 @@ Attribution AI 用于将点数归因于导致转化事件的接触点。营销�
 
 | 功能 | 描述 |
 |-----------|---------------|
-| 支持多个数据集 | Attribution AI现在可以直接在UI中轻松摄取多个数据集，而无需映射和拼合每个数据集。 这项新的省时功能通过来自多个数据集的更丰富数据提供了更强大且更准确的分数。 |
-| 媒体渠道和营销活动字段映射 | Attribution AI现在支持映射媒体渠道和营销活动字段。 数据集之间的媒体渠道映射可改进从Attribution AI推导出的见解，并帮助提供更清晰、易于解释的结果。 |
+| 支持多个数据集 | 归因人工智能现在可以轻松地直接在UI中摄取多个数据集，而无需映射和拼合每个数据集。 这项新的省时功能通过来自多个数据集的更丰富数据提供了更强大且更准确的分数。 |
+| 媒体渠道和营销活动字段映射 | Attribution AI现在支持映射媒体渠道和活动字段。 数据集之间的媒体渠道映射改进了从Attribution AI派生的见解，并帮助提供更清晰且易于解释的结果。 |
 
-有关Attribution AI的详细信息，请参阅[Attribution AI文档](../../intelligent-services/attribution-ai/overview.md)。
+有关归因人工智能的更多信息，请参阅[归因人工智能文档](../../intelligent-services/attribution-ai/overview.md)。
 
 ### 客户人工智能 {#customer-ai}
 
-Real-time Customer Data Platform中提供的客户人工智能，用于生成自定义倾向分数，例如大规模单个用户档案的流失和转化率。 这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
+Real-Time Customer Data Platform中提供的客户人工智能，用于生成自定义倾向分数，例如大规模单个用户档案的流失和转化率。 这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
 
 **更新的功能**
 

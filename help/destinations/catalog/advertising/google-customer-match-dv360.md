@@ -3,10 +3,10 @@ title: Google客户匹配+显示和视频360连接
 description: 借助Google Customer Match + Display & Video 360目标连接器，您可以使用Experience Platform中的在线和离线数据在Google自有和运营的资产(如Search、Shopping、Gmail和YouTube)中与客户联系并重新互动。
 badgeBeta: label="Beta 版" type="Informative"
 exl-id: f6da3eae-bf3f-401a-99a1-2cca9a9058d2
-source-git-commit: 27802292a7a06f2edaea9efc39d4a63507e0e7e1
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1999'
-ht-degree: 1%
+ht-degree: 4%
 
 ---
 
@@ -20,7 +20,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->此目标连接器为测试版，仅向部分客户提供。 要请求获取访问权限，请联系您的Adobe代表。
+>此目标连接器处于测试阶段，仅提供给特定客户。要请求访问权限，请与 Adobe 代表联系。
 
 Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/help/destinations/assets/catalog/advertising/gcm-dv360/catalog.png)
 
@@ -30,11 +30,11 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 >
 > Google将发布对[Google Ads API](https://developers.google.com/google-ads/api/docs/start)、[Customer Match](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html)和[Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview)的更改，以支持欧盟（[EU用户同意政策](https://www.google.com/about/company/user-consent-policy/)）中[Digital Markets Act](https://digital-markets-act.ec.europa.eu/index_en) (DMA)定义的合规性和同意相关要求。 自2024年3月6日起，将开始实施对同意要求的这些更改。
 ><br/>
->为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为Google合作伙伴，Adobe会为您提供在欧洲的DMA中遵守这些同意要求的必要工具。
+>为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为 Google 合作伙伴，Adobe 为您提供必要的工具，以遵守欧盟 DMA 下的这些同意要求。
 ><br/>
->购买AdobePrivacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未同意的配置文件的客户无需采取任何操作。
+>如果客户购买了Adobe Privacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未经同意的用户档案，则无需采取任何操作。
 ><br/>
->未购买AdobePrivacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/ui/segment-builder.md)中的[区段定义](../../../segmentation/home.md#segment-definitions)功能来过滤掉未经同意的用户档案，以便继续不间断地使用现有的Real-Time CDP Google目标。
+>未购买Adobe Privacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/ui/segment-builder.md)中的[区段定义](../../../segmentation/home.md#segment-definitions)功能来过滤掉未经同意的用户档案，以便继续使用现有的Real-Time CDP Google目标而不中断。
 
 ## 何时使用此目标
 
@@ -50,13 +50,13 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 
 ### 用例#1
 
-运动服装品牌希望通过[!DNL Google Search]和[!DNL Google Shopping]联系现有客户，以根据优惠和项目的过去购买和浏览历史记录对其进行个性化设置。 服装品牌可以从自己的CRM中摄取电子邮件地址以进行Experience Platform，并从自己的离线数据中构建受众。 然后，他们可以将这些受众发送到[!DNL Google Customer Match + Display & Video 360]目标，以在[!DNL Google Display & Video 360]属性（如[!DNL Search]、[!DNL YouTube]、[!DNL Gmail]和[!DNL Google Display Network]）中使用。
+运动服装品牌希望通过[!DNL Google Search]和[!DNL Google Shopping]联系现有客户，以根据优惠和项目的过去购买和浏览历史记录对其进行个性化设置。 服装品牌可以从自己的CRM中将电子邮件地址摄取到Experience Platform，并从自己的离线数据中构建受众。 然后，他们可以将这些受众发送到[!DNL Google Customer Match + Display & Video 360]目标，以在[!DNL Google Display & Video 360]属性（如[!DNL Search]、[!DNL YouTube]、[!DNL Gmail]和[!DNL Google Display Network]）中使用。
 
 ### 用例#2
 
 一家知名科技公司发布了一款新手机。 为了推广这种新手机型号，他们正寻求让拥有旧款手机的客户了解手机的新特性和功能。
 
-为了提升版本，客户需要使用电子邮件地址作为标识符，将电子邮件地址从CRM数据库上传到Experience Platform中。 受众是基于拥有旧版手机模型的客户创建的。 然后，受众会被发送到[!DNL Google Customer Match]，以便公司可以定位当前客户、拥有旧手机型号的客户以及具有[!DNL Google Display & Video 360]属性（如[!DNL Search]、[!DNL YouTube]、[!DNL Gmail]和[!DNL Google Display Network]）的类似客户。
+为了提升此版本，客户需要使用电子邮件地址作为标识符，将电子邮件地址从CRM数据库上传到Experience Platform。 受众是基于拥有旧版手机模型的客户创建的。 然后，受众会被发送到[!DNL Google Customer Match]，以便公司可以定位当前客户、拥有旧手机型号的客户以及具有[!DNL Google Display & Video 360]属性（如[!DNL Search]、[!DNL YouTube]、[!DNL Gmail]和[!DNL Google Display Network]）的类似客户。
 
 ## 支持的身份 {#supported-identities}
 
@@ -64,8 +64,8 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| phone_sha256_e.164 | E164格式的电话号码，使用SHA256算法进行哈希处理 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电话号码。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。 |
-| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。 |
+| phone_sha256_e.164 | E164格式的电话号码，使用SHA256算法进行哈希处理 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电话号码。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
+| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
 
 {style="table-layout:auto"}
 
@@ -83,8 +83,8 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -95,13 +95,13 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
 | 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出具有[!DNL Google Customer Match]目标中使用的标识符（姓名、电话号码等）的受众的所有成员。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
 ## [!DNL Google Customer Match]帐户先决条件 {#google-account-prerequisites}
 
-在Experience Platform中设置[!DNL Google Customer Match]目标之前，请确保已阅读并遵循Google关于使用[!DNL Customer Match]的策略，该策略在[Google支持文档](https://support.google.com/google-ads/answer/6299717)中概述。
+在Experience Platform中设置[!DNL Google Customer Match]目标之前，请确保已阅读并遵守Google关于使用[!DNL Customer Match]的策略，如[Google支持文档](https://support.google.com/google-ads/answer/6299717)中所述。
 
 接下来，确保为您的[!DNL Google]帐户配置了[!DNL Standard]或更高权限级别。 有关详细信息，请参阅[Google广告文档](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1)。
 
@@ -121,8 +121,8 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 
 在[!DNL Google Customer Match]中激活电话号码的方法有两种：
 
-* **摄取原始电话号码**：您可以将[!DNL E.164]格式的原始电话号码摄取到[!DNL Platform]，激活时会自动对其进行哈希处理。 如果选择此选项，请确保始终将原始电话号码摄取到`Phone_E.164`命名空间。
-* **正在引入经过哈希处理的电话号码**：您可以在引入到[!DNL Platform]之前对电话号码进行预哈希处理。 如果选择此选项，请确保始终将经过哈希处理的电话号码摄取到`PHONE_SHA256_E.164`命名空间。
+* **摄取原始电话号码**：您可以将[!DNL E.164]格式的原始电话号码摄取到[!DNL Experience Platform]，激活时会自动对其进行哈希处理。 如果选择此选项，请确保始终将原始电话号码摄取到`Phone_E.164`命名空间。
+* **正在引入经过哈希处理的电话号码**：您可以在引入到[!DNL Experience Platform]之前对电话号码进行预哈希处理。 如果选择此选项，请确保始终将经过哈希处理的电话号码摄取到`PHONE_SHA256_E.164`命名空间。
 
 >[!NOTE]
 >
@@ -130,7 +130,7 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 
 ### 电子邮件哈希处理要求 {#hashing-requirements}
 
-您可以在将电子邮件地址摄取到Adobe Experience Platform之前对其进行哈希处理，或者在Experience Platform中使用清晰的电子邮件地址，并在激活时对其进行[!DNL Platform]哈希处理。
+您可以在将电子邮件地址摄取到Adobe Experience Platform之前对其进行哈希处理，或者在Experience Platform中明确使用电子邮件地址，并在激活时对其进行[!DNL Experience Platform]哈希处理。
 
 有关Google的哈希要求和其他激活限制的详细信息，请参阅Google文档中的以下部分：
 
@@ -148,9 +148,9 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 
 Before you can use the `User_ID` namespace to send data to Google, make sure you synchronize your own identifiers using [!DNL gTag]. Refer to the [Google official documentation](https://support.google.com/google-ads/answer/9199250) for detailed information. -->
 
-<!-- Data from unhashed namespaces is automatically hashed by [!DNL Platform] upon activation.
+<!-- Data from unhashed namespaces is automatically hashed by [!DNL Experience Platform] upon activation.
 
-Attribute source data is not automatically hashed. When your source field contains unhashed attributes, check the **[!UICONTROL Apply transformation]** option, to have [!DNL Platform] automatically hash the data on activation.
+Attribute source data is not automatically hashed. When your source field contains unhashed attributes, check the **[!UICONTROL Apply transformation]** option, to have [!DNL Experience Platform] automatically hash the data on activation.
 ![Identity mapping transformation](../../assets/ui/activate-destinations/identity-mapping-transformation.png) -->
 
 <!-- ## Configure destination - video walkthrough {#video}
@@ -206,9 +206,9 @@ For details on how to find the [!DNL App ID], refer to the [Google official docu
 选择源字段：
 
 * 如果您使用的电子邮件地址未经过哈希处理，请选择`Email`命名空间作为源标识。
-* 如果您根据[!DNL Google Customer Match] [电子邮件哈希处理要求](#hashing-requirements)将数据摄取到[!DNL Platform]时已将客户电子邮件地址哈希处理，请选择`Email_LC_SHA256`命名空间作为源标识。
-* 如果您的数据由非散列电话号码组成，请选择`PHONE_E.164`命名空间作为源标识。 [!DNL Platform]将散列电话号码以符合[!DNL Google Customer Match]要求。
-* 如果您根据[!DNL Facebook] [电话号码散列要求](#phone-number-hashing-requirements)将数据提取到[!DNL Platform]中时散列电话号码，请选择`Phone_SHA256_E.164`命名空间作为源标识。
+* 如果您根据[!DNL Google Customer Match] [电子邮件哈希处理要求](#hashing-requirements)将数据摄取到[!DNL Experience Platform]时已将客户电子邮件地址哈希处理，请选择`Email_LC_SHA256`命名空间作为源标识。
+* 如果您的数据由非散列电话号码组成，请选择`PHONE_E.164`命名空间作为源标识。 [!DNL Experience Platform]将散列电话号码以符合[!DNL Google Customer Match]要求。
+* 如果您根据[!DNL Facebook] [电话号码散列要求](#phone-number-hashing-requirements)将数据提取到[!DNL Experience Platform]中时散列电话号码，请选择`Phone_SHA256_E.164`命名空间作为源标识。
 
 选择目标字段：
 
@@ -217,9 +217,9 @@ For details on how to find the [!DNL App ID], refer to the [Google official docu
 
 ![在激活工作流的“映射”步骤中显示的源字段和目标字段之间的标识映射。](../../assets/catalog/advertising/google-customer-match-dv360/identity-mapping-gcm-dv360.png)
 
-来自未经过哈希处理的命名空间的数据在激活时会由[!DNL Platform]自动进行哈希处理。
+来自未经过哈希处理的命名空间的数据在激活时会由[!DNL Experience Platform]自动进行哈希处理。
 
-属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。
+属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。
 
 ![应用激活工作流的映射步骤中突出显示的转换控件。](../../assets/catalog/advertising/google-customer-match-dv360/transformation.png)
 
@@ -227,15 +227,15 @@ For details on how to find the [!DNL App ID], refer to the [Google official docu
 
 连接到目标并建立目标数据流后，您可以使用Real-Time CDP中的[监视功能](/help/dataflows/ui/monitor-destinations.md)获取有关在每次数据流运行中激活到目标的配置文件记录的更多信息。
 
-[!DNL Google Customer Match + Display & Video 360]连接的监视信息包括与每个数据流和数据流运行中激活、排除和失败的身份相关的受众级别信息。 [阅读有关功能的更多信息](/help/dataflows/ui/monitor-destinations.md#segment-level-view)。
+[!DNL Google Customer Match + Display & Video 360]连接的监视信息包括与每个数据流和数据流运行中激活、排除和失败的身份相关的受众级别信息。 [参阅更多](/help/dataflows/ui/monitor-destinations.md#segment-level-view)关于该功能的信息。
 
 ## 验证受众激活是否成功 {#verify-activation}
 
 完成激活流程后，切换到您的&#x200B;**[!UICONTROL Google Ads]**&#x200B;帐户。 激活的受众在您的Google帐户中显示为客户列表。 根据您的受众规模，除非有1000多个活动用户可提供服务，否则不会填充某些受众。 在[Google Audience Partner文档](https://developers.google.com/audience-partner/api/docs/customer-match/get-started#verify-list)中查找更多信息。 请注意，您需要向Google请求获取对链接中文档的访问权限。
 
-## 数据管理
+## 数据治理
 
-Experience Platform中的一些目标对于发送到目标平台或从目标平台接收的数据具有某些规则和义务。 您有责任了解数据的限制和义务，以及如何在Adobe Experience Platform和目标平台中使用该数据。 Adobe Experience Platform提供数据治理工具，帮助您管理其中一些数据使用义务。 [了解有关Data Governance工具和策略的更多信息](../../../data-governance/labels/overview.md)。
+Experience Platform中的某些目标对于发送到目标平台或从目标平台接收的数据具有某些规则和义务。 您有责任了解数据的限制和义务，以及如何在Adobe Experience Platform和目标平台中使用该数据。 Adobe Experience Platform提供数据治理工具，帮助您管理其中一些数据使用义务。 [了解有关Data Governance工具和策略的更多信息](../../../data-governance/labels/overview.md)。
 
 ## 故障排除 {#troubleshooting}
 

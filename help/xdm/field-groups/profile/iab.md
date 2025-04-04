@@ -4,9 +4,9 @@ solution: Experience Platform
 title: IAB TCF 2.0配置文件架构的同意字段组
 description: 了解XDM Individual Profile类的IAB TCF 2.0同意架构字段组。
 exl-id: 52a4fee8-d7f4-4f27-8e26-0c132985eb84
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '321'
+source-wordcount: '322'
 ht-degree: 1%
 
 ---
@@ -50,7 +50,7 @@ ht-degree: 1%
 }
 ```
 
-如示例所示，`xdm:identityPrivacyInfo`的每个根级别键均与标识服务识别的标识命名空间相对应。 反过来，每个命名空间属性必须至少有一个子属性，其键与该命名空间对应的客户标识值匹配。 在此示例中，客户的Experience CloudID (`ECID`)值为`13782522493631189`。
+如示例所示，`xdm:identityPrivacyInfo`的每个根级别键均与标识服务识别的标识命名空间相对应。 反过来，每个命名空间属性必须至少有一个子属性，其键与该命名空间对应的客户标识值匹配。 在此示例中，客户的Experience Cloud ID (`ECID`)值为`13782522493631189`。
 
 >[!NOTE]
 >
@@ -58,7 +58,7 @@ ht-degree: 1%
 
 对于每个标识值，必须提供`identityIABConsent`属性，该属性为标识提供TCF同意值。 此属性的值必须符合[[!UICONTROL 同意字符串]数据类型](../../data-types/consent-string.md)。
 
-有关此字段组用例的更多信息，请参阅Platform](../../../landing/governance-privacy-security/consent/iab/overview.md)中支持[IAB TCF 2.0的指南。 有关字段组本身的更多详细信息，请参阅公共XDM存储库：
+有关此字段组用例的更多信息，请参阅Experience Platform](../../../landing/governance-privacy-security/consent/iab/overview.md)中支持[IAB TCF 2.0的指南。 有关字段组本身的更多详细信息，请参阅公共XDM存储库：
 
 * [填充示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-privacy.example.1.json)
 * [完整架构](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-privacy.schema.json)

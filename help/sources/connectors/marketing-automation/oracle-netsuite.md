@@ -1,12 +1,12 @@
 ---
-title: oracleNetSuite Source概述
-description: 了解如何使用API或用户界面将OracleNetSuite连接到Adobe Experience Platform。
+title: Oracle NetSuite Source概述
+description: 了解如何使用API或用户界面将Oracle NetSuite连接到Adobe Experience Platform。
 last-substantial-update: 2024-01-30T00:00:00Z
 badge: Beta 版
 exl-id: 1dd30660-c990-4d3f-a64f-2a17e426f56d
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '748'
+source-wordcount: '756'
 ht-degree: 2%
 
 ---
@@ -17,13 +17,13 @@ ht-degree: 2%
 >
 >[!DNL Oracle NetSuite]源为测试版。 有关使用测试版标记源的更多信息，请阅读[源概述](../../home.md#terms-and-conditions)。
 
-Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
+Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。 您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
 
-Experience Platform为第三方营销自动化系统提供数据提取支持。 对营销自动化提供商的支持包括[!DNL Oracle NetSuite]。
+Experience Platform为引入数据第三方营销自动化系统提供支持。 对营销自动化提供商的支持包括[!DNL Oracle NetSuite]。
 
 [[!DNL Oracle NetSuite]](https://www.netsuite.com/)是基于云的业务管理套件，包括ERP/财务、CRM和电子商务解决方案。
 
-您可以使用两个不同的源从[!DNL Oracle NetSuite]中摄取数据以Experience Platform：
+您可以使用两个不同的源将数据从[!DNL Oracle NetSuite]摄取到Experience Platform：
 
 * 使用[!DNL Oracle NetSuite Activities]源摄取事件数据。
 * 使用[!DNL Oracle NetSuite Entities]源摄取客户和联系人数据。
@@ -34,7 +34,7 @@ Experience Platform为第三方营销自动化系统提供数据提取支持。 
 | --- | --- | --- |
 | [[!DNL Oracle NetSuite Activities]](#oracle-netsuite-activities) | 活动 | 检索添加到日历中的计划活动。 |
 | [[!DNL Oracle NetSuite Entities]](#oracle-netsuite-entities) | 客户 | 检索特定的客户数据，包括客户名称、地址和关键标识符等详细信息。 |
-| [[!DNL Oracle NetSuite Entities]](#oracle-netsuite-entities) | 联系人 | 检索联系人姓名、电子邮件、电话号码以及与客户关联的任何自定义联系人相关字段。 |
+| [[!DNL Oracle NetSuite Entities]](#oracle-netsuite-entities) | 联系 | 检索联系人姓名、电子邮件、电话号码以及与客户关联的任何自定义联系人相关字段。 |
 
 ## IP地址允许列表 {#ip-allow-list}
 
@@ -42,7 +42,7 @@ Experience Platform为第三方营销自动化系统提供数据提取支持。 
 
 ## 先决条件 {#prerequisites}
 
-在将[!DNL Oracle NetSuite]数据引入Experience Platform之前，您必须首先确保具有以下各项：
+在将[!DNL Oracle NetSuite]数据带入Experience Platform之前，您必须首先确保您具备以下条件：
 
 * **帐户[!DNL Oracle NetSuite]**。
    * 如果您还没有有效的帐户，请联系[[!DNL Oracle NetSuite]](https://www.NetSuite.com/portal/company/contactus.shtml)。
@@ -58,7 +58,7 @@ Experience Platform为第三方营销自动化系统提供数据提取支持。 
 
 ### 收集所需的凭据 {#gather-credentials}
 
-为了将[!DNL Oracle NetSuite]连接到Platform，您必须提供以下连接属性的值：
+为了将[!DNL Oracle NetSuite]连接到Experience Platform，您必须提供以下连接属性的值：
 
 | 凭据 | 描述 | 示例 |
 | --- | --- | --- |
@@ -71,20 +71,20 @@ Experience Platform为第三方营销自动化系统提供数据提取支持。 
 
 >[!IMPORTANT]
 >
->刷新令牌过期后，您必须使用更新后的令牌在Experience Platform中创建新帐户。
+>刷新令牌过期后，您必须在Experience Platform中使用更新的令牌创建一个新帐户。
 
-## 将[!DNL Oracle NetSuite Activities]连接到平台 {#oracle-netsuite-activities}
+## 将[!DNL Oracle NetSuite Activities]连接到Experience Platform {#oracle-netsuite-activities}
 
-以下文档提供了有关如何使用API或用户界面将[!DNL Oracle NetSuite Activities]连接到Platform的信息：
+以下文档提供了有关如何使用API或用户界面将[!DNL Oracle NetSuite Activities]连接到Experience Platform的信息：
 
-* [创建源连接和数据流以使用API](../../tutorials/api/create/marketing-automation/oracle-netsuite-activities.md)将 [!DNL Oracle NetSuite Activities] 数据引入Platform。
-* [使用UI](../../tutorials/ui/create/marketing-automation/oracle-netsuite-activities.md)连接你的 [!DNL Oracle NetSuite Activities] 帐户以Experience Platform。
+* [创建源连接和数据流以使用API将 [!DNL Oracle NetSuite Activities] 数据引入Experience Platform](../../tutorials/api/create/marketing-automation/oracle-netsuite-activities.md)。
+* 使用UI [将您的 [!DNL Oracle NetSuite Activities] 帐户连接到Experience Platform](../../tutorials/ui/create/marketing-automation/oracle-netsuite-activities.md)。
 * [使用UI](../../tutorials/ui/dataflow/marketing-automation.md)为源连接创建数据流。
 
-## 将[!DNL Oracle NetSuite Entities]连接到平台 {#oracle-netsuite-entities}
+## 将[!DNL Oracle NetSuite Entities]连接到Experience Platform {#oracle-netsuite-entities}
 
-以下文档提供了有关如何使用API或用户界面将[!DNL Oracle NetSuite Entities]连接到Platform的信息：
+以下文档提供了有关如何使用API或用户界面将[!DNL Oracle NetSuite Entities]连接到Experience Platform的信息：
 
-* [创建源连接和数据流以使用API](../../tutorials/api/create/marketing-automation/oracle-netsuite-entities.md)将 [!DNL Oracle NetSuite Entities] 数据引入Platform。
-* [使用UI](../../tutorials/ui/create/marketing-automation/oracle-netsuite-entities.md)连接你的 [!DNL Oracle NetSuite Entities] 帐户以Experience Platform。
+* [创建源连接和数据流以使用API将 [!DNL Oracle NetSuite Entities] 数据引入Experience Platform](../../tutorials/api/create/marketing-automation/oracle-netsuite-entities.md)。
+* 使用UI [将您的 [!DNL Oracle NetSuite Entities] 帐户连接到Experience Platform](../../tutorials/ui/create/marketing-automation/oracle-netsuite-entities.md)。
 * [使用UI](../../tutorials/ui/dataflow/marketing-automation.md)为源连接创建数据流。

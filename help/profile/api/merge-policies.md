@@ -1,26 +1,26 @@
 ---
-keywords: Experience Platform；配置文件；实时客户配置文件；故障排除；API
+keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API
 title: 合并策略API端点
 type: Documentation
-description: Adobe Experience Platform允许您从多个来源将数据片段整合在一起并组合它们，以便查看每个客户的完整视图。 在汇总此数据时，合并策略是Platform用于确定数据优先顺序的规则以及将合并哪些数据以创建统一视图。
+description: Adobe Experience Platform允许您从多个来源将数据片段整合在一起并组合它们，以便查看每个客户的完整视图。 在汇总此数据时，合并策略是Experience Platform用于确定数据优先顺序的规则以及将合并哪些数据以创建统一视图。
 role: Developer
 exl-id: fb49977d-d5ca-4de9-b185-a5ac1d504970
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2465'
+source-wordcount: '2468'
 ht-degree: 1%
 
 ---
 
 # 合并策略端点
 
-Adobe Experience Platform允许您从多个来源将数据片段整合在一起并组合它们，以便查看每个客户的完整视图。 在汇总此数据时，合并策略是[!DNL Platform]用于确定数据优先顺序的规则以及将合并哪些数据以创建统一视图。
+Adobe Experience Platform允许您从多个来源将数据片段整合在一起并组合它们，以便查看每个客户的完整视图。 在汇总此数据时，合并策略是[!DNL Experience Platform]用于确定数据优先顺序的规则以及将合并哪些数据以创建统一视图。
 
-例如，如果客户跨多个渠道与您的品牌互动，则您的组织将在多个数据集中显示多个与该单个客户相关的配置文件片段。 将这些片段摄取到Platform后，会合并在一起，以便为该客户创建一个配置文件。 当来自多个源的数据发生冲突时（例如，一个片段将客户列为“单身”，而另一个片段将客户列为“已婚”），合并策略会确定要将哪些信息包含在个人的配置文件中。
+例如，如果客户跨多个渠道与您的品牌互动，则您的组织将在多个数据集中显示多个与该单个客户相关的配置文件片段。 将这些片段摄取到Experience Platform后，会合并在一起，以便为该客户创建一个配置文件。 当来自多个源的数据发生冲突时（例如，一个片段将客户列为“单身”，而另一个片段将客户列为“已婚”），合并策略会确定要将哪些信息包含在个人的配置文件中。
 
 使用RESTful API或用户界面，您可以创建新的合并策略、管理现有策略以及为组织设置默认合并策略。 本指南提供了使用API处理合并策略的步骤。
 
-要使用UI处理合并策略，请参阅[合并策略UI指南](../merge-policies/ui-guide.md)。 要了解有关合并策略的一般信息及其在Experience Platform中的角色，请从阅读[合并策略概述](../merge-policies/overview.md)开始。
+要使用UI处理合并策略，请参阅[合并策略UI指南](../merge-policies/ui-guide.md)。 要了解有关合并策略的一般信息及其在Experience Platform中的角色的更多信息，请从阅读[合并策略概述](../merge-policies/overview.md)开始。
 
 ## 快速入门
 
@@ -28,7 +28,7 @@ Adobe Experience Platform允许您从多个来源将数据片段整合在一起�
 
 ## 合并策略的组件 {#components-of-merge-policies}
 
-合并策略是贵组织专有的，允许您创建不同的策略以按照所需的特定方式合并架构。 任何访问[!DNL Profile]数据的API都需要合并策略，但如果未明确提供合并策略，则将使用默认策略。 [!DNL Platform]为组织提供默认合并策略，或者您可以为特定体验数据模型(XDM)架构类创建合并策略并将其标记为组织的默认策略。
+合并策略是贵组织专有的，允许您创建不同的策略以按照所需的特定方式合并架构。 任何访问[!DNL Profile]数据的API都需要合并策略，但如果未明确提供合并策略，则将使用默认策略。 [!DNL Experience Platform]为组织提供默认合并策略，或者您可以为特定体验数据模型(XDM)架构类创建合并策略并将其标记为组织的默认策略。
 
 虽然每个组织可能具有每个架构类的多个合并策略，但每个类只能有一个默认合并策略。 如果提供了架构类的名称，并且需要但未提供合并策略，则将使用任何设置为默认值的合并策略。
 
@@ -73,7 +73,7 @@ Adobe Experience Platform允许您从多个来源将数据片段整合在一起�
 | `name` | 在列表视图中用于标识合并策略的友好名称。 |
 | `imsOrgId` | 此合并策略所属的组织ID |
 | `schema.name` | 作为[`schema`](#schema)对象的一部分，`name`字段包含与合并策略相关的XDM架构类。 有关架构和类的详细信息，请阅读[XDM文档](../../xdm/home.md)。 |
-| `version` | [!DNL Platform]维护了合并策略的版本。 每当更新合并策略时，此只读值都会递增。 |
+| `version` | [!DNL Experience Platform]维护了合并策略的版本。 每当更新合并策略时，此只读值都会递增。 |
 | `identityGraph` | [标识图](#identity-graph)对象，指示将从其中获取相关标识的标识图。 将合并为所有相关身份找到的配置文件片段。 |
 | `attributeMerge` | [属性合并](#attribute-merge)对象，它指明在数据冲突的情况下合并策略优先处理配置文件属性的方式。 |
 | `isActiveOnEdge` | 布尔值，指示是否可在Edge上使用此合并策略。 默认情况下，此值为`false`。 |
@@ -103,7 +103,7 @@ Adobe Experience Platform允许您从多个来源将数据片段整合在一起�
     }
 ```
 
-### 身份图 {#identity-graph}
+### 身份标识图 {#identity-graph}
 
 [Adobe Experience Platform Identity Service](../../identity-service/home.md)管理[!DNL Experience Platform]上每个组织全局使用的身份图。 合并策略的`identityGraph`属性定义如何确定用户的相关标识。
 
@@ -198,7 +198,7 @@ Adobe Experience Platform允许您从多个来源将数据片段整合在一起�
 
 ### 按ID访问单一合并策略
 
-您可以通过向`/config/mergePolicies`终结点发出请求，并在请求路径中包含`mergePolicyId`，从而通过ID访问单一合并GET。
+您可以通过向`/config/mergePolicies`端点发出GET请求并在请求路径中包含`mergePolicyId`来通过单合并策略的ID访问它。
 
 **API格式**
 
@@ -249,7 +249,7 @@ curl -X GET \
 
 ### 按其ID检索多个合并策略
 
-您可以通过向`/config/mergePolicies/bulk-get`端点发出POST请求，并在请求正文中包含要检索的合并策略的ID，来检索多个合并策略。
+您可以通过向`/config/mergePolicies/bulk-get`端点发出POST请求来检索多个合并策略，并在请求正文中包含要检索的合并策略的ID。
 
 **API格式**
 
@@ -348,7 +348,7 @@ curl -X POST \
 
 ### 按条件列出多个合并策略
 
-您可以通过向`/config/mergePolicies`端点发出GET请求并使用可选的查询参数筛选、排序和分页响应来列出组织内的多个合并策略。 可以包含多个参数，以&amp;分隔。 在不使用参数的情况下对此端点进行调用将检索对您的组织可用的所有合并策略。
+您可以列出组织内的多个合并策略，方法是向`/config/mergePolicies`端点发出GET请求，并使用可选的查询参数来筛选、排序和分页响应。 可以包含多个参数，以&amp;分隔。 在不使用参数的情况下对此端点进行调用将检索对您的组织可用的所有合并策略。
 
 **API格式**
 
@@ -551,7 +551,7 @@ curl -X POST \
 
 ## 更新合并策略 {#update}
 
-您可以通过编辑单个属性（策略）或使用新属性(PATCH)覆盖整个合并PUT来修改现有合并策略。 下面显示了每种功能的示例。
+您可以通过编辑单个属性(PATCH)或使用新属性覆盖整个合并策略(PUT)来修改现有合并策略。 下面显示了每种功能的示例。
 
 ### 编辑单个合并策略字段
 
@@ -731,7 +731,7 @@ curl -X PUT \
 
 >[!NOTE]
 >
->如果合并策略的`isActiveOnEdge`设置为true，则无法删除合并策略&#x200B;****。 使用[PATCH](#edit-individual-merge-policy-fields)或[策略](#overwrite-a-merge-policy)端点更新合并PUT，然后再删除它。
+>如果合并策略的`isActiveOnEdge`设置为true，则无法删除合并策略&#x200B;****。 使用[PATCH](#edit-individual-merge-policy-fields)或[PUT](#overwrite-a-merge-policy)端点更新合并策略，然后再删除它。
 
 **API格式**
 
@@ -758,10 +758,10 @@ curl -X DELETE \
 
 **响应**
 
-成功的删除请求返回HTTP状态200 （正常）和空响应正文。 要确认删除成功，您可以执行GET请求，以按合并策略的ID查看该策略。 如果删除了合并策略，您将收到HTTP状态404（未找到）错误。
+成功的删除请求返回HTTP状态200 （正常）和空响应正文。 要确认删除成功，您可以执行GET请求以按其ID查看合并策略。 如果删除了合并策略，您将收到HTTP状态404（未找到）错误。
 
 ## 后续步骤
 
-现在您已经知道如何为组织创建和配置合并策略，可以使用这些策略调整Platform中客户配置文件的视图，并根据[!DNL Real-Time Customer Profile]数据创建受众。
+现在您已经知道如何为组织创建和配置合并策略，可以使用这些策略在Experience Platform中调整客户配置文件视图，并根据您的[!DNL Real-Time Customer Profile]数据创建受众。
 
 请参阅[Adobe Experience Platform Segmentation Service文档](../../segmentation/home.md)以开始定义和使用受众。

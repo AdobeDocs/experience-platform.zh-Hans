@@ -2,9 +2,9 @@
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK创建受众模板的API调用。
 title: 创建受众模板
 exl-id: 98d30002-d462-4008-9337-7de0cd608194
-source-git-commit: 3447a1c6959419c36fd55359496284daf90e26cf
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '622'
+source-wordcount: '623'
 ht-degree: 3%
 
 ---
@@ -256,7 +256,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/audience-t
 
 | 属性 | 类型 | 描述 |
 | -------- | ----------- | ----------- |
-| `name` | 字符串 | 目标的受众元数据模板的名称。 此名称将显示在Experience Platform用户界面中任何特定于合作伙伴的错误消息中。 |
+| `name` | 字符串 | 目标的受众元数据模板的名称。 此名称将显示在Experience Platform用户界面中的任何特定于合作伙伴的错误消息中。 |
 | `url` | 字符串 | API的URL和端点，用于创建、更新、删除或验证平台中的受众和/或数据流。 两个行业示例为：`https://adsapi.snapchat.com/v1/adaccounts/{{customerData.accountId}}/segments`和`https://api.linkedin.com/v2/dmpSegments/{{segment.alias}}`。 |
 | `httpMethod` | 字符串 | 在您的端点上使用的方法，用于以编程方式创建、更新、删除或验证目标中的受众。 例如： `POST`，`PUT`，`DELETE` |
 | `headers.header` | 字符串 | 指定应添加到API调用的任何HTTP标头。 例如：`"Content-Type"` |
@@ -281,8 +281,8 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/audience-t
 
 ## API错误处理
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅平台疑难解答指南中的[API状态代码](../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../landing/troubleshooting.md#request-header-errors)。
+Destination SDK API端点遵循常规Experience Platform API错误消息原则。 请参阅Experience Platform疑难解答指南中的[API状态代码](../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤
 
-阅读本文档后，您现在知道何时使用受众模板以及如何使用`/authoring/audience-templates` API端点配置受众模板。 阅读[如何使用Destination SDK配置目标](../guides/configure-destination-instructions.md)，以了解此步骤在配置目标的过程中所处的位置。
+阅读本文档后，您现在知道何时使用受众模板以及如何使用`/authoring/audience-templates` API端点配置受众模板。 阅读[如何使用Destination SDK配置您的目标](../guides/configure-destination-instructions.md)，以了解此步骤在配置目标的过程中所处的位置。

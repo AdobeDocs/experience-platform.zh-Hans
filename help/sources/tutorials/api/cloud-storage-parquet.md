@@ -5,7 +5,7 @@ title: 使用流服务API从第三方云存储系统摄取Parquet数据
 type: Tutorial
 description: 本教程使用流服务API来指导您完成从第三方云存储系统摄取Apache Parquet数据的步骤。
 exl-id: fb1b19d6-16bb-4a5f-9e81-f537bac95041
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1088'
 ht-degree: 9%
@@ -22,8 +22,8 @@ ht-degree: 9%
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-- [源](../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。
-- [沙盒](../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+- [源](../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强传入数据。
+- [沙盒](../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了使用[!DNL Flow Service] API从第三方云存储中成功摄取Parquet数据所需了解的其他信息。
 
@@ -33,23 +33,23 @@ ht-degree: 9%
 
 ### 收集所需标头的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+要调用[!DNL Experience Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
 - `x-gw-ims-org-id: {ORG_ID}`
 
-[!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都被隔离到特定的虚拟沙盒中。 对[!DNL Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
+[!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都被隔离到特定的虚拟沙盒中。 对[!DNL Experience Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 - `x-sandbox-name: {SANDBOX_NAME}`
 
-所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
+所有包含有效负载(POST、PUT、PATCH)的请求都需要一个额外的媒体类型标头：
 
 - `Content-Type: application/json`
 
 ## 创建连接
 
-要使用[!DNL Platform] API摄取Parquet数据，您必须对要访问的第三方云存储源具有有效连接。 如果您尚未与要使用的存储建立连接，则可通过以下教程创建一个连接：
+要使用[!DNL Experience Platform] API摄取Parquet数据，您必须对要访问的第三方云存储源具有有效连接。 如果您尚未与要使用的存储建立连接，则可通过以下教程创建一个连接：
 
 - [Amazon S3](./create/cloud-storage/s3.md)
 - [Azure Blob](./create/cloud-storage/blob.md)
@@ -61,7 +61,7 @@ ht-degree: 9%
 
 ## 创建目标架构
 
-为了在[!DNL Platform]中使用源数据，还必须创建目标架构以根据您的需求构建源数据。 然后使用目标架构创建包含源数据的[!DNL Platform]数据集。
+为了在[!DNL Experience Platform]中使用源数据，还必须创建目标架构以根据您的需求构建源数据。 然后使用目标架构创建包含源数据的[!DNL Experience Platform]数据集。
 
 如果您希望在[!DNL Experience Platform]中使用用户界面，[架构编辑器教程](../../../xdm/tutorials/create-schema-ui.md)提供了在架构编辑器中执行类似操作的分步说明。
 
@@ -198,7 +198,7 @@ curl -X POST \
 
 ## 创建源连接 {#source}
 
-创建目标XDM架构后，现在可以使用对[!DNL Flow Service] API的POST请求创建源连接。 源连接包括API连接、源数据格式以及对上一步中检索到的目标XDM架构的引用。
+在创建目标XDM架构后，现在可以使用对[!DNL Flow Service] API的POST请求创建源连接。 源连接包括API连接、源数据格式以及对上一步中检索到的目标XDM架构的引用。
 
 **API格式**
 
@@ -257,7 +257,7 @@ curl -X POST \
 
 ## 创建数据集基本连接
 
-为了将外部数据摄取到[!DNL Platform]，必须首先获取[!DNL Experience Platform]数据集基本连接。
+为了将外部数据摄取到[!DNL Experience Platform]，必须首先获取[!DNL Experience Platform]数据集基本连接。
 
 要创建数据集基本连接，请按照[数据集基本连接教程](./create-dataset-base-connection.md)中所述的步骤操作。
 
@@ -265,7 +265,7 @@ curl -X POST \
 
 ## 创建目标数据集
 
-可以通过向[目录服务API](https://www.adobe.io/experience-platform-apis/references/catalog/)执行POST请求，在有效负载中提供目标架构的ID来创建目标数据集。
+通过向[目录服务API](https://www.adobe.io/experience-platform-apis/references/catalog/)执行POST请求，在有效负载中提供目标架构的ID，可以创建目标数据集。
 
 **API格式**
 
@@ -371,7 +371,7 @@ curl -X POST \
 - [Source连接Id](#source)
 - [目标连接ID](#target)
 
-数据流负责从源中计划和收集数据。 您可以通过在有效负载中提供上述值时执行POST请求来创建数据流。
+数据流负责从源中计划和收集数据。 您可以通过在有效负载中提供前面提到的值时执行POST请求来创建数据流。
 
 **API格式**
 
@@ -427,7 +427,7 @@ curl -X POST \
 
 ## 后续步骤
 
-通过遵循本教程，您已创建一个源连接器，以按计划从第三方云存储系统收集Parquet数据。 下游[!DNL Platform]服务（如[!DNL Real-Time Customer Profile]和[!DNL Data Science Workspace]）现在可以使用传入数据。 有关更多详细信息，请参阅以下文档：
+通过遵循本教程，您已创建一个源连接器，以按计划从第三方云存储系统收集Parquet数据。 下游[!DNL Experience Platform]服务（如[!DNL Real-Time Customer Profile]和[!DNL Data Science Workspace]）现在可以使用传入数据。 有关更多详细信息，请参阅以下文档：
 
 - [实时客户轮廓概述](../../../profile/home.md)
 - [数据科学工作区概述](../../../data-science-workspace/home.md)

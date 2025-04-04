@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；数据质量；质量；质量；支持的验证；验证；支持的验证；
+keywords: Experience Platform；主页；热门主题；数据质量；质量；支持的验证；验证；支持的验证；
 solution: Experience Platform
 title: 数据质量
 description: 以下文档概述了Adobe Experience Platform中针对批量摄取和流式摄取支持的检查和验证行为。
 exl-id: 7ef40859-235a-4759-9492-c63e5fd80c8e
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '427'
 ht-degree: 5%
@@ -54,7 +54,7 @@ Adobe Experience Platform为通过批量摄取或流式摄取上传的任何数�
 | 数据集 | 确保指定、启用且未移除数据集。 |
 | 标头 | 确保标头已指定并且有效。 |
 
-有关[!DNL Platform]如何监视和验证数据的详细信息，请参阅[监视数据流文档](./monitor-data-ingestion.md)。
+有关[!DNL Experience Platform]如何监视和验证数据的详细信息，请参阅[监视数据流文档](./monitor-data-ingestion.md)。
 
 ## 身份值验证
 

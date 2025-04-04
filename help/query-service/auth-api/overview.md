@@ -3,9 +3,9 @@ title: 数据Distiller授权API指南
 description: 了解如何使用Data Distiller Authorization API对通过SQL的安全连接实施基于网络的IP限制。 使用此API可增强对Adobe Experience Platform数据的数据访问控制。
 role: Developer
 exl-id: bcc5ea0e-cb6d-4c7b-bf9f-a0336f76c4c8
-source-git-commit: 804eeb4ec976cf41fdd450bd8f307499c3ebae03
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '424'
+source-wordcount: '425'
 ht-degree: 2%
 
 ---
@@ -24,13 +24,13 @@ ht-degree: 2%
 
 通过下列功能，您可以定义基于IP的访问限制、监视访问尝试以及自定义查询服务的网络安全设置：
 
-- **定义基于网络的数据访问控制**：为查询服务访问指定允许的IP范围。 此限制特别适用于SQL数据库连接，包括通过Business Intelligence(BI)工具、数据库客户端或编程接口（如JDBC）建立的连接。
+- **定义基于网络的数据访问控制**：为查询服务访问指定允许的IP范围。 此限制特别适用于SQL数据库连接，包括通过Business Intelligence (BI)工具、数据库客户端或编程接口（如JDBC）建立的连接。
 - **启用全面监视和警报**：所有访问尝试（包括被拒绝的连接）都将被记录并发送到[Adobe Experience Platform审核日志](../../landing/governance-privacy-security/audit-logs/overview.md)以进行实时跟踪。 使用此功能可监控访问模式并检测潜在的安全漏洞。
 - **配置灵活的IP限制**：以单个IP和CIDR块格式指定允许的IP。 这些设置适用于每个沙盒，允许您根据特定安全需求定制网络限制。
 
 ## 审计和监测能力
 
-为了支持安全的数据访问实践，查询服务会记录所有访问或尝试访问Experience Platform的客户端IP。 审核事件（包括被拒绝的连接）将发送到Platform审核日志。 这可以启用：
+为了支持安全的数据访问实践，查询服务会记录所有访问或尝试访问Experience Platform的客户端IP。 审核事件（包括被拒绝的连接）将发送到Experience Platform审核日志。 这可以启用：
 
 - **实时监控**：跟踪基于IP的访问模式以确保法规遵从性。
 - **未授权访问警报**：识别来自未授权IP的访问尝试并做出响应。

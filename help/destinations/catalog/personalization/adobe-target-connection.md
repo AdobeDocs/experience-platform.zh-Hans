@@ -3,9 +3,9 @@ keywords: target个性化；目标；experience platform target目标；adobe ta
 title: Adobe Target连接
 description: Adobe Target是一款应用程序，可在网站、移动应用程序等的所有入站客户互动中提供由AI支持的实时个性化和实验功能。
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: 276fd7c532843c9589e1d51b0bc7a76cb5c3eb9f
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1768'
+source-wordcount: '1769'
 ht-degree: 9%
 
 ---
@@ -161,7 +161,7 @@ Adobe Experience Platform会自动连接到贵公司的Adobe Target实例。 无
 
 如果现有Adobe Target连接中的某个受众已在Adobe Target [活动](https://experienceleague.adobe.com/en/docs/target/using/activities/activities)中使用，则需要执行一些额外的步骤来删除该受众。 尝试从Adobe Target连接中删除受众时，如果Adobe Target活动使用受众，则会导致错误。
 
-![Platform UI图像显示因尝试删除Target活动使用的受众而导致的错误。](../../assets/catalog/personalization/adobe-target-connection/remove-audience-error.png)
+![Experience Platform UI图像显示因尝试删除Target活动使用的受众而导致的错误。](../../assets/catalog/personalization/adobe-target-connection/remove-audience-error.png)
 
 要在活动中使用该受众时从Target目标中删除受众，您必须首先从使用该受众的Target活动中删除该受众，或完全删除该活动。 然后，您可以从Target连接中删除受众。
 

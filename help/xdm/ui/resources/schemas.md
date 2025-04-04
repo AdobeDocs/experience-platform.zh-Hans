@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建和编辑架构
 description: 了解如何在Experience Platform用户界面中创建和编辑架构的基础知识。
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 9691ce1ca560acce7a9512df7eb92e61962bc467
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '4072'
+source-wordcount: '4075'
 ht-degree: 1%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->本节介绍如何在UI中手动创建新架构。 如果您正在将CSV数据摄取到Platform，则可以使用机器学习(ML)算法&#x200B;**从示例CSV数据生成架构**。 此工作流可匹配您的数据格式，并根据CSV文件的结构和内容自动创建新架构。 有关此工作流的详细信息，请参阅[ML辅助模式创建指南](../ml-assisted-schema-creation.md)。
+>本节介绍如何在UI中手动创建新架构。 如果您正在将CSV数据摄取到Experience Platform，则可以使用机器学习(ML)算法&#x200B;**从示例CSV数据生成架构**。 此工作流可匹配您的数据格式，并根据CSV文件的结构和内容自动创建新架构。 有关此工作流的详细信息，请参阅[ML辅助模式创建指南](../ml-assisted-schema-creation.md)。
 
 在[!UICONTROL 架构]工作区中，选择右上角的&#x200B;**[!UICONTROL 创建架构]**。
 
@@ -342,7 +342,7 @@ abstract="在为轮廓启用一个架构时，从该架构创建的任何数据�
 
 ![](../../images/ui/resources/schemas/profile-enabled.png)
 
-该架构现已启用以用于Real-time Customer Profile。 当Platform根据此架构将数据摄取到数据集时，该数据将合并到您的合并用户档案数据中。
+该架构现已启用以用于Real-time Customer Profile。 当Experience Platform将数据摄取到基于此架构的数据集时，该数据将合并到您的合并用户档案数据中。
 
 ## 编辑架构字段的显示名称 {#display-names}
 
@@ -388,7 +388,7 @@ abstract="在为轮廓启用一个架构时，从该架构创建的任何数据�
 
 ## 后续步骤 {#next-steps}
 
-本文档介绍了在Platform UI中创建和编辑架构的基础知识。 强烈建议您查看[架构创建教程](../../tutorials/create-schema-ui.md)，了解有关在UI中构建完整架构（包括创建自定义字段组和数据类型）的综合工作流 for 独特用例。
+本文档介绍了在Experience Platform UI中创建和编辑架构的基础知识。 强烈建议您查看[架构创建教程](../../tutorials/create-schema-ui.md)，了解有关在UI中构建完整架构（包括创建自定义字段组和数据类型）的综合工作流 for 独特用例。
 
 有关[!UICONTROL 架构]工作区的功能的更多信息，请参阅[[!UICONTROL 架构]工作区概述](../overview.md)。
 

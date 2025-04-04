@@ -3,18 +3,18 @@ keywords: Experience Platform；用户界面；UI；功能板；功能板；配�
 title: 标准功能板小组件
 description: 本指南提供了将标准构件添加到Adobe Experience Platform功能板的分步说明。
 exl-id: 37353e73-b207-444a-b2b5-a20a3628086b
-source-git-commit: 32dd90018c990e7013d826b29608a61022ba808b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '436'
+source-wordcount: '438'
 ht-degree: 0%
 
 ---
 
 # 将标准构件添加到仪表板
 
-在Adobe Experience Platform中，您可以使用多个功能板查看您的组织数据并与之交互。 您还可以通过向仪表板视图添加新构件来更新某些仪表板。 Adobe提供了一系列标准构件，您可以选择将其添加到功能板中。
+在Adobe Experience Platform中，您可以使用多个功能板查看您的组织数据并与之交互。 您还可以通过向仪表板视图添加新构件来更新某些仪表板。 Adobe提供了一系列标准构件，您可以选择将它们添加到功能板中。
 
-创建新平台实例时，[[!UICONTROL 配置文件]](../guides/profiles.md#default-widgets)、[[!UICONTROL 受众]](../guides/audiences.md#default-widgets)和[[!UICONTROL 目标]](../guides/destinations.md#default-widgets)功能板均具有默认小组件加载。 本指南提供了在平台UI中添加用于自定义[!UICONTROL 配置文件]、[!UICONTROL 受众]和[!UICONTROL 目标]仪表板的标准构件的分步说明。
+创建新的Experience Platform实例后，[[!UICONTROL 配置文件]](../guides/profiles.md#default-widgets)、[[!UICONTROL 受众]](../guides/audiences.md#default-widgets)和[[!UICONTROL 目标]](../guides/destinations.md#default-widgets)功能板均具有默认小组件加载。 本指南提供了在Experience Platform UI中添加标准构件以自定义[!UICONTROL 配置文件]、[!UICONTROL 受众]和[!UICONTROL 目标]功能板的分步说明。
 
 >[!NOTE]
 >
@@ -22,13 +22,13 @@ ht-degree: 0%
 
 若要了解有关自定义小组件的更多信息，请参阅[创建自定义小组件](custom-widgets.md)的指南。
 
-## 构件库 {#widget-library}
+## 小组件库 {#widget-library}
 
 本指南需要访问Experience Platform中的[!UICONTROL 构件库]。 要了解有关构件库以及如何在UI中访问它的更多信息，请从阅读[构件库概述](widget-library.md)开始。
 
 ## 标准构件快速入门 {#standard-widgets}
 
-在小组件库中，**[!UICONTROL Standard]**&#x200B;选项卡包含由Adobe创建的小组件，这些小组件根据可用的功能板划分为不同的类别。
+在小组件库中，**[!UICONTROL Standard]**&#x200B;选项卡包含Adobe创建的小组件，这些小组件根据可用的功能板划分为不同的类别。
 
 所选类别与您输入构件库的仪表板匹配。 换言之，如果您从[!UICONTROL 配置文件]仪表板中选择了Widget库，则会选择[!UICONTROL 配置文件]类别，并且其他类别将显示为灰色。
 

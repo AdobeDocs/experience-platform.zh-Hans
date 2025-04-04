@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2024 年 3 月）
 description: Adobe Experience Platform 的 2024 年 3 月发行说明。
 exl-id: cab47a76-04f3-48ec-82aa-d17645e4eb15
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
-workflow-type: ht
-source-wordcount: '1190'
-ht-degree: 100%
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+workflow-type: tm+mt
+source-wordcount: '1192'
+ht-degree: 97%
 
 ---
 
@@ -98,15 +98,15 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 功能 | 描述 |
 | --- | --- |
-| Experience Platform UI 映射数据类型支持 | 通过在 Platform UI 中定义映射字段进一步自定义您的体验数据模型（XDM）数据结构。您现在可以在 Schema Editor 中创建映射字段来建模灵活的数据结构或有效地存储键值对。定义新字段时，从类型下拉菜单中选择“映射”来配置子字段并将其分配给字段组。支持的映射值类型是字符串和整数。<br>![Schemas Editor 中类型和映射值类型字段突出显示。](../2024/assets/march/maps.png "Schemas Editor 中类型和映射值类型字段突出显示。"){width="100" zoomable="yes"}<br> 了解如何[在 UI 中定义映射字段](../../xdm/ui/fields/map.md)，请参阅 UI 指南。 |
+| Experience Platform UI 映射数据类型支持 | 通过在Experience Platform UI中定义映射字段，进一步自定义您的Experience Data Model (XDM)数据结构。 您现在可以在 Schema Editor 中创建映射字段来建模灵活的数据结构或有效地存储键值对。定义新字段时，从类型下拉菜单中选择“映射”来配置子字段并将其分配给字段组。支持的映射值类型是字符串和整数。<br>![Schemas Editor 中类型和映射值类型字段突出显示。](../2024/assets/march/maps.png "Schemas Editor 中类型和映射值类型字段突出显示。"){width="100" zoomable="yes"}<br> 了解如何[在 UI 中定义映射字段](../../xdm/ui/fields/map.md)，请参阅 UI 指南。 |
 
 {style="table-layout:auto"}
 
-有关 Platform 中 XDM 的详细信息，请查看 [XDM 系统概述](../../xdm/home.md)。
+有关Experience Platform中XDM的更多信息，请参阅[XDM系统概述](../../xdm/home.md)。
 
 ## Segmentation Service {#segmentation}
 
-[!DNL Segmentation Service] 允许您对存储在 [!DNL Experience Platform] 中的与个人（例如客户、潜在客户、用户或组织）相关的数据划分到受众区段中。您可以通过区段定义或其他源从 [!DNL Real-Time Customer Profile] 数据创建受众。这些受众在 [!DNL Platform] 上集中配置和维护，并且可以通过任何 Adobe 解决方案轻松访问。
+[!DNL Segmentation Service] 允许您对存储在 [!DNL Experience Platform] 中的与个人（例如客户、潜在客户、用户或组织）相关的数据划分到受众区段中。您可以通过区段定义或其他源从 [!DNL Real-Time Customer Profile] 数据创建受众。这些受众在 [!DNL Experience Platform] 上集中配置和维护，并且可以通过任何 Adobe 解决方案轻松访问。
 
 **新增功能**
 

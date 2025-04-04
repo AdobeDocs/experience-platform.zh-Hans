@@ -1,13 +1,13 @@
 ---
-keywords: 体验平台;朱皮特实验室;笔记本;数据科学工作区;热门话题;分析数据笔记本;埃达;探索性数据分析;数据科学
+keywords: Experience Platform；JupyterLab；笔记本；数据科学Workspace；热门主题；分析数据笔记本；eda；探索性数据分析；数据科学
 solution: Experience Platform
 title: 探索数据分析(EDA)笔记本
 type: Tutorial
 description: 本指南重点介绍如何使用探索数据分析(EDA) Notebook发现Web数据中的模式、聚合具有预测目标的事件、清除聚合数据，以及了解预测器和目标之间的关系。
 exl-id: 48209326-0a07-4b5c-8b49-a2082a78fa47
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2789'
+source-wordcount: '2790'
 ht-degree: 0%
 
 ---
@@ -20,27 +20,27 @@ ht-degree: 0%
 >
 >本文档面向之前有权访问数据科学Workspace的现有客户。
 
-探索性数据分析(EDA)笔记本旨在帮助您发现数据中的模式、检查数据完整性并总结预测模型的相关数据。
+探索数据分析(EDA)笔记本旨在帮助您发现数据模式、检查数据健全度以及总结预测模型的相关数据。
 
-EDA笔记本示例以基于Web的数据为出发点进行了优化，该示例由两部分组成。 第一部分首先使用Query Service查看趋势和数据快照。 接下来，考虑到探索性数据分析的目标，在配置文件和访问者级别聚合数据。
+针对EDA笔记本实例进行了基于Web的数据优化。 第一部分从使用查询服务查看趋势和数据快照开始。 接下来，考虑到探索性数据分析的目标，在个人资料和访客级别聚合数据。
 
 第二部分从使用Python库对聚合数据执行描述性分析开始。 此笔记本展示一些可视化图表，如直方图、散点图、方框图和关联矩阵，从中可得出可用于确定哪些功能最可能有助于预测目标的可操作洞察。
 
 ## 快速入门
 
-在阅读本指南之前，请查看用户指南](./overview.md)，[[!DNL JupyterLab] 了解数据科学工作区及其[!DNL JupyterLab]在数据科学工作区中的角色。此外，如果您使用的是自己的数据，请查看有关笔记本](./access-notebook-data.md)中 [!DNL Jupyterlab] 数据访问的文档[。本指南包含有关笔记本数据限制的重要信息。
+在阅读本指南之前，请查看[[!DNL JupyterLab] 用户指南](./overview.md)，以详细了解[!DNL JupyterLab]及其在数据科学Workspace中的角色。 此外，如果您使用自己的数据，请查阅 [!DNL Jupyterlab] 笔记本](./access-notebook-data.md)中[数据访问的文档。 本指南包含有关笔记本数据限制的重要信息。
 
-此笔记本使用Analytics Analysis Workspace中提供的Adobe Analytics Experience Events数据形式的midvalues数据集。 为了使用EDA笔记本，您需要定义数据表，使其具有下列值`target_table`和`target_table_id`。 可以使用任何midvalues数据集。
+此笔记本使用Analytics Analysis Workspace中的Adobe Analytics Experience Events数据形式的中值数据集。 要使用EDA笔记本，您需要使用以下值`target_table`和`target_table_id`定义数据表。 可以使用任何中间值数据集。
 
-要查找这些值，请按照JupyterLab数据访问指南的[写入python中的数据集](./access-notebook-data.md#write-python)部分中所述的步骤进行操作。 数据集名称(`target_table`)位于数据集目录中。 右键单击数据集以在笔记本中浏览或写入数据后，将在可执行代码项中提供数据集ID (`target_table_id`)。
+要查找这些值，请按照JupyterLab数据访问指南的[写入python中的数据集](./access-notebook-data.md#write-python)部分中所述的步骤进行操作。 数据集名称(`target_table`)位于数据集目录中。 右键单击数据集以在笔记本中浏览或写入数据后，可执行代码条目中会提供一个数据集ID (`target_table_id`)。
 
 ## 数据发现
 
-本节包含用于查看趋势的配置步骤和示例查询，例如“按用户活动排名前十的城市”或“查看次数排名前十的产品”。
+本节包含用于查看趋势（如“按用户活动划分的前十个城市”或“查看的前10个产品”）的配置步骤和示例查询。
 
-### 库的配置
+### 库配置
 
-JupyterLab支持多个库。 可以将以下代码粘贴到代码单元格中并运行，以收集和安装此示例中使用的所有必需包。 您可以在本示例之外使用其他或替代包来进行您自己的数据分析。 有关支持的包列表，请将`!pip list --format=columns`复制并粘贴到新单元格中。
+JupyterLab支持多个库。 可以在代码单元格中粘贴和运行以下代码，以收集并安装此示例中使用的所有必需包。 您可以在本示例之外使用其他或替代包进行您自己的数据分析。 有关支持的包的列表，请将`!pip list --format=columns`复制并粘贴到新单元格中。
 
 ```python
 !pip install colorama
@@ -68,28 +68,28 @@ pd.set_option('display.expand_frame_repr', False)
 pd.set_option('display.max_colwidth', -1)
 ```
 
-### 连接到 Adobe Experience Platform [!DNL Query Service]
+### 连接到Adobe Experience Platform [!DNL Query Service]
 
-[!DNL JupyterLab]on Platform 允许您在笔记本中使用 [!DNL Python] SQL 通过查询服务](https://www.adobe.com/go/query-service-home-en)访问[数据。由于其 [!DNL Query Service] 优越的运行时间，通过访问数据对于处理大型数据集非常有用。 请注意，使用 [!DNL Query Service] 查询数据的处理时间限制为十分钟。
+Experience Platform上的[!DNL JupyterLab]允许您使用[!DNL Python]笔记本中的SQL通过[查询服务](https://www.adobe.com/go/query-service-home-en)访问数据。 通过[!DNL Query Service]访问数据对于处理大型数据集很有用，因为其运行时间较长。 请注意，使用[!DNL Query Service]查询数据的处理时间限制为10分钟。
 
-在 中使用 [!DNL Query Service] 之前 [!DNL JupyterLab]， [[!DNL Query Service] 请确保您对 SQL 语法](https://www.adobe.com/go/query-service-sql-syntax-en)有一定的了解。
+在[!DNL JupyterLab]中使用[!DNL Query Service]之前，请确保您对[[!DNL Query Service] SQL语法](https://www.adobe.com/go/query-service-sql-syntax-en)有一定的了解。
 
-为了在 JupyterLab 中使用查询服务，您必须首先在工作 Python 笔记本和查询服务之间创建连接。 这可以通过执行以下单元格来实现。
+要在JupyterLab中使用查询服务，必须先在正在工作的Python笔记本和查询服务之间创建连接。 可以通过执行以下单元格来实现这一点。
 
 ```python
 qs_connect()
 ```
 
-### 定义用于探索的midvalues数据集
+### 定义用于探索的中值数据集
 
-要开始查询和浏览数据，必须提供midvalues数据集表。 复制`table_name`和`table_id`值，并将其替换为您自己的数据表值。
+要开始查询和浏览数据，必须提供中间值数据集表。 将`table_name`和`table_id`值复制并替换为您自己的数据表值。
 
 ```python
 target_table = "table_name"
 target_table_id = "table_id"
 ```
 
-完成后，此单元格应类似于以下示例：
+完成后，此单元格应该类似于以下示例：
 
 ```python
 target_table = "cross_industry_demo_midvalues"
@@ -108,13 +108,13 @@ group by Month(timestamp), Year(timestamp)
 order by Year, Month;
 ```
 
-运行单元格会产生以下输出：
+运行单元格将产生以下输出：
 
 ![查询日期输出](../images/jupyterlab/eda/query-date-output.PNG)
 
-### 配置数据集发现的日期
+### 配置数据集发现日期
 
-在确定数据集发现的可用日期后，需要更新以下参数。 此单元格中配置的日期仅用于查询形式的数据发现。 在本指南后面的探索性数据分析中，日期将再次更新到合适的范围。
+在确定数据集发现的可用日期后，需要更新以下参数。 在此单元格中配置的日期仅用于查询形式的数据发现。 日期将再次更新到适合的范围，以便在本指南的后面部分进行探索性数据分析。
 
 ```python
 target_year = "2020" ## The target year
@@ -207,7 +207,7 @@ iplot(fig)
 
 **给定日期查看的前10个页面**
 
-此查询分析给定日期查看次数最多的页面。 输出以表格的形式表示，其中包含有关页面名称和页面查看计数的指标。
+此查询分析给定日期内查看次数最多的页面。 输出以表的形式表示，表中包含有关页面名称和页面查看次数的量度。
 
 ```sql
 %%read_sql query_4_df -c QS_CONNECTION
@@ -223,7 +223,7 @@ ORDER  BY page_views DESC
 LIMIT  10;
 ```
 
-确认查询有效后，数据可以用单变量图直方图中显示，以便直观地显示。
+确认查询工作后，数据可以呈现在单变量直方图中，以便更加清晰地显示。
 
 ```python
 trace = go.Bar(
@@ -244,9 +244,9 @@ fig = go.Figure(data = [trace], layout = layout)
 iplot(fig)
 ```
 
-![查看次数前十的页面](../images/jupyterlab/eda/top-ten-viewed-pages-for-a-given-day.png)
+![查看的十大页面](../images/jupyterlab/eda/top-ten-viewed-pages-for-a-given-day.png)
 
-**按用户活动分组的前十个城市**
+**按用户活动分组的前10个城市**
 
 此查询分析数据来自哪些城市。
 
@@ -308,7 +308,7 @@ ORDER BY Total_Product_Views DESC
 LIMIT  10;
 ```
 
-在确认查询工作之后，数据可以在单变量绘图直方图中呈现，以便直观地清晰显示。
+确认查询工作后，数据可以呈现在单变量直方图中，以便更加清晰地显示。
 
 ```python
 trace = go.Bar(
@@ -329,35 +329,35 @@ fig = go.Figure(data = [trace], layout = layout)
 iplot(fig)
 ```
 
-![十大产品视图](../images/jupyterlab/eda/top-ten-viewed-products.png)
+![前10个产品查看次数](../images/jupyterlab/eda/top-ten-viewed-products.png)
 
 在探索数据的趋势和模式后，您应该清楚知道要为预测目标而构建哪些功能。 快速浏览表格可以快速突出显示每个数据属性的形式、明显的错误表示和值中的大型离群值，并开始建议候选关系以探索属性之间的关系。
 
 ## 探索性数据分析
 
-探索性数据分析用于完善您对数据的理解，并为可以用作建模基础的引人注目的问题建立直觉。
+探索性数据分析用于提高您对数据情况的了解，并帮助您直觉地回答可用作建模基础的紧迫问题。
 
-完成数据发现步骤后，您将在事件级别浏览事件级别数据以及事件、城市或用户 ID 级别的一些聚合，以查看一天的趋势。 尽管这些数据很重要，但它并不能提供全貌。 您仍然不了解是什么促使您的网站上进行了购买。
+完成数据发现步骤后，您将会在事件级别探索数据，以及事件、城市或用户ID级别的一些聚合，以查看一天内的趋势。 虽然这些数据很重要，但它并未提供完整的资料。 您仍然不了解是什么促使您在网站上进行购买。
 
-要了解这一点，您需要在配置文件/访问者级别聚合数据，定义购买目标，并应用统计概念，如相关性、框图和散点图。 这些方法用于在您定义的预测窗口中比较买方与非买方的活动模式。
+要理解这一点，您需要聚合用户档案/访客级别的数据，定义购买目标，并应用统计概念，如关联、框图和散点图。 这些方法用于在您定义的预测窗口中比较购买者与非购买者的活动模式。
 
-本节将创建并探索以下功能：
+本节将创建并探讨以下功能：
 
-- `COUNT_UNIQUE_PRODUCTS_PURCHASED`：购买的唯一产品数量。
-- `COUNT_CHECK_OUTS`：签出次数。
+- `COUNT_UNIQUE_PRODUCTS_PURCHASED`：购买的唯一产品数。
+- `COUNT_CHECK_OUTS`：结帐次数。
 - `COUNT_PURCHASES`：购买次数。
-- `COUNT_INSTANCE_PRODUCTADDS`：产品添加实例的数量。
+- `COUNT_INSTANCE_PRODUCTADDS`：产品添加实例数。
 - `NUMBER_VISITS`：访问次数。
-- `COUNT_PAID_SEARCHES`：付费搜索数。
+- `COUNT_PAID_SEARCHES`：付费搜索的次数。
 - `DAYS_SINCE_VISIT`：自上次访问以来的天数。
-- `TOTAL_ORDER_REVENUE`：订单总收入。
+- `TOTAL_ORDER_REVENUE`：总订单收入。
 - `DAYS_SINCE_PURCHASE`：自上次购买以来的天数。
 - `AVG_GAP_BETWEEN_ORDERS_DAYS`：购买之间的平均间隔（以天为单位）。
-- `STATE_CITY`：包含州和城市。
+- `STATE_CITY`：包含州和市。
 
-在继续数据聚合之前，需要定义用于探索性数据分析中的预测变量的参数。 换句话说，您希望从数据科学模型中得到什么？ 常用参数包括目标、预测周期和分析周期。
+在继续数据聚合之前，您需要定义用于探索性数据分析的预测变量的参数。 换句话说，您想要从数据科学模型中获取什么？ 常用参数包括目标、预测时段和分析时段。
 
-如果您正在使用EDA笔记本，则需要在继续之前替换以下值。
+如果您使用的是EDA笔记本，则需要在继续之前替换以下值。
 
 ```python
 goal = "commerce.`order`.purchaseID" #### prediction variable
@@ -373,7 +373,7 @@ threshold = 1
 
 ### 用于创建功能和目标的数据聚合
 
-要开始探索性分析，您需要在用户档案级别创建目标，然后聚合数据集。 在此示例中，提供了两个查询。 第一个查询包含创建目标。 第二个查询需要更新以包括除第一个查询中的变量以外的任何变量。 您可能想要更新查询的`limit`。 在执行以下查询后，聚合数据现在可用于探索。
+要开始探索性分析，您需要在用户档案级别创建目标，然后聚合数据集。 在此示例中，提供了两个查询。 第一个查询包含创建目标。 第二个查询需要更新，以包含第一个查询中的变量以外的任何变量。 您可能需要更新查询的`limit`。 在执行以下查询后，聚合数据现在可用于探索。
 
 ```sql
 %%read_sql target_df -d -c QS_CONNECTION
@@ -521,7 +521,7 @@ iplot(fig)
 
 >[!TIP]
 >
->纠正离群值需要您了解您从事的业务和行业。 有时，您不能仅仅因为观察值是异常值而放弃观察值。 异常值可以是合理的观察值，并且通常是最有趣的观察值。 要了解有关删除异常值的更多信息，请访问 [可选的数据清理步骤](#optional-data-clean)。
+>纠正离群值需要您了解您从事的业务和行业。 有时，您不能仅仅因为观察值是异常值而放弃观察值。 离群值可能是合理的观察结果，通常是最有趣的观察结果。 若要了解有关删除离群值的详细信息，请访问[可选的数据清理步骤](#optional-data-clean)。
 
 ```python
 TARGET = Data.TARGET
@@ -542,7 +542,7 @@ Outlier.columns =['Percentage_outliers']
 Outlier['Features'] = Outlier.index   
 ```
 
-与往常一样，可视化结果很重要。
+与往常一样，将结果直观地展示出来很重要。
 
 ```python
 trace = go.Bar(
@@ -562,11 +562,11 @@ fig = go.Figure(data = [trace], layout = layout)
 iplot(fig)
 ```
 
-![异常值图](../images/jupyterlab/eda/outliers.png)
+![离群值图](../images/jupyterlab/eda/outliers.png)
 
 ### 单变量分析
 
-更正数据的缺失值和异常值后，即可开始分析。 有三种类型的分析：单变量、双变量和多变量分析。 单变量分析使用单变量关系获取数据、总结和查找数据中的模式。 双变量分析一次查看多个变量，而多变量分析一次查看三个或更多变量。
+更正数据中的缺失值和离群值后，您便可以开始分析。 分析分为三类：单变量、双变量和多变量分析。 单变量分析使用单变量关系获取数据、总结和查找数据中的模式。 双变量分析一次查看多个变量，而多变量分析一次查看三个或更多变量。
 
 下面的示例生成一个表以可视化特征的分布。
 
@@ -597,9 +597,9 @@ for column in Data_numerical.columns[0:]:
 
 ![数值数据图](../images/jupyterlab/eda/univaiate-graphs.png)
 
-### 分类数据
+### 类别数据
 
-分组分类数据用于了解聚集数据的每个列及其分布中包含的值。 此示例使用前10个类别来帮助绘制分配。 必须指出的是，列中包含的数千个唯一值。 你不想让一个杂乱的阴谋变得难以辨认。 根据您的业务目标，分组数据可产生更有意义的结果。
+分组分类数据用于了解聚合数据的每个列中包含的值及其分布。 此示例使用前10个类别来帮助绘制分配。 请务必注意，列中可能包含数千个唯一值。 你不想让一个杂乱的阴谋变得难以辨认。 根据您的业务目标，分组数据可产生更有意义的结果。
 
 ```python
 Data_categorical = Data.select_dtypes(include='object')
@@ -618,9 +618,9 @@ for column in Data_categorical.columns[0:]:
 
 ![类别列](../images/jupyterlab/eda/graph-category.PNG)
 
-### 删除仅具有一个非重复值的列
+### 删除仅具有单个非重复值的列
 
-仅具有值 1 的列不会向分析添加任何信息，可以删除。
+只有值1的列不会向分析添加任何信息，并且可以删除。
 
 ```python
 for col in Data.columns:
@@ -634,14 +634,14 @@ for col in Data.columns:
             Data.drop(col,inplace=True,axis=1)
 ```
 
-删除单值列后，在新单元格中使用`Data.columns`命令检查其余列是否有任何错误。
+删除单值列后，在新单元格中使用`Data.columns`命令检查剩余列是否有任何错误。
 
 ### 更正缺少的值
 
-下一节包含一些对缺失值进行更正的示例方法。 事件，虽然在上面的数据中，只有一列缺少值，但下面这些示例单元格为所有数据类型提供了正确的值。 其中包括：
+以下部分包含一些有关更正缺少值的方法示例。 事件，尽管在上面的数据中，只有一列缺少值，但下面的示例单元格为所有数据类型都纠正了值。 这些功能包括：
 
-- 数值数据类型：输入 0 或最大值（如适用）
-- 分类数据类型：输入模态值
+- 数字数据类型：输入0或最大值（如果适用）
+- 类别数据类型：输入模式值
 
 ```python
 #### Select only numerical data
@@ -674,13 +674,13 @@ for column in Missing_cat:
     Data[column].fillna(Data[column].mode()[0], inplace=True)
 ```
 
-完成后，干净的数据就可以进行双变量分析了。
+完成后，清理的数据即可进行双变量分析。
 
-### 二元分析
+### 双变量分析
 
-二元分析用于帮助了解两组值（如特征和目标变量）之间的关系。 由于不同的图形适用于分类和数字数据类型，因此应分别针对每种数据类型进行此分析。 建议使用以下图表进行双变量分析：
+双变量分析用于帮助了解两组值（例如您的功能和目标变量）之间的关系。 由于不同的图形适用于分类和数值数据类型，因此应当为每个数据类型单独进行此分析。 建议使用下列图表进行双变量分析：
 
-- **相关性**：相关系数是两个特征之间关系强度的度量。 相关值介于–1和1之间，其中：1表示强正关系，-1表示强负关系，而结果为0则表示完全没关系。
+- **相关**：相关系数是两个特征之间关系强度的度量值。 相关值介于–1和1之间，其中：1表示强正关系，-1表示强负关系，而结果为0则表示完全没关系。
 - **对图**：对图是一种直观显示每个变量之间关系的简单方法。 它生成数据中每个变量之间的关系矩阵。
 - **热图**：热图是数据集中所有变量的相关系数。
 - **框图**：框图是一种基于五个数字汇总(最小值、第一个四分位数(Q1)、中间值、第三个四分位数(Q3)和最大值)来显示数据分布的标准化方式。
@@ -792,9 +792,9 @@ else:
 
 ![重要功能](../images/jupyterlab/eda/important-feature-model.PNG)
 
-### 示例分析
+### insight示例
 
-当您在分析数据的过程中，发现洞察是很常见的事。 以下示例是一个见解，该见解映射了目标事件的回访间隔和货币值。
+当您在分析数据的过程中，发现洞察是很常见的事。 以下示例是一个insight，它映射目标事件的回访间隔和货币值。
 
 ```python
 # Proxy for monetary value is TOTAL_ORDER_REVENUE and proxy for frequency is NUMBER_VISITS
@@ -806,7 +806,7 @@ else:
     sns.lmplot("DAYS_SINCE_VISIT", "TOTAL_ORDER_REVENUE", Data, hue="TARGET", fit_reg=False);
 ```
 
-![示例分析](../images/jupyterlab/eda/insight.PNG)
+![示例insight](../images/jupyterlab/eda/insight.PNG)
 
 ## 可选的数据清理步骤 {#optional-data-clean}
 
@@ -834,6 +834,6 @@ Data = pd.concat([Data_categorical, Data_numerical, TARGET], axis = 1)
 
 ## 后续步骤
 
-完成探索性数据分析后，您就可以开始创建模型了。 或者，可以使用派生的数据和见解，使用 Power BI 等工具创建仪表板。
+完成探索性数据分析后，您就可以开始创建模型了。 或者，您可以使用派生的数据和见解来创建功能板，其中包含Power BI等工具。
 
-Adobe Experience Platform 将模型创建过程分为两个不同的阶段：配方（模型实例）和模型。 要开始配方创建过程，请访问在 JupyerLab 笔记本](./create-a-model.md)中创建配方的文档[。本文档包含有关在笔记本中创建 [!DNL JupyterLab] 、训练和评分（一个配方）的信息和示例。
+Adobe Experience Platform将模型创建过程分为两个不同的阶段：方法（模型实例）和模型。 要开始配方创建过程，请访问文档[在JupyerLab Notebooks中创建配方](./create-a-model.md)。 此文档包含在[!DNL JupyterLab]笔记本中创建、培训和评分方法的信息和示例。

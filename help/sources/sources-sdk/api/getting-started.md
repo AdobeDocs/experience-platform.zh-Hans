@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 自助源快速入门(批处理SDK)
 description: 本文档介绍了在尝试使用自助源(批处理SDK)创建新源之前需要了解的先决条件信息。
 exl-id: ba131442-ff20-4854-87fe-918aa313382d
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '375'
-ht-degree: 17%
+source-wordcount: '381'
+ht-degree: 16%
 
 ---
 
@@ -21,8 +21,8 @@ ht-degree: 17%
 
 此外，您还需要实际了解Adobe Experience Platform的以下组件：
 
-* [源](../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
-* [沙盒](../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ## 正在读取示例 API 调用
 
@@ -30,19 +30,19 @@ ht-degree: 17%
 
 ## 收集所需标头的值
 
-要调用Platform API，必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+要调用Experience Platform API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-Platform中的所有资源（包括属于[!DNL Flow Service]的资源）都被隔离到特定的虚拟沙盒中。 所有对Platform API的请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
+Experience Platform中的所有资源（包括属于[!DNL Flow Service]的资源）都被隔离到特定的虚拟沙盒中。 对Experience Platform API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关Platform中沙盒的更多信息，请参阅[沙盒文档](../../../sandboxes/home.md)。
+>有关Experience Platform中沙盒的更多信息，请参阅[沙盒文档](../../../sandboxes/home.md)。
 
 包含负载 (POST、PUT、PATCH) 的所有请求都需要额外的标头：
 

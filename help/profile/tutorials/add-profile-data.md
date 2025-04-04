@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform；配置文件；实时客户配置文件；故障排除；API；启用配置文件；启用配置文件
+keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API；启用配置文件；启用配置文件
 title: 将数据添加到实时客户个人资料
 type: Tutorial
 description: 本教程概述了将数据添加到Real-Time Customer Profile所需的步骤。
 exl-id: c2df224b-bf3d-4994-aa3a-9e9f4a6a726c
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '452'
 ht-degree: 0%
@@ -24,7 +24,7 @@ ht-degree: 0%
 
 ## 使用批量摄取添加数据
 
-使用批次摄取上载到[!DNL Platform]的所有数据都会上载到单个数据集。 在[!DNL Real-Time Customer Profile]能够使用此数据之前，必须专门配置相关数据集。 有关完整说明，请参阅有关[为配置文件和身份服务配置数据集](dataset-configuration.md)的教程。
+使用批次摄取上载到[!DNL Experience Platform]的所有数据都会上载到单个数据集。 在[!DNL Real-Time Customer Profile]能够使用此数据之前，必须专门配置相关数据集。 有关完整说明，请参阅有关[为配置文件和身份服务配置数据集](dataset-configuration.md)的教程。
 
 配置数据集后，您可以开始将数据摄取到其中。 有关如何上传不同格式文件的详细步骤，请参阅[批量摄取开发人员指南](../../ingestion/batch-ingestion/api-overview.md)。
 

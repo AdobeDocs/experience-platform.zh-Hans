@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform；主页；热门主题；架构；架构；xdm；体验数据模型；命名空间；命名空间；兼容模式；已修复；
+keywords: Experience Platform；主页；热门主题；架构；架构；xdm；体验数据模型；命名空间；命名空间；兼容模式；xed；
 solution: Experience Platform
 title: Experience Data Model (XDM)中的命名空间
 description: 了解Experience Data Model (XDM)中的命名空间如何允许您扩展架构并在不同架构组件组合在一起时防止字段冲突。
 exl-id: b351dfaf-5219-4750-a7a9-cf4689a5b736
-source-git-commit: d26a0586a992948e1b278bae91a985fe3d9f1ee8
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '668'
+source-wordcount: '669'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 体验数据模型(XDM)架构中的所有字段都有关联的命名空间。 利用这些命名空间，可扩展架构并在将不同的架构组件组合在一起时防止字段冲突。 本文档概述了XDM中的命名空间以及它们在[架构注册表API](../api/overview.md)中的表示方式。
 
-命名空间允许您在一个命名空间中定义一个字段，因为这意味着与不同命名空间中的相同字段不同。 实际上，字段的命名空间指示创建字段的人员(例如标准XDM(Adobe)、供应商或您的组织)。
+命名空间允许您在一个命名空间中定义一个字段，因为这意味着与不同命名空间中的相同字段不同。 实际上，字段的命名空间指示创建字段的人员(例如标准XDM (Adobe)、供应商或您的组织)。
 
 例如，考虑使用[[!UICONTROL 个人联系人详细信息]字段组](../field-groups/profile/demographic-details.md)的XDM架构，该字段组的标准`mobilePhone`字段存在于`xdm`命名空间中。 在同一架构中，您也可以在不同的命名空间（您的[租户ID](../api/getting-started.md#know-your-tenant_id)）下创建单独的`mobilePhone`字段。 这两个字段可以共存，但具有不同的底层含义或约束。
 
@@ -29,7 +29,7 @@ ht-degree: 0%
 
 ### 标准XDM {#standard}
 
-标准XDM语法提供了在架构中如何表示命名空间的分析(包括[它们在Adobe Experience Platform](#compatibility)中的翻译方式)。
+标准XDM语法为insight提供了命名空间在架构中的表示方式(包括[它们在Adobe Experience Platform](#compatibility)中的翻译方式)。
 
 标准XDM使用[JSON-LD](https://www.w3.org/TR/json-ld11/#basic-concepts)语法为字段分配命名空间。 此命名空间采用URI的形式（如`xdm`命名空间的`https://ns.adobe.com/xdm`），或作为在架构的`@context`属性中配置的速记前缀。
 
@@ -89,7 +89,7 @@ ht-degree: 0%
 
 ### 兼容模式 {#compatibility}
 
-在Adobe Experience Platform中，XDM架构以[兼容模式](../api/appendix.md#compatibility)语法表示，该语法不使用JSON-LD语法表示命名空间。 相反，Platform将命名空间转换为父字段（以下划线开头），并将字段嵌套在其下。
+在Adobe Experience Platform中，XDM架构以[兼容模式](../api/appendix.md#compatibility)语法表示，该语法不使用JSON-LD语法表示命名空间。 相反，Experience Platform将命名空间转换为父字段（以下划线开头），并将字段嵌套在其下。
 
 例如，标准XDM `repo:createdDate`已转换为`_repo.createdDate`，并在兼容模式下显示在以下结构下：
 

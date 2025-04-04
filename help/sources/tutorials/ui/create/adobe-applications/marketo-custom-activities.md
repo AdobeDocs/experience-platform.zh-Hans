@@ -1,10 +1,10 @@
 ---
-title: 在UI中为自定义Marketo Engage数据创建Source连接和数据流
+title: 在UI中为自定义活动数据创建Marketo Engage Source连接和数据流
 description: 本教程提供了在UI中创建Marketo Engage源连接和数据流以将自定义活动数据引入Adobe Experience Platform的步骤。
 exl-id: 05a7b500-11d2-4d58-be43-a2c4c0ceeb87
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1470'
+source-wordcount: '1477'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->本教程提供了有关如何设置并将来自[!DNL Marketo]的&#x200B;**自定义活动**&#x200B;数据引入Experience Platform的具体步骤。 有关如何引入&#x200B;**标准活动**&#x200B;数据的步骤，请阅读[[!DNL Marketo] UI指南](./marketo.md)。
+>本教程提供了有关如何设置并将&#x200B;**自定义活动**&#x200B;数据从[!DNL Marketo]带到Experience Platform的具体步骤。 有关如何引入&#x200B;**标准活动**&#x200B;数据的步骤，请阅读[[!DNL Marketo] UI指南](./marketo.md)。
 
 除了[标准活动](../../../../connectors/adobe-applications/mapping/marketo.md#activities)之外，您还可以使用[!DNL Marketo]源将自定义活动数据引入Adobe Experience Platform。 本文档提供了有关如何使用UI中的[!DNL Marketo]源为自定义活动数据创建源连接和数据流的步骤。
 
@@ -22,12 +22,12 @@ ht-degree: 0%
 本教程需要对以下Adobe Experience Platform组件有一定的了解：
 
 * [B2B命名空间和架构自动生成实用程序](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md)： B2B命名空间和架构自动生成实用程序允许您使用[!DNL Postman]自动生成B2B命名空间和架构的值。 必须先完成B2B命名空间和架构，然后才能创建[!DNL Marketo]源连接和数据流。
-* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
-* [体验数据模型(XDM)](../../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+* [源](../../../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
+* [体验数据模型(XDM)](../../../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
    * [在UI中创建和编辑架构](../../../../../xdm/ui/resources/schemas.md)：了解如何在UI中创建和编辑架构。
 * [身份命名空间](../../../../../identity-service/features/namespaces.md)：身份命名空间是[!DNL Identity Service]的组件，充当与身份相关的上下文的指示器。 完全限定的身份包括ID值和命名空间。
 * [[!DNL Real-Time Customer Profile]](/help/profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
-* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [沙盒](../../../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ## 检索您的自定义活动详细信息
 
@@ -41,17 +41,17 @@ ht-degree: 0%
 
 从顶部标题中选择&#x200B;**字段**&#x200B;以查看与自定义活动关联的字段。 在此页面中，您可以查看自定义活动中字段的名称、API名称、描述和数据类型。 有关各个字段的详细信息，将在稍后创建架构时使用的步骤中使用。
 
-![Marketo EngageUI中的“Marketo自定义活动字段详细信息”页面。](../../../../images/tutorials/create/marketo-custom-activities/marketo-custom-activity-fields.png)
+![Marketo Engage UI中的“Marketo自定义活动字段详细信息”页面。](../../../../images/tutorials/create/marketo-custom-activities/marketo-custom-activity-fields.png)
 
 ## 在B2B活动架构中为自定义活动设置字段组
 
-在Experience PlatformUI的&#x200B;*[!UICONTROL 架构]*&#x200B;仪表板中，选择&#x200B;**[!UICONTROL 浏览]**，然后从架构列表中选择&#x200B;**[!UICONTROL B2B活动]**。
+在Experience Platform UI的&#x200B;*[!UICONTROL 架构]*&#x200B;仪表板中，选择&#x200B;**[!UICONTROL 浏览]**，然后从架构列表中选择&#x200B;**[!UICONTROL B2B活动]**。
 
 >[!TIP]
 >
 >使用搜索栏可加快在架构列表中的导航。
 
-![已选择B2B活动架构的Experience PlatformUI中的架构工作区。](../../../../images/tutorials/create/marketo-custom-activities/b2b-activity.png)
+![已选择B2B活动架构的Experience Platform UI中的架构工作区。](../../../../images/tutorials/create/marketo-custom-activities/b2b-activity.png)
 
 ### 为自定义活动创建新字段组
 
@@ -91,13 +91,13 @@ ht-degree: 0%
 
 在架构设置完成后，您现在可以为自定义活动数据创建数据流。
 
-在Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
+在Experience Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索栏查找要使用的特定源。
 
 在[!UICONTROL Adobe应用程序]类别下，选择&#x200B;**[!UICONTROL Marketo Engage]**。 然后，选择&#x200B;**[!UICONTROL 添加数据]**&#x200B;以创建新的[!DNL Marketo]数据流。
 
-![已选择Marketo Engage源的Experience PlatformUI上的源目录。](../../../../images/tutorials/create/marketo/catalog.png)
+![已选择Marketo Engage源的Experience Platform UI上的源目录。](../../../../images/tutorials/create/marketo/catalog.png)
 
 ### 选择数据
 
@@ -154,7 +154,7 @@ ht-degree: 0%
 
 数据流完成后，您可以使用[查询服务](../../../../../query-service/home.md)来筛选自定义活动数据的活动。
 
-将自定义活动摄取到Platform后，自定义活动的API名称会自动变为其`eventType`。 使用`eventType={API_NAME}`筛选自定义活动数据。
+将自定义活动摄取到Experience Platform后，自定义活动的API名称会自动变为其`eventType`。 使用`eventType={API_NAME}`筛选自定义活动数据。
 
 ```sql
 SELECT * FROM with_custom_activities_ds_today WHERE eventType='aepCustomActivityDemo1' 
@@ -169,8 +169,8 @@ SELECT * FROM $datasetName WHERE eventType IN ('aepCustomActivityDemo1', 'aepCus
 
 下图显示了[查询编辑器](../../../../../query-service/ui/user-guide.md)中过滤自定义活动数据的示例SQL语句。
 
-![显示自定义活动查询示例的平台UI。](../../../../images/tutorials/create/marketo-custom-activities/queries.png)
+![Experience Platform UI显示自定义活动的查询示例。](../../../../images/tutorials/create/marketo-custom-activities/queries.png)
 
 ## 后续步骤
 
-通过完成本教程，您已为[!DNL Marketo]自定义活动数据设置了Platform架构，并创建了数据流以将该数据引入到Platform。 有关[!DNL Marketo]源的一般信息，请阅读[[!DNL Marketo] 源概述](../../../../connectors/adobe-applications/marketo/marketo.md)。
+通过学习本教程，您已为[!DNL Marketo]自定义活动数据设置Experience Platform架构并创建数据流以将该数据引入到Experience Platform。 有关[!DNL Marketo]源的一般信息，请阅读[[!DNL Marketo] 源概述](../../../../connectors/adobe-applications/marketo/marketo.md)。

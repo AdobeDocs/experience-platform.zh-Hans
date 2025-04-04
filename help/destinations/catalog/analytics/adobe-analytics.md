@@ -3,9 +3,9 @@ keywords: analytics扩展；analytics扩展；目标analytics
 title: Adobe Analytics 扩展
 description: Adobe Analytics扩展是Adobe Experience Platform中的分析目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: 95b6e079-09a6-4262-bd01-11f155286aa9
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '462'
+source-wordcount: '466'
 ht-degree: 4%
 
 ---
@@ -18,21 +18,21 @@ Adobe Analytics是一款行业领先的解决方案，可帮助您充分了解�
 
 Adobe Analytics是Adobe Experience Platform中的一个analytics扩展。 有关扩展功能的更多信息，请参阅标记文档中的[Adobe Analytics扩展概述](/help/tags/extensions/client/analytics/overview.md)。
 
-此目标是标记扩展。 有关标记扩展如何在Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
+此目标是标记扩展。 有关标记扩展如何在Experience Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
 ![Adobe Analytics扩展](../../assets/catalog/analytics/adobe-analytics/catalog.png)
 
 ## 先决条件 {#prerequisites}
 
-所有购买了Platform的客户都可在“目标”目录中使用此扩展。
+所有已购买Experience Platform的客户都可以在“目标”目录中找到此扩展。
 
-要使用此扩展，您需要具有对Platform中标记的访问权限。 标记以内置增值功能的方式提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取数据收集UI的访问权限，并让他们向您授予&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
+要使用此扩展，您需要具有对Experience Platform中标记的访问权限。 标记以内置增值功能的方式提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取数据收集UI的访问权限，并让他们向您授予&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
 
 ## 安装扩展 {#install-extension}
 
 要安装Adobe Analytics扩展：
 
-在[平台接口](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**。
+在[Experience Platform界面](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**。
 
 从目录中选择扩展或使用搜索栏。
 

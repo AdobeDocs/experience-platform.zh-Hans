@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform；主页；热门主题
+keywords: Experience Platform；首页；热门话题
 solution: Experience Platform
 title: 使用流服务API连接到批处理目标并激活数据
 description: 分步说明如何使用流服务API在Experience Platform中创建批量云存储或电子邮件营销目标并激活数据
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '3411'
+source-wordcount: '3416'
 ht-degree: 2%
 
 ---
@@ -34,7 +34,7 @@ ht-degree: 2%
 
 ![概述 — 创建目标和激活受众的步骤](../assets/api/email-marketing/overview.png)
 
-如果您希望使用Platform用户界面连接到目标并激活数据，请参阅[连接目标](../ui/connect-destination.md)和[将受众数据激活到批处理配置文件导出目标](../ui/activate-batch-profile-destinations.md)教程。
+如果您希望使用Experience Platform用户界面连接到目标并激活数据，请参阅[连接目标](../ui/connect-destination.md)和[将受众数据激活到批处理配置文件导出目标](../ui/activate-batch-profile-destinations.md)教程。
 
 ## 快速入门 {#get-started}
 
@@ -42,9 +42,9 @@ ht-degree: 2%
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
 * [[!DNL Segmentation Service]](../../segmentation/api/overview.md)： [!DNL Adobe Experience Platform Segmentation Service]允许您根据[!DNL Real-Time Customer Profile]数据在[!DNL Adobe Experience Platform]中构建受众。
-* [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform]提供了将单个[!DNL Platform]实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+* [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform]提供了将单个[!DNL Experience Platform]实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
-以下部分提供了您需要了解的其他信息，以便将数据激活到Platform中的批处理目标。
+以下部分提供了在Experience Platform中将数据激活到批处理目标需要了解的其他信息。
 
 ### 收集所需的凭据 {#gather-required-credentials}
 
@@ -65,13 +65,13 @@ ht-degree: 2%
 
 ### 收集必需标题和可选标题的值 {#gather-values-headers}
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+要调用[!DNL Experience Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 * 授权：持有人`{ACCESS_TOKEN}`
 * x-api-key： `{API_KEY}`
 * x-gw-ims-org-id： `{ORG_ID}`
 
-[!DNL Experience Platform]中的资源可以隔离到特定的虚拟沙箱。 在对[!DNL Platform] API的请求中，您可以指定将在其中执行操作的沙盒的名称和ID。 这些是可选参数。
+[!DNL Experience Platform]中的资源可以隔离到特定的虚拟沙箱。 在对[!DNL Experience Platform] API的请求中，您可以指定将在其中执行操作的沙盒的名称和ID。 这些是可选参数。
 
 * x-sandbox-name： `{SANDBOX_NAME}`
 
@@ -79,7 +79,7 @@ ht-degree: 2%
 >
 >有关[!DNL Experience Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
 
-所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
+所有包含有效负载(POST、PUT、PATCH)的请求都需要一个额外的媒体类型标头：
 
 * 内容类型： `application/json`
 
@@ -91,7 +91,7 @@ ht-degree: 2%
 
 ![目标步骤概述步骤1](../assets/api/batch-destination/step1.png)
 
-第一步，您应该决定要将数据激活到的目标。 首先，请执行调用以请求可连接并激活受众的可用目标列表。 对`connectionSpecs`端点执行以下GET请求以返回可用目标的列表：
+第一步，您应该决定要将数据激活到的目标。 首先，请执行调用以请求可连接并激活受众的可用目标列表。 对`connectionSpecs`端点执行以下GET请求以返回可用目标列表：
 
 **API格式**
 
@@ -173,7 +173,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `name` | 提供到Experience Platform[!DNL Profile store]的基本连接的名称。 |
+| `name` | 提供到Experience Platform [!DNL Profile store]的基本连接的名称。 |
 | `description` | 或者，您可以为基本连接提供描述。 |
 | `connectionSpec.id` | 为[Experience Platform配置文件存储](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`使用连接规范ID。 |
 
@@ -224,7 +224,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `name` | 为与Experience Platform[!DNL Profile store]的源连接提供一个名称。 |
+| `name` | 提供与Experience Platform [!DNL Profile store]的源连接的名称。 |
 | `description` | 或者，您可以为源连接提供描述。 |
 | `connectionSpec.id` | 为[Experience Platform配置文件存储](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`使用连接规范ID。 |
 | `baseConnectionId` | 使用您在上一步中获取的基本连接ID。 |
@@ -531,7 +531,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 | `name` | 提供到批处理目标的基本连接的名称。 |
 | `description` | 或者，您可以为基本连接提供描述。 |
 | `connectionSpec.id` | 使用连接规范ID作为所需的批处理目标。 您在步骤[获取可用目标的列表](#get-the-list-of-available-destinations)中获取了此ID。 |
-| `auth.specname` | 指示目标的身份验证格式。 要查找目标的specName，请对连接规范终结点](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)执行[GET调用，并提供所需目标的连接规范。 在响应中查找参数`authSpec.name`。 <br>例如，对于Adobe Campaign目标，您可以使用任何`S3`、`SFTP with Password`或`SFTP with SSH Key`。 |
+| `auth.specname` | 指示目标的身份验证格式。 要查找目标的specName，请对连接规范端点](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)执行[GET调用，并提供所需目标的连接规范。 在响应中查找参数`authSpec.name`。 <br>例如，对于Adobe Campaign目标，您可以使用任何`S3`、`SFTP with Password`或`SFTP with SSH Key`。 |
 | `params` | 根据连接到的目标，必须提供不同的必需身份验证参数。 对于Amazon S3连接，您必须向Amazon S3存储位置提供访问ID和密钥。 <br>要查找目标所需的参数，请对连接规范终结点](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)执行[GET调用，并提供所需目标的连接规范。 在响应中查找参数`authSpec.spec.required`。 |
 
 {style="table-layout:auto"}
@@ -846,7 +846,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 | `baseConnectionId` | 使用您在上面的步骤中创建的基本连接的ID。 |
 | `connectionSpec.id` | 使用连接规范ID作为所需的批处理目标。 您在步骤[获取可用目标的列表](#get-the-list-of-available-destinations)中获取了此ID。 |
 | `params` | 根据连接到的目标，必须为存储位置提供不同的必需参数。 对于Amazon S3连接，您必须向Amazon S3存储位置提供访问ID和密钥。 <br>要查找目标所需的参数，请对连接规范终结点](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)执行[GET调用，并提供所需目标的连接规范。 在响应中查找参数`targetSpec.spec.required`。 |
-| `params.mode` | 根据目标支持的模式，必须在此处提供不同的值。 要查找目标所需的参数，请对连接规范终结点](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)执行[GET调用，并提供所需目标的连接规范。 在响应中查找参数`targetSpec.spec.properties.mode.enum`并选择所需的模式。 |
+| `params.mode` | 根据目标支持的模式，必须在此处提供不同的值。 要查找目标的所需参数，请对连接规范端点](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)执行[GET调用，并提供所需目标的连接规范。 在响应中查找参数`targetSpec.spec.properties.mode.enum`并选择所需的模式。 |
 | `params.bucketName` | 对于S3连接，提供将导出文件的存储段的名称。 |
 | `params.path` | 对于S3连接，在要导出文件的存储位置中提供文件路径。 |
 | `params.format` | `CSV`是当前唯一支持的文件导出类型。 |
@@ -869,7 +869,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 使用您在上一步中获得的流规范、源连接和目标连接ID，您现在可以在[!DNL Experience Platform]数据和导出数据文件的目标之间创建数据流。 将此步骤视为构造管道，稍后数据将通过该管道在[!DNL Experience Platform]和您的所需目标之间流动。
 
-要创建数据流，请执行如下所示的POST请求，同时在有效负载中提供下面提到的值。
+要创建数据流，请执行如下所示的POST请求，同时在有效负荷中提供下面提到的值。
 
 **API格式**
 
@@ -954,7 +954,7 @@ curl -X POST \
 
 您还可以确定导出文件的文件命名格式以及应该将哪些属性用作[重复数据删除键](../ui/activate-batch-profile-destinations.md#mandatory-keys)或[必需属性](../ui/activate-batch-profile-destinations.md#mandatory-attributes)。 在此步骤中，您还可以确定将数据发送到目标的计划。
 
-要将受众激活到新目标，您必须执行JSONPATCH操作，类似于以下示例。 您可以在一次调用中激活多个受众和配置文件属性。 要了解有关JSONPATCH的更多信息，请参阅[RFC规范](https://tools.ietf.org/html/rfc6902)。
+要将受众激活到您的新目标，您必须执行JSON PATCH操作，类似于以下示例。 您可以在一次调用中激活多个受众和配置文件属性。 要了解有关JSON PATCH的更多信息，请参阅[RFC规范](https://tools.ietf.org/html/rfc6902)。
 
 **API格式**
 
@@ -1029,18 +1029,18 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 | --------- | ----------- |
 | `{DATAFLOW_ID}` | 在URL中，使用您在上一步中创建的数据流的ID。 |
 | `{ETAG}` | 从上一步[创建数据流](#create-dataflow)中的响应中获取`{ETAG}`。 上一步中的响应格式对引号进行了转义。 您必须在请求的标头中使用未转义值。 查看以下示例： <br> <ul><li>响应示例：`"etag":""7400453a-0000-1a00-0000-62b1c7a90000""`</li><li>要在您的请求中使用的值： `"etag": "7400453a-0000-1a00-0000-62b1c7a90000"`</li></ul> <br>每次成功更新数据流时，etag值都会更新。 |
-| `{SEGMENT_ID}` | 提供要导出到此目标的受众ID。 要检索要激活的受众的受众ID，请参阅Experience PlatformAPI参考中的[检索受众定义](https://www.adobe.io/experience-platform-apis/references/segmentation/#operation/retrieveSegmentDefinitionById)。 |
+| `{SEGMENT_ID}` | 提供要导出到此目标的受众ID。 要检索要激活的受众的受众ID，请参阅Experience Platform API参考中的[检索受众定义](https://www.adobe.io/experience-platform-apis/references/segmentation/#operation/retrieveSegmentDefinitionById)。 |
 | `{PROFILE_ATTRIBUTE}` | 例如：`"person.lastName"` |
 | `op` | 操作调用，用于定义更新数据流所需的操作。 操作包括： `add`、`replace`和`remove`。 要将受众添加到数据流，请使用`add`操作。 |
 | `path` | 定义要更新的流部分。 将受众添加到数据流时，请使用示例中指定的路径。 |
 | `value` | 要用于更新参数的新值。 |
 | `id` | 指定要添加到目标数据流的受众的ID。 |
 | `name` | *可选*。 指定要添加到目标数据流的受众的名称。 请注意，此字段不是必填字段，您无需提供名称即可将受众成功添加到目标数据流。 |
-| `filenameTemplate` | 此字段确定导出到目标的文件的文件名格式。 <br>以下选项可用： <br> <ul><li>`%DESTINATION_NAME%`：必填。 导出的文件包含目标名称。</li><li>`%SEGMENT_ID%`：必填。 导出的文件包含导出受众的ID。</li><li>`%SEGMENT_NAME%`：可选。 导出的文件包含导出的受众的名称。</li><li>`DATETIME(YYYYMMdd_HHmmss)`或`%TIMESTAMP%`：可选。 为文件选择这两个选项之一，以包括通过Experience Platform生成文件的时间。</li><li>`custom-text`：可选。 将此占位符替换为要在文件名末尾追加的任何自定义文本。</li></ul> <br>有关配置文件名的详细信息，请参阅批量目标激活教程中的[配置文件名](/help/destinations/ui/activate-batch-profile-destinations.md#file-names)部分。 |
+| `filenameTemplate` | 此字段确定导出到目标的文件的文件名格式。 <br>以下选项可用： <br> <ul><li>`%DESTINATION_NAME%`：必填。 导出的文件包含目标名称。</li><li>`%SEGMENT_ID%`：必填。 导出的文件包含导出受众的ID。</li><li>`%SEGMENT_NAME%`：可选。 导出的文件包含导出的受众的名称。</li><li>`DATETIME(YYYYMMdd_HHmmss)`或`%TIMESTAMP%`：可选。 为文件选择这两个选项之一，以包含Experience Platform生成文件的时间。</li><li>`custom-text`：可选。 将此占位符替换为要在文件名末尾追加的任何自定义文本。</li></ul> <br>有关配置文件名的详细信息，请参阅批量目标激活教程中的[配置文件名](/help/destinations/ui/activate-batch-profile-destinations.md#file-names)部分。 |
 | `exportMode` | 必填。 选择`"DAILY_FULL_EXPORT"`或`"FIRST_FULL_THEN_INCREMENTAL"`。 有关这两个选项的更多信息，请参阅批处理目标激活教程中的[导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files)和[导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files)。 |
 | `startDate` | 选择受众应开始将用户档案导出到目标的日期。 |
 | `frequency` | 必填。<br> <ul><li>对于`"DAILY_FULL_EXPORT"`导出模式，您可以选择`ONCE`或`DAILY`。</li><li>对于`"FIRST_FULL_THEN_INCREMENTAL"`导出模式，您可以选择`"DAILY"`、`"EVERY_3_HOURS"`、`"EVERY_6_HOURS"`、`"EVERY_8_HOURS"`、`"EVERY_12_HOURS"`。</li></ul> |
-| `triggerType` | 仅适用于&#x200B;*批次目标*。 仅当在`frequency`选择器中选择`"DAILY_FULL_EXPORT"`模式时，才需要此字段。 <br>必填。<br> <ul><li>选择`"AFTER_SEGMENT_EVAL"`以使激活作业在每日平台批处理分段作业完成后立即运行。 这可确保在激活作业运行时，将最新的配置文件导出到您的目标。</li><li>选择`"SCHEDULED"`以使激活作业在固定时间运行。 这可确保每天在同一时间导出Experience Platform配置文件数据，但您导出的配置文件可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。 当选择此选项时，还必须添加`startTime`以指示每日导出应在UTC时段的哪个时间发生。</li></ul> |
+| `triggerType` | 仅适用于&#x200B;*批次目标*。 仅当在`frequency`选择器中选择`"DAILY_FULL_EXPORT"`模式时，才需要此字段。 <br>必填。<br> <ul><li>选择`"AFTER_SEGMENT_EVAL"`以使激活作业在每日Experience Platform批处理分段作业完成后立即运行。 这可确保在激活作业运行时，将最新的配置文件导出到您的目标。</li><li>选择`"SCHEDULED"`以使激活作业在固定时间运行。 这可确保每天在同一时间导出Experience Platform用户档案数据，但您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。 当选择此选项时，还必须添加`startTime`以指示每日导出应在UTC时段的哪个时间发生。</li></ul> |
 | `endDate` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要使用此字段。 选择`"exportMode":"DAILY_FULL_EXPORT"`和`"frequency":"ONCE"`时，<br>不适用。 <br>设置受众成员停止导出到目标的日期。 |
 | `startTime` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要使用此字段。 <br>必填。 选择应生成包含受众成员的文件并将其导出到目标的时间。 |
 
@@ -1240,11 +1240,11 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 ## API错误处理 {#api-error-handling}
 
-本教程中的API端点遵循常规Experience PlatformAPI错误消息原则。 有关解释错误响应的详细信息，请参阅Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
+本教程中的API端点遵循常规Experience Platform API错误消息原则。 有关解释错误响应的详细信息，请参阅Experience Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤 {#next-steps}
 
-通过学习本教程，您已成功地将Platform连接到您首选的基于文件的电子邮件营销目标之一，并设置了数据流到相应的目标以导出数据文件。 现在，传出数据可用于电子邮件促销活动、定向广告和许多其他用例的目标。 有关更多详细信息，请参阅以下页面，例如如何使用流服务API编辑现有数据流：
+通过学习本教程，您已成功将Experience Platform连接到某个首选的基于文件的电子邮件营销目标，并设置了数据流到相应的目标以导出数据文件。 现在，传出数据可用于电子邮件促销活动、定向广告和许多其他用例的目标。 有关更多详细信息，请参阅以下页面，例如如何使用流服务API编辑现有数据流：
 
 * [目标概述](../home.md)
 * [目标目录概述](../catalog/overview.md)

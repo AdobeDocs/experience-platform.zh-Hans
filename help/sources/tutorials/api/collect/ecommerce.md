@@ -3,38 +3,38 @@ keywords: Experience Platform；主页；热门主题；收集电子商务数据
 solution: Experience Platform
 title: 使用流服务API为电子商务来源创建数据流
 type: Tutorial
-description: 本教程涵盖了从第三方电子商务系统检索数据以及使用源连接器和API将数据提取到Platform中的步骤。
+description: 本教程涵盖了从第三方电子商务系统中检索数据以及使用源连接器和API将数据提取到Experience Platform中的步骤。
 exl-id: 0952f037-5e20-4d84-a2e6-2c9470f168f5
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1306'
+source-wordcount: '1314'
 ht-degree: 2%
 
 ---
 
 # 使用[!DNL Flow Service] API为电子商务源创建数据流
 
-本教程介绍从电子商务源检索数据以及使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将这些数据引入平台的步骤。
+本教程介绍了从电子商务源检索数据以及使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将这些数据引入Experience Platform的步骤。
 
 >[!NOTE]
 >
 >* 要创建数据流，您必须已具有包含电子商务源的有效基本连接ID。 如果您没有此ID，请查看[源概述](../../../home.md#ecommerce)，以了解可创建基础连接的电子商务源的列表。
->* 要使Experience Platform摄取数据，必须将所有基于表的批处理源的时区配置为UTC时区。
+>* 要让Experience Platform摄取数据，必须将所有基于表的批处理源的时区配置为UTC时区。
 
 ## 快速入门
 
 本教程要求您实际了解Adobe Experience Platform的以下组件：
 
-* [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构注册表API](../../../../xdm/api/getting-started.md)：了解如何成功执行对架构注册表API的调用。 这包括您的`{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（请特别注意“接受”标头及其可能的值）。
 * [[!DNL Catalog Service]](../../../../catalog/home.md)：目录是[!DNL Experience Platform]内数据位置和历程的记录系统。
 * [[!DNL Batch ingestion]](../../../../ingestion/batch-ingestion/overview.md)：批量摄取API允许您将数据作为批处理文件摄取到[!DNL Experience Platform]。
-* [[!DNL Sandboxes]](../../../../sandboxes/home.md)： [!DNL Experience Platform]提供了将单个[!DNL Platform]实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+* [[!DNL Sandboxes]](../../../../sandboxes/home.md)： [!DNL Experience Platform]提供了将单个[!DNL Experience Platform]实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
-### 使用平台API
+### 使用Experience Platform API
 
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../landing/api-guide.md)指南。
+有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../../landing/api-guide.md)指南。
 
 ## 创建源连接 {#source}
 
@@ -114,15 +114,15 @@ curl -X POST \
 
 ## 创建目标XDM架构 {#target-schema}
 
-为了在Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。
+为了在Experience Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Experience Platform数据集。
 
-通过向[架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)执行POST请求，可以创建目标XDM架构。
+通过对[架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)执行POST请求，可以创建目标XDM架构。
 
 有关如何创建目标XDM架构的详细步骤，请参阅有关使用API [创建架构的教程](../../../../xdm/api/schemas.md)。
 
 ## 创建目标数据集 {#target-dataset}
 
-可以通过向[目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)执行POST请求，在有效负载中提供目标架构的ID来创建目标数据集。
+通过向[目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)执行POST请求，在有效负载中提供目标架构的ID，可以创建目标数据集。
 
 有关如何创建目标数据集的详细步骤，请参阅有关[使用API创建数据集的教程](../../../../catalog/api/create-dataset.md)。
 
@@ -251,7 +251,7 @@ curl -X POST \
 
 ## 查找数据流规范 {#specs}
 
-数据流负责从源中收集数据并将它们引入[!DNL Platform]。 要创建数据流，您必须首先通过向[!DNL Flow Service] API执行GET请求来获取数据流规范。 数据流规范负责从电子商务源收集数据。
+数据流负责从源中收集数据并将它们引入[!DNL Experience Platform]。 要创建数据流，您必须首先通过向[!DNL Flow Service] API执行GET请求来获取数据流规范。 数据流规范负责从电子商务源收集数据。
 
 **API格式**
 
@@ -271,7 +271,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回数据流规范的详细信息，该规范负责将数据从源引入Platform。 响应包括创建新数据流所需的唯一流规范`id`。
+成功的响应将返回数据流规范的详细信息，该规范负责将数据从源引入Experience Platform。 响应包括创建新数据流所需的唯一流规范`id`。
 
 >[!NOTE]
 >
@@ -647,7 +647,7 @@ curl -X POST \
 
 ## 后续步骤
 
-通过学习本教程，您已创建一个源连接器以按计划收集数据电子商务。 下游[!DNL Platform]服务（如[!DNL Real-Time Customer Profile]和[!DNL Data Science Workspace]）现在可以使用传入数据。 有关更多详细信息，请参阅以下文档：
+通过学习本教程，您已创建一个源连接器以按计划收集数据电子商务。 下游[!DNL Experience Platform]服务（如[!DNL Real-Time Customer Profile]和[!DNL Data Science Workspace]）现在可以使用传入数据。 有关更多详细信息，请参阅以下文档：
 
 * [实时客户轮廓概述](../../../../profile/home.md)
 * [数据科学工作区概述](../../../../data-science-workspace/home.md)

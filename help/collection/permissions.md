@@ -2,10 +2,10 @@
 title: Experience Platform 中数据收集的权限管理
 description: 有关如何在Adobe Experience Platform中管理权限和控制对数据收集功能的访问权限的高级概述。
 exl-id: 8426d54b-ec1d-475a-a769-f45a8c924fe7
-source-git-commit: 2d71eafb00098d958c8cff9350caa27bd3f0260d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1356'
-ht-degree: 28%
+source-wordcount: '1358'
+ht-degree: 27%
 
 ---
 
@@ -36,7 +36,7 @@ Adobe Experience Platform下的权限包括访问数据流、身份、架构和�
 
 | 类别 | 权限 | 描述 |
 | --- | --- | --- |
-| 沙盒 | （不适用） | 根据在您的组织下创建的[沙盒](../sandboxes/home.md)，您可以在Admin Console中通过此权限类别控制对其中每个沙盒的访问。 |
+| 沙盒 | （不适用） | 根据在您的组织下创建的[沙盒](../sandboxes/home.md)，您可以在Admin Console中通过此权限类别控制对每个沙盒的访问权限。 |
 | 数据建模 | 管理架构 | 允许查看、创建和编辑[体验数据模型(XDM)架构](../xdm/home.md)。 |
 | 数据建模 | 查看架构 | 授予对架构的只读访问权限。 |
 | Identity Management | 管理身份命名空间 | 允许查看、创建和编辑[身份命名空间](../identity-service/features/namespaces.md)。 |
@@ -55,7 +55,7 @@ Adobe Experience Platform数据收集下的权限可控制对标记和事件转�
 | 平台 | Web | 在与其他属性权限结合使用时，授予对[Web属性](../tags/ui/administration/companies-and-properties.md)的访问权限。 |
 | 平台 | 移动设备 | 在与其他属性权限结合使用时，授予对[移动属性](../tags/ui/administration/companies-and-properties.md)的访问权限。 |
 | 平台 | Edge | 在与其他属性权限结合使用时，授予对[Event Forwarding Edge属性](../tags/ui/event-forwarding/getting-started.md)的访问权限。 |
-| 属性 | （不适用） | 根据已在您的组织下创建的属性，您可以在Admin Console中通过此类权限类别控制对每个属性的访问权限。<br><br>用户分配的属性权限仅适用于他们通过此权限类别被授予访问权限的属性。 |
+| 属性 | （不适用） | 根据在您的组织下创建的属性，您可以在Admin Console中通过此权限类别控制对其中每个属性的访问。<br><br>用户分配的属性权限仅适用于他们通过此权限类别被授予访问权限的属性。 |
 | 资产权限 | 审批 | 允许将库生成批准为[发布流](../tags/ui/publishing/publishing-flow.md)的一部分。 |
 | 资产权限 | 开发 | 允许将库生成开发为[发布流](../tags/ui/publishing/publishing-flow.md)的一部分。 |
 | 资产权限 | 编辑属性 | 允许编辑用户有权访问的属性的基本配置。 |
@@ -87,7 +87,7 @@ Adobe Experience Platform数据收集下的权限可控制对标记和事件转�
 >
 >要管理角色的权限，您需要管理员权限。 如果您没有管理员权限，请联系您的系统管理员。
 
-Experience Cloud的&#x200B;**[!UICONTROL 权限]**&#x200B;部分允许您定义用户角色和策略，以管理产品应用程序内功能和对象的访问权限。
+Experience Cloud的&#x200B;**[!UICONTROL 权限]**&#x200B;部分允许您定义用户角色和策略，以管理对产品应用程序内功能和对象的访问。
 
 通过[!UICONTROL 权限]，您可以创建和管理角色，并为这些角色分配所需的资源权限。
 
@@ -95,25 +95,25 @@ Experience Cloud的&#x200B;**[!UICONTROL 权限]**&#x200B;部分允许您定义�
 
 要访问数据收集功能，您必须启用&#x200B;**[!UICONTROL 沙盒]**、**[!UICONTROL 数据建模]**、**[!UICONTROL Identity Management]**&#x200B;和&#x200B;**[!UICONTROL 数据收集]**&#x200B;类别中的所有权限。
 
-![显示Admin Console](./images/permissions/platform-permission-card.png)中数据收集产品卡的图像
+![显示Admin Console中的数据收集产品卡的图像](./images/permissions/platform-permission-card.png)
 
-有关管理Platform权限的详细说明，请参阅[访问控制UI指南](../access-control/ui/overview.md)。
+有关管理Experience Platform权限的详细说明，请参阅[访问控制UI指南](../access-control/ui/overview.md)。
 
 >[!NOTE]
 >
->根据您的组织有权访问的产品SKU，您可能没有每个平台权限都可以使用。
+>根据您的组织有权访问的产品SKU，您可能没有每个Experience Platform权限可供您使用。
 
 ### 在Adobe Experience Platform数据收集下管理权限 {#manage-collection}
 
-若要管理这些权限，请登录Admin Console并从顶部导航中选择&#x200B;**[!UICONTROL 产品]**，然后选择&#x200B;**[!UICONTROL Adobe Experience Platform数据收集]**。
+要管理这些权限，请登录到Admin Console并从顶部导航中选择&#x200B;**[!UICONTROL 产品]**，然后选择&#x200B;**[!UICONTROL Adobe Experience Platform数据收集]**。
 
-![显示Admin Console](./images/permissions/data-collection-card.png)中数据收集产品卡的图像
+![显示Admin Console中的数据收集产品卡的图像](./images/permissions/data-collection-card.png)
 
 #### 选择或创建产品轮廓
 
 下一个屏幕显示贵组织下数据收集的可用产品配置文件列表，默认配置文件为&#x200B;**[!DNL Default Data Collection All Access]**。 您可以根据需要选择编辑默认的产品配置文件，也可以选择&#x200B;**[!UICONTROL 新建配置文件]**&#x200B;来创建配置文件。 如果您的组织中有多个角色或用户组需要不同级别的访问权限，则应为每个角色或用户组创建单独的产品轮廓。
 
-![显示Admin Console](./images/permissions/new-profile.png)中数据收集的产品配置文件的图像
+![显示Admin Console中数据收集的产品配置文件的图像](./images/permissions/new-profile.png)
 
 选择或创建产品配置文件后，您可以使用&#x200B;**[!UICONTROL 编辑]**&#x200B;图标来启动[编辑配置文件权限](#edit-permissions)，或选择&#x200B;**[!UICONTROL 用户]**&#x200B;选项卡来启动[将用户分配给配置文件](#assign-users)。
 

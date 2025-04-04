@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform；配置文件；实时客户配置文件；故障排除；API；报表；数据集重叠报表；配置文件数据
+keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API；报表；数据集重叠报表；配置文件数据
 title: 生成数据集重叠报表
 type: Tutorial
 description: 本教程概述了使用实时客户档案API生成数据集重叠报表所需的步骤。
 exl-id: 90894ed3-b09e-435d-a9e3-18fd6dc8e907
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '889'
+source-wordcount: '890'
 ht-degree: 1%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 1%
 
 ## 快速入门
 
-要使用Adobe Experience Platform API，您必须首先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)，以收集所需标头所需的值。 要了解有关Experience PlatformAPI的更多信息，请参阅[平台API快速入门文档](../../landing/api-guide.md)。
+要使用Adobe Experience Platform API，您必须首先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)，以收集所需标头所需的值。 要了解有关Experience Platform API的更多信息，请参阅[Experience Platform API快速入门文档](../../landing/api-guide.md)。
 
 本教程中的所有API调用所需的标头包括：
 
@@ -33,7 +33,7 @@ ht-degree: 1%
 
 ## 使用命令行生成数据集重叠报告
 
-如果您熟悉使用命令行，则可以通过向`/previewsamplestatus/report/dataset/overlap`执行GET请求，使用以下cURL请求生成数据集重叠报表。
+如果您熟悉使用命令行，则可以使用以下cURL请求，通过向`/previewsamplestatus/report/dataset/overlap`执行GET请求来生成数据集重叠报表。
 
 **请求**
 
@@ -132,4 +132,4 @@ Postman是API开发的协作平台，用于可视化API调用。 可以从[Postm
 
 ## 后续步骤
 
-完成本教程后，您现在可以使用实时客户档案API生成数据集重叠报表。 要了解有关在API和Experience PlatformUI中使用配置文件数据的更多信息，请从阅读[配置文件概述文档](../home.md)开始。
+完成本教程后，您现在可以使用实时客户档案API生成数据集重叠报表。 要了解有关在API和Experience Platform UI中使用配置文件数据的更多信息，请从阅读[配置文件概述文档](../home.md)开始。

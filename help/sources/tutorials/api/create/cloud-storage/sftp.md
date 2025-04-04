@@ -2,9 +2,9 @@
 title: 使用流服务API创建SFTP基本连接
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到SFTP（安全文件传输协议）服务器。
 exl-id: b965b4bf-0b55-43df-bb79-c89609a9a488
-source-git-commit: 919e2c34bf8b9b4646936fe8bfbd4ee33d44407a
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '753'
+source-wordcount: '761'
 ht-degree: 2%
 
 ---
@@ -19,8 +19,8 @@ ht-degree: 2%
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
-* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 >[!IMPORTANT]
 >
@@ -32,9 +32,9 @@ ht-degree: 2%
 
 有关如何检索身份验证凭据的详细步骤，请阅读[[!DNL SFTP] 身份验证指南](../../../../connectors/cloud-storage/sftp.md#gather-required-credentials)。
 
-### 使用平台API
+### 使用Experience Platform API
 
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../../landing/api-guide.md)指南。
+有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../../../landing/api-guide.md)指南。
 
 ## 创建基本连接
 
@@ -42,11 +42,11 @@ ht-degree: 2%
 >
 >创建后，无法更改[!DNL SFTP]基本连接的身份验证类型。 要更改身份验证类型，必须创建新的基本连接。
 
-基本连接会保留您的源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
+基本连接会保留源与Experience Platform之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
 [!DNL SFTP]源支持基本身份验证和通过SSH公钥的身份验证。 在此步骤中，您还可以指定要提供访问权限的子文件夹的路径。
 
-要创建基本连接ID，请在提供[!DNL SFTP]身份验证凭据作为POST参数的一部分时，向`/connections`端点请求请求。
+要创建基本连接ID，请在提供您的[!DNL SFTP]身份验证凭据作为请求参数的一部分时，向`/connections`端点发出POST请求。
 
 >[!IMPORTANT]
 >
@@ -100,7 +100,7 @@ curl -X POST \
 | `auth.params.port` | SFTP服务器的端口。 此整数值默认为22。 |
 | `auth.params.username` | 与您的SFTP服务器关联的用户名。 |
 | `auth.params.password` | 与您的SFTP服务器关联的密码。 |
-| `auth.params.maxConcurrentConnections` | 在将Platform连接到SFTP时指定的最大并发连接数。 启用时，该值必须设置为至少1。 |
+| `auth.params.maxConcurrentConnections` | 将Experience Platform连接到SFTP时指定的最大并发连接数。 启用时，该值必须设置为至少1。 |
 | `auth.params.folderPath` | 要提供访问权限的文件夹的路径。 |
 | `auth.params.disableChunking` | 一个布尔值，用于确定SFTP服务器是否支持分块。 |
 | `connectionSpec.id` | SFTP服务器连接规范ID： `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
@@ -162,7 +162,7 @@ curl -X POST \
 | `auth.params.username` | 与您的[!DNL SFTP]服务器关联的用户名。 |
 | `auth.params.privateKeyContent` | Base64编码的SSH私钥内容。 OpenSSH密钥类型必须分类为RSA或DSA。 |
 | `auth.params.passPhrase` | 如果密钥文件或密钥内容受密码词组保护，则使用密码词组或密码解密私钥。 如果PrivateKeyContent受密码保护，则此参数需要与PrivateKeyContent的密码短语（值）一起使用。 |
-| `auth.params.maxConcurrentConnections` | 在将Platform连接到SFTP时指定的最大并发连接数。 启用时，该值必须设置为至少1。 |
+| `auth.params.maxConcurrentConnections` | 将Experience Platform连接到SFTP时指定的最大并发连接数。 启用时，该值必须设置为至少1。 |
 | `auth.params.folderPath` | 要提供访问权限的文件夹的路径。 |
 | `auth.params.disableChunking` | 一个布尔值，用于确定SFTP服务器是否支持分块。 |
 | `connectionSpec.id` | [!DNL SFTP]服务器连接规范ID： `b7bf2577-4520-42c9-bae9-cad01560f7bc` |

@@ -3,16 +3,16 @@ title: 使用Adobe Experience Platform Web SDK集成IAB TCF 2.0支持
 description: 了解如何在不使用标记的情况下为您的网站设置IAB TCF 2.0支持。
 seo-description: Learn how to set up IAB TCF 2.0 consent with Adobe Experience Platform Web SDK
 exl-id: 14f1802a-0f8d-487f-ae17-5daaaab05162
-source-git-commit: b08c6cf12a38f79e019544dea91913a77bd6490a
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '615'
+source-wordcount: '617'
 ht-degree: 0%
 
 ---
 
-# 将IAB TCF 2.0支持与Platform Web SDK集成
+# 将IAB TCF 2.0支持与Experience Platform Web SDK集成
 
-本指南将演示如何在不使用标记的情况下将Interactive Advertising Bureau Transparency &amp; Consent Framework版本2.0 (IAB TCF 2.0)与Adobe Experience Platform Web SDK集成。 有关与IAB TCF 2.0集成的概述，请阅读[概述](./overview.md)。 有关如何与标记集成的指南，请阅读标记的[IAB TCF 2.0指南](./with-tags.md)。
+本指南演示了如何在不使用标记的情况下将Interactive Advertising Bureau Transparency &amp; Consent Framework版本2.0 (IAB TCF 2.0)与Adobe Experience Platform Web SDK集成。 有关与IAB TCF 2.0集成的概述，请阅读[概述](./overview.md)。 有关如何与标记集成的指南，请阅读标记的[IAB TCF 2.0指南](./with-tags.md)。
 
 ## 快速入门
 
@@ -106,4 +106,4 @@ window.__tcfapi('getTCData', 2, function (tcData, success) {
 
 ## 后续步骤
 
-现在，您已了解如何将IAB TCF 2.0与Platform Web SDK扩展结合使用，您还可以选择与其他Adobe解决方案(如Adobe Analytics或Adobe Real-time Customer Data Platform)集成。 有关详细信息，请参阅[IAB透明度和同意框架2.0概述](./overview.md)。
+现在，您已了解如何将IAB TCF 2.0与Experience Platform Web SDK扩展一起使用，您还可以选择与其他Adobe解决方案(如Adobe Analytics或Adobe Real-Time Customer Data Platform)集成。 有关详细信息，请参阅[IAB透明度和同意框架2.0概述](./overview.md)。

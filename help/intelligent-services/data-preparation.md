@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 准备数据以用于智能服务
 description: 为了使智能服务从营销事件数据中发掘洞察信息，必须在语义上丰富并维护标准结构中的数据。 智能服务使用Experience Data Model (XDM)架构来实现这一点。
 exl-id: 17bd7cc0-da86-4600-8290-cd07bdd5d262
-source-git-commit: 87a8ad253abb219662034652b5f8c4fabfa40484
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2823'
+source-wordcount: '2827'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 为了让[!DNL Intelligent Services]从营销事件数据中发掘见解，必须在标准结构中从语义上扩充和维护数据。 [!DNL Intelligent Services]利用[!DNL Experience Data Model] (XDM)架构来实现这一点。 具体而言，[!DNL Intelligent Services]中使用的所有数据集都必须符合Consumer ExperienceEvent (CEE) XDM架构或使用Adobe Analytics连接器。 此外，客户人工智能支持Adobe Audience Manager连接器。
 
-本文档提供了有关将营销事件数据从多个渠道映射到CEE架构的一般指导，其中概述了架构内重要字段的信息，以帮助您确定如何有效地将数据映射到其结构。 如果您计划使用Adobe Analytics数据，请查看[Adobe Analytics数据准备](#analytics-data)部分。 如果您计划使用Adobe Audience Manager数据（仅限客户人工智能），请查看[AdobeAudience Manger数据准备](#AAM-data)部分。
+本文档提供了有关将营销事件数据从多个渠道映射到CEE架构的一般指导，其中概述了架构内重要字段的信息，以帮助您确定如何有效地将数据映射到其结构。 如果您计划使用Adobe Analytics数据，请查看[Adobe Analytics数据准备](#analytics-data)部分。 如果您计划使用Adobe Audience Manager数据（仅限客户人工智能），请查看[Adobe Audience Manger数据准备](#AAM-data)部分。
 
 ## 数据要求
 
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 例如，如果您使用客户人工智能来预测购买产品的倾向，则客户人工智能模型需要购买路径成功示例和不成功路径示例。 这是因为在模型培训期间，客户人工智能着眼于了解哪些事件和历程促成了购买。 这还包括未购买的客户执行的操作，例如个人停止了将商品添加到购物车的历程。 这些客户可能会表现出相似的行为，但客户人工智能可以提供洞察并深入分析导致倾向分数较高的主要差异和因素。 同样，Attribution AI需要事件和历程这两种类型，才能显示接触点有效性、排名最前的转化路径和按接触点位置划分等量度。
 
-有关历史数据要求的更多示例和信息，请访问输入/输出文档中的[客户人工智能](./customer-ai/data-requirements.md#data-requirements)或[Attribution AI](./attribution-ai/input-output.md#data-requirements)历史数据要求部分。
+有关历史数据要求的更多示例和信息，请访问输入/输出文档中的[客户人工智能](./customer-ai/data-requirements.md#data-requirements)或[归因人工智能](./attribution-ai/input-output.md#data-requirements)历史数据要求部分。
 
 ### 数据拼合准则
 
@@ -37,13 +37,13 @@ ht-degree: 0%
 
 ### 外部数据准备
 
-如果您的数据存储在Experience Platform之外，则需要将数据映射到[消费者ExperienceEvent架构](#cee-schema)中的必填字段和相关字段。 此架构可通过自定义字段组进行增强，以更好地捕获客户数据。 映射后，您可以使用消费者ExperienceEvent架构创建数据集并[将数据摄取到Platform](../ingestion/home.md)。 在配置[!DNL Intelligent Service]时，可以选择CEE数据集。
+如果您的数据存储在Experience Platform之外，则需要将数据映射到[消费者ExperienceEvent架构](#cee-schema)中的必填字段和相关字段。 此架构可通过自定义字段组进行增强，以更好地捕获客户数据。 映射后，您可以使用消费者ExperienceEvent架构创建数据集并[将数据摄取到Experience Platform](../ingestion/home.md)。 在配置[!DNL Intelligent Service]时，可以选择CEE数据集。
 
-根据您希望使用的[!DNL Intelligent Service]，可能需要不同的字段。 请注意，如果数据可用，则最佳实践是向字段添加数据。 要了解有关必填字段的更多信息，请访问[Attribution AI](./attribution-ai/input-output.md)或[客户人工智能](./customer-ai/data-requirements.md)数据要求指南。
+根据您希望使用的[!DNL Intelligent Service]，可能需要不同的字段。 请注意，如果数据可用，则最佳实践是向字段添加数据。 要了解有关必填字段的更多信息，请访问[归因人工智能](./attribution-ai/input-output.md)或[客户人工智能](./customer-ai/data-requirements.md)数据要求指南。
 
 ### Adobe Analytics数据准备 {#analytics-data}
 
-客户人工智能和Attribution AI原生支持Adobe Analytics数据。 要使用Adobe Analytics数据，请按照文档中概述的步骤设置[Analytics源连接器](../sources/tutorials/ui/create/adobe-applications/analytics.md)。
+客户人工智能和归因人工智能原生支持Adobe Analytics数据。 要使用Adobe Analytics数据，请按照文档中概述的步骤设置[Analytics源连接器](../sources/tutorials/ui/create/adobe-applications/analytics.md)。
 
 一旦源连接器将您的数据流式传输到Experience Platform中，您就能够在实例配置期间选择Adobe Analytics作为数据源，然后选择一个数据集。 在连接设置过程中，将自动创建所有必需的架构字段组和单个字段。 您不需要将数据集ETL（提取、转换、加载）为CEE格式。
 
@@ -65,7 +65,7 @@ GROUP BY channel.typeAtSource
 
 >[!IMPORTANT]
 >
->Adobe Analytics连接器最多需要四周时间来回填数据。 如果您最近设置了连接，则应验证数据集是否具有客户或Attribution AI所需的最小数据长度。 请查看[客户人工智能](./customer-ai/data-requirements.md#data-requirements)或[Attribution AI](./attribution-ai/input-output.md#data-requirements)中的历史数据部分，并验证您是否有足够的数据实现预测目标。
+>Adobe Analytics连接器最多需要四周时间来回填数据。 如果您最近设置了连接，则应验证数据集是否具有客户或归因人工智能所需的最小数据长度。 请查看[客户人工智能](./customer-ai/data-requirements.md#data-requirements)或[归因人工智能](./attribution-ai/input-output.md#data-requirements)中的历史数据部分，并验证您是否有足够的数据实现您的预测目标。
 
 ### Adobe Audience Manager数据准备（仅限客户人工智能） {#AAM-data}
 
@@ -79,7 +79,7 @@ GROUP BY channel.typeAtSource
 
 ### [!DNL Experience Platform]数据准备
 
-如果您的数据已存储在[!DNL Platform]中，并且未通过Adobe Analytics或Adobe Audience Manager（仅限客户人工智能）源连接器流式传输，请按照以下步骤操作。 仍建议您了解CEE架构。
+如果您的数据已存储在[!DNL Experience Platform]中，并且未通过Adobe Analytics或Adobe Audience Manager（仅限客户人工智能）源连接器流式传输，请按照以下步骤操作。 仍建议您了解CEE架构。
 
 1. 查看[消费者ExperienceEvent架构](#cee-schema)的结构，并确定数据是否可以映射到其字段。
 2. 请联系Adobe Consulting服务，帮助将数据映射到架构并将其摄取到[!DNL Intelligent Services]，或者，如果您希望自己映射数据，请[按照本指南中的步骤操作](#mapping)。
@@ -108,9 +108,9 @@ CEE字段组中有几个键字段应该被使用，以便[!DNL Intelligent Servi
 
 * [主要标识字段](#identity)
 * [xdm：timestamp](#timestamp)
-* [xdm：channel](#channel) (仅对于Attribution AI是必需的)
+* [xdm：channel](#channel)（仅对于归因人工智能是必需的）
 
-#### 主要标识 {#identity}
+#### 主要身份标识 {#identity}
 
 架构中的某个字段必须设置为主标识字段，这允许[!DNL Intelligent Services]将时间序列数据的每个实例链接到个人。
 
@@ -118,7 +118,7 @@ CEE字段组中有几个键字段应该被使用，以便[!DNL Intelligent Servi
 
 >[!NOTE]
 >
->Experience CloudID (ECID)也称为MCID，它将继续用在命名空间中。
+>Experience Cloud ID (ECID)也称为MCID，将继续在命名空间中使用。
 
 * &quot;email&quot;
 * &quot;phone&quot;
@@ -156,7 +156,7 @@ CEE字段组中有几个键字段应该被使用，以便[!DNL Intelligent Servi
 
 >[!NOTE]
 >
->仅当使用Attribution AI时，此字段为必填字段。
+>仅当使用归因人工智能时，此字段才是必填字段。
 
 此字段表示与ExperienceEvent相关的营销渠道。 字段包括有关渠道类型、媒体类型和位置类型的信息。
 
@@ -321,9 +321,9 @@ CEE字段组中有几个键字段应该被使用，以便[!DNL Intelligent Servi
 
 >[!NOTE]
 >
->以下步骤需要订阅Experience Platform。 如果您无权访问Platform，请跳至[后续步骤](#next-steps)部分。
+>以下步骤需要订阅Experience Platform。 如果您无权访问Experience Platform，请跳至[后续步骤](#next-steps)部分。
 
-本节概述了将数据映射并摄取到Experience Platform中以用于[!DNL Intelligent Services]的工作流，包括指向详细步骤的教程的链接。
+本节概述了将数据映射和摄取到Experience Platform以在[!DNL Intelligent Services]中使用的工作流，包括指向详细步骤的教程的链接。
 
 #### 创建CEE架构和数据集
 
@@ -343,7 +343,7 @@ CEE字段组中有几个键字段应该被使用，以便[!DNL Intelligent Servi
 * [在UI中创建数据集](../catalog/datasets/user-guide.md#create) （按照工作流使用现有架构）
 * [在API中创建数据集](../catalog/datasets/create.md)
 
-创建数据集后，您可以在Platform UI的&#x200B;**[!UICONTROL 数据集]**&#x200B;工作区中找到该数据集。
+创建数据集后，您可以在&#x200B;**[!UICONTROL 数据集]**&#x200B;工作区的Experience Platform UI中找到该数据集。
 
 ![](images/data-preparation/dataset-location.png)
 
@@ -355,11 +355,11 @@ CEE字段组中有几个键字段应该被使用，以便[!DNL Intelligent Servi
 
 #### 映射和摄取数据 {#ingest}
 
-创建CEE架构和数据集后，您可以开始将数据表映射到架构，并将这些数据摄取到Platform。 请参阅有关[将CSV文件映射到XDM架构](../ingestion/tutorials/map-csv/overview.md)的教程，以了解如何在UI中执行此操作的步骤。 您可以使用以下[示例JSON文件](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json)测试摄取过程，然后再使用您自己的数据。
+创建CEE架构和数据集后，您可以开始将数据表映射到架构，并将这些数据摄取到Experience Platform中。 请参阅有关[将CSV文件映射到XDM架构](../ingestion/tutorials/map-csv/overview.md)的教程，以了解如何在UI中执行此操作的步骤。 您可以使用以下[示例JSON文件](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json)测试摄取过程，然后再使用您自己的数据。
 
 填充某个数据集后，可使用相同的数据集来摄取其他数据文件。
 
-如果您的数据存储在受支持的第三方应用程序中，您还可以选择创建[源连接器](../sources/home.md)，将营销事件数据实时摄取到[!DNL Platform]。
+如果您的数据存储在受支持的第三方应用程序中，您还可以选择创建[源连接器](../sources/home.md)，将营销事件数据实时摄取到[!DNL Experience Platform]。
 
 ## 后续步骤 {#next-steps}
 

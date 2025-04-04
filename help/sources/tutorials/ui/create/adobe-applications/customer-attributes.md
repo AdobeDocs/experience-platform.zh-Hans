@@ -5,10 +5,10 @@ title: 在UI中创建客户属性Source连接
 type: Tutorial
 description: 了解如何在UI中创建源连接，以将客户属性配置文件数据引入Adobe Experience Platform。
 exl-id: 66bdab8f-c00e-4ebe-8b8e-f9e12cf86bbe
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '617'
-ht-degree: 0%
+source-wordcount: '620'
+ht-degree: 1%
 
 ---
 
@@ -26,7 +26,7 @@ ht-degree: 0%
 >
 >如果您已经为客户属性配置文件数据建立了源连接，则禁用与源连接的选项。
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以创建连接的各种源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以创建连接的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索栏查找要使用的特定源。
 
@@ -42,7 +42,7 @@ ht-degree: 0%
 >
 >字段组、架构和数据集是现成创建的，作为流配置的一部分。 它们将保持不变，如果需要，您必须手动删除它们。
 
-客户属性源不支持架构演变。 如果客户属性数据源的架构输入发生更改，则它将变得与Platform不兼容。 作为解决方法，您可以删除现有的客户属性数据流及其关联的数据集、架构和字段组，然后使用更新的架构和数据源创建新客户属性数据流。
+客户属性源不支持架构演变。 如果客户属性数据源的架构输入发生更改，则它将变得与Experience Platform不兼容。 作为解决方法，您可以删除现有的客户属性数据流及其关联的数据集、架构和字段组，然后使用更新的架构和数据源创建新客户属性数据流。
 
 >[!IMPORTANT]
 >
@@ -75,7 +75,7 @@ ht-degree: 0%
 
 ## 后续步骤
 
-创建连接后，将自动创建目标架构和数据集以包含传入数据。 完成初始摄取后，下游平台服务（如[!DNL Real-Time Customer Profile]和[!DNL Segmentation Service]）可以使用客户属性配置文件数据。 有关更多详细信息，请参阅以下文档：
+创建连接后，将自动创建目标架构和数据集以包含传入数据。 完成初始摄取后，下游Experience Platform服务（如[!DNL Real-Time Customer Profile]和[!DNL Segmentation Service]）可以使用客户属性配置文件数据。 有关更多详细信息，请参阅以下文档：
 
 * [[!DNL Real-Time Customer Profile] 概述](../../../../../profile/home.md)
 * [[!DNL Segmentation Service] 概述](../../../../../segmentation/home.md)

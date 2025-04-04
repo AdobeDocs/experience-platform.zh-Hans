@@ -1,16 +1,16 @@
 ---
-keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK；SDK
-title: 为自助式源配置源规范(Batch SDK)
-description: 本文档概述了为使用自助源(Batch SDK)而需要准备的配置。
+keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源sdk；sdk；SDK
+title: 为自助源配置源规范(批处理SDK)
+description: 本文档概述了为使用自助源(批处理SDK)而需要准备的配置。
 exl-id: f814c883-b529-4ecc-bedd-f638bf0014b5
-source-git-commit: 1fdce7c798d8aff49ab4953298ad7aa8dddb16bd
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2084'
+source-wordcount: '2090'
 ht-degree: 1%
 
 ---
 
-# 为自助源配置源规范（批处理SDK）
+# 为自助源配置源规范(批处理SDK)
 
 Source规范包含特定于某个源的信息，包括与源的类别、测试版状态和目录图标相关的属性。 它们还包含有用的信息，如URL参数、内容、标题和计划。 Source规范还描述了从基本连接创建源连接所需的参数架构。 要创建源连接，必须使用架构。
 
@@ -233,21 +233,21 @@ Source规范包含特定于某个源的信息，包括与源的类别、测试�
 | `sourceSpec.attributes.uiAttributes` | 显示特定于UI的源的信息。 |
 | `sourceSpec.attributes.uiAttributes.isBeta` | 一个布尔属性，指示源是否需要客户提供更多反馈才能添加到其功能中。 | <ul><li>`true`</li><li>`false`</li></ul> |
 | `sourceSpec.attributes.uiAttributes.category` | 定义源的类别。 | <ul><li>`advertising`</li><li>`crm`</li><li>`customer success`</li><li>`database`</li><li>`ecommerce`</li><li>`marketing automation`</li><li>`payments`</li><li>`protocols`</li></ul> |
-| `sourceSpec.attributes.uiAttributes.icon` | 定义用于在Platform UI中呈现源的图标。 | `mailchimp-icon.svg` |
+| `sourceSpec.attributes.uiAttributes.icon` | 定义用于在Experience Platform UI中呈现源的图标。 | `mailchimp-icon.svg` |
 | `sourceSpec.attributes.uiAttributes.description` | 显示源的简要说明。 |
-| `sourceSpec.attributes.uiAttributes.label` | 显示用于在Platform UI中呈现源的标签。 |
+| `sourceSpec.attributes.uiAttributes.label` | 显示用于在Experience Platform UI中呈现源的标签。 |
 | `sourceSpec.attributes.spec.properties.urlParams` | 包含有关URL资源路径、方法和支持的查询参数的信息。 |
 | `sourceSpec.attributes.spec.properties.urlParams.properties.path` | 定义从中获取数据的资源路径。 | `/3.0/reports/${campaignId}/email-activity` |
 | `sourceSpec.attributes.spec.properties.urlParams.properties.method` | 定义请求资源获取数据时使用的HTTP方法。 | `GET`、`POST` |
 | `sourceSpec.attributes.spec.properties.urlParams.properties.queryParams` | 定义支持的查询参数，这些参数可用于在发出获取数据的请求时附加源URL。 **注意**：任何用户提供的参数值都必须设置为占位符格式。 例如： `${USER_PARAMETER}`。 | `"queryParams" : {"key" : "value", "key1" : "value1"}`将附加到源URL中： `/?key=value&key1=value1` |
 | `sourceSpec.attributes.spec.properties.spec.properties.headerParams` | 定义在提取数据时需要在到源URL的HTTP请求中提供的标头。 | `"headerParams" : {"Content-Type" : "application/json", "x-api-key" : "key"}` |
 | `sourceSpec.attributes.spec.properties.bodyParams` | 此属性可以配置为通过POST请求发送HTTP正文。 |
-| `sourceSpec.attributes.spec.properties.contentPath` | 定义包含需要引入到Platform的项目列表的节点。 此属性应遵循有效的JSON路径语法，且必须指向特定数组。 | 查看[其他资源部分](#content-path)以了解内容路径中包含的资源示例。 |
-| `sourceSpec.attributes.spec.properties.contentPath.path` | 指向要引入到Platform的收藏集记录的路径。 | `$.emails` |
+| `sourceSpec.attributes.spec.properties.contentPath` | 定义包含需要摄取到Experience Platform的项列表的节点。 此属性应遵循有效的JSON路径语法，且必须指向特定数组。 | 查看[其他资源部分](#content-path)以了解内容路径中包含的资源示例。 |
+| `sourceSpec.attributes.spec.properties.contentPath.path` | 指向要引入到Experience Platform的收藏集记录的路径。 | `$.emails` |
 | `sourceSpec.attributes.spec.properties.contentPath.skipAttributes` | 通过此属性，可识别内容路径中标识的资源中将被排除在摄取范围之外的特定项目。 | `[total_items]` |
 | `sourceSpec.attributes.spec.properties.contentPath.keepAttributes` | 此属性允许您明确指定要保留的个别属性。 | `[total_items]` |
 | `sourceSpec.attributes.spec.properties.contentPath.overrideWrapperAttribute` | 此属性允许您覆盖在`contentPath`中指定的属性名称值。 | `email` |
-| `sourceSpec.attributes.spec.properties.explodeEntityPath` | 此属性允许您扁平化两个数组并将资源数据转换为Platform资源。 |
+| `sourceSpec.attributes.spec.properties.explodeEntityPath` | 此属性允许您扁平化两个数组并将资源数据转换为Experience Platform资源。 |
 | `sourceSpec.attributes.spec.properties.explodeEntityPath.path` | 指向要拼合的收藏集记录的路径。 | `$.email.activity` |
 | `sourceSpec.attributes.spec.properties.explodeEntityPath.skipAttributes` | 此属性允许您从实体路径中标识的资源中标识要排除以不被引入的特定项目。 | `[total_items]` |
 | `sourceSpec.attributes.spec.properties.explodeEntityPath.keepAttributes` | 此属性允许您明确指定要保留的个别属性。 | `[total_items]` |
@@ -379,7 +379,7 @@ Source规范包含特定于某个源的信息，包括与源的类别、测试�
 
 ### 为源配置不同的分页类型 {#pagination}
 
-以下是自助源（批处理SDK）支持的其他分页类型示例：
+以下是自助源(批处理SDK)支持的其他分页类型示例：
 
 >[!BEGINTABS]
 
@@ -509,7 +509,7 @@ Source规范包含特定于某个源的信息，包括与源的类别、测试�
 
 >[!TAB 无]
 
-`NONE`分页类型可用于不支持任何可用分页类型的源。 当发出GET请求时，使用`NONE`分页类型的源仅返回所有可检索的记录。
+`NONE`分页类型可用于不支持任何可用分页类型的源。 在发出GET请求时，使用`NONE`分页类型的源只会返回所有可检索的记录。
 
 ```json
 "paginationParams": {
@@ -519,7 +519,7 @@ Source规范包含特定于某个源的信息，包括与源的类别、测试�
 
 >[!ENDTABS]
 
-### 自助式源的高级计划（批处理SDK）
+### 自助式源的高级计划(批处理SDK)
 
 使用高级计划配置源的增量计划和回填计划。 `incremental`属性允许您配置计划，其中源将仅摄取新的或修改的记录，而`backfill`属性允许您创建计划以摄取历史数据。
 
@@ -556,7 +556,7 @@ Source规范包含特定于某个源的信息，包括与源的类别、测试�
 
 ### 添加自定义架构以定义源的动态属性
 
-您可以在`sourceSpec`中包含自定义架构，以定义源所需的所有属性，包括可能需要的任何动态属性。 您可以在连接规范的`sourceSpec`部分中提供自定义架构时，通过向[!DNL Flow Service] API的`/connectionSpecs`端点发出PUT请求来更新源对应的连接规范。
+您可以在`sourceSpec`中包含自定义架构，以定义源所需的所有属性，包括可能需要的任何动态属性。 您可以更新源对应的连接规范，方法是向[!DNL Flow Service] API的`/connectionSpecs`端点发出PUT请求，同时在连接规范的`sourceSpec`部分中提供自定义架构。
 
 以下是您可以添加到源的连接规范中的自定义架构示例：
 
@@ -659,4 +659,4 @@ Source规范包含特定于某个源的信息，包括与源的类别、测试�
 
 ## 后续步骤
 
-填充源规范后，您可以继续为要集成到Platform的源配置浏览规范。 有关详细信息，请参阅有关[配置浏览规范](./explorespec.md)的文档。
+填充源规范后，您可以继续为要集成到Experience Platform的源配置浏览规范。 有关详细信息，请参阅有关[配置浏览规范](./explorespec.md)的文档。

@@ -5,9 +5,9 @@ feature: Customer AI
 title: Customer AI访问控制
 description: 本文档提供了有关客户人工智能的基于属性的访问控制的信息。
 exl-id: 02e3b6a4-304a-4ac4-b07c-010531101feb
-source-git-commit: f28558d5939607cabf449cbc03b7e0f5406f6326
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '519'
+source-wordcount: '520'
 ht-degree: 4%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 4%
 
 此功能允许您使用定义组织或数据使用范围的标签来标记Experience Data Model (XDM)架构字段。 同时，管理员可以使用用户和角色管理界面定义围绕XDM架构字段的访问策略，并更好地管理授予用户或用户组（内部、外部或第三方用户）的访问权限。 此外，基于属性的访问控制允许管理员管理对特定区段的访问。
 
-通过基于属性的访问控制，贵组织的管理员可以控制用户对所有平台工作流和资源的敏感个人数据(SPD)和个人身份信息(PII)的访问。 管理员可以定义只能访问特定字段以及与这些字段对应的数据的用户角色。
+通过基于属性的访问控制，贵组织的管理员可以控制用户在所有Experience Platform工作流和资源中对敏感个人数据(SPD)和个人身份信息(PII)的访问。 管理员可以定义只能访问特定字段以及与这些字段对应的数据的用户角色。
 
 由于基于属性的访问控制，某些字段和功能将限制访问，并且对于某些客户人工智能服务模型不可用。 示例包括“Identity”、“Score Definition”和“Clone”。
 
@@ -46,4 +46,4 @@ ht-degree: 4%
 
 ## 后续步骤
 
-通过阅读本指南，您已了解[!DNL Experience Platform]中访问控制的主要原则。 您现在可以继续阅读[访问控制用户指南](../overview.md)，以了解有关如何使用[!DNL Admin Console]创建产品配置文件和为[!DNL Platform]分配权限的详细步骤。
+通过阅读本指南，您已了解[!DNL Experience Platform]中访问控制的主要原则。 您现在可以继续阅读[访问控制用户指南](../overview.md)，以了解有关如何使用[!DNL Admin Console]创建产品配置文件和为[!DNL Experience Platform]分配权限的详细步骤。

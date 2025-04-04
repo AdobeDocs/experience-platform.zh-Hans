@@ -2,9 +2,9 @@
 title: 使用流服务API创建Azure Blob基本连接
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Azure Blob。
 exl-id: 4ab8033f-697a-49b6-8d9c-1aadfef04a04
-source-git-commit: d22c71fb77655c401f4a336e339aaf8b3125d1b6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '766'
+source-wordcount: '772'
 ht-degree: 3%
 
 ---
@@ -19,8 +19,8 @@ ht-degree: 3%
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
-* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 以下部分提供使用[!DNL Flow Service] API成功创建[!DNL Blob]源连接所需了解的其他信息。
 
@@ -34,7 +34,7 @@ ht-degree: 3%
 
 | 凭据 | 描述 |
 | --- | --- |
-| `connectionString` | 一个字符串，其中包含验证[!DNL Blob]以Experience Platform所需的授权信息。 [!DNL Blob]连接字符串模式为： `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`。 有关连接字符串的详细信息，请参阅[配置连接字符串](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string)上的此[!DNL Blob]文档。 |
+| `connectionString` | 一个字符串，其中包含向Experience Platform验证[!DNL Blob]所需的授权信息。 [!DNL Blob]连接字符串模式为： `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`。 有关连接字符串的详细信息，请参阅[配置连接字符串](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string)上的此[!DNL Blob]文档。 |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL Blob]的连接规范ID为： `d771e9c1-4f26-40dc-8617-ce58c4b53702`。 |
 
 >[!TAB SAS URI身份验证]
@@ -48,9 +48,9 @@ ht-degree: 3%
 
 >[!ENDTABS]
 
-### 使用平台API
+### 使用Experience Platform API
 
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../../landing/api-guide.md)指南。
+有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../../../landing/api-guide.md)指南。
 
 ## 创建基本连接
 
@@ -58,13 +58,13 @@ ht-degree: 3%
 >
 >创建后，无法更改[!DNL Blob]基本连接的身份验证类型。 要更改身份验证类型，必须创建新的基本连接。
 
-基本连接会保留您的源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
+基本连接会保留源与Experience Platform之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
 [!DNL Blob]源支持连接字符串和共享访问签名(SAS)身份验证。 共享访问签名(SAS) URI允许向您的[!DNL Blob]帐户安全委派授权。 您可以使用SAS创建具有不同访问级别的身份验证凭据，因为基于SAS的身份验证允许您设置权限、开始和到期日期，以及配置给特定资源。
 
 在此步骤中，您还可以通过定义容器名称和子文件夹的路径来指定帐户将有权访问的子文件夹。
 
-要创建基本连接ID，请在提供[!DNL Blob]身份验证凭据作为POST参数的一部分时，向`/connections`端点请求请求。
+要创建基本连接ID，请在提供您的[!DNL Blob]身份验证凭据作为请求参数的一部分时，向`/connections`端点发出POST请求。
 
 **API格式**
 
@@ -130,7 +130,7 @@ curl -X POST \
 
 >[!TAB SAS URI身份验证]
 
-若要使用共享访问签名URI创建[!DNL Blob]连接，请向[!DNL Flow Service] API发出POST请求，同时为您的[!DNL Blob] `sasUri`提供值。
+若要使用共享访问签名URI创建[!DNL Blob]连接，请在为[!DNL Blob] `sasUri`提供值的同时向[!DNL Flow Service] API发出POST请求。
 
 +++请求
 

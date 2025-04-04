@@ -2,9 +2,9 @@
 description: 了解如何使用目标测试API为流式目标生成样本配置文件，以用于目标测试。
 title: 根据源架构生成样本配置文件
 exl-id: 5f1cd00a-8eee-4454-bcae-07b05afa54af
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '979'
+source-wordcount: '980'
 ht-degree: 1%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 1%
 >* 使用&#x200B;*目标ID*&#x200B;作为查询参数，生成要在[编制和测试消息转换模板](create-template.md)时使用的配置文件。
 >* 如果目标配置正确，则生成调用[test时使用的配置文件](streaming-destination-testing-overview.md) — 使用&#x200B;*目标实例ID*&#x200B;作为查询参数。
 
-您可以根据AdobeXDM源架构（在测试目标时使用）或目标支持的目标架构（在构建模板时使用）生成示例配置文件。 要了解AdobeXDM源架构与目标架构之间的区别，请阅读[消息格式](../../functionality/destination-server/message-format.md)文章的概述部分。
+您可以根据Adobe XDM源架构（在测试目标时使用）或目标支持的目标架构（在构建模板时使用）生成示例配置文件。 要了解Adobe XDM源架构与目标架构之间的区别，请阅读[消息格式](../../functionality/destination-server/message-format.md)文章的概述部分。
 
 请注意，示例配置文件的使用目的不可互换。 基于&#x200B;*目标ID*&#x200B;生成的配置文件只能用于制作消息转换模板，基于&#x200B;*目标实例ID*&#x200B;生成的配置文件只能用于测试目标端点。
 
@@ -42,11 +42,11 @@ ht-degree: 1%
 
 您可以基于源架构生成样本配置文件，方法是向`authoring/sample-profiles/`端点发出GET请求，并提供您基于要测试的目标配置创建的目标实例的ID。
 
-要获取目标实例的ID，您必须先在Experience PlatformUI中创建与目标的连接，然后再尝试测试目标。 阅读[激活目标教程](../../../ui/activation-overview.md)，并查看下面的提示，了解如何获取要用于此API的目标实例ID。
+要获取目标实例的ID，您必须先在Experience Platform UI中创建与目标的连接，然后再尝试测试目标。 阅读[激活目标教程](../../../ui/activation-overview.md)，并查看下面的提示，了解如何获取要用于此API的目标实例ID。
 
 >[!IMPORTANT]
 >
->* 要使用此API，您必须在Experience PlatformUI中拥有到目标的现有连接。 阅读[连接到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html)和[将配置文件和受众激活到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html)以了解详细信息。
+>* 要使用此API，您必须在Experience Platform UI中拥有到目标的现有连接。 阅读[连接到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html)和[将配置文件和受众激活到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html)以了解详细信息。
 > * 建立与目标的连接后，获取在[浏览与目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html)的连接时您应在对此端点的API调用中使用的目标实例ID。
 >![UI图像如何获取目标实例ID](../../assets/testing-api/get-destination-instance-id.png)
 
@@ -193,7 +193,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 >
 >在[渲染模板步骤](render-template-api.md#multiple-profiles-with-body)中，使用在构建模板时生成的示例配置文件。
 
-您可以基于目标架构生成样本配置文件，向`authoring/sample-profiles/`端点发出GET请求并提供要基于其创建模板的目标配置的目标ID。
+您可以基于目标架构生成样本配置文件，向`authoring/sample-profiles/`端点发出GET请求，并提供要基于其创建模板的目标配置的目标ID。
 
 >[!TIP]
 >
@@ -373,7 +373,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 
 ## API错误处理 {#api-error-handling}
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅平台疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
+Destination SDK API端点遵循常规Experience Platform API错误消息原则。 请参阅Experience Platform疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤
 

@@ -6,10 +6,10 @@ user-guide-description: 了解如何部署和管理分析、营销和广告标�
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: 5e3f1517b321cab756305cd61ad5f1def93d3de7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '776'
-ht-degree: 35%
+source-wordcount: '777'
+ht-degree: 36%
 
 ---
 
@@ -90,7 +90,7 @@ ht-degree: 35%
       * Adobe客户端数据层{#client-data-layer}
          * [概述](./extensions/client/client-data-layer/overview.md)
          * [发行说明](./extensions/client/client-data-layer/release-notes.md)
-      * Adobe内容分析{#content-analytics}
+      * Adobe Content Analytics {#content-analytics}
          * [概述](./extensions/client/content-analytics/overview.md)
       * Adobe ContextHub {#contexthub}
          * [概述](./extensions/client/contexthub/overview.md)
@@ -329,5 +329,5 @@ ht-degree: 35%
 * [常见问题解答](./faq.md)
 * [术语更新](./term-updates.md)
 * [弃用对Internet Explorer 10和11的支持](./ie-deprecation.md)
-* [平台发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
+* [Experience Platform 发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
 

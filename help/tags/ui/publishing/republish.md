@@ -2,10 +2,10 @@
 title: 重新发布库
 description: 了解如何在Adobe Experience Platform中重新发布之前的标记库。
 exl-id: 026b01f2-a93d-4e8a-9ed2-47c4f011e70f
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '648'
-ht-degree: 49%
+source-wordcount: '651'
+ht-degree: 56%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 49%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 有关Web属性的五个最新库已发布到您的生产环境，可供您以后检索。 当您在生产库中发现错误并需要立即回退到已知的正常状态时，这项功能会很有帮助。
 
@@ -23,7 +23,7 @@ ht-degree: 49%
 
 * **主机：由Adobe托管，存档：关闭：**&#x200B;如果您使用的是由Adobe托管的主机，并且未存档您的库，则可以重新发布这些旧版的库。
 
-* **主机：由Adobe托管，存档：开启：**&#x200B;如果您使用的是由Adobe托管的主机，并且存档了您的库，则可以下载这些旧版的库。
+* **主机：由Adobe托管，存档：日期：**&#x200B;如果您使用的是由Adobe托管的主机，并且存档了您的库，那么您可以下载这些旧版的库。
 
 * **主机：SFTP，存档：开启或关闭：**&#x200B;如果您使用的是 SFTP 主机，则该选项假定您有自己的就地存档策略，将不提供检索选项。
 
@@ -37,7 +37,7 @@ ht-degree: 49%
 
 生产环境中的这五个最近使用的版本可用于检索。
 
-当您重新发布旧版的库时，Platform会更新环境链接，以指向这些尚未清理的旧版本之一。  Platform还会向CDN边缘节点缓存发出清除请求，以指示库已更新，应从源中检索全新副本。
+当您重新发布旧版的库时，Experience Platform会更新环境链接，以指向这些尚未清理的旧版本之一。  Experience Platform还会向CDN边缘节点缓存发出清除请求，以指示库已更新，应从源中检索全新副本。
 
 这意味着当您重新发布旧版的库时：
 
@@ -47,7 +47,7 @@ ht-degree: 49%
 
 当由于特定规则的问题而回退时，请考虑此方案。例如，目前生产环境中的规则修订版可能是三个修订版旧版本。当您在UI中查看该规则以进行修复时，它仍将反映保存的最新更改，而不是生产环境中当前的更改。
 
-因此，Platform会通知您某个属性处于重新发布状态，以提醒您在数据收集用户界面中看到的内容与正常情况相比，跟“Production”（生产环境）相差较远。 此通知不可见，当您首次查看该属性时，会在每个浏览器会话中显示一次。
+因此，Experience Platform会通知您某个属性处于重新发布状态，以提醒您在数据收集用户界面中看到的内容与正常情况相比，跟“Production”（生产环境）相差较远。 此通知不可见，当您首次查看该属性时，会在每个浏览器会话中显示一次。
 
 ### 如何重新发布旧版库
 

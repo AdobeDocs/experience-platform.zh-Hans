@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform；主页；热门主题；API；API；XDM；XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；架构注册表；Schema注册表；
+keywords: Experience Platform；主页；热门主题；API；API；XDM；XDM系统；体验数据模型；体验数据模型；体验数据模型；数据模型；数据模型；架构注册表；架构注册表；
 solution: Experience Platform
 title: 架构注册表API指南
 description: 架构注册表API允许开发人员以编程方式管理Adobe Experience Platform中的所有架构和相关体验数据模型(XDM)资源。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: 9e693d29-303e-462a-a1e2-93c0d517b8e3
-source-git-commit: 6e58f070c0a25d7434f1f165543f92ec5a081e66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1141'
+source-wordcount: '1144'
 ht-degree: 2%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 2%
 
 [!DNL Schema Registry]用于访问Adobe Experience Platform中的架构库，提供一个用户界面和RESTful API，所有可用库资源都可通过该API访问。
 
-架构注册表API提供了多个端点，允许您以编程方式管理Platform中可供您使用的所有架构和相关体验数据模型(XDM)资源。 这包括Adobe、[!DNL Experience Platform]合作伙伴以及您使用其应用程序的供应商所定义的那些合作伙伴。
+架构注册表API提供了多个端点，允许您以编程方式管理Experience Platform中可用的所有架构和相关体验数据模型(XDM)资源。 这包括Adobe、[!DNL Experience Platform]合作伙伴以及您使用其应用程序的供应商所定义的那些客户。
 
 这些端点概述如下。 有关详细信息，请访问各个端点指南，请参阅[快速入门指南](./getting-started.md)，了解有关所需标头、读取示例API调用等的重要信息。
 
@@ -27,7 +27,7 @@ ht-degree: 2%
 
 ## 架构
 
-XDM架构表示并验证引入到Platform中的数据结构和格式。 架构由一个类以及零个或多个架构字段组组成。 您可以使用`/schemas`端点创建、查看、编辑和删除架构。 要了解如何使用此端点，请参阅[架构端点指南](./schemas.md)。
+XDM架构表示和验证引入Experience Platform的数据的结构和格式。 架构由一个类以及零个或多个架构字段组组成。 您可以使用`/schemas`端点创建、查看、编辑和删除架构。 要了解如何使用此端点，请参阅[架构端点指南](./schemas.md)。
 
 有关如何在架构注册表API中手动创建完整架构（包括创建和添加字段组和数据类型）的分步指南，请参阅[API架构创建教程](../tutorials/create-schema-api.md)。
 
@@ -59,7 +59,7 @@ XDM架构表示并验证引入到Platform中的数据结构和格式。 架构�
 
 ## 联合
 
-虽然Platform允许您针对特定用例编写架构，但它还允许您编写属于特定类的架构的“联合”。 合并架构将共享相同类的所有架构的字段聚合到单个表示中。 通过启用用于[实时客户个人资料](../../profile/home.md)的架构，该架构将包含在其特定类的联合中。 因此，不能直接编辑合并架构，并且只能受包含或排除用于配置文件中的架构的影响。
+虽然Experience Platform允许您为特定用例编写架构，但它还允许您为属于特定类的架构编写“联合”。 合并架构将共享相同类的所有架构的字段聚合到单个表示中。 通过启用用于[实时客户个人资料](../../profile/home.md)的架构，该架构将包含在其特定类的联合中。 因此，不能直接编辑合并架构，并且只能受包含或排除用于配置文件中的架构的影响。
 
 要了解如何在架构注册表API中查看联合，请参阅[联合端点指南](./unions.md)。
 
@@ -93,7 +93,7 @@ XDM架构表示并验证引入到Platform中的数据结构和格式。 架构�
 
 ## 审核日志
 
-架构注册表维护在不同更新之间对资源（类、字段组、数据类型或架构）发生的所有更改的日志。 您可以通过在指向此终结点的GET请求路径中提供特定资源的`$id`或`meta:altId`来检索该日志。
+架构注册表维护在不同更新之间对资源（类、字段组、数据类型或架构）发生的所有更改的日志。 通过在GET请求指向此端点的路径中提供特定资源的`$id`或`meta:altId`，您可以检索该资源的日志。
 
 有关使用此端点的详细信息，请参阅[审核日志端点指南](./audit-log.md)。
 

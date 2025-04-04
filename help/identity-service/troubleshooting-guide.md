@@ -4,16 +4,16 @@ solution: Experience Platform
 title: Identity Service故障排除指南
 description: 本文档提供了有关Adobe Experience Platform Identity服务的常见问题解答，以及常见错误的疑难解答指南。
 exl-id: dac31bc3-7003-46d6-9d41-9f6fd3645c2c
-source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2165'
+source-wordcount: '2168'
 ht-degree: 0%
 
 ---
 
 # Identity Service故障排除指南
 
-本文档提供了有关Adobe Experience Platform [!DNL Identity Service]的常见问题解答以及常见错误的疑难解答指南。 有关[!DNL Platform] API的一般问题和疑难解答，请参阅[Adobe Experience Platform API疑难解答指南](../landing/troubleshooting.md)。
+本文档提供了有关Adobe Experience Platform [!DNL Identity Service]的常见问题解答以及常见错误的疑难解答指南。 有关[!DNL Experience Platform] API的一般问题和疑难解答，请参阅[Adobe Experience Platform API疑难解答指南](../landing/troubleshooting.md)。
 
 用于识别单个客户的数据通常分散在客户用于与您的品牌互动的各种设备和系统中。 [!DNL Identity Service]将这些分散的标识集合在一起，便于全面了解客户行为，以便您实时提供有影响力的数字体验。 有关详细信息，请参阅[Identity Service概述](./home.md)。
 
@@ -81,7 +81,7 @@ ht-degree: 0%
 
 ## 如何为我的组织创建自定义命名空间？
 
-使用[身份服务API](https://www.adobe.io/experience-platform-apis/references/identity-service)，您可以通过向`/idnamespace/identities`端点发出POST请求来创建组织的自定义身份命名空间。 有关详细信息，请参阅Identity Service API概述中有关[创建自定义命名空间](./api/create-custom-namespace.md)的部分。
+使用[身份服务API](https://www.adobe.io/experience-platform-apis/references/identity-service)，您可以通过向`/idnamespace/identities`端点发出POST请求来为组织创建自定义身份命名空间。 有关详细信息，请参阅Identity Service API概述中有关[创建自定义命名空间](./api/create-custom-namespace.md)的部分。
 
 ## 什么是复合身份和XID？
 
@@ -89,7 +89,7 @@ API调用中由其复合身份或XID引用身份。 复合身份是包含ID值�
 
 ## Identity Service如何处理个人身份信息(PII)？
 
-Identity Service具有标准命名空间，可支持为电话号码和电子邮件摄取哈希身份值。 但是，您应负责值的哈希处理。 若要了解有关对摄取到Platform中的数据执行哈希处理的详细信息，请参阅[[!DNL Data Prep] 映射函数指南](../data-prep/functions.md#hashing)。
+Identity Service具有标准命名空间，可支持为电话号码和电子邮件摄取哈希身份值。 但是，您应负责值的哈希处理。 若要了解有关对摄取到Experience Platform中的数据执行哈希处理的详细信息，请参阅[[!DNL Data Prep] 映射函数指南](../data-prep/functions.md#hashing)。
 
 ## 对基于PII的标识进行哈希处理时是否有任何注意事项？
 
@@ -115,7 +115,7 @@ Internal solutions|Preferred|Common
 
 ## 为何无法访问身份图页面或API？
 
-您的平台管理员必须为您预配`view-identity-graph`权限，以便您查看身份图形数据。 如果没有此权限，您将在身份图查看器页面上以及调用平台API时，收到权限被拒绝消息。 有关权限的详细信息，请参阅[访问控制概述](../access-control/home.md)。
+您的Experience Platform管理员必须为您预配`view-identity-graph`权限，以便您查看身份图数据。 如果没有此权限，您将在身份图查看器页面上以及调用Experience Platform API时收到权限被拒绝消息。 有关权限的详细信息，请参阅[访问控制概述](../access-control/home.md)。
 
 ## 故障排除
 
@@ -216,7 +216,7 @@ Internal solutions|Preferred|Common
 }
 ```
 
-如果出现此错误，您的访问令牌无效。 访问令牌每24小时过期一次，必须重新生成才能继续使用[!DNL Platform] API。 有关生成新访问令牌的说明，请参阅[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。
+如果出现此错误，您的访问令牌无效。 访问令牌每24小时过期一次，必须重新生成才能继续使用[!DNL Experience Platform] API。 有关生成新访问令牌的说明，请参阅[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。
 
 ### 授权服务令牌无效
 
@@ -228,7 +228,7 @@ Internal solutions|Preferred|Common
 }
 ```
 
-如果出现此错误，您的访问令牌无效。 访问令牌每24小时过期一次，必须重新生成才能继续使用[!DNL Platform] API。 有关生成新访问令牌的说明，请参阅[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。
+如果出现此错误，您的访问令牌无效。 访问令牌每24小时过期一次，必须重新生成才能继续使用[!DNL Experience Platform] API。 有关生成新访问令牌的说明，请参阅[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。
 
 ### 用户令牌没有有效的产品上下文
 
@@ -276,11 +276,11 @@ Internal solutions|Preferred|Common
 }
 ```
 
-执行[!DNL Platform]服务调用时发生意外异常时，将显示此错误。 最佳实践是在收到此错误时，对自动调用进行编程，以按一定的时间间隔重试其请求。 如果问题仍然存在，请与系统管理员联系。
+执行[!DNL Experience Platform]服务调用时发生意外异常时，将显示此错误。 最佳实践是在收到此错误时，对自动调用进行编程，以按一定的时间间隔重试其请求。 如果问题仍然存在，请与系统管理员联系。
 
 ## 批量摄取错误代码
 
-[!DNL Identity Service]使用批处理摄取从上载到[!DNL Platform]的记录和时序数据中摄取身份数据。 由于批次摄取是异步过程，因此您必须查看批次的详细信息才能查看错误。 错误将随着批的进行而累积，直到批完成。
+[!DNL Identity Service]使用批处理摄取从上载到[!DNL Experience Platform]的记录和时序数据中摄取身份数据。 由于批次摄取是异步过程，因此您必须查看批次的详细信息才能查看错误。 错误将随着批的进行而累积，直到批完成。
 
 以下是使用[批次摄取API](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/)时可能遇到的与[!DNL Identity Service]相关的错误消息列表。
 

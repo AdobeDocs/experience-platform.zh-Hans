@@ -4,9 +4,9 @@ title: 目标仪表板
 description: Adobe Experience Platform提供了一个功能板，通过它可查看有关贵组织的活动目标的重要信息。
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: a8b5ed09e8e28075a3a4f37ad30f01c1cc389b9c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '3243'
+source-wordcount: '3246'
 ht-degree: 19%
 
 ---
@@ -27,15 +27,15 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 
 ## 浏览[!UICONTROL 目标]仪表板 {#explore}
 
-要导航到Platform UI中的目标仪表板，请在左边栏中选择&#x200B;**[!UICONTROL 目标]**，然后选择&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡以显示仪表板。
+要导航到Experience Platform UI中的目标仪表板，请在左边栏中选择&#x200B;**[!UICONTROL 目标]**，然后选择&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡以显示仪表板。
 
 最新快照的日期和时间显示在[!UICONTROL 概述]顶部的目标下拉列表旁边。 截至该日期和时间，所有构件数据都是准确的。 快照的时间戳以UTC格式提供；它不在单个用户或组织的时区内。
 
 >[!NOTE]
 >
->如果您的组织是Experience Platform的新用户，并且还没有有效的目标，则目标仪表板和[!UICONTROL 概述]选项卡将不可见。 相反，从左侧导航中选择[!UICONTROL 目标]将显示[!UICONTROL 目录]选项卡。 要了解有关[!UICONTROL 目录]选项卡的更多信息，请参阅[[!UICONTROL 目标]工作区指南](../../destinations/ui/destinations-workspace.md)。
+>如果您的组织是初次使用Experience Platform并且还没有有效的目标，则目标仪表板和[!UICONTROL 概述]选项卡将不可见。 相反，从左侧导航中选择[!UICONTROL 目标]将显示[!UICONTROL 目录]选项卡。 要了解有关[!UICONTROL 目录]选项卡的更多信息，请参阅[[!UICONTROL 目标]工作区指南](../../destinations/ui/destinations-workspace.md)。
 
-![突出显示最新快照的Platform UI目标概述。](../images/destinations/snapshot-timestamp.png)
+![突出显示最新快照的Experience Platform UI目标概述。](../images/destinations/snapshot-timestamp.png)
 
 ### 修改[!UICONTROL 目标]仪表板 {#modify}
 
@@ -53,7 +53,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 
 ### 查看 SQL {#view-sql}
 
-通过打开[!UICONTROL 概述]工作区，您可以查看生成可在您的仪表板上可视化的分析的SQL。 您可以从现有见解的SQL中获得灵感，以创建新查询，这些查询可根据您的业务需求从Platform数据获取独特的见解。 若要了解有关此功能的详细信息，请参阅[查看SQL UI指南](../view-sql.md)。
+通过打开[!UICONTROL 概述]工作区，您可以查看生成可在您的仪表板上可视化的分析的SQL。 您可以从现有见解的SQL中获得灵感，以创建新查询，这些查询可根据您的业务需求从Experience Platform数据获取独特的见解。 若要了解有关此功能的详细信息，请参阅[查看SQL UI指南](../view-sql.md)。
 
 ## 默认构件 {#default-widgets}
 
@@ -70,7 +70,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 
 ## 标准小组件 {#standard-widgets}
 
-Adobe提供了多个标准构件，可用于可视化与目标相关的各种指标并评估可用于数据分析的受众的完整性。 您还可以使用[!UICONTROL 构件库]创建要与您的组织共享的自定义构件。 要了解有关创建自定义小组件的更多信息，请先阅读[小组件库概述](../customize/widget-library.md)。
+Adobe提供了多个标准构件，可用于可视化与您的目标相关的各种量度，并评估可用于数据分析的受众的完整性。 您还可以使用[!UICONTROL 构件库]创建要与您的组织共享的自定义构件。 要了解有关创建自定义小组件的更多信息，请先阅读[小组件库概述](../customize/widget-library.md)。
 
 ### 先决条件 {#prerequisites}
 
@@ -80,7 +80,7 @@ Adobe提供了多个标准构件，可用于可视化与目标相关的各种指
 * **受众：一组具有共同特征和行为的人员、帐户、家庭或其他实体。**
 * **映射/映射**：数据映射是将源数据字段映射到目标中相关目标字段的过程。
 * **标识**：标识是唯一代表单个客户的标识符，如Cookie ID、设备ID或电子邮件ID。
-* **激活**：“激活”是用户为将受众或配置文件映射到目标(如Oracle Eloqua、Google或SalesforceMarketing Cloud)而执行的操作。
+* **激活**：激活是用户为将受众或配置文件映射到目标(如Oracle Eloqua、Google或Salesforce Marketing Cloud)而采取的操作。
 
 要了解有关每个可用标准构件的更多信息，请从以下列表中选择构件的名称：
 
@@ -314,4 +314,4 @@ Adobe提供了多个标准构件，可用于可视化与目标相关的各种指
 
 ## 后续步骤
 
-现在，通过阅读本文档，您应该能够找到目标仪表板，并了解可用构件中显示的量度。 要了解有关使用Experience Platform中的目标的更多信息，请参阅[目标文档](../../destinations/home.md)。
+现在，通过阅读本文档，您应该能够找到目标仪表板，并了解可用构件中显示的量度。 要了解有关在Experience Platform中使用目标的更多信息，请参阅[目标文档](../../destinations/home.md)。

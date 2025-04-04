@@ -2,9 +2,9 @@
 title: Web SDK中的第一方设备ID
 description: 了解如何在Adobe Experience Platform Web SDK中配置第一方设备ID (FPID)。
 exl-id: c3b17175-8a57-43c9-b8a0-b874fecca952
-source-git-commit: 04ef39cbfc614369cb15f4d947474b491c34ef33
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2055'
+source-wordcount: '2058'
 ht-degree: 0%
 
 ---
@@ -12,11 +12,11 @@ ht-degree: 0%
 
 # Web SDK中的第一方设备ID
 
-Adobe Experience Platform Web SDK使用Cookie将[Adobe Experience Cloud ID (ECID)](https://experienceleague.adobe.com/docs/experience-platform/identity/ecid.html)分配给网站访客，以跟踪用户行为。 要说明浏览器对Cookie有效期的限制，您可以选择设置和管理自己的设备标识符。 这些设备称为第一方设备ID (`FPIDs`)。
+Adobe Experience Platform Web SDK通过使用Cookie将[Adobe Experience Cloud ID (ECID)](https://experienceleague.adobe.com/docs/experience-platform/identity/ecid.html)分配给网站访客，以跟踪用户行为。 要说明浏览器对Cookie有效期的限制，您可以选择设置和管理自己的设备标识符。 这些设备称为第一方设备ID (`FPIDs`)。
 
 >[!NOTE]
 >
->仅当通过Web SDK向Experience PlatformEdge Network发送数据时，才支持第一方设备ID。
+>仅当通过Web SDK向Experience Platform Edge Network发送数据时，才支持第一方设备ID。
 
 >[!IMPORTANT]
 >
@@ -27,7 +27,7 @@ Adobe Experience Platform Web SDK使用Cookie将[Adobe Experience Cloud ID (ECID
 
 ## 先决条件
 
-本指南假定您熟悉身份数据如何用于Platform Web SDK，包括ECID和`identityMap`的角色。 有关详细信息，请参阅有关Web SDK中的[身份数据的概述](./overview.md)。
+本指南假定您熟悉身份数据如何用于Experience Platform Web SDK，包括ECID和`identityMap`的角色。 有关详细信息，请参阅Web SDK](./overview.md)中有关[身份数据的概述。
 
 ## 使用第一方设备ID (FPID) {#using-fpid}
 
@@ -45,7 +45,7 @@ Adobe Experience Platform Web SDK使用Cookie将[Adobe Experience Cloud ID (ECID
 
 ### 第一方设备ID格式要求 {#formatting-requirements}
 
-该Edge Network仅接受符合[UUIDv4格式](https://datatracker.ietf.org/doc/html/rfc4122)的[!DNL IDs]。 将拒绝不采用[!DNL UUIDv4]格式的设备ID。
+Edge Network仅接受符合[UUIDv4格式](https://datatracker.ietf.org/doc/html/rfc4122)的[!DNL IDs]。 将拒绝不采用[!DNL UUIDv4]格式的设备ID。
 
 生成[!DNL UUID]几乎总是会生成唯一的随机ID，发生冲突的概率可以忽略不计。 无法使用IP地址或任何其他个人可识别信息([!DNL PII])为[!DNL UUIDv4]设定种子。 [!DNL UUIDs]无处不在，几乎可以找到每种编程语言的库来生成它们。
 
@@ -63,13 +63,13 @@ Adobe Experience Platform Web SDK使用Cookie将[Adobe Experience Cloud ID (ECID
 
 有关第一方Cookie如何与Adobe Experience Cloud配合使用的更多详细信息，请参阅有关[第一方Cookie](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=zh-Hans)的文档。
 
-![平台UI图像，该图像显示了突出显示第一方ID Cookie设置的数据流配置](../assets/first-party-id-datastreams.png)
+![Experience Platform UI图像显示了突出显示第一方ID Cookie设置的数据流配置](../assets/first-party-id-datastreams.png)
 
 在启用此设置时，必须提供需要存储ID的Cookie的名称。
 
 使用第一方ID时，无法执行第三方ID同步。 第三方ID同步依赖于[!DNL Visitor ID]服务以及该服务生成的`UUID`。 使用第一方ID功能时，生成[!DNL ECID]时未使用[!DNL Visitor ID]服务，这会导致无法同步第三方ID。
 
-当您使用第一方ID时，由于Audience Manager合作伙伴ID同步主要基于`UUIDs`或`DIDs`，因此不支持针对合作伙伴平台中的Audience Manager的[激活](https://experienceleague.adobe.com/en/docs/audience-manager)功能。 从第一方ID派生的[!DNL ECID]未链接到`UUID`，使其不可寻址。
+当您使用第一方ID时，由于Audience Manager合作伙伴ID同步主要基于`UUIDs`或`DIDs`，因此不支持在合作伙伴平台中激活的[Audience Manager](https://experienceleague.adobe.com/en/docs/audience-manager)功能。 从第一方ID派生的[!DNL ECID]未链接到`UUID`，使其不可寻址。
 
 ## 使用您自己的服务器设置Cookie {#set-cookie-server}
 
@@ -204,7 +204,7 @@ Adobe Experience Platform Web SDK使用Cookie将[Adobe Experience Cloud ID (ECID
 }
 ```
 
-在这种情况下，Edge Network返回的错误响应类似于以下内容：
+在这种情况下，Edge Network返回的错误响应将类似于以下内容：
 
 ```json
 {
@@ -228,7 +228,7 @@ Adobe Experience Platform Web SDK使用Cookie将[Adobe Experience Cloud ID (ECID
 
 所有与Adobe数据收集目的无关的Cookie都会被丢弃。 对于[!DNL FPID]，您可以在数据流配置中指定[!DNL FPID] Cookie的名称。 执行此操作时，Edge Network将读取[!DNL FPID] Cookie的内容，而不是在身份映射中查找[!DNL FPID]。
 
-要使用此功能，您需要在域的顶级设置[!DNL FPID]，而不是在特定的子域设置。 如果您在子域中设置它，则Cookie值将不会发送到Edge Network，并且[!DNL FPID]解决方案将无法按预期工作。
+要使用此功能，您需要在域的顶级设置[!DNL FPID]，而不是在特定的子域设置。 如果您在子域中设置它，则Cookie值将不会发送到Edge Network，[!DNL FPID]解决方案将不会按预期工作。
 
 ## ID层次结构 {#id-hierarchy}
 
@@ -245,7 +245,7 @@ Adobe Experience Platform Web SDK使用Cookie将[Adobe Experience Cloud ID (ECID
 
 如果您从以前的实施迁移到第一方设备ID，则可能很难在低级别上直观显示过渡情况。
 
-为了帮助说明此过程，请考虑一个涉及以前访问过您网站的客户的情形，以及[!DNL FPID]迁移对Adobe解决方案中识别该客户的方式有何影响。
+为了帮助说明此过程，请考虑一个涉及以前访问过您网站的客户的情形，以及[!DNL FPID]迁移将如何影响在Adobe解决方案中识别该客户。
 
 ![显示迁移至FPID后客户的ID值在两次访问之间更新的图表](../assets/identity/tracking/visits.png)
 
@@ -257,9 +257,9 @@ Adobe Experience Platform Web SDK使用Cookie将[Adobe Experience Cloud ID (ECID
 | --- | --- |
 | 首次访问 | 假设您尚未开始设置[!DNL FPID] Cookie。 [AMCV Cookie](https://experienceleague.adobe.com/docs/id-service/using/intro/cookies.html#section-c55af54828dc4cce89f6118655d694c8)中包含的[!DNL ECID]将是用于识别访客的标识符。 |
 | 第二次访问 | [!DNL FPID]解决方案的转出已开始。 现有[!DNL ECID]仍然存在，并且仍然是访客标识的主要标识符。 |
-| 第三次访问 | 在第二次和第三次访问之间，由于浏览器策略，已经过了足够的时间删除[!DNL ECID]。 但是，由于[!DNL FPID]是使用[!DNL DNS] [!DNL A]记录设置的，因此[!DNL FPID]仍然存在。 [!DNL FPID]现在被视为主ID，用于为写入最终用户设备的[!DNL ECID]提供种子。 此时，该用户将被视为Adobe Experience Platform和Experience Cloud解决方案中的新访客。 |
-| 第四次访问 | 在第三次和第四次访问之间，经过了足够长的时间，由于浏览器策略，[!DNL ECID]已被删除。 与上次访问一样，[!DNL FPID]仍因设置方式而异。 此时，将生成与上次访问相同的[!DNL ECID]。 在整个Experience Platform和Experience Cloud解决方案中，都会将该用户视为与上次访问相同的用户。 |
-| 第五次访问 | 在第四次和第五次访问之间，最终用户清除了其浏览器中的所有Cookie。 已生成新[!DNL FPID]，并用它来创建新[!DNL ECID]。 此时，该用户将被视为Adobe Experience Platform和Experience Cloud解决方案中的新访客。 |
+| 第三次访问 | 在第二次和第三次访问之间，由于浏览器策略，已经过了足够的时间删除[!DNL ECID]。 但是，由于[!DNL FPID]是使用[!DNL DNS] [!DNL A]记录设置的，因此[!DNL FPID]仍然存在。 [!DNL FPID]现在被视为主ID，用于为写入最终用户设备的[!DNL ECID]提供种子。 该用户现在在Adobe Experience Platform和Experience Cloud解决方案中将被视为新访客。 |
+| 第四次访问 | 在第三次和第四次访问之间，经过了足够长的时间，由于浏览器策略，[!DNL ECID]已被删除。 与上次访问一样，[!DNL FPID]仍因设置方式而异。 此时，将生成与上次访问相同的[!DNL ECID]。 整个Experience Platform和Experience Cloud解决方案中都会将该用户视为上次访问中的同一用户。 |
+| 第五次访问 | 在第四次和第五次访问之间，最终用户清除了其浏览器中的所有Cookie。 已生成新[!DNL FPID]，并用它来创建新[!DNL ECID]。 该用户现在在Adobe Experience Platform和Experience Cloud解决方案中将被视为新访客。 |
 
 {style="table-layout:auto"}
 
@@ -279,6 +279,6 @@ Adobe Experience Platform Web SDK使用Cookie将[Adobe Experience Cloud ID (ECID
 
 当前仅Web SDK支持第一方设备ID。
 
-### 第一方设备ID是否存储在任何平台或Experience Cloud解决方案上？
+### 第一方设备ID是否存储在任何Experience Platform或Experience Cloud解决方案中？
 
 使用[!DNL FPID]为[!DNL ECID]设定种子后，它将从`identityMap`中删除，并替换为已生成的[!DNL ECID]。 [!DNL FPID]未存储在任何Adobe Experience Platform或Experience Cloud解决方案中。

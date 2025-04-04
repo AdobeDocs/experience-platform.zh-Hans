@@ -3,10 +3,10 @@ title: 事件转发快速入门
 description: 按照此分步教程进行操作，以开始在Adobe Experience Platform中使用事件转发。
 feature: Event Forwarding
 exl-id: f82bfac9-dc2d-44de-a308-651300f107df
-source-git-commit: e9f98e1f94aa6ae2ecf29940912d296813611d4c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '887'
-ht-degree: 26%
+source-wordcount: '893'
+ht-degree: 25%
 
 ---
 
@@ -14,28 +14,28 @@ ht-degree: 26%
 
 >[!NOTE]
 >
->事件转发是一项付费功能，包含在Adobe Real-time Customer Data Platform连接、Prime或Ultimate产品中。
+>事件转发是一项付费功能，包含在Adobe Real-Time Customer Data Platform连接、Prime或Ultimate产品中。
 
 >[!NOTE]
 >
 >经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-要在Adobe Experience Platform中使用事件转发，必须使用以下三个选项中的一个或多个将数据发送到Adobe Experience PlatformEdge Network：
+要在Adobe Experience Platform中使用事件转发，必须使用以下三个选项中的一个或多个将数据发送到Adobe Experience Platform Edge Network：
 
 * [Adobe Experience Platform Web SDK](../../extensions/client/web-sdk/overview.md)
 * [Adobe Experience Platform Mobile SDK](https://sdkdocs.com)
 * [边缘网络服务器 API](/help/server-api/overview.md)
 
 >[!NOTE]
->Platform Web SDK和Platform Mobile SDK不需要通过Adobe Experience Platform中的标记进行部署。 但是，推荐使用标记来部署这些SDK。
+>Experience Platform Web SDK和Experience Platform Mobile SDK不需要通过Adobe Experience Platform中的标记进行部署。 但是，推荐使用标记来部署这些SDK。
 
-将数据发送到 Edge Network 后，可打开 Adobe 解决方案以在相应的位置发送数据。要将数据发送至非Adobe解决方案，请在事件转发中设置。
+将数据发送到 Edge Network 后，可打开 Adobe 解决方案以在相应的位置发送数据。要将数据发送到非Adobe解决方案，请在事件转发中设置。
 
 ## 先决条件
 
 * Adobe Real-Time CDP Connections、Prime或Ultimate(有关定价，请联系您的Adobe客户团队)
 * Adobe Experience Platform中的事件转发
-* Adobe Experience Platform Web SDK、Mobile SDK或Edge Network服务器API配置为将数据发送到Edge Network
+* Adobe Experience Platform Web SDK、Mobile SDK或Edge Network Server API配置为将数据发送到Edge Network
 * 将数据映射到Experience Data Model (XDM)（此映射可以使用标记完成）
 
 ## 创建 XDM 架构
@@ -69,7 +69,7 @@ ht-degree: 26%
 1. 选择&#x200B;**[!UICONTROL 保存]**。
 
 创建资产后，转到新资产的&#x200B;**[!UICONTROL 环境]**选项卡并进行
-记录环境ID。 如果数据流中使用的Adobe组织与事件转发中使用的Adobe组织不同，则可以从**[!UICONTROL 环境]**&#x200B;选项卡中复制环境ID，并在创建数据流时粘贴它。 您也可以从下拉菜单中选择环境。
+记录环境ID。 如果数据流中使用的Adobe组织不同于事件转发中使用的Adobe组织，则可以从**[!UICONTROL 环境]**&#x200B;选项卡复制环境ID，并在创建数据流时粘贴它。 您也可以从下拉菜单中选择环境。
 
 ## 创建数据流
 
@@ -100,17 +100,17 @@ ht-degree: 26%
 
 配置后，记下新资产的环境 ID。
 
-## 配置Platform Web SDK扩展以将数据发送到之前创建的数据流
+## 配置Experience Platform Web SDK扩展，以将数据发送到之前创建的数据流
 
-在&#x200B;**[!UICONTROL 标记]**&#x200B;工作区中创建属性，然后导航到&#x200B;**[!UICONTROL 扩展]**，并从目录中选择Experience PlatformWeb SDK扩展以对其进行配置和安装。
+在&#x200B;**[!UICONTROL 标记]**&#x200B;工作区中创建属性，然后导航到&#x200B;**[!UICONTROL 扩展]**，并从目录中选择Experience Platform Web SDK扩展以对其进行配置和安装。
 
 有关配置选项的详细信息，请参阅[Web SDK扩展文档](../../extensions/client/web-sdk/overview.md)。
 
-## 创建标记规则以将数据发送到Platform Web SDK
+## 创建标记规则以将数据发送到Experience Platform Web SDK
 
 完成上述操作后，即可构建数据定义、规则等，它们使用事件转发和标记，但只需要从页面中发出单个请求。
 
-使用Platform Web SDK扩展和“发送事件”操作类型创建页面加载规则：
+使用Experience Platform Web SDK扩展和“发送事件”操作类型创建页面加载规则：
 
 1. 打开&#x200B;**[!UICONTROL 规则]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 创建新规则]**。
 
@@ -120,7 +120,7 @@ ht-degree: 26%
 
 1. 通过选择扩展以及该扩展可用的事件类型之一来添加事件，然后配置该事件的设置。例如，选择&#x200B;**[!UICONTROL Core - Window Loaded]**。
 
-1. 使用 Platform Web SDK 扩展添加操作。从&#x200B;**[!UICONTROL 操作类型]**&#x200B;列表中选择&#x200B;**[!UICONTROL 发送事件]**，选择所需的实例（以前配置的Alloy实例），然后选择要添加到Alloy点击的XDM数据块的数据元素。
+1. 使用Experience Platform Web SDK扩展添加操作。 从&#x200B;**[!UICONTROL 操作类型]**&#x200B;列表中选择&#x200B;**[!UICONTROL 发送事件]**，选择所需的实例（以前配置的Alloy实例），然后选择要添加到Alloy点击的XDM数据块的数据元素。
 
 1. 对于此示例，请将其余设置保留为默认设置，然后选择&#x200B;**[!UICONTROL 保存]**。
 

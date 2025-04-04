@@ -2,9 +2,9 @@
 title: 配置Web SDK标记扩展
 description: 了解如何在标记UI中配置Experience Platform Web SDK标记扩展。
 exl-id: 22425daa-10bd-4f06-92de-dff9f48ef16e
-source-git-commit: d267e816f42d1e0a751b188065f5164a5e2b6be9
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2874'
+source-wordcount: '2875'
 ht-degree: 4%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 4%
 
 [!DNL Web SDK]标记扩展通过Experience Platform Edge Network从Web资产向Adobe Experience Cloud发送数据。
 
-该扩展允许您将数据流式传输到Platform、同步身份、处理客户同意信号并自动收集上下文数据。
+该扩展允许您将数据流式传输到Experience Platform中、同步身份、处理客户同意信号并自动收集上下文数据。
 
 本文档介绍如何在标记UI中配置标记扩展。
 

@@ -1,11 +1,11 @@
 ---
 title: 测试并提交Source
-description: 以下文档提供了有关如何使用Flow Service API测试和验证新源，以及通过自助源(Streaming SDK)集成新源的步骤。
+description: 以下文档提供了有关如何使用流服务API测试和验证新源，以及通过自助源(流SDK)集成新源的步骤。
 exl-id: 2ae0c3ad-1501-42ab-aaaa-319acea94ec2
 badge: Beta 版
-source-git-commit: 256857103b4037b2cd7b5b52d6c5385121af5a9f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1265'
+source-wordcount: '1273'
 ht-degree: 0%
 
 ---
@@ -14,17 +14,17 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->自助源流SDK处于测试阶段。 有关使用测试版标记源的更多信息，请阅读[源概述](../../home.md#terms-and-conditions)。
+>自助来源流SDK处于测试阶段。 有关使用测试版标记源的更多信息，请阅读[源概述](../../home.md#terms-and-conditions)。
 
-使用自助源(Streaming SDK)将新源集成到Adobe Experience Platform的最后一步是测试和提交新源。 完成连接规范并更新流规范后，您可以通过API或UI开始测试源的功能。 成功后，您可以联系Adobe代表以提交新的源。
+使用自助式源(流SDK)将新源集成到Adobe Experience Platform的最后步骤是测试和提交新源。 完成连接规范并更新流规范后，您可以通过API或UI开始测试源的功能。 成功后，您可以联系Adobe代表以提交新的源。
 
 以下文档提供了有关如何使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)测试和调试源的步骤。
 
 ## 快速入门
 
-* 有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../landing/api-guide.md)指南。
-* 有关如何为平台API生成凭据的信息，请参阅有关[身份验证和访问Experience PlatformAPI](../../../landing/api-authentication.md)的教程。
-* 有关如何为平台API设置[!DNL Postman]的信息，请参阅[设置开发人员控制台和 [!DNL Postman]](../../../landing/postman.md)上的教程。
+* 有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../landing/api-guide.md)指南。
+* 有关如何生成Experience Platform API凭据的信息，请参阅有关[身份验证和访问Experience Platform API](../../../landing/api-authentication.md)的教程。
+* 有关如何为Experience Platform API设置[!DNL Postman]的信息，请参阅[设置开发人员控制台和 [!DNL Postman]](../../../landing/postman.md)上的教程。
 * 为帮助进行测试和调试，请在此处](../assets/sdk-verification.zip)下载[自助式源验证集合和环境，然后执行下面列出的步骤。
 
 ## 使用API测试您的源
@@ -39,10 +39,10 @@ ht-degree: 0%
 
 | 参数 | 描述 | 示例 |
 | --- | --- | --- |
-| `x-api-key` | 用于对调用Experience PlatformAPI进行身份验证的唯一标识符。 有关如何检索`x-api-key`的信息，请参阅有关[身份验证和访问Experience PlatformAPI](../../../landing/api-authentication.md)的教程。 | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
+| `x-api-key` | 用于对调用Experience Platform API进行身份验证的唯一标识符。 有关如何检索`x-api-key`的信息，请参阅有关[身份验证和访问Experience Platform API](../../../landing/api-authentication.md)的教程。 | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
 | `x-gw-ims-org-id` | 公司实体，可以拥有产品或服务，也可以为其授予产品和服务许可证，并允许其成员访问。 有关如何检索`x-gw-ims-org-id`信息的说明，请参阅有关[设置开发人员控制台和 [!DNL Postman]](../../../landing/postman.md)的教程。 | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
-| `authorizationToken` | 完成对Experience PlatformAPI的调用所需的授权令牌。 有关如何检索`authorizationToken`的信息，请参阅有关[身份验证和访问Experience PlatformAPI](../../../landing/api-authentication.md)的教程。 | `Bearer authorizationToken` |
-| `schemaId` | 为了在Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 有关如何创建目标XDM架构的详细步骤，请参阅有关使用API [创建架构的教程](../../../xdm/api/schemas.md)。 | `https://ns.adobe.com/{TENANT_ID}.schemas.0ef4ce0d390f0809fad490802f53d30b` |
+| `authorizationToken` | 完成对Experience Platform API的调用所需的授权令牌。 有关如何检索`authorizationToken`的信息，请参阅有关[身份验证和访问Experience Platform API](../../../landing/api-authentication.md)的教程。 | `Bearer authorizationToken` |
+| `schemaId` | 为了在Experience Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 有关如何创建目标XDM架构的详细步骤，请参阅有关使用API [创建架构的教程](../../../xdm/api/schemas.md)。 | `https://ns.adobe.com/{TENANT_ID}.schemas.0ef4ce0d390f0809fad490802f53d30b` |
 | `schemaVersion` | 与您的架构对应的唯一版本。 | `application/vnd.adobe.xed-full-notext+json; version=1` |
 | `schemaAltId` | 创建新架构时与`schemaId`一起返回的`meta:altId`。 | `_{TENANT_ID}.schemas.0ef4ce0d390f0809fad490802f53d30b` |
 | `dataSetId` | 有关如何创建目标数据集的详细步骤，请参阅有关[使用API创建数据集的教程](../../../catalog/api/create-dataset.md)。 | `5f3c3cedb2805c194ff0b69a` |
@@ -62,13 +62,13 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->如果您希望在Platform UI中使用源监视仪表板，则可以禁用运行订单清单中的&#x200B;**删除流**。 但是，测试完成后，必须确保删除测试流。
+>如果您希望在Experience Platform UI中使用源监视仪表板，则可以禁用运行订单清单中的&#x200B;**删除流**。 但是，测试完成后，必须确保删除测试流。
 
 ![运行集合](../assets/run-collection.png)
 
 ## 使用UI测试源
 
-要在UI中测试源，请转到Platform UI中您组织沙盒的源目录。 从这里，您应该看到新源显示在&#x200B;*流*&#x200B;类别下。
+要在UI中测试源，请在Experience Platform UI中转到您组织的沙盒的源目录。 从这里，您应该看到新源显示在&#x200B;*流*&#x200B;类别下。
 
 现在，您的沙盒中提供了新源，您必须按照源工作流测试功能。 要开始，请选择&#x200B;**[!UICONTROL 设置]**。
 
@@ -88,7 +88,7 @@ ht-degree: 0%
 
 此时将显示[!UICONTROL 映射]步骤，该步骤为您提供了一个接口，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
 
-Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](../../../data-prep/ui/mapping.md)
+Experience Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](../../../data-prep/ui/mapping.md)
 
 成功映射源数据后，选择&#x200B;**[!UICONTROL 下一步]**。
 
@@ -109,4 +109,4 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 ## 提交您的源
 
-在您的来源能够完成整个工作流后，您可以继续联系您的Adobe代表并提交您的来源，以便在其他Experience Platform组织之间集成。
+在您的源能够完成整个工作流后，您可以继续联系Adobe代表并提交您的源，以便在其他Experience Platform组织之间进行集成。

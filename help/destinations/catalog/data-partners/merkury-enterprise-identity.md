@@ -3,7 +3,7 @@ title: Merkury企业标识目标
 description: 了解如何使用Adobe Experience Platform UI创建Merkury Enterprise Identity目标连接。
 last-substantial-update: 2024-07-20T00:00:00Z
 exl-id: a5452183-289c-49c3-9574-e09b0153dc00
-source-git-commit: 2b84b5106105339ab243a9f4412b47692caedf3c
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1469'
 ht-degree: 3%
@@ -28,7 +28,7 @@ ht-degree: 3%
 >
 >如果要使用[!DNL Merkury Connect]帐户将受众激活到媒体目标，请改用[!DNL Merkury Connections]目标。
 
-![Experience Platform目标目录中突出显示的Merkury企业身份目标卡。](../../assets/catalog/data-partners/merkury-identity/media/image2.png)
+![Experience Platform目标目录中突出显示的Merkury Enterprise标识目标卡。](../../assets/catalog/data-partners/merkury-identity/media/image2.png)
 
 ## 用例
 
@@ -56,8 +56,8 @@ ht-degree: 3%
 | GAID | GOOGLE ADVERTISING ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |
 | IDFA | 广告商的Apple ID | 当源身份是IDFA命名空间时，选择IDFA目标身份。 |
 | ECID | Experience Cloud ID | 表示ECID的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 有关详细信息，请参阅[ECID](/help/identity-service/features/ecid.md)上的以下文档。 |
-| phone_sha256 | 使用SHA256算法散列的电话号码 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。 |
-| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。 |
+| phone_sha256 | 使用SHA256算法散列的电话号码 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
+| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
 | extern_id | 自定义用户标识 | 当源身份是自定义命名空间时，请选择此目标身份。 |
 
 {style="table-layout:auto"}
@@ -68,8 +68,8 @@ ht-degree: 3%
 
 | **受众** | **支持** | **描述** | **来源** |
 |---|---|---|---|
-| Segmentation Service | ✓ {\f13 } | 通过Experience Platform[[分段服务]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/segmentation/home)生成的受众。 |
-| 自定义上传 | x | 受众[[已将]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience)从CSV文件导入到Experience Platform中。 |
+| Segmentation Service | ✓ | 通过Experience Platform [[分段服务]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/segmentation/home)生成的受众。 |
+| 自定义上传 | x | 受众[[已将]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience)从CSV文件导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -79,8 +79,8 @@ ht-degree: 3%
 
 | **受众** | **支持** | **描述来源** |
 |---|---|---|      
-| Segmentation Service | ✓ {\f13 } | 通过Experience Platform[[分段服务]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/segmentation/home)生成的受众。 |
-| 自定义上传 | X | 受众[[已将]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience)从CSV文件导入到Experience Platform中。 |
+| Segmentation Service | ✓ | 通过Experience Platform [[分段服务]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/segmentation/home)生成的受众。 |
+| 自定义上传 | X | 受众[[已将]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience)从CSV文件导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -96,7 +96,7 @@ ht-degree: 3%
 
 要验证到目标，请填写必填字段并选择&#x200B;**连接到目标**。
 
-要在Experience Platform时访问存储段，您需要为以下凭证提供有效值：
+要在Experience Platform上访问存储段，您需要为以下凭据提供有效值：
 
 | **凭据** | **描述** |
 |---|---|
@@ -119,7 +119,7 @@ ht-degree: 3%
 * **描述** — 目标的简短用途说明
 * **Bucket名称（必需）** - S3上设置的Amazon S3存储段的名称
 * **文件夹路径（必需）** — 如果使用存储段中的子目录，则必须定义路径，或使用“/”引用根路径。
-* **文件类型** — 选择导出文件应使用的格式Experience Platform。 请咨询您的Merkury团队，了解您帐户所需的文件类型。
+* **文件类型** — 选择Experience Platform应用于导出文件的格式。 请咨询您的Merkury团队，了解您帐户所需的文件类型。
 
 >[!NOTE]
 >
@@ -157,7 +157,7 @@ csv选项](../../assets/catalog/data-partners/merkury-identity/media/image8.png)
 
 | 目标字段 | Source描述 |
 |---|---|
-| ID | 用于通过[!DNL Merkury Enterprise Identity] Source连接器将[!DNL Merkury]数据映射到Experience Platform的身份字段 |
+| ID | 用于通过[!DNL Merkury Enterprise Identity] Source连接器将[!DNL Merkury]数据映射到Experience Platform的标识字段 |
 | Input_First_Name | Experience Platform中的`person.name.firstName`值。 |
 | Input_Last_Name | Experience Platform中的`person.name.lastName`值。 |
 | Input_Address_Line_1 | Experience Platform中的`mailingAddress.street`值。 |

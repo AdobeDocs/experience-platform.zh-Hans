@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；数据准备；数据准
 title: 使用数据准备将部分行更新发送到实时客户个人资料
 description: 了解如何使用数据准备将部分行更新发送到Real-Time Customer Profile。
 exl-id: f9f9e855-0f72-4555-a4c5-598818fc01c2
-source-git-commit: d62a61f44b27c0be882b5f29bfad5e423af7a1ca
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1360'
+source-wordcount: '1361'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->* 通过DCS入口为配置文件更新摄取体验数据模型(XDM)实体更新消息(包含JSONPATCH操作)已被弃用。 作为替代方法，请遵循本指南中概述的步骤。
+>* 已弃用通过DCS入口为配置文件更新摄取体验数据模型(XDM)实体更新消息(使用JSON PATCH操作)。 作为替代方法，请遵循本指南中概述的步骤。
 >
 >* 您还可以使用HTTP API源[将原始数据摄取到DCS入口](../sources/tutorials/api/create/streaming/http.md#sending-messages-to-an-authenticated-streaming-connection)，并指定必要的数据映射以将您的数据转换为符合XDM标准的消息以进行配置文件更新。
 >
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 使用[!DNL Data Prep]中的流更新插入向[!DNL Real-Time Customer Profile]数据发送部分行更新，同时通过单个API请求创建和建立新的标识链接。
 
-通过流式处理更新插入，您可以在引入期间将数据转换为[!DNL Real-Time Customer Profile]PATCH请求时保留数据的格式。 根据您提供的输入，[!DNL Data Prep]允许您发送单个API有效负载并将数据转换为[!DNL Real-Time Customer Profile]PATCH和[!DNL Identity Service]创建请求。
+通过流式处理更新插入，您可以在引入期间将数据转换为[!DNL Real-Time Customer Profile]个PATCH请求时保留数据的格式。 根据您提供的输入，[!DNL Data Prep]允许您发送单个API有效负载并将数据转换为[!DNL Real-Time Customer Profile] PATCH和[!DNL Identity Service] CREATE请求。
 
 [!DNL Data Prep]使用标头参数区分插入和更新插入。 所有使用更新插入的行都必须有一个标题。 您可以使用更新服务器，无论是否包含标识描述符。 如果您正在使用带有身份的upsert，则必须按照[配置身份数据集](#configure-the-identity-dataset)一节中概述的配置步骤操作。 如果您使用的是没有身份的upsert，则不需要在请求中提供身份配置。 有关详细信息，请阅读有关[不带标识的流更新插入](#payload-without-identity-configuration)的部分。
 
@@ -39,7 +39,7 @@ ht-degree: 0%
 * [[!DNL Data Prep]](./home.md)： [!DNL Data Prep]允许数据工程师映射、转换和验证与Experience Data Model (XDM)之间的数据。
 * [[!DNL Identity Service]](../identity-service/home.md)：通过跨设备和系统桥接身份，更好地了解个人客户及其行为。
 * [实时客户个人资料](../profile/home.md)：根据来自多个来源的汇总数据，实时提供统一的客户个人资料。
-* [源](../sources/home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
+* [源](../sources/home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
 
 ## 在[!DNL Data Prep]中使用流更新插入 {#streaming-upserts-in-data-prep}
 

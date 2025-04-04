@@ -4,9 +4,9 @@ title: 许可证使用情况仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 243a99748d31cddcb8a550d52f9bb390726644be
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '3408'
+source-wordcount: '3413'
 ht-degree: 15%
 
 ---
@@ -132,13 +132,13 @@ ht-degree: 15%
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
 
-您可以通过Adobe Experience Platform [!UICONTROL 许可证使用情况]仪表板查看有关贵组织许可证使用情况的重要信息。 此处显示的信息是在Platform实例的每日快照期间捕获的。
+您可以通过Adobe Experience Platform [!UICONTROL 许可证使用情况]仪表板查看有关贵组织许可证使用情况的重要信息。 此处显示的信息是在Experience Platform实例的每日快照期间捕获的。
 
 许可证使用情况报告提供了高度的粒度。 大多数量度是在多个产品之间共享的，反映的是使用它们的所有产品的汇总使用情况，而不是按产品计算的总数。 功能板提供这些指标在所有生产或开发沙盒中的综合使用情况，以及特定沙盒的使用情况指标。 可以使用使用情况量度跟踪以下Experience Platform应用程序：Real-Time Customer Data Platform、Adobe Journey Optimizer和Customer Journey Analytics。
 
 本指南概述如何在UI中访问和使用许可证使用情况仪表板，并提供有关仪表板中显示的可视化的更多信息。
 
-有关Platform UI的一般概述，请参阅[Experience Platform UI指南](../../landing/ui-guide.md)。
+有关Experience Platform UI的一般概述，请参阅[Experience Platform UI指南](../../landing/ui-guide.md)。
 
 ## [!UICONTROL 许可证使用情况]仪表板数据
 
@@ -148,11 +148,11 @@ ht-degree: 15%
 
 >[!NOTE]
 >
->功能板中的大多数量度每天都会根据Platform实例的快照进行更新。 [!UICONTROL 可用的CJA行数]是一个异常，每月更新一次。 标记为“包”的量度，如[!UICONTROL Adhoc Query Service Users Packs]、[!UICONTROL Profile Richness No of Packs]和[!UICONTROL Streaming Segmentation No of Packs]，可反映附加组件产品的许可证权利，且不会跟踪日常使用情况。 在拍摄下一个快照之前，在快照之后所做的更改不可见。
+>功能板中的大多数量度每天都会根据Experience Platform实例的快照进行更新。 [!UICONTROL 可用的CJA行数]是一个异常，每月更新一次。 标记为“包”的量度，如[!UICONTROL Adhoc Query Service Users Packs]、[!UICONTROL Profile Richness No of Packs]和[!UICONTROL Streaming Segmentation No of Packs]，可反映附加组件产品的许可证权利，且不会跟踪日常使用情况。 在拍摄下一个快照之前，在快照之后所做的更改不可见。
 
 ## 浏览许可证使用情况仪表板 {#explore}
 
-要导航到平台UI中的许可证使用情况仪表板，请在左边栏中选择&#x200B;**[!UICONTROL 许可证使用情况]**。 仪表板包含两个选项卡：**[!UICONTROL Metrics]**&#x200B;和&#x200B;**[!UICONTROL Products]**。
+要导航到Experience Platform UI中的许可证使用情况仪表板，请在左边栏中选择&#x200B;**[!UICONTROL 许可证使用情况]**。 仪表板包含两个选项卡：**[!UICONTROL Metrics]**&#x200B;和&#x200B;**[!UICONTROL Products]**。
 
 >[!NOTE]
 >
@@ -338,4 +338,4 @@ ht-degree: 15%
 
 阅读本文档后，您可以找到许可证使用情况仪表板，并查看每个已购产品、所有生产或开发沙盒以及特定沙盒的使用量度。 您可以根据贵组织购买的许可协议，查找有关贵组织可用量度的更多信息。
 
-要了解有关Experience Platform UI中其他可用功能的更多信息，请参阅[平台UI指南](../../landing/ui-guide.md)。
+要了解有关Experience Platform UI中其他可用功能的更多信息，请参阅[Experience Platform UI指南](../../landing/ui-guide.md)。

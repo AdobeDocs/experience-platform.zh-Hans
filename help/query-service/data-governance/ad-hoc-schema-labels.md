@@ -2,9 +2,9 @@
 title: 对Ad Hoc架构的基于属性的访问控制支持
 description: 该指南用于限制对通过Adobe Experience Platform查询服务生成的临时架构中的数据字段的访问。
 exl-id: d675e3de-ab62-4beb-9360-1f6090397a17
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1013'
+source-wordcount: '1020'
 ht-degree: 2%
 
 ---
@@ -13,9 +13,9 @@ ht-degree: 2%
 
 带入Adobe Experience Platform的任何数据将由Experience Data Model (XDM)架构封装，并且可能会受到贵组织或法律法规定义的使用限制的约束。
 
-通过在未指定架构时通过查询服务执行CTAS查询，自动生成临时架构。 通常，有必要限制使用临时架构的某些字段或数据集来控制对敏感个人数据和个人身份信息的访问。 Adobe Experience Platform通过允许您使用基于属性的访问控制功能通过Platform UI为架构字段添加标签，从而简化此访问控制。
+通过在未指定架构时通过查询服务执行CTAS查询，自动生成临时架构。 通常，有必要限制使用临时架构的某些字段或数据集来控制对敏感个人数据和个人身份信息的访问。 Adobe Experience Platform通过允许您使用基于属性的访问控制功能通过Experience Platform UI为架构字段添加标签，从而简化此访问控制。
 
-您可以随时应用标签，灵活地选择管理数据的方式。 不过，最佳实践是在数据被摄取到Platform后立即对其进行标记，或者是在数据可用于Platform后立即进行标记。
+您可以随时应用标签，灵活地选择管理数据的方式。 但是，最佳实践是在数据被摄取到Experience Platform中后立即对其进行标记，或者当数据在Experience Platform中可用时立即进行标记。
 
 基于模式的标签是基于属性的访问控制的重要组成部分，可以更好地管理授予用户或用户组的访问权限。 Adobe Experience Platform允许您通过创建和应用标签来限制对临时架构的任何字段的访问。
 
@@ -25,8 +25,8 @@ ht-degree: 2%
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [体验数据模型(XDM)系统](../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
-   * [[!DNL Schema Editor]](../../xdm/ui/overview.md)：了解如何在Platform UI中创建和管理架构和其他资源。
+* [体验数据模型(XDM)系统](../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
+   * [[!DNL Schema Editor]](../../xdm/ui/overview.md)：了解如何在Experience Platform UI中创建和管理架构和其他资源。
 * [[!DNL Data Governance]](../../data-governance/home.md)：了解[!DNL Data Governance]如何允许您管理客户数据并确保遵守适用于数据使用的法规、限制和策略。
 * [基于属性的访问控制](../../access-control/abac/overview.md)：基于属性的访问控制是Adobe Experience Platform的一项功能，它使管理员能够根据属性控制对特定对象和/或功能的访问。 属性可以是添加到对象的元数据，例如添加到临时或常规架构字段的标签。 管理员定义包括管理用户访问权限的属性的访问策略。
 
@@ -34,15 +34,15 @@ ht-degree: 2%
 
 执行查询并生成结果后，将自动生成临时架构并将其添加到架构清单。
 
-要添加数据标签，请选择Platform UI左边栏中的[!UICONTROL 架构]，导航到[!UICONTROL 架构]仪表板浏览选项卡。 将显示架构清单。
+要添加数据标签，请在Experience Platform UI的左边栏中选择[!UICONTROL 架构]，导航到[!UICONTROL 架构]仪表板浏览选项卡。 将显示架构清单。
 
 >[!NOTE]
 >
 >默认情况下，临时架构不显示在架构清单中。
 
-## 在Platform UI的架构清单中发现临时架构 {#discover-ad-hoc-schemas}
+## 在Experience Platform UI的架构清单中发现临时架构 {#discover-ad-hoc-schemas}
 
-要在Platform UI中启用临时架构显示，请选择过滤器图标（![过滤器图标）。](/help/images/icons/filter.png))，然后在显示的左边栏中选择**[!UICONTROL 显示临时架构]。
+要在Experience Platform UI中启用临时架构显示，请选择过滤器图标（![过滤器图标）。](/help/images/icons/filter.png))，然后在显示的左边栏中选择**[!UICONTROL 显示临时架构]。
 
 ![架构仪表板筛选器选项左边栏的“显示临时架构”切换已启用。](../images/data-governance/adhoc-schema-toggle.png)
 
@@ -94,4 +94,4 @@ ht-degree: 2%
 阅读本文档后，您对如何将数据使用标签添加到通过查询服务CTAS查询创建的临时架构有了更好的了解。 如果您尚未这样做，以下文档有助于您更好地了解查询服务中的数据治理：
 
 * [临时架构身份](./ad-hoc-schema-identities.md)
-* [数据管理](../../data-governance/home.md)
+* [数据治理](../../data-governance/home.md)

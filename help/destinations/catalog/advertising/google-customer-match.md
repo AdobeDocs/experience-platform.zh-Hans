@@ -3,7 +3,7 @@ keywords: google客户匹配；Google客户匹配；Google客户匹配
 title: Google Customer Match连接
 description: Google Customer Match允许您使用在线和离线数据，通过Google自有资产和运营资产（如搜索、购物和Gmail）与客户联系并重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 38c1020a7e7ff556ed16963239a30bf906ff79e7
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '2046'
 ht-degree: 2%
@@ -60,8 +60,8 @@ Experience Platform中的某些目标对于发送到目标平台或从目标平�
 |---|---|---|
 | GAID | GOOGLE ADVERTISING ID | 当源身份是GAID命名空间时，请选择此目标身份。 |
 | IDFA | 广告商的Apple ID | 当源身份是IDFA命名空间时，请选择此目标身份。 |
-| phone_sha256_e.164 | E164格式的电话号码，使用SHA256算法进行哈希处理 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电话号码。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。 |
-| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。 |
+| phone_sha256_e.164 | E164格式的电话号码，使用SHA256算法进行哈希处理 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电话号码。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
+| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
 | user_id | 自定义用户标识 | 当源身份是自定义命名空间时，请选择此目标身份。 |
 
 {style="table-layout:auto"}
@@ -110,8 +110,8 @@ Experience Platform中的某些目标对于发送到目标平台或从目标平�
 
 在[!DNL Google Customer Match]中激活电话号码的方法有两种：
 
-* **摄取原始电话号码**：您可以将[!DNL E.164]格式的原始电话号码摄取到[!DNL Platform]，激活时会自动对其进行哈希处理。 如果选择此选项，请确保始终将原始电话号码摄取到`Phone_E.164`命名空间。
-* **正在引入经过哈希处理的电话号码**：您可以在引入到[!DNL Platform]之前对电话号码进行预哈希处理。 如果选择此选项，请确保始终将经过哈希处理的电话号码摄取到`PHONE_SHA256_E.164`命名空间。
+* **摄取原始电话号码**：您可以将[!DNL E.164]格式的原始电话号码摄取到[!DNL Experience Platform]，激活时会自动对其进行哈希处理。 如果选择此选项，请确保始终将原始电话号码摄取到`Phone_E.164`命名空间。
+* **正在引入经过哈希处理的电话号码**：您可以在引入到[!DNL Experience Platform]之前对电话号码进行预哈希处理。 如果选择此选项，请确保始终将经过哈希处理的电话号码摄取到`PHONE_SHA256_E.164`命名空间。
 
 >[!NOTE]
 >
@@ -119,7 +119,7 @@ Experience Platform中的某些目标对于发送到目标平台或从目标平�
 
 ### 电子邮件哈希处理要求 {#hashing-requirements}
 
-您可以在将电子邮件地址摄取到Adobe Experience Platform之前对其进行哈希处理，或者在Experience Platform中明确使用电子邮件地址，并在激活时对其进行[!DNL Platform]哈希处理。
+您可以在将电子邮件地址摄取到Adobe Experience Platform之前对其进行哈希处理，或者在Experience Platform中明确使用电子邮件地址，并在激活时对其进行[!DNL Experience Platform]哈希处理。
 
 有关Google的哈希要求和其他激活限制的详细信息，请参阅Google文档中的以下部分：
 
@@ -137,9 +137,9 @@ Experience Platform中的某些目标对于发送到目标平台或从目标平�
 
 在使用`User_ID`命名空间将数据发送到Google之前，请确保使用[!DNL gTag]同步您自己的标识符。 有关详细信息，请参阅[Google官方文档](https://support.google.com/google-ads/answer/9199250)。
 
-<!-- Data from unhashed namespaces is automatically hashed by [!DNL Platform] upon activation.
+<!-- Data from unhashed namespaces is automatically hashed by [!DNL Experience Platform] upon activation.
 
-Attribute source data is not automatically hashed. When your source field contains unhashed attributes, check the **[!UICONTROL Apply transformation]** option, to have [!DNL Platform] automatically hash the data on activation.
+Attribute source data is not automatically hashed. When your source field contains unhashed attributes, check the **[!UICONTROL Apply transformation]** option, to have [!DNL Experience Platform] automatically hash the data on activation.
 ![Identity mapping transformation](../../assets/ui/activate-destinations/identity-mapping-transformation.png) -->
 
 <!-- ## Configure destination - video walkthrough {#video}
@@ -202,9 +202,9 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 选择源字段：
 
 * 如果您使用的电子邮件地址未经过哈希处理，请选择`Email`命名空间作为源标识。
-* 如果您根据[!DNL Google Customer Match] [电子邮件哈希处理要求](#hashing-requirements)将数据摄取到[!DNL Platform]时已将客户电子邮件地址哈希处理，请选择`Email_LC_SHA256`命名空间作为源标识。
-* 如果您的数据由非散列电话号码组成，请选择`PHONE_E.164`命名空间作为源标识。 [!DNL Platform]将散列电话号码以符合[!DNL Google Customer Match]要求。
-* 如果您根据[!DNL Facebook] [电话号码散列要求](#phone-number-hashing-requirements)将数据提取到[!DNL Platform]中时散列电话号码，请选择`Phone_SHA256_E.164`命名空间作为源标识。
+* 如果您根据[!DNL Google Customer Match] [电子邮件哈希处理要求](#hashing-requirements)将数据摄取到[!DNL Experience Platform]时已将客户电子邮件地址哈希处理，请选择`Email_LC_SHA256`命名空间作为源标识。
+* 如果您的数据由非散列电话号码组成，请选择`PHONE_E.164`命名空间作为源标识。 [!DNL Experience Platform]将散列电话号码以符合[!DNL Google Customer Match]要求。
+* 如果您根据[!DNL Facebook] [电话号码散列要求](#phone-number-hashing-requirements)将数据提取到[!DNL Experience Platform]中时散列电话号码，请选择`Phone_SHA256_E.164`命名空间作为源标识。
 * 如果您的数据包含[!DNL Apple]个设备ID，请选择`IDFA`命名空间作为源标识。
 * 如果您的数据包含[!DNL Android]个设备ID，请选择`GAID`命名空间作为源标识。
 * 如果您的数据包含其他类型的标识符，请选择`Custom`命名空间作为源标识。
@@ -218,9 +218,9 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 
 ![在激活工作流的“映射”步骤中显示的源字段和目标字段之间的标识映射。](../../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm.png)
 
-来自未经过哈希处理的命名空间的数据在激活时会由[!DNL Platform]自动进行哈希处理。
+来自未经过哈希处理的命名空间的数据在激活时会由[!DNL Experience Platform]自动进行哈希处理。
 
-属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。
+属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。
 
 ![应用激活工作流的映射步骤中突出显示的转换控件。](../../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm-transformation.png)
 

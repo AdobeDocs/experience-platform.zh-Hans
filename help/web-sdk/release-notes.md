@@ -1,11 +1,11 @@
 ---
 title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
-keywords: Adobe Experience Platform Web SDK；Platform Web SDK；Web SDK；发行说明；
+keywords: Adobe Experience Platform Web SDK；Experience Platform Web SDK；Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 8fd86a170433c4eb07a7370dbd3aa2cb3ef10922
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2285'
+source-wordcount: '2288'
 ht-degree: 2%
 
 ---
@@ -294,7 +294,7 @@ ht-degree: 2%
 - [`getIdentity`](/help/web-sdk/commands/getidentity.md)命令现在会随身份一起返回边缘区域ID。
 - 从服务器收到的警告和错误已得到改进，并以更合适的方式进行处理。
 - 为[`setConsent`](/help/web-sdk/commands/setconsent.md)命令添加了对Adobe Consent 2.0标准的支持。
-- 收到同意首选项后，将对首选项进行哈希处理并将其存储在本地存储中，以实现CMP、Platform Web SDK和Platform Edge Network之间的优化集成。 如果您正在收集同意首选项，我们现在鼓励您在每次加载页面时调用`setConsent`。
+- 收到同意首选项后，将对首选项进行哈希处理并将其存储在本地存储中，以优化CMP、Experience Platform Web SDK和Experience Platform Edge Network之间的集成。 如果您正在收集同意首选项，我们现在鼓励您在每次加载页面时调用`setConsent`。
 - 已添加两个[监视挂接](https://github.com/adobe/alloy/wiki/Monitoring-Hooks)、`onCommandResolved`和`onCommandRejected`。
 - 错误修复：当用户导航到新的单页应用程序视图、返回原始视图并单击符合转化条件的元素时，Personalization交互通知事件将包含有关相同活动的重复信息。
 - 错误修复：如果SDK发送的第一个事件将`documentUnloading`设置为`true`，则将使用[`sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon)发送该事件，从而导致有关未建立标识的错误。

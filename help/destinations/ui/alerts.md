@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；警报；目标
 description: 您可以在创建数据流时订阅警报，以接收有关流运行的状态、成功或失败的警报消息。
 title: 订阅上下文目标警报
 exl-id: 134144a0-cdfe-49a8-bd8b-e36a4f053de5
-source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '948'
+source-wordcount: '953'
 ht-degree: 8%
 
 ---
@@ -23,8 +23,8 @@ ht-degree: 8%
 本文档要求您对Adobe Experience Platform的以下组件有一定的了解：
 
 * [目标](../home.md)：与目标平台预先构建的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
-* [可观察性](../../observability/home.md)： [!DNL Observability Insights]允许您通过使用统计量度和事件通知来监视Platform活动。
-   * [警报](../../observability/alerts/overview.md)：当您的Platform操作中达到一组特定条件（例如系统超出阈值时可能会出现问题）时，Platform可以向您组织中订阅了警报消息的任何用户发送警报消息。
+* [可观察性](../../observability/home.md)： [!DNL Observability Insights]允许您通过使用统计指标和事件通知来监视Experience Platform活动。
+   * [警报](../../observability/alerts/overview.md)：当您的Experience Platform操作中达到一组特定条件（例如，当系统超出阈值时可能会出现问题）时，Experience Platform可以向您组织中订阅了警报消息的任何用户发送警报消息。
 
 ## 在 UI 中订阅提醒 {#subscribe-destination-alerts}
 
@@ -36,7 +36,7 @@ ht-degree: 8%
 
 >[!IMPORTANT]
 >
->您必须启用Platform帐户的即时电子邮件通知，才能接收数据流基于电子邮件的警报通知。
+>您必须为Experience Platform帐户启用电子邮件即时通知，才能接收数据流基于电子邮件的警报通知。
 
 您可以在[目标连接](connect-destination.md)工作流的[!UICONTROL 配置新目标]步骤期间为数据流启用警报。
 
@@ -51,7 +51,7 @@ ht-degree: 8%
 
 | 警报 | 描述 |
 | --- | --- |
-| 目标流运行延迟 | 此警报会在目标流运行时间超过150分钟时通知您，以激活受众。 |
+| 目标流量运行延迟 | 此警报会在目标流运行时间超过150分钟时通知您，以激活受众。 |
 | 目标流运行失败 | 在将受众激活到目标时出现错误时，此警报会通知您。 |
 | 目标流运行成功 | 当受众成功激活到目标时，此警报会通知您。 |
 | 目标流运行开始 | 此警报会在目标流运行开始激活受众时通知您。 |
@@ -63,9 +63,9 @@ ht-degree: 8%
 
 ### 在UI中接收警报 {#receiving-alerts-in-ui}
 
-警报在UI中由Platform UI顶部标题中的通知图标表示。 选择通知图标可查看有关数据流的特定警报消息。
+警报在UI中由Experience Platform UI顶部标题中的通知图标表示。 选择通知图标可查看有关数据流的特定警报消息。
 
-显示Experience Platform](../assets/ui/alerts/notification.png)中通知图标的![用户界面图像
+显示Experience Platform中通知图标的![UI图像](../assets/ui/alerts/notification.png)
 
 此时会显示通知面板，其中显示您创建的数据流中的状态更新列表。
 

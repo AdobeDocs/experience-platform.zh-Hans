@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform；主页；热门主题
+keywords: Experience Platform；首页；热门话题
 solution: Experience Platform
 title: Privacy Service疑难解答指南
-description: 本文档提供有关Privacy Service的常见问题解答以及API中常见错误的信息。
+description: 本文档提供了有关Privacy Service的常见问题解答以及API中常见错误的信息。
 exl-id: 8afbb065-0f41-4048-9003-a22c0c839717
-source-git-commit: c6507a39ba5ae5ca6aa2bf02cf8844a4592152ac
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1028'
-ht-degree: 4%
+ht-degree: 5%
 
 ---
 
@@ -63,9 +63,9 @@ Adobe Experience Platform [!DNL Privacy Service]提供RESTful API和用户界面
 有关提供用户身份信息的详细信息，请参阅隐私请求[身份数据的指南](identity-data.md)。
 
 
-## 我可以使用[!DNL Privacy Service]来清除意外发送到[!DNL Platform]的数据吗？
+## 我可以使用[!DNL Privacy Service]来清除意外发送到[!DNL Experience Platform]的数据吗？
 
-Adobe不支持使用[!DNL Privacy Service]清除意外提交到产品的数据。 [!DNL Privacy Service]旨在帮助您履行对数据主体（或消费者）访问或删除请求的义务。 不支持或允许将Privacy Service用于数据清理或维护。
+Adobe不支持使用[!DNL Privacy Service]清除意外提交到产品的数据。 [!DNL Privacy Service]旨在帮助您履行对数据主体（或消费者）访问或删除请求的义务。 不支持或允许将Privacy Service用于数据清理或维护的任何其他用途。
 
 隐私请求对时间敏感，并且是根据适用的隐私法完成的。 提交不是数据主体/消费者访问或删除请求的请求会影响所有[!DNL Privacy Service]客户以及[!DNL Privacy Service]支持适当法定时间线的能力。 现已设定每日硬性上传限制，以防止滥用服务。
 
@@ -111,4 +111,4 @@ Adobe不支持使用[!DNL Privacy Service]清除意外提交到产品的数据�
 | 需要访问和权限。 | 要使用[!DNL Privacy Service]，需要访问和权限。 请与管理员联系以获取访问权限。 |
 | 上载和归档访问数据时出现问题。 | 发生此错误时，请重新上传访问数据并重试。 |
 | 工作负载超出了当前的文档速率限制。 | 发生此错误时，请降低提交率并重试。 |
-| 请求过多<br>（HTTP 429错误） | 如果您的提交模式超过了受监控的允许数据主体作业限制，您将收到HTTP 429错误，以响应来自组织的持续流量。 Privacy Service用于处理数据主体隐私请求。 不用于数据清理。 如果您收到HTTP 429错误，将实施限制和请求限制以保护Adobe免受可能使合法合规工作面临风险的滥用。<br>通过[设置数据集到期计划](../hygiene/ui/dataset-expiration.md)并使用[记录删除功能](../hygiene/ui/record-delete.md)提供了用于最小化数据的备用方法。 有关如何应用这些功能的更多信息，请参阅各自的文档。 |
+| 请求过多<br>（HTTP 429错误） | 如果您的提交模式超过了受监控的允许数据主体作业限制，您将收到HTTP 429错误，以响应来自组织的持续流量。 Privacy Service用于处理数据主体隐私请求。 不用于数据清理。 如果您收到HTTP 429错误，将实施限制和请求限制以保护Adobe免受滥用，这可能会使合法的合规工作面临风险。<br>通过[设置数据集到期计划](../hygiene/ui/dataset-expiration.md)并使用[记录删除功能](../hygiene/ui/record-delete.md)提供了用于最小化数据的备用方法。 有关如何应用这些功能的更多信息，请参阅各自的文档。 |

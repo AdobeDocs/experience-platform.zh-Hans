@@ -1,22 +1,22 @@
 ---
 solution: Experience Platform
-title: Experience PlatformUI的浏览器和语言支持
-description: Adobe Experience Platform是市场上功能最强大、最灵活、最开放的系统，用于构建和管理可改善客户体验的完整解决方案。 Experience Platform使组织能够集中和标准化来自任何系统的客户数据和内容，并应用数据科学和机器学习来显着改进丰富个性化体验的设计和交付。
+title: Experience Platform UI的浏览器和语言支持
+description: Adobe Experience Platform是市场上功能最强大、最灵活、最开放的系统，用于构建和管理可改善客户体验的完整解决方案。 Experience Platform允许组织集中和标准化来自任何系统的客户数据和内容，并应用数据科学和机器学习来显着改进丰富个性化体验的设计和交付。
 exl-id: 1b74aede-55df-4e81-8360-e49d1932b373
-source-git-commit: 9c46f2eeb563009da52acb629796ee9992136343
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '251'
+source-wordcount: '253'
 ht-degree: 10%
 
 ---
 
-# Experience PlatformUI的浏览器和语言支持
+# Experience Platform UI的浏览器和语言支持
 
 Adobe Experience Platform用户界面(UI)可支持多种浏览器和语言。
 
 ## 浏览器支持
 
-Platform UI设计为可在Google Chrome、Safari、Firefox和Microsoft Edge的&#x200B;**最新版本**&#x200B;中优化工作。 在旧版本的浏览器上使用某些功能时可能会遇到问题。
+Experience Platform UI设计为可在Google Chrome、Safari、Firefox和Microsoft Edge的&#x200B;**最新版本**&#x200B;中优化工作。 在旧版本的浏览器上使用某些功能时可能会遇到问题。
 
 | Operating system | 支持的浏览器 |
 |---|---|
@@ -32,7 +32,7 @@ Platform UI设计为可在Google Chrome、Safari、Firefox和Microsoft Edge的&#
 
 ## 语言支持
 
-Platform UI目前提供以下语言版本：
+Experience Platform UI目前提供以下语言版本：
 
 * 英语
 * 法语

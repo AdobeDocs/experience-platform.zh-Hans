@@ -4,9 +4,9 @@ title: 使用API为配置文件更新启用数据集
 type: Tutorial
 description: 本教程向您展示如何使用Adobe Experience Platform API启用具有“更新插入”功能的数据集，以更新实时客户个人资料数据。
 exl-id: fc89bc0a-40c9-4079-8bfc-62ec4da4d16a
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1067'
+source-wordcount: '1069'
 ht-degree: 6%
 
 ---
@@ -21,14 +21,14 @@ ht-degree: 6%
 
 ## 快速入门
 
-本教程需要对管理启用了配置文件的数据集所涉及的几项Adobe Experience Platform服务有一定的了解。 在开始本教程之前，请查看以下相关[!DNL Platform]服务的文档：
+本教程需要对管理启用了配置文件的数据集所涉及的几项Adobe Experience Platform服务有一定的了解。 在开始本教程之前，请查看以下相关[!DNL Experience Platform]服务的文档：
 
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
 - [[!DNL Catalog Service]](../../catalog/home.md)： RESTful API，允许您为[!DNL Real-Time Customer Profile]和[!DNL Identity Service]创建数据集并配置它们。
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： [!DNL Platform]用于组织客户体验数据的标准化框架。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
 - [批量摄取](../../ingestion/batch-ingestion/overview.md)：批量摄取API允许您将数据作为批处理文件摄取到Experience Platform中。
 
-以下部分提供了成功调用Platform API所需了解的其他信息。
+以下部分提供了成功调用Experience Platform API所需了解的其他信息。
 
 ### 正在读取示例 API 调用
 
@@ -36,7 +36,7 @@ ht-degree: 6%
 
 ### 收集所需标头的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+要调用[!DNL Experience Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
@@ -44,7 +44,7 @@ ht-degree: 6%
 
 包含有效负载(POST、PUT、PATCH)的所有请求都需要额外的`Content-Type`标头。 必要时，此标头的正确值会显示在示例请求中。
 
-[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Platform] API的所有请求都需要`x-sandbox-name`标头，用于指定将在其中执行操作的沙盒的名称。 有关[!DNL Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
+[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Experience Platform] API的所有请求都需要`x-sandbox-name`标头，用于指定将在其中执行操作的沙盒的名称。 有关[!DNL Experience Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
 
 ## 创建为配置文件更新启用的数据集
 
@@ -179,7 +179,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a27
 
 ### 为配置文件禁用数据集
 
-为了配置启用配置文件的数据集以进行更新，您必须首先禁用`unifiedProfile`和`unifiedIdentity`标记，然后随着`isUpsert`标记重新启用它们。 可使用两个PATCH请求完成此操作，一个用于禁用，另一个用于重新启用。
+为了配置启用配置文件的数据集以进行更新，您必须首先禁用`unifiedProfile`和`unifiedIdentity`标记，然后随着`isUpsert`标记重新启用它们。 可使用两个PATCH请求来完成，一个用于禁用，另一个用于重新启用。
 
 >[!WARNING]
 >
@@ -236,7 +236,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a2
 
 >[!IMPORTANT]
 >
->为配置文件启用数据集时，请确保数据集关联的架构也&#x200B;**启用了**&#x200B;配置文件。 如果架构未启用配置文件，则数据集&#x200B;**不会**&#x200B;在Platform UI中显示为启用配置文件。
+>为配置文件启用数据集时，请确保数据集关联的架构也&#x200B;**启用了**&#x200B;配置文件。 如果架构未启用配置文件，则数据集&#x200B;**不会**&#x200B;在Experience Platform UI中显示为启用配置文件。
 
 **API格式**
 

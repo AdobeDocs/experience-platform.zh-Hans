@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；源；API；浏览；流
 title: 使用流服务API浏览表格式Source
 description: 本教程使用流服务API来探索基于表的源的内容和结构。
 exl-id: 0c7a5b8a-2071-4ac2-b2d1-c5534e7c7d9c
-source-git-commit: 3bdeec8284873b8d9368f833b24e9922ed489019
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '465'
+source-wordcount: '471'
 ht-degree: 5%
 
 ---
@@ -22,12 +22,12 @@ ht-degree: 5%
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [源](../../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。
-* [沙盒](../../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强传入数据。
+* [沙盒](../../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-### 使用平台API
+### 使用Experience Platform API
 
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../landing/api-guide.md)指南。
+有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../../landing/api-guide.md)指南。
 
 ## 浏览您的数据表
 
@@ -56,7 +56,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会从源中返回表数组。 查找要带入Platform的表并记下其`path`属性，因为需要在下一步中提供该表以检查其结构。
+成功的响应会从源中返回表数组。 查找要带入Experience Platform的表并记下其`path`属性，因为在下一步中需要提供该表以检查其结构。
 
 ```json
 [
@@ -77,7 +77,7 @@ curl -X GET \
 ]
 ```
 
-## Inspect表的结构
+## 检查表的结构
 
 要检查数据表的内容，请在将表的路径指定为查询参数时对[!DNL Flow Service] API执行GET请求。
 
@@ -188,7 +188,7 @@ curl -X GET \
 
 ## 后续步骤
 
-通过学习本教程，您已收集有关数据表结构和内容的信息。 此外，您已检索要摄取到Platform中的表的路径。 您可以使用此信息创建源连接和数据流，以将您的数据传送到Platform。 有关如何使用[!DNL Flow Service] API创建源连接和数据流的特定步骤，请参阅以下教程：
+通过学习本教程，您已收集有关数据表结构和内容的信息。 此外，您已检索要纳入Experience Platform的表的路径。 您可以使用此信息创建源连接和数据流，将您的数据引入到Experience Platform。 有关如何使用[!DNL Flow Service] API创建源连接和数据流的特定步骤，请参阅以下教程：
 
 * [Advertising源](../collect/advertising.md)
 * [CRM源](../collect/crm.md)

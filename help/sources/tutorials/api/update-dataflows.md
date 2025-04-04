@@ -2,9 +2,9 @@
 title: 使用流服务API更新数据流
 description: 了解如何使用流服务API创建数据流，包括其名称、描述和计划。
 exl-id: 367a3a9e-0980-4144-a669-e4cfa7a9c722
-source-git-commit: 9e1edaa4183a8025b8391f58d480063adc834616
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '656'
+source-wordcount: '661'
 ht-degree: 2%
 
 ---
@@ -23,12 +23,12 @@ ht-degree: 2%
 
 本教程还要求您实际了解Adobe Experience Platform的以下组件：
 
-* [源](../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
-* [沙盒](../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-### 使用平台API
+### 使用Experience Platform API
 
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../landing/api-guide.md)指南。
+有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../landing/api-guide.md)指南。
 
 ## 查找数据流详细信息
 
@@ -177,7 +177,7 @@ curl -X GET \
 
 >[!IMPORTANT]
 >
->发出PATCH请求时需要`If-Match`标头。 此标头的值是您要更新的连接的唯一版本。 每次成功更新数据流时，etag值都会更新。
+>发出PATCH请求时需要使用`If-Match`标头。 此标头的值是您要更新的连接的唯一版本。 每次成功更新数据流时，etag值都会更新。
 
 **API格式**
 
@@ -224,7 +224,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的响应将返回您的流ID和更新的电子标记。 您可以在提供流ID的同时向[!DNL Flow Service] API发出GET请求，以验证更新。
+成功的响应将返回您的流ID和更新的电子标记。 您可以向[!DNL Flow Service] API发出GET请求，同时提供流ID来验证更新。
 
 ```json
 {
@@ -280,7 +280,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的响应将返回您的流ID和更新的电子标记。 您可以在提供流ID的同时向[!DNL Flow Service] API发出GET请求，以验证更新。
+成功的响应将返回您的流ID和更新的电子标记。 您可以向[!DNL Flow Service] API发出GET请求，同时提供流ID来验证更新。
 
 ```json
 {

@@ -2,11 +2,11 @@
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；Power BI；power bi；连接到查询服务；
 solution: Experience Platform
 title: 将Power BI连接到查询服务
-description: 本文档介绍了将Power BI连接到Adobe Experience Platform查询服务的步骤。
+description: 本文档介绍了将Power BI与Adobe Experience Platform查询服务连接的步骤。
 exl-id: 8fcd3056-aac7-4226-a354-ed7fb8fe9ad7
-source-git-commit: 2b76b99d1e22d75faf8d758edd6cf08acdec7c21
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1011'
+source-wordcount: '1014'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 >
 > [!DNL Power BI]桌面应用程序仅&#x200B;**在Windows设备上可用**。
 
-要获取将[!DNL Power BI]连接到Experience Platform所需的凭据，您必须有权访问Platform UI中的查询工作区。 如果您当前无权访问查询工作区，请联系您的组织管理员。
+要获取将[!DNL Power BI]连接到Experience Platform所需的凭据，您必须有权访问Experience Platform UI中的查询工作区。 如果您当前无权访问查询工作区，请联系您的组织管理员。
 
 ## 将[!DNL Power BI]连接到查询服务 {#connect-power-bi}
 
@@ -31,13 +31,13 @@ ht-degree: 0%
 
 出现[!DNL PostgreSQL]数据库对话框，请求服务器和数据库的值。 有关如何从Power Query Desktop](https://learn.microsoft.com/en-us/power-query/connectors/postgresql#connect-to-a-postgresql-database-from-power-query-desktop)中[连接到PostgreSQL数据库的其他说明，请参阅官方的[!DNL PowerBI]文档。
 
-这些必需的值获取自您的Adobe Experience Platform凭据。 若要查找凭据，请登录到Platform UI，然后从左侧导航中选择&#x200B;**[!UICONTROL 查询]**，然后选择&#x200B;**[!UICONTROL 凭据]**。 有关查找数据库名称、主机、端口和登录凭据的详细信息，请阅读[凭据指南](../ui/credentials.md)。
+这些必需的值获取自您的Adobe Experience Platform凭据。 若要查找凭据，请登录到Experience Platform UI，然后从左侧导航中选择&#x200B;**[!UICONTROL 查询]**，然后选择&#x200B;**[!UICONTROL 凭据]**。 有关查找数据库名称、主机、端口和登录凭据的详细信息，请阅读[凭据指南](../ui/credentials.md)。
 
 >[!IMPORTANT]
 >
->作为Power BI或Tableau用户，您可以从“查询服务凭据”选项卡将Customer Journey Analytics连接到BI工具。 有关如何[将BI工具连接到Customer Journey Analytics](../ui/credentials.md#connect-to-customer-journey-analytics)的说明，请参阅凭据文档。
+>作为Power BI或Tableau用户，您可以通过查询服务凭据选项卡将Customer Journey Analytics连接到您的BI工具。 有关如何[将您的BI工具](../ui/credentials.md#connect-to-customer-journey-analytics)连接到Customer Journey Analytics的说明，请参阅凭据文档。
 
-![突出显示了“凭据”选项卡和“过期凭据”的“Experience Platform查询”工作区。](../images/clients/power-bi/query-service-credentials-page.png)
+![突出显示了“凭据”选项卡和“过期凭据”的Experience Platform查询工作区。](../images/clients/power-bi/query-service-credentials-page.png)
 
 在[!DNL PostgreSQL database]对话框的&#x200B;**[!DNL Server]**&#x200B;字段中，输入在查询服务[!UICONTROL 凭据]部分中找到的主机的值。 对于生产，请将端口`:80`添加到主机字符串的末尾。 例如：`made-up.platform-query.adobe.io:80`。
 
@@ -75,7 +75,7 @@ ht-degree: 0%
 
 ### 使用自定义SQL导入表
 
-[!DNL Power BI]和其他第三方工具（如[!DNL Tableau]）当前不允许用户导入嵌套对象，如Platform中的XDM对象。 为此，[!DNL Power BI]允许您使用自定义SQL访问这些嵌套字段并创建数据的平面化视图。 然后，[!DNL Power BI]将以前嵌套数据的此平面化视图作为普通表加载。
+[!DNL Power BI]和其他第三方工具（如[!DNL Tableau]）当前不允许用户导入嵌套对象，如Experience Platform中的XDM对象。 为此，[!DNL Power BI]允许您使用自定义SQL访问这些嵌套字段并创建数据的平面化视图。 然后，[!DNL Power BI]将以前嵌套数据的此平面化视图作为普通表加载。
 
 从[!DNL PostgreSQL database]对话框中，选择&#x200B;**[!DNL Advanced options]**&#x200B;以在&#x200B;**[!DNL SQL statement]**&#x200B;部分中输入自定义SQL查询。 此自定义查询应该用于将您的JSON名称 — 值对拼合为表格式。 官方文档还提供了有关如何使用高级选项](https://learn.microsoft.com/en-us/power-query/connectors/postgresql#connect-using-advanced-options)中的SQL语句[连接PowerBI的信息。
 

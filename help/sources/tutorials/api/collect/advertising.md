@@ -3,11 +3,11 @@ keywords: Experience Platform；主页；热门主题；流服务；广告；goo
 solution: Experience Platform
 title: 使用流服务API为Advertising源创建数据流
 type: Tutorial
-description: 本教程涵盖以下步骤：从第三方广告应用程序检索数据，以及使用源连接器和流服务API将数据提取到Platform。
+description: 本教程涵盖以下步骤：从第三方广告应用程序检索数据，以及使用源连接器和流服务API将数据提取到Experience Platform中。
 exl-id: 2a0eb13b-d09e-4bc1-aae3-84c8741eead1
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1341'
+source-wordcount: '1351'
 ht-degree: 2%
 
 ---
@@ -19,22 +19,22 @@ ht-degree: 2%
 >[!NOTE]
 >
 >* 要创建数据流，您必须已具有包含广告源的有效基本连接ID。 如果您没有此ID，请查看[源概述](../../../home.md#advertising)，以了解可创建基本连接的广告源的列表。
->* 要使Experience Platform摄取数据，必须将所有基于表的批处理源的时区配置为UTC时区。
+>* 要让Experience Platform摄取数据，必须将所有基于表的批处理源的时区配置为UTC时区。
 
 ## 快速入门
 
 本教程要求您实际了解Adobe Experience Platform的以下组件：
 
-* [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构注册表开发人员指南](../../../../xdm/api/getting-started.md)：包含成功执行对架构注册表API的调用所需了解的重要信息。 这包括您的`{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（请特别注意“接受”标头及其可能的值）。
-* [[!DNL Catalog Service]](../../../../catalog/home.md)：目录是Experience Platform中数据位置和历程的记录系统。
+* [[!DNL Catalog Service]](../../../../catalog/home.md)：目录是Experience Platform中数据位置和谱系的记录系统。
 * [[!DNL Batch ingestion]](../../../../ingestion/batch-ingestion/overview.md)：批量摄取API允许您将数据作为批处理文件摄取到Experience Platform中。
-* [沙盒](../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [沙盒](../../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-### 使用平台API
+### 使用Experience Platform API
 
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../landing/api-guide.md)指南。
+有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../../landing/api-guide.md)指南。
 
 ## 创建源连接 {#source}
 
@@ -138,15 +138,15 @@ curl -X POST \
 
 ## 创建目标XDM架构 {#target-schema}
 
-为了在Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。
+为了在Experience Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Experience Platform数据集。
 
-通过向[架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)执行POST请求，可以创建目标XDM架构。
+通过对[架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)执行POST请求，可以创建目标XDM架构。
 
 有关如何创建目标XDM架构的详细步骤，请参阅有关使用API [创建架构的教程](../../../../xdm/api/schemas.md)。
 
 ## 创建目标数据集 {#target-dataset}
 
-可以通过向[目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)执行POST请求，在有效负载中提供目标架构的ID来创建目标数据集。
+通过向[目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)执行POST请求，在有效负载中提供目标架构的ID，可以创建目标数据集。
 
 有关如何创建目标数据集的详细步骤，请参阅有关[使用API创建数据集的教程](../../../../catalog/api/create-dataset.md)。
 
@@ -282,7 +282,7 @@ curl -X POST \
 
 ## 查找数据流规范 {#specs}
 
-数据流负责从源收集数据并将这些数据导入Platform。 要创建数据流，您必须首先获取负责收集广告数据的数据流规范。
+数据流负责从源收集数据并将这些数据引入Experience Platform。 要创建数据流，您必须首先获取负责收集广告数据的数据流规范。
 
 **API格式**
 
@@ -302,7 +302,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回数据流规范的详细信息，该规范负责将数据从源引入Platform。 响应包括创建新数据流所需的唯一流规范`id`。
+成功的响应将返回数据流规范的详细信息，该规范负责将数据从源引入Experience Platform。 响应包括创建新数据流所需的唯一流规范`id`。
 
 >[!NOTE]
 >
@@ -602,7 +602,7 @@ curl -X GET \
 * [映射 ID](#mapping)
 * [数据流规范ID](#specs)
 
-数据流负责从源中计划和收集数据。 您可以通过在有效负载中提供上述值时执行POST请求来创建数据流。
+数据流负责从源中计划和收集数据。 您可以通过在有效负载中提供前面提到的值时执行POST请求来创建数据流。
 
 要计划摄取，您必须先将开始时间值设置为纪元时间（以秒为单位）。 然后，必须将频率值设置为五个选项之一： `once`、`minute`、`hour`、`day`或`week`。 间隔值用于指定两次连续摄取之间的时间段，创建一次性摄取不需要设置间隔。 对于所有其他频率，间隔值必须设置为等于或大于`15`。
 
@@ -690,7 +690,7 @@ curl -X POST \
 
 ## 后续步骤
 
-在本教程之后，您已创建一个源连接器，以按计划从广告系统中收集数据。 传入数据现在可供下游平台服务（如[!DNL Real-Time Customer Profile]和[!DNL Data Science Workspace]）使用。 有关更多详细信息，请参阅以下文档：
+在本教程之后，您已创建一个源连接器，以按计划从广告系统中收集数据。 传入数据现在可供下游Experience Platform服务（如[!DNL Real-Time Customer Profile]和[!DNL Data Science Workspace]）使用。 有关更多详细信息，请参阅以下文档：
 
 * [实时客户轮廓概述](../../../../profile/home.md)
 * [数据科学工作区概述](../../../../data-science-workspace/home.md)

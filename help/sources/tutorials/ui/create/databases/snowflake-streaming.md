@@ -1,15 +1,15 @@
 ---
-title: 使用UI流式处理来自Snowflake数据库的数据以Experience Platform
-description: 了解如何将数据从Snwoflake数据库流式传输到Experience Platform
+title: 使用UI将数据从Snowflake数据库流入Experience Platform
+description: 了解如何将数据从Snwoflake数据库流入Experience Platform
 exl-id: 49d488f1-90d8-452a-9f3e-02afdcc79b09
-source-git-commit: 34b1676ebb5405d73cf37cd786d1e6c26cb8fdaa
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1647'
+source-wordcount: '1648'
 ht-degree: 3%
 
 ---
 
-# 使用UI从[!DNL Snowflake]数据库流式传输数据以Experience Platform
+# 使用UI将数据从[!DNL Snowflake]数据库流式传输到Experience Platform
 
 按照本指南了解如何使用用户界面将数据从[!DNL Snowflake]数据库流式传输到Adobe Experience Platform。
 
@@ -24,11 +24,11 @@ ht-degree: 3%
 
 ### 身份验证
 
-阅读 [!DNL Snowflake] 流式数据](../../../../connectors/databases/snowflake-streaming.md)的[必备项设置指南，以了解在将流式数据从[!DNL Snowflake]摄取到Experience Platform之前需要完成的相关步骤。
+阅读 [!DNL Snowflake] 流式数据](../../../../connectors/databases/snowflake-streaming.md)的[必备项设置指南，以了解从[!DNL Snowflake]将流式数据摄取到Experience Platform之前需要完成的步骤的相关信息。
 
-## 使用[!DNL Snowflake Streaming]源流式传输[!DNL Snowflake]数据以Experience Platform
+## 使用[!DNL Snowflake Streaming]源将[!DNL Snowflake]数据流式传输到Experience Platform
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
 在&#x200B;*数据库*&#x200B;类别下，选择&#x200B;**[!DNL Snowflake Streaming]**，然后选择&#x200B;**[!UICONTROL 添加数据]**。
 
@@ -36,9 +36,9 @@ ht-degree: 3%
 >
 >源目录中没有经过身份验证的帐户的源将显示&#x200B;**[!UICONTROL 设置]**&#x200B;选项。 一旦存在经过身份验证的帐户，此选项将更改为&#x200B;**[!UICONTROL 添加数据]**。
 
-![Experience PlatformUI中的源目录，已选择Snowflake流源卡。](../../../../images/tutorials/create/snowflake-streaming/catalog.png)
+![Experience Platform UI中的源目录，已选择Snowflake流源卡。](../../../../images/tutorials/create/snowflake-streaming/catalog.png)
 
-出现&#x200B;**[!UICONTROL 连接Snowflake流帐户]**&#x200B;页面。 在此页上，您可以使用新的或现有的身份证明。
+此时会显示&#x200B;**[!UICONTROL 连接Snowflake流帐户]**&#x200B;页面。 在此页上，您可以使用新的或现有的身份证明。
 
 >[!BEGINTABS]
 
@@ -54,7 +54,7 @@ ht-degree: 3%
 | --- | --- |
 | 帐户 | [!DNL Snowflake]帐户的名称。 有关帐户名称的约定，请阅读[[!DNL Snowflake Streaming] 身份验证指南](../../../../connectors/databases/snowflake-streaming.md#gather-required-credentials)。 |
 | 仓库 | [!DNL Snowflake]仓库的名称。 仓库管理[!DNL Snowflake]中查询的执行。 每个[!DNL Snowflake]仓库彼此独立，必须单独访问才能将数据导入Experience Platform。 |
-| 数据库 | [!DNL Snowflake]数据库的名称。 数据库包含要带入Experience Platform的数据。 |
+| 数据库 | [!DNL Snowflake]数据库的名称。 该数据库包含您要带入Experience Platform的数据。 |
 | 架构 | （可选）与您的[!DNL Snowflake]帐户关联的数据库架构。 |
 | 用户名 | [!DNL Snowflake]帐户的用户名。 |
 | 密码 | [!DNL Snowflake]帐户的密码。 |
@@ -82,7 +82,7 @@ ht-degree: 3%
 
 出现[!UICONTROL 选择数据]步骤。 在此步骤中，您必须选择要导入到Experience Platform中的数据，配置时间戳和时区，并提供用于摄取原始数据的示例源数据文件。
 
-使用屏幕左侧的数据库目录并选择要导入到Experience Platform的表。
+使用屏幕左侧的数据库目录，并选择要导入到Experience Platform的表。
 
 ![选定了数据库表的select数据接口。](../../../../images/tutorials/create/snowflake-streaming/select-table.png)
 
@@ -135,7 +135,7 @@ ht-degree: 3%
 如果您的数据集启用了实时客户个人资料，那么在此步骤中，您可以切换&#x200B;**[!UICONTROL 个人资料数据集]**&#x200B;以启用您的数据以进行个人资料摄取。 您还可以使用此步骤启用&#x200B;**[!UICONTROL 错误诊断]**&#x200B;和&#x200B;**[!UICONTROL 部分摄取]**。
 
 * **[!UICONTROL 错误诊断]**：选择&#x200B;**[!UICONTROL 错误诊断]**&#x200B;以指示源生成错误诊断，以便以后在监视数据集活动和数据流状态时可以引用这些诊断。
-* **[!UICONTROL 部分摄取]**：部分批次摄取是摄取包含错误的数据的能力，最多可摄取特定可配置阈值。 此功能允许您成功地将所有准确的数据提取到Experience Platform中，同时所有不正确的数据将单独进行批处理并显示有关其无效原因的信息。
+* **[!UICONTROL 部分摄取]**：部分批次摄取是摄取包含错误的数据的能力，最多可摄取特定可配置阈值。 此功能允许您成功地将所有准确的数据提取到Experience Platform中，同时将所有不正确的数据与有关其无效原因的信息单独进行批处理。
 
 +++
 
@@ -149,13 +149,13 @@ ht-degree: 3%
 | --- | --- |
 | 数据流名称 | 数据流的名称。  默认情况下，这将使用正在导入的文件的名称。 |
 | 描述 | （可选）数据流的简短说明。 |
-| 警报 | Experience Platform可以生成基于事件的警报，供用户订阅。 这些选项需要一个正在运行的数据流来触发它们。 有关详细信息，请阅读[警报概述](../../alerts.md) <ul><li>**源数据流运行开始**：选择此警报以在数据流运行开始时接收通知。</li><li>**源数据流运行成功**：选择此警报以在数据流结束且没有任何错误时接收通知。</li><li>**源数据流运行失败**：选择此警报以在数据流运行结束时发生任何错误时接收通知。</li></ul> |
+| 警报 | Experience Platform可生成用户可以订阅的基于事件的警报。 这些选项需要一个正在运行的数据流来触发它们。 有关详细信息，请阅读[警报概述](../../alerts.md) <ul><li>**源数据流运行开始**：选择此警报以在数据流运行开始时接收通知。</li><li>**源数据流运行成功**：选择此警报以在数据流结束且没有任何错误时接收通知。</li><li>**源数据流运行失败**：选择此警报以在数据流运行结束时发生任何错误时接收通知。</li></ul> |
 
 完成后，选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
 
 ## 将字段映射到XDM架构 {#mapping}
 
-出现[!UICONTROL 映射]步骤。 使用映射界面将源数据映射到相应的架构字段，然后再将该数据提取到Experience Platform中，然后选择&#x200B;**[!UICONTROL 下一步]**。 有关如何使用映射界面的详细指南，请阅读[数据准备UI指南](../../../../../data-prep/ui/mapping.md)以了解更多信息。
+出现[!UICONTROL 映射]步骤。 使用映射界面将源数据映射到相应的架构字段，然后再将该数据摄取到Experience Platform，然后选择&#x200B;**[!UICONTROL 下一步]**。 有关如何使用映射界面的详细指南，请阅读[数据准备UI指南](../../../../../data-prep/ui/mapping.md)以了解更多信息。
 
 ![源工作流的映射接口。](../../../../images/tutorials/create/snowflake-streaming/mapping.png)
 

@@ -2,9 +2,9 @@
 title: 使用流服务API更新帐户
 description: 本教程涵盖了使用流服务API更新帐户详细信息和凭据的步骤。
 exl-id: a93385fd-ed36-457f-8882-41e37f6f209d
-source-git-commit: 9e1edaa4183a8025b8391f58d480063adc834616
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '539'
+source-wordcount: '544'
 ht-degree: 2%
 
 ---
@@ -25,16 +25,16 @@ ht-degree: 2%
 
 本教程还要求您实际了解Adobe Experience Platform的以下组件：
 
-* [源](../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
-* [沙盒](../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-### 使用平台API
+### 使用Experience Platform API
 
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../landing/api-guide.md)指南。
+有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../landing/api-guide.md)指南。
 
 ## 查找连接详细信息
 
-更新连接的第一步是使用连接ID检索其详细信息。 要检索您连接的当前详细信息，请在提供要更新的连接的连接ID时向[!DNL Flow Service] APIGET请求。
+更新连接的第一步是使用连接ID检索其详细信息。 要检索您连接的当前详细信息，请在提供要更新的连接的连接ID的同时向[!DNL Flow Service] API发出GET请求。
 
 **API格式**
 
@@ -99,11 +99,11 @@ curl -X GET \
 
 ## 更新连接
 
-要更新连接的名称、描述和凭据，请在提供连接ID、版本和要使用的新信息的同时，对[!DNL Flow Service] API执行PATCH请求。
+要更新连接的名称、描述和凭据，请对[!DNL Flow Service] API执行PATCH请求，同时提供您的连接ID、版本以及要使用的新信息。
 
 >[!IMPORTANT]
 >
->发出PATCH请求时需要`If-Match`标头。 此标头的值是您要更新的连接的唯一版本。
+>发出PATCH请求时需要使用`If-Match`标头。 此标头的值是您要更新的连接的唯一版本。
 
 **API格式**
 
@@ -158,7 +158,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的响应将返回您的连接ID和更新的电子标记。 您可以在提供连接ID的同时向[!DNL Flow Service] API发出GET请求，以验证更新。
+成功的响应将返回您的连接ID和更新的电子标记。 您可以在提供连接ID的同时，通过向[!DNL Flow Service] API发出GET请求来验证更新。
 
 ```json
 {

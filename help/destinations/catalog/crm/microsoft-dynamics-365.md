@@ -4,10 +4,10 @@ title: Microsoft Dynamics 365连接
 description: Microsoft Dynamics 365目标允许您导出帐户数据，并在Microsoft Dynamics 365中激活该数据，以满足您的业务需求。
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 49bb5c95-f4b7-42e1-9aae-45143bbb1d73
-source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2019'
-ht-degree: 1%
+source-wordcount: '2038'
+ht-degree: 2%
 
 ---
 
@@ -31,11 +31,11 @@ ht-degree: 1%
 
 在将数据激活到[!DNL Dynamics 365]目标之前，您必须在[!DNL Experience Platform]中创建一个[架构](/help/xdm/schema/composition.md)、[数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)和[受众](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html)。
 
-如果您需要有关受众状态的指导，请参阅Adobe关于[受众成员资格详细信息架构字段组](/help/xdm/field-groups/profile/segmentation.md)的文档。
+如果您需要有关受众状态的指导，请参阅Adobe有关[受众成员资格详细信息架构字段组](/help/xdm/field-groups/profile/segmentation.md)的文档。
 
 ### [!DNL Microsoft Dynamics 365]先决条件 {#prerequisites-destination}
 
-请注意[!DNL Dynamics 365]中的以下先决条件，以便将数据从Platform导出到您的[!DNL Dynamics 365]帐户：
+请注意[!DNL Dynamics 365]中的以下先决条件，以便将数据从Experience Platform导出到您的[!DNL Dynamics 365]帐户：
 
 #### 您需要拥有[!DNL Microsoft Dynamics 365]帐户 {#prerequisites-account}
 
@@ -94,7 +94,7 @@ ht-degree: 1%
 
 此部分介绍可导出到此目标的所有受众。
 
-此目标支持激活通过Experience Platform[分段服务](../../../segmentation/home.md)生成的所有受众。
+此目标支持激活通过Experience Platform [分段服务](../../../segmentation/home.md)生成的所有受众。
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -102,8 +102,8 @@ ht-degree: 1%
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在导出受众的所有成员，以及所需的架构字段&#x200B;*（例如：电子邮件地址、电话号码、姓氏）*（根据字段映射）。</li><li> 根据[受众计划](#schedule-audience-export-example)步骤期间提供的&#x200B;**[!UICONTROL 映射ID]**&#x200B;值，[!DNL Dynamics 365]中的每个受众状态都将通过平台中的相应受众状态进行更新。</li></ul> |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | <ul><li>流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。</li></ul> |
+| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在导出受众的所有成员，以及所需的架构字段&#x200B;*（例如：电子邮件地址、电话号码、姓氏）*（根据字段映射）。</li><li> 根据[受众计划](#schedule-audience-export-example)步骤期间提供的&#x200B;**[!UICONTROL 映射ID]**&#x200B;值，[!DNL Dynamics 365]中的每个受众状态都将通过Experience Platform中的相应受众状态进行更新。</li></ul> |
+| 导出频率 | **[!UICONTROL 正在流式传输]** | <ul><li>流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -120,7 +120,7 @@ ht-degree: 1%
 ### 验证目标 {#authenticate}
 
 要验证到目标，请选择&#x200B;**[!UICONTROL 连接到目标]**。
-![显示如何进行身份验证的平台UI屏幕截图。](../../assets/catalog/crm/microsoft-dynamics-365/authenticate-destination.png)
+![Experience Platform UI屏幕截图显示如何进行身份验证。](../../assets/catalog/crm/microsoft-dynamics-365/authenticate-destination.png)
 
 填写下面的必填字段。 有关任何指导，请参阅[收集Dynamics 365凭据](#gather-credentials)部分。
 * **[!UICONTROL 客户端ID]**： [!DNL Azure Active Directory]应用程序的[!DNL Dynamics 365]客户端ID。
@@ -134,7 +134,7 @@ ht-degree: 1%
 ### 填写目标详细信息 {#destination-details}
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
-![显示目标详细信息的平台UI屏幕截图。](../../assets/catalog/crm/microsoft-dynamics-365/destination-details.png)
+![Experience Platform UI屏幕截图显示目标详细信息。](../../assets/catalog/crm/microsoft-dynamics-365/destination-details.png)
 
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
@@ -157,17 +157,17 @@ ht-degree: 1%
 
 ### 映射注意事项和示例 {#mapping-considerations-example}
 
-要将受众数据从Adobe Experience Platform正确发送到[!DNL Dynamics 365]目标，您需要完成字段映射步骤。 映射包括在您的Platform帐户中的Experience Data Model (XDM)架构字段与其在目标目标中的相应等效字段之间创建链接。 要将XDM字段正确映射到[!DNL Dynamics 365]目标字段，请执行以下步骤：
+要将受众数据从Adobe Experience Platform正确发送到[!DNL Dynamics 365]目标，您需要完成字段映射步骤。 映射包括在Experience Platform帐户中的Experience Data Model (XDM)架构字段与其与目标中的相应等效字段之间创建链接。 要将XDM字段正确映射到[!DNL Dynamics 365]目标字段，请执行以下步骤：
 
 1. 在&#x200B;**[!UICONTROL 映射]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL 添加新映射]**。 您将在屏幕上看到一个新映射行。
-   ![用于添加新映射的Platform UI屏幕快照示例。](../../assets/catalog/crm/microsoft-dynamics-365/add-new-mapping.png)
+   ![用于添加新映射的Experience Platform UI屏幕快照示例。](../../assets/catalog/crm/microsoft-dynamics-365/add-new-mapping.png)
 
 1. 在&#x200B;**[!UICONTROL 选择源字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择身份命名空间]**&#x200B;类别并选择`contactid`。
-   ![Source映射的Platform UI屏幕快照示例。](../../assets/catalog/crm/microsoft-dynamics-365/source-mapping.png)
+   ![Source映射的Experience Platform UI屏幕快照示例。](../../assets/catalog/crm/microsoft-dynamics-365/source-mapping.png)
 
 1. 在&#x200B;**[!UICONTROL 选择目标字段]**&#x200B;窗口中，选择要将源字段映射到的目标字段类型。
    * **[!UICONTROL 选择身份命名空间]**：选择此选项可将源字段映射到列表中的身份命名空间。
-     ![Platform UI屏幕截图显示联系人的目标映射。](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-contactid.png)
+     ![Experience Platform UI屏幕截图显示了contactid的Target映射。](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-contactid.png)
 
    * 在XDM配置文件架构和[!DNL Dynamics 365]实例之间添加以下映射：
 
@@ -176,7 +176,7 @@ ht-degree: 1%
      | `contactid` | `contactid` | 是 |
 
    * **[!UICONTROL 选择自定义属性]**：选择此选项可将源字段映射到您在&#x200B;**[!UICONTROL 属性名称]**&#x200B;字段中定义的自定义属性。 请参阅[[!DNL Dynamics 365] 文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1#entity-properties)，获取受支持属性的完整列表。
-     ![显示电子邮件目标映射的Platform UI屏幕截图。](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-email.png)
+     ![Experience Platform UI屏幕截图显示电子邮件的Target映射。](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-email.png)
 
      >[!IMPORTANT]
      >
@@ -193,11 +193,11 @@ ht-degree: 1%
 
    * 下面显示了使用这些映射的示例：
 
-   ![显示Target映射的Platform UI屏幕快照示例。](../../assets/catalog/crm/microsoft-dynamics-365/mappings.png)
+   ![显示Target映射的Experience Platform UI屏幕快照示例。](../../assets/catalog/crm/microsoft-dynamics-365/mappings.png)
 
 ### 计划受众导出和示例 {#schedule-audience-export-example}
 
-在激活工作流的[[!UICONTROL 计划受众导出]](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling)步骤中，必须手动将Platform受众映射到[!DNL Dynamics 365]中的自定义字段属性。
+在激活工作流的[[!UICONTROL 计划受众导出]](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling)步骤中，必须将Experience Platform受众手动映射到[!DNL Dynamics 365]中的自定义字段属性。
 
 为此，请选择每个受众，然后在&#x200B;**[!UICONTROL 映射ID]**&#x200B;字段中输入来自[!DNL Dynamics 365]的相应自定义字段属性。
 
@@ -206,25 +206,25 @@ ht-degree: 1%
 >用于&#x200B;**[!UICONTROL 映射ID]**&#x200B;的值应与[!DNL Dynamics 365]内创建的自定义字段属性的名称完全匹配。 如果您需要有关查找自定义字段属性的指导，请参阅[[!DNL Dynamics 365] 文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/customize/create-edit-fields?view=op-9-1)。
 
 下面显示了一个示例：
-![显示计划受众导出的Platform UI屏幕截图示例。](../../assets/catalog/crm/microsoft-dynamics-365/schedule-segment-export.png)
+![显示计划受众导出的Experience Platform UI屏幕截图示例。](../../assets/catalog/crm/microsoft-dynamics-365/schedule-segment-export.png)
 
 ## 验证数据导出 {#exported-data}
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
 1. 选择&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**以导航到目标列表。
-   ![显示浏览目标的Platform UI屏幕截图。](../../assets/catalog/crm/microsoft-dynamics-365/browse-destinations.png)
+   ![显示“浏览目标”的Experience Platform UI屏幕截图。](../../assets/catalog/crm/microsoft-dynamics-365/browse-destinations.png)
 
 1. 选择目标并验证状态为&#x200B;**[!UICONTROL 已启用]**。
-   ![显示目标数据流运行的平台UI屏幕截图。](../../assets/catalog/crm/microsoft-dynamics-365/destination-dataflow-run.png)
+   ![Experience Platform UI屏幕截图显示目标数据流运行。](../../assets/catalog/crm/microsoft-dynamics-365/destination-dataflow-run.png)
 
 1. 切换到&#x200B;**[!DNL Activation data]**选项卡，然后选择受众名称。
-   ![显示目标激活数据的Platform UI屏幕快照示例。](../../assets/catalog/crm/microsoft-dynamics-365/destinations-activation-data.png)
+   ![显示目标激活数据的Experience Platform UI屏幕截图示例。](../../assets/catalog/crm/microsoft-dynamics-365/destinations-activation-data.png)
 
 1. 监控受众摘要，并确保用户档案计数对应于在受众中创建的计数。
-   ![显示受众的Platform UI屏幕快照示例。](../../assets/catalog/crm/microsoft-dynamics-365/segment.png)
+   ![显示受众的Experience Platform UI屏幕快照示例。](../../assets/catalog/crm/microsoft-dynamics-365/segment.png)
 
-1. 登录到[!DNL Dynamics 365]网站，然后导航到[!DNL Customers] > [!DNL Contacts]页面，并检查是否已添加受众中的配置文件。 您可以看到，根据[受众计划](#schedule-audience-export-example)步骤中提供的&#x200B;**[!UICONTROL 映射ID]**&#x200B;值，[!DNL Dynamics 365]中的每个受众状态都更新为来自Platform的相应受众状态。
+1. 登录到[!DNL Dynamics 365]网站，然后导航到[!DNL Customers] > [!DNL Contacts]页面，并检查是否已添加受众中的配置文件。 您可以看到，根据[受众计划](#schedule-audience-export-example)步骤中提供的&#x200B;**[!UICONTROL 映射ID]**&#x200B;值，[!DNL Dynamics 365]中的每个受众状态都已更新为Experience Platform中的相应受众状态。
    ![Dynamics 365 UI屏幕截图显示“联系人”页面中受众状态已更新。](../../assets/catalog/crm/microsoft-dynamics-365/contacts.png)
 
 ## 数据使用和治理 {#data-usage-governance}
@@ -237,9 +237,9 @@ ht-degree: 1%
 
 检查数据流运行时，如果收到以下错误消息： `Bad request reported while pushing events to the destination. Please contact the administrator and try again.`
 
-![平台UI屏幕截图显示错误请求错误。](../../assets/catalog/crm/microsoft-dynamics-365/error.png)
+![Experience Platform UI屏幕截图显示错误请求错误。](../../assets/catalog/crm/microsoft-dynamics-365/error.png)
 
-要修复此错误，请验证您在[!DNL Dynamics 365]中为Platform受众提供的&#x200B;**[!UICONTROL 映射ID]**&#x200B;是否有效并且存在于[!DNL Dynamics 365]中。
+要修复此错误，请验证您在[!DNL Dynamics 365]中为Experience Platform受众提供的&#x200B;**[!UICONTROL 映射ID]**&#x200B;是否有效并且存在于[!DNL Dynamics 365]中。
 
 ## 其他资源 {#additional-resources}
 

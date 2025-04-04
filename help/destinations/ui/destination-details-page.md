@@ -3,7 +3,7 @@ keywords: 目标；目标；目标详细信息页面；目标详细信息页面
 title: 查看目标详细信息
 description: 单个目标的详细信息页面提供了目标详细信息的概览。 目标详细信息包括目标名称、ID、映射到目标的受众以及用于编辑激活以及启用和禁用数据流的控件。
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: 47d0e2a7fae973edfda035d046f66c88d34bf8b2
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1286'
 ht-degree: 0%
@@ -18,13 +18,13 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->目标详细信息页面是[!DNL Platform] [!DNL UI]中[!UICONTROL 目标]工作区的一部分。 有关详细信息，请参阅[[!UICONTROL 目标]工作区概述](./destinations-workspace.md)。
+>目标详细信息页面是[!DNL Experience Platform] [!DNL UI]中[!UICONTROL 目标]工作区的一部分。 有关详细信息，请参阅[[!UICONTROL 目标]工作区概述](./destinations-workspace.md)。
 
 ## 查看目标详细信息 {#view-details}
 
 请按照以下步骤查看有关现有目标的更多详细信息。 您可以查找目标的目标ID、创建目标的用户、创建目标的时间以及其他信息。
 
-1. 登录到[Experience PlatformUI](https://platform.adobe.com/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL 目标]**。 从顶部标题中选择&#x200B;**[!UICONTROL 浏览]**&#x200B;以查看现有目标。
+1. 登录到[Experience Platform UI](https://platform.adobe.com/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL 目标]**。 从顶部标题中选择&#x200B;**[!UICONTROL 浏览]**&#x200B;以查看现有目标。
 
    ![浏览目标](../assets/ui/details-page/browse-destinations.png)
 
@@ -64,7 +64,7 @@ ht-degree: 0%
 | [!UICONTROL 类别] | 指示目标类型。 有关详细信息，请参阅[目标目录](../catalog/overview.md)。 |
 | [!UICONTROL 连接类型] | 指示将受众发送到目标所使用的表单。 可能的值包括[!UICONTROL Cookie]和[!UICONTROL 基于配置文件的]。 |
 | [!UICONTROL 频率] | 指示受众发送到目标的频率。 可能的值包括[!UICONTROL 流]和[!UICONTROL 批次]。 |
-| [!UICONTROL 标识] | 表示目标接受的身份命名空间，如`GAID`、`IDFA`或`email`。 有关接受的身份命名空间的更多信息，请参阅[身份命名空间概述](../../identity-service/features/namespaces.md)。 |
+| [!UICONTROL 身份标识] | 表示目标接受的身份命名空间，如`GAID`、`IDFA`或`email`。 有关接受的身份命名空间的更多信息，请参阅[身份命名空间概述](../../identity-service/features/namespaces.md)。 |
 | [!UICONTROL 创建者] | 指示创建此目标的用户。 |
 | [!UICONTROL 已创建] | 指示创建此目标时的UTC日期时间。 |
 
@@ -93,7 +93,7 @@ ht-degree: 0%
 
 ### 流目标 {#streaming}
 
-尽管为大多数流数据流运行指定的&#x200B;**[!UICONTROL 处理持续时间]**&#x200B;大约为四小时（如下图所示），但任何数据流运行的实际处理时间都短得多。 如果Experience Platform需要重新尝试调用目标，数据流运行窗口会保持较长时间处于打开状态，同时还要确保它不会错过同一时间窗口的任何延迟送达数据。
+尽管为大多数流数据流运行指定的&#x200B;**[!UICONTROL 处理持续时间]**&#x200B;大约为四小时（如下图所示），但任何数据流运行的实际处理时间都短得多。 数据流运行窗口会保持较长时间处于打开状态，以防Experience Platform需要重新尝试调用目标，并确保它不会错过同一时间窗口的任何延迟送达数据。
 
 ![数据流运行页面的图像，该页面的“处理时间”列为流目标突出显示。](/help/destinations/assets/ui/details-page/processing-time-dataflow-run-streaming.png)
 

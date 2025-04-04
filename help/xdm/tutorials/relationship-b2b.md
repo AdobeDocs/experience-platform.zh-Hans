@@ -2,9 +2,9 @@
 title: 在Real-Time Customer Data Platform B2B edition中定义两个架构之间的关系
 description: 了解如何在Adobe Real-Time Customer Data Platform B2B edition中定义两个架构之间的多对一关系。
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
-source-git-commit: 85d6cf10599d153a15c1bd56067f57439ddd0133
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1769'
+source-wordcount: '1771'
 ht-degree: 12%
 
 ---
@@ -30,7 +30,7 @@ Adobe Real-Time Customer Data Platform B2B edition提供了多个可捕获基本
 >
 >如果您未使用Real-Time Customer Data Platform B2B edition或希望创建一对一关系，请另外参阅关于[创建一对一关系](./relationship-ui.md)的指南。
 >
->本教程重点介绍如何在Platform UI中手动建立B2B架构之间的关系。 如果您从B2B源连接引入数据，则可以使用自动生成实用程序创建所需的架构、身份和关系。 有关[使用自动生成实用程序](../../sources/connectors/adobe-applications/marketo/marketo-namespaces.md)的更多信息，请参阅有关B2B命名空间和架构的源文档。
+>本教程重点介绍如何在Experience Platform UI中手动建立B2B架构之间的关系。 如果您从B2B源连接引入数据，则可以使用自动生成实用程序创建所需的架构、身份和关系。 有关[使用自动生成实用程序](../../sources/connectors/adobe-applications/marketo/marketo-namespaces.md)的更多信息，请参阅有关B2B命名空间和架构的源文档。
 
 ## 快速入门
 
@@ -53,7 +53,7 @@ Adobe Real-Time Customer Data Platform B2B edition提供了多个可捕获基本
 >title="参考身份标识命名空间"
 >abstract="参考架构的主要身份标识字段的命名空间（类型）。参考架构必须有一个建立的主要身份标识字段才能参与关系。请参阅文档以了解有关 B2B 关系中的身份标识的更多信息。"
 
-为了建立关系，引用架构必须具有定义的主标识。 在为B2B实体设置主要标识时，请记住，如果在不同系统或位置上收集基于字符串的实体ID，则这些ID可能会重叠，这可能会导致Platform中的数据冲突。
+为了建立关系，引用架构必须具有定义的主标识。 在设置B2B实体的主要标识时，请记住，如果您在不同系统或位置上收集基于字符串的实体ID，则这些ID可能会重叠，这可能会导致Experience Platform中的数据冲突。
 
 为此，所有标准B2B类都包含符合[[!UICONTROL B2B Source]数据类型](../data-types/b2b-source.md)的“key”字段。 此数据类型提供B2B实体的字符串标识符的字段，以及有关标识符源的其他上下文信息。 这些字段之一`sourceKey`连接数据类型中其他字段的值以生成实体的完全唯一标识符。 此字段应始终用作B2B实体架构的主要标识。
 

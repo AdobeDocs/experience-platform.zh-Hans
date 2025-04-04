@@ -1,21 +1,21 @@
 ---
-keywords: RTCDP；CDP；Real-time Customer Data Platform；实时客户数据平台；real time cdp；cdp；rtcdp
-title: Real-time Customer Data Platform快速入门
+keywords: RTCDP；CDP；Real-Time Customer Data Platform；实时客户数据平台；实时cdp；cdp；rtcdp
+title: Real-Time Customer Data Platform快速入门
 description: 在设置您实施的 Adobe Real-Time Customer Data Platform 时请使用此样板场景作为示例。
 feature: Get Started, Use Cases
 exl-id: 9f775d33-27a1-4a49-a4c5-6300726a531b
-source-git-commit: 82535ec3ac2dd27e685bb591fdf661d3ab5dd2c9
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2325'
+source-wordcount: '2326'
 ht-degree: 1%
 
 ---
 
-# Real-time Customer Data Platform快速入门
+# Real-Time Customer Data Platform快速入门
 
-本快速入门指南将指导您完成Real-time Customer Data Platform (Real-Time CDP)的示例实施。 您可以将其用作设置自己的实施时的示例。 尽管本指南显示了具体示例，但它会链接到在创建设置时可以使用的其他信息。
+本快速入门指南将指导您完成Real-Time Customer Data Platform (Real-Time CDP)的示例实施。 您可以将其用作设置自己的实施时的示例。 尽管本指南显示了具体示例，但它会链接到在创建设置时可以使用的其他信息。
 
-此示例展示了由Adobe Experience Platform提供支持的Real-time Customer Data Platform的强大功能：
+此示例展示了由Adobe Experience Platform提供支持的Real-Time Customer Data Platform的强大功能：
 
 * 从多个源摄取数据
 * 将它们合并到单个[!DNL real-time customer profile]中
@@ -64,7 +64,7 @@ ht-degree: 1%
 
 当客户首次访问您的网站时，您对他们一无所知。
 
-![image](assets/luma-site.png)
+![图像](assets/luma-site.png)
 
 在导航时，将会实时捕获数据，并将其发送到Adobe Analytics中的报表包，同时还会直接发送到Adobe Experience Platform。 在收集数据时，您开始根据[!DNL Experience Platform's real-time customer profile]中的行为数据形成消费者的单个视图。
 
@@ -74,7 +74,7 @@ ht-degree: 1%
 
 例如，身份不明的访客导航到Luma网站上的男士部分，并查看了一对跑步运动衫。
 
-![image](assets/luma-sweatshirts.png)
+![图像](assets/luma-sweatshirts.png)
 
 当客户导航以详细了解这些产品时，将在Adobe Analytics中收集这些产品视图并将其发送给[!DNL Experience Platform]。
 
@@ -88,7 +88,7 @@ Luma可以将访客的行为映射到Adobe Experience Platform上的用户个人
 
 当客户登录时，她自称是Sarah Rose。
 
-![image](assets/luma-login.png)
+![图像](assets/luma-login.png)
 
 将合并两个身份：
 
@@ -105,7 +105,7 @@ Luma可以将访客的行为映射到Adobe Experience Platform上的用户个人
 
 她导航到主页浏览更多内容。
 
-![image](assets/luma-personal.png)
+![图像](assets/luma-personal.png)
 
 Sarah收到基于她在Adobe Experience Platform中的[!DNL Real-Time Customer Profile]动态投放的个性化主页体验。
 
@@ -119,7 +119,7 @@ Sarah收到基于她在Adobe Experience Platform中的[!DNL Real-Time Customer P
 
 Sarah心烦意乱，离开网站，结束会议。 Luma可以在Adobe Experience Platform中使用她的数据来帮助她返回网站。
 
-由Adobe Experience Platform提供支持的Real-time Customer Data Platform专为客户体验管理而构建。 它使组织能够：
+由Adobe Experience Platform提供支持的Real-Time Customer Data Platform专为客户体验管理而构建。 它使组织能够：
 
 * 简化数据集成和激活
 * 管理已知和未知的数据使用情况
@@ -129,28 +129,28 @@ Sarah心烦意乱，离开网站，结束会议。 Luma可以在Adobe Experience
 
 Luma团队将所有行为和客户数据放在一个位置。
 
-![image](assets/luma-dash.png)
+![图像](assets/luma-dash.png)
 
 他们可以从以下所有来源摄取数据：
 
 * 现有Adobe Experience Cloud解决方案数据
 * 非Adobe来源，如Luma的忠诚度计划、呼叫中心和销售点系统数据
 * 来自Luma数据源的实时流式传输数据
-* Adobe解决方案的实时数据（无需新标签）
+* Adobe解决方案的实时数据（无需新标记）
 
 来自不同来源的所有此类数据将合并到单个统一的客户配置文件中。
 
 ## 配置数据源
 
-使用[!DNL Real-Time Customer Data Platform]将新的数据源引入Platform。 Real-Time CDP包括数据源目录，可快速轻松地添加到配置文件中。
+使用[!DNL Real-Time Customer Data Platform]将新的数据源引入Experience Platform。 Real-Time CDP包括数据源目录，可快速轻松地添加到配置文件中。
 
-![image](assets/luma-source-cat.png)
+![图像](assets/luma-source-cat.png)
 
 例如，要摄取Luma的CRM数据，请按&#x200B;*CRM*&#x200B;筛选目录，并列出包含&#x200B;*CRM*&#x200B;的所有现成连接器。 要添加[!DNL Microsoft Dynamics CRM]数据：
 
 1. 授权连接。
 
-   ![image](assets/luma-source-auth.png)
+   ![图像](assets/luma-source-auth.png)
 
 1. 从推荐的XDM预映射表列表中选择要导入的内容。
 
@@ -169,7 +169,7 @@ Luma团队将所有行为和客户数据放在一个位置。
 
 1. 设置计划。
 
-   ![image](assets/luma-source-sched.png)
+   ![图像](assets/luma-source-sched.png)
 
 完事了。 您刚刚将[!DNL Microsoft CRM]作为数据源添加到[!DNL Experience Platform]。
 
@@ -193,7 +193,7 @@ Luma拥有的关于Sarah显示的所有配置文件信息。 这包括她的个�
 
 | 类别 | 描述 |
 |---|---|
-| 标识 | 显示通过Sarah与Luma跨渠道和设备的交互在[!DNL Platform]中链接在一起的身份。 此时会显示她在该网站中的ECID。 她的身份还包括来自其移动设备应用程序的ECID、电子邮件ID、最近添加的[!DNL Microsoft Dynamics]数据集中的CRM ID，以及从Luma忠诚度系统传递到Adobe Experience Platform的忠诚度ID。 |
+| 身份标识 | 显示通过Sarah与Luma跨渠道和设备的交互在[!DNL Experience Platform]中链接在一起的身份。 此时会显示她在该网站中的ECID。 她的身份还包括来自其移动设备应用程序的ECID、电子邮件ID、最近添加的[!DNL Microsoft Dynamics]数据集中的CRM ID，以及从Luma忠诚度系统传递到Adobe Experience Platform的忠诚度ID。 |
 | 活动 | 显示Sarah与Luma品牌的所有交互数据。 这包括她刚刚查看的项目、以前查看过的任何内容、收到的电子邮件、与呼叫中心的互动，以及每次互动时所使用的渠道和设备。 |
 
 Real-Time CDP配置文件将Luma营销团队的工作流程从几周缩短到几分钟，并根据这个全方位客户视图解锁个性化的可能性。 配置文件将她在登录之前浏览网站时的行为数据与她现有的客户配置文件合并，从而全面了解Sarah。
@@ -238,9 +238,9 @@ Loyalty member
 选择&#x200B;**[!UICONTROL 发送到目标]**。
 
 在Real-Time CDP中，Luma可无缝地针对其受众进行个性化操作。\
-在这里，我们看到可供Luma将此目标发送至Adobe和非Adobe解决方案的所有目标：
+在这里，我们看到可供Luma将此目标发送到Adobe和非Adobe解决方案的所有目标：
 
-![image](assets/luma-dest.png)
+![图像](assets/luma-dest.png)
 
 ### 选择目标
 

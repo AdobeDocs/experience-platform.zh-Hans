@@ -2,9 +2,9 @@
 title: 高级数据生命周期管理概述
 description: 高级数据生命周期管理允许您通过更新或清除过时或不准确的记录来管理数据的生命周期。
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
-source-git-commit: 6ef09957d1eb2c07e5607105c782c36f20344bfa
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '828'
+source-wordcount: '832'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 Adobe Experience Platform提供了一套强大的工具来管理大型复杂的数据操作，以编排消费者体验。 随着时间推移数据被摄取到系统中，管理数据存储变得越来越重要，以便数据按预期使用，在不正确的数据需要更正时更新，并在组织策略认为必要时删除。
 
-<!-- Platform's data lifecycle capabilities allow you to manage your stored data through the following:
+<!-- Experience Platform's data lifecycle capabilities allow you to manage your stored data through the following:
 
 * Scheduling automated dataset expirations
 * Deleting individual records from one or all datasets
@@ -26,11 +26,11 @@ Adobe Experience Platform提供了一套强大的工具来管理大型复杂的�
 
 >[!NOTE]
 >
->高级数据生命周期管理支持通过[数据集到期终结点](./api/dataset-expiration.md)进行数据集删除，以及通过[工作单终结点](./api/workorder.md)使用主标识进行ID删除（行级数据）。 您还可以通过Platform UI管理[数据集过期](./ui/dataset-expiration.md)和[记录删除](./ui/record-delete.md)。 有关更多信息，请参阅链接的文档。 请注意，数据生命周期不支持批量删除。
+>高级数据生命周期管理支持通过[数据集到期终结点](./api/dataset-expiration.md)进行数据集删除，以及通过[工作单终结点](./api/workorder.md)使用主标识进行ID删除（行级数据）。 您还可以通过Experience Platform UI管理[数据集过期](./ui/dataset-expiration.md)和[记录删除](./ui/record-delete.md)。 有关更多信息，请参阅链接的文档。 请注意，数据生命周期不支持批量删除。
 
 ## [!UICONTROL 数据生命周期] UI工作区 {#ui}
 
-Platform UI中的[!UICONTROL 数据生命周期]工作区允许您配置和计划数据生命周期操作，从而帮助确保您的记录按预期维护。
+Experience Platform UI中的[!UICONTROL 数据生命周期]工作区允许您配置和计划数据生命周期操作，从而确保您的记录按预期维护。
 
 有关在UI中管理数据生命周期任务的详细步骤，请参阅[数据生命周期UI指南](./ui/overview.md)。
 
@@ -58,7 +58,7 @@ Platform UI中的[!UICONTROL 数据生命周期]工作区允许您配置和计�
 
 >[!IMPORTANT]
 >
->在完全应用更改之前，Amazon Web Services (AWS)中的数据集删除操作大约会延迟三个小时。 这最多包括标记要删除的数据集需要两个小时，随后是从系统中完全删除之前的一个小时。 相反，使用Azure数据湖的Platform实例的删除请求会导致跨业务功能的立即更改。
+>在完全应用更改之前，Amazon Web Services (AWS)中的数据集删除操作大约会延迟三个小时。 这最多包括标记要删除的数据集需要两个小时，随后是从系统中完全删除之前的一个小时。 相反，使用Azure数据湖的Experience Platform实例的删除请求会导致跨业务功能的立即更改。
 >
 >对于AWS用户，此延迟可能会影响批量分段、流式分段、预览、估算、导出和数据访问。 此延迟仅影响使用AWS的客户，因为Azure Data Lake用户会体验到即时更新。 对于AWS用户，删除请求可能需要长达三个小时才能完全传播到所有受影响的系统中。 相应地调整您的预期。
 
@@ -80,4 +80,4 @@ The following takes place when a [record delete request](./ui/record-delete.md) 
 
 ## 后续步骤
 
-本文档概述了Platform的数据生命周期功能。 要开始在UI中提出数据卫生请求，请参阅[UI指南](./ui/overview.md)。 要了解如何以编程方式创建数据生命周期作业，请参阅[数据卫生API指南](./api/overview.md)
+本文档概述了Experience Platform的数据生命周期功能。 要开始在UI中提出数据卫生请求，请参阅[UI指南](./ui/overview.md)。 要了解如何以编程方式创建数据生命周期作业，请参阅[数据卫生API指南](./api/overview.md)

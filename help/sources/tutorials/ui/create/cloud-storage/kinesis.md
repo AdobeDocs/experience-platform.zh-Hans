@@ -1,9 +1,9 @@
 ---
 title: 在UI中创建Amazon Kinesis Source连接
-description: 了解如何使用Amazon UI创建Adobe Experience Platform Kinesis源连接。
+description: 了解如何使用Adobe Experience Platform UI创建Amazon Kinesis源连接。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 4152e48b-bec7-4b05-a172-eea71c9d9880
-source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '468'
 ht-degree: 2%
@@ -14,9 +14,9 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->[!DNL Amazon Kinesis]源在源目录中可供已购买Real-time Customer Data Platform Ultimate的用户使用。
+>[!DNL Amazon Kinesis]源在源目录中可供已购买Real-Time Customer Data Platform Ultimate的用户使用。
 
-Adobe Experience Platform中的Source连接器提供了按计划摄取外部来源数据的功能。 本教程提供了使用[!DNL Platform]用户界面验证[!DNL Amazon Kinesis]（以下称为[!DNL "Kinesis"]）源连接器的步骤。
+Adobe Experience Platform中的Source连接器提供了按计划摄取外部来源数据的功能。 本教程提供了使用[!DNL Experience Platform]用户界面验证[!DNL Amazon Kinesis]（以下称为[!DNL "Kinesis"]）源连接器的步骤。
 
 ## 快速入门
 
@@ -43,7 +43,7 @@ Adobe Experience Platform中的Source连接器提供了按计划摄取外部来�
 
 ## 连接您的[!DNL Kinesis]帐户
 
-收集所需的凭据后，您可以按照以下步骤将您的[!DNL Kinesis]帐户关联到[!DNL Platform]。
+收集所需的凭据后，您可以按照以下步骤将您的[!DNL Kinesis]帐户关联到[!DNL Experience Platform]。
 
 登录到[Adobe Experience Platform](https://platform.adobe.com)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问&#x200B;**[!UICONTROL 源]**&#x200B;工作区。 **[!UICONTROL Catalog]**&#x200B;屏幕显示您可以为其创建帐户的各种源。
 
@@ -53,7 +53,7 @@ Adobe Experience Platform中的Source连接器提供了按计划摄取外部来�
 
 ![](../../../../images/tutorials/create/kinesis/catalog.png)
 
-此时将显示&#x200B;**[!UICONTROL 连接到Amazon Kinesis]**&#x200B;对话框。 在此页上，您可以使用新凭据或现有凭据。
+出现&#x200B;**[!UICONTROL 连接到Amazon Kinesis]**&#x200B;对话框。 在此页上，您可以使用新凭据或现有凭据。
 
 ### 新帐户
 
@@ -69,4 +69,4 @@ Adobe Experience Platform中的Source连接器提供了按计划摄取外部来�
 
 ## 后续步骤
 
-按照本教程，您已将[!DNL Kinesis]帐户连接到[!DNL Platform]。 您现在可以继续下一教程，并[配置数据流以将云存储中的数据引入 [!DNL Platform]](../../dataflow/streaming/cloud-storage-streaming.md)。
+按照本教程，您已将[!DNL Kinesis]帐户连接到[!DNL Experience Platform]。 您现在可以继续下一教程，并[配置数据流以将云存储中的数据引入 [!DNL Experience Platform]](../../dataflow/streaming/cloud-storage-streaming.md)。

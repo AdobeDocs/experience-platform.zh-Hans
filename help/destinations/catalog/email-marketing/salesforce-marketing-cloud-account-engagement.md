@@ -1,11 +1,11 @@
 ---
-title: SalesforceMarketing Cloud帐户参与度
-description: 了解如何使用SalesforceMarketing Cloud帐户参与（以前称为Pardot）目标导出您的帐户数据，并在SalesforceMarketing Cloud帐户参与中激活该数据，以满足您的业务需求。
+title: Salesforce Marketing Cloud帐户参与度
+description: 了解如何使用Salesforce Marketing Cloud Account Engagement（以前称为Pardot）目标导出您的帐户数据，并在Salesforce Marketing Cloud Account Engagement中激活这些数据，以满足您的业务需求。
 last-substantial-update: 2023-04-14T00:00:00Z
 exl-id: fca9d4f4-8717-4bfa-9992-5164ba98bea4
-source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1532'
+source-wordcount: '1540'
 ht-degree: 2%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 使用[[!DNL Salesforce Marketing Cloud Account Engagement]](https://www.salesforce.com/products/marketing-cloud/marketing-automation/) *（以前称为[!DNL Pardot]）*&#x200B;目标捕获、跟踪、得分和评级潜在客户。 您还可以通过电子邮件滴答营销活动，为针对性市场受众和客户组的管道的所有阶段设计潜在客户跟踪，并通过培养、评分和营销活动分段进行潜在客户管理。
 
-与更面向&#x200B;**B2C**&#x200B;营销的[!DNL Salesforce Marketing Cloud Engagement]相比，[!DNL Marketing Cloud Account Engagement]非常适合于涉及多个部门和决策者、需要较长的销售和决策周期的&#x200B;**B2B**&#x200B;用例。 此外，您还可以与CRM保持更紧密的联系和集成，从而做出适当的销售和营销决策。 *注意，Experience Platform还有[!DNL Salesforce Marketing Cloud Engagement]的连接，您可以在[[!DNL Salesforce Marketing Cloud]](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud.md)和[[!DNL (API) Salesforce Marketing Cloud]](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-exact-target.md)页面上检查它们。*
+与更面向&#x200B;**B2C**&#x200B;营销的[!DNL Salesforce Marketing Cloud Engagement]相比，[!DNL Marketing Cloud Account Engagement]非常适合于涉及多个部门和决策者、需要较长的销售和决策周期的&#x200B;**B2B**&#x200B;用例。 此外，您还可以与CRM保持更紧密的联系和集成，从而做出适当的销售和营销决策。 *请注意，Experience Platform也具有[!DNL Salesforce Marketing Cloud Engagement]的连接，您可以在[[!DNL Salesforce Marketing Cloud]](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud.md)和[[!DNL (API) Salesforce Marketing Cloud]](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-exact-target.md)页面上查看它们。*
 
 此[!DNL Adobe Experience Platform] [目标](/help/destinations/home.md)利用[[!DNL Salesforce Account Engagement API > Prospect Upsert by Email]](https://developer.salesforce.com/docs/marketing/pardot/guide/prospect-v5.html#prospect-upsert-by-email)终结点，在新[!DNL Marketing Cloud Account Engagement]区段中激活潜在客户后&#x200B;**添加或更新潜在客户**。
 
@@ -30,7 +30,7 @@ ht-degree: 2%
 
 ## 先决条件 {#prerequisites}
 
-请参阅以下各节，了解需要在Experience Platform和[!DNL Salesforce]中设置的任何先决条件，以及在使用[!DNL Marketing Cloud Account Engagement]目标之前需要收集的信息。
+请参阅以下部分，了解需要在Experience Platform和[!DNL Salesforce]中设置的任何先决条件，以及在使用[!DNL Marketing Cloud Account Engagement]目标之前需要收集的信息。
 
 ### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
@@ -38,11 +38,11 @@ ht-degree: 2%
 
 ### [!DNL Marketing Cloud Account Engagement]中的先决条件 {#prerequisites-destination}
 
-请注意以下先决条件，以便将数据从Platform导出到您的[!DNL Marketing Cloud Account Engagement]帐户：
+请注意以下先决条件，以便将数据从Experience Platform导出到您的[!DNL Marketing Cloud Account Engagement]帐户：
 
 #### 您需要拥有[!DNL Marketing Cloud Account Engagement]帐户 {#prerequisites-account}
 
-订阅[Marketing Cloud帐户参与](https://www.salesforce.com/products/marketing-cloud/marketing-automation/)产品的[!DNL Marketing Cloud Account Engagement]帐户必须继续操作。
+必须提供订阅[Marketing Cloud帐户参与](https://www.salesforce.com/products/marketing-cloud/marketing-automation/)产品的[!DNL Marketing Cloud Account Engagement]帐户才能继续。
 
 您的[!DNL Salesforce]帐户应具有[!DNL Salesforce] `Account Engagement Administrator role`。 这是[创建自定义目标客户字段](https://help.salesforce.com/s/articleView?id=sf.pardot_fields_create_custom_field.htm&amp;type=5)所必需的。
 
@@ -68,7 +68,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->如果[!DNL Salesforce]帐户管理员限制了对受信任IP范围的访问，则需要联系他们以获取[Experience Platform列入允许列表 IP的](/help/destinations/catalog/streaming/ip-address-allow-list.md)。 如果您需要其他指导，请参阅[!DNL Salesforce] [限制对连接应用程序的受信任IP范围的访问](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&amp;type=5)文档。
+>如果[!DNL Salesforce]帐户管理员限制了对受信任IP范围的访问，则需要联系他们以获取[Experience Platform 列入允许列表 IP的](/help/destinations/catalog/streaming/ip-address-allow-list.md)访问权限。 如果您需要其他指导，请参阅[!DNL Salesforce] [限制对连接应用程序的受信任IP范围的访问](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&amp;type=5)文档。
 
 ## 支持的身份 {#supported-identities}
 
@@ -86,8 +86,8 @@ ht-degree: 2%
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在根据字段映射导出区段的所有成员，以及所需的架构字段&#x200B;*（例如：电子邮件地址、电话号码、姓氏）*。</li><li> 对于Platform中的每个选定受众，相应的[!DNL Salesforce Marketing Cloud Account Engagement]区段状态将通过Platform中的受众状态进行更新。</li></ul> |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在根据字段映射导出区段的所有成员，以及所需的架构字段&#x200B;*（例如：电子邮件地址、电话号码、姓氏）*。</li><li> 对于Experience Platform中的每个选定受众，相应的[!DNL Salesforce Marketing Cloud Account Engagement]区段状态将从Experience Platform中更新为其受众状态。</li></ul> |
+| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -105,19 +105,19 @@ ht-degree: 2%
 
 要验证到目标，请选择&#x200B;**[!UICONTROL 连接到目标]**。 您将导航到[!DNL Salesforce]登录页面。 输入您的[!DNL Marketing Cloud Account Engagement]帐户凭据并选择[!DNL Log In]。
 
-![Platform UI屏幕截图，显示如何对Marketing Cloud帐户参与进行身份验证。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/authenticate-destination.png)
+![Experience Platform UI屏幕截图，显示如何对Marketing Cloud帐户参与进行身份验证。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/authenticate-destination.png)
 
 接下来，在后续窗口中选择[!UICONTROL 允许]，以授予&#x200B;**Adobe Experience Platform**&#x200B;应用访问您的[!DNL Salesforce Marketing Cloud Account Engagement]帐户的权限。 *您只需执行此操作一次*。
 
-![Salesforce应用程序屏幕快照确认弹出窗口，用于授予Experience Platform应用程序访问Marketing Cloud帐户参与度的权限。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/allow-app.png)
+![Salesforce App屏幕快照确认弹出窗口，用于授予Experience Platform App访问Marketing Cloud Account Engagement的权限。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/allow-app.png)
 
-如果提供的详细信息有效，则UI将显示一条消息： *您已成功连接到SalesforceMarketing Cloud帐户参与帐户*&#x200B;消息以及带有绿色复选标记的&#x200B;**[!UICONTROL 已连接]**&#x200B;状态，然后您可以继续执行下一步。
+如果提供的详细信息有效，则UI会显示消息： *您已成功连接到Salesforce Marketing Cloud帐户参与帐户*&#x200B;消息以及带有绿色复选标记的&#x200B;**[!UICONTROL 已连接]**&#x200B;状态，之后您可以继续下一步。
 
 ### 填写目标详细信息 {#destination-details}
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。 有关任何指导，请参阅[收集 [!DNL Marketing Cloud Account Engagement] 凭据](#gather-credentials)部分。
 
-![显示目标详细信息的平台UI屏幕截图。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/destination-details.png)
+![Experience Platform UI屏幕截图显示目标详细信息。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/destination-details.png)
 
 | 字段 | 描述 |
 | --- | --- |
@@ -144,7 +144,7 @@ ht-degree: 2%
 
 ### 映射注意事项和示例 {#mapping-considerations-example}
 
-要将受众数据从Adobe Experience Platform正确发送到[!DNL Marketing Cloud Account Engagement]目标，您需要完成字段映射步骤。 映射包括在您的Platform帐户中的Experience Data Model (XDM)架构字段与其在目标目标中的相应等效字段之间创建链接。
+要将受众数据从Adobe Experience Platform正确发送到[!DNL Marketing Cloud Account Engagement]目标，您需要完成字段映射步骤。 映射包括在Experience Platform帐户中的Experience Data Model (XDM)架构字段与其与目标中的相应等效字段之间创建链接。
 
 要将XDM字段正确映射到[!DNL Marketing Cloud Account Engagement]目标字段，请执行以下步骤。
 
@@ -161,7 +161,7 @@ ht-degree: 2%
      | `xdm: person.name.firstName` | `Attribute: firstName` | |
 
    * 下面显示了具有上述映射的示例：
-     ![显示Target映射的Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/mappings.png)
+     ![显示Target映射的Experience Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/mappings.png)
 
 完成提供目标连接的映射后，请选择&#x200B;**[!UICONTROL 下一步]**。
 
@@ -170,7 +170,7 @@ ht-degree: 2%
 要验证您是否正确设置了目标，请执行以下步骤：
 
 1. 导航到您选择的受众之一。 选择 **[!DNL Activation data]** 选项卡。**[!UICONTROL 映射ID]**&#x200B;列显示在[!DNL Marketing Cloud Account Engagement Prospects]页面中生成的自定义字段的名称。
-   ![显示选定区段映射ID的Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/selected-segment-mapping-id.png)
+   ![显示选定区段映射ID的Experience Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/selected-segment-mapping-id.png)
 
 1. 登录到[[!DNL Salesforce]](https://login.salesforce.com/)网站。 然后导航到&#x200B;**[!DNL Account Engagement]** > **[!DNL Prospects]** > **[!DNL Pardot Prospects]**&#x200B;页面，并检查受众中的潜在客户是否已添加/更新。 或者，您也可以访问[[!DNL Salesforce Pardot]](https://pi.pardot.com/)并访问&#x200B;**[!DNL Prospects]**页面。
    ![显示“潜在客户”页面的Salesforce UI屏幕截图。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/prospects.png)

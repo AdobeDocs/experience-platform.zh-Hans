@@ -3,10 +3,10 @@ title: 将一次性客户价值提升至存留期价值
 description: 了解如何根据特定客户的属性、行为和过去购买情况创建个性化促销活动，以提供最佳的补充性产品或服务。
 feature: Use Cases
 exl-id: 45f72b5e-a63b-44ac-a186-28bac9cdd442
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '3179'
-ht-degree: 27%
+source-wordcount: '3181'
+ht-degree: 26%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 27%
 >* 本页介绍Real-Time CDP和Adobe Journey Optimizer的示例实施，以实现所述的用例。 使用页面上提供的数字、资格标准和其他字段作为指南，而不是规范性数字。
 >* 要完成此用例，您需要获得Real-Time CDP和Adobe Journey Optimizer的许可。 请在下面的[先决条件和规划部分](#prerequisites-and-planning)中阅读更多信息。
 
-实施一次性客户价值对存留期价值用例以提高品牌参与度和品牌忠诚度。 借助Experience Platform的强大功能，通过[Real-Time CDP](/help/rtcdp/home.md)和[Journey Optimizer](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/ajo-home)增强，在多个渠道或历程上构建连接的客户体验。
+实施一次性客户价值对存留期价值用例以提高品牌参与度和品牌忠诚度。 借助Experience Platform的强大功能(通过[Real-Time CDP](/help/rtcdp/home.md)和[Journey Optimizer](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/ajo-home)增强)，在多个渠道或历程上构建连接的客户体验。
 
 您定位的角色是最近三个月内购买过一些产品的罕见访客。
 
@@ -33,7 +33,7 @@ ht-degree: 27%
 
 考虑到您已在内部定义了提高品牌忠诚度的业务目标和目的。 这可以转换为执行用例以提高客户参与度和忠诚度。
 
-要实现此目的，所需技术包含两个Experience Platform应用[Real-Time CDP](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html?lang=zh-Hans)和[Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html?lang=zh-Hans)。 下面列出了您在实施用例时将使用的两个应用程序中的各种功能和UI元素。
+要实现此目的，所需技术包含两个Experience Platform应用程序[Real-Time CDP](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html?lang=zh-Hans)和[Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html?lang=zh-Hans)。 下面列出了您在实施用例时将使用的两个应用程序中的各种功能和UI元素。
 
 >[!TIP]
 >
@@ -41,7 +41,7 @@ ht-degree: 27%
 
 * [[!DNL Adobe Real-Time Customer Data Platform (Real-Time CDP)]](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/understanding-the-real-time-customer-data-platform.html)：跨数据源集成数据以推动营销活动。 然后，该数据可用于创建活动受众，并显示电子邮件和网络促销图块中使用的个性化数据元素（例如，姓名或与帐户相关的信息）。最后，Real-Time CDP还可用于将受众激活到付费媒体目标。
    * [架构](/help/xdm/home.md)
-   * [配置文件](/help/profile/home.md)
+   * [轮廓](/help/profile/home.md)
    * [数据集](/help/catalog/datasets/overview.md)
    * [受众](/help/segmentation/home.md)
    * [目标](/help/destinations/home.md)
@@ -52,7 +52,7 @@ ht-degree: 27%
 
 ## Real-Time CDP和Journey Optimizer架构
 
-以下是Real-Time CDP和Journey Optimizer各个组件的高级架构视图。 此图显示了数据如何流经两个Experience Platform应用程序，从数据收集到通过历程或营销活动激活到目标的点，以实现本页中描述的使用案例。
+以下是Real-Time CDP和Journey Optimizer各个组件的高级架构视图。 此图显示了数据如何流经两个Experience Platform应用程序，从数据收集到通过历程或营销活动激活到目标的点，以实现本页面上描述的使用案例。
 
 ![架构高级可视化概述。](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/architecture-diagram.png){zoomable="yes"}
 
@@ -74,7 +74,7 @@ ht-degree: 27%
 
 1. 创建架构和数据集，然后为[!UICONTROL 配置文件]标记这些架构和数据集。
 2. 通过Web SDK、Mobile Edge SDK或API收集数据并集成到Experience Platform中。 也可以使用分析数据连接器，但可能会导致历程延迟。
-3. 您将配置文件加载到 Real-Time CDP 中，并制定治理策略来确保负责任的使用。
+3. 您将轮廓加载到 Real-Time CDP 中，并制定治理策略来确保负责任的使用。
 4. 您可以从用户档案列表中构建重点受众，以检查高值和低值客户。
 5. 您在[!DNL Adobe Journey Optimizer]中创建两个历程，一个用于向用户发送有关新订阅计划的消息，另一个用于稍后向其发送消息以确认购买。
 6. 如有需要，您可以激活尚未购买订阅的客户受众，使其访问所需的付费媒体目标。
@@ -109,11 +109,11 @@ ht-degree: 27%
 
 ![字段组突出显示的客户属性架构](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/customer-attributes-schema.png)
 
-客户属性架构由 [!UICONTROL XDM 个人配置文件]类表示，该类包括以下字段组：
+客户属性架构由 [!UICONTROL XDM 个人轮廓]类表示，该类包括以下字段组：
 
 +++人口统计详细信息（字段组）
 
-[人口统计详细信息](/help/xdm/field-groups/profile/demographic-details.md)是 XDM 个人配置文件类的标准架构字段组。该字段组提供根级人员对象，其子字段描述的是有关个人的信息。
+[人口统计详细信息](/help/xdm/field-groups/profile/demographic-details.md)是 XDM 个人轮廓类的标准架构字段组。该字段组提供根级人员对象，其子字段描述的是有关个人的信息。
 
 +++
 
@@ -210,7 +210,7 @@ ht-degree: 27%
 
 #### 客户离线交易架构 {#customer-offline-transactions-schema}
 
-此架构用于构建和引用构成您的网站之外的平台上发生的客户活动的事件数据。该数据通常会从 POS（或类似系统）摄入 [!DNL Adobe Experience Platform]，并且通常会通过 API 连接流式传输到 Platform。了解[批次摄取](/help/ingestion/batch-ingestion/getting-started.md)。 其目的是引用各种线下转化事件，以用于触发历程、深入的线上和线下客户分析以及增强的分段能力。
+此架构用于构建和引用构成您的网站之外的平台上发生的客户活动的事件数据。此数据通常从POS（或类似系统）摄取到[!DNL Adobe Experience Platform]中，并且通常通过API连接流式传输到Experience Platform中。 了解[批次摄取](/help/ingestion/batch-ingestion/getting-started.md)。 其目的是引用各种线下转化事件，以用于触发历程、深入的线上和线下客户分析以及增强的分段能力。
 
 ![突出显示字段组的客户离线交易架构](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/customer-offline-transactions-schema.png)
 
@@ -240,9 +240,9 @@ ht-degree: 27%
 >
 >如果您使用的是 [!DNL Adobe Analytics Data Connector]，则这是一个可选的实施。
 
-此架构用于构建和引用构成您的客户活动的事件数据，这些活动发生在您的网站或其他关联的数字平台上。 此架构与客户数字交易架构类似，不同之处在于，当Web SDK无法用于数据收集时，可以使用此架构。 因此，当您利用[!DNL Adobe Analytics Data Connector]将在线数据作为主数据流或辅助数据流发送到[!DNL Adobe Experience Platform]时，可以使用此架构。
+此架构用于构建和引用构成您的客户活动的事件数据，这些活动发生在您的网站或其他关联的数字平台上。 此架构与客户数字交易架构类似，不同之处在于，当Web SDK不是数据收集的选项时，此架构可以。 因此，当您利用[!DNL Adobe Analytics Data Connector]将在线数据作为主数据流或辅助数据流发送到[!DNL Adobe Experience Platform]时，可以使用此架构。
 
-![字段组高亮显示的Web连接器架构Adobe](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/adobe-web-schema.png)
+![字段组突出显示的Adobe Web连接器架构](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/adobe-web-schema.png)
 
 [!DNL Adobe]Web 连接器架构由 [!UICONTROL XDM 体验事件]类表示，其中包括以下字段组：
 
@@ -260,7 +260,7 @@ ht-degree: 27%
 
 >[!NOTE]
 >
->与架构创建步骤类似，您需要使数据集包含在实时客户配置文件中。有关启用数据集以在实时客户配置文件中使用的更多信息，请参阅[创建架构教程。](/help/xdm/tutorials/create-schema-ui.md#profile)
+>与架构创建步骤类似，您需要使数据集包含在实时客户轮廓中。有关启用数据集以在实时客户轮廓中使用的更多信息，请参阅[创建架构教程。](/help/xdm/tutorials/create-schema-ui.md#profile)
 
 ### 隐私、同意和数据治理 {#privacy-consent}
 
@@ -300,7 +300,7 @@ ht-degree: 27%
 
 * 有关如何创建受众的信息，请阅读[受众服务UI指南](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html#create-audience)。
 * 有关如何构建[受众](/help/segmentation/home.md)的信息，请阅读[受众构建UI指南](/help/segmentation/ui/audience-composition.md)。
-* 有关如何通过Platform派生的区段定义构建受众的信息，请阅读[Audience Builder UI指南](/help/segmentation/ui/segment-builder.md)。
+* 有关如何通过Experience Platform派生的区段定义构建受众的信息，请阅读[Audience Builder UI指南](/help/segmentation/ui/segment-builder.md)。
 
 具体而言，您必须在用例的不同步骤中创建和使用两个受众，如下图所示。
 

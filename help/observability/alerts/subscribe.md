@@ -1,10 +1,10 @@
 ---
 keywords: Experience Platform；主页；热门主题；日期范围
 title: 订阅Adobe I/O事件通知
-description: 本文档提供了有关如何订阅Adobe Experience Platform服务的Adobe I/O事件通知的步骤。 还提供了有关可用事件类型的参考信息，以及指向有关如何解释每个适用的 [!DNL Platform] 服务的返回事件数据的更多文档的链接。
+description: 本文档提供了有关如何为Adobe Experience Platform服务订阅Adobe I/O事件通知的步骤。 还提供了有关可用事件类型的参考信息，以及指向有关如何解释每个适用的 [!DNL Experience Platform] 服务的返回事件数据的更多文档的链接。
 feature: Alerts
 exl-id: c0ad7217-ce84-47b0-abf6-76bcf280f026
-source-git-commit: 8e6301c5f834465acff99b4cd668017581c1dfa9
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '781'
 ht-degree: 1%
@@ -13,9 +13,9 @@ ht-degree: 1%
 
 # 订阅Adobe I/O事件通知
 
-[!DNL Observability Insights]允许您订阅有关Adobe Experience PlatformAdobe I/O的活动通知。 这些事件被发送到配置的webhook以促进活动监控的高效自动化。
+[!DNL Observability Insights]允许您订阅有关Adobe Experience Platform活动的Adobe I/O事件通知。 这些事件被发送到配置的webhook以促进活动监控的高效自动化。
 
-本文档提供了有关如何订阅Adobe Experience Platform服务的Adobe I/O事件通知的步骤。 还提供了有关可用事件类型的参考信息，以及指向有关如何解释每个适用的[!DNL Platform]服务的返回事件数据的更多文档的链接。
+本文档提供了有关如何为Adobe Experience Platform服务订阅Adobe I/O事件通知的步骤。 还提供了有关可用事件类型的参考信息，以及指向有关如何解释每个适用的[!DNL Experience Platform]服务的返回事件数据的更多文档的链接。
 
 ## 快速入门
 
@@ -49,8 +49,8 @@ ht-degree: 1%
 
 此时将显示一个对话框，允许您向项目添加事件提供程序：
 
-* 如果您正在订阅Experience Platform通知，请选择&#x200B;**[!UICONTROL 平台通知]**
-* 如果您正在订阅Adobe Experience Platform [!DNL Privacy Service]通知，请选择&#x200B;**[!UICONTROL Privacy Service活动]**
+* 如果您正在订阅Experience Platform警报，请选择&#x200B;**[!UICONTROL 平台通知]**
+* 如果您正在订阅Adobe Experience Platform [!DNL Privacy Service]通知，请选择&#x200B;**[!UICONTROL Privacy Service事件]**
 
 选择事件提供程序后，选择&#x200B;**[!UICONTROL 下一步]**。
 

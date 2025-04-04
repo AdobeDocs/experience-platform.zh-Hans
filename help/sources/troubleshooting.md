@@ -4,16 +4,16 @@ solution: Experience Platform
 title: 源疑难解答
 description: 本文档提供了有关Adobe Experience Platform来源的常见问题解答。
 exl-id: 94875121-7d4d-4eb2-8760-aa795933dd7e
-source-git-commit: 583eb70235174825dd542b95463784638bdef235
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '748'
+source-wordcount: '749'
 ht-degree: 0%
 
 ---
 
 # 源疑难解答指南
 
-本文档提供了有关Adobe Experience Platform来源的常见问题解答。 有关其他[!DNL Platform]服务（包括在所有[!DNL Platform] API中遇到的服务）的问题和疑难解答，请参阅[Experience Platform疑难解答指南](../landing/troubleshooting.md)。
+本文档提供了有关Adobe Experience Platform来源的常见问题解答。 有关其他[!DNL Experience Platform]服务（包括在所有[!DNL Experience Platform] API中遇到的服务）的问题和疑难解答，请参阅[Experience Platform疑难解答指南](../landing/troubleshooting.md)。
 
 ## 常见问题解答
 
@@ -67,7 +67,7 @@ JSON和Parquet文件本身支持数组。 对于平面结构（如CSV），不�
 
 ### 何时应使用部分摄取？
 
-如果您&#x200B;**没有**&#x200B;约束，例如将整个文件摄取到Platform，则应使用部分摄取。 或者，如果您不介意摄取可能包含错误的数据，则应该使用部分摄取。
+如果您&#x200B;**没有**&#x200B;约束，例如将整个文件摄取到Experience Platform中，则应使用部分摄取。 或者，如果您不介意摄取可能包含错误的数据，则应该使用部分摄取。
 
 ### 典型的部分摄取错误阈值是什么？
 

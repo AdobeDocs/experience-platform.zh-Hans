@@ -4,16 +4,16 @@ solution: Experience Platform
 title: 架构组合基础
 description: 了解Experience Data Model (XDM)架构以及在Adobe Experience Platform中构建架构的构建块、原则和最佳实践。
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 595d9bd6a0aa0c9f1059e485c54e89ce02b7ec68
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '4365'
+source-wordcount: '4373'
 ht-degree: 8%
 
 ---
 
 # 架构组合基础
 
-了解Experience Data Model (XDM)架构以及在Adobe Experience Platform中构建架构的构建块、原则和最佳实践。 有关XDM及其在[!DNL Platform]中的使用方式的一般信息，请参阅[XDM系统概述](../home.md)。
+了解Experience Data Model (XDM)架构以及在Adobe Experience Platform中构建架构的构建块、原则和最佳实践。 有关XDM及其在[!DNL Experience Platform]中的使用方式的一般信息，请参阅[XDM系统概述](../home.md)。
 
 ## 了解架构 {#understanding-schemas}
 
@@ -63,7 +63,7 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 
 在架构规划阶段考虑客户身份很重要，这样有助于确保将数据汇集在一起，以尽可能构建最强大的配置文件。 要了解有关身份信息如何帮助您向客户提供数字体验的更多信息，请参阅[身份服务概述](../../identity-service/home.md)。 有关创建架构](./best-practices.md#data-validation-fields)时使用标识的提示，请参阅数据建模最佳实践文档[。
 
-可通过两种方式将身份数据发送到Platform：
+有两种方法可以将身份数据发送到Experience Platform：
 
 1. 通过[架构编辑器UI](../ui/fields/identity.md)或使用[架构注册表API](../api/descriptors.md#create)将标识描述符添加到单个字段
 1. 使用[`identityMap`字段](#identityMap)
@@ -123,7 +123,7 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 
 >[!NOTE]
 >
->只有在架构尚未用于将数据摄取到Experience Platform并且未启用以在Real-time Customer Profile中使用时，您才可以对其引入重大更改。 但是，一旦在[!DNL Platform]中使用了架构，它就必须遵守附加版本控制策略。
+>只有在架构尚未用于将数据摄取到Experience Platform并且未启用以在Real-time Customer Profile中使用时，您才可以对其引入重大更改。 但是，一旦在[!DNL Experience Platform]中使用了架构，它就必须遵守附加版本控制策略。
 
 下表列出了在编辑架构、字段组和数据类型时支持的更改：
 
@@ -139,7 +139,7 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 
 >[!IMPORTANT]
 >
->无论是否需要架构字段，Platform都不会接受任何已引入字段的`null`或空值。 如果记录或事件中没有特定字段的值，则应该从摄取有效负载中排除该字段的键。
+>无论是否需要架构字段，Experience Platform都不会接受任何已摄取字段的`null`或空值。 如果记录或事件中没有特定字段的值，则应该从摄取有效负载中排除该字段的键。
 
 #### 在引入后根据需要设置字段 {#post-ingestion-required-fields}
 
@@ -149,7 +149,7 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 
 1. 如果您查询历史数据并将结果写入新数据集，则某些行将失败，因为它们包含必填字段的空值。
 1. 如果该字段参与了[实时客户个人资料](../../profile/home.md)，并且您在根据需要设置它之前导出数据，则某些个人资料可能为空。
-1. 您可以使用架构注册表API查看Platform中所有XDM资源的带时间戳的更改日志，包括新的必填字段。 有关详细信息，请参阅[审核日志终结点](../api/audit-log.md)指南。
+1. 您可以使用架构注册表API查看Experience Platform中所有XDM资源的带时间戳的更改日志，包括新的必填字段。 有关详细信息，请参阅[审核日志终结点](../api/audit-log.md)指南。
 
 ### 架构和数据摄取
 
@@ -157,7 +157,7 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 
 ## 架构的构建块 {#schema-building-blocks}
 
-Experience Platform使用组合方法，通过组合标准构建块来创建架构。 此方法促进现有组件的可重用性，并推动整个行业的标准化，以支持[!DNL Platform]中的供应商架构和组件。
+Experience Platform使用组合方法，通过组合标准构建块来创建架构。 此方法促进现有组件的可重用性，并推动整个行业的标准化，以支持[!DNL Experience Platform]中的供应商架构和组件。
 
 架构使用以下公式组成：
 
@@ -181,9 +181,9 @@ Experience Platform使用组合方法，通过组合标准构建块来创建架�
 
 架构的类确定哪些字段组适合在该架构中使用。 将在[下一节](#field-group)中对此进行详细讨论。
 
-Adobe提供了多个标准（“核心”）XDM类。 其中两个类[!DNL XDM Individual Profile]和[!DNL XDM ExperienceEvent]是几乎所有下游平台进程所必需的。 除了这些核心类之外，您还可以创建自己的自定义类，以描述组织更具体的用例。 当没有Adobe定义的核心类可用于描述独特用例时，自定义类由组织定义。
+Adobe提供了多个标准（“核心”）XDM类。 几乎所有下游Experience Platform进程都需要其中两个类[!DNL XDM Individual Profile]和[!DNL XDM ExperienceEvent]。 除了这些核心类之外，您还可以创建自己的自定义类，以描述组织更具体的用例。 当没有Adobe定义的核心类可用于描述独特用例时，自定义类由组织定义。
 
-以下屏幕截图演示了类在Platform UI中的表示方式。 由于显示的示例架构不包含任何字段组，因此显示的所有字段均由架构的类([!UICONTROL XDM Individual Profile])提供。
+以下屏幕截图演示了类在Experience Platform UI中的表示方式。 由于显示的示例架构不包含任何字段组，因此显示的所有字段均由架构的类([!UICONTROL XDM Individual Profile])提供。
 
 架构编辑器中的![XDM个人配置文件][!UICONTROL 。](../images/schema-composition/class.png)
 
@@ -211,13 +211,13 @@ Experience Platform包括许多标准的Adobe字段组，同时还允许供应�
 
 >[!NOTE]
 >
->强烈建议您在架构中尽可能使用标准字段组，因为Experience Platform服务隐式理解这些字段，并且在跨[!DNL Platform]组件使用时可提供更高的一致性。
+>强烈建议您在架构中尽可能使用标准字段组，因为Experience Platform服务隐式理解这些字段，并且在跨[!DNL Experience Platform]组件使用时可提供更高的一致性。
 >
->标准组件（如“名字”和“电子邮件地址”）提供的字段包含基本标量字段类型以外的附加含义。 它们告知[!DNL Platform]，共享相同数据类型的任何字段将以相同的方式运行。 无论数据来自何处或数据正在哪个[!DNL Platform]服务中使用，都可以信任此行为的一致性。
+>标准组件（如“名字”和“电子邮件地址”）提供的字段包含基本标量字段类型以外的附加含义。 它们告知[!DNL Experience Platform]，共享相同数据类型的任何字段将以相同的方式运行。 无论数据来自何处或数据正在哪个[!DNL Experience Platform]服务中使用，都可以信任此行为的一致性。
 
 请记住，架构由“零个或多个”字段组组成，这意味着您无需使用任何字段组即可构建有效架构。
 
-以下屏幕截图演示了字段组在Platform UI中的表示方式。 在此示例中，向架构中添加了单个字段组（[!UICONTROL 人口统计详细信息]），该组为架构的结构提供字段分组。
+以下屏幕截图演示了字段组在Experience Platform UI中的表示方式。 在此示例中，向架构中添加了单个字段组（[!UICONTROL 人口统计详细信息]），该组为架构的结构提供字段分组。
 
 ![示例架构中突出显示了具有[!UICONTROL 人口统计详细信息]字段组的架构编辑器。](../images/schema-composition/field-group.png)
 
@@ -237,7 +237,7 @@ Experience Platform包括许多标准的Adobe字段组，同时还允许供应�
 
 Experience Platform在[!DNL Schema Registry]中提供了许多常见数据类型，以支持使用标准模式描述常见数据结构。 在[架构注册表教程](../tutorials/create-schema-api.md)中对此进行了更详细的说明，当您逐步完成定义数据类型的步骤时，这些说明会更加清晰。
 
-以下屏幕截图演示了数据类型在Platform UI中的表示方式。 [!UICONTROL 人口统计详细信息]字段组提供的字段之一使用了“[!UICONTROL 对象]”数据类型，如字段名称旁边的管道字符(`|`)后面的文本所示。 此特定数据类型提供了多个与个人姓名相关的子字段，这是一种构造，可重复用于需要捕获个人姓名的其他字段。
+以下屏幕截图演示了数据类型在Experience Platform UI中的表示方式。 [!UICONTROL 人口统计详细信息]字段组提供的字段之一使用了“[!UICONTROL 对象]”数据类型，如字段名称旁边的管道字符(`|`)后面的文本所示。 此特定数据类型提供了多个与个人姓名相关的子字段，这是一种构造，可重复用于需要捕获个人姓名的其他字段。
 
 ![架构编辑器中的图表，该图表针对全名对象和属性突出显示的个人。](../images/schema-composition/data-type.png)
 
@@ -278,7 +278,7 @@ Experience Platform在[!DNL Schema Registry]中提供了许多常见数据类型
 
 ## 组合示例 {#composition-example}
 
-架构是使用组合模型构建的，表示要引入[!DNL Platform]的数据的格式和结构。 如前所述，这些架构由一个类以及与该类兼容的零个或多个字段组组成。
+架构是使用组合模型构建的，表示要引入[!DNL Experience Platform]的数据的格式和结构。 如前所述，这些架构由一个类以及与该类兼容的零个或多个字段组组成。
 
 例如，描述在零售商店进行的购买的架构可能称为“[!UICONTROL 商店交易]”。 该架构实现了与标准[!UICONTROL Commerce]字段组和用户定义的[!UICONTROL 产品信息]字段组组合的[!DNL XDM ExperienceEvent]类。
 
@@ -294,7 +294,7 @@ Experience Platform在[!DNL Schema Registry]中提供了许多常见数据类型
 
 ![描述组成这些字段的合并架构流程图。](../images/schema-composition/union.png)
 
-通过启用用于[!DNL Real-Time Customer Profile]的架构，它包含在该类类型的并集中。 [!DNL Profile]提供了可靠的集中式客户属性配置文件，以及客户在与[!DNL Platform]集成的任何系统中发生的每个事件的带时间戳的帐户。 [!DNL Profile]使用合并视图来表示此数据，并提供每个客户的整体视图。
+通过启用用于[!DNL Real-Time Customer Profile]的架构，它包含在该类类型的并集中。 [!DNL Profile]提供了可靠的集中式客户属性配置文件，以及客户在与[!DNL Experience Platform]集成的任何系统中发生的每个事件的带时间戳的帐户。 [!DNL Profile]使用合并视图来表示此数据，并提供每个客户的整体视图。
 
 有关使用[!DNL Profile]的更多信息，请参阅[实时客户资料概述](../../profile/home.md)。
 
@@ -304,7 +304,7 @@ Experience Platform在[!DNL Schema Registry]中提供了许多常见数据类型
 
 ## 外部受众的架构
 
-如果要将受众从外部系统引入到Platform中，则必须使用以下组件在架构中捕获这些受众：
+如果您将受众从外部系统引入到Experience Platform中，则必须使用以下组件在架构中捕获这些受众：
 
 * [[!UICONTROL 区段定义]类](../classes/segment-definition.md)：使用此标准类捕获外部区段定义的键属性。
 * [[!UICONTROL 区段成员资格详细信息]字段组](../field-groups/profile/segmentation.md)：将此字段组添加到您的[!UICONTROL XDM个人资料]架构以将客户个人资料与特定受众关联。

@@ -5,7 +5,7 @@ title: 引用API端点
 description: 访问控制API中的引用端点允许您查看可用权限和资源类型的名称，这些名称随后可用于查看当前用户的有效访问控制策略。
 role: Developer
 exl-id: 18d84d54-9258-4451-9aa8-7c647b45a8da
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '188'
 ht-degree: 1%
@@ -20,7 +20,7 @@ ht-degree: 1%
 
 您可以通过向`/acl/reference`端点发出GET请求来列出所有权限和资源类型的名称。 这些名称随后可用于对[查看当前用户的有效访问控制策略](./effective-policies.md)的API调用。
 
-权限是通过Adobe Admin Console管理的策略，可映射到零个或多个资源类型策略。 资源类型是一种策略，它允许对特定类型的[!DNL Platform]资源（如数据集或架构）执行读取、写入和/或删除功能。
+权限是通过Adobe Admin Console管理的策略，可映射到零个或多个资源类型策略。 资源类型是一种策略，它允许对特定类型的[!DNL Experience Platform]资源（如数据集或架构）执行读取、写入和/或删除功能。
 
 **API格式**
 

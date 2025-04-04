@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform；主页；热门主题；Microsoft Dynamics；Microsoft Dynamics；Dynamics；Dynamics
+keywords: Experience Platform；主页；热门主题；Microsoft Dynamics；microsoft dynamics；dynamics；Dynamics
 solution: Experience Platform
-title: Microsoft Dynamics Source连接器概述
+title: Microsoft Dynamics Source Connector概述
 description: 了解如何使用API或用户界面将Microsoft Dynamics连接到Adobe Experience Platform。
 exl-id: 6ca162ce-2016-4270-b741-301cf4230233
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '282'
+source-wordcount: '285'
 ht-degree: 3%
 
 ---
 
 # Microsoft Dynamics 连接器
 
-Adobe Experience Platform允许从外部源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
+Adobe Experience Platform允许从外部源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强传入数据。 您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
 
 [!DNL Experience Platform]支持从第三方CRM系统中引入数据。 CRM提供商的支持包括[!DNL Microsoft Dynamics]。
 
@@ -23,9 +23,9 @@ Adobe Experience Platform允许从外部源摄取数据，同时允许您使用[
 
 ## 从[!DNL Microsoft Dynamics]到XDM的字段映射
 
-要建立[!DNL Microsoft Dynamics]与Platform之间的源连接，[!DNL Microsoft Dynamics]源数据字段必须在被引入Platform之前映射到其相应的目标XDM字段。
+要建立[!DNL Microsoft Dynamics]与Experience Platform之间的源连接，在将[!DNL Microsoft Dynamics]源数据字段摄取到Experience Platform中之前，必须将其映射到相应的目标XDM字段。
 
-有关[!DNL Microsoft Dynamics]数据集与Platform之间的字段映射规则的详细信息，请参阅以下内容：
+有关[!DNL Microsoft Dynamics]数据集与Experience Platform之间的字段映射规则的详细信息，请参阅以下内容：
 
 - [联系人](../adobe-applications/mapping/dynamics.md#contacts)
 - [潜在客户](../adobe-applications/mapping/dynamics.md#leads)
@@ -36,15 +36,15 @@ Adobe Experience Platform允许从外部源摄取数据，同时允许您使用[
 - [营销列表](../adobe-applications/mapping/dynamics.md#marketing-list)
 - [营销列表成员](../adobe-applications/mapping/dynamics.md#marketing-list-members)
 
-以下文档提供了有关如何使用API或用户界面将[!DNL Microsoft Dynamics]连接到[!DNL Platform]的信息：
+以下文档提供了有关如何使用API或用户界面将[!DNL Microsoft Dynamics]连接到[!DNL Experience Platform]的信息：
 
-## 使用API将[!DNL Microsoft Dynamics]连接到[!DNL Platform]
+## 使用API将[!DNL Microsoft Dynamics]连接到[!DNL Experience Platform]
 
 - [使用流服务API创建Microsoft Dynamics基本连接](../../tutorials/api/create/crm/ms-dynamics.md)
 - [使用流服务API浏览数据表](../../tutorials/api/explore/tabular.md)
 - [使用流服务API为CRM源创建数据流](../../tutorials/api/collect/crm.md)
 
-## 使用UI将[!DNL Microsoft Dynamics]连接到[!DNL Platform]
+## 使用UI将[!DNL Microsoft Dynamics]连接到[!DNL Experience Platform]
 
 - [在UI中创建Microsoft Dynamics源连接](../../tutorials/ui/create/crm/dynamics.md)
 - [在用户界面中为CRM连接创建数据流](../../tutorials/ui/dataflow/crm.md)

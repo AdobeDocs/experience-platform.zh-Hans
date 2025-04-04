@@ -2,9 +2,9 @@
 title: 使用流服务API筛选Source的行级数据
 description: 本教程介绍了有关如何使用流服务API在源级别过滤数据的步骤
 exl-id: 224b454e-a079-4df3-a8b2-1bebfb37d11f
-source-git-commit: e8e8914c41d7a083395b0bf53aaac8021fcf9e9a
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1820'
+source-wordcount: '1823'
 ht-degree: 4%
 
 ---
@@ -27,12 +27,12 @@ ht-degree: 4%
 
 本教程要求您实际了解Adobe Experience Platform的以下组件：
 
-* [源](../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。
-* [沙盒](../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强传入数据。
+* [沙盒](../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-### 使用平台API
+### 使用Experience Platform API
 
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../landing/api-guide.md)指南。
+有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../landing/api-guide.md)指南。
 
 ## 筛选源数据 {#filter-source-data}
 
@@ -42,7 +42,7 @@ ht-degree: 4%
 
 过滤源的行级数据的第一步是检索源的连接规范，并确定源支持的运算符和语言。
 
-要检索给定源的连接规范，请向[!DNL Flow Service] API的`/connectionSpecs`端点发出GET请求，并提供源的属性名称作为查询参数的一部分。
+要检索给定源的连接规范，请向[!DNL Flow Service] API的`/connectionSpecs`端点发出GET请求，并在查询参数中提供源的属性名称。
 
 **API格式**
 
@@ -334,7 +334,7 @@ curl -X GET \
 
 ### 为过滤的数据创建源连接
 
-要创建源连接并摄取过滤的数据，请向`/sourceConnections`端点发出POST请求，并在请求正文参数中提供筛选条件。
+要创建源连接并摄取过滤的数据，请对`/sourceConnections`端点发出POST请求，并在请求正文参数中提供筛选条件。
 
 **API格式**
 
@@ -682,7 +682,7 @@ curl -X GET \
 
 >[!TIP]
 >
->发出PATCH请求时需要`If-Match`标头。 此标头的值是要更新的数据流的唯一版本/电子标记。 每次成功更新数据流时，版本/电子标记值都会更新。
+>发出PATCH请求时需要使用`If-Match`标头。 此标头的值是要更新的数据流的唯一版本/电子标记。 每次成功更新数据流时，版本/电子标记值都会更新。
 
 **API格式**
 
@@ -747,7 +747,7 @@ curl -X PATCH \
 
 +++
 
-### Publish您的源连接
+### 发布源连接
 
 利用筛选条件更新源连接，您现在可以从草稿状态继续并发布源连接。 为此，请向`/sourceConnections`端点发出POST请求，并提供草稿源连接的ID以及用于发布的操作操作。
 
@@ -791,9 +791,9 @@ curl -X POST \
 
 +++
 
-### Publish您的target连接
+### 发布目标连接
 
-与上一步类似，您还必须发布目标连接，才能继续并发布草稿数据流。 向`/targetConnections`端点发出POST请求，并提供要发布的草稿Target连接的ID以及用于发布的操作操作。
+与上一步类似，您还必须发布目标连接，才能继续并发布草稿数据流。 向`/targetConnections`端点发出POST请求，并提供要发布的草稿目标连接的ID以及用于发布的操作操作。
 
 **API格式**
 
@@ -836,9 +836,9 @@ curl -X POST \
 +++
 
 
-### Publish您的数据流
+### 发布数据流
 
-在源和目标连接均已发布的情况下，您现在可以继续最后步骤并发布数据流。 要发布数据流，请向`/flows`端点发出POST请求，并提供您的数据流ID和用于发布的操作操作。
+在源和目标连接均已发布的情况下，您现在可以继续最后步骤并发布数据流。 要发布数据流，请对`/flows`端点发出POST请求，并提供数据流ID和用于发布的操作操作。
 
 **API格式**
 
@@ -880,7 +880,7 @@ curl -X POST \
 
 +++
 
-您可以使用Experience PlatformUI验证草稿数据流是否已发布。 导航到源目录中的数据流页面并引用数据流的&#x200B;**[!UICONTROL 状态]**。 如果成功，状态现在应设置为&#x200B;**已启用**。
+您可以使用Experience Platform UI验证草稿数据流是否已发布。 导航到源目录中的数据流页面并引用数据流的&#x200B;**[!UICONTROL 状态]**。 如果成功，状态现在应设置为&#x200B;**已启用**。
 
 >[!TIP]
 >

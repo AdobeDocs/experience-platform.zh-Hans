@@ -3,9 +3,9 @@ keywords: 个性化；Personalization
 title: Personalization目标概述
 description: Personalization平台从个人行为中收集数据和见解。 这些平台可以协助营销人员导航匿名数据，根据先前的活动或作为具有类似习惯的受众的一部分向潜在客户提供优惠或广告。
 exl-id: 18a2b170-43d0-4d41-8afc-d2f0f9bfd7bb
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '150'
+source-wordcount: '151'
 ht-degree: 9%
 
 ---
@@ -18,7 +18,7 @@ Personalization平台从个人行为中收集数据和见解。 这些平台可�
 
 ## 支持的个性化目标 {#supported-destinations}
 
-目前，平台支持下面列出的个性化目标。 有关如何连接到这些目标的信息，请参阅各个链接：
+目前，Experience Platform支持下面列出的个性化目标。 有关如何连接到这些目标的信息，请参阅各个链接：
 
 **连接**
 

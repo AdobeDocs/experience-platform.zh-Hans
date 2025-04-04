@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform；主页；热门主题；数据摄取；数据位置；数据位置；数据管理；数据管理；谱系；谱系；批次；批次；摄取的数据
+keywords: Experience Platform；主页；热门主题；数据摄取；数据位置；数据管理；数据管理；谱系；谱系；批次；批次；摄取的数据
 solution: Experience Platform
 title: 数据引入概述
-description: 本文档介绍了将数据摄取到Platform的三种主要方式，并提供了各自概述文档的链接，以详细了解相关信息。
+description: 本文档介绍了将数据摄取到Experience Platform的三种主要方式，并提供了指向各自概述文档的链接，以详细了解相关信息。
 exl-id: c189dd4a-5c59-4189-a18c-a3e45a9ff01d
-source-git-commit: 15de9351203f6b43653042ab73ede17781486160
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '578'
+source-wordcount: '579'
 ht-degree: 0%
 
 ---
 
 # 数据引入概述
 
-Adobe Experience Platform将来自多个来源的数据整合在一起，以帮助营销人员更好地了解其客户的行为。 Adobe Experience Platform Data Ingestion表示Experience Platform从这些来源摄取数据的多种方法，以及该数据如何保留在数据湖中以供下游Experience Platform服务使用。
+Adobe Experience Platform将来自多个来源的数据整合在一起，以帮助营销人员更好地了解其客户的行为。 Adobe Experience Platform Data Ingestion表示Experience Platform从这些来源摄取数据的多种方法，以及该数据如何在Data Lake中保留以供下游Experience Platform服务使用。
 
 本文档介绍了将数据摄取到Experience Platform的三种主要方式，并提供了指向各自概述文档的链接，以详细了解相关信息。
 
@@ -31,7 +31,7 @@ Adobe Experience Platform将来自多个来源的数据整合在一起，以帮�
 
 ## 流式摄取
 
-流式摄取允许您实时将数据从客户端和服务器端设备发送到[!DNL Experience Platform]。 Experience Platform支持使用数据入口来流式传输传入体验数据，该数据会保留在数据湖内启用流式传输的数据集中。 可将数据入口配置为自动验证其收集的数据，确保数据来自可信来源。
+流式摄取允许您实时将数据从客户端和服务器端设备发送到[!DNL Experience Platform]。 Experience Platform支持使用数据入口来流式传输传入体验数据，这些数据会保留在数据湖内启用流式传输的数据集中。 可将数据入口配置为自动验证其收集的数据，确保数据来自可信来源。
 
 有关详细信息，请参阅[流式摄取概述](./streaming-ingestion/overview.md)。
 

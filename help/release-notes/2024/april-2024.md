@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2024 年 4 月）
 description: Adobe Experience Platform 的 2024 年 4 月发行说明。
 exl-id: 86d72fd8-a464-4715-abc9-4177236e423c
-source-git-commit: d6e306294d0a119108e2de7ba03ebed4f633fba1
-workflow-type: ht
-source-wordcount: '1897'
-ht-degree: 100%
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+workflow-type: tm+mt
+source-wordcount: '1899'
+ht-degree: 97%
 
 ---
 
@@ -22,7 +22,7 @@ Experience Platform 中现有功能的更新：
 - [仪表板](#dashboards)
 - [数据收集](#data-collection)
 - [目标](#destinations)
-- [标识服务](#identity-service)
+- [身份标识服务](#identity-service)
 - [监控](#monitoring)
 - [查询服务](#query-service)
 - [沙盒](#sandboxes)
@@ -41,7 +41,7 @@ Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查
 
 {style="table-layout:auto"}
 
-有关仪表板的详细信息，包括如何授予访问权限和创建自定义构件，请首先阅读[仪表板概述](../../dashboards/home.md)。
+有关仪表板的详细信息，包括如何授予访问权限和创建自定义小组件，请首先阅读[仪表板概述](../../dashboards/home.md)。
 
 ## 数据收集 {#data-collection}
 
@@ -55,7 +55,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 | 数据流 | [Edge Network 机器人检测](../../datastreams/bot-detection.md) | 来自非人类实体（例如自动程序、网络爬虫、蜘蛛、脚本扫描器）的流量会使识别来自人类访问者的事件变得更加困难。这种类型的流量会对重要的业务指标产生负面影响，导致流量报告不正确。通过机器人检测，可将 Web SDK、Mobile SDK 和 Server API 生成的事件视为由已知的蜘蛛程序和机器人生成。<br>机器人检测允许您识别由 [Web SDK](../../web-sdk/home.md)、[Mobile SDK](https://developer.adobe.com/client-sdks/home/) 和 [[!DNL Server API]](../../server-api/overview.md) 生成的事件是否由已知的蜘蛛和机器人生成。通过为数据流配置机器人检测，您可以识别想要归类为机器人事件的特定 IP 地址、IP 范围和请求标头。<br> 识别机器人流量可以为您提供对网站或移动应用程序上用户活动的更准确测量。 |
 | Mobile SDK | 主要版本发布 | 已针对以下平台发布了 Mobile SDK 的新主要版本：iOS Mobile Core 5.x 和兼容的 iOS 扩展、Android Mobile Core 3.x 和兼容的Android 扩展、React Native Core 6.x 和兼容的 React Native 扩展、Flutter Core 4.x 和兼容的 Flutter 扩展。这些版本提供了几个新功能和增强功能，包括 Android SDK 对 Jetpack Compose 的支持、对 Adobe Journey Optimizer 基于代码的体验的支持以及对 Flutter 的 Adobe Journey Optimizer Messaging 扩展的普遍可用性。有关更详细的发行说明，请参阅[移动 SDK 发行说明](https://developer.adobe.com/client-sdks/home/release-notes/)。 |
 | Mobile SDK | 隐私 | 由于Apple 的政策更新，从 2024 年 5 月 1 日开始，开发人员必须实现新的隐私功能才能提交给 App Store。所有使用移动 SDK 的 Adobe 客户如果希望在 5 月 1 日之后获得 App Store 批准，都需要升级到 SDK 5.x 版本。 |
-| Roku SDK | Roku SDK | Roku SDK 的第一个主要版本已经发布，支持 Platform Edge Network 的流媒体。 |
+| Roku SDK | Roku SDK | Roku SDK的第一个主要版本已发布，并支持Experience Platform Edge Network的流媒体。 |
 | 标记和事件转发 | 产品内指导 | Experience Platform [标签](../../tags/home.md)和 [ Event Forwarding ](../../tags/ui/event-forwarding/overview.md) 提供一系列全新的体验，帮助您快速入门并快速实现价值。这些体验包括新的加入屏幕、产品内教程和工具提示。<br>![Event Forwarding，并突出显示产品内的指导。](../2024/assets/april/event-forwarding.png "Schemas Editor 中类型和映射值类型字段突出显示。"){width="100" zoomable="yes"}<br> |
 | Web SDK | 简化 Audience Manager 客户的 Web SDK 采用 | 现在，多个 Web SDK 更新简化了 Web SDK 的采用，无需使用体验数据模型 (XDM) 即可实现 Experience Cloud 解决方案，例如 Audience Manager、Analytics 和 Target。请通过以下指南了解有关 Audience Manager Web SDK 采用的更多信息： <ul><li><a href="https://experienceleague.adobe.com/zh-hans/docs/audience-manager/user-guide/migrate-to-web-sdk/dil-extension-to-web-sdk">将 Audience Manager 的数据收集库从 Audience Manager 标记扩展更新为 Web SDK 标记扩展</li><li><a href="https://experienceleague.adobe.com/zh-hans/docs/audience-manager/user-guide/migrate-to-web-sdk/appmeasurement-to-web-sdk">将 Audience Manager 的数据收集库从 AppMeasurement JavaScript 库更新为 Web SDK JavaScript 库</li></ul> |
 
@@ -81,9 +81,9 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 有关目标的更多一般信息，请参阅[目标概述](../../destinations/home.md)。
 
-## 标识服务 {#identity-service}
+## 身份标识服务 {#identity-service}
 
-使用 Adobe Experience Platform 标识服务通过跨设备和系统桥接标识，全面了解您的客户及其行为，助您实时提供有影响力的个人数字体验。
+使用 Adobe Experience Platform 身份标识服务通过跨设备和系统桥接身份标识，全面了解您的客户及其行为，助您实时提供有影响力的个人数字体验。
 
 **更新的功能**
 
@@ -93,11 +93,11 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 {style="table-layout:auto"}
 
-有关标识服务的更多信息，请参阅[标识服务概述](../../identity-service/home.md)。
+有关身份标识服务的更多信息，请参阅[身份标识服务概述](../../identity-service/home.md)。
 
 ## 监控 {#monitoring}
 
-使用 Experience Platform UI 中的监控仪表板来监控源、标识服务、实时客户轮廓、受众和目标的数据历程。
+使用 Experience Platform UI 中的监控仪表板来监控源、身份标识服务、实时客户轮廓、受众和目标的数据历程。
 
 **更新的功能**
 
@@ -130,7 +130,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 ## 沙盒 {#sandboxes}
 
-Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。企业通常会同时运行多个数字体验应用程序，并且需要满足这些应用程序的开发、测试和部署要求，同时确保运营合规性。为了满足这一需求，Experience Platform 提供了可将单个 Platform 实例划分为多个单独的虚拟环境的沙盒，以帮助开发和改进数字体验应用程序。
+Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。企业通常会同时运行多个数字体验应用程序，并且需要满足这些应用程序的开发、测试和部署要求，同时确保运营合规性。为了满足此需求，Experience Platform提供了可将单个Experience Platform实例划分为多个单独的虚拟环境的沙盒，以帮助开发和改进数字体验应用程序。
 
 **新增功能或更新后的功能**
 
@@ -144,7 +144,7 @@ Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。企
 
 ## Segmentation Service {#segmentation}
 
-[!DNL Segmentation Service] 允许您对存储在 [!DNL Experience Platform] 中的与个人（例如客户、潜在客户、用户或组织）相关的数据划分到受众区段中。您可以通过区段定义或其他源从 [!DNL Real-Time Customer Profile] 数据创建受众。这些受众在 [!DNL Platform] 上集中配置和维护，并且可以通过任何 Adobe 解决方案轻松访问。
+[!DNL Segmentation Service] 允许您对存储在 [!DNL Experience Platform] 中的与个人（例如客户、潜在客户、用户或组织）相关的数据划分到受众区段中。您可以通过区段定义或其他源从 [!DNL Real-Time Customer Profile] 数据创建受众。这些受众在 [!DNL Experience Platform] 上集中配置和维护，并且可以通过任何 Adobe 解决方案轻松访问。
 
 **更新的功能**
 

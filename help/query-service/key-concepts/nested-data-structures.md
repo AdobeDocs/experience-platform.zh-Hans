@@ -3,9 +3,9 @@ keywords: Experience Platform；查询服务；查询服务；嵌套数据结构
 title: 在查询服务中使用嵌套数据结构
 description: 本文档提供了一个使用CTAS和INSERT INTO语句处理和转换嵌套数据字段的工作示例。
 exl-id: 593379fb-88ad-4b14-8d2e-aa6d18129974
-source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '789'
+source-wordcount: '790'
 ht-degree: 2%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 Adobe Experience Platform查询服务支持使用嵌套数据字段。 企业数据结构的复杂性会使这些数据的转换和处理变得复杂。 本文档提供了如何使用复杂数据类型（包括嵌套数据结构）创建、处理或转换数据集的示例。
 
-查询服务提供了一个[!DNL PostgreSQL]接口，用于对Experience Platform管理的所有数据集运行SQL查询。 Platform支持在表列（如struct 、 arrays 、 maps和深度嵌套的struct 、 arrays和maps ）中使用原始或复杂数据类型。 数据集还可以包含嵌套结构，其中列数据类型可以像嵌套结构的数组一样复杂，或者包含映射映射，其中键值对的值可以是具有多个嵌套级别的结构。
+查询服务提供了一个[!DNL PostgreSQL]接口，用于对Experience Platform管理的所有数据集运行SQL查询。 Experience Platform支持在表列（如struct、arrays、map和深度嵌套的struct、arrays和map）中使用原始或复杂数据类型。 数据集还可以包含嵌套结构，其中列数据类型可以像嵌套结构的数组一样复杂，或者包含映射映射，其中键值对的值可以是具有多个嵌套级别的结构。
 
 ## 快速入门
 

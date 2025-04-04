@@ -5,9 +5,9 @@ title: 使用流服务API创建Oracle对象存储基础连接
 type: Tutorial
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Oracle对象存储。
 exl-id: a85faa44-7d5a-42a2-9052-af01744e13c9
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '543'
+source-wordcount: '549'
 ht-degree: 4%
 
 ---
@@ -22,8 +22,8 @@ ht-degree: 4%
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
-* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 以下部分提供使用[!DNL Flow Service] API成功连接到[!DNL Oracle Object Storage]所需了解的其他信息。
 
@@ -40,17 +40,17 @@ ht-degree: 4%
 | `folderPath` | 如果用户具有受限访问权限，则需要允许的文件夹路径。 |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL Oracle Object Storage]的连接规范ID为： `c85f9425-fb21-426c-ad0b-405e9bd8a46c`。 |
 
-有关如何获取这些值的详细信息，请参阅[Oracle对象存储身份验证指南](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/usercredentials.htm#User_Credentials)。
+有关如何获取这些值的详细信息，请参阅[Oracle Object Storage身份验证指南](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/usercredentials.htm#User_Credentials)。
 
-### 使用平台API
+### 使用Experience Platform API
 
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../../landing/api-guide.md)指南。
+有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../../../landing/api-guide.md)指南。
 
 ## 创建基本连接
 
-基本连接会保留您的源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
+基本连接会保留源与Experience Platform之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-要创建基本连接ID，请在提供[!DNL Oracle Object Storage]身份验证凭据作为POST参数的一部分时，向`/connections`端点请求请求。
+要创建基本连接ID，请在提供您的[!DNL Oracle Object Storage]身份验证凭据作为请求参数的一部分时，向`/connections`端点发出POST请求。
 
 **API格式**
 

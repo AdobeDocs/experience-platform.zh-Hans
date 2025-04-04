@@ -2,16 +2,16 @@
 title: 使用架构注册表API将特定字段添加到架构
 description: 了解如何使用架构注册表API将预先存在的字段组中的各个字段添加到体验数据模型(XDM)架构。
 exl-id: 696cce2b-bbde-416a-9f52-12ab4da9c2c6
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '625'
+source-wordcount: '626'
 ht-degree: 1%
 
 ---
 
 # 使用架构注册表API将特定字段添加到架构
 
-体验数据模型(XDM)架构由一个基类组成，通过使用由Adobe定义的标准字段组和由您的组织定义的自定义字段组来包含其他字段。
+体验数据模型(XDM)架构由一个基类组成，通过使用由Adobe定义的标准字段组和由您的组织定义的自定义字段组，包含其他字段。
 
 构建架构时，您可能要使用给定字段组中的某些字段，而排除同一组中您不需要的其他字段。 本教程将演示如何使用架构注册表API将字段组中的各个字段添加到架构中。
 
@@ -285,6 +285,6 @@ curl -X PATCH \
 
 ## 后续步骤
 
-本指南介绍了如何使用API调用将现有字段组中的单个字段添加到架构。 有关如何在Platform UI中执行类似的基于字段的任务的详细信息，请参阅[基于字段的工作流](../ui/field-based-workflows.md)指南。
+本指南介绍了如何使用API调用将现有字段组中的单个字段添加到架构。 有关如何在Experience Platform UI中执行类似的基于字段的任务的详细信息，请参阅[基于字段的工作流](../ui/field-based-workflows.md)指南。
 
 有关架构注册表API功能的详细信息，请参阅[API概述](../api/overview.md)，以获取完整的端点和进程列表。

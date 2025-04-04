@@ -1,9 +1,10 @@
 ---
 title: 为客户管理的密钥配置AWS KMS
 description: 了解如何在Adobe Experience Platform中配置Amazon Web Services密钥管理服务(KMS)，以便与客户管理的密钥一起使用。
-source-git-commit: 90b8a3253e8298a634c0deaf82ac8be05f478622
+exl-id: 0cf0deab-dc30-412f-b511-dee5504c3953
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1567'
+source-wordcount: '1571'
 ht-degree: 0%
 
 ---
@@ -12,13 +13,13 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->本文档适用于在Amazon Web Services (AWS)上运行的Experience Platform的实施。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform多云概述](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud)。
+>本文档适用于在Amazon Web Services (AWS)上运行的Experience Platform的实施。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud)。
 >
 >AWS上的[客户管理的密钥](../overview.md) (CMK)支持Privacy and Security Shield，但不适用于Healthcare Shield。 Privacy和Security Shield以及Healthcare Shield均支持Azure上的CMK。
 
 使用本指南，通过创建、管理和控制Amazon Web Services (AWS)的加密密钥，使用Adobe Experience Platform (KMS)密钥管理服务(KMS)保护您的数据。 此集成简化了法规遵从性，通过自动化简化了操作，并且消除了维护您自己的关键管理基础架构的需要。
 
-有关特定于Customer Journey Analytics的说明，请参阅[Customer Journey AnalyticsCMK文档](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-privacy/cmk)
+有关特定于Customer Journey Analytics的说明，请参阅[Customer Journey Analytics CMK文档](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-privacy/cmk)
 
 >[!IMPORTANT]
 >
@@ -36,7 +37,7 @@ ht-degree: 0%
    - 指定允许或拒绝用户执行的操作。
    - 通过使用IAM策略分配权限来实施细粒度访问控制。
 有关详细信息，请参阅[适用于AWS KMS的IAM策略官方文档](https://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html)。
-- **Experience Platform中的数据安全**：了解Platform如何确保数据安全并与AWS KMS等外部服务集成以进行加密。 Platform使用HTTPS TLS v1.2保护数据以便传输、云提供商静态加密、隔离存储以及可自定义的身份验证和加密选项。 有关如何保持数据安全的更多信息，请参阅[治理、隐私和安全概述](../overview.md)或有关Platform中[数据加密](../../encryption.md)的文档。
+- **Experience Platform中的数据安全**：了解Experience Platform如何确保数据安全并与AWS KMS等外部服务集成以进行加密。 Experience Platform使用HTTPS TLS v1.2保护数据以便传输、云提供商静态加密、隔离存储以及可自定义的身份验证和加密选项。 有关如何保持数据安全的更多信息，请参阅[治理、隐私和安全概述](../overview.md)或有关Experience Platform](../../encryption.md)中[数据加密的文档。
 - **AWS管理控制台**：一个中心中心，您可以从基于Web的应用程序访问和管理所有AWS服务。 使用搜索栏快速查找工具、检查通知、管理您的帐户和账单，以及自定义您的设置。 有关详细信息，请参阅[官方的AWS管理控制台文档](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/what-is.html)。
 
 ## 快速入门 {#get-started}
@@ -73,7 +74,7 @@ AWS KMS在特定地区提供。 确保您在支持KMS的区域中运行。 您�
 
 >[!IMPORTANT]
 >
->确保加密密钥的安全存储、访问和可用性。 您负责管理密钥并防止对Platform操作造成中断。
+>确保加密密钥的安全存储、访问和可用性。 您负责管理密钥并防止对Experience Platform操作造成中断。
 
 在[!DNL Key Management Service (KMS)]工作区中选择&#x200B;**[!DNL Create a key]**。
 
@@ -95,7 +96,7 @@ AWS KMS在特定地区提供。 确保您在支持KMS的区域中运行。 您�
 
 >[!IMPORTANT]
 >
->AWS对KMS密钥实施区域限制。 此区域限制意味着密钥必须位于与您的Adobe帐户相同的区域中。 Adobe只能访问位于您帐户所在地区的KMS密钥。 确保您选择的地区与Adobe单租户帐户的地区匹配。
+>AWS对KMS密钥实施区域限制。 此区域限制意味着密钥必须位于与您的Adobe帐户相同的区域中。 Adobe只能访问位于您帐户所在地区的KMS密钥。 确保您选择的区域与Adobe单租户帐户的区域相匹配。
 
 ![Configure key工作流的第一步，其中突出显示AWS区域、KMS和单区域键高级选项。](../../../images/governance-privacy-security/key-management-service/configure-key-advanced-options.png)
 
@@ -103,9 +104,9 @@ AWS KMS在特定地区提供。 确保您在支持KMS的区域中运行。 您�
 
 此时将显示工作流的第二个[!DNL Add labels]阶段。 在此，您可以配置[!DNL Alias]和[!DNL Tags]字段以帮助您从AWS KMS控制台管理和查找加密密钥。
 
-在&#x200B;**[!DNL Alias]**&#x200B;输入字段中输入键的描述性标签。 别名充当用户友好标识符，以使用AWS KMS控制台中的搜索栏快速找到密钥。 为避免混淆，请选择一个能反映密钥目的的有意义的名称，如“Adobe — 平台 — 密钥”或“客户 — 加密 — 密钥”。 如果键别名不足以描述其用途，您还可以包含键的说明。
+在&#x200B;**[!DNL Alias]**&#x200B;输入字段中输入键的描述性标签。 别名充当用户友好标识符，以使用AWS KMS控制台中的搜索栏快速找到密钥。 为避免混淆，请选择一个可反映密钥目的的有意义的名称，如“Adobe-Experience-Platform-Key”或“Customer-Encryption-Key”。 如果键别名不足以描述其用途，您还可以包含键的说明。
 
-最后，通过在[!DNL Tags]部分中添加键值对来为键分配元数据。 此步骤是可选的，但您应该添加标记以对AWS资源进行分类和筛选，从而更便于管理。 例如，如果贵组织使用多个与Adobe相关的资源，则可以使用“Adobe”或“Experience-Platform”来标记它们。 通过这个额外的步骤，可以轻松地在AWS Management Console中搜索和管理所有关联的资源。 选择&#x200B;**[!DNL Add tag]**&#x200B;开始该进程。
+最后，通过在[!DNL Tags]部分中添加键值对来为键分配元数据。 此步骤是可选的，但您应该添加标记以对AWS资源进行分类和筛选，从而更便于管理。 例如，如果贵组织使用多个Adobe相关资源，则可以使用“Adobe”或“Experience-Platform”标记它们。 通过这个额外的步骤，可以轻松地在AWS Management Console中搜索和管理所有关联的资源。 选择&#x200B;**[!DNL Add tag]**&#x200B;开始该进程。
 
 <!-- I do not have an AWS account with which to document the Add tag process as yet. -->
 

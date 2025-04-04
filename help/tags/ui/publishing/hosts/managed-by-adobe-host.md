@@ -1,11 +1,11 @@
 ---
-title: Adobe管理主机概述
+title: Adobe-Managed主机概述
 description: 了解用于在Adobe Experience Platform中部署标记库内部版本的默认托管选项。
 exl-id: 9042c313-b0d3-4f6e-963d-0051d760fd16
-source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1177'
-ht-degree: 52%
+source-wordcount: '1181'
+ht-degree: 55%
 
 ---
 
@@ -13,13 +13,13 @@ ht-degree: 52%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
-Adobe管理主机是您在Adobe Experience Platform中部署标记库内部版本时默认的主机设置。 通过“数据收集”用户界面创建新资产时，将为您创建一个默认的Adobe管理主机。
+Adobe-managed主机是您在Adobe Experience Platform中部署标记库内部版本时默认的主机设置。 当您通过数据收集用户界面创建新资产时，您会获得一个默认的Adobe-managed主机。
 
-凭借 Adobe-managed 主机，可将库版本交付至已与 Adobe 签约的第三方内容分发网络 (CDN)。由于这些CDN独立于Adobe运行，因此即使Platform正在进行维护或由于其他原因而停止运行，您的部署代码仍可以在站点和应用程序中继续正常运转。 Adobe-managed 主机的嵌入代码引用了 CDN 上的主要库文件，因此客户端设备可在运行时检索文件。
+凭借 Adobe-managed 主机，可将库版本交付至已与 Adobe 签约的第三方内容分发网络 (CDN)。由于这些CDN独立于Adobe运行，因此即使Experience Platform正在进行维护或由于其他原因而停止运行，您的部署代码仍可以在站点和应用程序中继续正常运转。 Adobe-managed 主机的嵌入代码引用了 CDN 上的主要库文件，因此客户端设备可在运行时检索文件。
 
-本文档概述了Platform中的Adobe管理主机，并提供了有关如何在UI中创建新的Adobe管理主机的步骤。
+本文档概述了Experience Platform中的Adobe-managed主机，并提供了有关如何在UI中创建新的Adobe-managed主机的步骤。
 
 ## Akamai
 
@@ -33,7 +33,7 @@ Adobe管理主机是您在Adobe Experience Platform中部署标记库内部版�
 
 >[!WARNING]
 >
->如果您的库无法从Akamai网络访问，则Platform无法阻止因此而引发的任何错误。
+>如果您没有将库托管在Akamai网络上，那么Experience Platform则无法阻止因此而引发的任何错误。
 
 ## 库版本缓存
 
@@ -90,14 +90,14 @@ CDN的主要用途是智能地将内容分发到地理位置更接近于最终�
 
 ## 在UI中使用Adobe管理的主机
 
-首次在Platform UI或数据收集UI中创建属性时，将自动为您创建Adobe管理的主机。 默认情况下，所有具有立即可用属性的可用环境也会分配给Adobe管理的主机。
+首次在Experience Platform UI或数据收集UI中创建属性时，将自动为您创建Adobe-managed主机。 默认情况下，具有立即可用属性的所有可用环境也会分配给Adobe-managed主机。
 
 >[!NOTE]
 >
 >如果默认的 Adobe-managed 主机未从所有环境中分配，则可以删除该主机。如果要在执行此操作后切换回 Adobe-managed 主机，可通过以下步骤创建新主机：
 >
 >1. 选择属性上的&#x200B;**[!UICONTROL 主机]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 添加主机]**。
->1. 为主机提供一个名称，选择&#x200B;**[!UICONTROL 由Adobe管理]**&#x200B;作为主机类型，然后选择&#x200B;**[!UICONTROL 保存]**。
+>1. 提供主机的名称，选择&#x200B;**[!UICONTROL 由Adobe管理]**&#x200B;作为主机类型，然后选择&#x200B;**[!UICONTROL 保存]**。
 >
 >接下来，您可以根据需要将环境重新分配给 Adobe-managed 主机。
 

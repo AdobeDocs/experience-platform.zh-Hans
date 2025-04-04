@@ -2,9 +2,9 @@
 title: Data Landing Zone Source
 description: 了解如何将Data Landing Zone连接到Adobe Experience Platform
 exl-id: bdc10095-7de4-4183-bfad-a7b5c89197e3
-source-git-commit: 719f1bca20d5118de14ebe324675bb0aab6161e8
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1362'
+source-wordcount: '1366'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >此页面特定于Experience Platform中的[!DNL Data Landing Zone] *源*&#x200B;连接器。 有关连接到[!DNL Data Landing Zone] *目标*&#x200B;连接器的信息，请参阅[[!DNL Data Landing Zone] 目标文档页面](/help/destinations/catalog/cloud-storage/data-landing-zone.md)。
 
-[!DNL Data Landing Zone]是由Adobe Experience Platform设置的[!DNL Azure Blob]存储接口，允许您访问安全、基于云的文件存储设施，以将文件导入Platform。 您有权访问每个沙盒一个[!DNL Data Landing Zone]容器，所有容器的总数据量以您的Platform产品和服务许可证提供的总数据为限。 Experience Platform的所有客户都为每个沙盒配置一个[!DNL Data Landing Zone]容器。 您可以通过[!DNL Azure Storage Explorer]或命令行界面将文件读取和写入容器。
+[!DNL Data Landing Zone]是由Adobe Experience Platform设置的[!DNL Azure Blob]存储接口，允许您访问安全的基于云的文件存储设施，以将文件导入Experience Platform。 您有权访问每个沙盒一个[!DNL Data Landing Zone]容器，所有容器的总数据量以您的Experience Platform产品和服务许可证提供的总数据为限。 Experience Platform的所有客户都为每个沙盒配置一个[!DNL Data Landing Zone]容器。 您可以通过[!DNL Azure Storage Explorer]或命令行界面将文件读取和写入容器。
 
 [!DNL Data Landing Zone]支持基于SAS的身份验证，其数据受标准[!DNL Azure Blob]存储安全机制的静态和传输保护。 基于SAS的身份验证允许您通过公共Internet连接安全地访问[!DNL Data Landing Zone]容器。 访问[!DNL Data Landing Zone]容器不需要更改网络，这意味着您不需要为网络配置任何允许列表或跨区域设置。 Experience Platform对上传到[!DNL Data Landing Zone]容器的所有文件和文件夹强制实施严格的七天过期时间。 所有文件和文件夹都会在七天后删除。
 
@@ -54,7 +54,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->您可以从平台UI中的源目录中检索[!DNL Data Landing Zone]凭据。
+>您可以从Experience Platform UI中的源目录中检索[!DNL Data Landing Zone]凭据。
 
 提供您的[!DNL Data Landing Zone] SAS URL，然后选择&#x200B;**下一步**
 
@@ -318,6 +318,6 @@ print(f"Sign-in URL: {signin_url}")
 
 ### 使用UI
 
-- [使用UI连接 [!DNL Data Landing Zone] 到平台](../../tutorials/ui/create/cloud-storage/data-landing-zone.md)
+- [使用UI连接 [!DNL Data Landing Zone] 到Experience Platform](../../tutorials/ui/create/cloud-storage/data-landing-zone.md)
 - [在UI中为云存储连接创建数据流](../../tutorials/ui/dataflow/batch/cloud-storage.md)
 

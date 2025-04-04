@@ -6,10 +6,10 @@ user-guide-description: 借助机器学习技术，使用 Adobe Sensei 和 Jupyt
 feature: Data Science Workspace
 solution: Experience Platform
 role: User, Developer
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '225'
-ht-degree: 32%
+source-wordcount: '227'
+ht-degree: 33%
 
 ---
 
@@ -34,7 +34,7 @@ ht-degree: 32%
    * [试验](api/experiments.md)
    * [模型](api/models.md)
    * [MLServices](api/mlservices.md)
-   * [Insights](api/insights.md)
+   * [洞察](api/insights.md)
    * [附录](api/appendix.md)
 * 预建配方{#pre-built-recipes}
    * [产品推荐方法](pre-built-recipes/product-recommendations.md)
@@ -43,7 +43,7 @@ ht-degree: 32%
 * 模型创作{#authoring}
    * [模型创作SDK](authoring/sdk.md)
    * [创建功能管道](authoring/feature-pipeline.md)
-   * [使用平台SDK (Python)进行模型创作](authoring/platform-sdk.md)
+   * [使用Experience Platform SDK (Python)创作模型](authoring/platform-sdk.md)
    * [Python数据访问](authoring/python.md)
    * [Spark数据访问](authoring/spark.md)
 * 模型和方法教程{#models-recipes}
@@ -60,9 +60,9 @@ ht-degree: 32%
    * [为模型(API)计分](models-recipes/score-model-api.md)
    * [优化模型](models-recipes/optimize-model.md)
    * [利用机器学习见解丰富实时客户档案](models-recipes/enrich-profile.md)
-   * [Publish a model as a service (UI)](models-recipes/publish-model-service-ui.md)
-   * [Publish a model as a service (API)](models-recipes/publish-model-service-api.md)
+   * [将模型发布为服务(UI)](models-recipes/publish-model-service-ui.md)
+   * [将模型发布为服务(API)](models-recipes/publish-model-service-api.md)
    * [安排服务的自动培训和评分(UI)](models-recipes/schedule-models-ui.md)
 * [疑难解答指南](troubleshooting-guide.md)
 * [API 参考](https://developer.adobe.com/experience-platform-apis/references/sensei-machine-learning/)
-* [平台发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
+* [Experience Platform 发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

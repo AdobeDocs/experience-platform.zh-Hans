@@ -2,9 +2,9 @@
 title: 在UI中创建Microsoft SQL Server Source连接
 description: 了解如何使用Adobe Experience Platform UI创建Microsoft SQL Server源连接。
 exl-id: aba4e317-1c59-4999-a525-dba15f8d4df9
-source-git-commit: 1828dd76e9ff317f97e9651331df3e49e44efff5
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '465'
+source-wordcount: '466'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 本教程需要对以下Adobe Experience Platform组件有一定的了解：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
@@ -26,7 +26,7 @@ ht-degree: 1%
 
 ### 收集所需的凭据
 
-要连接到[!DNL Platform]上的[!DNL SQL Server]，您必须提供以下连接属性：
+要连接到[!DNL Experience Platform]上的[!DNL SQL Server]，您必须提供以下连接属性：
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
@@ -36,7 +36,7 @@ ht-degree: 1%
 
 ## 连接您的[!DNL SQL Server]帐户
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
 在&#x200B;*数据库*&#x200B;类别下，选择&#x200B;**[!DNL Microsoft SQL Server]**，然后选择&#x200B;**[!UICONTROL 设置]**。
 
@@ -70,4 +70,4 @@ ht-degree: 1%
 
 ## 后续步骤
 
-通过学习本教程，您已建立与[!DNL SQL Server]帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入 [!DNL Platform]](../../dataflow/databases.md)。
+通过学习本教程，您已建立与[!DNL SQL Server]帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入 [!DNL Experience Platform]](../../dataflow/databases.md)。

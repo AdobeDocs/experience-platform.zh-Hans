@@ -2,18 +2,18 @@
 keywords: Experience Platform；配置文件；实时客户配置文件；合并策略；UI；用户界面；已排序时间戳；数据集优先级
 title: 合并策略概述
 type: Documentation
-description: Adobe Experience Platform允许您从多个来源将数据片段整合在一起并组合它们，以便查看各个客户的完整视图。 在汇总此数据时，合并策略是Platform用于确定数据优先顺序的规则以及将合并哪些数据以创建统一视图。
+description: Adobe Experience Platform允许您从多个来源将数据片段整合在一起并组合它们，以便查看各个客户的完整视图。 在汇总此数据时，合并策略是Experience Platform用于确定数据优先顺序的规则以及将合并哪些数据以创建统一视图。
 exl-id: a8ef527a-cfee-4129-9973-e8a212a3ad1e
-source-git-commit: 5e8bbdf5b7b07c31a36730c86b177fce6041e319
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1285'
+source-wordcount: '1289'
 ht-degree: 1%
 
 ---
 
 # 合并策略概述
 
-Adobe Experience Platform允许您从多个来源将数据片段整合在一起并组合它们，以便查看每个客户的完整视图。 在汇总此数据时，合并策略是[!DNL Platform]用于确定数据优先顺序的规则以及将合并哪些数据以创建统一视图。
+Adobe Experience Platform允许您从多个来源将数据片段整合在一起并组合它们，以便查看每个客户的完整视图。 在汇总此数据时，合并策略是[!DNL Experience Platform]用于确定数据优先顺序的规则以及将合并哪些数据以创建统一视图。
 
 使用RESTful API或用户界面，您可以创建新的合并策略、管理现有策略以及为组织设置默认合并策略。 本文档概述了合并策略及其在Experience Platform中发挥的作用。
 
@@ -22,14 +22,14 @@ Adobe Experience Platform允许您从多个来源将数据片段整合在一起�
 本指南要求您实际了解几项重要的[!DNL Experience Platform]功能。 在遵循本指南并使用合并策略之前，请查看以下服务的文档：
 
 * [实时客户个人资料](../home.md)：根据来自多个来源的汇总数据提供统一的实时客户个人资料。
-* [Adobe Experience Platform Identity Service](../../identity-service/home.md)：通过桥接从被摄取到[!DNL Platform]中的不同数据源的标识来启用Real-time Customer Profile。
-* [体验数据模型(XDM)](../../xdm/home.md)： [!DNL Platform]用于组织客户体验数据的标准化框架。
+* [Adobe Experience Platform Identity Service](../../identity-service/home.md)：通过桥接从被摄取到[!DNL Experience Platform]中的不同数据源的标识来启用Real-time Customer Profile。
+* [体验数据模型(XDM)](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
 
 ## 了解合并策略
 
-Adobe Experience Platform允许您从多个来源将数据片段整合在一起，并将它们组合在一起，以便查看每个客户的完整、统一视图。 在汇总此数据时，合并策略是Platform用于确定数据优先顺序的规则以及将合并哪些数据以创建该统一视图。
+Adobe Experience Platform允许您从多个来源将数据片段整合在一起，并将它们组合在一起，以便查看每个客户的完整、统一视图。 在汇总此数据时，合并策略是Experience Platform用于确定数据优先顺序的规则以及将合并哪些数据以创建该统一视图。
 
-例如，如果客户跨多个渠道与您的品牌互动，则您的组织将在多个数据集中显示多个与该单个客户相关的配置文件片段。 将这些片段摄取到Platform后，会合并在一起，以便为该客户创建一个配置文件。
+例如，如果客户跨多个渠道与您的品牌互动，则您的组织将在多个数据集中显示多个与该单个客户相关的配置文件片段。 将这些片段摄取到Experience Platform后，会合并在一起，以便为该客户创建一个配置文件。
 
 当来自多个源的数据发生冲突时（例如，一个片段将客户列为“单身”，而另一个片段将客户列为“已婚”），合并策略会确定要将哪些信息包含在个人的配置文件中。
 
@@ -54,7 +54,7 @@ Adobe Experience Platform允许您从多个来源将数据片段整合在一起�
 
 ### 已排序的时间戳 {#timestamp-ordered}
 
-配置文件记录被摄取到Experience Platform后，系统时间戳将在摄取时获取并添加到记录中。 当选择&#x200B;**[!UICONTROL 排序的时间戳]**&#x200B;作为合并策略的合并方法时，将基于系统时间戳合并配置文件。 换言之，合并是基于记录被摄取到Platform的时间戳完成的。
+配置文件记录被摄取到Experience Platform后，系统时间戳将在摄取时获取并添加到记录中。 当选择&#x200B;**[!UICONTROL 排序的时间戳]**&#x200B;作为合并策略的合并方法时，将基于系统时间戳合并配置文件。 换言之，合并基于记录被摄取到Experience Platform的时间戳完成。
 
 ## 身份拼接 {#id-stitching}
 
@@ -79,4 +79,4 @@ Adobe Experience Platform允许您从多个来源将数据片段整合在一起�
 
 ## 后续步骤
 
-阅读本指南后，您现在了解了什么是合并策略以及它们在Experience Platform中发挥的作用。 要开始在Experience PlatformUI中使用合并策略，请参阅[合并策略UI指南](ui-guide.md)。 要使用API处理合并策略，请访问[合并策略API终结点指南](../api/merge-policies.md)。
+阅读本指南后，您现在了解了什么是合并策略以及它们在Experience Platform中发挥的作用。 要开始在Experience Platform UI中使用合并策略，请参阅[合并策略UI指南](ui-guide.md)。 要使用API处理合并策略，请访问[合并策略API终结点指南](../api/merge-policies.md)。

@@ -5,9 +5,9 @@ title: Sandbox API指南
 description: Adobe Experience Platform中的沙盒提供了独立的开发环境，允许您在不影响生产环境的情况下测试功能、运行实验以及进行自定义配置。
 role: Developer
 exl-id: c77e96dc-d138-4126-bbb0-b67beb0a02d6
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '327'
+source-wordcount: '328'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 0%
 
 ## 沙盒类型
 
-目前，Experience Platform上支持的沙盒类型是生产和开发沙盒。 默认的Platform许可证总共授予您5个沙盒，您可以将其分类为生产或开发。 您可以额外许可包含10个沙盒的包，最多总共75个沙盒。 请参阅[沙盒类型端点指南](./types.md)，了解如何在API中查看组织支持的沙盒类型。
+目前，Experience Platform上支持的沙盒类型是生产和开发沙盒。 默认的Experience Platform许可证总共授予您5个沙盒，您可以将其分类为生产或开发。 您可以额外许可包含10个沙盒的包，最多总共75个沙盒。 请参阅[沙盒类型端点指南](./types.md)，了解如何在API中查看组织支持的沙盒类型。
 
 ## 后续步骤
 

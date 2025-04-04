@@ -4,9 +4,9 @@ solution: Experience Platform
 title: IAB TCF 2.0事件架构的同意字段组
 description: 了解XDM ExperienceEvent类的IAB TCF 2.0同意架构字段组。
 exl-id: c236d0d4-27bd-45d7-a912-d0e93a609254
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '233'
+source-wordcount: '234'
 ht-degree: 1%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 1%
 
 {style="table-layout:auto"}
 
-有关此字段组用例的更多信息，请参阅Platform](../../../landing/governance-privacy-security/consent/iab/overview.md)中支持[IAB TCF 2.0的指南。 有关字段组本身的更多详细信息，请参阅公共XDM存储库：
+有关此字段组用例的更多信息，请参阅Experience Platform](../../../landing/governance-privacy-security/consent/iab/overview.md)中支持[IAB TCF 2.0的指南。 有关字段组本身的更多详细信息，请参阅公共XDM存储库：
 
 * [填充示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-privacy.example.1.json)
 * [完整架构](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-privacy.schema.json)

@@ -3,10 +3,10 @@ keywords: 飞艇属性；飞艇目标
 title: 飞艇属性连接
 description: 将Adobe受众数据作为受众属性无缝传递到飞艇，以便在飞艇中进行定位。
 exl-id: bfc1b52f-2d68-40d6-9052-c2ee1e877961
-source-git-commit: 453884612e787439ea58f312d8080622ee0441f7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1150'
-ht-degree: 2%
+source-wordcount: '1153'
+ht-degree: 3%
 
 ---
 
@@ -14,15 +14,15 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->* 从2025年3月25日开始，您可以在目标目录中并排看到两张[!DNL Airship Attributes]信息卡。 这是由于目标服务的内部升级。 现有[!DNL Airship Attributes]目标连接器已重命名为&#x200B;**[!UICONTROL （已弃用）飞艇属性]**，现在您可以使用名为&#x200B;**[!UICONTROL 飞艇属性]**&#x200B;的新信息卡。
+>* 从2025年3月25日开始，您可以在目标目录中并排看到两张[!DNL Airship Attributes]信息卡。 这是由于目标服务内部升级造成的。现有[!DNL Airship Attributes]目标连接器已重命名为&#x200B;**[!UICONTROL （已弃用）飞艇属性]**，现在您可以使用名为&#x200B;**[!UICONTROL 飞艇属性]**&#x200B;的新信息卡。
 >* 使用目录中的&#x200B;**[!UICONTROL 飞艇属性]**&#x200B;连接获取新的激活数据流。 如果您有任何到&#x200B;**[!UICONTROL （已弃用）飞艇属性]**&#x200B;目标的活动数据流，它们会自动更新，因此您无需执行任何操作。
 >* 如果您是通过[流服务API](https://developer.adobe.com/experience-platform-apis/references/destinations/)创建数据流，则必须将[!DNL flow spec ID]和[!DNL connection spec ID]更新为以下值：
->   * 流程规范ID： `a862e0be-966e-4e5a-80d3-1bb566461986`
->   * 连接规范ID： `594bc002-4a47-49b7-8a98-ac0d21045502`
+>   * 流量规范 ID：`a862e0be-966e-4e5a-80d3-1bb566461986`
+>   * 连接规范 ID：`594bc002-4a47-49b7-8a98-ac0d21045502`
 
 ## 概述 {#overview}
 
-[!DNL Airship]是领先的客户参与平台，帮助您在客户生命周期的每个阶段都向用户传递有意义、个性化的全渠道信息。
+[!DNL Airship]是领先的客户参与Experience Platform，帮助您在客户生命周期的每个阶段都向用户传递有意义、个性化的全渠道消息。
 
 此集成将Adobe配置文件数据作为[属性](https://docs.airship.com/guides/audience/attributes/)传递到[!DNL Airship]，以进行定位或触发。
 
@@ -67,7 +67,7 @@ ht-degree: 2%
 
 ## 启用属性 {#enable-attributes}
 
-Adobe Experience Platform配置文件属性与[!DNL Airship]属性类似，可以使用本页下面进一步演示的映射工具在Platform中轻松相互映射。
+Adobe Experience Platform配置文件属性与[!DNL Airship]属性类似，可以使用本页下面进一步演示的映射工具在Experience Platform中轻松相互映射。
 
 [!DNL Airship]项目具有几个预定义属性和默认属性。 如果您有自定义属性，则必须先在[!DNL Airship]中定义它。 有关详细信息，请参阅[设置和管理属性](https://docs.airship.com/tutorials/audience/attributes/)。
 
@@ -91,7 +91,7 @@ Adobe Experience Platform配置文件属性与[!DNL Airship]属性类似，可�
 
 ### 用例#2
 
-利用Adobe Experience Platform中的属性进一步扩充[!DNL Airship]配置文件，并将其与SDK或[!DNL Airship]预测数据相结合。 例如，零售商可以创建具有忠诚度状态和位置数据（来自Platform的属性）的受众，并且[!DNL Airship]预测会流失数据，以将极具针对性的消息发送给居住在内华达州拉斯维加斯且具有高流失率的黄金忠诚度状态用户。
+利用Adobe Experience Platform中的属性进一步扩充[!DNL Airship]配置文件，并将其与SDK或[!DNL Airship]预测数据相结合。 例如，retailer可以创建具有忠诚度状态和位置数据(来自Experience Platform的属性)的受众，并且[!DNL Airship]预计会流失数据，以将极具针对性的消息发送给居住在内华达州拉斯维加斯且具有高流失率的金会员状态用户。
 
 ## 连接到目标 {#connect}
 

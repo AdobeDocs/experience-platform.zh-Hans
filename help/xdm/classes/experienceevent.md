@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM ExperienceEvent类
 description: 了解XDM ExperienceEvent类和事件数据建模的最佳实践。
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: 5537485206c1625ca661d6b33f7bba08538a0fa3
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2761'
+source-wordcount: '2766'
 ht-degree: 0%
 
 ---
@@ -15,15 +15,15 @@ ht-degree: 0%
 
 [!DNL XDM ExperienceEvent]是一个标准的体验数据模型(XDM)类。 此类用于在发生特定事件或达到特定条件集时创建带时间戳的系统快照。
 
-体验事件是所发生事件的事实记录，包括时间点和所涉及人员的身份。 事件可以是显式的（直接可观察的人类行为）或隐式的（在没有直接人类行为的情况下引发），并且无需聚合或解释即可记录。 有关在平台生态系统中使用此类的详细信息，请参阅[XDM概述](../home.md#data-behaviors)。
+体验事件是所发生事件的事实记录，包括时间点和所涉及人员的身份。 事件可以是显式的（直接可观察的人类行为）或隐式的（在没有直接人类行为的情况下引发），并且无需聚合或解释即可记录。 有关在Experience Platform生态系统中使用此类的更多高级信息，请参阅[XDM概述](../home.md#data-behaviors)。
 
 [!DNL XDM ExperienceEvent]类本身为架构提供了多个与时间序列相关的字段。 其中两个字段（`_id`和`timestamp`）对于基于此类的所有架构都是&#x200B;**必填**，而其余字段是可选的。 在摄取数据时，会自动填充某些字段的值。
 
-![在Platform UI中显示的XDM ExperienceEvent的结构。](../images/classes/experienceevent/structure.png)
+![Experience Platform UI中显示的XDM ExperienceEvent结构。](../images/classes/experienceevent/structure.png)
 
 | 属性 | 描述 |
 | --- | --- |
-| `_id`<br>**（必需）** | Experience Event Class `_id`字段唯一标识摄取到Adobe Experience Platform中的各个事件。 此字段用于跟踪单个事件的唯一性，防止数据重复，并在下游服务中查找该事件。<br><br>在检测到重复事件的地方，Platform应用程序和服务可能会以不同的方式处理重复。 例如，如果配置文件存储中已存在具有相同`_id`的事件，则删除配置文件服务中的重复事件。<br><br>在某些情况下，`_id`可以是[通用唯一标识符(UUID)](https://datatracker.ietf.org/doc/html/rfc4122)或[全局唯一标识符(GUID)](https://learn.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0)。<br><br>如果从源连接流式传输数据或直接从Parquet文件中摄取，则应当通过连接特定字段组合生成此值，这些字段组合使事件具有唯一性。 可连接的事件示例包括主ID、时间戳、事件类型等。 连接值必须为`uri-reference`格式字符串，这意味着必须删除任何冒号字符。 之后，应该使用SHA-256或您选择的其他算法对拼接值进行哈希处理。<br><br>请务必注意，**此字段不表示与个人**&#x200B;相关的身份，而是数据本身的记录。 与人员相关的身份数据应委托给兼容字段组提供的[身份字段](../schema/composition.md#identity)。 |
+| `_id`<br>**（必需）** | Experience Event Class `_id`字段唯一标识摄取到Adobe Experience Platform中的各个事件。 此字段用于跟踪单个事件的唯一性，防止数据重复，并在下游服务中查找该事件。<br><br>在检测到重复事件的地方，Experience Platform应用程序和服务可能会以不同的方式处理重复。 例如，如果配置文件存储中已存在具有相同`_id`的事件，则删除配置文件服务中的重复事件。<br><br>在某些情况下，`_id`可以是[通用唯一标识符(UUID)](https://datatracker.ietf.org/doc/html/rfc4122)或[全局唯一标识符(GUID)](https://learn.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0)。<br><br>如果从源连接流式传输数据或直接从Parquet文件中摄取，则应当通过连接特定字段组合生成此值，这些字段组合使事件具有唯一性。 可连接的事件示例包括主ID、时间戳、事件类型等。 连接值必须为`uri-reference`格式字符串，这意味着必须删除任何冒号字符。 之后，应该使用SHA-256或您选择的其他算法对拼接值进行哈希处理。<br><br>请务必注意，**此字段不表示与个人**&#x200B;相关的身份，而是数据本身的记录。 与人员相关的身份数据应委托给兼容字段组提供的[身份字段](../schema/composition.md#identity)。 |
 | `eventMergeId` | 如果使用[Adobe Experience Platform Web SDK](/help/web-sdk/home.md)摄取数据，则表示导致创建记录的摄取批次的ID。 此字段在数据摄取时由系统自动填充。 不支持在Web SDK实施的上下文之外使用此字段。 |
 | `eventType` | 一个字符串，它指示事件的类型或类别。 如果要区分同一架构和数据集中的不同事件类型（例如，将产品查看事件与零售公司的添加到购物车事件区分开来），则可以使用此字段。<br><br>此属性的标准值在[附录部分](#eventType)中提供，包括预期使用案例的说明。 此字段是可扩展的枚举，这意味着您还可以使用自己的事件类型字符串对正在跟踪的事件进行分类。<br><br>`eventType`限制您在应用程序上每次点击只使用单个事件，因此您必须使用计算字段让系统知道哪个事件最重要。 有关详细信息，请参阅[计算字段的最佳实践](#calculated)部分。 |
 | `producedBy` | 描述事件生成者或来源的字符串值。 如果需要，可以使用此字段过滤掉某些事件生成器，以用于分段目的。<br><br>该属性的某些建议值在[附录部分](#producedBy)中提供。 此字段是可扩展的枚举，这意味着您还可以使用自己的字符串来表示不同的事件生成器。 |
@@ -50,11 +50,11 @@ ht-degree: 0%
 
 体验应用程序中的某些交互可能会导致技术上共享同一事件时间戳的多个相关事件，因此可以表示为单个事件记录。 例如，如果客户查看了您网站上的产品，这可能会导致事件记录具有两个潜在的`eventType`值：“产品查看”事件(`commerce.productViews`)或通用的“页面查看”事件(`web.webpagedetails.pageViews`)。 在这些情况下，您可以在单次点击中捕获多个事件时，使用计算字段捕获最重要的属性。
 
-使用[Adobe Experience Platform数据准备](../../data-prep/home.md)来映射、转换和验证XDM中的数据。 使用服务提供的可用[映射函数](../../data-prep/functions.md)，您可以调用逻辑运算符，以便在将数据引入Experience Platform时排列多事件记录数据的优先级、转换和/或合并这些数据。 在上述示例中，您可以指定`eventType`作为计算字段，无论何时发生“产品查看”与“页面查看”，该字段都会优先处理“产品查看”。
+使用[Adobe Experience Platform数据准备](../../data-prep/home.md)来映射、转换和验证XDM中的数据。 使用该服务提供的可用[映射函数](../../data-prep/functions.md)，您可以调用逻辑运算符，以便在将数据引入Experience Platform时排列多事件记录数据的优先级、转换和/或合并这些数据。 在上述示例中，您可以指定`eventType`作为计算字段，无论何时发生“产品查看”与“页面查看”，该字段都会优先处理“产品查看”。
 
-如果您是通过UI将数据手动摄取到Platform，请参阅[计算字段](../../data-prep/ui/mapping.md#calculated-fields)指南，以了解有关如何创建计算字段的特定步骤。
+如果您是通过UI将数据手动摄取到Experience Platform，请参阅[计算字段](../../data-prep/ui/mapping.md#calculated-fields)指南，以了解有关如何创建计算字段的特定步骤。
 
-如果您要使用源连接将数据流式传输到Platform，则可以配置源以利用计算字段。 有关如何在配置连接时实施计算字段的说明，请参阅特定源](../../sources/home.md)的[文档。
+如果您要使用源连接将数据流式传输到Experience Platform，则可以配置源以利用计算字段。 有关如何在配置连接时实施计算字段的说明，请参阅特定源](../../sources/home.md)的[文档。
 
 ## 兼容的架构字段组 {#field-groups}
 

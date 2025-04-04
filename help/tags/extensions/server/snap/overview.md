@@ -3,9 +3,9 @@ title: Snapchat Conversions API扩展概述
 description: 使用Snapchat转换将服务器端事件数据发送到Snap。
 last-substantial-update: 2025-01-20T00:00:00Z
 exl-id: 1c2d7243-5bcd-40a0-8515-9ab72613c5f3
-source-git-commit: 7cece312a2f019d48653dbd208cc8b7593ab0ee3
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '964'
+source-wordcount: '966'
 ht-degree: 2%
 
 ---
@@ -79,7 +79,7 @@ ht-degree: 2%
 
 ## 创建规则以将转换事件发送到Snap {#create-snap-rules}
 
-[规则](https://experienceleague.adobe.com/en/docs/platform-learn/implement-web-sdk/event-forwarding/setup-event-forwarding#create-an-event-forwarding-rule)用于触发Platform中的扩展。 本节概述如何使用转化API扩展在事件转发属性中创建规则以将转化事件发送到快照。
+[规则](https://experienceleague.adobe.com/en/docs/platform-learn/implement-web-sdk/event-forwarding/setup-event-forwarding#create-an-event-forwarding-rule)用于在Experience Platform中触发扩展。 本节概述如何使用转化API扩展在事件转发属性中创建规则以将转化事件发送到快照。
 
 ### 创建新规则
 
@@ -201,4 +201,4 @@ ht-degree: 2%
 
 ## 后续步骤 {#next-steps}
 
-本指南介绍了如何使用&#x200B;**[!DNL Snap Conversions API]**&#x200B;扩展将服务器端事件数据发送到&#x200B;**[!DNL Snap]**。 有关Platform中事件转发功能的详细信息，请参阅[事件转发概述](../../../ui/event-forwarding/overview.md)。
+本指南介绍了如何使用&#x200B;**[!DNL Snap Conversions API]**&#x200B;扩展将服务器端事件数据发送到&#x200B;**[!DNL Snap]**。 有关Experience Platform中事件转发功能的更多信息，请参阅[事件转发概述](../../../ui/event-forwarding/overview.md)。

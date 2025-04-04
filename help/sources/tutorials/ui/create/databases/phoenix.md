@@ -1,15 +1,15 @@
 ---
 title: 使用Experience Platform用户界面连接您的Phoenix帐户
-description: 了解如何使用用户界面连接您的Phoenix帐户，并将来自Phoenix数据库的数据引入Experience Platform。
+description: 了解如何使用用户界面连接您的Phoenix帐户并将数据从Phoenix数据库传送到Experience Platform。
 exl-id: 2ed469bc-1c72-4f04-a5f0-6a0bb519a6c2
-source-git-commit: 9ca4f19f7b59f075250bce7035303e11d3f3710f
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '613'
+source-wordcount: '614'
 ht-degree: 1%
 
 ---
 
-# 使用用户界面连接您的[!DNL Phoenix]帐户以Experience Platform
+# 使用UI将您的[!DNL Phoenix]帐户连接到Experience Platform
 
 >[!WARNING]
 >
@@ -21,7 +21,7 @@ ht-degree: 1%
 
 本教程需要对以下Adobe Experience Platform组件有一定的了解：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
@@ -47,7 +47,7 @@ ht-degree: 1%
 
 ## 连接您的[!DNL Phoenix]帐户
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问源工作区。 *[!UICONTROL 目录]*&#x200B;屏幕显示Experience Platform源目录中可用的各种源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问源工作区。 *[!UICONTROL 目录]*&#x200B;屏幕显示Experience Platform源目录中可用的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找特定源。
 
@@ -61,7 +61,7 @@ ht-degree: 1%
 >
 >* **[!UICONTROL 设置]**&#x200B;意味着您必须提供凭据并对新帐户进行身份验证，才能使用您选择的源。
 
-![已选择Phoenix源卡的Experience PlatformUI上的源目录。](../../../../images/tutorials/create/phoenix/catalog.png)
+![已选择Phoenix源卡的Experience Platform UI上的源目录。](../../../../images/tutorials/create/phoenix/catalog.png)
 
 此时会显示&#x200B;**[!UICONTROL 连接到Phoenix]**&#x200B;页面。 在此页上，您可以使用新凭据或现有凭据。
 

@@ -2,9 +2,9 @@
 title: 上载和实施扩展的端到端测试
 description: 了解如何在Adobe Experience Platform中验证、上传和测试您的扩展。
 exl-id: 6176a9e1-fa06-447e-a080-42a67826ed9e
-source-git-commit: 8e843ce14d726f18b77189b5523b823bfa4473be
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2345'
+source-wordcount: '2347'
 ht-degree: 22%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 22%
 >
 >经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-要在Adobe Experience Platform中测试标记扩展，请使用标记API和/或命令行工具来上传扩展包。 接下来，使用Platform UI或数据收集UI将扩展包安装到资产，并在标记库和内部版本中执行其功能。
+要在Adobe Experience Platform中测试标记扩展，请使用标记API和/或命令行工具来上传扩展包。 接下来，使用Experience Platform UI或数据收集UI将扩展包安装到资产，并在标记库和内部版本中执行其功能。
 
 本文档介绍如何对扩展实施端到端测试。
 
@@ -29,7 +29,7 @@ ht-degree: 22%
 
 上载之前，请验证是否存在任何必填字段或设置。例如，最佳做法是（至少）查看[扩展清单](../manifest.md)、[扩展配置](../configuration.md)、[视图](../web/views.md)和[库模块](../web/format.md)。
 
-您的徽标文件就是一个具体示例：向您的`extension.json`文件中添加`"iconPath": "example.svg",`行，并将该徽标图像文件包含在您的项目中。 这是将为扩展显示的图标的相对路径。 它不应以斜杠开头，必须引用一个扩展名为 `.svg` 的 SVG 文件。SVG在呈现正方形时应正常显示，并且可通过用户界面缩放。 有关详细信息，请参阅[如何缩放SVG文章](https://css-tricks.com/scale-svg/)。
+您的徽标文件就是一个具体示例：向您的`extension.json`文件中添加`"iconPath": "example.svg",`行，并将该徽标图像文件包含在您的项目中。 这是将为扩展显示的图标的相对路径。 它不应以斜杠开头，必须引用一个扩展名为 `.svg` 的 SVG 文件。SVG在呈现正方形时应正常显示，并且可以通过用户界面缩放。 有关更多详细信息，请参阅[如何缩放SVG文章](https://css-tricks.com/scale-svg/)。
 
 >[!NOTE]
 >
@@ -96,7 +96,7 @@ npx @adobe/reactor-uploader
 >
 >`localhost`不能用作URL值。 如果您使用`localhost` URL，请改用任何模拟值进行测试。 例如，example.com。
 
-若要将此属性用于扩展开发测试，必须展开&#x200B;**高级OPTIONS**，并确保选中&#x200B;**为扩展开发配置**&#x200B;的框。
+要将此属性用于扩展开发测试，必须展开&#x200B;**高级OPTIONS**，并确保选中&#x200B;**为扩展开发配置**&#x200B;的框。
 
 ![](../images/getting-started/launch-create-a-dev-property.png)
 
@@ -114,7 +114,7 @@ npx @adobe/reactor-uploader
 
 ![](../images/getting-started/catalog.png)
 
-目录将显示每个可用扩展的卡图标。如果您的扩展未显示在目录中，请确保您已完成Adobe管理控制台的“设置”和“创建扩展包”部分中的上述步骤。 如果Platform尚未完成初始处理，则扩展包也可能显示为“Pending”。
+目录将显示每个可用扩展的卡图标。如果您的扩展未显示在目录中，请确保您已完成上述“Adobe管理控制台的设置”和“创建扩展包”部分中的步骤。 如果Experience Platform尚未完成初始处理，则扩展包也可能显示为“Pending”。
 
 如果您已执行上述步骤，但仍未在目录中看到“Pending”或“Failed”扩展包，则应直接使用API检查扩展包的状态。 有关如何进行适当API调用的信息，请参阅API文档中的[获取扩展包](../../api/endpoints/extension-packages.md#lookup)。
 
@@ -122,7 +122,7 @@ npx @adobe/reactor-uploader
 
 ![](../images/getting-started/install-extension.png)
 
-配置屏幕将打开（如果扩展具有）。 添加配置扩展所需的任何信息，然后选择底部的&#x200B;**保存**。 此处显示的配置屏幕示例使用了Facebook扩展，该扩展需要像素ID。
+配置屏幕将打开（如果扩展具有）。 添加配置扩展所需的任何信息，然后选择底部的&#x200B;**保存**。 此处显示的配置屏幕示例使用Facebook扩展，该扩展需要像素ID。
 
 ![](../images/getting-started/fb-extension.png)
 
@@ -146,7 +146,7 @@ npx @adobe/reactor-uploader
 
 当用户从&#x200B;**Extension**&#x200B;下拉列表中选择您的扩展时，**数据元素类型**&#x200B;下拉列表中将填充您的扩展提供的所有数据元素类型。 然后，用户可以将每个数据元素映射到其源值。接下来，在数据元素更改事件或自定义代码事件中构建规则时，可以使用数据元素来触发要执行的规则。数据元素还可以在数据元素条件或规则中的其他条件、例外或操作中使用。
 
-创建数据元素（设置映射）后，用户只需引用数据元素即可引用源数据。如果值的来源发生变化（网站重新设计等），用户只需在UI中更新一次映射，所有数据元素都会自动接收新的源值。
+创建数据元素（设置映射）后，用户只需引用数据元素即可引用源数据。如果值的源发生更改（网站重新设计等），用户只需在UI中更新一次映射，并且所有数据元素都会自动接收新的源值。
 
 ### 规则
 
@@ -172,7 +172,7 @@ npx @adobe/reactor-uploader
 
 测试扩展时，请选择任何相关的事件、条件等。 扩展提供的任何事件、条件等。
 
-## Publish您的更改 {#publish}
+## 发布更改 {#publish}
 
 在主导航中，选择 **Publishing**，然后选择 **Add New Library** 链接：
 

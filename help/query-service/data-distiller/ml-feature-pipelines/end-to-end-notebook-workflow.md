@@ -4,9 +4,9 @@ description: 使用基于云的机器学习环境Notebooks创建训练和评分�
 hide: true
 hidefromtoc: true
 exl-id: 2853e7c7-cab8-4e1b-b73f-622c937fbbaf
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '620'
+source-wordcount: '632'
 ht-degree: 0%
 
 ---
@@ -32,13 +32,13 @@ Old title:
 
 根据用于实现工作流的服务，端到端的工作流可以分为三个广泛的阶段。
 
-- Platform数据的初步探索和准备依赖于Platform服务。
+- Experience Platform数据的初步探索和准备依赖于Experience Platform服务。
 - 模型训练和评分可在基于云的ML环境中利用工具。 ML平台的常见选择包括：Databricks ML、AWS Sagemaker、DataRobot等。
-- 将分数摄取回Platform以及基于这些分数的任何基于代码的受众创建和激活都将再次依赖于Platform服务。
+- 将分数重新摄取到Experience Platform以及基于这些分数的任何基于代码的受众创建和激活都将再次依赖于Experience Platform服务。
 
-但是，所有这些阶段都可以在ML环境的一个或多个笔记本中执行，用户无需在Platform和基于云的ML工具之间切换上下文。
+但是，所有这些阶段都可以在ML环境的一个或多个笔记本中执行，用户无需在Experience Platform及其基于云的ML工具之间切换上下文。
 
-该端到端流程的典型步骤被分为一组模块化笔记本，这些笔记本一起演示了涉及Platform数据的典型机器学习项目所涉及的步骤。 这样可以更轻松地使用笔记本作为实施特定活动的参考，并从相关笔记本中选择和调整代码以实施实际用例。 在实践中，数据科学家可以准备一个笔记本，为其ML项目实施端到端管道。 或者，数据科学家可以简单地调整示例代码以查询平台数据并在其ML环境中可用，然后再继续项目，在其ML平台中使用基于UI的功能。
+此端到端流程的典型步骤被分为一系列模块化笔记本，这些笔记本一起演示了涉及Experience Platform数据的典型机器学习项目所涉及的步骤。 这样可以更轻松地使用笔记本作为实施特定活动的参考，并从相关笔记本中选择和调整代码以实施实际用例。 在实践中，数据科学家可以准备一个笔记本，为其ML项目实施端到端管道。 或者，数据科学家可以简单地调整示例代码以查询Experience Platform数据，并在其ML环境中可用，然后再在其ML平台中使用基于UI的功能继续项目。
 
 链接存储库中包含的示例笔记本如下所述。 每个笔记本的详细文档都随笔记本本身的代码散布。
 
@@ -46,11 +46,11 @@ Old title:
 
 ### 生成合成数据 {#generate-synthetic-data}
 
-此笔记本提供了用于在Platform中生成合成配置文件数据集和体验事件的代码，这些数据集将用于说明CMLE工作流。
+此笔记本提供了用于在Experience Platform中生成合成配置文件数据集和体验事件的代码，这些数据集将用于说明CMLE工作流程。
 
 ### EDA和查询服务的功能 {#eda-and-featurization-with-query-service}
 
-此笔记本包含有关使用Platform查询服务的交互式查询对Platform数据集进行探索性分析的示例。 下面是一些特征化查询示例，用于为示例倾向模型创建训练数据集。
+此笔记本包含有关使用Experience Platform查询服务的交互式查询对Experience Platform数据集进行探索性分析的示例。 下面是一些特征化查询示例，用于为示例倾向模型创建训练数据集。
 
 ### 导出培训数据 {#export-training-data}
 
@@ -62,7 +62,7 @@ Old title:
 
 ### 对倾向模型评分
 
-此笔记本说明了如何对经过培训的倾向模型进行评分，以便为每个Platform客户个人资料生成倾向分数数据集。
+此笔记本说明了如何对经过培训的倾向模型进行评分，以便为每个Experience Platform客户个人资料生成倾向分数数据集。
 
 ### 将分数摄取到AEP
 
@@ -70,4 +70,4 @@ Old title:
 
 ### 从代码创建和激活受众
 
-此笔记本说明了用户如何根据分数创建受众，以及如何通过Platform应用程序从笔记本代码激活这些受众。
+此笔记本说明了用户如何根据分数创建受众，以及如何通过Experience Platform应用程序从笔记本代码激活这些受众。

@@ -1,11 +1,11 @@
 ---
-title: 将at.js与Experience PlatformWeb SDK进行比较
-description: 了解at.js功能与Experience PlatformWeb SDK的比较
+title: 将at.js与Experience Platform Web SDK进行比较
+description: 了解at.js功能与Experience Platform Web SDK的比较
 keywords: target；adobe target；activity.id；experience.id；renderDecisions；decisionScopes；预隐藏代码片段；vec；基于表单的体验编辑器；xdm；受众；决策；范围；架构；系统图；图
 exl-id: b63fe47d-856a-4cae-9057-51917b3e58dd
-source-git-commit: 9489b5345c2b13b9d05b26d646aa7f1576840fb8
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2182'
+source-wordcount: '2183'
 ht-degree: 2%
 
 ---
@@ -105,7 +105,7 @@ alloy("sendEvent", {
 });
 ```
 
-Experience PlatformWeb SDK会自动发送包含WEB SDK执行的选件的通知，以下示例显示通知请求有效负载的外观：
+Experience Platform Web SDK会自动发送包含WEB SDK执行的选件的通知，例如，通知请求有效负载如下所示：
 
 ```json
 {
@@ -221,7 +221,7 @@ adobe.target.getOffers({
 
 在`decisionScopes`下执行具有特殊作用域的`sendEvent`命令： `__view__`。 我们使用此范围作为信号，从Target中提取所有页面加载活动并预取所有视图。 Web SDK还将尝试评估所有基于VEC视图的活动。 Web SDK当前不支持禁用视图预取。
 
-要访问任何个性化内容，您可以提供回调函数，SDK收到来自服务器的成功响应后将调用该函数。 您的回调提供了一个结果对象，该对象可能包含包含包含任何返回的个性化内容的建议属性。
+要访问任何个性化内容，您可以提供回调函数，在SDK收到来自服务器的成功响应后，将调用该函数。 您的回调提供了一个结果对象，该对象可能包含包含包含任何返回的个性化内容的建议属性。
 
 示例：
 
@@ -712,7 +712,7 @@ document.addEventListener(adobe.target.event.REQUEST_SUCCEEDED, function(e) {
 
 >[!IMPORTANT]
 >
->确保您使用的是Platform Web SDK版本2.6.0或更高版本。
+>确保您使用的是Experience Platform Web SDK版本2.6.0或更高版本。
 
 响应令牌作为`propositions`的一部分返回，在`sendEvent`命令的结果中公开。 每个建议都包含一个由`items`组成的数组，并且如果在Target管理UI中启用了响应令牌，则每个项目都将有一个用响应令牌填充的`meta`对象。 [了解详情](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)
 
@@ -760,7 +760,7 @@ alloy("sendEvent", {
 使用at.js，您可以通过设置`bodyHidingEnabled: true`来管理闪烁，以便at.js可以解决此问题
 在提取和应用DOM更改之前预隐藏个性化容器。
 通过覆盖at.js `bodyHiddenStyle`，可以预先隐藏包含个性化内容的页面部分。
-默认情况下，`bodyHiddenStyle`隐藏整个HTML`body`。
+默认情况下，`bodyHiddenStyle`会隐藏整个HTML `body`。
 可使用`window.targetGlobalSettings`覆盖这两个设置。 `window.targetGlobalSettings`应在加载at.js之前放置。
 
 ### 使用Web SDK
@@ -776,7 +776,7 @@ alloy("configure", {
 });
 ```
 
-在异步加载Web SDK时，我们建议在插入Web SDK之前在页面中插入以下代码片段：
+异步加载Web SDK时，我们建议在插入Web SDK之前在页面中插入以下代码片段：
 
 ```html
 <script>
@@ -1027,7 +1027,7 @@ alloy("sendEvent", {
 });
 ```
 
-## 如何使用Target Recommendations
+## 如何使用Target推荐
 
 ### 使用at.js
 
@@ -1148,7 +1148,7 @@ window.targetPageParams = function() {
 
 ### 使用Web SDK
 
-Web SDK支持目标第三方ID。 但是，还需要执行几个步骤。 在深入研究解决方案之前，我们应该先谈一谈`identityMap`。
+Web SDK支持Target第三方ID。 但是，还需要执行几个步骤。 在深入研究解决方案之前，我们应该先谈一谈`identityMap`。
 标识映射允许客户发送多个标识。 所有身份都处于命名空间中。 每个命名空间可以具有一个或多个标识。 可以将特定标识标记为主要标识。
 有了这些知识，我们可以了解设置Web sdk以使用Target第三方ID的必要步骤。
 
@@ -1255,8 +1255,8 @@ At.js会公开以下调试功能：
 
 在使用Web SDK时，您拥有多种调试功能：
 
-* 使用[保证](/help/assurance/home.md)
-* [已启用Web SDK调试](/help/web-sdk/use-cases/debugging.md)
+* 使用[Assurance](/help/assurance/home.md)
+* [已启用Web SDK debug](/help/web-sdk/use-cases/debugging.md)
 * 使用[Web SDK监视挂接](https://github.com/adobe/alloy/wiki/Monitoring-Hooks)
 * 使用[Adobe Experience Platform Debugger](/help/debugger/home.md)
 * 目标跟踪

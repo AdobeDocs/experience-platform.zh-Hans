@@ -2,9 +2,9 @@
 title: 参数化查询
 description: 了解如何在Adobe Experience Platform UI中使用参数化查询。
 exl-id: 5c5ac691-5e29-4262-ba53-84dcc56e744f
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '690'
+source-wordcount: '691'
 ht-degree: 11%
 
 ---
@@ -79,4 +79,4 @@ SELECT
 
 通过阅读本文档，您已了解如何在Adobe Experience Platform UI中参数化查询并在计划的查询运行中使用它们。 本文档还重点说明了如何检查日志中查询执行中使用的参数值。
 
-接下来，建议您阅读有关[监视计划查询](./monitor-queries.md)的指南，以便通过Platform UI更好地了解所有查询作业的状态。
+接下来，建议您阅读有关[监视计划查询](./monitor-queries.md)的指南，以便通过Experience Platform UI更好地了解所有查询作业的状态。

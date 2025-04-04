@@ -4,9 +4,9 @@ title: 功能板概述
 type: Documentation
 description: 浏览Adobe Experience Platform中的多个功能板，查看有关您组织的数据的重要信息，如在每日快照期间捕获的数据。
 exl-id: d56cb139-392d-4bbc-97ec-202a0c8a2863
-source-git-commit: 25953a5a1f5b32de7d150dbef700ad06ce6014df
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '307'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Adobe Experience Platform提供了多个功能板，您可以通过这些功能�
 
 ## 仪表板简介
 
-功能板提供有关组织数据的现成报告，并且直接内置到Platform中的营销人员工作流程中。 这些仪表板无需额外的IT支持，也不需要通过额外的数据仓库设计和实施来导出和处理数据所需的时间和精力。
+功能板提供关于贵组织数据的现成报表，并直接内置到Experience Platform中的营销人员工作流程中。 这些仪表板无需额外的IT支持，也不需要通过额外的数据仓库设计和实施来导出和处理数据所需的时间和精力。
 
 ## 仪表板入门
 
@@ -38,6 +38,6 @@ Adobe Experience Platform提供了多个功能板，您可以通过这些功能�
 
 ## 可用仪表板
 
-目前，Experience Platform中有多个功能板可用，每个功能板均可透明地显示贵组织的客户数据。
+Experience Platform中目前提供了多个功能板，每个功能板均可透明地显示贵组织的客户数据。
 
 要了解有关这些仪表板及其量度的更多信息，请从文档导航中的可用仪表板列表中选择一个仪表板。

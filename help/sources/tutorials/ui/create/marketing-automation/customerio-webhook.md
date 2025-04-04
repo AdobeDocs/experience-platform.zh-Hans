@@ -3,9 +3,9 @@ title: 在UI中创建Customer.io Source连接和数据流
 description: 了解如何使用Adobe Experience Platform UI创建Customer.io源连接。
 badge: Beta 版
 exl-id: 7655a34c-808a-46e3-94e3-022a433755a4
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1213'
+source-wordcount: '1225'
 ht-degree: 1%
 
 ---
@@ -53,25 +53,25 @@ ht-degree: 1%
 }
 ```
 
-### 为[!DNL Customer.io]创建平台架构 {#create-platform-schema}
+### 为[!DNL Customer.io]创建Experience Platform架构 {#create-platform-schema}
 
-您还必须确保创建用于源的Platform架构。 有关如何创建架构的完整步骤，请参阅有关[创建平台架构](../../../../../xdm/schema/composition.md)的教程。
+您还必须确保创建一个Experience Platform架构以用于您的源。 有关如何创建架构的完整步骤，请参阅有关[创建Experience Platform架构](../../../../../xdm/schema/composition.md)的教程。
 
-![Platform UI屏幕截图显示了Customer.io的示例架构](../../../../images/tutorials/create/marketing-automation/customerio-webhook/schema.png)
+![Experience Platform UI屏幕截图显示了Customer.io的示例架构](../../../../images/tutorials/create/marketing-automation/customerio-webhook/schema.png)
 
 ## 连接您的[!DNL Customer.io]帐户 {#connect-account}
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区，并查看Experience Platform中可用的源目录。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区，并查看Experience Platform中可用的源目录。
 
 使用&#x200B;*[!UICONTROL 类别]*&#x200B;菜单按类别筛选源。 或者，在搜索栏中输入源名称，以从目录查找特定源。
 
 转到[!UICONTROL 营销自动化]类别以查看[!DNL Customer.io]源卡。 要开始，请选择&#x200B;**[!UICONTROL 添加数据]**。
 
-带有Customer.io卡的目录![平台UI屏幕截图](../../../../images/tutorials/create/marketing-automation/customerio-webhook/catalog.png)
+带有Customer.io卡的目录![Experience Platform UI屏幕截图](../../../../images/tutorials/create/marketing-automation/customerio-webhook/catalog.png)
 
 ## 选择数据 {#select-data}
 
-此时将显示&#x200B;**[!UICONTROL 选择数据]**&#x200B;步骤，该步骤为您提供了一个用于选择要导入到Platform的数据的界面。
+此时将显示&#x200B;**[!UICONTROL 选择数据]**&#x200B;步骤，该步骤为您提供了一个界面以选择要带入Experience Platform的数据。
 
 * 界面的左侧是一个浏览器，允许您查看帐户内的可用数据流；
 * 界面的右侧部分允许您预览JSON文件中最多100行数据。
@@ -98,7 +98,7 @@ ht-degree: 1%
 
 此时将显示[!UICONTROL 映射]步骤，该步骤为您提供了一个接口，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
 
-Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](../../../../../data-prep/ui/mapping.md)。
+Experience Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](../../../../../data-prep/ui/mapping.md)。
 
 下面列出的所有映射都是强制性的，应在继续执行[!UICONTROL 审阅]阶段之前进行设置。
 
@@ -156,11 +156,11 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 >[!TIP]
 >
->您可以为报表webhook订阅各种不同的事件。 当满足[!DNL Customer.io]操作事件触发条件时，每个事件的消息都将摄取到Platform。 有关不同事件的详细信息，请参阅[[!DNL Customer.io] 事件文档](https://customer.io/docs/webhooks/#events)。
+>您可以为报表webhook订阅各种不同的事件。 当满足[!DNL Customer.io]操作事件触发条件时，每个事件的消息都将摄取到Experience Platform。 有关不同事件的详细信息，请参阅[[!DNL Customer.io] 事件文档](https://customer.io/docs/webhooks/#events)。
 
 ## 后续步骤 {#next-steps}
 
-通过完成本教程，您已成功配置流式数据流以将您的[!DNL Customer.io]数据引入Experience Platform。 要监视正在摄取的数据，请参阅有关使用Platform UI监视流式数据流的[指南](../../monitor-streaming.md)。
+通过完成本教程，您已成功配置流式数据流以将您的[!DNL Customer.io]数据引入Experience Platform。 要监视正在摄取的数据，请参阅关于使用Experience Platform UI监视流式数据流的[指南](../../monitor-streaming.md)。
 
 ## 其他资源 {#additional-resources}
 
@@ -178,6 +178,6 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 ![Customer.io UI屏幕截图显示活动日志](../../../../images/tutorials/create/marketing-automation/customerio-webhook/activity-logs.png)
 
-* 在Platform UI中，选择源目录上[!DNL Customer.io]卡片菜单旁边的&#x200B;**[!UICONTROL 查看数据流]**。 接下来，选择&#x200B;**[!UICONTROL 预览数据集]**&#x200B;以验证为您在[!DNL Customer.io]内选择的事件摄取的数据。
+* 在Experience Platform UI中，选择源目录上[!DNL Customer.io]卡片菜单旁边的&#x200B;**[!UICONTROL 查看数据流]**。 接下来，选择&#x200B;**[!UICONTROL 预览数据集]**&#x200B;以验证为您在[!DNL Customer.io]内选择的事件摄取的数据。
 
-![显示已摄取事件的平台UI屏幕截图](../../../../images/tutorials/create/marketing-automation/customerio-webhook/platform-dataset.png)
+![Experience Platform UI屏幕截图显示摄取的事件](../../../../images/tutorials/create/marketing-automation/customerio-webhook/platform-dataset.png)

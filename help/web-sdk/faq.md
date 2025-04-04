@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK常见问题解答
 description: 获取有关Adobe Experience Platform Web SDK的常见问题解答。
 exl-id: 6ddb4b4d-c9b8-471a-bd2e-135dc4202876
-source-git-commit: c26abeed890e06dce4e77133502b7031443bb4fa
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2080'
+source-wordcount: '2082'
 ht-degree: 2%
 
 ---
@@ -31,7 +31,7 @@ Web SDK以与解决方案无关的方式(XDM)将数据发送到Experience Platfo
 * 这些库都不是为了相互配合而构建的。
 * 跨解决方案和Adobe Experience Platform用例要求这些不同的库是相互依赖的，这会导致部署摩擦。
 
-虽然Platform中的标记允许尽可能轻松地部署和管理这些库，但以下内容仍然存在问题：
+虽然Experience Platform中的标记允许尽可能轻松地部署和管理这些库，但以下内容仍然存在问题：
 
 * 库大小(页面上的Adobe代码过多)
 * 性能（站点加载时间过长）
@@ -124,7 +124,7 @@ Web SDK正在快速演变。 正在处理更多用例。 您可以在此处找�
 
 ## 我可以在开始使用Web SDK时迁移ECID，以便我的网站访客不会开始显示为新访客吗？
 
-是，Adobe Experience Platform Web SDK提供了身份迁移功能。 有关更多详细信息，请按照[Platform Web SDK标识文档](/help/web-sdk/identity/overview.md#id-migration)中有关ID迁移的说明操作。
+是，Adobe Experience Platform Web SDK提供了身份迁移功能。 有关更多详细信息，请按照[Experience Platform Web SDK标识文档](/help/web-sdk/identity/overview.md#id-migration)中有关ID迁移的说明操作。
 
 ## Web SDK与标记有何不同？
 

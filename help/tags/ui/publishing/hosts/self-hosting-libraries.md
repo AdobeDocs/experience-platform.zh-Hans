@@ -2,10 +2,10 @@
 title: 自托管库
 description: 了解如何在Adobe Experience Platform中为标记库内部版本实施自托管。
 exl-id: 8c3bf202-de7a-46e0-801f-0cede24865fd
-source-git-commit: 91b28fc284344b42020b0e49b64ac023e492d572
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '489'
-ht-degree: 63%
+source-wordcount: '491'
+ht-degree: 72%
 
 ---
 
@@ -13,13 +13,13 @@ ht-degree: 63%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 Adobe Experience Platform中的标记允许生成一组名为[内部版本](../builds.md)的文件。 这组文件控制应用程序在运行时的行为。
 
 内部版本需要托管在某个位置，这样客户端设备才能在运行时根据需要对其进行检索。
 
-这些文件的托管既可以由平台为您进行管理，也可以由您自行管理。
+这些文件的托管既可以由Experience Platform为您进行管理，也可以由您自行管理。
 
 ## 由 Adobe 管理 {#managed-by-adobe}
 
@@ -33,7 +33,7 @@ Adobe不从事Web托管业务。 如果您选择由 Adobe 管理您的托管文�
 
 ## 自托管
 
-如果不希望由 Adobe 管理您的托管文件，则必须自行托管。要托管文件，您需要从Platform中获取已完成的内部版本，并负责通过公司的发行周期将文件放到公司管理的服务器上。
+如果不希望由 Adobe 管理您的托管文件，则必须自行托管。要托管文件，您需要从Experience Platform中获取已完成的内部版本，并负责通过贵公司的发行周期将文件放到公司管理的服务器上。
 
 ### 为何使用自托管？
 

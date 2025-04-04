@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 零售业数据模型
 description: 查看零售业的标准化数据模型，该模型与Experience Data Model (XDM)兼容，可用于Adobe Experience Platform。
 exl-id: 40cbb243-668b-4280-815f-1f94a06b6b87
-source-git-commit: 23bf89977b13a1f51e1ea7a0bb0561522a09745d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '458'
+source-wordcount: '459'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->所描述的ERD是有关如何针对此行业用例建模数据的建议。 要在Platform中使用此数据模型，您必须自行构建推荐的架构及其关系。 有关详细信息，请参阅UI中有关管理[架构](../../ui/resources/schemas.md)和[关系](../../tutorials/relationship-ui.md)的指南。
+>所描述的ERD是有关如何针对此行业用例建模数据的建议。 要在Experience Platform中使用此数据模型，您必须自行构建推荐的架构及其关系。 有关详细信息，请参阅UI中有关管理[架构](../../ui/resources/schemas.md)和[关系](../../tutorials/relationship-ui.md)的指南。
 
 使用以下图例来解释此ERD：
 

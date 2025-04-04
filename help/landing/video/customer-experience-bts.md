@@ -7,15 +7,15 @@ doc-type: video
 activity: understand
 thumbnail: 28144.jpg
 exl-id: 8562e0da-7aac-418a-8e93-f0339d3ffc66
-source-git-commit: f12baaa9d4b37f1101792a4ae479b5a62893eb68
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '85'
+source-wordcount: '86'
 ht-degree: 0%
 
 ---
 
-# Experience Platform支持的客户体验的幕后
+# 通过Experience Platform提供的客户体验幕后
 
-观看了视频后，该视频显示了[由Platform](customer-experience.md)提供支持的客户体验，随后请观看幕后视频，以了解如何使用Adobe Experience Platform提供这种体验。
+观看了由Experience Platform](customer-experience.md)提供支持的[客户体验的视频后，请到幕后查看Adobe Experience Platform如何用于改善此体验。
 
 >[!VIDEO](https://video.tv.adobe.com/v/28144?quality=12&learn=on)

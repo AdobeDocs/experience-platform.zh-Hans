@@ -4,16 +4,16 @@ description: 了解如何使用审核查询API在Experience Platform中检索审
 role: Developer
 feature: Audits, API
 exl-id: c365b6d8-0432-41a5-9a07-44a995f69b7d
-source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '474'
+source-wordcount: '477'
 ht-degree: 1%
 
 ---
 
 # 审核事件端点
 
-审核日志用于提供各种服务和功能的用户活动的详细信息。 日志中记录的每个操作都包含元数据，这些元数据指示操作类型、日期和时间、执行操作的用户的电子邮件ID以及与操作类型相关的其他属性。 [!DNL Audit Query] API中的`/audit/events`端点允许您以编程方式检索[!DNL Platform]中组织活动的事件数据。
+审核日志用于提供各种服务和功能的用户活动的详细信息。 日志中记录的每个操作都包含元数据，这些元数据指示操作类型、日期和时间、执行操作的用户的电子邮件ID以及与操作类型相关的其他属性。 [!DNL Audit Query] API中的`/audit/events`端点允许您以编程方式检索[!DNL Experience Platform]中组织活动的事件数据。
 
 ## 快速入门
 
@@ -152,9 +152,9 @@ curl -X POST \
 | `imsOrgId` | 发生事件的组织的ID。 |
 | `permissionResource` | 提供权限的产品或功能会执行该操作。 资源可以是以下任一资源： <ul><li>`Activation` </li><li>`ActivationAssociation` </li><li>`AnalyticSource` </li><li>`AudienceManagerSource` </li><li>`BizibleSource` </li><li>`CustomerAttributeSource` </li><li>`Dataset` </li><li>`EnterpriseSource` </li><li>`LaunchSource` </li><li>`MarketoSource` </li><li>`ProductProfile` </li><li>`ProfileConfig` </li><li>`Sandbox` </li><li>`Schema` </li><li>`Segment` </li><li>`StreamingSource` </li></ul> |
 | `permissionType` | 操作涉及的权限类型。 |
-| `assetType` | 执行操作的平台资源的类型。 |
-| `assetId` | 执行操作的平台资源的唯一标识符。 |
-| `assetName` | 执行操作的平台资源的名称。 |
+| `assetType` | 执行操作的Experience Platform资源的类型。 |
+| `assetId` | 执行操作的Experience Platform资源的唯一标识符。 |
+| `assetName` | 执行操作的Experience Platform资源的名称。 |
 | `action` | 为事件记录的操作类型。 操作可以是以下任一操作： <ul><li>`Add` </li><li>`Create` </li><li>`Dataset activate` </li><li>`Dataset remove` </li><li>`Delete` </li><li>`Disable for profile` </li><li>`Enable` </li><li>`Enable for profile` </li><li>`Profile activate` </li><li>`Profile remove` </li><li>`remove` </li><li>`reset` </li><li>`segment activate` </li><li>`segment remove` </li><li>`update` </li></ul> |
 | `status` | 操作的状态。 状态可以是以下任一状态： </li><li>`Allow` </li><li>`Deny` </li><li>`Failure` </li><li>`Success` </li></ul> |
 

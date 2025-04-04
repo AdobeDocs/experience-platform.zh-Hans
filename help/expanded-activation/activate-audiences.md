@@ -2,9 +2,9 @@
 title: 通过扩展的激活来激活Audience Manager受众
 description: 了解如何通过Audience Manager扩展的激活，将Audience Manager受众激活到社交和广告目标。
 exl-id: 4105f5c5-db69-414f-9ee4-8630b0a86da7
-source-git-commit: 2222e9fbf75f3082d331868f820247e0c0ce3ba2
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '482'
+source-wordcount: '486'
 ht-degree: 0%
 
 ---
@@ -23,30 +23,30 @@ ht-degree: 0%
 
 ## 步骤1：配置Audience Manager源连接 {#configure-source}
 
-[Audience Manager源连接器](../sources/connectors/adobe-applications/audience-manager.md)发送在Adobe Audience Manager中收集的受众数据，以便在扩展激活支持的目标平台中激活。
+[Audience Manager源连接器](../sources/connectors/adobe-applications/audience-manager.md)发送在Adobe Audience Manager中收集的受众数据，以便在扩展激活支持的目标平台中进行激活。
 
 按照如何[创建Audience Manager源连接](../sources/tutorials/ui/create/adobe-applications/audience-manager.md)的指南配置源连接器。
 
-![Platform UI图像显示“源”选项卡与Audience Manager源连接。](assets/sources-tab.png)
+![Experience Platform UI图像显示“源”选项卡与Audience Manager源连接。](assets/sources-tab.png)
 
 >[!TIP]
 >
 >Adobe Audience Manager源连接器是“扩展激活”中唯一可用的源连接器。
 >
->如果要基于其他标识符摄取受众，则必须购买[Real-Time CDP](../rtcdp/overview.md)的版本。 有关更多详细信息，请联系您的Adobe代表。
+>如果要基于其他标识符摄取受众，则必须购买[Real-Time CDP](../rtcdp/overview.md)的版本。 有关更多详细信息，请与Adobe代表联系。
 
 ### 查看和监视摄取的受众 {#view-audiences}
 
-您从Audience Manager引入扩展激活的受众可以在&#x200B;**[!UICONTROL 受众]**&#x200B;仪表板中查看。
+您从Audience Manager引入扩展激活的受众可以在&#x200B;**[!UICONTROL 受众]**&#x200B;功能板中查看。
 
 要查看您的受众，请转到&#x200B;**[!UICONTROL 客户]** -> **[!UICONTROL 受众]** -> **[!UICONTROL 浏览]**。
 
-![显示受众页面的平台UI图像。](assets/audiences-browse.png)
+![Experience Platform UI图像显示“受众”页面。](assets/audiences-browse.png)
 
 >[!IMPORTANT]
 >
 >* 在“扩展激活”中完全填充受众最多可能需要48小时。 这也适用于对现有Audience Manager受众的更新。
->* 新创建的Audience Manager受众不会自动显示在扩展激活中。 要在扩展激活中摄取新区段，必须通过Audience Manager源连接器添加它们。
+>* 新创建的Audience Manager受众不会自动显示在扩展的激活中。 要在扩展激活中摄取新区段，必须通过Audience Manager源连接器添加它们。
 
 配置Audience Manager源连接器后，请移至[步骤2](#create-destination-connection)。
 
@@ -58,7 +58,7 @@ ht-degree: 0%
 
 [!DNL Expanded Activation]的可用目标类别为[广告](../destinations/catalog/advertising/overview.md)和[社交](../destinations/catalog/social/overview.md)。
 
-![平台UI图像显示扩展激活的目标目录。](assets/destination-catalog.png)
+![Experience Platform UI图像显示扩展激活的目标目录。](assets/destination-catalog.png)
 
 若要创建到目标平台的新连接，请按照[上的指南进行操作，以创建新的目标连接](../destinations/ui/connect-destination.md)。 然后，移至[步骤3](#activate-audiences)。
 
@@ -66,7 +66,7 @@ ht-degree: 0%
 
 在成功[引入Audience Manager受众](#configure-source)和[创建新的目标连接](#create-destination-connection)后，您现在可以将受众激活到您选择的目标平台。
 
-![平台UI图像显示扩展激活的目标目录。](assets/activate-audiences.png)
+![Experience Platform UI图像显示扩展激活的目标目录。](assets/activate-audiences.png)
 
 若要将受众激活到您的目标，请按照[上的指南操作，了解如何将受众激活到流式目标](../destinations/ui/activate-segment-streaming-destinations.md)。
 

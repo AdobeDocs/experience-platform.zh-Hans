@@ -2,16 +2,16 @@
 title: 流服务错误消息
 description: 了解在针对源使用流服务时可能遇到的错误消息。
 exl-id: af79c547-25d0-459a-8de7-eb14206a8694
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1667'
+source-wordcount: '1668'
 ht-degree: 35%
 
 ---
 
 # 流服务错误消息
 
-流量服务用于收集和集中来自Platform内各种不同来源的客户数据。 该服务提供了一个用户界面和RESTful API，可让您轻松设置到各种数据提供商的源连接。 通过这些源连接，您可以验证第三方系统、设置摄取运行的时间，以及管理数据摄取吞吐量。
+流量服务用于从Experience Platform内各种不同的来源收集和集中客户数据。 该服务提供了一个用户界面和RESTful API，可让您轻松设置到各种数据提供商的源连接。 通过这些源连接，您可以验证第三方系统、设置摄取运行的时间，以及管理数据摄取吞吐量。
 
 本文档提供了有关流服务的错误消息、说明和建议解决方案的目录。
 

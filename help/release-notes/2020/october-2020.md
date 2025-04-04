@@ -1,14 +1,14 @@
 ---
-title: Adobe Experience Platform发行说明2020年10月
+title: Adobe Experience Platform 发行说明（2020 年 10 月）
 description: Adobe Experience Platform 的 2020 年 10 月发行说明。
 doc-type: release notes
 last-update: October, 2020
 author: crhoades, ens28527
 exl-id: 89f5e2bd-8892-4d3f-a3fe-5433bb5ece7a
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1017'
-ht-degree: 16%
+ht-degree: 17%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 16%
 **发行日期： 2020年10月14日**
 
 - [数据准备](#data-prep)
-- [实时客户配置文件](#profile)
+- [实时客户轮廓](#profile)
 - [Segmentation Service](#segmentation)
 - [源](#sources)
 - [价值实现时间](#time-to-value)
@@ -35,22 +35,22 @@ ht-degree: 16%
 
 有关更多信息，请参阅[数据准备概述](../../data-prep/home.md)。
 
-## 实时客户配置文件 {#profile}
+## 实时客户轮廓 {#profile}
 
 Adobe Experience Platform 使您能够为客户提供协调、一致且相关的体验，无论他们何时何地与您的品牌互动均是如此。通过[!DNL Real-Time Customer Profile]，您可以查看合并来自多个渠道（包括在线、离线、CRM和第三方数据）的数据的每个单个客户的整体视图。 [!DNL Profile]允许您将不同的客户数据整合到一个统一视图中，并提供每个客户交互的带时间戳的可操作帐户。
 
 | 功能 | 描述 |
 | ------- | ----------- |
 | 配置文件预览API添加 | 配置文件预览API (`/previewsamplestatus`)现在包括查看组织内配置文件片段总数的细分以及查看跨身份命名空间配置文件片段分布的功能。 |
-| 合并架构视图更新 | 在Experience PlatformUI中，用户可以更轻松地找到有关参与合并架构的所有架构和数据集的信息，以及表面关键属性，如身份和关系字段。 这些更新提高了对配置文件是否正确配置、身份是否正确拼合以及数据是否已成功摄取进行故障排除和验证的能力。 |
+| 合并架构视图更新 | 在Experience Platform UI中，用户可以更轻松地找到有关参与合并架构的所有架构和数据集的信息，以及表面关键属性，如身份和关系字段。 这些更新提高了对配置文件是否正确配置、身份是否正确拼合以及数据是否已成功摄取进行故障排除和验证的能力。 |
 
 有关[!DNL Real-Time Customer Profile]的更多信息，包括有关使用[!DNL Profile]数据的教程和最佳实践，请阅读[实时客户配置文件概述](../../profile/home.md)。
 
 ## Segmentation Service {#segmentation}
 
-Adobe Experience Platform Segmentation Service提供了一个用户界面和RESTful API，允许您根据[!DNL Real-Time Customer Profile]数据构建区段并生成受众。 这些区段是在[!DNL Platform]上集中配置和维护的，因此任何Adobe应用程序都可以方便地访问它们。
+Adobe Experience Platform Segmentation Service提供了一个用户界面和RESTful API，允许您根据[!DNL Real-Time Customer Profile]数据构建区段并生成受众。 这些区段是在[!DNL Experience Platform]上集中配置和维护的，因此任何Adobe应用程序都可以轻松访问它们。
 
-[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的配置文件子集。区段可以基于记录数据（例如人口统计信息）或代表客户与您的品牌互动的时间序列事件。
+[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的轮廓子集。区段可以基于记录数据（例如人口统计信息）或代表客户与您的品牌互动的时间序列事件。
 
 **新增功能**
 
@@ -62,7 +62,7 @@ Adobe Experience Platform Segmentation Service提供了一个用户界面和REST
 
 ## 源 {#sources}
 
-Adobe Experience Platform可以从外部源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强该数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强该数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
 
 [!DNL Experience Platform]提供了一个RESTful API和一个交互式UI，可让您轻松为各种数据提供程序设置源连接。 这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 
@@ -70,7 +70,7 @@ Adobe Experience Platform可以从外部源摄取数据，同时允许您使用[
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| SFTP的SSH身份验证支持 | 您可以使用RSA/DSA Open SSH密钥将SFTP帐户连接到[!DNL Platform]。 有关详细信息，请参阅[SFTP概述](../../sources/connectors/cloud-storage/sftp.md)。 |
+| SFTP的SSH身份验证支持 | 您可以使用RSA/DSA Open SSH密钥将SFTP帐户连接到[!DNL Experience Platform]。 有关详细信息，请参阅[SFTP概述](../../sources/connectors/cloud-storage/sftp.md)。 |
 | UX改进 | 您可以在数据摄取过程中为[!DNL Profile]启用数据集。 有关详细信息，请参阅[云存储数据流工作流](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md)教程。 |
 
 要了解有关源的更多信息，请参阅[源概述](../../sources/home.md)。

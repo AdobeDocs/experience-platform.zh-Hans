@@ -3,9 +3,9 @@ title: 在源UI Workspace中摄取加密数据
 description: 了解如何在源UI工作区中摄取加密数据。
 badge: Beta 版
 exl-id: 34aaf9b6-5c39-404b-a70a-5553a4db9cdb
-source-git-commit: 70bfebc747c7e6267939eb313048cb2d0e132202
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1456'
+source-wordcount: '1457'
 ht-degree: 6%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 6%
 >
 >测试版支持在源UI中进行加密数据摄取。 该功能和文档可能会发生更改。
 
-您可以使用云存储批处理源将加密的数据文件和文件夹摄取到Adobe Experience Platform。 通过加密的数据摄取，您可以利用非对称加密机制将批量数据安全地传输到Experience Platform中。 支持的非对称加密机制为PGP和GPG。
+您可以使用云存储批处理源将加密的数据文件和文件夹摄取到Adobe Experience Platform。 通过加密的数据摄取，您可以利用非对称加密机制将批量数据安全地传输到Experience Platform。 支持的非对称加密机制为PGP和GPG。
 
 阅读本指南，了解如何使用UI通过云存储批处理源摄取加密数据。
 
@@ -24,17 +24,17 @@ ht-degree: 6%
 
 在继续本教程之前，请阅读以下文档以更好地了解以下Experience Platform功能和概念。
 
-* [源](../../home.md)：在Experience Platform中使用源从Adobe应用程序或第三方数据源中摄取数据。
+* [源](../../home.md)：使用Experience Platform中的源从Adobe应用程序或第三方数据源中摄取数据。
 * [数据流](../../../dataflows/home.md)：数据流是跨Experience Platform移动数据的数据作业的表示形式。 您可以使用源工作区创建数据流，以将数据从给定源摄取到Experience Platform。
 * [沙盒](../../../sandboxes/home.md)：使用Experience Platform中的沙盒在Experience Platform实例之间创建虚拟分区，并创建专用于开发或生产的环境。
 
 ### 高级大纲
 
-* 使用Experience PlatformUI中的源工作区创建加密密钥对。
+* 在Experience Platform UI中使用sources工作区创建加密密钥对。
    * 或者，您也可以创建自己的签名验证密钥对，为加密数据提供额外的安全层。
 * 使用加密密钥对中的公钥加密数据。
 * 将加密数据放入云存储中。 在此步骤中，还必须确保在云存储中拥有数据的示例文件，该文件可用作参考，以将源数据映射到体验数据模型(XDM)架构。
-* 使用云存储批次源，在Experience PlatformUI的源工作区中开始数据摄取流程。
+* 在Experience Platform UI中使用云存储批处理源，在源工作区中开始数据摄取过程。
 * 在源连接创建过程中，提供与用于加密数据的公共密钥对应的密钥ID。
    * 如果您还使用签名验证密钥对机制，则还必须提供与加密数据对应的签名验证密钥ID。
 * 继续数据流创建步骤。
@@ -52,11 +52,11 @@ ht-degree: 6%
 
 加密密钥对是一种由公钥和私钥组成的非对称加密机制。 使用公钥加密数据，然后使用私钥解密所述数据。
 
-您可以通过Experience PlatformUI创建加密密钥对。 生成后，您将收到公钥和相应的密钥ID。 使用公共密钥加密数据，然后在您正在摄取加密的数据时使用密钥ID确认您的身份。 私钥会自动进入Experience Platform，存储在安全的保险库中，并且仅在数据准备好解密后才会使用。
+您可以通过Experience Platform UI创建加密密钥对。 生成后，您将收到公钥和相应的密钥ID。 使用公共密钥加密数据，然后在您正在摄取加密的数据时使用密钥ID确认您的身份。 私钥会自动发送到Experience Platform，并存储在安全的保险库中，并且仅在数据准备好进行解密后才会使用。
 
 >[!ENDSHADEBOX]
 
-在Platform UI中，导航到源工作区，然后从顶部标题中选择[!UICONTROL 键对]。
+在Experience Platform UI中，导航到源工作区，然后从顶部标题中选择[!UICONTROL 键对]。
 
 ![选择“键对”标头的源目录。](../../images/tutorials/edi/catalog.png)
 
@@ -68,7 +68,7 @@ ht-degree: 6%
 
 ![密钥创建窗口，已选择加密密钥。](../../images/tutorials/edi/choose_encryption_key_type.png)
 
-提供加密密钥的标题和密码。 密码是加密密钥的附加保护层。 创建后，Experience Platform将该密码短语存储在与公钥不同的安全电子仓库中。 您必须提供非空字符串作为密码短语。 完成后，选择&#x200B;**[!UICONTROL 创建]**。
+提供加密密钥的标题和密码。 密码是加密密钥的附加保护层。 创建后，Experience Platform会将该密码短语存储在与公钥不同的安全保管库中。 您必须提供非空字符串作为密码短语。 完成后，选择&#x200B;**[!UICONTROL 创建]**。
 
 ![加密密钥创建窗口，其中提供了标题和密码。](../../images/tutorials/edi/create_encryption_key.png)
 
@@ -91,7 +91,7 @@ ht-degree: 6%
 
 **什么是签名验证密钥？**
 
-签名验证密钥是另一种涉及私钥和公钥的加密机制。 在这种情况下，您可以创建签名验证密钥对，并使用私钥进行签名并为数据提供额外的加密层。 然后，您将共享相应的公钥以Experience Platform。 在引入期间，Experience Platform将使用公钥来验证与您的私钥关联的签名。
+签名验证密钥是另一种涉及私钥和公钥的加密机制。 在这种情况下，您可以创建签名验证密钥对，并使用私钥进行签名并为数据提供额外的加密层。 然后，您将向Experience Platform共享相应的公钥。 在摄取期间，Experience Platform将使用公钥验证与您的私钥关联的签名。
 
 >[!ENDSHADEBOX]
 
@@ -136,7 +136,7 @@ ht-degree: 6%
 
 ![源工作流的“选择数据”步骤，其中选择加密数据文件以进行摄取。](../../images/tutorials/edi/select_data.png)
 
-接下来，从源数据中选择一个示例文件。 由于您的数据已加密，因此Experience Platform需要一个样例文件来创建可以映射到源数据的XDM架构。
+接下来，从源数据中选择一个示例文件。 由于您的数据已加密，因此Experience Platform将要求一个示例文件来创建可映射到您的源数据的XDM架构。
 
 ![ “此文件是否已加密？” 启用切换并选中“选择示例文件”按钮。](../../images/tutorials/edi/select_sample_file.png)
 
@@ -165,4 +165,4 @@ ht-degree: 6%
 
 ## 后续步骤
 
-通过阅读本文档，您现在可以从云存储批处理源将加密数据摄取到Experience Platform。 有关如何使用API引入加密数据的信息，请阅读有关使用 [!DNL Flow Service] API](../api/encrypt-data.md)引入加密数据的指南[。 有关Experience Platform中源的一般信息，请阅读[源概述](../../home.md)。
+通过阅读本文档，您现在可以将加密数据从云存储批处理源摄取到Experience Platform。 有关如何使用API引入加密数据的信息，请阅读有关使用 [!DNL Flow Service] API](../api/encrypt-data.md)引入加密数据的指南[。 有关Experience Platform上源的一般信息，请阅读[源概述](../../home.md)。

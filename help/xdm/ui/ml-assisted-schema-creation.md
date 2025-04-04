@@ -2,9 +2,10 @@
 title: 机器学习辅助模式创建
 description: 了解如何在Experience Platform用户界面中创建架构。
 badgeBeta: label="Beta 版" type="Informative"
-source-git-commit: f1db409a2af34ac66c81d7e5a11ee1bc8e5f4c9c
+exl-id: 6b14caed-a3ad-4834-8fa8-8d67dce6290e
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '996'
+source-wordcount: '997'
 ht-degree: 2%
 
 ---
@@ -31,7 +32,7 @@ ht-degree: 2%
 
 ## 导航到创建架构工作流 {#navigate-to-schema-creation-workflow}
 
-从Platform UI的左侧导航中，选择&#x200B;**[!UICONTROL 架构]**&#x200B;工作区。 出现&#x200B;**[!UICONTROL 架构]**&#x200B;工作区。 选择&#x200B;**[!UICONTROL 创建架构]**&#x200B;以添加新架构以启动架构创建工作流。
+从Experience Platform UI的左侧导航中，选择&#x200B;**[!UICONTROL 架构]**&#x200B;工作区。 出现&#x200B;**[!UICONTROL 架构]**&#x200B;工作区。 选择&#x200B;**[!UICONTROL 创建架构]**&#x200B;以添加新架构以启动架构创建工作流。
 
 ![左侧导航中带有架构的架构工作区和“创建架构”突出显示。](../images/ui/ml-schema-creation/schemas-workspace-create-schema.png)
 

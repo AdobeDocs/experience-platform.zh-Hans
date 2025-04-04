@@ -5,9 +5,9 @@ title: 产品API端点
 description: 基于属性的访问控制API中的/products端点允许您以编程方式管理Adobe Experience Platform中的产品。
 role: Developer
 exl-id: 44ee9a9d-7a13-4d59-a1a9-97764dbd3763
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '513'
+source-wordcount: '514'
 ht-degree: 3%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 3%
 
 ## 快速入门
 
-本指南中使用的API端点属于基于属性的访问控制API。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+本指南中使用的API端点属于基于属性的访问控制API。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience Platform API所需的所需标头的重要信息。
 
 ## 检索授权产品的列表 {#list}
 
@@ -70,7 +70,7 @@ curl -X GET \
 
 ## 按产品ID查找权限类别
 
-您可以在指定产品ID时通过向`/products/{PRODUCT_ID}/categories`端点发出GET请求来查找给定产品的权限类别。
+您可以查找给定产品的权限类别，方法是在指定产品ID时向`/products/{PRODUCT_ID}/categories`端点发出GET请求。
 
 **API格式**
 
@@ -240,6 +240,6 @@ curl -X GET \
 | `id` | 查询的权限集的对应ID。 |
 | `name` | 查询的权限集的相应名称。 |
 | `category` | 可用的权限类别。 |
-| `permissions` | 权限包括查看和/或使用Platform功能的功能，例如创建沙盒、定义架构和管理数据集。 |
+| `permissions` | 权限包括查看和/或使用Experience Platform功能的功能，例如创建沙盒、定义架构和管理数据集。 |
 | `permissions.resource` | 主体可以或无法访问的资源或对象。 资源可以是文件、应用程序、服务器甚至API。 |
 | `permissions.actions` | 允许主体对查询的资源执行的操作。 可能的值包括： `view`、`read`、`create`、`edit`和`delete` |

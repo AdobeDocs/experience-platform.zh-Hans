@@ -2,10 +2,10 @@
 title: 扩展开发概述
 description: 了解 Adobe Experience Platform 中的不同标记扩展类型的主要组件以及扩展开发流程。
 exl-id: b72df3df-f206-488d-a690-0f086973c5b6
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '935'
-ht-degree: 18%
+source-wordcount: '938'
+ht-degree: 23%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 18%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../term-updates.md)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../term-updates.md)。
 
 Adobe Experience Platform中标记的主要目标之一是创建一个开放的生态系统，在该生态系统中，Adobe以外的工程师可以在其网站和移动应用程序上展示其他功能。 这可以通过标记扩展来实现。 将扩展安装在标记资产上后，该扩展的功能即可供该资产的所有用户使用。
 
@@ -37,13 +37,13 @@ Adobe Experience Platform中标记的主要目标之一是创建一个开放的�
 
 ### 视图
 
-视图是一个HTML文件，能够加载到Tags应用程序中的[`iframe`元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe)中，特别是通过Platform UI和数据收集UI。 视图必须包含由扩展提供的脚本，并符合小型API要求，才能与应用程序进行通信。
+视图是一个HTML文件，该文件能够加载到Tags应用程序中的[`iframe`元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe)中，尤其是通过Experience Platform UI和数据收集UI。 视图必须包含由扩展提供的脚本，并符合小型API要求，才能与应用程序进行通信。
 
 对于任何扩展，最重要的视图文件都是其配置。 有关详细信息，请参阅[扩展配置](#configuration)部分。
 
 对于在视图中使用的库，目前没有任何限制。换言之，您可以使用jQuery、Underscore、React、Angular、Bootstrap或其他。 但是，仍建议让扩展具有与UI相似的外观。
 
-建议将所有与视图相关的文件（HTML、CSS、JavaScript）放置在与库模块文件分离的单个子目录中。在`extension.json`中，您可以描述此视图子目录的位置。 然后，Platform将从其Web服务器为此子目录（仅此子目录）提供服务。
+建议将所有与视图相关的文件（HTML、CSS、JavaScript）放置在与库模块文件分离的单个子目录中。在`extension.json`中，您可以描述此视图子目录的位置。 然后，Experience Platform将从其Web服务器为此子目录（仅此子目录）提供服务。
 
 ## 库组件 {#components}
 
@@ -93,4 +93,4 @@ Adobe Experience Platform中标记的主要目标之一是创建一个开放的�
 
 ## 提交扩展
 
-构建完扩展后，您可以提交该扩展，以将其列在Platform的扩展目录中。 有关详细信息，请参阅[扩展提交过程概述](./submit/overview.md)。
+构建完扩展后，您可以提交该扩展，以将其列在Experience Platform的扩展目录中。 有关详细信息，请参阅[扩展提交过程概述](./submit/overview.md)。

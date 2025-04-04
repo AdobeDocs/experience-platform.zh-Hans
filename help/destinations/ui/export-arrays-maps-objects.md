@@ -3,9 +3,9 @@ title: 从Real-Time CDP导出数组、映射和对象
 type: Tutorial
 description: 了解如何将阵列、映射和对象从Real-Time CDP导出到云存储目标。
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: 2d59a92d7ff1e0be7977a90df460190a3b417809
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1095'
+source-wordcount: '1096'
 ht-degree: 13%
 
 ---
@@ -42,7 +42,7 @@ ht-degree: 13%
 * 您可以在`JSON`和`Parquet`文件中将阵列、映射和对象导出到云存储目标。 对于Enterprise和Edge个性化目标，导出的数据类型为`JSON`。 人员和潜在客户受众受支持，而帐户受众不受支持。
 * 对于基于文件的云存储目标，您&#x200B;*可以*&#x200B;将数组、映射和对象导出到CSV文件，但前提是使用`array_to_string`函数使用计算字段功能并将它们串联为字符串。
 
-## Platform中的数组和其他对象类型 {#arrays-strings-other-objects}
+## Experience Platform中的数组和其他对象类型 {#arrays-strings-other-objects}
 
 在Experience Platform中，您可以使用[XDM架构](/help/xdm/home.md)管理不同的字段类型。 在添加对数组导出的支持之前，您可以将简单的键值对类型字段(例如Experience Platform中的字符串)导出到所需的目标。 以前支持导出的此类字段示例为`personalEmail.address`：`johndoe@acme.org`。
 

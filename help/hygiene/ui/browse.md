@@ -2,9 +2,9 @@
 title: 浏览数据生命周期工作单
 description: 了解如何在Adobe Experience Platform用户界面中查看和管理现有数据生命周期工作单。
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '841'
+source-wordcount: '843'
 ht-degree: 27%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 27%
 
 首次在UI中访问&#x200B;**[!UICONTROL 数据生命周期]**&#x200B;工作区时，将显示现有工作单列表及其基本详细信息。
 
-显示Platform UI中[!UICONTROL 数据生命周期]工作区的![图像](../images/ui/browse/work-order-list.png)
+在Experience Platform UI中显示[!UICONTROL 数据生命周期]工作区的![图像](../images/ui/browse/work-order-list.png)
 
 该列表一次只显示一个类别的工作单。 选择&#x200B;**[!UICONTROL 使用者]**&#x200B;以查看记录删除任务列表，选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以查看计划的数据集过期列表。
 
@@ -97,7 +97,7 @@ ht-degree: 27%
 
 ## 后续步骤
 
-本指南介绍了如何在Platform UI中查看和管理现有的数据生命周期工作单。 有关创建您自己的工作单的信息，请参阅以下文档：
+本指南介绍了如何在Experience Platform UI中查看和管理现有数据生命周期工作单。 有关创建您自己的工作单的信息，请参阅以下文档：
 
 * [管理数据集过期时间](./dataset-expiration.md)
 * [管理记录删除](./record-delete.md)

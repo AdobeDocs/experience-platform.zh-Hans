@@ -7,10 +7,10 @@ level: Beginner
 role: User, Developer, Admin
 topic: Integrations
 exl-id: a52870c4-10e6-45a0-a502-f48da3398f3f
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
 source-wordcount: '1267'
-ht-degree: 1%
+ht-degree: 5%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >  
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](https://experienceleague.adobe.com/docs/experience-platform/tags/term-updates.html)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](https://experienceleague.adobe.com/docs/experience-platform/tags/term-updates.html)。
 
 Mailchimp [事件转发](../../../ui/event-forwarding/overview.md)扩展将事件发送到Mailchimp营销API，这可以触发Mailchimp营销活动、历程或交易的电子邮件。
 
@@ -103,11 +103,11 @@ Mailchimp [事件转发](../../../ui/event-forwarding/overview.md)扩展将事�
 
 ## 数据收集
 
-在[规则](../../../ui/managing-resources/rules.md)中使用此扩展时，该扩展会通过每个事件向Mailchimp发送多个数据值。 对于典型实施，您可以将[Adobe Experience Platform Web SDK扩展](../../client/web-sdk/overview.md)配置为将该数据发送到[!DNL Platform Edge Network]，以供扩展在事件转发属性中使用。
+在[规则](../../../ui/managing-resources/rules.md)中使用此扩展时，该扩展会通过每个事件向Mailchimp发送多个数据值。 对于典型实施，您可以将[Adobe Experience Platform Web SDK扩展](../../client/web-sdk/overview.md)配置为将该数据发送到[!DNL Experience Platform Edge Network]，以供扩展在事件转发属性中使用。
 
 此扩展所需的数据可以作为XDM数据（使用[`xdm`](/help/web-sdk/commands/sendevent/xdm.md)对象）或非XDM数据（使用[`data`](/help/web-sdk/commands/sendevent/data.md)对象）从Web SDK发送。
 
-例如，如果客户购买产品或注册了您网站上的事件，则您可以使用此扩展通过Mailchimp发送确认电子邮件。 将所需信息从Web SDK发送到Edge Network后，该扩展会通过Mailchimp触发电子邮件。
+例如，如果客户购买产品或注册了您网站上的事件，则您可以使用此扩展通过Mailchimp发送确认电子邮件。 将所需信息从Web SDK发送到Edge Network后，该扩展将通过Mailchimp触发电子邮件。
 
 ![添加事件操作配置](../../../images/extensions/server/mailchimp/action-configurations.png)
 
@@ -130,7 +130,7 @@ Mailchimp [事件转发](../../../ui/event-forwarding/overview.md)扩展将事�
 
 >[!IMPORTANT]
 >  
->上述&#x200B;**示例路径**&#x200B;值仅为示例。 这些数据元素中引用的字段名称和[路径](../../../ui/event-forwarding/overview.md#data-element-path)在属性中可能不同，具体取决于您在上面的步骤中命名和配置Web SDK的方式。
+>上述&#x200B;**示例路径**&#x200B;值仅为示例。 这些数据元素中引用的字段名称和[路径](../../../ui/event-forwarding/overview.md#data-element-path)在您的资产中可能不同，具体取决于您在上面步骤中命名和配置Web SDK的方式。
 
 在事件转发属性中，您可以为上述每个字段创建一个数据元素。 创建后，您可以引用此扩展的[!UICONTROL 添加事件]操作中的数据元素。
 

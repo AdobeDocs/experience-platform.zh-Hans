@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；流连接；创建流连
 title: 使用流服务API创建HTTP API流连接
 description: 本教程提供了有关如何使用HTTP API源通过流服务API为原始数据和XDM数据创建流连接的步骤
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1646'
+source-wordcount: '1656'
 ht-degree: 3%
 
 ---
@@ -21,14 +21,14 @@ ht-degree: 3%
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [[!DNL Experience Data Model (XDM)]](../../../../../xdm/home.md)： [!DNL Platform]用于组织体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM)]](../../../../../xdm/home.md)： [!DNL Experience Platform]用于组织体验数据的标准化框架。
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，实时提供统一的使用者配置文件。
 
 此外，创建流连接需要您具有目标XDM架构和数据集。 要了解如何创建这些数据，请阅读有关[流式处理记录数据](../../../../../ingestion/tutorials/streaming-record-data.md)的教程或有关[流式处理时间序列数据](../../../../../ingestion/tutorials/streaming-time-series-data.md)的教程。
 
-### 使用平台API
+### 使用Experience Platform API
 
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../../landing/api-guide.md)指南。
+有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../../../landing/api-guide.md)指南。
 
 ## 创建基本连接
 
@@ -36,7 +36,7 @@ ht-degree: 3%
 
 ### 未经身份验证的连接
 
-未经身份验证的连接是标准的流连接，当您想要将数据流式传输到Platform中时，可以创建。
+未经身份验证的连接是标准的流连接，当您想要将数据流式传输到Experience Platform中时，可以创建。
 
 要创建未经身份验证的基本连接，请在提供连接的名称、数据类型和HTTP API连接规范ID的同时向`/connections`端点发出POST请求。 此ID为`bc7b00d6-623a-4dfc-9fdb-f1240aeadaeb`。
 
@@ -130,7 +130,7 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
 
 ### 已验证的连接
 
-当您需要区分来自受信任来源和不受信任来源的记录时，应使用经过身份验证的连接。 用户如果希望发送包含个人身份信息(PII)的信息，则应在将信息流式传输到Platform时创建一个经过身份验证的连接。
+当您需要区分来自受信任来源和不受信任来源的记录时，应使用经过身份验证的连接。 用户如果希望发送包含个人身份信息(PII)的信息，则应在将信息流式传输到Experience Platform时创建一个经过身份验证的连接。
 
 要创建经过身份验证的基本连接，您必须在请求中包含`authenticationRequired`参数，并将其值指定为`true`。 在此步骤中，您还可以为已验证的基本连接提供源ID。 此参数是可选的，如果未提供，它将使用与`name`属性相同的值。
 
@@ -332,15 +332,15 @@ curl -X POST \
 
 ## 创建目标XDM架构 {#target-schema}
 
-为了在Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。
+为了在Experience Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Experience Platform数据集。
 
-通过向[架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)执行POST请求，可以创建目标XDM架构。
+通过对[架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)执行POST请求，可以创建目标XDM架构。
 
 有关如何创建目标XDM架构的详细步骤，请参阅有关使用API [创建架构的教程](../../../../../xdm/api/schemas.md)。
 
 ### 创建目标数据集 {#target-dataset}
 
-可以通过向[目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)执行POST请求，在有效负载中提供目标架构的ID来创建目标数据集。
+通过向[目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)执行POST请求，在有效负载中提供目标架构的ID，可以创建目标数据集。
 
 有关如何创建目标数据集的详细步骤，请参阅有关[使用API创建数据集的教程](../../../../../catalog/api/create-dataset.md)。
 
@@ -559,7 +559,7 @@ curl -X POST \
 }
 ```
 
-## 发布要引入到Platform的数据 {#ingest-data}
+## 发布要引入到Experience Platform的数据 {#ingest-data}
 
 >[!NOTE]
 >
@@ -686,15 +686,15 @@ curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20
 | 属性 | 描述 |
 | -------- | ----------- |
 | `{BASE_CONNECTION_ID}` | 之前创建的流连接的ID。 |
-| `xactionId` | 在服务器端为您刚刚发送的记录生成的唯一标识符。 此ID可帮助Adobe跟踪此记录的生命周期，包括各种系统和调试。 |
+| `xactionId` | 在服务器端为您刚刚发送的记录生成的唯一标识符。 此ID可帮助Adobe跟踪此记录在各种系统和调试中的生命周期。 |
 | `receivedTimeMs` | 显示收到请求时间的时间戳（以毫秒为单位）。 |
 
 
 ## 后续步骤
 
-通过学习本教程，您已创建一个流HTTP连接，从而能够使用流端点将数据摄取到Platform。 有关在UI中创建流连接的说明，请参阅[创建流连接教程](../../../ui/create/streaming/http.md)。
+通过学习本教程，您已创建一个流HTTP连接，从而能够使用流端点将数据摄取到Experience Platform。 有关在UI中创建流连接的说明，请参阅[创建流连接教程](../../../ui/create/streaming/http.md)。
 
-要了解如何将数据流式传输到Platform，请阅读有关[流式传输时间序列数据](../../../../../ingestion/tutorials/streaming-time-series-data.md)的教程或有关[流式传输记录数据](../../../../../ingestion/tutorials/streaming-record-data.md)的教程。
+要了解如何将数据流式传输到Experience Platform，请阅读有关[流式传输时间序列数据](../../../../../ingestion/tutorials/streaming-time-series-data.md)的教程或有关[流式传输记录数据](../../../../../ingestion/tutorials/streaming-record-data.md)的教程。
 
 ## 附录
 

@@ -1,10 +1,10 @@
 ---
-title: 使用人工智能生成的Recommendations将CSV文件映射到XDM架构
+title: 使用人工智能生成的推荐将CSV文件映射到XDM架构
 description: 本教程介绍如何使用人工智能生成的推荐将CSV文件映射到XDM架构。
 exl-id: 1daedf0b-5a25-4ca5-ae5d-e9ee1eae9e4d
-source-git-commit: cbebee894d68f60f82e1154f41dcecc76c706a3b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1172'
+source-wordcount: '1179'
 ht-degree: 1%
 
 ---
@@ -13,24 +13,24 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->有关Platform中一般可用的CSV映射功能的信息，请参阅文档[将CSV文件映射到现有架构](./existing-schema.md)。
+>有关Experience Platform中一般可用的CSV映射功能的信息，请参阅文档[将CSV文件映射到现有架构](./existing-schema.md)。
 
-为了将CSV数据摄取到[!DNL Adobe Experience Platform]，该数据必须映射到[!DNL Experience Data Model] (XDM)架构。 您可以选择映射到[现有架构](./existing-schema.md)，但如果您不知道确切要使用哪个架构或应如何构建该架构，则可以在Platform UI中使用基于机器学习(ML)模型的动态推荐。
+为了将CSV数据摄取到[!DNL Adobe Experience Platform]，该数据必须映射到[!DNL Experience Data Model] (XDM)架构。 您可以选择映射到[现有架构](./existing-schema.md)，但如果您不知道确切要使用哪个架构或应如何构建该架构，则可以在Experience Platform UI中使用基于机器学习(ML)模型的动态推荐。
 
 ## 快速入门
 
-本教程需要您对[!DNL Platform]的以下组件有一定的了解：
+本教程需要您对[!DNL Experience Platform]的以下组件有一定的了解：
 
-* [[!DNL Experience Data Model (XDM System)]](../../../xdm/home.md)： [!DNL Platform]用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM System)]](../../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
    * 您必须至少了解XDM](../../../xdm/home.md#data-behaviors)中[行为的概念，以便决定要将数据映射到[!UICONTROL Profile]类（记录行为）还是[!UICONTROL ExperienceEvent]类（时间序列行为）。
-* [批量摄取](../../batch-ingestion/overview.md)： [!DNL Platform]从用户提供的数据文件中摄取数据的方法。
+* [批量摄取](../../batch-ingestion/overview.md)： [!DNL Experience Platform]从用户提供的数据文件中摄取数据的方法。
 * [Adobe Experience Platform数据准备](../../batch-ingestion/overview.md)：一套功能，允许您映射和转换摄取的数据以符合XDM架构。 有关[数据准备函数](../../../data-prep/functions.md)的文档与架构映射特别相关。
 
 ## 提供数据流详细信息
 
-在Experience PlatformUI的左侧导航中选择&#x200B;**[!UICONTROL 源]**。 在&#x200B;**[!UICONTROL 目录]**&#x200B;视图中，导航到&#x200B;**[!UICONTROL 本地系统]**&#x200B;类别。 在&#x200B;**[!UICONTROL 本地文件上传]**&#x200B;下，选择&#x200B;**[!UICONTROL 添加数据]**。
+在Experience Platform UI的左侧导航中选择&#x200B;**[!UICONTROL 源]**。 在&#x200B;**[!UICONTROL 目录]**&#x200B;视图中，导航到&#x200B;**[!UICONTROL 本地系统]**&#x200B;类别。 在&#x200B;**[!UICONTROL 本地文件上传]**&#x200B;下，选择&#x200B;**[!UICONTROL 添加数据]**。
 
-![平台UI中的[!UICONTROL 源]目录，正在选择[!UICONTROL 本地文件上传]下的[!UICONTROL 添加数据]。](../../images/tutorials/map-csv-recommendations/local-file-upload.png)
+![Experience Platform UI中的[!UICONTROL 源]目录，正在选择[!UICONTROL 本地文件上传]下的[!UICONTROL 添加数据]。](../../images/tutorials/map-csv-recommendations/local-file-upload.png)
 
 出现&#x200B;**[!UICONTROL 映射CSV XDM架构]**&#x200B;工作流，从&#x200B;**[!UICONTROL 数据流详细信息]**&#x200B;步骤开始。
 
@@ -47,7 +47,7 @@ ht-degree: 1%
 | [!UICONTROL 描述] | 数据流的描述。 |
 | [!UICONTROL 错误诊断] | 启用后，将为新摄取的批次生成错误消息，在获取[API](../../batch-ingestion/api-overview.md)中的相应批次时可以查看这些错误消息。 |
 | [!UICONTROL 部分摄取] | 启用后，将在指定的错误阈值内摄取新批次数据的有效记录。 利用此阈值，可配置在整个批处理失败之前可接受的错误百分比。 |
-| [!UICONTROL 数据流详细信息] | 为将CSV数据导入Platform的数据流提供名称和可选描述。 启动此工作流时，会自动为数据流分配默认名称。 更改名称是可选的。 |
+| [!UICONTROL 数据流详细信息] | 为将CSV数据导入Experience Platform的数据流提供名称和可选描述。 启动此工作流时，会自动为数据流分配默认名称。 更改名称是可选的。 |
 | [!UICONTROL 警报] | 从[产品内警报](../../../observability/alerts/overview.md)的列表中选择您希望在数据流启动后收到的数据流状态。 |
 
 {style="table-layout:auto"}
@@ -76,7 +76,7 @@ ht-degree: 1%
 >
 >在源到目标字段映射工作流中，您可以根据各种条件筛选架构中的所有字段。 默认行为是显示所有映射的字段。 要更改显示的字段，请选择搜索输入字段旁边的筛选器图标，然后从下拉选项中进行选择。<br> ![CSV到XDM架构创建工作流的映射阶段，筛选器图标和下拉菜单突出显示。](../../images/tutorials/map-csv-recommendations/source-field-to-target-mapping-filter.png "CSV到XDM架构创建工作流的映射阶段，筛选器图标和下拉菜单突出显示。"){width="100" zoomable="yes"}
 
-从此处，您可以根据需要选择[编辑字段映射](#edit-mappings)或[更改它们与](#edit-schema)关联的字段组。 满足要求后，选择&#x200B;**[!UICONTROL 完成]**&#x200B;以完成映射并启动您之前配置的数据流。 CSV数据被引入到系统中，并根据生成的架构结构填充数据集，以供下游平台服务使用。
+从此处，您可以根据需要选择[编辑字段映射](#edit-mappings)或[更改它们与](#edit-schema)关联的字段组。 满足要求后，选择&#x200B;**[!UICONTROL 完成]**&#x200B;以完成映射并启动您之前配置的数据流。 CSV数据会引入到系统中，并根据生成的架构结构填充数据集，以供下游Experience Platform服务使用。
 
 ![正在选择[!UICONTROL 完成]按钮，正在完成CSV映射过程。](../../images/tutorials/map-csv-recommendations/finish-mapping.png)
 
@@ -98,8 +98,8 @@ CSV字段使用ML模型自动映射到现有XDM字段组。 如果要更改任�
 
 ## 后续步骤
 
-本指南介绍了如何使用AI生成的推荐将CSV文件映射到XDM架构，从而允许您通过批量摄取将数据引入Platform。
+本指南介绍了如何使用人工智能生成的推荐将CSV文件映射到XDM架构，从而允许您通过批量摄取将数据引入Experience Platform。
 
-有关将CSV文件映射到现有架构的步骤，请参阅[现有架构映射工作流](./existing-schema.md)。 有关通过预建源连接将数据实时流式传输到Platform的信息，请参阅[源概述](../../../sources/home.md)。
+有关将CSV文件映射到现有架构的步骤，请参阅[现有架构映射工作流](./existing-schema.md)。 有关通过预建源连接将数据实时流式传输到Experience Platform的信息，请参阅[源概述](../../../sources/home.md)。
 
 您还可以使用机器学习(ML)算法&#x200B;**根据示例CSV数据**&#x200B;生成架构。 此工作流会根据CSV文件的结构和内容自动创建新架构。 这个新创建的架构与您的数据格式匹配，可在为大型复杂数据集定义结构、字段和数据类型时为您节省时间并提高准确性。 有关此工作流的详细信息，请参阅[ML辅助模式创建指南](../../../xdm/ui/ml-assisted-schema-creation.md)。

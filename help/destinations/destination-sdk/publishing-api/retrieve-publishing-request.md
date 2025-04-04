@@ -2,9 +2,9 @@
 description: 本页是用于通过Adobe Experience Platform Destination SDK检索有关目标发布请求详细信息的API调用的示例。
 title: 检索目标发布请求
 exl-id: fceef12d-a52c-4259-a91e-7af88b132800
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '836'
+source-wordcount: '837'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 >
 >**API终结点**： `platform.adobe.io/data/core/activation/authoring/destinations/publish`
 
-配置和测试目标后，可将其提交给Adobe进行审查和发布。 请阅读[提交Destination SDK](../guides/submit-destination.md)中编写的目标以进行审核，了解作为目标提交过程的一部分您必须执行的所有其他步骤。
+配置和测试目标后，可将其提交到Adobe进行审查和发布。 请阅读[在Destination SDK](../guides/submit-destination.md)中编写的目标提交以进行审核，了解作为目标提交流程的一部分而必须执行的所有其他步骤。
 
 在以下情况下，使用发布目标API端点提交发布请求：
 
@@ -118,7 +118,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 |---------|----------|------|
 | `destinationId` | 字符串 | 已提交进行发布的目标配置的目标ID。 |
 | `publishDetailsList.configId` | 字符串 | 已提交目标的目标发布请求的唯一ID。 |
-| `publishDetailsList.allowedOrgs` | 字符串 | 返回目标可用的组织Experience Platform。<br> <ul><li> 对于`"destinationType": "PUBLIC"`，此参数返回`"*"`，这意味着目标可用于所有Experience Platform组织。</li><li> 对于`"destinationType": "DEV"`，此参数返回您用于创作和测试目标的组织的组织ID。</li></ul> |
+| `publishDetailsList.allowedOrgs` | 字符串 | 返回目标适用的Experience Platform组织。<br> <ul><li> 对于`"destinationType": "PUBLIC"`，此参数返回`"*"`，这意味着目标适用于所有Experience Platform组织。</li><li> 对于`"destinationType": "DEV"`，此参数返回您用于创作和测试目标的组织的组织ID。</li></ul> |
 | `publishDetailsList.status` | 字符串 | 目标发布请求的状态。 可能的值为`TEST`、`REVIEW`、`APPROVED`、`PUBLISHED`、`DENIED`、`REVOKED`、`DEPRECATED`。 值为`PUBLISHED`的目标已上线，可供Experience Platform客户使用。 |
 | `publishDetailsList.destinationType` | 字符串 | 目标的类型。 值可以是`DEV`和`PUBLIC`。 `DEV`对应于Experience Platform组织中的目标。 `PUBLIC`对应于您已提交发布的目标。 以Git术语来考虑这两个选项，其中`DEV`版本代表您的本地创作分支，`PUBLIC`版本代表远程主分支。 |
 | `publishDetailsList.publishedDate` | 字符串 | 提交目标以供发布的日期（以纪元时间表示）。 |
@@ -170,7 +170,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 |---------|----------|------|
 | `destinationId` | 字符串 | 已提交进行发布的目标配置的目标ID。 |
 | `publishDetailsList.configId` | 字符串 | 已提交目标的目标发布请求的唯一ID。 |
-| `publishDetailsList.allowedOrgs` | 字符串 | 返回目标可用的组织Experience Platform。<br> <ul><li> 对于`"destinationType": "PUBLIC"`，此参数返回`"*"`，这意味着目标可用于所有Experience Platform组织。</li><li> 对于`"destinationType": "DEV"`，此参数返回您用于创作和测试目标的组织的组织ID。</li></ul> |
+| `publishDetailsList.allowedOrgs` | 字符串 | 返回目标适用的Experience Platform组织。<br> <ul><li> 对于`"destinationType": "PUBLIC"`，此参数返回`"*"`，这意味着目标适用于所有Experience Platform组织。</li><li> 对于`"destinationType": "DEV"`，此参数返回您用于创作和测试目标的组织的组织ID。</li></ul> |
 | `publishDetailsList.status` | 字符串 | 目标发布请求的状态。 可能的值为`TEST`、`REVIEW`、`APPROVED`、`PUBLISHED`、`DENIED`、`REVOKED`、`DEPRECATED`。 值为`PUBLISHED`的目标已上线，可供Experience Platform客户使用。 |
 | `publishDetailsList.destinationType` | 字符串 | 目标的类型。 值可以是`DEV`和`PUBLIC`。 `DEV`对应于Experience Platform组织中的目标。 `PUBLIC`对应于您已提交发布的目标。 以Git术语来考虑这两个选项，其中`DEV`版本代表您的本地创作分支，`PUBLIC`版本代表远程主分支。 |
 | `publishDetailsList.publishedDate` | 字符串 | 提交目标以供发布的日期（以纪元时间表示）。 |
@@ -183,4 +183,4 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 ## API错误处理
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅平台疑难解答指南中的[API状态代码](../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../landing/troubleshooting.md#request-header-errors)。
+Destination SDK API端点遵循常规Experience Platform API错误消息原则。 请参阅Experience Platform疑难解答指南中的[API状态代码](../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../landing/troubleshooting.md#request-header-errors)。

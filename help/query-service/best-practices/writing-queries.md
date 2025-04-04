@@ -5,9 +5,9 @@ title: 有关查询服务中查询执行的一般指导
 type: Tutorial
 description: 本文档概述了在Adobe Experience Platform查询服务中编写查询时要了解的重要详细信息。
 exl-id: a7076c31-8f7c-455e-9083-cbbb029c93bb
-source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1088'
+source-wordcount: '1089'
 ht-degree: 2%
 
 ---
@@ -50,7 +50,7 @@ Adobe Experience Platform [!DNL Query Service]有两种查询执行模型：交�
 
 >[!NOTE]
 >
->Experience CloudID (ECID)也称为MCID，它将继续用在命名空间中。
+>Experience Cloud ID (ECID)也称为MCID，将继续在命名空间中使用。
 
 ```sql
 SELECT endUserIds._experience.mcid
@@ -201,7 +201,7 @@ LIMIT 10
 
 ## 查看表信息
 
-连接到查询服务后，您可以使用`\d`或`SHOW TABLES`命令查看平台上的所有可用表。
+连接到查询服务后，您可以使用`\d`或`SHOW TABLES`命令在Experience Platform上查看所有可用的表。
 
 ### 标准表格视图
 
@@ -309,7 +309,7 @@ LIMIT 50;
 | Windows Phone 7.5 | 11054.0 |
 | Android 4.3 | 9221.0 |
 
-## 删除重复项
+## 重复数据删除
 
 查询服务支持重复数据删除，或从数据中删除重复行。 有关重复数据删除的详细信息，请参阅[查询服务重复数据删除指南](../key-concepts/deduplication.md)。
 

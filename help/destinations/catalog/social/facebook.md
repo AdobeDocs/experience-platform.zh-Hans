@@ -3,7 +3,7 @@ keywords: facebook连接；facebook连接；facebook目标；facebook；instagra
 title: Facebook连接
 description: 根据散列邮件激活 Facebook 营销活动的轮廓，以实现受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 0d98183838125fac66768b94bc1993bde9a374b5
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '2091'
 ht-degree: 6%
@@ -26,7 +26,7 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 ### 用例#1
 
-在线零售商希望通过社交平台与现有客户联系，并向他们显示基于先前订单的个性化优惠。 该在线零售商可以从自己的CRM中提取电子邮件地址以将其纳入Adobe Experience Platform，从自己的离线数据构建受众，并将这些受众发送到[!DNL Facebook]社交平台，以优化其广告支出。
+在线retailer希望通过社交平台与现有客户联系，并向他们显示基于先前订单的个性化优惠。 在线retailer可将他们自己的CRM中的电子邮件地址摄取到Adobe Experience Platform，从他们自己的离线数据中构建受众，并将这些受众发送到[!DNL Facebook]社交平台，从而优化他们的广告支出。
 
 ### 用例#2
 
@@ -44,8 +44,8 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 |---|---|---|
 | GAID | GOOGLE ADVERTISING ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |
 | IDFA | 广告商的Apple ID | 当源身份是IDFA命名空间时，选择IDFA目标身份。 |
-| phone_sha256 | 使用SHA256算法散列的电话号码 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电话号码。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。 |
-| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。 |
+| phone_sha256 | 使用SHA256算法散列的电话号码 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电话号码。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
+| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
 | extern_id | 自定义用户标识 | 当源身份是自定义命名空间时，请选择此目标身份。 |
 
 ## 支持的受众 {#supported-audiences}
@@ -98,8 +98,8 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 在[!DNL Facebook]中激活电话号码的方法有两种：
 
-* **正在摄取原始电话号码**：您可以将[!DNL E.164]格式的原始电话号码摄取到[!DNL Platform]。 它们在激活时自动进行哈希处理。 如果选择此选项，请确保始终将原始电话号码摄取到`Phone_E.164`命名空间。
-* **正在引入经过哈希处理的电话号码**：您可以在引入到[!DNL Platform]之前对电话号码进行预哈希处理。 如果选择此选项，请确保始终将经过哈希处理的电话号码摄取到`Phone_SHA256`命名空间。
+* **正在摄取原始电话号码**：您可以将[!DNL E.164]格式的原始电话号码摄取到[!DNL Experience Platform]。 它们在激活时自动进行哈希处理。 如果选择此选项，请确保始终将原始电话号码摄取到`Phone_E.164`命名空间。
+* **正在引入经过哈希处理的电话号码**：您可以在引入到[!DNL Experience Platform]之前对电话号码进行预哈希处理。 如果选择此选项，请确保始终将经过哈希处理的电话号码摄取到`Phone_SHA256`命名空间。
 
 >[!NOTE]
 >
@@ -107,7 +107,7 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 ## 电子邮件哈希处理要求 {#email-hashing-requirements}
 
-您可以在将电子邮件地址摄取到Adobe Experience Platform之前对其进行哈希处理，或者在Experience Platform中明确使用电子邮件地址，并在激活时对其进行[!DNL Platform]哈希处理。
+您可以在将电子邮件地址摄取到Adobe Experience Platform之前对其进行哈希处理，或者在Experience Platform中明确使用电子邮件地址，并在激活时对其进行[!DNL Experience Platform]哈希处理。
 
 要了解如何在Experience Platform中摄取电子邮件地址，请参阅[批次摄取概述](/help/ingestion/batch-ingestion/overview.md)和[流式摄取概述](/help/ingestion/streaming-ingestion/overview.md)。
 
@@ -122,8 +122,8 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 >[!NOTE]
 >
->来自未经过哈希处理的命名空间的数据在激活时会由[!DNL Platform]自动进行哈希处理。
-> 属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。
+>来自未经过哈希处理的命名空间的数据在激活时会由[!DNL Experience Platform]自动进行哈希处理。
+> 属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。
 > **[!UICONTROL 应用转换]**&#x200B;选项仅在您选择属性作为源字段时显示。 当您选择命名空间时，它不会显示。
 
 ![应用映射步骤中突出显示的转换控件。](../../assets/ui/activate-destinations/identity-mapping-transformation.png)
@@ -230,9 +230,9 @@ Facebook令牌每60天过期一次。 令牌过期后，数据导出到目标的
 选择源字段：
 
 * 如果您使用的电子邮件地址未经过哈希处理，请选择`Email`命名空间作为源标识。
-* 如果您根据[!DNL Facebook] [电子邮件哈希处理要求](#email-hashing-requirements)将数据摄取到[!DNL Platform]时已将客户电子邮件地址哈希处理，请选择`Email_LC_SHA256`命名空间作为源标识。
-* 如果您的数据由非散列电话号码组成，请选择`PHONE_E.164`命名空间作为源标识。 [!DNL Platform]将散列电话号码以符合[!DNL Facebook]要求。
-* 如果您根据[!DNL Facebook] [电话号码散列要求](#phone-number-hashing-requirements)将数据提取到[!DNL Platform]中时散列电话号码，请选择`Phone_SHA256`命名空间作为源标识。
+* 如果您根据[!DNL Facebook] [电子邮件哈希处理要求](#email-hashing-requirements)将数据摄取到[!DNL Experience Platform]时已将客户电子邮件地址哈希处理，请选择`Email_LC_SHA256`命名空间作为源标识。
+* 如果您的数据由非散列电话号码组成，请选择`PHONE_E.164`命名空间作为源标识。 [!DNL Experience Platform]将散列电话号码以符合[!DNL Facebook]要求。
+* 如果您根据[!DNL Facebook] [电话号码散列要求](#phone-number-hashing-requirements)将数据提取到[!DNL Experience Platform]中时散列电话号码，请选择`Phone_SHA256`命名空间作为源标识。
 * 如果您的数据包含[!DNL Apple]个设备ID，请选择`IDFA`命名空间作为源标识。
 * 如果您的数据包含[!DNL Android]个设备ID，请选择`GAID`命名空间作为源标识。
 * 如果您的数据包含其他类型的标识符，请选择`Custom`命名空间作为源标识。
@@ -246,9 +246,9 @@ Facebook令牌每60天过期一次。 令牌过期后，数据导出到目标的
 
 >[!IMPORTANT]
 >
->来自未经过哈希处理的命名空间的数据在激活时会由[!DNL Platform]自动进行哈希处理。
+>来自未经过哈希处理的命名空间的数据在激活时会由[!DNL Experience Platform]自动进行哈希处理。
 > 
->属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。
+>属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。
 
 ![应用映射步骤中突出显示的转换控件。](../../assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
 

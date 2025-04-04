@@ -6,9 +6,9 @@ description: 本文档提供了设置两个所需数据集以收集IAB TCF 2.0�
 role: Developer
 feature: Consent, Schemas, Datasets
 exl-id: 36b2924d-7893-4c55-bc33-2c0234f1120e
-source-git-commit: bf651967714745a0b501dcb27373379fe014c9e1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1674'
+source-wordcount: '1680'
 ht-degree: 0%
 
 ---
@@ -24,9 +24,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Platform仅强制实施在单个配置文件数据集中收集的TCF字符串。 虽然在此工作流中创建数据流仍然需要ExperienceEvent数据集，但您只需将数据摄取到用户档案数据集中。 如果您希望跟踪一段时间内同意更改事件，仍可以使用ExperienceEvent数据集，但在对区段激活实施实施时，不会使用这些值。
+>Experience Platform仅强制在单个配置文件数据集中收集的TCF字符串。 虽然在此工作流中创建数据流仍然需要ExperienceEvent数据集，但您只需将数据摄取到用户档案数据集中。 如果您希望跟踪一段时间内同意更改事件，仍可以使用ExperienceEvent数据集，但在对区段激活实施实施时，不会使用这些值。
 
-本文档提供了设置这两个数据集的步骤。 有关为TCF 2.0配置Platform数据操作的完整工作流的概述，请参阅[IAB TCF 2.0合规性概述](./overview.md)。
+本文档提供了设置这两个数据集的步骤。 有关为TCF 2.0配置Experience Platform数据操作的完整工作流的概述，请参阅[IAB TCF 2.0合规性概述](./overview.md)。
 
 ## 先决条件
 
@@ -62,9 +62,9 @@ ht-degree: 0%
 
 要创建捕获同意数据的数据集，您必须首先创建XDM架构以作为这些数据集的基础。
 
-如上一节中所述，需要使用[!UICONTROL XDM Individual Profile]类的架构才能在下游平台工作流中强制同意。 如果您希望跟踪一段时间内同意的更改，还可以选择基于[!UICONTROL XDM ExperienceEvent]创建单独的架构。 两个架构都必须包含`identityMap`字段和适当的TCF 2.0字段组。
+如上一节中所述，需要使用[!UICONTROL XDM Individual Profile]类的架构才能在下游Experience Platform工作流中强制同意。 如果您希望跟踪一段时间内同意的更改，还可以选择基于[!UICONTROL XDM ExperienceEvent]创建单独的架构。 两个架构都必须包含`identityMap`字段和适当的TCF 2.0字段组。
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 架构]**&#x200B;以打开[!UICONTROL 架构]工作区。 从此处，按照以下部分中的步骤创建每个所需的架构。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 架构]**&#x200B;以打开[!UICONTROL 架构]工作区。 从此处，按照以下部分中的步骤创建每个所需的架构。
 
 >[!NOTE]
 >
@@ -102,7 +102,7 @@ ht-degree: 0%
 
 #### 启用架构以在[!DNL Real-Time Customer Profile]中使用
 
-为了使Platform将其收到的同意数据与特定客户配置文件相关联，必须启用同意架构以便在[!DNL Real-Time Customer Profile]中使用。
+为了使Experience Platform将其收到的同意数据与特定客户配置文件相关联，必须启用同意架构以便在[!DNL Real-Time Customer Profile]中使用。
 
 >[!NOTE]
 >
@@ -192,4 +192,4 @@ ht-degree: 0%
 * 允许在实时客户档案中使用的基于记录的数据集。 **（必需）**
 * 未为[!DNL Profile]启用的基于时间序列的数据集。 （可选）
 
-您现在可以返回[IAB TCF 2.0概述](./overview.md#merge-policies)，继续配置Platform以符合TCF 2.0。
+您现在可以返回[IAB TCF 2.0概述](./overview.md#merge-policies)以继续配置Experience Platform以符合TCF 2.0。

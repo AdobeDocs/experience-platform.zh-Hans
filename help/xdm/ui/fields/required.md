@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；API；API；XDM；XDM系
 title: 在UI中定义必填字段
 description: 了解如何在Experience Platform用户界面中定义必需的XDM字段。
 exl-id: 3a5885a0-6f07-42f3-b521-053083d5b556
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '361'
+source-wordcount: '362'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->无论是否需要架构字段，Platform都不会接受任何已引入字段的`null`或空值。 如果记录或事件中没有特定字段的值，则应该从摄取有效负载中排除该字段的键。
+>无论是否需要架构字段，Experience Platform都不会接受任何已摄取字段的`null`或空值。 如果记录或事件中没有特定字段的值，则应该从摄取有效负载中排除该字段的键。
 
 在Adobe Experience Platform用户界面中[定义新字段](./overview.md#define)时，您可以通过选中右边栏中的&#x200B;**[!UICONTROL 必填]**&#x200B;复选框将其设置为必填字段。 选择&#x200B;**[!UICONTROL 应用]**&#x200B;以将更改应用于架构。
 

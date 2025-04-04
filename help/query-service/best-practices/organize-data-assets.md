@@ -2,9 +2,9 @@
 title: 查询服务中数据资产组织的最佳实践
 description: 本文档概述整理数据以通过查询服务轻松使用的逻辑方法。
 exl-id: 12d6af99-035a-4f80-b7c0-c6413aa50697
-source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '786'
+source-wordcount: '787'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 本文档提供了整理数据资产（包括数据集、视图和临时表）以用于Adobe Experience Platform查询服务的最佳实践指南。 它涵盖了如何构建数据以及如何访问、更新和删除此信息的信息。
 
-随着数据资产的增长，在Platform [!DNL Data Lake]中对其进行逻辑组织非常重要。 查询服务扩展了SQL构造，使您能够按逻辑对沙盒中的数据资产进行分组。 这种组织方法允许在架构之间共享数据资产，而无需在物理上移动它们。
+随着数据资源的增长，在Experience Platform [!DNL Data Lake]中对数据进行逻辑组织非常重要。 查询服务扩展了SQL构造，使您能够按逻辑对沙盒中的数据资产进行分组。 这种组织方法允许在架构之间共享数据资产，而无需在物理上移动它们。
 
 ## 快速入门
 

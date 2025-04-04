@@ -2,9 +2,9 @@
 title: 查询服务打包
 description: 以下文档概述了可用于查询服务的功能和产品的打包，并着重说明了临时查询和批量查询之间的差异。
 exl-id: ba472d9e-afe6-423d-9abd-13ecea43f04f
-source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '980'
+source-wordcount: '987'
 ht-degree: 2%
 
 ---
@@ -15,19 +15,19 @@ ht-degree: 2%
 
 根据查询模式的不同，Adobe Experience Platform查询服务可以分为两大功能：
 
-- **临时查询**&#x200B;是用于浏览摄取的数据集以进行验证、验证、试验等的SQL查询。 这些查询不会将数据写回Platform数据湖。
-- **批处理查询**&#x200B;是用于对所摄取的数据集执行摄取后处理的SQL查询。 这些查询可清理、形状、操作和扩充数据，其结果会写回Platform数据湖。 这些查询可以作为批处理作业进行计划、管理和监视。
+- **临时查询**&#x200B;是用于浏览摄取的数据集以进行验证、验证、试验等的SQL查询。 这些查询不会将数据写回Experience Platform数据湖。
+- **批处理查询**&#x200B;是用于对所摄取的数据集执行摄取后处理的SQL查询。 这些查询可清理、形状、操作和扩充数据，其结果会写回Experience Platform数据湖。 这些查询可以作为批处理作业进行计划、管理和监视。
 
 查询服务功能与以下产品和加载项一起打包：
 
-- **基于平台的应用程序**(Adobe Real-time Customer Data Platform、Adobe Customer Journey Analytics和Adobe Journey Optimizer)：从一开始就为基于平台的应用程序的每个变体和层提供了执行临时查询的查询服务访问权限。
+- **基于Experience Platform的应用程序**(Adobe Real-Time Customer Data Platform、Adobe Customer Journey Analytics和Adobe Journey Optimizer)：从一开始便为基于Experience Platform的应用程序的每个变体和层提供了执行临时查询的查询服务访问权限。
 - **[!DNL Data Distiller]** (可与Adobe Real-Time CDP、Customer Journey Analytics和Adobe Journey Optimizer一起购买的附加组件包)： [!DNL Data Distiller]提供执行批处理查询的查询服务访问权限。
 
 ## 权利 {#entitlements}
 
 下表概述了基于其打包方式的关键查询服务权限：
 
-| 查询服务权利 | 与基于平台的应用程序打包 | 已与[!DNL Data Distiller]一起打包 |
+| 查询服务权利 | 与基于Experience Platform的应用程序打包 | 已与[!DNL Data Distiller]一起打包 |
 |---|---|---|
 | 支持的查询模式 | 仅临时查询 | 批量查询 |
 | 支持的用例 | <ul><li>探索&#x200B;</li><li>数据发现&#x200B;</li><li>数据验证</li><li>试验</li></ul> | <ul><li>清洁</li><li>Shaping</li><li>操作</li><li>丰富</li></ul> |
@@ -50,7 +50,7 @@ ht-degree: 2%
 
 ## 访问控制 {#access-control}
 
-Experience Platform的访问控制通过[Adobe Admin Console](https://adminconsole.adobe.com/)进行管理，其中产品配置文件将用户与权限和沙盒相关联。 有关详细信息，请参阅[访问控制概述](../access-control/home.md)。
+Experience Platform的访问控制通过[Adobe Admin Console](https://adminconsole.adobe.com/)进行管理，其中产品配置文件将用户与权限和沙盒关联起来。 有关详细信息，请参阅[访问控制概述](../access-control/home.md)。
 
 有关请求访问产品配置文件权限的详细说明，请参阅[管理产品配置文件权限](../access-control/ui/permissions.md)和[管理产品配置文件用户](../access-control/ui/users.md)文档
 
@@ -80,7 +80,7 @@ Experience Platform的访问控制通过[Adobe Admin Console](https://adminconso
 
 ## 沙盒支持 {#sandbox-support}
 
-沙盒是单个Experience Platform实例中的虚拟分区。 每个Platform实例都支持多个生产沙盒和非生产沙盒，每个沙盒都维护自己的Platform资源库。 非生产沙盒允许您测试功能、运行实验并进行自定义配置，而不会影响您的生产沙盒。 有关沙箱的详细信息，请参阅[沙箱概述](../sandboxes/home.md)。 所有查询服务权利在所有沙盒中共享。
+沙盒是Experience Platform单个实例中的虚拟分区。 每个Experience Platform实例都支持多个生产沙盒和非生产沙盒，每个沙盒都维护自己的Experience Platform资源库。 非生产沙盒允许您测试功能、运行实验并进行自定义配置，而不会影响您的生产沙盒。 有关沙箱的详细信息，请参阅[沙箱概述](../sandboxes/home.md)。 所有查询服务权利在所有沙盒中共享。
 
 ## 后续步骤
 

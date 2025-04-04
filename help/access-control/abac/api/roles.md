@@ -5,10 +5,10 @@ title: 角色API端点
 description: 基于属性的访问控制API中的/roles端点允许您以编程方式管理Adobe Experience Platform中的角色。
 role: Developer
 exl-id: 049f7a18-7d06-437b-8ce9-25d7090ba782
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1665'
-ht-degree: 4%
+source-wordcount: '1670'
+ht-degree: 6%
 
 ---
 
@@ -18,13 +18,13 @@ ht-degree: 4%
 >
 >如果传递的是用户令牌，则该令牌的用户必须具有所请求组织的“组织管理员”角色。
 
-角色定义了管理员、专家或最终用户对组织中资源的访问权限。 在基于角色的访问控制环境中，用户访问设置是通过共同的责任和需求进行分组的。 一个角色具有一组给定的权限，可将您组织的成员分配给一个或多个角色，具体取决于他们需要的查看或写入访问权限的范围。
+角色定义了管理员、专家或最终用户对组织中的资源的访问权限。在基于角色的访问控制环境中，用户访问设置是通过共同的责任和需求进行分组的。 一个角色具有一组给定的权限，可将您组织的成员分配给一个或多个角色，具体取决于他们需要的查看或写入访问权限的范围。
 
 基于属性的访问控制API中的`/roles`端点允许您以编程方式管理组织中的角色。
 
 ## 快速入门
 
-本指南中使用的API端点属于基于属性的访问控制API。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+本指南中使用的API端点属于基于属性的访问控制API。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience Platform API所需的所需标头的重要信息。
 
 ## 检索角色列表 {#list}
 
@@ -108,12 +108,12 @@ curl -X GET \
 | `roleType` | 角色的指定类型。 角色类型可能的值为： `user-defined`和`system-defined`。 |
 | `permissionSets` | 权限集表示管理员可以应用于角色的一组权限。 管理员可以为角色分配权限集，而不是分配单个权限。 这允许您从包含一组权限的预定义角色创建自定义角色。 |
 | `sandboxes` | 此属性显示组织中为特定角色配置的沙箱。 |
-| `subjectAttributes` | 表示主体与其有权访问的平台资源之间的关联的属性。 |
+| `subjectAttributes` | 表示主题与其有权访问的Experience Platform资源之间关联的属性。 |
 | `subjectAttributes.labels` | 显示应用于查询角色的数据使用标签。 |
 
 ## 查找角色 {#lookup}
 
-您可以通过发出请求（请求路径中包含相应的`roleId`）来查找单个GET。
+您可以通过在请求路径中包含相应`roleId`的GET请求来查找单个角色。
 
 **API格式**
 
@@ -175,7 +175,7 @@ curl -X GET \
 | `roleType` | 角色的指定类型。 角色类型可能的值为： `user-defined`和`system-defined`。 |
 | `permissionSets` | 权限集表示管理员可以应用于角色的一组权限。 管理员可以为角色分配权限集，而不是分配单个权限。 这允许您从包含一组权限的预定义角色创建自定义角色。 |
 | `sandboxes` | 此属性显示组织中为特定角色配置的沙箱。 |
-| `subjectAttributes` | 表示主体与其有权访问的平台资源之间的关联的属性。 |
+| `subjectAttributes` | 表示主题与其有权访问的Experience Platform资源之间关联的属性。 |
 | `subjectAttributes.labels` | 显示应用于查询角色的数据使用标签。 |
 
 ## 按角色ID查找主题
@@ -256,7 +256,7 @@ curl -X GET \
 
 ## 创建角色 {#create}
 
-要创建新角色，请向`/roles`端点发出POST请求，同时为您角色的名称、描述和角色类型提供值。
+要创建新角色，请在提供角色名称、描述和角色类型的值的同时，向`/roles`端点发出POST请求。
 
 **API格式**
 
@@ -323,7 +323,7 @@ curl -X POST \
 | `roleType` | 角色的指定类型。 角色类型可能的值为： `user-defined`和`system-defined`。 |
 | `permissionSets` | 权限集表示管理员可以应用于角色的一组权限。 管理员可以为角色分配权限集，而不是分配单个权限。 这允许您从包含一组权限的预定义角色创建自定义角色。 |
 | `sandboxes` | 此属性显示组织中为特定角色配置的沙箱。 |
-| `subjectAttributes` | 表示主体与其有权访问的平台资源之间的关联的属性。 |
+| `subjectAttributes` | 表示主题与其有权访问的Experience Platform资源之间关联的属性。 |
 | `subjectAttributes.labels` | 显示应用于查询角色的数据使用标签。 |
 
 ## 更新角色 {#patch}
@@ -403,7 +403,7 @@ curl -X PATCH \
 | `roleType` | 角色的指定类型。 角色类型可能的值为： `user-defined`和`system-defined`。 |
 | `permissionSets` | 权限集表示管理员可以应用于角色的一组权限。 管理员可以为角色分配权限集，而不是分配单个权限。 这允许您从包含一组权限的预定义角色创建自定义角色。 |
 | `sandboxes` | 此属性显示组织中为特定角色配置的沙箱。 |
-| `subjectAttributes` | 表示主体与其有权访问的平台资源之间的关联的属性。 |
+| `subjectAttributes` | 表示主题与其有权访问的Experience Platform资源之间关联的属性。 |
 | `subjectAttributes.labels` | 显示应用于查询角色的数据使用标签。 |
 
 ## 按角色ID更新角色 {#put}
@@ -477,12 +477,12 @@ curl -X PUT \
 | `roleType` | 角色的指定类型。 角色类型可能的值为： `user-defined`和`system-defined`。 |
 | `permissionSets` | 权限集表示管理员可以应用于角色的一组权限。 管理员可以为角色分配权限集，而不是分配单个权限。 这允许您从包含一组权限的预定义角色创建自定义角色。 |
 | `sandboxes` | 此属性显示组织中为特定角色配置的沙箱。 |
-| `subjectAttributes` | 表示主体与其有权访问的平台资源之间的关联的属性。 |
+| `subjectAttributes` | 表示主题与其有权访问的Experience Platform资源之间关联的属性。 |
 | `subjectAttributes.labels` | 显示应用于查询角色的数据使用标签。 |
 
 ## 按角色ID更新主题
 
-要更新与角色关联的主体，请在提供要更新的主体的角色ID的同时向`/roles`端点发出PATCH请求。
+要更新与角色关联的主体，请在提供要更新的主体的角色ID的同时，向`/roles`端点发出PATCH请求。
 
 **API格式**
 
@@ -580,11 +580,11 @@ curl -X DELETE \
 
 成功的响应返回HTTP状态204（无内容）和一个空白正文。
 
-您可以通过尝试对角色进行查找(GET)请求来确认删除。 您将收到HTTP状态404 （未找到），因为角色已从管理中删除。
+您可以通过尝试向角色发送查找(GET)请求来确认删除。 您将收到HTTP状态404 （未找到），因为角色已从管理中删除。
 
 ## 添加API凭据 {#apicredential}
 
-要添加API凭据，请在提供主体的PATCHID的同时向`/roles`端点发出角色请求。
+要添加API凭据，请在提供主体的角色ID的同时向`/roles`端点发出PATCH请求。
 
 **API格式**
 

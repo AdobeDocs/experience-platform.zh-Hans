@@ -2,9 +2,9 @@
 title: 使用TTL在数据湖中管理体验事件数据集保留
 description: 了解如何使用生存时间(TTL)配置和Adobe Experience Platform API评估、设置和管理Data Lake中的Experience Event数据集保留。 本指南介绍TTL行级到期如何支持数据保留策略、优化存储效率并确保有效的数据生命周期管理。 它还提供了用例和最佳实践，帮助您有效应用TTL。
 exl-id: d688d4d0-aa8b-4e93-a74c-f1a1089d2df0
-source-git-commit: 3b5fcc3eec6f2c2e749c86a7baf9995fb88b27d6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2336'
+source-wordcount: '2341'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ TTL在管理随时间推移失去相关性的时效性数据时非常有用。 �
 
 ### 行业示例 {#industry-example}
 
-例如，考虑使用视频流服务来跟踪用户交互，如视频查看、搜索和推荐。 尽管最近的参与数据对个性化至关重要，但旧的活动日志（例如，一年多以前的互动）将失去相关性。 通过使用行级过期，Platform可自动删除过时的日志，从而确保仅将当前且有意义的数据用于分析和推荐。
+例如，考虑使用视频流服务来跟踪用户交互，如视频查看、搜索和推荐。 尽管最近的参与数据对个性化至关重要，但旧的活动日志（例如，一年多以前的互动）将失去相关性。 通过使用行级过期，Experience Platform可自动删除过时的日志，从而确保仅将当前且有意义的数据用于分析和推荐。
 
 ## 评估TTL适用性
 
@@ -76,7 +76,7 @@ SELECT COUNT(1) FROM [datasetName] WHERE timestamp > date_sub(now(), INTERVAL 30
 
 >[!TIP]
 >
->目录服务API的平台网关URL和基本路径为： `https://platform.adobe.io/data/foundation/catalog`。
+>目录服务API的Experience Platform网关URL和基本路径为： `https://platform.adobe.io/data/foundation/catalog`。
 
 **API格式**
 
@@ -375,13 +375,13 @@ curl -X PATCH \
 ### 数据集保留作业多久将从数据湖服务中删除数据？
 
 +++回答
-将每周评估和处理数据集TTL，并删除所有过期的记录。 如果事件摄取到Platform的时间超过30天（摄取日期> 30天），并且其事件日期超过定义的保留期(TTL)，则该事件将被视为已过期。
+将每周评估和处理数据集TTL，并删除所有过期的记录。 如果事件摄取到Experience Platform超过30天（摄取日期> 30天）并且其事件日期超过定义的保留期(TTL)，则该事件被视为已过期。
 +++
 
 ### 数据集保留作业多久将从配置文件服务中删除数据？
 
 +++回答
-设置保留策略后，如果Platform中的现有事件的事件时间戳超过保留期(TTL)，则会立即删除该事件。 一旦新事件的时间戳超过保留期，就会将其删除。
+设置保留策略后，如果Experience Platform中的现有事件的事件时间戳超过保留期(TTL)，则会立即删除该事件。 一旦新事件的时间戳超过保留期，就会将其删除。
 
 例如，如果您在5月15日应用30天到期策略，则会出现以下情况：
 
@@ -436,6 +436,6 @@ curl -X PATCH \
 
 现在您已了解如何管理行级过期的TTL设置，请查看以下文档以进一步了解TTL管理：
 
-- 保留作业：了解如何使用[数据生命周期UI指南](../../hygiene/ui/dataset-expiration.md)在Platform UI中计划和自动化数据集过期，或检查数据集保留配置并验证是否删除了过期的记录。
+- 保留作业：了解如何使用[数据生命周期UI指南](../../hygiene/ui/dataset-expiration.md)在Experience Platform UI中计划和自动化数据集过期，或检查数据集保留配置并验证是否删除了过期的记录。
 - [数据集过期API终结点指南](../../hygiene/api/dataset-expiration.md)：了解如何删除整个数据集，而不仅仅是删除行。 了解如何使用API计划、管理和自动化数据集过期以确保有效的数据保留。
 - [数据使用策略概述](../../data-governance/policies/overview.md)：了解如何使您的数据保留策略与更广泛的合规性要求和营销使用限制保持一致。

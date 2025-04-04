@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 检索数据摄取错误诊断
 description: 本文档提供了有关监控批次摄取、管理部分批次摄取错误的信息，以及部分批次摄取类型的参考。
 exl-id: b885fb00-b66d-453b-80b7-8821117c2041
-source-git-commit: edd285c3d0638b606876c015dffb18309887dfb5
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 8%
@@ -13,7 +13,7 @@ ht-degree: 8%
 
 # 检索数据摄取错误诊断
 
-Adobe Experience Platform提供两种上传和摄取数据的方法。 您可以使用批量摄取，这允许您使用各种文件类型（如CSV）插入数据；也可以使用流式摄取，这允许您使用流式端点实时将其数据插入到[!DNL Platform]。
+Adobe Experience Platform提供两种上传和摄取数据的方法。 您可以使用批量摄取，这允许您使用各种文件类型（如CSV）插入数据；也可以使用流式摄取，这允许您使用流式端点实时将其数据插入到[!DNL Experience Platform]。
 
 本文档提供了有关监控批次摄取、管理部分批次摄取错误的信息，以及部分批次摄取类型的参考。
 
@@ -30,23 +30,23 @@ Adobe Experience Platform提供两种上传和摄取数据的方法。 您可以
 
 ### 收集所需标头的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+要调用[!DNL Experience Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
 - `x-gw-ims-org-id: {ORG_ID}`
 
-[!DNL Experience Platform]中的所有资源（包括属于[!DNL Schema Registry]的资源）都被隔离到特定的虚拟沙盒中。 对[!DNL Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
+[!DNL Experience Platform]中的所有资源（包括属于[!DNL Schema Registry]的资源）都被隔离到特定的虚拟沙盒中。 对[!DNL Experience Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 - `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关[!DNL Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
+>有关[!DNL Experience Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
 
 ## 正在下载错误诊断 {#download-diagnostics}
 
-Adobe Experience Platform允许用户下载输入文件的错误诊断。 诊断将在[!DNL Platform]内保留最多30天。
+Adobe Experience Platform允许用户下载输入文件的错误诊断。 诊断将在[!DNL Experience Platform]内保留最多30天。
 
 ### 列出输入文件 {#list-files}
 
@@ -145,7 +145,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/af838510-22
 
 ### 检查状态 {#check-status}
 
-要检查摄取的批的状态，必须在GET请求路径中提供批的ID。 要了解有关使用此API调用的更多信息，请阅读[目录终结点指南](../../catalog/api/list-objects.md)。
+要检查摄取批次的状态，必须在GET请求的路径中提供批次的ID。 要了解有关使用此API调用的更多信息，请阅读[目录终结点指南](../../catalog/api/list-objects.md)。
 
 **API格式**
 

@@ -5,7 +5,7 @@ title: 使用Sensei机器学习API导入打包的方法
 type: Tutorial
 description: 本教程使用Sensei机器学习API创建引擎，在用户界面中也称为“方法”。
 exl-id: c8dde30b-5234-448d-a597-f1c8d32f23d4
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1018'
 ht-degree: 3%
@@ -41,7 +41,7 @@ ht-degree: 3%
 
 - `{DOCKER_URL}`：智能服务的Docker映像的URL地址。
 
-本教程要求您完成[对Adobe Experience Platform的身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)，才能成功调用[!DNL Platform] API。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+本教程要求您完成[对Adobe Experience Platform的身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)，才能成功调用[!DNL Experience Platform] API。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 - `{ACCESS_TOKEN}`：在身份验证后提供的特定持有者令牌值。
 - `{ORG_ID}`：在独特的Adobe Experience Platform集成中找到您的组织凭据。

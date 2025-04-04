@@ -3,10 +3,10 @@ title: 数据集过期API端点
 description: 数据卫生API中的/ttl端点允许您在Adobe Experience Platform中以编程方式计划数据集过期时间。
 role: Developer
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: 911089ec641d9fbb436807b04dd38e00fd47eecf
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1964'
-ht-degree: 1%
+source-wordcount: '1966'
+ht-degree: 2%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->尽管过期时间指定为特定的即时时间，但在实际删除开始之前，过期后最多可能有24小时的延迟。 开始删除后，可能需要长达7天时间，才会从Platform系统中删除数据集的所有跟踪。
+>尽管过期时间指定为特定的即时时间，但在实际删除开始之前，过期后最多可能有24小时的延迟。 开始删除后，可能需要长达7天时间，才会从Experience Platform系统中删除数据集的所有跟踪。
 
 在实际启动数据集删除之前，您可以随时取消过期时间或修改其触发时间。 取消数据集到期后，可以通过设置新到期来重新打开数据集。
 
@@ -28,7 +28,7 @@ ht-degree: 1%
 >
 >如果数据集设置为过期，则必须手动更改任何可能正在将数据摄取到该数据集的数据流，以便下游工作流不会受到负面影响。
 
-高级数据生命周期管理支持通过数据集到期终结点进行数据集删除，以及通过[工作单终结点](./workorder.md)使用主标识进行ID删除（行级数据）。 您还可以通过Platform UI管理[数据集过期](../ui/dataset-expiration.md)和[记录删除](../ui/record-delete.md)。 有关更多信息，请参阅链接的文档。
+高级数据生命周期管理支持通过数据集到期终结点进行数据集删除，以及通过[工作单终结点](./workorder.md)使用主标识进行ID删除（行级数据）。 您还可以通过Experience Platform UI管理[数据集过期](../ui/dataset-expiration.md)和[记录删除](../ui/record-delete.md)。 有关更多信息，请参阅链接的文档。
 
 >[!NOTE]
 >
@@ -202,7 +202,7 @@ curl -X GET \
 
 要确保在指定的时间段后从系统中删除数据，请以ISO 8601格式提供数据集ID以及过期日期和时间，从而安排特定数据集的过期时间。
 
-要创建数据集过期，请执行如下所示的POST请求，并在有效负载中提供下面提到的值。
+要创建数据集过期，请执行如下所示的POST请求，并在有效负荷中提供下面提到的值。
 
 >[!NOTE]
 >

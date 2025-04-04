@@ -1,15 +1,15 @@
 ---
-title: 使用沙盒工具实现卓越中心
+title: 使用沙盒工具启用卓越中心
 description: 通过创建一个“黄金沙盒”包来标准化多个沙盒中的最佳实践，从而使用沙盒工具启用卓越中心。
 exl-id: 6f242ad5-bb02-4a6d-b255-d196dd5fe4b8
-source-git-commit: d4df5606228347b5fb69fdaa24c637c329099895
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '881'
-ht-degree: 7%
+source-wordcount: '882'
+ht-degree: 8%
 
 ---
 
-# 使用沙盒工具实现卓越中心
+# 使用沙盒工具启用卓越中心
 
 通过创建一个“黄金沙盒”包来标准化多个沙盒中的最佳实践，从而使用沙盒工具启用卓越中心。
 
@@ -37,7 +37,7 @@ ht-degree: 7%
 - 创建一个沙盒，并将所有相关的已验证配置设置为Golden Sandbox。
 - 如有需要，请让利益相关者对您的基线标准提出意见并达成一致。
 
-### 您将使用的 UI 功能、Platform 组件和 Experience Cloud 产品 {#ui-functionality-and-elements}
+### 用户界面功能、Experience Platform组件以及您将使用的Experience Cloud产品 {#ui-functionality-and-elements}
 
 要成功实施此用例，您必须使用Adobe Experience Platform的多个区域。 确保您具有所有这些区域所需的[基于属性的访问控制权限](../../access-control/abac/overview.md)，或要求系统管理员授予您必要的权限。
 
@@ -73,7 +73,7 @@ ht-degree: 7%
 
 ### 将您的包导入相关的沙盒中
 
-现在您的资源包已创建，您可以将此资源包导入相关的沙盒中。 最佳实践是将包含整个沙盒的包导入空沙盒中。 使用沙盒工具，您可以轻松地在Experience Platform中直接[将整个沙盒包](../../sandboxes/ui/sandbox-tooling.md#import-the-entire-sandbox-package)导入到沙盒中。
+现在您的资源包已创建，您可以将此资源包导入相关的沙盒中。 最佳实践是将包含整个沙盒的包导入空沙盒中。 使用沙盒工具，您可以轻松[将整个沙盒包](../../sandboxes/ui/sandbox-tooling.md#import-the-entire-sandbox-package)直接导入Experience Platform中的沙盒中。
 
 ### 跨组织共享包
 
@@ -81,7 +81,7 @@ ht-degree: 7%
 
 ### 通过审核日志监控导入和导出
 
-在导入或导出包时，您可以使用Experience Platform中的&#x200B;**[!UICONTROL 作业]**&#x200B;仪表板监视作业的状态。 要了解有关监视作业的更多信息，请阅读有关[监视导入详细信息](../../sandboxes/ui/sandbox-tooling.md#monitor-import-details)的指南。
+在导入或导出包时，您可以使用Experience Platform中的&#x200B;**[!UICONTROL 作业]**&#x200B;仪表板监控作业的状态。 要了解有关监视作业的更多信息，请阅读有关[监视导入详细信息](../../sandboxes/ui/sandbox-tooling.md#monitor-import-details)的指南。
 
 ### 定期更新金色沙盒
 

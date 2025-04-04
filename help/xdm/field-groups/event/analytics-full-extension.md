@@ -2,9 +2,9 @@
 title: Adobe Analytics ExperienceEvent完整扩展架构字段组
 description: 了解Adobe Analytics ExperienceEvent完整扩展架构字段组。
 exl-id: b5e17f4a-a582-4059-bbcb-435d46932775
-source-git-commit: 5eb15a7dfff7e6d8ba815ae4f89142ba50166620
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '811'
+source-wordcount: '812'
 ht-degree: 5%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->由于此字段组中重复元素的大小和数量，本指南中显示的许多字段已折叠以节省空间。 若要探索此字段组的完整结构，您可以[在Platform UI](../../ui/explore.md)中查找它，或在[公共XDM存储库](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json)中查看完整的架构。
+>由于此字段组中重复元素的大小和数量，本指南中显示的许多字段已折叠以节省空间。 要探究此字段组的完整结构，您可以[在Experience Platform UI](../../ui/explore.md)中查找它，或在[公共XDM存储库](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json)中查看完整的架构。
 
 ## 字段组结构
 

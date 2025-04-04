@@ -2,16 +2,16 @@
 title: 为数据收集准备数据
 description: 了解在为 Adobe Experience Platform Web 和 Mobile SDK 配置数据流时，如何将数据映射到 Experience Data Model (XDM) 事件架构。
 exl-id: 87a70d56-1093-445c-97a5-b8fa72a28ad0
-source-git-commit: e90bd5abe502a7638ae54fca5eb0f051a925a2d8
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1199'
-ht-degree: 59%
+source-wordcount: '1203'
+ht-degree: 53%
 
 ---
 
 # 为数据收集准备数据
 
-数据准备是一项 Adobe Experience Platform 服务，可让您从 [Experience Data Model (XDM)](../xdm/home.md)映射数据并将数据映射到它、转换和验证数据。如果配置支持 Platform 的[数据流](./overview.md)，可以在将源数据发送到 Platform Edge Network 时，使用数据准备函数将源数据映射到 XDM。
+数据准备是一项 Adobe Experience Platform 服务，可让您从 [Experience Data Model (XDM)](../xdm/home.md)映射数据并将数据映射到它、转换和验证数据。在配置启用了Experience Platform的[数据流](./overview.md)时，您可以使用数据准备功能在将数据发送到Experience Platform Edge Network时将源数据映射到XDM。
 
 所有从网页发送的数据必须以XDM形式登陆Experience Platform。 有3种方法可将数据从页面上的数据层转换为Experience Platform接受的XDM：
 
@@ -52,7 +52,7 @@ ht-degree: 59%
 
 ## [!UICONTROL 选择数据] {#select-data}
 
-完成数据流的基本配置后，选择&#x200B;**[!UICONTROL 保存并添加映射]**，**[!UICONTROL 选择数据]**&#x200B;步骤随即出现。从该位置，您必须提供一个示例 JSON 对象，该对象表示您计划发送到 Platform 的数据的结构。
+完成数据流的基本配置后，选择&#x200B;**[!UICONTROL 保存并添加映射]**，**[!UICONTROL 选择数据]**&#x200B;步骤随即出现。从此处，您必须提供一个示例JSON对象，该对象表示您计划发送到Experience Platform的数据结构。
 
 要直接从数据层捕获属性，该 JSON 对象必须具有单个根属性 `data`。然后应通过映射到要捕获的数据层属性的方式构建`data`对象的子属性。 选择以下部分可查看具有 `data` 根的格式正确的 JSON 对象示例。
 
@@ -162,7 +162,7 @@ ht-degree: 59%
 
 ## [!UICONTROL 映射]
 
-**[!UICONTROL 映射]**&#x200B;步骤随即出现，可让您将源数据中的字段映射到 Platform 中目标事件架构的字段。从该位置，您可以通过两种方式配置映射：
+将显示&#x200B;**[!UICONTROL 映射]**&#x200B;步骤，允许您在Experience Platform中将源数据中的字段映射到目标事件架构中的字段。 从该位置，您可以通过两种方式配置映射：
 
 * [通过手动过程为此数据流创建映射规则](#create-mapping)。
 * 从现有数据流[导入映射规则](#import-mapping)。

@@ -2,9 +2,9 @@
 description: 了解如何为使用Destination SDK构建的目标配置UI属性，如文档链接、目标卡类别以及目标连接类型和频率。
 title: UI属性
 exl-id: aed8d868-c516-45da-b224-c7e99e4bfaf1
-source-git-commit: 995e464ca43e0738c16dd4e0ec928d27e5a8b029
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '800'
+source-wordcount: '802'
 ht-degree: 0%
 
 ---
@@ -18,10 +18,10 @@ UI属性定义Adobe应在Adobe Experience Platform用户界面中为目标卡显
 * [使用Destination SDK配置流目标](../../guides/configure-destination-instructions.md#create-destination-configuration)
 * [使用Destination SDK配置基于文件的目标](../../guides/configure-file-based-destination-instructions.md#create-destination-configuration)
 
-当[通过Destination SDK创建目标](../../authoring-api/destination-configuration/create-destination-configuration.md)时，`uiAttributes`部分定义了目标卡的以下可视属性：
+在[通过Destination SDK创建目标](../../authoring-api/destination-configuration/create-destination-configuration.md)时，`uiAttributes`部分定义了目标卡的以下可视属性：
 
 * [目标目录](../../../catalog/overview.md)中目标文档页面的URL。
-* 您的目标将显示在Platform UI中的类别。
+* 您的目标将显示在Experience Platform UI中的类别。
 * 目标的数据导出频率。
 * 目标连接类型，如Amazon S3、Azure Blob等。
 * 您托管要在目标目录信息卡中显示的图标的URL。
@@ -31,9 +31,9 @@ UI属性定义Adobe应在Adobe Experience Platform用户界面中为目标卡显
 * [创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)
 * [更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md)
 
-本文介绍了可用于目标的所有受支持的UI属性，并显示了客户将在Experience PlatformUI中看到的内容。
+本文介绍了可用于目标的所有受支持的UI属性，并显示了客户将在Experience Platform UI中看到的内容。
 
-显示Experience Platform界面中UI属性的![UI屏幕截图](../../assets/functionality/destination-configuration/ui-attributes.png)
+![显示Experience Platform界面中UI属性的用户界面屏幕截图](../../assets/functionality/destination-configuration/ui-attributes.png)
 
 >[!IMPORTANT]
 >
@@ -72,7 +72,7 @@ UI属性定义Adobe应在Adobe Experience Platform用户界面中为目标卡显
 
 >[!NOTE]
 >
->此链接仅在Adobe将您的目标设置为实时状态并发布文档后生效。
+>只有在Adobe将您的目标设置为实时状态并发布文档后，此链接才有效。
 
 ### `category` {#category}
 
@@ -100,7 +100,7 @@ UI属性定义Adobe应在Adobe Experience Platform用户界面中为目标卡显
 
 ### `isBeta` {#isbeta}
 
-如果通过Destination SDK创建的目标可供有限数量的客户使用，您可能需要将目标目录中的目标卡标记为测试版。
+如果您使用Destination SDK创建的目标卡可供有限数量的客户使用，则可能需要将目标目录中的目标卡标记为测试版。
 
 为此，您可以使用目标配置的UI属性部分中的`isBeta: "true"`参数正确标记目标卡。
 
@@ -116,7 +116,7 @@ UI属性定义Adobe应在Adobe Experience Platform用户界面中为目标卡显
 
 ## 后续步骤 {#next-steps}
 
-阅读本文后，您应该能够更好地了解可以为目标配置哪些UI属性，以及用户将在Platform UI中的何处看到这些属性。
+阅读本文后，您应该更好地了解可以为目标配置哪些UI属性，以及用户将在Experience Platform UI中的何处看到这些属性。
 
 要了解有关其他目标组件的更多信息，请参阅以下文章：
 

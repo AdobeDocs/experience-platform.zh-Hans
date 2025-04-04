@@ -3,9 +3,9 @@ title: 使用流服务API创建Azure事件中心Source连接
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Azure事件中心帐户。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: a4d0662d-06e3-44f3-8cb7-4a829c44f4d9
-source-git-commit: 1256f0c76b29edad4808fc4be1d61399bfbae8fa
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1492'
+source-wordcount: '1496'
 ht-degree: 2%
 
 ---
@@ -14,18 +14,18 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->[!DNL Azure Event Hubs]源在源目录中可供已购买Real-time Customer Data Platform Ultimate的用户使用。
+>[!DNL Azure Event Hubs]源在源目录中可供已购买Real-Time Customer Data Platform Ultimate的用户使用。
 
-阅读本教程以了解如何使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将[!DNL Azure Event Hubs]（以下称为“[!DNL Event Hubs]”）连接到Experience Platform。
+阅读本教程，了解如何使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将[!DNL Azure Event Hubs]（以下简称“[!DNL Event Hubs]”）连接到Experience Platform。
 
 ## 快速入门
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-- [源](../../../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。
-- [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+- [源](../../../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强传入数据。
+- [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-以下部分提供了使用[!DNL Flow Service] API成功将[!DNL Event Hubs]连接到Platform所需了解的其他信息。
+以下部分提供了使用[!DNL Flow Service] API成功将[!DNL Event Hubs]连接到Experience Platform所需了解的其他信息。
 
 ### 收集所需的凭据
 
@@ -79,9 +79,9 @@ ht-degree: 2%
 
 有关这些值的详细信息，请参阅[此事件中心文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)。
 
-### 使用平台API
+### 使用Experience Platform API
 
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../../landing/api-guide.md)指南。
+有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../../../landing/api-guide.md)指南。
 
 ## 创建基本连接
 
@@ -91,7 +91,7 @@ ht-degree: 2%
 
 创建源连接的第一步是验证您的[!DNL Event Hubs]源并生成基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并识别要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-要创建基本连接ID，请在提供[!DNL Event Hubs]身份验证凭据作为POST参数的一部分时，向`/connections`端点请求请求。
+要创建基本连接ID，请在提供您的[!DNL Event Hubs]身份验证凭据作为请求参数的一部分时，向`/connections`端点发出POST请求。
 
 **API格式**
 

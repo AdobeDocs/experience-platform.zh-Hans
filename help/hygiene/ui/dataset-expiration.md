@@ -2,9 +2,9 @@
 title: 自动化数据集过期时间
 description: 了解如何在Adobe Experience Platform UI中计划数据集过期。
 exl-id: 97db55e3-b5d6-40fd-94f0-2463fe041671
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '871'
+source-wordcount: '873'
 ht-degree: 18%
 
 ---
@@ -22,13 +22,13 @@ Adobe Experience Platform UI中的[[!UICONTROL 数据生命周期]工作区](./o
 >
 >如果数据集设置为过期，则必须手动更改任何可能正在将数据摄取到该数据集的数据流，以便下游工作流不会受到负面影响。
 
-本文档介绍如何在Platform UI中计划和自动执行数据集过期操作。
+本文档介绍如何在Experience Platform UI中计划和自动执行数据集过期操作。
 
 >[!NOTE]
 >
->数据集到期当前不会从Adobe Experience PlatformEdge Network中删除数据。 但是，在数据集设置为过期后，数据不可能保留在Edge Network中。 这是因为数据集过期的15天服务许可协议与Edge Network中存在数据的14天期限重叠，然后才被丢弃。
+>数据集到期当前不会从Adobe Experience Platform Edge Network中删除数据。 但是，在数据集设置为过期后，数据不可能保留在Edge Network中。 这是因为数据集过期的15天服务许可协议与Edge Network中存在数据的14天期限重叠，然后才被丢弃。
 
-高级数据生命周期管理支持通过[数据集到期终结点](../api/dataset-expiration.md)进行数据集删除，以及通过[工作单终结点](../api/workorder.md)使用主标识进行ID删除（行级数据）。 您还可以通过Platform UI管理数据集过期和[记录删除](./record-delete.md)。 有关更多信息，请参阅链接的文档。
+高级数据生命周期管理支持通过[数据集到期终结点](../api/dataset-expiration.md)进行数据集删除，以及通过[工作单终结点](../api/workorder.md)使用主标识进行ID删除（行级数据）。 您还可以通过Experience Platform UI管理数据集过期和[记录删除](./record-delete.md)。 有关更多信息，请参阅链接的文档。
 
 >[!NOTE]
 >
@@ -89,6 +89,6 @@ Adobe Experience Platform UI中的[[!UICONTROL 数据生命周期]工作区](./o
 
 ## 后续步骤
 
-本文档介绍了如何在Experience PlatformUI中安排数据集过期时间。 有关如何在UI中执行其他数据最小化任务的信息，请参阅[数据生命周期UI概述](./overview.md)。
+本文档介绍了如何在Experience Platform UI中安排数据集过期时间。 有关如何在UI中执行其他数据最小化任务的信息，请参阅[数据生命周期UI概述](./overview.md)。
 
 要了解如何使用数据卫生API计划数据集过期，请参阅[数据集过期端点指南](../api/dataset-expiration.md)。

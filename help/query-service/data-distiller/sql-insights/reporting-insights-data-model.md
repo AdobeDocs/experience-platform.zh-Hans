@@ -2,9 +2,9 @@
 title: 查询Accelerated Store报告分析指南
 description: 了解如何通过查询服务构建报表见解数据模型，以便与加速的商店数据和用户定义的仪表板一起使用。
 exl-id: 216d76a3-9ea3-43d3-ab6f-23d561831048
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1034'
+source-wordcount: '1037'
 ht-degree: 0%
 
 ---
@@ -13,17 +13,17 @@ ht-degree: 0%
 
 Query accelerated store允许您减少从数据中获得关键见解所需的时间和处理能力。 通常，会定期（例如，每小时或每天）处理数据，其中会创建和报告聚合视图。 对源自汇总数据的这些报表的分析会产生旨在改善业务绩效的见解。 query accelerated store提供缓存服务、并发、交互式体验和无状态API。 但是，它假定已针对聚合查询而非原始数据查询对数据进行预处理和优化。
 
-查询加速存储允许您构建自定义数据模型和/或扩展现有Adobe Real-time Customer Data Platform数据模型。 然后，您可以参与报表分析，或将报表分析嵌入到您选择的报表/可视化框架中。 请参阅Real-time Customer Data Platform分析数据模型文档，了解如何[自定义您的SQL查询模板，以便为您的营销和关键绩效指标(KPI)用例创建Real-Time CDP报告](../../../dashboards/data-models/cdp-insights-data-model-b2c.md)。
+查询加速存储允许您构建自定义数据模型和/或扩展现有Adobe Real-Time Customer Data Platform数据模型。 然后，您可以参与报表分析，或将报表分析嵌入到您选择的报表/可视化框架中。 请参阅Real-Time Customer Data Platform分析数据模型文档，了解如何[自定义您的SQL查询模板，以便为您的营销和关键绩效指标(KPI)用例创建Real-Time CDP报告](../../../dashboards/data-models/cdp-insights-data-model-b2c.md)。
 
 Adobe Experience Platform的Real-Time CDP数据模型提供了有关用户档案、受众和目标的洞察，并启用了Real-Time CDP洞察功能板。 本文档将指导您完成创建报表见解数据模型的过程，并且还会指导您根据需要扩展Real-Time CDP数据模型。
 
 ## 先决条件
 
-本教程使用用户定义的功能板在Platform UI中可视化自定义数据模型中的数据。 请参阅[用户定义的功能板文档](../../../dashboards/standard-dashboards.md)以了解有关此功能的更多信息。
+本教程使用用户定义的功能板在Experience Platform UI中可视化自定义数据模型中的数据。 请参阅[用户定义的功能板文档](../../../dashboards/standard-dashboards.md)以了解有关此功能的更多信息。
 
 ## 快速入门
 
-要构建用于报表分析的自定义数据模型，并扩展包含扩充的Platform数据的Real-Time CDP数据模型，需要数据Distiller SKU。 请参阅与Data Distiller SKU相关的[打包](../../packaging.md)、[护栏](../../guardrails.md#query-accelerated-store)和[许可](../../data-distiller/license-usage.md)文档。 如果您没有Data Distiller SKU，请联系您的Adobe客户服务代表以了解更多信息。
+要构建用于报表分析的自定义数据模型，并扩展包含扩充的Distiller数据的Real-Time CDP数据模型，需要数据Experience Platform SKU。 请参阅与Data Distiller SKU相关的[打包](../../packaging.md)、[护栏](../../guardrails.md#query-accelerated-store)和[许可](../../data-distiller/license-usage.md)文档。 如果您没有Data Distiller SKU，请联系您的Adobe客户服务代表以了解更多信息。
 
 ## 构建报表见解数据模型
 
@@ -33,7 +33,7 @@ Adobe Experience Platform的Real-Time CDP数据模型提供了有关用户档案
 
 ![受众分析用户模型的实体关系图(ERD)。](../../images/data-distiller/sql-insights/audience-insight-user-model.png)
 
-在此示例中，`externalaudiencereach`表/数据集基于ID并跟踪匹配计数的下限和上限。 `externalaudiencemapping`维度表/数据集将外部ID映射到Platform上的目标和受众。
+在此示例中，`externalaudiencereach`表/数据集基于ID并跟踪匹配计数的下限和上限。 `externalaudiencemapping`维度表/数据集将外部ID映射到Experience Platform上的目标和受众。
 
 ## 使用Data Distiller创建报表见解模型
 

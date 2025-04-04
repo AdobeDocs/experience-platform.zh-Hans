@@ -1,18 +1,18 @@
 ---
 keywords: Experience Platform；主页；热门主题；Adobe Campaign Managed Cloud Services；营销策划；campaign managed services
 title: Adobe Campaign Managed Cloud Services
-description: 了解如何使用用户界面将Campaign托管Cloud Service连接到Platform
+description: 了解如何使用用户界面将Campaign Managed Cloud Services连接到Experience Platform
 exl-id: 8f18bf73-ebf1-4b4e-a12b-964faa0e24cc
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '743'
+source-wordcount: '747'
 ht-degree: 1%
 
 ---
 
 # Adobe Campaign Managed Cloud Services
 
-Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
+Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。 您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
 
 Adobe Campaign Managed Cloud Services提供了用于设计跨渠道客户体验的Managed Services平台，并为可视化的活动编排、实时互动管理和跨渠道执行提供了环境。 有关详细信息，请访问[Adobe Campaign v8文档](https://experienceleague.adobe.com/docs/campaign/campaign-v8/campaign-home.html?lang=zh-Hans)。
 
@@ -20,7 +20,7 @@ Adobe Campaign Managed Cloud Services源允许您将Adobe Campaign v8投放日�
 
 ## 先决条件
 
-在创建源连接以将Campaign v8Experience Platform之前，必须首先完成以下先决条件：
+在创建源连接以将Campaign v8引入Experience Platform之前，必须首先完成以下先决条件：
 
 * [使用Adobe Campaign客户端控制台设置事件日志导入](#view-delivery-and-tracking-log-data)
 * [创建XDM ExperienceEvent架构](#create-a-schema)
@@ -70,14 +70,14 @@ Adobe Campaign Managed Cloud Services源允许您将Adobe Campaign v8投放日�
 
 最后，必须为架构创建数据集。 有关如何创建数据集的详细说明，请阅读有关[在UI中创建数据集](../../../catalog/datasets/user-guide.md)的指南。
 
-## 使用Platform UI创建Adobe Campaign Managed Cloud Services源连接
+## 使用Adobe Campaign Managed Cloud Services UI创建Experience Platform源连接
 
-现在，您已在Campaign客户端控制台中访问数据日志，创建了架构和数据集，接下来可以继续创建源连接以将Campaign Managed Services数据导入Platform。
+现在，您已在Campaign客户端控制台中访问数据日志，创建了架构和数据集，接下来可继续创建源连接以将Campaign Managed Services数据导入Experience Platform。
 
 有关如何将Campaign v8投放日志和跟踪日志数据引入Experience Platform的详细说明，请阅读有关在UI中创建Campaign Managed Services源连接的指南[](../../tutorials/ui/create/adobe-applications/campaign.md)。
 
 >[!IMPORTANT]
 >
->在极端情况下，最近删除的电子邮件收件人与电子邮件的交互可能会将个人信息重新摄取到Experience Platform中。 在某些情况下，这可以为该用户重新启用营销。
+>在极端情况下，最近删除的电子邮件收件人与电子邮件的交互可能会将个人信息重新摄取到Experience Platform。 在某些情况下，这可以为该用户重新启用营销。
 >
->* 此方案仅在隐私请求在Experience Platform中执行的时间与隐私请求在Adobe Campaign Classic中执行的时间之间处于活动状态。 在Campaign中执行请求后，会进行检查以确保未将记录导出到Campaign。 请在执行72小时后重新发出GDPR请求以解决此问题。
+>* 此方案仅在Experience Platform中执行隐私请求到Adobe Campaign Classic中执行隐私请求之间处于活动状态。 在Campaign中执行请求后，会进行检查以确保未将记录导出到Campaign。 请在执行72小时后重新发出GDPR请求以解决此问题。

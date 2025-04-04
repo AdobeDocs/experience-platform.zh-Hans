@@ -1,10 +1,10 @@
 ---
 title: 查看已配置的仪表板
-description: 在Experience PlatformUI中查看贵组织配置的功能板列表。
+description: 在Experience Platform UI中查看贵组织配置的功能板列表。
 exl-id: b1fdb1aa-2d09-4c21-9c84-be379f34a9b7
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '202'
+source-wordcount: '204'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 要查看您组织配置的仪表板，请在左侧导航中选择&#x200B;**[!UICONTROL 仪表板]**，然后选择&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡。
 
-您的Platform实例上所有可用功能板的列表显示在[!UICONTROL 浏览]选项卡下。 这包括贵组织创建的已通过第三方应用程序配置的集成功能板。
+您的Experience Platform实例上所有可用功能板的列表显示在[!UICONTROL 浏览]选项卡下。 这包括贵组织创建的已通过第三方应用程序配置的集成功能板。
 
 ![ UI仪表板部分中的“浏览”选项卡。](./images/inventory/browse-tab.png)
 
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ![突出显示仪表板名称的“浏览”选项卡。](./images/inventory/dashboard-name.png)
 
-选中后，仪表板将在Platform UI中或要求您使用必要凭据登录的完全集成应用程序工作区中打开。
+选中后，仪表板将在Experience Platform UI中或要求您使用必要凭据登录的完全集成应用程序工作区中打开。
 
 ## 创建自定义仪表板
 

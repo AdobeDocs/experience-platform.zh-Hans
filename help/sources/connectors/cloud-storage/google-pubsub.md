@@ -3,9 +3,9 @@ title: Google PubSub Source概述
 description: 了解如何使用API或用户界面将Google PubSub连接到Adobe Experience Platform。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 7c78173d-2639-47cb-8935-77fb7841a121
-source-git-commit: 84d09038ded1f35269ebf67c6bc1a5dacaafe4ac
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '825'
+source-wordcount: '829'
 ht-degree: 0%
 
 ---
@@ -16,9 +16,9 @@ ht-degree: 0%
 >
 >[!DNL Google PubSub]源在源目录中可供已购买Real-Time CDP Ultimate的用户使用。
 
-Adobe Experience Platform为云提供商（如[!DNL AWS]、[!DNL Google Cloud Platform]和[!DNL Azure]）提供本机连接，允许您将这些系统中的数据引入到Platform中，以用于下游服务和目标。
+Adobe Experience Platform为云提供商（如[!DNL AWS]、[!DNL Google Cloud Platform]和[!DNL Azure]）提供本机连接，允许您将这些系统中的数据引入Experience Platform以用于下游服务和目标。
 
-云存储源可以将您的数据导入Platform，而无需下载、格式化或上传。 引入的数据可以格式化为XDM JSON、XDM Parquet或分隔。 该过程的每个步骤都集成到源工作流中。 平台允许您从[!DNL Google PubSub]实时引入数据。
+云存储源可以将您的数据导入Experience Platform，而无需下载、设置格式或上传。 引入的数据可以格式化为XDM JSON、XDM Parquet或分隔。 该过程的每个步骤都集成到源工作流中。 Experience Platform允许您从[!DNL Google PubSub]实时引入数据。
 
 ## 先决条件 {#prerequisites}
 
@@ -59,7 +59,7 @@ Adobe Experience Platform为云提供商（如[!DNL AWS]、[!DNL Google Cloud Pl
 
 ## 最佳[!DNL Google PubSub usage]的配置 {#optimal-configurations}
 
-此部分概述了为优化Experience Platform上对[!DNL Google PubSub]源的使用，建议您进行的配置。
+本节概述了建议在Experience Platform上优化使用[!DNL Google PubSub]源的配置。
 
 ### 订阅属性 {#subscription-properties}
 
@@ -83,7 +83,7 @@ Adobe Experience Platform为云提供商（如[!DNL AWS]、[!DNL Google Cloud Pl
 
 ## 将[!DNL Google PubSub]连接到Experience Platform
 
-以下文档提供了有关如何使用API或用户界面将[!DNL Google PubSub]连接到Platform的信息：
+以下文档提供了有关如何使用API或用户界面将[!DNL Google PubSub]连接到Experience Platform的信息：
 
 ### 使用API
 

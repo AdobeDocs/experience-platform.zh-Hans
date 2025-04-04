@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 架构UI概述
 description: 此概述涵盖Experience Platform中架构工作区的主要功能。
 exl-id: b6e089ce-cf9e-4150-92ab-368382a75049
-source-git-commit: 16d6090bc71dbdc9ab42db98eafa0ea5afb5967b
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '307'
+source-wordcount: '310'
 ht-degree: 9%
 
 ---
@@ -15,9 +15,9 @@ ht-degree: 9%
 
 Adobe Experience Platform用户界面中的[!UICONTROL 架构]工作区允许您管理体验数据模型(XDM)资源，包括架构、类、架构字段组和数据类型。 您可以查看和浏览由 Adobe 提供的核心资源，并为贵组织创建自定义资源和架构。
 
-要在平台UI中访问工作区，请在左边栏中选择&#x200B;**[!UICONTROL 架构]**。
+要在Experience Platform UI中访问工作区，请在左边栏中选择&#x200B;**[!UICONTROL 架构]**。
 
-![在Platform UI左侧导航中突出显示了架构的架构工作区。](../images/ui/overview/schemas-tab.png)
+![在Experience Platform UI左侧导航中突出显示的具有架构的架构工作区。](../images/ui/overview/schemas-tab.png)
 
 ## 快速入门
 
@@ -40,4 +40,4 @@ Adobe Experience Platform用户界面中的[!UICONTROL 架构]工作区允许您
 
 ## 后续步骤
 
-本文档介绍了Platform UI中的[!UICONTROL 架构]工作区。 请参阅本概述中链接的文档，了解有关如何管理架构和其他XDM资源的更多信息。
+本文档介绍了Experience Platform UI中的[!UICONTROL 架构]工作区。 请参阅本概述中链接的文档，了解有关如何管理架构和其他XDM资源的更多信息。

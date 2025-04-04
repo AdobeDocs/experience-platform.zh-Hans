@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 中的 AI 助手指南
 user-guide-description: 了解如何使用 AI 助手通过 Adobe Experience Platform 和 Real-Time Customer Data Platform 加快工作流程。
 description: 本文档列出了Adobe Experience Platform中的AI助手目录。
 role: Admin,User,Developer,Leader
-source-git-commit: ed09335f7b703be49ed08448ed03ed7bc91831f1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '102'
-ht-degree: 27%
+source-wordcount: '103'
+ht-degree: 31%
 
 ---
 
@@ -27,5 +27,5 @@ ht-degree: 27%
    * [监控重大更改和预测受众](./new-features/audience-forecasting.md)
    * [自然语言估计](./new-features/natural-language.md)
    * [用于创建受众的XDM字段发现](./new-features/xdm-field-discovery.md)
-* [平台发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
+* [Experience Platform 发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
 

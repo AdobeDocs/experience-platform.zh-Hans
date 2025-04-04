@@ -2,9 +2,9 @@
 title: 在UI中创建Adobe Analytics Source连接
 description: 了解如何在UI中创建Adobe Analytics源连接，将消费者数据接入Adobe Experience Platform。
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 71932d6f743d8cf767ce4e088231e61e9c2160e0
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2672'
+source-wordcount: '2676'
 ht-degree: 3%
 
 ---
@@ -17,15 +17,15 @@ ht-degree: 3%
 
 本教程需要对以下Experience Platform组件有一定的了解：
 
-* [体验数据模型(XDM)系统](../../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+* [体验数据模型(XDM)系统](../../../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
 * [实时客户个人资料](../../../../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时客户个人资料。
-* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [沙盒](../../../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ### 关键术语
 
 请务必了解本文档中使用的以下关键术语：
 
-* **标准属性**：标准属性是Adobe预定义的任意属性。 它们对所有客户具有相同的含义，并且在[!DNL Analytics]源数据和[!DNL Analytics]架构字段组中可用。
+* **标准属性**：标准属性是Adobe预定义的任何属性。 它们对所有客户具有相同的含义，并且在[!DNL Analytics]源数据和[!DNL Analytics]架构字段组中可用。
 * **自定义属性**：自定义属性是[!DNL Analytics]中自定义变量层次结构中的任何属性。 在Adobe Analytics实施中使用自定义属性将特定信息捕获到报表包中，这些属性的使用因报表包而异。 自定义属性包括eVar、prop和列表。 有关eVar的详细信息，请参阅以下[[!DNL Analytics] 有关转化变量](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html)的文档。
 * **自定义字段组中的任何属性**：源自客户创建的字段组的属性都是用户定义的属性，既不是标准属性，也不是自定义属性。
 * **友好名称**：友好名称是[!DNL Analytics]实施中自定义变量的人工提供标签。 有关友好名称的详细信息，请参阅以下[[!DNL Analytics] 有关转化变量](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html)的文档。
@@ -39,7 +39,7 @@ ht-degree: 3%
 >* 一个数据流，将历史报表包数据回填到13个月的数据湖。 此数据流在回填完成后结束。
 >* 将实时数据发送到数据湖和[!DNL Real-Time Customer Profile]的数据流流。 此数据流持续运行。
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 您还可以使用搜索栏缩小显示的源。
 
@@ -57,7 +57,7 @@ ht-degree: 3%
 
 报表包是构成[!DNL Analytics]报表基础的数据容器。 一个组织可以有多个报表包，每个报表包中包含不同的数据集。
 
-您可以从任何区域（美国、英国或新加坡）摄取报告包，前提是它们映射到与在中创建源连接的Experience Platform沙盒实例相同的组织。 只能使用单个活动数据流摄取报表包。 已在您使用的沙盒或其他沙盒中摄取不可选的报告包。
+您可以从任何区域（美国、英国或新加坡）摄取报告包，前提是它们映射到与Experience Platform沙盒实例（正在其中创建源连接）相同的组织。 只能使用单个活动数据流摄取报表包。 已在您使用的沙盒或其他沙盒中摄取不可选的报告包。
 
 可以建立多个绑定内连接，将多个报表包纳入同一沙盒中。 如果报表包具有不同的变量架构（如eVar或事件），则应将它们映射到自定义字段组中的特定字段，并使用[数据准备](../../../../../data-prep/ui/mapping.md)避免数据冲突。 只能将报表包添加到单个沙盒中。
 
@@ -115,7 +115,7 @@ ht-degree: 3%
 
 ![字段组预览](../../../../images/tutorials/create/analytics/field-group-preview.png)
 
-Platform会自动检测您的映射集是否存在任何友好名称冲突。 如果映射集没有冲突，请选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
+Experience Platform会自动检测映射集是否存在任何友好名称冲突。 如果映射集没有冲突，请选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
 
 ![映射](../../../../images/tutorials/create/analytics/mapping.png)
 
@@ -187,7 +187,7 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 * 如果您在[!DNL Analytics]流的初始设置期间使用数据准备配置，则这些更改也会应用于13个月的自动回填。
    * 但是，不适用于筛选，因为筛选仅保留用于实时数据。
 * 数据准备会同时应用于流摄取路径和批量摄取路径。 如果您修改了现有的数据准备配置，则这些更改会应用到流摄取和批量摄取路径中的新传入数据。
-   * 但是，任何数据准备配置均不适用于已引入Experience Platform的数据，无论它是流数据还是批量数据。
+   * 但是，任何数据准备配置均不适用于已摄取到Experience Platform中的数据，无论它是流数据还是批量数据。
 * Analytics中的标准属性始终会自动映射。 因此，不能将转换应用于标准属性。
    * 但是，您可以筛选掉标准属性，只要Identity Service或配置文件中不需要这些属性。
 * 无法使用列级筛选来筛选必填字段和标识字段。
@@ -322,7 +322,7 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 
 ## 后续步骤和其他资源
 
-创建连接后，将自动创建数据流以包含传入数据并使用您选择的架构填充数据集。 此外，还会进行数据回填，并摄取至多13个月的历史数据。 完成初始摄取后，[!DNL Analytics]个数据将由下游平台服务（如[!DNL Real-Time Customer Profile]和分段服务）使用。 有关更多详细信息，请参阅以下文档：
+创建连接后，将自动创建数据流以包含传入数据并使用您选择的架构填充数据集。 此外，还会进行数据回填，并摄取至多13个月的历史数据。 完成初始摄取后，[!DNL Analytics]个数据将由下游Experience Platform服务（如[!DNL Real-Time Customer Profile]和分段服务）使用。 有关更多详细信息，请参阅以下文档：
 
 * [[!DNL Real-Time Customer Profile] 概述](../../../../../profile/home.md)
 * [[!DNL Segmentation Service] 概述](../../../../../segmentation/home.md)
@@ -333,6 +333,6 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 
 >[!WARNING]
 >
-> 以下视频中显示的[!DNL Platform] UI已过期。 有关最新的UI屏幕截图和功能，请参阅上述文档。
+> 以下视频中显示的[!DNL Experience Platform] UI已过期。 有关最新的UI屏幕截图和功能，请参阅上述文档。
 
 >[!VIDEO](https://video.tv.adobe.com/v/29687?quality=12&learn=on)

@@ -1,10 +1,10 @@
 ---
 title: 查询服务中的模糊匹配
-description: 了解如何对您的Platform数据执行匹配，该匹配通过大致匹配您选择的字符串来组合来自多个数据集的结果。
+description: 了解如何对Experience Platform数据执行匹配，该匹配通过大致匹配所选字符串来组合来自多个数据集的结果。
 exl-id: ec1e2dda-9b80-44a4-9fd5-863c45bc74a7
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '813'
+source-wordcount: '815'
 ht-degree: 0%
 
 ---
@@ -69,7 +69,7 @@ cur = conn.cursor()
 
 您的[!DNL Jupyter Notebook]实例现在已连接到查询服务。 如果连接成功，则不会显示任何消息。 如果连接失败，将显示错误。
 
-### 来自Luma数据集的Draw数据 {#luma-dataset}
+### 从Luma数据集提取数据 {#luma-dataset}
 
 使用以下命令从第一个数据集中绘制要分析的数据。 为简单起见，这些示例已限制为该列的前10个结果。
 
@@ -96,7 +96,7 @@ array(['Deluxe King Or Queen Room', 'Kona Tower City / Mountain View',
 
 +++
 
-### Acme数据集中的Draw数据 {#acme-dataset}
+### 从Acme数据集提取数据 {#acme-dataset}
 
 现在，使用以下命令从第二个数据集中提取要分析的数据。 同样，为简短起见，这些示例已限制为该列的前10个结果。
 
@@ -350,7 +350,7 @@ WHERE
 
 +++
 
-### 将模糊匹配结果保存到平台 {#save-to-platform}
+### 将模糊匹配结果保存到Experience Platform {#save-to-platform}
 
 最后，利用SQL将模糊匹配的结果保存为数据集，供Adobe Experience Platform使用。
 

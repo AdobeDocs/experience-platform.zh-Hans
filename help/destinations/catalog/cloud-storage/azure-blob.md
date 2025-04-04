@@ -2,9 +2,9 @@
 title: Azure Blob连接
 description: 创建到Azure Blob Storage的实时出站连接，定期从Adobe Experience Platform导出CSV数据文件。
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1089'
+source-wordcount: '1093'
 ht-degree: 7%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 7%
 
 ## 目标更改日志 {#changelog}
 
-在2023年7月的Experience Platform版本中，[!DNL Azure Blob]目标提供了新的功能，如下所示：
+在2023年7月发行的Experience Platform中，[!DNL Azure Blob]目标提供了新功能，如下所示：
 
 * [支持导出数据集](/help/destinations/ui/export-datasets.md)。
 * 额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling)。
@@ -22,18 +22,18 @@ ht-degree: 7%
 
 ## 概述 {#overview}
 
-[!DNL Azure Blob]（以下简称[!DNL Blob]）是Microsoft的云对象存储解决方案。 本教程提供了使用[!DNL Platform]用户界面创建[!DNL Blob]目标的步骤。
+[!DNL Azure Blob]（以下简称[!DNL Blob]）是Microsoft的云对象存储解决方案。 本教程提供了使用[!DNL Experience Platform]用户界面创建[!DNL Blob]目标的步骤。
 
 ## 通过API或UI连接到您的[!UICONTROL Azure Blob]存储 {#connect-api-or-ui}
 
-* 若要使用Platform用户界面连接到[!UICONTROL Azure Blob]存储位置，请阅读下面的[连接到目标](#connect)和[将受众激活到此目标](#activate)部分。
+* 要使用Experience Platform用户界面连接到您的[!UICONTROL Azure Blob]存储位置，请阅读下面的[连接到目标](#connect)和[将受众激活到此目标](#activate)部分。
 * 若要以编程方式连接到[!UICONTROL Azure Blob]存储位置，请使用流服务API教程](../../api/activate-segments-file-based-destinations.md)阅读[将受众激活到基于文件的目标。
 
 ## 快速入门
 
 本教程需要对以下Adobe Experience Platform组件有一定的了解：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构编辑器教程](../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
 * [[!DNL Real-Time Customer Profile]](../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
@@ -46,8 +46,8 @@ ht-degree: 7%
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -66,14 +66,14 @@ ht-degree: 7%
 
 此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
 
-* 如何使用Platform用户界面](/help/destinations/ui/export-datasets.md)导出数据集[。
+* 如何使用Experience Platform用户界面](/help/destinations/ui/export-datasets.md)导出数据集[。
 * 如何使用流服务API](/help/destinations/api/export-datasets.md)以编程方式[导出数据集。
 
 ## 导出数据的文件格式 {#file-format}
 
-导出&#x200B;*受众数据*&#x200B;时，Platform会在您提供的存储位置创建一个`.csv`、`parquet`或`.json`文件。 有关这些文件的更多信息，请参阅Audience Activation教程中的[导出的支持文件格式](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export)部分。
+导出&#x200B;*受众数据*&#x200B;时，Experience Platform会在您提供的存储位置创建一个`.csv`、`parquet`或`.json`文件。 有关这些文件的更多信息，请参阅Audience Activation教程中的[导出的支持文件格式](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export)部分。
 
-导出&#x200B;*数据集*&#x200B;时，Platform会在您提供的存储位置创建一个`.parquet`或`.json`文件。 有关这些文件的更多信息，请参阅导出数据集教程中的[验证成功的数据集导出](../../ui/export-datasets.md#verify)部分。
+导出&#x200B;*数据集*&#x200B;时，Experience Platform会在您提供的存储位置创建一个`.parquet`或`.json`文件。 有关这些文件的更多信息，请参阅导出数据集教程中的[验证成功的数据集导出](../../ui/export-datasets.md#verify)部分。
 
 ## 连接到目标 {#connect}
 
@@ -106,7 +106,7 @@ ht-degree: 7%
 * **[!UICONTROL 描述]**：输入此目标的描述。
 * **[!UICONTROL 文件夹路径]**：输入将承载导出文件的目标文件夹的路径。
 * **[!UICONTROL 容器]**：输入要由此目标使用的[!DNL Azure Blob Storage]容器的名称。
-* **[!UICONTROL 文件类型]**：选择导出文件应使用的格式Experience Platform。 在选择[!UICONTROL CSV]选项时，您还可以[配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md)。
+* **[!UICONTROL 文件类型]**：选择Experience Platform应用于导出文件的格式。 在选择[!UICONTROL CSV]选项时，您还可以[配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md)。
 * **[!UICONTROL 压缩格式]**：选择Experience Platform应用于导出文件的压缩类型。
 * **[!UICONTROL 包含清单文件]**：如果希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。 清单的命名格式为`manifest-<<destinationId>>-<<dataflowRunId>>.json`。 查看[样本清单文件](/help/destinations/assets/common/manifest-d0420d72-756c-4159-9e7f-7d3e2f8b501e-0ac8f3c0-29bd-40aa-82c1-f1b7e0657b19.json)。 清单文件包含以下字段：
    * `flowRunId`：生成导出文件的[数据流运行](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations)。

@@ -1,27 +1,27 @@
 ---
-keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK；SDK
+keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源sdk；sdk；SDK
 solution: Experience Platform
-title: 自助式源（批处理SDK）概述
-description: Adobe Experience Platform自助源（批处理SDK）是一组配置API，允许您使用流服务API集成基于REST API的源以将您的数据导入Experience Platform。
+title: 自助式源(批处理SDK)概述
+description: Adobe Experience Platform自助源(批处理SDK)是一组配置API，允许您使用流服务API集成基于REST API的源，将您的数据引入到Experience Platform。
 exl-id: 5d5449ad-a1ba-402b-a281-0b2d8b704f32
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
 source-wordcount: '592'
 ht-degree: 3%
 
 ---
 
-# 自助式源（批处理SDK）概述
+# 自助式源(批处理SDK)概述
 
-Adobe Experience Platform自助源（批处理SDK）是一个框架，它允许您使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将基于REST API的源集成到Experience Platform源目录。 自助源（批处理SDK）提供了一组配置API，用于构建您自己的源并将您的批量数据导入Experience Platform。
+Adobe Experience Platform自助源(批处理SDK)是一个框架，它允许您使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将基于REST API的源集成到Experience Platform源目录。 自助源(批处理SDK)提供了一组配置API，用于构建您自己的源并将批量数据引入Experience Platform。
 
-借助自助式源（批处理SDK），您可以：
+通过自助式源(批处理SDK)，您可以：
 
 * 使用[!DNL Flow Service] API配置新源并将其集成到Experience Platform目录。
 * 定义源的规范，包括与支持的身份验证类型以及如何获取资源数据相关的信息。
 * 为新源创建面向用户的文档。
 
-“自助源”文档提供了配置、测试和发布基于REST API的源与Experience Platform的集成的说明，并让您的源成为不断增长的源目录的一部分。
+“自助源”文档提供了配置、测试和发布与Experience Platform的基于REST API的源集成的说明，并让您的源成为不断增长的源目录的一部分。
 
 ![目录](./assets/catalog.png)
 
@@ -33,9 +33,9 @@ Experience Platform可以从外部源摄取数据，同时允许您使用Experie
 
 ## 创建源
 
-通过自助源，您可以集成自己的基于REST API的源，并将您的数据与[!DNL Flow Service]Experience Platform。 您可以通过[!DNL Flow Service] API创建、配置和提交新的连接规范，将源集成到Experience Platform源目录。
+通过自助源，您可以将自己的基于REST API的源集成到一起，并将您的数据带到Experience Platform和[!DNL Flow Service]。 您可以通过[!DNL Flow Service] API创建、配置和提交新的连接规范，将源集成到Experience Platform源目录。
 
-有关如何将新源集成到Experience Platform中的信息，请参阅[创建新的连接规范](./api/api-overview.md)指南。
+有关如何将新源集成到Experience Platform的信息，请参阅[创建新连接规范](./api/api-overview.md)指南。
 
 ## 记录您的源
 
@@ -45,13 +45,13 @@ Experience Platform可以从外部源摄取数据，同时允许您使用Experie
 
 下面概述了在Experience Platform中配置源的分步流程：
 
-* 阅读[自助源（批处理SDK） API指南](./api/api-overview.md)。
+* 阅读[自助源(批处理SDK) API指南](./api/api-overview.md)。
    * 阅读[入门指南](./api/getting-started.md)。
    * 按照有关[创建新连接规范](./api/create.md)的教程进行操作。
    * 按照有关[更新连接规范](./api/update-connection-specs.md)的教程进行操作。
    * 按照有关[将新的连接规范ID添加到流规范](./api/update-flow-specs.md)的教程进行操作
    * [提交您的新源](./api/submit.md)。
-* 要更好地了解连接规范的结构和属性，请阅读有关自助源（批处理SDK）的[配置选项](./config/config.md)的指南。
+* 要更好地了解连接规范的结构和属性，请阅读关于自助源(批处理SDK)的[配置选项](./config/config.md)的指南。
    * 请阅读[配置身份验证规范](./config/authspec.md)的指南，以更好地了解可用于源的各种身份验证类型。
    * 请阅读[配置源规范](./config/sourcespec.md)的指南，以了解有关可以为源配置的不同分页类型、计划格式和自定义架构的信息。
    * 请阅读[配置浏览规范](./config/explorespec.md)的指南，以了解如何定义浏览和检查源中包含的对象所需的参数。

@@ -1,12 +1,12 @@
 ---
 keywords: 广告；标准；
 title: 标准连接
-description: Criteo支持可信且有影响力的广告，为开放互联网上的每位消费者带来更丰富的体验。 凭借世界上最大的商业数据集和同类最佳的人工智能，Criteo可确保购物历程中的每个接触点都经过个性化，以在适当的时间通过适当的广告吸引客户。
+description: Criteo 支持值得信赖且具有影响力的广告，在开放的互联网上为每位消费者带来更丰富的体验。Criteo 拥有全球最大的商业数据集和同类最佳 AI，可确保购物历程中的每个接触点都是个性化的，以便在合适的时间向客户推送合适的广告。
 exl-id: e6f394b2-ab82-47bb-8521-1cf9d01a203b
-source-git-commit: e594e473ac78663203c9254623fe8e324985fa39
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1016'
-ht-degree: 3%
+source-wordcount: '1017'
+ht-degree: 12%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 3%
 >
 >此目标连接器和文档页面由标准创建和维护。 如有任何查询或更新请求，请直接在[此处](mailto:criteoTechnicalPartnerships@criteo.com)联系Criteo。
 
-Criteo支持可信且有影响力的广告，为开放互联网上的每位消费者带来更丰富的体验。 凭借世界上最大的商业数据集和同类最佳的人工智能，Criteo可确保购物历程中的每个接触点都经过个性化，以在适当的时间通过适当的广告吸引客户。
+Criteo 支持值得信赖且具有影响力的广告，在开放的互联网上为每位消费者带来更丰富的体验。Criteo 拥有全球最大的商业数据集和同类最佳 AI，可确保购物历程中的每个接触点都是个性化的，以便在合适的时间向客户推送合适的广告。
 
 ## 先决条件 {#prerequisites}
 
@@ -39,7 +39,7 @@ Criteo支持可信且有影响力的广告，为开放互联网上的每位消�
 
 | 目标身份 | 描述 | 注意事项 |
 | --- | --- | --- |
-| `email_sha256` | 使用SHA-256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA-256哈希电子邮件地址。 当源字段包含未哈希处理的属性时，请选中[!UICONTROL 应用转换]选项，以使Platform在激活时自动对数据进行哈希处理。 |
+| `email_sha256` | 使用SHA-256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA-256哈希电子邮件地址。 当源字段包含未哈希处理的属性时，请选中[!UICONTROL 应用转换]选项，以使Experience Platform在激活时自动对数据进行哈希处理。 |
 | `gum_id` | 标准[!DNL GUM] Cookie标识符 | [!DNL GUM IDs]允许客户端在其用户标识系统与Criteo的用户标识([!DNL UID])之间保持通信。 如果标识符类型为`gum_id`，则还必须包含一个附加参数[!DNL GUM Caller ID]。 请联系您的Criteo帐户团队以获取相应的[!DNL GUM Caller ID]或获取有关此[!DNL GUM ID]同步的更多信息（如果需要）。 |
 
 ## 导出类型和频率 {#export-type-frequency}

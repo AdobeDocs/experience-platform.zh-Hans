@@ -2,20 +2,20 @@
 keywords: Experience Platform；主页；热门主题；源连接器；源连接器；源；数据源；数据源；数据源连接
 solution: Experience Platform
 title: Source连接器概述
-description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
+description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。 您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 0a6a9fe759d71fd62e3eaf5c93a091614f3c76a0
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1552'
-ht-degree: 2%
+source-wordcount: '1557'
+ht-degree: 3%
 
 ---
 
 # Source连接器概述
 
-Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源中摄取数据，如 Adobe 应用程序、基于云的存储、数据库和许多其他源。
+Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。 您可以从各种源中摄取数据，如 Adobe 应用程序、基于云的存储、数据库和许多其他源。
 
-[!DNL Flow Service]用于收集和集中来自Platform内各种不同来源的客户数据。 该服务提供了一个用户界面和RESTful API，可让您轻松设置到各种数据提供商的源连接。 通过这些源连接，您可以验证第三方系统、设置摄取运行的时间，以及管理数据摄取吞吐量。
+[!DNL Flow Service]用于收集和集中Experience Platform中各种不同来源的客户数据。 该服务提供了一个用户界面和RESTful API，可让您轻松设置到各种数据提供商的源连接。 通过这些源连接，您可以验证第三方系统、设置摄取运行的时间，以及管理数据摄取吞吐量。
 
 借助Experience Platform，您可以集中从不同来源收集的数据，并利用从中获得的见解做更多工作。
 
@@ -84,7 +84,7 @@ Experience Platform支持从第三方Analytics平台引入数据。 有关详细
 
 ### 云存储 {#cloud-storage}
 
-云存储源可以将您自己的数据导入Platform，而无需下载、格式化或上传。 引入的数据可以格式化为XDM JSON、XDM Parquet或分隔。 该过程的每个步骤都使用用户界面集成到源工作流中。 有关更多信息，请参阅以下相关文档：
+云存储源可以将您自己的数据导入Experience Platform，而无需下载、设置格式或上传。 引入的数据可以格式化为XDM JSON、XDM Parquet或分隔。 该过程的每个步骤都使用用户界面集成到源工作流中。 有关更多信息，请参阅以下相关文档：
 
 - [[!DNL Azure Data Lake Storage Gen2]](connectors/cloud-storage/adls-gen2.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Azure Blob]](connectors/cloud-storage/blob.md) [!BADGE 批次]{type=Informative}
@@ -224,11 +224,11 @@ Adobe Experience Platform中基于属性的访问控制允许管理员根据属�
 
 通过基于属性的访问控制，您可以将映射配置应用到您拥有权限的字段。 此外，如果您无权访问数据集中的所有字段，则无法将数据摄取到数据集。
 
-#### 在源中支持基于属性的访问控制
+#### 支持源中基于属性的访问控制
 
 >[!TIP]
 >
->基于属性的访问控制的工作方式如下： **角色**&#x200B;的创建用于对与Platform实例交互的用户类型进行分类。 **标签**&#x200B;应用于&#x200B;**角色**&#x200B;以指定该给定角色的访问权限。 **标签**&#x200B;也应用于架构字段和区段等资源。 为了使用户能够访问某些架构字段和区段，必须将其添加到&#x200B;*角色，该角色具有分配给查询资源的相同标签*。 有关详细信息，请阅读[基于属性的访问控制端到端指南](../access-control/abac/end-to-end-guide.md)。
+>基于属性的访问控制的工作方式如下：**角色**&#x200B;的创建用于对与Experience Platform实例交互的用户类型进行分类。 **标签**&#x200B;应用于&#x200B;**角色**&#x200B;以指定该给定角色的访问权限。 **标签**&#x200B;也应用于架构字段和区段等资源。 为了使用户能够访问某些架构字段和区段，必须将其添加到&#x200B;*角色，该角色具有分配给查询资源的相同标签*。 有关详细信息，请阅读[基于属性的访问控制端到端指南](../access-control/abac/end-to-end-guide.md)。
 
 - 将标签应用于架构字段以定义对组织中特定架构字段的访问权限。 一旦建立了对特定架构字段的访问权限，用户将只能为他们有权访问的字段创建映射。
 - 不具有相应角色的用户将无法创建或更新包含包含无法访问架构字段的映射的数据流。 此外，未经授权的用户无法更新、删除、启用或禁用具有无法访问架构字段的现有数据流。

@@ -2,16 +2,16 @@
 description: 了解如何为支持的身份和属性映射配置配置目标。
 title: 支持的映射配置
 exl-id: a477a3f2-a229-4b22-8588-ee58bd5436c6
-source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '659'
+source-wordcount: '670'
 ht-degree: 3%
 
 ---
 
 # 支持的映射配置
 
-通过Destination SDK构建的目标根据目标类型支持特定的身份命名空间和属性映射配置。
+使用Destination SDK构建的目标根据目标类型支持特定的身份命名空间和属性映射配置。
 
 本文介绍了在配置目标时可以使用的所有受支持的映射配置。
 
@@ -32,7 +32,7 @@ ht-degree: 3%
 | 源字段 | 目标字段 |
 | --- | --- |
 | XDM属性 | 自定义属性 |
-| 标识命名空间 | 标识命名空间 |
+| 身份标识命名空间 | 身份标识命名空间 |
 
 下面的配置示例允许客户使用上表中的两个映射。
 
@@ -64,19 +64,19 @@ ht-degree: 3%
 
 选择目标字段映射时，用户必须手动输入目标自定义属性的名称。
 
-![显示自定义属性选择的平台UI屏幕截图。](../../assets/functionality/destination-configuration/mapping-streaming-select-custom-attribute.png)
+![显示自定义属性选择的Experience Platform UI屏幕截图。](../../assets/functionality/destination-configuration/mapping-streaming-select-custom-attribute.png)
 
 生成的UI体验如下图所示。
 
-![Platform UI屏幕截图显示映射到流目标的自定义属性的XDM属性。](../../assets/functionality/destination-configuration/mapping-streaming-xdm-custom.png)
+![Experience Platform UI屏幕截图显示映射到流目标的自定义属性的XDM属性。](../../assets/functionality/destination-configuration/mapping-streaming-xdm-custom.png)
 
 ### 将身份命名空间映射到合作伙伴身份命名空间 {#streaming-identity-to-identity}
 
-用户可以从Platform将自定义或全局身份命名空间映射到您定义的身份命名空间。
+用户可以将自定义或全局身份命名空间从Experience Platform映射到您定义的身份命名空间。
 
 生成的UI体验如下图所示。
 
-![Platform UI屏幕截图显示流目标的身份映射到身份。](../../assets/functionality/destination-configuration/mapping-streaming-identity-identity.png)
+![Experience Platform UI屏幕截图显示流目标的身份映射到身份。](../../assets/functionality/destination-configuration/mapping-streaming-identity-identity.png)
 
 ## 基于文件的目标支持的映射 {#batch-mappings}
 
@@ -85,8 +85,8 @@ ht-degree: 3%
 | 源字段 | 目标字段 |
 | --- | --- |
 | XDM属性 | 属性/自定义属性 |
-| 标识命名空间 | 属性/自定义属性 |
-| 标识命名空间 | 标识命名空间 |
+| 身份标识命名空间 | 属性/自定义属性 |
+| 身份标识命名空间 | 身份标识命名空间 |
 
 下面的配置示例允许客户使用上表中的所有映射。
 
@@ -118,33 +118,33 @@ ht-degree: 3%
 
 生成的UI体验如下图所示。
 
-![Platform UI屏幕截图显示了XDM映射到基于文件的目标的自定义属性。](../../assets/functionality/destination-configuration/mapping-batch-xdm-custom.png)
+![Experience Platform UI屏幕截图显示了XDM映射到基于文件的目标的自定义属性。](../../assets/functionality/destination-configuration/mapping-batch-xdm-custom.png)
 
 用户可以保留默认名称，也可以在目标字段选择屏幕中输入自定义属性名称。
 
-![Platform UI屏幕截图，显示基于文件的目标的自定义目标属性选择。](../../assets/functionality/destination-configuration/mapping-batch-custom-attribute.png)
+![Experience Platform UI屏幕截图，显示基于文件的目标的自定义目标属性选择。](../../assets/functionality/destination-configuration/mapping-batch-custom-attribute.png)
 
 ### 将身份命名空间映射到自定义属性 {#batch-identity-to-custom}
 
-用户可以将自定义或全局身份命名空间从Platform映射到目标端的自定义属性。
+用户可以将自定义或全局身份命名空间从Experience Platform映射到目标端的自定义属性。
 
 选择身份命名空间作为源字段时，目标字段会自动填充等效的身份命名空间。 要将目标字段替换为自定义属性，用户必须在目标字段选择屏幕中输入自定义属性名称。
 
-![Platform UI屏幕截图，显示基于文件的目标的自定义目标属性选择。](../../assets/functionality/destination-configuration/mapping-batch-custom-attribute.png)
+![Experience Platform UI屏幕截图，显示基于文件的目标的自定义目标属性选择。](../../assets/functionality/destination-configuration/mapping-batch-custom-attribute.png)
 
 生成的UI体验如下图所示。
 
-![Platform UI屏幕截图显示标识映射到基于文件的目标的自定义属性。](../../assets/functionality/destination-configuration/mapping-batch-identity-custom.png)
+![Experience Platform UI屏幕截图显示标识映射到基于文件的目标的自定义属性。](../../assets/functionality/destination-configuration/mapping-batch-identity-custom.png)
 
 ### 将身份命名空间映射到合作伙伴身份命名空间 {#batch-identity-to-identity}
 
-用户可以将自定义或全局身份命名空间从Platform映射到等效的身份命名空间。
+用户可以将自定义或全局身份命名空间从Experience Platform映射到等效的身份命名空间。
 
 选择身份命名空间作为源字段时，目标字段会自动填充等效的身份命名空间。
 
 生成的UI体验如下图所示。
 
-![Platform UI屏幕截图，显示基于文件的目标的标识到标识的映射。](../../assets/functionality/destination-configuration/mapping-batch-identity-identity.png)
+![Experience Platform UI屏幕截图，显示基于文件的目标的标识映射到标识。](../../assets/functionality/destination-configuration/mapping-batch-identity-identity.png)
 
 
 ## 后续步骤 {#next-steps}

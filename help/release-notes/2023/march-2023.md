@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2023 年 3 月）
 description: Adobe Experience Platform 的 2023 年 3 月发行说明。
 exl-id: 3f4d764a-77cd-4e4a-ae11-e97a23006a53
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2079'
-ht-degree: 99%
+source-wordcount: '2081'
+ht-degree: 97%
 
 ---
 
@@ -33,11 +33,11 @@ Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查
 
 | 功能 | 描述 |
 | --- | --- |
-| 用户定义的仪表板 | 现在，在构件中添加属性之前，您可以在用户定义的仪表板构件编辑器中&#x200B;**对属性值进行采样**。创建构件时，该属性列中的一些示例值可用于各个属性。<br>您现在可以使用交换轴按钮&#x200B;**交换构件上的 X 轴和 Y 轴**。在向构件中添加属性时，这可以节省时间并提供更符合人体工程学的体验。这样就无需在属性面板中再次查找这两个属性。<br>您现在可以在构件中&#x200B;**更改图例的位置和标题**。在构件上出现图例后，您可以将该图例重新定位在图表上的任何位置，还可以重新命名图例标题，就像重命名轴标记和构件标题一样。 |
+| 用户定义的仪表板 | 现在，在小组件中添加属性之前，您可以在用户定义的仪表板小组件编辑器中&#x200B;**对属性值进行采样**。创建小组件时，该属性列中的一些示例值可用于各个属性。<br>您现在可以使用交换轴按钮&#x200B;**交换小组件上的 X 轴和 Y 轴**。在向小组件中添加属性时，这可以节省时间并提供更符合人体工程学的体验。这样就无需在属性面板中再次查找这两个属性。<br>您现在可以在小组件中&#x200B;**更改图例的位置和标题**。在小组件上出现图例后，您可以将该图例重新定位在图表上的任何位置，还可以重新命名图例标题，就像重命名轴标记和小组件标题一样。 |
 
 {style="table-layout:auto"}
 
-有关仪表板的详细信息，包括如何授予访问权限和创建自定义构件，请首先阅读[仪表板概述](../../dashboards/home.md)。
+有关仪表板的详细信息，包括如何授予访问权限和创建自定义小组件，请首先阅读[仪表板概述](../../dashboards/home.md)。
 
 ## 数据收集 {#data-collection}
 
@@ -63,7 +63,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 功能 | 描述 |
 | --- | --- |
-| Adobe Analytics 数据过滤功能全面可用 | 现在，您可以使用数据准备功能应用规则和条件来过滤您的 Analytics 数据，然后再将其引入实时客户配置文件。有关更多信息，请阅读有关[筛选 Analytics 数据以引入配置文件](../../sources/tutorials/ui/create/adobe-applications/analytics.md#filtering-for-profile)的指南。 |
+| Adobe Analytics 数据过滤功能全面可用 | 现在，您可以使用数据准备功能应用规则和条件来过滤您的 Analytics 数据，然后再将其引入实时客户轮廓。有关更多信息，请阅读有关[筛选 Analytics 数据以引入轮廓](../../sources/tutorials/ui/create/adobe-applications/analytics.md#filtering-for-profile)的指南。 |
 | 用于编码和解码 URL 字符串的新函数 | <ul><li>该`get_url_encoded`函数将 URL 作为输入，并用 ASCII 字符替换或编码特殊字符。</li><li>该`get_url_decoded`函数将 URL 作为输入，并将 ASCII 字符解码为特殊字符。</li></ul> 有关详细信息，请阅读[数据准备函数指南](../../data-prep/functions.md)。有关保留字符及其相应编码字符的综合列表，请阅读有关[特殊字符](../../data-prep/functions.md#special-characters)的指南。 |
 
 有关数据准备的详细信息，请阅读[数据准备概述](../../data-prep/home.md)。
@@ -82,7 +82,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 | [(Beta) [!DNL Amazon Ads] 连接](../../destinations/catalog/advertising/amazon-ads.md) | [!DNL Amazon Ads]与 Adobe Experience Platform 的集成可为 [!DNL Amazon Ads] 产品（包括 [!DNL Amazon DSP (ADSP)]）提供现成的集成。使用 Adobe Experience Platform 中的 [!DNL Amazon Ads] 目标，用户可以定义广告商受众，以便在 [!DNL Amazon DSP] 上进行定位和激活。 |
 | [[!DNL Marketo Measure Ultimate] 连接](../../destinations/catalog/adobe/marketo-measure-ultimate.md) | [!DNL Marketo Measure]（以前为 Bizible）使营销人员能够洞悉哪些营销工作在为公司增加收入以及使投资回报率最大化方面最有效。该目标可使业务对业务 (B2B) 数据流能够从 Adobe Experience Platform 传输到 [!DNL Marketo Measure]。该卡仅对 [!DNL Marketo Measure Ultimate] 客户可用。 |
 | [TikTok 连接](../../destinations/catalog/social/tiktok.md) | 使用您的数据在 TikTok 上构建自定义受众，以便针对您的广告营销活动进行定位。 |
-| [Zendesk 连接](../../destinations/catalog/crm/zendesk.md) | 使用此目标创建和更新区段内的身份，作为 [!DNL Zendesk] 内的联系人。 |
+| [Zendesk 连接](../../destinations/catalog/crm/zendesk.md) | 使用此目标创建和更新区段内的身份标识，作为 [!DNL Zendesk] 内的联系人。 |
 
 {style="table-layout:auto"}
 
@@ -90,7 +90,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| 目标的新访问控制权限：[[!DNL Activate Segments without Mapping]](../../access-control/home.md#permissions) | 新的权限使用户可激活通往现有目标的区段，而无需显示[映射步骤](../../destinations/ui/activate-batch-profile-destinations.md#mapping)。用户可以在激活工作流程中添加和删除区段，但无法添加或删除映射的属性或身份。 |
+| 目标的新访问控制权限：[[!DNL Activate Segments without Mapping]](../../access-control/home.md#permissions) | 新的权限使用户可激活通往现有目标的区段，而无需显示[映射步骤](../../destinations/ui/activate-batch-profile-destinations.md#mapping)。用户可以在激活工作流程中添加和删除区段，但无法添加或删除映射的属性或身份标识。 |
 
 {style="table-layout:auto"}
 
@@ -119,10 +119,10 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 组件类型 | 名称 | 描述 |
 | --- | --- | --- |
-| 类 | [[!UICONTROL 优惠项目]](https://github.com/adobe/xdm/pull/1678/files) | 代表优惠的类。 |
+| 类 | [[!UICONTROL 产品建议项目]](https://github.com/adobe/xdm/pull/1678/files) | 代表产品建议的类。 |
 | 类 | [[!UICONTROL 决策项目]](https://github.com/adobe/xdm/pull/1678/files) | 可以进行决策的项目。决策过程的输出是一个或多个决策项目。 |
 | 类 | [[!UICONTROL 媒体会话服务器超时]](https://github.com/adobe/xdm/pull/1676/files) | 这表示用户最后一次已知交互与会话关闭之间经过的时间量（以秒为单位）。 |
-| 字段组 | [[!UICONTROL XDM 配置文件计算属性]](https://github.com/adobe/xdm/pull/1686/files) | 这会将内部 Adobe 服务的计算属性添加到传入的客户数据中。客户不应使用它来摄取数据。 |
+| 字段组 | [[!UICONTROL XDM 轮廓计算属性]](https://github.com/adobe/xdm/pull/1686/files) | 这会将内部 Adobe 服务的计算属性添加到传入的客户数据中。客户不应使用它来摄取数据。 |
 | 数据类型 | [[!UICONTROL 退款项目]](https://github.com/adobe/xdm/pull/1685/files) | 指示退款是否与某个订单关联，并定义退款类型、金额和关联货币。 |
 | 数据类型 | [[!UICONTROL 类别数据]](https://github.com/adobe/xdm/pull/1677/files) | 这个新数据类型代表产品的类别。 |
 | 架构 | [[!UICONTROL Adobe Target 分类字段]](https://github.com/adobe/xdm/pull/1682/files) | 为 Target 分类数据集创建了新的 XDM 架构。它包含一组对 Target 活动和体验进行分类的元数据字段。 |
@@ -147,11 +147,11 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 {style="table-layout:auto"}
 
-有关 Platform 中 XDM 的详细信息，请阅读 [XDM 系统概述](../../xdm/home.md)。
+有关Experience Platform中XDM的更多信息，请阅读[XDM系统概述](../../xdm/home.md)。
 
 ## 查询服务 {#query-service}
 
-查询服务允许您使用标准 SQL 查询 Adobe Experience Platform [!DNL Data Lake] 中的数据。您可以加入数据湖的任何数据集，并作为新数据集获取查询结果，以用于报表、Data Science Workspace，或将数据摄取到实时客户配置文件。
+查询服务允许您使用标准 SQL 查询 Adobe Experience Platform [!DNL Data Lake] 中的数据。您可以加入数据湖的任何数据集，并作为新数据集获取查询结果，以用于报表、Data Science Workspace，或将数据摄取到实时客户轮廓。
 
 **更新的功能**
 
@@ -165,13 +165,13 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 ## Real-Time Customer Data Platform B2B 版 {#b2b}
 
-Real-Time CDP B2B 版本基于 Real-Time Customer Data Platform (Real-Time CDP) 构建，专为采用业务对业务服务模式运营的营销人员而构建。它将来自多个来源的数据汇集在一起&#x200B;，并将其组合成人员和帐户配置文件的单一视图。这种统一的数据使营销人员能够精确定位特定受众，并通过所有可用渠道吸引这些受众。
+Real-Time CDP B2B 版本基于 Real-Time Customer Data Platform (Real-Time CDP) 构建，专为采用业务对业务服务模式运营的营销人员而构建。它将来自多个来源的数据汇集在一起&#x200B;，并将其组合成人员和帐户轮廓的单一视图。这种统一的数据使营销人员能够精确锁定特定受众，并通过所有可用渠道吸引这些受众。
 
 **更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 错误修正 | 为了在系统中更准确地表示配置文件，系统不再在 Real-Time Customer Data Platform B2B 版的总配置文件计数或可寻址受众指标中包括内部配置文件。从今天开始，您可能会看到配置文件总数/可寻址受众指标出现一次性下降。这不会删除您的任何数据，这只是对计数的更改。如果您有任何疑问，请联系您的 Adobe 主管 |
+| 错误修正 | 为了在系统中更准确地表示轮廓，系统不再在 Real-Time Customer Data Platform B2B 版的总轮廓计数或可寻址受众指标中包括内部轮廓。从今天开始，您可能会看到轮廓总数/可寻址受众指标出现一次性下降。这不会删除您的任何数据，这只是对计数的更改。如果您有任何疑问，请联系您的 Adobe 主管 |
 
 {style="table-layout:auto"}
 
@@ -179,13 +179,13 @@ Real-Time CDP B2B 版本基于 Real-Time Customer Data Platform (Real-Time CDP) 
 
 ## Segmentation Service {#segmentation}
 
-[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的配置文件子集。区段可以基于记录数据（例如人口统计信息）或代表客户与您的品牌互动的时间序列事件。
+[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的轮廓子集。区段可以基于记录数据（例如人口统计信息）或代表客户与您的品牌互动的时间序列事件。
 
 **新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 配置文件指标 | 为了让您能够更准确地表示配置文件指标，我们将成员关系细分和流失指标合并起来，现在按 24 小时计算。更多信息可在[分段 UI 指南](../../segmentation/ui/overview.md#browse)中找到 |
+| 轮廓指标 | 为了让您能够更准确地表示轮廓指标，我们将成员关系细分和流失指标合并起来，现在按 24 小时计算。更多信息可在[分段 UI 指南](../../segmentation/ui/overview.md#browse)中找到 |
 
 {style="table-layout:auto"}
 
@@ -193,7 +193,7 @@ Real-Time CDP B2B 版本基于 Real-Time Customer Data Platform (Real-Time CDP) 
 
 ## 源 {#sources}
 
-Adobe Experience Platform 可以从外部源获取数据，并允许您使用 Platform 服务构建、标记和增强该数据。您可以从各种来源获取数据，例如 Adobe 应用程序、基于云的存储、第三方软件和 CRM 系统。
+Adobe Experience Platform可以从外部源摄取数据，并允许您使用Experience Platform服务来构建、标记和增强这些数据。 您可以从各种来源获取数据，例如 Adobe 应用程序、基于云的存储、第三方软件和 CRM 系统。
 
 Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各种数据提供者设置源连接。这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 

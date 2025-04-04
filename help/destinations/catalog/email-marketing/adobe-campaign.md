@@ -3,7 +3,7 @@ keywords: 电子邮件；电子邮件；电子邮件目标；adobe campaign；ca
 title: Adobe Campaign连接
 description: Adobe Campaign 是一套可以帮助您跨所有线上和线下渠道定制和投放营销活动的解决方案。
 exl-id: 0de91738-8f56-41f5-8745-9b14b15db76a
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '906'
 ht-degree: 4%
@@ -24,8 +24,8 @@ Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道
 
 | 受众来源 | 支持 | 描述 |
 | ---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -44,7 +44,7 @@ Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道
 
 在使用SFTP存储设置电子邮件营销目标时，Adobe建议将某些IP范围添加到SFTP允许列表。
 
-如果需要将Adobe列入允许列表 IP添加到SFTP允许列表，请参阅[SFTP目标的IP地址](../cloud-storage/ip-address-allow-list.md)。
+如果您需要将Adobe 列入允许列表 IP添加到SFTP允许列表，请参阅[SFTP目标的IP地址](../cloud-storage/ip-address-allow-list.md)。
 
 ## 连接到目标 {#connect}
 
@@ -74,8 +74,8 @@ Adobe Campaign支持以下连接类型：
 * 或者，您可以附加RSA格式的公钥，以将使用PGP/GPG的加密添加到&#x200B;**[!UICONTROL 密钥]**&#x200B;部分下的导出文件。 您的公钥必须编写为[!DNL Base64]编码字符串。
 * **[!UICONTROL 名称]**：为您的目标选择相关的名称。
 * **[!UICONTROL 描述]**：输入目标的描述。
-* 对于S3连接&#x200B;*，**[!UICONTROL 存储段名称]**：*。 输入S3存储段的位置，[!DNL Platform]会将您的导出数据存为CSV文件。
-* **[!UICONTROL 文件夹路径]**：提供存储位置中的路径，其中[!DNL Platform]会将导出数据存为CSV文件。
+* 对于S3连接&#x200B;*，**[!UICONTROL 存储段名称]**：*。 输入S3存储段的位置，[!DNL Experience Platform]会将您的导出数据存为CSV文件。
+* **[!UICONTROL 文件夹路径]**：提供存储位置中的路径，其中[!DNL Experience Platform]会将导出数据存为CSV文件。
 * **[!UICONTROL 容器]**：用于Blob连接的&#x200B;**。 包含文件夹路径所在的Blob的容器。
 * **[!UICONTROL 文件格式]**：选择&#x200B;**CSV**&#x200B;以将CSV文件导出到您的存储位置。
 
@@ -101,7 +101,7 @@ Adobe Campaign支持以下连接类型：
 
 ## 导出的数据 {#exported-data}
 
-对于[!DNL Adobe Campaign]目标，[!DNL Platform]会在您提供的存储位置中创建一个`.csv`文件。 有关这些文件的详细信息，请参阅Audience Activation教程中的[验证Audience Activation](../../ui/activate-batch-profile-destinations.md#verify)部分。
+对于[!DNL Adobe Campaign]目标，[!DNL Experience Platform]会在您提供的存储位置中创建一个`.csv`文件。 有关这些文件的详细信息，请参阅Audience Activation教程中的[验证Audience Activation](../../ui/activate-batch-profile-destinations.md#verify)部分。
 
 ## 设置数据导入Adobe Campaign {#import-data-into-campaign}
 
@@ -111,6 +111,6 @@ Adobe Campaign支持以下连接类型：
 >* 您需要使用[!DNL Campaign]工作流在Adobe Campaign中计划、导入和映射导出的区段。 请参阅Adobe Campaign Classic文档中的[设置定期导入](https://experienceleague.adobe.com/docs/campaign-classic/using/automating-with-workflows/use-cases/data-management/recurring-import-workflow.html)和Adobe Campaign Standard文档中的[关于数据管理活动](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/data-management-activities/about-data-management-activities.html)。
 >* 将数据发送到Adobe Campaign的首选方法是通过[!DNL Amazon S3]或[!DNL Azure Blob]。
 
-将[!DNL Platform]连接到[!DNL Amazon S3]或[!DNL Azure Blob]存储空间后，您必须设置数据从存储位置导入Adobe Campaign。 要了解如何完成此操作，请参阅以下Adobe Campaign文档页面：
+将[!DNL Experience Platform]连接到[!DNL Amazon S3]或[!DNL Azure Blob]存储空间后，您必须设置数据从存储位置导入Adobe Campaign。 要了解如何完成此操作，请参阅以下Adobe Campaign文档页面：
 * [数据导入和导出入门](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/importing-and-exporting-data/get-started-data-import-export.html?lang=zh-Hans)和Adobe Campaign Classic文档中的[数据加载（文件）](https://experienceleague.adobe.com/docs/campaign-classic/using/automating-with-workflows/action-activities/data-loading--file-.html)。
 * [开始使用流程和数据管理](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/get-started-workflows.html)和[在Adobe Campaign Standard文档中加载文件](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/data-management-activities/load-file.html)。

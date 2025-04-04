@@ -2,10 +2,10 @@
 title: 标记和事件转发发行说明
 description: 有关 Adobe Experience Platform 中的标记和事件转发的最新发行说明。
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
-source-git-commit: e300e57df998836a8c388511b446e90499185705
-workflow-type: ht
-source-wordcount: '771'
-ht-degree: 100%
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+workflow-type: tm+mt
+source-wordcount: '773'
+ht-degree: 93%
 
 ---
 
@@ -54,13 +54,13 @@ ht-degree: 100%
 
 ## 2022 年 10 月 26 日
 
-* **对数据流的敏感数据处理**：数据流现在利用多种 Platform 技术来适当处理敏感数据，如《健康保险流通与责任法案》（HIPAA）等法规所强制执行的。有关详细信息，请参阅[处理数据流中的敏感数据](../../datastreams/overview.md#sensitive)部分。
+* **数据流的敏感数据处理**：数据流现在利用几种Experience Platform技术适当地处理由健康保险可移植性和责任法案(HIPAA)等法规强制执行的敏感数据。 有关详细信息，请参阅[处理数据流中的敏感数据](../../datastreams/overview.md#sensitive)部分。
 * 事件转发的 **[!DNL Splunk]扩展**：您现在可以使用[事件转发](../ui/event-forwarding/overview.md)扩展将数据发送到 [!DNL Splunk]。有关更多信息，请参阅[[!DNL Splunk] 扩展概述](../extensions/server/splunk/overview.md)。
 * 事件转发的 **[!DNL Zendesk]扩展**：您现在可以使用[事件转发](../ui/event-forwarding/overview.md)扩展将数据发送到 [!DNL Zendesk]。有关更多信息，请参阅[[!DNL Zendesk] 扩展概述](../extensions/server/zendesk/overview.md)。
 
 ## 2022 年 9 月 28 日
 
-* **Adobe Experience Platform 左侧导航集成**：此前由数据收集 UI 独有的所有功能（包括标记和事件转发）现在也可通过 Experience Platform UI 中的左侧导航栏访问，具体位于别&#x200B;**[!UICONTROL 数据收集]**&#x200B;类别下。这样就无需在使用 Platform 中的数据收集功能时在 UI 之间切换。
+* **Adobe Experience Platform 左侧导航集成**：此前由数据收集 UI 独有的所有功能（包括标记和事件转发）现在也可通过 Experience Platform UI 中的左侧导航栏访问，具体位于别&#x200B;**[!UICONTROL 数据收集]**&#x200B;类别下。当在Experience Platform中使用数据收集功能时，无需在UI之间进行切换。
 * **标记和事件转发中的用户归因**：在标记和事件转发中列出可用属性时，每个列出的属性现在都会显示最后更新的时间和更新者。
 * 事件转发的 **[[!DNL Snap Conversions API] 扩展](https://exchange.adobe.com/apps/ec/108550)**：您现在可以使用[事件转发](../../tags/ui/event-forwarding/overview.md)扩展将数据发送到 [!DNL Snapchat Conversions API]。有关如何验证和使用 API 的更多信息，请参阅此[[!DNL Snapchat Marketing API] 文档](https://marketingapi.snapchat.com/docs/conversion.html)。
 

@@ -1,17 +1,17 @@
 ---
 title: Adobe Experience Platform Assurance 概述
-description: Adobe Experience Platform Assurance 可帮助您检查、证明、模拟和验证您在移动应用程序中收集数据或提供体验的方式。
+description: Adobe Experience Platform Assurance 可帮助您检查、校对、模拟和验证您在移动设备应用程序中收集数据或提供体验的方式。
 exl-id: e887f5f6-3db0-4521-be2d-20ef3d08e7d0
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '808'
-ht-degree: 100%
+source-wordcount: '809'
+ht-degree: 95%
 
 ---
 
 # Adobe Experience Platform Assurance
 
-Adobe Experience Platform Assurance 是 [Adobe Experience Cloud](https://www.adobe.com/experience-cloud.html) 的产品，可帮助您检查、证明、模拟和验证如何在移动应用程序中收集数据或提供体验。
+Adobe Experience Platform Assurance 是 [Adobe Experience Cloud](https://www.adobe.com/experience-cloud.html) 的产品，可帮助您检查、校对、模拟和验证如何在移动应用程序中收集数据或提供体验。
 
 >[!IMPORTANT]
 >
@@ -43,7 +43,7 @@ Adobe Experience Platform Assurance 是 [Adobe Experience Cloud](https://www.ado
 
 ### 无障碍连接
 
-借助 Assurance，将您的应用程序与 Platform 连接起来既简单又可靠。您不需要使用网络代理 ([MiTM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)) 和其他网络 - 将您的应用程序连接到 Assurance 就像扫描二维码或点击按钮一样简单。
+使用Assurance，可以将您的应用程序与Experience Platform轻松可靠地连接。 您不需要使用网络代理 ([MiTM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)) 和其他网络 - 将您的应用程序连接到 Assurance 就像扫描二维码或点击按钮一样简单。
 
 ![](./images/index/no-hassle-connection.png)
 
@@ -67,7 +67,7 @@ Assurance 可帮助您检查 Adobe Experience Platform Mobile SDK 生成的原�
 
 ### Adobe Analytics
 
-Adobe Analytics > Analytics 事件视图是一个聚焦视图，其中显示与 Adobe Analytics 移动实施相关的事件。列表视图以特殊格式的视图显示生命周期或操作/状态事件、后处理“状态”以及必要的事件详细信息。后处理状态显示在对事件应用处理规则后 Adobe Analytics 如何处理该事件。
+Adobe Analytics > Analytics 事件视图是一个聚焦视图，其中显示与 Adobe Analytics 移动实施相关的事件。列表视图以特殊格式化的视图显示生命周期或操作/状态事件、后处理的“状态”以及所需的事件详细信息。 后处理状态显示在对事件应用处理规则后 Adobe Analytics 如何处理该事件。
 
 ### 适用于流媒体的 Adobe Analytics
 

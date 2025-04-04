@@ -1,10 +1,10 @@
 ---
-description: 本页说明如何使用Destination SDK中的/sample-profiles API端点基于源架构生成示例配置文件。 您可以使用这些示例配置文件来测试基于文件的目标配置。
+description: 本页介绍如何使用Destination SDK中的/sample-profiles API端点基于源架构生成示例配置文件。 您可以使用这些示例配置文件来测试基于文件的目标配置。
 title: 根据源架构生成样本配置文件
 exl-id: aea50d2e-e916-4ef0-8864-9333a4eafe80
-source-git-commit: c1ba465a8a866bd8bdc9a2b294ec5d894db81e11
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '652'
+source-wordcount: '654'
 ht-degree: 1%
 
 ---
@@ -25,14 +25,14 @@ ht-degree: 1%
 在使用`/sample-profiles`端点之前，请确保您满足以下条件：
 
 * 您有一个通过Destination SDK创建的基于文件的现有目标，您可以在[目标目录](../../../ui/destinations-workspace.md)中看到该目标。
-* 您已在Experience PlatformUI中为目标创建至少一个激活流程。 `/sample-profiles`端点根据您在激活流中定义的源架构创建配置文件。 请参阅[激活教程](../../../ui/activate-batch-profile-destinations.md)，了解如何创建激活流程。
-* 要成功发出API请求，您需要与要测试的目标实例对应的目标实例ID。 在Platform UI中浏览与目标之间的连接时，从URL获取应在API调用中使用的目标实例ID。
+* 您已在Experience Platform UI中为目标创建至少一个激活流程。 `/sample-profiles`端点根据您在激活流中定义的源架构创建配置文件。 请参阅[激活教程](../../../ui/activate-batch-profile-destinations.md)，了解如何创建激活流程。
+* 要成功发出API请求，您需要与要测试的目标实例对应的目标实例ID。 在Experience Platform UI中浏览与目标之间的连接时，从URL获取应在API调用中使用的目标实例ID。
 
   ![UI图像，显示如何从URL获取目标实例ID。](../../assets/testing-api/get-destination-instance-id.png)
 
 ## 生成用于目标测试的样本配置文件 {#generate-sample-profiles}
 
-您可以使用要测试的目标实例ID向`/sample-profiles`端点发出GET请求，从而基于源架构生成样本配置文件。
+您可以通过向`/sample-profiles`端点发出GET请求，并使用要测试的目标实例ID基于源架构生成样本配置文件。
 
 **API格式**
 
@@ -114,7 +114,7 @@ curl -X GET 'https://platform.adobe.io/data/core/activation/authoring/sample-pro
 
 ## API错误处理 {#api-error-handling}
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅平台疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
+Destination SDK API端点遵循常规Experience Platform API错误消息原则。 请参阅Experience Platform疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤
 

@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: September 13, 2019
 author: ens28527
 exl-id: 7f503046-a3b4-4fdb-833c-4205b6e9fa04
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '531'
 ht-degree: 8%
@@ -36,13 +36,13 @@ Adobe Experience Platform提供了一组丰富的功能，可用于摄取任何�
 
 ## [!DNL Data Science Workspace] {#dsw}
 
-Adobe Experience Platform [!DNL Data Science Workspace]是[!DNL Experience Platform]中的完全托管服务，它通过构建和运行机器学习模型，使数据科学家能够跨Adobe解决方案和第三方系统无缝地从数据和内容生成见解。 [!DNL Data Science Workspace]与[!DNL Platform]紧密集成，支持端到端数据科学生命周期，包括探索和准备XDM数据，然后开发和操作模型，以使用机器学习分析自动丰富[!DNL Real-Time Customer Profile]。
+Adobe Experience Platform [!DNL Data Science Workspace]是[!DNL Experience Platform]中的完全托管服务，它通过构建和运行机器学习模型，使数据科学家能够跨Adobe解决方案和第三方系统无缝地从数据和内容生成见解。 [!DNL Data Science Workspace]与[!DNL Experience Platform]紧密集成，支持端到端数据科学生命周期，包括探索和准备XDM数据，然后开发和操作模型，以使用机器学习分析自动丰富[!DNL Real-Time Customer Profile]。
 
 **新增功能**
 
 | 功能 | 描述 |
 | -----------| ---------- |
-| 通过用户界面安排服务 | 与[!DNL Platform]编排服务集成，以使用UI通过用户定义的计划自动进行模型训练和评分。 |
+| 通过用户界面安排服务 | 与[!DNL Experience Platform]编排服务集成，以使用UI通过用户定义的计划自动进行模型训练和评分。 |
 | [!DNL Service Gallery] | 浏览、监控和访问机器学习服务，并安排自动训练和评分作业，所有这些都在重新设计的[!DNL Service Gallery]内。 |
 | [!DNL JupyterLab] 5.0.0 | [!DNL JupyterLab]用户界面改进。 |
 

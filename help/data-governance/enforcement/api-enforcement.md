@@ -5,9 +5,9 @@ title: 使用策略服务API强制执行数据使用策略
 type: Tutorial
 description: 一旦您为数据创建了数据使用标签，并针对这些标签创建了营销操作的使用策略，就可以使用策略服务API来评估对数据集或任意一组标签执行的营销操作是否构成策略违规。 然后，您可以设置自己的内部协议，以根据API响应处理策略违规。
 exl-id: 093db807-c49d-4086-a676-1426426b43fd
-source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '998'
+source-wordcount: '999'
 ht-degree: 1%
 
 ---
@@ -26,10 +26,10 @@ ht-degree: 1%
 
 本教程需要对实施数据使用策略涉及的以下关键概念有一定的了解：
 
-* [数据管理](../home.md)： [!DNL Platform]强制数据使用合规性的框架。
+* [数据管理](../home.md)： [!DNL Experience Platform]强制数据使用合规性的框架。
    * [数据使用标签](../labels/overview.md)：数据使用标签应用于数据集（和/或这些数据集内的单个字段），指定了对如何使用该数据的限制。
    * [数据使用策略](../policies/overview.md)：数据使用策略是描述允许或限制某些数据使用标签集的营销操作类型的规则。
-* [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 在开始本教程之前，请查看[开发人员指南](../api/getting-started.md)以了解成功调用[!DNL Policy Service] API所需了解的重要信息，包括所需的标头以及如何读取示例API调用。
 
@@ -376,4 +376,4 @@ curl -X POST \
 
 通过阅读本文档，您已经在对数据集或一组数据使用标签执行营销操作时成功检查了策略违规。 使用API响应中返回的数据，您可以在体验应用程序中设置协议，以在发生策略违规时适当地实施这些违规。
 
-有关Platform如何自动为激活的区段提供策略实施的信息，请参阅[自动实施](./auto-enforcement.md)指南。
+有关Experience Platform如何自动为激活的区段提供策略实施的信息，请参阅[自动实施](./auto-enforcement.md)指南。

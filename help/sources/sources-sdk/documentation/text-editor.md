@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK；SDK
+keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源sdk；sdk；SDK
 solution: Experience Platform
 title: 在本地环境中使用文本编辑器创建源文档页面
 description: 本文档提供了有关如何使用本地环境为源创作文档并提交拉取请求(PR)的步骤。
 exl-id: 4cc89d1d-bc42-473d-ba54-ab3d1a2cd0d6
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '600'
+source-wordcount: '601'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->Adobe投稿指南中的以下文档可用于进一步支持您的文档流程： <ul><li>[安装Git和Markdown创作工具](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html)</li><li>[在本地为文档设置Git存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html)</li><li>针对主要更改的[GitHub贡献工作流](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html)</li></ul>
+>可以使用Adobe参与指南中的以下文档来进一步支持您的文档流程： <ul><li>[安装Git和Markdown创作工具](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html)</li><li>[在本地为文档设置Git存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html)</li><li>针对主要更改的[GitHub贡献工作流](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html)</li></ul>
 
 ## 先决条件
 
@@ -29,7 +29,7 @@ ht-degree: 0%
 
 ![平台存储库](../assets/platform-repo.png)
 
-在Platform GitHub存储库的主页上，选择&#x200B;**分支**。
+在Experience Platform GitHub存储库的主页上，选择&#x200B;**分支**。
 
 ![分支](../assets/fork.png)
 
@@ -53,7 +53,7 @@ ht-degree: 0%
 
 ![create-branch-vs](../assets/create-branch-vs.png)
 
-接下来，选择&#x200B;**Publish分支**。
+接下来，选择&#x200B;**发布分支**。
 
 ![publish-branch](../assets/publish-branch.png)
 
@@ -61,7 +61,7 @@ ht-degree: 0%
 
 将存储库克隆到本地计算机并创建新分支后，您现在可以通过所选的[文本编辑器](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html#understand-markdown-editors)开始为新源创作文档页面。
 
-Adobe建议您使用[Visual Studio Code](https://code.visualstudio.com/)，并安装AdobeMarkdown创作扩展。 要安装扩展，请启动Visual Studio Code，然后从左侧导航中选择&#x200B;**扩展**&#x200B;选项卡。
+Adobe建议您使用[Visual Studio Code](https://code.visualstudio.com/)，并安装Adobe Markdown创作扩展。 要安装扩展，请启动Visual Studio Code，然后从左侧导航中选择&#x200B;**扩展**&#x200B;选项卡。
 
 ![扩展](../assets/extension.png)
 
@@ -89,7 +89,7 @@ Adobe建议您使用[Visual Studio Code](https://code.visualstudio.com/)，并�
 
 ![create-pr-vs](../assets/create-pr-vs.png)
 
-确保基础分支和比较分支正确。 向PR添加描述更新的注释，然后选择&#x200B;**创建拉取请求**。 这将打开一个PR，以将您工作的工作分支合并到Adobe存储库的主分支。
+确保基础分支和比较分支正确。 向PR添加描述更新的注释，然后选择&#x200B;**创建拉取请求**。 这将打开PR，以将您工作的工作分支合并到Adobe存储库的主分支。
 
 >[!TIP]
 >

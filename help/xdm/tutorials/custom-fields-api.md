@@ -2,9 +2,9 @@
 title: 在架构注册表API中定义XDM字段
 description: 了解如何在架构注册表API中创建自定义体验数据模型(XDM)资源时定义不同的字段。
 exl-id: d79332e3-8448-42af-b250-882bcb0f1e7d
-source-git-commit: a3140d5216857ef41c885bbad8c69d91493b619d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1188'
+source-wordcount: '1189'
 ht-degree: 0%
 
 ---
@@ -368,7 +368,7 @@ XDM对使用此存储提示设置了以下限制：
 * 来自[Adobe Experience Platform查询服务](../../query-service/home.md)的响应时间从3秒降至10秒，涉及1亿条记录。
 * 地图必须少于16个键，否则可能会进一步降级。
 
-Platform用户界面在如何提取映射类型字段的键方面也存在限制。 虽然对象类型字段可以展开，但映射显示为一个字段。
+Experience Platform用户界面在如何提取映射类型字段的键方面也存在限制。 虽然对象类型字段可以展开，但映射显示为一个字段。
 
 ## 后续步骤
 

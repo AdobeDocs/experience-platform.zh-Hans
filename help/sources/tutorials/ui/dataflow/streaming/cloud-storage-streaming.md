@@ -3,11 +3,11 @@ keywords: Experience Platform；主页；热门主题；流；云存储连接器
 solution: Experience Platform
 title: 在UI中为云存储源创建流数据流
 type: Tutorial
-description: 数据流是一种计划任务，用于在源中检索数据并将其摄取到Platform数据集。 本教程提供了使用云存储基本连接器配置新数据流的步骤。
+description: 数据流是一种计划任务，用于在源中检索数据并将其摄取到Experience Platform数据集。 本教程提供了使用云存储基本连接器配置新数据流的步骤。
 exl-id: 75deead6-ef3c-48be-aed2-c43d1f432178
-source-git-commit: 6419ae7648a91dc7f9432281c1960beccc65bdb0
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1071'
+source-wordcount: '1078'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 数据流是一种计划任务，用于在源中检索数据并将其摄取到Adobe Experience Platform数据集。 本教程提供了在UI中为云存储源创建流数据流的步骤。
 
-在尝试本教程之前，您必须首先在云存储帐户和平台之间建立有效且经过身份验证的连接。 如果您还没有经过身份验证的连接，请参阅以下教程之一，以了解有关对您的流媒体云存储帐户进行身份验证的信息：
+在尝试本教程之前，必须首先在云存储帐户和Experience Platform之间建立有效且经过身份验证的连接。 如果您还没有经过身份验证的连接，请参阅以下教程之一，以了解有关对您的流媒体云存储帐户进行身份验证的信息：
 
 - [[!DNL Amazon Kinesis]](../../../ui/create/cloud-storage/kinesis.md)
 - [[!DNL Azure Event Hubs]](../../../ui/create/cloud-storage/eventhub.md)
@@ -26,7 +26,7 @@ ht-degree: 1%
 
 本教程需要对以下Adobe Experience Platform组件有一定的了解：
 
-- [数据流](../../../../../dataflows/home.md)：数据流是跨平台移动数据的数据作业的表示形式。 数据流在不同服务之间配置，从源到[!DNL Identity Service]，到[!DNL Profile]，再到[!DNL Destinations]。
+- [数据流](../../../../../dataflows/home.md)：数据流是跨Experience Platform移动数据的数据作业的表示形式。 数据流在不同服务之间配置，从源到[!DNL Identity Service]，到[!DNL Profile]，再到[!DNL Destinations]。
 - [数据准备](../../../../../data-prep/home.md)：数据准备允许数据工程师映射、转换和验证与体验数据模型(XDM)之间的数据。 数据准备在数据提取流程（包括CSV提取工作流）中显示为“映射”步骤。
 - [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
    - [架构组合的基础知识](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
@@ -39,7 +39,7 @@ ht-degree: 1%
 >
 >对于给定的事件中心，您只能为每个使用者组创建一个源数据流。
 
-创建对流式云存储帐户进行身份验证后，将显示&#x200B;**[!UICONTROL 选择数据]**&#x200B;步骤，该步骤为您提供了一个界面以选择要将哪些数据流带到Platform。
+创建对流式云存储帐户进行身份验证后，将显示&#x200B;**[!UICONTROL 选择数据]**&#x200B;步骤，该步骤为您提供了一个界面来选择要将哪些数据流引入到Experience Platform。
 
 - 界面的左侧是一个浏览器，允许您查看帐户内的可用数据流；
 - 界面的右侧部分允许您预览JSON文件中最多100行数据。
@@ -62,7 +62,7 @@ ht-degree: 1%
 
 ## 映射
 
-出现&#x200B;**[!UICONTROL 映射]**&#x200B;步骤，提供用于将源数据映射到Platform数据集的接口。
+此时将显示&#x200B;**[!UICONTROL 映射]**&#x200B;步骤，该步骤提供了一个用于将源数据映射到Experience Platform数据集的界面。
 
 选择要引入的集客数据的数据集。 您可以使用现有数据集或创建新数据集。
 
@@ -106,7 +106,7 @@ ht-degree: 1%
 
 >[!TIP]
 >
->Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。
+>Experience Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。
 
 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](../../../../../data-prep/ui/mapping.md)。
 
@@ -139,7 +139,7 @@ ht-degree: 1%
 
 ## 后续步骤
 
-通过遵循本教程，您已成功创建了数据流以从云存储源流式传输数据。 传入数据现在可供下游平台服务（如[!DNL Real-Time Customer Profile]和[!DNL Data Science Workspace]）使用。 有关更多详细信息，请参阅以下文档：
+通过遵循本教程，您已成功创建了数据流以从云存储源流式传输数据。 传入数据现在可供下游Experience Platform服务（如[!DNL Real-Time Customer Profile]和[!DNL Data Science Workspace]）使用。 有关更多详细信息，请参阅以下文档：
 
 - [[!DNL Real-Time Customer Profile] 概述](../../../../../profile/home.md)
 - [[!DNL Data Science Workspace] 概述](../../../../../data-science-workspace/home.md)

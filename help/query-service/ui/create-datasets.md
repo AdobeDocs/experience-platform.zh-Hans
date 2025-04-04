@@ -5,9 +5,9 @@ title: 从查询结果生成输出数据集
 type: Tutorial
 description: Adobe Experience Platform查询服务允许从UI创建数据集。 创建数据集后，可以像数据湖中的任何其他数据集一样访问它，并将其用于各种用例。
 exl-id: 6f6c049d-f19f-4161-aeb4-3a01eca7dc75
-source-git-commit: 59d2d74b2d77f3bbaca381af908de5295af24e5b
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '497'
+source-wordcount: '502'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 1. 使用连接的客户端创建查询并验证输出。 要了解如何使用[!DNL Query Editor]编写查询，请阅读有关编写查询](./user-guide.md#writing-queries)的[!DNL Query Editor]用户界面指南[。
 
-2. 在Platform UI中，依次导航到&#x200B;**[!UICONTROL 查询]**&#x200B;和&#x200B;**[!UICONTROL 模板]**&#x200B;选项卡，然后选择您创建的查询。 有关如何在Platform UI中查看为您的组织创建和保存的查询的更多详细信息，请阅读[[!DNL Query Service] 概述](./overview.md#browse)。
+2. 在Experience Platform UI中，依次导航到&#x200B;**[!UICONTROL 查询]**&#x200B;和&#x200B;**[!UICONTROL 模板]**&#x200B;选项卡，然后选择您创建的查询。 有关如何在Experience Platform UI中查看为您的组织创建和保存的查询的更多详细信息，请阅读[[!DNL Query Service] 概述](./overview.md#browse)。
 
 3. 在“查询详细信息”面板中，选择&#x200B;**[!UICONTROL 以CTAS身份运行]**。
 
@@ -34,7 +34,7 @@ ht-degree: 0%
 
    ![包含数据集详细信息的“输出数据集”对话框，并[!UICONTROL 作为CTAS运行]突出显示](../images/ui/create-datasets/run-query.png)
 
-6. 查询运行完成后，导航到&#x200B;**[!UICONTROL 数据集]**&#x200B;以查看您创建的数据集。 要了解有关如何在Platform UI中使用数据集时执行常见操作的更多信息，请参阅[数据集UI指南](../../catalog/datasets/user-guide.md)。
+6. 查询运行完成后，导航到&#x200B;**[!UICONTROL 数据集]**&#x200B;以查看您创建的数据集。 要了解有关如何在Experience Platform UI中使用数据集时执行常见操作的更多信息，请参阅[数据集UI指南](../../catalog/datasets/user-guide.md)。
 
 创建数据集后，可以像[!DNL Data Lake]中的任何其他数据集一样访问它，并将其用于各种用例。
 
@@ -52,4 +52,4 @@ ht-degree: 0%
 
 ## 后续步骤
 
-阅读本文档后，您现在应该了解如何使用[!DNL Query Service]从Platform UI生成数据集。 有关如何在Platform UI中访问、写入和执行查询的更多信息，请参阅[[!DNL Query Service] UI概述](./overview.md)。
+阅读本文档后，您现在应该了解如何使用[!DNL Query Service]从Experience Platform UI生成数据集。 有关如何在Experience Platform UI中访问、写入和执行查询的更多信息，请参阅[[!DNL Query Service] UI概述](./overview.md)。

@@ -2,9 +2,9 @@
 title: Reactor API指南
 description: 利用 Reactor API，开发人员能够以编程方式管理 Adobe Experience Platform 中标记的所有资源。参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: 153eab11-db08-499e-80d1-c56f254372ce
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1079'
+source-wordcount: '1080'
 ht-degree: 4%
 
 ---
@@ -99,15 +99,15 @@ Reactor API提供了多个端点，允许您以编程方式管理Adobe Experienc
 
 ## 回调
 
-回调是每当生成新的审核事件时Platform发送给URL主机的消息。 请参阅[回调端点指南](./endpoints/callbacks.md)，了解如何在API中管理回调。
+回调是Experience Platform在生成新的审核事件时发送到URL主机的消息。 请参阅[回调端点指南](./endpoints/callbacks.md)，了解如何在API中管理回调。
 
 ## 注释
 
 注释是可以添加到某些标记资源（如数据元素、扩展、库、属性、规则和规则组件）的文本批注。 请参阅[注释端点指南](./endpoints/notes.md)，了解如何在API中管理注释。
 
-## 配置文件
+## 轮廓
 
-配置文件包含有关登录用户的所有信息，包括用户所属的所有Adobe组织、每个组织内用户所属的产品配置文件以及用户在每个产品配置文件中拥有的权限。
+配置文件包含有关登录用户的所有信息，包括这些用户所属的所有Adobe组织、每个组织中这些组织所属的产品配置文件以及每个产品配置文件赋予的权限。
 
 请参阅[配置文件端点指南](./endpoints/profile.md)，了解如何在API中查看此信息。
 

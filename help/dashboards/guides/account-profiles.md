@@ -2,9 +2,9 @@
 title: 帐户配置文件仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织的B2B帐户配置文件的重要信息。
 exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
-source-git-commit: a0b762cb89f45313724187ce36b80b2f3d0548eb
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '2397'
+source-wordcount: '2401'
 ht-degree: 4%
 
 ---
@@ -17,7 +17,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 
 ## 快速入门
 
-您必须具有[Adobe Real-time Customer Data Platform B2B edition](../../rtcdp/b2b-overview.md)的权限才能访问B2B [!UICONTROL 帐户配置文件]仪表板。
+您必须具有[Adobe Real-Time Customer Data Platform B2B edition](../../rtcdp/b2b-overview.md)的权限才能访问B2B [!UICONTROL 帐户配置文件]仪表板。
 
 ## 帐户配置文件数据 {#data}
 
@@ -31,9 +31,9 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 
 ## 浏览[!UICONTROL 帐户配置文件]仪表板 {#explore}
 
-要导航到Platform UI中的[!UICONTROL 帐户配置文件]仪表板，请在左侧导航面板的[!UICONTROL 帐户]下选择&#x200B;**[!UICONTROL 配置文件]**。
+要导航到Experience Platform UI中的[!UICONTROL 帐户配置文件]仪表板，请在左侧导航面板的[!UICONTROL 帐户]下选择&#x200B;**[!UICONTROL 配置文件]**。
 
-![左侧导航中带有帐户配置文件的Platform UI突出显示，并显示“概述”选项卡。](../images/account-profiles/account-profiles-dashboard.png)
+![左侧导航中带有帐户配置文件的Experience Platform UI突出显示，并显示“概述”选项卡。](../images/account-profiles/account-profiles-dashboard.png)
 
 从[!UICONTROL 帐户配置文件]仪表板中，您可以[浏览摄取到您组织的帐户配置文件](#browse-account-profiles)，或[使用小组件查看您的帐户配置文件数据的全部内容](#standard-widgets)。
 
@@ -61,7 +61,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 
 ![“帐户配置文件”浏览选项卡，其中显示了结果并突出显示配置文件ID。](../images/account-profiles/account-profiles-browse-tab.png)
 
-显示在[!UICONTROL 详细信息]选项卡上的帐户配置文件信息已从多个配置文件片段合并在一起，以形成单个帐户的单个视图。 请参阅有关[在Adobe Real-time Customer Data Platform中浏览帐户配置文件的文档](../../rtcdp/accounts/account-profile-ui-guide.md#browse-account-profiles)，了解更多有关在Platform UI中查看帐户配置文件的功能。
+显示在[!UICONTROL 详细信息]选项卡上的帐户配置文件信息已从多个配置文件片段合并在一起，以形成单个帐户的单个视图。 请参阅有关[在Adobe Real-Time Customer Data Platform中浏览帐户配置文件的文档](../../rtcdp/accounts/account-profile-ui-guide.md#browse-account-profiles)，了解更多有关Experience Platform UI中查看帐户配置文件的功能。
 
 ## 标准小组件 {#standard-widgets}
 
@@ -70,7 +70,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 >title="客户每帐户概述"
 >abstract="该钻透小组件可让您洞察 B2B 数据的结构。它可以帮助您确定有多少帐户轮廓没有链接客户轮廓，或者有一个或多个客户轮廓与之相关联。<ul><li>直接客户：是指通过 `personComponents` 路线直接链接到帐户的客户轮廓。</li><li>间接客户：是指通过 `Account-Person` 路线链接到帐户的客户轮廓。</li></ul>"
 
-Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各种指标。
+Adobe提供了可用于可视化与帐户配置文件相关的各种量度的标准构件。
 
 >[!IMPORTANT]
 >
@@ -129,7 +129,7 @@ Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各
 
 ![帐户配置文件仪表板中的穿透钻取视图，导航下拉菜单突出显示。](../images/account-profiles/navigation-dropdown.png)
 
-要了解有关平台UI中穿透钻取的详细信息，请参阅[穿透钻取指南](../sql-insights-query-pro-mode/drill-through.md)。
+要详细了解Experience Platform UI中的穿透钻取，请参阅[穿透钻取指南](../sql-insights-query-pro-mode/drill-through.md)。
 
 #### [!UICONTROL 每个帐户的客户详细信息] {#customers-per-account-detail}
 
@@ -239,4 +239,4 @@ Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各
 
 ## 后续步骤
 
-通过阅读本文档，您现在应该知道如何找到[!UICONTROL 帐户配置文件]仪表板，并且还应该了解可用构件中显示的量度。 要了解有关在Experience PlatformUI中使用作为B2B数据一部分的帐户配置文件的更多信息，请参阅Adobe Real-Time CDP、B2B edition的[帐户配置文件概述](../../rtcdp/accounts/account-profile-overview.md)。
+通过阅读本文档，您现在应该知道如何找到[!UICONTROL 帐户配置文件]仪表板，并且还应该了解可用构件中显示的量度。 要了解有关在Experience Platform UI中使用作为B2B数据一部分的帐户配置文件的更多信息，请参阅Adobe Real-Time CDP、B2B edition的[帐户配置文件概述](../../rtcdp/accounts/account-profile-overview.md)。

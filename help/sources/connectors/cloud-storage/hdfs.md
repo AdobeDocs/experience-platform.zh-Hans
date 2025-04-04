@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；HDFS；HDFS；Apache HDFS；Apache HDFS
+keywords: Experience Platform；主页；热门主题；HDFS；hdfs；Apache HDFS；Apache HDFS
 solution: Experience Platform
 title: Apache HDFS Source Connector概述
 description: 了解如何使用API或用户界面将Apache HDFS连接到Adobe Experience Platform。
 exl-id: 1f156f7b-a19d-4dcf-a51d-ab6cb396d8f7
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '387'
 ht-degree: 0%
@@ -34,9 +34,9 @@ Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等
 - 不允许使用非法的URL路径字符。 诸如`\uE000`之类的代码点虽然在NTFS文件名中有效，但不是有效的Unicode字符。 此外，不允许使用某些ASCII或Unicode字符，如控制字符（0x00到0x1F、\u0081等）。 有关HTTP/1.1中Unicode字符串的规则，请参阅[RFC 2616，第2.2节：基本规则](https://www.ietf.org/rfc/rfc2616.txt)和[RFC 3987](https://www.ietf.org/rfc/rfc3987.txt)。
 - 不允许使用以下文件名：LPT1、LPT2、LPT3、LPT4、LPT5、LPT6、LPT7、LPT8、LPT9、COM1、COM2、COM3、COM4、COM5、COM6、COM7、COM8、COM9、PRN、AUX、NUL、CON、CLOCK$、点字符(.)和两个点字符(..)。
 
-## 将[!DNL Apache] HDFS连接到[!DNL Platform]
+## 将[!DNL Apache] HDFS连接到[!DNL Experience Platform]
 
-以下文档提供了有关如何使用API或用户界面将[!DNL Apache] HDFS连接到[!DNL Platform]的信息：
+以下文档提供了有关如何使用API或用户界面将[!DNL Apache] HDFS连接到[!DNL Experience Platform]的信息：
 
 ### 使用API
 

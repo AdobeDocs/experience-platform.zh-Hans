@@ -2,9 +2,9 @@
 title: Adobe Commerce目标连接器
 description: 了解Adobe Commerce和Real-Time CDP商家如何通过提供高度相关的网站内容和促销活动，针对Real-Time CDP中构建和管理的客户受众进行自定义，从而个性化购物体验。
 exl-id: f7aa3c6c-ba7a-440c-a4d7-5d7b50dbbc0d
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '696'
+source-wordcount: '697'
 ht-degree: 3%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 3%
 
 ## 先决条件 {#prerequisites}
 
-目标目录中提供了此连接器，以供已购买Real-Time CDP Prime或Ultimate以及Adobe Commerce的客户使用。
+目标目录中提供了此连接器，以供已购买Real-Time CDP Prime或Ultimate和Adobe Commerce的客户使用。
 
 要使用此目标连接，请确保您有权访问：
 
@@ -29,7 +29,7 @@ ht-degree: 3%
 
 - [架构](../../../xdm/schema/composition.md)。 您创建的架构表示您计划从Adobe Commerce中摄取的数据。 [了解更多](https://experienceleague.adobe.com/docs/commerce-merchant-services/data-connection/fundamentals/update-xdm.html)有关如何创建包含特定于Commerce的字段组的架构。
 - [数据集](../../../catalog/datasets/user-guide.md#create)。 数据集是用于数据收集的存储和管理结构。 您可以使用上面创建的架构创建此数据集。
-- [数据流](../../../datastreams/overview.md#create)。 允许数据从Adobe Experience Platform流向其他AdobeDX产品的ID。 此ID必须关联到您的特定Adobe Commerce实例中的特定网站。 创建此数据流时，请指定您在上面创建的XDM架构。
+- [数据流](../../../datastreams/overview.md#create)。 允许数据从Adobe Experience Platform流向其他Adobe DX产品的ID。 此ID必须关联到您的特定Adobe Commerce实例中的特定网站。 创建此数据流时，请指定您在上面创建的XDM架构。
 
 完成先决条件后，连接到[!DNL Commerce]目标。
 
@@ -41,7 +41,7 @@ ht-degree: 3%
 
 要连接到[!DNL Adobe Commerce]目标，请执行以下操作：
 
-1. 在[平台接口](https://experience.adobe.com/platform/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**。
+1. 在[Experience Platform界面](https://experience.adobe.com/platform/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**。
 1. 选择&#x200B;**[!UICONTROL Personalization]**。
 1. 选择Adobe Commerce目标以突出显示它，然后选择&#x200B;**[!UICONTROL 设置]**。
 1. 按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
@@ -52,7 +52,7 @@ ht-degree: 3%
 
 - **[!UICONTROL 名称]**：填写此目标的首选名称。
 - **[!UICONTROL 描述]**：输入目标的描述。 例如，您可以提及要将此目标用于哪个营销活动。 此字段为可选字段。
-- **[!UICONTROL 集成别名]**：此值作为JSON对象名称发送到Experience PlatformWeb SDK。
+- **[!UICONTROL 集成别名]**：此值作为JSON对象名称发送到Experience Platform Web SDK。
 - **[!UICONTROL 数据流ID]**：这决定了哪个数据收集数据流包含响应页面时包含的受众。 下拉菜单仅显示已启用目标配置的数据流。有关详细信息，请参阅[配置数据流](../../../datastreams/overview.md)。
 
 ### 启用警报 {#enable-alerts}

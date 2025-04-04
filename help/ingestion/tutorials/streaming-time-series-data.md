@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform；主页；热门主题；流式摄取；摄取；时间序列数据；流式时间序列数据；
+keywords: Experience Platform；主页；热门主题；流式摄取；摄取；时间序列数据；流时间序列数据；
 solution: Experience Platform
 title: 使用流式引入API流式传输时间序列数据
 type: Tutorial
 description: 本教程将帮助您开始使用流摄取API，它是Adobe Experience Platform数据摄取服务API的一部分。
 exl-id: 720b15ea-217c-4c13-b68f-41d17b54d500
-source-git-commit: 35ccc39fdfef31ca1f59e2e11f0d3d762e423635
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1210'
+source-wordcount: '1214'
 ht-degree: 2%
 
 ---
@@ -20,15 +20,15 @@ ht-degree: 2%
 
 本教程需要具备各种Adobe Experience Platform服务的实际操作知识。 在开始本教程之前，请查看以下服务的文档：
 
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： [!DNL Platform]用于组织体验数据的标准化框架。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： [!DNL Experience Platform]用于组织体验数据的标准化框架。
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个源的汇总数据，实时提供统一的使用者配置文件。
 - [架构注册开发人员指南](../../xdm/api/getting-started.md)：一个全面的指南，涵盖[!DNL Schema Registry] API的每个可用端点以及如何调用它们。 这包括了解您在本教程的调用中显示的`{TENANT_ID}`，以及了解如何创建用于创建摄取数据集的架构。
 
 此外，本教程要求您已创建一个流连接。 有关创建流连接的详细信息，请参阅[创建流连接教程](./create-streaming-connection.md)。
 
-### 使用平台API
+### 使用Experience Platform API
 
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../landing/api-guide.md)指南。
+有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../landing/api-guide.md)指南。
 
 ## 根据XDM ExperienceEvent类构建架构
 
@@ -275,7 +275,7 @@ curl -X POST https://platform.adobe.io/data/foundation/catalog/dataSets \
 
 ## 将时间序列数据摄取到流连接
 
-创建数据集、流连接和数据流后，您可以摄取XDM格式的JSON记录以摄取[!DNL Platform]中的时序数据。
+创建数据集、流连接和数据流后，您可以摄取XDM格式的JSON记录以摄取[!DNL Experience Platform]中的时序数据。
 
 **API格式**
 
@@ -292,7 +292,7 @@ POST /collection/{CONNECTION_ID}?syncValidation=true
 
 将时间序列数据摄取到流连接可以不使用源名称也可以使用源名称。
 
-下面的示例请求将缺少源名称的时间系列数据摄取到Platform。 如果数据缺少源名称，它将从流连接定义中添加源ID。
+以下示例请求将缺少源名称的时间序列数据摄取到Experience Platform。 如果数据缺少源名称，它将从流连接定义中添加源ID。
 
 `xdmEntity._id`和`xdmEntity.timestamp`都是时间序列数据的必填字段。 `xdmEntity._id`属性表示记录本身的唯一标识符，**不是**&#x200B;记录所属人员或设备的唯一ID。
 
@@ -401,7 +401,7 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?syncValidation=t
 | 属性 | 描述 |
 | -------- | ----------- |
 | `{CONNECTION_ID}` | 之前创建的流连接的`inletId`。 |
-| `xactionId` | 在服务器端为您刚刚发送的记录生成的唯一标识符。 此ID可帮助Adobe跟踪此记录的生命周期，包括各种系统和调试。 |
+| `xactionId` | 在服务器端为您刚刚发送的记录生成的唯一标识符。 此ID可帮助Adobe跟踪此记录在各种系统和调试中的生命周期。 |
 | `receivedTimeMs`：时间戳（以毫秒为单位），显示收到请求的时间。 |
 | `syncValidation.status` | 由于添加了查询参数`syncValidation=true`，因此将显示此值。 如果验证成功，状态将为`pass`。 |
 
@@ -509,6 +509,6 @@ curl -X GET \
 
 ## 后续步骤
 
-通过阅读本文档，您现在了解如何使用流连接将记录数据摄取到[!DNL Platform]。 您可以尝试使用不同的值发起更多调用并检索更新的值。 此外，您还可以通过[!DNL Platform] UI开始监视摄取的数据。 有关详细信息，请参阅[监视数据摄取](../quality/monitor-data-ingestion.md)指南。
+通过阅读本文档，您现在了解如何使用流连接将记录数据摄取到[!DNL Experience Platform]。 您可以尝试使用不同的值发起更多调用并检索更新的值。 此外，您还可以通过[!DNL Experience Platform] UI开始监视摄取的数据。 有关详细信息，请参阅[监视数据摄取](../quality/monitor-data-ingestion.md)指南。
 
 有关一般流式摄取的更多信息，请阅读[流式摄取概述](../streaming-ingestion/overview.md)。

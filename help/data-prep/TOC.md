@@ -4,10 +4,10 @@ user-guide-title: 数据准备指南
 user-guide-description: 今天就准备您的数据以将其引入 Adobe Experience Platform，并了解数据准备如何帮助您映射、转换和验证数据。
 feature: Data Prep
 role: Developer
-source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '61'
-ht-degree: 60%
+source-wordcount: '62'
+ht-degree: 66%
 
 ---
 
@@ -27,4 +27,4 @@ ht-degree: 60%
 - [映射集](mapping-set.md)
 - [流更新插入](upserts.md)
 - [疑难解答指南](troubleshooting-guide.md)
-- [平台发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
+- [Experience Platform 发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

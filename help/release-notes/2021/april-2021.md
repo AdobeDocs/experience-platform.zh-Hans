@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: April 21, 2021
 author: ens72741
 exl-id: cc78e48a-3578-4c55-ae86-1946d62bddb9
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '890'
 ht-degree: 33%
 
 ---
@@ -51,12 +51,12 @@ Adobe Experience Platform 中现有功能的更新：
 
 ### 客户人工智能
 
-Real-time Customer Data Platform中提供的客户人工智能，用于生成自定义倾向分数，如个人档案大规模的流失和转化情况。 这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
+Real-Time Customer Data Platform中提供的客户人工智能，用于生成自定义倾向分数，如个人档案大规模的流失和转化情况。 这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
 
 | 功能 | 描述 |
 | ------- | ----------- |
 | 支持Adobe Analytics数据 | 更新了功能，以通过Analytics Source Connector支持Adobe Analytics数据集，无需ETL您的数据以符合消费者体验事件(CEE)架构。 |
-| 支持Adobe Audience Manager数据 | 更新了功能，以通过Audience Manager源连接器支持Adobe Audience Manager数据集，无需ETL您的数据以符合消费者体验事件(CEE)架构。 |
+| 支持Adobe Audience Manager数据 | 更新了功能，以通过Adobe Audience Manager源连接器支持Audience Manager数据集，无需ETL您的数据以符合消费者体验事件(CEE)架构。 |
 | 模型性能摘要 | Customer AI现在在服务实例分析页面中有一个[模型性能摘要选项卡](../../intelligent-services/customer-ai/user-guide/discover-insights.md#performance-metrics)。 模型性能选项卡显示所有实际转化率和客户流失率。 这使您能够破译并了解每个倾向区间中发生的变化。 |
 
 有关支持的数据集的更多信息，请参阅[[!DNL Intelligent Services] 数据准备文档](../../intelligent-services/data-preparation.md)。
@@ -73,9 +73,9 @@ Attribution AI 用于将点数归因于导致转化事件的接触点。营销�
 
 ## Segmentation Service {#segmentation}
 
-Adobe Experience Platform Segmentation Service提供了一个用户界面和RESTful API，允许您根据[!DNL Real-Time Customer Profile]数据构建区段并生成受众。 这些区段是在Platform上集中配置和维护的，因此任何Adobe应用程序都可以方便地访问它们。
+Adobe Experience Platform Segmentation Service提供了一个用户界面和RESTful API，允许您根据[!DNL Real-Time Customer Profile]数据构建区段并生成受众。 这些区段在Experience Platform上集中配置和维护，可供任何Adobe应用程序轻松访问。
 
-[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的配置文件子集。区段可以基于记录数据（例如人口统计信息）或代表客户与您的品牌互动的时间序列事件。
+[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的轮廓子集。区段可以基于记录数据（例如人口统计信息）或代表客户与您的品牌互动的时间序列事件。
 
 **新增功能**
 
@@ -87,13 +87,13 @@ Adobe Experience Platform Segmentation Service提供了一个用户界面和REST
 
 ## [!DNL Sources] {#sources}
 
-Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强这些数据。 您可以从各种来源获取数据，例如 Adobe 应用程序、基于云的存储、第三方软件和 CRM 系统。
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Experience Platform服务来构建、标记和增强这些数据。 您可以从各种来源获取数据，例如 Adobe 应用程序、基于云的存储、第三方软件和 CRM 系统。
 
 Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各种数据提供者设置源连接。这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| [!DNL Marketo Engage] (Beta) | 您现在可以使用UI创建[!DNL Marketo Engage]源连接以将B2B数据引入Platform，并使用与平台连接的应用程序使这些数据保持最新。 有关详细信息，请参阅[[!DNL Marketo Engage] 源连接器文档](../../sources/connectors/adobe-applications/marketo/marketo.md)。 |
+| [!DNL Marketo Engage] (Beta) | 您现在可以使用UI创建[!DNL Marketo Engage]源连接以将B2B数据引入Experience Platform，并使用与Experience Platform连接的应用程序使这些数据保持最新。 有关详细信息，请参阅[[!DNL Marketo Engage] 源连接器文档](../../sources/connectors/adobe-applications/marketo/marketo.md)。 |
 | Beta源迁移到GA | 以下源已从Beta版升级到GA版： <ul><li>[[!DNL Amazon Kinesis]](../../sources/connectors/cloud-storage/kinesis.md)</li><li>[[!DNL Azure EventHubs]](../../sources/connectors/cloud-storage/eventhub.md)</li><li>[[!DNL HTTP API]](../../sources/connectors/streaming/http.md)</li><li>[[!DNL MariaDB]](../../sources/connectors/databases/mariadb.md)</li><li>[[!DNL Microsoft SQL Server]](../../sources/connectors/databases/sql-server.md)</li><li>[[!DNL Oracle]](../../sources/connectors/databases/oracle.md)</li></ul> |
 
 要了解有关源的更多信息，请参阅[源概述](../../sources/home.md)。

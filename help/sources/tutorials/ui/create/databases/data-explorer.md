@@ -1,20 +1,20 @@
 ---
-keywords: Experience Platform；主页；热门主题；AzureData Explorer；Azure数据资源管理器；数据资源管理器；Data Explorer
+keywords: Experience Platform；主页；热门主题；Azure Data Explorer；Azure数据资源管理器；数据资源管理器；Data Explorer
 solution: Experience Platform
-title: 在UI中创建AzureData ExplorerSource连接
+title: 在UI中创建Azure Data Explorer Source连接
 type: Tutorial
-description: 了解如何使用Adobe Experience Platform UI创建AzureData Explorer源连接。
+description: 了解如何使用Adobe Experience Platform UI创建Azure Data Explorer源连接。
 exl-id: 561bf948-fc92-4401-8631-e2a408667507
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '487'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
 # 在用户界面中创建[!DNL Azure Data Explorer]源连接
 
-Adobe Experience Platform中的Source连接器提供了按计划摄取外部来源数据的功能。 本教程提供了使用[!DNL Platform]用户界面创建[!DNL Azure Data Explorer] （以下称为“[!DNL Data Explorer]”）源连接器的步骤。
+Adobe Experience Platform中的Source连接器提供了按计划摄取外部来源数据的功能。 本教程提供了使用[!DNL Experience Platform]用户界面创建[!DNL Azure Data Explorer] （以下称为“[!DNL Data Explorer]”）源连接器的步骤。
 
 ## 快速入门
 
@@ -29,7 +29,7 @@ Adobe Experience Platform中的Source连接器提供了按计划摄取外部来�
 
 ### 收集所需的凭据
 
-要在[!DNL Platform]上访问您的[!DNL Data Explorer]帐户，必须提供以下值：
+要在[!DNL Experience Platform]上访问您的[!DNL Data Explorer]帐户，必须提供以下值：
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
@@ -43,17 +43,17 @@ Adobe Experience Platform中的Source连接器提供了按计划摄取外部来�
 
 ## 连接您的[!DNL Azure Data Explorer]帐户
 
-收集所需的凭据后，您可以按照以下步骤将您的[!DNL Data Explorer]帐户关联到[!DNL Platform]。
+收集所需的凭据后，您可以按照以下步骤将您的[!DNL Data Explorer]帐户关联到[!DNL Experience Platform]。
 
 登录到[Adobe Experience Platform](https://platform.adobe.com)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问&#x200B;**[!UICONTROL 源]**&#x200B;工作区。 **[!UICONTROL 目录]**&#x200B;屏幕显示您可以为其创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
-在&#x200B;**[!UICONTROL 数据库]**&#x200B;类别下，选择&#x200B;**[!UICONTROL AzureData Explorer]**。 如果这是您第一次使用此连接器，请选择&#x200B;**[!UICONTROL 配置]**。 否则，请选择&#x200B;**[!UICONTROL 添加数据]**&#x200B;以创建新的Data Explorer连接器。
+在&#x200B;**[!UICONTROL 数据库]**&#x200B;类别下，选择&#x200B;**[!UICONTROL Azure Data Explorer]**。 如果这是您第一次使用此连接器，请选择&#x200B;**[!UICONTROL 配置]**。 否则，请选择&#x200B;**[!UICONTROL 添加数据]**&#x200B;以创建新的Data Explorer连接器。
 
 ![目录](../../../../images/tutorials/create/data-explorer/catalog.png)
 
-将显示&#x200B;**[!UICONTROL 连接到AzureData Explorer]**&#x200B;页。 在此页上，您可以使用新凭据或现有凭据。
+将显示&#x200B;**[!UICONTROL 连接到Azure Data Explorer]**&#x200B;页。 在此页上，您可以使用新凭据或现有凭据。
 
 ### 新帐户
 
@@ -69,4 +69,4 @@ Adobe Experience Platform中的Source连接器提供了按计划摄取外部来�
 
 ## 后续步骤
 
-通过学习本教程，您已建立与[!DNL Data Explorer]帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入 [!DNL Platform]](../../dataflow/databases.md)。
+通过学习本教程，您已建立与[!DNL Data Explorer]帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入 [!DNL Experience Platform]](../../dataflow/databases.md)。

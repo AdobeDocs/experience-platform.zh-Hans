@@ -4,10 +4,10 @@ title: 警报概述
 description: 了解 Adobe Experience Platform 中的警报，包括有关如何定义警报规则的结构。
 feature: Alerts
 exl-id: c38a93c6-1618-4ef9-8f94-41c7ab4af43c
-source-git-commit: 829d7da1dc53486eba1cdceddb7888b578e1c137
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '804'
+ht-degree: 3%
 
 ---
 
@@ -19,13 +19,13 @@ ht-degree: 0%
 
 通过Adobe Experience Platform，可订阅有关Adobe Experience Platform活动的基于事件的警报。 警报可减少或消除轮询[[!DNL Observability Insights] API](../api/overview.md)以检查作业是否已完成、是否已达到工作流中的某个里程碑或是否已发生任何错误的需要。
 
-当您的Platform操作达到特定条件集时（例如系统超出阈值时出现潜在问题），Platform可以向您组织中订阅了警报消息的任何用户发送警报消息。 这些消息可在预定义的时间间隔内重复出现，直到警报得到解决为止。
+当您的Experience Platform操作达到一组特定条件时（例如系统违反阈值时可能会出现问题），Experience Platform可以向您组织中订阅这些条件的任意用户发送警报消息。 这些消息可在预定义的时间间隔内重复出现，直到警报得到解决为止。
 
 本文档概述了Adobe Experience Platform中的警报，包括有关如何定义警报规则的结构。
 
 ## 一次性警报与重复警报
 
-平台警报可以发送一次，也可以在预定义的间隔内重复发送，直到得到解决为止。 其中每个选项的用例旨在以下方面有所不同：
+Experience Platform警报可以发送一次，也可以按预定义的间隔重复发送，直到得到解决为止。 其中每个选项的用例旨在以下方面有所不同：
 
 | 一次性警报 | 重复警报 |
 | --- | --- |
@@ -44,7 +44,7 @@ ht-degree: 0%
 | **指标** | 其值触发警报的可观察性[量度](../api/metrics.md#available-metrics)，例如失败的批次摄取事件数(`timeseries.ingestion.dataset.batchfailed.count`)。 |
 | **条件** | 与度量相关的条件，在警报解析为true时会触发该警报，例如，计数度量超过特定数字。 此条件可以与预定义的时间窗口相关联。 |
 | **窗口** | （可选）警报的条件可以限制在预定义的时间范围内。 例如，根据过去五分钟中失败的批次数量，可能会触发警报。 |
-| **操作** | 触发警报时，将执行操作。 具体而言，消息通过投放渠道(例如预配置的webhook或Experience PlatformUI)发送给适用的收件人。 |
+| **操作** | 触发警报时，将执行操作。 具体而言，消息通过投放渠道(如预配置的webhook或Experience Platform UI)发送给适用的收件人。 |
 | **频率** | （可选）可以将警报配置为在定义的间隔内重复其操作（如果该警报的条件为true或未解析）。 |
 
 {style="table-layout:auto"}
@@ -53,20 +53,20 @@ ht-degree: 0%
 
 可通过两个渠道接收和管理警报：
 
-* [Adobe I/O事件](#events)
-* [平台UI](#ui)
+* [Adobe I/O Events](#events)
+* [EXPERIENCE PLATFORM UI](#ui)
 
 ### I/O事件 {#events}
 
-可将警报发送到配置的webhook以促进活动监控的高效自动化。 要通过webhook接收警报，您必须在Adobe Developer Console中注册用于Platform警报的webhook。 有关具体步骤，请参阅[订阅Adobe I/O事件通知](./subscribe.md)指南。
+可将警报发送到配置的webhook以促进活动监控的高效自动化。 要通过webhook接收警报，您必须在Adobe Developer Console中为Experience Platform警报注册webhook 。 有关具体步骤，请参阅[订阅Adobe I/O事件通知](./subscribe.md)指南。
 
-### 平台UI {#ui}
+### EXPERIENCE PLATFORM UI {#ui}
 
-Platform UI允许您查看收到的警报和管理警报规则。 以下视频介绍了这些功能。
+Experience Platform UI允许您查看收到的警报和管理警报规则。 以下视频介绍了这些功能。
 
 >[!VIDEO](https://video.tv.adobe.com/v/336218?quality=12&learn=on)
 
-要在Platform UI中使用警报，您必须通过Adobe Admin Console启用以下访问控制权限：
+要在Experience Platform UI中使用警报，您必须通过Adobe Admin Console启用以下访问控制权限：
 
 | 权限 | 描述 |
 | --- | --- |
@@ -81,7 +81,7 @@ Platform UI允许您查看收到的警报和管理警报规则。 以下视频�
 
 >[!NOTE]
 >
->有关如何在Platform中管理权限的详细信息，请参阅[访问控制文档](../../access-control/ui/overview.md)。
+>有关如何在Experience Platform中管理权限的更多信息，请参阅[访问控制文档](../../access-control/ui/overview.md)。
 
 如果具有“查看警报”权限，则可以通过选择右上角的铃铛图标（![铃铛图标](/help/images/icons/bell.png)）查看收到的警报。
 
@@ -95,4 +95,4 @@ Platform UI允许您查看收到的警报和管理警报规则。 以下视频�
 
 ## 后续步骤
 
-通过阅读本文档，您已经了解了Platform警报及其在Platform生态系统中的作用。 请参阅本概述中链接的流程文档，以了解如何接收和管理警报。
+通过阅读本文档，我们已向您介绍Experience Platform警报及其在Experience Platform生态系统中的作用。 请参阅本概述中链接的流程文档，以了解如何接收和管理警报。

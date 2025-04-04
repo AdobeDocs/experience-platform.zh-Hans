@@ -1,17 +1,17 @@
 ---
 keywords: Experience Platform；开发人员指南；SDK；数据访问SDK；数据科学Workspace；热门主题
 solution: Experience Platform
-title: 使用Adobe Experience Platform Platform SDK创作模型
+title: 使用Adobe Experience Platform SDK创作模型
 description: 本教程向您提供有关在Python和R中将data_access_sdk_python转换为新Python platform_sdk的信息。
 exl-id: 20909cae-5cd2-422b-8dbb-35bc63e69b2a
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '509'
+source-wordcount: '506'
 ht-degree: 3%
 
 ---
 
-# 使用Adobe Experience Platform [!DNL Platform] SDK创作模型
+# 使用Adobe [!DNL Experience Platform] SDK创作模型
 
 >[!NOTE]
 >
@@ -74,7 +74,7 @@ client_context <- psdk$client_context$ClientContext(api_key={API_KEY},
 
 ## 数据基本读取 {#basic-reading-of-data}
 
-使用新的[!DNL Platform] SDK，最大读取大小为32 GB，最大读取时间为10分钟。
+使用新的[!DNL Experience Platform] SDK，最大读取大小为32 GB，最大读取时间为10分钟。
 
 如果读取时间过长，可以尝试使用以下筛选选项之一：
 
@@ -151,7 +151,7 @@ df2 <- dataset_reader$where(
 df2
 ```
 
-新的[!DNL Platform] SDK支持以下操作：
+新的[!DNL Experience Platform] SDK支持以下操作：
 
 | 操作 | 函数 |
 | --------- | -------- |

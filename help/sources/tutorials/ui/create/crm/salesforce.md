@@ -1,15 +1,15 @@
 ---
-title: 使用Experience Platform用户界面连接您的Salesforce帐户
+title: 使用Salesforce用户界面连接您的Experience Platform帐户
 description: 了解如何使用用户界面连接您的Salesforce帐户并将CRM数据引入Experience Platform。
 exl-id: b67fa4c4-d8ff-4d2d-aa76-5d9d32aa22d6
-source-git-commit: ae322ee421edd73cd5a3fb8499267cd417491318
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '935'
+source-wordcount: '936'
 ht-degree: 2%
 
 ---
 
-# 使用用户界面连接您的[!DNL Salesforce]帐户以Experience Platform
+# 使用UI将您的[!DNL Salesforce]帐户连接到Experience Platform
 
 本教程提供了有关如何使用Experience Platform用户界面连接[!DNL Salesforce]帐户并将CRM数据引入Adobe Experience Platform的步骤。
 
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 本教程需要对以下Experience Platform组件有一定的了解：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
@@ -63,7 +63,7 @@ ht-degree: 2%
 
 ## 连接您的[!DNL Salesforce]帐户
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
 在&#x200B;*[!UICONTROL CRM]*&#x200B;类别下选择&#x200B;**[!DNL Salesforce]**，然后选择&#x200B;**[!UICONTROL 添加数据]**。
 
@@ -71,7 +71,7 @@ ht-degree: 2%
 >
 >当给定的源尚未具有经过身份验证的帐户时，源目录中的源会显示&#x200B;**[!UICONTROL 设置]**&#x200B;选项。 一旦存在经过身份验证的帐户，此选项将更改为&#x200B;**[!UICONTROL 添加数据]**。
 
-![已选择Salesforce源卡的Experience PlatformUI上的源目录。](../../../../images/tutorials/create/salesforce/catalog.png)
+![已选择Salesforce源卡的Experience Platform UI上的源目录。](../../../../images/tutorials/create/salesforce/catalog.png)
 
 此时会显示&#x200B;**[!UICONTROL 连接到Salesforce]**&#x200B;页面。 在此页上，您可以使用新凭据或现有凭据。
 
@@ -127,4 +127,4 @@ ht-degree: 2%
 
 ## 后续步骤
 
-通过学习本教程，您已建立与[!DNL Salesforce]帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入 [!DNL Platform]](../../dataflow/crm.md)。
+通过学习本教程，您已建立与[!DNL Salesforce]帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入 [!DNL Experience Platform]](../../dataflow/crm.md)。

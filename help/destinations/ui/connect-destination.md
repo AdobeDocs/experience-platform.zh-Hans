@@ -3,9 +3,9 @@ title: 创建新的目标连接
 type: Tutorial
 description: 了解如何在Adobe Experience Platform中连接到目标、启用警报以及为连接的目标设置营销操作。
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
-source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1144'
+source-wordcount: '1145'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 1. 转到&#x200B;**[!UICONTROL 连接]** > **[!UICONTROL 目标]**，然后选择&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡。
 
-   ![Experience PlatformUI屏幕截图，显示目标目录页。](../assets/ui/connect-destinations/catalog.png)
+   ![Experience Platform UI屏幕截图，显示目标目录页面。](../assets/ui/connect-destinations/catalog.png)
 
 2. 目录中的目标卡片可能具有不同的操作控件，具体取决于您是否具有到目标的现有连接，以及目标是否支持激活受众、导出数据集，或同时支持两者。 您可能会看到目标信息卡的以下任意控件：
 
@@ -37,9 +37,9 @@ ht-degree: 0%
 
    根据您可用的控件，选择&#x200B;**[!UICONTROL 设置]**、**[!UICONTROL 激活]**&#x200B;或&#x200B;**[!UICONTROL 激活受众]**。
 
-   ![Experience PlatformUI屏幕截图，显示突出显示设置控件的目标目录页面。](../assets/ui/connect-destinations/set-up.png)
+   ![Experience Platform UI屏幕截图，其中显示了突出显示“设置”控件的目标目录页面。](../assets/ui/connect-destinations/set-up.png)
 
-   ![Experience PlatformUI屏幕截图，显示突出显示了“激活受众”控件的目标目录页面。](../assets/ui/connect-destinations/activate-segments.png)
+   ![Experience Platform UI屏幕截图，显示突出显示了“激活受众”控件的目标目录页面。](../assets/ui/connect-destinations/activate-segments.png)
 
 3. 如果您选择了&#x200B;**[!UICONTROL 设置]**，请跳到下一步，以对目标[进行身份验证](#authenticate)。
 
@@ -47,13 +47,13 @@ ht-degree: 0%
 
    选择&#x200B;**[!UICONTROL 配置新目标]**&#x200B;以建立与该目标的新连接。
 
-   ![Experience PlatformUI屏幕截图，显示可用目标的列表并突出显示“配置新目标”控件。](../assets/ui/connect-destinations/configure-new-destination.png)
+   ![Experience Platform UI屏幕截图，显示可用目标的列表，并突出显示了“配置新目标”控件。](../assets/ui/connect-destinations/configure-new-destination.png)
 
 ## 验证目标 {#authenticate}
 
 连接到目标的第一步是向目标平台进行身份验证。
 
-根据您连接到的目标，可能会转到目标合作伙伴的页面进行身份验证，或者可能会要求您直接在Platform工作流中输入身份验证凭据。 以下是验证[!DNL Amazon S3]目标所需的输入示例。 每个目标文档页面中都提供了有关所需输入的详细说明（例如，请参阅[[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#authenticate)和[[!DNL Facebook]](/help/destinations/catalog/social/facebook.md#authenticate)的身份验证部分）。
+根据您连接到的目标，系统可能会将您带到目标合作伙伴的页面进行身份验证，或者可能会要求您直接在Experience Platform工作流中输入身份验证凭据。 以下是验证[!DNL Amazon S3]目标所需的输入示例。 每个目标文档页面中都提供了有关所需输入的详细说明（例如，请参阅[[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#authenticate)和[[!DNL Facebook]](/help/destinations/catalog/social/facebook.md#authenticate)的身份验证部分）。
 
 **[!DNL Amazon S3]必需的和可选的身份验证参数**
 
@@ -113,6 +113,6 @@ ht-degree: 0%
 
 ## 后续步骤 {#next-steps}
 
-通过阅读本文档，您已了解如何使用Experience PlatformUI建立与目标的连接。 提醒一下，可用和所需的连接参数因目标而异。 您还应该查阅[目标目录](/help/destinations/catalog/overview.md)中的目标文档页面，了解有关每个目标类型的所需输入和可用选项的特定信息。
+通过阅读本文档，您已了解如何使用Experience Platform UI建立与目标的连接。 提醒一下，可用和所需的连接参数因目标而异。 您还应该查阅[目标目录](/help/destinations/catalog/overview.md)中的目标文档页面，了解有关每个目标类型的所需输入和可用选项的特定信息。
 
 接下来，您可以继续[激活受众](/help/destinations/ui/activation-overview.md)或[将数据集](/help/destinations/ui/export-datasets.md)导出到您的目标。

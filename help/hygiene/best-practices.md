@@ -2,9 +2,9 @@
 title: 高级数据生命周期管理的最佳实践
 description: 了解如何使用高级数据生命周期管理UI和数据卫生API在Adobe Experience Platform中高效管理数据卫生请求。 本指南涵盖了最佳实践，例如最大化每个请求的身份、指定单个数据集并注意API限制以防止速度减慢。 本文档包含设置自动数据集清理的指南、如何监视工作单状态和详细的响应检索方法。 按照以下惯例来简化请求处理并优化响应时间。
 exl-id: 75e2a97b-ce6c-4ebd-8fc8-597887f77037
-source-git-commit: 5174529d606ac0186ff3193790ada70a46c7e274
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '769'
+source-wordcount: '771'
 ht-degree: 0%
 
 ---
@@ -39,15 +39,15 @@ ht-degree: 0%
 - **实现重试逻辑**：使用“Retry-After”值在应用程序中实现重试逻辑，确保指定时间后尝试重试以避免后续429错误。
 - **批处理您的请求**：避免快速连续提交大量小型请求。 相反，可将多个身份批量处理到单个请求中，以减少调用的频率并将命中率限制的风险降至最低。
 
-## 数据集到期 {#dataset-expiration}
+## 数据集有效期限 {#dataset-expiration}
 
 为短期数据设置自动数据集清理。 使用数据卫生API上的`/ttl`端点根据指定的时间或日期计划要清理的数据集的过期日期。 请参阅数据集到期终结点指南，了解如何[创建数据集到期](./api/dataset-expiration.md)和[接受的查询参数](./api/dataset-expiration.md#query-params)。
 
 ## 监测工作单和数据集到期状态 {#monitor}
 
-通过使用&#x200B;**I/O事件**，您可以有效地监视数据生命周期管理的进度。 I/O事件是一种机制，用于接收有关Platform内各种服务中的更改或更新的实时通知。
+通过使用&#x200B;**I/O事件**，您可以有效地监视数据生命周期管理的进度。 I/O事件是一种机制，用于接收有关Experience Platform中各种服务的更改或更新的实时通知。
 
-I/O事件警报可以发送到配置的webhook以实现活动监视的自动化。 要通过webhook接收警报，您必须在Adobe Developer Console中注册用于Platform警报的webhook。 有关详细说明，请参阅[订阅Adobe I/O事件通知](../observability/alerts/subscribe.md)指南。
+I/O事件警报可以发送到配置的webhook以实现活动监视的自动化。 要通过webhook接收警报，您必须在Adobe Developer Console中为Experience Platform警报注册webhook。 有关详细说明，请参阅[订阅Adobe I/O事件通知](../observability/alerts/subscribe.md)指南。
 
 使用以下数据生命周期方法和准则来有效检索和监控作业状态：
 
@@ -63,7 +63,7 @@ I/O事件警报可以发送到配置的webhook以实现活动监视的自动化�
 
 有关单个工作单的深入信息，请使用以下方法：
 
-- 向`/workorder/{work_order_id}`端点发出GET请求，以获取详细的响应数据。
+- 向`/workorder/{work_order_id}`端点发出GET请求以获取详细的响应数据。
 - 检索特定于产品的响应和成功消息。
 - 避免将此方法用于定期轮询活动。
 

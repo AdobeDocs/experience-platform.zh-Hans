@@ -5,10 +5,10 @@ title: Sensei机器学习API指南
 description: Sensei机器学习API允许开发人员对各种数据科学Workspace资源执行CRUD操作。 参阅本指南，了解如何使用 API 执行关键操作。
 role: Developer
 exl-id: d51d0eb2-b1e9-4cc1-889a-9487395703b0
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '255'
-ht-degree: 12%
+ht-degree: 13%
 
 ---
 
@@ -32,11 +32,11 @@ ht-degree: 12%
 * x-api-key： `{API_KEY}`
 * x-gw-ims-org-id： `{ORG_ID}`
 
-[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
+[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Experience Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 * x-sandbox-name： `{SANDBOX_NAME}`
 
-有关[!DNL Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
+有关[!DNL Experience Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
 
 包含负载 (POST、PUT、PATCH) 的所有请求都需要额外的标头：
 
@@ -48,7 +48,7 @@ ht-degree: 12%
 
 * [引擎](./engines.md)
 * [试验](./experiments.md)
-* [Insights](./insights.md)
+* [洞察](./insights.md)
 * [MLInstances（配方）](./mlinstances.md)
 * [MLServices](./mlservices.md)
 * [模型](./models.md)

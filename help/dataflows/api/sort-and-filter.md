@@ -2,9 +2,9 @@
 title: 在流服务API中排序和筛选响应
 description: 本教程介绍了在Flow Service API中使用查询参数进行排序和过滤的语法，包括一些高级用例。
 exl-id: 029c3199-946e-4f89-ba7a-dac50cc40c09
-source-git-commit: c7ff379b260edeef03f8b47f932ce9040eef3be2
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '829'
+source-wordcount: '830'
 ht-degree: 2%
 
 ---
@@ -197,7 +197,7 @@ GET /flows?property=state==enabled&count=true
 
 ## 用例 {#use-cases}
 
-阅读本节内容，了解如何使用过滤和排序功能返回有关特定连接器的信息或帮助您调试问题的具体示例。 如果您想要Adobe添加任何其他用例，请使用页面上的&#x200B;**[!UICONTROL 详细反馈选项]**&#x200B;提交请求。
+阅读本节内容，了解如何使用过滤和排序功能返回有关特定连接器的信息或帮助您调试问题的具体示例。 如果您希望Adobe添加任何其他用例，请使用页面上的&#x200B;**[!UICONTROL 详细反馈选项]**&#x200B;提交请求。
 
 **筛选以仅返回与特定目标的连接**
 
@@ -249,4 +249,4 @@ GET /runs?property=flowId==<flow-id>&property=metrics.statusSummary.status==Fail
 
 ## 后续步骤
 
-本指南介绍了如何使用`orderby`和`property`查询参数在流服务API中对响应进行排序和筛选。 有关如何将API用于Platform中的常见工作流程的分步指南，请参阅[源](../../sources/home.md)和[目标](../../destinations/home.md)文档中包含的API教程。
+本指南介绍了如何使用`orderby`和`property`查询参数在流服务API中对响应进行排序和筛选。 有关如何将API用于Experience Platform中的常见工作流程的分步指南，请参阅[源](../../sources/home.md)和[目标](../../destinations/home.md)文档中包含的API教程。

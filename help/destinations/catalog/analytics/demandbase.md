@@ -3,9 +3,9 @@ keywords: demandbase扩展；demandbase；demandbase目标
 title: Demandbase扩展
 description: Demandbase扩展是Adobe Experience Platform中的分析目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: 112a9575-4527-4a32-9610-a9d18ffd84f1
-source-git-commit: c8d6c156b3351324fe1be11144afeae91f7a2a59
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '464'
+source-wordcount: '468'
 ht-degree: 3%
 
 ---
@@ -16,15 +16,15 @@ ht-degree: 3%
 
 在Adobe Analytics中直接获取[!DNL Demandbase]个B2B帐户洞察，以便按行业、收入和您的目标帐户划分流量和行为。 此基于帐户的视图为您最有价值的访客提供了关于参与、转化和来源的独特见解。
 
-[!DNL Demandbase]是Adobe Experience Platform中的Analytics扩展。 有关扩展功能的详细信息，请参阅[Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101605.html)上的扩展页面。
+[!DNL Demandbase]是Adobe Experience Platform中的Analytics扩展。 有关扩展功能的更多信息，请参阅[Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101605.html)上的扩展页面。
 
-此目标是标记扩展。 有关标记扩展如何在Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
+此目标是标记扩展。 有关标记扩展如何在Experience Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
 ![Demandbase扩展](../../assets/catalog/analytics/demandbase/catalog.png)
 
 ## 先决条件 {#prerequisites}
 
-所有购买了Platform的客户都可在“目标”目录中使用此扩展。
+所有已购买Experience Platform的客户都可以在“目标”目录中找到此扩展。
 
 要使用此扩展，您需要具有对Adobe Experience Platform中标记的访问权限。 标记以内置增值功能的方式提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
 
@@ -32,7 +32,7 @@ ht-degree: 3%
 
 要安装[!DNL Demandbase]扩展，请执行以下操作：
 
-在[平台接口](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**。
+在[Experience Platform界面](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**。
 
 从目录中选择扩展或使用搜索栏。
 
@@ -58,6 +58,6 @@ ht-degree: 3%
 
 >[!TIP]
 >
->如果扩展已安装在您的某个资产上，则平台UI仍会显示该扩展的&#x200B;**[!UICONTROL Install]**。 按照[安装扩展](#install-extension)中的说明启动安装工作流，以配置或删除您的扩展。
+>如果某个资产上已安装该扩展，则Experience Platform UI仍会显示该扩展的&#x200B;**[!UICONTROL Install]**。 按照[安装扩展](#install-extension)中的说明启动安装工作流，以配置或删除您的扩展。
 
 要升级扩展，请参阅标记文档中的[扩展升级过程](../../../tags/ui/managing-resources/extensions/extension-upgrade.md)指南。

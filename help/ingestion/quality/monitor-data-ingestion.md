@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 监控数据摄取
 description: 本用户指南提供了有关如何在Adobe Experience Platform用户界面中监视数据的步骤。 本指南要求您拥有Adobe ID并有权访问Adobe Experience Platform。
 exl-id: 85711a06-2756-46f9-83ba-1568310c9f73
-source-git-commit: 9399a242b855e151e5822035bc952efa89fe4bf0
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '649'
 ht-degree: 4%
@@ -13,7 +13,7 @@ ht-degree: 4%
 
 # 监控数据摄取
 
-通过数据摄取，您可以将数据摄取到Adobe Experience Platform。 您可以使用批量摄取，这允许您使用各种文件类型（如CSV）插入数据；也可以使用流式摄取，这允许您使用流式端点实时将数据摄取到[!DNL Platform]。
+通过数据摄取，您可以将数据摄取到Adobe Experience Platform。 您可以使用批量摄取，这允许您使用各种文件类型（如CSV）插入数据；也可以使用流式摄取，这允许您使用流式端点实时将数据摄取到[!DNL Experience Platform]。
 
 本用户指南提供了有关如何在Adobe Experience Platform用户界面中监视数据的步骤。 本指南要求您拥有Adobe ID并有权访问Adobe Experience Platform。
 
@@ -30,9 +30,9 @@ ht-degree: 4%
 >
 >要计算特定日期的总事件数，请使用表达式： `total events / day = ingestion rate * 60 * 60 * 24`。
 
-在[Experience PlatformUI](https://platform.adobe.com)中，从左侧导航菜单中选择&#x200B;**[!UICONTROL 监视]**，然后选择&#x200B;**[!UICONTROL 流传输端到端]**。
+在[Experience Platform UI](https://platform.adobe.com)中，从左侧导航菜单中选择&#x200B;**[!UICONTROL 监视]**，然后选择&#x200B;**[!UICONTROL 流到端]**。
 
-出现&#x200B;**[!UICONTROL 流端对端]**&#x200B;监视页面。 此工作区提供了一个图形，该图形显示[!DNL Platform]接收流式事件的速率，该图形显示[[!DNL Real-Time Customer Profile]](../../profile/home.md)成功处理的流式事件的速率，以及传入数据的详细列表。
+出现&#x200B;**[!UICONTROL 流端对端]**&#x200B;监视页面。 此工作区提供了一个图形，该图形显示[!DNL Experience Platform]接收流式事件的速率，该图形显示[[!DNL Real-Time Customer Profile]](../../profile/home.md)成功处理的流式事件的速率，以及传入数据的详细列表。
 
 ![](../images/quality/monitor-data-flows/list-streams.png)
 

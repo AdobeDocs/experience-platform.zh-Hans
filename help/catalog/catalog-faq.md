@@ -2,16 +2,17 @@
 keywords: 目录服务；问题；常见问题解答；常见问题解答；数据集常见问题解答
 title: 常见问题解答
 description: 有关Adobe Experience Platform目录服务和数据集的常见问题解答。
-source-git-commit: 0bb10754e2f5bc289567368c803d4397cec77bf6
+exl-id: 70d2a352-75bd-4bbc-98e6-aeea16306f63
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '469'
+source-wordcount: '473'
 ht-degree: 1%
 
 ---
 
 # 常见问题解答 {#faq}
 
-本文档提供了有关Adobe Experience Platform目录服务和数据集的常见问题解答。 有关其他Platform服务的问题和疑难解答，包括在所有Platform API中遇到的问题，请参阅[Experience Platform疑难解答指南](../landing/troubleshooting.md)。
+本文档提供了有关Adobe Experience Platform目录服务和数据集的常见问题解答。 有关其他Experience Platform服务的问题和疑难解答，包括在所有Experience Platform API中遇到的问题，请参阅[Experience Platform疑难解答指南](../landing/troubleshooting.md)。
 
 ## 保留策略和规则 {#retention-policies-and-rules}
 
@@ -37,7 +38,7 @@ ht-degree: 1%
 
 +++回答
 
-系统会每周评估和处理数据集过期时间，并删除过期的所有记录。 如果事件被摄取到Platform超过30天（摄取日期大于30天），并且其事件日期超过定义的保留期，则被视为已过期。
+系统会每周评估和处理数据集过期时间，并删除过期的所有记录。 如果事件被摄取到Experience Platform超过30天（摄取日期> 30天），并且其事件日期超过定义的保留期，则被视为已过期。
 
 +++
 
@@ -45,7 +46,7 @@ ht-degree: 1%
 
 +++回答
 
-设置保留策略后，如果现有事件的事件时间戳超过保留期限，则会立即从Platform中删除这些事件。 一旦新事件的时间戳超过保留期，就会将其删除。
+设置保留策略后，如果现有事件的事件时间戳超过保留期限，则会立即从Experience Platform中删除这些事件。 一旦新事件的时间戳超过保留期，就会将其删除。
 
 例如，如果您在5月15日应用30天到期策略，则会出现以下情况：
 
@@ -82,4 +83,3 @@ ht-degree: 1%
 不会，应用保留策略后，任何超过保留期的数据都会被永久删除，并且无法恢复。
 
 +++
-

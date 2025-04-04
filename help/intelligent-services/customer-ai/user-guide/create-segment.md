@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform；分析；客户人工智能；热门主题；客户人工智能区段
+keywords: Experience Platform；洞察；客户人工智能；热门主题；客户人工智能区段
 solution: Experience Platform, Real-Time Customer Data Platform
 feature: Customer AI
 title: 使用预测得分创建客户区段
 description: 预测运行完成后，用户档案会自动使用预测的倾向分数。 通过Customer AI得分丰富用户档案，可创建客户区段以根据其倾向得分查找受众。 本节提供了使用区段生成器创建区段的步骤。
 exl-id: ac81f798-f599-4a8d-af25-c00c92e74b4e
-source-git-commit: 68aa226395e8dcbf98a851134332f31303a8c710
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '318'
+source-wordcount: '319'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 0%
 >
 >为了利用这种方法，需要为数据集启用实时客户档案。
 
-在Platform UI中，单击左侧导航中的&#x200B;**[!UICONTROL 区段]**，然后单击&#x200B;**[!UICONTROL 创建区段]**。
+在Experience Platform UI中，单击左侧导航中的&#x200B;**[!UICONTROL 区段]**，然后单击&#x200B;**[!UICONTROL 创建区段]**。
 
 ![](../images/user-guide/segments_new.png)
 

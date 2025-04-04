@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 目录服务概述
 description: 目录服务是 Adobe Experience Platform 中记录数据位置和沿袭的系统。虽然所有摄取到 Experience Platform 中的数据均作为文件和目录存储在数据湖中，但目录中容纳这些文件和目录的元数据和描述以供查找和监控。
 exl-id: ef0c173b-607b-41b8-8676-c54ae9472e23
-source-git-commit: 0ebe9eadb1bce6252b43a50af009ce1b0f6e5d6e
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '694'
 ht-degree: 8%
@@ -23,7 +23,7 @@ ht-degree: 8%
 * 已成功处理多少数据？
 * 处理过程中发生了哪些错误？
 
-[!DNL Catalog]提供了一个RESTful API，允许您使用基本CRUD操作以编程方式管理[!DNL Platform]元数据。 有关详细信息，请参阅[目录开发人员指南](api/getting-started.md)。
+[!DNL Catalog]提供了一个RESTful API，允许您使用基本CRUD操作以编程方式管理[!DNL Experience Platform]元数据。 有关详细信息，请参阅[目录开发人员指南](api/getting-started.md)。
 
 ## [!DNL Catalog]和[!DNL Experience Platform]服务
 
@@ -31,9 +31,9 @@ ht-degree: 8%
 
 ### [!DNL Experience Data Model] (XDM)系统
 
-[!DNL Experience Data Model] (XDM)系统是[!DNL Platform]用于组织客户体验数据的标准化框架。 [!DNL Experience Platform]利用XDM架构以一致且可重用的方式描述数据结构。
+[!DNL Experience Data Model] (XDM)系统是[!DNL Experience Platform]用于组织客户体验数据的标准化框架。 [!DNL Experience Platform]利用XDM架构以一致且可重用的方式描述数据结构。
 
-将数据摄取到[!DNL Platform]中时，该数据的结构将映射到XDM架构并作为数据集的一部分存储在[!DNL Data Lake]中。 [!DNL Catalog Service]跟踪每个数据集的元数据，包括对该数据集所遵循的XDM架构的引用。
+将数据摄取到[!DNL Experience Platform]中时，该数据的结构将映射到XDM架构并作为数据集的一部分存储在[!DNL Data Lake]中。 [!DNL Catalog Service]跟踪每个数据集的元数据，包括对该数据集所遵循的XDM架构的引用。
 
 有关XDM系统的更多常规信息，请参阅[XDM系统概述](../xdm/home.md)。
 
@@ -47,7 +47,7 @@ ht-degree: 8%
 
 ## [!DNL Catalog]对象
 
-如上一节所述，[!DNL Catalog]跟踪其他[!DNL Platform]服务使用的多种资源和操作的元数据。 [!DNL Catalog]保留其自己封装此元数据的“对象”存储。 [!DNL Catalog]对象是[!DNL Platform]数据的可查询表示形式，允许您搜索、监视和标记数据而无需访问数据本身。
+如上一节所述，[!DNL Catalog]跟踪其他[!DNL Experience Platform]服务使用的多种资源和操作的元数据。 [!DNL Catalog]保留其自己封装此元数据的“对象”存储。 [!DNL Catalog]对象是[!DNL Experience Platform]数据的可查询表示形式，允许您搜索、监视和标记数据而无需访问数据本身。
 
 下表概述了[!DNL Catalog]支持的不同对象类型：
 
@@ -55,7 +55,7 @@ ht-degree: 8%
 |---|---|---|
 | 批次 | `/batches` | 批量是由一个或多个要作为单个单位摄取的文件组成的数据单位。 [!DNL Catalog]中的批次对象概述了批次的摄取量度（例如处理的记录数或磁盘大小），并且可能还包括到受批次操作影响的数据集、视图和其他资源的链接。 |
 | 数据集 | `/dataSets` | 数据集是用于收集数据的存储和管理结构（通常是表），其中包含架构（列）和字段（行）。 有关详细信息，请参阅[数据集概述](./datasets/overview.md)。 |
-| 数据集文件 | `/datasetFiles` | 数据集文件表示已在[!DNL Platform]上保存的数据块。 作为文本文件的记录，您可以从中找到文件的大小、包含的记录数以及对摄取文件的批次的引用。 |
+| 数据集文件 | `/datasetFiles` | 数据集文件表示已在[!DNL Experience Platform]上保存的数据块。 作为文本文件的记录，您可以从中找到文件的大小、包含的记录数以及对摄取文件的批次的引用。 |
 
 ## 后续步骤
 

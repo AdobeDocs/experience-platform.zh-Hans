@@ -4,10 +4,10 @@ user-guide-title: 实时客户轮廓指南
 user-guide-description: 合并客户视图，跨渠道创建统一的客户参与视图。
 feature: Profiles
 role: User
-source-git-commit: e7af4992b1a2d4c9ada89dea474ce8e5412313f9
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '133'
+ht-degree: 33%
 
 ---
 
@@ -19,7 +19,7 @@ ht-degree: 0%
 * [[!DNL Profile]和分段护栏](guardrails.md)
 * [[!DNL Profile]仪表板](ui/profile-dashboard.md)
 * [Edge配置文件](edge-profiles.md)
-* [体验事件过期时间](event-expirations.md)
+* [体验事件过期](event-expirations.md)
 * [假名配置文件过期](pseudonymous-profiles.md)
 * [客户时间戳排序](customer-timestamp-ordering.md)
 * [!DNL Profile] API {#api}
@@ -30,7 +30,7 @@ ht-degree: 0%
    * [预览样本状态（[!DNL Profile]预览）](api/preview-sample-status.md)
    * [[!DNL Profile]系统作业（删除请求）](api/profile-system-jobs.md)
 * 配置文件UI {#ui}
-   * [[!DNL Profile]用户界面指南](ui/user-guide.md)
+   * [[!DNL Profile] UI 指南](ui/user-guide.md)
    * [[!DNL Profile]详细信息自定义](ui/profile-customization.md)
    * [潜在客户轮廓](ui/prospect-profile.md)
 * 计算属性{#computed-attributes}
@@ -54,4 +54,4 @@ ht-degree: 0%
 * [隐私请求处理](privacy.md)
 * [[!DNL Profile]疑难解答指南](troubleshooting.md)
 * [配置文件API引用](https://www.adobe.com/go/profile-apis-en)
-* [平台发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
+* [Experience Platform 发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

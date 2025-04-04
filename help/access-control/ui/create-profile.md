@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在Adobe Admin Console中创建新产品配置文件
 description: 本文档介绍了在Adobe Admin Console中创建新产品配置文件所需的必要步骤。 要开始创建新配置文件，请导航到产品配置文件选项卡，然后单击新建配置文件。
 exl-id: 47558f03-c3f7-4ead-affb-fcbfd7f1e918
-source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '313'
+source-wordcount: '314'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ![create-new-product-profile](../images/create-new-product-profile.png)
 
-下一个屏幕提示您选择要包含在配置文件中的平台服务。 选择服务旁边的切换按钮可禁用该服务。 如果服务被禁用，则与该服务关联的所有功能将不可用于分配给此产品配置文件的用户。 完成后，选择&#x200B;**[!UICONTROL 保存]**。
+下一个屏幕提示您选择要包含在配置文件中的Experience Platform服务。 选择服务旁边的切换按钮可禁用该服务。 如果服务被禁用，则与该服务关联的所有功能将不可用于分配给此产品配置文件的用户。 完成后，选择&#x200B;**[!UICONTROL 保存]**。
 
 ![启用服务](../images/enable-services.png)
 

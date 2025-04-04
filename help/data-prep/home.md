@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform；主页；热门主题；映射csv；映射csv文件；将csv文件映射到xdm；将csv映射到xdm；ui指南；映射器；映射；数据准备；数据准备；准备数据；
+keywords: Experience Platform；主页；热门主题；映射csv；映射csv文件；将csv文件映射到xdm；将csv映射到xdm；ui指南；映射器；映射；数据准备；数据准备；
 solution: Experience Platform
 title: 数据准备概述
 description: 本文档介绍Adobe Experience Platform中的数据准备。
 exl-id: f15eeb50-a531-4560-a524-1a670fbda706
-source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '789'
+source-wordcount: '790'
 ht-degree: 0%
 
 ---
@@ -52,7 +52,7 @@ ht-degree: 0%
 
 ## 数据格式处理
 
-数据准备可以稳健地处理引入Platform的不同格式的数据。 要了解有关数据准备如何处理不同数据类型的更多信息，请阅读[数据格式处理概述](./data-handling.md)。
+数据准备可以稳健地处理摄取到Experience Platform中的不同格式的数据。 要了解有关数据准备如何处理不同数据类型的更多信息，请阅读[数据格式处理概述](./data-handling.md)。
 
 ## 使用[!DNL Data Prep]发送部分行更新
 

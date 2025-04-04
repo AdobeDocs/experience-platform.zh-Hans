@@ -1,20 +1,20 @@
 ---
-keywords: Experience Platform；主页；热门主题；摄取；摄取批量数据；教程；批量摄取；教程；ui指南；
+keywords: Experience Platform；主页；热门主题；摄取；批量数据摄取；教程；批量摄取；教程；ui指南；
 solution: Experience Platform
 title: 将数据摄取到Experience Platform
 type: Tutorial
 description: 通过Adobe Experience Platform，您可以轻松地将数据作为Parquet文件形式的批处理文件或符合已知Experience Data Model (XDM)架构的数据导入。
 exl-id: a4a7358d-b117-4d81-8cb0-3dbbfeccdcbd
-source-git-commit: 8351f6907a0dc4a4bba01c7f6e9dec7c376c8575
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1321'
+source-wordcount: '1322'
 ht-degree: 0%
 
 ---
 
 # 将数据摄取到Adobe Experience Platform
 
-Adobe Experience Platform允许您将数据作为批处理文件轻松导入[!DNL Platform]。 要摄取的数据的示例可能包括CRM系统中平面文件（如Parquet文件）的配置文件数据，或与架构注册表中的已知[!DNL Experience Data Model] (XDM)架构相符的数据。
+Adobe Experience Platform允许您将数据作为批处理文件轻松导入[!DNL Experience Platform]。 要摄取的数据的示例可能包括CRM系统中平面文件（如Parquet文件）的配置文件数据，或与架构注册表中的已知[!DNL Experience Data Model] (XDM)架构相符的数据。
 
 ## 快速入门
 
@@ -80,7 +80,7 @@ Adobe Experience Platform允许您将数据作为批处理文件轻松导入[!DN
 
 ## 为[!DNL Real-Time Customer Profile]启用数据集
 
-数据集用于将数据摄取到[!DNL Experience Platform]，该数据最终用于识别个人并将来自多个来源的信息拼合在一起。 将信息拼合在一起称为[!DNL Real-Time Customer Profile]。 为了让[!DNL Platform]知道哪些信息应包含在[!DNL Real-Time Profile]中，可以使用&#x200B;**[!UICONTROL 配置文件]**&#x200B;切换将数据集标记为包含。
+数据集用于将数据摄取到[!DNL Experience Platform]，该数据最终用于识别个人并将来自多个来源的信息拼合在一起。 将信息拼合在一起称为[!DNL Real-Time Customer Profile]。 为了让[!DNL Experience Platform]知道哪些信息应包含在[!DNL Real-Time Profile]中，可以使用&#x200B;**[!UICONTROL 配置文件]**&#x200B;切换将数据集标记为包含。
 
 默认情况下，此切换处于关闭状态。 如果您选择打开[!DNL Profile]，则摄取到数据集中的所有数据将用于帮助识别个人并将他们的[!DNL Real-Time Profile]拼合在一起。
 
@@ -106,13 +106,13 @@ Adobe Experience Platform允许您将数据作为批处理文件轻松导入[!DN
 
 >[!NOTE]
 >
->Platform支持两种用于数据引入的文件类型，即Parquet或JSON。 一次最多可以添加5个文件，每个文件的最大文件大小为1 GB。
+>Experience Platform支持两种文件类型进行数据摄取：Parquet或JSON。 一次最多可以添加5个文件，每个文件的最大文件大小为1 GB。
 
 ![添加数据选项卡](../images/tutorials/ingest-batch-data/drag-and-drop.png)
 
 ## 上传文件 {#upload-file}
 
-拖放（或浏览并选择）要上载的Parquet或JSON文件后，[!DNL Platform]将立即开始处理该文件，并且&#x200B;**[!UICONTROL 添加数据]**&#x200B;选项卡上将显示一个&#x200B;**[!UICONTROL 上载]**&#x200B;对话框，显示文件上载的进度。
+拖放（或浏览并选择）要上载的Parquet或JSON文件后，[!DNL Experience Platform]将立即开始处理该文件，并且&#x200B;**[!UICONTROL 添加数据]**&#x200B;选项卡上将显示一个&#x200B;**[!UICONTROL 上载]**&#x200B;对话框，显示文件上载的进度。
 
 ![正在上载对话框](../images/tutorials/ingest-batch-data/uploading-file.png)
 
@@ -150,6 +150,6 @@ Adobe Experience Platform允许您将数据作为批处理文件轻松导入[!DN
 
 >[!WARNING]
 >
->以下视频中显示的[!DNL Platform] UI已过期。 有关最新的UI屏幕截图和功能，请参阅上述文档。
+>以下视频中显示的[!DNL Experience Platform] UI已过期。 有关最新的UI屏幕截图和功能，请参阅上述文档。
 
 >[!VIDEO](https://video.tv.adobe.com/v/27269?quality=12&learn=on)

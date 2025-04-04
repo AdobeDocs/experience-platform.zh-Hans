@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 将Looker连接到查询服务
 description: 本文档介绍将Looker与Adobe Experience Platform查询服务连接的步骤。
 exl-id: 806e9077-533a-4546-b5ca-8124751957f5
-source-git-commit: b059a0191fbf2c3e5d2dfceb9802e2aaa429f7ed
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '405'
+source-wordcount: '406'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ ht-degree: 0%
 - **[!DNL Username and Password]：**&#x200B;将使用的登录凭据。 该用户名的格式为`ORG_ID@AdobeOrg`。
 - **SSL**：启用SSL以确保跨网络的安全连接。
 
-要查找连接Looker与查询服务所需的凭据，请登录到Platform UI并从左侧导航中选择&#x200B;**[!UICONTROL 查询]**，然后依次选择&#x200B;**[!UICONTROL 凭据]**。 有关查找&#x200B;**主机**、**端口**、**数据库**、**用户名**&#x200B;和&#x200B;**密码**&#x200B;凭据的详细信息，请阅读[凭据指南](../ui/credentials.md)。
+要查找连接Looker与查询服务所需的凭据，请登录到Experience Platform UI，然后从左侧导航中选择&#x200B;**[!UICONTROL 查询]**，然后选择&#x200B;**[!UICONTROL 凭据]**。 有关查找&#x200B;**主机**、**端口**、**数据库**、**用户名**&#x200B;和&#x200B;**密码**&#x200B;凭据的详细信息，请阅读[凭据指南](../ui/credentials.md)。
 
 ![Experience Platform查询工作区的“凭据”页面中突出显示了凭据和即将过期的凭据。](../images/clients/looker/query-service-credentials-page.png)
 

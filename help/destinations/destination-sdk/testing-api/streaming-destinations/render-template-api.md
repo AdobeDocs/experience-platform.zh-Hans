@@ -2,9 +2,9 @@
 description: 了解如何使用目标测试API，根据消息转换模板验证流目的地的输出。
 title: 验证导出的配置文件结构
 exl-id: e64ea89e-6064-4a05-9730-e0f7d7a3e1db
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '793'
+source-wordcount: '794'
 ht-degree: 1%
 
 ---
@@ -1066,8 +1066,8 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 
 ## API错误处理 {#api-error-handling}
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅平台疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
+Destination SDK API端点遵循常规Experience Platform API错误消息原则。 请参阅Experience Platform疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤 {#next-steps}
 
-阅读本文档后，您现在知道如何使用消息转换模板生成与目标的预期数据格式匹配的导出用户档案。 阅读[如何使用Destination SDK配置目标](../../guides/configure-destination-instructions.md)，以了解此步骤在配置目标的过程中所处的位置。
+阅读本文档后，您现在知道如何使用消息转换模板生成与目标的预期数据格式匹配的导出用户档案。 阅读[如何使用Destination SDK配置您的目标](../../guides/configure-destination-instructions.md)，以了解此步骤在配置目标的过程中所处的位置。

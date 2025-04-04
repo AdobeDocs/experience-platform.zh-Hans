@@ -4,9 +4,9 @@ description: 利用审核查询API，可检索各种Adobe Experience Platform功
 role: Developer
 feature: Audits, API
 exl-id: 20eab0a8-98f7-4fee-8f91-88324e54ab18
-source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '389'
+source-wordcount: '391'
 ht-degree: 11%
 
 ---
@@ -19,7 +19,7 @@ Adobe Experience Platform允许您以审核事件日志的形式审核各种服�
 
 ## 先决条件
 
-为了管理审核事件，您必须已授予&#x200B;**[!UICONTROL 查看用户活动日志]**&#x200B;访问控制权限（可在[!UICONTROL 数据管理]类别下找到）。 要了解如何管理Platform功能的各个权限，请参阅[访问控制文档](../../../../access-control/home.md)。
+为了管理审核事件，您必须已授予&#x200B;**[!UICONTROL 查看用户活动日志]**&#x200B;访问控制权限（可在[!UICONTROL 数据管理]类别下找到）。 要了解如何管理Experience Platform功能的各个权限，请参阅[访问控制文档](../../../../access-control/home.md)。
 
 ### 正在读取示例 API 调用
 
@@ -27,17 +27,17 @@ Adobe Experience Platform允许您以审核事件日志的形式审核各种服�
 
 ### 收集所需标头的值
 
-本指南要求您完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)，才能成功调用平台API。 完成身份验证教程将为所有Experience PlatformAPI调用中的每个所需标头提供值，如下所示：
+本指南要求您完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)，才能成功调用Experience Platform API。 完成身份验证教程将为所有Experience Platform API调用中的每个所需标头提供值，如下所示：
 
 * 授权：持有人`{ACCESS_TOKEN}`
 * x-api-key： `{API_KEY}`
 * x-gw-ims-org-id： `{ORG_ID}`
 
-[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称。 有关[!DNL Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../../../sandboxes/home.md)。
+[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Experience Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称。 有关[!DNL Experience Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../../../sandboxes/home.md)。
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
-包含有效负载(POST、PUT和PATCH)的所有请求都需要额外的标头：
+所有包含有效负载(POST、PUT和PATCH)的请求都需要额外的标头：
 
 * Content-Type： application/json
 

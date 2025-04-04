@@ -5,10 +5,10 @@ breadcrumb-title: Data Ingestion 指南
 user-guide-description: 通过批量引入或流式引入将您的数据引入 Experience Platform。
 feature: Data Ingestion
 role: Developer
-source-git-commit: 1070c34bcd4577fcc5f0ac160196450db3aab9b0
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '143'
+ht-degree: 21%
 
 ---
 
@@ -48,4 +48,4 @@ ht-degree: 0%
 - [Source连接器](source-connectors.md)
 - [批次摄取API引用](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/)
 - [流式引入API引用](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/)
-- [平台发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
+- [Experience Platform 发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

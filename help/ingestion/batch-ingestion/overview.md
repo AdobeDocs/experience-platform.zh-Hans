@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform；主页；热门主题；数据摄取；批处理；批量处理；启用数据集；批量摄取概述；概述；批量摄取概述；
+keywords: Experience Platform；主页；热门主题；数据摄取；批处理；启用数据集；批量摄取概述；概述；批量摄取概述；
 solution: Experience Platform
 title: 批量摄取API概述
-description: Adobe Experience Platform批量摄取API允许您将数据作为批处理文件接入Platform。 所摄取的数据可以是来自CRM系统中平面文件（如Parquet文件）的配置文件数据，也可以是与Experience Data Model (XDM)注册表中的已知架构相符的数据。
+description: Adobe Experience Platform批量摄取API允许您将数据作为批处理文件接入Experience Platform。 所摄取的数据可以是来自CRM系统中平面文件（如Parquet文件）的配置文件数据，也可以是与Experience Data Model (XDM)注册表中的已知架构相符的数据。
 exl-id: ffd1dc2d-eff8-4ef7-a26b-f78988f050ef
-source-git-commit: 583eb70235174825dd542b95463784638bdef235
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1388'
+source-wordcount: '1390'
 ht-degree: 4%
 
 ---
 
 # 批量摄取API概述
 
-Adobe Experience Platform批量摄取API允许您将数据作为批处理文件接入Platform。 所摄取的数据可以是平面文件（如Parquet文件）的配置文件数据，也可以是与[!DNL Experience Data Model] (XDM)注册表中的已知架构相符的数据。
+Adobe Experience Platform批量摄取API允许您将数据作为批处理文件接入Experience Platform。 所摄取的数据可以是平面文件（如Parquet文件）的配置文件数据，也可以是与[!DNL Experience Data Model] (XDM)注册表中的已知架构相符的数据。
 
 [批次摄取API引用](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/)提供了有关这些API调用的其他信息。
 
@@ -23,7 +23,7 @@ Adobe Experience Platform批量摄取API允许您将数据作为批处理文件�
 
 ## 快速入门
 
-本指南中使用的API端点是[批次摄取API](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/)的一部分。 在继续之前，请查看[快速入门指南](getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+本指南中使用的API端点是[批次摄取API](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/)的一部分。 在继续之前，请查看[快速入门指南](getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience Platform API所需的所需标头的重要信息。
 
 ### [!DNL Data Ingestion]先决条件
 
@@ -56,18 +56,18 @@ Adobe Experience Platform批量摄取API允许您将数据作为批处理文件�
 
 在摄取数据时有一定的灵活性 — 如果类型与目标架构中的类型不匹配，数据将转换为表达的目标类型。 如果失败，它将失败`TypeCompatibilityException`的批处理。
 
-例如，JSON和CSV都不具有`date`或`date-time`类型。 因此，这些值使用[ISO 8601格式字符串](https://www.iso.org/iso-8601-date-and-time-format.html)(&quot;2018-07-10T15:05:59.000-08:00&quot;)或以毫秒(1531263959000)为单位的Unix时间格式表示，并在摄取时转换为目标XDM类型。
+例如，JSON和CSV都不具有`date`或`date-time`类型。 因此，这些值使用[ISO 8601格式字符串](https://www.iso.org/iso-8601-date-and-time-format.html)&#x200B;(&quot;2018-07-10T15:05:59.000-08:00&quot;)或以毫秒(1531263959000)为单位的Unix时间格式表示，并在摄取时转换为目标XDM类型。
 
 下表显示了摄取数据时支持的转化。
 
-| 入站（行）与目标（列） | 字符串 | 字节 | 短 | 整数 | 长 | 两次 | 日期 | 日期时间 | 对象 | 地图 |
+| 入站（行）与目标（列） | 字符串 | 字节 | 短 | 整数 | 长 | 双精度 | 日期 | 日期时间 | 对象 | 地图 |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | 字符串 | X | X | X | X | X | X | X | X |   |   |
 | 字节 | X | X | X | X | X | X |   |   |   |   |
 | 短 | X | X | X | X | X | X |   |   |   |   |
 | 整数 | X | X | X | X | X | X |   |   |   |   |
 | 长 | X | X | X | X | X | X | X | X |   |   |
-| 两次 | X | X | X | X | X | X |   |   |   |   |
+| 双精度 | X | X | X | X | X | X |   |   |   |   |
 | 日期 |   |   |   |   |   |   | X |   |   |   |
 | 日期时间 |   |   |   |   |   |   |   | X |   |   |
 | 对象 |   |   |   |   |   |   |   |   | X | X |
@@ -220,7 +220,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 
 ### 大文件上传 — 上传后续部分
 
-创建文件后，可以通过重复的PATCH请求（文件的每个部分各一个）上传所有后续的块。
+创建文件后，可以通过发出重复的PATCH请求（针对文件的每个部分发送一个请求）上载所有后续的块。
 
 ```http
 PATCH /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}

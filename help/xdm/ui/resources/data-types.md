@@ -5,9 +5,9 @@ title: 使用UI创建和编辑数据类型
 type: Tutorial
 description: 了解如何在Experience Platform用户界面中创建和编辑数据类型。
 exl-id: 2c917154-c425-463c-b8c8-04ba37d9247b
-source-git-commit: c04e5a49f2a4e90345ca20ecd0547d02b5004fcf
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1384'
+source-wordcount: '1387'
 ht-degree: 6%
 
 ---
@@ -27,7 +27,7 @@ Adobe Experience Platform提供了许多标准数据类型，可用于涵盖各�
 >
 >如果字段被定义为特定数据类型，则无法在另一个架构中创建具有不同数据类型的相同字段。 此限制适用于您组织的租户。
 
-本教程介绍了在Platform用户界面中创建和编辑自定义数据类型的步骤。
+本教程介绍了在Experience Platform用户界面中创建和编辑自定义数据类型的步骤。
 
 ## 先决条件 {#prerequisites}
 
@@ -37,7 +37,7 @@ Adobe Experience Platform提供了许多标准数据类型，可用于涵盖各�
 
 ## 为数据类型打开[!DNL Schema Editor] {#data-type}
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 架构]**&#x200B;以打开[!UICONTROL 架构]工作区，然后选择&#x200B;**[!UICONTROL 数据类型]**&#x200B;选项卡。 此时将显示可用数据类型的列表。 系统会根据数据类型的创建方式自动筛选数据类型列表。 默认设置显示由Adobe定义的数据类型。 您还可以筛选列表以显示您的组织创建的那些列表。
+在Experience Platform UI中，在左侧导航中选择&#x200B;**[!UICONTROL 架构]**&#x200B;以打开[!UICONTROL 架构]工作区，然后选择&#x200B;**[!UICONTROL 数据类型]**&#x200B;选项卡。 此时将显示可用数据类型的列表。 系统会根据数据类型的创建方式自动筛选数据类型列表。 默认设置显示由Adobe定义的数据类型。 您还可以筛选列表以显示您的组织创建的那些列表。
 
 ![左侧导航中带有[!UICONTROL 架构]且突出显示[!UICONTROL 数据类型]的[!UICONTROL 架构]工作区。](../../images/ui/resources/data-types/data-types-tab.png)
 
@@ -63,7 +63,7 @@ Adobe Experience Platform提供了许多标准数据类型，可用于涵盖各�
 
 ### 筛选数据类型 {#filter}
 
-根据如何创建可用的数据类型预先过滤可用的数据类型的列表。选择单选按钮以在[!UICONTROL 标准]和[!UICONTROL 自定义]选项之间进行选择。 [!UICONTROL Standard]选项显示由Adobe创建的实体，[!UICONTROL Custom]选项显示组织内创建的实体。
+根据如何创建可用的数据类型预先过滤可用的数据类型的列表。选择单选按钮以在[!UICONTROL 标准]和[!UICONTROL 自定义]选项之间进行选择。 [!UICONTROL Standard]选项显示Adobe创建的实体，[!UICONTROL Custom]选项显示组织内创建的实体。
 
 ![已突出显示[!UICONTROL 架构]工作区的[!UICONTROL 数据类型]选项卡，其中包含[!UICONTROL 标准]和[!UICONTROL 自定义]。](../../images/ui/resources/data-types/standard-and-custom-data-types.png)
 
@@ -125,6 +125,6 @@ Restaurant数据类型需要一个字符串字段来表示餐厅的名称。 因
 
 ## 后续步骤 {#next-steps}
 
-本指南介绍了如何使用Platform UI创建和编辑数据类型。 有关[!UICONTROL 架构]工作区的功能的更多信息，请参阅[[!UICONTROL 架构]工作区概述](../overview.md)。
+本指南介绍了如何使用Experience Platform UI创建和编辑数据类型。 有关[!UICONTROL 架构]工作区的功能的更多信息，请参阅[[!UICONTROL 架构]工作区概述](../overview.md)。
 
 要了解如何使用[!DNL Schema Registry] API管理数据类型，请参阅[数据类型端点指南](../../api/data-types.md)。

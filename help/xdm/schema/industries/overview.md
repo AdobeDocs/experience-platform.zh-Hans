@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 行业数据模型概述
 description: 了解可使用标准体验数据模型(XDM)组件构建的各种行业垂直项目的标准化数据模型。
 exl-id: 8fa9a610-36b5-470f-ad63-f2a4a060e0f1
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '349'
+source-wordcount: '350'
 ht-degree: 0%
 
 ---
@@ -24,9 +24,9 @@ Experience Data Model (XDM)允许您创建高度可自定义的架构，以捕�
 
 ## 先决条件
 
-要阅读本指南中引用的ERD，您必须实际了解XDM组件如何交互以形成架构以及XDM架构如何在整个Experience Platform中运行。 在继续之前，请确保您已阅读以下概述文档：
+要阅读本指南中参考的ERD，您必须实际了解XDM组件如何交互以形成架构，以及XDM架构如何在Experience Platform整体中运行。 在继续之前，请确保您已阅读以下概述文档：
 
-* [XDM系统概述](../../home.md)：了解XDM如何在平台生态系统中运行。
+* [XDM系统概述](../../home.md)：了解XDM如何在Experience Platform生态系统中运行。
 * [架构组合的基础知识](../../schema/composition.md)：了解XDM组件（如架构字段组、类和数据类型）如何影响架构的结构以及标识字段的角色。
 
 还建议您查看[数据建模最佳实践指南](../../schema/best-practices.md)，了解有关如何将数据映射到XDM的一般准则。

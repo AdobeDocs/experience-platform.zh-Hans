@@ -1,6 +1,6 @@
 ---
 title: 实时客户资料视频概述
-description: 本视频介绍了对Adobe Experience Platform中的实时客户个人资料的基本了解，并概述了如何在Platform UI中浏览个人资料。
+description: 本视频提供了对Adobe Experience Platform中的实时客户个人资料的基本了解，并概述了如何在Experience Platform UI中浏览个人资料。
 product: experience platform
 type: Documentation
 solution: Experience Platform
@@ -9,9 +9,9 @@ audience: all
 doc-type: video
 activity: understand
 exl-id: cdc91194-771f-4026-808f-97d70db436d9
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '117'
+source-wordcount: '118'
 ht-degree: 3%
 
 ---
@@ -22,6 +22,6 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->Experience Platform用户界面经常更新，自从录制此视频以来，该界面可能已发生更改。 有关最新信息，请参阅[配置文件UI指南](../ui/user-guide.md)。
+>Experience Platform用户界面经常更新，自从录制此视频以来，可能已经发生了变化。 有关最新信息，请参阅[配置文件UI指南](../ui/user-guide.md)。
 
 >[!VIDEO](https://video.tv.adobe.com/v/27251?quality=12&learn=on&captions=eng)

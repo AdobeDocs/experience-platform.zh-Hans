@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 架构注册表API指南附录
 description: 本文档提供有关使用架构注册表API的补充信息。
 exl-id: 2ddc7fe8-dd0b-4cf9-8561-e89fcdadbfce
-source-git-commit: 28891cf37dc9ffcc548f4c0565a77f62432c0b44
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '986'
 ht-degree: 0%
@@ -59,7 +59,7 @@ ht-degree: 0%
 
 [!DNL Experience Data Model] (XDM)是一个公开记录的规范，由Adobe驱动，用于提高数字体验的互操作性、表现性和强大功能。 Adobe在GitHub](https://github.com/adobe/xdm/)上的[开源项目中维护源代码和正式XDM定义。 这些定义使用XDM标准表示法编写，并使用JSON-LD(链接数据的JavaScript对象表示法)和JSON Schema作为定义XDM架构的语法。
 
-在公共存储库中查看正式XDM定义时，您可以看到标准XDM与您在Adobe Experience Platform中看到的不同。 您在[!DNL Experience Platform]中看到的内容称为兼容性模式，它提供了标准XDM与[!DNL Platform]中使用该模式的方式之间的简单映射。
+在公共存储库中查看正式XDM定义时，您可以看到标准XDM与您在Adobe Experience Platform中看到的不同。 您在[!DNL Experience Platform]中看到的内容称为兼容性模式，它提供了标准XDM与[!DNL Experience Platform]中使用该模式的方式之间的简单映射。
 
 ### 兼容模式的工作原理
 
@@ -132,6 +132,6 @@ Adobe Experience Platform设计为可与多种解决方案和服务配合使用�
 
 大多数[!DNL Experience Platform]服务（包括[!DNL Catalog]、[!DNL Data Lake]和[!DNL Real-Time Customer Profile]）都使用[!DNL Compatibility Mode]代替标准XDM。 [!DNL Schema Registry] API也使用[!DNL Compatibility Mode]，此文档中的示例全部使用[!DNL Compatibility Mode]显示。
 
-需要了解的是，映射在标准XDM与在[!DNL Experience Platform]中操作的方式之间发生，但它不应影响您对[!DNL Platform]服务的使用。
+需要了解的是，映射在标准XDM与在[!DNL Experience Platform]中操作的方式之间发生，但它不应影响您对[!DNL Experience Platform]服务的使用。
 
 开放源代码项目可供您使用，但涉及通过[!DNL Schema Registry]与资源交互时，本文档中的API示例提供了您应了解和遵循的最佳实践。

@@ -3,10 +3,10 @@ title: 在UI中创建Azure事件中心Source连接
 description: 了解如何使用Adobe Experience Platform UI创建Azure事件中心源连接。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 7e67e213-8ccb-4fa5-b09f-ae77aba8614c
-source-git-commit: 1256f0c76b29edad4808fc4be1d61399bfbae8fa
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1097'
-ht-degree: 2%
+source-wordcount: '1098'
+ht-degree: 3%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->[!DNL Azure Event Hubs]源在源目录中可供已购买Real-time Customer Data Platform Ultimate的用户使用。
+>[!DNL Azure Event Hubs]源在源目录中可供已购买Real-Time Customer Data Platform Ultimate的用户使用。
 
 阅读本教程，了解如何使用Adobe Experience Platform用户界面创建[!DNL Azure Event Hubs]帐户。
 
@@ -56,7 +56,7 @@ ht-degree: 2%
 
 | 凭据 | 描述 |
 | --- | --- |
-| 租户ID | 要从中请求权限的租户ID。 可以将您的租户ID格式化为GUID或友好名称。 **注意**：租户ID在[!DNL Microsoft Azure]界面中称为“目录ID”。 |
+| 租户 ID | 要从中请求权限的租户ID。 可以将您的租户ID格式化为GUID或友好名称。 **注意**：租户ID在[!DNL Microsoft Azure]界面中称为“目录ID”。 |
 | 客户端 ID | 分配给您应用程序的应用程序ID。 您可以从注册[!DNL Azure Active Directory]的[!DNL Microsoft Entra ID]门户检索此ID。 |
 | 客户端密钥值 | 与客户端ID一起用于对应用程序进行身份验证的客户端密码。 您可以从注册[!DNL Azure Active Directory]的[!DNL Microsoft Entra ID]门户中检索客户端密钥。 |
 | 命名空间 | 您正在访问的[!DNL Event Hub]的命名空间。 [!DNL Event Hub]命名空间提供了一个唯一的范围容器，您可以在其中创建一个或多个[!DNL Event Hubs]。 |
@@ -67,7 +67,7 @@ ht-degree: 2%
 
 | 凭据 | 描述 |
 | --- | --- |
-| 租户ID | 要从中请求权限的租户ID。 可以将您的租户ID格式化为GUID或友好名称。 **注意**：租户ID在[!DNL Microsoft Azure]界面中称为“目录ID”。 |
+| 租户 ID | 要从中请求权限的租户ID。 可以将您的租户ID格式化为GUID或友好名称。 **注意**：租户ID在[!DNL Microsoft Azure]界面中称为“目录ID”。 |
 | 客户端 ID | 分配给您应用程序的应用程序ID。 您可以从注册[!DNL Azure Active Directory]的[!DNL Microsoft Entra ID]门户检索此ID。 |
 | 客户端密钥值 | 与客户端ID一起用于对应用程序进行身份验证的客户端密码。 您可以从注册[!DNL Azure Active Directory]的[!DNL Microsoft Entra ID]门户中检索客户端密钥。 |
 | 命名空间 | 您正在访问的[!DNL Event Hub]的命名空间。 [!DNL Event Hub]命名空间提供了一个唯一的范围容器，您可以在其中创建一个或多个[!DNL Event Hubs]。 |
@@ -81,7 +81,7 @@ ht-degree: 2%
 
 ## 连接您的[!DNL Event Hubs]帐户
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL 目录]屏幕显示您可以用来创建帐户的各种来源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL 目录]屏幕显示您可以用来创建帐户的各种来源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
@@ -142,4 +142,4 @@ ht-degree: 2%
 
 ## 后续步骤
 
-通过学习本教程，您已将[!DNL Event Hubs]帐户连接到Experience Platform。 您现在可以继续下一教程并[配置数据流以将云存储中的数据引入Experience Platform](../../dataflow/streaming/cloud-storage-streaming.md)。
+通过学习本教程，您已将[!DNL Event Hubs]帐户连接到Experience Platform。 您现在可以继续阅读下一教程，并[配置数据流以将数据从云存储引入Experience Platform](../../dataflow/streaming/cloud-storage-streaming.md)。

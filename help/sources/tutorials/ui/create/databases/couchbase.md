@@ -5,7 +5,7 @@ title: 在UI中创建Couchbase Source连接
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建Couchbase源连接。
 exl-id: 4270a48a-843c-4f1e-b280-35b620581d68
-source-git-commit: 9ca4f19f7b59f075250bce7035303e11d3f3710f
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '457'
 ht-degree: 2%
@@ -18,11 +18,11 @@ ht-degree: 2%
 >
 >[!DNL Couchbase]源将于2025年6月底弃用。
 
-[!DNL Adobe Experience Platform]中的Source连接器提供了按计划摄取外部来源数据的功能。 本教程提供了使用[!DNL Platform]用户界面创建[!DNL Couchbase]源连接器的步骤。
+[!DNL Adobe Experience Platform]中的Source连接器提供了按计划摄取外部来源数据的功能。 本教程提供了使用[!DNL Experience Platform]用户界面创建[!DNL Couchbase]源连接器的步骤。
 
 ## 快速入门
 
-本教程需要您对[!DNL Platform]的以下组件有一定的了解：
+本教程需要您对[!DNL Experience Platform]的以下组件有一定的了解：
 
 * [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
@@ -41,7 +41,7 @@ ht-degree: 2%
 
 ## 连接您的[!DNL Couchbase]帐户
 
-收集所需的凭据后，您可以按照以下步骤将您的[!DNL Couchbase]帐户关联到[!DNL Platform]。
+收集所需的凭据后，您可以按照以下步骤将您的[!DNL Couchbase]帐户关联到[!DNL Experience Platform]。
 
 登录到[Adobe Experience Platform](https://platform.adobe.com)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问&#x200B;**[!UICONTROL 源]**&#x200B;工作区。 **[!UICONTROL Catalog]**&#x200B;屏幕显示您可以为其创建帐户的各种源。
 
@@ -67,4 +67,4 @@ ht-degree: 2%
 
 ## 后续步骤
 
-通过学习本教程，您已建立与[!DNL Couchbase]帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入 [!DNL Platform]](../../dataflow/databases.md)。
+通过学习本教程，您已建立与[!DNL Couchbase]帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入 [!DNL Experience Platform]](../../dataflow/databases.md)。

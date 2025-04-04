@@ -2,9 +2,9 @@
 title: 在UI中创建Zendesk Source连接
 description: 了解如何使用Adobe Experience Platform用户界面创建Zendesk源连接。
 exl-id: 75d303b0-2dcd-4202-987c-fe3400398d90
-source-git-commit: 6f8abca8f0db8a559fe62e6c143f2d0506d3b886
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '736'
+source-wordcount: '746'
 ht-degree: 7%
 
 ---
@@ -24,20 +24,20 @@ ht-degree: 7%
 
 ### 收集所需的凭据
 
-要在Platform上访问您的[!DNL Zendesk]帐户，必须提供以下凭据的值：
+要在Experience Platform上访问您的[!DNL Zendesk]帐户，必须提供以下凭据的值：
 
 | 凭据 | 描述 | 示例 |
 | --- | --- | --- |
-| Subdomain | 在注册过程中创建的特定于您帐户的唯一域。 | `yoursubdomain` |
+| 子域 | 在注册过程中创建的特定于您帐户的唯一域。 | `yoursubdomain` |
 | 访问令牌 | Zendesk API令牌。 | `0lZnClEvkJSTQ7olGLl7PMhVq99gu26GTbJtf` |
 
 有关验证[!DNL Zendesk]源的更多信息，请参阅[[!DNL Zendesk] 源概述](../../../../connectors/customer-success/zendesk.md)。
 
 ![Zendesk API令牌](../../../../images/tutorials/create/zendesk/zendesk-api-tokens.png)
 
-### 为[!DNL Zendesk]创建平台架构
+### 为[!DNL Zendesk]创建Experience Platform架构
 
-在创建[!DNL Zendesk]源连接之前，还必须确保首先创建用于源的Platform架构。 有关如何创建架构的完整步骤，请参阅有关[创建平台架构](../../../../../xdm/schema/composition.md)的教程。
+在创建[!DNL Zendesk]源连接之前，还必须确保首先创建一个Experience Platform架构以用于您的源。 有关如何创建架构的完整步骤，请参阅有关[创建Experience Platform架构](../../../../../xdm/schema/composition.md)的教程。
 
 有关[!DNL Zendesk Search API]所需的[!DNL Zendesk]架构的其他指导，请参阅下面的[限制](#limits)部分。
 
@@ -45,7 +45,7 @@ ht-degree: 7%
 
 ## 连接您的[!DNL Zendesk]帐户
 
-在Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
+在Experience Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
@@ -75,7 +75,7 @@ ht-degree: 7%
 
 ## 后续步骤
 
-通过学习本教程，您已验证并创建了[!DNL Zendesk]帐户和平台之间的源连接。 您现在可以继续下一教程并[创建数据流以将客户成功数据导入Platform](../../dataflow/customer-success.md)。
+通过学习本教程，您已验证并创建了[!DNL Zendesk]帐户与Experience Platform之间的源连接。 您现在可以继续下一教程并[创建数据流以将客户成功数据导入Experience Platform](../../dataflow/customer-success.md)。
 
 ## 其他资源
 
@@ -83,9 +83,9 @@ ht-degree: 7%
 
 ### 验证 {#validation}
 
-下面概述了验证是否成功连接[!DNL Zendesk]源以及是否正在将[!DNL Zendesk]配置文件摄取到Platform可以采取的步骤。
+下面概述了验证是否成功连接[!DNL Zendesk]源以及是否正在将[!DNL Zendesk]配置文件摄取到Experience Platform时可以采取的步骤。
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以访问[!UICONTROL 数据集]工作区。 [!UICONTROL 数据集活动]屏幕显示执行的详细信息。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以访问[!UICONTROL 数据集]工作区。 [!UICONTROL 数据集活动]屏幕显示执行的详细信息。
 
 ![活动页面](../../../../images/tutorials/create/zendesk/dataset-activity.png)
 
@@ -97,7 +97,7 @@ ht-degree: 7%
 
 ![Zendesk数据集](../../../../images/tutorials/create/zendesk/preview-dataset.png)
 
-您还可以根据[!DNL Zendesk] > [!DNL Customers]页面上的数据验证您的Platform数据。
+您还可以根据[!DNL Zendesk] > [!DNL Customers]页面上的数据验证Experience Platform数据。
 
 ![zendesk-customers](../../../../images/tutorials/create/zendesk/zendesk-customers.png)
 

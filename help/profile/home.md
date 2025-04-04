@@ -2,9 +2,9 @@
 title: Real-time Customer Profile概述
 description: Real-time Customer Profile可合并来自各种来源的数据，并以单个客户配置文件和相关时间序列事件的形式提供对这些数据的访问。 此功能使营销人员能够跨多个渠道与其受众推动协调、一致且相关的体验。
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: fc53d1b32eb3fc0251f307d5b2f076b1153a2931
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1821'
+source-wordcount: '1826'
 ht-degree: 1%
 
 ---
@@ -21,7 +21,7 @@ Adobe Experience Platform 使您能够为客户提供协调、一致且相关的
 
 ## 了解用户档案
 
-[!DNL Real-Time Customer Profile]合并来自各种企业系统的数据，然后以客户个人资料的形式提供对该数据的访问以及相关时间序列事件。 此功能使营销人员能够跨多个渠道与其受众推动协调、一致且相关的体验。 以下部分重点介绍您必须了解的一些核心概念，以便在Platform内有效构建和维护用户档案。
+[!DNL Real-Time Customer Profile]合并来自各种企业系统的数据，然后以客户个人资料的形式提供对该数据的访问以及相关时间序列事件。 此功能使营销人员能够跨多个渠道与其受众推动协调、一致且相关的体验。 以下部分重点介绍您必须了解的一些核心概念，以便在Experience Platform中有效构建和维护用户档案。
 
 ### 个人资料实体组合
 
@@ -45,7 +45,7 @@ Adobe Experience Platform 使您能够为客户提供协调、一致且相关的
 
 虽然[!DNL Real-Time Customer Profile]处理摄取的数据并使用Adobe Experience Platform [!DNL Identity Service]通过标识映射合并相关数据，但它在[!DNL Profile]数据存储中维护自己的数据。 [!DNL Profile]存储独立于数据湖中的目录数据以及标识图中的[!DNL Identity Service]数据。
 
-配置文件存储使用Microsoft Azure Cosmos DB基础架构，平台数据湖使用Microsoft Azure Data Lake存储。
+配置文件存储使用Microsoft Azure Cosmos DB基础架构，Experience Platform数据湖使用Microsoft Azure Data Lake存储。
 
 ### 侧面护栏
 
@@ -57,15 +57,15 @@ Experience Platform UI提供了一个功能板，通过该功能板可查看有�
 
 ### 配置文件片段与合并的配置文件 {#profile-fragments-vs-merged-profiles}
 
-每个单独的客户配置文件都由多个配置文件片段组成，这些片段已合并以形成该客户的单一视图。 例如，如果客户跨多个渠道与您的品牌互动，则您的组织将在多个数据集中显示多个与该单个客户相关的配置文件片段。 将这些片段摄取到Platform后，会合并在一起，以便为该客户创建一个配置文件。
+每个单独的客户配置文件都由多个配置文件片段组成，这些片段已合并以形成该客户的单一视图。 例如，如果客户跨多个渠道与您的品牌互动，则您的组织将在多个数据集中显示多个与该单个客户相关的配置文件片段。 将这些片段摄取到Experience Platform后，会合并在一起，以便为该客户创建一个配置文件。
 
 换句话说，配置文件片段表示给定数据集中该ID的唯一主标识和相应的[记录](#record-data)或[事件](#time-series-events)数据。
 
-当来自多个数据集的数据发生冲突时（例如，一个片段将客户列为“单身”，而另一个片段将客户列为“已婚”），[合并策略](#merge-policies)将确定哪些信息应优先处理并包含在个人资料中。 因此，Platform中的配置文件片段总数可能始终大于合并的配置文件总数，因为每个配置文件通常由来自多个数据集的多个片段组成。
+当来自多个数据集的数据发生冲突时（例如，一个片段将客户列为“单身”，而另一个片段将客户列为“已婚”），[合并策略](#merge-policies)将确定哪些信息应优先处理并包含在个人资料中。 因此，Experience Platform中的配置文件片段总数可能始终大于合并的配置文件总数，因为每个配置文件通常由来自多个数据集的多个片段组成。
 
 ### 记录数据 {#record-data}
 
-用户档案是主体、组织或个人的表示形式，由许多属性（也称为记录数据）组成。 例如，产品的配置文件可能包括SKU和描述，而人员的配置文件包含名字、姓氏和电子邮件地址等信息。 使用[!DNL Experience Platform]，您可以自定义配置文件以使用与您的业务相关的特定数据。 标准[!DNL Experience Data Model] (XDM)类[!DNL XDM Individual Profile]是描述客户记录数据时构建架构的首选类，它为Platform服务之间的许多交互提供不可或缺的数据。 有关在[!DNL Experience Platform]中使用架构的更多信息，请从阅读[XDM系统概述](../xdm/home.md)开始。
+用户档案是主体、组织或个人的表示形式，由许多属性（也称为记录数据）组成。 例如，产品的配置文件可能包括SKU和描述，而人员的配置文件包含名字、姓氏和电子邮件地址等信息。 使用[!DNL Experience Platform]，您可以自定义配置文件以使用与您的业务相关的特定数据。 标准[!DNL Experience Data Model] (XDM)类[!DNL XDM Individual Profile]是描述客户记录数据时构建架构的首选类，它为Experience Platform服务之间的许多交互提供了不可或缺的数据。 有关在[!DNL Experience Platform]中使用架构的更多信息，请从阅读[XDM系统概述](../xdm/home.md)开始。
 
 ### 时间序列事件 {#time-series-events}
 
@@ -77,7 +77,7 @@ Experience Platform UI提供了一个功能板，通过该功能板可查看有�
 
 ### 合并策略
 
-当从多个源将数据片段聚集在一起并进行组合以便查看每个客户的完整视图时，合并策略是[!DNL Platform]用于确定数据优先顺序的规则以及用于创建客户配置文件的数据。
+当从多个源将数据片段聚集在一起并进行组合以便查看每个客户的完整视图时，合并策略是[!DNL Experience Platform]用于确定数据优先顺序的规则以及用于创建客户配置文件的数据。
 
 当多个数据集中存在冲突数据时，合并策略会确定应如何处理该数据以及应使用哪个值。 通过RESTful API或用户界面，您可以创建新的合并策略、管理现有策略以及为组织设置默认合并策略。
 
@@ -107,7 +107,7 @@ Adobe Experience Platform [!DNL Segmentation Service]会生成为您的个别客
 
 ## 正在将数据摄取到[!DNL Profile]
 
-可以将[!DNL Platform]配置为将记录和时序数据发送到[!DNL Profile]，支持实时流式摄取和批量摄取。 有关详细信息，请参阅概述如何[将数据添加到实时客户个人资料](tutorials/add-profile-data.md)的教程。
+可以将[!DNL Experience Platform]配置为将记录和时序数据发送到[!DNL Profile]，支持实时流式摄取和批量摄取。 有关详细信息，请参阅概述如何[将数据添加到实时客户个人资料](tutorials/add-profile-data.md)的教程。
 
 >[!NOTE]
 >
@@ -115,7 +115,7 @@ Adobe Experience Platform [!DNL Segmentation Service]会生成为您的个别客
 
 ### 配置文件摄取量度
 
-可观察性分析允许您在Adobe Experience Platform中公开关键量度。 除了[!DNL Platform]各项功能的[!DNL Experience Platform]使用情况统计和绩效指标之外，还有一些与配置文件相关的特定指标，可让您深入了解传入请求率、成功摄取率、摄取记录大小等。 要了解更多信息，请先阅读[可观察性见解API概述](../observability/api/overview.md)，并查看实时客户配置文件量度的完整列表，请参阅[可用量度](../observability/api/metrics.md#available-metrics)的相关文档。
+可观察性分析允许您在Adobe Experience Platform中公开关键量度。 除了[!DNL Experience Platform]各项功能的[!DNL Experience Platform]使用情况统计和绩效指标之外，还有一些与配置文件相关的特定指标，可让您深入了解传入请求率、成功摄取率、摄取记录大小等。 要了解更多信息，请先阅读[可观察性见解API概述](../observability/api/overview.md)，并查看实时客户配置文件量度的完整列表，请参阅[可用量度](../observability/api/metrics.md#available-metrics)的相关文档。
 
 ## 更新配置文件存储数据
 
@@ -131,7 +131,7 @@ Adobe Experience Platform [!DNL Segmentation Service]会生成为您的个别客
 - 数据访问策略
 - 营销活动数据的访问控制
 
-数据管理可在多个时间点进行管理。 这些功能包括确定哪些数据被摄取到[!DNL Platform]，以及在摄取后对于给定的营销操作可以访问哪些数据。 有关详细信息，请先阅读[数据管理概述](../data-governance/home.md)。
+数据管理可在多个时间点进行管理。 这些功能包括确定哪些数据被摄取到[!DNL Experience Platform]，以及在摄取后对于给定的营销操作可以访问哪些数据。 有关详细信息，请先阅读[数据管理概述](../data-governance/home.md)。
 
 ### 处理选择退出和数据隐私请求
 

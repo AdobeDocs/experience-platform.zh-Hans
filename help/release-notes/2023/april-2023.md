@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2023 年 4 月）
 description: Adobe Experience Platform 的 2023 年 4 月发行说明。
 exl-id: 7b501467-99a7-4aee-ae86-66c851250ecf
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2038'
-ht-degree: 98%
+source-wordcount: '2040'
+ht-degree: 97%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 98%
 
 >[!IMPORTANT]
 >
->自 2023 年 5 月 15 日起，将从区段成员关系图中弃用 `Existing` 状态以消除区段成员关系生命周期中的冗余。经过此更改后，在某个区段中符合条件的配置文件将表示为 `Realized`，不符合条件的配置将继续表示为 `Exited`。有关此更改的更多详细信息，请阅读[分段服务](#segmentation)部分。
+>自 2023 年 5 月 15 日起，将从区段成员关系图中弃用 `Existing` 状态以消除区段成员关系生命周期中的冗余。经过此更改后，在某个区段中符合条件的轮廓将表示为 `Realized`，不符合条件的配置将继续表示为 `Exited`。有关此更改的更多详细信息，请阅读[分段服务](#segmentation)部分。
 
 **发布日期：2023 年 4 月 26 日**
 
@@ -25,7 +25,7 @@ Adobe Experience Platform 中现有功能的更新：
 - [目标](#destinations)
 - [Experience Data Model](#xdm)
 - [Real-Time Customer Data Platform](#rtcdp)
-- [实时客户配置文件](#profile)
+- [实时客户轮廓](#profile)
 - [Segmentation Service](#segmentation)
 - [源](#sources)
 
@@ -37,11 +37,11 @@ Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查
 
 | 功能 | 描述 |
 | --- | --- |
-| 用户定义的仪表板 | 现在可从“见解”构件中&#x200B;**筛选历史数据**，并使用最近的数据或自定义的分析周期。有关详细信息，请参阅[用户定义的仪表板指南](../../dashboards/standard-dashboards.md#filter-historical-data)。<br>现在还可&#x200B;**复制现有构件**。通过自定义副本并编辑其属性，在创建新的独特构件时可避免从头开始创建。请阅读[构件复制指南](../../dashboards/standard-dashboards.md#duplicate-a-widget)以了解详情。 |
+| 用户定义的仪表板 | 现在可从“见解”小组件中&#x200B;**筛选历史数据**，并使用最近的数据或自定义的分析周期。有关详细信息，请参阅[用户定义的仪表板指南](../../dashboards/standard-dashboards.md#filter-historical-data)。<br>现在还可&#x200B;**复制现有小组件**。通过自定义副本并编辑其属性，在创建新的独特小组件时可避免从头开始创建。请阅读[小组件复制指南](../../dashboards/standard-dashboards.md#duplicate-a-widget)以了解详情。 |
 
 {style="table-layout:auto"}
 
-有关仪表板的详细信息，包括如何授予访问权限和创建自定义构件，请首先阅读[仪表板概述](../../dashboards/home.md)。
+有关仪表板的详细信息，包括如何授予访问权限和创建自定义小组件，请首先阅读[仪表板概述](../../dashboards/home.md)。
 
 ## 数据准备 {#data-prep}
 
@@ -97,7 +97,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 **修复和增强功能** {#destinations-fixes-and-enhancements}
 
-- 我们已经修复了基于文件的目标导出中&#x200B;**身份排除**&#x200B;报告指标中的一个问题。客户按预期从激活的导出中接收到所有导出的 ID。但是，由于错误地计算了不应导出的身份，UI 中的&#x200B;**身份排除**&#x200B;报告指标错误地显示了大量排除的身份。(PLAT-149774)
+- 我们已经修复了基于文件的目标导出中&#x200B;**身份标识排除**&#x200B;报告指标中的一个问题。客户按预期从激活的导出中接收到所有导出的 ID。但是，由于错误地计算了不应导出的身份标识，UI 中的&#x200B;**身份标识排除**&#x200B;报告指标错误地显示了大量排除的身份标识。(PLAT-149774)
 - 我们已经修复了激活工作流程中的&#x200B;**计划**&#x200B;步骤中的一个问题。对于需要映射 ID 的目标，客户无法为添加到现有目标连接的区段添加映射 ID。(PLAT-148808)
 
 <!--
@@ -131,50 +131,50 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 组件类型 | 名称 | 描述 |
 | --- | --- | --- |
-| 字段组 | [[!UICONTROL Adobe 联合配置文件服务帐户合并扩展]](https://github.com/adobe/xdm/pull/1696/files) | 为实时客户配置文件添加了帐户扩展字段组，使用户能够在帐户合并中添加区段成员资格。 |
-| 架构 | [[!UICONTROL 计算属性系统架构]](https://github.com/adobe/xdm/pull/1696/files) | 实时客户配置文件使用的计算属性字段组已更新为系统只读全局架构。 |
+| 字段组 | [[!UICONTROL Adobe 联合轮廓服务帐户合并扩展]](https://github.com/adobe/xdm/pull/1696/files) | 为实时客户轮廓添加了帐户扩展字段组，使用户能够在帐户合并中添加区段成员资格。 |
+| 架构 | [[!UICONTROL 计算属性系统架构]](https://github.com/adobe/xdm/pull/1696/files) | 实时客户轮廓使用的计算属性字段组已更新为系统只读全局架构。 |
 | 字段组 | 多种 | 添加了几个事件作为[[!UICONTROL 时间序列架构]](https://github.com/adobe/xdm/pull/1718/files)的字段。 |
-| 字段组 | 配置文件忠诚度详细信息 | [将 `xdm:upgradeDate` 的标题](https://github.com/adobe/xdm/pull/1717/files)从“程序名称”改为“升级日期”。 |
+| 字段组 | 轮廓忠诚度详细信息 | [将 `xdm:upgradeDate` 的标题](https://github.com/adobe/xdm/pull/1717/files)从“程序名称”改为“升级日期”。 |
 | 字段组 | 多种 | [[!UICONTROL 决策项]](https://github.com/adobe/xdm/pull/1714/files)中的几个字段已更新，以删除双重嵌套层级。 |
 
 {style="table-layout:auto"}
 
-有关 Platform 中 XDM 的详细信息，请阅读 [XDM 系统概述](../../xdm/home.md)。
+有关Experience Platform中XDM的更多信息，请阅读[XDM系统概述](../../xdm/home.md)。
 
 ## Real-Time Customer Data Platform
 
-建立在 Experience Platform 上的 Real-Time Customer Data Platform ([!DNL Real-Time CDP]) 可以帮助公司汇集已知和未知数据，通过整个客户历程中通过智能决策激活客户配置文件。[!DNL Real-Time CDP] 结合多个企业数据源来实时创建客户配置文件。然后，根据这些配置文件构建的区段可以发送到下游目标，以便跨所有渠道和设备提供一对一的个性化客户体验。
+建立在 Experience Platform 上的 Real-Time Customer Data Platform ([!DNL Real-Time CDP]) 可以帮助公司汇集已知和未知数据，通过整个客户历程中通过智能决策激活客户轮廓。[!DNL Real-Time CDP] 结合多个企业数据源来实时创建客户轮廓。然后，根据这些轮廓构建的区段可以发送到下游目标，以便跨所有渠道和设备提供一对一的个性化客户体验。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 增强型 Real-Time CDP 主页 | [Real-Time CDP 主页](https://experience.adobe.com)的外观焕然一新，并且性能得到了增强。主页现在具有权限感知功能，并会显示与您有权访问的功能相关的构件。有关详细信息，请阅读 [Real-Time CDP 主页仪表板概述](../../rtcdp/home-page-dashboards.md)。 |
-| 自我认同调查 | 自我认同调查是 Adobe Experience Platform UI 主页中提供的简短调查问卷。使用自我认同调查来构建您的 Experience Platform 个人配置文件，并根据您的选择接收量身定制的指南。有关详细信息，请阅读[自我认同调查概述](../../landing/self-identification.md)。 |
+| 增强型 Real-Time CDP 主页 | [Real-Time CDP 主页](https://experience.adobe.com)的外观焕然一新，并且性能得到了增强。主页现在具有权限感知功能，并会显示与您有权访问的功能相关的小组件。有关详细信息，请阅读 [Real-Time CDP 主页仪表板概述](../../rtcdp/home-page-dashboards.md)。 |
+| 自我认同调查 | 自我认同调查是 Adobe Experience Platform UI 主页中提供的简短调查问卷。使用自我认同调查来构建您的 Experience Platform 个人轮廓，并根据您的选择接收量身定制的指南。有关详细信息，请阅读[自我认同调查概述](../../landing/self-identification.md)。 |
 
 有关 [!DNL Real-Time CDP] 的详细信息，请参阅 [[!DNL Real-Time CDP] 概述](../../rtcdp/overview.md)。
 
-## 实时客户配置文件 {#profile}
+## 实时客户轮廓 {#profile}
 
-Adobe Experience Platform 使您能够为客户提供协调、一致且相关的体验，无论他们何时何地与您的品牌互动均是如此。利用实时客户配置文件，您可以看到每个客户的整体视图，其中结合来自多个渠道的数据，包括在线、离线、CRM 和第三方数据。配置文件允许您将客户数据整合到一个统一视图中，并为每一次客户交互提供可操作的、有时间戳的描述。
+Adobe Experience Platform 使您能够为客户提供协调、一致且相关的体验，无论他们何时何地与您的品牌互动均是如此。利用实时客户轮廓，您可以看到每个客户的整体视图，其中结合来自多个渠道的数据，包括在线、离线、CRM 和第三方数据。轮廓允许您将客户数据整合到一个统一视图中，并为每一次客户交互提供可操作的、有时间戳的描述。
 
 **更新的功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 假名配置文件数据到期 | 假名配置文件数据到期功能现已普遍可用！启用后，此版本将会持续从您的 Experience Platform 实例中删除过时的假名配置文件。要详细了解此功能和假名配置文件，请阅读[假名配置文件数据到期指南](../../profile/pseudonymous-profiles.md)。 |
+| 假名轮廓数据到期 | 假名轮廓数据到期功能现已普遍可用！启用后，此版本将会持续从您的 Experience Platform 实例中删除过时的假名轮廓。要详细了解此功能和假名轮廓，请阅读[假名轮廓数据有效期限指南](../../profile/pseudonymous-profiles.md)。 |
 
 {style="table-layout:auto"}
 
 ## Segmentation Service {#segmentation}
 
-[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的配置文件子集。区段可以基于记录数据（例如人口统计信息）或代表客户与您的品牌互动的时间序列事件。
+[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的轮廓子集。区段可以基于记录数据（例如人口统计信息）或代表客户与您的品牌互动的时间序列事件。
 
 **新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 区段成员关系图 | 继 2 月的上一次公告之后，自 2023 年 5 月 15 日起，区段成员关系图中将会弃用 `Existing` 状态，以消除区段成员关系生命周期中的冗余。经过此更改后，在某个区段中符合条件的配置文件将表示为 `Realized`，不符合条件的配置将继续表示为 `Exited`。<br/><br/>如果您正在使用[企业目标](../../destinations/destination-types.md#advanced-enterprise-destinations)（Amazon Kinesis、Azure Event Hubs、HTTP API），并且可能已根据 `Existing` 状态将下游流程自动化，则此更改可能会对您产生影响。如果您属于这种情况，请检查您的下游集成。如果您有兴趣在一定时间后识别新获得资格的配置文件，请考虑在您的区段成员关系图中使用 `Realized` 状态和 `lastQualificationTime` 的组合。有关更多信息，请与您的 Adobe 代表联系。 |
+| 区段成员关系图 | 继 2 月的上一次公告之后，自 2023 年 5 月 15 日起，区段成员关系图中将会弃用 `Existing` 状态，以消除区段成员关系生命周期中的冗余。经过此更改后，在某个区段中符合条件的轮廓将表示为 `Realized`，不符合条件的配置将继续表示为 `Exited`。<br/><br/>如果您正在使用[企业目标](../../destinations/destination-types.md#advanced-enterprise-destinations)（Amazon Kinesis、Azure Event Hubs、HTTP API），并且可能已根据 `Existing` 状态将下游流程自动化，则此更改可能会对您产生影响。如果您属于这种情况，请检查您的下游集成。如果您有兴趣在一定时间后识别新获得资格的轮廓，请考虑在您的区段成员关系图中使用 `Realized` 状态和 `lastQualificationTime` 的组合。有关更多信息，请与您的 Adobe 代表联系。 |
 
 {style="table-layout:auto"}
 
@@ -182,7 +182,7 @@ Adobe Experience Platform 使您能够为客户提供协调、一致且相关的
 
 ## 源 {#sources}
 
-Adobe Experience Platform 可以从外部源获取数据，并允许您使用 Platform 服务构建、标记和增强该数据。您可以从各种来源获取数据，例如 Adobe 应用程序、基于云的存储、第三方软件和 CRM 系统。
+Adobe Experience Platform可以从外部源摄取数据，并允许您使用Experience Platform服务来构建、标记和增强这些数据。 您可以从各种来源获取数据，例如 Adobe 应用程序、基于云的存储、第三方软件和 CRM 系统。
 
 Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各种数据提供者设置源连接。这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 

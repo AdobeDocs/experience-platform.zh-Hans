@@ -1,18 +1,18 @@
 ---
-title: Platform Web SDK中A4T数据的客户端日志记录
-description: 了解如何使用Experience PlatformWeb SDK为Adobe Analytics for Target (A4T)启用客户端日志记录。
-seo-title: Client-side logging for A4T data in the Platform Web SDK
+title: Experience Platform Web SDK中的A4T数据的客户端日志记录
+description: 了解如何使用Experience Platform Web SDK为Adobe Analytics for Target (A4T)启用客户端日志记录。
+seo-title: Client-side logging for A4T data in the Experience Platform Web SDK
 seo-description: Learn how to enable client-side logging for Adobe Analytics for Target (A4T) using the Experience Platform Web SDK.
 keywords: target；a4t；日志记录；Web SDK；体验；平台；
 exl-id: 7071d7e4-66e0-4ab5-a51a-1387bbff1a6d
-source-git-commit: 8fc0fd96f13f0642f7671d0e0f4ecfae8ab6761f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1085'
+source-wordcount: '1090'
 ht-degree: 0%
 
 ---
 
-# Platform Web SDK中A4T数据的客户端日志记录
+# Experience Platform Web SDK中的A4T数据的客户端日志记录
 
 ## 概述 {#overview}
 
@@ -28,7 +28,7 @@ Adobe Experience Platform Web SDK允许您在Web应用程序的客户端收集[A
 
 ## 先决条件 {#prerequisites}
 
-本教程假设您熟悉与将Web SDK用于个性化目的相关的基本概念和流程。 如果您需要了解简介，请查看以下文档：
+本教程假设您熟悉与使用Web SDK进行个性化相关的基本概念和流程。 如果您需要了解简介，请查看以下文档：
 
 * [配置Web SDK](/help/web-sdk/commands/configure/overview.md)
 * [发送事件](/help/web-sdk/commands/sendevent/overview.md)
@@ -227,9 +227,9 @@ Adobe Experience Platform Web SDK允许您在Web应用程序的客户端收集[A
 
 ### 基于表单的体验编辑器活动 {#form-based-composer}
 
-您可以使用Web SDK来控制从[Adobe Target基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html)活动中执行建议。
+您可以使用Web SDK控制[Adobe Target基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html)活动中建议的执行。
 
-在为特定决策范围请求建议时，返回的建议包含其相应的Analytics令牌。 最佳实践是链接Platform Web SDK `sendEvent`命令并在收集Analytics令牌时循环遍历返回的建议以执行它们。
+在为特定决策范围请求建议时，返回的建议包含其相应的Analytics令牌。 最佳实践是将Experience Platform Web SDK `sendEvent`命令链结在一起并在收集Analytics令牌时循环遍历返回的建议以执行它们。
 
 您可以为基于表单的体验编辑器活动范围触发`sendEvent`命令，如下所示：
 
@@ -421,7 +421,7 @@ function getClickAnalyticsPayload(proposition) {
 
 #### 实施摘要 {#implementation-summary}
 
-总之，在使用Platform Web SDK应用基于表单的体验编辑器活动时，必须执行以下步骤：
+总之，在Experience Platform Web SDK中应用基于表单的体验编辑器活动时，必须执行以下步骤：
 
 1. 发送获取基于表单的体验编辑器活动选件的事件；
 1. 将内容更改应用到页面；
@@ -467,13 +467,13 @@ alloy("sendEvent", {
 
 ### 可视化体验编辑器活动 {#visual-experience-composer-acitivties}
 
-Web SDK允许您处理使用[可视化体验编辑器(VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)创作的选件。
+Web SDK允许您处理使用[可视化体验编辑器(VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)编写的选件。
 
 >[!NOTE]
 >
 >实施此用例的步骤与[基于表单的体验编辑器活动](#form-based-composer)的步骤非常相似。 请查看上一部分以了解更多详细信息。
 
-启用自动渲染后，您可以从页面上执行的建议中收集Analytics令牌。 最佳实践是链接Platform Web SDK `sendEvent`命令并循环遍历返回的建议，以筛选Web SDK尝试渲染的建议。
+启用自动渲染后，您可以从页面上执行的建议中收集Analytics令牌。 最佳实践是将Experience Platform Web SDK `sendEvent`命令链结在一起并对返回的建议进行迭代，以筛选Web SDK尝试渲染的建议。
 
 **示例**
 
@@ -513,7 +513,7 @@ alloy("sendEvent", {
 
 使用Adobe Target活动，您可以在页面上设置不同的量度，手动附加到DOM或自动附加到DOM（VEC创作活动）。 这两种类型都是网页上延迟的最终用户交互。
 
-要解决此问题，最佳实践是使用`onBeforeEventSend` Adobe Experience Platform Web SDK挂接收集Analytics有效负载。 `onBeforeEventSend`挂接应使用`configure`命令进行配置，并将反映在通过数据流发送的所有事件中。
+要解决此问题，最佳实践是使用`onBeforeEventSend` Adobe Experience Platform Web SDK挂接收集Analytics负载。 `onBeforeEventSend`挂接应使用`configure`命令进行配置，并将反映在通过数据流发送的所有事件中。
 
 以下是如何配置`onBeforeEventSent`以触发Analytics点击的示例：
 
@@ -540,4 +540,4 @@ alloy("configure", {
 
 ## 后续步骤 {#next-steps}
 
-本指南介绍Web SDK中A4T数据的客户端日志记录。 有关如何处理Edge Network上的A4T数据的详细信息，请参阅[服务器端日志记录](server-side.md)指南。
+本指南介绍Web SDK中A4T数据的客户端日志记录。 有关如何在Edge Network上处理A4T数据的更多信息，请参阅[服务器端日志记录](server-side.md)指南。

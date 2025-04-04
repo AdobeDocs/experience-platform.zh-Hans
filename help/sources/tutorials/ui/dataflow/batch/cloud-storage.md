@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；数据流；数据流
 title: 在UI中配置数据流以从Cloud Storage Source摄取批量数据
 description: 本教程提供了有关如何配置新数据流以从UI中的云存储源摄取批量数据的步骤
 exl-id: b327bbea-039d-4c04-afd3-f1d6a5f902a6
-source-git-commit: 48aef63cffbdc52a6a96ef69e5db4f54274144b6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1926'
+source-wordcount: '1929'
 ht-degree: 1%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 1%
 
 本教程需要对以下Experience Platform组件有一定的了解：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
@@ -38,7 +38,7 @@ ht-degree: 1%
 
 ## 添加数据
 
-创建云存储帐户后，将显示&#x200B;**[!UICONTROL 添加数据]**&#x200B;步骤，该步骤为您提供了一个界面，用于浏览云存储文件层次结构并选择要带到Platform的文件夹或特定文件。
+创建云存储帐户后，将显示&#x200B;**[!UICONTROL 添加数据]**&#x200B;步骤，该步骤为您提供了一个界面，用于浏览云存储文件层次结构并选择要带到Experience Platform的文件夹或特定文件。
 
 * 界面的左侧是目录浏览器，显示您的云存储文件层次结构。
 * 界面的右侧部分允许您预览兼容文件夹或文件中最多100行数据。
@@ -83,7 +83,7 @@ ht-degree: 1%
 
 ![](../../../../images/tutorials/dataflow/cloud-batch/custom.png)
 
-要将特定文件带入Platform，请选择一个文件夹，然后选择要摄取的文件。 在此步骤中，还可以使用文件名旁边的预览图标预览给定文件夹中其他文件的文件内容。
+要将特定文件带入Experience Platform，请选择一个文件夹，然后选择要摄取的文件。 在此步骤中，还可以使用文件名旁边的预览图标预览给定文件夹中其他文件的文件内容。
 
 完成后，选择&#x200B;**[!UICONTROL 下一步]**。
 
@@ -127,7 +127,7 @@ ht-degree: 1%
 
 此时将显示[!UICONTROL 映射]步骤，该步骤为您提供了一个接口，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
 
-Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](../../../../../data-prep/ui/mapping.md)。
+Experience Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](../../../../../data-prep/ui/mapping.md)。
 
 成功映射源数据后，选择&#x200B;**[!UICONTROL 下一步]**。
 
@@ -183,14 +183,14 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 ## 后续步骤
 
-通过学习本教程，您已成功创建了数据流以从外部云存储引入数据，并深入了解了监测数据集。 要了解有关创建数据流的更多信息，您可以通过观看以下视频来补充您的学习。 此外，下游[!DNL Platform]服务（如[!DNL Real-Time Customer Profile]和[!DNL Data Science Workspace]）现在可以使用传入数据。 有关更多详细信息，请参阅以下文档：
+通过学习本教程，您已成功创建了数据流以从外部云存储引入数据，并深入了解了监测数据集。 要了解有关创建数据流的更多信息，您可以通过观看以下视频来补充您的学习。 此外，下游[!DNL Experience Platform]服务（如[!DNL Real-Time Customer Profile]和[!DNL Data Science Workspace]）现在可以使用传入数据。 有关更多详细信息，请参阅以下文档：
 
 * [[!DNL Real-Time Customer Profile] 概述](../../../../../profile/home.md)
 * [[!DNL Data Science Workspace] 概述](../../../../../data-science-workspace/home.md)
 
 >[!WARNING]
 >
-> 以下视频中显示的[!DNL Platform] UI已过期。 有关最新的UI屏幕截图和功能，请参阅上述文档。
+> 以下视频中显示的[!DNL Experience Platform] UI已过期。 有关最新的UI屏幕截图和功能，请参阅上述文档。
 
 >[!VIDEO](https://video.tv.adobe.com/v/29695?quality=12&learn=on)
 

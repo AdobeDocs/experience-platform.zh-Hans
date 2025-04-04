@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用API管理数据集的数据使用标签
 description: 数据集服务API允许您应用和编辑数据集的使用标签。 它是Adobe Experience Platform数据目录功能的一部分，但与管理数据集元数据的目录服务API不同。
 exl-id: 24a8d870-eb81-4255-8e47-09ae7ad7a721
-source-git-commit: 9eda7068eb2a3fd5e59fbeff69c85abfad5ccf39
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1340'
 ht-degree: 1%
@@ -23,13 +23,13 @@ ht-degree: 1%
 
 ## 快速入门
 
-在阅读本指南之前，请按照《目录开发人员指南》的[入门部分](../../catalog/api/getting-started.md)中所述的步骤来收集调用[!DNL Platform] API所需的凭据。
+在阅读本指南之前，请按照《目录开发人员指南》的[入门部分](../../catalog/api/getting-started.md)中所述的步骤来收集调用[!DNL Experience Platform] API所需的凭据。
 
 要调用本文档中概述的端点，您必须具有特定数据集的唯一`id`值。 如果没有此值，请参阅[列出目录对象](../../catalog/api/list-objects.md)上的指南以查找现有数据集的ID。
 
 ## 查找数据集的标签 {#look-up}
 
-通过向[!DNL Dataset Service] API发出GET请求，您可以查找已应用于现有数据集的数据使用标签。
+您可以通过向[!DNL Dataset Service] API发出GET请求，查找已应用于现有数据集的数据使用标签。
 
 **API格式**
 
@@ -82,7 +82,7 @@ curl -X GET \
 
 ## 将标签应用于数据集 {#apply}
 
-通过在POST或PUT请求的有效负荷中向[!DNL Dataset Service] API提供一组标签，您可以为整个数据集应用一组标签。 两个调用的请求正文相同。 您无法将标签添加到单独的数据集字段。
+通过在POST或PUT请求的有效负荷中向[!DNL Dataset Service] API提供一组标签，您可以将一组标签应用于整个数据集。 两个调用的请求正文相同。 您无法将标签添加到单独的数据集字段。
 
 **API格式**
 
@@ -99,13 +99,13 @@ PUT /datasets/{DATASET_ID}/labels
 
 下面的示例POST请求使用`C1`标签更新整个数据集。 有效负载中提供的字段与PUT请求所需的字段相同。
 
-当进行API调用以更新数据集(PUT)的现有标签时，必须包括一个`If-Match`标头，以指示数据集服务中dataset-label实体的当前版本。 为避免数据冲突，仅当包含的`If-Match`字符串与系统为该数据集生成的最新版本标记匹配时，服务才会更新数据集实体。
+当进行更新数据集(PUT)的现有标签的API调用时，必须包括一个`If-Match`标头，以指示数据集服务中数据集标签实体的当前版本。 为避免数据冲突，仅当包含的`If-Match`字符串与系统为该数据集生成的最新版本标记匹配时，服务才会更新数据集实体。
 
 >[!NOTE]
 >
 >如果相关数据集当前存在标签，则只能通过PUT请求添加新标签，该请求需要`If-Match`标头。 将标签添加到数据集后，以后需要最新的`etag`值来更新或删除标签<br>在执行PUT方法之前，必须对数据集标签执行GET请求。 确保仅更新请求中要修改的特定字段，而其余字段保持不变。 此外，确保PUT调用维护与GET调用相同的父实体。 任何差异都会导致客户出错。
 
-要检索最新版本的dataset-label实体，请向`/datasets/{DATASET_ID}/labels`端点发出[GET](#look-up)。 当前值在`etag`标头下的响应中返回。 更新现有数据集标签时，最佳做法是先对数据集执行查找请求，以获取其最新的`etag`值，然后再在后续PUT请求的`If-Match`标头中使用该值。
+要检索最新版本的dataset-label实体，请向`/datasets/{DATASET_ID}/labels`端点发出[GET请求](#look-up)。 当前值在`etag`标头下的响应中返回。 更新现有数据集标签时，最佳实践是先对数据集执行查找请求，以获取其最新的`etag`值，然后再在后续PUT请求的`If-Match`标头中使用该值。
 
 ```shell
 curl -X POST \
@@ -143,7 +143,7 @@ curl -X POST \
 
 >[!IMPORTANT]
 >
->已弃用`optionalLabels`属性以用于POST请求。 无法再将数据标签添加到数据集字段。 如果存在`optionalLabel`值，则POST操作将引发错误。 但是，您可以使用PUT请求和`optionalLabels`属性从单个字段删除标签。 有关详细信息，请参阅[从数据集](#remove)中删除标签一节。
+>`optionalLabels`属性已弃用以便与POST请求一起使用。 无法再将数据标签添加到数据集字段。 如果存在`optionalLabel`值，则POST操作将引发错误。 但是，您可以使用PUT请求和`optionalLabels`属性从各个字段删除标签。 有关详细信息，请参阅[从数据集](#remove)中删除标签一节。
 
 ```json
 {
@@ -185,7 +185,7 @@ PUT /datasets/{DATASET_ID}/labels
 
 应用PUT操作的以下数据集的properties/person/properties/address字段上具有C1 optionalLabel，而/properties/person/properties/name/properties/fullName字段上具有C1， C2 optionalLabels。 在put操作之后，第一字段将没有标签（C1标签被删除），而第二字段将只有C1标签（C2标签被删除）
 
-在下面的示例场景中，PUT请求用于移除添加到单个字段的标签。 在发出请求之前，`fullName`字段已应用`C1`和`C2`标签，并且`address`字段已应用`C1`标签。 PUT请求使用`optionalLabels.labels`参数覆盖具有`C1`标签的`fullName`字段中的现有标签`C1, C2`标签。 该请求还会使用一组空的字段标签覆盖`address`字段中的`C1`标签。
+在以下示例场景中，PUT请求用于删除添加到各个字段的标签。 在发出请求之前，`fullName`字段已应用`C1`和`C2`标签，并且`address`字段已应用`C1`标签。 PUT请求使用`optionalLabels.labels`参数覆盖具有`C1`标签的`fullName`字段中的现有标签`C1, C2`标签。 该请求还会使用一组空的字段标签覆盖`address`字段中的`C1`标签。
 
 ```shell
 curl -X PUT \

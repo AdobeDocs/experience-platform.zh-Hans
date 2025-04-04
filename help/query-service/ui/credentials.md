@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务凭据指南
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看先前执行的查询以及访问由您组织内的用户保存的查询。
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: 569f8f96a1039e52ac374e2eb07fd96ad8138edd
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1828'
+source-wordcount: '1830'
 ht-degree: 2%
 
 ---
@@ -32,25 +32,25 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 
 **[!UICONTROL 过期凭据]**&#x200B;部分提供了以下信息：
 
-- **[!UICONTROL 主机]**：要连接客户端的主机名称。 这会合并您的组织名称，如Platform UI顶部功能区中所示。
+- **[!UICONTROL 主机]**：要连接客户端的主机名称。 这会合并您的组织名称，如Experience Platform UI顶部功能区中所示。
 - **[!UICONTROL 端口]**：要连接的主机端口号。
 - **[!UICONTROL 数据库]**：要连接客户端的数据库名称。
 - **[!UICONTROL 用户名]**：用于连接到查询服务的用户名。
 - **[!UICONTROL 密码]**：用于连接到查询服务的密码。 为了安全起见，UI中的密码已进行哈希处理。 选择复制图标(![复制图标。](/help/images/icons/copy.png))以将完整的未散列凭据复制到剪贴板。
 - **[!UICONTROL PSQL命令]**：自动插入所有相关信息的命令，供您在命令行中使用PSQL连接到Query Service。
-- **[!UICONTROL 过期]**：过期凭据的过期日期和时间。 令牌的默认有效期为24小时，但可以在Admin Console的高级设置中更改。
+- **[!UICONTROL 过期]**：过期凭据的过期日期和时间。 令牌的默认有效期为24小时，但可以在Admin Console的高级设置中进行更改。
 
 >[!TIP]
 >
->若要更改与查询服务的过期凭据连接的会话生命周期，请导航到[Admin Console](https://adminconsole.adobe.com/)并在屏幕选项上选择以下选项： **设置** > **隐私和安全** > **身份验证设置** > **高级设置** > **最长会话生命周期**。
+>若要更改与查询服务的过期凭据连接的会话生命周期，请导航到[Admin Console](https://adminconsole.adobe.com/)，然后在屏幕选项上选择以下内容： **设置** > **隐私和安全** > **身份验证设置** > **高级设置** > **最长会话生命周期**。
 >
->![突出显示了“Admin Console设置”选项卡，其中包含“隐私和安全性”、“身份验证设置”和“最长会话时长”。](../images/ui/credentials/max-session-life.png)
+>![突出显示了Admin Console设置选项卡，其中包含“隐私和安全性”、“身份验证设置”和“最长会话时长”。](../images/ui/credentials/max-session-life.png)
 >
->有关Admin Console提供的[高级设置](https://helpx.adobe.com/enterprise/using/authentication-settings.html#advanced-settings)的详细信息，请参阅Adobe帮助文档。
+>有关Admin Console提供的[高级设置](https://helpx.adobe.com/enterprise/using/authentication-settings.html#advanced-settings)的更多信息，请参阅Adobe帮助文档。
 
-### 连接到查询会话中的Customer Journey Analytics数据 {#connect-to-customer-journey-analytics}
+### 在查询会话中连接到Customer Journey Analytics数据 {#connect-to-customer-journey-analytics}
 
-使用带有Power BI或Tableau的Customer Journey AnalyticsBI扩展访问带有SQL的Customer Journey Analytics[数据视图](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/data-views)。 通过将查询服务与BI扩展集成，您可以直接在查询服务会话中访问数据视图。 此集成简化了使用查询服务作为其PostgreSQL接口的BI工具的功能。 此功能消除了BI工具中重复数据视图的需要，确保跨平台的一致报告，并简化了Customer Journey Analytics数据与BI平台中其他源的集成。
+使用带有Power BI或Tableau的Customer Journey Analytics BI扩展访问带有SQL的Customer Journey Analytics [数据视图](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/data-views)。 通过将查询服务与BI扩展集成，您可以直接在查询服务会话中访问数据视图。 此集成简化了使用查询服务作为其PostgreSQL接口的BI工具的功能。 此功能消除了BI工具中重复数据视图的需要，确保跨平台的一致报告，并简化了Customer Journey Analytics数据与BI平台中其他源的集成。
 
 请参阅文档，了解如何[将查询服务连接到各种桌面客户端应用程序](../clients/overview.md)，如[Power BI](../clients/power-bi.md)或[Tableau](../clients/tableau.md)
 
@@ -64,9 +64,9 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 
 >[!NOTE]
 >
->当您连接Power BI或Tableau以Customer Journey Analytics时，会使用查询服务“并发会话”权利。 如果需要其他会话和查询，可以购买额外的临时查询用户包附加组件以获取五个额外的并发会话和一个额外的并发查询。
+>将Power BI或Tableau连接到Customer Journey Analytics时，会使用查询服务“并发会话”权利。 如果需要其他会话和查询，可以购买额外的临时查询用户包附加组件以获取五个额外的并发会话和一个额外的并发查询。
 
-您还可以直接从Query Editor或Postgres CLI访问Customer Journey Analytics数据。 为此，请在编写查询时引用`cja`数据库。 有关如何写入、执行和保存查询的更多信息，请参阅查询编辑器[查询创作指南](./user-guide.md#query-authoring)。
+您还可以直接通过查询编辑器或Postgres CLI访问Customer Journey Analytics数据。 为此，请在编写查询时引用`cja`数据库。 有关如何写入、执行和保存查询的更多信息，请参阅查询编辑器[查询创作指南](./user-guide.md#query-authoring)。
 
 有关使用SQL访问Customer Journey Analytics数据视图的完整说明，请参阅[BI扩展指南](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/bi-extension)。
 
@@ -99,7 +99,7 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 
 ### 生成凭据 {#generate-credentials}
 
-要创建一组不会过期的凭据，请返回到Platform UI并从左侧导航中选择&#x200B;**[!UICONTROL 查询]**&#x200B;以访问[!UICONTROL 查询]工作区。 接下来，选择&#x200B;**[!UICONTROL 凭据]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 生成凭据]**。
+要创建一组不会过期的凭据，请返回Experience Platform UI并从左侧导航中选择&#x200B;**[!UICONTROL 查询]**&#x200B;以访问[!UICONTROL 查询]工作区。 接下来，选择&#x200B;**[!UICONTROL 凭据]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 生成凭据]**。
 
 ![突出显示了“凭据”选项卡和“生成凭据”的“查询”仪表板。](../images/ui/credentials/generate-credentials.png)
 

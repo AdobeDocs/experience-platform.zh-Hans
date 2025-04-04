@@ -5,22 +5,22 @@ title: 使用架构注册表API创建架构
 type: Tutorial
 description: 本教程使用架构注册表API来指导您完成使用标准类构建架构的步骤。
 exl-id: fa487a5f-d914-48f6-8d1b-001a60303f3d
-source-git-commit: 3dffa9687f3429b970e8fceebd6864a5b61ead21
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2583'
+source-wordcount: '2584'
 ht-degree: 2%
 
 ---
 
 # 使用[!DNL Schema Registry] API创建架构
 
-[!DNL Schema Registry]用于访问Adobe Experience Platform中的[!DNL Schema Library]。 [!DNL Schema Library]包含按Adobe、[!DNL Experience Platform]合作伙伴以及您使用其应用程序的供应商提供的资源。 注册表提供了一个用户界面和RESTful API，所有可用的库资源都可通过该用户界面和API访问。
+[!DNL Schema Registry]用于访问Adobe Experience Platform中的[!DNL Schema Library]。 [!DNL Schema Library]包含Adobe、[!DNL Experience Platform]合作伙伴以及您使用其应用程序的供应商提供给您的资源。 注册表提供了一个用户界面和RESTful API，所有可用的库资源都可通过该用户界面和API访问。
 
 本教程使用[!DNL Schema Registry] API引导您完成使用标准类构建架构的步骤。 如果您希望在[!DNL Experience Platform]中使用用户界面，[架构编辑器教程](create-schema-ui.md)提供了在架构编辑器中执行类似操作的分步说明。
 
 >[!NOTE]
 >
->如果您正在将CSV数据摄取到Platform，则可以[将该数据映射到由AI生成的推荐](../../ingestion/tutorials/map-csv/recommendations.md)（当前为测试版）创建的XDM架构，而无需自己手动创建架构。
+>如果您要将CSV数据摄取到Experience Platform，则可以[将该数据映射到由AI生成的推荐](../../ingestion/tutorials/map-csv/recommendations.md)（当前为测试版）创建的XDM架构，而无需自己手动创建架构。
 
 ## 快速入门
 
@@ -29,7 +29,7 @@ ht-degree: 2%
 * [[!DNL Experience Data Model (XDM) System]](../home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
 * [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
-* [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform]提供了将单个[!DNL Platform]实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+* [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform]提供了将单个[!DNL Experience Platform]实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
 在开始本教程之前，请查看[开发人员指南](../api/getting-started.md)以了解成功调用[!DNL Schema Registry] API所需了解的重要信息。 这包括您的`{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（请特别注意`Accept`标头及其可能的值）。
 
@@ -304,7 +304,7 @@ curl -X PATCH \
 
 >[!TIP]
 >
->有必要查看所有可用的字段组，以熟悉每个组中包含的字段。 通过针对每个“全局”和“租户”容器执行GET，您可以列出（请求）所有可用于特定类的字段组，仅返回那些“meta：intendedToExtend”字段与您使用的类匹配的字段组。 在这种情况下，它是[!DNL XDM Individual Profile]类，因此使用[!DNL XDM Individual Profile] `$id`：
+>有必要查看所有可用的字段组，以熟悉每个组中包含的字段。 通过针对每个“全局”和“租户”容器执行请求，可以列出(GET)所有可用于特定类的字段组，仅返回“meta：intendedToExtend”字段与您使用的类匹配的字段组。 在这种情况下，它是[!DNL XDM Individual Profile]类，因此使用[!DNL XDM Individual Profile] `$id`：
 >
 >```http
 >GET /global/fieldgroups?property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile
@@ -602,7 +602,7 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 
 **请求**
 
-此请求更新(PATCH)忠诚度成员架构，以包含新“忠诚度级别”字段组中的字段。
+此请求会更新(PATCH)忠诚度成员架构，以包含新“忠诚度级别”字段组中的字段。
 
 ```SHELL
 curl -X PATCH \
@@ -959,7 +959,7 @@ curl -X POST \
 
 ### 在架构中使用数据类型
 
-现在已创建了忠诚度层数据类型，您可以更新(PATCH)您创建的字段组中的`loyaltyTier`字段以引用数据类型，而不是以前存在的字段。
+现在已创建了忠诚度层数据类型，您可以更新所创建字段组中的`loyaltyTier`字段(PATCH)，以引用该数据类型，而不是以前存在的字段。
 
 **API格式**
 
@@ -1065,7 +1065,7 @@ curl -X PATCH \
 }
 ```
 
-如果现在执行GET请求以查找架构，`loyaltyTier`属性将显示`meta:referencedFrom`下数据类型的引用：
+如果您现在执行GET请求来查找架构，则`loyaltyTier`属性显示`meta:referencedFrom`下数据类型的引用：
 
 ```JSON
 "_{TENANT_ID}": {

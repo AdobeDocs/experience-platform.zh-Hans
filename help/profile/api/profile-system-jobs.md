@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform；配置文件；实时客户配置文件；故障排除；API
+keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API
 title: 配置文件系统作业API端点
 type: Documentation
 description: Adobe Experience Platform允许您从配置文件存储中删除数据集或批次，以便删除不再需要或添加错误的实时客户配置文件数据。 这需要使用配置文件API创建配置文件系统作业或删除请求。
 role: Developer
 exl-id: 75ddbf2f-9a54-424d-8569-d6737e9a590e
-source-git-commit: 16778d0edbad4539a4ff5084a2f22ca5f08e83ec
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2020'
+source-wordcount: '2022'
 ht-degree: 2%
 
 ---
@@ -16,9 +16,9 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->在Microsoft Azure上运行的Adobe Experience Platform实施与Amazon Web Services (AWS)上运行的实施之间可能存在以下端点。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform多云概述](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud)。
+>在Microsoft Azure上运行的Adobe Experience Platform实施与Amazon Web Services (AWS)上运行的实施之间可能存在以下端点。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud)。
 
-Adobe Experience Platform允许您从多个源摄取数据，并为个别客户构建可靠的配置文件。 摄取到[!DNL Platform]的数据存储在[!DNL Data Lake]中，如果为配置文件启用了数据集，则该数据也存储在[!DNL Real-Time Customer Profile]数据存储中。 有时候，可能有必要从配置文件存储中删除与数据集关联的配置文件数据，以便删除不再需要或添加错误的数据。 这需要使用[!DNL Real-Time Customer Profile] API创建[!DNL Profile]系统作业或“删除请求”。
+Adobe Experience Platform允许您从多个源摄取数据，并为个别客户构建可靠的配置文件。 摄取到[!DNL Experience Platform]的数据存储在[!DNL Data Lake]中，如果为配置文件启用了数据集，则该数据也存储在[!DNL Real-Time Customer Profile]数据存储中。 有时候，可能有必要从配置文件存储中删除与数据集关联的配置文件数据，以便删除不再需要或添加错误的数据。 这需要使用[!DNL Real-Time Customer Profile] API创建[!DNL Profile]系统作业或“删除请求”。
 
 >[!NOTE]
 >
@@ -26,7 +26,7 @@ Adobe Experience Platform允许您从多个源摄取数据，并为个别客户�
 
 ## 快速入门
 
-本指南中使用的API终结点是[[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en)的一部分。 在继续之前，请查看[快速入门指南](getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+本指南中使用的API终结点是[[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en)的一部分。 在继续之前，请查看[快速入门指南](getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience Platform API所需的所需标头的重要信息。
 
 ## 查看删除请求 {#view}
 
@@ -38,7 +38,7 @@ Adobe Experience Platform允许您从多个源摄取数据，并为个别客户�
 
 >[!AVAILABILITY]
 >
->在Microsoft Azure上使用Platform时，以下查询参数仅&#x200B;**可用**。
+>在Microsoft Azure上使用Experience Platform时，以下查询参数仅&#x200B;**可用**。
 >
 >在AWS上使用此端点时，前100个系统作业将根据其创建日期以降序返回。
 
@@ -208,11 +208,11 @@ curl -X GET https://platform.adobe.io/data/core/ups/system/jobs \
 
 ## 创建删除请求 {#create-a-delete-request}
 
-启动新的删除请求是通过向`/systems/jobs`端点发出的POST请求完成的，在该请求正文中提供了要删除的数据集或批次的ID。
+启动新的删除请求是通过POST请求完成到`/systems/jobs`端点的操作，其中要删除的数据集或批次的ID会包含在请求正文中。
 
 ### 删除数据集和关联的配置文件数据
 
-要从配置文件存储中删除数据集及与该数据集关联的所有配置文件数据，数据集ID必须包含在POST请求正文中。 此操作将删除给定数据集的所有数据。 [!DNL Experience Platform]允许您同时基于记录和时间序列架构删除数据集。
+要从配置文件存储中删除数据集以及与数据集关联的所有配置文件数据，数据集ID必须包含在POST请求正文中。 此操作将删除给定数据集的所有数据。 [!DNL Experience Platform]允许您同时基于记录和时间序列架构删除数据集。
 
 **API格式**
 
@@ -460,7 +460,7 @@ curl -X POST \
 | -------- | ----------- |
 | `id` | 删除请求的唯一、系统生成的只读ID。 |
 | `datasetId` | 指定数据集的ID。 |
-| `batchId` | 在POST请求中指定的批次ID。 |
+| `batchId` | POST请求中指定的批次ID。 |
 
 +++
 
@@ -502,7 +502,7 @@ curl -X POST \
 
 >[!AVAILABILITY]
 >
->在Microsoft Azure上使用Platform时，以下功能仅&#x200B;**可用**。
+>在Microsoft Azure上使用Experience Platform时，以下功能仅&#x200B;**可用**。
 
 如果尝试启动记录数据集批次的删除请求，您将遇到400级错误，如下所示：
 

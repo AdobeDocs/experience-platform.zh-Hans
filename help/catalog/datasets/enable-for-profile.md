@@ -4,9 +4,9 @@ title: 使用API为配置文件和Identity服务启用数据集
 type: Tutorial
 description: 本教程将演示如何使用Adobe Experience Platform API启用数据集以用于Real-time Customer Profile和Identity Service。
 exl-id: a115e126-6775-466d-ad7e-ee36b0b8b49c
-source-git-commit: b80d8349fc54a955ebb3362d67a482d752871420
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1069'
+source-wordcount: '1070'
 ht-degree: 5%
 
 ---
@@ -24,14 +24,14 @@ ht-degree: 5%
 
 ## 快速入门
 
-本教程需要对管理启用了配置文件的数据集所涉及的几项Adobe Experience Platform服务有一定的了解。 在开始本教程之前，请查看以下相关[!DNL Platform]服务的文档：
+本教程需要对管理启用了配置文件的数据集所涉及的几项Adobe Experience Platform服务有一定的了解。 在开始本教程之前，请查看以下相关[!DNL Experience Platform]服务的文档：
 
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
-- [[!DNL Identity Service]](../../identity-service/home.md)：通过桥接从被摄取到[!DNL Platform]中的不同数据源的标识来启用[!DNL Real-Time Customer Profile]。
+- [[!DNL Identity Service]](../../identity-service/home.md)：通过桥接从被摄取到[!DNL Experience Platform]中的不同数据源的标识来启用[!DNL Real-Time Customer Profile]。
 - [[!DNL Catalog Service]](../../catalog/home.md)： RESTful API，允许您为[!DNL Real-Time Customer Profile]和[!DNL Identity Service]创建数据集并配置它们。
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： [!DNL Platform]用于组织客户体验数据的标准化框架。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
 
-以下部分提供了成功调用Platform API所需了解的其他信息。
+以下部分提供了成功调用Experience Platform API所需了解的其他信息。
 
 ### 正在读取示例 API 调用
 
@@ -39,7 +39,7 @@ ht-degree: 5%
 
 ### 收集所需标头的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+要调用[!DNL Experience Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
@@ -47,7 +47,7 @@ ht-degree: 5%
 
 包含有效负载(POST、PUT、PATCH)的所有请求都需要额外的`Content-Type`标头。 必要时，此标头的正确值会显示在示例请求中。
 
-[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Platform] API的所有请求都需要`x-sandbox-name`标头，用于指定将在其中执行操作的沙盒的名称。 有关[!DNL Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
+[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Experience Platform] API的所有请求都需要`x-sandbox-name`标头，用于指定将在其中执行操作的沙盒的名称。 有关[!DNL Experience Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
 
 ## 创建为配置文件和身份启用的数据集 {#create-a-dataset-enabled-for-profile-and-identity}
 
@@ -57,7 +57,7 @@ ht-degree: 5%
 >
 >要创建新的启用配置文件的数据集，您必须知道为配置文件启用的现有XDM架构的ID。 有关如何查找或创建启用配置文件的架构的信息，请参阅关于使用架构注册表API [创建架构的教程](../../xdm/tutorials/create-schema-api.md)。
 
-要创建为配置文件启用的数据集，您可以使用对`/dataSets`端点的POST请求。
+要创建为配置文件启用的数据集，您可以使用POST请求到`/dataSets`端点。
 
 **API格式**
 
@@ -172,7 +172,7 @@ curl -X GET \
 
 ### 启用数据集 {#enable-the-dataset}
 
-如果尚未为[!DNL Profile]或[!DNL Identity Service]启用现有数据集，则可以通过使用数据集ID发出PATCH请求来启用它。
+如果尚未为[!DNL Profile]或[!DNL Identity Service]启用现有数据集，则可以通过使用该数据集ID发出PATCH请求来启用它。
 
 **API格式**
 

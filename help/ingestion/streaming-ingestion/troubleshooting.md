@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 流摄取疑难解答指南
 description: 本文档提供了有关Adobe Experience Platform上的流式摄取的常见问题解答。
 exl-id: 5d5deccf-25b8-44c9-ae27-9a4713ced274
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1026'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # 流摄取疑难解答指南
 
-本文档提供了有关Adobe Experience Platform上的流式摄取的常见问题解答。 有关其他[!DNL Platform]服务（包括在所有[!DNL Platform] API中遇到的服务）的问题和疑难解答，请参阅[Experience Platform疑难解答指南](../../landing/troubleshooting.md)。
+本文档提供了有关Adobe Experience Platform上的流式摄取的常见问题解答。 有关其他[!DNL Experience Platform]服务（包括在所有[!DNL Experience Platform] API中遇到的服务）的问题和疑难解答，请参阅[Experience Platform疑难解答指南](../../landing/troubleshooting.md)。
 
 Adobe Experience Platform [!DNL Data Ingestion]提供可用于将数据摄取到[!DNL Experience Platform]的RESTful API。 摄取的数据用于近乎实时地更新各个客户配置文件，使您能够跨多个渠道提供个性化、相关的体验。 请阅读[数据引入概述](../home.md)，了解有关该服务和不同引入方法的更多信息。 有关如何使用流式引入API的步骤，请阅读[流式引入概述](../streaming-ingestion/overview.md)。
 
@@ -33,9 +33,9 @@ Adobe Experience Platform [!DNL Data Ingestion]提供可用于将数据摄取到
 
 有关同步和异步验证的详细信息，请参阅[流式验证概述](../quality/streaming-validation.md)。 有关如何查看验证失败的批次的步骤，请参阅有关[检索失败的批次](../quality/retrieve-failed-batches.md)的指南。
 
-### 能否先验证请求有效负荷，然后再将其发送至[!DNL Platform]？
+### 能否先验证请求有效负荷，然后再将其发送至[!DNL Experience Platform]？
 
-请求有效负载只能在发送到[!DNL Platform]后评估。 执行同步验证时，有效负载会返回填充的JSON对象，而无效负载会返回错误消息。 在异步验证期间，服务会检测任何格式错误的数据并将其发送给[!DNL Data Lake]，以便稍后检索这些数据进行分析。 有关详细信息，请参阅[流式验证概述](../quality/streaming-validation.md)。
+请求有效负载只能在发送到[!DNL Experience Platform]后评估。 执行同步验证时，有效负载会返回填充的JSON对象，而无效负载会返回错误消息。 在异步验证期间，服务会检测任何格式错误的数据并将其发送给[!DNL Data Lake]，以便稍后检索这些数据进行分析。 有关详细信息，请参阅[流式验证概述](../quality/streaming-validation.md)。
 
 ### 在不支持同步验证的边缘上请求同步验证时，会发生什么情况？
 
@@ -43,7 +43,7 @@ Adobe Experience Platform [!DNL Data Ingestion]提供可用于将数据摄取到
 
 ### 如何确保仅从可信来源收集数据？
 
-[!DNL Experience Platform]支持安全的数据收集。 启用经过身份验证的数据收集后，客户端必须发送JSON Web令牌(JWT)及其组织ID作为请求标头。 有关如何将经过身份验证的数据发送到[!DNL Platform]的更多信息，请参阅[经过身份验证的数据收集](../tutorials/create-authenticated-streaming-connection.md)指南。
+[!DNL Experience Platform]支持安全的数据收集。 启用经过身份验证的数据收集后，客户端必须发送JSON Web令牌(JWT)及其组织ID作为请求标头。 有关如何将经过身份验证的数据发送到[!DNL Experience Platform]的更多信息，请参阅[经过身份验证的数据收集](../tutorials/create-authenticated-streaming-connection.md)指南。
 
 ### 将数据流式传输到[!DNL Real-Time Customer Profile]的延迟是多少？
 
@@ -51,15 +51,15 @@ Adobe Experience Platform [!DNL Data Ingestion]提供可用于将数据摄取到
 
 ### 我是否可以在同一API请求中包含多条消息？
 
-您可以在单个请求有效负荷中对多个消息进行分组，并将它们流式传输到[!DNL Platform]。 正确使用时，在一个请求中对多个消息进行分组是优化数据操作的绝佳方法。 请阅读有关[在请求中发送多条消息](../tutorials/streaming-multiple-messages.md)的教程，以了解更多信息。
+您可以在单个请求有效负荷中对多个消息进行分组，并将它们流式传输到[!DNL Experience Platform]。 正确使用时，在一个请求中对多个消息进行分组是优化数据操作的绝佳方法。 请阅读有关[在请求中发送多条消息](../tutorials/streaming-multiple-messages.md)的教程，以了解更多信息。
 
 ### 如何知道我发送的数据是否正在接收？
 
-发送到[!DNL Platform]的所有数据（无论成功还是否）在保留到数据集之前都作为批处理文件存储。 批次的处理状态将显示在它们所发送的数据集内。
+发送到[!DNL Experience Platform]的所有数据（无论成功还是否）在保留到数据集之前都作为批处理文件存储。 批次的处理状态将显示在它们所发送的数据集内。
 
 通过使用[Experience Platform用户界面](https://platform.adobe.com)检查数据集活动，您可以验证是否已成功摄取数据。 单击左侧导航中的&#x200B;**[!UICONTROL 数据集]**&#x200B;以显示数据集列表。 从显示的列表中选择要流式处理的数据集，以打开其&#x200B;**[!UICONTROL 数据集活动]**&#x200B;页面，其中显示选定时间段内发送的所有批次。 有关使用[!DNL Experience Platform]监视数据流的详细信息，请参阅[监视流式数据流](../quality/monitor-data-ingestion.md)指南。
 
-如果数据未能摄取，并且要从[!DNL Platform]中恢复它，可以通过将失败批次的ID发送到[!DNL Data Access API]来检索它们。 有关详细信息，请参阅[检索失败的批次](../quality/retrieve-failed-batches.md)指南。
+如果数据未能摄取，并且要从[!DNL Experience Platform]中恢复它，可以通过将失败批次的ID发送到[!DNL Data Access API]来检索它们。 有关详细信息，请参阅[检索失败的批次](../quality/retrieve-failed-batches.md)指南。
 
 ### 为什么我的流数据在数据湖中不可用？
 

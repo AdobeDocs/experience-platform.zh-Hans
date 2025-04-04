@@ -5,9 +5,9 @@ title: 通过临时激活API将受众激活到批处理目标
 description: 本文说明了用于通过临时激活API激活受众的端到端工作流，包括在激活之前执行的分段作业。
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: f01a044d3d12ef457c6242a0b93acbfeeaf48588
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1612'
+source-wordcount: '1623'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 使用临时激活API将完整文件导出到所需的文件接收系统。 仅基于[批处理文件的目标](../destination-types.md#file-based)支持临时受众激活。
 
-下图说明了通过临时激活API激活受众的端到端工作流，包括每24小时在Platform中执行一次的分段作业。
+下图说明了通过临时激活API激活受众的端到端工作流，包括每24小时在Experience Platform中执行一次的分段作业。
 
 ![临时激活](../assets/api/ad-hoc-activation/ad-hoc-activation-overview.png)
 
@@ -66,13 +66,13 @@ Adobe Experience Platform每24小时运行一次计划的分段作业。 临时�
 
 ## 步骤2：收集身份证明 {#credentials}
 
-要调用Platform API，必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程将为所有Experience Platform API调用中的每个所需标头提供值，如下所示：
+要调用Experience Platform API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程将为所有Experience Platform API调用中的每个所需标头提供值，如下所示：
 
 * 授权：持有人`{ACCESS_TOKEN}`
 * x-api-key： `{API_KEY}`
 * x-gw-ims-org-id： `{ORG_ID}`
 
-Experience Platform中的资源可以隔离到特定的虚拟沙箱。 在对Platform API的请求中，您可以指定将执行操作的沙盒的名称和ID。 这些是可选参数。
+Experience Platform中的资源可以隔离到特定的虚拟沙箱。 在对Experience Platform API的请求中，您可以指定将执行操作的沙盒的名称和ID。 这些是可选参数。
 
 * x-sandbox-name： `{SANDBOX_NAME}`
 
@@ -84,13 +84,13 @@ Experience Platform中的资源可以隔离到特定的虚拟沙箱。 在对Pla
 
 * 内容类型： `application/json`
 
-## 步骤3：在Platform UI中创建激活流程 {#activation-flow}
+## 步骤3：在Experience Platform UI中创建激活流程 {#activation-flow}
 
-在通过临时激活API激活受众之前，您必须首先在平台UI中为所选目标配置激活流程。
+在通过临时激活API激活受众之前，您必须首先在Experience Platform UI中为所选目标配置激活流程。
 
 这包括进入激活工作流，选择受众，配置计划并激活它们。 您可以使用UI或API创建激活流：
 
-* [使用Platform UI创建批量配置文件导出目标的激活流](../ui/activate-batch-profile-destinations.md)
+* [使用Experience Platform UI创建批量配置文件导出目标的激活流](../ui/activate-batch-profile-destinations.md)
 * [使用流服务API连接到批处理配置文件导出目标并激活数据](../api/connect-activate-batch-destinations.md)
 
 ## 步骤4：获取最新的受众导出作业ID（v2中不需要） {#segment-export-id}
@@ -124,7 +124,7 @@ Adobe Experience Platform每24小时运行一次计划的分段作业。 临时�
 
 >[!IMPORTANT]
 >
->请注意以下一次性限制：在运行临时激活作业之前，请确保根据您在[步骤3 — 在Platform UI](#activation-flow)中创建激活流中设置的计划首次激活受众时起至少已有一小时。
+>请注意以下一次性限制：在运行临时激活作业之前，请确保根据您在[步骤3 — 在Experience Platform UI中创建激活流](#activation-flow)中设置的计划首次激活受众时起已过去至少一个小时。
 
 在运行临时激活作业之前，请确保受众的计划受众导出作业已完成。 有关如何监视激活流状态的信息，请参阅[目标数据流监视](../../dataflows/ui/monitor-destinations.md)。 例如，如果激活数据流显示&#x200B;**[!UICONTROL 正在处理]**&#x200B;状态，请等待它完成后再运行临时激活作业以导出完整文件。
 
@@ -164,8 +164,8 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/d
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| <ul><li>`destinationId1`</li><li>`destinationId2`</li></ul> | 要将受众激活到的目标实例的ID。 您可以通过导航到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**&#x200B;选项卡，然后单击所需的目标行在右边栏中显示目标ID，从Platform UI中获取这些ID。 有关详细信息，请阅读[目标工作区文档](/help/destinations/ui/destinations-workspace.md#browse)。 |
-| <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | 要激活到所选目标的受众的ID。 您可以使用临时API导出平台生成的受众以及外部（自定义上传）受众。 激活外部受众时，请使用系统生成的ID而不是受众ID。 您可以在受众UI的受众摘要视图中找到系统生成的ID。<br> ![不应选择的受众ID视图。](/help/destinations/assets/api/ad-hoc-activation/audience-id-do-not-use.png "不应选择的受众ID视图。"){width="100" zoomable="yes"} <br> ![应使用的系统生成的受众ID的视图。](/help/destinations/assets/api/ad-hoc-activation/system-generated-id-to-use.png "应该使用的系统生成的受众ID的视图。"){width="100" zoomable="yes"} |
+| <ul><li>`destinationId1`</li><li>`destinationId2`</li></ul> | 要将受众激活到的目标实例的ID。 您可以导航到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**&#x200B;选项卡，然后单击所需的目标行在右边栏中显示目标ID，从而从Experience Platform UI获取这些ID。 有关详细信息，请阅读[目标工作区文档](/help/destinations/ui/destinations-workspace.md#browse)。 |
+| <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | 要激活到所选目标的受众的ID。 您可以使用临时API导出Experience Platform生成的受众以及外部（自定义上传）受众。 激活外部受众时，请使用系统生成的ID而不是受众ID。 您可以在受众UI的受众摘要视图中找到系统生成的ID。<br> ![不应选择的受众ID视图。](/help/destinations/assets/api/ad-hoc-activation/audience-id-do-not-use.png "不应选择的受众ID视图。"){width="100" zoomable="yes"} <br> ![应使用的系统生成的受众ID的视图。](/help/destinations/assets/api/ad-hoc-activation/system-generated-id-to-use.png "应该使用的系统生成的受众ID的视图。"){width="100" zoomable="yes"} |
 
 {style="table-layout:auto"}
 
@@ -205,7 +205,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/disflowprovider/adho
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| <ul><li>`destinationId1`</li><li>`destinationId2`</li></ul> | 要将受众激活到的目标实例的ID。 您可以通过导航到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**&#x200B;选项卡，然后单击所需的目标行在右边栏中显示目标ID，从Platform UI中获取这些ID。 有关详细信息，请阅读[目标工作区文档](/help/destinations/ui/destinations-workspace.md#browse)。 |
+| <ul><li>`destinationId1`</li><li>`destinationId2`</li></ul> | 要将受众激活到的目标实例的ID。 您可以导航到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**&#x200B;选项卡，然后单击所需的目标行在右边栏中显示目标ID，从而从Experience Platform UI获取这些ID。 有关详细信息，请阅读[目标工作区文档](/help/destinations/ui/destinations-workspace.md#browse)。 |
 | <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | 要激活到所选目标的受众的ID。 |
 | <ul><li>`exportId1`</li></ul> | [受众导出](../../segmentation/api/export-jobs.md#retrieve-list)作业的响应中返回的ID。 有关如何查找此ID的说明，请参阅[步骤4：获取最新的受众导出作业ID](#segment-export-id)。 |
 
@@ -237,7 +237,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/disflowprovider/adho
 
 ## API错误处理 {#api-error-handling}
 
-Destination SDK API端点遵循常规Experience Platform API错误消息原则。 请参阅平台疑难解答指南中的[API状态代码](../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../landing/troubleshooting.md#request-header-errors)。
+Destination SDK API端点遵循常规Experience Platform API错误消息原则。 请参阅Experience Platform疑难解答指南中的[API状态代码](../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../landing/troubleshooting.md#request-header-errors)。
 
 ### 特定于ad hoc activation API的API错误代码和消息 {#specific-error-messages}
 

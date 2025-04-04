@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform；主页；热门主题
+keywords: Experience Platform；首页；热门话题
 solution: Experience Platform
 title: 实时客户配置文件中的隐私请求处理
 type: Documentation
 description: Adobe Experience Platform Privacy Service会处理客户访问、选择退出销售或删除其个人数据的请求，如大量隐私法规所述。 本文档介绍了与处理实时客户个人资料的隐私请求相关的基本概念。
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1743'
+source-wordcount: '1751'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,7 @@ Adobe Experience Platform [!DNL Privacy Service]处理客户访问、选择退�
 
 >[!NOTE]
 >
->本指南仅涵盖如何对Experience Platform中的配置文件数据存储进行隐私请求。 如果您还计划提出Platform数据湖的隐私请求，请参阅本教程和关于在数据湖](../catalog/privacy.md)中处理[隐私请求的指南。
+>本指南仅涵盖如何在Experience Platform中针对配置文件数据存储区提出隐私请求。 如果您还计划提出针对Experience Platform数据湖的隐私请求，请参阅本教程和关于在数据湖](../catalog/privacy.md)中处理[隐私请求的指南。
 >
 >有关如何为其他Adobe Experience Cloud应用程序提出隐私请求的步骤，请参阅[Privacy Service文档](../privacy-service/experience-cloud-apps.md)。
 
@@ -30,13 +30,13 @@ Adobe Experience Platform [!DNL Privacy Service]处理客户访问、选择退�
 
 ## 快速入门
 
-本指南要求您对以下[!DNL Platform]个组件有一定的了解：
+本指南要求您对以下[!DNL Experience Platform]个组件有一定的了解：
 
 * [[!DNL Privacy Service]](../privacy-service/home.md)：管理客户跨多个Adobe Experience Cloud应用程序访问、选择退出销售或删除其个人数据的请求。
 * [[!DNL Identity Service]](../identity-service/home.md)：通过跨设备和系统桥接身份，解决了客户体验数据碎片化带来的基本挑战。
 * [[!DNL Real-Time Customer Profile]](home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
 
-## 了解标识命名空间 {#namespaces}
+## 了解身份标识命名空间 {#namespaces}
 
 Adobe Experience Platform [!DNL Identity Service]跨系统和设备桥接客户身份数据。 [!DNL Identity Service]使用&#x200B;**身份命名空间**&#x200B;将身份值与其原始系统相关联，从而为其提供上下文。 命名空间可以表示通用概念，例如电子邮件地址（“电子邮件”），也可以将身份与特定应用程序关联，例如Adobe Advertising Cloud ID (“AdCloud”)或Adobe Target ID (“TNTID”)。
 
@@ -46,14 +46,14 @@ Identity Service维护全局定义（标准）和用户定义（自定义）身�
 
 ## 提交请求 {#submit}
 
-以下各节概述了如何使用[!DNL Privacy Service] API或UI为[!DNL Real-Time Customer Profile]提出隐私请求。 在阅读这些部分之前，您应该查看或了解[Privacy ServiceAPI](../privacy-service/api/getting-started.md)或[Privacy ServiceUI](../privacy-service/ui/overview.md)文档。 本文档提供了有关如何提交隐私作业的完整步骤，包括如何在请求负载中正确格式化提交的用户身份数据。
+以下各节概述了如何使用[!DNL Privacy Service] API或UI为[!DNL Real-Time Customer Profile]提出隐私请求。 在阅读这些部分之前，您应该查看或了解[Privacy Service API](../privacy-service/api/getting-started.md)或[Privacy Service UI](../privacy-service/ui/overview.md)文档。 本文档提供了有关如何提交隐私作业的完整步骤，包括如何在请求负载中正确格式化提交的用户身份数据。
 
 >[!IMPORTANT]
 >
->Privacy Service只能使用不执行标识拼接的合并策略处理[!DNL Profile]数据。 有关详细信息，请参阅[合并策略限制](#merge-policy-limitations)部分。
+>Privacy Service只能使用不执行身份拼接的合并策略处理[!DNL Profile]数据。 有关详细信息，请参阅[合并策略限制](#merge-policy-limitations)部分。
 >
 >请注意，隐私请求在法规要求内异步处理，完成所需时间可能会有所不同。 如果在请求仍在处理时您的[!DNL Profile]数据发生了更改，则不能保证也会在该请求中处理这些传入记录。 只有请求隐私作业时保存在数据湖或配置文件存储中的配置文件才会被删除。 如果您在删除作业期间摄取与删除请求的主题相关的配置文件数据，则无法保证所有配置文件片段都会被删除。
->您有责任在删除请求时了解Platform或Profile Service中的任何传入数据，因为该数据将插入到您的记录存储中。 您必须谨慎接收已被删除或正在删除的数据。
+>您有责任在删除请求时了解Experience Platform或配置文件服务中的任何传入数据，因为这些数据将插入记录存储中。 您必须谨慎接收已被删除或正在删除的数据。
 
 ### 使用 API
 
@@ -61,7 +61,7 @@ Identity Service维护全局定义（标准）和用户定义（自定义）身�
 
 >[!NOTE]
 >
->您可能需要为每个客户提供多个ID，具体取决于身份图以及配置文件片段在Platform数据集中的分发方式。 有关详细信息，请参阅下一节[配置文件片段](#fragments)。
+>您可能需要为每个客户提供多个ID，具体取决于身份图以及您的配置文件片段在Experience Platform数据集中的分配方式。 有关详细信息，请参阅下一节[配置文件片段](#fragments)。
 
 此外，请求有效负载的`include`数组必须包含请求所接收的不同数据存储的产品值。 要删除与标识关联的配置文件数据，数组必须包含值`ProfileService`。 要删除客户的标识图关联，数组必须包含值`identity`。
 
@@ -114,7 +114,7 @@ curl -X POST \
 
 >[!IMPORTANT]
 >
->Platform跨所有属于您组织的[沙盒](../sandboxes/home.md)处理隐私请求。 因此，请求中包含的任何`x-sandbox-name`标头都会被系统忽略。
+>Experience Platform跨所有属于您组织的[沙盒](../sandboxes/home.md)处理隐私请求。 因此，请求中包含的任何`x-sandbox-name`标头都会被系统忽略。
 
 **产品响应**
 
@@ -178,7 +178,7 @@ curl -X POST \
 
 例如，考虑这样一种情况：您将客户属性数据存储到三个单独的数据集中，这几个数据集使用不同的标识符将该数据与单个客户关联：
 
-| 数据集名称 | 主要标识字段 | 存储的属性 |
+| 数据集名称 | 主要身份标识字段 | 存储的属性 |
 | --- | --- | --- |
 | 数据集1 | `customer_id` | `address` |
 | 数据集2 | `email_id` | `firstName`、`lastName` |
@@ -190,7 +190,7 @@ curl -X POST \
 
 ## 正在处理删除请求 {#delete}
 
-当[!DNL Experience Platform]收到来自[!DNL Privacy Service]的删除请求时，[!DNL Platform]向[!DNL Privacy Service]发送确认，确认已收到该请求并且受影响的数据已标记为删除。 隐私作业完成后，记录将被删除。
+当[!DNL Experience Platform]收到来自[!DNL Privacy Service]的删除请求时，[!DNL Experience Platform]向[!DNL Privacy Service]发送确认，确认已收到该请求并且受影响的数据已标记为删除。 隐私作业完成后，记录将被删除。
 
 >[!IMPORTANT]
 >
@@ -200,10 +200,10 @@ curl -X POST \
 
 | 包含的产品 | 效应 |
 | --- | --- |
-| 仅`ProfileService` | 用户档案会在Platform发送确认信息确认收到删除请求后立即删除。 但是，个人资料的身份图仍然会保留，并且个人资料有可能在摄取具有相同身份的新数据时进行重构。 与用户档案关联的数据也保留在数据湖中。 |
-| `ProfileService` 和 `identity` | 用户档案及其关联的身份图会在Platform发送确认收到删除请求后立即删除。 与用户档案关联的数据将保留在数据湖中。 |
-| `ProfileService` 和 `aepDataLake` | 用户档案会在Platform发送确认信息确认收到删除请求后立即删除。 但是，个人资料的身份图仍然会保留，并且个人资料有可能在摄取具有相同身份的新数据时进行重构。<br><br>当Data Lake产品回应收到请求且当前正在处理时，与配置文件关联的数据将被软删除，因此任何[!DNL Platform]服务都无法访问。 作业完成后，数据将从数据湖中完全删除。 |
-| `ProfileService`、`identity`和`aepDataLake` | 用户档案及其关联的身份图会在Platform发送确认收到删除请求后立即删除。<br><br>当Data Lake产品回应收到请求且当前正在处理时，与配置文件关联的数据将被软删除，因此任何[!DNL Platform]服务都无法访问。 作业完成后，数据将从数据湖中完全删除。 |
+| 仅`ProfileService` | 一旦Experience Platform发送确认已收到删除请求，则会立即删除该用户档案。 但是，个人资料的身份图仍然会保留，并且个人资料有可能在摄取具有相同身份的新数据时进行重构。 与用户档案关联的数据也保留在数据湖中。 |
+| `ProfileService` 和 `identity` | 一旦Experience Platform发送确认已收到删除请求，则会立即删除用户档案及其关联的身份图。 与用户档案关联的数据将保留在数据湖中。 |
+| `ProfileService` 和 `aepDataLake` | 一旦Experience Platform发送确认已收到删除请求，则会立即删除该用户档案。 但是，个人资料的身份图仍然会保留，并且个人资料有可能在摄取具有相同身份的新数据时进行重构。<br><br>当Data Lake产品回应收到请求且当前正在处理时，与配置文件关联的数据将被软删除，因此任何[!DNL Experience Platform]服务都无法访问。 作业完成后，数据将从数据湖中完全删除。 |
+| `ProfileService`、`identity`和`aepDataLake` | 一旦Experience Platform发送确认已收到删除请求，则会立即删除用户档案及其关联的身份图。<br><br>当Data Lake产品回应收到请求且当前正在处理时，与配置文件关联的数据将被软删除，因此任何[!DNL Experience Platform]服务都无法访问。 作业完成后，数据将从数据湖中完全删除。 |
 
 有关跟踪作业状态的详细信息，请参阅[[!DNL Privacy Service] 文档](../privacy-service/home.md#monitor)。
 
@@ -217,7 +217,7 @@ curl -X POST \
 
 ### 合并策略限制 {#merge-policy-limitations}
 
-Privacy Service只能使用不执行标识拼接的合并策略处理[!DNL Profile]数据。 如果您使用UI确认是否正在处理您的隐私请求，请确保您使用的是将&#x200B;**[!DNL None]**&#x200B;用作其[!UICONTROL ID拼接]类型的策略。 换句话说，您不能使用[!UICONTROL ID拼接]设置为[!UICONTROL 专用图形]的合并策略。
+Privacy Service只能使用不执行身份拼接的合并策略处理[!DNL Profile]数据。 如果您使用UI确认是否正在处理您的隐私请求，请确保您使用的是将&#x200B;**[!DNL None]**&#x200B;用作其[!UICONTROL ID拼接]类型的策略。 换句话说，您不能使用[!UICONTROL ID拼接]设置为[!UICONTROL 专用图形]的合并策略。
 
 >![合并策略的ID拼接设置为None](./images/privacy/no-id-stitch.png)
 
@@ -225,4 +225,4 @@ Privacy Service只能使用不执行标识拼接的合并策略处理[!DNL Profi
 
 通过阅读本文档，您已了解[!DNL Experience Platform]中处理隐私请求涉及的重要概念。 要加深您对如何管理身份数据和创建隐私作业的了解，请继续阅读本指南中提供的文档。
 
-有关处理[!DNL Profile]未使用的[!DNL Platform]资源的隐私请求的信息，请参阅有关在数据湖](../catalog/privacy.md)中处理[隐私请求的文档。
+有关处理[!DNL Profile]未使用的[!DNL Experience Platform]资源的隐私请求的信息，请参阅有关在数据湖](../catalog/privacy.md)中处理[隐私请求的文档。

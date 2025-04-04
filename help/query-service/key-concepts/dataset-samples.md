@@ -2,9 +2,9 @@
 title: 数据集示例
 description: 查询服务示例数据集使您能够对大数据进行探索性查询，从而大大减少处理时间，而代价是查询准确性。 本指南提供了有关如何管理样本以进行近似查询处理的信息
 exl-id: 9e676d7c-c24f-4234-878f-3e57bf57af44
-source-git-commit: 5f2b44c364183b7becf69f491b41e9d5558accc2
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '632'
+source-wordcount: '633'
 ht-degree: 1%
 
 ---
@@ -31,7 +31,7 @@ Adobe Experience Platform查询服务提供了示例数据集，作为其近似�
 
 >[!NOTE]
 >
->每次登录Platform时都必须启用会话标志。
+>每次登录Experience Platform时都必须启用会话标志。
 
 ![突出显示了&#39;SET aqp=true；&#39;命令的查询编辑器。](../images/key-concepts/set-session-flag.png)
 

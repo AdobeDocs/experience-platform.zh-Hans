@@ -2,25 +2,25 @@
 keywords: Experience Platform；主页；热门主题；ETL；ETL集成；ETL集成
 solution: Experience Platform
 title: 为Adobe Experience Platform开发ETL集成
-description: ETL集成指南概述了创建高性能、安全连接器以进行Experience Platform并将数据摄取到Platform的一般步骤。
+description: ETL集成指南概述了为Experience Platform创建高性能、安全连接器以及将数据摄取到Experience Platform的一般步骤。
 exl-id: 7d29b61c-a061-46f8-a31f-f20e4d725655
-source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '3977'
+source-wordcount: '3978'
 ht-degree: 2%
 
 ---
 
 # 为Adobe Experience Platform开发ETL集成
 
-ETL集成指南概述了为[!DNL Experience Platform]创建高性能、安全连接器并将数据摄取到[!DNL Platform]中的常规步骤。
+ETL集成指南概述了为[!DNL Experience Platform]创建高性能、安全连接器并将数据摄取到[!DNL Experience Platform]中的常规步骤。
 
 
 - [[!DNL Catalog]](https://www.adobe.io/experience-platform-apis/references/catalog/)
 - [[!DNL Data Access]](https://www.adobe.io/experience-platform-apis/references/data-access/)
 - [[!DNL Batch Ingestion]](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/)
 - [[!DNL Streaming Ingestion]](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/)
-- [Experience PlatformAPI的身份验证和授权](https://www.adobe.com/go/platform-api-authentication-en)
+- [Experience Platform API的身份验证和授权](https://www.adobe.com/go/platform-api-authentication-en)
 - [[!DNL Schema Registry]](https://www.adobe.io/experience-platform-apis/references/schema-registry/)
 
 本指南还包括设计ETL连接器时要使用的示例API调用，其中包含指向概述每个[!DNL Experience Platform]服务的文档的链接以及其API的更详细的使用情况。
@@ -37,10 +37,10 @@ ETL集成指南概述了为[!DNL Experience Platform]创建高性能、安全连
 
 ETL连接器集成涉及多个Experience Platform组件。 下表概述了几个关键组件和功能：
 
-- **AdobeIdentity Management System (IMS)** — 提供用于向Adobe服务进行身份验证的框架。
+- **Adobe Identity Management System (IMS)** — 提供用于向Adobe服务进行身份验证的框架。
 - **IMS组织** — 可以拥有或许可产品和服务并允许访问其成员的公司实体。
 - **IMS用户** - IMS组织的成员。 组织到用户的关系是多对多。
-- **[!DNL Sandbox]** — 虚拟分区单个[!DNL Platform]实例，以帮助开发和改进数字体验应用程序。
+- **[!DNL Sandbox]** — 虚拟分区单个[!DNL Experience Platform]实例，以帮助开发和改进数字体验应用程序。
 - **数据发现** — 在[!DNL Experience Platform]中记录已摄取和转换数据的元数据。
 - **[!DNL Data Access]** — 为用户提供一个访问他们在[!DNL Experience Platform]中的数据的界面。
 - **[!DNL Data Ingestion]** — 使用[!DNL Data Ingestion] API将数据推送到[!DNL Experience Platform]。
@@ -56,19 +56,19 @@ ETL连接器集成涉及多个Experience Platform组件。 下表概述了几个
 
 ### 收集所需标头的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+要调用[!DNL Experience Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 - 授权：持有人`{ACCESS_TOKEN}`
 - x-api-key： `{API_KEY}`
 - x-gw-ims-org-id： `{ORG_ID}`
 
-[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
+[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Experience Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 - x-sandbox-name： `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关[!DNL Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../sandboxes/home.md)。
+>有关[!DNL Experience Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../sandboxes/home.md)。
 
 包含负载 (POST、PUT、PATCH) 的所有请求都需要额外的标头：
 
@@ -78,7 +78,7 @@ ETL连接器集成涉及多个Experience Platform组件。 下表概述了几个
 
 首先，ETL用户登录到[!DNL Experience Platform]用户界面(UI)，并使用标准连接器或推送服务连接器创建用于摄取的数据集。
 
-在UI中，用户通过选择数据集架构来创建输出数据集。 架构的选择取决于被摄取到[!DNL Platform]中的数据类型（记录或时间序列）。 通过单击UI中的“架构”选项卡，用户将能够查看所有可用的架构，包括架构支持的行为类型。
+在UI中，用户通过选择数据集架构来创建输出数据集。 架构的选择取决于被摄取到[!DNL Experience Platform]中的数据类型（记录或时间序列）。 通过单击UI中的“架构”选项卡，用户将能够查看所有可用的架构，包括架构支持的行为类型。
 
 在ETL工具中，用户将在配置适当的连接（使用其凭据）后开始设计其映射转换。 假设ETL工具已安装[!DNL Experience Platform]连接器（此集成指南中未定义进程）。
 
@@ -168,7 +168,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets?limit=3&
 
 XDM架构是您在需要向用户显示可写入的所有可用字段列表时使用的架构。
 
-上一个响应对象(`https://ns.adobe.com/{TENANT_ID}/schemas/274f17bc5807ff307a046bab1489fb18`)中的第一个“schemaRef.id”值是指向[!DNL Schema Registry]中的特定XDM架构的URI。 通过向[!DNL Schema Registry] API发出查找(GET)请求，可以检索架构。
+上一个响应对象(`https://ns.adobe.com/{TENANT_ID}/schemas/274f17bc5807ff307a046bab1489fb18`)中的第一个“schemaRef.id”值是指向[!DNL Schema Registry]中的特定XDM架构的URI。 通过对[!DNL Schema Registry] API发出查找(GET)请求，可以检索架构。
 
 >[!NOTE]
 >
@@ -211,7 +211,7 @@ curl -X GET \
 
 **响应**
 
-返回的JSON架构描述了结构和字段级信息（“类型”、“格式”、“最小值”、“最大值”等） 数据的，序列化为JSON。 如果使用非JSON的序列化格式进行摄取（如Parquet或Scala），则[架构注册表指南](../xdm/tutorials/create-schema-api.md)包含一个表，该表以其他格式显示所需的JSON类型(&quot;meta：xdmType&quot;)及其相应表示形式。
+返回的JSON架构描述了数据的结构和字段级信息（“类型”、“格式”、“最小值”、“最大值”等），这些信息序列化为JSON。 如果使用非JSON的序列化格式进行摄取（如Parquet或Scala），则[架构注册表指南](../xdm/tutorials/create-schema-api.md)包含一个表，该表以其他格式显示所需的JSON类型(&quot;meta：xdmType&quot;)及其相应表示形式。
 
 除了此表外，[!DNL Schema Registry]开发人员指南还包含可以使用[!DNL Schema Registry] API进行的所有可能调用的深入示例。
 
@@ -326,7 +326,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets?limit=1&
 
 ### 使用“文件”属性列出数据集文件
 
-您还可以使用“文件”属性通过GET请求获取文件详细信息。
+您还可以使用GET请求通过“文件”属性获取文件详细信息。
 
 **API格式**
 
@@ -552,7 +552,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/files/{FILE_ID}" \
 
 ### 访问文件内容
 
-[[!DNL Data Access API]](https://www.adobe.io/experience-platform-apis/references/data-access/)可用于访问特定文件的内容。 要获取内容，在使用文件ID访问文件时，将使用为`_links.self.href`返回的值发出GET请求。
+[[!DNL Data Access API]](https://www.adobe.io/experience-platform-apis/references/data-access/)可用于访问特定文件的内容。 为了获取内容，在使用文件ID访问文件时，会使用为`_links.self.href`返回的值发出GET请求。
 
 **请求**
 
@@ -759,7 +759,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID
 
 如果客户端发现过去“n”天内ETL处理的数据未按预期发生或源数据本身可能不正确，则可能需要批量重放和数据重新处理。
 
-为此，客户端的数据管理员将使用[!DNL Platform] UI删除包含损坏数据的批次。 然后，可能需要重新运行ETL，从而使用正确的数据重新填充。 如果源本身具有损坏的数据，则数据工程师/管理员需要更正源批次并重新摄取数据(通过Adobe Experience Platform或ETL连接器摄取)。
+为此，客户端的数据管理员将使用[!DNL Experience Platform] UI删除包含损坏数据的批次。 然后，可能需要重新运行ETL，从而使用正确的数据重新填充。 如果源本身具有损坏的数据，则数据工程师/管理员需要更正源批次并重新摄取数据(通过Adobe Experience Platform或ETL连接器摄取)。
 
 根据生成的数据类型，数据工程师可以选择从特定数据集中删除单个批次或所有批次。 将根据[!DNL Experience Platform]准则删除/存档数据。
 
@@ -781,7 +781,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID
 
 延迟是一个过程，在该过程中，输入数据还不够完整，无法发送到下游进程，但将来可能可以使用。 客户将确定他们个人对未来匹配的数据窗口化容忍度与处理成本的容忍度，以告知他们决定保留数据并在下次转换执行中重新处理它，希望可以在保留窗口内的某个未来时间扩充和协调/拼合数据。 此周期将持续进行，直到行得到充分处理，或认为该行太旧，无法继续投资。 每次迭代都会生成延迟数据，该延迟数据是先前迭代中所有延迟数据的超集。
 
-Adobe Experience Platform当前未识别延迟数据，因此客户端实施必须依赖ETL和数据集手动配置，在[!DNL Platform]中镜像可用于保留延迟数据的源数据集创建另一个数据集。 在这种情况下，延迟数据将与快照数据类似。 在每次执行ETL转换时，源数据将与延迟数据合并并发送以供处理。
+Adobe Experience Platform当前未识别延迟数据，因此客户端实施必须依赖ETL和数据集手动配置，在[!DNL Experience Platform]中镜像可用于保留延迟数据的源数据集创建另一个数据集。 在这种情况下，延迟数据将与快照数据类似。 在每次执行ETL转换时，源数据将与延迟数据合并并发送以供处理。
 
 ## Changelog
 

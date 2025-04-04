@@ -1,36 +1,36 @@
 ---
-title: Adobe Experience Platform Web软件开发工具包(SDK)概述
-description: 了解如何使用Adobe Experience Platform Web SDK将Platform功能集成到您的网站。
+title: Adobe Experience Platform Web Software Development Kit (SDK)概述
+description: 了解如何使用Adobe Experience Platform Web SDK将Experience Platform功能集成到您的网站。
 exl-id: 1348144a-7d25-4c27-bc40-3daee2f043a6
-source-git-commit: 2bf9c7ada9fd223df92b5cc9b1415f20705c2042
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '600'
+source-wordcount: '601'
 ht-degree: 1%
 
 ---
 
 # Adobe Experience Platform Web SDK {#overview}
 
-Adobe Experience Platform Web SDK是客户端JavaScript库，它允许Adobe Experience Cloud客户通过Adobe Experience PlatformEdge Network与其服务进行交互。
+Adobe Experience Platform Web SDK是一个客户端JavaScript库，它允许Adobe Experience Cloud客户通过Adobe Experience Platform Edge Network与其服务进行交互。
 
 您可以通过两种方式实施Web SDK：
 
 * [Web SDK标记扩展](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md)。 有关详细信息，请参阅关于如何[使用Web SDK实施Adobe Experience Cloud](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html?lang=zh-Hans)的教程。
 * 使用[Web SDK JavaScript库](install/library.md)手动实施。
 
-本指南包含有关同时使用Web SDK JavaScript库和标签扩展与Experience Cloud解决方案交互的说明。
+本指南包含有关同时使用Web Experience Cloud JavaScript库和标记扩展与SDK解决方案交互的说明。
 
-## Experience PlatformEdge Network {#edge-network}
+## Experience Platform Edge Network {#edge-network}
 
 
 
-Experience PlatformWeb SDK是Adobe Experience PlatformEdge Network的一部分，该库包括：
+Experience Platform Web SDK是Adobe Experience Platform Edge Network的一部分，它包括：
 
-* **[Experience PlatformWeb SDK](#overview)**：用于简化Adobe技术部署的JavaScript库和标记扩展。
-* **[Experience PlatformMobile SDK](https://developer.adobe.com/client-sdks/home/)**：新部署方法的v5 Mobile SDK扩展。
-* **[Edge NetworkAPI](../server-api/overview.md)**：用于数据收集、个性化、广告和营销用例的服务器端API。 您可以在服务器、IoT设备、机顶盒和其他设备上使用它。
+* **[Experience Platform Web SDK](#overview)**：用于简化Adobe技术部署的JavaScript库和标记扩展。
+* **[Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/home/)**：新部署方法的v5移动SDK扩展。
+* **[Edge Network API](../server-api/overview.md)**：用于数据收集、个性化、广告和营销用例的服务器端API。 您可以在服务器、IoT设备、机顶盒和其他设备上使用它。
 
-该Edge Network提供低延迟数据收集、可插拔计算和所有可寻址信道上的快速数据激活。 它为Web、移动和服务器端渠道提供单个整合的SDK，将数据发送到公共Adobe域(`adobedc.net`)，并接收数据和体验交付的单个有效负载。
+Edge Network提供了低延迟的数据收集、可插拔计算和快速数据激活（涵盖所有可寻址渠道）。 它为Web、移动和服务器端渠道提供单个整合的SDK，将数据发送到公共Adobe域(`adobedc.net`)，并接收数据和体验交付的单个有效负载。
 
 在服务器端，统一的边缘网关和通用平台服务框架简化了新功能的部署，同时提供了以下优势：
 
@@ -51,7 +51,7 @@ Experience PlatformWeb SDK是Adobe Experience PlatformEdge Network的一部分�
 
 ## 由Web SDK替换的库 {#sdks}
 
-Web SDK是从头开始构建的新开源库，用于集成现有库的功能。 它解决了标记触发顺序、版本不一致和依赖关系管理的问题，提供了一种新的[开源](https://github.com/adobe/alloy)方法来实施[!DNL Experience Cloud]。
+Web SDK是新的开源库，从头开始构建，用于集成现有库的功能。 它解决了标记触发顺序、版本不一致和依赖关系管理的问题，提供了一种新的[开源](https://github.com/adobe/alloy)方法来实施[!DNL Experience Cloud]。
 
 Web SDK取代了：
 
@@ -60,7 +60,7 @@ Web SDK取代了：
 * `AT.js`
 * `DIL.js`
 
-它还引入了一个新端点，该端点可简化Adobe解决方案的HTTP请求。 以前，`Visitor.js`、`AT.js`、`DIL.js`和`AppMeasurement.js`需要多次调用。 现在，单次调用便可以检索ID、提取[!DNL Target]体验、将数据发送到[!DNL Audience Manager]以及将数据传递到Adobe Experience Platform。
+它还引入了一个新端点，该端点可简化对Adobe解决方案的HTTP请求。 以前，`Visitor.js`、`AT.js`、`DIL.js`和`AppMeasurement.js`需要多次调用。 现在，单次调用便可以检索ID、提取[!DNL Target]体验、将数据发送到[!DNL Audience Manager]以及将数据传递到Adobe Experience Platform。
 
 观看以下视频以了解Adobe Experience Platform [!DNL Web SDK]和[!DNL Edge Network]的实际操作情况，只需一次调用即可将数据发送到[!DNL Experience Platform]、[!DNL Analytics]、[!DNL Audience Manager]和[!DNL Target]。
 
@@ -68,11 +68,11 @@ Web SDK取代了：
 
 ## 从现有库迁移到Web SDK {#migrating-to-web-sdk}
 
-Adobe提供了简化的升级途径，以简化从任何[现有库](#sdks)到Web SDK的迁移。 您可以单独迁移网站的每个页面，而无需一次迁移整个网站。 您可以在部分页面上使用Web SDK，而在其他页面上则保留现有库，从而实现逐步过渡。
+Adobe提供了简化的升级路径，以简化从任何[现有库](#sdks)到Web SDK的迁移。 您可以单独迁移网站的每个页面，而无需一次迁移整个网站。 您可以在部分页面上使用Web SDK，而在其他页面上使用现有库，从而实现逐步过渡。
 
 ### 将`AT.js`迁移到Web SDK注意事项 {#considerations}
 
-在使用`AT.js`将页面迁移到Web SDK之前，请启用以下Web SDK配置选项，以确保在页面之间导航时保持访客配置文件。
+在使用`AT.js`将页面迁移到Web SDK之前，请启用以下Web SDK配置选项，以确保在页面之间导航时保持访客资料。
 
 * [&#39;idMigrationEnabled&#39;](/help/web-sdk/commands/configure/idmigrationenabled.md)
 * [&#39;targetMigrationEnabled&#39;](/help/web-sdk/commands/configure/targetmigrationenabled.md)

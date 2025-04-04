@@ -5,7 +5,7 @@ title: 在UI中创建MySQL Source连接
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform用户界面创建MySQL源连接。
 exl-id: 75e74bde-6199-4970-93d2-f95ec3a59aa5
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '411'
 ht-degree: 2%
@@ -20,7 +20,7 @@ Adobe Experience Platform中的Source连接器提供了按计划摄取外部来�
 
 本教程需要对以下Adobe Experience Platform组件有一定的了解：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
@@ -29,7 +29,7 @@ Adobe Experience Platform中的Source连接器提供了按计划摄取外部来�
 
 ### 收集所需的凭据
 
-要在[!DNL Platform]上访问您的[!DNL MySQL]帐户，必须提供以下值：
+要在[!DNL Experience Platform]上访问您的[!DNL MySQL]帐户，必须提供以下值：
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
@@ -37,7 +37,7 @@ Adobe Experience Platform中的Source连接器提供了按计划摄取外部来�
 
 ## 连接您的[!DNL MySQL]帐户
 
-收集所需的凭据后，您可以按照以下步骤将您的[!DNL MySQL]帐户关联到[!DNL Platform]。
+收集所需的凭据后，您可以按照以下步骤将您的[!DNL MySQL]帐户关联到[!DNL Experience Platform]。
 
 登录到[Adobe Experience Platform](https://platform.adobe.com)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问&#x200B;**[!UICONTROL 源]**&#x200B;工作区。 **[!UICONTROL Catalog]**&#x200B;屏幕显示您可以为其创建帐户的各种源。
 
@@ -61,4 +61,4 @@ Adobe Experience Platform中的Source连接器提供了按计划摄取外部来�
 
 ## 后续步骤
 
-通过学习本教程，您已建立与MySQL帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入 [!DNL Platform]](../../dataflow/databases.md)。
+通过学习本教程，您已建立与MySQL帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入 [!DNL Experience Platform]](../../dataflow/databases.md)。

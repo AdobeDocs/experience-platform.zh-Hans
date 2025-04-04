@@ -3,10 +3,10 @@ title: 智能重新参与
 description: 在关键转化时刻提供引人注目的互联体验，以智能的方式重新吸引不常光顾的客户。
 feature: Use Cases
 exl-id: 13f6dbc9-7471-40bf-824d-27922be0d879
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '3894'
-ht-degree: 49%
+source-wordcount: '3896'
+ht-degree: 48%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 49%
 
 以明智和负责任的方式重新吸引放弃转化的客户。 通过体验吸引失效的客户，以提高转化率并增加客户存留期值。
 
-采用实时考虑内容，考虑消费者的所有品质和行为，并根据线上和线下事件快速提供重新资格认证。
+采用实时考虑内容，考虑消费者的所有品质和行为，并根据线上和线下事件快速提供重新资格筛选。
 
 以下是Real-Time CDP和Journey Optimizer各个组件的高级架构视图。 此图显示了数据如何流经两个Experience Platform应用程序，从数据收集到通过历程或营销活动激活到目标的点，以实现本页面上描述的使用案例。
 
@@ -38,7 +38,7 @@ ht-degree: 49%
 
 * [[!DNL Adobe Real-Time Customer Data Platform (Real-Time CDP)]](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/understanding-the-real-time-customer-data-platform.html)——跨数据源集成数据，以推动活动。然后，该数据可用于创建活动受众，并显示电子邮件和网络促销图块中使用的个性化数据元素（例如，姓名或与帐户相关的信息）。CDP 还可用于通过电子邮件和网络激活受众（通过 [!DNL Adobe Target]）。
    * [架构](/help/xdm/home.md)
-   * [配置文件](/help/profile/home.md)
+   * [轮廓](/help/profile/home.md)
    * [数据集](/help/catalog/datasets/overview.md)
    * [受众](/help/segmentation/home.md)
    * [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html)
@@ -60,9 +60,9 @@ ht-degree: 49%
 弃用的产品浏览场景定位在网站和移动设备应用程序上弃用的产品浏览。 当已查看但未购买产品或未将产品添加到购物车时，会触发此场景。 在此示例中，如果过去24小时内没有列表添加，则会在三天后触发品牌互动。<p>![客户智能放弃的产品浏览方案高级可视化概述。](../intelligent-re-engagement/images/re-engagement-journey.png "客户智能放弃的产品浏览方案高级可视化概述。"){width="1920" zoomable="yes"}</p>
 
 1. 您可以创建架构和数据集，然后为[!UICONTROL 配置文件]启用。
-2. 您可以通过Web SDK、Mobile SDK或API将数据摄取到Experience Platform中。 也可以使用Analytics Source Connector，但可能会导致旅程延迟。
+2. 您可以通过Web SDK、Mobile SDK或API将数据摄取到Experience Platform。 也可以使用Analytics Source Connector，但可能会导致旅程延迟。
 3. 您可以摄取其他启用配置文件的数据，该数据可以通过身份图链接到经过身份验证的Web和移动应用程序访客。
-4. 您从配置文件列表中构建重点受众，以检查&#x200B;**客户**&#x200B;是否在过去三天内参与了活动。
+4. 您从轮廓列表中构建重点受众，以检查&#x200B;**客户**&#x200B;是否在过去三天内参与了活动。
 5. 您在[!DNL Adobe Journey Optimizer]中创建放弃的产品浏览历程。
 6. 如果需要，请与&#x200B;**数据合作伙伴**&#x200B;合作，以将受众激活到所需的付费媒体目标。
 7. [!DNL Adobe Journey Optimizer] 检查是否同意，并发送配置的各种操作。
@@ -72,9 +72,9 @@ ht-degree: 49%
 “放弃的购物车”方案适用于以下情况：产品已放入购物车，但尚未在网站和移动设备应用程序上购买。 此外，付费媒体活动可以使用此方法启动和停止。<p>![客户放弃的购物车方案高级视觉概览。](../intelligent-re-engagement/images/abandoned-cart-journey.png "客户放弃的购物车方案高级视觉概览。"){width="1920" zoomable="yes"}</p>
 
 1. 您创建架构和数据集，为[!UICONTROL 配置文件]启用。
-2. 您可以通过Web SDK、Mobile SDK或API将数据摄取到Experience Platform中。 也可以使用Analytics Source Connector，但可能会导致旅程延迟。
+2. 您可以通过Web SDK、Mobile SDK或API将数据摄取到Experience Platform。 也可以使用Analytics Source Connector，但可能会导致旅程延迟。
 3. 您可以摄取其他启用配置文件的数据，该数据可以通过身份图链接到经过身份验证的Web和移动应用程序访客。
-4. 您从配置文件列表中建立重点受众，以检查&#x200B;**客户**&#x200B;是否已将商品放入购物车，但尚未完成购买。**[!UICONTROL 添加到购物车]**&#x200B;事件会启动一个等待 30 分钟的计时器，然后检查购买情况。如果没有购买，那么该&#x200B;**客户**&#x200B;会被添加到&#x200B;**[!UICONTROL 放弃的购物车]**&#x200B;受众中。
+4. 您从轮廓列表中建立重点受众，以检查&#x200B;**客户**&#x200B;是否已将商品放入购物车，但尚未完成购买。**[!UICONTROL 添加到购物车]**&#x200B;事件会启动一个等待 30 分钟的计时器，然后检查购买情况。如果没有购买，那么该&#x200B;**客户**&#x200B;会被添加到&#x200B;**[!UICONTROL 放弃的购物车]**&#x200B;受众中。
 5. 您在 [!DNL Adobe Journey Optimizer] 中创建一个放弃的购物车之历程。
 6. 如果需要，请与&#x200B;**数据合作伙伴**&#x200B;合作，以将受众激活到所需的付费媒体目标。
 7. [!DNL Adobe Journey Optimizer] 检查是否同意，并发送配置的各种操作。
@@ -84,7 +84,7 @@ ht-degree: 49%
 订单确认方案侧重于通过网站和移动设备应用程序进行的产品购买。<p>![客户订单确认方案高级视觉概览。](../intelligent-re-engagement/images/order-confirmation-journey.png "客户订单确认方案高级视觉概览。"){width="1920" zoomable="yes"}</p>
 
 1. 您可以创建架构和数据集，然后为[!UICONTROL 配置文件]启用。
-2. 您可以通过Web SDK、Mobile SDK或API将数据摄取到Experience Platform中。 也可以使用Analytics Source Connector，但可能会导致旅程延迟。
+2. 您可以通过Web SDK、Mobile SDK或API将数据摄取到Experience Platform。 也可以使用Analytics Source Connector，但可能会导致旅程延迟。
 3. 您可以摄取其他启用配置文件的数据，该数据可以通过身份图链接到经过身份验证的Web和移动应用程序访客。
 4. 您在 [!DNL Adobe Journey Optimizer] 中创建一个确认历程。
 5. [!DNL Adobe Journey Optimizer] 会使用首选渠道发送订购确认消息。
@@ -103,13 +103,13 @@ ht-degree: 49%
 
 #### 客户属性架构
 
-此架构用于构建和引用构成客户信息的配置文件数据。此数据通常通过您的CRM或类似系统摄取到[!DNL Adobe Experience Platform]，并且是引用用于个性化、营销同意和增强受众功能的客户详细信息所必需的。
+此架构用于构建和引用构成客户信息的轮廓数据。此数据通常通过您的CRM或类似系统摄取到[!DNL Adobe Experience Platform]，并且是引用用于个性化、营销同意和增强受众功能的客户详细信息所必需的。
 
-客户属性架构由 [[!UICONTROL XDM 个人配置文件]](/help/xdm/classes/individual-profile.md)类表示，该类包括以下字段组：
+客户属性架构由 [[!UICONTROL XDM 个人轮廓]](/help/xdm/classes/individual-profile.md)类表示，该类包括以下字段组：
 
 +++个人联系方式（字段组）
 
-[个人联系方式](/help/xdm/field-groups/profile/personal-contact-details.md)是 XDM 个人配置文件类的标准架构字段组，它描述了个人的联系信息。
+[个人联系方式](/help/xdm/field-groups/profile/personal-contact-details.md)是 XDM 个人轮廓类的标准架构字段组，它描述了个人的联系信息。
 
 | 字段 | 描述 |
 | --- | --- |
@@ -139,7 +139,7 @@ ht-degree: 49%
 
 +++
 
-+++配置文件测试详细信息（字段组）
++++轮廓测试详细信息（字段组）
 
 此字段组允许您使用测试用户档案在发布历程之前测试历程。 有关创建测试配置文件的详细信息，请阅读[创建测试配置文件教程](https://experienceleague.adobe.com/docs/journeys/using/building-journeys/about-journey-building/creating-test-profiles.html)和[测试历程教程](https://experienceleague.adobe.com/docs/journeys/using/building-journeys/testing-the-journey.html)。
 
@@ -147,7 +147,7 @@ ht-degree: 49%
 
 #### 客户数字交易架构
 
-此架构用于构建和引用构成您的客户活动的事件数据，这些活动发生在您的网站或关联的数字平台上。 此数据通常通过[Web SDK](/help/web-sdk/home.md)摄取到[!DNL Adobe Experience Platform]中，并且是引用用于触发历程、详细的在线客户分析、增强的受众功能和个性化消息传递的各种浏览和转化事件所必需的。
+此架构用于构建和引用构成您的客户活动的事件数据，这些活动发生在您的网站或关联的数字平台上。 此数据通常通过[Web SDK](/help/web-sdk/home.md)摄取到[!DNL Adobe Experience Platform]，并且是引用各种浏览和转化事件所必需的，这些事件用于触发历程、详细的在线客户分析、增强的受众功能和个性化消息传递。
 
 客户数字交易架构由[[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md)类表示。
 
@@ -165,7 +165,7 @@ ht-degree: 49%
 
 +++最终用户 ID 详细信息（字段组）
 
-[最终用户ID详细信息](/help/xdm/field-groups/event/enduserids.md)字段组用于描述跨多个Adobe应用程序的个人身份信息。
+[最终用户ID详细信息](/help/xdm/field-groups/event/enduserids.md)字段组用于在多个Adobe应用程序中描述个人的身份信息。
 
 | 字段 | 描述 |
 | --- | --- |
@@ -205,7 +205,7 @@ ht-degree: 49%
 
 #### 客户离线交易架构
 
-此架构用于构建和引用构成您的网站之外的平台上发生的客户活动的事件数据。该数据通常会从 POS（或类似系统）摄入 [!DNL Adobe Experience Platform]，并且通常会通过 API 连接流式传输到 Platform。其目的是引用各种离线转化事件，用于触发历程、深度在线和离线客户分析、增强受众功能和个性化消息传递。
+此架构用于构建和引用构成您的网站之外的平台上发生的客户活动的事件数据。此数据通常从POS（或类似系统）摄取到[!DNL Adobe Experience Platform]中，并且通常通过API连接流式传输到Experience Platform中。 其目的是引用各种离线转化事件，用于触发历程、深度在线和离线客户分析、增强受众功能和个性化消息传递。
 
 客户离线交易架构由[[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md)类表示。
 
@@ -242,7 +242,7 @@ ht-degree: 49%
 
 +++个人联系方式（字段组）
 
-[个人联系方式](/help/xdm/field-groups/profile/personal-contact-details.md)是 XDM 个人配置文件类的标准架构字段组，它描述了个人的联系信息。
+[个人联系方式](/help/xdm/field-groups/profile/personal-contact-details.md)是 XDM 个人轮廓类的标准架构字段组，它描述了个人的联系信息。
 
 | 字段 | 描述 |
 | --- | --- |
@@ -308,7 +308,7 @@ ht-degree: 49%
 
 >[!NOTE]
 >
->与架构创建步骤类似，您需要使数据集包含在实时客户配置文件中。有关启用数据集以在Real-time Customer Profile中使用的更多信息，请参阅有关[将数据引入Real-time Customer Profile](https://experienceleague.adobe.com/docs/platform-learn/tutorials/profiles/bring-data-into-the-real-time-customer-profile.html?lang=zh-Hans)的教程。
+>与架构创建步骤类似，您需要使数据集包含在实时客户轮廓中。有关启用数据集以在Real-time Customer Profile中使用的更多信息，请参阅有关[将数据引入Real-time Customer Profile](https://experienceleague.adobe.com/docs/platform-learn/tutorials/profiles/bring-data-into-the-real-time-customer-profile.html?lang=zh-Hans)的教程。
 
 ### 同意和数据治理 {#privacy-consent}
 
@@ -350,7 +350,7 @@ ht-degree: 49%
 
 有关如何直接组成[受众](/help/segmentation/home.md)的更多信息，请参阅[受众组合 UI 指南。](/help/segmentation/ui/audience-composition.md)
 
-有关如何通过平台派生受众定义构建受众的更多信息，请阅读[受众生成器UI指南](/help/segmentation/ui/segment-builder.md)。
+有关如何通过Experience Platform派生的受众定义构建受众的更多信息，请参阅[受众生成器UI指南](/help/segmentation/ui/segment-builder.md)。
 
 >[!BEGINTABS]
 
@@ -763,7 +763,7 @@ ht-degree: 49%
 
 #### 目标所需数据
 
-流式受众导出目标(例如Facebook、Google Customer Match、Google DV360)支持客户数据的各种身份：
+流式受众导出目标(如Facebook、Google Customer Match、Google DV360)支持客户数据的各种身份：
 
 * `personalEmail.address`
 * `ECID`

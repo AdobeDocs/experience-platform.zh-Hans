@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 沙盒UI指南
 description: 本文档提供了有关如何在Adobe Experience Platform用户界面中执行与沙盒相关的各种操作的步骤。
 exl-id: b258c822-5182-4217-9d1b-8196d889740f
-source-git-commit: b9b00f41f146b34a1326c4c2ac104c022a416dc9
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1115'
+source-wordcount: '1116'
 ht-degree: 4%
 
 ---
@@ -17,13 +17,13 @@ ht-degree: 4%
 
 ## 查看沙盒
 
-在Experience PlatformUI中，在左侧导航中选择&#x200B;**[!UICONTROL 沙盒]**，然后选择&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡以打开[!UICONTROL 沙盒]仪表板。 仪表板列出了您组织的所有可用沙盒，包括其各自的类型（生产或开发）。
+在Experience Platform UI中，在左侧导航中选择&#x200B;**[!UICONTROL 沙盒]**，然后选择&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡以打开[!UICONTROL 沙盒]仪表板。 仪表板列出了您组织的所有可用沙盒，包括其各自的类型（生产或开发）。
 
 ![选择浏览选项卡的沙盒仪表板，显示可用沙盒的列表。](../images/ui/view-sandboxes.png)
 
 ## 在沙盒之间切换
 
-沙盒指示器位于Platform UI的顶部标题中，并显示您当前所在的沙盒的标题、其区域和类型。
+沙盒指示器位于Experience Platform UI的顶部标题中，显示您当前所在的沙盒的标题、其区域和类型。
 
 ![沙盒指标突出显示的沙盒仪表板。](../images/ui/sandbox-indicator.png)
 
@@ -51,7 +51,7 @@ ht-degree: 4%
 >
 >创建新沙盒需要先将其添加到[[!UICONTROL 权限]](../../access-control/abac/ui/permissions.md)中的角色，然后才能开始使用。 要了解如何为角色配置沙盒，请参阅[为角色管理沙盒](../../access-control/abac/ui/permissions.md#managing-sandboxes-for-role)文档。
 
-请观看以下视频，快速概述如何在Experience Platform中使用沙盒。
+请观看以下视频，快速了解如何在Experience Platform中使用沙盒。
 
 >[!VIDEO](https://video.tv.adobe.com/v/29838/?quality=12&learn=on)
 
@@ -138,6 +138,6 @@ ht-degree: 4%
 
 ## 后续步骤
 
-本文档演示如何在Experience PlatformUI中管理沙盒。 现在您已了解如何管理沙盒，了解如何通过[沙盒工具功能](./sandbox-tooling.md)指南提高沙盒之间的配置准确性以及在沙盒之间无缝导出和导入沙盒配置。
+本文档演示了如何在Experience Platform UI中管理沙箱。 现在您已了解如何管理沙盒，了解如何通过[沙盒工具功能](./sandbox-tooling.md)指南提高沙盒之间的配置准确性以及在沙盒之间无缝导出和导入沙盒配置。
 
 有关如何使用沙盒API管理沙盒的信息，请参阅[沙盒开发人员指南](../api/getting-started.md)。

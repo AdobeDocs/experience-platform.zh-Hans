@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM字段类型约束
 description: 参考体验数据模型(XDM)中的字段类型约束，包括它们可以映射到的其他序列化格式以及如何在API中定义您自己的字段类型。
 exl-id: 63839a28-6d26-46f1-8bbf-b524e82ac4df
-source-git-commit: ca8859c7b71d1b0aad30880ff066d2b4b33b0a35
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '683'
+source-wordcount: '684'
 ht-degree: 1%
 
 ---
@@ -27,7 +27,7 @@ XDM基于JSON架构构建，因此XDM字段在定义其类型时继承类似的�
 
 >[!NOTE]
 >
->有关Platform API中JSON架构和其他基础技术的更多信息，请参阅[API基础指南](../../landing/api-fundamentals.md#json-schema)。
+>有关Experience Platform API中JSON架构和其他基础技术的更多信息，请参阅[API基础指南](../../landing/api-fundamentals.md#json-schema)。
 
 下表概述了每个XDM类型在JSON架构中的表示方式，以及符合该类型的示例值：
 

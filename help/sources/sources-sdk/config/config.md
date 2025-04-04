@@ -1,18 +1,18 @@
 ---
-keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK；SDK
-title: 自助源(Batch SDK)中的配置选项
-description: 本文档概述了为使用自助源(Batch SDK)而需要准备的配置。
+keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源sdk；sdk；SDK
+title: 自助源(批处理SDK)中的配置选项
+description: 本文档概述了为使用自助源(批处理SDK)而需要准备的配置。
 exl-id: a41b3b80-599a-47ed-a391-419721be5aa2
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '294'
+source-wordcount: '295'
 ht-degree: 0%
 
 ---
 
-# 自助源(Batch SDK)中的配置选项
+# 自助源(批处理SDK)中的配置选项
 
-本文档概述了为使用自助源(Batch SDK)而需要准备的配置。
+本文档概述了为使用自助源(批处理SDK)而需要准备的配置。
 
 ## 连接规范
 
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 | 规范 | 描述 |
 | --- | --- |
-| `authSpec` | `authSpec`数组包含有关将源连接到平台所需的身份验证参数的信息。 任何给定的源都可以支持多种不同类型的身份验证。 |
+| `authSpec` | `authSpec`数组包含有关将源连接到Experience Platform所需的身份验证参数的信息。 任何给定的源都可以支持多种不同类型的身份验证。 |
 | `sourceSpec` | `sourceSpec`数组包含与源相关的一般信息，包括在UI中显示源所需的属性信息、文档链接，以及有关分页、标题、正文和计划的参数。 此外，`sourceSpec`还描述了从基本连接创建源连接所需的参数的架构，这是创建源连接所必需的。 |
 | `exploreSpec` | `exploreSpec`数组定义浏览和检查源中包含的对象所需的参数。 `exploreSpec`还定义了探索和检查对象时返回的响应格式。 |
 

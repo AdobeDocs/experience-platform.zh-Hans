@@ -3,9 +3,9 @@ keywords: Experience Platform；首页；热门话题
 title: Identity Service中的隐私请求处理
 description: Adobe Experience Platform Privacy Service会处理客户访问、选择退出销售或删除其个人数据的请求，如大量隐私法规所述。 本文档介绍了与处理Identity Service的隐私请求相关的基本概念。
 exl-id: ab84450b-1a4b-4fdd-b77d-508c86bbb073
-source-git-commit: a75a5603eacc1b4625a19adfddbb2f4bb81f66d3
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1000'
+source-wordcount: '1005'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,7 @@ Adobe Experience Platform [!DNL Privacy Service]处理客户访问、选择退�
 
 >[!NOTE]
 >
->本指南仅介绍如何在Experience Platform中对Identity数据存储区发出隐私请求。 如果您还计划为Platform Data Lake或[!DNL Real-Time Customer Profile]提出隐私请求，请参阅关于在Data Lake中处理[隐私请求的指南](../catalog/privacy.md)，以及本教程之外的关于配置文件](../profile/privacy.md)的[隐私请求处理的指南。
+>本指南仅介绍如何在Experience Platform中对Identity数据存储区发出隐私请求。 如果您还计划提出Experience Platform数据湖或[!DNL Real-Time Customer Profile]的隐私请求，请参阅关于数据湖中[隐私请求处理的指南](../catalog/privacy.md)，以及本教程之外的关于配置文件[隐私请求处理](../profile/privacy.md)的指南。
 >
 >有关如何为其他Adobe Experience Cloud应用程序提出隐私请求的步骤，请参阅[Privacy Service文档](../privacy-service/experience-cloud-apps.md)。
 
@@ -104,16 +104,16 @@ curl -X POST \
 
 ## 正在处理删除请求
 
-当[!DNL Experience Platform]收到来自[!DNL Privacy Service]的删除请求时，[!DNL Platform]向[!DNL Privacy Service]发送确认，确认已收到该请求并且受影响的数据已标记为删除。 个人身份的删除基于提供的命名空间和/或ID值。 此外，还会删除与给定组织关联的所有沙盒。
+当[!DNL Experience Platform]收到来自[!DNL Privacy Service]的删除请求时，[!DNL Experience Platform]向[!DNL Privacy Service]发送确认，确认已收到该请求并且受影响的数据已标记为删除。 个人身份的删除基于提供的命名空间和/或ID值。 此外，还会删除与给定组织关联的所有沙盒。
 
 根据您是否还在Identity Service (`identity`)的隐私请求中包含了实时客户档案(`ProfileService`)和数据湖(`aepDataLake`)作为产品，与标识相关的不同数据集可能会在不同的时间从系统中删除：
 
 | 包含的产品 | 效应 |
 | --- | --- |
-| 仅`identity` | 当Platform发送确认消息确认已收到删除请求时，会立即删除提供的身份。 从该身份图构建的配置文件仍会保留，但不会由于接收到新数据而更新，因为身份关联现已移除。 与用户档案关联的数据也保留在数据湖中。 |
-| `identity` 和 `ProfileService` | 当Platform发送确认消息确认已收到删除请求时，会立即删除提供的身份。 与用户档案关联的数据将保留在数据湖中。 |
-| `identity` 和 `aepDataLake` | 当Platform发送确认消息确认已收到删除请求时，会立即删除提供的身份。 从该身份图构建的配置文件仍会保留，但不会由于接收到新数据而更新，因为身份关联现已移除。<br><br>当Data Lake产品回应收到请求且当前正在处理时，与配置文件关联的数据将被软删除，因此任何[!DNL Platform]服务都无法访问。 作业完成后，数据将从数据湖中完全删除。 |
-| `identity`、`ProfileService`和`aepDataLake` | 当Platform发送确认消息确认已收到删除请求时，会立即删除提供的身份。<br><br>当Data Lake产品回应收到请求且当前正在处理时，与配置文件关联的数据将被软删除，因此任何[!DNL Platform]服务都无法访问。 作业完成后，数据将从数据湖中完全删除。 |
+| 仅`identity` | 当Experience Platform发送确认消息确认已收到删除请求时，会立即删除提供的身份。 从该身份图构建的配置文件仍会保留，但不会由于接收到新数据而更新，因为身份关联现已移除。 与用户档案关联的数据也保留在数据湖中。 |
+| `identity` 和 `ProfileService` | 当Experience Platform发送确认消息确认已收到删除请求时，会立即删除提供的身份。 与用户档案关联的数据将保留在数据湖中。 |
+| `identity` 和 `aepDataLake` | 当Experience Platform发送确认消息确认已收到删除请求时，会立即删除提供的身份。 从该身份图构建的配置文件仍会保留，但不会由于接收到新数据而更新，因为身份关联现已移除。<br><br>当Data Lake产品回应收到请求且当前正在处理时，与配置文件关联的数据将被软删除，因此任何[!DNL Experience Platform]服务都无法访问。 作业完成后，数据将从数据湖中完全删除。 |
+| `identity`、`ProfileService`和`aepDataLake` | 当Experience Platform发送确认消息确认已收到删除请求时，会立即删除提供的身份。<br><br>当Data Lake产品回应收到请求且当前正在处理时，与配置文件关联的数据将被软删除，因此任何[!DNL Experience Platform]服务都无法访问。 作业完成后，数据将从数据湖中完全删除。 |
 
 有关跟踪作业状态的详细信息，请参阅[[!DNL Privacy Service] 文档](../privacy-service/home.md#monitor)。
 

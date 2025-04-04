@@ -1,15 +1,15 @@
 ---
-title: 使用Experience Platform用户界面连接Salesforce Service Cloud帐户
-description: 了解如何使用用户界面连接您的Salesforce Service Cloud帐户并将您的客户成功数据Experience Platform。
+title: 使用Salesforce用户界面连接您的Experience Platform服务云帐户
+description: 了解如何使用用户界面连接您的Salesforce Service Cloud帐户并将客户成功数据引入Experience Platform。
 exl-id: 38480a29-7852-46c6-bcea-5dc6bffdbd15
-source-git-commit: 7930a869627130a5db34780e64b809cda0c1e5f4
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '843'
+source-wordcount: '844'
 ht-degree: 3%
 
 ---
 
-# 使用用户界面连接您的[!DNL Salesforce Service Cloud]帐户以Experience Platform
+# 使用UI将您的[!DNL Salesforce Service Cloud]帐户连接到Experience Platform
 
 本教程提供了有关如何使用Experience Platform用户界面连接[!DNL Salesforce Service Cloud]帐户并将客户成功数据引入Adobe Experience Platform的步骤。
 
@@ -17,7 +17,7 @@ ht-degree: 3%
 
 本教程需要对以下Experience Platform组件有一定的了解：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
@@ -63,7 +63,7 @@ ht-degree: 3%
 
 ## 连接您的[!DNL Salesforce Service Cloud]帐户
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
 在&#x200B;*[!UICONTROL 客户成功]*&#x200B;类别下选择&#x200B;**[!DNL Salesforce Service Cloud]**，然后选择&#x200B;**[!UICONTROL 添加数据]**。
 
@@ -71,7 +71,7 @@ ht-degree: 3%
 >
 >当给定的源尚未具有经过身份验证的帐户时，源目录中的源会显示&#x200B;**[!UICONTROL 设置]**&#x200B;选项。 一旦存在经过身份验证的帐户，此选项将更改为&#x200B;**[!UICONTROL 添加数据]**。
 
-![已选择Salesforce Service Cloud源卡的Experience PlatformUI上的源目录。](../../../../images/tutorials/create/salesforce-service-cloud/catalog.png)
+![已选择Experience Platform Service Cloud源卡的Salesforce UI上的源目录。](../../../../images/tutorials/create/salesforce-service-cloud/catalog.png)
 
 此时会显示&#x200B;**[!UICONTROL 连接到Salesforce Service Cloud]**&#x200B;页面。 在此页上，您可以使用新凭据或现有凭据。
 
@@ -79,7 +79,7 @@ ht-degree: 3%
 
 若要使用现有帐户，请选择&#x200B;**[!UICONTROL 现有帐户]**，然后从显示的列表中选择所需的帐户。 完成后，选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
 
-![组织中已存在的经过身份验证的Salesforce Service Cloud帐户列表。](../../../../images/tutorials/create/salesforce-service-cloud/existing.png)
+![您的组织中已存在的经过身份验证的Salesforce Service Cloud帐户的列表。](../../../../images/tutorials/create/salesforce-service-cloud/existing.png)
 
 ### 创建新帐户
 
@@ -102,7 +102,7 @@ ht-degree: 3%
 
 完成后，选择&#x200B;**[!UICONTROL 连接到源]**。
 
-![用于创建Salesforce帐户的基本身份验证接口。](../../../../images/tutorials/create/salesforce-service-cloud/basic.png)
+![用于创建Salesforce帐户的基本身份验证界面。](../../../../images/tutorials/create/salesforce-service-cloud/basic.png)
 
 >[!TAB OAuth2客户端凭据]
 

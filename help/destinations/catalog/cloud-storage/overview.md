@@ -3,10 +3,10 @@ keywords: 云存储目标；云存储
 title: 云存储目标概述
 description: Adobe Experience Platform可以将受众作为数据文件交付到Amazon S3、AWS Kinesis、Azure事件中心或SFTP云存储位置。
 exl-id: d29f0a6e-b323-4f78-bbd0-dee2f1e0fedb
-source-git-commit: 2e21e62de624c5e7e9fac4d36dbf41b46198062a
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '463'
-ht-degree: 5%
+source-wordcount: '464'
+ht-degree: 6%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 5%
 
 ## 概述 {#overview}
 
-Adobe Experience Platform可以将受众作为数据文件交付到云存储位置。 这使您能够通过[!DNL Amazon S3]、[!DNL Azure Blob]、[!DNL Azure Data Lake Storage Gen2]、[!DNL Data Landing Zone]、[!DNL Google Cloud Storage]和SFTP的CSV文件将受众及其配置文件属性发送到您的内部系统。 对于[!DNL Amazon Kinesis]和[!DNL Azure Event Hubs]目标，数据将以[!DNL JSON]格式流式传输到Experience Platform之外。
+Adobe Experience Platform可以将受众作为数据文件交付到云存储位置。 这使您能够通过[!DNL Amazon S3]、[!DNL Azure Blob]、[!DNL Azure Data Lake Storage Gen2]、[!DNL Data Landing Zone]、[!DNL Google Cloud Storage]和SFTP的CSV文件将受众及其配置文件属性发送到您的内部系统。 对于[!DNL Amazon Kinesis]和[!DNL Azure Event Hubs]目标，数据将以[!DNL JSON]格式流式传输出Experience Platform。
 
 ![Adobe云存储目标](../../assets/catalog/cloud-storage/cloud-storage-destinations.png)
 
@@ -33,7 +33,7 @@ Adobe Experience Platform支持将数据导出到以下云存储目标：
 
 ## 连接到新的云存储目标 {#connect-destination}
 
-要将受众发送到营销活动的云存储目标，平台必须首先连接到目标。 有关设置新目标的详细信息，请参阅[目标创建教程](../../ui/connect-destination.md)。
+要将受众发送到营销活动的云存储目标，Experience Platform必须首先连接到目标。 有关设置新目标的详细信息，请参阅[目标创建教程](../../ui/connect-destination.md)。
 
 
 ## 使用宏在存储位置创建一个文件夹 {#use-macros}
@@ -74,7 +74,7 @@ Adobe Experience Platform支持将数据导出到以下云存储目标：
 
 云存储目标支持以下导出类型：
 * **基于配置文件的导出**。 这意味着您正在导出有关受众中个人的详细信息。 个性化时需要这些详细信息，它们可以包括属性、事件、受众成员资格等。
-* **数据集导出**。 此功能允许您将整个数据集导出到云存储目标。 [阅读有关功能的更多信息](/help/destinations/ui/export-datasets.md)。
+* **数据集导出**。 此功能允许您将整个数据集导出到云存储目标。 [参阅更多](/help/destinations/ui/export-datasets.md)关于该功能的信息。
 
 ## 后续步骤 {#next-steps}
 

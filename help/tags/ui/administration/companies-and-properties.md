@@ -2,10 +2,10 @@
 title: 属性
 description: 了解如何在Adobe Experience Platform中为您的组织组织和分组扩展、环境和库。
 exl-id: e5b4a853-c23e-498c-9e20-e773ea1de88b
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1176'
-ht-degree: 55%
+source-wordcount: '1178'
+ht-degree: 59%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 55%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 ## Web 资产
 
@@ -67,7 +67,7 @@ Adobe Experience Platform中的每个标记实施可能大不相同。 他们有
 
 对于在Adobe Experience Platform中工作的个人、团队和组织，他们需要访问您的所有、部分，还是仅一个网站和应用程序？
 
-用户管理功能允许您将所有资产的不同角色分配给不同的人员，或者按资产进行分配。如果某人拥有足够的权限，则该人员可以在该平台组织中的所有资产中执行管理操作。 所有其他角色可以按资产进行分配。您甚至可以对某些用户（非管理员）隐藏资产，方法是不为他们授予该资产中的任何角色。
+用户管理功能允许您将所有资产的不同角色分配给不同的人员，或者按资产进行分配。如果某人拥有足够的权限，则该人员可以在该Experience Platform组织中的所有资产中执行管理操作。 所有其他角色可以按资产进行分配。您甚至可以对某些用户（非管理员）隐藏资产，方法是不为他们授予该资产中的任何角色。
 
 ## 资产页面
 
@@ -133,7 +133,7 @@ Properties 列表显示了以下信息：
 
 1. 选择&#x200B;**[!UICONTROL 保存]**。
 
-创建资产后，Platform会自动添加默认主机、环境组（开发、暂存和生产）以及默认扩展。
+创建资产后，Experience Platform会自动添加默认主机、环境组（开发、暂存和生产）以及默认扩展。
 
 ## 删除资产
 

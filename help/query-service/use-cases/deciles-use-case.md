@@ -2,16 +2,16 @@
 title: 基于Decile的派生数据集用例
 description: 本指南将演示使用查询服务创建基于十分位数的派生数据集以用于用户档案数据所需的步骤。
 exl-id: 0ec6b511-b9fd-4447-b63d-85aa1f235436
-source-git-commit: 2ffb8724b2aca54019820335fb21038ec7e69a7f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1511'
+source-wordcount: '1512'
 ht-degree: 0%
 
 ---
 
 # 基于十进制的派生数据集用例
 
-派生的数据集有助于分析来自数据湖的数据的复杂用例，这些数据可以与其他下游平台服务结合使用，或发布到您的Real-time Customer Profile数据中。
+派生的数据集有助于分析来自数据湖的数据的复杂用例，这些数据可以与其他下游Experience Platform服务结合使用，或发布到您的Real-time Customer Profile数据中。
 
 此示例用例演示了如何创建基于十分位数的派生数据集，以便与实时客户资料数据一起使用。 本指南以航空公司忠诚度方案为例，告知您如何创建使用分类十分位数的数据集，以根据排名属性划分和创建受众。
 
@@ -245,7 +245,7 @@ map_1 AS (
 >
 >如果仅在生命周期内需要十分位数排名，则不需要映射聚合。
 
-#### 唯一标识符
+#### 唯一身份标识符
 
 创建所有成员资格的唯一列表需要唯一标识列表(`membershipNumber`)。
 

@@ -2,9 +2,9 @@
 description: 了解如何设置API调用的格式，以通过Adobe Experience Platform Destination SDK提交目标发布请求。
 title: 创建目标发布请求
 exl-id: 913be9de-a699-4756-885d-b3761ec729cb
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '448'
+source-wordcount: '449'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 1%
 >
 >**API终结点**： `platform.adobe.io/data/core/activation/authoring/destinations/publish`
 
-配置和测试目标后，可将其提交给Adobe进行审查和发布。 请阅读[提交Destination SDK](../guides/submit-destination.md)中编写的目标以进行审核，了解作为目标提交过程的一部分您必须执行的所有其他步骤。
+配置和测试目标后，可将其提交到Adobe进行审查和发布。 请阅读[在Destination SDK](../guides/submit-destination.md)中编写的目标提交以进行审核，了解作为目标提交流程的一部分而必须执行的所有其他步骤。
 
 在以下情况下，使用发布目标API端点提交发布请求：
 
@@ -79,7 +79,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 ## API错误处理
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅平台疑难解答指南中的[API状态代码](../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../landing/troubleshooting.md#request-header-errors)。
+Destination SDK API端点遵循常规Experience Platform API错误消息原则。 请参阅Experience Platform疑难解答指南中的[API状态代码](../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤
 

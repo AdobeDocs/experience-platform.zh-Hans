@@ -1,10 +1,10 @@
 ---
-description: 了解如何为目标设置身份验证机制，并深入了解根据您选择的身份验证方法用户将在UI中看到的内容。
+description: 了解如何为目标设置身份验证机制，并根据您选择的身份验证方法让insight了解用户将在UI中看到的内容。
 title: 客户身份验证配置
 exl-id: 3912012e-0870-47d2-9a6f-7f1fc469a781
-source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1101'
+source-wordcount: '1103'
 ht-degree: 0%
 
 ---
@@ -13,18 +13,18 @@ ht-degree: 0%
 
 Experience Platform为合作伙伴和客户提供的身份验证协议提供了极大的灵活性。 您可以将目标配置为支持任何行业标准身份验证方法，如[!DNL OAuth2]、持有者令牌身份验证、密码身份验证等。
 
-本页说明如何使用首选身份验证方法设置目标。 根据您在创建目标时使用的身份验证配置，客户在Experience PlatformUI中连接到目标时将看到不同类型的身份验证页面。
+本页说明如何使用首选身份验证方法设置目标。 根据您在创建目标时使用的身份验证配置，客户在Experience Platform UI中连接到目标时将看到不同类型的身份验证页面。
 
 要了解此组件在何处适合使用Destination SDK创建的集成，请参阅[配置选项](../configuration-options.md)文档中的关系图或查看以下目标配置概述页面：
 
 * [使用Destination SDK配置流目标](../../guides/configure-destination-instructions.md#create-destination-configuration)
 * [使用Destination SDK配置基于文件的目标](../../guides/configure-file-based-destination-instructions.md#create-destination-configuration)
 
-客户必须先按照[目标连接](../../../ui/connect-destination.md)教程中所述的步骤在Experience Platform和目标之间创建新连接，然后才能将数据从Platform导出到您的目标。
+客户必须先按照[目标连接](../../../ui/connect-destination.md)教程中描述的步骤，在Experience Platform与您的目标之间创建新连接，然后才能将数据从Experience Platform导出到您的目标。
 
 当[通过Destination SDK创建目标](../../authoring-api/destination-configuration/create-destination-configuration.md)时，`customerAuthenticationConfigurations`部分定义客户在[身份验证屏幕](../../../ui/connect-destination.md#authenticate)中看到的内容。 根据目标身份验证类型，客户必须提供各种身份验证详细信息，例如：
 
-* 对于使用[基本身份验证](#basic)的目标，用户必须直接在Experience PlatformUI身份验证页面中提供用户名和密码。
+* 对于使用[基本身份验证](#basic)的目标，用户必须直接在Experience Platform UI身份验证页面中提供用户名和密码。
 * 对于使用[持有者身份验证](#bearer)的目标，用户必须提供持有者令牌。
 * 对于使用[OAuth2授权](#oauth2)的目标，用户将被重定向到您目标的登录页面，他们可以使用凭据登录。
 * 对于[Amazon S3](#s3)目标，用户必须提供其[!DNL Amazon S3]访问密钥和密钥。
@@ -35,11 +35,11 @@ Experience Platform为合作伙伴和客户提供的身份验证协议提供了�
 * [创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)
 * [更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md)
 
-本文介绍了可用于您的目标的所有受支持的客户身份验证配置，并显示客户将基于您为目标设置的身份验证方法在Experience PlatformUI中看到的内容。
+本文介绍了可用于您的目标的所有受支持的客户身份验证配置，并显示了客户将根据您为目标设置的身份验证方法在Experience Platform UI中看到的内容。
 
 >[!IMPORTANT]
 >
->客户身份验证配置不需要配置任何参数。 当[创建](../../authoring-api/destination-configuration/create-destination-configuration.md)或[更新](../../authoring-api/destination-configuration/update-destination-configuration.md)目标配置时，您可以复制并粘贴在API调用中此页面中显示的代码片段，并且您的用户将在Platform UI中看到相应的身份验证屏幕。
+>客户身份验证配置不需要配置任何参数。 当[创建](../../authoring-api/destination-configuration/create-destination-configuration.md)或[更新](../../authoring-api/destination-configuration/update-destination-configuration.md)目标配置时，您可以复制并粘贴在API调用中此页面中显示的代码片段，并且您的用户将在Experience Platform UI中看到相应的身份验证屏幕。
 
 >[!IMPORTANT]
 >
@@ -71,7 +71,7 @@ Experience Platform为合作伙伴和客户提供的身份验证协议提供了�
 
 ## 基本身份验证 {#basic}
 
-对于Experience Platform中的实时（流）集成，支持基本身份验证。
+Experience Platform中的实时（流）集成支持基本身份验证。
 
 配置基本身份验证类型时，用户需要输入用户名和密码以连接到您的目标。
 
@@ -105,7 +105,7 @@ Experience Platform为合作伙伴和客户提供的身份验证协议提供了�
 
 ## OAuth 2身份验证 {#oauth2}
 
-用户选择&#x200B;**[!UICONTROL 连接到目标]**&#x200B;以触发到目标的OAuth 2身份验证流程，如下面的Twitter自定义受众目标示例所示。 有关为目标终结点配置OAuth 2身份验证的详细信息，请阅读专用的[Destination SDKOAuth 2身份验证页面](oauth2-authorization.md)。
+用户选择&#x200B;**[!UICONTROL 连接到目标]**&#x200B;以触发到您的目标的OAuth 2身份验证流程，如下面的Twitter自定义受众目标示例所示。 有关为目标端点配置OAuth 2身份验证的详细信息，请阅读专用的[Destination SDK OAuth 2身份验证页面](oauth2-authorization.md)。
 
 使用OAuth 2身份验证的![UI渲染](../../assets/functionality/destination-configuration/oauth2-authentication-ui.png)
 

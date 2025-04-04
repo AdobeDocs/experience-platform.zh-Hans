@@ -4,9 +4,9 @@ description: 实时客户配置文件允许您通过组合来自多个渠道的�
 title: 在UI中监控用户档案的数据流
 type: Tutorial
 exl-id: 00b624b2-f6d1-4ef2-abf2-52cede89b684
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1076'
+source-wordcount: '1077'
 ht-degree: 7%
 
 ---
@@ -15,16 +15,16 @@ ht-degree: 7%
 
 实时客户配置文件允许您通过组合来自多个渠道的数据（包括在线、离线、CRM和第三方）来查看每个客户的整体视图。 用户档案允许您将客户数据整合到一个统一视图中，并提供每个客户交互的带时间戳的可操作帐户。
 
-监视仪表板在配置文件中为数据活动提供可视化表示形式，包括数据配置文件的状态。 本教程将介绍如何使用“监控”功能板，通过Experience Platform用户界面监控数据配置文件，从而跟踪配置文件处理的状态。
+监视仪表板在配置文件中为数据活动提供可视化表示形式，包括数据配置文件的状态。 本教程介绍了如何使用Experience Platform用户界面使用监视仪表板监视数据配置文件，从而允许您跟踪配置文件处理的状态。
 
 ## 快速入门 {#getting-started}
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-- [数据流](../home.md)：数据流是跨平台移动数据的数据作业的表示形式。 数据流在不同服务之间配置，帮助将数据从源连接器移动到目标数据集、[!DNL Identity]和[!DNL Profile]以及[!DNL Destinations]。
+- [数据流](../home.md)：数据流是跨Experience Platform移动数据的数据作业的表示形式。 数据流在不同服务之间配置，帮助将数据从源连接器移动到目标数据集、[!DNL Identity]和[!DNL Profile]以及[!DNL Destinations]。
    - [数据流运行](../../sources/notifications.md)：数据流运行是基于所选数据流的频率配置的周期性计划作业。
 - [实时客户个人资料](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时客户个人资料。
-- [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+- [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ## 监控轮廓仪表板 {#profile-metrics}
 

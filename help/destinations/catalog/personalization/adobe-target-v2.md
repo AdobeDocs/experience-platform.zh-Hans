@@ -3,9 +3,9 @@ keywords: target扩展；target；target v2；target v2扩展
 title: Adobe Target v2扩展
 description: Adobe Target v2扩展是Adobe Experience Platform中的个性化目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: d1d5ebbc-9093-42b0-8d88-58779df3ec89
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '483'
+source-wordcount: '486'
 ht-degree: 11%
 
 ---
@@ -16,15 +16,15 @@ ht-degree: 11%
 
 Adobe Target 是 Adobe Experience Cloud 解决方案，可提供定制和个性化客户体验所需的一切功能，从而最大限度地提高您的网站和移动站点、应用程序、社交媒体以及其他数字渠道的收入。
 
-Adobe Target v2是Adobe Experience Platform中的个性化扩展。 有关扩展功能的详细信息，请参阅[Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.102722.adobe-target-v2-launch-extension.html)上的扩展页面。
+Adobe Target v2是Adobe Experience Platform中的个性化扩展。 有关扩展功能的更多信息，请参阅[Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.102722.adobe-target-v2-launch-extension.html)上的扩展页面。
 
-此目标是标记扩展。 有关标记扩展如何在Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
+此目标是标记扩展。 有关标记扩展如何在Experience Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
 ![Adobe Target v2 扩展](../../assets/catalog/personalization/adobe-target-v2/catalog.png)
 
 ## 先决条件 {#prerequisites}
 
-此扩展在[!DNL Destinations]目录中提供，适用于已购买Platform的所有客户。
+此扩展位于[!DNL Destinations]目录中，适用于已购买Experience Platform的所有客户。
 
 要使用此扩展，您需要具有对Adobe Experience Platform中标记的访问权限。 标记以内置增值功能的方式提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
 
@@ -32,7 +32,7 @@ Adobe Target v2是Adobe Experience Platform中的个性化扩展。 有关扩展
 
 安装Adobe Target v2扩展：
 
-在[平台接口](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**。
+在[Experience Platform界面](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**。
 
 从目录中选择扩展或使用搜索栏。
 

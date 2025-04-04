@@ -1,16 +1,16 @@
 ---
 keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；营销活动；营销活动托管服务
-title: 使用Platform UI创建Adobe Campaign Managed Cloud Services源连接
-description: 了解如何使用Platform UI将Adobe Experience Platform连接到Adobe Campaign Managed Cloud Services。
+title: 使用Experience Platform UI创建Adobe Campaign Managed Cloud Services源连接
+description: 了解如何使用Adobe Experience Platform UI将Experience Platform连接到Adobe Campaign Managed Cloud Services。
 exl-id: 067ed558-b239-4845-8c85-3bf9b1d4caed
-source-git-commit: 67f42c155bf34f2b8adc3b08536bb3310bb77390
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1233'
+source-wordcount: '1246'
 ht-degree: 6%
 
 ---
 
-# 使用Platform UI创建Adobe Campaign Managed Cloud Services源连接
+# 使用Experience Platform UI创建Adobe Campaign Managed Cloud Services源连接
 
 本教程提供了创建源连接以将Adobe Campaign Managed Cloud Services数据引入到Adobe Experience Platform的步骤。
 
@@ -18,15 +18,15 @@ ht-degree: 6%
 
 本指南要求您对Experience Platform的以下组件有一定的了解：
 
-* [源](../../../../home.md)： Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
+* [源](../../../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
 * [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
-* [沙盒](../../../../../sandboxes/home.md)： Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [沙盒](../../../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-## 将Adobe Campaign Managed Cloud Services连接到平台
+## 将Adobe Campaign Managed Cloud Services连接到Experience Platform
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 您还可以使用搜索栏缩小显示的源。
 
@@ -60,7 +60,7 @@ ht-degree: 6%
 | --- | --- |
 | Adobe Campaign实例 | 您正在使用的Adobe Campaign环境实例的名称。 |
 | 目标映射 | Campaign用于投放消息的技术对象，包含发送投放所需的所有技术设置。 |
-| 架构名称 | 您要带到Platform的架构实体的名称。 选项包括投放日志和跟踪日志。 |
+| 架构名称 | 您带到Experience Platform的架构实体的名称。 选项包括投放日志和跟踪日志。 |
 
 ![可配置Adobe Campaign实例、目标映射和架构名称的界面。](../../../../images/tutorials/create/campaign/select-data.png)
 
@@ -96,7 +96,7 @@ ht-degree: 6%
 
 此时将显示[!UICONTROL 映射]步骤，该步骤为您提供了一个接口，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
 
-Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](../../../../../data-prep/ui/mapping.md)。
+Experience Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](../../../../../data-prep/ui/mapping.md)。
 
 >[!IMPORTANT]
 >
@@ -145,7 +145,7 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 ## 后续步骤
 
-通过学习本教程，您已成功创建了一个数据流，将Campaign v8投放日志和跟踪日志数据引入到Platform。 传入数据现在可供下游平台服务（如[!DNL Real-Time Customer Profile]和[!DNL Data Science Workspace]）使用。 有关更多详细信息，请参阅以下文档：
+通过学习本教程，您已成功创建了一个数据流，将Campaign v8投放日志和跟踪日志数据引入到Experience Platform。 传入数据现在可供下游Experience Platform服务（如[!DNL Real-Time Customer Profile]和[!DNL Data Science Workspace]）使用。 有关更多详细信息，请参阅以下文档：
 
 * [[!DNL Real-Time Customer Profile] 概述](../../../../../profile/home.md)
 * [[!DNL Data Science Workspace] 概述](../../../../../data-science-workspace/home.md)

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据建模的最佳实践
 description: 本文档介绍了Experience Data Model (XDM)架构以及用于构成要在Adobe Experience Platform中使用的架构的构建块、原则和最佳实践。
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-source-git-commit: b144a93374fc627f9001b80695cad3f17e28a6fe
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '3214'
+source-wordcount: '3224'
 ht-degree: 1%
 
 ---
@@ -19,33 +19,33 @@ ht-degree: 1%
 
 ## 快速入门
 
-在阅读本指南之前，请查阅[XDM系统概述](../home.md)，以了解XDM及其在Experience Platform中的角色的高级介绍。
+在阅读本指南之前，请查看[XDM系统概述](../home.md)，详细了解XDM及其在Experience Platform中的角色。
 
 由于本指南专门侧重于架构设计方面的关键注意事项，因此强烈建议您阅读架构组合的[基础知识](./composition.md)，以了解本指南中提到的各个架构元素的详细解释。
 
 ## 最佳实践摘要 {#summary}
 
-设计用于Experience Platform的数据模型的推荐方法可概括如下：
+设计数据模型以用于Experience Platform的推荐方法可概括如下：
 
 1. 了解数据的业务用例。
-1. 确定应引入Platform的主要数据源，以解决这些用例。
-1. 确定可能还感兴趣的任何辅助数据源。 例如，如果贵组织中目前只有一个业务部门有兴趣将其数据移植到Platform，则类似的业务部门将来可能也有兴趣移植类似的数据。 考虑这些次要源有助于在整个组织中标准化数据模型。
+1. 确定应引入Experience Platform的主要数据源，以解决这些用例。
+1. 确定可能还感兴趣的任何辅助数据源。 例如，如果贵组织中目前只有一个业务部门有兴趣将其数据移植到Experience Platform，则类似的业务部门将来也可能会有兴趣移植类似的数据。 考虑这些次要源有助于在整个组织中标准化数据模型。
 1. 为已识别的数据源创建高级实体关系图(ERD)。
-1. 将高级ERD转换为以平台为中心的ERD（包括用户档案、体验事件和查找实体）。
+1. 将高级ERD转换为以Experience Platform为中心的ERD（包括用户档案、体验事件和查找实体）。
 
-与确定实施业务用例所需的适用数据源相关的步骤因组织而异。 虽然本文档中的其他部分侧重于确定数据源后组织和构建ERD的后几个步骤，但图表各组件的解释可能会指导您决定应将哪些数据源迁移到Platform。
+与确定实施业务用例所需的适用数据源相关的步骤因组织而异。 虽然本文档中的其他部分侧重于确定数据源后组织和构建ERD的后面步骤，但图表各个组件的解释可能会指导您决定应将哪些数据源迁移到Experience Platform。
 
 ## 创建高级ERD {#create-an-erd}
 
-确定要引入Platform的数据源后，请创建一个高级别的ERD来帮助指导将数据映射到XDM架构的过程。
+确定要引入Experience Platform的数据源后，请创建一个高级ERD以帮助指导将数据映射到XDM架构的过程。
 
-以下示例为希望将数据导入Platform的公司提供了一个简化的ERD。 该图表突出显示应分类为XDM类的基本实体，包括客户帐户、酒店和几个常见的电子商务事件。
+以下示例为希望将数据导入Experience Platform的公司提供了一个简化的ERD。 该图表突出显示应分类为XDM类的基本实体，包括客户帐户、酒店和几个常见的电子商务事件。
 
 ![实体关系图，它突出显示应排序为XDM类以供数据摄取的基本实体。](../images/best-practices/erd.png)
 
 ## 按配置文件、查找和事件类别对实体进行排序 {#sort-entities}
 
-创建ERD以标识要引入Platform中的基本实体后，必须将这些实体分类为配置文件、查找和事件类别：
+创建ERD以标识要引入Experience Platform中的基本实体后，必须将这些实体分类为配置文件、查找和事件类别：
 
 | 类别 | 描述 |
 | --- | --- |
@@ -79,7 +79,7 @@ ht-degree: 1%
 
 #### 随时间跟踪数据 {#track-data}
 
-如果要分析实体中的某些属性如何随时间变化，则很可能是事件实体。 例如，可以将将产品项目添加到购物车作为Platform中的添加到购物车事件进行跟踪：
+如果要分析实体中的某些属性如何随时间变化，则很可能是事件实体。 例如，可以将产品项目添加到购物车作为Experience Platform中的添加到购物车事件进行跟踪：
 
 | 客户ID | 类型 | 产品 ID | 数量 | 时间戳 |
 | --- | --- | --- | --- | --- |
@@ -113,7 +113,7 @@ ht-degree: 1%
 
 >[!CAUTION]
 >
->Experience Platform当前不执行自动值聚合，尽管计划在将来的版本中执行此操作。 如果选择使用聚合值，则必须先从外部执行计算，然后再将数据发送到Platform。
+>Experience Platform目前不执行自动值聚合，不过计划在将来的版本中执行此操作。 如果选择使用聚合值，则在将数据发送到Experience Platform之前，必须在外部执行计算。
 
 #### 基数 {#cardinality}
 
@@ -208,7 +208,7 @@ ht-degree: 1%
 
 在设计架构时，关系数据库表中的任何主键都可能是主标识的候选。 适用标识字段的其他示例包括客户电子邮件地址、电话号码、帐户ID和[ECID](../../identity-service/features/ecid.md)。
 
-### Adobe的应用程序架构字段组 {#adobe-application-schema-field-groups}
+### Adobe应用程序架构字段组 {#adobe-application-schema-field-groups}
 
 Experience Platform提供了多个现成的XDM架构字段组，用于捕获与以下Adobe应用程序相关的数据：
 
@@ -217,7 +217,7 @@ Experience Platform提供了多个现成的XDM架构字段组，用于捕获与�
 * Adobe Campaign
 * Adobe Target
 
-例如，您可以使用[[!UICONTROL Adobe Analytics ExperienceEvent模板]字段组](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json)将[!DNL Analytics]特定的字段映射到您的XDM架构。 根据您使用的Adobe应用程序，应在架构中使用这些Adobe提供的字段组。
+例如，您可以使用[[!UICONTROL Adobe Analytics ExperienceEvent模板]字段组](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json)将[!DNL Analytics]特定的字段映射到您的XDM架构。 根据您使用的Adobe应用程序，您应在架构中使用这些Adobe提供的字段组。
 
 ![Adobe Analytics ExperienceEvent模板]的架构图](../images/best-practices/analytics-field-group.png)[!UICONTROL 
 
@@ -231,7 +231,7 @@ Adobe应用程序字段组通过使用`identityMap`字段自动分配默认主�
 
 ## 数据验证字段 {#data-validation-fields}
 
-将数据摄取到数据湖中时，仅对约束字段强制执行数据验证。 要在批量摄取期间验证特定字段，您必须在XDM架构中将字段标记为受约束。 为防止将错误数据摄取到Platform，建议在创建架构时定义字段级验证标准。
+将数据摄取到数据湖中时，仅对约束字段强制执行数据验证。 要在批量摄取期间验证特定字段，您必须在XDM架构中将字段标记为受约束。 为了防止将错误数据摄取到Experience Platform中，建议在创建架构时定义字段级验证标准。
 
 >[!IMPORTANT]
 >
@@ -245,11 +245,11 @@ Adobe应用程序字段组通过使用`identityMap`字段自动分配默认主�
 
 以下是在创建架构时维护数据完整性的建议集合。
 
-* **考虑主标识**：对于Web SDK、移动设备SDK、Adobe Analytics和Adobe Journey Optimizer等Adobe产品，`identityMap`字段通常用作主标识。 避免将其他字段指定为该架构的主标识。
+* **考虑主标识**：对于Web SDK、移动SDK、Adobe Analytics和Adobe Journey Optimizer等Adobe产品，`identityMap`字段通常用作主标识。 避免将其他字段指定为该架构的主标识。
 * **确保`_id`未用作标识**： Experience Event架构中的`_id`字段不能用作标识，因为它用于记录唯一性。
 * **设置长度约束**：最佳做法是在标记为标识的字段上设置最小和最大长度。 如果您尝试将自定义命名空间分配给身份字段，但不满足最小和最大长度约束，则会触发警告。 这些限制有助于保持一致性和数据质量。
 * **为一致值应用模式**：如果您的标识值遵循特定模式，则应使用&#x200B;**[!UICONTROL 模式]**&#x200B;设置强制实施此约束。 此设置可以包括仅数字、大写或小写或特定字符组合等规则。 使用正则表达式匹配字符串中的模式。
-* **在Analytics架构中限制eVar**：通常，一个Analytics架构应仅有一个指定为身份的eVar。 如果要使用多个eVar作为标识，则应仔细检查数据结构是否可以优化。
+* **在Analytics架构中限制eVar**：通常，一个Analytics架构应仅将一个eVar指定为标识。 如果您打算使用多个eVar作为身份，则应仔细检查数据结构是否可以优化。
 * **确保所选字段的唯一性**：与架构中的主标识相比，您选择的字段应该是唯一的。 如果不是，请不要将其标记为标识。 例如，如果多个客户可以提供相同的电子邮件地址，则该命名空间不是合适的身份。 此原则也适用于其他身份命名空间，如电话号码。 将非唯一字段标记为标识可能会导致不需要的用户档案折叠。
 * **验证最小字符串长度**：所有字符串字段的长度应至少为一个字符，因为字符串值绝不应为空。 但是，可接受非必填字段的空值。
 

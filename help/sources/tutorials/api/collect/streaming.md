@@ -3,33 +3,33 @@ keywords: Experience Platform；主页；热门主题；云存储数据；流数
 solution: Experience Platform
 title: 使用流服务API为原始数据创建流数据流
 type: Tutorial
-description: 本教程涵盖了检索流数据以及使用源连接器和API将它们引入Platform的步骤。
+description: 本教程介绍了有关检索流数据以及使用源连接器和API将它们引入Experience Platform的步骤。
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1169'
+source-wordcount: '1180'
 ht-degree: 2%
 
 ---
 
 # 使用[!DNL Flow Service] API为原始数据创建流式数据流
 
-本教程介绍从流源连接器检索原始数据以及使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将这些数据引入Experience Platform的步骤。
+本教程介绍了从流源连接器检索原始数据以及使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将这些数据引入Experience Platform的步骤。
 
 ## 快速入门
 
 本教程要求您实际了解Adobe Experience Platform的以下组件：
 
-- [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+- [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
    - [架构组合的基础知识](../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    - [架构注册表开发人员指南](../../../../xdm/api/getting-started.md)：包含成功执行对架构注册表API的调用所需了解的重要信息。 这包括您的`{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（请特别注意“接受”标头及其可能的值）。
-- [[!DNL Catalog Service]](../../../../catalog/home.md)：目录是Experience Platform中数据位置和历程的记录系统。
-- [[!DNL Streaming ingestion]](../../../../ingestion/streaming-ingestion/overview.md)： Platform流式摄取为用户提供了一种方法，可实时将数据从客户端和服务器端设备发送到Experience Platform。
-- [沙盒](../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+- [[!DNL Catalog Service]](../../../../catalog/home.md)：目录是Experience Platform中数据位置和谱系的记录系统。
+- [[!DNL Streaming ingestion]](../../../../ingestion/streaming-ingestion/overview.md)： Experience Platform的流式摄取为用户提供了一种实时将数据从客户端和服务器端设备发送到Experience Platform的方法。
+- [沙盒](../../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-### 使用平台API
+### 使用Experience Platform API
 
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../landing/api-guide.md)指南。
+有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../../landing/api-guide.md)指南。
 
 ### 创建源连接 {#source}
 
@@ -41,7 +41,7 @@ ht-degree: 2%
 
 ## 创建目标XDM架构 {#target-schema}
 
-为了在Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。 此目标XDM架构还扩展XDM [!DNL Individual Profile]类。
+为了在Experience Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Experience Platform数据集。 此目标XDM架构还扩展XDM [!DNL Individual Profile]类。
 
 要创建目标XDM架构，请向[[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)的`/schemas`端点发出POST请求。
 
@@ -151,7 +151,7 @@ curl -X POST \
 
 ## 创建目标数据集
 
-创建目标XDM架构及其唯一`$id`后，您现在可以创建目标数据集以包含源数据。 要创建目标数据集，请向[目录服务API](https://www.adobe.io/experience-platform-apis/references/catalog/)的`dataSets`端点发出POST请求，同时在有效负载中提供ID作为目标架构。
+创建目标XDM架构及其唯一`$id`后，您现在可以创建目标数据集以包含源数据。 要创建目标数据集，请向[目录服务API](https://www.adobe.io/experience-platform-apis/references/catalog/)的`dataSets`端点发出POST请求，同时在有效负载中提供目标架构的ID。
 
 **API格式**
 
@@ -204,9 +204,9 @@ curl -X POST \
 
 ## 创建目标连接 {#target-connection}
 
-Target连接可创建并管理到Platform的目标连接或传输的数据将要到达的任何位置。 目标连接包含有关创建数据流所需的数据目标、数据格式和目标连接ID的信息。 Target连接实例特定于租户和组织。
+Target连接可创建并管理到Experience Platform的目标连接或传输的数据将要到达的任何位置。 目标连接包含有关创建数据流所需的数据目标、数据格式和目标连接ID的信息。 Target连接实例特定于租户和组织。
 
-要创建Target连接，请向[!DNL Flow Service] API的`/targetConnections`端点发出POST请求。 作为请求的一部分，您必须提供数据格式、上一步中检索到的`dataSetId`以及绑定到[!DNL Data Lake]的固定连接规范ID。 此ID为`c604ff05-7f1a-43c0-8e18-33bf874cb11c`。
+要创建目标连接，请向[!DNL Flow Service] API的`/targetConnections`端点发出POST请求。 作为请求的一部分，您必须提供数据格式、上一步中检索到的`dataSetId`以及绑定到[!DNL Data Lake]的固定连接规范ID。 此ID为`c604ff05-7f1a-43c0-8e18-33bf874cb11c`。
 
 **API格式**
 
@@ -325,7 +325,7 @@ curl -X POST \
 
 ## 检索数据流规范列表 {#specs}
 
-数据流负责从源收集数据并将这些数据导入Platform。 要创建数据流，您必须首先通过向[!DNL Flow Service] API执行GET请求来获取数据流规范。
+数据流负责从源收集数据并将这些数据导入Experience Platform。 要创建数据流，您必须首先通过向[!DNL Flow Service] API执行GET请求来获取数据流规范。
 
 **API格式**
 
@@ -422,7 +422,7 @@ curl -X GET \
 - [映射 ID](#mapping)
 - [数据流规范ID](#specs)
 
-数据流负责从源中计划和收集数据。 您可以通过在有效负载中提供上述值时执行POST请求来创建数据流。
+数据流负责从源中计划和收集数据。 您可以通过在有效负载中提供前面提到的值时执行POST请求来创建数据流。
 
 **API格式**
 
@@ -566,7 +566,7 @@ curl -X POST \
 
 ## 后续步骤
 
-通过阅读本教程，您已创建一个数据流以从流连接器收集流数据。 传入数据现在可供下游平台服务（如[!DNL Real-Time Customer Profile]和[!DNL Data Science Workspace]）使用。 有关更多详细信息，请参阅以下文档：
+通过阅读本教程，您已创建一个数据流以从流连接器收集流数据。 传入数据现在可供下游Experience Platform服务（如[!DNL Real-Time Customer Profile]和[!DNL Data Science Workspace]）使用。 有关更多详细信息，请参阅以下文档：
 
 - [实时客户轮廓概述](../../../../profile/home.md)
 - [数据科学工作区概述](../../../../data-science-workspace/home.md)

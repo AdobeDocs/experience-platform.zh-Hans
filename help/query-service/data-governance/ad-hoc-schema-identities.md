@@ -2,9 +2,9 @@
 title: 在临时数据集中设置主要身份
 description: Adobe Experience Platform查询服务允许您直接通过SQL ALTER TABLE命令为临时模式数据集字段设置标识或主标识。 本文档说明如何使用ALTER TABLE命令设置主标识或辅助标识。
 exl-id: b8e6b87e-c6e5-4688-a936-a3a1510a3c5b
-source-git-commit: d9c3ccdf0c0e191af1ab18e894688f301378156d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '445'
+source-wordcount: '447'
 ht-degree: 1%
 
 ---
@@ -22,7 +22,7 @@ Adobe Experience Platform查询服务允许您使用SQL `ALTER TABLE`命令的�
 
 ## 添加约束 {#add-constraints}
 
-`ALTER TABLE`命令允许您为数据集列添加标签作为人员标识，然后使用SQL更新关联的元数据以将该标签用作主标识。 当通过SQL而不是通过Platform UI直接从架构创建数据集时，这尤其有用。 命令可用于确保Platform中的数据操作符合数据使用策略。
+`ALTER TABLE`命令允许您为数据集列添加标签作为人员标识，然后使用SQL更新关联的元数据以将该标签用作主标识。 当通过SQL而不是通过Experience Platform UI直接从架构创建数据集时，这尤其有用。 命令可用于确保Experience Platform中的数据操作符合数据使用策略。
 
 **示例**
 

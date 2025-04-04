@@ -2,10 +2,10 @@
 title: Web扩展中的视图
 description: 了解如何在Adobe Experience Platform Web扩展中为库模块定义视图。
 exl-id: 4471df3e-75e2-4257-84c0-dd7b708be417
-source-git-commit: 41efcb14df44524b58be2293d2b943bd890c1621
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2061'
-ht-degree: 70%
+source-wordcount: '2063'
+ht-degree: 73%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 70%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 每个事件、条件、操作或数据元素类型可以提供允许用户提供设置的视图。扩展还可以具有顶级[扩展配置视图](../configuration.md)，通过该视图，用户可以为整个扩展提供全局设置。在所有类型的视图中，视图的构建过程都是相同的。
 
@@ -72,9 +72,9 @@ window.extensionBridge.register({
 | `settings` | 包含先前从此视图保存的设置的对象。如果 `settings` 为 `null`，则表示用户正在创建初始设置，而不是加载已保存的版本。如果 `settings` 是一个对象，则应该使用它来填充视图，因为用户正在选择编辑以前保留的设置。 |
 | `extensionSettings` | 从扩展配置视图保存的设置。在非扩展配置视图中访问扩展设置时，这可能很有用。如果当前视图是扩展配置视图，请使用`settings`。 |
 | `propertySettings` | 包含属性设置的对象。有关此对象中所包含内容的详细信息，请参阅 [turbine 对象指南](../turbine.md#property-settings)。 |
-| `tokens` | 包含 API 令牌的对象。要从视图内访问 Adobe API，您通常需要使用 `tokens.imsAccess` 下的 IMS 令牌。此令牌将仅可用于Adobe开发的扩展。 如果您是Adobe员工，代表Adobe创作的扩展，请[向数据收集工程团队发送电子邮件](mailto:reactor@adobe.com)，并提供扩展的名称，以便我们可以将其添加到允许列表中。 |
+| `tokens` | 包含 API 令牌的对象。要从视图内访问 Adobe API，您通常需要使用 `tokens.imsAccess` 下的 IMS 令牌。此令牌将仅可用于Adobe开发的扩展。 如果您是Adobe员工(代表Adobe创作的扩展)，请[向数据收集工程团队发送电子邮件](mailto:reactor@adobe.com)，并提供扩展的名称，以便我们可以将其添加到允许列表中。 |
 | `company` | 包含单个属性`orgId`的对象，该属性本身表示您的Adobe Experience Cloud ID（一个由24个字符组成的字母数字字符串）。 |
-| `schema` | [JSON 模式](https://json-schema.org/)格式中的对象。此对象将来自[扩展清单](../manifest.md)，并且可能有助于验证您的表单。 |
+| `schema` | [JSON 架构](https://json-schema.org/)格式中的对象。此对象将来自[扩展清单](../manifest.md)，并且可能有助于验证您的表单。 |
 
 您的视图应使用此信息来呈现和管理其表单。您可能只需要处理 `info.settings`，但其他信息会在必要时提供。
 
@@ -148,9 +148,9 @@ window.extensionBridge.openDataElementSelector().then(function(dataElement) {
 
 您的视图可能包含用户希望在其中利用数据元素的表单字段。 例如，如果视图有一个用户应在其中输入产品名称的文本字段，那么用户在该字段中键入硬编码值可能没有任何意义。 相反，他们可能希望字段的值是动态的（在运行时确定），并且可以通过使用数据元素来实现这一点。
 
-例如，假设我们正在构建一个扩展，它会发送信标以跟踪转化。我们还假设信标所发送的其中一段数据是产品名称。在允许用户配置信标的扩展视图中，很可能包含一个用于输入产品名称的文本字段。 通常，Platform用户键入静态产品名称（如“Calzone Oven XL”）没有多大意义，因为产品名称可能取决于从中发送信标的页面。 对于数据元素来说，这是一个极好的用例。
+例如，假设我们正在构建一个扩展，它会发送信标以跟踪转化。我们还假设信标所发送的其中一段数据是产品名称。在允许用户配置信标的扩展视图中，很可能包含一个用于输入产品名称的文本字段。 Experience Platform用户键入静态产品名称（例如“Calzone Oven XL”）通常没有多大意义，因为产品名称可能取决于从中发送信标的页面。 对于数据元素来说，这是一个极好的用例。
 
-如果用户希望将名为 `productname` 的数据元素用作产品名称值，则可以键入数据元素的名称，并在名称两侧加上百分比符号 (`%productname%`)。我们将使用百分比符号括起来的数据元素名称称为“数据元素令牌”。 Platform用户通常熟悉此结构。 您的扩展反过来会将数据元素令牌保存在其导出的 `settings` 对象中。然后，您的设置对象可能如下所示：
+如果用户希望将名为 `productname` 的数据元素用作产品名称值，则可以键入数据元素的名称，并在名称两侧加上百分比符号 (`%productname%`)。我们将使用百分比符号括起来的数据元素名称称为“数据元素令牌”。 Experience Platform用户通常熟悉此构造。 您的扩展反过来会将数据元素令牌保存在其导出的 `settings` 对象中。然后，您的设置对象可能如下所示：
 
 ```js
 {
@@ -172,7 +172,7 @@ window.extensionBridge.openDataElementSelector().then(function(dataElement) {
 
 >[!NOTE]
 >
->要下载相应的图标，请导航到Adobe频谱](https://spectrum.adobe.com/page/icons/)上的[图标页面并搜索“[!DNL Data]”。
+>要下载相应的图标，请导航到Adobe Spectrum](https://spectrum.adobe.com/page/icons/)上的[图标页面并搜索“[!DNL Data]”。
 
 当用户选择文本字段旁边的按钮时，将调用 `window.extensionBridge.openDataElementSelector`，[如上所述](#open-data-element)。这会显示用户可以从中进行选择的数据元素列表，而不是强制用户记住数据元素名称并键入百分比符号。用户选择数据元素后，您将收到用百分比符号括起来的选定数据元素的名称（除非您已将 `tokenize` 选项设置为 `false`）。我们建议您随后使用该结果填充文本字段。
 

@@ -4,9 +4,9 @@ title: 基于属性的访问控制API快速入门
 description: 基于属性的访问控制API允许您在Adobe Experience Platform中以编程方式管理角色和访问策略。 参阅本指南，了解如何使用 API 执行关键操作。
 role: Developer
 exl-id: d1a66afa-dff4-49d7-b57c-527f05977155
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '327'
+source-wordcount: '328'
 ht-degree: 17%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 17%
 
 ## 收集所需标头的值
 
-本指南要求您完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)，才能成功调用平台API。 完成身份验证教程将为所有Experience PlatformAPI调用中的每个所需标头提供值，如下所示：
+本指南要求您完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)，才能成功调用Experience Platform API。 完成身份验证教程将为所有Experience Platform API调用中的每个所需标头提供值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
@@ -31,7 +31,7 @@ ht-degree: 17%
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
-包含有效负载(POST、PUT和PATCH)的所有请求都需要额外的标头：
+所有包含有效负载(POST、PUT和PATCH)的请求都需要额外的标头：
 
 * `Content-Type: application/json`
 

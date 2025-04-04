@@ -2,11 +2,11 @@
 keywords: Experience Platform；主页；热门主题；API；API；XDM；XDM系统；体验数据模型；数据模型；ui；工作区；枚举；字段；
 solution: Experience Platform
 title: 在UI中定义枚举字段和建议值
-description: 了解如何在Experience Platform用户界面中为字符串字段定义枚举和建议值。
+description: 了解如何在Experience Platform用户界面中定义字符串字段的枚举和建议值。
 exl-id: 67ec5382-31de-4f8d-9618-e8919bb5a472
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1256'
+source-wordcount: '1257'
 ht-degree: 8%
 
 ---
@@ -86,7 +86,7 @@ See the [section below](#evolution) for more information on the rules for updati
 
 ## 枚举和建议值的演化规则 {#evolution}
 
-使用具有枚举字段的架构将数据摄取到Platform后，对架构定义所做的任何进一步更改都必须符合系统中已存在的数据。 通常，对现有字段所做的更改只能使该字段&#x200B;**的限制更少**。 不能使字段的限制比它已有的更严格。
+使用具有枚举字段的架构将数据摄取到Experience Platform后，对架构定义所做的任何进一步更改都必须符合系统中已存在的数据。 通常，对现有字段所做的更改只能使该字段&#x200B;**的限制更少**。 不能使字段的限制比它已有的更严格。
 
 对于枚举和建议值，以下规则适用于摄取后：
 

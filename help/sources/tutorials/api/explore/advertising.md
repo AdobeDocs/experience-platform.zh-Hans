@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform；主页；热门主题；广告系统；Advertising system
+keywords: Experience Platform；主页；热门主题；Advertising System；Advertising System
 solution: Experience Platform
 title: 使用流服务API浏览Advertising系统
 description: 流量服务用于从Adobe Experience Platform内各种不同的来源收集和集中客户数据。 该服务提供了一个用户界面和RESTful API，所有受支持的源均可从该API连接。 本教程使用流服务API来探索广告系统。
 exl-id: 3016ce1e-12e6-47ce-a4c5-52f8d440f515
-source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '498'
+source-wordcount: '503'
 ht-degree: 5%
 
 ---
@@ -21,22 +21,22 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
->本教程要求您拥有广告源的唯一基本连接ID。 如果您没有此ID，请参阅有关[将广告源连接到Platform](../../api/create/advertising/ads.md)的教程。
+>本教程要求您拥有广告源的唯一基本连接ID。 如果您没有此ID，请参阅有关[将广告源连接到Experience Platform](../../api/create/advertising/ads.md)的教程。
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [源](../../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。
-* [沙盒](../../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强传入数据。
+* [沙盒](../../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了使用[!DNL Flow Service] API成功连接到广告系统所需了解的其他信息。
 
-### 使用平台API
+### 使用Experience Platform API
 
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../landing/api-guide.md)指南。
+有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../../landing/api-guide.md)指南。
 
 ## 浏览您的数据表
 
-通过使用广告系统的基本连接，您可以通过执行GET请求来浏览数据表。 使用以下调用查找要检查或纳入[!DNL Platform]的表的路径。
+通过使用广告系统的基本连接，您可以通过执行GET请求来浏览数据表。 使用以下调用查找要检查或纳入[!DNL Experience Platform]的表的路径。
 
 **API格式**
 
@@ -61,7 +61,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应是从到广告系统的大量表。 查找要引入[!DNL Platform]的表并记下其`path`属性，因为您需要在下一步中提供该表以检查其结构。
+成功的响应是从到广告系统的大量表。 查找要引入[!DNL Experience Platform]的表并记下其`path`属性，因为您需要在下一步中提供该表以检查其结构。
 
 ```json
 [
@@ -96,9 +96,9 @@ curl -X GET \
 ]
 ```
 
-## Inspect表的结构
+## 检查表的结构
 
-要从广告系统中检查表的结构，请在将表的路径指定为查询参数时执行GET请求。
+要从广告系统检查表的结构，请在将表的路径指定为查询参数时执行GET请求。
 
 **API格式**
 
@@ -170,4 +170,4 @@ curl -X GET \
 
 ## 后续步骤
 
-通过完成本教程，您已探索广告系统，找到要引入[!DNL Platform]的表的路径，并获取有关其结构的信息。 您可以在下一个教程中使用此信息从广告系统[收集数据并将其带入Platform](../collect/advertising.md)。
+通过完成本教程，您已探索广告系统，找到要引入[!DNL Experience Platform]的表的路径，并获取有关其结构的信息。 您可以在下一个教程中使用此信息从广告系统[收集数据并将其引入Experience Platform](../collect/advertising.md)。

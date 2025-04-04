@@ -1,10 +1,10 @@
 ---
 title: 使用机器学习生成的预测模型确定倾向分数
-description: 了解如何使用查询服务将您的预测模型应用于Platform数据。 本文档演示了如何使用Platform数据来预测客户每次访问的购买倾向。
+description: 了解如何使用查询服务将您的预测模型应用于Experience Platform数据。 本文档演示了如何使用Experience Platform数据来预测客户每次访问的购买倾向。
 exl-id: 29587541-50dd-405c-bc18-17947b8a5942
-source-git-commit: 40c27a52fdae2c7d38c5e244a6d1d6ae3f80f496
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1304'
+source-wordcount: '1309'
 ht-degree: 0%
 
 ---
@@ -35,9 +35,9 @@ numpy
 tqdm
 ```
 
-## 将分析表从Platform导入[!DNL Jupyter Notebook] {#import-analytics-tables}
+## 将Experience Platform中的分析表导入[!DNL Jupyter Notebook] {#import-analytics-tables}
 
-要生成倾向分数模型，必须将存储在Platform中的分析数据的投影导入[!DNL Jupyter Notebook]。 从连接到查询服务的[!DNL Python] 3 [!DNL Jupyter Notebook]，以下命令从虚拟服装店Luma导入客户行为数据集。 由于Platform数据是使用Experience Data Model (XDM)格式存储的，因此必须生成符合架构结构的示例JSON对象。 有关如何[生成示例JSON对象](../../xdm/ui/sample.md)的说明，请参阅文档。
+要生成倾向分数模型，必须将存储在Experience Platform中的分析数据的投影导入[!DNL Jupyter Notebook]。 从连接到查询服务的[!DNL Python] 3 [!DNL Jupyter Notebook]，以下命令从虚拟服装店Luma导入客户行为数据集。 由于Experience Platform数据是使用Experience Data Model (XDM)格式存储的，因此必须生成符合架构结构的示例JSON对象。 有关如何[生成示例JSON对象](../../xdm/ui/sample.md)的说明，请参阅文档。
 
 ![高亮显示具有多个命令的[!DNL Jupyter Notebook]仪表板。](../images/use-cases/jupyter-commands.png)
 

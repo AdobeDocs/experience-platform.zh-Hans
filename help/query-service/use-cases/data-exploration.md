@@ -2,9 +2,9 @@
 title: 使用SQL浏览、排除和验证批量摄取
 description: 了解如何在Adobe Experience Platform中了解和管理数据摄取过程。 本文档包括如何验证批次和查询摄取的数据。
 exl-id: 8f49680c-42ec-488e-8586-50182d50e900
-source-git-commit: 692a061e3b2facbfafc65f966832230187f5244d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1160'
+source-wordcount: '1170'
 ht-degree: 0%
 
 ---
@@ -24,10 +24,10 @@ ht-degree: 0%
 
 为了帮助您了解本文档中讨论的概念，您应该了解以下主题：
 
-- **数据摄取**：请参阅[数据摄取概述](../../ingestion/home.md)，了解将数据摄取到Platform的基础知识，包括涉及的不同方法和流程。
-- **批次摄取**：请参阅[批次摄取API概述](../../ingestion/batch-ingestion/overview.md)，了解批次摄取的基本概念。 具体而言，“批处理”是什么以及它在Platform的数据摄取过程中如何发挥作用。
+- **数据摄取**：请参阅[数据摄取概述](../../ingestion/home.md)，了解将数据摄取到Experience Platform的基础知识，包括涉及的各种方法和流程。
+- **批次摄取**：请参阅[批次摄取API概述](../../ingestion/batch-ingestion/overview.md)，了解批次摄取的基本概念。 具体而言，“批处理”是什么以及它在Experience Platform的数据摄取过程中如何发挥作用。
 - **数据集中的系统元数据**：请参阅[目录服务概述](../../catalog/home.md)，了解如何使用系统元数据字段跟踪和查询摄取的数据。
-- **体验数据模型(XDM)**：查看[架构UI概述](../../xdm/ui/overview.md)和架构组合的[&#39;基础知识&#39;](../../xdm/schema/composition.md)，了解XDM架构以及它们如何表示和验证引入到Platform的数据的结构和格式。
+- **体验数据模型(XDM)**：请参阅[架构UI概述](../../xdm/ui/overview.md)和架构组合的[&#39;基础知识&#39;](../../xdm/schema/composition.md)，了解XDM架构以及它们如何表示和验证摄取到Experience Platform的数据的结构和格式。
 
 ## 访问数据集批次元数据 {#access-dataset-batch-metadata}
 
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 ![显示并突出显示movie_data表及其元数据列的DBVisualizer UI。](../images/use-cases/movie_data-table-with-metadata-columns.png)
 
-当数据被摄取到Platform中时，会根据传入的数据为其分配一个逻辑分区。 此逻辑分区由`_acp_system_metadata.sourceBatchId`表示。 此ID有助于在处理和存储数据批次之前对其进行逻辑分组和识别。
+当数据被摄取到Experience Platform中时，会根据传入数据为其分配一个逻辑分区。 此逻辑分区由`_acp_system_metadata.sourceBatchId`表示。 此ID有助于在处理和存储数据批次之前对其进行逻辑分组和识别。
 
 在处理数据并将其引入数据湖后，将为其分配一个由`_ACP_BATCHID`表示的物理分区。 此ID反映摄取的数据所在的数据湖中的实际存储分区。
 
@@ -56,7 +56,7 @@ GROUP BY _acp_system_metadata
 
 这些结果表明，输入批次的数量与输出批次的数量并不一定匹配，因为系统决定了将数据分批并存储在数据湖中的最有效方式。
 
-在本例中，假定您已将CSV文件摄取到Platform并创建了一个名为`drug_checkout_data`的数据集。
+在本例中，假定您已将CSV文件摄取到Experience Platform并创建了一个名为`drug_checkout_data`的数据集。
 
 `drug_checkout_data`文件是35,000条记录的深度嵌套集。 使用SQL语句`SELECT * FROM drug_orders;`预览基于JSON的`drug_orders`数据集中的第一组记录。
 
@@ -92,19 +92,19 @@ GROUP  BY _acp_system_metadata
 
 >[!TIP]
 >
->要检索批次ID并查询与该批次ID关联的记录，必须先在Platform中创建批次。 如果您希望自行测试该过程，则可以将CSV数据摄取到Platform。 阅读有关如何使用AI生成的推荐](../../ingestion/tutorials/map-csv/recommendations.md)将CSV文件[映射到现有XDM架构的指南。
+>要检索批次ID并查询与该批次ID关联的记录，您必须首先在Experience Platform中创建批次。 如果您希望自己测试该过程，则可以将CSV数据摄取到Experience Platform。 阅读有关如何使用AI生成的推荐](../../ingestion/tutorials/map-csv/recommendations.md)将CSV文件[映射到现有XDM架构的指南。
 
 摄取批次后，您必须导航到将数据摄取到的数据集的[!UICONTROL 数据集活动选项卡]。
 
-在Experience PlatformUI中，在左侧导航中选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以打开[!UICONTROL 数据集]仪表板。 接下来，从[!UICONTROL 浏览]选项卡中选择数据集的名称以访问[!UICONTROL 数据集活动]屏幕。
+在Experience Platform UI中，在左侧导航中选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以打开[!UICONTROL 数据集]仪表板。 接下来，从[!UICONTROL 浏览]选项卡中选择数据集的名称以访问[!UICONTROL 数据集活动]屏幕。
 
-![Platform UI数据集仪表板在左侧导航中突出显示了数据集。](../images/use-cases/datasets-workspace.png)
+![左侧导航中突出显示了数据集的Experience Platform UI数据集仪表板。](../images/use-cases/datasets-workspace.png)
 
 将显示[!UICONTROL 数据集活动]视图。 此视图包含选定数据集的详细信息。 它包括以表格式显示的任何摄取的批次。
 
 从可用批次列表中选择一个批次，然后从右侧的详细信息面板中复制[!UICONTROL 批次ID]。
 
-![Experience Platform数据集UI显示带有突出显示的批次ID的摄取记录。](../images/use-cases/batch-id.png)
+![Experience Platform数据集UI显示已摄取记录，批次ID突出显示。](../images/use-cases/batch-id.png)
 
 接下来，使用以下查询检索作为该批次的一部分包含在数据集中的所有记录：
 
@@ -124,8 +124,8 @@ LIMIT 1;
 
 ## 后续步骤 {#next-steps}
 
-通过阅读本文档，您已了解在数据摄取过程中验证和验证摄取批次中的记录的重要性。 此外，您还可以深入了解如何访问数据集批处理元数据、了解逻辑分区和物理分区以及使用SQL命令查询特定批处理。 此知识可以帮助您确保数据完整性并优化Platform上的数据存储。
+通过阅读本文档，您已了解在数据摄取过程中验证和验证摄取批次中的记录的重要性。 此外，您还可以深入了解如何访问数据集批处理元数据、了解逻辑分区和物理分区以及使用SQL命令查询特定批处理。 此知识可帮助您确保数据完整性并优化Experience Platform上的数据存储。
 
-接下来，您应该练习数据摄取，以应用所学到的概念。 使用提供的示例文件或您自己的数据将示例数据集摄取到Platform。 如果您尚未这样做，请阅读关于如何[将数据摄取到Adobe Experience Platform](../../ingestion/tutorials/ingest-batch-data.md)的教程。
+接下来，您应该练习数据摄取，以应用所学到的概念。 使用提供的示例文件或您自己的数据将示例数据集摄取到Experience Platform中。 如果您尚未这样做，请阅读关于如何[将数据摄取到Adobe Experience Platform](../../ingestion/tutorials/ingest-batch-data.md)的教程。
 
 或者，您可以学习如何[连接和验证查询服务以及各种桌面客户端应用程序](../clients/overview.md)，以增强您的数据分析功能。

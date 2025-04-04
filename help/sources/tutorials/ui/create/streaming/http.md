@@ -2,9 +2,9 @@
 title: 使用UI创建HTTP API流连接
 description: 本UI指南将帮助您使用Adobe Experience Platform创建流连接。
 exl-id: 7932471c-a9ce-4dd3-8189-8bc760ced5d6
-source-git-commit: de721d204cda8e55c72ac5f530b89b2275d94306
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1000'
+source-wordcount: '1003'
 ht-degree: 1%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 1%
 
 ## 创建流连接
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
@@ -66,7 +66,7 @@ ht-degree: 1%
 
 ## 将数据字段映射到XDM架构
 
-出现[!UICONTROL 映射]步骤，提供用于将源数据映射到Platform数据集的接口。
+此时将显示[!UICONTROL 映射]步骤，该步骤提供了一个用于将源数据映射到Experience Platform数据集的界面。
 
 [!DNL HTTP API]源支持摄取JSON文件。 如果将JSON文件标记为XDM投诉，则无需手动配置。 如果没有，则必须显式配置映射。
 
@@ -141,4 +141,4 @@ ht-degree: 1%
 
 通过遵循本教程，您已创建一个流HTTP连接，从而允许您使用流端点访问各种[!DNL Data Ingestion] API。 有关在API中创建流连接的说明，请参阅[创建流连接教程](../../../api/create/streaming/http.md)。
 
-要了解如何将数据流式传输到Platform，请阅读有关[流式传输时间序列数据](../../../../../ingestion/tutorials/streaming-time-series-data.md)的教程或有关[流式传输记录数据](../../../../../ingestion/tutorials/streaming-record-data.md)的教程。
+要了解如何将数据流式传输到Experience Platform，请阅读有关[流式传输时间序列数据](../../../../../ingestion/tutorials/streaming-time-series-data.md)的教程或有关[流式传输记录数据](../../../../../ingestion/tutorials/streaming-record-data.md)的教程。

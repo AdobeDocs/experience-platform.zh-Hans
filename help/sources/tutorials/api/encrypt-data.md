@@ -2,42 +2,42 @@
 title: 加密的数据摄取
 description: 了解如何使用API通过云存储批处理源摄取加密文件。
 exl-id: 83a7a154-4f55-4bf0-bfef-594d5d50f460
-source-git-commit: 9a5599473f874d86e2b3c8449d1f4d0cf54b672c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1806'
+source-wordcount: '1816'
 ht-degree: 3%
 
 ---
 
 # 加密的数据摄取
 
-您可以使用云存储批处理源将加密的数据文件摄取到Adobe Experience Platform。 通过加密的数据摄取，您可以利用非对称加密机制将批量数据安全地传输到Experience Platform中。 目前，支持的不对称加密机制有PGP和GPG。
+您可以使用云存储批处理源将加密的数据文件摄取到Adobe Experience Platform。 通过加密的数据摄取，您可以利用非对称加密机制将批量数据安全地传输到Experience Platform。 目前，支持的不对称加密机制有PGP和GPG。
 
 加密数据摄取过程如下：
 
-1. [使用Experience PlatformAPI创建加密密钥对](#create-encryption-key-pair)。 加密密钥对由私钥和公钥组成。 创建后，您可以复制或下载公钥及其对应的公钥ID和到期时间。 在此过程中，私钥将通过Experience Platform存储在安全保险库中。 **注意：**&#x200B;响应中的公钥采用Base64编码，必须在使用之前进行解码。
+1. [使用Experience Platform API创建加密密钥对](#create-encryption-key-pair)。 加密密钥对由私钥和公钥组成。 创建后，您可以复制或下载公钥及其对应的公钥ID和到期时间。 在此过程中，私钥将由Experience Platform存储在安全保险库中。 **注意：**&#x200B;响应中的公钥采用Base64编码，必须在使用之前进行解码。
 2. 使用公钥加密要摄取的数据文件。
 3. 将加密文件放入云存储中。
 4. 加密文件准备就绪后，[为您的云存储源](#create-a-dataflow-for-encrypted-data)创建源连接和数据流。 在流创建步骤中，必须提供`encryption`参数并包含公钥ID。
-5. Experience Platform从安全保险库中检索私钥，以在摄取时解密数据。
+5. Experience Platform会从安全保险库中检索私钥，以在摄取数据时解密数据。
 
 >[!IMPORTANT]
 >
 >单个加密文件的最大大小为1 GB。 例如，您可以在单个数据流运行中摄取价值2 GB的数据，但该数据中的任何单个文件不能超过1 GB。
 
-本文档提供了有关如何生成加密密钥对以加密数据的步骤，以及如何使用云存储源将加密的数据摄取到Experience Platform的步骤。
+本文档提供了有关如何生成加密密钥对以加密您的数据，以及使用云存储源将该加密数据摄取到Experience Platform的步骤。
 
 ## 快速入门 {#get-started}
 
 本教程要求您实际了解Adobe Experience Platform的以下组件：
 
-* [源](../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
-   * [云存储源](../api/collect/cloud-storage.md)：创建数据流以将批次数据从云存储源引入Experience Platform。
-* [沙盒](../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
+   * [云存储源](../api/collect/cloud-storage.md)：创建数据流以将批量数据从云存储源引入Experience Platform。
+* [沙盒](../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-### 使用平台API
+### 使用Experience Platform API
 
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../landing/api-guide.md)指南。
+有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../landing/api-guide.md)指南。
 
 ### 加密文件支持的文件扩展名 {#supported-file-extensions-for-encrypted-files}
 
@@ -68,7 +68,7 @@ ht-degree: 3%
 >
 >加密密钥特定于给定的沙盒。 因此，如果您希望将加密数据摄取到组织内其他沙盒中，则必须创建新的加密密钥。
 
-将加密数据提取到Experience Platform的第一步是通过向[!DNL Connectors] API的`/encryption/keys`端点发出POST请求来创建加密密钥对。
+将加密数据摄取到Experience Platform的第一步是通过向[!DNL Connectors] API的`/encryption/keys`端点发出POST请求来创建您的加密密钥对。
 
 **API格式**
 
@@ -103,7 +103,7 @@ curl -X POST \
 | --- | --- |
 | `name` | 加密密钥对的名称。 |
 | `encryptionAlgorithm` | 正在使用的加密算法类型。 支持的加密类型为`PGP`和`GPG`。 |
-| `params.passPhrase` | 密码短语为加密密钥提供了额外的保护层。 创建后，Experience Platform将该密码短语存储在与公钥不同的安全电子仓库中。 您必须提供非空字符串作为密码短语。 |
+| `params.passPhrase` | 密码短语为加密密钥提供了额外的保护层。 创建后，Experience Platform会将该密码短语存储在与公钥不同的安全保管库中。 您必须提供非空字符串作为密码短语。 |
 
 +++
 
@@ -123,7 +123,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `publicKey` | 公钥用于对云存储中的数据进行加密。 此密钥与此步骤中创建的私钥相对应。 但是，私钥会立即转到Experience Platform。 |
+| `publicKey` | 公钥用于对云存储中的数据进行加密。 此密钥与此步骤中创建的私钥相对应。 但是，私钥会立即发送到Experience Platform。 |
 | `publicKeyId` | 公钥ID用于创建数据流并将加密的云存储数据摄取到Experience Platform。 |
 | `expiryTime` | 到期时间定义加密密钥对的到期日期。 此日期自动设置为密钥生成日期后的180天，并以unix时间戳格式显示。 |
 
@@ -131,7 +131,7 @@ curl -X POST \
 
 ### 检索加密密钥 {#retrieve-encryption-keys}
 
-要检索组织中的所有加密密钥，请向`/encryption/keys` endpoit=nt发出GET请求。
+要检索组织中的所有加密密钥，请向`/encryption/keys`终结点=nt发出GET请求。
 
 **API格式**
 
@@ -221,9 +221,9 @@ curl -X GET \
 
 您可以选择创建签名验证密钥对，以对您的加密数据进行签名和摄取。
 
-在此阶段，您必须生成自己的私钥和公钥组合，然后使用私钥对加密数据进行签名。 接下来，您必须在Base64中编码公钥，然后将其共享给Experience Platform，以便Platform验证您的签名。
+在此阶段，您必须生成自己的私钥和公钥组合，然后使用私钥对加密数据进行签名。 接下来，您必须在Base64中对公钥进行编码，然后将其共享到Experience Platform，以便Experience Platform验证您的签名。
 
-### 共享您的公钥以Experience Platform
+### 将您的公钥共享到Experience Platform
 
 要共享公钥，请在提供加密算法和Base64编码公钥的同时向`/customer-keys`端点发出POST请求。
 
@@ -274,7 +274,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `publicKeyId` | 作为与Experience Platform共享您的客户管理的密钥的响应，将返回此公钥ID。 在为签名和加密数据创建数据流时，您可以提供此公钥ID作为签名验证密钥ID。 |
+| `publicKeyId` | 在与Experience Platform共享您的客户管理的密钥时，会返回此公钥ID。 在为签名和加密数据创建数据流时，您可以提供此公钥ID作为签名验证密钥ID。 |
 
 +++
 
@@ -320,11 +320,11 @@ curl -X GET \
 
 +++
 
-## 使用[!DNL Flow Service] API连接云存储源以Experience Platform
+## 使用[!DNL Flow Service] API将您的云存储源连接到Experience Platform
 
-在检索到加密密钥对后，您现在可以继续为云存储源创建源连接，并将加密数据导入Platform。
+在检索到加密密钥对后，您现在可以继续为云存储源创建源连接，并将加密数据导入Experience Platform。
 
-首先，您必须创建一个基本连接以对Platform验证您的源。 要创建基本连接并验证源，请从以下列表中选择要使用的源：
+首先，必须创建基本连接以针对Experience Platform验证源。 要创建基本连接并验证源，请从以下列表中选择要使用的源：
 
 * [Amazon S3](../api/create/cloud-storage/s3.md)
 * [[!DNL Apache HDFS]](../api/create/cloud-storage/hdfs.md)
@@ -413,8 +413,8 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `flowSpec.id` | 与云存储源对应的流规范ID。 |
-| `sourceConnectionIds` | 源连接ID。 此ID表示数据从源到Platform的传输。 |
-| `targetConnectionIds` | 目标连接ID 此ID表示数据在被带入Platform后所处的位置。 |
+| `sourceConnectionIds` | 源连接ID。 此ID表示数据从源传输到Experience Platform的过程。 |
+| `targetConnectionIds` | 目标连接ID 此ID表示数据在发送到Experience Platform后登陆的位置。 |
 | `transformations[x].params.mappingId` | 映射ID。 |
 | `transformations.name` | 摄取加密文件时，必须提供`Encryption`作为数据流的附加转换参数。 |
 | `transformations[x].params.publicKeyId` | 您创建的公钥ID。 此ID是用来加密云存储数据的加密密钥对的一半。 |
@@ -541,7 +541,7 @@ curl -X DELETE \
 
 ### 验证加密密钥 {#validate-encryption-keys}
 
-要验证加密密钥，请向`/encryption/keys/validate/`端点发出GET请求，并提供要作为标头参数验证的公钥ID。
+要验证您的加密密钥，请向`/encryption/keys/validate/`端点发出GET请求，并提供要作为标头参数验证的公钥ID。
 
 ```http
 GET /data/foundation/connectors/encryption/keys/validate/{PUBLIC_KEY_ID}
@@ -598,7 +598,7 @@ curl -X GET \
 
 以下是受支持的文件夹结构的示例，其中源路径为`/ACME-customers/*.csv.gpg`。
 
-在此方案中，粗体格式的文件将被摄取到Experience Platform中。
+在此方案中，会将粗体格式的文件摄取到Experience Platform中。
 
 * ACME客户
    * **文件1.csv.gpg**

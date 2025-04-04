@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 量度API端点
 description: 了解如何使用可观察性分析API在Experience Platform中检索可观察性指标。
 exl-id: 08d416f0-305a-44e2-a2b7-d563b2bdd2d2
-source-git-commit: bd5018a2d867d0483f3f2f0c45e356ea69a01801
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1278'
 ht-degree: 3%
@@ -13,7 +13,7 @@ ht-degree: 3%
 
 # 量度端点
 
-可观察性量度可为Adobe Experience Platform中的各种功能提供使用统计信息、历史趋势和绩效指标见解。 [!DNL Observability Insights API]中的`/metrics`端点允许您以编程方式检索[!DNL Platform]中组织活动的量度数据。
+可观察性量度可为Adobe Experience Platform中的各种功能提供使用统计信息、历史趋势和绩效指标见解。 [!DNL Observability Insights API]中的`/metrics`端点允许您以编程方式检索[!DNL Experience Platform]中组织活动的量度数据。
 
 >[!NOTE]
 >
@@ -25,7 +25,7 @@ ht-degree: 3%
 
 ## 检索可观察性指标
 
-您可以通过向`/metrics`端点发出POST请求，指定要在有效负载中检索的指标来检索指标数据。
+您可以通过向`/metrics`端点发出POST请求，指定要在有效负载中检索的量度来检索量度数据。
 
 **API格式**
 
@@ -175,7 +175,7 @@ curl -X POST \
 | `metric` | 请求中提供的某个指标的名称。 |
 | `filters` | 指定度量的过滤器配置。 |
 | `datapoints` | 一个数组，其对象表示指定量度和过滤器的结果。 数组中的对象数取决于请求中提供的过滤器选项。 如果未提供筛选器，则数组将仅包含表示所有数据集的单个对象。 |
-| `groupBy` | 如果在一个量度的`filter`属性中指定了多个数据集，并且在请求中将`groupBy`选项设置为true，则此对象将包含对应`dps`属性应用于的数据集的ID。<br><br>如果此对象在响应中显示为空，则相应的`dps`属性适用于`filters`数组中提供的所有数据集（如果未提供筛选器，则适用于[!DNL Platform]中的所有数据集）。 |
+| `groupBy` | 如果在一个量度的`filter`属性中指定了多个数据集，并且在请求中将`groupBy`选项设置为true，则此对象将包含对应`dps`属性应用于的数据集的ID。<br><br>如果此对象在响应中显示为空，则相应的`dps`属性适用于`filters`数组中提供的所有数据集（如果未提供筛选器，则适用于[!DNL Experience Platform]中的所有数据集）。 |
 | `dps` | 为给定的量度、过滤器和时间范围返回的数据。 此对象中的每个键都表示一个时间戳，该时间戳具有指定度量的相应值。 每个数据点之间的时间段取决于请求中指定的`granularity`值。 |
 
 {style="table-layout:auto"}
@@ -186,7 +186,7 @@ curl -X POST \
 
 ### 可用量度 {#available-metrics}
 
-下表列出了[!DNL Observability Insights]公开的所有指标，按[!DNL Platform]服务进行划分。 每个量度都包括一个描述和接受的ID查询参数。
+下表列出了[!DNL Observability Insights]公开的所有指标，按[!DNL Experience Platform]服务进行划分。 每个量度都包括一个描述和接受的ID查询参数。
 
 >[!NOTE]
 >
@@ -279,8 +279,8 @@ curl -X POST \
 | --- | --- | --- |
 | `INSGHT-1000-400` | 请求有效负载无效 | 请求有效负载出错。 请确保与上面显示的[有效负载格式完全匹配](#v2)。 触发此错误的可能原因有：<ul><li>缺少必填字段，如`aggregator`</li><li>量度无效</li><li>请求包含无效汇总</li><li>开始日期发生在结束日期之后</li></ul> |
 | `INSGHT-1001-400` | 量度查询失败 | 尝试查询量度数据库时出错，因为请求不正确或查询本身无法分析。 在重试之前，请确保您的请求格式正确。 |
-| `INSGHT-1001-500` | 量度查询失败 | 由于服务器错误，尝试查询量度数据库时出错。 请再次尝试该请求，如果问题仍然存在，请联系Adobe支持部门。 |
-| `INSGHT-1002-500` | 服务错误 | 由于内部错误，无法处理该请求。 请再次尝试该请求，如果问题仍然存在，请联系Adobe支持部门。 |
+| `INSGHT-1001-500` | 量度查询失败 | 由于服务器错误，尝试查询量度数据库时出错。 请重试该请求，如果问题依然存在，请联系Adobe支持部门。 |
+| `INSGHT-1002-500` | 服务错误 | 由于内部错误，无法处理该请求。 请重试该请求，如果问题依然存在，请联系Adobe支持部门。 |
 | `INSGHT-1003-401` | 沙盒验证错误 | 由于沙盒验证错误，无法处理请求。 在重试请求之前，请确保您在`x-sandbox-name`标头中提供的沙盒名称表示您的组织启用的有效沙盒。 |
 
 {style="table-layout:auto"}

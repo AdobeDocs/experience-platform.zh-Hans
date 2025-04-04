@@ -3,9 +3,9 @@ keywords: Experience Platform；用户界面；UI；功能板；功能板；配�
 title: 创建功能板的自定义小组件
 description: 本指南提供了有关创建自定义小组件以在Adobe Experience Platform功能板中使用的分步说明。
 exl-id: 0168ab1e-0b7d-4faf-852e-7208a2b09a04
-source-git-commit: 32dd90018c990e7013d826b29608a61022ba808b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '976'
+source-wordcount: '979'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 在Adobe Experience Platform中，您可以使用多个功能板查看组织的数据并与之交互。 您还可以通过向仪表板视图添加新构件来更新某些仪表板。 除了Adobe提供的标准构件之外，您还可以创建自定义构件并在整个组织内共享它们。
 
-本指南提供了在Platform UI中创建自定义构件并将其添加到[!UICONTROL 配置文件]、[!UICONTROL 区段]和[!UICONTROL 目标]功能板的分步说明。
+本指南提供了在Experience Platform UI中创建自定义构件并将其添加到[!UICONTROL 配置文件]、[!UICONTROL 区段]和[!UICONTROL 目标]功能板的分步说明。
 
 >[!NOTE]
 >
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 要了解有关标准构件的更多信息，请参阅[将标准构件添加到仪表板](standard-widgets.md)的指南。
 
-## 构件库 {#widget-library}
+## 小组件库 {#widget-library}
 
 本指南需要访问Experience Platform中的[!UICONTROL 构件库]。 要了解有关构件库以及如何在UI中访问它的更多信息，请从阅读[构件库概述](widget-library.md)开始。
 
@@ -94,7 +94,7 @@ ht-degree: 0%
 
 >[!WARNING]
 >
->在库中隐藏小组件不会从单个用户的功能板中移除该小组件。 如果贵组织不再使用某个构件，请确保将此构件直接传达给所有Platform用户，因为他们需要从其功能板中删除该构件。
+>在库中隐藏小组件不会从单个用户的功能板中移除该小组件。 如果贵组织不再使用某个构件，请确保将此构件直接传达给所有Experience Platform用户，因为他们将需要从其功能板中移除该构件。
 
 ![小组件库工作区的“自定义”选项卡，其中小组件下拉菜单选项和显示隐藏的小组件突出显示。](../images/customization/hide-widget.png)
 
@@ -108,7 +108,7 @@ ht-degree: 0%
 
 >[!WARNING]
 >
->编辑库中的小组件不会更新单个用户的小组件。 如果构件已更新，请确保将此信息直接传达给所有Platform用户，因为他们需要从仪表板上删除过期的构件，然后从构件库中选择并添加更新的构件。
+>编辑库中的小组件不会更新单个用户的小组件。 如果构件已更新，请确保将此信息直接传达给所有Experience Platform用户，因为他们需要从仪表板上删除过期的构件，然后从构件库中选择并添加更新的构件。
 
 ![编辑构件对话框。](../images/customization/edit-widget.png)
 

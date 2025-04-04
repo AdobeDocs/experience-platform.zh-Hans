@@ -3,7 +3,7 @@ title: Moengage连接
 description: Moengage是一个客户参与平台，可实时支持消费者和品牌之间以客户为中心的互动。
 last-substantial-update: 2023-10-11T00:00:00Z
 exl-id: 051f1a10-3c41-4c0a-b187-bf80de0565f0
-source-git-commit: 1e22ad63414876af45d156ed030b8103908de8a1
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1036'
 ht-degree: 2%
@@ -100,7 +100,7 @@ ht-degree: 2%
 
 要将受众数据从[!DNL Adobe Experience Platform]正确发送到[!DNL Moengage]目标，您需要执行字段映射步骤。
 
-映射包括在[!DNL Platform]帐户中的[!DNL Experience Data Model] (XDM)架构字段及其来自目标目标的对应项之间创建链接。
+映射包括在[!DNL Experience Platform]帐户中的[!DNL Experience Data Model] (XDM)架构字段及其来自目标目标的对应项之间创建链接。
 
 要将XDM字段正确映射到[!DNL Moengage]目标字段，请执行以下步骤：
 
@@ -128,7 +128,7 @@ ht-degree: 2%
 ![Moengage目标映射](../../assets/catalog/mobile-engagement/moengage/mapping-target.png)
 
 在[!UICONTROL 选择目标字段]窗口中，您可以选择以下两种目标字段类别：
-* [!UICONTROL 选择身份命名空间]：使用此选项将[!DNL Platform]身份命名空间映射到[!DNL Moengage]身份命名空间。
+* [!UICONTROL 选择身份命名空间]：使用此选项将[!DNL Experience Platform]身份命名空间映射到[!DNL Moengage]身份命名空间。
 * [!UICONTROL 选择自定义属性]：使用此选项将XDM属性映射到您在[!DNL Moengage]帐户中定义的自定义[!DNL Moengage]属性。 <br>您还可以使用此选项将现有XDM属性重命名为[!DNL Moengage]。 例如，将`lastName` XDM属性映射到[!DNL Moengage]中的自定义`Last_Name`属性，将在[!DNL Moengage]中创建`Last_Name`属性（如果该属性不存在），并将`lastName` XDM属性映射到它。
 
 ![Moengage目标映射字段](../../assets/catalog/mobile-engagement/moengage/mapping-target-fields.png)

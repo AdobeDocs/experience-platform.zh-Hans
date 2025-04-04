@@ -1,17 +1,17 @@
 ---
-description: 了解如何在Experience PlatformUI中创建输入字段，这些字段允许您的用户指定与如何连接数据并将其导出到目标相关的各种信息。
+description: 了解如何在Experience Platform UI中创建输入字段，这些字段允许用户指定与如何将数据连接和导出到目标相关的各种信息。
 title: 客户数据字段
 exl-id: 7f5b8278-175c-4ab8-bf67-8132d128899e
-source-git-commit: b35f584d13fb241c06b4045b525d84775ef8317c
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1742'
+source-wordcount: '1750'
 ht-degree: 1%
 
 ---
 
 # 通过客户数据字段配置用户输入
 
-在Experience PlatformUI中连接到目标时，您可能需要用户提供特定的配置详细信息或选择您向他们提供的特定选项。 在Destination SDK中，这些选项称为客户数据字段。
+在Experience Platform UI中连接到目标时，您可能需要用户提供特定的配置详细信息或选择您向他们提供的特定选项。 在Destination SDK中，这些选项称为客户数据字段。
 
 要了解此组件在何处适合使用Destination SDK创建的集成，请参阅[配置选项](../configuration-options.md)文档中的关系图或查看以下目标配置概述页面：
 
@@ -20,7 +20,7 @@ ht-degree: 1%
 
 ## 客户数据字段的用例 {#use-cases}
 
-在需要用户将数据输入到Experience PlatformUI中的各种用例中使用客户数据字段。 例如，当用户需要提供以下内容时，请使用客户数据字段：
+在需要用户将数据输入到Experience Platform UI中的各种用例中使用客户数据字段。 例如，当用户需要提供以下内容时，请使用客户数据字段：
 
 * 云存储段名称和路径，用于基于文件的目标。
 * 客户数据字段接受的格式。
@@ -32,7 +32,7 @@ ht-degree: 1%
 * [创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)
 * [更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md)
 
-本文介绍了可用于目标的所有受支持的客户数据字段配置类型，并显示了客户将在Experience PlatformUI中看到的内容。
+本文介绍了可用于目标的所有受支持的客户数据字段配置类型，并显示了客户将在Experience Platform UI中看到的内容。
 
 >[!IMPORTANT]
 >
@@ -53,10 +53,10 @@ ht-degree: 1%
 
 | 参数 | 类型 | 必需/可选 | 描述 |
 |---------|----------|------|---|
-| `name` | 字符串 | 必需 | 为您即将介绍的自定义字段提供一个名称。 此名称在Platform UI中不可见，除非`title`字段为空或缺失。 |
+| `name` | 字符串 | 必需 | 为您即将介绍的自定义字段提供一个名称。 此名称在Experience Platform UI中不可见，除非`title`字段为空或缺失。 |
 | `type` | 字符串 | 必需 | 指示您即将引入的自定义字段的类型。 接受的值： <ul><li>`string`</li><li>`object`</li><li>`integer`</li></ul> |
-| `title` | 字符串 | 可选 | 指示字段的名称，如客户在Platform UI中所看到的。 如果此字段为空或缺失，则UI从`name`值继承字段名称。 |
-| `description` | 字符串 | 可选 | 提供自定义字段的描述。 此描述在Platform UI中不可见。 |
+| `title` | 字符串 | 可选 | 指示字段的名称，正如客户在Experience Platform UI中看到的那样。 如果此字段为空或缺失，则UI从`name`值继承字段名称。 |
+| `description` | 字符串 | 可选 | 提供自定义字段的描述。 此描述在Experience Platform UI中不可见。 |
 | `isRequired` | 布尔值 | 可选 | 指示是否要求用户在目标配置工作流中提供此字段的值。 |
 | `pattern` | 字符串 | 可选 | 如果需要，为自定义字段实施模式。 使用正则表达式可强制实施模式。 例如，如果您的客户ID不包含数字或下划线，请在此字段中输入`^[A-Za-z]+$`。 |
 | `enum` | 字符串 | 可选 | 将自定义字段呈现为下拉菜单，并列出用户可用的选项。 |
@@ -67,7 +67,7 @@ ht-degree: 1%
 
 {style="table-layout:auto"}
 
-在以下示例中，`customerDataFields`部分定义了用户在连接到目标时必须在Platform UI中输入的两个字段：
+在以下示例中，`customerDataFields`部分定义了用户在连接到目标时必须在Experience Platform UI中输入的两个字段：
 
 * `Account ID`：目标平台的用户帐户ID。
 * `Endpoint region`：它们将连接到的API的区域终结点。 `enum`部分创建一个下拉菜单，其中的值定义可供用户选择。
@@ -103,7 +103,7 @@ ht-degree: 1%
 
 ## 目标连接名称和描述 {#names-description}
 
-创建新目标时，Destination SDK会自动将&#x200B;**[!UICONTROL Name]**&#x200B;和&#x200B;**[!UICONTROL Description]**&#x200B;字段添加到Platform UI中的目标连接屏幕中。 如上面的示例所示，**[!UICONTROL Name]**&#x200B;和&#x200B;**[!UICONTROL Description]**&#x200B;字段已在UI中呈现，但未包含在客户数据字段配置中。
+创建新目标时，Destination SDK会自动将&#x200B;**[!UICONTROL Name]**&#x200B;和&#x200B;**[!UICONTROL Description]**&#x200B;字段添加到Experience Platform UI的目标连接屏幕中。 如上面的示例所示，**[!UICONTROL Name]**&#x200B;和&#x200B;**[!UICONTROL Description]**&#x200B;字段已在UI中呈现，但未包含在客户数据字段配置中。
 
 >[!IMPORTANT]
 >
@@ -111,7 +111,7 @@ ht-degree: 1%
 
 ## 订购客户数据字段 {#ordering}
 
-目标配置中添加客户数据字段的顺序反映在Platform UI中。
+Experience Platform UI中反映了您在目标配置中添加客户数据字段的顺序。
 
 例如，以下配置将相应地反映在UI中，选项按&#x200B;**[!UICONTROL 名称]**、**[!UICONTROL 描述]**、**[!UICONTROL 存储段名称]**、**[!UICONTROL 文件夹路径]**、**[!UICONTROL 文件类型]**、**[!UICONTROL 压缩格式]**&#x200B;的顺序显示。
 
@@ -169,7 +169,7 @@ ht-degree: 1%
 ]
 ```
 
-![显示Experience PlatformUI中文件格式选项顺序的图像。](../../assets/functionality/destination-configuration/customer-data-fields-order.png)
+![显示Experience Platform UI中文件格式选项顺序的图像。](../../assets/functionality/destination-configuration/customer-data-fields-order.png)
 
 ## 分组客户数据字段 {#grouping}
 
@@ -559,7 +559,7 @@ ht-degree: 1%
 
 ## 访问模板化的客户数据字段 {#accessing-templatized-fields}
 
-当您的目标需要用户输入时，您必须向用户提供一系列客户数据字段，用户可以通过Platform UI填写这些字段。 然后，您必须配置目标服务器，以从客户数据字段中正确读取用户输入。 这可以通过模板化字段完成。
+当目标需要用户输入时，您必须向用户提供一系列客户数据字段，用户可以通过Experience Platform UI填写这些字段。 然后，您必须配置目标服务器，以从客户数据字段中正确读取用户输入。 这可以通过模板化字段完成。
 
 模板化字段使用格式`{{customerData.fieldName}}`，其中`fieldName`是从中读取信息的客户数据字段的名称。 所有模板化的客户数据字段前面都有`customerData.`，并包含在双大括号`{{ }}`中。
 
@@ -592,7 +592,7 @@ ht-degree: 1%
 
 此配置会提示您的用户在各自的客户数据字段中输入其[!DNL Amazon S3]存储段名称和文件夹路径。
 
-为了使Experience Platform正确连接到[!DNL Amazon S3]，必须将目标服务器配置为从这两个客户数据字段中读取值，如下所示：
+为了使Experience Platform能够正确连接到[!DNL Amazon S3]，必须将目标服务器配置为从这两个客户数据字段中读取值，如下所示：
 
 ```json
  "fileBasedS3Destination":{
@@ -607,13 +607,13 @@ ht-degree: 1%
    }
 ```
 
-模板化值`{{customerData.bucketName}}`和`{{customerData.path}}`读取用户提供的值，以便Experience Platform能够成功连接到目标平台。
+模板化的值`{{customerData.bucketName}}`和`{{customerData.path}}`读取用户提供的值，以便Experience Platform能够成功连接到目标平台。
 
 有关如何配置目标服务器以读取模板化字段的更多信息，请参阅有关[硬编码字段与模板化字段](../destination-server/server-specs.md#templatized-fields)的文档。
 
 ## 后续步骤 {#next-steps}
 
-阅读本文后，您应该更好地了解如何允许用户在Experience PlatformUI中通过客户数据字段输入信息。 您现在还知道如何为您的用例选择正确的客户数据字段，以及在Platform UI中配置、排序和分组客户数据字段。
+阅读本文后，您应该更好地了解如何允许用户在Experience Platform UI中通过客户数据字段输入信息。 您现在还知道如何为您的用例选择正确的客户数据字段，以及在Experience Platform UI中配置、排序和分组客户数据字段。
 
 要了解有关其他目标组件的更多信息，请参阅以下文章：
 

@@ -2,9 +2,9 @@
 title: 配置文件分析
 description: 发现支持您的配置文件分析的SQL，并使用这些查询生成自定义分析，从而进一步探索您的客户及其消费者体验。
 exl-id: f3792076-3e01-4e26-8788-32927202a2e5
-source-git-commit: cce576c00823a0c02e4b639f0888a466a5af6a0c
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1659'
+source-wordcount: '1660'
 ht-degree: 3%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 3%
 
 通过访问为配置文件提供支持的SQL来了解配置文件洞察，然后生成您自己的洞察以进一步探索您的客户及其构成您配置文件的消费者体验。 通过使用现有的Real-Time CDP数据模型SQL作为灵感，根据独特的业务需求创建查询，将原始数据转换为新的可操作洞察。
 
-有关如何直接通过Platform UI调整您的分析的SQL的详细信息，请参阅[查看SQL文档](../view-sql.md)。
+有关如何直接通过Experience Platform UI调整您的分析的SQL的更多信息，请参阅[查看SQL文档](../view-sql.md)。
 
 以下分析均可用作[用户档案仪表板](../guides/profiles.md)或自定义[用户定义仪表板](../standard-dashboards.md)的一部分。 有关如何自定义仪表板或[在构件库和[用户定义的仪表板](../standard-dashboards.md#create-widget)中创建和编辑新构件](../customize/custom-widgets.md)的说明，请参阅[自定义概述](../customize/overview.md)。
 
@@ -404,7 +404,7 @@ SELECT model_name,
 
 有关此洞察的外观和功能的信息，请参阅[客户人工智能评分摘要构件文档](../guides/profiles.md#customer-ai-scoring-summary)。
 
-## 标识重叠 {#identity-overlap}
+## 身份标识重叠 {#identity-overlap}
 
 通过此洞察回答的问题：
 
@@ -465,7 +465,7 @@ SELECT Sum(overlap_col1) overlap_col1,
 
 通过此洞察回答的问题：
 
-- Adobe Real-time Customer Data Platform中的总配置文件计数是多少？
+- Adobe Real-Time Customer Data Platform中的总配置文件计数是多少？
 - 如何根据合并策略分发用户档案？
 - 哪个合并策略具有最高的配置文件计数？
 
@@ -595,7 +595,7 @@ SELECT date_key,
 
 有关此分析的外观和功能的信息，请参阅[配置文件计数趋势构件文档](../guides/profiles.md#profile-count-trend)。
 
-## 按标识列出的轮廓 {#profiles-by-identity}
+## 按身份标识列出的轮廓 {#profiles-by-identity}
 
 通过此洞察回答的问题：
 
@@ -658,7 +658,7 @@ SELECT date_key,
 
 有关此分析的外观和功能的信息，请参阅[配置文件计数更改趋势构件文档](../guides/profiles.md#profiles-count-change-trend)。
 
-## 按标识分类的轮廓计数变化趋势 {#profiles-count-change-trend-by-identity}
+## 按身份标识分类的轮廓计数变化趋势 {#profiles-count-change-trend-by-identity}
 
 通过此洞察回答的问题：
 
@@ -699,7 +699,7 @@ SELECT date_key,
 
 有关此分析的外观和功能的信息，请参阅[按身份构件列出的配置文件计数变化趋势](../guides/profiles.md#profiles-count-change-trend-by-identity)。
 
-## 单一标识轮廓 {#single-identity-profiles}
+## 单一身份标识轮廓 {#single-identity-profiles}
 
 通过此洞察回答的问题：
 
@@ -724,7 +724,7 @@ SELECT qsaccel.profile_agg.adwh_dim_merge_policies.merge_policy_name,
 
 有关此分析的外观和功能的信息，请参阅[单一身份配置文件小部件文档](../guides/profiles.md#single-identity-profiles)。
 
-## 按标识列出的单一标识轮廓 {#single-identity-profiles-by-identity}
+## 按身份标识列出的单一身份标识轮廓 {#single-identity-profiles-by-identity}
 
 通过此洞察回答的问题：
 

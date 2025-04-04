@@ -2,16 +2,16 @@
 title: LiveRamp — 分发连接
 description: 了解如何使用LiveRamp - Distribution连接器编排和激活之前载入LiveRamp的受众以及下游广告目标。
 exl-id: 1b11a743-1ef9-4b01-90ef-cc072bc03c91
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '2722'
-ht-degree: 38%
+source-wordcount: '2744'
+ht-degree: 37%
 
 ---
 
 # [!DNL LiveRamp - Distribution]连接
 
-通过[!DNL LiveRamp - Distribution]连接，您可以跨移动设备、Web、显示和连接的TV媒体将受众从Experience Platform激活到高级发布者。
+通过[!DNL LiveRamp - Distribution]连接，您可以跨移动设备、Web、显示和连接的电视媒体将受众从Experience Platform激活到高级发布者。
 
 >[!IMPORTANT]
 >
@@ -46,7 +46,7 @@ ht-degree: 38%
 
 为了帮助您更好地了解您应如何以及何时使用[!DNL LiveRamp - Distribution]目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
 
-某运动服装零售商的营销团队使用[LiveRamp - Onboarding](liveramp-onboarding.md)连接将受众从Experience Platform发送到其LiveRamp帐户。
+运动服装retailer的营销团队使用[LiveRamp — 入门](liveramp-onboarding.md)连接将受众从Experience Platform发送到其LiveRamp帐户。
 
 通过[!DNL LiveRamp - Distribution]连接，他们现在可以触发已载入受众对[支持的目标](#supported-destinations)的激活。 然后，它们可以定位移动、打开Web、社交和[!DNL CTV]平台上的用户。
 
@@ -73,7 +73,7 @@ ht-degree: 38%
 
 要验证到目标，请填写必填字段并选择&#x200B;**[!UICONTROL 连接到目标]**。
 
-![显示目标连接屏幕的Platform UI图像。l](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-new-connection.png)
+![Experience Platform UI图像显示目标连接屏幕。l](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-new-connection.png)
 
 * **[!UICONTROL LiveRamp组织ID]**： LiveRamp帐户的组织ID（在LiveRamp提供的凭据中列为&#x200B;_owner_org_）。
 * **[!UICONTROL 密码]**：您的LiveRamp帐户密码（在LiveRamp提供的凭据中列为&#x200B;_secret_key_）。
@@ -84,7 +84,7 @@ ht-degree: 38%
 
 成功连接到LiveRamp帐户后，输入所需信息以连接到要将受众激活到的目标。
 
-![显示目标详细信息屏幕的平台UI图像。l](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-destination-details.png)
+![Experience Platform UI图像显示目标详细信息屏幕。l](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-destination-details.png)
 
 * **[!UICONTROL 名称]**：填写目标连接的首选名称。
 
@@ -114,7 +114,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![Platform UI图像显示4C Insights目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_4C_DestSpecific.png)
+![Experience Platform UI图像显示4C Insights目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_4C_DestSpecific.png)
 
 * **[!UICONTROL 4C品牌配置文件ID]**：输入与您的4C品牌配置文件关联的数值ID。 如果您没有此 ID，请联系您的 4C 客户服务代表。
 
@@ -127,7 +127,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![Platform UI图像显示Acast目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Acast_DestSpecific.png)
+![Experience Platform UI图像显示Acast目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Acast_DestSpecific.png)
 
 * **[!UICONTROL 客户端名称]**：您希望向目标合作伙伴显示的广告商帐户名称。 使用您的公司名称。请勿使用空格或特殊字符。
 
@@ -140,7 +140,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![Platform UI图像显示&amp;目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Ampersand_DestSpecific.png)
+![Experience Platform UI图像显示&amp;目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Ampersand_DestSpecific.png)
 
 * **[!UICONTROL 公司名称]**：您希望向目标合作伙伴显示的公司名称。 请勿使用空格或特殊字符。
 
@@ -153,7 +153,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![Platform UI图像显示Captify目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Captify_DestSpecific.png)
+![Experience Platform UI图像显示Captify目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Captify_DestSpecific.png)
 
 * **[!UICONTROL 客户端名称]**：您希望向目标合作伙伴显示的广告商帐户名称。 使用您的公司名称。请勿使用空格或特殊字符。
 
@@ -166,7 +166,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![Platform UI图像显示Cardlytics目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Cardlytics_DestSpecific.png)
+![Experience Platform UI图像显示Cardlytics目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Cardlytics_DestSpecific.png)
 
 * **[!UICONTROL 客户端名称]**：您希望向目标合作伙伴显示的广告商帐户名称。 使用您的公司名称。请勿使用空格或特殊字符。
 
@@ -191,7 +191,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![平台UI图像，显示迪士尼目的地的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-disney-fields.png)
+![Experience Platform UI图像显示了Disney目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-disney-fields.png)
 
 * **[!UICONTROL 广告商数据目标条款协议]**：键入`I AGREE`以确认对迪士尼广告商数据条款的确认和同意。
 * **[!UICONTROL 客户端名称]**：输入您希望向目标合作伙伴显示的公司名称。
@@ -206,7 +206,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![显示iHeartMedia目标的客户数据字段的平台UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_iHeart_DestSpecific.png)
+![显示iHeartMedia目标的客户数据字段的Experience Platform UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_iHeart_DestSpecific.png)
 
 * **[!UICONTROL 客户端名称]**：您希望向目标合作伙伴显示的广告商帐户名称。 使用您的公司名称。请勿使用空格或特殊字符。
 
@@ -219,7 +219,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![Platform UI图像显示Index Exchange目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_IndexExchange_DestSpecific.png)
+![Experience Platform UI图像显示Index Exchange目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_IndexExchange_DestSpecific.png)
 
 * **[!UICONTROL 帐户名]**：您的Index Exchange客户端帐户名。 请勿使用空格或特殊字符。
 
@@ -232,7 +232,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![Platform UI图像显示Magnite CTV目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_MagniteCTV_DestSpecific.png)
+![Experience Platform UI图像显示Magnite CTV目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_MagniteCTV_DestSpecific.png)
 
 * **[!UICONTROL 客户端]**：您希望向目标合作伙伴显示的客户端名称。 使用您的公司名称。请勿使用空格或特殊字符。
 
@@ -250,7 +250,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![Platform UI图像显示Magnite DV+目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_MagniteDV_DestSpecific.png)
+![Experience Platform UI图像显示Magnite DV+目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_MagniteDV_DestSpecific.png)
 
 * **[!UICONTROL 合作伙伴ID]**：与拥有区段/数据的发布者关联的Rubicon项目合作伙伴ID。 如果不确定您应使用的值，请联系您的 Rubicon Project 客户代表。
 * **[!UICONTROL 座位ID]**：您的Magnite客户经理提供的Magnite DV+座位ID
@@ -279,7 +279,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![Platform UI图像显示Nexen目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Nexxen_DestSpecific.png)
+![Experience Platform UI图像显示Nexen目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Nexxen_DestSpecific.png)
 
 * **[!UICONTROL 费率类型]**：费率类型表示数据使用应计费的方式。 所有 0.00 美元的费率应为固定费率。如果您不确定要使用哪种费率类型，请与您的 Nexxen 代表进行确认。
 * **[!UICONTROL 市场ID]**：输入应在其中创建Nexen数据合同的数字市场ID。 如果您在 Nexxen 平台中跨每个市场进行“AlwaysOn”联合，请输入 -1。
@@ -295,7 +295,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![Platform UI图像显示One Fox目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Fox_DestSpecific.png)
+![Experience Platform UI图像显示One Fox目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Fox_DestSpecific.png)
 
 * **[!UICONTROL 客户端]**：您希望向合作伙伴显示的公司/分发帐户的名称。 默认使用您的公司名称。 如果不确定要使用哪个名称，请联系您的合作伙伴客户代表。请勿使用空格或特殊字符。
 
@@ -308,7 +308,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![Platform UI图像显示Pandora目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Pandora_DestSpecific.png)
+![Experience Platform UI图像显示Pandora目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Pandora_DestSpecific.png)
 
 * **[!UICONTROL 帐户名称]**：您的Pandora帐户的名称。 如果您不确定您的帐户名称是什么，请联系您的 Pandora 客户代表。请勿使用空格或特殊字符。
 
@@ -326,7 +326,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![Platform UI图像显示Reddit目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Reddit_DestSpecific.png)
+![Experience Platform UI图像显示Reddit目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Reddit_DestSpecific.png)
 
 * **[!UICONTROL Reddit广告商ID]**：您的Reddit广告商ID。 必须以“t2_”或“a2_”开头。如果您不知道自己的广告商 ID，请联系您的 Reddit 代表。
 * **[!UICONTROL Reddit广告商名称]**：您的Reddit广告商名称。 请勿使用空格或特殊字符。
@@ -345,7 +345,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![Platform UI图像，显示Roku目标支持的标识符。](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-roku-fields.png)
+![Experience Platform UI图像，显示Roku目标支持的标识符。](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-roku-fields.png)
 
 * **[!UICONTROL Roku帐户电子邮件地址]**：输入与您的Roku帐户关联的电子邮件地址。
 * **[!UICONTROL Roku客户代表电子邮件地址]**：输入您的Roku客户代表的电子邮件地址。 要输入多个地址，请用逗号分隔它们。
@@ -359,7 +359,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![Platform UI图像显示Spotify目标支持的标识符。](../../assets/catalog/advertising/liveramp-distribution/LR_Spotify_DestSpecific.png)
+![Experience Platform UI图像显示Spotify目标支持的标识符。](../../assets/catalog/advertising/liveramp-distribution/LR_Spotify_DestSpecific.png)
 
 * **[!UICONTROL 客户端名称]**：您希望向目标合作伙伴显示的广告商帐户名称。 使用您的公司名称。请勿使用空格或特殊字符。
 
@@ -377,7 +377,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![Platform UI图像显示Taboola目标支持的标识符。](../../assets/catalog/advertising/liveramp-distribution/LR_Taboola_DestSpecific.png)
+![Experience Platform UI图像显示Taboola目标支持的标识符。](../../assets/catalog/advertising/liveramp-distribution/LR_Taboola_DestSpecific.png)
 
 * **[!UICONTROL 帐户管理员电子邮件地址]**：您的Taboola帐户管理员的电子邮件地址。
 * **[!UICONTROL 段类型]**：段类型。 目前仅支持第一方区段。
@@ -391,7 +391,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![显示TargetSpot目标所支持标识符的平台UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_TargetSpot_DestSpecific.png)
+![Experience Platform UI图像显示TargetSpot目标支持的标识符。](../../assets/catalog/advertising/liveramp-distribution/LR_TargetSpot_DestSpecific.png)
 
 * **[!UICONTROL 客户端名称]**：您希望向目标合作伙伴显示的广告商帐户名称。 使用您的公司名称。请勿使用空格或特殊字符。
 
@@ -404,7 +404,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![显示TargetSpot目标所支持标识符的平台UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_Teads_DestSpecific.png)
+![Experience Platform UI图像显示TargetSpot目标支持的标识符。](../../assets/catalog/advertising/liveramp-distribution/LR_Teads_DestSpecific.png)
 
 * **[!UICONTROL Teads ID]**：您的Teads ID
 
@@ -417,7 +417,7 @@ ht-degree: 38%
 
 要配置目标的详细信息，请填写以下字段。
 
-![Platform UI图像显示WB发现目标支持的标识符。](../../assets/catalog/advertising/liveramp-distribution/LR_WBD_DestSpecific.png)
+![Experience Platform UI图像显示WB发现目标支持的标识符。](../../assets/catalog/advertising/liveramp-distribution/LR_WBD_DestSpecific.png)
 
 * **[!UICONTROL 客户端名称]**：您希望向目标合作伙伴显示的广告商帐户名称。 使用您的公司名称。请勿使用空格或特殊字符。
 

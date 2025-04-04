@@ -3,9 +3,9 @@ title: Azure事件中心Source连接器概述
 description: 了解如何使用API或用户界面将Azure事件中心连接到Adobe Experience Platform。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b4d4bc7f-2241-482d-a5c2-4422c31705bf
-source-git-commit: 84d09038ded1f35269ebf67c6bc1a5dacaafe4ac
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '560'
+source-wordcount: '578'
 ht-degree: 0%
 
 ---
@@ -16,39 +16,39 @@ ht-degree: 0%
 >
 >* [!DNL Azure Event Hubs]源在源目录中可供已购买Real-Time CDP Ultimate的用户使用。
 >
->* 在Amazon Web Services (AWS)上运行Adobe Experience Platform时，您现在可以使用[!DNL Azure Event Hubs]源。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform多云概述](../../../landing/multi-cloud.md)。
+>* 在Amazon Web Services (AWS)上运行Adobe Experience Platform时，您现在可以使用[!DNL Azure Event Hubs]源。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](../../../landing/multi-cloud.md)。
 
-Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等云提供商提供本机连接。 您可以将来自这些系统的数据导入Platform。
+Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等云提供商提供本机连接。 您可以将来自这些系统的数据导入Experience Platform。
 
-云存储源可以将您自己的数据导入Platform，而无需下载、格式化或上传。 引入的数据可以格式化为XDM JSON、XDM Parquet或分隔。 该过程的每个步骤都集成到源工作流中。 平台允许您从[!DNL Event Hubs]实时引入数据。
+云存储源可以将您自己的数据导入Experience Platform，而无需下载、设置格式或上传。 引入的数据可以格式化为XDM JSON、XDM Parquet或分隔。 该过程的每个步骤都集成到源工作流中。 Experience Platform允许您从[!DNL Event Hubs]实时引入数据。
 
 ## 使用[!DNL Event Hubs]缩放
 
-如果需要引入大量数据、增加并行度或提高引入平台的速度，则必须增加[!DNL Event Hubs]实例的缩放因子。
+如果需要引入大量数据、增加并行度或提高Experience Platform上的引入速度，则必须增加[!DNL Event Hubs]实例的缩放因子。
 
 ### 传入更大容量数据
 
-目前，您可以从[!DNL Event Hubs]帐户向Platform引入的最大数据量为每秒2000条记录。 要扩展并摄取更大数量的数据，请联系您的Adobe代表。
+目前，您可以从[!DNL Event Hubs]帐户向Experience Platform引入的最大数据量为每秒2000条记录。 要扩展并摄取更大数量的数据，请联系您的Adobe代表。
 
-### 提高[!DNL Event Hubs]和平台上的并行度
+### 提高[!DNL Event Hubs]和Experience Platform的并行度
 
 并行是指在多个处理单元上同时执行相同的任务，以提高速度和性能。 您可以通过增加分区或为[!DNL Event Hubs]帐户获取更多处理单元来增加[!DNL Event Hubs]端的并行度。 有关详细信息，请参阅有关缩放](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-scalability)的此[[!DNL Event Hubs] 文档。
 
-要提高平台端的摄取速度，平台必须增加源连接器中要从[!DNL Event Hubs]分区读取的任务数。 增加[!DNL Event Hubs]端的并行度后，请联系您的Adobe代表以根据新分区扩展Platform任务。 目前，此过程未自动化。
+要提高Experience Platform端的摄取速度，Experience Platform必须增加源连接器中要从[!DNL Event Hubs]分区中读取的任务数。 增加[!DNL Event Hubs]端的并行度后，请联系您的Adobe代表以根据新分区缩放Experience Platform任务。 目前，此过程未自动化。
 
-## 使用虚拟网络连接到[!DNL Event Hubs]到平台
+## 使用虚拟网络连接到[!DNL Event Hubs]到Experience Platform
 
-在启用防火墙测量时，您可以设置虚拟网络将[!DNL Event Hubs]连接到平台。 要设置虚拟网络，请转到此[[!DNL Event Hubs] 网络规则集文档](https://learn.microsoft.com/en-us/azure/event-hubs/network-security)，然后执行以下步骤：
+在启用防火墙测量时，您可以设置虚拟网络将[!DNL Event Hubs]连接到Experience Platform。 要设置虚拟网络，请转到此[[!DNL Event Hubs] 网络规则集文档](https://learn.microsoft.com/en-us/azure/event-hubs/network-security)，然后执行以下步骤：
 
 * 从REST API面板中选择&#x200B;**尝试**；
 * 在同一浏览器中使用你的凭据验证你的[!DNL Azure]帐户；
-* 选择要带到Platform的[!DNL Event Hubs]命名空间、资源组和订阅，然后选择&#x200B;**运行**；
-* 在显示的JSON正文中，在`properties`内的`virtualNetworkRules`下添加以下Platform子网：
+* 选择要带到Experience Platform的[!DNL Event Hubs]命名空间、资源组和订阅，然后选择&#x200B;**运行**；
+* 在显示的JSON正文中，在`properties`内的`virtualNetworkRules`下添加以下Experience Platform子网：
 
 
 >[!IMPORTANT]
 >
->在使用Platform子网更新`virtualNetworkRules`之前，必须对收到的JSON正文进行备份，因为该正文包含您现有的IP过滤规则。 否则，将在调用之后删除规则。
+>在使用Experience Platform子网更新`virtualNetworkRules`之前，必须对收到的JSON正文进行备份，因为它包含您现有的IP过滤规则。 否则，将在调用之后删除规则。
 
 
 ```json
@@ -60,7 +60,7 @@ Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等
 }
 ```
 
-有关Platform子网的不同区域，请参阅以下列表：
+有关Experience Platform子网的不同区域，请参阅以下列表：
 
 ### VA7：北美
 
@@ -121,9 +121,9 @@ Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等
 
 有关网络规则集的详细信息，请参阅以下[[!DNL Event Hubs] 文档](https://learn.microsoft.com/en-us/azure/event-hubs/network-security)。
 
-## 将[!DNL Event Hubs]连接到平台
+## 将[!DNL Event Hubs]连接到Experience Platform
 
-以下文档提供了有关如何使用API或用户界面将[!DNL Event Hubs]连接到Platform的信息：
+以下文档提供了有关如何使用API或用户界面将[!DNL Event Hubs]连接到Experience Platform的信息：
 
 ### 使用API
 

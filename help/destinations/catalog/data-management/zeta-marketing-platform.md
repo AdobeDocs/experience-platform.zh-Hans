@@ -4,9 +4,9 @@ description: Zeta Marketing Platform (ZMP)是一个基于云的系统，借助�
 hide: true
 hidefromtoc: true
 exl-id: 291ee60c-aa81-4f1e-9df2-9905a8eeb612
-source-git-commit: 0c3c192105146dd949e9b11f8925bf4f9d7c15c0
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1352'
+source-wordcount: '1356'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 Zeta Marketing Platform (ZMP)是一个基于云的系统，借助智能（专有数据和AI），可帮助您更有效地获取、发展和留住客户。 有关更多详细信息，请参阅[Zeta Global](https://zetaglobal.com/)。
 
-利用Adobe Experience Platform中提供的Zeta Marketing Platform连接器，您可以将Experience Platform与ZMP无缝同步。
+利用Adobe Experience Platform中提供的Zeta Marketing Platform连接器，您可以将受众从Experience Platform无缝同步到ZMP。
 
 >[!IMPORTANT]
 >
@@ -31,14 +31,14 @@ Zeta Marketing Platform (ZMP)是一个基于云的系统，借助智能（专有
 
 ### 使用广告定位用户 {#use-case-target-users}
 
-广告商旨在通过ZetaDemand Side Platform(DSP)定位特定受众中的用户，因为这些用户会与自己的品牌进行交互。 有关Zeta DSP的详细信息，请单击[此处](https://knowledgebase.zetaglobal.com/pug/)。
+广告商旨在通过Zeta Demand Side Platform (DSP)定位特定受众中的用户，因为这些用户会与自己的品牌进行交互。 有关Zeta DSP的详细信息，请单击[此处](https://knowledgebase.zetaglobal.com/pug/)。
 
 ## 先决条件 {#prerequisites}
 
 ### Zeta营销平台先决条件
 
 * 在设置与Zeta Marketing Platform目标的新连接之前，必须在Zeta Marketing Platform帐户中创建一个空的客户列表。 您必须选择其中一个客户列表作为指定目标，以接收您计划发送的Adobe Experience Platform受众。 您可以按照[此处](https://knowledgebase.zetaglobal.com/kb/creating-audiences#CreatingAudiences-CreatingaCustomerList)的说明在ZMP中创建空的客户列表。
-* 尽管Adobe Experience Platform允许将多个受众激活到特定的ZMP目标实例，但强制要求每个ZMP目标实例只能接收一个Experience Platform受众。 要从Experience Platform中处理多个受众，请为每个受众创建其他ZMP目标实例，然后从下拉列表中选择其他客户列表。 此方法可确保不会覆盖目标ZMP受众。 有关更多详细信息，请参阅[填写目标详细信息](#destination-details)。
+* 尽管Adobe Experience Platform允许将多个受众激活到特定的ZMP目标实例，但强制要求每个ZMP目标实例只能接收一个Experience Platform受众。 要从Experience Platform处理多个受众，请为每个受众创建其他ZMP目标实例，然后从下拉列表中选择其他客户列表。 此方法可确保不会覆盖目标ZMP受众。 有关更多详细信息，请参阅[填写目标详细信息](#destination-details)。
 * 使用以下凭据配置目标：
    * 用户名：**api**
    * 密码：您的ZMP REST API密钥。 登录到ZMP帐户并导航到&#x200B;**设置** > **集成** > **密钥和应用程序**&#x200B;部分，即可找到您的REST API密钥。 有关详细信息，请参阅[ZMP文档](https://knowledgebase.zetaglobal.com/kb/integrations)。
@@ -53,7 +53,7 @@ Zeta Marketing Platform (ZMP)是一个基于云的系统，借助智能（专有
 | 目标身份 | 描述 | 注意事项 | 注释 |
 ---------|----------|----------|----------|
 | uid | ZMP用于区分客户个人资料的唯一ID | 必需 | 如果要使用其电子邮件地址识别唯一配置文件，请选择`Email`标准身份命名空间。 或者，如果客户配置文件没有电子邮件，您可以选择将自定义命名空间映射到`uid`。 |
-| email_md5_id | 发送电子邮件至MD5，表示每个客户配置文件 | 可选 | 当您希望使用电子邮件MD5值唯一标识客户配置文件时，请选择此目标标识。 由于Platform无法将纯文本转换为MD5，因此Experience Platform中的电子邮件地址必须采用MD5格式。 在此方案中，将`uid`（必需）设置为相同的电子邮件MD5值或其他适当的标识命名空间。 |
+| email_md5_id | 发送电子邮件至MD5，表示每个客户配置文件 | 可选 | 当您希望使用电子邮件MD5值唯一标识客户配置文件时，请选择此目标标识。 电子邮件地址在Experience Platform中必须已采用MD5格式，因为Experience Platform不会将纯文本转换为MD5。 在此方案中，将`uid`（必需）设置为相同的电子邮件MD5值或其他适当的标识命名空间。 |
 
 {style="table-layout:auto"}
 
@@ -63,13 +63,13 @@ Zeta Marketing Platform (ZMP)是一个基于云的系统，借助智能（专有
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | X | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | X | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
-> 在Platform受众中添加或删除单个成员后，更新将发送到ZMP，以确保目标客户列表相应地同步。
+> 在Experience Platform受众中添加或删除单个成员后，更新将发送到ZMP，以确保目标客户列表相应地同步。
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -104,7 +104,7 @@ Zeta Marketing Platform (ZMP)是一个基于云的系统，借助智能（专有
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
 * **[!UICONTROL ZMP帐户站点ID]**：您要将受众发送到的ZMP **站点ID**。 您可以通过导航到&#x200B;**设置** > **集成** > **密钥和应用程序**&#x200B;部分来查看您的网站ID。 可在[此处](https://knowledgebase.zetaglobal.com/kb/integrations)找到更多信息。
-* **[!UICONTROL ZMP区段]**： ZMP站点ID帐户中要与Platform受众一起更新的客户列表区段。
+* **[!UICONTROL ZMP区段]**：您的ZMP站点ID帐户中要与Experience Platform受众一起更新的客户列表区段。
 
 ### 启用警报 {#enable-alerts}
 
@@ -131,7 +131,7 @@ Zeta Marketing Platform (ZMP)是一个基于云的系统，借助智能（专有
 
 选择目标字段：
 * （必需）选择`uid`作为要将源身份命名空间映射到的目标身份。
-* （可选）选择`email_md5_id`作为目标身份，您将代表电子邮件md5值的源身份命名空间映射到此目标身份。 由于Platform无法将纯文本转换为MD5，因此Experience Platform中的电子邮件地址必须采用MD5格式
+* （可选）选择`email_md5_id`作为目标身份，您将代表电子邮件md5值的源身份命名空间映射到此目标身份。 电子邮件地址在Experience Platform中必须已采用MD5格式，因为Experience Platform不会将纯文本转换为MD5
 * 根据需要选择任何其他目标映射。
 
 ![标识映射](../../assets/catalog/data-management-platform/zeta-marketing-platform/zeta-mapping-example.png)

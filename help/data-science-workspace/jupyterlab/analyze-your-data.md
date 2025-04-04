@@ -5,9 +5,9 @@ title: 使用笔记本分析数据
 type: Tutorial
 description: 本教程重点介绍如何使用内置于Data Science Workspace中的Jupyter Notebooks来访问、探索和可视化您的数据。
 exl-id: 3b0148d1-9c08-458b-9601-979cb6c7a0fb
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1729'
+source-wordcount: '1730'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 - **[!DNL JupyterLab]：** [[!DNL JupyterLab]](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906)是Project Jupyter的新一代基于Web的接口，已紧密集成到[!DNL Adobe Experience Platform]中。
 - **批次：**&#x200B;数据集由批次组成。 批次是指一段时间内收集并作为单个单元一起处理的一组数据。 向数据集中添加数据时会创建新批次。
-- **数据访问SDK（已弃用）：**&#x200B;数据访问SDK现已弃用。 请使用[[!DNL Platform SDK]](../authoring/platform-sdk.md)指南。
+- **数据访问SDK（已弃用）：**&#x200B;数据访问SDK现已弃用。 请使用[[!DNL Experience Platform SDK]](../authoring/platform-sdk.md)指南。
 
 ## 在数据科学Workspace中探索笔记本
 
@@ -58,7 +58,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->`data_access_sdk_python`已弃用，不再推荐。 请参阅[将数据访问SDK转换为Platform SDK](../authoring/platform-sdk.md)教程以转换您的代码。 以下相同步骤仍适用于本教程。
+>`data_access_sdk_python`已弃用，不再推荐。 请参阅[将数据访问SDK转换为Experience Platform SDK](../authoring/platform-sdk.md)教程以转换代码。 以下相同步骤仍适用于本教程。
 
 我们将再次从[!DNL Adobe Experience Platform]内部访问数据，从外部访问数据。 我们将使用`data_access_sdk_python`库访问内部数据，如数据集和XDM架构。 对于外部数据，我们将使用熊猫[!DNL Python]库。
 
@@ -96,7 +96,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->请参阅[[!DNL Platform SDK]](../authoring/platform-sdk.md)指南以转换代码。
+>请参阅[[!DNL Experience Platform SDK]](../authoring/platform-sdk.md)指南以转换代码。
 
 ```PYTHON
 from data_access_sdk_python.reader import DataSetReader

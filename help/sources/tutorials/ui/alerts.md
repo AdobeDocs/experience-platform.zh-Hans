@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；警报
 description: 您可以在创建数据流时订阅警报，以接收有关流运行的状态、成功或失败的警报消息。
 title: 在UI中订阅上下文警报
 exl-id: 5d51edaa-ecba-4ac0-8d3c-49010466b9a5
-source-git-commit: 0165aa60ca865c6d1cf269b16068dffa9349214c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '819'
+source-wordcount: '825'
 ht-degree: 7%
 
 ---
@@ -22,9 +22,9 @@ ht-degree: 7%
 
 本文档要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [源](../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。
-* [可观察性](../../../observability/home.md)： [!DNL Observability Insights]允许您通过使用统计量度和事件通知来监视Platform活动。
-   * [警报](../../../observability/alerts/overview.md)：当您的Platform操作中达到一组特定条件（例如系统超出阈值时可能会出现问题）时，Platform可以向您组织中订阅了警报消息的任何用户发送警报消息。
+* [源](../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强传入数据。
+* [可观察性](../../../observability/home.md)： [!DNL Observability Insights]允许您通过使用统计指标和事件通知来监视Experience Platform活动。
+   * [警报](../../../observability/alerts/overview.md)：当您的Experience Platform操作中达到一组特定条件（例如，当系统超出阈值时可能会出现问题）时，Experience Platform可以向您组织中订阅了警报消息的任何用户发送警报消息。
 
 ## 在 UI 中订阅提醒 {#subscribe-sources-alerts}
 
@@ -36,7 +36,7 @@ ht-degree: 7%
 
 >[!IMPORTANT]
 >
->您必须启用Platform帐户的即时电子邮件通知，才能接收数据流基于电子邮件的警报通知。
+>您必须为Experience Platform帐户启用电子邮件即时通知，才能接收数据流基于电子邮件的警报通知。
 
 您可以在源工作区中源工作流的[!UICONTROL 数据流详细信息]步骤期间为数据流启用警报。
 
@@ -51,7 +51,7 @@ ht-degree: 7%
 | 警报 | 描述 |
 | --- | --- |
 | 源流运行开始 | 此警报会在源数据流启动时向您发送消息。 |
-| 源流运行成功 | 当源中的数据成功摄取到Platform时，此警报会向您发送消息。 |
+| 源流运行成功 | 当源中的数据成功摄取到Experience Platform时，此警报会向您发送消息。 |
 | 源流运行失败 | 如果数据流中发生错误，此警报会向您发送消息。 |
 
 选择要订阅的警报，然后选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以查看并完成数据流。
@@ -76,7 +76,7 @@ ht-degree: 7%
 
 ### 在UI中
 
-警报在UI中由Platform UI顶部标题中的通知图标表示。 选择通知图标可查看有关数据流的特定警报消息。
+警报在UI中由Experience Platform UI顶部标题中的通知图标表示。 选择通知图标可查看有关数据流的特定警报消息。
 
 ![通知](../../images/tutorials/alerts/notification.png)
 

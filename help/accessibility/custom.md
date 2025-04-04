@@ -1,17 +1,17 @@
 ---
 keywords: Experience Platform；配置文件；实时客户配置文件；故障排除；API；统一配置文件；统一配置文件；配置文件；rtcp；XDM图
-title: 适用于Experience Platform的自定义辅助功能解决方案
+title: Experience Platform的自定义辅助功能解决方案
 type: Documentation
 description: 进一步了解Adobe Experience Platform用户界面中的自定义辅助功能解决方案。
 exl-id: cb5ad99e-8a95-4c9e-aae6-1d0036ecf052
-source-git-commit: 2cf28acb5b0ddb4965b2d5120333659e0ac460bf
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1663'
+source-wordcount: '1664'
 ht-degree: 0%
 
 ---
 
-# 适用于Experience Platform的自定义辅助功能解决方案
+# Experience Platform的自定义辅助功能解决方案
 
 Adobe Experience Platform不断得到增强，可满足所有类型的用户的需求，并遵守包括视觉、听觉、移动或其他残疾人士在内的全球标准。 本文档概述了Experience Platform用户界面中的自定义辅助功能解决方案。
 
@@ -19,15 +19,15 @@ Adobe Experience Platform不断得到增强，可满足所有类型的用户的�
 
 Experience Platform用户界面满足普通文本、图形和UI组件所需的对比度。 此外，还选择用户界面的颜色以支持所有用户（包括视觉障碍用户）的无障碍功能。
 
-在Platform中，可以使用键盘接合可通过指针点击或操作的UI元素。 这包括左侧导航、视频播放器、表格等。
+在中，可以使用键盘接合可通过指针单击或操作的UI元素。 这包括左侧导航、视频播放器、表格等。
 
-Experience Platform努力达到国际无障碍标准，包括Web内容无障碍准则2.1 A级和AA级，以及Web无障碍倡议 — 无障碍富互联网应用程序(WAI-ARIA) Web标准。
+Experience Platform致力于满足国际无障碍标准，包括Web内容无障碍准则2.1 A级和AA级以及Web无障碍倡议 — 无障碍富互联网应用程序(WAI-ARIA) Web标准。
 
 ![Adobe Experience Platform UI的主页。](images/homepage.png)
 
 ## 左侧导航栏
 
-Experience PlatformUI中的左侧导航可通过键盘访问，并且在符合辅助功能的标准“正常”、“悬停”和“选择”状态下提供颜色对比度。
+Experience Platform UI中的左侧导航可通过键盘访问，并提供符合辅助功能标准的正常、悬停和选择状态的颜色对比度。
 
 在主屏幕中，用户可以进入左侧导航。 选择&#x200B;**Shift + Tab**&#x200B;将用户返回到主屏幕。
 
@@ -41,13 +41,13 @@ Experience PlatformUI中的左侧导航可通过键盘访问，并且在符合�
 
 ![已选择源的Experience Platform左侧导航。](images/left-navigation-sources.png)
 
-并非所有用户都启用Platform中的某些功能。 这些项目会显示在导航中，但无法选择。 使用键盘导航时，这些项目在箭头导航期间被跳过，无法使用&#x200B;**Enter (Return)**&#x200B;进行选择。
+Experience Platform中的某些功能未对所有用户启用。 这些项目会显示在导航中，但无法选择。 使用键盘导航时，这些项目在箭头导航期间被跳过，无法使用&#x200B;**Enter (Return)**&#x200B;进行选择。
 
-![无法为Experience Platform选择未启用的用户左侧导航区域。](images/left-navigation-sections-disabled.png)
+![无法选择未为用户启用的Experience Platform左侧导航区域。](images/left-navigation-sections-disabled.png)
 
 ## 嵌入式视频对话框
 
-在Experience Platform中，可以使用键盘导航高亮显示并选择可用的视频链接来查看视频。 这会在Platform UI中打开一个嵌入的视频对话框。
+在Experience Platform中，可以使用键盘导航突出显示并选择可用的视频链接来查看视频。 这会在Experience Platform UI中打开一个嵌入的视频对话框。
 
 ![选定元素周围出现蓝色边框，指示已应用焦点。](images/profile-overview-tab.png)
 
@@ -88,7 +88,7 @@ Experience PlatformUI中的左侧导航可通过键盘访问，并且在符合�
 
 ## 表格浏览
 
-Experience Platform用户界面中的所有表均可通过键盘访问。 可通过一系列键盘快捷键浏览表格行和列，并与之交互：
+Experience Platform用户界面中的所有表都可通过键盘访问。 可通过一系列键盘快捷键浏览表格行和列，并与之交互：
 
 * 在表标题中，使用&#x200B;**向下箭头**&#x200B;浏览表。 通过&#x200B;**Tab**&#x200B;导航时，表标题是可选的，您可以使用&#x200B;**空格键**&#x200B;更改排序顺序。
 * **上下方向键**&#x200B;在表中的行中上下移动。

@@ -2,9 +2,9 @@
 title: Salesforce Source Connector概述
 description: 了解如何使用API或用户界面将Salesforce连接到Adobe Experience Platform。
 exl-id: 597778ad-3cf8-467c-ad5b-e2850967fdeb
-source-git-commit: 719f1bca20d5118de14ebe324675bb0aab6161e8
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1581'
+source-wordcount: '1593'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >在Amazon Web Services (AWS)上运行Adobe Experience Platform时，您现在可以使用[!DNL Salesforce]源。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](../../../landing/multi-cloud.md)。
 
-Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
+Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。 您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
 
 Experience Platform支持从第三方CRM系统中摄取数据。 CRM提供商的支持包括[!DNL Salesforce]。
 
@@ -29,9 +29,9 @@ Experience Platform支持从第三方CRM系统中摄取数据。 CRM提供商的
 
 ### 从[!DNL Salesforce]到XDM的字段映射
 
-要建立[!DNL Salesforce]与Platform之间的源连接，[!DNL Salesforce]源数据字段必须在被引入Platform之前映射到其相应的目标XDM字段。
+要建立[!DNL Salesforce]与Experience Platform之间的源连接，在将[!DNL Salesforce]源数据字段摄取到Experience Platform中之前，必须将其映射到相应的目标XDM字段。
 
-有关[!DNL Salesforce]数据集与Platform之间的字段映射规则的详细信息，请参阅以下内容：
+有关[!DNL Salesforce]数据集与Experience Platform之间的字段映射规则的详细信息，请参阅以下内容：
 
 - [联系人](../adobe-applications/mapping/salesforce.md#contact)
 - [潜在客户](../adobe-applications/mapping/salesforce.md#lead)
@@ -47,11 +47,11 @@ Experience Platform支持从第三方CRM系统中摄取数据。 CRM提供商的
 要将[!DNL Salesforce]源用作[!DNL B2B-CDP]的一部分，您必须首先设置[!DNL Postman]实用工具以自动生成您的[!DNL Salesforce]命名空间和架构。 以下文档提供了有关设置[!DNL Postman]实用工具的其他信息：
 
 - 您可以从此[GitHub存储库](https://github.com/adobe/experience-platform-postman-samples/tree/master/Postman%20Collections/CDP%20Namespaces%20and%20Schemas%20Utility)下载命名空间和架构自动生成实用程序集合和环境。
-- 有关如何使用Platform API的信息，包括有关如何收集所需标头的值和读取示例API调用的详细信息，请参阅[Platform API快速入门](../../../landing/api-guide.md)指南。
-- 有关如何为平台API生成凭据的信息，请参阅有关[身份验证和访问Experience Platform API](../../../landing/api-authentication.md)的教程。
-- 有关如何为平台API设置[!DNL Postman]的信息，请参阅[设置开发人员控制台和 [!DNL Postman]](../../../landing/postman.md)上的教程。
+- 有关如何使用Experience Platform API的信息，包括有关如何收集所需标头的值和读取示例API调用的详细信息，请参阅[Experience Platform API快速入门](../../../landing/api-guide.md)指南。
+- 有关如何生成Experience Platform API凭据的信息，请参阅有关[身份验证和访问Experience Platform API](../../../landing/api-authentication.md)的教程。
+- 有关如何为Experience Platform API设置[!DNL Postman]的信息，请参阅[设置开发人员控制台和 [!DNL Postman]](../../../landing/postman.md)上的教程。
 
-通过平台开发人员控制台和[!DNL Postman]设置，您现在可以开始将相应的环境值应用到您的[!DNL Postman]环境。
+设置Experience Platform开发人员控制台和[!DNL Postman]后，您现在可以开始将相应的环境值应用于您的[!DNL Postman]环境。
 
 +++查看变量表指南
 
@@ -269,15 +269,15 @@ public class Main {
 
 完成为[!DNL Salesforce]帐户设置的先决条件后，您可以继续将您的[!DNL Salesforce]帐户连接到Experience Platform并摄取CRM数据。 有关详细信息，请阅读下面的文档：
 
-### 使用API将[!DNL Salesforce]连接到平台
+### 使用API将[!DNL Salesforce]连接到Experience Platform
 
-以下文档提供了有关如何使用API或用户界面将[!DNL Salesforce]连接到Platform的信息：
+以下文档提供了有关如何使用API或用户界面将[!DNL Salesforce]连接到Experience Platform的信息：
 
 - [使用流服务API将Salesforce连接到Experience Platform](../../tutorials/api/create/crm/salesforce.md)
 - [使用流服务API浏览数据表](../../tutorials/api/explore/tabular.md)
 - [使用流服务API为CRM源创建数据流](../../tutorials/api/collect/crm.md)
 
-### 使用UI将[!DNL Salesforce]连接到平台
+### 使用UI将[!DNL Salesforce]连接到Experience Platform
 
 - [在UI中创建Salesforce源连接](../../tutorials/ui/create/crm/salesforce.md)
 - [在用户界面中为CRM连接创建数据流](../../tutorials/ui/dataflow/crm.md)

@@ -2,20 +2,20 @@
 title: 身份图查看器
 description: 标识图是特定客户的不同标识之间的关系映射，为您提供客户如何跨不同渠道与您的品牌互动的可视表示形式。
 exl-id: ccd5f8d8-595b-4636-9191-553214e426bd
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1402'
+source-wordcount: '1407'
 ht-degree: 6%
 
 ---
 
 # 身份图查看器
 
-标识图是特定客户的不同标识之间的关系映射，为您提供客户如何跨不同渠道与您的品牌互动的可视表示形式。 Adobe Experience Platform 身份服务几乎可以实时地集体管理和更新所有客户身份图，以响应客户活动。
+标识图是特定客户的不同标识之间的关系映射，为您提供客户如何跨不同渠道与您的品牌互动的可视表示形式。 Adobe Experience Platform 身份标识服务几乎可以实时地集体管理和更新所有客户身份标识图，以响应客户活动。
 
-通过Platform用户界面中的身份图查看器，您可以可视化并更好地了解哪些客户身份是通过哪些方式拼接在一起的。 查看器允许您拖动图形的不同部分并与之交互，从而检查复杂的身份关系、更高效地进行调试，了解信息的利用方式从而增强透明度并从中受益。
+通过Experience Platform用户界面中的身份图查看器，您可以可视化并更好地了解哪些客户身份是通过哪些方式拼合在一起的。 查看器允许您拖动图形的不同部分并与之交互，从而检查复杂的身份标识关系、更高效地进行调试，了解信息的利用方式从而增强透明度并从中受益。
 
-以下文档提供了有关如何在Platform UI中访问和使用身份图查看器的步骤。
+以下文档提供了有关如何在Experience Platform UI中访问和使用身份图查看器的步骤。
 
 ## 教程视频
 
@@ -38,9 +38,9 @@ ht-degree: 6%
 
 ## 访问身份图查看器 {#access-identity-graph-viewer}
 
-在Platform UI中，在左侧导航中选择&#x200B;**[!UICONTROL 标识]**，然后从标题的选项卡列表中选择&#x200B;**[!UICONTROL 标识图形]**。
+在Experience Platform UI中，在左侧导航中选择&#x200B;**[!UICONTROL 标识]**，然后从标题的选项卡列表中选择&#x200B;**[!UICONTROL 标识图形]**。
 
-![Experience PlatformUI中的身份工作区，已选择“身份图形”选项卡。](../images/graph-viewer/identity-graph.png)
+![已选择“身份图形”选项卡，在Experience Platform UI中显示“身份”工作区。](../images/graph-viewer/identity-graph.png)
 
 要查看身份图，请提供身份命名空间及其相应的值，然后选择&#x200B;**[!UICONTROL 查看]**。
 
@@ -135,7 +135,7 @@ ht-degree: 6%
 
 ## 后续步骤
 
-通过阅读本文档，您已了解如何在Platform UI中探索客户的身份图。 有关Platform中标识的更多信息，请参阅[标识服务概述](../home.md)
+通过阅读本文档，您已了解如何在Experience Platform UI中探索客户的身份图。 有关Experience Platform中标识的更多信息，请参阅[标识服务概述](../home.md)
 
 ## Changelog
 

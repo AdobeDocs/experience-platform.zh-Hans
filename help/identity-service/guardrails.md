@@ -3,9 +3,9 @@ keywords: Experience Platform；身份；身份服务；故障排除；护栏；
 title: Identity服务的护栏
 description: 本文档提供了有关Identity Service数据的使用和速率限制的信息，以帮助您优化身份图的使用。
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1585'
+source-wordcount: '1586'
 ht-degree: 1%
 
 ---
@@ -20,9 +20,9 @@ ht-degree: 1%
 
 ## 快速入门
 
-以下Experience Platform服务与身份数据建模有关：
+以下Experience Platform服务涉及对身份数据进行建模：
 
-* [标识](home.md)：Bridge标识摄取到Platform时来自不同的数据源。
+* [标识](home.md)：Bridge标识摄取到Experience Platform时，来自不同的数据源。
 * [[!DNL Real-Time Customer Profile]](../profile/home.md)：使用来自多个来源的数据创建统一的使用者配置文件。
 
 ## 数据模型限制
@@ -56,7 +56,7 @@ ht-degree: 1%
 
 ### 身份命名空间摄取
 
-从2023年3月31日开始，Identity Service将阻止为新客户摄取Adobe Analytics ID (AAID)。 此标识通常通过[Adobe Analytics源](../sources/connectors/adobe-applications/analytics.md)和[Adobe Audience Manager源](../sources//connectors/adobe-applications/audience-manager.md)摄取，并且是多余的，因为ECID表示相同的Web浏览器。 如果要更改此默认配置，请联系您的Adobe客户团队。
+从2023年3月31日开始，Identity Service将阻止为新客户摄取Adobe Analytics ID (AAID)。 此标识通常通过[Adobe Analytics源](../sources/connectors/adobe-applications/analytics.md)和[Adobe Audience Manager源](../sources//connectors/adobe-applications/audience-manager.md)摄取，并且是多余的，因为ECID表示相同的Web浏览器。 如果您要更改此默认配置，请联系您的Adobe客户团队。
 
 ## 性能护栏 {#performance-guardrails}
 
@@ -95,7 +95,7 @@ Adobe如果您的生产沙盒包含：
 * 将人员标识符（如CRMID）配置为Cookie/设备标识类型的自定义命名空间。
 * 将Cookie/设备标识符配置为跨设备标识类型的自定义命名空间。
 
-此功能可用后，超过50个标识限制的图形将减少到50个标识。 对于Real-Time CDP B2C版本，这可能会导致符合受众资格的用户档案数量最小化，因为以前分段和激活时会忽略这些用户档案。
+此功能可用后，超过50个标识限制的图形将减少到50个标识。 对于Real-Time CDP B2C Edition，这可能会导致符合受众资格的用户档案数量最小增加，因为之前分段和激活会忽略这些用户档案。
 
 #### 实时客户个人资料：对可寻址受众的影响
 
@@ -109,7 +109,7 @@ Adobe如果您的生产沙盒包含：
 如果要保留针对CRMID的已验证事件，则建议您将主ID从ECID更改为CRMID。 有关如何实施此更改的步骤，请阅读以下文档：
 
 * [为Experience Platform标记配置标识映射](../tags/extensions/client/web-sdk/data-element-types.md#identity-map)。
-* [Experience PlatformWeb SDK中的身份数据](../web-sdk/identity/overview.md#using-identitymap)
+* [Experience Platform Web SDK中的身份数据](../web-sdk/identity/overview.md#using-identitymap)
 
 ### 示例场景
 
@@ -200,6 +200,6 @@ Adobe如果您的生产沙盒包含：
 
 * [Real-Time CDP护栏](/help/rtcdp/guardrails/overview.md)
 * [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams)。
-* [Real-time Customer Data Platform （B2C版本 — Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform （B2P — 主包和最终包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform （B2B — 主包和最终包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2C版本 — Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)

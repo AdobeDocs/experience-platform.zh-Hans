@@ -4,10 +4,10 @@ user-guide-title: 目录和数据集指南
 user-guide-description: 探索数据湖中的数据谱系、元数据、文件描述、目录和数据集，并详细了解目录服务系统。
 feature: Catalog
 role: Developer
-source-git-commit: 74b6e5f10f7532745180760adf1d96bc57e7b590
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '123'
-ht-degree: 33%
+source-wordcount: '124'
+ht-degree: 42%
 
 ---
 
@@ -38,4 +38,4 @@ ht-degree: 33%
 * [数据湖中的隐私请求处理](privacy.md)
 * [API 参考](https://www.adobe.io/experience-platform-apis/references/catalog/)
 * [常见问题解答](catalog-faq.md)
-* [平台发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
+* [Experience Platform 发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

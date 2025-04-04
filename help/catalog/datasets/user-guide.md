@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据集UI指南
 description: 了解如何在Adobe Experience Platform用户界面中使用数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 5184f714d6bd8fb6e202a5ca6eea2d52a7169ae6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '4105'
+source-wordcount: '4108'
 ht-degree: 4%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 4%
 * [数据集](overview.md)： [!DNL Experience Platform]中用于数据持久性的存储和管理结构。
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
-   * [架构编辑器](../../xdm/tutorials/create-schema-ui.md)：了解如何在[!DNL Platform]用户界面中使用[!DNL Schema Editor]构建您自己的自定义XDM架构。
+   * [架构编辑器](../../xdm/tutorials/create-schema-ui.md)：了解如何在[!DNL Experience Platform]用户界面中使用[!DNL Schema Editor]构建您自己的自定义XDM架构。
 * [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
 * [[!DNL Adobe Experience Platform Data Governance]](../../data-governance/home.md)：确保遵守有关客户数据使用的法规、限制和策略。
 
@@ -57,7 +57,7 @@ ht-degree: 4%
 
 在[!DNL Experience Platform] UI中，从左侧导航中选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以打开&#x200B;**[!UICONTROL 数据集]**&#x200B;仪表板。 仪表板列出您组织的所有可用数据集。 将显示每个列出数据集的详细信息，包括其名称、数据集所遵循的架构以及最近一次摄取运行的状态。
 
-![左侧导航栏中突出显示了数据集项的Platform UI。](../images/datasets/user-guide/browse-datasets.png)
+![左侧导航栏中突出显示了数据集项的Experience Platform UI。](../images/datasets/user-guide/browse-datasets.png)
 
 从[!UICONTROL 浏览]选项卡中选择数据集的名称以访问其&#x200B;**[!UICONTROL 数据集活动]**&#x200B;屏幕，并查看所选数据集的详细信息。 活动选项卡包含一个图表，其中可查看消息使用率，以及成功批次和失败批次的列表。
 
@@ -168,7 +168,7 @@ ht-degree: 4%
 
 将标记添加到数据集后，可以根据相应的标记筛选数据集。 有关详细信息，请参阅有关如何[按标记](#enable-profile)筛选数据集的部分。
 
-有关如何对业务对象进行分类以便于发现和分类的详细信息，请参阅[管理元数据分类](../../administrative-tags/ui/managing-tags.md)指南。 本指南介绍具有正确权限的用户如何在Platform UI中创建预定义标记、将这些标记分配给类别以及管理所有相关的CRUD操作。
+有关如何对业务对象进行分类以便于发现和分类的详细信息，请参阅[管理元数据分类](../../administrative-tags/ui/managing-tags.md)指南。 本指南介绍具有正确权限的用户如何在Experience Platform UI中创建预定义标记、将标记分配给类别以及管理所有相关的CRUD操作。
 
 ### (Beta)设置数据保留策略 {#data-retention-policy}
 
@@ -176,7 +176,7 @@ ht-degree: 4%
 > 
 >数据保留设置当前为测试版，仅在&#x200B;**有限版本**&#x200B;中可供选定组织使用。 您的UI可能无法反映下面描述的功能。
 
-使用[!UICONTROL 数据集]工作区的[!UICONTROL 浏览]选项卡中的内联操作菜单管理数据集到期和保留设置。 您可以使用此功能配置数据在数据湖和配置文件存储中保留的时长。 到期日期基于数据被摄取到Platform中的时间和您配置的保留期。
+使用[!UICONTROL 数据集]工作区的[!UICONTROL 浏览]选项卡中的内联操作菜单管理数据集到期和保留设置。 您可以使用此功能配置数据在数据湖和配置文件存储中保留的时长。 到期日期基于数据被摄取到Experience Platform中的时间和您配置的保留期。
 
 >[!TIP]
 >
@@ -419,7 +419,7 @@ Beta版用户可以使用四个新列，以便更清楚地了解您的数据管�
 
 ## 后续步骤
 
-本用户指南提供了在[!DNL Experience Platform]用户界面中使用数据集时执行常用操作的说明。 有关执行涉及数据集的常见[!DNL Platform]工作流的步骤，请参阅以下教程：
+本用户指南提供了在[!DNL Experience Platform]用户界面中使用数据集时执行常用操作的说明。 有关执行涉及数据集的常见[!DNL Experience Platform]工作流的步骤，请参阅以下教程：
 
 * [使用API创建数据集](create.md)
 * [使用数据访问API查询数据集数据](../../data-access/home.md)

@@ -1,12 +1,12 @@
 ---
 title: 事件转发概述
-description: 了解 Adobe Experience Platform 中的事件转发，通过此功能，无需更改您的标记实施，即可使用 Platform Edge Network 执行任务。
+description: 了解Adobe Experience Platform中的事件转发功能，此功能可让您使用Experience Platform Edge Network执行任务，而无需更改您的标记实施。
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
-source-git-commit: 16f9ee9d14326f857b444c2361b894aca06b04d6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1178'
-ht-degree: 4%
+source-wordcount: '1190'
+ht-degree: 6%
 
 ---
 
@@ -14,23 +14,23 @@ ht-degree: 4%
 
 >[!NOTE]
 >
->事件转发是一项付费功能，包含在Adobe Real-time Customer Data Platform Connections、Prime或Ultimate产品中。
+>事件转发是一项付费功能，包含在Adobe Real-Time Customer Data Platform连接、Prime或Ultimate产品中。
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-Adobe Experience Platform中的事件转发允许您将收集的事件数据发送到目标以进行服务器端处理。 事件转发通过使用Adobe Experience PlatformEdge Network执行通常在客户端上完成的任务，减轻了网页和应用程序的负担。 通过与标记类似的方式实施，事件转发规则可以转换数据并将数据发送到新目标，但不会从Web浏览器等客户端应用程序发送此数据，而是从Adobe的服务器发送。
+Adobe Experience Platform中的事件转发允许您将收集的事件数据发送到目标以进行服务器端处理。 事件转发通过使用Adobe Experience Platform Edge Network执行通常在客户端上完成的任务，减轻了网页和应用程序的负担。 通过与标记类似的方式实施，事件转发规则可以转换数据并将数据发送到新目标，但不会从Web浏览器等客户端应用程序发送此数据，而是从Adobe的服务器发送。
 
-本文档全面概述了Platform中的事件转发。
+本文档全面概述了Experience Platform中的事件转发。
 
 ![数据收集生态系统中的事件转发。](../../../collection/images/home/event-forwarding.png)
 
 >[!NOTE]
 >
->有关事件转发如何适应Platform中数据收集生态系统的信息，请参阅[数据收集概述](../../../collection/home.md)。
+>有关事件转发如何适应Experience Platform中的数据收集生态系统的信息，请参阅[数据收集概述](../../../collection/home.md)。
 
-与Adobe Experience Platform [Web SDK](/help/web-sdk/home.md)和[Mobile SDK](https://experienceleague.adobe.com/docs/platform-learn/data-collection/mobile-sdk/overview.html)结合使用的事件转发具有以下优势：
+与Adobe Experience Platform [Web SDK](/help/web-sdk/home.md)和[Mobile SDK](https://experienceleague.adobe.com/docs/platform-learn/data-collection/mobile-sdk/overview.html)结合使用的事件转发具有以下优点：
 
 **性能**：
 
@@ -46,14 +46,14 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 
 在配置方面，事件转发使用许多与标记相同的概念，如[规则](../managing-resources/rules.md)、[数据元素](../managing-resources/data-elements.md)和[扩展](../managing-resources/extensions/overview.md)。 两者主要区别可概括如下：
 
-* 标记&#x200B;**从网站或本机移动设备应用程序中收集**&#x200B;事件数据并将这些数据发送给PlatformEdge Network。
-* 事件转发&#x200B;**将**&#x200B;传入的事件数据从PlatformEdge Network发送到一个终结点，该终结点表示最终目标或提供要用于扩充原始有效负载的数据的终结点。
+* 标记&#x200B;**从网站或本机移动设备应用程序中收集**&#x200B;事件数据并将这些数据发送至Experience Platform Edge Network。
+* 事件转发&#x200B;**将**&#x200B;传入的事件数据从Experience Platform Edge Network发送到一个端点，该端点表示最终目标或提供要用于扩充原始有效负载的数据的端点。
 
-虽然标记使用Platform Web和Mobile SDK直接从您的网站或本机移动应用程序收集事件数据，但事件转发要求已通过PlatformEdge Network发送事件数据才能将其转发到目标。 换言之，您必须在数字资产上实施Platform Web或Mobile SDK（通过标记或使用原始代码），才能使用事件转发。
+虽然标记使用Experience Platform Web和Mobile SDK直接从您的网站或本机移动应用程序收集事件数据，但事件转发要求已通过Experience Platform Edge Network发送事件数据，才能将其转发到目标。 换言之，您必须在数字资产上实施Experience Platform Web或Mobile SDK（通过标记或使用原始代码），才能使用事件转发。
 
 ### 属性 {#properties}
 
-事件转发会维护其自身与标记分开的属性存储，您可以通过选择左侧导航中的&#x200B;**[!UICONTROL 事件转发]**，在Experience PlatformUI或数据收集UI中查看这些属性。
+事件转发会维护其自身与标记分开的属性存储，您可以通过选择左侧导航中的&#x200B;**[!UICONTROL 事件转发]**，在Experience Platform UI或数据收集UI中查看这些属性。
 
 >[!TIP]
 >
@@ -61,11 +61,11 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 
 ![数据收集UI中的事件转发属性。](../../images/ui/event-forwarding/overview/properties.png)
 
-所有事件转发属性都将&#x200B;**[!UICONTROL Edge]**&#x200B;作为其平台。 它们不会区分Web或移动，因为它们只处理从Platform接收的数据，而PlatformEdge Network本身可以接收来自Web和移动平台的事件数据。
+所有事件转发属性都将&#x200B;**[!UICONTROL Edge]**&#x200B;作为其平台。 它们不会区分Web或移动，因为它们仅处理从Experience Platform Edge Network接收的数据，后者本身可以接收来自Web和移动平台的事件数据。
 
 ### 扩展 {#extensions}
 
-事件转发具有自己的兼容扩展目录，如[Core](../../extensions/server/core/overview.md)扩展和[Adobe云连接器](../../extensions/server/cloud-connector/overview.md)扩展。 您可以在左侧导航中选择&#x200B;**[!UICONTROL 扩展]**，然后选择&#x200B;**[!UICONTROL 目录]**，从而查看UI中事件转发属性的可用扩展。
+事件转发具有自己的兼容扩展目录，如[Core](../../extensions/server/core/overview.md)扩展和[Adobe Cloud Connector](../../extensions/server/cloud-connector/overview.md)扩展。 您可以在左侧导航中选择&#x200B;**[!UICONTROL 扩展]**，然后选择&#x200B;**[!UICONTROL 目录]**，从而查看UI中事件转发属性的可用扩展。
 
 您可以从右侧面板中选择![about](../../images/ui/event-forwarding/overview/about.png)，以查看其他可用资源以了解有关此功能的更多信息。
 
@@ -75,11 +75,11 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 
 事件转发中可用的数据元素类型仅限于提供这些数据的兼容[扩展](#extensions)的目录。
 
-尽管创建和配置数据元素本身的方式与创建和配置标记的方式相同，但在如何引用来自PlatformEdge Network的数据方面，它们存在一些重要的语法差异。
+尽管创建和配置数据元素本身的方式与创建和配置标记的方式相同，但在如何引用来自Experience Platform Edge Network的数据方面，它们存在一些重要的语法差异。
 
-#### 引用平台Edge Network中的数据 {#data-element-path}
+#### 引用Experience Platform Edge Network中的数据 {#data-element-path}
 
-要从PlatformEdge Network引用数据，您必须创建一个数据元素，以便提供指向该数据的有效路径。 在UI中创建数据元素时，为扩展选择&#x200B;**[!UICONTROL Core]**，为类型选择&#x200B;**[!UICONTROL Path]**。
+要引用Experience Platform Edge Network中的数据，您必须创建一个数据元素，以便提供指向该数据的有效路径。 在UI中创建数据元素时，为扩展选择&#x200B;**[!UICONTROL Core]**，为类型选择&#x200B;**[!UICONTROL Path]**。
 
 数据元素的&#x200B;**[!UICONTROL 路径]**&#x200B;值必须遵循模式`arc.event.{ELEMENT}`（例如： `arc.event.xdm.web.webPageDetails.URL`）。 必须正确指定此路径才能发送数据。
 

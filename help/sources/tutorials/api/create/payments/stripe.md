@@ -1,16 +1,16 @@
 ---
-title: 使用API将付款数据从您的 [!DNL Stripe] 帐户引入到Experience Platform
-description: 了解如何使用流服务API将支付数据从您的Stripe帐户摄取到Experience Platform
+title: 使用API将付款数据从您的 [!DNL Stripe] 帐户摄取到Experience Platform
+description: 了解如何使用流量服务API将支付数据从Stripe帐户摄取到Experience Platform
 badge: Beta 版
 exl-id: a9cb3ef6-aab0-4a5b-894e-ce90b82f35a8
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2020'
+source-wordcount: '2028'
 ht-degree: 1%
 
 ---
 
-# 使用API从您的[!DNL Stripe]帐户摄取付款数据以Experience Platform
+# 使用API将付款数据从您的[!DNL Stripe]帐户摄取到Experience Platform
 
 >[!NOTE]
 >
@@ -22,26 +22,26 @@ ht-degree: 1%
 
 本指南要求您对Experience Platform的以下组件有一定的了解：
 
-* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
-* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../../../sandboxes/home.md)： Experience Platform提供了可将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ### 身份验证
 
 有关如何检索身份验证凭据的信息，请阅读[[!DNL Stripe] 概述](../../../../connectors/payments/stripe.md)。
 
-### 使用平台API
+### 使用Experience Platform API
 
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../../landing/api-guide.md)指南。
+有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../../../landing/api-guide.md)指南。
 
 ## 将[!DNL Stripe]连接到Experience Platform
 
-按照以下指南了解如何验证您的[!DNL Stripe]源、创建源连接和创建数据流以将您的付款数据带入Experience Platform。
+按照以下指南了解如何对[!DNL Stripe]源进行身份验证、创建源连接和创建数据流以将您的付款数据传送到Experience Platform。
 
 ### 创建基本连接 {#base-connection}
 
-基本连接会保留源和Experience Platform之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 您可以使用基本连接ID浏览和导航源中的文件。 此外，您还可以标识要摄取的特定项目，包括有关这些项目的数据类型和格式的详细信息。
+基本连接会保留源与Experience Platform之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 您可以使用基本连接ID浏览和导航源中的文件。 此外，您还可以标识要摄取的特定项目，包括有关这些项目的数据类型和格式的详细信息。
 
-要创建基本连接ID，请在将[!DNL Stripe]身份验证凭据作为请求正文的一部分提供时，向`/connections`端点发出POST请求。
+要创建基本连接ID，请在提供您的[!DNL Stripe]身份验证凭据作为请求正文的一部分时，向`/connections`端点发出POST请求。
 
 **API格式**
 
@@ -82,7 +82,7 @@ curl -X POST \
 | `name` | 基础连接的名称。 确保基本连接的名称是描述性的，因为您可以使用此名称查找有关基本连接的信息。 |
 | `description` | 可包含的可选值，用于提供有关基本连接的更多信息。 |
 | `connectionSpec.id` | 源的连接规范ID。 [!DNL Stripe]的连接规范ID为`cc2c31d6-7b8c-4581-b49f-5c8698aa3ab3`，此ID已修复。 |
-| `auth.specName` | 用于向Experience Platform验证源的身份验证类型。 |
+| `auth.specName` | 您用于向Experience Platform验证源的身份验证类型。 |
 | `auth.params.accessToken` | [!DNL Stripe]帐户的访问令牌。 有关如何检索访问令牌的步骤，请阅读[[!DNL Stripe] 身份验证指南](../../../../connectors/payments/stripe.md#prerequisites)。 |
 
 **响应**
@@ -115,7 +115,7 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=rest&object={OBJECT}&fi
 | `{BASE_CONNECTION_ID}` | 上一步中生成的基本连接ID。 |
 | `objectType=rest` | 您希望浏览的对象类型。 此值始终设置为`rest`。 |
 | `{OBJECT}` | 只有在查看特定目录时才需要此参数。 其值表示您希望浏览的目录的路径。 对于此源，该值将为`json`。 |
-| `fileType=json` | 您要带到Platform的文件类型。 当前，`json`是唯一支持的文件类型。 |
+| `fileType=json` | 要带到Experience Platform的文件类型。 当前，`json`是唯一支持的文件类型。 |
 | `{PREVIEW}` | 一个布尔值，定义连接的内容是否支持预览。 |
 | `{SOURCE_PARAMS}` | 指向要浏览的资源路径的[!DNL Base64-]编码字符串。 您的资源路径需要以[!DNL Base64]编码，才能获得`{SOURCE_PARAMS}`的批准格式。 例如，`{"resourcePath":"charges"}`编码为`eyJyZXNvdXJjZVBhdGgiOiJjaGFyZ2VzIn0%3D`。 可用资源路径的列表包括： <ul><li>`charges`</li><li>`subscriptions`</li><li>`refunds`</li><li>`balance_transactions`</li><li>`customers`</li><li>`prices`</li></ul> |
 
@@ -463,15 +463,15 @@ curl -X POST \
 
 ### 创建目标XDM架构 {#target-schema}
 
-为了在Experience Platform中使用源数据，必须创建目标架构以根据需要构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。
+为了在Experience Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Experience Platform数据集。
 
-通过向[架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/)执行POST请求，可以创建目标XDM架构。
+通过对[架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/)执行POST请求，可以创建目标XDM架构。
 
 有关如何创建目标XDM架构的详细步骤，请参阅有关使用API [创建架构的教程](../../../../../xdm/api/schemas.md#create-a-schema)。
 
 ### 创建目标数据集 {#target-dataset}
 
-可以通过向[目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)执行POST请求，在有效负载中提供目标架构的ID来创建目标数据集。
+通过向[目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)执行POST请求，在有效负载中提供目标架构的ID，可以创建目标数据集。
 
 有关如何创建目标数据集的详细步骤，请参阅有关[使用API创建数据集的教程](../../../../../catalog/api/create-dataset.md)。
 
@@ -814,13 +814,13 @@ curl -X POST \
 
 ### 创建流 {#flow}
 
-将数据从[!DNL Stripe]引入到Platform的最后一步是创建数据流。 现在，您已准备以下必需值：
+将数据从[!DNL Stripe]引入Experience Platform的最后一步是创建数据流。 现在，您已准备以下必需值：
 
 * [Source连接Id](#source-connection)
 * [目标连接ID](#target-connection)
 * [映射 ID](#mapping)
 
-数据流负责从源中计划和收集数据。 您可以通过在有效负载中提供上述值时执行POST请求来创建数据流。
+数据流负责从源中计划和收集数据。 您可以通过在有效负载中提供前面提到的值时执行POST请求来创建数据流。
 
 **API格式**
 
@@ -875,7 +875,7 @@ curl -X POST \
 | `flowSpec.version` | 流规范ID的相应版本。 此值默认为`1.0`。 |
 | `sourceConnectionIds` | 在之前的步骤中生成的[源连接ID](#source-connection)。 |
 | `targetConnectionIds` | 在之前的步骤中生成的[目标连接ID](#target-connection)。 |
-| `transformations` | 此属性包含需要应用于数据的各种转换。 将不符合XDM的数据引入Experience Platform时需要此属性。 |
+| `transformations` | 此属性包含需要应用于数据的各种转换。 将不符合XDM的数据引入Experience Platform时，需要此属性。 |
 | `transformations.name` | 分配给转换的名称。 |
 | `transformations.params.mappingId` | 在之前的步骤中生成的[映射ID](#mapping)。 |
 | `transformations.params.mappingVersion` | 映射ID的相应版本。 此值默认为`0`。 |
@@ -908,7 +908,7 @@ curl -X POST \
 
 ### 更新您的帐户
 
-在提供您的基本连接ID作为查询参数的同时，通过执行对[!DNL Flow Service] API的PATCH请求来更新源帐户的名称、描述和凭据。 发出PATCH请求时，必须在`If-Match`标头中提供源帐户的唯一`etag`。 有关完整的API示例，请阅读有关[使用API更新源帐户](../../update.md)的指南。
+在提供基本连接ID作为查询参数的同时，通过向[!DNL Flow Service] API执行PATCH请求来更新源帐户的名称、描述和凭据。 发出PATCH请求时，必须在`If-Match`标头中提供源帐户的唯一`etag`。 有关完整的API示例，请阅读有关[使用API更新源帐户](../../update.md)的指南。
 
 ### 删除您的数据流
 

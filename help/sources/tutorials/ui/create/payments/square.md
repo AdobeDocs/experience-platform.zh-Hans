@@ -3,16 +3,16 @@ keywords: Experience Platform；主页；热门主题；方形；方形
 title: 在UI中创建正方形Source连接
 description: 了解如何使用Adobe Experience Platform UI创建正方形源连接。
 exl-id: 7cdfeb36-c989-4875-bb94-e6594ddf30da
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '452'
+source-wordcount: '458'
 ht-degree: 3%
 
 ---
 
 # 在用户界面中创建[!DNL Square]源连接
 
-本教程提供了使用Platform用户界面创建[!DNL Square]源连接器的步骤。
+本教程提供了使用Experience Platform用户界面创建[!DNL Square]源连接器的步骤。
 
 ## 快速入门
 
@@ -25,7 +25,7 @@ ht-degree: 3%
 
 ### 收集所需的凭据
 
-要访问您的[!DNL Square]帐户平台，必须提供以下值：
+要访问您的[!DNL Square]帐户Experience Platform，您必须提供以下值：
 
 | 凭据 | 描述 |
 | --- | --- |
@@ -37,11 +37,11 @@ ht-degree: 3%
 
 有关这些凭据以及如何获取这些凭据的更多信息，请参阅OAuth](https://developer.squareup.com/docs/oauth-api/receive-and-manage-tokens)上的[[!DNL Square] 文档。
 
-收集所需的凭据后，您可以按照以下步骤将您的[!DNL Square]帐户关联到Platform。
+收集所需的凭据后，您可以按照以下步骤将您的[!DNL Square]帐户关联到Experience Platform。
 
 ## 连接您的[!DNL Square]帐户
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
@@ -65,4 +65,4 @@ ht-degree: 3%
 
 ## 后续步骤
 
-通过学习本教程，您已验证并创建了[!DNL Square]帐户和平台之间的源连接。 您现在可以继续下一教程并[创建数据流以将支付数据导入Platform](../../dataflow/payments.md)。
+通过学习本教程，您已验证并创建了[!DNL Square]帐户与Experience Platform之间的源连接。 您现在可以继续下一教程，并[创建数据流以将付款数据导入Experience Platform](../../dataflow/payments.md)。

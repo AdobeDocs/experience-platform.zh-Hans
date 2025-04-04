@@ -2,9 +2,9 @@
 title: 将Jupyter笔记本连接到查询服务
 description: 了解如何将Jupyter Notebook连接到Adobe Experience Platform查询服务。
 exl-id: 358eab67-538f-4ada-931f-783b92db4a1c
-source-git-commit: 1af89160cbf5b689396921869fec6c30a5bcfff0
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '563'
+source-wordcount: '566'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 本指南要求您已经拥有[!DNL Jupyter Notebook]的访问权限并熟悉其界面。 要下载[!DNL Jupyter Notebook]或了解更多信息，请参阅[官方 [!DNL Jupyter Notebook] 文档](https://jupyter.org/)。
 
-要获取连接[!DNL Jupyter Notebook]到Experience Platform所需的凭据，您必须有权访问平台UI中的[!UICONTROL 查询]工作区。 如果您当前无权访问[!UICONTROL 查询]工作区，请联系您的组织管理员。
+要获取将[!DNL Jupyter Notebook]连接到Experience Platform所需的凭据，您必须有权访问Experience Platform UI中的[!UICONTROL 查询]工作区。 如果您当前无权访问[!UICONTROL 查询]工作区，请联系您的组织管理员。
 
 >[!TIP]
 >
@@ -40,13 +40,13 @@ Jupyter官方文档提供了从命令行界面](https://docs.jupyter.org/en/late
 
 接下来，为[!DNL Python]导入[!DNL PostgreSQL]数据库适配器。 输入值： `import psycopg2`并选择&#x200B;**[!DNL Run]**。 此进程没有成功消息。 如果没有错误消息，请继续执行下一步。
 
-您现在必须输入以下值来提供您的Adobe Experience Platform凭据： `conn = psycopg2.connect("{YOUR_CREDENTIALS}")`。 可在Platform UI的[!UICONTROL 凭据]选项卡下的[!UICONTROL 查询]部分中找到您的连接凭据。 有关详细说明，请参阅有关如何[查找组织凭据](../ui/credentials.md)的文档。
+您现在必须输入以下值来提供您的Adobe Experience Platform凭据： `conn = psycopg2.connect("{YOUR_CREDENTIALS}")`。 可在Experience Platform UI的[!UICONTROL 凭据]选项卡下的[!UICONTROL 查询]部分中找到您的连接凭据。 有关详细说明，请参阅有关如何[查找组织凭据](../ui/credentials.md)的文档。
 
 在使用第三方客户端时，建议使用未过期的凭据，以节省重复输入详细信息的精力。 有关[如何生成和使用未过期的凭据](../ui/credentials.md#non-expiring-credentials)的说明，请参阅文档。
 
 >[!IMPORTANT]
 >
->从Platform UI复制凭据时，不需要凭据的其他格式。 它们可以在一行中给出，属性和值之间只有一段空格。 凭据用引号括起来，**不能用逗号分隔**。
+>从Experience Platform UI复制凭据时，不需要凭据的其他格式。 它们可以在一行中给出，属性和值之间只有一段空格。 凭据用引号括起来，**不能用逗号分隔**。
 
 ```python
 conn = psycopg2.connect('''sslmode=require host=<YOUR_HOST_CREDENTIAL> port=80 dbname=prod:all user=<YOUR_ORGANIZATION_ID> password=<YOUR_PASSWORD>''')"

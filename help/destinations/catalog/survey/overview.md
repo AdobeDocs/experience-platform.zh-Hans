@@ -3,10 +3,10 @@ keywords: 调查目标；调查；foresee；inmoment；Web截获调查；qualtri
 title: 调查目标概述
 description: 调查平台可检测调查事件、通过数据元素实时捕获客户反馈，并与Adobe Experience Platform共享数据。
 exl-id: 0358a73b-9f4a-4362-a7ed-e49ece6e5f02
-source-git-commit: 57d3e136902201f9ba9bd2f427ebe0f876900671
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '100'
-ht-degree: 2%
+source-wordcount: '101'
+ht-degree: 1%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 2%
 
 ## 支持的调查目标 {#supported-destinations}
 
-目前，Platform支持下面列出的调查目标。 有关如何连接到这些目标的信息，请参阅各个链接：
+目前，Experience Platform支持下面列出的调查目标。 有关如何连接到这些目标的信息，请参阅各个链接：
 
 **目标连接器**
 

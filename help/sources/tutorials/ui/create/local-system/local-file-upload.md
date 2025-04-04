@@ -1,33 +1,33 @@
 ---
-keywords: Experience Platform；主页；热门主题；本地系统；文件上传；映射csv；映射csv文件；将csv文件映射到xdm；将csv映射到xdm；ui指南；
+keywords: Experience Platform；主页；热门主题；本地系统；文件上传；映射csv；映射csv文件；将csv文件映射到xdm；将csv映射到xdm；用户界面指南；
 solution: Experience Platform
 title: 在UI中创建本地文件上传Source连接器
 type: Tutorial
-description: 了解如何为本地系统创建源连接，以将本地文件引入平台
+description: 了解如何为本地系统创建源连接，以将本地文件带入Experience Platform
 exl-id: 9ce15362-c30d-40cc-9d9c-caa650579390
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '770'
+source-wordcount: '777'
 ht-degree: 0%
 
 ---
 
 # 在UI中创建本地文件上传源连接器
 
-本教程提供了使用用户界面创建本地文件上传源连接器以将本地文件摄取到Platform的步骤。
+本教程提供了使用用户界面创建本地文件上传源连接器以将本地文件摄取到Experience Platform的步骤。
 
 ## 快速入门
 
-本教程需要您对Platform的以下组件有一定的了解：
+本教程需要对以下Experience Platform组件有一定的了解：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)： Platform用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
 
-## 将本地文件上传到Platform
+## 将本地文件上传到Experience Platform
 
-在Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL 目录]屏幕显示您可以为其创建帐户的各种源。
+在Experience Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL 目录]屏幕显示您可以为其创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
@@ -91,4 +91,4 @@ ht-degree: 0%
 
 ## 后续步骤
 
-通过遵循本教程，您已成功将平面CSV文件映射到XDM架构并将其摄取到Platform。 此数据现在可以由下游[!DNL Platform]服务（如[!DNL Real-Time Customer Profile]）使用。 有关详细信息，请参阅[[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)的概述。
+通过遵循本教程，您已成功将平面CSV文件映射到XDM架构并将其引入到Experience Platform中。 此数据现在可以由下游[!DNL Experience Platform]服务（如[!DNL Real-Time Customer Profile]）使用。 有关详细信息，请参阅[[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)的概述。

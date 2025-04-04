@@ -3,9 +3,9 @@ keywords: 目标；目标；目标类型
 title: 目标类型和类别
 description: 了解Adobe Experience Platform中目标的各种类型和类别。
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '805'
+source-wordcount: '806'
 ht-degree: 1%
 
 ---
@@ -96,7 +96,7 @@ Experience Platform中的Edge个性化目标包括[Adobe Target](/help/destinati
 
 ## 扩展 {#extensions}
 
-Platform利用标记管理的强大功能和灵活性，允许您在UI中配置标记扩展。
+Experience Platform利用标签管理的强大功能和灵活性，允许您在UI中配置标签扩展。
 
 >[!TIP]
 >

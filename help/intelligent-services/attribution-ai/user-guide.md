@@ -1,31 +1,31 @@
 ---
 keywords: Experience Platform；用户指南；归因人工智能；热门主题；区域
 feature: Attribution AI
-title: Attribution AIUI指南
-description: 本文档可用作在Intelligent Services用户界面中与Attribution AI交互的指南。
+title: Attribution AI UI指南
+description: 本文档用作在Intelligent Services用户界面中与Attribution AI交互的指南。
 exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2450'
+source-wordcount: '2451'
 ht-degree: 0%
 
 ---
 
-# Attribution AI用户界面指南
+# 归因人工智能UI指南
 
-作为Intelligent Services的一部分，Attribution AI是一种多渠道的算法归因服务，它计算客户交互对指定结果的影响和增量影响。 借助Attribution AI，营销人员可以通过了解客户旅程各个阶段每个客户互动的影响来衡量和优化营销和广告支出。
+Attribution AI作为Intelligent Services的一部分，是一种多渠道的算法归因服务，它计算客户交互对指定结果的影响和增量影响。 借助归因人工智能，营销人员可以通过了解客户旅程各个阶段每个客户互动的影响来衡量和优化营销和广告支出。
 
-本文档可用作在Intelligent Services用户界面中与Attribution AI交互的指南。
+本文档用作在Intelligent Services用户界面中与Attribution AI交互的指南。
 
 ## 创建模型
 
-在[!DNL Adobe Experience Platform] UI的左侧导航中选择&#x200B;**[!UICONTROL 服务]**。 出现&#x200B;**[!UICONTROL 服务]**&#x200B;浏览器并显示可用的Adobe智能服务。 在Attribution AI的容器中，选择&#x200B;**[!UICONTROL 打开]**。
+在[!DNL Adobe Experience Platform] UI的左侧导航中选择&#x200B;**[!UICONTROL 服务]**。 **[!UICONTROL 服务]**&#x200B;浏览器出现，并显示可用的Adobe智能服务。 在归因人工智能的容器中，选择&#x200B;**[!UICONTROL 打开]**。
 
 ![正在访问您的模型](./images/user-guide/open_Attribution_ai.png)
 
-此时将显示“Attribution AI服务”页。 此页列出了Attribution AI的服务模型并显示它们的相关信息，包括模型的名称、转换事件、模型的运行频率以及上次更新的状态。
+此时将显示“归因人工智能服务”页面。 此页面列出归因人工智能的服务模型并显示它们的相关信息，包括模型的名称、转化事件、模型的运行频率以及上次更新的状态。
 
-您可以在&#x200B;**[!UICONTROL 创建模型]**&#x200B;容器的右下角找到&#x200B;**[!UICONTROL 已评分的转化事件总数]**&#x200B;个量度。 此指标跟踪当前日历年按Attribution AI评分的转化事件总数，包括所有沙盒环境和任何已删除的服务模型。
+您可以在&#x200B;**[!UICONTROL 创建模型]**&#x200B;容器的右下角找到&#x200B;**[!UICONTROL 已评分的转化事件总数]**&#x200B;个量度。 此量度跟踪归因人工智能在当前日历年计分的转化事件总数，包括所有沙盒环境和任何已删除的服务模型。
 
 总转化次数![](./images/user-guide/total_conversions.png)
 
@@ -33,8 +33,8 @@ ht-degree: 0%
 
 - **[!UICONTROL 编辑]**：选择&#x200B;**[!UICONTROL 编辑]**&#x200B;允许您修改现有的服务模型。 您可以编辑模型的名称、描述、状态、评分频率以及其他得分数据集列。
 - **[!UICONTROL 克隆]**：选择&#x200B;**[!UICONTROL 克隆]**&#x200B;将复制所选的服务模型。 然后，您可以修改工作流以进行细微调整，并将其重命名为新模型。
-- **[!UICONTROL 删除]**：您可以删除包含任何历史运行的服务模型。 相应的输出数据集将从Platform中删除。 但是，同步到实时客户档案的分数不会被删除。
-- **[!UICONTROL 数据源]**：正在使用的数据集的链接。 如果Attribution AI使用了多个数据集，则会显示“多个”，后跟数据集数。 选择超链接后，将显示数据集预览弹出框。
+- **[!UICONTROL 删除]**：您可以删除包含任何历史运行的服务模型。 相应的输出数据集将从Experience Platform中删除。 但是，同步到实时客户档案的分数不会被删除。
+- **[!UICONTROL 数据源]**：正在使用的数据集的链接。 如果归因人工智能使用多个数据集，则显示“多个”，后面跟着数据集数。 选择超链接后，将显示数据集预览弹出框。
 - **[!UICONTROL 上次运行详细信息]**：仅当运行失败时才会显示此信息。 此处显示有关运行失败原因的信息，如错误代码。
 
 ![侧窗格](./images/user-guide/multiple-datasets-pane.png)
@@ -49,7 +49,7 @@ ht-degree: 0%
 
 ![创建模型](./images/user-guide/landing_page.png)
 
-接下来，将显示Attribution AI的设置页面，您可以在其中为服务模型提供名称和可选描述。
+接下来，将显示Attribution AI设置页面，您可以在其中提供服务模型的名称和可选描述。
 
 ![命名模型](./images/user-guide/naming_instance.png)
 
@@ -57,7 +57,7 @@ ht-degree: 0%
 
 <!-- https://www.adobe.com/go/aai-select-data -->
 
-通过设计，Attribution AI可以使用Adobe Analytics、体验事件和消费者体验事件数据来计算归因分数。 选择数据集时，仅列出与Attribution AI兼容的数据集。 要选择一个数据集，请选择数据集名称旁边的(**+**)符号，或选中该复选框以一次添加多个数据集。 您还可以使用搜索选项快速查找感兴趣的数据集。
+通过设计，归因人工智能可以使用Adobe Analytics、体验事件和消费者体验事件数据来计算归因分数。 在选择数据集时，仅列出与归因人工智能兼容的数据集。 要选择一个数据集，请选择数据集名称旁边的(**+**)符号，或选中该复选框以一次添加多个数据集。 您还可以使用搜索选项快速查找感兴趣的数据集。
 
 选择您要使用的数据集后，选择&#x200B;**[!UICONTROL 添加]**&#x200B;按钮以将数据集添加到数据集预览窗格。
 
@@ -71,7 +71,7 @@ ht-degree: 0%
 
 选择&#x200B;**[!UICONTROL 保存]**&#x200B;以在工作流中移动时保存草稿。 您还可以保存草稿模型配置并转到工作流中的下一步。 在模型配置期间使用&#x200B;**[!UICONTROL 保存并继续]**&#x200B;创建和保存草稿。 利用功能，可创建和保存模型配置的草稿，当必须在配置工作流中定义多个字段时特别有用。
 
-![突出显示了“Data Science ServicesAttribution AI”选项卡的“创建工作流”（其中“保存并保存并继续”）。](./images/user-guide/aai-save-save-&-exit.png)
+![突出显示了“保存并保存并继续”的数据科学服务归因人工智能选项卡的创建工作流。](./images/user-guide/aai-save-save-&-exit.png)
 
 ### 数据集完整性 {#dataset-completeness}
 
@@ -81,7 +81,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->使用数据集的最大训练时段（一年）计算Attribution AI完整性。 这意味着在显示数据集完整性值时，不会考虑超过一年的数据。
+>数据集完整性使用Attribution AI的最大训练窗口（一年）计算。 这意味着在显示数据集完整性值时，不会考虑超过一年的数据。
 
 ![数据集完整性](./images/user-guide/dataset-completeness.png)
 
@@ -109,7 +109,7 @@ ht-degree: 0%
 
 <!-- https://www.adobe.com/go/aai-mapping -->
 
-选择并添加完数据集后，将显示&#x200B;**映射**&#x200B;配置步骤。 Attribution AI要求您在上一步中选择的每个数据集都映射媒体频道字段。 这是因为如果没有数据集之间的媒体渠道映射，则从Attribution AI派生的见解可能无法正常显示，从而导致见解页面难以解释。 尽管只需使用媒体渠道，但强烈建议您映射某些可选字段，例如媒体操作、促销活动名称、促销活动组和促销活动标记。 这样做可让Attribution AI提供更清晰的洞察信息和最佳结果。
+选择并添加完数据集后，将显示&#x200B;**映射**&#x200B;配置步骤。 归因人工智能要求您映射在上一步中选择的每个数据集的媒体渠道字段。 这是因为如果没有数据集之间的媒体渠道映射，则从归因人工智能派生的见解可能无法正常显示，从而导致见解页面难以解释。 尽管只需使用媒体渠道，但强烈建议您映射某些可选字段，例如媒体操作、促销活动名称、促销活动组和促销活动标记。 这样做可以让归因人工智能提供更清晰的洞察和最佳结果。
 
 ![映射](./images/user-guide/mapping-save-&-exit.png)
 
@@ -205,7 +205,7 @@ ht-degree: 0%
 
 ## 高级培训和评分设置
 
-Attribution AI中的最后一页是用于设置训练和评分的&#x200B;**[!UICONTROL 高级]**&#x200B;页面。
+归因人工智能中的最后一页是用于设置训练和评分的&#x200B;**[!UICONTROL 高级]**&#x200B;页面。
 
 ![新页面集选项](./images/user-guide/advanced_settings_set_options.png)
 
@@ -267,10 +267,10 @@ Attribution AI中的最后一页是用于设置训练和评分的&#x200B;**[!UIC
 
 ## 后续步骤
 
-按照本教程，您已成功地在Attribution AI中创建了一个服务实例。 实例完成评分（最长允许24小时）后，您就可以[发现Attribution AI分析](./discover-insights.md)。 此外，如果您希望下载评分结果，请访问[下载得分](./download-scores.md)文档。
+通过阅读本教程，您已在归因人工智能中成功创建了服务实例。 实例完成评分（最长允许24小时）后，您就可以[发现Attribution AI见解](./discover-insights.md)。 此外，如果您希望下载评分结果，请访问[下载得分](./download-scores.md)文档。
 
 ## 其他资源
 
-以下视频概述了用于在Attribution AI中创建新实例的端到端工作流。
+以下视频概述了在归因人工智能中创建新实例的端到端工作流。
 
 >[!VIDEO](https://video.tv.adobe.com/v/32668?learn=on&quality=12)

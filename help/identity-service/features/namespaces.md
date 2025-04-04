@@ -2,10 +2,10 @@
 title: 身份命名空间概述
 description: 了解Identity Service中的身份命名空间。
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1858'
-ht-degree: 16%
+source-wordcount: '1860'
+ht-degree: 17%
 
 ---
 
@@ -76,7 +76,7 @@ ht-degree: 16%
    * 为所有其他身份类型生成身份图。
 * 达到系统限制时，将从身份图中删除哪些身份。 有关详细信息，请阅读标识数据](../guardrails.md)的[护栏。
 
-Experience Platform中提供了以下标识类型：
+Experience Platform中提供了以下身份类型：
 
 | 身份标识类型 | 描述 |
 | --- | --- |
@@ -85,32 +85,32 @@ Experience Platform中提供了以下标识类型：
 | 设备 ID | 设备 ID 识别硬件设备，如 IDFA（iPhone 和 iPad）、GAID (Android) 和 RIDA (Roku)，可以由多人在家庭中共享。 |
 | 电子邮件地址 | 电子邮件地址通常与单个人员关联，因此可用于跨不同渠道识别该人员。 此类型的身份包括个人身份信息(PII)。 这是指示[!DNL Identity Service]敏感地处理该值。 |
 | 非人员标识符 | 非人员 ID 用于存储需要命名空间但未连接到人员集群的标识符。例如，产品 SKU，与产品、组织或门店相关的数据。 |
-| 合作伙伴 ID | <ul><li>合作伙伴 ID 是数据合作伙伴用来代表人员的标识符。合作伙伴ID通常采用匿名形式，以免泄露某人的真实身份，并且可能是概率性的。 在Real-time Customer Data Platform中，合作伙伴ID主要用于扩展受众激活和数据扩充，而不是用于构建标识图链接。</li><li>在摄取包含指定为合作伙伴ID类型的身份命名空间的身份时，不会生成身份图。</li><li>如果使用合作伙伴ID的身份类型来摄取合作伙伴数据，可能会导致达到Identity Service的系统图限制，以及不必要地合并用户档案。</li><ul> |
+| 合作伙伴 ID | <ul><li>合作伙伴 ID 是数据合作伙伴用来代表人员的标识符。合作伙伴ID通常采用匿名形式，以免泄露某人的真实身份，并且可能是概率性的。 在Real-Time Customer Data Platform中，合作伙伴ID主要用于扩展受众激活和数据扩充，而不是用于构建标识图链接。</li><li>在摄取包含指定为合作伙伴ID类型的身份命名空间的身份时，不会生成身份图。</li><li>如果使用合作伙伴ID的身份类型来摄取合作伙伴数据，可能会导致达到Identity Service的系统图限制，以及不必要地合并用户档案。</li><ul> |
 | 电话号码 | 电话号码通常与单个人员相关联，因此可用于跨不同渠道识别该人员。 此类型的标识包括PII。 这是指示[!DNL Identity Service]敏感地处理该值。 |
 
 {style="table-layout:auto"}
 
 ### 标准命名空间 {#standard}
 
-Experience Platform提供了多个可用于所有组织的身份命名空间。 这些命名空间称为标准命名空间，可使用[!DNL Identity Service] API或通过Platform UI查看。
+Experience Platform提供了多个可用于所有组织的身份命名空间。 这些名称空间称为标准命名空间，可使用[!DNL Identity Service] API或通过Experience Platform UI查看。
 
-提供以下标准命名空间供Platform内的所有组织使用：
+提供了以下标准命名空间供Experience Platform中的所有组织使用：
 
 | 显示名称 | 描述 |
 | ------------ | ----------- |
-| AdCloud | 表示AdobeAdCloud的命名空间。 |
+| AdCloud | 表示Adobe AdCloud的命名空间。 |
 | Adobe Analytics（旧版 ID） | 表示Adobe Analytics的命名空间。 有关详细信息，请参阅以下有关[Adobe Analytics命名空间](https://experienceleague.adobe.com/docs/analytics/admin/data-governance/gdpr-namespaces.html#namespaces)的文档。 |
 | Apple IDFA（广告商的ID） | 表示广告商的Apple ID的命名空间。 有关详细信息，请参阅以下有关[基于兴趣的广告](https://support.apple.com/en-us/HT202074)的文档。 |
 | Apple推送通知服务 | 表示使用Apple推送通知服务收集的标识的命名空间。 有关详细信息，请参阅有关[Apple推送通知服务](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1)的以下文档。 |
 | ECID | 表示ECID的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 有关详细信息，请参阅[ECID](./ecid.md)上的以下文档。 |
 | 电子邮件 | 表示电子邮件地址的命名空间。 此类命名空间通常与单个人员关联，因此可用于跨不同渠道识别该人员。 |
-| 电子邮件（SHA256，小写） | 预哈希电子邮件地址的命名空间。 使用SHA256进行哈希处理之前，此命名空间中提供的值将转换为小写。 在规范化电子邮件地址之前，需要修剪前导空格和尾随空格。 此设置不能进行追溯性更改。 有关详细信息，请参阅以下有关[SHA256哈希处理支持](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html#hashing-support)的文档。 |
+| 电子邮件（SHA256，小写） | 预哈希电子邮件地址的命名空间。使用SHA256进行哈希处理之前，此命名空间中提供的值将转换为小写。 在规范化电子邮件地址之前，需要修剪前导空格和尾随空格。 此设置不能进行追溯性更改。 有关详细信息，请参阅以下有关[SHA256哈希处理支持](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html#hashing-support)的文档。 |
 | Firebase云消息 | 一个命名空间，它表示使用Google Firebase Cloud Messaging为推送通知收集的身份。 有关详细信息，请参阅以下有关[Google Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging)的文档。 |
 | Google Ad ID (GAID) | 表示Google Advertising ID的命名空间。 有关详细信息，请参阅以下有关[Google Advertising ID](https://support.google.com/googleplay/android-developer/answer/6048248?hl=en)的文档。 |
 | 电话 | 表示电话号码的命名空间。 此类命名空间通常与单个人员关联，因此可用于跨不同渠道识别该人员。 |
 | 电话(E.164) | 表示需要以E.164格式进行哈希处理的原始电话号码的命名空间。 E.164格式包括加号(`+`)、国际国家/地区呼叫代码、本地区号和电话号码。 例如： `(+)(country code)(area code)(phone number)`。 |
 | 手机 (SHA256) | 一个命名空间，它表示需要使用SHA256进行哈希处理的电话号码。 必须删除符号、字母和任何前导零。 您还必须添加国家/地区呼叫代码作为前缀。 |
-| 电话(SHA256_E.164) | 一个命名空间，表示需要使用SHA256和E.164格式进行哈希处理的原始电话号码。 |
+| 电话(SHA256_E.164) | 表示需要使用 SHA256 和 E.164 格式进行哈希处理的原始电话号码的命名空间。 |
 | TNTID | 表示Adobe Target的命名空间。 有关详细信息，请参阅[Target](https://experienceleague.adobe.com/docs/target/using/target-home.html)上的以下文档。 |
 | Windows AID | 表示Windows Advertising ID的命名空间。 有关详细信息，请参阅[Windows Advertising ID](https://docs.microsoft.com/en-us/uwp/api/windows.system.userprofile.advertisingmanager.advertisingid?view=winrt-19041)上的以下文档。 |
 

@@ -3,9 +3,9 @@ title: Mailchimp标记
 description: 通过Mailchimp标记目标，可导出帐户数据并在Mailchimp中激活以与联系人接洽。
 last-substantial-update: 2024-02-20T00:00:00Z
 exl-id: 0f278ca8-4fcf-4c47-b538-9cffa45a3d90
-source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1646'
+source-wordcount: '1657'
 ht-degree: 2%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 2%
 
 与根据联系人的兴趣和偏好对联系人进行排序的[!DNL Mailchimp Interest Categories]相比，[!DNL Mailchimp Tags]用于管理您的联系人可能感兴趣的主题订阅。 *请注意，Experience Platform也具有[!DNL Mailchimp Interest Categories]的连接，您可以在[[!DNL Mailchimp Interest Categories]](/help/destinations/catalog/email-marketing/mailchimp-interest-categories.md)页面上将其签出。*
 
-此[!DNL Adobe Experience Platform] [目标](/help/destinations/home.md)利用[[!DNL Mailchimp batch subscribe or unsubscribe API]](https://mailchimp.com/developer/marketing/api/lists/batch-subscribe-or-unsubscribe/)终结点。 在激活现有[!DNL Mailchimp]受众中的现有[!DNL Mailchimp]联系人&#x200B;**后，您可以**&#x200B;添加新联系人&#x200B;**或**&#x200B;更新这些联系人的标记。 [!DNL Mailchimp Tags]使用从Platform中选择的受众名称作为[!DNL Mailchimp]中的标记名称。
+此[!DNL Adobe Experience Platform] [目标](/help/destinations/home.md)利用[[!DNL Mailchimp batch subscribe or unsubscribe API]](https://mailchimp.com/developer/marketing/api/lists/batch-subscribe-or-unsubscribe/)终结点。 在激活现有[!DNL Mailchimp]受众中的现有[!DNL Mailchimp]联系人&#x200B;**后，您可以**&#x200B;添加新联系人&#x200B;**或**&#x200B;更新这些联系人的标记。 [!DNL Mailchimp Tags]使用从Experience Platform中选择的受众名称作为[!DNL Mailchimp]中的标记名称。
 
 ## 用例 {#use-cases}
 
@@ -26,11 +26,11 @@ ht-degree: 2%
 
 ### 向营销活动的联系人发送电子邮件 {#use-case-send-emails}
 
-组织的销售部门希望向精心策划的联系人列表广播基于电子邮件的营销活动。 联系人列表是从不同的离线来源批量接收的，因此需要对其进行跟踪。 该团队识别现有[!DNL Mailchimp]受众，并开始生成每个列表中的联系人添加到其中的Experience Platform受众。 将这些受众发送给[!DNL Mailchimp Tags]后，如果所选[!DNL Mailchimp]受众中不存在任何联系人，则会添加一个关联的标记，其中包含该联系人所属的受众名称。 如果[!DNL Mailchimp]受众中已存在任何联系人，则会添加一个包含该受众名称的新标记。 由于标签在[!DNL Mailchimp]中可见，脱机源很容易识别。 将数据发送到[!DNL Mailchimp]后，他们将营销活动电子邮件发送给受众。
+组织的销售部门希望向精心策划的联系人列表广播基于电子邮件的营销活动。 联系人列表是从不同的离线来源批量接收的，因此需要对其进行跟踪。 团队识别现有[!DNL Mailchimp]受众，并开始构建Experience Platform受众，每个列表中的联系人都添加到这些受众中。 将这些受众发送给[!DNL Mailchimp Tags]后，如果所选[!DNL Mailchimp]受众中不存在任何联系人，则会添加一个关联的标记，其中包含该联系人所属的受众名称。 如果[!DNL Mailchimp]受众中已存在任何联系人，则会添加一个包含该受众名称的新标记。 由于标签在[!DNL Mailchimp]中可见，脱机源很容易识别。 将数据发送到[!DNL Mailchimp]后，他们将营销活动电子邮件发送给受众。
 
 ## 先决条件 {#prerequisites}
 
-请参阅以下各节，了解需要在Experience Platform和[!DNL Mailchimp]中设置的任何先决条件，以及在使用[!DNL Mailchimp Tags]目标之前需要收集的信息。
+请参阅以下部分，了解需要在Experience Platform和[!DNL Mailchimp]中设置的任何先决条件，以及在使用[!DNL Mailchimp Tags]目标之前需要收集的信息。
 
 ### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
@@ -38,7 +38,7 @@ ht-degree: 2%
 
 ### [!DNL Mailchimp Tags]目标的先决条件 {#prerequisites-destination}
 
-请注意以下先决条件，以便将数据从Platform导出到您的[!DNL Mailchimp Tags]帐户：
+请注意以下先决条件，以便将数据从Experience Platform导出到您的[!DNL Mailchimp Tags]帐户：
 
 #### 您需要拥有[!DNL Mailchimp]帐户 {#prerequisites-account}
 
@@ -88,8 +88,8 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -99,8 +99,8 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在导出受众的所有成员，以及所需的架构字段&#x200B;*（例如：电子邮件地址、电话号码、姓氏）*（根据字段映射）。</li><li> 对于在Platform中选择的每个受众，相应的[!DNL Mailchimp Tags]区段状态将通过Platform中的受众状态进行更新。</li></ul> |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在导出受众的所有成员，以及所需的架构字段&#x200B;*（例如：电子邮件地址、电话号码、姓氏）*（根据字段映射）。</li><li> 对于在Experience Platform中选择的每个受众，相应的[!DNL Mailchimp Tags]区段状态将通过Experience Platform中的受众状态进行更新。</li></ul> |
+| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -125,7 +125,7 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 {style="table-layout:auto"}
 
-![显示如何进行身份验证的平台UI屏幕截图。](../../assets/catalog/email-marketing/mailchimp-tags/authenticate-destination.png)
+![Experience Platform UI屏幕截图显示如何进行身份验证。](../../assets/catalog/email-marketing/mailchimp-tags/authenticate-destination.png)
 
 如果提供的详细信息有效，则UI会显示&#x200B;**[!UICONTROL 已连接]**&#x200B;状态，并带有绿色复选标记。 然后，您可以继续执行下一步。
 
@@ -133,14 +133,14 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
-![显示目标详细信息的平台UI屏幕截图。](../../assets/catalog/email-marketing/mailchimp-tags/destination-details.png)
+![Experience Platform UI屏幕截图显示目标详细信息。](../../assets/catalog/email-marketing/mailchimp-tags/destination-details.png)
 
 | 字段 | 描述 |
 | --- | --- |
 | **[!UICONTROL 名称]** | 将来用于识别此目标的名称。 |
 | **[!UICONTROL 描述]** | 可帮助您以后识别此目标的描述。 |
 | **[!UICONTROL 数据中心]** | 您的[!DNL Mailchimp]帐户`data center`。 有关任何指导，请参阅[识别 [!DNL Mailchimp] 数据中心](#identify-data-center)部分。 |
-| **[!UICONTROL 受众名称（请先输入数据中心）]** | 输入&#x200B;**[!UICONTROL 数据中心]**&#x200B;后，此下拉列表将自动填充[!DNL Mailchimp]帐户中的受众名称。 选择要使用Platform中的数据更新的受众。 |
+| **[!UICONTROL 受众名称（请先输入数据中心）]** | 输入&#x200B;**[!UICONTROL 数据中心]**&#x200B;后，此下拉列表将自动填充[!DNL Mailchimp]帐户中的受众名称。 选择要使用Experience Platform中的数据更新的受众。 |
 
 {style="table-layout:auto"}
 
@@ -161,18 +161,18 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 ### 映射注意事项和示例 {#mapping-considerations-example}
 
-要将受众数据从Adobe Experience Platform正确发送到[!DNL Mailchimp Tags]目标，您需要完成字段映射步骤。 映射包括在您的Platform帐户中的Experience Data Model (XDM)架构字段与其在目标目标中的相应等效字段之间创建链接。
+要将受众数据从Adobe Experience Platform正确发送到[!DNL Mailchimp Tags]目标，您需要完成字段映射步骤。 映射包括在Experience Platform帐户中的Experience Data Model (XDM)架构字段与其与目标中的相应等效字段之间创建链接。
 
 要将XDM字段正确映射到[!DNL Mailchimp Tags]目标字段，请执行以下步骤：
 
 1. 在&#x200B;**[!UICONTROL 映射]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL 添加新映射]**。 您将在屏幕上看到一个新映射行。
 1. 在&#x200B;**[!UICONTROL 选择源字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择身份命名空间]**&#x200B;并选择`Email`身份命名空间。
 
-   ![Platform UI屏幕截图，其中Source字段为来自身份命名空间的电子邮件。](../../assets/catalog/email-marketing/mailchimp-tags/source-field.png)
+   ![Experience Platform UI屏幕截图，其中Source字段为来自身份命名空间的电子邮件。](../../assets/catalog/email-marketing/mailchimp-tags/source-field.png)
 
 1. 在&#x200B;**[!UICONTROL 选择目标字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择身份命名空间]**&#x200B;并选择`Email`身份命名空间。
 
-   ![Platform UI屏幕截图，目标字段为来自身份命名空间的电子邮件。](../../assets/catalog/email-marketing/mailchimp-tags/target-field.png)
+   ![Experience Platform UI屏幕截图，其中Target字段为来自身份命名空间的电子邮件。](../../assets/catalog/email-marketing/mailchimp-tags/target-field.png)
 
    XDM配置文件架构与[!DNL Mailchimp Tags]之间的映射将如下所示：
 
@@ -181,7 +181,7 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
    | `IdentityMap: Email` | `Identity: Email` | 是 |
 
    下面显示了具有已完成映射的示例：
-   ![显示字段映射的Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/mailchimp-tags/mappings.png)
+   ![显示字段映射的Experience Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/mailchimp-tags/mappings.png)
 
 完成提供目标连接的映射后，请选择&#x200B;**[!UICONTROL 下一步]**。
 

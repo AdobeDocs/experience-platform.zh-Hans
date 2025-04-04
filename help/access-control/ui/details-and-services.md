@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 管理产品配置文件的详细信息和其他服务
 description: 本文档介绍了在Adobe Admin Console中管理产品配置文件的详细信息和其他服务所需的必要步骤。 您可以从“配置文件设置”菜单配置配置配置配置文件的详细信息以及访问其他服务。
 exl-id: ac9c2213-f2fb-44be-9334-87fada8a4717
-source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '293'
 ht-degree: 0%
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以访问&#x200B;**[!UICONTROL 启用服务]**&#x200B;页面。
 
-通过&#x200B;**[!UICONTROL 启用服务]**&#x200B;菜单，您可以修改配置文件对创建配置文件时最初配置的其他[!DNL Platform]服务的访问权限。 根据您的[!DNL Platform]订阅，这些服务可能包括：
+通过&#x200B;**[!UICONTROL 启用服务]**&#x200B;菜单，您可以修改配置文件对创建配置文件时最初配置的其他[!DNL Experience Platform]服务的访问权限。 根据您的[!DNL Experience Platform]订阅，这些服务可能包括：
 
 - [!DNL Data Science Workspace]
 - [!DNL Query Service]

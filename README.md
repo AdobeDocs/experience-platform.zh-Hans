@@ -1,8 +1,8 @@
 ---
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 163c6f6bacfd6f0928b1053bd146a2d4fc4c74d0
 workflow-type: tm+mt
-source-wordcount: '504'
-ht-degree: 98%
+source-wordcount: '470'
+ht-degree: 95%
 
 ---
 # 贡献内容
@@ -43,7 +43,7 @@ If you submit a pull request with significant changes to documentation and code 
 
 ## 联系 Adobe Experience Platform 文档团队
 
-如上所述，Adobe 社区的成员可以提交问题，该问题将会分配给相应的作者。如果您是 Adobe 员工，则可以直接提交问题，或直接联系 Experience Platform 文档团队。要查找特定 Platform 领域的主要作者，请参阅 [Adobe Experience Platform 文档百科](https://wiki.corp.adobe.com/display/DMSArchitecture/Adobe+Experience+Platform+文档)。
+如上所述，Adobe 社区的成员可以提交问题，该问题将会分配给相应的作者。如果您是 Adobe 员工，则可以直接提交问题，或直接联系 Experience Platform 文档团队。要查找特定Experience Platform区域的首席作者，请参阅[Adobe Experience Platform文档wiki](https://wiki.corp.adobe.com/display/DMSArchitecture/Adobe+Experience+Platform+文档)。
 
 ## 工具和设置
 

@@ -5,7 +5,7 @@ type: Documentation
 description: 通过Adobe Experience Platform，您可以使用RESTful API或用户界面访问实时客户配置文件数据。 本指南概述如何使用配置文件API访问实体（通常称为“配置文件”）。
 role: Developer
 exl-id: 06a1a920-4dc4-4468-ac15-bf4a6dc885d4
-source-git-commit: efebf8e341b17fdd71586827753eadfe1c2cfa15
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1706'
 ht-degree: 3%
@@ -18,7 +18,7 @@ ht-degree: 3%
 >
 >弃用使用配置文件访问API查找ExperienceEvent 。 请针对需要查找ExperienceEvents的用例使用计算属性等功能。 有关此更改的更多信息，请联系Adobe客户关怀团队。
 
-Adobe Experience Platform允许您使用RESTful API或用户界面访问[!DNL Real-Time Customer Profile]数据。 本指南概述了如何使用API访问实体（通常称为“用户档案”）。 有关使用[!DNL Platform] UI访问配置文件的详细信息，请参阅[配置文件用户指南](../ui/user-guide.md)。
+Adobe Experience Platform允许您使用RESTful API或用户界面访问[!DNL Real-Time Customer Profile]数据。 本指南概述了如何使用API访问实体（通常称为“用户档案”）。 有关使用[!DNL Experience Platform] UI访问配置文件的详细信息，请参阅[配置文件用户指南](../ui/user-guide.md)。
 
 ## 快速入门
 
@@ -1223,7 +1223,7 @@ curl -X DELETE 'https://platform.adobe.io/data/core/ups/access/entities?schema.n
 
 ## 后续步骤
 
-按照本指南，您已成功访问[!DNL Real-Time Customer Profile]数据字段、配置文件和时序数据。 要了解如何访问存储在[!DNL Platform]中的其他数据资源，请参阅[数据访问概述](../../data-access/home.md)。
+按照本指南，您已成功访问[!DNL Real-Time Customer Profile]数据字段、配置文件和时序数据。 要了解如何访问存储在[!DNL Experience Platform]中的其他数据资源，请参阅[数据访问概述](../../data-access/home.md)。
 
 ## 附录 {#appendix}
 

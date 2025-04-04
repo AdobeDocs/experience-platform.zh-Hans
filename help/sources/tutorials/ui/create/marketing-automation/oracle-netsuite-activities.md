@@ -1,13 +1,13 @@
 ---
 title: 在UI中创建 [!DNL Oracle NetSuite Activities] 源连接
-description: 了解如何使用Adobe Experience Platform UI创建OracleNetSuite活动源连接。
+description: 了解如何使用Adobe Experience Platform UI创建Oracle NetSuite活动源连接。
 hide: true
 hidefromtoc: true
 badge: Beta 版
 exl-id: 99ef0b50-c8d6-48d6-895f-46b7ade47520
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '618'
+source-wordcount: '624'
 ht-degree: 2%
 
 ---
@@ -37,33 +37,33 @@ ht-degree: 2%
 
 ## 连接您的[!DNL Oracle NetSuite]帐户 {#connect-account}
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
 在&#x200B;*营销自动化*&#x200B;类别下，选择&#x200B;**[!DNL Oracle NetSuite Activities]**，然后选择&#x200B;**[!UICONTROL 添加数据]**。
 
-![具有OracleNetSuite活动信息卡的目录的Platform UI屏幕截图](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-activities/catalog-card.png)
+带有Experience Platform NetSuite活动信息卡的目录![Oracle UI屏幕截图](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-activities/catalog-card.png)
 
-此时会显示&#x200B;**[!UICONTROL 连接OracleNetSuite活动帐户]**&#x200B;页。 在此页上，您可以使用新凭据或现有凭据。
+此时会显示&#x200B;**[!UICONTROL 连接Oracle NetSuite活动帐户]**&#x200B;页面。 在此页上，您可以使用新凭据或现有凭据。
 
 >[!IMPORTANT]
 >
->刷新令牌将在七天后过期。 令牌过期后，您必须使用更新后的令牌在Experience Platform上创建帐户。 如果不使用更新后的令牌创建新帐户，您可能会看到以下错误消息：`The request could not be processed. Error from flow provider: The request could not be processed. Rest call failed with client error, status code 401 Unauthorized, please check your activity settings.`
+>刷新令牌将在七天后过期。 令牌过期后，您必须在Experience Platform上使用更新的令牌创建帐户。 如果不使用更新后的令牌创建新帐户，您可能会看到以下错误消息：`The request could not be processed. Error from flow provider: The request could not be processed. Rest call failed with client error, status code 401 Unauthorized, please check your activity settings.`
 
 ### 现有账户 {#existing-account}
 
 要使用现有帐户，请选择要用于创建新数据流的[!DNL Oracle NetSuite Activities]帐户，然后选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
 
-将OracleNetSuite活动帐户与现有帐户连接的![平台UI屏幕截图](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-activities/existing.png)
+![用于将Oracle NetSuite活动帐户与现有帐户连接的Experience Platform UI屏幕截图](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-activities/existing.png)
 
 ### 新帐户 {#new-account}
 
 如果要创建新帐户，请选择&#x200B;**[!UICONTROL 新建帐户]**，然后提供名称、可选描述和凭据。 完成后，选择&#x200B;**[!UICONTROL 连接到源]**，然后留出一些时间来建立新连接。
 
-![用于将OracleNetSuite活动帐户与新帐户连接的Platform UI屏幕截图](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-activities/new.png)
+![用于将Oracle NetSuite活动帐户与新帐户连接的Experience Platform UI屏幕截图](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-activities/new.png)
 
 ## 后续步骤 {#next-steps}
 
-通过学习本教程，您已建立与[!DNL Oracle NetSuite Activities]帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入Platform](../../dataflow/marketing-automation.md)。
+通过学习本教程，您已建立与[!DNL Oracle NetSuite Activities]帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入Experience Platform](../../dataflow/marketing-automation.md)。
 
 ## 其他资源 {#additional-resources}
 
@@ -71,7 +71,7 @@ ht-degree: 2%
 
 ### 映射 {#mapping}
 
-Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](../../../../../data-prep/ui/mapping.md)。
+Experience Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](../../../../../data-prep/ui/mapping.md)。
 
 >[!NOTE]
 >

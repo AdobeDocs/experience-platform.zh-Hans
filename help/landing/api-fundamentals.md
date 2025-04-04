@@ -1,25 +1,25 @@
 ---
 keywords: Experience Platform；首页；热门话题
 solution: Experience Platform
-title: Experience PlatformAPI基础知识
-description: 本文档简要概述了Experience PlatformAPI涉及的一些底层技术和语法。
+title: Experience Platform API基础
+description: 本文档简要概述了Experience Platform API涉及的一些底层技术和语法。
 role: Developer
 feature: API
 exl-id: cd69ba48-f78c-4da5-80d1-efab5f508756
-source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '506'
+source-wordcount: '508'
 ht-degree: 1%
 
 ---
 
-# Experience PlatformAPI基础知识
+# Experience Platform API基础
 
-Adobe Experience Platform API使用多种基础技术和语法，这些技术和语法对于有效管理基于JSON的[!DNL Platform]资源非常重要。 本文档提供了这些技术的简要概述，以及指向外部文档的链接以了解更多信息。
+Adobe Experience Platform API使用多种基础技术和语法，这些技术和语法对于有效管理基于JSON的[!DNL Experience Platform]资源非常重要。 本文档提供了这些技术的简要概述，以及指向外部文档的链接以了解更多信息。
 
 ## JSON指针 {#json-pointer}
 
-JSON指针是一个标准化的字符串语法([RFC 6901](https://tools.ietf.org/html/rfc6901))，用于标识JSON文档中的特定值。 JSON指针是以`/`字符分隔的令牌字符串，用于指定对象键或数组索引，并且令牌可以是字符串或数字。 [!DNL Platform] API的许多PATCH操作中都使用了JSON指针字符串，如本文档后面所述。 有关JSON指针的更多信息，请参阅[JSON指针概述文档](https://rapidjson.org/md_doc_pointer.html)。
+JSON指针是一个标准化的字符串语法([RFC 6901](https://tools.ietf.org/html/rfc6901))，用于标识JSON文档中的特定值。 JSON指针是以`/`字符分隔的令牌字符串，用于指定对象键或数组索引，并且令牌可以是字符串或数字。 JSON指针字符串在[!DNL Experience Platform] API的许多PATCH操作中使用，如本文档后面所述。 有关JSON指针的更多信息，请参阅[JSON指针概述文档](https://rapidjson.org/md_doc_pointer.html)。
 
 ### 示例JSON模式对象
 
@@ -98,7 +98,7 @@ JSON指针是一个标准化的字符串语法([RFC 6901](https://tools.ietf.org
 
 ## JSON修补程序 {#json-patch}
 
-[!DNL Platform] API许多PATCH操作都接受JSON修补程序对象作为其请求负载。 JSON修补程序是一种用于描述JSON文档更改的标准化格式([RFC 6902](https://tools.ietf.org/html/rfc6902))。 它允许您定义对JSON的部分更新，而无需在请求正文中发送整个文档。
+对于[!DNL Experience Platform] API，有许多接受JSON修补程序对象作为其请求负载的PATCH操作。 JSON修补程序是一种用于描述JSON文档更改的标准化格式([RFC 6902](https://tools.ietf.org/html/rfc6902))。 它允许您定义对JSON的部分更新，而无需在请求正文中发送整个文档。
 
 ### 示例JSON修补程序对象
 
@@ -109,7 +109,7 @@ JSON指针是一个标准化的字符串语法([RFC 6901](https://tools.ietf.org
 }
 ```
 
-* `op`：修补操作的类型。 虽然JSON修补程序支持多种不同的操作类型，但并非所有[!DNL Platform] API中的PATCH操作都与每种操作类型兼容。 可用的操作类型包括：
+* `op`：修补操作的类型。 虽然JSON修补程序支持多种不同的操作类型，但并非所有[!DNL Experience Platform] API中的PATCH操作都与每种操作类型兼容。 可用的操作类型包括：
    * `add`
    * `remove`
    * `replace`
@@ -126,4 +126,4 @@ JSON模式是一种用于描述和验证JSON数据结构的格式。 [体验数�
 
 ## 后续步骤
 
-本文档介绍了与管理[!DNL Experience Platform]的基于JSON的资源相关的一些技术和语法。 有关使用平台API（包括最佳实践）的更多信息，请参阅[快速入门指南](api-guide.md)。 有关常见问题的解答，请参阅[平台疑难解答指南](troubleshooting.md)。
+本文档介绍了与管理[!DNL Experience Platform]的基于JSON的资源相关的一些技术和语法。 有关使用Experience Platform API（包括最佳实践）的更多信息，请参阅[快速入门指南](api-guide.md)。 有关常见问题的解答，请参阅[Experience Platform疑难解答指南](troubleshooting.md)。

@@ -4,9 +4,9 @@ description: 了解如何创建源连接和数据流，以将流数据从Snowfla
 badgeUltimate: label="Ultimate" type="Positive"
 last-substantial-update: 2023-09-24T00:00:00Z
 exl-id: ed937689-e844-487e-85fb-e3536c851fe5
-source-git-commit: 84d09038ded1f35269ebf67c6bc1a5dacaafe4ac
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '816'
+source-wordcount: '820'
 ht-degree: 1%
 
 ---
@@ -17,10 +17,10 @@ ht-degree: 1%
 >
 >* [!DNL Snowflake]流源在API中可供已购买Real-Time CDP Ultimate的用户使用。
 >
->* 在Amazon Web Services (AWS)上运行Adobe Experience Platform时，您现在可以使用[!DNL Snowflake]流源。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform多云概述](../../../landing/multi-cloud.md)。
+>* 在Amazon Web Services (AWS)上运行Adobe Experience Platform时，您现在可以使用[!DNL Snowflake]流源。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](../../../landing/multi-cloud.md)。
 
 
-Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
+Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。 您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
 
 Experience Platform支持从[!DNL Snowflake]数据库流式传输数据。
 
@@ -32,13 +32,13 @@ Experience Platform支持从[!DNL Snowflake]数据库流式传输数据。
 
 ## 先决条件
 
-以下部分概述了从[!DNL Snowflake]数据库流式传输数据到Experience Platform之前需要完成的先决步骤：
+以下部分概述了在将数据从[!DNL Snowflake]数据库流式传输到Experience Platform之前需要完成的先决步骤：
 
 ### 更新IP地址允许列表
 
 在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 有关详细信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md#ip-address-allow-list-for-streaming-sources)页。
 
-以下文档提供了有关如何使用API或用户界面将[!DNL Amazon Redshift]连接到Platform的信息：
+以下文档提供了有关如何使用API或用户界面将[!DNL Amazon Redshift]连接到Experience Platform的信息：
 
 ### 收集所需的凭据
 
@@ -47,8 +47,8 @@ Experience Platform支持从[!DNL Snowflake]数据库流式传输数据。
 | 凭据 | 描述 |
 | --- | --- |
 | `account` | [!DNL Snowflake]帐户的完整帐户标识符（帐户名称或帐户定位器）附加了后缀`snowflakecomputing.com`。 帐户标识符可以具有不同的格式： <ul><li>{ORG_NAME}-{ACCOUNT_NAME}.snowflakecomputing.com （如`acme-abc12345.snowflakecomputing.com`）</li><li>{ACCOUNT_LOCATOR}。{CLOUD_REGION_ID}.snowflakecomputing.com （如`acme12345.ap-southeast-1.snowflakecomputing.com`）</li><li>{ACCOUNT_LOCATOR}。{CLOUD_REGION_ID}。{CLOUD}.snowflakecomputing.com （如`acme12345.east-us-2.azure.snowflakecomputing.com`）</li></ul> 有关详细信息，请阅读[[!DNL Snowflake document on account identifiers]](<https://docs.snowflake.com/en/user-guide/admin-account-identifier.html>)。 |
-| `warehouse` | [!DNL Snowflake]仓库管理应用程序的查询执行过程。 每个[!DNL Snowflake]仓库彼此独立，在将数据传送到Platform时必须单独访问。 |
-| `database` | [!DNL Snowflake]数据库包含要带入Platform的数据。 |
+| `warehouse` | [!DNL Snowflake]仓库管理应用程序的查询执行过程。 每个[!DNL Snowflake]仓库彼此独立，在将数据传送到Experience Platform时必须单独访问。 |
+| `database` | [!DNL Snowflake]数据库包含要带Experience Platform的数据。 |
 | `username` | [!DNL Snowflake]帐户的用户名。 |
 | `password` | [!DNL Snowflake]用户帐户的密码。 |
 | `role` | （可选）可以为给定连接的用户提供自定义角色。 如果未提供，此值默认为`public`。 |
@@ -89,5 +89,5 @@ Experience Platform支持从[!DNL Snowflake]数据库流式传输数据。
 
 以下教程提供了有关如何使用API将[!DNL Snowflake]流源连接到Experience Platform的步骤：
 
-* [使用Flow Service API将数据从 [!DNL Snowflake] 数据库流式传输到Experience Platform](../../tutorials/api/create/databases/snowflake-streaming.md)
-* [使用Experience Platform用户界面中的源工作区从 [!DNL Snowflake] 数据库流式传输数据以Experience Platform](../../tutorials/ui/create/databases/snowflake-streaming.md)
+* [使用流服务API将数据从 [!DNL Snowflake] 数据库流入Experience Platform](../../tutorials/api/create/databases/snowflake-streaming.md)
+* [使用Experience Platform用户界面中的源工作区将数据从 [!DNL Snowflake] 数据库流式传输到Experience Platform](../../tutorials/ui/create/databases/snowflake-streaming.md)

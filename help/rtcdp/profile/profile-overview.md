@@ -1,12 +1,12 @@
 ---
 keywords: rtcdp配置文件；配置文件rtcdp；rtcdp身份；rtcdp合并策略；实时客户配置文件
 title: 了解Real-Time CDP中的Real-time Customer Profile
-description: 了解Adobe Real-time Customer Data Platform如何让您使用Real-time Customer Profile为您的客户推动协调、一致和相关体验。
+description: 了解Adobe Real-Time Customer Data Platform如何让您使用Real-time Customer Profile为您的客户推动协调、一致和相关体验。
 feature: Get Started, Profiles
 exl-id: de70948c-ffc1-49d3-a57c-25ad415752ff
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '454'
+source-wordcount: '457'
 ht-degree: 1%
 
 ---
@@ -19,11 +19,11 @@ ht-degree: 1%
 
 通过[!DNL Adobe Real-Time Customer Data Platform]，无论客户在何处或何时与您的品牌互动，您都可以为其推动协调一致的体验。 提供这些个性化体验，让他们觉得自己相关且及时，这并非易事，但它可以通过使用Adobe Experience Platform中的实时客户档案来实现。
 
-Real-Time CDP构建于Experience Platform之上，并利用了许多核心Experience Platform特性和功能，包括创建用户档案。 单个客户的这些汇总视图将来自您的多个营销渠道以及您的组织当前用于存储客户数据的各种系统的数据汇总在一起。
+Real-Time CDP构建于Experience Platform之上，并利用了Experience Platform的许多核心特性和功能，包括创建用户档案。 单个客户的这些汇总视图将来自您的多个营销渠道以及您的组织当前用于存储客户数据的各种系统的数据汇总在一起。
 
-## Real-Time CDP B2B版本的配置文件增强功能
+## Real-Time CDP、B2B edition的配置文件增强功能
 
-除了Real-Time CDP支持的配置文件功能之外，您还可以使用Real-Time CDP B2B版本浏览与个人相关的重要信息，如客户和商机。 要了解有关Real-Time CDP B2B版本的配置文件增强功能的更多信息，请从阅读[配置文件浏览指南](profile-browse.md)开始。
+除了Real-Time CDP支持的配置文件功能之外，您还可以使用Real-Time CDP、B2B edition浏览与个人关联的重要信息，如客户和商机。 要了解有关Real-Time CDP、B2B edition的配置文件增强功能的更多信息，请从阅读[配置文件浏览指南](profile-browse.md)开始。
 
 ## 身份和身份命名空间
 
@@ -31,11 +31,11 @@ Real-Time CDP构建于Experience Platform之上，并利用了许多核心Experi
 
 ## 合并策略
 
-在汇总客户数据时，合并策略是Platform用来确定数据优先顺序的规则以及将合并哪些数据以创建该统一视图。 有关合并策略的详细信息，请参阅[合并策略概述](merge-policies.md)。
+在汇总客户数据时，合并策略是Experience Platform用来确定数据的优先级以及将合并哪些数据以创建该统一视图的规则。 有关合并策略的详细信息，请参阅[合并策略概述](merge-policies.md)。
 
 ## 配置文件查看器
 
-通过Platform，您可以轻松查看客户个人资料，并使用各种属性搜索特定个人资料。 有关如何在Platform中查看配置文件的详细信息，请参阅[配置文件浏览概述](profile-browse.md)。
+Experience Platform允许您轻松查看客户个人资料，并使用各种属性搜索特定个人资料。 有关如何在Experience Platform中查看配置文件的详细信息，请参阅[配置文件浏览概述](profile-browse.md)。
 
 ## 后续步骤
 

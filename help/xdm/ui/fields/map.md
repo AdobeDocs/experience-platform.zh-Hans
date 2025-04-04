@@ -2,9 +2,9 @@
 title: 在UI中定义映射字段
 description: 了解如何在Experience Platform用户界面中定义映射字段。
 exl-id: 657428a2-f184-4d7c-b657-4fc60d77d5c6
-source-git-commit: ee27fc42a1ee23ef650d320df64e5970a84d0d38
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '452'
+source-wordcount: '455'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ Adobe Experience Platform允许您完全自定义自定义Experience Data Model 
 
 您还可以在架构编辑器中定义映射字段，以建模灵活的动态数据结构或存储键值对的集合。
 
-在Platform用户界面(UI)中定义新字段时，请使用&#x200B;**[!UICONTROL 类型]**&#x200B;下拉列表，然后从列表中选择“**[!UICONTROL 映射]**”。
+在Experience Platform用户界面(UI)中定义新字段时，请使用&#x200B;**[!UICONTROL 类型]**&#x200B;下拉列表，然后从列表中选择“**[!UICONTROL 映射]**”。
 
 ![模式编辑器的“类型”下拉列表和映射值突出显示。](../../images/ui/fields/special/map.png)
 
@@ -44,10 +44,10 @@ XDM对此数据类型的使用施加以下限制：
 
 >[!NOTE]
 >
->Platform UI在如何提取映射类型字段的键值方面存在限制。 虽然对象类型字段可以展开，但映射显示为一个字段。 通过架构注册表API创建的不是字符串或整数数据类型的映射字段显示为“[!UICONTROL 复杂]”数据类型。
+>Experience Platform UI在如何提取映射类型字段的键值方面存在限制。 虽然对象类型字段可以展开，但映射显示为一个字段。 通过架构注册表API创建的不是字符串或整数数据类型的映射字段显示为“[!UICONTROL 复杂]”数据类型。
 
 ## 后续步骤
 
-阅读本文档后，您现在可以在Platform UI中定义映射字段。 请记住，您只能使用类和字段组向架构添加字段。 要详细了解如何在UI中管理这些资源，请参阅有关创建和编辑[类](../resources/classes.md)和[字段组](../resources/field-groups.md)的指南。
+阅读本文档后，您现在可以在Experience Platform UI中定义映射字段。 请记住，您只能使用类和字段组向架构添加字段。 要详细了解如何在UI中管理这些资源，请参阅有关创建和编辑[类](../resources/classes.md)和[字段组](../resources/field-groups.md)的指南。
 
 有关[!UICONTROL 架构]工作区的功能的更多信息，请参阅[[!UICONTROL 架构]工作区概述](../overview.md)。

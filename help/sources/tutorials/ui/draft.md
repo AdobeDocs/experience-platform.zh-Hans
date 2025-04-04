@@ -2,9 +2,9 @@
 title: UI中的草稿数据流
 description: 了解如何将数据流另存为草稿，并在以后使用源工作区时发布它们。
 exl-id: ee00798e-152a-4618-acb3-db40f2f55fae
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '591'
+source-wordcount: '593'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,11 @@ ht-degree: 0%
 
 本文档要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [源](../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
+* [源](../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
 
 ## 将数据流另存为草稿
 
-选择将要引入Platform的数据后，您可以随时暂停数据流创建进度。
+在选择要引入Experience Platform的数据之后，您可以随时暂停数据流创建进度。
 
 例如，如果要在数据流详细信息步骤中保存进度，请选择&#x200B;**[!UICONTROL 另存为草稿]**。
 
@@ -51,7 +51,7 @@ ht-degree: 0%
 
 ![给定组织的数据流列表。](../../images/tutorials/draft/catalog-access.png)
 
-## Publish您的草稿数据流
+## 发布草稿数据流
 
 您将返回到源工作流的[!UICONTROL 添加数据]步骤，在该步骤中，您可以重新确认数据的格式并继续处理数据流。
 

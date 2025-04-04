@@ -1,21 +1,21 @@
 ---
-title: 使用Platform UI为Azure设置和配置客户管理的密钥
+title: 使用Experience Platform UI为Azure设置和配置客户管理的密钥
 description: 了解如何使用您的Azure租户设置您的CMK应用并将您的加密密钥ID发送到Adobe Experience Platform。
 role: Developer
 feature: Privacy
 exl-id: 5f38997a-66f3-4f9d-9c2f-fb70266ec0a6
-source-git-commit: 58bc7a650ff58f877550fa8838c6f8e2908f0090
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1138'
+source-wordcount: '1146'
 ht-degree: 0%
 
 ---
 
-# 使用Platform UI为Azure设置和配置客户管理的密钥
+# 使用Experience Platform UI为Azure设置和配置客户管理的密钥
 
-本文档介绍了有关使用UI在Platform中启用客户管理的密钥(CMK)功能的Azure特定说明。 有关特定于AWS的说明，请参阅[AWS安装指南](../aws/ui-set-up.md)。
+本文档介绍了有关使用UI在Experience Platform中启用客户管理的密钥(CMK)功能的Azure特定说明。 有关特定于AWS的说明，请参阅[AWS安装指南](../aws/ui-set-up.md)。
 
-有关如何使用API为Azure托管的Platform实例完成此过程的说明，请参阅[API CMK设置文档](./api-set-up.md)。
+有关如何使用API为Azure托管的Experience Platform实例完成此过程的说明，请参阅[API CMK设置文档](./api-set-up.md)。
 
 ## 先决条件
 
@@ -56,7 +56,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->如果您有多个[!DNL Microsoft Azure]订阅，则可能会将您的Platform实例连接到错误的密钥保管库。 在此情况下，您必须将应用程序身份验证URL名称的`common`部分交换为CMK目录ID。<br>从[!DNL Microsoft Azure]应用程序的门户设置、目录和订阅页面复制CMK目录ID<br>![突出显示目录ID的[!DNL Microsoft Azure]应用程序门户设置、目录和订阅页面。](../../../images/governance-privacy-security/customer-managed-keys/directory-id.png)<br>接下来，将其粘贴到浏览器地址栏中。<br>![突出显示应用程序身份验证URL的“common”部分的Google浏览器页面。](../../../images/governance-privacy-security/customer-managed-keys/common-url-section.png)
+>如果您有多个[!DNL Microsoft Azure]订阅，则可能会将您的Experience Platform实例连接到错误的密钥保管库。 在此情况下，您必须将应用程序身份验证URL名称的`common`部分交换为CMK目录ID。<br>从[!DNL Microsoft Azure]应用程序的门户设置、目录和订阅页面复制CMK目录ID<br>![突出显示目录ID的[!DNL Microsoft Azure]应用程序门户设置、目录和订阅页面。](../../../images/governance-privacy-security/customer-managed-keys/directory-id.png)<br>接下来，将其粘贴到浏览器地址栏中。<br>![突出显示应用程序身份验证URL的“common”部分的Google浏览器页面。](../../../images/governance-privacy-security/customer-managed-keys/common-url-section.png)
 
 ### 将CMK应用程序分配给角色 {#assign-to-role}
 
@@ -82,7 +82,7 @@ ht-degree: 0%
 
 ![突出显示[!UICONTROL 应用程序ID]的[!UICONTROL 客户托管密钥配置]视图。](../../../images/governance-privacy-security/customer-managed-keys/application-id.png)
 
-验证Azure工具所需的所有详细信息都包含在Platform UI中。 提供了此级别的粒度，因为许多用户希望使用其他Azure工具来增强其监视和记录这些应用程序对其密钥保管库的访问的能力。 了解这些标识符对于实现此目标以及帮助Adobe服务访问密钥至关重要。
+验证Azure Tools所需的所有详细信息都包含在Experience Platform UI中。 提供了此级别的粒度，因为许多用户希望使用其他Azure工具来增强其监视和记录这些应用程序对其密钥保管库的访问的能力。 了解这些标识符对于实现此目标以及帮助Adobe服务访问密钥至关重要。
 
 ## 在Experience Platform上启用加密密钥配置 {#send-to-adobe}
 
@@ -110,11 +110,11 @@ ht-degree: 0%
 
 ## 验证配置的状态 {#check-status}
 
-留出大量的处理时间。 要检查配置状态，请返回[!UICONTROL 客户托管密钥配置]视图，然后向下滚动到[!UICONTROL 配置状态]。 进度条已前进到第三步的第一步，并说明了系统正在验证Platform是否有权访问密钥和密钥保管库。
+留出大量的处理时间。 要检查配置状态，请返回[!UICONTROL 客户托管密钥配置]视图，然后向下滚动到[!UICONTROL 配置状态]。 进度条已前进到第三步的第一步，并说明了系统正在验证Experience Platform是否有权访问密钥和密钥保管库。
 
 CMK配置有四种潜在状态。 具体如下：
 
-* 步骤1：验证平台是否能够访问密钥和密钥保管库。
+* 步骤1：验证Experience Platform是否能够访问密钥和密钥保管库。
 * 步骤2：正在将密钥保管库和密钥名称添加到组织中的所有数据存储中。
 * 步骤3：已成功将密钥保管库和密钥名称添加到数据存储。
 * `FAILED`：出现问题，主要与密钥、密钥保管库或多租户应用设置有关。

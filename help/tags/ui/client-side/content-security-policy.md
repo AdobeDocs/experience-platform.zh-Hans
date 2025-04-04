@@ -2,10 +2,10 @@
 title: 内容安全策略(CSP)支持
 description: 了解在将您的网站与Adobe Experience Platform中的标记集成时，如何处理内容安全策略(CSP)限制。
 exl-id: 9232961e-bc15-47e1-aa6d-3eb9b865ac23
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1074'
-ht-degree: 54%
+source-wordcount: '1076'
+ht-degree: 58%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 54%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 内容安全策略 (CSP) 是一项安全功能，有助于防止跨站点脚本攻击 (XSS)。这种攻击是指浏览器受到欺骗，运行似乎来自可靠来源但实际上来自其他来源的恶意内容。 CSP 允许浏览器（代表用户）验证脚本是否实际来自可信来源。
 
@@ -82,7 +82,7 @@ Content-Security-Policy: script-src 'self' assets.adobedtm.com
 
 >[!NOTE]
 >
->CSP规范包含第三个选项“使用哈希”的详细信息，但是这种方法在搭配使用标记等标记管理系统时不可行。 有关在Platform中的标记中使用哈希的限制的更多信息，请参阅[子资源完整性(SRI)指南](./sri.md)。
+>CSP规范包含第三个选项“使用哈希”的详细信息，但是这种方法在搭配使用标记等标记管理系统时不可行。 有关对Experience Platform中的标记使用哈希的限制的更多信息，请参阅[子资源完整性(SRI)指南](./sri.md)。
 
 ### 允许特定场合使用 {#nonce}
 
@@ -158,4 +158,4 @@ Content-Security-Policy: script-src 'self' assets.adobedtm.com 'unsafe-inline'
 
 通过阅读本文档，您现在应该了解如何将CSP标头配置为接受标记库文件并允许使用内联脚本。
 
-作为一项额外的安全措施，您还可以选择使用子资源完整性 (SRI) 来验证已获取的库内部版本。但是，当与标记等标记管理系统一起使用时，这项功能存在一些主要限制。 有关详细信息，请参阅平台](./sri.md)中[SRI兼容性的指南。
+作为一项额外的安全措施，您还可以选择使用子资源完整性 (SRI) 来验证已获取的库内部版本。但是，当与标记等标记管理系统一起使用时，这项功能存在一些主要限制。 有关详细信息，请参阅Experience Platform](./sri.md)中有关[SRI兼容性的指南。

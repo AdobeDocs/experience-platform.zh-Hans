@@ -4,7 +4,7 @@ title: 钎焊连接
 description: Braze是一个全面的客户参与平台，可为客户与他们所喜爱的品牌之间提供相关且令人难忘的体验。
 last-substantial-update: 2024-08-20T00:00:00Z
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: 2b84b5106105339ab243a9f4412b47692caedf3c
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1125'
 ht-degree: 2%
@@ -51,8 +51,8 @@ ht-degree: 2%
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -63,7 +63,7 @@ ht-degree: 2%
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
 | 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏）和/或身份（根据字段映射）。[!DNL Adobe Experience Platform]受众导出到`AdobeExperiencePlatformSegments`属性下的[!DNL Braze]。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -108,7 +108,7 @@ ht-degree: 2%
 
 要将受众数据从[!DNL Adobe Experience Platform]正确发送到[!DNL Braze]目标，您需要执行字段映射步骤。
 
-映射包括在[!DNL Platform]帐户中的[!DNL Experience Data Model] (XDM)架构字段及其来自目标目标的对应项之间创建链接。
+映射包括在[!DNL Experience Platform]帐户中的[!DNL Experience Data Model] (XDM)架构字段及其来自目标目标的对应项之间创建链接。
 
 要将XDM字段正确映射到[!DNL Braze]目标字段，请执行以下步骤：
 
@@ -125,7 +125,7 @@ ht-degree: 2%
 
 ![钎焊目标映射Source属性](../../assets/catalog/mobile-engagement/braze/mapping-attributes.png)
 
-* [!UICONTROL 选择身份命名空间]：使用此选项将[!DNL Platform]身份命名空间映射到[!DNL Braze]命名空间。
+* [!UICONTROL 选择身份命名空间]：使用此选项将[!DNL Experience Platform]身份命名空间映射到[!DNL Braze]命名空间。
 
 ![钎焊目标映射Source命名空间](../../assets/catalog/mobile-engagement/braze/mapping-namespaces.png)
 
@@ -136,7 +136,7 @@ ht-degree: 2%
 ![钎焊目标映射](../../assets/catalog/mobile-engagement/braze/mapping-target.png)
 
 在[!UICONTROL 选择目标字段]窗口中，您可以选择以下两种目标字段类别：
-* [!UICONTROL 选择身份命名空间]：使用此选项将[!DNL Platform]身份命名空间映射到[!DNL Braze]身份命名空间。
+* [!UICONTROL 选择身份命名空间]：使用此选项将[!DNL Experience Platform]身份命名空间映射到[!DNL Braze]身份命名空间。
 * [!UICONTROL 选择自定义属性]：使用此选项将XDM属性映射到您在[!DNL Braze]帐户中定义的自定义[!DNL Braze]属性。 <br>您还可以使用此选项将现有XDM属性重命名为[!DNL Braze]。 例如，将`lastName` XDM属性映射到[!DNL Braze]中的自定义`Last_Name`属性，将在[!DNL Braze]中创建`Last_Name`属性（如果该属性不存在），并将`lastName` XDM属性映射到它。
 
 ![钎焊目标映射字段](../../assets/catalog/mobile-engagement/braze/mapping-target-fields.png)
@@ -156,7 +156,7 @@ ht-degree: 2%
 |  | XDM配置文件架构 | [!DNL Braze]实例 |
 |---|---|---|
 | 属性 | <ul><li><code>人员。姓名。名字</code></li><li><code>person.name.lastName</code></li><li><code>手机号码</code></li></ul> | <ul><li><code>名字</code></li><li><code>姓氏</code></li><li><code>电话号码</code></li></ul> |
-| 标识 | <ul><li><code>电子邮件</code></li><li><code>Google广告ID (GAID)</code></li><li>广告商的<code>Apple ID (IDFA)</code></li></ul> | <ul><li><code>external_id</code></li></ul> |
+| 身份标识 | <ul><li><code>电子邮件</code></li><li><code>Google广告ID (GAID)</code></li><li>广告商的<code>Apple ID (IDFA)</code></li></ul> | <ul><li><code>external_id</code></li></ul> |
 
 正确的映射将如下所示：
 

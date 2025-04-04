@@ -3,9 +3,9 @@ keywords: 目标；问题；常见问题解答；常见问题解答；目标常�
 title: 常见问题解答
 description: 关于Adobe Experience Platform目标最常见问题的解答
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1673'
+source-wordcount: '1675'
 ht-degree: 0%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-本文档提供有关Adobe Experience Platform目标的常见问题解答。 有关其他[!DNL Platform]服务（包括在所有[!DNL Platform] API中遇到的服务）的问题和疑难解答，请参阅[Experience Platform疑难解答指南](../landing/troubleshooting.md)。
+本文档提供有关Adobe Experience Platform目标的常见问题解答。 有关其他[!DNL Experience Platform]服务（包括在所有[!DNL Experience Platform] API中遇到的服务）的问题和疑难解答，请参阅[Experience Platform疑难解答指南](../landing/troubleshooting.md)。
 
 ## 一般目标问题 {#general}
 
-### 为什么在Experience PlatformUI和导出的CSV文件中看到不同的配置文件计数？
+### 为什么在Experience Platform UI和导出的CSV文件中看到不同的配置文件计数？
 
 +++回答
 由于Experience Platform执行分段的方式，这是正常行为。
@@ -54,7 +54,7 @@ ht-degree: 0%
 
 +++回答
 
-不需要，目标系统的Experience Platform目标和客户实例之间没有依赖关系。 在接收方，目标系统将看到的唯一指示是它停止接收该受众数据。
+不需要，Experience Platform目标与目标系统的客户实例之间没有依赖关系。 在接收方，目标系统将看到的唯一指示是它停止接收该受众数据。
 
 +++
 
@@ -107,10 +107,10 @@ See the table below for a feature comparison between the Experience Cloud Audien
 不适用。 由于这不是基于像素的集成，因此无需向广告商帐户中添加任何像素。
 +++
 
-### facebook需要多长时间来处理来自Adobe Experience Platform的信息？
+### Facebook需要多长时间才能处理来自Adobe Experience Platform的信息？
 
 +++回答
-自2021年3月起，[!DNL Facebook Custom Audiences]需要长达一小时来处理从[!DNL Platform]接收的信息。
+自2021年3月起，[!DNL Facebook Custom Audiences]需要长达一小时来处理从[!DNL Experience Platform]接收的信息。
 +++
 
 ### 我能否将[!DNL Facebook Custom Audiences]用于其他[!DNL Facebook]应用（如[!DNL Instagram]）中的受众定位？
@@ -122,9 +122,9 @@ See the table below for a feature comparison between the Experience Cloud Audien
 ### [!DNL Facebook Custom Audiences]连接与[!DNL Facebook Pixel]扩展之间有何区别？
 
 +++回答
-在向[!DNL Facebook]发送受众时，[!DNL Facebook Custom Audiences]连接使用[!DNL Platform]标识，而[[!DNL Facebook Pixel] 连接](../destinations/catalog/advertising/facebook-pixel.md)使用集成在网站中的[!DNL Facebook]像素。
+在向[!DNL Facebook]发送受众时，[!DNL Facebook Custom Audiences]连接使用[!DNL Experience Platform]标识，而[[!DNL Facebook Pixel] 连接](../destinations/catalog/advertising/facebook-pixel.md)使用集成在网站中的[!DNL Facebook]像素。
 
-这两种集成是互补的；您可以同时使用这两种集成来确保更好的受众覆盖。 例如，您可以使用[!DNL Facebook Pixel]扩展来查找尚未创建帐户的网站访客，而[!DNL Facebook Custom Audiences]可以帮助您根据[!DNL Platform]身份定位现有客户。
+这两种集成是互补的；您可以同时使用这两种集成来确保更好的受众覆盖。 例如，您可以使用[!DNL Facebook Pixel]扩展来查找尚未创建帐户的网站访客，而[!DNL Facebook Custom Audiences]可以帮助您根据[!DNL Experience Platform]身份定位现有客户。
 +++
 
 ### Adobe Experience Platform与[!DNL Facebook Custom Audiences]的集成是否支持在用户不再符合受众资格时取消其受众资格?**
@@ -147,10 +147,10 @@ See the table below for a feature comparison between the Experience Cloud Audien
 [!DNL Facebook Custom Audiences]支持激活以下标识：哈希电子邮件、哈希电话号码、[!DNL GAID]、[!DNL IDFA]和自定义外部ID。
 +++
 
-### 我能否在Platform UI中为单独的Facebook帐户创建多个Facebook目标？
+### 我能否在Experience Platform UI中为单独的Facebook帐户创建多个Facebook目标？
 
 +++回答
-是的。 Experience Platform中的Facebook目标与Facebook中的广告帐户的比率是1:1。 您可以为公司中的每个Facebook广告帐户创建单独的Facebook目标。 按照[目标连接教程](/help/destinations/ui/connect-destination.md)操作，在Platform UI中为每个新的Facebook目标连接到单独的Facebook帐户。 您可以连接到的Facebook广告帐户数量没有限制。
+是的。 Experience Platform中的Facebook目标与Facebook中的广告帐户的比率是1:1。 您可以为公司中的每个Facebook广告帐户创建单独的Facebook目标。 按照[目标连接教程](/help/destinations/ui/connect-destination.md)进行操作，并在Experience Platform UI中为每个新的Facebook目标连接到单独的Facebook帐户。 您可以连接到的Facebook广告帐户数量没有限制。
 +++
 
 ## Google 目标客户匹配功能 {#google-customer-match}
@@ -161,7 +161,7 @@ See the table below for a feature comparison between the Experience Cloud Audien
 Google要求受众名称是唯一的。 您看到的数字是[UNIX时间戳](https://www.unixtimestamp.com/)，如果将同一受众映射到多个Google目标，则会附加这些数字以保持受众名称的唯一性。
 +++
 
-## linkedIn匹配的受众 {#linkedin}
+## LinkedIn匹配的受众 {#linkedin}
 
 ### 是否需要向我的[!DNL LinkedIn]广告商帐户添加任何应用或像素？
 
@@ -172,7 +172,7 @@ Google要求受众名称是唯一的。 您看到的数字是[UNIX时间戳](htt
 ### 在[!DNL LinkedIn Matched Audiences]中激活受众之前，我需要做什么？
 
 +++回答
-在使用[!UICONTROL 与LinkedIn匹配的受众]目标之前，请确保您的[!DNL LinkedIn Campaign Manager]帐户具有[!DNL Creative Manager]权限级别或更高。
+在使用[!UICONTROL LinkedIn匹配的受众]目标之前，请确保您的[!DNL LinkedIn Campaign Manager]帐户具有[!DNL Creative Manager]权限级别或更高。
 
 要了解如何编辑您的[!DNL LinkedIn Campaign Manager]用户权限，请参阅LinkedIn文档中的[添加、编辑和删除Advertising帐户的用户权限](https://www.linkedin.com/help/lms/answer/5753)。
 +++
@@ -194,17 +194,17 @@ Google要求受众名称是唯一的。 您看到的数字是[UNIX时间戳](htt
 
 ## 通过Adobe Target和自定义Personalization目标实现同一页面和下一页面个性化 {#same-next-page-personalization}
 
-### 是否需要使用Experience PlatformWeb SDK将受众和属性发送到Adobe Target？
+### 是否需要使用Experience Platform Web SDK将受众和属性发送到Adobe Target？
 
 +++回答
-不需要，[Web SDK](../web-sdk/home.md)即可将受众激活到[Adobe Target](catalog/personalization/adobe-target-connection.md)。
+不需要，[不需要Web SDK](../web-sdk/home.md)才能将受众激活到[Adobe Target](catalog/personalization/adobe-target-connection.md)。
 
 但是，如果使用[[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html)而不是Web SDK，则仅支持下一会话个性化。
 
-对于[同页和下一页个性化](ui/activate-edge-personalization-destinations.md)用例，您必须使用[Web SDK](../web-sdk/home.md)或[Edge Network服务器API](../server-api/overview.md)。 有关更多实施详细信息，请参阅有关[将受众激活到边缘目标](ui/activate-edge-personalization-destinations.md)的文档。
+对于[同页和下一页个性化](ui/activate-edge-personalization-destinations.md)用例，您必须使用[Web SDK](../web-sdk/home.md)或[Edge Network Server API](../server-api/overview.md)。 有关更多实施详细信息，请参阅有关[将受众激活到边缘目标](ui/activate-edge-personalization-destinations.md)的文档。
 +++
 
-### 是否可以限制从Real-time Customer Data Platform发送到Adobe Target或自定义Personalization目标的属性数量？
+### 我可以从Real-time Customer Data Platform发送到Adobe Target或自定义Personalization目标的属性数量是否存在限制？
 
 +++回答
 支持，在将受众激活到Adobe Target或自定义Personalization目标时，同页和下一页个性化用例最多支持每个沙盒30个属性。 请参阅[护栏文档](guardrails.md#edge-destinations-activation)中有关激活护栏的详细信息。
@@ -223,7 +223,7 @@ Yes, you can activate a maximum of 150 edge audiences per sandbox.  For more inf
 ### 在Experience Platform中创建受众后，需要多长时间才能将该受众用于Edge分段用例？
 
 +++回答
-受众定义最多在一小时内传播到[Edge Network](../web-sdk/home.md)。 但是，如果在这第一个小时内激活了受众，则可能会错过一些符合受众条件的访客。
+受众定义最多可在一小时内传播到[Edge Network](../web-sdk/home.md)。 但是，如果在这第一个小时内激活了受众，则可能会错过一些符合受众条件的访客。
 +++
 
 ### 在Adobe Target中，我可以在哪里查看激活的属性？
@@ -244,7 +244,7 @@ Yes, you can activate a maximum of 150 edge audiences per sandbox.  For more inf
 当您删除目标时，所有在目标下映射的受众和属性都将从Adobe Target中删除，并且也会从Edge Network中删除。
 +++
 
-### 集成是否可以使用Edge Network服务器API？
+### 集成是否可以使用Edge Network服务器API进行工作？
 
 +++回答
 是，Edge Network服务器API可与自定义Personalization目标配合使用。 由于配置文件属性可能包含敏感数据，为了保护此数据，自定义Personalization目标要求您使用Edge Network服务器API进行数据收集。 此外，所有API调用都必须在[经过身份验证的上下文](../server-api/authentication.md)中进行。

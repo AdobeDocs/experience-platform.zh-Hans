@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform；主页；热门主题；Adobe Experience Platform；用户指南；ui指南；平台ui指南；平台简介；仪表板；
+keywords: Experience Platform；主页；热门主题；Adobe Experience Platform；用户指南；ui指南；平台ui指南；平台简介；功能板；
 solution: Experience Platform
-title: Experience PlatformUI概述
+title: Experience Platform UI概述
 description: Adobe Experience Platform
 exl-id: 47f9a3fb-731d-4ade-8069-faaa18f224dc
-source-git-commit: 6210f78e79c6c528296378756c9d11e35d092736
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1924'
+source-wordcount: '1938'
 ht-degree: 1%
 
 ---
@@ -59,9 +59,9 @@ ht-degree: 1%
 
 ## 顶部导航栏
 
-Platform UI中的顶部导航栏显示您当前登录的组织，并提供几个重要控件。
+Experience Platform UI中的顶部导航栏显示您当前登录到的组织，并提供几个重要控件。
 
-导航栏的左侧是Adobe Experience Platform徽标。 您随时可以通过选择此徽标回到Platform UI主屏幕。
+导航栏的左侧是Adobe Experience Platform徽标。 随时选择此徽标可让您回到Experience Platform UI主屏幕。
 
 ![](./images/user-guide/homepage-top-nav-bar.png)
 
@@ -75,11 +75,11 @@ Platform UI中的顶部导航栏显示您当前登录的组织，并提供几个
 
 ### 切换应用程序
 
-顶部导航右侧的下一个项目是&#x200B;**应用程序切换器**，由![应用程序切换器](/help/images/icons/apps.png)图标表示。 选择此图标后，您可以在组织有权访问的Adobe应用程序(如Experience Platform、Analytics、Assets等)之间进行切换。
+顶部导航右侧的下一个项目是&#x200B;**应用程序切换器**，由![应用程序切换器](/help/images/icons/apps.png)图标表示。 选择此图标后，您可以在贵组织有权访问的Adobe应用程序(如Experience Platform、Analytics、Assets和其他应用程序)之间进行切换。
 
 ### 帮助
 
-应用程序切换器的右侧是&#x200B;**帮助和支持菜单**，它由![问号/帮助](/help/images/icons/help.png)图标表示。 选择此图标后，会显示一个弹出菜单，其中包含多个帮助和支持资源。 **[!UICONTROL 帮助]**&#x200B;选项卡显示当前所在页面的相关文档列表。 “**[!UICONTROL 支持]**”选项卡允许您与Adobe支持团队创建支持票证。 **[!UICONTROL 反馈]**&#x200B;选项卡允许您提交有关Platform的反馈以供Adobe。
+应用程序切换器的右侧是&#x200B;**帮助和支持菜单**，它由![问号/帮助](/help/images/icons/help.png)图标表示。 选择此图标后，会显示一个弹出菜单，其中包含多个帮助和支持资源。 **[!UICONTROL 帮助]**&#x200B;选项卡显示当前所在页面的相关文档列表。 “**[!UICONTROL 支持]**”选项卡允许您与Adobe支持团队创建支持票证。 通过&#x200B;**[!UICONTROL 反馈]**&#x200B;选项卡，可向Adobe提交有关Experience Platform的反馈。
 
 ![](images/user-guide/homepage-help-clicked.png)
 
@@ -91,17 +91,17 @@ Platform UI中的顶部导航栏显示您当前登录的组织，并提供几个
 
 顶部导航栏上的最后一个项目是&#x200B;**用户设置**，由![用户设置/用户配置文件](images/user-guide/profile-icon.png)图标表示。 选择此图标以编辑您的首选项或注销。
 
-您可以使用位于您姓名和电子邮件正下方的开关，在Platform界面的浅色和深色主题之间切换。 选择您喜欢的主题。
+您可以使用位于您的姓名和电子邮件正下方的开关在Experience Platform界面的浅色和深色主题之间切换。 选择您喜欢的主题。
 
 ![](images/theme.png)
 
 ### 沙盒
 
-顶部导航栏的正下方是沙盒栏。 此栏显示您当前用于Platform的沙盒。 您可以在[沙盒概述](../sandboxes/home.md)中找到有关沙盒的更多信息。
+顶部导航栏的正下方是沙盒栏。 此栏显示您当前用于Experience Platform的沙盒。 您可以在[沙盒概述](../sandboxes/home.md)中找到有关沙盒的更多信息。
 
 ## 左侧导航栏 {#left-nav}
 
-屏幕左侧的导航会列出Platform UI中支持的所有不同服务。
+屏幕左侧的导航会列出Experience Platform UI中支持的所有不同服务。
 
 单击菜单图标可显示或隐藏左侧导航面板。
 
@@ -115,15 +115,15 @@ Platform UI中的顶部导航栏显示您当前登录的组织，并提供几个
 
 ![](images/user-guide/homepage-left.png)
 
-通过&#x200B;**[!UICONTROL 主页]**&#x200B;部分，可返回Platform UI主页。
+通过&#x200B;**[!UICONTROL 主页]**&#x200B;部分，可返回Experience Platform UI主页。
 
-**[!UICONTROL 工作流]**&#x200B;部分显示了用于在Platform内执行操作的多步骤工作流列表。 您可以在[工作流概述](./workflows.md)中找到有关工作流的更多信息。
+**[!UICONTROL 工作流]**&#x200B;部分显示了用于在Experience Platform中执行操作的多步骤工作流列表。 您可以在[工作流概述](./workflows.md)中找到有关工作流的更多信息。
 
 ### [!UICONTROL 连接]
 
-**[!UICONTROL 源]**&#x200B;部分允许您创建、更新和删除源连接，从而允许您将外部源中的数据摄取到Platform中。 您可以在[源概述](../sources/home.md)中找到有关源的更多信息。
+**[!UICONTROL 源]**&#x200B;部分允许您创建、更新和删除源连接，从而允许您将外部源中的数据摄取到Experience Platform中。 您可以在[源概述](../sources/home.md)中找到有关源的更多信息。
 
-通过&#x200B;**[!UICONTROL 目标]**&#x200B;部分，您可以创建、更新和删除目标，以便将数据从Platform导出到多个外部目标。 您可以在[目标概述](../destinations/home.md)中找到有关目标的更多信息。
+通过&#x200B;**[!UICONTROL 目标]**&#x200B;部分，您可以创建、更新和删除目标，以便将数据从Experience Platform导出到多个外部目标。 您可以在[目标概述](../destinations/home.md)中找到有关目标的更多信息。
 
 ### [!UICONTROL 客户]
 
@@ -131,13 +131,13 @@ Platform UI中的顶部导航栏显示您当前登录的组织，并提供几个
 
 **[!UICONTROL 受众]**&#x200B;部分允许您创建和管理区段定义。 若要了解有关使用[!UICONTROL 受众]部分的更多信息，请阅读[分段用户指南](../segmentation/ui/overview.md)。 您可以在[分段服务概述](../segmentation/home.md)中找到有关分段服务的更多信息。
 
-通过&#x200B;**[!UICONTROL 身份]**&#x200B;部分，您可以创建和管理身份命名空间。 有关[!UICONTROL 身份]部分的更多信息，包括身份命名空间以及如何在Platform UI中使用身份的信息，请参阅[身份命名空间概述](../identity-service/features/namespaces.md)。
+通过&#x200B;**[!UICONTROL 身份]**&#x200B;部分，您可以创建和管理身份命名空间。 有关[!UICONTROL 身份]部分的更多信息，包括身份命名空间以及如何在Experience Platform UI中使用身份的信息，请参阅[身份命名空间概述](../identity-service/features/namespaces.md)。
 
 ### [!UICONTROL Privacy]
 
 **[!UICONTROL 策略]**&#x200B;部分允许您创建和管理数据使用策略。 若要了解有关使用“策略”部分的更多信息，请阅读[数据使用策略用户指南](../data-governance/policies/user-guide.md)。 您可以在[数据使用策略概述](../data-governance/policies/overview.md)中找到有关数据使用策略的更多信息。
 
-通过&#x200B;**[!UICONTROL 请求]**&#x200B;部分，您可以创建和管理隐私请求。 请注意，您必须列入允许列表才能访问Privacy ServiceUI。 若要了解有关使用“请求”部分的更多信息，请阅读[Privacy Service用户指南](../privacy-service/ui/user-guide.md)。 您可以在[Privacy Service概述](../privacy-service/home.md)中找到有关Privacy Service的更多信息。
+通过&#x200B;**[!UICONTROL 请求]**&#x200B;部分，您可以创建和管理隐私请求。 请注意，您必须列入允许列表才能访问Privacy Service UI。 若要了解有关使用“请求”部分的更多信息，请阅读[Privacy Service用户指南](../privacy-service/ui/user-guide.md)。 您可以在[Privacy Service概述](../privacy-service/home.md)中找到有关Privacy Service的更多信息。
 
 ### [!UICONTROL 数据科学]
 
@@ -145,7 +145,7 @@ Platform UI中的顶部导航栏显示您当前登录的组织，并提供几个
 
 **[!UICONTROL 模型]**&#x200B;部分允许您使用机器学习和人工智能来创建、开发、训练和调整模型以进行预测。 您可以在有关[培训的教程中找到有关“模型”部分的详细信息，并评估模型](../data-science-workspace/models-recipes/train-evaluate-model-ui.md)。
 
-通过&#x200B;**[!UICONTROL 服务]**&#x200B;部分，您可以管理已发布的模型以进行计划的培训和评分，或者使用Adobe的智能服务（一组提供实时、个性化客户体验的AI服务）。 您可以在[将模型发布为服务教程](../data-science-workspace/models-recipes/publish-model-service-ui.md)中找到有关“服务”部分的更多信息。
+通过&#x200B;**[!UICONTROL 服务]**&#x200B;部分，您可以管理已发布的模型以进行计划的培训和评分，或使用Adobe的智能服务（一组提供实时、个性化客户体验的AI服务）。 您可以在[将模型发布为服务教程](../data-science-workspace/models-recipes/publish-model-service-ui.md)中找到有关“服务”部分的更多信息。
 
 ### [!UICONTROL 数据管理]
 
@@ -172,7 +172,7 @@ Adobe Journey Optimizer是基于Experience Platform构建的应用程序服务�
 
 ### [!UICONTROL 管理]
 
-Platform用户界面(UI)提供了一个仪表板，通过该仪表板可以查看有关您组织的许可证使用情况的重要信息，在每日快照期间捕获了这些信息。 通过在导航中选择&#x200B;**[!UICONTROL 许可证使用情况]**&#x200B;来访问此仪表板。 若要了解有关许可证使用情况仪表板的详细信息，请访问[许可证使用情况仪表板指南](./license-usage-and-guardrails/license-usage-dashboard.md)。
+Experience Platform用户界面(UI)提供了一个仪表板，通过该仪表板可以查看有关您组织的许可证使用情况的重要信息，在每日快照期间捕获了这些信息。 通过在导航中选择&#x200B;**[!UICONTROL 许可证使用情况]**&#x200B;来访问此仪表板。 若要了解有关许可证使用情况仪表板的详细信息，请访问[许可证使用情况仪表板指南](./license-usage-and-guardrails/license-usage-dashboard.md)。
 
 >[!IMPORTANT]
 >
@@ -180,4 +180,4 @@ Platform用户界面(UI)提供了一个仪表板，通过该仪表板可以查�
 
 ## 后续步骤
 
-通过阅读本指南，您现在已了解到Platform UI的主页和主要导航元素。 有关在用户界面中工作的更多详细信息，请参阅各个平台服务的文档。 在本文档前面的[左侧导航](#left-nav)部分提供了指向此文档的链接。
+通过阅读本指南，我们向您介绍了Experience Platform UI的主页和主要导航元素。 有关在用户界面中工作的更多详细信息，请参阅每个Experience Platform服务的文档。 在本文档前面的[左侧导航](#left-nav)部分提供了指向此文档的链接。

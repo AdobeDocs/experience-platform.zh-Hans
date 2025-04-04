@@ -1,30 +1,30 @@
 ---
 keywords: 查看配置文件rtcdp；rtcdp配置文件视图；rtcdp配置文件
-title: 在Real-time Customer Data Platform中浏览配置文件
-description: Adobe Real-time Customer Data Platform允许您使用Adobe Experience Platform用户界面浏览实时客户配置文件数据。
+title: 在Real-Time Customer Data Platform中浏览配置文件
+description: Adobe Real-Time Customer Data Platform允许您使用Adobe Experience Platform用户界面浏览实时客户配置文件数据。
 feature: Get Started, Profiles
 exl-id: 8481e286-2ff0-484f-85d2-a8db9b08d8d3
-source-git-commit: ea785ffa1dfa0f7c684fe536796a4b7409882159
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '549'
+source-wordcount: '551'
 ht-degree: 0%
 
 ---
 
 
-# 在Real-time Customer Data Platform中浏览配置文件
+# 在Real-Time Customer Data Platform中浏览配置文件
 
 Real-time Customer Profile可以为每位客户创建整体视图，结合来自多个渠道（包括在线、离线、CRM和第三方数据）的数据。 由于个人资料是根据从各种来源引入系统的数据进行聚合的，因此每个个人资料都成为一个可操作、且带有时间戳的帐户，说明了您的客户与您的品牌每次互动。
 
 在Adobe Experience Platform用户界面中，您可以查看这些只读用户档案，并查看有关每个客户的重要信息，包括他们的偏好设置、过去的事件、交互和个人所属的受众。
 
-Adobe Real-time Customer Data Platform基于Adobe Experience Platform构建，因此能够利用Experience PlatformUI中的用户档案查看功能。 有关在Platform用户界面中查看客户配置文件的详细指南，请参阅[实时客户配置文件用户指南](../../profile/ui/user-guide.md)。
+Adobe Real-Time Customer Data Platform基于Adobe Experience Platform构建，因此能够利用Experience Platform UI中的用户档案查看功能。 有关在Experience Platform用户界面中查看客户配置文件的详细指南，请参阅[实时客户配置文件用户指南](../../profile/ui/user-guide.md)。
 
-## Real-Time CDP B2B版本的配置文件增强功能
+## Real-Time CDP、B2B edition的配置文件增强功能
 
-除了Adobe Experience Platform支持的配置文件浏览功能外，Real-Time CDP和B2B版本的用户还可以分别在[!UICONTROL 属性]和[!UICONTROL 事件]选项卡上访问客户配置文件中的B2B属性和事件。 B2B数据还可用于执行分段，这些受众与非B2B受众一起显示在客户的[!UICONTROL 受众成员资格]选项卡下。
+除了Adobe Experience Platform、Real-Time CDP支持的配置文件浏览功能外，B2B edition用户还可以分别在[!UICONTROL 属性]和[!UICONTROL 事件]选项卡上访问客户配置文件中的B2B属性和事件。 B2B数据还可用于执行分段，这些受众与非B2B受众一起显示在客户的[!UICONTROL 受众成员资格]选项卡下。
 
-Real-Time CDP， B2B版本还允许您跨与单个客户关联的企业源浏览[!UICONTROL 帐户]、[!UICONTROL 机会]和[!UICONTROL Source记录]。
+Real-Time CDP、B2B edition还允许您跨与单个客户关联的企业源浏览[!UICONTROL 帐户]、[!UICONTROL 机会]和[!UICONTROL Source记录]。
 
 要探究这些增强功能，请按照[实时客户配置文件用户指南](../../profile/ui/user-guide.md)中概述的步骤开始，按合并策略或身份命名空间浏览配置文件。
 
@@ -34,7 +34,7 @@ Real-Time CDP， B2B版本还允许您跨与单个客户关联的企业源浏览
 
 ![](images/b2b-profile-detail.png)
 
-要了解有关平台UI中提供的配置文件详细信息的更多信息，请参阅配置文件仪表板文档](../../dashboards/guides/profiles.md#browse-profiles)的[详细信息部分。
+要了解有关Experience Platform UI中提供的配置文件详细信息的更多信息，请参阅配置文件仪表板文档](../../dashboards/guides/profiles.md#browse-profiles)的[详细信息部分。
 
 ### “帐户”选项卡
 
@@ -46,7 +46,7 @@ Real-Time CDP， B2B版本还允许您跨与单个客户关联的企业源浏览
 
 ### “业务机会”选项卡
 
-**[!UICONTROL 机会]**&#x200B;选项卡提供与帐户相关的未结和已结机会的详细信息。 这些机会可能会从多个来源引入Experience Platform，但是Real-Time CDP B2B版本使营销人员能够轻松地在一个位置一起查看所有这些机会。
+**[!UICONTROL 机会]**&#x200B;选项卡提供与帐户相关的未结和已结机会的详细信息。 这些机会可能会从多个来源引入Experience Platform，但是Real-Time CDP中的B2B edition使营销人员能够轻松地在一个位置一起查看所有这些机会。
 
 每个机会都包括一些信息，如机会的名称、数量、阶段，以及机会是开放、关闭、成功还是失败。
 

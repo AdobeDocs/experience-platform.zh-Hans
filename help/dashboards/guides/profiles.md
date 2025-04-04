@@ -4,9 +4,9 @@ title: 配置文件仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板，您可以查看有关贵组织的实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '4997'
+source-wordcount: '5005'
 ht-degree: 9%
 
 ---
@@ -29,11 +29,11 @@ Adobe Experience Platform用户界面(UI)提供了一个仪表板，通过该仪
 
 ## 浏览配置文件仪表板 {#explore-dashboard}
 
-要导航到Platform UI中的配置文件仪表板，请在左边栏中选择&#x200B;**[!UICONTROL 配置文件]**，然后选择&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡以显示该仪表板。
+要导航到Experience Platform UI中的配置文件仪表板，请在左边栏中选择&#x200B;**[!UICONTROL 配置文件]**，然后选择&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡以显示该仪表板。
 
 >[!NOTE]
 >
->如果您的组织是初次使用Platform，但尚未创建活动配置文件数据集或合并策略，则配置文件仪表板不可见。 相反，[!UICONTROL 概述]选项卡显示链接和文档，以帮助您开始使用实时客户个人资料。
+>如果贵组织是Experience Platform的新用户，并且尚未创建活动配置文件数据集或合并策略，则配置文件仪表板不可见。 相反，[!UICONTROL 概述]选项卡显示链接和文档，以帮助您开始使用实时客户个人资料。
 
 ![突出显示了“配置文件和概述”的Experience Platform配置文件仪表板。](../images/profiles/dashboard-overview.png)
 
@@ -53,7 +53,7 @@ Adobe Experience Platform用户界面(UI)提供了一个仪表板，通过该仪
 
 ### 查看 SQL {#view-sql}
 
-通过打开[!UICONTROL 概述]工作区，您可以查看生成可在您的仪表板上可视化的分析的SQL。 您可以从现有见解的SQL中获得灵感，以创建新查询，这些查询可根据您的业务需求从Platform数据获取独特的见解。 若要了解有关此功能的详细信息，请参阅[查看SQL UI指南](../view-sql.md)。
+通过打开[!UICONTROL 概述]工作区，您可以查看生成可在您的仪表板上可视化的分析的SQL。 您可以从现有见解的SQL中获得灵感，以创建新查询，这些查询可根据您的业务需求从Experience Platform数据获取独特的见解。 若要了解有关此功能的详细信息，请参阅[查看SQL UI指南](../view-sql.md)。
 
 <!-- ## (Beta) Profile efficacy insights {#profile-efficacy-insights}
 
@@ -119,7 +119,7 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 * 要了解根据Adobe标准[收集同意数据所需的架构字段组](../../landing/governance-privacy-security/consent/adobe/overview.md)，请参阅有关这些启用配置文件的架构字段组的文档。
    * [[!UICONTROL 同意和偏好设置详细信息]](../../xdm/field-groups/profile/consents.md)
-   * [[!UICONTROL IdentityMap]](../../xdm/field-groups/profile/identitymap.md)(如果使用Platform Web或Mobile SDK发送同意信号，则需要)
+   * [[!UICONTROL IdentityMap]](../../xdm/field-groups/profile/identitymap.md)(如果使用Experience Platform Web或Mobile SDK发送同意信号，则需要)
 * 要了解如何使用Adobe标准处理客户同意和偏好设置数据，请参阅有关Experience Platform中的[同意处理](../../landing/governance-privacy-security/consent/adobe/overview.md)的概述。
 * 组合的数据治理和同意策略可用于根据用户档案的同意偏好和您建立的组织规则筛选用户档案以进行分段。 要了解如何创建和使用这些组合策略，请参阅有关[管理数据使用策略](../../data-governance/policies/user-guide.md#combine-policies)的用户指南。
 
@@ -169,7 +169,7 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 合并架构由共享同一类并已为配置文件启用的多个架构组成。 它们允许您在单个视图中查看共享同一类的每个架构中包含的每个字段的合并。
 
-要了解有关[在Platform UI](../../profile/ui/union-schema.md#view-union-schemas)中查看合并架构的更多信息，请参阅合并架构UI指南。
+要了解有关[在Experience Platform UI](../../profile/ui/union-schema.md#view-union-schemas)中查看合并架构的更多信息，请参阅合并架构UI指南。
 
 ## 小工具和量度
 
@@ -314,7 +314,7 @@ Adobe提供了多个标准构件，您可以使用这些构件可视化与配置
 >
 >[!UICONTROL 配置文件计数更改]构件反映了在初始配置文件摄取和配置文件存储设置后&#x200B;**添加的**&#x200B;配置文件数。 换言之，如果您的组织设置了配置文件存储并在第1天摄取4,000,000个，则仪表板在24小时内将可用，但[!UICONTROL 配置文件计数更改]构件将设置为0。 此计数方法旨在避免与将用户档案初始摄取到系统中相关的峰值。 在接下来的30天中，您的组织会额外摄取1,000,000个配置文件到配置文件存储中。 拍摄下一个快照后，[!UICONTROL 配置文件计数更改]构件将显示添加的总共1,000,000个配置文件，而[!UICONTROL 配置文件计数]构件将显示总共5,000,000个配置文件。
 
-![突出显示具有配置文件计数更改小部件的Platform UI配置文件仪表板。](../images/profiles/profile-count-change.png)
+![突出显示具有配置文件计数更改小部件的Experience Platform UI配置文件仪表板。](../images/profiles/profile-count-change.png)
 
 ### [!UICONTROL 轮廓计数变化趋势] {#profiles-count-change-trend}
 
@@ -323,7 +323,7 @@ Adobe提供了多个标准构件，您可以使用这些构件可视化与配置
 >title="轮廓计数变化趋势"
 >abstract="此小组件显示在过去 30 天、90 天或 12 个月内每天添加到轮廓存储的合并轮廓的数量。该数量也取决于应用于您的轮廓数据的所选合并策略。"
 
-**[!UICONTROL 配置文件计数变化趋势]**&#x200B;小组件显示过去30天、90天或12个月内每天添加到配置文件存储区的合并配置文件总数。 此数字在每天拍摄快照时都会更新，因此，如果您要将配置文件摄取到Platform，则在拍摄下一个快照之前不会反映配置文件数。 添加的配置文件计数是选定的合并策略应用于您的配置文件数据的结果，这样可以将配置文件片段合并在一起，形成每个人的单个配置文件。
+**[!UICONTROL 配置文件计数变化趋势]**&#x200B;小组件显示过去30天、90天或12个月内每天添加到配置文件存储区的合并配置文件总数。 此数字在每天拍摄快照时都会更新，因此，如果您要将配置文件摄取到Experience Platform，则在拍摄下一个快照之前不会反映配置文件数。 添加的配置文件计数是选定的合并策略应用于您的配置文件数据的结果，这样可以将配置文件片段合并在一起，形成每个人的单个配置文件。
 
 要了解更多信息，请参阅本文档](#merge-policies)前面关于合并策略的[部分。
 
@@ -514,7 +514,7 @@ The visualization allows you to monitor the overall health of audiences within A
 
 由于小组件显示了区段定义的视觉交叉，因此您可以通过研究区段定义之间的相似性来优化分段策略。
 
-![带有合并策略下拉列表和小组件受众下拉列表的Platform UI配置文件仪表板突出显示。](../images/profiles/audience-overlap-by-merge-policy.png)
+![带有合并策略下拉列表和小组件受众下拉列表的Experience Platform UI配置文件仪表板突出显示。](../images/profiles/audience-overlap-by-merge-policy.png)
 
 
 <!-- ## (Beta) Profile efficacy widgets {#profile-efficacy-widgets}

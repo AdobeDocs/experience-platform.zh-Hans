@@ -3,10 +3,10 @@ title: 使用合作伙伴辅助的访客识别功能，为未知访客提供个�
 description: 了解如何使用合作伙伴辅助的访客识别为访客营造个性化的现场体验。
 feature: Use Cases, Personalization, Customer Acquisition
 exl-id: 99677988-1df8-47b1-96b1-0ef6db818a1d
-source-git-commit: 02f2082e695d157415c9e0c59ca5d371c94bb991
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2673'
-ht-degree: 90%
+source-wordcount: '2676'
+ht-degree: 89%
 
 ---
 
@@ -42,7 +42,7 @@ ht-degree: 90%
 * 与确定性确认属性相比，您在多大程度上愿意根据概率派生的数据集在不同的渠道和不同用例中提供个性化？
 * 预先经过身份验证但被识别的访客在身份验证后的体验应发生什么变化？
 
-### 您将使用的 UI 功能、Platform 组件和 Experience Cloud 产品 {#ui-functionality-and-elements}
+### 用户界面功能、Experience Platform组件以及您将使用的Experience Cloud产品 {#ui-functionality-and-elements}
 
 要成功实施此用例，您必须使用 Real-Time Customer Data Platform 和其他 Experience Cloud 解决方案的多个区域。确保您拥有所有这些区域所需的[基于属性的访问控制权限](/help/access-control/abac/overview.md)，或让系统管理员授予您这些必要的权限。
 
@@ -131,7 +131,7 @@ ht-degree: 90%
 
 UI 的&#x200B;**[!UICONTROL 数据收集]**&#x200B;部分看起来类似于下图。
 
-![Platform UI 的“数据收集”部分。](/help/rtcdp/assets/partner-data/onsite-personalization/data-collection-home.png)
+Experience Platform UI的![数据收集部分。](/help/rtcdp/assets/partner-data/onsite-personalization/data-collection-home.png)
 
 #### 创建数据流
 
@@ -259,7 +259,7 @@ UI 的&#x200B;**[!UICONTROL 数据收集]**&#x200B;部分看起来类似于下�
 
 #### 创建受众并设置边缘分段
 
-在Platform UI中，导航到&#x200B;**[!UICONTROL 客户]** > **[!UICONTROL 受众]**，并创建受众以捕获您的网站访客。
+在Experience Platform UI中，导航到&#x200B;**[!UICONTROL 客户]** > **[!UICONTROL 受众]**，并创建受众以捕获您的网站访客。
 
 ![查看如何导航到受众。](/help/rtcdp/assets/partner-data/onsite-personalization/navigate-to-audiences.png)
 

@@ -2,19 +2,19 @@
 title: RainFocus与会者个人资料
 description: 了解如何使用RainFocus与会者个人资料目标连接器，将受众个人资料与RainFocus全球与会者个人资料同步。
 last-substantial-update: 2024-12-17T00:00:00Z
-source-git-commit: a3dcf49d3ed9afacd3ffef10d6f280c71ebdf584
+exl-id: 27c3848c-411a-4305-a5d5-00b145b95287
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1000'
-ht-degree: 2%
+ht-degree: 4%
 
 ---
-
 
 # RainFocus与会者个人资料 {#rainfocus-destination}
 
 ## 概述 {#overview}
 
-使用[!DNL RainFocus Attendee Profiles]目标将客户配置文件从Adobe Experience Platform流式传输到[!DNL RainFocus]平台，以便创建和更新与会者配置文件。
+使用[!DNL RainFocus Attendee Profiles]目标将客户轮廓从 Adobe Experience Platform 传输到[!DNL RainFocus]平台，以创建和更新与会者轮廓。
 
 >[!IMPORTANT]
 >
@@ -48,7 +48,7 @@ ht-degree: 2%
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。 |
+| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
 
 {style="table-layout:auto"}
 
@@ -58,8 +58,8 @@ ht-degree: 2%
 
 | 受众来源 | 支持 | 描述 |
 ---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/overview.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/overview.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 

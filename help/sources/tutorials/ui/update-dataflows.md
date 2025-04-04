@@ -1,10 +1,10 @@
 ---
-description: 了解如何在Experience PlatformUI中更新现有源数据流。
+description: 了解如何在Experience Platform UI中更新现有源数据流。
 title: 在UI中更新Source连接数据流
 exl-id: 0499a2a3-5a22-47b1-ac0e-76a432bd26c0
-source-git-commit: c3082a8769f317407197b3fd05b36cfe00b36470
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '766'
+source-wordcount: '768'
 ht-degree: 8%
 
 ---
@@ -17,8 +17,8 @@ ht-degree: 8%
 
 本教程需要对以下Experience Platform组件有一定的了解：
 
-* [源](../../home.md)：Experience Platform允许从各种源摄取数据，同时允许您使用Platform服务来构建、标记和增强传入数据。
-* [沙盒](../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ## 更新数据流 {#update-dataflows}
 
@@ -27,7 +27,7 @@ ht-degree: 8%
 >title="数据集有效期限"
 >abstract="此列指示目标数据集在自动到期之前剩余的天数。<br>如果目标数据集到期，则数据流将失败。要防止数据流失败，请确保将目标数据集设置为在正确的日期到期。请参阅文档以了解如何更新过期日期。"
 
-在Experience PlatformUI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**，然后从顶部标题中选择&#x200B;**[!UICONTROL 数据流]**。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**，然后从顶部标题中选择&#x200B;**[!UICONTROL 数据流]**。
 
 ![选择了数据流标题选项卡的源目录。](../../images/tutorials/update-dataflows/catalog.png)
 
@@ -79,7 +79,7 @@ ht-degree: 8%
 
 ![必须确认要禁用数据流的弹出窗口。](../../images/tutorials/update-dataflows/disable_dataflow.png)
 
-如果您稍后重新启用此数据流，则Experience Platform将自动安排回填运行，以涵盖禁用此数据流的时段。 例如，如果数据流配置为每小时运行并且禁用了48小时，则重新启用此数据流时，Experience Platform将创建48次回填运行以处理缺失的时间间隔。
+如果您稍后重新启用此数据流，Experience Platform将自动安排回填运行，以涵盖禁用此数据流的时段。 例如，如果数据流配置为每小时运行并且禁用了48小时，则重新启用此数据流时，Experience Platform将创建48次回填运行以处理缺失的时间间隔。
 
 ## 后续步骤
 

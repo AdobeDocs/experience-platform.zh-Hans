@@ -1,12 +1,12 @@
 ---
 title: 审核事件导出API端点
-description: 了解如何使用审核查询API以Experience Platform导出审核事件。
+description: 了解如何使用审核查询API在Experience Platform中导出审核事件。
 role: Developer
 feature: Audits, API
 exl-id: 76c5de76-e391-4258-afd8-ddb2c8a9443f
-source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '158'
+source-wordcount: '159'
 ht-degree: 3%
 
 ---
@@ -27,7 +27,7 @@ GET /audit/export
 | `status` | 操作的状态。 状态可以是以下任一状态： </li><li>`Allow` </li><li>`Deny` </li><li>`Failure` </li><li>`Success` </li></ul><br/>示例： `?property=status==Deny`。 |
 | `action` | 为事件记录的操作类型。 操作可以是以下任一操作： <ul><li>`Add` </li><li>`Create` </li><li>`Dataset activate` </li><li>`Dataset remove` </li><li>`Delete` </li><li>`Disable for profile` </li><li>`Enable` </li><li>`Enable for profile` </li><li>`Profile activate` </li><li>`Profile remove` </li><li>`Remove` </li><li>`Reset` </li><li>`Segment Activate` </li><li>`Segment remove` </li><li>`Update` </li></ul> 示例：`?property=action==Create`。 |
 | `user` | 执行事件的用户。 |
-| `assetType` | 执行操作的平台资源的类型。 <br/>示例： `?property=assetType==<an asset type>`。 |
+| `assetType` | 执行操作的Experience Platform资源的类型。 <br/>示例： `?property=assetType==<an asset type>`。 |
 
 **请求**
 

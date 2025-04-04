@@ -3,9 +3,9 @@ title: 激活受众以边缘个性化目标
 description: 了解如何为同一页面和下一页面个性化用例将受众从Adobe Experience Platform激活到边缘个性化目标。
 type: Tutorial
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1957'
+source-wordcount: '1961'
 ht-degree: 2%
 
 ---
@@ -85,7 +85,7 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/ed
 
 ![突出显示了Edge Segmentation和Personalization目标的数据流配置！](../assets/ui/activate-edge-personalization-destinations/datastream-config.png)
 
-有关如何设置数据流的更多详细信息，请按照[Platform Web SDK文档](../../datastreams/configure.md#aep)中所述的说明操作。
+有关如何设置数据流的更多详细信息，请按照[Experience Platform Web SDK文档](../../datastreams/configure.md#aep)中所述的说明操作。
 
 ### 创建[!DNL Active-On-Edge]合并策略 {#create-merge-policy}
 
@@ -97,9 +97,9 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/ed
 
 按照[创建合并策略](../../profile/merge-policies/ui-guide.md#create-a-merge-policy)中的说明进行操作，并确保启用&#x200B;**[!UICONTROL Edge上的活动合并策略]**&#x200B;切换开关。
 
-### 在Platform中创建新受众 {#create-audience}
+### 在Experience Platform中创建新受众 {#create-audience}
 
-创建[!DNL Active-On-Edge]合并策略后，必须在Platform中创建新受众。
+创建[!DNL Active-On-Edge]合并策略后，必须在Experience Platform中创建新受众。
 
 按照[受众生成器](../../segmentation/ui/segment-builder.md)指南创建新受众，并确保为其[分配](../../segmentation/ui/segment-builder.md#merge-policies)您在上一步中创建的[!DNL Active-On-Edge]合并策略。
 
@@ -141,7 +141,7 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/ed
 您可以从多种类型的受众中进行选择，具体取决于其来源：
 
 * **[!UICONTROL 分段服务]**：分段服务在Experience Platform中生成的受众。 有关详细信息，请参阅[分段文档](../../segmentation/ui/overview.md)。
-* **[!UICONTROL 自定义上传]**：受众在Experience Platform外部生成，并以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/audience-portal.md#import-audience)的文档。
+* **[!UICONTROL 自定义上传]**：受众在Experience Platform外部生成，并以CSV文件形式上传到Experience Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/audience-portal.md#import-audience)的文档。
 * 其他类型的受众，来自其他Adobe解决方案，如[!DNL Audience Manager]。
 
 ![在激活工作流中选择突出显示多个受众的受众步骤。](../assets/ui/activate-edge-personalization-destinations/select-audiences.png)

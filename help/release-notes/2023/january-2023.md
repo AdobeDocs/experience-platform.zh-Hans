@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2023 年 1 月）
 description: Adobe Experience Platform 的 2023 年 1 月发行说明。
 exl-id: 461898ce-5683-4ab1-9167-ac25843a1ff8
-source-git-commit: 322510055bd8b8803292a2b4af9df9e1dbee7ffb
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2224'
-ht-degree: 99%
+source-wordcount: '2227'
+ht-degree: 97%
 
 ---
 
@@ -20,7 +20,7 @@ Adobe Experience Platform 中现有功能的更新：
 - [数据收集](#data-collection)
 - [[!DNL Destinations]](#destinations)
 - [Experience Data Model (XDM)](#xdm)
-- [实时客户配置文件](#profile)
+- [实时客户轮廓](#profile)
 - [Segmentation Service](#segmentation)
 - [源](#sources)
 
@@ -45,7 +45,7 @@ Adobe Experience Platform 中现有功能的更新：
 
 ### 客户人工智能
 
-面向 Real-Time Customer Data Platform 的客户人工智能用于生成自定义倾向分数，如单个配置文件大规模的流失率和转化率。这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
+面向 Real-Time Customer Data Platform 的客户人工智能用于生成自定义倾向分数，如单个轮廓大规模的流失率和转化率。这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
 
 **更新的功能**
 
@@ -59,7 +59,7 @@ Adobe Experience Platform 中现有功能的更新：
 
 ## Assurance {#assurance}
 
-Adobe Assurance 可帮助您检查、证明、模拟和验证您在移动应用程序中收集数据或提供体验的方式。
+Adobe Assurance 可帮助您检查、校对、模拟和验证您在移动应用程序中收集数据或提供体验的方式。
 
 **新增功能或更新后的功能**
 
@@ -79,7 +79,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 功能 | 描述 |
 | --- | --- |
-| 新的主屏幕 | 数据收集 UI 的主页已更新，其中包含有用的入门信息和可提高生产力的链接。这包括：<ol><li>入门文档和推荐的工作流程</li><li>最近的属性、规则和数据元素</li><li>热门扩展</li><li>具有快速安装功能的新扩展更新</li></ol> |
+| 新的主屏幕 | 数据收集 UI 的主页已更新，其中包含有用的入门信息和可提高生产力的链接。这包括：<ol><li>入门文档和推荐的工作流</li><li>最近的属性、规则和数据元素</li><li>热门扩展</li><li>具有快速安装功能的新扩展更新</li></ol> |
 | 使用事件转发功能发送数据至[!DNL Google Ads] | 您现在可以使用 [[!DNL Google Ads Enhanced Conversions] API 扩展](../../tags/extensions/server/google-ads-enhanced-conversions/overview.md)进行事件转发，结合 [Google Oauth 2 机密](../../tags/ui/event-forwarding/secrets.md#google-oauth2)，安全地实时将服务器端数据发送到 [!DNL Google Ads]。 |
 
 {style="table-layout:auto"}
@@ -93,14 +93,14 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 | 目标 | 描述 |
 | ----------- | ----------- |
 | [(Beta) Adobe Experience Cloud 受众连接](../../destinations/catalog/adobe/experience-cloud-audiences.md) | 使用 [!UICONTROL (Beta) Adobe Experience Cloud 受众]连接，共享从 Experience Platform 到各种 Experience Platform 解决方案的区段，如 Audience Manager、Analytics、Advertising Cloud、Adobe Campaign、Target 或 Marketo。 |
-| [Pega 配置文件连接](../../destinations/catalog/personalization/pega-profile.md) | 使用 Adobe Experience Platform 中的 [!DNL Pega Profile Connector] 创建与 [!DNL Amazon] S3 存储的实时出站连接，定期将配置文件数据从 Adobe Experience Platform 导出为CSV文件，并将其导出到您自己的 S3 存储桶中。在 [!DNL Pega Customer Decision Hub] 中，您可以安排数据作业从 S3 存储中导入该配置文件数据，以更新[!DNL Pega Customer Decision Hub]配置文件。 |
+| [Pega 轮廓连接](../../destinations/catalog/personalization/pega-profile.md) | 使用 Adobe Experience Platform 中的 [!DNL Pega Profile Connector] 创建与 [!DNL Amazon] S3 存储的实时出站连接，定期将轮廓数据从 Adobe Experience Platform 导出为CSV文件，并将其导出到您自己的 S3 存储桶中。在 [!DNL Pega Customer Decision Hub] 中，您可以安排数据作业从 S3 存储中导入该轮廓数据，以更新[!DNL Pega Customer Decision Hub]轮廓。 |
 | [(Beta) Trade Desk CRM EU 连接](../../destinations/catalog/advertising/tradedesk-emails.md) | 随着 EUID (European Unified ID) 的发布，现在您在[目标目录](/help/destinations/catalog/overview.md)中会看到两个 [!DNL The Trade Desk - CRM] 目标。 <ul><li> 如果您在欧盟获取数据，请使用 **[!DNL The Trade Desk - CRM (EU)]** 目标。</li><li> 如果您在 APAC 或 NAMER 地区获取数据，请使用 **[!DNL The Trade Desk - CRM (NAMER & APAC)]** 目标。 </li></ul> |
 
 **新增或更新的功能**{#destinations-new-updated-functionality}
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| 用于与流媒体目标集成的付费媒体同意策略增强功能 | 针对付费媒体激活用例，对[流媒体目标](/help/destinations/destination-types.md#streaming-destinations)的同意策略执行](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-enhancement)进行了[增强。当配置文件不再符合同意策略时，Experience Platform 现在会主动将其策略退出通知给流媒体目标。<br> <b>注释</b>：此功能仅适用于&#x200B;**[!UICONTROL Privacy and Security Shield]**&#x200B;以及&#x200B;**[!UICONTROL Healthcare Shield]**&#x200B;的客户。 |
+| 用于与流媒体目标集成的付费媒体同意策略增强功能 | 针对付费媒体激活用例，对[流媒体目标](/help/destinations/destination-types.md#streaming-destinations)的同意策略执行](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-enhancement)进行了[增强。当轮廓不再符合同意策略时，Experience Platform 现在会主动将其策略退出通知给流媒体目标。<br> <b>注释</b>：此功能仅适用于&#x200B;**[!UICONTROL Privacy and Security Shield]**&#x200B;以及&#x200B;**[!UICONTROL Healthcare Shield]**&#x200B;的客户。 |
 | 测试版云存储目标连接器的新分隔符选项 | 三个新的分隔符选项（冒号`:`、竖线、分号`;`）现在可用于新的测试版云存储目的地 - [(Beta) Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md)、[(Beta) Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md)、[(Beta) Azure Data Lake Storage Gen2](/help/destinations/catalog/cloud-storage/adls-gen2.md)、[(Beta) 数据登陆区](/help/destinations/catalog/cloud-storage/data-landing-zone.md)、[(Beta) Google 云存储](/help/destinations/catalog/cloud-storage/google-cloud-storage.md)、[(Beta) SFTP](/help/destinations/catalog/cloud-storage/sftp.md)。<br>了解基于文件的目标支持的[文件格式选项](/help/destinations/ui/batch-destinations-file-formatting-options.md)。 |
 | [Destination SDK](/help/destinations/destination-sdk/overview.md) 中 [客户数据字段](/help/destinations/destination-sdk/functionality/destination-configuration/customer-data-fields.md)配置中提供的新可选参数 | `unique`：当您需要创建一个客户数据字段时，请使用此参数，该字段的值在用户组织设置的所有目标数据流中必须是唯一的。<br>例如，[[!UICONTROL 自定义个性化]](/help/destinations/catalog/personalization/custom-personalization.md#parameters)中的&#x200B;**[!UICONTROL 集成别名]**&#x200B;字段必须是唯一的，这意味着到该目标的两个单独的数据流不能具有相同的该字段值。 |
 
@@ -163,33 +163,33 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 {style="table-layout:auto"}
 
-有关 Platform 中 XDM 的详细信息，请查看 [XDM 系统概述](../../xdm/home.md)。
+有关Experience Platform中XDM的更多信息，请参阅[XDM系统概述](../../xdm/home.md)。
 
-## 实时客户配置文件 {#profile}
+## 实时客户轮廓 {#profile}
 
-Adobe Experience Platform 使您能够为客户提供协调、一致且相关的体验，无论他们何时何地与您的品牌互动均是如此。利用实时客户配置文件，您可以看到每个客户的整体视图，其中结合来自多个渠道的数据，包括在线、离线、CRM 和第三方数据。配置文件允许您将客户数据整合到一个统一视图中，并为每一次客户交互提供可操作的、有时间戳的描述。
+Adobe Experience Platform 使您能够为客户提供协调、一致且相关的体验，无论他们何时何地与您的品牌互动均是如此。利用实时客户轮廓，您可以看到每个客户的整体视图，其中结合来自多个渠道的数据，包括在线、离线、CRM 和第三方数据。轮廓允许您将客户数据整合到一个统一视图中，并为每一次客户交互提供可操作的、有时间戳的描述。
 
 **即将弃用**{#deprecation}
 
 为了消除区段成员关系生命周期中的冗余，在 2023 年 3 月低，[区段成员关系图](../../xdm/field-groups/profile/segmentation.md)中将会弃用 `Existing` 状态。后续公告将会包括确切的弃用日期。
 
-启用后，一个区段中合格的配置文件将表示为 `Realized`，不合格的配置将继续表示为 `Exited`。这会为具有 `Active` 和 `Expired` 区段状态的基于文件的目标带来对等性。
+启用后，一个区段中合格的轮廓将表示为 `Realized`，不合格的配置将继续表示为 `Exited`。这会为具有 `Active` 和 `Expired` 区段状态的基于文件的目标带来对等性。
 
-如果您正在使用[企业目标](../../destinations/destination-types.md#advanced-enterprise-destinations) (Amazon Kinesis, Azure Event Hubs, HTTP API)，并且可能已根据 `Existing` 状态将下游流程自动化，则此更改可能会对您产生影响。如果您属于这种情况，请检查您的下游集成。如果您有兴趣在一定时间后识别新获得资格的配置文件，请考虑在您的区段成员关系图中使用 `Realized` 状态和 `lastQualificationTime` 的组合。有关更多信息，请与您的 Adobe 代表联系。
+如果您正在使用[企业目标](../../destinations/destination-types.md#advanced-enterprise-destinations) (Amazon Kinesis, Azure Event Hubs, HTTP API)，并且可能已根据 `Existing` 状态将下游流程自动化，则此更改可能会对您产生影响。如果您属于这种情况，请检查您的下游集成。如果您有兴趣在一定时间后识别新获得资格的轮廓，请考虑在您的区段成员关系图中使用 `Realized` 状态和 `lastQualificationTime` 的组合。有关更多信息，请与您的 Adobe 代表联系。
 
-要详细了解实时客户配置文件，包括使用配置文件数据的教程和最佳实践，请首先阅读[实时客户配置文件概述](../../profile/home.md)。
+要详细了解实时客户轮廓，包括使用轮廓数据的教程和最佳实践，请首先阅读[实时客户轮廓概述](../../profile/home.md)。
 
 ## Segmentation Service {#segmentation}
 
-[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的配置文件子集。区段可以基于记录数据（例如人口统计信息）或代表客户与您的品牌互动的时间序列事件。
+[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的轮廓子集。区段可以基于记录数据（例如人口统计信息）或代表客户与您的品牌互动的时间序列事件。
 
 **新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
 | 在区段生成器中批量导入值 | 区段生成器现在支持通过上传 CSV 或 TSV 文件，或通过手动插入逗号分隔值来导入多个值。更多信息可以在[区段生成器指南](../../segmentation/ui/segment-builder.md#rule-builder-canvas)中找到。 |
-| 外部受众成员关系到期 | 默认情况下，外部受众成员关系将会保留 30 天。若要延长保留时间，请在提取受众数据期间使用 `validUntil` 字段。 |
-| Platform 生成的区段成员关系到期 | 基于 `lastQualificationTime` 字段，任何处于 `Exited` 状态超过 30 天的区段成员关系都会被删除。 |
+| 外部受众成员关系过期 | 默认情况下，外部受众成员关系将会保留 30 天。若要延长保留时间，请在提取受众数据期间使用 `validUntil` 字段。 |
+| Experience Platform生成的区段成员资格过期 | 基于 `lastQualificationTime` 字段，任何处于 `Exited` 状态超过 30 天的区段成员关系都会被删除。 |
 
 {style="table-layout:auto"}
 
@@ -197,7 +197,7 @@ Adobe Experience Platform 使您能够为客户提供协调、一致且相关的
 
 ## 源 {#sources}
 
-Adobe Experience Platform 可以从外部源获取数据，并允许您使用 Platform 服务构建、标记和增强该数据。您可以从各种来源获取数据，例如 Adobe 应用程序、基于云的存储、第三方软件和 CRM 系统。
+Adobe Experience Platform可以从外部源摄取数据，并允许您使用Experience Platform服务来构建、标记和增强这些数据。 您可以从各种来源获取数据，例如 Adobe 应用程序、基于云的存储、第三方软件和 CRM 系统。
 
 Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各种数据提供者设置源连接。这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 

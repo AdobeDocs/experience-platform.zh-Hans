@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform；配置文件；受众；受众；分段；用户界面；UI；自定义；受众仪表板；仪表板
+keywords: Experience Platform；个人资料；受众；受众；分段；用户界面；UI；自定义；受众仪表板；仪表板
 title: 受众功能板
 description: Adobe Experience Platform提供了一个功能板，通过它可查看有关贵组织已创建受众的重要信息。
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '3132'
+source-wordcount: '3136'
 ht-degree: 9%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 9%
 
 Adobe Experience Platform用户界面(UI)提供了一个功能板，通过它可查看有关受众的重要信息，如在每日快照期间捕获的信息。 本指南概述如何在UI中访问和使用[!UICONTROL 受众]仪表板，并提供有关仪表板中显示的可视化图表的更多信息。
 
-有关Platform用户界面中所有Adobe Experience Platform分段服务功能的概述，请访问[分段服务UI指南](../../segmentation/ui/overview.md)。
+有关Experience Platform用户界面中所有Adobe Experience Platform分段服务功能的概述，请访问[分段服务UI指南](../../segmentation/ui/overview.md)。
 
 ## [!UICONTROL 受众]仪表板数据
 
@@ -29,11 +29,11 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过它可
 
 ## 浏览[!UICONTROL 受众]仪表板 {#explore}
 
-要导航到Platform UI中的[!UICONTROL 受众]仪表板，请在左边栏中选择&#x200B;**[!UICONTROL 受众]**，然后选择&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡以显示仪表板。
+要导航到Experience Platform UI中的[!UICONTROL 受众]仪表板，请在左边栏中选择&#x200B;**[!UICONTROL 受众]**，然后选择&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡以显示该仪表板。
 
 >[!NOTE]
 >
->如果您的组织是初次使用Platform，但尚未创建活动配置文件数据集或合并策略，则不会显示[!UICONTROL 受众]仪表板。 相反，[!UICONTROL 概述]选项卡会显示链接和文档，以帮助您开始使用分段。
+>如果您的组织是Experience Platform的新用户，并且尚未创建活动配置文件数据集或合并策略，则[!UICONTROL 受众]仪表板不可见。 相反，[!UICONTROL 概述]选项卡会显示链接和文档，以帮助您开始使用分段。
 
 ![已突出显示[!UICONTROL 受众]仪表板[!UICONTROL 概述]选项卡，其中包含[!UICONTROL 受众]和[!UICONTROL 概述]。](../images/audiences/dashboard-overview.png)
 
@@ -53,7 +53,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过它可
 
 ### 查看 SQL {#view-sql}
 
-通过打开[!UICONTROL 概述]工作区，您可以查看生成可在您的仪表板上可视化的分析的SQL。 您可以从现有见解的SQL中获得灵感，以创建新查询，这些查询可根据您的业务需求从Platform数据获取独特的见解。 若要了解有关此功能的详细信息，请参阅[查看SQL UI指南](../view-sql.md)。
+通过打开[!UICONTROL 概述]工作区，您可以查看生成可在您的仪表板上可视化的分析的SQL。 您可以从现有见解的SQL中获得灵感，以创建新查询，这些查询可根据您的业务需求从Experience Platform数据获取独特的见解。 若要了解有关此功能的详细信息，请参阅[查看SQL UI指南](../view-sql.md)。
 
 ## 选择受众 {#select-audience}
 
@@ -152,7 +152,7 @@ Customer AI 用于生成自定义倾向分数，如轮廓大规模的流失率�
 
 ## 标准小组件 {#standard-widgets}
 
-Adobe提供了多个标准构件，可用于可视化与受众相关的各种指标。 您还可以使用[!UICONTROL 构件库]创建要与您的组织共享的自定义构件。 要了解有关创建自定义小组件的更多信息，请先阅读[小组件库概述](../customize/widget-library.md)。
+Adobe提供了多个标准构件，您可以使用这些构件可视化与受众相关的各种量度。 您还可以使用[!UICONTROL 构件库]创建要与您的组织共享的自定义构件。 要了解有关创建自定义小组件的更多信息，请先阅读[小组件库概述](../customize/widget-library.md)。
 
 要了解有关每个可用标准构件的更多信息，请从以下列表中选择构件的名称：
 
@@ -297,4 +297,4 @@ Adobe提供了多个标准构件，可用于可视化与受众相关的各种指
 
 ## 后续步骤
 
-通过阅读本文档，您现在应该能够找到[!UICONTROL 受众]仪表板并选择要查看的受众。 您还应该了解可用构件中显示的量度。 要了解有关在Experience PlatformUI中使用受众的更多信息，请参阅[分段服务UI指南](../../segmentation/ui/overview.md)。
+通过阅读本文档，您现在应该能够找到[!UICONTROL 受众]仪表板并选择要查看的受众。 您还应该了解可用构件中显示的量度。 要了解有关在Experience Platform UI中使用受众的更多信息，请参阅[分段服务UI指南](../../segmentation/ui/overview.md)。

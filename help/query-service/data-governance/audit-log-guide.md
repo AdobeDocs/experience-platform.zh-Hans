@@ -2,22 +2,22 @@
 title: 查询服务审核日志集成
 description: 查询服务审核日志维护各种用户操作的记录，形成审核跟踪，用于解决问题，或遵守公司数据管理政策和法规要求。 本教程概述了特定于查询服务的审核日志功能。
 exl-id: 5fdc649f-3aa1-4337-965f-3f733beafe9d
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '930'
+source-wordcount: '935'
 ht-degree: 1%
 
 ---
 
 # [!DNL Query Service]审核日志集成
 
-Adobe Experience Platform [!DNL Query Service]审核日志集成提供查询相关用户操作的记录。 审核日志是进行故障排除并遵守公司数据管理政策和法规要求的重要工具。 利用功能，可返回多种事件类型的操作日志，并过滤和导出记录。 可以通过Platform UI或[审核查询API](https://www.adobe.io/experience-platform-apis/references/audit-query/)访问日志，并以CSV或JSON文件格式下载。
+Adobe Experience Platform [!DNL Query Service]审核日志集成提供查询相关用户操作的记录。 审核日志是进行故障排除并遵守公司数据管理政策和法规要求的重要工具。 利用功能，可返回多种事件类型的操作日志，并过滤和导出记录。 可以通过Experience Platform UI或[审核查询API](https://www.adobe.io/experience-platform-apis/references/audit-query/)访问日志，并以CSV或JSON文件格式下载。
 
-要了解有关审核日志用户界面的详细信息，请参阅[审核日志概述文档](../../landing/governance-privacy-security/audit-logs/overview.md)。 要了解有关调用Platform API的更多信息，请参阅[审核日志API指南](../../landing/api-guide.md)。
+要了解有关审核日志用户界面的详细信息，请参阅[审核日志概述文档](../../landing/governance-privacy-security/audit-logs/overview.md)。 要了解有关调用Experience Platform API的更多信息，请参阅[审核日志API指南](../../landing/api-guide.md)。
 
 ## 先决条件
 
-您必须启用[!DNL Data Governance] [!UICONTROL 查看用户活动日志]权限，才能在Platform UI中查看审核日志仪表板。 通过Adobe[Admin Console](https://adminconsole.adobe.com/)启用该权限。 如果您没有启用此权限的管理员权限，请联系贵组织的管理员。 有关通过Admin Console](../../access-control/home.md)添加权限的完整说明，请参阅访问控制文档[。
+您必须启用[!DNL Data Governance] [!UICONTROL 查看用户活动日志]权限才能在Experience Platform UI中查看审核日志仪表板。 该权限是通过Adobe [Admin Console](https://adminconsole.adobe.com/)启用的。 如果您没有启用此权限的管理员权限，请联系贵组织的管理员。 有关通过Admin Console](../../access-control/home.md)添加权限的完整说明，请参阅访问控制文档[。
 
 ## [!DNL Query Service]审核日志类别 {#audit-log-categories}
 
@@ -33,9 +33,9 @@ Adobe Experience Platform [!DNL Query Service]审核日志集成提供查询相�
 
 要对[!DNL Query Service]活动执行审核，请从左侧导航中选择&#x200B;**[!UICONTROL 审核]**，然后选择漏斗图标（![过滤器图标）。](/help/images/icons/filter.png))以显示筛选器控件列表以帮助缩小结果范围。
 
-![Platform UI审核日志仪表板在左侧导航和筛选器控件中突出显示“审核”。](../images/audit-log/filter-controls.png)
+![Experience Platform UI审核日志仪表板在左侧导航和筛选器控件中突出显示“审核”。](../images/audit-log/filter-controls.png)
 
-从[!UICONTROL 审核]仪表板[!UICONTROL 活动日志]选项卡中，您可以按[!DNL Query Service]类别中的任意类别筛选所有记录的平台操作。 可以根据日志结果执行的时段、执行的操作/功能或执行查询的用户来进一步筛选日志结果。 有关如何根据类别、操作、用户和状态筛选日志的完整说明[，请参阅审核日志文档](../../landing/governance-privacy-security/audit-logs/overview.md#managing-audit-logs-in-the-ui)。
+从[!UICONTROL 审核]仪表板[!UICONTROL 活动日志]选项卡中，您可以按[!DNL Query Service]类别中的任意类别筛选所有记录的Experience Platform操作。 可以根据日志结果执行的时段、执行的操作/功能或执行查询的用户来进一步筛选日志结果。 有关如何根据类别、操作、用户和状态筛选日志的完整说明[，请参阅审核日志文档](../../landing/governance-privacy-security/audit-logs/overview.md#managing-audit-logs-in-the-ui)。
 
 返回的审核日志数据包含以下关于满足所选筛选条件的所有查询的信息。
 

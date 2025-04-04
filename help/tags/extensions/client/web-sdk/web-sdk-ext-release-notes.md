@@ -2,16 +2,16 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 8fd86a170433c4eb07a7370dbd3aa2cb3ef10922
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2580'
+source-wordcount: '2583'
 ht-degree: 25%
 
 ---
 
 # Adobe Experience Platform Web SDK扩展发行说明
 
-本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[Platform Web SDK发行说明](/help/web-sdk/release-notes.md)。
+本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[Experience Platform Web SDK发行说明](/help/web-sdk/release-notes.md)。
 
 ## 版本2.29.0 - 2025年3月5日
 
@@ -337,7 +337,7 @@ ht-degree: 25%
 
 ## 版本2.2.0 - 2020年10月1日
 
-- 当客户尝试按照沙盒架构创建 XDM 对象时，他们将会遇到身份验证问题。由于调用Platform的API现在能够识别环境，因此用户只会看到他们有权编辑的架构。
+- 当客户尝试按照沙盒架构创建 XDM 对象时，他们将会遇到身份验证问题。由于调用Experience Platform的API现在能够识别环境，因此用户只会看到他们有权编辑的架构。
 - 使用`identityMap`数据元素时，命名空间现在会预填充到下拉列表中，因此您不必手动进行填充。
 - 翻新了 `xdmObject` 数据元素的 UI。在新的 UI 中，您无需输入对象中的每个项目，即可查看已填充字段。
 
@@ -353,7 +353,7 @@ ht-degree: 25%
 - 在 `sendEvent` 操作中支持覆盖数据集 ID。
 - 增加了 `IdentityMap` 类型的新数据元素，该数据元素可用于在（现已启用的）XDM 对象数据元素和 `setConsent` 操作中填充 `identityMap` 条目。
 - 在 `setConsent` 操作中支持传递身份标识映射。
-- 支持在XDM对象数据元素中选择Platform沙盒。
+- 支持在XDM对象数据元素中选择Experience Platform沙盒。
 
 ## 1.0.0版 — 2020年5月26日
 

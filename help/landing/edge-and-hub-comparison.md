@@ -1,22 +1,22 @@
 ---
 solution: Experience Platform
-title: Edge Network与中心比较
+title: Edge Network 与 Hub Network 比较
 description: 了解可在Adobe Experience Platform上使用的各种处理路径。
-source-git-commit: 08a63fb854fe1c2aa83e7a7f74df4c02580e4d4c
+exl-id: 3e9c63d2-c798-44b4-870d-bf1551f29690
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '711'
-ht-degree: 2%
+source-wordcount: '713'
+ht-degree: 3%
 
 ---
 
+# Edge Network 与 Hub Network 比较
 
-# Edge Network与中心比较
-
-Adobe Experience Platform是市场上功能最强大、最灵活、最开放的系统，用于构建和管理可改善客户体验的完整解决方案。 您可以使用Experience Platform来集中和标准化来自任何系统的客户数据和内容，并应用数据科学和机器学习来显着改进丰富个性化体验的设计和交付。 因此，Platform提供了多种方法来处理您的数据，让您可以以最好的方式评估您的数据。
+Adobe Experience Platform是市场上功能最强大、最灵活、最开放的系统，用于构建和管理可改善客户体验的完整解决方案。 您可以使用Experience Platform来集中和标准化来自任何系统的客户数据和内容，并应用数据科学和机器学习来显着改进丰富个性化体验的设计和交付。 因此，Experience Platform提供了多种方法来处理您的数据，让您能够尽可能以最佳方式评估数据。
 
 ## 服务器类型
 
-在Platform上，可通过两种不同的路径处理数据：用于批处理工作流和流式工作流的Adobe Experience Platform中心以及用于实时体验的Edge Network。
+在Experience Platform上，可通过两种不同的路径处理数据：用于批处理工作流和流式工作流的Adobe Experience Platform中心以及用于实时体验的Edge Network。
 
 ### Adobe Experience Platform中心
 

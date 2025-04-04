@@ -4,9 +4,9 @@ description: 审核查询是一个RESTful API，它允许开发人员查看谁�
 role: Developer
 feature: Audits, API
 exl-id: 9ed291c6-ff8b-4d9b-9fed-d1e3fa8f92fb
-source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '171'
+source-wordcount: '172'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 1%
 
 ## 活动
 
-审核事件提供对Platform中用户操作的见解，包括操作类型、日期和时间、执行操作的用户的电子邮件ID，以及与Adobe Experience Platform各种功能的操作类型相关的其他属性。 要了解如何使用API检索量度，请参阅[事件端点指南](./events.md)。
+审核事件提供对Experience Platform中用户操作的见解，包括操作类型、日期和时间、执行操作的用户的电子邮件ID，以及与Adobe Experience Platform各种功能的操作类型相关的其他属性。 要了解如何使用API检索量度，请参阅[事件端点指南](./events.md)。
 
 ## 导出
 

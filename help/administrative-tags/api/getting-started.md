@@ -4,9 +4,9 @@ title: 统一标记API快速入门
 description: 以下文档提供了成功使用统一标记API所需了解的其他信息。
 role: Developer
 exl-id: 8f33707f-b46d-4054-802c-9e42ecabd9ba
-source-git-commit: 717a4ea0568200c940cf9b8f26f4dd2aa9c00a3e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '261'
+source-wordcount: '262'
 ht-degree: 9%
 
 ---
@@ -23,13 +23,13 @@ ht-degree: 9%
 
 ## 必需的标头
 
-API文档还要求您完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)，才能成功调用Platform端点。 完成身份验证教程将提供Experience PlatformAPI调用中每个所需标头的值，如下所示：
+API文档还要求您完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)，才能成功调用Experience Platform端点。 完成身份验证教程将为Experience Platform API调用中的每个所需标头提供值，如下所示：
 
 - 授权： `Bearer {ACCESS_TOKEN}`
 - x-api-key： `{API_KEY}`
 - x-gw-ims-org-id： `{ORG_ID}`
 
-[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
+[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Experience Platform] API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 - x-sandbox-name： `{SANDBOX_NAME}`
 

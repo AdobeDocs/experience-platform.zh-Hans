@@ -2,10 +2,10 @@
 title: Adobe Experience Platform演示扩展概述
 description: 了解Adobe Experience Platform中的Adobe Experience Platform Demo扩展。
 exl-id: 4bafa132-0d21-4140-ab46-f09cc20bce6f
-source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1069'
-ht-degree: 69%
+source-wordcount: '1071'
+ht-degree: 74%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 69%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 >[!NOTE]
 >
@@ -21,7 +21,7 @@ ht-degree: 69%
 
 此扩展的功能将移植到新扩展上。以下是当前功能的快速比较。
 
-| Platform演示扩展 | 平台Web SDK |
+| Experience Platform演示扩展 | Experience Platform Web SDK |
 | ------------------ | ----------- |
 | 支持自定义客户 ID | 支持自定义客户 ID |
 | XDM的客户端映射UI | 在 ECID 中构建（无需 visitor.js） |
@@ -89,36 +89,36 @@ ht-degree: 69%
 
 ![](../../../images/adobe-experience-platform-send-beacon-schema-field-selector.png)
 
-### Adobe Experience Platform 内的标识字段
+### Adobe Experience Platform 内的身份标识字段
 
-记录数据架构和时序数据架构可以包含一个或多个标识字段。 标识字段可拼合到一起组成一个主体的单一标识表示形式，这些字段中包含如下信息：CRM 标识符、Experience Cloud ID (ECID)、浏览器 Cookie、广告 ID 或不同域中的其他 ID 等等。
+记录数据架构和时序数据架构可以包含一个或多个标识字段。 身份标识字段可拼合到一起组成一个主体的单一身份标识表示形式，这些字段中包含如下信息：CRM 身份标识符、Experience Cloud ID (ECID)、浏览器 Cookie、广告 ID 或不同域中的其他 ID 等等。
 
-可以通过以下两种方式在架构内定义标识字段：
+可以通过以下两种方式在架构内定义身份标识字段：
 
-1. 记录架构和时序架构都包含一个名为 `xdm:identityMap` 的特殊字段，该字段中可以包含标识映射。
-1. 可在架构内将键字段标记为“标识”字段。
+1. 记录架构和时序架构都包含一个名为 `xdm:identityMap` 的特殊字段，该字段中可以包含身份标识映射。
+1. 可在架构内将键字段标记为“身份标识”字段。
 
-### Adobe Experience Platform 扩展内的标识字段
+### Adobe Experience Platform 扩展内的身份标识字段
 
-对于每个定义为标识字段的架构字段，都将在架构映射部分中添加一个相应行。添加的每个行中都将包含已填充了相应 XDM 架构路径的目标架构字段。如果您在某个架构字段旁边看到配置文件图标，则可以识别该字段是否还属于标识字段。
+对于每个定义为身份标识字段的架构字段，都将在架构映射部分中添加一个相应行。添加的每个行中都将包含已填充了相应 XDM 架构路径的目标架构字段。如果您在某个架构字段旁边看到轮廓图标，则可以识别该字段是否还属于身份标识字段。
 
 ![](../../../images/adobe-experience-platform-send-beacon-identity-field.png)
 
-主标识字段始终是必填字段，因此不能从架构映射部分中删除包含这些字段的行。
+主身份标识字段始终是必填字段，因此不能从架构映射部分中删除包含这些字段的行。
 
-如果某个架构字段被定义为非主标识字段，则会自动将该字段添加到架构映射部分，但源值输入可以保留为空。该字段可以删除。如果该字段对应的源值输入为空，则将丢弃该字段。
+如果某个架构字段被定义为非主身份标识字段，则会自动将该字段添加到架构映射部分，但源值输入可以保留为空。该字段可以删除。如果该字段对应的源值输入为空，则将丢弃该字段。
 
 ![](../../../images/adobe-experience-platform-send-beacon-identity-field-warning.png)
 
-在每个不含值的非主标识字段旁边，您将看到一个警告图标。
+在每个不含值的非主身份标识字段旁边，您将看到一个警告图标。
 
-如果您的架构中包含 `xdm:identityMap` 字段，则将显示一个标识部分。如果您希望使用 `xdm:identityMap` 发送与标识相关的数据，则可以使用此部分。
+如果您的架构中包含 `xdm:identityMap` 字段，则将显示一个身份标识部分。如果您希望使用 `xdm:identityMap` 发送与身份标识相关的数据，则可以使用此部分。
 
 ![](../../../images/adobe-experience-platform-send-beacon-identity-section.png)
 
-标识映射部分可以包含多个行。每行可以定义一个特定标识类型。您可以为标识定义以下属性：类型、已验证状态、主标识和值。
+身份标识映射部分可以包含多个行。每行可以定义一个特定身份标识类型。您可以为标识定义以下属性：类型、已验证状态、主标识和值。
 
-如果标识映射部分中有多个标识，则只能将一个标识标记为主标识。
+如果身份标识映射部分中有多个身份标识，则只能将一个身份标识标记为主身份标识。
 
 如果您的架构中有一个`xdm:identityMap`字段，同时另一个字段被标记为主标识字段，则不会显示标识映射部分内的主列。
 

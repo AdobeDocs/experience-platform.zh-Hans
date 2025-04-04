@@ -2,9 +2,9 @@
 description: 此页说明如何使用/testing/destinationInstance API端点来测试您的基于文件的目标是否已正确配置，以及验证数据流到您配置的目标是否完整。
 title: 使用示例配置文件测试基于文件的目标
 exl-id: 75f76aec-245b-4f07-8871-c64a710db9f6
-source-git-commit: 9ac6b075af3805da4dad0dd6442d026ae96ab5c7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '829'
+source-wordcount: '831'
 ht-degree: 2%
 
 ---
@@ -28,8 +28,8 @@ ht-degree: 2%
 在使用`/testing/destinationInstance`端点之前，请确保您满足以下条件：
 
 * 您有一个通过Destination SDK创建的基于文件的现有目标，您可以在[目标目录](../../../ui/destinations-workspace.md)中看到该目标。
-* 您已在Experience PlatformUI中为目标创建至少一个激活流程。
-* 要成功发出API请求，您需要与要测试的目标实例对应的目标实例ID。 在Platform UI中浏览与目标之间的连接时，从URL获取应在API调用中使用的目标实例ID。
+* 您已在Experience Platform UI中为目标创建至少一个激活流程。
+* 要成功发出API请求，您需要与要测试的目标实例对应的目标实例ID。 在Experience Platform UI中浏览与目标之间的连接时，从URL获取应在API调用中使用的目标实例ID。
 
   ![UI图像，显示如何从URL获取目标实例ID。](../../assets/testing-api/get-destination-instance-id.png)
 * *可选*：如果要使用添加到API调用的示例配置文件测试目标配置，请使用[/sample-profiles](file-based-sample-profile-generation-api.md)端点基于现有源架构生成示例配置文件。 如果您不提供示例配置文件，则API将生成一个API并在响应中返回它。
@@ -238,7 +238,7 @@ curl -X POST 'https://platform.adobe.io/data/core/activation/authoring/testing/d
 
 ## API错误处理 {#api-error-handling}
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅平台疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
+Destination SDK API端点遵循常规Experience Platform API错误消息原则。 请参阅Experience Platform疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤
 
@@ -246,4 +246,4 @@ Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 
 
 如果您收到了有效的API响应，则表明目标运行正常。 如果要查看有关激活流程的更多详细信息，可以使用[响应中的`results`属性查看详细的激活结果](file-based-destination-results-api.md)。
 
-如果您正在构建公共目标，您现在可以[提交目标配置](../../guides/submit-destination.md)以Adobe审查。
+如果您正在构建公共目标，您现在可以[将目标配置](../../guides/submit-destination.md)提交到Adobe以供审查。

@@ -2,9 +2,9 @@
 title: 身份验证和访问Reactor API
 description: 了解如何开始使用Reactor API，包括生成所需访问凭据的步骤。
 exl-id: fc1acc1d-6cfb-43c1-9ba9-00b2730cad5a
-source-git-commit: 2c8ac35e9bf72c91743714da1591c3414db5c5e9
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '908'
+source-wordcount: '912'
 ht-degree: 3%
 
 ---
@@ -43,15 +43,15 @@ ht-degree: 3%
 
 ![](../images/api/getting-started/add-api-button.png)
 
-出现&#x200B;**添加API**&#x200B;屏幕。 在选择&#x200B;**下一步**&#x200B;之前，从可用API列表中选择&#x200B;**Experience Platform LaunchAPI**。
+出现&#x200B;**添加API**&#x200B;屏幕。 在选择&#x200B;**下一步**&#x200B;之前，从可用API列表中选择&#x200B;**Experience Platform Launch API**。
 
 ![](../images/api/getting-started/add-launch-api.png)
 
-接下来，选择身份验证类型以生成访问令牌并访问Experience PlatformAPI。
+接下来，选择身份验证类型以生成访问令牌并访问Experience Platform API。
 
 >[!IMPORTANT]
 >
->选择&#x200B;**[!UICONTROL OAuth服务器到服务器]**&#x200B;方法，因为这将是今后唯一支持的方法。 已弃用&#x200B;**[!UICONTROL 服务帐户(JWT)]**&#x200B;方法。 虽然使用JWT身份验证方法的集成将继续工作到2025年1月1日，但Adobe强烈建议您在该日期之前将现有集成迁移到新的OAuth服务器到服务器方法。 在[!BADGE Deprecated]部分获取更多信息{type=negative}[在平台API身份验证教程中生成JSON Web令牌(JWT)](/help/landing/api-authentication.md#jwt)。
+>选择&#x200B;**[!UICONTROL OAuth服务器到服务器]**&#x200B;方法，因为这将是今后唯一支持的方法。 已弃用&#x200B;**[!UICONTROL 服务帐户(JWT)]**&#x200B;方法。 虽然使用JWT身份验证方法的集成将继续工作到2025年1月1日，但Adobe强烈建议您在该日期之前将现有集成迁移到新的OAuth服务器到服务器方法。 在[!BADGE Deprecated]部分获取更多信息{type=negative}[在Experience Platform API身份验证教程中生成JSON Web令牌(JWT)](/help/landing/api-authentication.md#jwt)。
 
 选择&#x200B;**下一步**&#x200B;以继续。
 
@@ -69,7 +69,7 @@ ht-degree: 3%
 
 ### 收集凭据 {#gather-credentials}
 
-将API添加到项目后，项目的&#x200B;**[!UICONTROL Experience PlatformAPI]**&#x200B;页面将显示所有调用Experience PlatformAPI时所需的以下凭据：
+将API添加到项目后，项目的&#x200B;**[!UICONTROL Experience Platform API]**&#x200B;页面将显示所有调用Experience Platform API所需的以下凭据：
 
 * `{API_KEY}` （[!UICONTROL 客户端ID]）
 * `{ORG_ID}` （[!UICONTROL 组织ID]）
@@ -78,7 +78,7 @@ ht-degree: 3%
 
 ### 生成访问令牌 {#generate-access-token}
 
-下一步是生成用于Platform API调用的`{ACCESS_TOKEN}`凭据。 与`{API_KEY}`和`{ORG_ID}`的值不同，必须每24小时生成一个新令牌才能继续使用平台API。
+下一步是生成用于Experience Platform API调用的`{ACCESS_TOKEN}`凭据。 与`{API_KEY}`和`{ORG_ID}`的值不同，必须每24小时生成一个新令牌才能继续使用Experience Platform API。
 
 >[!TIP]
 >
@@ -99,7 +99,7 @@ ht-degree: 3%
 
 #### 自动生成令牌 {#auto-token}
 
-您还可以使用Postman环境和收藏集来生成访问令牌。 有关详细信息，请阅读Experience PlatformAPI身份验证指南中有关[使用Postman进行身份验证和测试API调用](/help/landing/api-authentication.md#use-postman)的部分。
+您还可以使用Postman环境和收藏集来生成访问令牌。 有关详细信息，请阅读Experience Platform API身份验证指南中有关[使用Postman进行身份验证和测试API调用](/help/landing/api-authentication.md#use-postman)的部分。
 
 ## 测试API凭据 {#test-api-credentials}
 
@@ -115,7 +115,7 @@ ht-degree: 3%
 
 ## 正在读取示例 API 调用 {#read-sample-api-calls}
 
-每个端点指南都提供了示例API调用，以演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅Platform API快速入门指南中有关[如何读取示例API调用](../../landing/api-guide.md#sample-api)的部分。
+每个端点指南都提供了示例API调用，以演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅Experience Platform API快速入门指南中有关[如何读取示例API调用](../../landing/api-guide.md#sample-api)的部分。
 
 ## 后续步骤 {#next-steps}
 

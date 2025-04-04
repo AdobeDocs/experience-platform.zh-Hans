@@ -2,11 +2,11 @@
 keywords: 分析；归因人工智能；归因人工智能分析；AAI查询服务；归因查询；归因得分
 feature: Attribution AI
 title: 使用查询服务分析归因分数
-description: 了解如何使用Adobe Experience Platform查询服务分析Attribution AI得分。
+description: 了解如何使用Adobe Experience Platform查询服务来分析Attribution AI分数。
 exl-id: 35d7f6f2-a118-4093-8dbc-cb020ec35e90
-source-git-commit: 66d20dc1141ff33211635ba74d320350f8b27fb7
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '589'
+source-wordcount: '590'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,11 @@ ht-degree: 0%
 | ---------------------- | ------ |
 | 接触点名称 | `touchpointsDetail. touchpointName` |
 | 接触点渠道 | `touchpointsDetail.touchPoint.mediaChannel` |
-| 接触点Attribution AI算法分数 | <li>`touchpointsDetail.scores.algorithmicSourced`</li> <li> `touchpointsDetail.scores.algorithmicInfluenced` </li> |
+| 接触点归因人工智能算法分数 | <li>`touchpointsDetail.scores.algorithmicSourced`</li> <li> `touchpointsDetail.scores.algorithmicInfluenced` </li> |
 
 ## 查找数据路径
 
-在Adobe Experience Platform UI的左侧导航中选择&#x200B;**[!UICONTROL 数据集]**。 此时会显示&#x200B;**[!UICONTROL 数据集]**&#x200B;页面。 接下来，选择&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡，并查找Attribution AI分数的输出数据集。
+在Adobe Experience Platform UI的左侧导航中选择&#x200B;**[!UICONTROL 数据集]**。 此时会显示&#x200B;**[!UICONTROL 数据集]**&#x200B;页面。 接下来，选择&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡并查找归因人工智能得分的输出数据集。
 
 ![正在访问您的模型](./images/aai-query/datasets_browse.png)
 
@@ -45,7 +45,7 @@ ht-degree: 0%
 
 ## 访问查询服务
 
-若要从Platform UI中访问查询服务，请选择左侧导航中的&#x200B;**[!UICONTROL 查询]**，然后选择&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡。 将加载以前保存的查询的列表。
+若要从Experience Platform UI中访问查询服务，请选择左侧导航中的&#x200B;**[!UICONTROL 查询]**，然后选择&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡。 将加载以前保存的查询的列表。
 
 ![查询服务浏览](./images/aai-query/query_tab.png)
 
@@ -305,7 +305,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
-> 在此示例中，除`_tenantId`和`your_score_output_dataset`外，还需要替换`{COLUMN_NAME}`。 `COLUMN_NAME`变量可以使用在配置Attribution AI模型期间添加的可选传递列名称（报表列）的值。 请检查您的评分输出架构以查找完成此查询所需的`{COLUMN_NAME}`值。
+> 在此示例中，除`_tenantId`和`your_score_output_dataset`外，还需要替换`{COLUMN_NAME}`。 `COLUMN_NAME`变量可以使用在配置归因人工智能模型期间添加的可选传递列名称（报表列）的值。 请检查您的评分输出架构以查找完成此查询所需的`{COLUMN_NAME}`值。
 
 ```sql
 SELECT 

@@ -1,23 +1,23 @@
 ---
 title: 将Adobe Target与Web SDK结合使用进行个性化
-description: 了解如何使用Adobe Target通过Experience PlatformWeb SDK呈现个性化内容
+description: 了解如何使用Adobe Target在Experience Platform Web SDK中呈现个性化内容
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: 116db0808835c548c21635148b81b3e884b5cebd
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1364'
+source-wordcount: '1368'
 ht-degree: 1%
 
 ---
 
 # 使用[!DNL Adobe Target]和[!DNL Web SDK]进行个性化
 
-[!DNL Adobe Experience Platform] [!DNL Web SDK]可以将在[!DNL Adobe Target]中管理的个性化体验交付并渲染到Web渠道。 您可以使用名为[可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) (VEC)的WYSIWYG编辑器，或使用非可视化界面[基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html)，创建、激活并交付您的活动和个性化体验。
+[!DNL Adobe Experience Platform] [!DNL Web SDK]可以将在[!DNL Adobe Target]中管理的个性化体验交付并渲染到Web渠道。 您可以使用名为[可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) (VEC)的WYSIWYG编辑器，或使用非可视化界面[基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html)创建、激活并交付活动和个性化体验。
 
 >[!IMPORTANT]
 >
->了解如何使用[将Target从at.js 2.x迁移到Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/migrate-target-to-websdk/introduction.html)教程将Target实施迁移到Platform Web SDK。
+>了解如何使用[将Target从at.js 2.x迁移到Experience Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/migrate-target-to-websdk/introduction.html)教程将Target实施迁移到Experience Platform Web SDK。
 >
->了解如何使用[使用Web SDK实施Adobe Experience Cloud](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html?lang=zh-Hans)教程首次实施Target。 有关特定于Target的信息，请参阅标题为[使用Platform Web SDK设置Target](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/applications-setup/setup-target.html)的教程部分。
+>通过[使用Web SDK实施Adobe Experience Cloud](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html?lang=zh-Hans)教程首次了解如何实施Target。 有关特定于Target的信息，请参阅标题为[使用Experience Platform Web SDK设置Target](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/applications-setup/setup-target.html)的教程部分。
 
 
 以下功能已经过测试，当前在[!DNL Target]中受支持：
@@ -27,7 +27,7 @@ ht-degree: 1%
 * [Automated Personalization活动](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
 * [体验定位活动](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
 * [多变量测试(MVT)](https://experienceleague.adobe.com/docs/target/using/activities/multivariate-test/multivariate-testing.html)
-* [Recommendations活动](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html)
+* [推荐活动](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html)
 * [本机目标展示和转化报告](https://experienceleague.adobe.com/docs/target/using/reports/reports.html)
 * [VEC支持](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)
 
@@ -35,16 +35,16 @@ ht-degree: 1%
 
 下图可帮助您了解[!DNL Target]和[!DNL Web SDK]边缘决策的工作流。
 
-![使用Platform Web SDK的Adobe Target Edge Decisioning图表](assets/target-platform-web-sdk-new.png)
+![使用Experience Platform Web SDK的Adobe Target Edge Decisioning图表](assets/target-platform-web-sdk-new.png)
 
 | 调用 | 详细信息 |
 | --- | --- |
-| 1 | 设备加载[!DNL Web SDK]。 [!DNL Web SDK]向Edge Network发送请求，其中包含XDM数据、数据流环境ID、传入的参数和客户ID（可选）。 页面（或容器）已预先隐藏。 |
+| 1 | 设备加载[!DNL Web SDK]。 [!DNL Web SDK]向Edge Network发送请求，其中包含XDM数据、数据流环境ID、传入参数和客户ID（可选）。 页面（或容器）已预先隐藏。 |
 | 2 | Edge Network将请求发送到边缘服务，以使用访客ID、同意和其他访客上下文信息（如地理位置和设备友好名称）对其进行扩充。 |
 | 3 | Edge Network使用访客ID和传入的参数将扩充的个性化请求发送给[!DNL Target]边缘。 |
 | 4 | 配置文件脚本在执行后进入[!DNL Target]配置文件存储。 配置文件存储从[!UICONTROL 受众库]中获取区段（例如，从[!DNL Adobe Analytics]、[!DNL Adobe Audience Manager]、[!DNL Adobe Experience Platform]共享的区段）。 |
-| 5 | 根据URL请求参数和配置文件数据，[!DNL Target]确定将为访客显示的当前页面视图和未来预取视图的活动和体验。 [!DNL Target]然后将它发送回Edge Network。 |
-| 6 | a.Edge Network将个性化响应发送回页面，其中可能包含其他个性化的配置文件值。 当前页面上的个性化内容会在默认内容不发生闪烁的情况下尽快显示。<br>b。作为用户操作在单页应用程序(SPA)中显示的视图的个性化内容将缓存，这样便可在触发视图时即时应用而无需额外的服务器调用。 <br>c。Edge Network会发送访客ID和Cookie中的其他值，例如同意、会话ID、身份、Cookie检查和个性化。 |
+| 5 | 根据URL请求参数和配置文件数据，[!DNL Target]确定将为访客显示的当前页面视图和未来预取视图的活动和体验。 [!DNL Target]然后将此数据发送回Edge Network。 |
+| 6 | a. Edge Network将个性化响应发送回页面，其中可能包含其他个性化的配置文件值。 当前页面上的个性化内容会在默认内容不发生闪烁的情况下尽快显示。<br>b。作为用户在单页应用程序(SPA)中操作结果而显示的视图的个性化内容将缓存，这样便可在触发视图时即时应用而无需额外的服务器调用。 <br>c。Edge Network会发送访客ID以及Cookie中的其他值，例如同意、会话ID、身份、Cookie检查和个性化。 |
 | 7 | Web SDK将通知从设备发送到Edge Network。 |
 | 8 | Edge Network将[!UICONTROL Analytics for Target] (A4T)详细信息（活动、体验和转化元数据）转发到[!DNL Analytics]边缘。 |
 
@@ -74,7 +74,7 @@ ht-degree: 1%
 
 在为通过[!DNL Web SDK]交付的[!DNL Target]活动定义受众时，必须定义和使用[XDM](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html)。 定义XDM架构、类和架构字段组后，可创建由XDM数据定义的[!DNL Target]受众规则以进行定位。 在[!DNL Target]内，XDM数据在[!UICONTROL 受众生成器]中显示为自定义参数。 XDM使用点表示法序列化（例如，`web.webPageDetails.name`）。
 
-如果您的[!DNL Target]活动具有使用自定义参数或用户配置文件的预定义受众，则无法通过SDK正确交付这些受众。 您必须改用XDM，而不是使用自定义参数或用户配置文件。 但是，有一些通过[!DNL Web SDK]支持的现成受众定向字段不需要XDM。 这些字段在[!DNL Target] UI中可用，不需要XDM：
+如果您的[!DNL Target]活动包含使用自定义参数或用户配置文件的预定义受众，则无法通过SDK正确交付这些受众。 您必须改用XDM，而不是使用自定义参数或用户配置文件。 但是，有一些通过[!DNL Web SDK]支持的现成受众定向字段不需要XDM。 这些字段在[!DNL Target] UI中可用，不需要XDM：
 
 * Target库
 * 地理
@@ -181,7 +181,7 @@ alloy("sendEvent",
 | --- | --- | --- |
 | `renderDecisions` | 布尔值 | 指示个性化组件是否应解释DOM操作 |
 | `decisionScopes` | 数组`<String>` | 要检索决策的作用域列表 |
-| `xdm` | 对象 | 在Web SDK中作为体验事件登陆的XDM格式的数据 |
+| `xdm` | 对象 | 以XDM格式显示的数据，作为Web SDK中的体验事件登陆 |
 | `data` | 对象 | 发送到target类下[!DNL Target]解决方案的任意键/值对。 |
 
 <!--Typical [!DNL Web SDK] code using this command looks like the following:-->
@@ -223,7 +223,7 @@ alloy("sendEvent", {
 
 | 类别 | 属性 | 支持状态 |
 | --- | --- | --- |
-| Recommendations — 默认实体属性 | entity.id | 支持 |
+| 推荐 — 默认实体属性 | entity.id | 支持 |
 |  | entity.name | 支持 |
 |  | entity.categoryId | 支持 |
 |  | entity.pageUrl | 支持 |
@@ -234,7 +234,7 @@ alloy("sendEvent", {
 |  | entity.brand | 支持 |
 |  | entity.margin | 支持 |
 |  | entity.event.detailsOnly | 支持 |
-| Recommendations — 自定义实体属性 | entity.yourCustomAttributeName | 支持 |
+| 推荐 — 自定义实体属性 | entity.yourCustomAttributeName | 支持 |
 | Recommendations — 保留的mbox/页面参数 | excludedIds | 支持 |
 |  | cartIds | 支持 |
 |  | productPurchasedId | 支持 |

@@ -4,10 +4,10 @@ description: 了解如何使用Adobe Experience Platform UI为您的Braze帐户�
 last-substantial-update: 2024-01-30T00:00:00Z
 badge: Beta 版
 exl-id: 6e94414a-176c-4810-80ff-02cf9e797756
-source-git-commit: 59600165328181e41750b9b2a1f4fbf162dd1df5
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1001'
-ht-degree: 1%
+source-wordcount: '1003'
+ht-degree: 2%
 
 ---
 
@@ -47,7 +47,7 @@ ht-degree: 1%
 >
 >如果您是第一次创建[!DNL Braze Currents]连接，则必须创建体验数据模型(XDM)架构。 如果您已经为[!DNL Braze Currents]创建了架构，则可以跳过此步骤并继续[将您的帐户连接到Experience Platform](#connect)。
 
-在Platform UI中，使用左侧导航，然后选择&#x200B;**[!UICONTROL 架构]**&#x200B;以访问[!UICONTROL 架构]工作区。 接下来，选择&#x200B;**[!UICONTROL 创建架构]**，然后选择&#x200B;**[!UICONTROL 体验事件]**。 若要继续，请选择&#x200B;**[!UICONTROL 下一步]**。
+在Experience Platform UI中，使用左侧导航，然后选择&#x200B;**[!UICONTROL 架构]**&#x200B;以访问[!UICONTROL 架构]工作区。 接下来，选择&#x200B;**[!UICONTROL 创建架构]**，然后选择&#x200B;**[!UICONTROL 体验事件]**。 若要继续，请选择&#x200B;**[!UICONTROL 下一步]**。
 
 ![已完成的架构。](../../../../images/tutorials/create/braze/schema.png)
 
@@ -55,13 +55,13 @@ ht-degree: 1%
 
 有关架构的详细信息，请参阅[在UI中创建架构的指南](../../../../../xdm/tutorials/create-schema-ui.md)。
 
-## 将你的[!DNL Braze]帐户连接到Experience Platform {#connect}
+## 将您的[!DNL Braze]帐户连接到Experience Platform {#connect}
 
-在Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
 在&#x200B;*营销自动化*&#x200B;类别下，选择&#x200B;**[!UICONTROL 铜流电流]**，然后选择&#x200B;**[!UICONTROL 添加数据]**。
 
-![Experience PlatformUI上选定了钎焊电流源的源目录。](../../../../images/tutorials/create/braze/catalog.png)
+![已选择“钎焊电流”源的Experience Platform UI上的源目录。](../../../../images/tutorials/create/braze/catalog.png)
 
 接下来，上载提供的[铜线电流示例文件](https://github.com/Appboy/currents-examples/blob/master/sample-data/Adobe/adobe_examples.json)。 此文件包含Braze可能作为事件的一部分发送的所有可能字段。
 
@@ -84,7 +84,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->钎焊时间戳不是以毫秒为单位表示，而是以秒为单位表示。 为了准确反映Experience Platform中的时间戳，您需要创建以毫秒为单位的计算字段。 “time * 1000”的计算将正确地转换为毫秒，适合映射到Experience Platform内的时间戳字段。
+>钎焊时间戳不是以毫秒为单位表示，而是以秒为单位表示。 为了准确反映Experience Platform中的时间戳，您需要创建以毫秒为单位的计算字段。 “time * 1000”的计算将正确地转换为毫秒，适合映射到Experience Platform中的时间戳字段。
 >
 >![为时间戳](../../../../images/tutorials/create/braze/create-calculated-field.png)创建计算字段
 
@@ -94,13 +94,13 @@ ht-degree: 1%
 
 ### 收集所需的凭据
 
-创建连接后，必须收集以下凭据值，随后将在钎焊仪表板中提供这些凭据值，以将数据发送到Experience Platform。 有关详细信息，请阅读有关导航到Currences](https://www.braze.com/docs/user_guide/data_and_analytics/braze_currents/setting_up_currents/#step-2-navigate-to-currents)的[!DNL Braze] [指南。
+创建连接后，必须收集以下凭据值，随后将在硬仪表板上提供这些值，以将数据发送到Experience Platform。 有关详细信息，请阅读有关导航到Currences](https://www.braze.com/docs/user_guide/data_and_analytics/braze_currents/setting_up_currents/#step-2-navigate-to-currents)的[!DNL Braze] [指南。
 
 | 字段 | 描述 |
 | --- | --- |
 | 客户端 ID | 与您的Experience Platform源关联的客户端ID。 |
 | 客户端密码 | 与您的Experience Platform源关联的客户端密钥。 |
-| 租户ID | 与您的Experience Platform源关联的租户ID。 |
+| 租户 ID | 与您的Experience Platform源关联的租户ID。 |
 | 沙盒名称 | 与您的Experience Platform源关联的沙盒。 |
 | 数据流 ID | 与您的Experience Platform源关联的数据流ID。 |
 | 流端点 | 与您的Experience Platform源关联的流端点。 **注意**： [!DNL Braze]自动将其转换为批处理流终结点。 |
@@ -111,4 +111,4 @@ ht-degree: 1%
 
 ## 后续步骤
 
-通过学习本教程，您已建立与[!DNL Braze]帐户的连接。 您现在可以继续下一教程，并[配置数据流以将营销自动化系统数据引入 [!DNL Platform]](../../dataflow/marketing-automation.md)。
+通过学习本教程，您已建立与[!DNL Braze]帐户的连接。 您现在可以继续下一教程，并[配置数据流以将营销自动化系统数据引入 [!DNL Experience Platform]](../../dataflow/marketing-automation.md)。

@@ -3,18 +3,18 @@ keywords: Experience Platform；主页；热门主题；云存储数据
 solution: Experience Platform
 title: 使用流服务API为云存储源创建数据流
 type: Tutorial
-description: 本教程涵盖了从第三方云存储检索数据，以及使用源连接器和API将数据引入Platform的步骤。
+description: 本教程涵盖了从第三方云存储检索数据，以及使用源连接器和API将数据引入Experience Platform的步骤。
 exl-id: 95373c25-24f6-4905-ae6c-5000bf493e6f
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1742'
+source-wordcount: '1756'
 ht-degree: 2%
 
 ---
 
 # 使用[!DNL Flow Service] API为云存储源创建数据流
 
-本教程介绍从云存储源检索数据以及使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将数据引入平台的步骤。
+本教程介绍了从云存储源检索数据以及使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将数据引入Experience Platform的步骤。
 
 >[!NOTE]
 >
@@ -24,16 +24,16 @@ ht-degree: 2%
 
 本教程要求您实际了解Adobe Experience Platform的以下组件：
 
-- [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+- [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
    - [架构组合的基础知识](../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    - [架构注册表开发人员指南](../../../../xdm/api/getting-started.md)：包含成功执行对架构注册表API的调用所需了解的重要信息。 这包括您的`{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（请特别注意“接受”标头及其可能的值）。
-- [[!DNL Catalog Service]](../../../../catalog/home.md)：目录是Experience Platform中数据位置和历程的记录系统。
+- [[!DNL Catalog Service]](../../../../catalog/home.md)：目录是Experience Platform中数据位置和谱系的记录系统。
 - [[!DNL Batch ingestion]](../../../../ingestion/batch-ingestion/overview.md)：批量摄取API允许您将数据作为批处理文件摄取到Experience Platform中。
-- [沙盒](../../../../sandboxes/home.md)：Experience Platform提供了将单个Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+- [沙盒](../../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-### 使用平台API
+### 使用Experience Platform API
 
-有关如何成功调用平台API的信息，请参阅[平台API快速入门](../../../../landing/api-guide.md)指南。
+有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../../landing/api-guide.md)指南。
 
 ## 创建源连接 {#source}
 
@@ -93,10 +93,10 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `baseConnectionId` | 云存储源的基本连接ID。 |
-| `data.format` | 您要带到Platform的数据的格式。 支持的值为： `delimited`、`JSON`和`parquet`。 |
+| `data.format` | 要带入Experience Platform的数据的格式。 支持的值为： `delimited`、`JSON`和`parquet`。 |
 | `data.properties` | （可选）在创建源连接时可应用于数据的一组属性。 |
 | `data.properties.columnDelimiter` | （可选）收集平面文件时可指定的单个字符列分隔符。 任何单个字符值都是允许的列分隔符。 如果未提供，则使用逗号(`,`)作为默认值。 **注意**： `columnDelimiter`属性只能在引入分隔文件时使用。 |
-| `data.properties.encoding` | （可选）一个属性，定义将数据摄取到Platform时要使用的编码类型。 支持的编码类型为： `UTF-8`和`ISO-8859-1`。 **注意**： `encoding`参数仅在摄取分隔的CSV文件时可用。 将使用默认编码`UTF-8`摄取其他文件类型。 |
+| `data.properties.encoding` | （可选）一个属性，定义将数据摄取到Experience Platform时要使用的编码类型。 支持的编码类型为： `UTF-8`和`ISO-8859-1`。 **注意**： `encoding`参数仅在摄取分隔的CSV文件时可用。 将使用默认编码`UTF-8`摄取其他文件类型。 |
 | `data.properties.compressionType` | （可选）一个属性，定义用于摄取的压缩文件类型。 支持的压缩文件类型为： `bzip2`、`gzip`、`deflate`、`zipDeflate`、`tarGzip`和`tar`。 **注意**： `compressionType`属性只能在引入分隔文件或JSON文件时使用。 |
 | `params.path` | 您正在访问的源文件的路径。 此参数指向单个文件或整个文件夹。  **注意**：您可以使用星号代替文件名来指定整个文件夹的摄取。 例如： `/acme/summerCampaign/*.csv`将摄取整个`/acme/summerCampaign/`文件夹。 |
 | `params.type` | 您正在摄取的源数据文件的文件类型。 使用类型`file`摄取单个文件，使用类型`folder`摄取整个文件夹。 |
@@ -115,7 +115,7 @@ curl -X POST \
 
 ### 使用正则表达式选择要摄取的特定文件集 {#regex}
 
-在创建源连接时，可以使用正则表达式将源中的一组特定文件摄取到Platform。
+在创建源连接时，您可以使用正则表达式将一组特定的文件从源摄取到Experience Platform。
 
 **API格式**
 
@@ -196,15 +196,15 @@ curl -X POST \
 
 ## 创建目标XDM架构 {#target-schema}
 
-为了在Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。
+为了在Experience Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Experience Platform数据集。
 
-通过向[架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)执行POST请求，可以创建目标XDM架构。
+通过对[架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)执行POST请求，可以创建目标XDM架构。
 
 有关如何创建目标XDM架构的详细步骤，请参阅有关使用API [创建架构的教程](../../../../xdm/api/schemas.md)。
 
 ## 创建目标数据集 {#target-dataset}
 
-可以通过向[目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)执行POST请求，在有效负载中提供目标架构的ID来创建目标数据集。
+通过向[目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)执行POST请求，在有效负载中提供目标架构的ID，可以创建目标数据集。
 
 有关如何创建目标数据集的详细步骤，请参阅有关[使用API创建数据集的教程](../../../../catalog/api/create-dataset.md)。
 
@@ -348,7 +348,7 @@ curl -X POST \
 
 ## 检索数据流规范 {#specs}
 
-数据流负责从源收集数据并将这些数据导入Platform。 要创建数据流，您必须首先获取负责收集云存储数据的数据流规范。
+数据流负责从源收集数据并将这些数据引入Experience Platform。 要创建数据流，您必须首先获取负责收集云存储数据的数据流规范。
 
 **API格式**
 
@@ -374,7 +374,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回数据流规范的详细信息，该规范负责将数据从源引入Platform。 响应包括创建新数据流所需的唯一流规范`id`。
+成功的响应将返回数据流规范的详细信息，该规范负责将数据从源引入Experience Platform。 响应包括创建新数据流所需的唯一流规范`id`。
 
 ```json
 {
@@ -596,7 +596,7 @@ curl -X GET \
 - [映射 ID](#mapping)
 - [数据流规范ID](#specs)
 
-数据流负责从源中计划和收集数据。 您可以通过在有效负载中提供上述值时执行POST请求来创建数据流。
+数据流负责从源中计划和收集数据。 您可以通过在有效负载中提供前面提到的值时执行POST请求来创建数据流。
 
 >[!NOTE]
 >
@@ -624,8 +624,8 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "Cloud Storage flow to Platform",
-        "description": "Cloud Storage flow to Platform",
+        "name": "Cloud Storage flow to Experience Platform",
+        "description": "Cloud Storage flow to Experience Platform",
         "flowSpec": {
             "id": "9753525b-82c7-4dce-8a9b-5ccfce2b9876",
             "version": "1.0"
@@ -680,7 +680,7 @@ curl -X POST \
 
 ## 后续步骤
 
-在本教程之后，您已创建一个源连接器，以按计划从云存储中收集数据。 传入数据现在可供下游平台服务（如[!DNL Real-Time Customer Profile]和[!DNL Data Science Workspace]）使用。 有关更多详细信息，请参阅以下文档：
+在本教程之后，您已创建一个源连接器，以按计划从云存储中收集数据。 传入数据现在可供下游Experience Platform服务（如[!DNL Real-Time Customer Profile]和[!DNL Data Science Workspace]）使用。 有关更多详细信息，请参阅以下文档：
 
 - [实时客户轮廓概述](../../../../profile/home.md)
 - [数据科学工作区概述](../../../../data-science-workspace/home.md)

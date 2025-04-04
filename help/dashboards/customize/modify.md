@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；用户界面；UI；功能板；功能板；配置文件；区段；目标；许可证使用情况
-title: 在UI中修改Platform功能板
+title: 在UI中修改Experience Platform功能板
 description: 本指南提供了有关自定义组织的Adobe Experience Platform数据在功能板中的显示方式的分步说明。
 exl-id: 75e4aea7-b521-434d-9cd5-32a00d00550d
-source-git-commit: 32dd90018c990e7013d826b29608a61022ba808b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '496'
+source-wordcount: '498'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 1%
 >
 >对功能板所做的任何更新都是按组织和沙盒进行的。
 
-本指南提供了有关自定义仪表板数据在Platform UI中的[!UICONTROL 配置文件]、[!UICONTROL 区段]和[!UICONTROL 目标]仪表板中的显示方式的分步说明。
+本指南提供了在Experience Platform UI中自定义仪表板数据在[!UICONTROL 配置文件]、[!UICONTROL 区段]和[!UICONTROL 目标]仪表板中的显示方式的分步说明。
 
 ## 快速入门
 
@@ -48,7 +48,7 @@ ht-degree: 1%
 
 ![已突出显示“取消”和“保存并退出”的用户档案仪表板。](../images/customization/save-changes.png)
 
-## 构件库
+## 小组件库
 
 除了调整小组件大小并重新排序之外，在[!UICONTROL 配置文件]、[!UICONTROL 区段]和[!UICONTROL 目标]仪表板中选择&#x200B;**[!UICONTROL 修改仪表板]**，您还能够访问&#x200B;**[!UICONTROL 小组件库]**，在那里您可以找到更多小组件来显示或创建组织的自定义小组件。
 

@@ -3,9 +3,9 @@ keywords: 飞艇标签；飞艇目标
 title: 飞艇标记连接
 description: 将Adobe受众数据作为受众标记无缝传递到飞艇，以便在飞艇中进行定位。
 exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '970'
+source-wordcount: '972'
 ht-degree: 2%
 
 ---
@@ -42,8 +42,8 @@ ht-degree: 2%
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -54,13 +54,13 @@ ht-degree: 2%
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
 | 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出具有飞艇标记目标中所用标识符的受众的所有成员。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
 ## 标记组
 
-AdobeExperience Platform中的受众概念与Airship中的[标记](https://docs.airship.com/guides/audience/tags/)类似，在实施上略有差异。 此集成将用户[在Experience Platform区段](../../../xdm/field-groups/profile/segmentation.md)中的成员资格状态映射到[!DNL Airship]标记是否存在或不存在。 例如，在`xdm:status`更改为`realized`的Platform受众中，标记已添加到此配置文件映射到的[!DNL Airship]渠道或命名用户。 如果`xdm:status`更改为`exited`，则标记将被删除。
+Adobe Experience Platform中的受众概念与Airship中的[标记](https://docs.airship.com/guides/audience/tags/)类似，在实施上略有差异。 此集成将用户在Experience Platform区段](../../../xdm/field-groups/profile/segmentation.md)中的[成员资格状态映射到[!DNL Airship]标记的存在或不存在。 例如，在`xdm:status`更改为`realized`的Experience Platform受众中，标记已添加到此配置文件映射到的[!DNL Airship]渠道或命名用户。 如果`xdm:status`更改为`exited`，则标记将被删除。
 
 要启用此集成，请在[!DNL Airship]中创建名为`adobe-segments`的&#x200B;*标记组*。
 
@@ -76,7 +76,7 @@ AdobeExperience Platform中的受众概念与Airship中的[标记](https://docs.
 
 单击&#x200B;**[!UICONTROL 创建令牌]**。
 
-为您的令牌提供用户友好的名称，例如“Adobe标记目标”，并为角色选择“完全访问”。
+为您的令牌提供一个用户友好的名称，例如“Adobe标记目标”，并为该角色选择“完全访问”。
 
 单击&#x200B;**[!UICONTROL 创建令牌]**&#x200B;并将详细信息保存为机密。
 
@@ -92,7 +92,7 @@ AdobeExperience Platform中的受众概念与Airship中的[标记](https://docs.
 
 当用户归属或退出Adobe Experience Platform中的特定受众时，实时触发一对一消息。
 
-例如，零售商在Platform中设置特定于牛仔裤品牌的受众。 现在，只要用户将其牛仔裤首选项设置为特定品牌，该零售商就会触发移动消息。
+例如，retailer在Experience Platform中设置特定于牛仔裤品牌的受众。 retailer现在可以在用户将其牛仔裤首选项设置为特定品牌后立即触发移动消息。
 
 ## 连接到目标 {#connect}
 

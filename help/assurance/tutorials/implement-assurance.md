@@ -2,16 +2,16 @@
 title: 实施 Adobe Experience Platform Assurance 扩展
 description: 本指南介绍了如何实施和安装 Adobe Experience Platform Assurance 扩展。
 exl-id: b7bd1bb1-1606-4d00-97e0-c329c86d8ca4
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '386'
-ht-degree: 100%
+source-wordcount: '387'
+ht-degree: 95%
 
 ---
 
 # 实施 Adobe Experience Platform Assurance 扩展
 
-本教程介绍了如何在 Mobile SDK 中实施和安装 Platform Assurance 扩展。有关将 Assurance 扩展添加到您的应用程序的说明，请阅读 [Adobe Experience Platform Assurance 扩展概述](https://developer.adobe.com/client-sdks/documentation/platform-assurance-sdk/#add-the-aep-assurance-extension-to-your-app)。
+本教程介绍如何在Mobile SDK中安装和实施Experience Platform Assurance扩展。 有关将 Assurance 扩展添加到您的应用程序的说明，请阅读 [Adobe Experience Platform Assurance 扩展概述](https://developer.adobe.com/client-sdks/documentation/platform-assurance-sdk/#add-the-aep-assurance-extension-to-your-app)。
 
 ## 快速入门
 

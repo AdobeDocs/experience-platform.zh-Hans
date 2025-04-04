@@ -4,9 +4,9 @@ title: 数据Distiller授权API指南
 description: 了解如何开始使用Adobe Experience Platform查询服务中的授权和IP范围限制来确保数据访问安全。
 role: Developer
 exl-id: d93ce774-c8b2-4f15-a4d9-117d9aa5d9e7
-source-git-commit: 804eeb4ec976cf41fdd450bd8f307499c3ebae03
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '507'
+source-wordcount: '510'
 ht-degree: 5%
 
 ---
@@ -27,21 +27,21 @@ Data Distiller Authorization API通过Adobe Experience Platform中的SQL接口�
 
 ### 所需的权限 {#required-permissions}
 
-要在查询服务中启用安全数据访问限制，您需要&#x200B;**[!UICONTROL 管理允许列表]**&#x200B;权限。 此权限允许组织定义特定的IP范围（IPv4或IPv6格式），这些范围有权通过SQL界面访问Platform中的数据。 访问在沙盒级别进行管理，用户可以配置一个已批准IP地址或CIDR块的列表，将访问限制为仅访问允许的网络。
+要在查询服务中启用安全数据访问限制，您需要&#x200B;**[!UICONTROL 管理允许列表]**&#x200B;权限。 此权限允许组织定义有权通过SQL界面访问Experience Platform中数据的特定IP范围（IPv4或IPv6格式）。 访问在沙盒级别进行管理，用户可以配置一个已批准IP地址或CIDR块的列表，将访问限制为仅访问允许的网络。
 
 >[!NOTE]
 >
->系统管理员可以从Adobe[用户](https://adminconsole.adobe.com/)设置Admin Console权限。 有关详细信息，请参阅 [Admin Console 用户指南](https://helpx.adobe.com/enterprise/using/admin-console.html)。
+>系统管理员可以从Adobe [Admin Console](https://adminconsole.adobe.com/)设置用户权限。 有关详细信息，请参阅 [Admin Console 用户指南](https://helpx.adobe.com/enterprise/using/admin-console.html)。
 
 以下功能具有&#x200B;**[!UICONTROL 管理允许列表]**&#x200B;权限：
 
-- **定义允许的IP范围**：只有这些定义范围中的IP地址或CIDR块才能使用SQL通过查询服务访问Platform中的数据。
+- **定义允许的IP范围**：只有这些定义范围中的IP地址或CIDR块才能使用SQL通过查询服务访问Experience Platform中的数据。
 - **强制IP范围检查**：来自允许范围以外的IP的连接被拒绝。
 - **审核和警报功能**：所有访问尝试（包括被拒绝的连接）都记录为审核事件。 这些事件在[Adobe Experience Platform审核日志](../../landing/governance-privacy-security/audit-logs/overview.md)中提供，用于监视潜在的安全漏洞。
 
 ### 收集所需标头的值 {#gather-values-for-required-headers}
 
-要调用Data Distiller Authorization API，您必须完成[Platform API身份验证教程](../../landing/api-authentication.md)，该教程为API调用中的所需标头提供了值。 在每个请求中包含以下标头：
+要调用Data Distiller Authorization API，您必须完成[Experience Platform API身份验证教程](../../landing/api-authentication.md)，该教程提供了API调用中所需标头的值。 在每个请求中包含以下标头：
 
 - **授权**： `Bearer {ACCESS_TOKEN}`
 - **x-api-key**： `{API_KEY}`

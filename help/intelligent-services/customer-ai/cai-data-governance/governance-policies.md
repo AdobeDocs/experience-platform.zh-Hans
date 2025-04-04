@@ -4,16 +4,16 @@ feature: Customer AI
 title: 客户人工智能的治理政策
 description: Adobe Experience Platform提供了多项服务和工具，使您能够放心地控制收集的体验数据。
 exl-id: be3eca3a-0ea1-4b84-9454-675a4f9ac71e
-source-git-commit: f28558d5939607cabf449cbc03b7e0f5406f6326
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '189'
+source-wordcount: '190'
 ht-degree: 0%
 
 ---
 
 # Customer AI中的治理政策
 
-完成创建模型并提交模型配置的工作流后，[策略实施](/help/data-governance/enforcement/auto-enforcement.md)将检查是否存在任何违规。 如果发生策略冲突，则会出现一个弹出窗口，指示已违反一个或多个策略。 这是为了确保您的Platform中的数据操作和营销操作符合数据使用策略。
+完成创建模型并提交模型配置的工作流后，[策略实施](/help/data-governance/enforcement/auto-enforcement.md)将检查是否存在任何违规。 如果发生策略冲突，则会出现一个弹出窗口，指示已违反一个或多个策略。 这是为了确保您的Experience Platform中的数据操作和营销操作符合数据使用策略。
 
 ![显示有关策略违规信息的弹出框](../images/user-guide/policy-violation-popover-cai.png)。
 

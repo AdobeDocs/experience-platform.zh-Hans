@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform；配置文件；实时客户配置文件；故障排除；API
+keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API
 title: 数据摄取API快速入门
 type: Documentation
-description: 数据摄取API快速入门指南概述了在使用API将数据摄取到Experience Platform中之前，您需要了解的关键概念和基本功能。
+description: 数据摄取API快速入门指南概述了在使用API将数据摄取到Experience Platform之前需要了解的关键概念和基本功能。
 exl-id: 0653de2b-3268-478b-a23f-c458b6d3df7c
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '364'
+source-wordcount: '365'
 ht-degree: 6%
 
 ---
@@ -19,8 +19,8 @@ ht-degree: 6%
 
 * [批量摄取](./overview.md)：允许您将数据作为批处理文件摄取到Adobe Experience Platform中。
 * [[!DNL Real-Time Customer Profile]](../home.md)：根据来自多个源的汇总数据，实时提供统一的客户个人资料。
-* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： Platform用于组织客户体验数据的标准化框架。
-* [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform]提供了将单个[!DNL Platform]实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
+* [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform]提供了将单个[!DNL Experience Platform]实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了成功调用[!DNL Profile] API端点需要了解的其他信息。
 
@@ -30,7 +30,7 @@ ht-degree: 6%
 
 ## 必需的标头
 
-API文档还要求您完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)，才能成功调用[!DNL Platform]端点。 完成身份验证教程将提供[!DNL Experience Platform] API调用中每个所需标头的值，如下所示：
+API文档还要求您完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)，才能成功调用[!DNL Experience Platform]端点。 完成身份验证教程将提供[!DNL Experience Platform] API调用中每个所需标头的值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
@@ -38,8 +38,8 @@ API文档还要求您完成[身份验证教程](https://www.adobe.com/go/platfor
 
 所有在请求正文中具有有效负载的请求(如POST、PUT和PATCH调用)都必须包含`Content-Type`标头。 调用参数中提供了特定于每个调用的接受值。
 
-[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Platform] API的请求需要一个标头，该标头指定将在其中执行操作的沙盒的名称：
+[!DNL Experience Platform]中的所有资源都被隔离到特定的虚拟沙盒中。 对[!DNL Experience Platform] API的请求需要一个标头，该标头指定将在其中执行操作的沙盒的名称：
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
-有关[!DNL Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
+有关[!DNL Experience Platform]中沙盒的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。

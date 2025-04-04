@@ -1,16 +1,16 @@
 ---
-title: Edge Network服务器API的性能护栏
+title: Edge Network Server API的性能护栏
 description: 了解如何在最佳性能护栏中使用服务器API。
 exl-id: 063d0fbb-26d1-4727-9dea-8e7223b2173d
-source-git-commit: 6414168c1deb047af30d8636ef8d61316f56aecf
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '569'
+source-wordcount: '573'
 ht-degree: 2%
 
 ---
 
 
-# Edge Network服务器API的性能护栏
+# Edge Network Server API的性能护栏
 
 ## 概述 {#overview}
 
@@ -22,16 +22,16 @@ Adobe对超出使用限制导致的性能下降不承担任何责任。 始终�
 >
 >除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/legal/product-descriptions.html)中的实际使用限制。
 
-本页中介绍的所有性能护栏均适用于IMS组织级别。 对于配置了多个IMS组织的用户，每个组织分别遵循以下性能护栏。 有关[!DNL IMS Organizations]的更多详细信息，请参阅[Experience Platform词汇表](../landing/glossary.md)。
+本页中介绍的所有性能护栏均适用于IMS组织级别。 对于配置了多个IMS组织的用户，每个组织分别遵循以下性能护栏。 有关[!DNL IMS Organizations]的更多详细信息，请参阅[Experience Platform术语表](../landing/glossary.md)。
 
 ## 定义
 
-* **可用性**&#x200B;按每五分钟间隔计算为Experience PlatformEdge Network处理的请求的百分比，这些请求不会因错误而失败，并且仅与设置的Edge NetworkAPI相关。 如果租户在给定的五分钟间隔内未提出任何请求，则该间隔视为100%可用。
+* **可用性**&#x200B;按照每五分钟间隔计算为Experience Platform Edge Network处理的请求的百分比，这些请求不会因错误而失败，并且仅与配置的Edge Network API相关。 如果租户在给定的五分钟间隔内未提出任何请求，则该间隔视为100%可用。
 * **给定区域的每月正常运行时间百分比**&#x200B;计算为一个月内所有五分钟间隔的可用性平均值。
 * **上游**&#x200B;是Edge Network背后的服务，为特定数据流启用，如Adobe服务器端转发、Adobe Edge Segmentation或Adobe Target。
 * **请求单元**&#x200B;对应于请求的8 KB片段，以及为数据流配置的一个上游片段。
 * **请求**&#x200B;是客户拥有的应用程序发送给[!DNL Server API]的单个消息。 请求可以包含一个或多个请求单元。
-* **错误**&#x200B;是因Edge Network[内部服务错误](error-handling.md)而失败的任何请求。
+* **错误**&#x200B;是因Edge Network [内部服务错误](error-handling.md)而失败的任何请求。
 
 ## 服务限制
 
@@ -45,10 +45,10 @@ Adobe对超出使用限制导致的性能下降不承担任何责任。 始终�
 
 | 根据数据流配置的上游 | 平均请求大小 | 请求单位 |
 | --- | --- | --- |
-| 1(Adobe平台) | 8 KB（1个片段） | 1 |
-| 2(Adobe平台、Adobe Target) | 8 KB（1个片段） | 2 |
-| 2(Adobe平台、Adobe Target) | 16 KB（2个片段） | 4 |
-| 2(Adobe平台、Adobe Target) | 64 KB（8个片段） | 16 |
+| 1 (Adobe Experience Platform) | 8 KB（1个片段） | 1 |
+| 2 (Adobe Experience Platform、Adobe Target) | 8 KB（1个片段） | 2 |
+| 2 (Adobe Experience Platform、Adobe Target) | 16 KB（2个片段） | 4 |
+| 2 (Adobe Experience Platform、Adobe Target) | 64 KB（8个片段） | 16 |
 
 ### 请求单位限制
 
@@ -76,6 +76,6 @@ Adobe对超出使用限制导致的性能下降不承担任何责任。 始终�
 
 * [Real-Time CDP护栏](/help/rtcdp/guardrails/overview.md)
 * [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams)。
-* [Real-time Customer Data Platform （B2C版本 — Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform （B2P — 主包和最终包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform （B2B — 主包和最终包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2C版本 — Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
