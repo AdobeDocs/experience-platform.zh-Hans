@@ -2,9 +2,9 @@
 title: 受众门户概述
 description: 了解如何使用Audience Portal在Adobe Experience Platform中查看、管理和创建受众。
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: c1f06b14cb33a0fc29a50a2851c1fb52ae82c45d
+source-git-commit: cfa8b24784ed24384131fe1248bb3f7dd41214c6
 workflow-type: tm+mt
-source-wordcount: '4356'
+source-wordcount: '4371'
 ht-degree: 3%
 
 ---
@@ -98,7 +98,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 | ----- | ----------- |
 | [!UICONTROL 名称] | 受众的名称。 |
 | [!UICONTROL 轮廓计数] | 符合受众条件的配置文件总数。 |
-| [!UICONTROL Origin] | 受众的来源。 它指明了受众的来源。 可能的值包括分段服务、自定义上传、受众组合和Audience Manager。 |
+| [!UICONTROL Origin] | 受众的来源。 它指明了受众的来源。 可能的值包括[分段服务](#segment-builder)、[自定义上传](#import-audience)、[受众合成](#audience-composition)、[Audience Manager](https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/aam-home)、[相似受众](../types/lookalike-audiences.md)、[联合受众合成](#fac)、[Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-overview/cja-overview)、[数据Distiller](#data-distiller)和[AJO B2B](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer-b2b/user/guide-overview)。 |
 | [!UICONTROL 生命周期状态] | 受众的状态。 此字段的可能值包括`Draft`、`Inactive`和`Published`。 有关生命周期状态的更多信息，包括不同状态的含义以及如何将受众移动到不同生命周期状态，请阅读分段常见问题解答](../faq.md#lifecycle-status)中的[生命周期状态部分。 |
 | [!UICONTROL 更新频率] | 一个值，表示受众数据的更新频率。 此字段的可能值包括[!UICONTROL 批次]、[!UICONTROL 流式传输]、[!UICONTROL Edge]和[!UICONTROL 未计划]。 |
 | [!UICONTROL 上次更新者] | 上次更新受众的人员姓名。 |
