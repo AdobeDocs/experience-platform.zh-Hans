@@ -1,8 +1,8 @@
 ---
-source-git-commit: 163c6f6bacfd6f0928b1053bd146a2d4fc4c74d0
+source-git-commit: 67adfddf57d3b10bb80688cf0f0a109a704f4fa5
 workflow-type: tm+mt
-source-wordcount: '470'
-ht-degree: 95%
+source-wordcount: '351'
+ht-degree: 100%
 
 ---
 # 贡献内容
@@ -30,20 +30,6 @@ ht-degree: 95%
 ### 社区成员做出的主要更改或新文章
 
 如果您是 Adobe 社区的成员并想要创建文章或提交主要更改，请单击 GitHub 存储库中的 **Issues**（问题）选项卡以提交问题。提交后，便可开始与文档团队进行对话。您需要与作者（或其他 Adobe 员工）共同发布新内容。
-
-<!--
-If you submit a pull request with significant changes to documentation and code examples, you'll see a message in the pull request asking you to submit an online contribution license agreement (CLA). You must complete the online form before we can review your pull request.
--->
-
-### Adobe 员工做出的主要更改或新文章
-
-如果您是产品团队中负责提供 Adobe Experience Cloud 解决方案的技术作家、项目经理或开发人员，并且您的工作是撰写或创作技术文章，则应使用位于 `https://git.corp.adobe.com/AdobeDocs` 的私有存储库。有关详细信息，请参阅[内部协作指南](https://experienceleague.adobe.com/docs/authoring-guide-exl/using/home.html)。
-
-<!--Employees from other parts of the Adobe world should use the public repo for minor updates.-->
-
-## 联系 Adobe Experience Platform 文档团队
-
-如上所述，Adobe 社区的成员可以提交问题，该问题将会分配给相应的作者。如果您是 Adobe 员工，则可以直接提交问题，或直接联系 Experience Platform 文档团队。要查找特定Experience Platform区域的首席作者，请参阅[Adobe Experience Platform文档wiki](https://wiki.corp.adobe.com/display/DMSArchitecture/Adobe+Experience+Platform+文档)。
 
 ## 工具和设置
 
