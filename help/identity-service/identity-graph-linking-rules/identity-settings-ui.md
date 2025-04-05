@@ -2,10 +2,10 @@
 title: 身份设置UI
 description: 了解如何使用身份设置用户界面。
 exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
-source-git-commit: 0b4d9a493df6125decc6c46ddcd404f0bb1c9c6a
+source-git-commit: 4c43813e234dd5d06c6b505652fca161b88971c9
 workflow-type: tm+mt
-source-wordcount: '641'
-ht-degree: 3%
+source-wordcount: '644'
+ht-degree: 4%
 
 ---
 
@@ -23,7 +23,7 @@ ht-degree: 3%
 
 在开始使用标识设置之前，请阅读以下文档：
 
-* [身份图链接规则](./overview.md)
+* [身份标识图链接规则](./overview.md)
 * [身份标识优化算法](./identity-optimization-algorithm.md)
 * [实施指南](./implementation-guide.md)
 * [图形配置示例](./example-configurations.md)
@@ -71,7 +71,13 @@ ht-degree: 3%
 
 ![已选择“确认”按钮的确认窗口。](../images/rules/confirmation.png)
 
-最后一步是另一条确认消息，指示仅在保存设置后更新图形时，现有图形才会受图形算法&#x200B;**的影响，并且在命名空间优先级更改后，实时客户配置文件上事件片段的主要标识也不会更新。**&#x200B;此外，您会收到通知，新设置或更新设置最多需要&#x200B;**6小时**&#x200B;才能生效。 要确认，请输入沙盒名称，然后选择&#x200B;**[!UICONTROL 确认]**。
+### 确认设置 {#confirm-your-settings}
+
+>[!IMPORTANT]
+>
+>* 最后一步是另一条确认消息，指示仅在保存设置后更新图形时，现有图形才会受图形算法&#x200B;**的影响，并且在命名空间优先级更改后，实时客户配置文件上事件片段的主要标识也不会更新。**
+>
+>* 此外，您会收到通知，新设置或更新设置最多需要&#x200B;**6小时**&#x200B;才能生效。 要确认，请输入沙盒名称，然后选择&#x200B;**[!UICONTROL 确认]**。
 
 ![确认窗口，显示有关在处理配置之前延迟6小时的警告。](../images/rules/complete.png)
 
@@ -79,7 +85,7 @@ ht-degree: 3%
 
 有关身份图链接规则的更多信息，请阅读以下文档：
 
-* [身份图链接规则概述](./overview.md)
+* [身份标识图链接规则概述](./overview.md)
 * [身份标识优化算法](./identity-optimization-algorithm.md)
 * [实施指南](./implementation-guide.md)
 * [图形配置示例](./example-configurations.md)

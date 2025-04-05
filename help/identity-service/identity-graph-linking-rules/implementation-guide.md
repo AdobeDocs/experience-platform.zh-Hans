@@ -2,9 +2,9 @@
 title: 身份图链接规则的实施指南
 description: 了解在使用身份图链接规则配置实施数据时要遵循的建议步骤。
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 83815c4911f867329d5fb7731763141d950f85bf
+source-git-commit: 45fdce7dc50b237edc511047ec150ecdd6adce50
 workflow-type: tm+mt
-source-wordcount: '1819'
+source-wordcount: '1835'
 ht-degree: 6%
 
 ---
@@ -15,10 +15,13 @@ ht-degree: 6%
 >
 >标识图链接规则当前处于“有限可用”状态。 有关如何访问开发沙盒中的功能的信息，请与您的Adobe客户团队联系。
 
+>[!IMPORTANT]
+>
+>本文档假设您将在没有任何数据的新沙盒中启动实施。
+
 阅读本文档以了解在使用Adobe Experience Platform Identity服务实施数据时可以遵循的分步指南。
 
 分步概述：
-
 
 1. [实施的完整先决条件](#prerequisites-for-implementation)
 2. [创建必要的身份命名空间](#namespace)
