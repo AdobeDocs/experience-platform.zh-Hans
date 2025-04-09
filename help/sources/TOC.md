@@ -5,10 +5,10 @@ breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源引入数据。了解如何构建、标记和增强已引入的数据。
 feature: Sources
 role: Developer
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 47f6251a190a12b86ec566e3ba72fa34a0bd028b
 workflow-type: tm+mt
-source-wordcount: '1064'
-ht-degree: 30%
+source-wordcount: '1070'
+ht-degree: 35%
 
 ---
 
@@ -16,8 +16,8 @@ ht-degree: 30%
 # 源 {#sources}
 
 - [源概述](home.md)
-- 可用的源连接器{#connectors}
-   - Adobe应用程序{#adobe-applications}
+- 可用的源连接器 {#connectors}
+   - Adobe 应用程序 {#adobe-applications}
       - [Analytics分类源](connectors/adobe-applications/classifications.md)
       - [分析源](connectors/adobe-applications/analytics.md)
       - [Audience Manager源](connectors/adobe-applications/audience-manager.md)
@@ -25,7 +25,7 @@ ht-degree: 30%
       - [Adobe Commerce源](connectors/adobe-applications/commerce.md)
       - [客户属性来源](connectors/adobe-applications/customer-attributes.md)
       - [数据收集源](connectors/adobe-applications/data-collection.md)
-      - 字段映射{#mapping}
+      - 字段映射 {#mapping}
          - [Analytics字段映射](connectors/adobe-applications/mapping/analytics.md)
          - [Audience Manager字段映射](connectors/adobe-applications/mapping/audience-manager.md)
          - [Marketo Engage字段映射](connectors/adobe-applications/mapping/marketo.md)
@@ -43,7 +43,7 @@ ht-degree: 30%
       - [Mixpanel连接器](connectors/analytics/mixpanel.md)
       - [Pendo](connectors/analytics/pendo-webhook.md)
       - [RainFocus](connectors/analytics/rainfocus.md)
-   - 云存储{#cloud-storage}
+   - 云存储 {#cloud-storage}
       - [Amazon Kinesis连接器](connectors/cloud-storage/kinesis.md)
       - [Amazon S3连接器](connectors/cloud-storage/s3.md)
       - [Apache HDFS连接器](connectors/cloud-storage/hdfs.md)
@@ -58,7 +58,7 @@ ht-degree: 30%
       - [Oracle 对象存储](connectors/cloud-storage/oracle-object-storage.md)
       - [SFTP连接器](connectors/cloud-storage/sftp.md)
       - [Amazon S3和Azure Blob连接器](connectors/cloud-storage/blob-s3.md)
-   - 同意和偏好设置{#consent}
+   - 同意和偏好设置 {#consent}
       - [OneTrust 集成](connectors/consent-and-preferences/onetrust.md)
    - CRM {#crm}
       - [Microsoft Dynamics 连接器](connectors/crm/ms-dynamics.md)
@@ -66,12 +66,12 @@ ht-degree: 30%
       - [SugarCRM连接器](connectors/crm/sugarcrm.md)
       - [Veeva CRM连接器](connectors/crm/veeva.md)
       - [Zoho CRM连接器](connectors/crm/zoho.md)
-   - 客户成功{#customer-success}
+   - 客户成功 {#customer-success}
       - [Oracle 服务云](connectors/customer-success/oracle-service-cloud.md)
       - [Salesforce服务云连接器](connectors/customer-success/salesforce-service-cloud.md)
       - [ServiceNow连接器](connectors/customer-success/servicenow.md)
       - [Zendesk连接器](connectors/customer-success/zendesk.md)
-   - 数据库{#databases}
+   - 数据库 {#databases}
       - [Amazon Redshift连接器](connectors/databases/redshift.md)
       - [Azure HDInsights连接器上的Apache Hive](connectors/databases/hive.md)
       - [Azure HDInsights连接器上的Apache Spark](connectors/databases/spark.md)
@@ -92,19 +92,20 @@ ht-degree: 30%
       - [Snowflake流连接器](connectors/databases/snowflake-streaming.md)
       - [Snowflake连接器](connectors/databases/snowflake.md)
       - [Teradata Vantage连接器](connectors/databases/teradata-vantage.md)
-   - 数据和身份合作伙伴{#data-partner}
+   - 数据和身份合作伙伴 {#data-partner}
       - [Acxiom 数据摄取](connectors/data-partners/acxiom-data-ingestion.md)
       - [Acxiom 潜在客户数据导入](connectors/data-partners/acxiom-prospecting-data-import.md)
+      - [Algolia 用户轮廓](connectors/data-partners/algolia-user-profiles.md)
       - [庞博拉意图](connectors/data-partners/bombora.md)
       - [Demandbase意图](connectors/data-partners/demandbase.md)
       - [Merkury Enterprise Identity Resolution](connectors/data-partners/merkury.md)
-   - 电子商务{#ecommerce}
+   - 电子商务 {#ecommerce}
       - [SAP COMMERCE](connectors/ecommerce/sap-commerce.md)
       - [Shopify](connectors/ecommerce/shopify.md)
       - [Shopify流](connectors/ecommerce/shopify-streaming.md)
-   - 本地系统{#local-system}
+   - 本地系统 {#local-system}
       - [本地文件上载连接器](connectors/local-system/local-file-upload.md)
-   - 营销自动化{#marketing-automation}
+   - 营销自动化 {#marketing-automation}
       - [Braze Currents](connectors/marketing-automation/braze.md)
       - [查特利奥](connectors/marketing-automation/chatlio-webhook.md)
       - [Customer.io](connectors/marketing-automation/customerio-webhook.md)
@@ -115,24 +116,24 @@ ht-degree: 30%
       - [Oracle Responsys连接器](connectors/marketing-automation/oracle-responsys.md)
       - [PathFactory](connectors/marketing-automation/pathfactory.md)
       - [Salesforce Marketing Cloud](connectors/marketing-automation/salesforce-marketing-cloud.md)
-   - 付款{#payments}
+   - 付款 {#payments}
       - [PayPal连接器](connectors/payments/paypal.md)
       - [方形连接器](connectors/payments/square.md)
       - [Stripe连接器](connectors/payments/stripe.md)
-   - 协议{#protocols}
+   - 协议 {#protocols}
       - [通用OData连接器](connectors/protocols/odata.md)
       - [通用REST API连接器](connectors/protocols/generic-rest.md)
-   - 流式{#streaming}
+   - 流式处理 {#streaming}
       - [HTTP API连接器](connectors/streaming/http.md)
-- API教程{#api-tutorials}
-   - 创建基本连接{#create}
+- API教程 {#api-tutorials}
+   - 创建基本连接 {#create}
       - Advertising {#advertising}
          - [Google Ads](tutorials/api/create/advertising/ads.md)
          - [Pinterest Ads](tutorials/api/create/advertising/pinterest-ads.md)
       - Analytics {#analytics}
          - [Mixpanel](tutorials/api/create/analytics/mixpanel.md)
          - [Pendo](tutorials/api/create/analytics/pendo-webhook.md)
-      - 云存储{#cloud-storage}
+      - 云存储 {#cloud-storage}
          - [Amazon Kinesis](tutorials/api/create/cloud-storage/kinesis.md)
          - [Amazon S3](tutorials/api/create/cloud-storage/s3.md)
          - [Apache HDFS](tutorials/api/create/cloud-storage/hdfs.md)
@@ -146,7 +147,7 @@ ht-degree: 30%
          - [Google PubSub](tutorials/api/create/cloud-storage/google-pubsub.md)
          - [Oracle 对象存储](tutorials/api/create/cloud-storage/oracle-object-storage.md)
          - [SFTP](tutorials/api/create/cloud-storage/sftp.md)
-      - 同意和偏好设置{#consent}
+      - 同意和偏好设置 {#consent}
          - [OneTrust 集成](tutorials/api/create/consent-and-preferences/onetrust.md)
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/api/create/crm/ms-dynamics.md)
@@ -155,12 +156,12 @@ ht-degree: 30%
          - [SugarCRM事件](tutorials/api/create/crm/sugarcrm-events.md)
          - [Veeva CRM](tutorials/api/create/crm/veeva.md)
          - [Zoho CRM](tutorials/api/create/crm/zoho.md)
-      - 客户成功{#customer-success}
+      - 客户成功 {#customer-success}
          - [Oracle 服务云](tutorials/api/create/customer-success/oracle-service-cloud.md)
          - [Salesforce Service Cloud](tutorials/api/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/api/create/customer-success/servicenow.md)
          - [Zendesk](tutorials/api/create/customer-success/zendesk.md)
-      - 数据库{#databases}
+      - 数据库 {#databases}
          - [Amazon Redshift](tutorials/api/create/databases/redshift.md)
          - [Azure HDInsights上的Apache Hive](tutorials/api/create/databases/hive.md)
          - [Azure HDInsights上的Apache Spark](tutorials/api/create/databases/spark.md)
@@ -181,11 +182,11 @@ ht-degree: 30%
          - [Snowflake](tutorials/api/create/databases/snowflake.md)
          - [Teradata Vantage](tutorials/api/create/databases/teradata-vantage.md)
          - [SQL Server](tutorials/api/create/databases/sql-server.md)
-      - 电子商务{#ecommerce}
+      - 电子商务 {#ecommerce}
          - [SAP COMMERCE](tutorials/api/create/ecommerce/sap-commerce.md)
          - [Shopify](tutorials/api/create/ecommerce/shopify.md)
          - [Shopify流](tutorials/api/create/ecommerce/shopify-streaming.md)
-      - 营销自动化{#marketing-automation}
+      - 营销自动化 {#marketing-automation}
          - [查特利奥](tutorials/api/create/marketing-automation/chatlio-webhook.md)
          - [Customer.io](tutorials/api/create/marketing-automation/customerio-webhook.md)
          - [HubSpot](tutorials/api/create/marketing-automation/hubspot.md)
@@ -197,16 +198,16 @@ ht-degree: 30%
          - [Oracle Responsys](tutorials/api/create/marketing-automation/oracle-responsys.md)
          - [PathFactory](tutorials/api/create/marketing-automation/pathfactory.md)
          - [Salesforce Marketing Cloud](tutorials/api/create/marketing-automation/salesforce-marketing-cloud.md)
-      - 付款{#payments}
+      - 付款 {#payments}
          - [PayPal](tutorials/api/create/payments/paypal.md)
          - [方形](tutorials/api/create/payments/square.md)
          - [Stripe](tutorials/api/create/payments/stripe.md)
-      - 协议{#protocols}
+      - 协议 {#protocols}
          - [通用OData](tutorials/api/create/protocols/odata.md)
          - [常规 REST API](tutorials/api/create/protocols/generic-rest.md)
-      - 流式{#streaming}
+      - 流式处理 {#streaming}
          - [HTTP API](tutorials/api/create/streaming/http.md)
-   - 浏览数据{#explore}
+   - 浏览数据 {#explore}
       - [浏览广告数据](tutorials/api/explore/advertising.md)
       - [探索云存储数据](tutorials/api/explore/cloud-storage.md)
       - [浏览CRM数据](tutorials/api/explore/crm.md)
@@ -217,7 +218,7 @@ ht-degree: 30%
       - [浏览支付数据](tutorials/api/explore/payments.md)
       - [浏览协议数据](tutorials/api/explore/protocols.md)
       - [浏览数据表](tutorials/api/explore/tabular.md)
-   - 收集数据{#collect}
+   - 收集数据 {#collect}
       - [收集广告数据](tutorials/api/collect/advertising.md)
       - [收集云存储数据](tutorials/api/collect/cloud-storage.md)
       - [收集CRM数据](tutorials/api/collect/crm.md)
@@ -239,9 +240,9 @@ ht-degree: 30%
    - [提取加密数据](tutorials/api/encrypt-data.md)
    - [将数据流另存为草稿](tutorials/api/draft.md)
    - [将访问标签应用于数据流](tutorials/api/labels.md)
-- UI教程{#ui-tutorials}
-   - 创建源连接{#create}
-      - Adobe应用程序{#adobe-applications}
+- UI教程 {#ui-tutorials}
+   - 创建源连接 {#create}
+      - Adobe 应用程序 {#adobe-applications}
          - [Adobe Analytics（报表包数据）](tutorials/ui/create/adobe-applications/analytics.md)
          - [Adobe Analytics（分类数据）](tutorials/ui/create/adobe-applications/classifications.md)
          - [Adobe Audience Manager](tutorials/ui/create/adobe-applications/audience-manager.md)
@@ -256,7 +257,7 @@ ht-degree: 30%
          - [Mixpanel](tutorials/ui/create/analytics/mixpanel.md)
          - [Pendo](tutorials/ui/create/analytics/pendo-webhook.md)
          - [RainFocus](tutorials/ui/create/analytics/rainfocus.md)
-      - 云存储{#cloud-storage}
+      - 云存储 {#cloud-storage}
          - [Amazon Kinesis](tutorials/ui/create/cloud-storage/kinesis.md)
          - [Amazon S3](tutorials/ui/create/cloud-storage/s3.md)
          - [Apache HDFS](tutorials/ui/create/cloud-storage/hdfs.md)
@@ -271,7 +272,7 @@ ht-degree: 30%
          - [Oracle 对象存储](tutorials/ui/create/cloud-storage/oracle-object-storage.md)
          - [SFTP](tutorials/ui/create/cloud-storage/sftp.md)
          - [Amazon S3和Blob](tutorials/ui/create/cloud-storage/blob-s3.md)
-      - 同意和偏好设置{#consent}
+      - 同意和偏好设置 {#consent}
          - [OneTrust 集成](tutorials/ui/create/consent-and-preferences/onetrust.md)
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/ui/create/crm/dynamics.md)
@@ -280,12 +281,12 @@ ht-degree: 30%
          - [SugarCRM事件](tutorials/ui/create/crm/sugarcrm-events.md)
          - [Veeva CRM](tutorials/ui/create/crm/veeva.md)
          - [Zoho CRM](tutorials/ui/create/crm/zoho.md)
-      - 客户成功{#customer-success}
+      - 客户成功 {#customer-success}
          - [Oracle 服务云](tutorials/ui/create/customer-success/oracle-service-cloud.md)
          - [Salesforce Service Cloud](tutorials/ui/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/ui/create/customer-success/servicenow.md)
          - [Zendesk](tutorials/ui/create/customer-success/zendesk.md)
-      - 数据库{#databases}
+      - 数据库 {#databases}
          - [Amazon Redshift](tutorials/ui/create/databases/redshift.md)
          - [Azure HDInsights上的Apache Hive](tutorials/ui/create/databases/hive.md)
          - [Azure HDInsights上的Apache Spark](tutorials/ui/create/databases/spark.md)
@@ -306,19 +307,20 @@ ht-degree: 30%
          - [Snowflake](tutorials/ui/create/databases/snowflake.md)
          - [Snowflake 流式处理](tutorials/ui/create/databases/snowflake-streaming.md)
          - [Teradata Vantage](tutorials/ui/create/databases/teradata-vantage.md)
-      - 数据和身份合作伙伴{#data-partner}
+      - 数据和身份合作伙伴 {#data-partner}
          - [Acxiom 数据摄取](tutorials/ui/create/data-partners/acxiom-data-ingestion.md)
          - [Acxiom 潜在客户数据导入](tutorials/ui/create/data-partners/acxiom-prospecting-data-import.md)
+         - [Algolia 用户轮廓](tutorials/ui/create/data-partners/algolia-user-profiles.md)
          - [庞博拉意图](tutorials/ui/create/data-partners/bombora.md)
          - [Demandbase意图](tutorials/ui/create/data-partners/demandbase.md)
          - [Merkury Enterprise Identity Resolution](tutorials/ui/create/data-partners/merkury.md)
-      - 电子商务{#ecommerce}
+      - 电子商务 {#ecommerce}
          - [SAP COMMERCE](tutorials/ui/create/ecommerce/sap-commerce.md)
          - [Shopify](tutorials/ui/create/ecommerce/shopify.md)
          - [Shopify流](tutorials/ui/create/ecommerce/shopify-streaming.md)
-      - 本地系统{#local-system}
+      - 本地系统 {#local-system}
          - [本地文件上传](tutorials/ui/create/local-system/local-file-upload.md)
-      - 营销自动化{#marketing-automation}
+      - 营销自动化 {#marketing-automation}
          - [Braze Currents](tutorials/ui/create/marketing-automation/braze.md)
          - [查特利奥](tutorials/ui/create/marketing-automation/chatlio-webhook.md)
          - [Customer.io](tutorials/ui/create/marketing-automation/customerio-webhook.md)
@@ -331,15 +333,15 @@ ht-degree: 30%
          - [Oracle Responsys](tutorials/ui/create/marketing-automation/oracle-responsys.md)
          - [PathFactory](tutorials/ui/create/marketing-automation/pathfactory.md)
          - [Salesforce Marketing Cloud](tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
-      - 付款{#payments}
+      - 付款 {#payments}
          - [PayPal](tutorials/ui/create/payments/paypal.md)
          - [方形](tutorials/ui/create/payments/square.md)
          - [Stripe](tutorials/ui/create/payments/stripe.md)
-      - 协议{#protocols}
+      - 协议 {#protocols}
          - [通用OData](tutorials/ui/create/protocols/odata.md)
-      - 流式{#streaming}
+      - 流式处理 {#streaming}
          - [HTTP API](tutorials/ui/create/streaming/http.md)
-   - 配置数据流{#dataflow}
+   - 配置数据流 {#dataflow}
       - [Advertising连接数据流](tutorials/ui/dataflow/advertising.md)
       - [Analytics连接数据流](tutorials/ui/dataflow/analytics.md)
       - [批量云存储连接数据流](tutorials/ui/dataflow/batch/cloud-storage.md)
@@ -365,27 +367,27 @@ ht-degree: 30%
    - [订阅源提醒](tutorials/ui/alerts.md)
    - [将数据流另存为草稿](tutorials/ui/draft.md)
    - [将访问标签应用于数据流](tutorials/ui/labels.md)
-- 自助式源(批次SDK) {#sdk}
+- 自助来源(批处理SDK) {#sdk}
    - [概述](sources-sdk/overview.md)
-   - 配置连接规范{#config}
+   - 配置连接规范 {#config}
       - [配置选项](sources-sdk/config/config.md)
       - [配置身份验证规范](sources-sdk/config/authspec.md)
       - [配置源规范](sources-sdk/config/sourcespec.md)
       - [配置浏览规范](sources-sdk/config/explorespec.md)
-   - 自助源(批处理SDK) API指南{#self-serve-api}
+   - 自助源(批处理SDK) API指南 {#self-serve-api}
       - [自助式源(批处理SDK) API概述](sources-sdk/api/api-overview.md)
       - [快速入门](sources-sdk/api/getting-started.md)
       - [创建连接规范](sources-sdk/api/create.md)
       - [更新连接规范](sources-sdk/api/update-connection-specs.md)
       - [更新流规范](sources-sdk/api/update-flow-specs.md)
       - [提交您的源](sources-sdk/api/submit.md)
-   - 文档指南{#documentation}
+   - 文档指南 {#documentation}
       - [在Adobe Experience Platform中记录您的源](sources-sdk/documentation/doc-overview.md)
       - [使用GitHub Web界面创建源文档页面](sources-sdk/documentation/github.md)
       - [在本地环境中使用文本编辑器创建源文档页面](sources-sdk/documentation/text-editor.md)
       - [文档自助服务API模板](sources-sdk/documentation/template.md)
       - [文档自助服务UI模板](sources-sdk/documentation/ui-template.md)
-   - 流式传输SDK {#streaming-sdk}
+   - 流式SDK {#streaming-sdk}
       - [自助式源入门(流SDK)](sources-sdk/streaming/getting-started.md)
       - [为流源创建连接规范](sources-sdk/streaming/create.md)
       - [更新流源的连接规范](sources-sdk/streaming/update-connection-specs.md)
@@ -394,7 +396,7 @@ ht-degree: 30%
       - [记录您的源(流SDK)](sources-sdk/streaming/document-streaming.md)
       - [文档自助服务API流模板](sources-sdk/streaming/streaming-template-api.md)
       - [文档自助服务UI流模板](sources-sdk/streaming/streaming-template-ui.md)
-- 错误消息{#errors}
+- 错误消息 {#errors}
    - [源中的错误消息](./errors/sources-errors.md)
    - [流服务中的错误消息](./errors/flow-service-errors.md)
 - [流量运行通知](notifications.md)
