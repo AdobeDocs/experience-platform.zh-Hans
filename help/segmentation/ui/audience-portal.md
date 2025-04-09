@@ -2,9 +2,9 @@
 title: 受众门户概述
 description: 了解如何使用Audience Portal在Adobe Experience Platform中查看、管理和创建受众。
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: cfa8b24784ed24384131fe1248bb3f7dd41214c6
+source-git-commit: d80378d6ffc9598c21bc217c0577f611fe8671cc
 workflow-type: tm+mt
-source-wordcount: '4371'
+source-wordcount: '4413'
 ht-degree: 3%
 
 ---
@@ -15,7 +15,9 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 在Audience Portal中，您可以完成以下任务：
 
-- [查看受众列表](#audience-list)
+>[!BEGINSHADEBOX]
+
+- [查看受众列表](#list)
    - [对受众使用快速操作](#quick-actions)
    - [自定义受众列表中显示的属性](#customize)
    - [使用过滤器、文件夹和标记来组织受众](#manage-audiences)
@@ -28,6 +30,8 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
    - [使用联合受众合成以使用来自您现有数据仓库的数据创建受众](#fac)
    - [使用数据Distiller创建受众](#data-distiller)
 - [导入外部生成的受众](#import-audience)
+
+>[!ENDSHADEBOX]
 
 要打开Audience Portal，请选择“分段”部分中的&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡。
 
@@ -64,7 +68,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 | [!UICONTROL 副本] | Segmentation Service | 复制所选受众。 有关此函数的更多信息，请参阅[分段常见问题解答](../faq.md#copy)。 |
 | [!UICONTROL 应用访问标签] | 受众构成、自定义上传、分段服务 | 管理属于受众的访问标签。 有关访问标签的详细信息，请阅读有关[管理标签](../../access-control/abac/ui/labels.md)的文档。 |
 | [!UICONTROL 发布] | 自定义上传、分段服务 | 发布选定的受众。 有关生命周期状态管理的更多信息，请阅读分段常见问题解答](../faq.md#lifecycle-states)的[生命周期状态部分。 |
-| [!UICONTROL 停用] | 自定义上传、分段服务 | 停用所选受众。 有关生命周期状态管理的更多信息，请阅读分段常见问题解答](../faq.md#lifecycle-states)的[生命周期状态部分。 |
+| [!UICONTROL 停用] | 自定义上传、分段服务 | 停用所选受众。 请注意，为了停用某个受众，无法&#x200B;**任何**&#x200B;目标(包括非Experience Platform目标)中激活该受众&#x200B;****，也无法将其纳入&#x200B;**任何**&#x200B;其他受众。 有关生命周期状态管理的更多信息，请阅读分段常见问题解答](../faq.md#lifecycle-states)的[生命周期状态部分。 |
 | [!UICONTROL 删除] | 受众构成、自定义上传、分段服务 | 删除所选受众。 不能删除在下游目标中使用或属于其他受众&#x200B;**中依赖的受众**。 有关受众删除的详细信息，请阅读[分段常见问题解答](../faq.md#lifecycle-states)。 |
 | [!UICONTROL 添加到包] | 受众构成、自定义上传、分段服务 | 在沙盒之间移动受众。 有关此功能的详细信息，请阅读[沙盒工具指南](../../sandboxes/ui/sandbox-tooling.md)。 |
 
@@ -199,7 +203,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 | 筛选条件 | 描述 |
 | ------ | ----------- |
-| [!UICONTROL Origin] | 允许您根据受众的来源进行筛选。 可用选项包括分段服务、自定义上传、受众组合和Audience Manager。 |
+| [!UICONTROL Origin] | 允许您根据受众的来源进行筛选。 可能的值包括[分段服务](#segment-builder)、[自定义上传](#import-audience)、[受众合成](#audience-composition)、[Audience Manager](https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/aam-home)、[相似受众](../types/lookalike-audiences.md)、[联合受众合成](#fac)、[Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-overview/cja-overview)、[数据Distiller](#data-distiller)和[AJO B2B](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer-b2b/user/guide-overview)。 |
 | [!UICONTROL 具有任何标记] | 允许您按标记过滤。 您可以选择在&#x200B;**[!UICONTROL 具有任何标记]**&#x200B;和&#x200B;**[!UICONTROL 具有所有标记]**&#x200B;之间。 选择&#x200B;**[!UICONTROL 具有任何标记]**&#x200B;时，过滤的受众将包含您已添加的&#x200B;**任意**&#x200B;标记。 选择&#x200B;**[!UICONTROL 具有所有标记]**&#x200B;时，筛选的受众必须包括您已添加的&#x200B;**所有**&#x200B;标记。 |
 | [!UICONTROL 生命周期状态] | 可让您根据受众的生命周期状态进行过滤。 可用选项包括[!UICONTROL 已删除]、[!UICONTROL 草稿]、[!UICONTROL 不活动]和[!UICONTROL 已发布]。 |
 | [!UICONTROL 更新频率] | 可让您根据受众的更新频率（评估方法）进行过滤。 可用选项包括[!UICONTROL 批处理]、[!UICONTROL 流式处理]和[!UICONTROL Edge] |
