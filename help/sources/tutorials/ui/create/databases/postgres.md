@@ -1,26 +1,23 @@
 ---
-keywords: Experience Platform；主页；热门主题；[!DNL PostgreSQL]；[!DNL PostgreSQL]；PostgreSQL
-solution: Experience Platform
-title: 在UI中创建PostgreSQL Source连接
-type: Tutorial
-description: 了解如何使用Adobe Experience Platform UI创建PostgreSQL源连接。
+title: 使用UI将PostgreSQL连接到Experience Platform
+description: 了解如何使用Experience Platform用户界面中的源工作区将PostgreSQL数据库连接到Experience Platform。
 exl-id: e556d867-a1eb-4900-b8a9-189666a4f3f1
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 8cabf1cb86993fdde37d0b9d957f6c8ec23bb237
 workflow-type: tm+mt
-source-wordcount: '496'
-ht-degree: 2%
+source-wordcount: '643'
+ht-degree: 0%
 
 ---
 
-# 在用户界面中创建[!DNL PostgreSQL]源连接
+# 使用UI将[!DNL PostgreSQL]连接到Experience Platform
 
-Adobe Experience Platform中的Source连接器提供了按计划摄取外部来源数据的功能。 本教程提供了使用[!DNL Experience Platform]用户界面创建[!DNL PostgreSQL]源连接器的步骤。
+阅读本指南，了解如何使用Experience Platform用户界面中的源工作区将您的[!DNL PostgreSQL]数据库连接到Adobe Experience Platform。
 
 ## 快速入门
 
 本教程需要对以下Adobe Experience Platform组件有一定的了解：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
    * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
@@ -29,15 +26,9 @@ Adobe Experience Platform中的Source连接器提供了按计划摄取外部来�
 
 ### 收集所需的凭据
 
-要在[!DNL Experience Platform]上访问您的[!DNL PostgreSQL]帐户，必须提供以下值：
+有关身份验证的更多信息，请阅读[[!DNL PostgreSQL] 概述](../../../../connectors/databases/postgres.md)。
 
-| 凭据 | 描述 |
-| ---------- | ----------- |
-| `connectionString` | 与您的[!DNL PostgreSQL]帐户关联的连接字符串。 [!DNL PostgreSQL]连接字符串模式为： `Server={SERVER};Database={DATABASE};Port={PORT};UID={USERNAME};Password={PASSWORD}`。 |
-
-有关入门的详细信息，请参阅此[[!DNL PostgreSQL] 文档](https://www.postgresql.org/docs/9.2/app-psql.html)。
-
-#### 为连接字符串启用SSL加密
+### 为连接字符串启用SSL加密
 
 您可以为[!DNL PostgreSQL]连接字符串启用SSL加密，方法是使用以下属性附加连接字符串：
 
@@ -48,32 +39,62 @@ Adobe Experience Platform中的Source连接器提供了按计划摄取外部来�
 
 以下是附加了SSL加密的[!DNL PostgreSQL]连接字符串的示例： `Server={SERVER};Database={DATABASE};Port={PORT};UID={USERNAME};Password={PASSWORD};EncryptionMethod=1;ValidateServerCertificate=1`。
 
-## 连接您的[!DNL PostgreSQL]帐户
+## 导航源目录 {#navigate}
 
-收集所需的凭据后，您可以按照以下步骤将您的[!DNL PostgreSQL]帐户关联到[!DNL Experience Platform]。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问&#x200B;*[!UICONTROL 源]*&#x200B;工作区。 在&#x200B;*[!UICONTROL 类别]*&#x200B;面板中选择相应的类别或者，使用搜索栏导航到要使用的特定源。
 
-登录到[Adobe Experience Platform](https://platform.adobe.com)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问&#x200B;**[!UICONTROL 源]**&#x200B;工作区。 **[!UICONTROL Catalog]**&#x200B;屏幕显示您可以为其创建帐户的各种源。
+若要使用[!DNL PostgreSQL]，请选择&#x200B;*[!UICONTROL 数据库]*&#x200B;下的&#x200B;**[!UICONTROL PostgreSQL]**&#x200B;源卡，然后选择&#x200B;**[!UICONTROL 设置]**。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
+>[!TIP]
+>
+>当给定的源尚未具有经过身份验证的帐户时，源目录中的源会显示&#x200B;**[!UICONTROL 设置]**&#x200B;选项。 创建经过身份验证的帐户后，此选项将更改为&#x200B;**[!UICONTROL 添加数据]**。
 
-在&#x200B;**[!UICONTROL 数据库]**&#x200B;类别下，选择&#x200B;**[!UICONTROL PostgreSQL DB]**。 如果这是您第一次使用此连接器，请选择&#x200B;**[!UICONTROL 配置]**。 否则，请选择&#x200B;**[!UICONTROL 添加数据]**&#x200B;以创建新的[!DNL PostgreSQL]连接器。
 
-![](../../../../images/tutorials/create/postgresql/catalog.png)
 
-此时会显示&#x200B;**[!UICONTROL 连接到[!DNL PostgreSQL]]**&#x200B;页面。 在此页上，您可以使用新凭据或现有凭据。
+## 使用现有帐户 {#existing}
 
-### 新帐户
+若要使用现有帐户，请选择&#x200B;**[!UICONTROL 现有帐户]**，然后选择要使用的[!DNL PostgreSQL]帐户。
 
-如果您正在使用新凭据，请选择&#x200B;**[!UICONTROL 新帐户]**。 在显示的输入表单上，提供名称、可选描述和您的[!DNL PostgreSQL]凭据。 完成后，选择&#x200B;**[!UICONTROL 连接]**，然后留出一些时间来建立新连接。
+![源工作流的现有帐户接口。](../../../../images/tutorials/create/postgresql/catalog.png)
 
-![](../../../../images/tutorials/create/postgresql/new.png)
+## 创建新帐户 {#create}
 
-### 现有账户
+如果您没有现有帐户，则必须通过提供与您的源对应的必需身份验证凭据来创建新帐户。
 
-若要连接现有帐户，请选择您要连接的[!DNL PostgreSQL]帐户，然后选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
+要创建新帐户，请选择&#x200B;**[!UICONTROL 新帐户]**，然后提供名称并选择性地为您的帐户添加描述。
 
-![](../../../../images/tutorials/create/postgresql/existing.png)
+![源工作流中的新帐户接口，提供了帐户名称和可选描述。](../../../../images/tutorials/create/postgresql/existing.png)
 
-## 后续步骤
+### 连接到Azure上的Experience Platform {#azure}
 
-通过学习本教程，您已建立与[!DNL PostgreSQL]帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入 [!DNL Experience Platform]](../../dataflow/databases.md)。
+您可以使用帐户密钥或基本身份验证将您的[!DNL PostgreSQL]帐户连接到Azure上的Experience Platform。
+
+>[!BEGINTABS]
+
+>[!TAB 帐户密钥身份验证]
+
+若要使用帐户密钥身份验证，请选择&#x200B;**[!UICONTROL 帐户密钥身份验证]**，提供您的[连接字符串](../../../../connectors/databases/postgres.md#azure)，然后选择&#x200B;**[!UICONTROL 连接到源]**。
+
+![源工作流中的新帐户接口已选择“帐户密钥身份验证”。](../../../../images/tutorials/create/postgresql/account-key.png)
+
+>[!TAB 基本身份验证]
+
+若要使用基本身份验证，请选择&#x200B;**[!UICONTROL 基本身份验证]**，提供[身份验证凭据](../../../../connectors/databases/postgres.md#azure)的值，然后选择&#x200B;**[!UICONTROL 连接到源]**。
+
+![源工作流程中的新帐户接口选择了“基本身份验证”。](../../../../images/tutorials/create/postgresql/basic-auth.png)
+
+>[!ENDTABS]
+
+### 连接到Amazon Web Services上的Experience Platform (AWS) {#aws}
+
+>[!AVAILABILITY]
+>
+>本节适用于在Amazon Web Services (AWS)上运行的Experience Platform的实施。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](../../../../../landing/multi-cloud.md)。
+
+要创建新的[!DNL PostgreSQL]帐户并连接到AWS上的Experience Platform，请确保您处于VA6沙盒中，然后提供身份验证所需的[凭据](../../../../connectors/databases/postgres.md#aws)。
+
+![源工作流中用于连接到AWS的新帐户接口。](../../../../images/tutorials/create/postgresql/basic-auth.png)
+
+## 为您的[!DNL PostgreSQL]数据创建数据流
+
+通过学习本教程，您已建立与[!DNL MariaDB]帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入Experience Platform](../../dataflow/databases.md)。
