@@ -3,9 +3,9 @@ title: 灵活的受众评估指南
 description: 了解如何使用灵活的受众评估来按需运行批量分段作业。
 role: Developer, User
 exl-id: b85bf735-be02-4bf7-bd63-8d74ae905e58
-source-git-commit: 71818ee273749bb5053286c5b8bbd07a4429c341
+source-git-commit: 3829f506d0b4d78b543b949e8e11806d8fe10b9c
 workflow-type: tm+mt
-source-wordcount: '1049'
+source-wordcount: '1063'
 ht-degree: 5%
 
 ---
@@ -15,6 +15,8 @@ ht-degree: 5%
 >[!AVAILABILITY]
 >
 >灵活的受众评估是&#x200B;**仅限**，在[!DNL Microsoft Azure]上运行的Experience Platform实例上可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](../../landing/multi-cloud.md)。
+>
+>此外，灵活的受众评估是&#x200B;**仅限**&#x200B;可用于Real-Time CDP B2C Edition。
 
 灵活的受众评估允许您按需运行批量分段作业。 通过灵活的受众评估，您可以运行临时活动发布、及时通信或其他时效性活动。
 

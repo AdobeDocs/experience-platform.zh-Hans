@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
+source-git-commit: 3829f506d0b4d78b543b949e8e11806d8fe10b9c
 workflow-type: tm+mt
-source-wordcount: '4980'
+source-wordcount: '5024'
 ht-degree: 7%
 
 ---
@@ -26,6 +26,16 @@ ht-degree: 7%
 >id="platform_segments_createsegment_segmentbuilder_fields"
 >title="字段"
 >abstract="构成区段定义的三种字段类型是属性、事件和受众。事件和受众。通过属性，您可以使用属于 XDM Individual Profile 类的 Profile属性；通过事件，可根据使用 XDM ExperienceEvent 数据元素生的操作或事件创建受众；而通过受众，可使用从外部源导入的受众。"
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_segmentbuilder_showfullxdmschema"
+>title="显示完整XDM架构"
+>abstract="默认情况下，仅显示包含数据的字段。 启用此选项以显示XDM架构中的所有字段。"
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_segmentbuilder_showdeprecatedfields"
+>title="显示弃用的字段"
+>abstract="默认情况下，不显示已弃用的XDM字段。 启用此选项可显示已弃用的XDM字段。"
 
 区段定义的基本构建块是属性和事件。 此外，现有受众中包含的属性和事件还可以用作新定义的组件。
 
