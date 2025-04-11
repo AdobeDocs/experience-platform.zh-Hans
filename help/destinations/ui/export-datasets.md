@@ -3,10 +3,10 @@ title: 将数据集导出到云存储目标
 type: Tutorial
 description: 了解如何将数据集从Adobe Experience Platform导出到您首选的云存储位置。
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 5624dab337bcd27e28b4153459bb4e85fab22d6f
+source-git-commit: 29fb232ecfbd119ef84d62599fc79249513dca43
 workflow-type: tm+mt
-source-wordcount: '2594'
-ht-degree: 8%
+source-wordcount: '2703'
+ht-degree: 7%
 
 ---
 
@@ -14,15 +14,23 @@ ht-degree: 8%
 
 >[!AVAILABILITY]
 >
->* 已购买Real-Time CDP Prime或Ultimate包、Adobe Journey Optimizer或Customer Journey Analytics的客户可使用此功能。 有关更多信息，请与您的Adobe代表联系。
+>已购买Real-Time CDP Prime或Ultimate包、Adobe Journey Optimizer或Customer Journey Analytics的客户可使用此功能。 有关更多信息，请与Adobe代表联系。
 
-本文介绍使用Experience PlatformUI将[数据集](/help/catalog/datasets/overview.md)从Adobe Experience Platform导出到首选云存储位置（如[!DNL Amazon S3]、SFTP位置或[!DNL Google Cloud Storage]）所需的工作流。
+>[!IMPORTANT]
+>
+>**操作项**： Experience Platform](/help/release-notes/latest/latest.md#destinations)的[2024年9月版本引入了为导出数据集数据流设置`endTime`日期的选项。 在2024年9月版本&#x200B;*之前，Adobe还为*&#x200B;创建的所有数据集导出数据流引入了默认结束日期（2025年5月1日）。
+>
+>对于其中任何数据流，您需要手动更新数据流中的结束日期在结束日期之前，否则您的导出将在该日期停止。 使用Experience Platform UI查看哪些数据流将设置为在2025年5月1日停止。
+>
+>有关如何编辑数据集导出数据流的结束日期的信息，请参阅[计划部分](#scheduling)。
 
-您还可以使用Experience PlatformAPI导出数据集。 有关详细信息，请阅读[导出数据集API教程](/help/destinations/api/export-datasets.md)。
+本文介绍使用Experience Platform UI将[数据集](/help/catalog/datasets/overview.md)从Adobe Experience Platform导出到首选云存储位置（如[!DNL Amazon S3]、SFTP位置或[!DNL Google Cloud Storage]）所需的工作流。
+
+您还可以使用Experience Platform API导出数据集。 有关详细信息，请阅读[导出数据集API教程](/help/destinations/api/export-datasets.md)。
 
 ## 可用于导出的数据集 {#datasets-to-export}
 
-根据Experience Platform应用程序(Real-Time CDP、Adobe Journey Optimizer)、层(Prime或Ultimate)以及您购买的任何加载项(例如：数据Distiller)，您可以导出的数据集会有所不同。
+根据Experience Platform应用程序(Real-Time CDP、Adobe Journey Optimizer)、层(Prime或Ultimate)以及您购买的任何加载项(例如：Data Distiller)，您可以导出的数据集会有所不同。
 
 使用下表了解根据您的应用程序、产品层和购买的任何加载项，您可以导出哪些数据集类型：
 
@@ -38,11 +46,11 @@ ht-degree: 8%
   <tr>
     <td rowspan="2">Real-Time CDP</td>
     <td>Prime</td>
-    <td>通过源、Web SDK、Mobile SDK、Analytics Data Connector和Audience Manager摄取或收集数据后，在Experience PlatformUI中创建的配置文件和体验事件数据集。</td>
+    <td>通过源、Web SDK、Mobile SDK、Analytics Data Connector和Audience Manager摄取或收集数据后，在Experience Platform UI中创建的配置文件和体验事件数据集。</td>
   </tr>
   <tr>
     <td>Ultimate</td>
-    <td><ul><li>通过源、Web SDK、Mobile SDK、Analytics Data Connector和Audience Manager摄取或收集数据后，在Experience PlatformUI中创建的配置文件和体验事件数据集。</li><li> <a href="https://experienceleague.adobe.com/docs/experience-platform/dashboards/query.html#profile-attribute-datasets">系统生成的配置文件快照数据集</a>。</li></td>
+    <td><ul><li>通过源、Web SDK、Mobile SDK、Analytics Data Connector和Audience Manager摄取或收集数据后，在Experience Platform UI中创建的配置文件和体验事件数据集。</li><li> <a href="https://experienceleague.adobe.com/docs/experience-platform/dashboards/query.html#profile-attribute-datasets">系统生成的配置文件快照数据集</a>。</li></td>
   </tr>
   <tr>
     <td rowspan="2">Adobe Journey Optimizer</td>
@@ -56,7 +64,7 @@ ht-degree: 8%
   <tr>
     <td>Customer Journey Analytics</td>
     <td>全部</td>
-    <td> 通过源、Web SDK、Mobile SDK、Analytics Data Connector和Audience Manager摄取或收集数据后，在Experience PlatformUI中创建的配置文件和体验事件数据集。</td>
+    <td> 通过源、Web SDK、Mobile SDK、Analytics Data Connector和Audience Manager摄取或收集数据后，在Experience Platform UI中创建的配置文件和体验事件数据集。</td>
   </tr>
   <tr>
     <td>数据蒸馏器</td>
@@ -90,7 +98,7 @@ ht-degree: 8%
 Experience Platform目录中的一些基于文件的目标同时支持Audience Activation和数据集导出。
 
 * 当您希望将数据结构化为按受众兴趣或资格分组的用户档案时，请考虑激活受众。
-* 或者，在要导出未按受众兴趣或资格进行分组或构建的原始数据集时，请考虑数据集导出。 您可以将此数据用于报表、数据科学工作流和许多其他用例。 例如，作为管理员、数据工程师或分析师，您可以从Experience Platform中导出数据以与数据仓库同步、在BI分析工具、外部云ML工具中使用，或存储在您的系统中以满足长期存储需求。
+* 或者，在要导出未按受众兴趣或资格进行分组或构建的原始数据集时，请考虑数据集导出。 您可以将此数据用于报表、数据科学工作流和许多其他用例。 例如，作为管理员、数据工程师或分析师，您可以从Experience Platform导出数据以与数据仓库同步、在BI分析工具、外部云ML工具中使用，或存储在您的系统中以满足长期存储需求。
 
 本文档包含导出数据集所需的所有信息。 如果要将&#x200B;*受众*&#x200B;激活到云存储或电子邮件营销目标，请阅读[将受众数据激活到批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md)。
 
@@ -214,7 +222,7 @@ Experience Platform目录中的一些基于文件的目标同时支持Audience A
 
 ## 验证是否成功导出数据集 {#verify}
 
-导出数据集时，Experience Platform会在您提供的存储位置中创建一个或多个文件`.json`或`.parquet`。 希望根据您提供的导出计划将新文件存储在您的存储位置。
+导出数据集时，Experience Platform会在您提供的存储位置创建一个或多个`.json`或`.parquet`文件。 希望根据您提供的导出计划将新文件存储在您的存储位置。
 
 Experience Platform会在您指定的存储位置创建一个文件夹结构，存放导出的数据集文件。 默认文件夹导出模式如下所示，但您可以[使用首选宏](#edit-folder-path)自定义文件夹结构。
 
@@ -247,7 +255,7 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
 要从现有数据流中删除数据集，请执行以下步骤：
 
-1. 登录到[Experience PlatformUI](https://experience.adobe.com/platform/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL 目标]**。 从顶部标题中选择&#x200B;**[!UICONTROL 浏览]**&#x200B;以查看现有目标数据流。
+1. 登录到[Experience Platform UI](https://experience.adobe.com/platform/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL 目标]**。 从顶部标题中选择&#x200B;**[!UICONTROL 浏览]**&#x200B;以查看现有目标数据流。
 
    ![目标浏览视图，其中显示目标连接，其余连接模糊。](../assets/ui/export-datasets/browse-dataset-connections.png)
 
@@ -281,7 +289,7 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
 对于数据集导出的常规可用性版本，请牢记以下限制：
 
-* 即使对于小型数据集，Experience Platform也可能导出多个文件。 数据集导出旨在实现系统到系统的集成，并优化了性能，因此无法自定义导出的文件数量。
+* 即使是小型数据集，Experience Platform也可能导出多个文件。 数据集导出旨在实现系统到系统的集成，并优化了性能，因此无法自定义导出的文件数量。
 * 当前无法自定义导出的文件名。
 * 通过API创建的数据集当前不可导出。
 * 目前，UI不会阻止您删除正在导出到目标的数据集。 请勿删除任何正在导出到目标的数据集。 [删除目标数据流中的数据集](#remove-dataset)之前。
