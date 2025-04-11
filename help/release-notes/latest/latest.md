@@ -5,7 +5,7 @@ exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: f0879683629ba10ed1b799e52f0adf332f079daf
 workflow-type: tm+mt
 source-wordcount: '1250'
-ht-degree: 93%
+ht-degree: 98%
 
 ---
 
@@ -47,8 +47,8 @@ Experience Platform 提供了多个仪表板，您可以通过这些仪表板查
 
 | 目标 | 描述 |
 | --- | --- |
-| [Demandbase People连接](/help/destinations/catalog/advertising/demandbase-people.md) | 使用[!DNL Demandbase People]连接激活Demandbase营销活动的配置文件，以实现受众定位、个性化和抑制。 |
-| [Bombra帐户连接](/help/destinations/catalog/advertising/bombora.md) | 使用[!DNL Bombora]连接为您的Bombora营销活动激活配置文件，以便根据[帐户受众](/help/segmentation/types/account-audiences.md)进行受众定位、个性化和抑制。 |
+| [Demandbase People 连接](/help/destinations/catalog/advertising/demandbase-people.md) | 使用 [!DNL Demandbase People] 连接激活您的 Demandbase 营销活动轮廓，以实现受众目标市场选择、个性化和禁止。 |
+| [Bombora 帐户连接](/help/destinations/catalog/advertising/bombora.md) | 使用 [!DNL Bombora] 连接激活您的 Bombora 营销活动轮廓，以根据[帐户受众](/help/segmentation/types/account-audiences.md)实现受众目标市场选择、个性化和禁止。 |
 | [Airship Attributes](/help/destinations/catalog/mobile-engagement/airship-attributes.md) 升级 | 从 2025 年 3 月 25 日开始，您可以在目标目录中并排看到两张 **[!UICONTROL Airship Attributes]** 卡。这是由于目标服务内部升级造成的。现有的 **[!UICONTROL Airship Attributes]** 目标连接器已更名为&#x200B;**[!UICONTROL （已废弃）Airship Attributes]**，您现在可以使用名为 **[!UICONTROL Airship Attributes]** 的新卡片。<br>将目录中的 **[!UICONTROL Airship Attributes]** 连接用于新的激活数据流。如果您有任何连接到 [!DNL (Deprecated) Airship Attributes] 目标的激活数据流，它们将自动更新，因此无需您执行任何操作。<br>如果您通过 [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) 创建数据流，则必须将 [!DNL flow spec ID] 和 [!DNL connection spec ID] 更新为以下值： <ul><li> 流量规范 ID：`a862e0be-966e-4e5a-80d3-1bb566461986`</li><li> 连接规范 ID：`594bc002-4a47-49b7-8a98-ac0d21045502`</li> </ul> |
 
 {style="table-layout:auto"}
@@ -66,7 +66,7 @@ Experience Platform 提供了多个仪表板，您可以通过这些仪表板查
 
 ## 联合受众构成 {#federated-audience-composition}
 
-有关联合受众组合最新更新的信息，请在此处阅读[专用发行说明](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/release-notes)。
+有关联合受众构成的最新信息，请阅读此处的[专用发行说明](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/release-notes)。
 
 ## Segmentation Service {#segmentation-service}
 
