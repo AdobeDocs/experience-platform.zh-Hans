@@ -3,9 +3,9 @@ title: Adobe Experience Platform 发行说明（2024 年 1 月）
 description: Adobe Experience Platform 的 2024 年 1 月发行说明。
 exl-id: d4b3c5b2-3adb-41fd-91ad-f4c0f21d2325
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1662'
-ht-degree: 95%
+ht-degree: 100%
 
 ---
 
@@ -43,9 +43,9 @@ Experience Platform 中现有功能的更新：
 
 ## 基于属性的访问控制 {#abac}
 
-基于属性的访问控制是 Adob&#x200B;&#x200B;e Experience Platform 的一项功能，它为注重隐私的品牌在管理用户访问权限方面提供了更大的灵活性。可以将架构字段和区段等单个对象分配给用户角色。通过此功能，您可以授予或撤销组织中特定Experience Platform用户访问单个对象的权限。
+基于属性的访问控制是 Adob&#x200B;&#x200B;e Experience Platform 的一项功能，它为注重隐私的品牌在管理用户访问权限方面提供了更大的灵活性。可以将架构字段和区段等单个对象分配给用户角色。此功能允许您授予或撤销组织中特定 Experience Platform 用户对各个对象的访问权限。
 
-通过基于属性的访问控制，贵组织的管理员可以控制用户对所有Experience Platform工作流和资源中的敏感个人数据(SPD)、个人身份信息(PII)和其他自定义类型数据的访问。 管理员可以定义只能访问特定字段以及与这些字段对应的数据的用户角色。
+通过基于属性的访问控制，您组织的管理员可以控制用户对所有 Experience Platform 工作流和资源中的敏感个人数据（SPD）、个人身份信息（PII）和其他自定义类型数据的访问。管理员可以定义只能访问特定字段以及与这些字段对应的数据的用户角色。
 
 **新增或更新文档**
 
@@ -79,7 +79,7 @@ Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查
 
 | 功能 | 描述 |
 | --- | --- |
-| 查看 SQL | 您现在可以使用查看 SQL 切换按钮查看配置文件、受众、目标和自定义洞察背后的 SQL，然后通过查询编辑器按需执行查询。访问支持 Real-time Customer Data Platform 洞察的 SQL 有助于您了解数据模型分析背后的逻辑。这种透明度使您的 Adobe Real-time CDP 数据更易于访问、理解，并且对决策更具影响力。<br>从SQL中获取40多种现有见解作为灵感，以创建新的查询，这些查询可根据您的业务需求从Experience Platform数据获取独特的见解。 该 SQL 还适用于 Experience League 文档中的[轮廓](../../dashboards/insights/profiles.md)、[受众](../../dashboards/insights/audiences.md)和[目标](../../dashboards/insights/destinations.md)洞察。这些文档重点介绍了可以用标准洞察回答的业务用例。如需了解更多信息，请阅读[查看洞察 SQL](../../dashboards/view-sql.md) 指南。 |
+| 查看 SQL | 您现在可以使用查看 SQL 切换按钮查看轮廓、受众、目标和自定义洞察背后的 SQL，然后通过查询编辑器按需执行查询。访问支持 Real-time Customer Data Platform 洞察的 SQL 有助于您了解数据模型分析背后的逻辑。这种透明度使您的 Adobe Real-time CDP 数据更易于访问、理解，并且对决策更具影响力。<br>从超过 40 个现有洞察的 SQL 中获取灵感，创建新的查询，根据您的业务需求从 Experience Platform 数据中获取独特的洞察。该 SQL 还适用于 Experience League 文档中的[轮廓](../../dashboards/insights/profiles.md)、[受众](../../dashboards/insights/audiences.md)和[目标](../../dashboards/insights/destinations.md)洞察。这些文档重点介绍了可以用标准洞察回答的业务用例。如需了解更多信息，请阅读[查看洞察 SQL](../../dashboards/view-sql.md) 指南。 |
 
 {style="table-layout:auto"}
 
@@ -129,7 +129,7 @@ Adobe Experience Platform 身份标识服务通过跨设备和系统桥接身份
 
 | 功能 | 描述 |
 | --- | --- |
-| 更新 [Real-Time CDP 主页](https://experience.adobe.com) | <ul><li>**轮廓小组件**：您现在可以使用轮廓小组件导航到轮廓概览页面并查看组织的轮廓指标。</li><li>**轮廓指标卡**：主页仪表板中的轮廓指标卡现在显示您组织中的个人资料总数，具体取决于您各自的合并策略。</li><li>**架构小组件**：您现在可以使用架构小组件导航到 UI 中的架构创建工作流程。</li></ul> |
+| 更新 [Real-Time CDP 主页](https://experience.adobe.com) | <ul><li>**轮廓小组件**：您现在可以使用轮廓小组件导航到轮廓概览页面并查看组织的轮廓指标。</li><li>**轮廓量度卡**：主页仪表板中的轮廓量度卡现在显示您组织中的轮廓总数，具体取决于您各自的合并策略。</li><li>**架构小组件**：您现在可以使用架构小组件导航到 UI 中的架构创建工作流程。</li></ul> |
 
 {style="table-layout:auto"}
 

@@ -3,9 +3,9 @@ title: Adobe Experience Platform 发行说明（2024 年 2 月）
 description: Adobe Experience Platform 的 2024 年 2 月发行说明。
 exl-id: 7e4b76b7-4027-4890-b869-1dbb79670c3e
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1248'
-ht-degree: 91%
+ht-degree: 100%
 
 ---
 
@@ -24,7 +24,7 @@ Experience Platform 中现有功能的更新：
 
 ## 警报 {#alerts}
 
-通过Experience Platform，您可以为各种Experience Platform活动订阅基于事件的警报。 您可以通过Experience Platform用户界面中的[!UICONTROL 警报]选项卡订阅不同的警报规则，还可以选择在UI中或通过电子邮件通知接收警报消息。
+Experience Platform 允许您订阅各种 Experience Platform 活动的基于事件的警报。您可以通过 Experience Platform 用户界面中的[!UICONTROL 警报]选项卡订阅不同的警报规则，并可以选择在用户界面内或通过电子邮件通知接收警报消息。
 
 **新增功能或更新后的功能**
 
@@ -83,7 +83,7 @@ For more information on Data Prep, read the [Data Prep overview](../../data-prep
 | 功能 | 描述 |
 | ----------- | ----------- |
 | 激活帐户受众普遍可用 | 现在，购买 Real-time Customer Data Platform [企业对企业](/help/rtcdp/overview.md#rtcdp-b2b)和[企业对个人](/help/rtcdp/overview.md#rtcdp-b2p)版本的公司通常都可以使用激活帐户受众到特定目标的功能。阅读有关[激活帐户受众](/help/destinations/ui/activate-account-audiences.md)的教程，获取完整信息，包括支持的目标。 |
-| Google 目标的数字市场法案同意执行工具 | Google 正在发布对 [Google Ads API](https://developers.google.com/google-ads/api/docs/start)、[客户匹配](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html)和 [Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview) 的变更，以支持欧盟[数字市场法案](https://digital-markets-act.ec.europa.eu/index_en)（DMA）规定的合规性和同意相关要求（[欧盟用户同意政策](https://www.google.com/about/company/user-consent-policy/)）。这些同意要求的改变预计将于 2024 年 3 月 6 日开始生效。<br/><br/> 为了遵守欧盟用户同意政策并继续为欧洲经济区 (EEA) 的用户创建受众列表，广告商和合作伙伴必须确保在上传受众数据时获得最终用户的同意。作为 Google 合作伙伴，Adobe 为您提供必要的工具，以遵守欧盟 DMA 下的这些同意要求。<br/><br/>已购买 Adobe Privacy &amp; Security Shield 并配置了[同意政策](../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未经同意的配置文件的客户无需采取任何措施。<br/><br/>尚未购买 Adobe Privacy &amp; Security Shield 的客户必须使用 [Segment Builder](../../segmentation/ui/segment-builder.md) 中的[细分定义](../../segmentation/home.md#segment-definitions)功能来过滤掉未经同意的配置文件，以便继续不间断地使用现有的实时 CDP Google 目标。  |
+| Google 目标的数字市场法案同意执行工具 | Google 正在发布对 [Google Ads API](https://developers.google.com/google-ads/api/docs/start)、[客户匹配](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html)和 [Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview) 的变更，以支持欧盟[数字市场法案](https://digital-markets-act.ec.europa.eu/index_en)（DMA）规定的合规性和同意相关要求（[欧盟用户同意政策](https://www.google.com/about/company/user-consent-policy/)）。这些同意要求的改变预计将于 2024 年 3 月 6 日开始生效。<br/><br/> 为了遵守欧盟用户同意政策并继续为欧洲经济区 (EEA) 的用户创建受众列表，广告商和合作伙伴必须确保在上传受众数据时获得最终用户的同意。作为 Google 合作伙伴，Adobe 为您提供必要的工具，以遵守欧盟 DMA 下的这些同意要求。<br/><br/>已购买 Adobe Privacy &amp; Security Shield 并配置了[同意政策](../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未经同意配轮廓客户无需采取任何措施。<br/><br/>尚未购买 Adobe Privacy &amp; Security Shield 的客户必须使用 [Segment Builder](../../segmentation/ui/segment-builder.md) 中的[区段定义](../../segmentation/home.md#segment-definitions)功能来过滤掉未经同意配轮廓以便继续不间断地使用现有的实时 CDP Google 目标。  |
 | [!BADGE Beta]{type=Informative} 重新排序批处理目标的映射字段 | 您现在可以通过在[映射](../../destinations/ui/activate-batch-profile-destinations.md#mapping)步骤中拖放映射字段来更改 CSV 导出中列的顺序。UI 中映射字段的顺序反映在导出的 CSV 文件中列的顺序中，从上到下，其中顶行是 CSV 文件中最左边的列。<br/><br/>此功能目前为 Beta 版，仅供 Beta 版客户使用。若要申请访问此项功能，请联系您的 Adobe 代表。 |
 | [!BADGE Beta]{type=Informative} 为批量目标预先选定的默认导出计划 | Experience Platform 现在会自动为每个文件导出设置一个默认计划。请参阅有关[安排受众导出](../../destinations/ui/activate-batch-profile-destinations.md#scheduling)的文档，了解如何修改默认时间表。<br/><br/>此功能目前为 Beta 版，仅供 Beta 版客户使用。若要申请访问此项功能，请联系您的 Adobe 代表。 |
 | [!BADGE Beta]{type=Informative} 批量修改批处理目标的受众激活时间表 | 您现在可以从[激活数据](../../destinations/ui/destination-details-page.md#bulk-edit-schedule)页面批量编辑多个受众的激活计划。<br/><br/>此功能目前为 Beta 版，仅供 Beta 版客户使用。若要申请访问此项功能，请联系您的 Adobe 代表。 |
@@ -95,13 +95,13 @@ For more information on Data Prep, read the [Data Prep overview](../../data-prep
 
 ## 沙盒 {#sandboxes}
 
-Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。企业通常会同时运行多个数字体验应用程序，并且需要满足这些应用程序的开发、测试和部署要求，同时确保运营合规性。为了满足此需求，Experience Platform提供了可将单个Experience Platform实例划分为多个单独的虚拟环境的沙盒，以帮助开发和改进数字体验应用程序。
+Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。企业通常会同时运行多个数字体验应用程序，并且需要满足这些应用程序的开发、测试和部署要求，同时确保运营合规性。为了满足这一需求，Experience Platform 提供了可将单个 Experience Platform 实例划分为多个单独的虚拟环境的沙盒，以帮助开发和改进数字体验应用程序。
 
 **新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 沙盒工具 | 除了现在支持同意和治理规则的对象类型之外，还可以使用沙盒工具导入未启用统一配置文件的架构，在导入段时检查目标沙盒中缺少的属性，并默认使用现有的合并策略。有关这些功能的更多信息，请参阅[沙盒工具 UI 指南](../../sandboxes/ui/sandbox-tooling.md)。 |
+| 沙盒工具 | 除了现在支持同意和治理规则的对象类型之外，还可以使用沙盒工具导入未启用统一轮廓的架构，在导入段时检查目标沙盒中缺少的属性，并默认使用现有的合并策略。有关这些功能的更多信息，请参阅[沙盒工具 UI 指南](../../sandboxes/ui/sandbox-tooling.md)。 |
 
 {style="table-layout:auto"}
 
@@ -115,7 +115,7 @@ Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。企
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 帐户受众 | 帐户受众现已普遍可用！现在，您可以使用帐户分段功能在Real-time Customer Experience Platform的B2B和B2P版本中从基于人员的受众到基于帐户的受众，轻松而完善地实现营销分段体验。 此版本允许您使用基于人的受众作为基于帐户的受众的谓词，添加搜索功能，支持自定义实体的使用，并符合数据治理。有关此功能的更多信息，请阅读[帐户受众概览](../../segmentation/types/account-audiences.md)。 |
+| 帐户受众 | 帐户受众现已普遍可用！现在，您可以使用帐户分段，在 Real-Time Customer Experience Platform 的 B2B 和 B2P 版本中，将营销分段体验从基于人的受众转移到基于帐户的受众，从而实现轻松而复杂的营销分段体验。此版本允许您使用基于人的受众作为基于帐户的受众的谓词，添加搜索功能，支持自定义实体的使用，并符合数据治理。有关此功能的更多信息，请阅读[帐户受众概览](../../segmentation/types/account-audiences.md)。 |
 
 {style="table-layout:auto"}
 

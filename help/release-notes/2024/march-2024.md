@@ -3,9 +3,9 @@ title: Adobe Experience Platform 发行说明（2024 年 3 月）
 description: Adobe Experience Platform 的 2024 年 3 月发行说明。
 exl-id: cab47a76-04f3-48ec-82aa-d17645e4eb15
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1192'
-ht-degree: 97%
+ht-degree: 100%
 
 ---
 
@@ -33,7 +33,7 @@ Experience Platform 中现有功能的更新：
 
 | 功能 | 描述 |
 | --- | --- |
-| 更多操作 | 为了使操作更加灵活并帮助您管理数据，您现在可以使用详细信息视图中的“更多操作”功能对数据集执行其他任务。您可以从所选数据集的详细信息页面删除数据集，也可以启用它以与实时客户配置文件一起使用。<br>**注意：** 如果启用数据集以进行轮廓提取，则数据集的架构必须与实时客户轮廓兼容。<br>![数据集工作区，其中 [!UICONTROL ...更多] 下拉菜单突出显示。](../2024/assets/march/more-actions.png "数据集工作区，其中突出显示了更多下拉菜单。"){width="100" zoomable="yes"}。<br>参阅[数据集用户指南](../../catalog/datasets/user-guide.md)文档以获取更多信息。 |
+| 更多操作 | 为了使操作更加灵活并帮助您管理数据，您现在可以使用详细信息视图中的“更多操作”功能对数据集执行其他任务。您可以从所选数据集的详细信息页面删除数据集，也可以启用它以与实时客户轮廓一起使用。<br>**注意：** 如果启用数据集以进行轮廓提取，则数据集的架构必须与实时客户轮廓兼容。<br>![数据集工作区，其中 [!UICONTROL ...更多] 下拉菜单突出显示。](../2024/assets/march/more-actions.png "数据集工作区，其中突出显示了更多下拉菜单。"){width="100" zoomable="yes"}。<br>参阅[数据集用户指南](../../catalog/datasets/user-guide.md)文档以获取更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -61,7 +61,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 类型 | 功能 | 描述 |
 | --- | --- | --- |
-| 扩展 | [!DNL Merkury] 标记扩展 | [[!DNL Merkury]  标记扩展](https://exchange.adobe.com/apps/ec/600027/merkury-tag)为 [!DNL Merkury] ID 的匿名网站访问者提供了业界领先的匹配率。品牌可以利用 [!DNL Merkury] 标签和 Adobe 的强大功能来提供实时个性化的网站体验。此外，[!DNL Merkury] 标签还可以促进第一方数字数据以及线上和线下客户资料的增长。 |
+| 扩展 | [!DNL Merkury] 标记扩展 | [[!DNL Merkury]  标记扩展](https://exchange.adobe.com/apps/ec/600027/merkury-tag)为 [!DNL Merkury] ID 的匿名网站访问者提供了业界领先的匹配率。品牌可以利用 [!DNL Merkury] 标记和 Adobe 的强大功能来提供实时个性化的网站体验。此外，[!DNL Merkury] 标记还可以促进第一方数字数据以及线上和线下客户资料的增长。 |
 
 {style="table-layout:auto"}
 
@@ -75,7 +75,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 目标 | 类型 | 描述 |
 | ----------- | --------- | ----------- |
-| [（Beta）Acxiom Data Enhancement 连接](../../destinations/catalog/data-partner/acxiom-data-enhancement.md) | 新增 | 使用此连接器将第一方配置文件从 Real-Time CDP 激活到 Acxiom，以丰富数据并跨营销渠道使用。然后，您可以使用 Acxiom 源导入具有增强数据的配置文件，并在 Real-Time CDP 中使用它们。 |
+| [（Beta）Acxiom Data Enhancement 连接](../../destinations/catalog/data-partner/acxiom-data-enhancement.md) | 新增 | 使用此连接器将第一方轮廓从 Real-Time CDP 激活到 Acxiom，以丰富数据并跨营销渠道使用。然后，您可以使用 Acxiom 源导入具有增强数据的轮廓，并在 Real-Time CDP 中使用它们。 |
 | [（Beta）Acxiom Prospect Suppression 连接](../../destinations/catalog/data-partner/acxiom-prospect-suppression.md) | 新增 | 将您的第一方受众导出到 Acxiom 目标，以允许 Acxiom 抑制已知或转换的客户。然后，使用 [Acxiom 潜在客户数据导入](../../sources/connectors/data-partners/acxiom-prospecting-data-import.md)源连接器从 Acxiom 提取并激活潜在客户列表，并删除已知或已转换的客户。 |
 | [Amazon Ads 连接](../../destinations/catalog/advertising/amazon-ads.md) | 更新 | 将数据导出到 Amazon Ads 目标时，您现在可以将数据路由到 Amazon DSP 或 Amazon Marketing Cloud（新）。 |
 | [LiveRamp Onboarding 连接](../../destinations/catalog/advertising/liveramp-onboarding.md) | 更新 | LiveRamp Onboarding 目标现在支持向欧洲和澳大利亚 [!DNL LiveRamp] [!DNL SFTP] 实例进行传递。最大导出文件大小也增加到 1,000 万行（之前为 500 万行）。 |
@@ -98,11 +98,11 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 功能 | 描述 |
 | --- | --- |
-| Experience Platform UI 映射数据类型支持 | 通过在Experience Platform UI中定义映射字段，进一步自定义您的Experience Data Model (XDM)数据结构。 您现在可以在 Schema Editor 中创建映射字段来建模灵活的数据结构或有效地存储键值对。定义新字段时，从类型下拉菜单中选择“映射”来配置子字段并将其分配给字段组。支持的映射值类型是字符串和整数。<br>![Schemas Editor 中类型和映射值类型字段突出显示。](../2024/assets/march/maps.png "Schemas Editor 中类型和映射值类型字段突出显示。"){width="100" zoomable="yes"}<br> 了解如何[在 UI 中定义映射字段](../../xdm/ui/fields/map.md)，请参阅 UI 指南。 |
+| Experience Platform UI 映射数据类型支持 | 通过在 Experience Platform UI 中定义映射字段进一步自定义您的体验数据模型（XDM）数据结构。您现在可以在 Schema Editor 中创建映射字段来建模灵活的数据结构或有效地存储键值对。定义新字段时，从类型下拉菜单中选择“映射”来配置子字段并将其分配给字段组。支持的映射值类型是字符串和整数。<br>![Schemas Editor 中类型和映射值类型字段突出显示。](../2024/assets/march/maps.png "Schemas Editor 中类型和映射值类型字段突出显示。"){width="100" zoomable="yes"}<br> 了解如何[在 UI 中定义映射字段](../../xdm/ui/fields/map.md)，请参阅 UI 指南。 |
 
 {style="table-layout:auto"}
 
-有关Experience Platform中XDM的更多信息，请参阅[XDM系统概述](../../xdm/home.md)。
+有关 Experience Platform 中 XDM 的详细信息，请查看 [XDM 系统概述](../../xdm/home.md)。
 
 ## Segmentation Service {#segmentation}
 
@@ -112,7 +112,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 批量操作 | 受众库存现在支持批量操作。使用批量操作，您可以快速选择多个受众将其移动到文件夹、应用标签、应用访问标签或删除。<br> ![受众 UI 工作区中的批量操作。](../2024/assets/march/bulk-actions.png "受众 UI 工作区中的批量操作。"){width="100" zoomable="yes"} <br>有关此功能的更多信息，请阅读[受众门户概述](../../segmentation/ui/audience-portal.md#bulk-actions)。 |
+| 批量操作 | 受众库存现在支持批量操作。使用批量操作，您可以快速选择多个受众将其移动到文件夹、应用标记、应用访问标签或删除。<br> ![受众 UI 工作区中的批量操作。](../2024/assets/march/bulk-actions.png "受众 UI 工作区中的批量操作。"){width="100" zoomable="yes"} <br>有关此功能的更多信息，请阅读[受众门户概述](../../segmentation/ui/audience-portal.md#bulk-actions)。 |
 
 {style="table-layout:auto"}
 
