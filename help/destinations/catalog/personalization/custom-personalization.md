@@ -25,7 +25,7 @@ ht-degree: 9%
 >
 >配置文件属性可能包含敏感数据。 要保护此数据，在为基于属性的个性化配置&#x200B;**[!UICONTROL 自定义Personalization]**&#x200B;目标时，必须使用[Edge Network服务器API](/help/server-api/overview.md)。 所有服务器API调用必须在[经过身份验证的上下文](../../../server-api/authentication.md)中进行。
 >
-><br>您可以添加一个服务器端集成，该集成利用您已经用于Web或Mobile SDK实施的相同数据流，从而通过[Edge Network服务器API](/help/server-api/overview.md)检索配置文件属性。
+><br>您可以添加一个服务器端集成，该集成利用您已经用于Web或Mobile SDK实施的相同数据流，从而通过[Edge Network Server API](/help/server-api/overview.md)检索配置文件属性。
 >
 ><br>如果不遵循上述要求，则仅基于受众成员资格进行个性化。
 
@@ -37,13 +37,13 @@ ht-degree: 9%
 
 根据您的实施，此目标需要使用以下数据收集方法之一：
 
-* 如果要从网站收集数据，请使用[Adobe Experience Platform Web SDK](/help/web-sdk/home.md)。
+* 如果要从您的网站收集数据，请使用[Adobe Experience Platform Web SDK](/help/web-sdk/home.md)。
 * 如果要从移动应用程序收集数据，请使用[Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/)。
-* 如果您未使用[Web SDK](/help/web-sdk/home.md)或[Mobile SDK](https://developer.adobe.com/client-sdks/documentation/)，或者要根据配置文件属性对Edge Network体验进行个性化，请使用[用户服务器API](../../../server-api/overview.md)。
+* 如果您未使用[Web SDK](/help/web-sdk/home.md)或[Mobile SDK](https://developer.adobe.com/client-sdks/documentation/)，或者要根据配置文件属性个性化用户体验，请使用[Edge Network服务器API](../../../server-api/overview.md)。
 
 >[!IMPORTANT]
 >
->在创建自定义个性化连接之前，请阅读有关如何[将受众数据激活到边缘个性化目标](../../ui/activate-edge-personalization-destinations.md)的指南。 本指南将指导您跨多个Experience Platform组件完成同页和下一页个性化用例所需的配置步骤。
+>在创建自定义个性化连接之前，请阅读有关如何[将受众数据激活到边缘个性化目标](../../ui/activate-edge-personalization-destinations.md)的指南。 本指南将指导您跨多个Experience Platform组件完成相同页面和下一页面个性化用例所需的配置步骤。
 
 ## 支持的受众 {#supported-audiences}
 
@@ -51,8 +51,8 @@ ht-degree: 9%
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -60,8 +60,8 @@ ht-degree: 9%
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!DNL Profile request]** | 您正在请求在单个配置文件的自定义个性化目标中映射的所有受众。 可以为其他[Adobe数据收集数据流](../../../datastreams/overview.md)设置其他自定义个性化目标。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出类型 | **[!DNL Profile request]** | 您正在请求在单个配置文件的自定义个性化目标中映射的所有受众。 可以为不同的[Adobe数据收集数据流](../../../datastreams/overview.md)设置不同的自定义个性化目标。 |
+| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 ## 连接到目标 {#connect}
 
@@ -83,7 +83,7 @@ ht-degree: 9%
 
 * **[!UICONTROL 名称]**：填写此目标的首选名称。
 * **[!UICONTROL 描述]**：输入目标的描述。 例如，您可以提及要将此目标用于哪个营销活动。 此字段为可选字段。
-* **[!UICONTROL 集成别名]**：此值作为JSON对象名称发送到Experience PlatformWeb SDK。
+* **[!UICONTROL 集成别名]**：此值作为JSON对象名称发送到Experience Platform Web SDK。
 * **[!UICONTROL 数据流ID]**：这决定了页面的响应中将包含受众的数据收集数据流。 下拉菜单仅显示已启用目标配置的数据流。有关详细信息，请参阅[配置数据流](../../../datastreams/overview.md)。
 
 ### 启用警报 {#enable-alerts}
@@ -102,7 +102,7 @@ ht-degree: 9%
 
 ## 导出的数据 {#exported-data}
 
-如果您使用Adobe Experience Platform中的[Tags](../../../tags/home.md)来部署Experience PlatformWeb SDK，请使用[发送事件完成](../../../tags/extensions/client/web-sdk/event-types.md)功能，您的自定义代码操作将具有`event.destinations`变量，您可以使用它查看导出的数据。
+如果您使用Adobe Experience Platform中的[Tags](../../../tags/home.md)来部署Experience Platform Web SDK，请使用[发送事件完成](../../../tags/extensions/client/web-sdk/event-types.md)功能，您的自定义代码操作将具有`event.destinations`变量，您可以使用它查看导出的数据。
 
 以下是`event.destinations`变量的示例值：
 
@@ -124,7 +124,7 @@ ht-degree: 9%
 ]
 ```
 
-如果您未使用[标记](/help/tags/home.md)来部署Experience PlatformWeb SDK，请使用[命令响应](/help/web-sdk/commands/command-responses.md)来查看导出的数据。
+如果您没有使用[标记](/help/tags/home.md)来部署Experience Platform Web SDK，请使用[命令响应](/help/web-sdk/commands/command-responses.md)来查看导出的数据。
 
 可以解析来自Adobe Experience Platform的JSON响应，以查找您与Adobe Experience Platform集成的应用程序的相应集成别名。 受众ID可以作为定位参数传递到应用程序的代码中。 以下是目标响应特有的内容示例。
 

@@ -26,7 +26,7 @@ ht-degree: 3%
 
 {style="table-layout:auto"}
 
-本指南提供了有关如何在Experience PlatformUI或数据收集UI中为事件转发([!UICONTROL Edge])属性配置密码的高级概述。
+本指南提供了有关如何在Experience Platform UI或数据收集UI中为事件转发([!UICONTROL Edge])属性配置密码的高级概述。
 
 >[!NOTE]
 >
@@ -242,7 +242,7 @@ ht-degree: 3%
 
 ## 在事件转发中使用密钥
 
-为了在事件转发中使用密码，您必须首先创建引用密码本身的[数据元素](../managing-resources/data-elements.md)。 保存数据元素后，您可以将其包含在事件转发[规则](../managing-resources/rules.md)中，并将这些规则添加到[库](../publishing/libraries.md)，该库又可以作为[内部版本](../publishing/builds.md)部署到Adobe的服务器。
+为了在事件转发中使用密码，您必须首先创建引用密码本身的[数据元素](../managing-resources/data-elements.md)。 保存数据元素后，您可以将其包含在事件转发[规则](../managing-resources/rules.md)中，并将这些规则添加到[库](../publishing/libraries.md)，然后该库可以作为[内部版本](../publishing/builds.md)部署到Adobe的服务器。
 
 创建数据元素时，请选择&#x200B;**[!UICONTROL Core]**&#x200B;扩展，然后为数据元素类型选择&#x200B;**[!UICONTROL 密码]**。 右侧面板将更新并提供下拉控件，以便最多为数据元素分配三个密钥：一个分别用于[!UICONTROL 开发]、[!UICONTROL 暂存]和[!UICONTROL 生产]。
 

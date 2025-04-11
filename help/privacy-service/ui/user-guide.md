@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform；主页；热门主题；导出；导出
 solution: Experience Platform
-title: 在Privacy ServiceUI中管理隐私作业
+title: 在Privacy Service UI中管理隐私作业
 description: 了解如何使用Privacy Service用户界面跨各种Experience Cloud应用程序协调和监视隐私请求。
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
 source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
@@ -22,9 +22,9 @@ ht-degree: 11%
 
 >[!IMPORTANT]
 >
->Privacy Service仅适用于数据主体和消费者权利请求。 不支持或允许将Privacy Service用于数据清理或维护。 Adobe有及时履行这些义务的法律义务。 因此，不允许对Privacy Service进行负载测试，因为它是仅用于生产的环境，并会创建有效隐私请求的不必要积压。
+>Privacy Service仅适用于数据主体和消费者权利请求。 不支持或允许将Privacy Service用于数据清理或维护的任何其他用途。 Adobe有及时履行这些义务的法律义务。 因此，不允许在Privacy Service上进行负载测试，因为它是一个仅用于生产的环境，并会创建有效隐私请求的不必要积压。
 >
->现已设定每日硬性上传限制，以防止滥用服务。 发现滥用系统的用户将禁用其对该服务的访问权限。 随后将与他们举行一次会议，讨论他们的行动并讨论可接受的Privacy Service用途。
+>现已设定每日硬性上传限制，以防止滥用服务。 发现滥用系统的用户将禁用其对该服务的访问权限。 随后将与他们举行一次会议，讨论他们的行动并讨论Privacy Service的可接受用途。
 
 ## 浏览[!DNL Privacy Service]用户界面仪表板
 
@@ -109,7 +109,7 @@ Waiting:
 >
 >以前创建的作业的数据只能在完成日期后的30天内访问。
 
-您可以通过在[!UICONTROL 作业请求]标题下面的搜索栏中输入关键字来筛选列表。 列表会在您键入时自动进行筛选，并显示包含与您的搜索词匹配的值的请求。 搜索字段执行“快速”搜索，将隐私作业ID与UI中当前渲染/加载的作业相匹配。 它并非全面搜索您提交的所有作业。 而是应用于加载结果的过滤器。 使用Privacy ServiceAPI可根据特定法规、日期范围或单个作业[返回作业](../api/privacy-jobs.md#list)。
+您可以通过在[!UICONTROL 作业请求]标题下面的搜索栏中输入关键字来筛选列表。 列表会在您键入时自动进行筛选，并显示包含与您的搜索词匹配的值的请求。 搜索字段执行“快速”搜索，将隐私作业ID与UI中当前渲染/加载的作业相匹配。 它并非全面搜索您提交的所有作业。 而是应用于加载结果的过滤器。 使用Privacy Service API可[根据特定法规、日期范围或单个作业](../api/privacy-jobs.md#list)返回作业。
 
 >[!TIP]
 >
@@ -197,7 +197,7 @@ Privacy Service支持两种针对个人数据的作业请求：[!UICONTROL 访�
 
 ![](../images/user-guide/upload-json.png){width=500}
 
-如果您没有要上载的JSON文件，请选择&#x200B;**[!UICONTROL 下载Adobe-GDPR-Request.json]**&#x200B;以下载一个模板，您可以根据从数据主体收集的值填充该模板。
+如果您没有要上传的JSON文件，请选择&#x200B;**[!UICONTROL 下载Adobe-GDPR-Request.json]**&#x200B;以下载一个模板，您可以根据从数据主体那里收集的值填充该模板。
 
 
 ![](../images/user-guide/privacy-template.png){width=500}

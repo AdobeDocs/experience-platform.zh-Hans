@@ -5,7 +5,7 @@ exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
 source-git-commit: 7174c2c0d8c4ada8d5bba334492bad396c1cfb34
 workflow-type: tm+mt
 source-wordcount: '1560'
-ht-degree: 4%
+ht-degree: 5%
 
 ---
 
@@ -165,7 +165,7 @@ ECID存储未经身份验证的（匿名）事件，而CRMID存储经过身份�
 
 有关身份图链接规则的更多信息，请阅读以下文档：
 
-* [身份图链接规则概述](./overview.md)
+* [身份标识图链接规则概述](./overview.md)
 * [实施指南](./implementation-guide.md)
 * [图形配置示例](./example-configurations.md)
 * [疑难解答和常见问题](./troubleshooting.md)

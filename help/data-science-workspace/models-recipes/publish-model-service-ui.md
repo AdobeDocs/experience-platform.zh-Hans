@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform；发布模型；数据科学Workspace；热门主题；为服务评分
 solution: Experience Platform
-title: 数据科学Workspace UI中的Publish a Model as a Service
+title: 在数据科学Workspace UI中发布模型即服务
 type: Tutorial
 description: Adobe Experience Platform Data Science Workspace允许您发布经过培训和评估的模型即服务，从而使贵组织内的用户无需创建自己的模型即可对数据进行评分。
 exl-id: ebbec1b1-20d3-43b5-82d3-89c79757625a
@@ -35,13 +35,13 @@ Adobe Experience Platform Data Science Workspace允许您发布经过培训和�
 
 如果您希望使用Sensei机器学习API发布模型，请参阅[API教程](./publish-model-service-api.md)。
 
-## Publish a Model {#publish-a-model}
+## 发布模型 {#publish-a-model}
 
 在Adobe Experience Platform中，选择位于左侧导航列中的&#x200B;**[!UICONTROL 模型]**，然后选择&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡以列出所有现有模型。 选择要作为服务发布的模型的名称。
 
 ![](../images/models-recipes/publish-model/browse_model.png)
 
-选择“模型概述”页面右上角附近的&#x200B;**[!UICONTROL Publish]**&#x200B;以启动服务创建过程。
+选择模型概述页面右上角附近的&#x200B;**[!UICONTROL 发布]**&#x200B;以启动服务创建过程。
 
 ![](../images/models-recipes/publish-model/view_training.png)
 

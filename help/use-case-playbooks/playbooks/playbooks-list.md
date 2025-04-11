@@ -1,7 +1,7 @@
 ---
 solution: Experience Platform
-title: Real-time Customer Data Platform和Adobe Journey Optimizer的可用用例行动手册。
-description: Real-time Customer Data Platform和Adobe Journey Optimizer中的所有行动手册列表。
+title: Real-Time Customer Data Platform和Adobe Journey Optimizer的可用用例行动手册。
+description: Real-Time Customer Data Platform和Adobe Journey Optimizer中的所有行动手册列表。
 role: User
 exl-id: 00f16761-3759-4de0-882d-b77e18f7c1fe
 source-git-commit: 0cfe3e87ae4f9e8dc9ad53e9acb096efb590b72d
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 # 可用的用例行动手册
 
-请阅读本页，概览您可以在Real-time Customer Data Platform和Adobe Journey Optimizer中找到并使用的所有可用行动手册。
+请阅读本页，概览您可以在Real-time Customer Data Platform和Adobe Journey Optimizer中发现和使用的所有可用行动手册。
 
 ## Journey Optimizer 中的用例战术手册 {#optimizer-playbooks}
 
@@ -61,7 +61,7 @@ ht-degree: 2%
 
 {style="table-layout:auto"}
 
-## Real-time Customer Data Platform中的用例行动手册 {#rtcdp-playbooks}
+## Real-Time Customer Data Platform中的用例行动手册 {#rtcdp-playbooks}
 
 | 剧本名称 | 描述 |
 | ------------- | ----------- |

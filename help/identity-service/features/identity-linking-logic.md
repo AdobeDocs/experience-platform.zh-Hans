@@ -78,7 +78,7 @@ Identity Service识别图形中已存在CRMID：60013ABC，因此仅链接新的
 
 ## 客户方案
 
-您是数据工程师，并且已将以下CRM数据集（配置文件记录）摄取到Experience Platform。
+您是数据工程师，并将以下CRM数据集（配置文件记录）摄取到Experience Platform。
 
 | CRMID** | 电话* | 电子邮件* | 名字 | 姓氏 |
 | --- | --- | --- | --- | --- |

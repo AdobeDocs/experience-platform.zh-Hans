@@ -17,7 +17,7 @@ ht-degree: 17%
 
 当您[连接](/help/destinations/ui/connect-destination.md)到基于文件的目标(如[Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md#connect)、[Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md#connect)或[SFTP](/help/destinations/catalog/cloud-storage/sftp.md#connect))时，可以使用选项为导出的文件配置各种文件格式选项。
 
-您可以使用Experience PlatformUI为导出的文件配置各种文件格式选项。 您可以修改导出文件的几个属性，以符合您所在端文件接收系统的要求，从而以最佳方式读取和解释从Experience Platform接收的文件。
+您可以使用Experience Platform UI为导出的文件配置各种文件格式选项。 您可以修改导出文件的几个属性，以匹配您这边文件接收系统的要求，从而以最佳方式读取和解读从Experience Platform收到的文件。
 
 <!--
 * To configure file formatting options for exported files by using the Experience Platform UI, read this document.
@@ -30,7 +30,7 @@ ht-degree: 17%
 
 >[!IMPORTANT]
 >
->您连接到的目标可能没有所有这些可用选项。 目标开发人员可以决定他们要在目标中支持哪些文件格式选项。 目标开发人员可以确定在连接到目标时可用的选项。 在Experience PlatformUI中，必填选项标有星号。
+>您连接到的目标可能没有所有这些可用选项。 目标开发人员可以决定他们要在目标中支持哪些文件格式选项。 目标开发人员可以确定在连接到目标时可用的选项。 在Experience Platform UI中，必填选项标有星号。
 > 
 >Adobe构建的云存储目标 — [Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md)、[Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md)、[Azure Data Lake Storage Gen2](/help/destinations/catalog/cloud-storage/adls-gen2.md)、[数据登陆区域](/help/destinations/catalog/cloud-storage/data-landing-zone.md)、[Google Cloud Storage](/help/destinations/catalog/cloud-storage/google-cloud-storage.md)、[SFTP](/help/destinations/catalog/cloud-storage/sftp.md) — 当前仅支持下面突出显示的六个CSV选项。
 
@@ -120,7 +120,7 @@ ht-degree: 17%
 
 在UI中选择每个内容，查看导出CSV文件中的以下内容示例。
 
-* 已选择&#x200B;**[!UICONTROL null]**&#x200B;的示例输出： `male,NULL,TestLastName`。 在这种情况下，Experience Platform将空值转换为null值。
+* 已选择&#x200B;**[!UICONTROL null]**&#x200B;的示例输出： `male,NULL,TestLastName`。 在这种情况下，Experience Platform会将空值转换为null值。
 * 已选择&#x200B;**“**”的示例输出： `male,"",TestLastName`。 在这种情况下，Experience Platform将空值转换为一对双引号。
 * 已选择&#x200B;**[!UICONTROL 空字符串]**&#x200B;的示例输出： `male,,TestLastName`。 在这种情况下，Experience Platform将维护空值并按原样导出（不带双引号）。
 
@@ -146,7 +146,7 @@ ht-degree: 17%
 在UI中选择每个内容，查看导出CSV文件中的以下内容示例。
 
 * 已选择&#x200B;**[!UICONTROL null]**&#x200B;的示例输出： `male,NULL,TestLastName`。 在这种情况下，不会进行任何转换，并且CSV文件包含null值。
-* 已选择&#x200B;**“**”的示例输出： `male,"",TestLastName`。 在这种情况下，Experience Platform会在空字符串周围使用双引号替换null值。
+* 已选择&#x200B;**“**”的示例输出： `male,"",TestLastName`。 在这种情况下，Experience Platform会在空字符串周围使用双引号替换空值。
 * 已选择&#x200B;**[!UICONTROL 空字符串]**&#x200B;的示例输出： `male,,TestLastName`。 在这种情况下，Experience Platform会将null值替换为空字符串（不带双引号）。
 
 ### 压缩格式 {#compression-format}

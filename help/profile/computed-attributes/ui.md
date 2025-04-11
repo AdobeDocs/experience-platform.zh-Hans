@@ -28,7 +28,7 @@ ht-degree: 6%
 
 ## 查看计算属性 {#view}
 
-在Experience PlatformUI中，在左侧导航中选择&#x200B;**[!UICONTROL 配置文件]**，然后选择&#x200B;**[!UICONTROL 计算属性]**&#x200B;以查看可用于您的组织的计算属性列表。 其中包括有关计算属性的名称、描述、上次评估日期和上次评估状态的信息。
+在Experience Platform UI中，在左侧导航中选择&#x200B;**[!UICONTROL 配置文件]**，然后选择&#x200B;**[!UICONTROL 计算属性]**&#x200B;以查看可用于您的组织的计算属性列表。 其中包括有关计算属性的名称、描述、上次评估日期和上次评估状态的信息。
 
 ![突出显示[!UICONTROL 配置文件]部分和[!UICONTROL 计算属性]选项卡，向用户显示如何访问计算属性浏览页面。](./images/ui/browse.png)
 
@@ -118,7 +118,7 @@ ht-degree: 6%
 
 完成这些步骤后，您现在可以选择将此计算属性另存为草稿或立即发布。
 
-![已高亮显示[!UICONTROL 另存为草稿]和[!UICONTROL Publish]按钮。](./images/ui/draft-or-publish.png)
+![已高亮显示[!UICONTROL 另存为草稿]和[!UICONTROL 发布]按钮。](./images/ui/draft-or-publish.png)
 
 ## 查看计算属性的详细信息 {#view-details}
 

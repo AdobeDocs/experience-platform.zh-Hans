@@ -766,7 +766,7 @@ CRMID: Tom, ECID: 111
 
 有关身份图链接规则的更多信息，请阅读以下文档：
 
-* [身份图链接规则概述](./overview.md)
+* [身份标识图链接规则概述](./overview.md)
 * [身份标识优化算法](./identity-optimization-algorithm.md)
 * [实施指南](./implementation-guide.md)
 * [疑难解答和常见问题](./troubleshooting.md)
