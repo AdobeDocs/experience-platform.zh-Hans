@@ -3,7 +3,7 @@ title: 灵活的受众评估指南
 description: 了解如何使用灵活的受众评估来按需运行批量分段作业。
 role: Developer, User
 exl-id: b85bf735-be02-4bf7-bd63-8d74ae905e58
-source-git-commit: 3829f506d0b4d78b543b949e8e11806d8fe10b9c
+source-git-commit: 7084b05d1ae142016cb2158fd22d07a240385190
 workflow-type: tm+mt
 source-wordcount: '1063'
 ht-degree: 5%
@@ -387,3 +387,4 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/b31aed3d-b3b1-4
 使用API或UI创建的灵活受众评估运行接近最大限制。 但是，夜间运行的每日批处理分段作业不会&#x200B;**导致**&#x200B;超出此限制。
 
 +++
+
