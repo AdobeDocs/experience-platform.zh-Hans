@@ -8,7 +8,7 @@ role: Admin,Developer
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
 source-wordcount: '145'
-ht-degree: 30%
+ht-degree: 35%
 
 ---
 
@@ -22,7 +22,7 @@ ht-degree: 30%
    - [身份链接逻辑](./features/identity-linking-logic.md)
    - [身份图查看器](./features/identity-graph-viewer.md)
    - [Identity Service中的删除](./features/deletion.md)
-   - 身份图链接规则{#identity-graph-linking-rules}
+   - 身份标识图链接规则 {#identity-graph-linking-rules}
       - [功能概述](./identity-graph-linking-rules/overview.md)
       - [身份标识优化算法](./identity-graph-linking-rules/identity-optimization-algorithm.md)
       - [身份图链接规则的实施指南](./identity-graph-linking-rules/implementation-guide.md)
@@ -34,7 +34,7 @@ ht-degree: 30%
    - [ECID概述](./features/ecid.md)
 - [实施指南](implementation.md)
 - [身份数据的护栏](guardrails.md)
-- 标识服务API {#api}
+- 身份标识服务 API {#api}
    - [开始使用](api/getting-started.md)
    - [将字段标记为标识](api/label-identities.md)
    - [列出群集身份](api/list-cluster-identites.md)

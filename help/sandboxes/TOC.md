@@ -15,7 +15,7 @@ ht-degree: 47%
 # 沙盒 {#sandbox}
 
 * [沙盒概述](home.md)
-* 沙盒UI {#ui}
+* Sandbox UI {#ui}
    * [沙盒 UI 概述](ui/overview.md)
    * [沙盒用户指南](ui/user-guide.md)
    * [沙盒工具](ui/sandbox-tooling.md)
@@ -27,7 +27,7 @@ ht-degree: 47%
    * [沙盒管理](api/sandboxes.md)
    * [沙盒类型](api/types.md)
    * [附录](api/appendix.md)
-* 沙盒工具API {#sandbox-tooling-api}
+* Sandbox Tooling API {#sandbox-tooling-api}
    * [概述](sandbox-tooling-api/overview.md)
    * [快速入门](sandbox-tooling-api/getting-started.md)
    * [包](sandbox-tooling-api/packages.md)

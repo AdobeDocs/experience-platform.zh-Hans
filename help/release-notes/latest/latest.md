@@ -5,7 +5,7 @@ exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: f0879683629ba10ed1b799e52f0adf332f079daf
 workflow-type: tm+mt
 source-wordcount: '1250'
-ht-degree: 98%
+ht-degree: 97%
 
 ---
 
@@ -43,7 +43,7 @@ Experience Platform 提供了多个仪表板，您可以通过这些仪表板查
 
 [!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
-**新增或更新目标**{#new-updated-destinations}
+**新的或更新后的目标** {#new-updated-destinations}
 
 | 目标 | 描述 |
 | --- | --- |
@@ -53,7 +53,7 @@ Experience Platform 提供了多个仪表板，您可以通过这些仪表板查
 
 {style="table-layout:auto"}
 
-**新增或更新的功能**{#destinations-new-updated-functionality}
+**New or updated functionality** {#destinations-new-updated-functionality}
 
 | 功能 | 描述 |
 | --- | --- |
