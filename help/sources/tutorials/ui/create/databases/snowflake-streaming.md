@@ -2,7 +2,7 @@
 title: 使用UI将数据从Snowflake数据库流入Experience Platform
 description: 了解如何将数据从Snwoflake数据库流入Experience Platform
 exl-id: 49d488f1-90d8-452a-9f3e-02afdcc79b09
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 04a1cecbacdaf0b701d3ef18d03497973a8f3263
 workflow-type: tm+mt
 source-wordcount: '1648'
 ht-degree: 3%
@@ -86,7 +86,7 @@ ht-degree: 3%
 
 ![选定了数据库表的select数据接口。](../../../../images/tutorials/create/snowflake-streaming/select-table.png)
 
-接下来，选择表的时间戳列类型。 您可以在两种类型的时间戳列之间进行选择： `TIMESTAMP_NTZ`或`TIMESTAMP_LTZ`。 如果选择列类型为`TIMESTAMP_NTZ`，则还必须提供时区。 列应具有非null约束。 有关详细信息，请阅读有关[限制和常见问题解答]的部分
+接下来，选择表的时间戳列类型。 您可以在两种类型的时间戳列之间进行选择： `TIMESTAMP_NTZ`或`TIMESTAMP_LTZ`。 如果选择列类型为`TIMESTAMP_NTZ`，则还必须提供时区。 列应具有非null约束。 有关详细信息，请阅读有关[限制和常见问题解答](../../../../connectors/databases/snowflake-streaming.md#limitations-and-frequently-asked-questions)的部分。
 
 您还可以在此步骤中配置回填设置。 回填可确定最初摄取的数据。 如果启用了回填，则指定路径中的所有当前文件将在第一次计划摄取期间摄取。 如果没有，则只摄取在第一次引入运行与开始时间之间加载的文件。 将不会摄取在开始时间之前加载的文件。
 
