@@ -2,14 +2,18 @@
 title: 使用UI将Google广告连接到Experience Platform
 description: 了解如何在UI中将您的Google Ads帐户连接到Adobe Experience Platform。
 exl-id: 33dd2857-aed3-4e35-bc48-1c756a8b3638
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 009866abc39b06c22b7bea758ce9fdfba8c72b00
 workflow-type: tm+mt
-source-wordcount: '855'
+source-wordcount: '877'
 ht-degree: 0%
 
 ---
 
 # 使用UI将[!DNL Google Ads]连接到Experience Platform
+
+>[!WARNING]
+>
+>[!DNL Google Ads]源当前在用户界面中不可用。 您可以使用API](../../../api/create/advertising/ads.md)继续将[!DNL Google Ads]数据摄取到Experience Platform [。
 
 >[!NOTE]
 >

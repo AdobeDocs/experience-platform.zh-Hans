@@ -2,10 +2,12 @@
 title: Demandbase意图
 description: 了解Experience Platform上的Demandbase意图源。
 last-substantial-update: 2025-03-26T00:00:00Z
+badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 exl-id: 62dd27e0-b846-4c04-977f-8a3ab99bc464
-source-git-commit: 78aae71ff48fc710aaaabf4ef71f6e50d2a8c12e
+source-git-commit: a1af85c6b76cc7bded07ab4acaec9c3213a94397
 workflow-type: tm+mt
-source-wordcount: '1465'
+source-wordcount: '1475'
 ht-degree: 1%
 
 ---
@@ -14,9 +16,9 @@ ht-degree: 1%
 
 [!DNL Demandbase]是一个基于帐户的营销平台，可用于B2B销售和营销成功。 [!DNL Demandbase Intent]是Adobe Experience Platform源，可用于将您的[!DNL Demandbase]帐户连接到Experience Platform并集成您的帐户意图数据。
 
-通过[!DNL Demandbase]源，您可以基于实时参与识别高兴趣帐户。 通过优先处理最强的意图信号，您可以创建精确的区段并提供超针对性促销活动，从而确保您的营销工作将重点放在最有可能转化的帐户上。 激活意图驱动型策略可以优化广告支出、增加参与度和提高ROI。
+通过[!DNL Demandbase]源，您可以基于实时合约识别高利息帐户。 通过优先选择最强烈的意图信号，您可以创建精确的市场细分，并推出具有高度针对性的营销活动，从而确保您的营销工作专注于最有可能转变的客户。 激活意图驱动型战略可以优化广告支出、增加参与度和提高投资回报率。
 
-阅读本文档以了解有关[!DNL Demandbase]源的先决条件信息。
+请阅读此文档，以了解有关[!DNL Demandbase]源的先决条件信息。
 
 ## 先决条件 {#prerequisites}
 
@@ -26,9 +28,9 @@ ht-degree: 1%
 
 在使用源连接器之前，必须将IP地址列表添加到允许列表。 未能将特定于地区的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 列入允许列表有关详细信息，请参阅[IP地址](../../ip-address-allow-list.md)页。
 
-### 在Experience Platform上配置权限
+### 配置对Experience Platform的权限
 
-若要将您的[!DNL Demandbase]帐户连接到Experience Platform，您必须同时为您的帐户启用&#x200B;**[!UICONTROL 查看源]**&#x200B;和&#x200B;**[!UICONTROL 管理源]**&#x200B;权限。 请联系您的产品管理员以获取必要的权限。 有关详细信息，请阅读[访问控制UI指南](../../../access-control/abac/ui/permissions.md)。
+您必须同时为您的帐户启用&#x200B;**[!UICONTROL 查看源]**&#x200B;和&#x200B;**[!UICONTROL 管理源]**&#x200B;权限，才能将您的[!DNL Demandbase]帐户连接到Experience Platform。 请与您的产品管理员联系以获取必要的权限。 有关详细信息，请阅读[访问控制UI指南](../../../access-control/abac/ui/permissions.md)。
 
 ### 文件和目录的命名约束
 
@@ -65,9 +67,9 @@ Experience Platform上的[!DNL Demandbase]由[!DNL Google Cloud Storage]托管�
 | `company_id` | 字符串 | TRUE | 是 | 规范的公司ID。 |
 | `domain` | 字符串 | TRUE | 是 | 表明意图的帐户的已识别域。 |
 | `start_date` | 日期 | TRUE | 是 | 在持续时间段内发生意图活动的开始日期。 |
-| `end_date` | 日期 | TRUE | 是 | 持续时间段内发生意图活动的结束日期。 |
+| `end_date` | 日期 | TRUE | 是 | 在持续时间段内发生目的活动的结束日期。 |
 | `duration_type` | 字符串 | TRUE | 是 | 持续时间的类型。 通常，此值可以是每天、每周或每月，具体取决于所选的汇总持续时间。 对于此数据示例，此值为`week`。 |
-| `keyword_set_id` | 字符串 | TRUE | 是 | 关键字集ID。 每个给定客户具有唯一性。 |
+| `keyword_set_id` | 字符串 | TRUE | 是 | 关键字集ID。 这对每个给定客户而言是唯一的。 |
 | `keyword_set` | 字符串 | TRUE | 是 | 关键字集名称。 |
 | `is_trending` | 字符串 | TRUE | | 给定趋势的当前状态。 趋势状态是指上周意图活动相对于之前7周平均值的突然增加。 |
 | `intent_strength` | 枚举[字符串] | TRUE | | 意向强度的量化指标。 接受的值包括： `HIGH`、`MED`和`LOW`。 |
@@ -127,12 +129,12 @@ Experience Platform上的[!DNL Demandbase]由[!DNL Google Cloud Storage]托管�
 
 +++回答
 
-在[查询服务](../../../query-service/home.md)中执行SQL查询，以使用公司名称或AccountID搜索目的数据。 要查看特定公司的所有意图数据，您可以使用公司名称或AccountID在Query Service中运行SQL查询以获取所有关联的意图信号。
+在[查询服务](../../../query-service/home.md)中执行SQL查询，以使用公司名称或AccountID搜索目的数据。 要查看特定公司的所有目的数据，您可以使用公司名称或AccountID在查询服务中运行SQL查询来获取所有关联的目的信号。
 
 +++
 
 
-### 我在Experience Platform中发现帐户匹配过程存在问题，我该怎么办？
+### 我在Experience Platform中发现帐户匹配流程存在问题，我该怎么办？
 
 +++回答
 
@@ -147,11 +149,11 @@ Experience Platform上的[!DNL Demandbase]由[!DNL Google Cloud Storage]托管�
 
 +++回答
 
-您必须[删除数据集](../../../catalog/datasets/user-guide.md#delete-a-dataset)才能删除Experience Platform中的意图数据。
+您必须[删除数据集](../../../catalog/datasets/user-guide.md#delete-a-dataset)才能删除Experience Platform中的目的数据。
 
 +++
 
-### 使用哪个字段将[!DNL Demandbase]中的帐户与Experience Platform匹配？
+### 哪个字段用于将[!DNL Demandbase]中的帐户与Experience Platform匹配？
 
 +++回答
 
@@ -167,11 +169,11 @@ Experience Platform上的[!DNL Demandbase]由[!DNL Google Cloud Storage]托管�
 
 * 未来意图数据摄取使用更新的域进行帐户匹配。
 * 任何以前不匹配的意图信号现在可能正确与预期帐户对齐。
-* 不会对过去摄取的仅数据新数据进行追溯性更改，传入数据将反映更新。
+* 对过去仅引入的数据不做追溯更改，新数据和传入数据将反映更新。
 
 +++
 
-### 域匹配过程是怎样的？
+### 什么是域匹配过程？
 
 +++回答
 
@@ -183,6 +185,6 @@ Experience Platform中的域匹配基于与已清理的域字段值的精确匹�
 
 +++回答
 
-可在[帐户受众](../../../segmentation/types/account-audiences.md)中使用意图数据来增强定位、分段和个性化。 通过利用意图信号，企业可以识别对特定主题表现出高度兴趣的客户，并与他们互动，从而优化营销和销售推广
+目的数据可在[客户受众](../../../segmentation/types/account-audiences.md)中使用，以增强目标定位、分段和个性化。 通过利用意向信号，企业可以识别对特定主题表现出高兴趣的客户，并与他们合作，从而优化营销和销售外联活动
 
 +++

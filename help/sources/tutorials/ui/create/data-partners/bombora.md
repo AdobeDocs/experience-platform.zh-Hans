@@ -1,11 +1,13 @@
 ---
 title: 使用UI将Bombora的意图连接到Experience Platform
 description: 了解如何将Bombora Intent连接到Experience Platform
+badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 exl-id: 76a4fed5-b2d5-46d5-9245-b52792a7d323
-source-git-commit: 0a6a9fe759d71fd62e3eaf5c93a091614f3c76a0
+source-git-commit: a1af85c6b76cc7bded07ab4acaec9c3213a94397
 workflow-type: tm+mt
-source-wordcount: '955'
-ht-degree: 5%
+source-wordcount: '965'
+ht-degree: 4%
 
 ---
 
