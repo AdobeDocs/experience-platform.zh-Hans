@@ -6,9 +6,9 @@ user-guide-description: 了解如何部署和管理分析、营销和广告标�
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7fe7bbf7f4566a567c08ef73b4b9b503ea140549
 workflow-type: tm+mt
-source-wordcount: '777'
+source-wordcount: '778'
 ht-degree: 36%
 
 ---
@@ -17,10 +17,10 @@ ht-degree: 36%
 # 标记 {#tags}
 
 * [标记概述](./home.md)
-* 快速入门{#get-started}
+* 快速入门 {#get-started}
    * [快速入门指南](./quick-start/quick-start.md)
    * [实施指南](./quick-start/implementation-guides.md)
-* UI指南{#ui}
+* UI 指南  {#ui}
    * [概述](./ui/managing-resources/overview.md)
    * 扩展 {#extensions}
       * [概述](./ui/managing-resources/extensions/overview.md)
@@ -35,7 +35,7 @@ ht-degree: 36%
 * 发布 {#publish}
    * [概述](./ui/publishing/overview.md)
    * [发布流](./ui/publishing/publishing-flow.md)
-   * 主机 {#hosts}
+   * 托管 {#hosts}
       * [概述](./ui/publishing/hosts/hosts-overview.md)
       * [Adobe管理的主机](./ui/publishing/hosts/managed-by-adobe-host.md)
       * [SFTP主机](./ui/publishing/hosts/sftp-host.md)
@@ -55,7 +55,7 @@ ht-degree: 36%
    * [内容安全策略(CSP)支持](./ui/client-side/content-security-policy.md)
    * [子资源完整性(SRI)支持](./ui/client-side/sri.md)
    * [传输层安全性](./ui/client-side/transport-layer-security.md)
-* 事件转发{#event-forwarding}
+* 事件转发 {#event-forwarding}
    * [概述](./ui/event-forwarding/overview.md)
    * [快速入门](./ui/event-forwarding/getting-started.md)
    * [配置密钥](./ui/event-forwarding/secrets.md)
@@ -80,14 +80,14 @@ ht-degree: 36%
       * [Adobe Analytics和Adobe Target](https://exchange.adobe.com/apps/ec/105363/6sense-for-analytics-and-target)
       * [Adobe Analytics和Microsoft Dynamics](https://exchange.adobe.com/apps/ec/102966)
       * [Adobe Analytics和Salesforce](https://exchange.adobe.com/apps/ec/101530)
-      * Adobe Analytics产品字符串{#product-string}
+      * Adobe Analytics产品字符串 {#product-string}
          * [概述](./extensions/client/product-string/overview.md)
          * [发行说明](./extensions/client/product-string/release-notes.md)
       * [Adobe Analytics产品字符串生成器](https://exchange.adobe.com/apps/ec/101461)
       * [通过Adobe Experience Platform Web SDK的Adobe Analytics](https://exchange.adobe.com/apps/ec/108985/search-discovery-for-adobe-analytics-via-aep-web-sdk)
       * Adobe Audience Manager {#audience-manager}
          * [概述](./extensions/client/audience-manager/overview.md)
-      * Adobe客户端数据层{#client-data-layer}
+      * Adobe客户端数据层 {#client-data-layer}
          * [概述](./extensions/client/client-data-layer/overview.md)
          * [发行说明](./extensions/client/client-data-layer/release-notes.md)
       * Adobe Content Analytics {#content-analytics}
@@ -95,10 +95,10 @@ ht-degree: 36%
       * Adobe ContextHub {#contexthub}
          * [概述](./extensions/client/contexthub/overview.md)
       * [Adobe Experience Manager Forms](https://exchange.adobe.com/apps/ec/107493)
-      * Adobe Experience Cloud ID 服务 {#id-service}
+      * Adobe Experience Cloud ID服务 {#id-service}
          * [概述](./extensions/client/id-service/overview.md)
          * [发行说明](./extensions/client/id-service/release-notes.md)
-      * Adobe Experience Platform演示{#platform-demo}
+      * Adobe Experience Platform演示 {#platform-demo}
          * [概述](./extensions/client/platform-demo/overview.md)
       * Adobe Experience Platform Web SDK {#web-sdk}
          * [概述](./extensions/client/web-sdk/overview.md)
@@ -110,7 +110,7 @@ ht-degree: 36%
          * [Web SDK插件](./extensions/client/web-sdk/web-sdk-plugins.md)
          * [Web SDK扩展发行说明](./extensions/client/web-sdk/web-sdk-ext-release-notes.md)
          * [Web SDK插件发行说明](./extensions/client/web-sdk/web-sdk-plugins-release-notes.md)
-      * Adobe Experience Manager资产分析{#asset-insights}
+      * Adobe Experience Manager资产分析 {#asset-insights}
          * [概述](./extensions/client/asset-insights/overview.md)
          * [发行说明](./extensions/client/asset-insights/release-notes.md)
       * [Adobe Fonts](https://exchange.adobe.com/apps/ec/101538)
@@ -120,7 +120,7 @@ ht-degree: 36%
       * Adobe Media Analytics (3.x SDK) {#media-analytics-3x}
          * [概述](./extensions/client/media-analytics-3x/overview.md)
          * [发行说明](./extensions/client/media-analytics-3x/release-notes.md)
-      * Adobe隐私{#privacy}
+      * Adobe隐私 {#privacy}
          * [概述](./extensions/client/privacy/overview.md)
       * [Adobe报表包选择器](https://exchange.adobe.com/apps/ec/100640)
       * Adobe Target {#target}
@@ -140,20 +140,20 @@ ht-degree: 36%
       * [Beemray Human Context](https://exchange.adobe.com/apps/ec/101063)
       * [Bing Ads通用事件跟踪](https://exchange.adobe.com/apps/ec/100154)
       * [分支](https://exchange.adobe.com/apps/ec/101382)
-      * [!DNL BrightCove]视频跟踪{#brightcove}
+      * [!DNL BrightCove]视频跟踪 {#brightcove}
          * [概述](./extensions/client/brightcove/overview.md)
          * [发行说明](./extensions/client/brightcove/release-notes.md)
       * [CallTrackingMetrics](https://exchange.adobe.com/apps/ec/107695)
       * [渠道Source标识符](https://exchange.adobe.com/apps/ec/101412)
       * [Cheetah体验](https://exchange.adobe.com/apps/ec/102759)
       * [Clicktale](https://exchange.adobe.com/apps/ec/100082)
-      * 常用Analytics插件{#plugins}
+      * 常用Analytics插件 {#plugins}
          * [概述](./extensions/client/plugins/overview.md)
          * [发行说明](./extensions/client/plugins/release-notes.md)
       * [连接](https://exchange.adobe.com/apps/ec/104690)
       * [ContentSquare](https://exchange.adobe.com/apps/ec/100364)
       * [由Usercentrics CMP进行的Cookie同意管理v2](https://exchange.adobe.com/apps/ec/107037)
-      * 核心{#core}
+      * 核心 {#core}
          * [概述](./extensions/client/core/overview.md)
          * [发行说明](./extensions/client/core/release-notes.md)
       * [自定义调试记录器](https://exchange.adobe.com/apps/ec/104698)
@@ -169,7 +169,7 @@ ht-degree: 36%
       * [ForeSee](https://exchange.adobe.com/apps/ec/100164)
       * [Gainsight PX](https://exchange.adobe.com/apps/ec/103343)
       * [Genesys预测参与度](https://exchange.adobe.com/apps/ec/106148)
-      * Google数据层{#google-data-layer}
+      * Google Data Layer {#google-data-layer}
          * [概述](./extensions/client/google-data-layer/overview.md)
          * [发行说明](./extensions/client/google-data-layer/release-notes.md)
       * [Google全局站点标记(gtag)](https://exchange.adobe.com/apps/ec/101437/google-global-site-tag-gtag)
@@ -210,23 +210,25 @@ ht-degree: 36%
       * [XDM编辑器](https://exchange.adobe.com/apps/ec/106062)
       * [Yext转化跟踪](https://exchange.adobe.com/apps/ec/103174)
       * [[!DNL Youtube] 播放](https://exchange.adobe.com/apps/ec/104160)
-      * [!DNL YouTube]视频跟踪{#youtube}
+      * [!DNL YouTube]视频跟踪 {#youtube}
          * [概述](./extensions/client/youtube/overview.md)
          * [发行说明](./extensions/client/youtube/release-notes.md)
    * 事件转发扩展（服务器端） {#server}
       * [概述](./extensions/server/overview.md)
-      * Adobe Experience Platform Cloud Connector {#cloud-connector}
+      * Adobe Experience Platform云连接器 {#cloud-connector}
          * [概述](./extensions/server/cloud-connector/overview.md)
          * [发行说明](./extensions/server/cloud-connector/release-notes.md)
+      * [!DNL Adform] {#adform}
+         * [概述](./extensions/server/adform/overview.md)
       * [!DNL AWS] {#aws}
          * [概述](./extensions/server/aws/overview.md)
       * [!DNL Braze] {#braze}
          * [概述](./extensions/server/braze/overview.md)
       * 适用于Google Analytics的[Cloud Connector](https://exchange.adobe.com/apps/ec/106542)
-      * 核心{#core}
+      * 核心 {#core}
          * [概述](./extensions/server/core/overview.md)
       * [Epsilon事件API](https://exchange.adobe.com/apps/ec/109127)
-      * Google Ads增强型转化{#google-ads-enhanced-conversions}
+      * Google Ads增强型转化 {#google-ads-enhanced-conversions}
          * [概述](./extensions/server/google-ads-enhanced-conversions/overview.md)
       * Google Cloud Platform {#google-cloud-platform}
          * [概述](./extensions/server/google-cloud-platform/overview.md)
@@ -272,7 +274,7 @@ ht-degree: 36%
       * [发布扩展](./extension-dev/submit/release.md)
    * [扩展配置](./extension-dev/configuration.md)
    * [扩展清单](./extension-dev/manifest.md)
-   * Web扩展{#web}
+   * Web扩展 {#web}
       * [扩展流程](./extension-dev/web/flow.md)
       * [库模块格式](./extension-dev/web/format.md)
       * [视图](./extension-dev/web/views.md)
@@ -282,7 +284,7 @@ ht-degree: 36%
       * [数据元素类型](./extension-dev/web/data-element-types.md)
       * [核心模块](./extension-dev/web/core.md)
       * [共享模块](./extension-dev/web/shared.md)
-   * Edge扩展{#edge}
+   * Edge扩展 {#edge}
       * [扩展流程](./extension-dev/edge/flow.md)
       * [库模块格式](./extension-dev/edge/format.md)
       * [条件类型](./extension-dev/edge/condition-types.md)
@@ -295,7 +297,7 @@ ht-degree: 36%
 * Reactor API {#api}
    * [概述](./api/overview.md)
    * [身份验证和访问Reactor API](./api/getting-started.md)
-   * 端点{#endpoints}
+   * 端点 {#endpoints}
       * [公司](./api/endpoints/companies.md)
       * [属性](./api/endpoints/properties.md)
       * [数据元素](./api/endpoints/data-elements.md)
