@@ -2,9 +2,9 @@
 description: 了解如何为使用Destination SDK构建的目标配置合作伙伴架构。
 title: 合作伙伴架构配置
 exl-id: 0548e486-206b-45c5-8d18-0d6427c177c5
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 30a237c7acf814722d384792366f95289dc3f34a
 workflow-type: tm+mt
-source-wordcount: '1949'
+source-wordcount: '1896'
 ht-degree: 3%
 
 ---
@@ -105,8 +105,8 @@ Destination SDK支持多种架构配置：
 | `profileRequired` | 布尔值 | 可选 | 如果用户应能够将Experience Platform中的配置文件属性映射到目标平台上的自定义属性，则使用`true`。 |
 | `segmentRequired` | 布尔值 | 必需 | Destination SDK需要此参数，应始终将其设置为`true`。 |
 | `identityRequired` | 布尔值 | 必需 | 如果用户应该能够将Experience Platform中的[标识类型](identity-namespace-configuration.md)映射到您在`profileFields`数组中定义的属性，则设置为`true`。 |
-| `segmentNamespaceAllowList` | 数组 | 可选 | 定义用户可以从中将受众映射到目标的特定受众命名空间。 使用此参数可限制Experience Platform用户仅从您在数组中定义的受众命名空间导出受众。 此参数不能与`segmentNamespaceDenyList`.<br>一起使用 <br>示例： `"segmentNamespaceAllowList": ["AudienceManager"]`将允许用户仅将受众从`AudienceManager`命名空间映射到此目标。<br> <br>要允许用户将任何受众导出到您的目标，您可以忽略此参数。<br> <br>如果您的配置中同时缺少`segmentNamespaceAllowList`和`segmentNamespaceDenyList`，则用户将只能导出源自[分段服务](../../../../segmentation/home.md)的受众。 |
-| `segmentNamespaceDenyList` | 数组 | 可选 | 限制用户从数组中定义的受众命名空间将受众映射到目标。 不能与`segmentNamespaceAllowed`一起使用。<br> <br>示例： `"segmentNamespaceDenyList": ["AudienceManager"]`将阻止用户将受众从`AudienceManager`命名空间映射到此目标。<br> <br>要允许用户将任何受众导出到您的目标，您可以忽略此参数。<br> <br>如果您的配置中同时缺少`segmentNamespaceAllowed`和`segmentNamespaceDenyList`，则用户将只能导出源自[分段服务](../../../../segmentation/home.md)的受众。<br> <br>若要允许导出所有受众，而不管其来源如何，请设置`"segmentNamespaceDenyList":[]`。 |
+| `segmentNamespaceAllowList` | 数组 | 可选 | 允许用户仅将受众从数组中定义的受众命名空间映射到目标。 <br><br>在大多数情况下不建议使用此参数。 请改用`"segmentNamespaceDenyList":[]`以允许将所有类型的受众导出到您的目标。 <br><br>如果您的配置中同时缺少`segmentNamespaceAllowList`和`segmentNamespaceDenyList`，则用户将只能导出源自[分段服务](../../../../segmentation/home.md)的受众。 <br><br>`segmentNamespaceAllowList`和`segmentNamespaceDenyList`互斥。 |
+| `segmentNamespaceDenyList` | 数组 | 可选 | 限制用户将受众从数组中定义的受众命名空间映射到目标。 <br><br>Adobe建议通过设置`"segmentNamespaceDenyList":[]`允许导出所有受众，而不考虑其来源。 <br><br>如果您的配置中同时缺少`segmentNamespaceAllowed`和`segmentNamespaceDenyList`，则用户将只能导出源自[分段服务](../../../../segmentation/home.md)的受众。 <br><br>`segmentNamespaceAllowList`和`segmentNamespaceDenyList`互斥。 |
 
 {style="table-layout:auto"}
 
