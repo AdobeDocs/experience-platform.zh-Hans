@@ -5,9 +5,9 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: 66ebff274a5fb9255e284a2a38db780d64b45f2e
+source-git-commit: df047593a14ce6683dc04a6ba6518e6d0810c43d
 workflow-type: tm+mt
-source-wordcount: '1290'
+source-wordcount: '1282'
 ht-degree: 5%
 
 ---
@@ -51,7 +51,6 @@ ht-degree: 5%
       * [(Beta)在新的Beta版云存储目标中使用上次资格授予时间XDM属性](./ui/activate-last-qualification-time.md)
       * [导出数组、映射和对象](/help/destinations/ui/export-arrays-maps-objects.md)
       * [对导出到云存储目标的数据执行转换](/help/destinations/ui/data-transformations-calculated-fields.md)
-      * [更新导出数据集数据流的结束日期](/help/destinations/ui/update-end-date-export-dataflows.md)
    * [查看目标详细信息](./ui/destination-details-page.md)
    * [更新目标帐户](./ui/update-accounts.md)
    * [删除目标帐户](./ui/delete-destination-account.md)
