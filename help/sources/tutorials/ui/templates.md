@@ -6,7 +6,7 @@ exl-id: 48aa36ca-656d-4b9d-954c-48c8da9df1e9
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
 source-wordcount: '2250'
-ht-degree: 9%
+ht-degree: 10%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 9%
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_marketo_mapping"
->title="Experience Platform UI中的源模板"
+>title="Experience Platform UI 中各种来源的模板"
 >abstract="模板包括在将数据从来源引入到 Experience Platform 时可使用的自动生成的资源，如架构、数据集、身份标识、映射规则、身份标识命名空间和数据流。可更新自动生成的资源，以使自定义适合您的用例。"
 
 >[!IMPORTANT]
@@ -45,7 +45,7 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 * [[!DNL Experience Data Model (XDM)] 系统](../../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
 * [沙盒](../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-## 在Experience Platform UI中使用模板 {#use-templates-in-the-platform-ui}
+## 在 Experience Platform UI 中使用模板 {#use-templates-in-the-platform-ui}
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_templates_accounttype"

@@ -7,7 +7,7 @@ exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
 source-wordcount: '1769'
-ht-degree: 15%
+ht-degree: 16%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 15%
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataUsagePolicies_description"
 >title="在您的轮廓数据中集成并强制客户同意"
->abstract="<h2>描述</h2><p>Experience Platform允许您将从客户那里收集的同意数据集成到他们各自的配置文件中。 然后可设置同意策略以确定能否在对于特定目标激活的区段中包括这些数据。</p>"
+>abstract="<h2>描述</h2><p>通过 Experience Platform，可将从客户收集的同意数据集成到其各自的轮廓中。然后可设置同意策略以确定能否在对于特定目标激活的区段中包括这些数据。</p>"
 
 本文档介绍如何在Adobe Experience Platform UI中使用&#x200B;**[!UICONTROL 策略]**&#x200B;工作区来创建和管理数据使用策略。
 

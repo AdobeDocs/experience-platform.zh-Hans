@@ -32,7 +32,7 @@ Adobe Experience Platform允许您从多个来源将数据片段整合在一起�
 >[!CONTEXTUALHELP]
 >id="platform_errors_uplib_101221_404"
 >title="未找到合并策略"
->abstract="这意味着Experience Platform无法找到请求的合并策略。 要解决此错误，请尝试以下解决方案之一：<ul><li>确保 URL 中列出了正确的合并策略 ID。</li><li>确保您尝试访问的合并策略具有正确的组织和沙盒组合。</li></ul>"
+>abstract="这意味着 Experience Platform 找不到所请求的合并策略。要解决此错误，请尝试以下解决方案之一：<ul><li>确保 URL 中列出了正确的合并策略 ID。</li><li>确保您尝试访问的合并策略具有正确的组织和沙盒组合。</li></ul>"
 
 在[!DNL Experience Platform] UI中，您可以通过选择左侧导航中的&#x200B;**[!UICONTROL 配置文件]**，然后选择&#x200B;**[!UICONTROL 合并策略]**&#x200B;选项卡来开始使用合并策略。
 

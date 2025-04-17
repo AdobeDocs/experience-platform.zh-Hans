@@ -6,7 +6,7 @@ exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
 source-git-commit: 3829f506d0b4d78b543b949e8e11806d8fe10b9c
 workflow-type: tm+mt
 source-wordcount: '5024'
-ht-degree: 7%
+ht-degree: 8%
 
 ---
 
@@ -359,7 +359,7 @@ ht-degree: 7%
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_createSegment_segmentBuilder_mergePolicies"
 >title="合并策略"
->abstract="合并策略可以合并不同的数据集，以形成您的轮廓。Experience Platform提供了默认合并策略，您也可以在“配置文件”中创建新的默认合并策略。 为该受众选择与您的营销目的相匹配的合并策略。"
+>abstract="合并策略可以合并不同的数据集，以形成您的轮廓。Experience Platform 已提供默认合并策略，您也可以在轮廓中创建新的默认合并策略。为该受众选择与您的营销目的相匹配的合并策略。"
 
 [!DNL Experience Platform]使您能够将来自多个来源的数据集合起来并组合这些数据，以便查看每个客户的完整视图。 在汇总此数据时，合并策略是[!DNL Experience Platform]用于确定数据优先顺序的规则以及将合并哪些数据以创建配置文件。
 

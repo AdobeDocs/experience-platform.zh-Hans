@@ -6,7 +6,7 @@ exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
 source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
 source-wordcount: '1703'
-ht-degree: 12%
+ht-degree: 16%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 12%
 >[!CONTEXTUALHELP]
 >id="platform_permissions_roles_about"
 >title="角色是什么？"
->abstract="角色定义了管理员、专家或最终用户对组织中的资源的访问权限。它们会对与Experience Platform实例交互的用户进行分类，并且是访问控制策略的构建块。 一个角色具有一组给定的权限，可将您组织的成员分配给一个或多个角色，具体取决于他们需要的查看或写入访问权限的范围。"
+>abstract="角色定义了管理员、专家或最终用户对组织中的资源的访问权限。它们会对与您的 Experience Platform 实例交互的用户进行分类，是访问控制策略的构建基块。一个角色具有一组给定的权限，可将您组织的成员分配给一个或多个角色，具体取决于他们需要的查看或写入访问权限的范围。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html" text="管理角色"
 
 >[!IMPORTANT]
@@ -123,8 +123,8 @@ ht-degree: 12%
 >[!CONTEXTUALHELP]
 >id="platform_permissions_apicredentials_about"
 >title="什么是 API 凭据？"
->abstract="会向角色分配API凭据，以授予用户和开发人员访问Experience Platform API的权限。 使用Experience Platform API，您可以通过编程方式对数据执行基本的CRUD（创建、读取、更新、删除）操作，例如配置计算属性、访问数据/实体、导出数据、删除不需要的数据或批次等。"
->additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/landing/platform-apis/api-guide" text="Experience Platform API指南"
+>abstract="API 凭据会被分配给角色，以授予用户和开发人员访问 平Experience Platform API 的权限。使用 Experience Platform API，您可以通过编程方式对数据执行基本的 CRUD（创建、读取、更新、删除）操作，例如配置计算属性、访问数据/实体、导出数据、删除不需要的数据或批次等。"
+>additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/landing/platform-apis/api-guide" text="Experience Platform API 指南"
 
 >[!IMPORTANT]
 >

@@ -7,7 +7,7 @@ exl-id: 294d5f02-850f-47ea-9333-8b94a0bb291e
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
 source-wordcount: '2135'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
 
@@ -53,7 +53,7 @@ Experience Platform提供了一个用户界面和RESTful API，从中可以查�
 >[!CONTEXTUALHELP]
 >id="platform_schemas_behavior"
 >title="数据行为"
->abstract="Experience Platform 中使用的数据分为三种行为类型：记录、时间序列和临时。记录架构提供有关主体属性的信息，时间序列架构在执行操作时捕获系统的快照。临时架构捕获在仅供单个数据集使用的命名空间中的字段。有关Experience Platform中数据行为的更多信息，请参阅文档。"
+>abstract="Experience Platform 中使用的数据分为三种行为类型：记录、时间序列和临时。记录架构提供有关主体属性的信息，时间序列架构在执行操作时捕获系统的快照。临时架构捕获在仅供单个数据集使用的命名空间中的字段。有关 Experience Platform 中的数据行为的更多信息，请参阅文档。"
 
 打算在Experience Platform中使用的数据分为三种行为类型：
 

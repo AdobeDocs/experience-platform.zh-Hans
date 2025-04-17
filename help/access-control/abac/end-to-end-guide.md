@@ -7,13 +7,13 @@ exl-id: 7e363adc-628c-4a66-a3bd-b5b898292394
 source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
 source-wordcount: '1603'
-ht-degree: 5%
+ht-degree: 7%
 
 ---
 
 # 基于属性的访问控制端到端指南
 
-在Adobe Experience Platform上使用基于属性的访问控制，以便为您自己和其他关注隐私的多品牌客户提供更大的灵活性来管理用户访问权限。 可以通过基于对象的属性和角色的策略来授予对单个对象（如方案字段和受众）的访问权限。 通过此功能，您可以授予或撤销组织中特定Experience Platform用户访问单个对象的权限。
+在Adobe Experience Platform上使用基于属性的访问控制，以便为您自己和其他关注隐私的多品牌客户提供更大的灵活性来管理用户访问权限。 可以通过基于对象的属性和角色的策略来授予对单个对象（如方案字段和受众）的访问权限。 此功能允许您授予或撤销组织中特定 Experience Platform 用户对各个对象的访问权限。
 
 此功能允许您使用定义组织或数据使用范围的标签对架构字段、受众等进行分类。 您可以将这些相同的标签应用于Adobe Journey Optimizer中的历程、选件和其他对象。 同时，管理员可以定义有关Experience Data Model (XDM)架构字段的访问策略，并更好地管理哪些用户或组（内部、外部或第三方用户）可以访问这些字段。
 
@@ -66,7 +66,7 @@ ht-degree: 5%
 >[!CONTEXTUALHELP]
 >id="platform_permissions_labels_about"
 >title="标签是什么？"
->abstract="使用标签，可根据适用于数据的使用及访问策略将数据集和字段分类。Adobe Experience Platform提供了多个Adobe定义的<strong>核心</strong>数据使用标签，这些标签涵盖了适用于数据治理的各种常见限制。 例如，通过 RHD（受监管的健康数据）等敏感的 <strong>S</strong> 标签，可将涉及受保护的健康信息 (PHI) 的数据分类。还可自行定义适合组织需求的自定义标签。"
+>abstract="使用标签，可根据适用于数据的使用及访问策略将数据集和字段分类。Adobe Experience Platform 提供若干由 Adobe 定义的<strong>核心</strong>数据使用标签，这些标签涵盖适用于数据治理的多种常见限制。例如，通过 RHD（受监管的健康数据）等敏感的 <strong>S</strong> 标签，可将涉及受保护的健康信息 (PHI) 的数据分类。还可自行定义适合组织需求的自定义标签。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html#understanding-data-usage-labels" text="数据使用标签概述"
 
 角色是对与Experience Platform实例交互的用户类型进行分类的方法，是访问控制策略的构建块。 角色具有给定的权限集，组织的成员可以根据所需的访问范围分配给一个或多个角色。

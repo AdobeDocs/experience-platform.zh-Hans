@@ -7,7 +7,7 @@ description: 本教程介绍了在 Experience Platform 中使用架构编辑器�
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '4915'
+source-wordcount: '4924'
 ht-degree: 1%
 
 ---
@@ -50,7 +50,7 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 ![使用工作流选项创建架构对话框并选择高亮显示。](../images/tutorials/create-schema/create-a-schema-dialog.png)
 
-### [!BADGE Beta]{type=Informative}手动或ML辅助的架构创建 {#manual-or-assisted}
+### [!BADGE Beta]{type=Informative}手动或ML辅助模式创建 {#manual-or-assisted}
 
 要了解如何使用ML算法根据上传的文件推荐架构结构，请参阅[机器学习辅助架构创建指南](../ui/ml-assisted-schema-creation.md)。 本UI指南重点介绍手动创建工作流。
 
@@ -84,13 +84,13 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 >[!NOTE]
 >
-您可以从&#x200B;**[!UICONTROL 架构属性]**&#x200B;侧边栏中更新架构的显示名称和可选描述。 输入新名称后，画布会自动更新以反映架构的新名称。
+>您可以从&#x200B;**[!UICONTROL 架构属性]**&#x200B;侧边栏中更新架构的显示名称和可选描述。 输入新名称后，画布会自动更新以反映架构的新名称。
 
 ![基类和架构图突出显示的架构编辑器。](../images/tutorials/create-schema/loyalty-members-schema-editor.png)
 
 >[!NOTE]
 >
-在保存架构之前，您可以在初始组合过程中随时[更改架构](#change-class)的类，但应极其谨慎地执行此操作。 字段组仅与某些类兼容，因此更改该类将重置画布和您已添加的所有字段。
+>在保存架构之前，您可以在初始组合过程中随时[更改架构](#change-class)的类，但应极其谨慎地执行此操作。 字段组仅与某些类兼容，因此更改该类将重置画布和您已添加的所有字段。
 
 ## 添加字段组 {#field-group}
 
@@ -126,17 +126,17 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 >[!NOTE]
 >
-在架构编辑器中，标准(Adobe生成的)类和字段组以挂锁图标（![A挂锁图标）表示。](/help/images/icons/lock-closed.png)的问题。挂锁显示在左边栏中的类或字段组名称旁边，以及架构图中作为系统生成资源一部分的任意字段旁边。
+>在架构编辑器中，标准(Adobe生成的)类和字段组以挂锁图标（![A挂锁图标）表示。](/help/images/icons/lock-closed.png)的问题。挂锁显示在左边栏中的类或字段组名称旁边，以及架构图中作为系统生成资源一部分的任意字段旁边。
 >
-![带有挂锁图标的架构编辑器突出显示](../images/ui/explore/padlock-icon-highlight.png)
+>![带有挂锁图标的架构编辑器突出显示](../images/ui/explore/padlock-icon-highlight.png)
 
-此字段组在顶级名称`person`下分配多个具有数据类型的字段 "[!UICONTROL 人员]”。 这一组字段描述有关个人的信息，包括姓名、出生日期和性别。
+此字段组在顶级名称`person`下提供了多个数据类型为“[!UICONTROL 人员]”的字段。 这一组字段描述有关个人的信息，包括姓名、出生日期和性别。
 
 >[!NOTE]
 >
-请记住，字段可以使用标量类型 (such 作为字符串、整数、数组或日期)以及任何数据类型 (a 在[!DNL Schema Registry]中定义的表示通用概念的字段组)。
+>请记住，字段可以使用标量类型（如字符串、整数、数组或日期），也可以使用[!DNL Schema Registry]中定义的任何数据类型（表示通用概念的一组字段）。
 
-请注意，`name`字段具有数据类型 of “[!UICONTROL 全名]”，表示它也描述了常见概念并包含与名称相关的子字段，如名字、姓氏、礼貌标题和后缀。
+请注意，`name`字段的数据类型为“[!UICONTROL 全名]”，这意味着它描述了常见的概念并包含与名称相关的子字段，如名字、姓氏、礼貌的标题和后缀。
 
 选择画布中的不同字段以显示它们为架构结构贡献的任何其他字段。
 
@@ -154,7 +154,7 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 ## 定义自定义字段组 {#define-field-group}
 
-[!UICONTROL 忠诚度成员]架构用于捕获与忠诚度计划成员相关的数据，而您添加到该架构中的标准[!UICONTROL 忠诚度详细信息]字段组提供了其中的大多数数据，包括计划类型。 points, 加入日期等。
+[!UICONTROL 忠诚度成员]架构用于捕获与忠诚度计划成员相关的数据，您添加到该架构中的标准[!UICONTROL 忠诚度详细信息]字段组提供了其中的大多数信息，包括计划类型、点数、加入日期等。
 
 但是，在某些情况下，您可能希望包含标准字段组未涵盖的其他自定义字段，以便实现用例。 在添加自定义忠诚度字段的情况下，您有两个选项：
 
@@ -167,7 +167,7 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 >[!NOTE]
 >
-与类名一样，字段组名称应简短而简单，描述字段组对架构的贡献。 这些名称也是唯一的，因此您将无法重用该名称，因此必须确保它足够具体。
+>与类名一样，字段组名称应简短而简单，描述字段组对架构的贡献。 这些名称也是唯一的，因此您将无法重用该名称，因此必须确保它足够具体。
 
 &quot;[!DNL Custom Loyalty Details]&quot;现在应显示在画布左侧的&#x200B;**[!UICONTROL 字段组]**&#x200B;下，但尚未有与其关联的字段，因此&#x200B;**[!UICONTROL 结构]**&#x200B;下未显示任何新字段。
 
@@ -183,7 +183,7 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 ![已突出显示[!UICONTROL 无标题字段]和架构[!UICONTROL 字段属性]的架构编辑器。](../images/tutorials/create-schema/untitled-field.png)
 
-在此方案中，架构需要具有对象类型 field 该报表详细描述了人员当前的忠诚度级别。 使用右边栏中的控件，开始创建具有类型的`loyaltyTier`字段 "用于保存相关字段的[!UICONTROL 对象]。
+在此方案中，架构需要有一个对象类型字段，以详细描述人员当前的忠诚度等级。 使用右边栏中的控件，开始创建类型为“[!UICONTROL 对象]”的`loyaltyTier`字段，该字段将用于保存您的相关字段。
 
 在&#x200B;**[!UICONTROL 分配给]**&#x200B;下，您必须选择要将该字段分配到的字段组。 请记住，所有架构字段都属于类或字段组，由于此架构使用标准类，因此您的唯一选项是选择字段组。 开始键入名称“[!DNL Custom Loyalty Details]”，然后从列表中选择字段组。
 
@@ -197,9 +197,9 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 >[!NOTE]
 >
-租户ID对象的存在表示您要添加的字段包含在您的组织的命名空间中。
+>租户ID对象的存在表示您要添加的字段包含在您的组织的命名空间中。
 >
-换言之，您添加的字段对于您的组织是唯一的，并将保存在仅供您的组织访问的特定区域的[!DNL Schema Registry]中。 必须始终将您定义的字段添加到租户命名空间，以防止与其他标准类、字段组、数据类型、 and 字段。
+>换言之，您添加的字段对于您的组织是唯一的，并将保存在仅供您的组织访问的特定区域的[!DNL Schema Registry]中。 必须始终将您定义的字段添加到租户命名空间，以防止与其他标准类、字段组、数据类型和字段的名称冲突。
 
 选择`loyaltyTier`对象旁边的&#x200B;**加号(+)**&#x200B;图标以开始添加子字段。 此时会出现一个新的字段占位符，**[!UICONTROL 字段属性]**&#x200B;部分显示在画布的右侧。
 
@@ -211,10 +211,10 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
    * 示例： loyaltyLevel
 * **[!UICONTROL 显示名称]：**&#x200B;字段的名称，用标题大小写表示。 这是查看或编辑架构时将在画布中显示的名称。
    * 示例：忠诚度级别
-* **[!UICONTROL 类型]：**&#x200B;数据类型 of 字段。 这包括基本标量类型 and 任何数据类型 defined 在[!DNL Schema Registry]中。 示例： [!UICONTROL String]、[!UICONTROL Integer]、[!UICONTROL Boolean]、[!UICONTROL Person]、[!UICONTROL Address]、[!UICONTROL 电话号码]等。
+* **[!UICONTROL 类型]：**&#x200B;字段的数据类型。 这包括基本标量类型和[!DNL Schema Registry]中定义的任何数据类型。 示例： [!UICONTROL String]、[!UICONTROL Integer]、[!UICONTROL Boolean]、[!UICONTROL Person]、[!UICONTROL Address]、[!UICONTROL 电话号码]等。
 * **[!UICONTROL 描述]：**&#x200B;字段的可选描述应包含最多200个字符。
 
-`loyaltyTier`对象的第一个字段将是一个名为`id`的字符串，表示忠诚度会员当前层的ID。 由于该公司根据不同的因素为每个客户设置了不同的忠诚度级别阈值，因此每个忠诚度会员的层ID都是唯一的。 设置新字段的类型 to “[!UICONTROL 字符串]”和&#x200B;**[!UICONTROL 字段属性]**&#x200B;部分会使用多个应用约束的选项进行填充，包括默认值、格式和最大长度。 请参阅有关数据验证字段[最佳实践的文档](../schema/best-practices.md#data-validation-fields)以了解更多信息。
+`loyaltyTier`对象的第一个字段将是一个名为`id`的字符串，表示忠诚度会员当前层的ID。 由于该公司根据不同的因素为每个客户设置了不同的忠诚度级别阈值，因此每个忠诚度会员的层ID都是唯一的。 将新字段的类型设置为“[!UICONTROL String]”，则&#x200B;**[!UICONTROL 字段属性]**&#x200B;部分会使用多个应用约束的选项进行填充，包括默认值、格式和最大长度。 请参阅有关数据验证字段[最佳实践的文档](../schema/best-practices.md#data-validation-fields)以了解更多信息。
 
 ![架构编辑器高亮显示新ID字段的字段属性值。](../images/tutorials/create-schema/string-constraints.png)
 
@@ -238,17 +238,17 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 ## 向字段组添加一个枚举字段 {#enum}
 
-在[!DNL Schema Editor]中定义字段时，有一些其他选项可应用到基本字段类型 in 以便为该字段可以包含的数据提供进一步限制。 下表说明了这些限制的用例：
+在[!DNL Schema Editor]中定义字段时，有一些其他选项可应用到基本字段类型，以便为该字段可以包含的数据提供进一步的约束。 下表说明了这些限制的用例：
 
 | 约束 | 描述 |
 | --- | --- |
 | [!UICONTROL 必需] | 指示字段是进行数据摄取所必需的。 摄取后，任何上传到基于此架构、不包含此字段的数据集的数据都将失败。 |
-| [!UICONTROL 数组] | 指示字段包含一个值数组，每个值都有数据类型 specified. 例如，对具有数据类型的字段使用此约束 of “[!UICONTROL 字符串]”指定该字段将包含字符串数组。 |
+| [!UICONTROL 数组] | 指示字段包含值的数组，每个值均具有指定的数据类型。 例如，对数据类型为“[!UICONTROL 字符串]”的字段使用此约束可指定该字段将包含字符串数组。 |
 | [!UICONTROL 枚举和建议值] | 枚举表示此字段必须包含可能值的枚举列表中的值之一。 或者，您也可以使用此选项仅提供字符串字段的建议值列表，而不将该字段限制为这些值。 |
 | [!UICONTROL 身份标识] | 指示此字段是标识字段。 有关标识字段的更多信息，请参阅[稍后本教程](#identity-field)。 |
 | [!UICONTROL 关系] | 虽然可以使用合并架构和[!DNL Real-Time Customer Profile]推断架构关系，但这仅适用于共享相同类的架构。 [!UICONTROL Relationship]约束指示此字段基于不同的类引用架构的主要标识，这意味着两个架构之间的关系。 有关详细信息，请参阅有关[定义关系](./relationship-ui.md)的教程。 |
 
-{style="表格布局：自动"}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >
@@ -284,7 +284,7 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 >[!NOTE]
 >
-您还可以独立于编辑模式创建和编辑自定义数据类型。 有关详细信息，请参阅[创建和编辑数据类型](../ui/resources/data-types.md)指南。
+>您还可以独立于编辑模式创建和编辑自定义数据类型。 有关详细信息，请参阅[创建和编辑数据类型](../ui/resources/data-types.md)指南。
 
 ## 搜索和筛选架构字段
 
@@ -298,7 +298,7 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 >[!IMPORTANT]
 >
-显示匹配字段时，搜索功能会考虑任何选定的字段组筛选器。 如果搜索查询未显示预期的结果，您可能需要仔细检查是否未过滤掉任何相关的字段组。
+>显示匹配字段时，搜索功能会考虑任何选定的字段组筛选器。 如果搜索查询未显示预期的结果，您可能需要仔细检查是否未过滤掉任何相关的字段组。
 
 ## 将架构字段设置为标识字段 {#identity-field}
 
@@ -310,15 +310,15 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 >[!IMPORTANT]
 >
-以下步骤概述了如何向现有架构字段添加身份描述符。 作为在架构本身的结构中定义标识字段的替代方法，您还可以使用`identityMap`字段来包含标识信息。
+>以下步骤概述了如何向现有架构字段添加身份描述符。 作为在架构本身的结构中定义标识字段的替代方法，您还可以使用`identityMap`字段来包含标识信息。
 >
-如果您计划使用`identityMap`，请记住，它将覆盖您直接添加到架构的任何主标识。 有关详细信息，请参阅架构组合指南](../schema/composition.md#identityMap)的[基础知识中有关`identityMap`的部分。
+>如果您计划使用`identityMap`，请记住，它将覆盖您直接添加到架构的任何主标识。 有关详细信息，请参阅架构组合指南](../schema/composition.md#identityMap)的[基础知识中有关`identityMap`的部分。
 
 在画布中选择`personalEmail.address`字段，并且&#x200B;**[!UICONTROL 字段属性]**&#x200B;下会显示&#x200B;**[!UICONTROL 标识]**&#x200B;复选框。 选中框和选项以将此项设置为&#x200B;**[!UICONTROL 主标识]**。 也选中此框。
 
 >[!NOTE]
 >
-每个架构只能包含一个主标识字段。 一旦将某个架构字段设置为主标识，如果您稍后尝试将该架构中的另一个标识字段设置为主标识，您将收到一条错误消息。
+>每个架构只能包含一个主标识字段。 一旦将某个架构字段设置为主标识，如果您稍后尝试将该架构中的另一个标识字段设置为主标识，您将收到一条错误消息。
 
 接下来，必须从下拉列表中的预定义命名空间列表中提供&#x200B;**[!UICONTROL 身份命名空间]**。 由于此字段是客户的电子邮件地址，请从下拉列表中选择“[!UICONTROL 电子邮件]”。 选择&#x200B;**[!UICONTROL 应用]**&#x200B;以确认`personalEmail.address`字段的更新。
 
@@ -326,7 +326,7 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 >[!NOTE]
 >
-有关标准命名空间及其定义的列表，请参阅[[!DNL Identity Service] 文档](../../identity-service/troubleshooting-guide.md#standard-namespaces)。
+>有关标准命名空间及其定义的列表，请参阅[[!DNL Identity Service] 文档](../../identity-service/troubleshooting-guide.md#standard-namespaces)。
 
 应用更改后，`personalEmail.address`的图标将显示一个指纹符号，表示它现在是一个标识字段。 该字段还列在左边栏中的&#x200B;**[!UICONTROL 标识]**&#x200B;下。
 
@@ -354,7 +354,7 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 >[!WARNING]
 >
-在为[!DNL Real-Time Customer Profile]启用架构并保存后，无法禁用该架构。
+>在为[!DNL Real-Time Customer Profile]启用架构并保存后，无法禁用该架构。
 
 选择&#x200B;**[!UICONTROL 启用]**&#x200B;以确认您的选择。 您可以再次选择&#x200B;**[!UICONTROL 配置文件]**&#x200B;切换来禁用架构（如果需要），但一旦在启用[!DNL Profile]的同时保存了架构，则不能再禁用该架构。
 
@@ -366,20 +366,20 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 ### 删除架构 {#delete-a-schema}
 
-[!CONTEXTUALHELP]
-id="platform_schemas_delete_profileenabledwithdatasets"
-title="无法删除架构"
-abstract="无法删除该架构，因为它已为轮廓启用，并且具有关联的数据集。"
+>[!CONTEXTUALHELP]
+>id="platform_schemas_delete_profileenabledwithdatasets"
+>title="无法删除架构"
+>abstract="无法删除该架构，因为它已为轮廓启用，并且具有关联的数据集。"
 
-[!CONTEXTUALHELP]
-id="platform_schemas_delete_profileenablednodatasets"
-title="无法删除架构"
-abstract="无法删除该架构，因为它已为轮廓启用。"
+>[!CONTEXTUALHELP]
+>id="platform_schemas_delete_profileenablednodatasets"
+>title="无法删除架构"
+>abstract="无法删除该架构，因为它已为轮廓启用。"
 
-[!CONTEXTUALHELP]
-id="platform_schemas_delete_withdatasetsnotprofileenabled"
-title="无法删除架构"
-abstract="无法删除该架构，因为它具有关联的数据集。"
+>[!CONTEXTUALHELP]
+>id="platform_schemas_delete_withdatasetsnotprofileenabled"
+>title="无法删除架构"
+>abstract="无法删除该架构，因为它具有关联的数据集。"
 
 可以使用[!UICONTROL 更多]操作从UI中删除架构，也可以从[!UICONTROL 浏览]选项卡的架构详细信息中删除架构。 在某些情况下，无法删除架构。 如果符合以下条件，则无法删除架构：
 
@@ -405,7 +405,7 @@ abstract="无法删除该架构，因为它具有关联的数据集。"
 
 >[!WARNING]
 >
-以下视频中显示的[!DNL Experience Platform] UI已过期。 有关最新的UI屏幕截图和功能，请参阅上述文档。
+>以下视频中显示的[!DNL Experience Platform] UI已过期。 有关最新的UI屏幕截图和功能，请参阅上述文档。
 
 以下视频说明如何在[!DNL Experience Platform] UI中创建简单架构。
 
@@ -429,6 +429,6 @@ abstract="无法删除该架构，因为它具有关联的数据集。"
 
 >[!WARNING]
 >
-为架构重新分配类应极其谨慎。 字段组仅与某些类兼容，因此更改该类将重置画布和您已添加的所有字段。
+>为架构重新分配类应极其谨慎。 字段组仅与某些类兼容，因此更改该类将重置画布和您已添加的所有字段。
 
 要了解如何更改架构的类，请参阅UI中[管理架构的指南](../ui/resources/schemas.md#change-class)。

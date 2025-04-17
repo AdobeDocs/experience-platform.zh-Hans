@@ -131,7 +131,7 @@ ht-degree: 3%
 >[!CONTEXTUALHELP]
 >id="platform_errors_uplib_201001_404"
 >title="未找到实体"
->abstract="这意味着Experience Platform无法找到请求的实体。 要解决此错误，请尝试以下解决方案之一：<ul><li>确保您尝试访问的实体的 URL 中列出了正确的轮廓 ID。</li><li>确保您拥有适合您尝试访问的实体的相应的组织和沙盒组合。</li></ul>"
+>abstract="这意味着 Experience Platform 找不到所请求的实体。要解决此错误，请尝试以下解决方案之一：<ul><li>确保您尝试访问的实体的 URL 中列出了正确的轮廓 ID。</li><li>确保您拥有适合您尝试访问的实体的相应的组织和沙盒组合。</li></ul>"
 
 选择&#x200B;**[!UICONTROL 配置文件ID]**&#x200B;后，**[!UICONTROL 详细信息]**&#x200B;选项卡将打开。 显示在&#x200B;**[!UICONTROL 详细信息]**&#x200B;选项卡上的配置文件信息已从多个配置文件片段合并在一起，形成单个客户的视图。 这包括客户详细信息，如基本属性、链接身份和渠道偏好设置。
 

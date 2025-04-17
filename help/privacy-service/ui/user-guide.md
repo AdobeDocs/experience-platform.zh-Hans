@@ -6,7 +6,7 @@ description: 了解如何使用Privacy Service用户界面跨各种Experience Cl
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
 source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '1786'
+source-wordcount: '1770'
 ht-degree: 11%
 
 ---

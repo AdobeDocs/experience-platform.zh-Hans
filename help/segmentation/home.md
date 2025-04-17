@@ -6,7 +6,7 @@ exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
 source-git-commit: 0a9028beca36b46d6228c0038366bbac5d32603c
 workflow-type: tm+mt
 source-wordcount: '1679'
-ht-degree: 9%
+ht-degree: 12%
 
 ---
 
@@ -61,7 +61,7 @@ Adobe Experience Platform [!DNL Segmentation Service]提供了一个用户界面
 >[!CONTEXTUALHELP]
 >id="platform_segments_evaluation"
 >title="评估方法"
->abstract="Experience Platform当前支持三种评估受众的方法：流式分段、批量分段和边缘分段。"
+>abstract="Experience Platform 目前支持三种受众评估方法：流式分段、批量分段和边缘分段。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_evaluation_streaming"
@@ -69,7 +69,7 @@ Adobe Experience Platform [!DNL Segmentation Service]提供了一个用户界面
 >abstract="流式分段是一个持续的数据选择过程，会更新受众以响应用户活动。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/methods/streaming-segmentation.html" text="通过流式分段近乎实时地评估事件"
 
-Experience Platform当前支持三种评估受众的方法：流式分段、批量分段和边缘分段。
+Experience Platform 目前支持三种受众评估方法：流式分段、批量分段和边缘分段。
 
 ### 流式客户细分 {#streaming}
 
@@ -93,7 +93,7 @@ Experience Platform当前支持三种评估受众的方法：流式分段、批�
 >[!CONTEXTUALHELP]
 >id="platform_segments_evaluation_edge"
 >title="边缘评估"
->abstract="Edge分段是在Edge Network上即时评估Experience Platform中的区段的能力，从而实现同一页面和下一页面个性化用例。"
+>abstract="边缘分段能够在 Edge Network 上即时评估 Experience Platform 中的区段，从而实现同一页和下一页个性化用例。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/methods/edge-segmentation.html" text="边缘分段指南"
 
 Edge分段是在Edge Network](../landing/edge-and-hub-comparison.md)上即时评估Experience Platform中的区段的能力[，从而启用同页和下一页个性化用例。
