@@ -3,9 +3,9 @@ title: Adobe Experience Platform 发行说明（2025 年 3 月）
 description: Adobe Experience Platform 的 2025 年 3 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: f0879683629ba10ed1b799e52f0adf332f079daf
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1250'
-ht-degree: 97%
+ht-degree: 100%
 
 ---
 
@@ -43,7 +43,7 @@ Experience Platform 提供了多个仪表板，您可以通过这些仪表板查
 
 [!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
-**新的或更新后的目标** {#new-updated-destinations}
+**新增或更新目标**{#new-updated-destinations}
 
 | 目标 | 描述 |
 | --- | --- |
@@ -53,7 +53,7 @@ Experience Platform 提供了多个仪表板，您可以通过这些仪表板查
 
 {style="table-layout:auto"}
 
-**New or updated functionality** {#destinations-new-updated-functionality}
+**新增或更新的功能**{#destinations-new-updated-functionality}
 
 | 功能 | 描述 |
 | --- | --- |
@@ -89,8 +89,8 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 | 功能 | 描述 |
 | --- | --- |
-| [!DNL Bombora Intent] | [!DNL Bombora Intent]源现在可在源目录中找到。 使用此源可以： <ul><li>集成 Bombora 的公司激增意图数据，识别正在积极研究您的产品或服务的帐户。</li><li>优先考虑市场中的帐户，创建精确的区段，并执行超目标 ABM 营销活动，确保您的营销工作集中在最有可能实现转化的帐户上。</li><li>利用意图驱动策略来优化广告支出、提高参与度并最大限度地提高投资回报率。</li></ul> 有关更多信息，请阅读将您的帐户[连接 [!DNL Bombora] 到 Experience Platform](../../sources/tutorials/ui/create/data-partners/bombora.md) 指南。 |
-| [!DNL Demandbase Intent] | [!DNL Demandbase Intent]¸源现在可在源目录中找到。 使用此源可以： <ul><li>集成 Demandbase 的帐户意图数据，根据实时参与度识别高兴趣帐户。</li><li>通过优先考虑最强的意图信号，您可以创建精确的区段，并开展超目标营销活动，确保您的营销工作集中在最有可能实现转化的帐户上。</li><li>激活意图驱动策略可优化广告支出、提高参与度并提高投资回报率。</li></ul> 有关更多信息，请阅读将您的帐户[连接 [!DNL Demandbase] 到 Experience Platform](../../sources/tutorials/ui/create/data-partners/demandbase.md) 指南。 |
+| [!DNL Bombora Intent] | [!DNL Bombora Intent] 源现已在源目录中可用。使用此源可以： <ul><li>集成 Bombora 的公司激增意图数据，识别正在积极研究您的产品或服务的帐户。</li><li>优先考虑市场中的帐户，创建精确的区段，并执行超目标 ABM 营销活动，确保您的营销工作集中在最有可能实现转化的帐户上。</li><li>利用意图驱动策略来优化广告支出、提高参与度并最大限度地提高投资回报率。</li></ul> 有关更多信息，请阅读将您的帐户[连接 [!DNL Bombora] 到 Experience Platform](../../sources/tutorials/ui/create/data-partners/bombora.md) 指南。 |
+| [!DNL Demandbase Intent] | [!DNL Demandbase Intent] 源现已在源目录中可用。使用此源可以： <ul><li>集成 Demandbase 的帐户意图数据，根据实时参与度识别高兴趣帐户。</li><li>通过优先考虑最强的意图信号，您可以创建精确的区段，并开展超目标营销活动，确保您的营销工作集中在最有可能实现转化的帐户上。</li><li>激活意图驱动策略可优化广告支出、提高参与度并提高投资回报率。</li></ul> 有关更多信息，请阅读将您的帐户[连接 [!DNL Demandbase] 到 Experience Platform](../../sources/tutorials/ui/create/data-partners/demandbase.md) 指南。 |
 
 {style="table-layout:auto"}
 
