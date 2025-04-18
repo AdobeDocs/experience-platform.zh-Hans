@@ -5,10 +5,10 @@ breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
 role: User,Developer
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 5e8dccf91e8c83b4734b363539cfb911b5c2ae29
 workflow-type: tm+mt
-source-wordcount: '401'
-ht-degree: 22%
+source-wordcount: '404'
+ht-degree: 27%
 
 ---
 
@@ -18,21 +18,22 @@ ht-degree: 22%
 - [查询服务概述](home.md)
 - [查询服务打包](packaging.md)
 - [查询服务护栏](guardrails.md)
-- 入门 {#get-started}
+- 快速入门 {#get-started}
    - [先决条件](get-started/prerequisites.md)
-- 数据Distiller {#data-distiller}
+- 数据蒸馏器 {#data-distiller}
    - [概述](data-distiller/overview.md)
    - [许可证使用](data-distiller/license-usage.md)
-   - 派生的数据集{#derived-datasets}
+   - 派生数据集 {#derived-datasets}
       - [概述](data-distiller/derived-datasets/overview.md)
       - [使用SQL创建派生数据集](data-distiller/derived-datasets/create-derived-datasets-with-sql.md)
       - [创建基于十分位数的派生数据集](data-distiller/derived-datasets/decile-based-derived-attributes.md)
-   - 扩展应用程序报表{#sql-insights}的SQL分析
+   - 用于扩展应用报告的 SQL Insights {#sql-insights}
       - [概述](data-distiller/sql-insights/overview.md)
       - [查询专业模式](data-distiller/sql-insights/query-pro-mode.md)
+      - [Accelerated Store概述](data-distiller/sql-insights/accelerated-store-overview.md)
       - [发送加速查询](data-distiller/sql-insights/send-accelerated-queries.md)
       - [报表见解数据模型指南](data-distiller/sql-insights/reporting-insights-data-model.md)
-   - AI/ML功能管道{#ml-feature-pipelines}
+   - AI/ML 功能管道 {#ml-feature-pipelines}
       - [概述](data-distiller/ml-feature-pipelines/overview.md)
       - [连接到Jupyter Notebooks](data-distiller/ml-feature-pipelines/establish-connection.md)
       - [探索性数据分析](data-distiller/ml-feature-pipelines/exploratory-analysis.md)
@@ -40,12 +41,12 @@ ht-degree: 22%
       - [将数据导出到ML环境](data-distiller/ml-feature-pipelines/export-data.md)
       - [AI/ML数据管道扩充端到端工作流](data-distiller/ml-feature-pipelines/end-to-end-notebook-workflow.md)
    - [Summit 2025会议](data-distiller/top-tips-to-maximize-value.md)
-- 数据Distiller统计数据和机器学习{#advanced-statistics}
+- 数据Distiller统计和机器学习 {#advanced-statistics}
    - [概述](advanced-statistics/overview.md)
    - [特征工程](advanced-statistics/feature-engineering.md)
    - [模型](advanced-statistics/models.md)
    - [特征转换](advanced-statistics/feature-transformation.md)
-   - 实施模型{#implement-models}
+   - 实施模型 {#implement-models}
       - [实施模型](advanced-statistics/implement-models/implement-models.md)
       - [回归](advanced-statistics/implement-models/regression.md)
       - [分类](advanced-statistics/implement-models/classification.md)
@@ -53,7 +54,7 @@ ht-degree: 22%
    - 示例 {#examples}
       - [使用统计和机器学习进行机器人过滤](advanced-statistics/examples/statistics-and-ml-bot-filtering.md)
       - [使用基于SQL的Logistic回归预测客户流失](advanced-statistics/examples/predict-customer-churn.md)
-- 数据Distiller受众{#data-distiller-audiences}
+- 数据Distiller受众 {#data-distiller-audiences}
    - [使用SQL构建外部受众](data-distiller-audiences/overview.md)
 - 示例 {#use-cases}
    - [概述](use-cases/overview.md)
@@ -85,9 +86,9 @@ ht-degree: 22%
    - [重复数据删除](key-concepts/deduplication.md)
    - [数据集样本](key-concepts/dataset-samples.md)
    - [数据集统计信息计算](key-concepts/dataset-statistics.md)
-- 数据Distiller超多维数据集{#hypercubes}
+- 数据Distiller超多维数据集 {#hypercubes}
    - [使用超多维数据集进行高效的大数据分析](hypercubes/overview.md)
-- 将客户端连接到查询服务{#clients}
+- 将客户端连接到查询服务 {#clients}
    - [客户端连接概述](clients/overview.md)
    - [SSL模式](./clients/ssl-modes.md)
    - [Aqua Data Studio](clients/aqua-data-studio.md)
@@ -124,15 +125,15 @@ ht-degree: 22%
    - [快速入门](auth-api/getting-started.md)
    - [IP访问](auth-api/ip-access.md)
    - [验证](auth-api/validate.md)
-- 数据管理{#data-governance}
+- 数据治理 {#data-governance}
    - [概述](data-governance/overview.md)
    - [审核日志指南](data-governance/audit-log-guide.md)
    - [临时架构数据集中的身份](data-governance/ad-hoc-schema-identities.md)
    - [对临时架构的基于属性的访问控制支持](./data-governance/ad-hoc-schema-labels.md)
-- 最佳做法 {#best-practices}
+- 最佳实践 {#best-practices}
    - [查询执行](best-practices/writing-queries.md)
    - [数据资产组织](./best-practices/organize-data-assets.md)
-- SQL引用{#sql}
+- SQL 参考 {#sql}
    - [SQL概述](sql/overview.md)
    - [SQL语法](sql/syntax.md)
    - [Adobe定义的函数](sql/adobe-defined-functions.md)
