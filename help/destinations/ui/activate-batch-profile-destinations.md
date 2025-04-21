@@ -3,7 +3,7 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 500cad30178e6371c8d7431b032a67f6ed15a1d6
+source-git-commit: 11961e291188d509609a036f41084f4487cab584
 workflow-type: tm+mt
 source-wordcount: '4517'
 ht-degree: 11%
@@ -87,12 +87,12 @@ ht-degree: 11%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_schedule_weekly_messaging"
 >title="每周导出"
->abstract="选择开始日期，后续导出将发生在一周的当天，直到所选的结束日期。"
+>abstract="<sup>*</sup>选择开始日期，在所选的结束日期之前，后续导出将发生在一周的当天。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_schedule_monthly_messaging"
 >title="每月导出"
->abstract="选择开始日期，后续导出将在该月的该日期进行，直到所选的结束日期为止。 对于少于30天或31天的月份，导出将发生在该月的最后一天。"
+>abstract="<sup>*</sup>选择开始日期，后续导出将在该月的该日期进行，直到所选的结束日期为止。 对于少于30天或31天的月份，导出将发生在该月的最后一天。"
 
 [!DNL Adobe Experience Platform]将电子邮件营销和云存储目标的数据导出为[不同的文件类型](#supported-file-formats-export)。 在&#x200B;**[!UICONTROL 计划]**&#x200B;页面中，您可以为要导出的每个受众配置计划和文件名。
 
