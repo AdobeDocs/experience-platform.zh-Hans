@@ -3,22 +3,14 @@ keywords: 飞艇属性；飞艇目标
 title: 飞艇属性连接
 description: 将Adobe受众数据作为受众属性无缝传递到飞艇，以便在飞艇中进行定位。
 exl-id: bfc1b52f-2d68-40d6-9052-c2ee1e877961
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7377b2ffecf59fdb5ca5449daf1387ae1586bd63
 workflow-type: tm+mt
-source-wordcount: '1153'
-ht-degree: 3%
+source-wordcount: '1042'
+ht-degree: 2%
 
 ---
 
 # [!DNL Airship Attributes]连接 {#airship-attributes-destination}
-
->[!IMPORTANT]
->
->* 从2025年3月25日开始，您可以在目标目录中并排看到两张[!DNL Airship Attributes]信息卡。 这是由于目标服务内部升级造成的。现有[!DNL Airship Attributes]目标连接器已重命名为&#x200B;**[!UICONTROL （已弃用）飞艇属性]**，现在您可以使用名为&#x200B;**[!UICONTROL 飞艇属性]**&#x200B;的新信息卡。
->* 使用目录中的&#x200B;**[!UICONTROL 飞艇属性]**&#x200B;连接获取新的激活数据流。 如果您有任何到&#x200B;**[!UICONTROL （已弃用）飞艇属性]**&#x200B;目标的活动数据流，它们会自动更新，因此您无需执行任何操作。
->* 如果您是通过[流服务API](https://developer.adobe.com/experience-platform-apis/references/destinations/)创建数据流，则必须将[!DNL flow spec ID]和[!DNL connection spec ID]更新为以下值：
->   * 流量规范 ID：`a862e0be-966e-4e5a-80d3-1bb566461986`
->   * 连接规范 ID：`594bc002-4a47-49b7-8a98-ac0d21045502`
 
 ## 概述 {#overview}
 
