@@ -2,14 +2,14 @@
 title: 身份图链接规则
 description: 了解Identity Service中的身份图链接规则。
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: 9243da3ebe5e963ec457da5ae3e300e852787d37
+source-git-commit: a309f0dca5ebe75fcb7abfeb98605aec2692324d
 workflow-type: tm+mt
-source-wordcount: '1476'
-ht-degree: 8%
+source-wordcount: '1497'
+ht-degree: 6%
 
 ---
 
-# 身份标识图链接规则概述 {#identity-graph-linking-rules-overview}
+# [!DNL Identity Graph Linking Rules] 概述 {#identity-graph-linking-rules-overview}
 
 >[!CONTEXTUALHELP]
 >id="platform_identities_linkingrules_overview"
@@ -18,17 +18,21 @@ ht-degree: 8%
 
 >[!AVAILABILITY]
 >
->标识图链接规则当前处于“有限可用”状态。 有关如何访问开发沙盒中的功能的信息，请与您的Adobe客户团队联系。
+>标识图链接规则当前处于“有限可用”状态，所有客户都可以在开发沙盒中访问它。
+>
+>* **激活要求**：在您配置和保存[!DNL Identity Settings]之前，该功能将保持非活动状态。 如果没有此配置，系统将继续正常运行，并且不会更改行为。
+>* **重要说明**：在此“有限可用性”阶段，Edge分段可能会产生意外的区段成员资格结果。 但是，流分段和批量分段将按预期运行。
+>* **后续步骤**：有关如何在生产沙盒中启用此功能的信息，请联系您的Adobe客户团队。
 
-通过Adobe Experience Platform Identity服务和实时客户个人资料，可以轻松假设您的数据被完全摄取，并且所有合并的个人资料都通过人员标识符（如CRMID）表示单个个人。 但是，在某些情况下，某些数据可能会尝试将多个不同的配置文件合并到单个配置文件中（“图形折叠”）。 要防止这些不必要的合并，您可以使用通过身份标识图链接规则提供的配置，并允许对用户进行准确的个性化设置。
+通过Adobe Experience Platform Identity服务和实时客户个人资料，可以轻松假设您的数据被完全摄取，并且所有合并的个人资料都通过人员标识符（如CRMID）表示单个个人。 但是，在某些情况下，某些数据可能会尝试将多个不同的配置文件合并到单个配置文件中（“图形折叠”）。 为了防止这些不需要的合并，您可以使用通过[!DNL Identity Graph Linking Rules]提供的配置，并允许用户的准确个性化。
 
-观看以下视频，了解有关使用身份图链接规则的其他信息：
+观看以下视频，了解有关使用[!DNL Identity Graph Linking Rules]的其他信息：
 
 >[!VIDEO](https://video.tv.adobe.com/v/3448250/?learn=on&enablevpops)
 
 ## 快速入门
 
-以下文档对于了解身份图关联规则至关重要。
+以下文档是了解[!DNL Identity Graph Linking Rules]所必需的。
 
 * [身份标识优化算法](./identity-optimization-algorithm.md)
 * [实施指南](./implementation-guide.md)
@@ -45,7 +49,7 @@ ht-degree: 8%
 >title="图形折叠场景"
 >abstract="图形可能“折叠”或代表多个人物实体的原因有多种。"
 
-本节概述了配置身份图链接规则时可以考虑的示例场景。
+本节概述配置[!DNL Identity Graph Linking Rules]时可以考虑的示例场景。
 
 ### 共享设备
 
@@ -61,7 +65,7 @@ ht-degree: 8%
 
 在这些情况下，从图形的角度来看，未启用任何限制，单个ECID将链接到多个CRMID。
 
-利用身份图链接规则，您可以：
+使用[!DNL Identity Graph Linking Rules]，您可以：
 
 * 配置用于作为唯一标识符登录的ID。 例如，您可以限制图形仅存储一个具有CRMID命名空间的身份，从而将CRMID定义为共享设备的唯一标识符。
    * 通过这样做，您可以确保ECID不会合并CRMID。
@@ -72,7 +76,7 @@ ht-degree: 8%
 
 ![表示无效电子邮件或电话方案的图表。](../images/identity-settings/invalid-email-phone.png)
 
-利用身份图链接规则，您可以：
+使用[!DNL Identity Graph Linking Rules]，您可以：
 
 * 将CRMID、电话号码或电子邮件地址配置为唯一标识符，因此将一个人限制为只能有一个与其帐户关联的CRMID、电话号码和/或电子邮件地址。
 
@@ -89,11 +93,11 @@ ht-degree: 8%
 
 ![具有错误或错误标识值的标识数据的图形示例。](../images/identity-settings/bad-data.png)
 
-借助身份图链接规则，您可以将CRMID配置为唯一标识符，以防止由于此类数据而造成不需要的用户档案折叠。
+使用[!DNL Identity Graph Linking Rules]，您可以将CRMID配置为唯一标识符，以防止由于此类数据而造成不需要的配置文件折叠。
 
-## 身份标识图链接规则 {#identity-graph-linking-rules}
+## [!DNL Identity Graph Linking Rules] {#identity-graph-linking-rules}
 
-通过身份图链接规则，您可以：
+通过[!DNL Identity Graph Linking Rules]，您可以：
 
 * 通过配置唯一的命名空间，为每个用户创建单个身份图/合并的配置文件，这将阻止两个不同的人员标识符合并到一个身份图中。
 * 通过配置优先级，将经过身份验证的在线事件与人员关联
@@ -151,7 +155,7 @@ ht-degree: 8%
 
 ## 后续步骤
 
-有关身份图链接规则的更多信息，请阅读以下文档：
+有关[!DNL Identity Graph Linking Rules]的详细信息，请阅读以下文档：
 
 * [身份标识优化算法](./identity-optimization-algorithm.md)
 * [实施指南](./implementation-guide.md)

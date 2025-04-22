@@ -2,10 +2,10 @@
 title: 身份标识优化算法
 description: 了解Identity Service中的身份优化算法。
 exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
-source-git-commit: 7174c2c0d8c4ada8d5bba334492bad396c1cfb34
+source-git-commit: a309f0dca5ebe75fcb7abfeb98605aec2692324d
 workflow-type: tm+mt
-source-wordcount: '1560'
-ht-degree: 5%
+source-wordcount: '1617'
+ht-degree: 4%
 
 ---
 
@@ -18,7 +18,11 @@ ht-degree: 5%
 
 >[!AVAILABILITY]
 >
->标识图链接规则当前处于“有限可用”状态。 有关如何访问开发沙盒中的功能的信息，请与您的Adobe客户团队联系。
+>标识图链接规则当前处于“有限可用”状态，所有客户都可以在开发沙盒中访问它。
+>
+>* **激活要求**：在您配置和保存[!DNL Identity Settings]之前，该功能将保持非活动状态。 如果没有此配置，系统将继续正常运行，并且不会更改行为。
+>* **重要说明**：在此“有限可用性”阶段，Edge分段可能会产生意外的区段成员资格结果。 但是，流分段和批量分段将按预期运行。
+>* **后续步骤**：有关如何在生产沙盒中启用此功能的信息，请联系您的Adobe客户团队。
 
 身份优化算法是Identity Service上的一个图算法，它帮助确保一个身份图代表一个人，因此防止了实时客户档案上不需要的身份合并。
 
@@ -163,9 +167,9 @@ ECID存储未经身份验证的（匿名）事件，而CRMID存储经过身份�
 
 ## 后续步骤
 
-有关身份图链接规则的更多信息，请阅读以下文档：
+有关[!DNL Identity Graph Linking Rules]的详细信息，请阅读以下文档：
 
-* [身份标识图链接规则概述](./overview.md)
+* [[!DNL Identity Graph Linking Rules] 概述](./overview.md)
 * [实施指南](./implementation-guide.md)
 * [图形配置示例](./example-configurations.md)
 * [疑难解答和常见问题](./troubleshooting.md)

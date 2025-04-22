@@ -2,20 +2,24 @@
 title: 身份图形链接规则疑难解答指南
 description: 了解如何解决身份图关联规则中的常见问题。
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: 0e7911e21c546fb40cd51f03a5a6d6a2aa751dec
+source-git-commit: a309f0dca5ebe75fcb7abfeb98605aec2692324d
 workflow-type: tm+mt
-source-wordcount: '3338'
+source-wordcount: '3375'
 ht-degree: 0%
 
 ---
 
-# 身份标识图链接规则故障排除指南
+# [!DNL Identity Graph Linking Rules]疑难解答指南
 
 >[!AVAILABILITY]
 >
->标识图链接规则当前处于“有限可用”状态。 有关如何访问开发沙盒中的功能的信息，请与您的Adobe客户团队联系。
+>标识图链接规则当前处于“有限可用”状态，所有客户都可以在开发沙盒中访问它。
+>
+>* **激活要求**：在您配置和保存[!DNL Identity Settings]之前，该功能将保持非活动状态。 如果没有此配置，系统将继续正常运行，并且不会更改行为。
+>* **重要说明**：在此“有限可用性”阶段，Edge分段可能会产生意外的区段成员资格结果。 但是，流分段和批量分段将按预期运行。
+>* **后续步骤**：有关如何在生产沙盒中启用此功能的信息，请联系您的Adobe客户团队。
 
-在测试和验证身份图形链接规则时，您可能会遇到一些与数据摄取和图形行为相关的问题。 请阅读本文档，了解如何解决您在使用身份图链接规则时可能遇到的一些常见问题。
+在测试和验证[!DNL Identity Graph Linking Rules]时，您可能会遇到一些与数据摄取和图形行为相关的问题。 阅读本文档以了解如何解决您在使用[!DNL Identity Graph Linking Rules]时可能遇到的一些常见问题。
 
 ## 数据摄取流概述 {#data-ingestion-flow-overview}
 
@@ -55,7 +59,7 @@ ht-degree: 0%
 * 默认情况下，[AAID被阻止引入](../guardrails.md#identity-namespace-ingestion)。
 * 身份因[系统护栏](../guardrails.md#understanding-the-deletion-logic-when-an-identity-graph-at-capacity-is-updated)而被删除。
 
-在身份图链接规则的上下文中，可能会拒绝来自Identity Service的记录，因为传入事件具有两个或多个具有相同唯一命名空间但身份值不同的身份。 这种情况通常因实施错误而发生。
+在[!DNL Identity Graph Linking Rules]的上下文中，可能会拒绝来自标识服务的记录，因为传入事件具有两个或多个具有相同唯一命名空间但标识值不同的标识。 这种情况通常因实施错误而发生。
 
 用两个假设来考虑以下事件：
 
@@ -318,11 +322,11 @@ ORDER BY timestamp desc
 
 >[!TIP]
 >
->如果没有为共享设备临时方法启用沙盒，上面列出的两个查询将产生预期结果，并且其行为与标识图链接规则有所不同。
+>如果没有为共享设备临时方法启用沙盒，则上面列出的两个查询将产生预期的结果，并且其行为与[!DNL Identity Graph Linking Rules]有所不同。
 
 ## 常见问题解答 {#faq}
 
-本节概述了有关身份图关联规则的常见问题解答列表。
+本节概述有关[!DNL Identity Graph Linking Rules]的常见问题解答列表。
 
 ## 身份标识优化算法 {#identity-optimization-algorithm}
 
@@ -389,7 +393,7 @@ ORDER BY timestamp desc
 
 ## 测试
 
-有关测试和调试身份图关联规则中功能的常见问题解答，请阅读此部分。
+阅读本节以了解有关[!DNL Identity Graph Linking Rules]中测试和调试功能的常见问题解答。
 
 ### 我应该在开发沙盒环境中测试哪些场景？
 
