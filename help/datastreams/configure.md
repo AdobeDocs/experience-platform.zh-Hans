@@ -2,7 +2,7 @@
 title: 创建和配置数据流
 description: 了解如何将客户端 Web SDK 集成与其他 Adobe 产品和第三方目标连接起来。
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 637f7d68c0de93ede5ee808b68a0066f6abe52c9
 workflow-type: tm+mt
 source-wordcount: '2822'
 ht-degree: 48%
@@ -81,7 +81,7 @@ ht-degree: 48%
 
 此外，请确保架构中存在每个所需的XDM字段。 如果不包含，您可以将Adobe提供的`Environment Details`字段组添加到您的架构中。
 
-### 配置高级选项{#@advanced-options}
+### 配置高级选项 {#advanced-options}
 
 要显示高级配置选项，请选择&#x200B;**[!UICONTROL 高级选项]**。 在这里，您可以配置其他数据流设置，如IP模糊处理、第一方ID Cookie等。
 
