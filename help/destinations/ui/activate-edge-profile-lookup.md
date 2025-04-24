@@ -3,9 +3,9 @@ title: 实时查找边缘配置文件属性
 description: 了解如何使用自定义Personalization目标和Edge Network API实时查找边缘配置文件属性
 type: Tutorial
 exl-id: e185d741-af30-4706-bc8f-d880204d9ec7
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '1907'
+source-wordcount: '1911'
 ht-degree: 3%
 
 ---
@@ -30,7 +30,7 @@ Adobe Experience Platform使用[实时客户个人资料](../../profile/home.md)
 * [数据流](../../datastreams/overview.md)：数据流接收来自Web SDK的传入事件数据并使用边缘配置文件数据进行响应。
 * [合并策略](../../segmentation/ui/segment-builder.md#merge-policies)：您将创建一个[!UICONTROL Edge上的Active-On]合并策略，以确保边缘配置文件使用正确的配置文件数据。
 * [自定义Personalization连接](../catalog/personalization/custom-personalization.md)：您将配置新的自定义个性化连接，以将配置文件属性发送到Edge Network。
-* [Edge Network API](../../server-api/overview.md)：您将使用Edge Network API [交互式数据收集](../../server-api/interactive-data-collection.md)功能从Edge配置文件中快速检索配置文件属性。
+* [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/)：您将使用Edge Network API [交互式数据收集](https://developer.adobe.com/data-collection-apis/docs/endpoints/interact/)功能从Edge配置文件中快速检索配置文件属性。
 
 ## 性能护栏 {#guardrails}
 
@@ -166,7 +166,7 @@ Edge配置文件查找用例受下表所述的特定性能护栏的约束。 有
 
 >[!IMPORTANT]
 >
->配置文件属性可能包含敏感数据。 要保护此数据，必须通过[Edge Network API](../../server-api/overview.md)检索配置文件属性。 此外，您必须通过Edge Network API [交互式数据收集终结点](../../server-api/interactive-data-collection.md)检索配置文件属性，才能对API调用进行身份验证。
+>配置文件属性可能包含敏感数据。 要保护此数据，必须通过[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/getting-started/)检索配置文件属性。 此外，您必须通过Edge Network API [交互式数据收集终结点](https://developer.adobe.com/data-collection-apis/docs/endpoints/interact/)检索配置文件属性，才能对API调用进行身份验证。
 ><br>如果您不遵循上述要求，则将仅基于受众成员资格进行个性化，并且用户档案属性将不可使用。
 
 您在[步骤1](#create-datastream)中配置的数据流现在已准备好接受传入事件数据并使用边缘配置文件信息进行响应。

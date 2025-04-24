@@ -1,31 +1,31 @@
 ---
-title: 使用Web SDK和Edge Network服务器API的混合个性化
-description: 本文演示了如何将Web SDK与服务器API结合使用，在Web资产上部署混合个性化。
+title: 使用Web SDK和Edge Network API的混合个性化
+description: 本文演示了如何将Web SDK与Edge Network API结合使用来在Web资产上部署混合个性化。
 keywords: 个性化；混合；服务器API；服务器端；混合实现；
 exl-id: 506991e8-701c-49b8-9d9d-265415779876
-source-git-commit: 9489b5345c2b13b9d05b26d646aa7f1576840fb8
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '861'
+source-wordcount: '872'
 ht-degree: 2%
 
 ---
 
-# 使用Web SDK和Edge Network服务器API的混合个性化
+# 使用Web SDK和Edge Network API的混合个性化
 
 ## 概述 {#overview}
 
-Hybdrid个性化描述使用[Edge Network服务器API](../../server-api/overview.md)检索个性化内容服务器端，并使用[Web SDK](../home.md)在客户端呈现该内容的过程。
+Hybdrid个性化描述使用[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/)在服务器端检索个性化内容，并使用[Web SDK](../home.md)在客户端呈现该内容的过程。
 
-您可以将混合个性化与Adobe Target、Adobe Journey Optimizer或Offer Decisioning等个性化解决方案一起使用，不同之处在于[!UICONTROL 服务器API]有效负载的内容。
+您可以将混合个性化与Adobe Target、Adobe Journey Optimizer或Offer Decisioning等个性化解决方案一起使用，不同之处在于[!UICONTROL Edge Network API]有效负载的内容。
 
 ## 先决条件 {#prerequisites}
 
 在Web资产上实施混合个性化之前，请确保满足以下条件：
 
-* 您已决定要使用的个性化解决方案。 这将影响[!UICONTROL 服务器API]有效负载的内容。
-* 您有权访问可用于进行[!UICONTROL 服务器API]调用的应用程序服务器。
-* 您有权访问[Edge Network服务器API](../../server-api/authentication.md)。
-* 您已正确[配置](/help/web-sdk/commands/configure/overview.md)并在要个性化的页面上部署Web SDK。
+* 您已决定要使用的个性化解决方案。 这将影响[!UICONTROL Edge Network API]有效负载的内容。
+* 您有权访问可用于进行[!UICONTROL Edge Network API]调用的应用程序服务器。
+* 您有权访问[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/)。
+* 您已正确[配置](/help/web-sdk/commands/configure/overview.md)并在要个性化的页面上部署了Web SDK。
 
 ## 流程图 {#flow-diagram}
 
@@ -35,10 +35,10 @@ Hybdrid个性化描述使用[Edge Network服务器API](../../server-api/overview
 
 1. 浏览器先前存储的任何带有`kndctr_`前缀的现有Cookie都将包含在浏览器请求中。
 1. 客户端Web浏览器向应用程序服务器请求网页。
-1. 应用程序服务器在收到页面请求时，会向[服务器API交互数据收集终结点](../../server-api/interactive-data-collection.md)发出`POST`请求以获取个性化内容。 `POST`请求包含`event`和`query`。 上一步的Cookie（如果可用）包含在`meta>state>entries`数组中。
-1. 服务器API将个性化内容返回到应用程序服务器。
-1. 应用程序服务器向客户端浏览器返回HTML响应，其中包含[标识和群集Cookie](#cookies)。
-1. 在客户端页面上，调用[!DNL Web SDK] `applyResponse`命令，传入上一步的[!UICONTROL 服务器API]响应的标头和正文。
+1. 应用程序服务器在收到页面请求时，会向[Edge Network API交互式数据收集终结点](https://developer.adobe.com/data-collection-apis/docs/endpoints/interact/)发出`POST`请求以获取个性化内容。 `POST`请求包含`event`和`query`。 上一步的Cookie（如果可用）包含在`meta>state>entries`数组中。
+1. Edge Network API会将个性化内容返回到应用程序服务器。
+1. 应用程序服务器向客户端浏览器返回一个HTML响应，其中包含[标识和群集Cookie](#cookies)。
+1. 在客户端页面上，调用[!DNL Web SDK] `applyResponse`命令，传入上一步的[!UICONTROL Edge Network API]响应的标头和正文。
 1. [!DNL Web SDK]自动呈现Target [[!DNL Visual Experience Composer (VEC)]](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)选件和Journey Optimizer Web渠道项，因为`renderDecisions`标志设置为`true`。
 1. 通过`applyProposition`方法手动应用基于Target表单的[!DNL HTML]/[!DNL JSON]选件和基于代码的Journey Optimizer体验，以根据建议中的个性化内容更新[!DNL DOM]。
 1. 对于基于Target表单的[!DNL HTML]/[!DNL JSON]选件和基于代码的Journey Optimizer体验，必须手动发送显示事件，以指示何时显示返回的内容。 这是通过`sendEvent`命令完成的。
@@ -54,7 +54,7 @@ Cookie用于保留用户标识和群集信息。  使用混合实施时，Web应
 
 ## 请求投放 {#request-placement}
 
-需要服务器API请求才能获取建议并发送显示通知。 使用混合实施时，应用程序服务器向服务器API发出这些请求。
+需要Edge Network API请求才能获取建议并发送显示通知。 使用混合实施时，应用程序服务器会向Edge Network API发出这些请求。
 
 | 请求 | 创建者 |
 |---|---|
@@ -70,14 +70,14 @@ Cookie用于保留用户标识和群集信息。  使用混合实施时，Web应
 此实施中的示例使用两个不同的数据流：
 
 * 为Analytics配置的数据流。 此数据流用于Web SDK交互。
-* 第二个不具有Analytics配置的数据流。 此数据流用于服务器API请求。 您必须使用与Analytics配置的数据流相同的目标配置来配置此数据流。
+* 第二个不具有Analytics配置的数据流。 此数据流用于Edge Network API请求。 您必须使用与Analytics配置的数据流相同的目标配置来配置此数据流。
 
 这样一来，服务器端请求就不会注册任何Analytics事件，而客户端请求会注册。 这将导致Analytics请求被准确计数。
 
 
 ## 服务器端请求 {#server-side-request}
 
-以下示例请求说明了您的应用程序服务器可用于检索个性化内容的服务器API请求。
+以下示例请求说明了您的应用程序服务器可用于检索个性化内容的Edge Network API请求。
 
 >[!IMPORTANT]
 >
@@ -162,12 +162,12 @@ curl -X POST "https://edge.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM_I
 
 | 参数 | 类型 | 必需 | 描述 |
 | --- | --- | --- | --- |
-| `dataStreamId` | `String` | 可以。 | 用于将交互传递给Edge Network的数据流的ID。 请参阅[数据流概述](../../datastreams/overview.md)，了解如何配置数据流。 |
-| `requestId` | `String` | 否 | 用于关联内部服务器请求的随机ID。 如果未提供任何内容，则Edge Network将生成一个，并在响应中返回该值。 |
+| `dataStreamId` | `String` | 可以。 | 用于将交互传递到Edge Network的数据流的ID。 请参阅[数据流概述](../../datastreams/overview.md)，了解如何配置数据流。 |
+| `requestId` | `String` | 否 | 用于关联内部服务器请求的随机ID。 如果未提供，Edge Network将生成一个，并在响应中返回它。 |
 
 ### 服务器端响应 {#server-response}
 
-下面的示例响应显示了服务器API响应可能的外观。
+下面的示例响应显示了Edge Network API响应可能具有的外观。
 
 
 ```json

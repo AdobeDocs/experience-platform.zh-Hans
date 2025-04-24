@@ -2,9 +2,9 @@
 title: 使用来自DNL天气渠道的天气数据增强数据收集
 description: 使用来自DNL天气频道的天气数据，增强您通过数据流收集的数据。
 exl-id: 548dfca7-2548-46ac-9c7e-8190d64dd0a4
-source-git-commit: 041a1782442df5f08bb52e4e450734a51c7781ea
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '674'
+source-wordcount: '676'
 ht-degree: 68%
 
 ---
@@ -28,7 +28,7 @@ Adobe 已与 [!DNL [The Weather Company]](https://www.ibm.com/weather) 合作，
 在使用天气数据之前，请确保满足以下先决条件：
 
 * 您必须从[!DNL The Weather Channel]中授权您将使用的天气数据。 之后，将在您的帐户上启用该数据。
-* 只能通过数据流获得天气数据。若要使用天气数据，必须使用[!DNL Web SDK]、[!DNL Mobile Edge Extension]或[服务器API](../../server-api/overview.md)来包含此数据。
+* 只能通过数据流获得天气数据。若要使用天气数据，必须使用[!DNL Web SDK]、[!DNL Mobile Edge Extension]或[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/)来包含此数据。
 * 您的数据流必须已启用[[!UICONTROL 地理位置]](../configure.md#advanced-options)。
 * 将[天气字段组](#schema-configuration)添加到您正在使用的架构中。
 
@@ -66,11 +66,11 @@ Adobe 已与 [!DNL [The Weather Company]](https://www.ibm.com/weather) 合作，
 
 ### Real-Time Customer Data Platform {#rtcdp}
 
-天气数据可在[Real-time Customer Data Platform](../../rtcdp/overview.md)中使用，以用于受众。 天气数据将附加到事件。
+天气数据可在[Real-Time Customer Data Platform](../../rtcdp/overview.md)中使用，以用于受众。 天气数据将附加到事件。
 
 ![显示天气事件的区段生成器](../assets/data-enrichment/weather/schema-builder.png)
 
-由于天气条件经常变化，因此Adobe建议您在受众上设置时间限制，如上面的示例所示。 在最后一两天度过寒冷的一天比 6 个月前的寒冷一天产生的影响更大。
+由于天气条件变化频繁，因此Adobe建议您在受众上设置时间限制，如上面的示例所示。 在最后一两天度过寒冷的一天比 6 个月前的寒冷一天产生的影响更大。
 
 请参阅[天气参考](weather-reference.md)以了解可用字段。
 

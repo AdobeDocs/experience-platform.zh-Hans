@@ -5,7 +5,7 @@ audience: user
 user-guide-title: Real-Time Customer Data Platform 指南
 user-guide-description: 合并多个企业来源的已知数据和匿名数据，以创建客户轮廓、从这些轮廓创建受众，以及将这些受众激活到第三方目标。
 role: Admin
-source-git-commit: 3b2645927e4760114298295e920e07a20df3fcbd
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
 source-wordcount: '307'
 ht-degree: 63%
@@ -47,7 +47,7 @@ ht-degree: 63%
 * 护栏 {#guardrails}
    * [Real-Time CDP护栏概述](guardrails/overview.md)
    * 用于数据引入的[护栏](https://experienceleague.adobe.com/docs/experience-platform/ingestion/guardrails.html){target="_blank"}
-   *  [!DNL Edge Network Server API]](https://experienceleague.adobe.com/docs/experience-platform/edge-network-server-api/guardrails.html){target="_blank"}的[护栏
+   *  [!DNL Edge Network API]](https://developer.adobe.com/data-collection-apis/docs/getting-started/guardrails/){target="_blank"}的[护栏
    * [针对 [!DNL Real-Time Customer Profile] 数据和分段的护栏](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html?lang=zh-Hans){target="_blank"}
    *  [!DNL Identity Service] 数据](https://experienceleague.adobe.com/docs/experience-platform/identity/guardrails.html){target="_blank"}的[护栏
    *  [!DNL Query Service]](https://experienceleague.adobe.com/docs/experience-platform/query/guardrails.html){target="_blank"}的[护栏

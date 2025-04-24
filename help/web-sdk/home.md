@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web Software Development Kit (SDK)概述
 description: 了解如何使用Adobe Experience Platform Web SDK将Experience Platform功能集成到您的网站。
 exl-id: 1348144a-7d25-4c27-bc40-3daee2f043a6
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '601'
+source-wordcount: '602'
 ht-degree: 1%
 
 ---
@@ -28,7 +28,7 @@ Experience Platform Web SDK是Adobe Experience Platform Edge Network的一部分
 
 * **[Experience Platform Web SDK](#overview)**：用于简化Adobe技术部署的JavaScript库和标记扩展。
 * **[Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/home/)**：新部署方法的v5移动SDK扩展。
-* **[Edge Network API](../server-api/overview.md)**：用于数据收集、个性化、广告和营销用例的服务器端API。 您可以在服务器、IoT设备、机顶盒和其他设备上使用它。
+* **[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/)**：用于数据收集、个性化、广告和营销用例的服务器端API。 您可以在服务器、IoT设备、机顶盒和其他设备上使用它。
 
 Edge Network提供了低延迟的数据收集、可插拔计算和快速数据激活（涵盖所有可寻址渠道）。 它为Web、移动和服务器端渠道提供单个整合的SDK，将数据发送到公共Adobe域(`adobedc.net`)，并接收数据和体验交付的单个有效负载。
 

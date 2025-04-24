@@ -3,9 +3,9 @@ keywords: 目标；问题；常见问题解答；常见问题解答；目标常�
 title: 常见问题解答
 description: 关于Adobe Experience Platform目标最常见问题的解答
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '1675'
+source-wordcount: '1673'
 ht-degree: 0%
 
 ---
@@ -201,7 +201,7 @@ Google要求受众名称是唯一的。 您看到的数字是[UNIX时间戳](htt
 
 但是，如果使用[[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html)而不是Web SDK，则仅支持下一会话个性化。
 
-对于[同页和下一页个性化](ui/activate-edge-personalization-destinations.md)用例，您必须使用[Web SDK](../web-sdk/home.md)或[Edge Network Server API](../server-api/overview.md)。 有关更多实施详细信息，请参阅有关[将受众激活到边缘目标](ui/activate-edge-personalization-destinations.md)的文档。
+对于[同一页面和下一页面个性化](ui/activate-edge-personalization-destinations.md)用例，您必须使用[Web SDK](../web-sdk/home.md)或[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/)。 有关更多实施详细信息，请参阅有关[将受众激活到边缘目标](ui/activate-edge-personalization-destinations.md)的文档。
 +++
 
 ### 我可以从Real-time Customer Data Platform发送到Adobe Target或自定义Personalization目标的属性数量是否存在限制？
@@ -244,10 +244,10 @@ Yes, you can activate a maximum of 150 edge audiences per sandbox.  For more inf
 当您删除目标时，所有在目标下映射的受众和属性都将从Adobe Target中删除，并且也会从Edge Network中删除。
 +++
 
-### 集成是否可以使用Edge Network服务器API进行工作？
+### 集成是否可以使用Edge Network API？
 
 +++回答
-是，Edge Network服务器API可与自定义Personalization目标配合使用。 由于配置文件属性可能包含敏感数据，为了保护此数据，自定义Personalization目标要求您使用Edge Network服务器API进行数据收集。 此外，所有API调用都必须在[经过身份验证的上下文](../server-api/authentication.md)中进行。
+是，Edge Network API可与自定义Personalization目标配合使用。 由于配置文件属性可能包含敏感数据，为了保护此数据，自定义Personalization目标要求您使用Edge Network API进行数据收集。 此外，所有API调用都必须在[经过身份验证的上下文](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication/)中进行。
 +++
 
 ### 我只能有一个边缘活动合并策略。 我是否可以生成使用其他合并策略的受众，并且仍然将这些受众作为流受众发送到Adobe Target？

@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2022 年 8 月）
 description: Adobe Experience Platform 的 2022 年 8 月发行说明。
 exl-id: dbf1e7a3-8599-4991-8932-f57d3b1c640d
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 25697d341b2970eeb20d9f2507ee701ade8046d3
 workflow-type: tm+mt
-source-wordcount: '2012'
-ht-degree: 26%
+source-wordcount: '2014'
+ht-degree: 27%
 
 ---
 
@@ -94,7 +94,7 @@ Adobe Experience Platform提供了多个[!DNL dashboards]，通过它们可以�
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| (Beta)对个性化目标的基于属性的个性化支持 | 随着基于属性的个性化测试版的发布，您将在[目标目录](../../destinations/catalog/overview.md)中看到两张新卡片： <ul><li>**[!UICONTROL Adobe Target V2]**：此连接器当前为测试版，仅对部分客户可用。 除了Adobe Target V1信息卡提供的功能之外，Target V2连接器还向激活工作流中添加了[映射步骤](/help/destinations/ui/activate-edge-personalization-destinations.md#map-attributes)，该步骤允许您将配置文件属性映射到Adobe Target，从而实现基于属性的同页和下一页个性化。</li><li>**[!UICONTROL 具有属性的自定义Personalization]**：此连接器当前为测试版，仅对部分客户可用。 除了&#x200B;**[!UICONTROL 自定义Personalization]**&#x200B;提供的功能外，**[!UICONTROL 具有属性的自定义Personalization]**&#x200B;连接器还向激活工作流中添加了一个可选的[映射步骤](../../destinations/ui/activate-edge-personalization-destinations.md#map-attributes)，该步骤允许您将配置文件属性映射到自定义个性化目标，从而启用基于属性的同一页面和下一页面个性化。</li></ul> <br>配置文件属性可能包含敏感数据。 为了保护此数据，**[!UICONTROL 具有属性的自定义Personalization]**&#x200B;目标要求您使用[Edge Network服务器API](../../server-api/overview.md)进行数据收集。 此外，所有服务器API调用必须在[经过身份验证的上下文](../../server-api/authentication.md)中进行。 |
+| (Beta)对个性化目标的基于属性的个性化支持 | 随着基于属性的个性化测试版的发布，您将在[目标目录](../../destinations/catalog/overview.md)中看到两张新卡片： <ul><li>**[!UICONTROL Adobe Target V2]**：此连接器当前为测试版，仅对部分客户可用。 除了Adobe Target V1信息卡提供的功能之外，Target V2连接器还向激活工作流中添加了[映射步骤](/help/destinations/ui/activate-edge-personalization-destinations.md#map-attributes)，该步骤允许您将配置文件属性映射到Adobe Target，从而实现基于属性的同页和下一页个性化。</li><li>**[!UICONTROL 具有属性的自定义Personalization]**：此连接器当前为测试版，仅对部分客户可用。 除了&#x200B;**[!UICONTROL 自定义Personalization]**&#x200B;提供的功能外，**[!UICONTROL 具有属性的自定义Personalization]**&#x200B;连接器还向激活工作流中添加了一个可选的[映射步骤](../../destinations/ui/activate-edge-personalization-destinations.md#map-attributes)，该步骤允许您将配置文件属性映射到自定义个性化目标，从而启用基于属性的同一页面和下一页面个性化。</li></ul> <br>配置文件属性可能包含敏感数据。 为了保护此数据，**[!UICONTROL 具有属性的自定义Personalization]**&#x200B;目标要求您使用[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/getting-started/)进行数据收集。 此外，所有Edge Network API调用必须在[经过身份验证的上下文](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication)中进行。 |
 
 {style="table-layout:auto"}
 
@@ -137,7 +137,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 {style="table-layout:auto"}
 
-有关Experience Platform中XDM的更多信息，请参阅[XDM系统概述](../../xdm/home.md)。
+有关 Experience Platform 中 XDM 的详细信息，请查看 [XDM 系统概述](../../xdm/home.md)。
 
 ## 实时客户轮廓 {#profile}
 

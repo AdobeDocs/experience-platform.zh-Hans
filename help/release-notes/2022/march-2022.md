@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2022 年 3 月）
 description: Adobe Experience Platform 的 2022 年 3 月发行说明。
 exl-id: 0d499aa6-e25d-4d34-ad32-5e4ab361cba1
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '1182'
-ht-degree: 16%
+source-wordcount: '1183'
+ht-degree: 20%
 
 ---
 
@@ -59,7 +59,7 @@ B2B企业通常将其客户信息存储在多个系统中，每个系统仅包�
 
 ## 警报 {#alerts}
 
-通过Experience Platform，您可以为各种Experience Platform活动订阅基于事件的警报。 您可以通过Experience Platform用户界面中的[!UICONTROL 警报]选项卡订阅不同的警报规则，还可以选择在UI中或通过电子邮件通知接收警报消息。
+Experience Platform 允许您订阅各种 Experience Platform 活动的基于事件的警报。您可以通过 Experience Platform 用户界面中的[!UICONTROL 警报]选项卡订阅不同的警报规则，并可以选择在用户界面内或通过电子邮件通知接收警报消息。
 
 **更新的功能**
 
@@ -115,7 +115,7 @@ Experience Platform提供了一套技术，可让您收集客户端客户体验�
 | 功能 | 描述 |
 | --- | --- |
 | 全局数据流设置 | 现在，您可以在配置数据流时配置多个新的全局设置：地理位置、第一方ID Cookie和第三方ID同步。 有关详细信息，请参阅数据流UI指南中有关[配置数据流](../../datastreams/overview.md#create)的部分。 |
-| [Edge Network服务器API](../../server-api/overview.md) | 服务器API允许客户使用新的经过身份验证的端点与Experience Platform Edge Network交互，以支持各种数据收集、个性化、广告和营销用例。 |
+| [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/getting-started/) | Edge Network API允许客户使用新的、经过身份验证的端点与Experience Platform Edge Network交互，以支持各种数据收集、个性化、广告和营销用例。 |
 
 有关Experience Platform中数据收集的更多信息，请参阅[数据收集概述](../../collection/home.md)。
 

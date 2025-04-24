@@ -1,19 +1,19 @@
 ---
 title: 访客识别
-description: 了解Adobe Experience PlatformEdge Network服务器API如何识别访客
-seo-description: Learn how Adobe Experience Platform Edge Network Server API identifies visitors
+description: 了解Adobe Experience Platform Edge Network API如何识别访客
+seo-description: Learn how Adobe Experience Platform Edge Network API identifies visitors
 keywords: 边缘网络；网关；API；访客；标识
 exl-id: aa2f3b83-5cc8-4e02-9119-edfd5e212588
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '151'
-ht-degree: 3%
+source-wordcount: '149'
+ht-degree: 4%
 
 ---
 
 # 访客识别
 
-Edge Network服务器API支持通过第一方ID ([!DNL FPID])](visitor-identification-fpid.md)进行[访客识别。
+Edge Network API支持通过第一方ID ([!DNL FPID])](visitor-identification-fpid.md)进行[访客识别。
 
 所有用户标识都应在`identityMap`字段组中提供。 此字段组包含在AEP Web SDK `ExperienceEvent` mixin中。
 
@@ -38,7 +38,7 @@ Edge Network服务器API支持通过第一方ID ([!DNL FPID])](visitor-identific
 
 ## 设备标识符 {#identifiers}
 
-在Edge Network中可以通过多种方式识别设备。 有关支持的ID的概述，请参阅下表。
+在Edge Network中，可以通过多种方法来识别设备。 有关支持的ID的概述，请参阅下表。
 
 | ID 命名空间 | 管理者 | 描述 |
 | --- | --- | --- |

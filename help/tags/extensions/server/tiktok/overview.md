@@ -1,9 +1,9 @@
 ---
-title: AdobeTikTok web events API扩展集成
+title: Adobe TikTok web events API扩展集成
 description: 通过这个Adobe Experience Platform Web事件API，您可以直接与TikTok共享网站交互。
 last-substantial-update: 2023-09-26T00:00:00Z
 exl-id: 14b8e498-8ed5-4330-b1fa-43fd1687c201
-source-git-commit: 4ee895cb8371646fd2013e2a8f65c2ffdae95850
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
 source-wordcount: '1105'
 ht-degree: 2%
@@ -12,7 +12,7 @@ ht-degree: 2%
 
 # [!DNL TikTok] Web事件API扩展概述
 
-[!DNL TikTok]事件API是一个安全的[Edge Network服务器API](/help/server-api/overview.md)接口，它允许您直接与[!DNL TikTok]共享有关您网站上的用户操作的信息。 您可以使用[!DNL TikTok] Web事件API扩展利用事件转发规则将数据从[!DNL Adobe Experience Platform Edge Network]发送到[!DNL TikTok]。
+[!DNL TikTok]事件API是一个安全的[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/)接口，允许您直接与[!DNL TikTok]共享有关您网站上的用户操作的信息。 您可以使用[!DNL TikTok] Web事件API扩展利用事件转发规则将数据从[!DNL Adobe Experience Platform Edge Network]发送到[!DNL TikTok]。
 
 ## [!DNL TikTok]先决条件 {#prerequisites}
 
@@ -82,7 +82,7 @@ Web事件和参数包含有关事件的常规信息。 标准事件在[!DNL TikT
 | 用户代理 | 来自用户设备的非哈希用户代理。 |
 | 电子邮件 | 与转化事件关联的联系人的电子邮件地址。 |
 | 电话 | 在进行哈希处理之前，电话号码必须采用E164格式[+][国家/地区代码][区号][local phone number]。 |
-| Cookie ID | 如果您使用的是Pixel SDK，则在启用Cookie的情况下，将会自动在`_ttp` Cookie中保存唯一标识符。 `_ttp`值可提取并用于此字段。 |
+| Cookie ID | 如果您使用的是Pixel SDK，则在启用Cookie的情况下，它将自动在`_ttp` Cookie中保存唯一标识符。 `_ttp`值可提取并用于此字段。 |
 | 外部 ID | 任何唯一标识符，例如用户ID、外部Cookie ID等，都必须使用SHA256进行哈希处理。 |
 | TikTok点击ID | 每次在[!DNL TikTok]上选择广告时都添加到登陆页面URL的`ttclid`。 |
 | Page URL | 事件时的页面URL。 |

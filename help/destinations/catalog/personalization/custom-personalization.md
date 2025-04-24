@@ -3,9 +3,9 @@ keywords: 自定义个性化；目标；experience platform自定义目标；
 title: 自定义个性化连接
 description: 此目标提供外部个性化、内容管理系统、广告服务器以及在您的网站上运行的其他应用程序，以便从Adobe Experience Platform检索受众信息。 此目标根据用户个人资料受众成员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 0f70e072402bca055b96195ded91816810759fc2
+source-git-commit: 25697d341b2970eeb20d9f2507ee701ade8046d3
 workflow-type: tm+mt
-source-wordcount: '962'
+source-wordcount: '964'
 ht-degree: 9%
 
 ---
@@ -23,9 +23,9 @@ ht-degree: 9%
 
 >[!IMPORTANT]
 >
->配置文件属性可能包含敏感数据。 要保护此数据，在为基于属性的个性化配置&#x200B;**[!UICONTROL 自定义Personalization]**&#x200B;目标时，必须使用[Edge Network服务器API](/help/server-api/overview.md)。 所有服务器API调用必须在[经过身份验证的上下文](../../../server-api/authentication.md)中进行。
+>配置文件属性可能包含敏感数据。 要保护此数据，在为基于属性的个性化配置&#x200B;**[!UICONTROL 自定义Personalization]**&#x200B;目标时，必须使用[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/)。 所有Edge Network API调用必须在[经过身份验证的上下文](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication)中进行。
 >
-><br>您可以添加一个服务器端集成，该集成利用您已经用于Web或Mobile SDK实施的相同数据流，从而通过[Edge Network Server API](/help/server-api/overview.md)检索配置文件属性。
+><br>您可以添加一个服务器端集成，该集成利用您已经用于Web或Mobile SDK实施的相同数据流，从而通过[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/)检索配置文件属性。
 >
 ><br>如果不遵循上述要求，则仅基于受众成员资格进行个性化。
 
@@ -39,7 +39,7 @@ ht-degree: 9%
 
 * 如果要从您的网站收集数据，请使用[Adobe Experience Platform Web SDK](/help/web-sdk/home.md)。
 * 如果要从移动应用程序收集数据，请使用[Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/)。
-* 如果您未使用[Web SDK](/help/web-sdk/home.md)或[Mobile SDK](https://developer.adobe.com/client-sdks/documentation/)，或者要根据配置文件属性个性化用户体验，请使用[Edge Network服务器API](../../../server-api/overview.md)。
+* 如果您未使用[Web SDK](/help/web-sdk/home.md)或[Mobile SDK](https://developer.adobe.com/client-sdks/documentation/)，或者要根据配置文件属性个性化用户体验，请使用[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/)。
 
 >[!IMPORTANT]
 >

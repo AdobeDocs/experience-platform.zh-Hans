@@ -2,10 +2,10 @@
 title: 创建和配置数据流
 description: 了解如何将客户端 Web SDK 集成与其他 Adobe 产品和第三方目标连接起来。
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: 637f7d68c0de93ede5ee808b68a0066f6abe52c9
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '2822'
-ht-degree: 48%
+source-wordcount: '2825'
+ht-degree: 47%
 
 ---
 
@@ -100,7 +100,7 @@ ht-degree: 48%
 | [!UICONTROL 第三方 ID 同步] | ID 同步可分组到容器中，以允许不同的 ID 同步在不同时间运行。启用后，此设置可让您指定为该数据流运行哪个 ID 同步容器。 |
 | [!UICONTROL 第三方 ID 同步容器 ID] | 要用于第三方 ID 同步的容器的数字 ID。 |
 | [!UICONTROL 容器 ID 覆盖] | 在此部分中，您可以定义其他第三方ID同步容器ID，以将其用于覆盖默认ID。 |
-| [!UICONTROL 访问类型] | 为数据流定义 Edge Network 接受的身份验证类型。 <ul><li>**[!UICONTROL 混合身份验证]**：选择此选项时，Edge Network 接受经过身份验证和未经身份验证的请求。当您计划使用 Web SDK 或 [Mobile SDK](https://developer.adobe.com/client-sdks/home/) 与[服务器 API](../server-api/overview.md)，请选择此选项。 </li><li>**[!UICONTROL 仅经过身份验证]**：选择此选项时，Edge Network 仅接受经过身份验证的请求。当您计划仅使用服务器 API 并希望防止 Edge Network 处理任何未经身份验证的请求时，请选择此选项。</li></ul> |
+| [!UICONTROL 访问类型] | 为数据流定义 Edge Network 接受的身份验证类型。 <ul><li>**[!UICONTROL 混合身份验证]**：选择此选项时，Edge Network 接受经过身份验证和未经身份验证的请求。当您计划使用Web SDK或[Mobile SDK](https://developer.adobe.com/client-sdks/home/)以及[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/)时，请选择此选项。 </li><li>**[!UICONTROL 仅经过身份验证]**：选择此选项时，Edge Network 仅接受经过身份验证的请求。当您计划仅使用Edge Network API并且希望阻止Edge Network处理任何未经身份验证的请求时，请选择此选项。</li></ul> |
 | [!UICONTROL Media Analytics] | 通过Experience Platform SDK或[Media Edge API](https://developer.adobe.com/cja-apis/docs/endpoints/media-edge/getting-started/)启用对Edge Network集成的流跟踪数据的处理。 从[文档](https://experienceleague.adobe.com/docs/media-analytics/using/media-overview.html?lang=zh-Hans)了解Media Analytics。 |
 
 从此处，如果您正在为Experience Platform配置数据流，请先按照[为数据收集准备数据](./data-prep.md)上的教程将数据映射到Experience Platform事件架构，然后再返回本指南。 否则，请选择&#x200B;**[!UICONTROL 保存]**&#x200B;并继续下一部分。
@@ -175,7 +175,7 @@ ht-degree: 48%
 | [!UICONTROL 事件数据集] | **（必需）**&#x200B;选择要将客户事件数据流式传输到的Experience Platform数据集。 此架构必须使用 [XDM ExperienceEvent 类](../xdm/classes/experienceevent.md)。要添加其他数据集，请选择&#x200B;**[!UICONTROL 添加事件数据集]**。 |
 | [!UICONTROL 轮廓数据集] | 选择要将客户属性数据发送到的Experience Platform数据集。 此架构必须使用 [XDM 单个轮廓类](../xdm/classes/individual-profile.md)。 |
 | [!UICONTROL Offer Decisioning] | 为Web SDK实施启用Offer Decisioning。 有关更多实施详细信息，请参阅[将Offer Decisioning与Web SDK结合使用](../web-sdk/personalization/offer-decisioning/offer-decisioning-overview.md)指南。<br><br>有关 Offer Decisioning 功能的更多信息，请参阅 [Adobe Journey Optimizer 文档](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioning/get-started-decision/starting-offer-decisioning.html?lang=zh-Hans)。 |
-| [!UICONTROL 边缘分段] | 为此数据流启用[边缘分段](../segmentation/methods/edge-segmentation.md)。 当[Web SDK](../web-sdk/home.md)或[Edge Network服务器API](../server-api/overview.md)通过启用了边缘分段的数据流发送数据时，相关个人资料的任何更新受众成员资格将在响应中发送回。<br><br>您可以通过[Edge目标](../destinations/ui/activate-edge-personalization-destinations.md)或[!DNL Offer Decisioning]将此选项与&#x200B;**[!UICONTROL Personalization目标]**&#x200B;结合用于同页和下一页个性化用例。 |
+| [!UICONTROL 边缘分段] | 为此数据流启用[边缘分段](../segmentation/methods/edge-segmentation.md)。 当[Web SDK](../web-sdk/home.md)或[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/)通过启用了边缘分段的数据流发送数据时，相关个人资料的任何更新受众成员资格将在响应中发送回。<br><br>您可以通过[Edge目标](../destinations/ui/activate-edge-personalization-destinations.md)或[!DNL Offer Decisioning]将此选项与&#x200B;**[!UICONTROL Personalization目标]**&#x200B;结合用于同页和下一页个性化用例。 |
 | [!UICONTROL 个性化目标] | 如果在选中[!UICONTROL 边缘分段]复选框后启用此选项，将允许数据流连接到个性化目标，例如[自定义个性化](../destinations/catalog/personalization/custom-personalization.md)。<br><br>有关[配置个性化目标](../destinations/ui/activate-edge-personalization-destinations.md)的具体步骤，请参阅目标文档。 |
 | [!UICONTROL Adobe Journey Optimizer] | 为此数据流启用[Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html)。 <br><br> 启用此选项将允许数据流从 [!DNL Adobe Journey Optimizer] 中基于 Web 和应用程序的入站营销活动返回个性化内容。此选项要求[!UICONTROL 边缘分段]处于活动状态。如果未选中[!UICONTROL Edge分段]，则此选项将灰显。 |
 

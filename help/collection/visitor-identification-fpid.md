@@ -1,23 +1,23 @@
 ---
 title: 通过FPID进行访客识别
-description: 了解如何使用FPID通过服务器API以一致的方式识别访客
-seo-description: Learn how to consistently identify visitors via the Server API, by using the FPID
+description: 了解如何使用FPID通过Edge Network API以一致的方式识别访客
+seo-description: Learn how to consistently identify visitors via the Edge Network API, by using the FPID
 keywords: 边缘网络；网关；API；访客；识别；FPID
 exl-id: c61d2e7c-7b5e-4b14-bd52-13dde34e32e3
-source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '348'
+source-wordcount: '349'
 ht-degree: 0%
 
 ---
 
 # 通过FPID进行访客识别
 
-[!DNL First-party IDs] (`FPIDs`)是客户生成、管理和存储的设备ID。 这允许客户控制标识用户设备。 通过发送`FPIDs`，Edge Network不会为不包含的全新`ECID`的请求生成此请求。
+[!DNL First-party IDs] (`FPIDs`)是客户生成、管理和存储的设备ID。 这允许客户控制标识用户设备。 通过发送`FPIDs`，Edge Network不会为不包含的全新`ECID`的请求生成全新。
 
 `FPID`可以作为`identityMap`的一部分包含在API请求正文中，也可以作为Cookie发送。
 
-Edge Network可确定性地将`FPID`转换为`ECID`，因此`FPID`标识与Experience Cloud解决方案完全兼容。 从特定`FPID`获取`ECID`将始终产生相同的结果，因此用户将拥有一致的体验。
+`FPID`可以由Edge Network确定性地转换为`ECID`，因此`FPID`标识与Experience Cloud解决方案完全兼容。 从特定`FPID`获取`ECID`将始终产生相同的结果，因此用户将拥有一致的体验。
 
 以这种方式获得的`ECID`可以通过`identity.fetch`查询进行检索：
 

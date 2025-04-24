@@ -1,22 +1,22 @@
 ---
-title: 使用Edge Network服务器API进行服务器端个性化
-description: 本文演示了如何使用Edge Network服务器API在Web资产上部署服务器端个性化。
+title: 使用Edge Network API进行服务器端个性化
+description: 本文演示了如何使用Edge Network API在Web资产上部署服务器端个性化。
 keywords: 个性化；服务器api；边缘网络；服务器端；
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '563'
+source-wordcount: '559'
 ht-degree: 2%
 
 ---
 
 
-# 使用Edge Network服务器API进行服务器端个性化
+# 使用Edge Network API进行服务器端个性化
 
 ## 概述 {#overview}
 
-服务器端个性化涉及使用[Edge Network服务器API](../../server-api/overview.md)对您的Web资产上的客户体验进行个性化。
+服务器端个性化涉及使用[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/getting-started/)对您的Web资产上的客户体验进行个性化。
 
-在本文中描述的示例中，使用服务器API在服务器端检索个性化内容。 然后，基于检索到的个性化HTML在服务器端呈现内容。
+在本文中描述的示例中，使用Edge Network API在服务器端检索个性化内容。 然后，根据检索到的个性化内容，在服务器端渲染HTML。
 
 下表显示了一个个性化内容和非个性化内容的示例。
 
@@ -37,12 +37,12 @@ Cookie用于保留用户标识和群集信息。  使用服务器端实施时，
 
 ### 请求投放 {#request-placement}
 
-需要Personalization请求才能获取建议并发送显示通知。 在使用服务器端实现时，应用程序服务器向Edge Network服务器API发出这些请求。
+需要Personalization请求才能获取建议并发送显示通知。 使用服务器端实施时，应用程序服务器会向Edge Network API发出这些请求。
 
 | 请求 | 创建者 |
 |---|---|
-| 用于检索建议的Interact请求 | 应用程序服务器调用Edge Network服务器API。 |
-| Interact请求发送显示通知 | 应用程序服务器调用Edge Network服务器API。 |
+| 用于检索建议的Interact请求 | 调用Edge Network API的应用程序服务器。 |
+| Interact请求发送显示通知 | 调用Edge Network API的应用程序服务器。 |
 
 ## 示例应用程序 {#sample-app}
 
@@ -68,7 +68,7 @@ Cookie用于保留用户标识和群集信息。  使用服务器端实施时，
 
 1. [Express](https://expressjs.com/)用于精益服务器端实施。 这将处理基本服务器请求和路由。
 2. 浏览器请求该网页。 包括以前由浏览器存储的以`kndctr_`为前缀的所有Cookie。
-3. 从应用服务器请求该页面时，会向[交互式数据收集终结点](../../../server-api/interactive-data-collection.md)发送一个事件以获取个性化内容。 示例应用程序使用辅助方法简化向API构建和发送请求的过程（请参阅[aepEdgeClient.js](https://github.com/adobe/alloy-samples/blob/main/common/aepEdgeClient.js)）。 `POST`请求包含`event`和`query`。 上一步的Cookie（如果可用）包含在`meta>state>entries`数组中。
+3. 从应用服务器请求该页面时，会向[交互式数据收集终结点](https://developer.adobe.com/data-collection-apis/docs/endpoints/interact/)发送一个事件以获取个性化内容。 示例应用程序使用辅助方法简化向API构建和发送请求的过程（请参阅[aepEdgeClient.js](https://github.com/adobe/alloy-samples/blob/main/common/aepEdgeClient.js)）。 `POST`请求包含`event`和`query`。 上一步的Cookie（如果可用）包含在`meta>state>entries`数组中。
 
    ```js
    fetch(
@@ -197,4 +197,4 @@ Cookie用于保留用户标识和群集信息。  使用服务器端实施时，
    ```
 
 6. [!DNL Visual Experience Composer (VEC)]选件将被忽略，因为它们只能通过Web SDK呈现。
-7. 当返回HTML响应时，应用服务器将在响应中设置标识和群集Cookie。
+7. 返回HTML响应时，应用程序服务器会针对响应设置标识和群集Cookie。

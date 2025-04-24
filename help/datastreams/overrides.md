@@ -1,17 +1,17 @@
 ---
 title: 配置数据流覆盖
-description: 了解如何在数据流UI中配置数据流覆盖并通过Web SDK或移动SDK激活它们。
+description: 了解如何在数据流UI中配置数据流覆盖并通过Web SDK或Mobile SDK激活它们。
 exl-id: 3f17a83a-dbea-467b-ac67-5462c07c884c
-source-git-commit: 17ed5f3c14d4787352f72d3d7721cbb6416d533e
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '1081'
+source-wordcount: '1083'
 ht-degree: 57%
 
 ---
 
 # 配置数据流覆盖
 
-数据流覆盖允许您为数据流定义其他配置，这些配置将通过Web SDK或移动SDK传递到Edge Network。
+数据流覆盖允许您为数据流定义其他配置，这些配置通过Web SDK或Mobile SDK传递到Edge Network。
 
 这有助于触发与默认数据流行为不同的数据流行为，而无需创建数据流或修改现有设置。
 
@@ -27,7 +27,7 @@ ht-degree: 57%
 
 >[!IMPORTANT]
 >
->只有[Web SDK](../web-sdk/home.md)和[Mobile SDK](https://developer.adobe.com/client-sdks/home/)集成支持数据流覆盖。 [服务器API](../server-api/overview.md)集成当前不支持数据流覆盖。
+>只有[Web SDK](../web-sdk/home.md)和[Mobile SDK](https://developer.adobe.com/client-sdks/home/)集成支持数据流覆盖。 [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/)集成当前不支持数据流覆盖。
 ><br>
 >在需要将不同的数据发送到不同的数据流时应使用数据流覆盖。请勿对个性化用例或同意数据使用数据流覆盖。
 
@@ -43,9 +43,9 @@ ht-degree: 57%
 
 一个常见的使用案例可能是将数据发送到特定于国家/地区的数据流，也发送到客户在其中执行重要操作（如下订单或更新其用户配置文件）的全球数据流。
 
-**为不同的业务部门区分配置文件和标识**
+**为不同的业务部门区分轮廓和身份标识**
 
-具有多个业务部门的公司希望使用多个Experience Platform沙盒来存储特定于每个业务部门的数据。
+具有多个业务部门的公司希望使用多个Experience Platforms沙盒存储特定于每个业务部门的数据。
 
 该公司可使用数据流覆盖确保每个业务部门都有自己的数据流以通过它接收数据，而非将数据发送到默认数据流。
 
@@ -68,7 +68,7 @@ ht-degree: 57%
 
 添加所需覆盖后，保存数据流设置。
 
-您现在应已配置 Adobe Target 数据流覆盖。现在，您可以[通过Web SDK或Mobile SDK向Edge Network发送覆盖](#send-overrides)。
+您现在应已配置 Adobe Target 数据流覆盖。现在，您可以[通过Web SDK或Mobile SDK](#send-overrides)将覆盖发送到Edge Network。
 
 ### Adobe Analytics 的数据流覆盖 {#analytics-overrides}
 
@@ -82,7 +82,7 @@ ht-degree: 57%
 
 添加所需覆盖后，保存数据流设置。
 
-您现在应已配置 Adobe Analytics 数据流覆盖。现在，您可以[通过Web SDK或Mobile SDK向Edge Network发送覆盖](#send-overrides)。
+您现在应已配置 Adobe Analytics 数据流覆盖。现在，您可以[通过Web SDK或Mobile SDK](#send-overrides)将覆盖发送到Edge Network。
 
 ### Experience Platform 事件数据集的数据流覆盖 {#event-dataset-overrides}
 
@@ -94,7 +94,7 @@ ht-degree: 57%
 
 添加所需覆盖后，保存数据流设置。
 
-您现在应已配置 Adobe Experience Platform 数据流覆盖。现在，您可以[通过Web SDK或Mobile SDK向Edge Network发送覆盖](#send-overrides)。
+您现在应已配置 Adobe Experience Platform 数据流覆盖。现在，您可以[通过Web SDK或Mobile SDK](#send-overrides)将覆盖发送到Edge Network。
 
 ### 第三方 ID 同步容器的数据流覆盖 {#container-overrides}
 
@@ -112,14 +112,14 @@ ht-degree: 57%
 
 添加所需覆盖后，保存数据流设置。
 
-您现在应已配置 ID 同步容器覆盖。现在，您可以[通过Web SDK或Mobile SDK向Edge Network发送覆盖](#send-overrides)。
+您现在应已配置 ID 同步容器覆盖。现在，您可以[通过Web SDK或Mobile SDK](#send-overrides)将覆盖发送到Edge Network。
 
 ## 将覆盖发送到Edge Network {#send-overrides}
 
-在数据收集UI中配置数据流覆盖后，您可以通过Web SDK或移动SDK将覆盖发送到Edge Network。
+在数据收集UI中配置数据流覆盖后，您可以通过Web SDK或Mobile SDK将覆盖发送到Edge Network。
 
 * **Web SDK**：有关标记扩展说明和JavaScript库代码示例，请参阅[数据流配置覆盖](../web-sdk/commands/datastream-overrides.md#library)。
-* **Mobile SDK**：您可以使用[sendEvent API](https://developer.adobe.com/client-sdks/edge/edge-network/tutorials/send-overrides-sendevent/)或使用[Rules](https://developer.adobe.com/client-sdks/edge/edge-network/tutorials/send-overrides-rules/)发送数据流ID覆盖。
+* **移动SDK**：您可以使用[sendEvent API](https://developer.adobe.com/client-sdks/edge/edge-network/tutorials/send-overrides-sendevent/)或使用[Rules](https://developer.adobe.com/client-sdks/edge/edge-network/tutorials/send-overrides-rules/)发送数据流ID覆盖。
 
 ## 负载示例 {#payload-example}
 

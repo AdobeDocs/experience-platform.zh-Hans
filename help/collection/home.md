@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 数据收集概述
 description: 了解在Adobe Experience Platform中收集客户体验数据涉及的各种技术。
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
 source-wordcount: '479'
-ht-degree: 4%
+ht-degree: 3%
 
 ---
 
@@ -29,7 +29,7 @@ Adobe Experience Platform提供了一套方法，可让您从客户端源收集�
 * [事件转发](../tags/ui/event-forwarding/overview.md)
 * [Adobe Experience Platform Web SDK](../web-sdk/home.md)
 * [Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/)
-* [边缘网络服务器 API](../server-api/overview.md)
+* [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/)
 * [Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob?hl=en)
 * [Experience Platform Assurance](../assurance/home.md)
 

@@ -3,7 +3,7 @@ title: Snapchat Conversions API扩展概述
 description: 使用Snapchat转换将服务器端事件数据发送到Snap。
 last-substantial-update: 2025-01-20T00:00:00Z
 exl-id: 1c2d7243-5bcd-40a0-8515-9ab72613c5f3
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
 source-wordcount: '966'
 ht-degree: 2%
@@ -12,7 +12,7 @@ ht-degree: 2%
 
 # [!DNL Snapchat]转化API扩展概述
 
-[!DNL Snap]转换API扩展是一个安全的[Edge Network服务器API](/help/server-api/overview.md)接口，它允许您直接与[!DNL Snapchat]共享有关您网站上的用户操作的信息。 您可以使用&#x200B;**[!DNL Snap]**&#x200B;转换API扩展利用事件转发规则将数据从&#x200B;**[!DNL Adobe Experience Platform Edge Network]**&#x200B;发送到&#x200B;**[!DNL Snapchat]**。
+[!DNL Snap]转换API扩展是一个安全的[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/)接口，允许您直接与[!DNL Snapchat]共享有关您网站上的用户操作的信息。 您可以使用&#x200B;**[!DNL Snap]**&#x200B;转换API扩展利用事件转发规则将数据从&#x200B;**[!DNL Adobe Experience Platform Edge Network]**&#x200B;发送到&#x200B;**[!DNL Snapchat]**。
 
 ## [!DNL Snapchat]先决条件 {#prerequisites}
 

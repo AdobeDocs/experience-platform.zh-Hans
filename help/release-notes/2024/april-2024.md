@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2024 年 4 月）
 description: Adobe Experience Platform 的 2024 年 4 月发行说明。
 exl-id: 86d72fd8-a464-4715-abc9-4177236e423c
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
-workflow-type: ht
-source-wordcount: '1899'
-ht-degree: 100%
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
+workflow-type: tm+mt
+source-wordcount: '1896'
+ht-degree: 97%
 
 ---
 
@@ -52,7 +52,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 | 类型 | 功能 | 描述 |
 | --- | --- | --- |
 | 扩展 | [!DNL Acxiom Anonymous Visitor Insights] 标记扩展 | 使用 [!DNL Acxiom's Visitor Insights]了解您的网站访问者来自哪里。通过利用地理 IP 查找技术，Acxiom 可以精确定位匿名浏览器的位置。一旦确定，在其组织的数据库中进行搜索就会产生额外的洞察，并将其发送回浏览器。内容创建者因此可以定制他们的内容来匹配这些数据点，为访问者提供更加个性化和更具吸引力的体验，即使他们一开始是陌生人。 |
-| 数据流 | [Edge Network 机器人检测](../../datastreams/bot-detection.md) | 来自非人类实体（例如自动程序、网络爬虫、蜘蛛、脚本扫描器）的流量会使识别来自人类访问者的事件变得更加困难。这种类型的流量会对重要的业务指标产生负面影响，导致流量报告不正确。通过机器人检测，可将 Web SDK、Mobile SDK 和 Server API 生成的事件视为由已知的蜘蛛程序和机器人生成。<br>机器人检测允许您识别由 [Web SDK](../../web-sdk/home.md)、[Mobile SDK](https://developer.adobe.com/client-sdks/home/) 和 [[!DNL Server API]](../../server-api/overview.md) 生成的事件是否由已知的蜘蛛和机器人生成。通过为数据流配置机器人检测，您可以识别想要归类为机器人事件的特定 IP 地址、IP 范围和请求标头。<br> 识别机器人流量可以为您提供对网站或移动应用程序上用户活动的更准确测量。 |
+| 数据流 | [Edge Network 机器人检测](../../datastreams/bot-detection.md) | 来自非人类实体（例如自动程序、网络爬虫、蜘蛛、脚本扫描器）的流量会使识别来自人类访问者的事件变得更加困难。这种类型的流量会对重要的业务指标产生负面影响，导致流量报告不正确。<br>机器人检测允许您识别由[Web SDK](../../web-sdk/home.md)、[Mobile SDK](https://developer.adobe.com/client-sdks/home/)和[[!DNL Edge Network API]](https://developer.adobe.com/data-collection-apis/docs/getting-started/)生成的事件，这些事件是由已知的蜘蛛程序和机器人生成的。 通过为数据流配置机器人检测，您可以识别想要归类为机器人事件的特定 IP 地址、IP 范围和请求标头。<br> 识别机器人流量可以为您提供对网站或移动应用程序上用户活动的更准确测量。 |
 | Mobile SDK | 主要版本发布 | 已针对以下平台发布了 Mobile SDK 的新主要版本：iOS Mobile Core 5.x 和兼容的 iOS 扩展、Android Mobile Core 3.x 和兼容的Android 扩展、React Native Core 6.x 和兼容的 React Native 扩展、Flutter Core 4.x 和兼容的 Flutter 扩展。这些版本提供了几个新功能和增强功能，包括 Android SDK 对 Jetpack Compose 的支持、对 Adobe Journey Optimizer 基于代码的体验的支持以及对 Flutter 的 Adobe Journey Optimizer Messaging 扩展的普遍可用性。有关更详细的发行说明，请参阅[移动 SDK 发行说明](https://developer.adobe.com/client-sdks/home/release-notes/)。 |
 | Mobile SDK | 隐私 | 由于Apple 的政策更新，从 2024 年 5 月 1 日开始，开发人员必须实现新的隐私功能才能提交给 App Store。所有使用移动 SDK 的 Adobe 客户如果希望在 5 月 1 日之后获得 App Store 批准，都需要升级到 SDK 5.x 版本。 |
 | Roku SDK | Roku SDK | Roku SDK 的第一个主要版本已经发布，支持 Experience Platform Edge Network 的流媒体。 |
@@ -69,13 +69,13 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 [!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
-**新增或更新的功能**{#destinations-new-updated-functionality}
+**新功能或更新功能** {#destinations-new-updated-functionality}
 
 | 功能 | 描述 |
 | ----------- | ----------- |
 | `isRequired` 参数现在可用于 Destination SDK 中的嵌套客户数据字段 | 在 Destination SDK 中配置目标时，您现在可以[根据需要设置嵌套的客户数据字段](/help/destinations/destination-sdk/functionality/destination-configuration/customer-data-fields.md#nested-fields)。这样，设置目标的用户在为该字段选择一个值之前无法继续他们的激活流程。 |
 | 使用 Web SDK 设置 Adobe Target 目标时，边缘分段不再是强制性要求 | 以前，在配置 [Adobe Target 目标](/help/destinations/catalog/personalization/adobe-target-connection.md)使用 Web SDK，数据流必须能够实现个性化和边缘分段。要求数据流能够进行边缘分段[已被删除](/help/destinations/ui/activate-edge-personalization-destinations.md#configure-datastream)。请注意，当使用 Adobe Target 与实时 CDP 时，此集成模式仅允许您从个性化用例的子集中受益。阅读更多关于[集成类型支持的用例](/help/destinations/catalog/personalization/adobe-target-connection.md#supported-use-cases)。 |
-| [!BADGE Beta]{type=Informative} 从激活流程中删除多个受众和数据集 | 您现在可以从目标激活流中选择和删除多个受众和数据集。查看[目标详情](../../destinations/ui/destination-details-page.md#bulk-remove)和[数据集导出](../../destinations/ui/export-datasets.md)文档以了解更多详细信息。 |
+| [!BADGE Beta]{type=Informative}从激活流程中删除多个受众和数据集 | 您现在可以从目标激活流中选择和删除多个受众和数据集。查看[目标详情](../../destinations/ui/destination-details-page.md#bulk-remove)和[数据集导出](../../destinations/ui/export-datasets.md)文档以了解更多详细信息。 |
 
 {style="table-layout:auto"}
 

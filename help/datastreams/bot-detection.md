@@ -2,9 +2,9 @@
 title: 为数据流配置机器人检测
 description: 了解如何为数据流配置机器人检测，以区分人类和非人类流量。
 exl-id: 6b221d97-0145-4d3e-a32d-746d72534add
-source-git-commit: e3768a3f695abeedc9a3ce2fef591c6ecae9a897
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '1358'
+source-wordcount: '1359'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 来自自动化程序、网页抓取程序、蜘蛛程序和脚本扫描程序的非人为流量可能会使识别来自人为访客的事件变得困难。 此类流量可能会对重要的业务量度产生负面影响，从而导致不正确的流量报表。
 
-机器人检测允许您识别由已知蜘蛛程序和机器人生成的[Web SDK](../web-sdk/home.md)、[Mobile SDK](https://developer.adobe.com/client-sdks/home/)和[[!DNL Server API]](../server-api/overview.md)生成的事件。
+机器人检测允许您识别由[Web SDK](../web-sdk/home.md)、[Mobile SDK](https://developer.adobe.com/client-sdks/home/)和[[!DNL Edge Network API]](https://developer.adobe.com/data-collection-apis/docs/api/)生成的事件，这些事件是由已知的蜘蛛程序和机器人生成的。
 
 通过为数据流配置机器人检测，您可以识别特定的IP地址、IP范围和请求标头，以分类为机器人事件。 这有助于更准确地测量您的网站或移动应用程序上的用户活动。
 
@@ -35,7 +35,7 @@ ht-degree: 0%
 >
 >Adobe解决方案可能会以不同的方式处理机器人评分。 例如，Adobe Analytics使用自己的[机器人过滤服务](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/bot-removal/bot-rules.html)，而不使用Edge Network设置的分数。 这两个服务使用相同的[IAB机器人列表](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/)，因此机器人得分相同。
 
-机器人检测规则在创建后最多可能需要15分钟才能在Edge Network中传播。
+机器人检测规则在创建后可能需要15分钟才能在Edge Network中传播。
 
 ## 先决条件 {#prerequisites}
 
@@ -90,9 +90,9 @@ ht-degree: 0%
 | `sec-ch-ua-mobile` | 指示浏览器是否位于移动设备上。 桌面浏览器也可以使用此参数来指示移动设备用户体验的偏好设置。 |
 | `sec-ch-ua-platform` | 提供运行用户代理的平台或操作系统。 例如：“Windows”或“Android”。 |
 | `sec-ch-ua-platform-version` | 提供运行用户代理的操作系统的版本。 |
-| `sec-ch-ua-arch` | 提供用户代理的底层CPU体系结构，如ARM或x86。 |
+| `sec-ch-ua-arch` | 提供user-agent的底层CPU体系结构，如ARM或x86。 |
 | `sec-ch-ua-model` | 指示运行浏览器的设备型号。 |
-| `sec-ch-ua-bitness` | 提供user-agent的底层CPU体系结构的“位数”。 这是整数或内存地址的大小（通常为64位或32位）。 |
+| `sec-ch-ua-bitness` | 提供user-agent的底层CPU架构的“位数”。 这是整数或内存地址的大小（通常为64位或32位）。 |
 | `sec-ch-ua-wow64` | 指示用户代理二进制文件是否在64位Windows上以32位模式运行。 |
 
 要创建机器人检测规则，请执行以下步骤：

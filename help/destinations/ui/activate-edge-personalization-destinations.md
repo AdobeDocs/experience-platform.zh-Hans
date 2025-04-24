@@ -3,9 +3,9 @@ title: 激活受众以边缘个性化目标
 description: 了解如何为同一页面和下一页面个性化用例将受众从Adobe Experience Platform激活到边缘个性化目标。
 type: Tutorial
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 25697d341b2970eeb20d9f2507ee701ade8046d3
 workflow-type: tm+mt
-source-wordcount: '1961'
+source-wordcount: '1964'
 ht-degree: 2%
 
 ---
@@ -150,9 +150,9 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/ed
 
 >[!IMPORTANT]
 >
->配置文件属性可能包含敏感数据。 为了保护此数据，**[!UICONTROL 自定义Personalization]**&#x200B;目标要求您在为基于属性的个性化配置目标时使用[Edge Network服务器API](../../server-api/overview.md)。 所有服务器API调用必须在[经过身份验证的上下文](../../server-api/authentication.md)中进行。
+>配置文件属性可能包含敏感数据。 为了保护此数据，**[!UICONTROL 自定义Personalization]**&#x200B;目标要求您在为基于属性的个性化配置目标时使用[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/)。 所有Edge Network API调用必须在[经过身份验证的上下文](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication/)中进行。
 >
-><br>如果您已在使用Web SDK或Mobile SDK进行集成，则可以通过添加服务器端集成来通过服务器API检索属性。
+><br>如果您已在使用Web SDK或Mobile SDK进行集成，则可以通过添加服务器端集成来通过Edge Network API检索属性。
 >
 ><br>如果不遵循上述要求，则仅基于受众成员资格进行个性化。
 
