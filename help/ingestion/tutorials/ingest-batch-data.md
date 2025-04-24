@@ -5,7 +5,7 @@ title: 将数据摄取到Experience Platform
 type: Tutorial
 description: 通过Adobe Experience Platform，您可以轻松地将数据作为Parquet文件形式的批处理文件或符合已知Experience Data Model (XDM)架构的数据导入。
 exl-id: a4a7358d-b117-4d81-8cb0-3dbbfeccdcbd
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 31631b03b6ff1e50e55c01e948fae5c29fd618dd
 workflow-type: tm+mt
 source-wordcount: '1322'
 ht-degree: 0%
@@ -78,7 +78,7 @@ Adobe Experience Platform允许您将数据作为批处理文件轻松导入[!DN
 
 ![数据集活动](../images/tutorials/ingest-batch-data/sample-dataset.png)
 
-## 为[!DNL Real-Time Customer Profile]启用数据集
+## 为[!DNL Real-Time Customer Profile]启用数据集 {#enable-for-profile}
 
 数据集用于将数据摄取到[!DNL Experience Platform]，该数据最终用于识别个人并将来自多个来源的信息拼合在一起。 将信息拼合在一起称为[!DNL Real-Time Customer Profile]。 为了让[!DNL Experience Platform]知道哪些信息应包含在[!DNL Real-Time Profile]中，可以使用&#x200B;**[!UICONTROL 配置文件]**&#x200B;切换将数据集标记为包含。
 

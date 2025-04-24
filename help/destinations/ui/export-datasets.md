@@ -3,9 +3,9 @@ title: 将数据集导出到云存储目标
 type: Tutorial
 description: 了解如何将数据集从Adobe Experience Platform导出到您首选的云存储位置。
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 29fb232ecfbd119ef84d62599fc79249513dca43
+source-git-commit: 31631b03b6ff1e50e55c01e948fae5c29fd618dd
 workflow-type: tm+mt
-source-wordcount: '2703'
+source-wordcount: '2732'
 ht-degree: 7%
 
 ---
@@ -104,7 +104,10 @@ Experience Platform目录中的一些基于文件的目标同时支持Audience A
 
 ## 先决条件 {#prerequisites}
 
-要将数据集导出到云存储目标，您必须已成功[连接到目标](./connect-destination.md)。 如果您尚未这样做，请转到[目标目录](../catalog/overview.md)，浏览支持的目标，然后配置要使用的目标。
+要导出数据集，请注意以下先决条件：
+
+* 要将数据集导出到云存储目标，您必须已成功[连接到目标](./connect-destination.md)。 如果您尚未这样做，请转到[目标目录](../catalog/overview.md)，浏览支持的目标，然后配置要使用的目标。
+* 需要启用配置文件数据集才能在实时客户配置文件中使用。 [阅读更多](/help/ingestion/tutorials/ingest-batch-data.md#enable-for-profile)以了解如何启用此选项。
 
 ### 所需的权限 {#permissions}
 
