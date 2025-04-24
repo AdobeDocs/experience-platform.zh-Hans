@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform；主页；热门主题；批量摄取；批量摄取；摄取；开发人员指南；API指南；上传；摄取Parquet；摄取JSON；
+keywords: Experience Platform；主页；热门主题；批量摄取；批量摄取；开发人员指南；API指南；上传；摄取Parquet；摄取JSON；
 solution: Experience Platform
 title: 批量摄取API指南
 description: 本文档为使用Adobe Experience Platform的批量摄取API的开发者提供全面的指南。
 exl-id: 4ca9d18d-1b65-4aa7-b608-1624bca19097
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: 0e484dffa38d454561f9d67c6bea92f426d3515d
 workflow-type: tm+mt
-source-wordcount: '2383'
-ht-degree: 5%
+source-wordcount: '2435'
+ht-degree: 4%
 
 ---
 
@@ -27,7 +27,9 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->以下步骤适用于小文件（256 MB或更小）。 如果遇到网关超时或请求正文大小错误，则需要切换到大型文件上传。
+>- 以下步骤适用于小文件（256 MB或更小）。 如果遇到网关超时或请求正文大小错误，则需要切换到大型文件上传。
+>
+>- 使用单行JSON而不是多行JSON作为批量摄取的输入。 单行JSON可以提高性能，因为系统可以将一个输入文件划分为多个块并并行处理，而多行JSON无法拆分。 这可以显着降低数据处理成本并改善批处理延迟。
 
 ### 创建批次
 
@@ -720,7 +722,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ## 删除批次 {#delete-a-batch}
 
-可以通过以下对要删除的批次ID使用`action=REVERT`查询参数执行的POST请求来删除批次。 该批次被标记为“不活动”，因此可用于垃圾收集。 该批次将异步收集，然后将其标记为“已删除”。
+通过执行POST请求，使用要删除的批次ID的`action=REVERT`查询参数，可以删除批次。 该批次被标记为“不活动”，因此可用于垃圾收集。 该批次将异步收集，然后将其标记为“已删除”。
 
 **API格式**
 
@@ -915,7 +917,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ## 附录
 
-以下部分包含有关使用批量摄取在Experience Platform中摄取数据的其他信息。
+以下部分包含有关在Experience Platform中使用批量摄取来摄取数据的其他信息。
 
 ### 用于批量摄取的数据转换
 
