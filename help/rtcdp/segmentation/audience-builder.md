@@ -7,7 +7,7 @@ exl-id: da87baad-b82a-4a45-89c3-cf20d66fe657
 source-git-commit: 3829f506d0b4d78b543b949e8e11806d8fe10b9c
 workflow-type: tm+mt
 source-wordcount: '983'
-ht-degree: 0%
+ht-degree: 8%
 
 ---
 
@@ -21,18 +21,18 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_b2b_audiencebuilder_showfullxdmschema"
->title="显示完整XDM架构"
->abstract="默认情况下，仅显示包含数据的字段。 启用此选项以显示XDM架构中的所有字段。"
+>title="显示完整 XDM 架构"
+>abstract="默认情况下，仅显示包含数据的字段。启用此选项可显示 XDM 架构中的所有字段。"
 
 >[!CONTEXTUALHELP]
 >id="platform_b2b_audiencebuilder_showrelationselectors"
 >title="显示关系选择器"
->abstract="默认情况下，会使用组织的标准关系。 启用此选项以显示使用的关系选择器。"
+>abstract="默认情况下会使用您组织的标准关系。启用此选项可以显示所使用的关系选择器。"
 
 >[!CONTEXTUALHELP]
 >id="platform_b2b_audiencebuilder_showconstrainedfields"
->title="显示受约束的字段"
->abstract="默认情况下，仅显示没有任何约束的字段。 启用此选项可显示具有约束的字段。"
+>title="显示受限字段"
+>abstract="默认情况下，仅显示没有任何约束的字段。启用此选项可显示具有约束的字段。"
 
 在将Audience Builder用于帐户时，您可以使用帐户属性或现有受众作为受众的字段。
 

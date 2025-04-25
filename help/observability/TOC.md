@@ -1,13 +1,13 @@
 ---
 audience: user
 user-guide-title: Observability Insights 指南
-user-guide-description: 了解如何使用来自Experience Platform Observability Insights的统计指标和事件通知监控Adobe Experience Platform活动。
+user-guide-description: 了解如何使用 Adobe Experience Platform Observability Insights 中的统计量度和事件通知监控 Experience Platform 活动。
 feature: Observability
 role: Developer
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
 source-wordcount: '57'
-ht-degree: 31%
+ht-degree: 68%
 
 ---
 

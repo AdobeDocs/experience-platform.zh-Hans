@@ -6,7 +6,7 @@ exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
 source-git-commit: 3829f506d0b4d78b543b949e8e11806d8fe10b9c
 workflow-type: tm+mt
 source-wordcount: '5024'
-ht-degree: 8%
+ht-degree: 9%
 
 ---
 
@@ -29,13 +29,13 @@ ht-degree: 8%
 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_segmentbuilder_showfullxdmschema"
->title="显示完整XDM架构"
->abstract="默认情况下，仅显示包含数据的字段。 启用此选项以显示XDM架构中的所有字段。"
+>title="显示完整 XDM 架构"
+>abstract="默认情况下，仅显示包含数据的字段。启用此选项可显示 XDM 架构中的所有字段。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_segmentbuilder_showdeprecatedfields"
 >title="显示弃用的字段"
->abstract="默认情况下，不显示已弃用的XDM字段。 启用此选项可显示已弃用的XDM字段。"
+>abstract="默认情况下不显示已弃用的 XDM 字段。启用此选项可显示已弃用的 XDM 字段。"
 
 区段定义的基本构建块是属性和事件。 此外，现有受众中包含的属性和事件还可以用作新定义的组件。
 
