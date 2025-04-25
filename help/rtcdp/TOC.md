@@ -5,9 +5,9 @@ audience: user
 user-guide-title: Real-Time Customer Data Platform 指南
 user-guide-description: 合并多个企业来源的已知数据和匿名数据，以创建客户轮廓、从这些轮廓创建受众，以及将这些受众激活到第三方目标。
 role: Admin
-source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
+source-git-commit: ba2154e84f24ddf4ec270121bdcbb6dd5d3dff42
 workflow-type: tm+mt
-source-wordcount: '307'
+source-wordcount: '305'
 ht-degree: 63%
 
 ---
@@ -80,7 +80,7 @@ ht-degree: 63%
       * [在不依赖第三方Cookie的情况下吸引和获取新客户](/help/rtcdp/partner-data/prospecting.md)
       * [使用合作伙伴辅助的访客识别功能，为未知访客提供个性化的现场体验](/help/rtcdp/partner-data/onsite-personalization.md)
       * [未经身份验证的用户异地重定向](./partner-data/offsite-retargeting.md)
-      * [未经身份验证的用户异地重定向](./partner-data/unauthenticated-retargeting.md)
+      * [未经身份验证的服务器端重定位](./partner-data/unauthenticated-retargeting.md)
    * 轮廓扩充 {#profile-enrichment}
       * [用合作伙伴提供的属性补充第一方轮廓](/help/rtcdp/partner-data/supplement-first-party-profiles.md)
    * 个性化洞察和参与 {#personalization-insights-engagement}

@@ -1,15 +1,16 @@
 ---
-title: 未经身份验证的访客的异地重定位
+title: 未经身份验证的服务器端重定位
 description: 了解如何使用ECID重新定位未经身份验证的用户
 feature: Use Cases, Customer Acquisition
-source-git-commit: 672b15b0c36efbf3b7d62ec616f254fffe3dbb81
+exl-id: 008f4534-29e7-49b9-b0be-9e0c3962ee21
+source-git-commit: ba2154e84f24ddf4ec270121bdcbb6dd5d3dff42
 workflow-type: tm+mt
-source-wordcount: '640'
+source-wordcount: '639'
 ht-degree: 0%
 
 ---
 
-# 未经验证的重定位 {#unauthenticated-retargeting}
+# 未经身份验证的服务器端重定位 {#unauthenticated-retargeting}
 
 随着第三方Cookie失效，企业正在过渡到无Cookie解决方案以实现个性化参与和重新定位。 异地重定位使企业能够根据以前的互动接触高意图用户，而无需依赖客户端JavaScript。
 
