@@ -2,9 +2,9 @@
 title: 使用流服务API筛选Source的行级数据
 description: 本教程介绍了有关如何使用流服务API在源级别过滤数据的步骤
 exl-id: 224b454e-a079-4df3-a8b2-1bebfb37d11f
-source-git-commit: 67abd5cda9cff1da8757ef691ebbf27e9a5550c5
+source-git-commit: fe7025b7e48634232d823f8380610c6409b2d4b1
 workflow-type: tm+mt
-source-wordcount: '1825'
+source-wordcount: '1823'
 ht-degree: 4%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 4%
 >
 >目前，仅对以下源支持筛选行级数据：
 >
->* [[Amazon Redshift]](../../connectors/databases/redshift.md)
+>* [[!DNL Amazon Redshift]](../../connectors/databases/redshift.md)
 >* [[!DNL Google BigQuery]](../../connectors/databases/bigquery.md)
 >* [[!DNL Marketo Engage] 标准活动](../../connectors/adobe-applications/marketo/marketo.md)
 >* [[!DNL Microsoft Dynamics]](../../connectors/crm/ms-dynamics.md)
