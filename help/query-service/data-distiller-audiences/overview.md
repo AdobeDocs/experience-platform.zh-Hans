@@ -2,10 +2,10 @@
 title: 使用SQL构建受众
 description: 了解如何在Adobe Experience Platform的Data Distiller中使用SQL受众扩展来使用SQL命令创建、管理和发布受众。 本指南涵盖受众生命周期的所有方面，包括创建、更新和删除用户档案，以及使用数据驱动的受众定义来定位基于文件的目标。
 exl-id: c35757c1-898e-4d65-aeca-4f7113173473
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 9e16282f9f10733fac9f66022c521684f8267167
 workflow-type: tm+mt
-source-wordcount: '1485'
-ht-degree: 1%
+source-wordcount: '1833'
+ht-degree: 2%
 
 ---
 
@@ -100,6 +100,97 @@ SELECT select_query
 INSERT INTO Audience aud_test
 SELECT userId, orders, total_revenue, recency, frequency, monetization FROM customer_ds;
 ```
+
+### 替换受众数据（插入覆盖） {#replace-audience}
+
+使用`INSERT OVERWRITE INTO`命令将受众中的所有现有配置文件替换为新SQL查询的结果。 通过允许您在单个步骤中完全刷新受众的内容，此命令可用于管理动态受众区段。
+
+>[!AVAILABILITY]
+>
+>`INSERT OVERWRITE INTO`命令仅适用于Data Distiller客户。 要了解有关Data Distiller加载项的更多信息，请联系您的Adobe代表。
+
+与添加到当前受众的[`INSERT INTO`](#add-profiles-to-audience)不同，`INSERT OVERWRITE INTO`将删除所有现有受众成员，并仅插入由查询返回的成员。 在管理需要频繁或完整更新的受众时，这提供了更好的控制和灵活性。
+
+使用以下语法模板使用一组新配置文件覆盖受众：
+
+```sql
+INSERT OVERWRITE INTO audience_name
+SELECT select_query
+```
+
+**参数**
+
+下表说明了`INSERT OVERWRITE INTO`命令所需的参数：
+
+| 参数 | 描述 |
+|-----------|-------------|
+| `audience_name` | 使用`CREATE AUDIENCE`命令创建的受众的名称。 |
+| `select_query` | 定义要包含在受众中的配置文件的`SELECT`语句。 |
+
+**示例：**
+
+在此示例中，`audience_monthly_refresh`受众被查询结果完全覆盖。 查询未返回的任何用户档案都将从受众中删除。
+
+>[!NOTE]
+>
+>要正确执行覆盖操作，必须只有一个与受众关联的批次上传。
+
+```sql
+INSERT OVERWRITE INTO audience_monthly_refresh
+SELECT user_id FROM latest_transaction_summary WHERE total_spend > 100;
+```
+
+#### 受众覆盖实时客户个人资料中的行为
+
+在覆盖受众时，Real-time Customer Profile会应用以下逻辑来更新配置文件成员资格：
+
+- 仅在新批次中显示的配置文件将标记为已输入。
+- 仅存在于上一批次中的用户档案将标记为已退出。
+- 两个批次中存在的配置文件保持不变（不执行任何操作）。
+
+这可确保在下游系统和工作流中准确反映受众更新。
+
+**示例方案**
+
+如果受众`A1`最初包含：
+
+| ID | 名称 |
+|----|------|
+| A | Jack |
+| B | John |
+| C | 玛莎 |
+
+覆盖查询会返回：
+
+| ID | 名称 |
+|----|------|
+| A | 斯图尔特 |
+| C | 玛莎 |
+
+然后，更新的受众将包含：
+
+| ID | 名称 |
+|----|------|
+| A | 斯图尔特 |
+| C | 玛莎 |
+
+配置文件B被删除，配置文件A被更新，配置文件C保持不变。
+
+如果覆盖查询包含新配置文件：
+
+| ID | 名称 |
+|----|------|
+| A | 斯图尔特 |
+| C | 玛莎 |
+| D | 克里斯 |
+
+最终受众将为：
+
+| ID | 名称 |
+|----|------|
+| A | 斯图尔特 |
+| C | 玛莎 |
+| D | 克里斯 |
 
 ### RFM模型受众示例 {#rfm-model-audience-example}
 
