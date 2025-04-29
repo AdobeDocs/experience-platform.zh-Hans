@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 假名配置文件数据过期
 description: 本文档提供有关在Adobe Experience Platform中为假名配置文件配置数据过期的一般指导。
 exl-id: e8d31718-0b50-44b5-a15b-17668a063a9c
-source-git-commit: 07786ad7f43c66411e9e167c17daa2baf51a2661
+source-git-commit: aeb9d6636f0d843bf13d09bcb4c12754e2890046
 workflow-type: tm+mt
 source-wordcount: '1245'
 ht-degree: 4%
@@ -138,3 +138,4 @@ Experience Event数据过期时间&#x200B;**仅**&#x200B;删除事件并&#x200B;
 ## 后续步骤
 
 阅读本指南后，您将了解如何查看和创建假名配置文件数据过期日期。 有关整个Experience Platform上的数据管理的更多信息，请阅读[数据管理许可证权利最佳实践指南](../landing/license-usage-and-guardrails/data-management-best-practices.md)。
+
