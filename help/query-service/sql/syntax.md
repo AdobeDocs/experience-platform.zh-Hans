@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 查询服务中的SQL语法
 description: 本文档详细介绍并说明Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 654a8b6a3f961514ef96eaec879697cde36f8b1b
+source-git-commit: 5adc587a232e77f1136410f52ec207631b6715e3
 workflow-type: tm+mt
-source-wordcount: '4265'
-ht-degree: 2%
+source-wordcount: '4623'
+ht-degree: 1%
 
 ---
 
@@ -192,32 +192,141 @@ SELECT statement 2
 
 ### 创建表作为选择 {#create-table-as-select}
 
-以下语法定义了`CREATE TABLE AS SELECT` (CTAS)查询：
+使用`CREATE TABLE AS SELECT` (CTAS)命令将`SELECT`查询的结果实体化为新表。 这有助于在模型中使用特征工程数据之前创建转换的数据集、执行聚合或预览特征工程数据。
+
+如果您已准备好使用转换的功能训练模型，请参阅[模型文档](../advanced-statistics/models.md)以了解有关将`CREATE MODEL`与`TRANSFORM`子句结合使用的指导。
+
+您可以选择包含`TRANSFORM`子句以直接在CTAS语句中应用一个或多个功能工程函数。 使用`TRANSFORM`在模型训练之前检查转换逻辑的结果。
+
+此语法适用于永久表和临时表。
 
 ```sql
-CREATE TABLE table_name [ WITH (schema='target_schema_title', rowvalidation='false', label='PROFILE') ] AS (select_query)
+CREATE TABLE table_name 
+  [WITH (schema='target_schema_title', rowvalidation='false', label='PROFILE')] 
+  [TRANSFORM (transformFunctionExpression1, transformFunctionExpression2, ...)]
+AS (select_query)
+```
+
+```sql
+CREATE TEMP TABLE table_name 
+  [WITH (schema='target_schema_title', rowvalidation='false', label='PROFILE')] 
+  [TRANSFORM (transformFunctionExpression1, transformFunctionExpression2, ...)]
+AS (select_query)
 ```
 
 | 参数 | 描述 |
 | ----- | ----- |
-| `schema` | XDM架构的标题。 仅当您希望为CTAS查询创建的新数据集使用现有XDM架构时，才使用此子句。 |
-| `rowvalidation` | （可选）指定用户是否希望对新创建的数据集摄取的每个新批次进行行级验证。 默认值为 `true`。 |
-| `label` | 当您使用CTAS查询创建数据集时，使用此值为`profile`的标签将您的数据集标记为已为配置文件启用。 这意味着您的数据集会在创建时自动标记为用户档案。 有关使用`label`的详细信息，请参阅派生属性扩展文档。 |
-| `select_query` | `SELECT`语句。 `SELECT`查询的语法可在[SELECT查询节](#select-queries)中找到。 |
-
-**示例**
-
-```sql
-CREATE TABLE Chairs AS (SELECT color, count(*) AS no_of_chairs FROM Inventory i WHERE i.type=="chair" GROUP BY i.color)
-
-CREATE TABLE Chairs WITH (schema='target schema title', label='PROFILE') AS (SELECT color, count(*) AS no_of_chairs FROM Inventory i WHERE i.type=="chair" GROUP BY i.color)
-
-CREATE TABLE Chairs AS (SELECT color FROM Inventory SNAPSHOT SINCE 123)
-```
+| `schema` | XDM架构的标题。 仅当您希望将新表与现有XDM架构关联时，才使用此子句。 |
+| `rowvalidation` | （可选）为摄取到数据集的每个批次启用行级验证。 默认值为true。 |
+| `label` | （可选）使用值`PROFILE`将数据集标记为已启用配置文件摄取。 |
+| `transform` | （可选）在具体化数据集之前应用特征工程转换（如字符串索引、单热编码或TF-IDF）。 此子句用于预览转换后的特征。 有关详细信息，请参阅[`TRANSFORM`子句文档](#transform)。 |
+| `select_query` | 定义数据集的标准`SELECT`语句。 有关详细信息，请参阅[`SELECT`查询部分](#select-queries)。 |
 
 >[!NOTE]
 >
->`SELECT`语句必须具有聚合函数的别名，如`COUNT`、`SUM`、`MIN`等。 此外，`SELECT`语句可以带有或不带有括号()。 您可以提供`SNAPSHOT`子句以将增量增量增量增量读入目标表。
+>`SELECT`语句必须包含聚合函数（如`COUNT`、`SUM`或`MIN`）的别名。 您可以提供`SELECT`查询，无论是否带有圆括号。 无论是否使用`TRANSFORM`子句，均适用。
+
+**示例**
+
+使用`TRANSFORM`子句预览一些工程功能的基本示例：
+
+```sql
+CREATE TABLE ctas_transform_table_vp14 
+TRANSFORM(
+  String_Indexer(additional_comments) si_add_comments,
+  one_hot_encoder(si_add_comments) as ohe_add_comments,
+  tokenizer(comments) as token_comments
+)
+AS SELECT * FROM movie_review_e2e_DND;
+```
+
+更高级的示例，其中包含多个转换步骤：
+
+```sql
+CREATE TABLE ctas_transform_table 
+TRANSFORM(
+  String_Indexer(additional_comments) si_add_comments,
+  one_hot_encoder(si_add_comments) as ohe_add_comments,
+  tokenizer(comments) as token_comments,
+  stop_words_remover(token_comments, array('and','very','much')) stp_token,
+  ngram(stp_token, 3) ngram_token,
+  tf_idf(ngram_token, 20) ngram_idf,
+  count_vectorizer(stp_token, 13) cnt_vec_comments,
+  tf_idf(token_comments, 10, 1) as cmts_idf
+)
+AS SELECT * FROM movie_review;
+```
+
+临时表示例：
+
+```sql
+CREATE TEMP TABLE ctas_transform_table 
+TRANSFORM(
+  String_Indexer(additional_comments) si_add_comments,
+  one_hot_encoder(si_add_comments) as ohe_add_comments,
+  tokenizer(comments) as token_comments,
+  stop_words_remover(token_comments, array('and','very','much')) stp_token,
+  ngram(stp_token, 3) ngram_token,
+  tf_idf(ngram_token, 20) ngram_idf,
+  count_vectorizer(stp_token, 13) cnt_vec_comments,
+  tf_idf(token_comments, 10, 1) as cmts_idf
+)
+AS SELECT * FROM movie_review;
+```
+
+#### 限制和行为 {#limitations-and-behavior}
+
+在将`TRANSFORM`子句与`CREATE TABLE`或`CREATE TEMP TABLE`一起使用时，请记住以下限制：
+
+- 如果有任何变换函数生成矢量输出，则它会自动转换为数组。
+- 因此，使用`TRANSFORM`创建的表不能直接在`CREATE MODEL`语句中使用。 必须在模型创建期间重新定义转换逻辑，以生成相应的特征向量。
+- 转换仅在表创建期间应用。 插入到具有`INSERT INTO`的表中的新数据是&#x200B;**未自动转换**。 要将转换应用到新数据，必须使用带有`TRANSFORM`子句的`CREATE TABLE AS SELECT`重新创建表。
+- 此方法旨在预览和验证某个时间点的转换，而不是构建可重用的转换管道。
+
+>[!NOTE]
+>
+>有关可用转换函数及其输出类型的更多详细信息，请参阅[功能转换输出数据类型](../advanced-statistics/feature-transformation.md#available-transformations)。
+
+
+### TRANSFORM子句 {#transform}
+
+使用`TRANSFORM`子句在模型训练或表创建之前将一个或多个功能工程函数应用到数据集。 此子句允许您预览、验证或定义输入特征的确切形状。
+
+`TRANSFORM`子句可用于以下语句：
+
+- `CREATE MODEL`
+- `CREATE TABLE`
+- `CREATE TEMP TABLE`
+
+有关使用CREATE MODEL的详细说明，包括如何定义转换、设置模型选项和配置训练数据，请参阅[模型文档](../advanced-statistics/models.md)。
+
+有关`CREATE TABLE`的使用情况，请参阅[CREATE TABLE AS SELECT部分](#create-table-as-select)。
+
+#### 创建模型示例
+
+```sql
+CREATE MODEL review_model
+TRANSFORM(
+  String_Indexer(additional_comments) si_add_comments,
+  one_hot_encoder(si_add_comments) AS ohe_add_comments,
+  tokenizer(comments) AS token_comments,
+  stop_words_remover(token_comments, array('and','very','much')) AS stp_token,
+  ngram(stp_token, 3) AS ngram_token,
+  tf_idf(ngram_token, 20) AS ngram_idf,
+  count_vectorizer(stp_token, 13) AS cnt_vec_comments,
+  tf_idf(token_comments, 10, 1) AS cmts_idf,
+  vector_assembler(array(cmts_idf, viewsgot, ohe_add_comments, ngram_idf, cnt_vec_comments)) AS features
+)
+OPTIONS(MODEL_TYPE='logistic_reg', LABEL='reviews')
+AS SELECT * FROM movie_review_e2e_DND;
+```
+
+#### 限制 {#limitations}
+
+以下限制适用于将`TRANSFORM`与`CREATE TABLE`一起使用的情况。 请参阅`CREATE TABLE AS SELECT`限制和行为部分，详细解释如何存储转换后的数据、如何处理矢量输出以及为什么无法在模型训练工作流中直接重用结果。
+
+- 矢量输出自动转换为数组，不能直接在`CREATE MODEL`中使用。
+- 转换逻辑不会作为元数据保留，并且无法跨批次重用。
 
 ## 插入到
 
