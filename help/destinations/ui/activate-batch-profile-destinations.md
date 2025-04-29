@@ -3,9 +3,9 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 11961e291188d509609a036f41084f4487cab584
+source-git-commit: 6b91527afe172530597de30b9669b86ff0262e13
 workflow-type: tm+mt
-source-wordcount: '4517'
+source-wordcount: '4596'
 ht-degree: 11%
 
 ---
@@ -125,7 +125,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_aftersegmentevaluation"
 >title="在受众评估后激活"
->abstract="在每日分段作业完成后立即运行激活。这将确保导出最新的轮廓。"
+>abstract="<p>在每日分段作业完成后立即运行激活。这将确保导出最新的轮廓。</p><p>受众评估后导出用户档案的选项在每周和每月导出频率中<i>不</i>可用。</p>"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_scheduled"
@@ -140,6 +140,8 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
    * **[!UICONTROL 一次]**：计划一次按需完整文件导出。
    * **[!UICONTROL 每日]**：计划每天在指定时间导出一次完整文件。
+   * **[!UICONTROL 每周]**：选择开始日期，后续导出将发生在一周的该日，直到所选的结束日期。
+   * **[!UICONTROL 每月]**：选择开始日期，后续导出将在该月的该日期进行，直到所选的结束日期为止。 对于少于30天或31天的月份，导出将发生在该月的最后一天。
 
 2. 使用&#x200B;**[!UICONTROL 时间]**&#x200B;切换开关选择导出是在受众评估后立即执行，还是在指定时间按计划执行。 在选择&#x200B;**[!UICONTROL 已计划]**&#x200B;选项时，您可以使用选择器以[!DNL UTC]格式选择一天中何时进行导出。
 
@@ -187,6 +189,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
    * **[!UICONTROL 每日]**：安排每天在指定的时间导出一次增量文件。
    * **[!UICONTROL 小时]**：计划每3、6、8或12小时执行一次增量文件导出。
+
 
 2. 使用&#x200B;**[!UICONTROL Time]**&#x200B;选择器以[!DNL UTC]格式选择一天中何时进行导出。
 
