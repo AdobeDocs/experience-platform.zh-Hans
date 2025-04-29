@@ -2,9 +2,9 @@
 title: 在架构注册表API中定义XDM字段
 description: 了解如何在架构注册表API中创建自定义体验数据模型(XDM)资源时定义不同的字段。
 exl-id: d79332e3-8448-42af-b250-882bcb0f1e7d
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7521273c0ea4383b7141e9d7a82953257ff18c34
 workflow-type: tm+mt
-source-wordcount: '1189'
+source-wordcount: '1197'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ ht-degree: 0%
 您可以选择通过以下附加属性来限制可为字符串输入的值的类型：
 
 * `pattern`：约束所依据的正则表达式模式。
-* `minLength`：字符串的最小长度。
+* `minLength`：字符串的最小长度。 默认情况下，字符串接收的最小值为`1`。
 * `maxLength`：字符串的最大长度。
 
 ```json
