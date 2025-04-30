@@ -2,9 +2,9 @@
 title: 通过UI将您的Salesforce Marketing Cloud帐户连接到Experience Platform
 description: 了解如何通过UI将您的Salesforce Marketing Cloud帐户连接到Experience Platform。
 exl-id: 1d9bde60-31e0-489c-9c1c-b6471e0ea554
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7ff0709b62590bb80c1ed664368f28cdc4a950ea
 workflow-type: tm+mt
-source-wordcount: '511'
+source-wordcount: '548'
 ht-degree: 2%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!WARNING]
 >
->[!DNL Salesforce Marketing Cloud]源将于2025年6月底弃用。
+>[!DNL Salesforce Marketing Cloud]源将于2026年1月被弃用。 作为替代方案，将在今年晚些时候发布新的信息源。 发布新源后，您必须计划在2026年1月底之前通过创建新帐户连接和数据流迁移到新源。
 
 本教程提供了有关如何通过UI将您的[!DNL Salesforce Marketing Cloud]帐户连接到Adobe Experience Platform的步骤。
 

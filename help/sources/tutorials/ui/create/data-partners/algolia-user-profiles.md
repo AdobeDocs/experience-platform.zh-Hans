@@ -1,19 +1,17 @@
 ---
-title: 使用UI将Algoria用户配置文件连接到Experience Platform
-description: 了解如何将Algolia用户连接到Experience Platform
-hide: true
-hidefromtoc: true
+title: 使用UI将Algolia用户配置文件连接到Experience Platform
+description: 了解如何将阿尔及利亚用户意图连接到Experience Platform
 exl-id: d4c936a7-4983-4a12-a813-03b672116e44
-source-git-commit: 009866abc39b06c22b7bea758ce9fdfba8c72b00
+source-git-commit: 9bc7d372eba9ffcfe64f90d2d58a532411e5f1ce
 workflow-type: tm+mt
-source-wordcount: '1137'
+source-wordcount: '1136'
 ht-degree: 1%
 
 ---
 
-# 收录[!DNL Algolia User Profiles]数据以使用UIExperience Platform
+# 使用UI将[!DNL Algolia User Profiles]数据摄取到Experience Platform
 
-阅读本教程，了解如何使用用户界面将付款数据从您的[!DNL Algolia User Profiles]帐户收录到Adobe Experience Platform。
+阅读本教程，了解如何使用用户界面将数据从[!DNL Algolia User Profiles]帐户摄取到Adobe Experience Platform。
 
 ## 快速入门
 
@@ -42,13 +40,13 @@ ht-degree: 1%
 
 ## 连接您的[!DNL Algolia]帐户
 
-在Experience PlatformUI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问&#x200B;*[!UICONTROL 源]*&#x200B;工作区。 您可以在&#x200B;*[!UICONTROL 类别]*&#x200B;面板中选择适当的类别。 或者，您可以使用搜索栏导航到要使用的特定源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问&#x200B;*[!UICONTROL 源]*&#x200B;工作区。 您可以在&#x200B;*[!UICONTROL 类别]*&#x200B;面板中选择相应的类别。 或者，您可以使用搜索栏导航到要使用的特定源。
 
-要使用[!DNL Algolia]，请选择&#x200B;*[!UICONTROL 数据和身份合作伙伴]*&#x200B;下的&#x200B;**[!UICONTROL Algoria]**&#x200B;源卡，然后选择&#x200B;**[!UICONTROL 设置]**。
+若要使用[!DNL Algolia]，请选择&#x200B;*[!UICONTROL 数据和标识合作伙伴]*&#x200B;下的&#x200B;**[!UICONTROL Algolia]**&#x200B;源卡，然后选择&#x200B;**[!UICONTROL 设置]**。
 
 >[!TIP]
 >
->当给定源尚未拥有经过身份验证的帐户时，源目录中的源将显示&#x200B;**[!UICONTROL 设置]**&#x200B;选项。 一旦存在经过身份验证的帐户，此选项将更改为&#x200B;**[!UICONTROL 添加数据]**。
+>当给定的源尚未具有经过身份验证的帐户时，源目录中的源会显示&#x200B;**[!UICONTROL 设置]**&#x200B;选项。 一旦存在经过身份验证的帐户，此选项将更改为&#x200B;**[!UICONTROL 添加数据]**。
 
 ![已选择阿尔及利亚用户配置文件源的源目录。](../../../../images/tutorials/create/algolia/user-profiles/catalog.png)
 
@@ -83,7 +81,7 @@ ht-degree: 1%
 
 ![源工作流的现有数据集步骤。](../../../../images/tutorials/create/algolia/user-profiles/dataflow-detail-existing-dataset.png)
 
-如果要创建新数据集，请选择使用映射步骤中所需的[!DNL Algolia Profile]字段组的架构。
+如果要创建新数据集，请选择一个使用[!DNL Algolia Profile]字段组的架构，该字段组是映射步骤中必需的。
 
 ![源工作流的新数据集步骤。](../../../../images/tutorials/create/algolia/user-profiles/dataflow-detail-new-dataset.png)
 
@@ -103,22 +101,22 @@ ht-degree: 1%
 
 | 计划配置 | 描述 |
 | --- | --- |
-| 频度 | 配置频率以指示数据流运行的频率。 您可以将频率设置为： <ul><li>**一次**：将频率设置为`once`以创建一次性引入。 创建一次性摄取数据流时，间隔和回填配置不可用。 默认情况下，计划频率设置为一次。</li><li>**分钟**：将频率设置为`minute`以安排数据流按分钟摄取数据。</li><li>**小时**：将频率设置为`hour`以安排数据流按小时摄取数据。</li><li>**天**：将频率设置为`day`以安排每天接收数据的数据流。</li><li>**周**：将频率设置为`week`以安排每周接收数据流量。</li></ul> |
+| 频度 | 配置频率以指示数据流运行的频率。 您可以将频率设置为： <ul><li>**一次**：将频率设置为`once`以创建一次性引入。 创建一次性摄取数据流时，间隔和回填配置不可用。 默认情况下，调度频率设置为一次。</li><li>**分钟**：将频率设置为`minute`，以计划数据流以每分钟摄取数据。</li><li>**小时**：将频率设置为`hour`，以计划数据流每小时摄取数据。</li><li>**天**：将频率设置为`day`，以计划数据流每天摄取数据。</li><li>**周**：将频率设置为`week`，以计划数据流每周摄取数据。</li></ul> |
 | 间隔 | 选择频率后，可以配置间隔设置以建立每次引入之间的时间范围。 例如，如果将频率设置为天并将间隔配置为15，则数据流将每15天运行一次。 不能将间隔设置为零。 每个频率的最小接受间隔值如下：<ul><li>**一次**：不适用</li><li>**分钟**： 15</li><li>**小时**： 1</li><li>**天**： 1</li><li>**周**： 1</li></ul> |
 | 开始时间 | 预计运行的时间戳，以UTC时区显示。 |
-| 回填 | 回填可确定最初摄取的数据。 如果启用回填，则会在首次计划接收期间接收指定路径中的所有当前文件。 如果禁用回填，则只摄取在第一次引入运行到开始时间之间加载的文件。 将不会摄取在开始时间之前加载的文件。 |
+| 回填 | 回填可确定最初摄取的数据。 如果启用了回填，则指定路径中的所有当前文件将在第一次计划摄取期间摄取。 如果禁用回填，则只摄取在第一次引入运行到开始时间之间加载的文件。 将不会摄取在开始时间之前加载的文件。 |
 
 ## 查看您的数据流
 
 使用“复查”页可在摄取之前获取数据流摘要。 详细信息按以下类别分组：
 
 * **连接** — 显示源类型、所选源文件的相关路径以及该源文件中的列数。
-* **分配数据集和映射字段** — 显示正在将源数据收录到哪个数据集，包括数据集遵循的架构。
-* **计划** — 显示摄取计划的活动周期、频率和间隔。
+* **分配数据集和映射字段** — 显示要将源数据摄取到哪个数据集，包括该数据集所遵循的架构。
+* **正在计划** — 显示摄取计划的活动周期、频率和间隔。
 
-查看数据流后，选择&#x200B;**[!UICONTROL 完成]**，等待一段时间以创建数据流。
+查看数据流后，选择&#x200B;**[!UICONTROL 完成]**，然后等待一些时间来创建数据流。
 
-![源工作流的审阅步骤。](../../../../images/tutorials/create/algolia/user-profiles/review.png)
+![源工作流的审核步骤。](../../../../images/tutorials/create/algolia/user-profiles/review.png)
 
 ## 后续步骤
 

@@ -2,9 +2,9 @@
 title: 使用流服务API创建Salesforce Marketing Cloud基本连接
 description: 了解如何使用流量服务API对Salesforce Marketing Cloud帐户进行Experience Platform身份验证。
 exl-id: fbf68d3a-f8b1-4618-bd56-160cc6e3346d
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7ff0709b62590bb80c1ed664368f28cdc4a950ea
 workflow-type: tm+mt
-source-wordcount: '507'
+source-wordcount: '544'
 ht-degree: 4%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 4%
 
 >[!WARNING]
 >
->[!DNL Salesforce Marketing Cloud]源将于2025年6月底弃用。
+>[!DNL Salesforce Marketing Cloud]源将于2026年1月被弃用。 作为替代方案，将在今年晚些时候发布新的信息源。 发布新源后，您必须计划在2026年1月底之前通过创建新帐户连接和数据流迁移到新源。
 
 基本连接表示源和Adobe Experience Platform之间的已验证连接。
 

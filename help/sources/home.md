@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Source连接器概述
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。 您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 9bc7d372eba9ffcfe64f90d2d58a532411e5f1ce
 workflow-type: tm+mt
-source-wordcount: '1557'
+source-wordcount: '1558'
 ht-degree: 3%
 
 ---
@@ -128,6 +128,7 @@ Experience Platform支持从第三方数据库引入数据。 有关特定源连
 
 - [[!DNL Apache Hive on Azure HDInsights]](connectors/databases/hive.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Apache Spark on Azure HDInsights]](connectors/databases/spark.md) [!BADGE 批次]{type=Informative}
+- [[!DNL Azure Databricks]](connectors/databases/databricks.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Azure Data Explorer]](connectors/databases/data-explorer.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Azure Table Storage]](connectors/databases/ats.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Couchbase]](connectors/databases/couchbase.md) [!BADGE 批次]{type=Informative}
@@ -148,6 +149,7 @@ Experience Platform支持从数据和身份合作伙伴中摄取数据。 有关
 
 - [[!DNL Acxiom Data Ingestion]](connectors/data-partners/acxiom-data-ingestion.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Acxiom Prospecting Data Import]](connectors/data-partners/acxiom-prospecting-data-import.md) [!BADGE 批次]{type=Informative}
+- [[!DNL Algolia User Profiles]](connectors/data-partners/algolia-user-profiles.md)
 - [[!DNL Bombora Intent]](connectors/data-partners/bombora.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Demandbase Intent]](connectors/data-partners/demandbase.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Merkury Enterprise Identity Resolution]](connectors/data-partners/merkury.md) [!BADGE 批次]{type=Informative}

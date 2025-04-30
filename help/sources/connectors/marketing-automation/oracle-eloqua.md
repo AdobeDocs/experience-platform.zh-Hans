@@ -1,19 +1,20 @@
 ---
 title: Oracle Eloqua连接器概述
 description: 了解如何使用API或用户界面将Oracle Eloqua连接到Adobe Experience Platform。
+last-substantial-update: 2025-04-29T00:00:00Z
 exl-id: ebe16bff-4c89-4d45-9973-e5aa13b61a36
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7ff0709b62590bb80c1ed664368f28cdc4a950ea
 workflow-type: tm+mt
-source-wordcount: '232'
+source-wordcount: '268'
 ht-degree: 0%
 
 ---
 
-# [!DNL Oracle Eloqua]连接器
+# [!DNL Oracle Eloqua]
 
 >[!WARNING]
 >
->[!DNL Oracle Eloqua]源将于2025年6月底弃用。
+>[!DNL Oracle Eloqua]源将于2026年1月被弃用。 作为替代方案，将在今年晚些时候发布新的信息源。 发布新源后，您必须计划在2026年1月底之前通过创建新帐户连接和数据流迁移到新源。
 
 Adobe Experience Platform允许从外部源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强传入数据。 您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
 
