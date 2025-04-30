@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明（2025 年 4 月）
 description: Adobe Experience Platform 的 2025 年 4 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: d2ee1adb031af83569f7b226a8881297423fc257
+source-git-commit: 7772e0b6f512c3854a03fb01580c80cc0cb41ba3
 workflow-type: tm+mt
-source-wordcount: '1663'
+source-wordcount: '1706'
 ht-degree: 29%
 
 ---
@@ -51,6 +51,7 @@ Experience League是一个全面的学习平台，旨在帮助您通过Adobe产�
 | 目标 | 描述 |
 | --- | --- |
 | [Marketo Engage人员同步](/help/destinations/catalog/adobe/marketo-engage-person-sync.md) | Adobe更新了[!DNL Marketo Engage Person Sync]目标以修复身份映射中存在多个电子邮件时影响客户的问题。 |
+| [(V2) Pega CDH实时受众连接](/help/destinations/catalog/personalization/pega-v2.md) | 当您在Pega帐户中配置了多个Pega客户决策中心应用程序时，使用Adobe Experience Platform中的[!DNL (V2) Pega Customer Decision Hub Realtime Audience]目标将配置文件属性和受众成员资格数据发送到Pega客户决策中心以便做出下一个最佳操作决策。 |
 
 **新功能或更新功能** {#destinations-new-updated-functionality}
 
