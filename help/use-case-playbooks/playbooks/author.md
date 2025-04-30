@@ -4,9 +4,9 @@ title: 了解如何使用AI助手创作和共享您自己的行动手册。
 description: 如何创作和共享您自己的用例行动手册。
 role: User
 exl-id: 0bc49710-ad9e-4509-b7e6-55f9b9037aa9
-source-git-commit: aa1e155fb8d71497958d0de1f6c10cf47e58dbf0
+source-git-commit: a910c922e9a51b60e276b0aac7e81e35d0a378fd
 workflow-type: tm+mt
-source-wordcount: '1113'
+source-wordcount: '1665'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 该框架遵循三步流程：
 
-1. **元数据捕获**：使用AI助手或[Web窗体]捕获行动手册元数据。
+1. **元数据捕获**：使用AI助手或Web窗体捕获行动手册元数据。
 
 2. **技术关联**：将历程或受众等特定技术资产添加到行动手册。 您可以保留对开发沙盒中行动手册创建过程的完全控制权，确保与架构和其他独特数据结构保持一致。
 
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 ## 创建行动手册
 
-您可以通过两种方式创建行动手册：使用AI助手或手动。 请阅读以下部分以了解如何操作。
+您可以通过两种方式创建行动手册：使用AI助手或手动。 请阅读以下部分，了解如何使用AI助手创建行动手册。
 
 ### 行动手册概述
 
@@ -40,9 +40,9 @@ ht-degree: 0%
 
 ![选择了“使用AI助手生成行动手册”的行动手册界面。](/help/use-case-playbooks/assets/playbooks/authoring/generate-playbook.png)
 
-在提示字段中，描述用例。
+使用提示字段描述用例。 例如：
 
-**示例**：“与浏览跑鞋但未完成购买的ACME客户接洽。”
+“与浏览跑步鞋但未完成购买的ACME客户接洽。”
 
 ![Web窗体区域突出显示的行动手册界面。](/help/use-case-playbooks/assets/playbooks/authoring/prompt.png)
 
@@ -114,7 +114,7 @@ AI Assistant可以处理各种提示结构和提取关键细节，同时过滤�
 
 创建标题为“Complete the Look”的营销活动以提高销售额和CLV。 此活动鼓励购买厨具或家具的客户通过与购买相关的个性化推荐和优惠完成补充购买。 第一个消息是向客户提供产品推荐。 如果他们在7天内未进行任何购买，则会收到第二条消息，其中包含产品建议和选件。 使用推送通知和电子邮件联系客户。 定位过去7天在厨具或家具类别中购买过，且过去30天内未成为目标的客户。 作为营销活动的一部分，我们希望测量KPI，例如点击次数（电子邮件、应用程序、短信、推送）、CTR、电子钱包CTR、AOV转化、CLV收入、总购买事件（店内、数字、呼叫中心）。”
 
-![示例1提示](/help/use-case-playbooks/assets/playbooks/authoring/example-prompt.png)
+![在文本输入框中显示长提示的示例](/help/use-case-playbooks/assets/playbooks/authoring/long-prompt.png)
 
 **示例2：**
 
@@ -126,20 +126,20 @@ AI Assistant可以处理各种提示结构和提取关键细节，同时过滤�
 目标受众：已订阅ACME时尚新闻稿通信的客户。
 目标KPI/参与量度/ROI：1。 增加来自产品之收益。 2.提高客户忠诚度。”
 
-![示例2提示](/help/use-case-playbooks/assets/playbooks/authoring/example-2-prompt.png)
+![在文本输入框中显示有条理提示的示例](/help/use-case-playbooks/assets/playbooks/authoring/organized-list-prompt.png)
 
 **示例3：**
 
 “在正在进行的产品促销活动中，鼓励消费者购买产品。
 通过电子邮件、短信或推送通知发送适当的通信内容来购买产品，从而在持续促销期间与购物者互动。 在他们24小时没有参与促销活动后，向他们发送提醒电子邮件。”
 
-![示例3提示](/help/use-case-playbooks/assets/playbooks/authoring/example-3-prompt.png)
+![在文本输入框中显示简明提示的示例](/help/use-case-playbooks/assets/playbooks/authoring/concise-prompt.png)
 
 **示例4：**
 
 “卖鞋给高中生。”
 
-![示例4提示](/help/use-case-playbooks/assets/playbooks/authoring/example-4-prompt.png)
+![显示单行提示的示例](/help/use-case-playbooks/assets/playbooks/authoring/one-liner-prompt.png)
 
 AI助手会删除所有不必要的详细信息，如“项目名称”或“背景”。 它可提取“目标受众”、“营销目标”和“营销渠道”等关键元素，并可与任何输入样式配合使用。
 
@@ -157,6 +157,85 @@ AI助手会删除所有不必要的详细信息，如“项目名称”或“背
 
 如果行动手册被标记为不适当或冒犯性的内容，则会自动报告给Adobe以供审查。 然后，Adobe会审查标记的内容，如果认为不适当，则会通知客户，并删除剧本。
 
+## 在沙盒之间共享行动手册 {#sharing-playbooks-sandboxes}
+
+如果您的组织包含多个沙盒，则无需在这些沙盒之间手动共享行动手册。 在一个沙盒中创建并发布行动手册后，它将在该组织内的所有沙盒中可用。 然后，您可以在任何其他沙盒中创建该剧本的实例。
+
+如果行动手册引用的字段在另一个沙盒的合并架构中不可用，则尝试创建实例时可能会看到错误消息。 该消息会调出缺少的字段，以便您根据需要更新架构。
+
+>[!IMPORTANT]
+>
+>不支持可传递的行动手册共享。 如果您将行动手册从一个组织共享到另一个组织，然后导入该行动手册，则它无法再次从接收组织共享到第三个组织。
+
+## 在组织间共享您的行动手册 {#sharing-playbooks-organizations}
+
+要在组织之间共享行动手册，请执行以下步骤：
+
+* **登录到源组织**：从&#x200B;**[!UICONTROL 您的行动手册]**&#x200B;选项卡导航到包含您创建的行动手册并要共享的组织。
+* **发布行动手册**：如果行动手册尚未发布，则必须在共享之前发布。
+
+>[!NOTE]
+>
+>必须在源组织和目标组织之间建立合作伙伴关系，以实现行动手册共享。 了解如何[创建组织伙伴关系请求](https://experienceleague.adobe.com/en/docs/experience-platform/sandbox/ui/sharing-packages-across-orgs)。
+
+* **启动共享**：发布行动手册并建立伙伴关系后，选择&#x200B;**[!UICONTROL 共享行动手册]**。
+* **选择目标组织**：在出现提示时，选择要与你共享行动手册的组织。
+* **确认并共享**：确认您的选择。 您将收到指示已成功共享的确认消息。
+* ***验证目标组织**：登录目标组织以验证行动手册是否可用。
+* **导入行动手册**：选择&#x200B;**[!UICONTROL 导入]**&#x200B;以将行动手册导入目标组织。 您可以在&#x200B;**行动手册**&#x200B;选项卡中查看它。
+
+如果合并架构中缺少任何字段，则在导入期间将有一个对话框突出显示它们。
+
+导入过程中列出的合并架构中缺少![字段](/help/use-case-playbooks/assets/playbooks/authoring/missing-fields.png)
+
+如果未显示行动手册，请确保已发布行动手册并且组织伙伴关系处于活动状态。
+
+## 所需的权限
+
+要访问沙盒并使用此功能，您需要以下权限：
+
+* **沙盒权限**：
+
+要访问存在该功能的沙盒环境，需要满足以下条件：
+
+* **管理沙盒**
+* **查看沙盒**
+
+* **包共享权限**：
+
+内部共享功能需要以下权限：
+
+* [**管理包**](/help/sandboxes/ui/sandbox-tooling.md)
+* [**共享包**](/help/sandboxes/ui/sharing-packages-across-orgs.md)
+
+这些权限将允许您：
+
+* 输入沙盒环境
+* 访问沙盒中的功能
+* 根据需要管理和共享包
+
+这些权限位于权限列表的&#x200B;**[!UICONTROL 沙盒]**&#x200B;部分中。
+
+![突出显示相关权限的权限列表。](/help/use-case-playbooks/assets/playbooks/authoring/permissions.png)
+
+### 历程和相关对象 — 权限
+
+在构建使用行动手册的历程时，您可能会引用其他对象，如&#x200B;**渠道**、**受众**&#x200B;和其他实体。 每个模板都有自己的权限集。
+
+这些是与历程相关的操作的关键权限，例如：
+
+* **查看历程**
+* **管理历程**
+* 与受众和渠道等对象相关的权限
+
+您还需要以下受众权限：
+
+* **区段读取**
+* **个人资料读取**
+* **数据集读取**
+
+由于历程非常灵活，并且可能涉及许多互连的对象，因此它们的[完全权限](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/access-control/privacy/high-low-permissions)将单独进行记录，并且可能会因您的特定用例而有所不同。
+
 ## 后续步骤
 
-现在您已了解如何使用AI助手创建和发布行动手册，了解如何开始使用可用的行动手册，并从[行动手册列表](/help/use-case-playbooks/playbooks/choose.md)为您的用例选择正确的行动手册。
+现在您已了解如何使用AI助手创建、发布和共享行动手册，了解如何开始使用可用的行动手册，并从[行动手册列表](/help/use-case-playbooks/playbooks/choose.md)为您的用例选择正确的行动手册。
