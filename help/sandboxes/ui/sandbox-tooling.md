@@ -2,9 +2,9 @@
 title: 沙盒工具
 description: 在沙盒之间无缝导出和导入沙盒配置。
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: 480785dc17ab27df5544524cf08baa9150fe426f
+source-git-commit: 654a1c696d88d9e1748787402a1a50c8e232df57
 workflow-type: tm+mt
-source-wordcount: '2486'
+source-wordcount: '2513'
 ht-degree: 7%
 
 ---
@@ -49,18 +49,18 @@ ht-degree: 7%
 
 下表列出了当前支持沙盒工具的[!DNL Adobe Journey Optimizer]对象和限制：
 
-| 平台 | 对象 | 详细信息 |
-| --- | --- | --- |
-| [!DNL Adobe Journey Optimizer] | 受众 | 受众可以复制为历程对象的依赖对象。 您可以选择创建新受众，也可以重复使用目标沙盒中的现有受众。 |
-| [!DNL Adobe Journey Optimizer] | 架构 | 历程中使用的架构可以作为依赖对象复制。 您可以选择创建新架构或重用目标沙盒中的现有架构。 |
-| [!DNL Adobe Journey Optimizer] | 合并策略 | 历程中使用的合并策略可以作为依赖对象复制。 在目标沙盒中，您&#x200B;**无法**&#x200B;创建新的合并策略，您只能利用已存在的合并策略。 |
-| [!DNL Adobe Journey Optimizer] | 历程 — 画布详细信息 | 画布上的历程表示形式包括历程中的对象，如复制的条件、操作、事件、读取受众等。 跳转活动将从副本中排除。 |
-| [!DNL Adobe Journey Optimizer] | 活动 | 旅程中使用的事件和事件详细信息已复制。 它始终会在目标沙盒中创建新版本。 |
-| [!DNL Adobe Journey Optimizer] | 操作 | 历程中使用的电子邮件和推送消息可以作为依赖对象复制。 不检查消息中用于个性化的历程字段中使用的渠道操作活动的完整性。 不会复制内容块。<br><br>可以复制历程中使用的更新配置文件操作。 历程中使用的自定义操作和操作详细信息也会被复制。 它始终会在目标沙盒中创建新版本。 |
-| [!DNL Adobe Journey Optimizer] | 历程 | 将整个历程添加到资源包时，将复制历程所依赖的大多数对象，包括受众、架构、事件和操作。 |
-| [!DNL Adobe Journey Optimizer] | 内容模板 | 内容模板可以作为历程对象的依赖对象复制。 通过独立模板，可轻松地在Journey Optimizer营销活动和历程中重用自定义内容。 |
-| [!DNL Adobe Journey Optimizer] | 片段 | 片段可以作为历程对象的依赖对象复制。 片段是可重用的组件，可以在各个Journey Optimizer营销活动和历程中的一个或多个电子邮件中引用。 |
-| [!DNL Adobe Journey Optimizer] | 营销活动 | 营销活动可与所有与用户档案、受众、架构、内联消息和依赖对象相关的项目一起复制。 某些项目不会被复制，例如决策项目、数据使用标签和语言设置。 有关无法复制的对象的完整列表，请参阅[将对象导出到另一个沙盒](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox)指南。 |
+| 平台 | 对象 | 支持的依赖对象 | 详细信息 |
+| --- | --- | --- | --- |
+| [!DNL Adobe Journey Optimizer] | 受众 | | 受众可以复制为历程对象的依赖对象。 您可以选择创建新受众，也可以重复使用目标沙盒中的现有受众。 |
+| [!DNL Adobe Journey Optimizer] | 架构 | | 历程中使用的架构可以作为依赖对象复制。 您可以选择创建新架构或重用目标沙盒中的现有架构。 |
+| [!DNL Adobe Journey Optimizer] | 合并策略 | | 历程中使用的合并策略可以作为依赖对象复制。 在目标沙盒中，您&#x200B;**无法**&#x200B;创建新的合并策略，您只能使用现有的合并策略。 |
+| [!DNL Adobe Journey Optimizer] | 历程 | 历程中使用的以下对象将作为依赖对象复制。 在导入工作流期间，您可以选择&#x200B;**[!UICONTROL 新建]**&#x200B;或&#x200B;**[!UICONTROL 对以下各项使用现有]**： <ul><li>受众</li><li>架构</li><li>自定义操作</li><li>活动</li><li>片段</li><li>内容模板</li><li>画布详细信息</li></ul> | <ul><li>**[!UICONTROL 自定义操作]**：在将历程复制到另一个沙盒时，在导入过程中选择&#x200B;**[!UICONTROL 使用现有]**&#x200B;时，您选择的现有自定义操作&#x200B;**必须**&#x200B;与源自定义操作相同。 如果两者不同，则新历程将具有无法解决的错误。</li><li>旅程中使用的事件和事件详细信息已复制。 它始终会在目标沙盒中创建新版本。</li></ul> |
+| [!DNL Adobe Journey Optimizer] | 操作 | | 历程中使用的电子邮件和推送消息可以作为依赖对象复制。 不检查消息中用于个性化的历程字段中使用的渠道操作活动的完整性。 不会复制内容块。<br><br>可以复制历程中使用的更新配置文件操作。 自定义操作可以单独添加到资源包中。 旅程中使用的操作详细信息也会被复制。 它始终会在目标沙盒中创建新版本。 |
+| [!DNL Adobe Journey Optimizer] | 内容模板 | | 内容模板可以作为历程对象的依赖对象复制。 通过独立模板，可轻松地在Journey Optimizer营销活动和历程中重用自定义内容。 |
+| [!DNL Adobe Journey Optimizer] | 片段 | 所有嵌套片段。 | 片段可以作为历程对象的依赖对象复制。 片段是可重用的组件，可以在各个Journey Optimizer营销活动和历程中的一个或多个电子邮件中引用。 |
+| [!DNL Adobe Journey Optimizer] | 营销活动 | | 营销活动可与所有与用户档案、受众、架构、内联消息和依赖对象相关的项目一起复制。 某些项目不会被复制，例如决策项目、数据使用标签和语言设置。有关无法复制的对象的完整列表，请参阅[将对象导出到另一个沙盒] |
+
+<!-- | [!DNL Adobe Journey Optimizer] | Campaigns | The following objects used in the campaign are copied as dependent objects: <ul><li>Campaigns</li><li>Audiences</li><li>Schemas</li><li>Content templates</li><li>Fragments</li><li>Message/Content</li><li>Channel configuration</li><li>Unified decision objects</li><li>Experiment settings/variants</li></ul>| Campaigns can be copied along with all items related to the profile, audience, schema, inline messages, and dependent objects. Some items are not copied, such as decision items, data usage labels, and language settings. For a complete list of objects that cannot be copied, refer the [exporting objects to another sandbox](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox) guide. | -->
 
 曲面（例如预设）不会被复制。 系统根据消息类型和表面名称，自动选择目标沙盒上最接近的匹配项。 如果在目标沙盒上未找到表面，则表面复制将失败，导致消息复制失败，因为消息需要表面才可供设置。 在这种情况下，需要为消息的正确渠道至少创建一个表面，以便副本正常工作。
 
