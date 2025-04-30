@@ -2,9 +2,9 @@
 title: 监视功能板概述
 description: 了解如何使用Adobe Experience Platform UI中的监视仪表板
 exl-id: 06ea5380-d66e-45ae-aa02-c8060667da4e
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: cca405c58551a52a044ac513921298637974e88e
 workflow-type: tm+mt
-source-wordcount: '1032'
+source-wordcount: '988'
 ht-degree: 0%
 
 ---
@@ -63,12 +63,6 @@ ht-degree: 0%
 
 ![监视数据类型设置为“客户和帐户”。](../assets/ui/monitor-overview/customer-account.png)
 
->[!TAB 潜在客户]
-
-选择&#x200B;**[!UICONTROL 潜在客户]**&#x200B;以更新您的仪表板，并显示给定时间段内摄取到Experience Platform的潜在客户数据的指标。 **注意**：只有您[有权使用目标客户数据](../../rtcdp/partner-data/prospecting.md)，才能查看目标客户数据类型活动。
-
-![监视数据类型设置为“潜在客户”。](../assets/ui/monitor-overview/prospect.png)
-
 >[!TAB 帐户配置文件扩充]
 
 选择&#x200B;**[!UICONTROL 帐户配置文件扩充]**&#x200B;以更新您的仪表板并显示配置文件扩充数据的量度。 **注意**：如果您有权使用[B2B数据](../../rtcdp/b2b-tutorial.md)，则只能查看帐户配置文件扩充量度。
@@ -81,11 +75,11 @@ ht-degree: 0%
 
 >[!BEGINTABS]
 
->[!TAB 源]
+>[!TAB 数据湖]
 
-选择&#x200B;**[!UICONTROL 源]**&#x200B;以查看源摄取率的量度。 有关详细信息，请阅读有关[监视源数据](monitor-sources.md)的指南。
+选择&#x200B;**[!UICONTROL 数据湖]**&#x200B;以查看有关数据湖摄取率的量度。 有关详细信息，请阅读有关[监视数据湖摄取](monitor-sources.md)的指南。
 
-![UI中的监视仪表板，已选择源信息卡。](../assets/ui/monitor-overview/sources.png)
+![选择了数据湖卡的UI中的监视仪表板。](../assets/ui/monitor-overview/data-lake.png)
 
 >[!TAB 标识]
 
@@ -133,8 +127,12 @@ ht-degree: 0%
 
 通过阅读本文档，您现在可以在UI中的监视仪表板中导航。 有关如何监视特定Experience Platform服务的数据，请阅读以下文档：
 
-* [监视源数据](monitor-sources.md)。
+* [监视数据湖引入](monitor-sources.md)。
 * [监视身份数据](monitor-identities.md)。
 * [监视配置文件数据](monitor-profiles.md)。
 * [监视受众数据](monitor-audiences.md)。
 * [监视目标数据](monitor-destinations.md)。
+
+<!-- >[!TAB Prospect]
+
+Select **[!UICONTROL Prospect]** to update your dashboard and display metrics on prospecting data that has been ingested to Experience Platform over the course of a given period. **Note**: You can only view prospect data type activities if you are [entitled to prospect data](../../rtcdp/partner-data/prospecting.md). -->

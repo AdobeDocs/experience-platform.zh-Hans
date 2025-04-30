@@ -1,21 +1,21 @@
 ---
-description: 了解如何使用监控仪表板监控从源摄取的数据。
-title: 在UI中监控源的数据流
+description: 了解如何使用监控仪表板监控引入数据湖的数据。
+title: 监测数据湖引入
 exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: f671188fbc694b0d2d808577265f91788cb0d8e9
 workflow-type: tm+mt
-source-wordcount: '1323'
-ht-degree: 11%
+source-wordcount: '1303'
+ht-degree: 10%
 
 ---
 
-# 在 UI 中监控源的数据流
+# 监测数据湖引入
 
 >[!IMPORTANT]
 >
 >监视仪表板当前不支持流源，如[HTTP API源](../../sources/connectors/streaming/http.md)。 目前，您只能使用功能板监控批次源。
 
-阅读本文档，了解如何使用监视仪表板在Experience Platform UI中监视源数据流。
+请阅读本文档，了解如何使用监视仪表板在Experience Platform UI中监视数据湖摄取。
 
 ## 快速入门 {#get-started}
 
@@ -28,7 +28,7 @@ ht-degree: 11%
 * [实时客户个人资料](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时客户个人资料。
 * [沙盒](../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-## 使用监控仪表板监控源数据
+## 使用监视仪表板进行数据湖摄取
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_source_ingestion"
@@ -42,13 +42,9 @@ ht-degree: 11%
 >abstract="源处理包含有关数据湖服务中的数据活动状态和量度的信息，包括提取的记录和失败的记录。查看量度定义指南以了解有关量度和图表的更多信息。"
 >text="Learn more in documentation"
 
-<!-- In the [Experience Platform UI](https://platform.adobe.com), select **[!UICONTROL Monitoring]** from the left navigation to access the [!UICONTROL Monitoring] dashboard. The [!UICONTROL Monitoring] dashboard contains metrics and information on all sources dataflows, including insights into the health of data traffic from a source to [!DNL Identity Service], and to [!DNL Profile].
+从监视仪表板的主标题中选择&#x200B;**[!UICONTROL 数据湖]**&#x200B;以查看您的数据湖摄取率。
 
-At the center of the dashboard is the [!UICONTROL Source ingestion] panel, which contains metrics and graphs that display data on records ingested and records failed. -->
-
-在监视仪表板中，从主标题中选择[!UICONTROL 源]以更新仪表板，显示源数据流摄取率。
-
-![已选择源信息卡的监视仪表板。](../assets/ui/monitor-sources/sources.png)
+![已选择源信息卡的监视仪表板。](../assets/ui/monitor-sources/data-lake.png)
 
 [!UICONTROL 摄取率]图形根据您配置的时间范围显示您的数据摄取率。 默认情况下，监视功能板显示过去24小时的摄取率。 有关如何配置时间范围的步骤，请阅读[配置监视时间范围](monitor.md#configure-monitoring-time-frame)上的指南。
 
@@ -132,11 +128,9 @@ At the center of the dashboard is the [!UICONTROL Source ingestion] panel, which
 >
 >只有在源连接创建过程中启用了特征时，才能使用错误诊断。
 
-![数据流运行错误面板。](../assets/ui/monitor-sources/errors.png)
-
 ## 后续步骤 {#next-steps}
 
-通过学习本教程，您已使用&#x200B;**[!UICONTROL 监视]**&#x200B;仪表板成功监视源级别的摄取数据流。 您还已成功识别出在摄取过程中导致数据流失败的错误。 有关更多详细信息，请参阅以下文档：
+通过学习本教程，您已了解如何使用&#x200B;**[!UICONTROL 监控]**&#x200B;仪表板监控数据湖摄取率。 您还了解了如何识别在摄取期间导致数据流失败的错误。 有关更多详细信息，请参阅以下文档：
 
 * [正在监视身份数据](./monitor-identities.md)。
 * [正在监视配置文件数据](./monitor-profiles.md)。
