@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Source连接器概述
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。 您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 9bc7d372eba9ffcfe64f90d2d58a532411e5f1ce
+source-git-commit: 02fafc830e964bbfa94c125c2006f4998d9d193d
 workflow-type: tm+mt
-source-wordcount: '1558'
+source-wordcount: '1559'
 ht-degree: 3%
 
 ---
@@ -51,10 +51,10 @@ Experience Platform中的源分为以下类别：
 
 ### Adobe 应用程序 {#adobe-applications}
 
-Experience Platform允许从其他Adobe应用程序(包括Adobe Analytics和Adobe Audience Manager)中摄取数据。 有关更多信息，请参阅以下相关文档：
+Experience Platform允许从其他Adobe应用程序摄取数据，包括Adobe Analytics和Adobe Audience Manager。 有关更多信息，请参阅以下相关文档：
 
 - [Adobe Audience Manager源概述](connectors/adobe-applications/audience-manager.md)
-   - [在UI中创建Adobe Audience Manager源连接](./tutorials/ui/create/adobe-applications/audience-manager.md)
+   - [在用户界面中创建Adobe Audience Manager源连接](./tutorials/ui/create/adobe-applications/audience-manager.md)
 - [Adobe Analytics分类数据源概述](connectors/adobe-applications/classifications.md)
    - [在UI中创建Adobe Analytics分类数据源连接](./tutorials/ui/create/adobe-applications/classifications.md)
 - [Adobe Analytics报表包数据源概述](connectors/adobe-applications/analytics.md)
@@ -127,12 +127,12 @@ Experience Platform支持从第三方客户成功应用程序中摄取数据。 
 Experience Platform支持从第三方数据库引入数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
 - [[!DNL Apache Hive on Azure HDInsights]](connectors/databases/hive.md) [!BADGE 批次]{type=Informative}
-- [[!DNL Apache Spark on Azure HDInsights]](connectors/databases/spark.md) [!BADGE 批次]{type=Informative}
-- [[!DNL Azure Databricks]](connectors/databases/databricks.md) [!BADGE 批次]{type=Informative}
-- [[!DNL Azure Data Explorer]](connectors/databases/data-explorer.md) [!BADGE 批次]{type=Informative}
-- [[!DNL Azure Table Storage]](connectors/databases/ats.md) [!BADGE 批次]{type=Informative}
-- [[!DNL Couchbase]](connectors/databases/couchbase.md) [!BADGE 批次]{type=Informative}
-- [[!DNL GreenPlum]](connectors/databases/greenplum.md) [!BADGE 批次]{type=Informative}
+- [[!DNL Apache Spark on Azure HDInsights]](connectors/databases/spark.md) [!BADGE 批处理]{type=Informative}
+- [[!DNL Azure Databricks]](connectors/databases/databricks.md) [!BADGE 批处理]{type=Informative}
+- [[!DNL Azure Data Explorer]](connectors/databases/data-explorer.md) [!BADGE 批处理]{type=Informative}
+- [[!DNL Azure Table Storage]](connectors/databases/ats.md) [!BADGE 批处理]{type=Informative}
+- [[!DNL Couchbase]](connectors/databases/couchbase.md) [!BADGE 批处理]{type=Informative}
+- [[!DNL GreenPlum]](connectors/databases/greenplum.md) [!BADGE 批处理]{type=Informative}
 - [[!DNL HP Vertica]](connectors/databases/hp-vertica.md) [!BADGE 批次]{type=Informative}
 - [[!DNL IBM DB2]](connectors/databases/ibm-db2.md) [!BADGE 批次]{type=Informative}
 - [[!DNL MariaDB]](connectors/databases/mariadb.md) [!BADGE 批次]{type=Informative}
@@ -147,11 +147,11 @@ Experience Platform支持从第三方数据库引入数据。 有关特定源连
 
 Experience Platform支持从数据和身份合作伙伴中摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
-- [[!DNL Acxiom Data Ingestion]](connectors/data-partners/acxiom-data-ingestion.md) [!BADGE 批次]{type=Informative}
-- [[!DNL Acxiom Prospecting Data Import]](connectors/data-partners/acxiom-prospecting-data-import.md) [!BADGE 批次]{type=Informative}
-- [[!DNL Algolia User Profiles]](connectors/data-partners/algolia-user-profiles.md)
-- [[!DNL Bombora Intent]](connectors/data-partners/bombora.md) [!BADGE 批次]{type=Informative}
-- [[!DNL Demandbase Intent]](connectors/data-partners/demandbase.md) [!BADGE 批次]{type=Informative}
+- [[!DNL Acxiom Data Ingestion]](connectors/data-partners/acxiom-data-ingestion.md) [!BADGE 批处理]{type=Informative}
+- [[!DNL Acxiom Prospecting Data Import]](connectors/data-partners/acxiom-prospecting-data-import.md) [!BADGE 批处理]{type=Informative}
+- [[!DNL Algolia User Profiles]](connectors/data-partners/algolia-user-profiles.md) [!BADGE 批处理]{type=Informative}
+- [[!DNL Bombora Intent]](connectors/data-partners/bombora.md) [!BADGE 批处理]{type=Informative}
+- [[!DNL Demandbase Intent]](connectors/data-partners/demandbase.md) [!BADGE 批处理]{type=Informative}
 - [[!DNL Merkury Enterprise Identity Resolution]](connectors/data-partners/merkury.md) [!BADGE 批次]{type=Informative}
 
 ### 电子商务 {#ecommerce}
@@ -230,11 +230,11 @@ Adobe Experience Platform中基于属性的访问控制允许管理员根据属�
 
 >[!TIP]
 >
->基于属性的访问控制的工作方式如下：**角色**&#x200B;的创建用于对与Experience Platform实例交互的用户类型进行分类。 **标签**&#x200B;应用于&#x200B;**角色**&#x200B;以指定该给定角色的访问权限。 **标签**&#x200B;也应用于架构字段和区段等资源。 为了使用户能够访问某些架构字段和区段，必须将其添加到&#x200B;*角色，该角色具有分配给查询资源的相同标签*。 有关详细信息，请阅读[基于属性的访问控制端到端指南](../access-control/abac/end-to-end-guide.md)。
+>基于属性的访问控制的工作方式如下：**角色**&#x200B;的创建用于对与Experience Platform实例交互的用户类型进行分类。 **标签**&#x200B;应用于&#x200B;**角色**&#x200B;以指定该给定角色的访问权限。 **标签**&#x200B;也适用于架构字段和段等资源。 为了使用户有权访问某些架构字段和段，必须将它们添加到&#x200B;*具有分配给查询的资源的相同标签的角色*&#x200B;中。 有关详细信息，请阅读[基于属性的访问控制端到端指南](../access-control/abac/end-to-end-guide.md)。
 
-- 将标签应用于架构字段以定义对组织中特定架构字段的访问权限。 一旦建立了对特定架构字段的访问权限，用户将只能为他们有权访问的字段创建映射。
-- 不具有相应角色的用户将无法创建或更新包含包含无法访问架构字段的映射的数据流。 此外，未经授权的用户无法更新、删除、启用或禁用具有无法访问架构字段的现有数据流。
-- 此外，数据流在其映射、目标数据集和目标连接中必须具有完全相同的架构ID和版本。
+- 将标签应用于架构字段，以定义对组织中特定架构字段的访问。 建立对特定架构字段的访问后，用户将只能为其有权访问的字段创建映射。
+- 没有相应角色的用户将无法创建或更新包含不可访问架构字段的映射的数据流。 此外，未经授权的用户无法更新、删除、启用或禁用具有不可访问模式字段的现有数据流。
+- 此外，数据流的映射、目标数据集和目标连接必须具有完全相同的模式ID和版本。
 
 有关基于属性的访问控制的详细信息，请阅读[基于属性的访问控制概述](../access-control/abac/overview.md)。
 
