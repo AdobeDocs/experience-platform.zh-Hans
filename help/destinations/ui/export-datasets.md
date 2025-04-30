@@ -3,10 +3,10 @@ title: 将数据集导出到云存储目标
 type: Tutorial
 description: 了解如何将数据集从Adobe Experience Platform导出到您首选的云存储位置。
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 31631b03b6ff1e50e55c01e948fae5c29fd618dd
+source-git-commit: 8b2b40be94bb35f0c6117bfc1d51f8ce282f2b29
 workflow-type: tm+mt
 source-wordcount: '2732'
-ht-degree: 7%
+ht-degree: 6%
 
 ---
 
@@ -18,9 +18,9 @@ ht-degree: 7%
 
 >[!IMPORTANT]
 >
->**操作项**： Experience Platform](/help/release-notes/latest/latest.md#destinations)的[2024年9月版本引入了为导出数据集数据流设置`endTime`日期的选项。 在2024年9月版本&#x200B;*之前，Adobe还为*&#x200B;创建的所有数据集导出数据流引入了默认结束日期（2025年5月1日）。
+>**操作项**： Experience Platform](/help/release-notes/latest/latest.md#destinations)的[2024年9月版本引入了为导出数据集数据流设置`endTime`日期的选项。 在2024年9月版本&#x200B;*之前，Adobe还为*&#x200B;创建的所有数据集导出数据流引入了默认结束日期（2025年9月1日）。
 >
->对于其中任何数据流，您需要手动更新数据流中的结束日期在结束日期之前，否则您的导出将在该日期停止。 使用Experience Platform UI查看哪些数据流将设置为在2025年5月1日停止。
+>对于其中任何数据流，您需要手动更新数据流中的结束日期在结束日期之前，否则您的导出将在该日期停止。 使用Experience Platform UI查看哪些数据流将设置为在2025年9月1日停止。
 >
 >有关如何编辑数据集导出数据流的结束日期的信息，请参阅[计划部分](#scheduling)。
 
@@ -158,7 +158,7 @@ Experience Platform目录中的一些基于文件的目标同时支持Audience A
 >[!CONTEXTUALHELP]
 >id="dataset_dataflow_needs_schedule_end_date_body"
 >title="更新此数据流主体的结束日期"
->abstract="由于此目标最近进行了更新，数据流现在需要结束日期。Adobe 已将默认结束日期设置为 2025 年 5 月 1 日。请更新为您希望的结束日期，否则数据导出将在默认日期停止。"
+>abstract="由于此目标最近进行了更新，数据流现在需要结束日期。Adobe已将默认结束日期设置为2025年9月1日。 请更新到所需的结束日期，否则数据导出将在默认日期停止。"
 
 使用&#x200B;**[!UICONTROL 计划]**&#x200B;步骤可以：
 
