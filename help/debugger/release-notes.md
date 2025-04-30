@@ -4,14 +4,22 @@ description: Adobe Experience Platform Debugger 的最新发行说明。
 keywords: debugger;experience Platform Debugger 扩展程序;chrome;扩展程序;发行说明
 uuid: 47a5d6f3-c074-4ad5-ad4b-e6030496689b
 exl-id: 3eed44da-5f85-413e-a783-3a0df03a2baf
-source-git-commit: e82cd0b24504f807f7511aae1f5a0c9d77a40f74
+source-git-commit: f32c4bbf48fce2ada7cf7b75efc82e28d1ec26ff
 workflow-type: tm+mt
-source-wordcount: '801'
-ht-degree: 97%
+source-wordcount: '850'
+ht-degree: 92%
 
 ---
 
 # Adobe Experience Platform Debugger 发行说明
+
+## 1.6.3版 — 2025年4月30日
+
+### 修复和改进功能
+
+* 修复了Debugger会导致DTM和Launch功能无法正常运行的问题。
+* 修复了Analytics后处理点击不会显示在日志中的问题。
+* 修复了日语等非ASCII语言的数据在日志中无法正确显示的问题。
 
 ## 版本1.6.2 - 2024年10月1日
 
@@ -98,7 +106,7 @@ ht-degree: 97%
 
 * 增加了对 Web SDK 混合实施的 AEP Assurance 调试支持。
 * 添加了对同一 AEP Assurance 会话中的多个选项卡的支持。
-* 修复了用户登录后无法切换个人资料/组织的问题。
+* 修复了用户登录后无法切换轮廓/组织的问题。
    * 对于某些帐户，需要注销并重新登录才能切换组织。
 * 添加了启用 Target Trace 失败时发出的错误信息。
 * 更新了依赖项。
