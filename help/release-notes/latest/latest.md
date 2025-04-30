@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明（2025 年 4 月）
 description: Adobe Experience Platform 的 2025 年 4 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 7772e0b6f512c3854a03fb01580c80cc0cb41ba3
+source-git-commit: 3836b369d609448146a273fc6cf29061fd1ea422
 workflow-type: tm+mt
-source-wordcount: '1706'
+source-wordcount: '2040'
 ht-degree: 29%
 
 ---
@@ -30,7 +30,9 @@ Adobe Experience Platform 中现有功能和文档的更新：
 - [身份标识服务](#identity)
 - [查询服务](#query-service)
 - [实时客户轮廓](#profile)
+- [沙盒](#sandboxes)
 - [源](#sources)
+- [用例战术手册](#use-case-playbooks)
 
 ## Experience League {#experience-league}
 
@@ -126,6 +128,20 @@ Adobe Experience Platform 使您能够为客户提供协调、一致且相关的
 
 要了解有关实时客户轮廓的更多信息，请阅读[轮廓概述](../../profile/home.md)
 
+## 沙盒 {#sandboxes}
+
+Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。企业通常会同时运行多个数字体验应用程序，并且需要满足这些应用程序的开发、测试和部署要求，同时确保运营合规性。为了满足这一需求，Experience Platform 提供了可将单个 Experience Platform 实例划分为多个单独的虚拟环境的沙盒，以帮助开发和改进数字体验应用程序。
+
+**新增功能或更新后的功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 沙盒工具插件支持扩展 | 在沙盒工具中复制历程对象时，自定义操作现在可以作为依赖对象复制。 此外，您还可以选择要在目标沙盒中重用的现有操作。 它们也可以单独添加到包中。 有关支持的Adobe Journey Optimizer对象的完整信息，请阅读[沙盒工具](../../sandboxes/ui/sandbox-tooling.md#adobe-journey-optimizer-objects)指南。 |
+
+{style="table-layout:auto"}
+
+有关沙盒的更多信息，请阅读[沙盒概述](../../sandboxes/home.md)。
+
 ## 源 {#sources}
 
 Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各种数据提供者设置源连接。这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
@@ -152,3 +168,21 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 {style="table-layout:auto"}
 
 有关更多信息，请阅读[源概述](../../sources/home.md)。
+
+## 用例战术手册 {#use-case-playbooks}
+
+用例行动手册最初旨在帮助克服开始使用Real-Time Customer Data Platform或Adobe Journey Optimizer时的挑战。 它们会不断发展，现在使您能够快速启动关键营销用例，提供灵感和预建资产以进行测试并投入生产。
+
+用例行动手册已从发现工具过渡到协作框架。 现在，他们可以帮助您在不同的组织间构建、管理和共享您自己的行动手册。
+
+**更新的功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| [!BADGE Beta]{type=Informative}创作并共享您自己的行动手册 | 新的行动手册创作框架使您能够创建、管理和共享您自己的用例行动手册。 这包括支持捕获关键元数据、编辑历程地图和关联相关技术资产。 您可以跨组织共享行动手册，以标准化营销方法并维护一致性。 |
+
+{style="table-layout:auto"}
+
+要了解如何创作和共享您自己的行动手册，请阅读[创作和共享您自己的行动手册](/help/use-case-playbooks/playbooks/author.md)文档。
+
+有关更多信息，请阅读[用例行动手册概述](/help/use-case-playbooks/playbooks/overview.md)，其中概述了行动手册的功能、用途和端到端演示，包括如何创建实例并将生成的资源导入其他沙盒环境。

@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2025 年 4 月）
 description: Adobe Experience Platform 的 2025 年 4 月发行说明。
 exl-id: a3b1e2e8-d780-4e23-b323-37e1a631f716
-source-git-commit: 65e0f0f98006f55bc08ccf24499841413def7a16
+source-git-commit: 52f6995beeff05948958bc7349242e2744e2fb05
 workflow-type: tm+mt
-source-wordcount: '1899'
-ht-degree: 26%
+source-wordcount: '2040'
+ht-degree: 29%
 
 ---
 
@@ -30,6 +30,7 @@ Adobe Experience Platform 中现有功能和文档的更新：
 - [身份标识服务](#identity)
 - [查询服务](#query-service)
 - [实时客户轮廓](#profile)
+- [沙盒](#sandboxes)
 - [源](#sources)
 - [用例战术手册](#use-case-playbooks)
 
@@ -126,6 +127,20 @@ Adobe Experience Platform 使您能够为客户提供协调、一致且相关的
 {style="table-layout:auto"}
 
 要了解有关实时客户轮廓的更多信息，请阅读[轮廓概述](../../profile/home.md)
+
+## 沙盒 {#sandboxes}
+
+Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。企业通常会同时运行多个数字体验应用程序，并且需要满足这些应用程序的开发、测试和部署要求，同时确保运营合规性。为了满足这一需求，Experience Platform 提供了可将单个 Experience Platform 实例划分为多个单独的虚拟环境的沙盒，以帮助开发和改进数字体验应用程序。
+
+**新增功能或更新后的功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 沙盒工具插件支持扩展 | 在沙盒工具中复制历程对象时，自定义操作现在可以作为依赖对象复制。 此外，您还可以选择要在目标沙盒中重用的现有操作。 它们也可以单独添加到包中。 有关支持的Adobe Journey Optimizer对象的完整信息，请阅读[沙盒工具](../../sandboxes/ui/sandbox-tooling.md#adobe-journey-optimizer-objects)指南。 |
+
+{style="table-layout:auto"}
+
+有关沙盒的更多信息，请阅读[沙盒概述](../../sandboxes/home.md)。
 
 ## 源 {#sources}
 
