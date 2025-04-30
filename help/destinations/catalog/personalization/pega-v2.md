@@ -1,7 +1,7 @@
 ---
 title: (V2) Pega CDH实时受众连接
 description: 使用Adobe Experience Platform中的Pega客户决策中心实时受众目标，将用户档案属性和受众成员资格数据发送到Pega客户决策中心，以便做出次优决策。
-source-git-commit: cc18f5c9445e5d08565cd5ac4bcbdb11ccbc1a31
+source-git-commit: a51f6bd189bc25018cf25e69fe23bc9f6b3372dd
 workflow-type: tm+mt
 source-wordcount: '1033'
 ht-degree: 3%
@@ -115,17 +115,21 @@ Adobe Experience Platform中的配置文件受众成员资格在加载到[!DNL P
 ## 导出的数据/验证数据导出 {#exported-data}
 
 成功更新用户档案的受众成员资格会在Pega营销受众成员资格数据存储中插入受众标识符、名称和状态。 会员资格数据在[!DNL Pega Customer Decision Hub]中使用Customer Profile Designer与客户相关联，如下所示。
+
 ![UI屏幕的图像，在该屏幕中，您可以使用客户个人资料Designer将Adobe受众会员资格数据关联到客户](../../assets/catalog/personalization/pega/pega-profile-designer-associate.png)
 
 受众会员资格数据用于Pega下一最佳操作Designer参与策略中，以实现下一最佳操作决策，如下所示。
-![UI屏幕的图像，在该屏幕中，您可以添加受众成员资格字段作为Pega下一个最佳操作Designer的参与策略中的条件](../../assets/catalog/personalization/pega/pega-profile-designer-engagment.png)
+
+![UI屏幕的图像，在该屏幕中，您可以添加受众成员资格字段作为Pega下一个最佳操作Designer的参与策略中的条件](../../assets/catalog/personalization/pega/pega-profile-designer-engagement.png)
 
 客户受众会员资格数据字段在自适应模型中作为预测项添加，如下所示。
+
 ![UI屏幕的图像，在该屏幕中，您可以使用Prediction Studio将Audience成员资格字段添加为自适应模型中的谓词](../../assets/catalog/personalization/pega/pega-profile-designer-adaptivemodel.png)
 
 ## 其他资源 {#additional-resources}
 
 有关详细信息，请参阅以下[!DNL Pega]文档：
+
 * [设置OAuth 2.0客户端注册](https://docs.pega.com/bundle/platform/page/platform/security/configure-oauth-2-client-registration.html)
 * [为数据流创建实时运行](https://docs.pega.com/bundle/platform/page/platform/decision-management/data-flow-run-real-time-create.html)
 * [在客户资料Designer中管理客户记录](https://docs.pega.com/bundle/customer-decision-hub/page/customer-decision-hub/implement/profile-designer-data-management.html)

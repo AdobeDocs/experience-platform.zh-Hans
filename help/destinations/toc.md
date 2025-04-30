@@ -5,9 +5,9 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: b456540a59c4b0455e8e1d52ed98d97454f8f61f
+source-git-commit: 8a9320ae00fdb611e4fd0fdc9ba80e922273359e
 workflow-type: tm+mt
-source-wordcount: '1286'
+source-wordcount: '1292'
 ht-degree: 5%
 
 ---
@@ -203,7 +203,8 @@ ht-degree: 5%
       * [Gainsight扩展](./catalog/personalization/gainsight.md)
       * [KickFire扩展](./catalog/personalization/kickfire.md)
       * [Marketo Web Personalization扩展](./catalog/personalization/marketo-web-personalization.md)
-      * [Pega客户决策中心连接](./catalog/personalization/pega.md)
+      * [Pega CDH实时受众连接](./catalog/personalization/pega.md)
+      * [(V2) Pega CDH实时受众连接](./catalog/personalization/pega-v2.md)
       * [Pega配置文件连接](./catalog/personalization/pega-profile.md)
    * 社交目标{#social}
       * [社交目标概述](./catalog/social/overview.md)
