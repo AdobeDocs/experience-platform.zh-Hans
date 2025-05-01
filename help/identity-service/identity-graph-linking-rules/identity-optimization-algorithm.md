@@ -2,7 +2,7 @@
 title: 身份标识优化算法
 description: 了解Identity Service中的身份优化算法。
 exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
-source-git-commit: a309f0dca5ebe75fcb7abfeb98605aec2692324d
+source-git-commit: df89afb7131c57b9400788ce30c420b9830c022e
 workflow-type: tm+mt
 source-wordcount: '1617'
 ht-degree: 4%
@@ -147,7 +147,7 @@ Identity Service中的命名空间具有隐式相对重要性顺序。 考虑一
 
 ![错误电子邮件](../images/identity-settings/bad-email.png)
 
-### 匿名事件关联
+## 匿名事件关联
 
 ECID存储未经身份验证的（匿名）事件，而CRMID存储经过身份验证的事件。 在共享设备的情况下，ECID（未验证事件的持有者）与&#x200B;**上次验证的用户**&#x200B;关联。
 
