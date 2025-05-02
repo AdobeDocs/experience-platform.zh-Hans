@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 将PSQL连接到查询服务
 description: 了解如何将PSQL客户端连接到Adobe Experience Platform查询服务，包括支持的PostgreSQL版本和设置说明。
 exl-id: ceb07128-409e-42be-8143-0cf681d435de
-source-git-commit: 74f4ac5a3ca4c06e81111ef453ae0effd21b3f16
+source-git-commit: f75ea97e8631984dcd1d4a7f8aff3c10cba7b11f
 workflow-type: tm+mt
 source-wordcount: '393'
 ht-degree: 0%
@@ -29,7 +29,7 @@ PSQL是与PostgreSQL一起安装在计算机上的命令行接口。 本文档�
 
 在&#x200B;**[!UICONTROL PSQL命令]**&#x200B;部分下，选择&#x200B;**[!UICONTROL 复制到剪贴板]**&#x200B;图标（![复制图标](/help/images/icons/copy.png)）以复制命令字符串。
 
-![突出显示复制图标的查询仪表板凭据选项卡。](../images/clients/psql/connect-bi.png)
+![突出显示复制图标的查询仪表板凭据选项卡。](../images/clients/psql/copy-credentials.png)
 
 将命令字符串粘贴到终端中，然后按键盘上的&#x200B;**Enter**。
 

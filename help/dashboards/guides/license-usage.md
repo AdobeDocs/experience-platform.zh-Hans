@@ -4,10 +4,10 @@ title: 许可证使用情况仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 62f5ecf82df46284365e64d633c8242ac45567bc
 workflow-type: tm+mt
-source-wordcount: '3398'
-ht-degree: 39%
+source-wordcount: '3442'
+ht-degree: 38%
 
 ---
 
@@ -307,7 +307,7 @@ additional-url="https://experienceleague.adobe.com/docs/experience-platform/prof
 | [!UICONTROL 包的配置文件丰富度] | 对于每个额外的轮廓丰富度包，每个轮廓的授权总数据量将增加 25 KB。 |
 | [!UICONTROL 查询服务计算小时数] | 执行批量查询时，查询服务引擎读取、处理数据并将数据写回到数据湖所需的时间量。 |
 | [!UICONTROL 流式分段数（包）] | 当新数据通过流式处理流程进入分段服务时，包会更新个人轮廓的区段会员资格。区段会员资格是根据当前个人轮廓属性和当前事件的值进行评估的，而不考虑历史行为。流式分段是一项共享功能。 |
-| [!UICONTROL 总数据量] | 可用于参与工作流中的实时客户个人资料的数据总量。 请参阅有关总数据量](../../landing/license-usage-and-guardrails/total-data-volume.md)的[常见问题解答，以了解更多信息。 |
+| [!UICONTROL 总数据量] | 可用于参与工作流中的实时客户个人资料的数据总量。 总数据量使用以下公式计算： **总数据量=可寻址受众×平均配置文件丰富度**。 此量度反映仅存储在配置文件存储中的数据，并排除数据湖存储。 它提供了与基于用户档案的参与相关的更集中的数据视图。 请参阅有关总数据量](../../landing/license-usage-and-guardrails/total-data-volume.md)的[常见问题解答，以了解更多信息。 |
 | [!UICONTROL 总数据输出量] | 从Adobe Experience Platform导出到第三方数据仓库的累积年数据量。 |
 
 <!-- |  [!UICONTROL Sandbox No of Packs] |  A logical separation within your instance of any Adobe On-demand Service that accesses Adobe Experience Platform isolating data and operations | -->
