@@ -4,7 +4,7 @@ description: 了解如何使用API将Azure Databricks连接到Experience Platfor
 badgeUltimate: label="Ultimate" type="Positive"
 badgeBeta: label="Beta 版" type="Informative"
 exl-id: c3974bab-8e67-49a1-b1a5-d453cf7bfd1d
-source-git-commit: 5637a12d5f9cc14b6cf3d88f018aa92de06ab739
+source-git-commit: 30f1c16084b3049fae45e26db0eed03888d35516
 workflow-type: tm+mt
 source-wordcount: '507'
 ht-degree: 2%
@@ -32,7 +32,7 @@ ht-degree: 2%
 
 ### 配置必备项设置
 
-请阅读[[!DNL Databricks] 概述](../../../../connectors/databases/databricks.md)以了解必须先完成必备配置才能将帐户连接到Experience Platform的信息。
+请阅读[[!DNL Databricks] 概述](../../../../connectors/databases/databricks.md)，了解在将帐户连接到Experience Platform之前必须完成的先决条件配置。
 
 ### 收集所需的凭据
 
