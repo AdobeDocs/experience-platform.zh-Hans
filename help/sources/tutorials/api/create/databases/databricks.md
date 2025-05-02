@@ -4,18 +4,20 @@ description: 了解如何使用API将Azure Databricks连接到Experience Platfor
 badgeUltimate: label="Ultimate" type="Positive"
 badgeBeta: label="Beta 版" type="Informative"
 exl-id: c3974bab-8e67-49a1-b1a5-d453cf7bfd1d
-source-git-commit: 30f1c16084b3049fae45e26db0eed03888d35516
+source-git-commit: 0c8ff1029beee3f58cbf536b11b40551b6f6c2ed
 workflow-type: tm+mt
-source-wordcount: '507'
+source-wordcount: '528'
 ht-degree: 2%
 
 ---
 
 # 使用[!DNL Flow Service] API将[!DNL Azure Databricks]连接到Experience Platform
 
->[!IMPORTANT]
+>[!AVAILABILITY]
 >
->[!DNL Azure Databricks]源在源目录中可供已购买Real-Time CDP Ultimate的用户使用。
+>* [!DNL Azure Databricks]源在源目录中可供已购买Real-Time CDP Ultimate的用户使用。
+>
+>* [!DNL Azure Databricks]源为测试版。 有关使用测试版标记源的更多信息，请阅读源概述中的[条款和条件](../../../../home.md#terms-and-conditions)。
 
 阅读本指南，了解如何使用[[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/)将您的[!DNL Azure Databricks]帐户连接到Adobe Experience Platform。
 
