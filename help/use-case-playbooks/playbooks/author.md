@@ -4,9 +4,9 @@ title: 了解如何使用AI助手创作和共享您自己的行动手册。
 description: 如何创作和共享您自己的用例行动手册。
 role: User
 exl-id: 0bc49710-ad9e-4509-b7e6-55f9b9037aa9
-source-git-commit: 9583d836d4e295bcb5cc2ce41ba8ba6d2046b114
+source-git-commit: 5cdbc160369a146da3ae8ca39d8c3095887e03b5
 workflow-type: tm+mt
-source-wordcount: '1679'
+source-wordcount: '1803'
 ht-degree: 0%
 
 ---
@@ -34,25 +34,25 @@ ht-degree: 0%
 
 在左侧导航面板中，选择&#x200B;**[!UICONTROL 行动手册]**。
 
-在UI的左侧导航窗格中突出显示![个“行动手册”。](/help/use-case-playbooks/assets/playbooks/authoring/playbooks.png)
+![左侧导航面板中突出显示“行动手册”选项的Platform UI。](/help/use-case-playbooks/assets/playbooks/authoring/playbooks.png)
 
 选择&#x200B;**[!UICONTROL 新建行动手册]**，然后选择&#x200B;**使用AI助手生成行动手册**。
 
-![选择了“使用AI助手生成行动手册”的行动手册界面。](/help/use-case-playbooks/assets/playbooks/authoring/generate-playbook.png)
+![已选择“使用AI助手生成行动手册”选项的行动手册创建界面。](/help/use-case-playbooks/assets/playbooks/authoring/generate-playbook.png)
 
 使用提示字段描述用例。 例如：
 
 “与浏览跑步鞋但未完成购买的ACME客户接洽。”
 
-![Web窗体区域突出显示的行动手册界面。](/help/use-case-playbooks/assets/playbooks/authoring/prompt.png)
+![行动手册创建界面突出显示Web窗体区域，用户可以在该区域输入提示。](/help/use-case-playbooks/assets/playbooks/authoring/prompt.png)
 
 选择&#x200B;**[!UICONTROL 生成]**&#x200B;以创建行动手册元数据。
 
-![提示区域突出显示“生成”行动手册按钮。](/help/use-case-playbooks/assets/playbooks/authoring/generate.png)
+![在提示区显示“生成”按钮的Playbook创建界面中突出显示。](/help/use-case-playbooks/assets/playbooks/authoring/generate.png)
 
 生成后，选择&#x200B;**[!UICONTROL 编辑]**&#x200B;以根据需要修改生成的标题、描述和元数据。
 
-![生成的、突出显示“编辑”按钮的行动手册。](/help/use-case-playbooks/assets/playbooks/authoring/edit.png)
+![生成的、突出显示“编辑”按钮的行动手册，允许用户修改元数据。](/help/use-case-playbooks/assets/playbooks/authoring/edit.png)
 
 为确保数据工程师拥有设置用例所需的所有详细信息，请填写&#x200B;**[!UICONTROL 行动手册详细信息]**&#x200B;部分。 虽然这些字段是可选的，但它们有助于捕获关键信息，使得连接正确的技术组件更加容易。 选择&#x200B;**[!UICONTROL 编辑]**&#x200B;以向以下字段添加值：
 
@@ -60,17 +60,17 @@ ht-degree: 0%
 * **目标受众**
 * **营销渠道**
 
-![带有“编辑”按钮的剧本详细信息部分突出显示。](/help/use-case-playbooks/assets/playbooks/authoring/edit-details.png)
+![突出显示带有“编辑”按钮的行动手册详细信息部分，以便您添加或修改行业、目标受众和营销渠道等详细信息。](/help/use-case-playbooks/assets/playbooks/authoring/edit-details.png)
 
 生成元数据后，选择&#x200B;**[!UICONTROL 编辑历程图]**&#x200B;以根据需要调整历程图中的步骤。
 
-![编辑历程图按钮。](/help/use-case-playbooks/assets/playbooks/authoring/edit-journey-map-button.png)
+![用于修改历程图步骤的“编辑历程图”按钮。](/help/use-case-playbooks/assets/playbooks/authoring/edit-journey-map-button.png)
 
-![捕获行动手册元数据后编辑历程图。](/help/use-case-playbooks/assets/playbooks/authoring/edit-journey-map.png)
+![历程图编辑器界面，这样您就可以在捕获行动手册元数据后调整步骤。](/help/use-case-playbooks/assets/playbooks/authoring/edit-journey-map.png)
 
 然后，继续将剧本与技术资产相关联。 要手动创建行动手册，请选择&#x200B;**[!UICONTROL 手动创建行动手册]**。
 
-![手动创建行动手册](/help/use-case-playbooks/assets/playbooks/authoring/create-manually.png)
+![使用“手动创建行动手册”选项，从空白模板启动行动手册。](/help/use-case-playbooks/assets/playbooks/authoring/create-manually.png)
 
 出现一个空白剧本模板。 填写详细信息，如&#x200B;**标题**&#x200B;和&#x200B;**描述**。 您还可以编辑历程图以根据需要添加事件和接触点。
 
@@ -82,25 +82,25 @@ ht-degree: 0%
 >
 > 未来版本中将添加对Real-Time CDP的支持。
 
-![突出显示了“技术资产”选项卡和“添加所需产品”按钮。](/help/use-case-playbooks/assets/playbooks/authoring/technical-assets-add-required-product.png)
+![突出显示了“技术Assets”选项卡，其中显示“添加所需产品”按钮，可使用它将技术资产与行动手册关联。](/help/use-case-playbooks/assets/playbooks/authoring/technical-assets-add-required-product.png)
 
 选择&#x200B;**[!UICONTROL 选择资产]**&#x200B;以将此剧本与历程关联，如下图所示。 然后选择&#x200B;**发布行动手册**&#x200B;以完成行动手册。
 
-![“选择资源”按钮在“技术资源”选项卡上突出显示](/help/use-case-playbooks/assets/playbooks/authoring/select-assets.png)
+![突出显示带有“选择资源”按钮的“技术Assets”选项卡，您可以使用它将历程与行动手册关联。](/help/use-case-playbooks/assets/playbooks/authoring/select-assets.png)
 
-![选择历程](/help/use-case-playbooks/assets/playbooks/authoring/journey.png)
+![选择历程以将其与行动手册关联。](/help/use-case-playbooks/assets/playbooks/authoring/journey.png)
 
 发布后，行动手册会自动提取和关联历程的模式和受众详细信息。
 
-![已发布的行动手册](/help/use-case-playbooks/assets/playbooks/authoring/publish-playbook.png)
+![已发布的行动手册，其中显示元数据和关联的技术资源。](/help/use-case-playbooks/assets/playbooks/authoring/publish-playbook.png)
 
 所有创建的行动手册都可在&#x200B;**您的行动手册**&#x200B;选项卡中找到。
 
-![“您的行动手册”选项卡](/help/use-case-playbooks/assets/playbooks/authoring/your-playbooks-tab.png)
+![“您的行动手册”选项卡显示已创建的行动手册列表。](/help/use-case-playbooks/assets/playbooks/authoring/your-playbooks-tab.png)
 
 您可以从目录中选择任何行动手册，以创建实例以供重用。 请参阅文档以[了解如何创建实例](/help/use-case-playbooks/playbooks/create-share-reuse.md)。
 
-选择行动手册后，![“创建实例”选项在“行动手册概述”选项卡中突出显示。](/help/use-case-playbooks/assets/playbooks/authoring/create-instance.png)
+![突出显示了“创建实例”选项的“行动手册概述”选项卡。](/help/use-case-playbooks/assets/playbooks/authoring/create-instance.png)
 
 >[!NOTE]
 >
@@ -108,13 +108,13 @@ ht-degree: 0%
 
 ## 示例提示
 
-AI Assistant可以处理各种提示结构和提取关键细节，同时过滤掉不必要的信息。 以下是用户提示的一些示例以及系统如何解释它们：
+AI Assistant可以处理各种提示结构和提取关键细节，同时过滤掉不必要的信息。 以下是用户提示的一些示例以及系统如何解读它们。
 
 **示例1：**
 
-创建标题为“Complete the Look”的营销活动以提高销售额和CLV。 此活动鼓励购买厨具或家具的客户通过与购买相关的个性化推荐和优惠完成补充购买。 第一个消息是向客户提供产品推荐。 如果他们在7天内未进行任何购买，则会收到第二条消息，其中包含产品建议和选件。 使用推送通知和电子邮件联系客户。 定位过去7天在厨具或家具类别中购买过，且过去30天内未成为目标的客户。 作为营销活动的一部分，我们希望测量KPI，例如点击次数（电子邮件、应用程序、短信、推送）、CTR、电子钱包CTR、AOV转化、CLV收入、总购买事件（店内、数字、呼叫中心）。”
+创建标题为“Complete the Look”的营销活动以提高销售额和CLV。 此活动鼓励购买厨具或家具的客户通过与购买相关的个性化推荐和优惠完成补充购买。 第一个消息是向客户提供产品推荐。 如果他们在7天内未进行任何购买，则会收到第二条消息，其中包含产品建议和选件。 使用推送通知和电子邮件联系客户。 定位过去7天在厨具或家具类别中购买过，且过去30天内未成为目标的客户。 作为营销活动的一部分，我们希望测量KPI，例如点击次数（电子邮件、应用程序、短信、推送）、CTR、电子钱包CTR、AOV转化。CLV收入、总购买事件（店内、数字、呼叫中心）。”
 
-![在文本输入框中显示长提示的示例](/help/use-case-playbooks/assets/playbooks/authoring/long-prompt.png)
+![在文本输入框中输入长提示以生成行动手册的示例。](/help/use-case-playbooks/assets/playbooks/authoring/long-prompt.png)
 
 **示例2：**
 
@@ -126,20 +126,20 @@ AI Assistant可以处理各种提示结构和提取关键细节，同时过滤�
 目标受众：已订阅ACME时尚新闻稿通信的客户。
 目标KPI/参与量度/ROI：1。 增加来自产品之收益。 2.提高客户忠诚度。”
 
-![在文本输入框中显示有条理提示的示例](/help/use-case-playbooks/assets/playbooks/authoring/organized-list-prompt.png)
+![在文本输入框中输入有条理的列表样式提示以生成行动手册的示例。](/help/use-case-playbooks/assets/playbooks/authoring/organized-list-prompt.png)
 
 **示例3：**
 
 “在正在进行的产品促销活动中，鼓励消费者购买产品。
 通过电子邮件、短信或推送通知发送适当的通信内容来购买产品，从而在持续促销期间与购物者互动。 在他们24小时没有参与促销活动后，向他们发送提醒电子邮件。”
 
-![在文本输入框中显示简明提示的示例](/help/use-case-playbooks/assets/playbooks/authoring/concise-prompt.png)
+![在文本输入框中输入用于生成行动手册的简要提示示例。](/help/use-case-playbooks/assets/playbooks/authoring/concise-prompt.png)
 
 **示例4：**
 
 “卖鞋给高中生。”
 
-![显示单行提示的示例](/help/use-case-playbooks/assets/playbooks/authoring/one-liner-prompt.png)
+![在文本输入框中输入的一行提示用于生成行动手册的示例。](/help/use-case-playbooks/assets/playbooks/authoring/one-liner-prompt.png)
 
 AI助手会删除所有不必要的详细信息，如“项目名称”或“背景”。 它可提取“目标受众”、“营销目标”和“营销渠道”等关键元素，并可与任何输入样式配合使用。
 
@@ -151,23 +151,23 @@ AI助手会删除所有不必要的详细信息，如“项目名称”或“背
 
 ## 内容准则和审核
 
-在创建行动手册时，请注意包括的语言和内容。 行动手册在整个组织中可见，用户可标记任何攻击性或不适当的内容。
+在创建行动手册时，请注意包括的语言和内容。 行动手册在整个组织中可见，以及用户标记的任何攻击性或不适当的内容。
 
 ### 标记和审阅流程
 
-如果行动手册被标记为不适当或冒犯性的内容，则会自动报告给Adobe以供审查。 然后，Adobe会审查标记的内容，如果认为不适当，则会通知客户，并删除剧本。
+如果行动手册包含不适当或冒犯性的内容，Adobe会自动收到报告以供审核。 Adobe会审查标记的内容，在认为不合适时通知客户，并删除剧本。
 
 ## 在沙盒之间共享行动手册 {#share-playbooks-sandboxes}
 
-在一个沙盒中创建和发布行动手册时，该行动手册会自动在您组织内的所有沙盒中可用。 这无需手动共享，并且允许您在任何其他沙盒中无缝创建行动手册的实例。
+在一个沙盒中创建和发布行动手册时，该行动手册会自动在您组织内的所有沙盒中可用。 此功能消除了对手动共享的需求，并允许您在任何其他沙盒中无缝创建行动手册的实例。
 
 >[!TIP]
 >
->如果行动手册引用的字段在目标沙盒的合并架构中不可用或缺少所需的权限，您在尝试创建实例时可能会看到一条错误消息。 该消息会调出缺少的字段和/或缺少的权限。
+>如果行动手册引用的字段在目标沙盒的合并架构中不可用，或者如果您缺乏必要的权限，则在尝试创建实例时会显示一条错误消息。 消息指定缺少的字段和/或权限。
 
-如果合并架构中缺少任何字段，则在导入期间将有一个对话框突出显示它们。
+如果合并架构中缺少任何字段，则在导入期间会有一个对话框突出显示它们。
 
-导入过程中列出的合并架构中缺少![字段](/help/use-case-playbooks/assets/playbooks/authoring/missing-fields.png)
+![在行动手册导入过程中列出合并架构中缺少的字段的对话框。](/help/use-case-playbooks/assets/playbooks/authoring/missing-fields.png)
 
 ## 在组织间共享您的行动手册 {#sharing-playbooks-organizations}
 
@@ -210,7 +210,7 @@ AI助手会删除所有不必要的详细信息，如“项目名称”或“背
 * [**管理包**](/help/sandboxes/ui/sandbox-tooling.md)
 * [**共享包**](/help/sandboxes/ui/sharing-packages-across-orgs.md)
 
-这些权限将允许您：
+使用这些权限可以：
 
 * 输入沙盒环境
 * 访问沙盒中的功能
@@ -218,11 +218,11 @@ AI助手会删除所有不必要的详细信息，如“项目名称”或“背
 
 这些权限位于权限列表的&#x200B;**[!UICONTROL 沙盒]**&#x200B;部分中。
 
-![突出显示相关权限的权限列表。](/help/use-case-playbooks/assets/playbooks/authoring/permissions.png)
+![突出显示具有管理和共享行动手册相关权限的权限列表。](/help/use-case-playbooks/assets/playbooks/authoring/permissions.png)
 
 ### 历程和相关对象 — 权限
 
-在构建使用行动手册的历程时，您可能会引用其他对象，如&#x200B;**渠道**、**受众**&#x200B;和其他实体。 每个模板都有自己的权限集。
+在构建使用行动手册的历程时，您可能引用其他对象，如&#x200B;**渠道**、**受众**&#x200B;和其他实体。 每个对象都有自己的权限集。
 
 这些是与历程相关的操作的关键权限，例如：
 
