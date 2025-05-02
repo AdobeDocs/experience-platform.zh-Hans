@@ -1,14 +1,21 @@
 ---
 title: 使用流服务API将Azure数据库连接到Experience Platform
 description: 了解如何使用API将Azure Databricks连接到Experience Platform。
-source-git-commit: 22cdbb1cbdeafced17dcd6bec243173723c8e483
+badgeUltimate: label="Ultimate" type="Positive"
+badgeBeta: label="Beta 版" type="Informative"
+exl-id: c3974bab-8e67-49a1-b1a5-d453cf7bfd1d
+source-git-commit: 5637a12d5f9cc14b6cf3d88f018aa92de06ab739
 workflow-type: tm+mt
-source-wordcount: '489'
+source-wordcount: '507'
 ht-degree: 2%
 
 ---
 
 # 使用[!DNL Flow Service] API将[!DNL Azure Databricks]连接到Experience Platform
+
+>[!IMPORTANT]
+>
+>[!DNL Azure Databricks]源在源目录中可供已购买Real-Time CDP Ultimate的用户使用。
 
 阅读本指南，了解如何使用[[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/)将您的[!DNL Azure Databricks]帐户连接到Adobe Experience Platform。
 

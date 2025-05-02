@@ -1,16 +1,22 @@
 ---
 title: Azure数据库
 description: 了解将Azure数据库连接到Experience Platform所需的先决步骤。
+badgeUltimate: label="Ultimate" type="Positive"
+badgeBeta: label="Beta 版" type="Informative"
 last-substantial-update: 2025-04-29T00:00:00Z
 exl-id: 2f082898-aa0e-47a1-a4bf-077c21afdfee
-source-git-commit: 16de2879f5f5da533ce640d93871571f03aa74c2
+source-git-commit: 5637a12d5f9cc14b6cf3d88f018aa92de06ab739
 workflow-type: tm+mt
-source-wordcount: '575'
+source-wordcount: '593'
 ht-degree: 2%
 
 ---
 
 # [!DNL Azure Databricks]
+
+>[!IMPORTANT]
+>
+>[!DNL Azure Databricks]源在源目录中可供已购买Real-Time CDP Ultimate的用户使用。
 
 [!DNL Azure Databricks]是一个基于云的平台，专为数据分析、机器学习和AI而设计。 您可以使用[!DNL Databricks]与[!DNL Azure]集成，并提供用于大规模构建、部署和管理数据解决方案的整体环境。
 
