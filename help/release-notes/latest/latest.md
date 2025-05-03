@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2025 年 4 月）
 description: Adobe Experience Platform 的 2025 年 4 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 3836b369d609448146a273fc6cf29061fd1ea422
+source-git-commit: be9e1a995e62fa5a437be82aa15187815bbc5a9d
 workflow-type: tm+mt
-source-wordcount: '2040'
-ht-degree: 29%
+source-wordcount: '2147'
+ht-degree: 30%
 
 ---
 
@@ -25,6 +25,7 @@ ht-degree: 29%
 Adobe Experience Platform 中现有功能和文档的更新：
 
 - [Experience League](#experience-league)
+- [数据收集](#data-collection)
 - [目标](#destinations)
 - [Experience Data Model](#xdm)
 - [身份标识服务](#identity)
@@ -44,6 +45,18 @@ Experience League是一个全面的学习平台，旨在帮助您通过Adobe产�
 
 {style="table-layout:auto"}
 
+## 数据收集 {#data-collection}
+
+Adobe Experience Platform 提供一套技术，通过这些技术，可收集客户端客户体验数据，并将它发送到 Adobe Experience Platform Edge Network，从中可充实、转换数据和将数据分发到 Adobe 或非 Adobe 目标。
+
+**新增功能或更新后的功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| [!DNL Amazon] Web事件API扩展 | 通过[!DNL Amazon]转化API扩展，广告商可以直接与[!DNL Amazon]共享网站交互，从而改善归因、数据可靠性和促销活动优化。 此扩展支持事件转发，允许您发送转化事件，如购买、购物车添加等，同时确保正确删除重复项以准确报告。 有关详细信息，请参阅[Amazon扩展概述](/help/tags/extensions/server/amazon/overview.md)。 |
+
+{style="table-layout:auto"}
+
 ## 目标 {#destinations}
 
 [!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
@@ -55,7 +68,7 @@ Experience League是一个全面的学习平台，旨在帮助您通过Adobe产�
 | [Marketo Engage人员同步](/help/destinations/catalog/adobe/marketo-engage-person-sync.md) | Adobe更新了[!DNL Marketo Engage Person Sync]目标以修复身份映射中存在多个电子邮件时影响客户的问题。 |
 | [(V2) Pega CDH实时受众连接](/help/destinations/catalog/personalization/pega-v2.md) | 当您在Pega帐户中配置了多个Pega客户决策中心应用程序时，使用Adobe Experience Platform中的[!DNL (V2) Pega Customer Decision Hub Realtime Audience]目标将配置文件属性和受众成员资格数据发送到Pega客户决策中心以便做出下一个最佳操作决策。 |
 
-**新功能或更新功能** {#destinations-new-updated-functionality}
+**新增或更新的功能** {#destinations-new-updated-functionality}
 
 | 功能 | 描述 |
 | --- | --- |
