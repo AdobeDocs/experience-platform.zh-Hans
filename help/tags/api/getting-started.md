@@ -2,7 +2,7 @@
 title: 身份验证和访问Reactor API
 description: 了解如何开始使用Reactor API，包括生成所需访问凭据的步骤。
 exl-id: fc1acc1d-6cfb-43c1-9ba9-00b2730cad5a
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 31e52dce23c558aaba822fe27d2e58ed6a7ce18d
 workflow-type: tm+mt
 source-wordcount: '912'
 ht-degree: 3%
@@ -16,6 +16,8 @@ ht-degree: 3%
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
+* `Accept: application/vnd.api+json;revision=1`
+* `Content-Type: application/vnd.api+json`
 
 本指南介绍如何使用Adobe Developer Console收集每个标头的值，以便您开始调用Reactor API。
 
@@ -51,7 +53,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->选择&#x200B;**[!UICONTROL OAuth服务器到服务器]**&#x200B;方法，因为这将是今后唯一支持的方法。 已弃用&#x200B;**[!UICONTROL 服务帐户(JWT)]**&#x200B;方法。 虽然使用JWT身份验证方法的集成将继续工作到2025年1月1日，但Adobe强烈建议您在该日期之前将现有集成迁移到新的OAuth服务器到服务器方法。 在[!BADGE Deprecated]部分获取更多信息{type=negative}[在Experience Platform API身份验证教程中生成JSON Web令牌(JWT)](/help/landing/api-authentication.md#jwt)。
+>选择&#x200B;**[!UICONTROL OAuth服务器到服务器]**&#x200B;方法，因为这将是今后唯一支持的方法。 已弃用&#x200B;**[!UICONTROL 服务帐户(JWT)]**&#x200B;方法。 虽然使用JWT身份验证方法的集成将继续工作到2025年1月1日，但Adobe强烈建议您在该日期之前将现有集成迁移到新的OAuth服务器到服务器方法。 请参阅Experience Platform API身份验证教程中的[!BADGE 已弃用]{type=negative}[生成JSON Web令牌(JWT)](/help/landing/api-authentication.md#jwt)部分以获取更多信息。
 
 选择&#x200B;**下一步**&#x200B;以继续。
 
