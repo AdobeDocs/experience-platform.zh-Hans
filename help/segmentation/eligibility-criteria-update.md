@@ -3,17 +3,17 @@ title: 分段资格标准更新
 description: 了解分段资格标准更新，这些更新会影响可以使用流和边缘分段来评估的受众类型。
 hide: true
 hidefromtoc: true
-source-git-commit: 0bbee2100ed6fdc0f40457965e195d07de6eb2a1
+exl-id: c91c0f75-9bc8-4fa7-9d27-9b07d0ea560c
+source-git-commit: e6deed1fe52a0a852f521100171323f0de23295b
 workflow-type: tm+mt
 source-wordcount: '371'
 ht-degree: 0%
 
 ---
 
-
 # 分段资格标准更新
 
-从2024年9月24日开始，将进行两项影响分段资格的更新。
+从2025年5月23日开始，将进行两项影响分段资格的更新。
 
 1. 流和边缘分段查询类型
 2. 流和边缘分段合并策略
