@@ -18,4 +18,4 @@ ht-degree: 0%
 
 此视频概述了Adobe Experience Platform如何与Adobe Experience Cloud应用程序和功能(如Adobe Analytics、Adobe Target、Adobe Campaign、Adobe Experience Manager、客户属性、Audience Library和标记)集成。
 
->[!VIDEO](https://video.tv.adobe.com/v/32553?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3430387?quality=12&learn=on&captions=chi_hans)

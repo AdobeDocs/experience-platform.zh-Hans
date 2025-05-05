@@ -45,7 +45,7 @@ ht-degree: 70%
 
 以下视频简要概述了如何在 UI 中为数据流配置和实施数据使用限制：
 
->[!VIDEO](https://video.tv.adobe.com/v/3409588/?quality=12&learn=on&speedcontrol=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3413100/?quality=12&learn=on&speedcontrol=on&captions=chi_hans)
 
 在 Experience Platform 中，您可以将[敏感数据使用标签](../data-governance/labels/reference.md#sensitive)应用于架构和字段，其中包含您组织视为敏感信息的数据。例如，`RHD` 标签用于表示受保护的健康信息 (PHI)，而 `S1` 标签表示地理位置数据。
 

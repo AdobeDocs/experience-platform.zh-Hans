@@ -24,4 +24,4 @@ ht-degree: 0%
 1. 增强实时体验的交付和个性化
 1. 获得对治理、安全和隐私控制的信任
 
->[!VIDEO](https://video.tv.adobe.com/v/32502?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3428513?quality=12&learn=on&captions=chi_hans)

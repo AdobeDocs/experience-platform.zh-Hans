@@ -30,7 +30,7 @@ ht-degree: 8%
 
 本文档介绍如何在[!UICONTROL 架构] UI工作区中定义枚举和建议值。 要快速了解枚举和建议值（包括如何在UI中配置它们及其下游影响），请观看以下视频：
 
->[!VIDEO](https://video.tv.adobe.com/v/3409501/?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3413675/?quality=12&learn=on&captions=chi_hans)
 
 ## 定义枚举 {#enum}
 

@@ -25,4 +25,4 @@ ht-degree: 0%
 >
 >Experience Platform用户界面经常更新，自从录制此视频以来，可能已经发生了变化。 有关最新信息，请参阅[合并策略UI指南](../merge-policies/ui-guide.md)。
 
->[!VIDEO](https://video.tv.adobe.com/v/330433?quality=12&learn=on&captions=eng)
+>[!VIDEO](https://video.tv.adobe.com/v/345074?quality=12&learn=on&captions=chi_hans)

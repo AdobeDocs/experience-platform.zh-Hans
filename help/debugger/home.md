@@ -39,4 +39,4 @@ ht-degree: 5%
 
 ## 视频教程
 
->[!VIDEO](https://video.tv.adobe.com/v/32156?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/35858?quality=12&learn=on&captions=chi_hans)

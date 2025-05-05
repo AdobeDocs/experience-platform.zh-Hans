@@ -39,7 +39,7 @@ ht-degree: 1%
 
 以下视频介绍了[!DNL Enhanced Conversions]扩展并大致介绍了实施步骤：
 
->[!VIDEO](https://video.tv.adobe.com/v/3411365?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3416060?quality=12&learn=on&captions=chi_hans)
 
 ## 使用标记发送转化
 

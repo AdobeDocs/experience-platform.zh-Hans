@@ -35,4 +35,4 @@ ht-degree: 1%
 
 有关更多信息，请观看以下视频以创建架构字段组。
 
->[!VIDEO](https://video.tv.adobe.com/v/27013/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3413600/?learn=on&captions=chi_hans)

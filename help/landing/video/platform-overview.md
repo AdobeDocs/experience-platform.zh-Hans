@@ -20,4 +20,4 @@ ht-degree: 0%
 
 要了解更多信息，请先阅读[Experience Platform概述](../home.md)。
 
->[!VIDEO](https://video.tv.adobe.com/v/32797?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3428501?quality=12&learn=on&captions=chi_hans)

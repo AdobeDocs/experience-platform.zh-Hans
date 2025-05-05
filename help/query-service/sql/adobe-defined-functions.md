@@ -487,4 +487,4 @@ LIMIT 10
 
 以下视频介绍了如何在Adobe Experience Platform界面和PSQL客户端中运行查询。 此外，该视频还使用涉及XDM对象中各个属性、使用Adobe定义的函数以及使用CREATE TABLE AS SELECT (CTAS)的示例。
 
->[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/32702?quality=12&learn=on&captions=chi_hans)

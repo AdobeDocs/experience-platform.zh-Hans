@@ -273,4 +273,4 @@ Attribution AI作为Intelligent Services的一部分，是一种多渠道的算�
 
 以下视频概述了在归因人工智能中创建新实例的端到端工作流。
 
->[!VIDEO](https://video.tv.adobe.com/v/32668?learn=on&quality=12)
+>[!VIDEO](https://video.tv.adobe.com/v/36590?learn=on&quality=12&captions=chi_hans)

@@ -64,4 +64,4 @@ ht-degree: 0%
 >
 >以下视频中显示的Experience PlatformUI已过期。 请参阅文档以了解最新的UI屏幕截图和功能。
 
->[!VIDEO](https://video.tv.adobe.com/v/28167?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/31671?quality=12&learn=on&captions=chi_hans)

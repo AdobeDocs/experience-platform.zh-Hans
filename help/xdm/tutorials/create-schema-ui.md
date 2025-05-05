@@ -409,11 +409,11 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 以下视频说明如何在[!DNL Experience Platform] UI中创建简单架构。
 
->[!VIDEO](https://video.tv.adobe.com/v/27012?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3430217?quality=12&learn=on&captions=chi_hans)
 
 以下视频旨在加深您对使用现场小组和课堂的理解。
 
->[!VIDEO](https://video.tv.adobe.com/v/27013?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3413600?quality=12&learn=on&captions=chi_hans)
 
 ## 附录
 

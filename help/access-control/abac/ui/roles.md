@@ -57,7 +57,7 @@ ht-degree: 23%
 
 以下视频旨在支持您了解如何创建新角色以及如何管理该角色的用户。
 
->[!VIDEO](https://video.tv.adobe.com/v/336081/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3423937/?learn=on&captions=chi_hans)
 
 ## 复制角色
 

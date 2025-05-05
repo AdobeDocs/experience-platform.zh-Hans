@@ -44,7 +44,7 @@ Customer AI 用于生成自定义倾向分数，如轮廓大规模的流失率�
 
 以下视频旨在支持您了解客户人工智能。
 
->[!VIDEO](https://video.tv.adobe.com/v/32664?learn=on&quality=12)
+>[!VIDEO](https://video.tv.adobe.com/v/36439?learn=on&quality=12&captions=chi_hans)
 
 ## 工作原理
 

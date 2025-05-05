@@ -26,7 +26,7 @@ ht-degree: 14%
 
 观看本视频，了解在Journey Optimizer中创建沙盒、配置权限和配置电子邮件、推送和短信通知的渠道界面所需的步骤。
 
->[!VIDEO](https://video.tv.adobe.com/v/3426987?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3449836?learn=on&captions=chi_hans)
 
 ## 创建开发沙盒 {#create-development-sandbox}
 

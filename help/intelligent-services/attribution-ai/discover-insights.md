@@ -195,4 +195,4 @@ Attribution AI分析允许您过滤数据并根据所选过滤器自动更新UI�
 
 以下视频旨在帮助学习如何使用Attribution AI分析页面了解营销渠道和营销活动的ROI。
 
->[!VIDEO](https://video.tv.adobe.com/v/32669?learn=on&quality=12)
+>[!VIDEO](https://video.tv.adobe.com/v/345098?learn=on&quality=12&captions=chi_hans)

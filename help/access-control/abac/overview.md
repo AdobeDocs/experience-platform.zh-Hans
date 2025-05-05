@@ -24,7 +24,7 @@ ht-degree: 13%
 
 以下视频旨在支持您了解基于属性的访问控制，并概述如何配置角色、资源和策略。
 
->[!VIDEO](https://video.tv.adobe.com/v/345641?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3451849?learn=on&captions=chi_hans)
 
 ## 基于属性的访问控制术语
 

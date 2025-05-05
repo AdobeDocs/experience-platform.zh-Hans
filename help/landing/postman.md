@@ -21,7 +21,7 @@ Postman是API开发的协作平台，允许您使用预设变量设置环境、�
 
 以下视频指南概述了如何创建和设置Postman环境。 Postman环境包含您对下面提供的各种收藏集进行API调用所需的所有标头。 设置后，每当某个值过期（如`ACCESS_TOKEN`）时，您都可以更新环境中的当前值，此新值将在您的所有收藏集中使用。
 
->[!VIDEO](https://video.tv.adobe.com/v/28832)
+>[!VIDEO](https://video.tv.adobe.com/v/31668?captions=chi_hans)
 
 ## Postman收藏集 {#collections}
 
@@ -57,7 +57,7 @@ Postman是API开发的协作平台，允许您使用预设变量设置环境、�
 
 以下视频使用[Identity Management服务(IMS) Postman收藏集](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/ims/Identity%20Management%20Service.postman_collection.json)，该收藏集可从公共GitHub存储库下载。
 
->[!VIDEO](https://video.tv.adobe.com/v/29698/?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/32725/?quality=12&learn=on&captions=chi_hans)
 
 ## 后续步骤
 

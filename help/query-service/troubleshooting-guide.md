@@ -65,7 +65,7 @@ ht-degree: 0%
 ### 我可以将[!DNL Postman]用于查询服务API吗？
 
 +++回答
-可以，您可以使用[!DNL Postman]（免费的第三方应用程序）可视化所有Adobe API服务并与之交互。 请查看[[!DNL Postman] 设置指南](https://video.tv.adobe.com/v/28832)，了解有关如何在Adobe Developer Console中设置项目以及获取用于[!DNL Postman]的所有必要凭据的分步说明。 请参阅官方文档，了解有关启动、运行和共享 [!DNL Postman] 收藏集[&#128279;](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)的指南。
+可以，您可以使用[!DNL Postman]（免费的第三方应用程序）可视化所有Adobe API服务并与之交互。 请查看[[!DNL Postman] 设置指南](https://video.tv.adobe.com/v/31668?captions=chi_hans)，了解有关如何在Adobe Developer Console中设置项目以及获取用于[!DNL Postman]的所有必要凭据的分步说明。 请参阅官方文档，了解有关启动、运行和共享 [!DNL Postman] 收藏集[&#128279;](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)的指南。
 +++
 
 ### 通过UI从查询返回的最大行数是否存在限制？

@@ -47,7 +47,7 @@ Edge Network提供了低延迟的数据收集、可插拔计算和快速数据�
 
 观看以下视频，了解Adobe Experience Platform [!DNL Web SDK]和[!DNL Edge Network]的概述。
 
->[!VIDEO](https://video.tv.adobe.com/v/34141?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/37264?quality=12&learn=on&captions=chi_hans)
 
 ## 由Web SDK替换的库 {#sdks}
 
@@ -64,7 +64,7 @@ Web SDK取代了：
 
 观看以下视频以了解Adobe Experience Platform [!DNL Web SDK]和[!DNL Edge Network]的实际操作情况，只需一次调用即可将数据发送到[!DNL Experience Platform]、[!DNL Analytics]、[!DNL Audience Manager]和[!DNL Target]。
 
->[!VIDEO](https://video.tv.adobe.com/v/34148)
+>[!VIDEO](https://video.tv.adobe.com/v/3413663?captions=chi_hans)
 
 ## 从现有库迁移到Web SDK {#migrating-to-web-sdk}
 

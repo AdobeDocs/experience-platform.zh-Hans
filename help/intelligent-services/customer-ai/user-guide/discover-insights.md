@@ -231,4 +231,4 @@ AUC反映了得分排名与预测目标发生之间的关系强度。 0.5的&#x2
 
 以下视频概述了如何使用客户人工智能查看模型和影响因素的输出。
 
->[!VIDEO](https://video.tv.adobe.com/v/32666?learn=on&quality=12)
+>[!VIDEO](https://video.tv.adobe.com/v/36591?learn=on&quality=12&captions=chi_hans)

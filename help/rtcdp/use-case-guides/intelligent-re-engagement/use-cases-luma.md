@@ -16,12 +16,12 @@ ht-degree: 1%
 
 ## 实施
 
->[!VIDEO](https://video.tv.adobe.com/v/3425184/?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3454283/?quality=12&learn=on&captions=chi_hans)
 
 ## 历程配置
 
->[!VIDEO](https://video.tv.adobe.com/v/3427101/?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3453973/?quality=12&learn=on&captions=chi_hans)
 
 ## 受众和目标配置
 
->[!VIDEO](https://video.tv.adobe.com/v/3427451/?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3452922/?quality=12&learn=on&captions=chi_hans)

@@ -152,4 +152,4 @@ Adobe Experience Platform允许您将数据作为批处理文件轻松导入[!DN
 >
 >以下视频中显示的[!DNL Experience Platform] UI已过期。 有关最新的UI屏幕截图和功能，请参阅上述文档。
 
->[!VIDEO](https://video.tv.adobe.com/v/27269?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/34322?quality=12&learn=on&captions=chi_hans)

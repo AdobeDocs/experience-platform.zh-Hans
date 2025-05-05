@@ -28,7 +28,7 @@ ht-degree: 0%
 
 观看以下视频，大致了解监控功能：
 
->[!VIDEO](https://video.tv.adobe.com/v/343999?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3411265?quality=12&learn=on&captions=chi_hans)
 
 ## 选择属性和环境
 

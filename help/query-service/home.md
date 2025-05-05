@@ -17,7 +17,7 @@ Adobe Experience Platform从各种来源摄取数据。 营销人员面临的一
 
 您可以使用查询服务连接在线到离线客户历程并了解品牌的全渠道归因。 以下视频演示了体验企业如何使用查询服务解决关键用例以及查询服务的工作方式。
 
->[!VIDEO](https://video.tv.adobe.com/v/29795?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/33591?quality=12&learn=on&captions=chi_hans)
 
 ## 使用查询服务 {#usage}
 
@@ -66,4 +66,4 @@ Adobe Experience Platform [!DNL Data Science Workspace]使用机器学习和人�
 
 为了更好地准备运行查询，请观看以下视频。 此视频分享有关在查询编辑器界面、PSQL客户端、商业智能(BI)解决方案和HTTP API中运行查询的提示和最佳实践。
 
->[!VIDEO](https://video.tv.adobe.com/v/29811?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/33586?quality=12&learn=on&captions=chi_hans)

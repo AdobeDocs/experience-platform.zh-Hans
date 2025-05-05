@@ -27,4 +27,4 @@ ht-degree: 0%
 >
 >Experience Platform用户界面经常更新，自从录制此视频以来，该界面可能已发生更改。 有关最新信息，请参阅[区段生成器指南](../ui/segment-builder.md)。
 
->[!VIDEO](https://video.tv.adobe.com/v/27428?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/34320?quality=12&learn=on&captions=chi_hans)

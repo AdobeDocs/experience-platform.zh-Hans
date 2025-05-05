@@ -47,7 +47,7 @@ Adobe知道没有一种放之四海而皆准的方法，它允许与数据和身
 
 查看下面的视频教程，了解如何使用合作伙伴提供的属性来补充第一方受众：
 
->[!VIDEO](https://video.tv.adobe.com/v/3423075/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3452471/?learn=on&captions=chi_hans)
 
 ## 如何实现该用例：大致概述 {#achieve-the-use-case-high-level}
 

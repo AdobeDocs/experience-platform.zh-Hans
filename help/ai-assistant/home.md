@@ -90,7 +90,7 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 
 观看以下视频，了解有关AI助手操作见解的其他信息：
 
->[!VIDEO](https://video.tv.adobe.com/v/3444031?learn=on&enablevpops)
+>[!VIDEO](https://video.tv.adobe.com/v/3444042?learn=on&enablevpops&captions=chi_hans)
 
 ### 功能范围 {#feature-scope}
 

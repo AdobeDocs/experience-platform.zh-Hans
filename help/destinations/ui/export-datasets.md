@@ -78,7 +78,7 @@ ht-degree: 6%
 
 观看以下视频，了解此页面上描述的工作流的端到端说明、使用导出数据集功能的好处以及一些建议的用例。
 
->[!VIDEO](https://video.tv.adobe.com/v/3424392/)
+>[!VIDEO](https://video.tv.adobe.com/v/3448828?captions=chi_hans)
 
 ## 支持的目标 {#supported-destinations}
 

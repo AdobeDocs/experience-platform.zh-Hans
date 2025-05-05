@@ -59,7 +59,7 @@ order by price desc)D;
 
 下面看到的视频演示提供了围绕[!DNL Query Service]和Adobe Analytics集成的Experience Platform数据的真实整体用例。
 
->[!VIDEO](https://video.tv.adobe.com/v/342533?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3454956?quality=12&learn=on&captions=chi_hans)
 
 ## [!DNL Query Service]的优势 {#benefits}
 

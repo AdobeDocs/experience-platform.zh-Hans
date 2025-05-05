@@ -25,4 +25,4 @@ ht-degree: 0%
 >
 >Experience Platform用户界面经常更新，自从录制此视频以来，可能已经发生了变化。 有关最新信息，请参阅[联合架构UI指南](../ui/union-schema.md)。
 
->[!VIDEO](https://video.tv.adobe.com/v/329940?quality=12&learn=on&captions=eng)
+>[!VIDEO](https://video.tv.adobe.com/v/342820?quality=12&learn=on&captions=chi_hans)

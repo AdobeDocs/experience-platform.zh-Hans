@@ -23,4 +23,4 @@ ht-degree: 8%
 * 交付和跨渠道体验
 * 客户体验应用程序开发
 
->[!VIDEO](https://video.tv.adobe.com/v/32806?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3430463?quality=12&learn=on&captions=chi_hans)

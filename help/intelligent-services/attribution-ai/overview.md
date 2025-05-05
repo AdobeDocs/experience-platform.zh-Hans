@@ -29,7 +29,7 @@ Attribution AI支持两类分数：算法分数和基于规则的分数。 算�
 
 以下视频旨在支持您对Attribution AI的理解。
 
->[!VIDEO](https://video.tv.adobe.com/v/32667?learn=on&quality=12)
+>[!VIDEO](https://video.tv.adobe.com/v/36584?learn=on&quality=12&captions=chi_hans)
 
 ## 业务用例示例
 

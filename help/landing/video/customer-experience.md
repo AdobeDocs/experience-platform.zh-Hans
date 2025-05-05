@@ -18,4 +18,4 @@ ht-degree: 8%
 
 观看此视频，了解如何从客户的角度观察使用Experience Platform构建的假想体验，从而了解Experience Platform如何为客户创造丰富、相关和实时的体验。
 
->[!VIDEO](https://video.tv.adobe.com/v/27361?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/35361?quality=12&learn=on&captions=chi_hans)

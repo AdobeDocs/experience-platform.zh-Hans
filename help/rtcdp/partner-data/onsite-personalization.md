@@ -64,7 +64,7 @@ ht-degree: 89%
 
 查看下面的视频教程，逐步了解如何为未知访客提供个性化的现场体验：
 
->[!VIDEO](https://video.tv.adobe.com/v/3423076/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3449262/?learn=on&captions=chi_hans)
 
 ## 如何实现该用例：高级概述 {#achieve-the-use-case-high-level}
 

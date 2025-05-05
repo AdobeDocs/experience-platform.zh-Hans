@@ -304,4 +304,4 @@ ht-degree: 1%
 >
 >以下视频中使用的“统一配置文件”一词已过期。 术语[!DNL "Profile"]或[!DNL "Real-Time Customer Profile"]是[!DNL Experience Platform]文档中使用的正确术语。 请参阅文档以了解最新功能。
 
->[!VIDEO](https://video.tv.adobe.com/v/27106?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/346829?quality=12&learn=on&captions=chi_hans)

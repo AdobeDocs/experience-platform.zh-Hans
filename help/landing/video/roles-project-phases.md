@@ -18,4 +18,4 @@ ht-degree: 0%
 
 此视频概述了成功的Adobe Experience Platform项目所涉及的角色、阶段和关键成果。
 
->[!VIDEO](https://video.tv.adobe.com/v/32807?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3430456?quality=12&learn=on&captions=chi_hans)

@@ -18,4 +18,4 @@ ht-degree: 0%
 
 本视频介绍了简要的架构图，其中说明了Experience Platform的主要组件。
 
->[!VIDEO](https://video.tv.adobe.com/v/32456?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3422778?quality=12&learn=on&captions=chi_hans)

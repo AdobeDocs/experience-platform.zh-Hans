@@ -81,4 +81,4 @@ Adobe Exchange团队为您提供沙盒名称，您需要将其用于对Destinati
    * [使用Destination SDK配置基于文件的目标](guides/configure-file-based-destination-instructions.md)
 
 * 有关所有操作，请参阅[目标创作API文档](https://www.adobe.io/experience-platform-apis/references/destination-authoring/)。
-* 使用[目标创作API Postman收藏集](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Destination%20Authoring%20API.postman_collection.json)通过Destination SDK API端点配置您的目标。 要开始使用Postman，请参阅导入环境和收藏集的[步骤](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/)以及创建Postman环境的[视频指南](https://video.tv.adobe.com/v/28832)。
+* 使用[目标创作API Postman收藏集](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Destination%20Authoring%20API.postman_collection.json)通过Destination SDK API端点配置您的目标。 要开始使用Postman，请参阅导入环境和收藏集的[步骤](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/)以及创建Postman环境的[视频指南](https://video.tv.adobe.com/v/31668?captions=chi_hans)。

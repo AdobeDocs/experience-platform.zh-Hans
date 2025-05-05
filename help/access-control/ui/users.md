@@ -29,7 +29,7 @@ ht-degree: 0%
 
 以下视频旨在支持您了解如何管理产品配置文件的管理员。
 
->[!VIDEO](https://video.tv.adobe.com/v/333860/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3423932/?learn=on&captions=chi_hans)
 
 ## 后续步骤
 

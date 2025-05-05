@@ -48,7 +48,7 @@ Real-Time Customer Data Platform附带的Customer AI为您提供了在个人层�
 
 要了解有关客户人工智能的更多信息，请访问[客户人工智能概述](../../intelligent-services/customer-ai/overview.md)。 此外，以下视频展示了客户人工智能如何通过基于人工智能的倾向性丰富客户档案，并支持客户分段和定位工作。
 
->[!VIDEO](https://video.tv.adobe.com/v/40374/?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/328474/?quality=12&learn=on&captions=chi_hans)
 
 
 ## 后续步骤

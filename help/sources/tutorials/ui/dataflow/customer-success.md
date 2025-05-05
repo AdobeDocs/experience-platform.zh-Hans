@@ -149,4 +149,4 @@ Experience Platform根据您选择的目标架构或数据集，为自动映射�
 >
 > 以下视频中显示的Experience Platform UI已过期。 有关最新的UI屏幕截图和功能，请参阅上述文档。
 >
->[!VIDEO](https://video.tv.adobe.com/v/29711?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/32139?quality=12&learn=on&captions=chi_hans)

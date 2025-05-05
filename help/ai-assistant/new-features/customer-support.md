@@ -59,5 +59,5 @@ AI Assistant for Customer Support是AI Assistant的一项自助调试和故障�
 
 有关更多信息，请观看以下视频，了解如何使用AI客户支持助手在不离开工作流的情况下无缝进行故障排除。
 
->[!VIDEO](https://video.tv.adobe.com/v/3443183?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3443193?learn=on&captions=chi_hans)
 

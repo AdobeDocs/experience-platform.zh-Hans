@@ -28,7 +28,7 @@ ht-degree: 6%
 
 观看以下视频，了解有关使用[!DNL Identity Graph Linking Rules]的其他信息：
 
->[!VIDEO](https://video.tv.adobe.com/v/3448250/?learn=on&enablevpops)
+>[!VIDEO](https://video.tv.adobe.com/v/3448282/?learn=on&enablevpops&captions=chi_hans)
 
 ## 快速入门
 
