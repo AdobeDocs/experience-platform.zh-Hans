@@ -67,6 +67,6 @@ ht-degree: 7%
 
 准备好所有凭据后，即可为[!DNL Content tagging]设置自定义工作程序。 以下文档有助于了解可扩展性框架和环境设置。
 
-要了解有关可扩展性框架的更多信息，请先阅读[可扩展性简介](https://experienceleague.adobe.com/docs/asset-compute/using/extend/understand-extensibility.html)文档。 本文档概述了先决条件和设置要求。
+要了解有关可扩展性框架的更多信息，请先阅读[可扩展性简介](https://experienceleague.adobe.com/docs/asset-compute/using/extend/understand-extensibility.html?lang=zh-Hans)文档。 本文档概述了先决条件和设置要求。
 
-要了解有关为[!DNL Content tagging]设置环境的更多信息，请先阅读[设置开发人员环境](https://experienceleague.adobe.com/docs/asset-compute/using/extend/setup-environment.html)的指南。 本文档提供了允许您为Asset compute服务开发的设置说明。
+要了解有关为[!DNL Content tagging]设置环境的更多信息，请先阅读[设置开发人员环境](https://experienceleague.adobe.com/docs/asset-compute/using/extend/setup-environment.html?lang=zh-Hans)的指南。 本文档提供了允许您为Asset compute服务开发的设置说明。

@@ -16,13 +16,13 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-Adobe Experience Platform Web SDK允许您在Web应用程序的客户端收集[Adobe Analytics for Target (A4T)](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html)数据。
+Adobe Experience Platform Web SDK允许您在Web应用程序的客户端收集[Adobe Analytics for Target (A4T)](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html?lang=zh-Hans)数据。
 
-客户端日志记录意味着相关[!DNL Target]数据将在客户端返回，允许您收集这些数据并与Analytics共享。 如果您打算使用[数据插入API](https://experienceleague.adobe.com/docs/analytics/import/c-data-insertion-api.html)手动将数据发送到Analytics，则应启用此选项。
+客户端日志记录意味着相关[!DNL Target]数据将在客户端返回，允许您收集这些数据并与Analytics共享。 如果您打算使用[数据插入API](https://experienceleague.adobe.com/docs/analytics/import/c-data-insertion-api.html?lang=zh-Hans)手动将数据发送到Analytics，则应启用此选项。
 
 >[!NOTE]
 >
->使用[AppMeasurement.js](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html)执行此操作的方法目前正在开发中，将在不久的将来提供。
+>使用[AppMeasurement.js](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html?lang=zh-Hans)执行此操作的方法目前正在开发中，将在不久的将来提供。
 
 本文档介绍了为Web SDK设置客户端A4T日志记录的步骤，并提供一些常见用例的实施示例。
 
@@ -227,7 +227,7 @@ Adobe Experience Platform Web SDK允许您在Web应用程序的客户端收集[A
 
 ### 基于表单的体验编辑器活动 {#form-based-composer}
 
-您可以使用Web SDK控制[Adobe Target基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html)活动中建议的执行。
+您可以使用Web SDK控制[Adobe Target基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=zh-Hans)活动中建议的执行。
 
 在为特定决策范围请求建议时，返回的建议包含其相应的Analytics令牌。 最佳实践是将Experience Platform Web SDK `sendEvent`命令链结在一起并在收集Analytics令牌时循环遍历返回的建议以执行它们。
 
@@ -467,7 +467,7 @@ alloy("sendEvent", {
 
 ### 可视化体验编辑器活动 {#visual-experience-composer-acitivties}
 
-Web SDK允许您处理使用[可视化体验编辑器(VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)编写的选件。
+Web SDK允许您处理使用[可视化体验编辑器(VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=zh-Hans)编写的选件。
 
 >[!NOTE]
 >

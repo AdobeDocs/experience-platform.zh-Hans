@@ -13,7 +13,7 @@ ht-degree: 2%
 
 ## 概述 {#overview}
 
-Adobe Advertising Cloud [!DNL Demand-Side Platform] (DSP)目标允许您与已批准的广告商和用户共享经过身份验证的第一方受众，以便通过DSP激活营销活动。 要了解有关Real-Time CDP与DSP集成的更多信息，请参阅[关于从受众源激活经过身份验证的受众](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-about.html)。
+Adobe Advertising Cloud [!DNL Demand-Side Platform] (DSP)目标允许您与已批准的广告商和用户共享经过身份验证的第一方受众，以便通过DSP激活营销活动。 要了解有关Real-Time CDP与DSP集成的更多信息，请参阅[关于从受众源激活经过身份验证的受众](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-about.html?lang=zh-Hans)。
 
 >[!IMPORTANT]
 >
@@ -35,8 +35,8 @@ Adobe Advertising Cloud [!DNL Demand-Side Platform] (DSP)目标允许您与已�
 
 * DSP帐户级别和营销活动级别的设置以启用与[!DNL LiveRamp RampID]的受众共享，这会将客户数据转换为[!DNL RampIDs]以创建可定位的区段。 您的DSP帐户团队将执行此配置。 [!DNL RampID]可通过DSP与[!DNL LiveRamp]之间的合作关系使用，您不需要自己的[!DNL LiveRamp]成员资格即可使用它。
 * Experience PlatformExperience Cloud的组织ID。 您可以在[!DNL Real-Time CDP]用户配置文件页面上找到您的ID。
-* DSP[&#128279;](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html)中用于接收营销活动激活受众的[!DNL Real-Time CDP] 源。 您的DSP客户团队将使用您的Experience Cloud组织ID创建源。
-* DSP帐户或广告商的源密钥，在DSP[&#128279;](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html)中创建[[!DNL Real-Time CDP] 源时生成。 您的DSP帐户团队将与您共享此密钥。 您将在Experience Platform中使用它来创建到Advertising Cloud DSP目标的目标连接，如下面](#authenticate)所述。
+* DSP[&#128279;](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html?lang=zh-Hans)中用于接收营销活动激活受众的[!DNL Real-Time CDP] 源。 您的DSP客户团队将使用您的Experience Cloud组织ID创建源。
+* DSP帐户或广告商的源密钥，在DSP[&#128279;](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html?lang=zh-Hans)中创建[[!DNL Real-Time CDP] 源时生成。 您的DSP帐户团队将与您共享此密钥。 您将在Experience Platform中使用它来创建到Advertising Cloud DSP目标的目标连接，如下面](#authenticate)所述。
 * 包含电子邮件或经过哈希处理的电子邮件的客户数据。
 
 ## 支持的身份 {#supported-identities}
@@ -72,7 +72,7 @@ Adobe Advertising Cloud DSP目标支持激活下表中描述的标识。 了解�
 
 若要连接到目标，请在[!UICONTROL 连接类型]部分提供以下参数，然后选择&#x200B;**[!UICONTROL 连接到目标]**：
 
-* **[!UICONTROL 帐户或广告商密钥]**：在DSP用户界面[&#128279;](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html)中创建[!DNL Real-Time CDP] 源时生成此[!UICONTROL Source密钥]。 您的DSP客户团队将在创建源后与您共享此密钥。
+* **[!UICONTROL 帐户或广告商密钥]**：在DSP用户界面[&#128279;](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html?lang=zh-Hans)中创建[!DNL Real-Time CDP] 源时生成此[!UICONTROL Source密钥]。 您的DSP客户团队将在创建源后与您共享此密钥。
 
 ![连接类型字段](/help/destinations/assets/catalog/advertising/adobe-advertising-cloud-connection/authenticate-destination.png)
 

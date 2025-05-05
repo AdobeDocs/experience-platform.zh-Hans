@@ -24,7 +24,7 @@ ht-degree: 2%
 
 本教程需要对创建架构的要求有一定的了解。 在继续本指南之前，您应该阅读有关创建和编辑架构的[UI指南](./resources/schemas.md)。
 
-本指南介绍如何使用机器学习(ML)算法创建架构，以从示例数据生成架构。 有关在架构编辑器中创建架构或有关基于[字段的工作流](https://experienceleague.adobe.com/en/docs/experience-platform/xdm/ui/field-based-workflows)的文档的信息，请参阅[手动架构创建工作流指南](https://experienceleague.adobe.com/en/docs/experience-platform/xdm/ui/resources/schemas#add-field-groups)，以加深您对架构创建过程的了解。
+本指南介绍如何使用机器学习(ML)算法创建架构，以从示例数据生成架构。 有关在架构编辑器中创建架构或有关基于[字段的工作流](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/xdm/ui/field-based-workflows)的文档的信息，请参阅[手动架构创建工作流指南](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/xdm/ui/resources/schemas#add-field-groups)，以加深您对架构创建过程的了解。
 
 >[!NOTE]
 >
@@ -125,4 +125,4 @@ ht-degree: 2%
 
 创建架构后，您可以使用架构编辑器进行进一步的修改（如有必要）。 您的新架构现在已准备好与数据源集成并用于数据分析。
 
-有关使用架构编辑器的详细信息，请参阅[编辑现有架构指南](https://experienceleague.adobe.com/en/docs/experience-platform/xdm/ui/resources/schemas#edit)。
+有关使用架构编辑器的详细信息，请参阅[编辑现有架构指南](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/xdm/ui/resources/schemas#edit)。

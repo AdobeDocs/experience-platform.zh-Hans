@@ -30,7 +30,7 @@ Adobe Campaign Managed Cloud Services源允许您将Adobe Campaign v8投放日�
 
 >[!IMPORTANT]
 >
->您必须有权访问Adobe Campaign v8客户端控制台，才能在Campaign中查看日志数据。 有关如何下载和安装客户端控制台的信息，请访问[Campaign v8文档](https://experienceleague.adobe.com/docs/campaign/campaign-v8/deploy/connect.html)。
+>您必须有权访问Adobe Campaign v8客户端控制台，才能在Campaign中查看日志数据。 有关如何下载和安装客户端控制台的信息，请访问[Campaign v8文档](https://experienceleague.adobe.com/docs/campaign/campaign-v8/deploy/connect.html?lang=zh-Hans)。
 
 通过客户端控制台登录到Campaign v8实例。 在[!DNL Explorer]选项卡下，选择[!DNL Administration]，然后选择[!DNL Configuration]。 接下来，选择[!DNL Data schemas]，然后为名称或标签应用`broadLog`筛选器。 在显示的列表中，选择名为`broadLogRcp`的收件人投放日志源架构。
 

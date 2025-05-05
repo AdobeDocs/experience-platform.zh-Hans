@@ -25,8 +25,8 @@ ht-degree: 0%
 此工作流演示依赖于多个Adobe Experience Platform服务。 如果您希望跟进，建议您很好地了解以下功能和服务：
 
 * 体验数据模型(XDM)架构组合的[基础知识](../../xdm/schema/composition.md)
-* 如何[创建数据集并摄取数据](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)
-* 如何使用Adobe Analytics源连接器[摄取数据](https://experienceleague.adobe.com/docs/platform-learn/tutorials/sources/ingest-data-from-adobe-analytics.html)
+* 如何[创建数据集并摄取数据](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)
+* 如何使用Adobe Analytics源连接器[摄取数据](https://experienceleague.adobe.com/docs/platform-learn/tutorials/sources/ingest-data-from-adobe-analytics.html?lang=zh-Hans)
 * [区段](../../segmentation/home.md)
 * [目标](../../destinations/home.md)
 

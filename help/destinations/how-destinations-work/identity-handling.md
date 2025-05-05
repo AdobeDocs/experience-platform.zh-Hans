@@ -88,7 +88,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Audience Manager支持这些广告目标中的大多数(这些目标类型在Audience Manager中称为基于设备的目标)。 查看Audience Manager[&#128279;](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/device-based/device-based-destinations-list.html)中所有支持的基于设备的目标的列表。 Experience Platform中只列出少数几个。 有关在Experience Platform和Audience Manager之间共享数据的信息，请阅读[中有关启用从Experience Platform到Audience Manager的数据共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#enable-aep-to-aam-data)的部分。 目前，没有计划支持更多第三方Cookie目标。
+>Audience Manager支持这些广告目标中的大多数(这些目标类型在Audience Manager中称为基于设备的目标)。 查看Audience Manager[&#128279;](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/device-based/device-based-destinations-list.html?lang=zh-Hans)中所有支持的基于设备的目标的列表。 Experience Platform中只列出少数几个。 有关在Experience Platform和Audience Manager之间共享数据的信息，请阅读[中有关启用从Experience Platform到Audience Manager的数据共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=zh-Hans#enable-aep-to-aam-data)的部分。 目前，没有计划支持更多第三方Cookie目标。
 
 ## 企业目标 {#enterprise-destinations}
 

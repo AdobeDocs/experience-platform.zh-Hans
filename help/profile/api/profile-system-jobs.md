@@ -16,7 +16,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->在Microsoft Azure上运行的Adobe Experience Platform实施与Amazon Web Services (AWS)上运行的实施之间可能存在以下端点。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud)。
+>在Microsoft Azure上运行的Adobe Experience Platform实施与Amazon Web Services (AWS)上运行的实施之间可能存在以下端点。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/landing/multi-cloud)。
 
 Adobe Experience Platform允许您从多个源摄取数据，并为个别客户构建可靠的配置文件。 摄取到[!DNL Experience Platform]的数据存储在[!DNL Data Lake]中，如果为配置文件启用了数据集，则该数据也存储在[!DNL Real-Time Customer Profile]数据存储中。 有时候，可能有必要从配置文件存储中删除与数据集关联的配置文件数据，以便删除不再需要或添加错误的数据。 这需要使用[!DNL Real-Time Customer Profile] API创建[!DNL Profile]系统作业或“删除请求”。
 

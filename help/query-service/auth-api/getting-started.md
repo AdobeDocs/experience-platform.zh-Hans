@@ -31,7 +31,7 @@ Data Distiller Authorization API通过Adobe Experience Platform中的SQL接口�
 
 >[!NOTE]
 >
->系统管理员可以从Adobe [Admin Console](https://adminconsole.adobe.com/)设置用户权限。 有关详细信息，请参阅 [Admin Console 用户指南](https://helpx.adobe.com/enterprise/using/admin-console.html)。
+>系统管理员可以从Adobe [Admin Console](https://adminconsole.adobe.com/)设置用户权限。 有关详细信息，请参阅 [Admin Console 用户指南](https://helpx.adobe.com/cn/enterprise/using/admin-console.html)。
 
 以下功能具有&#x200B;**[!UICONTROL 管理允许列表]**&#x200B;权限：
 

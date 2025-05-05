@@ -26,9 +26,9 @@ ht-degree: 3%
 请务必了解本文档中使用的以下关键术语：
 
 * **标准属性**：标准属性是Adobe预定义的任何属性。 它们对所有客户具有相同的含义，并且在[!DNL Analytics]源数据和[!DNL Analytics]架构字段组中可用。
-* **自定义属性**：自定义属性是[!DNL Analytics]中自定义变量层次结构中的任何属性。 在Adobe Analytics实施中使用自定义属性将特定信息捕获到报表包中，这些属性的使用因报表包而异。 自定义属性包括eVar、prop和列表。 有关eVar的详细信息，请参阅以下[[!DNL Analytics] 有关转化变量](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html)的文档。
+* **自定义属性**：自定义属性是[!DNL Analytics]中自定义变量层次结构中的任何属性。 在Adobe Analytics实施中使用自定义属性将特定信息捕获到报表包中，这些属性的使用因报表包而异。 自定义属性包括eVar、prop和列表。 有关eVar的详细信息，请参阅以下[[!DNL Analytics] 有关转化变量](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=zh-Hans)的文档。
 * **自定义字段组中的任何属性**：源自客户创建的字段组的属性都是用户定义的属性，既不是标准属性，也不是自定义属性。
-* **友好名称**：友好名称是[!DNL Analytics]实施中自定义变量的人工提供标签。 有关友好名称的详细信息，请参阅以下[[!DNL Analytics] 有关转化变量](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html)的文档。
+* **友好名称**：友好名称是[!DNL Analytics]实施中自定义变量的人工提供标签。 有关友好名称的详细信息，请参阅以下[[!DNL Analytics] 有关转化变量](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=zh-Hans)的文档。
 
 ## 创建与Adobe Analytics的源连接
 

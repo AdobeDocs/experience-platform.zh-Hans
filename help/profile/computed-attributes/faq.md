@@ -99,4 +99,4 @@ ht-degree: 0%
 
 ## 如何将计算属性与Adobe Journey Optimizer结合使用？
 
-要在历程中使用计算属性，您需要将`SystemComputedAttributes`字段组添加到Experience Platform数据源。 有关配置Experience Platform数据源的详细信息，请参阅[Adobe Experience Platform数据源指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/configuration/configure-journeys/data-source-journeys/adobe-experience-platform-data-source.html)。
+要在历程中使用计算属性，您需要将`SystemComputedAttributes`字段组添加到Experience Platform数据源。 有关配置Experience Platform数据源的详细信息，请参阅[Adobe Experience Platform数据源指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/configuration/configure-journeys/data-source-journeys/adobe-experience-platform-data-source.html?lang=zh-Hans)。

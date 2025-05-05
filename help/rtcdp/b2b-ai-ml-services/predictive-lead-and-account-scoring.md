@@ -3,7 +3,7 @@ title: Real-Time CDP B2B中的预测性商机和客户评分
 type: Documentation
 description: 有关Experience PlatformCDP B2B中的预测商机和客户评分功能的概述和更多信息。
 feature: Profiles, B2B
-badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: d3afbabb-005d-4537-831a-857c88043759
 source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt

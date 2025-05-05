@@ -159,12 +159,12 @@ Experience Platform UI中的顶部导航栏显示您当前登录到的组织，�
 
 ### [!UICONTROL 联合数据]
 
-**[!UICONTROL 模型]**&#x200B;部分允许您设计和创建定义数据的结构、关系和约束的数据模型和架构。 您可以在[联合受众组合用户指南](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/config/datamodel/schemas)中找到有关数据模型和架构的更多信息。
+**[!UICONTROL 模型]**&#x200B;部分允许您设计和创建定义数据的结构、关系和约束的数据模型和架构。 您可以在[联合受众组合用户指南](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/config/datamodel/schemas)中找到有关数据模型和架构的更多信息。
 
 **[!UICONTROL 审核跟踪]**&#x200B;部分提供了已实时对您的环境执行的所有操作和事件的详细时间顺序记录。 您可以在[联合受众组合用户指南](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/audit-trail/audit-trail)中找到有关审核跟踪的详细信息。
 
 
-通过&#x200B;**[!UICONTROL 联合数据库]**&#x200B;部分，您可以将Adobe Experience Platform连接到企业数据仓库。 您可以在[联合受众组合用户指南](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/config/federated-db)中找到有关连接到联合数据库的详细信息。
+通过&#x200B;**[!UICONTROL 联合数据库]**&#x200B;部分，您可以将Adobe Experience Platform连接到企业数据仓库。 您可以在[联合受众组合用户指南](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/config/federated-db)中找到有关连接到联合数据库的详细信息。
 
 ### [!UICONTROL 决策]
 

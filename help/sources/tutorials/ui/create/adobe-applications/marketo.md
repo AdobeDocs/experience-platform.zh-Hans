@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->在创建[!DNL Marketo Engage]源连接和数据流之前，必须首先确保已在[!DNL Marketo]中映射[您的Adobe组织ID](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html)。 此外，您还必须确保在创建源连接和数据流之前已完成[自动填充 [!DNL Marketo] B2B命名空间和架构](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md)。
+>在创建[!DNL Marketo Engage]源连接和数据流之前，必须首先确保已在[!DNL Marketo]中映射[您的Adobe组织ID](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html?lang=zh-Hans)。 此外，您还必须确保在创建源连接和数据流之前已完成[自动填充 [!DNL Marketo] B2B命名空间和架构](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md)。
 
 本教程提供了在UI中创建[!DNL Marketo Engage]（以下简称“[!DNL Marketo]”）源连接器以将B2B数据引入Adobe Experience Platform的步骤。
 

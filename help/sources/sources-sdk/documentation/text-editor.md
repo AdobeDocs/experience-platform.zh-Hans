@@ -17,7 +17,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->可以使用Adobe参与指南中的以下文档来进一步支持您的文档流程： <ul><li>[安装Git和Markdown创作工具](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html)</li><li>[在本地为文档设置Git存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html)</li><li>针对主要更改的[GitHub贡献工作流](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html)</li></ul>
+>可以使用Adobe参与指南中的以下文档来进一步支持您的文档流程： <ul><li>[安装Git和Markdown创作工具](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html?lang=zh-Hans)</li><li>[在本地为文档设置Git存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=zh-Hans)</li><li>针对主要更改的[GitHub贡献工作流](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html?lang=zh-Hans)</li></ul>
 
 ## 先决条件
 
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->有关详细信息，请参阅有关[在本地为文档](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html#create-a-local-clone-of-the-repository)设置Git存储库的教程。
+>有关详细信息，请参阅有关[在本地为文档](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=zh-Hans#create-a-local-clone-of-the-repository)设置Git存储库的教程。
 
 ![open-git-desktop](../assets/open-git-desktop.png)
 
@@ -59,7 +59,7 @@ ht-degree: 0%
 
 ## 为您的源创作文档页面
 
-将存储库克隆到本地计算机并创建新分支后，您现在可以通过所选的[文本编辑器](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html#understand-markdown-editors)开始为新源创作文档页面。
+将存储库克隆到本地计算机并创建新分支后，您现在可以通过所选的[文本编辑器](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html?lang=zh-Hans#understand-markdown-editors)开始为新源创作文档页面。
 
 Adobe建议您使用[Visual Studio Code](https://code.visualstudio.com/)，并安装Adobe Markdown创作扩展。 要安装扩展，请启动Visual Studio Code，然后从左侧导航中选择&#x200B;**扩展**&#x200B;选项卡。
 

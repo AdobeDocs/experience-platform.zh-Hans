@@ -52,7 +52,7 @@ Adobe Experience Platform Segmentation Service支持所有Experience Data Model 
 
 外部受众也可以用作新区段定义的组件，将其属性规则添加到新区段定义。
 
-目前，仅支持将Adobe Audience Manager作为外部受众，并且将来会启用其他源。 有关将Adobe Audience Manager受众与Experience Platform结合使用的更多信息，请参阅Adobe Audience Manager文档中的[受众共享指南](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)。
+目前，仅支持将Adobe Audience Manager作为外部受众，并且将来会启用其他源。 有关将Adobe Audience Manager受众与Experience Platform结合使用的更多信息，请参阅Adobe Audience Manager文档中的[受众共享指南](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=zh-Hans)。
 
 ### 区段定义共享
 

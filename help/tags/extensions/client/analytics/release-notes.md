@@ -15,7 +15,7 @@ ht-degree: 65%
 
 >[!NOTE]
 >
->Analytics标记扩展(如果经常为响应[AppMeasurementJavaScript库](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html)的更新而更新)。 有关下面提及的特定版本的详细信息，请参阅[AppMeasurement发行说明](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans)。
+>Analytics标记扩展(如果经常为响应[AppMeasurementJavaScript库](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html?lang=zh-Hans)的更新而更新)。 有关下面提及的特定版本的详细信息，请参阅[AppMeasurement发行说明](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans)。
 
 ## 2024年10月28日
 
@@ -23,7 +23,7 @@ ht-degree: 65%
 
 **功能**：
 
-* 添加了新功能，允许用户查看和编辑[设置变量操作](https://experienceleague.adobe.com/en/docs/experience-platform/tags/extensions/client/analytics/overview#set-variables)的JSON版本。 AdobeWeb SDK扩展还包括通过提供JSON [填充Analytics变量](https://experienceleague.adobe.com/en/docs/experience-platform/tags/extensions/client/web-sdk/data-element-types)的操作。 通过将JSON数据从AA扩展复制到Web SDK扩展，迁移客户可以轻松地同时传输多个设置，而不是手动添加每个变量。
+* 添加了新功能，允许用户查看和编辑[设置变量操作](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/tags/extensions/client/analytics/overview#set-variables)的JSON版本。 AdobeWeb SDK扩展还包括通过提供JSON [填充Analytics变量](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/tags/extensions/client/web-sdk/data-element-types)的操作。 通过将JSON数据从AA扩展复制到Web SDK扩展，迁移客户可以轻松地同时传输多个设置，而不是手动添加每个变量。
 
 ## 2024年8月12日
 
@@ -61,7 +61,7 @@ ht-degree: 65%
 
 **错误修复**：
 
-* 为具有错误的高熵[用户代理客户端提示](https://experienceleague.adobe.com/docs/analytics/technotes/client-hints.html) API的浏览器添加了其他错误处理。
+* 为具有错误的高熵[用户代理客户端提示](https://experienceleague.adobe.com/docs/analytics/technotes/client-hints.html?lang=zh-Hans) API的浏览器添加了其他错误处理。
 * 已将[POST](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/POST) Content-Type标头更改为默认使用`x-www-form-urlencoded`。
 
 ## 2022年9月23日
@@ -218,7 +218,7 @@ ht-degree: 65%
 
 * 更新了 Adobe Analytics 扩展，以支持用于 Audience Manager 的 DIL 9.2
 
-* 更新了扩展以支持 [AppMeasurement 2.15.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html#version-2.15.0)
+* 更新了扩展以支持 [AppMeasurement 2.15.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans#version-2.15.0)
 * 移除了以下复选框（因为该复选框不再受支持）：“Do not attach the destination publishing IFRAME to the DOM or fire destinations”
 
 ## 2019 年 6 月 4 日
@@ -227,7 +227,7 @@ ht-degree: 65%
 
 **功能**：
 
-* 已将 Adobe Analytics 扩展更新至 [AppMeasurement 2.14.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html#version-2.14.0)，该版本修复了一个已知的 clearVars 问题。
+* 已将 Adobe Analytics 扩展更新至 [AppMeasurement 2.14.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans#version-2.14.0)，该版本修复了一个已知的 clearVars 问题。
 * 添加了指向扩展的 Exchange 链接。通过选择相应的下拉菜单并选取“extension info”，可访问 Exchange 列表
 
 **错误修复**：

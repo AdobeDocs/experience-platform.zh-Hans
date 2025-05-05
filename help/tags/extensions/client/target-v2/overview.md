@@ -49,13 +49,13 @@ ht-degree: 60%
 
 #### GDPR Opt-In
 
-如果启用此选项，Adobe Target 将提供选择启用功能，以帮助支持您的同意管理策略。选择启用功能让客户可自行决定如何以及何时触发 Target 标记。有关 Adobe 选择启用的更多信息，请参阅[隐私和一般数据保护条例  (GDPR)](https://experienceleague.adobe.com/docs/target/using/implement-target/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.html)。
+如果启用此选项，Adobe Target 将提供选择启用功能，以帮助支持您的同意管理策略。选择启用功能让客户可自行决定如何以及何时触发 Target 标记。有关 Adobe 选择启用的更多信息，请参阅[隐私和一般数据保护条例  (GDPR)](https://experienceleague.adobe.com/docs/target/using/implement-target/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.html?lang=zh-Hans)。
 
 #### Timeout (ms)
 
 如果在定义的时间段内未收到来自 Target 的响应，则请求会超时并显示默认内容。在访客会话期间会继续尝试发起其他请求。默认值为 3000 毫秒，这可能与 Target 用户界面中配置的超时不同。
 
-有关超时设置的工作方式的更多信息，请参阅 [Adobe Target 帮助](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/deploy-at-js/implementing-target-without-a-tag-manager.html)。
+有关超时设置的工作方式的更多信息，请参阅 [Adobe Target 帮助](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/deploy-at-js/implementing-target-without-a-tag-manager.html?lang=zh-Hans)。
 
 ## Target 扩展操作类型
 
@@ -71,7 +71,7 @@ Target 扩展在规则的 Then 部分中提供了以下操作：
 
 ### 通过设备上决策加载Target
 
-将此操作添加到标记规则中，其中加载在规则上下文中启用[设备上决策](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/on-device-decisioning/on-device-decisioning.html)的Target是可行的。 此操作会将启用了设备上决策的at.js库加载到页面中。 在大多数实施中，应在您网站的每个页面上加载 Target。Adobe建议，仅在执行Target调用之后再结合使用Load Target和“设备端决策”操作。 否则，您可能会遇到 Analytics 调用延迟等问题。
+将此操作添加到标记规则中，其中加载在规则上下文中启用[设备上决策](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/on-device-decisioning/on-device-decisioning.html?lang=zh-Hans)的Target是可行的。 此操作会将启用了设备上决策的at.js库加载到页面中。 在大多数实施中，应在您网站的每个页面上加载 Target。Adobe建议，仅在执行Target调用之后再结合使用Load Target和“设备端决策”操作。 否则，您可能会遇到 Analytics 调用延迟等问题。
 
 >[!IMPORTANT]
 >
@@ -100,7 +100,7 @@ Target 扩展在规则的 Then 部分中提供了以下操作：
 * **Body Hiding：**&#x200B;您可以启用或禁用此设置。默认值为 Enabled，表示隐藏 HTML 主体。
 * **Body Hidden Style：**&#x200B;默认值为 body{opacity:0}。此值可更改为其他内容，如 body{display:none}。
 
-有关更多信息，请参阅 [Target 联机帮助文档](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html)。
+有关更多信息，请参阅 [Target 联机帮助文档](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html?lang=zh-Hans)。
 
 ### Trigger View
 
@@ -109,7 +109,7 @@ Target 扩展在规则的 Then 部分中提供了以下操作：
 1. 指定必须触发的视图名称。
 1. 通过选中 Page 复选框，指定是否应将视图触发归因于要报告的展示。如果视图与重新渲染的组件相关，而不归因于要报告的展示，则应将 Page 复选框保留为取消选中状态。
 
-有关触发视图的更多信息，请参阅[`triggerView()`帮助文档](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/functions-overview/adobe-target-triggerview-atjs-2.html)。
+有关触发视图的更多信息，请参阅[`triggerView()`帮助文档](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/functions-overview/adobe-target-triggerview-atjs-2.html?lang=zh-Hans)。
 
 ## Adobe Target 基本部署
 

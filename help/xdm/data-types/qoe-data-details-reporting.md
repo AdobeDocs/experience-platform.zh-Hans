@@ -23,26 +23,26 @@ ht-degree: 4%
 
 | 显示名称 | 属性 | 数据类型 | 描述 |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------|-----------|---------------------------------------------------------------------------------------------------|
-| [[!UICONTROL 平均比特率]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#average-bitrate-1) | `bitrateAverage` | 数字 | 平均比特率（以kbps为单位，整数）。 计算为比特率值的加权平均值。 |
-| [[!UICONTROL 平均比特率存储桶]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#average-bitrate) | `bitrateAverageBucket` | 字符串 | 在100kbps间隔的预定义存储桶中分类的平均比特率（以kbps为单位）。 |
-| [[!UICONTROL 比特率]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#average-bitrate) | `bitrate` | 整数 | 比特率值（以kbps为单位）。 |
-| [[!UICONTROL 受比特率更改影响的流]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#bitrate-change-impacted-streams) | `hasBitrateChangeImpactedStreams` | 布尔 | 指示在播放期间流是否受比特率更改的影响。 |
-| [[!UICONTROL 比特率更改]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#bitrate-changes) | `bitrateChangeCount` | 整数 | 播放期间比特率更改的总数。 |
-| [[!UICONTROL 缓冲事件]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#buffer-events) | `bufferCount` | 整数 | 播放期间不同缓冲状态的计数。 |
-| [[!UICONTROL 受缓冲影响的流]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#buffer-impacted-streams) | `hasBufferImpactedStreams` | 布尔 | 指示流在播放期间是否受缓冲影响。 |
-| [[!UICONTROL 受丢帧影响的流]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#dropped-frame-impacted-streams) | `hasDroppedFrameImpactedStreams` | 布尔 | 指示流在播放期间是否受到丢帧的影响。 |
-| [[!UICONTROL 丢帧]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#dropped-frames-1) | `droppedFrames` | 整数 | 播放期间丢帧的总数。 |
-| [[!UICONTROL 开始前丢帧]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#drops-before-start) | `isDroppedBeforeStart` | 布尔 | 指示用户在视频开始之前是否退出视频（无论是否有广告）。 |
-| [[!UICONTROL 错误影响的流]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#error-impacted-streams) | `hasErrorImpactedStreams` | 布尔 | 指示流在播放期间是否遇到错误。 |
-| [[!UICONTROL 错误]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#errors-%2F-error-events) | `errorCount` | 整数 | 播放期间发生的错误总数。 |
-| [[!UICONTROL 外部错误ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#external-error-ids) | `externalErrors` | 字符串数组 | 来自外部源的唯一错误ID，例如CDN错误。 |
-| 每秒[[!UICONTROL 帧数]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#frames-per-second) | `framesPerSecond` | 整数 | 当前流帧速率（以每秒帧数为单位）。 |
-| [[!UICONTROL 媒体SDK错误ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#media-sdk-error-ids) | `mediaSdkErrors` | 字符串数组 | Media SDK在播放期间生成的唯一错误ID。 |
-| [[!UICONTROL 播放器SDK错误ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#player-sdk-error-ids) | `playerSdkErrors` | 字符串数组 | 播放器SDK在播放期间生成的唯一错误ID。 |
-| [[!UICONTROL 停滞事件]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#stalling-events) | `stallCount` | 整数 | 播放期间的停滞事件计数。 |
-| [[!UICONTROL 受停滞影响的流]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#stalling-impacted-streams) | `hasStallImpactedStreams` | 布尔 | 指示流在播放期间是否遇到停滞。 |
-| [[!UICONTROL 开始时间]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#time-to-start-1) | `timeToStart` | 整数 | 视频加载与开始之间的持续时间（以秒为单位）。 |
-| [[!UICONTROL 缓冲总持续时间]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#total-buffer-duration-1) | `bufferTime` | 整数 | 播放期间缓冲所花费的总时间（以秒为单位）。 |
-| [[!UICONTROL 总停滞持续时间]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#total-stalling-duration) | `stallTime` | 整数 | 播放期间播放停止的总时间（以秒为单位）。 |
+| [[!UICONTROL 平均比特率]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#average-bitrate-1) | `bitrateAverage` | 数字 | 平均比特率（以kbps为单位，整数）。 计算为比特率值的加权平均值。 |
+| [[!UICONTROL 平均比特率存储桶]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#average-bitrate) | `bitrateAverageBucket` | 字符串 | 在100kbps间隔的预定义存储桶中分类的平均比特率（以kbps为单位）。 |
+| [[!UICONTROL 比特率]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#average-bitrate) | `bitrate` | 整数 | 比特率值（以kbps为单位）。 |
+| [[!UICONTROL 受比特率更改影响的流]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#bitrate-change-impacted-streams) | `hasBitrateChangeImpactedStreams` | 布尔 | 指示在播放期间流是否受比特率更改的影响。 |
+| [[!UICONTROL 比特率更改]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#bitrate-changes) | `bitrateChangeCount` | 整数 | 播放期间比特率更改的总数。 |
+| [[!UICONTROL 缓冲事件]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#buffer-events) | `bufferCount` | 整数 | 播放期间不同缓冲状态的计数。 |
+| [[!UICONTROL 受缓冲影响的流]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#buffer-impacted-streams) | `hasBufferImpactedStreams` | 布尔 | 指示流在播放期间是否受缓冲影响。 |
+| [[!UICONTROL 受丢帧影响的流]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#dropped-frame-impacted-streams) | `hasDroppedFrameImpactedStreams` | 布尔 | 指示流在播放期间是否受到丢帧的影响。 |
+| [[!UICONTROL 丢帧]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#dropped-frames-1) | `droppedFrames` | 整数 | 播放期间丢帧的总数。 |
+| [[!UICONTROL 开始前丢帧]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#drops-before-start) | `isDroppedBeforeStart` | 布尔 | 指示用户在视频开始之前是否退出视频（无论是否有广告）。 |
+| [[!UICONTROL 错误影响的流]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#error-impacted-streams) | `hasErrorImpactedStreams` | 布尔 | 指示流在播放期间是否遇到错误。 |
+| [[!UICONTROL 错误]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#errors-%2F-error-events) | `errorCount` | 整数 | 播放期间发生的错误总数。 |
+| [[!UICONTROL 外部错误ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#external-error-ids) | `externalErrors` | 字符串数组 | 来自外部源的唯一错误ID，例如CDN错误。 |
+| 每秒[[!UICONTROL 帧数]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#frames-per-second) | `framesPerSecond` | 整数 | 当前流帧速率（以每秒帧数为单位）。 |
+| [[!UICONTROL 媒体SDK错误ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#media-sdk-error-ids) | `mediaSdkErrors` | 字符串数组 | Media SDK在播放期间生成的唯一错误ID。 |
+| [[!UICONTROL 播放器SDK错误ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#player-sdk-error-ids) | `playerSdkErrors` | 字符串数组 | 播放器SDK在播放期间生成的唯一错误ID。 |
+| [[!UICONTROL 停滞事件]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#stalling-events) | `stallCount` | 整数 | 播放期间的停滞事件计数。 |
+| [[!UICONTROL 受停滞影响的流]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#stalling-impacted-streams) | `hasStallImpactedStreams` | 布尔 | 指示流在播放期间是否遇到停滞。 |
+| [[!UICONTROL 开始时间]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#time-to-start-1) | `timeToStart` | 整数 | 视频加载与开始之间的持续时间（以秒为单位）。 |
+| [[!UICONTROL 缓冲总持续时间]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#total-buffer-duration-1) | `bufferTime` | 整数 | 播放期间缓冲所花费的总时间（以秒为单位）。 |
+| [[!UICONTROL 总停滞持续时间]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#total-stalling-duration) | `stallTime` | 整数 | 播放期间播放停止的总时间（以秒为单位）。 |
 
 {style="table-layout:auto"}

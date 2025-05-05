@@ -22,10 +22,10 @@ Attribution AI与Adobe Experience Platform数据管理之间的集成使您能�
 
 在Experience Platform使用的数据集上创建的数据使用标签和策略可以在归因人工智能配置工作流中显示。 这些标签会阻止或警告使用已标记字段的用户。
 
-此集成允许您更有效地管理合规性。 组织中的数据管理员可以设置策略来限制使用。 因此，您可以使用符合数据管理员定义的策略的数据。 阅读有关[标签和策略](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-dataviews/data-governance.html)的文档以了解更多信息。
+此集成允许您更有效地管理合规性。 组织中的数据管理员可以设置策略来限制使用。 因此，您可以使用符合数据管理员定义的策略的数据。 阅读有关[标签和策略](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-dataviews/data-governance.html?lang=zh-Hans)的文档以了解更多信息。
 
 您可以在此处了解有关此功能的更多信息：
 
 [Attribution AI入门](../../attribution-ai/getting-started.md)
-[Adobe Experience Platform和应用程序](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html)
+[Adobe Experience Platform和应用程序](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html?lang=zh-Hans)
 [Adobe Experience Cloud架构图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/experience-cloud.html?lang=zh-Hans)

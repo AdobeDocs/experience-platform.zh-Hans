@@ -17,8 +17,8 @@ ht-degree: 0%
 
 以下是标记和事件转发的端到端实施指南列表。 这些指南专为希望了解如何在其网站和移动应用程序中实施Adobe Experience Cloud产品的前端开发人员和技术营销人员设计。
 
-* [为网站实施标记](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/overview.html)
-* [为Android应用程序实施标记](https://experienceleague.adobe.com/docs/platform-learn/implement-in-mobile-android-apps/overview.html)
-* [为iOS Objective-C应用程序实施标记](https://experienceleague.adobe.com/docs/platform-learn/implement-in-mobile-ios-objective-c-apps/overview.html)
-* [为iOS Swift应用程序实施标记](https://experienceleague.adobe.com/docs/platform-learn/implement-in-mobile-ios-swift-apps/overview.html)
-* [实施事件转发(以前称为Adobe Experience Platform Launch服务器端)](https://experienceleague.adobe.com/docs/platform-learn/data-collection/event-forwarding/overview.html)
+* [为网站实施标记](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/overview.html?lang=zh-Hans)
+* [为Android应用程序实施标记](https://experienceleague.adobe.com/docs/platform-learn/implement-in-mobile-android-apps/overview.html?lang=zh-Hans)
+* [为iOS Objective-C应用程序实施标记](https://experienceleague.adobe.com/docs/platform-learn/implement-in-mobile-ios-objective-c-apps/overview.html?lang=zh-Hans)
+* [为iOS Swift应用程序实施标记](https://experienceleague.adobe.com/docs/platform-learn/implement-in-mobile-ios-swift-apps/overview.html?lang=zh-Hans)
+* [实施事件转发(以前称为Adobe Experience Platform Launch服务器端)](https://experienceleague.adobe.com/docs/platform-learn/data-collection/event-forwarding/overview.html?lang=zh-Hans)

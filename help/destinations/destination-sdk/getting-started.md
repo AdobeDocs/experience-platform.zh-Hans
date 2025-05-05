@@ -17,13 +17,13 @@ ht-degree: 1%
 
 ## 术语 {#terminology}
 
-本指南使用特定于Experience Platform的概念，例如组织和沙盒。 有关这些术语的定义，请参阅[Experience Platform术语表](https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html)。 请参阅[Destination SDK术语表](/help/destinations/destination-sdk/glossary.md)以了解与此功能直接相关的术语。
+本指南使用特定于Experience Platform的概念，例如组织和沙盒。 有关这些术语的定义，请参阅[Experience Platform术语表](https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html?lang=zh-Hans)。 请参阅[Destination SDK术语表](/help/destinations/destination-sdk/glossary.md)以了解与此功能直接相关的术语。
 
 ## 获取所需的身份验证凭据 {#obtain-authentication-credentials}
 
 Destination SDK使用[Adobe I/O](https://www.adobe.io/)网关进行身份验证。 要对Destination SDK端点进行API调用，必须在API调用中提供某些标头。 与Adobe Exchange团队合作，为您设置对[Adobe Developer Console](https://developer.adobe.com/console)的身份验证。
 
-要成功调用Destination SDK API端点，请按照[Experience Platform身份验证教程](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html?lang=zh-Hans)操作。 从“[生成API密钥、组织ID和客户端密钥](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#api-ims-secret)”步骤启动教程。 Adobe Exchange团队将为您处理上述步骤。 完成身份验证教程将为Destination SDK API调用中的每个所需标头提供值，如下所示：
+要成功调用Destination SDK API端点，请按照[Experience Platform身份验证教程](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html?lang=zh-Hans)操作。 从“[生成API密钥、组织ID和客户端密钥](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html?lang=zh-Hans#api-ims-secret)”步骤启动教程。 Adobe Exchange团队将为您处理上述步骤。 完成身份验证教程将为Destination SDK API调用中的每个所需标头提供值，如下所示：
 
 * `x-api-key: {API_KEY}`，也称为客户端ID
 * `x-gw-ims-org-id: {ORG_ID}`，也称为组织ID
@@ -64,7 +64,7 @@ Adobe Exchange团队为您提供沙盒名称，您需要将其用于对Destinati
 
 * [管理产品配置文件的权限](/help/access-control/ui/permissions.md)
 * [Experience Platform的可用权限](/help/access-control/home.md#permissions)
-* [Adobe Admin Console文档](https://helpx.adobe.com/enterprise/using/admin-console.html)
+* [Adobe Admin Console文档](https://helpx.adobe.com/cn/enterprise/using/admin-console.html)
 
 ## 其他注意事项 {#additional-considerations}
 

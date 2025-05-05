@@ -22,7 +22,7 @@ ht-degree: 0%
 
 本文档介绍了Adobe Experience Platform数据科学工作区课程的预期学习成果。 要查看课程，您必须使用Adobe ID登录Experience League。
 
-[面向数据科学家的数据科学工作区快速入门课程](https://experienceleague.adobe.com/?recommended=ExperiencePlatform-U-1-2021.1.dsw)专为数据科学家设计，他们想要了解如何使用JupyterLab笔记本获得深入见解和查询数据、创建启用了配置文件的数据集、发布自动机器学习模型以及为Adobe和非Adobe应用程序激活机器学习的见解。
+[面向数据科学家的数据科学工作区快速入门课程](https://experienceleague.adobe.com/?lang=zh-hans&recommended=ExperiencePlatform-U-1-2021.1.dsw)专为数据科学家设计，他们想要了解如何使用JupyterLab笔记本获得深入见解和查询数据、创建启用了配置文件的数据集、发布自动机器学习模型以及为Adobe和非Adobe应用程序激活机器学习的见解。
 
 ## 课程预修课程
 

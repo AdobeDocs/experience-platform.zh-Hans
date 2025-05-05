@@ -53,7 +53,7 @@ ht-degree: 2%
 
 ## 创建数据元素 {#create-data-elements}
 
-若要将数据发送到[!DNL Snapchat]转化API扩展，请为每个数据参数创建[数据元素](https://experienceleague.adobe.com/en/docs/platform-learn/implement-web-sdk/event-forwarding/setup-event-forwarding#create-an-event-forwarding-data-element)。 执行以下步骤：
+若要将数据发送到[!DNL Snapchat]转化API扩展，请为每个数据参数创建[数据元素](https://experienceleague.adobe.com/zh-hans/docs/platform-learn/implement-web-sdk/event-forwarding/setup-event-forwarding#create-an-event-forwarding-data-element)。 执行以下步骤：
 
 1. 在属性的&#x200B;**[!UICONTROL 属性信息]**&#x200B;屏幕中导航到&#x200B;**[!UICONTROL 创作]**>**[!UICONTROL 数据元素]**，然后选择&#x200B;**[!UICONTROL 添加数据元素]**。
 
@@ -79,7 +79,7 @@ ht-degree: 2%
 
 ## 创建规则以将转换事件发送到Snap {#create-snap-rules}
 
-[规则](https://experienceleague.adobe.com/en/docs/platform-learn/implement-web-sdk/event-forwarding/setup-event-forwarding#create-an-event-forwarding-rule)用于在Experience Platform中触发扩展。 本节概述如何使用转化API扩展在事件转发属性中创建规则以将转化事件发送到快照。
+[规则](https://experienceleague.adobe.com/zh-hans/docs/platform-learn/implement-web-sdk/event-forwarding/setup-event-forwarding#create-an-event-forwarding-rule)用于在Experience Platform中触发扩展。 本节概述如何使用转化API扩展在事件转发属性中创建规则以将转化事件发送到快照。
 
 ### 创建新规则
 

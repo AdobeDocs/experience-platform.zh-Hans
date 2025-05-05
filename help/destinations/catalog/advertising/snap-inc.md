@@ -67,7 +67,7 @@ ht-degree: 2%
 |---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
 | 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
-| [!DNL Federated Audience Composition] | ✓ | 通过[联合受众构成](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/start/audiences)导入到Experience Platform中的受众。 |
+| [!DNL Federated Audience Composition] | ✓ | 通过[联合受众构成](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/start/audiences)导入到Experience Platform中的受众。 |
 
 {style="table-layout:auto"}
 
@@ -140,7 +140,7 @@ ht-degree: 2%
 
 ![受众](/help/destinations/assets/catalog/advertising/snapchat-ads/audiences.png)
 
-请注意，首次将Adobe受众激活到Snap Inc时，您最初会将其视为空受众。 这是因为Adobe Experience Platform在评估受众之前，不会将成员数据导出到Snap Inc。 有关如何在Experience Platform中评估受众的更多信息，请参阅[分段服务概述](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html#evaluate-segments)。
+请注意，首次将Adobe受众激活到Snap Inc时，您最初会将其视为空受众。 这是因为Adobe Experience Platform在评估受众之前，不会将成员数据导出到Snap Inc。 有关如何在Experience Platform中评估受众的更多信息，请参阅[分段服务概述](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html?lang=zh-Hans#evaluate-segments)。
 
 ## 数据使用和治理 {#data-usage-governance}
 

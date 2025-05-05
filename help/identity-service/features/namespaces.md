@@ -99,19 +99,19 @@ Experience Platform提供了多个可用于所有组织的身份命名空间。 
 | 显示名称 | 描述 |
 | ------------ | ----------- |
 | AdCloud | 表示Adobe AdCloud的命名空间。 |
-| Adobe Analytics（旧版 ID） | 表示Adobe Analytics的命名空间。 有关详细信息，请参阅以下有关[Adobe Analytics命名空间](https://experienceleague.adobe.com/docs/analytics/admin/data-governance/gdpr-namespaces.html#namespaces)的文档。 |
+| Adobe Analytics（旧版 ID） | 表示Adobe Analytics的命名空间。 有关详细信息，请参阅以下有关[Adobe Analytics命名空间](https://experienceleague.adobe.com/docs/analytics/admin/data-governance/gdpr-namespaces.html?lang=zh-Hans#namespaces)的文档。 |
 | Apple IDFA（广告商的ID） | 表示广告商的Apple ID的命名空间。 有关详细信息，请参阅以下有关[基于兴趣的广告](https://support.apple.com/en-us/HT202074)的文档。 |
 | Apple推送通知服务 | 表示使用Apple推送通知服务收集的标识的命名空间。 有关详细信息，请参阅有关[Apple推送通知服务](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1)的以下文档。 |
 | ECID | 表示ECID的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 有关详细信息，请参阅[ECID](./ecid.md)上的以下文档。 |
 | 电子邮件 | 表示电子邮件地址的命名空间。 此类命名空间通常与单个人员关联，因此可用于跨不同渠道识别该人员。 |
-| 电子邮件（SHA256，小写） | 预哈希电子邮件地址的命名空间。使用SHA256进行哈希处理之前，此命名空间中提供的值将转换为小写。 在规范化电子邮件地址之前，需要修剪前导空格和尾随空格。 此设置不能进行追溯性更改。 有关详细信息，请参阅以下有关[SHA256哈希处理支持](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html#hashing-support)的文档。 |
+| 电子邮件（SHA256，小写） | 预哈希电子邮件地址的命名空间。使用SHA256进行哈希处理之前，此命名空间中提供的值将转换为小写。 在规范化电子邮件地址之前，需要修剪前导空格和尾随空格。 此设置不能进行追溯性更改。 有关详细信息，请参阅以下有关[SHA256哈希处理支持](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html?lang=zh-Hans#hashing-support)的文档。 |
 | Firebase云消息 | 一个命名空间，它表示使用Google Firebase Cloud Messaging为推送通知收集的身份。 有关详细信息，请参阅以下有关[Google Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging)的文档。 |
 | Google Ad ID (GAID) | 表示Google Advertising ID的命名空间。 有关详细信息，请参阅以下有关[Google Advertising ID](https://support.google.com/googleplay/android-developer/answer/6048248?hl=en)的文档。 |
 | 电话 | 表示电话号码的命名空间。 此类命名空间通常与单个人员关联，因此可用于跨不同渠道识别该人员。 |
 | 电话(E.164) | 表示需要以E.164格式进行哈希处理的原始电话号码的命名空间。 E.164格式包括加号(`+`)、国际国家/地区呼叫代码、本地区号和电话号码。 例如： `(+)(country code)(area code)(phone number)`。 |
 | 手机 (SHA256) | 一个命名空间，它表示需要使用SHA256进行哈希处理的电话号码。 必须删除符号、字母和任何前导零。 您还必须添加国家/地区呼叫代码作为前缀。 |
 | 电话(SHA256_E.164) | 表示需要使用 SHA256 和 E.164 格式进行哈希处理的原始电话号码的命名空间。 |
-| TNTID | 表示Adobe Target的命名空间。 有关详细信息，请参阅[Target](https://experienceleague.adobe.com/docs/target/using/target-home.html)上的以下文档。 |
+| TNTID | 表示Adobe Target的命名空间。 有关详细信息，请参阅[Target](https://experienceleague.adobe.com/docs/target/using/target-home.html?lang=zh-Hans)上的以下文档。 |
 | Windows AID | 表示Windows Advertising ID的命名空间。 有关详细信息，请参阅[Windows Advertising ID](https://docs.microsoft.com/en-us/uwp/api/windows.system.userprofile.advertisingmanager.advertisingid?view=winrt-19041)上的以下文档。 |
 
 ### 查看身份标识命名空间 {#view-identity-namespaces}

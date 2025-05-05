@@ -23,7 +23,7 @@ ht-degree: 2%
 * [沙盒](./sandboxes.md)
 * [用户](./users.md)
 
-要访问[!DNL Adobe Experience Platform]的基于属性的访问控制权限，您必须是订阅[!DNL Adobe Experience Platform]的组织管理员。 虽然Adobe支持组织使用灵活的管理员层次结构，但您必须是[!DNL Adobe Experience Platform]的产品管理员才能配置权限。 有关详细信息，请参阅有关[管理角色](https://helpx.adobe.com/enterprise/using/admin-roles.html)的Adobe帮助中心文章。
+要访问[!DNL Adobe Experience Platform]的基于属性的访问控制权限，您必须是订阅[!DNL Adobe Experience Platform]的组织管理员。 虽然Adobe支持组织使用灵活的管理员层次结构，但您必须是[!DNL Adobe Experience Platform]的产品管理员才能配置权限。 有关详细信息，请参阅有关[管理角色](https://helpx.adobe.com/cn/enterprise/using/admin-roles.html)的Adobe帮助中心文章。
 
 如果您没有管理员权限，请联系您的系统管理员以获取访问权限。
 
@@ -41,7 +41,7 @@ Experience Platform的基于属性的访问控制工作区随即出现，并在&
 
 ![flac-select-roles](../../images/flac-ui/flac-select-roles.png)
 
-本用户指南重点介绍如何使用[!DNL Adobe Experience Platform]为Experience Platform分配访问权限。 有关如何导航[!DNL Admin Console]的更多常规信息，请参阅[Admin Console用户指南](https://helpx.adobe.com/enterprise/using/admin-console.html)。
+本用户指南重点介绍如何使用[!DNL Adobe Experience Platform]为Experience Platform分配访问权限。 有关如何导航[!DNL Admin Console]的更多常规信息，请参阅[Admin Console用户指南](https://helpx.adobe.com/cn/enterprise/using/admin-console.html)。
 
 ## 后续步骤
 

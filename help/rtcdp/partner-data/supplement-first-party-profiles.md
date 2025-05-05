@@ -14,7 +14,7 @@ ht-degree: 78%
 
 >[!AVAILABILITY]
 >
->* 此功能适用于已获得许可的Real-Time CDP（应用程序服务）、Adobe Experience Platform Activation、Real-Time CDP、Real-Time CDP Prime、Real-Time CDP Ultimate的客户。 阅读[产品说明](https://helpx.adobe.com/legal/product-descriptions.html)中关于这些软件包的详细信息，并联系您的 Adobe 代表了解更多信息。
+>* 此功能适用于已获得许可的Real-Time CDP（应用程序服务）、Adobe Experience Platform Activation、Real-Time CDP、Real-Time CDP Prime、Real-Time CDP Ultimate的客户。 阅读[产品说明](https://helpx.adobe.com/cn/legal/product-descriptions.html)中关于这些软件包的详细信息，并联系您的 Adobe 代表了解更多信息。
 
 使用可信赖的数据合作伙伴的属性来补充第一方配置文件，以改善您的数据基础，获得对客户群的全新见解，并提升受众优化。
 
@@ -41,7 +41,7 @@ Adobe知道没有一种放之四海而皆准的方法，它允许与数据和身
 
 >[!WARNING]
 >
->摄取到Real-Time CDP中的其他合作伙伴提供的属性会影响您的&#x200B;*总数据量*。 阅读[Real-time Customer Data Platform产品说明](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)以了解有关总数据量的详细信息。
+>摄取到Real-Time CDP中的其他合作伙伴提供的属性会影响您的&#x200B;*总数据量*。 阅读[Real-time Customer Data Platform产品说明](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)以了解有关总数据量的详细信息。
 
 ## 视频演练 {#video-walkthrough}
 

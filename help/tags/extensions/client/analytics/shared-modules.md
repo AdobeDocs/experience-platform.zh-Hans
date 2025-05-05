@@ -19,7 +19,7 @@ ht-degree: 70%
 
 ## [!DNL get-tracker]
 
-Adobe Analytics 在发送任何信标之前，必须先初始化跟踪器对象。初始化过程首先需加载 [AppMeasurement](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html)，然后创建跟踪器对象。
+Adobe Analytics 在发送任何信标之前，必须先初始化跟踪器对象。初始化过程首先需加载 [AppMeasurement](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html?lang=zh-Hans)，然后创建跟踪器对象。
 
 在使用 `get-tracker` 共享模块完全初始化跟踪器对象后，您才有权访问该对象，如下所示：
 

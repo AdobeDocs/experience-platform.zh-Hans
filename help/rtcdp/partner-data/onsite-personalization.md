@@ -14,7 +14,7 @@ ht-degree: 89%
 
 >[!AVAILABILITY]
 >
->已获得许可Real-Time CDP（应用程序服务）、Adobe Experience Platform Activation、Real-Time CDP、Real-Time CDP Prime、Real-Time CDP Ultimate的客户可以使用此功能。 阅读[产品说明](https://helpx.adobe.com/legal/product-descriptions.html)中关于这些软件包的详细信息，并联系您的 Adobe 代表了解更多信息。
+>已获得许可Real-Time CDP（应用程序服务）、Adobe Experience Platform Activation、Real-Time CDP、Real-Time CDP Prime、Real-Time CDP Ultimate的客户可以使用此功能。 阅读[产品说明](https://helpx.adobe.com/cn/legal/product-descriptions.html)中关于这些软件包的详细信息，并联系您的 Adobe 代表了解更多信息。
 
 了解如何使用合作伙伴辅助的识别为您的 Web 资产访客营造个性化的体验。使用本教程了解为了向经过身份验证和未经身份验证的访客展现个性化体验，Experience Platform 和其他 Experience Cloud 解决方案中各个元素的实施顺序。
 
@@ -73,7 +73,7 @@ ht-degree: 89%
 1. 作为&#x200B;**客户**，您通过&#x200B;**数据合作伙伴**&#x200B;可实时了解以其他方式匿名的网站访客。
 2. 作为&#x200B;**客户**，您在资产上部署客户端库以调用&#x200B;**合作伙伴** API，并且您配置 Web SDK 或移动 SDK 以将合作伙伴提供的信号发送到 Real-Time CDP。
 3. 当&#x200B;**访客**&#x200B;浏览您的网站或应用程序时，**合作伙伴**&#x200B;按概率识别访客，并返回属性和 ID。
-4. Real-Time CDP 运行边缘分段以评估传入的事件点击，并根据 [ECID 标识符](https://experienceleague.adobe.com/docs/id-service/using/home.html)将结果保持不变。
+4. Real-Time CDP 运行边缘分段以评估传入的事件点击，并根据 [ECID 标识符](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)将结果保持不变。
 5. Adobe Target 使用边缘分段输出将体验呈现回&#x200B;**访客**&#x200B;以供进行会话中个性化。
 6. 事件完整地保存下来，用于分析和重新定位等下游工作流。
 
@@ -157,7 +157,7 @@ Experience Platform UI的![数据收集部分。](/help/rtcdp/assets/partner-dat
 
 ![填写新资产的必填字段。](/help/rtcdp/assets/partner-data/onsite-personalization/tag-property-fields.png)
 
-获取有关如何[创建标记资产](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/configure-tags/create-a-property.html)的完整信息。
+获取有关如何[创建标记资产](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/configure-tags/create-a-property.html?lang=zh-Hans)的完整信息。
 
 接下来，您必须在该资产内安装各种扩展。选择您的标记资产并导航到[!UICONTROL 扩展]部分。
 
@@ -175,7 +175,7 @@ Experience Platform UI的![数据收集部分。](/help/rtcdp/assets/partner-dat
 
 在配置 Web SDK 的屏幕中，向下导航至&#x200B;**[!UICONTROL 数据流]**&#x200B;部分，并提供有关您正在使用的 Experience Platform 沙盒的信息。从下一个下拉列表中选择适当的沙盒和在前面的步骤中创建的数据流。您可以为所有其他环境选择相同的沙盒和数据流值。保持其他设置不变并选择&#x200B;**[!UICONTROL 保存]**。
 
-获取有关[如何安装 Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/tags-configuration/install-web-sdk.html) 的完整信息。
+获取有关[如何安装 Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/tags-configuration/install-web-sdk.html?lang=zh-Hans) 的完整信息。
 
 #### 安装 ID 服务扩展
 

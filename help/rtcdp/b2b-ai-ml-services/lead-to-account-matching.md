@@ -3,7 +3,7 @@ title: Real-Time CDP B2B中的商机帐户匹配
 type: Documentation
 description: 有关Experience PlatformCDP B2B中的商机帐户匹配功能的概述和更多信息。
 feature: Get Started, Profiles, B2B
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 2f853599-6bca-4ba6-bbba-131a49d8854e
 source-git-commit: 4ba609e777716b1b38f5b143587e5476d851e344
 workflow-type: tm+mt

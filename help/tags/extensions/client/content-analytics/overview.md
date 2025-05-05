@@ -21,14 +21,14 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Content Analytics标记扩展作为标记属性的一部分自动安装，在使用[Content Analytics引导式配置向导](https://experienceleague.adobe.com/en/docs/analytics-platform/using/content-analytics/configuration/guided){target="_blank"}时，将自动创建该标记属性。
+>Adobe Content Analytics标记扩展作为标记属性的一部分自动安装，在使用[Content Analytics引导式配置向导](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/content-analytics/configuration/guided){target="_blank"}时，将自动创建该标记属性。
 
 
 ### 手动安装
 
-如果手动配置，Adobe Content Analytics标记扩展需要在上安装资产。 如果您尚未这样做，请参阅有关[创建标记属性](https://experienceleague.adobe.com/en/docs/platform-learn/implement-in-websites/configure-tags/create-a-property)的文档。
+如果手动配置，Adobe Content Analytics标记扩展需要在上安装资产。 如果您尚未这样做，请参阅有关[创建标记属性](https://experienceleague.adobe.com/zh-hans/docs/platform-learn/implement-in-websites/configure-tags/create-a-property)的文档。
 
-创建属性后，或选择使用[Content Analytics引导式配置向导](https://experienceleague.adobe.com/en/docs/analytics-platform/using/content-analytics/configuration/guided)创建的属性时，请打开该属性并选择左侧栏上的&#x200B;**[!UICONTROL Extensions]**&#x200B;选项卡。
+创建属性后，或选择使用[Content Analytics引导式配置向导](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/content-analytics/configuration/guided)创建的属性时，请打开该属性并选择左侧栏上的&#x200B;**[!UICONTROL Extensions]**&#x200B;选项卡。
 
 选择&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡。 从可用扩展列表中，找到&#x200B;**[!DNL Adobe Content Analytics]**&#x200B;扩展并选择&#x200B;**[!UICONTROL 安装]**。
 
@@ -40,7 +40,7 @@ ht-degree: 0%
 <!--
 ## Configure schema
 
-The [Content Analytics guided configuration wizard](https://experienceleague.adobe.com/en/docs/analytics-platform/using/content-analytics/configuration/guided) automatically populates the proper value for the **[!UICONTROL Tenant Schema Name]**. 
+The [Content Analytics guided configuration wizard](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/content-analytics/configuration/guided) automatically populates the proper value for the **[!UICONTROL Tenant Schema Name]**. 
 
 ![Image that shows the Schema configuration of the Adobe Content Analytics tag extension in the Tags UI](assets/aca-tag-schema.png)
 
@@ -52,7 +52,7 @@ The [Content Analytics guided configuration wizard](https://experienceleague.ado
 
 ## 配置数据流
 
-[Content Analytics引导式配置向导](https://experienceleague.adobe.com/en/docs/analytics-platform/using/content-analytics/configuration/guided)自动为&#x200B;**[!UICONTROL 沙盒]**&#x200B;和&#x200B;**[!UICONTROL 生产数据流]**&#x200B;选择正确的值。 您可以选择配置其他&#x200B;**[!UICONTROL 暂存数据流]**&#x200B;和&#x200B;**[!UICONTROL 开发数据流]**。
+[Content Analytics引导式配置向导](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/content-analytics/configuration/guided)自动为&#x200B;**[!UICONTROL 沙盒]**&#x200B;和&#x200B;**[!UICONTROL 生产数据流]**&#x200B;选择正确的值。 您可以选择配置其他&#x200B;**[!UICONTROL 暂存数据流]**&#x200B;和&#x200B;**[!UICONTROL 开发数据流]**。
 
 ![在标记UI中显示Adobe Content Analytics标记扩展的数据流配置的图像](assets/aca-tag-datastreams.png)
 
@@ -83,7 +83,7 @@ The [Content Analytics guided configuration wizard](https://experienceleague.ado
 
 ## 配置事件筛选
 
-在&#x200B;**[!UICONTROL 事件筛选]**&#x200B;部分中，您可以修改正则表达式，以便在为Content Analytics收集数据时筛选&#x200B;**[!UICONTROL 页面URL]**&#x200B;和&#x200B;**[!UICONTROL Assets URL]**。 系统会自动填充您在[Content Analytics引导式配置向导](https://experienceleague.adobe.com/en/docs/analytics-platform/using/content-analytics/configuration/guided)中定义的正则表达式。
+在&#x200B;**[!UICONTROL 事件筛选]**&#x200B;部分中，您可以修改正则表达式，以便在为Content Analytics收集数据时筛选&#x200B;**[!UICONTROL 页面URL]**&#x200B;和&#x200B;**[!UICONTROL Assets URL]**。 系统会自动填充您在[Content Analytics引导式配置向导](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/content-analytics/configuration/guided)中定义的正则表达式。
 
 ![在标记UI中显示Adobe Content Analytics标记扩展的事件过滤设置的图像](assets/aca-tag-eventfiltering.png)
 

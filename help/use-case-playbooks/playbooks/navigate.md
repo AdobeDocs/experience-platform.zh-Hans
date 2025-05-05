@@ -51,13 +51,13 @@ ht-degree: 2%
 
 ## 在Journey Optimizer中配置沙盒和渠道表面 {#configure-channel-surfaces}
 
-如果您的组织获得[Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=zh-Hans)的许可，并且您打算使用针对Journey Optimizer设计的行动手册，则需要在沙盒中配置渠道预设，这些预设可定义消息所需的技术参数。 [了解如何在 Adobe Journey Optimizer 中设置渠道界面。](https://experienceleague.adobe.com/docs/journey-optimizer/using/configuration/channel-surfaces.html)
+如果您的组织获得[Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=zh-Hans)的许可，并且您打算使用针对Journey Optimizer设计的行动手册，则需要在沙盒中配置渠道预设，这些预设可定义消息所需的技术参数。 [了解如何在 Adobe Journey Optimizer 中设置渠道界面。](https://experienceleague.adobe.com/docs/journey-optimizer/using/configuration/channel-surfaces.html?lang=zh-Hans)
 
 要在Journey Optimizer中创建行动手册的实例，您需要为电子邮件、推送和短信通知配置渠道平面。
 
 ### 电子邮件渠道表面
 
-在Journey Optimizer界面中转到`Channels`。 为营销电子邮件和事务性消息配置单独的子域和IP池（如果尚未配置）。 这些是确保事务型消息（如订单确认电子邮件）传递给客户的最佳实践。 输入姓名、电子邮件地址和其他设置。 选择页面右上角的&#x200B;**提交**&#x200B;以创建营销渠道表面。 阅读有关[如何设置电子邮件渠道界面](https://experienceleague.adobe.com/docs/journey-optimizer/using/email/configure-email/email-settings.html)的文档。
+在Journey Optimizer界面中转到`Channels`。 为营销电子邮件和事务性消息配置单独的子域和IP池（如果尚未配置）。 这些是确保事务型消息（如订单确认电子邮件）传递给客户的最佳实践。 输入姓名、电子邮件地址和其他设置。 选择页面右上角的&#x200B;**提交**&#x200B;以创建营销渠道表面。 阅读有关[如何设置电子邮件渠道界面](https://experienceleague.adobe.com/docs/journey-optimizer/using/email/configure-email/email-settings.html?lang=zh-Hans)的文档。
 
 ### SMS渠道表面
 

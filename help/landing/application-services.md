@@ -15,10 +15,10 @@ ht-degree: 1%
 Adobe在Experience Platform的基础上构建了多个应用程序。 您可以使用以下链接查找这些应用程序的文档：
 
 * [[!DNL Customer Journey Analytics]](https://experienceleague.adobe.com/docs/customer-journey-analytics.html?lang=zh-Hans)
-* [[!DNL Journey Orchestration]](https://experienceleague.adobe.com/docs/journey-orchestration.html)
+* [[!DNL Journey Orchestration]](https://experienceleague.adobe.com/docs/journey-orchestration.html?lang=zh-Hans)
 * [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer.html?lang=zh-Hans)
 * [[!DNL Adobe Real-Time Customer Data Platform (Real-Time CDP)]](../rtcdp/overview.md)
-* [[!DNL Adobe Mix Modeler]](https://experienceleague.adobe.com/docs/mix-modeler.html)
+* [[!DNL Adobe Mix Modeler]](https://experienceleague.adobe.com/docs/mix-modeler.html?lang=zh-Hans)
 
 以下视频介绍了基于Experience Platform构建的每个应用程序的用例。
 

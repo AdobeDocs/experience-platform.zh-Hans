@@ -13,7 +13,7 @@ ht-degree: 2%
 
 # 查询服务中的Adobe定义的SQL函数
 
-Adobe定义的函数（此处称为ADF）是Adobe Experience Platform查询服务中的预建函数，可帮助对[!DNL Experience Event]数据执行常见的业务相关任务。 这些功能包括[会话化](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html)和[归因](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html)的功能，这些功能与Adobe Analytics中的功能类似。
+Adobe定义的函数（此处称为ADF）是Adobe Experience Platform查询服务中的预建函数，可帮助对[!DNL Experience Event]数据执行常见的业务相关任务。 这些功能包括[会话化](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html?lang=zh-Hans)和[归因](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html?lang=zh-Hans)的功能，这些功能与Adobe Analytics中的功能类似。
 
 本文档提供了[!DNL Query Service]中可用的Adobe定义函数的信息。
 
@@ -47,7 +47,7 @@ OVER ({PARTITION} {ORDER} {FRAME})
 
 这种数据分组或会话化有助于关联事件，以揭示有关客户体验的更多上下文。
 
-有关Adobe Analytics中的会话化的更多信息，请参阅有关[上下文感知会话](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html)的文档。
+有关Adobe Analytics中的会话化的更多信息，请参阅有关[上下文感知会话](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html?lang=zh-Hans)的文档。
 
 **查询语法**
 

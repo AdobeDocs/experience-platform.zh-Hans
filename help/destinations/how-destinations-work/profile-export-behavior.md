@@ -42,7 +42,7 @@ Experience Platform目标会以HTTPS调用的形式将数据导出到基于API�
 
 >[!IMPORTANT]
 >
-> 企业目标仅适用于[Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+> 企业目标仅适用于[Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
 Experience Platform中的[企业目标](/help/destinations/destination-types.md#advanced-enterprise-destinations)是Amazon Kinesis、Azure事件中心和HTTP API。
 

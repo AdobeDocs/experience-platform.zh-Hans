@@ -41,7 +41,7 @@ Adobe Experience Platform捕获事件数据中的&#x200B;**[!UICONTROL 配置文
 
 >[!IMPORTANT]
 >
->高级企业目标或流式配置文件导出目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+>高级企业目标或流式配置文件导出目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
 使用高级企业目标数据连接器近乎实时地将Adobe Real-Time Customer Data Platform配置文件交付给内部系统或其他第三方系统，以便进行数据同步、分析和进一步扩充配置文件用例。
 

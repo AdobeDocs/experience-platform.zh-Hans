@@ -78,7 +78,7 @@ ht-degree: 6%
 
 >[!NOTE]
 >
->此规则的例外适用于现有[Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html)客户。 如果您已在Audience Manager中创建了到此Google目标的连接，则无需再次完成允许列表流程，您可以继续后续步骤。
+>此规则的例外适用于现有[Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html?lang=zh-Hans)客户。 如果您已在Audience Manager中创建了到此Google目标的连接，则无需再次完成允许列表流程，您可以继续后续步骤。
 
 1. 按照[Google Ad Manager文档](https://support.google.com/admanager/answer/3289669?hl=en)中描述的步骤，将Adobe添加为链接的数据管理平台(DMP)。
 2. 在[!DNL Google Ad Manager]界面中，转到&#x200B;**[!UICONTROL 管理员]** > **[!UICONTROL 全局设置]** > **[!UICONTROL 网络设置]**，并启用&#x200B;**[!UICONTROL API访问]**&#x200B;滑块。
@@ -90,7 +90,7 @@ ht-degree: 6%
 > 
 >若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
-要连接到此目标，请按照[目标配置教程](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html)中描述的步骤操作。 在目标配置工作流中，填写下面两个部分中列出的字段。
+要连接到此目标，请按照[目标配置教程](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=zh-Hans)中描述的步骤操作。 在目标配置工作流中，填写下面两个部分中列出的字段。
 
 ### 验证目标 {#authenticate}
 

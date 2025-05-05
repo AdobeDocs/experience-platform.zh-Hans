@@ -13,7 +13,7 @@ ht-degree: 3%
 
 # 选择产品配置文件以管理其访问控制权限
 
-要通过Adobe Admin Console配置[!DNL Experience Platform]的访问控制，您必须是订阅[!DNL Experience Platform]的组织的管理员。 虽然Adobe支持组织具有灵活的管理员层次结构，但您必须具有系统管理员、产品管理员或产品配置文件管理员权限才能配置访问控制。 有关详细信息，请参阅有关[管理角色](https://helpx.adobe.com/enterprise/using/admin-roles.html)的Adobe帮助中心文章。
+要通过Adobe Admin Console配置[!DNL Experience Platform]的访问控制，您必须是订阅[!DNL Experience Platform]的组织的管理员。 虽然Adobe支持组织具有灵活的管理员层次结构，但您必须具有系统管理员、产品管理员或产品配置文件管理员权限才能配置访问控制。 有关详细信息，请参阅有关[管理角色](https://helpx.adobe.com/cn/enterprise/using/admin-roles.html)的Adobe帮助中心文章。
 
 如果您没有管理员权限，请联系您的系统管理员以获取访问权限。
 
@@ -25,7 +25,7 @@ ht-degree: 3%
 
 ![select-product-profile](../images/select-product-profile.png)
 
-本用户指南重点介绍如何使用[!DNL Admin Console]为Experience Platform分配访问权限。 有关如何导航[!DNL Admin Console]的更多常规信息，请参阅[Admin Console用户指南](https://helpx.adobe.com/enterprise/using/admin-console.html)。
+本用户指南重点介绍如何使用[!DNL Admin Console]为Experience Platform分配访问权限。 有关如何导航[!DNL Admin Console]的更多常规信息，请参阅[Admin Console用户指南](https://helpx.adobe.com/cn/enterprise/using/admin-console.html)。
 
 ## 后续步骤
 

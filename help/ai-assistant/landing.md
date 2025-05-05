@@ -31,14 +31,14 @@ AI Assistant支持Experience Platform、Real-Time CDP、Adobe Journey Optimizer�
     <div><strong>加强您的学习</strong><br/>在不中断工作流程的情况下发现、排除故障并增强您对产品知识的理解。</div>
     </td>
     <td>
-    <a href="https://experienceleague.adobe.com/en/playlists/experience-platform-get-started-with-ai-assistant"><img src="./assets/landing/ai-videos.png" style="width:100%;max-height:100%"></a>
+    <a href="https://experienceleague.adobe.com/zh-hans/playlists/experience-platform-get-started-with-ai-assistant"><img src="./assets/landing/ai-videos.png" style="width:100%;max-height:100%"></a>
     <div><strong>访问AI助手视频播放列表</strong><br/>了解可使用AI助手解决的许多不同挑战和使用案例。</div>
     </td>
   </tr>
   <tr style="border: 0;">
     <td align="center"><a href="./home.md"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
     <td align="center"><a href="./home.md#product-knowledge"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
-    <td align="center"><a href="https://experienceleague.adobe.com/en/playlists/experience-platform-get-started-with-ai-assistant"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
+    <td align="center"><a href="https://experienceleague.adobe.com/zh-hans/playlists/experience-platform-get-started-with-ai-assistant"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
     </tr>
 </table>
 
@@ -460,9 +460,9 @@ For more information about AI Assistant, read the [security fact sheet for AI As
 <a href="./home.md" target="_blank">文档</a> - <a href="./ui-guide.md" target="_blank">UI指南</a> - <a href="./access.md" target="_blank">访问AI助手</a> - <a href="./privacy.md" target="_blank">隐私、安全和管理</a> - <a href="./faq.md" target="_blank">常见问题解答</a>
 </td>
 <td><strong>Adobe Journey Optimizer</strong><br/>
-<a href="https://experienceleague.adobe.com/en/docs/journey-optimizer/using/get-started/ai-assistant" target="_blank">文档</a>
+<a href="https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/get-started/ai-assistant" target="_blank">文档</a>
 </td>
 <td><strong>Customer Journey Analytics</strong><br/>
-<a href="https://experienceleague.adobe.com/en/docs/analytics-platform/using/ai-assistant" target="_blank">文档</a>
+<a href="https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/ai-assistant" target="_blank">文档</a>
 </td>
 </tr></table>

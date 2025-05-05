@@ -39,16 +39,16 @@ ht-degree: 26%
 >
 >确保您拥有所有这些区域所需的[基于属性的访问控制权限](/help/access-control/abac/end-to-end-guide.md)，或让系统管理员授予您这些必要的权限。
 
-* [[!DNL Adobe Real-Time Customer Data Platform (Real-Time CDP)]](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/understanding-the-real-time-customer-data-platform.html)：跨数据源集成数据以推动营销活动。 然后，该数据可用于创建活动受众，并显示电子邮件和网络促销图块中使用的个性化数据元素（例如，姓名或与帐户相关的信息）。最后，Real-Time CDP还可用于将受众激活到付费媒体目标。
+* [[!DNL Adobe Real-Time Customer Data Platform (Real-Time CDP)]](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/understanding-the-real-time-customer-data-platform.html?lang=zh-Hans)：跨数据源集成数据以推动营销活动。 然后，该数据可用于创建活动受众，并显示电子邮件和网络促销图块中使用的个性化数据元素（例如，姓名或与帐户相关的信息）。最后，Real-Time CDP还可用于将受众激活到付费媒体目标。
    * [架构](/help/xdm/home.md)
    * [轮廓](/help/profile/home.md)
    * [数据集](/help/catalog/datasets/overview.md)
    * [受众](/help/segmentation/home.md)
    * [目标](/help/destinations/home.md)
-* [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html)：设计历程、设置触发器并创建正确的消息以向访客发送地址。
-   * [事件或受众触发器](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioning/collect-event-data/data-collection.html)
-   * [受众和活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/audiences-profiles-identities/audiences/about-audiences.html)
-   * [历程](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html)
+* [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html?lang=zh-Hans)：设计历程、设置触发器并创建正确的消息以向访客发送地址。
+   * [事件或受众触发器](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioning/collect-event-data/data-collection.html?lang=zh-Hans)
+   * [受众和活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/audiences-profiles-identities/audiences/about-audiences.html?lang=zh-Hans)
+   * [历程](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html?lang=zh-Hans)
 
 ## Real-Time CDP和Journey Optimizer架构
 
@@ -93,7 +93,7 @@ ht-degree: 26%
 
 体验数据模型 (XDM) 资源在 [!DNL Adobe Experience Platform] 的[!UICONTROL “架构”]工作区中进行管理。您可以查看和浏览[!DNL Adobe]提供的核心资源（例如，[!UICONTROL 字段组]），并为您的组织创建自定义资源和架构。
 
-有关创建[架构](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html)的更多信息，请阅读[“创建架构教程”。](/help/xdm/tutorials/create-schema-ui.md)
+有关创建[架构](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=zh-Hans)的更多信息，请阅读[“创建架构教程”。](/help/xdm/tutorials/create-schema-ui.md)
 
 在此示例实施中，可为用例使用多种架构设计以将一次性值演化为生命周期值。 每个架构都包含要设置的特定必填字段，以及一些建议的字段。
 
@@ -268,9 +268,9 @@ ht-degree: 26%
 
 >[!IMPORTANT]
 >
->向客户提供取消订阅以停止从品牌接收通信的功能，以及确保遵循此选择是一项法律要求。 通过[隐私法规概述](https://experienceleague.adobe.com/docs/experience-platform/privacy/regulations/overview.html)了解有关适用法律的更多信息。
+>向客户提供取消订阅以停止从品牌接收通信的功能，以及确保遵循此选择是一项法律要求。 通过[隐私法规概述](https://experienceleague.adobe.com/docs/experience-platform/privacy/regulations/overview.html?lang=zh-Hans)了解有关适用法律的更多信息。
 
-考虑实施以下[同意政策](https://experienceleague.adobe.com/docs/platform-learn/data-collection/web-sdk/consent/overview.html)，并在联系访客之前请求其同意：
+考虑实施以下[同意政策](https://experienceleague.adobe.com/docs/platform-learn/data-collection/web-sdk/consent/overview.html?lang=zh-Hans)，并在联系访客之前请求其同意：
 
 * 如果 `consents.marketing.email.val = "Y"`，则可以发送电子邮件
 * 如果 `consents.marketing.sms.val = "Y"`，则可以发送短信
@@ -298,7 +298,7 @@ ht-degree: 26%
 
 此用例要求您创建两个受众以定义由配置文件存储中的配置文件子集共享的特定属性或行为，从而区分可营销的人员群体。 在Adobe Experience Platform中，可以通过多种方式创建受众：
 
-* 有关如何创建受众的信息，请阅读[受众服务UI指南](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html#create-audience)。
+* 有关如何创建受众的信息，请阅读[受众服务UI指南](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html?lang=zh-Hans#create-audience)。
 * 有关如何构建[受众](/help/segmentation/home.md)的信息，请阅读[受众构建UI指南](/help/segmentation/ui/audience-composition.md)。
 * 有关如何通过Experience Platform派生的区段定义构建受众的信息，请阅读[Audience Builder UI指南](/help/segmentation/ui/segment-builder.md)。
 
@@ -344,7 +344,7 @@ ht-degree: 26%
 >
 >[!DNL Adobe Journey Optimizer] 并不涵盖图中所示的所有内容。所有[付费媒体广告](/help/destinations/catalog/social/overview.md)都是在[!UICONTROL 目标] [工作区](/help/destinations/ui/destinations-workspace.md)中创建的。
 
-[[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html) 可帮助您为客户提供贴合心意的、上下文和个性化的体验。客户历程是客户与品牌互动的整个过程。每个用例历程都需要特定信息。
+[[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html?lang=zh-Hans) 可帮助您为客户提供贴合心意的、上下文和个性化的体验。客户历程是客户与品牌互动的整个过程。每个用例历程都需要特定信息。
 
 要完成此用例，您必须创建两个单独的历程：
 
@@ -367,15 +367,15 @@ ht-degree: 26%
 
 上面显示的历程遵循以下逻辑。
 
-1. 读取受众：对于在上面的受众部分中创建的第一个受众，使用[读取受众活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/read-audience.html?lang=en)。
+1. 读取受众：对于在上面的受众部分中创建的第一个受众，使用[读取受众活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/read-audience.html?lang=zh-Hans)。
 
-2. 条件 — 首选渠道：使用[条件活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/condition-activity.html)来确定如何通过电子邮件、短信或推送通知联系客户。 使用三个操作活动创建三个分支。
+2. 条件 — 首选渠道：使用[条件活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/condition-activity.html?lang=zh-Hans)来确定如何通过电子邮件、短信或推送通知联系客户。 使用三个操作活动创建三个分支。
 
-3. 等待：使用[等待活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/read-audience.html)等待直至您侦听购买。
+3. 等待：使用[等待活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/read-audience.html?lang=zh-Hans)等待直至您侦听购买。
 
 4. 条件 — 过去7天内购买的订阅？使用条件活动可侦听过去七天内的产品购买。
 
-5. JourneyStepEventTracker — 未购买订阅：对尚未购买订阅的访客使用[自定义操作](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/using-custom-actions.html)，即使收到您的消息。 作为历程结束时的自定义条件的一部分，创建一个`journey.feedback`事件并将其添加到基于[!UICONTROL 历程步骤事件]架构的数据集。 您将使用此事件对尚未购买订阅且可通过付费媒体广告定位的受众进行分段。
+5. JourneyStepEventTracker — 未购买订阅：对尚未购买订阅的访客使用[自定义操作](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/using-custom-actions.html?lang=zh-Hans)，即使收到您的消息。 作为历程结束时的自定义条件的一部分，创建一个`journey.feedback`事件并将其添加到基于[!UICONTROL 历程步骤事件]架构的数据集。 您将使用此事件对尚未购买订阅且可通过付费媒体广告定位的受众进行分段。
 
 +++
 
@@ -436,7 +436,7 @@ ht-degree: 26%
 
 >[!ENDTABS]
 
-有关在[!DNL Adobe Journey Optimizer]中创建历程的更多信息，请阅读[历程入门](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html)指南。
+有关在[!DNL Adobe Journey Optimizer]中创建历程的更多信息，请阅读[历程入门](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html?lang=zh-Hans)指南。
 
 ### 设置显示付费媒体广告的目标 {#paid-media-ads}
 

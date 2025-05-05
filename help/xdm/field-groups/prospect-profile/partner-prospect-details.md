@@ -13,7 +13,7 @@ ht-degree: 11%
 
 [!UICONTROL 合作伙伴潜在客户详细信息（示例）]是[[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)的标准架构字段组。 [!UICONTROL Partner Prospect Details （示例）]提供了与潜在客户配置文件相关的各种详细信息的示例框架。 此框架简化了组织和管理各种与潜在客户相关的信息的过程。
 
-此字段组在合作伙伴的上下文中扩展[Individual Prospect配置文件类](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/prospect.html)。
+此字段组在合作伙伴的上下文中扩展[Individual Prospect配置文件类](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/prospect.html?lang=zh-Hans)。
 
 ![ [!UICONTROL 合作伙伴潜在客户详细信息（示例）]字段组的图表。](../../images/field-groups/partner/partner-prospect-details-sample.png)
 

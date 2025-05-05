@@ -100,7 +100,7 @@ _satellite.getVisitorId() => Object
 var visitorIdInstance = _satellite.getVisitorId();
 ```
 
-如果资产上安装了 [!DNL Adobe Experience Cloud ID] 扩展，此方法将返回访客 ID 实例。有关详细信息，请参阅 [Experience Cloud ID 服务文档](https://experienceleague.adobe.com/docs/id-service/using/home.html)。
+如果资产上安装了 [!DNL Adobe Experience Cloud ID] 扩展，此方法将返回访客 ID 实例。有关详细信息，请参阅 [Experience Cloud ID 服务文档](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)。
 
 ## `logger`
 

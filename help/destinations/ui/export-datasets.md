@@ -50,16 +50,16 @@ ht-degree: 6%
   </tr>
   <tr>
     <td>Ultimate</td>
-    <td><ul><li>通过源、Web SDK、Mobile SDK、Analytics Data Connector和Audience Manager摄取或收集数据后，在Experience Platform UI中创建的配置文件和体验事件数据集。</li><li> <a href="https://experienceleague.adobe.com/docs/experience-platform/dashboards/query.html#profile-attribute-datasets">系统生成的配置文件快照数据集</a>。</li></td>
+    <td><ul><li>通过源、Web SDK、Mobile SDK、Analytics Data Connector和Audience Manager摄取或收集数据后，在Experience Platform UI中创建的配置文件和体验事件数据集。</li><li> <a href="https://experienceleague.adobe.com/docs/experience-platform/dashboards/query.html?lang=zh-Hans#profile-attribute-datasets">系统生成的配置文件快照数据集</a>。</li></td>
   </tr>
   <tr>
     <td rowspan="2">Adobe Journey Optimizer</td>
     <td>Prime</td>
-    <td>请参阅<a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html#datasets"> Adobe Journey Optimizer</a>文档。</td>
+    <td>请参阅<a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html?lang=zh-Hans#datasets"> Adobe Journey Optimizer</a>文档。</td>
   </tr>
   <tr>
     <td>Ultimate</td>
-    <td>请参阅<a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html#datasets"> Adobe Journey Optimizer</a>文档。</td>
+    <td>请参阅<a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html?lang=zh-Hans#datasets"> Adobe Journey Optimizer</a>文档。</td>
   </tr>
   <tr>
     <td>Customer Journey Analytics</td>
@@ -280,7 +280,7 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
 ## 数据集导出授权 {#licensing-entitlement}
 
-请参阅产品描述文档，了解您每年有权为每个Experience Platform应用程序导出多少数据。 例如，您可以在[此处](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)查看Real-Time CDP产品说明。
+请参阅产品描述文档，了解您每年有权为每个Experience Platform应用程序导出多少数据。 例如，您可以在[此处](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)查看Real-Time CDP产品说明。
 
 请注意，不同应用程序的数据导出权限不是累加的。 例如，这意味着如果您购买Real-Time CDP Ultimate和Adobe Journey Optimizer Ultimate，则根据产品描述，配置文件导出权利将是两个权利中的较大者。 您的卷权利的计算方法是：取用您的许可配置文件的总数，然后乘以Real-Time CDP Prime的500 KB或Real-Time CDP Ultimate的700 KB，从而确定您有权获得的数据量。
 

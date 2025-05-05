@@ -78,7 +78,7 @@ Marketo Measure（前身为Bizible）让营销人员能够洞悉哪些营销工�
 
 ## 验证数据导出 {#exported-data}
 
-要验证是否成功导出数据集，您可以检查数据集是否已成功导出到[Snowflake数据仓库](https://experienceleague.adobe.com/docs/marketo-measure/using/marketo-measure-data-warehouse/data-warehouse-access-reader-account.html)。
+要验证是否成功导出数据集，您可以检查数据集是否已成功导出到[Snowflake数据仓库](https://experienceleague.adobe.com/docs/marketo-measure/using/marketo-measure-data-warehouse/data-warehouse-access-reader-account.html?lang=zh-Hans)。
 
 ## 数据使用和治理 {#data-usage-governance}
 

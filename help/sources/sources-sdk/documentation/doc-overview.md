@@ -19,8 +19,8 @@ ht-degree: 0%
 
 * 接下来可以学习的教程，为您的新源创建文档页面；
 * 供您为新源填写的文档模板；
-* [有关如何使用Markdown编写技术文档的说明](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html)；
-* [有关了解Adobe Markdown风格的说明](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html#custom-markdown-extensions)。
+* [有关如何使用Markdown编写技术文档的说明](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=zh-Hans)；
+* [有关了解Adobe Markdown风格的说明](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=zh-Hans#custom-markdown-extensions)。
 
 ## 先决条件
 

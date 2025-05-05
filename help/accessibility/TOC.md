@@ -15,6 +15,6 @@ ht-degree: 73%
 * [辅助功能概述](home.md)
 * [辅助功能](features.md)
 * [Experience Platform的自定义辅助功能](custom.md)
-* [Experience Platform 文档](https://experienceleague.adobe.com/docs/experience-platform.html)
+* [Experience Platform 文档](https://experienceleague.adobe.com/docs/experience-platform.html?lang=zh-Hans)
 * [Experience Platform概述](https://www.adobe.com/go/platform-overview-en)
 * [Experience Platform 发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

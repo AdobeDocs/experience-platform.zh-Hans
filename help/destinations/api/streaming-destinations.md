@@ -563,7 +563,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 >[!IMPORTANT]
 >
-> 除了步骤[将数据激活到新目标](#activate-data)中的配置文件属性和受众之外，[!DNL AWS Kinesis]和[!DNL Azure Event Hubs]中的导出数据还将包含有关身份映射的信息。 这表示导出的配置文件的标识(例如[ECID](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html)、移动设备ID、Google ID、电子邮件地址等)。 请参阅以下示例。
+> 除了步骤[将数据激活到新目标](#activate-data)中的配置文件属性和受众之外，[!DNL AWS Kinesis]和[!DNL Azure Event Hubs]中的导出数据还将包含有关身份映射的信息。 这表示导出的配置文件的标识(例如[ECID](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html?lang=zh-Hans)、移动设备ID、Google ID、电子邮件地址等)。 请参阅以下示例。
 
 ```json
 {

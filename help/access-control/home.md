@@ -17,7 +17,7 @@ Adobe Experience Platform的访问控制是通过[Adobe Experience Cloud](https:
 
 ## 访问控制层级和工作流
 
-要配置Experience Platform的访问控制，您必须对拥有Experience Platform产品的组织具有系统或产品管理员权限。 可以授予或撤销权限的最低角色是产品管理员。 可以管理权限的其他管理员角色是系统管理员（无限制）。 有关详细信息，请参阅有关[管理角色](https://helpx.adobe.com/enterprise/using/admin-roles.html)的Adobe帮助中心文章。
+要配置Experience Platform的访问控制，您必须对拥有Experience Platform产品的组织具有系统或产品管理员权限。 可以授予或撤销权限的最低角色是产品管理员。 可以管理权限的其他管理员角色是系统管理员（无限制）。 有关详细信息，请参阅有关[管理角色](https://helpx.adobe.com/cn/enterprise/using/admin-roles.html)的Adobe帮助中心文章。
 
 >[!NOTE]
 >

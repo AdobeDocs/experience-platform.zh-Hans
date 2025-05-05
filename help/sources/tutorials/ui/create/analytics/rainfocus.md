@@ -127,4 +127,4 @@ Experience Platform根据您选择的目标架构或数据集，为自动映射�
 * [在Adobe Developer门户中创建Adobe服务帐户(JWT)](https://developer.adobe.com/developer-console/docs/guides/authentication/ServiceAccountIntegration/)
 * [在API中创建架构](../../../../../xdm/tutorials/create-schema-api.md)
 * [在UI中创建架构](../../../../../xdm/tutorials/create-schema-ui.md)
-* [在UI中定义标识字段](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/fields/identity.html)
+* [在UI中定义标识字段](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/fields/identity.html?lang=zh-Hans)

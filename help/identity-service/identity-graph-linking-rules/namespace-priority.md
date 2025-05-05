@@ -73,7 +73,7 @@ ht-degree: 2%
 
 ## 命名空间优先级使用情况
 
-目前，命名空间优先级影响实时客户配置文件的系统行为。 下图说明了此概念。 有关详细信息，请阅读[Adobe Experience Platform和应用程序体系结构图](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications)的指南。
+目前，命名空间优先级影响实时客户配置文件的系统行为。 下图说明了此概念。 有关详细信息，请阅读[Adobe Experience Platform和应用程序体系结构图](https://experienceleague.adobe.com/zh-hans/docs/blueprints-learn/architecture/architecture-overview/platform-applications)的指南。
 
 ![命名空间优先级应用程序作用域的关系图](../images/namespace-priority/application-scope.png)
 

@@ -47,7 +47,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 功能 | 描述 |
 | --- | --- |
-| (Beta)数据集导出 | [数据集导出Beta功能](/help/destinations/ui/export-datasets.md)允许您通过目标用户界面将第一代数据(如[Real-Time Customer Data Platform产品描述](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)中的定义)从Adobe Experience Platform导出到您自己的外部客户系统。 这让您能够借助无代码/低代码工作流将数据从Experience Platform导出到六个云存储目标（如下表中所列），以用于分析和合规性用例。 |
+| (Beta)数据集导出 | [数据集导出Beta功能](/help/destinations/ui/export-datasets.md)允许您通过目标用户界面将第一代数据(如[Real-Time Customer Data Platform产品描述](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)中的定义)从Adobe Experience Platform导出到您自己的外部客户系统。 这让您能够借助无代码/低代码工作流将数据从Experience Platform导出到六个云存储目标（如下表中所列），以用于分析和合规性用例。 |
 | (Beta)增强的文件导出功能 | 现在，在从Experience Platform导出文件时，您可以受益于增强的自定功能：<br><ul><li>额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#file-names)。</li><li>可通过[改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)在您导出的文件中设置自定义文件头。</li><li>[能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md)。</li></ul> <br>下表列出的六个新的Beta版云存储卡支持此功能。 |
 
 {style="table-layout:auto"}

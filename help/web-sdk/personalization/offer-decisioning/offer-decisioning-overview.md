@@ -22,7 +22,7 @@ Adobe Experience Platform [!DNL Web SDK]可以投放和渲染在Offer Decisionin
 
 ## 术语
 
-在使用Offer Decisioning时，请务必了解以下术语。 有关更多信息和查看更多术语，请访问[Offer Decisioning术语表](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/glossary.html)。
+在使用Offer Decisioning时，请务必了解以下术语。 有关更多信息和查看更多术语，请访问[Offer Decisioning术语表](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/glossary.html?lang=zh-Hans)。
 
 * **决策范围：**&#x200B;对于Offer Decisioning，决策范围是JSON的Base64编码字符串，其中包含您希望优惠决策服务用来建议优惠的活动和版面ID。
 
@@ -81,7 +81,7 @@ Adobe Experience Platform [!DNL Web SDK]可以投放和渲染在Offer Decisionin
    * 通过标记安装SDK
 
       1. [创建标记属性](/help/tags/ui/administration/companies-and-properties.md)
-      1. [添加嵌入代码](https://experienceleague.adobe.com/docs/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
+      1. [添加嵌入代码](https://experienceleague.adobe.com/docs/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html?lang=zh-Hans)
       1. 通过从“数据流”下拉列表中选择配置，使用您创建的数据流安装和配置Experience Platform Web SDK扩展。 请参阅有关[扩展](/help/tags/ui/managing-resources/extensions/overview.md)的文档。
 
          ![install-aep-web-sdk-extension](./assets/install-aep-web-sdk-extension.png)
@@ -328,4 +328,4 @@ Adobe Experience Platform [!DNL Web SDK]可以投放和渲染在Offer Decisionin
 
 ## 限制
 
-当前移动设备Edge Network工作流不支持某些优惠限制，例如上限。 “上限”字段值指定选件在所有用户中显示的次数。 有关更多详细信息，请参阅[优惠资格规则和约束文档](https://experienceleague.adobe.com/docs/offer-decisioning/using/managing-offers-in-the-offer-library/creating-personalized-offers.html#eligibility)。
+当前移动设备Edge Network工作流不支持某些优惠限制，例如上限。 “上限”字段值指定选件在所有用户中显示的次数。 有关更多详细信息，请参阅[优惠资格规则和约束文档](https://experienceleague.adobe.com/docs/offer-decisioning/using/managing-offers-in-the-offer-library/creating-personalized-offers.html?lang=zh-Hans#eligibility)。

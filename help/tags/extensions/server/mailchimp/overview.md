@@ -18,7 +18,7 @@ ht-degree: 5%
 
 >[!NOTE]
 >  
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](https://experienceleague.adobe.com/docs/experience-platform/tags/term-updates.html)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](https://experienceleague.adobe.com/docs/experience-platform/tags/term-updates.html?lang=zh-Hans)。
 
 Mailchimp [事件转发](../../../ui/event-forwarding/overview.md)扩展将事件发送到Mailchimp营销API，这可以触发Mailchimp营销活动、历程或交易的电子邮件。
 

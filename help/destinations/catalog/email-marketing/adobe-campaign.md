@@ -14,7 +14,7 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道个性化和交付营销活动。 有关详细信息，请参阅[Campaign Classic入门](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/starting-with-adobe-campaign/about-adobe-campaign-classic.html)。
+Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道个性化和交付营销活动。 有关详细信息，请参阅[Campaign Classic入门](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/starting-with-adobe-campaign/about-adobe-campaign-classic.html?lang=zh-Hans)。
 
 若要将受众数据发送到Adobe Campaign，您必须先[连接到Adobe Experience Platform中的目标](#connect-destination)，然后[设置数据导入](#import-data-into-campaign)(从您的存储位置导入Adobe Campaign)。
 
@@ -108,9 +108,9 @@ Adobe Campaign支持以下连接类型：
 >[!IMPORTANT]
 >
 >* 在执行此集成时，请记住Adobe Campaign合同规定的[!DNL SFTP]存储限制、数据库存储限制和活动配置文件限制。
->* 您需要使用[!DNL Campaign]工作流在Adobe Campaign中计划、导入和映射导出的区段。 请参阅Adobe Campaign Classic文档中的[设置定期导入](https://experienceleague.adobe.com/docs/campaign-classic/using/automating-with-workflows/use-cases/data-management/recurring-import-workflow.html)和Adobe Campaign Standard文档中的[关于数据管理活动](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/data-management-activities/about-data-management-activities.html)。
+>* 您需要使用[!DNL Campaign]工作流在Adobe Campaign中计划、导入和映射导出的区段。 请参阅Adobe Campaign Classic文档中的[设置定期导入](https://experienceleague.adobe.com/docs/campaign-classic/using/automating-with-workflows/use-cases/data-management/recurring-import-workflow.html?lang=zh-Hans)和Adobe Campaign Standard文档中的[关于数据管理活动](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/data-management-activities/about-data-management-activities.html?lang=zh-Hans)。
 >* 将数据发送到Adobe Campaign的首选方法是通过[!DNL Amazon S3]或[!DNL Azure Blob]。
 
 将[!DNL Experience Platform]连接到[!DNL Amazon S3]或[!DNL Azure Blob]存储空间后，您必须设置数据从存储位置导入Adobe Campaign。 要了解如何完成此操作，请参阅以下Adobe Campaign文档页面：
-* [数据导入和导出入门](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/importing-and-exporting-data/get-started-data-import-export.html?lang=zh-Hans)和Adobe Campaign Classic文档中的[数据加载（文件）](https://experienceleague.adobe.com/docs/campaign-classic/using/automating-with-workflows/action-activities/data-loading--file-.html)。
-* [开始使用流程和数据管理](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/get-started-workflows.html)和[在Adobe Campaign Standard文档中加载文件](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/data-management-activities/load-file.html)。
+* [数据导入和导出入门](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/importing-and-exporting-data/get-started-data-import-export.html?lang=zh-Hans)和Adobe Campaign Classic文档中的[数据加载（文件）](https://experienceleague.adobe.com/docs/campaign-classic/using/automating-with-workflows/action-activities/data-loading--file-.html?lang=zh-Hans)。
+* [开始使用流程和数据管理](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/get-started-workflows.html?lang=zh-Hans)和[在Adobe Campaign Standard文档中加载文件](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/data-management-activities/load-file.html?lang=zh-Hans)。

@@ -17,7 +17,7 @@ ht-degree: 0%
 >
 >Adobe Experience Platform文档最近发生了移动。 请花些时间查看新导航并更新任何现有书签。
 
-Adobe Experience Platform文档适用于许多Experience Platform功能和服务。 要访问Experience Platform文档，请返回[文档登陆页面](https://experienceleague.adobe.com/docs/experience-platform.html)，然后选择要查看的指南。
+Adobe Experience Platform文档适用于许多Experience Platform功能和服务。 要访问Experience Platform文档，请返回[文档登陆页面](https://experienceleague.adobe.com/docs/experience-platform.html?lang=zh-Hans)，然后选择要查看的指南。
 
 ## Experience Platform文档类型
 

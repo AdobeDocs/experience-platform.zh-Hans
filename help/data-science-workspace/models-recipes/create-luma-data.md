@@ -49,7 +49,7 @@ ht-degree: 0%
 
 ### 创建Luma Web数据架构并摄取数据
 
-为了创建模型，Experience Platform中必须具有一个用于训练和评分模型的数据集。 [数据科学Workspace课程](https://experienceleague.adobe.com/?recommended=ExperiencePlatform-U-1-2021.1.dsw)中的以下视频教程将指导您完成创建Luma架构以及摄取购买倾向模型使用的数据的过程。
+为了创建模型，Experience Platform中必须具有一个用于训练和评分模型的数据集。 [数据科学Workspace课程](https://experienceleague.adobe.com/?lang=zh-hans&recommended=ExperiencePlatform-U-1-2021.1.dsw)中的以下视频教程将指导您完成创建Luma架构以及摄取购买倾向模型使用的数据的过程。
 
 >[!VIDEO](https://video.tv.adobe.com/v/333312)
 

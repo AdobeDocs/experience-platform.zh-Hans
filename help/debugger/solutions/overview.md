@@ -25,17 +25,17 @@ Adobe Experience Platform Web SDK 屏幕可显示有关 Adobe Experience Platfor
 
 ## [!UICONTROL Analytics] {#section-f71dfcc22bb44c86bec328491606a482}
 
-[!UICONTROL Analytics]选项卡提供有关您的[Adobe Analytics实施](https://experienceleague.adobe.com/docs/analytics/implementation/home.html)的信息。
+[!UICONTROL Analytics]选项卡提供有关您的[Adobe Analytics实施](https://experienceleague.adobe.com/docs/analytics/implementation/home.html?lang=zh-Hans)的信息。
 
 ## [!UICONTROL Target] {#section-988873ba5ede4317953193bd7ac5474c}
 
-使用[!UICONTROL Target]屏幕查看[Adobe Target](https://experienceleague.adobe.com/docs/target/using/target-home.html)请求或[mboxTrace](https://experienceleague.adobe.com/docs/target/using/activities/troubleshoot-activities/content-trouble.html#section_256FCF7C14BB435BA2C68049EF0BA99E)响应详细信息。
+使用[!UICONTROL Target]屏幕查看[Adobe Target](https://experienceleague.adobe.com/docs/target/using/target-home.html?lang=zh-Hans)请求或[mboxTrace](https://experienceleague.adobe.com/docs/target/using/activities/troubleshoot-activities/content-trouble.html?lang=zh-Hans#section_256FCF7C14BB435BA2C68049EF0BA99E)响应详细信息。
 
 有关详细信息，请参阅[使用Debugger for Target实施](./target.md)指南。
 
 ## [!UICONTROL Audience Manager] {#section-1d4484f8b46f457f859ba88039a9a585}
 
-使用[[!UICONTROL Audience Manager]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html)选项卡查看Adobe Audience Manager中[事件](https://experienceleague.adobe.com/docs/audience-manager/user-guide/api-and-sdk-code/dcs/dcs-event-calls/dcs-event-calls.html)的详细信息。 选择组织以将其展开并显示相关信息。
+使用[[!UICONTROL Audience Manager]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html?lang=zh-Hans)选项卡查看Adobe Audience Manager中[事件](https://experienceleague.adobe.com/docs/audience-manager/user-guide/api-and-sdk-code/dcs/dcs-event-calls/dcs-event-calls.html?lang=zh-Hans)的详细信息。 选择组织以将其展开并显示相关信息。
 
 ## [!UICONTROL Adobe Experience Platform标记] {#section-ee80a9c509f2462c89c1e5bd8d05d7c8}
 
@@ -43,7 +43,7 @@ Adobe Experience Platform Web SDK 屏幕可显示有关 Adobe Experience Platfor
 
 ## [!UICONTROL Experience Cloud ID] {#section-a96c32f8e63a4991abb296f6e8ea01cf}
 
-使用[!UICONTROL Experience CloudID]选项卡查看[Experience CloudID服务](https://experienceleague.adobe.com/docs/id-service/using/home.html)请求。
+使用[!UICONTROL Experience CloudID]选项卡查看[Experience CloudID服务](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)请求。
 
 ## [!UICONTROL 动态标记管理]
 

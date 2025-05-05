@@ -15,7 +15,7 @@ ht-degree: 7%
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。 您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
 
-Experience Cloud中的[[!DNL Customer Attributes]](https://experienceleague.adobe.com/docs/core-services/interface/services/customer-attributes/attributes.html)允许您上传从客户关系管理(CRM)数据库中捕获的企业数据。 您可以将数据上传到 Experience Cloud 中的客户属性数据源，然后在 Adobe Analytics 和 Adobe Target 中使用这些数据。
+Experience Cloud中的[[!DNL Customer Attributes]](https://experienceleague.adobe.com/docs/core-services/interface/services/customer-attributes/attributes.html?lang=zh-Hans)允许您上传从客户关系管理(CRM)数据库中捕获的企业数据。 您可以将数据上传到 Experience Cloud 中的客户属性数据源，然后在 Adobe Analytics 和 Adobe Target 中使用这些数据。
 
 Experience Platform支持将[!DNL Customer Attributes]配置文件数据摄取到Adobe Experience Platform。
 

@@ -46,8 +46,8 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->* 要使用此API，您必须在Experience Platform UI中拥有到目标的现有连接。 阅读[连接到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html)和[将配置文件和受众激活到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html)以了解详细信息。
-> * 建立与目标的连接后，获取在[浏览与目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html)的连接时您应在对此端点的API调用中使用的目标实例ID。
+>* 要使用此API，您必须在Experience Platform UI中拥有到目标的现有连接。 阅读[连接到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=zh-Hans)和[将配置文件和受众激活到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=zh-Hans)以了解详细信息。
+> * 建立与目标的连接后，获取在[浏览与目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html?lang=zh-Hans)的连接时您应在对此端点的API调用中使用的目标实例ID。
 >![UI图像如何获取目标实例ID](../../assets/testing-api/get-destination-instance-id.png)
 
 **API格式**
@@ -180,10 +180,10 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `segmentMembership` | 描述个人受众成员资格的映射对象。 有关`segmentMembership`的详细信息，请阅读[受众成员资格详细信息](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html)。 |
+| `segmentMembership` | 描述个人受众成员资格的映射对象。 有关`segmentMembership`的详细信息，请阅读[受众成员资格详细信息](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html?lang=zh-Hans)。 |
 | `lastQualificationTime` | 此配置文件上次符合区段资格的时间戳。 |
 | `xdm:status` | 一个字符串字段，指明在当前请求中是否实现了受众成员资格。 接受以下值： <ul><li>`realized`：配置文件是区段的一部分。</li><li>`exited`：配置文件正在作为当前请求的一部分退出受众。</li></ul> |
-| `identityMap` | 描述个人各种身份值及其关联命名空间的映射类型字段。 有关`identityMap`的详细信息，请阅读[架构组合的基础](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html#identityMap)。 |
+| `identityMap` | 描述个人各种身份值及其关联命名空间的映射类型字段。 有关`identityMap`的详细信息，请阅读[架构组合的基础](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=zh-Hans#identityMap)。 |
 
 {style="table-layout:auto"}
 

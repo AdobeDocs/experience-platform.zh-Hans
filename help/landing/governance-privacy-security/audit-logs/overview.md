@@ -167,7 +167,7 @@ ht-degree: 32%
 
 ## 管理Adobe Admin Console的审核日志
 
-要了解如何管理Adobe Admin Console中的活动的审核日志，请参阅以下[文档](https://helpx.adobe.com/enterprise/using/audit-logs.html)。
+要了解如何管理Adobe Admin Console中的活动的审核日志，请参阅以下[文档](https://helpx.adobe.com/cn/enterprise/using/audit-logs.html)。
 
 ## 后续步骤和其他资源
 

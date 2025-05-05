@@ -56,7 +56,7 @@ Web SDK使用Cookie分配和跟踪[!DNL ECIDs]，并使用多种可用方法来�
 
 ### Cookie生命周期对Adobe Experience Cloud应用程序的影响 {#lifespans}
 
-无论您选择第一方还是第三方数据收集，Cookie可以保留的时间长度都会直接影响[Adobe Analytics](https://experienceleague.adobe.com/zh-hans/docs/analytics)和[Customer Journey Analytics](https://experienceleague.adobe.com/zh-hans/docs/customer-journey-analytics)中的访客计数。 此外，在网站上使用[Adobe Target](https://experienceleague.adobe.com/en/docs/target)或[Offer decisioning](https://experienceleague.adobe.com/en/docs/target/using/integrate/ajo/offer-decision)时，最终用户可能会遇到不一致的个性化体验。
+无论您选择第一方还是第三方数据收集，Cookie可以保留的时间长度都会直接影响[Adobe Analytics](https://experienceleague.adobe.com/zh-hans/docs/analytics)和[Customer Journey Analytics](https://experienceleague.adobe.com/zh-hans/docs/customer-journey-analytics)中的访客计数。 此外，在网站上使用[Adobe Target](https://experienceleague.adobe.com/zh-hans/docs/target)或[Offer decisioning](https://experienceleague.adobe.com/zh-hans/docs/target/using/integrate/ajo/offer-decision)时，最终用户可能会遇到不一致的个性化体验。
 
 例如，假定您创建了一个个性化体验，如果用户在过去七天内查看了任何项目三次，则会将任何项目提升到主页。
 
@@ -165,7 +165,7 @@ alloy("sendEvent", {
 | `authenticatedState` | 字符串 | **（必需）** ID的身份验证状态。 可能的值为`ambiguous`、`authenticated`和`loggedOut`。 |
 | `primary` | 布尔值 | 确定是否应当将此标识用作配置文件中的主片段。 默认情况下，会将ECID设置为用户的主要标识符。 如果忽略，此值将默认为`false`。 |
 
-使用`identityMap`字段识别设备或用户产生的结果与使用[!DNL ID Service API]中的[`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/setcustomerids.html)方法产生的结果相同。 有关详细信息，请参阅[ID服务API文档](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/get-set.html)。
+使用`identityMap`字段识别设备或用户产生的结果与使用[!DNL ID Service API]中的[`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/setcustomerids.html?lang=zh-Hans)方法产生的结果相同。 有关详细信息，请参阅[ID服务API文档](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/get-set.html?lang=zh-Hans)。
 
 ## 从访客API迁移到ECID {#migrating-visitor-api-ecid}
 
@@ -177,7 +177,7 @@ alloy("sendEvent", {
 
 ### 更新迁移特征
 
-将XDM格式的数据发送到Audience Manager时，迁移时必须将此数据转换为信号。 必须更新您的特征以反映XDM提供的新密钥。 通过使用Audience Manager创建的[BAAAM工具](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/bulk-management-tools/bulk-management-intro.html#getting-started-with-bulk-management)，此流程变得更加容易。
+将XDM格式的数据发送到Audience Manager时，迁移时必须将此数据转换为信号。 必须更新您的特征以反映XDM提供的新密钥。 通过使用Audience Manager创建的[BAAAM工具](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/bulk-management-tools/bulk-management-intro.html?lang=zh-Hans#getting-started-with-bulk-management)，此流程变得更加容易。
 
 ## 在事件转发中使用
 

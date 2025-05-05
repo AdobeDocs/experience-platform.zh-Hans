@@ -33,7 +33,7 @@ ht-degree: 0%
 >
 >机器人检测不会丢弃任何机器人请求。 它仅使用机器人评分更新XDM架构，并将事件转发到您配置的[数据流服务](configure.md)。
 >
->Adobe解决方案可能会以不同的方式处理机器人评分。 例如，Adobe Analytics使用自己的[机器人过滤服务](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/bot-removal/bot-rules.html)，而不使用Edge Network设置的分数。 这两个服务使用相同的[IAB机器人列表](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/)，因此机器人得分相同。
+>Adobe解决方案可能会以不同的方式处理机器人评分。 例如，Adobe Analytics使用自己的[机器人过滤服务](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/bot-removal/bot-rules.html?lang=zh-Hans)，而不使用Edge Network设置的分数。 这两个服务使用相同的[IAB机器人列表](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/)，因此机器人得分相同。
 
 机器人检测规则在创建后可能需要15分钟才能在Edge Network中传播。
 

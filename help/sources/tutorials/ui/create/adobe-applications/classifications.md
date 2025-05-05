@@ -63,4 +63,4 @@ Analytics Classifications Source Connector要求在使用之前，将您的数�
 
 * [Adobe Analytics源连接器概述](../../../../connectors/adobe-applications/analytics.md)
 * [在UI中为报表包数据创建Analytics源连接](./analytics.md)
-* [关于分类](https://experienceleague.adobe.com/docs/analytics/components/classifications/c-classifications.html)
+* [关于分类](https://experienceleague.adobe.com/docs/analytics/components/classifications/c-classifications.html?lang=zh-Hans)

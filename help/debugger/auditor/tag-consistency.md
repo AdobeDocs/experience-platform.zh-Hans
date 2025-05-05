@@ -21,6 +21,6 @@ ht-degree: 38%
 
 | 测试 | 粗细 | 标准 | 推荐 |
 | --- | --- | --- | --- |
-| Adobe Analytics — 一致的代码版本 | 5 | 找到多个版本的 Analytics 代码。 | 将 Analytics 的所有实例替换为当前版本。<br><br>[其他信息](https://experienceleague.adobe.com/docs/analytics/implementation/home.html) |
+| Adobe Analytics — 一致的代码版本 | 5 | 找到多个版本的 Analytics 代码。 | 将 Analytics 的所有实例替换为当前版本。<br><br>[其他信息](https://experienceleague.adobe.com/docs/analytics/implementation/home.html?lang=zh-Hans) |
 
 {style="table-layout:auto"}

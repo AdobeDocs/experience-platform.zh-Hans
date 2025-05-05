@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # 在Web SDK中使用第一方设备ID
 
-Adobe Experience Platform Web SDK使用Cookie为网站访客分配[Adobe Experience Cloud ID (ECID)](https://experienceleague.adobe.com/docs/experience-platform/identity/ecid.html)以跟踪用户行为。 要消除浏览器对Cookie有效期的限制，您可以设置和管理自己的设备标识符，称为第一方设备ID (FPID)。
+Adobe Experience Platform Web SDK使用Cookie为网站访客分配[Adobe Experience Cloud ID (ECID)](https://experienceleague.adobe.com/docs/experience-platform/identity/ecid.html?lang=zh-Hans)以跟踪用户行为。 要消除浏览器对Cookie有效期的限制，您可以设置和管理自己的设备标识符，称为第一方设备ID (FPID)。
 
 >[!NOTE]
 >
@@ -117,7 +117,7 @@ Edge Network仅接受符合[UUIDv4格式](https://datatracker.ietf.org/doc/html/
 
 | 前往 | 描述 |
 | --- | --- |
-| 首次访问 | 假设您尚未开始设置[!DNL FPID] Cookie。 [AMCV Cookie](https://experienceleague.adobe.com/docs/id-service/using/intro/cookies.html#section-c55af54828dc4cce89f6118655d694c8)中包含的[!DNL ECID]将是用于识别访客的标识符。 |
+| 首次访问 | 假设您尚未开始设置[!DNL FPID] Cookie。 [AMCV Cookie](https://experienceleague.adobe.com/docs/id-service/using/intro/cookies.html?lang=zh-Hans#section-c55af54828dc4cce89f6118655d694c8)中包含的[!DNL ECID]将是用于识别访客的标识符。 |
 | 第二次访问 | [!DNL FPID]解决方案的转出已开始。 现有[!DNL ECID]仍然存在，并且仍然是访客标识的主要标识符。 |
 | 第三次访问 | 在第二次和第三次访问之间，由于浏览器策略，已经过了足够的时间删除[!DNL ECID]。 但是，由于[!DNL FPID]是使用[!DNL DNS] [!DNL A]记录设置的，因此[!DNL FPID]仍然存在。 [!DNL FPID]现在被视为主ID，用于为写入最终用户设备的[!DNL ECID]提供种子。 该用户现在在Adobe Experience Platform和Experience Cloud解决方案中将被视为新访客。 |
 | 第四次访问 | 在第三次和第四次访问之间，经过了足够长的时间，由于浏览器策略，[!DNL ECID]已被删除。 与上次访问一样，[!DNL FPID]仍因设置方式而异。 此时，将生成与上次访问相同的[!DNL ECID]。 整个Experience Platform和Experience Cloud解决方案中都会将该用户视为上次访问中的同一用户。 |
@@ -133,7 +133,7 @@ Edge Network仅接受符合[UUIDv4格式](https://datatracker.ietf.org/doc/html/
 >
 >仅支持[!DNL A]或[!DNL AAAA]记录来设置和跟踪Cookie。 数据收集的主要方法是通过[!DNL DNS CNAME]。 [!DNL FPIDs]是使用[!DNL A]或[!DNL AAAA]记录设置的，并使用[!DNL CNAME]发送到Adobe。
 >
->第一方数据收集还支持[Adobe管理的证书计划](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html#adobe-managed-certificate-program)。
+>第一方数据收集还支持[Adobe管理的证书计划](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=zh-Hans#adobe-managed-certificate-program)。
 
 设置[!DNL FPID] Cookie后，在收集事件数据时，可以获取其值并将其发送到Adobe。 收集的[!DNL FPIDs]用于生成[!DNL ECIDs]，它们是Adobe Experience Cloud应用程序中的主要标识符。
 
@@ -164,7 +164,7 @@ DNS中的[!DNL CNAME]记录允许您创建一个域名之间的别名。 这有�
 
 >[!IMPORTANT]
 >
->此功能要求您启用[第一方数据收集](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=en)。
+>此功能要求您启用[第一方数据收集](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=zh-Hans)。
 
 **步骤 2. 为您的数据流启用**&#x200B;[!UICONTROL &#x200B;第一方ID Cookie &#x200B;]&#x200B;**功能**
 
@@ -181,7 +181,7 @@ DNS中的[!DNL CNAME]记录允许您创建一个域名之间的别名。 这有�
 >[!NOTE]
 >
 >使用第一方ID时，无法执行第三方ID同步。 第三方ID同步依赖于[!DNL Visitor ID]服务以及该服务生成的`UUID`。 使用第一方ID功能时，生成[!DNL ECID]时未使用[!DNL Visitor ID]服务，这会导致无法同步第三方ID。
-><br> 当您使用第一方ID时，由于Audience Manager合作伙伴ID同步主要基于`UUIDs`或`DIDs`，因此不支持在合作伙伴平台中激活的[Audience Manager](https://experienceleague.adobe.com/en/docs/audience-manager)功能。 从第一方ID派生的[!DNL ECID]未链接到`UUID`，使其不可寻址。
+><br> 当您使用第一方ID时，由于Audience Manager合作伙伴ID同步主要基于`UUIDs`或`DIDs`，因此不支持在合作伙伴平台中激活的[Audience Manager](https://experienceleague.adobe.com/zh-hans/docs/audience-manager)功能。 从第一方ID派生的[!DNL ECID]未链接到`UUID`，使其不可寻址。
 
 ## 方法2：在`identityMap`中使用FPID {#identityMap}
 

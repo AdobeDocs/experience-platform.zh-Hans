@@ -98,7 +98,7 @@ document.onreadystatechange = function () {
 
 >[!TIP]
 > 
->对于无法对每个视频元素使用多个eVar或prop的实施，可在Experience Platform中连接数据元素值，使用分类规则生成器工具解析为分类报表(如[https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html)中所述)，然后在Analysis Workspace中作为区段应用。
+>对于无法对每个视频元素使用多个eVar或prop的实施，可在Experience Platform中连接数据元素值，使用分类规则生成器工具解析为分类报表(如[https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html?lang=zh-Hans](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html?lang=zh-Hans)中所述)，然后在Analysis Workspace中作为区段应用。
 
 要连接视频信息值，请创建一个名为“视频元数据”的新数据元素，然后对其进行编程以提取所有视频数据元素（上面所列），并将它们组合在一起。 例如：
 

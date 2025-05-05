@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # 访问响应令牌
 
-从Adobe Target返回的Personalization内容包括[响应令牌](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)，这些令牌包含有关活动、选件、体验、用户配置文件、地理信息等的详细信息。 这些详细信息可与第三方工具共享或用于调试。 响应令牌可在Adobe Target用户界面中配置。
+从Adobe Target返回的Personalization内容包括[响应令牌](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=zh-Hans)，这些令牌包含有关活动、选件、体验、用户配置文件、地理信息等的详细信息。 这些详细信息可与第三方工具共享或用于调试。 响应令牌可在Adobe Target用户界面中配置。
 
 要访问任何个性化内容，请在发送事件时提供回调函数。 SDK收到来自服务器的成功响应后，将调用此回调。 将为您的回调提供`result`对象，该对象可能包含包含包含任何返回的个性化内容的`propositions`属性。 以下是提供回调函数的示例。
 

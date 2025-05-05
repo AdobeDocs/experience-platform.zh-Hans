@@ -26,7 +26,7 @@ ht-degree: 3%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Pinterest Customer List]目标支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started)的更多信息。
+[!DNL Pinterest Customer List]目标支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=zh-Hans#getting-started)的更多信息。
 
 在目标激活工作流的[映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)中，将所需的标识映射到目标字段&#x200B;*pinterest_audience*。 标识是在数据摄取到Pinterest时识别和解析的。
 

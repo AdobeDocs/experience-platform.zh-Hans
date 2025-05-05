@@ -67,7 +67,7 @@ ht-degree: 3%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Verizon Media]支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started)的更多信息。
+[!DNL Verizon Media]支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=zh-Hans#getting-started)的更多信息。
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|

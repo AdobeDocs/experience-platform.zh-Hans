@@ -71,4 +71,4 @@ ht-degree: 68%
 
 >[!NOTE]
 >
->有关上述插件的更多信息，请参阅[Analytics文档](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/impl-plugins.html)。
+>有关上述插件的更多信息，请参阅[Analytics文档](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/impl-plugins.html?lang=zh-Hans)。

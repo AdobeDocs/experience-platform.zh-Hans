@@ -16,7 +16,7 @@ ht-degree: 3%
 
 Adobe Livefyre使您能够发现、整理用户生成的内容流并将其发布到您的网站上，以创建真实且高度个性化的体验。
 
-Adobe Livefyre是Adobe Experience Platform中的一项社交扩展。 有关Adobe Livefyre的更多信息，请参阅[Livefyre实施指南](https://experienceleague.adobe.com/docs/livefyre/implementation/home.html)。
+Adobe Livefyre是Adobe Experience Platform中的一项社交扩展。 有关Adobe Livefyre的更多信息，请参阅[Livefyre实施指南](https://experienceleague.adobe.com/docs/livefyre/implementation/home.html?lang=zh-Hans)。
 
 此目标是标记扩展。 有关标记扩展如何在Experience Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 

@@ -174,7 +174,7 @@ MA 扩展会将 `get-instance` 和 `media-heartbeat` 共享模块公开给其他
    ...
    ```
 
-1. 使用媒体心率实例，按照[媒体 SDK JS 文档](https://experienceleague.adobe.com/docs/media-analytics/using/legacy-implementations/legacy-media-sdks/setup-javascript/set-up-js-2.html)和 [JS API 文档](https://adobe-marketing-cloud.github.io/media-sdks/reference/javascript/index.html)中的说明，实施媒体跟踪。
+1. 使用媒体心率实例，按照[媒体 SDK JS 文档](https://experienceleague.adobe.com/docs/media-analytics/using/legacy-implementations/legacy-media-sdks/setup-javascript/set-up-js-2.html?lang=zh-Hans)和 [JS API 文档](https://adobe-marketing-cloud.github.io/media-sdks/reference/javascript/index.html)中的说明，实施媒体跟踪。
 
 >[!NOTE]
 >

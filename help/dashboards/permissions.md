@@ -19,7 +19,7 @@ ht-degree: 6%
 
 ## 先决条件
 
-为了配置[!DNL Experience Platform]的访问控制，您必须对具有[!DNL Experience Platform]产品集成的组织具有管理员权限。 有关详细信息，请参阅有关[管理角色](https://helpx.adobe.com/enterprise/using/admin-roles.html)的Adobe帮助中心文章。
+为了配置[!DNL Experience Platform]的访问控制，您必须对具有[!DNL Experience Platform]产品集成的组织具有管理员权限。 有关详细信息，请参阅有关[管理角色](https://helpx.adobe.com/cn/enterprise/using/admin-roles.html)的Adobe帮助中心文章。
 
 ## 可用的仪表板权限 {#available-permissions}
 

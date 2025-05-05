@@ -76,7 +76,7 @@ ht-degree: 0%
 
 请确保将异地重定位扩展附加到Adobe Experience Platform数据收集中的有效事件规则。 通常，应创建全局规则以触发关键操作，如`page load`或特定用户交互。
 
-要了解有关配置该扩展的更多信息，请阅读[事件转发](https://experienceleague.adobe.com/en/docs/experience-platform/tags/event-forwarding/getting-started)文档。
+要了解有关配置该扩展的更多信息，请阅读[事件转发](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/tags/event-forwarding/getting-started)文档。
 
 ## 其他用例 {#other-use-cases}
 

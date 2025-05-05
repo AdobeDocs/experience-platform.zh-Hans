@@ -156,11 +156,11 @@ ht-degree: 15%
 <table style="margin-top: 0 !important">
 <tr>
   <td>
-    <a href="https://experienceleague.adobe.com/docs/platform-learn/tutorials/intro-to-platform/native-applications.html">
+    <a href="https://experienceleague.adobe.com/docs/platform-learn/tutorials/intro-to-platform/native-applications.html?lang=zh-Hans">
       <img alt="Real-Time CDP作为Adobe Experience Cloud视频的一部分" src="/help/rtcdp/assets/platform-apps-overview.png" />
     </a>
     <div>
-      <a href="https://experienceleague.adobe.com/docs/platform-learn/tutorials/intro-to-platform/native-applications.html">
+      <a href="https://experienceleague.adobe.com/docs/platform-learn/tutorials/intro-to-platform/native-applications.html?lang=zh-Hans">
     <strong>Real-Time CDP作为Adobe Experience Cloud的一部分</strong>
     </a>
     </div>
@@ -169,11 +169,11 @@ ht-degree: 15%
     <p>
   </td>
   <td>
-    <a href="https://experienceleague.adobe.com/docs/platform-learn/tutorials/intro-to-platform/basic-architecture.html">
+    <a href="https://experienceleague.adobe.com/docs/platform-learn/tutorials/intro-to-platform/basic-architecture.html?lang=zh-Hans">
       <img alt="“Adobe Experience Platform视频的基础架构”的缩略图图像" src="/help/rtcdp/assets/platform-architecture-overview.png" />
     </a>
     <div>
-      <a href="https://experienceleague.adobe.com/docs/platform-learn/tutorials/intro-to-platform/basic-architecture.html">
+      <a href="https://experienceleague.adobe.com/docs/platform-learn/tutorials/intro-to-platform/basic-architecture.html?lang=zh-Hans">
     <strong>Adobe Experience Platform的基础架构</strong>
     </a>
     </div>
@@ -182,11 +182,11 @@ ht-degree: 15%
     <p>
   </td>
   <td>
-    <a href="https://experienceleague.adobe.com/docs/platform-learn/tutorials/intro-to-platform/interface-tour.html?lang=en">
+    <a href="https://experienceleague.adobe.com/docs/platform-learn/tutorials/intro-to-platform/interface-tour.html?lang=zh-Hans">
       <img alt="“Adobe Experience Platform的界面导览”视频的缩略图" src="/help/rtcdp/assets/rtcdp-ui-overview.png" />
     </a>
     <div>
-      <a href="https://experienceleague.adobe.com/docs/platform-learn/tutorials/intro-to-platform/interface-tour.html?lang=en">
+      <a href="https://experienceleague.adobe.com/docs/platform-learn/tutorials/intro-to-platform/interface-tour.html?lang=zh-Hans">
     <strong>Adobe Experience Platform界面导览</strong>
     </a>
     </div>
@@ -203,7 +203,7 @@ ht-degree: 15%
 
 <table style="table-layout:fixed"><tr style="border: 0;">
 <td><strong>Real-Time CDP</strong><br/>
-<a href="https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html?lang=en" target="_blank">教程</a> - <a href="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">产品说明Real-Time CDP B2C版本</a> - <a href="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">B2B edition</a> - <a href="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">B2B edition</a> - <a href="https://www.adobe.com/content/dam/cc/en/trust-center/ungated/whitepapers/experience-cloud/ADB_Experience_Platform_Security_Overview.pdf" target="_blank">安全概述(PDF)</a> - <a href="https://experienceleague.adobe.com/docs/blueprints-learn/architecture/overview.html?lang=zh-Hans" target="_blank">实施Blueprint</a> - <a href="https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html" target="_blank">术语表</a>
+<a href="https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html?lang=zh-Hans" target="_blank">教程</a> - <a href="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">产品说明Real-Time CDP B2C版本</a> - <a href="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">B2B edition</a> - <a href="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">B2B edition</a> - <a href="https://www.adobe.com/content/dam/cc/en/trust-center/ungated/whitepapers/experience-cloud/ADB_Experience_Platform_Security_Overview.pdf" target="_blank">安全概述(PDF)</a> - <a href="https://experienceleague.adobe.com/docs/blueprints-learn/architecture/overview.html?lang=zh-Hans" target="_blank">实施Blueprint</a> - <a href="https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html?lang=zh-Hans" target="_blank">术语表</a>
 </td>
 <td><strong>Adobe Experience Platform</strong><br/>
 <a href="https://experienceleague.adobe.com/docs/experience-platform/landing/home.html?lang=zh-Hans" target="_blank">文档</a> - <a href="https://developer.adobe.com/experience-platform-apis/" target="_blank">API引用 — <a href="https://experienceleague.adobe.com/docs/courses/using/experienceplatform-u-1-2020-1.html" target="_blank">课程：Experience Platform简介</a></a>

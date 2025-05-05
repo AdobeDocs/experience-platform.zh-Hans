@@ -81,7 +81,7 @@ ht-degree: 0%
 * 为计划分段启用所有区段定义。
 * 为流式分段启用指定的区段定义。
 
-此外，还有一个[区段生成器视频教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-segments.html)可用于了解更多信息。
+此外，还有一个[区段生成器视频教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-segments.html?lang=zh-Hans)可用于了解更多信息。
 
 ## 为电子邮件营销活动激活受众 {#activate-audience-for-campaign}
 

@@ -23,9 +23,9 @@ ht-degree: 6%
 
 | 显示名称 | 属性 | 数据类型 | 必需 | 描述 |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------|-----------|-----------|---------------------------------------------------------------------------------------|
-| [[!UICONTROL 比特率]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#average-bitrate) | `bitrate` | 整数 | 否 | 比特率值（以kbps为单位）。 |
-| [[!UICONTROL 丢帧]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#dropped-frames) | `droppedFrames` | 整数 | 否 | 播放期间丢帧的总数。 |
-| 每秒[[!UICONTROL 帧数]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#frames-per-second) | `framesPerSecond` | 整数 | 否 | 当前流帧速率（以每秒帧数为单位）。 |
-| [[!UICONTROL 开始时间]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#time-to-start-1) | `timeToStart` | 整数 | 否 | 视频加载与开始之间的持续时间（以秒为单位）。 |
+| [[!UICONTROL 比特率]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#average-bitrate) | `bitrate` | 整数 | 否 | 比特率值（以kbps为单位）。 |
+| [[!UICONTROL 丢帧]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#dropped-frames) | `droppedFrames` | 整数 | 否 | 播放期间丢帧的总数。 |
+| 每秒[[!UICONTROL 帧数]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#frames-per-second) | `framesPerSecond` | 整数 | 否 | 当前流帧速率（以每秒帧数为单位）。 |
+| [[!UICONTROL 开始时间]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=zh-Hans#time-to-start-1) | `timeToStart` | 整数 | 否 | 视频加载与开始之间的持续时间（以秒为单位）。 |
 
 {style="table-layout:auto"}

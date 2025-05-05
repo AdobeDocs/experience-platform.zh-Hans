@@ -81,7 +81,7 @@ Adobe提供了简化的升级路径，以简化从任何[现有库](#sdks)到Web
 >
 >从`at.js`迁移到Web SDK时不支持以下Target功能：
 >
->* [重定向选件](https://experienceleague.adobe.com/docs/target/using/experiences/offers/offer-redirect.html)
->* [CNAME和跨域支持](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/atjs-cookies.html)
+>* [重定向选件](https://experienceleague.adobe.com/docs/target/using/experiences/offers/offer-redirect.html?lang=zh-Hans)
+>* [CNAME和跨域支持](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/atjs-cookies.html?lang=zh-Hans)
 
 从`AT.js`迁移到Web SDK后，从配置中删除`targetMigrationEnabled`选项。

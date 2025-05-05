@@ -236,7 +236,7 @@ AI助手会删除所有不必要的详细信息，如“项目名称”或“背
 * **个人资料读取**
 * **数据集读取**
 
-由于历程非常灵活，并且可能涉及许多互连的对象，因此它们的[完全权限](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/access-control/privacy/high-low-permissions)将单独进行记录，并且可能会因您的特定用例而有所不同。
+由于历程非常灵活，并且可能涉及许多互连的对象，因此它们的[完全权限](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/access-control/privacy/high-low-permissions)将单独进行记录，并且可能会因您的特定用例而有所不同。
 
 ## 后续步骤
 

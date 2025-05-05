@@ -21,7 +21,7 @@ ht-degree: 0%
 
 要查看和访问Adobe Experience Platform中的[!UICONTROL 加密]部分，您必须已创建一个角色，并为其分配了[!UICONTROL 管理客户管理的密钥]权限。 任何具有[!UICONTROL 管理客户管理的密钥]权限的用户都可以为其组织启用CMK。
 
-有关在Experience Platform中分配角色和权限的详细信息，请参阅[配置权限文档](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/configure-permissions.html)。
+有关在Experience Platform中分配角色和权限的详细信息，请参阅[配置权限文档](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/configure-permissions.html?lang=zh-Hans)。
 
 若要启用CMK，必须使用以下设置配置您的[[!DNL Azure] 密钥保管库](./azure-key-vault-config.md)：
 

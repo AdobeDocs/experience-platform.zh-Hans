@@ -98,7 +98,7 @@ ht-degree: 4%
 >[!IMPORTANT]
 >
 >* 架构必须扩展&#x200B;**XDM ExperienceEvent类。**
->* 您必须确保架构包含&#x200B;**主标识**，并且已为配置文件&#x200B;**启用**。 有关详细信息，请参阅[在UI中定义标识字段的指南](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/fields/identity.html)
+>* 您必须确保架构包含&#x200B;**主标识**，并且已为配置文件&#x200B;**启用**。 有关详细信息，请参阅[在UI中定义标识字段的指南](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/fields/identity.html?lang=zh-Hans)
 >* 您可以将示例身份(Email)替换为另一个合适的标识符，例如sha256电子邮件或ECID。
 
 ### 在RainFocus中创建集成配置文件 {#create-an-integration-profile-in-rainfocus}
@@ -122,7 +122,7 @@ ht-degree: 4%
 
 提供凭据后，选择&#x200B;**[!DNL Save]**。您现在应会在[!DNL RainFocus]仪表板中看到新的[!DNL Integration Profile]列出。
 
-选择您刚刚创建的[!DNL Integration Profile]以查看已配置的预定义&#x200B;**推送类型**&#x200B;的列表。 这些[体验事件](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/experienceevent.html)在发生时将发送到Experience Platform。
+选择您刚刚创建的[!DNL Integration Profile]以查看已配置的预定义&#x200B;**推送类型**&#x200B;的列表。 这些[体验事件](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/experienceevent.html?lang=zh-Hans)在发生时将发送到Experience Platform。
 
 ![RainFocus仪表板中预定义的推送类型列表。](/help/sources/images/tutorials/create/rainfocus/rainfocus_integration-profile-setup.png)
 

@@ -481,7 +481,7 @@ SELECT qsaccel.profile_agg.adwh_dim_merge_policies.merge_policy_name,
   GROUP BY qsaccel.profile_agg.adwh_dim_merge_policies.merge_policy_name;
 ```
 
-有关此洞察外观和功能的完整信息可在[配置文件计数构件指南](https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#profile-count)中找到。
+有关此洞察外观和功能的完整信息可在[配置文件计数构件指南](https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html?lang=zh-Hans#profile-count)中找到。
 
 有关此分析的外观和功能的信息，请参阅[配置文件计数构件文档](../guides/profiles.md#profile-count)。
 

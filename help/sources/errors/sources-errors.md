@@ -114,7 +114,7 @@ ht-degree: 90%
 | `1350-400` | 错误请求 | 没有为源中的筛选器提供运算符。 请提供包含相应运算符的有效筛选条件请求，然后重试。 |
 | `1351-400` | 错误请求 | 提供的运算符{operator}不支持此连接器的源筛选条件。 请提供有效的运算符并重试。 |
 | `1352-400` | 错误请求 | 提供的运算符{operator}无法映射到{ql}支持的任何本机运算符。 请提供有效的运算符并重试。 |
-| `1353-400` | 错误请求 | {connectorType} 连接器尚不支持源过滤器。请检查文档中支持的连接器：https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/filter.html. |
+| `1353-400` | 错误请求 | {connectorType} 连接器尚不支持源过滤器。请检查文档中支持的连接器：https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/filter.html?lang=zh-Hans. |
 | `1354-400` | 错误请求 | 源中的筛选器尚不支持查询语言{ql}。 请提供有效的查询语言并重试。 |
 | `1355-400` | 错误请求 | 提供的过滤器类型无效。支持的过滤器类型为：PQL。请提供有效的过滤器类型并重试。 |
 | `1356-400` | 错误请求 | 提供的过滤器格式无效。支持的过滤器格式为：pql/json。请提供有效的过滤器格式并重试。 |

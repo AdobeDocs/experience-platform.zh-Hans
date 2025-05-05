@@ -30,7 +30,7 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 >
 >有关事件转发如何适应Experience Platform中的数据收集生态系统的信息，请参阅[数据收集概述](../../../collection/home.md)。
 
-与Adobe Experience Platform [Web SDK](/help/web-sdk/home.md)和[Mobile SDK](https://experienceleague.adobe.com/docs/platform-learn/data-collection/mobile-sdk/overview.html)结合使用的事件转发具有以下优点：
+与Adobe Experience Platform [Web SDK](/help/web-sdk/home.md)和[Mobile SDK](https://experienceleague.adobe.com/docs/platform-learn/data-collection/mobile-sdk/overview.html?lang=zh-Hans)结合使用的事件转发具有以下优点：
 
 **性能**：
 

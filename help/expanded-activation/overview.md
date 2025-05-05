@@ -11,7 +11,7 @@ ht-degree: 2%
 
 # Audience Manager 扩展激活
 
-Audience Manager扩展激活基于Adobe Experience Platform构建，可帮助现有[Audience Manager](https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/aam-home)用户将其受众激活到Real-Time CDP的[social](../destinations/catalog/social/overview.md)和[advertising](../destinations/catalog/advertising/overview.md)目标平台，如[Facebook](../destinations/catalog/social/facebook.md)、[Google广告](../destinations/catalog/advertising/google-ads-destination.md)等。
+Audience Manager扩展激活基于Adobe Experience Platform构建，可帮助现有[Audience Manager](https://experienceleague.adobe.com/zh-hans/docs/audience-manager/user-guide/aam-home)用户将其受众激活到Real-Time CDP的[social](../destinations/catalog/social/overview.md)和[advertising](../destinations/catalog/advertising/overview.md)目标平台，如[Facebook](../destinations/catalog/social/facebook.md)、[Google广告](../destinations/catalog/advertising/google-ads-destination.md)等。
 
 >[!IMPORTANT]
 >
@@ -37,8 +37,8 @@ Audience Manager扩展激活使用Adobe Experience Platform中的概念和组件
 
 要通过[!DNL Expanded Activation]激活受众，请确保您的Audience Manager受众基于&#x200B;**哈希电子邮件地址**。 根据您的Audience Manager使用情况，可通过两种方式确保这一点：
 
-* 如果您使用的是[Audience Manager基于人员的目标](https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview)功能，则您已在Audience Manager中摄取经过哈希处理的电子邮件地址。 在这种情况下，无需执行任何其他步骤。 您可以跳至[通过扩展激活来激活受众](activate-audiences.md)。
-* 如果您&#x200B;_不_&#x200B;使用[Audience Manager基于人员的目标](https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview)功能，则必须在Audience Manager中创建新数据源，并使用它来存储经过哈希处理的电子邮件地址。 请参阅有关[为经过哈希处理的电子邮件工作流配置数据源](https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/features/data-sources/create-data-source-hashed-emails)的文档以了解如何执行此操作。 在Audience Manager数据源中摄取经过哈希处理的电子邮件地址后，请阅读有关[通过扩展激活来激活受众](activate-audiences.md)的文档。
+* 如果您使用的是[Audience Manager基于人员的目标](https://experienceleague.adobe.com/zh-hans/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview)功能，则您已在Audience Manager中摄取经过哈希处理的电子邮件地址。 在这种情况下，无需执行任何其他步骤。 您可以跳至[通过扩展激活来激活受众](activate-audiences.md)。
+* 如果您&#x200B;_不_&#x200B;使用[Audience Manager基于人员的目标](https://experienceleague.adobe.com/zh-hans/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview)功能，则必须在Audience Manager中创建新数据源，并使用它来存储经过哈希处理的电子邮件地址。 请参阅有关[为经过哈希处理的电子邮件工作流配置数据源](https://experienceleague.adobe.com/zh-hans/docs/audience-manager/user-guide/features/data-sources/create-data-source-hashed-emails)的文档以了解如何执行此操作。 在Audience Manager数据源中摄取经过哈希处理的电子邮件地址后，请阅读有关[通过扩展激活来激活受众](activate-audiences.md)的文档。
 
 ## 后续步骤 {#next-steps}
 

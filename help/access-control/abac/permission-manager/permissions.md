@@ -23,7 +23,7 @@ ht-degree: 7%
 >id="platform_permission_manager"
 >title="权限管理器"
 >abstract="使用页面上的下拉选择器来获取用户和角色的不同粒度的访问级别报告。"
-<!-- >additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-manager/permissions.html" text="Permission manager" -->
+<!-- >additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-manager/permissions.html?lang=zh-Hans" text="Permission manager" -->
 
 使用下拉列表选择属性&#x200B;**[!UICONTROL 用户]**。
 

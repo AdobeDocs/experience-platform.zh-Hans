@@ -24,7 +24,7 @@ ht-degree: 1%
 
 您可以通过选择特定资源、操作和沙盒来缩小搜索范围。
 
-要访问[!DNL Experience Platform]的[!UICONTROL 权限管理器]，您必须是有权访问Experience Platform的组织的管理员。 虽然Adobe允许在您的组织内自定义管理员层次结构，但您必须是[!DNL Adobe Experience Platform]的产品管理员。 有关更多详细信息，请参阅有关[管理角色](https://helpx.adobe.com/enterprise/using/admin-roles.html)的Adobe帮助中心文章。
+要访问[!DNL Experience Platform]的[!UICONTROL 权限管理器]，您必须是有权访问Experience Platform的组织的管理员。 虽然Adobe允许在您的组织内自定义管理员层次结构，但您必须是[!DNL Adobe Experience Platform]的产品管理员。 有关更多详细信息，请参阅有关[管理角色](https://helpx.adobe.com/cn/enterprise/using/admin-roles.html)的Adobe帮助中心文章。
 
 使用您的[!DNL Adobe]凭据登录到[Adobe Experience Platform](https://experience.adobe.com/)。  登录后，您将看到组织的&#x200B;**[!UICONTROL 概述]**&#x200B;页面。 此页面显示贵组织订阅的产品。 要启动基于属性的访问控制工作区以进行平台集成，请选择&#x200B;**[!UICONTROL 权限]**。
 

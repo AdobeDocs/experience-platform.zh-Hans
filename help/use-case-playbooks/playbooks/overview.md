@@ -52,7 +52,7 @@ ht-degree: 30%
 
 ## 可用性 {#availability}
 
-某些[!UICONTROL 用例行动手册]是针对Real-Time CDP用例量身定制的，而其他行动手册最适合使用Journey Optimizer的客户。 浏览目录以查找最适合您的产品和用例的行动手册。 在[Adobe的产品描述](https://helpx.adobe.com/legal/product-descriptions.html)中了解有关Real-Time CDP和Journey Optimizer的更多信息。
+某些[!UICONTROL 用例行动手册]是针对Real-Time CDP用例量身定制的，而其他行动手册最适合使用Journey Optimizer的客户。 浏览目录以查找最适合您的产品和用例的行动手册。 在[Adobe的产品描述](https://helpx.adobe.com/cn/legal/product-descriptions.html)中了解有关Real-Time CDP和Journey Optimizer的更多信息。
 
 ## UI 指南  {#ui-guides}
 

@@ -32,7 +32,7 @@ ht-degree: 4%
 
 >[!IMPORTANT]
 >
->如果您希望使用Google Display &amp; Video 360创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了Google集成，则您设置的ID同步功能将会转移到Experience Platform。
+>如果您希望使用Google Display &amp; Video 360创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html?lang=zh-Hans)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了Google集成，则您设置的ID同步功能将会转移到Experience Platform。
 
 ## 支持的身份 {#supported-identities}
 
@@ -42,7 +42,7 @@ ht-degree: 4%
 |---|---|---|
 | GAID | [!DNL Google Advertising ID] |  |
 | IDFA | [!DNL Apple ID for Advertisers] |  |
-| AAM UUID | [Adobe Audience Manager [!DNL Unique User ID]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html)，也称为[!DNL Device ID]。 Audience Manager与其交互的每个设备相关联的38位数字设备ID。 | Google使用[AAM UUID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html)来定位加利福尼亚州的用户，并使用Google Cookie ID来定位所有其他用户。 |
+| AAM UUID | [Adobe Audience Manager [!DNL Unique User ID]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html?lang=zh-Hans)，也称为[!DNL Device ID]。 Audience Manager与其交互的每个设备相关联的38位数字设备ID。 | Google使用[AAM UUID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html?lang=zh-Hans)来定位加利福尼亚州的用户，并使用Google Cookie ID来定位所有其他用户。 |
 | [!DNL Google] Cookie ID | [!DNL Google] Cookie ID | [!DNL Google]使用此ID定位加州以外的用户。 |
 | RIDA | Advertising的Roku ID。 此ID唯一标识Roku设备。 |  |
 | 女佣 | Microsoft Advertising ID。 此ID唯一标识运行Windows 10的设备。 |  |
@@ -75,7 +75,7 @@ ht-degree: 4%
 >[!NOTE]
 >
 >在Experience Platform中设置您的第一个[!DNL Google Display & Video 360]目标之前，必须将该目标列入允许列表。 在创建目标之前，请确保[!DNL Google]已完成下面描述的允许列表流程。
->此规则的例外情况适用于[Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html)客户。 如果您已在Audience Manager中创建了到此Google目标的连接，则无需再次完成允许列表流程，您可以继续后续步骤。
+>此规则的例外情况适用于[Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html?lang=zh-Hans)客户。 如果您已在Audience Manager中创建了到此Google目标的连接，则无需再次完成允许列表流程，您可以继续后续步骤。
 
 在Experience Platform中创建[!DNL Google Display & Video 360]目标之前，您必须联系Google以请求将Adobe列入允许列表添加到允许的数据提供商列表中，并将您的帐户添加到中。 请联系Google并提供以下信息：
 

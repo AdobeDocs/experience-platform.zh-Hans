@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 在UI中创建客户属性源连接
 
-本教程提供了在UI中创建源连接以将客户属性配置文件数据引入Adobe Experience Platform的步骤。 有关客户属性的更多信息，请参阅[客户属性概述](https://experienceleague.adobe.com/docs/core-services/interface/customer-attributes/attributes.html)。
+本教程提供了在UI中创建源连接以将客户属性配置文件数据引入Adobe Experience Platform的步骤。 有关客户属性的更多信息，请参阅[客户属性概述](https://experienceleague.adobe.com/docs/core-services/interface/customer-attributes/attributes.html?lang=zh-Hans)。
 
 >[!IMPORTANT]
 >

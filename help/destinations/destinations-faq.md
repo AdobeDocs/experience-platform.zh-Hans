@@ -199,7 +199,7 @@ Google要求受众名称是唯一的。 您看到的数字是[UNIX时间戳](htt
 +++回答
 不需要，[不需要Web SDK](../web-sdk/home.md)才能将受众激活到[Adobe Target](catalog/personalization/adobe-target-connection.md)。
 
-但是，如果使用[[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html)而不是Web SDK，则仅支持下一会话个性化。
+但是，如果使用[[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html?lang=zh-Hans)而不是Web SDK，则仅支持下一会话个性化。
 
 对于[同一页面和下一页面个性化](ui/activate-edge-personalization-destinations.md)用例，您必须使用[Web SDK](../web-sdk/home.md)或[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/)。 有关更多实施详细信息，请参阅有关[将受众激活到边缘目标](ui/activate-edge-personalization-destinations.md)的文档。
 +++
@@ -229,7 +229,7 @@ Yes, you can activate a maximum of 150 edge audiences per sandbox.  For more inf
 ### 在Adobe Target中，我可以在哪里查看激活的属性？
 
 +++回答
-可在[JSON](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html)和[HTML](https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html)选件的Target中使用属性。
+可在[JSON](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html?lang=zh-Hans)和[HTML](https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html?lang=zh-Hans)选件的Target中使用属性。
 +++
 
 ### 我是否可以创建没有数据流的目标，然后在以后将数据流添加到同一目标？

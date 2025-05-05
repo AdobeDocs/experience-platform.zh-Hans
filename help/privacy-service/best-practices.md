@@ -77,7 +77,7 @@ Privacy ServiceAPI文档包含有关[可用的查询参数筛选器](https://dev
 
 ## 访问请求数据 {#access-request-data}
 
-当请求数据主体信息时，每个服务都以与其存储和使用数据方式一致的格式返回数据。 所有服务都完成请求后，作业详细信息中会提供一个.ZIP存档文件URL，以便下载此数据。 有关[如何下载隐私作业结果](https://experienceleague.adobe.com/docs/experience-platform/privacy/troubleshooting-guide.html?lang=en#how-do-i-download-the-results-of-my-completed-privacy-jobs%3F)的信息，请参阅疑难解答指南。
+当请求数据主体信息时，每个服务都以与其存储和使用数据方式一致的格式返回数据。 所有服务都完成请求后，作业详细信息中会提供一个.ZIP存档文件URL，以便下载此数据。 有关[如何下载隐私作业结果](https://experienceleague.adobe.com/docs/experience-platform/privacy/troubleshooting-guide.html?lang=zh-Hans#how-do-i-download-the-results-of-my-completed-privacy-jobs%3F)的信息，请参阅疑难解答指南。
 
 以下是有关数据存档管理的注释的关键项目：
 

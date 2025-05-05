@@ -46,7 +46,7 @@ ht-degree: 8%
 - [数据集](../../catalog/datasets/overview.md)
 - [架构](../../xdm//home.md)
 - [受众](../../segmentation/home.md)
-- 来自Adobe Journey Optimizer的[历程](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/orchestrate-journeys/journey)
+- 来自Adobe Journey Optimizer的[历程](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/orchestrate-journeys/journey)
 
 ## 如何实现该用例：高级概述 {#achieve-the-use-case-high-level}
 
@@ -89,7 +89,7 @@ ht-degree: 8%
 
 >[!NOTE]
 >
-> 上述步骤遵循Experience Platform用户界面中的流程。 可以通过各种端点使用API遵循相同的步骤。 有关通过API发出每个请求的信息，请参阅`sandboxes` [端点指南](https://experienceleague.adobe.com/en/docs/experience-platform/sandbox/api/sandboxes#create)和`packages` [端点指南](https://experienceleague.adobe.com/en/docs/experience-platform/sandbox/sandbox-tooling-api/packages)。
+> 上述步骤遵循Experience Platform用户界面中的流程。 可以通过各种端点使用API遵循相同的步骤。 有关通过API发出每个请求的信息，请参阅`sandboxes` [端点指南](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/sandbox/api/sandboxes#create)和`packages` [端点指南](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/sandbox/sandbox-tooling-api/packages)。
 
 ## 由合作伙伴数据支持实现的其他用例 {#other-use-cases}
 

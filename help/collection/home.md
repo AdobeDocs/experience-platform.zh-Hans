@@ -23,7 +23,7 @@ Adobe Experience Platform提供了一套方法，可让您从客户端源收集�
 
 数据收集侧重于摄取的数据集的可发现性和可访问性，包括以下内容：
 
-* [Adobe Experience Platform Edge Network](https://experienceleague.adobe.com/docs/web-sdk-learn/tutorials/introduction-to-web-sdk-and-edge-network.html)
+* [Adobe Experience Platform Edge Network](https://experienceleague.adobe.com/docs/web-sdk-learn/tutorials/introduction-to-web-sdk-and-edge-network.html?lang=zh-Hans)
 * [标记](../tags/home.md)
 * [数据流](../datastreams/overview.md)
 * [事件转发](../tags/ui/event-forwarding/overview.md)

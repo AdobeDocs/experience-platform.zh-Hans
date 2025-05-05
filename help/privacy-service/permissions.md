@@ -21,9 +21,9 @@ ht-degree: 95%
 
 ## 快速入门
 
-为了配置 Privacy Service 的访问控制，您必须拥有产品与 Adobe Experience Platform Privacy Service 集成的组织的管理员权限。可以授予或撤回权限的最低角色是&#x200B;**产品配置文件管理员**。其他可以管理权限的管理员角色是&#x200B;**产品管理员**（可以管理产品内的所有配置文件）和&#x200B;**系统管理员**（无限制）。有关更多信息，请参阅 Adobe Enterprise 管理指南中关于[管理角色](https://helpx.adobe.com/enterprise/using/admin-roles.html)的文章。
+为了配置 Privacy Service 的访问控制，您必须拥有产品与 Adobe Experience Platform Privacy Service 集成的组织的管理员权限。可以授予或撤回权限的最低角色是&#x200B;**产品配置文件管理员**。其他可以管理权限的管理员角色是&#x200B;**产品管理员**（可以管理产品内的所有配置文件）和&#x200B;**系统管理员**（无限制）。有关更多信息，请参阅 Adobe Enterprise 管理指南中关于[管理角色](https://helpx.adobe.com/cn/enterprise/using/admin-roles.html)的文章。
 
-本指南假设您熟悉基本的 Admin Console 概念，例如产品配置文件以及它们如何向单个用户和用户组授予产品权限。有关详细信息，请参阅 [Admin Console 用户指南](https://helpx.adobe.com/enterprise/using/admin-console.html)。
+本指南假设您熟悉基本的 Admin Console 概念，例如产品配置文件以及它们如何向单个用户和用户组授予产品权限。有关详细信息，请参阅 [Admin Console 用户指南](https://helpx.adobe.com/cn/enterprise/using/admin-console.html)。
 
 ## 可用权限
 
@@ -85,7 +85,7 @@ ht-degree: 95%
 
 ![Admin Console中产品配置文件的“用户”选项卡。](./images/permissions/manage-users.png)
 
-有关为产品配置文件管理用户的详细信息，请参阅 [Admin Console 文档](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html)。
+有关为产品配置文件管理用户的详细信息，请参阅 [Admin Console 文档](https://helpx.adobe.com/cn/enterprise/using/manage-product-profiles.html)。
 
 ### 将旧的 API 凭据迁移到配置文件 {#migrate-tech-accounts}
 

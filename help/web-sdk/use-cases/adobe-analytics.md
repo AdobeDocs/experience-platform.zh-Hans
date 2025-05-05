@@ -16,7 +16,7 @@ Experience PlatformWeb SDK可以通过Experience PlatformEdge Network向Adobe An
 
 * 将[**[!UICONTROL Adobe Analytics ExperienceEvent字段组]**](../../xdm/field-groups/event/analytics-full-extension.md)添加到您的架构中，然后使用[`XDM`对象](../commands/sendevent/xdm.md)。
 * 使用[`data`对象](../commands/sendevent/data.md)将数据发送到不带XDM架构的Adobe Analytics。
-* 使用自动生成的[上下文数据变量](https://experienceleague.adobe.com/en/docs/analytics/implementation/vars/page-vars/contextdata)和[处理规则](https://experienceleague.adobe.com/en/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/c-processing-rules/c-processing-rules-configuration/processing-rules-about)。
+* 使用自动生成的[上下文数据变量](https://experienceleague.adobe.com/zh-hans/docs/analytics/implementation/vars/page-vars/contextdata)和[处理规则](https://experienceleague.adobe.com/zh-hans/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/c-processing-rules/c-processing-rules-configuration/processing-rules-about)。
 
 ## 使用`XDM`对象 {#use-xdm-object}
 
@@ -24,10 +24,10 @@ Experience PlatformWeb SDK可以通过Experience PlatformEdge Network向Adobe An
 
 可以通过Web SDK以两种方式将数据发送到Adobe Analytics：
 
-* [使用Web SDK标记扩展将数据发送到Adobe Analytics](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/web-sdk/web-sdk-tag-extension)
-* [使用Web SDK JavaScript库将数据发送到Adobe Analytics](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/web-sdk/web-sdk-javascript-library)
+* [使用Web SDK标记扩展将数据发送到Adobe Analytics](https://experienceleague.adobe.com/zh-hans/docs/analytics/implementation/aep-edge/web-sdk/web-sdk-tag-extension)
+* [使用Web SDK JavaScript库将数据发送到Adobe Analytics](https://experienceleague.adobe.com/zh-hans/docs/analytics/implementation/aep-edge/web-sdk/web-sdk-javascript-library)
 
-请参阅Adobe Analytics实施指南中的[XDM对象变量映射到Adobe Analytics](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/xdm-var-mapping)，以获取有关XDM字段及其如何映射到Analytics变量的完整参考。
+请参阅Adobe Analytics实施指南中的[XDM对象变量映射到Adobe Analytics](https://experienceleague.adobe.com/zh-hans/docs/analytics/implementation/aep-edge/xdm-var-mapping)，以获取有关XDM字段及其如何映射到Analytics变量的完整参考。
 
 ## 使用`data`对象 {#use-data-object}
 
@@ -35,14 +35,14 @@ Experience PlatformWeb SDK可以通过Experience PlatformEdge Network向Adobe An
 
 根据您使用的是AppMeasurement还是Analytics标记扩展，请参阅以下指南以了解有关如何迁移到Web SDK的详细信息：
 
-* [从Adobe Analytics标记扩展迁移到Web SDK标记扩展](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/web-sdk/analytics-extension-to-web-sdk)
-* [从AppMeasurement迁移到Web SDK](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/web-sdk/appmeasurement-to-web-sdk)
+* [从Adobe Analytics标记扩展迁移到Web SDK标记扩展](https://experienceleague.adobe.com/zh-hans/docs/analytics/implementation/aep-edge/web-sdk/analytics-extension-to-web-sdk)
+* [从AppMeasurement迁移到Web SDK](https://experienceleague.adobe.com/zh-hans/docs/analytics/implementation/aep-edge/web-sdk/appmeasurement-to-web-sdk)
 
-有关数据对象字段及其映射到Analytics变量的完整参考，请参阅Adobe Analytics实施指南中有关将数据对象变量映射到Adobe Analytics[&#128279;](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/data-var-mapping)的文档。
+有关数据对象字段及其映射到Analytics变量的完整参考，请参阅Adobe Analytics实施指南中有关将数据对象变量映射到Adobe Analytics[&#128279;](https://experienceleague.adobe.com/zh-hans/docs/analytics/implementation/aep-edge/data-var-mapping)的文档。
 
 ## 使用上下文数据变量 {#use-context-data-variables}
 
-任何未自动映射的变量均可用作[上下文数据变量](https://experienceleague.adobe.com/en/docs/analytics/implementation/vars/page-vars/contextdata)。 然后，您可以使用[处理规则](https://experienceleague.adobe.com/en/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/c-processing-rules/c-processing-rules-configuration/processing-rules-about)将上下文数据变量映射到Analytics变量。 例如，如果您有一个类似于以下内容的自定义XDM架构：
+任何未自动映射的变量均可用作[上下文数据变量](https://experienceleague.adobe.com/zh-hans/docs/analytics/implementation/vars/page-vars/contextdata)。 然后，您可以使用[处理规则](https://experienceleague.adobe.com/zh-hans/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/c-processing-rules/c-processing-rules-configuration/processing-rules-about)将上下文数据变量映射到Analytics变量。 例如，如果您有一个类似于以下内容的自定义XDM架构：
 
 ```json
 {
@@ -84,7 +84,7 @@ a.x.objectarray.2.ad3 //600x50
 
 +++如何在Web SDK中区分页面查看调用和链接跟踪调用？
 
-Adobe Analytics中的AppMeasurement使用单独的页面查看方法调用（[`t()`方法](https://experienceleague.adobe.com/en/docs/analytics/implementation/vars/functions/t-method)）和链接跟踪调用（[`tl()`方法](https://experienceleague.adobe.com/en/docs/analytics/implementation/vars/functions/tl-method)）。 Web SDK而是仅提供用于发送页面查看和链接跟踪的[`sendEvent`](../commands/sendevent/overview.md)命令。 包含在事件中的数据将确定它是Adobe Analytics中的[页面查看](https://experienceleague.adobe.com/en/docs/analytics/components/metrics/page-views)还是[页面事件](https://experienceleague.adobe.com/en/docs/analytics/components/metrics/page-events)。
+Adobe Analytics中的AppMeasurement使用单独的页面查看方法调用（[`t()`方法](https://experienceleague.adobe.com/zh-hans/docs/analytics/implementation/vars/functions/t-method)）和链接跟踪调用（[`tl()`方法](https://experienceleague.adobe.com/zh-hans/docs/analytics/implementation/vars/functions/tl-method)）。 Web SDK而是仅提供用于发送页面查看和链接跟踪的[`sendEvent`](../commands/sendevent/overview.md)命令。 包含在事件中的数据将确定它是Adobe Analytics中的[页面查看](https://experienceleague.adobe.com/zh-hans/docs/analytics/components/metrics/page-views)还是[页面事件](https://experienceleague.adobe.com/zh-hans/docs/analytics/components/metrics/page-events)。
 
 默认情况下，所有事件都将被视为Adobe Analytics中的页面查看次数。 如果要将Web SDK事件设置为Adobe Analytics链接跟踪调用，请设置以下字段：
 
@@ -92,7 +92,7 @@ Adobe Analytics中的AppMeasurement使用单独的页面查看方法调用（[`t
 * **数据对象**： `data.__adobe.analytics.linkName`、`data.__adobe.analytics.linkType`和`data.__adobe.analytics.linkURL`
 * **上下文数据**：不支持
 
-有关详细信息，请参阅Adobe Analytics实施指南中的[`tl()`方法](https://experienceleague.adobe.com/en/docs/analytics/implementation/vars/functions/tl-method)。
+有关详细信息，请参阅Adobe Analytics实施指南中的[`tl()`方法](https://experienceleague.adobe.com/zh-hans/docs/analytics/implementation/vars/functions/tl-method)。
 
 如果在`configure`命令中启用[`clickCollectionEnabled`](../commands/configure/clickcollectionenabled.md)，则会为您填充这些字段。
 

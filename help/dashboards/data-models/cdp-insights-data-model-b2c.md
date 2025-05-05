@@ -1,8 +1,8 @@
 ---
 title: Real-time Customer Data Platform Insights数据模型B2C版本
 description: 了解如何将SQL查询与Real-time Customer Data Platform分析数据模型（B2C版本）结合使用，以自定义您自己的营销和KPI用例的Real-Time CDP报表。
-badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
-badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 61bc7f23-9f79-4c75-a515-85dd9dda2d02
 source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt

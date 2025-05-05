@@ -26,7 +26,7 @@ ht-degree: 1%
 
 这些变量称为产品语法促销变量。 这允许收集信息，如按产品“折扣金额”或有关客户搜索结果中产品“页面位置”的信息。
 
-要了解有关使用产品语法的更多信息，请阅读有关[使用产品语法实施eVar](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html#implement-using-product-syntax)的Adobe Analytics文档。
+要了解有关使用产品语法的更多信息，请阅读有关[使用产品语法实施eVar](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html?lang=zh-Hans#implement-using-product-syntax)的Adobe Analytics文档。
 
 以下部分概述了访问[!DNL Analytics]数据集中的促销变量所需的XDM字段：
 
@@ -127,7 +127,7 @@ LIMIT 20
 | 内部搜索：summer shirt | 19.99 | 1 | 1 | 1 |
 | 内部搜索：冬季帽子 | 12.99 | 1 | 1 | 1 |
 
-要了解有关使用转化变量语法的更多信息，请阅读有关[使用转化变量语法实施eVar](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html#implement-using-conversion-variable-syntax)的Adobe Analytics文档。
+要了解有关使用转化变量语法的更多信息，请阅读有关[使用转化变量语法实施eVar](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html?lang=zh-Hans#implement-using-conversion-variable-syntax)的Adobe Analytics文档。
 
 下面显示了在您的[!DNL Analytics]数据集中生成转化变量语法的XDM字段：
 

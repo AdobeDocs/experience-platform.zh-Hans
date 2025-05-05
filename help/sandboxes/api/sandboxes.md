@@ -404,7 +404,7 @@ curl -X PUT \
 }
 ```
 
-如果Adobe Analytics也在其中托管的身份图形用于[Cross Device Analytics (CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html)功能，或者Adobe Audience Manager也在其中托管的身份图形用于[基于人员的目标(PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html)功能，则无法重置默认生产沙盒和任何用户创建的生产沙盒。
+如果Adobe Analytics也在其中托管的身份图形用于[Cross Device Analytics (CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html?lang=zh-Hans)功能，或者Adobe Audience Manager也在其中托管的身份图形用于[基于人员的目标(PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html?lang=zh-Hans)功能，则无法重置默认生产沙盒和任何用户创建的生产沙盒。
 
 以下是可阻止沙盒重置的可能异常列表：
 

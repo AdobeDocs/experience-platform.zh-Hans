@@ -62,7 +62,7 @@ Adobe 已与 [[!DNL [The Weather Company]]](https://www.ibm.com/weather) 合作�
 
 ### Adobe Customer Journey Analytics {#cja}
 
-在 [!DNL Adobe Customer Journey Analytics] 中，数据流中指定的数据集包含天气数据。只要天气属性是[添加到您的架构](#prerequisites-prerequisites)，它们就可用于[添加到[!DNL Customer Journey Analytics]中的数据视图](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-dataviews/create-dataview.html)。
+在 [!DNL Adobe Customer Journey Analytics] 中，数据流中指定的数据集包含天气数据。只要天气属性是[添加到您的架构](#prerequisites-prerequisites)，它们就可用于[添加到[!DNL Customer Journey Analytics]中的数据视图](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-dataviews/create-dataview.html?lang=zh-Hans)。
 
 ### Real-Time Customer Data Platform {#rtcdp}
 

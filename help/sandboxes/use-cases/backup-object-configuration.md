@@ -40,7 +40,7 @@ ht-degree: 4%
 - [数据集](../../catalog/datasets/overview.md)
 - [架构](../../xdm//home.md)
 - [受众](../../segmentation/home.md)
-- 来自Adobe Journey Optimizer的[历程](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/orchestrate-journeys/journey)
+- 来自Adobe Journey Optimizer的[历程](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/orchestrate-journeys/journey)
 
 ## 如何实现该用例：高级概述 {#achieve-the-use-case-high-level}
 

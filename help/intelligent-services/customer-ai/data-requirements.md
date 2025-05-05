@@ -26,7 +26,7 @@ ht-degree: 1%
 
 2. 排定用例优先级：哪一项是业务的最高优先级？
 
-3. 在Customer AI中构建模型：观看此[快速教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/intelligent-services/configure-customer-ai.html)并参阅我们的[UI指南](../customer-ai/user-guide/configure.md)，了解构建模型的分步流程。
+3. 在Customer AI中构建模型：观看此[快速教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/intelligent-services/configure-customer-ai.html?lang=zh-Hans)并参阅我们的[UI指南](../customer-ai/user-guide/configure.md)，了解构建模型的分步流程。
 
 4. [使用模型结果生成区段](../customer-ai/user-guide/create-segment.md)。
 
@@ -49,8 +49,8 @@ ht-degree: 1%
 
 - 使用[Analytics源连接器](../../sources/tutorials/ui/create/adobe-applications/analytics.md)的Adobe Analytics数据
 - 使用[Adobe Audience Manager源连接器](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md)的Audience Manager数据
-- [体验事件数据集](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/experienceevent.html)
-- [使用者体验事件数据集](https://experienceleague.adobe.com/docs/experience-platform/intelligent-services/data-preparation.html#cee-schema)
+- [体验事件数据集](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/experienceevent.html?lang=zh-Hans)
+- [使用者体验事件数据集](https://experienceleague.adobe.com/docs/experience-platform/intelligent-services/data-preparation.html?lang=zh-Hans#cee-schema)
 
 如果每个数据集共享相同的身份类型（命名空间）（如ECID），则可以添加来自不同来源的多个数据集。 有关添加多个数据集的更多信息，请访问[客户人工智能用户指南](../customer-ai/user-guide/configure.md)。
 

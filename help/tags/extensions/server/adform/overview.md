@@ -47,7 +47,7 @@ Adform可帮助您：
 2. **CDP或连接SKU**：您必须拥有Adobe客户数据平台(CDP) Prime、Ultimate SKU或连接SKU，才能实现无缝的客户端和服务器端通信。
 
 3. **Adobe Experience Platform Edge Network配置**：
-   * 确保将Edge Network配置为支持实时事件转发以实现异地重定位。 有关详细信息，请参阅Adobe的[事件转发快速入门指南](https://experienceleague.adobe.com/en/docs/experience-platform/tags/event-forwarding/getting-started)。
+   * 确保将Edge Network配置为支持实时事件转发以实现异地重定位。 有关详细信息，请参阅Adobe的[事件转发快速入门指南](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/tags/event-forwarding/getting-started)。
    * 此步骤对于高效地将数据发送到Adform的服务器端端点至关重要。
 
 满足这些先决条件后，您可以继续配置和部署[!DNL Adform]扩展。
