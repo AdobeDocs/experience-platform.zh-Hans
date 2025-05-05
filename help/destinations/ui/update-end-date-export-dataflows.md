@@ -20,7 +20,7 @@ ht-degree: 0%
 
 ## 发生了什么情况？
 
-Experience Platform](/help/release-notes/latest/latest.md#destinations)的[2024年9月版本引入了为导出数据集数据流设置`endTime`日期的选项。 对于在2024年9月版本&#x200B;*之前创建*&#x200B;的所有数据集导出数据流，Adobe还引入了默认结束日期2025年5月1日。 这些数据流当前显示的消息类似于以下所示的消息。
+Experience Platform[&#128279;](/help/release-notes/latest/latest.md#destinations)的2024年9月版本引入了为导出数据集数据流设置`endTime`日期的选项。 对于在2024年9月版本&#x200B;*之前创建*&#x200B;的所有数据集导出数据流，Adobe还引入了默认结束日期2025年5月1日。 这些数据流当前显示的消息类似于以下所示的消息。
 
 ![需要更新导出数据集数据流的结束日期的UI通知。](/help/destinations/assets/ui/export-datasets/update-end-date.png)
 

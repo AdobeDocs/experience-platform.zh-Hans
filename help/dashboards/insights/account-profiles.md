@@ -19,7 +19,7 @@ ht-degree: 0%
 
 <!-- Add link to new generate insights with SQL workflow doc after April release.-->
 
-以下分析均可用作[帐户配置文件仪表板](../guides/account-profiles.md)或[自定义仪表板](../standard-dashboards.md)的一部分。 有关如何自定义仪表板或[在构件库和[用户定义的仪表板](../standard-dashboards.md#create-widget)中创建和编辑新构件](../customize/custom-widgets.md)的说明，请参阅[自定义概述](../customize/overview.md)。
+以下分析均可用作[帐户配置文件仪表板](../guides/account-profiles.md)或[自定义仪表板](../standard-dashboards.md)的一部分。 有关如何自定义仪表板或[&#128279;](../customize/custom-widgets.md)在构件库和[用户定义的仪表板](../standard-dashboards.md#create-widget)中创建和编辑新构件的说明，请参阅[自定义概述](../customize/overview.md)。
 
 ## 已添加帐户轮廓 {#account-profiles-added}
 

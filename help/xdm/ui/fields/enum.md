@@ -24,7 +24,7 @@ ht-degree: 8%
 
 与枚举相反，**[!UICONTROL 建议值]**&#x200B;选项允许为字符串字段表示一组建议值，这些建议值不会约束它可以摄取的值。 建议值反而会影响[分段UI](../../../segmentation/ui/overview.md)中哪些预定义值在将该字符串字段作为属性包含时可用。
 
-在Adobe Experience Platform用户界面中定义新字段](./overview.md#define)并将类型设置为[!UICONTROL 字符串]时，为您提供了为该字段定义[枚举](#enum)或[建议值](#suggested-values)的选项。[
+在Adobe Experience Platform用户界面中定义新字段[&#128279;](./overview.md#define)并将类型设置为[!UICONTROL 字符串]时，为您提供了为该字段定义[枚举](#enum)或[建议值](#suggested-values)的选项。
 
 ![图像显示UI中为字符串字段启用了“枚举和建议值”选项](../../images/ui/fields/enum/enum-options-selected.png)
 

@@ -25,7 +25,7 @@ ht-degree: 0%
 
 1. 创建使用B2B类的架构。 B2B版本类包括Account、Campaign、Opportunity、Marketing List等。 有关[如何设置用于B2B类的架构](../schemas/b2b.md)的信息，请参阅架构文档。
 2. 在体验数据模型(XDM) B2B架构之间创建关系。 基于B2B版本属性的受众需要类之间的关系，才能充分利用扩展的B2B分段功能。 有关详细信息，请参阅有关[如何定义两个B2B架构](../../xdm/tutorials/relationship-b2b.md)之间关系的文档。
-3. 使用基于B2B架构的数据集来摄取数据。 有关如何摄取数据](../../sources/connectors/adobe-applications/marketo/marketo.md)的信息，请参阅源文档[。
+3. 使用基于B2B架构的数据集来摄取数据。 有关如何摄取数据[&#128279;](../../sources/connectors/adobe-applications/marketo/marketo.md)的信息，请参阅源文档。
 4. 有关如何构建受众的更详细指导，请参阅[区段生成器用户指南](../../segmentation/ui/segment-builder.md)。
 
 在满足这些要求后，您就能够为常见的B2B用例组合这些属性。
@@ -52,7 +52,7 @@ ht-degree: 0%
 
 ![在分段工作区中使用区段生成器的源键示例](../assets/segmentation/source-key-segmentation-example.png)
 
-有关可用B2B类的更多信息，请参阅Real-time Customer Data Platform B2B版本文档](../schemas/b2b.md)中的[架构。
+有关可用B2B类的更多信息，请参阅Real-time Customer Data Platform B2B版本文档[&#128279;](../schemas/b2b.md)中的架构。
 
 下面的用例提供了有关使用哪些类在不同架构之间建立关系以实现这些结果的信息。 这些示例可用于帮助您创建自己的受众。
 

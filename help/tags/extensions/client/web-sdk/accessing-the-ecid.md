@@ -14,13 +14,13 @@ ht-degree: 1%
 
 [!DNL Experience Cloud Identity (ECID)]是用户访问您的网站时分配给用户的永久标识符。 在某些情况下，您可能希望访问[!DNL ECID]（例如，将其发送给第三方）。 另一个使用案例是在自定义XDM字段中设置[!DNL ECID]，并将其包含在身份映射中。
 
-您可以通过用于数据收集](../../../../datastreams/data-prep.md)的[数据准备（推荐）或通过标记来访问ECID。
+您可以通过用于数据收集[&#128279;](../../../../datastreams/data-prep.md)的数据准备（推荐）或通过标记来访问ECID。
 
 ## 通过数据准备访问ECID（首选方法） {#accessing-ecid-data-prep}
 
-此方法使用数据收集](../../../../datastreams/data-prep.md)的[数据准备来配置`ECID`的自定义映射。
+此方法使用数据收集[&#128279;](../../../../datastreams/data-prep.md)的数据准备来配置`ECID`的自定义映射。
 
-请参阅用于数据收集](../../../../datastreams/data-prep.md)的[数据准备文档，了解如何使用此功能。
+请参阅用于数据收集[&#128279;](../../../../datastreams/data-prep.md)的数据准备文档，了解如何使用此功能。
 
 如果您要在自定义XDM字段中设置ECID，并且要在标识映射中设置ECID，则可以通过将`source`设置为以下路径来实现此目的：
 

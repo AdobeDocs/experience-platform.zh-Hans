@@ -115,7 +115,7 @@ evaluation.class=com.adobe.platform.ml.Evaluator
 
 对于自定义评估指标，需要为评估器实现两种主要方法： `split()` 和 `evaluate()`。
 
-对于 [!DNL Python]，这些方法将在类的 `Evaluator` evaluator.py](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/python/retail/retail/evaluator.py) 中[定义。[访问 evaluator.py](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/python/retail/retail/evaluator.py) 链接以获取 的示例`Evaluator`。
+对于 [!DNL Python]，这些方法将在类的 `Evaluator` evaluator.py[&#128279;](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/python/retail/retail/evaluator.py) 中定义。[访问 evaluator.py](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/python/retail/retail/evaluator.py) 链接以获取 的示例`Evaluator`。
 
 在中创建 [!DNL Python] 评估指标需要用户实现 `evaluate()` 和 `split()` 方法。
 

@@ -33,7 +33,7 @@ ht-degree: 0%
 
 ## 链接 {#linking}
 
-按照提供的文档模板操作，不要编辑模板中的现有链接。 当包含新链接时，请使用参与者指南中的文档](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html)中的链接阅读[。
+按照提供的文档模板操作，不要编辑模板中的现有链接。 当包含新链接时，请使用参与者指南中的文档[&#128279;](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html)中的链接阅读。
 
 ## 品牌指南 {#branding}
 

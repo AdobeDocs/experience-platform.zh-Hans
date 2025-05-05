@@ -89,7 +89,7 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/ed
 
 ### 创建[!DNL Active-On-Edge]合并策略 {#create-merge-policy}
 
-创建目标连接后，必须创建[!DNL Active-On-Edge]合并策略。 [!DNL Active-On-Edge]合并策略确保在](../../segmentation/methods/edge-segmentation.md)边缘上持续评估受众[，并且可用于实时和下一页个性化用例。
+创建目标连接后，必须创建[!DNL Active-On-Edge]合并策略。 [!DNL Active-On-Edge]合并策略确保在[&#128279;](../../segmentation/methods/edge-segmentation.md)边缘上持续评估受众，并且可用于实时和下一页个性化用例。
 
 >[!IMPORTANT]
 >

@@ -265,4 +265,4 @@ ht-degree: 8%
 >
 >上述操作的嵌套迭代将类似于： `iif(condition, iif(cond1, tv1, fv1), iif(cond2, tv2, fv2))`。
 
-有关详细信息，请参阅 [!DNL Data Prep]](../../../../data-prep/functions.md##logical-operators)中关于逻辑运算符的[文档
+有关详细信息，请参阅 [!DNL Data Prep][&#128279;](../../../../data-prep/functions.md##logical-operators)中关于逻辑运算符的文档

@@ -18,7 +18,7 @@ Destination SDK支持对目标的多种授权方法。 其中有一个选项可�
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -46,7 +46,7 @@ Destination SDK支持对目标的多种授权方法。 其中有一个选项可�
 
 >[!IMPORTANT]
 >
->只有授权代码为](#authorization-code)的[OAuth 2授予类型才需要执行在系统中注册Adobe Experience Platform的重定向/回调URL的步骤。 对于其他两种受支持的授权类型（密码和客户端凭据），您可以跳过此步骤。
+>只有授权代码为[&#128279;](#authorization-code)的OAuth 2授予类型才需要执行在系统中注册Adobe Experience Platform的重定向/回调URL的步骤。 对于其他两种受支持的授权类型（密码和客户端凭据），您可以跳过此步骤。
 
 在此步骤结束时，您应该：
 * 客户端ID；

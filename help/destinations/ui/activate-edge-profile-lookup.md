@@ -61,7 +61,7 @@ Edge配置文件查找用例受下表所述的特定性能护栏的约束。 有
 
 在Edge上查找配置文件属性时，需要配置受众以进行Edge评估。
 
-确保您计划激活的受众已将[Edge上的活动合并策略](../../segmentation/ui/segment-builder.md#merge-policies)设置为默认值。 [!DNL Active-On-Edge]合并策略确保在](../../segmentation/methods/edge-segmentation.md)边缘上持续评估受众[，并且可用于实时个性化用例。
+确保您计划激活的受众已将[Edge上的活动合并策略](../../segmentation/ui/segment-builder.md#merge-policies)设置为默认值。 [!DNL Active-On-Edge]合并策略确保在[&#128279;](../../segmentation/methods/edge-segmentation.md)边缘上持续评估受众，并且可用于实时个性化用例。
 
 按照[创建合并策略](../../profile/merge-policies/ui-guide.md#create-a-merge-policy)中的说明进行操作，并确保启用&#x200B;**[!UICONTROL Edge上的活动合并策略]**&#x200B;切换开关。
 
@@ -85,7 +85,7 @@ Edge配置文件查找用例受下表所述的特定性能护栏的约束。 有
 
 +++将受众激活到具有属性的自定义Personalization连接
 
-创建具有属性&#x200B;]**的**[!UICONTROL &#x200B;自定义Personalization连接后，现在即可将配置文件数据发送到Edge Network。
+创建具有属性&#x200B;**的**&#x200B;自定义Personalization连接后，现在即可将配置文件数据发送到Edge Network。
 
 >[!IMPORTANT]
 > 

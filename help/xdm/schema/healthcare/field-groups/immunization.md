@@ -31,10 +31,10 @@ ht-degree: 8%
 | [!UICONTROL 制造商] | `manufacturer` | [[!UICONTROL 可编码引用]](../data-types/codeable-reference.md) | 疫苗制造商。 |
 | [!UICONTROL 注释] | `note` | [[!UICONTROL 批注]](../data-types/annotation.md)的数组 | 额外的免疫接种说明。 |
 | [!UICONTROL 患者] | `patient` | [[!UICONTROL 引用]](../data-types/reference.md) | 谁接种过疫苗。 |
-| [!UICONTROL 批次] | `performer` | 对象数组 | 谁执行了免疫活动。 有关详细信息，请参阅下面](#performer)的[部分。 |
-| [!UICONTROL 计划资格] | `programEligibility` | 对象数组 | 患者是否有资格参加特定的疫苗接种计划。 有关详细信息，请参阅下面](#program-eligibility)的[部分。 |
-| 已应用[!UICONTROL 协议] | `protocolApplied` | 对象数组 | 提供商提供的协议。 有关详细信息，请参阅下面](#protocol-applied)的[部分。 |
-| [!UICONTROL 反应] | `reaction` | 对象数组 | 免疫接种后的反应细节。 有关详细信息，请参阅下面](#reaction)的[部分。 |
+| [!UICONTROL 批次] | `performer` | 对象数组 | 谁执行了免疫活动。 有关详细信息，请参阅下面[&#128279;](#performer)的部分。 |
+| [!UICONTROL 计划资格] | `programEligibility` | 对象数组 | 患者是否有资格参加特定的疫苗接种计划。 有关详细信息，请参阅下面[&#128279;](#program-eligibility)的部分。 |
+| 已应用[!UICONTROL 协议] | `protocolApplied` | 对象数组 | 提供商提供的协议。 有关详细信息，请参阅下面[&#128279;](#protocol-applied)的部分。 |
+| [!UICONTROL 反应] | `reaction` | 对象数组 | 免疫接种后的反应细节。 有关详细信息，请参阅下面[&#128279;](#reaction)的部分。 |
 | [!UICONTROL 原因] | `reason` | [[!UICONTROL 可编码引用]](../data-types/codeable-reference.md)的数组 | 免疫接种的原因。 |
 | [!UICONTROL 路由] | `route` | [[!UICONTROL 可编码的概念]](../data-types/codeable-concept.md) | 疫苗是如何进入人体的。 |
 | [!UICONTROL 站点] | `site` | [[!UICONTROL 可编码的概念]](../data-types/codeable-concept.md) | 接种疫苗的身体部位 |

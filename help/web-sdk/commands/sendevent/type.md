@@ -13,7 +13,7 @@ ht-degree: 0%
 
 `eventType`属性允许您定义使用Web SDK发送的事件类型。 此字段最终填充`xdm.eventType`字段。 当您想要区分发送给Adobe的事件类型时，此插件很有价值。
 
-Adobe提供了一些您可以使用的预定义事件类型。 有关预定义值的完整列表，请参阅XDM用户指南中的`eventType`](/help/xdm/classes/experienceevent.md#accepted-values-for-eventtype)的[可用值。 如果需要，您还可以使用自己的值。
+Adobe提供了一些您可以使用的预定义事件类型。 有关预定义值的完整列表，请参阅XDM用户指南中的`eventType`[&#128279;](/help/xdm/classes/experienceevent.md#accepted-values-for-eventtype)的可用值。 如果需要，您还可以使用自己的值。
 
 如果在此设置`type`并在[`xdm`](xdm.md)对象中设置`xdm.eventType`，则此字段中的值优先。
 

@@ -16,6 +16,6 @@ ht-degree: 0%
 
 # 通过Experience Platform提供的客户体验幕后
 
-观看了由Experience Platform](customer-experience.md)提供支持的[客户体验的视频后，请到幕后查看Adobe Experience Platform如何用于改善此体验。
+观看了由Experience Platform[&#128279;](customer-experience.md)提供支持的客户体验的视频后，请到幕后查看Adobe Experience Platform如何用于改善此体验。
 
 >[!VIDEO](https://video.tv.adobe.com/v/28144?quality=12&learn=on)

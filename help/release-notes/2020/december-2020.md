@@ -33,7 +33,7 @@ Adobe Experience Platform 中现有功能的更新：
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 数据流透明度 | 您可以监视源和目标的数据流。 有关详细信息，请阅读有关监视源](../../dataflows/ui/monitor-sources.md)的[教程或有关监视目标](../../dataflows/ui/monitor-destinations.md)的[教程。 |
+| 数据流透明度 | 您可以监视源和目标的数据流。 有关详细信息，请阅读有关监视源[&#128279;](../../dataflows/ui/monitor-sources.md)的[教程或有关监视目标](../../dataflows/ui/monitor-destinations.md)的教程。 |
 
 要了解有关数据流的更多信息，请阅读[数据流概述](../../dataflows/home.md)。
 
@@ -60,6 +60,6 @@ Adobe Experience Platform可以从外部源摄取数据，同时允许您使用[
 | 功能 | 描述 |
 | ------- | ----------- |
 | 更新流源的帐户和连接详细信息 | 您现在可以使用[!DNL Flow Service] API和UI更新现有流连接的名称、描述和凭据。 有关详细信息，请参阅有关[使用API更新连接](../../sources/tutorials/api/update.md)和[使用UI编辑帐户详细信息](../../sources/tutorials/ui/monitor.md)的教程。 |
-| 删除数据流 | 现在可以使用[!DNL Flow Service] API和用户界面删除包含错误或变得不必要的流数据流。 有关详细信息，请参阅有关使用API [删除数据流](../../sources/tutorials/api/delete-dataflows.md)和使用UI ](../../sources/tutorials/ui/delete.md)删除数据流的教程。[ |
+| 删除数据流 | 现在可以使用[!DNL Flow Service] API和用户界面删除包含错误或变得不必要的流数据流。 有关详细信息，请参阅有关使用API [删除数据流](../../sources/tutorials/api/delete-dataflows.md)和使用UI [&#128279;](../../sources/tutorials/ui/delete.md)删除数据流的教程。 |
 
 要了解有关源的更多信息，请参阅[源概述](../../sources/home.md)。

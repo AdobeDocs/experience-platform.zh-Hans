@@ -37,7 +37,7 @@ ht-degree: 0%
    - 指定允许或拒绝用户执行的操作。
    - 通过使用IAM策略分配权限来实施细粒度访问控制。
 有关详细信息，请参阅[适用于AWS KMS的IAM策略官方文档](https://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html)。
-- **Experience Platform中的数据安全**：了解Experience Platform如何确保数据安全并与AWS KMS等外部服务集成以进行加密。 Experience Platform使用HTTPS TLS v1.2保护数据以便传输、云提供商静态加密、隔离存储以及可自定义的身份验证和加密选项。 有关如何保持数据安全的更多信息，请参阅[治理、隐私和安全概述](../overview.md)或有关Experience Platform](../../encryption.md)中[数据加密的文档。
+- **Experience Platform中的数据安全**：了解Experience Platform如何确保数据安全并与AWS KMS等外部服务集成以进行加密。 Experience Platform使用HTTPS TLS v1.2保护数据以便传输、云提供商静态加密、隔离存储以及可自定义的身份验证和加密选项。 有关如何保持数据安全的更多信息，请参阅[治理、隐私和安全概述](../overview.md)或有关Experience Platform[&#128279;](../../encryption.md)中数据加密的文档。
 - **AWS管理控制台**：一个中心中心，您可以从基于Web的应用程序访问和管理所有AWS服务。 使用搜索栏快速查找工具、检查通知、管理您的帐户和账单，以及自定义您的设置。 有关详细信息，请参阅[官方的AWS管理控制台文档](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/what-is.html)。
 
 ## 快速入门 {#get-started}

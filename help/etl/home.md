@@ -568,7 +568,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/files/{DATASET_FIL
 
 ### 验证记录是否符合架构要求
 
-在写入数据时，用户可以根据XDM架构中定义的验证规则选择验证数据。 有关架构验证的更多信息，请参阅 [!DNL GitHub]](https://github.com/adobe/experience-platform-etl-reference/blob/fd08dd9f74ae45b849d5482f645f859f330c1951/README.md#validation)上的[ETL生态系统集成参考代码。
+在写入数据时，用户可以根据XDM架构中定义的验证规则选择验证数据。 有关架构验证的更多信息，请参阅 [!DNL GitHub][&#128279;](https://github.com/adobe/experience-platform-etl-reference/blob/fd08dd9f74ae45b849d5482f645f859f330c1951/README.md#validation)上的ETL生态系统集成参考代码。
 
 如果您使用在[[!DNL GitHub]](https://github.com/adobe/experience-platform-etl-reference/blob/fd08dd9f74ae45b849d5482f645f859f330c1951/README.md)上找到的引用实现，则可以使用系统属性`-DenableSchemaValidation=true`在此实现中启用架构验证。
 

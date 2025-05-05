@@ -24,7 +24,7 @@ ht-degree: 3%
 
 ### 身份验证
 
-阅读 [!DNL Snowflake] 流式数据](../../../../connectors/databases/snowflake-streaming.md)的[必备项设置指南，以了解从[!DNL Snowflake]将流式数据摄取到Experience Platform之前需要完成的步骤的相关信息。
+阅读 [!DNL Snowflake] 流式数据[&#128279;](../../../../connectors/databases/snowflake-streaming.md)的必备项设置指南，以了解从[!DNL Snowflake]将流式数据摄取到Experience Platform之前需要完成的步骤的相关信息。
 
 ## 使用[!DNL Snowflake Streaming]源将[!DNL Snowflake]数据流式传输到Experience Platform
 
@@ -78,7 +78,7 @@ ht-degree: 3%
 >
 >* 时间戳列必须存在于源表中，才能创建流数据流。 Experience Platform需要时间戳才能知道何时摄取数据以及何时对增量数据进行流式处理。 您可以为现有连接逆向添加时间戳列并创建新数据流。
 >
->* 确保示例源数据文件中的数据字段的大小写符合[!DNL Snowflake]关于标识符的大小写解析的指南。 有关详细信息，请阅读标识符大小写](https://docs.snowflake.com/en/sql-reference/identifiers-syntax#label-identifier-casing)上的[[!DNL Snowflake] 文档。
+>* 确保示例源数据文件中的数据字段的大小写符合[!DNL Snowflake]关于标识符的大小写解析的指南。 有关详细信息，请阅读标识符大小写[&#128279;](https://docs.snowflake.com/en/sql-reference/identifiers-syntax#label-identifier-casing)上的[!DNL Snowflake] 文档。
 
 出现[!UICONTROL 选择数据]步骤。 在此步骤中，您必须选择要导入到Experience Platform中的数据，配置时间戳和时区，并提供用于摄取原始数据的示例源数据文件。
 

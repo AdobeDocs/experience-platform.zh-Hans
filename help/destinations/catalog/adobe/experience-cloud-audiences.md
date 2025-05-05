@@ -76,7 +76,7 @@ ht-degree: 2%
 >
 > * 您需要Audience Manager许可证才能启用上面进一步提到的[数据管理平台用例](#dmp-use-cases)。
 > * 您&#x200B;*do*&#x200B;需要Audience Manager许可证才能与Adobe Analytics共享Real-Time CDP受众。
-> * 您&#x200B;*不需要* Audience Manager许可证即可与以上](#share-segments-with-other-solutions)的[部分中提到的Adobe Advertising Cloud、Adobe Target、Marketo和其他Experience Cloud解决方案共享Real-Time CDP受众。
+> * 您&#x200B;*不需要* Audience Manager许可证即可与以上[&#128279;](#share-segments-with-other-solutions)的部分中提到的Adobe Advertising Cloud、Adobe Target、Marketo和其他Experience Cloud解决方案共享Real-Time CDP受众。
 
 ### 适用于使用旧版受众共享解决方案的客户
 

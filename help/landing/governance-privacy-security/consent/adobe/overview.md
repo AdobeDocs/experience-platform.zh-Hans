@@ -21,7 +21,7 @@ Adobe Experience Platform允许您处理从客户那里收集的同意数据，�
 
 >[!NOTE]
 >
->本文档重点介绍如何使用Adobe标准处理同意数据。 如果您在按照IAB透明度和同意框架(TCF) 2.0处理同意数据，请参阅Adobe Real-Time Customer Data Platform](../iab/overview.md)中有关[TCF 2.0支持的指南。
+>本文档重点介绍如何使用Adobe标准处理同意数据。 如果您在按照IAB透明度和同意框架(TCF) 2.0处理同意数据，请参阅Adobe Real-Time Customer Data Platform[&#128279;](../iab/overview.md)中有关TCF 2.0支持的指南。
 
 ## 先决条件
 
@@ -95,7 +95,7 @@ Adobe Experience Platform允许您处理从客户那里收集的同意数据，�
 
 如果您的移动应用程序需要客户同意首选项，则可以集成Experience Platform Mobile SDK以检索和更新同意设置，并在调用同意API时将它们发送到Experience Platform。
 
-请参阅移动SDK文档，了解[使用同意API配置同意移动扩展](https://developer.adobe.com/client-sdks/documentation/consent-for-edge-network/)和[](https://developer.adobe.com/client-sdks/documentation/consent-for-edge-network/api-reference/)。 有关如何使用Mobile SDK处理隐私问题的更多详细信息，请参阅[隐私和GDPR](https://developer.adobe.com/client-sdks/resources/privacy-and-gdpr/)部分。
+请参阅移动SDK文档，了解[使用同意API配置同意移动扩展](https://developer.adobe.com/client-sdks/documentation/consent-for-edge-network/)和[&#128279;](https://developer.adobe.com/client-sdks/documentation/consent-for-edge-network/api-reference/)。 有关如何使用Mobile SDK处理隐私问题的更多详细信息，请参阅[隐私和GDPR](https://developer.adobe.com/client-sdks/resources/privacy-and-gdpr/)部分。
 
 ### 直接摄取符合XDM标准的同意数据 {#batch}
 

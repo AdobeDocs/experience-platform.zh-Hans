@@ -94,7 +94,7 @@ v3.0.0
 
 * PDCL-6153：添加了支持功能，可可靠地将完全限定的URL用于缓存的自定义代码操作。
 
-核心扩展的v3.0.0与Turbine Web运行时](https://github.com/adobe/reactor-turbine/releases/tag/v27.2.0)的[v27.2.0中的更改相结合，如果用户的Adobe支持Premium CDN，则允许用户在多个Turbine管理托管区域中加载其库。
+核心扩展的v3.0.0与Turbine Web运行时[&#128279;](https://github.com/adobe/reactor-turbine/releases/tag/v27.2.0)的v27.2.0中的更改相结合，如果用户的Adobe支持Premium CDN，则允许用户在多个Turbine管理托管区域中加载其库。
 
 此升级是可选的，并且对于没有Premium CDN的用户向后兼容，对于公司启用了Premium CDN的客户是强制性的。
 

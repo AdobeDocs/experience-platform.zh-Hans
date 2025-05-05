@@ -184,9 +184,9 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 | 数据类型 | [[!UICONTROL 兴趣点详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/poi-detail.schema.json) | 数据类型现在可以接受与目标点关联的元数据键值对列表。 |
 | 数据类型 | [[!UICONTROL 建议操作]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-action.schema.json) | [!DNL AJO Classification Fields]已重命名为[!UICONTROL 建议操作]。 |
 | 数据类型 | [[!UICONTROL 建议事件类型]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-event-type.schema.json) | [!DNL AJO Classification Fields]已重命名为[!UICONTROL 建议操作]。 |
-| （多种） | （多种） | 已在所有B2B组件](https://github.com/adobe/xdm/pull/1617/files)上[稳定了实验特性。 |
+| （多种） | （多种） | 已在所有B2B组件[&#128279;](https://github.com/adobe/xdm/pull/1617/files)上稳定了实验特性。 |
 | （多种） | （多种） | Adobe Journey Optimizer实体已[稳定](https://github.com/adobe/xdm/pull/1625/files)。 |
-| （多种） | （多种） | 为保持一致性](https://github.com/adobe/xdm/pull/1626/files)，已[更新多个实验组件中某些字段的命名空间。 |
+| （多种） | （多种） | 为保持一致性[&#128279;](https://github.com/adobe/xdm/pull/1626/files)，已更新多个实验组件中某些字段的命名空间。 |
 
 {style="table-layout:auto"}
 
@@ -231,7 +231,7 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 | 功能 | 描述 |
 | --- | --- |
-| Audience Manager区段人口对实时客户个人资料的影响 | 当您首次使用Audience Manager源将Audience Manager区段发送到Experience Platform时，大量Audience Manager区段人口的摄取会直接影响您的总配置文件计数。 这意味着选择所有区段可能会导致配置文件计数超过您的许可证使用授权。 有关详细信息，请阅读[Audience Manager源概述](../../sources/connectors/adobe-applications/audience-manager.md)。 有关许可证使用情况的信息，请使用许可证使用情况仪表板](../../dashboards/guides/license-usage.md)阅读[上的文档。 |
+| Audience Manager区段人口对实时客户个人资料的影响 | 当您首次使用Audience Manager源将Audience Manager区段发送到Experience Platform时，大量Audience Manager区段人口的摄取会直接影响您的总配置文件计数。 这意味着选择所有区段可能会导致配置文件计数超过您的许可证使用授权。 有关详细信息，请阅读[Audience Manager源概述](../../sources/connectors/adobe-applications/audience-manager.md)。 有关许可证使用情况的信息，请使用许可证使用情况仪表板[&#128279;](../../dashboards/guides/license-usage.md)阅读上的文档。 |
 | 支持Adobe Campaign Managed Cloud Service | 使用Adobe Campaign Managed Cloud Service源将您的Adobe Campaign v8.4投放和跟踪日志数据引入Experience Platform。 有关详细信息，请参阅[在UI](../../sources/tutorials/ui/create/adobe-applications/campaign.md)中创建Adobe Campaign Managed Cloud Service源连接的指南。 |
 | API支持批量来源的按需摄取 | 使用按需摄取通过[!DNL Flow Service] API为给定数据流创建临时流运行。 创建的流运行必须设置为一次性摄取。 有关详细信息，请参阅[使用API](../../sources/tutorials/api/on-demand-ingestion.md)为按需引入创建流运行的指南。 |
 | API支持重试批处理源的失败数据流运行 | 使用`re-trigger`操作通过API重试失败的数据流。 有关详细信息，请阅读[使用API](../../sources/tutorials/api/retry-flows.md)重试失败的数据流运行的指南。 |

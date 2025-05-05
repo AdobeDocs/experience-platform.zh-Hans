@@ -56,7 +56,7 @@ ALTER VIEW v1  ADD SCHEMA databaseA.schema1;
 
 ## 从数据容器访问数据资产
 
-通过适当限定数据库名称，任何[!DNL PostgreSQL]客户端都可以连接到您使用SHOW关键字创建的任何数据结构。 有关SHOW关键字的详细信息，请参阅SQL语法文档](../sql/syntax.md#show)中的[SHOW部分。
+通过适当限定数据库名称，任何[!DNL PostgreSQL]客户端都可以连接到您使用SHOW关键字创建的任何数据结构。 有关SHOW关键字的详细信息，请参阅SQL语法文档[&#128279;](../sql/syntax.md#show)中的SHOW部分。
 
 “all”是默认数据库名称，其中包含沙盒中的每个数据库和架构容器。 当您使用`dbname="all"`建立[!DNL PostgreSQL]连接时，您可以访问已创建的&#x200B;**任何**&#x200B;数据库和架构以从逻辑上组织数据。
 

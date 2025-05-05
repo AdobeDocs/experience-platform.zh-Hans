@@ -23,7 +23,7 @@ ht-degree: 5%
 
 作为此过程的一部分，您需要培训机器学习模型，本文档假定您掌握一个或多个机器学习环境的工作知识。
 
-此示例使用[!DNL Jupyter Notebook]作为开发环境。 虽然有许多可用选项，但建议使用[!DNL Jupyter Notebook]，因为它是开源Web应用程序，计算要求较低。 可从官方网站](https://jupyter.org/)下载[。
+此示例使用[!DNL Jupyter Notebook]作为开发环境。 虽然有许多可用选项，但建议使用[!DNL Jupyter Notebook]，因为它是开源Web应用程序，计算要求较低。 可从官方网站[&#128279;](https://jupyter.org/)下载。
 
 ## 使用[!DNL Query Service]定义机器人活动的阈值
 

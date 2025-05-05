@@ -20,7 +20,7 @@ If you would like to have more details on development consideration, [please rea
 
 要安装扩展，请在Experience PlatformUI或数据收集UI中导航到扩展目录，然后选择Adobe客户端数据层。
 
-目录](./images/catalog.png)中的![ACDL扩展视图
+目录![&#128279;](./images/catalog.png)中的ACDL扩展视图
 
 <!-- (GitHub link?)
 There is also the possibility to fork this project. You can download this github project, realize the change that you deem required for your specific use-case and re-upload it on your Organization as a private extension.

@@ -159,7 +159,7 @@ ht-degree: 1%
 
 导出受众时，必须首先创建目标数据集。 请务必正确配置数据集以确保成功导出。
 
-关键注意事项之一是数据集所基于的架构（以下API示例请求中的`schemaRef.id`）。 为了导出区段定义，数据集必须基于[!DNL XDM Individual Profile Union Schema] (`https://ns.adobe.com/xdm/context/profile__union`)。 合并架构是一个系统生成的只读架构，它聚合了共享同一类（在本例中是XDM个人资料类）的架构字段。 有关合并视图架构的详细信息，请参阅架构注册表开发人员指南](../../xdm/api/getting-started.md)的[实时客户配置文件部分。
+关键注意事项之一是数据集所基于的架构（以下API示例请求中的`schemaRef.id`）。 为了导出区段定义，数据集必须基于[!DNL XDM Individual Profile Union Schema] (`https://ns.adobe.com/xdm/context/profile__union`)。 合并架构是一个系统生成的只读架构，它聚合了共享同一类（在本例中是XDM个人资料类）的架构字段。 有关合并视图架构的详细信息，请参阅架构注册表开发人员指南[&#128279;](../../xdm/api/getting-started.md)的实时客户配置文件部分。
 
 有两种方法可创建必要的数据集：
 

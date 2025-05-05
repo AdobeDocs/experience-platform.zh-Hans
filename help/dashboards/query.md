@@ -47,7 +47,7 @@ Adobe Experience Platform [!DNL Query Service]支持营销人员通过使用标�
 
 这些数据集的命名约定是&#x200B;**Profile-Snapshot-Export**，后跟系统生成的随机字母数值。 例如： `Profile-Snapshot-Export-abbc7093-80f4-4b49-b96e-e743397d763f`。
 
-要了解每个配置文件快照导出数据集的完整架构，您可以使用Experience PlatformUI中的数据集查看器](../catalog/datasets/user-guide.md)预览和浏览数据集[。
+要了解每个配置文件快照导出数据集的完整架构，您可以使用Experience PlatformUI中的数据集查看器[&#128279;](../catalog/datasets/user-guide.md)预览和浏览数据集。
 
 ![配置文件快照导出数据集的预览。](images/query/profile-attribute.png)
 
@@ -70,7 +70,7 @@ Adobe Experience Platform [!DNL Query Service]支持营销人员通过使用标�
 
 此数据集的命名约定是&#x200B;**Segmentdefinition-Snapshot-Export**，后跟一个字母数字值。 例如：`Segmentdefinition-Snapshot-Export-acf28952-2b6c-47ed-8f7f-016ac3c6b4e7`
 
-要了解每个区段定义快照导出数据集的完整架构，您可以在Experience PlatformUI中使用数据集查看器](../catalog/datasets/user-guide.md)预览和浏览数据集[。
+要了解每个区段定义快照导出数据集的完整架构，您可以在Experience PlatformUI中使用数据集查看器[&#128279;](../catalog/datasets/user-guide.md)预览和浏览数据集。
 
 ### 目标元数据数据集
 
@@ -78,7 +78,7 @@ Adobe Experience Platform [!DNL Query Service]支持营销人员通过使用标�
 
 此数据集的命名约定是&#x200B;**DIM_Destination**。
 
-要了解DIM目标数据集的完整架构，您可以在Experience PlatformUI中使用数据集查看器](../catalog/datasets/user-guide.md)预览和浏览数据集[。
+要了解DIM目标数据集的完整架构，您可以在Experience PlatformUI中使用数据集查看器[&#128279;](../catalog/datasets/user-guide.md)预览和浏览数据集。
 
 ![DIM_Destination数据集的预览。](images/query/destinations-metadata.png)
 

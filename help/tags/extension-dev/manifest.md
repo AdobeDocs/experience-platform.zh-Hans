@@ -74,20 +74,20 @@ ht-degree: 67%
       <td><code>schema</code></td>
       <td><a href="https://json-schema.org/">JSON 架构</a>的对象，用来描述从扩展配置视图中保存的有效对象的格式。由于您是配置视图的开发者，因此您有责任确保所有保存的设置对象都与此架构匹配。当用户尝试使用Experience Platform服务保存数据时，此架构还将用于验证。<br><br>架构对象的示例如下所示：
 <pre class="JSON language-JSON hljs">
-{
+&lbrace;
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "properties": {
-    "delay": {
+  "properties": &lbrace;
+    "delay": &lbrace;
       "type": "number",
       "minimum": 1
-    }
-  },
-  "required": [
+    &rbrace;
+  &rbrace;,
+  "required": &lbrack;
     "delay"
-  ],
+  &rbrack;,
   "additionalProperties": false
-}
+&rbrace;
 </pre>
       我们建议使用诸如 <a href="https://www.jsonschemavalidator.net/">JSON 架构验证器</a>之类的工具，手动测试您的架构。</td>
     </tr>
@@ -134,20 +134,20 @@ ht-degree: 67%
       <td><code>schema</code></td>
       <td><a href="https://json-schema.org/">JSON 架构</a>的对象，用来描述用户可保存的有效设置对象的格式。设置通常由用户使用数据收集用户界面进行配置和保存。 在这些用例中，扩展的视图可采取必要步骤来验证用户提供的设置。另一方面，有些用户选择直接使用标记API，而不借助任何用户界面。 此架构的目的在于允许Experience Platform正确验证用户保存的设置对象（无论是否使用了用户界面）是否采用了与运行时基于该设置对象执行操作的库模块兼容的格式。<br><br>架构对象的示例如下所示：<br>
 <pre class="JSON language-JSON hljs">
-{
+&lbrace;
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "properties": {
-    "delay": {
+  "properties": &lbrace;
+    "delay": &lbrace;
       "type": "number",
       "minimum": 1
-    }
-  },
-  "required": [
+    &rbrace;
+  &rbrace;,
+  "required": &lbrack;
     "delay"
-  ],
+  &rbrack;,
   "additionalProperties": false
-}
+&rbrace;
 </pre>
       我们建议使用诸如 <a href="https://www.jsonschemavalidator.net/">JSON 架构验证器</a>之类的工具，手动测试您的架构。</td>
     </tr>

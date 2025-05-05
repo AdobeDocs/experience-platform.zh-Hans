@@ -83,7 +83,7 @@ ht-degree: 3%
 
 要创建自定义引用，请登录到您的[!DNL SAP Subscription Billing]帐户并导航到&#x200B;**[主数据和配置]** > **[自定义引用]**&#x200B;页面。 接下来，选择&#x200B;**[!UICONTROL 创建]**&#x200B;以为Experience Platform中选择的每个受众添加新引用。 在随后的[计划受众导出和示例](#schedule-segment-export-example)步骤中，您将需要这些参考字段名称。
 
-下面显示了如何在[!DNL SAP Subscription Billing]中创建自定义&#x200B;**[!UICONTROL 引用类型]**的示例：
+下面显示了如何在[!DNL SAP Subscription Billing]中创建自定义&#x200B;**[!UICONTROL 引用类型]**&#x200B;的示例：
 ![显示在SAP订阅帐单中创建自定义引用的位置的图像。](../../assets/catalog/ecommerce/sap-commerce/create-custom-reference.png)
 
 有关其他指导，请参阅[!DNL SAP Subscription Billing] [自定义引用](https://help.sap.com/docs/CLOUD_TO_CASH_OD/80d121f216af43648e79664efe5595f7/85696a63c8d8453a934e86c9413a25cf.html?version=2023-11-27)文档。
@@ -215,7 +215,7 @@ ht-degree: 3%
 
 1. 在&#x200B;**[!UICONTROL 映射]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL 添加新映射]**。 您现在可以在屏幕上看到新的映射行。
    ![突出显示了“添加新映射”按钮的Experience Platform UI屏幕截图。](../../assets/catalog/ecommerce/sap-commerce/mapping-add-new-mapping.png)
-1. 在&#x200B;**[!UICONTROL 选择源字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择属性]**类别并选择XDM属性。
+1. 在&#x200B;**[!UICONTROL 选择源字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择属性]**&#x200B;类别并选择XDM属性。
    ![选择“姓氏”作为源属性的Experience Platform UI屏幕截图。](../../assets/catalog/ecommerce/sap-commerce/mapping-select-source-attribute.png)
 1. 在&#x200B;**[!UICONTROL 选择目标字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择自定义属性]**&#x200B;类别并从客户[架构](https://api.sap.com/api/BusinessPartner_APIs/schema)属性列表中键入[!DNL SAP Subscription Billing]属性的名称。
    ![Experience Platform UI屏幕截图，其中lastName被定义为target属性。](../../assets/catalog/ecommerce/sap-commerce/mapping-select-target-attribute.png)
@@ -281,7 +281,7 @@ ht-degree: 3%
 
 执行[计划受众导出](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling)步骤时，必须手动将Experience Platform受众映射到[!DNL SAP Subscription Billing]中的[属性](#prerequisites-attribute)。
 
-下面显示了突出显示[!DNL SAP Commerce] **[!UICONTROL 映射ID]**位置的计划受众导出步骤示例：
+下面显示了突出显示[!DNL SAP Commerce] **[!UICONTROL 映射ID]**&#x200B;位置的计划受众导出步骤示例：
 ![Experience Platform中的图像显示了填充了映射ID的计划受众导出。](../../assets/catalog/ecommerce/sap-commerce/schedule-segment-export.png)
 
 为此，请选择每个区段，然后在[!DNL SAP Commerce] **[!UICONTROL 映射ID]**&#x200B;目标连接器字段中输入来自[!DNL SAP Subscription Billing]的自定义引用的名称。 有关创建自定义引用的指导，请参阅[在 [!DNL SAP Subscription Billing]](#prerequisites-custom-reference)中创建自定义引用。
@@ -293,7 +293,7 @@ ht-degree: 3%
 
 例如，如果您选择的Experience Platform受众为`sap_audience1`，并且希望将其状态更新到[!DNL SAP Subscription Billing]自定义引用`SAP_1`中，请在[!DNL SAP_Commerce] **[!UICONTROL 映射ID]**&#x200B;字段中指定此值。
 
-下面显示了[!DNL SAP Subscription Billing]中的&#x200B;**[!UICONTROL 引用类型]**示例：
+下面显示了[!DNL SAP Subscription Billing]中的&#x200B;**[!UICONTROL 引用类型]**&#x200B;示例：
 ![显示在SAP订阅帐单中创建自定义引用的位置的图像。](../../assets/catalog/ecommerce/sap-commerce/create-custom-reference.png)
 
 下面显示了一个计划受众导出步骤的示例，该步骤选择了一个受众，并突出显示了其对应的[!DNL SAP Commerce] **[!UICONTROL 映射ID]**：
@@ -314,7 +314,7 @@ ht-degree: 3%
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-登录到[!DNL SAP Subscription Billing]帐户，然后导航到&#x200B;**[!UICONTROL 联系人]**页面以检查受众状态。 列表可以配置为显示自定义引用的列并显示相应的受众状态。
+登录到[!DNL SAP Subscription Billing]帐户，然后导航到&#x200B;**[!UICONTROL 联系人]**&#x200B;页面以检查受众状态。 列表可以配置为显示自定义引用的列并显示相应的受众状态。
 ![显示客户概述页面的SAP订阅帐单图像，列标题显示受众名称和单元格受众状态](../../assets/catalog/ecommerce/sap-commerce/customer-overview.png)
 
 ## 数据使用和治理 {#data-usage-governance}

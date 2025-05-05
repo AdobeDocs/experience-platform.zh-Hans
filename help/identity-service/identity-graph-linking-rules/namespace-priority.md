@@ -170,7 +170,7 @@ ht-degree: 2%
 
 ### Experience Data Model (XDM)架构
 
-任何不是XDM体验事件的架构（如XDM个人资料）将继续遵循您标记为身份](../../xdm/ui/fields/identity.md)的任何[字段。
+任何不是XDM体验事件的架构（如XDM个人资料）将继续遵循您标记为身份[&#128279;](../../xdm/ui/fields/identity.md)的任何字段。
 
 有关XDM架构的更多信息，请阅读[架构概述](../../xdm/home.md)。
 

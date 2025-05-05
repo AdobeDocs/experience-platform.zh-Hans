@@ -19,7 +19,7 @@ ht-degree: 0%
 
 作为此过程的一部分，您需要培训机器学习模型，本文档假定您掌握一个或多个机器学习环境的工作知识。
 
-此示例使用[!DNL Jupyter Notebook]作为开发环境。 虽然有许多可用选项，但建议使用[!DNL Jupyter Notebook]，因为它是开源Web应用程序，计算要求较低。 可从官方网站](https://jupyter.org/)下载[。
+此示例使用[!DNL Jupyter Notebook]作为开发环境。 虽然有许多可用选项，但建议使用[!DNL Jupyter Notebook]，因为它是开源Web应用程序，计算要求较低。 可从官方网站[&#128279;](https://jupyter.org/)下载。
 
 如果您尚未这样做，请按照[连接 [!DNL Jupyter Notebook] Adobe Experience Platform查询服务](../clients/jupyter-notebook.md)的步骤，然后再继续阅读本指南。
 
@@ -185,7 +185,9 @@ SELECT FLOAT(purchase_num) * FLOAT(w4) AS f4,
 ```sql
 SELECT CASE WHEN 1 / (1 + EXP(- (f1 + f2 + f3 + f4 + FLOAT(intercept)))) > 0.5 THEN 1 ELSE 0 END AS Prediction;
 ```
+
  
+
 ### 端到端示例
 
 在您有两个列（`c1`和`c2`）的情况下，如果`c1`有两个类别，则[!DNL Logistic Regression]算法将使用以下函数进行训练：
@@ -194,6 +196,7 @@ SELECT CASE WHEN 1 / (1 + EXP(- (f1 + f2 + f3 + f4 + FLOAT(intercept)))) > 0.5 T
 ```python
 y = 0.1 * "c1=category 1"+ 0.2 * "c1=category 2" +0.3 * c2+0.4
 ```
+
  
 SQL中的等效项如下：
 
@@ -209,6 +212,7 @@ FROM
     FROM TABLE
   )
 ```
+
  
 用于自动化翻译过程的[!DNL Python]代码如下所示：
 

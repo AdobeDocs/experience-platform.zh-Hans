@@ -17,7 +17,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->本指南介绍[!DNL Segmentation API]中导出作业的使用情况。 有关如何管理[!DNL Real-Time Customer Profile]数据的导出作业的信息，请参阅配置文件API](../../profile/api/export-jobs.md)中有关[导出作业的指南
+>本指南介绍[!DNL Segmentation API]中导出作业的使用情况。 有关如何管理[!DNL Real-Time Customer Profile]数据的导出作业的信息，请参阅配置文件API[&#128279;](../../profile/api/export-jobs.md)中有关导出作业的指南
 
 ## 快速入门
 

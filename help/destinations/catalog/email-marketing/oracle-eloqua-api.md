@@ -165,6 +165,7 @@ ht-degree: 4%
      | `xdm: workAddress.city` | `Attribute: city` | |
 
    * 下面显示了具有上述映射的示例：
+
      ![具有属性映射的Experience Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/oracle-eloqua-api/mappings.png)
 
 >[!IMPORTANT]
@@ -200,7 +201,7 @@ ht-degree: 4%
 要验证您是否正确设置了目标，请执行以下步骤：
 
 1. 选择&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**&#x200B;并导航到目标列表。
-1. 接下来，选择目标并切换到&#x200B;**[!UICONTROL 激活数据]**选项卡，然后选择受众名称。
+1. 接下来，选择目标并切换到&#x200B;**[!UICONTROL 激活数据]**&#x200B;选项卡，然后选择受众名称。
    ![显示目标激活数据的Experience Platform UI屏幕截图示例。](../../assets/catalog/email-marketing/oracle-eloqua-api/destinations-activation-data.png)
 
 1. 监控受众摘要，并确保用户档案计数对应于区段中的计数。

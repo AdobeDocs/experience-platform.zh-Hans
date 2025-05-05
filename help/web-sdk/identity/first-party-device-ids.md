@@ -24,7 +24,7 @@ Adobe Experience Platform Web SDK使用Cookie为网站访客分配[Adobe Experie
 
 ## 先决条件 {#prerequisites}
 
-在开始之前，请确保您熟悉身份数据在Web SDK中的工作方式，包括ECID和`identityMap`。 有关详细信息，请参阅Web SDK](./overview.md)中有关[身份数据的概述。
+在开始之前，请确保您熟悉身份数据在Web SDK中的工作方式，包括ECID和`identityMap`。 有关详细信息，请参阅Web SDK[&#128279;](./overview.md)中有关身份数据的概述。
 
 ## 第一方设备ID格式要求 {#formatting-requirements}
 
@@ -140,7 +140,7 @@ Edge Network仅接受符合[UUIDv4格式](https://datatracker.ietf.org/doc/html/
 您可以通过两种方式使用[!DNL FPIDs]：
 
 * **[方法1](#setting-cookie-datastreams)**：为您的Web SDK调用配置[!DNL CNAME]，并在数据流配置中包含[!DNL FPID] Cookie的名称。
-* **[方法2](#identityMap)**：在标识映射中包含[!DNL FPID]。 有关详细信息，请参阅本文档中有关在`identityMap`](#identityMap)中使用FPID的[的更详细部分。
+* **[方法2](#identityMap)**：在标识映射中包含[!DNL FPID]。 有关详细信息，请参阅本文档中有关在`identityMap`[&#128279;](#identityMap)中使用FPID的的更详细部分。
 
 ### 方法1：为Web SDK调用配置CNAME，并在数据流中设置第一方ID Cookie {#setting-cookie-datastreams}
 
@@ -166,7 +166,7 @@ DNS中的[!DNL CNAME]记录允许您创建一个域名之间的别名。 这有�
 >
 >此功能要求您启用[第一方数据收集](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=en)。
 
-**步骤 2. 为您的数据流启用**[!UICONTROL &#x200B;第一方ID Cookie ]**功能**
+**步骤 2. 为您的数据流启用**&#x200B;[!UICONTROL &#x200B;第一方ID Cookie &#x200B;]&#x200B;**功能**
 
 配置CNAME后，必须为数据流启用&#x200B;**[!UICONTROL 第一方ID Cookie]**&#x200B;选项。 此设置会告知Edge Network在查找第一方设备ID时引用指定的Cookie，而不是在[标识映射](#identityMap)中查找此值。
 

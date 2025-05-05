@@ -135,8 +135,8 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 | --- | --- | --- |
 | 字段组 | [[!UICONTROL 内容组件详细信息]](https://github.com/adobe/xdm/pull/1674/files) | `uri-reference` 已从[!UICONTROL 内容组件详细信息]中删除 |
 | 字段组 | [[!UICONTROL AJO 实体标记]](https://github.com/adobe/xdm/pull/1672/files) | 将 AJO 实体标记添加到对应于历程或营销活动的 [!UICONTROL AJO 实体字段] |
-| 字段组 | （多种） | 为[[!UICONTROL  Journey Orchestration 步骤事件公共字段]](https://github.com/adobe/xdm/pull/1671/files)添加了几个字段 |
-| 字段组 | （多种） | 为[!UICONTROL 媒体报告]](https://github.com/adobe/xdm/pull/1670/files)[添加了几种 XDM 事件类型。 |
+| 字段组 | （多种） | 为[[!UICONTROL &#x200B; Journey Orchestration 步骤事件公共字段]](https://github.com/adobe/xdm/pull/1671/files)添加了几个字段 |
+| 字段组 | （多种） | 为[!UICONTROL 媒体报告][&#128279;](https://github.com/adobe/xdm/pull/1670/files)添加了几种 XDM 事件类型。 |
 | 字段组 | [!UICONTROL Workfront 变更事件] | 添加了 `Full Record` 和 `Accessor Employee Ids` 字段组。 |
 | 数据类型 | [[!UICONTROL 产品列表项目]](https://github.com/adobe/xdm/pull/1685/files) | 添加了[!UICONTROL 退款金额]，以指示该商品的退款金额（如果有）。 |
 | 数据类型 | [[!UICONTROL 订单]](https://github.com/adobe/xdm/pull/1685/files) | 已将[!UICONTROL 退款列表]添加到此订单的退款列表。 |

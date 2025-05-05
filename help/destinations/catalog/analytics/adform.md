@@ -42,7 +42,7 @@ Adform网站跟踪扩展使广告商能够轻松地在其网站上实施Adform�
 
 该工作流将指导您完成安装步骤。
 
-有关扩展配置选项和安装支持的信息，请参阅Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.103195.adform-website-tracking.html)上的[Adform页面。
+有关扩展配置选项和安装支持的信息，请参阅Adobe Exchange[&#128279;](https://exchange.adobe.com/experiencecloud.details.103195.adform-website-tracking.html)上的Adform页面。
 
 您还可以直接在[数据收集UI](https://experience.adobe.com/#/data-collection/)中安装该扩展。 有关详细信息，请参阅有关[添加新扩展](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension)的指南。
 

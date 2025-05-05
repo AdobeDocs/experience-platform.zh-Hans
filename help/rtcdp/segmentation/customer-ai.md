@@ -29,7 +29,7 @@ ht-degree: 0%
 
 ## Customer AI入门
 
-要开始使用客户人工智能，您需要遵循[数据准备教程](../../intelligent-services/data-preparation.md)，并根据您的用例配置输入架构。 接下来，您需要[配置客户人工智能实例](../../intelligent-services/customer-ai/user-guide/configure.md)。 配置实例后，将生成一个模型，您可以在其中查看您的见解和得分[](../../intelligent-services/customer-ai/user-guide/discover-insights.md)。 使用从模型生成的数据，您可以为数据驱动激活创建受众。
+要开始使用客户人工智能，您需要遵循[数据准备教程](../../intelligent-services/data-preparation.md)，并根据您的用例配置输入架构。 接下来，您需要[配置客户人工智能实例](../../intelligent-services/customer-ai/user-guide/configure.md)。 配置实例后，将生成一个模型，您可以在其中查看您的见解和得分[&#128279;](../../intelligent-services/customer-ai/user-guide/discover-insights.md)。 使用从模型生成的数据，您可以为数据驱动激活创建受众。
 
 要了解有关客户人工智能的更多信息，请访问[客户人工智能概述](../../intelligent-services/customer-ai/overview.md)。 此外，以下视频展示了客户人工智能如何通过基于人工智能的倾向性丰富客户档案，并支持客户分段和定位工作。
 

@@ -38,7 +38,7 @@ ht-degree: 4%
 | `refreshToken` | 刷新令牌用于在当前访问令牌过期后生成新的访问令牌。 可从[!DNL Square]获取刷新令牌。 |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL Square]的连接规范ID为： `2acf109f-9b66-4d5e-bc18-ebb2adcff8d5` |
 
-有关这些凭据以及如何获取这些凭据的更多信息，请参阅OAuth](https://developer.squareup.com/docs/oauth-api/receive-and-manage-tokens)上的[[!DNL Square] 文档。
+有关这些凭据以及如何获取这些凭据的更多信息，请参阅OAuth[&#128279;](https://developer.squareup.com/docs/oauth-api/receive-and-manage-tokens)上的[!DNL Square] 文档。
 
 ### 使用Experience Platform API
 

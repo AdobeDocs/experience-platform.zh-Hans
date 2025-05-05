@@ -27,7 +27,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->以下基于文件的云存储目标不支持此页面上记录的IP范围： *Azure Blob]、[!UICONTROL Azure Data Lake Storage Gen2]和[!UICONTROL Data Landing Zone]： [!UICONTROL 不支持*。
+>以下基于文件的云存储目标不支持此页面上记录的IP范围： *Azure Blob、[!UICONTROL Azure Data Lake Storage Gen2]和[!UICONTROL Data Landing Zone]： 不支持*。
 
 ## 概述 {#overview}
 

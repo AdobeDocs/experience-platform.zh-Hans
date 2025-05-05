@@ -72,7 +72,7 @@ ht-degree: 1%
 
 >[!ENDTABS]
 
-有关使用[!DNL Stripe] API的更多信息，请阅读有关API密钥](https://docs.stripe.com/keys)的[[!DNL Stripe] 文档。
+有关使用[!DNL Stripe] API的更多信息，请阅读有关API密钥[&#128279;](https://docs.stripe.com/keys)的[!DNL Stripe] 文档。
 
 ### 创建Experience Data Model (XDM)架构
 
@@ -186,7 +186,7 @@ ht-degree: 1%
 
 >[!TAB 订阅]
 
-在[!DNL Stripe]中，您可以使用&#x200B;**订阅**&#x200B;定期向客户收费。 有关特定订阅属性的更多信息，请阅读订阅](https://docs.stripe.com/api/subscriptions)上的[[!DNL Stripe] API指南。
+在[!DNL Stripe]中，您可以使用&#x200B;**订阅**&#x200B;定期向客户收费。 有关特定订阅属性的更多信息，请阅读订阅[&#128279;](https://docs.stripe.com/api/subscriptions)上的[!DNL Stripe] API指南。
 
 +++选择以查看Stripe预订对象
 
@@ -432,7 +432,7 @@ ht-degree: 1%
 
 >[!TAB 价格]
 
-在[!DNL Stripe]中，**价格**&#x200B;表示产品循环购买和一次性购买的单位成本、货币和可选帐单周期。 有关特定价格属性的更多信息，请阅读价格](https://docs.stripe.com/api/prices)的[[!DNL Stripe] API指南。
+在[!DNL Stripe]中，**价格**&#x200B;表示产品循环购买和一次性购买的单位成本、货币和可选帐单周期。 有关特定价格属性的更多信息，请阅读价格[&#128279;](https://docs.stripe.com/api/prices)的[!DNL Stripe] API指南。
 
 +++选择以查看Stripe价格对象
 

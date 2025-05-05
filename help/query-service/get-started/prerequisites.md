@@ -16,7 +16,7 @@ ht-degree: 0%
 
 此[数据摄取教程视频](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)概述了如何创建数据集、将数据集映射到架构、将数据添加到数据集以及确认其摄取。 [摄取概述文档](../../ingestion/home.md)补充了此内容，并提供了更深入的信息和其他学习资源的链接。
 
-将数据引入Adobe Experience Platform后，您可以使用Experience Platform UI](../ui/user-guide.md)中的[[!DNL Query Editor] 或[[!DNL Query Service] API](../api/getting-started.md)开始使用[!DNL Query Service]。 有关如何使用这些工具的完整文档，请参阅其各自部分。
+将数据引入Adobe Experience Platform后，您可以使用Experience Platform UI[&#128279;](../ui/user-guide.md)中的[!DNL Query Editor] 或[[!DNL Query Service] API](../api/getting-started.md)开始使用[!DNL Query Service]。 有关如何使用这些工具的完整文档，请参阅其各自部分。
 
 ## 后续步骤
 

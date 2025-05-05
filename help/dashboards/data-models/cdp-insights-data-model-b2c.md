@@ -100,7 +100,7 @@ SELECT qsaccel.profile_agg.adwh_dim_merge_policies.merge_policy_name,
 
 [!UICONTROL 按身份列出的配置文件]构件显示配置文件存储中所有合并配置文件的身份划分。 有关详细信息，请参阅[[!UICONTROL 按身份列出的配置文件]构件文档](../guides/profiles.md#profiles-by-identity)。
 
-下面的可折叠部分中显示了按标识]构件生成[!UICONTROL 配置文件的SQL。
+下面的可折叠部分中显示了按标识构件生成配置文件的SQL。
 
 +++SQL查询
 
@@ -124,7 +124,7 @@ SELECT qsaccel.profile_agg.adwh_dim_namespaces.namespace_description,
 
 用于[!UICONTROL 按身份列出的单一身份配置文件]小组件的逻辑说明了仅使用单个唯一标识符识别的配置文件总数。 有关详细信息，请参阅[按身份小部件列出的单一身份配置文件](../guides/profiles.md#single-identity-profiles-by-identity)。
 
-下面的可折叠部分中显示了通过标识]构件生成[!UICONTROL 单一标识配置文件的SQL。
+下面的可折叠部分中显示了通过标识构件生成单一标识配置文件的SQL。
 
 +++SQL查询
 
@@ -293,7 +293,7 @@ namespace-audience模型包含以下数据集：
 
 在[!UICONTROL 按身份列出的配置文件]小部件中使用的逻辑对给定受众的个人资料存储中的所有合并配置文件进行了身份划分。 有关详细信息，请参阅[[!UICONTROL 按身份列出的配置文件]构件文档](../guides/audiences.md#profiles-by-identity)。
 
-下面的可折叠部分中显示了按标识]构件生成[!UICONTROL 配置文件的SQL。
+下面的可折叠部分中显示了按标识构件生成配置文件的SQL。
 
 +++SQL查询
 
@@ -327,7 +327,7 @@ SELECT qsaccel.profile_agg.adwh_dim_namespaces.namespace_description,
 
 #### 身份重叠（配置文件）用例 {#profiles-identity-overlap}
 
-[!UICONTROL 身份重叠]构件中使用的逻辑显示&#x200B;**配置文件存储区**&#x200B;中包含两个选定身份的配置文件重叠。 有关详细信息，请参阅[!UICONTROL 配置文件]仪表板文档](../guides/profiles.md#identity-overlap)的[[!UICONTROL 身份重叠]小组件部分。
+[!UICONTROL 身份重叠]构件中使用的逻辑显示&#x200B;**配置文件存储区**&#x200B;中包含两个选定身份的配置文件重叠。 有关详细信息，请参阅[!UICONTROL 配置文件]仪表板文档[&#128279;](../guides/profiles.md#identity-overlap)的[!UICONTROL 身份重叠]小组件部分。
 
 生成[!UICONTROL 标识重叠]构件的SQL显示在下面的可折叠部分中。
 
@@ -396,7 +396,7 @@ SELECT Sum(overlap_col1) overlap_col1,
 
 #### 身份重叠（受众）用例 {#audiences-identity-overlap}
 
-[!UICONTROL 受众]仪表板[!UICONTROL 身份重叠]小组件中使用的逻辑说明了包含特定受众的两个选定身份的配置文件重叠。 有关详细信息，请参阅[!UICONTROL 受众]仪表板文档](../guides/audiences.md#identity-overlap)的[[!UICONTROL 身份重叠]小组件部分。
+[!UICONTROL 受众]仪表板[!UICONTROL 身份重叠]小组件中使用的逻辑说明了包含特定受众的两个选定身份的配置文件重叠。 有关详细信息，请参阅[!UICONTROL 受众]仪表板文档[&#128279;](../guides/audiences.md#identity-overlap)的[!UICONTROL 身份重叠]小组件部分。
 
 生成[!UICONTROL 标识重叠]构件的SQL显示在下面的可折叠部分中。
 

@@ -40,7 +40,7 @@ Adobe Experience Platform Web SDK支持访客ID共享功能，这使得客户能
 
 ## 移动到Web ID共享 {#mobile-to-web}
 
-使用Edge Network](https://developer.adobe.com/client-sdks/documentation/identity-for-edge-network/api-reference/#geturlvariables)扩展的[身份中的`getUrlVariables` API将标识符检索为查询参数，并在打开[!DNL webViews]时将其附加到您的URL。
+使用Edge Network[&#128279;](https://developer.adobe.com/client-sdks/documentation/identity-for-edge-network/api-reference/#geturlvariables)扩展的身份中的`getUrlVariables` API将标识符检索为查询参数，并在打开[!DNL webViews]时将其附加到您的URL。
 
 Web SDK无需其他配置即可接受查询字符串中的`ECID`值。
 

@@ -149,12 +149,12 @@ Magnite：批处理目标可以从AdobeCDP接收&#x200B;*任意*&#x200B;身份�
 
 ### 映射属性和身份 {#map}
 
-在&#x200B;**[!UICONTROL Source字段]**中，您可以选择设备的任意属性或标识。 在本例中，我们选择了一个名为“DeviceId”的自定义IdentityMap
+在&#x200B;**[!UICONTROL Source字段]**&#x200B;中，您可以选择设备的任意属性或标识。 在本例中，我们选择了一个名为“DeviceId”的自定义IdentityMap
 ![将所需的数据字段映射到device_id字段](../../assets/catalog/advertising/magnite/destination-batch-active-audience-field-mapping.png)
 
-在&#x200B;**[!UICONTROL 目标字段]**中：
+在&#x200B;**[!UICONTROL 目标字段]**&#x200B;中：
 ![选择适当的设备类型目标标识](../../assets/catalog/advertising/magnite/destination-batch-active-audience-select-device-type.png)有关详细信息，请参阅[支持的标识](#supported-identities)。
-在此示例中，我们已选择**[!UICONTROL 目标字段]**： magnite_deviceId_CUSTOM，因为我们的&#x200B;**[!UICONTROL Source字段]**&#x200B;被定义为自定义IdentityMap： DeviceID。
+在此示例中，我们已选择&#x200B;**[!UICONTROL 目标字段]**： magnite_deviceId_CUSTOM，因为我们的&#x200B;**[!UICONTROL Source字段]**&#x200B;被定义为自定义IdentityMap： DeviceID。
 
 >[!NOTE]
 >

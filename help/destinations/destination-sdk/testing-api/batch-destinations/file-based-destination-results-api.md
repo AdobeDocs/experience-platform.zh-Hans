@@ -42,7 +42,7 @@ ht-degree: 1%
 
 在您[验证目标配置](file-based-destination-testing-api.md)后，您可以查看详细的激活结果，方法是向`authoring/testing/destinationInstance/`端点发出GET请求，并提供您正在测试的目标的目标实例ID以及已激活受众的流运行ID。
 
-在目标测试调用](file-based-destination-testing-api.md)的[响应中返回的`results`属性中，您可以找到需要使用的完整API URL。
+在目标测试调用[&#128279;](file-based-destination-testing-api.md)的响应中返回的`results`属性中，您可以找到需要使用的完整API URL。
 
 **API格式**
 
@@ -56,7 +56,7 @@ GET /authoring/testing/destinationInstance/{DESTINATION_INSTANCE_ID}/results?flo
 
 | 查询字符串参数 | 描述 |
 | -------- | ----------- |
-| `flowRunIds` | 流运行与激活的受众相对应的ID。 您可以在目标测试调用](file-based-destination-testing-api.md)的[响应中返回的`results`属性中找到流运行ID。 |
+| `flowRunIds` | 流运行与激活的受众相对应的ID。 您可以在目标测试调用[&#128279;](file-based-destination-testing-api.md)的响应中返回的`results`属性中找到流运行ID。 |
 
 **请求**
 

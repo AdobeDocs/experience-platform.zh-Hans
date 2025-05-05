@@ -28,7 +28,7 @@ ht-degree: 0%
 
 ## 快速入门
 
-在阅读本指南之前，请查看[[!DNL JupyterLab] 用户指南](./overview.md)，以详细了解[!DNL JupyterLab]及其在数据科学Workspace中的角色。 此外，如果您使用自己的数据，请查阅 [!DNL Jupyterlab] 笔记本](./access-notebook-data.md)中[数据访问的文档。 本指南包含有关笔记本数据限制的重要信息。
+在阅读本指南之前，请查看[[!DNL JupyterLab] 用户指南](./overview.md)，以详细了解[!DNL JupyterLab]及其在数据科学Workspace中的角色。 此外，如果您使用自己的数据，请查阅 [!DNL Jupyterlab] 笔记本[&#128279;](./access-notebook-data.md)中数据访问的文档。 本指南包含有关笔记本数据限制的重要信息。
 
 此笔记本使用Analytics Analysis Workspace中的Adobe Analytics Experience Events数据形式的中值数据集。 要使用EDA笔记本，您需要使用以下值`target_table`和`target_table_id`定义数据表。 可以使用任何中间值数据集。
 
@@ -203,7 +203,7 @@ fig = go.Figure(data = [trace], layout = layout)
 iplot(fig)
 ```
 
-查询1](../images/jupyterlab/eda/activity-count-by-hour-of-day.png)的![条形图输出
+查询1![&#128279;](../images/jupyterlab/eda/activity-count-by-hour-of-day.png)的条形图输出
 
 **给定日期查看的前10个页面**
 

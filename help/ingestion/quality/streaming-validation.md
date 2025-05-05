@@ -207,5 +207,5 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID} \
 | 400 | 错误。 您的请求存在问题。 从流验证服务接收带有更多详细信息的错误消息。 |
 | 401 | 错误。 您的请求未获授权 — 您需要使用持有者令牌进行请求。 有关如何请求访问的详细信息，请查看此[教程](https://www.adobe.com/go/platform-api-authentication-en)或此[博客帖子](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f)。 |
 | 500 | 错误。 存在内部系统错误。 |
-| 501 | 错误。 这意味着此位置不支持同步验证&#x200B;****。 |
+| 501 | 错误。 这意味着此位置不支持同步验证&#x200B;**&#x200B;**。 |
 | 503 | 错误。 该服务当前不可用。 客户端应使用指数回退策略至少重试三次。 |

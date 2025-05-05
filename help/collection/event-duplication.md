@@ -40,7 +40,7 @@ Adobe Experience Platform数据收集层旨在支持“至少一次”处理。 
 
 * 如果[!DNL Profile store]中已存在具有相同`_id`的事件，则Real-Time CDP配置文件存储区会丢弃事件。 有关更多详细信息，请参阅有关[XDM ExperienceEvent类](../xdm/classes/experienceevent.md)的文档。
 * Customer Journey Analytics允许用户将指标配置为仅以非重复的方式计入值。 要了解如何执行此操作，请参阅有关[量度去重组件设置](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-dataviews/component-settings/metric-deduplication.html?lang=zh-Hans)的文档。
-* 当需要从计算中删除整个行或忽略特定字段集（因为行中只有部分数据是重复信息）时，Experience Platform查询服务支持重复数据删除。 有关详细信息，请参阅有关查询服务](../query-service/key-concepts/deduplication.md)中重复数据删除[的文档。
+* 当需要从计算中删除整个行或忽略特定字段集（因为行中只有部分数据是重复信息）时，Experience Platform查询服务支持重复数据删除。 有关详细信息，请参阅有关查询服务[&#128279;](../query-service/key-concepts/deduplication.md)中重复数据删除的文档。
 
 >[!NOTE]
 >

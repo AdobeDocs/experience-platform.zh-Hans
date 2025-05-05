@@ -15,7 +15,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->在XDM中，命名空间（本页的主题）用于区分架构中的字段。 这与Identity Service中的身份命名空间概念不同，该概念使用命名空间来区分身份值。 有关详细信息，请阅读有关Identity Service](../../identity-service/features/namespaces.md)中的[命名空间的文档。
+>在XDM中，命名空间（本页的主题）用于区分架构中的字段。 这与Identity Service中的身份命名空间概念不同，该概念使用命名空间来区分身份值。 有关详细信息，请阅读有关Identity Service[&#128279;](../../identity-service/features/namespaces.md)中的命名空间的文档。
 
 体验数据模型(XDM)架构中的所有字段都有关联的命名空间。 利用这些命名空间，可扩展架构并在将不同的架构组件组合在一起时防止字段冲突。 本文档概述了XDM中的命名空间以及它们在[架构注册表API](../api/overview.md)中的表示方式。
 

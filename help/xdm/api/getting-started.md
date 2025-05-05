@@ -222,7 +222,7 @@ XDM资源使用URI形式的`$id`属性进行标识，如以下示例：
 
 架构版本由架构注册表API中的`Accept`标头和下游Experience Platform服务API负载中的`schemaRef.contentType`属性引用。
 
-目前，Experience Platform仅支持每个架构有一个主要版本(`1`)。 根据架构演变](../schema/composition.md#evolution)的[规则，对架构的每次更新都必须是非破坏性的，这意味着架构的新次要版本（`1.2`、`1.3`等）始终与以前的次要版本向后兼容。 因此，在指定`version=1`时，架构注册表始终返回架构的&#x200B;**latest**&#x200B;主要版本`1`，这意味着不返回以前的次要版本。
+目前，Experience Platform仅支持每个架构有一个主要版本(`1`)。 根据架构演变[&#128279;](../schema/composition.md#evolution)的规则，对架构的每次更新都必须是非破坏性的，这意味着架构的新次要版本（`1.2`、`1.3`等）始终与以前的次要版本向后兼容。 因此，在指定`version=1`时，架构注册表始终返回架构的&#x200B;**latest**&#x200B;主要版本`1`，这意味着不返回以前的次要版本。
 
 >[!NOTE]
 >

@@ -84,7 +84,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `relationships` | 按有效负荷创建关系时必须提供的对象。 此对象中的每个键代表特定的关系类型。 在上例中，已建立`extension`和`rules`关系，这些关系特定于`rule_components`。 有关不同资源的兼容关系类型的详细信息，请参阅有关按资源](#relationship-requirements-by-resource)的[关系要求的部分。 |
+| `relationships` | 按有效负荷创建关系时必须提供的对象。 此对象中的每个键代表特定的关系类型。 在上例中，已建立`extension`和`rules`关系，这些关系特定于`rule_components`。 有关不同资源的兼容关系类型的详细信息，请参阅有关按资源[&#128279;](#relationship-requirements-by-resource)的关系要求的部分。 |
 | `data` | 在`relationship`对象下提供的每个关系类型都必须包含一个`data`属性，该属性引用与关系建立的资源的`id`和`type`。 通过将`data`属性格式化为对象数组，使每个对象包含适用资源的`id`和`type`，您可以创建与相同类型的多个资源的关系。 |
 | `id` | 资源的唯一ID 每个`id`都必须带有同级`type`属性，以指示相关资源的类型。 |
 | `type` | 同级`id`字段引用的资源类型。 接受的值包括`data_elements`、`rules`、`extensions`和`environments`。 |

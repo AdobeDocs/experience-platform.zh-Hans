@@ -206,7 +206,7 @@ curl -X POST \
 
 当[!DNL Experience Platform]收到来自[!DNL Privacy Service]的删除请求时，[!DNL Experience Platform]向[!DNL Privacy Service]发送确认，确认已收到该请求并且受影响的数据已标记为删除。 然后，这些记录会在七天内从数据湖中删除。 在这七天窗口内，数据将被软删除，因此任何[!DNL Experience Platform]服务都无法访问。
 
-如果您还在隐私请求中包含`ProfileService`或`identity`，则其关联的数据将单独进行处理。 有关详细信息，请参阅有关配置文件](../profile/privacy.md#delete)的[删除请求处理的部分。
+如果您还在隐私请求中包含`ProfileService`或`identity`，则其关联的数据将单独进行处理。 有关详细信息，请参阅有关配置文件[&#128279;](../profile/privacy.md#delete)的删除请求处理的部分。
 
 ## 后续步骤
 

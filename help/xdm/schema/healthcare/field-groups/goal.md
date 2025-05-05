@@ -31,7 +31,7 @@ ht-degree: 5%
 | [!UICONTROL Source] | `source` | [[!UICONTROL 引用]](../data-types/reference.md) | 指示目标的来源，如患者或从业者。 |
 | [!UICONTROL 开始可编码的概念] | `startCodeableConcept` | [[!UICONTROL 可编码的概念]](../data-types/codeable-concept.md) | 随后应说服目标完成的事件。 |
 | [!UICONTROL 主题 |]`subject` | [[!UICONTROL 引用]](../data-types/reference.md) | 确定确定目标的建立者、患者、组或组织。 |
-| [!UICONTROL Target] | `target` | 对象数组 | 指示目标中特定步骤的时间线。 有关详细信息，请参阅下面](#target)的[部分。 |
+| [!UICONTROL Target] | `target` | 对象数组 | 指示目标中特定步骤的时间线。 有关详细信息，请参阅下面[&#128279;](#target)的部分。 |
 | [!UICONTROL 连续] | `continous` | 布尔值 | 指示实现目标后是否需要持续活动以保持目标目标。 |
 | [!UICONTROL 生命周期状态] | `lifecycleStatus` | 字符串 | 目标生命周期的状态。 此属性的值必须等于以下已知枚举值之一。 <li> `proposed` </li> <li> `planned` </li> <li> `accepted` </li> <li> `active` </li> <li> `on-hold` </li> <li> `completed` </li> <li> `cancelled` </li> <li> `entered-in-error` </li> <li> `rejected` </li> |
 | [!UICONTROL 开始日期] | `startDate` | 日期 | 开始追求目标的日期。 |

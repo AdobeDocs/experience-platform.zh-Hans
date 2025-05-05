@@ -36,7 +36,7 @@ ht-degree: 4%
 | 授权测试URL | 将[!DNL Mailchimp]连接到Experience Platform时，授权测试URL用于验证凭据。 如果未提供，则会在源连接创建步骤中自动检查凭据。 |
 | 访问令牌 | 用于对源进行身份验证的相应访问令牌。 基于OAuth的身份验证需要此项。 |
 
-有关使用OAuth 2向Experience Platform验证您的[!DNL Mailchimp]帐户的详细信息，请参阅有关使用OAuth 2](https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/)的此[[!DNL Mailchimp] 文档。
+有关使用OAuth 2向Experience Platform验证您的[!DNL Mailchimp]帐户的详细信息，请参阅有关使用OAuth 2[&#128279;](https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/)的此[!DNL Mailchimp] 文档。
 
 ### 基本身份验证
 

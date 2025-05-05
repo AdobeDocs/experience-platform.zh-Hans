@@ -20,7 +20,7 @@ ht-degree: 0%
 
 ![架构字段组[!UICONTROL IdentityMap]的图表](../../images/field-groups/identitymap.png)
 
-请参阅架构组合](../../schema/composition.md#identityMap)的[基础知识中关于标识映射的部分，以了解有关其用例的更多信息，包括其优点和缺点。
+请参阅架构组合[&#128279;](../../schema/composition.md#identityMap)的基础知识中关于标识映射的部分，以了解有关其用例的更多信息，包括其优点和缺点。
 
 **示例**
 

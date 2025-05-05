@@ -16,7 +16,7 @@ ht-degree: 27%
 >title="权限"
 >abstract="了解在 Adobe Experience Platform 中使用数据流、模式、身份标识和沙盒所需的关键权限。"
 
-Adobe Experience Platform](./home.md)中的[数据收集由多种不同的技术组成，这些技术可共同收集和传输您的数据。 在Adobe Admin Console中，可通过基于角色的细粒度权限来控制对这些技术的访问。
+Adobe Experience Platform[&#128279;](./home.md)中的数据收集由多种不同的技术组成，这些技术可共同收集和传输您的数据。 在Adobe Admin Console中，可通过基于角色的细粒度权限来控制对这些技术的访问。
 
 本指南向您说明如何管理数据收集功能的权限。
 

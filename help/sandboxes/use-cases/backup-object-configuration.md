@@ -69,7 +69,7 @@ ht-degree: 4%
 
 >[!NOTE]
 >
-> 沙盒工具不支持所有对象。 有关允许使用的对象的完整列表，请参阅sandbox tooling](../ui/sandbox-tooling.md#objects-supported-for-sandbox-tooling)指南支持的[对象。
+> 沙盒工具不支持所有对象。 有关允许使用的对象的完整列表，请参阅sandbox tooling[&#128279;](../ui/sandbox-tooling.md#objects-supported-for-sandbox-tooling)指南支持的对象。
 
 #### 导出完整的沙盒
 

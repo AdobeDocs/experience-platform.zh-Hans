@@ -22,7 +22,7 @@ ht-degree: 1%
 本教程需要您对[!DNL Experience Platform]的以下组件有一定的了解：
 
 * [[!DNL Experience Data Model (XDM System)]](../../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
-   * 您必须至少了解XDM](../../../xdm/home.md#data-behaviors)中[行为的概念，以便决定要将数据映射到[!UICONTROL Profile]类（记录行为）还是[!UICONTROL ExperienceEvent]类（时间序列行为）。
+   * 您必须至少了解XDM[&#128279;](../../../xdm/home.md#data-behaviors)中行为的概念，以便决定要将数据映射到[!UICONTROL Profile]类（记录行为）还是[!UICONTROL ExperienceEvent]类（时间序列行为）。
 * [批量摄取](../../batch-ingestion/overview.md)： [!DNL Experience Platform]从用户提供的数据文件中摄取数据的方法。
 * [Adobe Experience Platform数据准备](../../batch-ingestion/overview.md)：一套功能，允许您映射和转换摄取的数据以符合XDM架构。 有关[数据准备函数](../../../data-prep/functions.md)的文档与架构映射特别相关。
 
@@ -54,7 +54,7 @@ ht-degree: 1%
 
 完成数据流配置后，选择&#x200B;**[!UICONTROL 下一步]**。
 
-![数据流详细信息[!UICONTROL 部分已完成。](../../images/tutorials/map-csv-recommendations/dataflow-detail-complete.png)]
+![数据流详细信息[[!UICONTROL 部分已完成。]](../../images/tutorials/map-csv-recommendations/dataflow-detail-complete.png)]
 
 ## 选择数据
 

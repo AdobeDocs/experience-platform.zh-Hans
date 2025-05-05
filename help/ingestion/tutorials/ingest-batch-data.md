@@ -96,7 +96,7 @@ Adobe Experience Platform允许您将数据作为批处理文件轻松导入[!DN
 
 单击“**[!UICONTROL 启用]**”，切换将变为蓝色，表示已打开。
 
-已为配置文件](../images/tutorials/ingest-batch-data/profile-enabled-dataset.png)启用![
+已为配置文件![&#128279;](../images/tutorials/ingest-batch-data/profile-enabled-dataset.png)启用
 
 ## 将数据添加到数据集
 

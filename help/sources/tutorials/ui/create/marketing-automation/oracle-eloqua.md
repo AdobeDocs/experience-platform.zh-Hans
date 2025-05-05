@@ -36,7 +36,7 @@ ht-degree: 2%
 | 用户名 | [!DNL Oracle Eloqua]服务器的用户名。 用户名必须设置为`siteName + \\ + username`格式，其中`siteName`是您用于登录到[!DNL Oracle Eloqua]的公司名称，`username`是您的用户名。 例如，您的登录用户名可以是： `Eloqua\Andy`。 **注意**：在使用UI时，必须使用单个反斜杠(`\`)，因为Experience Platform UI在输入用户名时会自动添加一个额外的反斜杠(`\`)。 |
 | 密码 | 与您的[!DNL Oracle Eloqua]用户名对应的密码。 |
 
-有关[!DNL Oracle Eloqua]的身份验证凭据的详细信息，请参阅有关身份验证](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/Authentication_Basic.html)的[[!DNL Oracle Eloqua] 指南。
+有关[!DNL Oracle Eloqua]的身份验证凭据的详细信息，请参阅有关身份验证[&#128279;](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/Authentication_Basic.html)的[!DNL Oracle Eloqua] 指南。
 
 收集所需的凭据后，您可以按照以下步骤将您的[!DNL Oracle Eloqua]帐户关联到Experience Platform。
 

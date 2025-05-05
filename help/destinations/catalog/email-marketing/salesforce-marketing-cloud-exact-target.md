@@ -226,6 +226,7 @@ ht-degree: 2%
      | `xdm: person.name.firstName` | 所需[!DNL Salesforce Marketing Cloud]数据扩展中的`Attribute: First Name`。 | - |
 
    * 下面显示了使用这些映射的示例：
+
      ![显示Target映射的Experience Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/mappings.png)
 
 完成提供目标连接的映射后，请选择&#x200B;**[!UICONTROL 下一步]**。
@@ -260,19 +261,19 @@ ht-degree: 2%
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 选择&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**以导航到目标列表。
+1. 选择&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**&#x200B;以导航到目标列表。
    ![显示“浏览目标”的Experience Platform UI屏幕截图。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/browse-destinations.png)
 
 1. 选择目标并验证状态为&#x200B;**[!UICONTROL 已启用]**。
    ![Experience Platform UI屏幕截图显示目标数据流运行。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/destination-dataflow-run.png)
 
-1. 切换到&#x200B;**[!DNL Activation data]**选项卡，然后选择受众名称。
+1. 切换到&#x200B;**[!DNL Activation data]**&#x200B;选项卡，然后选择受众名称。
    ![显示目标激活数据的Experience Platform UI屏幕截图示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/destinations-activation-data.png)
 
 1. 监控受众摘要，并确保用户档案计数对应于在区段内创建的计数。
    ![显示区段的Experience Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/segment.png)
 
-1. 登录到[[!DNL Salesforce Marketing Cloud]](https://mc.exacttarget.com/)网站。 然后导航到&#x200B;**[!DNL Audience Builder]** > **[!DNL Contact Builder]** > **[!DNL All contacts]** > **[!DNL Email]**页面，并检查受众中的配置文件是否已添加。
+1. 登录到[[!DNL Salesforce Marketing Cloud]](https://mc.exacttarget.com/)网站。 然后导航到&#x200B;**[!DNL Audience Builder]** > **[!DNL Contact Builder]** > **[!DNL All contacts]** > **[!DNL Email]**&#x200B;页面，并检查受众中的配置文件是否已添加。
    ![Salesforce Marketing Cloud UI屏幕截图显示了包含区段中所用配置文件的联系人页面。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/contacts.png)
 
 1. 要检查是否已更新任何配置文件，请导航到&#x200B;**[!UICONTROL 电子邮件]**&#x200B;页面，并验证受众中配置文件的属性值是否已更新。 如果成功，您可以看到根据[受众计划](#schedule-segment-export-example)步骤中提供的&#x200B;**[!UICONTROL 映射ID]**&#x200B;值，[!DNL Salesforce Marketing Cloud]中的每个受众状态都已更新为Experience Platform中的相应受众状态。
@@ -292,7 +293,7 @@ ht-degree: 2%
    * 要修复此错误，请验证您在激活工作流中提供的&#x200B;**[!UICONTROL 映射ID]**&#x200B;到[!DNL (API) Salesforce Marketing Cloud]目标的名称是否与您在[!DNL Salesforce Marketing Cloud]中创建的属性的名称完全匹配。 有关指导，请参阅[在 [!DNL Salesforce Marketing Cloud]](#prerequisites-custom-field)中创建属性。
 
 * 激活区段时，您可能会收到错误消息：`The client's IP address is unauthorized for this account. Allowlist the client's IP address...`
-   * 若要修复此错误，请与[!DNL Salesforce Marketing Cloud]帐户管理员联系，将[Experience Platform IP地址](/help/destinations/catalog/streaming/ip-address-allow-list.md)添加到您的[!DNL Salesforce Marketing Cloud]帐户的受信任IP范围。 列入允许列表如果您需要其他指导，请参阅Marketing Cloud](https://help.salesforce.com/s/articleView?id=sf.mc_es_ip_addresses_for_inclusion.htm&amp;type=5)文档中的[!DNL Salesforce Marketing Cloud]个包含的[IP地址。
+   * 若要修复此错误，请与[!DNL Salesforce Marketing Cloud]帐户管理员联系，将[Experience Platform IP地址](/help/destinations/catalog/streaming/ip-address-allow-list.md)添加到您的[!DNL Salesforce Marketing Cloud]帐户的受信任IP范围。 列入允许列表如果您需要其他指导，请参阅Marketing Cloud[&#128279;](https://help.salesforce.com/s/articleView?id=sf.mc_es_ip_addresses_for_inclusion.htm&amp;type=5)文档中的[!DNL Salesforce Marketing Cloud]个包含的IP地址。
 
 ## 其他资源 {#additional-resources}
 
@@ -307,11 +308,11 @@ ht-degree: 2%
 
 | 发行月份 | 更新类型 | 描述 |
 |---|---|---|
-| 2023 年 10 月 | 文档更新 | <ul><li>我们更新了(API) Salesforce Marketing Cloud ](#prerequisites-destination)中的[先决条件部分，并且通常删除了文档中对属性组的不必要的引用。</li> <li>更新了文档以指示受众状态的属性应仅在[!DNL Email Demographics]数据扩展内的[!DNL Salesforce Marketing Cloud]内创建。</li> <li>我们更新了[映射注意事项和示例](#mapping-considerations-example)部分中的映射表，`Email Addresses`数据扩展中`Email Address`属性的映射标记为必需，标有IMPORTANT的标注中提到了此要求，但表中忽略了该要求。</li></ul> |
+| 2023 年 10 月 | 文档更新 | <ul><li>我们更新了(API) Salesforce Marketing Cloud [&#128279;](#prerequisites-destination)中的先决条件部分，并且通常删除了文档中对属性组的不必要的引用。</li> <li>更新了文档以指示受众状态的属性应仅在[!DNL Email Demographics]数据扩展内的[!DNL Salesforce Marketing Cloud]内创建。</li> <li>我们更新了[映射注意事项和示例](#mapping-considerations-example)部分中的映射表，`Email Addresses`数据扩展中`Email Address`属性的映射标记为必需，标有IMPORTANT的标注中提到了此要求，但表中忽略了该要求。</li></ul> |
 | 2023 年 4 月 | 文档更新 | <ul><li>我们更正了[Salesforce Marketing Cloud (API)中的先决条件](#prerequisites-destination)部分中的语句和引用链接，以指出[!DNL Salesforce Marketing Cloud Engagement]是使用此目标的必需订阅。 部分之前错误地指出用户需要订阅Marketing Cloud **帐户**&#x200B;参与才能继续。</li> <li>我们在[先决条件](#prerequisites)下添加了一个部分，用于将[角色和权限](#prerequisites-roles-permissions)分配给要工作的此目标的[!DNL Salesforce]用户。 (PLATIR-26299)</li></ul> |
 | 2023 年 2 月 | 文档更新 | 我们更新了(API) Salesforce Marketing Cloud中的[先决条件](#prerequisites-destination)部分，以包含一个引用链接，指出[!DNL Salesforce Marketing Cloud Engagement]是使用此目标的必需订阅。 |
 | 2023 年 2 月 | 功能更新 | 我们修复了目标中的错误配置导致向Salesforce发送格式错误的JSON的问题。 这导致某些用户看到大量激活时失败的身份。 (PLATIR-26299) |
-| 2023 年 1 月 | 文档更新 | <ul><li>我们更新了 [!DNL Salesforce]](#prerequisites-destination)中的[先决条件部分，以指出需要在[!DNL Salesforce]端创建属性。 此部分现在包含有关如何执行此操作的详细说明以及有关命名[!DNL Salesforce]中的属性的最佳实践。 (PLATIR-25602)</li><li>我们在[受众计划](#schedule-segment-export-example)步骤中添加了有关如何为每个激活的受众使用映射ID的明确说明。 (PLATIR-25602)</li></ul> |
+| 2023 年 1 月 | 文档更新 | <ul><li>我们更新了 [!DNL Salesforce][&#128279;](#prerequisites-destination)中的先决条件部分，以指出需要在[!DNL Salesforce]端创建属性。 此部分现在包含有关如何执行此操作的详细说明以及有关命名[!DNL Salesforce]中的属性的最佳实践。 (PLATIR-25602)</li><li>我们在[受众计划](#schedule-segment-export-example)步骤中添加了有关如何为每个激活的受众使用映射ID的明确说明。 (PLATIR-25602)</li></ul> |
 | 2022 年 10 月 | 初始版本 | 初始目标版本和文档发布。 |
 
 {style="table-layout:auto"}

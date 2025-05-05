@@ -27,11 +27,11 @@ ht-degree: 5%
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `customDimensions` | 对象 | 捕获Analytics跟踪的自定义维度。 有关此对象内容的更多信息，请参阅](#custom-dimensions)下面的[子部分。 |
-| `endUser` | 对象 | 捕获触发事件的最终用户的Web交互详细信息。 有关此对象内容的更多信息，请参阅](#end-user)下面的[子部分。 |
-| `environment` | 对象 | 捕获有关触发事件的浏览器和操作系统的信息。 有关此对象内容的更多信息，请参阅](#environment)下面的[子部分。 |
-| `event1to100`<br><br>`event101to200`<br><br>`event201to300`<br><br>`event301to400`<br><br>`event401to500`<br><br>`event501to100`<br><br>`event601to700`<br><br>`event701to800`<br><br>`event801to900`<br><br>`event901to1000` | 对象 | 字段组提供对象字段，用于捕获最多1000个自定义事件。 有关这些字段的更多信息，请参阅下面](#events)的[子部分。 |
-| `session` | 对象 | 捕获有关触发事件的会话的信息。 有关此对象内容的更多信息，请参阅](#session)下面的[子部分。 |
+| `customDimensions` | 对象 | 捕获Analytics跟踪的自定义维度。 有关此对象内容的更多信息，请参阅[&#128279;](#custom-dimensions)下面的子部分。 |
+| `endUser` | 对象 | 捕获触发事件的最终用户的Web交互详细信息。 有关此对象内容的更多信息，请参阅[&#128279;](#end-user)下面的子部分。 |
+| `environment` | 对象 | 捕获有关触发事件的浏览器和操作系统的信息。 有关此对象内容的更多信息，请参阅[&#128279;](#environment)下面的子部分。 |
+| `event1to100`<br><br>`event101to200`<br><br>`event201to300`<br><br>`event301to400`<br><br>`event401to500`<br><br>`event501to100`<br><br>`event601to700`<br><br>`event701to800`<br><br>`event801to900`<br><br>`event901to1000` | 对象 | 字段组提供对象字段，用于捕获最多1000个自定义事件。 有关这些字段的更多信息，请参阅下面[&#128279;](#events)的子部分。 |
+| `session` | 对象 | 捕获有关触发事件的会话的信息。 有关此对象内容的更多信息，请参阅[&#128279;](#session)下面的子部分。 |
 
 {style="table-layout:auto"}
 
@@ -93,7 +93,7 @@ Analytics扩展字段组提供了10个对象字段，每个字段最多可捕获
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `search` | [[!UICONTROL  搜索]](../../data-types/search.md) | 捕获与会话条目的Web或移动搜索相关的信息。 |
+| `search` | [[!UICONTROL &#x200B; 搜索]](../../data-types/search.md) | 捕获与会话条目的Web或移动搜索相关的信息。 |
 | `web` | [[!UICONTROL Web信息]](../../data-types/web-information.md) | 捕获有关会话条目的链接点击次数、网页详细信息、反向链接信息和浏览器详细信息的信息。 |
 | `depth` | 整数 | 最终用户的当前会话深度（如页码）。 |
 | `num` | 整数 | 最终用户的当前会话编号。 |

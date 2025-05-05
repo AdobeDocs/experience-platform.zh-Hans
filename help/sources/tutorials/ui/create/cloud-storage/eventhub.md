@@ -61,7 +61,7 @@ ht-degree: 3%
 | 客户端密钥值 | 与客户端ID一起用于对应用程序进行身份验证的客户端密码。 您可以从注册[!DNL Azure Active Directory]的[!DNL Microsoft Entra ID]门户中检索客户端密钥。 |
 | 命名空间 | 您正在访问的[!DNL Event Hub]的命名空间。 [!DNL Event Hub]命名空间提供了一个唯一的范围容器，您可以在其中创建一个或多个[!DNL Event Hubs]。 |
 
-有关[!DNL Azure Active Directory]的详细信息，请阅读有关使用Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application)的[Azure指南。
+有关[!DNL Azure Active Directory]的详细信息，请阅读有关使用Microsoft Entra ID[&#128279;](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application)的Azure指南。
 
 >[!TAB 事件中心范围的Azure Active Directory身份验证]
 
@@ -73,7 +73,7 @@ ht-degree: 3%
 | 命名空间 | 您正在访问的[!DNL Event Hub]的命名空间。 [!DNL Event Hub]命名空间提供了一个唯一的范围容器，您可以在其中创建一个或多个[!DNL Event Hubs]。 |
 | 事件中心名称 | 填写您的[!DNL Azure Event Hub]名称。 有关[!DNL Event Hub]名称的详细信息，请阅读[Microsoft文档](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub)。 |
 
-有关[!DNL Azure Active Directory]的详细信息，请阅读有关使用Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application)的[Azure指南。
+有关[!DNL Azure Active Directory]的详细信息，请阅读有关使用Microsoft Entra ID[&#128279;](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application)的Azure指南。
 
 >[!ENDTABS]
 

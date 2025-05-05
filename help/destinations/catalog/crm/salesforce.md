@@ -222,6 +222,7 @@ ht-degree: 1%
      | `xdm: personalEmail.address` | `Attribute: Email` | 联系人的电子邮件地址。 |
 
    * 下面显示了使用这些映射的示例：
+
      ![显示Target映射的Experience Platform UI屏幕快照示例。](../../assets/catalog/crm/salesforce/mappings-contacts.png)
 
    **使用潜在客户**
@@ -238,6 +239,7 @@ ht-degree: 1%
      | `xdm: personalEmail.address` | `Attribute: Email` | 商机的电子邮件地址。 |
 
    * 下面显示了使用这些映射的示例：
+
      ![显示Target映射的Experience Platform UI屏幕快照示例。](../../assets/catalog/crm/salesforce/mappings-leads.png)
 
 完成提供目标连接的映射后，请选择&#x200B;**[!UICONTROL 下一步]**。
@@ -253,7 +255,7 @@ ht-degree: 1%
 以下显示了[!DNL Salesforce]中的自定义字段示例：
 ![[!DNL Salesforce]显示自定义字段的UI屏幕截图。](../../assets/catalog/crm/salesforce/salesforce-custom-field.png)
 
-下面显示了一个示例，用于指示[!DNL Salesforce CRM] **[!UICONTROL 映射ID]**的位置：
+下面显示了一个示例，用于指示[!DNL Salesforce CRM] **[!UICONTROL 映射ID]**&#x200B;的位置：
 ![显示计划受众导出的Experience Platform UI屏幕截图示例。](../../assets/catalog/crm/salesforce/schedule-segment-export.png)
 
 如上所示，[!DNL Salesforce] **[!UICONTROL 字段名称]**&#x200B;与[!DNL Salesforce CRM] **[!UICONTROL 映射ID]**&#x200B;中指定的值完全匹配。
@@ -271,13 +273,13 @@ ht-degree: 1%
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 选择&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**以导航到目标列表。
+1. 选择&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**&#x200B;以导航到目标列表。
    ![显示“浏览目标”的Experience Platform UI屏幕截图。](../../assets/catalog/crm/salesforce/browse-destinations.png)
 
 1. 选择目标并验证状态为&#x200B;**[!UICONTROL 已启用]**。
    ![Experience Platform UI屏幕截图显示目标数据流运行。](../../assets/catalog/crm/salesforce/destination-dataflow-run.png)
 
-1. 切换到&#x200B;**[!UICONTROL 激活数据]**选项卡，然后选择受众名称。
+1. 切换到&#x200B;**[!UICONTROL 激活数据]**&#x200B;选项卡，然后选择受众名称。
    ![显示目标激活数据的Experience Platform UI屏幕截图示例。](../../assets/catalog/crm/salesforce/destinations-activation-data.png)
 
 1. 监控受众摘要，并确保用户档案计数对应于在区段内创建的计数。
@@ -287,18 +289,22 @@ ht-degree: 1%
 
    **使用联系人**
 
-   * 如果您在Experience Platform区段中选择了&#x200B;*联系人*，请导航到&#x200B;**[!DNL Apps]** > **[!DNL Contacts]**页面。
+   * 如果您在Experience Platform区段中选择了&#x200B;*联系人*，请导航到&#x200B;**[!DNL Apps]** > **[!DNL Contacts]**&#x200B;页面。
+
      ![Salesforce CRM屏幕截图显示了包含区段中的配置文件的“联系人”页面。](../../assets/catalog/crm/salesforce/contacts.png)
 
    * 选择&#x200B;*联系人*&#x200B;并检查字段是否已更新。 您可以看到，根据[受众计划](#schedule-segment-export-example)期间提供的&#x200B;**[!UICONTROL 映射ID]**&#x200B;值，[!DNL Salesforce CRM]中的每个受众状态都更新了Experience Platform中的相应受众状态。
+
      ![Salesforce CRM屏幕截图显示“联系人详细信息”页面，该页面具有更新的受众状态。](../../assets/catalog/crm/salesforce/contact-info.png)
 
    **使用潜在客户**
 
-   * 如果您在Experience Platform区段中选择了&#x200B;*潜在客户*，请导航到&#x200B;**[!DNL Apps]** > **[!DNL Leads]**页面。
+   * 如果您在Experience Platform区段中选择了&#x200B;*潜在客户*，请导航到&#x200B;**[!DNL Apps]** > **[!DNL Leads]**&#x200B;页面。
+
      ![Salesforce CRM屏幕截图显示具有此区段中的配置文件的“潜在客户”页面。](../../assets/catalog/crm/salesforce/leads.png)
 
    * 选择&#x200B;*潜在客户*&#x200B;并检查字段是否已更新。 您可以看到，根据[受众计划](#schedule-segment-export-example)期间提供的&#x200B;**[!UICONTROL 映射ID]**&#x200B;值，[!DNL Salesforce CRM]中的每个受众状态都更新了Experience Platform中的相应受众状态。
+
      ![Salesforce CRM屏幕截图显示具有更新受众状态的“潜在客户详细信息”页面。](../../assets/catalog/crm/salesforce/lead-info.png)
 
 ## 数据使用和治理 {#data-usage-governance}

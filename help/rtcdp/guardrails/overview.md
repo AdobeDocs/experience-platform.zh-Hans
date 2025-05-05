@@ -21,7 +21,7 @@ ht-degree: 1%
 从此处开始，访问下面的链接，了解Real-Time CDP各种服务和区域的所有防护：
 
 * [数据摄取的护栏](/help/ingestion/guardrails.md)
-*  [!DNL Edge Network API]](https://developer.adobe.com/data-collection-apis/docs/getting-started/guardrails/)的[护栏
+* [!DNL Edge Network API][&#128279;](https://developer.adobe.com/data-collection-apis/docs/getting-started/guardrails/)的护栏
 * [ [!DNL Real-Time Customer Profile] 数据和分段的护栏](/help/profile/guardrails.md)
 * [ [!DNL Identity Service] 数据的护栏](/help/identity-service/guardrails.md)
 * [ [!DNL Query Service]的护栏](/help/query-service/guardrails.md)

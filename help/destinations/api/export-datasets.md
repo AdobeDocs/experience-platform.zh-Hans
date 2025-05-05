@@ -19,7 +19,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->**操作项**： Experience Platform](/help/release-notes/latest/latest.md#destinations)的[2024年9月版本引入了为导出数据集数据流设置`endTime`日期的选项。 在2024年9月版本&#x200B;*之前，Adobe还为*&#x200B;创建的所有数据集导出数据流引入了默认结束日期（2025年9月1日）。
+>**操作项**： Experience Platform[&#128279;](/help/release-notes/latest/latest.md#destinations)的2024年9月版本引入了为导出数据集数据流设置`endTime`日期的选项。 在2024年9月版本&#x200B;*之前，Adobe还为*&#x200B;创建的所有数据集导出数据流引入了默认结束日期（2025年9月1日）。
 >
 >对于其中任何数据流，您需要手动更新数据流中的结束日期在结束日期之前，否则您的导出将在该日期停止。 使用Experience Platform UI查看哪些数据流将设置为在2025年9月1日停止。
 >
@@ -42,7 +42,7 @@ ht-degree: 3%
 
 您可以导出的数据集取决于Experience Platform应用程序(Real-Time CDP、Adobe Journey Optimizer)、层(Prime或Ultimate)以及您购买的任何加载项(例如：Data Distiller)。
 
-请参阅UI教程页面](/help/destinations/ui/export-datasets.md#datasets-to-export)上的[表以了解可以导出哪些数据集。
+请参阅UI教程页面[&#128279;](/help/destinations/ui/export-datasets.md#datasets-to-export)上的表以了解可以导出哪些数据集。
 
 ## 支持的目标 {#supported-destinations}
 
@@ -107,7 +107,7 @@ ht-degree: 3%
 
 ### API参考文档 {#api-reference-documentation}
 
-您可以在本教程中找到所有API操作的随附参考文档。 请参阅Adobe Developer网站](https://developer.adobe.com/experience-platform-apis/references/destinations/)上的[[!DNL Flow Service] - Destinations API文档。 我们建议您并行使用此教程和API参考文档。
+您可以在本教程中找到所有API操作的随附参考文档。 请参阅Adobe Developer网站[&#128279;](https://developer.adobe.com/experience-platform-apis/references/destinations/)上的[!DNL Flow Service] - Destinations API文档。 我们建议您并行使用此教程和API参考文档。
 
 ### 术语表 {#glossary}
 
@@ -2449,7 +2449,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 >[!ENDSHADEBOX]
 
-您可以在API参考文档中找到有关数据流运行API](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Dataflow-runs/operation/getFlowRuns)返回的[各种参数的信息。
+您可以在API参考文档中找到有关数据流运行API[&#128279;](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Dataflow-runs/operation/getFlowRuns)返回的各种参数的信息。
 
 ## 验证是否成功导出数据集 {#verify}
 

@@ -13,7 +13,7 @@ ht-degree: 4%
 
 # 访客识别
 
-Edge Network API支持通过第一方ID ([!DNL FPID])](visitor-identification-fpid.md)进行[访客识别。
+Edge Network API支持通过第一方ID ([!DNL FPID]) [&#128279;](visitor-identification-fpid.md)进行访客识别。
 
 所有用户标识都应在`identityMap`字段组中提供。 此字段组包含在AEP Web SDK `ExperienceEvent` mixin中。
 

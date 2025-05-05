@@ -47,7 +47,7 @@ ht-degree: 1%
 
 ![显示受众详细信息页面，显示有关人员受众的信息。](../images/types/people/audience-details.png)
 
-有关受众详细信息页面的详细信息，请阅读受众门户概述](../ui/audience-portal.md#audience-details)的[受众详细信息部分。
+有关受众详细信息页面的详细信息，请阅读受众门户概述[&#128279;](../ui/audience-portal.md#audience-details)的受众详细信息部分。
 
 ## 创建受众 {#create}
 

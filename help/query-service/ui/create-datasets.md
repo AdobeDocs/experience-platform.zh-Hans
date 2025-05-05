@@ -20,7 +20,7 @@ ht-degree: 0%
 
 要从Adobe Experience Platform用户界面(UI)创建数据集，请执行以下步骤：
 
-1. 使用连接的客户端创建查询并验证输出。 要了解如何使用[!DNL Query Editor]编写查询，请阅读有关编写查询](./user-guide.md#writing-queries)的[!DNL Query Editor]用户界面指南[。
+1. 使用连接的客户端创建查询并验证输出。 要了解如何使用[!DNL Query Editor]编写查询，请阅读有关编写查询[&#128279;](./user-guide.md#writing-queries)的[!DNL Query Editor]用户界面指南。
 
 2. 在Experience Platform UI中，依次导航到&#x200B;**[!UICONTROL 查询]**&#x200B;和&#x200B;**[!UICONTROL 模板]**&#x200B;选项卡，然后选择您创建的查询。 有关如何在Experience Platform UI中查看为您的组织创建和保存的查询的更多详细信息，请阅读[[!DNL Query Service] 概述](./overview.md#browse)。
 

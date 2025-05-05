@@ -110,7 +110,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
-要访问Experience Platform中的某些功能，您还需要系统管理员向您授予必要的基于属性的访问控制权限。 请参阅[获取必要的基于属性的访问控制权限](#get-abac-permissions)一节以了解详情。
+>要访问Experience Platform中的某些功能，您还需要系统管理员向您授予必要的基于属性的访问控制权限。 请参阅[获取必要的基于属性的访问控制权限](#get-abac-permissions)一节以了解详情。
 
 ![为您的集成选择产品配置文件。](./images/api-authentication/select-product-profiles.png)
 
@@ -149,7 +149,7 @@ In addition to the above credentials, you also need the generated **[!UICONTROL 
 
 >[!TIP]
 >
-您还可以使用Postman环境和收藏集来生成访问令牌。 有关详细信息，请阅读有关[使用Postman进行身份验证和测试API调用](#use-postman)的部分。
+>您还可以使用Postman环境和收藏集来生成访问令牌。 有关详细信息，请阅读有关[使用Postman进行身份验证和测试API调用](#use-postman)的部分。
 
 ## 直接在API参考文档中创建和检索身份验证凭据 {#get-credentials-functionality}
 
@@ -169,17 +169,17 @@ In addition to the above credentials, you also need the generated **[!UICONTROL 
 
 >[!TIP]
 >
-当您在Experience Platform API参考文档中的不同端点页面之间导航时，页面顶部凭据块仍会显示。
+>当您在Experience Platform API参考文档中的不同端点页面之间导航时，页面顶部凭据块仍会显示。
 
 ## [!BADGE 已弃用]{type=negative}生成JSON Web令牌(JWT) {#jwt}
 
 >[!WARNING]
 >
-已弃用用于生成访问令牌的JWT方法。 必须使用[OAuth服务器到服务器身份验证方法](#select-oauth-server-to-server)创建所有新集成。 Adobe还要求您在2025年6月30日之前将现有集成迁移到OAuth方法，以便您的集成继续工作。 请阅读以下重要文档：
+>已弃用用于生成访问令牌的JWT方法。 必须使用[OAuth服务器到服务器身份验证方法](#select-oauth-server-to-server)创建所有新集成。 Adobe还要求您在2025年6月30日之前将现有集成迁移到OAuth方法，以便您的集成继续工作。 请阅读以下重要文档：
 > 
-* [您的应用程序从JWT迁移到OAuth的迁移指南](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/)
-* [使用OAuth的新旧应用程序的实施指南](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/implementation/)
-* [使用OAuth服务器到服务器凭据方法的优势](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/#why-oauth-server-to-server-credentials)
+>* [您的应用程序从JWT迁移到OAuth的迁移指南](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/)
+>* [使用OAuth的新旧应用程序的实施指南](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/implementation/)
+>* [使用OAuth服务器到服务器凭据方法的优势](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/#why-oauth-server-to-server-credentials)
 
 +++ 查看已弃用的信息
 
@@ -187,9 +187,9 @@ In addition to the above credentials, you also need the generated **[!UICONTROL 
 
 >[!IMPORTANT]
 >
-在本教程中，以下步骤概述了如何在Developer Console中生成JWT。 但是，这种生成方法只应用于测试和评估目的。
+>在本教程中，以下步骤概述了如何在Developer Console中生成JWT。 但是，这种生成方法只应用于测试和评估目的。
 >
-对于常规使用，必须自动生成JWT。 有关如何以编程方式生成JWT的更多信息，请参阅Adobe Developer上的[服务帐户身份验证指南](https://www.adobe.io/developer-console/docs/guides/authentication/JWT/)。
+>对于常规使用，必须自动生成JWT。 有关如何以编程方式生成JWT的更多信息，请参阅Adobe Developer上的[服务帐户身份验证指南](https://www.adobe.io/developer-console/docs/guides/authentication/JWT/)。
 
 在左侧导航中选择&#x200B;**[!UICONTROL 服务帐户(JWT)]**，然后选择&#x200B;**[!UICONTROL 生成JWT]**。
 
@@ -227,7 +227,7 @@ curl -X POST https://ims-na1.adobelogin.com/ims/exchange/jwt \
 
 >[!NOTE]
 >
-您可以使用相同的API密钥、客户端密钥和JWT为每个会话生成新的访问令牌。 这允许您在应用程序中自动生成访问令牌。
+>您可以使用相同的API密钥、客户端密钥和JWT为每个会话生成新的访问令牌。 这允许您在应用程序中自动生成访问令牌。
 
 **响应**
 
@@ -290,7 +290,7 @@ curl -X GET https://platform.adobe.io/data/foundation/schemaregistry/global/clas
 
 >[!IMPORTANT]
 >
-虽然上述调用足以测试您的访问凭据，但请注意，如果没有基于属性的正确访问控制权限，您将无法访问或修改多个资源。 阅读以下&#x200B;**获取必要的基于属性的访问控制权限**&#x200B;部分中的更多信息。
+>虽然上述调用足以测试您的访问凭据，但请注意，如果没有基于属性的正确访问控制权限，您将无法访问或修改多个资源。 阅读以下&#x200B;**获取必要的基于属性的访问控制权限**&#x200B;部分中的更多信息。
 
 ## 获取必要的基于属性的访问控制权限 {#get-abac-permissions}
 
@@ -330,7 +330,7 @@ This [Medium post](https://medium.com/adobetech/using-postman-for-jwt-authentica
 
 >[!NOTE]
 >
-只有系统管理员才能在“权限”中查看和管理API凭据。
+>只有系统管理员才能在“权限”中查看和管理API凭据。
 
 ### 将开发人员添加到产品配置文件 {#add-developers-to-product-profile}
 
@@ -360,7 +360,7 @@ This [Medium post](https://medium.com/adobetech/using-postman-for-jwt-authentica
 
 >[!NOTE]
 >
-只有系统管理员才能在Experience Platform UI中将API分配给角色。
+>只有系统管理员才能在Experience Platform UI中将API分配给角色。
 
 要在Experience Platform API上使用并执行操作，系统管理员需要在角色给定的权限集之外添加API凭据。 在部分中获取有关[管理角色](../access-control/abac/ui/permissions.md#manage-api-credentials-for-a-role)的API凭据的详细信息。
 

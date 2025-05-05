@@ -35,7 +35,7 @@ ht-degree: 3%
 | 访问令牌 | 访问令牌用于通过OAuth 2.0身份验证对您的[!DNL Square]帐户进行身份验证。 可从[!DNL Square]获取访问令牌。 |
 | 刷新令牌 | 刷新令牌用于在当前访问令牌过期后生成新的访问令牌。 可从[!DNL Square]获取刷新令牌。 |
 
-有关这些凭据以及如何获取这些凭据的更多信息，请参阅OAuth](https://developer.squareup.com/docs/oauth-api/receive-and-manage-tokens)上的[[!DNL Square] 文档。
+有关这些凭据以及如何获取这些凭据的更多信息，请参阅OAuth[&#128279;](https://developer.squareup.com/docs/oauth-api/receive-and-manage-tokens)上的[!DNL Square] 文档。
 
 收集所需的凭据后，您可以按照以下步骤将您的[!DNL Square]帐户关联到Experience Platform。
 

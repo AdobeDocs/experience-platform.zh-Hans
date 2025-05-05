@@ -38,7 +38,7 @@ Experience PlatformWeb SDK可以通过Experience PlatformEdge Network向Adobe An
 * [从Adobe Analytics标记扩展迁移到Web SDK标记扩展](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/web-sdk/analytics-extension-to-web-sdk)
 * [从AppMeasurement迁移到Web SDK](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/web-sdk/appmeasurement-to-web-sdk)
 
-有关数据对象字段及其映射到Analytics变量的完整参考，请参阅Adobe Analytics实施指南中有关将数据对象变量映射到Adobe Analytics](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/data-var-mapping)的文档。[
+有关数据对象字段及其映射到Analytics变量的完整参考，请参阅Adobe Analytics实施指南中有关将数据对象变量映射到Adobe Analytics[&#128279;](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/data-var-mapping)的文档。
 
 ## 使用上下文数据变量 {#use-context-data-variables}
 

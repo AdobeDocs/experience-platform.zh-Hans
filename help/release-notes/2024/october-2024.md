@@ -78,7 +78,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| [!BADGE 有限发布版 ]{type=Informative} 灵活的受众评估 | 灵活的受众评估让您可以根据时间敏感的通信需求快速创建新的受众。有关此新功能的更多信息，请参阅 [Audience Portal 文档](../../segmentation/ui/audience-portal.md#flexible-audience-evaluation)。 |
+| [!BADGE 有限发布版 &#x200B;]{type=Informative} 灵活的受众评估 | 灵活的受众评估让您可以根据时间敏感的通信需求快速创建新的受众。有关此新功能的更多信息，请参阅 [Audience Portal 文档](../../segmentation/ui/audience-portal.md#flexible-audience-evaluation)。 |
 
 {style="table-layout:auto"}
 

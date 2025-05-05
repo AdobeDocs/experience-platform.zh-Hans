@@ -28,4 +28,4 @@ ht-degree: 2%
 
 {style="table-layout:auto"}
 
-请参阅有关Real-Time CDP B2B版本](../../tutorials/relationship-b2b.md)中的[架构关系的指南，以了解此类如何在概念上与其他B2B类相关联，以及如何在Adobe Experience Platform UI中建立这些关系。
+请参阅有关Real-Time CDP B2B版本[&#128279;](../../tutorials/relationship-b2b.md)中的架构关系的指南，以了解此类如何在概念上与其他B2B类相关联，以及如何在Adobe Experience Platform UI中建立这些关系。

@@ -37,7 +37,7 @@ Adobe Experience Platform Identity Service通过确定性地关联个人跨设�
 
 ### 在Privacy Service中删除单个身份
 
-Privacy Service会根据隐私法规(例如，《通用数据保护条例》(GDPR)和《加州消费者隐私法案》(CCPA))的规定，处理客户访问、选择退出销售或删除其个人数据的请求。 借助Privacy Service，您可以使用API或UI提交作业请求。 当Experience Platform收到来自Privacy Service的删除请求时，Experience Platform会向Privacy Service发送确认，确认已收到该请求并且已将受影响的数据标记为删除。 个人身份的删除基于提供的命名空间和/或ID值。 此外，还会删除与给定组织关联的所有沙盒。 有关详细信息，请参阅Identity Service](../privacy.md)中的[隐私请求处理指南。
+Privacy Service会根据隐私法规(例如，《通用数据保护条例》(GDPR)和《加州消费者隐私法案》(CCPA))的规定，处理客户访问、选择退出销售或删除其个人数据的请求。 借助Privacy Service，您可以使用API或UI提交作业请求。 当Experience Platform收到来自Privacy Service的删除请求时，Experience Platform会向Privacy Service发送确认，确认已收到该请求并且已将受影响的数据标记为删除。 个人身份的删除基于提供的命名空间和/或ID值。 此外，还会删除与给定组织关联的所有沙盒。 有关详细信息，请参阅Identity Service[&#128279;](../privacy.md)中的隐私请求处理指南。
 
 下表提供了Privacy Service中单个身份删除的划分信息：
 

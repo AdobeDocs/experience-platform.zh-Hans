@@ -15,7 +15,7 @@ ht-degree: 82%
 >
 >经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
-这项扩展旨在与 [AEM 资产分析](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html)结合使用。更具体地说，它可以替换“pageTracker”进程和嵌入代码。当完成配置后，这项扩展会向 Adobe Analytics 发送资产“展示次数”和“单击次数”量度，随后，这些量度将导入 AEM 资产分析报表中。****&#x200B;接下来，可使用 AEM 资产分析或 Adobe Analytics 项目工作区来报告资产量度。
+这项扩展旨在与 [AEM 资产分析](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html)结合使用。更具体地说，它可以替换“pageTracker”进程和嵌入代码。当完成配置后，这项扩展会向 Adobe Analytics 发送资产“展示次数”和“单击次数”量度，随后，这些量度将导入 AEM 资产分析报表中。**&#x200B;**&#x200B;接下来，可使用 AEM 资产分析或 Adobe Analytics 项目工作区来报告资产量度。
 
 ## 扩展的先决条件
 

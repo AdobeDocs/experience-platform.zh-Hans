@@ -21,7 +21,7 @@ ht-degree: 6%
 | 显示名称 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- | --- |
 | [!UICONTROL 其他说明] | `additionalInstruction` | [[!UICONTROL 可编码概念]](../data-types/codeable-concept.md)的数组 | 对患者的补充说明或警告。 |
-| ]所需的[!UICONTROL  | `asNeededFor` | [[!UICONTROL 可编码概念]](../data-types/codeable-concept.md)的数组 | 描述根据需要服用药物时应该出现什么问题。 |
+| 所需的 | `asNeededFor` | [[!UICONTROL 可编码概念]](../data-types/codeable-concept.md)的数组 | 描述根据需要服用药物时应该出现什么问题。 |
 | [!UICONTROL 剂量和速率] | `doseAndRate` | 对象数组 | 给药量、给药量或典型给药量。 有关详细信息，请参阅下面的[部分](#dose-and-rate) |
 | 每次管理[!UICONTROL 最大剂量] | `maxDosePerAdministration` | [[!UICONTROL 简单数量]](../data-types/simple-quantity.md) | 每次给药的药物上限。 |
 | [!UICONTROL 每生命周期最大剂量] | `maxDosePerLifetime` | [[!UICONTROL 简单数量]](../data-types/simple-quantity.md) | 患者每生用药的上限。 |

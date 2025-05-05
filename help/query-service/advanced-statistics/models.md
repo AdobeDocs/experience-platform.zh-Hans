@@ -77,7 +77,7 @@ ORDER BY period;
 
 >[!TIP]
 >
->有关`TRANSFORM`子句的完整引用，包括`CREATE MODEL`和`CREATE TABLE`中支持的函数和使用情况，请参阅SQL语法文档](../sql/syntax.md#transform)中的[`TRANSFORM`子句。
+>有关`TRANSFORM`子句的完整引用，包括`CREATE MODEL`和`CREATE TABLE`中支持的函数和使用情况，请参阅SQL语法文档[&#128279;](../sql/syntax.md#transform)中的`TRANSFORM`子句。
 
 ## 更新模型 {#update}
 

@@ -26,7 +26,7 @@ ht-degree: 0%
 
 要构建同意仪表板，您必须首先创建同意联系的所有用户档案的受众。 要导航到Real-Time Customer Data Platform区段生成器，请在Experience Platform UI的左侧导航中选择&#x200B;**[!UICONTROL 受众]**。 从[!UICONTROL 受众]仪表板的[!UICONTROL 客户]选项卡中，选择视图右上角的&#x200B;**[!UICONTROL 创建受众]**，然后选择&#x200B;**[!UICONTROL 生成规则]**。
 
-突出显示具有[!UICONTROL 客户]、[!UICONTROL 受众]和[!UICONTROL 创建区段]的[!UICONTROL 受众]仪表板。](../images/insights-use-cases/consent-analysis/create-audience.png)![
+突出显示具有[!UICONTROL 客户]、[!UICONTROL 受众]和[!UICONTROL 创建区段]的[!UICONTROL 受众]仪表板。![&#128279;](../images/insights-use-cases/consent-analysis/create-audience.png)
 
 此时将显示“区段生成器”。 接下来，从可用选项中选择&#x200B;**[!UICONTROL XDM Individual Profile]**。 有关[规则生成器画布](../../segmentation/ui/segment-builder.md#rule-builder-canvas)的详细信息，请参阅文档。
 
@@ -38,7 +38,7 @@ ht-degree: 0%
 >
 >如果您在与Adobe推荐字段组不同的属性中维护了用户同意，则必须选择这些属性，而不是下面显示的属性。
 
-有关分段](../../segmentation/tutorials/consents.md#handling-consent-in-segmentation)文档中[同意处理的更多信息。
+有关分段[&#128279;](../../segmentation/tutorials/consents.md#handling-consent-in-segmentation)文档中同意处理的更多信息。
 
 ![带有[!UICONTROL 同意和首选项]属性文件夹的区段生成器突出显示。](../images/insights-use-cases/consent-analysis/consent-and-preferences.png)
 

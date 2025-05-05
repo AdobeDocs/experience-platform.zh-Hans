@@ -74,7 +74,7 @@ Adobe Campaign Managed Cloud Services源允许您将Adobe Campaign v8投放日�
 
 现在，您已在Campaign客户端控制台中访问数据日志，创建了架构和数据集，接下来可继续创建源连接以将Campaign Managed Services数据导入Experience Platform。
 
-有关如何将Campaign v8投放日志和跟踪日志数据引入Experience Platform的详细说明，请阅读有关在UI中创建Campaign Managed Services源连接的指南[](../../tutorials/ui/create/adobe-applications/campaign.md)。
+有关如何将Campaign v8投放日志和跟踪日志数据引入Experience Platform的详细说明，请阅读有关在UI中创建Campaign Managed Services源连接的指南[&#128279;](../../tutorials/ui/create/adobe-applications/campaign.md)。
 
 >[!IMPORTANT]
 >

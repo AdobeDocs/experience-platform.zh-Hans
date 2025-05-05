@@ -17,7 +17,7 @@ ht-degree: 0%
 
 此页面显示[!DNL Amazon S3]目标可用的所有配置选项。 您可以根据需要编辑以下步骤中显示的配置或删除配置的某些部分。
 
-有关下面使用的参数的详细说明，请参阅目标SDK ](../../functionality/configuration-options.md)中的[配置选项。
+有关下面使用的参数的详细说明，请参阅目标SDK [&#128279;](../../functionality/configuration-options.md)中的配置选项。
 
 ## 先决条件 {#prerequisites}
 

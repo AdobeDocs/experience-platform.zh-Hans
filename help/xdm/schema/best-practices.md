@@ -198,7 +198,7 @@ ht-degree: 1%
 
 ### 采用迭代建模方法 {#iterative-modeling}
 
-架构演变](./composition.md#evolution)的[规则规定，一旦实施架构，只能对架构进行非破坏性更改。 换言之，一旦您将字段添加到架构并且已根据该字段摄取数据，则无法再移除该字段。 因此，在首次创建架构时，务必要采用迭代建模方法，从随着时间推移逐渐增加复杂性的简化实施开始。
+架构演变[&#128279;](./composition.md#evolution)的规则规定，一旦实施架构，只能对架构进行非破坏性更改。 换言之，一旦您将字段添加到架构并且已根据该字段摄取数据，则无法再移除该字段。 因此，在首次创建架构时，务必要采用迭代建模方法，从随着时间推移逐渐增加复杂性的简化实施开始。
 
 如果您不确定某个特定字段是否必须包含在架构中，最佳实践是将其排除在外。 如果之后确定该字段是必需的，则始终可以将该字段添加到架构的下一个迭代中。
 
@@ -219,7 +219,7 @@ Experience Platform提供了多个现成的XDM架构字段组，用于捕获与�
 
 例如，您可以使用[[!UICONTROL Adobe Analytics ExperienceEvent模板]字段组](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json)将[!DNL Analytics]特定的字段映射到您的XDM架构。 根据您使用的Adobe应用程序，您应在架构中使用这些Adobe提供的字段组。
 
-![Adobe Analytics ExperienceEvent模板]的架构图](../images/best-practices/analytics-field-group.png)[!UICONTROL 
+![Adobe Analytics ExperienceEvent模板]的架构图(../images/best-practices/analytics-field-group.png)
 
 Adobe应用程序字段组通过使用`identityMap`字段自动分配默认主标识，该字段是系统生成的只读对象，用于映射单个客户的标准标识值。
 

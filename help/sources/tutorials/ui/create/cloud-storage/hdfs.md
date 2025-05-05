@@ -37,7 +37,7 @@ ht-degree: 2%
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `url` | URL定义了匿名连接到HDFS所需的身份验证参数。 有关如何获取此值的详细信息，请参阅以下有关HDFS](https://hadoop.apache.org/docs/r1.2.1/HttpAuthentication.html)的[HTTPS身份验证的文档。 |
+| `url` | URL定义了匿名连接到HDFS所需的身份验证参数。 有关如何获取此值的详细信息，请参阅以下有关HDFS[&#128279;](https://hadoop.apache.org/docs/r1.2.1/HttpAuthentication.html)的HTTPS身份验证的文档。 |
 
 ## 连接您的HDFS帐户
 

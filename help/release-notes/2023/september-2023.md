@@ -84,7 +84,7 @@ Adobe Experience Platform 数据治理是一系列策略和技术，用于管理
 
 | 功能 | 描述 |
 | --- | --- |
-| 适用于第三方数据的新合作伙伴生态系统标签 | 提供了用于第三方扩充和发现潜在客户的新数据使用标签。 有关详细信息，请参阅有关合作伙伴生态系统标签](../../data-governance/labels/reference.md#partner)的[文档。 |
+| 适用于第三方数据的新合作伙伴生态系统标签 | 提供了用于第三方扩充和发现潜在客户的新数据使用标签。 有关详细信息，请参阅有关合作伙伴生态系统标签[&#128279;](../../data-governance/labels/reference.md#partner)的文档。 |
 
 {style="table-layout:auto"}
 
@@ -133,7 +133,7 @@ Add these to release notes as they go out
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| Real-Time CDP中的数据导出 | [数据集导出](../../destinations/ui/export-datasets.md)功能现已正式可用。 查看可根据您购买的Experience Platform应用程序](../../destinations/ui/export-datasets.md#datasets-to-export)导出哪些数据集[，并查看用于导出数据集的[护栏](/help/destinations/guardrails.md#dataset-exports)。 |
+| Real-Time CDP中的数据导出 | [数据集导出](../../destinations/ui/export-datasets.md)功能现已正式可用。 查看可根据您购买的Experience Platform应用程序[&#128279;](../../destinations/ui/export-datasets.md#datasets-to-export)导出哪些数据集，并查看用于导出数据集的[护栏](/help/destinations/guardrails.md#dataset-exports)。 |
 | (Beta)支持导出数组类型的对象 | 将原始值（字符串、int或布尔值）的数组作为平面架构文件导出到云存储目标。 有关[文档](../../destinations/ui/export-arrays-maps-objects.md)中功能的更多信息。 |
 | Destination SDK中的动态下拉列表选择器 | 通过Destination SDK创建目标时，您现在可以使用[动态下拉选择器](../../destinations/destination-sdk/functionality/destination-configuration/customer-data-fields.md#dynamic-dropdown-selectors)使用从API检索的值填充下拉选择器的字段。 |
 
@@ -174,7 +174,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 组件类型 | 名称 | 更新描述 |
 | --- | --- | --- |
-| 扩展 | [!UICONTROL AJO实体字段] | 已将多变体]](https://github.com/adobe/xdm/pull/1774/files)的[[!UICONTROL 标志添加到[!UICONTROL AJO实体字段]，以标识该变体是否为多变体。 |
+| 扩展 | [!UICONTROL AJO实体字段] | 已将多变体[&#128279;](https://github.com/adobe/xdm/pull/1774/files)的标志添加到[!UICONTROL AJO实体字段]，以标识该变体是否为多变体。 |
 | 数据类型 | [!UICONTROL 产品列表项] | 已添加[[!UICONTROL 退货项]](https://github.com/adobe/xdm/pull/1773/files)以包含退货商品授权信息。 |
 | 数据类型 | 订单 | 已添加[[!UICONTROL 退货信息]](https://github.com/adobe/xdm/pull/1773/files)以包含颁发的RMA（退货商品授权）。 |
 

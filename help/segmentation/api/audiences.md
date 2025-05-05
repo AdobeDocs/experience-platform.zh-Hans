@@ -33,7 +33,7 @@ GET /audiences?{QUERY_PARAMETERS}
 
 >[!NOTE]
 >
->如果您不使用任何查询参数使用此端点，则&#x200B;**不会返回非活动受众**。 但是，如果将此端点与`property=audienceId`查询参数一起使用，则将返回非活动受众&#x200B;****。
+>如果您不使用任何查询参数使用此端点，则&#x200B;**不会返回非活动受众**。 但是，如果将此端点与`property=audienceId`查询参数一起使用，则将返回非活动受众&#x200B;**&#x200B;**。
 
 在检索受众列表时，可以使用以下查询参数：
 
@@ -550,7 +550,7 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/audiences/60ccea95-1435-41
 | 属性 | 描述 |
 | -------- | ----------- |
 | `op` | 所执行的PATCH操作的类型。 对于此终结点，此值是&#x200B;**始终** `/add`。 |
-| `path` | 要更新的字段的路径。 无法编辑系统生成的字段，如`id`、`audienceId`和`namespace` ****。 |
+| `path` | 要更新的字段的路径。 无法编辑系统生成的字段，如`id`、`audienceId`和`namespace` **&#x200B;**。 |
 | `value` | 分配给`path`中指定的属性的新值。 |
 
 +++

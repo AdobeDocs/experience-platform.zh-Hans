@@ -68,8 +68,8 @@ Adobe Campaign支持以下连接类型：
 在[设置](../../ui/connect-destination.md)此目标时，必须提供以下信息：
 
 * 对于&#x200B;**[!UICONTROL Amazon S3]**&#x200B;连接，您必须提供您的[!UICONTROL 访问密钥ID]和[!UICONTROL 访问密钥]。
-* 对于使用密码&#x200B;]**连接的**[!UICONTROL  SFTP，您必须提供[!UICONTROL 域]、[!UICONTROL 端口]、[!UICONTROL 用户名]和[!UICONTROL 密码]。
-* 对于具有SSH密钥&#x200B;]**连接的**[!UICONTROL  SFTP，您必须提供[!UICONTROL 域]、[!UICONTROL 端口]、[!UICONTROL 用户名]和[!UICONTROL SSH密钥]。
+* 对于使用密码&#x200B;**连接的** SFTP，您必须提供[!UICONTROL 域]、[!UICONTROL 端口]、[!UICONTROL 用户名]和[!UICONTROL 密码]。
+* 对于具有SSH密钥&#x200B;**连接的** SFTP，您必须提供[!UICONTROL 域]、[!UICONTROL 端口]、[!UICONTROL 用户名]和[!UICONTROL SSH密钥]。
 * 对于&#x200B;**[!UICONTROL Azure Blob]**&#x200B;连接，必须提供连接字符串。
 * 或者，您可以附加RSA格式的公钥，以将使用PGP/GPG的加密添加到&#x200B;**[!UICONTROL 密钥]**&#x200B;部分下的导出文件。 您的公钥必须编写为[!DNL Base64]编码字符串。
 * **[!UICONTROL 名称]**：为您的目标选择相关的名称。
@@ -97,7 +97,7 @@ Adobe Campaign支持以下连接类型：
 
 ### 目标属性 {#destination-attributes}
 
-将受众激活到此目标时，Adobe建议您从[合并架构](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择要导出到目标的唯一标识符和任何其他XDM字段。 有关详细信息，请参阅将受众激活到电子邮件营销目标时的最佳实践[](overview.md#best-practices)。
+将受众激活到此目标时，Adobe建议您从[合并架构](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择要导出到目标的唯一标识符和任何其他XDM字段。 有关详细信息，请参阅将受众激活到电子邮件营销目标时的最佳实践[&#128279;](overview.md#best-practices)。
 
 ## 导出的数据 {#exported-data}
 

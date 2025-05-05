@@ -85,7 +85,7 @@ ht-degree: 2%
 
 ### API参考文档 {#api-reference-documentation}
 
-您可以在本教程中找到所有API操作的随附参考文档。 请参阅Adobe I/O](https://www.adobe.io/experience-platform-apis/references/flow-service/)上的[流服务API文档。 我们建议您并行使用此教程和API参考文档。
+您可以在本教程中找到所有API操作的随附参考文档。 请参阅Adobe I/O[&#128279;](https://www.adobe.io/experience-platform-apis/references/flow-service/)上的流服务API文档。 我们建议您并行使用此教程和API参考文档。
 
 ## 获取可用目标列表 {#get-the-list-of-available-destinations}
 
@@ -531,8 +531,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 | `name` | 提供到批处理目标的基本连接的名称。 |
 | `description` | 或者，您可以为基本连接提供描述。 |
 | `connectionSpec.id` | 使用连接规范ID作为所需的批处理目标。 您在步骤[获取可用目标的列表](#get-the-list-of-available-destinations)中获取了此ID。 |
-| `auth.specname` | 指示目标的身份验证格式。 要查找目标的specName，请对连接规范端点](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)执行[GET调用，并提供所需目标的连接规范。 在响应中查找参数`authSpec.name`。 <br>例如，对于Adobe Campaign目标，您可以使用任何`S3`、`SFTP with Password`或`SFTP with SSH Key`。 |
-| `params` | 根据连接到的目标，必须提供不同的必需身份验证参数。 对于Amazon S3连接，您必须向Amazon S3存储位置提供访问ID和密钥。 <br>要查找目标所需的参数，请对连接规范终结点](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)执行[GET调用，并提供所需目标的连接规范。 在响应中查找参数`authSpec.spec.required`。 |
+| `auth.specname` | 指示目标的身份验证格式。 要查找目标的specName，请对连接规范端点[&#128279;](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)执行GET调用，并提供所需目标的连接规范。 在响应中查找参数`authSpec.name`。 <br>例如，对于Adobe Campaign目标，您可以使用任何`S3`、`SFTP with Password`或`SFTP with SSH Key`。 |
+| `params` | 根据连接到的目标，必须提供不同的必需身份验证参数。 对于Amazon S3连接，您必须向Amazon S3存储位置提供访问ID和密钥。 <br>要查找目标所需的参数，请对连接规范终结点[&#128279;](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)执行GET调用，并提供所需目标的连接规范。 在响应中查找参数`authSpec.spec.required`。 |
 
 {style="table-layout:auto"}
 
@@ -845,8 +845,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 | `description` | 或者，您可以为目标连接提供描述。 |
 | `baseConnectionId` | 使用您在上面的步骤中创建的基本连接的ID。 |
 | `connectionSpec.id` | 使用连接规范ID作为所需的批处理目标。 您在步骤[获取可用目标的列表](#get-the-list-of-available-destinations)中获取了此ID。 |
-| `params` | 根据连接到的目标，必须为存储位置提供不同的必需参数。 对于Amazon S3连接，您必须向Amazon S3存储位置提供访问ID和密钥。 <br>要查找目标所需的参数，请对连接规范终结点](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)执行[GET调用，并提供所需目标的连接规范。 在响应中查找参数`targetSpec.spec.required`。 |
-| `params.mode` | 根据目标支持的模式，必须在此处提供不同的值。 要查找目标的所需参数，请对连接规范端点](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)执行[GET调用，并提供所需目标的连接规范。 在响应中查找参数`targetSpec.spec.properties.mode.enum`并选择所需的模式。 |
+| `params` | 根据连接到的目标，必须为存储位置提供不同的必需参数。 对于Amazon S3连接，您必须向Amazon S3存储位置提供访问ID和密钥。 <br>要查找目标所需的参数，请对连接规范终结点[&#128279;](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)执行GET调用，并提供所需目标的连接规范。 在响应中查找参数`targetSpec.spec.required`。 |
+| `params.mode` | 根据目标支持的模式，必须在此处提供不同的值。 要查找目标的所需参数，请对连接规范端点[&#128279;](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)执行GET调用，并提供所需目标的连接规范。 在响应中查找参数`targetSpec.spec.properties.mode.enum`并选择所需的模式。 |
 | `params.bucketName` | 对于S3连接，提供将导出文件的存储段的名称。 |
 | `params.path` | 对于S3连接，在要导出文件的存储位置中提供文件路径。 |
 | `params.format` | `CSV`是当前唯一支持的文件导出类型。 |

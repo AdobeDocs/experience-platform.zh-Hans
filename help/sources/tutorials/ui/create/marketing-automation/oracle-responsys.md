@@ -39,7 +39,7 @@ ht-degree: 2%
 | 客户端 ID | [!DNL Oracle Responsys]实例的客户端ID。 |
 | 客户端密码 | [!DNL Oracle Responsys]实例的客户端密钥。 |
 
-有关[!DNL Oracle Responsys]的身份验证凭据的详细信息，请参阅有关身份验证](https://docs.oracle.com/en/cloud/saas/marketing/responsys-develop/API/GetStarted/authentication.htm)的[[!DNL Oracle Responsys] 指南。
+有关[!DNL Oracle Responsys]的身份验证凭据的详细信息，请参阅有关身份验证[&#128279;](https://docs.oracle.com/en/cloud/saas/marketing/responsys-develop/API/GetStarted/authentication.htm)的[!DNL Oracle Responsys] 指南。
 
 收集所需的凭据后，您可以按照以下步骤将您的[!DNL Oracle Responsys]帐户关联到Experience Platform。
 

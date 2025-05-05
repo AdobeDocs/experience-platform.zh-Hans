@@ -18,7 +18,7 @@ ht-degree: 1%
 >
 >此数据类型旨在使用[[!UICONTROL 同意和偏好设置]字段组](../field-groups/profile/consents.md)作为基准自定义组织的同意架构的结构。
 >
->如果您需要特定营销偏好设置字段的`subscriptions`映射，则必须改用具有订阅数据类型](./marketing-field-subscriptions.md)的[营销字段。
+>如果您需要特定营销偏好设置字段的`subscriptions`映射，则必须改用具有订阅数据类型[&#128279;](./marketing-field-subscriptions.md)的营销字段。
 
 ![](../images/data-types/marketing-field.png)
 

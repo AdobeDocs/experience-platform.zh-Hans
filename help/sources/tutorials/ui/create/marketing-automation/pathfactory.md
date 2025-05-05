@@ -23,7 +23,7 @@ ht-degree: 2%
    * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
 
-如果您已经拥有[!DNL PathFactory]帐户，则可以跳过本文档的其余部分，并继续学习关于使用UI](../../dataflow/marketing-automation.md)将营销自动化数据引入Experience Platform的[教程。
+如果您已经拥有[!DNL PathFactory]帐户，则可以跳过本文档的其余部分，并继续学习关于使用UI[&#128279;](../../dataflow/marketing-automation.md)将营销自动化数据引入Experience Platform的教程。
 
 ### 收集所需的凭据 {#gather-credentials}
 

@@ -87,7 +87,7 @@ ht-degree: 1%
 
 ## 将数据字段映射到XDM架构
 
-在将数据摄取到Experience Platform之前，使用映射界面将源数据映射到相应的架构字段。  有关详细信息，请阅读UI](../../../../../data-prep/ui/mapping.md)中的[映射指南。
+在将数据摄取到Experience Platform之前，使用映射界面将源数据映射到相应的架构字段。  有关详细信息，请阅读UI[&#128279;](../../../../../data-prep/ui/mapping.md)中的映射指南。
 
 ![源工作流的映射步骤。](../../../../images/tutorials/create/algolia/user-profiles/mapping.png)
 

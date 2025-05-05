@@ -34,7 +34,7 @@ Real-Time CDP、B2B edition还允许您跨与单个客户关联的企业源浏�
 
 ![](images/b2b-profile-detail.png)
 
-要了解有关Experience Platform UI中提供的配置文件详细信息的更多信息，请参阅配置文件仪表板文档](../../dashboards/guides/profiles.md#browse-profiles)的[详细信息部分。
+要了解有关Experience Platform UI中提供的配置文件详细信息的更多信息，请参阅配置文件仪表板文档[&#128279;](../../dashboards/guides/profiles.md#browse-profiles)的详细信息部分。
 
 ### “帐户”选项卡
 

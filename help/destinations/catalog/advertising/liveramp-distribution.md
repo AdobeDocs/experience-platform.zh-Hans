@@ -101,7 +101,7 @@ ht-degree: 37%
 
 ## 目标特定的设置 {#destination-settings}
 
-[!DNL LiveRamp - Distribution]支持的每个目标[](#supported-destinations)都需要您填写特定的配置选项。
+[!DNL LiveRamp - Distribution]支持的每个目标[&#128279;](#supported-destinations)都需要您填写特定的配置选项。
 
 有关如何配置每个目标的详细指导，请参阅以下部分。
 

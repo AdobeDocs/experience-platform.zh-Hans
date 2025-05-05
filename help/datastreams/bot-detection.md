@@ -59,7 +59,7 @@ ht-degree: 0%
 
 在机器人检测规则页面中，您可以使用以下功能配置机器人检测：
 
-* 使用[!DNL [IAB/ABC International Spiders and Bots List]](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/)。
+* 使用[[!DNL [IAB/ABC International Spiders and Bots List]]](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/)。
 * 创建自己的机器人检测规则。
 
 ### 使用IAB/ABC国际蜘蛛程序和机器人列表 {#iab-list}

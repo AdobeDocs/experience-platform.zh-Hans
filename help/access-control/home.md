@@ -131,7 +131,7 @@ Experience Platform附带两个预配置的默认角色。 下表概述了每个
 | [!DNL Adobe Mix Modeler] | [!UICONTROL 查看Adobe Mix Modeler模型配置] | 对模型配置的只读访问权限。 |
 | [!DNL Adobe Mix Modeler] | [!UICONTROL 管理Adobe Mix Modeler模型计划配置] | 查看和修改计划配置的功能。 |
 | [!DNL Adobe Mix Modeler] | [!UICONTROL 查看Adobe Mix Modeler模型计划配置] | 对计划配置的只读访问权限。 |
-| [!DNL AI Assistant] | [!UICONTROL 启用AI助手] | 能够询问[!DNL [AI assistant]](../ai-assistant/access.md)问题。 |
+| [!DNL AI Assistant] | [!UICONTROL 启用AI助手] | 能够询问[[!DNL [AI assistant]]](../ai-assistant/access.md)问题。 |
 | [!DNL AI Assistant] | [!UICONTROL 查看运营分析] | 访问以获取对[操作分析](../ai-assistant/home.md##operational-insights)查询的响应。 |
 | [!DNL AI Assistant] | [!UICONTROL 生成内容] | 允许用户使用[!DNL AI Assistant]生成内容。 |
 | [!DNL AI Assistant] | [!UICONTROL 管理品牌套件] | 允许用户使用[!DNL AI Assistant]创建品牌指南。 |

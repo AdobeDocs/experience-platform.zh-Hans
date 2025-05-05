@@ -46,7 +46,7 @@ ht-degree: 17%
 
 ### 创建新架构
 
-要创建新架构，请选择&#x200B;**[!UICONTROL 架构]**&#x200B;工作区的右上角的&#x200B;**[!UICONTROL 创建架构]**。 有关如何使用架构编辑器](../../xdm/tutorials/create-schema-ui.md#create)创建架构的信息，请参阅[指南。 或者，如果需要，您可以[使用架构注册表API](../../xdm/tutorials/create-schema-api.md)创建架构。
+要创建新架构，请选择&#x200B;**[!UICONTROL 架构]**&#x200B;工作区的右上角的&#x200B;**[!UICONTROL 创建架构]**。 有关如何使用架构编辑器[&#128279;](../../xdm/tutorials/create-schema-ui.md#create)创建架构的信息，请参阅指南。 或者，如果需要，您可以[使用架构注册表API](../../xdm/tutorials/create-schema-api.md)创建架构。
 
 ### 将数据使用标签添加到架构 {#add-labels-to-schema}
 

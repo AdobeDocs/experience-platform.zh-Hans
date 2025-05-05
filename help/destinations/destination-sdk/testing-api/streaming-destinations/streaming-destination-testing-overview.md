@@ -45,7 +45,7 @@ ht-degree: 0%
 响应包含目标请求处理的结果。 该请求包括三个主要部分：
 * Adobe为目标生成的请求。
 * 从目标收到的响应。
-* 在请求中发送的用户档案列表，无论这些用户档案是您在](../../testing-api/streaming-destinations/destination-testing-api.md#test-with-added-profiles)请求中添加的[，还是Adobe生成的（如果[目标测试请求正文为空](../../testing-api/streaming-destinations/destination-testing-api.md#test-without-adding-profiles)）。
+* 在请求中发送的用户档案列表，无论这些用户档案是您在[&#128279;](../../testing-api/streaming-destinations/destination-testing-api.md#test-with-added-profiles)请求中添加的，还是Adobe生成的（如果[目标测试请求正文为空](../../testing-api/streaming-destinations/destination-testing-api.md#test-without-adding-profiles)）。
 
 >[!NOTE]
 >

@@ -28,12 +28,12 @@ ht-degree: 5%
 | [!UICONTROL 标识符] | `identifier` | [[!UICONTROL 标识符]](../data-types/identifier.md)的数组 | 链接到约会的唯一标识符列表。 这些标识符是根据业务规则分配的，或者在日程安排的直接URL链接不合适时分配的。 |
 | [!UICONTROL 注释] | `note` | [[!UICONTROL 批注]](../data-types/annotation.md)的数组 | 有关约会的附加注释或评论。 |
 | [!UICONTROL 原始约会] | `originatingAppointment` | [[!UICONTROL 引用]](../data-types/reference.md) | 定期相关约会集中的原始约会。 |
-| [!UICONTROL 参与者] | `participant` | 对象数组 | 参与预约的参与者名单。 有关详细信息，请参阅下面](#participant)的[部分。 |
+| [!UICONTROL 参与者] | `participant` | 对象数组 | 参与预约的参与者名单。 有关详细信息，请参阅下面[&#128279;](#participant)的部分。 |
 | [!UICONTROL 患者说明] | `patientInstruction` | [[!UICONTROL 可编码引用]](../data-types/reference.md)的数组 | 诊断与约会相关。 |
 | [!UICONTROL 上一个约会] | `previousAppointment` | [[!UICONTROL 引用]](../data-types/reference.md) | 历次相关任用中的上一个任用。 |
 | [!UICONTROL 优先级] | `priority` | [[!UICONTROL 可编码的概念]](../data-types/codeable-concept.md) | 预约的优先级，在需要重新确定预约优先级时，可用于做出明智的决策。 iCal标准将`0`指定为未定义，`1`指定为最高优先级，`9`指定为最低优先级。 |
 | [!UICONTROL 原因] | `reason` | [[!UICONTROL 可编码概念]](../data-types/codeable-concept.md)的数组 | 安排约会的原因，通常是条件或过程。 |
-| [!UICONTROL 周期性模板] | `recurrenceTemplate` | 对象数组 | 包含用于创建定期约会的定期模式或模板的详细信息。  有关详细信息，请参阅下面](#recurrence)的[部分。 |
+| [!UICONTROL 周期性模板] | `recurrenceTemplate` | 对象数组 | 包含用于创建定期约会的定期模式或模板的详细信息。  有关详细信息，请参阅下面[&#128279;](#recurrence)的部分。 |
 | [!UICONTROL 替换] | `replaces` | [[!UICONTROL 引用]](../data-types/reference.md)的数组 | 此约会将替换此约会。 如果存在取消操作，则可以在引用资源的`cancellationReason`属性中找到取消操作的详细信息。 |
 | [!UICONTROL 请求时段] | `requestedPeriod` | [[!UICONTROL 周期]](../data-types/period.md)的数组 | 一组日期范围（可能包括时间），在此期间最好安排约会。 |
 | [!UICONTROL 服务类别] | `serviceCategory` | [[!UICONTROL 可编码概念]](../data-types/codeable-concept.md)的数组 | 要在约会期间执行的服务的广泛分类。 |
@@ -81,10 +81,10 @@ ht-degree: 5%
 
 | 显示名称 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- | --- |
-| [!UICONTROL 每月模板] | `monthlyTemplate` | 对象数组 | 有关每月定期约会的信息。 有关详细信息，请参阅下面](#monthly-template)的[部分。 |
+| [!UICONTROL 每月模板] | `monthlyTemplate` | 对象数组 | 有关每月定期约会的信息。 有关详细信息，请参阅下面[&#128279;](#monthly-template)的部分。 |
 | [!UICONTROL 周期性类型] | `recurrenceType` | [[!UICONTROL 可编码的概念]](../data-types/codeable-concept.md) | 约会系列应重复出现的频率，如每周、每月或每年。 |
 | [!UICONTROL 时区] | `timezone` | [[!UICONTROL 可编码的概念]](../data-types/codeable-concept.md) | 定期约会的时区。 |
-| [!UICONTROL 每周模板] | `weeklyTemplate` | 对象数组 | 有关每周定期约会的信息。 有关详细信息，请参阅下面](#weekly-template)的[部分。 |
+| [!UICONTROL 每周模板] | `weeklyTemplate` | 对象数组 | 有关每周定期约会的信息。 有关详细信息，请参阅下面[&#128279;](#weekly-template)的部分。 |
 | [!UICONTROL 年度模板] | `yearlyTemplate` | 对象 | 有关年度定期约会的信息。 包含一个属性`yearInterval`，该属性包含一个整数值，指示约会每隔n年进行一次。 |
 | [!UICONTROL 不包括日期] | `excludingDate` | 日期数组 | 应从循环中排除的任何日期，例如节假日。 |
 | [!UICONTROL 排除周期性Id] | `excludingRecurrenceId` | 整数数组 | 应从循环中排除的任何循环ID。 这是`excludingDate`的替代方法，其中您指示要排除的约会`reccurenceID`。 |

@@ -54,7 +54,7 @@ prod:all?FLATTEN
 
 ## 示例 {#example}
 
-本指南中使用的示例架构使用了标准字段组[!UICONTROL Commerce详细信息]，该组使用`commerce`对象结构和`productListItems`数组。 有关[!UICONTROL Commerce详细信息]字段组](../../xdm/field-groups/event/commerce-details.md)的[更多信息，请参阅XDM文档。 架构结构的表示形式可以在下图中看到。
+本指南中使用的示例架构使用了标准字段组[!UICONTROL Commerce详细信息]，该组使用`commerce`对象结构和`productListItems`数组。 有关[!UICONTROL Commerce详细信息]字段组[&#128279;](../../xdm/field-groups/event/commerce-details.md)的更多信息，请参阅XDM文档。 架构结构的表示形式可以在下图中看到。
 
 ![Commerce详细信息字段组的架构图，包括`commerce`和`productListItems`结构。](../images/key-concepts/commerce-details.png)
 

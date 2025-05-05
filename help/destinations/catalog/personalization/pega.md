@@ -42,7 +42,7 @@ Adobe Experience Platform中的配置文件受众成员资格在加载到[!DNL P
 使用此目标将数据导出到Adobe Experience Platform之前，请确保在[!DNL Pega Customer Decision Hub]中完成以下先决条件：
 
 * 在您的[!DNL Pega Customer Decision Hub]实例中配置[Adobe Experience Platform配置文件和受众成员资格集成组件](https://docs.pega.com/bundle/components/page/customer-decision-hub/components/adobe-membership-component.html)。
-* 在[!DNL Pega Customer Decision Hub]实例中使用客户端凭据](https://docs.pega.com/bundle/platform/page/platform/security/configure-oauth-2-client-registration.html)授权类型配置OAuth 2.0 [客户端注册。
+* 在[!DNL Pega Customer Decision Hub]实例中使用客户端凭据[&#128279;](https://docs.pega.com/bundle/platform/page/platform/security/configure-oauth-2-client-registration.html)授权类型配置OAuth 2.0 客户端注册。
 * 在[!DNL Pega Customer Decision Hub]实例中为Adobe受众成员资格数据流配置[实时运行数据流](https://docs.pega.com/bundle/platform/page/platform/decision-management/data-flow-run-real-time-create.html)。
 
 ## 支持的身份 {#supported-identities}

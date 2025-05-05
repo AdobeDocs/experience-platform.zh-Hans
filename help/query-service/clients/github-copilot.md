@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## 快速入门 {#get-started}
 
-本指南要求您已经拥有GitHub帐户的访问权限并注册了[!DNL GitHub Copilot]。 您可以[从GitHub网站](https://github.com/github-copilot/signup)注册。 您还需要[!DNL VS Code]。 您可从他们的官方网站](https://code.visualstudio.com/download)下载[1}。 [!DNL VS Code] 
+本指南要求您已经拥有GitHub帐户的访问权限并注册了[!DNL GitHub Copilot]。 您可以[从GitHub网站](https://github.com/github-copilot/signup)注册。 您还需要[!DNL VS Code]。 您可从他们的官方网站[&#128279;](https://code.visualstudio.com/download)下载1&rbrace;。 [!DNL VS Code] 
 
 安装[!DNL VS Code]并激活[!DNL Copilot]订阅后，获取Experience Platform的连接凭据。 这些凭据位于Experience Platform UI中[!UICONTROL 查询]工作区的[!UICONTROL 凭据]选项卡中。 阅读[的凭据指南，了解如何在Experience Platform UI](../ui/credentials.md)中找到这些值。 如果您当前无权访问[!UICONTROL 查询]工作区，请联系您的组织管理员。
 
@@ -95,7 +95,7 @@ ht-degree: 0%
 
 ## [!DNL GitHub Copilot] 入门 {#get-started-with-copilot}
 
-首先，确保您已安装[!DNL VS Code]的最新版本。 过时的[!DNL VS Code]版本可能会阻止键[!DNL Copilot]功能按预期工作。 接下来，请确保已启用[!DNL Enable Auto Completions]设置。 如果[!DNL Copilot]运行正常，则状态栏中会显示&#x200B;**[!DNL Copilot]图标** （![Copilot图标](../images/clients/github-copilot/copilot-icon.png)）（如果有问题，则会显示[!DNL Copilot]错误图标）。 选择&#x200B;**[!DNL Copilot]图标**&#x200B;以打开[！DNL [!DNL GitHub Copilot]菜单]。 从&#x200B;**[！DNL [!DNL GitHub Copilot]菜单]**&#x200B;中选择&#x200B;**[!DNL Edit Settings]**
+首先，确保您已安装[!DNL VS Code]的最新版本。 过时的[!DNL VS Code]版本可能会阻止键[!DNL Copilot]功能按预期工作。 接下来，请确保已启用[!DNL Enable Auto Completions]设置。 如果[!DNL Copilot]运行正常，则状态栏中会显示&#x200B;**[!DNL Copilot]图标** （![Copilot图标](../images/clients/github-copilot/copilot-icon.png)）（如果有问题，则会显示[!DNL Copilot]错误图标）。 选择&#x200B;**[!DNL Copilot]图标**&#x200B;以打开[!DNL [!DNL GitHub Copilot]菜单]。 从&#x200B;**[!DNL [!DNL GitHub Copilot]菜单]**&#x200B;中选择&#x200B;**[!DNL Edit Settings]**
 
 ![显示[!DNL GitHub Copilot Menu]并突出显示[!DNL Copilot]图标和“编辑设置”的[!DNL VS Code]编辑器。](../images/clients/github-copilot/github-copilot-menu.png)
 
@@ -119,7 +119,7 @@ ht-degree: 0%
 
 >[!TIP]
 >  
->如果未获得建议，请确保以文件的语言](#get-started-with-copilot)启用[[!DNL Copilot] 。
+>如果未获得建议，请确保以文件的语言[&#128279;](#get-started-with-copilot)启用[!DNL Copilot] 。
 
 ![在[!DNL VS Code]编辑器中，部分键入的代码旁边显示[!DNL GitHub Copilot]的灰色文本建议为Ghost Text。](../images/clients/github-copilot/accept-partial-suggestions.png)
 

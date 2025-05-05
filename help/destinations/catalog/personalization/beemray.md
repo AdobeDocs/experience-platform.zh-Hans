@@ -42,7 +42,7 @@ Beemray是Adobe Experience Platform中的个性化扩展。 有关扩展功能�
 
 工作流会将您转到数据收集UI以完成安装。
 
-有关扩展配置选项和安装支持的信息，请参阅Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101063.beemray-human-context.html)上的[Beemray页。
+有关扩展配置选项和安装支持的信息，请参阅Adobe Exchange[&#128279;](https://exchange.adobe.com/experiencecloud.details.101063.beemray-human-context.html)上的Beemray页。
 
 您还可以直接在[数据收集UI](https://experience.adobe.com/#/data-collection/)中安装该扩展。 有关详细信息，请参阅有关[添加新扩展](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension)的指南。
 

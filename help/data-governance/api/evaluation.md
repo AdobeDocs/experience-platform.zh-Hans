@@ -41,7 +41,7 @@ GET /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints?duleLabels={LAB
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MARKETING_ACTION_NAME}` | 要针对一组数据使用标签进行测试的营销操作的名称。 您可以通过向营销操作终结点](./marketing-actions.md#list)发出[GET请求来检索可用营销操作的列表。 |
+| `{MARKETING_ACTION_NAME}` | 要针对一组数据使用标签进行测试的营销操作的名称。 您可以通过向营销操作终结点[&#128279;](./marketing-actions.md#list)发出GET请求来检索可用营销操作的列表。 |
 | `{LABELS_LIST}` | 要针对其测试营销操作的数据使用标签名称的逗号分隔列表。 例如： `duleLabels=C1,C2,C3`<br><br>请注意，标签名称区分大小写。 确保在`duleLabels`参数中列出它们时使用正确的大小写。 |
 
 **请求**
@@ -134,7 +134,7 @@ POST /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MARKETING_ACTION_NAME}` | 针对一个或多个数据集测试的营销操作的名称。 您可以通过向营销操作终结点](./marketing-actions.md#list)发出[GET请求来检索可用营销操作的列表。 |
+| `{MARKETING_ACTION_NAME}` | 针对一个或多个数据集测试的营销操作的名称。 您可以通过向营销操作终结点[&#128279;](./marketing-actions.md#list)发出GET请求来检索可用营销操作的列表。 |
 
 **请求**
 
@@ -365,7 +365,7 @@ POST /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MARKETING_ACTION_NAME}` | 针对数据集字段子集进行测试的营销操作的名称。 您可以通过向营销操作终结点](./marketing-actions.md#list)发出[GET请求来检索可用营销操作的列表。 |
+| `{MARKETING_ACTION_NAME}` | 针对数据集字段子集进行测试的营销操作的名称。 您可以通过向营销操作终结点[&#128279;](./marketing-actions.md#list)发出GET请求来检索可用营销操作的列表。 |
 
 **请求**
 
@@ -422,7 +422,7 @@ curl -X POST \
 
 成功的响应包括`violatedPolicies`数组，其中包含对提供的数据集字段执行营销操作所违反的策略的详细信息。 如果未违反任何策略，则`violatedPolicies`数组将为空。
 
-将下面的示例响应与仅涉及数据集](#datasets)的[响应进行比较，请注意，收集的标签列表较短。 还减少了每个数据集的`discoveredLabels`，因为它们仅包含在请求正文中指定的字段。 此外，以前违反的策略`Targeting Ads or Content`要求同时存在`C4 AND C6`标签，因此不再违反`violatedPolicies`空数组所指示的策略。
+将下面的示例响应与仅涉及数据集[&#128279;](#datasets)的响应进行比较，请注意，收集的标签列表较短。 还减少了每个数据集的`discoveredLabels`，因为它们仅包含在请求正文中指定的字段。 此外，以前违反的策略`Targeting Ads or Content`要求同时存在`C4 AND C6`标签，因此不再违反`violatedPolicies`空数组所指示的策略。
 
 ```JSON
 {

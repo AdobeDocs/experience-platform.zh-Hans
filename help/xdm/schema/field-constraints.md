@@ -41,7 +41,7 @@ XDM基于JSON架构构建，因此XDM字段在定义其类型时继承类似的�
   </thead>
   <tbody>
     <tr>
-      <td>[！UICONTROL字符串]</td>
+      <td>[!UICONTROL 字符串]</td>
       <td>
         <pre class="JSON language-JSON hljs">
 {"type"： "string"}</pre>
@@ -49,7 +49,7 @@ XDM基于JSON架构构建，因此XDM字段在定义其类型时继承类似的�
       <td><code>"Platinum"</code></td>
     </tr>
     <tr>
-      <td>[！UICONTROL编号]</td>
+      <td>[!UICONTROL 编号]</td>
       <td>
         <pre class="JSON language-JSON hljs">
 {"type"： "number"}</pre>
@@ -57,77 +57,77 @@ XDM基于JSON架构构建，因此XDM字段在定义其类型时继承类似的�
       <td><code>12925.49</code></td>
     </tr>
     <tr>
-      <td>[！UICONTROL Long]</td>
+      <td>[!UICONTROL Long]</td>
       <td>
         <pre class="JSON language-JSON hljs">
-{
+&lbrace;
   "type"： "integer"，
   "maximum"：9007199254740991，
   "minimum"： -9007199254740991
-}</pre>
+&rbrace;</pre>
       </td>
       <td><code>1478108935</code></td>
     </tr>
     <tr>
-      <td>[！UICONTROL整数]</td>
+      <td>[!UICONTROL 整数]</td>
       <td>
         <pre class="JSON language-JSON hljs">
-{
+&lbrace;
   "type"： "integer"，
   "maximum"：2147483648，
   "minimum"： -2147483648
-}</pre>
+&rbrace;</pre>
       </td>
       <td><code>24906290</code></td>
     </tr>
     <tr>
-      <td>[！UICONTROL Short]</td>
+      <td>[!UICONTROL Short]</td>
       <td>
         <pre class="JSON language-JSON hljs">
-{
+&lbrace;
   "type"： "integer"，
   "maximum"：32768，
   "minimum"： -32768
-}</pre>
+&rbrace;</pre>
       </td>
       <td><code>15781</code></td>
     </tr>
     <tr>
-      <td>[！UICONTROL字节]</td>
+      <td>[!UICONTROL 字节]</td>
       <td>
         <pre class="JSON language-JSON hljs">
-{
+&lbrace;
   "type"： "integer"，
   “最大值”：128，
   “最小值”：-128
-}</pre>
+&rbrace;</pre>
       </td>
       <td><code>90</code></td>
     </tr>
     <tr>
-      <td>[！UICONTROL日期]*</td>
+      <td>[!UICONTROL 日期]*</td>
       <td>
         <pre class="JSON language-JSON hljs">
-{
+&lbrace;
   "type"： "string"，
   "format"： "date"
-}</pre>
+&rbrace;</pre>
       </td>
       <td><code>"2019-05-15"</code></td>
     </tr>
     <tr>
-      <td>[！UICONTROL日期时间]*</td>
+      <td>[!UICONTROL 日期时间]*</td>
       <td>
         <pre class="JSON language-JSON hljs">
-{
+&lbrace;
   "type"： "string"，
   "format"： "date-time"
-}</pre>
+&rbrace;</pre>
       </td>
       <td><code>"2019-05-15T20:20:39+00:00"</code></td>
     </tr>
     <tr>
-      <td>[！UICONTROL Boolean]</td>
+      <td>[!UICONTROL Boolean]</td>
       <td>
         <pre class="JSON language-JSON hljs">
 {"type"： "boolean"}</pre>

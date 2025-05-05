@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # 根据LiveRamp标识符将受众激活到策划的目标
 
-使用与[!DNL LiveRamp]的Adobe Real-Time CDP集成将受众激活到使用[!DNL [LiveRamp RampID]](https://docs.liveramp.com/connect/en/interpreting-rampid,-liveramp-s-people-based-identifier.html)进行激活的策划的目标列表，包括连接的电视和音频目标，如下面列出的目标。
+使用与[!DNL LiveRamp]的Adobe Real-Time CDP集成将受众激活到使用[[!DNL [LiveRamp RampID]]](https://docs.liveramp.com/connect/en/interpreting-rampid,-liveramp-s-people-based-identifier.html)进行激活的策划的目标列表，包括连接的电视和音频目标，如下面列出的目标。
 
 >[!IMPORTANT]
 >

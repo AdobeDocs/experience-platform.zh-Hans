@@ -160,9 +160,9 @@ alloy("sendEvent", {
   });
 ```
 
-### 具有属性]的[!UICONTROL 自定义Personalization的示例响应
+### 具有属性的自定义Personalization的示例响应
 
-使用具有属性&#x200B;]**的**[!UICONTROL &#x200B;自定义Personalization时，API响应将与以下示例类似。
+使用具有属性&#x200B;**的**&#x200B;自定义Personalization时，API响应将与以下示例类似。
 
 **[!UICONTROL 具有属性的自定义Personalization]**&#x200B;与&#x200B;**[!UICONTROL 自定义Personalization]**&#x200B;之间的区别在于API响应中包含`attributes`部分。
 

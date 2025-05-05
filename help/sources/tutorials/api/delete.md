@@ -70,4 +70,4 @@ curl -X DELETE \
 
 通过完成本教程，您已成功使用[!DNL Flow Service] API删除现有帐户。
 
-有关如何使用用户界面执行这些操作的步骤，请参阅有关在UI](../../tutorials/ui/delete-accounts.md)中删除[帐户的教程。
+有关如何使用用户界面执行这些操作的步骤，请参阅有关在UI[&#128279;](../../tutorials/ui/delete-accounts.md)中删除帐户的教程。

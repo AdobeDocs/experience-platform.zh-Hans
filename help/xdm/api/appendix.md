@@ -57,7 +57,7 @@ ht-degree: 0%
 
 ## 兼容模式 {#compatibility}
 
-[!DNL Experience Data Model] (XDM)是一个公开记录的规范，由Adobe驱动，用于提高数字体验的互操作性、表现性和强大功能。 Adobe在GitHub](https://github.com/adobe/xdm/)上的[开源项目中维护源代码和正式XDM定义。 这些定义使用XDM标准表示法编写，并使用JSON-LD(链接数据的JavaScript对象表示法)和JSON Schema作为定义XDM架构的语法。
+[!DNL Experience Data Model] (XDM)是一个公开记录的规范，由Adobe驱动，用于提高数字体验的互操作性、表现性和强大功能。 Adobe在GitHub[&#128279;](https://github.com/adobe/xdm/)上的开源项目中维护源代码和正式XDM定义。 这些定义使用XDM标准表示法编写，并使用JSON-LD(链接数据的JavaScript对象表示法)和JSON Schema作为定义XDM架构的语法。
 
 在公共存储库中查看正式XDM定义时，您可以看到标准XDM与您在Adobe Experience Platform中看到的不同。 您在[!DNL Experience Platform]中看到的内容称为兼容性模式，它提供了标准XDM与[!DNL Experience Platform]中使用该模式的方式之间的简单映射。
 
@@ -75,52 +75,52 @@ ht-degree: 0%
   <tr>
   <td>
   <pre class=" language-json">
-{
-  "xdm：birthDate"： {
+&lbrace;
+  "xdm：birthDate"： &lbrace;
     "title"： "Birth Date"，
     "type"： "string"，
     "format"： "date"
-  }，
-  "xdm：birthDayAndMonth"： {
+  &rbrace;，
+  "xdm：birthDayAndMonth"： &lbrace;
     "title"： "Birth Date"，
     "type"： "string"，
     "pattern"： "[0-1][0-9]-[0-9][0-9]"
-  }，
-  "xdm：birthYear"： {
+  &rbrace;，
+  "xdm：birthYear"： &lbrace;
     "title"： "Birth year"，
     "type"： "integer"，
     “最小值”：1，
     "maximum"： 32767
-  }
-}
+  &rbrace;
+&rbrace;
   </pre>
   </td>
   <td>
   <pre class=" language-json">
-{
-  "birthDate"： {
+&lbrace;
+  "birthDate"： &lbrace;
     "title"： "Birth Date"，
     "type"： "string"，
     "format"： "date"，
     "meta：xdmField"： "xdm：birthDate"，
     "meta：xdmType"： "date"
-  }，
-  "birthDayAndMonth"： {
+  &rbrace;，
+  "birthDayAndMonth"： &lbrace;
     "title"： "Birth Date"，
     "type"： "string"，
     "pattern"： "[0-1][0-9]-[0-9][0-9]"，
     "meta：xdmField"： "xdm：birthDayAndMonth"，
     "meta：xdmType"： "string"
-  }，
-  "birthYear"： {
+  &rbrace;，
+  "birthYear"： &lbrace;
     "title"： "Birth year"，
     "type"： "integer"，
     “最小值”：1，
     "maximum"：32767，
     "meta：xdmField"： "xdm：birthYear"，
     "meta：xdmType"： "short"
-  }
-}
+  &rbrace;
+&rbrace;
       </pre>
   </td>
   </tr>

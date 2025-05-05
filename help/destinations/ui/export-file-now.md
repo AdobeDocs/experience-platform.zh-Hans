@@ -28,7 +28,7 @@ ht-degree: 9%
 
 通过&#x200B;**[!UICONTROL 立即导出文件]**&#x200B;控件，可以在不中断先前计划受众的当前导出计划的情况下导出完整文件。 此导出操作在之前计划的导出之外进行，不会更改受众的导出频率。 将立即触发文件导出，并获取 Experience Platform 分段运行的最新结果。
 
-您还可以将Experience Platform API用于此目的。 了解如何通过临时激活API](/help/destinations/api/ad-hoc-activation-api.md)将按需受众[激活到批处理目标。
+您还可以将Experience Platform API用于此目的。 了解如何通过临时激活API[&#128279;](/help/destinations/api/ad-hoc-activation-api.md)将按需受众激活到批处理目标。
 
 ## 先决条件 {#prerequisites}
 

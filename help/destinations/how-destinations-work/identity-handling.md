@@ -88,11 +88,11 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Audience Manager支持这些广告目标中的大多数(这些目标类型在Audience Manager中称为基于设备的目标)。 查看Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/device-based/device-based-destinations-list.html)中所有支持的基于设备的目标的[列表。 Experience Platform中只列出少数几个。 有关在Experience Platform和Audience Manager之间共享数据的信息，请阅读[中有关启用从Experience Platform到Audience Manager的数据共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#enable-aep-to-aam-data)的部分。 目前，没有计划支持更多第三方Cookie目标。
+>Audience Manager支持这些广告目标中的大多数(这些目标类型在Audience Manager中称为基于设备的目标)。 查看Audience Manager[&#128279;](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/device-based/device-based-destinations-list.html)中所有支持的基于设备的目标的列表。 Experience Platform中只列出少数几个。 有关在Experience Platform和Audience Manager之间共享数据的信息，请阅读[中有关启用从Experience Platform到Audience Manager的数据共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#enable-aep-to-aam-data)的部分。 目前，没有计划支持更多第三方Cookie目标。
 
 ## 企业目标 {#enterprise-destinations}
 
-[企业目标](/help/destinations/destination-types.md#advanced-enterprise-destinations) ([!DNL Amazon Kinesis]、[!DNL Azure Event Hubs]、HTTP API)在数据导出中不需要特定ID，因为这些是专为企业集成用例设计的。 但是，您可以根据需要将身份导出为XDM属性或从身份映射中导出。 查看导出到HTTP目标](/help/destinations/catalog/streaming/http-destination.md#exported-data)的数据的[示例，其中包含`personalEmail.address` XDM属性以及标识映射中的标识`ECID`和`email_lc_sha256`（经过哈希处理的电子邮件地址）。
+[企业目标](/help/destinations/destination-types.md#advanced-enterprise-destinations) ([!DNL Amazon Kinesis]、[!DNL Azure Event Hubs]、HTTP API)在数据导出中不需要特定ID，因为这些是专为企业集成用例设计的。 但是，您可以根据需要将身份导出为XDM属性或从身份映射中导出。 查看导出到HTTP目标[&#128279;](/help/destinations/catalog/streaming/http-destination.md#exported-data)的数据的示例，其中包含`personalEmail.address` XDM属性以及标识映射中的标识`ECID`和`email_lc_sha256`（经过哈希处理的电子邮件地址）。
 
 ## Personalization目标 {#personalization-destinations}
 

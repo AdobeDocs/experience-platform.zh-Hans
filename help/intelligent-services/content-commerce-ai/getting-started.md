@@ -29,7 +29,7 @@ ht-degree: 7%
 
 在Adobe Developer Console中设置项目和API后，您可以选择下载Postman的环境文件。 在项目的左边栏&#x200B;**[!UICONTROL API]**&#x200B;下，选择&#x200B;**[!UICONTROL 内容标记]**。 此时将打开一个新选项卡，其中包含标记为“[!DNL Try it out]”的卡片。 选择&#x200B;**下载Postman**&#x200B;以下载用于配置Postman环境的JSON文件。
 
-为postman](./images/add-to-postman-updated.png)下载![
+为postman![&#128279;](./images/add-to-postman-updated.png)下载
 
 下载文件后，打开Postman并选择右上角的&#x200B;**齿轮图标**&#x200B;以打开&#x200B;**管理环境**&#x200B;对话框。
 

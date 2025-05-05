@@ -28,7 +28,7 @@ ht-degree: 1%
 >
 >虽然客户配置文件与潜在客户配置文件之间的大多数浏览功能相同，但您&#x200B;**无法**&#x200B;按合并策略浏览潜在客户配置文件。 这是因为潜在客户配置文件自动受系统设计的基于时间的合并策略的控制。 有关合并策略的详细信息，请参阅[合并策略概述](../merge-policies/overview.md)。
 
-有关浏览配置文件的详细信息，请参阅配置文件用户指南](./user-guide.md#browse-identity)的[浏览部分。
+有关浏览配置文件的详细信息，请参阅配置文件用户指南[&#128279;](./user-guide.md#browse-identity)的浏览部分。
 
 ## 目标客户配置文件详细信息 {#profile-details}
 
@@ -44,7 +44,7 @@ ht-degree: 1%
 
 ![将显示目标客户配置文件详细信息页面。](../images/prospect-profile/profile-details.png)
 
-有关这些选项卡的详细信息，请阅读配置文件用户指南](./user-guide.md#profile-detail)的[查看配置文件详细信息部分。
+有关这些选项卡的详细信息，请阅读配置文件用户指南[&#128279;](./user-guide.md#profile-detail)的查看配置文件详细信息部分。
 
 您还可以通过选择&#x200B;**[!UICONTROL 查看JSON]**&#x200B;查看JSON格式的所有属性。
 

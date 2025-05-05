@@ -16,7 +16,7 @@ ht-degree: 0%
 | 问题 | 解决方案 |
 | --- | --- |
 | 当[!DNL Marketo Person]数据集具有指向多个ECID的链接时，当Experience Data Model (XDM)记录中的[身份总数超过20](../../../../identity-service/guardrails.md)时，数据摄取失败。 | 通过将ECID字段映射迁移到[!DNL Activity]，您可以确保来自[!DNL Marketo Person]数据流的标识数保持在限制之内，从而允许数据摄取成功。 |
-| 每次使用ECID摄取[!DNL Marketo Person]数据集时，[!DNL Marketo Person]数据集中所有ECID的时间戳将更新为人员记录的上次更新时间戳。 这可能会导致从标识图](../../../../identity-service/guardrails.md#understanding-the-deletion-logic-when-an-identity-graph-at-capacity-is-updated)中删除最近的标识时[不正确。 | 通过将ECID字段映射迁移到[!DNL Activity]，Identity Service可以正确反映ECID的时间戳，并且Identity Service的“先进先出”机制将提供更稳定的行为。 |
+| 每次使用ECID摄取[!DNL Marketo Person]数据集时，[!DNL Marketo Person]数据集中所有ECID的时间戳将更新为人员记录的上次更新时间戳。 这可能会导致从标识图[&#128279;](../../../../identity-service/guardrails.md#understanding-the-deletion-logic-when-an-identity-graph-at-capacity-is-updated)中删除最近的标识时不正确。 | 通过将ECID字段映射迁移到[!DNL Activity]，Identity Service可以正确反映ECID的时间戳，并且Identity Service的“先进先出”机制将提供更稳定的行为。 |
 | 通过[!DNL Marketo Person]数据流摄取ECID时，新添加的ECID不会摄取到Experience Platform中，除非[!DNL Marketo]中的[!DNL Person]记录有更新。 | 当新的ECID链接到[!DNL Marketo]中的[!DNL Person]记录时，您可以通过[!DNL Marketo Activity]数据流摄取该ECID数据，并在Experience Platform时立即提示标识图更新。 |
 
 基本上，您必须：

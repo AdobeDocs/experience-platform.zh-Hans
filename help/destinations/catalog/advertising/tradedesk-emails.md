@@ -144,7 +144,7 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 
 1. 首先，选择&#x200B;**[!UICONTROL 数据]**&#x200B;选项卡，并查看&#x200B;**[!UICONTROL 第一方]**&#x200B;部分。
 2. 向下滚动该页面，在&#x200B;**[!UICONTROL 导入的数据]**&#x200B;下，您会找到&#x200B;**[!UICONTROL Adobe 1PD磁贴]**。
-3. 单击**[!UICONTROL Adobe 1PD]**图块，它会列出激活到广告商的[!DNL Trade Desk]目标的所有受众。 您还可以使用搜索功能。
+3. 单击&#x200B;**[!UICONTROL Adobe 1PD]**&#x200B;图块，它会列出激活到广告商的[!DNL Trade Desk]目标的所有受众。 您还可以使用搜索功能。
 4. Experience Platform中的区段ID #将显示为[!DNL Trade Desk] UI中的区段名称。
 
 ## 数据使用和治理 {#data-usage-governance}

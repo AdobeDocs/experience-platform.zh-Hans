@@ -312,7 +312,7 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 >
 >以下步骤概述了如何向现有架构字段添加身份描述符。 作为在架构本身的结构中定义标识字段的替代方法，您还可以使用`identityMap`字段来包含标识信息。
 >
->如果您计划使用`identityMap`，请记住，它将覆盖您直接添加到架构的任何主标识。 有关详细信息，请参阅架构组合指南](../schema/composition.md#identityMap)的[基础知识中有关`identityMap`的部分。
+>如果您计划使用`identityMap`，请记住，它将覆盖您直接添加到架构的任何主标识。 有关详细信息，请参阅架构组合指南[&#128279;](../schema/composition.md#identityMap)的基础知识中有关`identityMap`的部分。
 
 在画布中选择`personalEmail.address`字段，并且&#x200B;**[!UICONTROL 字段属性]**&#x200B;下会显示&#x200B;**[!UICONTROL 标识]**&#x200B;复选框。 选中框和选项以将此项设置为&#x200B;**[!UICONTROL 主标识]**。 也选中此框。
 

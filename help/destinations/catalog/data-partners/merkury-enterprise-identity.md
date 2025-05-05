@@ -125,7 +125,7 @@ ht-degree: 3%
 >
 >当选择CSV选项、分隔符、引号字符、转义字符、空值、空值、压缩格式和包括清单文件选项时，请咨询您的Merkury团队，以获取适合您帐户的相应设置。
 
-csv选项](../../assets/catalog/data-partners/merkury-identity/media/image8.png)的![图像
+csv选项![&#128279;](../../assets/catalog/data-partners/merkury-identity/media/image8.png)的图像
 
 ### 现有帐户
 

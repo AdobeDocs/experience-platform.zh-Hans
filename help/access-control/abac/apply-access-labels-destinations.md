@@ -56,7 +56,7 @@ ht-degree: 1%
 要将访问标签应用于特定数据流，请执行以下操作：
 
 1. 导航到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**，并找到要限制用户访问的目标数据流。
-1. 选择[!UICONTROL 名称]列中的省略号(`...`)并使用![编辑详细信息控件](/help/images/icons/key.png) **[!UICONTROL 应用访问标签]**控件来添加新标签和管理数据流的现有标签。
+1. 选择[!UICONTROL 名称]列中的省略号(`...`)并使用![编辑详细信息控件](/help/images/icons/key.png) **[!UICONTROL 应用访问标签]**&#x200B;控件来添加新标签和管理数据流的现有标签。
    ![在目标工作区的浏览视图中选择“应用访问标签”。](/help/access-control/images/olac/apply-access-labels.png)
 1. 选择要添加到目标数据流的标签并选择&#x200B;**[!UICONTROL 保存]**。
    ![选择中应应用于目标数据流的访问标签。](/help/access-control/images/olac/view-access-labels.png)

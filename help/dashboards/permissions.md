@@ -27,7 +27,7 @@ ht-degree: 6%
 
 | 权限 | 描述 |
 |---|---|
-| **管理标准仪表板** | 此权限是&#x200B;**全局读写权限**。 它允许您[创建自定义构件](./customize/custom-widgets.md)和通过[!UICONTROL 构件库]编辑构件架构](./customize/edit-schema.md)。[ |
+| **管理标准仪表板** | 此权限是&#x200B;**全局读写权限**。 它允许您[创建自定义构件](./customize/custom-widgets.md)和通过[!UICONTROL 构件库]编辑构件架构[&#128279;](./customize/edit-schema.md)。 |
 | **查看标准仪表板** | 这为[!UICONTROL 配置文件]、[!UICONTROL 目标]和[!UICONTROL 区段]仪表板提供&#x200B;**只读**&#x200B;功能，并允许通过Experience Platform的左侧导航访问它们。 它还将[!UICONTROL 仪表板]添加到左侧导航并访问[!UICONTROL 仪表板]清单和集成选项卡。 |
 | **查看许可证使用情况仪表板** | 此权限允许用户在Experience Platform UI中&#x200B;**只读**&#x200B;访问[许可证使用情况仪表板](./guides/license-usage.md)。 |
 

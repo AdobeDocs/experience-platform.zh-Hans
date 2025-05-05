@@ -25,7 +25,7 @@ ht-degree: 0%
 
 对于属于某个目标类型的目标，有关&#x200B;*触发目标导出的内容*&#x200B;以及&#x200B;*目标导出中包含的内容*，目标导出行为是一致的。 目标导出由目标服务从[上游实时客户档案服务](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html#adobe-experience-platform-%26-applications-detailed-architecture-diagram)收到的通知触发。
 
-目标导出中包含的内容因目标类型而异。 详细了解每个目标类型](/help/destinations/how-destinations-work/profile-export-behavior.md)的[常见导出行为模式。 目标开发人员或Real-Time CDP用户无法编辑这些设置。
+目标导出中包含的内容因目标类型而异。 详细了解每个目标类型[&#128279;](/help/destinations/how-destinations-work/profile-export-behavior.md)的常见导出行为模式。 目标开发人员或Real-Time CDP用户无法编辑这些设置。
 
 ## 目标开发人员可自定义的导出设置 {#customizable-settings-by-destination-developers}
 
@@ -42,7 +42,7 @@ ht-degree: 0%
 
 用户在连接到目标时可用的设置取决于目标开发人员配置目标的方式，以及他们为用户提供的设置。
 
-例如，对于[流式目标](/help/destinations/destination-types.md#streaming-destinations)，目标开发人员可以配置其目标接受哪些标识，并且仅在激活工作流](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)的[映射步骤中向用户显示这些标识，如下所示：
+例如，对于[流式目标](/help/destinations/destination-types.md#streaming-destinations)，目标开发人员可以配置其目标接受哪些标识，并且仅在激活工作流[&#128279;](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)的映射步骤中向用户显示这些标识，如下所示：
 
 ![激活工作流映射步骤中目标字段标识选择的屏幕录制。](/help/destinations/assets/how-destinations-work/identity-mapping-example.gif)
 
@@ -64,6 +64,6 @@ ht-degree: 0%
 
 阅读本文档后，您现在知道哪些目标的导出设置是目标类型中通用的，哪些可由开发人员在单个目标级别配置，以及哪些设置可由用户在激活工作流中编辑。
 
-接下来，您可以阅读有关每个目标类型](/help/destinations/how-destinations-work/profile-export-behavior.md)的[常见导出行为模式的更多详细信息。
+接下来，您可以阅读有关每个目标类型[&#128279;](/help/destinations/how-destinations-work/profile-export-behavior.md)的常见导出行为模式的更多详细信息。
 
 对于目标开发人员，您可以[开始Destination SDK](/help/destinations/destination-sdk/getting-started.md)。 对于希望激活数据的用户，您可以签出[目录](/help/destinations/catalog/overview.md)中的所有可用目标。

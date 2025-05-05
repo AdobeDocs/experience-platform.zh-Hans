@@ -64,7 +64,7 @@ ht-degree: 5%
 
 >[!NOTE]
 >
-产品配置文件及其提供的粒度权限由管理员通过Adobe Admin Console创建和管理。 有关详细信息，请参阅[Privacy Service权限](../permissions.md)指南。
+>产品配置文件及其提供的粒度权限由管理员通过Adobe Admin Console创建和管理。 有关详细信息，请参阅[Privacy Service权限](../permissions.md)指南。
 
 完成后，选择&#x200B;**[!UICONTROL 保存配置的API]**。
 

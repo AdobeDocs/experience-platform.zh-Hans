@@ -16,7 +16,7 @@ ht-degree: 17%
 
 >[!AVAILABILITY]
 >
->>向Demandbase目标激活帐户受众的功能适用于购买[企业对企业](/help/rtcdp/overview.md#rtcdp-b2b)和[企业对个人](/help/rtcdp/overview.md#rtcdp-b2p)版本的Real-Time Customer Data Platform的公司。
+>&#x200B;>向Demandbase目标激活帐户受众的功能适用于购买[企业对企业](/help/rtcdp/overview.md#rtcdp-b2b)和[企业对个人](/help/rtcdp/overview.md#rtcdp-b2p)版本的Real-Time Customer Data Platform的公司。
 
 根据[帐户受众](/help/segmentation/types/account-audiences.md) ，激活Demandbase营销活动的配置文件以进行受众定位、个性化和抑制。
 

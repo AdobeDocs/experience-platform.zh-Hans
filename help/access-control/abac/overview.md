@@ -94,7 +94,7 @@ Experience Platform利用[Adobe Admin Console](https://adminconsole.adobe.com)�
 >总之，在使用目标和基于属性的访问控制时，请牢记以下含义：
 >
 >* 您只能激活您有权在[受众门户](/help/segmentation/ui/audience-portal.md#browse)和激活工作流的[选择区段步骤](/help/destinations/ui/activate-batch-profile-destinations.md#select-segments)中访问和查看的受众。
->* 在激活工作流](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)的[映射步骤中，您只能查看和选择您有访问权限的字段进行激活。
+>* 在激活工作流[&#128279;](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)的映射步骤中，您只能查看和选择您有访问权限的字段进行激活。
 >* 如果您希望将其他区段激活到现有目标，而您无权访问映射为导出的所有字段，则会为您阻止激活工作流。
 
 有关[!DNL Destinations]的详细信息，请参阅[[!DNL Destinations] 概述](../../destinations/home.md)。

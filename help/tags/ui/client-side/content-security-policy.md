@@ -65,7 +65,7 @@ Content-Security-Policy: script-src 'self' assets.adobedtm.com
 **HTML `<meta>` 标记**
 
 
-有一个非常重要的先决条件：必须异步加载标记库[](./asynchronous-deployment.md)。 同步加载标记库行不通（因为会导致控制台错误和规则无法正确执行）。
+有一个非常重要的先决条件：必须异步加载标记库[&#128279;](./asynchronous-deployment.md)。 同步加载标记库行不通（因为会导致控制台错误和规则无法正确执行）。
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="script-src 'self' assets.adobedtm.com">
@@ -158,4 +158,4 @@ Content-Security-Policy: script-src 'self' assets.adobedtm.com 'unsafe-inline'
 
 通过阅读本文档，您现在应该了解如何将CSP标头配置为接受标记库文件并允许使用内联脚本。
 
-作为一项额外的安全措施，您还可以选择使用子资源完整性 (SRI) 来验证已获取的库内部版本。但是，当与标记等标记管理系统一起使用时，这项功能存在一些主要限制。 有关详细信息，请参阅Experience Platform](./sri.md)中有关[SRI兼容性的指南。
+作为一项额外的安全措施，您还可以选择使用子资源完整性 (SRI) 来验证已获取的库内部版本。但是，当与标记等标记管理系统一起使用时，这项功能存在一些主要限制。 有关详细信息，请参阅Experience Platform[&#128279;](./sri.md)中有关SRI兼容性的指南。

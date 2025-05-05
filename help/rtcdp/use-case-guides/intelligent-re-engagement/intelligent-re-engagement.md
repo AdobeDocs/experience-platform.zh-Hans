@@ -775,10 +775,10 @@ ht-degree: 48%
    * [广告](/help/destinations/catalog/advertising/overview.md)/[付费媒体和社交](/help/destinations/catalog/social/overview.md)
    * [移动设备](/help/destinations/catalog/mobile-engagement/overview.md)
    * [流式处理目标](/help/destinations/catalog/streaming/http-destination.md)
-   * [使用Destination SDK创建的自定义目标。](/help/destinations/destination-sdk/overview.md)的问题。如果您是Real-Time CDP Ultimate客户，则还可以使用Destination SDK](/help/destinations/destination-sdk/overview.md#productized-and-custom-integrations)创建专用[自定义目标
+   * [使用Destination SDK创建的自定义目标。](/help/destinations/destination-sdk/overview.md)的问题。如果您是Real-Time CDP Ultimate客户，则还可以使用Destination SDK[&#128279;](/help/destinations/destination-sdk/overview.md#productized-and-custom-integrations)创建专用自定义目标
 
 ## 后续步骤 {#next-steps}
 
 通过以明智和负责任的方式重新吸引放弃转化的客户，您有望提高转化率并增加客户存留期的价值。
 
-接下来，您可以探索Real-Time CDP支持的其他用例，例如在Web资产上向未经身份验证的用户显示个性化内容[](/help/rtcdp/partner-data/onsite-personalization.md)。
+接下来，您可以探索Real-Time CDP支持的其他用例，例如在Web资产上向未经身份验证的用户显示个性化内容[&#128279;](/help/rtcdp/partner-data/onsite-personalization.md)。

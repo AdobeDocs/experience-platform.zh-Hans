@@ -13,7 +13,7 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-本页介绍如何使用目标SDK](../functionality/configuration-options.md)中的[配置选项以及其他Destination SDK功能和API参考文档中的信息配置[流目标](../../destination-types.md#streaming-destinations)。 步骤按以下顺序排列。
+本页介绍如何使用目标SDK[&#128279;](../functionality/configuration-options.md)中的配置选项以及其他Destination SDK功能和API参考文档中的信息配置[流目标](../../destination-types.md#streaming-destinations)。 步骤按以下顺序排列。
 
 ## 先决条件 {#prerequisites}
 

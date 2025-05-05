@@ -36,7 +36,7 @@ ht-degree: 2%
 
 导出[!DNL Profile]数据时，必须首先创建目标数据集。 请务必正确配置数据集以确保成功导出。
 
-关键注意事项之一是数据集所基于的架构（以下API示例请求中的`schemaRef.id`）。 为了导出配置文件数据，数据集必须基于[!DNL XDM Individual Profile]联合架构(`https://ns.adobe.com/xdm/context/profile__union`)。 合并架构是系统生成的只读架构，它聚合共享相同类的架构的字段。 在这种情况下，它是[!DNL XDM Individual Profile]类。 有关合并视图架构的详细信息，请参阅架构组合基础指南](../../xdm/schema/composition.md#union)中的[合并部分。
+关键注意事项之一是数据集所基于的架构（以下API示例请求中的`schemaRef.id`）。 为了导出配置文件数据，数据集必须基于[!DNL XDM Individual Profile]联合架构(`https://ns.adobe.com/xdm/context/profile__union`)。 合并架构是系统生成的只读架构，它聚合共享相同类的架构的字段。 在这种情况下，它是[!DNL XDM Individual Profile]类。 有关合并视图架构的详细信息，请参阅架构组合基础指南[&#128279;](../../xdm/schema/composition.md#union)中的合并部分。
 
 本教程中接下来的步骤概述了如何使用[!DNL Catalog] API创建引用[!DNL XDM Individual Profile]合并架构的数据集。 您还可以使用[!DNL Experience Platform]用户界面创建引用合并架构的数据集。 此[有关导出受众的UI教程](../../segmentation/tutorials/create-dataset-export-segment.md)中概述了使用UI的步骤，但此处也适用。 完成后，您可以返回本教程以继续执行[启动新导出作业](#initiate)的步骤。
 
@@ -492,4 +492,4 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs/726 \
 
 ### 导出受众
 
-您还可以使用导出作业终结点导出受众，而不是[!DNL Profile]数据。 有关详细信息，请参阅分段API](../../segmentation/api/export-jobs.md)中有关[导出作业的指南。
+您还可以使用导出作业终结点导出受众，而不是[!DNL Profile]数据。 有关详细信息，请参阅分段API[&#128279;](../../segmentation/api/export-jobs.md)中有关导出作业的指南。

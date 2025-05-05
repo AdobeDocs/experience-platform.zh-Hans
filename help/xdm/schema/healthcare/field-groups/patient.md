@@ -21,11 +21,11 @@ ht-degree: 7%
 | 显示名称 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- | --- |
 | [!UICONTROL 地址] | `address` | [[!UICONTROL 地址]](../data-types/address.md)的数组 | 患者的地址信息。 |
-| [!UICONTROL 通信] | `communication` | 对象数组 | 一种语言，可用于与患者沟通他们的健康状况。 有关详细信息，请参阅下面](#communication)的[部分。 |
-| [!UICONTROL 患者联系人] | `contact` | 对象数组 | 患者的联系方，如监护人、伴侣或朋友。 有关详细信息，请参阅下面](#contact)的[部分。 |
+| [!UICONTROL 通信] | `communication` | 对象数组 | 一种语言，可用于与患者沟通他们的健康状况。 有关详细信息，请参阅下面[&#128279;](#communication)的部分。 |
+| [!UICONTROL 患者联系人] | `contact` | 对象数组 | 患者的联系方，如监护人、伴侣或朋友。 有关详细信息，请参阅下面[&#128279;](#contact)的部分。 |
 | [!UICONTROL 普通从业者] | `generalPractioner` | [[!UICONTROL 引用]](../data-types/reference.md)的数组 | 患者的初级保健提供者。 |
 | [!UICONTROL 标识符] | `identifier` | [[!UICONTROL 标识符]](../data-types/identifier.md)的数组 | 患者的标识符。 |
-| [!UICONTROL 患者链接详细信息] | `link` | 对象数组 | 与同一个人相关的患者或相关人员资源的链接。 有关详细信息，请参阅下面](#link)的[部分。 |
+| [!UICONTROL 患者链接详细信息] | `link` | 对象数组 | 与同一个人相关的患者或相关人员资源的链接。 有关详细信息，请参阅下面[&#128279;](#link)的部分。 |
 | [!UICONTROL 管理组织] | `managingOrganization` | [[!UICONTROL 引用]](../data-types/reference.md) | 患者记录的托管组织。 |
 | [!UICONTROL 婚姻状况] | `maritalStatus` | [[!UICONTROL 可编码的概念]](../data-types/codeable-concept.md) | 患者的婚姻状况。 |
 | [!UICONTROL 名称] | `name` | [[!UICONTROL 人工名称]](../data-types/human-name.md)的数组 | 与患者关联的名称。 |
@@ -67,7 +67,7 @@ ht-degree: 7%
 | [!UICONTROL 联系组织] | `organization` | [[!UICONTROL 引用]](../data-types/reference.md) | 与联系人关联的组织。 |
 | [!UICONTROL 联系期间] | `period` | [[!UICONTROL 周期]](../data-types/period.md) | 联系人使用或正在使用的时段。 |
 | [!UICONTROL 关系&#39;] | `relationship` | [[!UICONTROL 可编码的概念]](../data-types/codeable-concept.md) | 患者和联系人之间的关系。 |
-| [!UICONTROL 联系人详细信息] | `telecom` | 对象数组 | 联系人的联系详细信息。 有关详细信息，请参阅下面](#telecom)的[部分。 |
+| [!UICONTROL 联系人详细信息] | `telecom` | 对象数组 | 联系人的联系详细信息。 有关详细信息，请参阅下面[&#128279;](#telecom)的部分。 |
 | [!UICONTROL 性别] | `gender` | 字符串 | 人员的性别身份。 此属性的值必须等于以下已知枚举值之一。 <li> `female` </li> <li> `male` </li> <li> `other` </li> <li> `unknown`</li> |
 
 ### `telecom` {#telecom}

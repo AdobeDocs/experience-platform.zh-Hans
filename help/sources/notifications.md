@@ -31,7 +31,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时允许您使用[
 
 要接收流运行通知，您必须使用Adobe Developer Console注册[!DNL Experience Platform]集成的webhook。
 
-请阅读有关[订阅[！DNL I/O Event]通知](../observability/alerts/subscribe.md)的教程，以了解有关如何完成此操作的详细步骤。
+请阅读有关[订阅[!DNL I/O Event]通知](../observability/alerts/subscribe.md)的教程，以了解有关如何完成此操作的详细步骤。
 
 >[!IMPORTANT]
 >

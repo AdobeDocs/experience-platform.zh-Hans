@@ -17,17 +17,17 @@ Experience PlatformDestination SDK使用[[!DNL Pebble] 模板](https://pebbletem
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 使用位置 {#where-to-use}
 
-为从Experience Platform导出到目标的数据创建消息转换模板](../../testing-api/streaming-destinations/create-template.md)时，请使用此页上下面列出的受支持的函数。[
+为从Experience Platform导出到目标的数据创建消息转换模板[&#128279;](../../testing-api/streaming-destinations/create-template.md)时，请使用此页上下面列出的受支持的函数。
 
 消息转换模板在流目标的[目标服务器配置](templating-specs.md)中使用。
 
 ## 先决条件 {#prerequisites}
 
-要了解此参考页中的概念和函数，请先阅读[消息格式](message-format.md)文档。 您需要先了解Experience Platform中配置文件](message-format.md#profile-structure)的[结构，然后才能使用[!DNL Pebble]模板转换和导出的数据。
+要了解此参考页中的概念和函数，请先阅读[消息格式](message-format.md)文档。 您需要先了解Experience Platform中配置文件[&#128279;](message-format.md#profile-structure)的结构，然后才能使用[!DNL Pebble]模板转换和导出的数据。
 
 在继续使用下面记录的功能之前，请查看[使用模板语言进行标识、属性和受众成员资格转换](message-format.md#using-templating)一节中的模板化示例。 这里的示例开始非常简单，复杂性也增加了。
 
@@ -36,7 +36,7 @@ Experience PlatformDestination SDK使用[[!DNL Pebble] 模板](https://pebbletem
 在[!DNL Pebble]标记部分中，Destination SDK仅支持：
 
 * [筛选器](https://pebbletemplates.io/wiki/tag/filter/)
-* ](https://pebbletemplates.io/wiki/tag/for/)的[
+* [&#128279;](https://pebbletemplates.io/wiki/tag/for/)的
 * [if](https://pebbletemplates.io/wiki/tag/if/)
 * [设置](https://pebbletemplates.io/wiki/tag/set/)
 

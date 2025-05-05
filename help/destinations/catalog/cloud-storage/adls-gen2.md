@@ -47,8 +47,8 @@ ht-degree: 2%
 
 此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
 
-* 如何使用Experience Platform用户界面](/help/destinations/ui/export-datasets.md)导出数据集[。
-* 如何使用流服务API](/help/destinations/api/export-datasets.md)以编程方式[导出数据集。
+* 如何使用Experience Platform用户界面[&#128279;](/help/destinations/ui/export-datasets.md)导出数据集。
+* 如何使用流服务API[&#128279;](/help/destinations/api/export-datasets.md)以编程方式导出数据集。
 
 ## 导出数据的文件格式 {#file-format}
 

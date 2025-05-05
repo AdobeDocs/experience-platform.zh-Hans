@@ -73,7 +73,7 @@ Experience Platform中的资源可以隔离到特定的虚拟沙箱。 在对Exp
 
 ### Swagger文档 {#swagger-docs}
 
-在本教程中，您可以在Swagger中找到所有API调用的随附参考文档。 请参阅Adobe I/O](https://www.adobe.io/experience-platform-apis/references/flow-service/)上的[流服务API文档。 我们建议您并行使用此教程和Swagger文档页面。
+在本教程中，您可以在Swagger中找到所有API调用的随附参考文档。 请参阅Adobe I/O[&#128279;](https://www.adobe.io/experience-platform-apis/references/flow-service/)上的流服务API文档。 我们建议您并行使用此教程和Swagger文档页面。
 
 ## 获取可用流目标的列表 {#get-the-list-of-available-streaming-destinations}
 

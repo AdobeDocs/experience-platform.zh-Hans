@@ -99,7 +99,7 @@ ht-degree: 2%
 
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
-* **[!UICONTROL 受众类型]**：如果您要导出的标识属于广告商(IFA)*的* ID类型，请选择广告商(IFA)]**的**[!UICONTROL  ID。 如果要导出的标识的类型为&#x200B;*LINE用户ID*，请选择&#x200B;**[!UICONTROL LINE用户ID]**。 有关身份类型的详细信息，请参阅[支持的身份](#supported-identities)部分。
+* **[!UICONTROL 受众类型]**：如果您要导出的标识属于广告商(IFA)*的* ID类型，请选择广告商(IFA)**的** ID。 如果要导出的标识的类型为&#x200B;*LINE用户ID*，请选择&#x200B;**[!UICONTROL LINE用户ID]**。 有关身份类型的详细信息，请参阅[支持的身份](#supported-identities)部分。
 
 ### 启用警报 {#enable-alerts}
 

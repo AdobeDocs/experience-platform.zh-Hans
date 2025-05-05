@@ -83,7 +83,7 @@ AI Assistant支持Experience Platform、Real-Time CDP、Adobe Journey Optimizer�
 
 [![图像](../rtcdp/assets/do-not-localize/learn-more-button.svg)](./new-features/xdm-field-discovery.md)
 
->用于客户支持的[!TAB AI助手]
+>[!TAB 用于客户支持的 AI助手]
 
 ### 客户支持AI助理
 

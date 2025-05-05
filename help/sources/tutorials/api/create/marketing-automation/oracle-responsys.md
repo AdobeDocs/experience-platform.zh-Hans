@@ -42,7 +42,7 @@ ht-degree: 1%
 | `clientSecret` | [!DNL Oracle Responsys]实例的客户端密钥。 |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL Oracle Responsys]源的连接规范ID的值固定为： `ff4274f2-c9a9-11eb-b8bc-0242ac130003`。 |
 
-有关[!DNL Oracle Responsys]的身份验证凭据的详细信息，请参阅有关身份验证](https://docs.oracle.com/en/cloud/saas/marketing/responsys-develop/API/GetStarted/authentication.htm)的[[!DNL Oracle Responsys] 指南。
+有关[!DNL Oracle Responsys]的身份验证凭据的详细信息，请参阅有关身份验证[&#128279;](https://docs.oracle.com/en/cloud/saas/marketing/responsys-develop/API/GetStarted/authentication.htm)的[!DNL Oracle Responsys] 指南。
 
 ### 使用Experience Platform API
 

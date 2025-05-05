@@ -33,7 +33,7 @@ Adobe Experience Platform维护通过API和UI发生的所有查询事件的日�
 
 ![查询日志工作区，其搜索栏和管理列表下拉列表突出显示。](../images/ui/query-log/customize-logs.png)
 
-可以在查询服务概述的“日志”部分中找到每个日志表列](./overview.md#log)的[描述。
+可以在查询服务概述的“日志”部分中找到每个日志表列[&#128279;](./overview.md#log)的描述。
 
 ## 发现日志数据
 

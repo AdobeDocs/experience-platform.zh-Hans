@@ -117,7 +117,7 @@ curl -v -X PUT \
 
 >[!TIP]
 >
->虽然下面的示例使用完整的SAS URI连接到[!DNL Azure Blob]容器，但您可以使用其他方法和操作进行身份验证。 有关详细信息，请参阅Python v12 SDK](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-python)上的此[[!DNL Microsoft] 文档。
+>虽然下面的示例使用完整的SAS URI连接到[!DNL Azure Blob]容器，但您可以使用其他方法和操作进行身份验证。 有关详细信息，请参阅Python v12 SDK[&#128279;](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-python)上的此[!DNL Microsoft] 文档。
 
 ```py
 import os
@@ -211,7 +211,7 @@ aws s3 cp example.txt s3://bucketName/dlzFolder/example.txt
 ```
 
 
->[!TAB 从Amazon S3]下载文件
+>[!TAB 从Amazon S3下载文件]
 
 模板：
 

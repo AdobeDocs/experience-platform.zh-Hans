@@ -25,7 +25,7 @@ ht-degree: 6%
 | [!UICONTROL 定义] | `definition` | [[!UICONTROL 引用]](../data-types/reference.md) | 药物的定义。 |
 | [!UICONTROL 剂量表] | `doseForm` | [[!UICONTROL 可编码的概念]](../data-types/codeable-concept.md) | 描述药物的剂型，如片剂或胶囊。 |
 | [!UICONTROL 标识符] | `identifier` | [[!UICONTROL 标识符]](../data-types/identifier.md)的数组 | 药物的标识符。 |
-| [!UICONTROL 配料] | `ingredient` | 对象数组 | 描述药物的配料信息。 有关详细信息，请参阅下面](#ingredient)的[部分。 |
+| [!UICONTROL 配料] | `ingredient` | 对象数组 | 描述药物的配料信息。 有关详细信息，请参阅下面[&#128279;](#ingredient)的部分。 |
 | [!UICONTROL 营销授权持有者] | `marketingAuthorizationHolder` | [[!UICONTROL 引用]](../data-types/reference.md) | 有权营销药物的组织。 |
 | 总容量 | `totalVolume` | [[!UICONTROL 数量]](../data-types/quantity.md) | 当产品代码未推断包装尺寸时，药物中提供的产品量。 |
 | [!UICONTROL 状态] | `status` | 字符串 | 药物状态。 此属性的值必须等于以下已知枚举值之一。 <li> `active` </li> <li> `inactive` </li> <li> `entered-in-error` </li> |

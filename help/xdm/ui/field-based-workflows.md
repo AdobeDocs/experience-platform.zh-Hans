@@ -107,7 +107,7 @@ Adobe Experience Platform提供一组可靠的标准化[字段组](../schema/com
 
 ![模式编辑器在标准对象旁边加号图标突出显示。](../images/ui/field-based-workflows/add-field-to-standard-object.png)
 
-有关添加自定义字段的更多信息，请参阅UI指南](./resources/schemas.md#custom-fields-for-standard-groups)中的[创建和编辑架构。
+有关添加自定义字段的更多信息，请参阅UI指南[&#128279;](./resources/schemas.md#custom-fields-for-standard-groups)中的创建和编辑架构。
 
 ## 后续步骤
 

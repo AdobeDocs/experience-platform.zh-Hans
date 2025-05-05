@@ -33,7 +33,7 @@ ht-degree: 3%
 
 您必须拥有有效的[!DNL Pinterest] [商业帐户](https://help.pinterest.com/en/business/article/get-a-business-account)才能使用此扩展。 转到[[!DNL Pinterest] 注册页面](https://www.pinterest.com/business/create/)进行注册并创建帐户（如果还没有帐户）。
 
-您还需要一个[!DNL Pinterest]开发人员帐户，该帐户需要与您的[!DNL Pinterest]业务帐户关联。 若要将开发人员帐户与业务帐户关联，请参阅[[!DNL Pinterest ] 开发人员帐户](https://developers.pinterest.com/account-setup/)。
+您还需要一个[!DNL Pinterest]开发人员帐户，该帐户需要与您的[!DNL Pinterest]业务帐户关联。 若要将开发人员帐户与业务帐户关联，请参阅[[!DNL Pinterest &#x200B;] 开发人员帐户](https://developers.pinterest.com/account-setup/)。
 
 ### 收集所需的配置详细信息 {#configuration-details}
 
@@ -58,7 +58,7 @@ ht-degree: 3%
 >
 >根据您的实施需求，您可能需要在配置扩展之前创建架构、数据元素和数据集。 请在开始之前查看所有配置步骤，以确定需要为用例设置哪些实体。
 
-在左侧导航中，选择&#x200B;**[!UICONTROL 扩展]**。 在[!UICONTROL 已安装]选项卡的[!DNL Pinterest]扩展卡中选择&#x200B;**[!UICONTROL 配置]****。
+在左侧导航中，选择&#x200B;**[!UICONTROL 扩展]**。 在[!UICONTROL 已安装]选项卡的[!DNL Pinterest]扩展卡中选择&#x200B;**[!UICONTROL 配置]**&#x200B;**。
 
 在[!UICONTROL 安装]选项卡中显示的![[!DNL Pinterest]扩展突出显示[!UICONTROL 配置]。](../../../images/extensions/server/pinterest/configure.png)
 

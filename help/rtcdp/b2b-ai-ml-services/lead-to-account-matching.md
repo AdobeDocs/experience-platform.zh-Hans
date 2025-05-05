@@ -56,7 +56,7 @@ workEmail属性可作为B2B人员架构中的顶级字段组找到。
 
 仅当匹配分数超过内部置信度阈值时，才会最佳匹配用户档案。 结果保存在现有帐户人员关系XDM的新系统数据集中。
 
-当有新的人员配置文件快照可用（每24小时一次）时，会运行商机帐户匹配服务。 有关商机与帐户匹配](/help/rtcdp/accounts/account-profile-ui-guide.md)的[配置的更多信息，请参阅文档。
+当有新的人员配置文件快照可用（每24小时一次）时，会运行商机帐户匹配服务。 有关商机与帐户匹配[&#128279;](/help/rtcdp/accounts/account-profile-ui-guide.md)的配置的更多信息，请参阅文档。
 
 ## 如何查看潜在客户与帐户的匹配输出 {#how-to-view}
 
@@ -74,4 +74,4 @@ workEmail属性可作为B2B人员架构中的顶级字段组找到。
 
 您可以通过仪表板监控任何潜在客户到帐户匹配作业的作业状态和相关量度。
 
-有关商机与帐户匹配](/help/dataflows/ui/b2b/monitor-profile-enrichment.md)的[监视作业的详细信息，请参阅文档。
+有关商机与帐户匹配[&#128279;](/help/dataflows/ui/b2b/monitor-profile-enrichment.md)的监视作业的详细信息，请参阅文档。

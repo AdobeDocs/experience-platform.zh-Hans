@@ -103,7 +103,7 @@ ht-degree: 1%
 
   >[!NOTE]
   >
-  >引导事件与页面事件](../../../../web-sdk/use-cases/top-bottom-page-events.md)的[顶部和底部相关。
+  >引导事件与页面事件[&#128279;](../../../../web-sdk/use-cases/top-bottom-page-events.md)的顶部和底部相关。
 
 
 ### 数据 {#data}

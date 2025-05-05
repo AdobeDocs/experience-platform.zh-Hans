@@ -35,7 +35,7 @@ ht-degree: 0%
 
 [!DNL Real-Time CDP]基于Adobe Experience Platform构建，该列表是[!DNL Transparency & Consent Framework (TCF)]的已注册[供应商列表](https://iabeurope.eu/vendor-list-tcf/)的一部分，如[!DNL Interactive Advertising Bureau (IAB)]所述。 为符合TCF 2.0要求，Experience Platform允许您收集详细的客户同意数据，并将其集成到存储的客户配置文件中。 然后，可以根据导出受众的用例将这些同意数据纳入特定用户档案是否包含在导出受众中。
 
-有关详细信息，请参阅Experience Platform](../../landing/governance-privacy-security/consent/iab/overview.md)中对[IAB TCF 2.0支持的概述。
+有关详细信息，请参阅Experience Platform[&#128279;](../../landing/governance-privacy-security/consent/iab/overview.md)中对IAB TCF 2.0支持的概述。
 
 ## 后续步骤
 

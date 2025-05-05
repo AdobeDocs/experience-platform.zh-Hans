@@ -39,7 +39,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->本教程假定您知道Experience Platform中要用于捕获客户属性信息的[!DNL Profile]架构。 无论您使用何种方法收集同意数据，必须为Real-time Customer Profile](../../../../xdm/ui/resources/schemas.md#profile)启用此架构[。 此外，架构的主要身份不能是禁止在基于兴趣的广告（如电子邮件地址）中使用的直接可识别字段。 如果您不确定哪些字段受限，请咨询您的法律顾问。
+>本教程假定您知道Experience Platform中要用于捕获客户属性信息的[!DNL Profile]架构。 无论您使用何种方法收集同意数据，必须为Real-time Customer Profile[&#128279;](../../../../xdm/ui/resources/schemas.md#profile)启用此架构。 此外，架构的主要身份不能是禁止在基于兴趣的广告（如电子邮件地址）中使用的直接可识别字段。 如果您不确定哪些字段受限，请咨询您的法律顾问。
 
 ## [!UICONTROL 同意和偏好设置详细信息]字段组结构 {#structure}
 

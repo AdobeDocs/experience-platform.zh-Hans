@@ -28,4 +28,4 @@ ht-degree: 0%
 
 除了Adobe开发的扩展之外，目录还包括第三方开发人员创建的扩展。
 
-Adobe不为这些第三方扩展提供担保，因此扩展创建者有责任为其扩展选择许可和支持流程。 许多开发人员已选择将其扩展包的源代码发布到公共GitHub存储库中，以便用户方便查看。 有关详细信息，请参阅GitHub](https://github.com/Connections-Developers)上的[连接开发人员组。
+Adobe不为这些第三方扩展提供担保，因此扩展创建者有责任为其扩展选择许可和支持流程。 许多开发人员已选择将其扩展包的源代码发布到公共GitHub存储库中，以便用户方便查看。 有关详细信息，请参阅GitHub[&#128279;](https://github.com/Connections-Developers)上的连接开发人员组。

@@ -54,7 +54,7 @@ CREATE model modelname options(model_type='logistic_reg', label='rating') AS SEL
 
 ## 手动功能转换 {#manual-transformations}
 
-若要在`CREATE MODEL`语句中定义自定义数据预处理，请将`TRANSFORM`子句与任意数量的可用转换函数结合使用。 这些手动预处理函数也可以在`TRANSFORM`子句之外使用。 可以使用下面](#available-transformations)的[转换器部分中讨论的所有转换来手动预处理数据。
+若要在`CREATE MODEL`语句中定义自定义数据预处理，请将`TRANSFORM`子句与任意数量的可用转换函数结合使用。 这些手动预处理函数也可以在`TRANSFORM`子句之外使用。 可以使用下面[&#128279;](#available-transformations)的转换器部分中讨论的所有转换来手动预处理数据。
 
 ### 关键特性 {#key-characteristics}
 

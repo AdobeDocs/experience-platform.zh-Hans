@@ -62,12 +62,12 @@ ht-degree: 2%
 
 在[设置](../../ui/connect-destination.md)此目标时，必须提供以下信息：
 
-* 对于使用密码&#x200B;]**的**[!UICONTROL  SFTP连接，您必须提供：
+* 对于使用密码&#x200B;**的** SFTP连接，您必须提供：
    * **[!UICONTROL 域]**： SFTP帐户的IP地址或域名；
    * **[!UICONTROL 端口]**： SFTP存储位置使用的端口；
    * **[!UICONTROL 用户名]**：用于登录到SFTP存储位置的用户名；
    * **[!UICONTROL 密码]**：用于登录到SFTP存储位置的密码。
-* 对于使用SSH密钥&#x200B;]**连接的**[!UICONTROL  SFTP，您必须提供：
+* 对于使用SSH密钥&#x200B;**连接的** SFTP，您必须提供：
    * **[!UICONTROL 域]**： SFTP帐户的IP地址或域名；
    * **[!UICONTROL 端口]**： SFTP存储位置使用的端口；
    * **[!UICONTROL 用户名]**：用于登录到SFTP存储位置的用户名；
@@ -104,7 +104,7 @@ Commenting out Amazon S3 bucket part for now until support is clarified
 
 ### 目标属性 {#destination-attributes}
 
-将受众激活到此目标时，Adobe建议您从[合并架构](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择要导出到目标的唯一标识符和任何其他XDM字段。 有关详细信息，请参阅将受众激活到电子邮件营销目标时的最佳实践[](overview.md#best-practices)。
+将受众激活到此目标时，Adobe建议您从[合并架构](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择要导出到目标的唯一标识符和任何其他XDM字段。 有关详细信息，请参阅将受众激活到电子邮件营销目标时的最佳实践[&#128279;](overview.md#best-practices)。
 
 ## 导出的数据 {#exported-data}
 

@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # 使用JavaScript库安装Web SDK
 
-不使用标记扩展](extension.md)安装Web SDK的替代方法是引用托管在CDN上的JavaScript库。 [您可以直接引用库，也可以下载该库并将其托管在您自己的基础架构中。 它提供缩小的和完整的格式。
+不使用标记扩展[&#128279;](extension.md)安装Web SDK的替代方法是引用托管在CDN上的JavaScript库。 您可以直接引用库，也可以下载该库并将其托管在您自己的基础架构中。 它提供缩小的和完整的格式。
 
 可以使用以下URL结构访问Web SDK库：
 

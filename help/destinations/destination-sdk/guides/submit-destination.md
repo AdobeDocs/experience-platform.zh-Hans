@@ -234,7 +234,7 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 
 ### 测试API响应 {#testing-api-response-file-based}
 
-使用测试API后包括请求和响应示例，以使用示例配置文件](../testing-api/batch-destinations/file-based-destination-testing-api.md)测试基于文件的目标[。
+使用测试API后包括请求和响应示例，以使用示例配置文件[&#128279;](../testing-api/batch-destinations/file-based-destination-testing-api.md)测试基于文件的目标。
 
 ### 附加导出的文件 {#attach-exported-file}
 

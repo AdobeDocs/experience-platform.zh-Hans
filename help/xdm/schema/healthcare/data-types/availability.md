@@ -20,8 +20,8 @@ ht-degree: 9%
 
 | 显示名称 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- | --- |
-| [!UICONTROL 可用时间] | `availableTime` | 对象数组 | 项目可用的时间。 有关详细信息，请参阅下面](#available-time)的[部分。 |
-| [!UICONTROL 不可用时间] | `notAvailableTime` | 字符串 | 项目不可用的时间，并提供原因。 有关详细信息，请参阅下面](#not-available-time)的[部分。 |
+| [!UICONTROL 可用时间] | `availableTime` | 对象数组 | 项目可用的时间。 有关详细信息，请参阅下面[&#128279;](#available-time)的部分。 |
+| [!UICONTROL 不可用时间] | `notAvailableTime` | 字符串 | 项目不可用的时间，并提供原因。 有关详细信息，请参阅下面[&#128279;](#not-available-time)的部分。 |
 
 有关数据类型的更多详细信息，请参阅公共XDM存储库：
 

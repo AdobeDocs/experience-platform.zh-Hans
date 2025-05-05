@@ -21,7 +21,7 @@ ht-degree: 0%
 * 有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../landing/api-guide.md)指南。
 * 有关如何生成Experience Platform API凭据的信息，请参阅有关[身份验证和访问Experience Platform API](../../../landing/api-authentication.md)的教程。
 * 有关如何为Experience Platform API设置[!DNL Postman]的信息，请参阅[设置开发人员控制台和 [!DNL Postman]](../../../landing/postman.md)上的教程。
-* 为帮助进行测试和调试，请在此处](../assets/sdk-verification.zip)下载[自助式源验证集合和环境，然后执行下面列出的步骤。
+* 为帮助进行测试和调试，请在此处[&#128279;](../assets/sdk-verification.zip)下载自助式源验证集合和环境，然后执行下面列出的步骤。
 
 ## 测试源
 

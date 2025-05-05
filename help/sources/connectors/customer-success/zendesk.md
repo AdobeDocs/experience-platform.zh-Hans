@@ -45,5 +45,5 @@ Experience Platform支持从第三方客户成功应用程序中摄取数据。 
 
 ## 使用UI将[!DNL Zendesk]连接到Experience Platform
 
-* [在UI中创建 [!DNL Zendesk ]源连接](../../tutorials/ui/create/customer-success/zendesk.md)
+* [在UI中创建 [!DNL Zendesk &#x200B;]源连接](../../tutorials/ui/create/customer-success/zendesk.md)
 * [在UI中为客户成功源连接创建数据流](../../tutorials/ui/dataflow/customer-success.md)

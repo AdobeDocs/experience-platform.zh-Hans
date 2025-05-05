@@ -147,4 +147,4 @@ Edge Network本身是无状态的（它不维护自己的会话）。 但是，�
 * 对于第一方Cookie (`kndcrt_*`)，仅当请求上下文安全(HTTPS)并且反向链接（[Referer HTTP标头](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Referer)）也是HTTPS时，才会设置`Secure`标志。 如果反向链接不安全(HTTP)，则忽略`Secure`标志以允许Web SDK读取它们。 无法从不安全的上下文中读取安全Cookie。
 * 对于第三方Cookie (demdex)，始终设置`Secure`标志，因为所有请求都是HTTPS，因此请求上下文是安全的，并且从不从JavaScript读取此Cookie。
 
-`Secure`标志在Cookie](#state-as-metadata)的[元数据表示中不存在。 仅包括`SameSite`特性。 在这种情况下，只要存在`SameSite`属性，客户端就有责任正确设置`Secure`标志。 具有`SameSite=None`的Cookie还必须指定`Secure`属性，因为它们需要安全上下文(HTTPS)。
+`Secure`标志在Cookie[&#128279;](#state-as-metadata)的元数据表示中不存在。 仅包括`SameSite`特性。 在这种情况下，只要存在`SameSite`属性，客户端就有责任正确设置`Secure`标志。 具有`SameSite=None`的Cookie还必须指定`Secure`属性，因为它们需要安全上下文(HTTPS)。

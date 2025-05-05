@@ -129,7 +129,7 @@ ht-degree: 16%
 
 ![已选择“排除”选项。](../images/ui/audience-composition/add-exclude-block.png)
 
-已添加&#x200B;**[!UICONTROL 排除]**&#x200B;块。 选择此块后，右边栏中会显示有关排除项的详细信息。 这包括块的标签和排除类型。 您可以按受众](#exclude-audience)排除[或按属性](#exclude-attribute)排除[。
+已添加&#x200B;**[!UICONTROL 排除]**&#x200B;块。 选择此块后，右边栏中会显示有关排除项的详细信息。 这包括块的标签和排除类型。 您可以按受众[&#128279;](#exclude-audience)排除[或按属性](#exclude-attribute)排除。
 
 ![排除块，突出显示两个可用的不同排除类型。](../images/ui/audience-composition/exclude.png)
 

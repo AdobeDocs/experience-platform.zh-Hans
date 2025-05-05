@@ -31,7 +31,7 @@ SaaS公司希望通过基于Gainsight PX构建的应用程序内指南吸引客�
 ## 先决条件 {#prerequisites}
 
 * 请与[!DNL Gainsight]支持团队联系，请求为您的订阅激活外部区段功能。
-* 使用位于[公司详细信息页面](https://app.aptrinsic.com/settings/subscription)底部的&#x200B;**[!UICONTROL 生成新密码]**按钮，为您的PX订阅生成OAuth密码值
+* 使用位于[公司详细信息页面](https://app.aptrinsic.com/settings/subscription)底部的&#x200B;**[!UICONTROL 生成新密码]**&#x200B;按钮，为您的PX订阅生成OAuth密码值
   Gainsight PX中的![公司详细信息屏幕显示“生成新密钥”按钮](../../assets/catalog/analytics/gainsight-px/generate_oauth_secret.png)
 
 ## 支持的身份 {#supported-identities}

@@ -103,13 +103,13 @@ Safari在Safari &lt; 12中默认禁用第三方Cookie。 由于您的[!DNL Jupyt
 !pip install {LIBRARY_NAME}
 ```
 
-有关预安装的[!DNL Python]库的完整列表，请参阅《JupyterLab用户指南》](./jupyterlab/overview.md#supported-libraries)的[附录部分。
+有关预安装的[!DNL Python]库的完整列表，请参阅《JupyterLab用户指南》[&#128279;](./jupyterlab/overview.md#supported-libraries)的附录部分。
 
 ## 我可以安装自定义PySpark库吗？
 
 很遗憾，您无法为PySpark内核安装其他库。 但是，您可以联系Adobe客户服务代表，为您安装自定义PySpark库。
 
-有关预安装的PySpark库的列表，请参阅《JupyterLab用户指南》](./jupyterlab/overview.md#supported-libraries)的[附录部分。
+有关预安装的PySpark库的列表，请参阅《JupyterLab用户指南》[&#128279;](./jupyterlab/overview.md#supported-libraries)的附录部分。
 
 ## 是否可以为[!DNL JupyterLab] [!DNL Spark]或PySpark内核配置[!DNL Spark]群集资源？
 

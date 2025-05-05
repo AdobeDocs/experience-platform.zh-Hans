@@ -41,7 +41,7 @@ ht-degree: 28%
 * Experience Platform文档{#documentation}
    * [概述](documentation/overview.md)
    * [语言支持](documentation/language-support.md)
-* 基于Experience Platform {#ecosystem}构建的应用程序
+* 基于Experience Platform构建的应用程序 {#ecosystem}
    * [概述](application-services.md)
    * [Adobe Real-Time Customer Data Platform（所有版本）](https://experienceleague.adobe.com/docs/real-time-customer-data-platform.html)
    * [应用程序和智能服务（视频）](video/application-intelligent-services.md)

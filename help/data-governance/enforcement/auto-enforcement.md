@@ -122,7 +122,7 @@ ht-degree: 0%
 
 ### 同意策略评估 {#consent-policy-evaluation}
 
-将受众激活到目标时，您可以看到在[!UICONTROL 激活目标]工作流](#pre-activation-evaluation)的[审核阶段，您的[同意策略](../policies/user-guide.md)如何影响受众的影响范围。
+将受众激活到目标时，您可以看到在[!UICONTROL 激活目标]工作流[&#128279;](#pre-activation-evaluation)的审核阶段，您的[同意策略](../policies/user-guide.md)如何影响受众的影响范围。
 
 >[!NOTE]
 >

@@ -56,7 +56,7 @@ Experience Platform支持从第三方广告系统中提取数据。 对广告提
 | 凭据 | 描述 |
 | --- | --- |
 | 访问令牌 | 您的用户帐户的[!DNL Pinterest Ads]访问令牌。 令牌的用户帐户必须是指定[!DNL Pinterest Ad]帐户的所有者或者拥有通过“业务访问”向他们授予的必要角色之一：管理员、分析人员或营销活动管理员。 有关访问令牌的更多信息，请参阅有关生成访问令牌的[[!DNL Pinterest] 指南](https://developers.pinterest.com/docs/getting-started/set-up-app/)。 |
-| 广告帐户ID | 业务部门的相关[!DNL Pinterest Ads]广告帐户ID。 有关检索广告帐户ID的信息。 访问有关在广告管理器](https://help.pinterest.com/en/business/article/find-ids-in-ads-manager)中查找ID的[[!DNL Pinterest] 指南。 |
+| 广告帐户ID | 业务部门的相关[!DNL Pinterest Ads]广告帐户ID。 有关检索广告帐户ID的信息。 访问有关在广告管理器[&#128279;](https://help.pinterest.com/en/business/article/find-ids-in-ads-manager)中查找ID的[!DNL Pinterest] 指南。 |
 | 营销活动、广告组或广告ID | 与您的广告帐户ID对应的`campaign`、`ad group`或`ad` ID。 要获取所需的ID，请导航到&#x200B;**Pinterest Business Hub** > **广告帐户摘要** > **促销活动** / **广告组** / **广告**&#x200B;的[!DNL Pinterest]页面，并复制每个名称下方提及的所需ID。 |
 
 >[!NOTE]

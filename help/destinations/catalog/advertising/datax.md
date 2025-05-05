@@ -131,4 +131,4 @@ Experience Platform UI中的![Yahoo DataX目标卡](/help/destinations/assets/ca
 
 ## 其他资源 {#additional-resources}
 
-有关详细信息，请参阅 [!DNL DataX]](https://developer.verizonmedia.com/datax/guide/)上的[!DNL Yahoo/Verizon Media] [文档。
+有关详细信息，请参阅 [!DNL DataX][&#128279;](https://developer.verizonmedia.com/datax/guide/)上的[!DNL Yahoo/Verizon Media] 文档。

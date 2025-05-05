@@ -15,7 +15,7 @@ ht-degree: 0%
 
 ## 先决条件 {#prerequisites}
 
-本指南要求您对数据生命周期工作区和[数据卫生API](./api/overview.md)有一定的了解。 在继续此文档之前，请先熟悉有关[高级数据生命周期管理](./home.md)和[在UI](./ui/dataset-expiration.md)中或通过API创建记录删除请求](./ui/record-delete.md)或[数据集过期时间的指南。
+本指南要求您对数据生命周期工作区和[数据卫生API](./api/overview.md)有一定的了解。 在继续此文档之前，请先熟悉有关[高级数据生命周期管理](./home.md)和[在UI](./ui/dataset-expiration.md)中或通过API创建记录删除请求[&#128279;](./ui/record-delete.md)或数据集过期时间的指南。
 
 ## 工单创建准则 {#work-order-creation-guidelines}
 

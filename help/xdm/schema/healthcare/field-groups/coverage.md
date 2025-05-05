@@ -21,14 +21,14 @@ ht-degree: 6%
 | 显示名称 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- | --- |
 | [!UICONTROL 计划受益人] | `beneficiary` | [[!UICONTROL 引用]](../data-types/reference.md) | 享受保险的一方和提供产品或服务时的病人。 |
-| [!UICONTROL 类] | `class` | 对象数组 | 包销商特定分类器的套件。 有关详细信息，请参阅下面](#class)的[部分。 |
+| [!UICONTROL 类] | `class` | 对象数组 | 包销商特定分类器的套件。 有关详细信息，请参阅下面[&#128279;](#class)的部分。 |
 | [!UICONTROL 联系人] | `contract` | [[!UICONTROL 引用]](../data-types/reference.md)的数组 | 构成此保险的保单。 |
-| [!UICONTROL 受益人成本] | `costToBeneficiary` | 对象数组 | 指示成本类别和相关金额的一套代码，这些代码已在政策中详述并且可能包含在健康卡上。 有关详细信息，请参阅下面](#cost-to-beneficiary)的[部分。 |
-| [!UICONTROL 异常] | `exception` | 对象数组 | 一组代码，用于指示患者成本及其有效期的例外或降低。 有关详细信息，请参阅下面](#exception)的[部分。 |
+| [!UICONTROL 受益人成本] | `costToBeneficiary` | 对象数组 | 指示成本类别和相关金额的一套代码，这些代码已在政策中详述并且可能包含在健康卡上。 有关详细信息，请参阅下面[&#128279;](#cost-to-beneficiary)的部分。 |
+| [!UICONTROL 异常] | `exception` | 对象数组 | 一组代码，用于指示患者成本及其有效期的例外或降低。 有关详细信息，请参阅下面[&#128279;](#exception)的部分。 |
 | [!UICONTROL 标识符] | `identifier` | [[!UICONTROL 标识符]](../data-types/identifier.md)的数组 | 保险商颁发的保险的标识符。 |
 | [!UICONTROL 保险计划] | `insurancePlan` | [[!UICONTROL 引用]](../data-types/reference.md) | 保险计划详细说明了构成此保险的福利和成本。 |
 | [!UICONTROL 保险人] | `insurer` | [[!UICONTROL 引用]](../data-types/reference.md) | 计划或计划的承保人、付款人或保险公司。 |
-| [!UICONTROL 付款方式：] | `paymentBy` | 对象数组 | 与支付方的链接，以及支付方将负责支付的内容（可选）。 有关详细信息，请参阅下面](#payment-by)的[部分。 |
+| [!UICONTROL 付款方式：] | `paymentBy` | 对象数组 | 与支付方的链接，以及支付方将负责支付的内容（可选）。 有关详细信息，请参阅下面[&#128279;](#payment-by)的部分。 |
 | [!UICONTROL 保险范围的开始和结束日期] | `period` | [[!UICONTROL 周期]](../data-types/period.md) | 保险范围处于活动状态的时段。 缺少开始日期表示开始日期未知，缺少结束日期表示保险范围正在进行中。 |
 | [!UICONTROL 策略持有者] | `policyHolder` | [[!UICONTROL 引用]](../data-types/reference.md) | 持有保险单的一方。 |
 | [!UICONTROL 受益人关系] | `relationship` | [[!UICONTROL 可编码的概念]](../data-types/codeable-concept.md) | 受益人与订阅者的关系。 |

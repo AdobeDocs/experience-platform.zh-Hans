@@ -29,7 +29,7 @@ ht-degree: 0%
 
 要将[!DNL Power BI]连接到查询服务，请打开[!DNL Power BI]并在顶部菜单功能区中选择&#x200B;**[!DNL Get Data]**。 接下来，在搜索栏中输入“[!DNL PostgreSQL]”以缩小数据源列表。 从显示的结果中，依次选择&#x200B;**[!DNL PostgreSQL database]**&#x200B;和&#x200B;**[!DNL Connect]**。
 
-出现[!DNL PostgreSQL]数据库对话框，请求服务器和数据库的值。 有关如何从Power Query Desktop](https://learn.microsoft.com/en-us/power-query/connectors/postgresql#connect-to-a-postgresql-database-from-power-query-desktop)中[连接到PostgreSQL数据库的其他说明，请参阅官方的[!DNL PowerBI]文档。
+出现[!DNL PostgreSQL]数据库对话框，请求服务器和数据库的值。 有关如何从Power Query Desktop[&#128279;](https://learn.microsoft.com/en-us/power-query/connectors/postgresql#connect-to-a-postgresql-database-from-power-query-desktop)中连接到PostgreSQL数据库的其他说明，请参阅官方的[!DNL PowerBI]文档。
 
 这些必需的值获取自您的Adobe Experience Platform凭据。 若要查找凭据，请登录到Experience Platform UI，然后从左侧导航中选择&#x200B;**[!UICONTROL 查询]**，然后选择&#x200B;**[!UICONTROL 凭据]**。 有关查找数据库名称、主机、端口和登录凭据的详细信息，请阅读[凭据指南](../ui/credentials.md)。
 
@@ -77,7 +77,7 @@ ht-degree: 0%
 
 [!DNL Power BI]和其他第三方工具（如[!DNL Tableau]）当前不允许用户导入嵌套对象，如Experience Platform中的XDM对象。 为此，[!DNL Power BI]允许您使用自定义SQL访问这些嵌套字段并创建数据的平面化视图。 然后，[!DNL Power BI]将以前嵌套数据的此平面化视图作为普通表加载。
 
-从[!DNL PostgreSQL database]对话框中，选择&#x200B;**[!DNL Advanced options]**&#x200B;以在&#x200B;**[!DNL SQL statement]**&#x200B;部分中输入自定义SQL查询。 此自定义查询应该用于将您的JSON名称 — 值对拼合为表格式。 官方文档还提供了有关如何使用高级选项](https://learn.microsoft.com/en-us/power-query/connectors/postgresql#connect-using-advanced-options)中的SQL语句[连接PowerBI的信息。
+从[!DNL PostgreSQL database]对话框中，选择&#x200B;**[!DNL Advanced options]**&#x200B;以在&#x200B;**[!DNL SQL statement]**&#x200B;部分中输入自定义SQL查询。 此自定义查询应该用于将您的JSON名称 — 值对拼合为表格式。 官方文档还提供了有关如何使用高级选项[&#128279;](https://learn.microsoft.com/en-us/power-query/connectors/postgresql#connect-using-advanced-options)中的SQL语句连接PowerBI的信息。
 
 输入自定义查询后，选择&#x200B;**[!DNL OK]**&#x200B;以继续连接数据库。 有关从工作流的此部分连接数据库的指导，请参阅上面的[身份验证](#authentication)部分。
 

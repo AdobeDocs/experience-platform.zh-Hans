@@ -23,10 +23,10 @@ ht-degree: 0%
 >
 >[!DNL Anaconda Navigator]是一个桌面图形用户界面(GUI)，它提供了一种更容易安装和启动常用[!DNL Python]程序（如[!DNL Jupyter Notebook]）的方法。 它还有助于在不使用命令行命令的情况下管理包、环境和通道。
 >按照其网站上的引导式安装过程来[安装您的首选应用程序版本](https://docs.anaconda.com/anaconda/install/)。
->从Anaconda Navigator主屏幕中，从支持的应用程序列表中选择&#x200B;**[!DNL Jupyter Notebook]**以启动该程序。
+>从Anaconda Navigator主屏幕中，从支持的应用程序列表中选择&#x200B;**[!DNL Jupyter Notebook]**&#x200B;以启动该程序。
 >有关详细信息，请参阅[Anaconda官方文档](https://docs.anaconda.com/anaconda/navigator/)。
 
-Jupyter官方文档提供了从命令行界面](https://docs.jupyter.org/en/latest/running.html#how-do-i-open-a-specific-notebook) (CLI) [运行笔记本的说明。
+Jupyter官方文档提供了从命令行界面[&#128279;](https://docs.jupyter.org/en/latest/running.html#how-do-i-open-a-specific-notebook) (CLI) 运行笔记本的说明。
 
 ## Launch [!DNL Jupyter Notebook]
 

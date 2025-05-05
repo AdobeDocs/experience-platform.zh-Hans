@@ -24,7 +24,7 @@ ht-degree: 6%
 | [!UICONTROL 终结点] | `endpoint` | [[!UICONTROL 引用]](../data-types/reference.md)的数组 | 技术端点，用于提供对组织运营的服务的访问。 |
 | [!UICONTROL 标识符] | `indentifier` | [[!UICONTROL 标识符]](../data-types/identifier.md)的数组 | 用于跨多个完全不同的系统标识组织的标识符。 |
 | [!UICONTROL 组织的一部分] | `partOf` | [[!UICONTROL 引用]](../data-types/reference.md) | 此组织所属的组织。 |
-| [!UICONTROL 资格] | `qualification` | 对象数组 | 授权和/或以其他方式认可本组织提供护理的正式认证、认证、培训、指定和许可证。 有关详细信息，请参阅下面](#qualification)的[部分。 |
+| [!UICONTROL 资格] | `qualification` | 对象数组 | 授权和/或以其他方式认可本组织提供护理的正式认证、认证、培训、指定和许可证。 有关详细信息，请参阅下面[&#128279;](#qualification)的部分。 |
 | [!UICONTROL 类型] | `type` | [[!UICONTROL 可编码概念]](../data-types/codeable-concept.md)的数组 | 是哪种组织。 |
 | [!UICONTROL 活动] | `active` | 布尔值 | 组织的记录是否仍在使用中。 |
 | [!UICONTROL 别名] | `alias` | 字符串数组 | 组织称为或过去称为的备用名称列表。 |

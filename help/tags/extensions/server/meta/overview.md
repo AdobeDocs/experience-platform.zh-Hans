@@ -69,7 +69,7 @@ ht-degree: 0%
 
 与事件质量匹配分数(EMQ)集成允许您通过显示EMQ分数来轻松查看实施的有效性。 此集成最大限度地减少了上下文切换，并帮助您提高元转换API实施的成功。 这些事件分数显示在[!UICONTROL Meta Conversions API扩展]配置屏幕中。
 
-![Meta Conversions API扩展]配置页面突出显示[!UICONTROL 查看EMQ得分]。](../../../images/extensions/server/meta/emq-score.png)[!UICONTROL 
+![Meta Conversions API扩展]配置页面突出显示[!UICONTROL 查看EMQ得分]。(../../../images/extensions/server/meta/emq-score.png)
 
 ## 与LiveRamp(Alpha)集成 {#alpha}
 
@@ -94,7 +94,7 @@ ht-degree: 0%
 | 配置区域 | 描述 |
 | --- | --- |
 | [!UICONTROL 服务器事件参数] | 有关事件的常规信息，包括发生时间和触发该事件的源操作。 有关[!DNL Conversions API]接受的[标准事件参数](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/server-event)的更多信息，请参阅[!DNL Meta]开发人员文档。<br><br>如果您同时使用[!DNL Meta Pixel]和[!DNL Conversions API]来发送事件，请确保每个事件都包含&#x200B;**[!UICONTROL 事件名称]** (`event_name`)和&#x200B;**[!UICONTROL 事件ID]** (`event_id`)，因为这些值用于[事件去重](#deduplication)。<br><br>您还可以选择&#x200B;**[!UICONTROL 启用有限数据使用]**，以帮助遵守客户选择退出的要求。 有关此功能的详细信息，请参阅有关[数据处理选项](https://developers.facebook.com/docs/marketing-apis/data-processing-options/)的[!DNL Conversions API]文档。 |
-| [!UICONTROL 客户信息参数] | 用于将事件归因于客户的用户身份数据。 在将某些值发送到API之前，必须对它们进行哈希处理。<br><br>为确保良好的通用API连接和高事件匹配质量(EMQ)，建议您随服务器事件一起发送所有[接受的客户信息参数](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters)。 这些参数也应根据它们对EMQ](https://www.facebook.com/business/help/765081237991954?id=818859032317965)的重要性和影响进行[优先级排序。 |
+| [!UICONTROL 客户信息参数] | 用于将事件归因于客户的用户身份数据。 在将某些值发送到API之前，必须对它们进行哈希处理。<br><br>为确保良好的通用API连接和高事件匹配质量(EMQ)，建议您随服务器事件一起发送所有[接受的客户信息参数](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters)。 这些参数也应根据它们对EMQ[&#128279;](https://www.facebook.com/business/help/765081237991954?id=818859032317965)的重要性和影响进行优先级排序。 |
 | [!UICONTROL 自定义数据] | 用于广告投放优化的附加数据，以JSON对象的形式提供。 请参阅[[!DNL Conversions API] 文档](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/custom-data)，了解有关此对象所接受属性的更多信息。<br><br>如果要发送购买事件，则必须使用此部分提供必需的特性`currency`和`value`。 |
 | [!UICONTROL 测试事件] | 此选项用于验证您的配置是否导致[!DNL Meta]按预期接收服务器事件。 要使用此功能，请选中&#x200B;**[!UICONTROL 作为测试事件发送]**&#x200B;复选框，然后在下面的输入中提供您选择的测试事件代码。 部署事件转发规则后，如果您正确配置了扩展和操作，则应该会在[!DNL Meta Events Manager]中看到&#x200B;**[!DNL Test Events]**&#x200B;视图内出现活动。 |
 
@@ -233,4 +233,4 @@ ht-degree: 0%
 * 连接尚未连接到[!DNL Conversions API]集成的任何其他[!DNL Pixels]。
 * 如果您专门通过客户端上的[!DNL Meta Pixel]发送某些事件，则也从服务器端将这些相同的事件发送到[!DNL Conversions API]。
 
-有关如何有效实施集成的更多指导，请参阅有关 [!DNL Conversions API]](https://www.facebook.com/business/help/308855623839366?id=818859032317965)的[最佳实践的[!DNL Meta]文档。 有关Adobe Experience Cloud中标记和事件转发的更多常规信息，请参阅[标记概述](../../../home.md)。
+有关如何有效实施集成的更多指导，请参阅有关 [!DNL Conversions API][&#128279;](https://www.facebook.com/business/help/308855623839366?id=818859032317965)的最佳实践的[!DNL Meta]文档。 有关Adobe Experience Cloud中标记和事件转发的更多常规信息，请参阅[标记概述](../../../home.md)。

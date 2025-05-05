@@ -92,7 +92,7 @@ GROUP  BY _acp_system_metadata
 
 >[!TIP]
 >
->要检索批次ID并查询与该批次ID关联的记录，您必须首先在Experience Platform中创建批次。 如果您希望自己测试该过程，则可以将CSV数据摄取到Experience Platform。 阅读有关如何使用AI生成的推荐](../../ingestion/tutorials/map-csv/recommendations.md)将CSV文件[映射到现有XDM架构的指南。
+>要检索批次ID并查询与该批次ID关联的记录，您必须首先在Experience Platform中创建批次。 如果您希望自己测试该过程，则可以将CSV数据摄取到Experience Platform。 阅读有关如何使用AI生成的推荐[&#128279;](../../ingestion/tutorials/map-csv/recommendations.md)将CSV文件映射到现有XDM架构的指南。
 
 摄取批次后，您必须导航到将数据摄取到的数据集的[!UICONTROL 数据集活动选项卡]。
 

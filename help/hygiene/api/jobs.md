@@ -54,7 +54,7 @@ POST /jobs
 
 **请求**
 
-请求有效负载的结构与Privacy Service API](../../privacy-service/api/privacy-jobs.md#access-delete)中[删除请求的有效负载类似。 它包含一个`users`数组，其对象表示要删除其数据的用户。
+请求有效负载的结构与Privacy Service API[&#128279;](../../privacy-service/api/privacy-jobs.md#access-delete)中删除请求的有效负载类似。 它包含一个`users`数组，其对象表示要删除其数据的用户。
 
 ```shell
 curl -X POST \

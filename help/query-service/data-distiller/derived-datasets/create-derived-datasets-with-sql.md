@@ -75,7 +75,7 @@ Created Table DataSet Id
 ALTER TABLE <your_table_name> DROP label upsert;
 ```
 
-有关在CTAS查询](../../sql/syntax.md#create-table-as-select)中使用[ALTER TABLE](../../sql/syntax.md#alter-table)命令和[标签的详细信息，请参阅SQl语法文档。
+有关在CTAS查询[&#128279;](../../sql/syntax.md#create-table-as-select)中使用[ALTER TABLE](../../sql/syntax.md#alter-table)命令和标签的详细信息，请参阅SQl语法文档。
 
 ## 帮助通过SQL管理派生数据集的构造
 
@@ -141,7 +141,7 @@ ALTER TABLE table_name ADD LABEL 'UPSERT';
 ALTER TABLE table_with_a_decile ADD label 'UPSERT';
 ```
 
-此SQL语句提供了使用API调用的高效替代方法。 有关详细信息，请参阅有关如何使用数据集API](../../../catalog/datasets/enable-upsert.md#enable-the-dataset)启用用于Real-Time CDP和UPSERT的数据集[的文档。
+此SQL语句提供了使用API调用的高效替代方法。 有关详细信息，请参阅有关如何使用数据集API[&#128279;](../../../catalog/datasets/enable-upsert.md#enable-the-dataset)启用用于Real-Time CDP和UPSERT的数据集的文档。
 
 ### 禁用数据集的更新和插入功能 {#disable-upsert-functionality-for-dataset}
 
@@ -199,7 +199,7 @@ CREATE FIELDGROUP field_group_for_test123 (decile1Month map<text, integer>, deci
 
 成功执行此语句将返回创建的字段组ID。 例如：`c731a1eafdfdecae1683c6dca197c66ed2c2b49ecd3a9525`。
 
-有关替代方法的详细信息，请参阅有关如何在架构编辑器](../../../xdm/ui/resources/field-groups.md#create)中[创建新字段组或使用[架构注册表API](../../../xdm/api/field-groups.md#create)的文档。
+有关替代方法的详细信息，请参阅有关如何在架构编辑器[&#128279;](../../../xdm/ui/resources/field-groups.md#create)中创建新字段组或使用[架构注册表API](../../../xdm/api/field-groups.md#create)的文档。
 
 ### 放置字段组
 

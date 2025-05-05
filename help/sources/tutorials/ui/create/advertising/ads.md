@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!WARNING]
 >
->[!DNL Google Ads]源当前在用户界面中不可用。 您可以使用API](../../../api/create/advertising/ads.md)继续将[!DNL Google Ads]数据摄取到Experience Platform [。
+>[!DNL Google Ads]源当前在用户界面中不可用。 您可以使用API[&#128279;](../../../api/create/advertising/ads.md)继续将[!DNL Google Ads]数据摄取到Experience Platform 。
 
 >[!NOTE]
 >

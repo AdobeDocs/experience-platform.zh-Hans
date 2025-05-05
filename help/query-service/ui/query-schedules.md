@@ -45,7 +45,7 @@ ht-degree: 0%
 
 ### 添加计划详细信息 {#schedule-details}
 
-此时将显示“调度详细资料”页。 在此页上，可以编辑计划查询的各种详细信息。 详细信息包括计划查询](#scheduled-query-frequency)运行的[频率和工作日、开始和结束日期、要将结果导出到的数据集以及[查询状态警报](#alerts-for-query-status)。
+此时将显示“调度详细资料”页。 在此页上，可以编辑计划查询的各种详细信息。 详细信息包括计划查询[&#128279;](#scheduled-query-frequency)运行的频率和工作日、开始和结束日期、要将结果导出到的数据集以及[查询状态警报](#alerts-for-query-status)。
 
 >[!IMPORTANT]
 >

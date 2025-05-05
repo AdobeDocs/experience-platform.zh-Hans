@@ -133,7 +133,7 @@ Adobe提供了多个标准（“核心”）体验数据模型(XDM)类，包括[
 ![已突出显示具有现有类和[!UICONTROL 创建架构]的架构编辑器。](../../images/ui/resources/classes/edit-class-options.png)
 
 如果选择创建新架构，请参阅[创建架构](#create-schema)一节以了解详细信息。 创建完架构（或选择现有架构后）后，将显示架构编辑器。 要更新现有类字段，请从架构结构中选择该字段。 字段的信息将显示在右边栏中。 确保[!UICONTROL 分配给]
-已选择选项**[!UICONTROL 类]**，或者您的更新不会影响该类。
+已选择选项&#x200B;**[!UICONTROL 类]**，或者您的更新不会影响该类。
 
 ![架构编辑器，其中选定字段并突出显示，右边栏显示，突出显示[!UICONTROL 分配给]。](../../images/ui/resources/classes/edit-existing-field.png)
 

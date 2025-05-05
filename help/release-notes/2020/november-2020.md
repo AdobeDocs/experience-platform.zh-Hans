@@ -209,7 +209,7 @@ Adobe Experience Platform可以从外部源摄取数据，同时允许您使用[
 | 功能 | 描述 |
 | ------- | ----------- |
 | 更新连接信息 | 您现在可以使用[!DNL Flow Service] API和UI更新现有批次连接的名称、描述和凭据。 有关详细信息，请参阅关于使用流服务API [更新连接](../../sources/tutorials/api/update.md)和使用UI编辑帐户详细信息[的教程](../../sources/tutorials/ui/monitor.md)。 |
-| 删除连接 | 现在可以使用[!DNL Flow Service] API和用户界面删除包含错误或变得不必要的批处理连接。 有关详细信息，请参阅关于使用Flow Service API [删除连接](../../sources/tutorials/api/delete.md)和使用UI ](../../sources/tutorials/ui/delete-accounts.md)删除帐户的教程。[ |
+| 删除连接 | 现在可以使用[!DNL Flow Service] API和用户界面删除包含错误或变得不必要的批处理连接。 有关详细信息，请参阅关于使用Flow Service API [删除连接](../../sources/tutorials/api/delete.md)和使用UI [&#128279;](../../sources/tutorials/ui/delete-accounts.md)删除帐户的教程。 |
 | 分层映射 | 您可以在数据摄取过程中预览分层源文件，如JSON或Parquet。 有关详细信息，请参阅有关[在UI](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md)中为云存储连接器配置数据流的教程。 |
 | API支持在流源中映射 | 您现在可以使用API对流源执行映射功能。 |
 | API支持云存储源的自定义分隔符 | 您现在可以使用云存储源收集非CSV分隔的文件。 可以使用任何单列分隔符（如制表符、逗号、管道、分号或哈希）收集任何格式的平面文件。 |

@@ -278,13 +278,13 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
 | 属性 | 描述 |
 | -------- | ----------- |
 | `metrics.failedRecordCount` | 由于解析、转换或验证而无法处理的行数。 此值可以通过从`outputRecordCount`中减去`inputRecordCount`而派生。 此值在所有批次中生成，无论是否启用了`errorDiagnostics`。 |
-| `errors.recordCount` | 因指定的错误代码而失败的行数。 如果启用了`errorDiagnostics`，则只生成&#x200B;**1}值。** |
+| `errors.recordCount` | 因指定的错误代码而失败的行数。 如果启用了`errorDiagnostics`，则只生成&#x200B;**1&rbrace;值。** |
 
 >[!NOTE]
 >
 >如果错误诊断不可用，则会显示以下错误消息：
 >
-```json
+>```json
 >{
 >       "errors": [{
 >               "code": "INGEST-1211-400",

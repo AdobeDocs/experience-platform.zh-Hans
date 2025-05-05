@@ -30,7 +30,7 @@ Adobe Experience Platform查询服务支持匿名块。 匿名块功能允许您
 
 ## 示例匿名块查询
 
-以下查询显示链接SQL语句的示例。 有关使用的任何SQL语法的详细信息，请参阅查询服务](../sql/syntax.md)文档中的[SQL语法。
+以下查询显示链接SQL语句的示例。 有关使用的任何SQL语法的详细信息，请参阅查询服务[&#128279;](../sql/syntax.md)文档中的SQL语法。
 
 ```SQL
 $$ BEGIN
@@ -44,7 +44,7 @@ $$;
 
 在以下示例中，`SET`在指定的局部变量中保留`SELECT`查询的结果。 变量的作用域为匿名块。
 
-快照ID存储为局部变量(`@current_sid`)。 然后，在下一个查询中使用它来返回来自同一数据集/表的基于SNAPSHOT的结果。 有关snapshot子句](../sql/syntax.md#SNAPSHOT-clause)的更多[信息，请参阅SQL语法文档。
+快照ID存储为局部变量(`@current_sid`)。 然后，在下一个查询中使用它来返回来自同一数据集/表的基于SNAPSHOT的结果。 有关snapshot子句[&#128279;](../sql/syntax.md#SNAPSHOT-clause)的更多信息，请参阅SQL语法文档。
 
 ```SQL
 $$ BEGIN                                             

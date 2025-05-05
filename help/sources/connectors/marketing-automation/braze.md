@@ -27,7 +27,7 @@ Experience Platform支持从流应用程序中摄取数据。 对流式提供程
 要完成本指南中的步骤，您将需要：
 
 * 登录到[Adobe Experience Platform](https://platform.adobe.com)并拥有创建新的流源连接的权限。
-* 登录您的[[!DNL Braze] 仪表板](https://dashboard.braze.com/sign_in)、未使用的[Currences Connector许可证](https://www.braze.com/docs/user_guide/data_and_analytics/braze_currents)以及创建连接器的权限。 有关详细信息，请阅读设置 [!DNL Currents]](https://www.braze.com/docs/user_guide/data_and_analytics/braze_currents/setting_up_currents/#requirements)的[要求。
+* 登录您的[[!DNL Braze] 仪表板](https://dashboard.braze.com/sign_in)、未使用的[Currences Connector许可证](https://www.braze.com/docs/user_guide/data_and_analytics/braze_currents)以及创建连接器的权限。 有关详细信息，请阅读设置 [!DNL Currents][&#128279;](https://www.braze.com/docs/user_guide/data_and_analytics/braze_currents/setting_up_currents/#requirements)的要求。
 
 ### 收集所需的凭据
 
@@ -46,4 +46,4 @@ Experience Platform支持从流应用程序中摄取数据。 对流式提供程
 
 ## 后续步骤
 
-通过阅读本文档，您已完成从[!DNL Braze Currents]帐户向Experience Platform流式传输数据所需的先决条件设置。 现在，您可以使用用户界面](../../tutorials/ui/create/marketing-automation/braze.md)在[连接 [!DNL Braze Currents] 到Experience Platform时继续阅读指南。
+通过阅读本文档，您已完成从[!DNL Braze Currents]帐户向Experience Platform流式传输数据所需的先决条件设置。 现在，您可以使用用户界面[&#128279;](../../tutorials/ui/create/marketing-automation/braze.md)在连接 [!DNL Braze Currents] 到Experience Platform时继续阅读指南。

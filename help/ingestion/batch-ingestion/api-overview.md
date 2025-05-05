@@ -99,7 +99,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 >[!NOTE]
 >
->请参阅附录部分，了解正确格式化的JSON数据文件](#data-transformation-for-batch-ingestion)的[示例。
+>请参阅附录部分，了解正确格式化的JSON数据文件[&#128279;](#data-transformation-for-batch-ingestion)的示例。
 
 **API格式**
 
@@ -623,7 +623,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 >[!NOTE]
 >
->请参阅附录部分，了解格式正确的CSV数据文件](#data-transformation-for-batch-ingestion)的[示例。
+>请参阅附录部分，了解格式正确的CSV数据文件[&#128279;](#data-transformation-for-batch-ingestion)的示例。
 
 **API格式**
 

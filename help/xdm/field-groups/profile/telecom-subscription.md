@@ -25,10 +25,10 @@ ht-degree: 5%
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `internetSubscription` | 对象数组 | 描述Internet订阅计划详细信息，如数据限制、连接类型和速度详细信息。 有关详细信息，请参阅下面](#internetSubscription)的[部分。 |
-| `landlineSubscription` | 对象数组 | 描述固定电话订阅计划详细信息，包括选定功能、分钟数和拨号计划。 有关详细信息，请参阅下面](#landlineSubscription)的[部分。 |
-| `mediaSubscription` | 对象数组 | 描述媒体订阅计划详细信息，包括频道数和包含的流媒体服务。 有关详细信息，请参阅下面](#mediaSubscription)的[部分。 |
-| `mobileSubscription` | 对象数组 | 描述移动订阅计划详细信息，包括线路数、数据速率、成本等。 有关详细信息，请参阅下面](#mobileSubscription)的[部分。 |
+| `internetSubscription` | 对象数组 | 描述Internet订阅计划详细信息，如数据限制、连接类型和速度详细信息。 有关详细信息，请参阅下面[&#128279;](#internetSubscription)的部分。 |
+| `landlineSubscription` | 对象数组 | 描述固定电话订阅计划详细信息，包括选定功能、分钟数和拨号计划。 有关详细信息，请参阅下面[&#128279;](#landlineSubscription)的部分。 |
+| `mediaSubscription` | 对象数组 | 描述媒体订阅计划详细信息，包括频道数和包含的流媒体服务。 有关详细信息，请参阅下面[&#128279;](#mediaSubscription)的部分。 |
+| `mobileSubscription` | 对象数组 | 描述移动订阅计划详细信息，包括线路数、数据速率、成本等。 有关详细信息，请参阅下面[&#128279;](#mobileSubscription)的部分。 |
 | `primarySubscriber` | [[!UICONTROL 人员]](../../data-types/person.md) | 描述订阅的所有者。 |
 | `bundleName` | 字符串 | 捕获客户注册的任何类型的订阅包的名称，如`Internet + Media`。 |
 | `primaryPartyID` | 字符串 | 负责订阅的主要人员的标识符，通常可能是他们的设备电话号码。 |

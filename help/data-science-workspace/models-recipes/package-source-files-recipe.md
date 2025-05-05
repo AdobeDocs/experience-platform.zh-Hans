@@ -36,7 +36,7 @@ ht-degree: 0%
 
 ## 配方创建
 
-配方创建从打包源文件开始，以构建存档文件。 源文件定义了用于解决手头特定问题的机器学习逻辑和算法，并用 R、PySpark 或 Scala 编写 [!DNL Python]。 构建的存档文件采用 Docker 映像的形式。 生成后，将打包的存档文件导入到[!DNL Data Science Workspace]中，以使用API](./import-packaged-recipe-api.md)在UI](./import-packaged-recipe-ui.md)或[中创建方法[。
+配方创建从打包源文件开始，以构建存档文件。 源文件定义了用于解决手头特定问题的机器学习逻辑和算法，并用 R、PySpark 或 Scala 编写 [!DNL Python]。 构建的存档文件采用 Docker 映像的形式。 生成后，将打包的存档文件导入到[!DNL Data Science Workspace]中，以使用API[&#128279;](./import-packaged-recipe-api.md)在UI[&#128279;](./import-packaged-recipe-ui.md)或中创建方法。
 
 ### 基于Docker的模型创作 {#docker-based-model-authoring}
 
@@ -48,7 +48,7 @@ ht-degree: 0%
 
 ![](../images/models-recipes/package-source-files/import.png)
 
-此时会打开“ **[!UICONTROL 配置]** ”页面。 提供适当的 **[!UICONTROL 配方名称]**，例如“零售销售配方”，并选择性地提供描述或文档 URL。 完成后，单击“下一步&#x200B;]**”。**[!UICONTROL 
+此时会打开“ **[!UICONTROL 配置]** ”页面。 提供适当的 **[!UICONTROL 配方名称]**，例如“零售销售配方”，并选择性地提供描述或文档 URL。 完成后，单击“下一步&#x200B;**”。**
 
 ![](../images/models-recipes/package-source-files/configure.png)
 

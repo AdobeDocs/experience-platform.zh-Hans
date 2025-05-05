@@ -142,7 +142,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->`number`类型用于任何数字类型，可以是整数或浮点数，而[`integer`类型](#integer)专门用于整数数字。 有关每种类型的用例的更多信息，请参阅有关数字类型](https://json-schema.org/understanding-json-schema/reference/numeric.html)的[JSON架构文档。
+>`number`类型用于任何数字类型，可以是整数或浮点数，而[`integer`类型](#integer)专门用于整数数字。 有关每种类型的用例的更多信息，请参阅有关数字类型[&#128279;](https://json-schema.org/understanding-json-schema/reference/numeric.html)的JSON架构文档。
 
 ## [!UICONTROL 整数] {#integer}
 
@@ -158,7 +158,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->虽然`integer`类型专门引用整数值，但[`number`类型](#number)用于任何数值类型，可以是整数或浮点数。 有关每种类型的用例的更多信息，请参阅有关数字类型](https://json-schema.org/understanding-json-schema/reference/numeric.html)的[JSON架构文档。
+>虽然`integer`类型专门引用整数值，但[`number`类型](#number)用于任何数值类型，可以是整数或浮点数。 有关每种类型的用例的更多信息，请参阅有关数字类型[&#128279;](https://json-schema.org/understanding-json-schema/reference/numeric.html)的JSON架构文档。
 
 您可以选择通过将`minimum`和`maximum`属性添加到定义来约束整数的范围。 架构生成器UI支持的几个其他数字类型只是具有特定`minimum`和`maximum`约束的`integer`类型，如[[!UICONTROL Long]](#long)、[[!UICONTROL Short]](#short)和[[!UICONTROL Byte]](#byte)。
 

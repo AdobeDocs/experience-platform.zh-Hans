@@ -29,7 +29,7 @@ Adobe Experience Platform中的Source连接器提供了按计划摄取外部来�
 
 >[!TIP]
 >
->在删除源帐户之前，必须首先删除与源帐户关联的任何现有数据流。 要删除现有数据流，请参阅有关在UI](./delete.md)中删除源数据流[的教程。
+>在删除源帐户之前，必须首先删除与源帐户关联的任何现有数据流。 要删除现有数据流，请参阅有关在UI[&#128279;](./delete.md)中删除源数据流的教程。
 
 登录到[Adobe Experience Platform](https://platform.adobe.com)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问&#x200B;**[!UICONTROL 源]**&#x200B;工作区。 **[!UICONTROL Catalog]**&#x200B;屏幕显示各种源，您可以使用这些源创建帐户和数据流。 每个源显示与其关联的现有帐户和数据流的数量。
 

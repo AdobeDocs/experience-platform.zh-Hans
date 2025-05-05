@@ -24,7 +24,7 @@ ht-degree: 7%
 | [!UICONTROL 通信] | `communication` | 对象数组 | 可用于与从业人员通信的语言。 有关详细信息，请参阅下面的[部分](#communication) |
 | [!UICONTROL 标识符] | `identifier` | [[!UICONTROL 标识符]](../data-types/identifier.md)的数组 | 适用于此角色中人员的标识符。 |
 | [!UICONTROL 名称] | `name` | [[!UICONTROL 人工名称]](../data-types/human-name.md)的数组 | 与从业者关联的名称。 |
-| [!UICONTROL 资格] | `qualification` | 对象数组 | 正式资格、认证、认证、培训、执照或类似情况，这些授权或以其他方式与从业者提供的护理相关。 有关详细信息，请参阅下面](#qualification)的[部分。 |
+| [!UICONTROL 资格] | `qualification` | 对象数组 | 正式资格、认证、认证、培训、执照或类似情况，这些授权或以其他方式与从业者提供的护理相关。 有关详细信息，请参阅下面[&#128279;](#qualification)的部分。 |
 | [!UICONTROL 联系人详细信息] | `telecom` | [[!UICONTROL 联系点]](../data-types/contact-point.md)的数组 | 从业者的联系详细信息。 |
 | [!UICONTROL 活动] | `active` | 布尔值 | 指示从业者记录是否正在使用中。 |
 | [!UICONTROL 出生日期] | `birthDate` | 日期 | 从业者的出生日期。 |

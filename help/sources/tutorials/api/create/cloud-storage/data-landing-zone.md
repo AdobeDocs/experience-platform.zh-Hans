@@ -67,8 +67,7 @@ curl -X GET \
 根据您的提供商，成功的请求会返回以下内容：
 
 >[!BEGINTABS]
-
->在Azure上[!TAB 响应]
+>[!TAB 在Azure上 响应]
 
 ```json
 {
@@ -83,7 +82,7 @@ curl -X GET \
 | `containerTTL` | 适用于登陆区域内数据的过期时间（以天为单位）。 七天后，会删除给定登陆区域内的任何区域。 |
 
 
->在AWS上[!TAB 响应]
+>[!TAB 在AWS上 响应]
 
 ```json
 {
@@ -131,8 +130,7 @@ curl -X GET \
 根据您的提供商，成功的请求会返回以下内容：
 
 >[!BEGINTABS]
-
->在Azure上[!TAB 响应]
+>[!TAB 在Azure上 响应]
 
 ```json
 {
@@ -152,7 +150,7 @@ curl -X GET \
 | `SASUri` | [!DNL Data Landing Zone]的共享访问签名URI。 此字符串是您正在接受身份验证的[!DNL Data Landing Zone]的URI及其对应的SAS令牌的组合。 |
 | `expiryDate` | SAS令牌的过期日期。 您必须在到期日期之前刷新您的令牌，以便继续在您的应用程序中使用它来将数据上载到[!DNL Data Landing Zone]。 如果您没有在规定的到期日之前手动刷新令牌，则会在执行GET凭据调用时自动刷新并提供新令牌。 |
 
->在AWS上[!TAB 响应]
+>[!TAB 在AWS上 响应]
 
 ```json
 {
@@ -673,4 +671,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过完成本教程，您已检索到[!DNL Data Landing Zone]凭据，探索了其文件结构以查找要带到Experience Platform的文件，并创建了源连接以开始将您的数据带到Experience Platform。 您现在可以继续下一教程，其中您将了解如何使用 [!DNL Flow Service] API](../../collect/cloud-storage.md)创建数据流以将云存储数据引入Experience Platform。[
+通过完成本教程，您已检索到[!DNL Data Landing Zone]凭据，探索了其文件结构以查找要带到Experience Platform的文件，并创建了源连接以开始将您的数据带到Experience Platform。 您现在可以继续下一教程，其中您将了解如何使用 [!DNL Flow Service] API[&#128279;](../../collect/cloud-storage.md)创建数据流以将云存储数据引入Experience Platform。

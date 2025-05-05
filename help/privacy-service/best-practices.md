@@ -59,7 +59,7 @@ ht-degree: 0%
 
 - **查询参数：**&#x200B;使用特定筛选器来缩小结果范围，例如：数据范围、法规类型和状态（正在处理、完成等）。
 
-您可以通过Privacy ServiceUI查看组织中所有当前隐私作业的列表。 有关如何筛选作业请求列表的信息，请参阅UI文档中的[管理隐私作业](./ui/user-guide.md#job-requests)。 或者，请参阅有关Privacy ServiceAPI](./api/privacy-jobs.md)中[使用/job端点的文档。
+您可以通过Privacy ServiceUI查看组织中所有当前隐私作业的列表。 有关如何筛选作业请求列表的信息，请参阅UI文档中的[管理隐私作业](./ui/user-guide.md#job-requests)。 或者，请参阅有关Privacy ServiceAPI[&#128279;](./api/privacy-jobs.md)中使用/job端点的文档。
 
 Privacy ServiceAPI文档包含有关[可用的查询参数筛选器](https://developer.adobe.com/experience-platform-apis/references/privacy-service/#tag/Privacy-jobs/operation/listPrivacyJobs)的详细信息。
 

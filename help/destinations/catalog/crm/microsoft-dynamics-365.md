@@ -167,6 +167,7 @@ ht-degree: 2%
 
 1. 在&#x200B;**[!UICONTROL 选择目标字段]**&#x200B;窗口中，选择要将源字段映射到的目标字段类型。
    * **[!UICONTROL 选择身份命名空间]**：选择此选项可将源字段映射到列表中的身份命名空间。
+
      ![Experience Platform UI屏幕截图显示了contactid的Target映射。](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-contactid.png)
 
    * 在XDM配置文件架构和[!DNL Dynamics 365]实例之间添加以下映射：
@@ -176,6 +177,7 @@ ht-degree: 2%
      | `contactid` | `contactid` | 是 |
 
    * **[!UICONTROL 选择自定义属性]**：选择此选项可将源字段映射到您在&#x200B;**[!UICONTROL 属性名称]**&#x200B;字段中定义的自定义属性。 请参阅[[!DNL Dynamics 365] 文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1#entity-properties)，获取受支持属性的完整列表。
+
      ![Experience Platform UI屏幕截图显示电子邮件的Target映射。](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-email.png)
 
      >[!IMPORTANT]
@@ -212,13 +214,13 @@ ht-degree: 2%
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 选择&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**以导航到目标列表。
+1. 选择&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**&#x200B;以导航到目标列表。
    ![显示“浏览目标”的Experience Platform UI屏幕截图。](../../assets/catalog/crm/microsoft-dynamics-365/browse-destinations.png)
 
 1. 选择目标并验证状态为&#x200B;**[!UICONTROL 已启用]**。
    ![Experience Platform UI屏幕截图显示目标数据流运行。](../../assets/catalog/crm/microsoft-dynamics-365/destination-dataflow-run.png)
 
-1. 切换到&#x200B;**[!DNL Activation data]**选项卡，然后选择受众名称。
+1. 切换到&#x200B;**[!DNL Activation data]**&#x200B;选项卡，然后选择受众名称。
    ![显示目标激活数据的Experience Platform UI屏幕截图示例。](../../assets/catalog/crm/microsoft-dynamics-365/destinations-activation-data.png)
 
 1. 监控受众摘要，并确保用户档案计数对应于在受众中创建的计数。

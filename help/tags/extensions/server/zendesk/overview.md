@@ -66,7 +66,7 @@ ht-degree: 4%
 
 ### `event`键
 
-`event`是一个JSON对象，它表示用户触发的事件。 有关`event`对象捕获的属性的详细信息，请参阅事件](https://developer.zendesk.com/documentation/ticketing/events/anatomy-of-an-event/)的[剖析Zendesk文档。
+`event`是一个JSON对象，它表示用户触发的事件。 有关`event`对象捕获的属性的详细信息，请参阅事件[&#128279;](https://developer.zendesk.com/documentation/ticketing/events/anatomy-of-an-event/)的剖析Zendesk文档。
 
 映射到数据元素时，可以在`event`对象中引用以下键：
 
@@ -86,7 +86,7 @@ ht-degree: 4%
 
 ### `profile`键
 
-`profile`是一个JSON对象，它表示触发事件的用户。 有关`profile`对象捕获的属性的详细信息，请参阅配置文件](https://developer.zendesk.com/documentation/ticketing/profiles/anatomy-of-a-profile/)的[剖析Zendesk文档。
+`profile`是一个JSON对象，它表示触发事件的用户。 有关`profile`对象捕获的属性的详细信息，请参阅配置文件[&#128279;](https://developer.zendesk.com/documentation/ticketing/profiles/anatomy-of-a-profile/)的剖析Zendesk文档。
 
 映射到数据元素时，可以在`profile`对象中引用以下键：
 

@@ -77,7 +77,7 @@ ht-degree: 14%
 
 历程的&#x200B;**权限**
 
-要创建和管理历程，请使用历程权限；**[!UICONTROL 管理历程]**、**[!UICONTROL 查看历程]**、**[!UICONTROL 查看历程报告]**、**[!UICONTROL 管理历程]**、**[!UICONTROL 事件]**、**[!UICONTROL 数据源和操作]**、**[!UICONTROL 查看历程]**、**[!UICONTROL 事件]**、**[!UICONTROL 数据源和操作、{Publish历程]**。
+要创建和管理历程，请使用历程权限；**[!UICONTROL 管理历程]**、**[!UICONTROL 查看历程]**、**[!UICONTROL 查看历程报告]**、**[!UICONTROL 管理历程]**、**[!UICONTROL 事件]**、**[!UICONTROL 数据源和操作]**、**[!UICONTROL 查看历程]**、**[!UICONTROL 事件]**、**[!UICONTROL 数据源和操作、&lbrace;Publish历程]**。
 
 下图显示了用户查看、创建和管理行动手册以及行动手册生成的资产的建议权限快照。
 

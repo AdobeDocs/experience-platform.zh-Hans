@@ -25,7 +25,7 @@ ht-degree: 0%
 
 ## 快速入门
 
-本指南要求您实际了解查询服务](../best-practices/writing-queries.md)中的[查询执行以及Adobe Experience Platform的以下组件：
+本指南要求您实际了解查询服务[&#128279;](../best-practices/writing-queries.md)中的查询执行以及Adobe Experience Platform的以下组件：
 
 * [实时客户个人资料概述](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时客户个人资料。
 * [架构组合基础](../../xdm/schema/composition.md)：体验数据模型(XDM)架构以及架构组合的构建块、原则和最佳实践简介。
@@ -82,7 +82,7 @@ ht-degree: 0%
 
 ### 为Real-time Customer Profile启用架构
 
-被摄取到Experience Platform以供实时客户配置文件使用的数据必须符合为配置文件](../../xdm/ui/resources/schemas.md)启用的[体验数据模型(XDM)架构。 要为配置文件启用架构，它必须实施XDM Individual Profile或XDM ExperienceEvent类。
+被摄取到Experience Platform以供实时客户配置文件使用的数据必须符合为配置文件[&#128279;](../../xdm/ui/resources/schemas.md)启用的体验数据模型(XDM)架构。 要为配置文件启用架构，它必须实施XDM Individual Profile或XDM ExperienceEvent类。
 
 [使用架构注册表API](../../xdm/tutorials/create-schema-api.md)或[架构编辑器用户界面](../../xdm/tutorials/create-schema-ui.md)，启用架构以便在Real-time Customer Profile中使用。  有关如何为用户档案启用架构的详细说明，请参阅其各自的文档。
 

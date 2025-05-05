@@ -78,7 +78,7 @@ ht-degree: 7%
 | **[!UICONTROL 数据流]** | 数据流的名称。 |
 | **[!UICONTROL 数据集]** | 数据流正在插入的数据集的名称。 |
 | **[!UICONTROL Source名称]** | 数据流所属的源的名称。 |
-| 已接收**[!UICONTROL 条记录**] | 从数据湖接收的记录数。 |
+| 已接收&#x200B;**[!UICONTROL 条记录**] | 从数据湖接收的记录数。 |
 | **[!UICONTROL 个记录失败]** | 已摄取但因错误未摄取到[!DNL Profile]中的记录数。 |
 | **[!UICONTROL 已创建配置文件片段]** | 添加的新[!DNL Profile]净片段的数量。 |
 | **[!UICONTROL 已更新配置文件片段]** | 已更新的现有[!DNL Profile]片段的数量 |

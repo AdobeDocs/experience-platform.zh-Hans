@@ -33,8 +33,8 @@ ht-degree: 3%
 | [!UICONTROL 药物] | `medication` | [[!UICONTROL 可编码引用]](../data-types/codeable-reference.md) | 标识正在请求的药物。 这应该是一个指向表示药物详细信息的资源的链接，或者是一个标识该药物的代码。 |
 | [!UICONTROL 未执行原因] | `notPerformedReason` | [[!UICONTROL 可编码引用]](../data-types/codeable-reference.md) | 没有配药的原因。 |
 | [!UICONTROL 注释] | `note` | [[!UICONTROL 批注]](../data-types/annotation.md)的数组 | 有关分配的附加信息。 |
-| ]的[!UICONTROL 部分 | `partOf` | [[!UICONTROL 引用]](../data-types/reference.md)的数组 | 触发分发的过程或药物请求。 |
-| [!UICONTROL 执行者] | `performer` | 对象数组 | 指示执行分配事件的人员或人员。 有关详细信息，请参阅下面](#performer)的[部分。 |
+| 的部分 | `partOf` | [[!UICONTROL 引用]](../data-types/reference.md)的数组 | 触发分发的过程或药物请求。 |
+| [!UICONTROL 执行者] | `performer` | 对象数组 | 指示执行分配事件的人员或人员。 有关详细信息，请参阅下面[&#128279;](#performer)的部分。 |
 | [!UICONTROL 数量] | `quantity` | [[!UICONTROL 简单数量]](../data-types/simple-quantity.md) | 已分配的药物量，包括测量单位。 |
 | [!UICONTROL 接收器] | `receiver` | [[!UICONTROL 引用]](../data-types/reference.md)的数组 | 标识提取药物的人或交付药物的位置。 |
 | [!UICONTROL 主题] | `subject` | [[!UICONTROL 引用]](../data-types/reference.md) | 指向资源的链接，该资源表示将向其提供药物的人或组。 |

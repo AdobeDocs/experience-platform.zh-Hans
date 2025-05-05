@@ -110,7 +110,7 @@ ht-degree: 2%
 
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
-* **[!UICONTROL 帐户ID]**：与要将受众导入到的广告帐户关联的广告帐户ID。 有关如何查找的详细信息，请参阅Snapchat业务帮助中心](https://businesshelp.snapchat.com/s/article/biz-acct-id?language=en_US)上的[此文档。
+* **[!UICONTROL 帐户ID]**：与要将受众导入到的广告帐户关联的广告帐户ID。 有关如何查找的详细信息，请参阅Snapchat业务帮助中心[&#128279;](https://businesshelp.snapchat.com/s/article/biz-acct-id?language=en_US)上的此文档。
 
 >[!IMPORTANT]
 > 

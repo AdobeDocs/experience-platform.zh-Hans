@@ -20,7 +20,7 @@ ht-degree: 4%
 
 | 显示名称 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- | --- |
-| [!UICONTROL 活动] | `activity` | 对象数组 | 标识已在计划中发生或计划在计划中发生的操作。 有关详细信息，请参阅下面](#activity)的[部分。 |
+| [!UICONTROL 活动] | `activity` | 对象数组 | 标识已在计划中发生或计划在计划中发生的操作。 有关详细信息，请参阅下面[&#128279;](#activity)的部分。 |
 | [!UICONTROL 地址] | `addresses` | [[!UICONTROL 可编码引用]](../data-types/codeable-reference.md)的数组 | 确定护理计划处理的条件或问题。 |
 | [!UICONTROL 基于] | `basedOn` | [[!UICONTROL 引用]](../data-types/reference.md)的数组 | 由此护理计划全部或部分履行的更高级别请求资源。 |
 | [!UICONTROL 关怀团队] | `careTeam` | [[!UICONTROL 引用]](../data-types/reference.md)的数组 | 确定预期将参与此计划所设想的护理的所有人员和组织。 |
@@ -31,7 +31,7 @@ ht-degree: 4%
 | [!UICONTROL 目标] | `goal` | [[!UICONTROL 引用]](../data-types/reference.md)的数组 | 执行计划的预定目标。 |
 | [!UICONTROL 标识符] | `identifier` | [[!UICONTROL 标识符]](../data-types/identifier.md)的数组 | 执行者或其他系统分配给此保护计划的业务标识符在资源更新时保持不变，并在服务器之间传播。 |
 | [!UICONTROL 注释] | `note` | [[!UICONTROL 批注]](../data-types/annotation.md)的数组 | 有关其他属性中未涵盖的护理计划的一般说明。 |
-| ]的[!UICONTROL 部分 | `partOf` | [[!UICONTROL 引用]](../data-types/reference.md)的数组 | 大型护理计划，其中此特定护理计划是组成部分或步骤。 |
+| 的部分 | `partOf` | [[!UICONTROL 引用]](../data-types/reference.md)的数组 | 大型护理计划，其中此特定护理计划是组成部分或步骤。 |
 | [!UICONTROL 周期] | `period` | [[!UICONTROL 周期]](../data-types/period.md) | 指示计划何时生效（或计划何时生效）以及何时结束。 |
 | [!UICONTROL 替换] | `replaces` | [[!UICONTROL 引用]](../data-types/reference.md)的数组 | 已完成或已终止的护理计划，其功能由此护理计划接管。 |
 | [!UICONTROL 主题] | `subject` | [[!UICONTROL 引用]](../data-types/reference.md) | 确定计划描述其预期护理的病人或组。 |

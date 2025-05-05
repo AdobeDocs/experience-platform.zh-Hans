@@ -80,10 +80,10 @@ Web应用程序内消息传送支持两种类型的触发器：
 
      ![显示操作配置屏幕的图像。](assets/web-in-app-messaging/action-configuration.png)
 
-3. 在屏幕右侧的&#x200B;**[!UICONTROL Personalization]**&#x200B;部分中，启用&#x200B;**[!UICONTROL 呈现可视化个性化决策]**选项。
+3. 在屏幕右侧的&#x200B;**[!UICONTROL Personalization]**&#x200B;部分中，启用&#x200B;**[!UICONTROL 呈现可视化个性化决策]**&#x200B;选项。
    ![显示个性化配置屏幕的图像。](assets/web-in-app-messaging/render-visual-personalization.png)
 
-4. 在屏幕右侧的&#x200B;**[!UICONTROL 决策上下文]**&#x200B;部分中，定义您在促销活动配置中使用的&#x200B;**[!UICONTROL 键]**/**[!UICONTROL 值]**对，以符合应用程序内消息的条件。
+4. 在屏幕右侧的&#x200B;**[!UICONTROL 决策上下文]**&#x200B;部分中，定义您在促销活动配置中使用的&#x200B;**[!UICONTROL 键]**/**[!UICONTROL 值]**&#x200B;对，以符合应用程序内消息的条件。
    ![显示个性化配置屏幕的图像。](assets/web-in-app-messaging/decision-context.png)
 
 5. 选择&#x200B;**[!UICONTROL 保留更改]**&#x200B;以保存您的配置。
@@ -121,11 +121,11 @@ Web应用程序内消息传送支持两种类型的触发器：
 
      ![显示操作配置屏幕的图像。](assets/web-in-app-messaging/manual-trigger-action.png)
 
-3. 在屏幕右侧，启用&#x200B;**[!UICONTROL 呈现可视化个性化决策]**选项。
+3. 在屏幕右侧，启用&#x200B;**[!UICONTROL 呈现可视化个性化决策]**&#x200B;选项。
    ![显示个性化配置屏幕的图像。](assets/web-in-app-messaging/manual-trigger-render.png)
 
 
-4. 在屏幕右侧的&#x200B;**[!UICONTROL 决策上下文]**&#x200B;部分中，定义您在促销活动配置中使用的&#x200B;**[!UICONTROL 键]**/**[!UICONTROL 值]**对，以符合应用程序内消息的条件。
+4. 在屏幕右侧的&#x200B;**[!UICONTROL 决策上下文]**&#x200B;部分中，定义您在促销活动配置中使用的&#x200B;**[!UICONTROL 键]**/**[!UICONTROL 值]**&#x200B;对，以符合应用程序内消息的条件。
    ![显示个性化配置屏幕的图像。](assets/web-in-app-messaging/manual-trigger-decision-context.png)
 
 5. 选择&#x200B;**[!UICONTROL 保留更改]**&#x200B;以保存您的配置。

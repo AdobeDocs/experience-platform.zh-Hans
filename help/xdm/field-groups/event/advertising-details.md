@@ -17,9 +17,9 @@ ht-degree: 27%
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `adAssetReference` | 对象 | 捕获有关广告的资源信息。 有关此对象结构的更多信息，请参阅](#adAssetReference)下面的[子部分。 |
-| `adAssetViewDetails` | 对象 | 捕获广告播放的视图详细信息。 有关此对象结构的更多信息，请参阅](#adAssetViewDetails)下面的[子部分。 |
-| `adViewability` | 对象 | 捕获最终用户看到的展示次数，如播放器音量、库版本、窗口状态和广告视区维度。 有关此对象结构的更多信息，请参阅](#adViewability)下面的[子部分。 |
+| `adAssetReference` | 对象 | 捕获有关广告的资源信息。 有关此对象结构的更多信息，请参阅[&#128279;](#adAssetReference)下面的子部分。 |
+| `adAssetViewDetails` | 对象 | 捕获广告播放的视图详细信息。 有关此对象结构的更多信息，请参阅[&#128279;](#adAssetViewDetails)下面的子部分。 |
+| `adViewability` | 对象 | 捕获最终用户看到的展示次数，如播放器音量、库版本、窗口状态和广告视区维度。 有关此对象结构的更多信息，请参阅[&#128279;](#adViewability)下面的子部分。 |
 | `clicks` | [[!UICONTROL 度量值]](../../data-types/measure.md) | 播发上的点击操作数。 |
 | `completes` | [[!UICONTROL 度量值]](../../data-types/measure.md) | 定时媒体资源观看至结束的次数。 这并不一定意味着最终用户观看了整个视频，因为他们可能跳过了前面。 |
 | `conversions` | [[!UICONTROL 度量值]](../../data-types/measure.md) | 预定义操作（或操作）触发事件进行性能评估的次数。 |

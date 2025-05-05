@@ -60,7 +60,7 @@ ht-degree: 0%
 
    ![](../images/jupyterlab/query/dataset.png)
 
-4. 找到要浏览的[!DNL Adobe Analytics]数据集并右键单击列表，单击“在笔记本&#x200B;]**中查询数据”**[!UICONTROL &#x200B;以在空笔记本中生成 SQL 查询。
+4. 找到要浏览的[!DNL Adobe Analytics]数据集并右键单击列表，单击“在笔记本&#x200B;**中查询数据”**&#x200B;以在空笔记本中生成 SQL 查询。
 
 5. 单击包含函数 `qs_connect()` 的第一个生成的单元格，并通过单击播放按钮执行它。 此函数创建笔记本实例与[!DNL Query Service]之间的连接。
 

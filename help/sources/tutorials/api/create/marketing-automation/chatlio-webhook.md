@@ -449,4 +449,4 @@ curl -X GET \
 
 ### 删除您的帐户 {#delete-account}
 
-在提供要删除的帐户的基本连接ID时，通过向[!DNL Flow Service] API执行DELETE请求来删除您的帐户。 有关完整的API示例，请阅读有关使用API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete.html)删除源帐户[的指南。
+在提供要删除的帐户的基本连接ID时，通过向[!DNL Flow Service] API执行DELETE请求来删除您的帐户。 有关完整的API示例，请阅读有关使用API[&#128279;](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete.html)删除源帐户的指南。

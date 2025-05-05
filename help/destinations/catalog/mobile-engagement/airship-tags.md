@@ -60,7 +60,7 @@ ht-degree: 2%
 
 ## 标记组
 
-Adobe Experience Platform中的受众概念与Airship中的[标记](https://docs.airship.com/guides/audience/tags/)类似，在实施上略有差异。 此集成将用户在Experience Platform区段](../../../xdm/field-groups/profile/segmentation.md)中的[成员资格状态映射到[!DNL Airship]标记的存在或不存在。 例如，在`xdm:status`更改为`realized`的Experience Platform受众中，标记已添加到此配置文件映射到的[!DNL Airship]渠道或命名用户。 如果`xdm:status`更改为`exited`，则标记将被删除。
+Adobe Experience Platform中的受众概念与Airship中的[标记](https://docs.airship.com/guides/audience/tags/)类似，在实施上略有差异。 此集成将用户在Experience Platform区段[&#128279;](../../../xdm/field-groups/profile/segmentation.md)中的成员资格状态映射到[!DNL Airship]标记的存在或不存在。 例如，在`xdm:status`更改为`realized`的Experience Platform受众中，标记已添加到此配置文件映射到的[!DNL Airship]渠道或命名用户。 如果`xdm:status`更改为`exited`，则标记将被删除。
 
 要启用此集成，请在[!DNL Airship]中创建名为`adobe-segments`的&#x200B;*标记组*。
 

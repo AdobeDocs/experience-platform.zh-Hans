@@ -213,7 +213,7 @@ ht-degree: 2%
 
 #### 缺少主要身份
 
-如果缺少主标识，数据流将无法保存和摄取。 在尝试配置数据流之前，请确保XDM架构](../../../../../xdm/tutorials/create-schema-ui.md)中存在[主标识。
+如果缺少主标识，数据流将无法保存和摄取。 在尝试配置数据流之前，请确保XDM架构[&#128279;](../../../../../xdm/tutorials/create-schema-ui.md)中存在主标识。
 
 ![一条错误消息，显示XDM架构中缺少主标识。](../../../../images/tutorials/create/marketo/no-primary-identity.png)
 

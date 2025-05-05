@@ -114,6 +114,6 @@ ht-degree: 2%
 
 本指南介绍了如何使用[!DNL The Trade Desk]实时转化API扩展将服务器端事件数据发送到[!DNL The Trade Desk]。 在此处，建议通过创建不同的规则来扩展您的集成，这些规则会根据促销活动发送特定的转化事件。 有关[!DNL Adobe Experience Platform]中事件转发功能的详细信息，请阅读[事件转发概述](../../../ui/event-forwarding/overview.md)。
 
-有关如何有效实施集成的更多指导，请参阅[!DNL The Trade Desk]有关 [!DNL The Trade Desk] 实时转化API](https://www.facebook.com/business/help/308855623839366?id=818859032317965)的[最佳实践的文档。
+有关如何有效实施集成的更多指导，请参阅[!DNL The Trade Desk]有关 [!DNL The Trade Desk] 实时转化API[&#128279;](https://www.facebook.com/business/help/308855623839366?id=818859032317965)的最佳实践的文档。
 
 有关如何使用Debugger和Event Forwarding Monitoring工具调试Experience Platform的详细信息，请阅读[Adobe Experience Platform Debugger概述](../../../../debugger/home.md)和[监视事件转发中的活动](../../../ui/event-forwarding/monitoring.md)。

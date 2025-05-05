@@ -161,8 +161,8 @@ ht-degree: 6%
 * [为数据流配置摄取计划](../ui/dataflow/batch/cloud-storage.md#schedule-ingestion-runs)
 * [查看您的数据流](../ui/dataflow/batch/cloud-storage.md#review-your-dataflow)
 
-数据流](../ui/update-dataflows.md)成功创建后，您可以继续[对其进行更新。
+数据流[&#128279;](../ui/update-dataflows.md)成功创建后，您可以继续对其进行更新。
 
 ## 后续步骤
 
-通过阅读本文档，您现在可以将加密数据从云存储批处理源摄取到Experience Platform。 有关如何使用API引入加密数据的信息，请阅读有关使用 [!DNL Flow Service] API](../api/encrypt-data.md)引入加密数据的指南[。 有关Experience Platform上源的一般信息，请阅读[源概述](../../home.md)。
+通过阅读本文档，您现在可以将加密数据从云存储批处理源摄取到Experience Platform。 有关如何使用API引入加密数据的信息，请阅读有关使用 [!DNL Flow Service] API[&#128279;](../api/encrypt-data.md)引入加密数据的指南。 有关Experience Platform上源的一般信息，请阅读[源概述](../../home.md)。

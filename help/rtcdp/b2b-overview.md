@@ -28,7 +28,7 @@ Adobe Experience Platform的各项功能都有改进，可将Real-Time CDP B2B e
 
 ## XDM
 
-Real-Time CDP B2B edition提供了多个新的XDM架构类、字段组和关系类型，用于专门为B2B目的捕获和构建数据。 有关每个增强功能的细目，请参阅Real-Time CDP B2B edition](./schemas/b2b.md)中有关[XDM的概述。
+Real-Time CDP B2B edition提供了多个新的XDM架构类、字段组和关系类型，用于专门为B2B目的捕获和构建数据。 有关每个增强功能的细目，请参阅Real-Time CDP B2B edition[&#128279;](./schemas/b2b.md)中有关XDM的概述。
 
 通过使用预配置的B2B架构，您可以采用标准化、可操作的结构引入数据。 许多新架构类几乎直接映射到主流CRM中遇到的那些类，如[!DNL Salesforce]、[!DNL Microsoft Dynamics]、[!DNL Marketo]和其他B2B数据源。 借助Real-Time CDP B2B edition，您可以采用一种简单明了的方式将数据从B2B来源引入Experience Platform，其结果易于审核。
 

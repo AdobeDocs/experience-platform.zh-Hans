@@ -58,7 +58,7 @@ ht-degree: 1%
 
 对于每个标识值，必须提供`identityIABConsent`属性，该属性为标识提供TCF同意值。 此属性的值必须符合[[!UICONTROL 同意字符串]数据类型](../../data-types/consent-string.md)。
 
-有关此字段组用例的更多信息，请参阅Experience Platform](../../../landing/governance-privacy-security/consent/iab/overview.md)中支持[IAB TCF 2.0的指南。 有关字段组本身的更多详细信息，请参阅公共XDM存储库：
+有关此字段组用例的更多信息，请参阅Experience Platform[&#128279;](../../../landing/governance-privacy-security/consent/iab/overview.md)中支持IAB TCF 2.0的指南。 有关字段组本身的更多详细信息，请参阅公共XDM存储库：
 
 * [填充示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-privacy.example.1.json)
 * [完整架构](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-privacy.schema.json)

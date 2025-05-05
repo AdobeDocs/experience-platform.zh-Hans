@@ -52,7 +52,7 @@ Experience Platform UI中的[!UICONTROL 数据生命周期]工作区允许您配
 | 配置文件计数已更新 | 30 小时 | 根据要删除的数据集的内容，如果某些用户档案的所有组件属性都与该数据集关联，则可能会从系统中删除该用户档案。 数据集被删除30小时后，所有配置文件计数中产生的任何更改都会反映在[仪表板小组件](../dashboards/guides/profiles.md#profile-count-trend)和其他报表中。 |
 | 已更新受众 | 48 小时 | 更新所有受影响的配置文件后，将更新所有相关的[受众](../segmentation/home.md)以反映其新大小。 根据删除的数据集以及您进行分段的属性，每个受众的大小可能会因删除而增加或减少。 |
 | 已更新历程和目标 | 50 小时 | 已根据相关区段中的更改更新[历程](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html)、[促销活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html)和[目标](../destinations/home.md)。 |
-| 硬删除完成 | 15 天 | 与数据集相关的所有数据都会从数据湖中硬删除。 已删除数据集的数据生命周期作业](./ui/browse.md#view-details)的[状态已更新以反映此情况。 |
+| 硬删除完成 | 15 天 | 与数据集相关的所有数据都会从数据湖中硬删除。 已删除数据集的数据生命周期作业[&#128279;](./ui/browse.md#view-details)的状态已更新以反映此情况。 |
 
 {style="table-layout:auto"}
 

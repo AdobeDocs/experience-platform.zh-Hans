@@ -15,7 +15,7 @@ ht-degree: 0%
 
 本文档提供有关Adobe Experience Platform中[!DNL Experience Data Model] (XDM)和XDM系统的常见问题解答，包括常见错误的疑难解答指南。 有关其他Experience Platform服务的问题和疑难解答，请参阅[Experience Platform疑难解答指南](../landing/troubleshooting.md)。
 
-**[!DNL Experience Data Model](XDM)**&#x200B;是一个开源规范，它定义了用于客户体验管理的标准化架构。 生成[!DNL Experience Platform]的方法&#x200B;**XDM系统**&#x200B;可使[!DNL Experience Data Model]架构可操作以供[!DNL Experience Platform]服务使用。 **[!DNL Schema Registry]**&#x200B;提供用户界面和RESTful API以访问[!DNL Experience Platform]中的&#x200B;**[!DNL Schema Library]**。 有关详细信息，请参阅[XDM文档](home.md)。
+**[!DNL Experience Data Model] (XDM)**&#x200B;是一个开源规范，它定义了用于客户体验管理的标准化架构。 生成[!DNL Experience Platform]的方法&#x200B;**XDM系统**&#x200B;可使[!DNL Experience Data Model]架构可操作以供[!DNL Experience Platform]服务使用。 **[!DNL Schema Registry]**&#x200B;提供用户界面和RESTful API以访问[!DNL Experience Platform]中的&#x200B;**[!DNL Schema Library]**。 有关详细信息，请参阅[XDM文档](home.md)。
 
 ## 常见问题解答
 
@@ -136,7 +136,7 @@ XDM对此数据类型的使用施加以下限制：
 
 ### 将Adobe Analytics数据作为源导入时，是否为配置文件启用自动创建的架构？
 
-架构未自动为实时客户配置文件启用。 您需要根据为配置文件启用的架构，为配置文件明确启用数据集。 请参阅文档，了解启用数据集以在Real-Time Customer Profile](../catalog/datasets/user-guide.md#enable-profile)中使用所需的[步骤和要求。
+架构未自动为实时客户配置文件启用。 您需要根据为配置文件启用的架构，为配置文件明确启用数据集。 请参阅文档，了解启用数据集以在Real-Time Customer Profile[&#128279;](../catalog/datasets/user-guide.md#enable-profile)中使用所需的步骤和要求。
 
 ### 我是否可以删除启用配置文件的架构？
 

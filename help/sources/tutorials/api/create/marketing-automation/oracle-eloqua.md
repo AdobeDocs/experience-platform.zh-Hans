@@ -39,7 +39,7 @@ ht-degree: 1%
 | `password` | 与您的[!DNL Oracle Eloqua]用户名对应的密码。 |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL Oracle Eloqua]源的连接规范ID的值固定为： `35d6c4d8-c9a9-11eb-b8bc-0242ac130003`。 |
 
-有关[!DNL Oracle Eloqua]的身份验证凭据的详细信息，请参阅有关身份验证](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/Authentication_Basic.html)的[[!DNL Oracle Eloqua] 指南。
+有关[!DNL Oracle Eloqua]的身份验证凭据的详细信息，请参阅有关身份验证[&#128279;](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/Authentication_Basic.html)的[!DNL Oracle Eloqua] 指南。
 
 ### 使用Experience Platform API
 

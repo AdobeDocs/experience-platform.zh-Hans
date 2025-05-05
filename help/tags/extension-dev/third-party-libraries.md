@@ -84,7 +84,7 @@ firstScriptElement.parentNode.insertBefore(
 
 ## 标记实施选项
 
-以下各部分演示了在扩展中加载供应商库的不同方式，以前面展示的 Pinterest 基础代码为例。每个示例都涉及为Web扩展](./web/action-types.md)创建一个[操作类型，该操作类型将库加载到您的网站上。
+以下各部分演示了在扩展中加载供应商库的不同方式，以前面展示的 Pinterest 基础代码为例。每个示例都涉及为Web扩展[&#128279;](./web/action-types.md)创建一个操作类型，该操作类型将库加载到您的网站上。
 
 >[!NOTE]
 >

@@ -147,11 +147,12 @@ ht-degree: 2%
 1. 在[!UICONTROL 映射]步骤中，单击&#x200B;**[!UICONTROL 添加新映射]**。 您将在屏幕上看到一个新映射行。
    ![Experience Platform UI屏幕截图显示如何添加新映射](../../assets/catalog/crm/outreach/add-new-mapping.png)
 
-1. 在[!UICONTROL 选择源字段]窗口中，选择&#x200B;**[!UICONTROL 选择身份命名空间]**类别并添加所需的映射。
+1. 在[!UICONTROL 选择源字段]窗口中，选择&#x200B;**[!UICONTROL 选择身份命名空间]**&#x200B;类别并添加所需的映射。
    ![Experience Platform UI屏幕截图显示Source映射](../../assets/catalog/crm/outreach/source-mapping.png)
 
 1. 在[!UICONTROL 选择目标字段]窗口中，选择要将源字段映射到的目标字段类型。
    * **[!UICONTROL 选择身份命名空间]**：选择此选项可将源字段映射到列表中的身份命名空间。
+
      ![Experience Platform UI屏幕截图显示使用ExtendeoId的Target映射。](../../assets/catalog/crm/outreach/target-mapping.png)
 
    * 在XDM配置文件架构和[!DNL Outreach]实例之间添加以下映射：
@@ -161,6 +162,7 @@ ht-degree: 2%
      | `Oid` | `OutreachId` | 是 |
 
    * **[!UICONTROL 选择自定义属性]**：选择此选项可将源字段映射到您在[!UICONTROL 属性名称]字段中定义的自定义属性。 有关支持的属性的完整列表，请参阅[[!DNL Outreach] 潜在客户文档](https://api.outreach.io/api/v2/docs#prospect)。
+
      ![Experience Platform UI屏幕截图显示使用LastName的Target映射。](../../assets/catalog/crm/outreach/target-mapping-lastname.png)
 
    * 例如，根据要更新的值，在XDM配置文件架构和[!DNL Outreach]实例之间添加以下映射：
@@ -171,6 +173,7 @@ ht-degree: 2%
      | `person.name.lastName` | `lastName` |
 
    * 下面显示了使用这些映射的示例：
+
      ![显示Target映射的Experience Platform UI屏幕快照示例。](../../assets/catalog/crm/outreach/mappings.png)
 
 ### 计划受众导出和示例 {#schedule-segment-export-example}
@@ -198,13 +201,13 @@ ht-degree: 2%
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 选择&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**以导航到目标列表。
+1. 选择&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**&#x200B;以导航到目标列表。
    ![显示“浏览目标”的Experience Platform UI屏幕截图。](../../assets/catalog/crm/outreach/browse-destinations.png)
 
 1. 选择目标并验证状态为&#x200B;**[!UICONTROL 已启用]**。
    ![Experience Platform UI屏幕截图显示针对所选目标运行的目标数据流。](../../assets/catalog/crm/outreach/destination-dataflow-run.png)
 
-1. 切换到&#x200B;**[!DNL Activation data]**选项卡，然后选择受众名称。
+1. 切换到&#x200B;**[!DNL Activation data]**&#x200B;选项卡，然后选择受众名称。
    ![显示“目标激活”数据的Experience Platform UI屏幕截图。](../../assets/catalog/crm/outreach/destinations-activation-data.png)
 
 1. 监控受众摘要，并确保用户档案计数对应于在区段内创建的计数。

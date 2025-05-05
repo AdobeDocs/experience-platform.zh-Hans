@@ -154,7 +154,7 @@ JSON文件必须格式化为一组对象，每个对象表示一个标识。
 >
 >有关执行记录删除后如何处理这些删除的详细信息，请参阅[时间线和透明度](../home.md#record-delete-transparency)的概述部分。
 
-![数据生命周期]工作区的[!UICONTROL 记录]选项卡，其中新请求突出显示。](../images/ui/record-delete/request-log.png)[!UICONTROL 
+![数据生命周期]工作区的[!UICONTROL 记录]选项卡，其中新请求突出显示。(../images/ui/record-delete/request-log.png)
 
 ## 后续步骤
 

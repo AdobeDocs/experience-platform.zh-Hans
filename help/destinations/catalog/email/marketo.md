@@ -16,7 +16,7 @@ ht-degree: 4%
 
 [!DNL Marketo]功能强大的营销自动化软件可帮助营销人员掌握数字营销的艺术和科学，从而吸引客户和潜在客户。
 
-[!DNL Marketo]是Adobe Experience Platform中的电子邮件扩展。 有关扩展功能的更多信息，请参阅Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.106250.bounteous-extension-for-adobe-launch-and-marketo.html)上的[扩展页面。
+[!DNL Marketo]是Adobe Experience Platform中的电子邮件扩展。 有关扩展功能的更多信息，请参阅Adobe Exchange[&#128279;](https://exchange.adobe.com/experiencecloud.details.106250.bounteous-extension-for-adobe-launch-and-marketo.html)上的扩展页面。
 
 此目标是标记扩展。 有关标记扩展如何在Experience Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
@@ -38,7 +38,7 @@ ht-degree: 4%
 4. 选择要安装扩展的资产。 您还可以选择创建新资产。 资产是规则、数据元素、配置的扩展、环境和库的集合。在标记文档的[属性页面](../../../tags/ui/administration/companies-and-properties.md#properties-page)部分中了解属性。
 5. 该工作流将指导您完成安装步骤。
 
-有关扩展配置选项和安装支持的信息，请参阅Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.106250.bounteous-extension-for-adobe-launch-and-marketo.html)上的[Marketo页面。
+有关扩展配置选项和安装支持的信息，请参阅Adobe Exchange[&#128279;](https://exchange.adobe.com/experiencecloud.details.106250.bounteous-extension-for-adobe-launch-and-marketo.html)上的Marketo页面。
 
 您还可以直接在[数据收集UI](https://experience.adobe.com/#/data-collection/)中安装该扩展。 有关详细信息，请参阅标记文档中有关[添加新扩展](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension)的部分。
 

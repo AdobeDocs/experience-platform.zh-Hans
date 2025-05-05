@@ -22,7 +22,7 @@ ht-degree: 3%
 | `homeAddress` | [[!UICONTROL 邮政地址]](../../data-types/postal-address.md) | 人员的家庭地址。 |
 | `homePhone` | [[!UICONTROL 电话号码]](../../data-types/phone-number.md) | 人员的住宅电话号码。 |
 | `mailingAddress` | [[!UICONTROL 邮政地址]](../../data-types/postal-address.md) | 人员的邮件地址。 |
-| `memberDetails` | 对象 | 包含有关个人医疗保健相关属性和关系的详细信息的对象。 有关对象结构的更多信息，请参阅](#memberDetails)下面的[子部分。 |
+| `memberDetails` | 对象 | 包含有关个人医疗保健相关属性和关系的详细信息的对象。 有关对象结构的更多信息，请参阅[&#128279;](#memberDetails)下面的子部分。 |
 | `mobilePhone` | [[!UICONTROL 电话号码]](../../data-types/phone-number.md) | 人员的手机号码。 |
 | `person` | [[!UICONTROL 人员]](../../data-types/person.md) | 与个人的医疗保健会员资格相关的个人操作者、联系人或所有者。 |
 | `personalEmail` | [[!UICONTROL 电子邮件地址]](../../data-types/email-address.md) | 人员的个人电子邮件地址。 |

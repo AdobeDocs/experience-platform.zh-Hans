@@ -86,7 +86,7 @@ SendGrid支持激活下表中描述的标识。 了解有关[标识](/help/ident
 1. 选择&#x200B;**目录**&#x200B;选项卡并搜索&#x200B;*SendGrid*。 然后选择&#x200B;**设置**。 建立与目标之间的连接后，UI标签将更改为&#x200B;**激活区段**。
    ![](../../assets/catalog/email-marketing/sendgrid/02-catalog.jpg)
 
-1. 此时将显示一个向导，可帮助您配置SendGrid目标。 通过选择&#x200B;**配置新目标**来创建新目标。
+1. 此时将显示一个向导，可帮助您配置SendGrid目标。 通过选择&#x200B;**配置新目标**&#x200B;来创建新目标。
    ![](../../assets/catalog/email-marketing/sendgrid/03.jpg)
 
 1. 选择&#x200B;**新帐户**&#x200B;选项并填写&#x200B;**持有者令牌**&#x200B;值。 此值是以前在[先决条件部分](#prerequisites)中提到的SendGrid *API密钥*。
@@ -135,10 +135,10 @@ SendGrid支持激活下表中描述的标识。 了解有关[标识](/help/ident
    ![](../../assets/catalog/email-marketing/sendgrid/17.jpg)
    ![](../../assets/catalog/email-marketing/sendgrid/18.jpg)
 
-1. 完成映射后，选择&#x200B;**[!UICONTROL 下一步]**进入审阅屏幕。
+1. 完成映射后，选择&#x200B;**[!UICONTROL 下一步]**&#x200B;进入审阅屏幕。
    ![](../../assets/catalog/email-marketing/sendgrid/22.png)
 
-1. 选择&#x200B;**[!UICONTROL 完成]**以完成安装。
+1. 选择&#x200B;**[!UICONTROL 完成]**&#x200B;以完成安装。
    ![](../../assets/catalog/email-marketing/sendgrid/23.jpg)
 
 可以为[SendGrid营销联系人>添加或更新联系人API](https://docs.sendgrid.com/api-reference/contacts/add-or-update-a-contact)设置的受支持属性映射的完整列表如下。
@@ -160,13 +160,13 @@ SendGrid支持激活下表中描述的标识。 了解有关[标识](/help/ident
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 选择&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**以导航到目标列表。
+1. 选择&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**&#x200B;以导航到目标列表。
    ![](../../assets/catalog/email-marketing/sendgrid/25.jpg)
 
 1. 选择目标并验证状态为&#x200B;**[!UICONTROL 已启用]**。
    ![](../../assets/catalog/email-marketing/sendgrid/26.jpg)
 
-1. 切换到&#x200B;**[!DNL Activation data]**选项卡，然后选择受众名称。
+1. 切换到&#x200B;**[!DNL Activation data]**&#x200B;选项卡，然后选择受众名称。
    ![](../../assets/catalog/email-marketing/sendgrid/27.jpg)
 
 1. 监测受众摘要，并检查与数据集内创建的计数对应的用户档案计数。

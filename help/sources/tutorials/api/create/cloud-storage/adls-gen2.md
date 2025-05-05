@@ -109,4 +109,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过学习本教程，您已使用API创建了ADLS Gen2连接，并获取了唯一ID作为响应正文的一部分。 您可以使用此连接ID以使用流服务API](../../explore/cloud-storage.md)来[浏览云存储。
+通过学习本教程，您已使用API创建了ADLS Gen2连接，并获取了唯一ID作为响应正文的一部分。 您可以使用此连接ID以使用流服务API[&#128279;](../../explore/cloud-storage.md)来浏览云存储。

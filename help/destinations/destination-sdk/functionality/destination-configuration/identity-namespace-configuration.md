@@ -15,7 +15,7 @@ Experience Platform使用身份命名空间来描述特定身份的类型。 例
 
 根据您创建的目标类型（流或基于文件），请牢记以下身份命名空间要求：
 
-* 在通过Destination SDK创建实时（流）目标时，除了[配置用户可将配置文件属性和身份映射到的合作伙伴架构](schema-configuration.md)之外，还必须定义目标平台支持的至少&#x200B;*个*&#x200B;身份命名空间。 例如，如果您的目标平台接受经过哈希处理的电子邮件和[!DNL IDFA]，则必须将这两个标识定义为此文档](#supported-parameters)中进一步描述的[。
+* 在通过Destination SDK创建实时（流）目标时，除了[配置用户可将配置文件属性和身份映射到的合作伙伴架构](schema-configuration.md)之外，还必须定义目标平台支持的至少&#x200B;*个*&#x200B;身份命名空间。 例如，如果您的目标平台接受经过哈希处理的电子邮件和[!DNL IDFA]，则必须将这两个标识定义为此文档[&#128279;](#supported-parameters)中进一步描述的。
 
   >[!IMPORTANT]
   >
@@ -42,7 +42,7 @@ Experience Platform使用身份命名空间来描述特定身份的类型。 例
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 

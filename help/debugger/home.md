@@ -20,7 +20,7 @@ ht-degree: 5%
 您可以将Experience Platform Debugger与其他Adobe激活解决方案结合使用，以执行以下操作：
 
 1. 使用[标记](../tags/home.md)插入可在您的页面上激活[Adobe Experience Cloud](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html?lang=zh-Hans)产品的代码。
-1. 在Experience Platform Debugger中使用[**[!UICONTROL Auditor ]**选项卡](./auditor/overview.md)测试您的实施。
+1. 在Experience Platform Debugger中使用[**[!UICONTROL Auditor &#x200B;]**&#x200B;选项卡](./auditor/overview.md)测试您的实施。
 1. 在Experience Platform Debugger中使用基于事件的工具和特定于解决方案的工具来调试Auditor发现的问题或检查有关您实施的其他信息。
 
 >[!NOTE]

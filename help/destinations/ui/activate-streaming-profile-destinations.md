@@ -89,7 +89,7 @@ ht-degree: 1%
 
 ### 同意策略评估 {#consent-policy-evaluation}
 
-向三个企业目标(Amazon Kinesis、Azure事件中心和HTTP API)的导出当前不支持同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。[
+向三个企业目标(Amazon Kinesis、Azure事件中心和HTTP API)的导出当前不支持同意策略评估[&#128279;](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。
 
 这意味着未同意成为目标&#x200B;*的用户档案包括在导出到这三个目标的*&#x200B;中。
 

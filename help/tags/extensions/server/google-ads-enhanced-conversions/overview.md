@@ -122,7 +122,7 @@ ht-degree: 1%
 | --- | --- |
 | 客户ID | 您的[!DNL Google Ads]客户ID。 默认为您在[安装扩展](#install-enhanced-conversions)时输入的客户ID。 |
 | 转换ID或转换标签 | 设置转化跟踪时从[!DNL Google Ads]获得的跟踪值。 值以`AW-`开头。<br><br>有关如何查找这些值的详细信息，请参阅[[!DNL Google Ads] 文档](https://support.google.com/tagmanager/answer/6105160?hl=en)。 |
-| Transaction ID | 选择与使用[!DNL Google Global Site Tag]扩展从客户端](#conversion-action-tags)发送的交易ID值为[的数据元素。 |
+| Transaction ID | 选择与使用[!DNL Google Global Site Tag]扩展从客户端[&#128279;](#conversion-action-tags)发送的交易ID值为的数据元素。 |
 
 **用户标识**
 

@@ -366,7 +366,7 @@ curl -X POST \
 
 ## 向规则添加事件、条件和操作 {#components}
 
-创建规则](#create)后，您可以通过添加事件、条件和操作（统称为规则组件）来开始构建其逻辑。 [请参阅`/rule_components`端点指南中有关[创建规则组件](./rule-components.md#create)的部分，了解如何在Reactor API中执行此操作。
+创建规则[&#128279;](#create)后，您可以通过添加事件、条件和操作（统称为规则组件）来开始构建其逻辑。 请参阅`/rule_components`端点指南中有关[创建规则组件](./rule-components.md#create)的部分，了解如何在Reactor API中执行此操作。
 
 ## 更新规则 {#update}
 

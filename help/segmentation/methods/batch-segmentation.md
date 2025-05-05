@@ -289,4 +289,4 @@ curl -X GET \
 
 要了解有关使用Experience Platform用户界面的更多信息，请参阅[分段用户指南](../ui/overview.md)。
 
-有关批处理分段的常见问题解答，请阅读常见问题解答](../faq.md#batch-segmentation)的[批处理分段部分。
+有关批处理分段的常见问题解答，请阅读常见问题解答[&#128279;](../faq.md#batch-segmentation)的批处理分段部分。

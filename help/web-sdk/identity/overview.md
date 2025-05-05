@@ -75,7 +75,7 @@ Web SDK使用Cookie分配和跟踪[!DNL ECIDs]，并使用多种可用方法来�
 
 ### 通过数据准备检索[!DNL ECID]以进行数据收集 {#retrieve-ecid-data-prep}
 
-使用数据收集](../../datastreams/data-prep.md)的[数据准备将[!DNL ECID]映射到[!DNL XDM]字段。 这是访问[!DNL ECID]的推荐方法。
+使用数据收集[&#128279;](../../datastreams/data-prep.md)的数据准备将[!DNL ECID]映射到[!DNL XDM]字段。 这是访问[!DNL ECID]的推荐方法。
 
 为此，请将源字段设置为以下路径：
 

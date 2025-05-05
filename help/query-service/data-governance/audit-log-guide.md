@@ -17,7 +17,7 @@ Adobe Experience Platform [!DNL Query Service]审核日志集成提供查询相�
 
 ## 先决条件
 
-您必须启用[!DNL Data Governance] [!UICONTROL 查看用户活动日志]权限才能在Experience Platform UI中查看审核日志仪表板。 该权限是通过Adobe [Admin Console](https://adminconsole.adobe.com/)启用的。 如果您没有启用此权限的管理员权限，请联系贵组织的管理员。 有关通过Admin Console](../../access-control/home.md)添加权限的完整说明，请参阅访问控制文档[。
+您必须启用[!DNL Data Governance] [!UICONTROL 查看用户活动日志]权限才能在Experience Platform UI中查看审核日志仪表板。 该权限是通过Adobe [Admin Console](https://adminconsole.adobe.com/)启用的。 如果您没有启用此权限的管理员权限，请联系贵组织的管理员。 有关通过Admin Console[&#128279;](../../access-control/home.md)添加权限的完整说明，请参阅访问控制文档。
 
 ## [!DNL Query Service]审核日志类别 {#audit-log-categories}
 

@@ -56,7 +56,7 @@ ht-degree: 3%
 
 | 凭据 | 描述 | 示例 |
 | --- | --- | --- |
-| `Bearer token` | [!DNL HubSpot]私有应用的`Access token`。 <br>要获取您的[!DNL HubSpot] `Access token`，请按照[!DNL HubSpot]文档中的说明，使用您应用程序的访问令牌](https://developers.hubspot.com/docs/api/private-apps#make-api-calls-with-your-app-s-access-token)进行[API调用。 | `pat-na1-11223344-abcde-12345-9876-1234a1b23456` |
+| `Bearer token` | [!DNL HubSpot]私有应用的`Access token`。 <br>要获取您的[!DNL HubSpot] `Access token`，请按照[!DNL HubSpot]文档中的说明，使用您应用程序的访问令牌[&#128279;](https://developers.hubspot.com/docs/api/private-apps#make-api-calls-with-your-app-s-access-token)进行API调用。 | `pat-na1-11223344-abcde-12345-9876-1234a1b23456` |
 
 ## 护栏 {#guardrails}
 
@@ -148,7 +148,7 @@ ht-degree: 3%
 `Email`标识是此目标的必需映射。 请按照以下步骤对其进行映射：
 1. 在&#x200B;**[!UICONTROL 映射]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL 添加新映射]**。 您现在可以在屏幕上看到新的映射行。
    ![突出显示了“添加新映射”按钮的Experience Platform UI屏幕截图。](../../assets/catalog/crm/hubspot/mapping-add-new-mapping.png)
-1. 在&#x200B;**[!UICONTROL 选择源字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择身份命名空间]**并选择身份。
+1. 在&#x200B;**[!UICONTROL 选择源字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择身份命名空间]**&#x200B;并选择身份。
    ![Experience Platform UI屏幕截图选择电子邮件作为要映射为标识的源属性。](../../assets/catalog/crm/hubspot/mapping-select-source-identity.png)
 1. 在&#x200B;**[!UICONTROL 选择目标字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择属性]**&#x200B;并选择`email`。
    ![Experience Platform UI屏幕截图选择电子邮件作为要映射为身份的目标属性。](../../assets/catalog/crm/hubspot/mapping-select-target-identity.png)
@@ -165,7 +165,7 @@ ht-degree: 3%
 要添加任何其他要在XDM配置文件架构和[!DNL HubSpot]帐户之间更新的属性，请重复以下步骤：
 1. 在&#x200B;**[!UICONTROL 映射]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL 添加新映射]**。 您现在可以在屏幕上看到新的映射行。
    ![突出显示了“添加新映射”按钮的Experience Platform UI屏幕截图。](../../assets/catalog/crm/hubspot/mapping-add-new-mapping.png)
-1. 在&#x200B;**[!UICONTROL 选择源字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择属性]**类别并选择XDM属性。
+1. 在&#x200B;**[!UICONTROL 选择源字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择属性]**&#x200B;类别并选择XDM属性。
    ![选择“名字”作为源属性的Experience Platform UI屏幕截图。](../../assets/catalog/crm/hubspot/mapping-select-source-attribute.png)
 1. 在&#x200B;**[!UICONTROL 选择目标字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择属性]**&#x200B;类别，然后从自动从[!DNL HubSpot]帐户填充的属性列表中进行选择。 目标使用[[!DNL HubSpot] 属性](https://developers.hubspot.com/docs/api/crm/properties) API检索此信息。 已检索[!DNL HubSpot] [默认属性](https://knowledge.hubspot.com/contacts/hubspots-default-contact-properties)和任何自定义属性，以便选择它们作为目标字段。
    ![选择“名字”作为Target属性的Experience Platform UI屏幕截图。](../../assets/catalog/crm/hubspot/mapping-select-target-attribute.png)
@@ -189,10 +189,10 @@ ht-degree: 3%
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 登录到[!DNL HubSpot]网站，然后导航到&#x200B;**[!UICONTROL 联系人]**页面以检查受众状态。 此列表可以配置为显示使用受众名称创建的自定义属性的列，其值是受众状态。
+1. 登录到[!DNL HubSpot]网站，然后导航到&#x200B;**[!UICONTROL 联系人]**&#x200B;页面以检查受众状态。 此列表可以配置为显示使用受众名称创建的自定义属性的列，其值是受众状态。
    ![HubSpot UI屏幕截图显示“联系人”页面，该页面带有列标题，其中显示受众名称和单元格受众状态](../../assets/catalog/crm/hubspot/contacts.png)
 
-1. 或者，您可以向下钻取到单个&#x200B;**[!UICONTROL 人员]**页面，并导航到显示受众名称和受众状态的属性。
+1. 或者，您可以向下钻取到单个&#x200B;**[!UICONTROL 人员]**&#x200B;页面，并导航到显示受众名称和受众状态的属性。
    ![HubSpot UI屏幕截图显示“联系人”页面，该页面具有显示受众名称和受众状态的自定义属性。](../../assets/catalog/crm/hubspot/contact.png)
 
 ## 数据使用和治理 {#data-usage-governance}

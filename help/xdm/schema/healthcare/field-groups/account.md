@@ -22,14 +22,14 @@ ht-degree: 7%
 | --- | --- | --- | --- |
 | [!UICONTROL 余额] | `balance` | 对象数组 | 由财务系统计算和处理的帐户余额。 有关详细信息，请参阅下面的[部分](#balances)。 |
 | [!UICONTROL 记帐状态] | `billingStatus` | [[!UICONTROL 可编码的概念]](../data-types/codeable-concept.md) | 这通过计费过程跟踪账户的生命周期。 它指示在将交易记录分配给帐户时如何处理这些交易记录。 |
-| [!UICONTROL 覆盖范围] | `coverage` | 对象数组 | 负责支付此账户费用的各方以及应按何种顺序适用这些费用。 有关详细信息，请参阅下面](#coverage)的[部分。 |
+| [!UICONTROL 覆盖范围] | `coverage` | 对象数组 | 负责支付此账户费用的各方以及应按何种顺序适用这些费用。 有关详细信息，请参阅下面[&#128279;](#coverage)的部分。 |
 | [!UICONTROL 货币] | `currency` | [[!UICONTROL 可编码的概念]](../data-types/codeable-concept.md) | 帐户的默认货币。 |
-| [!UICONTROL 诊断] | `diagnosis` | 对象数组 | 与帐单相关的诊断集合存储在此帐户中，以便能够在处理之前对它们进行适当的排序以产生申请。 有关详细信息，请参阅下面](#diagnosis)的[部分。 |
-| [!UICONTROL 担保人] | `guarantor` | 对象数组 | 如果其他付款选项不足，则负责平衡帐户的交易方。 有关详细信息，请参阅下面](#guarantor)的[部分。 |
+| [!UICONTROL 诊断] | `diagnosis` | 对象数组 | 与帐单相关的诊断集合存储在此帐户中，以便能够在处理之前对它们进行适当的排序以产生申请。 有关详细信息，请参阅下面[&#128279;](#diagnosis)的部分。 |
+| [!UICONTROL 担保人] | `guarantor` | 对象数组 | 如果其他付款选项不足，则负责平衡帐户的交易方。 有关详细信息，请参阅下面[&#128279;](#guarantor)的部分。 |
 | [!UICONTROL 标识符] | `identifier` | [[!UICONTROL 标识符]](../data-types/identifier.md)的数组 | 用于引用帐户的唯一标识符。 该卡可能用于人，也可能不用于人（如信用卡号）。 |
 | [!UICONTROL 所有者] | `owner` | [[!UICONTROL 引用]](../data-types/reference.md) | 指示服务区域、医院、部门等。 负责管理帐户。 |
-| [!UICONTROL 过程] | `procedure` | 对象数组 | 与开票相关的一组程序存储在此处的帐户中，以便能够在处理索赔之前对它们进行适当的排序。 有关详细信息，请参阅下面](#procedure)的[部分。 |
-| [!UICONTROL 相关帐户] | `relatedAccount` | 对象数组 | 与此帐户相关的其他关联帐户。 有关详细信息，请参阅下面](#related-account)的[部分。 |
+| [!UICONTROL 过程] | `procedure` | 对象数组 | 与开票相关的一组程序存储在此处的帐户中，以便能够在处理索赔之前对它们进行适当的排序。 有关详细信息，请参阅下面[&#128279;](#procedure)的部分。 |
+| [!UICONTROL 相关帐户] | `relatedAccount` | 对象数组 | 与此帐户相关的其他关联帐户。 有关详细信息，请参阅下面[&#128279;](#related-account)的部分。 |
 | [!UICONTROL 服务时段] | `servicePeriod` | [[!UICONTROL 周期]](../data-types/period.md) | 与此帐户关联的服务的日期范围。 |
 | [!UICONTROL 主题] | `subject` | [[!UICONTROL 引用]](../data-types/reference.md)的数组 | 标识产生费用的实体。 虽然直接接受服务或货物的实体可能与账户主体有关，但费用最终由账户主体承担。 |
 | [!UICONTROL 类型] | `type` | [[!UICONTROL 可编码的概念]](../data-types/codeable-concept.md) | 对帐户进行分类，以便进行报告和搜索。 |

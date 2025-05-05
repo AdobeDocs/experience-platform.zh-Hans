@@ -39,7 +39,7 @@ Adobe已发布新的Pinterest目标卡，该卡利用Pinterest API v5，并将�
    ![仅筛选Pinterest帐户](/help/destinations/assets/catalog/advertising/pinterest-migration/filter-pinterest-acconts-only.png)
 2. 在&#x200B;**Pinterest**&#x200B;目标上，选择三点符号……并选择&#x200B;**[!UICONTROL 编辑详细信息]**。
    ![选择“编辑详细信息”](/help/destinations/assets/catalog/advertising/pinterest-migration/edit-details-pinterest.png)
-3. 选择&#x200B;**[!UICONTROL 重新连接OAuth]**并登录到您的Pinterest帐户。
+3. 选择&#x200B;**[!UICONTROL 重新连接OAuth]**&#x200B;并登录到您的Pinterest帐户。
    ![选择重新连接OAuth](/help/destinations/assets/catalog/advertising/pinterest-migration/reconnect-oauth-pinterest.png)
 4. 转到以下部分中的措施项
 
@@ -47,7 +47,7 @@ Adobe已发布新的Pinterest目标卡，该卡利用Pinterest API v5，并将�
 
 然后，您需要启用新&#x200B;**[!UICONTROL Pinterest]**&#x200B;卡的数据流。
 
-1. 转到&#x200B;**[!UICONTROL 目标>浏览]**&#x200B;并在屏幕上使用筛选器以仅筛选&#x200B;**[!UICONTROL Pinterest]**目标。
+1. 转到&#x200B;**[!UICONTROL 目标>浏览]**&#x200B;并在屏幕上使用筛选器以仅筛选&#x200B;**[!UICONTROL Pinterest]**&#x200B;目标。
    ![仅在“浏览”选项卡中筛选Pinterest数据流](/help/destinations/assets/catalog/advertising/pinterest-migration/filter-pinterest-browse.png)
 2. 选择到&#x200B;**[!UICONTROL Pinterest]**&#x200B;目标的超链接连接名称（以上屏幕快照示例中的“忠诚度促销活动”），并将&#x200B;**[!UICONTROL 启用]**&#x200B;切换到&#x200B;**上的**。
    ![为新连接打开和为旧连接关闭](/help/destinations/assets/catalog/advertising/pinterest-migration/enable-disable-toggle-new-destination.png)

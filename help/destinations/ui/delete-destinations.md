@@ -36,7 +36,7 @@ ht-degree: 0%
 
    ![筛选目标](../assets/ui/delete-destinations/filter-destinations.png)
 
-3. 在“名称”列中选择![更多按钮](/help/images/icons/more.png)按钮，然后选择![删除按钮](/help/images/icons/delete.png) **[!UICONTROL 删除]**以删除现有目标连接。
+3. 在“名称”列中选择![更多按钮](/help/images/icons/more.png)按钮，然后选择![删除按钮](/help/images/icons/delete.png) **[!UICONTROL 删除]**&#x200B;以删除现有目标连接。
    ![删除目标](../assets/ui/delete-destinations/delete-destinations.png)
 
 4. 选择&#x200B;**[!UICONTROL 删除]**&#x200B;以确认删除目标连接。

@@ -96,7 +96,7 @@ Experience Platform 目前支持三种受众评估方法：流式分段、批量
 >abstract="边缘分段能够在 Edge Network 上即时评估 Experience Platform 中的区段，从而实现同一页和下一页个性化用例。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/methods/edge-segmentation.html" text="边缘分段指南"
 
-Edge分段是在Edge Network](../landing/edge-and-hub-comparison.md)上即时评估Experience Platform中的区段的能力[，从而启用同页和下一页个性化用例。
+Edge分段是在Edge Network[&#128279;](../landing/edge-and-hub-comparison.md)上即时评估Experience Platform中的区段的能力，从而启用同页和下一页个性化用例。
 
 若要了解有关边缘分段的更多信息，请阅读[边缘分段概述](./methods/edge-segmentation.md)。
 

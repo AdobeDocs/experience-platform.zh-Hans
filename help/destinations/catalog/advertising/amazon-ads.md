@@ -137,13 +137,13 @@ AMC将来自Amazon自有资产和运营资产的独特信号整合在一起，�
 
 上传受众后，您可以使用以下步骤验证受众是否已正确创建和上传：
 
-用于Amazon DSP的&#x200B;****
+用于Amazon DSP的&#x200B;**&#x200B;**
 
 导航到您的&#x200B;**[!UICONTROL 广告商ID]** > **[!UICONTROL 受众]** > **[!UICONTROL 广告商受众]**。 如果受众已成功创建并且满足最小受众成员数，您将看到`Active`状态。 有关受众规模和范围的其他详细信息，请参阅Amazon DSP用户界面右侧的预测范围面板。
 
 ![Amazon DSP受众创建验证](../../assets/catalog/advertising/amazon-ads/amazon_ads_image_3.png)
 
-[!DNL Amazon Marketing Cloud]**的**
+[!DNL Amazon Marketing Cloud]&#x200B;**的**
 
 在左侧架构浏览器中，在&#x200B;**[!UICONTROL 已上传的广告商]** > **[!UICONTROL aep_audiences]**&#x200B;下找到您的受众。 然后，您可以在AMC SQL编辑器中使用以下子句查询受众：
 

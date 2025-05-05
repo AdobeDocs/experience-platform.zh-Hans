@@ -129,7 +129,7 @@ Adobe Experience Platform中的访问控制允许您使用[Adobe Admin Console](
 
 为了提高安全性，查询服务为SSL连接提供本机支持，以加密客户端/服务器通信。 Experience Platform支持各种SSL选项，以满足您的数据安全需求并平衡加密和密钥交换的处理开销。
 
-有关详细信息（包括如何使用`verify-full` SSL参数值连接），请参阅关于与查询服务](../clients/ssl-modes.md)的第三方客户端连接的可用[SSL选项的指南。
+有关详细信息（包括如何使用`verify-full` SSL参数值连接），请参阅关于与查询服务[&#128279;](../clients/ssl-modes.md)的第三方客户端连接的可用SSL选项的指南。
 
 ### 加密和客户管理的密钥(CMK) {#encryption-and-customer-managed-keys}
 
@@ -200,7 +200,7 @@ Experience Platform中的数据治理框架提供了一种统一的方式，可�
 
 用于数据管理的查询服务功能简化并简化了数据分类和遵守数据使用法规的过程。 识别数据后，可使用查询服务在所有输出数据集上分配主身份。 您&#x200B;**必须**&#x200B;将身份添加到数据集，以方便数据隐私请求并努力实现数据合规性。
 
-架构数据字段可以通过Experience Platform UI设置为标识字段，并且查询服务还允许您使用SQL命令“ALTER TABLE”](../sql/syntax.md#alter-table)来[标记主标识。 使用`ALTER TABLE`命令设置标识在数据集使用SQL创建时特别有用，而不是通过Experience Platform UI直接从架构创建。 有关在使用标准架构时如何[在UI](../../xdm/ui/fields/identity.md)中定义标识字段的说明，请参阅文档。
+架构数据字段可以通过Experience Platform UI设置为标识字段，并且查询服务还允许您使用SQL命令“ALTER TABLE”[&#128279;](../sql/syntax.md#alter-table)来标记主标识。 使用`ALTER TABLE`命令设置标识在数据集使用SQL创建时特别有用，而不是通过Experience Platform UI直接从架构创建。 有关在使用标准架构时如何[在UI](../../xdm/ui/fields/identity.md)中定义标识字段的说明，请参阅文档。
 
 ## 数据卫生 {#data-hygiene}
 

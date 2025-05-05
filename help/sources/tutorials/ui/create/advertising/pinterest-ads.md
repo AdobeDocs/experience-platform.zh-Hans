@@ -80,7 +80,7 @@ ht-degree: 2%
 
 | 字段 | 描述 |
 | --- | --- |
-| [!UICONTROL ad_account_id] | 您的[!DNL Pinterest Ads]广告帐户ID。 如果您需要任何指导，请参阅有关在广告管理器](https://help.pinterest.com/en/business/article/find-ids-in-ads-manager)中查找ID的[[!DNL Pinterest] 指南。 |
+| [!UICONTROL ad_account_id] | 您的[!DNL Pinterest Ads]广告帐户ID。 如果您需要任何指导，请参阅有关在广告管理器[&#128279;](https://help.pinterest.com/en/business/article/find-ids-in-ads-manager)中查找ID的[!DNL Pinterest] 指南。 |
 | [!UICONTROL 对象类型] | 根据您要从中获取信息的[!DNL Pinterest]个Analytics API，选择&#x200B;**营销活动**、**广告组**&#x200B;或&#x200B;**广告**&#x200B;之一。 |
 | [!UICONTROL object_ids] | 所选对象的ID。 导航到&#x200B;**Pinterest业务中心** > **广告帐户摘要** > **促销活动** / **广告组** / **广告**&#x200B;的[!DNL Pinterest]页面，并复制每个名称正下方提及的必需ID。 |
 
@@ -109,7 +109,7 @@ ht-degree: 2%
 | `Day` | 1 |
 | `Hour` | 24 |
 
-有关计划[!DNL Pinterest Ads]数据流的详细信息，请阅读 [!DNL Pinterest Ads] 概述](../../../../connectors/advertising/pinterest-ads.md#guardrails)的[护栏部分。
+有关计划[!DNL Pinterest Ads]数据流的详细信息，请阅读 [!DNL Pinterest Ads] 概述[&#128279;](../../../../connectors/advertising/pinterest-ads.md#guardrails)的护栏部分。
 
 为您的计划提供值后，选择&#x200B;**[!UICONTROL 下一步]**。
 

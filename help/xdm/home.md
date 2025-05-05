@@ -143,7 +143,7 @@ Adobe Experience Platform数据科学Workspace使用机器学习和人工智能�
 
 现在，您已经更好地了解架构在Experience Platform中的角色，可以开始编写您自己的架构了。
 
-要了解用于组合要与Experience Platform一起使用的架构的设计原则和最佳实践，请从阅读架构组合的[基础知识](schema/composition.md)开始。 有关如何创建架构的分步说明，请参阅有关使用API](tutorials/create-schema-api.md)创建架构[或使用用户界面](tutorials/create-schema-ui.md)创建架构[的教程。
+要了解用于组合要与Experience Platform一起使用的架构的设计原则和最佳实践，请从阅读架构组合的[基础知识](schema/composition.md)开始。 有关如何创建架构的分步说明，请参阅有关使用API[&#128279;](tutorials/create-schema-api.md)创建架构[或使用用户界面](tutorials/create-schema-ui.md)创建架构的教程。
 
 要加深您对Experience Platform中[!DNL XDM System]的了解，请观看以下视频：
 

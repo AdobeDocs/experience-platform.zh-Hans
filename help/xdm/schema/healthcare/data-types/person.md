@@ -21,9 +21,9 @@ ht-degree: 7%
 | 显示名称 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- | --- |
 | [!UICONTROL 地址] | `address` | [[!UICONTROL 地址]](../data-types/address.md)的数组 | 人员的一个或多个地址。 |
-| [!UICONTROL 通信] | `communication` | 对象数组 | 可用于与个人沟通有关其健康情况的语言。 有关详细信息，请参阅下面](#communication)的[部分。 |
+| [!UICONTROL 通信] | `communication` | 对象数组 | 可用于与个人沟通有关其健康情况的语言。 有关详细信息，请参阅下面[&#128279;](#communication)的部分。 |
 | [!UICONTROL 标识符] | `identifier` | [[!UICONTROL 标识符]](../data-types/identifier.md)的数组 | 此人员的人类标识符。 |
-| [!UICONTROL 个人链接详细信息] | `link` | 对象数组 | 与同一实际人员相关的资源链接。 有关详细信息，请参阅下面](#link)的[部分。 |
+| [!UICONTROL 个人链接详细信息] | `link` | 对象数组 | 与同一实际人员相关的资源链接。 有关详细信息，请参阅下面[&#128279;](#link)的部分。 |
 | [!UICONTROL 管理组织] | `managingOrganization` | [[!UICONTROL 引用]](../data-types/reference.md) | 患者记录的保管机构。 |
 | [!UICONTROL 婚姻状况] | `maritalStatus` | [[!UICONTROL 可编码的概念]](../data-types/codeable-concept.md) | 一个人的婚姻（或民事）状况 |
 | [!UICONTROL 名称] | `name` | [[!UICONTROL 人工名称]](../data-types/human-name.md)的数组 | 与人员关联的名称。 |

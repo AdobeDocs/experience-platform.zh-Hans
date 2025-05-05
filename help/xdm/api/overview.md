@@ -71,7 +71,7 @@ XDM架构表示和验证引入Experience Platform的数据的结构和格式。 
 
 >[!NOTE]
 >
->您还可以使用UI以使用AI生成的推荐](../../ingestion/tutorials/map-csv/recommendations.md)（当前为测试版）将CSV映射到[架构。
+>您还可以使用UI以使用AI生成的推荐[&#128279;](../../ingestion/tutorials/map-csv/recommendations.md)（当前为测试版）将CSV映射到架构。
 
 ## 导出 {#export}
 

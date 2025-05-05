@@ -24,7 +24,7 @@ Adobe Experience Platform [!DNL Query Service]有两种查询执行模型：交�
 
 ### 交互式查询执行
 
-可以通过通过[!DNL Query Service] UI提交查询或通过连接的客户端](../clients/overview.md)提交[以交互方式执行查询。 通过连接的客户端运行[!DNL Query Service]时，在客户端与[!DNL Query Service]之间运行活动会话，直到提交的查询返回或超时。
+可以通过通过[!DNL Query Service] UI提交查询或通过连接的客户端[&#128279;](../clients/overview.md)提交以交互方式执行查询。 通过连接的客户端运行[!DNL Query Service]时，在客户端与[!DNL Query Service]之间运行活动会话，直到提交的查询返回或超时。
 
 交互式查询执行具有以下限制：
 

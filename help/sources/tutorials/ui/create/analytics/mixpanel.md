@@ -99,7 +99,7 @@ ht-degree: 11%
 
 ![预览数据集](../../../../images/tutorials/create/mixpanel-export-events/preview-dataset.png)
 
-您可以根据[!DNL Mixpanel] > [!DNL Events]页面上的数据验证此数据。 有关详细信息，请参阅关于事件](https://help.mixpanel.com/hc/en-us/articles/4402837164948-Events-formerly-Live-View-)的[[!DNL Mixpanel] 文档。
+您可以根据[!DNL Mixpanel] > [!DNL Events]页面上的数据验证此数据。 有关详细信息，请参阅关于事件[&#128279;](https://help.mixpanel.com/hc/en-us/articles/4402837164948-Events-formerly-Live-View-)的[!DNL Mixpanel] 文档。
 
 ![mixpanel-events](../../../../images/tutorials/create/mixpanel-export-events/mixpanel-events.png)
 

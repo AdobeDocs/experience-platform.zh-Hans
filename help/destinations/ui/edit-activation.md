@@ -108,7 +108,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->此选项仅对支持数据集导出](export-datasets.md#supported-destinations)的[目标可见。
+>此选项仅对支持数据集导出[&#128279;](export-datasets.md#supported-destinations)的目标可见。
 
 ![Experience Platform UI图像显示“导出数据集”数据流运行选项。](../assets/ui/edit-activation/export-datasets.png)
 

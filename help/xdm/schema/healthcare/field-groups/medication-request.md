@@ -24,7 +24,7 @@ ht-degree: 3%
 | [!UICONTROL 类别] | `category` | [[!UICONTROL 可编码概念]](../data-types/codeable-concept.md)的数组 | 药物请求的分类或分组。 |
 | [!UICONTROL 治疗类型] | `courseOfTherapyType` | [[!UICONTROL 可编码的概念]](../data-types/codeable-concept.md) | 对患者给药的整体模式的描述。 |
 | [!UICONTROL 设备] | `device` | [[!UICONTROL 可编码引用]](../data-types/codeable-reference.md)的数组 | 用于给药的设备类型。 |
-| [!UICONTROL 分配请求] | `dispenseRequest` | 对象 | 指示分配请求的特定详细信息，通常称为药物订单。 有关详细信息，请参阅下面](#dispense-request)的[部分。 |
+| [!UICONTROL 分配请求] | `dispenseRequest` | 对象 | 指示分配请求的特定详细信息，通常称为药物订单。 有关详细信息，请参阅下面[&#128279;](#dispense-request)的部分。 |
 | [!UICONTROL 剂量说明] | `dosageInstructions` | [[!UICONTROL 剂量]](../data-types/dosage.md)的数组 | 病人如何使用该药物的具体说明。 |
 | [!UICONTROL 有效剂量期] | `effectiveDosePeriod` | [[!UICONTROL 周期]](../data-types/period.md) | 服药的时限。 有多个`dosageInstruction`行的情况下（例如，逐步减少剂量时），这是剂量说明的最早日期和最晚日期。 |
 | [!UICONTROL 相遇] | `encounter` | [[!UICONTROL 引用]](../data-types/reference.md) | 创建请求时遇到的情况。 |
