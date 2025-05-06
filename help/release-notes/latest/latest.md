@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2025 年 4 月）
 description: Adobe Experience Platform 的 2025 年 4 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: be9e1a995e62fa5a437be82aa15187815bbc5a9d
+source-git-commit: 92b9d4a0529fabb8094e13f4dc6b4bb6d8649b16
 workflow-type: tm+mt
-source-wordcount: '2147'
-ht-degree: 30%
+source-wordcount: '2197'
+ht-degree: 29%
 
 ---
 
@@ -16,9 +16,9 @@ ht-degree: 30%
 >有关其他Adobe Experience Platform应用程序的发行说明，请参阅以下文档：
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/whats-new/release-notes)
->- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer-b2b/user/release-notes)
+>- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/en/docs/journey-optimizer-b2b/user/release-notes)
 >- [Customer Journey Analytics](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/releases/latest)
->- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/zh-hans/docs/real-time-cdp-collaboration/using/latest)
+>- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/latest)
 
 **发行日期： 2025年4月29日**
 
@@ -41,7 +41,7 @@ Experience League是一个全面的学习平台，旨在帮助您通过Adobe产�
 
 | 功能 | 描述 |
 | --- | --- |
-| 个性化主页 | 在[Experience League](https://experienceleague.adobe.com/zh-hans/home#)上访问和自定义您的个性化主页。 使用您的Adobe凭据登录，然后在顶部菜单中选择&#x200B;**[!UICONTROL Experience League]**&#x200B;以开始优化您的学习体验： <ul><li>**书签**：使用[!UICONTROL 书签]功能在一个位置保存和收集您喜爱的资源。 您可以保存各种内容，包括播放列表、文章和教程。</li><li>**自定义您的学习**：使用最符合您需求的角色、行业、产品和体验级别来更新Experience League配置文件，从而增强您的学习体验。</li><li>**推荐**：查看根据您最近的活动推荐的学习内容。</li><li>**最近查看过的内容**：使用[!UICONTROL 最近查看过的内容]部分可快速导航回最近查看过的内容，如文档和视频。</li><li>**学习资源**：使用[!UICONTROL 所有学习资源]面板导航到教程、文档、社区、活动和认证。</li><li>**新增功能**：查看Experience League上最新内容流的[!UICONTROL 新增功能]部分。</li><li>**点播观看过去的活动**：通过[!UICONTROL 点播观看过去的活动]部分，观看产品聚光灯、用例和教程中以前录制的直播。</li></ul><br> Experience League上的![个性化主页。Experience League上的](../2025/assets/april/personalized-home-page.png "个性化主页。"){width="250" align="center" zoomable="yes"} |
+| 个性化主页 | 在[Experience League](https://experienceleague.adobe.com/en/home#)上访问和自定义您的个性化主页。 使用您的Adobe凭据登录，然后在顶部菜单中选择&#x200B;**[!UICONTROL Experience League]**&#x200B;以开始优化您的学习体验： <ul><li>**书签**：使用[!UICONTROL 书签]功能在一个位置保存和收集您喜爱的资源。 您可以保存各种内容，包括播放列表、文章和教程。</li><li>**自定义您的学习**：使用最符合您需求的角色、行业、产品和体验级别来更新Experience League配置文件，从而增强您的学习体验。</li><li>**推荐**：查看根据您最近的活动推荐的学习内容。</li><li>**最近查看过的内容**：使用[!UICONTROL 最近查看过的内容]部分可快速导航回最近查看过的内容，如文档和视频。</li><li>**学习资源**：使用[!UICONTROL 所有学习资源]面板导航到教程、文档、社区、活动和认证。</li><li>**新增功能**：查看Experience League上最新内容流的[!UICONTROL 新增功能]部分。</li><li>**点播观看过去的活动**：通过[!UICONTROL 点播观看过去的活动]部分，观看产品聚光灯、用例和教程中以前录制的直播。</li></ul><br> Experience League上的![个性化主页。Experience League上的](../2025/assets/april/personalized-home-page.png "个性化主页。"){width="250" align="center" zoomable="yes"} |
 
 {style="table-layout:auto"}
 
@@ -53,6 +53,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 功能 | 描述 |
 | --- | --- |
+| [!DNL Adform] 扩展 | 通过[!DNL Adform]服务器端扩展，品牌可使用ECID轻松地在站点外重新定位受众。 此服务器端扩展不依赖于第三方Cookie或Cookie替代ID。 此外，由于此操作完全在服务器端完成，因此无需进行其他像素或其他客户端更改。 有关详细信息，请参阅[Adform扩展概述](/help/tags/extensions/server/adform/overview.md)。 |
 | [!DNL Amazon] Web事件API扩展 | 通过[!DNL Amazon]转化API扩展，广告商可以直接与[!DNL Amazon]共享网站交互，从而改善归因、数据可靠性和促销活动优化。 此扩展支持事件转发，允许您发送转化事件，如购买、购物车添加等，同时确保正确删除重复项以准确报告。 有关详细信息，请参阅[Amazon扩展概述](/help/tags/extensions/server/amazon/overview.md)。 |
 
 {style="table-layout:auto"}
