@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 假名配置文件数据过期
 description: 本文档提供有关在Adobe Experience Platform中为假名配置文件配置数据过期的一般指导。
 exl-id: e8d31718-0b50-44b5-a15b-17668a063a9c
-source-git-commit: aeb9d6636f0d843bf13d09bcb4c12754e2890046
+source-git-commit: 8734b85914d965eebc2f8ccd8c09dd1ffede8cf9
 workflow-type: tm+mt
-source-wordcount: '1245'
+source-wordcount: '1264'
 ht-degree: 4%
 
 ---
@@ -43,8 +43,9 @@ ht-degree: 4%
 >
 >- 管理配置文件设置
 >- 查看配置文件
+>- 查看身份命名空间
 >
->**管理配置文件设置**&#x200B;权限允许您设置数据过期时间，而&#x200B;**查看配置文件**&#x200B;权限允许您查看数据过期时间。
+>**管理配置文件设置**&#x200B;权限允许您设置数据过期时间，**查看配置文件**&#x200B;权限允许您查看数据过期时间，**查看身份命名空间**&#x200B;权限允许您查看可用的身份命名空间。
 >
 >有关Experience Platform中权限的更多信息，请参阅[访问控制概述](../access-control/home.md#permissions)。
 
