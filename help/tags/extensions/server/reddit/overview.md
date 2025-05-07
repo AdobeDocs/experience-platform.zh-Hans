@@ -43,11 +43,12 @@ Reddit是一个拥有多元化用户群的社交媒体平台，非常适合面�
 按照以下步骤安装和配置[!DNL Reddit] Conversions API扩展：
 
 1. 在Experience Platform数据收集UI中，从左侧导航中选择[!UICONTROL 扩展]以访问[!UICONTROL 扩展]目录。 然后[创建新的事件转发属性](https://experienceleague.adobe.com/en/docs/experience-platform/tags/event-forwarding/overview#properties)或选择现有属性。
-2. 在左侧导航面板中导航到&#x200B;**[!UICONTROL 扩展]**。 选择&#x200B;**[!UICONTROL 目录]**，然后选择&#x200B;**[!DNL Reddit]**扩展。
+2. 在左侧导航面板中导航到&#x200B;**[!UICONTROL 扩展]**。 选择&#x200B;**[!UICONTROL 目录]**，然后选择&#x200B;**[!DNL Reddit]**&#x200B;扩展。
    ![突出显示了Reddit扩展的Adobe Experience Platform扩展目录。](../../../images/extensions/server/reddit/reddit-extension.png)
 3. 提供以下配置详细信息：
    - **像素ID**：输入您的[!DNL Reddit Ads]像素ID。
    - **转化访问令牌**：输入在您的[!DNL Reddit Ads]帐户中生成的令牌，然后在完成时选择&#x200B;**[!UICONTROL 保存]**。
+
      ![Reddit Conversions API扩展的配置详细信息，包括像素ID和转化访问令牌的字段。](../../../images/extensions/server/reddit/reddit-capi-details.png)
 
 ## 配置事件转发规则 {#config-rule}
