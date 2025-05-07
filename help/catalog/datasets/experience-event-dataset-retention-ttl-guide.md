@@ -2,9 +2,9 @@
 title: 使用TTL在数据湖中管理体验事件数据集保留
 description: 了解如何使用生存时间(TTL)配置和Adobe Experience Platform API评估、设置和管理Data Lake中的Experience Event数据集保留。 本指南介绍TTL行级到期如何支持数据保留策略、优化存储效率并确保有效的数据生命周期管理。 它还提供了用例和最佳实践，帮助您有效应用TTL。
 exl-id: d688d4d0-aa8b-4e93-a74c-f1a1089d2df0
-source-git-commit: 767e9536862799e31d1ab5c77588d485f80c59e9
+source-git-commit: 06b58d714047cb69f237469ecd548bb824e565ab
 workflow-type: tm+mt
-source-wordcount: '2407'
+source-wordcount: '2456'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> TTL旨在优化数据生命周期管理和存储效率。 它不是法规遵从性工具，不应依赖它来满足管理法规要求。 法规遵从性往往需要更广泛的数据治理战略。
+>TTL旨在优化数据生命周期管理和存储效率。 它不是法规遵从性工具，不应依赖它来满足管理法规要求。 法规遵从性往往需要更广泛的数据治理战略。
 
 ## 为何使用TTL进行行级数据管理
 
@@ -33,14 +33,18 @@ TTL在管理随时间推移失去相关性的时效性数据时非常有用。 �
 >[!NOTE]
 >
 >体验事件数据集保留适用于存储在数据湖中的事件数据。 如果您在Real-Time Customer Data Platform中管理保留，请考虑将[体验事件过期](../../profile/event-expirations.md)和[假名配置文件过期](../../profile/pseudonymous-profiles.md)与数据湖保留设置一起使用。
+
+使用TTL配置可根据权限优化存储。 虽然配置文件存储数据(用于Real-Time CDP)可被视为已过期并在30天后删除，但对于Analytics和Data Distiller用例，数据湖中的相同事件数据仍可在12-13个月（或更长时间，根据权限）内可用。
+
+>[!TIP]
 >
->TTL配置可帮助您根据权限优化存储。 虽然配置文件存储数据(用于Real-Time CDP)可被视为已过期并在30天后删除，但对于Analytics和Data Distiller用例，数据湖中的相同事件数据仍可在12-13个月（或更长时间，根据权限）内可用。
+>权利指您的Adobe订阅和许可协议定义的存储和保留期限。
 
 ### 行业示例 {#industry-example}
 
 例如，考虑使用视频流服务来跟踪用户交互，如视频查看、搜索和推荐。 尽管最近的参与数据对个性化至关重要，但旧的活动日志（例如，一年多以前的互动）将失去相关性。 通过使用行级过期，Experience Platform可自动删除过时的日志，从而确保仅将当前且有意义的数据用于分析和推荐。
 
-## 评估TTL适用性
+## 评估TTL适用性 {#evaluate-ttl-suitability}
 
 在应用保留策略之前，请评估您的数据集是否是行级到期的良好候选数据集。 请考虑以下事项：
 
@@ -50,9 +54,39 @@ TTL在管理随时间推移失去相关性的时效性数据时非常有用。 �
 
 如果历史记录对于长期分析或业务运营至关重要，则TTL可能不是正确的方法。 查看这些因素可确保TTL符合您的数据保留需求，而不会对数据可用性产生负面影响。
 
-## 计划查询 {#plan-queries}
+## 设置TTL的最佳实践 {#best-practices}
 
-在应用TTL之前，评估数据集大小和数据相关性并评估应保留多少历史数据非常重要。 下面的视觉内容概述了实施TTL的完整过程，从规划查询到监控保留有效性。
+选择适当的TTL值，以确保您的Experience Event数据集保留策略在数据保留、存储效率和分析需求之间取得平衡。 TTL过短可能会导致数据丢失，而过长可能会增加存储成本和不必要的数据累积。 通过考虑访问数据的频率以及数据保持相关的时长，确保TTL与数据集的目的一致。
+
+下表提供了基于数据集类型和使用模式的常见TTL建议：
+
+| 数据集类型 | 建议的TTL | 典型用例 |
+|-----------------------------|------------------------|-------------------|
+| 经常访问的数据集 | 30-90天 | 用户参与日志、网站点击流数据、短期促销活动效果数据。 |
+| 存档数据集 | 1年或以上 | 财务交易记录、合规性数据、长期趋势分析、机器学习训练数据集。 |
+| 应用程序管理的数据集 | 长达13个月 | 系统管理的数据集具有预定义的TTL限制，将自动强制实施这些限制以遵守系统施加的限制。 |
+| 客户管理的数据集 | 30天 — 最大TTL | 通过UI、API或数据Distiller创建的数据集。 TTL必须至少为30天并且位于定义的最大TTL内。 |
+
+请定期检查TTL设置，以确保它们持续与您的存储策略、分析需要和业务需求保持一致。
+
+### 设置TTL时的关键注意事项 {#key-considerations}
+
+请遵循以下最佳实践，确保TTL设置与您的数据保留策略一致：
+
+- 定期审核TTL更改。 每次TTL更新都会触发审核事件。 使用审核日志跟踪TTL修改，以实现合规性、数据治理和疑难解答。
+- 如果数据必须无限期保留，则禁用TTL。 要禁用TTL，请将`ttlValue`设置为`null`。 这样可防止自动过期并永久保留所有记录。 在进行此更改之前，请考虑对存储的影响。
+
+## TTL的限制 {#limitations}
+
+使用TTL时，请注意以下限制：
+
+- 使用TTL的&#x200B;**体验事件数据集保留适用于行级过期**，而不适用于数据集删除。 TTL会根据定义的保留期删除记录，但不会删除整个数据集。 要删除数据集，请使用[数据集到期终结点](../../hygiene/api/dataset-expiration.md)或手动删除。
+- **TTL配置保持活动状态，直到显式禁用**。 在禁用该配置之前，该配置将一直有效。 禁用TTL将停止过期，并确保保留数据集中的所有记录。
+- **TTL不是合规性工具**。 在TTL优化存储和生命周期管理的同时，您必须实施更广泛的治理策略以确保法规遵从性。
+
+## 在应用TTL之前分析数据集大小和相关性 {#analyze-dataset-size}
+
+在应用TTL之前，请使用查询分析数据集大小和相关性。 运行定向查询（如对特定日期范围内的记录进行计数）以预览各种TTL值的影响。 然后，使用此信息选择最佳保留期，以平衡数据效用和经济效益。
 
 ![在体验事件数据集上实施TTL的可视化工作流。 步骤包括：评估数据生命周期和删除的影响，使用查询验证TTL设置，通过目录服务API配置TTL，以及持续监视TTL影响并进行调整。](../images/datasets/dataset-retention-ttl-guide/manage-experience-event-dataset-retention-in-the-data-lake.png)
 
@@ -72,13 +106,17 @@ SELECT COUNT(1) FROM [datasetName] WHERE timestamp > date_sub(now(), INTERVAL 30
 >
 >本文档介绍了行级过期，即删除数据集中个别已过期的行，同时保持数据集本身不变。 它不适用于数据集过期，该功能会删除整个数据集，并受一个单独的功能管理。 有关数据集级别的过期，请参阅[数据集过期API文档](../../hygiene/api/dataset-expiration.md)。
 
-### 如何检查当前TTL设置
+### 检查TTL约束 {#check-ttl-constraints}
 
-要开始TTL管理，请先检查当前TTL设置。 向`/ttl/{datasetId}`端点发出GET请求，以检索数据集的默认、最大和最小TTL设置。 此步骤是必需的，因为TTL规则可能会因数据集类型而异。
+使用数据卫生API `/ttl/{DATASET_ID}`端点帮助规划TTL配置。 此端点返回您的组织支持的最小TTL值和最大TTL值，以及数据集类型的推荐值(`defaultValue`)。
+
+有关详细信息，请参阅Adobe Developer [数据卫生API](https://developer.adobe.com/experience-platform-apis/references/data-hygiene/#operation/getTtl)文档。
+
+要[检查当前应用于数据集](#check-applied-ttl-values)的TTL，请改为向[目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/) `/dataSets/{DATASET_ID}`端点发出GET请求。
 
 >[!TIP]
 >
->目录服务API的Experience Platform网关URL和基本路径为： `https://platform.adobe.io/data/foundation/catalog`。
+>目录服务API的Experience Platform网关URL和基本路径为： `https://platform.adobe.io/data/foundation/catalog`。 数据卫生API的基本路径为： `https://platform.adobe.io/data/core/hygiene`
 
 **API格式**
 
@@ -92,11 +130,11 @@ GET /ttl/{DATASET_ID}
 
 **请求**
 
-以下请求检索贵组织的特定数据集的TTL设置。
+以下请求检索贵组织针对特定数据集的TTL限制。
 
 ```shell
 curl -X GET \
-  'https://platform.adobe.io/data/foundation/catalog/ttl/5ba9452f7de80408007fc52a' \
+  'https://platform.adobe.io/data/foundation/catalog/ttl/{DATASET_ID}' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -106,51 +144,21 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回数据集的TTL配置，包括`adobe_lakeHouse`和`adobe_unifiedProfile`存储的默认、最大和最小TTL值。
+成功的响应会根据您组织的权限返回建议的、最大和最小的TTL值，以及数据集的建议TTL (`defaultValue`)。 此`defaultValue`是建议的TTL持续时间，仅供参考。 除非您明确配置，否则不会应用它。 响应不包含任何可能已设置的自定义TTL值。 要查看数据集的当前TTL，请使用GET `/catalog/dataSets/{DATASET_ID}`端点。
 
 +++选择以查看响应
 
 ```json
 {
-    "67976f0b4878252ab887ccd9": {
-        "name": "Acme Sales Data",
-        "description": "This dataset contains sales transaction records for Acme Corporation.",
-        "imsOrg": "{ORG_ID}",
-        "sandboxId": "{SANDBOX_ID}",
-        "tags": {
-            "adobe/pqs/table": [
-                "acme_sales_20250127_113331_106"
-            ],
-            "adobe/siphon/table/format": [
-                "delta"
-            ]
-        },
-        "extensions": {
-            "adobe_lakeHouse": {  
-                "rowExpiration": {
-                    "defaultValue": "P12M",
-                    "maxValue": "P12M",
-                    "minValue": "P30D"
-                }
-            },
-            "adobe_unifiedProfile": {  
-                "rowExpiration": {
-                    "defaultValue": "P12M",
-                    "maxValue": "P12M",
-                    "minValue": "P7D"
-                }
-            }
-        },
-        "version": "1.0.0",
-        "created": 1737977611118,
-        "updated": 1737977611118,
-        "createdClient": "acme_data_pipeline",
-        "createdUser": "john.snow@acmecorp.com",
-        "updatedUser": "arya.stark@acmecorp.com",
-        "classification": {
-            "managedBy": "CUSTOMER"
-        }
+  "extensions": {
+    "adobe_lakeHouse": {
+      "rowExpiration": {
+        "defaultValue": "P12M",
+        "maxValue": "P12M",
+        "minValue": "P7D"
+      }
     }
+  }
 }
 ```
 
@@ -158,19 +166,65 @@ curl -X GET \
 
 | 属性 | 描述 |
 |--------------|-------------|
-| `defaultValue` | 如果未设置自定义TTL，则应用默认的TTL时段。 |
-| `maxValue` | 数据集允许的最长TTL。 如果为null，则没有最大限制。 |
-| `minValue` | 允许的最短TTL可确保符合系统策略。 |
+| `defaultValue` | 为数据集推荐的TTL值。 此值为&#x200B;**不是自动应用的**。 必须明确设置TTL才能使其生效。 |
+| `maxValue` | 您组织的权利允许的最长TTL持续时间。 通常，此持续时间为10年(`P10Y`)。 |
+| `minValue` | 您组织的权利允许的最短TTL持续时间。 通常，此持续时间为30天(`P30D`)。 |
 
-<!-- Q) what is the default Max and Min values and are they system-imposed? -->
+### 如何检查应用的TTL值 {#check-applied-ttl-values}
 
-### 如何为数据集设置TTL {#set-ttl}
+要检查已应用于数据集的当前TTL值，请使用以下API调用：
+
+```http
+GET /dataSets/{DATASET_ID}
+```
+
+此调用返回`extensions.adobe_lakeHouse.rowExpiration`分区中的当前`ttlValue`（如果已设置）。
+
+**请求**
+
+以下请求检索贵组织的特定数据集的TTL值。
+
+```shell
+curl -X GET \
+https://platform.adobe.io/data/foundation/catalog/dataSets/{DATASET_ID} \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
+**响应**
+
+成功的响应包括`extensions`对象，该对象包含应用于数据集的当前TTL配置。 为简短起见，下面的响应示例被截断。
+
+```json
+{
+    "{DATASET_ID}": {
+        "name": "Acme Sales Data",
+        "description": "This dataset contains sales transaction records for Acme Corporation.",
+        "imsOrg": "{ORG_ID}",
+        "sandboxId": "{SANDBOX_ID}",
+        "extensions": {
+            "adobe_lakeHouse": {
+            "rowExpiration": {
+                "ttlValue": "P3M",
+            }
+            }
+        }
+        ...
+    }
+}
+```
+
+### 设置或更新数据集的TTL {#set-update-ttl}
 
 >[!IMPORTANT]
 >
->行过期仅适用于使用时间序列架构的事件数据集。 在设置TTL之前，请验证数据集的架构是否扩展了`https://ns.adobe.com/xdm/data/time-series`以确保API请求成功。 使用架构注册表API检索架构详细信息并验证`meta:extends`属性。 有关如何执行此操作的指导，请参阅[架构终结点文档](../../xdm/api/schemas.md#lookup)。
+>基于TTL的行级过期仅适用于使用时间序列架构的事件数据集。 这包括基于标准XDM ExperienceEvent类的数据集，以及扩展时间序列架构(`https://ns.adobe.com/xdm/data/time-series`)的自定义架构。
+>
+>在应用TTL之前，请使用架构注册表API通过检查`meta:extends`属性来验证数据集的架构是否包含正确的扩展。 有关如何执行此操作的指导，请参阅[架构终结点文档](../../xdm/api/schemas.md#lookup)。
 
-要为数据集配置Experience Event数据集保留，请通过对`/v2/datasets/{ID}`端点发出PATCH请求来设置新的TTL值。
+您可以通过设置新的TTL或使用相同的API方法更新现有TTL来配置Experience Event数据集保留。 使用对`/v2/datasets/{DATASET_ID}`端点的PATCH请求来应用或调整TTL。
 
 **API格式**
 
@@ -184,15 +238,15 @@ PATCH /v2/datasets/{DATASET_ID}
 
 **请求**
 
-在下面的示例请求中，`ttlValue`设置为`P3M`。 这可以确保自动删除三个月以前的记录。 您可以使用诸如`P6M`表示六个月或`P12M`表示一年的值，根据业务需要调整保留期。
+在以下示例中，`ttlValue`设置为`P3M`。 这意味着超过3个月的记录将被自动删除。 调整保留期以满足您的业务需求（例如，`P6M`保留六个月或`P12M`保留一年）。
 
 ```shell
 curl -X PATCH \
   'https://platform.adobe.io/data/foundation/catalog/v2/datasets/{DATASET_ID}' \
-  -h 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -h 'Content-Type: application/json' \
-  -h 'x-api-key: {API_KEY}' \
-  -h 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -d '{
     "extensions": {
         "adobe_lakeHouse": {
@@ -204,93 +258,31 @@ curl -X PATCH \
 }
 ```
 
-**响应**
-
-成功的响应将显示数据集的TTL配置。 它包含有关`adobe_lakeHouse`和`adobe_unifiedProfile`存储的行级到期设置的详细信息。
-
-+++选择以查看响应
-
-```JSON
-{
-    "67976f0b4878252ab887ccd9": {
-        "name": "Acme Sales Data",
-        "description": "This dataset contains sales transaction records for Acme Corporation.",
-        "imsOrg": "{ORG_ID}",
-        "sandboxId": "{SANDBOX_ID}",
-        "tags": {
-            "adobe/pqs/table": [
-                "acme_sales_20250127_113331_106"
-            ],
-            "adobe/siphon/table/format": [
-                "delta"
-            ]
-        },
-        "extensions": {
-            "adobe_lakeHouse": {
-                "rowExpiration": {
-                "ttlValue": "P3M",
-                    "valueStatus": "custom",
-                    "setBy": "user",
-                    "updated": 1737977766499
-                }
-            },
-            "adobe_unifiedProfile": {  
-                "rowExpiration": {
-                    "ttlValue": "P3M",
-                    "valueStatus": "custom",
-                    "setBy": "user",
-                    "updated": 1737977766499
-                }
-            }
-        },
-        "version": "1.0.0",
-        "created": 1737977611118,
-        "updated": 1737977611118,
-        "createdClient": "acme_data_pipeline",
-        "createdUser": "john.snow@acmecorp.com",
-        "updatedUser": "arya.stark@acmecorp.com",
-        "classification": {
-            "managedBy": "CUSTOMER"
-        }
-    }
-}
-```
-
-+++
-
 | 属性 | 描述 |
 |----------------------------------|-------------|
-| `extensions` | 与数据集相关的其他元数据的容器。 |
-| `extensions.adobe_lakeHouse` | 指定与存储体系结构相关的设置，包括行级过期配置 |
-| `rowExpiration` | 对象包含用于定义数据集的保留期的TTL设置。 |
-| `rowExpiration.ttlValue` | 定义自动移除数据集中的记录之前的持续时间。 使用ISO-8601期间格式（例如，`P3M`表示3个月，`P30D`表示一周）。 |
-| `rowExpiration.valueStatus` | 该字符串指示TTL设置是默认的系统值还是用户设置的自定义值。 可能的值为： `default`，`custom`。 |
-| `rowExpiration.setBy` | 指定上次修改TTL设置的用户。 可能的值包括： `user`（手动设置）或`service`（自动分配）。 |
-| `rowExpiration.updated` | 上次TTL更新的时间戳。 此值指示上次修改TTL设置的时间。 |
+| `rowExpiration.ttlValue` | 定义自动移除数据集中的记录之前的持续时间。 使用ISO-8601期间格式（例如，`P3M`表示3个月，`P30D`表示30天）。 |
 
-### 如何更新TTL {#update-ttl}
+**响应**
 
-通过调整TTL来延长或缩短保留期，以满足您的业务需求。 例如，在考虑前面提到的视频流平台时，该平台可能最初将TTL设置为三个月，以确保提供最新的个性化参与数据。 但是，如果他们的分析显示超过3个月的交互模式仍可提供有价值的见解，则可以将TTL期限延长到6个月，以保留较早的记录，从而获得更好的推荐模型。
+成功的响应会返回对更新数据集的引用，但不明确包含TTL设置。 要确认TTL配置，请跟进`GET /dataSets/{DATASET_ID}`请求。
 
-要修改现有TTL值，请在`/v2/datasets/{DATASET_ID}`端点上使用`PATCH`方法。
-
-#### API格式
-
-```http
-PATCH /v2/datasets/{DATASET_ID}
+```JSON
+[
+  "@/dataSets/{DATASET_ID}"
+]
 ```
 
-**请求**
+#### 示例场景 {#example-scenario}
 
-在下面的请求中，TTL更新为六个月(`P6M`)，延长了自动删除前的记录保留期。
+考虑一个视频流平台，该平台最初将TTL设置为三个月，以确保提供最新的个性化参与数据。 但是，如果后续分析显示旧交互仍可提供有价值的洞察，则可以通过以下请求将TTL延长到六个月：
 
 ```shell
 curl -X PATCH \
   'https://platform.adobe.io/data/foundation/catalog/v2/datasets/{DATASET_ID}' \
-  -h 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -h 'Content-Type: application/json' \
-  -h 'x-api-key: {API_KEY}' \
-  -h 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -d '{
     "extensions": {
         "adobe_lakeHouse": {
@@ -302,95 +294,41 @@ curl -X PATCH \
 }
 ```
 
-<!-- Q) For Clarity, should this example show both data stores being updated by expanding the example payload above? -->
-
-**响应**
-
-```JSON
-{  "extensions": {
-        "adobe_lakeHouse": {
-            "rowExpiration": {
-              "ttlValue": "P6M",
-              "valueStatus": "custom",
-              "setBy": "user",
-              "updated": "1737977766499"
-            }
-        },
-        "adobe_unifiedProfile": {
-            "rowExpiration": {
-                "ttlValue": "P3M",
-                "valueStatus": "custom",
-                "setBy": "user",
-                "updated": "17379754766355"
-            }
-        }
-    }
-}
-```
-
-## 设置TTL的最佳实践 {#best-practices}
-
-选择正确的TTL值对于确保您的Experience Event数据集保留策略在数据保留、存储效率和分析需求之间取得平衡至关重要。 TTL过短可能会导致数据丢失，而过长可能会增加存储成本和不必要的数据累积。 通过考虑访问数据的频率以及数据保持相关的时长，确保TTL与数据集的目的一致。
-
-下表提供了基于数据集类型和使用模式的常见TTL建议：
-
-| 数据集类型 | 建议的TTL | 典型用例 |
-|-----------------------------|------------------------|-------------------|
-| 经常访问的数据集 | 30-90天 | 用户参与日志、网站点击流数据、短期促销活动效果数据。 |
-| 存档数据集 | 1年或以上 | 财务交易记录、合规性数据、长期趋势分析、机器学习训练数据集。 |
-| 应用程序管理的数据集 | 长达13个月 | 系统管理的数据集具有预定义的TTL限制，将自动强制实施这些限制以遵守系统施加的限制。 |
-| 客户管理的数据集 | 30天 — 最大TTL | 通过UI、API或数据Distiller创建的数据集。 TTL必须至少为30天并且位于定义的最大TTL内。 |
-
-请定期检查TTL设置，以确保它们持续与您的存储策略、分析需要和业务需求保持一致。
-
-### 设置TTL时的关键注意事项
-
-<!-- What are the default TTL limits for system-generated Profile Store and data lake datasets? -->
-
-<!-- Q) Are the limits: 90 days for data in the Profile store and 13 months for data in the data lake? This is true for Journey Optimizer. -->
-
-请遵循以下最佳实践，确保TTL设置与您的数据保留策略一致：
-
-- 定期审核TTL更改。 每次TTL更新都会触发审核事件。 使用审核日志跟踪TTL修改，以实现合规性、数据治理和疑难解答。
-- 如果数据必须无限期保留，请删除TTL。 要禁用TTL，请将`ttlValue`设置为`null`。 这样可防止自动过期并永久保留所有记录。 在进行此更改之前，请考虑对存储的影响。
-
-<!-- Q) Are there any specific system constraints or impacts of setting TTL to null? -->
-
-## TTL的限制 {#limitations}
-
-使用TTL时，请注意以下限制：
-
-- 使用TTL的&#x200B;**体验事件数据集保留适用于行级过期**，而不适用于数据集删除。 TTL会根据定义的保留期删除记录，但不会删除整个数据集。 要删除数据集，请使用[数据集到期终结点](../../hygiene/api/dataset-expiration.md)或手动删除。
-- 无法删除&#x200B;**TTL**，仅更新。 应用后，无法删除TTL，但您可以[修改保留期](#update-ttl)以延长或缩短保留期。 要无限期保留数据，请设置足够长的TTL，而不是尝试删除它。
-- **TTL不是合规性工具**。 TTL优化了存储和数据生命周期管理，但无法满足法规数据保留要求。 为达到合规性，实施更广泛的数据治理战略。
-
 ## 数据集保留策略常见问题解答 {#faqs}
 
-本节提供了有关Adobe Experience Platform中数据集保留策略的常见问题解答。
+此常见问题解答涵盖有关数据集保留作业、TTL更改的即时影响、恢复选项以及保留期在Platform服务中的不同之处等实际问题。
 
 ### 可以将保留策略规则应用到哪些类型的数据集？
 
 +++回答
-您可以将保留策略应用到使用XDM ExperienceEvent类创建的数据集。 对于配置文件服务，保留策略仅适用于已启用配置文件的体验事件数据集。
+您可以将基于TTL的保留策略应用到任何使用时间序列架构的数据集。 这包括基于标准XDM ExperienceEvent类的数据集，以及扩展XDM时间序列类的自定义架构。
+
+行级过期需要满足以下技术条件：
+
+- 架构必须扩展XDM时间序列基类。
+- 架构必须包含用于评估过期时间的时间戳字段。
+- 数据集应存储事件级数据，通常使用或扩展XDM ExperienceEvent类。
+- 数据集必须在目录服务中注册，因为通过`extensions.adobe_lakeHouse.rowExpiration`应用TTL设置。
+- TTL值必须使用ISO-8601持续时间格式（例如，`P30D`、`P6M`、`P1Y`）。
 +++
 
 ### 数据集保留作业多久将从数据湖服务中删除数据？
 
 +++回答
-将每周评估和处理数据集TTL，并删除所有过期的记录。 如果事件摄取到Experience Platform超过30天（摄取日期> 30天）并且其事件日期超过定义的保留期(TTL)，则该事件被视为已过期。
+每30天评估和处理一次数据集TTL，并删除所有过期的记录。 如果事件摄取到Experience Platform超过30天（摄取日期> 30天）并且其事件日期超过定义的保留期(TTL)，则该事件被视为已过期。
 +++
 
-### 数据集保留作业多久将从配置文件服务中删除数据？
+<!-- ### How soon will the Dataset Retention job delete data from Profile services?
 
-+++回答
-设置保留策略后，如果Experience Platform中的现有事件的事件时间戳超过保留期(TTL)，则会立即删除该事件。 一旦新事件的时间戳超过保留期，就会将其删除。
++++Answer
+Once a retention policy is set, existing events that already exceed the newly defined TTL are immediately deleted. Newer events remain until their timestamps surpass the retention period.
 
-例如，如果您在5月15日应用30天到期策略，则会出现以下情况：
+For example, if you apply a 30-day expiration policy on May 15th, the following occurs:
 
-- 新事件在摄取后将接收30天过期。
-- 时间戳早于4月15日的现有事件将被立即删除。
-- 时间戳在4月15日之后的现有事件将设置为在其时间戳之后30天过期（例如，从4月18日开始的事件将在5月18日删除）。
-+++
+- New events receive a 30-day expiration as they are ingested.
+- Existing events with a timestamp older than April 15th are immediately deleted.
+- Existing events with a timestamp after April 15th are set to expire 30 days after their timestamp (for example, an event from April 18th would be deleted on May 18th).
++++ -->
 
 ### 我是否可以为数据湖和配置文件服务设置不同的保留策略？
 
@@ -410,6 +348,12 @@ curl -X PATCH \
 
 +++回答
 您可以通过在[数据集保留配置UI](./user-guide.md#data-retention-policy)中或在“数据清单”页面上检查其时间戳来验证最后一个数据保留作业。
+
+或者，您可以向以下端点发出GET请求：
+
+`GET https://platform.adobe.io/data/foundation/catalog/dataSets/{DATASET_ID}`
+
+响应包括属性`extensions.adobe_lakeHouse.rowExpiration.lastCompleted`，该属性指示最近一次完成TTL作业时的Unix时间戳（以毫秒为单位）。
 
 历史数据集使用情况报表当前不可用。
 +++
