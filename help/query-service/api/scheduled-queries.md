@@ -5,9 +5,9 @@ title: 计划端点
 description: 以下部分介绍了您可以使用查询服务API对计划查询进行的各种API调用。
 role: Developer
 exl-id: f57dbda5-da50-4812-a924-c8571349f1cd
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: a39fae1b72533261fb43e0acc95e50e5a6acd8df
 workflow-type: tm+mt
-source-wordcount: '1214'
+source-wordcount: '1224'
 ht-degree: 2%
 
 ---
@@ -42,7 +42,7 @@ GET /schedules?{QUERY_PARAMETERS}
 | `orderby` | 指定排序结果所依据的字段。 支持的字段为`created`和`updated`。 例如，`orderby=created`将按创建的结果以升序排序。 在创建之前(`orderby=-created`)添加`-`将按创建的顺序降序对项进行排序。 |
 | `limit` | 指定页大小限制，以控制页中包含的结果数。 （*默认值： 20*） |
 | `start` | 指定ISO格式时间戳对结果进行排序。 如果未指定开始日期，则API调用将首先返回创建的最旧的计划查询，然后继续列出更新的结果。<br>个ISO时间戳允许在日期和时间使用不同级别的粒度。 基本ISO时间戳采用`2020-09-07`格式，表示日期2020年9月7日。 一个更复杂的示例将编写为`2022-11-05T08:15:30-05:00`，对应于2022年11月5日美国东部标准时间上午8:15:30。 可以为时区提供UTC偏移量，时区由后缀“Z”(`2020-01-01T01:01:01Z`)表示。 如果未提供时区，则默认设置为0。 |
-| `property` | 根据字段筛选结果。 筛选器&#x200B;**必须**&#x200B;进行HTML转义。 逗号用于组合多组过滤器。 支持的字段为`created`、`templateId`和`userId`。 支持的运算符列表为`>` （大于）、`<` （小于）和`==` （等于）。 例如，`userId==6ebd9c2d-494d-425a-aa91-24033f3abeec`将返回用户ID为指定的所有计划查询。 |
+| `property` | 根据字段筛选结果。 筛选器&#x200B;**必须**&#x200B;对HTML进行转义。 逗号用于组合多组过滤器。 支持的字段为`created`、`templateId`和`userId`。 支持的运算符列表为`>` （大于）、`<` （小于）和`==` （等于）。 例如，`userId==6ebd9c2d-494d-425a-aa91-24033f3abeec`将返回用户ID为指定的所有计划查询。 |
 
 **请求**
 
@@ -158,10 +158,11 @@ curl -X POST https://platform.adobe.io/data/foundation/query/schedules
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `query.dbName` | 正在为其创建计划查询的数据库名称。 |
-| `query.sql` | 要创建的SQL查询。 |
+| `query.dbName` | 运行计划查询的数据库的名称。 |
+| `query.sql` | 要按定义的计划执行的SQL查询。 |
 | `query.name` | 计划查询的名称。 |
-| `schedule.schedule` | 查询的cron计划。 有关cron计划的详细信息，请阅读[cron表达式格式](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)文档。 在此示例中，“30 * * * *”表示查询将每小时在30分钟标记处运行。<br><br>或者，您可以使用以下简写表达式：<ul><li>`@once`：查询只运行一次。</li><li>`@hourly`：查询每小时在一小时的开头运行一次。 这相当于cron表达式`0 * * * *`。</li><li>`@daily`：查询每天午夜运行一次。 这相当于cron表达式`0 0 * * *`。</li><li>`@weekly`：查询每周运行一次，于星期日、午夜运行。 这相当于cron表达式`0 0 * * 0`。</li><li>`@monthly`：查询每月运行一次，在每月的第一天午夜运行。 这相当于cron表达式`0 0 1 * *`。</li><li>`@yearly`：查询每年运行一次，于1月1日午夜。 这相当于cron表达式`1 0 0 1 1 *`。 |
+| `query.description` | 计划查询的可选描述。 |
+| `schedule.schedule` | 查询的cron计划。 请参阅[Crontab.guru](https://crontab.guru/)以交互方式创建、验证和了解cron表达式。 在此示例中，“30 * * * *”表示查询将每小时在30分钟标记处运行。<br><br>或者，您可以使用以下简写表达式：<ul><li>`@once`：查询只运行一次。</li><li>`@hourly`：查询每小时在一小时的开头运行一次。 这相当于cron表达式`0 * * * *`。</li><li>`@daily`：查询每天午夜运行一次。 这相当于cron表达式`0 0 * * *`。</li><li>`@weekly`：查询每周运行一次，于星期日、午夜运行。 这相当于cron表达式`0 0 * * 0`。</li><li>`@monthly`：查询每月运行一次，在每月的第一天午夜运行。 这相当于cron表达式`0 0 1 * *`。</li><li>`@yearly`：查询每年运行一次，于1月1日午夜。 这相当于cron表达式`0 0 1 1 *`。 |
 | `schedule.startDate` | 以UTC时间戳写入的计划查询开始日期。 |
 
 **响应**
@@ -223,7 +224,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/schedules
 
 ### 指定计划查询的请求详细信息
 
-您可以通过向`/schedules`端点发出GET请求并在请求路径中提供其ID来检索特定计划查询的信息。
+您可以通过向`/schedules`端点发出GET请求并在请求路径中提供其ID，来检索特定计划查询的信息。
 
 **API格式**
 
@@ -306,9 +307,9 @@ curl -X GET https://platform.adobe.io/data/foundation/query/schedules/e95186d65a
 
 ### 更新指定计划查询的详细信息
 
-您可以通过向`/schedules`端点发出PATCH请求并在请求路径中提供其ID来更新指定计划查询的详细信息。
+您可以通过向`/schedules`端点发出PATCH请求并在请求路径中提供其ID，来更新指定计划查询的详细信息。
 
-PATCH请求支持两个不同的路径： `/state`和`/schedule/schedule`。
+PATCH请求支持两个不同的路径：`/state`和`/schedule/schedule`。
 
 ### 更新计划的查询状态
 
@@ -322,7 +323,7 @@ PATCH /schedules/{SCHEDULE_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{SCHEDULE_ID}` | 要PATCH的计划查询的`id`值。 |
+| `{SCHEDULE_ID}` | 您希望PATCH的计划查询的`id`值。 |
 
 
 **请求**
@@ -375,7 +376,7 @@ PATCH /schedules/{SCHEDULE_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{SCHEDULE_ID}` | 要PATCH的计划查询的`id`值。 |
+| `{SCHEDULE_ID}` | 您希望PATCH的计划查询的`id`值。 |
 
 **请求**
 
