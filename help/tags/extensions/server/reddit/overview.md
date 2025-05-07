@@ -15,7 +15,7 @@ Reddit是一个拥有多元化用户群的社交媒体平台，非常适合面�
 
 使用[[!DNL Reddit] Conversions API扩展](https://ads-api.reddit.com/docs/v2/#tag/Conversions-API)将Adobe Experience Platform Edge Network中捕获的用户交互事件发送到[!DNL Reddit Ads]。 使用此扩展帮助您的品牌触及超过3.79亿每周活跃用户的受众，并更好地了解用户行为并运行有针对性的广告。
 
-阅读本指南，了解如何在事件转发[规则](https://experienceleague.adobe.com/en/docs/experience-platform/tags/ui/rules)中安装、配置和使用[!DNL Reddit] Conversions API扩展。
+阅读本指南，了解如何在事件转发[规则](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/tags/ui/rules)中安装、配置和使用[!DNL Reddit] Conversions API扩展。
 
 ## 主要优点 {#benefits}
 
@@ -42,7 +42,7 @@ Reddit是一个拥有多元化用户群的社交媒体平台，非常适合面�
 
 按照以下步骤安装和配置[!DNL Reddit] Conversions API扩展：
 
-1. 在Experience Platform数据收集UI中，从左侧导航中选择[!UICONTROL 扩展]以访问[!UICONTROL 扩展]目录。 然后[创建新的事件转发属性](https://experienceleague.adobe.com/en/docs/experience-platform/tags/event-forwarding/overview#properties)或选择现有属性。
+1. 在Experience Platform数据收集UI中，从左侧导航中选择[!UICONTROL 扩展]以访问[!UICONTROL 扩展]目录。 然后[创建新的事件转发属性](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/tags/event-forwarding/overview#properties)或选择现有属性。
 2. 在左侧导航面板中导航到&#x200B;**[!UICONTROL 扩展]**。 选择&#x200B;**[!UICONTROL 目录]**，然后选择&#x200B;**[!DNL Reddit]**&#x200B;扩展。
    ![突出显示了Reddit扩展的Adobe Experience Platform扩展目录。](../../../images/extensions/server/reddit/reddit-extension.png)
 3. 提供以下配置详细信息：
@@ -55,7 +55,7 @@ Reddit是一个拥有多元化用户群的社交媒体平台，非常适合面�
 
 设置数据元素后，创建事件转发规则以确定将事件发送到[!DNL Reddit Ads]的时间和方式。
 
-1. 导航到事件转发属性中的&#x200B;**规则**&#x200B;并创建新的[规则](https://experienceleague.adobe.com/en/docs/experience-platform/tags/ui/rules)。
+1. 导航到事件转发属性中的&#x200B;**规则**&#x200B;并创建新的[规则](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/tags/ui/rules)。
 2. 在&#x200B;**操作**&#x200B;下，添加新操作并将扩展设置为&#x200B;**[!DNL Reddit CAPI]**。
 3. 将&#x200B;**操作类型**&#x200B;设置为&#x200B;**发送事件**。
    ![Reddit Conversions API扩展的事件转发规则配置接口，扩展和操作类型字段突出显示。](../../../images/extensions/server/reddit/reddit-rule.png)
