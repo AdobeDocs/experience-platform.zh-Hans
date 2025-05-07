@@ -2,9 +2,9 @@
 title: 身份图链接规则的实施指南
 description: 了解在使用身份图链接规则配置实施数据时要遵循的建议步骤。
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: a309f0dca5ebe75fcb7abfeb98605aec2692324d
+source-git-commit: d0380844eb8dd98bd7c349beb035cce4c7ccb44f
 workflow-type: tm+mt
-source-wordcount: '1888'
+source-wordcount: '1886'
 ht-degree: 6%
 
 ---
@@ -113,7 +113,7 @@ ht-degree: 6%
 
 如果您的系统发送了两个人员标识符，则实施可能会不符合单人员命名空间要求。 例如，如果webSDK实施中的identityMap包含CRMID、customerID和ECID命名空间，则无法保证每个事件都包含CRMID和customerID。
 
-理想情况下，您应发送类似于以下内容的有效负载：
+您应该&#x200B;**不**&#x200B;发送如下有效负载：
 
 ```json
 {
