@@ -2,9 +2,9 @@
 title: 身份图链接规则的实施指南
 description: 了解在使用身份图链接规则配置实施数据时要遵循的建议步骤。
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: d0380844eb8dd98bd7c349beb035cce4c7ccb44f
+source-git-commit: 1a6ca508f0f5e95ddad9014d6507a7a829592673
 workflow-type: tm+mt
-source-wordcount: '1886'
+source-wordcount: '1958'
 ht-degree: 6%
 
 ---
@@ -160,6 +160,8 @@ ht-degree: 6%
 ![呈现了图形示例的图形模拟UI。](../images/implementation/example-graph.png)
 
 >[!TAB 没有任何人员标识符的已验证事件]
+
+在此示例中，您可以假设在John（最终用户）在验证期间浏览您的网站时，向Experience Platform发送了以下事件。 但是，尽管已通过身份验证，Experience Platform仍无法识别John，因为事件中缺少人员标识符。 因此，此事件将被解释为匿名用户浏览Adobe商业网站，而不是将其识别为专门与John关联的在线活动。
 
 ```json
 {
