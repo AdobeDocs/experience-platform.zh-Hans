@@ -4,9 +4,9 @@ title: Salesforce Marketing Cloud Source概述
 description: 了解如何使用API或用户界面将Salesforce Marketing Cloud连接到Adobe Experience Platform。
 exl-id: 2177d68c-0cef-4031-a0e7-8bf22ee2e70b
 last-substantial-update: 2025-04-29T00:00:00Z
-source-git-commit: 7ff0709b62590bb80c1ed664368f28cdc4a950ea
+source-git-commit: ce96dbc64845fddb40ebee709828c56d51a6c6ba
 workflow-type: tm+mt
-source-wordcount: '376'
+source-wordcount: '382'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,11 @@ Experience Platform支持从第三方营销自动化系统中提取数据。 对
 
 ## IP地址允许列表
 
-在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 有关详细信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md)页。
+在将源连接到Experience Platform之前，必须将特定于区域的IP地址添加到允许列表。 有关详细信息，请阅读有关[将IP地址列入允许列表到Experience Platform](../../ip-address-allow-list.md)的指南。
+
+>[!WARNING]
+>
+>如果您没有向帐户添加必要的IP地址，则[!DNL Salesforce Marketing Cloud]允许列表将不会连接到Experience Platform。
 
 ## 使用API将[!DNL Salesforce Marketing Cloud]连接到Experience Platform
 
