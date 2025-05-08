@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；数据位置；数据位置；数据管理；数据管理；谱系；谱系；数据类型；数据类型；数据类型
 solution: Experience Platform
 title: 数据集概述
-description: 本文档高度概括 Experience Platform 中的数据集。
+description: 本文档高度概述 Experience Platform 中的数据集。
 user-guide-description: 通过本指南获取Experience Platform中数据集的高级概述。 在此处了解如何创建这些变量、对数据强制实施限制以及将数据摄取到数据集中。
 exl-id: 51ecefb0-a699-4b1a-80f1-26c6ba92fcbf
 source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
@@ -44,7 +44,7 @@ Adobe Experience Platform数据管理允许您管理客户数据，以确保遵�
 
 >[!IMPORTANT]
 >
->标签无法再应用于数据集级别的字段。 此工作流已弃用，支持在架构级别应用标签。 在2024年5月31日之前，之前在数据集对象级别应用的任何标签仍将通过Experience Platform UI受到支持。 要确保您的标签在所有架构中保持一致，在未来一年中，必须将之前附加到数据集级别字段的任何标签迁移到架构级别。 有关如何迁移先前应用的标签[&#128279;](../../data-governance/e2e.md#migrate-labels)的说明，请参阅部分。
+>标签无法再应用于数据集级别的字段。 此工作流已弃用，支持在架构级别应用标签。 在2024年5月31日之前，之前在数据集对象级别应用的任何标签仍将通过Experience Platform UI受到支持。 要确保您的标签在所有架构中保持一致，在未来一年中，必须将之前附加到数据集级别字段的任何标签迁移到架构级别。 有关如何迁移先前应用的标签](../../data-governance/e2e.md#migrate-labels)的说明，请参阅[部分。
 
 有关该服务的更多信息，请参阅[数据管理概述](../../data-governance/home.md)。 有关如何使用[!DNL Experience Platform]中的使用标签的步骤，请参阅以下指南：
 
