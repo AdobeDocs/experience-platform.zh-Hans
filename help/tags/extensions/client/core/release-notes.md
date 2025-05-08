@@ -2,10 +2,10 @@
 title: 核心扩展的发行说明
 description: Adobe Experience Platform中的核心扩展的最新发行说明。
 exl-id: a049b2d5-7a00-435d-bcc7-112658a53a1e
-source-git-commit: 1ce579fc1f8548d1eb5c01d63e9fa4e8b32e2a4f
+source-git-commit: 1342461c95fa096496739fc14c92a7edd5aa6b57
 workflow-type: tm+mt
-source-wordcount: '1651'
-ht-degree: 48%
+source-wordcount: '1693'
+ht-degree: 47%
 
 ---
 
@@ -14,6 +14,14 @@ ht-degree: 48%
 >[!NOTE]
 >
 >经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+
+## 2025年5月8日
+
+v3.4.3
+
+* 修复了&#x200B;**数据元素** > **Javascript工具** > **简单替换**&#x200B;显示了&#x200B;**全部替换**&#x200B;复选框的问题，但在尝试启用该复选框的情况下保存规则时会导致错误。
+* 将@adobe/react-spectrum升级到v3.41.0。
+* 将@adobe/reactor-sandbox升级到v13.2.1。
 
 ## 2024年10月23日
 
@@ -94,7 +102,7 @@ v3.0.0
 
 * PDCL-6153：添加了支持功能，可可靠地将完全限定的URL用于缓存的自定义代码操作。
 
-核心扩展的v3.0.0与Turbine Web运行时[&#128279;](https://github.com/adobe/reactor-turbine/releases/tag/v27.2.0)的v27.2.0中的更改相结合，如果用户的Adobe支持Premium CDN，则允许用户在多个Turbine管理托管区域中加载其库。
+核心扩展的v3.0.0与Turbine Web运行时](https://github.com/adobe/reactor-turbine/releases/tag/v27.2.0)的[v27.2.0中的更改相结合，如果用户的公司支持Premium CDN，则允许用户在多个Adobe管理的主机区域中加载其库。
 
 此升级是可选的，并且对于没有Premium CDN的用户向后兼容，对于公司启用了Premium CDN的客户是强制性的。
 
