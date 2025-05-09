@@ -2,9 +2,9 @@
 title: 使用TTL在数据湖中管理体验事件数据集保留
 description: 了解如何使用生存时间(TTL)配置和Adobe Experience Platform API评估、设置和管理Data Lake中的Experience Event数据集保留。 本指南介绍TTL行级到期如何支持数据保留策略、优化存储效率并确保有效的数据生命周期管理。 它还提供了用例和最佳实践，帮助您有效应用TTL。
 exl-id: d688d4d0-aa8b-4e93-a74c-f1a1089d2df0
-source-git-commit: 06b58d714047cb69f237469ecd548bb824e565ab
+source-git-commit: 13db0477c0f42d0808647937d40c25b47a270894
 workflow-type: tm+mt
-source-wordcount: '2456'
+source-wordcount: '2452'
 ht-degree: 0%
 
 ---
@@ -301,11 +301,11 @@ curl -X PATCH \
 ### 可以将保留策略规则应用到哪些类型的数据集？
 
 +++回答
-您可以将基于TTL的保留策略应用到任何使用时间序列架构的数据集。 这包括基于标准XDM ExperienceEvent类的数据集，以及扩展XDM时间序列类的自定义架构。
+您可以将基于TTL的保留策略应用到任何使用时间序列行为的数据集。 这包括基于标准XDM ExperienceEvent类的数据集，以及旨在捕获时间序列数据的自定义架构。
 
 行级过期需要满足以下技术条件：
 
-- 架构必须扩展XDM时间序列基类。
+- 架构必须设计为捕获时间序列数据。
 - 架构必须包含用于评估过期时间的时间戳字段。
 - 数据集应存储事件级数据，通常使用或扩展XDM ExperienceEvent类。
 - 数据集必须在目录服务中注册，因为通过`extensions.adobe_lakeHouse.rowExpiration`应用TTL设置。

@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据使用标签概述
 description: 了解如何使用数据使用标签来帮助在Adobe Experience Platform中实施数据管理合规性。
 exl-id: 4f113000-b9a1-4dfb-9502-6a5d08f0b26f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 916eb01ea7878366620b859c1d6a667a88b850c9
 workflow-type: tm+mt
 source-wordcount: '789'
 ht-degree: 16%
@@ -44,7 +44,7 @@ Adobe Experience Platform允许您将数据使用标签应用于数据集和字�
 
 [!DNL Experience Platform]能够与Adobe Audience Manager共享区段。 已应用于Audience Manager区段的任何数据导出控件都将转换为[!DNL Experience Platform]数据管理识别的等效标签和营销操作。
 
-有关特定数据导出控件如何映射到[!DNL Experience Platform]中的数据使用标签的参考，请参阅[Audience Manager文档](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=zh-Hans#aam-data-export-control-in-aep)。
+有关特定数据导出控件如何映射到[!DNL Experience Platform]中的数据使用标签的参考，请参阅[Audience Manager文档](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aam-data-export-control-in-aep)。
 
 ## 管理 [!DNL Experience Platform] 中的数据使用标签 {#manage-labels}
 
@@ -57,11 +57,11 @@ Adobe Experience Platform允许您将数据使用标签应用于数据集和字�
 
 ### 使用UI
 
-[!DNL Experience Platform] UI中的&#x200B;**[!UICONTROL 策略]**&#x200B;工作区允许您查看和管理组织的核心标签和自定义标签。 您可以使用&#x200B;**[!UICONTROL 架构]**&#x200B;工作区来[将标签应用于您的体验数据模型(XDM)架构](../../xdm/tutorials/labels.md)，或通过阅读数据使用标签用户指南，了解如何在**[!UICONTROL 策略] UI[&#128279;](./user-guide.md)中创建和管理自定义标签。
+[!DNL Experience Platform] UI中的&#x200B;**[!UICONTROL 策略]**&#x200B;工作区允许您查看和管理组织的核心标签和自定义标签。 您可以使用&#x200B;**[!UICONTROL 架构]**&#x200B;工作区来[将标签应用于您的Experience Data Model (XDM)架构](../../xdm/tutorials/labels.md)，或通过阅读数据使用标签用户指南，了解如何[在&#x200B;**[!UICONTROL 策略]** UI](./user-guide.md)中创建和管理自定义标签。
 
 >[!IMPORTANT]
 >
->标签无法再应用于数据集级别的字段。 此工作流已弃用，支持在架构级别应用标签。 在2024年5月31日之前，之前在数据集对象级别应用的任何标签仍将通过Experience Platform UI受到支持。 要确保您的标签在所有架构中保持一致，在未来一年中，必须将之前附加到数据集级别字段的任何标签迁移到架构级别。 有关如何迁移先前应用的标签[&#128279;](../e2e.md#migrate-labels)的说明，请参阅部分。
+>标签无法再应用于数据集级别的字段。 此工作流已弃用，支持在架构级别应用标签。 在2024年5月31日之前，之前在数据集对象级别应用的任何标签仍将通过Experience Platform UI受到支持。 要确保您的标签在所有架构中保持一致，在未来一年中，必须将之前附加到数据集级别字段的任何标签迁移到架构级别。 有关如何迁移先前应用的标签](../e2e.md#migrate-labels)的说明，请参阅[部分。
 
 ### 使用API
 
