@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明（2025 年 4 月）
 description: Adobe Experience Platform 的 2025 年 4 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: a79efc5d64862850d17cff0fd0633c73fd08207d
+source-git-commit: 6558046e9708267cd0ceda36e7c0bdba6b2f758a
 workflow-type: tm+mt
-source-wordcount: '2197'
+source-wordcount: '2192'
 ht-degree: 29%
 
 ---
@@ -16,9 +16,9 @@ ht-degree: 29%
 >有关其他Adobe Experience Platform应用程序的发行说明，请参阅以下文档：
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/whats-new/release-notes)
->- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer-b2b/user/release-notes)
+>- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/en/docs/journey-optimizer-b2b/user/release-notes)
 >- [Customer Journey Analytics](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/releases/latest)
->- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/zh-hans/docs/real-time-cdp-collaboration/using/latest)
+>- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/latest)
 
 **发行日期： 2025年4月29日**
 
@@ -41,7 +41,7 @@ Experience League是一个全面的学习平台，旨在帮助您通过Adobe产�
 
 | 功能 | 描述 |
 | --- | --- |
-| 个性化主页 | 在[Experience League](https://experienceleague.adobe.com/zh-hans/home#)上访问和自定义您的个性化主页。 使用您的Adobe凭据登录，然后在顶部菜单中选择&#x200B;**[!UICONTROL Experience League]**&#x200B;以开始优化您的学习体验： <ul><li>**书签**：使用[!UICONTROL 书签]功能在一个位置保存和收集您喜爱的资源。 您可以保存各种内容，包括播放列表、文章和教程。</li><li>**自定义您的学习**：使用最符合您需求的角色、行业、产品和体验级别来更新Experience League配置文件，从而增强您的学习体验。</li><li>**推荐**：查看根据您最近的活动推荐的学习内容。</li><li>**最近查看过的内容**：使用[!UICONTROL 最近查看过的内容]部分可快速导航回最近查看过的内容，如文档和视频。</li><li>**学习资源**：使用[!UICONTROL 所有学习资源]面板导航到教程、文档、社区、活动和认证。</li><li>**新增功能**：查看Experience League上最新内容流的[!UICONTROL 新增功能]部分。</li><li>**点播观看过去的活动**：通过[!UICONTROL 点播观看过去的活动]部分，观看产品聚光灯、用例和教程中以前录制的直播。</li></ul><br> Experience League上的![个性化主页。Experience League上的](../2025/assets/april/personalized-home-page.png "个性化主页。"){width="250" align="center" zoomable="yes"} |
+| 个性化主页 | 在[Experience League](https://experienceleague.adobe.com/en/home#)上访问和自定义您的个性化主页。 使用您的Adobe凭据登录，然后在顶部菜单中选择&#x200B;**[!UICONTROL Experience League]**&#x200B;以开始优化您的学习体验： <ul><li>**书签**：使用[!UICONTROL 书签]功能在一个位置保存和收集您喜爱的资源。 您可以保存各种内容，包括播放列表、文章和教程。</li><li>**自定义您的学习**：使用最符合您需求的角色、行业、产品和体验级别来更新Experience League配置文件，从而增强您的学习体验。</li><li>**推荐**：查看根据您最近的活动推荐的学习内容。</li><li>**最近查看过的内容**：使用[!UICONTROL 最近查看过的内容]部分可快速导航回最近查看过的内容，如文档和视频。</li><li>**学习资源**：使用[!UICONTROL 所有学习资源]面板导航到教程、文档、社区、活动和认证。</li><li>**新增功能**：查看Experience League上最新内容流的[!UICONTROL 新增功能]部分。</li><li>**点播观看过去的活动**：通过[!UICONTROL 点播观看过去的活动]部分，观看产品聚光灯、用例和教程中以前录制的直播。</li></ul><br> Experience League上的![个性化主页。Experience League上的](../2025/assets/april/personalized-home-page.png "个性化主页。"){width="250" align="center" zoomable="yes"} |
 
 {style="table-layout:auto"}
 
@@ -108,7 +108,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 功能 | 描述 |
 | --- | --- |
-| [!BADGE 有限可用性]{type=Informative} [!DNL Identity Graph Linking Rules] | 身份图形链接规则现在处于“有限可用”状态，所有客户都可以在开发沙盒中访问它。 <ul><li>**激活要求**：在您配置和保存[!DNL Identity Settings]之前，该功能将保持非活动状态。 如果没有此配置，系统将继续正常运行，并且不会更改行为。</li><li>**重要说明**：在此“有限可用性”阶段，Edge分段可能会产生意外的区段成员资格结果。 但是，流分段和批量分段将按预期运行。</li><li>**后续步骤**：有关如何在生产沙盒中启用此功能的信息，请联系您的Adobe客户团队。</li></ul> |
+| 现在，开发沙盒中的所有客户都可以访问[!BADGE 有限可用性]{type=Informative} [!DNL Identity Graph Linking Rules]标识图形链接规则。 <ul><li>**激活要求**：在您配置和保存[!DNL Identity Settings]之前，该功能将保持非活动状态。 如果没有此配置，系统将继续正常运行，并且不会更改行为。</li><li>**重要说明**：在此“有限可用性”阶段，Edge分段可能会产生意外的区段成员资格结果。 但是，流分段和批量分段将按预期运行。</li><li>**后续步骤**：有关如何在生产沙盒中启用此功能的信息，请联系您的Adobe客户团队。</li></ul> |
 
 {style="table-layout:auto"}
 
