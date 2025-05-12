@@ -3,9 +3,9 @@ keywords: google客户匹配；Google客户匹配；Google客户匹配
 title: Google Customer Match连接
 description: Google Customer Match允许您使用在线和离线数据，通过Google自有资产和运营资产（如搜索、购物和Gmail）与客户联系并重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 98d83e8d09b6e469daf515063e2887bfbf9b8be6
 workflow-type: tm+mt
-source-wordcount: '2046'
+source-wordcount: '2360'
 ht-degree: 2%
 
 ---
@@ -58,11 +58,15 @@ Experience Platform中的某些目标对于发送到目标平台或从目标平�
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| GAID | GOOGLE ADVERTISING ID | 当源身份是GAID命名空间时，请选择此目标身份。 |
-| IDFA | 广告商的Apple ID | 当源身份是IDFA命名空间时，请选择此目标身份。 |
-| phone_sha256_e.164 | E164格式的电话号码，使用SHA256算法进行哈希处理 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电话号码。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
-| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
-| user_id | 自定义用户标识 | 当源身份是自定义命名空间时，请选择此目标身份。 |
+| `GAID` | GOOGLE ADVERTISING ID | 当源身份是GAID命名空间时，请选择此目标身份。 |
+| `IDFA` | 广告商的Apple ID | 当源身份是IDFA命名空间时，请选择此目标身份。 |
+| `phone_sha256_e.164` | E164格式的电话号码，使用SHA256算法进行哈希处理 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电话号码。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
+| `email_lc_sha256` | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
+| `user_id` | 自定义用户标识 | 当源身份是自定义命名空间时，请选择此目标身份。 |
+| `address_info_first_name` | 用户的名字 | 当您想要将邮寄地址数据发送到目标时，此目标身份应该与`address_info_last_name`、`address_info_country_code`和`address_info_postal_code`一起使用。 <br><br>为确保Google与地址匹配，必须映射所有四个地址字段（`address_info_first_name`、`address_info_last_name`、`address_info_country_code`和`address_info_postal_code`），并确保这些字段都不在导出的配置文件中缺少数据。 <br>如果有任何字段未映射或包含缺少的数据，则Google将与地址不匹配。 |
+| `address_info_last_name` | 用户的姓氏 | 当您想要将邮寄地址数据发送到目标时，此目标身份应该与`address_info_first_name`、`address_info_country_code`和`address_info_postal_code`一起使用。 <br><br>为确保Google与地址匹配，必须映射所有四个地址字段（`address_info_first_name`、`address_info_last_name`、`address_info_country_code`和`address_info_postal_code`），并确保这些字段都不在导出的配置文件中缺少数据。 <br>如果有任何字段未映射或包含缺少的数据，则Google将与地址不匹配。 |
+| `address_info_country_code` | 用户地址国家/地区代码 | 当您想要将邮寄地址数据发送到目标时，此目标身份应该与`address_info_first_name`、`address_info_last_name`和`address_info_postal_code`一起使用。 <br><br>为确保Google与地址匹配，必须映射所有四个地址字段（`address_info_first_name`、`address_info_last_name`、`address_info_country_code`和`address_info_postal_code`），并确保这些字段都不在导出的配置文件中缺少数据。 <br>如果有任何字段未映射或包含缺少的数据，则Google将与地址不匹配。 <br><br>接受的格式：小写，2字母国家/地区代码，采用[ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)格式。 |
+| `address_info_postal_code` | 用户地址邮政编码 | 当您想要将邮寄地址数据发送到目标时，此目标身份应该与`address_info_first_name`、`address_info_last_name`和`address_info_country_code`一起使用。 <br><br>为确保Google与地址匹配，必须映射所有四个地址字段（`address_info_first_name`、`address_info_last_name`、`address_info_country_code`和`address_info_postal_code`），并确保这些字段都不在导出的配置文件中缺少数据。 <br>如果有任何字段未映射或包含缺少的数据，则Google将与地址不匹配。 |
 
 {style="table-layout:auto"}
 
@@ -146,13 +150,13 @@ Attribute source data is not automatically hashed. When your source field contai
 
 The video below demonstrates the steps to configure a [!DNL Google Customer Match] destination and activate audiences. The steps are also laid out sequentially in the next sections.
 
->[!VIDEO](https://video.tv.adobe.com/v/3411783/?quality=12&learn=on&captions=chi_hans) -->
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng) -->
 
 ## 视频概述 {#video-overview}
 
 观看以下视频，了解如何获取优势以及如何将数据激活到Google Customer Match。
 
->[!VIDEO](https://video.tv.adobe.com/v/326483?captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/38180/)
 
 ## 连接到目标 {#connect}
 
@@ -227,6 +231,10 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 ## 监视目标 {#monitor-destination}
 
 连接到目标并建立目标数据流后，您可以使用Real-Time CDP中的[监视功能](/help/dataflows/ui/monitor-destinations.md)获取有关在每次数据流运行中激活到目标的配置文件记录的更多信息。
+
+>[!IMPORTANT]
+>
+>当您映射四个与地址相关的目标身份（`address_info_first_name`、`address_info_last_name`、`address_info_country_code`和`address_info_postal_code`）时，它们将作为数据流监视页面中每个配置文件的单独身份计算。
 
 ## 验证受众激活是否成功 {#verify-activation}
 
