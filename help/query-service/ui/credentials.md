@@ -46,11 +46,11 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 >
 >![突出显示了Admin Console设置选项卡，其中包含“隐私和安全性”、“身份验证设置”和“最长会话时长”。](../images/ui/credentials/max-session-life.png)
 >
->有关Admin Console提供的[高级设置](https://helpx.adobe.com/cn/enterprise/using/authentication-settings.html#advanced-settings)的更多信息，请参阅Adobe帮助文档。
+>有关Admin Console提供的[高级设置](https://helpx.adobe.com/enterprise/using/authentication-settings.html#advanced-settings)的更多信息，请参阅Adobe帮助文档。
 
 ### 在查询会话中连接到Customer Journey Analytics数据 {#connect-to-customer-journey-analytics}
 
-使用带有Power BI或Tableau的Customer Journey Analytics BI扩展访问带有SQL的Customer Journey Analytics [数据视图](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/cja-dataviews/data-views)。 通过将查询服务与BI扩展集成，您可以直接在查询服务会话中访问数据视图。 此集成简化了使用查询服务作为其PostgreSQL接口的BI工具的功能。 此功能消除了BI工具中重复数据视图的需要，确保跨平台的一致报告，并简化了Customer Journey Analytics数据与BI平台中其他源的集成。
+使用带有Power BI或Tableau的Customer Journey Analytics BI扩展访问带有SQL的Customer Journey Analytics [数据视图](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/data-views)。 通过将查询服务与BI扩展集成，您可以直接在查询服务会话中访问数据视图。 此集成简化了使用查询服务作为其PostgreSQL接口的BI工具的功能。 此功能消除了BI工具中重复数据视图的需要，确保跨平台的一致报告，并简化了Customer Journey Analytics数据与BI平台中其他源的集成。
 
 请参阅文档，了解如何[将查询服务连接到各种桌面客户端应用程序](../clients/overview.md)，如[Power BI](../clients/power-bi.md)或[Tableau](../clients/tableau.md)
 
@@ -68,7 +68,7 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 
 您还可以直接通过查询编辑器或Postgres CLI访问Customer Journey Analytics数据。 为此，请在编写查询时引用`cja`数据库。 有关如何写入、执行和保存查询的更多信息，请参阅查询编辑器[查询创作指南](./user-guide.md#query-authoring)。
 
-有关使用SQL访问Customer Journey Analytics数据视图的完整说明，请参阅[BI扩展指南](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/cja-dataviews/bi-extension)。
+有关使用SQL访问Customer Journey Analytics数据视图的完整说明，请参阅[BI扩展指南](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/bi-extension)。
 
 ## 未过期凭据 {#non-expiring-credentials}
 
@@ -95,7 +95,7 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 2. [选择产品配置文件。](../../access-control/ui/browse.md)
 3. [为产品配置文件配置&#x200B;**沙盒**&#x200B;和&#x200B;**管理查询服务集成**&#x200B;权限](../../access-control/ui/permissions.md)。
 4. [将新用户添加到产品配置文件](../../access-control/ui/users.md)，以便授予他们已配置的权限。
-5. [将用户添加为产品配置文件管理员](https://helpx.adobe.com/cn/enterprise/using/manage-product-profiles.html)，以允许为任何活动的产品配置文件创建帐户。
+5. [将用户添加为产品配置文件管理员](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html)，以允许为任何活动的产品配置文件创建帐户。
 6. [将用户添加为产品配置文件开发人员](https://helpx.adobe.com/cn/enterprise/using/manage-developers.html)以创建集成。
 
 要了解有关如何分配权限的详细信息，请阅读有关[访问控制](../../access-control/home.md)的文档。
