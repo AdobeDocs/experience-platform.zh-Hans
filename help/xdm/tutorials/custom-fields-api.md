@@ -2,7 +2,7 @@
 title: 在架构注册表API中定义XDM字段
 description: 了解如何在架构注册表API中创建自定义体验数据模型(XDM)资源时定义不同的字段。
 exl-id: d79332e3-8448-42af-b250-882bcb0f1e7d
-source-git-commit: 7521273c0ea4383b7141e9d7a82953257ff18c34
+source-git-commit: 6c6104a6aa0a80c886f4f02486a7645eb95da781
 workflow-type: tm+mt
 source-wordcount: '1197'
 ht-degree: 0%
@@ -142,7 +142,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->`number`类型用于任何数字类型，可以是整数或浮点数，而[`integer`类型](#integer)专门用于整数数字。 有关每种类型的用例的更多信息，请参阅有关数字类型[&#128279;](https://json-schema.org/understanding-json-schema/reference/numeric.html)的JSON架构文档。
+>`number`类型用于任何数字类型，可以是整数或浮点数，而[`integer`类型](#integer)专门用于整数数字。 有关每种类型的用例的更多信息，请参阅有关数字类型](https://json-schema.org/understanding-json-schema/reference/numeric.html)的[JSON架构文档。
 
 ## [!UICONTROL 整数] {#integer}
 
@@ -158,7 +158,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->虽然`integer`类型专门引用整数值，但[`number`类型](#number)用于任何数值类型，可以是整数或浮点数。 有关每种类型的用例的更多信息，请参阅有关数字类型[&#128279;](https://json-schema.org/understanding-json-schema/reference/numeric.html)的JSON架构文档。
+>虽然`integer`类型专门引用整数值，但[`number`类型](#number)用于任何数值类型，可以是整数或浮点数。 有关每种类型的用例的更多信息，请参阅有关数字类型](https://json-schema.org/understanding-json-schema/reference/numeric.html)的[JSON架构文档。
 
 您可以选择通过将`minimum`和`maximum`属性添加到定义来约束整数的范围。 架构生成器UI支持的几个其他数字类型只是具有特定`minimum`和`maximum`约束的`integer`类型，如[[!UICONTROL Long]](#long)、[[!UICONTROL Short]](#short)和[[!UICONTROL Byte]](#byte)。
 
@@ -188,7 +188,7 @@ ht-degree: 0%
 
 ## [!UICONTROL 短] {#short}
 
-通过架构生成器UI创建的[!UICONTROL Short]字段的等效项是[`integer`类型字段](#integer)，具有特定`minimum`和`maximum`值（分别为`-32768`和`32768`）。
+通过架构生成器UI创建的[!UICONTROL Short]字段的等效项是[`integer`类型字段](#integer)，具有特定`minimum`和`maximum`值（分别为`-32768`和`32767`）。
 
 ```json
 "sampleField": {
@@ -196,13 +196,13 @@ ht-degree: 0%
   "description": "An example short field.",
   "type": "integer",
   "minimum": -32768,
-  "maximum": 32768
+  "maximum": 32767
 }
 ```
 
 ## [!UICONTROL 字节] {#byte}
 
-通过架构生成器UI创建的[!UICONTROL 字节]字段的等效项是[`integer`类型字段](#integer)，具有特定`minimum`和`maximum`值（分别为`-128`和`128`）。
+通过架构生成器UI创建的[!UICONTROL 字节]字段的等效项是[`integer`类型字段](#integer)，具有特定`minimum`和`maximum`值（分别为`-128`和`127`）。
 
 ```json
 "sampleField": {
@@ -210,7 +210,7 @@ ht-degree: 0%
   "description": "An example byte field.",
   "type": "integer",
   "minimum": -128,
-  "maximum": 128
+  "maximum": 127
 }
 ```
 
