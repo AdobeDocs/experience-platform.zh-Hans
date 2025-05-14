@@ -2,9 +2,9 @@
 title: Adobe Experience Platform中的数据加密
 description: 了解如何在Adobe Experience Platform中加密传输数据和静态数据。
 exl-id: 184b2b2d-8cd7-4299-83f8-f992f585c336
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: f6eaba4c0622318ba713c562ba0a4c20bba02338
 workflow-type: tm+mt
-source-wordcount: '749'
+source-wordcount: '849'
 ht-degree: 0%
 
 ---
@@ -48,14 +48,22 @@ Experience Platform与任何外部组件之间传输的所有数据均使用HTTP
 
 >[!NOTE]
 >
->您有责任使公共证书保持最新。 请确保您定期查看证书，尤其是在证书到期日期临近时。 您应该将此页面加入书签，以便在环境中保留最新副本。
+>您有责任确保您的系统使用有效的公共证书。 定期检查您的证书，尤其是在过期日期临近时。 使用API在证书过期之前检索和更新证书。
 
-如果要检查CN或SAN进行其他第三方验证，可以在此处下载相关证书：
+不再提供公共mTLS证书的直接下载链接。 请改用[公共证书终结点](../../data-governance/mtls-api/public-certificate-endpoint.md)来检索证书。 这是访问当前公共证书时唯一支持的方法。 它可确保您始终收到适用于集成的最新有效证书。
 
-- [Adobe Journey Optimizer公共证书](../images/governance-privacy-security/encryption/AJO-public-certificate.pem)
-- [目标服务公共证书](../images/governance-privacy-security/encryption/destinations-public-cert.pem)。
+依赖基于证书的加密的集成必须更新其工作流，以支持使用API的自动证书检索。 依赖静态链接或手动更新可能会导致使用已过期或已吊销的证书，进而导致集成失败。
 
-您还可以通过对MTLS端点发出GET请求来安全检索公共证书。 有关详细信息，请参阅[公共证书终结点文档](../../data-governance/mtls-api/public-certificate-endpoint.md)。
+#### 证书生命周期自动化 {#certificate-lifecycle-automation}
+
+Adobe现在可以自动化mTLS集成的证书生命周期，以提高可靠性并防止服务中断。 公共证书包括：
+
+- 已重新发布60天后过期。
+- 过期前30天撤销。
+
+这些间隔将继续缩短，以符合[不断演变的CA/B论坛准则](https://www.digicert.com/blog/tls-certificate-lifetimes-will-officially-reduce-to-47-days)，该准则旨在将证书生命周期减少到最多47天。
+
+如果您之前使用此页面上的链接来下载证书，请更新您的流程，以通过API专门检索它们。
 
 ## 静态数据 {#at-rest}
 

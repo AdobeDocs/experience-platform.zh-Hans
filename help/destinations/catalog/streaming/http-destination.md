@@ -4,9 +4,9 @@ title: HTTP API连接
 description: 使用Adobe Experience Platform中的HTTP API目标将配置文件数据发送到第三方HTTP端点，以运行您自己的Analytics或对从Experience Platform导出的配置文件数据执行您可能所需的任何其他操作。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 2fa6997c043ef7ff24b1383dd8626cfe1cca4f54
+source-git-commit: d78b7a06318dabff5dac763068ca7c21a5a86633
 workflow-type: tm+mt
-source-wordcount: '2701'
+source-wordcount: '2692'
 ht-degree: 8%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 8%
 
 >[!IMPORTANT]
 >
-> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
 HTTP API目标是一个[!DNL Adobe Experience Platform]流目标，可帮助您将配置文件数据发送到第三方HTTP端点。
 
@@ -71,13 +71,11 @@ HTTP端点可以是客户自己的系统或第三方解决方案。
 
 如果要将[!DNL mTLS]与[!DNL HTTP API]目标一起使用，则放入[目标详细信息](#destination-details)页面的服务器地址必须禁用[!DNL TLS]协议，并且仅启用[!DNL mTLS]。 如果终结点上仍启用[!DNL TLS] 1.2协议，则不会为客户端身份验证发送证书。 这意味着要将[!DNL mTLS]与您的[!DNL HTTP API]目标一起使用，您的“接收”服务器终结点必须是仅启用[!DNL mTLS]的连接终结点。
 
-### 下载证书 {#certificate}
+### 检索和检查证书详细信息 {#certificate}
 
-如果要检查[!DNL Common Name] (CN)和[!DNL Subject Alternative Names] (SAN)以进行其他第三方验证，可以下载以下证书：
+如果要检查证书详细信息，如[!DNL Common Name] (CN)和[!DNL Subject Alternative Names] (SAN)以进行其他第三方验证，请使用API检索证书并从响应中提取这些字段。
 
-* [HTTP API mTLS公共证书](../../../landing/images/governance-privacy-security/encryption/destinations-public-certificate.zip)
-
-您还可以通过对MTLS端点发出GET请求来安全检索公共证书。 有关详细信息，请参阅[公共证书终结点文档](../../../data-governance/mtls-api/public-certificate-endpoint.md)。
+有关详细信息，请参阅[公共证书终结点文档](../../../data-governance/mtls-api/public-certificate-endpoint.md)。
 
 ## IP地址允许列表 {#ip-address-allowlist}
 
