@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 体验事件过期时间
 description: 本文档提供了有关为Adobe Experience Platform数据集中的单个Experience事件配置过期时间的常规指南。
 exl-id: a91f2cd2-3a5d-42e6-81c3-0ec5bc644f5f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 71634a1dd0e0cd3f731272a179b4f1fe221eb046
 workflow-type: tm+mt
-source-wordcount: '858'
+source-wordcount: '884'
 ht-degree: 0%
 
 ---
@@ -47,6 +47,10 @@ ht-degree: 0%
 ## 常见问题解答 {#faq}
 
 以下部分列出了有关体验事件数据到期的常见问题解答：
+
+### 我可以设置体验事件数据过期的最短持续时长是多少？
+
+体验事件数据过期的最短持续时间为&#x200B;**一天**。
 
 ### 体验事件数据到期与假名配置文件数据到期有何不同？
 
