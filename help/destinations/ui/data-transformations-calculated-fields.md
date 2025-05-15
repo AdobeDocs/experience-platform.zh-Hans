@@ -3,9 +3,9 @@ title: 使用计算字段对导出到云存储目标的数据进行转换
 type: Tutorial
 description: 了解如何使用计算字段功能对导出到云存储目标的数据执行转换
 exl-id: 1e14f964-4c03-4d0c-be8d-c3dcb48a335a
-source-git-commit: 14c672ef57e0b0247020075552c782ed18db8484
+source-git-commit: bd9efc1bcf6058827cc5c603b9976c9e42c7ec9e
 workflow-type: tm+mt
-source-wordcount: '1595'
+source-wordcount: '1625'
 ht-degree: 8%
 
 ---
@@ -16,15 +16,7 @@ ht-degree: 8%
 >id="platform_destinations_export_arrays_flat_files"
 >title="添加计算字段"
 >abstract="<p>使用&#x200B;**添加计算字段**&#x200B;控件对导出到云存储目标的数据进行各种数据转换。例如，您可以对数据进行哈希处理，将数组连接成字符串等。"
-
-<!--
-
-disable additional URLs for a while
-
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-maps-objects.html?lang=zh-Hans#examples" text="Examples"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-maps-objects.html?lang=zh-Hans#known-limitations" text="Known limitations"
-
--->
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/data-transformations-calculated-fields.html#examples" text="示例"
 
 >[!AVAILABILITY]
 >
@@ -40,7 +32,7 @@ disable additional URLs for a while
 要将计算字段用于数据转换：
 
 1. [将](/help/destinations/ui/connect-destination.md)连接到所需的云存储目标。 连接到所需的云目标时，将&#x200B;**[!UICONTROL 导出数组、映射、对象]** [选项切换为关闭](/help/destinations/ui/export-arrays-maps-objects.md##export-arrays-maps-objects-toggle)。
-2. 执行云存储目标[&#128279;](/help/destinations/ui/activate-batch-profile-destinations.md)的激活步骤并转到[映射](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)步骤。
+2. 执行云存储目标](/help/destinations/ui/activate-batch-profile-destinations.md)的[激活步骤并转到[映射](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)步骤。
 
 ## 如何使用计算字段 {#how-to-export-calculated-fields}
 
@@ -54,6 +46,10 @@ disable additional URLs for a while
 >title="添加计算字段已禁用"
 >abstract="此控件已被禁用，因为您在设置此目标连接时选择了将&#x200B;**导出数组、映射、对象**&#x200B;切换为&#x200B;*开*。要使用计算字段及其中可用的功能，通过将&#x200B;**导出数组、映射、对象**&#x200B;切换为&#x200B;*关*&#x200B;设置一个新的目标连接。"
 
+>[!IMPORTANT]
+>
+>无论何时使用计算字段，除了应用的任何数据转换函数之外，还必须使用`array_to_string`函数将字段连接到字符串中。
+
 在云存储目标的激活工作流的映射步骤中，选择&#x200B;**[!UICONTROL 添加计算字段]**。
 
 >[!TIP]
@@ -66,7 +62,7 @@ disable additional URLs for a while
 
 ![尚未选择函数的计算字段功能的模式窗口。](/help/destinations/assets/ui/export-arrays-calculated-fields/add-calculated-fields-2.png)
 
-例如，使用如下所示的`organizations`字段上的`array_to_string`函数将组织数组导出为CSV文件中的字符串。 查看[&#128279;](#array-to-string-function-export-arrays)下方的有关此示例和其他示例的详细信息。
+例如，使用如下所示的`organizations`字段上的`array_to_string`函数将组织数组导出为CSV文件中的字符串。 查看](#array-to-string-function-export-arrays)下方的[有关此示例和其他示例的详细信息。
 
 ![选定了数组到字符串函数的计算字段功能的模式窗口。](/help/destinations/assets/ui/export-arrays-calculated-fields/add-calculated-fields-3.png)
 
@@ -105,7 +101,7 @@ disable additional URLs for a while
 
 ## 用于执行数据转换的函数示例 {#examples}
 
-有关上面列出的某些函数，请参阅以下部分中的示例和更多信息。 对于列出的其余函数，请参阅数据准备部分[&#128279;](/help/data-prep/functions.md)中的常规函数文档。
+有关上面列出的某些函数，请参阅以下部分中的示例和更多信息。 对于列出的其余函数，请参阅数据准备部分](/help/data-prep/functions.md)中的[常规函数文档。
 
 ### `array_to_string`函数以导出数组 {#array-to-string-function-export-arrays}
 
