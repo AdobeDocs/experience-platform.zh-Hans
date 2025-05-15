@@ -2,10 +2,10 @@
 title: 命名空间优先级
 description: 了解Identity Service中的命名空间优先级。
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
+source-git-commit: 44457b95b354e20808c1218ca3c8e698071f0528
 workflow-type: tm+mt
-source-wordcount: '1865'
-ht-degree: 2%
+source-wordcount: '2162'
+ht-degree: 5%
 
 ---
 
@@ -20,9 +20,9 @@ ht-degree: 2%
 >
 >标识图链接规则当前处于“有限可用”状态，所有客户都可以在开发沙盒中访问它。
 >
->* **激活要求**：在您配置和保存[!DNL Identity Settings]之前，该功能将保持非活动状态。 如果没有此配置，系统将继续正常运行，并且不会更改行为。
->* **重要说明**：在此“有限可用性”阶段，Edge分段可能会产生意外的区段成员资格结果。 但是，流分段和批量分段将按预期运行。
->* **后续步骤**：有关如何在生产沙盒中启用此功能的信息，请联系您的Adobe客户团队。
+>* **激活要求**：该功能将保持非活动状态，直到您配置并保存 [!DNL Identity Settings]。如果没有此配置，系统将会继续正常运行，而行为不会发生任何变化。
+>* **重要说明**：在此限量发布阶段，边缘分段可能会产生意外的区段会员资格结果。但是，流式处理和批量分段将会按预期运行。
+>* **后续步骤**：有关如何在生产沙盒中启用此功能的信息，请联系您的 Adobe 帐户团队。
 
 每个客户实施都是独一无二的，并且是根据特定组织的目标而量身定制的，因此，给定命名空间的重要性因客户而异。 现实世界的例子包括：
 
@@ -73,7 +73,7 @@ ht-degree: 2%
 
 ## 命名空间优先级使用情况
 
-目前，命名空间优先级影响实时客户配置文件的系统行为。 下图说明了此概念。 有关详细信息，请阅读[Adobe Experience Platform和应用程序体系结构图](https://experienceleague.adobe.com/zh-hans/docs/blueprints-learn/architecture/architecture-overview/platform-applications)的指南。
+目前，命名空间优先级影响实时客户配置文件的系统行为。 下图说明了此概念。 有关详细信息，请阅读[Adobe Experience Platform和应用程序体系结构图](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications)的指南。
 
 ![命名空间优先级应用程序作用域的关系图](../images/namespace-priority/application-scope.png)
 
@@ -86,7 +86,7 @@ ht-degree: 2%
 * 为给定沙盒配置身份设置后，体验事件的主要身份将由配置中的最高命名空间优先级确定。
    * 这是因为体验事件在本质上是动态的。 身份映射可以包含三个或更多身份，命名空间优先级可确保最重要的命名空间与体验事件相关联。
 * 因此，实时客户个人资料&#x200B;**将不再使用下列配置**：
-   * 使用Web SDK、Mobile SDK或Edge Network API在identityMap中发送身份时的主要身份配置(`primary=true`)（将继续在配置文件中使用身份命名空间和身份值）。 **注意**： Real-time Customer Profile之外的服务(如Data Lake Storage或Adobe Target)将继续使用主标识配置(`primary=true`)。
+   * 使用Web SDK、Mobile SDK或Edge Network API在`identityMap`中发送身份时的主要身份配置(`primary=true`)（将继续在配置文件中使用身份命名空间和身份值）。 **注意**： Real-time Customer Profile之外的服务(如Data Lake Storage或Adobe Target)将继续使用主标识配置(`primary=true`)。
    * 在XDM体验事件类架构中标记为主要标识的任何字段。
    * Adobe Analytics源连接器（ECID或AAID）中的默认主标识设置。
 * 另一方面，**命名空间优先级不能确定配置文件记录**&#x200B;的主要身份。
@@ -170,7 +170,7 @@ ht-degree: 2%
 
 ### Experience Data Model (XDM)架构
 
-任何不是XDM体验事件的架构（如XDM个人资料）将继续遵循您标记为身份[&#128279;](../../xdm/ui/fields/identity.md)的任何字段。
+任何不是XDM体验事件的架构（如XDM个人资料）将继续遵循您标记为身份](../../xdm/ui/fields/identity.md)的任何[字段。
 
 有关XDM架构的更多信息，请阅读[架构概述](../../xdm/home.md)。
 
@@ -203,6 +203,25 @@ ht-degree: 2%
 
 有关详细信息，请阅读[Privacy Service概述](../../privacy-service/home.md)。
 
-### Adobe Target
+### Edge分段和Edge Network应用程序
 
-使用边缘分段时，Adobe Target可能会导致针对共享设备场景的意外用户定位。
+在[!DNL Identity Graph Linking Rules]的上下文中，需要注意有关Edge分段和Edge Network应用程序的两个主要行为更改：
+
+1. `identityMap`必须包含已标记为唯一的人员命名空间。 不支持标记为身份（身份描述符）的字段。
+2. 当最终用户在验证期间浏览时，人员命名空间必须具有`primary = true`配置。
+
+#### 边缘分段
+
+在给定事件中，确保在`identityMap`中包含所有表示人员实体的命名空间，因为作为XDM字段](../../xdm/ui/fields/identity.md)发送的[身份将被忽略，并且不会用于区段成员资格元数据存储。
+
+* **事件适用性**：此行为仅适用于直接发送到Edge Network的事件(如WebSDK和Mobile SDK)。 从[Experience Platform中心](../../landing/edge-and-hub-comparison.md)摄取的事件，例如通过HTTP API源、其他流源和批处理源摄取的事件，不受此限制的约束。
+* **Edge分段特异性**：此行为特定于边缘分段。 批量分段和流式分段是在中心服务器上进行评估的单独服务，并且不遵循相同的流程。 有关详细信息，请阅读[边缘分段指南](../../segmentation/methods/edge-segmentation.md)。
+* 有关详细信息，请阅读[Adobe Experience Platform和应用程序体系结构图](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications#detailed-architecture-diagram)和[Edge Network和中心比较](../../landing/edge-and-hub-comparison.md)页。
+
+#### Edge Network应用程序
+
+要确保Edge Network上的应用程序可以毫不延迟地访问Edge配置文件，请确保您的事件包括CRMID上的`primary=true`。 这可以确保立即可用，而无需等待来自中心的标识图更新。
+
+* Edge Network上的应用程序(如Adobe Target、Offer Decisioning和自定义Personalization目标)将继续依赖事件中的主要身份来从Edge配置文件访问配置文件。
+* 有关Experience Platform行为的详细信息，请阅读[Edge Network Web SDK和Edge Network架构图](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/deployment/websdk#experience-platform-webmobile-sdk-or-edge-network-server-api-deployment)。
+* 有关如何在Web SDK](../../web-sdk/identity/overview.md)上配置主身份的详细信息，请阅读有关[数据元素类型](../../tags/extensions/client/web-sdk/data-element-types.md)和[Web SDK中的身份数据的文档。
