@@ -2,9 +2,9 @@
 description: 列入允许列表了解要成功使用Adobe Experience Platform源，需要添加到的IP地址。
 title: 列入允许列表源的IP地址
 exl-id: 40093c80-dbdb-4dc1-97bb-81a8200b731f
-source-git-commit: 719f1bca20d5118de14ebe324675bb0aab6161e8
+source-git-commit: e2403b235b4cfee37761ebd683a1fb8662061406
 workflow-type: tm+mt
-source-wordcount: '242'
+source-wordcount: '243'
 ht-degree: 0%
 
 ---
@@ -290,6 +290,10 @@ ht-degree: 0%
 
 ## 用于允许列表源连接到[!DNL Amazon Web Services] (AWS)上Experience Platform的IP地址 {#aws}
 
-您必须将以下IP地址添加到允许列表，以将源连接到AWS上的Experience：
+您必须将以下IP地址添加到允许列表，以将源连接到AWS上的Experience：。
 
-- `66.117.18.0/24`
+### VA6
+
+- `34.193.63.59`
+- `44.217.93.240`
+- `44.194.79.229`
