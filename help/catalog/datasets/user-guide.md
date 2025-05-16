@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据集UI指南
 description: 了解如何在Adobe Experience Platform用户界面中使用数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 52412c5d6231e10fc875d16971dbd8cbfb116d21
 workflow-type: tm+mt
-source-wordcount: '4108'
+source-wordcount: '4143'
 ht-degree: 4%
 
 ---
@@ -54,6 +54,10 @@ ht-degree: 4%
 >title="数据集保留情况"
 >abstract="数据湖保留为数据存储时间以及何时在不同服务中删除数据设置了规则。这可确保遵守法规、管理存储成本并保持数据质量。"
 
+>[!CONTEXTUALHELP]
+>id="platform_datasets_orchestratedCampaigns_toggle"
+>title="精心策划的营销活动"
+>abstract="启用此切换可允许在Adobe Journey Optimizer编排的营销活动中使用选定的数据集。 数据集必须使用关系架构，并且每个架构只能创建一个数据集。"
 
 在[!DNL Experience Platform] UI中，从左侧导航中选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以打开&#x200B;**[!UICONTROL 数据集]**&#x200B;仪表板。 仪表板列出您组织的所有可用数据集。 将显示每个列出数据集的详细信息，包括其名称、数据集所遵循的架构以及最近一次摄取运行的状态。
 
@@ -224,7 +228,7 @@ ht-degree: 4%
 
 配置保留设置后，使用监控UI确认系统执行了更改。 监控UI可集中查看所有数据集的数据保留活动。 从此处，您可以跟踪作业执行，查看删除了多少数据，并确保保留策略按预期运行。 此可见性支持治理、法规遵从性和高效的数据生命周期管理。
 
-要了解如何使用监视仪表板在Experience Platform UI中跟踪源数据流，请参阅UI[&#128279;](../../dataflows/ui/monitor-sources.md)文档中的监视源数据流。
+要了解如何使用监视仪表板在Experience Platform UI中跟踪源数据流，请参阅UI](../../dataflows/ui/monitor-sources.md)文档中的[监视源数据流。
 
 <!-- Improve the link above. I cannot link to a 100% appropriate document yet. -->
 
