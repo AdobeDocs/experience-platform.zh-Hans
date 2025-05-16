@@ -3,9 +3,9 @@ keywords: google客户匹配；Google客户匹配；Google客户匹配
 title: Google Customer Match连接
 description: Google Customer Match允许您使用在线和离线数据，通过Google自有资产和运营资产（如搜索、购物和Gmail）与客户联系并重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 98d83e8d09b6e469daf515063e2887bfbf9b8be6
+source-git-commit: ce205622260f4252d1a7db7c5011366fb2ed4d3c
 workflow-type: tm+mt
-source-wordcount: '2360'
+source-wordcount: '2410'
 ht-degree: 2%
 
 ---
@@ -137,6 +137,12 @@ Experience Platform中的某些目标对于发送到目标平台或从目标平�
 
 如果选择自己对电子邮件地址进行哈希处理，请确保符合Google的要求，如上面的链接中所述。
 
+### 满足字段哈希处理要求 {#address-field-hashing}
+
+将地址相关字段映射到[!DNL Google Customer Match]时，Experience Platform **在将`address_info_first_name`和`address_info_last_name`值发送到Google之前会自动对其进行哈希处理**。 这种自动哈希处理是遵守Google安全和隐私要求所必需的。
+
+请&#x200B;**不要**&#x200B;为`address_info_first_name`或`address_info_last_name`提供预哈希值。 如果提供的值已经过哈希处理，则匹配过程将失败。
+
 ### 使用自定义命名空间 {#custom-namespaces}
 
 在使用`User_ID`命名空间将数据发送到Google之前，请确保使用[!DNL gTag]同步您自己的标识符。 有关详细信息，请参阅[Google官方文档](https://support.google.com/google-ads/answer/9199250)。
@@ -150,13 +156,13 @@ Attribute source data is not automatically hashed. When your source field contai
 
 The video below demonstrates the steps to configure a [!DNL Google Customer Match] destination and activate audiences. The steps are also laid out sequentially in the next sections.
 
->[!VIDEO](https://video.tv.adobe.com/v/3411783/?quality=12&learn=on&captions=chi_hans) -->
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng) -->
 
 ## 视频概述 {#video-overview}
 
 观看以下视频，了解如何获取优势以及如何将数据激活到Google Customer Match。
 
->[!VIDEO](https://video.tv.adobe.com/v/326483?captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/38180/)
 
 ## 连接到目标 {#connect}
 
