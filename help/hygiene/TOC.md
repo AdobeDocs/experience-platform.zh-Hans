@@ -2,7 +2,7 @@
 audience: user
 user-guide-title: 高级数据生命周期管理帮助
 breadcrumb-title: 高级数据生命周期管理指南
-user-guide-description: 在 Experience Platform 中删除个人记录并安排数据集有效期限，以供清理数据、去除匿名数据和最大程度缩减数据。
+user-guide-description: 在 Experience Platform 中删除个人记录并计划数据集有效期限，以供清理数据、去除匿名数据和最大程度缩减数据。
 feature: Data Hygiene
 role: User, Developer, Admin
 source-git-commit: 9885c0d75ac28cfd73179b63b3d54da9b0ccf967

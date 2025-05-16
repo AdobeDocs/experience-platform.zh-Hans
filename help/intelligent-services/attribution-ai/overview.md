@@ -2,9 +2,9 @@
 keywords: Experience Platform；归因人工智能概述；热门主题；归因人工智能；归因人工智能
 feature: Attribution AI
 title: Attribution AI概述
-description: Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。接触点示例包括显示广告展示、电子邮件发送、电子邮件打开和付费搜索点击。
-landing-page-description: Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户历程中每个营销接触点的营销影响。
-short-description: Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户历程中每个营销接触点的营销影响。
+description: 归因人工智能用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户历程中每个营销接触点的营销影响。接触点示例包括显示广告展示、电子邮件发送、电子邮件打开和付费搜索点击。
+landing-page-description: 归因人工智能用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户历程中每个营销接触点的营销影响。
+short-description: 归因人工智能用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户历程中每个营销接触点的营销影响。
 exl-id: a5991b08-217a-4b39-9948-d28eadea7ded
 source-git-commit: b21367814e38fb5ee017709a29b39de982d59d24
 workflow-type: tm+mt
@@ -15,25 +15,25 @@ ht-degree: 31%
 
 # 归因人工智能概述
 
-作为Intelligent Services的一部分，Attribution AI是一种多渠道算法归因服务，它计算客户交互对指定结果的影响和增量影响。 借助Attribution AI，营销人员可以通过了解客户旅程各个阶段每个客户互动的影响来衡量和优化营销和广告支出。
+Attribution AI作为Intelligent Services的一部分，是一种多渠道算法归因服务，它计算客户交互对指定结果的影响和增量影响。 借助归因人工智能，营销人员可以通过了解客户旅程各个阶段每个客户互动的影响来衡量和优化营销和广告支出。
 
-## 了解Attribution AI
+## 了解归因人工智能
 
-Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。接触点示例包括显示广告展示、电子邮件发送、电子邮件打开和付费搜索点击。
+归因人工智能用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户历程中每个营销接触点的营销影响。接触点示例包括显示广告展示、电子邮件发送、电子邮件打开和付费搜索点击。
 
-Attribution AI输出可以跨不同维度进行分隔，并可在客户历程的不同阶段使用。 这无需将业务需求转换为机器学习问题、选择算法、培训或部署模型即可完成。
+归因人工智能输出可以跨不同维度进行分隔，并可在客户历程的不同阶段使用。 这无需将业务需求转换为机器学习问题、选择算法、培训或部署模型即可完成。
 
-Attribution AI数据可以来自Adobe（例如[!DNL Analytics]）或非Adobe数据源。
+归因人工智能数据可以来自Adobe（例如[!DNL Analytics]）或非Adobe数据源。
 
-Attribution AI支持两类分数：算法分数和基于规则的分数。 算法分数包括增量分数和影响分数。 基于规则的分数包括First touch、Last touch、线性、U形和时间衰减。
+归因人工智能支持两类分数：算法分数和基于规则的分数。 算法分数包括增量分数和影响分数。 基于规则的分数包括First touch、Last touch、线性、U形和时间衰减。
 
-以下视频旨在支持您对Attribution AI的理解。
+以下视频旨在支持您了解归因人工智能。
 
->[!VIDEO](https://video.tv.adobe.com/v/36584?learn=on&quality=12&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/32667?learn=on&quality=12)
 
 ## 业务用例示例
 
-Attribution AI可用于协助处理以下示例用例：
+归因人工智能可用于协助处理以下示例用例：
 
 - **执行报告**：允许执行用户了解营销的真正增量影响，包括整体影响，以及按渠道、地区、SKU等列出的影响。
 - **预算分配**：通知跨营销渠道的预算分配决策。
@@ -43,8 +43,8 @@ Attribution AI可用于协助处理以下示例用例：
 
 ### 其他功能
 
-Attribution AI还提供与其他Adobe解决方案（如[!DNL Customer Journey Analytics]）的集成。 这使您能够使用这些解决方案来利用可自定义的算法模型来评估媒体性能并提供分析见解。
+归因人工智能还提供了与其他Adobe解决方案（如[!DNL Customer Journey Analytics]）的集成。 这使您能够使用这些解决方案来利用可自定义的算法模型来评估媒体性能并提供分析见解。
 
 ## 后续步骤
 
-您可以按照[快速入门](./getting-started.md)指南开始操作。 本指南将指导您设置Attribution AI的所有必需预请求。 如果您已准备好凭据和数据，请访问[Attribution AI用户指南](./user-guide.md)。 本指南将指导您如何创建实例并提交它以进行培训和评分。
+您可以按照[快速入门](./getting-started.md)指南开始操作。 本指南将指导您完成归因人工智能的所有必需预请求的设置。 如果您已经准备好凭据和数据，请访问[归因人工智能用户指南](./user-guide.md)。 本指南将指导您如何创建实例并提交它以进行培训和评分。

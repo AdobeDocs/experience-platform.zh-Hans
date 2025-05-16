@@ -1,7 +1,7 @@
 ---
 audience: user
 user-guide-title: Adobe Experience Platform 数据科学工作区帮助
-breadcrumb-title: Data Science Workspace 指南
+breadcrumb-title: 数据科学 Workspace 指南
 user-guide-description: 借助机器学习技术，使用 Adobe Sensei 和 JupyterLab Notebooks 开发、训练模型和配方，并进行评分。
 feature: Data Science Workspace
 solution: Experience Platform
@@ -19,7 +19,7 @@ ht-degree: 33%
 * [数据科学工作区概述](home.md)
 * [数据科学Workspace访问和功能](access-features-dsw.md)
 * [数据科学工作区演练](walkthrough.md)
-* JupyterLab笔记本{#jupyterlab}
+* JupyterLab笔记本 {#jupyterlab}
    * [概述](jupyterlab/overview.md)
    * [数据访问](jupyterlab/access-notebook-data.md)
    * [分析您的数据](jupyterlab/analyze-your-data.md)
@@ -36,17 +36,17 @@ ht-degree: 33%
    * [MLServices](api/mlservices.md)
    * [洞察](api/insights.md)
    * [附录](api/appendix.md)
-* 预建配方{#pre-built-recipes}
+* 预建配方 {#pre-built-recipes}
    * [产品推荐方法](pre-built-recipes/product-recommendations.md)
    * [产品购买预测](pre-built-recipes/product-purchase-prediction.md)
    * [零售指导方针](pre-built-recipes/retail-sales.md)
-* 模型创作{#authoring}
+* 模型创作 {#authoring}
    * [模型创作SDK](authoring/sdk.md)
    * [创建功能管道](authoring/feature-pipeline.md)
    * [使用Experience Platform SDK (Python)创作模型](authoring/platform-sdk.md)
    * [Python数据访问](authoring/python.md)
    * [Spark数据访问](authoring/spark.md)
-* 模型和方法教程{#models-recipes}
+* 模型和方法教程 {#models-recipes}
    * [创建和发布机器学习模型](models-recipes/create-publish-model.md)
    * [创建演示Luma架构和数据集](models-recipes/create-luma-data.md)
    * [创建零售架构和数据集](models-recipes/create-retails-sales-dataset.md)

@@ -3,14 +3,14 @@ keywords: Experience Platform；概述；客户人工智能；热门主题；客
 solution: Experience Platform, Real-Time Customer Data Platform
 feature: Customer AI
 title: 客户人工智能概述
-description: Customer AI 用于生成自定义倾向分数，如轮廓大规模的流失率和转化率。这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
-landing-page-description: Customer AI 用于生成自定义倾向分数，如轮廓大规模的流失率和转化率。
-short-description: Customer AI 用于生成自定义倾向分数，如轮廓大规模的流失率和转化率。
+description: 客户人工智能用于生成自定义倾向分数，如轮廓大规模的流失率和转化率。这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
+landing-page-description: 客户人工智能用于生成自定义倾向分数，如轮廓大规模的流失率和转化率。
+short-description: 客户人工智能用于生成自定义倾向分数，如轮廓大规模的流失率和转化率。
 exl-id: 3e668103-e2a2-4ce6-a40a-8029a6aaa8dd
 source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '571'
+ht-degree: 21%
 
 ---
 
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ## 了解客户人工智能
 
-Customer AI 用于生成自定义倾向分数，如轮廓大规模的流失率和转化率。这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
+客户人工智能用于生成自定义倾向分数，如轮廓大规模的流失率和转化率。这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
 
 客户人工智能构建于：
 
@@ -44,11 +44,11 @@ Customer AI 用于生成自定义倾向分数，如轮廓大规模的流失率�
 
 以下视频旨在支持您了解客户人工智能。
 
->[!VIDEO](https://video.tv.adobe.com/v/36439?learn=on&quality=12&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/32664?learn=on&quality=12)
 
 ## 工作原理
 
-客户人工智能通过分析现有的消费者体验事件数据来预测客户流失或转化倾向分数。 Adobe意识到所有用例中的流失和转化定义并不统一，因此，您能够将自定义目标目标定义为一组条件。 您可以配置预测的目标，只要输入消费者体验事件数据中存在感兴趣的事件即可。
+客户人工智能通过分析现有的消费者体验事件数据来预测客户流失或转化倾向分数。 Adobe意识到所有用例中的流失和转化的定义并不统一，因此，您能够将自定义目标目标定义为一组条件。 您可以配置预测的目标，只要输入消费者体验事件数据中存在感兴趣的事件即可。
 
 ## 后续步骤
 

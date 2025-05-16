@@ -2,13 +2,13 @@
 audience: user
 user-guide-title: Adobe Experience Platform 中的访问控制帮助
 breadcrumb-title: 访问控制指南
-user-guide-description: 在 Adobe Admin Console 中使用产品配置文件管理用户权限。了解如何将用户分配给产品和沙盒。
+user-guide-description: 在 Adobe Admin Console 中使用产品轮廓管理用户权限。了解如何将用户分配给产品和沙盒。
 feature: Access Control
 role: Admin
 source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
 source-wordcount: '132'
-ht-degree: 56%
+ht-degree: 58%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 56%
 # 访问控制 {#access-control}
 
 * [访问控制概述](home.md)
-* 基于属性的访问控制{#abac}
+* 基于属性的访问控制 {#abac}
    * [概述](abac/overview.md)
    * [端到端指南](abac/end-to-end-guide.md)
    * [使用访问标签管理用户对目标数据流的访问权限](/help/access-control/abac/apply-access-labels-destinations.md)
@@ -28,7 +28,7 @@ ht-degree: 56%
       * [角色](abac/ui/roles.md)
       * [沙盒](abac/ui/sandboxes.md)
       * [用户](abac/ui/users.md)
-   * 权限管理器{#permissions-manager}
+   * 权限管理器 {#permissions-manager}
       * [概述](abac/permission-manager/overview.md)
       * [权限](abac/permission-manager/permissions.md)
    * 基于属性的访问控制API {#abac-api}

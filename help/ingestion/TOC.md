@@ -2,7 +2,7 @@
 audience: user
 user-guide-title: Adobe Experience Platform 数据引入帮助
 breadcrumb-title: Data Ingestion 指南
-user-guide-description: 通过批量引入或流式引入将您的数据引入 Experience Platform。
+user-guide-description: 通过批次引入或流式处理引入将您的数据引入 Experience Platform。
 feature: Data Ingestion
 role: Developer
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
@@ -16,11 +16,11 @@ ht-degree: 21%
 # Adobe Experience Platform数据摄取 {#ingestion}
 
 - [数据引入概述](home.md)
-- 流式引入{#streaming}
+- 流式摄取 {#streaming}
    - [概述](streaming-ingestion/overview.md)
    - [Kafka连接器](streaming-ingestion/kafka.md)
    - [故障排除](streaming-ingestion/troubleshooting.md)
-- 批次摄取{#batch}
+- 批量摄取{#batch}
    - [批量摄取API快速入门](batch-ingestion/getting-started.md)
    - [API概述](batch-ingestion/overview.md)
    - [API开发人员指南](batch-ingestion/api-overview.md)
@@ -38,7 +38,7 @@ ht-degree: 21%
    - [流记录数据](tutorials/streaming-record-data.md)
    - [流式处理时间序列数据](tutorials/streaming-time-series-data.md)
    - [流式传输多条消息](tutorials/streaming-multiple-messages.md)
-- 数据质量和监视{#quality}
+- 数据质量和监控{#quality}
    - [概述](quality/overview.md)
    - [监测数据摄取](quality/monitor-data-ingestion.md)
    - [检索错误诊断](quality/error-diagnostics.md)

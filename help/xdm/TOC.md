@@ -2,13 +2,13 @@
 audience: user
 user-guide-title: 体验数据模型 (XDM) 系统帮助
 breadcrumb-title: 体验数据模型 (XDM) 指南
-user-guide-description: 概括性地探索 Experience Platform 中的体验数据模型 (XDM) 系统，并了解如何使用类和架构字段组使体验数据标准化。
+user-guide-description: 浏览 Experience Platform 中的体验数据模型 (XDM) 系统概述，并了解如何使用类和架构字段组使体验数据标准化。
 feature: Schemas
 role: Developer
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
 source-wordcount: '698'
-ht-degree: 45%
+ht-degree: 49%
 
 ---
 
@@ -17,12 +17,12 @@ ht-degree: 45%
 
 * [XDM系统概述](home.md)
 * 架构 {#schema}
-   * [架构组合基础](schema/composition.md)
+   * [架构构成基础](schema/composition.md)
    * [数据建模的最佳实践](schema/best-practices.md)
    * [敏感数据和个人数据](./schema/sensitive-and-personal-data.md)
    * [XDM字段类型约束](schema/field-constraints.md)
    * [XDM中的命名空间](./schema/namespaces.md)
-   * 行业数据模型{#industries}
+   * 行业数据模型 {#industries}
       * [概述](./schema/industries/overview.md)
       * [零售](./schema/industries/retail.md)
       * [金融服务](./schema/industries/financial.md)
@@ -31,9 +31,9 @@ ht-degree: 45%
       * [旅游与酒店](./schema/industries/travel-hospitality.md)
    * 医疗保健数据模型V2 {#healthcare}
       * [医疗保健V2](./schema/healthcare/healthcare-v2.md)
-      * 类 {#classes}
+      * 分类 {#classes}
          * [位置](./schema/healthcare/classes/location.md)
-      * 字段组{#field-groups}
+      * 字段组 {#field-groups}
          * [帐户](./schema/healthcare/field-groups/account.md)
          * [约会](./schema/healthcare/field-groups/appointment.md)
          * [保护计划](./schema/healthcare/field-groups/care-plan.md)
@@ -48,7 +48,7 @@ ht-degree: 45%
          * [患者](./schema/healthcare/field-groups/patient.md)
          * [从业者](./schema/healthcare/field-groups/practioner.md)
          * [计划](./schema/healthcare/field-groups/schedule.md)
-      * 数据类型{#data-types}
+      * 数据类型 {#data-types}
          * [地址](./schema/healthcare/data-types/address.md)
          * [注释](./schema/healthcare/data-types/annotation.md)
          * [可用性](./schema/healthcare/data-types/availability.md)
@@ -73,7 +73,7 @@ ht-degree: 45%
          * [计时](./schema/healthcare/data-types/timing.md)
          * [虚拟服务](./schema/healthcare/data-types/virtual-service-detail.md)
    * [XDM字段字典](schema/field-dictionary.md)
-* 类 {#classes}
+* 分类 {#classes}
    * [XDM 个人轮廓](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
    * [药物](./classes/medication.md)
@@ -84,7 +84,7 @@ ht-degree: 45%
    * [潜在客户](./classes/prospect.md)
    * [提供商](./classes/provider.md)
    * [区段定义](./classes/segment-definition.md)
-   * B2B类{#b2b}
+   * B2B 类 {#b2b}
       * [XDM 业务帐户](./classes/b2b/business-account.md)
       * [XDM 业务帐户人员关系](./classes/b2b/business-account-person-relation.md)
       * [XDM 商业营销活动](./classes/b2b/business-campaign.md)
@@ -93,8 +93,8 @@ ht-degree: 45%
       * [XDM 业务机会人员关系](./classes/b2b/business-opportunity-person-relation.md)
       * [XDM 商业营销列表](./classes/b2b/business-marketing-list.md)
       * [XDM 商业营销列表成员](./classes/b2b/business-marketing-list-members.md)
-* 字段组{#field-groups}
-   * XDM个人资料{#profile}
+* 字段组 {#field-groups}
+   * XDM 个人轮廓 {#profile}
       * [同意和偏好设置](./field-groups/profile/consents.md)
       * [人口统计详细信息](./field-groups/profile/demographic-details.md)
       * [医疗保健成员详细信息](./field-groups/profile/healthcare-member-details.md)
@@ -108,7 +108,7 @@ ht-degree: 45%
       * [工作联系人详细信息](./field-groups/profile/work-contact-details.md)
       * [XDM 业务人员组件](./field-groups/profile/business-person-components.md)
       * [XDM 业务人员详细信息](./field-groups/profile/business-person-details.md)
-   * XDM单个潜在客户配置文件{#prospect-profile}
+   * XDM单个潜在客户配置文件 {#prospect-profile}
       * [Partner Prospect详细信息（示例）](./field-groups/prospect-profile/partner-prospect-details.md)
    * XDM ExperienceEvent {#event}
       * [Adobe Analytics完整扩展](./field-groups/event/analytics-full-extension.md)
@@ -136,23 +136,23 @@ ht-degree: 45%
       * [升级详细信息](./field-groups/event/upgrade-details.md)
       * [追加销售详细信息](./field-groups/event/upsell-details.md)
       * [Web 详细信息](./field-groups/event/web-details.md)
-   * XDM商业营销活动{#b2b-campaign}
+   * XDM 商业营销活动 {#b2b-campaign}
       * [XDM 商业营销活动详细信息](./field-groups/b2b-campaign/details.md)
-   * XDM商业营销活动成员{#b2b-campaign-members}
+   * XDM 商业营销活动成员 {#b2b-campaign-members}
       * [XDM商业营销活动成员详细信息](./field-groups/b2b-campaign-members/details.md)
-   * 药物{#medication}
+   * 药物 {#medication}
       * [保健药物](./field-groups/medication/healthcare-medication.md)
-   * 计划{#plan}
+   * 计划 {#plan}
       * [医疗保健计划详细信息](./field-groups/plan/healthcare-plan-details.md)
-   * 产品{#product}
+   * 产品 {#product}
       * [产品目录](./field-groups/product/product-catalog.md)
       * [产品类别](./field-groups/product/product-category.md)
-   * 提供程序{#provider}
+   * 提供商 {#provider}
       * [医疗保健提供商](./field-groups/provider/healthcare-provider.md)
-   * 已共享{#shared}
+   * 共享 {#shared}
       * [外部源系统审计详细信息](./field-groups/shared/external-source-system-audit-details.md)
    * [字段组名称更新](./field-groups/name-updates.md)
-* 数据类型{#data-types}
+* 数据类型 {#data-types}
    * [帐户详细信息](./data-types/account-details.md)
    * [广告时间](./data-types/ad-break.md)
    * [地址](./data-types/address.md)
@@ -203,7 +203,7 @@ ht-degree: 45%
    * [媒体收集详细信息](./data-types/media-collection-details.md)
    * [媒体事件信息](./data-types/media-event-information.md)
    * [媒体报告详细信息](./data-types/media-reporting-details.md)
-   * [订单](./data-types/order.md)
+   * [顺序](./data-types/order.md)
    * [POI详细信息](./data-types/poi-details.md)
    * [POI交互](./data-types/poi-interaction.md)
    * [付款项目](./data-types/payment-item.md)
@@ -233,12 +233,12 @@ ht-degree: 45%
 * [!UICONTROL 架构] UI {#ui}
    * [概述](./ui/overview.md)
    * [浏览XDM资源](./ui/explore.md)
-   * 创建和编辑资源{#resources}
+   * 创建和编辑资源 {#resources}
       * [架构](./ui/resources/schemas.md)
       * [分类](./ui/resources/classes.md)
       * [字段组](./ui/resources/field-groups.md)
       * [数据类型](./ui/resources/data-types.md)
-   * 定义字段{#fields}
+   * 定义字段 {#fields}
       * [概述](./ui/fields/overview.md)
       * [数组字段](./ui/fields/array.md)
       * [枚举字段](./ui/fields/enum.md)
