@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明（2025 年 4 月）
 description: Adobe Experience Platform 的 2025 年 4 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 6558046e9708267cd0ceda36e7c0bdba6b2f758a
+source-git-commit: e0740ca9cd6e1d0b92d5504a2869ac03c28d4980
 workflow-type: tm+mt
-source-wordcount: '2192'
+source-wordcount: '2069'
 ht-degree: 98%
 
 ---
@@ -30,7 +30,6 @@ Adobe Experience Platform 中现有功能和文档的更新：
 - [Experience Data Model](#xdm)
 - [身份标识服务](#identity)
 - [查询服务](#query-service)
-- [实时客户轮廓](#profile)
 - [沙盒](#sandboxes)
 - [源](#sources)
 - [用例战术手册](#use-case-playbooks)
@@ -129,18 +128,6 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 | 使用 CREATE TABLE 和 INSERT INTO 保存模型预测输出 | [使用 CREATE TABLE AS SELECT 将选定的预测输出保存到新表中，或使用 INSERT INTO SELECT 插入到现有表中](../../query-service/advanced-statistics/models.md#predict)。如果启用增强列选择，则特征向量和概率等中间结果也可以与最终预测一起保留。有关使用示例，请参阅 [SQL 语法文档](../../query-service/sql/syntax.md#create-table-as-select)。 |
 
 有关 [!DNL Query Service] 的详细信息，请查看 [[!DNL Query Service] 概述](../../query-service/home.md)。
-
-## 实时客户轮廓 {#profile}
-
-Adobe Experience Platform 使您能够为客户提供协调、一致且相关的体验，无论他们何时何地与您的品牌互动均是如此。利用实时客户轮廓，您可以看到每个客户的整体视图，其中结合来自多个渠道的数据，包括在线、离线、CRM 和第三方数据。轮廓允许您将客户数据整合到一个统一视图中，并为每一次客户交互提供可操作的、有时间戳的描述。
-
-| 功能 | 描述 |
-| ------- | ----------- |
-| 假名轮廓数据有效期限 | 在轮廓仪表板中管理您的假名轮廓数据过期时间。要详细了解此功能和假名轮廓，请阅读[假名轮廓数据有效期限指南](../../profile/pseudonymous-profiles.md)。 |
-
-{style="table-layout:auto"}
-
-要了解有关实时客户轮廓的更多信息，请阅读[轮廓概述](../../profile/home.md)
 
 ## 沙盒 {#sandboxes}
 

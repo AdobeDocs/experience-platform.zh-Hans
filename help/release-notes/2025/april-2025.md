@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2025 年 4 月）
 description: Adobe Experience Platform 的 2025 年 4 月发行说明。
 exl-id: a3b1e2e8-d780-4e23-b323-37e1a631f716
-source-git-commit: 6558046e9708267cd0ceda36e7c0bdba6b2f758a
+source-git-commit: e0740ca9cd6e1d0b92d5504a2869ac03c28d4980
 workflow-type: tm+mt
-source-wordcount: '2192'
-ht-degree: 29%
+source-wordcount: '2069'
+ht-degree: 98%
 
 ---
 
@@ -13,14 +13,14 @@ ht-degree: 29%
 
 >[!TIP]
 >
->有关其他Adobe Experience Platform应用程序的发行说明，请参阅以下文档：
+>有关其他 Adobe Experience Platform 应用程序的发行说明，请参阅以下文档：
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer-b2b/user/release-notes)
 >- [Customer Journey Analytics](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/releases/latest)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/zh-hans/docs/real-time-cdp-collaboration/using/latest)
 
-**发行日期： 2025年4月29日**
+**发布日期：2025 年 4 月 29 日**
 
 Adobe Experience Platform 中现有功能和文档的更新：
 
@@ -30,18 +30,17 @@ Adobe Experience Platform 中现有功能和文档的更新：
 - [Experience Data Model](#xdm)
 - [身份标识服务](#identity)
 - [查询服务](#query-service)
-- [实时客户轮廓](#profile)
 - [沙盒](#sandboxes)
 - [源](#sources)
 - [用例战术手册](#use-case-playbooks)
 
 ## Experience League {#experience-league}
 
-Experience League是一个全面的学习平台，旨在帮助您通过Adobe产品增强技能。 它提供各种资源，包括：课程、文档、社区页面、活动和对认证的访问。
+Experience League 是一个综合性的学习平台，旨在帮助您提高使用 Adobe 产品的技能。它提供各种资源，包括：课程、文档、社区页面、活动和认证访问权限。
 
 | 功能 | 描述 |
 | --- | --- |
-| 个性化主页 | 在[Experience League](https://experienceleague.adobe.com/zh-hans/home#)上访问和自定义您的个性化主页。 使用您的Adobe凭据登录，然后在顶部菜单中选择&#x200B;**[!UICONTROL Experience League]**&#x200B;以开始优化您的学习体验： <ul><li>**书签**：使用[!UICONTROL 书签]功能在一个位置保存和收集您喜爱的资源。 您可以保存各种内容，包括播放列表、文章和教程。</li><li>**自定义您的学习**：使用最符合您需求的角色、行业、产品和体验级别来更新Experience League配置文件，从而增强您的学习体验。</li><li>**推荐**：查看根据您最近的活动推荐的学习内容。</li><li>**最近查看过的内容**：使用[!UICONTROL 最近查看过的内容]部分可快速导航回最近查看过的内容，如文档和视频。</li><li>**学习资源**：使用[!UICONTROL 所有学习资源]面板导航到教程、文档、社区、活动和认证。</li><li>**新增功能**：查看Experience League上最新内容流的[!UICONTROL 新增功能]部分。</li><li>**点播观看过去的活动**：通过[!UICONTROL 点播观看过去的活动]部分，观看产品聚光灯、用例和教程中以前录制的直播。</li></ul><br> Experience League上的![个性化主页。Experience League上的](../2025/assets/april/personalized-home-page.png "个性化主页。"){width="250" align="center" zoomable="yes"} |
+| 个性化主页 | 在[Experience League](https://experienceleague.adobe.com/zh-hans/home#)上访问和自定义您的个性化主页。 使用您的 Adobe 凭据登录，然后在顶部菜单上选择 **[!UICONTROL Experience League]**，以开始优化您的学习体验： <ul><li>**书签**：使用[!UICONTROL 书签]功能将您喜爱的资源保存并收集在一个地方。您可以保存各种内容，包括播放列表、文章和教程。</li><li>**定制您的学习**：通过使用最符合您需求的角色、行业、产品和经验水平来更新您的 Experience League 轮廓，从而增强您的学习体验。</li><li>**建议**：查看根据您最近的活动推荐的学习内容。</li><li>**最近查看**：使用[!UICONTROL 最近查看]部分快速导航回最近查看的内容，例如文档和视频。</li><li>**学习资源**：使用[!UICONTROL 所有学习资源]面板导航至教程、文档、社区、活动和认证。</li><li>**最新动态**：查看[!UICONTROL 最新动态]部分，了解 Experience League 上的最新内容。</li><li>**按需观看过往活动**：通过[!UICONTROL 按需观看过往活动]部分，观看之前录制的有关产品聚焦、用例和教程的直播。</li></ul><br> ![Experience League 上的个性化主页。](../2025/assets/april/personalized-home-page.png "Experience League 上的个性化主页。"){width="250" align="center" zoomable="yes"} |
 
 {style="table-layout:auto"}
 
@@ -53,8 +52,8 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 功能 | 描述 |
 | --- | --- |
-| [!DNL Adform] 扩展 | 通过[!DNL Adform]服务器端扩展，品牌可使用ECID轻松地在站点外重新定位受众。 此服务器端扩展不依赖于第三方Cookie或Cookie替代ID。 此外，由于此操作完全在服务器端完成，因此无需进行其他像素或其他客户端更改。 有关详细信息，请参阅[Adform扩展概述](/help/tags/extensions/server/adform/overview.md)。 |
-| [!DNL Amazon] Web事件API扩展 | 通过[!DNL Amazon]转化API扩展，广告商可以直接与[!DNL Amazon]共享网站交互，从而改善归因、数据可靠性和促销活动优化。 此扩展支持事件转发，允许您发送转化事件，如购买、购物车添加等，同时确保正确删除重复项以准确报告。 有关详细信息，请参阅[Amazon扩展概述](/help/tags/extensions/server/amazon/overview.md)。 |
+| [!DNL Adform] 扩展 | [!DNL Adform] 服务器端扩展使品牌能够使用 ECID 轻松地重新定位站外受众。此服务器端扩展不依赖于第三方 cookie 或 cookie 备用 ID。此外，由于这完全是在服务器端完成的，因此不需要额外的像素或其他客户端更改。有关更多信息，请参阅 [Adform 扩展概述](/help/tags/extensions/server/adform/overview.md)。 |
+| [!DNL Amazon] 网络事件 API 扩展 | [!DNL Amazon]转化 API 扩展程序使广告商能够直接与 [!DNL Amazon] 分享网站互动，从而提供改进的归因、数据可靠性和营销活动优化。此扩展支持事件转发，允许您发送转化事件（例如购买、购物车添加等），同时确保进行适当的重复数据删除，以实现准确报告。有关更多信息，请参阅 [Amazon 扩展概述](/help/tags/extensions/server/amazon/overview.md)。 |
 
 {style="table-layout:auto"}
 
@@ -62,29 +61,29 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 [!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
-**新的或更新后的目标** {#new-updated-destinations}
+**新增或更新目标** {#new-updated-destinations}
 
 | 目标 | 描述 |
 | --- | --- |
-| [Marketo Engage人员同步](/help/destinations/catalog/adobe/marketo-engage-person-sync.md) | Adobe更新了[!DNL Marketo Engage Person Sync]目标以修复身份映射中存在多个电子邮件时影响客户的问题。 |
-| [(V2) Pega CDH实时受众连接](/help/destinations/catalog/personalization/pega-v2.md) | 当您在Pega帐户中配置了多个Pega客户决策中心应用程序时，使用Adobe Experience Platform中的[!DNL (V2) Pega Customer Decision Hub Realtime Audience]目标将配置文件属性和受众成员资格数据发送到Pega客户决策中心以便做出下一个最佳操作决策。 |
+| [Marketo Engage 人员同步](/help/destinations/catalog/adobe/marketo-engage-person-sync.md) | Adobe 更新了 [!DNL Marketo Engage Person Sync] 目标，以修复身份标识图中存在多封电子邮件时影响客户的问题。 |
+| [(V2) Pega CDH 实时受众连接](/help/destinations/catalog/personalization/pega-v2.md) | 当您在 Pega 帐户中配置了多个 Pega Customer Decision Hub 应用程序时，使用 Adobe Experience Platform 中的 [!DNL (V2) Pega Customer Decision Hub Realtime Audience] 目标将轮廓属性和受众会员资格数据发送到 Pega Customer Decision Hub，以做出下一个最佳行动决策。 |
 
 **新增或更新的功能** {#destinations-new-updated-functionality}
 
 | 功能 | 描述 |
 | --- | --- |
-| 用于完整文件导出的&#x200B;**每周**&#x200B;和&#x200B;**每月**&#x200B;计划选项 | 现在，在激活到基于文件的云存储目标时，您可以计划每周或每月为人员和潜在客户受众导出完整文件。 [阅读有关计划选项的更多信息](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files)。 |
+| **每周**&#x200B;和&#x200B;**每月**&#x200B;计划选项，用于导出完整文件 | 现在，当激活到云存储基于文件的目标时，您可以每周或每月为人们和潜在受众安排完整的文件导出。[阅读](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files)有关计划选项的更多信息。 |
 
 {style="table-layout:auto"}
 
 **修复、增强功能和其他公告** {#destinations-fixes-and-enhancements}
 
-- **强制数据集导出结束日期延迟到2025年9月1日**\
-  在[2024年9月版](/help/release-notes/2024/september-2024.md#destinations-new-updated-functionality)中，Adobe将任何在该版&#x200B;*之前创建的数据集导出数据流的默认结束日期设置为2025年5月1日。* Adobe现在将强制实施截止日期延长至&#x200B;**2025年9月1日**，以便让客户有更多时间更新其计划。 有关如何编辑数据集导出数据流的结束日期的信息，请参阅[导出数据集教程](../../destinations/ui/export-datasets.md#schedule-dataset-export)的计划部分。
+- **数据集导出结束日期的执行延迟至 2025 年 9 月 1 日**\
+  作为 [2024 年 9 月版本](/help/release-notes/2024/september-2024.md#destinations-new-updated-functionality)的一部分，Adobe 将&#x200B;*在该版本之前*&#x200B;创建的任何数据集导出数据流的默认结束日期设置为 2025 年 5 月 1 日。Adobe 现将此执行期限延长至 **2025 年 9 月 1 日** ，以便为客户提供更多时间来更新其计划。有关如何编辑数据集导出数据流的结束日期的信息，请参阅[导出数据集教程](../../destinations/ui/export-datasets.md#schedule-dataset-export)的计划部分。
 
-- **改进了LiveRamp载入的失败SFTP传输处理**\
-  Adobe已修复一个影响通过SFTP将文件导出到[LiveRamp载入](/help/destinations/catalog/advertising/liveramp-onboarding.md)目标的问题。 有时，文件传输会因临时服务器端问题而失败，失败尝试产生的临时文件会保留在服务器上。 这些不可删除的文件会阻止后续重试，因为Adobe没有覆盖这些文件的权限。\
-  通过此修复，如果重试尝试无法删除临时文件，Adobe将生成一个附加后缀“`attempt2`”的新文件，以确保重试成功完成。
+- **改进了 LiveRamp Onboarding 对失败的 SFTP 传输的处理**\
+  Adobe 已针对影响通过 SFTP 将文件导出到 [LiveRamp Onboarding](/help/destinations/catalog/advertising/liveramp-onboarding.md) 目标的问题实施了修复。有时，文件传输会由于服务器端的瞬时问题而失败，并且失败的尝试产生的临时文件仍会保留在服务器上。这些无法删除的文件阻止了后续重试操作，因为 Adobe 没有权限覆盖它们。\
+  修复后，如果重试操作无法删除临时文件，Adobe 将会生成一个带有附加后缀 `attempt2` 的新文件，以确保重试操作成功完成。
 
 ## Experience Data Model (XDM) {#xdm}
 
@@ -94,7 +93,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 功能 | 描述 |
 | --- | --- |
-| 字符串字段收到最小值1 | 默认情况下，新字符串字段的最小长度为1。 仍可接受非必填字段的Null值。 有关最佳实践的更多信息，请阅读有关数据建模的[最佳实践的指南](../../xdm/schema/best-practices.md#data-integrity-tips) |
+| 字符串字段的最小值为 1 | 默认情况下，新字符串字段的最小长度为 1。非必填字段的空值仍然可以接受。如需了解有关最佳实践的更多信息，请阅读[数据建模最佳实践](../../xdm/schema/best-practices.md#data-integrity-tips) |
 
 {style="table-layout:auto"}
 
@@ -108,11 +107,11 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 功能 | 描述 |
 | --- | --- |
-| [!BADGE 有限可用性]{type=Informative} [!DNL Identity Graph Linking Rules] | 现在，开发沙盒中的所有客户都可以访问身份图形链接规则。 <ul><li>**激活要求**：在您配置和保存[!DNL Identity Settings]之前，该功能将保持非活动状态。 如果没有此配置，系统将继续正常运行，并且不会更改行为。</li><li>**重要说明**：在此“有限可用性”阶段，Edge分段可能会产生意外的区段成员资格结果。 但是，流分段和批量分段将按预期运行。</li><li>**后续步骤**：有关如何在生产沙盒中启用此功能的信息，请联系您的Adobe客户团队。</li></ul> |
+| [!BADGE 限量发布版]{type=Informative}[!DNL Identity Graph Linking Rules] | 现在，开发沙盒中的所有客户都可以访问身份图形链接规则。 <ul><li>**激活要求**：该功能将保持非活动状态，直到您配置并保存 [!DNL Identity Settings]。如果没有此配置，系统将会继续正常运行，而行为不会发生任何变化。</li><li>**重要说明**：在此限量发布阶段，边缘分段可能会产生意外的区段会员资格结果。但是，流式处理和批量分段将会按预期运行。</li><li>**后续步骤**：有关如何在生产沙盒中启用此功能的信息，请联系您的 Adobe 帐户团队。</li></ul> |
 
 {style="table-layout:auto"}
 
-有关详细信息，请阅读[[!DNL Identity Graph Linking Rules] 文档](../../identity-service/identity-graph-linking-rules/overview.md)。
+有关更多信息，请阅读该[[!DNL Identity Graph Linking Rules] 文档](../../identity-service/identity-graph-linking-rules/overview.md)。
 
 ## 查询服务 {#query-service}
 
@@ -122,25 +121,13 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 功能 | 描述 |
 | --- | --- |
-| SQL受众覆盖 | 使用新SQL查询的结果覆盖现有配置文件以刷新受众成员资格。 通过删除过时的记录并在单次操作中插入更新的记录，您可以更加高效地管理动态受众。 有关详细信息，请参阅[SQL受众扩展指南](../../query-service/data-distiller-audiences/overview.md#replace-audience)。 |
-| 下载并复制查询结果 | [直接从查询编辑器下载查询结果](../../query-service/ui/overview.md#download-query-results)为CSV、XLSX或JSON文件，或者[将结果复制到剪贴板](../../query-service/ui/overview.md#copy-results)为逗号分隔值(CSV)，以便快速用于Excel等电子表格应用程序。 这些增强功能可简化离线分析、报表和数据验证工作流。 |
-| 全屏查看查询结果 | [在全屏对话框中预览查询结果](../../query-service/ui/overview.md#view-results)以提高可读性，轻松扫描大型数据集，并选择要复制的行。 全屏视图提供了可调整大小的网格布局，可帮助您更有效地查看宽表格和详细的输出。 |
-| 模型预测中的增强列选择 | 使用扩展`model_predict`语法选择特定列并应用别名。 检索中间预测结果，如特征向量和概率分数。 增强选择需要功能标志激活。 有关语法示例和功能标志的详细信息，请参阅[模型生命周期文档](../../query-service/advanced-statistics/models.md#select-specific-output-fields)。 |
-| 使用CREATE TABLE和INSERT TO保存模型预测输出 | [使用CREATE TABLE AS SELECT将所选预测输出保存到新表中，或使用INSERT INTO SELECT插入现有表中](../../query-service/advanced-statistics/models.md#predict)。 如果启用了增强的列选择，则中间结果（例如特征向量和概率）也可以与最终预测一起保留。 有关用法示例，请参阅[SQL语法文档](../../query-service/sql/syntax.md#create-table-as-select)。 |
+| SQL 受众覆盖 | 通过使用新的 SQL 查询的结果覆盖现有轮廓来刷新受众会员资格。通过在单个操作中移除过时的记录并插入更新的记录，您可以更有效地管理动态受众。有关详细信息，请参阅 [SQL 受众扩展指南](../../query-service/data-distiller-audiences/overview.md#replace-audience)。 |
+| 下载并复制查询结果 | [直接从查询编辑器以 CSV、XLSX 或 JSON 文件的格式下载查询结果](../../query-service/ui/overview.md#download-query-results)，或者[将结果作为逗号分隔值 (CSV) 复制到剪贴板](../../query-service/ui/overview.md#copy-results)，以便在 Excel 等电子表格应用程序中快速使用。这些增强功能简化了离线分析、报告和数据验证工作流程。 |
+| 全屏查看查询结果 | [在全屏对话框中预览查询结果](../../query-service/ui/overview.md#view-results)，以提高可读性，轻松扫描大型数据集，并选择要复制的行。全屏视图提供了可调整大小的网格布局，帮助您更高效地查看宽表和详细输出。 |
+| 模型预测中的增强列选择 | 使用扩展的 `model_predict` 语法选择特定列并应用别名。检索中间预测结果，例如特征向量和概率分数。增强选择功能需要激活相应的功能标记。请参阅[模型生命周期文档](../../query-service/advanced-statistics/models.md#select-specific-output-fields)，了解语法示例和功能标记详细信息。 |
+| 使用 CREATE TABLE 和 INSERT INTO 保存模型预测输出 | [使用 CREATE TABLE AS SELECT 将选定的预测输出保存到新表中，或使用 INSERT INTO SELECT 插入到现有表中](../../query-service/advanced-statistics/models.md#predict)。如果启用增强列选择，则特征向量和概率等中间结果也可以与最终预测一起保留。有关使用示例，请参阅 [SQL 语法文档](../../query-service/sql/syntax.md#create-table-as-select)。 |
 
 有关 [!DNL Query Service] 的详细信息，请查看 [[!DNL Query Service] 概述](../../query-service/home.md)。
-
-## 实时客户轮廓 {#profile}
-
-Adobe Experience Platform 使您能够为客户提供协调、一致且相关的体验，无论他们何时何地与您的品牌互动均是如此。利用实时客户轮廓，您可以看到每个客户的整体视图，其中结合来自多个渠道的数据，包括在线、离线、CRM 和第三方数据。轮廓允许您将客户数据整合到一个统一视图中，并为每一次客户交互提供可操作的、有时间戳的描述。
-
-| 功能 | 描述 |
-| ------- | ----------- |
-| 假名个人资料数据有效期限 | 在配置文件仪表板中管理您的假名配置文件数据过期。 要详细了解此功能和假名轮廓，请阅读[假名轮廓数据有效期限指南](../../profile/pseudonymous-profiles.md)。 |
-
-{style="table-layout:auto"}
-
-要了解有关实时客户轮廓的更多信息，请阅读[轮廓概述](../../profile/home.md)
 
 ## 沙盒 {#sandboxes}
 
@@ -150,7 +137,7 @@ Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。企
 
 | 功能 | 描述 |
 | --- | --- |
-| 沙盒工具插件支持扩展 | 在沙盒工具中复制历程对象时，自定义操作现在可以作为依赖对象复制。 此外，您还可以选择要在目标沙盒中重用的现有操作。 它们也可以单独添加到包中。 有关支持的Adobe Journey Optimizer对象的完整信息，请阅读[沙盒工具](../../sandboxes/ui/sandbox-tooling.md#adobe-journey-optimizer-objects)指南。 |
+| 沙盒工具插件支持扩展 | 现在，在沙盒工具中复制 Journey 对象时，可以将自定义操作复制为依赖对象。此外，您还可以选择现有操作以在目标沙盒中重复使用。它们也可以独立地添加到包中。有关支持的 Adobe Journey Optimizer 对象的完整信息，请阅读 [沙盒工具](../../sandboxes/ui/sandbox-tooling.md#adobe-journey-optimizer-objects) 指导。 |
 
 {style="table-layout:auto"}
 
@@ -166,8 +153,8 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 | 功能 | 描述 |
 | --- | --- |
-| [!BADGE Beta]{type=Informative} [!DNL Algolia User Profiles] | [[!DNL Algolia User Profiles]](../../sources/connectors/data-partners/algolia-user-profiles.md)源现已可用。 使用此源将您的[!DNL Algolia]用户配置文件相关性数据引入Experience Platform。 然后，您可以使用此数据通过为网站、电子商务平台和应用程序提供高性能搜索解决方案来提高用户参与度、转化率和总体客户体验。 有关详细信息，请阅读有关如何[将数据摄取 [!DNL Algolia User Profiles] 到Experience Platform](../../sources/tutorials/ui/create/data-partners/algolia-user-profiles.md)的指南。 |
-| 针对[!DNL Azure Databricks]的[!BADGE Beta]{type=Informative} API支持 | [!DNL Azure Databricks]源现在可在API中使用。 使用[!DNL Flow Service] API连接您的[!DNL Databricks]帐户并将您的[!DNL Databricks]数据导入Experience Platform。 有关详细信息，请参阅[[!DNL Azure Databricks]](../../sources/connectors/databases/databricks.md)上的文档。 |
+| [!BADGE Beta]{type=Informative} [!DNL Algolia User Profiles] | [[!DNL Algolia User Profiles]](../../sources/connectors/data-partners/algolia-user-profiles.md) 源现已可用。使用此源将 [!DNL Algolia] 用户轮廓亲和度数据导入到 Experience Platform。然后，您可以使用这些数据为网站、电子商务平台和应用程序提供高性能搜索解决方案，从而提高用户参与度、转化率和整体客户体验。有关更多信息，请阅读如何将数据[摄入 [!DNL Algolia User Profiles]  Experience Platform 的指南](../../sources/tutorials/ui/create/data-partners/algolia-user-profiles.md)。 |
+| [!BADGE Beta]{type=Informative} API 对 [!DNL Azure Databricks] 的支持 | [!DNL Azure Databricks] 源当前在 API 中可用。使用 [!DNL Flow Service] API 来连接 [!DNL Databricks] 帐户，并将您的 [!DNL Databricks] 数据带到 Experience Platform。有关更多信息，请阅读有关 [[!DNL Azure Databricks]](../../sources/connectors/databases/databricks.md) 的文档。 |
 
 {style="table-layout:auto"}
 
@@ -175,9 +162,9 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 | 功能 | 描述 |
 | --- | --- |
-| 更新了用于将流媒体数据摄取到Experience Platform的XDM字段。 | 新的XDM字段组`mediaReporting`现在可用于通过Adobe Analytics源将流媒体数据摄取到Experience Platform。 此字段替换`media.mediaTimed`字段。</br> <br>在三个月的过渡期间，`media.mediaTimed`字段上的数据摄取将继续。 但是，在2025年7月底，`media.mediaTimed`字段将完全弃用，并且在Experience Platform架构UI中将不再可见，数据将仅使用`mediaReporting`字段发送。</br><br>如果您在2025年4月22日之前实施了Analytics源以将流媒体数据收集到Platform，则必须迁移现有配置以使用新字段组发送数据。 此迁移必须在2025年7月底之前完成。 请联系您的Adobe客户团队以获取迁移支持。 |
-| [!DNL MariaDB]和[!DNL PostgreSQL]的新身份验证类型 | 您现在可以使用基本身份验证在Experience Platform上验证您的[!DNL MariaDB]和[!DNL PostgreSQL]源。 有关详细信息，请阅读以下文档： <ul><li>[[!DNL MariaDB]](../../sources/connectors/databases/mariadb.md)</li><li>[[!DNL PostgreSQL]](../../sources/connectors/databases/postgres.md) |
-| 对[!DNL Amazon Redshift]的行级筛选支持 | 您可以在Experience Platform上对[!DNL Amazon Redshift]数据使用行级过滤功能。 有关详细信息，请参阅[在API](../../sources/tutorials/api/filter.md)中过滤源的行级数据的指南。 |
+| 已更新用于将流媒体数据摄入 Experience Platform 的 XDM 字段。 | 新的 XDM 字段组，`mediaReporting`，现在可以通过 Adobe Analytics 源将流媒体数据摄入 Experience Platform 中。此字段取代 `media.mediaTimed` 字段。</br> <br>在三个月的过渡期内，`media.mediaTimed` 字段的数据摄取将继续进行。但是，在 2025 年 7 月末，`media.mediaTimed` 字段将会被完全弃用，并且不会再显示在 Experience Platform Schema UI 中，而且只能使用 `mediaReporting` 字段发送数据。</br><br>如果在 2025 年 4 月 22 日之前实施了 Analytics 源以将流媒体数据收集到平台的客户，则必须迁移您现有的配置，以便使用新字段组发送数据。此迁移必须在 2025 年 7 月底之前完成。联系您的 Adobe 帐户团队以获取迁移支持。 |
+| [!DNL MariaDB] 和 [!DNL PostgreSQL] 的新身份验证类型 | 现在可以使用基本身份验证来验证您在 Experience Platform 上的 [!DNL MariaDB] 和 [!DNL PostgreSQL] 源。有关详细信息，请阅读以下文档： <ul><li>[[!DNL MariaDB]](../../sources/connectors/databases/mariadb.md)</li><li>[[!DNL PostgreSQL]](../../sources/connectors/databases/postgres.md) |
+| [!DNL Amazon Redshift] 的行级过滤支持 | 您可以使用行级过滤功能来处理 Experience Platform 上的 [!DNL Amazon Redshift] 数据。有关更多信息，请阅读 [API 中关于源的行级数据过滤](../../sources/tutorials/api/filter.md)的指南。 |
 
 {style="table-layout:auto"}
 
@@ -185,18 +172,18 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 ## 用例战术手册 {#use-case-playbooks}
 
-用例行动手册最初旨在帮助克服开始使用Real-Time Customer Data Platform或Adobe Journey Optimizer时的挑战。 它们会不断发展，现在使您能够快速启动关键营销用例，提供灵感和预建资产以进行测试并投入生产。
+用例战术手册最初旨在帮助用户克服使用 Real-Time Customer Data Platform 或 Adobe Journey Optimizer 时遇到的挑战。它们不断发展，现在能够快速启动关键营销用例，并提供灵感和预建资产，以便进行测试并投入生产。
 
-用例行动手册已从发现工具过渡到协作框架。 现在，他们可以帮助您在不同的组织间构建、管理和共享您自己的行动手册。
+用例战术手册已经从发现工具转变为协作框架。他们现在可以帮助您在不同的组织之间构建、管理和共享您自己的战术手册。
 
 **更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| [!BADGE Beta]{type=Informative}创作并共享您自己的行动手册 | 新的行动手册创作框架使您能够创建、管理和共享您自己的用例行动手册。 这包括支持捕获关键元数据、编辑历程地图和关联相关技术资产。 您可以跨组织共享行动手册，以标准化营销方法并维护一致性。 |
+| [!BADGE Beta]{type=Informative} 创作并分享您自己的战术手册 | 新的战术手册创作框架使您能够创建、管理和共享您自己的用例战术手册。这包括支持捕获关键元数据、编辑历程图以及关联相关技术资产。您可以在组织之间共享战术手册，以使营销方法标准化并保持一致性。 |
 
 {style="table-layout:auto"}
 
-要了解如何创作和共享您自己的行动手册，请阅读[创作和共享您自己的行动手册](/help/use-case-playbooks/playbooks/author.md)文档。
+要了解如何创作和分享您自己的战术手册，请阅读[创作和分享您自己的战术手册](/help/use-case-playbooks/playbooks/author.md)文档。
 
-有关更多信息，请阅读[用例行动手册概述](/help/use-case-playbooks/playbooks/overview.md)，其中概述了行动手册的功能、用途和端到端演示，包括如何创建实例并将生成的资源导入其他沙盒环境。
+若要了解更多信息，请阅读[用例战术手册概述](/help/use-case-playbooks/playbooks/overview.md)，其中概述了战术手册的功能、用途以及端到端演示，包括如何创建实例以及如何将生成的资产导入其他沙盒环境。
