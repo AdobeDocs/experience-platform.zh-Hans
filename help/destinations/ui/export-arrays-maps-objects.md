@@ -3,9 +3,9 @@ title: 从Real-Time CDP导出数组、映射和对象
 type: Tutorial
 description: 了解如何将阵列、映射和对象从Real-Time CDP导出到云存储目标。
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: f7ff10dd6489842adb8de49b3f8634c20d77cc71
 workflow-type: tm+mt
-source-wordcount: '1096'
+source-wordcount: '1077'
 ht-degree: 13%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 13%
 >
 >将阵列和其他复杂对象导出到云存储目标的功能通常适用于以下目标： [[!DNL Azure Data Lake Storage Gen2]](../../destinations/catalog/cloud-storage/adls-gen2.md)、[[!DNL Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md)、[[!DNL Google Cloud Storage]](../../destinations/catalog/cloud-storage/google-cloud-storage.md)、[[!DNL Amazon S3]](../../destinations/catalog/cloud-storage/amazon-s3.md)、[[!DNL Azure Blob]](../../destinations/catalog/cloud-storage/azure-blob.md)、[[!DNL SFTP]](../../destinations/catalog/cloud-storage/sftp.md)。
 >
->此外，您还可以将映射类型字段导出到以下目标：[Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)、[HTTP API](/help/destinations/catalog/streaming/http-destination.md)、[Azure事件中心](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)、[Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md)。
+>此外，您还可以将映射类型字段导出到以下目标：[Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)、[HTTP API](/help/destinations/catalog/streaming/http-destination.md)、[Azure事件中心](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)。
 
 
 了解如何将阵列、映射和对象从Real-Time CDP导出到[云存储目标](/help/destinations/catalog/cloud-storage/overview.md)。 此外，您还可以将映射类型字段导出到[企业目标](/help/destinations/destination-types.md#advanced-enterprise-destinations)和有限的[边缘个性化目标](/help/destinations/destination-types.md#edge-personalization-destinations)。 阅读本文档以了解导出工作流、通过此功能启用的用例以及已知限制。 请查看下表，以了解每种目标类型可用的功能。
@@ -28,7 +28,7 @@ ht-degree: 13%
 | 现有合作伙伴构建的自定义云存储目标(通过Destination SDK构建的基于文件的自定义目标) | 否 |
 | 企业目标(Amazon Kinesis、Azure事件中心、HTTP API) | 部分。 您可以在激活工作流的映射步骤中选择和导出映射类型对象。 |
 | 流目标(例如：Facebook、Braze、Google Customer Match等) | 否 |
-| Edge个性化目标(Adobe Target) | 部分。 您可以在激活工作流的映射步骤中选择和导出映射类型对象。 |
+| Edge个性化目标 | 否 |
 
 {style="table-layout:auto"}
 
@@ -38,7 +38,7 @@ ht-degree: 13%
 
 在此部分中获取有关功能的最重要信息，并继续在下面转到文档的其他部分以了解详细信息。
 
-* 对于云存储目标，导出阵列、映射和对象的功能取决于您选择的&#x200B;**导出阵列、映射、对象**&#x200B;切换开关。 请在页面[&#128279;](#export-arrays-maps-objects-toggle)上的下方阅读更多相关信息。
+* 对于云存储目标，导出阵列、映射和对象的功能取决于您选择的&#x200B;**导出阵列、映射、对象**&#x200B;切换开关。 请在页面](#export-arrays-maps-objects-toggle)上的下方[阅读更多相关信息。
 * 您可以在`JSON`和`Parquet`文件中将阵列、映射和对象导出到云存储目标。 对于Enterprise和Edge个性化目标，导出的数据类型为`JSON`。 人员和潜在客户受众受支持，而帐户受众不受支持。
 * 对于基于文件的云存储目标，您&#x200B;*可以*&#x200B;将数组、映射和对象导出到CSV文件，但前提是使用`array_to_string`函数使用计算字段功能并将它们串联为字符串。
 
