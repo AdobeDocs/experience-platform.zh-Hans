@@ -170,7 +170,7 @@ ht-degree: 5%
 
 ### Experience Data Model (XDM)架构
 
-任何不是XDM体验事件的架构（如XDM个人资料）将继续遵循您标记为身份](../../xdm/ui/fields/identity.md)的任何[字段。
+任何不是XDM体验事件的架构（如XDM个人资料）将继续遵循您标记为身份[&#128279;](../../xdm/ui/fields/identity.md)的任何字段。
 
 有关XDM架构的更多信息，请阅读[架构概述](../../xdm/home.md)。
 
@@ -212,7 +212,7 @@ ht-degree: 5%
 
 #### 边缘分段
 
-在给定事件中，确保在`identityMap`中包含所有表示人员实体的命名空间，因为作为XDM字段](../../xdm/ui/fields/identity.md)发送的[身份将被忽略，并且不会用于区段成员资格元数据存储。
+在给定事件中，确保在`identityMap`中包含所有表示人员实体的命名空间，因为作为XDM字段[&#128279;](../../xdm/ui/fields/identity.md)发送的身份将被忽略，并且不会用于区段成员资格元数据存储。
 
 * **事件适用性**：此行为仅适用于直接发送到Edge Network的事件(如WebSDK和Mobile SDK)。 从[Experience Platform中心](../../landing/edge-and-hub-comparison.md)摄取的事件，例如通过HTTP API源、其他流源和批处理源摄取的事件，不受此限制的约束。
 * **Edge分段特异性**：此行为特定于边缘分段。 批量分段和流式分段是在中心服务器上进行评估的单独服务，并且不遵循相同的流程。 有关详细信息，请阅读[边缘分段指南](../../segmentation/methods/edge-segmentation.md)。
@@ -224,4 +224,4 @@ ht-degree: 5%
 
 * Edge Network上的应用程序(如Adobe Target、Offer Decisioning和自定义Personalization目标)将继续依赖事件中的主要身份来从Edge配置文件访问配置文件。
 * 有关Experience Platform行为的详细信息，请阅读[Edge Network Web SDK和Edge Network架构图](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/deployment/websdk#experience-platform-webmobile-sdk-or-edge-network-server-api-deployment)。
-* 有关如何在Web SDK](../../web-sdk/identity/overview.md)上配置主身份的详细信息，请阅读有关[数据元素类型](../../tags/extensions/client/web-sdk/data-element-types.md)和[Web SDK中的身份数据的文档。
+* 有关如何在Web SDK[&#128279;](../../web-sdk/identity/overview.md)上配置主身份的详细信息，请阅读有关[数据元素类型](../../tags/extensions/client/web-sdk/data-element-types.md)和Web SDK中的身份数据的文档。
