@@ -3,16 +3,16 @@ title: MySQL Source Connector概述
 description: 了解如何使用API或用户界面将MySQL连接到Adobe Experience Platform。
 last-substantial-update: 2025-05-17T00:00:00Z
 exl-id: a18e8e69-880f-4bee-b339-726091d6f858
-source-git-commit: 7a5dae76c5b58b302b4f3295efc17f40dbb9b18b
+source-git-commit: f758479c37b72752bbb8a371de88bf653b2e6030
 workflow-type: tm+mt
-source-wordcount: '485'
+source-wordcount: '714'
 ht-degree: 0%
 
 ---
 
 # [!DNL MySQL]
 
-[!DNL MySQL]是用于存储和管理结构化数据的开源关系数据库管理系统。 它将数据组织成表，并使用SQL（结构化查询语言）来查询和更新信息。 [!DNL MySQL]广泛用于Web应用程序，支持多种平台，以其速度、可靠性和易用性而闻名。 它非常适合于从小型网站到大型企业系统的各种情况。
+[!DNL MySQL]是用于存储和管理结构化数据的开源关系数据库管理系统。 它将数据组织成表，并使用SQL（结构化查询语言）来查询和更新信息。 [!DNL MySQL]广泛用于Web应用程序，支持多种平台，以其速度、可靠性和易用性而闻名。
 
 您可以使用[!DNL MySQL]源连接帐户并将数据从[!DNL MySQL]数据库摄取到Adobe Experience Platform。
 
@@ -39,7 +39,7 @@ ht-degree: 0%
 | `connectionString` | 与您的帐户关联的[!DNL MySQL]连接字符串。 [!DNL MySQL]连接字符串模式为： `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`。 |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL MySQL]的连接规范ID为`26d738e0-8963-47ea-aadf-c60de735468a`。 |
 
-有关详细信息，请阅读有关连接字符串[&#128279;](https://dev.mysql.com/doc/connector-net/en/connector-net-connections-string.html)的[!DNL MySQL] 文档。
+有关详细信息，请阅读有关连接字符串](https://dev.mysql.com/doc/connector-net/en/connector-net-connections-string.html)的[[!DNL MySQL] 文档。
 
 >[!TAB 基本身份验证]
 
@@ -48,12 +48,29 @@ ht-degree: 0%
 | 凭据 | 描述 |
 | --- | --- |
 | `server` | [!DNL MySQL]数据库的名称或IP地址。 |
-| `database` | 要连接的[!DNL MySQL]数据库的名称。 |
 | `username` | 与您的[!DNL MySQL]数据库身份验证关联的用户名。 |
 | `password` | 与您的[!DNL MySQL]数据库身份验证关联的密码。 |
+| `database` | 要连接的[!DNL MySQL]数据库的名称。 |
 | `sslMode` | 要应用于您的连接的[!DNL Secure Sockets Layer] (SSL)方法。 可用的值包括： <ul><li>`DISABLED`：使用此选项禁用SSL。 如果您的服务器需要SSL配置，则连接将失败</li><li>`PREFERRED`：使用此选项可优先使用SSL连接，因为服务器支持它们。 此选项还允许非SSL连接。</li><li>`REQUIRED`：使用此选项将SSL连接设为必需。 如果服务器不支持SSL，则连接将失败。</li><li>`Verify-Ca`：如果服务器不支持SSL，则使用此选项在连接失败时验证服务器证书。</li><li>`Verify Identity`：如果服务器不支持SSL，则在连接失败时，使用此选项验证具有主机名的服务器证书。</li></ul> |
 
 >[!ENDTABS]
+
+### 在Amazon Web Services (AWS)上对Experience Platform进行身份验证 {#aws}
+
+>[!AVAILABILITY]
+>
+>本节适用于在Amazon Web Services (AWS)上运行的Experience Platform的实施。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](../../../landing/multi-cloud.md)。
+
+必须提供以下凭据的值，才能将[!DNL MySQL]连接到AWS上的Experience Platform。
+
+| 凭据 | 描述 |
+| --- | --- |
+| `server` | [!DNL MySQL]数据库的名称或IP。 |
+| `username` | 数据库的名称。 |
+| `password` | 与数据库对应的用户名。 |
+| `database` | 与数据库对应的密码。 |
+| `sslMode` | 要应用于您的连接的[!DNL Secure Sockets Layer] (SSL)方法。 可用的值包括： <ul><li>`DISABLED`：使用此选项禁用SSL。 如果您的服务器需要SSL配置，则连接将失败</li><li>`PREFERRED`：使用此选项可优先使用SSL连接，因为服务器支持它们。 此选项还允许非SSL连接。</li><li>`REQUIRED`：使用此选项将SSL连接设为必需。 如果服务器不支持SSL，则连接将失败。</li><li>`Verify-Ca`：如果服务器不支持SSL，则使用此选项在连接失败时验证服务器证书。</li><li>`Verify Identity`：如果服务器不支持SSL，则在连接失败时，使用此选项验证具有主机名的服务器证书。</li></ul> |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL MySQL]的连接规范ID为`26d738e0-8963-47ea-aadf-c60de735468a`。 **注意**：只有在通过[!DNL Flow Service] API连接时才需要此凭据。 |
 
 ## 使用API将[!DNL MySQL]连接到Experience Platform
 
