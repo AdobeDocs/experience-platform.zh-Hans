@@ -45,7 +45,7 @@ ht-degree: 6%
 >[!CONTEXTUALHELP]
 >id="platform_sources_campaign_mapping"
 >title="目标映射"
->abstract="目标映射是 Campaign 用于传递消息的技术对象，并包含发送投放内容所需的所有技术设置（地址、电话号码、选择加入指示器、附加标识符...）。"
+>abstract="目标映射是 Campaign 用于传递消息的技术对象，并包含发送投放内容所需的所有技术设置（地址、电话号码、选择启用指示器、附加标识符...）。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]

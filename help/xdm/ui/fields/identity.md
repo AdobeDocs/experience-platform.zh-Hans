@@ -28,7 +28,7 @@ ht-degree: 6%
 >[!CONTEXTUALHELP]
 >id="platform_schemas_identityField_primaryIdentityRestriction"
 >title="对主要身份标识的限制"
->abstract="此标识使用旨在用于特定源连接的字段组。该连接要求将 identityMap 用作主要标识并已自动设置。"
+>abstract="此架构使用旨在用于特定源连接的字段组。该连接要求将 identityMap 用作主要标识并已自动设置。"
 
 在UI中[定义新字段](./overview.md#define)时，您可以通过选中右边栏中的&#x200B;**[!UICONTROL 标识]**&#x200B;复选框将其设置为标识字段。
 

@@ -15,7 +15,7 @@ ht-degree: 11%
 >[!CONTEXTUALHELP]
 >id="platform_permissions_users_about"
 >title="什么是用户？"
->abstract="用户是有权访问体验平台的个人。个人用户对组织资源的访问权限通过角色进行管理。"
+>abstract="用户是有权访问 Experience Platform 的个人。个人用户对组织资源的访问权限通过角色进行管理。"
 >additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/abac/permissions-ui/roles" text="管理角色"
 
 如果要查看用户详细信息和分配给这些用户的角色，请选择&#x200B;**[!UICONTROL 用户]**&#x200B;选项卡。
@@ -42,7 +42,7 @@ ht-degree: 11%
 
 以下视频旨在支持您了解开发人员凭据和API凭据。
 
->[!VIDEO](https://video.tv.adobe.com/v/3446408/?learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/3426407/?learn=on)
 
 ## 后续步骤
 

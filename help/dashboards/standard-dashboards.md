@@ -41,18 +41,18 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 新创建的空白仪表板会在视图的左上角显示您选择的名称。
 
-## 创建小组件 {#create-widget}
+## 创建构件 {#create-widget}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_udd_maxwidgets"
->title="最大小组件数"
->abstract="仪表板服务最多支持十个小组件。将 10 个小组件添加到仪表板后，[!UICONTROL 添加新小组件]选项将被禁用并显示为灰色。"
+>title="最大构件数"
+>abstract="仪表板服务最多支持十个构件。将 10 个构件添加到仪表板后，[!UICONTROL 添加新构件]选项将被禁用并显示为灰色。"
 
 从新仪表板视图中，选择&#x200B;**[!UICONTROL 添加新构件]**&#x200B;以开始构件创建过程。
 
 >[!IMPORTANT]
 >
->每个仪表板最多支持10个小组件。 将 10 个小组件添加到仪表板后，[!UICONTROL 添加新小组件]选项将被禁用并显示为灰色。
+>每个仪表板最多支持10个小组件。 将 10 个构件添加到仪表板后，[!UICONTROL 添加新构件]选项将被禁用并显示为灰色。
 
 ![突出显示带有添加新小部件的新空仪表板。](./images/standard-dashboards/add-new-widget.png)
 
@@ -172,7 +172,7 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 >[!NOTE]
 >
->利用复制功能，您可以自定义洞察的属性以创建唯一的构件，而无需从头开始。 如果复制构件，该构件会显示在您的自定义仪表板中。 然后，可选择新小部件的省略号，随后可选择&#x200B;**[!UICONTROL 编辑]**&#x200B;以自定义您的见解。
+>利用复制功能，您可以自定义洞察的属性以创建唯一的构件，而无需从头开始。 如果复制构件，该构件会显示在您的自定义仪表板中。 然后，您可以选择新小部件的省略号，并依次选择&#x200B;**[!UICONTROL 编辑]**&#x200B;以自定义您的insight。
 
 ## 后续步骤和其他资源
 
@@ -182,4 +182,4 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 要加深您对Experience Platform中的功能板的了解，请观看以下视频：
 
->[!VIDEO](https://video.tv.adobe.com/v/3413779?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/3409637?quality=12&learn=on)

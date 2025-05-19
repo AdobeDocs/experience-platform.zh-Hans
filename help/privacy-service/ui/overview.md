@@ -16,7 +16,7 @@ ht-degree: 20%
 >[!CONTEXTUALHELP]
 >id="platform_privacy_privacyconsole_requests"
 >title="数据主体请求"
->abstract="此小组件显示 Privacy Service 在给定日期处理的已提交和已完成数据主体请求的数目。有关 Privacy Service 流程的更多信息，请在左侧导航中选择&#x200B;**请求**。"
+>abstract="此构件显示 Privacy Service 在给定日期处理的已提交和已完成数据主体请求的数目。有关 Privacy Service 流程的更多信息，请在左侧导航中选择&#x200B;**请求**。"
 
 Privacy Service UI允许您协调各种Adobe Experience Cloud应用程序中的隐私和合规请求。
 

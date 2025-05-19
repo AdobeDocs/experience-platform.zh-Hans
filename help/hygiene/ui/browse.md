@@ -65,17 +65,17 @@ ht-degree: 27%
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_statusbyservice"
 >title="按服务显示的状态"
->abstract="由多个 Experience Platform 服务独立处理数据生命周期请求。此部分概述对于每个相应服务的请求的当前处理状态。要了解详情，请参阅《数据生命周期 UI 指南》。"
+>abstract="由多个 Experience Platform 服务独立处理数据生命周期请求。此部分概述对于每个相应服务的请求的当前处理状态。要了解详情，请参阅数据生命周期 UI 指南。"
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_numberofidentities"
 >title="身份标识数"
->abstract="其记录在此工单中被请求更新或删除的身份标识的数量。计数中包含的身份标识不一定存在于受影响的数据集中。要了解详情，请参阅《数据生命周期 UI 指南》。"
+>abstract="其记录在此工单中被请求更新或删除的身份标识的数量。计数中包含的身份标识不一定存在于受影响的数据集中。要了解详情，请参阅数据生命周期 UI 指南。"
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_responsemessages"
 >title="记录删除响应"
->abstract="当记录删除过程收到来自系统的响应时，这些消息将显示在&#x200B;**[!UICONTROL 结果]**&#x200B;部分下。如果在处理工单时出现问题，任何相关的错误消息都会显示在此部分中，帮助您解决问题。要了解详情，请参阅《数据生命周期 UI 指南》。"
+>abstract="当记录删除过程收到来自系统的响应时，这些消息将显示在&#x200B;**[!UICONTROL 结果]**&#x200B;部分下。如果在处理工单时出现问题，任何相关的错误消息都会显示在此部分中，帮助您解决问题。要了解详情，请参阅数据生命周期 UI 指南。"
 
 选择已列出工作单的ID以查看其详细信息。
 

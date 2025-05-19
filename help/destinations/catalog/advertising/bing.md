@@ -5,7 +5,7 @@ description: 通过Microsoft Bing连接目标，您可以在整个Microsoft Adve
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '688'
+source-wordcount: '686'
 ht-degree: 10%
 
 ---
@@ -62,7 +62,7 @@ ht-degree: 10%
 
 >[!IMPORTANT]
 >
->如果您希望使用[!DNL Microsoft Bing]创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html?lang=zh-Hans)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL Microsoft Bing]集成，则您设置的ID同步将会转移到Experience Platform。
+>如果您希望使用[!DNL Microsoft Bing]创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL Microsoft Bing]集成，则您设置的ID同步将会转移到Experience Platform。
 
 配置目标时，必须提供以下信息：
 
@@ -95,7 +95,7 @@ ht-degree: 10%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_bing_mapping_id"
 >title="映射 ID"
->abstract="输入要将所选区段映射到的数字 Bing 受众 ID。如果提供的[!UICONTROL 映射 ID] 未与 Bing 目标中的受众 ID 相对应，您将不会在 Bing 帐户中看到预期受众数据。"
+>abstract="输入要将所选区段映射到的数值 Bing 受众 ID。如果提供的[!UICONTROL 映射 ID] 未与 Bing 目标中的受众 ID 相对应，您将不会在 Bing 帐户中看到预期受众数据。"
 
 >[!IMPORTANT]
 > 

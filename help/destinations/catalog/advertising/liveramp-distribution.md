@@ -101,7 +101,7 @@ ht-degree: 37%
 
 ## 目标特定的设置 {#destination-settings}
 
-[!DNL LiveRamp - Distribution]支持的每个目标[&#128279;](#supported-destinations)都需要您填写特定的配置选项。
+[!DNL LiveRamp - Distribution]支持的每个目标[](#supported-destinations)都需要您填写特定的配置选项。
 
 有关如何配置每个目标的详细指导，请参阅以下部分。
 
@@ -110,7 +110,7 @@ ht-degree: 37%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_4cinsights_profile_id"
 >title="4C 品牌轮廓 ID"
->abstract="输入与您的 4C 品牌轮廓关联的数字 ID。如果您没有此 ID，请联系您的 4C 客户服务代表。"
+>abstract="输入与您的 4C 品牌轮廓关联的数值 ID。如果您没有此 ID，请联系您的 4C 客户服务代表。"
 
 要配置目标的详细信息，请填写以下字段。
 
@@ -241,18 +241,18 @@ ht-degree: 37%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_magnitedv+_partnerid"
 >title="合作伙伴 ID"
->abstract="与拥有区段/数据的发布者关联的 Rubicon Project 合作伙伴 ID。如果不确定您应使用的值，请联系您的 Rubicon Project 客户代表。"
+>abstract="与拥有区段/数据的发布者关联的 Rubicon Project 合作伙伴 ID。如果不确定您应使用的值，请联系您的 Rubicon Project 帐户代表。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_magnitedv+_seatid"
 >title="座位 ID"
->abstract="由您的 Magnite 客户经理提供的 Magnite DV+ 座位 ID"
+>abstract="由您的 Magnite 帐户经理提供的 Magnite DV+ 座位 ID"
 
 要配置目标的详细信息，请填写以下字段。
 
 ![Experience Platform UI图像显示Magnite DV+目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_MagniteDV_DestSpecific.png)
 
-* **[!UICONTROL 合作伙伴ID]**：与拥有区段/数据的发布者关联的Rubicon项目合作伙伴ID。 如果不确定您应使用的值，请联系您的 Rubicon Project 客户代表。
+* **[!UICONTROL 合作伙伴ID]**：与拥有区段/数据的发布者关联的Rubicon项目合作伙伴ID。 如果不确定您应使用的值，请联系您的 Rubicon Project 帐户代表。
 * **[!UICONTROL 座位ID]**：您的Magnite客户经理提供的Magnite DV+座位ID
 
 ### [!DNL Nexxen (formerly known as [!DNL Amobee])] {#nexxen}
@@ -265,12 +265,12 @@ ht-degree: 37%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_nexxen_marketid"
 >title="市场 ID"
->abstract="输入应在其中创建 Nexxen 数据合同的数字市场 ID。如果您在 Nexxen 平台中跨每个市场进行“AlwaysOn”联合，请输入 -1。"
+>abstract="输入应在其中创建 Nexxen 数据合同的数值市场 ID。如果您在 Nexxen Platform 中跨每个市场进行“AlwaysOn”联合，请输入 -1。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_nexxen_advertiserid"
 >title="广告商 ID"
->abstract="如果要在 Nexxen 平台中将数据发送到单个广告商，请输入数字 Amobee 广告商 ID。如果要将数据提供给市场中的所有广告商，或者如果这些区段为“AlwaysOn”，请输入 -1。"
+>abstract="如果要在 Nexxen Platform 中将数据发送到单个广告商，请输入数值 Amobee 广告商 ID。如果要将数据提供给市场中的所有广告商，或者如果这些区段为“AlwaysOn”，请输入 -1。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_nexxen_contactemail"
@@ -282,7 +282,7 @@ ht-degree: 37%
 ![Experience Platform UI图像显示Nexen目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Nexxen_DestSpecific.png)
 
 * **[!UICONTROL 费率类型]**：费率类型表示数据使用应计费的方式。 所有 0.00 美元的费率应为固定费率。如果您不确定要使用哪种费率类型，请与您的 Nexxen 代表进行确认。
-* **[!UICONTROL 市场ID]**：输入应在其中创建Nexen数据合同的数字市场ID。 如果您在 Nexxen 平台中跨每个市场进行“AlwaysOn”联合，请输入 -1。
+* **[!UICONTROL 市场ID]**：输入应在其中创建Nexen数据合同的数字市场ID。 如果您在 Nexxen Platform 中跨每个市场进行“AlwaysOn”联合，请输入 -1。
 * **[!UICONTROL 广告商ID]**：如果您要向Nexen平台中的单个广告商发送数据，请输入数字Nexen广告商ID。 如果要使数据可用于市场中的所有广告商，或者如果这些区段为“AlwaysOn”，请输入–1。
 * **[!UICONTROL 联系人电子邮件]**：输入Nexen用于发送数据合同详细信息的电子邮件地址。 这很可能是您自己的电子邮件地址，但也可以是电子邮件别名。对于多个收件人，请使用逗号(`email1@domain.com`， `email2@domain.com`)分隔。
 
@@ -291,13 +291,13 @@ ht-degree: 37%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_fox_client"
 >title="客户"
->abstract="您希望向合作伙伴显示的公司/分发帐户的名称。如果不确定要使用哪个名称，请联系您的合作伙伴客户代表。请勿使用空格或特殊字符。"
+>abstract="您希望向合作伙伴显示的公司/分发帐户的名称。如果不确定要使用哪个名称，请联系您的合作伙伴帐户代表。请勿使用空格或特殊字符。"
 
 要配置目标的详细信息，请填写以下字段。
 
 ![Experience Platform UI图像显示One Fox目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Fox_DestSpecific.png)
 
-* **[!UICONTROL 客户端]**：您希望向合作伙伴显示的公司/分发帐户的名称。 默认使用您的公司名称。 如果不确定要使用哪个名称，请联系您的合作伙伴客户代表。请勿使用空格或特殊字符。
+* **[!UICONTROL 客户端]**：您希望向合作伙伴显示的公司/分发帐户的名称。 默认使用您的公司名称。 如果不确定要使用哪个名称，请联系您的合作伙伴帐户代表。请勿使用空格或特殊字符。
 
 ### [!DNL Pandora] {#pandora}
 
@@ -340,8 +340,8 @@ ht-degree: 37%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_roku_representative_email"
->title="Roku 客户代表电子邮件地址"
->abstract="输入您的 Roku 客户代表的电子邮件地址。该地址用于发送分类更新。要输入多个地址，请用逗号分隔它们。"
+>title="Roku 帐户代表电子邮件地址"
+>abstract="输入您的 Roku 帐户代表的电子邮件地址。该地址用于发送分类更新。要输入多个地址，请用逗号分隔它们。"
 
 要配置目标的详细信息，请填写以下字段。
 
@@ -367,8 +367,8 @@ ht-degree: 37%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_taboola_rep_email"
->title="客户经理电子邮件地址"
->abstract="您的 Taboola 客户经理的电子邮件地址。"
+>title="帐户经理电子邮件地址"
+>abstract="您的 Taboola 帐户经理的电子邮件地址。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_taboola_seg_type"

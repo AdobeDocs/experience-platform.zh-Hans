@@ -20,7 +20,7 @@ ht-degree: 2%
 >[!CONTEXTUALHELP]
 >id="platform_playbooks_list"
 >title="可用的战术手册"
->abstract="实时客户数据平台和 Adobe Journey Optimizer 中所有战术手册的列表。"
+>abstract="Real-time Customer Data Platform 和 Adobe Journey Optimizer 中所有战术手册的列表。"
 
 | 剧本名称 | 描述 |
 | ------------- |  ----------- |

@@ -7,7 +7,7 @@ exl-id: e8d31718-0b50-44b5-a15b-17668a063a9c
 source-git-commit: 8734b85914d965eebc2f8ccd8c09dd1ffede8cf9
 workflow-type: tm+mt
 source-wordcount: '1264'
-ht-degree: 4%
+ht-degree: 7%
 
 ---
 
@@ -15,18 +15,18 @@ ht-degree: 4%
 
 在Adobe Experience Platform中，您可以为假名配置文件配置数据过期时间，从而允许您自动从配置文件存储中删除对您的用例不再有效或有用的数据。
 
-## 假名个人资料 {#pseudonymous-profile}
+## 假名轮廓 {#pseudonymous-profile}
 
 >[!CONTEXTUALHELP]
 >id="platform_profile_pseudonymousprofile"
->title="什么是假名个人资料？"
->abstract="假名个人资料是一份具有假名或未知身份标识命名空间的个人资料，或一份在给定时间内没有发生任何活动的个人资料。"
+>title="什么是假名轮廓？"
+>abstract="假名轮廓是一份具有假名或未知身份标识命名空间的轮廓，或一份在给定时间内没有发生任何活动的轮廓。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_profile_pseudonymousprofile_dataexpiration"
->title="假名个人资料数据有效期限"
->abstract="匿名配置文件数据过期时间表示匿名配置文件在删除前将保留在Adobe Experience Platform中的天数。 此值必须设置为至少1。 请注意，删除假名配置文件可能最多需要3天。"
+>title="假名轮廓数据有效期限"
+>abstract="假名轮廓数据有效期限是指假名轮廓在被删除之前在 Adobe Experience Platform 中保留的天数。该值必须至少设置为 1。请注意，删除假名轮廓可能最多需要三天的时间。"
 
 如果配置文件满足以下条件，则将其视为假名数据过期：
 

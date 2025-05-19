@@ -134,13 +134,13 @@ ht-degree: 10%
 >
 >**[!UICONTROL 受众]**&#x200B;选项卡中接收的&#x200B;**[!UICONTROL 配置文件数]**&#x200B;与数据流运行中接收的配置文件数可能并不总是匹配。 这是因为给定配置文件可能包含在数据流运行中激活的多个受众。
 
-### 批处理目标的数据流运行 {#dataflow-runs-for-batch-destinations}
+### 批次目标的数据流运行 {#dataflow-runs-for-batch-destinations}
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_activation"
 >title="数据流运行详细信息"
 >abstract="目标数据流运行详细信息包含有关受众激活状态的信息，以及从实时客户轮廓中获取的量度，以生成唯一身份标识。若要了解更多信息，请查看量度定义指南。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html?lang=zh-Hans#dataflow-runs-for-streaming-destinations" text="流式处理目标的数据流运行"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html#dataflow-runs-for-streaming-destinations" text="流式处理目标的数据流运行"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_batch"

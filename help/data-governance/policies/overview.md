@@ -16,7 +16,7 @@ ht-degree: 17%
 >[!CONTEXTUALHELP]
 >id="platform_governance_policies_restrictusage"
 >title="限制数据使用"
->abstract="数据使用策略类型将评估应用于数据治理标签的具体营销行为，以便限制用于营销活动的数据使用。"
+>abstract="数据使用策略类型将评估应用于数据治理标签的具体营销行为，以便限制用于营销操作的数据使用。"
 
 为了使数据使用标签有效地支持数据合规性，必须实施数据使用策略。 数据使用策略是描述允许或限制您对[!DNL Experience Platform]内的数据执行的营销操作类型的规则。
 
@@ -57,7 +57,7 @@ ht-degree: 17%
 
 Experience Platform has the ability to share audiences with Adobe Audience Manager. Any Data Export Controls that have been applied to Audience Manager audiences are translated to equivalent marketing use cases recognized by Experience Platform Data Governance.
 
-For a reference on how specific Data Export Controls map to marketing actions in Experience Platform, please refer to the [Audience Manager documentation](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-export-controls.html?lang=zh-Hans).
+For a reference on how specific Data Export Controls map to marketing actions in Experience Platform, please refer to the [Audience Manager documentation](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-export-controls.html).
 -->
 
 ## 管理数据使用策略 {#manage}

@@ -12,7 +12,7 @@ ht-degree: 4%
 
 ---
 
-# 在 Data Science Workspace UI 中将模型发布为服务 {#publish-a-model-as-a-service}
+# 在数据科学 Workspace UI 中将模型发布为服务 {#publish-a-model-as-a-service}
 
 >[!NOTE]
 >

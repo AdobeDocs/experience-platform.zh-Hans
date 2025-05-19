@@ -68,12 +68,12 @@ ht-degree: 8%
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_primaryidentity"
 >title="身份标识命名空间"
->abstract="身份标识命名空间是一个用于将记录与 Experience Platform 中的消费者轮廓相关联的属性。数据集的身份标识命名空间字段由数据集所基于的架构定义。在此列中，您必须为记录的身份标识命名空间提供类型（或命名空间），例如 `email`（对于电子邮件地址）和 `ecid`（对于 Experience Cloud ID）。要了解详情，请参阅《数据生命周期 UI 指南》。"
+>abstract="身份标识命名空间是一个用于将记录与 Experience Platform 中的消费者轮廓相关联的属性。数据集的身份标识命名空间字段由数据集所基于的架构定义。在此列中，您必须为记录的身份标识命名空间提供类型（或命名空间），例如 `email`（对于电子邮件地址）和 `ecid`（对于 Experience Cloud ID）。要了解详情，请参阅数据生命周期 UI 指南。"
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_identityvalue"
 >title="主要身份标识值"
->abstract="在此列中，您必须提供记录的身份标识命名空间的值，该值必须与左列中提供的身份标识类型相对应。如果身份标识命名空间类型是 `email`，则值应是记录的电子邮件地址。要了解详情，请参阅《数据生命周期 UI 指南》。"
+>abstract="在此列中，您必须提供记录的身份标识命名空间的值，该值必须与左列中提供的身份标识类型相对应。如果身份标识命名空间类型是 `email`，则值应是记录的电子邮件地址。要了解详情，请参阅数据生命周期 UI 指南。"
 
 删除记录时，必须提供身份信息，以便系统能够确定要删除的记录。 对于Experience Platform中的任何数据集，会根据由该数据集的架构定义的&#x200B;**身份命名空间**&#x200B;字段删除记录。
 
@@ -154,7 +154,7 @@ JSON文件必须格式化为一组对象，每个对象表示一个标识。
 >
 >有关执行记录删除后如何处理这些删除的详细信息，请参阅[时间线和透明度](../home.md#record-delete-transparency)的概述部分。
 
-![数据生命周期]工作区的[!UICONTROL 记录]选项卡，其中新请求突出显示。(../images/ui/record-delete/request-log.png)
+![数据生命周期]工作区的[!UICONTROL 记录]选项卡，其中新请求突出显示。](../images/ui/record-delete/request-log.png)[!UICONTROL 
 
 ## 后续步骤
 

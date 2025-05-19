@@ -42,7 +42,7 @@ ht-degree: 9%
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_summarydata"
 >title="摘要数据"
->abstract="摘要数据只出现在个人资料属性中，<b>不</b> 出现在事件或受众属性中。<br/><br/>在以下情况下，可能不会出现个人资料属性的摘要数据： <ol><li>部分属性值的长度超过 100 个字符。</li><li>该属性的唯一值超过 3000 个。</li></ol>"
+>abstract="摘要数据只出现在轮廓属性中，<b>不</b> 出现在事件或受众属性中。<br/><br/>在以下情况下，可能不会出现轮廓属性的摘要数据： <ol><li>部分属性值的长度超过 100 个字符。</li><li>该属性的唯一值超过 3000 个。</li></ol>"
 
 >[!NOTE]
 >
@@ -380,7 +380,7 @@ ht-degree: 9%
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="刷新估计值"
 >abstract="您可以刷新区段定义的估计值，以立即预览符合建议的区段定义资格的轮廓数目。受众估计值是通过使用当天的示例数据的示例大小生成的。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=zh-Hans#estimate-and-preview-an-audience" text="估计和预览受众"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="估计和预览受众"
 
 在构建区段定义时，工作区右侧的&#x200B;**[!UICONTROL 受众属性]**&#x200B;部分会显示所生成区段定义的大小估计值，这样您可以在构建受众本身之前根据需要调整区段定义。
 

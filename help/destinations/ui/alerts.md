@@ -31,7 +31,7 @@ ht-degree: 8%
 >[!CONTEXTUALHELP]
 >id="platform_destination_alerts_subscribe"
 >title="订阅目标提醒"
->abstract="提醒可让您接收基于目标数据流状态的通知。您可以设置提醒，以便在数据流已启动、成功、失败或未向目标发送任何数据时获得更新。"
+>abstract="提醒可让您接收基于目标数据流状态的通知。您可以设置通知，以便在数据流已启动、成功、失败或未向目标发送任何数据时获得更新。"
 >text="Learn more in documentation"
 
 >[!IMPORTANT]

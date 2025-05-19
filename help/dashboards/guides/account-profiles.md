@@ -63,12 +63,12 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 
 显示在[!UICONTROL 详细信息]选项卡上的帐户配置文件信息已从多个配置文件片段合并在一起，以形成单个帐户的单个视图。 请参阅有关[在Adobe Real-Time Customer Data Platform中浏览帐户配置文件的文档](../../rtcdp/accounts/account-profile-ui-guide.md#browse-account-profiles)，了解更多有关Experience Platform UI中查看帐户配置文件的功能。
 
-## 标准小组件 {#standard-widgets}
+## 标准构件 {#standard-widgets}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_accountprofiles_customersperaccountoverview"
 >title="客户每帐户概述"
->abstract="该钻透小组件可让您洞察 B2B 数据的结构。它可以帮助您确定有多少帐户轮廓没有链接客户轮廓，或者有一个或多个客户轮廓与之相关联。<ul><li>直接客户：是指通过 `personComponents` 路线直接链接到帐户的客户轮廓。</li><li>间接客户：是指通过 `Account-Person` 路线链接到帐户的客户轮廓。</li></ul>"
+>abstract="该钻透构件可让您洞察 B2B 数据的结构。它可以帮助您确定有多少帐户轮廓没有链接客户轮廓，或者有一个或多个客户轮廓与之相关联。<ul><li>直接客户：是指通过 `personComponents` 路线直接链接到帐户的客户轮廓。</li><li>间接客户：是指通过 `Account-Person` 路线链接到帐户的客户轮廓。</li></ul>"
 
 Adobe提供了可用于可视化与帐户配置文件相关的各种量度的标准构件。
 
@@ -103,7 +103,7 @@ Adobe提供了可用于可视化与帐户配置文件相关的各种量度的标
 
 >[!NOTE]
 >
->[!UICONTROL 每个帐户的客户概述]分析及其穿透钻取图表（[!UICONTROL 每个帐户的客户详细信息]，[!UICONTROL 每个帐户的机会概述]，[!UICONTROL 每个帐户的机会详细信息]）不受您可能设置的任何全局日期过滤器的影响。
+>[!UICONTROL 每个帐户的客户概述] insight及其穿透钻取图表（[!UICONTROL 每个帐户的客户详细信息]，[!UICONTROL 每个帐户的机会概述]，[!UICONTROL 每个帐户的机会详细信息]）不受您可能设置的任何全局日期过滤器的影响。
 
 [!UICONTROL 每个帐户的客户概述]图表提供了基于客户类型的帐户摘要。 它显示一个四行表，将帐户分类为具有直接或间接客户或不具有直接或间接客户的帐户。 它提供每个类别的帐户总数。 该图表有助于识别具有直接客户与间接客户的客户分布。
 
@@ -151,7 +151,7 @@ Adobe提供了可用于可视化与帐户配置文件相关的各种量度的标
 
 ### 按行业划分的新客户 {#accounts-by-industry}
 
-按行业列出的新帐户小组件在圆环图中显示单个量度中的帐户总数。 圆环图说明了构成这一总额的不同行业的相对构成。 颜色编码的密钥提供所有包含行业的细目。 当光标悬停在圆环图的相应部分上时，会在对话框中显示每个行业的各个计数。
+按行业]列出的[!UICONTROL 新帐户小组件在圆环图中显示单个量度中的帐户总数。 圆环图说明了构成这一总额的不同行业的相对构成。 颜色编码的密钥提供所有包含行业的细目。 当光标悬停在圆环图的相应部分上时，会在对话框中显示每个行业的各个计数。
 
 ![按行业分类的新帐户。](../images/account-profiles/new-accounts-by-industry.png)
 
@@ -167,19 +167,19 @@ Adobe提供了可用于可视化与帐户配置文件相关的各种量度的标
 
 >[!NOTE]
 >
->架构中未使用“Opportunity-Person”桥表时，导致出现[!UICONTROL 未找到数据]或[!UICONTROL 无法加载]错误。 如果您的分析显示其中一个错误，请检查您的合并架构并确保“Opportunity-Person”字段组正在摄取数据。
+>架构中未使用“Opportunity-Person”桥表时，导致出现[!UICONTROL 未找到数据]或[!UICONTROL 无法加载]错误。 如果您的insight显示其中一个错误，请检查您的合并架构并确保“Opportunity-Person”字段组正在摄取数据。
 
 ![按人员列出的新机会角色小组件。](../images/account-profiles/new-opportunities-by-person-role.png)
 
 ### 按收入显示的新机会 {#opportunities-by-revenue}
 
-按收入列出的新商机构件使用条形图来说明商机产生的预计收入总额。 该构件最多支持六个机会。
+按收入]列出的[!UICONTROL 新商机构件使用条形图来说明商机产生的预计收入总额。 该构件最多支持六个机会。
 
 要查看包含opportunity的特定收入总计的对话框，请使用光标悬停在各个栏上。
 
 ![按收入显示的新机会Widget.](../images/account-profiles/new-opportunities-by-revenue.png)
 
-### 按状态和阶段显示的新机会{#opportunities-by-status-&-stage}
+### 按状态和阶段显示的新机会 {#opportunities-by-status-&-stage}
 
 此构件使用条形图来说明在营销/销售漏斗的所有阶段打开或关闭的机会数量。 构件使用颜色来区分机会的阶段。 颜色编码的键表示机会的可用阶段。
 
@@ -233,7 +233,7 @@ Adobe提供了可用于可视化与帐户配置文件相关的各种量度的标
 
 如果小组件显示&#x200B;*[!UICONTROL 无法加载。 请重试。]*&#x200B;这是因为B2B实体没有可用的数据。 例如，显示在[!UICONTROL 新机会（按人员角色）]下面的小组件显示消息“[!UICONTROL 无法加载”。 请重试。“]”，因为此沙盒没有可用的机会数据。
 
-![无法加载分析错误。](../images/account-profiles/unable-to-load.png)
+![无法加载insight错误。](../images/account-profiles/unable-to-load.png)
 
 要解决此问题，必须将B2B实体数据（如&#x200B;*机会人员*&#x200B;数据）摄取到沙盒中。 48小时后，数据反映在小组件中。
 

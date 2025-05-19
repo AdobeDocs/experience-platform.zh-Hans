@@ -17,7 +17,7 @@ ht-degree: 10%
 
 请阅读本文档，了解如何使用监视仪表板在Experience Platform UI中监视数据湖摄取。
 
-## 快速入门 {#get-started}
+## 开始使用 {#get-started}
 
 本教程需要对以下Adobe Experience Platform组件有一定的了解：
 
@@ -28,7 +28,7 @@ ht-degree: 10%
 * [实时客户个人资料](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时客户个人资料。
 * [沙盒](../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-## 使用监视仪表板进行数据湖摄取
+## 使用监控仪表板进行数据湖摄取
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_source_ingestion"

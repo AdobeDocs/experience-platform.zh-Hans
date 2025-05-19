@@ -16,17 +16,17 @@ ht-degree: 32%
 >[!CONTEXTUALHELP]
 >id="platform_audits_privacyconsole_actions"
 >title="热门操作"
->abstract="此小组件显示在选定时间范围内在 Experience Platform 中执行的最常见操作类型。要查看 Experience Platform 中记录的操作的完整列表，请选择左侧导航中的&#x200B;**审计**。"
+>abstract="此构件显示在选定时间范围内在 Experience Platform 中执行的最常见操作类型。要查看 Experience Platform 中记录的操作的完整列表，请选择左侧导航中的&#x200B;**审计**。"
 
 >[!CONTEXTUALHELP]
 >id="platform_audits_privacyconsole_users"
 >title="热门用户"
->abstract="此小组件显示在所选时间段内在 Experience Platform 中执行的操作最多的用户。要查看 Experience Platform 中记录的操作的完整列表，请选择左侧导航中的&#x200B;**审计**。"
+>abstract="此构件显示在所选时间段内在 Experience Platform 中执行的操作最多的用户。要查看 Experience Platform 中记录的操作的完整列表，请选择左侧导航中的&#x200B;**审计**。"
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_audits_description"
 >title="在 Experience Platform 中监测用户活动"
->abstract="<h2>描述</h2><p>可按审核日志的形式监测多种 Experience Platform 服务和功能的用户活动。这些日志组成一条审核线索，其中记录<b>谁</b><b>何时</b>执行了<b>什么</b>。审核日志可帮助解决 Experience Platform 上的问题以及帮助您的企业有效地遵守公司数据管理政策和监管要求。</p>"
+>abstract="<h2>描述</h2><p>可按审核日志的形式监测多种 Experience Platform 服务和功能的用户活动。这些日志组成审核记录，其中记录<b>谁</b><b>何时</b>执行了<b>什么</b>。审核日志可帮助解决 Experience Platform 上的问题以及帮助您的企业有效地遵守公司数据管理政策和监管要求。</p>"
 
 为了提高系统中执行的活动的透明度和可见性，Adobe Experience Platform允许您以“审核日志”的形式审核各种服务和功能的用户活动。 这些日志形成审核记录，可以帮助对Experience Platform问题进行故障诊断，并帮助您的企业有效地遵守公司数据管理政策和法规要求。
 
@@ -167,7 +167,7 @@ ht-degree: 32%
 
 ## 管理Adobe Admin Console的审核日志
 
-要了解如何管理Adobe Admin Console中的活动的审核日志，请参阅以下[文档](https://helpx.adobe.com/cn/enterprise/using/audit-logs.html)。
+要了解如何管理Adobe Admin Console中的活动的审核日志，请参阅以下[文档](https://helpx.adobe.com/enterprise/using/audit-logs.html)。
 
 ## 后续步骤和其他资源
 
@@ -175,4 +175,4 @@ ht-degree: 32%
 
 要加深您对Experience Platform中审核日志的了解，请观看以下视频：
 
->[!VIDEO](https://video.tv.adobe.com/v/344644?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/341450?quality=12&learn=on)

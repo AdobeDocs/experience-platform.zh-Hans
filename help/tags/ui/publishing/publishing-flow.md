@@ -14,7 +14,7 @@ ht-degree: 37%
 >[!CONTEXTUALHELP]
 >id="platform_tags_publishing_flow"
 >title="发布流"
->abstract="了解发布流所需的用户权限级别，包括开发、批准和发布权限。"
+>abstract="了解发布流量所需的用户权限级别，包括开发、批准和发布权限。"
 
 >[!NOTE]
 >
