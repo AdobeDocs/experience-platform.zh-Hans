@@ -175,4 +175,4 @@ ht-degree: 32%
 
 要加深您对Experience Platform中审核日志的了解，请观看以下视频：
 
->[!VIDEO](https://video.tv.adobe.com/v/341450?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/344644?quality=12&learn=on&captions=chi_hans)

@@ -182,4 +182,4 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 要加深您对Experience Platform中的功能板的了解，请观看以下视频：
 
->[!VIDEO](https://video.tv.adobe.com/v/3409637?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3413779?quality=12&learn=on&captions=chi_hans)
