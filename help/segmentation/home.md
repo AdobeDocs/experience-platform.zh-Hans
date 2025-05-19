@@ -67,7 +67,7 @@ Adobe Experience Platform [!DNL Segmentation Service]提供了一个用户界面
 >id="platform_segments_evaluation_streaming"
 >title="流式处理评估"
 >abstract="流式处理分段是一个持续的数据选择过程，会更新受众以响应用户活动。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/methods/streaming-segmentation.html" text="通过流式处理分段近乎实时地评估事件"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/methods/streaming-segmentation.html?lang=zh-Hans" text="通过流式处理分段近乎实时地评估事件"
 
 Experience Platform 目前支持三种受众评估方法：流式处理分段、批次分段和边缘分段。
 
@@ -94,7 +94,7 @@ Experience Platform 目前支持三种受众评估方法：流式处理分段、
 >id="platform_segments_evaluation_edge"
 >title="边缘评估"
 >abstract="边缘分段能够在 Edge Network 上即时评估 Experience Platform 中的区段，从而实现同一页和下一页个性化用例。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/methods/edge-segmentation.html" text="边缘分段指南"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/methods/edge-segmentation.html?lang=zh-Hans" text="边缘分段指南"
 
 Edge分段是在Edge Network[&#128279;](../landing/edge-and-hub-comparison.md)上即时评估Experience Platform中的区段的能力，从而启用同页和下一页个性化用例。
 

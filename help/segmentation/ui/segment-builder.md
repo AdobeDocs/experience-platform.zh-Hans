@@ -380,7 +380,7 @@ ht-degree: 9%
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="刷新估计值"
 >abstract="您可以刷新区段定义的估计值，以立即预览符合建议的区段定义资格的轮廓数目。受众估计值是通过使用当天的示例数据的示例大小生成的。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="估计和预览受众"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=zh-Hans#estimate-and-preview-an-audience" text="估计和预览受众"
 
 在构建区段定义时，工作区右侧的&#x200B;**[!UICONTROL 受众属性]**&#x200B;部分会显示所生成区段定义的大小估计值，这样您可以在构建受众本身之前根据需要调整区段定义。
 
