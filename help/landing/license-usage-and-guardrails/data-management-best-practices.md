@@ -71,7 +71,7 @@ Experience Platform主要由两个数据存储库组成：数据湖和配置文�
 
 Adobe Experience Platform UI提供了一个功能板，通过该功能板，您可以查看组织的Experience Platform许可证相关数据的快照。 仪表板中的数据与拍摄快照的特定时间点完全相同。 快照既不是近似值，也不是数据示例，并且仪表板没有实时更新。
 
-有关详细信息，请参阅Experience Platform UI](../../dashboards/guides/license-usage.md#license-usage-dashboard-data)上的[使用许可证使用情况仪表板指南。
+有关详细信息，请参阅Experience Platform UI[&#128279;](../../dashboards/guides/license-usage.md#license-usage-dashboard-data)上的使用许可证使用情况仪表板指南。
 
 ## 数据管理最佳实践
 
@@ -127,7 +127,7 @@ Adobe Experience Platform UI提供了一个功能板，通过该功能板，您�
 | 支持为配置文件启用/禁用数据集 | 要将数据摄取到Real-time Customer Profile，您必须启用要在配置文件存储中使用的数据集。 这样做会将添加到您的[!DNL Addressable Audience]和[!DNL Total Data Volume]权利。 一旦客户个人资料用例不再需要某个数据集，您可以禁用该数据集与个人资料的集成，以确保您的数据仍然符合许可证要求。 有关详细信息，请参阅[启用和禁用配置文件](../../catalog/datasets/enable-for-profile.md)的数据集指南。 |
 | Web SDK和Mobile SDK数据排除 | Web和移动SDK收集的数据有两种类型：自动收集的数据和开发人员明确收集的数据。 为了更好地管理许可证合规性，您可以通过上下文设置在SDK的配置中禁用自动数据收集。 您的开发人员也可以删除或设置自定义数据。 |
 | 服务器端转发数据排除 | 如果您使用服务器端转发将数据发送到Experience Platform，则可以通过以下方法排除发送的数据：在规则操作中删除映射以在所有事件中排除该数据，或者向规则添加条件，以便数据仅针对某些事件触发。 有关详细信息，请参阅有关[事件和条件](/help/tags/ui/managing-resources/rules.md#events-and-conditions-if)的文档。 |
-| 在源级别过滤数据 | 在创建连接并将数据摄取到Experience Platform之前，您可以使用逻辑和比较运算符过滤源中的行级数据。 有关详细信息，请阅读有关使用 [!DNL Flow Service] API](../../sources/tutorials/api/filter.md)筛选源的行级数据的指南[。 |
+| 在源级别过滤数据 | 在创建连接并将数据摄取到Experience Platform之前，您可以使用逻辑和比较运算符过滤源中的行级数据。 有关详细信息，请阅读有关使用 [!DNL Flow Service] API[&#128279;](../../sources/tutorials/api/filter.md)筛选源的行级数据的指南。 |
 
 {style="table-layout:auto"}
 
@@ -171,7 +171,7 @@ Adobe Experience Platform UI提供了一个功能板，通过该功能板，您�
 
 * 使用[许可证使用情况仪表板](../../dashboards/guides/license-usage.md)跟踪和监控客户使用情况趋势。 这样，您就可以提前了解可能会产生的任何潜在使用过量。
 * 通过识别分段和个性化用例所需的事件来配置[引入过滤器](#ingestion-filters)。 这样，您就可以仅发送用例所需的重要事件。
-* 确保您只有分段和个性化用例所需的配置文件](#ingestion-filters)的[启用的数据集。
+* 确保您只有分段和个性化用例所需的配置文件[&#128279;](#ingestion-filters)的启用的数据集。
 * 为Web数据等高频数据配置[体验事件过期时间](../../catalog/datasets/user-guide.md#data-retention-policy)和[假名配置文件数据过期时间](../../profile/pseudonymous-profiles.md)。
-* 为数据湖中的体验事件数据集](../../catalog/datasets/experience-event-dataset-retention-ttl-guide.md)配置[生存时间(TTL)保留策略，以根据您的许可证权利自动删除过期的记录并优化存储使用情况。
+* 为数据湖中的体验事件数据集[&#128279;](../../catalog/datasets/experience-event-dataset-retention-ttl-guide.md)配置生存时间(TTL)保留策略，以根据您的许可证权利自动删除过期的记录并优化存储使用情况。
 * 定期检查[配置文件构成报告](#profile-store-composition-reports)以了解您的配置文件存储构成。 这使您能够了解对许可证使用量消耗贡献最大的数据源。
