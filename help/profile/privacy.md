@@ -5,9 +5,9 @@ title: 实时客户配置文件中的隐私请求处理
 type: Documentation
 description: Adobe Experience Platform Privacy Service会处理客户访问、选择退出销售或删除其个人数据的请求，如大量隐私法规所述。 本文档介绍了与处理实时客户个人资料的隐私请求相关的基本概念。
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 6eaa384feb1b84e6081f03cb4de9687ad26f437d
 workflow-type: tm+mt
-source-wordcount: '1751'
+source-wordcount: '1757'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,7 @@ Adobe Experience Platform [!DNL Privacy Service]处理客户访问、选择退�
 
 >[!NOTE]
 >
->本指南仅涵盖如何在Experience Platform中针对配置文件数据存储区提出隐私请求。 如果您还计划提出针对Experience Platform数据湖的隐私请求，请参阅本教程和关于在数据湖[&#128279;](../catalog/privacy.md)中处理隐私请求的指南。
+>本指南仅涵盖如何在Experience Platform中针对配置文件数据存储区提出隐私请求。 如果您还计划提出针对Experience Platform数据湖的隐私请求，请参阅本教程和关于在数据湖](../catalog/privacy.md)中处理[隐私请求的指南。
 >
 >有关如何为其他Adobe Experience Cloud应用程序提出隐私请求的步骤，请参阅[Privacy Service文档](../privacy-service/experience-cloud-apps.md)。
 
@@ -186,7 +186,7 @@ curl -X POST \
 
 其中一个数据集使用`customer_id`作为其主要标识符，而另外两个数据集使用`email_id`。 如果您只使用`email_id`作为用户ID值来发送隐私请求（访问或删除），则只会处理`firstName`、`lastName`和`mlScore`属性，而`address`不会受到影响。
 
-为确保您的隐私请求能够处理所有相关客户属性，您必须为可能存储了这些属性的所有适用数据集提供主标识值（每个客户最多九个ID）。 有关通常标记为标识的字段的更多信息，请参阅架构组合[&#128279;](../xdm/schema/composition.md#identity)的基础知识中有关标识字段的部分。
+为确保您的隐私请求能够处理所有相关客户属性，您必须为可能存储了这些属性的所有适用数据集提供主标识值（每个客户最多九个ID）。 有关通常标记为标识的字段的更多信息，请参阅架构组合](../xdm/schema/composition.md#identity)的[基础知识中有关标识字段的部分。
 
 ## 正在处理删除请求 {#delete}
 
@@ -200,10 +200,10 @@ curl -X POST \
 
 | 包含的产品 | 效应 |
 | --- | --- |
-| 仅`ProfileService` | 一旦Experience Platform发送确认已收到删除请求，则会立即删除该用户档案。 但是，个人资料的身份图仍然会保留，并且个人资料有可能在摄取具有相同身份的新数据时进行重构。 与用户档案关联的数据也保留在数据湖中。 |
-| `ProfileService` 和 `identity` | 一旦Experience Platform发送确认已收到删除请求，则会立即删除用户档案及其关联的身份图。 与用户档案关联的数据将保留在数据湖中。 |
-| `ProfileService` 和 `aepDataLake` | 一旦Experience Platform发送确认已收到删除请求，则会立即删除该用户档案。 但是，个人资料的身份图仍然会保留，并且个人资料有可能在摄取具有相同身份的新数据时进行重构。<br><br>当Data Lake产品回应收到请求且当前正在处理时，与配置文件关联的数据将被软删除，因此任何[!DNL Experience Platform]服务都无法访问。 作业完成后，数据将从数据湖中完全删除。 |
-| `ProfileService`、`identity`和`aepDataLake` | 一旦Experience Platform发送确认已收到删除请求，则会立即删除用户档案及其关联的身份图。<br><br>当Data Lake产品回应收到请求且当前正在处理时，与配置文件关联的数据将被软删除，因此任何[!DNL Experience Platform]服务都无法访问。 作业完成后，数据将从数据湖中完全删除。 |
+| 仅`ProfileService` | 一旦Privacy Service发送删除请求已完成确认，则会立即将该配置文件视为已删除。 但是，个人资料的身份图仍然会保留，并且个人资料有可能在摄取具有相同身份的新数据时进行重构。 与个人资料关联的无法识别个人身份的数据也保留在数据湖中。 |
+| `ProfileService` 和 `identity` | 一旦Privacy Service发送删除请求已完成确认，则会立即删除用户档案及其关联的身份图。 与个人资料关联的无法识别个人身份的数据也保留在数据湖中。 |
+| `ProfileService` 和 `aepDataLake` | 一旦Privacy Service发送删除请求已完成确认，则会立即删除用户档案。 但是，个人资料的身份图仍然会保留，并且个人资料有可能在摄取具有相同身份的新数据时进行重构。<br><br>当Data Lake产品回应收到请求且当前正在处理时，与配置文件关联的数据将被软删除，因此任何[!DNL Experience Platform]服务都无法访问。 作业完成后，数据将从数据湖中完全删除。 |
+| `ProfileService`、`identity`和`aepDataLake` | 一旦Privacy Service发送删除请求已完成确认，则会立即删除用户档案及其关联的身份图。<br><br>当Data Lake产品回应收到请求且当前正在处理时，与配置文件关联的数据将被软删除，因此任何[!DNL Experience Platform]服务都无法访问。 作业完成后，数据将从数据湖中完全删除。 |
 
 有关跟踪作业状态的详细信息，请参阅[[!DNL Privacy Service] 文档](../privacy-service/home.md#monitor)。
 
@@ -225,4 +225,4 @@ Privacy Service只能使用不执行身份拼接的合并策略处理[!DNL Profi
 
 通过阅读本文档，您已了解[!DNL Experience Platform]中处理隐私请求涉及的重要概念。 要加深您对如何管理身份数据和创建隐私作业的了解，请继续阅读本指南中提供的文档。
 
-有关处理[!DNL Profile]未使用的[!DNL Experience Platform]资源的隐私请求的信息，请参阅有关在数据湖[&#128279;](../catalog/privacy.md)中处理隐私请求的文档。
+有关处理[!DNL Profile]未使用的[!DNL Experience Platform]资源的隐私请求的信息，请参阅有关在数据湖](../catalog/privacy.md)中处理[隐私请求的文档。
