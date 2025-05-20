@@ -5,10 +5,10 @@ breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
 role: User,Developer
-source-git-commit: 5e8dccf91e8c83b4734b363539cfb911b5c2ae29
+source-git-commit: 8b33d9231aeebd454fd614a81b356a9e971b757c
 workflow-type: tm+mt
-source-wordcount: '404'
-ht-degree: 27%
+source-wordcount: '409'
+ht-degree: 26%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 27%
 - [查询服务概述](home.md)
 - [查询服务打包](packaging.md)
 - [查询服务护栏](guardrails.md)
-- 快速入门 {#get-started}
+- 开始使用 {#get-started}
    - [先决条件](get-started/prerequisites.md)
 - 数据蒸馏器 {#data-distiller}
    - [概述](data-distiller/overview.md)
@@ -110,6 +110,7 @@ ht-degree: 27%
    - [查询日志](ui/query-logs.md)
    - [监测计划查询](ui/monitor-queries.md)
    - [凭据指南](ui/credentials.md)
+   - [将JWT迁移到OAuth凭据](ui/migrate-jwt-to-oauth.md)
    - [从查询结果生成输出数据集](ui/create-datasets.md)
 - 查询服务API {#api}
    - [快速入门](api/getting-started.md)

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务凭据指南
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看先前执行的查询以及访问由您组织内的用户保存的查询。
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: c8c04d79584093c8d13ffa205849e78ab04c0fc1
+source-git-commit: 264d3b12d8fd3bd100018513af1576b3de1cbb33
 workflow-type: tm+mt
-source-wordcount: '1885'
+source-wordcount: '1955'
 ht-degree: 2%
 
 ---
@@ -46,11 +46,11 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 >
 >![突出显示了Admin Console设置选项卡，其中包含“隐私和安全性”、“身份验证设置”和“最长会话时长”。](../images/ui/credentials/max-session-life.png)
 >
->有关Admin Console提供的[高级设置](https://helpx.adobe.com/cn/enterprise/using/authentication-settings.html#advanced-settings)的更多信息，请参阅Adobe帮助文档。
+>有关Admin Console提供的[高级设置](https://helpx.adobe.com/enterprise/using/authentication-settings.html#advanced-settings)的更多信息，请参阅Adobe帮助文档。
 
 ### 在查询会话中连接到Customer Journey Analytics数据 {#connect-to-customer-journey-analytics}
 
-使用带有Power BI或Tableau的Customer Journey Analytics BI扩展访问带有SQL的Customer Journey Analytics [数据视图](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/cja-dataviews/data-views)。 通过将查询服务与BI扩展集成，您可以直接在查询服务会话中访问数据视图。 此集成简化了使用查询服务作为其PostgreSQL接口的BI工具的功能。 此功能消除了BI工具中重复数据视图的需要，确保跨平台的一致报告，并简化了Customer Journey Analytics数据与BI平台中其他源的集成。
+使用带有Power BI或Tableau的Customer Journey Analytics BI扩展访问带有SQL的Customer Journey Analytics [数据视图](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/data-views)。 通过将查询服务与BI扩展集成，您可以直接在查询服务会话中访问数据视图。 此集成简化了使用查询服务作为其PostgreSQL接口的BI工具的功能。 此功能消除了BI工具中重复数据视图的需要，确保跨平台的一致报告，并简化了Customer Journey Analytics数据与BI平台中其他源的集成。
 
 请参阅文档，了解如何[将查询服务连接到各种桌面客户端应用程序](../clients/overview.md)，如[Power BI](../clients/power-bi.md)或[Tableau](../clients/tableau.md)
 
@@ -68,13 +68,13 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 
 您还可以直接通过查询编辑器或Postgres CLI访问Customer Journey Analytics数据。 为此，请在编写查询时引用`cja`数据库。 有关如何写入、执行和保存查询的更多信息，请参阅查询编辑器[查询创作指南](./user-guide.md#query-authoring)。
 
-有关使用SQL访问Customer Journey Analytics数据视图的完整说明，请参阅[BI扩展指南](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/cja-dataviews/bi-extension)。
+有关使用SQL访问Customer Journey Analytics数据视图的完整说明，请参阅[BI扩展指南](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/bi-extension)。
 
 ## 未过期凭据 {#non-expiring-credentials}
 
 >[!CONTEXTUALHELP]
 >id="platform_queryservice_credentials_migratenonexpiringcredentials"
->title="迁移到OAuth服务器到服务器凭据"
+>title="迁移到 OAuth 服务器到服务器凭据"
 >abstract="此迁移是必需的，因为JWT凭据将在2025年6月30日之后停止工作。 大约需要30-40秒，并且一旦启动就无法取消。 迁移后，所有现有作业和集成将继续使用OAuth。 您可以离开此屏幕并随时返回以检查状态。"
 
 您可以使用不会过期的凭据来设置与外部客户端的更永久的连接。
@@ -95,7 +95,7 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 2. [选择产品配置文件。](../../access-control/ui/browse.md)
 3. [为产品配置文件配置&#x200B;**沙盒**&#x200B;和&#x200B;**管理查询服务集成**&#x200B;权限](../../access-control/ui/permissions.md)。
 4. [将新用户添加到产品配置文件](../../access-control/ui/users.md)，以便授予他们已配置的权限。
-5. [将用户添加为产品配置文件管理员](https://helpx.adobe.com/cn/enterprise/using/manage-product-profiles.html)，以允许为任何活动的产品配置文件创建帐户。
+5. [将用户添加为产品配置文件管理员](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html)，以允许为任何活动的产品配置文件创建帐户。
 6. [将用户添加为产品配置文件开发人员](https://helpx.adobe.com/cn/enterprise/using/manage-developers.html)以创建集成。
 
 要了解有关如何分配权限的详细信息，请阅读有关[访问控制](../../access-control/home.md)的文档。
@@ -146,6 +146,18 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 ![更新帐户对话框。](../images/ui/credentials/update-credentials.png)
 
 提供所有必需的详细信息后，选择&#x200B;**[!UICONTROL 更新帐户]**&#x200B;以完成凭据更新。
+
+### 将凭据迁移到OAuth {#migrate-credentials}
+
+如果您使用的是不会过期的JWT凭据，则必须在2025年6月30日之前将每个凭据迁移到OAuth服务器到服务器，以避免服务中断。
+
+>[!IMPORTANT]
+>
+>JWT凭据将在2025年6月30日后停止工作。 您必须手动完成此迁移以保持授权。
+
+要了解如何识别受影响的凭据并完成迁移，请参阅[从JWT迁移到OAuth服务器到服务器凭据指南](./migrate-jwt-to-oauth.md)。
+
+有关常见问题，请参阅[迁移常见问题解答](./migrate-jwt-to-oauth.md#faq)。
 
 ## 使用凭据连接到外部客户端 {#use-credential-to-connect}
 
