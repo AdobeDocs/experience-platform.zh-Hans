@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务UI指南
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看先前执行的查询以及访问由您组织内的用户保存的查询。
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: 7e1eee48b45311f9ac358496e46ca8980df0112b
+source-git-commit: 62e481925df33ddfae6f630c900febbb027a2059
 workflow-type: tm+mt
-source-wordcount: '2767'
+source-wordcount: '2467'
 ht-degree: 1%
 
 ---
@@ -104,49 +104,23 @@ Adobe Experience Platform查询服务提供了一个用户界面，可用于编�
 
 ![查询编辑器工作区。](../images/ui/overview/query-editor.png)
 
-### 下载查询结果 {#download-query-results}
+### 关于结果选项卡 {#results-tab}
 
->[!AVAILABILITY]
->
->下载功能仅适用于具有Data Distiller加载项的客户。 要了解有关Data Distiller的更多信息，请联系您的Adobe代表。
+[!UICONTROL 结果]选项卡在执行后显示查询的表格式输出。 使用此选项卡可查看结果、验证输出并直接在界面中执行跟进操作。 从该视图中，您可以：
 
-您现在可以直接从查询编辑器用户界面下载查询结果。 成功执行查询后，您可以下载CSV、XLSX或JSON文件格式的输出。 此功能通过允许立即访问离线分析、报告和基于Excel的流程的查询结果，简化了营销和分析团队的工作流。
+- 以CSV、XLSX或JSON格式下载结果以进行离线分析。 查看[下载查询结果](./user-guide.md#download-query-results)。
+- 以全屏方式查看结果，以在可调整大小的网格布局中检查大型表或宽数据集。 查看[全屏查看结果](./user-guide.md#view-results)。
+- 以CSV格式将结果复制到剪贴板，以便快速粘贴到电子表格应用程序中。 查看[复制结果](./user-guide.md#copy-results)。
 
-要下载查询结果，请选择“查询编辑器”**[!UICONTROL “结果”]**&#x200B;选项卡右上角的&#x200B;**[!UICONTROL “下载”]**。 然后从下拉菜单中选择&#x200B;**[!UICONTROL CSV]**、**[!UICONTROL XLSX]**&#x200B;或&#x200B;**[!UICONTROL JSON]**。 该文件将自动下载到您的本地计算机。
+这些功能旨在支持无缝的数据验证、报告和共享工作流程，并且无需离开查询编辑器。
 
->[!NOTE]
->
->仅当查询返回结果时，才会显示&#x200B;**[!UICONTROL 下载]**&#x200B;按钮。 如果未返回任何记录，则&#x200B;**[!UICONTROL 结果]**&#x200B;选项卡将显示“无结果”消息，并且下载选项被禁用。
+### 参数化查询 {#parameterized-queries}
 
-![下载查询编辑器的结果选项卡，下拉菜单突出显示。](../images/ui/overview/download-results.png)
+查询编辑器支持参数化查询，这使您可以将变量插入到SQL语句中，并在运行时动态分配值。 此功能有助于简化可重用查询并提高工作流的灵活性。
 
->[!NOTE]
->
->在Excel中打开CSV文件时，您可能会看到以下警告：<br>“可能的数据丢失。 如果将此工作簿保存为逗号分隔(.csv)格式，则某些功能可能会丢失。 要保留这些功能，请以Excel文件格式保存它。”<br>此外，请注意，日期和时间格式可能因文件类型而异。 CSV文件将保留查询结果中显示的格式，而XLSX文件则可以在Excel中自动应用本地化的格式。
+您可以在编写查询时定义参数，然后在运行查询之前，通过[!UICONTROL 查询参数]选项卡分配值。 参数化查询对于在整个组织内共享的计划查询或查询模板特别有用。
 
-### 全屏查看结果 {#view-results}
-
-成功执行查询后，在&#x200B;**[!UICONTROL 结果]**&#x200B;选项卡中选择&#x200B;**[!UICONTROL 查看结果]**&#x200B;以打开以表格形式显示的全屏结果视图。
-
-全屏视图以可调整大小的网格显示输出，这使您更容易查看大型数据集和跨列扫描。 在分析宽表或查看行级详细信息时，此预览模式特别有用。
-
->[!NOTE]
->
->预览是只读的，不会修改您的查询或数据集。
-
-![全屏预览对话框，已选择查看结果。](../images/ui/overview/view-results-fullscreen.png)
-
-### 复制结果 {#copy-results}
-
-使用查询编辑器中的增强复制功能，以逗号分隔值(CSV)形式快速复制查询结果。 轻松地将复制的数据粘贴到电子表格应用程序（如Excel）中以进一步分析。 此功能可提高可读性，保留格式，并简化验证和报告工作流程，而无需依赖第三方工具。
-
-您可以从[!UICONTROL 结果]选项卡或全屏结果预览中复制查询结果。 从&#x200B;**[!UICONTROL 结果]**&#x200B;选项卡中，选择复制图标（![复制图标）。](../../images/icons/copy.png))以将所有查询结果复制到剪贴板。 在“查询编辑器结果”选项卡中，选择单个行，或使用复选框列标题选择所有行。 选择单行以启用复制图标。
-
-![查询编辑器的结果选项卡中突出显示了复制图标。](../images/ui/overview/query-editor-copy-icon.png)
-
-或者，选择&#x200B;**[!UICONTROL 查看结果]**&#x200B;以打开全屏预览。 从该对话框中，选择单个行，或使用左上角的复选框选择所有行，然后选择复制图标（![复制图标）。](../../images/icons/copy.png))以复制所选数据。
-
-![全屏预览对话框，已选择结果行并且复制图标突出显示。](../images/ui/overview/results-copy.png)
+要了解如何定义和使用参数，请参阅查询编辑器中的[参数化查询](./parameterized-queries.md)。
 
 ## 计划的查询 {#scheduled-queries}
 

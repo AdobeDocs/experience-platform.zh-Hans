@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询编辑器UI指南
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发以及非交互式查询，以填充Experience Platform中的数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: bf9de8c5358f1ab90dd5d70b0607dcfba7d1e2f5
 workflow-type: tm+mt
-source-wordcount: '2683'
+source-wordcount: '3360'
 ht-degree: 0%
 
 ---
@@ -141,7 +141,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 >[!NOTE]
 >
->[!UICONTROL 查看计划]、[!UICONTROL 添加计划]和[!UICONTROL 删除查询]选项仅在将查询另存为模板后可用。 使用[!UICONTROL 添加计划]选项，您可以从查询编辑器直接转到计划生成器。 使用[!UICONTROL 查看计划]选项，您可以直接查看该查询的计划清单。 请参阅查询计划文档，了解如何在UI[&#128279;](./query-schedules.md#create-schedule)中创建查询计划。
+>[!UICONTROL 查看计划]、[!UICONTROL 添加计划]和[!UICONTROL 删除查询]选项仅在将查询另存为模板后可用。 使用[!UICONTROL 添加计划]选项，您可以从查询编辑器直接转到计划生成器。 使用[!UICONTROL 查看计划]选项，您可以直接查看该查询的计划清单。 请参阅查询计划文档，了解如何在UI](./query-schedules.md#create-schedule)中[创建查询计划。
 
 ![查询详细信息面板突出显示的查询编辑器。](../images/ui/query-editor/query-details.png)
 
@@ -155,7 +155,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 ![[!UICONTROL 输入输出数据集详细信息]对话框。](../images/ui/query-editor/output-dataset-details.png)
 
-执行以CTAS **身份运行的**&#x200B;操作后，将弹出一条确认消息，通知您操作成功。 此弹出消息包含一个链接，为导航到查询日志工作区提供了一种便捷的方式。 有关查询日志的详细信息，请参阅[查询日志文档](./query-logs.md)。
+执行以CTAS ]**身份运行的**[!UICONTROL &#x200B;操作后，将弹出一条确认消息，通知您操作成功。 此弹出消息包含一个链接，为导航到查询日志工作区提供了一种便捷的方式。 有关查询日志的详细信息，请参阅[查询日志文档](./query-logs.md)。
 
 ### 保存查询 {#saving-queries}
 
@@ -177,7 +177,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 >
 >连续运行10次失败的已计划查询将自动置于[!UICONTROL 隔离]状态。 具有此状态的查询需要您的干预，然后才能进行任何进一步的执行。 有关更多详细信息，请参阅[隔离的查询](./monitor-queries.md#quarantined-queries)文档。
 
-请参阅查询计划文档，了解如何在UI[&#128279;](./query-schedules.md)中创建查询计划。 或者，要了解如何使用API添加计划，请阅读[计划查询端点指南](../api/scheduled-queries.md)。
+请参阅查询计划文档，了解如何在UI](./query-schedules.md)中[创建查询计划。 或者，要了解如何使用API添加计划，请阅读[计划查询端点指南](../api/scheduled-queries.md)。
 
 任何计划的查询都会添加到[!UICONTROL 计划查询]选项卡的列表中。 在该工作区中，您可以通过UI监控所有已计划查询作业的状态。 在[!UICONTROL 计划的查询]选项卡上，您可以找到有关查询运行的重要信息并订阅警报。 可用信息包括状态、计划详细信息和运行失败时的错误消息/代码。 有关详细信息，请参阅[监视计划查询文档](./monitor-queries.md)。
 
@@ -234,11 +234,69 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 >
 >控制台仅显示执行查询导致的错误。 它不显示查询执行前发生的查询验证错误。
 
-### 查询结果 {#query-results}
+## 查询结果 {#query-results}
 
 完成查询后，结果将显示在&#x200B;**[!UICONTROL 控制台]**&#x200B;选项卡旁边的&#x200B;**[!UICONTROL 结果]**&#x200B;选项卡中。 此视图显示查询的表格输出，根据您选择的[结果计数](#result-count)显示50到1000行结果。 此视图允许您验证查询是否生成预期的输出。 要使用您的查询生成数据集，请删除对返回行的限制，然后使用`CREATE TABLE tablename AS SELECT`运行查询以使用输出生成数据集。 有关如何从查询编辑器中的查询结果生成数据集的说明，请参阅[生成数据集教程](./create-datasets.md)。
 
 ![查询编辑器控制台的“结果”选项卡显示查询运行的结果。](../images/ui/query-editor/query-results.png)
+
+### 下载查询结果 {#download-query-results}
+
+>[!AVAILABILITY]
+>
+>下载功能仅适用于具有Data Distiller加载项的客户。 要了解有关Data Distiller的更多信息，请联系您的Adobe代表。
+
+成功运行查询后，请下载CSV、XLSX或JSON格式的结果，以便在离线分析、报表或电子表格工作流中使用。 此功能通过允许立即访问离线分析、报告和基于Excel的流程的查询结果，简化了营销和分析团队的工作流。
+
+要下载查询结果，请选择“查询编辑器”**[!UICONTROL “结果”]**&#x200B;选项卡右上角的&#x200B;**[!UICONTROL “下载”]**。 然后从下拉菜单中选择&#x200B;**[!UICONTROL CSV]**、**[!UICONTROL XLSX]**&#x200B;或&#x200B;**[!UICONTROL JSON]**。 该文件将自动下载到您的本地计算机。 选择适合您的用例的格式，CSV用于轻量级导出，XLSX用于格式化电子表格，或JSON用于结构化数据处理。
+
+>[!NOTE]
+>
+>如果缺少&#x200B;**[!UICONTROL 下载]**&#x200B;按钮，请检查查询结果。 仅当返回记录时，才会显示按钮。 如果未返回任何记录，则&#x200B;**[!UICONTROL 结果]**&#x200B;选项卡将显示“无结果”消息，并且下载选项被禁用。
+
+![下载查询编辑器的结果选项卡，下拉菜单突出显示。](../images/ui/overview/download-results.png)
+
+>[!NOTE]
+>
+>在Excel中打开CSV文件时，您可能会看到以下警告：<br>“可能的数据丢失。 如果将此工作簿保存为逗号分隔(.csv)格式，则某些功能可能会丢失。 要保留这些功能，请以Excel文件格式保存它。”<br>此外，请注意，日期和时间格式可能因文件类型而异。 CSV文件将保留查询结果中显示的格式，而XLSX文件则可以在Excel中自动应用本地化的格式。 如果出现此警告，您可以安全地继续。 要保留特定于Excel的格式，请将该文件另存为XLSX。
+
+### 全屏查看结果 {#view-results}
+
+成功执行查询后，在&#x200B;**[!UICONTROL 结果]**&#x200B;选项卡中选择&#x200B;**[!UICONTROL 查看结果]**&#x200B;以打开以表格形式显示的全屏结果视图。
+
+使用全屏预览可轻松扫描宽表并检查行级详细信息，而无需水平滚动。 全屏视图以可调整大小的网格显示输出，这使您更容易查看大型数据集和跨列扫描。
+
+>[!NOTE]
+>
+>预览是只读的，不会修改您的查询或数据集。
+
+![全屏预览对话框，已选择查看结果。](../images/ui/overview/view-results-fullscreen.png)
+
+### 复制结果 {#copy-results}
+
+使用查询编辑器中的增强复制功能，以逗号分隔值(CSV)形式复制查询结果并将其粘贴到电子表格工具（如Excel）中，以便立即验证或报告。 此功能可提高可读性、保留格式并简化工作流程，而无需依赖第三方工具。
+
+您可以从[!UICONTROL 结果]选项卡或全屏结果预览中复制查询结果。 从&#x200B;**[!UICONTROL 结果]**&#x200B;选项卡中，选择复制图标（![复制图标）。](../../images/icons/copy.png))以将所有查询结果复制到剪贴板。 要启用复制图标，请先选择一行。 您可以选择单个行，也可以使用顶部的复选框一次选择所有行。
+
+![查询编辑器的结果选项卡中突出显示了复制图标。](../images/ui/overview/query-editor-copy-icon.png)
+
+或者，选择&#x200B;**[!UICONTROL 查看结果]**&#x200B;以打开全屏预览。 从该对话框中，选择单个行，或使用左上角的复选框选择所有行，然后选择复制图标（![复制图标）。](../../images/icons/copy.png))以复制所选数据。
+
+![全屏预览对话框，已选择结果行并且复制图标突出显示。](../images/ui/overview/results-copy.png)
+
+### 旧版结果表（限量发布） {#legacy-results-table}
+
+>[!AVAILABILITY]
+>
+>旧版结果表只能通过功能标志选择用户，并且可能不会显示在当前查询编辑器体验中。 如果您的团队依赖于拖放至选择的工作流，请联系您的Adobe代表以请求获取访问权限。
+
+查询编辑器的旧版本适用于依赖灵活手动数据工作流（如QA或基于电子表格的审核）的用户。
+
+它支持基于浏览器的本机拖动选择，因此您可以使用标准选择行为突出显示和复制输出的任何部分（包括单个单元格或块）。 这与使用结构化行选择和专用复制操作的增强型表格形成对比。
+
+复制的数据以制表符分隔，因此当将其粘贴到Excel等工具中时，列将保持对齐和可读。 在标题行之间拖动选择时，也会包含列标题。
+
+![旧版编辑器中显示的结果中突出显示了简单的拖入选择结果。](../images/ui/query-editor/legacy-results-table.png)
 
 ## 示例 {#examples}
 
@@ -254,7 +312,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 >
 >视频中描述的UI已过时，但在工作流中使用的逻辑保持不变。
 
->[!VIDEO](https://video.tv.adobe.com/v/32702?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)
 
 ## 后续步骤
 
