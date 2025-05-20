@@ -141,7 +141,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 >[!NOTE]
 >
->[!UICONTROL 查看计划]、[!UICONTROL 添加计划]和[!UICONTROL 删除查询]选项仅在将查询另存为模板后可用。 使用[!UICONTROL 添加计划]选项，您可以从查询编辑器直接转到计划生成器。 使用[!UICONTROL 查看计划]选项，您可以直接查看该查询的计划清单。 请参阅查询计划文档，了解如何在UI](./query-schedules.md#create-schedule)中[创建查询计划。
+>[!UICONTROL 查看计划]、[!UICONTROL 添加计划]和[!UICONTROL 删除查询]选项仅在将查询另存为模板后可用。 使用[!UICONTROL 添加计划]选项，您可以从查询编辑器直接转到计划生成器。 使用[!UICONTROL 查看计划]选项，您可以直接查看该查询的计划清单。 请参阅查询计划文档，了解如何在UI[&#128279;](./query-schedules.md#create-schedule)中创建查询计划。
 
 ![查询详细信息面板突出显示的查询编辑器。](../images/ui/query-editor/query-details.png)
 
@@ -155,7 +155,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 ![[!UICONTROL 输入输出数据集详细信息]对话框。](../images/ui/query-editor/output-dataset-details.png)
 
-执行以CTAS ]**身份运行的**[!UICONTROL &#x200B;操作后，将弹出一条确认消息，通知您操作成功。 此弹出消息包含一个链接，为导航到查询日志工作区提供了一种便捷的方式。 有关查询日志的详细信息，请参阅[查询日志文档](./query-logs.md)。
+执行以CTAS **身份运行的**&#x200B;操作后，将弹出一条确认消息，通知您操作成功。 此弹出消息包含一个链接，为导航到查询日志工作区提供了一种便捷的方式。 有关查询日志的详细信息，请参阅[查询日志文档](./query-logs.md)。
 
 ### 保存查询 {#saving-queries}
 
@@ -177,7 +177,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 >
 >连续运行10次失败的已计划查询将自动置于[!UICONTROL 隔离]状态。 具有此状态的查询需要您的干预，然后才能进行任何进一步的执行。 有关更多详细信息，请参阅[隔离的查询](./monitor-queries.md#quarantined-queries)文档。
 
-请参阅查询计划文档，了解如何在UI](./query-schedules.md)中[创建查询计划。 或者，要了解如何使用API添加计划，请阅读[计划查询端点指南](../api/scheduled-queries.md)。
+请参阅查询计划文档，了解如何在UI[&#128279;](./query-schedules.md)中创建查询计划。 或者，要了解如何使用API添加计划，请阅读[计划查询端点指南](../api/scheduled-queries.md)。
 
 任何计划的查询都会添加到[!UICONTROL 计划查询]选项卡的列表中。 在该工作区中，您可以通过UI监控所有已计划查询作业的状态。 在[!UICONTROL 计划的查询]选项卡上，您可以找到有关查询运行的重要信息并订阅警报。 可用信息包括状态、计划详细信息和运行失败时的错误消息/代码。 有关详细信息，请参阅[监视计划查询文档](./monitor-queries.md)。
 
