@@ -3,10 +3,10 @@ keywords: 平台；目标；目标工作区；工作区；ui；目标ui；目录
 title: 目标工作区
 description: 目标工作区包括五个部分：“概述”、“目录”、“浏览”、“帐户”和“系统视图”。 以下各节对这些要求进行了说明。
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: a2420f86e650ce1ca8a5dc01d9a29548663d3f7c
 workflow-type: tm+mt
-source-wordcount: '1233'
-ht-degree: 0%
+source-wordcount: '1300'
+ht-degree: 1%
 
 ---
 
@@ -69,9 +69,9 @@ ht-degree: 0%
 
 >[!TIP]
 >
-> * 选择[!UICONTROL Platform]列中的省略号(`...`)并使用![激活控件](/help/images/icons/data-add.png)**[!UICONTROL 激活&#x200B;]**/**[!UICONTROL &#x200B;激活受众&#x200B;]**/**[!UICONTROL &#x200B;导出数据集&#x200B;]**&#x200B;控件将受众或数据集导出到该目标。
-> * 选择[!UICONTROL Platform]列中的省略号(`...`)并使用![编辑详细信息控件](/help/images/icons/edit.png)**[!UICONTROL 编辑详细信息&#x200B;]**&#x200B;控件来[更新](update-accounts.md)现有目标帐户的详细信息。
-> * 选择[!UICONTROL Platform]列中的省略号(`...`)并使用![删除控件](/help/images/icons/delete.png)**[!UICONTROL 删除&#x200B;]**&#x200B;控件来[删除](delete-destination-account.md)现有目标帐户。
+> * 选择[!UICONTROL Platform]列中的省略号(`...`)并使用![激活控件](/help/images/icons/data-add.png)**[!UICONTROL 激活&#x200B;]**/**[!UICONTROL &#x200B;激活受众&#x200B;]**/**[!UICONTROL &#x200B;导出数据集&#x200B;]**控件将受众或数据集导出到该目标。
+> * 选择[!UICONTROL Platform]列中的省略号(`...`)并使用![编辑详细信息控件](/help/images/icons/edit.png)**[!UICONTROL 编辑详细信息&#x200B;]**控件来[更新](update-accounts.md)现有目标帐户的详细信息。
+> * 选择[!UICONTROL Platform]列中的省略号(`...`)并使用![删除控件](/help/images/icons/delete.png)**[!UICONTROL 删除&#x200B;]**控件来[删除](delete-destination-account.md)现有目标帐户。
 
 ![帐户选项卡](../assets/ui/workspace/destination-account-options.png)
 
@@ -82,6 +82,7 @@ ht-degree: 0%
 | [!UICONTROL 用户名] | 您在[连接目标工作流](../catalog/email-marketing/overview.md#connect-destination)中选择的用户名。 |
 | [!UICONTROL 连接] | 表示与为目标创建的基本信息连接的唯一成功目标数据流数。 |
 | [!UICONTROL 授权日期] | 授权连接到此目标的日期。 |
+| [!UICONTROL 到期日期] | 此目标的连接授权到期的日期。 <br>**重要信息**：此列当前仅可用于[Facebook](../catalog/social/facebook.md)连接。 |
 
 {style="table-layout:auto"}
 
@@ -91,19 +92,21 @@ ht-degree: 0%
 
 >[!TIP]
 >
-> * 选择[!UICONTROL 名称]列中的省略号(`...`)，然后使用![激活受众控件](/help/images/icons/data-add.png)**[!UICONTROL 激活&#x200B;]**&#x200B;控件将受众或数据集导出到该目标。
-> * 选择[!UICONTROL Name]列中的省略号(`...`)并使用![Delete控件](/help/images/icons/delete.png)**[!UICONTROL Delete &#x200B;]**&#x200B;控件来[删除](delete-destinations.md)到目标的现有连接。
-> * 选择[!UICONTROL Name]列中的省略号(`...`)并使用监视控件中的![视图&#x200B;]&#x200B;**监视控件中的(/help/images/icons/monitoring.png)**&#x200B;视图，在[监视仪表板](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard)中查看此目标的激活信息。
-> * 选择[!UICONTROL Name]列中的省略号(`...`)并使用![订阅警报](/help/images/icons/alert-add.png)**[!UICONTROL 订阅警报&#x200B;]**&#x200B;控件订阅目标数据流警报。 您可以订阅警报，以接收有关流运行的状态、成功或失败的消息。 有关目标数据流警报的详细信息，请参阅[订阅上下文中的目标警报](alerts.md)。
+> * 选择[!UICONTROL 名称]列中的省略号(`...`)，然后使用![激活受众控件](/help/images/icons/data-add.png)**[!UICONTROL 激活&#x200B;]**控件将受众或数据集导出到该目标。
+> * 选择[!UICONTROL Name]列中的省略号(`...`)并使用![Delete控件](/help/images/icons/delete.png)**[!UICONTROL Delete ]**控件来[删除](delete-destinations.md)到目标的现有连接。
+> * 选择[!UICONTROL Name]列中的省略号(`...`)并使用监视控件中的![视图&#x200B;]**监视控件中的](/help/images/icons/monitoring.png)**[!UICONTROL 视图，在[监视仪表板](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard)中查看此目标的激活信息。
+> * 选择[!UICONTROL Name]列中的省略号(`...`)并使用![订阅警报](/help/images/icons/alert-add.png)**[!UICONTROL 订阅警报&#x200B;]**控件订阅目标数据流警报。 您可以订阅警报，以接收有关流运行的状态、成功或失败的消息。 有关目标数据流警报的详细信息，请参阅[订阅上下文中的目标警报](alerts.md)。
 
 ![浏览选项卡](../assets/ui/workspace/browse-tab.png)
 
 | 元素 | 描述 |
 |---------|----------|
 | 名称 | 您为此目标的激活流提供的名称。 同一列包含两个控件： [!UICONTROL 激活]和[!UICONTROL 删除目标]。 |
-| [!UICONTROL 上次流运行状态] | 上次数据流运行的状态。 有关数据流运行的详细信息，请参阅[查看目标详细信息](destination-details-page.md)。 |
-| [!UICONTROL 上次流运行日期] | 上次数据流运行发生的时间和日期。 有关数据流运行的详细信息，请参阅[查看目标详细信息](destination-details-page.md)。 |
+| 数据类型 | 目标连接支持的数据类型。 支持的数据类型： <ul><li>**[!UICONTROL 客户]**</li><li>**[!UICONTROL 潜在客户]**</li><li>**[!UICONTROL 帐户]**</li><li>**[!UICONTROL 数据集]**</li></ul> |
+| [!UICONTROL 上次数据流运行状态] | 上次数据流运行的状态。 有关数据流运行的详细信息，请参阅[查看目标详细信息](destination-details-page.md)。 |
+| [!UICONTROL 上次数据流运行日期] | 上次数据流运行发生的时间和日期。 有关数据流运行的详细信息，请参阅[查看目标详细信息](destination-details-page.md)。 |
 | [!UICONTROL 目标] | 您为激活流选择的目标平台。 |
+| [!UICONTROL 帐户到期日期] | 此目标的连接授权到期的日期。 <br>**重要信息**：此列当前仅可用于[Facebook](../catalog/social/facebook.md)连接。 |
 | [!UICONTROL 连接类型] | 表示与存储段或目标的连接类型。 <ul><li>对于电子邮件营销目标：可以是S3、FTP或[!DNL Azure Blob]。</li><li>对于实时广告目标：服务器到服务器。</li><li>对于流目标：可以是[!DNL Azure Event Hubs]或[!DNL Amazon Kinesis]。</li></ul> |
 | [!UICONTROL 用户名] | 您为目标流选择的帐户凭据。 |
 | [!UICONTROL 激活数据] | 指示正在激活到此目标的受众数量。 选择此控件可了解有关已激活受众的更多信息。 有关已激活受众的详细信息，请参阅目标详细信息页面中的[激活数据](/help/destinations/ui/destination-details-page.md#activation-data)。 |

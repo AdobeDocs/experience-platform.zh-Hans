@@ -3,9 +3,9 @@ keywords: facebook连接；facebook连接；facebook目标；facebook；instagra
 title: Facebook连接
 description: 根据散列邮件激活 Facebook 营销活动的轮廓，以实现受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: a2420f86e650ce1ca8a5dc01d9a29548663d3f7c
 workflow-type: tm+mt
-source-wordcount: '2091'
+source-wordcount: '2137'
 ht-degree: 6%
 
 ---
@@ -142,7 +142,7 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 以下视频还演示了配置[!DNL Facebook]目标和激活受众的步骤。
 
->[!VIDEO](https://video.tv.adobe.com/v/3411783/?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 >[!NOTE]
 >
@@ -157,14 +157,22 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 ### 刷新身份验证凭据 {#refresh-authentication-credentials}
 
-Facebook令牌每60天过期一次。 令牌过期后，数据导出到目标的操作将停止。 要防止出现这种情况，请执行以下步骤以重新进行身份验证：
+Facebook身份验证令牌每60天过期一次。 令牌过期后，数据导出到目标的操作将停止。
+
+您可以在&#x200B;**[!UICONTROL 帐户]**&#x200B;或&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡中从&#x200B;**[!UICONTROL 帐户到期日期]**&#x200B;列监视令牌到期日期。
+
+在“浏览”选项卡中![Facebook帐户令牌过期日期列](../../assets/catalog/social/facebook/account-expiration-browse.png)
+
+在“帐户”选项卡中![Facebook帐户令牌过期日期列](../../assets/catalog/social/facebook/account-expiration-accounts.png)
+
+要防止令牌过期导致激活数据流中断，请执行以下步骤以重新进行身份验证：
 
 1. 导航到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 帐户]**
 2. （可选）使用页面上的可用过滤器仅显示Facebook帐户。
    ![筛选以仅显示Facebook帐户](/help/destinations/assets/catalog/social/facebook/refresh-oauth-filters.png)
 3. 选择要刷新的帐户，选择省略号并选择&#x200B;**[!UICONTROL 编辑详细信息]**。
    ![选择“编辑详细信息”控件](/help/destinations/assets/catalog/social/facebook/refresh-oauth-edit-details.png)
-4. 在模式窗口中，选择&#x200B;**[!UICONTROL 重新连接OAuth]**&#x200B;并使用Facebook凭据重新进行身份验证。
+4. 在模式窗口中，选择&#x200B;**[!UICONTROL 重新连接OAuth]**并使用Facebook凭据重新进行身份验证。
    使用Reconnect OAuth选项的![模式窗口](/help/destinations/assets/catalog/social/facebook/reconnect-oauth-control.png)
 
 >[!SUCCESS]
