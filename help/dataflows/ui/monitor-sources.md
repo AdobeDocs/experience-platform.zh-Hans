@@ -2,10 +2,10 @@
 description: 了解如何使用监控仪表板监控引入数据湖的数据。
 title: 监测数据湖引入
 exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
-source-git-commit: f671188fbc694b0d2d808577265f91788cb0d8e9
+source-git-commit: 75970d41a316c97d98ebf6cefd3bfa0e58173030
 workflow-type: tm+mt
-source-wordcount: '1303'
-ht-degree: 10%
+source-wordcount: '1458'
+ht-degree: 9%
 
 ---
 
@@ -15,7 +15,9 @@ ht-degree: 10%
 >
 >监视仪表板当前不支持流源，如[HTTP API源](../../sources/connectors/streaming/http.md)。 目前，您只能使用功能板监控批次源。
 
-请阅读本文档，了解如何使用监视仪表板在Experience Platform UI中监视数据湖摄取。
+您可以使用Adobe Experience Platform用户界面中的监视仪表板检索有关数据湖中的数据摄取和数据保留过程的指标。 使用界面中的图形可监视一段时间内的摄取和保留趋势，并总结所有源数据流的性能。
+
+阅读本文档，了解如何使用监视仪表板监视数据湖中的所有数据处理，包括摄取和保留。
 
 ## 开始使用 {#get-started}
 
@@ -60,6 +62,7 @@ ht-degree: 10%
 | --- | --- |
 | 已接收的记录 | 从给定源接收的记录总数。 |
 | 已提取的记录 | 摄取到数据湖的记录总数。 |
+| 删除的记录数 | 由于数据湖保留设置或更改数据捕获操作而删除的记录总数。 |
 | 跳过的记录数 | 跳过的记录总数。 跳过的记录是指因不需要进行摄取而被跳过的字段。 例如，如果创建一个启用了部分摄取的源数据流，则可以配置一个可接受的错误率阈值。 在摄取流程中，摄取将跳过非必填字段（例如标识字段）的记录，只要它们在错误阈值内。 |
 | 失败的记录 | 由于错误而无法提取的记录总数。 |
 | 摄取率 | 根据接收的记录总数摄取的记录百分比。 |
@@ -79,7 +82,19 @@ ht-degree: 10%
 
 {style="table-layout:auto"}
 
+要自定义列显示，请选择列设置图标![列图标](/help/images/icons/column-settings.png)。
+
+![已选择列设置图标的监视仪表板。](../assets/ui/monitor-sources/edit-columns.png)
+
+接下来，使用&#x200B;*[!UICONTROL 自定义表]*&#x200B;窗口选择您希望仪表板显示的列。 完成后，选择&#x200B;**[!UICONTROL 应用]**。
+
+![监视仪表板中的自定义列弹出窗口。](../assets/ui/monitor-sources/customize-table.png)
+
 要监视特定数据流中摄取的数据，请选择源旁边的过滤器图标![过滤器](/help/images/icons/filter-add.png)。
+
+>[!TIP]
+>
+>您可以使用监视仪表板监视使用数据保留策略删除的记录的数据删除指标。 有关数据保留的详细信息，请阅读有关[设置数据保留策略](../../catalog/datasets/user-guide.md#data-retention-policy)的指南。
 
 ![通过选择给定源旁边的过滤器图标来监视特定数据流。](../assets/ui/monitor-sources/monitor-dataflow.png)
 
