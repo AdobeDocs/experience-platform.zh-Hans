@@ -69,9 +69,9 @@ ht-degree: 1%
 
 >[!TIP]
 >
-> * 选择[!UICONTROL Platform]列中的省略号(`...`)并使用![激活控件](/help/images/icons/data-add.png)**[!UICONTROL 激活&#x200B;]**/**[!UICONTROL &#x200B;激活受众&#x200B;]**/**[!UICONTROL &#x200B;导出数据集&#x200B;]**控件将受众或数据集导出到该目标。
-> * 选择[!UICONTROL Platform]列中的省略号(`...`)并使用![编辑详细信息控件](/help/images/icons/edit.png)**[!UICONTROL 编辑详细信息&#x200B;]**控件来[更新](update-accounts.md)现有目标帐户的详细信息。
-> * 选择[!UICONTROL Platform]列中的省略号(`...`)并使用![删除控件](/help/images/icons/delete.png)**[!UICONTROL 删除&#x200B;]**控件来[删除](delete-destination-account.md)现有目标帐户。
+> * 选择[!UICONTROL Platform]列中的省略号(`...`)并使用![激活控件](/help/images/icons/data-add.png)**[!UICONTROL 激活&#x200B;]**/**[!UICONTROL &#x200B;激活受众&#x200B;]**/**[!UICONTROL &#x200B;导出数据集&#x200B;]**&#x200B;控件将受众或数据集导出到该目标。
+> * 选择[!UICONTROL Platform]列中的省略号(`...`)并使用![编辑详细信息控件](/help/images/icons/edit.png)**[!UICONTROL 编辑详细信息&#x200B;]**&#x200B;控件来[更新](update-accounts.md)现有目标帐户的详细信息。
+> * 选择[!UICONTROL Platform]列中的省略号(`...`)并使用![删除控件](/help/images/icons/delete.png)**[!UICONTROL 删除&#x200B;]**&#x200B;控件来[删除](delete-destination-account.md)现有目标帐户。
 
 ![帐户选项卡](../assets/ui/workspace/destination-account-options.png)
 
@@ -92,10 +92,10 @@ ht-degree: 1%
 
 >[!TIP]
 >
-> * 选择[!UICONTROL 名称]列中的省略号(`...`)，然后使用![激活受众控件](/help/images/icons/data-add.png)**[!UICONTROL 激活&#x200B;]**控件将受众或数据集导出到该目标。
-> * 选择[!UICONTROL Name]列中的省略号(`...`)并使用![Delete控件](/help/images/icons/delete.png)**[!UICONTROL Delete ]**控件来[删除](delete-destinations.md)到目标的现有连接。
-> * 选择[!UICONTROL Name]列中的省略号(`...`)并使用监视控件中的![视图&#x200B;]**监视控件中的](/help/images/icons/monitoring.png)**[!UICONTROL 视图，在[监视仪表板](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard)中查看此目标的激活信息。
-> * 选择[!UICONTROL Name]列中的省略号(`...`)并使用![订阅警报](/help/images/icons/alert-add.png)**[!UICONTROL 订阅警报&#x200B;]**控件订阅目标数据流警报。 您可以订阅警报，以接收有关流运行的状态、成功或失败的消息。 有关目标数据流警报的详细信息，请参阅[订阅上下文中的目标警报](alerts.md)。
+> * 选择[!UICONTROL 名称]列中的省略号(`...`)，然后使用![激活受众控件](/help/images/icons/data-add.png)**[!UICONTROL 激活&#x200B;]**&#x200B;控件将受众或数据集导出到该目标。
+> * 选择[!UICONTROL Name]列中的省略号(`...`)并使用![Delete控件](/help/images/icons/delete.png)**[!UICONTROL Delete &#x200B;]**&#x200B;控件来[删除](delete-destinations.md)到目标的现有连接。
+> * 选择[!UICONTROL Name]列中的省略号(`...`)并使用监视控件中的![视图&#x200B;]&#x200B;**监视控件中的(/help/images/icons/monitoring.png)**&#x200B;视图，在[监视仪表板](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard)中查看此目标的激活信息。
+> * 选择[!UICONTROL Name]列中的省略号(`...`)并使用![订阅警报](/help/images/icons/alert-add.png)**[!UICONTROL 订阅警报&#x200B;]**&#x200B;控件订阅目标数据流警报。 您可以订阅警报，以接收有关流运行的状态、成功或失败的消息。 有关目标数据流警报的详细信息，请参阅[订阅上下文中的目标警报](alerts.md)。
 
 ![浏览选项卡](../assets/ui/workspace/browse-tab.png)
 
