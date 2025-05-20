@@ -20,7 +20,7 @@ Adobe Experience Platform [!DNL Privacy Service]处理客户访问、选择退�
 
 >[!NOTE]
 >
->本指南仅涵盖如何在Experience Platform中针对配置文件数据存储区提出隐私请求。 如果您还计划提出针对Experience Platform数据湖的隐私请求，请参阅本教程和关于在数据湖](../catalog/privacy.md)中处理[隐私请求的指南。
+>本指南仅涵盖如何在Experience Platform中针对配置文件数据存储区提出隐私请求。 如果您还计划提出针对Experience Platform数据湖的隐私请求，请参阅本教程和关于在数据湖[&#128279;](../catalog/privacy.md)中处理隐私请求的指南。
 >
 >有关如何为其他Adobe Experience Cloud应用程序提出隐私请求的步骤，请参阅[Privacy Service文档](../privacy-service/experience-cloud-apps.md)。
 
@@ -186,7 +186,7 @@ curl -X POST \
 
 其中一个数据集使用`customer_id`作为其主要标识符，而另外两个数据集使用`email_id`。 如果您只使用`email_id`作为用户ID值来发送隐私请求（访问或删除），则只会处理`firstName`、`lastName`和`mlScore`属性，而`address`不会受到影响。
 
-为确保您的隐私请求能够处理所有相关客户属性，您必须为可能存储了这些属性的所有适用数据集提供主标识值（每个客户最多九个ID）。 有关通常标记为标识的字段的更多信息，请参阅架构组合](../xdm/schema/composition.md#identity)的[基础知识中有关标识字段的部分。
+为确保您的隐私请求能够处理所有相关客户属性，您必须为可能存储了这些属性的所有适用数据集提供主标识值（每个客户最多九个ID）。 有关通常标记为标识的字段的更多信息，请参阅架构组合[&#128279;](../xdm/schema/composition.md#identity)的基础知识中有关标识字段的部分。
 
 ## 正在处理删除请求 {#delete}
 
@@ -225,4 +225,4 @@ Privacy Service只能使用不执行身份拼接的合并策略处理[!DNL Profi
 
 通过阅读本文档，您已了解[!DNL Experience Platform]中处理隐私请求涉及的重要概念。 要加深您对如何管理身份数据和创建隐私作业的了解，请继续阅读本指南中提供的文档。
 
-有关处理[!DNL Profile]未使用的[!DNL Experience Platform]资源的隐私请求的信息，请参阅有关在数据湖](../catalog/privacy.md)中处理[隐私请求的文档。
+有关处理[!DNL Profile]未使用的[!DNL Experience Platform]资源的隐私请求的信息，请参阅有关在数据湖[&#128279;](../catalog/privacy.md)中处理隐私请求的文档。
