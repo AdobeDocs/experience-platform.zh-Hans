@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 体验事件过期时间
 description: 本文档提供了有关为Adobe Experience Platform数据集中的单个Experience事件配置过期时间的常规指南。
 exl-id: a91f2cd2-3a5d-42e6-81c3-0ec5bc644f5f
-source-git-commit: 71634a1dd0e0cd3f731272a179b4f1fe221eb046
+source-git-commit: 05479dcfd1a375b3589ce212168f324aa72af4ba
 workflow-type: tm+mt
-source-wordcount: '884'
+source-wordcount: '872'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 在Adobe Experience Platform中，您可以为摄取到为[实时客户个人资料](./home.md)启用的数据集的所有Experience事件配置过期时间。 这允许您自动从配置文件存储中删除对您的用例不再有效或有用的数据。
 
-无法通过Experience Platform UI或API配置Experience Event过期时间。 相反，您必须联系支持人员，才能在所需的数据集上启用体验事件过期功能。
+要了解如何管理数据集中的Experience Event过期日期，请阅读[数据集UI指南](../catalog/datasets/user-guide.md#data-retention-policy)。
 
 >[!IMPORTANT]
 >
