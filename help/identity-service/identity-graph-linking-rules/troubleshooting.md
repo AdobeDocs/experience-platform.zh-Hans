@@ -2,22 +2,14 @@
 title: 身份图形链接规则疑难解答指南
 description: 了解如何解决身份图关联规则中的常见问题。
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: a309f0dca5ebe75fcb7abfeb98605aec2692324d
+source-git-commit: 28eab3488dccdcc6239b9499e875c31ff132fd48
 workflow-type: tm+mt
-source-wordcount: '3375'
+source-wordcount: '3285'
 ht-degree: 0%
 
 ---
 
 # [!DNL Identity Graph Linking Rules]疑难解答指南
-
->[!AVAILABILITY]
->
->标识图链接规则当前处于“有限可用”状态，所有客户都可以在开发沙盒中访问它。
->
->* **激活要求**：在您配置和保存[!DNL Identity Settings]之前，该功能将保持非活动状态。 如果没有此配置，系统将继续正常运行，并且不会更改行为。
->* **重要说明**：在此“有限可用性”阶段，Edge分段可能会产生意外的区段成员资格结果。 但是，流分段和批量分段将按预期运行。
->* **后续步骤**：有关如何在生产沙盒中启用此功能的信息，请联系您的Adobe客户团队。
 
 在测试和验证[!DNL Identity Graph Linking Rules]时，您可能会遇到一些与数据摄取和图形行为相关的问题。 阅读本文档以了解如何解决您在使用[!DNL Identity Graph Linking Rules]时可能遇到的一些常见问题。
 
@@ -266,14 +258,14 @@ ORDER BY timestamp desc
 
 **疑难解答步骤**
 
-请参阅有关[标识优化算法](./identity-optimization-algorithm.md)的文档，以及支持的图形结构类型。
+请参阅有关[身份优化算法](./identity-optimization-algorithm.md)的文档，以及支持的图形结构类型。
 
 * 有关支持的图形结构的示例，请阅读[图形配置指南](./example-configurations.md)。
 * 您还可以阅读[实施指南](./implementation-guide.md#appendix)以了解不支持的图形结构的示例。 有两种情况可能会发生：
    * 您的所有配置文件中没有单个命名空间。
    * 出现[“挂起ID”](./implementation-guide.md#dangling-loginid-scenario)方案。 在此方案中，Identity Service无法确定挂起ID是否与图形中的任何人员实体相关联。
 
-您还可以使用UI[&#128279;](./graph-simulation.md)中的图形模拟工具来模拟事件并配置您自己的唯一命名空间和命名空间优先级设置。 这样做有助于您基本了解身份优化算法的行为。
+您还可以使用UI](./graph-simulation.md)中的[图形模拟工具来模拟事件并配置您自己的唯一命名空间和命名空间优先级设置。 这样做有助于您从根本上了解身份优化算法的行为。
 
 如果仿真结果符合图形行为预期，则可以检查[身份设置](./identity-settings-ui.md)是否与您在模拟中配置的设置匹配。
 
@@ -328,9 +320,9 @@ ORDER BY timestamp desc
 
 本节概述有关[!DNL Identity Graph Linking Rules]的常见问题解答列表。
 
-## 身份标识优化算法 {#identity-optimization-algorithm}
+## 身份优化算法 {#identity-optimization-algorithm}
 
-请阅读本节以获取有关[标识优化算法](./identity-optimization-algorithm.md)的常见问题解答。
+请阅读本节以获取有关[身份优化算法](./identity-optimization-algorithm.md)的常见问题解答。
 
 ### 我的每个业务单元都有一个CRMID(B2C CRMID、B2B CRMID)，但我的所有配置文件中没有唯一的命名空间。 如果我将B2C CRMID和B2B CRMID标记为唯一，并启用我的身份设置，会出现什么情况？
 
@@ -389,7 +381,7 @@ ORDER BY timestamp desc
 
 ### 此功能如何与每个图50个身份的身份图护栏一起使用？ 命名空间优先级是否会影响此系统定义的护栏？
 
-首先应用身份优化算法，保证人物实体的表达； 之后，如果图形尝试超过[标识图形护栏](../guardrails.md)（每个图形50个标识），则将应用此逻辑。 命名空间优先级不会影响50身份/图形护栏的删除逻辑。
+首先应用身份优化算法，确保人员实体表示。 之后，如果图形尝试超过[标识图形护栏](../guardrails.md)（每个图形50个标识），则将应用此逻辑。 命名空间优先级不会影响50身份/图形护栏的删除逻辑。
 
 ## 测试
 

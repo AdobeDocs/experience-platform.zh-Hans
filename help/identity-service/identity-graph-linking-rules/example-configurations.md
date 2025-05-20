@@ -2,9 +2,9 @@
 title: Graph配置示例
 description: 了解在使用身份图形链接规则和身份数据时可能遇到的常见图形场景。
 exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
-source-git-commit: a309f0dca5ebe75fcb7abfeb98605aec2692324d
+source-git-commit: 28eab3488dccdcc6239b9499e875c31ff132fd48
 workflow-type: tm+mt
-source-wordcount: '2849'
+source-wordcount: '2759'
 ht-degree: 6%
 
 ---
@@ -15,14 +15,6 @@ ht-degree: 6%
 >id="platform_identities_algorithmconfiguration"
 >title="算法配置"
 >abstract="配置根据您所引入的身份标识定制的唯一命名空间和命名空间优先级。"
-
->[!AVAILABILITY]
->
->标识图链接规则当前处于“有限可用”状态，所有客户都可以在开发沙盒中访问它。
->
->* **激活要求**：在您配置和保存[!DNL Identity Settings]之前，该功能将保持非活动状态。 如果没有此配置，系统将继续正常运行，并且不会更改行为。
->* **重要说明**：在此“有限可用性”阶段，Edge分段可能会产生意外的区段成员资格结果。 但是，流分段和批量分段将按预期运行。
->* **后续步骤**：有关如何在生产沙盒中启用此功能的信息，请联系您的Adobe客户团队。
 
 >[!NOTE]
 >
@@ -771,7 +763,7 @@ CRMID: Tom, ECID: 111
 有关[!DNL Identity Graph Linking Rules]的详细信息，请阅读以下文档：
 
 * [[!DNL Identity Graph Linking Rules] 概述](./overview.md)
-* [身份标识优化算法](./identity-optimization-algorithm.md)
+* [身份优化算法](./identity-optimization-algorithm.md)
 * [实施指南](./implementation-guide.md)
 * [疑难解答和常见问题](./troubleshooting.md)
 * [命名空间优先级](./namespace-priority.md)

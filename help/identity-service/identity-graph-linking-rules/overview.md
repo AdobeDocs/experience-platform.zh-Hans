@@ -1,11 +1,11 @@
 ---
 title: 身份图链接规则
-description: 了解Identity Service中的身份图链接规则。
+description: 了解Identity Service中的Identity Graph链接规则。
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: a309f0dca5ebe75fcb7abfeb98605aec2692324d
+source-git-commit: 0aefcfbbbed675a08d9e3023b9f667ec59874e46
 workflow-type: tm+mt
-source-wordcount: '1497'
-ht-degree: 6%
+source-wordcount: '1547'
+ht-degree: 4%
 
 ---
 
@@ -14,33 +14,89 @@ ht-degree: 6%
 >[!CONTEXTUALHELP]
 >id="platform_identities_linkingrules_overview"
 >title="身份标识图链接规则"
->abstract="要防止这些不必要的合并，您可以使用通过身份标识图链接规则提供的配置，并允许对用户进行准确的个性化设置。"
+>abstract="要防止这些不需要的合并，您可以使用通过Identity Graph链接规则提供的配置，并允许对用户进行准确的个性化。"
 
->[!AVAILABILITY]
+>[!IMPORTANT]
 >
->标识图链接规则当前处于“有限可用”状态，所有客户都可以在开发沙盒中访问它。
->
->* **激活要求**：在您配置和保存[!DNL Identity Settings]之前，该功能将保持非活动状态。 如果没有此配置，系统将继续正常运行，并且不会更改行为。
->* **重要说明**：在此“有限可用性”阶段，Edge分段可能会产生意外的区段成员资格结果。 但是，流分段和批量分段将按预期运行。
->* **后续步骤**：有关如何在生产沙盒中启用此功能的信息，请联系您的Adobe客户团队。
+>如果您现有的沙盒要求在启用身份设置后取消折叠图形（“已修复”），请联系您的Adobe客户团队。
 
 通过Adobe Experience Platform Identity服务和实时客户个人资料，可以轻松假设您的数据被完全摄取，并且所有合并的个人资料都通过人员标识符（如CRMID）表示单个个人。 但是，在某些情况下，某些数据可能会尝试将多个不同的配置文件合并到单个配置文件中（“图形折叠”）。 为了防止这些不需要的合并，您可以使用通过[!DNL Identity Graph Linking Rules]提供的配置，并允许用户的准确个性化。
 
-观看以下视频，了解有关使用[!DNL Identity Graph Linking Rules]的其他信息：
-
->[!VIDEO](https://video.tv.adobe.com/v/3448282/?learn=on&enablevpops&captions=chi_hans)
-
-## 快速入门
+## 开始使用
 
 以下文档是了解[!DNL Identity Graph Linking Rules]所必需的。
 
-* [身份标识优化算法](./identity-optimization-algorithm.md)
+* [身份优化算法](./identity-optimization-algorithm.md)
 * [实施指南](./implementation-guide.md)
 * [图形配置示例](./example-configurations.md)
 * [疑难解答和常见问题](./troubleshooting.md)
 * [命名空间优先级](./namespace-priority.md)
 * [图形模拟UI](./graph-simulation.md)
 * [身份设置UI](./identity-settings-ui.md)
+
+## 视频库
+
+观看以下视频，了解身份图链接规则的一些基本方面。
+
+<!-- START CARDS HTML - DO NOT MODIFY BY HAND -->
+<div class="columns">
+    <div class="column is-half-tablet is-half-desktop is-one-third-widescreen" aria-label="Identity Graph Linking Rules: Overview">
+        <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
+            <div class="card-image">
+                <figure class="image x-is-16by9">
+                    <a href="https://video.tv.adobe.com/v/3448250/?learn=on&enablevpops" title="身份图关联规则：概述" target="_blank" rel="referrer">
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3429845/?format=jpeg&nocache=1732633205780" alt="身份图关联规则：概述"
+                             style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
+                    </a>
+                </figure>
+            </div>
+            <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+                <div class="top-card-content">
+                    <p class="headline is-size-6 has-text-weight-bold">
+                        <a href="https://video.tv.adobe.com/v/3448250/?learn=on&enablevpops" target="_blank" rel="referrer" title="身份图关联规则：概述">身份图形链接规则：概述</a>
+                    </p>
+                    <p class="is-size-6">观看本视频，大致了解身份图形链接规则，并了解如何使用此功能防止图形折叠。</p>
+                </div>
+                <div style="display: flex; flex-direction; row;">
+                  <a href="https://video.tv.adobe.com/v/3448250/?learn=on&enablevpops" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                      <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">观看</span>
+                  </a>
+                  <a href="./overview.md" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="margin-top: 1rem; margin-left: 0.5rem;">
+                      <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">读取</span>
+                  </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column is-half-tablet is-half-desktop is-one-third-widescreen" aria-label="Identity Graph Linking Rules: Identity Settings">
+        <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
+            <div class="card-image">
+                <figure class="image x-is-16by9">
+                    <a href="https://video.tv.adobe.com/v/3458487/?learn=on&enablevpops" title="身份图链接规则：身份设置" target="_blank" rel="referrer">
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3441066/?format=jpeg&nocache=1732633205785" alt="身份图链接规则：身份设置"
+                             style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
+                    </a>
+                </figure>
+            </div>
+            <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+                <div class="top-card-content">
+                    <p class="headline is-size-6 has-text-weight-bold">
+                        <a href="https://video.tv.adobe.com/v/3458487/?learn=on&enablevpops" target="_blank" rel="referrer" title="身份图链接规则：身份设置">身份图形链接规则：身份设置</a>
+                    </p>
+                    <p class="is-size-6">观看本视频，了解如何为Real-Time CDP、Adobe Journey Optimizer和Customer Journey Analytics等Adobe Experience Platform应用程序配置身份设置并构建高质量的身份图形和客户配置文件。</p>
+                </div>
+                <div style="display: flex; flex-direction: row;">
+                  <a href="https://video.tv.adobe.com/v/3458487/?learn=on&enablevpops" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                      <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">观看</span>
+                  </a>
+                  <a href="identity-settings-ui.md" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="margin-top: 1rem; margin-left: 0.5rem;">
+                      <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">读取</span>
+                  </a>
+                </div>            
+            </div>
+        </div>
+    </div>
+</div>
 
 ## 图形折叠场景 {#graph-collapse-scenarios}
 
@@ -107,12 +163,12 @@ ht-degree: 6%
 | 术语 | 描述 |
 | --- | --- |
 | 唯一命名空间 | 唯一命名空间是已设置为在身份图上下文中不同的身份命名空间。 您可以使用UI将命名空间配置为唯一。 将命名空间定义为唯一后，图形只能有一个包含该命名空间的标识。 |
-| 命名空间优先级 | 命名空间优先级是指命名空间彼此相比的相对重要性。 命名空间优先级可通过UI进行配置。 您可以在给定的身份图中对命名空间进行排名。 启用后，名称优先级将在各种场景中使用，例如身份优化算法的输入以及确定体验事件片段的主要身份。 |
-| 身份标识优化算法 | 身份优化算法确保在给定的身份图中实施通过配置唯一的命名空间和命名空间优先级创建的准则。 |
+| 命名空间优先级 | 命名空间优先级是指命名空间彼此相比的相对重要性。 命名空间优先级可通过UI进行配置。 您可以在给定的身份图中对命名空间进行排名。 启用后，名称优先级将用于各种场景，例如身份优化算法的输入以及确定体验事件片段的主要身份。 |
+| 身份优化算法 | 身份优化算法确保在给定的身份图中实施通过配置唯一的命名空间和命名空间优先级创建的准则。 |
 
 ### 唯一命名空间 {#unique-namespace}
 
-您可以使用身份设置UI工作区将命名空间配置为唯一。 这样，会通知身份优化算法，给定图形可能只有一个包含该唯一命名空间的身份。 这可以防止在同一图形中合并两个不同的人员标识符。
+您可以使用身份设置UI工作区将命名空间配置为唯一。 这样做会通知身份优化算法，给定图形可能只有一个包含该唯一命名空间的身份。 这可以防止在同一图形中合并两个不同的人员标识符。
 
 请考虑以下方案：
 
@@ -157,7 +213,7 @@ ht-degree: 6%
 
 有关[!DNL Identity Graph Linking Rules]的详细信息，请阅读以下文档：
 
-* [身份标识优化算法](./identity-optimization-algorithm.md)
+* [身份优化算法](./identity-optimization-algorithm.md)
 * [实施指南](./implementation-guide.md)
 * [图形配置示例](./example-configurations.md)
 * [疑难解答和常见问题](./troubleshooting.md)

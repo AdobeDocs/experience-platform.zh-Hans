@@ -2,22 +2,18 @@
 title: 身份设置UI
 description: 了解如何使用身份设置用户界面。
 exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
-source-git-commit: 44457b95b354e20808c1218ca3c8e698071f0528
+source-git-commit: 0aefcfbbbed675a08d9e3023b9f667ec59874e46
 workflow-type: tm+mt
-source-wordcount: '693'
-ht-degree: 13%
+source-wordcount: '627'
+ht-degree: 2%
 
 ---
 
 # 身份设置UI
 
->[!AVAILABILITY]
+>[!IMPORTANT]
 >
->标识图链接规则当前处于“有限可用”状态，所有客户都可以在开发沙盒中访问它。
->
->* **激活要求**：该功能将保持非活动状态，直到您配置并保存 [!DNL Identity Settings]。如果没有此配置，系统将会继续正常运行，而行为不会发生任何变化。
->* **重要说明**：在此限量发布阶段，边缘分段可能会产生意外的区段会员资格结果。但是，流式处理和批量分段将会按预期运行。
->* **后续步骤**：有关如何在生产沙盒中启用此功能的信息，请联系您的 Adobe 帐户团队。
+>如果您现有的沙盒要求在启用身份设置后取消折叠图形（“已修复”），请联系您的Adobe客户团队。
 
 身份设置是Adobe Experience Platform Identity Service UI中的一项功能，可用于指定唯一的命名空间并配置命名空间优先级。
 
@@ -28,7 +24,7 @@ ht-degree: 13%
 在开始使用标识设置之前，请阅读以下文档：
 
 * [[!DNL Identity Graph Linking Rules]](./overview.md)
-* [身份标识优化算法](./identity-optimization-algorithm.md)
+* [身份优化算法](./identity-optimization-algorithm.md)
 * [实施指南](./implementation-guide.md)
 * [图形配置示例](./example-configurations.md)
 * [命名空间优先级](./namespace-priority.md)
@@ -90,7 +86,7 @@ ht-degree: 13%
 有关[!DNL Identity Graph Linking Rules]的详细信息，请阅读以下文档：
 
 * [[!DNL Identity Graph Linking Rules] 概述](./overview.md)
-* [身份标识优化算法](./identity-optimization-algorithm.md)
+* [身份优化算法](./identity-optimization-algorithm.md)
 * [实施指南](./implementation-guide.md)
 * [图形配置示例](./example-configurations.md)
 * [疑难解答和常见问题](./troubleshooting.md)

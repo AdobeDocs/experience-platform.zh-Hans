@@ -1,30 +1,22 @@
 ---
-title: 身份标识优化算法
+title: 身份优化算法
 description: 了解Identity Service中的身份优化算法。
 exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
-source-git-commit: df89afb7131c57b9400788ce30c420b9830c022e
+source-git-commit: 28eab3488dccdcc6239b9499e875c31ff132fd48
 workflow-type: tm+mt
-source-wordcount: '1617'
+source-wordcount: '1527'
 ht-degree: 4%
 
 ---
 
-# 身份标识优化算法 {#identity-optimization-algorithm}
+# 身份优化算法 {#identity-optimization-algorithm}
 
 >[!CONTEXTUALHELP]
 >id="platform_identities_uniquenamespace"
 >title="唯一命名空间"
 >abstract="一个图形不能拥有两个具有唯一命名空间的身份标识。如果图形试图超过此限制，则保留最新的链接，并移除最旧的链接。"
 
->[!AVAILABILITY]
->
->标识图链接规则当前处于“有限可用”状态，所有客户都可以在开发沙盒中访问它。
->
->* **激活要求**：在您配置和保存[!DNL Identity Settings]之前，该功能将保持非活动状态。 如果没有此配置，系统将继续正常运行，并且不会更改行为。
->* **重要说明**：在此“有限可用性”阶段，Edge分段可能会产生意外的区段成员资格结果。 但是，流分段和批量分段将按预期运行。
->* **后续步骤**：有关如何在生产沙盒中启用此功能的信息，请联系您的Adobe客户团队。
-
-身份优化算法是Identity Service上的一个图算法，它帮助确保一个身份图代表一个人，因此防止了实时客户档案上不需要的身份合并。
+身份优化算法是Identity Service上的一种图算法，有助于确保身份图代表单个人，从而防止实时客户档案上不需要的身份合并。
 
 ## 输入参数 {#input-parameters}
 
@@ -68,7 +60,7 @@ Identity Service中的命名空间具有隐式相对重要性顺序。 考虑一
 
 ## 身份优化算法详细信息
 
-当违反唯一命名空间约束时，身份优化算法将“重播”链接并从头重建图。
+当违反唯一命名空间约束时，身份优化算法将“重播”链接并从头重建图形。
 
 * 链接按以下顺序排序：
    * 最新事件。
@@ -143,7 +135,7 @@ Identity Service中的命名空间具有隐式相对重要性顺序。 考虑一
    * 这随后将违反唯一命名空间配置，因为它将创建具有两个CRMID命名空间的单个图形。
    * 因此，身份优化算法会删除旧链接，在本例中，该链接是Jane的具有CRMID命名空间的身份与具有测试<span>@test的身份之间的链接。
 
-使用身份优化算法，错误的身份值（如虚假电子邮件或电话号码）不会在多个不同的身份图上传播。
+使用身份优化算法，不正确的身份值（如虚假电子邮件或电话号码）不会在多个不同的身份图之间传播。
 
 ![错误电子邮件](../images/identity-settings/bad-email.png)
 

@@ -2,10 +2,10 @@
 title: Graph Simulation UI指南
 description: 了解如何在Identity Service UI中使用图形模拟。
 exl-id: 89f0cf6e-c43f-40ec-859a-f3b73a6da8c8
-source-git-commit: a309f0dca5ebe75fcb7abfeb98605aec2692324d
+source-git-commit: 28eab3488dccdcc6239b9499e875c31ff132fd48
 workflow-type: tm+mt
-source-wordcount: '1563'
-ht-degree: 3%
+source-wordcount: '1446'
+ht-degree: 2%
 
 ---
 
@@ -14,22 +14,13 @@ ht-degree: 3%
 >[!CONTEXTUALHELP]
 >id="platform_identities_graphsimulation"
 >title="图形模拟"
->abstract="模拟图形以了解身份标识服务如何链接身份标识，以及身份标识优化算法是如何工作的。"
-
->[!AVAILABILITY]
->
->标识图链接规则当前处于“有限可用”状态，所有客户都可以在开发沙盒中访问它。
->
->* **激活要求**：在您配置和保存[!DNL Identity Settings]之前，该功能将保持非活动状态。 如果没有此配置，系统将继续正常运行，并且不会更改行为。
->* **重要说明**：在此“有限可用性”阶段，Edge分段可能会产生意外的区段成员资格结果。 但是，流分段和批量分段将按预期运行。
->* **后续步骤**：有关如何在生产沙盒中启用此功能的信息，请联系您的Adobe客户团队。
->* 您的帐户必须具有&#x200B;**查看身份图形**&#x200B;权限才能访问[!DNL Graph Simulation]工具。 有关详细信息，请阅读关于基于属性的访问控制中的权限的[指南](../../access-control/abac/ui/permissions.md)。
+>abstract="模拟图形以了解Identity Service如何链接身份以及Identity优化算法的工作原理。"
 
 [!DNL Graph Simulation]是Identity Service UI中的一个工具，可用于模拟给定特定身份组合时身份图的行为方式以及配置[身份优化算法](./identity-optimization-algorithm.md)的方式。
 
 观看以下视频，了解有关在Identity Service UI工作区中使用[!DNL Graph Simulation]界面的更多信息：
 
->[!VIDEO](https://video.tv.adobe.com/v/3444053/?learn=on&enablevpops&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/3444032/?learn=on&enablevpops)
 
 阅读本文档以了解如何使用[!DNL Graph Simulation]更好地了解身份图行为以及图算法如何运行。
 
@@ -186,7 +177,7 @@ ht-degree: 3%
 通过阅读本文档，您现在知道如何使用[!DNL Graph Simulation]工具来更好地了解在给定一组特定的规则和配置的情况下如何对待您的身份数据。 有关详细信息，请阅读以下文档：
 
 * [[!DNL Identity Graph Linking Rules] 概述](./overview.md)
-* [身份标识优化算法](./identity-optimization-algorithm.md)
+* [身份优化算法](./identity-optimization-algorithm.md)
 * [实施指南](./implementation-guide.md)
 * [疑难解答和常见问题](./troubleshooting.md)
 * [图形配置示例](./example-configurations.md)
