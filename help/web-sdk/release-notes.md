@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；Experience Platform Web SDK；Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
+source-git-commit: 5dc5e11962abf760692e0cb424cdd863d1905e87
 workflow-type: tm+mt
-source-wordcount: '2288'
+source-wordcount: '2355'
 ht-degree: 2%
 
 ---
@@ -15,6 +15,15 @@ ht-degree: 2%
 
 本文档介绍Adobe Experience Platform Web SDK的发行说明。
 有关Web SDK标记扩展的最新发行说明，请参阅[Web SDK标记扩展发行说明](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md)。
+
+## 2.27.0版 — 2025年5月20日
+
+**修复和改进**
+
+- 修复了应用程序内消息中自定义样式应用不正确的问题。
+- 更改了事件历史记录的格式。 这将导致在删除旧历史记录数据时重新显示应用程序内消息和内容卡。
+- 修复了在SPA用例中重新应用建议的问题。
+- 修复了对影子DOM元素进行点击跟踪的问题。
 
 ## 版本2.26.0 - 2025年3月5日
 
@@ -146,7 +155,7 @@ ht-degree: 2%
 
 **新增功能**
 
-- 添加了对数据流ID[&#128279;](../datastreams/overrides.md)的每命令覆盖的支持。
+- 添加了对数据流ID](../datastreams/overrides.md)的每命令[覆盖的支持。
 
 **修复和改进**
 
