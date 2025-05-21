@@ -2,9 +2,9 @@
 title: 使用UI将PostgreSQL连接到Experience Platform
 description: 了解如何使用Experience Platform用户界面中的源工作区将PostgreSQL数据库连接到Experience Platform。
 exl-id: e556d867-a1eb-4900-b8a9-189666a4f3f1
-source-git-commit: 8cabf1cb86993fdde37d0b9d957f6c8ec23bb237
+source-git-commit: f4200ca71479126e585ac76dd399af4092fdf683
 workflow-type: tm+mt
-source-wordcount: '643'
+source-wordcount: '653'
 ht-degree: 0%
 
 ---
@@ -43,19 +43,20 @@ ht-degree: 0%
 
 在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问&#x200B;*[!UICONTROL 源]*&#x200B;工作区。 在&#x200B;*[!UICONTROL 类别]*&#x200B;面板中选择相应的类别或者，使用搜索栏导航到要使用的特定源。
 
-若要使用[!DNL PostgreSQL]，请选择&#x200B;*[!UICONTROL 数据库]*&#x200B;下的&#x200B;**[!UICONTROL PostgreSQL]**&#x200B;源卡，然后选择&#x200B;**[!UICONTROL 设置]**。
+若要使用[!DNL PostgreSQL]，请选择&#x200B;*[!UICONTROL 数据库]*&#x200B;下的&#x200B;**[!UICONTROL PostgreSQL DB]**&#x200B;源卡，然后选择&#x200B;**[!UICONTROL 设置]**。
 
 >[!TIP]
 >
 >当给定的源尚未具有经过身份验证的帐户时，源目录中的源会显示&#x200B;**[!UICONTROL 设置]**&#x200B;选项。 创建经过身份验证的帐户后，此选项将更改为&#x200B;**[!UICONTROL 添加数据]**。
 
+![已选择PostgreSQL源卡的源目录。](../../../../images/tutorials/create/postgresql/catalog.png)
 
 
 ## 使用现有帐户 {#existing}
 
 若要使用现有帐户，请选择&#x200B;**[!UICONTROL 现有帐户]**，然后选择要使用的[!DNL PostgreSQL]帐户。
 
-![源工作流的现有帐户接口。](../../../../images/tutorials/create/postgresql/catalog.png)
+![源工作流的现有帐户接口。](../../../../images/tutorials/create/postgresql/existing.png)
 
 ## 创建新帐户 {#create}
 
@@ -63,7 +64,7 @@ ht-degree: 0%
 
 要创建新帐户，请选择&#x200B;**[!UICONTROL 新帐户]**，然后提供名称并选择性地为您的帐户添加描述。
 
-![源工作流中的新帐户接口，提供了帐户名称和可选描述。](../../../../images/tutorials/create/postgresql/existing.png)
+![源工作流中的新帐户接口，提供了帐户名称和可选描述。](../../../../images/tutorials/create/postgresql/new.png)
 
 ### 连接到Azure上的Experience Platform {#azure}
 
@@ -93,7 +94,7 @@ ht-degree: 0%
 
 要创建新的[!DNL PostgreSQL]帐户并连接到AWS上的Experience Platform，请确保您处于VA6沙盒中，然后提供身份验证所需的[凭据](../../../../connectors/databases/postgres.md#aws)。
 
-![源工作流中用于连接到AWS的新帐户接口。](../../../../images/tutorials/create/postgresql/basic-auth.png)
+![源工作流中用于连接到AWS的新帐户接口。](../../../../images/tutorials/create/postgresql/aws.png)
 
 ## 为您的[!DNL PostgreSQL]数据创建数据流
 

@@ -3,9 +3,9 @@ title: MariaDB Source Connector概述
 description: 了解如何使用API或用户界面将MariaDB连接到Adobe Experience Platform。
 last-substantial-update: 2025-04-29T00:00:00Z
 exl-id: 37b8f991-dca9-4f85-9bdd-4927a015e4c0
-source-git-commit: 04634c6edc13d8b8da01a01077161866235c61b1
+source-git-commit: bca4f40d452f0a5e70a388872a65640d1fd58533
 workflow-type: tm+mt
-source-wordcount: '601'
+source-wordcount: '420'
 ht-degree: 0%
 
 ---
@@ -22,11 +22,11 @@ Experience Platform支持从第三方数据库引入数据。 [!DNL Experience P
 
 ### IP地址允许列表
 
-在Azure或Amazon Web Services (AWS)上将源连接到Experience Platform之前，必须将特定于区域的IP地址添加到您的允许列表。 有关详细信息，请阅读有关[列入允许列表IP地址以连接到Azure和AWS上的Experience Platform](../../ip-address-allow-list.md)的指南。
+在将源连接到Experience Platform之前，必须将特定于区域的IP地址添加到允许列表。 有关详细信息，请阅读有关[将IP地址列入允许列表到Experience Platform](../../ip-address-allow-list.md)的指南。
 
-### 在Azure上对Experience Platform进行身份验证 {#azure}
+### 对Experience Platform进行身份验证
 
-必须提供以下凭据的值，才能将[!DNL MariaDB]连接到Azure上的Experience Platform。
+必须提供以下凭据的值才能将[!DNL MariaDB]连接到Experience Platform。
 
 >[!BEGINTABS]
 
@@ -58,26 +58,6 @@ Experience Platform支持从第三方数据库引入数据。 [!DNL Experience P
 有关获取连接字符串的详细信息，请参阅此[[!DNL MariaDB] 文档](https://mariadb.com/kb/en/about-mariadb-connector-odbc/)。
 
 >[!ENDTABS]
-
-### 在Amazon Web Services (AWS)上对Experience Platform进行身份验证 {#aws}
-
->[!AVAILABILITY]
->
->本节适用于在Amazon Web Services (AWS)上运行的Experience Platform的实施。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](../../../landing/multi-cloud.md)。
-
-必须提供以下凭据的值，才能将[!DNL MariaDB]连接到AWS上的Experience Platform。
-
-| 凭据 | 描述 |
-| --- | --- |
-| `server` | [!DNL MariaDB]数据库的名称或IP。 |
-| `username` | 数据库的名称。 |
-| `port` | 要连接的通信端点的端口号。 |
-| `password` | 与数据库对应的用户名。 |
-| `database` | 与数据库对应的密码。 |
-| `sslMode` | 在数据传输期间对数据进行加密的方法。 |
-| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL MariaDB]的连接规范ID为`3000eb99-cd47-43f3-827c-43caf170f015`。 **注意**：只有在通过[!DNL Flow Service] API连接时才需要此凭据。 |
-
-有关获取连接字符串的详细信息，请参阅此[[!DNL MariaDB] 文档](https://mariadb.com/kb/en/about-mariadb-connector-odbc/)。
 
 ## 使用API将[!DNL MariaDB]连接到Experience Platform
 

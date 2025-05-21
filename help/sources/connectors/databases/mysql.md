@@ -1,11 +1,11 @@
 ---
 title: MySQL Source Connector概述
 description: 了解如何使用API或用户界面将MySQL连接到Adobe Experience Platform。
-last-substantial-update: 2025-05-17T00:00:00Z
+last-substantial-update: 2025-05-20T00:00:00Z
 exl-id: a18e8e69-880f-4bee-b339-726091d6f858
-source-git-commit: f758479c37b72752bbb8a371de88bf653b2e6030
+source-git-commit: b73ced639100c95f6c62be92d4796a206a688958
 workflow-type: tm+mt
-source-wordcount: '714'
+source-wordcount: '625'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ ht-degree: 0%
 | `connectionString` | 与您的帐户关联的[!DNL MySQL]连接字符串。 [!DNL MySQL]连接字符串模式为： `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`。 |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL MySQL]的连接规范ID为`26d738e0-8963-47ea-aadf-c60de735468a`。 |
 
-有关详细信息，请阅读有关连接字符串[&#128279;](https://dev.mysql.com/doc/connector-net/en/connector-net-connections-string.html)的[!DNL MySQL] 文档。
+有关详细信息，请阅读有关连接字符串](https://dev.mysql.com/doc/connector-net/en/connector-net-connections-string.html)的[[!DNL MySQL] 文档。
 
 >[!TAB 基本身份验证]
 
@@ -69,7 +69,7 @@ ht-degree: 0%
 | `username` | 数据库的名称。 |
 | `password` | 与数据库对应的用户名。 |
 | `database` | 与数据库对应的密码。 |
-| `sslMode` | 要应用于您的连接的[!DNL Secure Sockets Layer] (SSL)方法。 可用的值包括： <ul><li>`DISABLED`：使用此选项禁用SSL。 如果您的服务器需要SSL配置，则连接将失败</li><li>`PREFERRED`：使用此选项可优先使用SSL连接，因为服务器支持它们。 此选项还允许非SSL连接。</li><li>`REQUIRED`：使用此选项将SSL连接设为必需。 如果服务器不支持SSL，则连接将失败。</li><li>`Verify-Ca`：如果服务器不支持SSL，则使用此选项在连接失败时验证服务器证书。</li><li>`Verify Identity`：如果服务器不支持SSL，则在连接失败时，使用此选项验证具有主机名的服务器证书。</li></ul> |
+| `sslMode` | 一个布尔值，它控制是否强制使用SSL，具体取决于您的服务器支持。 此配置默认为`false`。 |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL MySQL]的连接规范ID为`26d738e0-8963-47ea-aadf-c60de735468a`。 **注意**：只有在通过[!DNL Flow Service] API连接时才需要此凭据。 |
 
 ## 使用API将[!DNL MySQL]连接到Experience Platform

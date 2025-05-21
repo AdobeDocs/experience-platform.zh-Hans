@@ -2,9 +2,9 @@
 title: 使用UI将MariaDB连接到Experience Platform
 description: 了解如何使用Experience Platform用户界面中的源工作区将您的MariaDB帐户连接到Experience Platform。
 exl-id: 259ca112-01f1-414a-bf9f-d94caf4c69df
-source-git-commit: 0bf31c76f86b4515688d3aa60deb8744e38b4cd5
+source-git-commit: bca4f40d452f0a5e70a388872a65640d1fd58533
 workflow-type: tm+mt
-source-wordcount: '590'
+source-wordcount: '492'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 阅读本指南，了解如何使用Experience Platform用户界面中的源工作区将您的[!DNL MariaDB]帐户连接到Adobe Experience Platform。
 
-## 快速入门
+## 开始使用
 
 本教程需要对以下Experience Platform组件有一定的了解：
 
@@ -54,9 +54,9 @@ ht-degree: 0%
 
 ![源工作流中的新帐户接口，提供了帐户名称和可选描述。](../../../../images/tutorials/create/maria-db/new.png)
 
-### 连接到Azure上的Experience Platform {#azure}
+### 连接到Experience Platform
 
-您可以使用帐户密钥或基本身份验证将您的[!DNL MariaDB]帐户连接到Azure上的Experience Platform。
+您可以使用帐户密钥或基本身份验证将您的[!DNL MariaDB]帐户连接到Experience Platform。
 
 >[!BEGINTABS]
 
@@ -73,17 +73,5 @@ ht-degree: 0%
 ![源工作流程中的新帐户接口选择了“基本身份验证”。](../../../../images/tutorials/create/maria-db/basic-auth.png)
 
 >[!ENDTABS]
-
-### 连接到Amazon Web Services上的Experience Platform (AWS) {#aws}
-
->[!AVAILABILITY]
->
->本节适用于在Amazon Web Services (AWS)上运行的Experience Platform的实施。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](../../../../../landing/multi-cloud.md)。
-
-要创建新的[!DNL MariaDB]帐户并连接到AWS上的Experience Platform，请确保您处于VA6沙盒中，然后提供身份验证所需的[凭据](../../../../connectors/databases/mariadb.md#aws)。
-
-![源工作流中用于连接到AWS的新帐户接口。](../../../../images/tutorials/create/maria-db/basic-auth.png)
-
-## 后续步骤
 
 通过学习本教程，您已建立与[!DNL MariaDB]帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入Experience Platform](../../dataflow/databases.md)。

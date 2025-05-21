@@ -1,11 +1,11 @@
 ---
 title: PostgreSQL Source连接器概述
 description: 了解Adobe Experience Platform上的PostgreSQL源。
-last-substantial-update: 2025-04-29T00:00:00Z
+last-substantial-update: 2025-05-20T00:00:00Z
 exl-id: 27b891c5-5fc5-4539-8f98-e3a53e2eefe3
-source-git-commit: 04634c6edc13d8b8da01a01077161866235c61b1
+source-git-commit: f4200ca71479126e585ac76dd399af4092fdf683
 workflow-type: tm+mt
-source-wordcount: '694'
+source-wordcount: '667'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ ht-degree: 0%
 | 凭据 | 描述 |
 | --- | --- |
 | `connectionString` | 与您的[!DNL PostgreSQL]帐户关联的连接字符串。 [!DNL PostgreSQL]连接字符串模式为： `Server={SERVER};Database={DATABASE};Port={PORT};UID={USERNAME};Password={PASSWORD}`。 |
-| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL PostgreSQL]的连接规范ID为`74a1c565-4e59-48d7-9d67-7c03b8a13137`。 |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL PostgreSQL]的连接规范ID为`74a1c565-4e59-48d7-9d67-7c03b8a13137`。 只有在通过[!DNL Flow Service] API连接时才需要此凭据。 |
 
 有关详细信息，请阅读[[!DNL PostgreSQL] 文档](https://www.postgresql.org/docs/current/)。
 
@@ -51,6 +51,7 @@ ht-degree: 0%
 | `password` | 与您的[!DNL PostgreSQL]数据库身份验证关联的密码。 |
 | `database` | 要连接的[!DNL PostgreSQL]数据库的名称。 |
 | `sslMode` | 要应用于您的连接的[!DNL Secure Sockets Layer] (SSL)方法。 可用的值包括： <ul><li>`Disable`：使用此选项禁用SSL。 如果您的服务器需要SSL配置，则连接将失败。</li><li>`Allow`：使用此选项可允许SSL连接。 如果服务器支持非SSL连接，则仍可以使用这些连接。</li><li>`Prefer`：使用此选项可优先使用SSL连接，因为服务器支持它们。 此选项还允许非SSL连接。</li><li>`Require`：使用此选项将SSL连接设为必需。 如果服务器不支持SSL，则连接将失败。</li><li>`Verify-Ca`：如果服务器不支持SSL，则使用此选项在连接失败时验证服务器证书。</li><li>`Verify-Full`：如果服务器不支持SSL，则在连接失败时，使用此选项验证具有主机名的服务器证书。</li></ul> |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL PostgreSQL]的连接规范ID为`74a1c565-4e59-48d7-9d67-7c03b8a13137`。 只有在通过[!DNL Flow Service] API连接时才需要此凭据。 |
 
 有关详细信息，请阅读[[!DNL PostgreSQL] 文档](https://www.postgresql.org/docs/current/)。
 
@@ -71,7 +72,8 @@ ht-degree: 0%
 | `username` | 与您的[!DNL PostgreSQL]数据库身份验证关联的用户名。 |
 | `password` | 与您的[!DNL PostgreSQL]数据库身份验证关联的密码。 |
 | `database` | 要连接的[!DNL PostgreSQL]数据库的名称。 |
-| `sslMode` | 要应用于您的连接的[!DNL Secure Sockets Layer] (SSL)方法。 可用的值包括： <ul><li>`Disable`：使用此选项禁用SSL。 如果您的服务器需要SSL配置，则连接将失败。</li><li>`Allow`：使用此选项可允许SSL连接。 如果服务器支持非SSL连接，则仍可以使用这些连接。</li><li>`Prefer`：使用此选项可优先使用SSL连接，因为服务器支持它们。 此选项还允许非SSL连接。</li><li>`Require`：使用此选项将SSL连接设为必需。 如果服务器不支持SSL，则连接将失败。</li><li>`Verify-Ca`：如果服务器不支持SSL，则使用此选项在连接失败时验证服务器证书。</li><li>`Verify-Full`：如果服务器不支持SSL，则在连接失败时，使用此选项验证具有主机名的服务器证书。</li></ul> |
+| `sslMode` | 一个布尔值，它控制是否强制使用SSL，具体取决于您的服务器支持。 此配置默认为`false`。 |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL PostgreSQL]的连接规范ID为`74a1c565-4e59-48d7-9d67-7c03b8a13137`。 只有在通过[!DNL Flow Service] API连接时才需要此凭据。 |
 
 有关详细信息，请阅读[[!DNL PostgreSQL] 文档](https://www.postgresql.org/docs/current/)。
 

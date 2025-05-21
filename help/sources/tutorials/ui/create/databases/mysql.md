@@ -2,14 +2,14 @@
 title: 使用UI将MySQL连接到Experience Platform
 description: 了解如何使用UI将MySQL数据库连接到Experience Platform。
 exl-id: 75e74bde-6199-4970-93d2-f95ec3a59aa5
-source-git-commit: 659af23c6d05f184b745e13ab8545941f3892e7e
+source-git-commit: f4200ca71479126e585ac76dd399af4092fdf683
 workflow-type: tm+mt
 source-wordcount: '540'
 ht-degree: 0%
 
 ---
 
-# 在用户界面中创建[!DNL MySQL]源连接
+# 使用UI将[!DNL MySQL]连接到Experience Platform
 
 阅读本指南，了解如何使用Experience Platform用户界面中的源工作区将您的[!DNL MySQL]数据库连接到Adobe Experience Platform。
 

@@ -2,9 +2,9 @@
 title: 使用流服务API将MariaDB连接到Experience Platform
 description: 了解如何使用API将您的MariaDB帐户连接到Experience Platform。
 exl-id: 9b7ff394-ca55-4ab4-99ef-85c80b04a6df
-source-git-commit: d5d47f9ca3c01424660fe33f8310586a70a32875
+source-git-commit: bca4f40d452f0a5e70a388872a65640d1fd58533
 workflow-type: tm+mt
-source-wordcount: '644'
+source-wordcount: '474'
 ht-degree: 2%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 阅读本指南，了解如何使用[[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/)将您的[!DNL MariaDB]帐户连接到Adobe Experience Platform。
 
-## 快速入门
+## 开始使用
 
 本指南要求您对Experience Platform的以下组件有一定的了解：
 
@@ -30,11 +30,11 @@ ht-degree: 2%
 
 有关如何成功调用Experience Platform API的信息，请阅读[Experience Platform API快速入门](../../../../../landing/api-guide.md)指南。
 
-## 将[!DNL MariaDB]连接到Azure上的Experience Platform {#azure}
+## 将[!DNL MariaDB]连接到Experience Platform
 
-有关如何将您的[!DNL MariaDB]帐户连接到Azure上的Experience Platform的信息，请阅读以下步骤。
+有关如何将您的[!DNL MariaDB]帐户连接到Experience Platform的信息，请阅读以下步骤。
 
-### 在Azure上的Experience Platform上为[!DNL MariaDB]创建基础连接 {#azure-base}
+### 为[!DNL MariaDB]创建基本连接
 
 基本连接会保留源与Experience Platform之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
@@ -165,82 +165,6 @@ curl -X POST \
 +++
 
 >[!ENDTABS]
-
-## 将[!DNL MariaDB]连接到Amazon Web Services上的Experience Platform {#aws}
-
->[!AVAILABILITY]
->
->本节适用于在Amazon Web Services (AWS)上运行的Experience Platform的实施。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](../../../../../landing/multi-cloud.md)。
-
-有关如何将您的[!DNL MariaDB]帐户连接到AWS上的Experience Platform的信息，请阅读以下步骤。
-
-### 在AWS上的Experience Platform上为[!DNL MariaDB]创建基本连接 {#aws-base}
-
-**API格式**
-
-```https
-POST /connections
-```
-
-**请求**
-
-以下请求为[!DNL MariaDB]创建基本连接以连接到AWS上的Experience Platform。
-
-+++查看请求示例
-
-```shell
-curl -X POST \
-  'https://platform.adobe.io/data/foundation/flowservice/connections' \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}' \
-  -H 'Content-Type: application/json' \
-  -d '{
-      "name": "MariaDB on Experience Platform AWS",
-      "description": "MariaDB on Experience Platform AWS",
-      "auth": {
-          "specName": "Basic Authentication",
-          "params": {
-              "server": "{SERVER}",
-              "database": "{DATABASE}",
-              "username": "{USERNAME}",
-              "password": "{PASSWORD}",
-              "sslMode": "{SSLMODE}"
-          }
-      },
-      "connectionSpec": {
-          "id": "3000eb99-cd47-43f3-827c-43caf170f015",
-          "version": "1.0"
-      }
-  }'
-```
-
-| 属性 | 描述 |
-| --- | --- |
-| `auth.params.server` | [!DNL MariaDB]数据库的名称或IP。 |
-| `auth.params.database` | 数据库的名称。 |
-| `auth.params.username` | 与数据库对应的用户名。 |
-| `auth.params.password` | 与数据库对应的密码。 |
-| `auth.params.sslMode` | 在数据传输期间对数据进行加密的方法。 |
-| `connectionSpec.id` | [!DNL MariaDB]连接规范ID为： `3000eb99-cd47-43f3-827c-43caf170f015`。 |
-
-+++
-
-**响应**
-
-成功的响应返回新创建的基本连接的详细信息，包括其唯一标识符(`id`)。
-
-+++查看响应示例
-
-```json
-{
-    "id": "f847950c-1c12-4568-a550-d5312b16fdb8",
-    "etag": "\"0c0099f4-0000-0200-0000-67da91710000\""
-}
-```
-
-+++
 
 
 ## 后续步骤
