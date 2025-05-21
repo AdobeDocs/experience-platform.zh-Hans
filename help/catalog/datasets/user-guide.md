@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 数据集UI指南
 description: 了解如何在Adobe Experience Platform用户界面中使用数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 52412c5d6231e10fc875d16971dbd8cbfb116d21
+source-git-commit: f66e85ee5fb3fdaf7036b131f9689082d9d96127
 workflow-type: tm+mt
-source-wordcount: '4143'
-ht-degree: 4%
+source-wordcount: '4237'
+ht-degree: 5%
 
 ---
 
@@ -56,8 +56,8 @@ ht-degree: 4%
 
 >[!CONTEXTUALHELP]
 >id="platform_datasets_orchestratedCampaigns_toggle"
->title="精心策划的营销活动"
->abstract="启用此切换可允许在Adobe Journey Optimizer编排的营销活动中使用选定的数据集。 数据集必须使用关系架构，并且每个架构只能创建一个数据集。"
+>title="编排的营销活动"
+>abstract="启用此切换按钮可允许在 Adobe Journey Optimizer 编排的营销活动中使用所选数据集。数据集必须使用关系架构，且每个架构只能创建一个数据集。"
 
 在[!DNL Experience Platform] UI中，从左侧导航中选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以打开&#x200B;**[!UICONTROL 数据集]**&#x200B;仪表板。 仪表板列出您组织的所有可用数据集。 将显示每个列出数据集的详细信息，包括其名称、数据集所遵循的架构以及最近一次摄取运行的状态。
 
@@ -100,7 +100,7 @@ ht-degree: 4%
 * [[!UICONTROL 管理数据和访问标签]](#manage-and-enforce-data-governance)
 * [[!UICONTROL 启用统一配置文件]](#enable-profile)
 * [[!UICONTROL 管理标记]](#manage-tags)
-* [(Beta) [!UICONTROL 设置数据保留策略]](#data-retention-policy)
+* [[!UICONTROL 设置数据保留策略]](#data-retention-policy)
 * [[!UICONTROL 移动到文件夹]](#move-to-folders)
 * [[!UICONTROL 删除]](#delete)。
 
@@ -174,13 +174,15 @@ ht-degree: 4%
 
 有关如何对业务对象进行分类以便于发现和分类的详细信息，请参阅[管理元数据分类](../../administrative-tags/ui/managing-tags.md)指南。 本指南介绍具有正确权限的用户如何在Experience Platform UI中创建预定义标记、将标记分配给类别以及管理所有相关的CRUD操作。
 
-### (Beta)设置数据保留策略 {#data-retention-policy}
-
->[!AVAILABILITY]
-> 
->数据保留设置当前为测试版，仅在&#x200B;**有限版本**&#x200B;中可供选定组织使用。 您的UI可能无法反映下面描述的功能。
+### 设置数据保留策略 {#data-retention-policy}
 
 使用[!UICONTROL 数据集]工作区的[!UICONTROL 浏览]选项卡中的内联操作菜单管理数据集到期和保留设置。 您可以使用此功能配置数据在数据湖和配置文件存储中保留的时长。 到期日期基于数据被摄取到Experience Platform中的时间和您配置的保留期。
+
+>[!IMPORTANT]
+>
+>要为ExperienceEvent数据集应用或更新保留规则，您的用户角色必须包括&#x200B;**管理数据集**&#x200B;权限。 这种基于角色的访问控制可确保只有授权用户可以修改数据集保留设置。
+>
+>有关在Adobe Experience Platform中分配权限的更多信息，请参阅[访问控制概述](../../access-control/home.md#platform-permissions)。
 
 >[!TIP]
 >
@@ -216,7 +218,7 @@ ht-degree: 4%
 
 >[!NOTE]
 >
->体验事件分布图特定于数据集，并仅反映选定数据集的数据。
+>体验事件分布图特定于选定的数据集，并仅反映其数据。 它仅适用于存储在数据湖中的数据。
 
 ![显示了“设置数据保留”对话框，其中显示了“体验事件”分布图。](../images/datasets/user-guide/visual-forecast.png)
 
@@ -226,23 +228,25 @@ ht-degree: 4%
 >
 >应用数据保留规则后，任何超过过期值所定义天数的数据将被永久删除，并且无法恢复。
 
-配置保留设置后，使用监控UI确认系统执行了更改。 监控UI可集中查看所有数据集的数据保留活动。 从此处，您可以跟踪作业执行，查看删除了多少数据，并确保保留策略按预期运行。 此可见性支持治理、法规遵从性和高效的数据生命周期管理。
+配置保留设置后，使用监控UI确认系统执行了更改。 监控UI可集中查看所有数据集的数据保留活动。 从此处，您可以跟踪作业执行，查看删除了多少数据，并确保保留策略按预期运行。
 
-要了解如何使用监视仪表板在Experience Platform UI中跟踪源数据流，请参阅UI[&#128279;](../../dataflows/ui/monitor-sources.md)文档中的监视源数据流。
+要探索保留策略如何跨不同的服务应用，请参阅有关配置文件](../../profile/event-expirations.md)中的[体验事件数据集保留和数据湖中的[体验事件数据集保留](./experience-event-dataset-retention-ttl-guide.md)的专用指南。 此可见性支持治理、法规遵从性和高效的数据生命周期管理。
+
+要了解如何使用监视仪表板在Experience Platform UI中跟踪源数据流，请参阅UI](../../dataflows/ui/monitor-sources.md)文档中的[监视源数据流。
 
 <!-- Improve the link above. I cannot link to a 100% appropriate document yet. -->
 
 有关定义数据集过期日期范围的规则以及配置数据保留策略的最佳实践的更多信息，请参阅[常见问题解答页面](../catalog-faq.md)。
 
-#### (Beta)提高了保留期和存储指标的可见性 {#retention-and-storage-metrics}
+#### 增强了保留期和存储量度的可见性 {#retention-and-storage-metrics}
 
-Beta版用户可以使用四个新列，以便更清楚地了解您的数据管理：**[!UICONTROL 数据湖存储]**、**[!UICONTROL 数据湖保留]**、**[!UICONTROL 配置文件存储]**&#x200B;和&#x200B;**[!UICONTROL 配置文件保留]**。 这些量度显示数据在Data Lake和Profile Service中消耗的存储量及其保留期。
+四个新列可让您更清楚地了解数据管理： **[!UICONTROL 数据湖存储]**、**[!UICONTROL 数据湖保留]**、**[!UICONTROL 配置文件存储]**&#x200B;和&#x200B;**[!UICONTROL 配置文件保留]**。 这些量度显示数据在Data Lake和Profile Service中消耗的存储量及其保留期。
 
-这种更高的可见性使您能够作出明智的决策，更有效地管理存储成本。 按存储大小排序数据集，以识别当前沙盒中最大的数据集。 这些见解还支持更好的治理，并帮助您了解数据生命周期和权利使用情况。
+这种更高的可见性使您能够作出明智的决策，更有效地管理存储成本。 按存储大小排序数据集，以识别当前沙盒中最大的数据集。 这些见解支持数据管理最佳实践，并有助于确保符合许可授权。
 
 ![数据集工作区的“浏览”选项卡，其中突出显示了四个新的存储和保留列。](../images/datasets/user-guide/storage-and-retention-columns.png)
 
-下表概述了测试版中可用的新保留和存储指标。 它详细说明了每列的用途以及它如何支持管理数据保留和存储。
+下表概述了新的保留和存储指标。 它详细说明了每列的用途以及它如何支持管理数据保留和存储。
 
 | 列标题 | 描述 |
 |---|---|
@@ -252,6 +256,8 @@ Beta版用户可以使用四个新列，以便更清楚地了解您的数据管�
 | [!UICONTROL 配置文件保留] | 配置文件数据集的当前保留期。 您可以更新此值以控制配置文件数据保留多长时间。 |
 
 {style="table-layout:auto"}
+
+要根据存储和保留量度的见解执行操作，请参阅[数据管理许可证权利最佳实践指南](../../landing/license-usage-and-guardrails/data-management-best-practices.md)。 使用它可以管理您摄取和保留的数据，应用过滤器和过期规则，以及控制数据增长以保持在许可使用限制之内。
 
 ### 移至文件夹 {#move-to-folders}
 
