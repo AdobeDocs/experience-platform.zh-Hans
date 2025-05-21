@@ -1,19 +1,19 @@
 ---
-title: 在UI中创建Adobe Analytics Source连接
-description: 了解如何在UI中创建Adobe Analytics源连接，将消费者数据接入Adobe Experience Platform。
+title: 将Adobe Analytics连接到Experience Platform
+description: 了解如何将Adobe Analytics报表包数据引入Experience Platform
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 086777a09eec17c94a7e0a5d2db58e4a1f6b523f
 workflow-type: tm+mt
-source-wordcount: '2676'
+source-wordcount: '2731'
 ht-degree: 3%
 
 ---
 
-# 在UI中创建Adobe Analytics源连接
+# 将Adobe Analytics连接到Experience Platform
 
-本教程提供了在UI中创建Adobe Analytics源连接的步骤，以便将Adobe Analytics报表包数据引入Adobe Experience Platform。
+阅读本指南，了解如何使用Adobe Analytics源将Analytics报表包数据摄取到Adobe Experience Platform。
 
-## 快速入门
+## 开始使用
 
 本教程需要对以下Experience Platform组件有一定的了解：
 
@@ -25,12 +25,11 @@ ht-degree: 3%
 
 请务必了解本文档中使用的以下关键术语：
 
-* **标准属性**：标准属性是Adobe预定义的任何属性。 它们对所有客户具有相同的含义，并且在[!DNL Analytics]源数据和[!DNL Analytics]架构字段组中可用。
-* **自定义属性**：自定义属性是[!DNL Analytics]中自定义变量层次结构中的任何属性。 在Adobe Analytics实施中使用自定义属性将特定信息捕获到报表包中，这些属性的使用因报表包而异。 自定义属性包括eVar、prop和列表。 有关eVar的详细信息，请参阅以下[[!DNL Analytics] 有关转化变量](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=zh-Hans)的文档。
+* **标准属性**：标准属性是Adobe预定义的任何属性。 它们对所有客户具有相同的含义，并且在Analytics源数据和Analytics架构字段组中可用。
+* **自定义属性**：自定义属性是Analytics自定义变量层次结构中的任何属性。 在Adobe Analytics实施中使用自定义属性将特定信息捕获到报表包中，这些属性的使用因报表包而异。 自定义属性包括eVar、prop和列表。 有关eVar的更多信息，请参阅以下[有关转化变量](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html)的Analytics文档。
 * **自定义字段组中的任何属性**：源自客户创建的字段组的属性都是用户定义的属性，既不是标准属性，也不是自定义属性。
-* **友好名称**：友好名称是[!DNL Analytics]实施中自定义变量的人工提供标签。 有关友好名称的详细信息，请参阅以下[[!DNL Analytics] 有关转化变量](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=zh-Hans)的文档。
 
-## 创建与Adobe Analytics的源连接
+## 导航源目录
 
 >[!NOTE]
 >
@@ -39,99 +38,92 @@ ht-degree: 3%
 >* 一个数据流，将历史报表包数据回填到13个月的数据湖。 此数据流在回填完成后结束。
 >* 将实时数据发送到数据湖和[!DNL Real-Time Customer Profile]的数据流流。 此数据流持续运行。
 
-在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 在&#x200B;*[!UICONTROL Adobe应用程序]*&#x200B;类别中，选择Adobe Analytics卡，然后选择&#x200B;**[!UICONTROL 添加数据]**。
 
-您可以从屏幕左侧的目录中选择相应的类别。 您还可以使用搜索栏缩小显示的源。
+![已选择Adobe Analytics源卡的源目录。](../../../../images/tutorials/create/analytics/catalog.png)
 
-在&#x200B;**[!UICONTROL Adobe应用程序]**&#x200B;类别下，选择&#x200B;**[!UICONTROL Adobe Analytics]**，然后选择&#x200B;**[!UICONTROL 添加数据]**。
-
-![目录](../../../../images/tutorials/create/analytics/catalog.png)
-
-### 选择数据
+## 选择数据
 
 >[!IMPORTANT]
 >
->屏幕上列出的报表包可能来自不同的区域。 您有责任了解您的数据限制和义务，以及如何跨地区在Adobe Experience Platform中使用这些数据。 请确保贵公司允许这样做。
+>* 屏幕上列出的报表包可能来自不同的区域。 您有责任了解您的数据限制和义务，以及如何跨地区在Adobe Experience Platform中使用这些数据。 请确保贵公司允许这样做。
+>* 只有不存在数据冲突(例如两个含义不同的自定义属性（eVar、列表和prop）)，才能为实时客户资料启用多个报表包的数据。
 
-**[!UICONTROL Analytics源添加数据]**&#x200B;步骤为您提供一个[!DNL Analytics]报表包数据的列表，以便您创建与的源连接。
+报表包是构成Analytics报表基础的数据容器。 一个组织可以有多个报表包，每个报表包中包含不同的数据集。
 
-报表包是构成[!DNL Analytics]报表基础的数据容器。 一个组织可以有多个报表包，每个报表包中包含不同的数据集。
-
-您可以从任何区域（美国、英国或新加坡）摄取报告包，前提是它们映射到与Experience Platform沙盒实例（正在其中创建源连接）相同的组织。 只能使用单个活动数据流摄取报表包。 已在您使用的沙盒或其他沙盒中摄取不可选的报告包。
+您可以从任何区域（美国、英国或新加坡）摄取报告包，前提是它们映射到与Experience Platform沙盒实例（正在其中创建源连接）相同的组织。 只能使用单个活动数据流摄取报表包。 如果报表包为灰色并且无法选择，则表示已在您使用的沙盒或其他沙盒中摄取该报表包。
 
 可以建立多个绑定内连接，将多个报表包纳入同一沙盒中。 如果报表包具有不同的变量架构（如eVar或事件），则应将它们映射到自定义字段组中的特定字段，并使用[数据准备](../../../../../data-prep/ui/mapping.md)避免数据冲突。 只能将报表包添加到单个沙盒中。
 
-![](../../../../images/tutorials/create/analytics/report-suite.png)
+选择&#x200B;**[!UICONTROL 报表包]**，然后使用&#x200B;*[!UICONTROL Analytics源添加数据]*&#x200B;界面浏览列表并识别要摄取到Experience Platform的Analytics报表包。 选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
 
->[!NOTE]
->
->只有不存在数据冲突(例如两个含义不同的自定义属性（eVar、列表和prop）)，才能为实时客户资料启用多个报表包的数据。
-
-要创建[!DNL Analytics]源连接，请选择一个报表包，然后选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
-
-![](../../../../images/tutorials/create/analytics/add-data.png)
+![已选择要摄取的Analytics报表包，且“下一步”按钮突出显示](../../../../images/tutorials/create/analytics/add-data.png)
 
 &lt;!—Analytics报告包一次只能为一个沙盒配置。 要将同一报表包导入其他沙盒，必须通过对其他沙盒的配置删除数据集流并重新实例化。—>
 
-### 映射
+## 映射 {#mapping}
 
 >[!IMPORTANT]
 >
 >数据准备转换可能会增加整个数据流的延迟。 附加的延迟因转换逻辑的复杂性而异。
 
-在将[!DNL Analytics]数据映射到目标XDM架构之前，必须首先选择是使用默认架构还是自定义架构。
+在将Analytics数据映射到目标XDM架构之前，必须首先确定是使用默认架构还是自定义架构。
 
-默认架构代表您创建新架构，包含[!DNL Adobe Analytics ExperienceEvent Template]字段组。 若要使用默认架构，请选择&#x200B;**[!UICONTROL 默认架构]**。
+>[!BEGINTABS]
 
-![default-schema](../../../../images/tutorials/create/analytics/default-schema.png)
+>[!TAB 默认架构]
 
-使用自定义架构，您可以为[!DNL Analytics]数据选择任何可用的架构，前提是该架构具有[!DNL Adobe Analytics ExperienceEvent Template]字段组。 若要使用自定义架构，请选择&#x200B;**[!UICONTROL 自定义架构]**。
+默认架构代表您创建新架构。 这个新创建的架构包含[!DNL Adobe Analytics ExperienceEvent Template]字段组。 若要使用默认架构，请选择&#x200B;**[!UICONTROL 默认架构]**。
 
-![自定义架构](../../../../images/tutorials/create/analytics/custom-schema.png)
+![已选择“默认架构”的Analytics源工作流的架构选择步骤。](../../../../images/tutorials/create/analytics/default-schema.png)
 
-[!UICONTROL 映射]页提供了一个将源字段映射到相应目标架构字段的界面。 在此处，您可以将自定义变量映射到新架构字段组并应用数据准备支持的计算。 选择目标架构以启动映射过程。
+>[!TAB 自定义架构]
+
+使用自定义架构，您可以为Analytics数据选择任何可用的架构，前提是该架构具有[!DNL Adobe Analytics ExperienceEvent Template]字段组。 若要使用自定义架构，请选择&#x200B;**[!UICONTROL 自定义架构]**。
+
+![已选择“自定义架构”的Analytics源工作流的架构选择步骤。](../../../../images/tutorials/create/analytics/custom-schema.png)
+
+>[!ENDTABS]
+
+使用&#x200B;*[!UICONTROL 映射]*&#x200B;接口将源字段映射到其相应的目标架构字段。 您可以将自定义变量映射到新的架构字段组，并应用数据准备支持的计算。 选择目标架构以启动映射过程。
 
 >[!TIP]
 >
->架构选择菜单中仅显示具有[!DNL Adobe Analytics ExperienceEvent Template]字段组的架构。 忽略其他架构。 如果您的报表包数据没有合适的架构，则必须创建新架构。 有关创建架构的详细步骤，请参阅[在UI中创建和编辑架构指南](../../../../../xdm/ui/resources/schemas.md)。
+>架构选择菜单中仅显示具有[!DNL Adobe Analytics ExperienceEvent Template]字段组的架构。 忽略其他架构。 如果没有适合您的报表包数据的架构，则必须创建新架构。 有关创建架构的详细步骤，请参阅[在UI中创建和编辑架构指南](../../../../../xdm/ui/resources/schemas.md)。
 
-![select-schema](../../../../images/tutorials/create/analytics/select-schema.png)
+![映射接口的目标架构选择面板。](../../../../images/tutorials/create/analytics/select-schema.png)
 
-[!UICONTROL 映射标准字段]部分显示[!UICONTROL 应用的标准映射]、[!UICONTROL 不匹配的标准映射]和[!UICONTROL 自定义映射]的面板。 有关每个类别的具体信息，请参阅下表：
+您可以引用[!UICONTROL 映射标准字段]面板来获取有关已应用[!UICONTROL 标准映射]的指标。 [!UICONTROL 描述符名称冲突]和[!DNL Custom mappings]的标准映射。
 
 | 映射标准字段 | 描述 |
 | --- | --- |
-| [!UICONTROL 已应用标准映射] | 应用的[!UICONTROL 标准映射]面板显示映射属性的总数。 标准映射是指源[!DNL Analytics]数据中的所有属性与[!DNL Analytics]字段组中的相应属性之间的映射集。 它们是预映射的，无法编辑。 |
-| [!UICONTROL 不匹配的标准映射] | [!UICONTROL 不匹配的标准映射]面板引用包含友好名称冲突的映射属性数。 如果您重复使用的架构已填充了来自其他报表包的字段描述符集，则会出现这些冲突。 即使存在友好名称冲突，您也可以继续处理[!DNL Analytics]数据流。 |
-| [!UICONTROL 自定义映射] | [!UICONTROL 自定义映射]面板显示映射的自定义属性的数量，包括eVar、prop和列表。 自定义映射是指源[!DNL Analytics]数据的自定义属性与选定架构中包含的自定义字段组中的属性之间的映射集。 |
+| [!UICONTROL 已应用标准映射] | 应用的[!UICONTROL 标准映射]面板显示映射属性的总数。 标准映射是指源Analytics数据中的所有属性与Analytics字段组中相应属性之间的映射。 它们是预映射的，无法编辑。 |
+| [!UICONTROL 描述符名称冲突的标准映射] | 描述符名称冲突的[!UICONTROL 标准映射]面板引用包含名称冲突的映射属性的数量。 如果您重复使用的架构已填充了来自其他报表包的字段描述符集，则会出现这些冲突。 即使存在名称冲突，您也可以继续处理Analytics数据流。 |
+| [!UICONTROL 自定义映射] | [!UICONTROL 自定义映射]面板显示映射的自定义属性的数量，包括eVar、prop和列表。 自定义映射是指源Analytics数据中的自定义属性与选定架构中包含的自定义字段组中的属性之间的映射。 |
 
-![映射标准字段](../../../../images/tutorials/create/analytics/map-standard-fields.png)
+### 标准映射 {#standard-mappings}
 
-要预览[!DNL Analytics] ExperienceEvent模板架构字段组，请在[!UICONTROL 应用的标准映射]面板中选择&#x200B;**[!UICONTROL 查看]**。
+Experience Platform会自动检测您的映射是否存在任何名称冲突。 如果映射没有冲突，请选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
 
-![视图](../../../../images/tutorials/create/analytics/view.png)
-
-[!UICONTROL Adobe Analytics ExperienceEvent模板架构字段组]页面为您提供了一个用于检查架构结构的界面。 完成后，选择&#x200B;**[!UICONTROL 关闭]**。
-
-![字段组预览](../../../../images/tutorials/create/analytics/field-group-preview.png)
-
-Experience Platform会自动检测映射集是否存在任何友好名称冲突。 如果映射集没有冲突，请选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
-
-![映射](../../../../images/tutorials/create/analytics/mapping.png)
+![显示无名称冲突的标准映射标头](../../../../images/tutorials/create/analytics/standard.png)
 
 >[!TIP]
 >
->如果源报表包与所选架构之间存在友好名称冲突，您仍可以继续使用[!DNL Analytics]数据流，同时确认不会更改字段描述符。 或者，您可以选择使用一组空白描述符创建新架构。
+>如果源报表包与所选架构之间存在名称冲突，您仍可以继续使用Analytics数据流，同时确认不会更改字段描述符。 或者，您可以选择使用一组空白描述符创建新架构。
 
-#### 自定义映射
+## 自定义映射 {#custom-mappings}
 
-您可以使用数据准备函数为自定义属性添加新的自定义映射或计算字段。 要添加自定义映射，请选择&#x200B;**[!UICONTROL 自定义]**。
+您可以使用数据准备函数为自定义属性添加新自定义映射或计算字段。 要添加自定义映射，请选择&#x200B;**[!UICONTROL 自定义]**。
 
-![自定义](../../../../images/tutorials/create/analytics/custom.png)
+![Analytics源工作流中的“自定义映射”选项卡。](../../../../images/tutorials/create/analytics/custom.png)
 
-根据您的需要，您可以选择&#x200B;**[!UICONTROL 添加新映射]**&#x200B;或&#x200B;**[!UICONTROL 添加计算字段]**，然后继续为自定义属性创建自定义映射。 有关如何使用数据准备功能的完整步骤，请参阅[数据准备UI指南](../../../../../data-prep/ui/mapping.md)。
+* **[!UICONTROL 筛选字段]**：使用[!UICONTROL 筛选字段]文本输入筛选映射中的特定映射字段。
+* **[!UICONTROL 添加新映射]**：要添加新源字段和目标字段映射，请选择&#x200B;**[!UICONTROL 添加新映射]**。
+* **[!UICONTROL 添加计算字段]**：如果需要，可以选择&#x200B;**[!UICONTROL 添加计算字段]**&#x200B;为映射创建新的计算字段。
+* **[!UICONTROL 导入映射]**：通过使用数据准备的导入映射功能，您可以缩短数据摄取过程的手动配置时间并限制错误。 选择&#x200B;**[!UICONTROL 导入映射]**&#x200B;以从现有流或导出的文件导入映射。 有关详细信息，请阅读[导入和导出映射指南](../../../../../data-prep/ui/mapping.md#import-mapping)。
+* **[!UICONTROL 下载模板]**：您还可以下载映射的CSV副本，并在本地设备中配置映射。 选择&#x200B;**[!UICONTROL 下载模板]**&#x200B;以下载映射的CSV副本。 您必须确保仅使用源文件和目标架构中提供的字段。
 
-以下文档提供了有关了解数据准备、计算字段和映射函数的更多资源：
+有关数据准备的更多信息，请参阅以下文档。
 
 * [数据准备概述](../../../../../data-prep/home.md)
 * [数据准备映射函数](../../../../../data-prep/functions.md)
@@ -175,7 +167,7 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 >title="创建筛选规则"
 >abstract="在将数据发送到实时客户轮廓时定义行级和列级筛选规则。使用行级筛选来应用条件并指示要&#x200B;**为轮廓提取包含**&#x200B;的数据。使用列级筛选来选择要&#x200B;**为轮廓提取排除**&#x200B;的数据列。筛选规则不适用于发送到数据湖的数据。"
 
-完成[!DNL Analytics]报表包数据的映射后，您可以应用筛选规则和条件以选择性地将数据包含或排除在摄取到Real-time Customer Profile的数据之外。 仅对[!DNL Analytics]数据提供筛选支持，并且仅在输入[!DNL Profile.]之前筛选数据。所有数据都已摄取到数据湖中。
+完成Analytics报表包数据的映射后，您可以应用筛选规则和条件以选择性地将数据包含或排除在摄取到Real-time Customer Profile之外。 仅支持筛选Analytics数据，并且仅在输入[!DNL Profile.]之前筛选数据。所有数据都已摄取到数据湖中。
 
 >[!BEGINSHADEBOX]
 
@@ -183,8 +175,8 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 
 * 您可以将筛选功能用于流向个人资料的数据，但不能用于流向数据湖的数据。
 * 可以对实时数据使用筛选，但无法筛选回填数据。
-   * [!DNL Analytics]源未将数据回填到配置文件中。
-* 如果您在[!DNL Analytics]流的初始设置期间使用数据准备配置，则这些更改也会应用于13个月的自动回填。
+   * Analytics源不会将数据回填到配置文件。
+* 如果您在Analytics流的初始设置期间使用数据准备配置，则这些更改也会应用于13个月的自动回填。
    * 但是，不适用于筛选，因为筛选仅保留用于实时数据。
 * 数据准备会同时应用于流摄取路径和批量摄取路径。 如果您修改了现有的数据准备配置，则这些更改会应用到流摄取和批量摄取路径中的新传入数据。
    * 但是，任何数据准备配置均不适用于已摄取到Experience Platform中的数据，无论它是流数据还是批量数据。
@@ -202,19 +194,15 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 >
 >使用行级筛选来应用条件并指示要&#x200B;**为轮廓提取包含**&#x200B;的数据。使用列级筛选选择要&#x200B;**排除以进行配置文件摄取**&#x200B;的数据列。
 
-您可以在行级别和列级别筛选[!DNL Profile]摄取的数据。 行级筛选允许您定义字符串包含、等于、开始或结束于等条件。 您还可以使用行级筛选来使用`AND`和`OR`连接条件，并使用`NOT`否定条件。
+您可以在行级别和列级别筛选用于配置文件摄取的数据。 使用行级筛选来定义字符串包含、等于、开始或结束于等条件。 您还可以使用行级筛选来使用`AND`和`OR`连接条件，并使用`NOT`否定条件。
 
-要在行级别筛选[!DNL Analytics]数据，请选择&#x200B;**[!UICONTROL 行筛选器]**。
+要在行级别筛选Analytics数据，请选择&#x200B;**[!UICONTROL 行筛选器]**，然后使用左边栏在架构层次结构中导航，并标识要选择的架构属性。
 
-![行筛选器](../../../../images/tutorials/create/analytics/row-filter.png)
-
-使用左边栏在架构层次结构中导航，并选择您选择的架构属性以进一步向下钻取特定架构。
-
-![左边栏](../../../../images/tutorials/create/analytics/left-rail.png)
+![用于Analytics数据的行筛选器界面。](../../../../images/tutorials/create/analytics/row-filter.png)
 
 标识要配置的属性后，选择属性并将其从左边栏拖到筛选面板。
 
-![筛选面板](../../../../images/tutorials/create/analytics/filtering-panel.png)
+![选择用于筛选的“制造商”属性。](../../../../images/tutorials/create/analytics/filtering-panel.png)
 
 要配置不同的条件，请选择&#x200B;**[!UICONTROL 等于]**，然后从显示的下拉窗口中选择条件。
 
@@ -230,43 +218,33 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 * [!UICONTROL 存在]
 * [!UICONTROL 不存在]
 
-![条件](../../../../images/tutorials/create/analytics/conditions.png)
+![包含条件运算符列表的条件下拉列表。](../../../../images/tutorials/create/analytics/conditions.png)
 
 接下来，根据所选的属性输入要包括的值。 在以下示例中，选择[!DNL Apple]和[!DNL Google]作为&#x200B;**[!UICONTROL Manufacturer]**&#x200B;属性的一部分进行摄取。
 
-![include-manufacturer](../../../../images/tutorials/create/analytics/include-manufacturer.png)
+![包含选定属性和值的筛选面板。](../../../../images/tutorials/create/analytics/include.png)
 
-要进一步指定筛选条件，请从架构中添加其他属性，然后根据该属性添加值。 在以下示例中，添加了&#x200B;**[!UICONTROL Model]**&#x200B;属性，并筛选了诸如[!DNL iPhone 13]和[!DNL Google Pixel 6]之类的模型以进行摄取。
+要进一步指定筛选条件，请从架构中添加其他属性，然后根据该属性添加值。 在以下示例中，添加了&#x200B;**[!UICONTROL Model]**&#x200B;属性，并筛选了诸如[!DNL iPhone 16]和[!DNL Google Pixel 9]之类的模型以进行摄取。
 
-![include-model](../../../../images/tutorials/create/analytics/include-model.png)
+![容器中包含的其他属性和值。](../../../../images/tutorials/create/analytics/include-model.png)
 
 要添加新容器，请选择筛选界面右上角的省略号(`...`)，然后选择&#x200B;**[!UICONTROL 添加容器]**。
 
-![添加容器](../../../../images/tutorials/create/analytics/add-container.png)
+![已选择“添加容器”下拉菜单。](../../../../images/tutorials/create/analytics/add-container.png)
 
-添加新容器后，选择&#x200B;**[!UICONTROL 包括]**，然后从显示的下拉窗口中选择&#x200B;**[!UICONTROL 排除]**。
+添加新容器后，选择&#x200B;**[!UICONTROL 包括]**，然后从下拉菜单中选择&#x200B;**[!UICONTROL 排除]**。 添加要排除的属性和值，完成后，选择&#x200B;**[!UICONTROL 下一步]**。
 
-![排除](../../../../images/tutorials/create/analytics/exclude.png)
-
-接下来，通过拖动架构属性并添加其要从筛选中排除的相应值来完成相同的过程。 在下面的示例中，[!DNL iPhone 12]、[!DNL iPhone 12 mini]和[!DNL Google Pixel 5]都是从&#x200B;**[!UICONTROL 模型]**&#x200B;属性的排除项中筛选出来的，横向从&#x200B;**[!UICONTROL 屏幕方向]**&#x200B;中排除，型号[!DNL A1633]从&#x200B;**[!UICONTROL 型号]**&#x200B;中排除。
-
-完成后，选择&#x200B;**[!UICONTROL 下一步]**。
-
-![排除示例](../../../../images/tutorials/create/analytics/exclude-examples.png)
+![筛选为排除的属性和值。](../../../../images/tutorials/create/analytics/exclude.png)
 
 ### 列级筛选
 
 从标题中选择&#x200B;**[!UICONTROL 列筛选器]**&#x200B;以应用列级筛选。
 
-![列筛选器](../../../../images/tutorials/create/analytics/column-filter.png)
+页面将更新为交互式架构树，在列级别显示架构属性。 在此处，您可以选择要从配置文件摄取中排除的数据列。 或者，您可以展开列并选择特定的排除属性。
 
-页面将更新为交互式架构树，在列级别显示架构属性。 在此处，您可以选择要从[!DNL Profile]引入中排除的数据列。 或者，您可以展开列并选择特定的排除属性。
+默认情况下，所有Analytics都将转到配置文件，此过程允许从配置文件摄取中排除XDM数据的分支。
 
-默认情况下，所有[!DNL Analytics]都转至[!DNL Profile]，此进程允许从[!DNL Profile]引入中排除XDM数据的分支。
-
-完成后，选择&#x200B;**[!UICONTROL 下一步]**。
-
-已选择![列](../../../../images/tutorials/create/analytics/columns-selected.png)
+![带有架构树的列筛选器接口。](../../../../images/tutorials/create/analytics/column-filter.png)
 
 ### 筛选次要身份
 
@@ -274,13 +252,13 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 
 仅当标识被标记为次要标识时，该过滤器才适用。 如果选择了身份，但某个事件到达时带有标记为主ID之一，则不会过滤掉这些身份。
 
-![辅助标识](../../../../images/tutorials/create/analytics/secondary-identities.png)
+![架构树中用于列筛选的辅助标识。](../../../../images/tutorials/create/analytics/secondary-identities.png)
 
 ### 提供数据流详细信息
 
 此时将显示&#x200B;**[!UICONTROL 数据流详细信息]**&#x200B;步骤，您必须在该步骤中为数据流提供名称和可选描述。 完成后，选择&#x200B;**[!UICONTROL 下一步]**。
 
-![数据流详细信息](../../../../images/tutorials/create/analytics/dataflow-detail.png)
+![数据流详细信息接口。 摄取工作流的。](../../../../images/tutorials/create/analytics/dataflow-detail.png)
 
 ### 审查
 
@@ -289,19 +267,13 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 * [!UICONTROL 连接]：显示连接的源平台。
 * [!UICONTROL 数据类型]：显示选定的报表包及其对应的报表包ID。
 
-![审核](../../../../images/tutorials/create/analytics/review.png)
+![引入工作流的审核界面。](../../../../images/tutorials/create/analytics/review.png)
 
 ## 监测数据流 {#monitor-your-dataflow}
 
-数据流完成后，在源目录中选择&#x200B;**[!UICONTROL 数据流]**&#x200B;以监视数据的活动和状态。
+数据流完成后，您可以使用&#x200B;*[!UICONTROL 数据流]*&#x200B;界面来监控Analytics数据流的状态。
 
-![已选择“数据流”选项卡的源目录。](../../../../images/tutorials/create/analytics/select-dataflows.png)
-
-此时将显示您组织中现有Analytics数据流的列表。 在此处，选择一个目标数据集以查看其相应的摄取活动。
-
-![您组织中现有Adobe Analytics数据流的列表。](../../../../images/tutorials/create/analytics/select-target-dataset.png)
-
-[!UICONTROL 数据集活动]页面提供了有关从Analytics发送到Experience Platform的数据进度的信息。 界面会显示一些量度，例如上个月的总记录数、过去七天摄取的记录数总数以及上个月的数据大小。
+有关从Analytics发送到Experience Platform的数据进度的信息，请使用[!UICONTROL 数据集活动]界面。 界面会显示一些量度，例如上个月的总记录数、过去七天摄取的记录数总数以及上个月的数据大小。
 
 源实例化两个数据集流。 一个流表示回填数据，另一个流表示实时数据。 回填数据未配置为摄取到Real-time Customer Profile，而是发送到数据湖，以用于分析和数据科学用例。
 
@@ -322,7 +294,7 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 
 ## 后续步骤和其他资源
 
-创建连接后，将自动创建数据流以包含传入数据并使用您选择的架构填充数据集。 此外，还会进行数据回填，并摄取至多13个月的历史数据。 完成初始摄取后，[!DNL Analytics]个数据将由下游Experience Platform服务（如[!DNL Real-Time Customer Profile]和分段服务）使用。 有关更多详细信息，请参阅以下文档：
+创建连接后，将自动创建数据流以包含传入数据并使用您选择的架构填充数据集。 此外，还会进行数据回填，并摄取至多13个月的历史数据。 完成初始摄取后，Analytics数据将被下游Experience Platform服务（如[!DNL Real-Time Customer Profile]和分段服务）使用。 有关更多详细信息，请参阅以下文档：
 
 * [[!DNL Real-Time Customer Profile] 概述](../../../../../profile/home.md)
 * [[!DNL Segmentation Service] 概述](../../../../../segmentation/home.md)
@@ -335,4 +307,5 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 >
 > 以下视频中显示的[!DNL Experience Platform] UI已过期。 有关最新的UI屏幕截图和功能，请参阅上述文档。
 
->[!VIDEO](https://video.tv.adobe.com/v/3430251?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/29687?quality=12&learn=on)
+
