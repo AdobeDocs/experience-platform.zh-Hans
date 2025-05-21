@@ -18,7 +18,7 @@ ht-degree: 7%
 
 >[!IMPORTANT]
 >
->**操作项**： Experience Platform](/help/release-notes/latest/latest.md#destinations)的[2024年9月版本引入了为导出数据集数据流设置`endTime`日期的选项。 在2024年9月版本&#x200B;*之前，Adobe还为*&#x200B;创建的所有数据集导出数据流引入了默认结束日期（2025年9月1日）。
+>**操作项**： Experience Platform[&#128279;](/help/release-notes/latest/latest.md#destinations)的2024年9月版本引入了为导出数据集数据流设置`endTime`日期的选项。 在2024年9月版本&#x200B;*之前，Adobe还为*&#x200B;创建的所有数据集导出数据流引入了默认结束日期（2025年9月1日）。
 >
 >对于其中任何数据流，您需要手动更新数据流中的结束日期在结束日期之前，否则您的导出将在该日期停止。 使用Experience Platform UI查看哪些数据流将设置为在2025年9月1日停止。
 >
