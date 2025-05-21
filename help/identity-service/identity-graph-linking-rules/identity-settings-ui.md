@@ -2,9 +2,9 @@
 title: 身份设置UI
 description: 了解如何使用身份设置用户界面。
 exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
-source-git-commit: 0aefcfbbbed675a08d9e3023b9f667ec59874e46
+source-git-commit: 6efd9c8fd1acce08027905f2e3c005a88a429a12
 workflow-type: tm+mt
-source-wordcount: '627'
+source-wordcount: '644'
 ht-degree: 2%
 
 ---
@@ -16,6 +16,10 @@ ht-degree: 2%
 >如果您现有的沙盒要求在启用身份设置后取消折叠图形（“已修复”），请联系您的Adobe客户团队。
 
 身份设置是Adobe Experience Platform Identity Service UI中的一项功能，可用于指定唯一的命名空间并配置命名空间优先级。
+
+观看以下视频，了解有关在Identity Service UI工作区中使用[!DNL Graph Simulation]界面的更多信息：
+
+>[!VIDEO](https://video.tv.adobe.com/v/3458487/?learn=on&enablevpops)
 
 阅读本指南，了解如何在UI中配置身份设置。
 
