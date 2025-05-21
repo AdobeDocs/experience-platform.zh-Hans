@@ -124,7 +124,7 @@ AI/ML服务将Customer AI作为易于使用的Adobe Sensei服务提供，可以�
 
 ### 将发生，将不发生
 
-定义目标时，您可以选择发生&#x200B;****&#x200B;或&#x200B;**[!UICONTROL 不发生]**。 选择&#x200B;**[!UICONTROL 将发生]**&#x200B;意味着您定义的事件条件需要得到满足，才能将客户的事件数据包含在分析UI中。
+定义目标时，您可以选择发生&#x200B;**&#x200B;**&#x200B;或&#x200B;**[!UICONTROL 不发生]**。 选择&#x200B;**[!UICONTROL 将发生]**&#x200B;意味着您定义的事件条件需要得到满足，才能将客户的事件数据包含在分析UI中。
 
 例如，如果要设置应用以预测客户是否会进行购买，则可以选择&#x200B;**[!UICONTROL Will our]**，后跟&#x200B;**[!UICONTROL All of]**，然后输入&#x200B;**commerce.purchases.id**（或类似字段）和&#x200B;**[!UICONTROL exists]**&#x200B;作为运算符。
 
