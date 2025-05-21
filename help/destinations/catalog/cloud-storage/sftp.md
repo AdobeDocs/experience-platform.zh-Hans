@@ -2,10 +2,10 @@
 title: SFTP连接
 description: 创建到SFTP服务器的实时出站连接，定期从Adobe Experience Platform导出分隔的数据文件。
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 45f22addbff9ec81d64e9e756e4c27e8af4b477d
 workflow-type: tm+mt
-source-wordcount: '1093'
-ht-degree: 8%
+source-wordcount: '1231'
+ht-degree: 7%
 
 ---
 
@@ -61,14 +61,26 @@ ht-degree: 8%
 
 此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
 
-* 如何使用Experience Platform用户界面[&#128279;](/help/destinations/ui/export-datasets.md)导出数据集。
-* 如何使用流服务API[&#128279;](/help/destinations/api/export-datasets.md)以编程方式导出数据集。
+* 如何使用Experience Platform用户界面](/help/destinations/ui/export-datasets.md)导出数据集[。
+* 如何使用流服务API](/help/destinations/api/export-datasets.md)以编程方式[导出数据集。
 
 ## 导出数据的文件格式 {#file-format}
 
 导出&#x200B;*受众数据*&#x200B;时，Experience Platform会在您提供的存储位置创建一个`.csv`、`parquet`或`.json`文件。 有关这些文件的更多信息，请参阅Audience Activation教程中的[导出的支持文件格式](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export)部分。
 
 导出&#x200B;*数据集*&#x200B;时，Experience Platform会在您提供的存储位置创建一个`.parquet`或`.json`文件。 有关这些文件的更多信息，请参阅导出数据集教程中的[验证成功的数据集导出](../../ui/export-datasets.md#verify)部分。
+
+## SFTP服务器连接要求 {#sftp-connection-requirements}
+
+要确保成功导出数据，必须将目标SFTP服务器配置为允许有足够数量的并发连接。 如果SFTP服务器限制同时连接的数量，则可能会遇到导出作业失败的情况，尤其是同时导出多个受众或数据集时。
+
+**推荐**
+为获得最佳性能，SFTP服务器应为要导出的每个受众或数据集至少允许一个并发连接。 服务器至少应支持计划同时导出的受众或数据集总数的30%。
+
+**示例**\
+如果计划同时为100个受众或数据集导出，则SFTP服务器应允许至少30个并发连接。
+
+正确配置SFTP服务器的连接限制有助于防止导出失败，并确保从Adobe Experience Platform可靠传送数据。
 
 ## 连接到目标 {#connect}
 
@@ -90,7 +102,7 @@ ht-degree: 8%
 >title="专用 SSH 密钥"
 >abstract="私有 SSH 密钥的格式必须为 RSA 格式的 Base64 编码的字符串，并且不得受密码保护。"
 
-如果选择带有密码&#x200B;**身份验证类型的** SFTP连接到您的SFTP位置：
+如果选择带有密码&#x200B;]**身份验证类型的**[!UICONTROL  SFTP连接到您的SFTP位置：
 
 ![使用密码的SFTP目标基本身份验证。](../../assets/catalog/cloud-storage/sftp/stfp-basic-authentication.png)
 
