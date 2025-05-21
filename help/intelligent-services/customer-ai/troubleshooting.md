@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform；入门；客户人工智能；热门主题；客户人工智能输入；客户人工智能输出；客户人工智能故障诊断；客户人工智能错误
+keywords: Experience Platform；快速入门；客户人工智能；热门主题；客户人工智能输入；客户人工智能输出；客户人工智能故障排除；客户人工智能错误
 solution: Experience Platform, Real-Time Customer Data Platform
 feature: Customer AI
 title: Customer AI错误疑难解答
 description: 查找客户人工智能中常见错误的答案。
 type: Documentation
 exl-id: 37ff4e85-da92-41ca-afd4-b7f3555ebd43
-source-git-commit: 32c1affecb4cf58412eb91fd90e1a13f4bc43541
+source-git-commit: 73dea391f8fcb1d2d491c814b453afb4e538459d
 workflow-type: tm+mt
-source-wordcount: '1755'
+source-wordcount: '1780'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 当模型训练、评分和配置失败时，客户人工智能显示错误。 在&#x200B;**[!UICONTROL 服务实例]**&#x200B;部分中，**[!UICONTROL 上次运行状态]**&#x200B;的列显示以下消息之一：**[!UICONTROL 成功]**、**[!UICONTROL 培训问题]**&#x200B;和&#x200B;**[!UICONTROL 失败]**。
 
-![上次运行状态](./images/errors/last-run-status.png)
+![上次运行状态显示成功、培训问题或失败。](./images/errors/last-run-status.png)
 
 如果显示&#x200B;**[!UICONTROL 失败]**&#x200B;或&#x200B;**[!UICONTROL 培训问题]**，您可以选择运行状态以打开侧面板。 侧面板包含您的&#x200B;**[!UICONTROL 上次运行状态]**&#x200B;和&#x200B;**[!UICONTROL 上次运行详细信息]**。 **[!UICONTROL 上次运行详细信息]**&#x200B;包含有关运行失败原因的信息。 如果客户人工智能无法提供有关您的错误的详细信息，请与支持人员联系并提供错误代码。
 
@@ -27,13 +27,13 @@ ht-degree: 1%
 
 由于Google Chrome无痕模式安全设置发生更新，导致Google Chrome无痕模式中存在加载错误。 Chrome正在积极处理此问题，以使experience.adobe.com成为受信任的域。
 
-![错误图像](./images/errors/error.PNG){width=500}
+![显示客户人工智能错误消息示例的错误图像。](./images/errors/error.PNG){width=500}
 
 ### 建议的修复
 
 要解决此问题，您需要将experience.adobe.com添加为始终可以使用Cookie的站点。 首先导航到&#x200B;**chrome://settings/cookies**。 接下来，向下滚动到&#x200B;**自定义行为**&#x200B;部分，然后选择“始终可以使用Cookie的站点”旁边的&#x200B;**添加**&#x200B;按钮。 在显示的弹出窗口中，复制并粘贴`[*.]experience.adobe.com`，然后选中&#x200B;**在此网站中包含第三方Cookie**&#x200B;复选框。 完成后，选择&#x200B;**添加**，然后无痕重新加载客户人工智能。
 
-![建议的修复](./images/errors/cookies2.gif)
+![显示将experience.adobe.com添加为始终可以在Chrome设置中使用Cookie的站点的步骤的动画。](./images/errors/cookies2.gif)
 
 ## 模型质量差
 

@@ -6,9 +6,9 @@ title: 客户人工智能中的数据要求
 topic-legacy: Getting started
 description: 进一步了解客户人工智能使用的所需事件、输入和输出。
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 73dea391f8fcb1d2d491c814b453afb4e538459d
 workflow-type: tm+mt
-source-wordcount: '2551'
+source-wordcount: '2552'
 ht-degree: 1%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 1%
 
 2. 排定用例优先级：哪一项是业务的最高优先级？
 
-3. 在Customer AI中构建模型：观看此[快速教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/intelligent-services/configure-customer-ai.html?lang=zh-Hans)并参阅我们的[UI指南](../customer-ai/user-guide/configure.md)，了解构建模型的分步流程。
+3. 在Customer AI中构建模型：观看此[快速教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/intelligent-services/configure-customer-ai.html)并参阅我们的[UI指南](../customer-ai/user-guide/configure.md)，了解构建模型的分步流程。
 
 4. [使用模型结果生成区段](../customer-ai/user-guide/create-segment.md)。
 
@@ -49,8 +49,8 @@ ht-degree: 1%
 
 - 使用[Analytics源连接器](../../sources/tutorials/ui/create/adobe-applications/analytics.md)的Adobe Analytics数据
 - 使用[Adobe Audience Manager源连接器](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md)的Audience Manager数据
-- [体验事件数据集](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/experienceevent.html?lang=zh-Hans)
-- [使用者体验事件数据集](https://experienceleague.adobe.com/docs/experience-platform/intelligent-services/data-preparation.html?lang=zh-Hans#cee-schema)
+- [体验事件数据集](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/experienceevent.html)
+- [使用者体验事件数据集](https://experienceleague.adobe.com/docs/experience-platform/intelligent-services/data-preparation.html#cee-schema)
 
 如果每个数据集共享相同的身份类型（命名空间）（如ECID），则可以添加来自不同来源的多个数据集。 有关添加多个数据集的更多信息，请访问[客户人工智能用户指南](../customer-ai/user-guide/configure.md)。
 
@@ -213,7 +213,7 @@ ht-degree: 1%
 
 您可以在Experience Platform **数据集**&#x200B;工作区中找到输出数据集。 所有客户人工智能输出数据集都以名称&#x200B;**客户人工智能分数 — NAME_OF_APP**&#x200B;开头。 同样，所有客户人工智能输出架构都以名称&#x200B;**客户人工智能架构 — Name_of_app**&#x200B;开头。
 
-![客户人工智能中输出数据集的名称](./images/user-guide/cai-schema-name-of-app.png)
+![客户人工智能中输出数据集的命名约定。](./images/user-guide/cai-schema-name-of-app.png)
 
 下表描述了在Customer AI输出中找到的各种属性：
 

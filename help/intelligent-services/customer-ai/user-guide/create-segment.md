@@ -5,9 +5,9 @@ feature: Customer AI
 title: 使用预测得分创建客户区段
 description: 预测运行完成后，用户档案会自动使用预测的倾向分数。 通过Customer AI得分丰富用户档案，可创建客户区段以根据其倾向得分查找受众。 本节提供了使用区段生成器创建区段的步骤。
 exl-id: ac81f798-f599-4a8d-af25-c00c92e74b4e
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 73dea391f8fcb1d2d491c814b453afb4e538459d
 workflow-type: tm+mt
-source-wordcount: '319'
+source-wordcount: '337'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 在Experience Platform UI中，单击左侧导航中的&#x200B;**[!UICONTROL 区段]**，然后单击&#x200B;**[!UICONTROL 创建区段]**。
 
-![](../images/user-guide/segments_new.png)
+![Experience Platform UI中“区段”页面的屏幕快照，显示创建新区段的选项。](../images/user-guide/segments_new.png)
 
 出现&#x200B;**区段生成器**。 从左侧&#x200B;**[!UICONTROL 字段]**&#x200B;列和&#x200B;**[!UICONTROL 属性]**&#x200B;选项卡下，单击名为&#x200B;**[!UICONTROL XDM个人配置文件]**&#x200B;的文件夹，然后单击包含您组织的命名空间的文件夹。 名为&#x200B;**[!UICONTROL Customer AI]**&#x200B;的文件夹包含预测运行的结果，并以得分所属的实例命名。 单击实例文件夹可访问其所需实例的结果。
 

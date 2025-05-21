@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 准备数据以用于智能服务
 description: 为了使智能服务从营销事件数据中发掘洞察信息，必须在语义上丰富并维护标准结构中的数据。 智能服务使用Experience Data Model (XDM)架构来实现这一点。
 exl-id: 17bd7cc0-da86-4600-8290-cd07bdd5d262
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 73dea391f8fcb1d2d491c814b453afb4e538459d
 workflow-type: tm+mt
-source-wordcount: '2827'
+source-wordcount: '2951'
 ht-degree: 0%
 
 ---
@@ -92,7 +92,7 @@ GROUP BY channel.typeAtSource
 
 [!DNL Intelligent Services]利用此架构中的几个关键字段从营销事件数据生成见解，所有这些可在根级别找到并展开以显示其必需的子字段。
 
-![](./images/data-preparation/schema-expansion.gif)
+![在Adobe Experience Platform UI中演示架构扩展，显示导航和子字段详细信息。](./images/data-preparation/schema-expansion.gif)
 
 与所有XDM架构一样，CEE架构字段组是可扩展的。 换句话说，可以将其他字段添加到CEE字段组，并且如果需要，可以在多个架构中包含不同的变体。
 
@@ -134,19 +134,19 @@ CEE字段组中有几个键字段应该被使用，以便[!DNL Intelligent Servi
 
 要设置主标识，请从&#x200B;**[!UICONTROL 架构]**&#x200B;选项卡导航到您的架构，然后选择架构名称超链接以打开&#x200B;**[!DNL Schema Editor]**。
 
-![导航到架构](./images/data-preparation/navigate_schema.png)
+![导航到Adobe Experience Platform UI中的架构。](./images/data-preparation/navigate_schema.png)
 
 接下来，导航到要作为主标识的字段并选择它。 将打开&#x200B;**[!UICONTROL 字段属性]**&#x200B;菜单。
 
-![选择字段](./images/data-preparation/find_field.png)
+![在Adobe Experience Platform UI中选择所需字段的过程。](./images/data-preparation/find_field.png)
 
 在&#x200B;**[!UICONTROL 字段属性]**&#x200B;菜单中，向下滚动直到找到&#x200B;**[!UICONTROL 标识]**&#x200B;复选框。 选中该框后，将显示将所选身份设置为&#x200B;**[!UICONTROL 主身份]**&#x200B;的选项。 也选中此框。
 
-![选中复选框](./images/data-preparation/set_primary_identity.png)
+![用于在Adobe Experience Platform UI中设置主要标识的复选框。](./images/data-preparation/set_primary_identity.png)
 
 接下来，必须从下拉列表中的预定义命名空间列表中提供&#x200B;**[!UICONTROL 身份命名空间]**。 在此示例中，由于正在使用Adobe Audience Manager ID `mcid.id`，因此选择了ECID命名空间。 选择&#x200B;**[!UICONTROL 应用]**&#x200B;以确认更新，然后选择右上角的&#x200B;**[!UICONTROL 保存]**&#x200B;以将更改保存到架构。
 
-![保存更改](./images/data-preparation/select_namespace.png)
+![下拉菜单，其中显示Adobe Experience Platform UI中选定的ECID命名空间。](./images/data-preparation/select_namespace.png)
 
 #### xdm：timestamp {#timestamp}
 
@@ -160,7 +160,7 @@ CEE字段组中有几个键字段应该被使用，以便[!DNL Intelligent Servi
 
 此字段表示与ExperienceEvent相关的营销渠道。 字段包括有关渠道类型、媒体类型和位置类型的信息。
 
-![](./images/data-preparation/channel.png)
+![显示xdm：channel字段结构的图表，包括子字段，如type、mediaType和mediaAction。](./images/data-preparation/channel.png)
 
 **示例架构**
 
@@ -198,7 +198,7 @@ CEE字段组中有几个键字段应该被使用，以便[!DNL Intelligent Servi
 
 此字段由一系列项目组成，表示客户选择的产品，包括产品SKU、名称、价格和数量。
 
-![](./images/data-preparation/productListItems.png)
+![xdm：productListItems字段，包括SKU、name、currencyCode、quantity和priceTotal等子字段。](./images/data-preparation/productListItems.png)
 
 **示例架构**
 
@@ -227,7 +227,7 @@ CEE字段组中有几个键字段应该被使用，以便[!DNL Intelligent Servi
 
 此字段包含有关ExperienceEvent的特定于商业的信息，包括采购订单号和付款信息。
 
-![](./images/data-preparation/commerce.png)
+![ xdm：commerce字段的结构，包括子字段，如订单、购买和付款。](./images/data-preparation/commerce.png)
 
 **示例架构**
 
@@ -265,7 +265,7 @@ CEE字段组中有几个键字段应该被使用，以便[!DNL Intelligent Servi
 
 此字段表示与ExperienceEvent相关的Web详细信息，例如交互、页面详细信息和反向链接。
 
-![](./images/data-preparation/web.png)
+![xdm：web字段，包括webPageDetails和webReferrer等子字段。](./images/data-preparation/web.png)
 
 **示例架构**
 
@@ -295,7 +295,7 @@ CEE字段组中有几个键字段应该被使用，以便[!DNL Intelligent Servi
 
 此字段包含与通过接触点激活的营销活动相关的信息。
 
-![](./images/data-preparation/marketing.png)
+![xdm：marketing字段的结构，包括子字段，如trackingCode、campaignGroup和campaignName。](./images/data-preparation/marketing.png)
 
 **示例架构**
 
