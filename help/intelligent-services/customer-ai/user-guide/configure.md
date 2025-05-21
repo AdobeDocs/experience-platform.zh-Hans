@@ -255,4 +255,4 @@ AI/ML服务将Customer AI作为易于使用的Adobe Sensei服务提供，可以�
 >
 > 以下视频已过期。 有关最新信息，请参阅文档。
 
->[!VIDEO](https://video.tv.adobe.com/v/32665?learn=on&quality=12)
+>[!VIDEO](https://video.tv.adobe.com/v/36592?learn=on&quality=12&captions=chi_hans)
