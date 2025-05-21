@@ -4,9 +4,9 @@ title: Amazon Kinesis连接
 description: 创建到Amazon Kinesis存储的实时出站连接，以从Adobe Experience Platform流式传输数据。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 678f80445212edc1edd3f4799999990ddcc2a039
 workflow-type: tm+mt
-source-wordcount: '1989'
+source-wordcount: '1985'
 ht-degree: 5%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
-> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
 由[!DNL Amazon Web Services]提供的[!DNL Kinesis Data Streams]服务允许您实时收集和处理大量数据记录流。
 
@@ -182,7 +182,7 @@ Experience Platform会优化将配置文件导出到[!DNL Amazon Kinesis]目标�
 
 | 决定目标导出的因素 | 目标导出中包含的内容 |
 |---------|----------|
-| <ul><li>映射的属性和受众会作为目标导出的提示。 这意味着，如果任何映射的受众更改状态（从`null`更改为`realized`或从`realized`更改为`exiting`）或更新任何映射的属性，则将启动目标导出。</li><li>由于身份当前无法映射到[!DNL Amazon Kinesis]目标，因此给定配置文件上任何身份的更改也将决定目标导出。</li><li>属性的更改被定义为属性上的任何更新，无论其是否为相同的值。 这意味着即使值本身未发生更改，也会将覆盖属性视为更改。</li></ul> | <ul><li>`segmentMembership`对象包括激活数据流中映射的受众，在资格或受众退出事件后，配置文件的状态已发生更改。 请注意，如果其他未映射受众与激活数据流中映射的受众属于同一个[合并策略](/help/profile/merge-policies/overview.md)，则配置文件符合这些受众资格的其他未映射受众可以属于目标导出的一部分。 </li><li>`identityMap`对象中的所有标识也包括在内(Experience Platform当前不支持[!DNL Amazon Kinesis]目标中的标识映射)。</li><li>目标导出中只包含映射的属性。</li></ul> |
+| <ul><li>映射的属性和区段会作为目标导出的提示。 这意味着，如果配置文件的`segmentMembership`状态更改为`realized`或`exiting`，或者更新了任何映射的属性，则将启动目标导出。</li><li>由于身份当前无法映射到[!DNL Amazon Kinesis]目标，因此给定配置文件上任何身份的更改也将决定目标导出。</li><li>属性的更改被定义为属性上的任何更新，无论其是否为相同的值。 这意味着即使值本身未发生更改，也会将覆盖属性视为更改。</li></ul> | <ul><li>`segmentMembership`对象包括激活数据流中映射的区段，在资格或区段退出事件后，配置文件的状态已发生更改。 请注意，如果符合配置文件条件的其他未映射区段与激活数据流中映射的区段属于同一个[合并策略](/help/profile/merge-policies/overview.md)，则这些区段可以是目标导出的一部分。 </li><li>`identityMap`对象中的所有标识也包括在内(Experience Platform当前不支持[!DNL Amazon Kinesis]目标中的标识映射)。</li><li>目标导出中只包含映射的属性。</li></ul> |
 
 {style="table-layout:fixed"}
 
