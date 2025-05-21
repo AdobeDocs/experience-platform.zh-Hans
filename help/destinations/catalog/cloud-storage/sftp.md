@@ -61,8 +61,8 @@ ht-degree: 7%
 
 此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
 
-* 如何使用Experience Platform用户界面](/help/destinations/ui/export-datasets.md)导出数据集[。
-* 如何使用流服务API](/help/destinations/api/export-datasets.md)以编程方式[导出数据集。
+* 如何使用Experience Platform用户界面[&#128279;](/help/destinations/ui/export-datasets.md)导出数据集。
+* 如何使用流服务API[&#128279;](/help/destinations/api/export-datasets.md)以编程方式导出数据集。
 
 ## 导出数据的文件格式 {#file-format}
 
@@ -102,7 +102,7 @@ ht-degree: 7%
 >title="专用 SSH 密钥"
 >abstract="私有 SSH 密钥的格式必须为 RSA 格式的 Base64 编码的字符串，并且不得受密码保护。"
 
-如果选择带有密码&#x200B;]**身份验证类型的**[!UICONTROL  SFTP连接到您的SFTP位置：
+如果选择带有密码&#x200B;**身份验证类型的** SFTP连接到您的SFTP位置：
 
 ![使用密码的SFTP目标基本身份验证。](../../assets/catalog/cloud-storage/sftp/stfp-basic-authentication.png)
 
