@@ -307,5 +307,5 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 >
 > 以下视频中显示的[!DNL Experience Platform] UI已过期。 有关最新的UI屏幕截图和功能，请参阅上述文档。
 
->[!VIDEO](https://video.tv.adobe.com/v/29687?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3430251?quality=12&learn=on&captions=chi_hans)
 
