@@ -265,7 +265,7 @@ ORDER BY timestamp desc
    * 您的所有配置文件中没有单个命名空间。
    * 出现[“挂起ID”](./implementation-guide.md#dangling-loginid-scenario)方案。 在此方案中，Identity Service无法确定挂起ID是否与图形中的任何人员实体相关联。
 
-您还可以使用UI](./graph-simulation.md)中的[图形模拟工具来模拟事件并配置您自己的唯一命名空间和命名空间优先级设置。 这样做有助于您从根本上了解身份优化算法的行为。
+您还可以使用UI[&#128279;](./graph-simulation.md)中的图形模拟工具来模拟事件并配置您自己的唯一命名空间和命名空间优先级设置。 这样做有助于您从根本上了解身份优化算法的行为。
 
 如果仿真结果符合图形行为预期，则可以检查[身份设置](./identity-settings-ui.md)是否与您在模拟中配置的设置匹配。
 
