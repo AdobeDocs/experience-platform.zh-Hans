@@ -2,9 +2,9 @@
 title: 身份图链接规则
 description: 了解Identity Service中的Identity Graph链接规则。
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: 6efd9c8fd1acce08027905f2e3c005a88a429a12
+source-git-commit: c9b5de33de91b93f179b4720f692eb876e94df72
 workflow-type: tm+mt
-source-wordcount: '1570'
+source-wordcount: '1600'
 ht-degree: 7%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 7%
 
 >[!IMPORTANT]
 >
->如果您现有的沙盒要求在启用身份设置后取消折叠图形（“已修复”），请联系您的Adobe客户团队。
+>[!DNL Identity Graph Linking Rules]现已正式可用。 如果您现有的沙盒要求在启用身份设置后取消折叠图形（“已修复”），请联系Adobe支持。
 
 通过Adobe Experience Platform Identity服务和实时客户个人资料，可以轻松假设您的数据被完全摄取，并且所有合并的个人资料都通过人员标识符（如CRMID）表示单个个人。 但是，在某些情况下，某些数据可能会尝试将多个不同的配置文件合并到单个配置文件中（“图形折叠”）。 为了防止这些不需要的合并，您可以使用通过[!DNL Identity Graph Linking Rules]提供的配置，并允许用户的准确个性化。
 
@@ -40,12 +40,12 @@ ht-degree: 7%
 
 <!-- CARDS
 {target = _blank}
-* https://experienceleague.adobe.com/zh-hans/docs/platform-learn/tutorials/identities/graph-linking-rules/overview
-* https://experienceleague.adobe.com/zh-hans/docs/platform-learn/tutorials/identities/graph-linking-rules/graph-simulation 
+* https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/overview
+* https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/graph-simulation 
 
     {description = Learn how to use the graph simulator to test out identity graph linking rules.}
 
-* https://experienceleague.adobe.com/zh-hans/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings
+* https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings
     {description = Learn how to enable and configure identity graph linking rules to build accurate customer profiles}
 -->
 <!-- START CARDS HTML - DO NOT MODIFY BY HAND -->
@@ -55,7 +55,7 @@ ht-degree: 7%
             <div class="card-image">
                 <figure class="image x-is-16by9">
                     <a href="https://experienceleague.adobe.com/zh-hans/docs/platform-learn/tutorials/identities/graph-linking-rules/overview" title="身份标识图链接规则概述" target="_blank" rel="referrer">
-                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3448282/?format=jpeg&nocache=1747851655227&captions=chi_hans" alt="身份标识图链接规则概述"
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3448250/?format=jpeg&nocache=1747851655227" alt="身份标识图链接规则概述"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
                 </figure>
@@ -78,7 +78,7 @@ ht-degree: 7%
             <div class="card-image">
                 <figure class="image x-is-16by9">
                     <a href="https://experienceleague.adobe.com/zh-hans/docs/platform-learn/tutorials/identities/graph-linking-rules/graph-simulation" title="身份图形链接规则 — 图形模拟" target="_blank" rel="referrer">
-                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3444053/?format=jpeg&nocache=1747851655237&captions=chi_hans" alt="身份图形链接规则 — 图形模拟"
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3444032/?format=jpeg&nocache=1747851655237" alt="身份图形链接规则 — 图形模拟"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
                 </figure>
@@ -100,7 +100,7 @@ ht-degree: 7%
         <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
             <div class="card-image">
                 <figure class="image x-is-16by9">
-                    <a href="https://experienceleague.adobe.com/zh-hans/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings" title="身份图链接规则 — 身份设置" target="_blank" rel="referrer">
+                    <a href="https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings" title="身份图链接规则 — 身份设置" target="_blank" rel="referrer">
                         <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3458487/?format=jpeg&nocache=1747851655218" alt="身份图链接规则 — 身份设置"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
@@ -109,11 +109,11 @@ ht-degree: 7%
             <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
                 <div class="top-card-content">
                     <p class="headline is-size-6 has-text-weight-bold">
-                        <a href="https://experienceleague.adobe.com/zh-hans/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings" target="_blank" rel="referrer" title="身份图链接规则 — 身份设置">身份图形链接规则 — 身份设置</a>
+                        <a href="https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings" target="_blank" rel="referrer" title="身份图链接规则 — 身份设置">身份图形链接规则 — 身份设置</a>
                     </p>
                     <p class="is-size-6">了解如何启用和配置身份图链接规则以构建准确的客户个人资料</p>
                 </div>
-                <a href="https://experienceleague.adobe.com/zh-hans/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                <a href="https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
                     <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">观看</span>
                 </a>
             </div>
@@ -142,7 +142,7 @@ ht-degree: 7%
 | 公共信息亭 | 在机场登机的旅客使用他们的忠诚身份证登记签到行李并打印登机牌。 |
 | 呼叫中心 | 呼叫中心人员代表致电客户支持以解决问题的客户在单个设备上登录。 |
 
-![一些常用共享设备的图表。](../images/identity-settings/shared-devices.png)
+![一些常用共享设备的图表。](../images/identity-settings/shared-devices.png "一些常用共享设备的图表。"){zoomable="yes"}
 
 在这些情况下，从图形的角度来看，未启用任何限制，单个ECID将链接到多个CRMID。
 
@@ -155,7 +155,7 @@ ht-degree: 7%
 
 还有一些用户在注册时提供虚假值作为电话号码和/或电子邮件地址的实例。 在这些情况下，如果未启用限制，则电话/电子邮件相关的身份最终会链接到多个不同的CRMID。
 
-![表示无效电子邮件或电话方案的图表。](../images/identity-settings/invalid-email-phone.png)
+![表示无效电子邮件或电话方案的图表。](../images/identity-settings/invalid-email-phone.png "表示无效电子邮件或电话方案的图表。"){zoomable="yes"}
 
 使用[!DNL Identity Graph Linking Rules]，您可以：
 
@@ -172,7 +172,7 @@ ht-degree: 7%
 
 这些标识可能会导致以下图表，其中多个CRMID与“坏”标识合并：
 
-![具有错误或错误标识值的标识数据的图形示例。](../images/identity-settings/bad-data.png)
+![具有错误或错误标识值的标识数据的图形示例。](../images/identity-settings/bad-data.png "具有错误或错误标识值的标识数据的图形示例。"){zoomable="yes"}
 
 使用[!DNL Identity Graph Linking Rules]，您可以将CRMID配置为唯一标识符，以防止由于此类数据而造成不需要的配置文件折叠。
 

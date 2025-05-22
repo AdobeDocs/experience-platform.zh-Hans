@@ -2,10 +2,10 @@
 title: Graph配置示例
 description: 了解在使用身份图形链接规则和身份数据时可能遇到的常见图形场景。
 exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
-source-git-commit: 28eab3488dccdcc6239b9499e875c31ff132fd48
+source-git-commit: cd9104e253cda4ce9a004f7931b9c38907874941
 workflow-type: tm+mt
-source-wordcount: '2759'
-ht-degree: 6%
+source-wordcount: '3316'
+ht-degree: 5%
 
 ---
 
@@ -67,13 +67,13 @@ CRMID: Tom, ECID: 111
 
 下面是一个理想的单人图示例，其中CRMID是唯一的，并且被赋予最高优先级。
 
-![理想单人图的模拟示例，其中CRMID是唯一的，并且被赋予最高优先级。](../images/graph-examples/crmid_only_single.png)
+![理想单人图的模拟示例，其中CRMID是唯一的，并且被赋予最高优先级。](../images/graph-examples/crmid_only_single.png "理想单人图的模拟示例，其中CRMID是唯一的，并且被赋予最高优先级。"){zoomable="yes"}
 
 >[!TAB 多人图表]
 
 以下是多人图的一个示例。 此示例显示了“共享设备”方案，其中存在两个CRMID，并且已删除具有已建立旧链接的一个CRMID。
 
-![多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。](../images/graph-examples/crmid_only_multi.png)
+![多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。](../images/graph-examples/crmid_only_multi.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
 
 **图形模拟事件输入**
 
@@ -136,13 +136,13 @@ CRMID: Summer, ECID: 222
 
 下面是一对理想的单人图示例，其中每个CRMID与其各自的哈希电子邮件命名空间和ECID相关联。
 
-![在此示例中，生成了两个单独的图形，每个图形表示一个单独的实体。](../images/graph-examples/crmid_hashed_single.png)
+![在此示例中，将生成两个单独的图形，每个图形表示一个单独的实体。](../images/graph-examples/crmid_hashed_single.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
 
 >[!TAB 多人图表：共享设备]
 
 以下是多人图场景的示例，其中设备由两人共享。
 
-![在此示例中，模拟图形显示“共享设备”方案，因为Tom和Summer都与同一ECID相关联。](../images/graph-examples/crmid_hashed_shared_device.png)
+![在此示例中，模拟图形显示“共享设备”方案，因为Tom和Summer都与同一ECID相关联。](../images/graph-examples/crmid_hashed_shared_device.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
 
 **图形模拟事件输入**
 
@@ -158,7 +158,7 @@ CRMID: Summer, ECID: 111
 
 以下是多人员图场景的示例，其中电子邮件不唯一并与两个不同的CRMID关联。
 
-![此方案类似于“共享设备”方案。 但是，人员实体不是共享ECID，而是与同一电子邮件帐户关联。](../images/graph-examples/crmid_hashed_nonunique_email.png)
+![此方案类似于“共享设备”方案。 但是，这些个人实体并不共享ECID，而是与同一电子邮件帐户相关联。 “多人图表的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。“](../images/graph-examples/crmid_hashed_nonunique_email.png){zoomable="yes"}”
 
 **图形模拟事件输入**
 
@@ -233,13 +233,13 @@ CRMID: Summer, ECID: 444, GAID:B-B-B
 
 以下是理想的单人图方案，其中经过哈希处理的电子邮件和经过哈希处理的手机被标记为标识以便在[!DNL Segment Match]中使用。 在此方案中，这些图形将拆分为两个，以表示不同的人员实体。
 
-![理想的单人图表方案。](../images/graph-examples/crmid_hashed_single_seg_match.png)
+![理想的单人图表方案。](../images/graph-examples/crmid_hashed_single_seg_match.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
 
 >[!TAB 多人图表：共享设备，共享计算机]
 
 以下是多人图场景，其中两个人共享一台设备（计算机）。 在此方案中，共享计算机由`{ECID: 111}`表示并链接到`{CRMID: Summer}`，因为该链接是最近建立的链接。 `{CRMID: Tom}`已删除，因为`{CRMID: Tom}`和`{ECID: 111}`之间的链接较旧，并且因为CRMID是此配置中指定的唯一命名空间。
 
-![多人图方案，其中两个用户共享一台计算机。](../images/graph-examples/shared_device_shared_computer.png)
+![多人图方案，其中两个用户共享一台计算机。](../images/graph-examples/shared_device_shared_computer.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
 
 **图形模拟事件输入**
 
@@ -257,7 +257,7 @@ CRMID: Summer, ECID: 111
 
 以下是多人图场景，其中一个Android设备由两个人共享。 在此方案中，CRMID配置为唯一的命名空间，因此`{CRMID: Tom, GAID: B-B-B, ECID:444}`的较新链接将取代较旧的`{CRMID: Summer, GAID: B-B-B, ECID:444}`。
 
-![多人图表方案，其中两个用户共享一个Android移动设备。](../images/graph-examples/shared_device_android.png)
+![多人图方案，其中两个用户共享一个Android移动设备。](../images/graph-examples/shared_device_android.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
 
 **图形模拟事件输入**
 
@@ -275,7 +275,7 @@ CRMID: Tom, ECID: 444, GAID: B-B-B
 
 以下是多人图场景，两个人共享一个Apple设备。 在此方案中，将共享IDFA，但ECID不会重置。
 
-![多人图方案，其中两个用户共享Apple移动设备。](../images/graph-examples/shared_device_apple_no_reset.png)
+![多人图方案，其中两个用户共享一个Apple移动设备。](../images/graph-examples/shared_device_apple_no_reset.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
 
 **图形模拟事件输入**
 
@@ -293,7 +293,7 @@ CRMID: Summer, ECID: 222, IDFA: A-A-A
 
 以下是多人图场景，两个人共享一个Apple设备。 在此方案中，ECID将重置，但IDFA保持不变。
 
-![多人图方案，其中两个用户共享一个Apple移动设备，但重置了ECID。](../images/graph-examples/shared_device_apple_with_reset.png)
+![多人图方案，其中两个用户共享一个Apple移动设备，但重置了ECID。](../images/graph-examples/shared_device_apple_with_reset.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
 
 **图形模拟事件输入**
 
@@ -311,7 +311,7 @@ CRMID: Summer, ECID: 555, IDFA: A-A-A
 
 以下是多人图场景，两个用户共享相同的电话号码。
 
-![电话命名空间不唯一的多人图表方案。](../images/graph-examples/non_unique_phone.png)
+![电话命名空间不唯一的多人图表方案。](../images/graph-examples/non_unique_phone.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
 
 **图形模拟事件输入**
 
@@ -327,13 +327,13 @@ CRMID: Summer, Phone_SHA256: 123-4567
 
 在此示例中，`{Phone_SHA256}`还标记为唯一的命名空间。 因此，图形不能有多个具有`{Phone_SHA256}`命名空间的标识。 在此方案中，`{Phone_SHA256: 765-4321}`从`{CRMID: Summer}`和`{Email_LC_SHA256: ddeeff}`中取消链接，因为它是旧链接，
 
-![Phone_SHA256唯一的多人图方案。](../images/graph-examples/unique_phone.png)
+![Phone_SHA256唯一的多人图方案。](../images/graph-examples/unique_phone.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
 
 >[!TAB 多人图表：非唯一电子邮件]
 
 以下是多人图方案，其中电子邮件由两个人共享。
 
-![电子邮件不唯一的多人图方案](../images/graph-examples/non_unique_email.png)
+![电子邮件不唯一的多人图方案](../images/graph-examples/non_unique_email.png "多人图的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
 
 **图形模拟事件输入**
 
@@ -409,13 +409,13 @@ loginID: ID_C, ECID: 222
 
 以下是单个CRMID和多个loginID的单人图场景。
 
-![包含单个CRMID和多个登录ID的图形方案。](../images/graph-examples/single_crmid.png)
+![包含单个CRMID和多个登录ID的图形方案。](../images/graph-examples/single_crmid.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
 
 >[!TAB 多人图表方案：共享设备]
 
 以下是多人图场景，其中设备由两人共享。 在此方案中，`{ECID:111}`同时与`{loginID:ID_A}`和`{loginID:ID_C}`链接，并且旧已建立的`{ECID:111, loginID:ID_A}`链接被删除。
 
-![多人共享设备方案。](../images/graph-examples/single_crmid_shared_device.png)
+![多人共享设备方案。](../images/graph-examples/single_crmid_shared_device.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
 
 **图形模拟事件输入**
 
@@ -433,7 +433,7 @@ loginID: ID_C, ECID: 111
 
 以下是涉及错误数据的多人图场景。 在此方案中，`{loginID:ID_D}`错误地链接到两个完全不同的用户，并且删除了具有旧时间戳的链接，以支持最近建立的链接。
 
-![数据错误的多人图表方案。](../images/graph-examples/single_crmid_bad_data.png)
+![包含错误数据的多人图表方案。](../images/graph-examples/single_crmid_bad_data.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
 
 **图形模拟事件输入**
 
@@ -451,7 +451,7 @@ CRMID: Tom, loginID: ID_D
 
 下图模拟了“悬挂”的loginID方案。 在此示例中，两个不同的loginID绑定到相同的ECID。 但是，`{loginID:ID_C}`未链接到CRMID。 因此，Identity Service无法检测到这两个loginID代表两个不同的实体。
 
-![挂起的登录ID方案。](../images/graph-examples/dangling_example.png)
+![挂起的登录ID方案。](../images/graph-examples/dangling_example.png "挂起的登录ID方案。"){zoomable="yes"}
 
 **图形模拟事件输入**
 
@@ -529,13 +529,13 @@ loginID: ID_C, ECID: 222
 
 以下是两个单人图示例，每个图具有一个CRMID和多个登录ID。
 
-![涉及一个CRMID和多个登录ID的单人图表](../images/graph-examples/complex_single_person.png)
+![涉及一个CRMID和多个登录ID的单人图表。](../images/graph-examples/complex_single_person.png "涉及一个CRMID和多个登录ID的单人图表。"){zoomable="yes"}
 
 >[!TAB 多人图表：共享设备1]
 
 以下是多人共享设备方案，其中`{ECID:111}`同时链接到`{loginID:ID_A}`和`{loginID:ID_C}`。 在这种情况下，已建立的旧链接会被删除，而支持最近建立的链接。
 
-![多人共享设备图方案。](../images/graph-examples/complex_shared_device_one.png)
+![多人共享设备图方案。](../images/graph-examples/complex_shared_device_one.png "多人共享设备图方案。"){zoomable="yes"}
 
 **图形模拟事件输入**
 
@@ -555,7 +555,7 @@ loginID: ID_C, ECID: 111
 
 在这种情况下，loginID和CRMID将作为体验事件发送，而不是只发送loginID。
 
-![将登录ID和CRMID作为体验事件发送的多人共享设备图方案。](../images/graph-examples/complex_shared_device_two.png)
+![多人共享设备图方案，其中登录ID和CRMID均作为体验事件发送。](../images/graph-examples/complex_shared_device_two.png "将登录ID和CRMID作为体验事件发送的多人共享设备图方案。"){zoomable="yes"}
 
 **图形模拟事件输入**
 
@@ -576,7 +576,7 @@ loginID: ID_A, ECID: 111
 
 在此方案中，`{loginID:ID_C}`同时链接到`{CRMID:Tom}`和`{CRMID:Summer}`，因此被视为错误数据，因为理想的图形方案不应将相同的登录ID链接到两个不同的用户。 在这种情况下，将删除旧已建立的链接，而改用最近建立的链接。
 
-![涉及错误登录数据的多人图表方案。](../images/graph-examples/complex_bad_data.png)
+![涉及错误登录数据的多人图表方案。](../images/graph-examples/complex_bad_data.png "涉及错误登录数据的多人图表方案。"){zoomable="yes"}
 
 **图形模拟事件输入**
 
@@ -596,7 +596,7 @@ CRMID: Tom, loginID: ID_C
 
 在此方案中，非唯一电子邮件与两个不同的CRMID链接，因此，已建立的旧链接会被删除，而采用的是最近建立的链接。
 
-![涉及非唯一电子邮件的多人图表方案。](../images/graph-examples/complex_non_unique_email.png)
+![涉及非唯一电子邮件的多人图表方案。](../images/graph-examples/complex_non_unique_email.png "涉及非唯一电子邮件的多人图表方案。"){zoomable="yes"}
 
 **图形模拟事件输入**
 
@@ -616,7 +616,7 @@ CRMID: Summer, Email_LC_SHA256: aabbcc
 
 在此情景中，非唯一电话号码与两个不同的CRMID关联，旧的已建立链接会被删除，而采用的是最近建立的链接。
 
-![涉及非唯一电话号码的多人图表方案。](../images/graph-examples/complex_non_unique_phone.png)
+![涉及非唯一电话号码的多人图表方案。](../images/graph-examples/complex_non_unique_phone.png "涉及非唯一电话号码的多人图表方案。"){zoomable="yes"}
 
 **图形模拟事件输入**
 
@@ -693,13 +693,13 @@ CRMID: Tom, ECID: 111
 
 下面是一个理想的单人图示例。
 
-![具有一个电子邮件命名空间的理想单人图示例。](../images/graph-examples/single_person_email.png)
+![一个电子邮件命名空间理想的单一人员图示例。](../images/graph-examples/single_person_email.png "具有一个电子邮件命名空间的理想单人图示例。"){zoomable="yes"}
 
 >[!TAB 多人图表]
 
 以下是多人图的一个示例，在该示例中，两个注册用户使用同一设备浏览。
 
-![多人图方案，其中两个注册用户使用同一设备浏览。](../images/graph-examples/two_registered_users.png)
+![多人图方案，其中两个注册用户使用同一设备浏览。](../images/graph-examples/two_registered_users.png "多人图方案，其中两个注册用户使用同一设备浏览。"){zoomable="yes"}
 
 **图形模拟事件输入**
 
@@ -712,7 +712,7 @@ CRMID: Summer, ECID: 111
 
 在此方案中，注册用户和访客用户共享同一设备。
 
-![注册用户和访客共享同一设备的多人图示例。](../images/graph-examples/one_guest.png)
+![注册用户和访客共享同一设备的多人图示例。](../images/graph-examples/one_guest.png "注册用户和访客共享同一设备的多人图示例。"){zoomable="yes"}
 
 **图形模拟事件输入**
 
@@ -724,7 +724,7 @@ Email: summer@acme.com, ECID: 111
 
 在此方案中，注册用户和访客用户共享设备。 但是，由于CRMID不包含相应的电子邮件命名空间，因此发生实施错误。 在此方案中，Tom是注册用户，Summer是访客用户。 与上一个方案不同，这两个实体是合并的，因为这两个人员实体中没有共同的电子邮件命名空间。
 
-![一个多人图示例，其中注册用户和访客共享同一设备，但是，由于CRMID不包含电子邮件命名空间，因此发生实施错误。](../images/graph-examples/no_email_namespace_in_crmid.png)
+![一个多人图示例，其中注册用户和访客共享同一设备，但是，由于CRMID不包含电子邮件命名空间，因此发生实施错误。](../images/graph-examples/no_email_namespace_in_crmid.png "一个多人图示例，其中注册用户和访客共享同一设备，但是，由于CRMID不包含电子邮件命名空间，因此发生实施错误。"){zoomable="yes"}
 
 **图形模拟事件输入**
 
@@ -735,7 +735,7 @@ Email: summer@acme.com, ECID: 111
 
 在此方案中，两个访客用户共享同一设备。
 
-![多人图方案，其中两个访客用户共享同一设备。](../images/graph-examples/two_guests.png)
+![多人图方案，其中两个访客用户共享同一设备。](../images/graph-examples/two_guests.png){zoomable="yes"}
 
 **图形模拟事件输入**
 
@@ -746,7 +746,7 @@ Email: summer@acme.com, ECID: 111
 
 在此方案中，访客用户签出某个项目，然后使用同一设备注册。
 
-![一种图形方案，其中访客用户购买和购买商品，然后注册帐户。](../images/graph-examples/guest_purchase.png)
+![一种图形方案，其中访客用户购买和购买商品，然后注册帐户。](../images/graph-examples/guest_purchase.png "一种图形方案，其中访客用户购买和购买商品，然后注册帐户。"){zoomable="yes"}
 
 **图形模拟事件输入**
 

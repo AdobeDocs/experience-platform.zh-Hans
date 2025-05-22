@@ -2,9 +2,9 @@
 title: 身份图形链接规则疑难解答指南
 description: 了解如何解决身份图关联规则中的常见问题。
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: 28eab3488dccdcc6239b9499e875c31ff132fd48
+source-git-commit: c9b5de33de91b93f179b4720f692eb876e94df72
 workflow-type: tm+mt
-source-wordcount: '3285'
+source-wordcount: '3295'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 下图是数据如何流入Adobe Experience Platform和应用程序的简化表示形式。 使用此图表作为参考，以帮助您更好地了解此页面的内容。
 
-![Identity Service中数据摄取的流程图表。](../images/troubleshooting/dataflow_in_identity.png)
+![Identity Service中数据摄取的流程图表。](../images/troubleshooting/dataflow_in_identity.png "Identity Service中数据摄取的流程图表。"){zoomable="yes"}
 
 请务必注意以下因素：
 
@@ -265,7 +265,7 @@ ORDER BY timestamp desc
    * 您的所有配置文件中没有单个命名空间。
    * 出现[“挂起ID”](./implementation-guide.md#dangling-loginid-scenario)方案。 在此方案中，Identity Service无法确定挂起ID是否与图形中的任何人员实体相关联。
 
-您还可以使用UI[&#128279;](./graph-simulation.md)中的图形模拟工具来模拟事件并配置您自己的唯一命名空间和命名空间优先级设置。 这样做有助于您从根本上了解身份优化算法的行为。
+您还可以使用UI](./graph-simulation.md)中的[图形模拟工具来模拟事件并配置您自己的唯一命名空间和命名空间优先级设置。 这样做有助于您从根本上了解身份优化算法的行为。
 
 如果仿真结果符合图形行为预期，则可以检查[身份设置](./identity-settings-ui.md)是否与您在模拟中配置的设置匹配。
 

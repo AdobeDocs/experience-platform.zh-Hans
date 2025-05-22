@@ -2,10 +2,10 @@
 title: 身份图链接规则的实施指南
 description: 了解在使用Identity Graph链接规则配置实施数据时要遵循的建议步骤。
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 28eab3488dccdcc6239b9499e875c31ff132fd48
+source-git-commit: 0587ddf1012adb13e6d399953839735f73fe151e
 workflow-type: tm+mt
-source-wordcount: '1864'
-ht-degree: 6%
+source-wordcount: '1955'
+ht-degree: 5%
 
 ---
 
@@ -41,7 +41,7 @@ ht-degree: 6%
 
 如果没有用于表示人员标识符的唯一命名空间，您最终可能会看到一个将不同的人员标识符链接到同一ECID的图表。 在此示例中，B2BCRM和B2CCRM同时链接到同一ECID。 此图表建议Tom使用其B2C登录帐户与Summer使用其B2B登录帐户共享设备。 但是，系统将识别出这是一个配置文件（图形折叠）。
 
-![将两个人员标识符链接到同一ECID的图形方案。](../images/graph-examples/multi_namespaces.png)
+![将两个人员标识符链接到同一ECID的图形方案。](../images/graph-examples/multi_namespaces.png "将两个人员标识符链接到同一ECID的图形方案。"){zoomable="yes"}
 
 +++
 
@@ -49,7 +49,7 @@ ht-degree: 6%
 
 给定唯一的命名空间（在本例中，是指CRMID而不是两个完全不同的命名空间），Identity Service能够识别上次与ECID关联的人员标识符。 在此示例中，由于存在唯一的CRMID，因此Identity Service能够识别“共享设备”方案，即两个实体共享同一设备。
 
-![共享设备图方案，其中两个人员标识符链接到同一ECID，但旧链接被删除。](../images/graph-examples/crmid_only_multi.png)
+![共享设备图方案，其中两个人员标识符链接到同一ECID，但旧链接被删除。](../images/graph-examples/crmid_only_multi.png "共享设备图方案，其中两个人员标识符链接到同一ECID，但旧链接被删除。"){zoomable="yes"}
 
 +++
 
@@ -149,7 +149,7 @@ ht-degree: 6%
 
 在图形模拟中，此摄取可能如下所示：
 
-![呈现了图形示例的图形模拟UI。](../images/implementation/example-graph.png)
+![图形模拟UI和呈现的示例图形。](../images/implementation/example-graph.png "呈现了图形示例的图形模拟UI。"){zoomable="yes"}
 
 >[!TAB 没有任何人员标识符的已验证事件]
 
@@ -201,7 +201,7 @@ Identity Service实施流程的第一步是，确保将您的Experience Platform
 
 了解图形的行为方式后，请导航到Identity Service UI工作区中的[身份设置UI](./identity-settings-ui.md)。 要访问身份设置UI，请从左侧导航中选择&#x200B;**[!UICONTROL 身份]**，然后选择&#x200B;**[!UICONTROL 设置]**。
 
-![身份浏览页面中突出显示了设置按钮。](../images/implementation/settings.png)
+![身份浏览页面中突出显示了设置按钮。](../images/implementation/settings.png "身份浏览页面中突出显示了设置按钮。"){zoomable="yes"}
 
 使用身份设置UI指定唯一的命名空间并按优先级配置命名空间。 完成应用设置后，必须至少等待六小时才能继续摄取数据，因为新设置至少需要六小时才能反映在Identity Service中。
 
@@ -249,11 +249,11 @@ Identity Service实施流程的第一步是，确保将您的Experience Platform
 
 选择省略号(`...`)，然后选择&#x200B;**[!UICONTROL 查看更多]**&#x200B;以获取详细信息，并验证没有折叠的图形。
 
-![Identity Service UI工作区中的身份仪表板。](../images/implementation/identity_dashboard.png)
+![Identity Service UI工作区中的身份仪表板。](../images/implementation/identity_dashboard.png "Identity Service UI工作区中的身份仪表板。"){zoomable="yes"}
 
 使用显示的窗口查看有关折叠图形的信息。 在此示例中，电子邮件和电话都标记为唯一的命名空间，因此，您的沙盒中没有折叠的图形。
 
-![具有多个标识的图形的弹出窗口。](../images/implementation/graphs.png)
+![具有多个标识的图形的弹出窗口。](../images/implementation/graphs.png "具有多个标识的图形的弹出窗口。"){zoomable="yes"}
 
 ## 附录 {#appendix}
 
@@ -269,13 +269,13 @@ Identity Service实施流程的第一步是，确保将您的Experience Platform
 
 在此示例中，`{loginID: ID_C}`悬空且未链接到CRMID。 因此，应与loginID关联的人员实体将变得模棱两可。
 
-![具有“悬挂”登录ID方案的图形示例。](../images/graph-examples/dangling_example.png)
+![具有“悬挂”登录ID方案的图形示例。](../images/graph-examples/dangling_example.png "具有挂起loginID方案的图形示例。"){zoomable="yes"}
 
 >[!TAB loginID链接到CRMID]
 
 在此示例中，`{loginID: ID_C}`链接到`{CRMID: Tom}`。 因此，系统能够识别此loginID与Tom相关联。
 
-![LoginID链接到CRMID。](../images/graph-examples/id_c_tom.png)
+![LoginID已链接到CRMID。](../images/graph-examples/id_c_tom.png "LoginID链接到CRMID。"){zoomable="yes"}
 
 >[!TAB loginID已链接到另一个CRMID]
 
@@ -283,7 +283,7 @@ Identity Service实施流程的第一步是，确保将您的Experience Platform
 
 此示例还显示Tom和Summer是共享设备的不同人员实体，该设备由`{ECID: 111}`表示。
 
-![LoginID已链接到另一个CRMID。](../images/graph-examples/id_c_summer.png)
+![LoginID已链接到另一个CRMID。](../images/graph-examples/id_c_summer.png "LoginID已链接到另一个CRMID。"){zoomable="yes"}
 
 >[!ENDTABS]
 
