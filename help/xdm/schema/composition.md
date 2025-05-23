@@ -59,7 +59,7 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 
 为了帮助完成此过程，架构中的关键字段可以标记为标识。 摄取数据时，这些字段中的数据将插入该个人的“[!UICONTROL 身份图]”中。 然后，[[!DNL Real-Time Customer Profile]](../../profile/home.md)和其他Experience Platform服务可以访问图形数据，以提供每个客户的拼合视图。
 
-通常标记为“[!UICONTROL 标识]”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html)、CRM ID或其他唯一ID字段。 请考虑特定于贵组织的任何唯一标识符，因为它们可能也是有效的“[!UICONTROL 标识]”字段。
+通常标记为“[!UICONTROL 标识]”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)、CRM ID或其他唯一ID字段。 请考虑特定于贵组织的任何唯一标识符，因为它们可能也是有效的“[!UICONTROL 标识]”字段。
 
 要了解有关身份信息如何帮助您向客户提供数字体验的更多信息，请参阅[身份服务概述](../../identity-service/home.md)。 有关创建架构[&#128279;](./best-practices.md#data-validation-fields)时使用标识的提示，请参阅数据建模最佳实践文档。
 
