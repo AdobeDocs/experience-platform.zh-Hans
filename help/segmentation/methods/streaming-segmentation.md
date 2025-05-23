@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 流式分段指南
 description: 了解流式分段，包括内容、如何创建使用流式分段评估的受众，以及如何查看使用流式分段创建的受众。
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: cd22213be0dbc2e5a076927e560f1b23b467b306
+source-git-commit: 8523ba35eab80a7496e17cb0ceb3e46a78dd6058
 workflow-type: tm+mt
-source-wordcount: '2013'
+source-wordcount: '2022'
 ht-degree: 2%
 
 ---
@@ -140,6 +140,8 @@ inSegment("e3be6d7f-1727-401f-a41e-c296b45f607a") and inSegment("9e1646bb-57ff-4
 
 要合并来自批处理源和流式源的数据，您需要将批处理组件和流式组件分离到单独的受众中。
 
+### 配置文件属性和体验事件 {#profile-and-event}
+
 例如，我们考虑以下两个示例受众：
 
 | 受众 | 架构 | Source类型 | 查询定义 | 受众 ID |
@@ -159,7 +161,9 @@ WHEN(<= 24 hours before now)])
 
 将使用流式分段评估生成的受众&#x200B;**，因为它通过引用批处理受众组件来利用批处理受众的成员资格。
 
-但是，如果要将两个受众与事件数据合并，则&#x200B;**不能**&#x200B;只合并这两个事件。 您需要创建两个受众，然后创建另一个使用`inSegment`引用这两个受众的受众。
+### 多个体验事件 {#two-events}
+
+如果要将多个受众与事件数据合并，则&#x200B;**不能**&#x200B;只合并这些事件。 您需要为每个事件创建一个受众，然后创建另一个使用`inSegment`引用所有受众的受众。
 
 例如，假设您有两个受众，这两个受众都存放体验事件架构数据：
 
@@ -463,4 +467,4 @@ curl -X GET 'https://platform.adobe.io/data/core/ups/segment/definitions?evaluat
 
 要了解有关使用Adobe Experience Platform用户界面的更多信息，请参阅[分段用户指南](./overview.md)。
 
-有关流式客户细分的常见问题，请阅读常见问题解答[&#128279;](../faq.md#streaming-segmentation)的流式客户细分部分。
+有关流式客户细分的常见问题，请阅读常见问题解答](../faq.md#streaming-segmentation)的[流式客户细分部分。
