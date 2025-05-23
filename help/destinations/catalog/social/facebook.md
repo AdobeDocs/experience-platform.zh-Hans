@@ -3,16 +3,24 @@ keywords: facebook连接；facebook连接；facebook目标；facebook；instagra
 title: Facebook连接
 description: 根据散列邮件激活 Facebook 营销活动的轮廓，以实现受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: a2420f86e650ce1ca8a5dc01d9a29548663d3f7c
+source-git-commit: 09146fac0719b62c6c2ec1b6c3aa66cb80c1698a
 workflow-type: tm+mt
-source-wordcount: '2137'
-ht-degree: 6%
+source-wordcount: '2843'
+ht-degree: 5%
 
 ---
 
 # [!DNL Facebook]连接
 
 ## 概述 {#overview}
+
+>[!IMPORTANT]
+>
+>* 从2025年5月23日开始，在整个2025年6月，您可能会在目标目录中临时看到两个&#x200B;**[!DNL Facebook Custom Audience]**&#x200B;目标卡，持续时间可能最多几个小时。 这是由于目标服务的内部升级，并支持新字段以改进定位并与Facebook属性上的用户档案匹配。 有关新的地址相关字段的详细信息，请参阅[支持的标识](#supported-identities)部分。
+>* 如果您看到一张标记为&#x200B;**[!UICONTROL （新） Facebook自定义受众]**&#x200B;的卡，请将此卡用于新的激活数据流。 您的现有数据流将自动更新，因此您无需执行任何操作。 在此期间对现有数据流所做的任何更改将在升级后保留。 升级完成后，**[!UICONTROL （新） Facebook自定义受众]**&#x200B;目标卡将重命名为&#x200B;**[!DNL Facebook Custom Audience]**。
+>* 如果您使用[流服务API](https://developer.adobe.com/experience-platform-apis/references/destinations/)创建数据流，则必须将[!DNL flow spec ID]和[!DNL connection spec ID]更新为以下值：
+>   * 流量规范 ID：`bb181d00-58d7-41ba-9c15-9689fdc831d3`
+>   * 连接规范 ID：`c8b97383-2d65-4b7a-9913-db0fbfc71727`
 
 根据哈希电子邮件激活[!DNL Facebook]营销活动的配置文件，以实现受众定位、个性化和抑制。
 
@@ -42,11 +50,20 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| GAID | GOOGLE ADVERTISING ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |
-| IDFA | 广告商的Apple ID | 当源身份是IDFA命名空间时，选择IDFA目标身份。 |
-| phone_sha256 | 使用SHA256算法散列的电话号码 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电话号码。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
-| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
-| extern_id | 自定义用户标识 | 当源身份是自定义命名空间时，请选择此目标身份。 |
+| `GAID` | GOOGLE ADVERTISING ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |
+| `IDFA` | 广告商的Apple ID | 当源身份是IDFA命名空间时，选择IDFA目标身份。 |
+| `phone_sha256` | 使用SHA256算法散列的电话号码 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电话号码。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
+| `email_lc_sha256` | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
+| `extern_id` | 自定义用户标识 | 当源身份是自定义命名空间时，请选择此目标身份。 |
+| `gender` | 性别 | 接受的值： <ul><li>男性`m`</li><li>女性`f`</li></ul> Experience Platform **在将此值发送到Facebook之前会自动对其进行哈希处理**。 这种自动哈希处理是遵守Facebook安全和隐私要求所必需的。 请&#x200B;**不**&#x200B;为此字段提供预哈希值，因为这将导致匹配过程失败。 |
+| `date_of_birth` | 出生日期 | 接受的格式： `yyyy-MM-DD`。 <br>Experience Platform **在将此值发送到Facebook之前会自动对其进行哈希处理**。 这种自动哈希处理是遵守Facebook安全和隐私要求所必需的。 请&#x200B;**不**&#x200B;为此字段提供预哈希值，因为这将导致匹配过程失败。 |
+| `last_name` | 姓氏 | 接受的格式：小写，仅`a-z`个字符，无标点。 对特殊字符使用UTF-8编码。  <br>Experience Platform **在将此值发送到Facebook之前会自动对其进行哈希处理**。 这种自动哈希处理是遵守Facebook安全和隐私要求所必需的。 请&#x200B;**不**&#x200B;为此字段提供预哈希值，因为这将导致匹配过程失败。 |
+| `first_name` | 名字 | 接受的格式：小写，仅`a-z`个字符，无标点，无空格。 对特殊字符使用UTF-8编码。  <br>Experience Platform **在将此值发送到Facebook之前会自动对其进行哈希处理**。 这种自动哈希处理是遵守Facebook安全和隐私要求所必需的。 请&#x200B;**不**&#x200B;为此字段提供预哈希值，因为这将导致匹配过程失败。 |
+| `first_name_initial` | 名字首字母缩写 | 接受的格式：小写，仅`a-z`个字符。 对特殊字符使用UTF-8编码。  <br>Experience Platform **在将此值发送到Facebook之前会自动对其进行哈希处理**。 这种自动哈希处理是遵守Facebook安全和隐私要求所必需的。 请&#x200B;**不**&#x200B;为此字段提供预哈希值，因为这将导致匹配过程失败。 |
+| `state` | State | 使用小写的[2字符ANSI缩写代码](https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code)。 对于非美国州，请使用小写字符、无标点、无特殊字符和空格。  <br>Experience Platform **在将此值发送到Facebook之前会自动对其进行哈希处理**。 这种自动哈希处理是遵守Facebook安全和隐私要求所必需的。 请&#x200B;**不**&#x200B;为此字段提供预哈希值，因为这将导致匹配过程失败。 |
+| `city` | 城市 | 接受的格式：小写、仅`a-z`个字符、无标点、无特殊字符、无空格。  <br>Experience Platform **在将此值发送到Facebook之前会自动对其进行哈希处理**。 这种自动哈希处理是遵守Facebook安全和隐私要求所必需的。 请&#x200B;**不**&#x200B;为此字段提供预哈希值，因为这将导致匹配过程失败。 |
+| `zip` | 邮政编码 | 接受的格式：小写，无空格。 对于美国邮政编码，仅使用前5位。 在英国，请使用`Area/District/Sector`格式。  <br>Experience Platform **在将此值发送到Facebook之前会自动对其进行哈希处理**。 这种自动哈希处理是遵守Facebook安全和隐私要求所必需的。 请&#x200B;**不**&#x200B;为此字段提供预哈希值，因为这将导致匹配过程失败。 |
+| `country` | 国家/地区 | 接受的格式：小写，2字母国家/地区代码，采用[ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)格式。  <br>Experience Platform **在将此值发送到Facebook之前会自动对其进行哈希处理**。 这种自动哈希处理是遵守Facebook安全和隐私要求所必需的。 请&#x200B;**不**&#x200B;为此字段提供预哈希值，因为这将导致匹配过程失败。 |
 
 ## 支持的受众 {#supported-audiences}
 
@@ -93,6 +110,12 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 [!DNL Facebook]要求不发送明确的个人身份信息(PII)。 因此，激活到[!DNL Facebook]的受众可以用&#x200B;*散列的*&#x200B;标识符作为键值，例如电子邮件地址或电话号码。
 
 根据您摄取到Adobe Experience Platform中的ID类型，您必须遵守其相应的要求。
+
+## 最大化受众匹配率 {#match-rates}
+
+若要在[!DNL Facebook]中实现最高的受众匹配率，强烈建议使用`phone_sha256`和`email_lc_sha256`目标身份。
+
+这些标识符是[!DNL Facebook]用于在其平台上匹配受众的主要标识符。 请确保您的源数据正确映射到这些目标身份并遵循[!DNL Facebook's]哈希要求。
 
 ## 电话号码散列要求 {#phone-number-hashing-requirements}
 
@@ -142,7 +165,7 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 以下视频还演示了配置[!DNL Facebook]目标和激活受众的步骤。
 
->[!VIDEO](https://video.tv.adobe.com/v/3411783/?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 >[!NOTE]
 >
@@ -172,7 +195,7 @@ Facebook身份验证令牌每60天过期一次。 令牌过期后，数据导出
    ![筛选以仅显示Facebook帐户](/help/destinations/assets/catalog/social/facebook/refresh-oauth-filters.png)
 3. 选择要刷新的帐户，选择省略号并选择&#x200B;**[!UICONTROL 编辑详细信息]**。
    ![选择“编辑详细信息”控件](/help/destinations/assets/catalog/social/facebook/refresh-oauth-edit-details.png)
-4. 在模式窗口中，选择&#x200B;**[!UICONTROL 重新连接OAuth]**&#x200B;并使用Facebook凭据重新进行身份验证。
+4. 在模式窗口中，选择&#x200B;**[!UICONTROL 重新连接OAuth]**并使用Facebook凭据重新进行身份验证。
    使用Reconnect OAuth选项的![模式窗口](/help/destinations/assets/catalog/social/facebook/reconnect-oauth-control.png)
 
 >[!SUCCESS]
