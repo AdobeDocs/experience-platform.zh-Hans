@@ -4,20 +4,20 @@ solution: Experience Platform
 title: 在UI中定义标识字段
 description: 了解如何在Experience Platform用户界面中定义标识字段。
 exl-id: 11a53345-4c3f-4537-b3eb-ee7a5952df2a
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 3570197ca6cff95368b4facb034386e793033fe2
 workflow-type: tm+mt
-source-wordcount: '652'
+source-wordcount: '665'
 ht-degree: 6%
 
 ---
 
 # 在UI中定义标识字段
 
-在Experience Data Model (XDM)中，标识字段表示可用于标识与记录或时间序列事件相关的个人人员的字段。 本文档介绍如何在Adobe Experience Platform UI中定义标识字段。
+在Experience Data Model (XDM)中，身份字段表示可用于识别与记录或时间序列事件相关的个人人员的字段。 本文档介绍如何在Adobe Experience Platform UI中定义标识字段。
 
 ## 先决条件
 
-标识字段是如何在Experience Platform中构建客户标识图的关键组件，它最终影响Real-time Customer Profile如何将不同的数据片段合并到一起，从而获得客户的完整视图。 在定义架构中的身份字段之前，请参阅以下文档以了解与身份字段相关的关键服务和概念：
+标识字段是如何在Experience Platform中构建客户标识图的关键组件，它最终影响Real-time Customer Profile如何将不同的数据片段合并到一起，从而获得客户的完整视图。 在架构中定义身份字段之前，请参阅以下文档以了解与身份字段相关的关键服务和概念：
 
 * [Adobe Experience Platform Identity服务](../../../identity-service/home.md)：跨设备和系统桥接身份，根据数据集所遵循的XDM架构定义的身份字段将数据集链接在一起。
    * [身份命名空间](../../../identity-service/features/namespaces.md)：身份命名空间定义可以与单个人员相关的不同类型的身份信息，并且是每个身份字段的必需组件。
@@ -46,7 +46,7 @@ ht-degree: 6%
 
 >[!IMPORTANT]
 >
->如果已设置主标识字段，则可以按照上述步骤更改架构中的主标识字段。 但是，您必须先禁用配置文件中的任何关联数据集，然后再重新启用它们，更改才会生效。
+>一旦启用了架构以便在Real-time Customer Profile中使用并且数据已被摄取，**您就无法更改主标识字段**。 尝试这样做将导致验证错误。 如果您需要使用其他主身份，则必须使用更新的身份配置创建新架构和新数据集。
 
 ![](../../images/ui/fields/special/identity-config.png)
 
@@ -63,4 +63,3 @@ ht-degree: 6%
 本指南介绍了如何在UI中定义标识字段。 使用此架构摄取数据时，您的客户身份图将进行更新以反映架构的身份字段。 请参阅[身份图形查看器](../../../identity-service/features/identity-graph-viewer.md)上的指南，了解如何在UI中浏览组织的专用图形。
 
 请参阅[在UI](./overview.md#special)中定义字段的概述，了解如何在[!DNL Schema Editor]中定义其他XDM字段类型。
-

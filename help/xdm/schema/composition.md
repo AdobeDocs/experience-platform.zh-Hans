@@ -4,14 +4,14 @@ solution: Experience Platform
 title: 架构组合基础
 description: 了解Experience Data Model (XDM)架构以及在Adobe Experience Platform中构建架构的构建块、原则和最佳实践。
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: dcb6770d739d0da5cfa339584a769f5311a8c7e1
 workflow-type: tm+mt
-source-wordcount: '4373'
+source-wordcount: '4350'
 ht-degree: 8%
 
 ---
 
-# 架构组合基础
+# 架构构成基础
 
 了解Experience Data Model (XDM)架构以及在Adobe Experience Platform中构建架构的构建块、原则和最佳实践。 有关XDM及其在[!DNL Experience Platform]中的使用方式的一般信息，请参阅[XDM系统概述](../home.md)。
 
@@ -55,24 +55,24 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 >title="架构内的身份标识"
 >abstract="身份标识是架构中的关键字段，可用于识别主题，例如电子邮件地址或营销 ID。这些字段用于为每个人构建身份标识图并生成客户轮廓。有关架构中身份标识的更多信息，请参阅该文档。"
 
-架构用于将数据摄取到Experience Platform。 此数据可以跨多个服务使用，以创建单个实体的单个统一视图。 因此，在为客户身份设计架构时，重要的是要考虑哪些字段可用于识别主题，而不管数据可能来自何处。
+架构定义摄取到Experience Platform的数据的结构。 该数据为平台中的多项服务提供支持，并帮助创建每个人的单一、统一的视图。 因此，在设计架构时，请仔细考虑要标记为身份的字段，这些字段控制如何跨数据集拼合用户档案。
 
 为了帮助完成此过程，架构中的关键字段可以标记为标识。 摄取数据时，这些字段中的数据将插入该个人的“[!UICONTROL 身份图]”中。 然后，[[!DNL Real-Time Customer Profile]](../../profile/home.md)和其他Experience Platform服务可以访问图形数据，以提供每个客户的拼合视图。
 
-通常标记为“[!UICONTROL 标识]”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)、CRM ID或其他唯一ID字段。 请考虑特定于贵组织的任何唯一标识符，因为它们可能也是有效的“[!UICONTROL 标识]”字段。
+通常标记为“[!UICONTROL 标识]”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html)、CRM ID或其他唯一ID字段。 请考虑特定于贵组织的任何唯一标识符，因为它们可能也是有效的“[!UICONTROL 标识]”字段。
 
-在架构规划阶段考虑客户身份很重要，这样有助于确保将数据汇集在一起，以尽可能构建最强大的配置文件。 要了解有关身份信息如何帮助您向客户提供数字体验的更多信息，请参阅[身份服务概述](../../identity-service/home.md)。 有关创建架构[&#128279;](./best-practices.md#data-validation-fields)时使用标识的提示，请参阅数据建模最佳实践文档。
+要了解有关身份信息如何帮助您向客户提供数字体验的更多信息，请参阅[身份服务概述](../../identity-service/home.md)。 有关创建架构](./best-practices.md#data-validation-fields)时使用标识的提示，请参阅数据建模最佳实践文档[。
 
 有两种方法可以将身份数据发送到Experience Platform：
 
 1. 通过[架构编辑器UI](../ui/fields/identity.md)或使用[架构注册表API](../api/descriptors.md#create)将标识描述符添加到单个字段
-1. 使用[`identityMap`字段](#identityMap)
+2. 使用[`identityMap`字段](#identityMap)
 
 #### `identityMap` {#identityMap}
 
 `identityMap`是一个映射类型字段，用于描述个人的各种标识值及其关联的命名空间。 此字段可用于为架构提供标识信息，而不是在架构本身的结构中定义标识值。
 
-使用`identityMap`的主要缺点是标识会嵌入到数据中，因此变得不那么可见。 如果您摄取原始数据，则应该在实际的架构结构中定义单独的标识字段。
+使用`identityMap`的主要缺点是标识值是嵌套的，在需要顶级标识字段的工具（如区段生成器或某些第三方集成）中可能更难以使用。
 
 >[!NOTE]
 >
@@ -109,7 +109,7 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 }
 ```
 
-如上面的示例所示，`identityMap`对象中的每个键都表示一个身份命名空间。 每个键的值是一个对象数组，表示相应命名空间的标识值(`id`)。 请参阅[!DNL Identity Service]文档，了解Adobe应用程序识别的标准身份命名空间[&#128279;](../../identity-service/troubleshooting-guide.md#standard-namespaces)的列表。
+如上面的示例所示，`identityMap`对象中的每个键都表示一个身份命名空间。 每个键的值是一个对象数组，表示相应命名空间的标识值(`id`)。 请参阅[!DNL Identity Service]文档，了解Adobe应用程序识别的标准身份命名空间](../../identity-service/troubleshooting-guide.md#standard-namespaces)的[列表。
 
 >[!NOTE]
 >
@@ -129,7 +129,7 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 
 | 支持的更改 | 重大更改（不支持） |
 | --- | --- |
-| <ul><li>向资源添加新字段</li><li>将必填字段设为可选</li><li>引入新的必填字段*</li><li>更改资源的显示名称和描述</li><li>启用架构以参与配置文件</li></ul> | <ul><li>删除以前定义的字段</li><li>重命名或重新定义现有字段</li><li>删除或限制以前支持的字段值</li><li>将现有字段移动到树中的其他位置</li><li>删除架构</li><li>禁用参与配置文件的架构</li></ul> |
+| <ul><li>向资源添加新字段</li><li>将必填字段设为可选</li><li>引入新的必填字段*</li><li>更改资源的显示名称和描述</li><li>启用架构以参与配置文件</li></ul> | <ul><li>删除以前定义的字段</li><li>重命名或重新定义现有字段</li><li>删除或限制以前支持的字段值</li><li>将现有字段移动到树中的其他位置</li><li>删除架构</li><li>禁用参与配置文件的架构</li><li>更改为配置文件启用并已摄取数据的架构上的主标识字段</li></ul> |
 
 \**请参阅以下部分，了解有关[设置新必填字段](#post-ingestion-required-fields).*&#x200B;的重要注意事项
 
@@ -139,7 +139,7 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 
 >[!IMPORTANT]
 >
->无论是否需要架构字段，Experience Platform都不会接受任何已摄取字段的`null`或空值。 如果记录或事件中没有特定字段的值，则应该从摄取有效负载中排除该字段的键。
+>无论是否需要架构字段，Experience Platform都不会接受任何已摄取字段的`null`或空值。 如果记录或事件中某个特定字段没有值，则应从摄取有效载荷中排除该字段的键。
 
 #### 在引入后根据需要设置字段 {#post-ingestion-required-fields}
 
@@ -185,7 +185,7 @@ Adobe提供了多个标准（“核心”）XDM类。 几乎所有下游Experien
 
 以下屏幕截图演示了类在Experience Platform UI中的表示方式。 由于显示的示例架构不包含任何字段组，因此显示的所有字段均由架构的类([!UICONTROL XDM Individual Profile])提供。
 
-架构编辑器中的[XDM个人配置文件]![[!UICONTROL 。]](../images/schema-composition/class.png)
+架构编辑器中的![XDM个人配置文件][!UICONTROL 。](../images/schema-composition/class.png)
 
 有关可用标准XDM类的最新列表，请参阅[官方XDM存储库](https://github.com/adobe/xdm/tree/master/components/classes)。 或者，如果您希望在UI中查看资源，可以参考有关[浏览XDM组件](../ui/explore.md)的指南。
 
