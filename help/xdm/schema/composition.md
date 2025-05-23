@@ -61,7 +61,7 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 
 通常标记为“[!UICONTROL 标识]”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html)、CRM ID或其他唯一ID字段。 请考虑特定于贵组织的任何唯一标识符，因为它们可能也是有效的“[!UICONTROL 标识]”字段。
 
-要了解有关身份信息如何帮助您向客户提供数字体验的更多信息，请参阅[身份服务概述](../../identity-service/home.md)。 有关创建架构](./best-practices.md#data-validation-fields)时使用标识的提示，请参阅数据建模最佳实践文档[。
+要了解有关身份信息如何帮助您向客户提供数字体验的更多信息，请参阅[身份服务概述](../../identity-service/home.md)。 有关创建架构[&#128279;](./best-practices.md#data-validation-fields)时使用标识的提示，请参阅数据建模最佳实践文档。
 
 有两种方法可以将身份数据发送到Experience Platform：
 
@@ -109,7 +109,7 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 }
 ```
 
-如上面的示例所示，`identityMap`对象中的每个键都表示一个身份命名空间。 每个键的值是一个对象数组，表示相应命名空间的标识值(`id`)。 请参阅[!DNL Identity Service]文档，了解Adobe应用程序识别的标准身份命名空间](../../identity-service/troubleshooting-guide.md#standard-namespaces)的[列表。
+如上面的示例所示，`identityMap`对象中的每个键都表示一个身份命名空间。 每个键的值是一个对象数组，表示相应命名空间的标识值(`id`)。 请参阅[!DNL Identity Service]文档，了解Adobe应用程序识别的标准身份命名空间[&#128279;](../../identity-service/troubleshooting-guide.md#standard-namespaces)的列表。
 
 >[!NOTE]
 >
@@ -185,7 +185,7 @@ Adobe提供了多个标准（“核心”）XDM类。 几乎所有下游Experien
 
 以下屏幕截图演示了类在Experience Platform UI中的表示方式。 由于显示的示例架构不包含任何字段组，因此显示的所有字段均由架构的类([!UICONTROL XDM Individual Profile])提供。
 
-架构编辑器中的![XDM个人配置文件][!UICONTROL 。](../images/schema-composition/class.png)
+架构编辑器中的[XDM个人配置文件]![[!UICONTROL 。]](../images/schema-composition/class.png)
 
 有关可用标准XDM类的最新列表，请参阅[官方XDM存储库](https://github.com/adobe/xdm/tree/master/components/classes)。 或者，如果您希望在UI中查看资源，可以参考有关[浏览XDM组件](../ui/explore.md)的指南。
 
