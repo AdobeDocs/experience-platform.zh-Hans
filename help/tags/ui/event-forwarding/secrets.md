@@ -2,10 +2,10 @@
 title: 在事件转发中配置密钥
 description: 了解如何在UI中配置密钥，以对事件转发属性中使用的端点进行身份验证。
 exl-id: eefd87d7-457f-422a-b159-5b428da54189
-source-git-commit: 592acdd45b1db5da95430b4e707cd9a2c18c1645
+source-git-commit: 374c140a5db678adfa2e038b69478ad8c7f8dc95
 workflow-type: tm+mt
-source-wordcount: '2426'
-ht-degree: 3%
+source-wordcount: '2577'
+ht-degree: 2%
 
 ---
 
@@ -17,6 +17,7 @@ ht-degree: 3%
 
 | 密码类型 | 描述 |
 | --- | --- |
+| [!UICONTROL Amazon OAuth 2] | 启用[!DNL Amazon]服务的安全身份验证。 系统安全地存储该令牌并按指定的时间间隔处理其续订。 |
 | [!UICONTROL Google OAuth 2] | 包含多个特性，可支持用于[Google Ads API](https://developers.google.com/google-ads/api/docs/oauth/overview)和[Pub/Sub API](https://cloud.google.com/pubsub/docs/reference/service_apis_overview)的[OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749)身份验证规范。 系统会要求您提供所需信息，然后在指定的时间间隔内为您处理这些令牌的续订。 |
 | [!UICONTROL HTTP] | 包含用户名和密码的两个字符串属性。 |
 | [!UICONTROL [!DNL LinkedIn] OAuth 2] | 系统会要求您提供所需信息，然后在指定的时间间隔内为您处理这些令牌的续订。 |
@@ -44,7 +45,7 @@ ht-degree: 3%
 >id="platform_eventforwarding_secrets_environments"
 >title="密钥的环境"
 >abstract="要使某个密钥可由事件转发使用，必须将此密钥分配给现有环境。如果您未为事件转发属性创建任何环境，则必须先配置它们，然后再继续。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/environments/environments.html?lang=zh-Hans#" text="环境概述"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/environments/environments.html#" text="环境概述"
 
 要创建密码，请在左侧导航中选择&#x200B;**[!UICONTROL 事件转发]**，然后打开要在其下添加密码的事件转发属性。 接下来，在左侧导航中选择&#x200B;**[!UICONTROL 密钥]**，然后选择&#x200B;**[!UICONTROL 新建密钥]**。
 
@@ -77,7 +78,8 @@ ht-degree: 3%
 * [[!UICONTROL OAuth 2]](#oauth2)
 * [[!UICONTROL OAuth 2 JWT]](#oauth2jwt)
 * [[!UICONTROL Google OAuth 2]](#google-oauth2)
-* [[!UICONTROL [!DNL LinkedIn] OAuth 2]](#linkedin-oauth2)
+* [[！UICONTROL [!DNL LinkedIn] OAuth 2]](#linkedin-oauth2)
+* [[！UICONTROL [!DNL Amazon] OAuth 2]](#amazon-oauth2)
 
 ### [!UICONTROL 令牌] {#token}
 
@@ -186,7 +188,7 @@ ht-degree: 3%
 
 此时会出现一个弹出窗口，通知您需要通过[!DNL LinkedIn]手动授权密钥。 选择&#x200B;**[!UICONTROL 使用[!DNL LinkedIn]]**&#x200B;创建并授权密钥以继续。
 
-![[!DNL LinkedIn]授权弹出框突出显示[!UICONTROL 使用[!DNL LinkedIn]]创建和授权密钥。](../../images/ui/event-forwarding/secrets/linkedin-authorization.png)
+![LinkedIn授权弹出框突出显示“使用LinkedIn创建和授权密钥”按钮。](../../images/ui/event-forwarding/secrets/linkedin-authorization.png)
 
 出现一个对话框，提示您输入[!DNL LinkedIn]凭据。 按照提示操作，授予数据事件转发访问权限。
 
@@ -209,6 +211,22 @@ ht-degree: 3%
 ![密码的[!UICONTROL 密码]选项卡突出显示[!DNL LinkedIn]密码需要[!UICONTROL 身份验证]。](../../images/ui/event-forwarding/secrets/linkedin-reauthorization.png)
 
 将出现一个对话框，提示您输入[!DNL LinkedIn]凭据。 按照提示重新授权您的密钥。
+
+### [!UICONTROL [!DNL Amazon] OAuth 2] {#amazon-oauth2}
+
+要创建[!DNL Amazon] OAuth 2密码，请从&#x200B;**[!UICONTROL 类型]**&#x200B;下拉列表中选择&#x200B;**[!UICONTROL [!DNL Amazon]OAuth 2]**。 接下来，选择&#x200B;**[!UICONTROL 创建密钥]**。
+
+![突出显示了[!UICONTROL 类型]字段的[!UICONTROL 创建密钥]选项卡。](../../images/ui/event-forwarding/secrets/amazon-oauth.png)
+
+此时会出现一个弹出窗口，通知您需要通过[!DNL Amazon]手动授权密钥。 选择&#x200B;**[!UICONTROL 使用[!DNL Amazon]]**&#x200B;创建并授权密钥以继续。
+
+![Amazon授权弹出框突出显示“使用Amazon创建和授权密钥”按钮。](../../images/ui/event-forwarding/secrets/amazon-authorization.png)
+
+出现一个对话框，提示您输入[!DNL Amazon]凭据。 按照提示操作，授予数据事件转发访问权限。
+
+授权过程完成后，您将返回&#x200B;**[!UICONTROL 密码]**&#x200B;选项卡，您可以在其中查看新创建的密码。 您可以在此处查看密钥的状态和到期日期。
+
+![突出显示新创建密码的[!UICONTROL 密码]选项卡。](../../images/ui/event-forwarding/secrets/amazon-new-secret.png)
 
 ## 编辑密码
 

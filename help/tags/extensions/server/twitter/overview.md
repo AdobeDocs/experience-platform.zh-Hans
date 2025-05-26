@@ -1,10 +1,10 @@
 ---
 keywords: 事件转发扩展；twitter；twitter事件转发扩展
-title: twitter事件转发扩展
-description: 此Adobe Experience Platform事件转发扩展允许您根据业务需求将事件摄取到Twitter中。
+title: Twitter事件转发扩展
+description: 通过这个Adobe Experience Platform事件转发扩展，您可以将事件摄取到Twitter中，以满足您的业务要求。
 last-substantial-update: 2023-05-24T00:00:00Z
 exl-id: 54c240e5-6160-4654-ac5b-6afa8d99a765
-source-git-commit: 4ee895cb8371646fd2013e2a8f65c2ffdae95850
+source-git-commit: 374c140a5db678adfa2e038b69478ad8c7f8dc95
 workflow-type: tm+mt
 source-wordcount: '1048'
 ht-degree: 3%
@@ -15,13 +15,13 @@ ht-degree: 3%
 
 [[!DNL Twitter]](https://twitter.com/i/flow/login)是一种在线社交媒体和社交网络服务，用户在该服务上发布并与280个字符长的消息（称为推文）交互。 用户可以使用浏览器、移动前端软件或通过其[API](https://developer.twitter.com/en/docs/twitter-api)以编程方式与Twitter交互
 
-[!DNL Twitter] Web Conversions API [事件转发](../../../ui/event-forwarding/overview.md)扩展允许您利用Adobe Experience PlatformEdge Network中捕获的数据并将其发送给[!DNL Twitter]。 本文档介绍了扩展的使用案例、安装方法，以及如何将其功能集成到事件转发[规则](../../../ui/managing-resources/rules.md)中。
+[!DNL Twitter] Web Conversions API [事件转发](../../../ui/event-forwarding/overview.md)扩展允许您利用Adobe Experience Platform Edge Network中捕获的数据并将其发送给[!DNL Twitter]。 本文档介绍了扩展的使用案例、安装方法，以及如何将其功能集成到事件转发[规则](../../../ui/managing-resources/rules.md)中。
 
 [!DNL Twitter]需要[OAuth 1.0](https://developer.twitter.com/en/docs/authentication/oauth-1-0a)才能使用[!DNL Twitter] [!DNL Web Conversions] API进行身份验证。
 
 ## 用例
 
-如果要使用[!DNL Twitter]中Edge Network的数据以利用其客户分析和定位功能，应使用此扩展。
+如果要使用[!DNL Twitter]中Edge Network的数据来利用其客户分析和定位功能，应使用此扩展。
 
 例如，以组织中的营销团队为例。 团队从其网站捕获用户交互事件数据，作为来自其网站的事件数据，并使用此事件转发扩展将其加载到[!DNL Twitter]中。
 
@@ -45,7 +45,7 @@ ht-degree: 3%
 
 | 键类型 | 描述 |
 | --- | --- |
-| 使用者密钥 | 用&#x200B;于访问[!DNL Twitter] API的应用程序API密钥。 有关指导，请参阅有关[API密钥和密钥](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/api-key-and-secret)的[!DNL Twitter]文档。 | |
+| 使用者密钥 | 用&#x200B;于访问[!DNL Twitter] API的应用程序API密钥。 有关指导，请参阅有关[API密钥和密钥](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/api-key-and-secret)的[!DNL Twitter]文档。 |
 | 使用者密码 | API密钥允许您的应用程序访问[!DNL Twitter] API。 有关指导，请参阅有关[API密钥和密钥](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/api-key-and-secret)的[!DNL Twitter]文档。 |
 | 令牌密码 | 您应用程序的不过期令牌密码，用于通过OAuth向[!DNL Twitter] API进行身份验证。 有关指导，请参阅有关[获取使用访问令牌](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/obtaining-user-access-tokens)的[!DNL Twitter]文档。 |
 | 访问令牌 | 您应用程序的不过期访问令牌，用于通过OAuth对[!DNL Twitter] API进行身份验证。 有关指导，请参阅有关[获取使用访问令牌](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/obtaining-user-access-tokens)的[!DNL Twitter]文档。 |
@@ -79,7 +79,7 @@ ht-degree: 3%
 
 设置完所有数据元素后，即可开始创建事件转发规则，以确定将事件发送到[!DNL Twitter]的时间和方式。
 
-在事件转发属性中创建新的[规则](../../../ui/managing-resources/rules.md)。 在&#x200B;**[!UICONTROL 操作]**&#x200B;下，添加新操作并将扩展设置为&#x200B;**[!UICONTROL Twitter]**。 若要将Edge Network事件发送到[!DNL Twitter]，请将&#x200B;**[!UICONTROL 操作类型]**&#x200B;设置为&#x200B;**[!UICONTROL 发送Web转换]。**
+在事件转发属性中创建新的[规则](../../../ui/managing-resources/rules.md)。 在&#x200B;**[!UICONTROL 操作]**&#x200B;下，添加新操作并将扩展设置为&#x200B;**[!UICONTROL Twitter]**。 要将Edge Network事件发送到[!DNL Twitter]，请将&#x200B;**[!UICONTROL 操作类型]**&#x200B;设置为&#x200B;**[!UICONTROL 发送Web转换]。**
 
 选择后，会显示其他控件以进一步配置事件。 您需要将[!DNL Twitter]事件属性映射到您之前创建的数据元素。 有关详细信息，请参阅[[!DNL Twitter] Web转换API](https://developer.twitter.com/en/docs/twitter-ads-api/measurement/api-reference/conversions)。
 
