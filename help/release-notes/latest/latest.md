@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2025 年 5 月）
 description: Adobe Experience Platform 的 2025 年 5 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 3f143c34d31483e91e176b1c69d82db38a8bc6b5
+source-git-commit: cf88ed1082085fac28553dcc7c7be27c517adb22
 workflow-type: tm+mt
-source-wordcount: '1333'
-ht-degree: 45%
+source-wordcount: '1368'
+ht-degree: 44%
 
 ---
 
@@ -69,6 +69,7 @@ Adobe Experience Platform 中现有功能和文档的更新：
 | 功能 | 描述 |
 | --- | --- |
 | [Facebook自定义受众](../../destinations/catalog/social/facebook.md)升级和支持地址相关的标识符 | 从2025年5月23日开始，在整个2025年6月，您可能会在目标目录中临时看到两个&#x200B;**[!DNL Facebook Custom Audience]**&#x200B;目标卡，持续时间可能最多几个小时。 这是由于目标服务的内部升级，并支持新字段以改进定位并与Facebook属性上的用户档案匹配。 有关新的地址相关字段的详细信息，请参阅[支持的标识](#supported-identities)部分。 <br><br>如果您看到标记为&#x200B;**[!UICONTROL （新） Facebook自定义受众]**&#x200B;的卡，请将此卡用于新的激活数据流。 您的现有数据流将自动更新，因此您无需执行任何操作。 在此期间对现有数据流所做的任何更改将在升级后保留。 升级完成后，**[!UICONTROL （新） Facebook自定义受众]**&#x200B;目标卡将重命名为&#x200B;**[!DNL Facebook Custom Audience]**。 <br><br>如果您使用[流服务API](https://developer.adobe.com/experience-platform-apis/references/destinations/)创建数据流，则必须将[!DNL flow spec ID]和[!DNL connection spec ID]更新为以下值： <ul><li>流量规范 ID：`bb181d00-58d7-41ba-9c15-9689fdc831d3`</li><li>连接规范 ID：`c8b97383-2d65-4b7a-9913-db0fbfc71727`</li></ul> |
+| 对[Google Customer Match + Display &amp; Video 360](../../destinations/catalog/advertising/google-customer-match-dv360.md#supported-identities)目标的移动广告ID支持 | 您现在可以根据移动设备广告ID（如[!DNL GAID]和[!DNL IDFA]）将受众激活到[Google客户匹配+显示和视频360](../../destinations/catalog/advertising/google-customer-match-dv360.md#supported-identities)目标。 |
 | 对[Google客户匹配](../../destinations/catalog/advertising/google-customer-match.md)的其他标识符支持 | Google客户匹配目标现在支持映射与地址相关的字段，以提高Google平台中的匹配率。 <br><br>为确保Google与地址匹配，必须映射所有四个地址字段（`address_info_first_name`、`address_info_last_name`、`address_info_country_code`和`address_info_postal_code`），并确保这些字段都不在导出的配置文件中缺少数据。 <br>如果有任何字段未映射或包含缺少的数据，则Google将与地址不匹配。 |
 | [Facebook](../../destinations/catalog/social/facebook.md)连接的帐户到期列 | 您现在可以在[浏览](../../destinations/ui/destinations-workspace.md#browse)和[帐户](../../destinations/ui/destinations-workspace.md#accounts)选项卡中看到Facebook帐户令牌过期日期。 |
 | 导出API创建的数据集 | 您现在可以导出API创建的数据集。 取消了以前仅在UI中创建的数据集可用于导出的限制。 阅读有关[导出数据集](../../destinations/ui/export-datasets.md)的更多信息。 |
