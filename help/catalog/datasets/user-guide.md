@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据集UI指南
 description: 了解如何在Adobe Experience Platform用户界面中使用数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: f66e85ee5fb3fdaf7036b131f9689082d9d96127
+source-git-commit: 132024313dbe0d83c9af22d30927a01e32c9d94f
 workflow-type: tm+mt
 source-wordcount: '4237'
 ht-degree: 5%
@@ -180,7 +180,7 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
->要为ExperienceEvent数据集应用或更新保留规则，您的用户角色必须包括&#x200B;**管理数据集**&#x200B;权限。 这种基于角色的访问控制可确保只有授权用户可以修改数据集保留设置。
+>要为ExperienceEvent数据集应用或更新保留规则，您的用户角色必须包括&#x200B;**[!UICONTROL 管理数据集]**&#x200B;权限。 这种基于角色的访问控制可确保只有授权用户可以修改数据集保留设置。
 >
 >有关在Adobe Experience Platform中分配权限的更多信息，请参阅[访问控制概述](../../access-control/home.md#platform-permissions)。
 
@@ -230,9 +230,9 @@ ht-degree: 5%
 
 配置保留设置后，使用监控UI确认系统执行了更改。 监控UI可集中查看所有数据集的数据保留活动。 从此处，您可以跟踪作业执行，查看删除了多少数据，并确保保留策略按预期运行。
 
-要探索保留策略如何跨不同的服务应用，请参阅有关配置文件[&#128279;](../../profile/event-expirations.md)中的体验事件数据集保留和数据湖中的[体验事件数据集保留](./experience-event-dataset-retention-ttl-guide.md)的专用指南。 此可见性支持治理、法规遵从性和高效的数据生命周期管理。
+要探索保留策略如何跨不同的服务应用，请参阅有关配置文件](../../profile/event-expirations.md)中的[体验事件数据集保留和数据湖中的[体验事件数据集保留](./experience-event-dataset-retention-ttl-guide.md)的专用指南。 此可见性支持治理、法规遵从性和高效的数据生命周期管理。
 
-要了解如何使用监视仪表板在Experience Platform UI中跟踪源数据流，请参阅UI[&#128279;](../../dataflows/ui/monitor-sources.md)文档中的监视源数据流。
+要了解如何使用监视仪表板在Experience Platform UI中跟踪源数据流，请参阅UI](../../dataflows/ui/monitor-sources.md)文档中的[监视源数据流。
 
 <!-- Improve the link above. I cannot link to a 100% appropriate document yet. -->
 
