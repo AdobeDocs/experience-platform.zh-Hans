@@ -78,8 +78,8 @@ ht-degree: 2%
 * [[!UICONTROL OAuth 2]](#oauth2)
 * [[!UICONTROL OAuth 2 JWT]](#oauth2jwt)
 * [[!UICONTROL Google OAuth 2]](#google-oauth2)
-* [[！UICONTROL [!DNL LinkedIn] OAuth 2]](#linkedin-oauth2)
-* [[！UICONTROL [!DNL Amazon] OAuth 2]](#amazon-oauth2)
+* [[!UICONTROL [!DNL LinkedIn] OAuth 2]](#linkedin-oauth2)
+* [[!UICONTROL [!DNL Amazon] OAuth 2]](#amazon-oauth2)
 
 ### [!UICONTROL 令牌] {#token}
 

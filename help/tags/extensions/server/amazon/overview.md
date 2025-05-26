@@ -32,7 +32,7 @@ ht-degree: 2%
 | --- | --- |
 | 帐户 ID | [!DNL Amazon]帐户的唯一帐户标识符。 |
 | 实体Id | 与广告商帐户关联的配置文件的标识符。 可在Campaign Manager门户URL中找到该链接，其前缀为`entity`。 |
-| 访问令牌 | 您应用程序的不过期访问令牌，用于通过OAuth对[!DNL Amazon] API进行身份验证。 请参阅有关身份验证](https://developer.amazon.com/docs/app-porting/device-messaging-fit-obtain-api-key.html)的[Amazon API文档以获取指导。 |
+| 访问令牌 | 您应用程序的不过期访问令牌，用于通过OAuth对[!DNL Amazon] API进行身份验证。 请参阅有关身份验证[&#128279;](https://developer.amazon.com/docs/app-porting/device-messaging-fit-obtain-api-key.html)的Amazon API文档以获取指导。 |
 
 ## 安装和配置[!DNL Amazon]扩展 {#install-configure}
 
