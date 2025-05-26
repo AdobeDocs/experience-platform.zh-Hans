@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 查询服务UI指南
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看先前执行的查询以及访问由您组织内的用户保存的查询。
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: 62e481925df33ddfae6f630c900febbb027a2059
+source-git-commit: 0553b8bc62d54c3ab98c60b16840ce730d9ed5c0
 workflow-type: tm+mt
 source-wordcount: '2467'
 ht-degree: 1%
@@ -176,7 +176,7 @@ Adobe Experience Platform查询服务提供了一个用户界面，可用于编�
 | **[!UICONTROL 客户端]** | 用于查询的客户端。 |
 | **[!UICONTROL 创建者]** | 创建查询的人员姓名。 |
 
->
+>[!NOTE]
 >
 >选择铅笔图标(![A铅笔图标。](/help/images/icons/edit.png))，以导航到查询编辑器。 为方便编辑，已预填充查询。
 
