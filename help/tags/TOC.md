@@ -6,9 +6,9 @@ user-guide-description: 了解如何部署和管理分析、营销和广告标�
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: 28eb48ec9fb7c9c5a5927c8582960cbd99199613
+source-git-commit: a2d93b5c13194707e8a87d633e47d0446b9afabd
 workflow-type: tm+mt
-source-wordcount: '780'
+source-wordcount: '782'
 ht-degree: 36%
 
 ---
@@ -200,7 +200,7 @@ ht-degree: 36%
       * [SDI工具包](https://exchange.adobe.com/apps/ec/101460)
       * [会话摄像头](https://exchange.adobe.com/apps/ec/100517)
       * [存储扳手](https://exchange.adobe.com/apps/ec/102990)
-      * [按循环水平线的标记](https://exchange.adobe.com/apps/ec/106092)
+      * 按循环水平线的[标记](https://exchange.adobe.com/apps/ec/106092)
       * [Tealium收集](https://exchange.adobe.com/apps/ec/104217)
       * [Tealium数据扩充](https://exchange.adobe.com/apps/ec/104217)
       * [TMMData基础平台](https://exchange.adobe.com/apps/ec/100148)
@@ -217,6 +217,7 @@ ht-degree: 36%
       * [概述](./extensions/server/overview.md)
       * Adobe Experience Platform云连接器 {#cloud-connector}
          * [概述](./extensions/server/cloud-connector/overview.md)
+         * [mTLS证书](./extensions/server/cloud-connector/mtls.md)
          * [发行说明](./extensions/server/cloud-connector/release-notes.md)
       * [!DNL Adform] {#adform}
          * [概述](./extensions/server/adform/overview.md)
@@ -226,7 +227,7 @@ ht-degree: 36%
          * [概述](./extensions/server/aws/overview.md)
       * [!DNL Braze] {#braze}
          * [概述](./extensions/server/braze/overview.md)
-      * [适用于Google Analytics的Cloud Connector](https://exchange.adobe.com/apps/ec/106542)
+      * 适用于Google Analytics的[Cloud Connector](https://exchange.adobe.com/apps/ec/106542)
       * 核心 {#core}
          * [概述](./extensions/server/core/overview.md)
       * [Epsilon事件API](https://exchange.adobe.com/apps/ec/109127)
