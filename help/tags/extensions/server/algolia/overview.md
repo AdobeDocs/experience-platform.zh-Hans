@@ -171,5 +171,5 @@ Experience Platform中的![阿尔及利亚配置文件字段组配置](../../../
 
 - [[!DNL Algolia] 分析API文档](https://www.algolia.com/doc/rest-api/insights/)
 - [[!DNL Algolia] 事件文档](https://www.algolia.com/doc/guides/sending-events/getting-started/)
-- [[!DNL Adobe Experience Platform] 事件转发文档](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/overview.html)
+- [[!DNL Adobe Experience Platform] 事件转发文档](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/overview.html?lang=zh-Hans)
 - [[!DNL Algolia] AI功能概述](https://www.algolia.com/products/ai-search/)
