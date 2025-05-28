@@ -90,7 +90,7 @@ curl -X GET \
 
 >[!NOTE]
 >
->兼容的Adobe Experience Cloud应用程序使用不同的值来标识数据主体。 请参阅[Privacy Service和Experience Cloud应用程序](../experience-cloud-apps.md)指南，以了解应用程序所需标识符的更多信息。 有关确定将哪些ID发送到[!DNL Privacy Service]的更一般的指导，请参阅隐私请求](../identity-data.md)中有关[身份数据的文档。
+>兼容的Adobe Experience Cloud应用程序使用不同的值来标识数据主体。 请参阅[Privacy Service和Experience Cloud应用程序](../experience-cloud-apps.md)指南，以了解应用程序所需标识符的更多信息。 有关确定将哪些ID发送到[!DNL Privacy Service]的更一般的指导，请参阅隐私请求[&#128279;](../identity-data.md)中有关身份数据的文档。
 
 [!DNL Privacy Service] API支持两种针对个人数据的作业请求：
 
