@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 5dc5e11962abf760692e0cb424cdd863d1905e87
+source-git-commit: 03cc702eced26453b5923bb63739c0cb739e8c8f
 workflow-type: tm+mt
-source-wordcount: '2652'
+source-wordcount: '2677'
 ht-degree: 24%
 
 ---
@@ -12,6 +12,13 @@ ht-degree: 24%
 # Adobe Experience Platform Web SDK扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[Experience Platform Web SDK发行说明](/help/web-sdk/release-notes.md)。
+
+
+## 2.30.1版 — 2025年5月27日
+
+**修复和改进**
+
+- 修复了当组织未设置默认沙盒时更新变量视图崩溃的问题。
 
 ## 2.30.0版 — 2025年5月21日
 
@@ -179,7 +186,7 @@ ht-degree: 24%
 
 **新增功能**
 
-- 添加了对数据流ID[&#128279;](../../../../datastreams/overrides.md)的每命令覆盖的支持。
+- 添加了对数据流ID](../../../../datastreams/overrides.md)的每命令[覆盖的支持。
 
 **修复和改进**
 
@@ -219,7 +226,7 @@ ht-degree: 24%
 
 **修复和改进**
 
-- 修复了在使用具有标识&#x200B;**的**&#x200B;重定向操作时，导致单击锚点标记中的元素无法正常工作的问题。
+- 修复了在使用具有标识&#x200B;]**的**[!UICONTROL &#x200B;重定向操作时，导致单击锚点标记中的元素无法正常工作的问题。
 - 修复了仅存在一个架构时，XDM对象数据元素无法工作的问题。
 - 包含Adobe Experience Platform Web SDK的版本2.15.0。
 
