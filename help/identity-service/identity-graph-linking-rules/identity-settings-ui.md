@@ -2,9 +2,9 @@
 title: 身份设置UI
 description: 了解如何使用身份设置用户界面。
 exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
-source-git-commit: 808562ac7b3bf91c4d133bc1d2106cfc3b0c9c84
+source-git-commit: 38d331bd9265f25a3aebdcbd20ae5fc30a93e960
 workflow-type: tm+mt
-source-wordcount: '646'
+source-wordcount: '665'
 ht-degree: 2%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->[!DNL Identity Graph Linking Rules]现已正式可用。 如果您现有的沙盒要求在启用身份设置后取消折叠图形（“已修复”），请联系Adobe支持。
+>[!DNL Identity Graph Linking Rules]现已正式可用。 如果您有一个现有的沙盒，需要在启用身份设置后取消折叠图形（“已修复”），请联系您的Adobe客户团队或Adobe支持。
 
 身份设置是Adobe Experience Platform Identity Service UI中的一项功能，可用于指定唯一的命名空间并配置命名空间优先级。
 
@@ -82,6 +82,8 @@ ht-degree: 2%
 >* 最后一步是另一条确认消息，指示仅在保存设置后更新图形时，现有图形才会受图形算法&#x200B;**的影响，并且在命名空间优先级更改后，实时客户配置文件上事件片段的主要标识也不会更新。**
 >
 >* 您的新设置或更新设置最多需要&#x200B;**24小时**&#x200B;才能生效。 要确认，请输入沙盒名称，然后选择&#x200B;**[!UICONTROL 确认]**。
+>
+>* 在保存身份设置之前，不会更改您的数据。
 
 ![确认窗口，显示有关在处理配置之前延迟6小时的警告。](../images/rules/complete.png)
 
