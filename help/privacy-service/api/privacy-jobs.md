@@ -2,17 +2,23 @@
 keywords: Experience Platform；首页；热门话题
 solution: Experience Platform
 title: 隐私作业API端点
-description: 了解如何使用Privacy ServiceAPI管理Experience Cloud应用程序的隐私作业。
+description: 了解如何使用Privacy Service API管理Experience Cloud应用程序的隐私作业。
 role: Developer
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
-source-git-commit: 26a50f21c1ebebf485eaf62712bd02de3406cceb
+source-git-commit: ec99b2a8f772e77d0a3957fc35b8cea112b91cba
 workflow-type: tm+mt
-source-wordcount: '1810'
+source-wordcount: '1861'
 ht-degree: 1%
 
 ---
 
 # 隐私作业端点
+
+>[!IMPORTANT]
+>
+>为了支持数量不断增长的美国州隐私法，Privacy Service正在更改其`regulation_type`值。 使用包含从&#x200B;**2025年6月12日开始的状态缩写（例如`ucpa_ut_usa`）的新值**。 旧值（例如`ucpa_usa`）在&#x200B;**2025年7月28日**&#x200B;之后停止工作。
+>
+>在此截止日期之前更新您的集成，以避免请求失败。
 
 本文档介绍如何使用API调用处理隐私作业。 具体来说，它涵盖[!DNL Privacy Service] API中`/job`端点的使用。 在阅读本指南之前，请参阅[入门指南](./getting-started.md)以了解成功调用API所需了解的重要信息，包括所需的标头以及如何阅读示例API调用。
 
@@ -22,11 +28,11 @@ ht-degree: 1%
 
 ## 列出所有作业 {#list}
 
-通过向`/jobs`端点发出GET请求，可查看组织内所有可用隐私作业的列表。
+您可以通过对`/jobs`端点发出GET请求来查看组织内所有可用隐私作业的列表。
 
 **API格式**
 
-此请求格式在`/jobs`端点上使用`regulation`查询参数，因此它以问号(`?`)开头，如下所示。 在列出资源时，Privacy ServiceAPI最多返回1000个作业并分页响应。 使用其他查询参数（`page`、`size`和日期筛选器）筛选响应。 可以使用&amp;符号(`&`)分隔多个参数。
+此请求格式在`/jobs`端点上使用`regulation`查询参数，因此它以问号(`?`)开头，如下所示。 在列出资源时，Privacy Service API最多返回1000个作业并分页响应。 使用其他查询参数（`page`、`size`和日期筛选器）筛选响应。 可以使用&amp;符号(`&`)分隔多个参数。
 
 >[!TIP]
 >
@@ -42,7 +48,7 @@ GET /jobs?regulation={REGULATION}&fromDate={FROMDATE}&toDate={TODATE}&status={ST
 
 | 参数 | 描述 |
 | --- | --- |
-| `{REGULATION}` | 要查询的法规类型。 接受的值包括： <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpa_usa`</li><li>`cpra_usa`</li><li>`ctdpa_usa`</li><li>`dpdpa`</li><li>`fdbr_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`icdpa_usa`</li><li>`lgpd_bra`</li><li>`mcdpa_usa`</li><li>`mhmda_usa`</li><li>`ndpa_usa`</li><li>`nhpa_usa`</li><li>`njdpa_usa`</li><li>`nzpa_nzl`</li><li>`ocpa_usa`</li><li>`pdpa_tha`</li><li>`ql25`</li><li>`tdpsa_usa`</li><li>`ucpa_usa`</li><li>`vcdpa_usa`</li></ul><br>有关上述值表示的隐私法规的更多信息，请参阅[支持的法规](../regulations/overview.md)概述。 |
+| `{REGULATION}` | 要查询的法规类型。 接受的值包括： <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpa_co_usa`</li><li>`cpra_ca_usa`</li><li>`ctdpa_ct_usa`</li><li>`dpdpa`</li><li>`fdbr_fl_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`icdpa_ia_usa`</li><li>`lgpd_bra`</li><li>`mcdpa_mn_usa`</li><li>`mcdpa_mt_usa`</li><li>`mhmda_wa_usa`</li><li>`ndpa_ne_usa`</li><li>`nhpa_nh_usa`</li><li>`njdpa_nj_usa`</li><li>`nzpa_nzl`</li><li>`ocpa_or_usa`</li><li>`pdpa_tha`</li><li>`ql25`</li><li>`tdpsa_tx_usa`</li><li>`tipa_tn_usa`</li><li>`ucpa_ut_usa`</li><li>`vcdpa_va_usa`</li></ul><br>有关上述值表示的隐私法规的更多信息，请参阅[支持的法规](../regulations/overview.md)概述。 |
 | `{PAGE}` | 要显示的数据页面，使用基于0的编号。 默认值为 `0`。 |
 | `{SIZE}` | 每页上显示的结果数。 默认值为`100`，最大值为`1000`。 超过最大值会导致API返回400代码错误。 |
 | `{status}` | 默认行为是包括所有状态。 如果指定状态类型，则请求将仅返回与该状态类型匹配的隐私作业。 接受的值包括： <ul><li>`processing`</li><li>`complete`</li><li>`error`</li></ul> |
@@ -76,15 +82,15 @@ curl -X GET \
 
 >[!IMPORTANT]
 >
->Privacy Service仅适用于数据主体和消费者权利请求。 不支持或允许将Privacy Service用于数据清理或维护。 Adobe有及时履行这些义务的法律义务。 因此，不允许对Privacy Service进行负载测试，因为它是仅用于生产的环境，并会创建有效隐私请求的不必要积压。
+>Privacy Service仅适用于数据主体和消费者权利请求。 不支持或允许将Privacy Service用于数据清理或维护的任何其他用途。 Adobe有及时履行这些义务的法律义务。 因此，不允许在Privacy Service上进行负载测试，因为它是一个仅用于生产的环境，并会创建有效隐私请求的不必要积压。
 >
->现已设定每日硬性上传限制，以防止滥用服务。 发现滥用系统的用户将禁用其对该服务的访问权限。 随后将与他们举行一次会议，讨论他们的行动并讨论可接受的Privacy Service用途。
+>现已设定每日硬性上传限制，以防止滥用服务。 发现滥用系统的用户将禁用其对该服务的访问权限。 随后将与他们举行一次会议，讨论他们的行动并讨论Privacy Service的可接受用途。
 
 在创建新的作业请求之前，必须首先收集有关要访问、删除或选择退出销售其数据的数据主体的标识信息。 获得所需数据后，必须在POST请求的有效负载中将其提供给`/jobs`端点。
 
 >[!NOTE]
 >
->兼容的Adobe Experience Cloud应用程序使用不同的值来标识数据主体。 有关应用程序所需标识符的更多信息，请参阅[Privacy Service和Experience Cloud应用程序](../experience-cloud-apps.md)指南。 有关确定将哪些ID发送到[!DNL Privacy Service]的更一般的指导，请参阅隐私请求[&#128279;](../identity-data.md)中有关身份数据的文档。
+>兼容的Adobe Experience Cloud应用程序使用不同的值来标识数据主体。 请参阅[Privacy Service和Experience Cloud应用程序](../experience-cloud-apps.md)指南，以了解应用程序所需标识符的更多信息。 有关确定将哪些ID发送到[!DNL Privacy Service]的更一般的指导，请参阅隐私请求](../identity-data.md)中有关[身份数据的文档。
 
 [!DNL Privacy Service] API支持两种针对个人数据的作业请求：
 
@@ -234,7 +240,7 @@ curl -X POST \
 
 ## 检查作业的状态 {#check-status}
 
-通过在`/jobs`终结点的GET请求路径中包含特定作业的`jobId`，您可以检索有关该作业的信息，例如其当前处理状态。
+通过在`/jobs`端点的GET请求路径中包含特定作业的`jobId`，您可以检索有关该作业的信息，例如其当前处理状态。
 
 >[!IMPORTANT]
 >
@@ -369,4 +375,4 @@ curl -X GET \
 
 ## 后续步骤
 
-您现在知道如何使用[!DNL Privacy Service] API创建和监视隐私作业。 有关如何使用用户界面执行相同任务的信息，请参阅[Privacy ServiceUI概述](../ui/overview.md)。
+您现在知道如何使用[!DNL Privacy Service] API创建和监视隐私作业。 有关如何使用用户界面执行相同任务的信息，请参阅[Privacy Service UI概述](../ui/overview.md)。
