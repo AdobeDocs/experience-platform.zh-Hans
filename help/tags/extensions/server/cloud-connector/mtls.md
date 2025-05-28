@@ -1,14 +1,15 @@
 ---
 title: 双向传输层安全性(mTLS)概述
 description: 了解如何使用mTLS安全地检索Adobe颁发的公共证书以进行事件转发。
-source-git-commit: 3b9ff1d41c698feadd0215ab562f87747aaa91a1
+exl-id: e8ee8655-213d-4d2a-93d4-d62824b53b1d
+source-git-commit: ab16cc3f70ec54460c7c4834e665c828d75d4d9e
 workflow-type: tm+mt
-source-wordcount: '637'
-ht-degree: 1%
+source-wordcount: '638'
+ht-degree: 2%
 
 ---
 
-# 相互传输层安全性[!DNL mTLS]概述
+# 相互传输层安全性([!DNL mTLS])概述
 
 在[!UICONTROL 环境UI]中绑定相互传输层安全性([!DNL mTLS])证书，以控制扩展的安全性。 [!DNL mTLS]证书是数字凭据，用于证明安全通信中服务器或客户端的身份。 当您使用[!DNL mTLS]服务API时，这些证书可帮助您验证并加密与Adobe Experience Platform事件转发的交互。 此过程不仅可以保护您的数据，还可以确保每个连接都来自可信合作伙伴。
 
@@ -48,14 +49,14 @@ ht-degree: 1%
 
 将显示以下证书详细信息：
 
-| 环境 | 描述 |
+| 字段名称 | 描述 |
 | --- | --- |
 | 证书 | 证书的详细信息，包括：<ul><li>**Name**：证书的名称。</li><li>**创建日期**：创建证书的日期。</li><li>**状态**：证书的当前状态：<ul><li>**当前**：证书正在使用中。</li><li>**已过时**：证书不在使用中，但尚未过期。 仍可将其选中以供使用。</li><li>**已过期**：证书已过期、灰显且不再可用。</li></ul></ul> |
 | 过期 | 证书到期日期。 |
 | Variable Name | 证书的变量名称。 |
 | 状态 | 证书的当前状态：<ul><li>**已部署**：证书已成功部署且处于活动状态。</li><li>**正在部署**：正在部署证书。</li><li>**需要部署**：在选择了过时的证书时，将出现此状态。</li></ul> |
 
-![编辑开发环境页面，突出显示[!UICONTROL 证书]详细信息。](../../../images/extensions/server/cloud-connector/create-environment.png)
+![编辑开发环境页面，突出显示[!UICONTROL 证书]详细信息。](../../../images/extensions/server/cloud-connector/certificate-details.png)
 
 ### 选择并部署过时的证书 {#deploy-obsolete-certificate}
 
