@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明（2025 年 5 月）
 description: Adobe Experience Platform 的 2025 年 5 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: cf88ed1082085fac28553dcc7c7be27c517adb22
+source-git-commit: 6ab9302a40547349c8d0390baafd8591ed6859e1
 workflow-type: tm+mt
-source-wordcount: '1368'
+source-wordcount: '1530'
 ht-degree: 44%
 
 ---
@@ -25,6 +25,7 @@ ht-degree: 44%
 
 Adobe Experience Platform 中现有功能和文档的更新：
 
+- [AI 助手](#ai-assistant)
 - [目录服务](#catalog-service)
 - [数据准备](#data-prep)
 - [目标](#destinations)
@@ -33,6 +34,18 @@ Adobe Experience Platform 中现有功能和文档的更新：
 - [沙盒](#sandboxes)
 - [Segmentation Service](#segmentation-service)
 - [源](#sources)
+
+## AI 助手 {#ai-assistant}
+
+Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使用它来加速 Adobe 应用程序中的工作流程。您可以使用 AI 助手更好地了解产品知识、解决问题或搜索信息并找到运营洞察。AI 助手支持 Experience Platform、Real-time Customer Data Platform、Adobe Journey Optimizer 和 Customer Journey Analytics。
+
+**更新的功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 产品支持代理正式发布 | 您现在可以使用AI Assistant中的产品支持代理无缝进行故障排除，而无需离开您的工作流。 您组织中的支持管理员现在可以使用产品支持代理创建客户支持工单，以及您与AI助手交互时的上下文和会话详细信息。 <br><br>产品支持代理的访问权在2025年11月30日之前可用。 您必须联系Adobe客户代表以许可产品支持代理，并在该日期之后继续使用该功能。 有关详细信息，请阅读[产品支持代理文档](../../ai-assistant/new-features/customer-support.md)。 |
+
+有关更多信息，请阅读 [AI 助手概述](../../ai-assistant/landing.md)。
 
 ## 目录服务 {#catalog-service}
 
