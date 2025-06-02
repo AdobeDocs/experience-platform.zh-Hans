@@ -6,9 +6,9 @@ user-guide-description: 了解如何部署和管理分析、营销和广告标�
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: 3434fd13ba4ca58f27834e75b045af079c18c64c
+source-git-commit: f038927d6a19db5e0187ccefd76d9ecc9df91b6a
 workflow-type: tm+mt
-source-wordcount: '783'
+source-wordcount: '785'
 ht-degree: 36%
 
 ---
@@ -133,6 +133,8 @@ ht-degree: 36%
       * [Advertising Cloud](https://exchange.adobe.com/apps/ec/100640)
       * [AEM资产分析](https://exchange.adobe.com/apps/ec/103406)
       * [Airbrake JS通告程序](https://exchange.adobe.com/apps/ec/103342)
+      * [!DNL Algolia]分析 {#algolia-insights}
+         * [概述](./extensions/client/algolia/overview.md)
       * [振幅](https://exchange.adobe.com/apps/ec/108010)
       * [阿波罗QAX](https://exchange.adobe.com/apps/ec/105068)
       * [Awin Advertiser MasterTag](https://exchange.adobe.com/apps/ec/103176)
@@ -200,7 +202,7 @@ ht-degree: 36%
       * [SDI工具包](https://exchange.adobe.com/apps/ec/101460)
       * [会话摄像头](https://exchange.adobe.com/apps/ec/100517)
       * [存储扳手](https://exchange.adobe.com/apps/ec/102990)
-      * [按循环水平线的标记](https://exchange.adobe.com/apps/ec/106092)
+      * 按循环水平线的[标记](https://exchange.adobe.com/apps/ec/106092)
       * [Tealium收集](https://exchange.adobe.com/apps/ec/104217)
       * [Tealium数据扩充](https://exchange.adobe.com/apps/ec/104217)
       * [TMMData基础平台](https://exchange.adobe.com/apps/ec/100148)
@@ -229,7 +231,7 @@ ht-degree: 36%
          * [概述](./extensions/server/aws/overview.md)
       * [!DNL Braze] {#braze}
          * [概述](./extensions/server/braze/overview.md)
-      * [适用于Google Analytics的Cloud Connector](https://exchange.adobe.com/apps/ec/106542)
+      * 适用于Google Analytics的[Cloud Connector](https://exchange.adobe.com/apps/ec/106542)
       * 核心 {#core}
          * [概述](./extensions/server/core/overview.md)
       * [Epsilon事件API](https://exchange.adobe.com/apps/ec/109127)
