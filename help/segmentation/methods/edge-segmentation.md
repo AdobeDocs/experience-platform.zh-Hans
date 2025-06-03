@@ -2,16 +2,16 @@
 title: Edge Segmentation指南
 description: 了解如何使用边缘分段在边缘即时评估Experience Platform中的受众，启用同一页面和下一页面个性化用例。
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
+source-git-commit: a741fdb4393863dbc011c03c733e27572da0ae6c
 workflow-type: tm+mt
-source-wordcount: '1154'
+source-wordcount: '1116'
 ht-degree: 1%
 
 ---
 
 # 边缘分段指南
 
-Edge分段功能能够在边缘[&#128279;](../../landing/edge-and-hub-comparison.md)上即时评估Adobe Experience Platform中的区段定义，从而启用同一页面和下一页面个性化用例。
+Edge分段功能能够在边缘](../../landing/edge-and-hub-comparison.md)上即时评估Adobe Experience Platform中的区段定义[，从而启用同一页面和下一页面个性化用例。
 
 >[!IMPORTANT]
 >
@@ -33,7 +33,6 @@ Edge分段功能能够在边缘[&#128279;](../../landing/edge-and-hub-comparison
 | 仅配置文件 | 仅引用配置文件属性的任何区段定义。 | `homeAddress.country.equals("US", false)` | ![显示的配置文件属性示例。](../images/methods/edge/profile-attribute.png) |
 | 在相对时间范围小于24小时内的配置文件属性为单个事件 | 任何涉及单个传入事件（具有一个或多个用户档案属性）且发生在小于24小时的相对时间范围内的区段定义。 | `workAddress.country.equals("US", false) and CHAIN(xEvent, timestamp, [C0: WHAT(eventType.equals("commerce.checkouts", false)) WHEN(today)])` | ![显示相对时间范围内具有配置文件属性的单个事件的示例。](../images/methods/edge/single-event-with-profile-attribute.png) |
 | 区段划分 | 包含一个或多个批次或边缘区段的任意区段定义。 **注意：**&#x200B;如果使用区段区段，则每24小时&#x200B;**将发生配置文件取消资格**。 | `inSegment("a730ed3f-119c-415b-a4ac-27c396ae2dff") and inSegment("8fbbe169-2da6-4c9d-a332-b6a6ecf559b9")` | ![将显示区段示例。](../images/methods/edge/segment-of-segments.png) |
-| 具有配置文件属性的多个事件 | 任何在过去24小时&#x200B;**内引用多个事件**&#x200B;且（可选）具有一个或多个配置文件属性的区段定义。 | `workAddress.country.equals("US", false) and CHAIN(xEvent, timestamp, [C0: WHAT(eventType.equals("directMarketing.emailClicked", false)) WHEN(today), C1: WHAT(eventType.equals("commerce.checkouts", false)) WHEN(today)])` | ![显示具有配置文件属性的多个事件的示例。](../images/methods/edge/multiple-events-with-profile-attribute.png) |
 
 此外，区段定义&#x200B;**必须**&#x200B;绑定到边缘上活动的合并策略。 有关合并策略的更多信息，请参阅[合并策略指南](../../profile/api/merge-policies.md)。
 
@@ -330,5 +329,5 @@ curl -X GET \
 
 要了解有关使用Experience Platform用户界面的更多信息，请参阅[分段用户指南](./overview.md)。
 
-有关边缘分段的常见问题解答，请阅读常见问题解答[&#128279;](../faq.md#edge-segmentation)的边缘分段部分。
+有关边缘分段的常见问题解答，请阅读常见问题解答](../faq.md#edge-segmentation)的[边缘分段部分。
 
