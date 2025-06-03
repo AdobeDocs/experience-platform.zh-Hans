@@ -11,7 +11,7 @@ ht-degree: 1%
 
 # 边缘分段指南
 
-Edge分段功能能够在边缘](../../landing/edge-and-hub-comparison.md)上即时评估Adobe Experience Platform中的区段定义[，从而启用同一页面和下一页面个性化用例。
+Edge分段功能能够在边缘[&#128279;](../../landing/edge-and-hub-comparison.md)上即时评估Adobe Experience Platform中的区段定义，从而启用同一页面和下一页面个性化用例。
 
 >[!IMPORTANT]
 >
@@ -329,5 +329,5 @@ curl -X GET \
 
 要了解有关使用Experience Platform用户界面的更多信息，请参阅[分段用户指南](./overview.md)。
 
-有关边缘分段的常见问题解答，请阅读常见问题解答](../faq.md#edge-segmentation)的[边缘分段部分。
+有关边缘分段的常见问题解答，请阅读常见问题解答[&#128279;](../faq.md#edge-segmentation)的边缘分段部分。
 
