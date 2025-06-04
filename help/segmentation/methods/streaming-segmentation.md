@@ -467,4 +467,4 @@ curl -X GET 'https://platform.adobe.io/data/core/ups/segment/definitions?evaluat
 
 要了解有关使用Adobe Experience Platform用户界面的更多信息，请参阅[分段用户指南](./overview.md)。
 
-有关流式客户细分的常见问题，请阅读常见问题解答](../faq.md#streaming-segmentation)的[流式客户细分部分。
+有关流式客户细分的常见问题，请阅读常见问题解答[&#128279;](../faq.md#streaming-segmentation)的流式客户细分部分。
