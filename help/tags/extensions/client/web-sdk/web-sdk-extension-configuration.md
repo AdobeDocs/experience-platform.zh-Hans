@@ -2,10 +2,10 @@
 title: 配置Web SDK标记扩展
 description: 了解如何在标记UI中配置Experience Platform Web SDK标记扩展。
 exl-id: 22425daa-10bd-4f06-92de-dff9f48ef16e
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 57b29c396531ee18c79fad7cce068ff3adf5f2a2
 workflow-type: tm+mt
-source-wordcount: '2875'
-ht-degree: 4%
+source-wordcount: '2965'
+ht-degree: 3%
 
 ---
 
@@ -19,7 +19,7 @@ ht-degree: 4%
 
 ## 安装Web SDK标记扩展 {#install}
 
-Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参阅有关[创建标记属性](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/configure-tags/create-a-property.html?lang=zh-Hans)的文档。
+Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参阅有关[创建标记属性](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/configure-tags/create-a-property.html)的文档。
 
 创建属性后，打开该属性并选择左侧栏上的&#x200B;**[!UICONTROL 扩展]**&#x200B;选项卡。
 
@@ -42,7 +42,7 @@ Web SDK库包含多个模块，用于提供各种功能，如个性化、身份�
 >[!IMPORTANT]
 >
 >禁用Web SDK组件可能会破坏现有的实施。 每次禁用组件时，请确保彻底测试实施，以确保所需的所有功能都按预期工作。
->禁用某个组件后，无法再编辑该组件的设置。
+>>禁用某个组件后，无法再编辑该组件的设置。
 
 要使用Web SDK标记扩展创建自定义Web SDK内部版本，请执行以下步骤。
 
@@ -117,11 +117,9 @@ Web SDK库包含多个模块，用于提供各种功能，如个性化、身份�
 * **[!UICONTROL 使用第三方Cookie]**：启用此选项后，Web SDK会尝试将用户标识符存储在第三方Cookie中。 如果成功，则在用户跨多个域导航时将用户标识为单个用户，而不是在每个域上将用户标识为单独的用户。 如果启用了此选项，则如果SDK不支持第三方Cookie或用户将其配置为不允许第三方Cookie，则浏览器仍可能无法将用户标识符存储在第三方Cookie中。 在这种情况下，SDK只将标识符存储在第一方域中。
 
   >[!IMPORTANT]
-  >&#x200B;>第三方Cookie与Web SDK中的[第一方设备ID](../../../../web-sdk/identity/first-party-device-ids.md)功能不兼容。
-
-您可以使用第一方设备ID，也可以使用第三方Cookie，但不能同时使用这两项功能。
+  >>第三方Cookie与Web SDK中的[第一方设备ID](../../../../web-sdk/identity/first-party-device-ids.md)功能不兼容。
+  >>您可以使用第一方设备ID，也可以使用第三方Cookie，但不能同时使用这两项功能。
   >
-
 ## 配置个性化设置 {#personalization}
 
 利用此部分，可配置在加载个性化内容时如何隐藏页面的某些部分。 这可确保访客仅看到个性化页面。
@@ -142,7 +140,7 @@ Web SDK库包含多个模块，用于提供各种功能，如个性化、身份�
 
 >[!IMPORTANT]
 >
->使用预隐藏代码片段时，Adobe建议使用与[预隐藏样式](#prehiding-style)使用的规则相同的[!DNL CSS]规则。
+使用预隐藏代码片段时，Adobe建议使用与[预隐藏样式](#prehiding-style)使用的规则相同的[!DNL CSS]规则。
 
 ## 配置数据收集设置 {#data-collection}
 
@@ -155,10 +153,15 @@ Web SDK库包含多个模块，用于提供各种功能，如个性化、身份�
    * **[!UICONTROL 无事件分组]**：链接跟踪数据在单独的事件中发送到Adobe。 在单独事件中发送链接点击次数可能会增加发送到Adobe Experience Platform的数据在合同中的使用量。
    * **[!UICONTROL 使用会话存储进行事件分组]**：将链接跟踪数据存储在会话存储中，直到发生下一页事件。 在以下页面上，存储的链接跟踪数据和页面查看数据将同时发送到Adobe。 Adobe建议在跟踪内部链接时启用此设置。
    * **[!UICONTROL 使用本地对象进行事件分组]**：将链接跟踪数据存储在本地对象中，直到发生下一页事件。 如果访客导航到新页面，则链接跟踪数据将丢失。 此设置在单页应用程序的上下文中最为有用。
+
+  当您选择使用会话存储或本地对象进行事件分组，并且要向Real-Time CDP、Customer Journey Analytics、Adobe Journey Optimizer或Mix Modeler发送数据时，必须更新标记规则。 在将数据发送到Adobe之前，请确保每个页面查看事件都明确将页面名称（作为字符串）和页面查看值（作为整数，通常为1）映射到XDM对象。
+
+  如果您将数据发送到Adobe Analytics，则这些值会自动包含在内，而无需进行其他配置。
+
 * **[!UICONTROL 收集外部链接点击次数]**：启用外部链接收集的复选框。
 * **[!UICONTROL 收集下载链接点击次数]**：用于收集下载链接的复选框。
 * **[!UICONTROL 下载链接限定符]**：将链接URL限定为下载链接的正则表达式。
-* **[!UICONTROL 筛选点击属性]**：一个回调函数，用于在集合之前评估和修改与点击相关的属性。 此函数在事件发送回调之前的On之前运行。
+* **[!UICONTROL 筛选点击属性]**：一个回调函数，用于在集合之前评估和修改与点击相关的属性。 此函数在事件发送回调]之前的[!UICONTROL On之前运行。
 * **上下文设置**：自动收集访客信息，这些信息会为您填充特定的XDM字段。 您可以选择&#x200B;**[!UICONTROL 所有默认上下文信息]**&#x200B;或&#x200B;**[!UICONTROL 特定上下文信息]**。 该标记等同于JavaScript库中的[`context`](/help/web-sdk/commands/configure/context.md)。
    * **[!UICONTROL Web]**：收集有关当前页面的信息。
    * **[!UICONTROL 设备]**：收集有关用户设备的信息。
@@ -168,7 +171,7 @@ Web SDK库包含多个模块，用于提供各种功能，如个性化、身份�
 
 >[!TIP]
 >
->**[!UICONTROL On before link click send]**&#x200B;字段是一个已弃用的回调，仅对已配置该回调的属性可见。 该标记等同于JavaScript库中的[`onBeforeLinkClickSend`](/help/web-sdk/commands/configure/onbeforelinkclicksend.md)。 使用&#x200B;**[!UICONTROL 筛选点击属性]**&#x200B;回调筛选或调整点击数据，或者使用&#x200B;**[!UICONTROL 在事件发送回调前开启]**&#x200B;筛选或调整发送到Adobe的整体有效负载。 如果同时设置了&#x200B;**[!UICONTROL 筛选条件点击属性]**&#x200B;回调和&#x200B;**[!UICONTROL 在链接点击之前打开]**&#x200B;回调，则只有&#x200B;**[!UICONTROL 筛选条件点击属性]**&#x200B;回调运行。
+**[!UICONTROL On before link click send]**&#x200B;字段是一个已弃用的回调，仅对已配置该回调的属性可见。 该标记等同于JavaScript库中的[`onBeforeLinkClickSend`](/help/web-sdk/commands/configure/onbeforelinkclicksend.md)。 使用&#x200B;**[!UICONTROL 筛选点击属性]**&#x200B;回调筛选或调整点击数据，或者使用&#x200B;**[!UICONTROL 在事件发送回调前开启]**&#x200B;筛选或调整发送到Adobe的整体有效负载。 如果同时设置了&#x200B;**[!UICONTROL 筛选条件点击属性]**&#x200B;回调和&#x200B;**[!UICONTROL 在链接点击之前打开]**&#x200B;回调，则只有&#x200B;**[!UICONTROL 筛选条件点击属性]**&#x200B;回调运行。
 
 ## 配置媒体收集设置 {#media-collection}
 
@@ -202,7 +205,7 @@ Web SDK库包含多个模块，用于提供各种功能，如个性化、身份�
 
 >[!IMPORTANT]
 >
->必须为每个环境配置数据流覆盖。 开发、暂存和生产环境都具有单独的覆盖。 您可以使用以下屏幕中显示的专用选项复制它们之间的设置。
+必须为每个环境配置数据流覆盖。 开发、暂存和生产环境都具有单独的覆盖。 您可以使用以下屏幕中显示的专用选项复制它们之间的设置。
 
 ![显示使用Web SDK标记扩展页的数据流配置覆盖的图像。](assets/datastream-overrides.png)
 
