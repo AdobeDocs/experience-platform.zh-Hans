@@ -1,5 +1,5 @@
 ---
-title: 身份优化算法
+title: 身份标识优化算法
 description: 了解Identity Service中的身份优化算法。
 exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
 source-git-commit: 0587ddf1012adb13e6d399953839735f73fe151e
@@ -9,7 +9,7 @@ ht-degree: 4%
 
 ---
 
-# 身份优化算法 {#identity-optimization-algorithm}
+# 身份标识优化算法 {#identity-optimization-algorithm}
 
 >[!CONTEXTUALHELP]
 >id="platform_identities_uniquenamespace"
