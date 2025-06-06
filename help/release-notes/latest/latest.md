@@ -5,7 +5,7 @@ exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: 6ab9302a40547349c8d0390baafd8591ed6859e1
 workflow-type: tm+mt
 source-wordcount: '1530'
-ht-degree: 44%
+ht-degree: 81%
 
 ---
 
@@ -21,7 +21,7 @@ ht-degree: 44%
 >- [联合受众构成](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/zh-hans/docs/real-time-cdp-collaboration/using/latest)
 
-**发行日期： 2025年5月20日**
+**发布日期：2025 年 5 月 20 日**
 
 Adobe Experience Platform 中现有功能和文档的更新：
 
@@ -53,11 +53,11 @@ Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使�
 
 | 功能 | 描述 |
 | --- | --- |
-| 使用数据集级保留规则优化数据存储 | 使用保留策略有效地管理数据存储，这些保留策略根据您指定的时间范围删除过时的数据。 <ul><li>**数据集保留**：定义数据集规则以从数据湖和配置文件存储中删除过期数据。</li><li>**存储分析**：通过内联量度监视使用情况并确保符合许可授权。</li><li>**增强的可见性**：通过改进的监视跟踪从摄取到删除的数据集活动。</li><li>**简化管理**：在单个统一视图中访问保留设置、监控、审核日志和见解。</li></ul> 有关详细信息，请阅读[数据集保留规则](../../catalog/datasets/user-guide.md#data-retention-policy)指南。 |
+| 通过数据集级别的保留规则优化数据存储效率 | 通过按设定时间范围自动删除过时数据的保留策略，高效管理数据存储。 <ul><li>**数据集保留**：定义数据集规则，以移除数据湖和轮廓存储中的过时数据。</li><li>**存储洞察**：通过内联量度监控使用情况，确保符合许可授权要求。</li><li>**可见性增强**：通过优化的监控功能，全程追踪数据集从摄取到删除的活动流程。</li><li>**简化管理**：在统一视图中便捷访问保留设置、监控状态、审核日志及洞察信息。</li></ul> 阅读[数据集保留规则](../../catalog/datasets/user-guide.md#data-retention-policy)指南，了解更多信息。 |
 
 {style="table-layout:auto"}
 
-有关详细信息，请阅读[目录服务概述](../../catalog/home.md)。
+有关详细信息，请参阅[目录服务概述](../../catalog/home.md)。
 
 ## 数据准备 {#data-prep}
 
@@ -67,7 +67,7 @@ Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使�
 
 | 功能 | 描述 |
 | --- | --- |
-| 支持Adobe Analytics的导入和导出映射 | 在使用Adobe Analytics源连接器时，您现在可以对Adobe Analytics报表包数据使用导入和导出映射功能。 <br><br>将映射导出到CSV文件，并在电子表格中本地配置它们。 然后，您可以使用 UI 中的映射界面将更新后的映射导入 Experience Platform。您可以使用此功能配置大量映射，而无需在 UI 中手动生成映射。此外，在创建新数据流时，您可以将映射的副本直接上传到 Experience Platform，以加快工作流程。<br><br>有关详细信息，请阅读[将Adobe Analytics连接到Experience Platform](../../sources/tutorials/ui/create/adobe-applications/analytics.md)指南。</br> |
+| 支持 Adobe Analytics 的导入与导出映射配置 | 您现在可在使用 Adobe Analytics 源连接器时，针对 Adobe Analytics 报告包数据启用导入与导出映射功能。<br><br>将映射配置导出为 CSV 文件，并可在本地通过电子表格对其进行配置。然后，您可以使用 UI 中的映射界面将更新后的映射导入 Experience Platform。您可以使用此功能配置大量映射，而无需在 UI 中手动生成映射。此外，在创建新数据流时，您可以将映射的副本直接上传到 Experience Platform，以加快工作流程。<br><br>如需了解更多信息，请阅读[将 Adobe Analytics 连接至 Experience Platform](../../sources/tutorials/ui/create/adobe-applications/analytics.md)指南。</br> |
 
 {style="table-layout:auto"}
 
@@ -83,13 +83,13 @@ Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使�
 | --- | --- |
 | [Facebook自定义受众](../../destinations/catalog/social/facebook.md)升级和支持地址相关的标识符 | 从2025年5月23日开始，在整个2025年6月，您可能会在目标目录中临时看到两个&#x200B;**[!DNL Facebook Custom Audience]**&#x200B;目标卡，持续时间可能最多几个小时。 这是由于目标服务的内部升级，并支持新字段以改进定位并与Facebook属性上的用户档案匹配。 有关新的地址相关字段的详细信息，请参阅[支持的标识](#supported-identities)部分。 <br><br>如果您看到标记为&#x200B;**[!UICONTROL （新） Facebook自定义受众]**&#x200B;的卡，请将此卡用于新的激活数据流。 您的现有数据流将自动更新，因此您无需执行任何操作。 在此期间对现有数据流所做的任何更改将在升级后保留。 升级完成后，**[!UICONTROL （新） Facebook自定义受众]**&#x200B;目标卡将重命名为&#x200B;**[!DNL Facebook Custom Audience]**。 <br><br>如果您使用[流服务API](https://developer.adobe.com/experience-platform-apis/references/destinations/)创建数据流，则必须将[!DNL flow spec ID]和[!DNL connection spec ID]更新为以下值： <ul><li>流量规范 ID：`bb181d00-58d7-41ba-9c15-9689fdc831d3`</li><li>连接规范 ID：`c8b97383-2d65-4b7a-9913-db0fbfc71727`</li></ul> |
 | 对[Google Customer Match + Display &amp; Video 360](../../destinations/catalog/advertising/google-customer-match-dv360.md#supported-identities)目标的移动广告ID支持 | 您现在可以根据移动设备广告ID（如[!DNL GAID]和[!DNL IDFA]）将受众激活到[Google客户匹配+显示和视频360](../../destinations/catalog/advertising/google-customer-match-dv360.md#supported-identities)目标。 |
-| 对[Google客户匹配](../../destinations/catalog/advertising/google-customer-match.md)的其他标识符支持 | Google客户匹配目标现在支持映射与地址相关的字段，以提高Google平台中的匹配率。 <br><br>为确保Google与地址匹配，必须映射所有四个地址字段（`address_info_first_name`、`address_info_last_name`、`address_info_country_code`和`address_info_postal_code`），并确保这些字段都不在导出的配置文件中缺少数据。 <br>如果有任何字段未映射或包含缺少的数据，则Google将与地址不匹配。 |
-| [Facebook](../../destinations/catalog/social/facebook.md)连接的帐户到期列 | 您现在可以在[浏览](../../destinations/ui/destinations-workspace.md#browse)和[帐户](../../destinations/ui/destinations-workspace.md#accounts)选项卡中看到Facebook帐户令牌过期日期。 |
-| 导出API创建的数据集 | 您现在可以导出API创建的数据集。 取消了以前仅在UI中创建的数据集可用于导出的限制。 阅读有关[导出数据集](../../destinations/ui/export-datasets.md)的更多信息。 |
+| 为 [Google 目标客户匹配功能](../../destinations/catalog/advertising/google-customer-match.md)提供额外的标识符支持 | Google 目标客户匹配功能目标现已支持地址相关字段的映射，有助于在 Google 平台中提升匹配率。<br><br>为确保 Google 能成功匹配地址，您必须映射全部四个地址字段（`address_info_first_name`、`address_info_last_name`、`address_info_country_code` 和 `address_info_postal_code`），且导出的轮廓中这些字段均不得缺失数据。<br> 如任一字段未映射或包含缺失数据，Google 将无法完成地址匹配。 |
+| [Facebook](../../destinations/catalog/social/facebook.md) 连接现支持“帐户过期”栏 | 您现在可在[浏览](../../destinations/ui/destinations-workspace.md#browse)和[帐户](../../destinations/ui/destinations-workspace.md#accounts)选项卡中查看 Facebook 帐户令牌的过期日期。 |
+| 导出通过 API 创建的数据集 | 您现在可以导出通过 API 创建的数据集。此前仅支持导出通过 UI 创建的数据集的限制现已解除。阅读[导出数据集](../../destinations/ui/export-datasets.md)以了解更多信息。 |
 
 {style="table-layout:auto"}
 
-有关详细信息，请阅读[目标概述](../../destinations/home.md)。
+如需了解更多信息，请阅读[目标概述](../../destinations/home.md)。
 
 ## 身份标识服务 {#identity}
 
@@ -99,11 +99,11 @@ Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使�
 
 | 功能 | 描述 |
 | --- | --- |
-| [!DNL Identity Graph Linking Rules] | [!DNL Identity Graph Linking Rules]现已正式可用。 [!DNL Identity Graph Linking Rules]防止“图形折叠”，确保在Experience Platform和应用程序间进行个性化营销时可获得明确而准确的客户个人资料。 主要功能包括：<ul><li>[图形模拟工具](../../identity-service/identity-graph-linking-rules/graph-simulation.md)：浏览算法并测试身份设置配置。</li><li> [身份设置](../../identity-service/identity-graph-linking-rules/identity-settings-ui.md)：配置唯一的命名空间并设置优先级。</li><li>[身份仪表板](../../identity-service/identity-graph-linking-rules/implementation-guide.md#validate-your-graphs)：监视图形并验证身份设置。</li></ul> **注意**：在您手动配置身份设置之前，您的数据不会发生任何更改。 |
+| [!DNL Identity Graph Linking Rules] | [!DNL Identity Graph Linking Rules] 现已正式发布。[!DNL Identity Graph Linking Rules] 可防止“图形折叠”，确保在 Experience Platform 与各类应用中生成清晰且精准的客户轮廓，用于个性化营销。主要功能包括：<ul><li>[图形模拟工具](../../identity-service/identity-graph-linking-rules/graph-simulation.md)：探索算法机制并测试身份标识设置配置效果。</li><li> [身份设置](../../identity-service/identity-graph-linking-rules/identity-settings-ui.md)：配置唯一命名空间并设定优先级。</li><li>[身份仪表板](../../identity-service/identity-graph-linking-rules/implementation-guide.md#validate-your-graphs)：监控图形表现并验证身份标识设置。</li></ul> **注意事项**：在您手动配置身份标识设置之前，您的数据不会发生任何变更。 |
 
 {style="table-layout:auto"}
 
-有关详细信息，请阅读[Identity Service概述](../../identity-service/home.md)。
+有关详细信息，请参阅[身份标识服务概述](../../identity-service/home.md)。
 
 ## 查询服务 {#query-service}
 
@@ -113,8 +113,8 @@ Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使�
 
 | 功能 | 描述 |
 |--------|-------------|
-| JWT到OAuth凭据迁移 | 必须在2025年6月30日之前将未过期的JWT凭据迁移到OAuth服务器到服务器，以避免服务中断。 此更改提高了安全性和平台一致性。 有关更多详细信息，请参阅[从JWT迁移到OAuth服务器到服务器凭据指南](../../query-service/ui/migrate-jwt-to-oauth.md)。 |
-| 旧版结果表（限量发布） | 依赖拖入选择工作流程的用户可以请求访问支持浏览器本机选择和复制行为的旧版结果表。 粘贴的输出以制表符分隔，因此列在Excel中保持对齐和可读，从而允许更轻松地进行电子表格审核和QA过程。 有关详细信息，请参阅[查询编辑器UI指南](../../query-service/ui/user-guide.md#legacy-results-table)。 |
+| 从 JWT 向 OAuth 凭据迁移 | 为避免服务中断，所有永久有效的 JWT 凭据必须在 2025 年 6 月 30 日前迁移至 OAuth 服务器到服务器模式。此项变更将提升安全性并增强平台一致性。详见[从 JWT 迁移至 OAuth 服务器到服务器凭据指南](../../query-service/ui/migrate-jwt-to-oauth.md)，以了解更多信息。 |
+| 旧版结果表（限量开放） | 依赖拖拽选择工作流程的用户可申请访问旧版结果表，该表支持浏览器原生的选择与复制操作。粘贴的输出为制表符分隔格式，确保在 Excel 中的列保持对齐、易于阅读，有助于简化表格审核与质检流程。详见[查询编辑器用户界面指南](../../query-service/ui/user-guide.md#legacy-results-table)，以获取更多信息。 |
 
 有关 [!DNL Query Service] 的详细信息，请查看 [[!DNL Query Service] 概述](../../query-service/home.md)。
 
@@ -126,7 +126,7 @@ Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。企
 
 | 功能 | 描述 |
 | --- | --- |
-| 沙盒工具插件支持扩展 | 现在可以通过沙盒工具使用其他依赖对象迁移营销活动，包括渠道配置、统一决策、试验设置/变体等。 有关受支持的营销活动对象以及所有受支持的Adobe Journey Optimizer对象的完整列表，请阅读[沙盒工具](../../sandboxes/ui/sandbox-tooling.md#adobe-journey-optimizer-objects)指南。 |
+| 沙盒工具插件支持扩展 | 现已可通过沙盒工具迁移营销活动，并支持同时迁移附属依赖对象，其中包括渠道配置、统一决策、试验设置/变量等内容。有关支持迁移的营销活动对象的完整列表，以及所有受支持的 Adobe Journey Optimizer 对象，请参阅[沙盒工具](../../sandboxes/ui/sandbox-tooling.md#adobe-journey-optimizer-objects)指南。 |
 
 {style="table-layout:auto"}
 
@@ -134,13 +134,13 @@ Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。企
 
 ## Segmentation Service {#segmentation-service}
 
-[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的轮廓子集。受众可以基于代表客户与您的品牌互动的记录数据（如人口统计信息）或时间序列事件。
+[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的轮廓子集。受众可以基于记录型数据（如人口统计信息）或时间序列事件（代表客户与品牌的互动行为）进行构建。
 
 **新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 流媒体细分标准更新 | 从2025年5月版开始，更新了受众有资格进行流式客户细分的标准。 有关这些变化的更多信息，请参阅 [流媒体分段资格标准更新](../../segmentation/eligibility-criteria-update.md)。 |
+| 流媒体细分标准更新 | 自 2025 年 5 月版本起，受众符合流式分段条件的判定标准已更新。有关这些变化的更多信息，请参阅[流式分段资格标准更新](../../segmentation/eligibility-criteria-update.md)。 |
 
 ## 源 {#sources}
 
@@ -152,8 +152,8 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 | 功能 | 描述 |
 | --- | --- |
-| 支持[!DNL MySQL]的基本身份验证 | 您现在可以使用基本身份验证将[!DNL MySQL]数据库连接到Experience Platform。 有关详细信息，请阅读[[!DNL MySQL] 源概述](../../sources/connectors/databases/mysql.md)。 |
+| 支持 [!DNL MySQL] 的基本身份验证功能 | 您现在可以使用基本身份验证，将您的 [!DNL MySQL] 数据库连接至 Experience Platform。有关更多信息，请阅读[[!DNL MySQL] 数据源概述](../../sources/connectors/databases/mysql.md)。 |
 
 {style="table-layout:auto"}
 
-有关更多信息，请阅读[源概述](../../sources/home.md)。
+有关更多信息，请阅读[数据源概述](../../sources/home.md)。
