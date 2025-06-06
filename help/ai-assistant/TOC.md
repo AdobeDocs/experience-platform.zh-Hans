@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 中的 AI 助手指南
 user-guide-description: 了解如何使用 AI 助手通过 Adobe Experience Platform 和 Real-Time Customer Data Platform 加快工作流程。
 description: 本文档列出了Adobe Experience Platform中的AI助手目录。
 role: Admin,User,Developer,Leader
-source-git-commit: 720534f3dc45a70ed7928f60ffa321bd218a5515
+source-git-commit: 9113e6ad429d11afebab1a146e1426aa515fef73
 workflow-type: tm+mt
-source-wordcount: '121'
-ht-degree: 28%
+source-wordcount: '123'
+ht-degree: 29%
 
 ---
 
@@ -32,5 +32,6 @@ ht-degree: 28%
    * AI模型详细信息 {#ai-model-details}
       * [AI Assistant Natural Operational Insights语言到SQL](./model-details/ai-model-details/natural-language-to-sql.md)
       * [客户人工智能倾向打分](./model-details/ai-model-details/customer-ai.md)
+      * [发送时间优化](./model-details/ai-model-details/send-time-optimization.md)
 * [Experience Platform 发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
 
