@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2025 年 2 月）
 description: Adobe Experience Platform 的 2025 年 2 月发行说明。
 exl-id: 734a9484-516e-4dd7-9503-8fcdc50cbaac
-source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
+source-git-commit: c8fe5f05b7dcef7db2ae44d5b6575e123cbd014d
 workflow-type: tm+mt
-source-wordcount: '1645'
-ht-degree: 97%
+source-wordcount: '1677'
+ht-degree: 96%
 
 ---
 
@@ -54,7 +54,7 @@ Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使�
 
 | 功能 | 描述 |
 | --- | --- |
-| 新的 API 端点 | 使用新的[目录服务 API /v2/数据集/{DATASET_ID} 端点](../../catalog/api/update-object.md#patch-v2-notation)更有效地管理 Adobe Experience Platform 数据集元数据。轻松更新复杂的深层嵌套数据集属性，因为系统会自动创建缺失的路径级别，从而节省您的时间、减少手动步骤并将错误降至最低。 |
+| 新的 API 端点 | 使用新的[目录服务API /v2/dataSets/{DATASET_ID}端点](../../catalog/api/update-object.md#patch-v2-notation)更有效地管理Adobe Experience Platform数据集元数据。 轻松更新复杂的深层嵌套数据集属性，因为系统会自动创建缺失的路径级别，从而节省您的时间、减少手动步骤并将错误降至最低。 |
 
 {style="table-layout:auto"}
 
@@ -78,7 +78,7 @@ Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使�
 
 [!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
-**新增或更新目标**{#new-updated-destinations}
+**新增或更新目标** {#new-updated-destinations}
 
 | 目标 | 描述 |
 | --- | --- |
@@ -90,7 +90,7 @@ Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使�
 
 {style="table-layout:auto"}
 
-**新增或更新的功能**{#destinations-new-updated-functionality}
+**新增或更新的功能** {#destinations-new-updated-functionality}
 
 | 功能 | 描述 |
 | --- | --- |
@@ -101,7 +101,7 @@ Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使�
 
 {style="table-layout:auto"}
 
-**修复和增强** {#destinations-fixes-and-enhancements}
+**修复和增强功能** {#destinations-fixes-and-enhancements}
 
 - Destination SDK 测试工具中的一个问题已修复。当用于生成轮廓的模式包含带有 `No format` 选择器的数据类型时，由于格式不受支持，一些客户或合作伙伴在使用[样本轮廓生成工具](/help/destinations/destination-sdk/testing-api/streaming-destinations/sample-profile-generation-api.md)时遇到了问题。
 - 修复了使用 Flow Service API 更新目标 `targetConnection` 规范时出现的问题。在某些情况下，PATCH 运行的行为与 POST 运行类似，会破坏现有的数据流。此问题现已修复，所有客户都可以使用 Flow Service API 来更新他们的 `targetConnection` 规范。[了解更多信息](/help/destinations/api/edit-destination.md#patch-target-connection)。
@@ -117,7 +117,7 @@ Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 永久拆分 | 受众构成现在支持持久拆分。 通过向Split块中添加身份命名空间，您可以使拆分受众在按用户档案拆分时保持不变。 有关此功能的详细信息，请参阅[受众组合文档](../../segmentation/ui/audience-composition.md)。 |
+| 持久拆分 | 受众构成现在支持持久拆分。通过在拆分块中添加身份标识命名空间，您可以使拆分受众在按轮廓拆分时保持不变。有关此功能的更多信息，请参阅[受众构成文档](../../segmentation/ui/audience-composition.md)。 |
 
 有关 [!DNL Segmentation Service] 的详细信息，请查看[分段概述](../../segmentation/home.md)。
 
@@ -132,6 +132,7 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 | 功能 | 描述 |
 | --- | --- |
 | 支持 [!DNL Microsoft Dynamics] 中的视图 | 您现在可以在`"entityType": "view"`使用源时[!DNL Microsoft Dynamics]进行摄取。有关更多信息，请阅读将源[连接 [!DNL Microsoft Dynamics] 到 Experience Platform](../../sources/tutorials/api/create/crm/ms-dynamics.md) 指南。 |
+| 要允许列表的新IP地址 | 您必须将以下IP地址添加到允许列表才能成功使用Experience Platform源。<br></br>**VA7**<ul><li>`48.211.4.136/29`</li><li>`48.211.4.144/28`</li><li>`48.211.4.160/29`</li><li>`40.84.85.144/28`</li><li>`40.84.85.192/28`</li></ul>**AUS5**<ul><li>`20.213.194.144/29`</li><li>`20.227.120.32/27`</li></ul> <br></br>有关详细信息，请阅读[源IP地址允许列表指南](../../sources/ip-address-allow-list.md)。 |
 
 {style="table-layout:auto"}
 
