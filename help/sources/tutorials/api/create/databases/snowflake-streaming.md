@@ -3,9 +3,9 @@ title: 将您的Snowflake流帐户连接到Adobe Experience Platform
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Snowflake Streaming。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 3fc225a4-746c-4a91-aa77-bbeb091ec364
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bad1e0a9d86dcce68f1a591060989560435070c5
 workflow-type: tm+mt
-source-wordcount: '852'
+source-wordcount: '880'
 ht-degree: 4%
 
 ---
@@ -212,6 +212,10 @@ curl -X POST \
 ```
 
 ## 创建数据流
+
+>[!NOTE]
+>
+>创建或更新流数据流后，需要短暂暂停数据摄取5分钟，以防出现任何潜在的数据丢失或数据丢失情况。
 
 要创建数据流以将数据从导览[!DNL Snowflake]帐户流式传输到Experience Platform，您必须在提供以下值时向`/flows`端点发出POST请求：
 

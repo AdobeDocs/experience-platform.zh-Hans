@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；流连接；创建流连
 title: 使用流服务API创建HTTP API流连接
 description: 本教程提供了有关如何使用HTTP API源通过流服务API为原始数据和XDM数据创建流连接的步骤
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bad1e0a9d86dcce68f1a591060989560435070c5
 workflow-type: tm+mt
-source-wordcount: '1656'
+source-wordcount: '1684'
 ht-degree: 3%
 
 ---
@@ -457,6 +457,10 @@ curl -X POST \
 ```
 
 ## 创建数据流
+
+>[!NOTE]
+>
+>创建或更新流数据流后，需要短暂暂停数据摄取5分钟，以防出现任何潜在的数据丢失或数据丢失情况。
 
 创建源和目标连接后，您现在可以创建数据流。 数据流负责从源中计划和收集数据。 您可以通过对`/flows`端点执行POST请求来创建数据流。
 

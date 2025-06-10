@@ -3,9 +3,9 @@ title: 使用流服务API创建Google PubSub Source连接
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Google PubSub帐户。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: f5b8f9bf-8a6f-4222-8eb2-928503edb24f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bad1e0a9d86dcce68f1a591060989560435070c5
 workflow-type: tm+mt
-source-wordcount: '1153'
+source-wordcount: '1181'
 ht-degree: 2%
 
 ---
@@ -76,7 +76,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->分配给[!DNL PubSub]项目的主体（角色）在[!DNL PubSub]项目内创建的所有主题和订阅中被继承。 如果希望主体（角色）可以访问特定主题，则还必须将该主体（角色）添加到主题的相应订阅中。 有关详细信息，请阅读有关访问控制[&#128279;](<https://cloud.google.com/pubsub/docs/access-control>)的[!DNL PubSub] 文档。
+>分配给[!DNL PubSub]项目的主体（角色）在[!DNL PubSub]项目内创建的所有主题和订阅中被继承。 如果希望主体（角色）可以访问特定主题，则还必须将该主体（角色）添加到主题的相应订阅中。 有关详细信息，请阅读有关访问控制](<https://cloud.google.com/pubsub/docs/access-control>)的[[!DNL PubSub] 文档。
 
 **API格式**
 
@@ -257,6 +257,10 @@ curl -X POST \
     "etag": "\"66013508-0000-0200-0000-5f6e2ae70000\""
 }
 ```
+
+>[!NOTE]
+>
+>创建或更新流数据流后，需要短暂暂停数据摄取5分钟，以防出现任何潜在的数据丢失或数据丢失情况。
 
 ## 后续步骤
 

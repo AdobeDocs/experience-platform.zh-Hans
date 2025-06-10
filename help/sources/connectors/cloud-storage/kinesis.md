@@ -3,9 +3,9 @@ title: Amazon Kinesis Source连接器概述
 description: 了解如何使用API或用户界面将Amazon Kinesis连接到Adobe Experience Platform。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b71fc922-7722-4279-8fc6-e5d7735e1ebb
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bad1e0a9d86dcce68f1a591060989560435070c5
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '560'
 ht-degree: 0%
 
 ---
@@ -90,6 +90,10 @@ Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等
 有关迭代器类型的详细信息，请参阅以下[[!DNL Kinesis] 文档](https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#API_GetShardIterator_RequestSyntax)。
 
 ## 将[!DNL Amazon Kinesis]连接到[!DNL Experience Platform]
+
+>[!NOTE]
+>
+>创建或更新流数据流后，需要短暂暂停数据摄取5分钟，以防出现任何潜在的数据丢失或数据丢失情况。
 
 以下文档提供了有关如何使用API或用户界面将[!DNL Amazon Kinesis]连接到[!DNL Experience Platform]的信息：
 

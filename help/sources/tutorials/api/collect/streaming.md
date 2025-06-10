@@ -5,9 +5,9 @@ title: 使用流服务API为原始数据创建流数据流
 type: Tutorial
 description: 本教程介绍了有关检索流数据以及使用源连接器和API将它们引入Experience Platform的步骤。
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bad1e0a9d86dcce68f1a591060989560435070c5
 workflow-type: tm+mt
-source-wordcount: '1180'
+source-wordcount: '1208'
 ht-degree: 2%
 
 ---
@@ -414,6 +414,10 @@ curl -X GET \
 ```
 
 ## 创建数据流
+
+>[!NOTE]
+>
+>创建或更新流数据流后，需要短暂暂停数据摄取5分钟，以防出现任何潜在的数据丢失或数据丢失情况。
 
 收集流数据的最后一步是创建数据流。 现在，您已准备以下必需值：
 

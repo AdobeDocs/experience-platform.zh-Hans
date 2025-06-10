@@ -3,9 +3,9 @@ title: 使用流服务API创建Azure事件中心Source连接
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Azure事件中心帐户。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: a4d0662d-06e3-44f3-8cb7-4a829c44f4d9
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bad1e0a9d86dcce68f1a591060989560435070c5
 workflow-type: tm+mt
-source-wordcount: '1496'
+source-wordcount: '1524'
 ht-degree: 2%
 
 ---
@@ -52,7 +52,7 @@ ht-degree: 2%
 | `eventHubName` | 填写您的[!DNL Azure Event Hub]名称。 有关[!DNL Event Hub]名称的详细信息，请阅读[Microsoft文档](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub)。 |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL Event Hubs]连接规范ID为： `bf9f5905-92b7-48bf-bf20-455bc6b60a4e`。 |
 
-有关[!DNL Event Hubs]的共享访问签名(SAS)身份验证的更多信息，请阅读有关使用SAS[&#128279;](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)的[!DNL Azure] 指南。
+有关[!DNL Event Hubs]的共享访问签名(SAS)身份验证的更多信息，请阅读有关使用SAS](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)的[[!DNL Azure] 指南。
 
 >[!TAB 事件中心Azure Active Directory身份验证]
 
@@ -63,7 +63,7 @@ ht-degree: 2%
 | `clientSecretValue` | 与客户端ID一起用于对应用程序进行身份验证的客户端密码。 您可以从注册[!DNL Azure Active Directory]的[!DNL Microsoft Entra ID]门户中检索客户端密钥。 |
 | `namespace` | 您正在访问的[!DNL Event Hub]的命名空间。 [!DNL Event Hub]命名空间提供了一个唯一的范围容器，您可以在其中创建一个或多个[!DNL Event Hubs]。 |
 
-有关[!DNL Azure Active Directory]的详细信息，请阅读有关使用Microsoft Entra ID[&#128279;](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application)的Azure指南。
+有关[!DNL Azure Active Directory]的详细信息，请阅读有关使用Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application)的[Azure指南。
 
 >[!TAB 事件中心范围的Azure Active Directory身份验证]
 
@@ -384,6 +384,10 @@ curl -X POST \
 | `params.dataType` | 此参数定义正在摄取的数据的类型。 支持的数据类型包括： `raw`和`xdm`。 |
 | `params.reset` | 此参数定义数据的读取方式。 使用`latest`开始读取最新数据，并使用`earliest`开始读取流中的第一个可用数据。 此参数是可选的，如果未提供，则默认为`earliest`。 |
 | `params.consumerGroup` | 要用于[!DNL Event Hubs]的发布或订阅机制。 此参数是可选的，如果未提供，则默认为`$Default`。 有关详细信息，请参阅此[[!DNL Event Hubs] 关于事件使用者](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-features#event-consumers)的指南。 **注意**： [!DNL Event Hubs]使用者组只能在给定时间用于单个流。 |
+
+>[!NOTE]
+>
+>创建或更新流数据流后，需要短暂暂停数据摄取5分钟，以防出现任何潜在的数据丢失或数据丢失情况。
 
 ## 后续步骤
 

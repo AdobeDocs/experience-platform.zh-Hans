@@ -3,9 +3,9 @@ title: 使用流服务API创建Amazon Kinesis Source连接
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Amazon Kinesis源。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 64da8894-12ac-45a0-b03e-fe9b6aa435d3
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bad1e0a9d86dcce68f1a591060989560435070c5
 workflow-type: tm+mt
-source-wordcount: '732'
+source-wordcount: '760'
 ht-degree: 3%
 
 ---
@@ -165,6 +165,10 @@ curl -X POST \
     "etag": "\"66013508-0000-0200-0000-5f6e2ae70000\""
 }
 ```
+
+>[!NOTE]
+>
+>创建或更新流数据流后，需要短暂暂停数据摄取5分钟，以防出现任何潜在的数据丢失或数据丢失情况。
 
 ## 后续步骤
 

@@ -3,9 +3,9 @@ title: Azure事件中心Source连接器概述
 description: 了解如何使用API或用户界面将Azure事件中心连接到Adobe Experience Platform。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b4d4bc7f-2241-482d-a5c2-4422c31705bf
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bad1e0a9d86dcce68f1a591060989560435070c5
 workflow-type: tm+mt
-source-wordcount: '578'
+source-wordcount: '606'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等
 
 ### 提高[!DNL Event Hubs]和Experience Platform的并行度
 
-并行是指在多个处理单元上同时执行相同的任务，以提高速度和性能。 您可以通过增加分区或为[!DNL Event Hubs]帐户获取更多处理单元来增加[!DNL Event Hubs]端的并行度。 有关详细信息，请参阅有关缩放[&#128279;](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-scalability)的此[!DNL Event Hubs] 文档。
+并行是指在多个处理单元上同时执行相同的任务，以提高速度和性能。 您可以通过增加分区或为[!DNL Event Hubs]帐户获取更多处理单元来增加[!DNL Event Hubs]端的并行度。 有关详细信息，请参阅有关缩放](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-scalability)的此[[!DNL Event Hubs] 文档。
 
 要提高Experience Platform端的摄取速度，Experience Platform必须增加源连接器中要从[!DNL Event Hubs]分区中读取的任务数。 增加[!DNL Event Hubs]端的并行度后，请联系您的Adobe代表以根据新分区缩放Experience Platform任务。 目前，此过程未自动化。
 
@@ -122,6 +122,10 @@ Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等
 有关网络规则集的详细信息，请参阅以下[[!DNL Event Hubs] 文档](https://learn.microsoft.com/en-us/azure/event-hubs/network-security)。
 
 ## 将[!DNL Event Hubs]连接到Experience Platform
+
+>[!NOTE]
+>
+>创建或更新流数据流后，需要短暂暂停数据摄取5分钟，以防出现任何潜在的数据丢失或数据丢失情况。
 
 以下文档提供了有关如何使用API或用户界面将[!DNL Event Hubs]连接到Experience Platform的信息：
 

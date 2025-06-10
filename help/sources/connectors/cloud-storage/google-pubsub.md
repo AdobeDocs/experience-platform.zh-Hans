@@ -3,9 +3,9 @@ title: Google PubSub Source概述
 description: 了解如何使用API或用户界面将Google PubSub连接到Adobe Experience Platform。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 7c78173d-2639-47cb-8935-77fb7841a121
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bad1e0a9d86dcce68f1a591060989560435070c5
 workflow-type: tm+mt
-source-wordcount: '829'
+source-wordcount: '857'
 ht-degree: 0%
 
 ---
@@ -82,6 +82,10 @@ Adobe Experience Platform为云提供商（如[!DNL AWS]、[!DNL Google Cloud Pl
 >每个[!DNL Google PubSub]订阅只能创建一个源数据流。 重用订阅（甚至跨沙盒）会导致数据丢失。
 
 ## 将[!DNL Google PubSub]连接到Experience Platform
+
+>[!NOTE]
+>
+>创建或更新流数据流后，需要短暂暂停数据摄取5分钟，以防出现任何潜在的数据丢失或数据丢失情况。
 
 以下文档提供了有关如何使用API或用户界面将[!DNL Google PubSub]连接到Experience Platform的信息：
 

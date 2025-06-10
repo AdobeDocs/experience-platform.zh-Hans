@@ -4,9 +4,9 @@ description: 了解如何创建源连接和数据流，以将流数据从Snowfla
 badgeUltimate: label="Ultimate" type="Positive"
 last-substantial-update: 2023-09-24T00:00:00Z
 exl-id: ed937689-e844-487e-85fb-e3536c851fe5
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bad1e0a9d86dcce68f1a591060989560435070c5
 workflow-type: tm+mt
-source-wordcount: '820'
+source-wordcount: '841'
 ht-degree: 1%
 
 ---
@@ -86,6 +86,10 @@ Experience Platform支持从[!DNL Snowflake]数据库流式传输数据。
       * `TIMESTAMP_TZ`不能用于时间戳列或映射。
 
 ## 后续步骤
+
+>[!NOTE]
+>
+>创建或更新流数据流后，需要短暂暂停数据摄取5分钟，以防出现任何潜在的数据丢失或数据丢失情况。
 
 以下教程提供了有关如何使用API将[!DNL Snowflake]流源连接到Experience Platform的步骤：
 
