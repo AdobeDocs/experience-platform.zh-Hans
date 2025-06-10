@@ -4,7 +4,7 @@ description: 了解用于客户人工智能的AI模型。
 hide: true
 hidefromtoc: true
 exl-id: b2eeb1d2-3c2b-40a0-b5cd-91e99d99a906
-source-git-commit: a7b69cd11ccbd9950cafa73dba51be1d67924bfe
+source-git-commit: 8230c71c9b7896dfb71506632754d48583d0dc21
 workflow-type: tm+mt
 source-wordcount: '1016'
 ht-degree: 0%
@@ -53,7 +53,7 @@ ht-degree: 0%
 * **训练数据和预处理**：每个客户的训练数据集直接源自Adobe Experience Platform中他们自己的数据。 这包括客户的历史交互、事务记录、行为参与日志以及在其Adobe Experience Platform实例中收集和存储的人口统计信息。 该数据集利用客户在其所选时间范围内的特定数据，捕获其独特的季节性趋势和参与模式。 在使用之前，每个客户的数据集将根据其数据特征进行预处理，包括缺失值处理、分类编码、特征缩放、异常值检测和特征工程，以确保其特定用例的最佳质量和可用性。
    * 用于培训的消费者数据不会跨客户使用。
 * **训练规范**：模型使用[!DNL GBM]利用[!DNL LightGBM]，已针对结构化数据进行优化。 它根据历史客户事件序列进行培训，以识别预测性行为模式。
-* **培训框架**：模型是使用[!DNL LightGBM]和[!DNL scikit-learn]开发的，并且接受了Adobe AI云基础架构的培训。
+* **训练框架**：模型是使用[!DNL LightGBM]和[!DNL scikit-learn]开发的，并托管在Adobe AI云基础架构上。
 * **训练基础结构**： [!DNL Databricks]个群集。
 
 ## 模型评估 {#model-evaluation}
