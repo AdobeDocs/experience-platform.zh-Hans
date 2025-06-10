@@ -32,7 +32,7 @@ Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等
 
 ### 提高[!DNL Event Hubs]和Experience Platform的并行度
 
-并行是指在多个处理单元上同时执行相同的任务，以提高速度和性能。 您可以通过增加分区或为[!DNL Event Hubs]帐户获取更多处理单元来增加[!DNL Event Hubs]端的并行度。 有关详细信息，请参阅有关缩放](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-scalability)的此[[!DNL Event Hubs] 文档。
+并行是指在多个处理单元上同时执行相同的任务，以提高速度和性能。 您可以通过增加分区或为[!DNL Event Hubs]帐户获取更多处理单元来增加[!DNL Event Hubs]端的并行度。 有关详细信息，请参阅有关缩放[&#128279;](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-scalability)的此[!DNL Event Hubs] 文档。
 
 要提高Experience Platform端的摄取速度，Experience Platform必须增加源连接器中要从[!DNL Event Hubs]分区中读取的任务数。 增加[!DNL Event Hubs]端的并行度后，请联系您的Adobe代表以根据新分区缩放Experience Platform任务。 目前，此过程未自动化。
 
