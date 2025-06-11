@@ -3,9 +3,9 @@ title: Adobe Experience Platform 发行说明（2025 年 5 月）
 description: Adobe Experience Platform 的 2025 年 5 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: 6ab9302a40547349c8d0390baafd8591ed6859e1
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1530'
-ht-degree: 81%
+ht-degree: 100%
 
 ---
 
@@ -43,7 +43,7 @@ Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使�
 
 | 功能 | 描述 |
 | --- | --- |
-| 产品支持代理正式发布 | 您现在可以使用AI Assistant中的产品支持代理无缝进行故障排除，而无需离开您的工作流。 您组织中的支持管理员现在可以使用产品支持代理创建客户支持工单，以及您与AI助手交互时的上下文和会话详细信息。 <br><br>产品支持代理的访问权在2025年11月30日之前可用。 您必须联系Adobe客户代表以许可产品支持代理，并在该日期之后继续使用该功能。 有关详细信息，请阅读[产品支持代理文档](../../ai-assistant/new-features/customer-support.md)。 |
+| 产品支持代理全面上线 | 您现在可以在 AI 助手中使用产品支持代理，无需离开工作流程，即可顺畅排查问题。您组织中的支持管理员现在可以使用产品支持代理创建客户支持工单，其中包含您与 AI 助手互动中的上下文信息和会话详情。<br><br>产品支持代理的访问权限将持续至 2025 年 11 月 30 日。若需在此日期之后继续使用产品支持代理，您必须联系您的 Adobe 客户代表以获取相关授权。有关更多信息，请阅读[产品支持代理文档](../../ai-assistant/new-features/customer-support.md)。 |
 
 有关更多信息，请阅读 [AI 助手概述](../../ai-assistant/landing.md)。
 
@@ -81,8 +81,8 @@ Adobe Experience Platform 中的 AI 助手是一种对话体验，您可以使�
 
 | 功能 | 描述 |
 | --- | --- |
-| [Facebook自定义受众](../../destinations/catalog/social/facebook.md)升级和支持地址相关的标识符 | 从2025年5月23日开始，在整个2025年6月，您可能会在目标目录中临时看到两个&#x200B;**[!DNL Facebook Custom Audience]**&#x200B;目标卡，持续时间可能最多几个小时。 这是由于目标服务的内部升级，并支持新字段以改进定位并与Facebook属性上的用户档案匹配。 有关新的地址相关字段的详细信息，请参阅[支持的标识](#supported-identities)部分。 <br><br>如果您看到标记为&#x200B;**[!UICONTROL （新） Facebook自定义受众]**&#x200B;的卡，请将此卡用于新的激活数据流。 您的现有数据流将自动更新，因此您无需执行任何操作。 在此期间对现有数据流所做的任何更改将在升级后保留。 升级完成后，**[!UICONTROL （新） Facebook自定义受众]**&#x200B;目标卡将重命名为&#x200B;**[!DNL Facebook Custom Audience]**。 <br><br>如果您使用[流服务API](https://developer.adobe.com/experience-platform-apis/references/destinations/)创建数据流，则必须将[!DNL flow spec ID]和[!DNL connection spec ID]更新为以下值： <ul><li>流量规范 ID：`bb181d00-58d7-41ba-9c15-9689fdc831d3`</li><li>连接规范 ID：`c8b97383-2d65-4b7a-9913-db0fbfc71727`</li></ul> |
-| 对[Google Customer Match + Display &amp; Video 360](../../destinations/catalog/advertising/google-customer-match-dv360.md#supported-identities)目标的移动广告ID支持 | 您现在可以根据移动设备广告ID（如[!DNL GAID]和[!DNL IDFA]）将受众激活到[Google客户匹配+显示和视频360](../../destinations/catalog/advertising/google-customer-match-dv360.md#supported-identities)目标。 |
+| [Facebook 自定义受众](../../destinations/catalog/social/facebook.md)升级以及对地址相关标识符提供支持 | 从 2025 年 5 月 23 日开始直至整个 2025 年 6 月，您在目标目录中可能会短暂看到两个 **[!DNL Facebook Custom Audience]** 目标卡片，持续时间最长可达数小时。出现该情况是由于目标服务的内部升级，以及为支持新字段以提升在 Facebook 相关平台上与轮廓的定位与匹配效果。有关新增地址相关字段的详细信息，请参阅[支持的身份标识](#supported-identities)部分。<br><br>如果您看到标有&#x200B;**[!UICONTROL （新）Facebook自定义受众]**&#x200B;的卡片，请使用该卡片创建新的激活数据流。您现有的数据流将自动更新，无需执行任何操作。在此期间，您对现有数据流所做的任何更改将在升级后保留。升级完成后，**[!UICONTROL （新）Facebook自定义受众]**&#x200B;目标卡将重命名为 **[!DNL Facebook Custom Audience]**。<br><br>如果您使用 [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) 创建数据流，则必须将 [!DNL flow spec ID] 和 [!DNL connection spec ID] 更新为以下值： <ul><li>流量规范 ID：`bb181d00-58d7-41ba-9c15-9689fdc831d3`</li><li>连接规范 ID：`c8b97383-2d65-4b7a-9913-db0fbfc71727`</li></ul> |
+| 对 [Google 目标客户匹配功能 + Display &amp; Video 360](../../destinations/catalog/advertising/google-customer-match-dv360.md#supported-identities) 目标的移动广告 ID 支持 | 您现在可以基于移动广告 ID（例如 [!DNL GAID] 和 [!DNL IDFA]）将受众激活到 [Google 目标客户匹配功能 + Display &amp; Video 360 ](../../destinations/catalog/advertising/google-customer-match-dv360.md#supported-identities)目标。 |
 | 为 [Google 目标客户匹配功能](../../destinations/catalog/advertising/google-customer-match.md)提供额外的标识符支持 | Google 目标客户匹配功能目标现已支持地址相关字段的映射，有助于在 Google 平台中提升匹配率。<br><br>为确保 Google 能成功匹配地址，您必须映射全部四个地址字段（`address_info_first_name`、`address_info_last_name`、`address_info_country_code` 和 `address_info_postal_code`），且导出的轮廓中这些字段均不得缺失数据。<br> 如任一字段未映射或包含缺失数据，Google 将无法完成地址匹配。 |
 | [Facebook](../../destinations/catalog/social/facebook.md) 连接现支持“帐户过期”栏 | 您现在可在[浏览](../../destinations/ui/destinations-workspace.md#browse)和[帐户](../../destinations/ui/destinations-workspace.md#accounts)选项卡中查看 Facebook 帐户令牌的过期日期。 |
 | 导出通过 API 创建的数据集 | 您现在可以导出通过 API 创建的数据集。此前仅支持导出通过 UI 创建的数据集的限制现已解除。阅读[导出数据集](../../destinations/ui/export-datasets.md)以了解更多信息。 |
