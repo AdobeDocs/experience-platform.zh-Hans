@@ -120,7 +120,7 @@ Adobe Experience Platform 数据治理是一系列策略和技术，用于管理
 
 | 新功能 | 描述 |
 | ----------- | ----------- |
-| HIPAA 准备就绪 | 联合受众组合现在符合HIPAA要求。 有关联合受众组合隐私和安全措施的更多信息，请阅读联合受众组合概述中的[隐私和安全性](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/start/privacy-security)。 有关一般Experience Platform产品的HIPAA合规性的更多信息，请阅读[HIPAA和Adobe产品和服务概述](https://www.adobe.com/trust/compliance/hipaa-ready.html)。 |
+| HIPAA 准备就绪 | 联合受众组合现在符合HIPAA要求。 有关联合受众组合隐私和安全措施的更多信息，请阅读联合受众组合概述中的[隐私和安全性](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/start/privacy-security)。 有关一般Experience Platform产品的HIPAA合规性的更多信息，请阅读[HIPAA和Adobe产品和服务概述](https://www.adobe.com/trust/compliance/hipaa-ready.html)。 |
 
 如需了解更多信息，请阅读[联合受众构成文档](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/home)。
 
@@ -132,7 +132,7 @@ Adobe Experience Platform 数据治理是一系列策略和技术，用于管理
 
 | 功能 | 描述 |
 |--- | ---|
-| 对田纳西州和明尼苏达州隐私法的支持 | Privacy Service现在支持《田纳西州信息保护法案》(`tipa_tn_usa`)和《明尼苏达州消费者数据隐私法案》(`mcdpa_mn_usa`)。 您可以按照这些新的州级法规处理访问和删除请求。 有关详细信息，请参阅[法规概述](https://experienceleague.adobe.com/en/docs/experience-platform/privacy/regulations/overview)。 |
+| 对田纳西州和明尼苏达州隐私法的支持 | Privacy Service现在支持《田纳西州信息保护法案》(`tipa_tn_usa`)和《明尼苏达州消费者数据隐私法案》(`mcdpa_mn_usa`)。 您可以按照这些新的州级法规处理访问和删除请求。 有关详细信息，请参阅[法规概述](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/privacy/regulations/overview)。 |
 
 有关该服务的更多信息，请参阅 [Privacy Service 概述](../privacy-service/home.md) 。
 
