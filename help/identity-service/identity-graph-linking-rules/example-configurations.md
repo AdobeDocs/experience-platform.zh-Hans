@@ -1,15 +1,17 @@
 ---
-title: Graph配置示例
-description: 了解在使用身份图形链接规则和身份数据时可能遇到的常见图形场景。
+title: Identity Graph链接规则配置指南
+description: 了解您可以使用身份图链接规则配置的各种实施类型。
+hide: true
+hidefromtoc: true
 exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
-source-git-commit: cd9104e253cda4ce9a004f7931b9c38907874941
+source-git-commit: b65a5e8e9727da47729191e56c1a32838ec2c6c4
 workflow-type: tm+mt
-source-wordcount: '3316'
-ht-degree: 5%
+source-wordcount: '1934'
+ht-degree: 7%
 
 ---
 
-# 图形配置示例 {#examples-of-graph-configurations}
+# [!DNL Identity Graph Linking Rules]配置指南 {#configurations-guide}
 
 >[!CONTEXTUALHELP]
 >id="platform_identities_algorithmconfiguration"
@@ -21,740 +23,547 @@ ht-degree: 5%
 >* “CRMID”和“loginID”是自定义命名空间。 在本文档中，“CRMID”是人员标识符，“loginID”是与给定人员关联的登录标识符。
 >* 要模拟本文档中概述的示例图形场景，您必须首先创建两个自定义命名空间，一个具有身份符号“CRMID”，另一个具有身份符号“loginID”。 标识符号区分大小写。
 
-本文档概述了在使用[!DNL Identity Graph Linking Rules]和身份数据时可能遇到的常见情况的图形配置示例。
+请阅读本文档，了解您可以使用[!DNL Identity Graph Linking Rules]配置的不同实现类型。
 
-## 仅限CRMID
+客户图方案可以分为三个不同的类别。
 
-这是一个简单的实施方案示例，其中摄取在线事件（CRMID和ECID），并仅针对CRMID存储离线事件（配置文件记录）。
+* **基本**： [基本实施](#basic-implementations)包含通常包含简单实施的图形。 这些实施倾向于围绕单个跨设备命名空间（例如CRMID）进行。 虽然基本实施相当简单，但图形折叠仍可能发生，通常是由于&#x200B;**共享设备**&#x200B;方案。
+* **中间**： [中间实施](#intermediate-implementations)包含多个变量，如&#x200B;**多个跨设备命名空间**、**非唯一标识**&#x200B;和&#x200B;**多个唯一命名空间**。
+* **高级**： [高级实施](#advanced-implementations)涉及复杂的多层图形方案。 对于高级实施，必须建立正确的命名空间优先级顺序，以确保删除适当的链接，从而防止图形折叠。
 
-**实现：**
+## 快速入门
 
-| 使用的命名空间 | Web行为收集方法 |
-| --- | --- |
-| CRMID、ECID | Web SDK |
+在参阅以下文档之前，请确保您熟悉Identity Service和[!DNL Identity Graph Linking Rules]的几个重要概念。
 
-**事件：**
+* [身份标识服务概述](../home.md)
+* [[!DNL Identity Graph Linking Rules] 概述](../identity-graph-linking-rules/namespace-priority.md)
+* [命名空间优先级](namespace-priority.md)
+* [唯一命名空间](overview.md#unique-namespace)
+* [图形模拟](graph-simulation.md)
 
-您可以通过将以下事件复制到文本模式，在图形模拟中创建此方案：
+## 基本实施 {#basic-implementations}
 
-```shell
-CRMID: Tom, ECID: 111
+请阅读本节内容，了解[!DNL Identity Graph Linking Rules]的基本实施。
+
+### 用例：使用一个跨设备命名空间的简单实施
+
+通常，Adobe客户具有单一的跨设备命名空间，该命名空间可用于其所有资产，包括Web、移动设备和应用程序。 由于零售、电信和金融服务业的客户都使用此类实施，因此该系统在行业内和地理上均不可知。
+
+通常，最终用户由跨设备命名空间（通常为CRMID）表示，因此CRMID应被分类为唯一的命名空间。 拥有计算机和[!DNL iPhone]并且不共享其设备的最终用户可以具有如下身份图。
+
+假设您是一家名为&#x200B;**ACME**&#x200B;的电子商务公司的数据架构师。 约翰和珍是你的顾客。 他们是共同生活在加利福尼亚州圣何塞的最终用户。 他们共享一台台式计算机，并使用此计算机浏览您的网站。 同样，John和Jane也共享[!DNL iPad]，并偶尔使用此[!DNL iPad]浏览互联网，包括您的网站。
+
+**文本模式**
+
+```json
+CRMID: John, ECID: 123
+CRMID: John, ECID: 999, IDFA: a-b-c
 ```
 
-**算法配置：**
+**算法配置（身份设置）**
 
-您可以通过为算法配置以下设置，在图形模拟中创建此方案：
+在模拟图形之前，在图形模拟界面中配置以下设置。
 
-| 优先级 | 显示名称 | 身份标识类型 | 每个图唯一 |
-| ---| --- | --- | --- |
-| 1 | CRMID | 跨设备 | 是 |
-| 2 | ECID | COOKIE | 否 |
+| 显示名称 | 身份标识符号 | 身份标识类型 | 每个图唯一 | 命名空间优先级 |
+| --- | --- | --- | --- | --- |
+| CRMID | CRMID | 跨设备 | ✔️ | 1 |
+| ECID | ECID | COOKIE | | 2 |
+| IDFA | IDFA | 设备 | | 3 |
 
-实时客户个人资料的&#x200B;**主身份选择：**
+**模拟图形**
 
-在此配置的上下文中，主标识的定义如下所示：
++++选择以查看模拟图形
 
-| 身份验证状态 | 事件中的命名空间 | 主要身份标识 |
-| --- | --- | --- |
-| Authenticated | CRMID、ECID | CRMID |
-| 未验证 | ECID | ECID |
+在此图表中，John（最终用户）由CRMID表示。 {ECID： 123}表示John在其个人计算机上用于访问电子商务平台的Web浏览器。 {ECID： 999}表示他在[!DNL iPhone]上使用的浏览器，{IDFA: a-b-c}表示他的[!DNL iPhone]。
 
-**图形示例**
+![具有一个跨设备命名空间的简单实施……](../images/configs/basic/simple-implementation.png)
+
++++
+
+### 练习
+
+在图形模拟中模拟以下配置。 您可以创建自己的事件，也可以使用文本模式复制并粘贴。
 
 >[!BEGINTABS]
 
->[!TAB 理想的单人图]
+>[!TAB 共享设备（电脑）]
 
-下面是一个理想的单人图示例，其中CRMID是唯一的，并且被赋予最高优先级。
+**共享设备（电脑）**
 
-![理想单人图的模拟示例，其中CRMID是唯一的，并且被赋予最高优先级。](../images/graph-examples/crmid_only_single.png "理想单人图的模拟示例，其中CRMID是唯一的，并且被赋予最高优先级。"){zoomable="yes"}
+**文本模式：**
 
->[!TAB 多人图表]
-
-以下是多人图的一个示例。 此示例显示了“共享设备”方案，其中存在两个CRMID，并且已删除具有已建立旧链接的一个CRMID。
-
-![多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。](../images/graph-examples/crmid_only_multi.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
-
-**图形模拟事件输入**
-
-```shell
-CRMID: Tom, ECID: 111
-CRMID: Summer, ECID: 111
+```json
+CRMID: John, ECID: 111
+CRMID: Jane, ECID: 111
 ```
+
+**模拟图形**
+
++++选择以查看模拟图形
+
+在此图表中，John和Jane由他们各自的CRMID表示：
+
+* {CRMID: John}
+* {CRMID: Jane}
+
+台式计算机上用于访问电子商务平台的浏览器由{ECID： 111}表示。 在此图形方案中，Jane是最后一个经过身份验证的最终用户，因此删除了{ECID： 111}和{CRMID: John}之间的链接。
+
+![共享设备(PC)的模拟图形。](../images/configs/basic/shared-device-pc.png)
+
++++
+
+>[!TAB 共享设备（移动设备）]
+
+**共享设备（移动设备）**
+
+**文本模式：**
+
+```json
+CRMID: John, ECID: 111, IDFA: a-b-c
+CRMID: Jane, ECID: 111, IDFA: a-b-c
+```
+
+**模拟图形**
+
++++选择以查看模拟图形
+
+在此图表中，John和Jane均由各自的CRMID表示。 他们使用的浏览器由{ECID： 111}表示，他们共享的[!DNL iPad]由{IDFA: a-b-c}表示。 在此图形方案中，Jane是最后一个经过身份验证的最终用户，因此删除从{ECID： 111}和{IDFA: a-b-c}到{CRMID: John}的链接。
+
+![共享设备（移动设备）的模拟图形。](../images/configs/basic/shared-device-mobile.png)
+
++++
 
 >[!ENDTABS]
 
-## 使用哈希电子邮件的CRMID
+## 中间实施 {#intermediate-implementations}
 
-在此方案中，CRMID是摄取的，表示在线（体验事件）和离线（配置文件记录）数据。 此方案还涉及引入哈希电子邮件，该电子邮件表示在CRM记录数据集中与CRMID一起发送的其他命名空间。
+请阅读本节内容，了解[!DNL Identity Graph Linking Rules]的中间实现。
 
->[!IMPORTANT]
+### 用例：您的数据包括非唯一身份
+
+>[!TIP]
 >
->**始终为每个用户发送CRMID这一点至关重要**。 如果不这样做，则可能会导致“悬挂”登录ID情况，在这种情况下，假定单个人员实体与其他人员共享设备。
+>* **非唯一标识**&#x200B;是与非唯一命名空间关联的标识。
+>
+>* 在以下示例中，`CChash`是一个自定义命名空间，它表示经过哈希处理的信用卡号码。
 
-**实现：**
+您是一位数据架构师，为一家发行信用卡的商业银行工作。 您的营销团队已指示他们要将过去的信用卡交易历史记录包含在配置文件中。 此身份图可能如下所示。
 
-| 使用的命名空间 | Web行为收集方法 |
-| --- | --- |
-| CRMID、Email_LC_SHA256、ECID | Web SDK |
+**文本模式：**
 
-**事件：**
-
-您可以通过将以下事件复制到文本模式，在图形模拟中创建此方案：
-
-```shell
-CRMID: Tom, Email_LC_SHA256: tom<span>@acme.com
-CRMID: Tom, ECID: 111
-CRMID: Summer, Email_LC_SHA256: summer<span>@acme.com
-CRMID: Summer, ECID: 222
+```json
+CRMID: John, CChash: 1111-2222 
+CRMID: John, CChash: 3333-4444 
+CRMID: John, ECID: 123 
+CRMID: John, ECID: 999, IDFA: a-b-c
 ```
 
-**算法配置：**
+**算法配置（身份设置）**
 
-您可以通过为算法配置以下设置，在图形模拟中创建此方案：
+在模拟图形之前，在图形模拟界面中配置以下设置。
 
-| 优先级 | 显示名称 | 身份标识类型 | 每个图唯一 |
-| ---| --- | --- | --- |
-| 1 | CRMID | 跨设备 | 是 |
-| 2 | 电子邮件（SHA256，小写） | 电子邮件 | 否 |
-| 3 | ECID | COOKIE | 否 |
+| 显示名称 | 身份标识符号 | 身份标识类型 | 每个图唯一 | 命名空间优先级 |
+| --- | --- | --- | --- | --- |
+| CRMID | CRMID | 跨设备 | ✔️ | 1 |
+| CChash | CChash | 跨设备 | | 2 |
+| ECID | ECID | COOKIE | | 3 |
+| IDFA | IDFA | 设备 | | 4 |
 
-**个人资料的主要身份选择：**
+**模拟图形**
 
-在此配置的上下文中，主标识的定义如下所示：
++++选择以查看模拟图形
 
-| 身份验证状态 | 事件中的命名空间 | 主要身份标识 |
-| --- | --- | --- |
-| Authenticated | CRMID、ECID | CRMID |
-| 未验证 | ECID | ECID |
+![模拟图形的图像](../images/configs/basic/simple-implementation-non-unique.png)
 
-**图形示例**
++++
+
+不保证这些信用卡号或任何其他非唯一命名空间将始终与单个最终用户关联。 两个最终用户可能会注册相同的信用卡，因此可能会错误地摄取非唯一的占位符值。 简而言之，无法保证非唯一命名空间不会导致图形折叠。
+
+要解决此问题，Identity Service将删除最早的链接，并保留最新的链接。 这可确保图形中只有一个CRMID，从而防止图形折叠。
+
+### 练习
+
+在图形模拟中模拟以下配置。 您可以创建自己的事件，也可以使用文本模式复制并粘贴。
 
 >[!BEGINTABS]
 
->[!TAB 理想的单人图]
+>[!TAB 两个使用相同信用卡的最终用户]
 
-下面是一对理想的单人图示例，其中每个CRMID与其各自的哈希电子邮件命名空间和ECID相关联。
+两个不同的最终用户使用相同的信用卡注册您的电子商务网站。 您的营销团队希望通过确保信用卡仅与单个配置文件关联来防止图形折叠。
 
-![在此示例中，将生成两个单独的图形，每个图形表示一个单独的实体。](../images/graph-examples/crmid_hashed_single.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
+**文本模式：**
 
->[!TAB 多人图表：共享设备]
-
-以下是多人图场景的示例，其中设备由两人共享。
-
-![在此示例中，模拟图形显示“共享设备”方案，因为Tom和Summer都与同一ECID相关联。](../images/graph-examples/crmid_hashed_shared_device.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
-
-**图形模拟事件输入**
-
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc
-CRMID: Tom, ECID: 111
-CRMID: Summer, Email_LC_SHA256: ddeeff
-CRMID: Summer, ECID: 222
-CRMID: Summer, ECID: 111
+```json
+CRMID: John, CChash: 1111-2222
+CRMID: Jane, CChash: 1111-2222
+CRMID: John, ECID: 123
+CRMID: Jane, ECID:456
 ```
 
->[!TAB 多人图表：非唯一电子邮件]
+**模拟图形**
 
-以下是多人员图场景的示例，其中电子邮件不唯一并与两个不同的CRMID关联。
++++选择以查看模拟图形
 
-![此方案类似于“共享设备”方案。 但是，这些个人实体并不共享ECID，而是与同一电子邮件帐户相关联。 “多人图表的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。“](../images/graph-examples/crmid_hashed_nonunique_email.png){zoomable="yes"}”
+![两个最终用户使用同一信用卡注册的图表。](../images/configs/intermediate/graph-with-same-credit-card.png)
 
-**图形模拟事件输入**
++++
 
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc
-CRMID: Tom, ECID: 111
-CRMID: Summer, Email_LC_SHA256: ddeeff
-CRMID: Summer, ECID: 222
-CRMID: Summer, Email_LC_SHA256: aabbcc
+>[!TAB 信用卡号码无效]
+
+由于数据未经清理，Experience Platform中引入了无效的信用卡号。
+
+**文本模式：**
+
+```json
+CRMID: John, CChash: undefined
+CRMID: Jane, CChash: undefined
+CRMID: Jack, CChash: undefined
+CRMID: Jill, CChash: undefined
 ```
+
+**模拟图形**
+
++++选择以查看模拟图形
+
+![哈希处理问题导致信用卡无效的图表。](../images/configs/intermediate/graph-with-invalid-credit-card.png)
+
++++
 
 >[!ENDTABS]
 
-## CRMID，带有哈希电子邮件、哈希手机、GAID和IDFA
+### 用例：您的数据包括哈希和非哈希CRMID
 
-此方案与上一个方案类似。 但是，在此方案中，经过哈希处理的电子邮件和电话被标记为标识以便在[[!DNL Segment Match]](../../segmentation/ui/segment-match/overview.md)中使用。
+您正在摄取未哈希（离线）CRMID和哈希（在线）CRMID。 他们希望非散列和散列的CRMID之间有直接的关系。 当最终用户使用经过身份验证的帐户浏览时，经过哈希处理的CRMID与设备ID（在Identity Service上表示为ECID）一起发送。
 
->[!IMPORTANT]
->
->**始终为每个用户发送CRMID这一点至关重要**。 如果不这样做，则可能会导致“悬挂”登录ID情况，在这种情况下，假定单个人员实体与其他人员共享设备。
+**算法配置（身份设置）**
 
-**实现：**
+在模拟图形之前，在图形模拟界面中配置以下设置。
 
-| 使用的命名空间 | Web行为收集方法 |
-| --- | --- |
-| CRMID、Email_LC_SHA256、Phone_SHA256、GAID、IDFA、ECID | Web SDK |
+| 显示名称 | 身份标识符号 | 身份标识类型 | 每个图唯一 | 命名空间优先级 |
+| --- | --- | --- | --- | --- | 
+| CRMID | CRMID | 跨设备 | ✔️ | 1 |
+| CRMIDhash | CRMIDhash | 跨设备 | ✔️ | 2 |
+| ECID | ECID | COOKIE | | 3 |
 
-**事件：**
 
-您可以通过将以下事件复制到文本模式，在图形模拟中创建此方案：
+**练习**
 
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, ECID: 111
-CRMID: Tom, ECID: 222, IDFA: A-A-A
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, ECID: 333
-CRMID: Summer, ECID: 444, GAID:B-B-B
-```
-
-**算法配置：**
-
-您可以通过为算法配置以下设置，在图形模拟中创建此方案：
-
-| 优先级 | 显示名称 | 身份标识类型 | 每个图唯一 |
-| ---| --- | --- | --- |
-| 1 | CRMID | 跨设备 | 是 |
-| 2 | 电子邮件（SHA256，小写） | 电子邮件 | 否 |
-| 3 | 手机 (SHA256) | 电话 | 否 |
-| 4 | Google Ad ID (GAID) | 设备 | 否 |
-| 5 | Apple IDFA(Apple的ID) | 设备 | 否 |
-| 6 | ECID | COOKIE | 否 |
-
-**个人资料的主要身份选择：**
-
-在此配置的上下文中，主标识的定义如下所示：
-
-| 身份验证状态 | 事件中的命名空间 | 主要身份标识 |
-| --- | --- | --- |
-| Authenticated | CRMID、IDFA、ECID | CRMID |
-| Authenticated | CRMID、GAID、ECID | CRMID |
-| Authenticated | CRMID、ECID | CRMID |
-| 未验证 | GAID、ECID | GAID |
-| 未验证 | IDFA、ECID | IDFA |
-| 未验证 | ECID | ECID |
-
-**图形示例**
+在图形模拟中模拟以下配置。 您可以创建自己的事件，也可以使用文本模式复制并粘贴。
 
 >[!BEGINTABS]
 
->[!TAB 理想的单人图]
+>[!TAB 方案1：共享设备]
 
-以下是理想的单人图方案，其中经过哈希处理的电子邮件和经过哈希处理的手机被标记为标识以便在[!DNL Segment Match]中使用。 在此方案中，这些图形将拆分为两个，以表示不同的人员实体。
+John和Jane共用一个装置。
 
-![理想的单人图表方案。](../images/graph-examples/crmid_hashed_single_seg_match.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
+**文本模式：**
 
->[!TAB 多人图表：共享设备，共享计算机]
-
-以下是多人图场景，其中两个人共享一台设备（计算机）。 在此方案中，共享计算机由`{ECID: 111}`表示并链接到`{CRMID: Summer}`，因为该链接是最近建立的链接。 `{CRMID: Tom}`已删除，因为`{CRMID: Tom}`和`{ECID: 111}`之间的链接较旧，并且因为CRMID是此配置中指定的唯一命名空间。
-
-![多人图方案，其中两个用户共享一台计算机。](../images/graph-examples/shared_device_shared_computer.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
-
-**图形模拟事件输入**
-
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, ECID: 111
-CRMID: Tom, ECID: 222, IDFA: A-A-A
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, ECID: 333
-CRMID: Summer, ECID: 444, GAID:B-B-B
-CRMID: Summer, ECID: 111
+```json
+CRMID: John, CRMIDhash: John
+CRMID: Jane, CRMIDhash: Jane
+CRMIDhash: John, ECID: 111 
+CRMIDhash: Jane, ECID: 111
 ```
 
->[!TAB 多人图表：共享设备、android移动设备]
+![占位符](../images/configs/intermediate/shared-device-hashed-crmid.png)
 
-以下是多人图场景，其中一个Android设备由两个人共享。 在此方案中，CRMID配置为唯一的命名空间，因此`{CRMID: Tom, GAID: B-B-B, ECID:444}`的较新链接将取代较旧的`{CRMID: Summer, GAID: B-B-B, ECID:444}`。
+>[!TAB 方案2：数据错误]
 
-![多人图方案，其中两个用户共享一个Android移动设备。](../images/graph-examples/shared_device_android.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
+由于哈希处理过程中出错，生成了一个非唯一的经过哈希处理的CRMID，并将其发送到Identity Service。
 
-**图形模拟事件输入**
+**文本模式：**
 
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, ECID: 111
-CRMID: Tom, ECID: 222, IDFA: A-A-A
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, ECID: 333
-CRMID: Summer, ECID: 444, GAID: B-B-B
-CRMID: Tom, ECID: 444, GAID: B-B-B
+```json
+CRMID: John, CRMIDhash: aaaa
+CRMID: Jane, CRMIDhash: aaaa
 ```
 
->[!TAB 多人图表：共享设备、apple移动设备、无ECID重置]
+![共享设备图形在哈希处理过程中出错，导致出现非唯一的哈希CRMID。](../images/configs/intermediate/hashing-error.png)
 
-以下是多人图场景，两个人共享一个Apple设备。 在此方案中，将共享IDFA，但ECID不会重置。
+>[!ENDTABS]
+<!-- 
+### Use case: You are using Real-Time CDP and Adobe Commerce
 
-![多人图方案，其中两个用户共享一个Apple移动设备。](../images/graph-examples/shared_device_apple_no_reset.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
+You have two types of end-users:
 
-**图形模拟事件输入**
+* **Members**: An end-user who is assigned a CRMID and has an email account registered to your system.
+* **Guests**: An end-user who is not a member. They do not have an assigned CRMID and their email accounts are not registered to your system.
 
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, ECID: 111
-CRMID: Tom, ECID: 222, IDFA: A-A-A
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, ECID: 333
-CRMID: Summer, ECID: 444, GAID: B-B-B
-CRMID: Summer, ECID: 222, IDFA: A-A-A
+In this scenario, your customers are sending data from Adobe Commerce to Real-Time CDP.
+
+**Exercise**
+
+Simulate the following configurations in the graph simulation tool. You can either create your own events, or copy and paste using text mode.
+
+>[!BEGINTABS]
+
+>[!TAB Shared device between two members]
+
+In this scenario, two members share the same device to browse an e-commerce website.
+
+**Text mode**
+
+```json
+CRMID: John, Email: john@g
+CRMID: Jane, Email: jane@g
+CRMID: John, ECID: 111
+CRMID: Jane, ECID: 111
 ```
 
->[!TAB 多人图表：共享设备、apple、ECID重置]
+![A graph that displays two authenticated members who share a device.](../images/configs/intermediate/shared-device-two-members.png)
 
-以下是多人图场景，两个人共享一个Apple设备。 在此方案中，ECID将重置，但IDFA保持不变。
+>[!TAB Shared device between two guests]
 
-![多人图方案，其中两个用户共享一个Apple移动设备，但重置了ECID。](../images/graph-examples/shared_device_apple_with_reset.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
+In this scenario, two guests share the same device to browse an e-commerce website.
 
-**图形模拟事件输入**
+**Text mode**
 
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, ECID: 111
-CRMID: Tom, ECID: 222, IDFA: A-A-A
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, ECID: 333
-CRMID: Summer, ECID: 444, GAID: B-B-B
-CRMID: Summer, ECID: 555, IDFA: A-A-A
+```json
+Email: john@g, ECID: 111
+Email: jane@g, ECID: 111
 ```
 
->[!TAB 多人图表：非唯一电话]
+![A graph that displays two guests who share a device.](../images/configs/intermediate/shared-device-two-guests.png)
 
-以下是多人图场景，两个用户共享相同的电话号码。
+>[!TAB Shared device between a member and a guest]
 
-![电话命名空间不唯一的多人图表方案。](../images/graph-examples/non_unique_phone.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
+In this scenario, a member and a guest share the same device to browse an e-commerce website.
 
-**图形模拟事件输入**
+**Text mode**
 
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, ECID: 111
-CRMID: Tom, ECID: 222, IDFA: A-A-A
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, ECID: 333
-CRMID: Summer, ECID: 444, GAID: B-B-B
-CRMID: Summer, Phone_SHA256: 123-4567
+```json
+CRMID: John, Email: john@g
+CRMID: John, ECID: 111
+Email: jane@g, ECID: 111
 ```
 
-在此示例中，`{Phone_SHA256}`还标记为唯一的命名空间。 因此，图形不能有多个具有`{Phone_SHA256}`命名空间的标识。 在此方案中，`{Phone_SHA256: 765-4321}`从`{CRMID: Summer}`和`{Email_LC_SHA256: ddeeff}`中取消链接，因为它是旧链接，
+![A graph that displays a member and a guest who share a device.](../images/configs/intermediate/shared-device-member-and-guest.png)
 
-![Phone_SHA256唯一的多人图方案。](../images/graph-examples/unique_phone.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
+>[!ENDTABS] -->
 
->[!TAB 多人图表：非唯一电子邮件]
+### 用例：您的数据包括三个唯一的命名空间
 
-以下是多人图方案，其中电子邮件由两个人共享。
+您的客户定义了单一人员实体，如下所示：
 
-![电子邮件不唯一的多人图方案](../images/graph-examples/non_unique_email.png "多人图的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
+* 已分配CRMID的最终用户。
+* 与经过哈希处理的电子邮件地址关联的最终用户，以便可以将配置文件激活到支持经过哈希处理的电子邮件的目标（例如，[!DNL Facebook]）。
+* 与电子邮件地址关联的最终用户，以便支持人员可以使用所述电子邮件地址在Real-Time CDP上查找其个人资料。
 
-**图形模拟事件输入**
+| 显示名称 | 身份标识符号 | 身份标识类型 | 每个图唯一 | 命名空间优先级 |
+| --- | --- | --- | --- | --- |
+| CRMID | CRMID | 跨设备 | ✔️ | 1 |
+| 电子邮件 | 电子邮件 | 电子邮件 | ✔️ | 2 |
+| Email_LC_SHA256 | Email_LC_SHA256 | 电子邮件 | ✔️ | 3 |
+| ECID | ECID | COOKIE | | 4 |
 
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, ECID: 111
-CRMID: Tom, ECID: 222, IDFA: A-A-A
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, ECID: 333
-CRMID: Summer, ECID: 444, GAID: B-B-B
-CRMID: Summer, Email_LC_SHA256: aabbcc
+在图形模拟工具中模拟以下配置。 您可以创建自己的事件，也可以使用文本模式复制并粘贴。
+
+>[!BEGINTABS]
+
+>[!TAB 两个最终用户登录]
+
+在此场景中，John和Jane都登录到电子商务网站。
+
+**文本模式**
+
+```json
+CRMID: John, Email: john@g, Email_LC_SHA256: john_hash 
+CRMID: Jane, Email: jane@g, Email_LC_SHA256: jane_hash 
+CRMID: John, ECID: 111 
+CRMID: Jane, ECID: 111
 ```
+
+![显示使用同一设备登录到您网站的两个最终用户的图表。](../images/configs/intermediate/two-end-users-log-ing.png)
+
+>[!TAB 最终用户更改其电子邮件]
+
+**文本模式**
+
+```json
+CRMID: John, Email: john@g, Email_LC_SHA256: john_hash
+CRMID: John, Email: john@y, Email_LC_SHA256: john_y_hash
+```
+
+![显示已更改其电子邮件的最终用户的图表。](../images/configs/intermediate/end-user-changes-email.png)
 
 >[!ENDTABS]
 
-## 带多个登录ID的单个CRMID（简单版本）
+## 高级实施 {#advanced-implementations}
 
-在此方案中，有一个CRMID表示人员实体。 但是，人员实体可能具有多个登录标识符：
+高级实施涉及复杂的多层图形场景。 这些类型的实现包括使用&#x200B;**命名空间优先级**&#x200B;以标识必须删除的正确链接以防止图形折叠。
 
-* 给定的人员实体可以具有不同的帐户类型（个人与企业、按州列出的帐户、按品牌列出的帐户等）
-* 给定人员实体可以为任意数量的帐户使用不同的电子邮件地址。
+**命名空间优先级**&#x200B;是按命名空间重要性对命名空间进行排名的元数据。 如果图表包含两个身份，每个身份具有不同的唯一命名空间，则Identity Service将使用命名空间优先级来决定要删除的链接。 有关详细信息，请阅读有关命名空间优先级](../identity-graph-linking-rules/namespace-priority.md)的[文档。
 
->[!IMPORTANT]
->
->**始终为每个用户发送CRMID这一点至关重要**。 如果不这样做，则可能会导致“悬挂”登录ID情况，在这种情况下，假定单个人员实体与其他人员共享设备。
+在复杂的图形场景中，命名空间优先级扮演着关键角色。 图形可以具有多个层 — 一个最终用户可以与多个登录ID相关联，并且这些登录ID可以进行哈希处理。 此外，不同的ECID可以链接到不同的登录ID。 为确保删除正确层中的正确链接，您的命名空间优先级配置必须正确。
 
-**实现：**
+有关[!DNL Identity Graph Linking Rules]的高级实施，请阅读此部分。
 
-| 使用的命名空间 | Web行为收集方法 |
-| --- | --- |
-| CRMID、loginID、ECID | Web SDK |
+### 用例：您需要为多个业务线提供支持
 
-**事件：**
+您的最终用户有两个不同的帐户：个人帐户和业务帐户。 每个帐户由不同的ID标识。 在此场景中，典型图形如下所示：
 
-您可以通过将以下事件复制到文本模式，在图形模拟中创建此方案：
+**文本模式***
 
-```shell
-CRMID: Tom, loginID: ID_A
-CRMID: Tom, loginID: ID_B
-loginID: ID_A, ECID: 111
-CRMID: Summer, loginID: ID_C
-CRMID: Summer, loginID: ID_D
-loginID: ID_C, ECID: 222
+```json
+CRMID: John, loginID: JohnPersonal
+CRMID: John, loginID: JohnBusiness
+loginID: JohnPersonal, ECID: 111
+loginID: JohnPersonal, ECID: 222
+loginID: JohnBusiness, ECID: 222
 ```
 
-**算法配置：**
+**算法配置（身份设置）**
 
-您可以通过为算法配置以下设置，在图形模拟中创建此方案：
+在模拟图形之前，在图形模拟界面中配置以下设置。
 
-| 优先级 | 显示名称 | 身份标识类型 | 每个图唯一 |
-| ---| --- | --- | --- |
-| 1 | CRMID | 跨设备 | 是 |
-| 2 | loginID | 跨设备 | 否 |
-| 3 | ECID | COOKIE | 否 |
+| 显示名称 | 身份标识符号 | 身份标识类型 | 每个图唯一 | 命名空间优先级 |
+| --- | --- | --- | --- | --- |
+| CRMID | CRMID | 跨设备 | ✔️ | 1 |
+| loginID | loginID | 跨设备 | | 2 |
+| ECID | ECID | COOKIE | | 3 |
 
-**个人资料的主要身份选择：**
+**模拟图形**
 
-在此配置的上下文中，主标识的定义如下所示：
++++选择以查看模拟图形
 
-| 身份验证状态 | 事件中的命名空间 | 主要身份标识 |
-| --- | --- | --- |
-| Authenticated | 登录ID，ECID | loginID |
-| Authenticated | 登录ID，ECID | loginID |
-| Authenticated | CRMID、loginID、ECID | CRMID |
-| Authenticated | CRMID、ECID | CRMID |
-| 未验证 | ECID | ECID |
+![具有企业和个人电子邮件的最终用户的身份图。](../images/configs/advanced/advanced.png)
 
-**图形示例**
++++
+
+
+**练习**
+
+在图形模拟中模拟以下配置。 您可以创建自己的事件，也可以使用文本模式复制并粘贴。
 
 >[!BEGINTABS]
 
->[!TAB 理想的单人方案]
+>[!TAB 共享设备]
 
-以下是单个CRMID和多个loginID的单人图场景。
+**文本模式**
 
-![包含单个CRMID和多个登录ID的图形方案。](../images/graph-examples/single_crmid.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
-
->[!TAB 多人图表方案：共享设备]
-
-以下是多人图场景，其中设备由两人共享。 在此方案中，`{ECID:111}`同时与`{loginID:ID_A}`和`{loginID:ID_C}`链接，并且旧已建立的`{ECID:111, loginID:ID_A}`链接被删除。
-
-![多人共享设备方案。](../images/graph-examples/single_crmid_shared_device.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
-
-**图形模拟事件输入**
-
-```shell
-CRMID: Tom, loginID: ID_A
-CRMID: Tom, loginID: ID_B
-loginID: ID_A, ECID: 111
-CRMID: Summer, loginID: ID_C
-CRMID: Summer, loginID: ID_D
-loginID: ID_C, ECID: 222
-loginID: ID_C, ECID: 111
+```json
+CRMID: John, loginID: JohnPersonal
+CRMID: John, loginID: JohnBusiness
+CRMID: Jane, loginID: JanePersonal
+CRMID: Jane, loginID: JaneBusiness
+loginID: JohnPersonal, ECID: 111
+loginID: JanePersonal, ECID: 111
 ```
 
->[!TAB 多人图表方案：错误数据]
+![高级共享设备的图形。](../images/configs/advanced/advanced-shared-device.png)
 
-以下是涉及错误数据的多人图场景。 在此方案中，`{loginID:ID_D}`错误地链接到两个完全不同的用户，并且删除了具有旧时间戳的链接，以支持最近建立的链接。
+>[!TAB 向Real-Time CDP发送错误数据]
 
-![包含错误数据的多人图表方案。](../images/graph-examples/single_crmid_bad_data.png "多人图形的模拟示例。 此示例显示了一个共享设备方案，其中存在两个CRMID，并且旧的已建立链接被删除。"){zoomable="yes"}
-
-**图形模拟事件输入**
-
-```shell
-CRMID: Tom, loginID: ID_A
-CRMID: Tom, loginID: ID_B
-loginID: ID_A, ECID: 111
-CRMID: Summer, loginID: ID_C
-CRMID: Summer, loginID: ID_D
-loginID: ID_C, ECID: 222
-CRMID: Tom, loginID: ID_D
+```json
+CRMID: John, loginID: JohnPersonal
+CRMID: John, loginID: error
+CRMID: Jane, loginID: JanePersonal
+CRMID: Jane, loginID: error
+loginID: JohnPersonal, ECID: 111
+loginID: JanePersonal, ECID: 222
 ```
 
->[!TAB &#39;Dangling&#39;登录ID]
-
-下图模拟了“悬挂”的loginID方案。 在此示例中，两个不同的loginID绑定到相同的ECID。 但是，`{loginID:ID_C}`未链接到CRMID。 因此，Identity Service无法检测到这两个loginID代表两个不同的实体。
-
-![挂起的登录ID方案。](../images/graph-examples/dangling_example.png "挂起的登录ID方案。"){zoomable="yes"}
-
-**图形模拟事件输入**
-
-```shell
-CRMID: Tom, loginID: ID_A
-CRMID: Tom, loginID: ID_B
-loginID: ID_A, ECID: 111
-loginID: ID_C, ECID: 111
-```
+![显示向Real-Time CDP发送错误数据的方案的图形。](../images/configs/advanced/advanced-bad-data.png)
 
 >[!ENDTABS]
 
-## 具有多个登录ID的单个CRMID（复杂版本）
+### 用例：您有需要多个命名空间的复杂实施
 
-在此方案中，有一个CRMID表示人员实体。 但是，人员实体可能具有多个登录标识符：
+您是一家媒体和娱乐公司，您的最终用户拥有以下优势：
+* CRMID
+* 忠诚度标识
+此外，您的最终用户还可以在电子商务网站上进行购买，并且此数据会绑定到他们的电子邮件地址。 此外，第三方数据库提供商还会丰富用户数据，并将这些数据批量发送到Experience Platform。
 
-* 给定的人员实体可以具有不同的帐户类型（个人与企业、按州列出的帐户、按品牌列出的帐户等）
-* 给定人员实体可以为任意数量的帐户使用不同的电子邮件地址。
+**文本模式**
 
->[!IMPORTANT]
->
->**始终为每个用户发送CRMID这一点至关重要**。 如果不这样做，则可能会导致“悬挂”登录ID情况，在这种情况下，假定单个人员实体与其他人员共享设备。
-
-**实现：**
-
-| 使用的命名空间 | Web行为收集方法 |
-| --- | --- |
-| CRMID、Email_LC_SHA256、Phone_SHA256、loginID、ECID | Adobe Analytics源连接器。<br> **注意：**&#x200B;默认情况下，Identity Service中会阻止AAID，因此，在使用Analytics源时，您必须将ECID置于比AAID更高的优先级。 有关详细信息，请阅读[实施指南](./implementation-guide.md#ingest-your-data)。</br> |
-
-**事件：**
-
-您可以通过将以下事件复制到文本模式，在图形模拟中创建此方案：
-
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, loginID: ID_A
-CRMID: Tom, loginID: ID_B
-loginID: ID_A, ECID: 111
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, loginID: ID_C
-CRMID: Summer, loginID: ID_D
-loginID: ID_C, ECID: 222
+```json
+CRMID: John, loyaltyID: John, Email: john@g
+Email: john@g, orderID: aaa
+CRMID: John, thirdPartyID: xyz
+CRMID: John, ECID: 111
 ```
 
-**算法配置：**
+**算法配置（身份设置）**
 
-您可以通过为算法配置以下设置，在图形模拟中创建此方案：
+在模拟图形之前，在图形模拟界面中配置以下设置。
 
-| 优先级 | 显示名称 | 身份标识类型 | 每个图唯一 |
-| ---| --- | --- | --- | 
-| 1 | CRMID | 跨设备 | 是 |
-| 2 | Email_LC_SHA256 | 电子邮件 | 否 |
-| 3 | Phone_SHA256 | 电话 | 否 |
-| 4 | loginID | 跨设备 | 否 |
-| 5 | ECID | COOKIE | 否 |
-| 6 | AAID | COOKIE | 否 |
+| 显示名称 | 身份标识符号 | 身份标识类型 | 每个图唯一 | 命名空间优先级 |
+| --- | --- | --- | --- | --- |
+| CRMID | CRMID | 跨设备 | ✔️ | 1 |
+| loyaltyID | loyaltyID | 跨设备 | | 2 |
+| 电子邮件 | 电子邮件 | 电子邮件 | | 3 |
+| thirdpartyID | thirdpartyID | 跨设备 | | 4 |
+| orderID | orderID | 跨设备 | | 5 |
+| ECID | ECID | COOKIE | | 6 |
 
-**个人资料的主要身份选择：**
+**练习**
 
-在此配置的上下文中，主标识的定义如下所示：
-
-| 身份验证状态 | 事件中的命名空间 | 主要身份标识 |
-| --- | --- | --- |
-| Authenticated | 登录ID，ECID | loginID |
-| Authenticated | 登录ID，ECID | loginID |
-| Authenticated | CRMID、loginID、ECID | CRMID |
-| Authenticated | CRMID、ECID | CRMID |
-| 未验证 | ECID | ECID |
-
-**图形示例**
+在图形模拟中模拟以下配置。 您可以创建自己的事件，也可以使用文本模式复制并粘贴。
 
 >[!BEGINTABS]
 
->[!TAB 理想的单人图]
+>[!TAB 共享设备]
 
-以下是两个单人图示例，每个图具有一个CRMID和多个登录ID。
+**文本模式**
 
-![涉及一个CRMID和多个登录ID的单人图表。](../images/graph-examples/complex_single_person.png "涉及一个CRMID和多个登录ID的单人图表。"){zoomable="yes"}
-
->[!TAB 多人图表：共享设备1]
-
-以下是多人共享设备方案，其中`{ECID:111}`同时链接到`{loginID:ID_A}`和`{loginID:ID_C}`。 在这种情况下，已建立的旧链接会被删除，而支持最近建立的链接。
-
-![多人共享设备图方案。](../images/graph-examples/complex_shared_device_one.png "多人共享设备图方案。"){zoomable="yes"}
-
-**图形模拟事件输入**
-
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, loginID: ID_A
-CRMID: Tom, loginID: ID_B
-loginID: ID_A, ECID: 111
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, loginID: ID_C
-CRMID: Summer, loginID: ID_D
-loginID: ID_C, ECID: 222
-loginID: ID_C, ECID: 111
+```json
+CRMID: John, loyaltyID: John, Email: john@g
+CRMID: Jane, loyaltyID: Jane, Email: jane@g
+Email: john@g, orderID: aaa 
+CRMID: John, thirdPartyID: xyz 
+CRMID: John, ECID: 111
+CRMID: Jane, ECID: 111
 ```
 
->[!TAB 多人图表：共享设备2]
+![共享设备的复杂图形示例。](../images/configs/advanced/complex-shared-device.png)
 
-在这种情况下，loginID和CRMID将作为体验事件发送，而不是只发送loginID。
+>[!TAB 最终用户更改其电子邮件地址]
 
-![多人共享设备图方案，其中登录ID和CRMID均作为体验事件发送。](../images/graph-examples/complex_shared_device_two.png "将登录ID和CRMID作为体验事件发送的多人共享设备图方案。"){zoomable="yes"}
+**文本模式**
 
-**图形模拟事件输入**
-
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, loginID: ID_A
-CRMID: Tom, loginID: ID_B
-loginID: ID_A, ECID: 111
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, loginID: ID_C
-CRMID: Summer, loginID: ID_D
-loginID: ID_C, ECID: 222
-CRMID: Summer, loginID: ID_C, ECID: 111
-loginID: ID_A, ECID: 111
+```json
+CRMID: John, loyaltyID: John, Email: john@g
+CRMID: John, loyaltyID: John, Email: john@y
 ```
 
->[!TAB 多人图表：错误的loginID数据]
+![在电子邮件更改后显示身份行为的图形。](../images/configs/advanced/complex-email-change.png)
 
-在此方案中，`{loginID:ID_C}`同时链接到`{CRMID:Tom}`和`{CRMID:Summer}`，因此被视为错误数据，因为理想的图形方案不应将相同的登录ID链接到两个不同的用户。 在这种情况下，将删除旧已建立的链接，而改用最近建立的链接。
+>[!TAB thirdPartyID关联更改]
 
-![涉及错误登录数据的多人图表方案。](../images/graph-examples/complex_bad_data.png "涉及错误登录数据的多人图表方案。"){zoomable="yes"}
+**文本模式**
 
-**图形模拟事件输入**
-
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, loginID: ID_A
-CRMID: Tom, loginID: ID_B
-loginID: ID_A, ECID: 111
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, loginID: ID_C
-CRMID: Summer, loginID: ID_D
-loginID: ID_C, ECID: 222
-CRMID: Tom, loginID: ID_C
+```json
+CRMID: John, loyaltyID: John, Email: john@g
+CRMID: Jane, loyaltyID: Jane, Email: jane@g
+CRMID: John, thirdPartyID: xyz
+CRMID: Jane, thirdPartyID: xyz
 ```
 
->[!TAB 多人图表：非唯一电子邮件]
+![在第三方ID关联发生更改时显示身份行为的图形。](../images/configs/advanced/complex-third-party-change.png)
 
-在此方案中，非唯一电子邮件与两个不同的CRMID链接，因此，已建立的旧链接会被删除，而采用的是最近建立的链接。
+>[!TAB 非唯一的orderID]
 
-![涉及非唯一电子邮件的多人图表方案。](../images/graph-examples/complex_non_unique_email.png "涉及非唯一电子邮件的多人图表方案。"){zoomable="yes"}
+**文本模式**
 
-**图形模拟事件输入**
-
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, loginID: ID_A
-CRMID: Tom, loginID: ID_B
-loginID: ID_A, ECID: 111
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, loginID: ID_C
-CRMID: Summer, loginID: ID_D
-loginID: ID_C, ECID: 222
-CRMID: Summer, Email_LC_SHA256: aabbcc
+```json
+CRMID: John, loyaltyID: John, Email: john@g
+CRMID: Jane, loyaltyID: Jane, Email: jane@g
+Email: john@g, orderID: aaa
+Email: jane@g, orderID: aaa
 ```
 
->[!TAB 多人图表：非唯一电话]
+![显示给定非唯一订单ID的标识行为的图形。](../images/configs/advanced/complex-non-unique.png)
 
-在此情景中，非唯一电话号码与两个不同的CRMID关联，旧的已建立链接会被删除，而采用的是最近建立的链接。
+>[!TAB 错误的忠诚度ID]
 
-![涉及非唯一电话号码的多人图表方案。](../images/graph-examples/complex_non_unique_phone.png "涉及非唯一电话号码的多人图表方案。"){zoomable="yes"}
+**文本模式**
 
-**图形模拟事件输入**
-
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, loginID: ID_A
-CRMID: Tom, loginID: ID_B
-loginID: ID_A, ECID: 111
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, loginID: ID_C
-CRMID: Summer, loginID: ID_D
-loginID: ID_C, ECID: 222
-CRMID: Tom, Phone_SHA256: 111-1111
-CRMID: Summer, Phone_SHA256: 111-1111
+```json
+CRMID: John, loyaltyID: aaa, Email: john@g
+CRMID: Jane, loyaltyID: aaa, Email: jane@g
 ```
 
->[!ENDTABS]
-
-## 在其他Adobe Commerce中的使用情况
-
-此部分中的图形配置示例概述了Adobe Commerce的用例。 以下示例侧重于具有两种用户类型的零售客户：
-
-* 已注册的用户（创建帐户的用户）
-* 访客用户（仅具有电子邮件地址的用户）
-
->[!IMPORTANT]
->
->**始终为每个用户发送CRMID这一点至关重要**。 如果不这样做，则可能会导致“悬挂”登录ID情况，在这种情况下，假定单个人员实体与其他人员共享设备。
-
-**实现：**
-
-| 使用的命名空间 | Web行为收集方法 |
-| --- | --- |
-| CRMID、电子邮件、ECID | Web SDK |
-
-**事件：**
-
-您可以通过将以下事件复制到文本模式，在图形模拟中创建此方案：
-
-```shell
-CRMID: Tom, Email: tom@acme.com
-CRMID: Tom, ECID: 111
-```
-
-**算法配置：**
-
-您可以通过为算法配置以下设置，在图形模拟中创建此方案：
-
-| 优先级 | 显示名称 | 身份标识类型 | 每个图唯一 |
-| ---| --- | --- | --- | 
-| 1 | CRMID | 跨设备 | 是 |
-| 2 | 电子邮件 | 电子邮件 | 是 |
-| 5 | ECID | COOKIE | 否 |
-
-**个人资料的主要身份选择：**
-
-在此配置的上下文中，主标识的定义如下所示：
-
-| 用户活动 | 事件中的命名空间 | 主要身份标识 |
-| --- | --- | --- |
-| 经过身份验证的浏览 | CRMID、ECID | CRMID |
-| 来宾结帐 | 电子邮件、ECID | 电子邮件 |
-| 未经身份验证的浏览 | ECID | ECID |
-
->[!WARNING]
->
->注册用户在其用户档案中必须同时具有CRMID和电子邮件，以下图形方案才能正常工作。
-
-**图形示例**
-
->[!BEGINTABS]
-
->[!TAB 理想的单人图]
-
-下面是一个理想的单人图示例。
-
-![一个电子邮件命名空间理想的单一人员图示例。](../images/graph-examples/single_person_email.png "具有一个电子邮件命名空间的理想单人图示例。"){zoomable="yes"}
-
->[!TAB 多人图表]
-
-以下是多人图的一个示例，在该示例中，两个注册用户使用同一设备浏览。
-
-![多人图方案，其中两个注册用户使用同一设备浏览。](../images/graph-examples/two_registered_users.png "多人图方案，其中两个注册用户使用同一设备浏览。"){zoomable="yes"}
-
-**图形模拟事件输入**
-
-```shell
-CRMID: Tom, Email: tom@acme.com
-CRMID: Summer, Email: summer@acme.com
-CRMID: Tom, ECID: 111
-CRMID: Summer, ECID: 111
-```
-
-在此方案中，注册用户和访客用户共享同一设备。
-
-![注册用户和访客共享同一设备的多人图示例。](../images/graph-examples/one_guest.png "注册用户和访客共享同一设备的多人图示例。"){zoomable="yes"}
-
-**图形模拟事件输入**
-
-```shell
-CRMID: Tom, Email: tom@acme.com
-CRMID: Tom, ECID: 111
-Email: summer@acme.com, ECID: 111
-```
-
-在此方案中，注册用户和访客用户共享设备。 但是，由于CRMID不包含相应的电子邮件命名空间，因此发生实施错误。 在此方案中，Tom是注册用户，Summer是访客用户。 与上一个方案不同，这两个实体是合并的，因为这两个人员实体中没有共同的电子邮件命名空间。
-
-![一个多人图示例，其中注册用户和访客共享同一设备，但是，由于CRMID不包含电子邮件命名空间，因此发生实施错误。](../images/graph-examples/no_email_namespace_in_crmid.png "一个多人图示例，其中注册用户和访客共享同一设备，但是，由于CRMID不包含电子邮件命名空间，因此发生实施错误。"){zoomable="yes"}
-
-**图形模拟事件输入**
-
-```shell
-CRMID: Tom, ECID: 111
-Email: summer@acme.com, ECID: 111
-```
-
-在此方案中，两个访客用户共享同一设备。
-
-![多人图方案，其中两个访客用户共享同一设备。](../images/graph-examples/two_guests.png){zoomable="yes"}
-
-**图形模拟事件输入**
-
-```shell
-Email: tom@acme.com, ECID: 111
-Email: summer@acme.com, ECID: 111
-```
-
-在此方案中，访客用户签出某个项目，然后使用同一设备注册。
-
-![一种图形方案，其中访客用户购买和购买商品，然后注册帐户。](../images/graph-examples/guest_purchase.png "一种图形方案，其中访客用户购买和购买商品，然后注册帐户。"){zoomable="yes"}
-
-**图形模拟事件输入**
-
-```shell
-Email: tom@acme.com, ECID: 111
-Email: tom@acme.com, CRMID: Tom
-CRMID: Tom, ECID: 111
-```
+![显示给定错误忠诚度ID的标识行为的图形。](../images/configs/advanced/complex-error.png)
 
 >[!ENDTABS]
 
@@ -763,7 +572,7 @@ CRMID: Tom, ECID: 111
 有关[!DNL Identity Graph Linking Rules]的详细信息，请阅读以下文档：
 
 * [[!DNL Identity Graph Linking Rules] 概述](./overview.md)
-* [身份优化算法](./identity-optimization-algorithm.md)
+* [身份标识优化算法](./identity-optimization-algorithm.md)
 * [实施指南](./implementation-guide.md)
 * [疑难解答和常见问题](./troubleshooting.md)
 * [命名空间优先级](./namespace-priority.md)

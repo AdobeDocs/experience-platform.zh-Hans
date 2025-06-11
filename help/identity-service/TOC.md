@@ -5,10 +5,10 @@ breadcrumb-title: Experience Platform Identity Service 指南
 user-guide-description: 跨设备和系统连接客户身份标识，以提供个性化的数字体验。
 feature: Identities
 role: Admin,Developer
-source-git-commit: 28eab3488dccdcc6239b9499e875c31ff132fd48
+source-git-commit: 6690854048324567f9a8a1f000bd10f45d7c8340
 workflow-type: tm+mt
-source-wordcount: '145'
-ht-degree: 33%
+source-wordcount: '144'
+ht-degree: 36%
 
 ---
 
@@ -24,9 +24,9 @@ ht-degree: 33%
    - [Identity Service中的删除](./features/deletion.md)
    - 身份图链接规则 {#identity-graph-linking-rules}
       - [功能概述](./identity-graph-linking-rules/overview.md)
-      - [身份优化算法](./identity-graph-linking-rules/identity-optimization-algorithm.md)
+      - [身份标识优化算法](./identity-graph-linking-rules/identity-optimization-algorithm.md)
       - [身份图链接规则的实施指南](./identity-graph-linking-rules/implementation-guide.md)
-      - [示例图形配置](./identity-graph-linking-rules/example-configurations.md)
+      - [配置指南](./identity-graph-linking-rules/example-configurations.md)
       - [身份图形链接规则疑难解答](./identity-graph-linking-rules/troubleshooting.md)
       - [命名空间优先级](./identity-graph-linking-rules/namespace-priority.md)
       - [图形模拟UI](./identity-graph-linking-rules/graph-simulation.md)
