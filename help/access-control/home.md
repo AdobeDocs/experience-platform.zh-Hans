@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 访问控制概述
 description: Adobe Experience Platform的访问控制是通过Adobe Admin Console提供的。 此功能利用Admin Console中的产品配置文件，它将用户与权限和沙盒关联起来。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 6a466770495b226f890ab67b21c5cb027fd46e02
 workflow-type: tm+mt
-source-wordcount: '3818'
+source-wordcount: '3851'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Adobe Experience Platform的访问控制是通过[Adobe Experience Cloud](https:
 
 ## 访问控制层级和工作流
 
-要配置Experience Platform的访问控制，您必须对拥有Experience Platform产品的组织具有系统或产品管理员权限。 可以授予或撤销权限的最低角色是产品管理员。 可以管理权限的其他管理员角色是系统管理员（无限制）。 有关详细信息，请参阅有关[管理角色](https://helpx.adobe.com/cn/enterprise/using/admin-roles.html)的Adobe帮助中心文章。
+要配置Experience Platform的访问控制，您必须对拥有Experience Platform产品的组织具有系统或产品管理员权限。 可以授予或撤销权限的最低角色是产品管理员。 可以管理权限的其他管理员角色是系统管理员（无限制）。 有关详细信息，请参阅有关[管理角色](https://helpx.adobe.com/enterprise/using/admin-roles.html)的Adobe帮助中心文章。
 
 >[!NOTE]
 >
@@ -131,7 +131,7 @@ Experience Platform附带两个预配置的默认角色。 下表概述了每个
 | [!DNL Adobe Mix Modeler] | [!UICONTROL 查看Adobe Mix Modeler模型配置] | 对模型配置的只读访问权限。 |
 | [!DNL Adobe Mix Modeler] | [!UICONTROL 管理Adobe Mix Modeler模型计划配置] | 查看和修改计划配置的功能。 |
 | [!DNL Adobe Mix Modeler] | [!UICONTROL 查看Adobe Mix Modeler模型计划配置] | 对计划配置的只读访问权限。 |
-| [!DNL AI Assistant] | [!UICONTROL 启用AI助手] | 能够询问[[!DNL [AI assistant]]](../ai-assistant/access.md)问题。 |
+| [!DNL AI Assistant] | [!UICONTROL 启用AI助手] | 能够询问[!DNL [AI assistant]](../ai-assistant/access.md)问题。 |
 | [!DNL AI Assistant] | [!UICONTROL 查看运营分析] | 访问以获取对[操作分析](../ai-assistant/home.md##operational-insights)查询的响应。 |
 | [!DNL AI Assistant] | [!UICONTROL 生成内容] | 允许用户使用[!DNL AI Assistant]生成内容。 |
 | [!DNL AI Assistant] | [!UICONTROL 管理品牌套件] | 允许用户使用[!DNL AI Assistant]创建品牌指南。 |
@@ -193,10 +193,11 @@ Experience Platform附带两个预配置的默认角色。 下表概述了每个
 | [!DNL Customer Managed Keys] | [!UICONTROL 管理客户管理的密钥] | 查看和配置客户管理的密钥的访问权限。 |
 | [!DNL Dashboards] | [!UICONTROL 查看许可证使用情况仪表板] | 查看许可证使用情况仪表板的只读访问权限。 |
 | [!DNL Dashboards] | [!UICONTROL 管理标准仪表板] | 添加数据仓库中尚未存在的自定义属性。 |
-| [!DNL Dashboards] | [!UICONTROL 查看标准仪表板] | 查看许可证使用情况仪表板的只读访问权限。 |
+| [!DNL Dashboards] | [!UICONTROL 查看标准仪表板] | 对“配置文件”、“目标”和“区段”功能板的只读访问权限。 还支持在左侧导航和“功能板清单和集成”选项卡中访问功能板。 |
 | [!DNL Dashboards] | [!UICONTROL 管理自定义仪表板] | 创建或编辑功能板的权限。 |
 | [!DNL Dashboards] | [!UICONTROL 查看自定义仪表板] | 对用户定义仪表板的只读访问权限。 |
 | [!DNL Dashboards] | [!UICONTROL 管理报告计划] | 能够创建时间表。 |
+| [!DNL Dashboards] | [!UICONTROL 导出仪表板数据] | 控制用户从查询专业模式仪表板导出表格数据的能力。 |
 | [!DNL Data Collection] | [!UICONTROL 管理数据流] | 访问读取、创建和编辑数据流。 |
 | [!DNL Data Collection] | [!UICONTROL 查看数据流] | 对数据流的只读访问权限。 |
 | [!DNL Data Governance] | [!UICONTROL 管理使用标签] | 有权读取、创建和删除使用标签。 |
