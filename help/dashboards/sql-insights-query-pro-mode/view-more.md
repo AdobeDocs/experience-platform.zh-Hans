@@ -31,7 +31,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->仅可视化图表导出不需要[!UICONTROL 导出仪表板数据]权限。 例如，以PDF格式](./export-pdf.md)从[自定义仪表板分析导出已处理数据，或从[Platform UI仪表板分析](../download.md)导出已处理数据。
+>仅可视化图表导出不需要[!UICONTROL 导出仪表板数据]权限。 例如，以PDF格式[&#128279;](./export-pdf.md)从自定义仪表板分析导出已处理数据，或从[Platform UI仪表板分析](../download.md)导出已处理数据。
 
 ### 下载 CSV {#download-csv}
 
