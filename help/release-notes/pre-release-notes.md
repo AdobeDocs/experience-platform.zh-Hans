@@ -3,10 +3,10 @@ title: Experience Platform预发行说明
 description: Adobe Experience Platform最新发行说明预览。
 hide: true
 hidefromtoc: true
-source-git-commit: c34c41d384fbc4f309dffa8bba97a0f6f3468efc
+source-git-commit: c716bac1db556fe7a47462e38ee64d7b46bbefcc
 workflow-type: tm+mt
-source-wordcount: '1480'
-ht-degree: 41%
+source-wordcount: '1299'
+ht-degree: 44%
 
 ---
 
@@ -23,8 +23,8 @@ ht-degree: 41%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/releases/latest)
->- [联合受众构成](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [联合受众构成](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/zh-hans/docs/real-time-cdp-collaboration/using/latest)
 
 **发行日期： 2025年6月18日**
@@ -38,7 +38,6 @@ Adobe Experience Platform中的新增功能及对现有功能的更新：
 - [目标](#destinations)
 - [联合受众构成](#fac)
 - [Privacy Service](#privacy-service)
-- [查询服务](#query-service)
 - [沙盒](#sandboxes)
 - [源](#sources)
 
@@ -120,7 +119,7 @@ Adobe Experience Platform 数据治理是一系列策略和技术，用于管理
 
 | 新功能 | 描述 |
 | ----------- | ----------- |
-| HIPAA 准备就绪 | 联合受众组合现在符合HIPAA要求。 有关联合受众组合隐私和安全措施的更多信息，请阅读联合受众组合概述中的[隐私和安全性](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/start/privacy-security)。 有关一般Experience Platform产品的HIPAA合规性的更多信息，请阅读[HIPAA和Adobe产品和服务概述](https://www.adobe.com/trust/compliance/hipaa-ready.html)。 |
+| HIPAA 准备就绪 | 联合受众组合现在符合HIPAA要求。 有关联合受众组合隐私和安全措施的更多信息，请阅读联合受众组合概述中的[隐私和安全性](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/start/privacy-security)。 有关一般Experience Platform产品的HIPAA合规性的更多信息，请阅读[HIPAA和Adobe产品和服务概述](https://www.adobe.com/trust/compliance/hipaa-ready.html)。 |
 
 如需了解更多信息，请阅读[联合受众构成文档](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/home)。
 
@@ -132,30 +131,9 @@ Adobe Experience Platform 数据治理是一系列策略和技术，用于管理
 
 | 功能 | 描述 |
 |--- | ---|
-| 对田纳西州和明尼苏达州隐私法的支持 | Privacy Service现在支持《田纳西州信息保护法案》(`tipa_tn_usa`)和《明尼苏达州消费者数据隐私法案》(`mcdpa_mn_usa`)。 您可以按照这些新的州级法规处理访问和删除请求。 有关详细信息，请参阅[法规概述](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/privacy/regulations/overview)。 |
+| 对田纳西州和明尼苏达州隐私法的支持 | Privacy Service现在支持《田纳西州信息保护法案》(`tipa_tn_usa`)和《明尼苏达州消费者数据隐私法案》(`mcdpa_mn_usa`)。 您可以按照这些新的州级法规处理访问和删除请求。 有关详细信息，请参阅[法规概述](https://experienceleague.adobe.com/en/docs/experience-platform/privacy/regulations/overview)。 |
 
 有关该服务的更多信息，请参阅 [Privacy Service 概述](../privacy-service/home.md) 。
-
-## 查询服务 {#query-service}
-
-使用查询服务，通过标准 SQL 在 Adobe Experience Platform 数据湖中查询数据。无缝地组合数据集并从查询结果中生成新数据集以支持报告、启用数据科学工作流程或促进将数据摄取到实时客户个人资料中。
-
-**新增功能**
-
-| 功能 | 描述 |
-| --- | --- |
-| 高级统计函数 | **Theta草绘交集**：用于计算集交集的新函数，使用Theta草绘进行近似非重复计数和集操作。 **KLL直方图**：使用KLL（最小Kth、最大L、大项）草图进行分位数估计和分布分析的增强直方图功能。 这些函数均适用于Data Distiller客户。 |
-| SQL模板库 | 现在提供了用于常见用例的完整SQL模板库。 此功能通过提供用于频繁分析模式的最佳实践模板来加快查询开发，从而帮助Data Distiller客户更有效地实施复杂的分析。 |
-
-**更新的功能**
-
-| 功能 | 描述 |
-| --- | --- |
-| RFM建模示例 | 为数据Distiller客户添加了全面的回访间隔、频度、货币(RFM)建模示例。 这包括使用RFM技术进行客户细分和价值分析的详细文档和实施指南。 |
-
-{style="table-layout:auto"}
-
-有关 [!DNL Query Service] 的详细信息，请查看 [[!DNL Query Service] 概述](../query-service/home.md)。
 
 ## 沙盒 {#sandboxes}
 
