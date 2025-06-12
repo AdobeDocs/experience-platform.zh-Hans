@@ -2,9 +2,9 @@
 title: 使用Salesforce用户界面连接您的Experience Platform帐户
 description: 了解如何使用用户界面连接您的Salesforce帐户并将CRM数据引入Experience Platform。
 exl-id: b67fa4c4-d8ff-4d2d-aa76-5d9d32aa22d6
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: eab6303a3b420d4622185316922d242a4ce8a12d
 workflow-type: tm+mt
-source-wordcount: '936'
+source-wordcount: '972'
 ht-degree: 2%
 
 ---
@@ -25,6 +25,10 @@ ht-degree: 2%
 如果您已经拥有经过身份验证的[!DNL Salesforce]帐户，则可以跳过本文档的其余部分，并转到有关[为CRM数据配置数据流](../../dataflow/crm.md)的教程。
 
 ### 收集所需的凭据 {#gather-required-credentials}
+
+>[!WARNING]
+>
+>[!DNL Salesforce]源的基本身份验证将于2026年1月被弃用。 您必须移至OAuth 2客户端凭据身份验证，才能继续使用该源并将数据从[!DNL Salesforce]帐户摄取到Experience Platform。
 
 [!DNL Salesforce]源支持基本身份验证和OAuth2客户端凭据。
 
@@ -55,7 +59,7 @@ ht-degree: 2%
 | 客户端密码 | 客户端密钥与客户端ID结合使用，作为OAuth2身份验证的一部分。 客户端ID和客户端密钥共同使您的应用程序能够代表您的帐户运行，方法是向[!DNL Salesforce]标识您的应用程序。 |
 | API版本 | 您正在使用的[!DNL Salesforce]实例的REST API版本。 API版本的值必须使用小数格式设置。 例如，如果您使用的是API版本`52`，则必须以`52.0`的形式输入值。 如果此字段留空，则Experience Platform将自动使用最新可用版本。 |
 
-有关为[!DNL Salesforce]使用OAuth的更多信息，请阅读有关OAuth授权流程[&#128279;](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&amp;type=5)的[!DNL Salesforce] 指南。
+有关为[!DNL Salesforce]使用OAuth的更多信息，请阅读有关OAuth授权流程](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&type=5)的[[!DNL Salesforce] 指南。
 
 >[!ENDTABS]
 

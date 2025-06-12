@@ -3,9 +3,9 @@ title: 使用流服务API将Snowflake连接到Experience Platform
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Snowflake。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 0ef34d30-7b4c-43f5-8e2e-cde05da05aa5
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: d8d9303e358c66c4cd891d6bf59a801c09a95f8e
 workflow-type: tm+mt
-source-wordcount: '1194'
+source-wordcount: '1251'
 ht-degree: 3%
 
 ---
@@ -36,6 +36,10 @@ ht-degree: 3%
 有关如何将[!DNL Snowflake]源连接到Azure上的Experience Platform的信息，请阅读以下步骤。
 
 ### 收集所需的凭据
+
+>[!WARNING]
+>
+>[!DNL Snowflake]源的基本身份验证（或帐户密钥身份验证）将于2025年11月被弃用。 您必须迁移到基于密钥对的身份验证，才能继续使用源并从数据库中摄取数据到Experience Platform。 有关弃用的详细信息，请阅读关于降低凭据泄露风险的[[!DNL Snowflake] 最佳实践指南](https://www.snowflake.com/en/resources/white-paper/best-practices-to-mitigate-the-risk-of-credential-compromise/)。
 
 必须提供以下凭据属性的值才能对您的[!DNL Snowflake]源进行身份验证。
 

@@ -4,9 +4,9 @@ type: Tutorial
 description: 了解如何使用Snowflake UI创建Adobe Experience Platform源连接。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: fb2038b9-7f27-4818-b5de-cc8072122127
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: d8d9303e358c66c4cd891d6bf59a801c09a95f8e
 workflow-type: tm+mt
-source-wordcount: '1153'
+source-wordcount: '1210'
 ht-degree: 3%
 
 ---
@@ -20,6 +20,10 @@ ht-degree: 3%
 阅读本指南，了解如何使用用户界面将您的[!DNL Snowflake]帐户连接到Adobe Experience Platform。
 
 ## 快速入门
+
+>[!WARNING]
+>
+>[!DNL Snowflake]源的基本身份验证（或帐户密钥身份验证）将于2025年11月被弃用。 您必须迁移到基于密钥对的身份验证，才能继续使用源并从数据库中摄取数据到Experience Platform。 有关弃用的详细信息，请阅读关于降低凭据泄露风险的[[!DNL Snowflake] 最佳实践指南](https://www.snowflake.com/en/resources/white-paper/best-practices-to-mitigate-the-risk-of-credential-compromise/)。
 
 本教程需要对以下Experience Platform组件有一定的了解：
 

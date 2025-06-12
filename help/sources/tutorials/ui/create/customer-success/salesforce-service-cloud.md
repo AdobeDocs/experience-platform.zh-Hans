@@ -2,10 +2,10 @@
 title: 使用Salesforce用户界面连接您的Experience Platform服务云帐户
 description: 了解如何使用用户界面连接您的Salesforce Service Cloud帐户并将客户成功数据引入Experience Platform。
 exl-id: 38480a29-7852-46c6-bcea-5dc6bffdbd15
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: eab6303a3b420d4622185316922d242a4ce8a12d
 workflow-type: tm+mt
-source-wordcount: '844'
-ht-degree: 3%
+source-wordcount: '880'
+ht-degree: 2%
 
 ---
 
@@ -25,6 +25,10 @@ ht-degree: 3%
 如果您已经拥有有效的[!DNL Salesforce Service Cloud]连接，则可以跳过本文档的其余部分，并转到有关[配置数据流以实现客户成功](../../dataflow/customer-success.md)的教程
 
 ### 收集所需的凭据
+
+>[!WARNING]
+>
+>[!DNL Salesforce Service Cloud]源的基本身份验证将于2026年1月被弃用。 您必须移至OAuth 2客户端凭据身份验证，才能继续使用该源并将数据从[!DNL Salesforce Service Cloud]帐户摄取到Experience Platform。
 
 [!DNL Salesforce Service Cloud]源支持基本身份验证和OAuth2客户端凭据。
 
@@ -55,7 +59,7 @@ ht-degree: 3%
 | 客户端密码 | 客户端密钥与客户端ID结合使用，作为OAuth2身份验证的一部分。 客户端ID和客户端密钥共同使您的应用程序能够代表您的帐户运行，方法是向[!DNL Salesforce Service Cloud]标识您的应用程序。 |
 | API版本 | 您正在使用的[!DNL Salesforce Service Cloud]实例的REST API版本。 API版本的值必须使用小数格式设置。 例如，如果您使用的是API版本`52`，则必须以`52.0`的形式输入值。 如果此字段留空，Experience Platform将自动使用最新可用版本。 |
 
-有关为[!DNL Salesforce Service Cloud]使用OAuth的更多信息，请阅读有关OAuth授权流程[&#128279;](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&amp;type=5)的[!DNL Salesforce Service Cloud] 指南。
+有关为[!DNL Salesforce Service Cloud]使用OAuth的更多信息，请阅读有关OAuth授权流程](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&type=5)的[[!DNL Salesforce Service Cloud] 指南。
 
 >[!ENDTABS]
 

@@ -2,9 +2,9 @@
 title: 使用流服务API创建Salesforce Service Cloud Source连接
 description: 了解如何使用Flow Service API将Adobe Experience Platform连接到Salesforce Service Cloud。
 exl-id: ed133bca-8e88-4c85-ae52-c3269b6bf3c9
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: eab6303a3b420d4622185316922d242a4ce8a12d
 workflow-type: tm+mt
-source-wordcount: '782'
+source-wordcount: '818'
 ht-degree: 3%
 
 ---
@@ -25,6 +25,10 @@ ht-degree: 3%
 以下部分提供使用[!DNL Flow Service] API成功连接到[!DNL Salesforce Service Cloud]所需了解的其他信息。
 
 ### 收集所需的凭据
+
+>[!WARNING]
+>
+>[!DNL Salesforce Service Cloud]源的基本身份验证将于2026年1月被弃用。 您必须移至OAuth 2客户端凭据身份验证，才能继续使用该源并将数据从[!DNL Salesforce Service Cloud]帐户摄取到Experience Platform。
 
 [!DNL Salesforce Service Cloud]源支持基本身份验证和OAuth2客户端凭据。
 
@@ -57,7 +61,7 @@ ht-degree: 3%
 | `apiVersion` | 您正在使用的[!DNL Salesforce Service Cloud]实例的REST API版本。 API版本的值必须使用小数格式设置。 例如，如果您使用的是API版本`52`，则必须以`52.0`的形式输入值。 如果此字段留空，Experience Platform将自动使用最新可用版本。 此值对于OAuth2客户端凭据身份验证是必需的。 |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL Salesforce Service Cloud]的连接规范ID为： `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`。 |
 
-有关为[!DNL Salesforce Service Cloud]使用OAuth的更多信息，请阅读有关OAuth授权流程[&#128279;](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&amp;type=5)的[!DNL Salesforce Service Cloud] 指南。
+有关为[!DNL Salesforce Service Cloud]使用OAuth的更多信息，请阅读有关OAuth授权流程](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&type=5)的[[!DNL Salesforce Service Cloud] 指南。
 
 >[!ENDTABS]
 
