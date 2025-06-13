@@ -4,9 +4,9 @@ description: 了解您可以使用身份图链接规则配置的各种实施类�
 hide: true
 hidefromtoc: true
 exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
-source-git-commit: b65a5e8e9727da47729191e56c1a32838ec2c6c4
+source-git-commit: f793dbda0520366b3ee69b3aa0f912b005957561
 workflow-type: tm+mt
-source-wordcount: '1934'
+source-wordcount: '1999'
 ht-degree: 7%
 
 ---
@@ -43,6 +43,10 @@ ht-degree: 7%
 
 ## 基本实施 {#basic-implementations}
 
+>[!TIP]
+>
+>您必须为“CRMID”创建自定义的跨设备命名空间，以完成下面的基本实施练习。
+
 请阅读本节内容，了解[!DNL Identity Graph Linking Rules]的基本实施。
 
 ### 用例：使用一个跨设备命名空间的简单实施
@@ -72,15 +76,11 @@ CRMID: John, ECID: 999, IDFA: a-b-c
 
 **模拟图形**
 
-+++选择以查看模拟图形
-
-在此图表中，John（最终用户）由CRMID表示。 {ECID： 123}表示John在其个人计算机上用于访问电子商务平台的Web浏览器。 {ECID： 999}表示他在[!DNL iPhone]上使用的浏览器，{IDFA: a-b-c}表示他的[!DNL iPhone]。
+在此图表中，John（最终用户）由CRMID表示。 `{ECID: 123}`表示John在其个人计算机上用于访问电子商务平台的Web浏览器。 `{ECID: 999}`表示他在[!DNL iPhone]上使用的浏览器，`{IDFA: a-b-c}`表示他的[!DNL iPhone]。
 
 ![具有一个跨设备命名空间的简单实施……](../images/configs/basic/simple-implementation.png)
 
-+++
-
-### 练习
+**练习**
 
 在图形模拟中模拟以下配置。 您可以创建自己的事件，也可以使用文本模式复制并粘贴。
 
@@ -99,18 +99,14 @@ CRMID: Jane, ECID: 111
 
 **模拟图形**
 
-+++选择以查看模拟图形
-
 在此图表中，John和Jane由他们各自的CRMID表示：
 
-* {CRMID: John}
-* {CRMID: Jane}
+* `{CRMID: John}`
+* `{CRMID: Jane}`
 
-台式计算机上用于访问电子商务平台的浏览器由{ECID： 111}表示。 在此图形方案中，Jane是最后一个经过身份验证的最终用户，因此删除了{ECID： 111}和{CRMID: John}之间的链接。
+桌面计算机上用于访问电子商务平台的浏览器由`{ECID: 111}`表示。 在此图形方案中，Jane是最后一个经过身份验证的最终用户，因此删除了`{ECID: 111}`和`{CRMID: John}`之间的链接。
 
 ![共享设备(PC)的模拟图形。](../images/configs/basic/shared-device-pc.png)
-
-+++
 
 >[!TAB 共享设备（移动设备）]
 
@@ -125,13 +121,9 @@ CRMID: Jane, ECID: 111, IDFA: a-b-c
 
 **模拟图形**
 
-+++选择以查看模拟图形
-
-在此图表中，John和Jane均由各自的CRMID表示。 他们使用的浏览器由{ECID： 111}表示，他们共享的[!DNL iPad]由{IDFA: a-b-c}表示。 在此图形方案中，Jane是最后一个经过身份验证的最终用户，因此删除从{ECID： 111}和{IDFA: a-b-c}到{CRMID: John}的链接。
+在此图表中，John和Jane均由各自的CRMID表示。 他们使用的浏览器由`{ECID: 111}`表示，他们共享的[!DNL iPad]由`{IDFA: a-b-c}`表示。 在此图形方案中，Jane是最后一个经过身份验证的最终用户，因此删除从`{ECID: 111}`和`{IDFA: a-b-c}`到`{CRMID: John}`的链接。
 
 ![共享设备（移动设备）的模拟图形。](../images/configs/basic/shared-device-mobile.png)
-
-+++
 
 >[!ENDTABS]
 
@@ -145,9 +137,9 @@ CRMID: Jane, ECID: 111, IDFA: a-b-c
 >
 >* **非唯一标识**&#x200B;是与非唯一命名空间关联的标识。
 >
->* 在以下示例中，`CChash`是一个自定义命名空间，它表示经过哈希处理的信用卡号码。
+>* 您必须为“CRMID”和“CChash”创建自定义的跨设备命名空间，以完成下面的中间实施练习。 “CCHash”是一个自定义命名空间，它表示经过哈希处理的信用卡号码。
 
-您是一位数据架构师，为一家发行信用卡的商业银行工作。 您的营销团队已指示他们要将过去的信用卡交易历史记录包含在配置文件中。 此身份图可能如下所示。
+假设您是一位数据架构师，为一家发行信用卡的商业银行工作。 您的营销团队已指示他们要将过去的信用卡交易历史记录包含在配置文件中。 此身份图可能如下所示。
 
 **文本模式：**
 
@@ -171,21 +163,32 @@ CRMID: John, ECID: 999, IDFA: a-b-c
 
 **模拟图形**
 
-+++选择以查看模拟图形
-
 ![模拟图形的图像](../images/configs/basic/simple-implementation-non-unique.png)
-
-+++
 
 不保证这些信用卡号或任何其他非唯一命名空间将始终与单个最终用户关联。 两个最终用户可能会注册相同的信用卡，因此可能会错误地摄取非唯一的占位符值。 简而言之，无法保证非唯一命名空间不会导致图形折叠。
 
 要解决此问题，Identity Service将删除最早的链接，并保留最新的链接。 这可确保图形中只有一个CRMID，从而防止图形折叠。
 
-### 练习
+**练习**
 
 在图形模拟中模拟以下配置。 您可以创建自己的事件，也可以使用文本模式复制并粘贴。
 
 >[!BEGINTABS]
+
+>[!TAB 共享设备]
+
+**文本模式：**
+
+```json
+CRMID: John, CChash: 1111-2222
+CRMID: Jane, CChash: 3333-4444
+CRMID: John, ECID: 123
+CRMID: Jane, ECID:123
+```
+
+**模拟图形**
+
+![具有哈希的中间共享设备图。](../images/configs/intermediate/intermediate-shared-device.png)
 
 >[!TAB 两个使用相同信用卡的最终用户]
 
@@ -202,11 +205,7 @@ CRMID: Jane, ECID:456
 
 **模拟图形**
 
-+++选择以查看模拟图形
-
 ![两个最终用户使用同一信用卡注册的图表。](../images/configs/intermediate/graph-with-same-credit-card.png)
-
-+++
 
 >[!TAB 信用卡号码无效]
 
@@ -223,17 +222,17 @@ CRMID: Jill, CChash: undefined
 
 **模拟图形**
 
-+++选择以查看模拟图形
-
 ![哈希处理问题导致信用卡无效的图表。](../images/configs/intermediate/graph-with-invalid-credit-card.png)
-
-+++
 
 >[!ENDTABS]
 
 ### 用例：您的数据包括哈希和非哈希CRMID
 
-您正在摄取未哈希（离线）CRMID和哈希（在线）CRMID。 他们希望非散列和散列的CRMID之间有直接的关系。 当最终用户使用经过身份验证的帐户浏览时，经过哈希处理的CRMID与设备ID（在Identity Service上表示为ECID）一起发送。
+>[!TIP]
+>
+>您必须为“CRMID”和“CRMIDhash”创建自定义跨设备命名空间，以完成下面的中间实施练习。
+
+您同时摄取了非哈希（离线）CRMID和哈希（在线）CRMID。 我们期望的是，非散列和散列的CRMID之间存在直接的关系。 当最终用户使用经过身份验证的帐户浏览时，经过哈希处理的CRMID与设备ID（在Identity Service上表示为ECID）一起发送。
 
 **算法配置（身份设置）**
 
@@ -252,7 +251,7 @@ CRMID: Jill, CChash: undefined
 
 >[!BEGINTABS]
 
->[!TAB 方案1：共享设备]
+>[!TAB 共享设备]
 
 John和Jane共用一个装置。
 
@@ -265,9 +264,9 @@ CRMIDhash: John, ECID: 111
 CRMIDhash: Jane, ECID: 111
 ```
 
-![占位符](../images/configs/intermediate/shared-device-hashed-crmid.png)
+![具有哈希CRMID的共享设备图](../images/configs/intermediate/shared-device-hashed-crmid.png)
 
->[!TAB 方案2：数据错误]
+>[!TAB 数据错误]
 
 由于哈希处理过程中出错，生成了一个非唯一的经过哈希处理的CRMID，并将其发送到Identity Service。
 
@@ -360,7 +359,7 @@ Email: jane@g, ECID: 111
 
 >[!BEGINTABS]
 
->[!TAB 两个最终用户登录]
+>[!TAB 共享设备]
 
 在此场景中，John和Jane都登录到电子商务网站。
 
@@ -392,13 +391,17 @@ CRMID: John, Email: john@y, Email_LC_SHA256: john_y_hash
 
 高级实施涉及复杂的多层图形场景。 这些类型的实现包括使用&#x200B;**命名空间优先级**&#x200B;以标识必须删除的正确链接以防止图形折叠。
 
-**命名空间优先级**&#x200B;是按命名空间重要性对命名空间进行排名的元数据。 如果图表包含两个身份，每个身份具有不同的唯一命名空间，则Identity Service将使用命名空间优先级来决定要删除的链接。 有关详细信息，请阅读有关命名空间优先级[&#128279;](../identity-graph-linking-rules/namespace-priority.md)的文档。
+**命名空间优先级**&#x200B;是按命名空间重要性对命名空间进行排名的元数据。 如果图表包含两个身份，每个身份具有不同的唯一命名空间，则Identity Service将使用命名空间优先级来决定要删除的链接。 有关详细信息，请阅读有关命名空间优先级](../identity-graph-linking-rules/namespace-priority.md)的[文档。
 
 在复杂的图形场景中，命名空间优先级扮演着关键角色。 图形可以具有多个层 — 一个最终用户可以与多个登录ID相关联，并且这些登录ID可以进行哈希处理。 此外，不同的ECID可以链接到不同的登录ID。 为确保删除正确层中的正确链接，您的命名空间优先级配置必须正确。
 
 有关[!DNL Identity Graph Linking Rules]的高级实施，请阅读此部分。
 
 ### 用例：您需要为多个业务线提供支持
+
+>[!TIP]
+>
+>您必须为“CRMID”和“loginID”创建自定义的跨设备命名空间，以完成下面的高级实施练习。
 
 您的最终用户有两个不同的帐户：个人帐户和业务帐户。 每个帐户由不同的ID标识。 在此场景中，典型图形如下所示：
 
@@ -469,9 +472,15 @@ loginID: JanePersonal, ECID: 222
 
 ### 用例：您有需要多个命名空间的复杂实施
 
+>[!TIP]
+>
+>您必须为“CRMID”、“loyaltyID”、“thirdPartyID”和“orderID”创建自定义跨设备命名空间，以完成下面的高级实施练习。
+
 您是一家媒体和娱乐公司，您的最终用户拥有以下优势：
+
 * CRMID
 * 忠诚度标识
+
 此外，您的最终用户还可以在电子商务网站上进行购买，并且此数据会绑定到他们的电子邮件地址。 此外，第三方数据库提供商还会丰富用户数据，并将这些数据批量发送到Experience Platform。
 
 **文本模式**
