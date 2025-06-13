@@ -3,7 +3,7 @@ solution: Experience Platform
 title: 流式分段指南
 description: 了解流式分段，包括内容、如何创建使用流式分段评估的受众，以及如何查看使用流式分段创建的受众。
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: 4a8d509286c92a76a897be663a68709bb3b71391
+source-git-commit: 6935cee30adb59d52db6c6fed7036f81b54edd52
 workflow-type: tm+mt
 source-wordcount: '2022'
 ht-degree: 2%
@@ -169,7 +169,7 @@ WHEN(<= 24 hours before now)])
 
 | 受众 | 架构 | Source类型 | 查询定义 | 受众 ID |
 | -------- | ------ | ----------- | ---------------- | ----------- |
-| 最近放弃 | 体验事件 | 批次 | 在过去24小时内至少具有一个放弃事件 | `7deb246a-49b4-4687-95f9-6316df049948` |
+| 最近放弃 | 体验事件 | 批次 | 在过去48小时内至少有一个放弃事件 | `7deb246a-49b4-4687-95f9-6316df049948` |
 | 最近结帐 | 体验事件 | 流传输 | 在过去24小时内至少有一个结帐 | `9e1646bb-57ff-4309-ba59-17d6c5bab6a1` |
 
 在这种情况下，您需要创建第三个受众，如下所示：
@@ -467,4 +467,4 @@ curl -X GET 'https://platform.adobe.io/data/core/ups/segment/definitions?evaluat
 
 要了解有关使用Adobe Experience Platform用户界面的更多信息，请参阅[分段用户指南](./overview.md)。
 
-有关流式客户细分的常见问题，请阅读常见问题解答[&#128279;](../faq.md#streaming-segmentation)的流式客户细分部分。
+有关流式客户细分的常见问题，请阅读常见问题解答](../faq.md#streaming-segmentation)的[流式客户细分部分。
