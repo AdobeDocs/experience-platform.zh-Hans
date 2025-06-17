@@ -3,9 +3,9 @@ keywords: facebook连接；facebook连接；facebook目标；facebook；instagra
 title: Facebook连接
 description: 根据散列邮件激活 Facebook 营销活动的轮廓，以实现受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 09146fac0719b62c6c2ec1b6c3aa66cb80c1698a
+source-git-commit: dd725b4d383bbcd93e68c81d4fe5182d6086e9be
 workflow-type: tm+mt
-source-wordcount: '2843'
+source-wordcount: '2690'
 ht-degree: 5%
 
 ---
@@ -13,14 +13,6 @@ ht-degree: 5%
 # [!DNL Facebook]连接
 
 ## 概述 {#overview}
-
->[!IMPORTANT]
->
->* 从2025年5月23日开始，在整个2025年6月，您可能会在目标目录中临时看到两个&#x200B;**[!DNL Facebook Custom Audience]**&#x200B;目标卡，持续时间可能最多几个小时。 这是由于目标服务的内部升级，并支持新字段以改进定位并与Facebook属性上的用户档案匹配。 有关新的地址相关字段的详细信息，请参阅[支持的标识](#supported-identities)部分。
->* 如果您看到一张标记为&#x200B;**[!UICONTROL （新） Facebook自定义受众]**&#x200B;的卡，请将此卡用于新的激活数据流。 您的现有数据流将自动更新，因此您无需执行任何操作。 在此期间对现有数据流所做的任何更改将在升级后保留。 升级完成后，**[!UICONTROL （新） Facebook自定义受众]**&#x200B;目标卡将重命名为&#x200B;**[!DNL Facebook Custom Audience]**。
->* 如果您使用[流服务API](https://developer.adobe.com/experience-platform-apis/references/destinations/)创建数据流，则必须将[!DNL flow spec ID]和[!DNL connection spec ID]更新为以下值：
->   * 流量规范 ID：`bb181d00-58d7-41ba-9c15-9689fdc831d3`
->   * 连接规范 ID：`c8b97383-2d65-4b7a-9913-db0fbfc71727`
 
 根据哈希电子邮件激活[!DNL Facebook]营销活动的配置文件，以实现受众定位、个性化和抑制。
 
@@ -146,8 +138,8 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 >[!NOTE]
 >
 >来自未经过哈希处理的命名空间的数据在激活时会由[!DNL Experience Platform]自动进行哈希处理。
-> 属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。
-> **[!UICONTROL 应用转换]**&#x200B;选项仅在您选择属性作为源字段时显示。 当您选择命名空间时，它不会显示。
+>> 属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。
+>> **[!UICONTROL 应用转换]**&#x200B;选项仅在您选择属性作为源字段时显示。 当您选择命名空间时，它不会显示。
 
 ![应用映射步骤中突出显示的转换控件。](../../assets/ui/activate-destinations/identity-mapping-transformation.png)
 
@@ -165,7 +157,7 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 以下视频还演示了配置[!DNL Facebook]目标和激活受众的步骤。
 
->[!VIDEO](https://video.tv.adobe.com/v/3411783/?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 >[!NOTE]
 >
@@ -195,7 +187,7 @@ Facebook身份验证令牌每60天过期一次。 令牌过期后，数据导出
    ![筛选以仅显示Facebook帐户](/help/destinations/assets/catalog/social/facebook/refresh-oauth-filters.png)
 3. 选择要刷新的帐户，选择省略号并选择&#x200B;**[!UICONTROL 编辑详细信息]**。
    ![选择“编辑详细信息”控件](/help/destinations/assets/catalog/social/facebook/refresh-oauth-edit-details.png)
-4. 在模式窗口中，选择&#x200B;**[!UICONTROL 重新连接OAuth]**&#x200B;并使用Facebook凭据重新进行身份验证。
+4. 在模式窗口中，选择&#x200B;**[!UICONTROL 重新连接OAuth]**并使用Facebook凭据重新进行身份验证。
    使用Reconnect OAuth选项的![模式窗口](/help/destinations/assets/catalog/social/facebook/reconnect-oauth-control.png)
 
 >[!SUCCESS]
