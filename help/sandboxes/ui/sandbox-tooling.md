@@ -2,10 +2,10 @@
 title: 沙盒工具
 description: 在沙盒之间无缝导出和导入沙盒配置。
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: 208c9c47b4bde211506867cf59b8743556db7fc8
+source-git-commit: b5330e10dc8b395d1ef299073182c836f5c3af7f
 workflow-type: tm+mt
-source-wordcount: '2678'
-ht-degree: 7%
+source-wordcount: '3414'
+ht-degree: 5%
 
 ---
 
@@ -59,7 +59,7 @@ ht-degree: 7%
 | [!DNL Adobe Journey Optimizer] | 自定义操作 |  | 自定义操作可以单独添加到资源包中。 将自定义操作分配给历程后，便无法再编辑它。 要更新自定义操作，您应： <ul><li>在迁移历程之前移动自定义操作</li><li>在迁移后更新自定义操作的配置（如请求标头、查询参数和身份验证）</li><li>使用您在第一步中添加的自定义操作迁移历程对象</li></ul> |
 | [!DNL Adobe Journey Optimizer] | 内容模板 | | 内容模板可以作为历程对象的依赖对象复制。 通过独立模板，可轻松地在Journey Optimizer营销活动和历程中重用自定义内容。 |
 | [!DNL Adobe Journey Optimizer] | 片段 | 所有嵌套片段。 | 片段可以作为历程对象的依赖对象复制。 片段是可重用的组件，可以在各个Journey Optimizer营销活动和历程中的一个或多个电子邮件中引用。 |
-| [!DNL Adobe Journey Optimizer] | 营销活动 | 促销活动中使用的以下对象将作为从属对象复制： <ul><li>营销活动</li><li>受众</li><li>架构</li><li>内容模板</li><li>片段</li><li>消息/内容</li><li>渠道配置</li><li>统一的决策对象</li><li>试验设置/变体</li></ul> | <ul><li>营销活动可与所有与用户档案、受众、架构、内联消息和依赖对象相关的项目一起复制。 不会复制某些项目，例如数据使用标签和语言设置。 有关无法复制的对象的完整列表，请参阅[将对象导出到另一个沙盒](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox)指南。</li><li>如果存在相同的配置，系统将自动检测并重新使用目标沙盒中的现有渠道配置对象。 如果未找到匹配的配置，则在导入期间跳过渠道配置，并且用户必须手动更新此历程的目标沙盒中的渠道设置。</li><li>用户可以重复使用目标沙盒中的现有试验和受众作为所选营销活动的依赖对象。</li></ul> |
+| [!DNL Adobe Journey Optimizer] | 营销活动 | 促销活动中使用的以下对象将作为从属对象复制： <ul><li>营销活动</li><li>受众</li><li>架构</li><li>内容模板</li><li>片段</li><li>消息/内容</li><li>渠道配置</li><li>统一的决策对象</li><li>试验设置/变体</li></ul> | <ul><li>营销活动可与所有与用户档案、受众、架构、内联消息和依赖对象相关的项目一起复制。 不会复制某些项目，例如数据使用标签和语言设置。 有关无法复制的对象的完整列表，请参阅[将对象导出到另一个沙盒](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox)指南。</li><li>如果存在相同的配置，系统将自动检测并重新使用目标沙盒中的现有渠道配置对象。 如果未找到匹配的配置，则在导入期间跳过渠道配置，并且用户必须手动更新此历程的目标沙盒中的渠道设置。</li><li>用户可以重复使用目标沙盒中的现有试验和受众作为所选营销活动的依赖对象。</li></ul> |
 
 曲面（例如预设）不会被复制。 系统根据消息类型和表面名称，自动选择目标沙盒上最接近的匹配项。 如果在目标沙盒上未找到表面，则表面复制将失败，导致消息复制失败，因为消息需要表面才可供设置。 在这种情况下，需要为消息的正确渠道至少创建一个表面，以便副本正常工作。
 
@@ -185,7 +185,7 @@ ht-degree: 7%
 
 要导出整个沙盒，请导航到[!UICONTROL 沙盒] **[!UICONTROL 包]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 创建包]**。
 
-![沙盒] **[!UICONTROL 包]**&#x200B;选项卡突出显示[!UICONTROL 创建包]。(../images/ui/sandbox-tooling/create-sandbox-package.png)
+![沙盒] **[!UICONTROL 包]**&#x200B;选项卡突出显示[!UICONTROL 创建包]。](../images/ui/sandbox-tooling/create-sandbox-package.png)[!UICONTROL 
 
 在[!UICONTROL 创建包]对话框中，为[!UICONTROL 包类型]选择&#x200B;**[!UICONTROL 整个沙盒]**。 为您的新包提供[!UICONTROL 包名称]，然后从下拉列表中选择&#x200B;**[!UICONTROL 沙盒]**。 最后，选择&#x200B;**[!UICONTROL 创建]**&#x200B;以确认您的条目。
 
@@ -253,11 +253,99 @@ Use the arrows to expand objects to view the full list of fields that have been 
 
 导入完成后，将在Experience Platform UI中收到通知。 您可以通过警报图标访问这些通知。 如果作业不成功，您可以在此处导航到疑难解答。
 
+## 通过沙盒工具跨沙盒传输迭代对象配置更新 {#move-configs}
+
+您可以使用沙盒工具在不同沙盒之间传输对象配置。 以前，必须手动重新创建或重新导入对象（例如架构、字段组和数据类型）的配置更新才能传输到其他沙盒。 借助此功能，您可以使用沙盒工具通过在不同沙盒之间无缝传输配置更新来加快工作流并减少潜在错误。
+
+![显示如何在沙盒之间移动更新的图表。](../images/ui/sandbox-tooling/move-updates-diagram.png)
+
+>[!TIP]
+>
+> 在尝试在不同沙盒之间传输对象配置之前，请确保您满足以下先决条件。
+>
+>- 访问沙盒工具的相应权限。
+>- 源沙盒中新创建或更新的对象（如架构）。
+
+>[!BEGINSHADEBOX]
+
+### 更新操作支持的对象类型
+
+以下是支持更新的对象类型：
+
+- 架构
+- 字段组
+- 数据类型
+
+| 支持的更新 | 不支持的更新 |
+| --- | --- |
+| <ul><li>向资源中添加新字段/字段组。</li><li>将必填字段设为可选字段。</li><li>引入新的必填字段。</li><li>正在引入新的关系字段。</li><li>引入新的标识字段。</li><li>更改资源的显示名称和描述。</li></ul> | <ul><li>删除以前定义的字段。</li><li>为实时客户配置文件启用架构时，重新定义现有字段。</li><li>删除或限制以前支持的字段值。</li><li>将现有字段移动到架构树中的其他位置 — 这将在目标沙盒中创建一个新字段，但不会删除上一个字段。</li><li>启用或禁用架构以参与配置文件 — 比较时将跳过此操作。</li><li>访问控制标签。</li></ul> |
+
+>[!ENDSHADEBOX]
+
+请按照以下步骤了解如何使用沙盒工具在不同沙盒之间传输对象配置。
+
+### 先前导入的对象
+
+如果您的用例涉及源沙盒中要求在打包并导入到其他沙盒后进行配置更新的现有对象，请按照以下步骤操作。
+
+首先，更新源沙盒中的对象。 例如，导航到&#x200B;**[!UICONTROL 架构]**&#x200B;工作区，选择您的架构，然后添加一个新的字段组。
+
+![架构工作区具有更新的架构。](../images/ui/sandbox-tooling/update-schema.png)
+
+更新架构后，导航到&#x200B;**[!UICONTROL 沙盒]**，选择&#x200B;**[!UICONTROL 包]**，然后找到现有包。
+
+![已选定包的沙盒工具接口](../images/ui/sandbox-tooling/select-package.png)
+
+使用包界面验证更改。 选择&#x200B;**[!UICONTROL 检查更新]**&#x200B;以查看对包中项目的任何更改。 接下来，选择&#x200B;**[!UICONTROL 查看diff]**，以接收对项目执行的所有更改的详细摘要。
+
+![选择了带有查看差异按钮的包接口。](../images/ui/sandbox-tooling/view-diff.png)
+
+出现[!UICONTROL 视图diff]界面。 有关源工件和目标工件以及要应用于它们的更改的信息，请参阅此收费。
+
+![更改摘要。](../images/ui/sandbox-tooling/summary-of-changes.png)
+
+在此步骤中，您还可以选择[!UICONTROL 使用AI汇总]，以分步汇总所有更改。
+
+![启用了AI的摘要。](../images/ui/sandbox-tooling/ai-summary.png)
+
+准备就绪后，选择&#x200B;**[!UICONTROL 更新包]**，然后在出现的弹出窗口中选择&#x200B;**[!UICONTROL 确认]**。 作业完成后，您可以刷新页面并选择&#x200B;**[!UICONTROL 查看历史记录]**&#x200B;以验证包的版本。
+
+![确认窗口。](../images/ui/sandbox-tooling/confirm-changes.png)
+
+要导入更改，请导航回[!UICONTROL 包]目录并选择包旁边的省略号(`...`)，然后选择&#x200B;**[!UICONTROL 导入包]**。 Experience Platform自动选择[!UICONTROL 更新现有对象]。 验证更改，然后选择&#x200B;**[!UICONTROL 完成]**。
+
+>[!NOTE]
+>
+>作为此工作流的一部分，所有依赖对象都会自动更新到目标沙盒中。
+
+![导入目标接口。](../images/ui/sandbox-tooling/import-objective.png)
+
+要进一步验证导入流程，请导航到目标沙盒，并手动从该沙盒中查看更新的对象。
+
+### 在目标沙盒中手动创建的对象
+
+如果您的用例涉及将配置更改应用到在单独的沙盒中手动创建的对象，请按照以下步骤操作。
+
+首先，使用更新后的对象创建和发布新包。
+
+接下来，将包导入包含要更新的对象的目标沙盒。 在导入过程中，选择&#x200B;**[!UICONTROL 更新现有对象]**，然后使用对象导航器手动选择要应用更新的目标对象。
+
+>[!NOTE]
+>
+>- 可以选择在不同的沙盒中为从属对象选择目标映射。 如果未选中任何项，则会创建一个新项。
+>- 对于身份命名空间，如果需要在目标沙盒中重用现有身份，系统会自动检测是否需要创建新身份。
+
+![要更新的目标对象的带占位符的导入目标接口。](../images/ui/sandbox-tooling/update-existing-objects.png)
+
+标识要更新的目标对象后，选择&#x200B;**[!UICONTROL 完成]**。
+
+![选定的目标对象。](../images/ui/sandbox-tooling/add-updated-objects.png)
+
 ## 视频教程
 
 以下视频旨在支持您了解沙盒工具，并概述如何创建新包、发布包和导入包。
 
->[!VIDEO](https://video.tv.adobe.com/v/3446099/?learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/3424763/?learn=on)
 
 ## 后续步骤
 
