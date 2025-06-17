@@ -1,17 +1,19 @@
 ---
 title: AI助手自然语言到SQL模型详细信息
 description: 了解AI Assistant自然语言到SQL AI模型。
-hide: true
-hidefromtoc: true
 exl-id: ca157945-5f74-45d0-9d40-c65d09a8e80d
-source-git-commit: a7b69cd11ccbd9950cafa73dba51be1d67924bfe
+source-git-commit: 3d870c367317d73bba8b75b38f7b2a93ab6b5bbd
 workflow-type: tm+mt
-source-wordcount: '639'
+source-wordcount: '658'
 ht-degree: 0%
 
 ---
 
 # AI助理操作分析自然语言到SQL模型详细信息
+
+>[!IMPORTANT]
+>
+>Adobe正在积极发布更多模型详细信息；当有其他文档可用时，会将其添加到Experience League。
 
 ## 模型概述 {#model-overview}
 

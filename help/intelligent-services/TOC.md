@@ -5,10 +5,10 @@ user-guide-title: 智能服务帮助
 breadcrumb-title: Intelligent Services 指南
 user-guide-description: 使用智能 AI 服务从您的营销活动数据生成分数、发掘洞察和创建区段。
 role: User
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: c5ca8c8e13c5bf889a8ed4d67f00e955aea56e75
 workflow-type: tm+mt
-source-wordcount: '137'
-ht-degree: 44%
+source-wordcount: '143'
+ht-degree: 46%
 
 ---
 
@@ -27,7 +27,7 @@ ht-degree: 44%
    - 数据治理 {#aai-data-governance}
       - [访问控制](attribution-ai/aai-data-governance/access-controls.md)
       - [审核日志](attribution-ai/aai-data-governance/audit-logs.md)
-      - [客户管理的密钥](attribution-ai/aai-data-governance/customer-managed-keys.md)
+      - [客户管理密钥](attribution-ai/aai-data-governance/customer-managed-keys.md)
       - [数据治理](attribution-ai/aai-data-governance/data-governance.md)
       - [治理政策](attribution-ai/aai-data-governance/governance-policies.md)
    - [使用查询服务分析得分](attribution-ai/aai-query-service.md)
@@ -43,6 +43,7 @@ ht-degree: 44%
    - [概述](customer-ai/overview.md)
    - [Customer AI入门](customer-ai/getting-started.md)
    - [数据要求](customer-ai/data-requirements.md)
+   - [客户人工智能倾向评分模型详细信息](customer-ai/model-detail.md)
    - UI 指南 {#user-guide}
       - [配置实例](customer-ai/user-guide/configure.md)
       - [发现见解](customer-ai/user-guide/discover-insights.md)
@@ -52,7 +53,7 @@ ht-degree: 44%
    - 数据治理 {#cai-data-governance}
       - [访问控制](customer-ai/cai-data-governance/access-controls.md)
       - [审核日志](customer-ai/cai-data-governance/audit-logs.md)
-      - [客户管理的密钥](customer-ai/cai-data-governance/customer-managed-keys.md)
+      - [客户管理密钥](customer-ai/cai-data-governance/customer-managed-keys.md)
       - [数据治理](customer-ai/cai-data-governance/data-governance.md)
       - [治理政策](customer-ai/cai-data-governance/governance-policies.md)
 - [Experience Platform 发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
