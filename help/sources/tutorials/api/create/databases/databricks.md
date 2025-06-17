@@ -4,10 +4,10 @@ description: 了解如何使用API将Azure Databricks连接到Experience Platfor
 badgeUltimate: label="Ultimate" type="Positive"
 badgeBeta: label="Beta 版" type="Informative"
 exl-id: c3974bab-8e67-49a1-b1a5-d453cf7bfd1d
-source-git-commit: 0c8ff1029beee3f58cbf536b11b40551b6f6c2ed
+source-git-commit: 9df2f9cc70876834aa635d50d548a882f45e3190
 workflow-type: tm+mt
-source-wordcount: '528'
-ht-degree: 2%
+source-wordcount: '534'
+ht-degree: 3%
 
 ---
 
@@ -47,6 +47,8 @@ ht-degree: 2%
 | `accessToken` | 用于验证您的[!DNL Databricks]帐户的访问令牌。 您可以使用[!DNL Databricks]工作区生成访问令牌。 |
 | `database` | 增量湖中数据库的名称。 |
 | `connectionSpec.Id` | 连接规范ID返回源的连接器属性，包括与创建基础连接和源连接相关的身份验证规范。 [!DNL Databricks]的连接规范ID为`e9d7ec6b-0873-4e57-ad21-b3a7c65e310b`。 |
+
+有关详细信息，请参阅 [[!DNL Azure Databricks]  概述](../../../../connectors/databases/databricks.md)。
 
 ## 创建基本连接
 

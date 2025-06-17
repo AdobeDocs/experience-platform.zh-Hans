@@ -1,13 +1,13 @@
 ---
-title: Azure数据库
+title: Azure Databricks
 description: 了解将Azure数据库连接到Experience Platform所需的先决步骤。
 badgeUltimate: label="Ultimate" type="Positive"
 badgeBeta: label="Beta 版" type="Informative"
-last-substantial-update: 2025-04-29T00:00:00Z
+last-substantial-update: 2025-06-17T00:00:00Z
 exl-id: 2f082898-aa0e-47a1-a4bf-077c21afdfee
-source-git-commit: c466c30bddf4e67117c88072bea00818d755e408
+source-git-commit: 11ec772f2b877ceac820f2b8a06ac27377e9b2e9
 workflow-type: tm+mt
-source-wordcount: '612'
+source-wordcount: '616'
 ht-degree: 2%
 
 ---
@@ -161,6 +161,9 @@ fs.azure.sas.{CONTAINER_NAME}.{STORAGE-ACCOUNT}.blob.core.windows.net {SAS-TOKEN
 
 ![Azure上的数据库UI。](../../images/tutorials/create/databricks/databricks-ui.png)
 
-## 使用API将[!DNL Databricks]连接到Experience Platform
+## 将[!DNL Databricks]连接到Experience Platform
 
-现在您已完成先决条件步骤，接下来可以继续阅读有关使用API [将您的 [!DNL Databricks] 帐户连接到Experience Platform](../../tutorials/api/create/databases/databricks.md)的指南。
+现在您已完成先决步骤，可以继续操作，并将您的[!DNL Databricks]帐户连接到Experience Platform：
+
+* [通过API连接](../../tutorials/api/create/databases/databricks.md)
+* [通过UI中的源工作区连接](../../tutorials/ui/create/databases/databricks.md)

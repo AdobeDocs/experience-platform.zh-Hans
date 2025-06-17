@@ -5,9 +5,9 @@ breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源引入数据。了解如何构建、标记和增强已引入的数据。
 feature: Sources
 role: Developer
-source-git-commit: dbcfd7bfbf2f2d8268d3d8b5748f75ec9f186597
+source-git-commit: 9df2f9cc70876834aa635d50d548a882f45e3190
 workflow-type: tm+mt
-source-wordcount: '1078'
+source-wordcount: '1080'
 ht-degree: 35%
 
 ---
@@ -124,7 +124,7 @@ ht-degree: 35%
    - 协议 {#protocols}
       - [通用OData连接器](connectors/protocols/odata.md)
       - [通用REST API连接器](connectors/protocols/generic-rest.md)
-   - 流式处理 {#streaming}
+   - 流传输 {#streaming}
       - [HTTP API连接器](connectors/streaming/http.md)
 - API教程 {#api-tutorials}
    - 创建基本连接 {#create}
@@ -166,7 +166,7 @@ ht-degree: 35%
          - [Amazon Redshift](tutorials/api/create/databases/redshift.md)
          - [Azure HDInsights上的Apache Hive](tutorials/api/create/databases/hive.md)
          - [Azure HDInsights上的Apache Spark](tutorials/api/create/databases/spark.md)
-         - [Azure数据库](tutorials/api/create/databases/databricks.md)
+         - [Azure Databricks](tutorials/api/create/databases/databricks.md)
          - [Azure Data Explorer](tutorials/api/create/databases/data-explorer.md)
          - [Azure Synapse Analytics](tutorials/api/create/databases/synapse-analytics.md)
          - [Azure 数据表存储](tutorials/api/create/databases/ats.md)
@@ -180,7 +180,7 @@ ht-degree: 35%
          - [Oracle](tutorials/api/create/databases/oracle.md)
          - [凤凰城](tutorials/api/create/databases/phoenix.md)
          - [PostgreSQL](tutorials/api/create/databases/postgres.md)
-         - [Snowflake 流式处理](tutorials/api/create/databases/snowflake-streaming.md)
+         - [Snowflake 流](tutorials/api/create/databases/snowflake-streaming.md)
          - [Snowflake](tutorials/api/create/databases/snowflake.md)
          - [Teradata Vantage](tutorials/api/create/databases/teradata-vantage.md)
          - [SQL Server](tutorials/api/create/databases/sql-server.md)
@@ -207,7 +207,7 @@ ht-degree: 35%
       - 协议 {#protocols}
          - [通用OData](tutorials/api/create/protocols/odata.md)
          - [常规 REST API](tutorials/api/create/protocols/generic-rest.md)
-      - 流式处理 {#streaming}
+      - 流传输 {#streaming}
          - [HTTP API](tutorials/api/create/streaming/http.md)
    - 浏览数据 {#explore}
       - [浏览广告数据](tutorials/api/explore/advertising.md)
@@ -293,6 +293,7 @@ ht-degree: 35%
          - [Amazon Redshift](tutorials/ui/create/databases/redshift.md)
          - [Azure HDInsights上的Apache Hive](tutorials/ui/create/databases/hive.md)
          - [Azure HDInsights上的Apache Spark](tutorials/ui/create/databases/spark.md)
+         - [Azure Databricks](tutorials/ui/create/databases/databricks.md)
          - [Azure Data Explorer](tutorials/ui/create/databases/data-explorer.md)
          - [Azure Synapse Analytics](tutorials/ui/create/databases/synapse-analytics.md)
          - [Azure 数据表存储](tutorials/ui/create/databases/ats.md)
@@ -308,7 +309,7 @@ ht-degree: 35%
          - [凤凰城](tutorials/ui/create/databases/phoenix.md)
          - [PostgreSQL](tutorials/ui/create/databases/postgres.md)
          - [Snowflake](tutorials/ui/create/databases/snowflake.md)
-         - [Snowflake 流式处理](tutorials/ui/create/databases/snowflake-streaming.md)
+         - [Snowflake 流](tutorials/ui/create/databases/snowflake-streaming.md)
          - [Teradata Vantage](tutorials/ui/create/databases/teradata-vantage.md)
       - 数据和身份合作伙伴 {#data-partner}
          - [Acxiom 数据摄取](tutorials/ui/create/data-partners/acxiom-data-ingestion.md)
@@ -342,7 +343,7 @@ ht-degree: 35%
          - [Stripe](tutorials/ui/create/payments/stripe.md)
       - 协议 {#protocols}
          - [通用OData](tutorials/ui/create/protocols/odata.md)
-      - 流式处理 {#streaming}
+      - 流传输 {#streaming}
          - [HTTP API](tutorials/ui/create/streaming/http.md)
    - 配置数据流 {#dataflow}
       - [Advertising连接数据流](tutorials/ui/dataflow/advertising.md)
