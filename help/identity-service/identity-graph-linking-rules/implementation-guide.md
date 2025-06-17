@@ -2,10 +2,10 @@
 title: 身份图链接规则的实施指南
 description: 了解在使用Identity Graph链接规则配置实施数据时要遵循的建议步骤。
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 0587ddf1012adb13e6d399953839735f73fe151e
+source-git-commit: a9c9543783eb85dcaadef64b1c0deb84f850d40e
 workflow-type: tm+mt
-source-wordcount: '1955'
-ht-degree: 5%
+source-wordcount: '1956'
+ht-degree: 6%
 
 ---
 
@@ -35,7 +35,7 @@ ht-degree: 5%
 
 #### 单一人员命名空间要求 {#single-person-namespace-requirement}
 
-您必须确保每个配置文件中始终存在具有最高优先级的唯一命名空间。 这样做可让Identity Service在给定图形中检测适当的人员标识符。
+您必须确保每个已知配置文件中始终存在具有最高优先级的唯一命名空间。 这样做可让Identity Service在给定图形中检测适当的人员标识符。
 
 +++选择以查看没有单一人员标识符命名空间的图形示例
 
@@ -292,7 +292,7 @@ Identity Service实施流程的第一步是，确保将您的Experience Platform
 有关[!DNL Identity Graph Linking Rules]的详细信息，请阅读以下文档：
 
 * [[!DNL Identity Graph Linking Rules] 概述](./overview.md)
-* [身份优化算法](./identity-optimization-algorithm.md)
+* [身份标识优化算法](./identity-optimization-algorithm.md)
 * [图形配置示例](./example-configurations.md)
 * [疑难解答和常见问题](./troubleshooting.md)
 * [命名空间优先级](./namespace-priority.md)

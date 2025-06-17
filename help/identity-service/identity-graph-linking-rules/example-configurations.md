@@ -4,9 +4,9 @@ description: 了解您可以使用身份图链接规则配置的各种实施类�
 hide: true
 hidefromtoc: true
 exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
-source-git-commit: f793dbda0520366b3ee69b3aa0f912b005957561
+source-git-commit: 2a5c8b3bd58d3659d0fcf519407b180bf5f091b4
 workflow-type: tm+mt
-source-wordcount: '1999'
+source-wordcount: '1951'
 ht-degree: 7%
 
 ---
@@ -17,11 +17,6 @@ ht-degree: 7%
 >id="platform_identities_algorithmconfiguration"
 >title="算法配置"
 >abstract="配置根据您所引入的身份标识定制的唯一命名空间和命名空间优先级。"
-
->[!NOTE]
->
->* “CRMID”和“loginID”是自定义命名空间。 在本文档中，“CRMID”是人员标识符，“loginID”是与给定人员关联的登录标识符。
->* 要模拟本文档中概述的示例图形场景，您必须首先创建两个自定义命名空间，一个具有身份符号“CRMID”，另一个具有身份符号“loginID”。 标识符号区分大小写。
 
 请阅读本文档，了解您可以使用[!DNL Identity Graph Linking Rules]配置的不同实现类型。
 
@@ -43,9 +38,9 @@ ht-degree: 7%
 
 ## 基本实施 {#basic-implementations}
 
->[!TIP]
+>[!NOTE]
 >
->您必须为“CRMID”创建自定义的跨设备命名空间，以完成下面的基本实施练习。
+>要完成以下实施，您必须创建一个标识符号（区分大小写）为`CRMID`的自定义命名空间。
 
 请阅读本节内容，了解[!DNL Identity Graph Linking Rules]的基本实施。
 
@@ -90,7 +85,7 @@ CRMID: John, ECID: 999, IDFA: a-b-c
 
 **共享设备（电脑）**
 
-**文本模式：**
+**文本模式**
 
 ```json
 CRMID: John, ECID: 111
@@ -112,7 +107,7 @@ CRMID: Jane, ECID: 111
 
 **共享设备（移动设备）**
 
-**文本模式：**
+**文本模式**
 
 ```json
 CRMID: John, ECID: 111, IDFA: a-b-c
@@ -129,19 +124,23 @@ CRMID: Jane, ECID: 111, IDFA: a-b-c
 
 ## 中间实施 {#intermediate-implementations}
 
+>[!TIP]
+>
+>**非唯一标识**&#x200B;是与非唯一命名空间关联的标识。
+
 请阅读本节内容，了解[!DNL Identity Graph Linking Rules]的中间实现。
 
 ### 用例：您的数据包括非唯一身份
 
->[!TIP]
+>[!NOTE]
 >
->* **非唯一标识**&#x200B;是与非唯一命名空间关联的标识。
->
->* 您必须为“CRMID”和“CChash”创建自定义的跨设备命名空间，以完成下面的中间实施练习。 “CCHash”是一个自定义命名空间，它表示经过哈希处理的信用卡号码。
+>要完成下面的实施，您必须使用以下自定义命名空间，其标识符号（区分大小写）为：
+>* `CRMID`
+>* `CCHash` （这是一个自定义命名空间，表示经过哈希处理的信用卡号码。）
 
 假设您是一位数据架构师，为一家发行信用卡的商业银行工作。 您的营销团队已指示他们要将过去的信用卡交易历史记录包含在配置文件中。 此身份图可能如下所示。
 
-**文本模式：**
+**文本模式**
 
 ```json
 CRMID: John, CChash: 1111-2222 
@@ -177,7 +176,7 @@ CRMID: John, ECID: 999, IDFA: a-b-c
 
 >[!TAB 共享设备]
 
-**文本模式：**
+**文本模式**
 
 ```json
 CRMID: John, CChash: 1111-2222
@@ -194,7 +193,7 @@ CRMID: Jane, ECID:123
 
 两个不同的最终用户使用相同的信用卡注册您的电子商务网站。 您的营销团队希望通过确保信用卡仅与单个配置文件关联来防止图形折叠。
 
-**文本模式：**
+**文本模式**
 
 ```json
 CRMID: John, CChash: 1111-2222
@@ -211,7 +210,7 @@ CRMID: Jane, ECID:456
 
 由于数据未经清理，Experience Platform中引入了无效的信用卡号。
 
-**文本模式：**
+**文本模式**
 
 ```json
 CRMID: John, CChash: undefined
@@ -228,9 +227,11 @@ CRMID: Jill, CChash: undefined
 
 ### 用例：您的数据包括哈希和非哈希CRMID
 
->[!TIP]
+>[!NOTE]
 >
->您必须为“CRMID”和“CRMIDhash”创建自定义跨设备命名空间，以完成下面的中间实施练习。
+>要完成以下实施，您必须使用以下标识符号（区分大小写）创建自定义命名空间：
+>* `CRMID`
+>* `CRMIDhash`
 
 您同时摄取了非哈希（离线）CRMID和哈希（在线）CRMID。 我们期望的是，非散列和散列的CRMID之间存在直接的关系。 当最终用户使用经过身份验证的帐户浏览时，经过哈希处理的CRMID与设备ID（在Identity Service上表示为ECID）一起发送。
 
@@ -255,7 +256,7 @@ CRMID: Jill, CChash: undefined
 
 John和Jane共用一个装置。
 
-**文本模式：**
+**文本模式**
 
 ```json
 CRMID: John, CRMIDhash: John
@@ -270,7 +271,7 @@ CRMIDhash: Jane, ECID: 111
 
 由于哈希处理过程中出错，生成了一个非唯一的经过哈希处理的CRMID，并将其发送到Identity Service。
 
-**文本模式：**
+**文本模式**
 
 ```json
 CRMID: John, CRMIDhash: aaaa
@@ -342,6 +343,10 @@ Email: jane@g, ECID: 111
 
 ### 用例：您的数据包括三个唯一的命名空间
 
+>[!NOTE]
+>
+>要完成以下实施，您必须创建一个标识符号（区分大小写）为`CRMID`的自定义命名空间。
+
 您的客户定义了单一人员实体，如下所示：
 
 * 已分配CRMID的最终用户。
@@ -391,7 +396,7 @@ CRMID: John, Email: john@y, Email_LC_SHA256: john_y_hash
 
 高级实施涉及复杂的多层图形场景。 这些类型的实现包括使用&#x200B;**命名空间优先级**&#x200B;以标识必须删除的正确链接以防止图形折叠。
 
-**命名空间优先级**&#x200B;是按命名空间重要性对命名空间进行排名的元数据。 如果图表包含两个身份，每个身份具有不同的唯一命名空间，则Identity Service将使用命名空间优先级来决定要删除的链接。 有关详细信息，请阅读有关命名空间优先级[&#128279;](../identity-graph-linking-rules/namespace-priority.md)的文档。
+**命名空间优先级**&#x200B;是按命名空间重要性对命名空间进行排名的元数据。 如果图表包含两个身份，每个身份具有不同的唯一命名空间，则Identity Service将使用命名空间优先级来决定要删除的链接。 有关详细信息，请阅读有关命名空间优先级](../identity-graph-linking-rules/namespace-priority.md)的[文档。
 
 在复杂的图形场景中，命名空间优先级扮演着关键角色。 图形可以具有多个层 — 一个最终用户可以与多个登录ID相关联，并且这些登录ID可以进行哈希处理。 此外，不同的ECID可以链接到不同的登录ID。 为确保删除正确层中的正确链接，您的命名空间优先级配置必须正确。
 
@@ -399,13 +404,15 @@ CRMID: John, Email: john@y, Email_LC_SHA256: john_y_hash
 
 ### 用例：您需要为多个业务线提供支持
 
->[!TIP]
+>[!NOTE]
 >
->您必须为“CRMID”和“loginID”创建自定义的跨设备命名空间，以完成下面的高级实施练习。
+>要完成以下实施，您必须使用以下标识符号（区分大小写）创建自定义命名空间：
+>* `CRMID`
+>* `loginID`
 
 您的最终用户有两个不同的帐户：个人帐户和业务帐户。 每个帐户由不同的ID标识。 在此场景中，典型图形如下所示：
 
-**文本模式***
+**文本模式**
 
 ```json
 CRMID: John, loginID: JohnPersonal
@@ -427,12 +434,7 @@ loginID: JohnBusiness, ECID: 222
 
 **模拟图形**
 
-+++选择以查看模拟图形
-
 ![具有企业和个人电子邮件的最终用户的身份图。](../images/configs/advanced/advanced.png)
-
-+++
-
 
 **练习**
 
@@ -457,6 +459,8 @@ loginID: JanePersonal, ECID: 111
 
 >[!TAB 向Real-Time CDP发送错误数据]
 
+**文本模式**
+
 ```json
 CRMID: John, loginID: JohnPersonal
 CRMID: John, loginID: error
@@ -472,9 +476,12 @@ loginID: JanePersonal, ECID: 222
 
 ### 用例：您有需要多个命名空间的复杂实施
 
->[!TIP]
+>[!NOTE]
 >
->您必须为“CRMID”、“loyaltyID”、“thirdPartyID”和“orderID”创建自定义跨设备命名空间，以完成下面的高级实施练习。
+>要完成以下实施，您必须使用以下标识符号（区分大小写）创建自定义命名空间：
+>* `CRMID`
+>* `loyaltyID`
+>* `thirdPartyID`
 
 您是一家媒体和娱乐公司，您的最终用户拥有以下优势：
 
@@ -499,8 +506,8 @@ CRMID: John, ECID: 111
 | 显示名称 | 身份标识符号 | 身份标识类型 | 每个图唯一 | 命名空间优先级 |
 | --- | --- | --- | --- | --- |
 | CRMID | CRMID | 跨设备 | ✔️ | 1 |
-| loyaltyID | loyaltyID | 跨设备 | | 2 |
-| 电子邮件 | 电子邮件 | 电子邮件 | | 3 |
+| loyaltyID | loyaltyID | 跨设备 | ✔️ | 2 |
+| 电子邮件 | 电子邮件 | 电子邮件 | ✔️ | 3 |
 | thirdpartyID | thirdpartyID | 跨设备 | | 4 |
 | orderID | orderID | 跨设备 | | 5 |
 | ECID | ECID | COOKIE | | 6 |
