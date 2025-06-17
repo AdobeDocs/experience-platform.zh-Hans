@@ -185,7 +185,7 @@ ht-degree: 5%
 
 要导出整个沙盒，请导航到[!UICONTROL 沙盒] **[!UICONTROL 包]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 创建包]**。
 
-![沙盒] **[!UICONTROL 包]**&#x200B;选项卡突出显示[!UICONTROL 创建包]。](../images/ui/sandbox-tooling/create-sandbox-package.png)[!UICONTROL 
+![沙盒] **[!UICONTROL 包]**&#x200B;选项卡突出显示[!UICONTROL 创建包]。(../images/ui/sandbox-tooling/create-sandbox-package.png)
 
 在[!UICONTROL 创建包]对话框中，为[!UICONTROL 包类型]选择&#x200B;**[!UICONTROL 整个沙盒]**。 为您的新包提供[!UICONTROL 包名称]，然后从下拉列表中选择&#x200B;**[!UICONTROL 沙盒]**。 最后，选择&#x200B;**[!UICONTROL 创建]**&#x200B;以确认您的条目。
 
