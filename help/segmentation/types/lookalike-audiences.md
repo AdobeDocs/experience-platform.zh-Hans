@@ -41,7 +41,7 @@ ht-degree: 9%
 
 要使用相似见解，基本受众&#x200B;**必须**&#x200B;满足以下资格条件：
 
-- 必须在Experience Platform中创建基础受众&#x200B;****。
+- 必须在Experience Platform中创建基础受众&#x200B;**&#x200B;**。
    - 外部生成的受众&#x200B;**无**&#x200B;资格获得相似见解。
 - 基础受众&#x200B;**必须**&#x200B;使用默认合并策略。
 - 基础受众&#x200B;**必须**&#x200B;不使用数据治理所限制的字段。
@@ -189,7 +189,7 @@ Y轴显示具有与x轴的匹配值相对应的相似性百分比的配置文件
 
 ![相似受众部分已突出显示。](../images/types/lookalike/select-laa.png)
 
-此时会显示受众详细信息页面。 有关此页面的详细信息，请阅读受众门户概述](../ui/audience-portal.md#audience-details)的[受众详细信息部分。
+此时会显示受众详细信息页面。 有关此页面的详细信息，请阅读受众门户概述[&#128279;](../ui/audience-portal.md#audience-details)的受众详细信息部分。
 
 ![显示相似受众的详细信息。](../images/types/lookalike/laa-details.png)
 
