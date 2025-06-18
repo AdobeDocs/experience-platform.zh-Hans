@@ -5,7 +5,7 @@ title: 隐私作业API端点
 description: 了解如何使用Privacy Service API管理Experience Cloud应用程序的隐私作业。
 role: Developer
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
-source-git-commit: ec99b2a8f772e77d0a3957fc35b8cea112b91cba
+source-git-commit: c2394035dd6bd4fe6dbb443e4db13934a27066a6
 workflow-type: tm+mt
 source-wordcount: '1861'
 ht-degree: 1%
@@ -48,7 +48,7 @@ GET /jobs?regulation={REGULATION}&fromDate={FROMDATE}&toDate={TODATE}&status={ST
 
 | 参数 | 描述 |
 | --- | --- |
-| `{REGULATION}` | 要查询的法规类型。 接受的值包括： <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpa_co_usa`</li><li>`cpra_ca_usa`</li><li>`ctdpa_ct_usa`</li><li>`dpdpa`</li><li>`fdbr_fl_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`icdpa_ia_usa`</li><li>`lgpd_bra`</li><li>`mcdpa_mn_usa`</li><li>`mcdpa_mt_usa`</li><li>`mhmda_wa_usa`</li><li>`ndpa_ne_usa`</li><li>`nhpa_nh_usa`</li><li>`njdpa_nj_usa`</li><li>`nzpa_nzl`</li><li>`ocpa_or_usa`</li><li>`pdpa_tha`</li><li>`ql25`</li><li>`tdpsa_tx_usa`</li><li>`tipa_tn_usa`</li><li>`ucpa_ut_usa`</li><li>`vcdpa_va_usa`</li></ul><br>有关上述值表示的隐私法规的更多信息，请参阅[支持的法规](../regulations/overview.md)概述。 |
+| `{REGULATION}` | 要查询的法规类型。 接受的值包括： <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpa_co_usa`</li><li>`cpra_ca_usa`</li><li>`ctdpa_ct_usa`</li><li>`dpdpa_de_usa`</li><li>`fdbr_fl_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`icdpa_ia_usa`</li><li>`lgpd_bra`</li><li>`mcdpa_mn_usa`</li><li>`mcdpa_mt_usa`</li><li>`mhmda_wa_usa`</li><li>`ndpa_ne_usa`</li><li>`nhpa_nh_usa`</li><li>`njdpa_nj_usa`</li><li>`nzpa_nzl`</li><li>`ocpa_or_usa`</li><li>`pdpa_tha`</li><li>`ql25_qc_can`</li><li>`tdpsa_tx_usa`</li><li>`tipa_tn_usa`</li><li>`ucpa_ut_usa`</li><li>`vcdpa_va_usa`</li></ul><br>有关上述值表示的隐私法规的更多信息，请参阅[支持的法规](../regulations/overview.md)概述。 |
 | `{PAGE}` | 要显示的数据页面，使用基于0的编号。 默认值为 `0`。 |
 | `{SIZE}` | 每页上显示的结果数。 默认值为`100`，最大值为`1000`。 超过最大值会导致API返回400代码错误。 |
 | `{status}` | 默认行为是包括所有状态。 如果指定状态类型，则请求将仅返回与该状态类型匹配的隐私作业。 接受的值包括： <ul><li>`processing`</li><li>`complete`</li><li>`error`</li></ul> |
@@ -90,7 +90,7 @@ curl -X GET \
 
 >[!NOTE]
 >
->兼容的Adobe Experience Cloud应用程序使用不同的值来标识数据主体。 请参阅[Privacy Service和Experience Cloud应用程序](../experience-cloud-apps.md)指南，以了解应用程序所需标识符的更多信息。 有关确定将哪些ID发送到[!DNL Privacy Service]的更一般的指导，请参阅隐私请求[&#128279;](../identity-data.md)中有关身份数据的文档。
+>兼容的Adobe Experience Cloud应用程序使用不同的值来标识数据主体。 请参阅[Privacy Service和Experience Cloud应用程序](../experience-cloud-apps.md)指南，以了解应用程序所需标识符的更多信息。 有关确定将哪些ID发送到[!DNL Privacy Service]的更一般的指导，请参阅隐私请求](../identity-data.md)中有关[身份数据的文档。
 
 [!DNL Privacy Service] API支持两种针对个人数据的作业请求：
 
