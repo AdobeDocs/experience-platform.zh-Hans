@@ -3,18 +3,26 @@ solution: Experience Platform
 title: 相似受众
 description: 了解如何使用相似受众在Adobe Experience Platform中定位新的高价值受众。
 exl-id: c43dac6c-18a0-482f-803e-b75e1b211e98
-source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
+source-git-commit: d978437479bedd0f943a6d68de78073f318cccb5
 workflow-type: tm+mt
-source-wordcount: '2193'
+source-wordcount: '2299'
 ht-degree: 9%
 
 ---
 
 # 相似受众指南
 
->[!IMPORTANT]
+>[!AVAILABILITY]
 >
 >相似见解和相似受众仅在&#x200B;**B2C版本**&#x200B;中可用。
+
+>[!IMPORTANT]
+>
+>对于使用率较低的环境，相似分析和相似受众会自动禁用。 低使用率的定义是：不查看过去三个月的相似人群拓展见解，或过去六个月不创建新的相似受众。
+>
+>如果环境禁用了相似见解，则可以通过向Adobe客户关怀团队发送电子邮件（包括您的组织ID和消息中的环境详细信息）来请求访问权限。
+>
+>在收到Adobe客户关怀的确认后，您环境中的所有沙盒中将启用相似见解和受众。
 
 在Adobe Experience Platform中，相似受众可针对每位受众提供智能见解，并利用基于机器学习的见解来通过营销活动识别和定位高价值客户。
 
@@ -33,7 +41,7 @@ ht-degree: 9%
 
 要使用相似见解，基本受众&#x200B;**必须**&#x200B;满足以下资格条件：
 
-- 必须在Experience Platform中创建基础受众&#x200B;**&#x200B;**。
+- 必须在Experience Platform中创建基础受众&#x200B;****。
    - 外部生成的受众&#x200B;**无**&#x200B;资格获得相似见解。
 - 基础受众&#x200B;**必须**&#x200B;使用默认合并策略。
 - 基础受众&#x200B;**必须**&#x200B;不使用数据治理所限制的字段。
@@ -75,7 +83,9 @@ ht-degree: 9%
 
 附加组件包将在以后的日期提供，它会将生产沙盒的权利增加到每个包20个相似受众。
 
-要确认您是否可以访问相似受众，请联系您的Adobe代表。
+## 访问 {#access}
+
+要确认您是否可以访问相似受众，请在Audience Portal中选择任意受众，并检查&#x200B;**[!UICONTROL 相似见解]**&#x200B;选项卡是否可见。
 
 ## 查看相似见解 {#view}
 
@@ -94,7 +104,7 @@ ht-degree: 9%
 >title="相似性和覆盖率"
 >abstract="相似性和覆盖范围图形绘制了由给定相似性分数以上的轮廓组成的相似受众的预期覆盖范围。您可以将鼠标悬停在图形中的特定点上，以显示当前突出显示的点的相似性百分比和预期轮廓计数。"
 
-相似性和访问范围部分显示一个图形，其中绘制由超过给定相似度得分的用户档案组成的相似受众的预期访问范围。 相似度得分表示基础受众配置文件与相似人群拓展分析配置文件之间的&#x200B;**距离**。
+相似性和访问范围部分显示一个图形，其中绘制由超过给定相似度得分的用户档案组成的相似受众的预期访问范围。 相似度得分表示基础受众配置文件与相似insight配置文件之间的&#x200B;**距离**&#x200B;相似度。
 
 ![相似性和可达图已突出显示。](../images/types/lookalike/similarity-and-reach.png)
 
@@ -118,7 +128,7 @@ Y轴显示具有与x轴的匹配值相对应的相似性百分比的配置文件
 >id="platform_audiences_lookAlike_influentialFactors"
 >title="影响因素"
 >abstract="影响因素包括属性、事件和受众成员资格，这些因素对于解释轮廓与基础受众成员的相似性非常重要。数据使用标签和策略可用于排除某些数据，使其不被视为相似模型中的影响因素。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/types/lookalike-audiences.html?lang=zh-Hans#exclude" text="排除数据"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/types/lookalike-audiences.html#exclude" text="排除数据"
 
 影响因素部分显示影响所选基础受众相似人群拓展模型的前100个因素。 这些影响因素包括用户档案属性、体验事件和受众成员资格，它们在解释基础受众的相似之处时最为重要。 通过了解主要影响因素，您可以更好地为此受众以及从中创建的任何相似受众将营销内容个性化。 请注意，不会显示影响相似人群拓展模型的所有影响因素。
 
@@ -179,7 +189,7 @@ Y轴显示具有与x轴的匹配值相对应的相似性百分比的配置文件
 
 ![相似受众部分已突出显示。](../images/types/lookalike/select-laa.png)
 
-此时会显示受众详细信息页面。 有关此页面的详细信息，请阅读受众门户概述[&#128279;](../ui/audience-portal.md#audience-details)的受众详细信息部分。
+此时会显示受众详细信息页面。 有关此页面的详细信息，请阅读受众门户概述](../ui/audience-portal.md#audience-details)的[受众详细信息部分。
 
 ![显示相似受众的详细信息。](../images/types/lookalike/laa-details.png)
 
