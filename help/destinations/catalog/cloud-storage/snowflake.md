@@ -5,10 +5,10 @@ hide: true
 hidefromtoc: true
 badgeBeta: label="Beta 版" type="Informative"
 exl-id: 4a00e46a-dedb-4dd3-b496-b0f4185ea9b0
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: b78f36ed20d5a08036598fa2a1da7dd066c401fa
 workflow-type: tm+mt
-source-wordcount: '676'
-ht-degree: 6%
+source-wordcount: '1054'
+ht-degree: 4%
 
 ---
 
@@ -20,7 +20,27 @@ ht-degree: 6%
 
 ## 概述 {#overview}
 
-使用专用列表将数据导出到您的Snowflake帐户。
+使用Snowflake目标连接器将数据导出到Adobe的Snowflake实例，然后通过[私有列表](https://other-docs.snowflake.com/en/collaboration/collaboration-listings-about)与您的实例共享。
+
+请阅读以下部分，了解Snowflake目标的工作方式以及数据在Adobe和Snowflake之间的传输方式。
+
+### Snowflake数据共享的工作原理 {#data-sharing}
+
+此目标使用[!DNL Snowflake]数据共享，这意味着不会向您自己的Snowflake实例实际导出或传输任何数据。 Adobe而是会授予您对Adobe Snowflake环境中托管的活动表的只读访问权限。 您可以直接从Snowflake帐户查询此共享表，但您不是该表的所有者，并且无法在指定的保留期之外修改或保留该表。 Adobe可完全管理共享表的生命周期和结构。
+
+首次将AdobeSnowflake实例中的数据共享到您的实例时，系统会提示您接受Adobe的私有列表。
+
+### 数据保留和生存时间(TTL) {#ttl}
+
+通过此集成共享的所有数据的固定生存时间(TTL)为7天。 上次导出后七天，无论数据流是否仍处于活动状态，共享表都会自动过期并变为无法访问状态。 如果您需要将数据保留超过7天，则必须在TTL过期之前将这些内容复制到您自己的Snowflake实例中拥有的表中。
+
+### 受众更新行为 {#audience-update-behavior}
+
+如果您的受众在[批处理模式](../../../segmentation/methods/batch-segmentation.md)下评估，则共享表中的数据每24小时刷新一次。 这意味着，在受众成员身份发生更改后，这些更改会延迟最多24小时，并且这些更改会反映在共享表中。
+
+### 增量导出逻辑 {#incremental-export}
+
+首次针对受众运行数据流时，它将执行回填并共享所有当前符合条件的用户档案。 在此初始回填之后，只有增量更新会反映在共享表中。 这意味着向受众添加配置文件或从受众删除配置文件。 此方法可确保高效更新，并使共享表格保持最新。
 
 ## 先决条件 {#prerequisites}
 
@@ -67,13 +87,20 @@ ht-degree: 6%
 
 ### 填写目标详细信息 {#destination-details}
 
+>[!CONTEXTUALHELP]
+>id="platform_destinations_snowflake_accountID"
+>title="输入您的Snowflake帐户ID"
+>abstract="如果您的帐户链接到组织，请使用此格式： `OrganizationName.AccountName`<br><br>如果您的帐户未链接到组织，请使用此格式：`AccountName`"
+
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
 ![显示如何填写目标详细信息的示例屏幕截图](../../assets/catalog/cloud-storage/snowflake/configure-destination-details.png)
 
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
-* **[!UICONTROL Snowflake帐户ID]**：您的Snowflake帐户ID。 示例：`adobe-123456`。
+* **[!UICONTROL Snowflake帐户ID]**：您的Snowflake帐户ID。 根据您的帐户是否链接到组织，使用以下帐户ID格式：
+   * 如果您的帐户链接到组织： `OrganizationName.AccountName`。
+   * 如果您的帐户未链接到组织： `AccountName`。
 * **[!UICONTROL 帐户确认]**：打开Snowflake帐户ID确认，确认您的帐户ID正确且属于您。
 
 >[!IMPORTANT]
