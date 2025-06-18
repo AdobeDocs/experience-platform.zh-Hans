@@ -4,14 +4,23 @@ title: 钎焊连接
 description: Braze是一个全面的客户参与平台，可为客户与他们所喜爱的品牌之间提供相关且令人难忘的体验。
 last-substantial-update: 2024-08-20T00:00:00Z
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 37e78035f2656a3693a771ab5a9622f5446a4c9d
 workflow-type: tm+mt
-source-wordcount: '1125'
-ht-degree: 2%
+source-wordcount: '1230'
+ht-degree: 3%
 
 ---
 
 # [!DNL Braze]连接
+
+>[!IMPORTANT]
+>
+>* 从2025年6月19日开始，您可以在目标目录中并排看到两张&#x200B;**[!DNL Braze]**&#x200B;信息卡。 这是由于目标服务内部升级造成的。现有的[!DNL Braze]目标连接器已重命名为&#x200B;**[!UICONTROL （已弃用） Braze]**，现在您可以使用名为&#x200B;**[!UICONTROL Braze]**&#x200B;的新卡。
+>* 使用目录中的&#x200B;**[!UICONTROL Braze]**&#x200B;连接获取新的激活数据流。 如果您有任何到&#x200B;**[!UICONTROL （已弃用） Braze]**&#x200B;目标的活动数据流，它们会自动更新，因此您无需执行任何操作。
+>* 如果您是通过[流服务API](https://developer.adobe.com/experience-platform-apis/references/destinations/)创建数据流，则必须将[!DNL flow spec ID]和[!DNL connection spec ID]更新为以下值：
+>   * 流量规范 ID：`cb7919bd-69aa-462d-bcc0-db7cdc7fdf51`
+>   * 连接规范 ID：`ab957205-5a78-4393-b901-b930ed548220`
+
 
 ## 概述 {#overview}
 
