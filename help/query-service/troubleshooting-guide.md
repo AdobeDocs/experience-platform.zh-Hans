@@ -65,7 +65,7 @@ ht-degree: 0%
 ### 我可以将[!DNL Postman]用于查询服务API吗？
 
 +++回答
-可以，您可以使用[!DNL Postman]（免费的第三方应用程序）可视化所有Adobe API服务并与之交互。 请查看[[!DNL Postman] 设置指南](https://video.tv.adobe.com/v/28832)，了解有关如何在Adobe Developer Console中设置项目以及获取用于[!DNL Postman]的所有必要凭据的分步说明。 请参阅官方文档，了解有关启动、运行和共享 [!DNL Postman] 收藏集](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)的[指南。
+可以，您可以使用[!DNL Postman]（免费的第三方应用程序）可视化所有Adobe API服务并与之交互。 请查看[[!DNL Postman] 设置指南](https://video.tv.adobe.com/v/28832)，了解有关如何在Adobe Developer Console中设置项目以及获取用于[!DNL Postman]的所有必要凭据的分步说明。 请参阅官方文档，了解有关启动、运行和共享 [!DNL Postman] 收藏集[&#128279;](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)的指南。
 +++
 
 ### 通过UI从查询返回的最大行数是否存在限制？
@@ -160,7 +160,7 @@ ht-degree: 0%
 
 ![顶部导航栏下拉菜单（包含帮助和支持、企业支持和联系我们）突出显示。](./images/troubleshooting/help-and-support.png)
 
-此时会出现一个下拉横幅，其中包含[!UICONTROL 帮助和支持]部分。 选择&#x200B;**[!UICONTROL 联系我们]**&#x200B;以打开Adobe客户关怀虚拟助手，或选择&#x200B;**[!UICONTROL 企业支持]**以获得大型组织的专用帮助。
+此时会出现一个下拉横幅，其中包含[!UICONTROL 帮助和支持]部分。 选择&#x200B;**[!UICONTROL 联系我们]**&#x200B;以打开Adobe客户关怀虚拟助手，或选择&#x200B;**[!UICONTROL 企业支持]**&#x200B;以获得大型组织的专用帮助。
 +++
 
 ### 如果上一个作业未成功完成，如何实施一系列连续的作业，而不执行后续作业？
@@ -293,7 +293,7 @@ SELECT count(1) FROM myTableName
 ### 查询服务支持哪些帮助程序函数？
 
 +++回答
-查询服务提供多个内置的SQL帮助程序函数以扩展SQL功能。 有关查询服务](./sql/spark-sql-functions.md)支持的[SQL函数的完整列表，请参阅此文档。
+查询服务提供多个内置的SQL帮助程序函数以扩展SQL功能。 有关查询服务[&#128279;](./sql/spark-sql-functions.md)支持的SQL函数的完整列表，请参阅此文档。
 +++
 
 ### 是否支持所有本机[!DNL Spark SQL]函数，或者用户是否仅限于Adobe提供的包装器[!DNL Spark SQL]函数？
@@ -313,7 +313,7 @@ SELECT count(1) FROM myTableName
 +++回答
 首先，检查日志以了解错误的详细信息。 有关[在日志](#error-logs)中查找错误的常见问题解答部分提供了有关如何执行此操作的更多信息。
 
-您还应该查看文档以了解有关如何在UI](./ui/user-guide.md#scheduled-queries)中以及通过[API](./api/scheduled-queries.md)执行[计划查询的指导。
+您还应该查看文档以了解有关如何在UI[&#128279;](./ui/user-guide.md#scheduled-queries)中以及通过[API](./api/scheduled-queries.md)执行计划查询的指导。
 
 请注意，使用[!DNL Query Editor]时，您只能向已创建并保存的查询添加计划。 这不适用于[!DNL Query Service] API。
 +++
@@ -464,7 +464,7 @@ WHERE timestamp = CAST('07-29-2021 00:00:00' AS timestamp)
 ### 是否应使用通配符（如*）获取数据集中的所有行？
 
 +++回答
-无法使用通配符获取行中的所有数据，因为查询服务应被视为**列存储**，而不是传统的基于行的存储系统。
+无法使用通配符获取行中的所有数据，因为查询服务应被视为&#x200B;**列存储**，而不是传统的基于行的存储系统。
 +++
 
 ### 是否应在SQL查询中使用`NOT IN`？
@@ -744,7 +744,7 @@ INSERT INTO查询称为ITAS查询。 请注意，CREATE TABLE查询称为CTAS查
 ### 是否有办法连接一次查询服务以与第三方工具一起连续使用？
 
 +++回答
-可以，可以通过一次性设置不过期凭据将第三方桌面客户端连接到查询服务。 未过期的凭据可由授权用户生成，并在自动下载到其本地计算机的JSON文件中接收。 在文档中可找到有关如何创建和下载未过期凭据](./ui/credentials.md#non-expiring-credentials)的完整[指南。
+可以，可以通过一次性设置不过期凭据将第三方桌面客户端连接到查询服务。 未过期的凭据可由授权用户生成，并在自动下载到其本地计算机的JSON文件中接收。 在文档中可找到有关如何创建和下载未过期凭据[&#128279;](./ui/credentials.md#non-expiring-credentials)的完整指南。
 +++
 
 ### 为什么我的未过期凭据不起作用？
@@ -763,7 +763,7 @@ INSERT INTO查询称为ITAS查询。 请注意，CREATE TABLE查询称为CTAS查
 ### 能否将Power BI工具连接到查询服务？
 
 +++回答
-是，您可以将Power BI连接到查询服务。 有关将Power BI桌面应用程序连接到查询服务](./clients/power-bi.md)的说明，请参阅文档[。
+是，您可以将Power BI连接到查询服务。 有关将Power BI桌面应用程序连接到查询服务[&#128279;](./clients/power-bi.md)的说明，请参阅文档。
 +++
 
 ### 连接到查询服务时，为何需要很长时间才能加载功能板？
