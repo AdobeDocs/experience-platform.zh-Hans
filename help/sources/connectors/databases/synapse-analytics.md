@@ -79,7 +79,7 @@ GRANT SELECT ON SCHEMA::dbo TO {APP_ID};
 | 服务主体密钥 | 与服务主体关联的客户端密钥或密码。 |
 | 连接规范ID | **连接规范**&#x200B;提供数据源的连接器属性。 这包含身份验证规范和创建&#x200B;**Base**&#x200B;和&#x200B;**Source**&#x200B;连接的要求等详细信息。 对于[!DNL Azure Synapse Analytics]，连接规范ID为： `a49bcc7d-8038-43af-b1e4-5a7a089a7d79`。 **注意：**&#x200B;只有在通过API连接时才需要此凭据。 |
 
-有关详细信息，请阅读有关管理 [!DNL Azure Synapse Analytics]](https://learn.microsoft.com/en-us/azure/synapse-analytics/synapse-service-identity)的标识的[[!DNL Azure] 文档。
+有关详细信息，请阅读有关管理 [!DNL Azure Synapse Analytics][&#128279;](https://learn.microsoft.com/en-us/azure/synapse-analytics/synapse-service-identity)的标识的[!DNL Azure] 文档。
 
 >[!ENDTABS]
 
