@@ -1,7 +1,7 @@
 ---
 title: 阿尔戈利亚
 description: 使用此连接器可将受众激活到算法以进行个性化，并在搜索和推荐中使用。 然后，您可以使用Algolia User Profile source connector将用户档案导入Real-Time CDP以构建丰富的受众。
-source-git-commit: 2205ba48a6c17b8f34c4796c1777bfc53a6a7fe5
+source-git-commit: 01e8739952ce2f56eaafcbb0731fb88d5961b21d
 workflow-type: tm+mt
 source-wordcount: '1052'
 ht-degree: 3%
@@ -15,7 +15,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->[!DNL Algolia]目标连接器和文档页面由Algolia Integration Services团队创建和维护。 有关查询或更新请求，请通过[adobe-algolia-solutions@algolia.com](adobe-algolia-solutions@algolia.com)联系他们。
+>[!DNL Algolia]目标连接器和文档页面由Algolia Integration Services团队创建和维护。 有关查询或更新请求，请通过[adobe-algolia-solutions@algolia.com](mailto:adobe-algolia-solutions@algolia.com)联系他们。
 
 使用[!DNL Algolia]目标连接将Adobe Experience Platform受众发送到阿尔及利亚，以进行个性化搜索和推荐。 必须先设置[[!DNL Algolia User Profiles]](/help/sources/connectors/data-partners/algolia-user-profiles.md)源连接器，然后才能使用[!DNL Algolia]目标连接器。 在源连接器设置教程中，您将创建Algolia用户令牌身份。 配置目标连接器时，映射需要此标识。
 
@@ -119,9 +119,9 @@ ht-degree: 3%
 >[!IMPORTANT]
 > 
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 要导出身份，您需要查看身份图形[访问控制权限](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/home#permissions)。
+>* 要导出身份，您需要查看身份图形[访问控制权限](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions)。
 
-有关将受众激活到此目标的说明，请阅读[将配置文件和受众激活到流式受众导出目标](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations)。
+有关将受众激活到此目标的说明，请阅读[将配置文件和受众激活到流式受众导出目标](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations)。
 
 ### 映射属性和身份 {#mapping-attributes-identities}
 
