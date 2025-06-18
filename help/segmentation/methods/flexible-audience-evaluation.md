@@ -3,9 +3,9 @@ title: 灵活的受众评估指南
 description: 了解如何使用灵活的受众评估来按需运行批量分段作业。
 role: Developer, User
 exl-id: b85bf735-be02-4bf7-bd63-8d74ae905e58
-source-git-commit: 9aa638903eaf9bf29ce1da3d62f8e69c15ffe50a
+source-git-commit: 7a0a98ea035892943a0e9a9a2b059701f6f1f612
 workflow-type: tm+mt
-source-wordcount: '1084'
+source-wordcount: '1140'
 ht-degree: 5%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 5%
 - 您每&#x200B;**生产**&#x200B;沙盒每年最多有&#x200B;**个**&#x200B;灵活的受众评估运行，共50个。
 - 您每&#x200B;**开发**&#x200B;沙盒每年最多有&#x200B;**次**&#x200B;运行100次灵活受众评估。
 - 所有受众&#x200B;**都必须**&#x200B;具有“分段服务”的来源。
-- 必须使用批处理分段评估所有受众&#x200B;**&#x200B;**。
+- 必须使用批处理分段评估所有受众&#x200B;****。
 - 所有受众&#x200B;**必须**&#x200B;是基于人员的受众。
 - 每个灵活受众评估运行最多只能选择20个受众。
 
@@ -318,7 +318,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/b31aed3d-b3b1-4
 >
 >区段作业的状态可能会在监控仪表板中报告为“已排队”状态。 您可以查看区段作业的最新状态，方法是向`/segment/jobs`端点发出GET请求，并在请求路径中提供区段作业的ID。 在“API”选项卡中可找到有关使用此端点的更多信息。
 >
->如果您运行灵活的受众评估并希望评估将受众激活到目标，则需要确保将频率设置为&#x200B;**[!UICONTROL 在区段评估后]**。 对已设置为在区段评估[&#128279;](../../destinations/ui/activate-batch-profile-destinations.md#export-full-files)后激活的受众运行灵活的受众评估，将在灵活的受众评估作业完成后立即激活受众，而不考虑任何之前的每日激活作业。
+>如果您运行灵活的受众评估并希望评估将受众激活到目标，则需要确保将频率设置为&#x200B;**[!UICONTROL 在区段评估后]**。 对已设置为在区段评估](../../destinations/ui/activate-batch-profile-destinations.md#export-full-files)后[激活的受众运行灵活的受众评估，将在灵活的受众评估作业完成后立即激活受众，而不考虑任何之前的每日激活作业。
 
 >[!ENDTABS]
 
@@ -326,7 +326,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/b31aed3d-b3b1-4
 
 以下视频演示了如何在Experience Platform中访问和使用灵活的受众评估。
 
->[!VIDEO](https://video.tv.adobe.com/v/3453650?&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/3453640?)
 
 ## 常见问题解答 {#faq}
 
@@ -396,3 +396,10 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/b31aed3d-b3b1-4
 
 +++
 
+### 通过灵活的受众评估来评估主要受众时，是否需要评估所有依赖的受众？
+
++++ 回答
+
+不会。灵活的受众评估将自动评估所有依赖的受众。 例如，如果受众A依赖于受众B，则您只需要评估受众B。灵活的受众评估将自动评估受众A，然后评估受众B。
+
++++
