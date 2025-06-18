@@ -46,7 +46,7 @@ Experience Platform利用[Adobe Admin Console](https://adminconsole.adobe.com)�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 导出功能板数据权限 | 功能板中的&#x200B;**[!UICONTROL 下载CSV]**&#x200B;和&#x200B;**[!UICONTROL 以电子邮件形式发送]**&#x200B;选项现在需要&#x200B;**[!UICONTROL 导出功能板数据]**&#x200B;权限。 此权限可确保仅授权用户可以导出列表化的insight数据，从而支持更严格的治理和数据访问控制策略。 有关详细信息，请阅读访问控制指南](../../access-control/home.md#permissions)的[权限部分。 |
+| 导出功能板数据权限 | 功能板中的&#x200B;**[!UICONTROL 下载CSV]**&#x200B;和&#x200B;**[!UICONTROL 以电子邮件形式发送]**&#x200B;选项现在需要&#x200B;**[!UICONTROL 导出功能板数据]**&#x200B;权限。 此权限可确保仅授权用户可以导出列表化的insight数据，从而支持更严格的治理和数据访问控制策略。 有关详细信息，请阅读访问控制指南[&#128279;](../../access-control/home.md#permissions)的权限部分。 |
 
 有关详细信息，请参阅[访问控制概述](../../access-control/home.md)。
 
