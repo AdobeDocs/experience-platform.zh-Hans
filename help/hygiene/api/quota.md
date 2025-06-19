@@ -3,9 +3,9 @@ title: 配额API端点
 description: 通过数据卫生API中的/quota端点，您可以根据组织的每个作业类型的每月配额限制监控高级数据生命周期管理的使用情况。
 role: Developer
 exl-id: 91858a13-e5ce-4b36-a69c-9da9daf8cd66
-source-git-commit: 48a83e2b615fc9116a93611a5e6a8e7f78cb4dee
+source-git-commit: 4d34ae1885f8c4b05c7bb4ff9de9c0c0e26154bd
 workflow-type: tm+mt
-source-wordcount: '437'
+source-wordcount: '492'
 ht-degree: 1%
 
 ---
@@ -14,10 +14,7 @@ ht-degree: 1%
 
 数据卫生API中的`/quota`端点允许您根据组织对每个作业类型的配额限制监控高级数据生命周期管理的使用情况。
 
-通过以下方式为每个数据生命周期作业类型强制执行配额：
-
-* 记录删除和更新限制为每月特定数量的请求。
-* 数据集过期对并发活动作业的数量有统一限制，无论何时执行过期。
+跟踪每个数据生命周期作业类型的配额使用情况。 您的实际配额限制取决于您组织的权利并可定期审查。 数据集过期时间受并发活动作业数量的硬限制。
 
 ## 快速入门
 
@@ -25,7 +22,15 @@ ht-degree: 1%
 
 * 相关文档的链接
 * 本文档中有关阅读示例API调用的指南
-* 有关调用任何Experience PlatformAPI所需的标头的重要信息
+* 有关调用任何Experience Platform API所需的标头的重要信息
+
+## 配额和处理时间线 {#quotas}
+
+记录删除请求受基于您的许可证授权的配额和服务级别期望值约束。 这些限制同时适用于基于UI和基于API的删除请求。
+
+>[!TIP]
+> 
+>本文档说明如何根据基于权利的限制查询您的使用情况。 有关配额层、记录删除权限和SLA行为的完整说明，请参阅基于[UI的记录删除](../ui/record-delete.md#quotas)或基于[API的记录删除](./workorder.md#quotas)文档。
 
 ## 列出配额 {#list}
 
@@ -70,13 +75,13 @@ curl -X GET \
       "name": "dailyConsumerDeleteIdentitiesQuota",
       "description": "The consumed number of deleted identities in all workorder requests for the organization for today.",
       "consumed": 0,
-      "quota": 600000
+      "quota": 1000000
     },
     {
       "name": "monthlyConsumerDeleteIdentitiesQuota",
       "description": "The consumed number of deleted identities in all workorder requests for the organization for this month.",
       "consumed": 841,
-      "quota": 600000
+      "quota": 2000000
     },
     {
       "name": "monthlyUpdatedFieldIdentitiesQuota",
@@ -89,7 +94,5 @@ curl -X GET \
 ```
 
 | 属性 | 描述 |
-| --- | --- |
+| -------- | ------- |
 | `quotas` | 列出每个数据生命周期作业类型的配额信息。 每个配额对象包含以下属性：<ul><li>`name`：数据生命周期作业类型：<ul><li>`expirationDatasetQuota`：数据集过期</li><li>`deleteIdentityWorkOrderDatasetQuota`：记录删除</li></ul></li><li>`description`：数据生命周期作业类型的描述。</li><li>`consumed`：在当前时段中运行的此类型的作业数。 对象名称指示配额周期。</li><li>`quota`：贵组织此作业类型的配额。 对于记录删除和更新，配额表示每个月期间可以运行的作业数。 对于数据集过期，配额表示在任意给定时间可同时处于活动状态的作业数。</li></ul> |
-
-{style="table-layout:auto"}

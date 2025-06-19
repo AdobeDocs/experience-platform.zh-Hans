@@ -2,9 +2,9 @@
 title: 高级数据生命周期管理概述
 description: 高级数据生命周期管理允许您通过更新或清除过时或不准确的记录来管理数据的生命周期。
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 9ffd2db5555a4c157171d488deb9641aadbb08b4
 workflow-type: tm+mt
-source-wordcount: '832'
+source-wordcount: '865'
 ht-degree: 1%
 
 ---
@@ -42,6 +42,11 @@ Experience Platform UI中的[!UICONTROL 数据生命周期]工作区允许您配
 
 [记录删除](./ui/record-delete.md)和数据集过期请求都有各自的处理时间表，并在各自工作流程中的关键点提供透明度更新。
 
+>[!TIP]
+>
+>若要监视当前使用量是否符合配额限制，请参阅[配额参考指南](./api/quota.md)。\
+>有关权利规则、每月上限、SLA时间表和异常处理策略，请参阅[记录删除(UI)](./ui/record-delete.md#quotas)和[工作单(API)](./api/workorder.md#quotas)文档。
+
 创建[数据集过期请求](./ui/dataset-expiration.md)时会发生以下情况：
 
 | 暂存 | 计划到期后的时间 | 描述 |
@@ -51,8 +56,8 @@ Experience Platform UI中的[!UICONTROL 数据生命周期]工作区允许您配
 | 数据集已删除 | 3 小时 | **在数据集被标记为删除的一小时后**，它已从系统中完全删除。 此时，会从UI中的[数据集清单页面](../catalog/datasets/user-guide.md)中删除数据集。 但是，数据湖中的数据在此阶段仅被软删除，并且将在硬删除过程完成之前保持软删除状态。 |
 | 配置文件计数已更新 | 30 小时 | 根据要删除的数据集的内容，如果某些用户档案的所有组件属性都与该数据集关联，则可能会从系统中删除该用户档案。 数据集被删除30小时后，所有配置文件计数中产生的任何更改都会反映在[仪表板小组件](../dashboards/guides/profiles.md#profile-count-trend)和其他报表中。 |
 | 已更新受众 | 48 小时 | 更新所有受影响的配置文件后，将更新所有相关的[受众](../segmentation/home.md)以反映其新大小。 根据删除的数据集以及您进行分段的属性，每个受众的大小可能会因删除而增加或减少。 |
-| 已更新历程和目标 | 50 小时 | 已根据相关区段中的更改更新[历程](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html?lang=zh-Hans)、[促销活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html?lang=zh-Hans)和[目标](../destinations/home.md)。 |
-| 硬删除完成 | 15 天 | 与数据集相关的所有数据都会从数据湖中硬删除。 已删除数据集的数据生命周期作业[&#128279;](./ui/browse.md#view-details)的状态已更新以反映此情况。 |
+| 已更新历程和目标 | 50 小时 | 已根据相关区段中的更改更新[历程](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html)、[促销活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html)和[目标](../destinations/home.md)。 |
+| 硬删除完成 | 15 天 | 与数据集相关的所有数据都会从数据湖中硬删除。 已删除数据集的数据生命周期作业](./ui/browse.md#view-details)的[状态已更新以反映此情况。 |
 
 {style="table-layout:auto"}
 
@@ -72,7 +77,7 @@ The following takes place when a [record delete request](./ui/record-delete.md) 
 | Request is submitted | 0 hours | A data steward or privacy analyist submits a record delete request. The request is visible in the [!UICONTROL Data Lifecycle UI] after it has been submitted. |
 | Profile lookups updated | 3 hours | The change in profile counts caused by the deleted identity are reflected in [dashboard widgets](../dashboards/guides/profiles.md#profile-count-trend) and other reports. |
 | Segments updated | 24 hours | Once profiles are removed, all related [segments](../segmentation/home.md) are updated to reflect their new size. |
-| Journeys and destinations updated | 26 hours | [Journeys](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html?lang=zh-Hans), [campaigns](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html?lang=zh-Hans), and [destinations](../destinations/home.md) are updated according to changes in related segments. |
+| Journeys and destinations updated | 26 hours | [Journeys](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html), [campaigns](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html), and [destinations](../destinations/home.md) are updated according to changes in related segments. |
 | Records soft deleted in data lake | 7 days | The data is soft deleted from the data lake. |
 | Data vacuuming completed | 14 days | The [status of the lifecycle job](./ui/browse.md#view-details) updates to indicate that the job has completed, meaning that data vacuuming has been completed on the data lake and the relevant records have been hard deleted. |
 

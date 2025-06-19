@@ -1,24 +1,20 @@
 ---
-title: 删除记录
+title: 记录删除请求（UI工作流）
 description: 了解如何在Adobe Experience Platform UI中删除记录。
-badgeBeta: label="Beta 版" type="Informative"
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 07e09cfe2e2c3ff785caf0b310cbe2f2cc381c17
 workflow-type: tm+mt
-source-wordcount: '1574'
-ht-degree: 8%
+source-wordcount: '1797'
+ht-degree: 7%
 
 ---
 
-# 删除记录 {#record-delete}
+# 记录删除请求（UI工作流） {#record-delete}
 
 使用[[!UICONTROL 数据生命周期]工作区](./overview.md)根据记录的主要标识删除Adobe Experience Platform中的记录。 这些记录可以绑定到个人消费者或身份图中包含的任何其他实体。
 
 >[!IMPORTANT]
-> 
->记录删除功能当前在Beta中，仅在&#x200B;**有限版本**&#x200B;中可用。 并非所有客户都可使用。 记录删除请求仅适用于受限版本中的组织。
-> 
-> 
+>
 >记录删除旨在用于数据清理、匿名数据删除或数据最小化。 它们&#x200B;**不是**&#x200B;用于数据主体权利请求（合规性），因为它与《通用数据保护条例》(GDPR)等隐私法规相关。 对于所有合规性用例，请改用[Adobe Experience Platform Privacy Service](../../privacy-service/home.md)。
 
 ## 先决条件 {#prerequisites}
@@ -134,13 +130,59 @@ JSON文件必须格式化为一组对象，每个对象表示一个标识。
 
 ![加号图标和添加身份图标突出显示的请求创建工作流。](../images/ui/record-delete/more-identities.png)
 
+## 配额和处理时间线 {#quotas}
+
+记录删除请求受每天和每月标识符提交限制的约束，具体取决于贵组织的许可证权利。 这些限制同时适用于基于UI和基于API的删除请求。
+
+>[!NOTE]
+>
+>您每天最多可以提交&#x200B;**1,000,000个标识符**，但前提是剩余的每月配额允许这样做。 如果每月上限不到100万，则每日提交内容不能超过该上限。
+
+### 按产品显示的每月提交权利 {#quota-limits}
+
+下表概述了按产品和权利级别划分的标识符提交限制。 对于每个产品，每月上限是两个值中的较小值：固定标识符上限或与许可数据量绑定的基于百分比的阈值。
+
+| 产品 | 权利描述 | 每月上限（以较小者为准） |
+|----------|-------------------------|---------------------------------|
+| Real-Time CDP或Adobe Journey Optimizer | 不带Privacy and Security Shield或Healthcare Shield附加组件 | 2,000,000个标识符或可寻址受众的5% |
+| Real-Time CDP或Adobe Journey Optimizer | 带有Privacy and Security Shield或Healthcare Shield附加组件 | 15,000,000个标识符或10%的可寻址受众 |
+| Customer Journey Analytics | 不带Privacy and Security Shield或Healthcare Shield附加组件 | 2,000,000个标识符或每百万CJA权利行有100个标识符 |
+| Customer Journey Analytics | 带有Privacy and Security Shield或Healthcare Shield附加组件 | 15,000,000个标识符或每百万CJA权利行有200个标识符 |
+
+>[!NOTE]
+>
+> 根据大多数组织的实际可寻址受众或CJA行授权，其每月限制较低。
+
+配额在每个日历月的第一天重置。 未使用的配额&#x200B;**未**&#x200B;延期。
+
+>[!NOTE]
+>
+>配额基于贵组织为&#x200B;**提交的标识符**&#x200B;授予的每月授权。 系统护栏不强制执行这些操作，但可以对其进行监控和审查。
+>
+>记录删除是&#x200B;**共享服务**。 您的每月上限反映了Real-Time CDP、Adobe Journey Optimizer、Customer Journey Analytics和任何适用的Shield加载项中的最高权限。
+
+### 处理标识符提交的时间表 {#sla-processing-timelines}
+
+提交后，记录删除请求将根据您的权利级别进行排队和处理。
+
+| 产品和权利描述 | 队列持续时间 | 最长处理时间(SLA) |
+|------------------------------------------------------------------------------------|---------------------|-------------------------------|
+| 不带Privacy and Security Shield或Healthcare Shield附加组件 | 长达15天 | 30 天 |
+| 带有Privacy and Security Shield或Healthcare Shield附加组件 | 通常为24小时 | 15 天 |
+
+如果贵组织需要更高的限制，请联系您的Adobe代表进行权利审查。
+
+>[!TIP]
+>
+>要检查您当前的配额使用情况或权利层，请参阅[配额参考指南](../api/quota.md)。
+
 ## 提交请求 {#submit}
 
 完成向请求添加身份后，在&#x200B;**[!UICONTROL 请求设置]**&#x200B;下，在选择&#x200B;**[!UICONTROL 提交]**&#x200B;之前，提供请求的名称和可选描述。
 
->[!IMPORTANT]
-> 
->对于每月可以提交的唯一身份记录删除总数，存在不同的限制。 这些限制基于您的许可协议。 如果组织购买了Adobe Real-Time Customer Data Platform或Adobe Journey Optimizer的所有版本，则每月最多可以提交100,000个身份记录删除。 已购买&#x200B;**Adobe Healthcare Shield**&#x200B;或&#x200B;**Adobe Privacy &amp; Security Shield**&#x200B;的组织每月最多可提交600,000个身份记录删除。<br>通过用户界面发出的单个记录删除请求允许您同时提交10,000个ID。 用于删除记录的[API方法](../api/workorder.md#create)允许一次提交100,000个ID。<br>最佳实践是，根据您的ID限制，为每个请求提交尽可能多的ID。 当您打算删除大量ID时，应避免提交小量ID，或每个记录删除请求只提交一个ID。
+>[!TIP]
+>
+>您通过UI每个请求最多可提交10,000个身份。 若要提交较大的卷（每个请求最多100,000个ID），请使用[API方法](../api/workorder.md#create)。
 
 ![请求设置的[!UICONTROL Name]和[!UICONTROL Description]字段已突出显示[!UICONTROL Submit]。](../images/ui/record-delete/submit.png)
 
@@ -154,7 +196,7 @@ JSON文件必须格式化为一组对象，每个对象表示一个标识。
 >
 >有关执行记录删除后如何处理这些删除的详细信息，请参阅[时间线和透明度](../home.md#record-delete-transparency)的概述部分。
 
-![数据生命周期]工作区的[!UICONTROL 记录]选项卡，其中新请求突出显示。(../images/ui/record-delete/request-log.png)
+![数据生命周期]工作区的[!UICONTROL 记录]选项卡，其中新请求突出显示。](../images/ui/record-delete/request-log.png)[!UICONTROL 
 
 ## 后续步骤
 
