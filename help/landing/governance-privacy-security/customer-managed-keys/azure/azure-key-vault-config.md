@@ -4,9 +4,9 @@ description: 了解如何使用Azure创建新的企业帐户，或使用现有�
 role: Developer
 feature: Privacy
 exl-id: 670e3ca3-a833-4b28-9ad4-73685fa5d74d
-source-git-commit: f4100506947da7584de5b9fb42946ac877c8c102
+source-git-commit: c920f78363ee5f040964dbd3a0d0815474094b07
 workflow-type: tm+mt
-source-wordcount: '588'
+source-wordcount: '675'
 ht-degree: 0%
 
 ---
@@ -57,6 +57,14 @@ ht-degree: 0%
 
 在左侧导航中选择&#x200B;**[!DNL Networking]**。 在&#x200B;**[!DNL Firewalls and virtual networks]**&#x200B;下，选中复选框&#x200B;**[!DNL Allow trusted Microsoft services to bypass this firewall]**，然后选择&#x200B;**[!DNL Apply]**。
 
+>[!NOTE]
+>
+>如果您的密钥库使用受限网络访问，Adobe建议您添加以下静态IP地址： `20.88.123.53`。 通过添加此IP地址，Adobe服务可以更有效地监控连接，并在检测到访问问题时提供平台内警报。
+>
+>要了解有关何时允许列表Adobe的IP地址、警报的工作方式以及如何响应密钥访问失败通知的更多信息，请参阅[为Azure CMK配置警报和IP访问](./alerts-and-ip-access.md)。
+>
+>如果您的密钥库已配置为允许公共网络访问，则无需执行进一步操作。
+
 ![突出显示了[!DNL Microsoft Azure]的[!DNL Networking]选项卡，其中包含[!DNL Networking]和[!DNL Allow trusted Microsoft surfaces to bypass this firewall]异常。](../../../images/governance-privacy-security/customer-managed-keys/networking.png)
 
 ### 生成密钥 {#generate-a-key}
@@ -69,7 +77,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->请记住您为键提供的名称，因为将键发送到Adobe时需要使用该名称。
+>请记住您为密钥提供的名称，因为将密钥发送到Adobe时需要使用该名称。
 
 使用其余控件来配置要生成或导入的键（如果需要）。 完成后，选择&#x200B;**[!DNL Create]**。
 
