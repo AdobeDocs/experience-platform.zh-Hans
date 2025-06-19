@@ -1,12 +1,11 @@
 ---
 title: Google客户匹配+显示和视频360连接
 description: 借助Google Customer Match + Display & Video 360目标连接器，您可以使用Experience Platform中的在线和离线数据在Google自有和运营的资产(如Search、Shopping、Gmail和YouTube)中与客户联系并重新互动。
-badgeBeta: label="Beta 版" type="Informative"
 exl-id: f6da3eae-bf3f-401a-99a1-2cca9a9058d2
-source-git-commit: cf88ed1082085fac28553dcc7c7be27c517adb22
+source-git-commit: feb3077daf8b3632ff00b57099195523bbeac358
 workflow-type: tm+mt
-source-wordcount: '2032'
-ht-degree: 4%
+source-wordcount: '2252'
+ht-degree: 2%
 
 ---
 
@@ -18,10 +17,6 @@ ht-degree: 4%
 
 由于新引入的功能能够在[!DNL Display & Video 360]中利用[!DNL Customer Matched]受众，您现在可以在扩展的清单源名册中定位受众。
 
->[!IMPORTANT]
->
->此目标连接器处于测试阶段，仅提供给特定客户。要请求访问权限，请与 Adobe 代表联系。
-
 Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/help/destinations/assets/catalog/advertising/gcm-dv360/catalog.png)
 
 ## 与欧盟的更新同意要求相关的Google目标更改的重要通知
@@ -29,12 +24,12 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 >[!IMPORTANT]
 >
 > Google将发布对[Google Ads API](https://developers.google.com/google-ads/api/docs/start)、[Customer Match](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html)和[Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview)的更改，以支持欧盟（[EU用户同意政策](https://www.google.com/about/company/user-consent-policy/)）中[Digital Markets Act](https://digital-markets-act.ec.europa.eu/index_en) (DMA)定义的合规性和同意相关要求。 自2024年3月6日起，将开始实施对同意要求的这些更改。
-><br/>
->为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为 Google 合作伙伴，Adobe 为您提供必要的工具，以遵守欧盟 DMA 下的这些同意要求。
-><br/>
->如果客户购买了Adobe Privacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未经同意的用户档案，则无需采取任何操作。
-><br/>
->未购买Adobe Privacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/ui/segment-builder.md)中的[区段定义](../../../segmentation/home.md#segment-definitions)功能来过滤掉未经同意的用户档案，以便继续使用现有的Real-Time CDP Google目标而不中断。
+> ><br/>
+> >为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为 Google 合作伙伴，Adobe 为您提供必要的工具，以遵守欧盟 DMA 下的这些同意要求。
+> ><br/>
+> >如果客户购买了Adobe Privacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未经同意的用户档案，则无需采取任何操作。
+> ><br/>
+> >未购买Adobe Privacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/ui/segment-builder.md)中的[区段定义](../../../segmentation/home.md#segment-definitions)功能来过滤掉未经同意的用户档案，以便继续使用现有的Real-Time CDP Google目标而不中断。
 
 ## 何时使用此目标
 
@@ -97,7 +92,33 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 
 在Experience Platform中设置[!DNL Google Customer Match]目标之前，请确保已阅读并遵守Google关于使用[!DNL Customer Match]的策略，如[Google支持文档](https://support.google.com/google-ads/answer/6299717)中所述。
 
-接下来，确保为您的[!DNL Google]帐户配置了[!DNL Standard]或更高权限级别。 有关详细信息，请参阅[Google广告文档](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1)。
+接下来，确保为您的[!DNL Google]帐户配置了[!DNL Standard]或更高权限级别。 有关详细信息，请参阅[Google广告文档](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&rd=1)。
+
+### 帐户关联要求 {#linking}
+
+在配置此目标连接器之前，必须将Google帐户ID关联到Adobe的Google帐户ID：`4641108541`。
+
+如果您的Google帐户未正确关联到Adobe的帐户ID，则数据导出将失败。
+
+>[!NOTE]
+>
+>Adobe已将Google合作伙伴帐户ID从`6219889373`更新为`4641108541`。
+>
+>**如果您的Google帐户当前链接到旧的Adobe合作伙伴帐户ID (`6219889373`)，请执行以下步骤：**
+>
+>1. 取消您的Google帐户与旧Adobe合作伙伴帐户ID (`6219889373`)的链接
+>2. 将您的Google帐户关联到新的Adobe合作伙伴帐户ID (`4641108541`)
+>3. 从现有数据流中删除所有受众
+>4. 创建新数据流并映射您的受众
+>
+>如果您的Google帐户已链接到新的Adobe合作伙伴帐户ID (`4641108541`)，则无需您执行任何操作。
+
+**对于具有经理帐户的组织：**
+
+如果贵组织使用[经理 [!DNL Google] 帐户](https://support.google.com/google-ads/answer/6139186)管理多个客户端帐户，请遵循以下特定关联要求：
+
+* **要导出到特定的客户端帐户：**&#x200B;将该单个客户端帐户（而非经理帐户）关联到Adobe的Google帐户ID：`4641108541`
+* 仅关联&#x200B;**Manager帐户是不够的**，将导致数据导出失败
 
 ### 允许列表 {#allowlist}
 
@@ -133,7 +154,6 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 * [[!DNL Customer Match] 使用电话号码](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_phone_number)
 * 具有移动设备ID的[[!DNL Customer Match] ](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_mobile_device_ids)
 
-
 要了解如何在Experience Platform中摄取电子邮件地址，请参阅[批次摄取概述](../../../ingestion/batch-ingestion/overview.md)和[流式摄取概述](../../../ingestion/streaming-ingestion/overview.md)。
 
 如果选择自己对电子邮件地址进行哈希处理，请确保符合Google的要求，如上面的链接中所述。
@@ -151,9 +171,14 @@ Attribute source data is not automatically hashed. When your source field contai
 
 The video below demonstrates the steps to configure a [!DNL Google Customer Match] destination and activate audiences. The steps are also laid out sequentially in the next sections.
 
->[!VIDEO](https://video.tv.adobe.com/v/3411783/?quality=12&learn=on&captions=chi_hans) -->
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng) -->
 
 ## 连接到目标 {#connect}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_gcm_dv360_accountID"
+>title="关联Google和Adobe帐户"
+>abstract="请确保您在此处输入的Google帐户ID已关联到您的Adobe帐户。 如果您有一个经理Google帐户，该帐户具有多个客户帐户，并且您打算将数据从Experience Platform导出到特定的客户帐户，则必须将该客户帐户与您的Adobe帐户关联，并在此处输入帐户ID。"
 
 >[!IMPORTANT]
 > 
@@ -239,4 +264,4 @@ Experience Platform中的某些目标对于发送到目标平台或从目标平�
 
 `{"message":"Google Customer Match Error: OperationAccessDenied.ACTION_NOT_PERMITTED","code":"400 BAD_REQUEST"}`
 
-当客户帐户不符合[先决条件](#google-account-prerequisites)时，会发生此错误。 要解决此问题，请联系Google并确保您的帐户已列入允许列表并配置为[!DNL Standard]或更高权限级别。 有关详细信息，请参阅[Google广告文档](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1)。
+当客户帐户不符合[先决条件](#google-account-prerequisites)时，会发生此错误。 要解决此问题，请联系Google并确保您的帐户已列入允许列表并配置为[!DNL Standard]或更高权限级别。 有关详细信息，请参阅[Google广告文档](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&rd=1)。
