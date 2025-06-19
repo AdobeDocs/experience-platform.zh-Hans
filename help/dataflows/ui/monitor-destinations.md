@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中监视目标的数据流
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: fa7cfea74c5b76dd5643aaa2e9dd7447e9b9ef42
 workflow-type: tm+mt
-source-wordcount: '3626'
+source-wordcount: '3621'
 ht-degree: 10%
 
 ---
@@ -119,14 +119,33 @@ ht-degree: 10%
 
 ![流目标的数据流记录中突出显示了错误消息。](../assets/ui/monitor-destinations/dataflow-records-stream.png)
 
-#### (Beta)对流式目标的受众级别数据流运行监控 {#audience-level-dataflow-runs-for-streaming-destinations}
+#### [!BADGE Beta]{type=Informative}受众级数据流运行监控流式目标 {#audience-level-dataflow-runs-for-streaming-destinations}
 
 您可以查看有关在受众级别划分的激活、排除或失败身份的信息，这些信息适用于作为数据流一部分的每个受众。
 
 流目标的受众级别监视当前仅适用于以下目标：
 
-- [[!DNL Google Customer Match + Display & Video 360]](/help/destinations/catalog/advertising/google-customer-match-dv360.md)
-- [[!DNL Marketo Engage]](/help/destinations/catalog/adobe/marketo-engage.md)
+- [[!DNL (API) Oracle Eloqua]连接](../../destinations/catalog/email-marketing/oracle-eloqua-api.md)
+- [[!DNL (V2) Marketo Engage]](../../destinations/catalog/adobe/marketo-engage.md)
+- [[!DNL Airship Attributes]](../../destinations/catalog/mobile-engagement/airship-attributes.md)
+- [[!DNL Amazon Kinesis]](../../destinations/catalog/cloud-storage/amazon-kinesis.md)
+- [[!DNL Azure Event Hubs]](../../destinations/catalog/cloud-storage/azure-event-hubs.md)
+- [[!DNL Google Customer Match + Display & Video 360]](../../destinations/catalog/advertising/google-customer-match-dv360.md)
+- [[!DNL HTTP API]](../../destinations/catalog/streaming/http-destination.md)
+- [[!DNL HubSpot]](../../destinations/catalog/crm/hubspot.md)
+- [[!DNL Magnite: Real-time]](../../destinations/catalog/advertising/magnite-streaming.md)
+- [[!DNL Marketo Engage Person Sync]](../../destinations/catalog/adobe/marketo-engage-person-sync.md)
+- [[!DNL Microsoft Dynamics 365]](../../destinations/catalog/crm/microsoft-dynamics-365.md)
+- [[!DNL Moengage]](../../destinations/catalog/mobile-engagement/moengage.md)
+- [[!DNL Outreach]](../../destinations/catalog/crm/outreach.md)
+- [[!DNL PubMatic Connect]](../../destinations/catalog/advertising/pubmatic.md)
+- [[!DNL PubMatic Connect (Custom Audience ID Mapping)]](../../destinations/catalog/advertising/pubmatic.md)
+- [[!DNL Qualtrics Automations]](../../destinations/catalog/survey/qualtrics-automations.md)
+- [[!DNL RainFocus Attendee Profiles]](../../destinations/catalog/marketing-automation/rainfocus.md)
+- [[!DNL SAP Commerce]](../../destinations/catalog/ecommerce/sap-commerce.md)
+- [[!DNL Snowflake]](../../destinations/catalog/cloud-storage/snowflake.md)
+- [[!DNL Yahoo DataX]](../../destinations/catalog/advertising/datax.md)
+- [[!DNL Zendesk]](../../destinations/catalog/crm/zendesk.md)
 
 ![流目标的受众级监控。](/help/dataflows/assets/ui/monitor-destinations/audience-level-monitoring-streaming.png)
 
@@ -140,7 +159,7 @@ ht-degree: 10%
 >id="platform_monitoring_dataflow_run_details_activation"
 >title="数据流运行详细信息"
 >abstract="目标数据流运行详细信息包含有关受众激活状态的信息，以及从实时客户轮廓中获取的量度，以生成唯一身份标识。若要了解更多信息，请查看量度定义指南。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html?lang=zh-Hans#dataflow-runs-for-streaming-destinations" text="流式处理目标的数据流运行"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html#dataflow-runs-for-streaming-destinations" text="流式处理目标的数据流运行"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_batch"
@@ -253,10 +272,10 @@ ht-degree: 10%
 |--------------------------------------|-----------------------|
 | **[!UICONTROL 已接收的记录]** | 流式处理和批处理 |
 | **[!UICONTROL 个记录已激活]** | 流式处理和批处理 |
-| **[!UICONTROL 个记录失败]** | 流式处理 |
+| **[!UICONTROL 个记录失败]** | 流传输 |
 | **[!UICONTROL 跳过的记录数]** | 流式处理和批处理 |
 | **[!UICONTROL 数据类型]** | 流式处理和批处理 |
-| **[!UICONTROL 激活率]** | 流式处理 |
+| **[!UICONTROL 激活率]** | 流传输 |
 | **[!UICONTROL 失败的数据流总数]** | 批次 |
 | **[!UICONTROL 上次更新时间]** | 流式处理和批处理 |
 
@@ -305,7 +324,16 @@ ht-degree: 10%
 >[!IMPORTANT]
 >
 >请注意与受众级别量度相关的当前限制：
->- 受众级别视图当前仅适用于批处理（基于文件）目标和[Google Customer Match DV 360](/help/destinations/catalog/advertising/google-customer-match-dv360.md)流目标。 计划推出更多流媒体目标。
+>
+>- 受众级别视图当前适用于下面列出的目标。 计划推出更多流媒体目标。
+>
+>   - [[!DNL Google Customer Match + Display & Video 360]](/help/destinations/catalog/advertising/google-customer-match-dv360.md)
+>   - [[!DNL (V2) Marketo Engage]](/help/destinations/catalog/adobe/marketo-engage.md)
+>   - [[!DNL HTTP API]](/help/destinations/catalog/streaming/http-destination.md)
+>   - [[!DNL Amazon Kinesis]](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)
+>   - [[!DNL Azure Event Hubs]](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)
+>   - 批处理（基于文件）目标
+> 
 >- 对于批处理目标，当前仅记录成功数据流运行的受众级别量度。 失败的数据流运行和排除的记录不会记录这些事件。 对于流目标的数据流运行，将捕获并显示激活和排除的记录的量度。
 
 ![数据流面板中高亮显示的受众。](../assets/ui/monitor-destinations/dashboard-segments-view.png)
