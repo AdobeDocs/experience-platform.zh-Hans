@@ -3,7 +3,7 @@ keywords: facebook连接；facebook连接；facebook目标；facebook；instagra
 title: Facebook连接
 description: 根据散列邮件激活 Facebook 营销活动的轮廓，以实现受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: dd725b4d383bbcd93e68c81d4fe5182d6086e9be
+source-git-commit: 6ca3687d067044c3fcb9455ec287863c4ffaafd2
 workflow-type: tm+mt
 source-wordcount: '2690'
 ht-degree: 5%
@@ -138,8 +138,8 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 >[!NOTE]
 >
 >来自未经过哈希处理的命名空间的数据在激活时会由[!DNL Experience Platform]自动进行哈希处理。
->&#x200B;> 属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。
->&#x200B;> **[!UICONTROL 应用转换]**&#x200B;选项仅在您选择属性作为源字段时显示。 当您选择命名空间时，它不会显示。
+>> 属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。
+>> **[!UICONTROL 应用转换]**&#x200B;选项仅在您选择属性作为源字段时显示。 当您选择命名空间时，它不会显示。
 
 ![应用映射步骤中突出显示的转换控件。](../../assets/ui/activate-destinations/identity-mapping-transformation.png)
 
@@ -157,7 +157,7 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 以下视频还演示了配置[!DNL Facebook]目标和激活受众的步骤。
 
->[!VIDEO](https://video.tv.adobe.com/v/3411783/?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 >[!NOTE]
 >
@@ -187,7 +187,7 @@ Facebook身份验证令牌每60天过期一次。 令牌过期后，数据导出
    ![筛选以仅显示Facebook帐户](/help/destinations/assets/catalog/social/facebook/refresh-oauth-filters.png)
 3. 选择要刷新的帐户，选择省略号并选择&#x200B;**[!UICONTROL 编辑详细信息]**。
    ![选择“编辑详细信息”控件](/help/destinations/assets/catalog/social/facebook/refresh-oauth-edit-details.png)
-4. 在模式窗口中，选择&#x200B;**[!UICONTROL 重新连接OAuth]**&#x200B;并使用Facebook凭据重新进行身份验证。
+4. 在模式窗口中，选择&#x200B;**[!UICONTROL 重新连接OAuth]**并使用Facebook凭据重新进行身份验证。
    使用Reconnect OAuth选项的![模式窗口](/help/destinations/assets/catalog/social/facebook/reconnect-oauth-control.png)
 
 >[!SUCCESS]
