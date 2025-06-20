@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Adobe Experience Platform 概述
 breadcrumb-title: Experience Platform 概述
 user-guide-description: 通过指南、文档和教程了解 Experience Platform 如何让实时地为客户投放个性化体验成为可能。
-source-git-commit: e53616a183cc8fe834782c82c56f8483d7b43eb1
+source-git-commit: 82ed3867d18153ac422a639338180865c984b614
 workflow-type: tm+mt
-source-wordcount: '332'
-ht-degree: 30%
+source-wordcount: '336'
+ht-degree: 29%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 30%
 * [Experience Platform概述（视频）](video/platform-overview.md)
 * [多云概述](multi-cloud.md)
 * [Edge Network 与 Hub Network 比较](./edge-and-hub-comparison.md)
-* [Experience Platform 教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html?lang=zh-Hans)
+* [Experience Platform 教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html)
 * [由Experience Platform提供支持的客户体验（视频）](video/customer-experience.md)
 * [由Experience Platform提供支持的客户体验幕后（视频）](video/customer-experience-bts.md)
 * 快速入门 {#getting-started}
@@ -43,12 +43,12 @@ ht-degree: 30%
    * [语言支持](documentation/language-support.md)
 * 基于Experience Platform构建的应用程序 {#ecosystem}
    * [概述](application-services.md)
-   * [Adobe Real-Time Customer Data Platform（所有版本）](https://experienceleague.adobe.com/docs/real-time-customer-data-platform.html?lang=zh-Hans)
+   * [Adobe Real-Time Customer Data Platform（所有版本）](https://experienceleague.adobe.com/docs/real-time-customer-data-platform.html)
    * [应用程序和智能服务（视频）](video/application-intelligent-services.md)
    * [Customer Journey Analytics](https://experienceleague.adobe.com/docs/customer-journey-analytics.html?lang=zh-Hans)
    * [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer.html?lang=zh-Hans)
-   * [Journey Orchestration](https://experienceleague.adobe.com/docs/journey-orchestration.html?lang=zh-Hans)
-   * [[!DNL Adobe Mix Modeler]](https://experienceleague.adobe.com/docs/mix-modeler.html?lang=zh-Hans)
+   * [Journey Orchestration](https://experienceleague.adobe.com/docs/journey-orchestration.html)
+   * [[!DNL Adobe Mix Modeler]](https://experienceleague.adobe.com/docs/mix-modeler.html)
    * [Experience Platform与Experience Cloud的集成（视频）](video/experience-cloud-integrations.md)
 * 治理、隐私和安全 {#governance-privacy-security}
    * [概述](./governance-privacy-security/overview.md)
@@ -78,13 +78,14 @@ ht-degree: 30%
       * Amazon Web Services {#aws}
          * [为CMK配置AWS KMS](./governance-privacy-security/customer-managed-keys/aws/configure-kms.md)
          * [使用用户界面在AWS上设置CMK](./governance-privacy-security/customer-managed-keys/aws/ui-set-up.md)
+      * [CMK警报解决参考](./governance-privacy-security/customer-managed-keys/alert-resolution-reference.md)
 * 许可证使用和防护 {#license}
    * [数据管理许可证权利最佳实践](./license-usage-and-guardrails/data-management-best-practices.md)
    * [许可证用量仪表板](./license-usage-and-guardrails/license-usage-dashboard.md)
    * [总数据量](./license-usage-and-guardrails/total-data-volume.md)
-   * [Adobe Journey Optimizer护栏](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/guardrails.html?lang=zh-Hans)
-   * [Customer Journey Analytics护栏](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-admin/guardrails.html?lang=zh-Hans)
-   * [Real-Time CDP护栏](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/guardrails/overview.html?lang=zh-Hans)
+   * [Adobe Journey Optimizer护栏](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/guardrails.html)
+   * [Customer Journey Analytics护栏](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-admin/guardrails.html)
+   * [Real-Time CDP护栏](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/guardrails/overview.html)
 * [疑难解答指南](troubleshooting.md)
 * [Gen2数据湖迁移](adls2-gen2-migration.md)
 * [术语表](glossary.md)
