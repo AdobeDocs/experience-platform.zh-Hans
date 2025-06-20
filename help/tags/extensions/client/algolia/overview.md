@@ -1,9 +1,10 @@
 ---
 title: Algolia标记扩展概述
 description: 了解Adobe Experience Platform中的Algolia Tags扩展。
-source-git-commit: 5b488a596472fe61b487f75ad62d741237caa820
+exl-id: 8409bf8b-fae2-44cc-8466-9942f7d92613
+source-git-commit: 605f89a09f58568c2ec2492f788bedbe610292ae
 workflow-type: tm+mt
-source-wordcount: '1495'
+source-wordcount: '1635'
 ht-degree: 2%
 
 ---
@@ -79,9 +80,18 @@ ht-degree: 2%
 | 属性 | 描述 |
 | --- | --- |
 | [!UICONTROL 事件名称] | 事件名称，可用于进一步细化此点击事件。 |
-| 事件详细信息数据元素 | 将检索事件详细信息（包括`indexName`、`objectIDs`和可选的`queryID`、`position`）的数据元素。 如果同时包括`queryID`和`position`，则该事件将在搜索&#x200B;*后分类为*&#x200B;点击的对象ID，否则将被视为&#x200B;*点击的对象ID*&#x200B;事件。 如果数据元素不提供索引名称，则在发送事件时将使用默认的索引名称。 |
+| 事件详细信息数据元素 | 数据元素返回事件详细信息，包括： <ul><li>`indexName`</li><li>`objectIDs`</li><li>`queryID` （可选）</li><li>`position` （可选）</li></ul> |
+
+>[!NOTE]
+>
+>如果同时包括`queryID`和`position`，则该事件在搜索&#x200B;**后将被分类为**&#x200B;已点击对象ID。 否则，它被分类为&#x200B;**点击的对象ID**事件。
+>><br><br>
+>>如果数据元素不提供`indexName`，则在发送事件时将使用&#x200B;**默认索引名称**。
 
 ![](../../../images/extensions/client/algolia/clicked.png)
+
+有关事件类别的详细信息，请参阅搜索后的[点击对象ID](https://www.algolia.com/doc/api-reference/api-methods/clicked-object-ids-after-search/)
+和[已单击对象ID](https://www.algolia.com/doc/api-reference/api-methods/clicked-object-ids/)参考线。
 
 ### 已转换 {#converted}
 
@@ -90,9 +100,17 @@ ht-degree: 2%
 | 属性 | 描述 |
 | --- | --- |
 | 活动名称 | 将用于进一步细化此&#x200B;**转换**&#x200B;事件的事件名称。 |
-| 事件详细信息数据元素 | 将检索事件详细信息(包括`indexName`、`objectId`和（可选）`queryId`的数据元素。 如果数据元素包含`queryId`，则该事件将被分类为“搜索&#x200B;*后转换的*”，否则将被视为“转换的&#x200B;*”*&#x200B;事件类。 如果数据元素不提供索引名称，则在发送事件时将使用默认的索引名称。 |
+| 事件详细信息数据元素 | 数据元素返回事件详细信息，包括： <ul><li>`indexName`</li><li>`objectIDs`</li><li>`queryID` （可选）</li></ul> |
+
+>[!NOTE]
+>
+>如果数据元素包含`queryId`，则将该事件分类为&#x200B;**Converted after Search**。 否则，它将被分类为&#x200B;**转化的**事件。
+>><br><br>
+>>如果数据元素不提供`indexName`，则在发送事件时将使用&#x200B;**默认索引名称**。
 
 ![](../../../images/extensions/client/algolia/converted.png)
+
+有关事件类别的详细信息，请参阅搜索[转换后的对象ID](https://www.algolia.com/doc/api-reference/api-methods/converted-object-ids-after-search/)和[转换后的对象ID](https://www.algolia.com/doc/api-reference/api-methods/converted-object-ids/)指南。
 
 ### 已添加到购物车 {#added-to-cart}
 
@@ -101,32 +119,60 @@ ht-degree: 2%
 | 属性 | 描述 |
 | --- | --- |
 | 活动名称 | 将用于进一步细化此&#x200B;**转换**&#x200B;事件的事件名称。 |
-| 事件详细信息数据元素 | 将检索事件详细信息（包括`indexName`、`objectId`和可选的`queryId`、`objectData`）的数据元素。 如果数据元素包含`queryId`，则该事件将被分类为&#x200B;*在搜索后添加到购物车对象ID*，否则将被视为&#x200B;*已添加到购物车对象ID*&#x200B;事件类。 如果数据元素不提供索引名称，则在发送事件时将使用默认的索引名称。 |
+| 事件详细信息数据元素 | 数据元素返回事件详细信息，包括： <ul><li>`indexName`</li><li>`objectIDs`</li><li>`objectData`<ul><li>`queryID` （可选）</li><li>`price`</li><li>`quantity`</li><li>`discount`</li></ul></li><li>`queryID` （可选）</li></ul>。 |
 | 货币 | 指定货币类型，如`USD`。 |
+
+>[!NOTE]
+>
+>如果数据元素包含`queryId`，则该事件将被分类为&#x200B;**已添加到购物车对象ID（在搜索**&#x200B;之后）。 否则，它将被分类为&#x200B;**添加到购物车对象ID**事件。
+>><br><br>
+>>如果数据元素不提供`indexName`，则在发送事件时将使用&#x200B;**默认索引名称**。
+>><br><br>
+>>如果默认数据元素不符合您的要求，可以创建自定义一个数据元素以返回所需的事件详细信息。
 
 ![](../../../images/extensions/client/algolia/added-to-cart.png)
 
+有关事件类别的详细信息，请参阅[在搜索后添加到购物车对象ID](https://www.algolia.com/doc/api-reference/api-methods/added-to-cart-object-ids-after-search/)和[添加到购物车对象ID](https://www.algolia.com/doc/api-reference/api-methods/added-to-cart-object-ids/)指南。
+
 ### 已购买 {#purchased}
 
-将&#x200B;**[!UICONTROL 添加到购物车]**&#x200B;操作添加到您的标记规则以将已购买的事件发送到[!DNL Algolia]。 创建新标记规则或打开现有标记规则。 根据您的要求定义条件，然后选择&#x200B;**[!UICONTROL Algolia]**&#x200B;作为[!UICONTROL 扩展]，并选择&#x200B;**[!UICONTROL Purchased]**&#x200B;作为[!UICONTROL 操作类型]。
+将&#x200B;**[!UICONTROL Purchased]**&#x200B;操作添加到您的标记规则中，以将已购买的事件发送至[!DNL Algolia]。 创建新标记规则或打开现有标记规则。 根据您的要求定义条件，然后选择&#x200B;**[!UICONTROL Algolia]**&#x200B;作为[!UICONTROL 扩展]，并选择&#x200B;**[!UICONTROL Purchased]**&#x200B;作为[!UICONTROL 操作类型]。
 
 | 属性 | 描述 |
 | --- | --- |
 | 活动名称 | 将用于进一步细化此&#x200B;**购买**&#x200B;事件的事件名称。 |
-| 事件详细信息数据元素 | 将检索事件详细信息(包括`indexName`、`objectId`和（可选）`queryId`的数据元素。 如果数据元素包含`queryId`，则该事件在搜索后将被分类为&#x200B;*已购买对象ID*，否则将被视为&#x200B;*已购买对象ID*&#x200B;事件类。 如果数据元素不提供索引名称，则在发送事件时将使用默认的索引名称。 |
+| 事件详细信息数据元素 | 数据元素返回事件详细信息，包括： <ul><li>`indexName`</li><li>`objectIDs`</li><li>`objectData`<ul><li>`queryID` （可选）</li><li>`price`</li><li>`quantity`</li><li>`discount`</li></ul></li><li>`queryID` （可选）</li></ul>。 |
+| 货币 | 指定货币类型，如`USD`。 |
+
+>[!NOTE]
+>
+>如果数据元素包含`queryId`，则在搜索&#x200B;**后，该事件将被分类为**&#x200B;已购买对象ID。 否则，它将被分类为&#x200B;**购买的对象ID**事件。
+>><br><br>
+>>如果数据元素不提供`indexName`，则在发送事件时将使用&#x200B;**默认索引名称**。
+>><br><br>
+>>如果默认数据元素不符合您的要求，可以创建自定义一个数据元素以返回所需的事件详细信息。
 
 ![](../../../images/extensions/client/algolia/purchased.png)
 
+有关事件类别的详细信息，请参阅搜索后的[购买对象ID](https://www.algolia.com/doc/api-reference/api-methods/purchased-object-ids-after-search/)
+和[已购买对象ID](https://www.algolia.com/doc/api-reference/api-methods/purchased-object-ids/)指南。
+
 ### 已查看 {#viewed}
 
-将&#x200B;**[!UICONTROL 添加到购物车]**&#x200B;操作添加到您的标记规则以将已购买的事件发送到[!DNL Algolia]。 创建新标记规则或打开现有标记规则。 根据您的要求定义条件，然后选择&#x200B;**[!UICONTROL Algolia]**&#x200B;作为[!UICONTROL 扩展]，并选择&#x200B;**[!UICONTROL 已查看]**&#x200B;作为[!UICONTROL 操作类型]。
-
-![](../../../images/extensions/client/algolia/viewed.png)
+将&#x200B;**[!UICONTROL 已查看]**&#x200B;操作添加到您的标记规则以将已购买的事件发送到[!DNL Algolia]。 创建新标记规则或打开现有标记规则。 根据您的要求定义条件，然后选择&#x200B;**[!UICONTROL Algolia]**&#x200B;作为[!UICONTROL 扩展]，并选择&#x200B;**[!UICONTROL 已查看]**&#x200B;作为[!UICONTROL 操作类型]。
 
 | 属性 | 描述 |
 | --- | --- |
 | 活动名称 | 将用于进一步细化此&#x200B;**视图**&#x200B;事件的事件名称。 |
-| 事件详细信息数据元素 | 将检索包括`indexName`和`objectId`的事件详细信息的数据元素。 如果`indexName`不可用，则在发送事件时将使用默认索引名称。 |
+| 事件详细信息数据元素 | 数据元素返回事件详细信息，包括： <ul><li>`indexName`</li><li>`objectIDs`</li></ul> |
+
+>[!NOTE]
+>
+>如果数据元素不提供`indexName`，则在发送事件时将使用&#x200B;**默认索引名称**。
+
+![](../../../images/extensions/client/algolia/viewed.png)
+
+有关查看事件的详细信息，请参阅[已查看对象ID](https://www.algolia.com/doc/api-reference/api-methods/viewed-object-ids/)指南。
 
 ## [!DNL Algolia]个Insights扩展数据元素 {#data-elements}
 
@@ -148,10 +194,10 @@ ht-degree: 2%
 ```javascript
 {
   timestamp,
-    queryID,
-    indexName,
-    objectIDs,
-    positions
+  queryID,
+  indexName,
+  objectIDs,
+  positions
 }
 ```
 
@@ -186,9 +232,9 @@ ht-degree: 2%
 ```javascript
 {
   timestamp,
-    queryID,
-    indexName,
-    objectIDs
+  queryID,
+  indexName,
+  objectIDs
 }
 ```
 
@@ -211,9 +257,9 @@ ht-degree: 2%
 ```javascript
 {
   timestamp,
-    queryID,
-    indexName,
-    objectIDs
+  queryID,
+  indexName,
+  objectIDs
 }
 ```
 
@@ -228,6 +274,7 @@ ht-degree: 2%
 * [[!DNL Algolia] Launch扩展GitHub存储库](https://github.com/algolia/algolia-launch-extension)
 * [InstantSearch.js文档](https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/js/)
 * [[!DNL Algolia] 分析API文档](https://www.algolia.com/doc/rest-api/insights/)
+* [Algolia Launch扩展代码存储库](https://github.com/algolia/algolia-launch-extension)
 
 ## 后续步骤 {#next-steps}
 
