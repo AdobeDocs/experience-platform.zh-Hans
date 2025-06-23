@@ -18,8 +18,8 @@ ht-degree: 95%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
->- [联合受众构成](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/releases/pre-release-notes)
+>- [联合受众构成](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/zh-hans/docs/real-time-cdp-collaboration/using/latest)
 
 **发布日期：2025 年 6 月 18 日**
@@ -128,7 +128,7 @@ Adobe Experience Platform 数据治理是一系列策略和技术，用于管理
 
 | 新功能 | 描述 |
 | ----------- | ----------- |
-| Adobe Healthcare Shield 正式面向客户发布 | 联合受众构成将于 6 月底向 Adobe Healthcare Shield 客户开放，用于受众创建、扩充和轮廓扩充用例。有关联合受众构成的隐私和安全措施的更多信息，请阅读[联合受众构成中的隐私和安全概述](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/start/privacy-security)。有关 Experience Platform 产品通常的 HIPAA 合规性的更多信息，请阅读 [HIPAA 和 Adobe 产品与服务概述](https://www.adobe.com/cn/trust/compliance/hipaa-ready.html)。 |
+| Adobe Healthcare Shield 正式面向客户发布 | 联合受众构成将于 6 月底向 Adobe Healthcare Shield 客户开放，用于受众创建、扩充和轮廓扩充用例。有关联合受众构成的隐私和安全措施的更多信息，请阅读[联合受众构成中的隐私和安全概述](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/start/privacy-security)。有关 Experience Platform 产品通常的 HIPAA 合规性的更多信息，请阅读 [HIPAA 和 Adobe 产品与服务概述](https://www.adobe.com/cn/trust/compliance/hipaa-ready.html)。 |
 
 有关更多信息，请阅读[联合受众构成文档](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/home)。
 
@@ -140,7 +140,7 @@ Adobe Experience Platform 数据治理是一系列策略和技术，用于管理
 
 | 功能 | 描述 |
 | --- | ---|
-| 支持田纳西州和明尼苏达州隐私法 | Privacy Service 现在支持田纳西州信息保护法案（`tipa_tn_usa`）和明尼苏达州消费者数据隐私法案（`mcdpa_mn_usa`）。您可以根据这些新的州级法规处理访问和删除请求。有关更多详细信息，请参阅[法规概述](https://experienceleague.adobe.com/en/docs/experience-platform/privacy/regulations/overview)。 |
+| 支持田纳西州和明尼苏达州隐私法 | Privacy Service 现在支持田纳西州信息保护法案（`tipa_tn_usa`）和明尼苏达州消费者数据隐私法案（`mcdpa_mn_usa`）。您可以根据这些新的州级法规处理访问和删除请求。有关更多详细信息，请参阅[法规概述](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/privacy/regulations/overview)。 |
 
 有关该服务的更多信息，请参阅 [Privacy Service 概述](../../privacy-service/home.md)。
 
