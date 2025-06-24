@@ -2,9 +2,9 @@
 title: SFTP Source连接器概述
 description: 了解如何使用API或用户界面将SFTP服务器连接到Adobe Experience Platform。
 exl-id: d5bced3d-cd33-40ea-bce0-32c76ecd2790
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 4816a6b627dc6551e351bfe3cdc4bc8c8ea8b17e
 workflow-type: tm+mt
-source-wordcount: '1226'
+source-wordcount: '1215'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 ### IP地址允许列表
 
-在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 有关详细信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md)页。
+在使用源连接器之前，必须将IP地址列表添加到允许列表。 未能将特定于地区的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 列入允许列表有关详细信息，请参阅[IP地址](../../ip-address-allow-list.md)页。
 
 ### 文件和目录的命名约束
 
@@ -183,7 +183,7 @@ more ~/.ssh/authorized_keys
 | `port` | 您正在连接的[!DNL SFTP]服务器端口。 如果未提供，则值默认为`22`。 |
 | `username` | 有权访问您的[!DNL SFTP]服务器的用户名。 |
 | `password` | [!DNL SFTP]服务器的密码。 |
-| `privateKeyContent` | Base64编码的SSH私钥内容。 OpenSSH密钥类型必须分类为RSA或DSA。 |
+| `privateKeyContent` | Base64编码的SSH私钥内容。 支持的OpenSSH密钥类型为`ed25519`、`RSA`和`DSA`。 |
 | `passPhrase` | 如果密钥文件或密钥内容受密码词组保护，则使用密码词组或密码解密私钥。 如果PrivateKeyContent受密码保护，则此参数需要与PrivateKeyContent的密码短语（值）一起使用。 |
 | `maxConcurrentConnections` | 利用此参数，可指定Experience Platform在连接到SFTP服务器时将创建的并发连接数的最大限制。 必须将此值设置为小于SFTP设置的限制。 **注意**：为现有SFTP帐户启用此设置时，它只影响未来的数据流，而不影响现有的数据流。 |
 | `folderPath` | 要提供访问权限的文件夹的路径。 [!DNL SFTP]源，您可以提供文件夹路径，以指定用户对所选子文件夹的访问权限。 |

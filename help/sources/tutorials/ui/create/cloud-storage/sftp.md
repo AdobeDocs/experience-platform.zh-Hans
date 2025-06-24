@@ -2,9 +2,9 @@
 title: 在UI中创建SFTP Source连接
 description: 了解如何使用Adobe Experience Platform UI创建SFTP源连接。
 exl-id: 1a00ed27-3c95-4e57-9f94-45ff256bf75c
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 4816a6b627dc6551e351bfe3cdc4bc8c8ea8b17e
 workflow-type: tm+mt
-source-wordcount: '665'
+source-wordcount: '662'
 ht-degree: 1%
 
 ---
@@ -56,7 +56,7 @@ ht-degree: 1%
 >
 >* 创建后，无法更改[!DNL SFTP]基本连接的身份验证类型。 要更改身份验证类型，必须创建新的基本连接。
 >
->* SFTP支持RSA或DSA类型的OpenSSH密钥。 确保您的密钥文件内容以`"-----BEGIN [RSA/DSA] PRIVATE KEY-----"`开头并以`"-----END [RSA/DSA] PRIVATE KEY-----"`结尾。 如果私钥文件是PPK格式文件，请使用PuTTY工具从PPK转换为OpenSSH格式。
+>* SFTP支持`ed25519`、`RSA`或`DSA`类型的OpenSSH密钥。 确保您的密钥文件内容以`"-----BEGIN [RSA/DSA] PRIVATE KEY-----"`开头并以`"-----END [RSA/DSA] PRIVATE KEY-----"`结尾。 如果私钥文件是PPK格式文件，请使用PuTTY工具从PPK转换为OpenSSH格式。
 
 如果要创建新帐户，请选择&#x200B;**[!UICONTROL 新帐户]**，然后为您的新[!DNL SFTP]帐户提供名称和可选描述。
 

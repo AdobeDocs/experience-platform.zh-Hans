@@ -2,9 +2,9 @@
 title: 使用流服务API创建SFTP基本连接
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到SFTP（安全文件传输协议）服务器。
 exl-id: b965b4bf-0b55-43df-bb79-c89609a9a488
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 4816a6b627dc6551e351bfe3cdc4bc8c8ea8b17e
 workflow-type: tm+mt
-source-wordcount: '761'
+source-wordcount: '751'
 ht-degree: 2%
 
 ---
@@ -50,7 +50,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->[!DNL SFTP]连接器支持RSA或DSA类型的OpenSSH密钥。 确保您的密钥文件内容以`"-----BEGIN [RSA/DSA] PRIVATE KEY-----"`开头并以`"-----END [RSA/DSA] PRIVATE KEY-----"`结尾。 如果私钥文件是PPK格式文件，请使用PuTTY工具从PPK转换为OpenSSH格式。
+>[!DNL SFTP]连接器支持`ed25519`、`RSA`或`DSA`类型的OpenSSH密钥。 确保您的密钥文件内容以`"-----BEGIN [RSA/DSA] PRIVATE KEY-----"`开头并以`"-----END [RSA/DSA] PRIVATE KEY-----"`结尾。 如果私钥文件是PPK格式文件，请使用PuTTY工具从PPK转换为OpenSSH格式。
 
 **API格式**
 
@@ -160,7 +160,7 @@ curl -X POST \
 | `auth.params.host` | [!DNL SFTP]服务器的主机名。 |
 | `auth.params.port` | SFTP服务器的端口。 此整数值默认为22。 |
 | `auth.params.username` | 与您的[!DNL SFTP]服务器关联的用户名。 |
-| `auth.params.privateKeyContent` | Base64编码的SSH私钥内容。 OpenSSH密钥类型必须分类为RSA或DSA。 |
+| `auth.params.privateKeyContent` | Base64编码的SSH私钥内容。 支持的OpenSSH密钥类型为`ed25519`、`RSA`和`DSA`。 |
 | `auth.params.passPhrase` | 如果密钥文件或密钥内容受密码词组保护，则使用密码词组或密码解密私钥。 如果PrivateKeyContent受密码保护，则此参数需要与PrivateKeyContent的密码短语（值）一起使用。 |
 | `auth.params.maxConcurrentConnections` | 将Experience Platform连接到SFTP时指定的最大并发连接数。 启用时，该值必须设置为至少1。 |
 | `auth.params.folderPath` | 要提供访问权限的文件夹的路径。 |
@@ -186,4 +186,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过完成本教程，您已使用[!DNL Flow Service] API创建了[!DNL SFTP]连接，并获得了此连接的唯一ID值。 您可以使用此连接ID以使用流服务API[&#128279;](../../explore/cloud-storage.md)来浏览云存储。
+通过完成本教程，您已使用[!DNL Flow Service] API创建了[!DNL SFTP]连接，并获得了此连接的唯一ID值。 您可以使用此连接ID以使用流服务API](../../explore/cloud-storage.md)来[浏览云存储。
