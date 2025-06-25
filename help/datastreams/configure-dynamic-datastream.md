@@ -5,9 +5,9 @@ hide: true
 hidefromtoc: true
 badge: label="Beta 版" type="Informative"
 exl-id: 528ddf89-ad87-4021-b5a6-8e25b4469ac4
-source-git-commit: c193a6aa45d179acdf655a70987875bf0da51b2b
+source-git-commit: 8ce5b6718861d01731b9aab9f81645f2aeb2970f
 workflow-type: tm+mt
-source-wordcount: '1146'
+source-wordcount: '1160'
 ht-degree: 3%
 
 ---
@@ -38,6 +38,7 @@ ht-degree: 3%
 | 护栏 | 限制 | 限制类型 |
 |---------|------------|------|
 | Experience Platform服务的每个数据流的最大动态数据流配置数 | 5 | 性能护栏 |
+| 每个数据流用于事件转发的最大动态数据流配置数 | 5 | 性能护栏 |
 | Adobe Analytics每个数据流的最大动态数据流配置数 | 5 | 性能护栏 |
 | Adobe Target每个数据流的最大动态数据流配置数 | 5 | 性能护栏 |
 | Adobe Audience Manager每个数据流的最大动态数据流配置数 | 5 | 性能护栏 |
