@@ -1,14 +1,14 @@
 ---
 title: 创建动态数据流配置
-description: 了解如何根据规则创建动态数据流配置，以将数据路由到各种Experience Cloud服务。
+description: 了解如何根据规则创建动态数据流配置，以将您的数据路由到各种Experience Cloud服务。
 hide: true
 hidefromtoc: true
 badge: label="Beta 版" type="Informative"
 exl-id: 528ddf89-ad87-4021-b5a6-8e25b4469ac4
-source-git-commit: 39e65f1f74b95fffffb3c5400ce1b7e60aa81bad
+source-git-commit: c193a6aa45d179acdf655a70987875bf0da51b2b
 workflow-type: tm+mt
-source-wordcount: '642'
-ht-degree: 1%
+source-wordcount: '1146'
+ht-degree: 3%
 
 ---
 
@@ -18,9 +18,9 @@ ht-degree: 1%
 >
 >* 定义动态数据流配置的选项当前存在于Beta中，并且仅供有限数量的客户使用。 要获得此功能的访问权限，请联系您的Adobe代表。 文档和功能可能会发生变化。
 
-默认情况下，Experience PlatformEdge Network会将到达数据流的所有事件发送到您为数据流启用的所有Experience Cloud[服务](configure.md#add-services)。 根据您的用例，这可能并不总是您的理想工作流程。
+默认情况下，Experience Platform Edge Network会将到达数据流的所有事件发送到您为数据流启用的所有Experience Cloud [服务](configure.md#add-services)。 根据您的用例，这可能并不总是您的理想工作流程。
 
-动态数据流配置通过用户可配置的规则集解决了这一问题，这些规则集可为为数据流启用的每个服务定义，并规定了哪些Experience Cloud解决方案应接收每种类型的数据。
+动态数据流配置通过用户可配置的规则集解决此问题，这些规则集可为为数据流启用的每个服务定义，并规定了哪些Experience Cloud解决方案应接收每种类型的数据。
 
 ## 先决条件 {#prerequisites}
 
@@ -30,6 +30,19 @@ ht-degree: 1%
 * 您必须向数据流中添加至少&#x200B;*个* Experience Cloud服务。 有关详细信息，请参阅有关如何将服务[添加到数据流](configure.md#add-services)的文档。
 
 创建数据流并向其中添加Experience Cloud服务后，您可以[创建动态配置](#create-dynamic-configuration)。
+
+## 护栏 {#guardrails}
+
+动态数据流配置具有特定的限制和性能约束，以确保最佳系统性能和数据处理效率。 配置动态数据流规则时，以下护栏适用：
+
+| 护栏 | 限制 | 限制类型 |
+|---------|------------|------|
+| Experience Platform服务的每个数据流的最大动态数据流配置数 | 5 | 性能护栏 |
+| Adobe Analytics每个数据流的最大动态数据流配置数 | 5 | 性能护栏 |
+| Adobe Target每个数据流的最大动态数据流配置数 | 5 | 性能护栏 |
+| Adobe Audience Manager每个数据流的最大动态数据流配置数 | 5 | 性能护栏 |
+| 单个规则中可组合的条件（谓词）的最大数量 | 100 | 性能护栏 |
+| 超时前每个数据流的所有动态数据流配置评估所允许的最长时间 | 25毫秒 | 系统强制的护栏 |
 
 ## 动态数据流配置与数据流配置覆盖 {#dynamic-versus-overrides}
 
@@ -79,4 +92,70 @@ ht-degree: 1%
 
 要配置规则顺序，您可以按所需的顺序拖放规则窗口。
 
-![显示如何通过拖放更改GIF顺序的规则。](assets/configure-dynamic-datastream/move-rules.gif)
+![GIF显示如何通过拖放更改规则顺序。](assets/configure-dynamic-datastream/move-rules.gif)
+
+## 规则资格标准 {#eligibility-criteria}
+
+动态数据流配置必须满足特定的资格标准，以确保高性能、可维护性和清晰性。 以下是定义规则的主要要求和最佳实践。
+
+### 支持的数据类型 {#supported-data-types}
+
+动态数据流配置规则可与特定数据类型配合使用，以确保最佳性能和可靠的数据路由。 了解支持哪些数据类型，有助于创建有效规则以高效地处理数据。
+
+| 数据类型 | 状态 | 注释 |
+|-----------|--------|-------|
+| 字符串 | 允许 | - |
+| 数字（整数、长、短、字节） | 允许 | - |
+| 枚举 | 允许 | - |
+| 布尔值 | 允许 | - |
+| 日期 | 允许 | - |
+| 数组 | 不允许 | 不支持基于数组的规则，因为它们可能会降低性能。 |
+| 地图 | 不允许 | 不支持基于映射的规则，因为它们可能会降低性能。 |
+
+### 支持的运算符 {#supported-operators}
+
+规则可以使用以下运算符，具体取决于数据类型：
+
+| 数据类型 | 支持的运算符 |
+|-----------|-------------------|
+| **字符串** | `equals`，`starts with`，`ends with`，`contains`，`exists`，`does not equal`，`does not start with`，`does not end with`，`does not contain`，`does not exist` |
+| **数字（长、整数、短、字节）** | `equals`，`does not equal`，`greater than`，`less than`，`greater than or equal to`，`less than or equal to`，`exists`，`does not exist` |
+| **布尔值** | `equals true/false`、`does not equal true/false` |
+| **枚举** | `equals`、`does not equal`、`exists`、`does not exist` |
+| **日期** | `today`、`yesterday`、`this month`、`this year`、`custom date`、`in last`、`from`、`during`、`within`、`before`、`after`、`rolling range`、`in next`、`exists`、`does not exist` |
+| **逻辑** | `INCLUDE`，`ANY/ALL` （等同于AND/OR） |
+
+>[!NOTE]
+>
+>不直接支持&#x200B;**[!UICONTROL EXCLUDE]**&#x200B;运算符，但您可以使用&#x200B;**[!UICONTROL INCLUDE]**&#x200B;与否定的比较运算符实现等效逻辑（例如，“不等于”）。
+
+### 规则结构 {#rule-structure}
+
+在为动态数据流配置创建规则时，了解确保最佳性能和系统兼容性的结构要求至关重要。 规则结构将直接影响系统处理和路由数据的效率。
+
+**仅使用平面表达式**。 必须将规则定义为平面逻辑表达式。 不支持嵌套的逻辑表达式（使用容器或多个级别的AND/OR）。 如果需要复杂的逻辑，请将其分解为多个扁平规则。
+
+例如，请考虑下图中显示的复杂规则。
+
+![显示复杂规则的平台UI图像。](assets/configure-dynamic-datastream/complex-rule.png)
+
+您可以将此规则划分为以下更简单的规则：
+
+![显示复杂规则的平台UI图像。](assets/configure-dynamic-datastream/simple-rule-1.png)
+
+![显示复杂规则的平台UI图像。](assets/configure-dynamic-datastream/simple-rule-2.png)
+
+**避免复杂的规则**。 更简单的规则可确保更快的评估和更好的可维护性。
+
+### 最佳实践 {#best-practices}
+
+创建动态数据流配置规则时，遵循最佳实践可确保最佳性能、系统可靠性和可维护配置。 这些准则可帮助您避免常见的陷阱并创建与平台的架构无缝配合的高效规则。
+
+* **保持规则简单平整。**&#x200B;如果需要表达复杂的逻辑，请使用多个规则而不是嵌套。
+* **仅使用[支持的数据类型](#supported-data-types)和[运算符](#supported-operators)。**
+* **测试您的规则性能。**&#x200B;过于复杂或不支持的规则可能会导致系统拒绝这些规则或影响系统性能。
+
+
+
+
+
