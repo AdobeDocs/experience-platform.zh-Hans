@@ -28,7 +28,7 @@ ht-degree: 13%
 ## 通过API或UI连接到您的[!DNL Amazon S3]存储 {#connect-api-or-ui}
 
 * 要使用Experience Platform用户界面连接到[!DNL Amazon S3]存储位置，请阅读下面的[连接到目标](#connect)和[将受众激活到此目标](#activate)部分。
-* 若要以编程方式连接到[!DNL Amazon S3]存储位置，请阅读有关如何使用流服务API教程](../../api/activate-segments-file-based-destinations.md)将受众[激活到基于文件的目标的指南。
+* 若要以编程方式连接到[!DNL Amazon S3]存储位置，请阅读有关如何使用流服务API教程[&#128279;](../../api/activate-segments-file-based-destinations.md)将受众激活到基于文件的目标的指南。
 
 ## 支持的受众 {#supported-audiences}
 
@@ -58,8 +58,8 @@ ht-degree: 13%
 
 此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
 
-* 如何使用Experience Platform用户界面](/help/destinations/ui/export-datasets.md)导出数据集[。
-* 如何使用流服务API](/help/destinations/api/export-datasets.md)以编程方式[导出数据集。
+* 如何使用Experience Platform用户界面[&#128279;](/help/destinations/ui/export-datasets.md)导出数据集。
+* 如何使用流服务API[&#128279;](/help/destinations/api/export-datasets.md)以编程方式导出数据集。
 
 ## 导出数据的文件格式 {#file-format}
 
