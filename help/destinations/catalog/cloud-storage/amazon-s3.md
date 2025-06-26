@@ -2,10 +2,10 @@
 title: Amazon S3连接
 description: 创建到Amazon Web Services (AWS) S3存储的实时出站连接，定期将CSV数据文件从Adobe Experience Platform导出到您自己的S3存储桶中。
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7aff8d9eafb699133e90d3af8ef24f3135f3cade
 workflow-type: tm+mt
-source-wordcount: '1503'
-ht-degree: 16%
+source-wordcount: '1818'
+ht-degree: 13%
 
 ---
 
@@ -28,7 +28,7 @@ ht-degree: 16%
 ## 通过API或UI连接到您的[!DNL Amazon S3]存储 {#connect-api-or-ui}
 
 * 要使用Experience Platform用户界面连接到[!DNL Amazon S3]存储位置，请阅读下面的[连接到目标](#connect)和[将受众激活到此目标](#activate)部分。
-* 若要以编程方式连接到[!DNL Amazon S3]存储位置，请阅读有关如何使用流服务API教程[&#128279;](../../api/activate-segments-file-based-destinations.md)将受众激活到基于文件的目标的指南。
+* 若要以编程方式连接到[!DNL Amazon S3]存储位置，请阅读有关如何使用流服务API教程](../../api/activate-segments-file-based-destinations.md)将受众[激活到基于文件的目标的指南。
 
 ## 支持的受众 {#supported-audiences}
 
@@ -58,8 +58,8 @@ ht-degree: 16%
 
 此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
 
-* 如何使用Experience Platform用户界面[&#128279;](/help/destinations/ui/export-datasets.md)导出数据集。
-* 如何使用流服务API[&#128279;](/help/destinations/api/export-datasets.md)以编程方式导出数据集。
+* 如何使用Experience Platform用户界面](/help/destinations/ui/export-datasets.md)导出数据集[。
+* 如何使用流服务API](/help/destinations/api/export-datasets.md)以编程方式[导出数据集。
 
 ## 导出数据的文件格式 {#file-format}
 
@@ -87,7 +87,7 @@ ht-degree: 16%
 * 访问密钥和密钥身份验证
 * 担任的角色身份验证
 
-#### 访问密钥和密钥身份验证
+#### 使用S3访问密钥和密钥进行身份验证
 
 当您想要输入Amazon S3访问密钥和密钥，以允许Experience Platform将数据导出到Amazon S3资产时，请使用此身份验证方法。
 
@@ -98,21 +98,103 @@ ht-degree: 16%
 
   ![显示UI中格式正确的PGP密钥示例的图像。](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
-#### 担任的角色 {#assumed-role-authentication}
+#### 使用S3承担角色进行身份验证 {#assumed-role-authentication}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_s3_assumed_role"
 >title="担任的角色身份验证"
 >abstract="如果您不想与 Adobe 共享帐户密钥和私钥，请使用此身份验证类型。Experience Platform 而是会使用基于角色的访问权限连接到您的 Amazon S3 位置。粘贴您在 AWS 中为 Adobe 用户所创建角色的 ARN。该模式类似于 `arn:aws:iam::800873819705:role/destinations-role-customer` "
 
-![选择假定的角色身份验证时必填字段的图像。](/help/destinations/assets/catalog/cloud-storage/amazon-s3/assumed-role-authentication.png)
-
 如果您不想与 Adobe 共享帐户密钥和私钥，请使用此身份验证类型。相反，Experience Platform会使用基于角色的访问连接到您的Amazon S3位置。
 
-为此，您需要在AWS控制台中创建一个假定的Adobe用户，该用户具有[写入Amazon S3存储桶所需的正确权限](#minimum-permissions-iam-user)。 在AWS中使用Adobe帐户&#x200B;**[!UICONTROL 670664943635]**&#x200B;创建一个&#x200B;**[!UICONTROL 受信任的实体]**。 有关更多信息，请参阅有关创建角色的[AWS文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html)。
+![选择假定的角色身份验证时必填字段的图像。](/help/destinations/assets/catalog/cloud-storage/amazon-s3/assumed-role-authentication.png)
 
-* **[!DNL Role]**：将您在AWS中为Adobe用户创建的角色的ARN粘贴。 模式类似于`arn:aws:iam::800873819705:role/destinations-role-customer`。
+* **[!DNL Role]**：将您在AWS中为Adobe用户创建的角色的ARN粘贴。 模式类似于`arn:aws:iam::800873819705:role/destinations-role-customer`。 有关如何正确配置S3访问权限的详细指导，请参阅以下步骤。
 * **[!UICONTROL 加密密钥]**： （可选）您可以附加RSA格式的公钥以向导出的文件添加加密。 查看下图中的加密密钥格式正确示例。
+
+为此，您需要在AWS控制台中创建一个假定的Adobe角色，该角色具有[写入Amazon S3存储桶所需的正确权限](#minimum-permissions-iam-user)。
+
+**创建具有所需权限的策略**
+
+1. 打开AWS控制台，然后转到IAM >策略>创建策略
+2. 选择策略编辑器> JSON并添加以下权限。
+
+   ```json
+   {
+       "Version": "2012-10-17",
+       "Statement": [
+           {
+               "Sid": "VisualEditor0",
+               "Effect": "Allow",
+               "Action": [
+                   "s3:PutObject",
+                   "s3:GetObject",
+                   "s3:DeleteObject",
+                   "s3:GetBucketLocation",
+                   "s3:ListMultipartUploadParts"
+               ],
+               "Resource": "arn:aws:s3:::bucket/folder/*"
+           },
+           {
+               "Sid": "VisualEditor1",
+               "Effect": "Allow",
+               "Action": [
+                   "s3:ListBucket"
+               ],
+               "Resource": "arn:aws:s3:::bucket"
+           }
+       ]
+   }
+   ```
+
+3. 在下一页上，输入策略的名称并将其保存以供参考。 在下一步中创建角色时，您将需要此策略名称。
+
+**在您的S3客户帐户中创建用户角色**
+
+1. 打开AWS Console，然后转到IAM >角色>创建新角色
+2. 选择&#x200B;**受信任的实体类型** > **AWS帐户**
+3. 选择&#x200B;**一个AWS帐户** > **另一个AWS帐户**，并输入Adobe帐户ID： `670664943635`
+4. 使用之前创建的策略添加权限
+5. 输入角色名称（例如，`destinations-role-customer`）。 角色名称应被视为机密名称，与密码类似。 它最长可包含64个字符，可包含字母数字字符和以下特殊字符： `+=,.@-_`。 然后验证：
+   * Adobe帐户ID `670664943635`存在于&#x200B;**[!UICONTROL 选择受信任的实体]**&#x200B;部分中
+   * 之前创建的策略存在于&#x200B;**[!UICONTROL 权限策略摘要]**&#x200B;中
+
+**为Adobe提供要承担的角色**
+
+在AWS中创建角色后，您需要向Adobe提供角色ARN。 ARN遵循以下模式： `arn:aws:iam::800873819705:role/destinations-role-customer`
+
+在AWS控制台中创建角色后，您可以在主页上找到ARN。 在创建目标时，您将使用此ARN。
+
+**验证角色权限和信任关系**
+
+确保您的角色具有以下配置：
+
+* **权限**：角色应具有访问S3的权限（在上面的&#x200B;**创建具有所需权限的策略**&#x200B;步骤中提供的完全访问权限或最低权限）
+* **信任关系**：该角色的信任关系中应该具有根Adobe帐户(`670664943635`)
+
+**替代：限制为特定的Adobe用户（可选）**
+
+如果您不希望允许使用整个Adobe帐户，则可以限制仅访问特定的Adobe用户。 为此，请使用以下配置编辑信任策略：
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::670664943635:user/destinations-adobe-user"
+            },
+            "Action": "sts:AssumeRole",
+            "Condition": {}
+        }
+    ]
+}
+```
+
+有关更多信息，请参阅有关创建角色的[AWS文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html)。
+
+
 
 ### 填写目标详细信息 {#destination-details}
 
@@ -125,7 +207,7 @@ ht-degree: 16%
 >id="platform_destinations_connect_s3_folderpath"
 >title="文件夹路径"
 >abstract="必须仅包含字符 A-Z、a-z、0-9，并且可以包含以下特殊字符：`/!-_.'()"^[]+$%.*"`。要为每个受众文件创建一个文件夹，请将宏 `/%SEGMENT_NAME%`、`/%SEGMENT_ID%` 或 `/%SEGMENT_NAME%/%SEGMENT_ID%` 插入文本字段。宏只能插入到文件夹路径的末尾。查看文档中的宏示例。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/cloud-storage/overview.html?lang=zh-Hans#use-macros" text="使用宏在存储位置创建一个文件夹"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/cloud-storage/overview.html#use-macros" text="使用宏在存储位置创建一个文件夹"
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
