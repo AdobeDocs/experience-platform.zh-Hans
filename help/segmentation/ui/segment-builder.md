@@ -6,7 +6,7 @@ exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
 source-git-commit: 7be3e6c143d792113a0d623e2d12d6710a3be70c
 workflow-type: tm+mt
 source-wordcount: '5195'
-ht-degree: 8%
+ht-degree: 11%
 
 ---
 
@@ -324,7 +324,7 @@ ht-degree: 8%
 >[!NOTE]
 >
 >当使用“晚于”时间限制时，后一个事件发生的时间可能超过在时间限制内列出的时间量。 >
->&#x200B;>例如，如果您有一个页面查看事件和一个签出事件，并在这两个事件之间放置了“1小时后”时间限制，则一个在页面查看事件发生2小时后具有签出事件的区段定义符合条件。
+>>例如，如果您有一个页面查看事件和一个签出事件，并在这两个事件之间放置了“1小时后”时间限制，则一个在页面查看事件发生2小时后具有签出事件的区段定义符合条件。
 >
 >此外，这两个时间约束可以相互协调使用。
 >
@@ -380,25 +380,25 @@ ht-degree: 8%
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="刷新估计值"
 >abstract="您可以刷新区段定义的估计值，以立即预览符合建议的区段定义资格的轮廓数目。受众估计值是通过使用当天的示例数据的示例大小生成的。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=zh-Hans#estimate-and-preview-an-audience" text="估计和预览受众"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="估计和预览受众"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_qualifiedprofiles"
->title="合格的轮廓"
->abstract="符合条件的用户档案指示符合区段定义规则的用户档案实际数量。 此数字在区段评估作业运行后，每24小时更新一次。"
+>title="符合条件的轮廓"
+>abstract="符合条件的轮廓指的是实际满足区段定义规则的轮廓数量。该数字每 24 小时更新一次，更新时间为区段评估任务运行完成之后。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_estimatedprofiles"
->title="轮廓估计"
->abstract="预计配置文件根据示例作业指示符合区段定义规则的大致配置文件数。 这意味着样本数据被投影到较大的配置文件集上，从而导致估计的数量可能与符合条件的配置文件实际数量不同。 估计的配置文件样本具有95%的置信区间。 <br><br>此数字在示例作业更新时更新，当客户数据发生大于5%的更改或上一个示例作业超过7天时会发生此更新。"
+>title="预估轮廓数"
+>abstract="预估轮廓数指的是根据抽样任务得出的近似轮廓数量，这些轮廓可能符合区段定义的规则。这意味着将样本数据投射到更大的轮廓集上，所得出的预估数量可能会与实际符合条件的轮廓数量有所差异。预估轮廓样本具有 95% 的置信区间。<br><br>该数值会在抽样任务更新时同步更新，更新条件包括：客户数据变动超过 5%，或上一次抽样任务距今已超过 7 天。"
 
 在构建区段定义时，工作区右侧的&#x200B;**[!UICONTROL 受众属性]**&#x200B;部分会显示所生成区段定义的大小估计值，这样您可以在构建受众本身之前根据需要调整区段定义。
 
-**[!UICONTROL 合格配置文件]**&#x200B;指示与区段定义规则匹配的&#x200B;**实际**&#x200B;配置文件数。 此数字在区段评估作业运行后，每24小时更新一次。
+**[!UICONTROL 合格配置文件]**&#x200B;指示与区段定义规则匹配的&#x200B;**实际**&#x200B;配置文件数。 该数字每 24 小时更新一次，更新时间为区段评估任务运行完成之后。
 
 合格配置文件的时间戳表示最新的&#x200B;**批次**&#x200B;区段评估作业，对于使用流式或边缘分段评估的区段定义，该时间戳显示为&#x200B;**not**。 如果编辑区段定义，则在运行下一个区段评估作业之前，符合条件的配置文件数将保持不变。
 
-根据&#x200B;**示例作业**，**[!UICONTROL 预计的配置文件]**&#x200B;表示大约&#x200B;**个**&#x200B;配置文件数。 这意味着样本数据被投影到较大的配置文件集上，从而导致估计的数量可能与符合条件的配置文件实际数量不同。 估计的配置文件样本具有95%的置信区间。
+根据&#x200B;**示例作业**，**[!UICONTROL 预计的配置文件]**&#x200B;表示大约&#x200B;**个**&#x200B;配置文件数。 这意味着将样本数据投射到更大的轮廓集上，所得出的预估数量可能会与实际符合条件的轮廓数量有所差异。估计的配置文件样本具有95%的置信区间。
 
 当示例作业更新时，此数字也会更新；当客户数据发生大于5%的更改或上一个示例作业超过7天时，会发生这种情况。”
 

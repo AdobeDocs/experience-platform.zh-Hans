@@ -8,7 +8,7 @@ exl-id: 4a00e46a-dedb-4dd3-b496-b0f4185ea9b0
 source-git-commit: b78f36ed20d5a08036598fa2a1da7dd066c401fa
 workflow-type: tm+mt
 source-wordcount: '1054'
-ht-degree: 4%
+ht-degree: 6%
 
 ---
 
@@ -89,8 +89,8 @@ ht-degree: 4%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_snowflake_accountID"
->title="输入您的Snowflake帐户ID"
->abstract="如果您的帐户链接到组织，请使用此格式： `OrganizationName.AccountName`<br><br>如果您的帐户未链接到组织，请使用此格式：`AccountName`"
+>title="输入您的 Snowflake 帐户 ID"
+>abstract="如果您的帐户已链接到某个组织，请使用以下格式：`OrganizationName.AccountName`<br><br> 如果您的帐户未链接到某个组织，请使用以下格式：`AccountName`"
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
