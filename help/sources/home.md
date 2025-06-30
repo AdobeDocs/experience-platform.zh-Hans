@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Source连接器概述
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。 您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 5637a12d5f9cc14b6cf3d88f018aa92de06ab739
+source-git-commit: 2e4df13bae9f4afa24f761e650790704da44da90
 workflow-type: tm+mt
-source-wordcount: '1559'
+source-wordcount: '1554'
 ht-degree: 3%
 
 ---
@@ -28,7 +28,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 ## 高级企业源 {#advanced-enterprise-sources}
 
-以下源仅供[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)客户使用。
+以下源仅供[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)客户使用。
 
 - [[!DNL Amazon Kinesis]](connectors/cloud-storage/kinesis.md) [!BADGE 正在流式传输]{type=Positive}
 - [[!DNL Amazon Redshift]](connectors/databases/redshift.md) [!BADGE 批次]{type=Informative}
@@ -112,13 +112,11 @@ CRM系统提供的数据可帮助建立客户关系，进而创建忠诚度并�
 - [[!DNL Salesforce]](connectors/crm/salesforce.md) [!BADGE 批次]{type=Informative}
 - [[!DNL SugarCRM]](connectors/crm/sugarcrm.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Veeva CRM]](connectors/crm/veeva.md) [!BADGE 批次]{type=Informative}
-- [[!DNL Zoho CRM]](connectors/crm/zoho.md) [!BADGE 批次]{type=Informative}
 
 ### 客户成功 {#customer-success}
 
 Experience Platform支持从第三方客户成功应用程序中摄取数据。 有关更多信息，请参阅以下相关文档：
 
-- [[!DNL Oracle Service Cloud]](connectors/customer-success/oracle-service-cloud.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Salesforce Service Cloud]](connectors/customer-success/salesforce-service-cloud.md) [!BADGE 批次]{type=Informative}
 - [[!DNL ServiceNow]](connectors/customer-success/servicenow.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Zendesk]](connectors/customer-success/zendesk.md) [!BADGE 批次]{type=Informative}
@@ -131,7 +129,6 @@ Experience Platform支持从第三方数据库引入数据。 有关特定源连
 - [[!DNL Apache Spark on Azure HDInsights]](connectors/databases/spark.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Azure Data Explorer]](connectors/databases/data-explorer.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Azure Table Storage]](connectors/databases/ats.md) [!BADGE 批次]{type=Informative}
-- [[!DNL Couchbase]](connectors/databases/couchbase.md) [!BADGE 批次]{type=Informative}
 - [[!DNL GreenPlum]](connectors/databases/greenplum.md) [!BADGE 批次]{type=Informative}
 - [[!DNL HP Vertica]](connectors/databases/hp-vertica.md) [!BADGE 批次]{type=Informative}
 - [[!DNL IBM DB2]](connectors/databases/ibm-db2.md) [!BADGE 批次]{type=Informative}
@@ -139,7 +136,6 @@ Experience Platform支持从第三方数据库引入数据。 有关特定源连
 - [[!DNL Microsoft SQL Server]](connectors/databases/sql-server.md) [!BADGE 批次]{type=Informative}
 - [[!DNL MySQL]](connectors/databases/mysql.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Oracle]](connectors/databases/oracle.md) [!BADGE 批次]{type=Informative}
-- [[!DNL Phoenix]](connectors/databases/phoenix.md) [!BADGE 批次]{type=Informative}
 - [[!DNL PostgreSQL]](connectors/databases/postgres.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Teradata Vantage]](connectors/databases/teradata-vantage.md) [!BADGE 批次]{type=Informative}
 
@@ -181,19 +177,15 @@ Experience Platform支持从第三方营销自动化系统中提取数据。 有
 - [[!DNL Oracle NetSuite]](connectors/marketing-automation/oracle-netsuite.md) [!BADGE 批次]{type=Informative}
 - [[!DNL PathFactory]](connectors/marketing-automation/pathfactory.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Salesforce Marketing Cloud]](connectors/marketing-automation/salesforce-marketing-cloud.md) [!BADGE 批次]{type=Informative}
-<!-- 
-- [[!DNL Oracle Responsys]](connectors/marketing-automation/oracle-responsys.md)
--->
 
 ### 付款 {#payments}
 
 Experience Platform支持从第三方支付系统中提取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
-- [[!DNL PayPal]](connectors/payments/paypal.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Square]](connectors/payments/square.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Stripe]](connectors/payments/stripe.md) [!BADGE 批次]{type=Informative}
 
-### 流式处理 {#streaming}
+### 流传输 {#streaming}
 
 Experience Platform支持从流来源摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 

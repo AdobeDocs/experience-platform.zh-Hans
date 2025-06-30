@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2021 年 10 月）
 description: Adobe Experience Platform 的 2021 年 10 月发行说明。
 exl-id: 8f8bcb24-6478-4281-9362-9559158384af
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2e41a1716e057cd33e4635c11ba9c3cfc185418a
 workflow-type: tm+mt
-source-wordcount: '463'
-ht-degree: 25%
+source-wordcount: '433'
+ht-degree: 27%
 
 ---
 
@@ -59,6 +59,5 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 | --- | --- |
 | [!DNL Amazon S3]源增强功能 | 您现在可以使用`s3SessionToken`参数使用临时安全凭据将您的[!DNL Amazon S3]帐户连接到Experience Platform。 此令牌允许您向不受信任环境中的用户提供对[!DNL Amazon S3]资源的短期临时访问。 有关详细信息，请参阅[[!DNL Amazon S3] 文档](../../sources/connectors/cloud-storage/s3.md#prerequisites)。 |
 | [!DNL Generic REST API] (Beta) | 您现在可以使用[[!DNL Flow Service] API](../../sources/tutorials/api/create/protocols/generic-rest.md)创建[!DNL Generic REST API]源连接，将数据从通用REST应用程序引入Experience Platform。 有关详细信息，请参阅[[!DNL Generic REST API] 概述](../../sources/connectors/protocols/generic-rest.md)。 |
-| [!DNL Zoho CRM] (Beta) | 您现在可以使用[[!DNL Flow Service] API](../../sources/tutorials/api/create/crm/zoho.md)或[用户界面](../../sources/tutorials/ui/create/crm/zoho.md)创建[!DNL Zoho CRM]源连接，将数据从[!DNL Zoho CRM]帐户引入Experience Platform。 有关详细信息，请参阅[[!DNL Zoho CRM] 概述](../../sources/connectors/crm/zoho.md)。 |
 
 要了解有关源的更多信息，请参阅[源概述](../../sources/home.md)。

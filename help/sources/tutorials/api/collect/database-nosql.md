@@ -5,7 +5,7 @@ title: 使用流服务API为数据库源创建数据流
 type: Tutorial
 description: 本教程介绍了以下步骤：从数据库检索数据，以及使用源连接器和API将数据提取到Experience Platform中。
 exl-id: 1e1f9bbe-eb5e-40fb-a03c-52df957cb683
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 104db777446b19fa9e3ea7538ae1dda6f51a00b1
 workflow-type: tm+mt
 source-wordcount: '1428'
 ht-degree: 2%
@@ -707,7 +707,6 @@ curl -X POST \
 | [!DNL Azure Data Explorer] | `0479cc14-7651-4354-b233-7480606c2ac3` |
 | [!DNL Azure Synapse Analytics] | `a49bcc7d-8038-43af-b1e4-5a7a089a7d79` |
 | [!DNL Azure Table Storage] | `ecde33f2-c56f-46cc-bdea-ad151c16cd69` |
-| [!DNL Couchbase] | `1fe283f6-9bec-11ea-bb37-0242ac130002` |
 | [!DNL Google BigQuery] | `3c9b37f8-13a6-43d8-bad3-b863b941fedd` |
 | [!DNL Greenplum] | `37b6bf40-d318-4655-90be-5cd6f65d334b` |
 | [!DNL IBM DB2] | `09182899-b429-40c9-a15a-bf3ddbc8ced7` |
@@ -715,5 +714,4 @@ curl -X POST \
 | [!DNL Microsoft SQL Server] | `1f372ff9-38a4-4492-96f5-b9a4e4bd00ec` |
 | [!DNL MySQL] | `26d738e0-8963-47ea-aadf-c60de735468a` |
 | [!DNL Oracle] | `d6b52d86-f0f8-475f-89d4-ce54c8527328` |
-| [!DNL Phoenix] | `102706fb-a5cd-42ee-afe0-bc42f017ff43` |
 | [!DNL PostgreSQL] | `74a1c565-4e59-48d7-9d67-7c03b8a13137` |

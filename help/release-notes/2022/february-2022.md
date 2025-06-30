@@ -2,7 +2,7 @@
 title: Adobe Experience Platform 发行说明（2022 年 2 月）
 description: Adobe Experience Platform 的 2022 年 2 月发行说明。
 exl-id: ae453f7d-ac75-4cc3-8435-57d25f086cc3
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2e41a1716e057cd33e4635c11ba9c3cfc185418a
 workflow-type: tm+mt
 source-wordcount: '1018'
 ht-degree: 17%
@@ -33,7 +33,7 @@ Adobe Experience Platform提供了多个[!DNL dashboards]，通过它们可以�
 
 | 功能 | 描述 |
 | --- | --- |
-| 新的标准目标构件 | 以下标准构件允许您可视化与目标相关的不同量度。<ul><li>目标最近激活的区段。 此构件根据所选目标以降序显示最近激活的前五个区段。</li><li>受众规模趋势。 此构件描述一段时间内映射到目标帐户的区段配置文件计数之间的关系。</li><li>按身份列出的未映射区段。 此构件列出给定目标和身份按身份数降序排列的前五个未映射区段。</li><li>按身份映射的区段。 此构件列出了前五个映射区段。 区段会根据它们各自的源ID计数（与从构件的下拉菜单中选择的目标ID相匹配）从高到低排序。</li><li>常见受众。 此小组件提供了在页面顶部选择的目标帐户中激活的前五个区段列表，以及在小组件下拉列表中选定的目标区段的列表。</li></ul> 有关可用标准小组件的更多信息，请参阅[目标仪表板文档。](https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html?lang=zh-Hans#standard-widgets) |
+| 新的标准目标构件 | 以下标准构件允许您可视化与目标相关的不同量度。<ul><li>目标最近激活的区段。 此构件根据所选目标以降序显示最近激活的前五个区段。</li><li>受众规模趋势。 此构件描述一段时间内映射到目标帐户的区段配置文件计数之间的关系。</li><li>按身份列出的未映射区段。 此构件列出给定目标和身份按身份数降序排列的前五个未映射区段。</li><li>按身份映射的区段。 此构件列出了前五个映射区段。 区段会根据它们各自的源ID计数（与从构件的下拉菜单中选择的目标ID相匹配）从高到低排序。</li><li>常见受众。 此小组件提供了在页面顶部选择的目标帐户中激活的前五个区段列表，以及在小组件下拉列表中选定的目标区段的列表。</li></ul> 有关可用标准小组件的更多信息，请参阅[目标仪表板文档。](https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html#standard-widgets) |
 
 有关 [!DNL Dashboards] 的详细信息，请查看 [[!DNL Dashboards] 概述](../../dashboards/home.md)。
 
@@ -85,6 +85,6 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 | 功能 | 描述 |
 | --- | --- |
-| Beta源迁移到GA | 以下源已从Beta版升级到GA版： <ul><li>[[!DNL Mailchimp Campaigns]](../../sources/connectors/marketing-automation/mailchimp.md)</li><li>[[!DNL Mailchimp Members]](../../sources/connectors/marketing-automation/mailchimp.md)</li><li>[[!DNL Zoho CRM]](../../sources/connectors/crm/zoho.md)</li></ul> |
+| Beta源迁移到GA | 以下源已从Beta版升级到GA版： <ul><li>[[!DNL Mailchimp Campaigns]](../../sources/connectors/marketing-automation/mailchimp.md)</li><li>[[!DNL Mailchimp Members]](../../sources/connectors/marketing-automation/mailchimp.md)</li></ul> |
 
 要了解有关源的更多信息，请参阅[源概述](../../sources/home.md)。

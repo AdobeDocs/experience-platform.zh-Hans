@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2023 年 4 月）
 description: Adobe Experience Platform 的 2023 年 4 月发行说明。
 exl-id: 7b501467-99a7-4aee-ae86-66c851250ecf
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2e41a1716e057cd33e4635c11ba9c3cfc185418a
 workflow-type: tm+mt
-source-wordcount: '2040'
-ht-degree: 97%
+source-wordcount: '2010'
+ht-degree: 96%
 
 ---
 
@@ -68,8 +68,8 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 | --- | --- |
 | 对数据流进行 IP 地址模糊处理 | 现在可在[数据流配置 UI](../../datastreams/configure.md) 中定义部分或全部数据流级别 IP 模糊处理选项。<br><br>数据流级别 IP 模糊处理设置优先于任何在 Adobe Target 和 Audience Manager 中的任何 IP 模糊处理功能。<br><br>数据流级别 [!UICONTROL IP 模糊处理]设置不影响发送到 Adobe Analytics 的数据。Adobe Analytics 当前接收未经模糊处理的 IP 地址。要让 Analytics 接收经过模糊处理的 IP 地址，您必须在 Adobe Analytics 中单独配置 IP 模糊处理。将在后续版本中更新此行为。<br><br>有关 IP 模糊处理的更多详细信息以及有关如何配置它的说明，请参阅[数据流配置文档](../../datastreams/configure.md#advanced-options)。 |
 | [数据流配置覆盖](../../datastreams/overrides.md) | 您现在可以为数据流定义其他配置选项，这些选项可用于覆盖特定设置，例如事件数据集、Target 属性令牌、ID 同步容器和 Analytics 报表包。<br><br>覆盖数据流配置是一个两步过程： <ol><li>首先，您必须在[数据流配置页面](../../datastreams/configure.md)中定义数据流配置覆盖。</li><li>然后，您必须通过 Web SDK 命令或使用 Web SDK [标记扩展](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md)将这些覆盖发送到 Edge Network。</li></ol> |
-| OAuth JWT 机密 | 通过 [OAuth JWT 机密](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html?lang=zh-Hans)，客户可以使用 Adobe 和 Google 服务令牌在事件转发中支持服务器到服务器的交互。 |
-| [!DNL Pinterest Conversions API] 扩展 | 通过 [[!DNL Pinterest Conversions API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/pinterest/overview.html?lang=zh-Hans) 事件转发扩展，可利用在 Adobe Experience Platform Edge Network 中捕获的数据，并使用 [!DNL Pinterest Conversions API] 以服务器端事件的形式将数据发送到 [!DNL Pinterest]。 |
+| OAuth JWT 机密 | 通过 [OAuth JWT 机密](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html)，客户可以使用 Adobe 和 Google 服务令牌在事件转发中支持服务器到服务器的交互。 |
+| [!DNL Pinterest Conversions API] 扩展 | 通过 [[!DNL Pinterest Conversions API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/pinterest/overview.html) 事件转发扩展，可利用在 Adobe Experience Platform Edge Network 中捕获的数据，并使用 [!DNL Pinterest Conversions API] 以服务器端事件的形式将数据发送到 [!DNL Pinterest]。 |
 
 {style="table-layout:auto"}
 
@@ -77,7 +77,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 [!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
-**新目标**{#new-destinations}
+**新目标** {#new-destinations}
 
 | 目标 | 描述 |
 | ----------- | ----------- |
@@ -85,7 +85,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 {style="table-layout:auto"}
 
-**新增或更新的功能**{#destinations-new-updated-functionality}
+**新增或更新的功能** {#destinations-new-updated-functionality}
 
 | 功能 | 描述 |
 | ----------- | ----------- |
@@ -105,7 +105,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 -->
 
-有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
+有关目标的更多一般信息，请参阅[目标概述](../../destinations/home.md)。
 
 ## Experience Data Model (XDM) {#xdm}
 
@@ -115,7 +115,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 功能 | 描述 |
 | --- | --- |
-| 显示名称切换 | 架构编辑器现在提供了一个切换功能，可以在原始字段名称和更易于理解的显示名称之间进行更改。<br>![显示名称切换高亮显示的架构编辑器。](../../xdm/images/ui/resources/schemas/display-name-toggle.png "架构编辑器显示名称切换"){width="100" zoomable="yes"}<br>这种灵活性可以提高字段发现能力和架构编辑功能。标准字段组的显示名称是由系统生成的，但如果需要，也可以通过 UI 进行自定义。请阅读[显示名称切换文档](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/resources/schemas.html?lang=zh-Hans#display-name-toggle)，了解详情。 |
+| 显示名称切换 | 架构编辑器现在提供了一个切换功能，可以在原始字段名称和更易于理解的显示名称之间进行更改。<br>![显示名称切换高亮显示的架构编辑器。](../../xdm/images/ui/resources/schemas/display-name-toggle.png "架构编辑器显示名称切换"){width="100" zoomable="yes"}<br>这种灵活性可以提高字段发现能力和架构编辑功能。标准字段组的显示名称是由系统生成的，但如果需要，也可以通过 UI 进行自定义。请阅读[显示名称切换文档](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/resources/schemas.html#display-name-toggle)，了解详情。 |
 
 {style="table-layout:auto"}
 
@@ -193,7 +193,6 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 | API 支持为 Salesforce CRM 源筛选行级数据。 | 使用逻辑和比较运算符来过滤 Salesforce CRM 源的行级数据。有关更多信息，请阅读[使用 API 过滤源数据](../../sources/tutorials/api/filter.md)的指南。 |
 | Shopify Streaming 的 Beta 版可用性 | [Shopify Streaming 源](../../sources/connectors/ecommerce/shopify-streaming.md)现已推出 Beta 版。使用 Shopify Streaming 源将数据从您的 Shopify 合作伙伴帐户流式传输到 Experience Platform。 |
 | OneTrust Integration 全面可用 | [OneTrust Integration 源](../../sources/connectors/consent-and-preferences/onetrust.md)现在全面可用。使用 OneTrust Integration 源将同意和偏好设置数据从您的 OneTrust Integration 帐户添加到 Experience Platform。 |
-| Oracle Service Cloud 全面可用 | [Oracle Service Cloud 源](../../sources/connectors/customer-success/oracle-service-cloud.md)现在全面可用。使用 Oracle Service Cloud 源将 Oracle Service Cloud 数据引入 Experience Platform。 |
 
 {style="table-layout:auto"}
 

@@ -6,9 +6,9 @@ last-update: April 13, 2020
 author: ens71067
 keywords: 发行说明；
 exl-id: 0f68c71e-3c9d-453b-a953-1cd1b6ca2e35
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 104db777446b19fa9e3ea7538ae1dda6f51a00b1
 workflow-type: tm+mt
-source-wordcount: '985'
+source-wordcount: '972'
 ht-degree: 28%
 
 ---
@@ -130,8 +130,7 @@ Adobe Experience Platform可以从外部源摄取数据，同时允许您使用[
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 数据库的API和用户界面支持 | [!DNL Apache Spark] （在HDInsights上）、[!DNL Azure Synapse Analytics]、[!DNL Azure Table Storage]、[!DNL Hive] （在HDInsights上）和[!DNL Phoenix]的新源连接器。 |
-| 基于支付的应用程序的API和UI支持 | [!DNL PayPal]的新源连接器。 |
+| 数据库的API和用户界面支持 | [!DNL Apache Spark] （在HDInsights上）、[!DNL Azure Synapse Analytics]、[!DNL Azure Table Storage]和[!DNL Hive]的新源连接器。 |
 | 基于协议的应用程序的API和UI支持 | [!DNL Generic OData]的新源连接器。 |
 
 **已知问题**

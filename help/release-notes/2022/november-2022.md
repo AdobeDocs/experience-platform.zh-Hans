@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2022 年 11 月）
 description: Adobe Experience Platform 2022 年 11 月发行说明。
 exl-id: 1048cfae-6e7a-4d05-a004-c5c095a17fc4
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2e41a1716e057cd33e4635c11ba9c3cfc185418a
 workflow-type: tm+mt
-source-wordcount: '456'
-ht-degree: 58%
+source-wordcount: '312'
+ht-degree: 62%
 
 ---
 
@@ -45,18 +45,4 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 {style="table-layout:auto"}
 
-有关Experience Platform中XDM的更多信息，请参阅[XDM系统概述](../../xdm/home.md)。
-
-## 源 {#sources}
-
-Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Experience Platform服务来构建、标记和增强这些数据。 您可以从各种来源获取数据，例如 Adobe 应用程序、基于云的存储、第三方软件和 CRM 系统。
-
-Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各种数据提供者设置源连接。这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
-
-**更新的功能**
-
-| 功能 | 描述 |
-| --- | --- | 
-| Oracle服务云源的Beta可用性 | 使用Oracle Service Cloud源将数据从Oracle Service Cloud帐户摄取到Experience Platform。 有关详细信息，请阅读有关[Oracle服务云源](../../sources/connectors/customer-success/oracle-service-cloud.md)的文档。 |
-
-若要了解有关源的更多信息，请阅读[源概述](../../sources/home.md)。
+有关 Experience Platform 中 XDM 的详细信息，请查看 [XDM 系统概述](../../xdm/home.md)。
