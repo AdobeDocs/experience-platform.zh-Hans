@@ -2,9 +2,9 @@
 title: 记录删除请求（UI工作流）
 description: 了解如何在Adobe Experience Platform UI中删除记录。
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
-source-git-commit: 07e09cfe2e2c3ff785caf0b310cbe2f2cc381c17
+source-git-commit: 9ee5225c7494c28023c26181dfe626780133bb5d
 workflow-type: tm+mt
-source-wordcount: '1797'
+source-wordcount: '1848'
 ht-degree: 7%
 
 ---
@@ -45,19 +45,28 @@ ht-degree: 7%
 
 ## 选择数据集 {#select-dataset}
 
-下一步是确定要从单个数据集还是从所有数据集删除记录。 如果此选项不可用，请继续阅读指南的[提供标识](#provide-identities)部分。
+下一步是确定要从单个数据集还是从所有数据集删除记录。 数据集选择选项可能不可用，具体取决于您组织的配置。 如果未看到此选项，请继续阅读指南的[提供标识](#provide-identities)部分。
 
-在&#x200B;**[!UICONTROL 记录详细信息]**&#x200B;部分下，使用单选按钮在特定数据集和所有数据集之间进行选择。 如果选择&#x200B;**[!UICONTROL 选择数据集]**，请继续选择数据库图标（![数据库图标](/help/images/icons/database.png)）以打开一个提供可用数据集列表的对话框。 从列表中选择所需的数据集，然后选择&#x200B;**[!UICONTROL 完成]**。
+在&#x200B;**[!UICONTROL 记录详细信息]**&#x200B;部分中，选择一个单选按钮以选择特定数据集或所有数据集。
+
+若要从特定数据集删除，请选择&#x200B;**[!UICONTROL 选择数据集]**，然后选择数据库图标（![数据库图标](/help/images/icons/database.png)）。 在显示的对话框中，选择一个数据集，然后选择&#x200B;**[!UICONTROL 完成]**&#x200B;以进行确认。
 
 ![包含选定数据集并突出显示[!UICONTROL 完成]的[!UICONTROL 选择数据集]对话框。](../images/ui/record-delete/select-dataset.png)
 
-如果要删除所有数据集的记录，请选择&#x200B;**[!UICONTROL 所有数据集]**。
+要从所有数据集删除，请选择&#x200B;**[!UICONTROL 所有数据集]**。 此选项会增加操作的范围，并要求您提供所有相关标识类型。
 
 ![已选择[!UICONTROL 所有数据集]选项的[!UICONTROL 选择数据集]对话框。](../images/ui/record-delete/all-datasets.png)
 
->[!NOTE]
+>[!WARNING]
 >
->选择&#x200B;**[!UICONTROL 所有数据集]**&#x200B;选项可能会导致删除操作花费较长时间，并且可能不会导致准确的记录删除。
+>选择&#x200B;**[!UICONTROL 所有数据集]**&#x200B;会将操作扩展到组织中的所有数据集。 每个数据集可能使用不同的主标识类型。 您必须提供&#x200B;**所有必需的标识类型**&#x200B;以确保准确匹配。
+>
+>如果缺少任何标识类型，则在删除过程中可能会跳过某些记录。 这可能会降低处理速度，并导致&#x200B;**部分结果**。
+
+Experience Platform中的每个数据集仅支持一种主要身份类型。
+
+* 从&#x200B;**单个数据集**&#x200B;中删除时，请求中的所有标识都必须使用&#x200B;**相同类型**。
+* 从&#x200B;**所有数据集**&#x200B;中删除时，您可以包含&#x200B;**多个标识类型**，因为不同的数据集可能依赖不同的主标识。”
 
 ## 提供身份标识 {#provide-identities}
 
@@ -73,15 +82,13 @@ ht-degree: 7%
 
 删除记录时，必须提供身份信息，以便系统能够确定要删除的记录。 对于Experience Platform中的任何数据集，会根据由该数据集的架构定义的&#x200B;**身份命名空间**&#x200B;字段删除记录。
 
-与Experience Platform中的所有身份字段一样，身份命名空间由两部分组成：**类型**（有时也称为身份命名空间）和&#x200B;**值**。 标识类型提供有关字段如何标识记录的上下文（如电子邮件地址）。 该值表示该类型记录的特定标识（例如，`email`标识类型的`jdoe@example.com`）。 用作标识的常见字段包括帐户信息、设备ID和Cookie ID。
+与Experience Platform中的所有身份字段一样，身份命名空间由两部分组成：**类型**（有时也称为身份命名空间）和&#x200B;**值**。 标识类型提供有关字段如何标识记录的上下文（如电子邮件地址）。 该值表示该类型记录的特定标识（例如，`jdoe@example.com`标识类型的`email`）。 用作标识的常见字段包括帐户信息、设备ID和Cookie ID。
 
 >[!TIP]
 >
 >如果您不知道特定数据集的身份命名空间，则可以在Experience Platform UI中找到它。 在&#x200B;**[!UICONTROL 数据集]**&#x200B;工作区中，从列表中选择相关数据集。 在数据集的详细信息页面上，将鼠标悬停在右边栏中数据集架构的名称上。 身份命名空间与架构名称和描述一起显示。
 >
 >![已选定数据集的数据集仪表板，并从数据集详细信息面板中打开了架构对话框。 数据集的主ID已突出显示。](../images/ui/record-delete/dataset-primary-identity.png)
-
-如果要从单个数据集中删除记录，则您提供的所有身份都必须具有相同的类型，因为一个数据集只能有一个身份命名空间。 如果您要从所有数据集进行删除，则可以包含多个标识类型，因为不同的数据集可能具有不同的主标识。
 
 删除记录时，可通过两个选项提供身份：
 
@@ -196,7 +203,7 @@ JSON文件必须格式化为一组对象，每个对象表示一个标识。
 >
 >有关执行记录删除后如何处理这些删除的详细信息，请参阅[时间线和透明度](../home.md#record-delete-transparency)的概述部分。
 
-![数据生命周期]工作区的[!UICONTROL 记录]选项卡，其中新请求突出显示。(../images/ui/record-delete/request-log.png)
+![数据生命周期[!UICONTROL 工作区的]记录[!UICONTROL 选项卡，其中新请求突出显示。]](../images/ui/record-delete/request-log.png)
 
 ## 后续步骤
 
