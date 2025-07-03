@@ -5,7 +5,7 @@ exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
 source-git-commit: 7aff8d9eafb699133e90d3af8ef24f3135f3cade
 workflow-type: tm+mt
 source-wordcount: '1818'
-ht-degree: 13%
+ht-degree: 14%
 
 ---
 
@@ -28,7 +28,7 @@ ht-degree: 13%
 ## 通过API或UI连接到您的[!DNL Amazon S3]存储 {#connect-api-or-ui}
 
 * 要使用Experience Platform用户界面连接到[!DNL Amazon S3]存储位置，请阅读下面的[连接到目标](#connect)和[将受众激活到此目标](#activate)部分。
-* 若要以编程方式连接到[!DNL Amazon S3]存储位置，请阅读有关如何使用流服务API教程[&#128279;](../../api/activate-segments-file-based-destinations.md)将受众激活到基于文件的目标的指南。
+* 若要以编程方式连接到[!DNL Amazon S3]存储位置，请阅读有关如何使用流服务API教程[将受众](../../api/activate-segments-file-based-destinations.md)激活到基于文件的目标的指南。
 
 ## 支持的受众 {#supported-audiences}
 
@@ -58,8 +58,8 @@ ht-degree: 13%
 
 此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
 
-* 如何使用Experience Platform用户界面[&#128279;](/help/destinations/ui/export-datasets.md)导出数据集。
-* 如何使用流服务API[&#128279;](/help/destinations/api/export-datasets.md)以编程方式导出数据集。
+* 如何使用Experience Platform用户界面[导出数据集](/help/destinations/ui/export-datasets.md)。
+* 如何使用流服务API[以编程方式](/help/destinations/api/export-datasets.md)导出数据集。
 
 ## 导出数据的文件格式 {#file-format}
 
@@ -98,7 +98,7 @@ ht-degree: 13%
 
   ![显示UI中格式正确的PGP密钥示例的图像。](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
-#### 使用S3承担角色进行身份验证 {#assumed-role-authentication}
+#### 使用 S3 的假设角色进行身份验证 {#assumed-role-authentication}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_s3_assumed_role"
@@ -207,7 +207,7 @@ ht-degree: 13%
 >id="platform_destinations_connect_s3_folderpath"
 >title="文件夹路径"
 >abstract="必须仅包含字符 A-Z、a-z、0-9，并且可以包含以下特殊字符：`/!-_.'()"^[]+$%.*"`。要为每个受众文件创建一个文件夹，请将宏 `/%SEGMENT_NAME%`、`/%SEGMENT_ID%` 或 `/%SEGMENT_NAME%/%SEGMENT_ID%` 插入文本字段。宏只能插入到文件夹路径的末尾。查看文档中的宏示例。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/cloud-storage/overview.html?lang=zh-Hans#use-macros" text="使用宏在存储位置创建一个文件夹"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/cloud-storage/overview.html#use-macros" text="使用宏在存储位置创建一个文件夹"
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
@@ -236,7 +236,7 @@ ht-degree: 13%
 
 ### 所需的[!DNL Amazon S3]权限 {#required-s3-permission}
 
-要成功连接数据并将其导出到您的[!DNL Amazon S3]存储位置，请在[!DNL Amazon S3]中为[!DNL Experience Platform]创建标识和访问管理(IAM)用户，并为以下操作分配权限：
+要成功连接数据并将其导出到您的[!DNL Amazon S3]存储位置，请在[!DNL Experience Platform]中为[!DNL Amazon S3]创建标识和访问管理(IAM)用户，并为以下操作分配权限：
 
 * `s3:DeleteObject`
 * `s3:GetBucketLocation`
