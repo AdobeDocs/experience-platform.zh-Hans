@@ -2,9 +2,9 @@
 title: 受众门户概述
 description: 了解如何使用Audience Portal在Adobe Experience Platform中查看、管理和创建受众。
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: f02c76c646bb9966b345940e30e37ac52e636cfa
+source-git-commit: c8befc7379da491f6de78a89c9f14a0b123b3fb8
 workflow-type: tm+mt
-source-wordcount: '4421'
+source-wordcount: '4494'
 ht-degree: 3%
 
 ---
@@ -67,8 +67,8 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 | [!UICONTROL 移至文件夹] | 受众构成、自定义上传、分段服务 | 管理受众属于哪个文件夹。 有关此功能的详细信息，请阅读[筛选和标记](#manage-audiences)部分。 |
 | [!UICONTROL 副本] | Segmentation Service | 复制所选受众。 有关此函数的更多信息，请参阅[分段常见问题解答](../faq.md#copy)。 |
 | [!UICONTROL 应用访问标签] | 受众构成、自定义上传、分段服务 | 管理属于受众的访问标签。 有关访问标签的详细信息，请阅读有关[管理标签](../../access-control/abac/ui/labels.md)的文档。 |
-| [!UICONTROL 发布] | 自定义上传、分段服务 | 发布选定的受众。 有关生命周期状态管理的更多信息，请阅读分段常见问题解答[&#128279;](../faq.md#lifecycle-states)的生命周期状态部分。 |
-| [!UICONTROL 停用] | 自定义上传、分段服务 | 停用所选受众。 请注意，为了停用某个受众，无法&#x200B;**任何**&#x200B;目标(包括非Experience Platform目标)中激活该受众&#x200B;**&#x200B;**，也无法将其纳入&#x200B;**任何**&#x200B;其他受众。 有关生命周期状态管理的更多信息，请阅读分段常见问题解答[&#128279;](../faq.md#lifecycle-states)的生命周期状态部分。 |
+| [!UICONTROL 发布] | 自定义上传、分段服务 | 发布选定的受众。 有关生命周期状态管理的更多信息，请阅读分段常见问题解答[的](../faq.md#lifecycle-states)生命周期状态部分。 |
+| [!UICONTROL 停用] | 自定义上传、分段服务 | 停用所选受众。 请注意，为了停用某个受众，无法&#x200B;**任何**&#x200B;目标(包括非Experience Platform目标)中激活该受众&#x200B;****，也无法将其纳入&#x200B;**任何**&#x200B;其他受众。 有关生命周期状态管理的更多信息，请阅读分段常见问题解答[的](../faq.md#lifecycle-states)生命周期状态部分。 |
 | [!UICONTROL 删除] | 受众构成、自定义上传、分段服务 | 删除所选受众。 不能删除在下游目标中使用或属于其他受众&#x200B;**中依赖的受众**。 有关受众删除的详细信息，请阅读[分段常见问题解答](../faq.md#lifecycle-states)。 |
 | [!UICONTROL 添加到包] | 受众构成、自定义上传、分段服务 | 在沙盒之间移动受众。 有关此功能的详细信息，请阅读[沙盒工具指南](../../sandboxes/ui/sandbox-tooling.md)。 |
 
@@ -78,11 +78,11 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 页面顶部提供了一些选项，用于将所有受众添加到计划、导入受众、创建新受众以及查看受众评估摘要。
 
-切换&#x200B;**[!UICONTROL 计划所有受众]**&#x200B;将启用计划分段。 有关计划分段的更多信息，请参阅本用户指南[&#128279;](#scheduled-segmentation)的计划分段部分。
+切换&#x200B;**[!UICONTROL 计划所有受众]**&#x200B;将启用计划分段。 有关计划分段的更多信息，请参阅本用户指南[的](#scheduled-segmentation)计划分段部分。
 
-选择&#x200B;**[!UICONTROL 导入受众]**&#x200B;将允许您导入外部生成的受众。 要了解有关导入受众的更多信息，请阅读用户指南[&#128279;](#import-audience)中有关导入受众的部分。
+选择&#x200B;**[!UICONTROL 导入受众]**&#x200B;将允许您导入外部生成的受众。 要了解有关导入受众的更多信息，请阅读用户指南[中有关](#import-audience)导入受众的部分。
 
-选择&#x200B;**[!UICONTROL 创建受众]**&#x200B;将允许您创建受众。 要了解有关创建受众的更多信息，请阅读用户指南[&#128279;](#create-audience)中有关创建受众的部分。
+选择&#x200B;**[!UICONTROL 创建受众]**&#x200B;将允许您创建受众。 要了解有关创建受众的更多信息，请阅读用户指南[中有关](#create-audience)创建受众的部分。
 
 ![受众浏览页面上的顶部导航栏突出显示。 此栏包含用于创建受众的按钮和用于导入受众的按钮。](../images/ui/audience-portal/browse-audiences-top.png)
 
@@ -102,13 +102,13 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 | ----- | ----------- |
 | [!UICONTROL 名称] | 受众的名称。 |
 | [!UICONTROL 轮廓计数] | 符合受众条件的配置文件总数。 |
-| [!UICONTROL Origin] | 受众的来源。 它指明了受众的来源。 可能的值包括[分段服务](#segment-builder)、[自定义上传](#import-audience)、[受众合成](#audience-composition)、[Audience Manager](https://experienceleague.adobe.com/zh-hans/docs/audience-manager/user-guide/aam-home)、[相似受众](../types/lookalike-audiences.md)、[联合受众合成](#fac)、[Customer Journey Analytics](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/cja-overview/cja-overview)、[数据Distiller](#data-distiller)、[AJO B2B](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer-b2b/user/guide-overview)和[Real-Time CDP Collaboration](https://experienceleague.adobe.com/zh-hans/docs/real-time-cdp-collaboration/using/destinations/experience-platform#audience-portal)。 |
-| [!UICONTROL 生命周期状态] | 受众的状态。 此字段的可能值包括`Draft`、`Inactive`和`Published`。 有关生命周期状态的更多信息，包括不同状态的含义以及如何将受众移动到不同生命周期状态，请阅读分段常见问题解答[&#128279;](../faq.md#lifecycle-status)中的生命周期状态部分。 |
+| [!UICONTROL Origin] | 受众的来源。 它指明了受众的来源。 可能的值包括[分段服务](#segment-builder)、[自定义上传](#import-audience)、[受众合成](#audience-composition)、[Audience Manager](https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/aam-home)、[相似受众](../types/lookalike-audiences.md)、[联合受众合成](#fac)、[Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-overview/cja-overview)、[数据Distiller](#data-distiller)、[AJO B2B](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer-b2b/user/guide-overview)和[Real-Time CDP Collaboration](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/destinations/experience-platform#audience-portal)。 |
+| [!UICONTROL 生命周期状态] | 受众的状态。 此字段的可能值包括`Draft`、`Inactive`和`Published`。 有关生命周期状态的更多信息，包括不同状态的含义以及如何将受众移动到不同生命周期状态，请阅读分段常见问题解答[中的](../faq.md#lifecycle-status)生命周期状态部分。 |
 | [!UICONTROL 更新频率] | 一个值，表示受众数据的更新频率。 此字段的可能值包括[!UICONTROL 批次]、[!UICONTROL 流式传输]、[!UICONTROL Edge]和[!UICONTROL 未计划]。 |
 | [!UICONTROL 上次更新者] | 上次更新受众的人员姓名。 |
 | [!UICONTROL 已创建] | 创建受众的日期和时间（UTC时区）。 |
 | [!UICONTROL 上次更新时间] | 上次更新受众的日期和时间(UTC)。 |
-| [!UICONTROL 标记] | 属于受众的用户定义标记。 有关这些标记的详细信息，可在标记[&#128279;](#tags)的部分找到。 |
+| [!UICONTROL 标记] | 属于受众的用户定义标记。 有关这些标记的详细信息，可在标记[的](#tags)部分找到。 |
 | [!UICONTROL 描述] | 受众的描述。 |
 | [!UICONTROL 创建者] | 创建受众的人员姓名。 |
 | [!UICONTROL 访问标签] | 受众的访问标签。 访问标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 这些标签可随时应用，从而为您选择如何管理数据提供了灵活性。 有关访问标签的详细信息，请阅读有关[管理标签](../../access-control/abac/ui/labels.md)的文档。 |
@@ -138,7 +138,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 ![搜索栏高亮显示。](../images/ui/audience-portal/browse-audience-search.png)
 
-有关[!DNL Unified Search]的详细信息，包括支持的功能，请阅读[统一搜索文档](https://experienceleague.adobe.com/docs/core-services/interface/services/search-experience-cloud.html?lang=zh-Hans)。
+有关[!DNL Unified Search]的详细信息，包括支持的功能，请阅读[统一搜索文档](https://experienceleague.adobe.com/docs/core-services/interface/services/search-experience-cloud.html)。
 
 #### 标记 {#tags}
 
@@ -173,7 +173,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 >[!NOTE]
 >
->仅当位于其他文件夹中时，才能创建文件夹。 这意味着，如果您在左侧导航栏上选择了&#x200B;**[!UICONTROL 所有受众]**，则&#x200B;**无法**&#x200B;创建文件夹。
+>仅当位于其他文件夹中时，才能创建文件夹。 这意味着，如果您在左侧导航栏上选择了&#x200B;**所有受众**，则&#x200B;**[!UICONTROL 无法]**&#x200B;创建文件夹。
 
 此时会出现一个弹出窗口，允许您命名新创建的文件夹。 在命名文件夹后选择&#x200B;**[!UICONTROL 保存]**&#x200B;以完成创建文件夹。 请注意，名称&#x200B;**必须**&#x200B;对于父文件夹是唯一的。
 
@@ -203,7 +203,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 | 筛选条件 | 描述 |
 | ------ | ----------- |
-| [!UICONTROL Origin] | 允许您根据受众的来源进行筛选。 可能的值包括[分段服务](#segment-builder)、[自定义上传](#import-audience)、[受众合成](#audience-composition)、[Audience Manager](https://experienceleague.adobe.com/zh-hans/docs/audience-manager/user-guide/aam-home)、[相似受众](../types/lookalike-audiences.md)、[联合受众合成](#fac)、[Customer Journey Analytics](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/cja-overview/cja-overview)、[数据Distiller](#data-distiller)、[AJO B2B](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer-b2b/user/guide-overview)和[Real-Time CDP Collaboration](https://experienceleague.adobe.com/zh-hans/docs/real-time-cdp-collaboration/using/destinations/experience-platform#audience-portal)。 |
+| [!UICONTROL Origin] | 允许您根据受众的来源进行筛选。 可能的值包括[分段服务](#segment-builder)、[自定义上传](#import-audience)、[受众合成](#audience-composition)、[Audience Manager](https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/aam-home)、[相似受众](../types/lookalike-audiences.md)、[联合受众合成](#fac)、[Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-overview/cja-overview)、[数据Distiller](#data-distiller)、[AJO B2B](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer-b2b/user/guide-overview)和[Real-Time CDP Collaboration](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/destinations/experience-platform#audience-portal)。 |
 | [!UICONTROL 具有任何标记] | 允许您按标记过滤。 您可以选择在&#x200B;**[!UICONTROL 具有任何标记]**&#x200B;和&#x200B;**[!UICONTROL 具有所有标记]**&#x200B;之间。 选择&#x200B;**[!UICONTROL 具有任何标记]**&#x200B;时，过滤的受众将包含您已添加的&#x200B;**任意**&#x200B;标记。 选择&#x200B;**[!UICONTROL 具有所有标记]**&#x200B;时，筛选的受众必须包括您已添加的&#x200B;**所有**&#x200B;标记。 |
 | [!UICONTROL 生命周期状态] | 可让您根据受众的生命周期状态进行过滤。 可用选项包括[!UICONTROL 已删除]、[!UICONTROL 草稿]、[!UICONTROL 不活动]和[!UICONTROL 已发布]。 |
 | [!UICONTROL 更新频率] | 可让您根据受众的更新频率（评估方法）进行过滤。 可用选项包括[!UICONTROL 批处理]、[!UICONTROL 流式处理]和[!UICONTROL Edge] |
@@ -303,7 +303,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 | 数据集名称 | 受众被摄取到的数据集的名称。 您可以选择数据集名称，以了解有关数据集的更多信息。 要了解有关数据集的更多信息，请阅读[数据集UI指南](../../catalog/datasets/user-guide.md)。 |
 | 数据集批次 | 受众被引入的数据集的ID。 您可以选择批次的ID，以了解有关批次的详细信息。 要了解有关批次的详细信息，请阅读[监视数据摄取指南](../../ingestion/quality/monitor-data-ingestion.md#viewing-batches)。 |
 | 轮廓批次 | 在Experience Platform上创建配置文件的批次的ID。 您可以选择批次的ID，以了解有关批次的详细信息。 要了解有关批次的详细信息，请阅读[监视数据摄取指南](../../ingestion/quality/monitor-data-ingestion.md#viewing-batches)。 |
-| 架构 | 受众所属的架构的名称。 您可以选择架构的名称以查看有关架构的结构信息并应用数据使用标签。 有关详细信息，请阅读架构指南[&#128279;](../../xdm/tutorials/labels.md)的管理数据使用标签。 |
+| 架构 | 受众所属的架构的名称。 您可以选择架构的名称以查看有关架构的结构信息并应用数据使用标签。 有关详细信息，请阅读架构指南[的](../../xdm/tutorials/labels.md)管理数据使用标签。 |
 | 已提取的记录 | 摄取到数据集的记录数。 |
 | 失败的记录 | 无法引入数据集的记录数。 |
 | 新轮廓片段 | 已创建的新配置文件的数量。 |
@@ -404,6 +404,11 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 ## 导入受众 {#import-audience}
 
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_importaudience_dataexpiration"
+>title="日期过期"
+>abstract="受众成员资格将过期的天数。 此值可以设置为1天到180天。"
+
 >[!IMPORTANT]
 >
 >为了导入外部生成的受众，您&#x200B;**必须**&#x200B;具有以下权限：[!UICONTROL 查看区段]、[!UICONTROL 管理区段]和[!UICONTROL 导入受众]。 有关这些权限的详细信息，请阅读[访问控制概述](../../access-control/home.md#permissions)。
@@ -418,7 +423,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 >[!NOTE]
 >
->外部生成的受众&#x200B;**必须**&#x200B;为CSV格式，其最大值为&#x200B;**&#x200B;**，共25列，并且小于1GB。
+>外部生成的受众&#x200B;**必须**&#x200B;为CSV格式，其最大值为&#x200B;****，共25列，并且小于1GB。
 >
 >此外，您&#x200B;**不能**&#x200B;在CSV的第一行或关联的列中使用空格或破折号。
 >
@@ -434,7 +439,9 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 ![显示[!UICONTROL 受众详细信息]页面。](../images/ui/audience-portal/import-audience-audience-details.png)
 
-您还可以选择向外部生成的受众添加一些其他详细信息，包括为其提供ID、定义其合并策略或编辑其列数据类型。
+您还可以选择向外部生成的受众添加一些其他详细信息，包括向其提供外部ID、定义其合并策略、编辑其列数据类型或应用自定义数据过期。
+
++++ 自定义外部受众Id
 
 >[!NOTE]
 >
@@ -442,6 +449,12 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 >
 > - **必须**&#x200B;以字母（a-z或A-Z）、下划线(_)或美元符号($)开头。
 > - 所有后续字符都可以是字母数字(a-z、A-Z、0-9)、下划线(_)或美元符号($)。
+
++++
+
+>[!NOTE]
+>
+>自定义数据到期设置配置文件在受众成员资格中&#x200B;**保留**&#x200B;的天数。 数据过期后，用户档案将退出受众成员资格。 此值可以设置为1到180天。
 
 填写受众详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
 
