@@ -154,7 +154,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
    <!-- Batch segmentation currently runs at {{insert time of day}} and lasts for an average {{x hours}}. Adobe reserves the right to modify this schedule. -->
 
    ![在批处理目标的激活流程中，突出显示区段后评估选项。](../assets/ui/activate-batch-profile-destinations/after-segment-evaluation-option.png)
-使用**[!UICONTROL 已计划]**&#x200B;选项使激活作业在固定时间运行。 此选项可确保每天在同一时间导出Experience Platform配置文件数据。 但是，您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。
+使用&#x200B;**[!UICONTROL 已计划]**&#x200B;选项使激活作业在固定时间运行。 此选项可确保每天在同一时间导出Experience Platform配置文件数据。 但是，您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。
 
    ![突出显示批处理目标激活流中的“已计划”选项并显示时间选择器的图像。](../assets/ui/activate-batch-profile-destinations/scheduled-option.png)
 
