@@ -3,9 +3,9 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 6b91527afe172530597de30b9669b86ff0262e13
+source-git-commit: 13adf42a23458d10e217d216d8fe79e8ce33376d
 workflow-type: tm+mt
-source-wordcount: '4596'
+source-wordcount: '4595'
 ht-degree: 13%
 
 ---
@@ -120,7 +120,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >id="platform_destinations_activate_exportoptions"
 >title="文件导出选项"
 >abstract="选择&#x200B;**导出全部文件**&#x200B;以导出符合受众资格的所有轮廓的完整快照。选择&#x200B;**导出增量文件**&#x200B;以仅导出自上次导出后符合受众资格的轮廓。<br>第一个增量文件导出包括符合受众资格的所有轮廓，充当回填。后续增量文件仅包含自第一个增量文件导出后符合受众资格的轮廓。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=zh-Hans#export-incremental-files" text="导出增量文件"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#export-incremental-files" text="导出增量文件"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_aftersegmentevaluation"
@@ -154,7 +154,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
    <!-- Batch segmentation currently runs at {{insert time of day}} and lasts for an average {{x hours}}. Adobe reserves the right to modify this schedule. -->
 
    ![在批处理目标的激活流程中，突出显示区段后评估选项。](../assets/ui/activate-batch-profile-destinations/after-segment-evaluation-option.png)
-使用&#x200B;**[!UICONTROL 已计划]**&#x200B;选项使激活作业在固定时间运行。 此选项可确保每天在同一时间导出Experience Platform配置文件数据。 但是，您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。
+使用**[!UICONTROL 已计划]**&#x200B;选项使激活作业在固定时间运行。 此选项可确保每天在同一时间导出Experience Platform配置文件数据。 但是，您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。
 
    ![突出显示批处理目标激活流中的“已计划”选项并显示时间选择器的图像。](../assets/ui/activate-batch-profile-destinations/scheduled-option.png)
 
@@ -348,7 +348,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
   "identityMap": {
     "Email": [
       {
-        "id": "johndoe_1@example.com"
+        "id": "johndoe@example.com"
       },
       {
         "id": "doejohn_1@example.com"
@@ -382,7 +382,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
   "identityMap": {
     "Email": [
       {
-        "id": "johndoe_2@example.com"
+        "id": "johndoe@example.com"
       },
       {
         "id": "doejohn_2@example.com"
@@ -425,7 +425,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
 | 电子邮件* | 个人电子邮件 | firstName | 姓氏 |
 |---|---|---|---|
-| johndoe_2@example.com | johndoe@example.com | John | D |
+| johndoe@example.com | johndoe@example.com | John | D |
 | doejohn_2@example.com | johndoe@example.com | John | D |
 
 ### 重复数据删除使用案例3：基于单个配置文件属性进行重复数据删除 {#deduplication-use-case-3}
@@ -450,7 +450,7 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 
 ### 具有相同时间戳的用户档案的重复数据删除行为 {#deduplication-same-timestamp}
 
-将轮廓导出到基于文件的目标时，删除重复项可确保当多个轮廓共享相同的删除重复项键和相同的参考时间戳时仅导出一个轮廓。此时间戳表示个人资料的受众成员资格或身份图的上次更新时间。 有关如何更新和导出配置文件的更多信息，请参阅[配置文件导出行为](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2)文档。
+将轮廓导出到基于文件的目标时，删除重复项可确保当多个轮廓共享相同的删除重复项键和相同的参考时间戳时仅导出一个轮廓。此时间戳表示个人资料的受众成员资格或身份图的上次更新时间。 有关如何更新和导出配置文件的更多信息，请参阅[配置文件导出行为](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2)文档。
 
 #### 关键注意事项
 
@@ -554,9 +554,10 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 >
 >由于已知限制，您当前无法使用&#x200B;**[!UICONTROL 选择字段]**&#x200B;窗口将`segmentMembership.seg_namespace.seg_id.status`添加到文件导出。 相反，您必须将值`xdm: segmentMembership.seg_namespace.seg_id.status`手动粘贴到架构字段中，如下所示。
 >
->![显示激活工作流映射步骤中受众成员资格解决方法的屏幕录制。](..//assets/ui/activate-batch-profile-destinations/segment-membership.gif)
+>![显示激活工作流映射步骤中受众成员资格解决方法的屏幕录制。](../assets/ui/activate-batch-profile-destinations/segment-membership.gif)
 
 文件导出在以下方面有所不同，具体取决于是否选择了`segmentMembership.seg_namespace.seg_id.status`：
+
 * 如果选择了`segmentMembership.seg_namespace.seg_id.status`字段，则导出的文件在初始完整快照中包含&#x200B;**[!UICONTROL Active]**&#x200B;成员，在后续增量导出中包含&#x200B;**[!UICONTROL Active]**&#x200B;和&#x200B;**[!UICONTROL Expired]**&#x200B;成员。
 * 如果未选择`segmentMembership.seg_namespace.seg_id.status`字段，则导出的文件在初始完整快照和后续增量导出中仅包含&#x200B;**[!UICONTROL 活动]**&#x200B;成员。
 
@@ -569,7 +570,7 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 
 >[!IMPORTANT]
 >
->仅当您在[受众选择](#select-audiences)步骤中选择了&#x200B;**[!UICONTROL 自定义上传]**&#x200B;受众时，才会显示此步骤。
+>仅当您在&#x200B;**[!UICONTROL 受众选择]**&#x200B;步骤中选择了[自定义上传](#select-audiences)受众时，才会显示此步骤。
 
 扩充属性对应于Experience Platform中作为&#x200B;**[!UICONTROL 自定义上传]**&#x200B;摄取的自定义上传受众。 在此步骤中，您可以为每个选定的外部受众选择要导出到目标的属性。
 
@@ -632,7 +633,7 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 
 ## 验证受众激活 {#verify}
 
-将受众导出到云存储目标时，Adobe Experience Platform会在您提供的存储位置创建一个`.csv`、`.json`或`.parquet`文件。 预计会根据您在工作流中设置的时间表，在您的存储位置中创建一个新文件。 默认文件格式如下所示，但您可以[编辑文件名的组件](#file-names)：
+将受众导出到云存储目标时，Adobe Experience Platform会在您提供的存储位置创建一个`.csv`、`.json`或`.parquet`文件。 预计会根据您在工作流中设置的时间表，在您的存储位置中创建一个新文件。 默认文件格式如下所示，但您可以[编辑文件名的组件](#configure-file-names)：
 `<destinationName>_segment<segmentID>_<timestamp-yyyymmddhhmmss>.csv`
 
 例如，如果您选择了每日导出频率，则您连续三天收到的文件可能会如下所示：
