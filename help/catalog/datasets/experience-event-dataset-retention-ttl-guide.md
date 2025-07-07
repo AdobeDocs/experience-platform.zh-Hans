@@ -2,9 +2,9 @@
 title: 使用TTL在数据湖中管理体验事件数据集保留
 description: 了解如何使用生存时间(TTL)配置和Adobe Experience Platform API评估、设置和管理Data Lake中的Experience Event数据集保留。 本指南介绍TTL行级到期如何支持数据保留策略、优化存储效率并确保有效的数据生命周期管理。 它还提供了用例和最佳实践，帮助您有效应用TTL。
 exl-id: d688d4d0-aa8b-4e93-a74c-f1a1089d2df0
-source-git-commit: 13db0477c0f42d0808647937d40c25b47a270894
+source-git-commit: 65a132609bc30233ac9f7efbe1981d4f75f3acb9
 workflow-type: tm+mt
-source-wordcount: '2452'
+source-wordcount: '2458'
 ht-degree: 0%
 
 ---
@@ -178,7 +178,7 @@ curl -X GET \
 GET /dataSets/{DATASET_ID}
 ```
 
-此调用返回`extensions.adobe_lakeHouse.rowExpiration`分区中的当前`ttlValue`（如果已设置）。
+此调用返回`ttlValue`分区中的当前`extensions.adobe_lakeHouse.rowExpiration`（如果已设置）。
 
 **请求**
 
@@ -333,7 +333,7 @@ For example, if you apply a 30-day expiration policy on May 15th, the following 
 ### 我是否可以为数据湖和配置文件服务设置不同的保留策略？
 
 +++回答
-可以，您可以为Data Lake和Profile Services设置不同的保留策略。 但是，配置文件的保留期不得短于为数据湖设置的保留期。
+可以，您可以为Data Lake和Profile Services设置不同的保留策略。 配置文件存储区的保留期可以短于或长于数据湖保留期，具体取决于您组织的需求。
 +++
 
 ### 如何检查我当前的数据集使用情况？
