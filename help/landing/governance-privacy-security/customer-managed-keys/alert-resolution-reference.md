@@ -1,9 +1,10 @@
 ---
 title: CMK警报解决参考
 description: 识别、排除和解决Adobe Experience Platform中由客户管理的密钥(CMK)配置错误触发的常见警报。 使用本指南来遵循清晰的分步说明并恢复安全密钥访问。
-source-git-commit: 0d9cc046956dd380bb8816f0d8bf497bbad6140b
+exl-id: ffe2eadc-dfb5-418b-a201-2c20dcc9cfe4
+source-git-commit: e8cfed9ebd50cf50f03e232755eddef1cb8c0d3b
 workflow-type: tm+mt
-source-wordcount: '918'
+source-wordcount: '904'
 ht-degree: 0%
 
 ---
@@ -22,11 +23,7 @@ ht-degree: 0%
 
 ## 已禁用密钥访问 {#key-access-disabled}
 
-此警报表示Adobe Experience Platform无法访问配置的CMK，因为相关键配置问题已禁用或呈现无法访问该键。
-
->[!IMPORTANT]
->
->在这种情况下，Adobe CMK会将访问失败视为有目的地删除，并根据您的SLA清除与您的组织关联的所有数据。
+此警报表示Adobe Experience Platform无法访问配置的CMK，因为此密钥已禁用或因其配置而无法访问。 在这种情况下，系统将该情况视为有意删除关键访问。
 
 ### 发生时间
 
