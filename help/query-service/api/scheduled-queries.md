@@ -5,18 +5,32 @@ title: 计划端点
 description: 以下部分介绍了您可以使用查询服务API对计划查询进行的各种API调用。
 role: Developer
 exl-id: f57dbda5-da50-4812-a924-c8571349f1cd
-source-git-commit: a39fae1b72533261fb43e0acc95e50e5a6acd8df
+source-git-commit: 10c0c5c639226879b1ca25391fc4a1006cf40003
 workflow-type: tm+mt
-source-wordcount: '1224'
+source-wordcount: '1410'
 ht-degree: 2%
 
 ---
 
 # 计划端点
 
+了解如何使用查询服务计划API（包含详细信息和示例）以编程方式创建、管理和监视计划查询。
+
+## 要求和先决条件
+
+您可以使用技术帐户（通过OAuth服务器到服务器凭据进行身份验证）或个人用户帐户（用户令牌）创建计划查询。 但是，Adobe强烈建议使用技术帐户来确保计划查询的不中断、安全执行 — 尤其是对于长期或生产工作负载。
+
+如果撤销个人用户帐户的访问权限或禁用其帐户，则使用个人用户帐户创建的查询将失败。 技术帐户提供了更好的稳定性，因为它们与单个用户的就业状况或访问权限无关。
+
+>[!IMPORTANT]
+>
+>管理计划查询时的重要注意事项：<ul><li>如果用于创建计划的查询的帐户（技术或用户）失去访问权限或权限，计划的查询将失败。</li><li>在通过API或UI删除之前，必须禁用计划查询。</li><li>不支持无限期计划而不设置结束日期；必须始终指定结束日期。</li></ul>
+
+有关帐户要求、权限设置和管理计划查询的详细指导，请参阅[查询计划文档](../ui/query-schedules.md#technical-account-user-requirements)。 有关创建和配置技术帐户的逐步说明，请参阅[Developer Console设置](https://experienceleague.adobe.com/en/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/set-up-developer-console-and-postman)和[端到端技术帐户设置](https://experienceleague.adobe.com/en/docs/platform-learn/tutorial-comprehensive-technical/setup)。
+
 ## 示例API调用
 
-现在您了解了要使用哪些标头，就可以开始调用[!DNL Query Service] API了。 以下部分介绍了您可以使用[!DNL Query Service] API进行的各种API调用。 每个调用包括常规API格式、显示所需标头的示例请求以及示例响应。
+配置必要的身份验证标头（请参阅[API身份验证指南](../../landing/api-authentication.md)）后，即可开始调用[!DNL Query Service] API。 以下部分演示了各种具有通用格式的API调用，例如请求（包括所需的标头）和示例响应。
 
 ### 检索计划查询的列表
 
@@ -39,7 +53,7 @@ GET /schedules?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `orderby` | 指定排序结果所依据的字段。 支持的字段为`created`和`updated`。 例如，`orderby=created`将按创建的结果以升序排序。 在创建之前(`orderby=-created`)添加`-`将按创建的顺序降序对项进行排序。 |
+| `orderby` | 指定排序结果所依据的字段。 支持的字段为`created`和`updated`。 例如，`orderby=created`将按创建的结果以升序排序。 在创建之前(`-`)添加`orderby=-created`将按创建的顺序降序对项进行排序。 |
 | `limit` | 指定页大小限制，以控制页中包含的结果数。 （*默认值： 20*） |
 | `start` | 指定ISO格式时间戳对结果进行排序。 如果未指定开始日期，则API调用将首先返回创建的最旧的计划查询，然后继续列出更新的结果。<br>个ISO时间戳允许在日期和时间使用不同级别的粒度。 基本ISO时间戳采用`2020-09-07`格式，表示日期2020年9月7日。 一个更复杂的示例将编写为`2022-11-05T08:15:30-05:00`，对应于2022年11月5日美国东部标准时间上午8:15:30。 可以为时区提供UTC偏移量，时区由后缀“Z”(`2020-01-01T01:01:01Z`)表示。 如果未提供时区，则默认设置为0。 |
 | `property` | 根据字段筛选结果。 筛选器&#x200B;**必须**&#x200B;对HTML进行转义。 逗号用于组合多组过滤器。 支持的字段为`created`、`templateId`和`userId`。 支持的运算符列表为`>` （大于）、`<` （小于）和`==` （等于）。 例如，`userId==6ebd9c2d-494d-425a-aa91-24033f3abeec`将返回用户ID为指定的所有计划查询。 |

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务凭据指南
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看先前执行的查询以及访问由您组织内的用户保存的查询。
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: 264d3b12d8fd3bd100018513af1576b3de1cbb33
+source-git-commit: 60b9fd250ba1a3e2da374681b78f0375f75dc87e
 workflow-type: tm+mt
-source-wordcount: '1955'
+source-wordcount: '1959'
 ht-degree: 5%
 
 ---
@@ -46,11 +46,11 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 >
 >![突出显示了Admin Console设置选项卡，其中包含“隐私和安全性”、“身份验证设置”和“最长会话时长”。](../images/ui/credentials/max-session-life.png)
 >
->有关Admin Console提供的[高级设置](https://helpx.adobe.com/cn/enterprise/using/authentication-settings.html#advanced-settings)的更多信息，请参阅Adobe帮助文档。
+>有关Admin Console提供的[高级设置](https://helpx.adobe.com/enterprise/using/authentication-settings.html#advanced-settings)的更多信息，请参阅Adobe帮助文档。
 
 ### 在查询会话中连接到Customer Journey Analytics数据 {#connect-to-customer-journey-analytics}
 
-使用带有Power BI或Tableau的Customer Journey Analytics BI扩展访问带有SQL的Customer Journey Analytics [数据视图](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/cja-dataviews/data-views)。 通过将查询服务与BI扩展集成，您可以直接在查询服务会话中访问数据视图。 此集成简化了使用查询服务作为其PostgreSQL接口的BI工具的功能。 此功能消除了BI工具中重复数据视图的需要，确保跨平台的一致报告，并简化了Customer Journey Analytics数据与BI平台中其他源的集成。
+使用带有Power BI或Tableau的Customer Journey Analytics BI扩展访问带有SQL的Customer Journey Analytics [数据视图](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/data-views)。 通过将查询服务与BI扩展集成，您可以直接在查询服务会话中访问数据视图。 此集成简化了使用查询服务作为其PostgreSQL接口的BI工具的功能。 此功能消除了BI工具中重复数据视图的需要，确保跨平台的一致报告，并简化了Customer Journey Analytics数据与BI平台中其他源的集成。
 
 请参阅文档，了解如何[将查询服务连接到各种桌面客户端应用程序](../clients/overview.md)，如[Power BI](../clients/power-bi.md)或[Tableau](../clients/tableau.md)
 
@@ -68,7 +68,7 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 
 您还可以直接通过查询编辑器或Postgres CLI访问Customer Journey Analytics数据。 为此，请在编写查询时引用`cja`数据库。 有关如何写入、执行和保存查询的更多信息，请参阅查询编辑器[查询创作指南](./user-guide.md#query-authoring)。
 
-有关使用SQL访问Customer Journey Analytics数据视图的完整说明，请参阅[BI扩展指南](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/cja-dataviews/bi-extension)。
+有关使用SQL访问Customer Journey Analytics数据视图的完整说明，请参阅[BI扩展指南](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/bi-extension)。
 
 ## 未过期凭据 {#non-expiring-credentials}
 
@@ -95,12 +95,12 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 2. [选择产品配置文件。](../../access-control/ui/browse.md)
 3. [为产品配置文件配置&#x200B;**沙盒**&#x200B;和&#x200B;**管理查询服务集成**&#x200B;权限](../../access-control/ui/permissions.md)。
 4. [将新用户添加到产品配置文件](../../access-control/ui/users.md)，以便授予他们已配置的权限。
-5. [将用户添加为产品配置文件管理员](https://helpx.adobe.com/cn/enterprise/using/manage-product-profiles.html)，以允许为任何活动的产品配置文件创建帐户。
+5. [将用户添加为产品配置文件管理员](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html)，以允许为任何活动的产品配置文件创建帐户。
 6. [将用户添加为产品配置文件开发人员](https://helpx.adobe.com/cn/enterprise/using/manage-developers.html)以创建集成。
 
-要了解有关如何分配权限的详细信息，请阅读有关[访问控制](../../access-control/home.md)的文档。
+完成这些步骤后，将在[Adobe Developer Console](https://developer.adobe.com/console/)中配置所需的权限，以便您生成OAuth服务器到服务器凭据并使用过期或不过期凭据功能。
 
-现在，已在Adobe Developer Console中配置了用户使用过期凭据功能所需的所有权限。
+有关分配权限的详细信息，请参阅[访问控制文档](../../access-control/home.md)。
 
 ### 生成凭据 {#generate-credentials}
 
@@ -172,15 +172,15 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 >[!NOTE]
 >
 >使用未过期的凭据连接到主机时，仍需要使用[!UICONTROL 过期凭据]部分中列出的所有参数，但密码和用户名除外。
->输入用户名和密码的格式使用冒号分隔值，如本示例`username:{your_username}`和`password:{password_string}`所示。
+>>输入用户名和密码的格式使用冒号分隔值，如本示例`username:{your_username}`和`password:{password_string}`所示。
 
 | 参数 | 描述 | 示例 |
 |---|---|---|
-| **服务器/主机** | 要连接的服务器/主机的名称。 <ul><li>此值既用于过期凭据，又用于非过期凭据，其形式为`server.adobe.io`。 在[!UICONTROL 过期凭据]部分的&#x200B;**[!UICONTROL 主机]**&#x200B;下找到该值。</ul></li> | `acme.platform.adobe.io` |
-| **端口** | 要连接的服务器/主机的端口。 <ul><li>此值同时用于过期凭据和不过期凭据，可在[!UICONTROL 过期凭据]部分的&#x200B;**[!UICONTROL 端口]**&#x200B;下找到。</ul></li> | `80` |
-| **数据库** | 要连接的数据库。 <ul><li>此值同时用于过期凭据和不过期凭据，并在[!UICONTROL 过期凭据]部分的&#x200B;**[!UICONTROL 数据库]**&#x200B;下找到。 </ul></li> | `prod:all` |
+| **服务器/主机** | 要连接的服务器/主机的名称。 <ul><li>此值既用于过期凭据，又用于非过期凭据，其形式为`server.adobe.io`。 在&#x200B;**[!UICONTROL 过期凭据]**&#x200B;部分的[!UICONTROL 主机]下找到该值。</ul></li> | `acme.platform.adobe.io` |
+| **端口** | 要连接的服务器/主机的端口。 <ul><li>此值同时用于过期凭据和不过期凭据，可在&#x200B;**[!UICONTROL 过期凭据]**&#x200B;部分的[!UICONTROL 端口]下找到。</ul></li> | `80` |
+| **数据库** | 要连接的数据库。 <ul><li>此值同时用于过期凭据和不过期凭据，并在&#x200B;**[!UICONTROL 过期凭据]**&#x200B;部分的[!UICONTROL 数据库]下找到。 </ul></li> | `prod:all` |
 | **用户名** | 连接到外部客户端的用户名。 <ul><li>此值用于过期凭据和非过期凭据。 它采用`@AdobeOrg`之前的字母数字字符串形式。 此值位于&#x200B;**[!UICONTROL 用户名]**&#x200B;下。</li></ul> | `ECBB80245ECFC73E8A095EC9@AdobeOrg` |
-| **密码** | 连接到外部客户端的用户的密码。 <ul><li>如果您使用的是过期凭据，可在[!UICONTROL 过期凭据]部分的&#x200B;**[!UICONTROL 密码]**&#x200B;下找到此凭据。</li><li>如果您使用的是未过期的凭据，此值是来自technicalAccountID的拼接参数和从配置JSON文件获取的凭据。 密码值采用以下形式： `{technicalAccountId}:{credential}`。</li></ul> | <ul><li>即将过期的凭据密码包含超过一千个字符的字母数字字符串。 没有给出任何示例。</li><li>未过期的凭据密码如下： <br>`4F2611B8613DK3670V495N55:3d182fa9e0b54f33a7881305c06203ee`</li></ul> |
+| **密码** | 连接到外部客户端的用户的密码。 <ul><li>如果您使用的是过期凭据，可在&#x200B;**[!UICONTROL 过期凭据]**&#x200B;部分的[!UICONTROL 密码]下找到此凭据。</li><li>如果您使用的是未过期的凭据，此值是来自technicalAccountID的拼接参数和从配置JSON文件获取的凭据。 密码值采用以下形式： `{technicalAccountId}:{credential}`。</li></ul> | <ul><li>即将过期的凭据密码包含超过一千个字符的字母数字字符串。 没有给出任何示例。</li><li>未过期的凭据密码如下： <br>`4F2611B8613DK3670V495N55:3d182fa9e0b54f33a7881305c06203ee`</li></ul> |
 
 {style="table-layout:auto"}
 

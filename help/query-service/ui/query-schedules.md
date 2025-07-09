@@ -2,9 +2,9 @@
 title: 查询时间表
 description: 了解如何自动运行计划的查询、删除或禁用查询计划，以及通过Adobe Experience Platform UI利用可用的计划选项。
 exl-id: 984d5ddd-16e8-4a86-80e4-40f51f37a975
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 04b804b81b605040c74db040bc5118e0392ddd32
 workflow-type: tm+mt
-source-wordcount: '2028'
+source-wordcount: '2181'
 ht-degree: 0%
 
 ---
@@ -17,9 +17,24 @@ ht-degree: 0%
 >
 >您只能将计划添加到已创建和保存的查询中。
 
-任何计划的查询都会添加到[!UICONTROL 计划查询]选项卡的列表中。 在该工作区中，您可以通过UI监控所有已计划查询作业的状态。 在[!UICONTROL 计划的查询]选项卡上，您可以找到有关查询运行的重要信息并订阅警报。 可用信息包括运行失败时的状态、计划详细信息和错误消息/代码。 有关详细信息，请参阅[监视计划查询文档](./monitor-queries.md)。
+## 已计划查询的帐户要求 {#technical-account-user-requirements}
+
+为了帮助计划查询可靠地运行，Adobe建议管理员设置一个技术帐户（使用OAuth服务器到服务器凭据）以创建计划查询。 也可以使用个人用户帐户创建计划查询，但如果删除或禁用该用户的访问权限，则以这种方式创建的查询将停止运行。
+
+有关设置技术帐户和分配所需权限的详细信息，请参阅[凭据指南先决条件](./credentials.md#prerequisites)和[API身份验证](../../landing/api-authentication.md)。
+
+有关创建和配置技术帐户的其他指导，请参阅：
+
+- [Developer Console设置](https://experienceleague.adobe.com/en/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/set-up-developer-console-and-postman)：有关配置Adobe Developer Console和获取OAuth凭据的分步说明。
+- [端到端技术帐户设置](https://experienceleague.adobe.com/en/docs/platform-learn/tutorial-comprehensive-technical/setup)：在Adobe Experience Platform中创建和配置技术帐户的完整演练。
+
+如果仅使用查询服务UI，请确保您拥有必要权限，或与管理技术帐户的管理员进行协调。 任何计划查询都会添加到[!UICONTROL 计划查询]选项卡的列表中，您可以在其中监视所有计划查询作业的状态、计划详细信息和错误消息，以及订阅警报。 有关监视和管理查询的详细信息，请参阅[监视计划查询文档](./monitor-queries.md)。
 
 此工作流涵盖查询服务UI中的计划过程。 要了解如何使用API添加计划，请参阅[计划查询端点指南](../api/scheduled-queries.md)。
+
+>[!NOTE]
+>
+>使用技术帐户以确保计划的查询继续运行，即使用户离开组织或其角色发生更改也是如此。 尽可能选择一个技术帐户以实现不间断的查询自动化。
 
 ## 创建查询计划 {#create-schedule}
 
@@ -45,7 +60,7 @@ ht-degree: 0%
 
 ### 添加计划详细信息 {#schedule-details}
 
-此时将显示“调度详细资料”页。 在此页上，可以编辑计划查询的各种详细信息。 详细信息包括计划查询[&#128279;](#scheduled-query-frequency)运行的频率和工作日、开始和结束日期、要将结果导出到的数据集以及[查询状态警报](#alerts-for-query-status)。
+此时将显示“调度详细资料”页。 在此页上，可以编辑计划查询的各种详细信息。 详细信息包括计划查询[运行的](#scheduled-query-frequency)频率和工作日、开始和结束日期、要将结果导出到的数据集以及[查询状态警报](#alerts-for-query-status)。
 
 >[!IMPORTANT]
 >
@@ -153,7 +168,7 @@ ht-degree: 0%
 |---------------------|----------------------------------|
 | [!UICONTROL 查询运行ID] | 显示每个查询运行的唯一标识符，以便您跟踪和引用已计划查询的单独执行。 |
 | [!UICONTROL 查询运行开始] | 指示查询运行的开始日期和时间，以帮助您监视每次执行的开始时间。 |
-| [!UICONTROL 查询运行完成] | 显示查询运行的完成日期和时间，以深入了解执行持续时间和状态。 |
+| [!UICONTROL 查询运行完成] | 显示查询运行的完成日期和时间，以提供insight的执行持续时间和状态。 |
 | [!UICONTROL 状态] | 显示查询运行的当前状态，如`Completed,` `Running,`或`Failed,`以快速评估结果。 |
 | [!UICONTROL 数据集] | 列出查询运行中使用的数据集，以显示执行中涉及的数据源。 |
 | [!UICONTROL 计算小时数] | 显示每次查询运行使用的计算时间（以小时为单位）。 这有助于跟踪资源使用情况并优化查询性能。 |
@@ -163,7 +178,6 @@ ht-degree: 0%
 >[!NOTE]
 >
 >计算小时数据可从2024年8月15日开始提供。 此日期之前的数据显示为“不可用”。
-
 
 有关如何通过UI监视所有查询作业状态的完整信息，请参阅[监视器计划查询指南](./monitor-queries.md#inline-actions)。
 
