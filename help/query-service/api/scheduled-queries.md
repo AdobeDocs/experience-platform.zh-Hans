@@ -26,7 +26,7 @@ ht-degree: 2%
 >
 >管理计划查询时的重要注意事项：<ul><li>如果用于创建计划的查询的帐户（技术或用户）失去访问权限或权限，计划的查询将失败。</li><li>在通过API或UI删除之前，必须禁用计划查询。</li><li>不支持无限期计划而不设置结束日期；必须始终指定结束日期。</li></ul>
 
-有关帐户要求、权限设置和管理计划查询的详细指导，请参阅[查询计划文档](../ui/query-schedules.md#technical-account-user-requirements)。 有关创建和配置技术帐户的逐步说明，请参阅[Developer Console设置](https://experienceleague.adobe.com/en/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/set-up-developer-console-and-postman)和[端到端技术帐户设置](https://experienceleague.adobe.com/en/docs/platform-learn/tutorial-comprehensive-technical/setup)。
+有关帐户要求、权限设置和管理计划查询的详细指导，请参阅[查询计划文档](../ui/query-schedules.md#technical-account-user-requirements)。 有关创建和配置技术帐户的逐步说明，请参阅[Developer Console设置](https://experienceleague.adobe.com/zh-hans/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/set-up-developer-console-and-postman)和[端到端技术帐户设置](https://experienceleague.adobe.com/zh-hans/docs/platform-learn/tutorial-comprehensive-technical/setup)。
 
 ## 示例API调用
 
