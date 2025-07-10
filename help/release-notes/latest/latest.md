@@ -3,9 +3,9 @@ title: Adobe Experience Platform 发行说明（2025 年 6 月）
 description: Adobe Experience Platform 的 2025 年 6 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: c78dc0e83976499403e066b314a0889df803c976
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1665'
-ht-degree: 99%
+ht-degree: 100%
 
 ---
 
@@ -177,7 +177,7 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 | 功能 | 描述 |
 | --- | --- |
 | [!BADGE Beta]{type=Informative} UI 对 [!DNL Azure Databricks] 的支持 | 您现在可以使用 UI 中的源工作区将您的 [!DNL Azure Databricks] 帐户连接到 Experience Platform。请阅读 [UI 中将  [!DNL Databricks]  连接到 Experience Platform 指南](../../sources/connectors/databases/databricks.md)以了解详情。 |
-| 支持 [!DNL Azure Synapse Analytics] 的新身份验证类型 | [!DNL Azure Synapse Analytics] 除了支持现有的连接字符串身份验证之外，现在还将支持服务主体身份验证。有关详细信息，请阅读[[!DNL Azure Synapse Analytics] 身份验证概述](../../sources/connectors/databases/synapse-analytics.md)。 |
+| 支持 [!DNL Azure Synapse Analytics] 的新身份验证类型 | [!DNL Azure Synapse Analytics] 除了支持现有的连接字符串身份验证之外，现在还将支持服务主体身份验证。有关更多信息，请阅读[[!DNL Azure Synapse Analytics] 身份验证概述](../../sources/connectors/databases/synapse-analytics.md)。 |
 | [!DNL Salesforce] 基本身份验证弃用 | [Salesforce CRM](../../sources/connectors/crm/salesforce.md) 和 [Salesforce Service Cloud](../../sources/connectors/customer-success/salesforce-service-cloud.md) 的基本身份验证将于 2026 年 1 月弃用。客户必须迁移到 OAuth 2.0 身份验证才能保持连接。此更改将影响两个源连接器，并确保符合 Salesforce 的身份验证标准，从而提升安全性。 |
 
 {style="table-layout:auto"}
