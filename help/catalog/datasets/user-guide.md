@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据集UI指南
 description: 了解如何在Adobe Experience Platform用户界面中使用数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 132024313dbe0d83c9af22d30927a01e32c9d94f
+source-git-commit: 47cb1e9851a288961ecca01cf609b72342c58631
 workflow-type: tm+mt
-source-wordcount: '4237'
+source-wordcount: '4551'
 ht-degree: 5%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 5%
 * [数据集](overview.md)： [!DNL Experience Platform]中用于数据持久性的存储和管理结构。
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
-   * [架构编辑器](../../xdm/tutorials/create-schema-ui.md)：了解如何在[!DNL Experience Platform]用户界面中使用[!DNL Schema Editor]构建您自己的自定义XDM架构。
+   * [架构编辑器](../../xdm/tutorials/create-schema-ui.md)：了解如何在[!DNL Schema Editor]用户界面中使用[!DNL Experience Platform]构建您自己的自定义XDM架构。
 * [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
 * [[!DNL Adobe Experience Platform Data Governance]](../../data-governance/home.md)：确保遵守有关客户数据使用的法规、限制和策略。
 
@@ -108,11 +108,13 @@ ht-degree: 5%
 
 ### 预览数据集 {#preview}
 
-您可以从[!UICONTROL 浏览]选项卡的内联选项以及[!UICONTROL 数据集活动]视图中预览数据集样本数据。 从[!UICONTROL 浏览]选项卡中，选择要预览的数据集名称旁边的省略号(...)。 出现一个选项菜单列表。 接下来，从可用选项列表中选择&#x200B;**[!UICONTROL 预览数据集]**。 如果数据集为空，则取消激活预览链接，并指示预览不可用。
+您可以从[!UICONTROL 浏览]选项卡的内联选项以及[!UICONTROL 数据集活动]视图中预览数据集样本数据。 新增了一个数据集预览窗口，其中提供了额外的导航和上下文增强功能。
+
+从[!UICONTROL 浏览]选项卡中，选择要预览的数据集名称旁边的省略号(...)。 此时将显示一个选项列表。 接下来，从可用选项中选择[!UICONTROL 预览数据集]。 如果数据集为空，则停用预览链接并指示预览不可用。
 
 ![选定数据集的“数据集”工作区的“浏览”选项卡，其中突出显示了省略号和预览数据集选项。](../images/datasets/user-guide/preview-dataset-option.png)
 
-这将打开预览窗口，其中数据集的架构的分层视图显示在右侧。
+这将打开预览窗口，其中数据集的层级架构视图显示在左侧。
 
 >[!NOTE]
 >
@@ -124,7 +126,45 @@ ht-degree: 5%
 
 ![预览数据集按钮突出显示。](../images/datasets/user-guide/select-preview.png)
 
-对于更可靠的数据访问方法，[!DNL Experience Platform]提供下游服务，如[!DNL Query Service]和[!DNL JupyterLab]，以浏览和分析数据。 有关详细信息，请参阅以下文档：
+数据集预览窗口为浏览和验证数据集提供了一个简化的界面。
+
+#### 数据集预览窗口 {#dataset-preview-window}
+
+以下动画显示了数据集预览窗口及其导航和数据探索功能：
+
+![屏幕录制，显示数据集预览窗口。 该记录突出显示对象浏览器侧栏、数据类型指示器、SQL查询显示和格式化数据表。](../images/datasets/user-guide/dataset-preview-demo.gif)
+
+数据集预览窗口包括：
+
+* 左侧用于导航和筛选数据集字段的对象浏览器侧栏。
+* 数据类型指示器显示在每个列名称旁边，用于快速insight进入数据集的结构。
+* SQL查询显示在窗口顶部，显示用于生成数据集的查询。
+* 右下角区域最多100行的格式化表格视图，用于高效的数据审查。
+* 数据Distiller用户的直接导航到查询编辑器，并预填充SQL查询以供进一步探索或修改。
+
+这些功能支持快速导航、模式理解和透明的数据集验证。
+
+从内联操作或&#x200B;**[!UICONTROL 数据集活动]**&#x200B;屏幕中选择[!UICONTROL 预览数据集]以打开预览窗口。
+
+>[!NOTE]
+>
+>预览窗口显示最多100行的示例。 不含数据的字段将从视图中排除。
+
+#### 高级查询编辑器快捷键 {#query-editor-shortcut}
+
+如果贵组织拥有Data Distiller许可证，则可以直接从数据集预览窗口访问高级查询编辑器。
+
+>[!AVAILABILITY]
+>
+>只有拥有所需Data Distiller许可证的用户才能访问此功能。 如果您的组织没有Data Distiller，则[!UICONTROL 高级查询编辑器]选项不可见。
+
+选择预览窗口右上角的&#x200B;**[!UICONTROL 高级查询编辑器]**&#x200B;以打开查询编辑器。 当前预览查询已预加载，可随时执行或进一步分析。
+
+![在右上角显示“高级查询编辑器”按钮的数据集预览窗口。](../images/datasets/user-guide/dataset-preview-advanced-query-editor.png)
+
+此快捷方式使您可以无缝地从预览示例数据转变为在Query Service中运行和优化查询，而无需重新输入SQL或上下文。
+
+若要进行其他数据访问和分析，请使用下游服务，如[!DNL Query Service]和[!DNL JupyterLab]。 有关详细信息，请参阅以下文档：
 
 * [查询服务概述](../../query-service/home.md)
 * [JupyterLab 用户指南](../../data-science-workspace/jupyterlab/overview.md)
@@ -230,9 +270,9 @@ ht-degree: 5%
 
 配置保留设置后，使用监控UI确认系统执行了更改。 监控UI可集中查看所有数据集的数据保留活动。 从此处，您可以跟踪作业执行，查看删除了多少数据，并确保保留策略按预期运行。
 
-要探索保留策略如何跨不同的服务应用，请参阅有关配置文件[&#128279;](../../profile/event-expirations.md)中的体验事件数据集保留和数据湖中的[体验事件数据集保留](./experience-event-dataset-retention-ttl-guide.md)的专用指南。 此可见性支持治理、法规遵从性和高效的数据生命周期管理。
+要探索保留策略如何跨不同的服务应用，请参阅有关配置文件[中的](../../profile/event-expirations.md)体验事件数据集保留和数据湖中的[体验事件数据集保留](./experience-event-dataset-retention-ttl-guide.md)的专用指南。 此可见性支持治理、法规遵从性和高效的数据生命周期管理。
 
-要了解如何使用监视仪表板在Experience Platform UI中跟踪源数据流，请参阅UI[&#128279;](../../dataflows/ui/monitor-sources.md)文档中的监视源数据流。
+要了解如何使用监视仪表板在Experience Platform UI中跟踪源数据流，请参阅UI[文档中的](../../dataflows/ui/monitor-sources.md)监视源数据流。
 
 <!-- Improve the link above. I cannot link to a 100% appropriate document yet. -->
 
@@ -315,7 +355,7 @@ ht-degree: 5%
 
 ### 显示系统数据集 {#show-system-datasets}
 
-默认情况下，仅显示已摄取数据的数据集。 如果要查看系统生成的数据集，请选择[!UICONTROL 显示系统数据集]部分中的&#x200B;**[!UICONTROL 是]**&#x200B;复选框。 系统生成的数据集仅用于处理其他组件。 例如，系统生成的配置文件导出数据集用于处理配置文件仪表板。
+默认情况下，仅显示已摄取数据的数据集。 如果要查看系统生成的数据集，请选择&#x200B;**[!UICONTROL 显示系统数据集]**&#x200B;部分中的[!UICONTROL 是]复选框。 系统生成的数据集仅用于处理其他组件。 例如，系统生成的配置文件导出数据集用于处理配置文件仪表板。
 
 ![突出显示[!UICONTROL 显示系统数据集]节的数据集工作区的筛选器选项。](../images/datasets/user-guide/show-system-datasets.png)
 
