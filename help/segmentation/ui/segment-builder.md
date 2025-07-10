@@ -3,10 +3,10 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 7be3e6c143d792113a0d623e2d12d6710a3be70c
+source-git-commit: 152ec3ca36a69bea79b8ed3c33dd21bd9479171f
 workflow-type: tm+mt
-source-wordcount: '5195'
-ht-degree: 11%
+source-wordcount: '5128'
+ht-degree: 10%
 
 ---
 
@@ -50,15 +50,15 @@ ht-degree: 11%
 >
 >如果属性满足以下条件，则会显示摘要数据：属性的所有值都在100个字符以内，并且属性的唯一值在3000个或更少。
 >
->但是，如果属性是通过关系链接到配置文件的多实体数据，则它将&#x200B;**不**&#x200B;具有摘要数据。 例如，如果您有一个名为`Vehicle`的自定义架构，则`Vehicle`架构中的&#x200B;**属性**&#x200B;将&#x200B;**不**&#x200B;包含摘要数据。
+>但是，如果属性是通过关系链接到配置文件的多实体数据，则它将&#x200B;**不**&#x200B;具有摘要数据。 例如，如果您有一个名为`Vehicle`的自定义架构，则&#x200B;**架构中的**&#x200B;属性`Vehicle`将&#x200B;**不**&#x200B;包含摘要数据。
 
-您可以在[!DNL Segment Builder]工作区左侧的&#x200B;**[!UICONTROL 字段]**&#x200B;部分中看到这些构建基块。 **[!UICONTROL 字段]**&#x200B;包含每个主要构建块的选项卡：“[!UICONTROL 属性]”、“[!UICONTROL 事件]”和“[!UICONTROL 受众]”。
+您可以在&#x200B;**[!UICONTROL 工作区左侧的]**&#x200B;字段[!DNL Segment Builder]部分中看到这些构建基块。 **[!UICONTROL 字段]**&#x200B;包含每个主要构建块的选项卡：“[!UICONTROL 属性]”、“[!UICONTROL 事件]”和“[!UICONTROL 受众]”。
 
 ![区段生成器的字段部分突出显示。](../images/ui/segment-builder/segment-fields.png)
 
 ### 属性
 
-**[!UICONTROL 属性]**&#x200B;选项卡允许您浏览属于[!DNL XDM Individual Profile]类的[!DNL Profile]属性。 可以展开每个文件夹以显示其他属性，其中每个属性都是一个拼贴，可以将该拼贴拖动到工作区中心的规则生成器画布上。 本指南稍后将更详细地讨论[规则生成器画布](#rule-builder-canvas)。
+**[!UICONTROL 属性]**&#x200B;选项卡允许您浏览属于[!DNL Profile]类的[!DNL XDM Individual Profile]属性。 可以展开每个文件夹以显示其他属性，其中每个属性都是一个拼贴，可以将该拼贴拖动到工作区中心的规则生成器画布上。 本指南稍后将更详细地讨论[规则生成器画布](#rule-builder-canvas)。
 
 ![区段生成器字段的“属性”部分已突出显示。](../images/ui/segment-builder/attributes.png)
 
@@ -78,7 +78,7 @@ ht-degree: 11%
 
 ![区段生成器UI的事件部分已突出显示。](../images/ui/segment-builder/events.png)
 
-默认情况下，仅显示数据存储中填充的架构字段。 这包括“[!UICONTROL 事件类型]”。 如果“[!UICONTROL 事件类型]”列表不可见，或者您只能选择“[!UICONTROL 任何]”作为“[!UICONTROL 事件类型]”，请选择&#x200B;**[!UICONTROL 字段]**&#x200B;旁边的&#x200B;**齿轮图标**，然后在&#x200B;**[!UICONTROL 可用字段]**&#x200B;下选择&#x200B;**[!UICONTROL 显示完整的XDM架构]**。 再次选择&#x200B;**齿轮图标**&#x200B;以返回&#x200B;**[!UICONTROL 字段]**&#x200B;选项卡，您现在应该能够查看多个“[!UICONTROL 事件类型]”和架构字段，无论它们是否包含数据。
+默认情况下，仅显示数据存储中填充的架构字段。 这包括“[!UICONTROL 事件类型]”。 如果“[!UICONTROL 事件类型]”列表不可见，或者您只能选择“[!UICONTROL 任何]”作为“[!UICONTROL 事件类型]”，请选择&#x200B;**字段**&#x200B;旁边的&#x200B;**[!UICONTROL 齿轮图标]**，然后在&#x200B;**[!UICONTROL 可用字段]**&#x200B;下选择&#x200B;**[!UICONTROL 显示完整的XDM架构]**。 再次选择&#x200B;**齿轮图标**&#x200B;以返回&#x200B;**[!UICONTROL 字段]**&#x200B;选项卡，您现在应该能够查看多个“[!UICONTROL 事件类型]”和架构字段，无论它们是否包含数据。
 
 ![允许您在只显示带数据的字段或显示所有XDM字段之间进行选择的单选按钮会高亮显示。](../images/ui/segment-builder/show-populated.png)
 
@@ -192,7 +192,7 @@ ht-degree: 11%
 
 您可以将受众从&#x200B;**[!UICONTROL 受众]**&#x200B;选项卡拖放到规则生成器画布上，以引用新区段定义中的受众成员资格。 这样，您就可以在新的区段定义规则中包含或排除作为属性的受众成员资格。
 
-对于使用[!DNL Segment Builder]创建的[!DNL Experience Platform]受众，您可以选择将该受众转换为在该受众的区段定义中使用的规则集。 此转换会生成规则逻辑的副本，之后可以修改该副本而不会影响原始区段定义。 在将区段定义转换为规则逻辑之前，请确保已保存对区段定义所做的任何最新更改。
+对于使用[!DNL Experience Platform]创建的[!DNL Segment Builder]受众，您可以选择将该受众转换为在该受众的区段定义中使用的规则集。 此转换会生成规则逻辑的副本，之后可以修改该副本而不会影响原始区段定义。 在将区段定义转换为规则逻辑之前，请确保已保存对区段定义所做的任何最新更改。
 
 >[!NOTE]
 >
@@ -324,7 +324,7 @@ ht-degree: 11%
 >[!NOTE]
 >
 >当使用“晚于”时间限制时，后一个事件发生的时间可能超过在时间限制内列出的时间量。 >
->&#x200B;>例如，如果您有一个页面查看事件和一个签出事件，并在这两个事件之间放置了“1小时后”时间限制，则一个在页面查看事件发生2小时后具有签出事件的区段定义符合条件。
+>>例如，如果您有一个页面查看事件和一个签出事件，并在这两个事件之间放置了“1小时后”时间限制，则一个在页面查看事件发生2小时后具有签出事件的区段定义符合条件。
 >
 >此外，这两个时间约束可以相互协调使用。
 >
@@ -340,7 +340,7 @@ ht-degree: 11%
 
 ![添加容器按钮突出显示，可让您添加容器作为第一个容器的子项。](../images/ui/segment-builder/add-container.png)
 
-新容器显示为第一个容器的子级，但您可以通过拖动和移动容器来调整层次结构。 容器的默认行为是提供的属性、事件或受众包含“[!UICONTROL Include]”。 通过选择图块左上角的&#x200B;**[!UICONTROL 包含]**&#x200B;并选择“[!UICONTROL 排除]”，可以将规则设置为与容器条件匹配的“[!UICONTROL 排除]”配置文件。
+新容器显示为第一个容器的子级，但您可以通过拖动和移动容器来调整层次结构。 容器的默认行为是提供的属性、事件或受众包含“[!UICONTROL Include]”。 通过选择图块左上角的[!UICONTROL 包含]并选择“**[!UICONTROL 排除]**”，可以将规则设置为与容器条件匹配的“[!UICONTROL 排除]”配置文件。
 
 也可以提取子容器，并通过在子容器上选择“unwrap container”将其内联添加到父容器。 选择子容器右上角的省略号(...)以访问此选项。
 
@@ -380,7 +380,7 @@ ht-degree: 11%
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="刷新估计值"
 >abstract="您可以刷新区段定义的估计值，以立即预览符合建议的区段定义资格的轮廓数目。受众估计值是通过使用当天的示例数据的示例大小生成的。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=zh-Hans#estimate-and-preview-an-audience" text="估计和预览受众"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="估计和预览受众"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_qualifiedprofiles"
@@ -390,7 +390,7 @@ ht-degree: 11%
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_estimatedprofiles"
 >title="预估轮廓数"
->abstract="预估轮廓数指的是根据抽样任务得出的近似轮廓数量，这些轮廓可能符合区段定义的规则。这意味着将样本数据投射到更大的轮廓集上，所得出的预估数量可能会与实际符合条件的轮廓数量有所差异。预估轮廓样本具有 95% 的置信区间。<br><br>该数值会在抽样任务更新时同步更新，更新条件包括：客户数据变动超过 5%，或上一次抽样任务距今已超过 7 天。"
+>abstract="预计配置文件根据示例作业指示符合区段定义规则的大致配置文件数。"
 
 在构建区段定义时，工作区右侧的&#x200B;**[!UICONTROL 受众属性]**&#x200B;部分会显示所生成区段定义的大小估计值，这样您可以在构建受众本身之前根据需要调整区段定义。
 
@@ -398,9 +398,12 @@ ht-degree: 11%
 
 合格配置文件的时间戳表示最新的&#x200B;**批次**&#x200B;区段评估作业，对于使用流式或边缘分段评估的区段定义，该时间戳显示为&#x200B;**not**。 如果编辑区段定义，则在运行下一个区段评估作业之前，符合条件的配置文件数将保持不变。
 
-根据&#x200B;**示例作业**，**[!UICONTROL 预计的配置文件]**&#x200B;表示大约&#x200B;**个**&#x200B;配置文件数。 这意味着将样本数据投射到更大的轮廓集上，所得出的预估数量可能会与实际符合条件的轮廓数量有所差异。估计的配置文件样本具有95%的置信区间。
+根据&#x200B;**[!UICONTROL 示例作业]**，**预计的配置文件**&#x200B;表示大约&#x200B;**个**&#x200B;配置文件数。 这意味着将样本数据投射到更大的轮廓集上，所得出的预估数量可能会与实际符合条件的轮廓数量有所差异。估计的配置文件样本具有95%的置信区间。
 
-当示例作业更新时，此数字也会更新；当客户数据发生大于5%的更改或上一个示例作业超过7天时，会发生这种情况。”
+在以下两种情况下会更新此数字：
+
+1. 客户数据变化超过5%，或者上一个示例作业超过七天。
+2. 已修改或删除受众的规则。
 
 选择信息泡可提供错误阈值和最近示例作业时间。
 
@@ -424,7 +427,7 @@ ht-degree: 11%
 
 出现[!UICONTROL 评估方法资格]弹出框。 此弹出框显示可用的评估方法，即批处理、流和边缘。 弹出框显示哪些评估方法符合条件以及哪些方法不符合条件。 根据您在区段定义中使用的参数，它可能不符合某些评估方法的条件。 有关每种评估方法的要求的更多信息，请阅读[流式分段](../methods/streaming-segmentation.md#query-types)或[边缘分段](../methods/edge-segmentation.md#query-types)概述。
 
-完成创建段定义后，您还可以更改段定义的评估方法。 如果将评估方法从Edge或流更改为批处理，则&#x200B;**无法**&#x200B;将其更改回Edge或流。 在弹出框中选择&#x200B;**[!UICONTROL 保存]**&#x200B;后，对评估方法的更改将&#x200B;**仅**&#x200B;生效。 取消对话框将&#x200B;**保留**&#x200B;原始评估方法。
+完成创建段定义后，您还可以更改段定义的评估方法。 如果将评估方法从Edge或流更改为批处理，则&#x200B;**无法**&#x200B;将其更改回Edge或流。 在弹出框中选择&#x200B;**保存**&#x200B;后，对评估方法的更改将&#x200B;**[!UICONTROL 仅]**&#x200B;生效。 取消对话框将&#x200B;**保留**&#x200B;原始评估方法。
 
 ![评估方法资格弹出窗口。 这会显示哪些评估方法符合区段定义条件，哪些方法不符合区段定义条件。](../images/ui/segment-builder/select-evaluation-method.png)
 
