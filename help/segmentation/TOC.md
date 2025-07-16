@@ -5,9 +5,9 @@ breadcrumb-title: Segmentation Service 指南
 user-guide-description: 使用 Adobe Experience Platform 生成的区段定义或外部来源，根据实时客户轮廓数据生成受众群体。
 feature: Segments
 role: User
-source-git-commit: a0543777e9a72f3a9ed6ff19e8b11973eb647b6b
+source-git-commit: 74fa66e78ac36c8007eb89e8c271d989845c96f0
 workflow-type: tm+mt
-source-wordcount: '203'
+source-wordcount: '208'
 ht-degree: 40%
 
 ---
@@ -17,12 +17,14 @@ ht-degree: 40%
 
 - [分段服务概述](home.md)
 - [分段数据类型](data-types.md)
-- [分段护栏](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html?lang=zh-Hans#segmentation-guardrails)
+- [分段护栏](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html#segmentation-guardrails)
 - 分段API {#api}
    - [概述](api/overview.md)
    - [快速入门](api/getting-started.md)
+   - [创建受众元数据](api/create-audience.md)
    - [受众](api/audiences.md)
    - [导出作业](api/export-jobs.md)
+   - [外部受众](api/external-audiences.md)
    - [预览和估计](api/previews-and-estimates.md)
    - [计划](api/schedules.md)
    - [区段定义](api/segment-definitions.md)
@@ -32,21 +34,21 @@ ht-degree: 40%
    - [概述](ui/overview.md)
    - [受众仪表板](ui/audience-dashboard.md)
    - [受众门户](ui/audience-portal.md)
-   - [受众组合](ui/audience-composition.md)
+   - [受众构成](ui/audience-composition.md)
    - [区段生成器](ui/segment-builder.md)
    - [联合受众构成](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/home)
    - [忽略年份时间限制更新](ui/ignore-year.md)
    - [时间约束重构](ui/segment-refactoring.md)
-   - 区段匹配{#segment-match}
+   - 区段匹配 {#segment-match}
       - [区段匹配概述](ui/segment-match/overview.md)
       - [故障排除](ui/segment-match/troubleshooting.md)
-- 分段方法{#methods}
+- 分段方法 {#methods}
    - [概述](methods/overview.md)
    - [批次分段](methods/batch-segmentation.md)
    - [流式客户细分](methods/streaming-segmentation.md)
    - [边缘分段](methods/edge-segmentation.md)
    - [灵活的受众评估](methods/flexible-audience-evaluation.md)
-- 受众类型{#types}
+- 受众类型 {#types}
    - [概述](types/overview.md)
    - [人员受众](types/people-audiences.md)
    - [潜在客户受众](types/prospect-audiences.md)
