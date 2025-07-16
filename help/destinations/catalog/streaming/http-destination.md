@@ -4,10 +4,10 @@ title: HTTP API连接
 description: 使用Adobe Experience Platform中的HTTP API目标将配置文件数据发送到第三方HTTP端点，以运行您自己的Analytics或对从Experience Platform导出的配置文件数据执行您可能所需的任何其他操作。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 678f80445212edc1edd3f4799999990ddcc2a039
+source-git-commit: b757f61a46930f08fe05be4c0f701113597567a4
 workflow-type: tm+mt
-source-wordcount: '2690'
-ht-degree: 8%
+source-wordcount: '2746'
+ht-degree: 7%
 
 ---
 
@@ -17,11 +17,11 @@ ht-degree: 8%
 
 >[!IMPORTANT]
 >
-> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
 HTTP API目标是一个[!DNL Adobe Experience Platform]流目标，可帮助您将配置文件数据发送到第三方HTTP端点。
 
-若要将配置文件数据发送到HTTP端点，您必须先在[!DNL Adobe Experience Platform]中[连接到目标](#connect-destination)。
+若要将配置文件数据发送到HTTP端点，您必须先在[中](#connect-destination)连接到目标[!DNL Adobe Experience Platform]。
 
 ## 用例 {#use-cases}
 
@@ -45,7 +45,7 @@ HTTP端点可以是客户自己的系统或第三方解决方案。
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
----------|----------|---------|
+| ---------|----------|---------|
 | 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如[目标激活工作流](../../ui/activate-segment-streaming-destinations.md#mapping)的映射屏幕中所选。 |
 | 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
@@ -58,6 +58,7 @@ HTTP端点可以是客户自己的系统或第三方解决方案。
 * 您必须具有支持REST API的HTTP端点。
 * 您的HTTP端点必须支持Experience Platform配置文件架构。 HTTP API目标不支持转换到第三方有效负载架构。 有关Experience Platform输出架构的示例，请参阅[导出的数据](#exported-data)部分。
 * 您的HTTP端点必须支持标头。
+* HTTP端点必须在2秒内响应，以确保正确的数据处理并避免超时错误。
 
 >[!TIP]
 >
@@ -67,7 +68,7 @@ HTTP端点可以是客户自己的系统或第三方解决方案。
 
 您可以使用[!DNL Mutual Transport Layer Security] ([!DNL mTLS])来确保到HTTP API目标连接的出站连接中的增强安全性。
 
-[!DNL mTLS]是一种用于相互身份验证的端到端安全方法，可确保共享信息的双方在共享数据之前都是声明的身份。 与[!DNL TLS]相比，[!DNL mTLS]包含额外的步骤，其中服务器还会请求客户端的证书并在其末尾验证它。
+[!DNL mTLS]是一种用于相互身份验证的端到端安全方法，可确保共享信息的双方在共享数据之前都是声明的身份。 与[!DNL mTLS]相比，[!DNL TLS]包含额外的步骤，其中服务器还会请求客户端的证书并在其末尾验证它。
 
 如果要将[!DNL mTLS]与[!DNL HTTP API]目标一起使用，则放入[目标详细信息](#destination-details)页面的服务器地址必须禁用[!DNL TLS]协议，并且仅启用[!DNL mTLS]。 如果终结点上仍启用[!DNL TLS] 1.2协议，则不会为客户端身份验证发送证书。 这意味着要将[!DNL mTLS]与您的[!DNL HTTP API]目标一起使用，您的“接收”服务器终结点必须是仅启用[!DNL mTLS]的连接终结点。
 
@@ -166,7 +167,7 @@ curl --location --request POST 'https://some-api.com/token' \
 * **[!UICONTROL 客户端密钥]**：系统分配给Adobe Experience Platform的[!DNL client secret]。
 * **[!UICONTROL 客户端凭据类型]**：选择您的终结点支持的OAuth2客户端凭据授予类型：
    * **[!UICONTROL 正文表单已编码]**：在这种情况下，[!DNL client ID]和[!DNL client secret]包含在发送到目标的请求&#x200B;*的正文中*。 有关示例，请参阅[支持的身份验证类型](#supported-authentication-types)部分。
-   * **[!UICONTROL 基本授权]**：在这种情况下，[!DNL client ID]和[!DNL client secret]在经过base64编码并发送到目标之后，包含在`Authorization`标头&#x200B;*中的*&#x200B;中。 有关示例，请参阅[支持的身份验证类型](#supported-authentication-types)部分。
+   * **[!UICONTROL 基本授权]**：在这种情况下，[!DNL client ID]和[!DNL client secret]在经过base64编码并发送到目标之后，包含在&#x200B;*标头`Authorization`中的*&#x200B;中。 有关示例，请参阅[支持的身份验证类型](#supported-authentication-types)部分。
 
 ### 填写目标详细信息 {#destination-details}
 
@@ -218,7 +219,7 @@ curl --location --request POST 'https://some-api.com/token' \
 >[!IMPORTANT]
 > 
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 当前在导出到HTTP API目标时不支持[同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。 [了解更多信息](/help/destinations/ui/activate-streaming-profile-destinations.md#consent-policy-evaluation)。
+>* 当前在导出到HTTP API目标时不支持[同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。 [了解详情](/help/destinations/ui/activate-streaming-profile-destinations.md#consent-policy-evaluation)。
 
 有关将受众激活到此目标的说明，请参阅[将受众数据激活到流式配置文件导出目标](../../ui/activate-streaming-profile-destinations.md)。
 
@@ -363,3 +364,7 @@ Experience Platform会优化将配置文件导出到HTTP API目标的行为，�
 在95%的时间中，Experience Platform会尝试为成功发送的消息提供少于10分钟的吞吐量延迟，每个数据流向HTTP目标的请求速率每秒少于10,000次。
 
 如果对HTTP API目标的请求失败，Experience Platform将存储失败的请求，并重试两次以将请求发送到您的端点。
+
+## 故障排除 {#troubleshooting}
+
+要确保可靠的数据传递并避免超时问题，请确保您的HTTP端点在2秒内响应Experience Platform请求，如[先决条件](#prerequisites)部分中所指定。 响应时间越长将导致超时错误。
