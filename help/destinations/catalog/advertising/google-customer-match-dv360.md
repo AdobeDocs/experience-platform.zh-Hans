@@ -1,21 +1,26 @@
 ---
 title: Google客户匹配+显示和视频360连接
 description: 借助Google Customer Match + Display & Video 360目标连接器，您可以使用Experience Platform中的在线和离线数据在Google自有和运营的资产(如Search、Shopping、Gmail和YouTube)中与客户联系并重新互动。
+badge: 有限发布版
 exl-id: f6da3eae-bf3f-401a-99a1-2cca9a9058d2
-source-git-commit: feb3077daf8b3632ff00b57099195523bbeac358
+source-git-commit: efdec64dee4c5857d0df008c2d1242674f9d0b49
 workflow-type: tm+mt
-source-wordcount: '2252'
+source-wordcount: '2348'
 ht-degree: 5%
 
 ---
 
 # [!DNL Google Customer Match + Display & Video 360]连接
 
+>[!NOTE]
+>
+>**Google Customer Match + DV360连接器的可用性有限**<br>&#x200B;随着我们与Google的集成进入到成熟的整个生命周期，我们会看到指出实施中需要更正的弱点的数据，只有这样才能获得更广泛的采用。 鉴于这些担忧，Adobe已将此目标的可见性降低到有限数量的客户。 我们正在与Google积极交谈，以改善产品体验。 我们理解这可能是一个令人失望的消息，但我们相信，这是确保为我们的客户提供高质量、可靠体验的负责任方法。</br>
+
 使用此目标将您的第一方基于PII的[[!DNL Google Customer Match]](https://support.google.com/google-ads/answer/6379332?hl=en)列表直接激活到[!DNL Google Display & Video 360]属性，如[!DNL Search]、[!DNL YouTube]、[!DNL Gmail]和[!DNL Google Display Network]。
 
-某些Google集成的第三方(如Adobe Real-Time CDP)可以使用[!DNL Google Audience Partner API]直接在客户的[!DNL Display & Video 360]帐户中创建[!DNL Customer Match]受众。
+某些Google集成的第三方(如Adobe Real-Time CDP)可以使用[!DNL Google Audience Partner API]直接在客户的[!DNL Customer Match]帐户中创建[!DNL Display & Video 360]受众。
 
-由于新引入的功能能够在[!DNL Display & Video 360]中利用[!DNL Customer Matched]受众，您现在可以在扩展的清单源名册中定位受众。
+由于新引入的功能能够在[!DNL Customer Matched]中利用[!DNL Display & Video 360]受众，您现在可以在扩展的清单源名册中定位受众。
 
 Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/help/destinations/assets/catalog/advertising/gcm-dv360/catalog.png)
 
@@ -23,13 +28,13 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 
 >[!IMPORTANT]
 >
-> Google将发布对[Google Ads API](https://developers.google.com/google-ads/api/docs/start)、[Customer Match](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html)和[Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview)的更改，以支持欧盟（[EU用户同意政策](https://www.google.com/about/company/user-consent-policy/)）中[Digital Markets Act](https://digital-markets-act.ec.europa.eu/index_en) (DMA)定义的合规性和同意相关要求。 自2024年3月6日起，将开始实施对同意要求的这些更改。
-> &#x200B;><br/>
-> &#x200B;>为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为 Google 合作伙伴，Adobe 为您提供必要的工具，以遵守欧盟 DMA 下的这些同意要求。
-> &#x200B;><br/>
-> &#x200B;>如果客户购买了Adobe Privacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未经同意的用户档案，则无需采取任何操作。
-> &#x200B;><br/>
-> &#x200B;>未购买Adobe Privacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/ui/segment-builder.md)中的[区段定义](../../../segmentation/home.md#segment-definitions)功能来过滤掉未经同意的用户档案，以便继续使用现有的Real-Time CDP Google目标而不中断。
+> Google将发布对[Google Ads API](https://developers.google.com/google-ads/api/docs/start)、[Customer Match](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html)和[Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview)的更改，以支持欧盟（[EU用户同意政策](https://digital-markets-act.ec.europa.eu/index_en)）中[Digital Markets Act](https://www.google.com/about/company/user-consent-policy/) (DMA)定义的合规性和同意相关要求。 自2024年3月6日起，将开始实施对同意要求的这些更改。
+> ><br/>
+> >为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为 Google 合作伙伴，Adobe 为您提供必要的工具，以遵守欧盟 DMA 下的这些同意要求。
+> ><br/>
+> >如果客户购买了Adobe Privacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未经同意的用户档案，则无需采取任何操作。
+> ><br/>
+> >未购买Adobe Privacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/home.md#segment-definitions)中的[区段定义](../../../segmentation/ui/segment-builder.md)功能来过滤掉未经同意的用户档案，以便继续使用现有的Real-Time CDP Google目标而不中断。
 
 ## 何时使用此目标
 
@@ -171,7 +176,7 @@ Attribute source data is not automatically hashed. When your source field contai
 
 The video below demonstrates the steps to configure a [!DNL Google Customer Match] destination and activate audiences. The steps are also laid out sequentially in the next sections.
 
->[!VIDEO](https://video.tv.adobe.com/v/3411783/?quality=12&learn=on&captions=chi_hans) -->
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng) -->
 
 ## 连接到目标 {#connect}
 
@@ -225,14 +230,14 @@ For details on how to find the [!DNL App ID], refer to the [Google official docu
 选择源字段：
 
 * 如果您使用的电子邮件地址未经过哈希处理，请选择`Email`命名空间作为源标识。
-* 如果您根据[!DNL Google Customer Match] [电子邮件哈希处理要求](#hashing-requirements)将数据摄取到[!DNL Experience Platform]时已将客户电子邮件地址哈希处理，请选择`Email_LC_SHA256`命名空间作为源标识。
+* 如果您根据`Email_LC_SHA256` [!DNL Experience Platform]电子邮件哈希处理要求[!DNL Google Customer Match]将数据摄取到[时已将客户电子邮件地址哈希处理，请选择](#hashing-requirements)命名空间作为源标识。
 * 如果您的数据由非散列电话号码组成，请选择`PHONE_E.164`命名空间作为源标识。 [!DNL Experience Platform]将散列电话号码以符合[!DNL Google Customer Match]要求。
-* 如果您根据[!DNL Facebook] [电话号码散列要求](#phone-number-hashing-requirements)将数据提取到[!DNL Experience Platform]中时散列电话号码，请选择`Phone_SHA256_E.164`命名空间作为源标识。
+* 如果您根据`Phone_SHA256_E.164` [!DNL Experience Platform]电话号码散列要求[!DNL Facebook]将数据提取到[中时散列电话号码，请选择](#phone-number-hashing-requirements)命名空间作为源标识。
 
 选择目标字段：
 
-* 当源命名空间为`Email`或`Email_LC_SHA256`时，选择`Email_LC_SHA256`命名空间作为目标标识。
-* 当源命名空间为`PHONE_E.164`或`Phone_SHA256_E.164`时，选择`Phone_SHA256_E.164`命名空间作为目标标识。
+* 当源命名空间为`Email_LC_SHA256`或`Email`时，选择`Email_LC_SHA256`命名空间作为目标标识。
+* 当源命名空间为`Phone_SHA256_E.164`或`PHONE_E.164`时，选择`Phone_SHA256_E.164`命名空间作为目标标识。
 
 ![在激活工作流的“映射”步骤中显示的源字段和目标字段之间的标识映射。](../../assets/catalog/advertising/google-customer-match-dv360/identity-mapping-gcm-dv360.png)
 
