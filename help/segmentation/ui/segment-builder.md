@@ -324,7 +324,7 @@ ht-degree: 10%
 >[!NOTE]
 >
 >当使用“晚于”时间限制时，后一个事件发生的时间可能超过在时间限制内列出的时间量。 >
->&#x200B;>例如，如果您有一个页面查看事件和一个签出事件，并在这两个事件之间放置了“1小时后”时间限制，则一个在页面查看事件发生2小时后具有签出事件的区段定义符合条件。
+>>例如，如果您有一个页面查看事件和一个签出事件，并在这两个事件之间放置了“1小时后”时间限制，则一个在页面查看事件发生2小时后具有签出事件的区段定义符合条件。
 >
 >此外，这两个时间约束可以相互协调使用。
 >
@@ -380,7 +380,7 @@ ht-degree: 10%
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="刷新估计值"
 >abstract="您可以刷新区段定义的估计值，以立即预览符合建议的区段定义资格的轮廓数目。受众估计值是通过使用当天的示例数据的示例大小生成的。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=zh-Hans#estimate-and-preview-an-audience" text="估计和预览受众"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="估计和预览受众"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_qualifiedprofiles"
@@ -390,7 +390,7 @@ ht-degree: 10%
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_estimatedprofiles"
 >title="预估轮廓数"
->abstract="预计配置文件根据示例作业指示符合区段定义规则的大致配置文件数。"
+>abstract="预估轮廓数指的是根据抽样任务得出的近似轮廓数量，这些轮廓可能符合区段定义的规则。"
 
 在构建区段定义时，工作区右侧的&#x200B;**[!UICONTROL 受众属性]**&#x200B;部分会显示所生成区段定义的大小估计值，这样您可以在构建受众本身之前根据需要调整区段定义。
 
