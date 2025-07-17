@@ -2,9 +2,9 @@
 title: 将Adobe Analytics连接到Experience Platform
 description: 了解如何将Adobe Analytics报表包数据引入Experience Platform
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 086777a09eec17c94a7e0a5d2db58e4a1f6b523f
+source-git-commit: d6a290b9891b3507d531a595a5428955c7e9ee90
 workflow-type: tm+mt
-source-wordcount: '2731'
+source-wordcount: '2750'
 ht-degree: 3%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 3%
 
 阅读本指南，了解如何使用Adobe Analytics源将Analytics报表包数据摄取到Adobe Experience Platform。
 
-## 开始使用
+## 快速入门
 
 本教程需要对以下Experience Platform组件有一定的了解：
 
@@ -26,7 +26,7 @@ ht-degree: 3%
 请务必了解本文档中使用的以下关键术语：
 
 * **标准属性**：标准属性是Adobe预定义的任何属性。 它们对所有客户具有相同的含义，并且在Analytics源数据和Analytics架构字段组中可用。
-* **自定义属性**：自定义属性是Analytics自定义变量层次结构中的任何属性。 在Adobe Analytics实施中使用自定义属性将特定信息捕获到报表包中，这些属性的使用因报表包而异。 自定义属性包括eVar、prop和列表。 有关eVar的更多信息，请参阅以下[有关转化变量](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=zh-Hans)的Analytics文档。
+* **自定义属性**：自定义属性是Analytics自定义变量层次结构中的任何属性。 在Adobe Analytics实施中使用自定义属性将特定信息捕获到报表包中，这些属性的使用因报表包而异。 自定义属性包括eVar、prop和列表。 有关eVar的更多信息，请参阅以下[有关转化变量](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html)的Analytics文档。
 * **自定义字段组中的任何属性**：源自客户创建的字段组的属性都是用户定义的属性，既不是标准属性，也不是自定义属性。
 
 ## 导航源目录
@@ -287,6 +287,10 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 
 ## 删除您的数据流 {#delete-dataflow}
 
+>[!NOTE]
+>
+>您无法禁用Analytics数据流。 要停止Analytics数据流，您必须&#x200B;**删除**&#x200B;整个数据流。
+
 要删除您的Analytics数据流，请从源工作区的顶部标题中选择&#x200B;**[!UICONTROL 数据流]**。 使用数据流页面查找要删除的Analytics数据流，然后选择它旁边的省略号(`...`)。 接下来，使用下拉菜单并选择&#x200B;**[!UICONTROL 删除]**。
 
 * 删除实时Analytics数据流也将删除其基础数据集。
@@ -307,5 +311,5 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 >
 > 以下视频中显示的[!DNL Experience Platform] UI已过期。 有关最新的UI屏幕截图和功能，请参阅上述文档。
 
->[!VIDEO](https://video.tv.adobe.com/v/3430251?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/29687?quality=12&learn=on)
 
