@@ -3,9 +3,9 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 13adf42a23458d10e217d216d8fe79e8ce33376d
+source-git-commit: 00cec76319c1209e4527e31fad36992b7e778367
 workflow-type: tm+mt
-source-wordcount: '4595'
+source-wordcount: '4644'
 ht-degree: 13%
 
 ---
@@ -120,7 +120,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >id="platform_destinations_activate_exportoptions"
 >title="文件导出选项"
 >abstract="选择&#x200B;**导出全部文件**&#x200B;以导出符合受众资格的所有轮廓的完整快照。选择&#x200B;**导出增量文件**&#x200B;以仅导出自上次导出后符合受众资格的轮廓。<br>第一个增量文件导出包括符合受众资格的所有轮廓，充当回填。后续增量文件仅包含自第一个增量文件导出后符合受众资格的轮廓。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=zh-Hans#export-incremental-files" text="导出增量文件"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#export-incremental-files" text="导出增量文件"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_aftersegmentevaluation"
@@ -143,6 +143,18 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
    * **[!UICONTROL 每周]**：选择开始日期，后续导出将发生在一周的该日，直到所选的结束日期。
    * **[!UICONTROL 每月]**：选择开始日期，后续导出将在该月的该日期进行，直到所选的结束日期为止。 对于少于 30 或 31 天的月份，导出将在该月的最后一天进行。
 
+   >[!NOTE]
+   >
+   > 当前仅基于文件的以下云存储目标支持每周和每月计划选项，并且仅在激活[人员受众](../../segmentation/types/overview.md#people-audience)和[潜在受众](../../segmentation/types/overview.md#prospect-audience)时支持。
+   > 
+   > * [Amazon S3](../catalog/cloud-storage/amazon-s3.md)
+   > * [Azure Blob存储](../catalog/cloud-storage/azure-blob.md)
+   > * [数据登陆区](../catalog/cloud-storage/data-landing-zone.md)
+   > * [Google云存储](../catalog/cloud-storage/google-cloud-storage.md)
+   > * [SFTP](../catalog/cloud-storage/sftp.md)
+   > 
+   > 每周和每月计划选项不适用于其他目标类型。
+
 2. 使用&#x200B;**[!UICONTROL 时间]**&#x200B;切换开关选择导出是在受众评估后立即执行，还是在指定时间按计划执行。 在选择&#x200B;**[!UICONTROL 已计划]**&#x200B;选项时，您可以使用选择器以[!DNL UTC]格式选择一天中何时进行导出。
 
    使用&#x200B;**[!UICONTROL 区段评估后]**&#x200B;选项可在每日Experience Platform批处理分段作业完成后立即运行激活作业。 此选项可确保当激活作业运行时，将最新的配置文件导出到您的目标。 这可能会导致根据您的操作，每天多次导出受众。
@@ -154,7 +166,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
    <!-- Batch segmentation currently runs at {{insert time of day}} and lasts for an average {{x hours}}. Adobe reserves the right to modify this schedule. -->
 
    ![在批处理目标的激活流程中，突出显示区段后评估选项。](../assets/ui/activate-batch-profile-destinations/after-segment-evaluation-option.png)
-使用&#x200B;**[!UICONTROL 已计划]**&#x200B;选项使激活作业在固定时间运行。 此选项可确保每天在同一时间导出Experience Platform配置文件数据。 但是，您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。
+使用**[!UICONTROL 已计划]**&#x200B;选项使激活作业在固定时间运行。 此选项可确保每天在同一时间导出Experience Platform配置文件数据。 但是，您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。
 
    ![突出显示批处理目标激活流中的“已计划”选项并显示时间选择器的图像。](../assets/ui/activate-batch-profile-destinations/scheduled-option.png)
 
@@ -450,7 +462,7 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 
 ### 具有相同时间戳的用户档案的重复数据删除行为 {#deduplication-same-timestamp}
 
-将轮廓导出到基于文件的目标时，删除重复项可确保当多个轮廓共享相同的删除重复项键和相同的参考时间戳时仅导出一个轮廓。此时间戳表示个人资料的受众成员资格或身份图的上次更新时间。 有关如何更新和导出配置文件的更多信息，请参阅[配置文件导出行为](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2)文档。
+将轮廓导出到基于文件的目标时，删除重复项可确保当多个轮廓共享相同的删除重复项键和相同的参考时间戳时仅导出一个轮廓。此时间戳表示个人资料的受众成员资格或身份图的上次更新时间。 有关如何更新和导出配置文件的更多信息，请参阅[配置文件导出行为](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2)文档。
 
 #### 关键注意事项
 
