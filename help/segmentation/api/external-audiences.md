@@ -3,13 +3,13 @@ title: 外部受众API端点
 description: 了解如何使用外部受众API从Adobe Experience Platform创建、更新、激活和删除外部受众。
 hide: true
 hidefromtoc: true
-source-git-commit: 74fa66e78ac36c8007eb89e8c271d989845c96f0
+exl-id: eaa83933-d301-48cb-8a4d-dfeba059bae1
+source-git-commit: 3acadf73b5c82d6f5f0f1eaec41387bec897558d
 workflow-type: tm+mt
-source-wordcount: '2312'
+source-wordcount: '2405'
 ht-degree: 4%
 
 ---
-
 
 # 外部受众端点
 
@@ -381,7 +381,7 @@ curl -X PATCH https://platform.adobe.io/data/core/ais/external-audience/60ccea95
 **API格式**
 
 ```http
-POST /external-audience/{AUDIENCE_ID}/run
+POST /external-audience/{AUDIENCE_ID}/runs
 ```
 
 **请求**
@@ -391,7 +391,7 @@ POST /external-audience/{AUDIENCE_ID}/run
 +++ 开始受众摄取的示例请求。
 
 ```shell
-curl -X POST https://platform.adobe.io/data/core/ais/external-audience/60ccea95-1435-4180-97a5-58af4aa285ab/run \
+curl -X POST https://platform.adobe.io/data/core/ais/external-audience/60ccea95-1435-4180-97a5-58af4aa285ab/runs \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
@@ -442,6 +442,10 @@ curl -X POST https://platform.adobe.io/data/core/ais/external-audience/60ccea95-
 +++
 
 ## 检索特定受众摄取状态 {#retrieve-ingestion-status}
+
+>[!NOTE]
+>
+>若要使用以下端点，您需要同时具有外部受众的`audienceId`和引入运行ID的`runId`。 您可从对`audienceId`端点的成功调用中获取`GET /external-audiences/operations/{OPERATION_ID}`，并从先前对`runId`端点的成功调用中获取`POST /external-audience/{AUDIENCE_ID}/runs`。
 
 您可以在提供受众和运行ID的同时，通过向以下端点发出GET请求来检索受众摄取状态。
 
@@ -514,9 +518,13 @@ curl -X GET https://platform.adobe.io/data/core/ais/external-audience/60ccea95-1
 
 +++
 
-## 列出受众摄取状态 {#list-ingestion-statuses}
+## 列出受众摄取运行 {#list-ingestion-runs}
 
-您可以在提供受众ID的同时向以下端点发出GET请求，以检索所选外部受众的所有摄取状态。 可以包含多个参数，以&amp;符号(`&`)分隔。
+>[!NOTE]
+>
+>若要使用以下端点，您需要具有外部受众的`audienceId`。 通过成功调用`audienceId`终结点，您可以获取`GET /external-audiences/operations/{OPERATION_ID}`。
+
+您可以在提供受众ID的同时向以下端点发出GET请求，以检索所选外部受众的所有摄取运行。 可以包含多个参数，以&amp;符号(`&`)分隔。
 
 **API格式**
 
@@ -534,16 +542,16 @@ GET /external-audience/{AUDIENCE_ID}/runs?{QUERY_PARAMETERS}
 | 参数 | 描述 | 示例 |
 | --------- | ----------- | ------- |
 | `limit` | 响应中返回的最大项目数。 此值的范围为1到40。 默认情况下，限制设置为20。 | `limit=30` |
-| `sortBy` | 返回项的排序顺序。 您可以按`name`或`ingestionTime`进行排序。 此外，您可以添加`-`符号来按&#x200B;**降序**&#x200B;顺序排序，而不是&#x200B;**升序**&#x200B;顺序。 默认情况下，这些项按`ingestionTime`降序排序。 | `sortBy=name` |
-| `property` | 将显示用于确定运行哪些受众摄取的过滤器。 您可以根据以下属性进行筛选： <ul><li>`name`：允许您按受众名称过滤。 如果使用此属性，您可以使用`=`、`!=`、`=contains`或`!=contains`进行比较。 </li><li>`ingestionTime`：允许您按摄取时间过滤。 如果使用此属性，您可以使用`>=`或`<=`进行比较。</li><li>`status`：允许您按摄取运行的状态进行筛选。 如果使用此属性，您可以使用`=`、`!=`、`=contains`或`!=contains`进行比较。 </li></ul> | `property=ingestionTime<1683669114845`<br/>`property=name=demo_audience`<br/>`property=status=SUCCESS` |
+| `sortBy` | 返回项的排序顺序。 您可以按`name`或`createdAt`进行排序。 此外，您可以添加`-`符号来按&#x200B;**降序**&#x200B;顺序排序，而不是&#x200B;**升序**&#x200B;顺序。 默认情况下，这些项按`createdAt`降序排序。 | `sortBy=name` |
+| `property` | 将显示用于确定运行哪些受众摄取的过滤器。 您可以根据以下属性进行筛选： <ul><li>`name`：允许您按受众名称过滤。 如果使用此属性，您可以使用`=`、`!=`、`=contains`或`!=contains`进行比较。 </li><li>`createdAt`：允许您按摄取时间过滤。 如果使用此属性，您可以使用`>=`或`<=`进行比较。</li><li>`status`：允许您按摄取运行的状态进行筛选。 如果使用此属性，您可以使用`=`、`!=`、`=contains`或`!=contains`进行比较。 </li></ul> | `property=createdAt<1683669114845`<br/>`property=name=demo_audience`<br/>`property=status=SUCCESS` |
 
 +++
 
 **请求**
 
-以下请求检索外部受众的所有摄取状态。
+以下请求检索为外部受众运行的所有摄取。
 
-+++ 获取受众摄取状态列表的示例请求。
++++ 获取受众摄取运行列表的示例请求。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ais/external-audience/60ccea95-1435-4180-97a5-58af4aa285ab/runs \
@@ -557,9 +565,9 @@ curl -X GET https://platform.adobe.io/data/core/ais/external-audience/60ccea95-1
 
 **响应**
 
-成功的响应会返回HTTP状态200，其中包含指定外部受众的摄取状态列表。
+成功的响应返回HTTP状态200，其中包含指定外部受众的摄取运行列表。
 
-+++ 检索受众摄取状态列表时的示例响应。
++++ 检索受众摄取列表时运行的示例响应。
 
 ```json
 {
@@ -573,19 +581,7 @@ curl -X GET https://platform.adobe.io/data/core/ais/external-audience/60ccea95-1
             "dataFilterStartTime": 764245635,
             "dataFilterEndTime": 3456788568,
             "createdAt": 1785678909,
-            "createdBy": "{USER_NAME}",
-            "details": [
-                {
-                    "stage": "DATASET_INGEST",
-                    "status": "SUCCESS",
-                    "flowRunId": "{FLOW_RUN_ID}"
-                },
-                {
-                    "stage": "PROFILE_STORE_INGEST",
-                    "status": "SUCCESS",
-                    "flowRunId": "{FLOW_RUN_ID}"
-                }
-            ]
+            "createdBy": "{USER_NAME}"
         },
         {
             "audienceName": "Sample external audience 2",
@@ -596,19 +592,7 @@ curl -X GET https://platform.adobe.io/data/core/ais/external-audience/60ccea95-1
             "dataFilterStartTime": 764245635,
             "dataFilterEndTime": 3456788568,
             "createdAt": 1749324248,
-            "createdBy": "{USER_ID}",
-            "details": [
-                {
-                    "stage": "DATASET_INGEST",
-                    "status": "SUCCESS",
-                    "flowRunId": "{FLOW_RUN_ID}"
-                },
-                {
-                    "stage": "PROFILE_STORE_INGEST",
-                    "status": "SUCCESS",
-                    "flowRunId": "{FLOW_RUN_ID}"
-                }
-            ]
+            "createdBy": "{USER_ID}"
         }
     ],
     "_page": {
@@ -627,6 +611,10 @@ curl -X GET https://platform.adobe.io/data/core/ais/external-audience/60ccea95-1
 +++
 
 ## 删除外部受众 {#delete-audience}
+
+>[!NOTE]
+>
+>若要使用以下端点，您需要具有外部受众的`audienceId`。 通过成功调用`audienceId`终结点，您可以获取`GET /external-audiences/operations/{OPERATION_ID}`。
 
 您可以在提供受众ID的同时，通过向以下端点发出DELETE请求来删除外部受众。
 
