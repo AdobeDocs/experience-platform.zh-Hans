@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Audiences UI指南
 description: Adobe Experience Platform UI中的受众组合提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了一些直观的控件，可用于为贵组织构建和编辑受众。
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
+source-git-commit: 65a3b5b904a9dfc6a2fbc09ab869e5642e088363
 workflow-type: tm+mt
-source-wordcount: '2345'
+source-wordcount: '2362'
 ht-degree: 16%
 
 ---
@@ -129,7 +129,7 @@ ht-degree: 16%
 
 ![已选择“排除”选项。](../images/ui/audience-composition/add-exclude-block.png)
 
-已添加&#x200B;**[!UICONTROL 排除]**&#x200B;块。 选择此块后，右边栏中会显示有关排除项的详细信息。 这包括块的标签和排除类型。 您可以按受众[&#128279;](#exclude-audience)排除[或按属性](#exclude-attribute)排除。
+已添加&#x200B;**[!UICONTROL 排除]**&#x200B;块。 选择此块后，右边栏中会显示有关排除项的详细信息。 这包括块的标签和排除类型。 您可以按受众[排除](#exclude-audience)或按属性[排除](#exclude-attribute)。
 
 ![排除块，突出显示两个可用的不同排除类型。](../images/ui/audience-composition/exclude.png)
 
@@ -154,7 +154,7 @@ ht-degree: 16%
 >title="按属性排除"
 >abstract="按属性排除时，您可以根据所选属性排除特定轮廓出现在构成中。"
 
-如果按属性排除，则可以通过选择&#x200B;**[!UICONTROL 排除规则]**&#x200B;部分中的![过滤器](/help/images/icons/project-edit.png)图标来选择要排除的属性。 通过排除属性，您可以从生成的受众中排除任何包含此属性的配置文件。
+如果按属性排除，则可以通过选择![排除规则](/help/images/icons/project-edit.png)部分中的&#x200B;**[!UICONTROL 过滤器]**&#x200B;图标来选择要排除的属性。 通过排除属性，您可以从生成的受众中排除任何包含此属性的配置文件。
 
 ![属性部分高亮显示，显示从何处选择要排除的属性。](../images/ui/audience-composition/exclude-attribute.png)
 
@@ -310,6 +310,10 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 >id="platform_segmentation_ao_split_otherprofiles_text"
 >title="其他轮廓"
 >abstract="使用其他轮廓切换功能，您可以创建一个附加路径，其中包含与其他路径中指定的任何条件都不匹配的剩余轮廓。"
+
+>[!NOTE]
+>
+>要使用&#x200B;**[!UICONTROL Split]**&#x200B;块，您&#x200B;**必须**&#x200B;在受众中至少有10个配置文件。
 
 **[!UICONTROL 拆分]**&#x200B;块类型允许您将新受众拆分为各种子受众。 您可以按百分比或属性拆分此受众。
 
