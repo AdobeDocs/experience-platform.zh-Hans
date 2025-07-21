@@ -3,9 +3,9 @@ keywords: 自定义个性化；目标；experience platform自定义目标；
 title: 自定义个性化连接
 description: 此目标提供外部个性化、内容管理系统、广告服务器以及在您的网站上运行的其他应用程序，以便从Adobe Experience Platform检索受众信息。 此目标根据用户个人资料受众成员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 25697d341b2970eeb20d9f2507ee701ade8046d3
+source-git-commit: c037e75da7fa419051a7e38b365a5b6b3a1fc346
 workflow-type: tm+mt
-source-wordcount: '964'
+source-wordcount: '960'
 ht-degree: 9%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 9%
 
 >[!IMPORTANT]
 >
->配置文件属性可能包含敏感数据。 要保护此数据，在为基于属性的个性化配置&#x200B;**[!UICONTROL 自定义Personalization]**&#x200B;目标时，必须使用[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/)。 所有Edge Network API调用必须在[经过身份验证的上下文](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication)中进行。
+>配置文件属性可能包含敏感数据。 要保护此数据，在为基于属性的个性化配置[自定义Personalization](https://developer.adobe.com/data-collection-apis/docs/)目标时，必须使用&#x200B;**[!UICONTROL Edge Network API]**。 所有Edge Network API调用必须在[经过身份验证的上下文](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication)中进行。
 >
 ><br>您可以添加一个服务器端集成，该集成利用您已经用于Web或Mobile SDK实施的相同数据流，从而通过[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/)检索配置文件属性。
 >
@@ -39,7 +39,7 @@ ht-degree: 9%
 
 * 如果要从您的网站收集数据，请使用[Adobe Experience Platform Web SDK](/help/web-sdk/home.md)。
 * 如果要从移动应用程序收集数据，请使用[Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/)。
-* 如果您未使用[Web SDK](/help/web-sdk/home.md)或[Mobile SDK](https://developer.adobe.com/client-sdks/documentation/)，或者要根据配置文件属性个性化用户体验，请使用[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/)。
+* 如果您未使用[Web SDK](https://developer.adobe.com/data-collection-apis/docs/)或[Mobile SDK](/help/web-sdk/home.md)，或者要根据配置文件属性个性化用户体验，请使用[Edge Network API](https://developer.adobe.com/client-sdks/documentation/)。
 
 >[!IMPORTANT]
 >
@@ -67,9 +67,9 @@ ht-degree: 9%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_custom_personalization_datastream"
->title="关于数据流 ID"
+>title="关于数据流"
 >abstract="此选项确定受众将包含在哪个数据收集数据流中以响应页面。下拉菜单仅显示已启用目标配置的数据流。您必须先配置数据流，然后才能配置目标。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html?lang=zh-Hans#" text="了解如何配置数据流"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html#" text="了解如何配置数据流"
 
 >[!IMPORTANT]
 > 
@@ -84,7 +84,7 @@ ht-degree: 9%
 * **[!UICONTROL 名称]**：填写此目标的首选名称。
 * **[!UICONTROL 描述]**：输入目标的描述。 例如，您可以提及要将此目标用于哪个营销活动。 此字段为可选字段。
 * **[!UICONTROL 集成别名]**：此值作为JSON对象名称发送到Experience Platform Web SDK。
-* **[!UICONTROL 数据流ID]**：这决定了页面的响应中将包含受众的数据收集数据流。 下拉菜单仅显示已启用目标配置的数据流。有关详细信息，请参阅[配置数据流](../../../datastreams/overview.md)。
+* **[!UICONTROL 数据流]**：这将确定在对页面的响应中将包含受众的数据收集数据流。 下拉菜单仅显示已启用目标配置的数据流。有关详细信息，请参阅[配置数据流](../../../datastreams/overview.md)。
 
 ### 启用警报 {#enable-alerts}
 
@@ -160,9 +160,9 @@ alloy("sendEvent", {
   });
 ```
 
-### 具有属性的自定义Personalization的示例响应
+### 具有属性[!UICONTROL 的]自定义Personalization的示例响应
 
-使用具有属性&#x200B;**的**&#x200B;自定义Personalization时，API响应将与以下示例类似。
+使用具有属性&#x200B;**[!UICONTROL 的]**&#x200B;自定义Personalization时，API响应将与以下示例类似。
 
 **[!UICONTROL 具有属性的自定义Personalization]**&#x200B;与&#x200B;**[!UICONTROL 自定义Personalization]**&#x200B;之间的区别在于API响应中包含`attributes`部分。
 
