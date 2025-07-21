@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明（2025 年 6 月）
 description: Adobe Experience Platform 的 2025 年 6 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: c78dc0e83976499403e066b314a0889df803c976
+source-git-commit: cff694c1b04ba1513cb460c3b47b56eaef4b1f34
 workflow-type: ht
-source-wordcount: '1665'
+source-wordcount: '1632'
 ht-degree: 100%
 
 ---
@@ -113,7 +113,6 @@ Adobe Experience Platform 数据治理是一系列策略和技术，用于管理
 
 | 功能 | 描述 |
 | --- | --- |
-| [Google 目标客户匹配功能 + DV360](../../destinations/catalog/advertising/google-customer-match-dv360.md)正式发布 | Google 目标客户匹配功能 + DV360 目标现已可供所有 Experience Platform 用户使用。该文档现已包含关于在 [!DNL Adobe] 和 [!DNL Google] 广告账户之间进行[帐户关联](../../destinations/catalog/advertising/google-customer-match-dv360.md#linking)的详细指南。 |
 | 流式投放目标的[受众级别监控](../../dataflows/ui/monitor-destinations.md#audience-level-dataflow-runs-for-streaming-destinations) | 以下投放目标现已支持受众级别监控： <ul><li>[[!DNL (API) Oracle Eloqua] 连接](../../destinations/catalog/email-marketing/oracle-eloqua-api.md)</li><li>[[!DNL (V2) Marketo Engage]](../../destinations/catalog/adobe/marketo-engage.md)</li><li>[[!DNL Airship Attributes]](../../destinations/catalog/mobile-engagement/airship-attributes.md)</li><li>[[!DNL Amazon Kinesis]](../../destinations/catalog/cloud-storage/amazon-kinesis.md)</li><li>[[!DNL Azure Event Hubs]](../../destinations/catalog/cloud-storage/azure-event-hubs.md)</li><li>[[!DNL Google Customer Match + Display & Video 360]](../../destinations/catalog/advertising/google-customer-match-dv360.md)</li><li>[[!DNL HTTP API]](../../destinations/catalog/streaming/http-destination.md)</li><li>[[!DNL HubSpot]](../../destinations/catalog/crm/hubspot.md)</li><li>[[!DNL Magnite: Real-time]](../../destinations/catalog/advertising/magnite-streaming.md)</li><li>[[!DNL Marketo Engage Person Sync]](../../destinations/catalog/adobe/marketo-engage-person-sync.md)</li><li>[[!DNL Microsoft Dynamics 365]](../../destinations/catalog/crm/microsoft-dynamics-365.md)</li><li>[[!DNL Moengage]](../../destinations/catalog/mobile-engagement/moengage.md)</li><li>[[!DNL Outreach]](../../destinations/catalog/crm/outreach.md)</li><li>[[!DNL PubMatic Connect]](../../destinations/catalog/advertising/pubmatic.md)</li><li>[[!DNL PubMatic Connect (Custom Audience ID Mapping)]](../../destinations/catalog/advertising/pubmatic.md)</li><li>[[!DNL Qualtrics Automations]](../../destinations/catalog/survey/qualtrics-automations.md)</li><li>[[!DNL RainFocus Attendee Profiles]](../../destinations/catalog/marketing-automation/rainfocus.md)</li><li>[[!DNL SAP Commerce]](../../destinations/catalog/ecommerce/sap-commerce.md)</li><li>[[!DNL Snowflake]](../../destinations/catalog/cloud-storage/snowflake.md)</li><li>[[!DNL Yahoo DataX]](../../destinations/catalog/advertising/datax.md)</li><li>[[!DNL Zendesk]](../../destinations/catalog/crm/zendesk.md)</li></ul> |
 | 为 [Facebook](../../destinations/catalog/social/facebook.md#supported-identities) 目标提供额外的标识符支持 | [!DNL Facebook] 目标现在支持映射新的地址相关字段以改进目标市场选择，并与 Facebook 属性上的轮廓匹配。有关新增地址相关字段的详细信息，请参阅[支持的身份标识](../../destinations/catalog/social/facebook.md#supported-identities)部分。<br> ![平台 UI 图像显示 Facebook 的附加字段。](../2025/assets/june/facebook-destination-fields.png "平台 UI 图像显示 Facebook 的附加字段。"){width="200" align="center" zoomable="yes"} |
 | [[!DNL Braze]](../../destinations/catalog/mobile-engagement/braze.md)目标升级 | 从 2025 年 6 月 19 日开始，您可以在目标目录中并排看到两张 **[!DNL Braze]** 卡。这是由于目标服务内部升级造成的。现有的[!DNL Braze]目标连接器已更名为&#x200B;**[!UICONTROL （已弃用）Braze]**，并且现在为您提供了一个名为 **[!UICONTROL Braze]** 的新卡片。<br>将目录中的 **[!UICONTROL Braze]** 连接用于新的激活数据流。如果您有任何连接到&#x200B;**[!UICONTROL （已弃用）Braze]** 目标的激活数据流，它们将自动更新，因此无需您执行任何操作。<br>如果您通过 [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) 创建数据流，则必须将 [!DNL flow spec ID] 和 [!DNL connection spec ID] 更新为以下值： <ul><li>流量规范 ID：`cb7919bd-69aa-462d-bcc0-db7cdc7fdf51`</li><li>连接规范 ID：`ab957205-5a78-4393-b901-b930ed548220`</li></ul> |
