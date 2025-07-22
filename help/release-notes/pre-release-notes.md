@@ -3,13 +3,13 @@ title: Experience Platform预发行说明
 description: Adobe Experience Platform最新发行说明预览。
 hide: true
 hidefromtoc: true
-source-git-commit: c716bac1db556fe7a47462e38ee64d7b46bbefcc
+exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
+source-git-commit: d30778ef3152b779157206ce0d416c0e61ba98c3
 workflow-type: tm+mt
-source-wordcount: '1299'
-ht-degree: 44%
+source-wordcount: '1380'
+ht-degree: 21%
 
 ---
-
 
 # Adobe Experience Platform预发行说明
 
@@ -27,144 +27,128 @@ ht-degree: 44%
 >- [联合受众构成](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/zh-hans/docs/real-time-cdp-collaboration/using/latest)
 
-**发行日期： 2025年6月18日**
+**发行日期： 2025年7月29日**
 
-Adobe Experience Platform中的新增功能及对现有功能的更新：
+Adobe Experience Platform 中新功能和现有功能的更新：
 
-- [访问控制](#access-control)
-- [高级数据生命周期管理](#advanced-data-lifecycle-management)
-- [仪表板](#dashboards)
-- [数据治理](#data-governance)
 - [目标](#destinations)
-- [联合受众构成](#fac)
-- [Privacy Service](#privacy-service)
+- [数据引入](#ingestion)
+- [查询服务](#query-service)
+- [Real-Time CDP B2B 版](#b2b)
 - [沙盒](#sandboxes)
+- [Segmentation Service](#segmentation)
 - [源](#sources)
-
-## 访问控制 {#access-control}
-
-Experience Platform利用[Adobe Admin Console](https://adminconsole.adobe.com)产品配置文件将用户与权限和沙盒关联起来。 权限可控制对各种Experience Platform功能的访问，包括数据建模、配置文件管理和沙盒管理。
-
-**主要功能**
-
-| 功能 | 描述 |
-| ------- | ----------- |
-| 导出功能板数据权限 | 功能板中的&#x200B;**[!UICONTROL 下载CSV]**&#x200B;和&#x200B;**[!UICONTROL 以电子邮件形式发送]**&#x200B;选项现在需要&#x200B;**[!UICONTROL 导出功能板数据]**&#x200B;权限。 此权限可确保仅授权用户可以导出列表化的insight数据，从而支持更严格的治理和数据访问控制策略。 |
-
-有关详细信息，请参阅[访问控制概述](../access-control/home.md)。
-
-## 高级数据生命周期管理 {#advanced-data-lifecycle-management}
-
-Experience Platform 提供了一整套数据安全功能，允许您通过程序化删除客户记录和数据集来管理存储的数据。使用 UI 中的数据生命周期工作区或通过调用 Data Hygiene API，您可以有效地管理数据存储。使用这些功能可确保信息按预期使用、在需要修复不正确的数据时进行更新以及在组织政策认为必要时进行删除。
-
-**新文档**
-
-| 新文档 | 描述 |
-| --- | --- |
-| 记录删除一般可用性 | 您现在可以使用UI或API根据身份字段删除单个记录。 此功能允许从单个数据集或所有数据集进行删除，从而帮助减少存储、强制执行治理并改进数据卫生。 容量限制和授权要求适用。 |
-
-如需了解更多信息，请阅读[高级数据生命周期管理概述](../hygiene/home.md)。
-
-## 仪表板 {#dashboards}
-
-Experience Platform 提供了多个仪表板，您可以通过这些仪表板查看在每日快照中摄取的有关您组织数据的重要洞察。
-
-**新增功能或更新后的功能**
-
-| 功能 | 描述 |
-| ------- | ----------- |
-| 以电子邮件导出方式发送选项 | 现在，通过从&#x200B;**[!UICONTROL 查看更多]**&#x200B;菜单中选择&#x200B;**[!UICONTROL 以电子邮件形式发送]**，您最多可以从Query Pro模式功能板导出10,000条记录。 此选项会将下载链接安全地发送到与Adobe相关的电子邮件，以便进行较大的导出。 |
-
-有关仪表板的详细信息，包括如何授予访问权限和创建自定义小组件，请首先阅读[仪表板概述](../dashboards/home.md)。
-
-## 数据治理 {#data-governance}
-
-Adobe Experience Platform 数据治理是一系列策略和技术，用于管理客户数据并确保遵守适用于数据使用的法规、限制和政策。它在 Experience Platform 的 [!DNL Experience Platform] 各个层面中发挥着关键作用，包括编目、数据谱系、数据使用标记、数据访问策略和营销操作数据访问控制。
-
-**新增功能**
-
-| 功能 | 描述 |
-| --- | --- |
-| 列入允许列表 Azure CMK警报和IP配置 | 现在，您可以在Azure密钥库中允许列表Adobe的静态IP地址，以确保在启用网络限制时继续访问。 这有助于防止因密钥访问受限而导致Platform服务中断。 |
-| CMK配置警报和解决方案 | 现在，当Adobe服务无法访问您的Azure密钥保管库(例如，由于删除了IP Experience Platform条目或禁用的密钥)时，列入允许列表会触发警报。 新指南可帮助您了解每个警报并采取纠正措施。 |
-
-有关更多信息，请参阅[数据治理概述](../data-governance/home.md)。
 
 ## 目标 {#destinations}
 
 [!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
-**新目标**
+**已更新目标**
 
 | 目标 | 描述 |
 | --- | --- |
-| 阿尔及利亚用户区段 | “阿尔及利亚用户区段”目标使营销专业人士能够在主页和搜索站点之间提供一致的个性化。 从多个数据源构建丰富的受众，并在各种渠道间共享这些受众，以改进定位策略和营销活动个性化。 |
+| Marketo目标卡整合 | Marketo V2和Marketo Engage人员同步目标卡已合并到单个统一目标卡中。 此整合简化了目标选择过程，并为Marketo集成提供了更简化的体验。 |
 
 **新增或更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| LinkedIn帐户到期信息 | LinkedIn目标的帐户过期信息现在可直接在[!UICONTROL 浏览]和[!UICONTROL 帐户]视图中获取。 以前，此信息仅在文档中可用。 此增强功能可更好地显示LinkedIn身份验证状态和凭据管理。 |
-| Google客户匹配+ DV360正式发布和增强功能 | Google客户匹配+ DV360目标现在可供所有Experience Platform用户使用。 该文档现在包含有关Adobe与Google广告帐户之间关联的详细指南。 |
-| 数据登录区(DLZ)目标加密支持 | 为数据登陆区目标添加了加密支持。 您现在可以附加RSA格式公钥以向导出的文件添加加密。 |
-| 面向企业目标的受众级别监控 | 受众级别监视现在可用于以下企业目标： [[!DNL Azure Event Hubs]](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)、[[!DNL HTTP API]](/help/destinations/catalog/streaming/http-destination.md)、[[!DNL Amazon Kinesis]](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)。 |
+| 数据登录区(DLZ)目标加密支持 | 为数据登陆区目标添加了加密支持。 您现在可以附加RSA格式公钥以向导出的文件添加加密，从而为敏感数据导出提供增强的安全性。 |
+| 边缘目标的增强数据流信息 | 改进了Adobe Target和自定义Personalization目标的右边栏信息现在同时显示数据流名称和数据流ID字段，从而更清楚地了解关联的数据流配置并减少查看现有数据流时的混淆。 目标配置屏幕中的&#x200B;**[!UICONTROL 数据流ID]**&#x200B;选择器已更新为&#x200B;**[!UICONTROL 数据流]**，以提高用户界面中的清晰度。 |
+| 目标选择中的营销活动可见性 | 现在，在配置数据流时，营销操作显示在[!UICONTROL 选择目标]步骤的右边栏中，无需导航到视图页面即可立即看到营销操作更改。 这项改进增强了用户体验，因为它使得在目标设置期间验证营销行动配置变得更加容易。 |
+| 编辑目标的营销操作 | 您现在可以编辑现有目标的营销操作。 |
+| 目标连接的帐户名称和描述 | 现在，您可以在连接到目标时添加帐户名称和描述，从而更好地管理具有多个帐户的目标。 |
 
-{style="table-layout:auto"}
+**修复**
 
-如需了解更多信息，请阅读[目标概述](../destinations/home.md)。
+| 问题 | 描述 |
+| --- | --- |
+| 类别滚动功能 | 修复了目标和源目录中的类别侧菜单未在鼠标悬停时正确滚动的问题，从而提高用户浏览目标类别的导航可用性。 |
 
-## 联合受众构成 {#fac}
+有关更多信息，请阅读[目标概述](../destinations/home.md)。
 
-联合受众构成允许企业构成数据，以便在各种用例中更好地应用。通过这种新方法，作为 Adobe Real-Time Customer Data Platform 和/或 Adobe Journey Optimizer 用户，您可以直接从现有数据仓库联合数据集，以便在一个系统中创建和丰富 Adobe Experience Platform 受众和属性。
+## 数据引入 {#ingestion}
 
-| 新功能 | 描述 |
-| ----------- | ----------- |
-| HIPAA 准备就绪 | 联合受众组合现在符合HIPAA要求。 有关联合受众组合隐私和安全措施的更多信息，请阅读联合受众组合概述中的[隐私和安全性](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/start/privacy-security)。 有关一般Experience Platform产品的HIPAA合规性的更多信息，请阅读[HIPAA和Adobe产品和服务概述](https://www.adobe.com/trust/compliance/hipaa-ready.html)。 |
-
-如需了解更多信息，请阅读[联合受众构成文档](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/home)。
-
-## [!DNL Privacy Service] {#privacy}
-
-多项法律和组织规定赋予用户相应的权利，允许他们根据要求从数据存储中访问或删除其个人数据的权利。Adobe Experience Platform [!DNL Privacy Service] 提供 RESTful API 和用户界面，帮助您管理客户数据请求。借助 [!DNL Privacy Service]，您可以提交从 Adobe Experience Cloud 应用程序访问和删除个人客户数据的请求，从而促进自动遵守法律和组织隐私法规。
+Experience Platform提供了一个全面的数据摄取框架，该框架支持从各种来源进行批量摄取和流式摄取。
 
 **新增功能**
 
 | 功能 | 描述 |
-|--- | ---|
-| 对田纳西州和明尼苏达州隐私法的支持 | Privacy Service现在支持《田纳西州信息保护法案》(`tipa_tn_usa`)和《明尼苏达州消费者数据隐私法案》(`mcdpa_mn_usa`)。 您可以按照这些新的州级法规处理访问和删除请求。 有关详细信息，请参阅[法规概述](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/privacy/regulations/overview)。 |
+| ------- | ----------- |
+| 支持监控流配置文件摄取 | 现在提供了对流式配置文件摄取的实时监控，从而透明地显示吞吐量、延迟和数据质量指标。 这支持主动警报和可操作的洞察，以帮助数据工程师识别容量违规和摄取问题。 |
 
-有关该服务的更多信息，请参阅 [Privacy Service 概述](../privacy-service/home.md) 。
+有关详细信息，请阅读[数据引入概述](../ingestion/home.md)。
+
+## 查询服务 {#query-service}
+
+Adobe Experience Platform查询服务提供了一个强大的SQL接口，可用于跨平台进行数据分析和探索。
+
+**新增功能或更新后的功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 增强的会话管理 | Data Distiller现在包括增强的会话管理功能，更好地控制用户会话并改进跨开发和生产环境的性能监控。 |
+| 支持不过期凭据密码字符限制 | Data Distiller现在支持具有特定字符限制的非过期凭据。 虽然密码至少需要一个数字、一个小写字母、一个大写字母和一个特殊字符，但美元符号($)不受支持。 推荐的特殊字符包括`!, @, #, ^, or &`。 |
+| 提高了跨环境的性能一致性 | 数据Distiller性能现在在开发沙盒和生产沙盒之间保持一致，在两个环境中都提供了相似的后端资源。 使用的计算小时数可能因处理时的数据量和可用的后端计算资源而异。 |
+
+有关详细信息，请阅读[查询服务概述](../query-service/home.md)。
+
+## Real-Time CDP B2B 版 {#b2b}
+
+Real-Time CDP B2B edition提供全面的B2B客户数据管理功能，使组织能够构建统一的客户档案、创建复杂的B2B受众并在各种营销渠道中激活数据。
+
+**新增功能或更新后的功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| B2B架构升级 | Experience Platform正在升级到新的B2B架构，该架构对具有B2B属性的多实体受众引入了重大改进。 此升级整合了合并策略支持，提高了受众计数的准确性，并改进了实体解析功能。 |
+| 多实体受众的合并策略合并 | 具有B2B属性的多实体受众现在仅支持单个合并策略（默认合并策略），不支持多个合并策略。 此更改可确保一致的受众构成并简化合并逻辑管理。 |
+| 更新了帐户受众限制 | 帐户受众不再具有以前对体验事件的30天回溯时间范围的限制、自定义实体限制或使用`inSegment`事件的限制。 这些更新在创建复杂的B2B受众定义方面提供了更大的灵活性。 |
+| 增强了B2B实体的受众计数 | 现在，根据实时分段结果，可以准确地估计具有B2B实体（如客户和机会）的受众规模。 这种改进为涉及复杂B2B关系的受众提供了更准确和可靠的估计。 |
+| 适用于受众成员资格的帐户快照 | 现在，快照导出中包含了“帐户”实体的受众成员资格详细信息，从而可以访问帐户级别的受众状态、时间戳和成员资格指标。 这使得用户档案（人员）和帐户分段模型之间存在功能对等性。 |
+| 多实体受众的沙盒工具更改 | 不再支持在迁移之前通过导出的B2B实体和体验事件导入多实体受众。 这些受众将无法通过导入验证，且无法自动转换为新架构。 迁移后，必须先重新导出受众，然后才能将其导入目标沙盒中。 |
+| B2B实体API弃用 | 现已弃用通过API为B2B实体（帐户、机会、帐户 — 人员关系、机会 — 人员关系、营销活动、营销活动成员、营销列表和营销列表成员）创建受众。 此外，也不建议对这些B2B实体执行配置文件访问API查找和删除操作。 |
+| 更新了实体解析的身份命名空间 | Account和Opportunity实体现在使用基于时间优先级的与特定身份命名空间合并（`b2b_account`用于帐户，`b2b_opportunity`用于机会）。 所有其它实体通过基于时间优先的合并合并与主标识重叠合并。 |
+
+有关详细信息，请阅读[Real-Time CDP B2B edition概述](../rtcdp/b2b-overview.md)。
 
 ## 沙盒 {#sandboxes}
 
-Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。公司通常并行运行多个数字体验应用程序，需要满足这些应用程序的开发、测试和部署需要，同时确保操作法规遵从性。
+Experience Platform旨在丰富全球范围内的数字体验应用程序。 企业通常会同时运行多个数字体验应用程序，并且需要满足这些应用程序的开发、测试和部署要求，同时确保运营合规性。
 
 **新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 对象配置更新迁移 | 现在，您可以在初始复制后跨沙盒迁移迭代对象配置更新。 此增强功能支持开发工作流，在这些工作流中，需要更新配置并在多个环境中传播配置，而无需重新创建整个沙盒设置。 |
-
-{style="table-layout:auto"}
+| 对多实体受众导入的更改 | 沙盒工具已更新，以支持新的B2B架构升级。 在架构升级后，必须重新导出包含B2B实体和体验事件的多实体受众，然后才能通过沙盒工具导入目标沙盒中。 导入升级前版本将导致验证失败。 |
 
 有关沙盒的更多信息，请阅读[沙盒概述](../sandboxes/home.md)。
+
+## Segmentation Service {#segmentation-service}
+
+[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的轮廓子集。受众可以基于记录型数据（如人口统计信息）或时间序列事件（代表客户与品牌的互动行为）进行构建。
+
+**新增功能或更新后的功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 外部受众API | 您可以使用外部受众API以编程方式将外部生成的受众导入Adobe Experience Platform。 |
 
 ## 源 {#sources}
 
 Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各种数据提供者设置源连接。这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 
-**更新的功能**
+**新来源**
+
+| 来源 | 描述 |
+| --- | --- |
+| 支持[!DNL Didomi] (流式SDK) | [!DNL Didomi]源连接器允许您从[!DNL Didomi]的平台中摄取同意管理数据，支持遵守隐私法规和基于同意的营销策略。 |
+
+**新增或更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 支持[!DNL Azure Synapse Analytics]的新身份验证类型 | 除了现有的连接字符串身份验证之外，[!DNL Azure Synapse Analytics]现在还将支持服务主体身份验证。 |
-
-**重要身份验证更新**
-
-| 更新 | 描述 |
-| --- | --- |
-| [!DNL Salesforce]基本身份验证已弃用 | Salesforce CRM和Salesforce Service Cloud的基本身份验证将于2026年1月被弃用。 客户必须迁移到OAuth 2.0身份验证以保持连接。 此更改会影响源连接器，并确保提高安全性并符合Salesforce的身份验证标准。 |
-
-{style="table-layout:auto"}
+| 支持选定源中的变更数据捕获 | 您现在可以创建数据流，以便使用源连接器为增量摄取启用变更数据捕获。 此功能允许客户为增量摄取引入更改数据类型，从而提高数据新鲜度并减少处理开销。 |
+| 支持软删除[!DNL Salesforce]中的记录 | [!DNL Salesforce]源现在支持通过可选的`includeDeletedObjects`参数包含软删除记录。 如果设置为true，客户可以在其[!DNL Salesforce]查询中包含软删除记录，并将这些记录导入Experience Platform。 |
 
 有关更多信息，请阅读[数据源概述](../sources/home.md)。
