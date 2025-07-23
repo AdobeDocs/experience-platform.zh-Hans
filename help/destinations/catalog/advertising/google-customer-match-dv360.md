@@ -3,9 +3,9 @@ title: Google客户匹配+显示和视频360连接
 description: 借助Google Customer Match + Display & Video 360目标连接器，您可以使用Experience Platform中的在线和离线数据在Google自有和运营的资产(如Search、Shopping、Gmail和YouTube)中与客户联系并重新互动。
 badge: 有限发布版
 exl-id: f6da3eae-bf3f-401a-99a1-2cca9a9058d2
-source-git-commit: efdec64dee4c5857d0df008c2d1242674f9d0b49
+source-git-commit: 16192df76b618ed1d516b78f9c3191027140b8d3
 workflow-type: tm+mt
-source-wordcount: '2348'
+source-wordcount: '2384'
 ht-degree: 5%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->**Google Customer Match + DV360连接器的可用性有限**<br>&#x200B;随着我们与Google的集成进入到成熟的整个生命周期，我们会看到指出实施中需要更正的弱点的数据，只有这样才能获得更广泛的采用。 鉴于这些担忧，Adobe已将此目标的可见性降低到有限数量的客户。 我们正在与Google积极交谈，以改善产品体验。 我们理解这可能是一个令人失望的消息，但我们相信，这是确保为我们的客户提供高质量、可靠体验的负责任方法。</br>
+>**Google Customer Match + Display &amp; Video 360连接器的可用性有限**<br>&#x200B;随着我们与Google的集成进入到成熟的整个生命周期，我们会看到指出实施中需要更正的弱点的数据，只有这样才能获得更广泛的采用。 鉴于这些担忧，Adobe已将此目标的可见性降低到有限数量的客户。 我们正在与Google积极交谈，以改善产品体验。 我们理解这可能是一个令人失望的消息，但我们相信，这是确保为我们的客户提供高质量、可靠体验的负责任方法。</br>
 
 使用此目标将您的第一方基于PII的[[!DNL Google Customer Match]](https://support.google.com/google-ads/answer/6379332?hl=en)列表直接激活到[!DNL Google Display & Video 360]属性，如[!DNL Search]、[!DNL YouTube]、[!DNL Gmail]和[!DNL Google Display Network]。
 
@@ -29,12 +29,12 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 >[!IMPORTANT]
 >
 > Google将发布对[Google Ads API](https://developers.google.com/google-ads/api/docs/start)、[Customer Match](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html)和[Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview)的更改，以支持欧盟（[EU用户同意政策](https://digital-markets-act.ec.europa.eu/index_en)）中[Digital Markets Act](https://www.google.com/about/company/user-consent-policy/) (DMA)定义的合规性和同意相关要求。 自2024年3月6日起，将开始实施对同意要求的这些更改。
-> &#x200B;><br/>
-> &#x200B;>为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为 Google 合作伙伴，Adobe 为您提供必要的工具，以遵守欧盟 DMA 下的这些同意要求。
-> &#x200B;><br/>
-> &#x200B;>如果客户购买了Adobe Privacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未经同意的用户档案，则无需采取任何操作。
-> &#x200B;><br/>
-> &#x200B;>未购买Adobe Privacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/home.md#segment-definitions)中的[区段定义](../../../segmentation/ui/segment-builder.md)功能来过滤掉未经同意的用户档案，以便继续使用现有的Real-Time CDP Google目标而不中断。
+> ><br/>
+> >为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为 Google 合作伙伴，Adobe 为您提供必要的工具，以遵守欧盟 DMA 下的这些同意要求。
+> ><br/>
+> >如果客户购买了Adobe Privacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未经同意的用户档案，则无需采取任何操作。
+> ><br/>
+> >未购买Adobe Privacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/home.md#segment-definitions)中的[区段定义](../../../segmentation/ui/segment-builder.md)功能来过滤掉未经同意的用户档案，以便继续使用现有的Real-Time CDP Google目标而不中断。
 
 ## 何时使用此目标
 
@@ -107,16 +107,16 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 
 >[!NOTE]
 >
->Adobe已将Google合作伙伴帐户ID从`6219889373`更新为`4641108541`。
+>对于参与此连接器的Beta测试计划的客户： Adobe已将Google合作伙伴帐户ID从`6219889373`更新为`4641108541`。
 >
->**如果您的Google帐户当前链接到旧的Adobe合作伙伴帐户ID (`6219889373`)，请执行以下步骤：**
+>**如果您是Google Customer Match + Display &amp; Video 360连接器测试版计划的成员，并且您的Google帐户当前已链接到旧的Adobe合作伙伴帐户ID (`6219889373`)，请执行以下步骤：**
 >
 >1. 取消您的Google帐户与旧Adobe合作伙伴帐户ID (`6219889373`)的链接
 >2. 将您的Google帐户关联到新的Adobe合作伙伴帐户ID (`4641108541`)
 >3. 从现有数据流中删除所有受众
 >4. 创建新数据流并映射您的受众
 >
->如果您的Google帐户已链接到新的Adobe合作伙伴帐户ID (`4641108541`)，则无需您执行任何操作。
+>如果您的Google帐户已链接到新的Adobe合作伙伴帐户ID (`4641108541`)，则无需您执行任何操作即可使用此连接器。
 
 **对于具有经理帐户的组织：**
 
@@ -176,7 +176,7 @@ Attribute source data is not automatically hashed. When your source field contai
 
 The video below demonstrates the steps to configure a [!DNL Google Customer Match] destination and activate audiences. The steps are also laid out sequentially in the next sections.
 
->[!VIDEO](https://video.tv.adobe.com/v/3411783/?quality=12&learn=on&captions=chi_hans) -->
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng) -->
 
 ## 连接到目标 {#connect}
 
