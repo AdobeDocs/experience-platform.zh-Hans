@@ -4,9 +4,9 @@ title: 编辑激活数据流
 type: Tutorial
 description: 按照本文中的步骤进行操作，以在Adobe Experience Platform中编辑现有的激活数据流。
 exl-id: 0d79fbff-bfde-4109-8353-c7530e9719fb
-source-git-commit: b8f3443c1e574505f7fd0ca8a5ae91801da4cbef
+source-git-commit: 24951f7680f134beb64c7679a94bac9b18042af1
 workflow-type: tm+mt
-source-wordcount: '814'
+source-wordcount: '857'
 ht-degree: 0%
 
 ---
@@ -20,9 +20,8 @@ ht-degree: 0%
 * [编辑映射的属性和身份](#edit-mapped-attributes)
 * [编辑激活计划和导出频率](#edit-schedule-frequency)
 * [添加其他数据集](#add-datasets)到激活工作流
+* [将访问标签](#apply-access-labels)应用于导出的数据
 * [编辑激活数据流的名称和描述](#edit-names-descriptions)
-
-<!-- * [Apply access labels](#apply-access-labels) to exported data; -->
 
 ## 浏览激活数据流 {#browse-activation-dataflows}
 
@@ -100,25 +99,21 @@ ht-degree: 0%
 * [将受众激活到批量配置文件导出目标](./activate-batch-profile-destinations.md)(例如Amazon S3或Oracle Eloqua)；
 * [将受众激活到流式配置文件导出目标](./activate-streaming-profile-destinations.md)(例如，HTTP API或Amazon Kinesis)。
 
-
-
 ## 将数据集添加到激活数据流 {#add-datasets}
 
 在右边栏中选择&#x200B;**[!UICONTROL 导出数据集]**&#x200B;以选择要导出到目标的附加数据集。 此选项会将您转到[数据集导出工作流](export-datasets.md)。
 
 >[!NOTE]
 >
->此选项仅对支持数据集导出[&#128279;](export-datasets.md#supported-destinations)的目标可见。
+>此选项仅对支持数据集导出[的](export-datasets.md#supported-destinations)目标可见。
 
 ![Experience Platform UI图像显示“导出数据集”数据流运行选项。](../assets/ui/edit-activation/export-datasets.png)
 
+## 应用访问标签 {#apply-access-labels}
 
+选择&#x200B;**[!UICONTROL 应用访问标签]**&#x200B;以编辑导出数据的数据使用标签。 请参阅[数据使用标签文档](../../data-governance/labels/overview.md)以了解更多信息。
 
-<!-- ## Apply access labels {#apply-access-labels}
-
-Select **[!UICONTROL Apply access labels]** to edit the data usage labels for the exported data. See the [data usage labels documentation](../../data-governance/labels/overview.md) to learn more.
-
-![Experience Platform UI image showing the Export datasets dataflow run option.](../assets/ui/edit-activation/apply-access-labels.png) -->
+![Experience Platform UI图像显示“导出数据集”数据流运行选项。](../assets/ui/edit-activation/apply-access-labels.png)
 
 ## 编辑激活数据流名称和描述 {#edit-names-descriptions}
 
