@@ -5,10 +5,10 @@ audience: user
 user-guide-title: Real-Time Customer Data Platform 指南
 user-guide-description: 合并多个企业来源的已知数据和匿名数据，以创建客户轮廓、从这些轮廓创建受众，以及将这些受众激活到第三方目标。
 role: Admin
-source-git-commit: ba2154e84f24ddf4ec270121bdcbb6dd5d3dff42
+source-git-commit: 74a73b568c850f8e749afea039afd2821858bd69
 workflow-type: tm+mt
-source-wordcount: '305'
-ht-degree: 63%
+source-wordcount: '311'
+ht-degree: 62%
 
 ---
 
@@ -26,6 +26,7 @@ ht-degree: 63%
       * [示例用例](./b2b-use-case.md)
       * [端到端教程](./b2b-tutorial.md)
       * [Real-Time CDP B2B 版护栏](b2b-guardrails.md)
+      * [Real-Time CDP B2B edition架构升级](b2b-architecture-upgrade.md)
 * Audience Manager和Real-Time CDP {#evolution}
    * [从 Audience Manager 的演变](aam-to-rtcdp.md)
 * 帐户轮廓 {#account}
@@ -46,12 +47,12 @@ ht-degree: 63%
    * [Real-Time CDP B2B 版本中的目标](destinations/b2b.md)
 * 护栏 {#guardrails}
    * [Real-Time CDP护栏概述](guardrails/overview.md)
-   * [用于数据引入的护栏](https://experienceleague.adobe.com/docs/experience-platform/ingestion/guardrails.html?lang=zh-Hans){target="_blank"}
-   * [[!DNL Edge Network API]的护栏](https://developer.adobe.com/data-collection-apis/docs/getting-started/guardrails/){target="_blank"}
+   * 用于数据引入的[护栏](https://experienceleague.adobe.com/docs/experience-platform/ingestion/guardrails.html){target="_blank"}
+   * [ [!DNL Edge Network API]的](https://developer.adobe.com/data-collection-apis/docs/getting-started/guardrails/){target="_blank"}护栏
    * [针对 [!DNL Real-Time Customer Profile] 数据和分段的护栏](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html?lang=zh-Hans){target="_blank"}
-   * [[!DNL Identity Service] 数据的护栏](https://experienceleague.adobe.com/docs/experience-platform/identity/guardrails.html?lang=zh-Hans){target="_blank"}
-   * [[!DNL Query Service]的护栏](https://experienceleague.adobe.com/docs/experience-platform/query/guardrails.html?lang=zh-Hans){target="_blank"}
-   * [通过目标激活数据的护栏](https://experienceleague.adobe.com/docs/experience-platform/destinations/guardrails.html?lang=zh-Hans){target="_blank"}
+   * [数据 [!DNL Identity Service] 的](https://experienceleague.adobe.com/docs/experience-platform/identity/guardrails.html){target="_blank"}护栏
+   * [ [!DNL Query Service]的](https://experienceleague.adobe.com/docs/experience-platform/query/guardrails.html){target="_blank"}护栏
+   * 通过目标激活数据的[护栏](https://experienceleague.adobe.com/docs/experience-platform/destinations/guardrails.html){target="_blank"}
 * 身份标识 {#identity}
    * [身份标识和身份标识命名空间](profile/identities-overview.md)
 * 合并策略 {#merge-policies}
