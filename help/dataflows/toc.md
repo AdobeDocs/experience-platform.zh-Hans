@@ -4,10 +4,10 @@ user-guide-title: 数据流指南
 user-guide-description: 了解数据流以及如何在不同服务间配置它们。
 feature: Dataflows
 role: Developer
-source-git-commit: d4c1c9fce7ef5445c8f043d1f766603235b9bd88
+source-git-commit: 2f78b70761ef676fe4ab61b89b6cbb261c99e9ca
 workflow-type: tm+mt
-source-wordcount: '60'
-ht-degree: 26%
+source-wordcount: '66'
+ht-degree: 24%
 
 ---
 
@@ -25,6 +25,7 @@ ht-degree: 26%
    - [监测配置文件中的数据流](./ui/monitor-profiles.md)
    - [监测受众中的数据流](./ui/monitor-audiences.md)
    - [监测目标中的数据流](./ui/monitor-destinations.md)
+   - [监控数据流以进行流式配置文件摄取](./ui/monitor-streaming-profile.md)
    - B2B监控 {#b2b}
       - [监控配置文件扩充作业](./ui/b2b/monitor-profile-enrichment.md)
 - [流服务API](https://www.adobe.io/experience-platform-apis/references/flow-service/)
