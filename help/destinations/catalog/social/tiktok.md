@@ -3,9 +3,9 @@ title: TikTok连接
 description: 使用您的数据在TikTok上构建自定义受众，以便通过广告促销活动进行定位。 这些受众可能是访问您的网站或与您的内容进行交互的人。 使用Adobe与TikTok Ads Manager的实时集成，快速而安全地将所需受众从Adobe Experience Platform推送到TikTok。
 last-substantial-update: 2023-03-20T00:00:00Z
 exl-id: 7b12d17f-7d9a-4615-9830-92bffe3f6927
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: c1f54e02bbc4affb775b3dc9e95f3852dc5a8e39
 workflow-type: tm+mt
-source-wordcount: '1079'
+source-wordcount: '1144'
 ht-degree: 3%
 
 ---
@@ -40,8 +40,8 @@ TikTok支持激活下表中描述的标识。 了解有关[标识](/help/identit
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| GAID | GOOGLE ADVERTISING ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |
-| IDFA | 广告商的Apple ID | 当源身份是IDFA命名空间时，选择IDFA目标身份。 |
+| GAID | GOOGLE ADVERTISING ID | 当源身份是GAID命名空间时，选择GAID目标身份。 Adobe Experience Platform支持纯文本和SHA256哈希GAID值。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
+| IDFA | 广告商的Apple ID | 当源身份是IDFA命名空间时，选择IDFA目标身份。 Adobe Experience Platform支持纯文本和SHA256哈希IDFA值。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
 | 电话号码 | 使用SHA256算法散列的电话号码 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码，并且它们必须采用E.164格式。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
 | 电子邮件 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
 
