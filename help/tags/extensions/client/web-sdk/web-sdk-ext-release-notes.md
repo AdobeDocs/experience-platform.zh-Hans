@@ -2,17 +2,29 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 03cc702eced26453b5923bb63739c0cb739e8c8f
+source-git-commit: cf8912aea5c46b3414486f638b92eebf556528a9
 workflow-type: tm+mt
-source-wordcount: '2677'
+source-wordcount: '2733'
 ht-degree: 24%
 
 ---
 
-# Adobe Experience Platform Web SDK扩展发行说明
+
+# Web SDK扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[Experience Platform Web SDK发行说明](/help/web-sdk/release-notes.md)。
 
+## 2.31.0版 — 2025年7月24日
+
+**新增功能**
+
+- 包含Adobe Experience Platform Web SDK的[版本2.28.0](../../../../web-sdk/release-notes.md#2-28-0)。
+
+**修复和改进**
+
+- 修复了通过数据元素启用数据流覆盖时引发错误的问题。
+- 修复了空`idSyncContainerId`覆盖将引发错误的问题。
+- 解析媒体数据元素时，现在包含事件对象。
 
 ## 2.30.1版 — 2025年5月27日
 
@@ -120,15 +132,15 @@ ht-degree: 24%
 **新增功能**
 
 - 在扩展配置中添加了对[`Streaming Media Collection`](web-sdk-extension-configuration.md#streaming-media)组件的支持。
-- 为[!DNL Streaming Media Collection]功能添加了[`Send Media Event`](action-types.md#send-media-event)操作。
-- 为[!DNL Streaming Media Collection]功能添加了[`Media: Quality of Experience`](data-element-types.md#quality-experience)数据元素。
+- 为[`Send Media Event`](action-types.md#send-media-event)功能添加了[!DNL Streaming Media Collection]操作。
+- 为[`Media: Quality of Experience`](data-element-types.md#quality-experience)功能添加了[!DNL Streaming Media Collection]数据元素。
 
 包含2.20.0版本的Adobe Experience Platform Web SDK。
 
 **修复和改进**
 
 - 修复了在[更新变量](action-types.md#update-variable)操作中搜索数据元素时发生的错误。
-- 已从建议在`sendEvent`操作中使用的事件类型中删除[!UICONTROL 媒体]事件类型。
+- 已从建议在[!UICONTROL 操作中使用的事件类型中删除]媒体`sendEvent`事件类型。
 
 ## 版本2.22.0 - 2024年5月3日
 
@@ -186,7 +198,7 @@ ht-degree: 24%
 
 **新增功能**
 
-- 添加了对数据流ID[&#128279;](../../../../datastreams/overrides.md)的每命令覆盖的支持。
+- 添加了对数据流ID[的每命令](../../../../datastreams/overrides.md)覆盖的支持。
 
 **修复和改进**
 
@@ -207,7 +219,7 @@ ht-degree: 24%
 
 - 包含2.16.0版本的Adobe Experience Platform Web SDK。
 - 添加了对[数据流配置覆盖](/help/datastreams/overrides.md)的支持。
-- 向`sendEvent`命令上的`datasetId`选项添加弃用通知。
+- 向`datasetId`命令上的`sendEvent`选项添加弃用通知。
 
 **修复和改进**
 
@@ -226,7 +238,7 @@ ht-degree: 24%
 
 **修复和改进**
 
-- 修复了在使用具有标识&#x200B;**的**&#x200B;重定向操作时，导致单击锚点标记中的元素无法正常工作的问题。
+- 修复了在使用具有标识&#x200B;**[!UICONTROL 的]**&#x200B;重定向操作时，导致单击锚点标记中的元素无法正常工作的问题。
 - 修复了仅存在一个架构时，XDM对象数据元素无法工作的问题。
 - 包含Adobe Experience Platform Web SDK的版本2.15.0。
 
@@ -346,7 +358,7 @@ ht-degree: 24%
 包含 Adobe Experience Platform Web SDK 库的版本 2.4.0。
 
 - 添加了[“文档卸载”](/help/web-sdk/commands/sendevent/documentunloading.md)复选框以发送事件操作UI。
-- 在[配置默认同意](/help/web-sdk/commands/configure/defaultconsent.md)时添加了对`out`选项的支持，该默认同意会丢弃所有事件直到收到同意为止（现有`pending`选项将事件排入队列，并在收到同意后发送这些事件）。
+- 在`out`配置默认同意[时添加了对](/help/web-sdk/commands/configure/defaultconsent.md)选项的支持，该默认同意会丢弃所有事件直到收到同意为止（现有`pending`选项将事件排入队列，并在收到同意后发送这些事件）。
 - 向默认同意字段添加了工具提示。
 - 添加了对使用[`setConsent`](/help/web-sdk/commands/setconsent.md)命令时Adobe的Consent 2.0标准的支持。
 - 如果用户的访问令牌无效或配置不正确，则XDM对象数据元素UI中现在会显示更好的错误。
@@ -392,7 +404,7 @@ ht-degree: 24%
    - 删除了 `getDecisions` 命令。
    - 为 `sendEvent` 命令添加了一个 `scopes` 选项。将在 `sendEvent` 已解决的承诺中返回决策。
    - 添加了内置 `__view__` 范围，该范围将导致返回页面/视图范围的内容。（例如，Target中的VEC选件。）
-仅当`renderDecisions`设置为false时，才会从`sendEvent`命令返回这些决策。
+仅当`sendEvent`设置为false时，才会从`renderDecisions`命令返回这些决策。
    - 添加了一个 `Decisions Received` 事件，当决策可用时会触发此事件。
 - 在单个服务器调用下合并多个个性化通知。
 - 修复了每次引用数据元素时都会重置事件合并 ID 的问题。

@@ -3,18 +3,31 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；Experience Platform Web SDK；Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 5dc5e11962abf760692e0cb424cdd863d1905e87
+source-git-commit: cf8912aea5c46b3414486f638b92eebf556528a9
 workflow-type: tm+mt
-source-wordcount: '2355'
+source-wordcount: '2438'
 ht-degree: 2%
 
 ---
 
 
-# 发行说明
+# Web SDK发行说明
 
 本文档介绍Adobe Experience Platform Web SDK的发行说明。
 有关Web SDK标记扩展的最新发行说明，请参阅[Web SDK标记扩展发行说明](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md)。
+
+## 2.28.0版 — 2025年7月24日
+
+**新增功能**
+
+- 添加了对Adobe Journey Optimizer取消资格规则的支持。
+
+**修复和改进**
+
+- 修复了[Media Analytics跟踪器](commands/getmediaanalyticstracker.md)中的一个错误，该错误导致媒体对象的`length`属性错误地接受无效数据类型。
+- 改进了[身份管理](identity/overview.md)错误处理，以便在身份查找失败时正确处理promise拒绝。
+- 解决了包含HTML内容项的[个性化内容](personalization/rendering-personalization-content.md)无法呈现的问题，该问题导致与缺少`renderStatusHandler`相关的错误。
+- 修复了Activity Map [URL集合](commands/configure/clickcollectionenabled.md)以正确处理非HTTP URL。
 
 ## 2.27.0版 — 2025年5月20日
 
@@ -30,11 +43,11 @@ ht-degree: 2%
 **新增功能**
 
 - 您现在可以使用Web SDK NPM包创建自定义Web SDK内部版本，并仅选择所需的库组件。 这可以减小库大小并优化加载时间。 请参阅有关如何使用NPM包[创建自定义Web SDK内部版本的文档](install/create-custom-build.md)。
-- [`getIdentity`](commands/getidentity.md)命令现在会自动直接从`kndctr`身份Cookie中读取ECID。 如果您使用`ECID`命名空间调用`getIdentity`，并且已存在身份Cookie，则Web SDK不再向Edge Network发出获取身份的请求。 现在，它会从Cookie中读取身份。
+- [`getIdentity`](commands/getidentity.md)命令现在会自动直接从`kndctr`身份Cookie中读取ECID。 如果您使用`getIdentity`命名空间调用`ECID`，并且已存在身份Cookie，则Web SDK不再向Edge Network发出获取身份的请求。 现在，它会从Cookie中读取身份。
 
 **修复和改进**
 
-- 修复了在发送`collect`调用后`getIdentity`命令未返回标识的问题。
+- 修复了在发送`getIdentity`调用后`collect`命令未返回标识的问题。
 - 修复了个性化重定向导致内容在重定向发生之前闪烁的问题。
 
 ## 版本2.25.0 - 2025年1月23日
@@ -73,13 +86,13 @@ ht-degree: 2%
    - `Privacy`已重命名为`Consent`
 - 修复了通过[`applyPropositions`](../web-sdk/commands/applypropositions.md)呈现默认内容项时发生的错误。
 - 修复了Adobe Target移动和调整操作大小时的CSS错误。
-- 已从[`sendEvent`](../web-sdk/commands/sendevent/overview.md)响应中删除`machineLearning`键。
+- 已从`machineLearning`响应中删除[`sendEvent`](../web-sdk/commands/sendevent/overview.md)键。
 
 ## 版本2.23.0 - 2024年9月19日
 
 **新增功能**
 
-- 在[getIdentity](commands/getidentity.md#get-identity-using-the-web-sdk-javascript-library)命令中添加了对请求[核心ID](identity/overview.md#tracking-coreid-web-sdk)的支持。
+- 在[getIdentity](identity/overview.md#tracking-coreid-web-sdk)命令中添加了对请求[核心ID](commands/getidentity.md#get-identity-using-the-web-sdk-javascript-library)的支持。
 
 **修复和改进**
 
@@ -143,7 +156,7 @@ ht-degree: 2%
 
 - 添加了对从Adobe Journey Optimizer呈现应用程序内消息的支持。
 - 添加了对[页面顶部和底部事件](use-cases/top-bottom-page-events.md)的支持。
-- 向`sendEvent`命令添加了[`defaultPersonalizationEnabled`](commands/sendevent/personalization.md)选项以控制请求页面范围的范围和默认表面。
+- 向[`defaultPersonalizationEnabled`](commands/sendevent/personalization.md)命令添加了`sendEvent`选项以控制请求页面范围的范围和默认表面。
 
 **修复和改进**
 
@@ -155,7 +168,7 @@ ht-degree: 2%
 
 **新增功能**
 
-- 添加了对数据流ID[&#128279;](../datastreams/overrides.md)的每命令覆盖的支持。
+- 添加了对数据流ID[的每命令](../datastreams/overrides.md)覆盖的支持。
 
 **修复和改进**
 
@@ -234,7 +247,7 @@ ht-degree: 2%
 
 **修复和改进**
 
-- 更新了Cookie设置以在[!DNL HTTPS]页面上使用`sameSite="none"`和`secure`标记。
+- 更新了Cookie设置以在`sameSite="none"`页面上使用`secure`和[!DNL HTTPS]标记。
 - 修复了在使用`eq`伪选择器时个性化内容未正确应用的问题。
 - 修复了`localTimezoneOffset`可能无法通过Experience Platform验证的问题。
 
@@ -252,7 +265,7 @@ ht-degree: 2%
 - 添加了对跟踪[!DNL control (default)]Adobe Target体验的支持。
 - 优化了单页应用程序的查看 — 更改事件。 现在，在呈现个性化体验时，显示通知包含在查看 — 更改事件中。
 - 已移除不存在`eventType`时的控制台警告。
-- 修复了在缓存中请求或检索体验时仅从`sendEvent`命令返回`propositions`属性的问题。 `propositions`属性现在将始终定义为数组。
+- 修复了在缓存中请求或检索体验时仅从`propositions`命令返回`sendEvent`属性的问题。 `propositions`属性现在将始终定义为数组。
 - 修复了从Edge Network返回错误时，未显示隐藏容器的问题。
 - 修复了Adobe Target中未计算interact事件的问题。 通过将视图名称添加到XDM的web.webPageDetails.viewName中修复了此问题。
 - 修复控制台消息中损坏的文档链接。
@@ -277,7 +290,7 @@ ht-degree: 2%
 
 ## 版本2.6.2 - 2021年8月4日
 
-- 修复了以下问题：即使未访问`result.decisions`属性，`result.decisions`的弃用（由`sendEvent`命令提供）警告也会记录到控制台。 访问`result.decisions`属性时不会记录任何警告，但该属性仍被弃用。
+- 修复了以下问题：即使未访问`result.decisions`属性，`sendEvent`的弃用（由`result.decisions`命令提供）警告也会记录到控制台。 访问`result.decisions`属性时不会记录任何警告，但该属性仍被弃用。
 
 ## 版本2.6.1 - 2021年7月29日
 
@@ -291,13 +304,13 @@ ht-degree: 2%
 
 - 添加了对重定向个性化选件的支持。
 - 自动收集的负值视区宽度和高度将不再发送到服务器。
-- 现在，当通过从`onBeforeEventSend`回调返回`false`而取消事件时，将记录一条消息。
+- 现在，当通过从`false`回调返回`onBeforeEventSend`而取消事件时，将记录一条消息。
 - 修复了用于单个事件的特定XDM数据片段包含在多个事件中的问题。
 
 ## 版本2.4.0 - 2021年3月
 
 - SDK现在可以作为[NPM包](/help/web-sdk/install/npm.md)安装。
-- 在[配置默认同意](/help/web-sdk/commands/configure/defaultconsent.md)时添加了对`out`选项的支持，默认同意会丢弃所有事件，直到收到同意为止（现有`pending`选项将事件排入队列，并在收到同意后发送它们）。
+- 在`out`配置默认同意[时添加了对](/help/web-sdk/commands/configure/defaultconsent.md)选项的支持，默认同意会丢弃所有事件，直到收到同意为止（现有`pending`选项将事件排入队列，并在收到同意后发送它们）。
 - [`onBeforeEventSend`](/help/web-sdk/commands/configure/onbeforeeventsend.md)回调现在可用于阻止发送事件。
 - 在发送有关正在呈现或单击的个性化内容的事件时，现在使用XDM架构字段组而不是`meta.personalization`。
 - [`getIdentity`](/help/web-sdk/commands/getidentity.md)命令现在会随身份一起返回边缘区域ID。
@@ -313,7 +326,7 @@ ht-degree: 2%
 - 添加了nonce支持，以允许实施更严格的内容安全策略。
 - 添加了对单页应用程序的个性化支持。
 - 改进了与其他可能覆盖`window.console` API的页面上JavaScript代码的兼容性。
-- 错误修复： `documentUnloading`设置为`true`或自动跟踪链接点击时，未使用`sendBeacon`。
+- 错误修复： `sendBeacon`设置为`documentUnloading`或自动跟踪链接点击时，未使用`true`。
 - 错误修复：如果锚点元素包含HTML内容，则不会自动跟踪链接。
 - 错误修复：某些包含只读`message`属性的浏览器错误未得到适当处理，从而导致向客户公开其他错误。
 - 错误修复：如果iframe的SDK页面来自与父窗口的HTML页面不同的子域，则在iframe中运行HTML会导致错误。
@@ -328,6 +341,6 @@ ht-degree: 2%
 - 删除`syncIdentity`命令并支持在`sendEvent`命令中传递这些ID。
 - 支持IAB 2.0 Consent Standard。
 - 支持在`setConsent`命令中传递其他ID。
-- 支持覆盖`sendEvent`命令中的`datasetId`。
+- 支持覆盖`datasetId`命令中的`sendEvent`。
 - 支持监视挂接（[了解更多](https://github.com/adobe/alloy/wiki/Monitoring-Hooks)）
 - 在实施详细信息上下文数据中传递`environment: browser`。
