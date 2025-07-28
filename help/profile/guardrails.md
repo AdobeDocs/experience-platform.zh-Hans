@@ -5,9 +5,9 @@ product: experience platform
 type: Documentation
 description: 了解轮廓数据和分段的性能和系统强制护栏，以确保充分使用 Real-Time CDP 功能。
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: cfc221250a9c8f91b16aa1d4572263ecaf4eeccc
+source-git-commit: 1536201961211aeb747e418794196c146d86e869
 workflow-type: tm+mt
-source-wordcount: '2622'
+source-wordcount: '2636'
 ht-degree: 2%
 
 ---
@@ -18,7 +18,7 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 
 >[!IMPORTANT]
 >
->除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/cn/legal/product-descriptions.html)中的实际使用限制。
+>除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/legal/product-descriptions.html)中的实际使用限制。
 
 本文档提供了默认的使用和速率限制，帮助您为配置文件数据建模以获得最佳系统性能。 查看以下护栏时，假定您已正确建模数据。 如果您对如何建立数据模型有疑问，请联系您的客户服务代表。
 
@@ -75,7 +75,7 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --------- | ----- | ---------- | ----------- |
-| 不允许对非[!DNL XDM Individual Profile]实体使用时间序列数据 | 0 | 系统强制的护栏 | 配置文件服务中的非[!DNL XDM Individual Profile]实体不允许使用&#x200B;**时序数据。**&#x200B;如果时间序列数据集与非[!DNL XDM Individual Profile] ID关联，则不应为[!DNL Profile]启用该数据集。 |
+| 不允许对非[!DNL XDM Individual Profile]实体使用时间序列数据 | 0 | 系统强制的护栏 | 配置文件服务中的非&#x200B;**实体不允许使用[!DNL XDM Individual Profile]时序数据。**&#x200B;如果时间序列数据集与非[!DNL XDM Individual Profile] ID关联，则不应为[!DNL Profile]启用该数据集。 |
 | 无嵌套关系 | 0 | 性能护栏 | 您不应在两个非[!DNL XDM Individual Profile]架构之间创建关系。 不建议对任何不属于[!DNL Profile]合并架构的架构创建关系。 |
 | 主ID字段的JSON深度 | 4 | 性能护栏 | 主ID字段建议的最大JSON深度为4。 这意味着，在高度嵌套的架构中，如果某个字段嵌套的深度超过4级，则不应选择该字段作为主ID。 第4个嵌套级别的字段可用作主ID。 |
 
@@ -95,7 +95,7 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 | --------- | ----- | ---------- | ----------- |
 | 最大ExperienceEvent大小 | 10KB | 系统强制的护栏 | **事件的最大大小为10KB。**&#x200B;引入将继续，但大于10KB的事件将被丢弃。 |
 | 最大配置文件记录大小 | 100KB | 系统强制的护栏 | **配置文件记录的最大大小为100KB。**&#x200B;引入将继续，但大于100 KB的配置文件记录将被丢弃。 |
-| 最大配置文件片段大小 | 50MB | 系统强制的护栏 | **单个配置文件片段的最大大小为50MB。对于大于50MB的任何[配置文件片段](#profile-fragments)，**&#x200B;分段、导出和查找可能会失败。 |
+| 最大配置文件片段大小 | 50MB | 系统强制的护栏 | **单个配置文件片段的最大大小为50MB。对于大于50MB的任何**&#x200B;配置文件片段[，](#profile-fragments)分段、导出和查找可能会失败。 |
 | 最大配置文件存储大小 | 50MB | 性能护栏 | **存储配置文件的最大大小为50MB。**&#x200B;将新的[配置文件片段](#profile-fragments)添加到大于50MB的配置文件将影响系统性能。 例如，配置文件可以包含一个50MB的片段，也可以包含多个数据集的多个片段，组合总大小为50MB。 尝试存储单个片段大于50MB的配置文件，或多个片段的组合大小超过50MB的配置文件将影响系统性能。 |
 | 每天摄取的配置文件或ExperienceEvent批次数 | 90 | 性能护栏 | **每天摄取的Profile或ExperienceEvent批次的最大数量为90。**&#x200B;这意味着每天摄取的Profile和ExperienceEvent批次总数不能超过90。 摄取其他批次将影响系统性能。 |
 | 每个配置文件记录的ExperienceEvents数 | 5000 | 性能护栏 | **每个配置文件记录的最大ExperienceEvents数为5000。超过5000个ExperienceEvents的**&#x200B;配置文件在与分段一起使用时，将仅使用&#x200B;**latest** 5000个ExperienceEvents。 |
@@ -120,12 +120,12 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 | --------- | ----- | ---------- | ----------- |
 | 每个沙盒的受众 | 4000 | 性能护栏 | 每个沙盒最多可以有4000个&#x200B;**活动**&#x200B;受众。 只要每个&#x200B;**个人**&#x200B;沙盒中的受众少于4000个，则每个组织可以有4000个以上的受众。 其中包括批量、流和边缘受众。 尝试创建其他受众可能会影响系统性能。 阅读有关[通过区段生成器创建受众](/help/segmentation/ui/segment-builder.md)的更多信息。 |
 | 每个沙盒的Edge受众 | 150 | 性能护栏 | 每个沙盒最多可以有150个&#x200B;**活动**&#x200B;边缘受众。 只要每个&#x200B;**个人**&#x200B;沙盒中的边缘受众少于150个，则每个组织可以拥有超过150个边缘受众。 尝试创建其他Edge受众可能会影响系统性能。 了解有关[边缘受众](/help/segmentation/methods/edge-segmentation.md)的更多信息。 |
-| 所有沙盒中的Edge吞吐量 | 1500 RPS | 性能护栏 | Edge分段支持峰值为每秒1500个进入Adobe Experience Platform Edge Network的入站事件。 Edge分段在集客事件进入Adobe Experience Platform Edge Network后，可能需要长达350毫秒才能处理该事件。 了解有关[边缘受众](/help/segmentation/methods/edge-segmentation.md)的更多信息。 |
+| 所有沙盒中的Edge吞吐量 | 1500 RPS | 性能护栏 | Edge分段支持在生产沙盒和开发沙盒中每秒进入Adobe Experience Platform Edge Network的入站事件数合计峰值1500个。 Edge分段在集客事件进入Adobe Experience Platform Edge Network后，可能需要长达350毫秒才能处理该事件。 了解有关[边缘受众](/help/segmentation/methods/edge-segmentation.md)的更多信息。 |
 | 每个沙盒的流受众 | 500 | 性能护栏 | 每个沙盒最多可以有500个&#x200B;**活动**&#x200B;流受众。 只要每个&#x200B;**个人**&#x200B;沙盒中的流受众少于500个，则每个组织可以拥有超过500个流受众。 其中包括流受众和Edge受众。 尝试创建其他流受众可能会影响系统性能。 阅读有关[流式受众](/help/segmentation/methods/streaming-segmentation.md)的更多信息。 |
-| 流传输所有沙盒的吞吐量 | 1500 RPS | 性能护栏 | 流式分段支持每秒1500个入站事件的峰值。 流式分段最多可能需要5分钟才能使配置文件获得区段成员资格。 阅读有关[流式受众](/help/segmentation/methods/streaming-segmentation.md)的更多信息。 |
+| 流传输所有沙盒的吞吐量 | 1500 RPS | 性能护栏 | 流式分段支持您的生产和开发沙盒中每秒1500个入站事件的峰值组合。 流式分段最多可能需要5分钟才能使配置文件获得区段成员资格。 阅读有关[流式受众](/help/segmentation/methods/streaming-segmentation.md)的更多信息。 |
 | 每个沙盒的批量受众 | 4000 | 性能护栏 | 每个沙盒最多可以有4000个&#x200B;**活动**&#x200B;批次受众。 只要每个&#x200B;**个人**&#x200B;沙盒中有少于4000个批次受众，则每个组织可以有4000个以上的批次受众。 尝试创建其他批处理受众可能会影响系统性能。 |
 | 每个沙盒的帐户受众 | 50 | 系统强制的护栏 | 在一个沙盒中最多可创建50个帐户受众。 在一个沙盒中达到50个受众后，在尝试创建新帐户受众时，**[!UICONTROL 创建受众]**&#x200B;控件被禁用。 了解有关[帐户受众](/help/segmentation/types/account-audiences.md)的更多信息。 |
-| 每个沙盒已发布的合成 | 10 | 性能护栏 | 一个沙盒中最多可以有10个已发布的合成。 有关UI指南[&#128279;](/help/segmentation/ui/audience-composition.md)中受众组合的详细信息。 |
+| 每个沙盒已发布的合成 | 10 | 性能护栏 | 一个沙盒中最多可以有10个已发布的合成。 有关UI指南[中](/help/segmentation/ui/audience-composition.md)受众组合的详细信息。 |
 | 最大受众规模 | 30% | 性能护栏 | 建议的最大受众成员数为系统中配置文件总数的30%。 将超过30%的用户档案创建为成员或多个大型受众是可行的，但将影响系统性能。 |
 | 灵活的受众评估运行 | 每年50（生产沙盒）<br/>100（开发沙盒） | 系统强制的护栏 | 您每年每个&#x200B;**生产**&#x200B;沙盒最多有50次灵活的受众评估运行。 每个&#x200B;**开发**&#x200B;沙盒每年最多可运行100次灵活受众评估。 |
 | 灵活的受众评估运行 | 每天2次 | 系统强制的护栏 | 每个沙盒每天最多运行2次。 |
@@ -188,7 +188,7 @@ Dimension实体提供查找数据，可帮助和简化多实体区段定义，�
 请参阅Real-Time CDP产品描述文档中的以下文档，了解有关其他Experience Platform服务护栏、端到端延迟信息和许可信息的更多信息：
 
 * [Real-Time CDP护栏](/help/rtcdp/guardrails/overview.md)
-* [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=zh-Hans#end-to-end-latency-diagrams)。
-* [Real-Time Customer Data Platform (B2C版本 — Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams)。
+* [Real-Time Customer Data Platform (B2C Edition - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
