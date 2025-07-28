@@ -5,10 +5,10 @@ breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源引入数据。了解如何构建、标记和增强已引入的数据。
 feature: Sources
 role: Developer
-source-git-commit: 079c1d7ac790fb7df72a6127a980080bdaa49518
+source-git-commit: 44c01678e96f2649dbf731dd4531004c1df28058
 workflow-type: tm+mt
-source-wordcount: '1045'
-ht-degree: 35%
+source-wordcount: '1047'
+ht-degree: 34%
 
 ---
 
@@ -59,6 +59,7 @@ ht-degree: 35%
       - [SFTP连接器](connectors/cloud-storage/sftp.md)
       - [Amazon S3和Azure Blob连接器](connectors/cloud-storage/blob-s3.md)
    - 同意和偏好设置 {#consent}
+      - [迪多米](connectors/consent-and-preferences/didomi.md)
       - [OneTrust 集成](connectors/consent-and-preferences/onetrust.md)
    - CRM {#crm}
       - [Microsoft Dynamics 连接器](connectors/crm/ms-dynamics.md)
@@ -264,6 +265,7 @@ ht-degree: 35%
          - [SFTP](tutorials/ui/create/cloud-storage/sftp.md)
          - [Amazon S3和Blob](tutorials/ui/create/cloud-storage/blob-s3.md)
       - 同意和偏好设置 {#consent}
+         - [迪多米](tutorials/ui/create/consent-and-preferences/didomi.md)
          - [OneTrust 集成](tutorials/ui/create/consent-and-preferences/onetrust.md)
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/ui/create/crm/dynamics.md)
