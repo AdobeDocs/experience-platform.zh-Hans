@@ -5,9 +5,9 @@ title: 使用流服务API为云存储源创建数据流
 type: Tutorial
 description: 本教程涵盖了从第三方云存储检索数据，以及使用源连接器和API将数据引入Experience Platform的步骤。
 exl-id: 95373c25-24f6-4905-ae6c-5000bf493e6f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: b184319f6c5f5430a5ae1e9de4728b5074bca9b8
 workflow-type: tm+mt
-source-wordcount: '1756'
+source-wordcount: '1792'
 ht-degree: 2%
 
 ---
@@ -37,7 +37,7 @@ ht-degree: 2%
 
 ## 创建源连接 {#source}
 
-您可以在提供基本连接ID、要摄取的源文件的路径以及源对应的连接规范ID的同时，通过向[!DNL Flow Service] API的`sourceConnections`端点发出POST请求来创建源连接。
+您可以在提供基本连接ID、要摄取的源文件的路径以及源对应的连接规范ID的同时，通过向`sourceConnections` API的[!DNL Flow Service]端点发出POST请求来创建源连接。
 
 创建源连接时，还必须为数据格式属性定义一个枚举值。
 
@@ -81,7 +81,8 @@ curl -X POST \
       },
       "params": {
           "path": "/acme/summerCampaign/account.csv",
-          "type": "file"
+          "type": "file",
+          "cdcEnabled": true
       },
       "connectionSpec": {
           "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
@@ -100,6 +101,7 @@ curl -X POST \
 | `data.properties.compressionType` | （可选）一个属性，定义用于摄取的压缩文件类型。 支持的压缩文件类型为： `bzip2`、`gzip`、`deflate`、`zipDeflate`、`tarGzip`和`tar`。 **注意**： `compressionType`属性只能在引入分隔文件或JSON文件时使用。 |
 | `params.path` | 您正在访问的源文件的路径。 此参数指向单个文件或整个文件夹。  **注意**：您可以使用星号代替文件名来指定整个文件夹的摄取。 例如： `/acme/summerCampaign/*.csv`将摄取整个`/acme/summerCampaign/`文件夹。 |
 | `params.type` | 您正在摄取的源数据文件的文件类型。 使用类型`file`摄取单个文件，使用类型`folder`摄取整个文件夹。 |
+| `params.cdcEnabled` | 一个布尔值，指示是否启用更改历史记录捕获。 以下云存储源支持此属性： <ul><li>[!DNL Azure Blob]</li><li>[!DNL Data Landing Zone]</li><li>[!DNL Google Cloud Storage]</li><li>[!DNL SFTP]</li></ul> 有关详细信息，请阅读有关在源[中使用](../change-data-capture.md)更改数据捕获的指南。 |
 | `connectionSpec.id` | 与特定云存储源关联的连接规范ID。 有关连接规范ID的列表，请参阅[附录](#appendix)。 |
 
 **响应**
@@ -271,7 +273,7 @@ curl -X POST \
 
 要将源数据摄取到目标数据集中，必须首先将其映射到目标数据集所遵循的目标架构。
 
-要创建映射集，请在提供目标XDM架构`$id`和要创建的映射集的详细信息时，向[[!DNL Data Prep] API](https://developer.adobe.com/experience-platform-apis/references/data-prep/)的`mappingSets`端点发出POST请求。
+要创建映射集，请在提供目标XDM架构`mappingSets`和要创建的映射集的详细信息时，向[[!DNL Data Prep] API](https://developer.adobe.com/experience-platform-apis/references/data-prep/)的`$id`端点发出POST请求。
 
 >[!TIP]
 >
