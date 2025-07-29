@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: cf8912aea5c46b3414486f638b92eebf556528a9
+source-git-commit: 99a2bb12fb0ed8b6bb9001d25f2bddc17201c8cf
 workflow-type: tm+mt
-source-wordcount: '2733'
-ht-degree: 24%
+source-wordcount: '2801'
+ht-degree: 23%
 
 ---
 
@@ -25,6 +25,11 @@ ht-degree: 24%
 - 修复了通过数据元素启用数据流覆盖时引发错误的问题。
 - 修复了空`idSyncContainerId`覆盖将引发错误的问题。
 - 解析媒体数据元素时，现在包含事件对象。
+
+**已知问题**
+
+- 在v2.31.0版本发布后，发现了[自定义组件生成](/help/web-sdk/install/create-custom-build.md)过程的问题。 虽然自定义内部版本继续运行，但所有组件当前都包含在内部版本中，从而导致无论组件选择如何，包大小都是完整的。 正在开发此问题的修补程序。 如果您依赖自定义组件选择来最大程度地减小生成大小，则建议等待未来版本。
+
 
 ## 2.30.1版 — 2025年5月27日
 
