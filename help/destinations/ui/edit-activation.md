@@ -4,9 +4,9 @@ title: 编辑激活数据流
 type: Tutorial
 description: 按照本文中的步骤进行操作，以在Adobe Experience Platform中编辑现有的激活数据流。
 exl-id: 0d79fbff-bfde-4109-8353-c7530e9719fb
-source-git-commit: 24951f7680f134beb64c7679a94bac9b18042af1
+source-git-commit: ec87cb1c8755f52233a5725aa3bb0c80a135d60c
 workflow-type: tm+mt
-source-wordcount: '857'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,7 @@ ht-degree: 0%
 * [编辑映射的属性和身份](#edit-mapped-attributes)
 * [编辑激活计划和导出频率](#edit-schedule-frequency)
 * [添加其他数据集](#add-datasets)到激活工作流
+* [编辑激活数据流的营销操作](#edit-marketing-actions)
 * [将访问标签](#apply-access-labels)应用于导出的数据
 * [编辑激活数据流的名称和描述](#edit-names-descriptions)
 
@@ -108,6 +109,23 @@ ht-degree: 0%
 >此选项仅对支持数据集导出[的](export-datasets.md#supported-destinations)目标可见。
 
 ![Experience Platform UI图像显示“导出数据集”数据流运行选项。](../assets/ui/edit-activation/export-datasets.png)
+
+## [!BADGE Beta]{type=Informative}编辑营销操作 {#edit-marketing-actions}
+
+>[!NOTE]
+>
+>此功能当前处于&#x200B;**测试版**&#x200B;中。 要请求访问它，请联系您的Adobe代表。
+
+您可以添加或删除在最初连接到目标时设置的营销操作。
+
+在右边栏中选择&#x200B;**[!UICONTROL 编辑营销操作]**&#x200B;以打开营销操作选择屏幕。
+
+![Experience Platform UI图像显示“编辑营销操作”选项。](../assets/ui/edit-activation/edit-marketing-actions.png)
+
+选择适用的营销操作，然后选择&#x200B;**[!UICONTROL 保存]**&#x200B;以应用更改。
+
+![Experience Platform UI图像显示“编辑营销操作”屏幕。](../assets/ui/edit-activation/edit-marketing-actions-screen.png)
+
 
 ## 应用访问标签 {#apply-access-labels}
 
