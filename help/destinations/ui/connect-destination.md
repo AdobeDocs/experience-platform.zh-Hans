@@ -6,7 +6,7 @@ exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
 source-git-commit: 59ff77ff9f4a6fe147b5d8231fd3caa2550ae20e
 workflow-type: tm+mt
 source-wordcount: '1176'
-ht-degree: 0%
+ht-degree: 3%
 
 ---
 
@@ -54,7 +54,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_account_name"
 >title="帐户名称"
->abstract="输入一个名称，以帮助您将来轻松识别此目标帐户。 如果您有多个到同一目标类型的连接，这会特别有用。"
+>abstract="输入一个名称，用于将来帮助您轻松识别此目标帐户。如果您与同一个目标类型有多个连接，这个名称将特别有用。"
 
 连接到目标的第一步是向目标平台进行身份验证。
 
