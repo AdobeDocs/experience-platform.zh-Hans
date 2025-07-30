@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2025 年 7 月）
 description: Adobe Experience Platform 的 2025 年 7 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: ec87cb1c8755f52233a5725aa3bb0c80a135d60c
+source-git-commit: 2a8d5576ea937cdda70f10218b5eec35613fd264
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '1623'
+ht-degree: 25%
 
 ---
 
@@ -28,11 +28,11 @@ Adobe Experience Platform 中新功能和现有功能的更新：
 
 - [容量](#capacity)
 - [目标](#destinations)
-- [数据引入](#ingestion)
-- [查询服务](#query-service)
+- [数据引入](#data-ingestion)
+- [查询服务]&#x200B;(#query-service
 - [Real-Time CDP B2B 版](#b2b)
 - [沙盒](#sandboxes)
-- [Segmentation Service](#segmentation)
+- [Segmentation Service](#segmentation-service)
 - [源](#sources)
 
 ## 容量 {#capacity}
@@ -155,5 +155,6 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 | 功能 | 描述 |
 | --- | --- |
 | 支持使用[!DNL Flow Service] API在选定源中捕获变更数据 | 您现在可以创建数据流，以便使用源连接器为增量摄取启用变更数据捕获。 此功能允许客户为增量摄取引入更改数据类型，从而提高数据新鲜度并减少处理开销。 有关详细信息，请阅读有关[对源使用更改数据捕获](../../sources/tutorials/api/change-data-capture.md)的文档 |
+| 支持软删除[!DNL Salesforce]中的记录 | [!DNL Salesforce]源现在支持通过可选的`includeDeletedObjects`参数包含软删除记录。 如果设置为true，客户可以在其[!DNL Salesforce]查询中包含软删除记录，并将这些记录导入Experience Platform。 有关详细信息，请阅读[[!DNL Salesforce] 源文档](../../sources/connectors/crm/salesforce.md)。 |
 
 有关更多信息，请阅读[数据源概述](../../sources/home.md)。

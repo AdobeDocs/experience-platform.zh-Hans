@@ -2,16 +2,16 @@
 title: 使用Salesforce用户界面连接您的Experience Platform帐户
 description: 了解如何使用用户界面连接您的Salesforce帐户并将CRM数据引入Experience Platform。
 exl-id: b67fa4c4-d8ff-4d2d-aa76-5d9d32aa22d6
-source-git-commit: eab6303a3b420d4622185316922d242a4ce8a12d
+source-git-commit: 56307d8457ba6d0046ad80a7c97405220aa6161c
 workflow-type: tm+mt
-source-wordcount: '972'
+source-wordcount: '1003'
 ht-degree: 2%
 
 ---
 
 # 使用UI将您的[!DNL Salesforce]帐户连接到Experience Platform
 
-本教程提供了有关如何使用Experience Platform用户界面连接[!DNL Salesforce]帐户并将CRM数据引入Adobe Experience Platform的步骤。
+阅读本指南，了解如何使用Experience Platform用户界面连接您的[!DNL Salesforce]帐户并将您的CRM数据导入Adobe Experience Platform。
 
 ## 快速入门
 
@@ -58,8 +58,9 @@ ht-degree: 2%
 | 客户端 ID | 在OAuth2身份验证中，客户端ID与客户端密钥结合使用。 客户端ID和客户端密钥共同使您的应用程序能够代表您的帐户运行，方法是向[!DNL Salesforce]标识您的应用程序。 |
 | 客户端密码 | 客户端密钥与客户端ID结合使用，作为OAuth2身份验证的一部分。 客户端ID和客户端密钥共同使您的应用程序能够代表您的帐户运行，方法是向[!DNL Salesforce]标识您的应用程序。 |
 | API版本 | 您正在使用的[!DNL Salesforce]实例的REST API版本。 API版本的值必须使用小数格式设置。 例如，如果您使用的是API版本`52`，则必须以`52.0`的形式输入值。 如果此字段留空，则Experience Platform将自动使用最新可用版本。 |
+| 包括已删除的对象 | 一个布尔值，用于确定是否包括软删除的记录。 如果设置为true，软删除的记录可以包含在您的[!DNL Salesforce]查询中，并从您的帐户摄取到Experience Platform中。如果未指定配置，此值默认为`false`。 |
 
-有关为[!DNL Salesforce]使用OAuth的更多信息，请阅读有关OAuth授权流程[&#128279;](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&type=5)的[!DNL Salesforce] 指南。
+有关为[!DNL Salesforce]使用OAuth的更多信息，请阅读有关OAuth授权流程[[!DNL Salesforce] 的](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&type=5)指南。
 
 >[!ENDTABS]
 
@@ -67,13 +68,13 @@ ht-degree: 2%
 
 ## 连接您的[!DNL Salesforce]帐户
 
-在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
+在Experience Platform UI中，从左侧菜单导航到&#x200B;**[!UICONTROL 源]**&#x200B;以打开[!UICONTROL 源]工作区。 使用左侧的目录浏览类别，或使用搜索栏快速查找要连接的源。
 
-在&#x200B;*[!UICONTROL CRM]*&#x200B;类别下选择&#x200B;**[!DNL Salesforce]**，然后选择&#x200B;**[!UICONTROL 添加数据]**。
+在&#x200B;**[!DNL Salesforce]** CRM *[!UICONTROL 类别下选择]*，然后选择&#x200B;**[!UICONTROL 添加数据]**。
 
 >[!TIP]
 >
->当给定的源尚未具有经过身份验证的帐户时，源目录中的源会显示&#x200B;**[!UICONTROL 设置]**&#x200B;选项。 一旦存在经过身份验证的帐户，此选项将更改为&#x200B;**[!UICONTROL 添加数据]**。
+>在源目录中，如果未连接任何帐户，您将看到&#x200B;**[!UICONTROL 设置]**；如果帐户已经过身份验证，您将看到&#x200B;**[!UICONTROL 添加数据]**。
 
 ![已选择Salesforce源卡的Experience Platform UI上的源目录。](../../../../images/tutorials/create/salesforce/catalog.png)
 
@@ -116,10 +117,11 @@ ht-degree: 2%
 * 客户端 ID
 * 客户端密码
 * API版本
+* 包括删除对象
 
 完成后，选择&#x200B;**[!UICONTROL 连接到源]**。
 
-![用于创建Salesforce帐户的OAuth接口。](../../../../images/tutorials/create/salesforce/oauth2.png)
+![用于创建Salesforce帐户的OAuth接口。](../../../../images/tutorials/create/salesforce/oauth.png)
 
 >[!ENDTABS]
 
