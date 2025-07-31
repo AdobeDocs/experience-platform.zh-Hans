@@ -1,9 +1,9 @@
 ---
 title: 将Didomi连接到Experience Platform
 description: 了解如何使用UI将您的Didomi帐户连接到Experience Platform。
-hide: true
-hidefromtoc: true
-source-git-commit: 44c01678e96f2649dbf731dd4531004c1df28058
+last-substantial-update: 2025-07-29T00:00:00Z
+exl-id: 1374574f-c8ba-4cf5-bad0-94a884f5c0a6
+source-git-commit: 7596a87309105897a2727faa8e22b06cdf5547c3
 workflow-type: tm+mt
 source-wordcount: '1142'
 ht-degree: 3%
