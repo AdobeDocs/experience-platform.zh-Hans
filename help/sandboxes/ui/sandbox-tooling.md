@@ -2,9 +2,9 @@
 title: 沙盒工具
 description: 在沙盒之间无缝导出和导入沙盒配置。
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: b5330e10dc8b395d1ef299073182c836f5c3af7f
+source-git-commit: a3db2b69400a43abe399f90036041aaeaf0bd0a0
 workflow-type: tm+mt
-source-wordcount: '3414'
+source-wordcount: '3496'
 ht-degree: 5%
 
 ---
@@ -24,6 +24,17 @@ ht-degree: 5%
 沙盒工具功能允许您将[!DNL Adobe Real-Time Customer Data Platform]和[!DNL Adobe Journey Optimizer]对象导出到包中。
 
 ### 实时客户数据平台对象 {#real-time-cdp-objects}
+
+>[!BEGINSHADEBOX]
+
+### 对多实体受众导入的更改
+
+在[B2B架构升级](../../rtcdp/b2b-architecture-upgrade.md)后，如果在升级之前发布了包含这些受众的包，则您将无法再导入具有B2B属性和体验事件的多实体受众。 这些受众将无法导入，且无法自动转换为新架构。
+
+要解决此限制，您必须创建一个具有更新受众的新包，然后使用沙盒工具将它们导入各自的目标沙盒中。
+
+
+>[!ENDSHADEBOX]
 
 下表列出了当前支持沙盒工具的[!DNL Adobe Real-Time Customer Data Platform]对象：
 
@@ -54,12 +65,12 @@ ht-degree: 5%
 | [!DNL Adobe Journey Optimizer] | 受众 | | 受众可以复制为历程对象的依赖对象。 您可以选择创建新受众，也可以重复使用目标沙盒中的现有受众。 |
 | [!DNL Adobe Journey Optimizer] | 架构 | | 历程中使用的架构可以作为依赖对象复制。 您可以选择创建新架构或重用目标沙盒中的现有架构。 |
 | [!DNL Adobe Journey Optimizer] | 合并策略 | | 历程中使用的合并策略可以作为依赖对象复制。 在目标沙盒中，您&#x200B;**无法**&#x200B;创建新的合并策略，您只能使用现有的合并策略。 |
-| [!DNL Adobe Journey Optimizer] | 历程 | 历程中使用的以下对象将作为依赖对象复制。 在导入工作流期间，您可以选择&#x200B;**[!UICONTROL 新建]**&#x200B;或&#x200B;**[!UICONTROL 对以下各项使用现有]**： <ul><li>受众</li><li>架构</li><li>自定义操作</li><li>活动</li><li>片段</li><li>内容模板</li><li>画布详细信息</li></ul> | <ul><li>**[!UICONTROL 自定义操作]**：在将历程复制到另一个沙盒时，在导入过程中选择&#x200B;**[!UICONTROL 使用现有]**&#x200B;时，您选择的现有自定义操作&#x200B;**必须**&#x200B;与源自定义操作相同。 如果两者不同，则新历程将具有无法解决的错误。</li><li>旅程中使用的事件和事件详细信息已复制。 它始终会在目标沙盒中创建新版本。</li></ul> |
+| [!DNL Adobe Journey Optimizer] | 历程 | 历程中使用的以下对象将作为依赖对象复制。 在导入工作流期间，您可以选择&#x200B;**[!UICONTROL 新建]**&#x200B;或&#x200B;**[!UICONTROL 对以下各项使用现有]**： <ul><li>受众</li><li>画布详细信息</li><li>内容模板</li><li>自定义操作</li><li>数据源</li><li>活动</li><li>字段组</li><li>片段</li><li>架构</li></ul> | 当您在导入过程中选择&#x200B;**[!UICONTROL 使用现有]**&#x200B;将历程复制到另一个沙盒时，您选择的现有自定义操作&#x200B;**必须**&#x200B;与源自定义操作完全匹配。 如果两者不匹配，新历程将生成无法解决的错误。<br>系统复制历程中使用的事件和事件详细信息，并在目标沙盒中创建新版本。 |
 | [!DNL Adobe Journey Optimizer] | 操作 | | 历程中使用的电子邮件和推送消息可以作为依赖对象复制。 不检查消息中用于个性化的历程字段中使用的渠道操作活动的完整性。 不会复制内容块。<br><br>可以复制历程中使用的更新配置文件操作。 自定义操作可以单独添加到资源包中。 旅程中使用的操作详细信息也会被复制。 它始终会在目标沙盒中创建新版本。 |
 | [!DNL Adobe Journey Optimizer] | 自定义操作 |  | 自定义操作可以单独添加到资源包中。 将自定义操作分配给历程后，便无法再编辑它。 要更新自定义操作，您应： <ul><li>在迁移历程之前移动自定义操作</li><li>在迁移后更新自定义操作的配置（如请求标头、查询参数和身份验证）</li><li>使用您在第一步中添加的自定义操作迁移历程对象</li></ul> |
 | [!DNL Adobe Journey Optimizer] | 内容模板 | | 内容模板可以作为历程对象的依赖对象复制。 通过独立模板，可轻松地在Journey Optimizer营销活动和历程中重用自定义内容。 |
 | [!DNL Adobe Journey Optimizer] | 片段 | 所有嵌套片段。 | 片段可以作为历程对象的依赖对象复制。 片段是可重用的组件，可以在各个Journey Optimizer营销活动和历程中的一个或多个电子邮件中引用。 |
-| [!DNL Adobe Journey Optimizer] | 营销活动 | 促销活动中使用的以下对象将作为从属对象复制： <ul><li>营销活动</li><li>受众</li><li>架构</li><li>内容模板</li><li>片段</li><li>消息/内容</li><li>渠道配置</li><li>统一的决策对象</li><li>试验设置/变体</li></ul> | <ul><li>营销活动可与所有与用户档案、受众、架构、内联消息和依赖对象相关的项目一起复制。 不会复制某些项目，例如数据使用标签和语言设置。 有关无法复制的对象的完整列表，请参阅[将对象导出到另一个沙盒](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox)指南。</li><li>如果存在相同的配置，系统将自动检测并重新使用目标沙盒中的现有渠道配置对象。 如果未找到匹配的配置，则在导入期间跳过渠道配置，并且用户必须手动更新此历程的目标沙盒中的渠道设置。</li><li>用户可以重复使用目标沙盒中的现有试验和受众作为所选营销活动的依赖对象。</li></ul> |
+| [!DNL Adobe Journey Optimizer] | 营销活动 | 促销活动中使用的以下对象将作为从属对象复制： <ul><li>营销活动</li><li>受众</li><li>架构</li><li>内容模板</li><li>片段</li><li>消息/内容</li><li>渠道配置</li><li>统一的决策对象</li><li>试验设置/变体</li></ul> | <ul><li>营销活动可与所有与用户档案、受众、架构、内联消息和依赖对象相关的项目一起复制。 不会复制某些项目，例如数据使用标签和语言设置。 有关无法复制的对象的完整列表，请参阅[将对象导出到另一个沙盒](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox)指南。</li><li>如果存在相同的配置，系统将自动检测并重新使用目标沙盒中的现有渠道配置对象。 如果未找到匹配的配置，则在导入期间跳过渠道配置，并且用户必须手动更新此历程的目标沙盒中的渠道设置。</li><li>用户可以重复使用目标沙盒中的现有试验和受众作为所选营销活动的依赖对象。</li></ul> |
 
 曲面（例如预设）不会被复制。 系统根据消息类型和表面名称，自动选择目标沙盒上最接近的匹配项。 如果在目标沙盒上未找到表面，则表面复制将失败，导致消息复制失败，因为消息需要表面才可供设置。 在这种情况下，需要为消息的正确渠道至少创建一个表面，以便副本正常工作。
 
@@ -126,7 +137,7 @@ ht-degree: 5%
 >
 >发布后，无法更改包的内容。 要避免出现兼容性问题，请确保已选择所有必要的资源。 如果必须进行更改，则需要创建新资源包。
 
-您返回到[!UICONTROL 沙盒]环境中的&#x200B;**[!UICONTROL 包]**&#x200B;选项卡，您可以在其中查看新发布的包。
+您返回到&#x200B;**[!UICONTROL 沙盒]**&#x200B;环境中的[!UICONTROL 包]选项卡，您可以在其中查看新发布的包。
 
 ![突出显示新发布的包的沙盒包列表。](../images/ui/sandbox-tooling/published-packages.png)
 
@@ -185,9 +196,9 @@ ht-degree: 5%
 
 要导出整个沙盒，请导航到[!UICONTROL 沙盒] **[!UICONTROL 包]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 创建包]**。
 
-![沙盒] **[!UICONTROL 包]**&#x200B;选项卡突出显示[!UICONTROL 创建包]。(../images/ui/sandbox-tooling/create-sandbox-package.png)
+![沙盒包&#x200B;**[!UICONTROL 选项卡突出显示]**&#x200B;创建包[!UICONTROL 。]](../images/ui/sandbox-tooling/create-sandbox-package.png)
 
-在[!UICONTROL 创建包]对话框中，为[!UICONTROL 包类型]选择&#x200B;**[!UICONTROL 整个沙盒]**。 为您的新包提供[!UICONTROL 包名称]，然后从下拉列表中选择&#x200B;**[!UICONTROL 沙盒]**。 最后，选择&#x200B;**[!UICONTROL 创建]**&#x200B;以确认您的条目。
+在&#x200B;**[!UICONTROL 创建包]**&#x200B;对话框中，为[!UICONTROL 包类型]选择[!UICONTROL 整个沙盒]。 为您的新包提供[!UICONTROL 包名称]，然后从下拉列表中选择&#x200B;**[!UICONTROL 沙盒]**。 最后，选择&#x200B;**[!UICONTROL 创建]**&#x200B;以确认您的条目。
 
 ![ [!UICONTROL 创建包]对话框显示已完成的字段并突出显示[!UICONTROL 创建]。](../images/ui/sandbox-tooling/create-package-dialog.png)
 
@@ -195,7 +206,7 @@ ht-degree: 5%
 
 ![突出显示新发布的包的沙盒包列表。](../images/ui/sandbox-tooling/publish-entire-sandbox-packages.png)
 
-您返回到[!UICONTROL 沙盒]环境中的&#x200B;**[!UICONTROL 包]**&#x200B;选项卡，您可以在其中查看新发布的包。
+您返回到&#x200B;**[!UICONTROL 沙盒]**&#x200B;环境中的[!UICONTROL 包]选项卡，您可以在其中查看新发布的包。
 
 ### 导入整个沙盒包 {#import-entire-sandbox-package}
 
@@ -345,7 +356,7 @@ Use the arrows to expand objects to view the full list of fields that have been 
 
 以下视频旨在支持您了解沙盒工具，并概述如何创建新包、发布包和导入包。
 
->[!VIDEO](https://video.tv.adobe.com/v/3446099/?learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/3424763/?learn=on)
 
 ## 后续步骤
 
