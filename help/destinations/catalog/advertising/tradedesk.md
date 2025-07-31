@@ -3,10 +3,10 @@ keywords: 广告；交易台；广告交易台
 title: 交易台连接
 description: Trade Desk是一个自助服务平台，供广告购买者跨显示器、视频和移动库存源执行重定位和面向受众的数字活动。
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 0954b5f22d609b0b12352de70f6c618cc88757c8
 workflow-type: tm+mt
-source-wordcount: '781'
-ht-degree: 3%
+source-wordcount: '1026'
+ht-degree: 4%
 
 ---
 
@@ -14,11 +14,19 @@ ht-degree: 3%
 
 ## 概述 {#overview}
 
+>[!IMPORTANT]
+>
+>* 从2025年7月31日开始，您可以在目标目录中并排看到两张&#x200B;**[!DNL The Trade Desk]**&#x200B;信息卡。 这是由于目标服务内部升级造成的。现有的&#x200B;**[!DNL The Trade Desk]**&#x200B;目标连接器已重命名为&#x200B;**[!UICONTROL （已弃用）交易台]**&#x200B;和名称为&#x200B;**[!UICONTROL 交易台]**&#x200B;的新卡现在可供您使用。
+>* 使用目录中的新&#x200B;**[!UICONTROL 交易台]**&#x200B;连接获取新的激活数据流。 如果您有任何到&#x200B;**[!UICONTROL （已弃用）交易台]**&#x200B;目标的活动数据流，则将自动更新它们，因此您无需执行任何操作。
+>* 如果您是通过[流服务API](https://developer.adobe.com/experience-platform-apis/references/destinations/)创建数据流，则必须将[!DNL flow spec ID]和[!DNL connection spec ID]更新为以下值：
+>   * 流量规范 ID：`86134ea1-b014-49e8-8bd3-689f4ce70578`
+>   * 连接规范 ID：`1029798b-a97f-4c21-81b2-e0301471166e`
+
 使用此目标连接器将配置文件数据发送到[!DNL The Trade Desk]。 此连接器将数据发送到[!DNL The Trade Desk]第一方终结点。 Adobe Experience Platform与[!DNL The Trade Desk]之间的集成不支持将数据导出到[!DNL The Trade Desk]第三方端点。
 
 [!DNL The Trade Desk]是一个自助服务平台，供广告购买者跨显示、视频和移动库存源执行重定位和面向受众的数字营销活动。
 
-若要将配置文件数据发送到[!DNL Trade Desk]，您必须先连接到目标，如本页的以下部分所述。
+若要将配置文件数据发送到[!DNL The Trade Desk]，您必须先连接到目标，如本页的以下部分所述。
 
 ## 用例 {#use-cases}
 
@@ -28,11 +36,16 @@ ht-degree: 3%
 
 [!DNL The Trade Desk]支持根据下表所示的标识激活受众。 了解有关[标识](/help/identity-service/features/namespaces.md)的更多信息。
 
-| 身份标识 | 描述 |
-|---|---|
-| GAID | [!DNL Google Advertising ID] |
-| IDFA | [!DNL Apple ID for Advertisers] |
-| 交易台ID | 交易台平台中的广告商ID |
+以下是[!DNL The Trade Desk]目标支持的标识。 这些标识可用于激活[!DNL The Trade Desk]的受众。
+
+下表中的所有标识都是强制映射。
+
+| 目标身份 | 描述 | 注意事项 |
+|---|---|---|
+| GAID | GOOGLE ADVERTISING ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |
+| IDFA | 广告商的Apple ID | 当源身份是IDFA命名空间时，选择IDFA目标身份。 |
+| ECID | Experience Cloud ID | 此身份是集成正常工作的必备条件，但不会用于受众激活。 |
+| 交易台ID | [!DNL The Trade Desk]平台中的广告商ID | 在根据交易台的专有ID激活受众时，请使用此标识。 |
 
 {style="table-layout:auto"}
 
@@ -62,7 +75,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->如果您希望使用[!DNL The Trade Desk]创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/zh-hans/docs/id-service/using/id-service-api/methods/idsync)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL The Trade Desk]集成，则您设置的ID同步将会转移到Experience Platform。
+>如果您希望使用[!DNL The Trade Desk]创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/en/docs/id-service/using/id-service-api/methods/idsync)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL The Trade Desk]集成，则您设置的ID同步将会转移到Experience Platform。
 
 ## 连接到目标 {#connect}
 
@@ -78,14 +91,15 @@ ht-degree: 3%
 
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
-* **[!UICONTROL 帐户ID]**：您的[!DNL Trade Desk] [!UICONTROL 帐户ID]。
-* **[!UICONTROL 服务器位置]**：询问您的[!DNL Trade Desk]代表您应该使用哪个区域服务器。 以下是可供您选择的可用区域服务器：
-   * **[!UICONTROL 欧洲]**
-   * **[!UICONTROL 新加坡]**
+* **[!UICONTROL 帐户ID]**：您的[!DNL The Trade Desk] [!UICONTROL 帐户ID]。
+* **[!UICONTROL 服务器位置]**：询问您的[!DNL The Trade Desk]代表您应该使用哪个区域服务器。 以下是可供您选择的可用区域服务器：
+
+   * **[!UICONTROL APAC]**
+   * **[!UICONTROL 中国]**
    * **[!UICONTROL 东京]**
-   * **[!UICONTROL 北美东部]**
-   * **[!UICONTROL 北美西部]**
-   * **[!UICONTROL 拉丁美洲]**
+   * **[!UICONTROL 英国/欧盟]**
+   * **[!UICONTROL 美国东岸]**
+   * **[!UICONTROL 美国西海岸]**
 
 ### 启用警报 {#enable-alerts}
 
@@ -106,10 +120,19 @@ ht-degree: 3%
 
 在映射受众时，Adobe建议您使用Experience Platform受众名称或其更短的形式，以便轻松使用。 但是，目标中的受众ID或名称不需要与Experience Platform帐户中的受众ID或名称匹配。 您在映射字段中插入的任何值都将反映在目标中。
 
-如果您使用多个设备映射(Cookie ID， [!DNL IDFA]， [!DNL GAID])，请确保对所有三个映射使用相同的映射值。 [!DNL The Trade Desk]将把所有此类数据聚合到单个区段中，并带有设备级别的细分。
+### 强制映射 {#mandatory-mappings}
 
-![区段映射ID](../../assets/common/segment-mapping-id.png)
+[支持的标识](#supported-identities)部分中描述的所有目标标识都是必需的，必须在受众激活过程中映射。 这包括：
+
+* **GAID** (Google Advertising ID)
+* **IDFA** (广告商的Apple ID)
+* **ECID** (Experience Cloud ID)
+* **交易台ID**
+
+未能映射所有必需的标识将阻止成功将受众激活到[!DNL The Trade Desk]。 每个标识在集成中均用于特定目的，而目标需要所有这些标识才能正常工作。
+
+![显示必需映射的屏幕截图](../../assets/catalog/advertising/tradedesk/mandatory-mappings.png)
 
 ## 导出的数据 {#exported-data}
 
-要验证数据是否已成功导出到[!DNL The Trade Desk]目标，请检查您的[!DNL Trade Desk]帐户。 如果激活成功，则会在您的帐户中填充受众。
+要验证数据是否已成功导出到[!DNL The Trade Desk]目标，请检查您的[!DNL The Trade Desk]帐户。 如果激活成功，则会在您的帐户中填充受众。
