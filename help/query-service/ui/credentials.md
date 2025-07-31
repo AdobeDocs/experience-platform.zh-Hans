@@ -176,7 +176,7 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 >[!NOTE]
 >
 >使用未过期的凭据连接到主机时，仍需要使用[!UICONTROL 过期凭据]部分中列出的所有参数，但密码和用户名除外。
->>输入用户名和密码的格式使用冒号分隔值，如本示例`username:{your_username}`和`password:{password_string}`所示。
+>&#x200B;>输入用户名和密码的格式使用冒号分隔值，如本示例`username:{your_username}`和`password:{password_string}`所示。
 
 | 参数 | 描述 | 示例 |
 |---|---|---|
