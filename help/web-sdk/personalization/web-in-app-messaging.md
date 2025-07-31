@@ -21,7 +21,7 @@ ht-degree: 0%
 >
 >Web应用程序内消息传送是[Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=zh-Hans)功能，它使用Web SDK提供个性化内容。
 >
->有关如何配置Web应用程序内消息传送活动的详细说明，请参阅[Adobe Journey Optimizer文档](https://experienceleague.adobe.com/docs/journey-optimizer/using/in-app/create-in-app-web.html)。
+>有关如何配置Web应用程序内消息传送活动的详细说明，请参阅[Adobe Journey Optimizer文档](https://experienceleague.adobe.com/docs/journey-optimizer/using/in-app/create-in-app-web.html?lang=zh-Hans)。
 
 
 ## 先决条件 {#prerequisites}
@@ -184,5 +184,5 @@ Web应用程序内消息传送支持两种类型的触发器：
 
 在[Web SDK配置](../commands/configure/overview.md)中，根据需要设置`personalizationStorageEnabled`选项：
 
-* `personalizationStorageEnabled: true`将按您在[Adobe Journey Optimizer促销活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/in-app/create-in-app-web.html#configure-inapp)中定义的频率触发应用程序内消息。
+* `personalizationStorageEnabled: true`将按您在[Adobe Journey Optimizer促销活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/in-app/create-in-app-web.html?lang=zh-Hans#configure-inapp)中定义的频率触发应用程序内消息。
 * 每次加载页面时，`personalizationStorageEnabled: false`都会触发应用程序内消息。

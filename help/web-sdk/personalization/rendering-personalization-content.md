@@ -16,7 +16,7 @@ Adobe Experience Platform Web SDK支持从Adobe个性化解决方案中检索个
 
 此外，Web SDK还通过Adobe Experience Platform个性化目标(如[Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md)和[自定义个性化连接](../../destinations/catalog/personalization/custom-personalization.md))支持同页和下一页个性化功能。 要了解如何为同页和下一页个性化配置Experience Platform，请参阅[专用指南](../../destinations/ui/activate-edge-personalization-destinations.md)。
 
-在Adobe Target的[可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)和Adobe Journey Optimizer的[Web Campaign UI](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html)中创建的内容可由SDK自动检索和渲染。 在Adobe Target的[基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html)、Adobe Journey Optimizer的[基于代码的体验渠道](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based)或Offer Decisioning中创建的内容，无法由SDK自动呈现。 相反，您必须使用SDK请求此内容，然后自行手动渲染内容。
+在Adobe Target的[可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=zh-Hans)和Adobe Journey Optimizer的[Web Campaign UI](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html?lang=zh-Hans)中创建的内容可由SDK自动检索和渲染。 在Adobe Target的[基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=zh-Hans)、Adobe Journey Optimizer的[基于代码的体验渠道](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/code-based-experience/get-started-code-based)或Offer Decisioning中创建的内容，无法由SDK自动呈现。 相反，您必须使用SDK请求此内容，然后自行手动渲染内容。
 
 ## 自动呈现内容 {#automatic}
 
@@ -341,7 +341,7 @@ alloy("applyPropositions", {
 
 ### 用例2：没有选择器的渲染建议
 
-此使用案例适用于使用[!DNL Target Form-based Experience Composer]或Adobe Journey Optimizer的[基于代码的体验渠道](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based)创作的体验。
+此使用案例适用于使用[!DNL Target Form-based Experience Composer]或Adobe Journey Optimizer的[基于代码的体验渠道](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/code-based-experience/get-started-code-based)创作的体验。
 
 必须在`applyPropositions`调用中提供选择器、操作和范围。
 

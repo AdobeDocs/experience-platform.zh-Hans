@@ -68,7 +68,7 @@ window.adobe.target.init(window, document, {
 });
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetgobalsettings.html)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetgobalsettings.html?lang=zh-Hans)
 
 
 ### 配置Web SDK
@@ -83,7 +83,7 @@ window.adobe.target.init(window, document, {
 
 ### 使用Web SDK
 
-SDK可以自动检索和渲染在Adobe Target的[可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)中创建的内容。
+SDK可以自动检索和渲染在Adobe Target的[可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=zh-Hans)中创建的内容。
 
 要请求并自动呈现Target选件，请使用`sendEvent`命令并将`renderDecisions`选项设置为`true`。 这样做会强制SDK自动呈现任何符合自动呈现条件的个性化内容。
 
@@ -215,7 +215,7 @@ adobe.target.getOffers({
 .catch(console.error);
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/cmp-atjs-functions.html)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/cmp-atjs-functions.html?lang=zh-Hans)
 
 ### 使用Web SDK
 
@@ -300,7 +300,7 @@ adobe.target.getOffers({
 .catch(console.error);
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/cmp-atjs-functions.html)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/cmp-atjs-functions.html?lang=zh-Hans)
 
 
 ### 使用Web SDK
@@ -438,7 +438,7 @@ adobe.target.getOffers({...})
   .catch(error => console.log("Error", error));
 ```
 
-从`applyOffers`专用文档[了解有关](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-applyoffers-atjs-2.html)命令的更多信息。
+从`applyOffers`专用文档[了解有关](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-applyoffers-atjs-2.html?lang=zh-Hans)命令的更多信息。
 
 
 ### 使用Web SDK
@@ -490,7 +490,7 @@ adobe.target.sendNotifications({
 });
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-trackevent.html)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-trackevent.html?lang=zh-Hans)
 
 ### 使用Web SDK
 
@@ -665,7 +665,7 @@ alloy("sendEvent", {
 adobe.target.triggerView("homeView")
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-triggerview-atjs-2.html)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-triggerview-atjs-2.html?lang=zh-Hans)
 
 
 ### 使用Web SDK
@@ -691,7 +691,7 @@ alloy("sendEvent", {
 
 ## 如何利用响应令牌
 
-从Adobe Target返回的Personalization内容包括[响应令牌](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)，这些令牌包含有关活动、选件、体验、用户配置文件、地理信息等的详细信息。 这些详细信息可与第三方工具共享或用于调试。 响应令牌可在Adobe Target用户界面中配置。
+从Adobe Target返回的Personalization内容包括[响应令牌](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=zh-Hans)，这些令牌包含有关活动、选件、体验、用户配置文件、地理信息等的详细信息。 这些详细信息可与第三方工具共享或用于调试。 响应令牌可在Adobe Target用户界面中配置。
 
 ### 使用at.js
 
@@ -705,7 +705,7 @@ document.addEventListener(adobe.target.event.REQUEST_SUCCEEDED, function(e) {
 }); 
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=zh-Hans)
 
 
 ### 使用Web SDK
@@ -714,7 +714,7 @@ document.addEventListener(adobe.target.event.REQUEST_SUCCEEDED, function(e) {
 >
 >确保您使用的是Experience Platform Web SDK版本2.6.0或更高版本。
 
-响应令牌作为`propositions`的一部分返回，在`sendEvent`命令的结果中公开。 每个建议都包含一个由`items`组成的数组，并且如果在Target管理UI中启用了响应令牌，则每个项目都将有一个用响应令牌填充的`meta`对象。 [了解详情](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)
+响应令牌作为`propositions`的一部分返回，在`sendEvent`命令的结果中公开。 每个建议都包含一个由`items`组成的数组，并且如果在Target管理UI中启用了响应令牌，则每个项目都将有一个用响应令牌填充的`meta`对象。 [了解详情](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=zh-Hans)
 
 **示例**
 
@@ -880,7 +880,7 @@ Analytics有效负载（`tnta`令牌）应包含在使用[数据插入API](https
 
 ![显示Analytics服务器端日志记录工作流的图表](assets/a4t-server-side-atjs.png)
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4timplementation.html)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4timplementation.html?lang=zh-Hans)
 
 ### 使用Web SDK
 
@@ -964,7 +964,7 @@ window.targetGlobalSettings = {
 };
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetgobalsettings.html)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetgobalsettings.html?lang=zh-Hans)
 
 ### 使用Web SDK
 
@@ -1064,7 +1064,7 @@ adobe.target.getOffers({
 .catch(console.error);
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-getoffers-atjs-2.html)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-getoffers-atjs-2.html?lang=zh-Hans)
 
 
 ### 使用Web SDK
@@ -1144,7 +1144,7 @@ window.targetPageParams = function() {
 };
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetpageparams.html)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetpageparams.html?lang=zh-Hans)
 
 ### 使用Web SDK
 

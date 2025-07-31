@@ -119,11 +119,11 @@ Adobe Experience Cloud解决方案以各种方式利用用户代理字符串。
 
 ### Adobe Analytics报告依赖于高熵客户端提示 {#analytics}
 
-[操作系统](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-systems.html)维度包括作为高熵客户端提示存储的操作系统版本。 如果未启用高熵客户端提示，则对于从Chromium浏览器收集的点击，操作系统版本可能不准确。
+[操作系统](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-systems.html?lang=zh-Hans)维度包括作为高熵客户端提示存储的操作系统版本。 如果未启用高熵客户端提示，则对于从Chromium浏览器收集的点击，操作系统版本可能不准确。
 
 ### 依赖高熵客户端提示的Audience Manager特征 {#aam}
 
-[!DNL Google]已更新[!DNL Chrome]浏览器功能以最小化通过`User-Agent`标头收集的信息。 因此，使用[DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=zh-Hans)的Audience Manager客户将不再收到基于[平台级别密钥](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-device-targeting.html)的特征的可靠信息。
+[!DNL Google]已更新[!DNL Chrome]浏览器功能以最小化通过`User-Agent`标头收集的信息。 因此，使用[DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=zh-Hans)的Audience Manager客户将不再收到基于[平台级别密钥](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-device-targeting.html?lang=zh-Hans)的特征的可靠信息。
 
 使用平台级别密钥进行定位的Audience Manager客户必须切换到[Experience Platform Web SDK](/help/web-sdk/home.md)，而不是[DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=zh-Hans)，并启用[高熵客户端提示](#enabling-high-entropy-client-hints)以继续接收可靠的特征数据。
 
