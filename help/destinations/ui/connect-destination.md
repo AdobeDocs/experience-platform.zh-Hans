@@ -3,10 +3,10 @@ title: 创建新的目标连接
 type: Tutorial
 description: 了解如何在Adobe Experience Platform中连接到目标、启用警报以及为连接的目标设置营销操作。
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
-source-git-commit: 59ff77ff9f4a6fe147b5d8231fd3caa2550ae20e
+source-git-commit: ec6f055de02610e23f30051c4fed4f362e9fbc53
 workflow-type: tm+mt
-source-wordcount: '1176'
-ht-degree: 3%
+source-wordcount: '1280'
+ht-degree: 2%
 
 ---
 
@@ -54,15 +54,24 @@ ht-degree: 3%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_account_name"
 >title="帐户名称"
->abstract="输入一个名称，用于将来帮助您轻松识别此目标帐户。如果您与同一个目标类型有多个连接，这个名称将特别有用。"
+>abstract="输入一个名称，用于将来帮助您轻松识别此目标帐户。如果您有多个到同一目标的连接，此操作会特别有用。"
 
 连接到目标的第一步是向目标平台进行身份验证。
 
-根据您连接到的目标，系统可能会将您带到目标合作伙伴的页面进行身份验证，或者可能会要求您直接在Experience Platform工作流中输入身份验证凭据。 以下是验证[!DNL Amazon S3]目标所需的输入示例。 每个目标文档页面中都提供了有关所需输入的详细说明（例如，请参阅[[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#authenticate)和[[!DNL Facebook]](/help/destinations/catalog/social/facebook.md#authenticate)的身份验证部分）。
+根据您连接到的目标，系统可能会将您带到目标合作伙伴的页面进行身份验证，或者可能会要求您直接在Experience Platform工作流中输入身份验证凭据。
+
+在设置新的目标连接时，必须提供&#x200B;**[!UICONTROL 帐户名]**&#x200B;和&#x200B;**[!UICONTROL 描述]**（可选）。 这些字段适用于所有目标。
+
+* **[!UICONTROL 帐户名称]**：输入一个名称，以便将来轻松识别此目标帐户。 如果您有多个到同一目标的连接，此操作会特别有用。
+* **[!UICONTROL 描述]**（可选）：添加任何有助于您或您的团队区分帐户的其他详细信息，例如连接的目的或相关的业务上下文。
+
+在这些字段中提供清楚且具有描述性的信息，使您能够更轻松地在激活受众时管理和选择正确的目标帐户。
+
+以下是验证[!DNL Amazon S3]目标所需的输入示例。 每个目标文档页面中都提供了有关所需输入的详细说明（例如，请参阅[[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#authenticate)和[[!DNL Facebook]](/help/destinations/catalog/social/facebook.md#authenticate)的身份验证部分）。
 
 **[!DNL Amazon S3]必需的和可选的身份验证参数**
 
-![在对目标Amazon S3进行身份验证时显示必需输入参数和可选输入参数的图像。](../assets/ui/connect-destinations/authenticate-amazon-s3-example.png)
+![在对目标Amazon S3进行身份验证时显示必需输入参数和可选输入参数的图像。](../assets/ui/connect-destinations/s3-new-acc.png)
 
 ## 设置连接参数 {#set-up-connection-parameters}
 

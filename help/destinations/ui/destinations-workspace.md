@@ -3,9 +3,9 @@ keywords: 平台；目标；目标工作区；工作区；ui；目标ui；目录
 title: 目标工作区
 description: 目标工作区包括五个部分：“概述”、“目录”、“浏览”、“帐户”和“系统视图”。 以下各节对这些要求进行了说明。
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: a0326a6d616937552d7f8ff7001808bbfb69bd62
+source-git-commit: 80ceb279e943037fb4507419b7818575b4a84fe5
 workflow-type: tm+mt
-source-wordcount: '1370'
+source-wordcount: '1384'
 ht-degree: 1%
 
 ---
@@ -69,14 +69,15 @@ ht-degree: 1%
 
 >[!TIP]
 >
-> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![激活控件](/help/images/icons/data-add.png)**[!UICONTROL 激活&#x200B;]**/**[!UICONTROL &#x200B;激活受众&#x200B;]**/**[!UICONTROL &#x200B;导出数据集&#x200B;]**&#x200B;控件将受众或数据集导出到该目标。
-> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![编辑详细信息控件](/help/images/icons/edit.png)**[!UICONTROL 编辑详细信息&#x200B;]**&#x200B;控件来[更新](update-accounts.md)现有目标帐户的详细信息。
-> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![删除控件](/help/images/icons/delete.png)**[!UICONTROL 删除&#x200B;]**&#x200B;控件来[删除](delete-destination-account.md)现有目标帐户。
+> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![激活控件](/help/images/icons/data-add.png)**[!UICONTROL 激活&#x200B;]**/**[!UICONTROL &#x200B;激活受众&#x200B;]**/**[!UICONTROL &#x200B;导出数据集&#x200B;]**控件将受众或数据集导出到该目标。
+> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![编辑详细信息控件](/help/images/icons/edit.png)**[!UICONTROL 编辑详细信息&#x200B;]**控件来[更新](update-accounts.md)现有目标帐户的详细信息。
+> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![删除控件](/help/images/icons/delete.png)**[!UICONTROL 删除&#x200B;]**控件来[删除](delete-destination-account.md)现有目标帐户。
 
 ![帐户选项卡](../assets/ui/workspace/destination-account-options.png)
 
 | 元素 | 描述 |
 |---|---|
+| [!UICONTROL 名称] | [设置](connect-destination.md#authenticate)目标时分配给目标帐户的名称。 |
 | [!UICONTROL 目标] | 已为其设置连接的目标连接器。 |
 | [!UICONTROL 连接类型] | 表示与存储段或目标的帐户连接类型。 根据目标的不同，身份验证选项有： <ul><li>对于电子邮件营销目标：可以是S3、FTP或Azure Blob。</li><li>对于实时广告目标：服务器到服务器</li><li>对于Amazon S3云存储目标：访问密钥 </li><li>对于SFTP云存储目标：SFTP的基本身份验证</li><li>OAuth 1或OAuth 2身份验证</li><li>持有者令牌身份验证</li></ul> |
 | [!UICONTROL 用户名] | 您在[连接目标工作流](../catalog/email-marketing/overview.md#connect-destination)中选择的用户名。 |
@@ -93,7 +94,7 @@ ht-degree: 1%
 >[!TIP]
 >
 > * 选择`...`名称[!UICONTROL 列中的省略号(])，然后使用![激活受众控件](/help/images/icons/data-add.png) **[!UICONTROL 激活受众]**&#x200B;控件将受众或数据集导出到该目标。
-> * 选择`...`名称[!UICONTROL 列中的省略号(])，并使用![编辑目标控件](/help/images/icons/edit.png)**[!UICONTROL 编辑目标&#x200B;]**&#x200B;控件编辑现有目标连接。 有关详细信息，请阅读有关[编辑目标](/help/destinations/ui/edit-destination.md)的教程。
+> * 选择`...`名称[!UICONTROL 列中的省略号(])，并使用![编辑目标控件](/help/images/icons/edit.png)**[!UICONTROL 编辑目标&#x200B;]**控件编辑现有目标连接。 有关详细信息，请阅读有关[编辑目标](/help/destinations/ui/edit-destination.md)的教程。
 > * 选择`...`名称[!UICONTROL 列中的省略号(])并使用![编辑营销操作控件](/help/images/icons/edit-marketing-actions.svg) **[!UICONTROL 编辑营销操作]**&#x200B;控件将选定目标的营销操作[更改为](/help/destinations/ui/edit-activation.md#edit-marketing-actions)。
 > * 选择`...`Name[!UICONTROL 列中的省略号(])并使用![Delete控件](/help/images/icons/delete.png) **[!UICONTROL Delete]**&#x200B;控件来[删除](delete-destinations.md)到目标的现有连接。
 > * 选择`...`Name[!UICONTROL 列中的省略号(])并使用监视控件中的![视图](/help/images/icons/monitoring.png) **[!UICONTROL 监视控件中的视图]**&#x200B;在[监视仪表板](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard)中查看此目标的激活信息。
