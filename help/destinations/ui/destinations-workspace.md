@@ -3,9 +3,9 @@ keywords: 平台；目标；目标工作区；工作区；ui；目标ui；目录
 title: 目标工作区
 description: 目标工作区包括五个部分：“概述”、“目录”、“浏览”、“帐户”和“系统视图”。 以下各节对这些要求进行了说明。
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: a2420f86e650ce1ca8a5dc01d9a29548663d3f7c
+source-git-commit: a0326a6d616937552d7f8ff7001808bbfb69bd62
 workflow-type: tm+mt
-source-wordcount: '1300'
+source-wordcount: '1370'
 ht-degree: 1%
 
 ---
@@ -69,9 +69,9 @@ ht-degree: 1%
 
 >[!TIP]
 >
-> * 选择[!UICONTROL Platform]列中的省略号(`...`)并使用![激活控件](/help/images/icons/data-add.png)**[!UICONTROL 激活&#x200B;]**/**[!UICONTROL &#x200B;激活受众&#x200B;]**/**[!UICONTROL &#x200B;导出数据集&#x200B;]**&#x200B;控件将受众或数据集导出到该目标。
-> * 选择[!UICONTROL Platform]列中的省略号(`...`)并使用![编辑详细信息控件](/help/images/icons/edit.png)**[!UICONTROL 编辑详细信息&#x200B;]**&#x200B;控件来[更新](update-accounts.md)现有目标帐户的详细信息。
-> * 选择[!UICONTROL Platform]列中的省略号(`...`)并使用![删除控件](/help/images/icons/delete.png)**[!UICONTROL 删除&#x200B;]**&#x200B;控件来[删除](delete-destination-account.md)现有目标帐户。
+> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![激活控件](/help/images/icons/data-add.png)**[!UICONTROL 激活&#x200B;]**/**[!UICONTROL &#x200B;激活受众&#x200B;]**/**[!UICONTROL &#x200B;导出数据集&#x200B;]**控件将受众或数据集导出到该目标。
+> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![编辑详细信息控件](/help/images/icons/edit.png)**[!UICONTROL 编辑详细信息&#x200B;]**控件来[更新](update-accounts.md)现有目标帐户的详细信息。
+> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![删除控件](/help/images/icons/delete.png)**[!UICONTROL 删除&#x200B;]**控件来[删除](delete-destination-account.md)现有目标帐户。
 
 ![帐户选项卡](../assets/ui/workspace/destination-account-options.png)
 
@@ -92,16 +92,18 @@ ht-degree: 1%
 
 >[!TIP]
 >
-> * 选择[!UICONTROL 名称]列中的省略号(`...`)，然后使用![激活受众控件](/help/images/icons/data-add.png)**[!UICONTROL 激活&#x200B;]**&#x200B;控件将受众或数据集导出到该目标。
-> * 选择[!UICONTROL Name]列中的省略号(`...`)并使用![Delete控件](/help/images/icons/delete.png)**[!UICONTROL Delete &#x200B;]**&#x200B;控件来[删除](delete-destinations.md)到目标的现有连接。
-> * 选择[!UICONTROL Name]列中的省略号(`...`)并使用监视控件中的![视图&#x200B;]&#x200B;**监视控件中的(/help/images/icons/monitoring.png)**&#x200B;视图，在[监视仪表板](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard)中查看此目标的激活信息。
-> * 选择[!UICONTROL Name]列中的省略号(`...`)并使用![订阅警报](/help/images/icons/alert-add.png)**[!UICONTROL 订阅警报&#x200B;]**&#x200B;控件订阅目标数据流警报。 您可以订阅警报，以接收有关流运行的状态、成功或失败的消息。 有关目标数据流警报的详细信息，请参阅[订阅上下文中的目标警报](alerts.md)。
+> * 选择`...`名称[!UICONTROL 列中的省略号(])，然后使用![激活受众控件](/help/images/icons/data-add.png) **[!UICONTROL 激活受众]**&#x200B;控件将受众或数据集导出到该目标。
+> * 选择`...`名称[!UICONTROL 列中的省略号(])，并使用![编辑目标控件](/help/images/icons/edit.png)**[!UICONTROL 编辑目标&#x200B;]**控件编辑现有目标连接。 有关详细信息，请阅读有关[编辑目标](/help/destinations/ui/edit-destination.md)的教程。
+> * 选择`...`名称[!UICONTROL 列中的省略号(])并使用![编辑营销操作控件](/help/images/icons/edit-marketing-actions.svg) **[!UICONTROL 编辑营销操作]**&#x200B;控件将选定目标的营销操作[更改为](/help/destinations/ui/edit-activation.md#edit-marketing-actions)。
+> * 选择`...`Name[!UICONTROL 列中的省略号(])并使用![Delete控件](/help/images/icons/delete.png) **[!UICONTROL Delete]**&#x200B;控件来[删除](delete-destinations.md)到目标的现有连接。
+> * 选择`...`Name[!UICONTROL 列中的省略号(])并使用监视控件中的![视图](/help/images/icons/monitoring.png) **[!UICONTROL 监视控件中的视图]**&#x200B;在[监视仪表板](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard)中查看此目标的激活信息。
+> * 选择`...`Name[!UICONTROL 列中的省略号(])并使用![订阅警报](/help/images/icons/alert-add.png) **[!UICONTROL 订阅警报]**&#x200B;控件订阅目标数据流警报。 您可以订阅警报，以接收有关流运行的状态、成功或失败的消息。 有关目标数据流警报的详细信息，请参阅[订阅上下文中的目标警报](alerts.md)。
 
 ![浏览选项卡](../assets/ui/workspace/browse-tab.png)
 
 | 元素 | 描述 |
 |---------|----------|
-| 名称 | 您为此目标的激活流提供的名称。 同一列包含两个控件： [!UICONTROL 激活]和[!UICONTROL 删除目标]。 |
+| 名称 | 您为此目标的激活流提供的名称。 |
 | 数据类型 | 目标连接支持的数据类型。 支持的数据类型： <ul><li>**[!UICONTROL 客户]**</li><li>**[!UICONTROL 潜在客户]**</li><li>**[!UICONTROL 帐户]**</li><li>**[!UICONTROL 数据集]**</li></ul> |
 | [!UICONTROL 上次数据流运行状态] | 上次数据流运行的状态。 有关数据流运行的详细信息，请参阅[查看目标详细信息](destination-details-page.md)。 |
 | [!UICONTROL 上次数据流运行日期] | 上次数据流运行发生的时间和日期。 有关数据流运行的详细信息，请参阅[查看目标详细信息](destination-details-page.md)。 |
@@ -112,6 +114,7 @@ ht-degree: 1%
 | [!UICONTROL 激活数据] | 指示正在激活到此目标的受众数量。 选择此控件可了解有关已激活受众的更多信息。 有关已激活受众的详细信息，请参阅目标详细信息页面中的[激活数据](/help/destinations/ui/destination-details-page.md#activation-data)。 |
 | [!UICONTROL 已创建] | 创建到目标的激活流的日期和UTC时间。 选择向上/向下箭头符号，按最新先或最旧先对激活流进行排序。 |
 | [!UICONTROL 状态] | `Enabled`或`Disabled`。 指示是否正在将数据激活到此目标。 |
+| [!UICONTROL 访问标签] | 显示已添加到此目标数据流的任何访问标签。 了解有关[将访问标签应用于目标数据流](/help/access-control/abac/apply-access-labels-destinations.md)的更多信息。 |
 
 单击目标行可在右边栏中显示有关目标的更多信息，例如目标ID、描述、激活的受众数量等。
 

@@ -4,9 +4,9 @@ title: 使用流服务API编辑目标连接
 type: Tutorial
 description: 了解如何使用流服务API编辑目标连接的各种组件。
 exl-id: d6d27d5a-e50c-4170-bb3a-c4cbf2b46653
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: ea397360e5277bef478b2173bfb5e4be4ac1fab4
 workflow-type: tm+mt
-source-wordcount: '1609'
+source-wordcount: '1622'
 ht-degree: 5%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 5%
 
 >[!NOTE]
 >
-> 本教程中描述的编辑操作当前仅通过流服务API受支持。
+> Experience Platform UI也支持本教程中描述的编辑操作。 阅读有关如何[在UI](/help/destinations/ui/edit-destination.md)中编辑目标的教程以了解更多信息。
 
 ## 快速入门 {#get-started}
 
@@ -177,15 +177,15 @@ curl -X GET \
 
 目标连接的组件因目标而异。 例如，对于[!DNL Amazon S3]目标，您可以更新导出文件的存储段和路径。 对于[!DNL Pinterest]目标，您可以更新[!DNL Pinterest Advertiser ID]，对于[!DNL Google Customer Match]，您可以更新[!DNL Pinterest Account ID]。
 
-要更新目标连接的组件，请在提供目标连接ID、版本和要使用的新值的同时，对`/targetConnections/{TARGET_CONNECTION_ID}`端点执行`PATCH`请求。 请记住，在上一步中，当您检查到所需目标的现有数据流时，您获得了目标连接ID。
+要更新目标连接的组件，请在提供目标连接ID、版本和要使用的新值的同时，对`PATCH`端点执行`/targetConnections/{TARGET_CONNECTION_ID}`请求。 请记住，在上一步中，当您检查到所需目标的现有数据流时，您获得了目标连接ID。
 
 >[!IMPORTANT]
 >
->发出`PATCH`请求时需要使用`If-Match`标头。 此标头的值是要更新的目标连接的唯一版本。 每次成功更新流实体（例如数据流、目标连接等）时，etag值都会更新。
+>发出`If-Match`请求时需要使用`PATCH`标头。 此标头的值是要更新的目标连接的唯一版本。 每次成功更新流实体（例如数据流、目标连接等）时，etag值都会更新。
 >
 > 要获取最新版本的etag值，请对`/targetConnections/{TARGET_CONNECTION_ID}`端点执行GET请求，其中`{TARGET_CONNECTION_ID}`是您要更新的目标连接ID。
 >
-> 在发出`PATCH`请求时，请确保将`If-Match`标头的值用双引号括起来，如以下示例中所示。
+> 在发出`If-Match`请求时，请确保将`PATCH`标头的值用双引号括起来，如以下示例中所示。
 
 以下是一些示例，说明如何更新不同类型目标的目标连接规范中的参数。 但更新任何目标的参数的一般规则如下：
 
@@ -205,7 +205,7 @@ PATCH /targetConnections/{TARGET_CONNECTION_ID}
 
 **请求**
 
-以下请求更新[[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details)目标连接的`bucketName`和`path`参数。
+以下请求更新`bucketName`目标连接的`path`和[[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details)参数。
 
 ```shell
 curl -X PATCH \
@@ -288,7 +288,7 @@ curl -X PATCH \
 
 **请求**
 
-以下请求更新[[!DNL Pinterest] 目标连接](/help/destinations/catalog/advertising/pinterest.md#parameters)的`advertiserId`参数。
+以下请求更新`advertiserId`目标连接[[!DNL Pinterest] 的](/help/destinations/catalog/advertising/pinterest.md#parameters)参数。
 
 ```shell
 curl -X PATCH \
@@ -334,17 +334,17 @@ curl -X PATCH \
 
 在要更新目标的凭据时编辑基本连接。 基本连接的组件因目标而异。 例如，对于[!DNL Amazon S3]目标，您可以将访问密钥和密钥更新到您的[!DNL Amazon S3]位置。
 
-要更新基本连接的组件，请在提供基本连接ID、版本和要使用的新值时对`/connections`端点执行`PATCH`请求。
+要更新基本连接的组件，请在提供基本连接ID、版本和要使用的新值时对`PATCH`端点执行`/connections`请求。
 
 请记住，您在[上一步](#look-up-dataflow-details)中获取了基本连接ID，当时您为参数`baseConnection`检查了到所需目标的现有数据流。
 
 >[!IMPORTANT]
 >
->发出`PATCH`请求时需要使用`If-Match`标头。 此标头的值是您要更新的基础连接的唯一版本。 每次成功更新流实体（例如数据流、基本连接等）时，etag值都会更新。
+>发出`If-Match`请求时需要使用`PATCH`标头。 此标头的值是您要更新的基础连接的唯一版本。 每次成功更新流实体（例如数据流、基本连接等）时，etag值都会更新。
 >
 > 要获取最新版本的Etag值，请对`/connections/{BASE_CONNECTION_ID}`端点执行GET请求，其中`{BASE_CONNECTION_ID}`是您要更新的基本连接ID。
 >
-> 在发出`PATCH`请求时，请确保将`If-Match`标头的值用双引号括起来，如以下示例中所示。
+> 在发出`If-Match`请求时，请确保将`PATCH`标头的值用双引号括起来，如以下示例中所示。
 
 下面是一些示例，用于为不同类型的目标更新基本连接规范中的参数。 但更新任何目标的参数的一般规则如下：
 
@@ -364,7 +364,7 @@ PATCH /connections/{BASE_CONNECTION_ID}
 
 **请求**
 
-以下请求更新[[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details)目标连接的`accessId`和`secretKey`参数。
+以下请求更新`accessId`目标连接的`secretKey`和[[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details)参数。
 
 ```shell
 curl -X PATCH \
