@@ -69,9 +69,9 @@ ht-degree: 1%
 
 >[!TIP]
 >
-> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![激活控件](/help/images/icons/data-add.png)**[!UICONTROL 激活&#x200B;]**/**[!UICONTROL &#x200B;激活受众&#x200B;]**/**[!UICONTROL &#x200B;导出数据集&#x200B;]**控件将受众或数据集导出到该目标。
-> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![编辑详细信息控件](/help/images/icons/edit.png)**[!UICONTROL 编辑详细信息&#x200B;]**控件来[更新](update-accounts.md)现有目标帐户的详细信息。
-> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![删除控件](/help/images/icons/delete.png)**[!UICONTROL 删除&#x200B;]**控件来[删除](delete-destination-account.md)现有目标帐户。
+> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![激活控件](/help/images/icons/data-add.png)**[!UICONTROL 激活&#x200B;]**/**[!UICONTROL &#x200B;激活受众&#x200B;]**/**[!UICONTROL &#x200B;导出数据集&#x200B;]**&#x200B;控件将受众或数据集导出到该目标。
+> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![编辑详细信息控件](/help/images/icons/edit.png)**[!UICONTROL 编辑详细信息&#x200B;]**&#x200B;控件来[更新](update-accounts.md)现有目标帐户的详细信息。
+> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![删除控件](/help/images/icons/delete.png)**[!UICONTROL 删除&#x200B;]**&#x200B;控件来[删除](delete-destination-account.md)现有目标帐户。
 
 ![帐户选项卡](../assets/ui/workspace/destination-account-options.png)
 
@@ -93,7 +93,7 @@ ht-degree: 1%
 >[!TIP]
 >
 > * 选择`...`名称[!UICONTROL 列中的省略号(])，然后使用![激活受众控件](/help/images/icons/data-add.png) **[!UICONTROL 激活受众]**&#x200B;控件将受众或数据集导出到该目标。
-> * 选择`...`名称[!UICONTROL 列中的省略号(])，并使用![编辑目标控件](/help/images/icons/edit.png)**[!UICONTROL 编辑目标&#x200B;]**控件编辑现有目标连接。 有关详细信息，请阅读有关[编辑目标](/help/destinations/ui/edit-destination.md)的教程。
+> * 选择`...`名称[!UICONTROL 列中的省略号(])，并使用![编辑目标控件](/help/images/icons/edit.png)**[!UICONTROL 编辑目标&#x200B;]**&#x200B;控件编辑现有目标连接。 有关详细信息，请阅读有关[编辑目标](/help/destinations/ui/edit-destination.md)的教程。
 > * 选择`...`名称[!UICONTROL 列中的省略号(])并使用![编辑营销操作控件](/help/images/icons/edit-marketing-actions.svg) **[!UICONTROL 编辑营销操作]**&#x200B;控件将选定目标的营销操作[更改为](/help/destinations/ui/edit-activation.md#edit-marketing-actions)。
 > * 选择`...`Name[!UICONTROL 列中的省略号(])并使用![Delete控件](/help/images/icons/delete.png) **[!UICONTROL Delete]**&#x200B;控件来[删除](delete-destinations.md)到目标的现有连接。
 > * 选择`...`Name[!UICONTROL 列中的省略号(])并使用监视控件中的![视图](/help/images/icons/monitoring.png) **[!UICONTROL 监视控件中的视图]**&#x200B;在[监视仪表板](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard)中查看此目标的激活信息。
