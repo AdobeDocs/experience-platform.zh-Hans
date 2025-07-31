@@ -2,7 +2,7 @@
 title: Real-Time Customer Data Platform B2B edition的分段用例
 description: 各种可用的Adobe Real-Time Customer Data Platform B2B edition用例的概述。
 feature: Get Started, Audiences, Segments, B2B
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 2a99b85e-71b3-4781-baf7-a4d5436339d3
 source-git-commit: d819a7e72e873ef3a47f9bb7946e242cb5fb7a8a
 workflow-type: tm+mt
