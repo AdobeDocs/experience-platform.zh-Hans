@@ -2,9 +2,9 @@
 title: 沙盒工具包API端点
 description: 沙盒工具API中的/packages端点允许您以编程方式管理Adobe Experience Platform中的包。
 exl-id: 46efee26-d897-4941-baf4-d5ca0b8311f0
-source-git-commit: 47e4616e5465ec97512647b9280f461c6971aa42
+source-git-commit: 1d8c29178927c7ee3aceb0b68f97baeaefd9f695
 workflow-type: tm+mt
-source-wordcount: '2547'
+source-wordcount: '2933'
 ht-degree: 8%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 8%
 
 ## 创建资源包 {#create}
 
-您可以创建多工件包，方法是在提供包名称和包类型的值的同时，向`/packages`端点发出POST请求。
+您可以创建多工件包，方法是在为包名称和包类型提供值的同时，向`/packages`端点发出POST请求。
 
 **API格式**
 
@@ -60,7 +60,7 @@ curl -X POST \
 | `packageType` | 包类型为&#x200B;**PARTIAL**，表示您在包中包含特定项目。 | 字符串 | 是 |
 | `sourceSandbox` | 包的源沙盒。 | 对象 | 否 |
 | `expiry` | 定义包到期日期的时间戳。 默认值为自创建日期起90天。 响应到期字段将为纪元UTC时间。 | 字符串（UTC时间戳格式） | 否 |
-| `artifacts` | 要导出到资源包中的项目列表。 当`packageType`为`FULL`时，`artifacts`值应为&#x200B;**null**&#x200B;或&#x200B;**empty**。 | 数组 | 否 |
+| `artifacts` | 要导出到资源包中的项目列表。 当`artifacts`为&#x200B;**时，**&#x200B;值应为&#x200B;**null**&#x200B;或`packageType`empty`FULL`。 | 数组 | 否 |
 
 **响应**
 
@@ -100,11 +100,11 @@ curl -X POST \
 
 ## 更新包 {#update}
 
-您可以通过向`/packages`端点发出PUT请求来更新包。
+使用沙盒工具API中的`/packages`端点更新包。
 
 ### 将工件添加到资源包 {#add-artifacts}
 
-要将项目添加到包，您必须提供`id`并包括`action`的&#x200B;**ADD**。
+要将项目添加到包，您必须提供`id`并包括&#x200B;**的** ADD`action`。
 
 **API格式**
 
@@ -139,14 +139,14 @@ curl -X PUT \
 | `id` | 要更新的程序包的ID。 | 字符串 | 是 |
 | `action` | 要将项目添加到包中，操作值应为&#x200B;**ADD**。 仅&#x200B;**PARTIAL**&#x200B;包类型支持此操作。 | 字符串 | 是 |
 | `artifacts` | 要添加到包中的项目列表。 如果列表为&#x200B;**null**&#x200B;或&#x200B;**empty**，则不会更改包。 在将工件添加到资源包之前，会先对其进行重复数据删除。 请参阅下表，以查看支持的项目的完整列表。 | 数组 | 否 |
-| `expiry` | 定义包到期日期的时间戳。 如果在有效负载中未指定过期，则默认值为从调用PUTAPI时起90天。 响应到期字段将为纪元UTC时间。 | 字符串（UTC时间戳格式） | 否 |
+| `expiry` | 定义包到期日期的时间戳。 如果在有效负载中未指定过期，则默认值为从调用PUT API起90天。 响应到期字段将为纪元UTC时间。 | 字符串（UTC时间戳格式） | 否 |
 
 当前支持以下工件类型。
 
 | 工件 | 平台 | 对象 | 部分流量 | 完整沙盒 |
 | --- | --- | --- | --- | --- |
 | `JOURNEY` | Adobe Journey Optimizer | 历程 | 是 | 否 |
-| `ID_NAMESPACE` | 客户数据平台 | 标识 | 是 | 是 |
+| `ID_NAMESPACE` | 客户数据平台 | 身份标识 | 是 | 是 |
 | `REGISTRY_DATATYPE` | 客户数据平台 | 数据类型 | 是 | 是 |
 | `REGISTRY_CLASS` | 客户数据平台 | 类 | 是 | 是 |
 | `REGISTRY_MIXIN` | 客户数据平台 | 字段组 | 是 | 是 |
@@ -198,7 +198,7 @@ curl -X PUT \
 
 ### 从资源包中删除工件 {#delete-artifacts}
 
-若要从包中删除项目，必须提供`id`并包含`action`的&#x200B;**DELETE**。
+若要从包中删除项目，必须提供`id`并包含&#x200B;**的** DELETE`action`。
 
 **API格式**
 
@@ -273,7 +273,7 @@ curl -X PUT \
 >
 >**UPDATE**&#x200B;操作用于更新包的包元数据字段，而&#x200B;**不能用于向包添加/删除项目。**
 
-要更新包中的元数据字段，必须为`action`提供`id`并包括&#x200B;**UPDATE**。
+要更新包中的元数据字段，必须为`id`提供&#x200B;**并包括** UPDATE`action`。
 
 **API格式**
 
@@ -380,7 +380,7 @@ curl -X DELETE \
 }
 ```
 
-## Publish包 {#publish}
+## 发布包 {#publish}
 
 为了能够将包导入沙盒，您必须发布它。 在指定要发布的包的ID时，向`/packages`端点发出GET请求。
 
@@ -433,7 +433,7 @@ curl -X GET \
 
 ## 查找包 {#look-up-package}
 
-通过向`/packages`端点发出GET请求，您可以查找单个包，该请求路径中包含包的相应ID。
+您可以通过向`/packages`端点发出GET请求来查找单个包，该端点在请求路径中包含包的相应ID。
 
 **API格式**
 
@@ -900,7 +900,7 @@ curl -X POST \
 
 ## 检查基于角色的权限以导入所有包对象 {#role-based-permissions}
 
-您可以检查您是否有权导入包工件，方法是在指定包的ID和目标沙盒名称时，向`/packages`端点发出GET请求。
+您可以检查您是否有权导入包工件，方法是在指定包的ID和目标沙盒名称时，通过向`/packages`端点发出GET请求。
 
 **API格式**
 
@@ -1165,7 +1165,7 @@ curl -X GET \
 
 ### 发送共享请求 {#send-request}
 
-通过向`/handshake/bulkCreate`端点发送POST请求，向目标合作伙伴组织发送共享批准请求。 在共享专用包之前，必须填写此字段。
+通过向`/handshake/bulkCreate`端点发出POST请求，向目标合作伙伴组织发送共享批准请求。 在共享专用包之前，必须填写此字段。
 
 **API格式**
 
@@ -1223,7 +1223,7 @@ curl -X POST \
             "modifiedByName": "{MODIFIED_BY}",
             "modifiedByIMSOrgId": "{ORG_ID}",
             "statusHistory": "[{\"actionTakenBy\":\"acme@98ff67fa661fdf6549420b.e\",\"actionTakenByName\":\"{NAME}\",\"actionTakenByImsOrgID\":\"{ORG_ID}\",\"action\":\"INITIATED\",\"actionTimeStamp\":1724938816885}]",
-            "linkingId": "{LINKIND_ID}"
+            "linkingId": "{LINKING_ID}"
         }
     },
     "failedRequests": {}
@@ -1232,7 +1232,7 @@ curl -X POST \
 
 ### 批准已接收的共享请求 {#approve-requests}
 
-通过向`/handshake/action`端点发出POST请求，批准来自目标伙伴组织的共享请求。 批准后，源合作伙伴组织可以共享私有包。
+通过向`/handshake/action`端点发出POST请求，批准来自目标合作伙伴组织的共享请求。 批准后，源合作伙伴组织可以共享私有包。
 
 **API格式**
 
@@ -1481,7 +1481,7 @@ curl -X GET \
 
 ### 获取共享列表 {#transfers-list}
 
-通过向`/transfer/list?{QUERY_PARAMETERS}`端点发出GET请求并根据需要更改查询参数，获取传输请求的列表。
+通过对`/transfer/list?{QUERY_PARAMETERS}`端点发出GET请求并根据需要更改查询参数，获取传输请求列表。
 
 **API格式**
 
@@ -1628,7 +1628,7 @@ curl -X PUT \
 
 ### 请求导入公共资源包 {#pull-public-package}
 
-通过向`/transfer/pullRequest`端点发出POST请求，从具有公开可用性的源组织导入包。
+通过向`/transfer/pullRequest`端点发出POST请求，从具有公共可用性的源组织导入包。
 
 **API格式**
 
@@ -1684,7 +1684,7 @@ curl -X POST \
 
 ### 列出公共包 {#list-public-packages}
 
-通过向`/transfer/list?{QUERY_PARAMS}`端点发出GET请求获取具有公开可见性的包列表。
+通过对`/transfer/list?{QUERY_PARAMS}`端点发出GET请求获取具有公开可见性的包列表。
 
 **API格式**
 
@@ -1935,7 +1935,7 @@ curl -X GET \
 
 ## 复制包有效负载(#package-payload)
 
-您可以通过向`/packages/payload`端点发出GET请求来复制公共包的有效负载，该端点在请求路径中包含包的相应ID。
+通过向`/packages/payload`端点发出GET请求，您可以复制公共包的有效负载，该端点在请求路径中包含包的相应ID。
 
 **API格式**
 
@@ -1975,5 +1975,497 @@ curl -X GET \
 {
     "imsOrgId": "{ORG_ID}",
     "packageId": "{PACKAGE_ID}"
+}
+```
+
+## 迁移对象配置更新
+
+使用沙盒工具API中的/packages端点迁移对象配置更新。
+
+### 更新操作(#update-operations)
+
+将指定的或最新版本的包快照与源沙盒的当前状态或以前使用的目标沙盒进行比较，其中通过提供包ID向`/packages/{packageId}/version/compare`端点发出POST请求来导入包。
+
+***API格式***
+
+```http
+PATCH /packages/{packageId}/version/compare
+```
+
+| 属性 | 描述 | 类型 | 必需 |
+| --- | --- | --- | --- |
+| `packageId` | 程序包的ID。 | 字符串 | 是 |
+
+**请求**
+
+```shell
+curl -X POST \
+  https://platform-stage.adobe.io/data/foundation/exim/packages/{PACKAGE_ID}/version/compare/ \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "triggerNew": true,
+      "targetSandbox": "{SANDBOX_NAME}"
+  }'
+```
+
+| 属性 | 描述 | 类型 | 必需 |
+| --- | --- | --- | --- |
+| `triggerNew` | 用于触发新的差异计算作业的标志，即使已存在活动作业或完成的作业也是如此。 | 布尔值 | 否 |
+| `targetSandbox` | 表示必须用来计算差异的目标沙盒的名称。 如果未指定，则源沙盒将用作目标沙盒。 | 字符串 | 否 |
+
+**响应**
+
+对以前完成的作业的成功响应将返回作业对象以及以前计算的差异结果。 新完成的作业将返回作业ID。
+
++++查看响应（已提交的作业）
+
+```json
+{
+    "status": "OK",
+    "type": "SUCCESS",
+    "ajo": false,
+    "message": "Job with ID: {JOB_ID}",
+    "object": {
+        "id": "c4b7d07ae4c646279e2070a31c50bd5c",
+        "name": "Compute Job Package: {SNAPSHOT_ID}",
+        "description": null,
+        "visibility": "TENANT",
+        "requestType": "VERSION",
+        "expiry": 0,
+        "snapshotId": "{SNAPSHOT_ID}",
+        "packageVersion": 0,
+        "createdTimestamp": 0,
+        "modifiedTimestamp": 0,
+        "type": "PARTIAL",
+        "jobStatus": "SUCCESS",
+        "jobType": "COMPUTE",
+        "counter": 0,
+        "imsOrgId": "{ORG_ID}",
+        "sourceSandbox": {
+            "name": "prod",
+            "imsOrgId": "{ORG_ID}",
+            "empty": false
+        },
+        "destinationSandbox": {
+            "name": "amanda-1",
+            "imsOrgId": "{ORG_ID}",
+            "empty": false
+        },
+        "deltaPackageVersion": {
+            "packageId": "{PACKAGE_ID}",
+            "currentVersion": 0,
+            "validated": false,
+            "rootArtifacts": [
+                {
+                    "id": "https://ns.adobe.com/sandboxtoolingstage/schemas/355f461cbfb662fd0d12d06aeab34e206efcfa5d913604de",
+                    "type": "REGISTRY_SCHEMA",
+                    "found": false,
+                    "count": 0
+                }
+            ],
+            "eximGraphDelta": {
+                "vertices": [],
+                "pluginDeltas": [
+                    {
+                        "sourceArtifact": {
+                            "id": "https://ns.adobe.com/sandboxtoolingstage/mixins/9fad8b185640a2db7daf9bb1295543ee8cb5965d80a21e8d",
+                            "type": "REGISTRY_MIXIN",
+                            "found": false,
+                            "count": 0,
+                            "title": "Custom FieldGroup 2"
+                        },
+                        "targetArtifact": {
+                            "id": "https://ns.adobe.com/sandboxtoolingstage/mixins/b7fa3024777ef11b68c5121e937d8543677093f4f0e63a5f",
+                            "type": "REGISTRY_MIXIN",
+                            "found": false,
+                            "count": 0,
+                            "title": "Custom FieldGroup 2_1738766274074"
+                        },
+                        "changes": [
+                            {
+                                "op": "replace",
+                                "path": "/title",
+                                "oldValue": "Custom FieldGroup 2_1738766274074",
+                                "newValue": "Custom FieldGroup 2"
+                            },
+                            {
+                                "op": "replace",
+                                "path": "/description",
+                                "oldValue": "Description for furnished object",
+                                "newValue": ""
+                            }
+                        ]
+                    },
+                    {
+                        "sourceArtifact": {
+                            "id": "https://ns.adobe.com/sandboxtoolingstage/mixins/304ac900943716c8bd99e6aaf6aa840aac91995729f1987f",
+                            "type": "REGISTRY_MIXIN",
+                            "found": false,
+                            "count": 0,
+                            "title": "Custom FieldGroup 4"
+                        },
+                        "targetArtifact": {
+                            "id": "https://ns.adobe.com/sandboxtoolingstage/mixins/34c9add91cce4a40d68a0e715c9f0a16048871734f8c8b74",
+                            "type": "REGISTRY_MIXIN",
+                            "found": false,
+                            "count": 0,
+                            "title": "Custom FieldGroup 4_1738766274074"
+                        },
+                        "changes": [
+                            {
+                                "op": "replace",
+                                "path": "/title",
+                                "oldValue": "Custom FieldGroup 4_1738766274074",
+                                "newValue": "Custom FieldGroup 4"
+                            },
+                            {
+                                "op": "replace",
+                                "path": "/description",
+                                "oldValue": "Description for furnished object",
+                                "newValue": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "importReplacementMap": {
+            "https://ns.adobe.com/sandboxtoolingstage/mixins/9fad8b185640a2db7daf9bb1295543ee8cb5965d80a21e8d": "https://ns.adobe.com/sandboxtoolingstage/mixins/b7fa3024777ef11b68c5121e937d8543677093f4f0e63a5f",
+            "5a45f8cd309d5ed5797be9a0af65e89152a51d57a6c74b52": "4ae041fa182d6faf2e7c56463399170d913138a7c5712909",
+            "https://ns.adobe.com/sandboxtoolingstage/schemas/b2b7705e770a35341b8bc5ec5e3644d9c7387266777fe4ba": "https://ns.adobe.com/sandboxtoolingstage/schemas/838c4e21ad81543ac14238ac1756012f7f98f0e0bec6b425",
+            "https://ns.adobe.com/sandboxtoolingstage/schemas/355f461cbfb662fd0d12d06aeab34e206efcfa5d913604de": "https://ns.adobe.com/sandboxtoolingstage/schemas/9a55692d527169d0239e126137a694ed9db2406c9bcbd06a",
+            "8f45c79235c91e7f0c09af676a77d170a34b5ee0ad5de72c": "65d755cc3300674c3cfcec620c59876af07f046884afd359",
+            "f04b8e461396ff426f8ba8dc5544f799bf287baa8e0fa5c": "b6fa821ada8cb97cac384f0b0354bbe74209ec97fb6a83a3",
+            "https://ns.adobe.com/sandboxtoolingstage/mixins/304ac900943716c8bd99e6aaf6aa840aac91995729f1987f": "https://ns.adobe.com/sandboxtoolingstage/mixins/34c9add91cce4a40d68a0e715c9f0a16048871734f8c8b74",
+            "c8304f3cb7986e8c9b613cd8d832125bd867fb4a5aedf67a": "4d21e9bf89ce0042b52d7d41ff177a7697d695e2617d1fc1"
+        },
+        "schemaFieldMappings": null
+    }
+}
+```
+
++++
+
++++查看响应（新提交的作业）
+
+```json
+{
+    "status": "OK",
+    "type": "SUCCESS",
+    "ajo": false,
+    "message": "Job with ID: {JOB_ID}",
+    "object": {
+        "id": "aa5cfacf35a8478c8cf44a675fab1c30 ",
+        "name": "Compute Job Package: {SNAPSHOT_ID}",
+        "description": null,
+        "visibility": "TENANT",
+        "requestType": "VERSION",
+        "expiry": 0,
+        "snapshotId": "{SNAPSHOT_ID}",
+        "packageVersion": 0,
+        "createdTimestamp": 0,
+        "modifiedTimestamp": 0,
+        "type": "PARTIAL",
+        "jobStatus": "IN_PROGRESS",
+        "jobType": "COMPUTE",
+        "counter": 0,
+        "imsOrgId": "{ORG_ID}",
+        "sourceSandbox": {
+            "name": "prod",
+            "imsOrgId": "{ORG_ID}",
+            "empty": false
+        },
+        "destinationSandbox": {
+            "name": "amanda-1",
+            "imsOrgId": "{ORG_ID}",
+            "empty": false
+        },
+        "schemaFieldMappings": null
+    }
+}
+```
+
++++
+
+### 更新包版本(#package-versioning)
+
+通过提供包ID向`/packages/{packageId}/version/save`端点发出GET请求，使用每个对象的源沙盒中的最新快照将包升级到新版本。
+
+***API格式***
+
+```http
+PATCH /packages/{packageId}/version/save
+```
+
+| 属性 | 描述 | 类型 | 必需 |
+| --- | --- | --- | --- |
+| `packageId` | 程序包的ID。 | 字符串 | 是 |
+
+**请求**
+
+```shell
+curl -X POST \
+  https://platform-stage.adobe.io/data/foundation/exim/packages/{PACKAGE_ID}/version/save/ \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+```
+
+**响应**
+
+成功响应将返回版本升级的作业状态。
+
+```json
+{
+    "id": "3cec9bae662e43d9b9106fcbf7744a75",
+    "name": "Version Job Package: {JOB_ID}",
+    "description": null,
+    "visibility": "TENANT",
+    "requestType": "VERSION",
+    "expiry": 0,
+    "snapshotId": "{SNAPSHOT_ID}",
+    "packageVersion": 2,
+    "createdTimestamp": 0,
+    "modifiedTimestamp": 0,
+    "type": "PARTIAL",
+    "jobStatus": "PENDING",
+    "jobType": "UPGRADE",
+    "counter": 0,
+    "imsOrgId": "{ORG_ID}",
+    "sourceSandbox": {
+        "name": "prod",
+        "imsOrgId": "{ORG_ID}",
+        "empty": false
+    },
+    "destinationSandbox": {
+        "name": "prod",
+        "imsOrgId": "{ORG_ID}",
+        "empty": false
+    },
+    "schemaFieldMappings": null
+}
+```
+
+### 检索包版本历史记录(#package-version-history)
+
+通过提供包ID向`/packages/{packageId}/history`端点发出GET请求，检索包的版本控制历史记录，包括时间戳和修饰符。
+
+***API格式***
+
+```http
+PATCH /packages/{packageId}/history
+```
+
+| 属性 | 描述 | 类型 | 必需 |
+| --- | --- | --- | --- |
+| `packageId` | 程序包的ID。 | 字符串 | 是 |
+
+**请求**
+
+```shell
+curl -X POST \
+  https://platform-stage.adobe.io/data/foundation/exim/packages/{PACKAGE_ID}/history/ \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+```
+
+**响应**
+
+成功的响应将返回包的版本历史记录。
+
+```json
+[
+    {
+        "id": "cb68591a1ed941e191e7f52e33637a26",
+        "version": 0,
+        "createdDate": 1739516784000,
+        "modifiedDate": 1739516784000,
+        "createdBy": "{CREATED_BY}",
+        "modifiedBy": "{MODIFIED_BY}",
+        "imsOrgId": "{ORG_ID}",
+        "packageVersion": 3
+    },
+    {
+        "id": "e26189e6e4df476bb66c3fc3e66a1499",
+        "version": 0,
+        "createdDate": 1739343268000,
+        "modifiedDate": 1739343268000,
+        "createdBy": "{CREATED_BY}",
+        "modifiedBy": "{MODIFIED_BY}",
+        "imsOrgId": "{ORG_ID}",
+        "packageVersion": 2
+    },
+    {
+        "id": "11af34c0eee449ac84ef28c66d9383e3",
+        "version": 0,
+        "createdDate": 1739343073000,
+        "modifiedDate": 1739343073000,
+        "createdBy": "{CREATED_BY}",
+        "modifiedBy": "{MODIFIED_BY}",
+        "imsOrgId": "{ORG_ID}",
+        "packageVersion": 1
+    }
+]
+```
+
+### 提交更新作业(#submit-update)
+
+通过提供包ID，向`/packages/{packageId}/import`端点发出PATCH请求，将新更新推送到目标沙盒对象。
+
+***API格式***
+
+```http
+PATCH /packages/{packageId}/import
+```
+
+| 属性 | 描述 | 类型 | 必需 |
+| --- | --- | --- | --- |
+| `packageId` | 程序包的ID。 | 字符串 | 是 |
+
+**请求**
+
+```shell
+curl -X POST \
+  https://platform-stage.adobe.io/data/foundation/exim/packages/{PACKAGE_ID}/import/ \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "id": "50fd94f8072b4f248737a2b57b41058f",
+      "name": "Test Update",
+      "destinationSandbox": {
+        "name": "test-sandbox-sbt",
+        "imsOrgId": "{ORG_ID}"
+      },
+      "overwriteMappings": {
+        "https://ns.adobe.com/sandboxtoolingstage/schemas/327a48c83a5359f8160420a00d5a07f0ba8631a1fd466f9e" : {
+            "id" : "https://ns.adobe.com/sandboxtoolingstage/schemas/e346bb2cd7b26576cb51920d214aebbd42940a9bf94a75cd",
+            "type" : "REGISTRY_SCHEMA"
+        }
+      }
+  }'
+```
+
+**响应**
+
+成功的响应将返回更新的作业ID。
+
+```json
+{
+    "id": "3cec9bae662e43d9b9106fcbf7744a75",
+    "name": "Update Job Name",
+    "description": "Update Job Description",
+    "visibility": "TENANT",
+    "requestType": "IMPORT",
+    "expiry": 0,
+    "snapshotId": "{SNAPSHOT_ID}",
+    "packageVersion": 2,
+    "createdTimestamp": 0,
+    "modifiedTimestamp": 0,
+    "type": "PARTIAL",
+    "jobStatus": "PENDING",
+    "jobType": "UPDATE",
+    "counter": 0,
+    "imsOrgId": "{ORG_ID}",
+    "sourceSandbox": {
+        "name": "prod",
+        "imsOrgId": "{ORG_ID}",
+        "empty": false
+    },
+    "destinationSandbox": {
+        "name": "amanda-1",
+        "imsOrgId": "{ORG_ID}",
+        "empty": false
+    },
+    "schemaFieldMappings": null
+}
+```
+
+### 禁用包的更新和覆盖(#disable-update)
+
+通过提供包ID向`/packages/{packageId}/?{QUERY_PARAMS}`端点发出GET请求，禁用对不支持它们的包的更新和覆盖。
+
+***API格式***
+
+```http
+PATCH /packages/{packageId}?{QUERY_PARAMS}
+```
+
+| 属性 | 描述 | 类型 | 必需 |
+| --- | --- | --- | --- |
+| `packageId` | 程序包的ID。 | 字符串 | 是 |
+| {QUERY_PARAM} | getCapabilites查询参数。 应将此项设置为`true`或`false` | 布尔值 | 是 |
+
+**请求**
+
+```shell
+curl -X POST \
+  https://platform-stage.adobe.io/data/foundation/exim/packages/{PACKAGE_ID}?getCapabilities=true'/ \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+```
+
+**响应**
+
+成功的响应将返回包功能的列表。
+
+```json
+{
+    "id": "80230dde96574a828191144709bb9b51",
+    "version": 3,
+    "createdDate": 1749808582000,
+    "modifiedDate": 1749808648000,
+    "createdBy": "{CREATED_BY}",
+    "modifiedBy": "{MODIFIED_BY}",
+    "name": "Ankit_Primary_Descriptor_Test",
+    "description": "RestPackage",
+    "imsOrgId": "{ORG_ID}",
+    "clientId": "usecasebuilder",
+    "packageType": "PARTIAL",
+    "expiry": 1757584598000,
+    "publishDate": 1749808648000,
+    "status": "PUBLISHED",
+    "packageVisibility": "PRIVATE",
+    "latestPackageVersion": 0,
+    "packageAccessType": "TENANT",
+    "artifactsList": [
+        {
+            "id": "https://ns.adobe.com/sandboxtoolingstage/schemas/1c767056056de64d8030380d1b9f570d26bc15501a1e0e95",
+            "altId": null,
+            "type": "REGISTRY_SCHEMA",
+            "found": false,
+            "count": 0
+        }
+    ],
+    "schemaMapping": {},
+    "sourceSandbox": {
+        "name": "atul-sandbox",
+        "imsOrgId": "{ORG_ID}",
+        "empty": false
+    },
+    "packageCapabilities": {
+        "capabilities": [
+            "VERSIONABLE"
+        ]
+    }
 }
 ```
