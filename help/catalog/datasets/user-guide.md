@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据集UI指南
 description: 了解如何在Adobe Experience Platform用户界面中使用数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 47cb1e9851a288961ecca01cf609b72342c58631
+source-git-commit: 24b0df7025971a999453cd988813aa32b449ba0f
 workflow-type: tm+mt
-source-wordcount: '4551'
+source-wordcount: '4482'
 ht-degree: 5%
 
 ---
@@ -108,9 +108,9 @@ ht-degree: 5%
 
 ### 预览数据集 {#preview}
 
-您可以从[!UICONTROL 浏览]选项卡的内联选项以及[!UICONTROL 数据集活动]视图中预览数据集样本数据。 新增了一个数据集预览窗口，其中提供了额外的导航和上下文增强功能。
+您可以从[!UICONTROL 浏览]选项卡中的内联选项或[!UICONTROL 数据集活动]视图中预览任何数据集的最多100行示例数据。
 
-从[!UICONTROL 浏览]选项卡中，选择要预览的数据集名称旁边的省略号(...)。 此时将显示一个选项列表。 接下来，从可用选项中选择[!UICONTROL 预览数据集]。 如果数据集为空，则停用预览链接并指示预览不可用。
+从[!UICONTROL 浏览]选项卡中，选择数据集名称旁边的省略号(...)，然后选择[!UICONTROL 预览数据集]。 如果数据集为空，则取消激活预览选项。 或者，从&#x200B;**[!UICONTROL 数据集活动]**&#x200B;屏幕中，选择屏幕右上角附近的&#x200B;**[!UICONTROL 预览数据集]**。
 
 ![选定数据集的“数据集”工作区的“浏览”选项卡，其中突出显示了省略号和预览数据集选项。](../images/datasets/user-guide/preview-dataset-option.png)
 
@@ -118,15 +118,16 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->视图左侧的架构图仅显示包含数据的字段。 无数据的字段会自动隐藏，以简化UI并专注于相关信息。
+>左侧的架构图仅显示包含数据的字段。 无数据的字段会自动隐藏，以简化UI并专注于相关信息。
 
 ![将显示数据集预览对话框，其中包含有关数据集的结构信息以及示例值。](../images/datasets/user-guide/preview-dataset.png)
 
-或者，从&#x200B;**[!UICONTROL 数据集活动]**&#x200B;屏幕中，选择屏幕右上角附近的&#x200B;**[!UICONTROL 预览数据集]**&#x200B;以预览最多100行数据。
+或者，从&#x200B;**[!UICONTROL 数据集活动]**&#x200B;屏幕中，选择&#x200B;**[!UICONTROL 预览数据集]**&#x200B;以打开预览窗口并查看数据集的结构和值示例。
 
 ![预览数据集按钮突出显示。](../images/datasets/user-guide/select-preview.png)
 
-数据集预览窗口为浏览和验证数据集提供了一个简化的界面。
+数据集预览窗口提供了一种快速浏览和验证数据集结构和数据的方法。
+
 
 #### 数据集预览窗口 {#dataset-preview-window}
 
@@ -137,34 +138,25 @@ ht-degree: 5%
 数据集预览窗口包括：
 
 * 左侧用于导航和筛选数据集字段的对象浏览器侧栏。
-* 数据类型指示器显示在每个列名称旁边，用于快速insight进入数据集的结构。
+* 数据集结构中insight每个列名称旁边的数据类型指示器。
 * SQL查询显示在窗口顶部，显示用于生成数据集的查询。
-* 右下角区域最多100行的格式化表格视图，用于高效的数据审查。
-* 数据Distiller用户的直接导航到查询编辑器，并预填充SQL查询以供进一步探索或修改。
+* 具有格式化的表格视图，最多可包含100行，以便有效审查数据。
 
-这些功能支持快速导航、模式理解和透明的数据集验证。
-
-从内联操作或&#x200B;**[!UICONTROL 数据集活动]**&#x200B;屏幕中选择[!UICONTROL 预览数据集]以打开预览窗口。
-
->[!NOTE]
->
->预览窗口显示最多100行的示例。 不含数据的字段将从视图中排除。
+这些功能可帮助您高效地导航、了解架构详细信息并验证示例数据。
 
 #### 高级查询编辑器快捷键 {#query-editor-shortcut}
 
-如果贵组织拥有Data Distiller许可证，则可以直接从数据集预览窗口访问高级查询编辑器。
+如果您的组织具有Data Distiller许可证，则可以直接从数据集预览窗口访问[!UICONTROL 高级查询编辑器]。 使用此快捷方式可在查询服务中无缝地从预览示例数据移动到运行和优化查询。
 
 >[!AVAILABILITY]
 >
->只有拥有所需Data Distiller许可证的用户才能访问此功能。 如果您的组织没有Data Distiller，则[!UICONTROL 高级查询编辑器]选项不可见。
+>[!UICONTROL 高级查询编辑器]的访问权限仅限于具有Data Distiller SKU许可证的组织。 如果贵组织没有所需的许可证，则此选项不会出现在数据集预览窗口中。
 
-选择预览窗口右上角的&#x200B;**[!UICONTROL 高级查询编辑器]**&#x200B;以打开查询编辑器。 当前预览查询已预加载，可随时执行或进一步分析。
+选择预览窗口右上角的[!UICONTROL 高级查询编辑器]以打开预加载并执行当前SQL查询的查询服务。 您可以继续分析或修改SQL，而无需重新输入查询。
 
-![在右上角显示“高级查询编辑器”按钮的数据集预览窗口。](../images/datasets/user-guide/dataset-preview-advanced-query-editor.png)
+![数据集预览窗口在右上角显示“高级查询编辑器”按钮。](../images/datasets/user-guide/dataset-preview-advanced-query-editor.png)
 
-此快捷方式使您可以无缝地从预览示例数据转变为在Query Service中运行和优化查询，而无需重新输入SQL或上下文。
-
-若要进行其他数据访问和分析，请使用下游服务，如[!DNL Query Service]和[!DNL JupyterLab]。 有关详细信息，请参阅以下文档：
+若要进行其他分析，请使用下游服务，如[!DNL Query Service]和[!DNL JupyterLab]。 有关详细信息，请参阅以下文档：
 
 * [查询服务概述](../../query-service/home.md)
 * [JupyterLab 用户指南](../../data-science-workspace/jupyterlab/overview.md)

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务和数据Distiller常见问题解答
 description: 本文档包含与查询服务和数据Distiller相关的常见问题和解答。 主题包括：导出数据、第三方工具和PSQL错误。
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: cd4734b2d837bc04e1de015771a74a48ff37173f
+source-git-commit: f0656fcde077fc6c983a7a2d8dc21d2548fa7605
 workflow-type: tm+mt
-source-wordcount: '5055'
+source-wordcount: '5186'
 ht-degree: 0%
 
 ---
@@ -65,7 +65,7 @@ ht-degree: 0%
 ### 我可以将[!DNL Postman]用于查询服务API吗？
 
 +++回答
-可以，您可以使用[!DNL Postman]（免费的第三方应用程序）可视化所有Adobe API服务并与之交互。 请查看[[!DNL Postman] 设置指南](https://video.tv.adobe.com/v/31668?captions=chi_hans)，了解有关如何在Adobe Developer Console中设置项目以及获取用于[!DNL Postman]的所有必要凭据的分步说明。 请参阅官方文档，了解有关启动、运行和共享 [!DNL Postman] 收藏集[&#128279;](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)的指南。
+可以，您可以使用[!DNL Postman]（免费的第三方应用程序）可视化所有Adobe API服务并与之交互。 请查看[[!DNL Postman] 设置指南](https://video.tv.adobe.com/v/28832)，了解有关如何在Adobe Developer Console中设置项目以及获取用于[!DNL Postman]的所有必要凭据的分步说明。 请参阅官方文档，了解有关启动、运行和共享[收藏集 [!DNL Postman] 的](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)指南。
 +++
 
 ### 通过UI从查询返回的最大行数是否存在限制？
@@ -160,7 +160,7 @@ ht-degree: 0%
 
 ![顶部导航栏下拉菜单（包含帮助和支持、企业支持和联系我们）突出显示。](./images/troubleshooting/help-and-support.png)
 
-此时会出现一个下拉横幅，其中包含[!UICONTROL 帮助和支持]部分。 选择&#x200B;**[!UICONTROL 联系我们]**&#x200B;以打开Adobe客户关怀虚拟助手，或选择&#x200B;**[!UICONTROL 企业支持]**&#x200B;以获得大型组织的专用帮助。
+此时会出现一个下拉横幅，其中包含[!UICONTROL 帮助和支持]部分。 选择&#x200B;**[!UICONTROL 联系我们]**&#x200B;以打开Adobe客户关怀虚拟助手，或选择&#x200B;**[!UICONTROL 企业支持]**以获得大型组织的专用帮助。
 +++
 
 ### 如果上一个作业未成功完成，如何实施一系列连续的作业，而不执行后续作业？
@@ -293,13 +293,13 @@ SELECT count(1) FROM myTableName
 ### 查询服务支持哪些帮助程序函数？
 
 +++回答
-查询服务提供多个内置的SQL帮助程序函数以扩展SQL功能。 有关查询服务[&#128279;](./sql/spark-sql-functions.md)支持的SQL函数的完整列表，请参阅此文档。
+查询服务提供多个内置的SQL帮助程序函数以扩展SQL功能。 有关查询服务[支持的](./sql/spark-sql-functions.md)SQL函数的完整列表，请参阅此文档。
 +++
 
 ### 是否支持所有本机[!DNL Spark SQL]函数，或者用户是否仅限于Adobe提供的包装器[!DNL Spark SQL]函数？
 
 +++回答
-迄今为止，尚未在数据湖数据中测试所有开源[!DNL Spark SQL]函数。 经测试和确认后，它们将被添加到受支持列表中。 请参阅支持的 [!DNL Spark SQL] 函数的[列表](./sql/spark-sql-functions.md)以检查特定函数。
+迄今为止，尚未在数据湖数据中测试所有开源[!DNL Spark SQL]函数。 经测试和确认后，它们将被添加到受支持列表中。 请参阅支持的[函数的 [!DNL Spark SQL] 列表](./sql/spark-sql-functions.md)以检查特定函数。
 +++
 
 ### 用户能否定义自己的用户定义函数(UDF)，以便在其他查询中使用？
@@ -313,7 +313,7 @@ SELECT count(1) FROM myTableName
 +++回答
 首先，检查日志以了解错误的详细信息。 有关[在日志](#error-logs)中查找错误的常见问题解答部分提供了有关如何执行此操作的更多信息。
 
-您还应该查看文档以了解有关如何在UI[&#128279;](./ui/user-guide.md#scheduled-queries)中以及通过[API](./api/scheduled-queries.md)执行计划查询的指导。
+您还应该查看文档以了解有关如何在UI[中以及通过](./ui/user-guide.md#scheduled-queries)API[执行](./api/scheduled-queries.md)计划查询的指导。
 
 请注意，使用[!DNL Query Editor]时，您只能向已创建并保存的查询添加计划。 这不适用于[!DNL Query Service] API。
 +++
@@ -396,7 +396,7 @@ SELECT to_utc_timestamp('2021-08-31', 'Asia/Seoul');
 2021-08-30 15:00:00
 ```
 
-作为另一个示例，如果给定时间戳为`Asia/Seoul`时区的`2021-07-14 12:40:00.0`，则返回的UTC时间戳为`2021-07-14 03:40:00.0`
+作为另一个示例，如果给定时间戳为`2021-07-14 12:40:00.0`时区的`Asia/Seoul`，则返回的UTC时间戳为`2021-07-14 03:40:00.0`
 
 查询服务UI中提供的控制台输出是更易于用户识别的格式：
 
@@ -406,7 +406,7 @@ SELECT to_utc_timestamp('2021-08-31', 'Asia/Seoul');
 
 #### 从UTC时间戳转换
 
-`from_utc_timestamp()`方法从本地时区&#x200B;**的时间戳中解释给定参数**，并以UTC格式提供所需区域的等效时间戳。 在下面的示例中，小时是用户本地时区的下午2:40。 作为变量传递的首尔时区比当地时区早九小时。
+`from_utc_timestamp()`方法从本地时区&#x200B;**的时间戳中解释给定参数**，并以UTC格式提供所需区域的等效时间戳。 在下面的示例中，小时是用户本地时区的2:40PM。 作为变量传递的首尔时区比当地时区早九小时。
 
 ```SQL
 SELECT from_utc_timestamp('2021-08-31 14:40:00.0', 'Asia/Seoul');
@@ -464,7 +464,7 @@ WHERE timestamp = CAST('07-29-2021 00:00:00' AS timestamp)
 ### 是否应使用通配符（如*）获取数据集中的所有行？
 
 +++回答
-无法使用通配符获取行中的所有数据，因为查询服务应被视为&#x200B;**列存储**，而不是传统的基于行的存储系统。
+无法使用通配符获取行中的所有数据，因为查询服务应被视为**列存储**，而不是传统的基于行的存储系统。
 +++
 
 ### 是否应在SQL查询中使用`NOT IN`？
@@ -472,7 +472,7 @@ WHERE timestamp = CAST('07-29-2021 00:00:00' AS timestamp)
 +++回答
 `NOT IN`运算符通常用于检索在另一个表或SQL语句中找不到的行。 此运算符可能会降低性能，如果进行比较的列接受`NOT NULL`，或者您有大量记录，则可能会返回意外结果。
 
-您可以使用`NOT EXISTS`或`LEFT OUTER JOIN`，而不是使用`NOT IN`。
+您可以使用`NOT IN`或`NOT EXISTS`，而不是使用`LEFT OUTER JOIN`。
 
 例如，如果您创建了以下表：
 
@@ -647,6 +647,14 @@ Data Distiller计算机小时的许可证使用情况仪表板每天更新四次
 后端基础架构不断改进，以优化计算小时利用率和处理时间。 因此，随着性能的增强，您可能会注意到随着时间的推移而发生变化。
 +++
 
+### Data Distiller在开发沙盒和生产沙盒之间的性能是否存在差异？
+
++++回答
+在开发沙盒和生产沙盒中运行查询时，您可能会获得类似的性能。 两个环境都旨在提供相同级别的处理能力。 但是，根据运行查询时处理的数据量和整体系统活动，可能会出现计算小时数方面的差异。
+
+在Experience Platform UI的[许可证使用情况仪表板](../dashboards/guides/license-usage.md)中跟踪您的计算小时使用情况。
++++
+
 ## 查询Ui
 
 ### 尝试连接到查询服务时，“创建查询”卡住“正在初始化连接……”。 如何修复此问题？
@@ -744,7 +752,7 @@ INSERT INTO查询称为ITAS查询。 请注意，CREATE TABLE查询称为CTAS查
 ### 是否有办法连接一次查询服务以与第三方工具一起连续使用？
 
 +++回答
-可以，可以通过一次性设置不过期凭据将第三方桌面客户端连接到查询服务。 未过期的凭据可由授权用户生成，并在自动下载到其本地计算机的JSON文件中接收。 在文档中可找到有关如何创建和下载未过期凭据[&#128279;](./ui/credentials.md#non-expiring-credentials)的完整指南。
+可以，可以通过一次性设置不过期凭据将第三方桌面客户端连接到查询服务。 未过期的凭据可由授权用户生成，并在自动下载到其本地计算机的JSON文件中接收。 在文档中可找到有关如何创建和下载未过期凭据[的完整](./ui/credentials.md#non-expiring-credentials)指南。
 +++
 
 ### 为什么我的未过期凭据不起作用？
@@ -752,6 +760,12 @@ INSERT INTO查询称为ITAS查询。 请注意，CREATE TABLE查询称为CTAS查
 +++回答
 未过期凭据的值是来自`technicalAccountID`的拼接参数以及来自配置JSON文件的`credential`的拼接参数。 密码值采用以下形式： `{{technicalAccountId}:{credential}}`。
 请参阅文档以了解有关如何[使用凭据](./ui/credentials.md#using-credentials-to-connect-to-external-clients)连接到外部客户端的详细信息。
++++
+
+### 对于未过期的凭据密码的特殊字符是否有任何限制？
+
++++回答
+是的。 为未过期的凭据设置密码时，必须至少包含一个数字、一个小写字母、一个大写字母和一个特殊字符。 不支持美元符号($)。 请改用特殊字符，如！、@、#、^或&amp;。
 +++
 
 ### 哪种第三方SQL编辑器可以连接到查询服务编辑器？
@@ -763,7 +777,7 @@ INSERT INTO查询称为ITAS查询。 请注意，CREATE TABLE查询称为CTAS查
 ### 能否将Power BI工具连接到查询服务？
 
 +++回答
-是，您可以将Power BI连接到查询服务。 有关将Power BI桌面应用程序连接到查询服务[&#128279;](./clients/power-bi.md)的说明，请参阅文档。
+是，您可以将Power BI连接到查询服务。 有关将Power BI桌面应用程序连接到查询服务[的说明，请参阅文档](./clients/power-bi.md)。
 +++
 
 ### 连接到查询服务时，为何需要很长时间才能加载功能板？
@@ -798,7 +812,7 @@ INSERT INTO查询称为ITAS查询。 请注意，CREATE TABLE查询称为CTAS查
 | **53400** | 查询 | 限制超出最大值 | 用户指定了高于100,000的LIMIT子句 |
 | **53400** | 查询 | 语句超时 | 提交实时语句所花费的时间超过了10分钟的最大值 |
 | **58000** | 查询 | 系统错误 | 内部系统故障 |
-| **0A000** | 查询/命令 | 不支持 | 不支持查询/命令中的特性/功能 |
+| **0A000** | 查询/命令 | 不受支持 | 不支持查询/命令中的特性/功能 |
 | **42501** | DROP TABLE查询 | 正在删除不是由查询服务创建的表 | 查询服务未使用`CREATE TABLE`语句创建要删除的表 |
 | **42501** | DROP TABLE查询 | 表不是由经过身份验证的用户创建的 | 当前正在删除的表不是由当前登录的用户创建的 |
 | **42P01** | DROP TABLE查询 | 未找到表 | 找不到查询中指定的表 |
