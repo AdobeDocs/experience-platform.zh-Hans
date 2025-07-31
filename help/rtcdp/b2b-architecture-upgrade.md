@@ -1,12 +1,11 @@
 ---
 title: Real-Time CDP B2B edition的架构升级
 description: 请阅读本文档，了解对Real-Time CDP B2B edition的全面架构升级。
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
-hide: true
-hidefromtoc: true
-source-git-commit: 78444555178773a8305ba27aaaf7998fe279a71d
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+exl-id: d958a947-e195-4dd4-a04c-63ad82829728
+source-git-commit: 1a3be99ca3c270dda6e8dc559359cbe21bb8f4fb
 workflow-type: tm+mt
-source-wordcount: '1135'
+source-wordcount: '1074'
 ht-degree: 0%
 
 ---
@@ -15,7 +14,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->本文档概述了Real-Time CDP B2B和B2P版本的架构升级。 **此时您无需执行任何操作**。 有关升级将对Adobe Experience Platform现有功能有何影响的信息，请参阅本文档。 如果您有任何问题，请联系您的Adobe客户团队。
+>本文档概述了Real-Time CDP B2B和B2P版本的架构升级。 升级不需要大多数客户执行任何操作。 但是，有些受众无法自动升级。 Adobe将直接与您合作来应对这些场景。 有关升级将对Adobe Experience Platform现有功能有何影响的信息，请参阅本文档。 如果您有任何问题，请联系您的Adobe客户团队。
 
 Adobe重新设计了Real-Time CDP B2B和B2P版本，以增强可扩展性、性能和可靠性，同时还支持更高级的B2B用例。 为确保所有客户都能从这些改进中受益，Adobe将把所有现有的B2B和B2P客户升级到新架构。
 
@@ -52,19 +51,6 @@ Adobe重新设计了Real-Time CDP B2B和B2P版本，以增强可扩展性、性�
 
 有关详细信息，请阅读有关[帐户受众](../segmentation/types/account-audiences.md)的文档。
 
-### 帐户受众中人员级别事件的完整回顾
-
-现在，客户受众可以利用人员级别事件的完整历史记录，并可将回顾时间范围扩展到之前的30天之外。
-
-通过此升级，您现在可以：
-
-* 根据相关人员级别事件的完整历史记录创建更全面的受众。
-* 利用长期行为数据，实现更丰富、更准确的受众定义。
-* 根据随时间推移而加深的参与模式，确定高价值客户。
-* 支持需要从历史行为中获得洞察的用例，例如涉及长销售周期或延迟购买信号的用例。
-
-有关详细信息，请阅读有关[帐户受众](../segmentation/types/account-audiences.md)的文档。
-
 ## 升级到现有功能
 
 在B2B架构升级过程中，更新了以下功能。
@@ -73,16 +59,33 @@ Adobe重新设计了Real-Time CDP B2B和B2P版本，以增强可扩展性、性�
 
 作为新架构升级的一部分，体验事件过滤器不能再用于包含B2B属性的单个多实体受众。
 
-要获得相同的受众逻辑，请使用区段方法：
+要获得相同的受众逻辑，您可以使用区段生成器[添加受众和引用受众](../segmentation/ui/segment-builder.md#adding-audiences)
 
-1. 创建体验事件受众：单独定义行为条件。 例如：“过去三天访问定价页面的用户。”
-2. 创建具有B2B属性的多实体受众：作为此受众标准的一部分，引用体验事件受众。 例如：“作为客户属于&#x200B;**&#39;财务&#39;**&#x200B;行业的任何机会的&#x200B;**&#39;决策者&#39;**&#x200B;的人员，以及过去三天访问定价页面的受众成员。
+例如：
 
-升级完成后，必须使用区段方法创建任何具有B2B属性和体验事件的新多实体受众。 此外，您必须验证受众成员资格以确保预期行为。
+* 创建体验事件受众
+   * 单独定义行为条件。 例如：“过去三天访问定价页面的用户。”
+* 创建具有B2B属性的多实体受众。
+   * 在此，您可以引用体验事件受众作为此受众标准的一部分。 例如：“作为客户属于&#x200B;**&#39;财务&#39;**&#x200B;行业的任何机会的&#x200B;**&#39;决策者&#39;**&#x200B;的人员，以及过去三天访问定价页面的受众成员。
+
+升级完成后，必须使用[segment-of-segment](../segmentation/methods/edge-segmentation.md#edge-segmentation-query-types)方法创建任何具有B2B属性和体验事件的新多实体受众。
+
+>[!TIP]
+>
+>区段&#x200B;**的**&#x200B;区段是包含一个或多个批次或边缘区段的任意区段定义。 **注意**：如果您使用区段区段，则配置文件取消资格将&#x200B;**每24小时发生一次**。
 
 ### B2B受众中的实体分辨率和时间优先级合并
 
-作为架构升级的一部分，Adobe引入了“针对客户和机会的实体解决方案”，该解决方案每天运行。 此增强功能使Experience Platform能够识别和整合表示同一真实世界实体的多个记录，从而改善数据一致性并实现更准确的受众分段。
+作为架构升级的一部分，Adobe将推出针对“客户”和“机会”的实体解决方案。 实体解析基于确定性ID匹配和基于最新数据。 实体解析作业在批量分段期间每天运行，然后再评估具有B2B属性的多实体受众。
+
+>[!BEGINSHADEBOX]
+
+#### 实体解析如何工作？
+
+* **在**&#x200B;之前：如果将数据通用编号系统(DUNS)编号用作附加标识，并且在源系统（如CRM）中更新了帐户的DUNS编号，则帐户ID将同时链接到旧和新的DUNS编号。
+* **After**：如果将DUNS编号用作附加标识，并且在源系统（如CRM）中更新了帐户的DUNS编号，则帐户ID将仅链接到新的DUNS编号，从而更准确地反映帐户的当前状态。
+
+>[!ENDSHADEBOX]
 
 通过此升级，您现在可以：
 
@@ -94,8 +97,6 @@ Adobe重新设计了Real-Time CDP B2B和B2P版本，以增强可扩展性、性�
 ### 在多实体B2B受众中支持合并策略
 
 具有B2B属性的多实体受众现在支持单个合并策略（即您配置的默认合并策略），而不是多个合并策略。
-
-以前依赖非默认合并策略的受众可能会产生不同的结果。 要了解受众构成中可能出现的更改，请审核并测试依赖非默认合并策略的任何受众。 此外，监控激活结果以检测由于合并策略更改导致的受众组合中的任何偏移。
 
 有关详细信息，请参阅Real-Time CDP B2B edition[的](./segmentation/b2b.md)分段用例指南。
 
@@ -127,25 +128,25 @@ Adobe重新设计了Real-Time CDP B2B和B2P版本，以增强可扩展性、性�
 
 现在，只有在帐户和机会架构完成每日实体解析过程后，才能将其检索为查找维度实体。 新摄取的记录将不可用于配置文件扩充或区段定义，直到下一个实体解析周期完成（通常每24小时一次）为止。
 
-建议您查看任何需要实时访问帐户和机会数据的用例。 此外，在设计和更新依赖于基于查找的分段或使用帐户和机会实体进行个性化的工作流时，建议您规划长达24小时的延迟期。
+<!-- ### Deprecation of audience creation via API for B2B entities
 
-### 弃用通过API为B2B实体创建受众
+Creation of audiences using B2B entities via API is being deprecated. The list of affected B2B entities include:
 
-不建议通过API使用B2B实体创建受众。 受影响的B2B实体列表包括：
-
-* 帐户
-* 机会
-* 帐户 — 人员关系
-* 机会 — 人员关系
+* Account
+* Opportunity
+* Account-Person Relation
+* Opportunity-Person Relation
 * Campaign
-* 营销活动成员
-* 营销列表
-* 营销列表成员
+* Campaign Member
+* Marketing List
+* Marketing List Member
 
-有关详细信息，请阅读[区段定义端点API指南](../segmentation/api/segment-definitions.md)。
+Read the [segment definitions endpoint API guide](../segmentation/api/segment-definitions.md) for more information. -->
 
 ### 对沙盒工具中的多实体受众导入的更改
 
-随着架构升级，您将无法再导入具有B2B属性和体验事件的多实体受众（如果在升级之前导出）。 这些受众将无法导入，且无法自动转换为新架构。 要解决此限制，您必须重新导出这些受众，然后使用沙盒工具将它们导入各自的目标沙盒中。
+在架构升级后，如果在升级之前发布了包含这些受众的包，您将无法再导入具有B2B属性和体验事件的多实体受众。 这些受众将无法导入，且无法自动转换为新架构。 要解决此限制，您必须创建一个具有更新受众的新包，然后使用沙盒工具将它们导入各自的目标沙盒中。
+
+开发沙盒将升级到新架构。 可以自动更新的受众将升级；无法禁用的受众将升级。 升级后必须重新创建禁用的受众。
 
 有关详细信息，请阅读[沙盒工具指南](../sandboxes/ui/sandbox-tooling.md)。
