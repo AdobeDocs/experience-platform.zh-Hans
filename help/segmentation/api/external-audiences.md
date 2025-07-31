@@ -1,12 +1,10 @@
 ---
 title: 外部受众API端点
 description: 了解如何使用外部受众API从Adobe Experience Platform创建、更新、激活和删除外部受众。
-hide: true
-hidefromtoc: true
 exl-id: eaa83933-d301-48cb-8a4d-dfeba059bae1
-source-git-commit: 3acadf73b5c82d6f5f0f1eaec41387bec897558d
+source-git-commit: 3e1eb697569d75d0ef3af53be1a556bdcd8a293b
 workflow-type: tm+mt
-source-wordcount: '2405'
+source-wordcount: '2219'
 ht-degree: 4%
 
 ---
@@ -528,24 +526,23 @@ curl -X GET https://platform.adobe.io/data/core/ais/external-audience/60ccea95-1
 
 **API格式**
 
-以下端点支持多个查询参数以帮助筛选结果。 虽然这些参数是可选的，但强烈建议使用这些参数来帮助优化结果。
+<!-- The following endpoint supports several query parameters to help filter your results. While these parameters are optional, their use is strongly recommended to help focus your results. -->
 
 ```http
 GET /external-audience/{AUDIENCE_ID}/runs
-GET /external-audience/{AUDIENCE_ID}/runs?{QUERY_PARAMETERS}
 ```
 
-**查询参数**
+<!-- **Query parameters**
 
-+++ 可用查询参数的列表。
++++ A list of available query parameters. 
 
-| 参数 | 描述 | 示例 |
+| Parameter | Description | Example |
 | --------- | ----------- | ------- |
-| `limit` | 响应中返回的最大项目数。 此值的范围为1到40。 默认情况下，限制设置为20。 | `limit=30` |
-| `sortBy` | 返回项的排序顺序。 您可以按`name`或`createdAt`进行排序。 此外，您可以添加`-`符号来按&#x200B;**降序**&#x200B;顺序排序，而不是&#x200B;**升序**&#x200B;顺序。 默认情况下，这些项按`createdAt`降序排序。 | `sortBy=name` |
-| `property` | 将显示用于确定运行哪些受众摄取的过滤器。 您可以根据以下属性进行筛选： <ul><li>`name`：允许您按受众名称过滤。 如果使用此属性，您可以使用`=`、`!=`、`=contains`或`!=contains`进行比较。 </li><li>`createdAt`：允许您按摄取时间过滤。 如果使用此属性，您可以使用`>=`或`<=`进行比较。</li><li>`status`：允许您按摄取运行的状态进行筛选。 如果使用此属性，您可以使用`=`、`!=`、`=contains`或`!=contains`进行比较。 </li></ul> | `property=createdAt<1683669114845`<br/>`property=name=demo_audience`<br/>`property=status=SUCCESS` |
+| `limit` | The maximum number of items returned in the response. This value can range from 1 to 40. By default, the limit is set to 20. | `limit=30` |
+| `sortBy` | The order in which the returned items are sorted. You can sort by either `name` or by `createdAt`. Additionally, you can add a `-` sign to sort by **descending** order instead of **ascending** order. By default, the items are sorted by `createdAt` in descending order. | `sortBy=name` |
+| `property` | A filter to determine which audience ingestion runs are displayed. You can filter on the following properties: <ul><li>`name`: Lets you filter by the audience name. If using this property, you can compare by using `=`, `!=`, `=contains`, or `!=contains`. </li><li>`createdAt`: Lets you filter by the ingestion time. If using this property, you can compare by using `>=` or `<=`.</li><li>`status`: Lets you filter by the ingestion run's status. If using this property, you can compare by using `=`, `!=`, `=contains`, or `!=contains`. </li></ul>  | `property=createdAt<1683669114845`<br/>`property=name=demo_audience`<br/>`property=status=SUCCESS` |
 
-+++
++++ -->
 
 **请求**
 
@@ -594,19 +591,23 @@ curl -X GET https://platform.adobe.io/data/core/ais/external-audience/60ccea95-1
             "createdAt": 1749324248,
             "createdBy": "{USER_ID}"
         }
-    ],
+    ]
+}
+```
+
+<!-- ,
     "_page": {
         "limit": 20,
         "count": 2,
         "totalCount": 2
     }
-}
-```
+    
+| `_page` | Object | An object that contains the pagination information about the list of results. |
+     -->
 
 | 属性 | 类型 | 描述 |
 | -------- | ---- | ----------- |
 | `runs` | 对象 | 一个对象，其中包含属于该受众的摄取运行列表。 有关此对象的详细信息，请参阅[检索摄取状态部分](#retrieve-ingestion-status)。 |
-| `_page` | 对象 | 包含有关结果列表的分页信息的对象。 |
 
 +++
 
