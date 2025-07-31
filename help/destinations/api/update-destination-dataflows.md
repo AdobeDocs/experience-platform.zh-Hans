@@ -5,7 +5,7 @@ title: 使用流服务API更新目标数据流
 type: Tutorial
 description: 本教程介绍了更新目标数据流的步骤。 了解如何使用流服务API启用或禁用数据流、更新其基本信息或添加和删除受众和属性。
 exl-id: 3f69ad12-940a-4aa1-a1ae-5ceea997a9ba
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
 source-wordcount: '2410'
 ht-degree: 3%
@@ -22,7 +22,7 @@ ht-degree: 3%
 
 >[!NOTE]
 >
-> 在本教程中，术语&#x200B;*流*&#x200B;和&#x200B;*数据流*&#x200B;可互换使用。 在本教程的上下文中，具有相同含义。
+> 在本教程中，术语&#x200B;*流*&#x200B;和&#x200B;*数据流*&#x200B;可互换使用。 在本教程的上下文中，它们具有相同的含义。
 
 本教程还要求您实际了解Adobe Experience Platform的以下组件：
 
@@ -503,8 +503,8 @@ curl -X PATCH \
 | `exportMode` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要使用此字段。 <br>必填。 选择`"DAILY_FULL_EXPORT"`或`"FIRST_FULL_THEN_INCREMENTAL"`。 有关这两个选项的更多信息，请参阅批处理目标激活教程中的[导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files)和[导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files)。 |
 | `startDate` | 选择受众应开始将用户档案导出到目标的日期。 |
 | `frequency` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要使用此字段。 <br>必填。<br> <ul><li>对于`"DAILY_FULL_EXPORT"`导出模式，您可以选择`ONCE`或`DAILY`。</li><li>对于`"FIRST_FULL_THEN_INCREMENTAL"`导出模式，您可以选择`"DAILY"`、`"EVERY_3_HOURS"`、`"EVERY_6_HOURS"`、`"EVERY_8_HOURS"`、`"EVERY_12_HOURS"`。</li></ul> |
-| `triggerType` | 仅适用于&#x200B;*批次目标*。 仅当在`frequency`选择器中选择`"DAILY_FULL_EXPORT"`模式时，才需要此字段。 <br>必填。<br> <ul><li>选择`"AFTER_SEGMENT_EVAL"`以使激活作业在每日Experience Platform批处理分段作业完成后立即运行。 这可确保在激活作业运行时，将最新的配置文件导出到您的目标。</li><li>选择`"SCHEDULED"`以使激活作业在固定时间运行。 这可确保每天在同一时间导出Experience Platform用户档案数据，但您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。 当选择此选项时，还必须添加`startTime`以指示每日导出应在UTC时段的哪个时间发生。</li></ul> |
-| `endDate` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要使用此字段。 选择`"exportMode":"DAILY_FULL_EXPORT"`和`"frequency":"ONCE"`时，<br>不适用。 <br>设置受众成员停止导出到目标的日期。 |
+| `triggerType` | 仅适用于&#x200B;*批次目标*。 仅当在`"DAILY_FULL_EXPORT"`选择器中选择`frequency`模式时，才需要此字段。 <br>必填。<br> <ul><li>选择`"AFTER_SEGMENT_EVAL"`以使激活作业在每日Experience Platform批处理分段作业完成后立即运行。 这可确保在激活作业运行时，将最新的配置文件导出到您的目标。</li><li>选择`"SCHEDULED"`以使激活作业在固定时间运行。 这可确保每天在同一时间导出Experience Platform用户档案数据，但您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。 当选择此选项时，还必须添加`startTime`以指示每日导出应在UTC时段的哪个时间发生。</li></ul> |
+| `endDate` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要使用此字段。 选择<br>和`"exportMode":"DAILY_FULL_EXPORT"`时，`"frequency":"ONCE"`不适用。 <br>设置受众成员停止导出到目标的日期。 |
 | `startTime` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要使用此字段。 <br>必填。 选择应生成包含受众成员的文件并将其导出到目标的时间。 |
 
 **响应**

@@ -3,7 +3,7 @@ title: 使用Web SDK和Edge Network API的混合个性化
 description: 本文演示了如何将Web SDK与Edge Network API结合使用来在Web资产上部署混合个性化。
 keywords: 个性化；混合；服务器API；服务器端；混合实现；
 exl-id: 506991e8-701c-49b8-9d9d-265415779876
-source-git-commit: 7b91f4f486db67d4673877477a6be8287693533a
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
 source-wordcount: '1200'
 ht-degree: 2%
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 ## 概述 {#overview}
 
-Hybdrid个性化描述使用[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/)在服务器端检索个性化内容，并使用[Web SDK](../home.md)在客户端呈现该内容的过程。
+混合个性化描述使用[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/)在服务器端检索个性化内容，并使用[Web SDK](../home.md)在客户端呈现该内容的过程。
 
 您可以将混合个性化与Adobe Target、Adobe Journey Optimizer或Offer Decisioning等个性化解决方案一起使用，不同之处在于[!UICONTROL Edge Network API]有效负载的内容。
 
@@ -35,19 +35,19 @@ Hybdrid个性化描述使用[Edge Network API](https://developer.adobe.com/data-
 
 1. 浏览器先前存储的任何带有`kndctr_`前缀的现有Cookie都将包含在浏览器请求中。
 1. 客户端Web浏览器向应用程序服务器请求网页。
-1. 应用程序服务器在收到页面请求时，会向[Edge Network API交互式数据收集终结点](https://developer.adobe.com/data-collection-apis/docs/endpoints/interact/)发出`POST`请求以获取个性化内容。 `POST`请求包含`event`和`query`。 上一步的Cookie（如果可用）包含在`meta>state>entries`数组中。
+1. 应用程序服务器在收到页面请求时，会向`POST`Edge Network API交互式数据收集终结点[发出](https://developer.adobe.com/data-collection-apis/docs/endpoints/interact/)请求以获取个性化内容。 `POST`请求包含`event`和`query`。 上一步的Cookie（如果可用）包含在`meta>state>entries`数组中。
 1. Edge Network API会将个性化内容返回到应用程序服务器。
 1. 应用程序服务器向客户端浏览器返回一个HTML响应，其中包含[标识和群集Cookie](#cookies)。
 1. 在客户端页面上，调用[!DNL Web SDK] `applyResponse`命令，传入上一步的[!UICONTROL Edge Network API]响应的标头和正文。
-1. [!DNL Web SDK]自动呈现Target [[!DNL Visual Experience Composer (VEC)]](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=zh-Hans)选件和Journey Optimizer Web渠道项，因为`renderDecisions`标志设置为`true`。
-1. 通过`applyProposition`方法手动应用基于Target表单的[!DNL HTML]/[!DNL JSON]选件和基于代码的Journey Optimizer体验，以根据建议中的个性化内容更新[!DNL DOM]。
+1. [!DNL Web SDK]自动呈现Target [[!DNL Visual Experience Composer (VEC)]](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)选件和Journey Optimizer Web渠道项，因为`renderDecisions`标志设置为`true`。
+1. 通过[!DNL HTML]方法手动应用基于Target表单的[!DNL JSON]/`applyProposition`选件和基于代码的Journey Optimizer体验，以根据建议中的个性化内容更新[!DNL DOM]。
 1. 对于基于Target表单的[!DNL HTML]/[!DNL JSON]选件和基于代码的Journey Optimizer体验，必须手动发送显示事件，以指示何时显示返回的内容。 这是通过`sendEvent`命令完成的。
 
 ## Cookie {#cookies}
 
 Cookie用于保留用户标识和群集信息。  使用混合实施时，Web应用程序服务器会在请求生命周期中处理这些Cookie的存储和发送。
 
-| Cookie | 目的 | 存储者 | 发送者 |
+| Cookie | 用途 | 存储者 | 发送者 |
 |---|---|---|---|
 | `kndctr_AdobeOrg_identity` | 包含用户身份详细信息。 | 应用程序服务器 | 应用程序服务器 |
 | `kndctr_AdobeOrg_cluster` | 指示应使用哪个Edge Network群集来完成请求。 | 应用程序服务器 | 应用程序服务器 |
@@ -92,7 +92,7 @@ Edge Network区域主机使用以下格式： `<location_hint>.server.adobedc.ne
 
 >[!TIP]
 >
->作为最佳实践，您应使用允许位置的列表。 这样可防止缓减位置提示，因为它是通过客户端Cookie提供的。
+>作为最佳实践，您应使用允许位置的列表。 这样可防止篡改位置提示，因为它是通过客户端Cookie提供的。
 
 ## Analytics含义 {#analytics}
 
@@ -334,7 +334,7 @@ Edge Network响应将包含`state:store`条指令，这些指令应转换为`Set
    ).then(applyPersonalization("sample-json-offer"));
 ```
 
-通过`applyPersonalization`方法手动应用基于表单的[!DNL JSON]选件，以根据个性化选件更新[!DNL DOM]。 对于基于表单的活动，必须手动发送显示事件，以指示何时显示选件。 这是通过`sendEvent`命令完成的。
+通过[!DNL JSON]方法手动应用基于表单的`applyPersonalization`选件，以根据个性化选件更新[!DNL DOM]。 对于基于表单的活动，必须手动发送显示事件，以指示何时显示选件。 这是通过`sendEvent`命令完成的。
 
 ```js
 function sendDisplayEvent(decision) {

@@ -1,23 +1,23 @@
 ---
 title: 监控Adobe Experience Platform Web SDK的挂接
-description: 了解如何使用Adobe Experience Platform Web SDK提供的监视挂接调试您的实施并捕获Web SDK日志。
-source-git-commit: 3dacc991fd7760c1c358bec07aca83ffeb4f4f4d
+description: 了解如何使用Adobe Experience Platform Web SDK提供的监视挂接来调试您的实施并捕获Web SDK日志。
+exl-id: 56633311-2f89-4024-8524-57d45c7d38f7
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
 source-wordcount: '1244'
 ht-degree: 6%
 
 ---
 
-
 # 监控Web SDK的挂接
 
-Adobe Experience Platform Web SDK包含监视挂钩，您可以使用这些挂钩监视各种系统事件。 这些工具可用于开发您自己的调试工具和捕获Web SDK日志。
+Adobe Experience Platform Web SDK包括监视挂接，您可以使用这些挂接监视各种系统事件。 这些工具可用于开发您自己的调试工具和捕获Web SDK日志。
 
 无论是否启用了[调试](commands/configure/debugenabled.md)，Web SDK都会触发监视功能。
 
 ## `onInstanceCreated` {#onInstanceCreated}
 
-当您成功创建新的Web SDK实例时，将触发此回调函数。 有关函数参数的详细信息，请参阅下面的示例。
+当您成功创建了新的Web SDK实例时，将触发此回调函数。 有关函数参数的详细信息，请参阅下面的示例。
 
 ```js
 onInstanceCreated(data) {
@@ -49,7 +49,7 @@ onInstanceCreated(data) {
 
 ## `onBeforeCommand` {#onBeforeCommand}
 
-此回调函数由Web SDK在执行任何其他命令之前触发。 可以使用此函数检索特定命令的配置选项。 有关函数参数的详细信息，请参阅下面的示例。
+此回调函数在执行任何其他命令之前由Web SDK触发。 可以使用此函数检索特定命令的配置选项。 有关函数参数的详细信息，请参阅下面的示例。
 
 ```js
 onBeforeCommand(data) {
@@ -214,7 +214,7 @@ onBeforeLog(data) {
 | `data.instanceName` | 字符串 | 存储Web SDK实例的全局变量的名称。 |
 | `data.componentName` | 字符串 | 生成日志消息的组件的名称。 |
 | `data.payload` | 对象 | 将转换为JSON格式并通过`POST`方法在请求正文中发送的有效负荷对象。 |
-| `data.status` | 字符串 | `personalization`组件通知Web SDK渲染的状态。  支持的值： <ul><li>`rendering-started`：指示Web SDK即将呈现建议。 在Web SDK开始呈现决策范围或视图之前，您可以在`data`对象中看到将由`personalization`组件和范围名称呈现的建议。</li><li>`no-offers`：表示未收到所请求参数的有效负载。</li> <li>`rendering-failed`：表示Web SDK无法呈现建议。</li><li>`rendering-succeeded`：表示已针对决策范围完成渲染。</li> <li>`rendering-redirect`：指示Web SDK将渲染重定向建议。</li></ul> |
+| `data.status` | 字符串 | `personalization`组件将渲染状态通知给Web SDK。  支持的值： <ul><li>`rendering-started`：指示Web SDK即将呈现建议。 在Web SDK开始呈现决策范围或视图之前，您可以在`data`对象中看到将由`personalization`组件和范围名称呈现的建议。</li><li>`no-offers`：表示未收到所请求参数的有效负载。</li> <li>`rendering-failed`：表示Web SDK无法呈现建议。</li><li>`rendering-succeeded`：表示已针对决策范围完成渲染。</li> <li>`rendering-redirect`：指示Web SDK将渲染重定向建议。</li></ul> |
 
 ## `onContentHiding` {#onContentHiding}
 
@@ -232,11 +232,11 @@ onContentHiding(data) {
 |---------|----------|----------|
 | `data.instanceName` | 字符串 | 存储Web SDK实例的全局变量的名称。 |
 | `data.componentName` | 字符串 | 生成日志消息的组件的名称。 |
-| `data.status` | 字符串 | `personalization`组件通知Web SDK渲染的状态。 支持的值： <ul><li>`hide-containers`</li><li>`show-containers`</ul> |
+| `data.status` | 字符串 | `personalization`组件将渲染状态通知给Web SDK。 支持的值： <ul><li>`hide-containers`</li><li>`show-containers`</ul> |
 
-## 如何在使用NPM包时指定监视挂接 {#specify-monitoris-npm}
+## 如何在使用NPM包时指定监视挂接 {#specify-monitoring-npm}
 
-如果您通过[NPM包](install/npm.md)使用Web SDK，则可以在`createInstasnce`函数中指定监视挂接，如下所示。
+如果您通过[NPM包](install/npm.md)使用Web SDK，则可以在`createInstance`函数中指定监视挂接，如下所示。
 
 ```js
 var monitor = {
@@ -257,7 +257,7 @@ Web SDK在名为`__alloyMonitors`的全局变量中查找对象数组。
 
 要捕获所有Web SDK事件，必须先定义监视挂接，然后才能将Web SDK代码加载到页面上。 每个监视方法都会捕获Web SDK事件。
 
-您可以在页面上加载&#x200B;*Web SDK代码之后定义监视挂接*，但在页面加载之前触发的任何挂接将&#x200B;*不会捕获*。
+您可以在页面上加载&#x200B;*Web SDK代码之后定义监视挂接*，但在页面加载之前触发的任何挂接都将&#x200B;*无法捕获*。
 
 定义监视挂接对象时，只需要定义要为其定义特殊逻辑的方法。
 例如，如果您只关心`onContentRendering`，则可以只定义该方法。 您无需一次使用所有监控挂接。

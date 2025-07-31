@@ -2,7 +2,7 @@
 title: 在Web SDK中配置Web应用程序内消息传送支持
 description: 了解如何配置Web SDK标记扩展以支持Web应用程序内消息传递。
 exl-id: 90a19ef4-e94c-4f16-a26a-8919ad2dbd6f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
 source-wordcount: '969'
 ht-degree: 0%
@@ -21,7 +21,7 @@ ht-degree: 0%
 >
 >Web应用程序内消息传送是[Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=zh-Hans)功能，它使用Web SDK提供个性化内容。
 >
->有关如何配置Web应用程序内消息传送活动的详细说明，请参阅[Adobe Journey Optimizer文档](https://experienceleague.adobe.com/docs/journey-optimizer/using/in-app/create-in-app-web.html?lang=zh-Hans)。
+>有关如何配置Web应用程序内消息传送活动的详细说明，请参阅[Adobe Journey Optimizer文档](https://experienceleague.adobe.com/docs/journey-optimizer/using/in-app/create-in-app-web.html)。
 
 
 ## 先决条件 {#prerequisites}
@@ -80,10 +80,10 @@ Web应用程序内消息传送支持两种类型的触发器：
 
      ![显示操作配置屏幕的图像。](assets/web-in-app-messaging/action-configuration.png)
 
-3. 在屏幕右侧的&#x200B;**[!UICONTROL Personalization]**&#x200B;部分中，启用&#x200B;**[!UICONTROL 呈现可视化个性化决策]**&#x200B;选项。
+3. 在屏幕右侧的&#x200B;**[!UICONTROL Personalization]**&#x200B;部分中，启用&#x200B;**[!UICONTROL 呈现可视化个性化决策]**选项。
    ![显示个性化配置屏幕的图像。](assets/web-in-app-messaging/render-visual-personalization.png)
 
-4. 在屏幕右侧的&#x200B;**[!UICONTROL 决策上下文]**&#x200B;部分中，定义您在促销活动配置中使用的&#x200B;**[!UICONTROL 键]**/**[!UICONTROL 值]**&#x200B;对，以符合应用程序内消息的条件。
+4. 在屏幕右侧的&#x200B;**[!UICONTROL 决策上下文]**&#x200B;部分中，定义您在促销活动配置中使用的&#x200B;**[!UICONTROL 键]**/**[!UICONTROL 值]**对，以符合应用程序内消息的条件。
    ![显示个性化配置屏幕的图像。](assets/web-in-app-messaging/decision-context.png)
 
 5. 选择&#x200B;**[!UICONTROL 保留更改]**&#x200B;以保存您的配置。
@@ -105,7 +105,7 @@ Web应用程序内消息传送支持两种类型的触发器：
 
 1. **[!UICONTROL 扩展]**： [!UICONTROL 核心]
 2. **[!UICONTROL 事件类型]**：[!UICONTROL 点击]
-3. 为页面上的特定元素设置触发器，标识符为您选择的CSS选择器。
+3. 为页面上的特定元素设置触发器，该触发器由您选择的CSS选择器标识。
 
    ![显示事件配置屏幕的图像。](assets/web-in-app-messaging/event-configuration-manual.png)
 
@@ -121,11 +121,11 @@ Web应用程序内消息传送支持两种类型的触发器：
 
      ![显示操作配置屏幕的图像。](assets/web-in-app-messaging/manual-trigger-action.png)
 
-3. 在屏幕右侧，启用&#x200B;**[!UICONTROL 呈现可视化个性化决策]**&#x200B;选项。
+3. 在屏幕右侧，启用&#x200B;**[!UICONTROL 呈现可视化个性化决策]**选项。
    ![显示个性化配置屏幕的图像。](assets/web-in-app-messaging/manual-trigger-render.png)
 
 
-4. 在屏幕右侧的&#x200B;**[!UICONTROL 决策上下文]**&#x200B;部分中，定义您在促销活动配置中使用的&#x200B;**[!UICONTROL 键]**/**[!UICONTROL 值]**&#x200B;对，以符合应用程序内消息的条件。
+4. 在屏幕右侧的&#x200B;**[!UICONTROL 决策上下文]**&#x200B;部分中，定义您在促销活动配置中使用的&#x200B;**[!UICONTROL 键]**/**[!UICONTROL 值]**对，以符合应用程序内消息的条件。
    ![显示个性化配置屏幕的图像。](assets/web-in-app-messaging/manual-trigger-decision-context.png)
 
 5. 选择&#x200B;**[!UICONTROL 保留更改]**&#x200B;以保存您的配置。
@@ -184,5 +184,5 @@ Web应用程序内消息传送支持两种类型的触发器：
 
 在[Web SDK配置](../commands/configure/overview.md)中，根据需要设置`personalizationStorageEnabled`选项：
 
-* `personalizationStorageEnabled: true`将按您在[Adobe Journey Optimizer促销活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/in-app/create-in-app-web.html?lang=zh-Hans#configure-inapp)中定义的频率触发应用程序内消息。
+* `personalizationStorageEnabled: true`将按您在[Adobe Journey Optimizer促销活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/in-app/create-in-app-web.html#configure-inapp)中定义的频率触发应用程序内消息。
 * 每次加载页面时，`personalizationStorageEnabled: false`都会触发应用程序内消息。

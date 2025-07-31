@@ -1,10 +1,10 @@
 ---
-title: pinterest客户列表连接
+title: Pinterest客户列表连接
 description: 从您的客户列表、访问过您的网站的人或已在Pinterest上与您的内容交互的人中创建受众。
 exl-id: e601f75f-0d40-4cd0-93ca-54d7439f1db7
-source-git-commit: 83e2c014e62509fee2843505d7975cde368665ef
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
-source-wordcount: '828'
+source-wordcount: '808'
 ht-degree: 3%
 
 ---
@@ -26,14 +26,14 @@ ht-degree: 3%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Pinterest Customer List]目标支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=zh-Hans#getting-started)的更多信息。
+[!DNL Pinterest Customer List]目标支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started)的更多信息。
 
 在目标激活工作流的[映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)中，将所需的标识映射到目标字段&#x200B;*pinterest_audience*。 标识是在数据摄取到Pinterest时识别和解析的。
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| GAID | [!DNL Google Advertising ID] | 将&#x200B;*GAID*&#x200B;源标识命名空间映射到目标标识字段&#x200B;*pinterest_audience*。 标识是在数据摄取到Pinterest时识别和解析的。 |
-| IDFA | [!DNL Apple ID for Advertisers] | 将&#x200B;*IDFA*&#x200B;源标识命名空间映射到目标标识字段&#x200B;*pinterest_audience*。 标识是在数据摄取到Pinterest时识别和解析的。 |
+| GAID | [!DNL Google Advertising ID] | 将&#x200B;*GAID*&#x200B;源标识命名空间映射到目标标识字段&#x200B;*pinterest_audience*。 |
+| IDFA | [!DNL Apple ID for Advertisers] | 将&#x200B;*IDFA*&#x200B;源标识命名空间映射到目标标识字段&#x200B;*pinterest_audience*。 |
 | EMAIL | 电子邮件地址（纯文本或使用SHA256算法进行哈希处理） | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 <br>将&#x200B;*Email*&#x200B;或&#x200B;*Email_LC_SHA256*&#x200B;源身份命名空间映射到目标身份字段&#x200B;*pinterest_audience*。 |
 
 {style="table-layout:auto"}
@@ -45,7 +45,7 @@ ht-degree: 3%
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
 | 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出具有Pinterest客户列表目标中所用标识符（姓名、电话号码或其他）的受众所有成员。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -75,14 +75,14 @@ ht-degree: 3%
 
 ### 刷新身份验证凭据 {#refresh-authentication-credentials}
 
-pinterest令牌每30天过期一次。 令牌过期后，数据导出到目标的操作将停止。 要防止出现这种情况，请执行以下步骤以重新进行身份验证：
+Pinterest令牌每30天过期一次。 令牌过期后，数据导出到目标的操作将停止。 要防止出现这种情况，请执行以下步骤以重新进行身份验证：
 
 1. 导航到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 帐户]**
 2. （可选）使用页面上可用的过滤器以仅显示Pinterest帐户。
    ![筛选以仅显示Pinterest帐户](/help/destinations/assets/catalog/advertising/pinterest-customer-list/refresh-oauth-filters.png)
 3. 选择要刷新的帐户，选择省略号并选择&#x200B;**[!UICONTROL 编辑详细信息]**。
    ![选择“编辑详细信息”控件](/help/destinations/assets/catalog/advertising/pinterest-customer-list/refresh-oauth-edit-details.png)
-4. 在模式窗口中，选择&#x200B;**[!UICONTROL 重新连接OAuth]**&#x200B;并使用您的Pinterest凭据重新进行身份验证。
+4. 在模式窗口中，选择&#x200B;**[!UICONTROL 重新连接OAuth]**并使用您的Pinterest凭据重新进行身份验证。
    使用Reconnect OAuth选项的![模式窗口](/help/destinations/assets/catalog/advertising/pinterest-customer-list/reconnect-oauth-control.png)
 
 >[!SUCCESS]

@@ -2,16 +2,16 @@
 title: 使用JavaScript库安装Web SDK
 description: 使用独立的CDN文件引用Web SDK库。
 exl-id: bacfe938-4326-48f6-a321-bd16970e77eb
-source-git-commit: 9876390f7ba34c312f2ce4c00fe39e3ea1ef1ace
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
-source-wordcount: '211'
+source-wordcount: '212'
 ht-degree: 0%
 
 ---
 
 # 使用JavaScript库安装Web SDK
 
-不使用标记扩展[&#128279;](extension.md)安装Web SDK的替代方法是引用托管在CDN上的JavaScript库。 您可以直接引用库，也可以下载该库并将其托管在您自己的基础架构中。 它提供缩小的和完整的格式。
+在不使用[使用标记扩展](extension.md)的情况下安装Web SDK的替代方法是引用托管在CDN上的JavaScript库。 您可以直接引用库，也可以下载该库并将其托管在您自己的基础架构中。 它提供缩小的和完整的格式。
 
 可以使用以下URL结构访问Web SDK库：
 
@@ -34,4 +34,4 @@ ht-degree: 0%
 <script src="https://cdn1.adoberesources.net/alloy/2.19.1/alloy.min.js" async></script>
 ```
 
-此代码异步创建一个`alloy`对象，该对象允许您调用任何Web SDK命令。 如果要同步加载Web SDK，可以删除代码块最后一行中的`async`属性。 删除`async`属性会阻止浏览器解析和渲染HTML文档的其余部分，直到加载和执行库为止。 通常建议不要在向用户显示主要内容之前再出现这种延迟，但根据贵组织的需求，这样做可能比较合理。
+此代码异步创建一个`alloy`对象，该对象允许您调用任何Web SDK命令。 如果要同步加载Web SDK，可以删除代码块最后一行中的`async`属性。 删除`async`属性会阻止浏览器解析和渲染HTML文档的其余部分，直到加载和执行库为止。 一般情况下，建议不要再向用户显示主要内容之前发生这种额外延迟，但是根据贵组织的需求，这样做可能会有意义。

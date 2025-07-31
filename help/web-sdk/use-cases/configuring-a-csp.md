@@ -5,7 +5,7 @@ description: 了解如何为Experience Platform Web SDK配置CSP
 seo-description: Learn how to configure a CSP for the Experience Platform Web SDK
 keywords: 配置；配置；SDK；edge；Web SDK；配置；上下文；Web；设备；环境；Web SDK设置；内容安全策略；
 exl-id: 661d0001-9e10-479e-84c1-80e58f0e9c0b
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
 source-wordcount: '339'
 ht-degree: 0%

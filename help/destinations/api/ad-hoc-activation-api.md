@@ -5,7 +5,7 @@ title: 通过临时激活API将受众激活到批处理目标
 description: 本文说明了用于通过临时激活API激活受众的端到端工作流，包括在激活之前执行的分段作业。
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
 source-wordcount: '1623'
 ht-degree: 0%
@@ -50,7 +50,7 @@ IT经理可以使用Experience Platform临时激活API按需导出受众，以�
 
 * 目前，每个临时激活作业最多可以激活80个受众。 尝试激活每个作业超过80个受众将导致作业失败。 此行为可能会在未来版本中发生更改。
 * 临时激活作业无法与计划的[受众导出作业](../../segmentation/api/export-jobs.md)并行运行。 在运行临时激活作业之前，请确保已完成计划的受众导出作业。 有关如何监视激活流状态的信息，请参阅[目标数据流监视](../../dataflows/ui/monitor-destinations.md)。 例如，如果激活数据流显示&#x200B;**[!UICONTROL 正在处理]**&#x200B;状态，请等待它完成后再运行临时激活作业。
-* 不要为每个受众运行多个并发的临时激活作业。
+* 不要为每个受众运行多个并发临时激活作业。
 
 ## 分段注意事项 {#segmentation-considerations}
 
@@ -245,7 +245,7 @@ Destination SDK API端点遵循常规Experience Platform API错误消息原则�
 
 | 错误消息 | 解决方法 |
 |---------|----------|
-| 已为运行ID为`flow run ID`的订单`dataflow ID`运行受众`segment ID` | 此错误消息表示受众当前正在进行临时激活流程。 等待作业完成，然后再触发激活作业。 |
+| 已为运行ID为`segment ID`的订单`dataflow ID`运行受众`flow run ID` | 此错误消息表示受众当前正在进行临时激活流程。 等待作业完成，然后再触发激活作业。 |
 | 区段`<segment name>`不是此数据流的一部分或超出计划范围！ | 此错误消息表示您选择要激活的受众未映射到数据流，或者为受众设置的激活计划已过期或尚未开始。 检查受众是否确实映射到数据流，并验证受众激活计划是否与当前日期重叠。 |
 
 ## 相关信息 {#related-information}

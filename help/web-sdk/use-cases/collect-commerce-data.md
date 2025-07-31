@@ -2,7 +2,7 @@
 title: 使用Adobe Experience Platform Web SDK收集商务、产品和订单信息
 description: 了解如何使用Adobe Experience Platform Web SDK添加与产品或购物车相关的数据。
 exl-id: 3c79e776-89ef-494b-a2ea-3c23efce09ae
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
 source-wordcount: '785'
 ht-degree: 2%
@@ -53,7 +53,7 @@ ht-degree: 2%
 
 +++`productViews`
 
-将`productViews`字段设置为`1`的基本Web SDK `sendEvent`调用：
+将`sendEvent`字段设置为`productViews`的基本Web SDK `1`调用：
 
 ```javascript
 alloy("sendEvent", {
@@ -93,7 +93,7 @@ alloy("sendEvent", {
 
 +++`Order`对象示例
 
-Web SDK `sendEvent`调用设置适用于`productListItems`数组中的多个产品的`order`对象：
+Web SDK `sendEvent`调用设置适用于`order`数组中的多个产品的`productListItems`对象：
 
 ```javascript
 alloy("sendEvent",{
@@ -153,7 +153,7 @@ alloy("sendEvent",{
 
 +++`productListItems`示例
 
-Web SDK `sendEvent`调用为`productListItems`数组中的多个产品设置`productViews`：
+Web SDK `sendEvent`调用为`productViews`数组中的多个产品设置`productListItems`：
 
 ```javascript
 alloy("sendEvent",{
@@ -181,7 +181,7 @@ alloy("sendEvent",{
 
 +++`productListAdds`示例
 
-Web SDK `sendEvent`调用为`productListItems`阵列中的多个产品设置`productListAdds`事件：
+Web SDK `sendEvent`调用为`productListAdds`数组中的多个产品设置`productListItems`事件：
 
 ```javascript
 alloy("sendEvent",{
@@ -215,7 +215,7 @@ alloy("sendEvent",{
 
 +++`checkouts`示例
 
-Web SDK `sendEvent`调用为`productListItems`阵列中的多个产品设置`checkouts`事件：
+Web SDK `sendEvent`调用为`checkouts`数组中的多个产品设置`productListItems`事件：
 
 ```javascript
 alloy("sendEvent",{

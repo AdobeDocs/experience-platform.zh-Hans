@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；警报；目标
 description: 您可以在创建数据流时订阅警报，以接收有关流运行的状态、成功或失败的警报消息。
 title: 订阅上下文目标警报
 exl-id: 134144a0-cdfe-49a8-bd8b-e36a4f053de5
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
 source-wordcount: '953'
 ht-degree: 8%
@@ -38,7 +38,7 @@ ht-degree: 8%
 >
 >您必须为Experience Platform帐户启用电子邮件即时通知，才能接收数据流基于电子邮件的警报通知。
 
-您可以在[目标连接](connect-destination.md)工作流的[!UICONTROL 配置新目标]步骤期间为数据流启用警报。
+您可以在[!UICONTROL 目标连接]工作流的[配置新目标](connect-destination.md)步骤期间为数据流启用警报。
 
 ![显示目标警报分区的UI图像。](../assets/ui/alerts/destination-alerts.png)
 
@@ -83,7 +83,7 @@ ht-degree: 8%
 
 ![显示数据流运行详细信息页面的UI图像。](../assets/ui/alerts/dataflow-overview.png)
 
-页面下半部分显示在数据流运行阶段期间出现的所有[!UICONTROL 数据流运行错误]。 在此处，您可以预览错误诊断或使用[[!DNL Data Access] API](https://www.adobe.io/experience-platform-apis/references/data-access/)下载错误诊断或对应于您的数据流的文件清单。
+页面下半部分显示在数据流运行阶段期间发生的所有[!UICONTROL 数据流运行错误]。 在此处，您可以预览错误诊断或使用[[!DNL Data Access] API](https://www.adobe.io/experience-platform-apis/references/data-access/)下载错误诊断或对应于您的数据流的文件清单。
 
 ![显示数据流运行详细信息页面的UI图像，错误部分突出显示。](../assets/ui/alerts/dataflow-run-error.png)
 

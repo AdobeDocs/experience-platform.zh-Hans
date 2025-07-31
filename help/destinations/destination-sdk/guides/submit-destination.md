@@ -1,33 +1,33 @@
 ---
-description: 本页提供了您需要提交以供审阅使用Destination SDK创作的生产化目标的所有信息。
-title: 提交供审查在Destination SDK中创作的产品化目的地
+description: 本页提供了在使用Destination SDK创作产品化目标时提交该目标以供审阅所需的所有信息。
+title: 提交已生产的目的地以供审查
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: 756c14c67e349a9ca906c027a07766e952485525
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
-source-wordcount: '1052'
+source-wordcount: '1045'
 ht-degree: 0%
 
 ---
 
-# 提交供审查在Destination SDK中创作的产品化目的地
+# 提交已生产的目的地以供审查
 
 ## 概述 {#overview}
 
 >[!IMPORTANT]
 >
->* 此处记录的流程仅适用于提交生产（公共）目标的合作伙伴。 如果您正在创建供自己使用的专用目标，则无需制作这些材料并将其与Adobe共享。
+>* 此处记录的流程仅适用于提交生产（公共）目标的合作伙伴。 如果您正在创建一个供您自己使用的专用目标，则无需制作这些材料并将其与Adobe共享。
 >
->* Adobe审查目标发布请求的标准响应时间为五个工作日。
+>* Adobe审查目标发布请求的标准响应时间为5个工作日。
 >
->* 如果Adobe团队要求您在初次提交后对配置进行任何更新，则您必须在进行更新后提交另一个目标发布请求。
+>* 如果Adobe团队要求您在首次提交后对配置进行任何更新，则您必须在进行更新后提交另一个目标发布请求。
 >
->* 即使您的目标在Experience Platform目录中处于活动状态，但是如果您需要对配置进行任何更新，则必须提交新的目标发布请求，才能将更新反映在配置中。
+>* 即使目标在Experience Platform目录中处于活动状态，但是如果需要对配置进行任何更新，则必须提交新的目标发布请求，才能将更新反映在配置中。
 >
 >* 对于要更新的新目标和现有目标，审核时间线和所需对象是相同的。
 
 在将目标发布到[Experience Platform目标目录](/help/destinations/catalog/overview.md)之前，您必须向Adobe提供有关目标以及您执行的测试的特定信息，以确保用户在将数据激活到您的平台时享有最佳体验。
 
-本页列出了提交或更新使用Adobe Experience Platform Destination SDK编写的目标时需要提供的所有信息。 要在Adobe Experience Platform中成功提交目标，请向<aepdestsdk@adobe.com>发送一封电子邮件，其中包括：
+本页列出了在提交或更新使用Adobe Experience Platform Destination SDK创作的目标时需要提供的所有信息。 要在Adobe Experience Platform中成功提交目标，请向<aepdestsdk@adobe.com>发送一封电子邮件，其中包括：
 
 * 目标解决的使用案例描述。 只有在提交新的目标配置时才需要此操作。
 * 目标提交原因的描述。 只有在更新现有目标配置时才需要此项。
@@ -234,7 +234,7 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 
 ### 测试API响应 {#testing-api-response-file-based}
 
-使用测试API后包括请求和响应示例，以使用示例配置文件[&#128279;](../testing-api/batch-destinations/file-based-destination-testing-api.md)测试基于文件的目标。
+使用测试API后包括请求和响应示例，以使用示例配置文件[测试基于文件的目标](../testing-api/batch-destinations/file-based-destination-testing-api.md)。
 
 ### 附加导出的文件 {#attach-exported-file}
 
@@ -246,7 +246,7 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 
 * 屏幕截图或简短的屏幕截图视频，您可以在其中手动从存储位置获取文件并将其摄取到系统中。
 * 屏幕截图或简短的屏幕截图视频，其中系统的UI用于确认Experience Platform生成的文件名已成功摄取到系统中。
-* Adobe中的日志行可以与文件名或从Experience Platform生成的数据相关联。
+* 记录系统中有Adobe可与文件名或从Experience Platform生成的数据关联的行。
 
 ## 证明您已提交目标发布请求 {#destination-publishing-request-proof}
 
@@ -268,4 +268,4 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 
 ## 下载示例电子邮件 {#download-sample-email}
 
-[下载](../assets/guides/sample-email-submit-destination.rtf)示例电子邮件，其中包含您需要为Adobe提供的所有信息。
+[下载](../assets/guides/sample-email-submit-destination.rtf)示例电子邮件，其中包含您需要提供给Adobe的所有信息。

@@ -3,7 +3,7 @@ title: 使用Adobe Experience Platform Web SDK呈现个性化内容
 description: 了解如何使用Adobe Experience Platform Web SDK呈现个性化内容。
 keywords: 个性化；renderDecisions；sendEvent；decisionScopes；建议；
 exl-id: 6a3252ca-cdec-48a0-a001-2944ad635805
-source-git-commit: 9489b5345c2b13b9d05b26d646aa7f1576840fb8
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
 source-wordcount: '947'
 ht-degree: 0%
@@ -12,11 +12,11 @@ ht-degree: 0%
 
 # 呈现个性化内容
 
-Adobe Experience Platform Web SDK支持从Adobe个性化解决方案中检索个性化内容，这些解决方案包括[Adobe Target](https://business.adobe.com/products/target/adobe-target.html)、[Offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=zh-Hans)和[Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html?lang=zh-Hans)。
+Adobe Experience Platform Web SDK支持从Adobe个性化解决方案中检索个性化内容，这些解决方案包括[Adobe Target](https://business.adobe.com/products/target/adobe-target.html)、[Offer Decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=zh-Hans)和[Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html?lang=zh-Hans)。
 
 此外，Web SDK还通过Adobe Experience Platform个性化目标(如[Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md)和[自定义个性化连接](../../destinations/catalog/personalization/custom-personalization.md))支持同页和下一页个性化功能。 要了解如何为同页和下一页个性化配置Experience Platform，请参阅[专用指南](../../destinations/ui/activate-edge-personalization-destinations.md)。
 
-SDK可以自动检索和渲染Adobe Target的[可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=zh-Hans)和Adobe Journey Optimizer的[Web Campaign UI](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html?lang=zh-Hans)中创建的内容。 在Adobe Target的[基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=zh-Hans)、Adobe Journey Optimizer的[基于代码的体验渠道](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/code-based-experience/get-started-code-based)或Offer decisioning中创建的内容，无法由SDK自动呈现。 相反，您必须使用SDK请求此内容，然后自行手动渲染内容。
+在Adobe Target的[可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)和Adobe Journey Optimizer的[Web Campaign UI](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html)中创建的内容可由SDK自动检索和渲染。 在Adobe Target的[基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html)、Adobe Journey Optimizer的[基于代码的体验渠道](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based)或Offer Decisioning中创建的内容，无法由SDK自动呈现。 相反，您必须使用SDK请求此内容，然后自行手动渲染内容。
 
 ## 自动呈现内容 {#automatic}
 
@@ -42,7 +42,7 @@ alloy("sendEvent", {
 
 ## 手动呈现内容 {#manual}
 
-要访问任何个性化内容，您可以提供回调函数，SDK收到来自服务器的成功响应后将调用该函数。 为您的回调提供了`result`对象，该对象可能包含包含包含任何返回的个性化内容的`propositions`属性。 下面是一个示例，说明在发送事件时如何提供回调函数。
+要访问任何个性化内容，您可以提供回调函数，在SDK收到来自服务器的成功响应后，将调用该函数。 为您的回调提供了`result`对象，该对象可能包含包含包含任何返回的个性化内容的`propositions`属性。 下面是一个示例，说明在发送事件时如何提供回调函数。
 
 ```javascript
 alloy("sendEvent", {
@@ -103,7 +103,7 @@ alloy("sendEvent", {
 ]
 ```
 
-在该示例中，执行`sendEvent`命令时，`renderDecisions`选项未设置为`true`，因此SDK不会尝试自动渲染任何内容。 但是，SDK仍会自动检索符合自动渲染条件的内容，如果您愿意，可以将其提供给您手动渲染。 请注意，每个建议对象的`renderAttempted`属性均设置为`false`。
+在该示例中，执行`renderDecisions`命令时，`true`选项未设置为`sendEvent`，因此SDK未尝试自动呈现任何内容。 但是，SDK仍会自动检索符合自动渲染条件的内容，并在需要时为您提供该内容以手动渲染。 请注意，每个建议对象的`renderAttempted`属性均设置为`false`。
 
 如果您在发送事件时将`renderDecisions`选项设置为`true`，则SDK会尝试呈现任何符合自动呈现条件的建议（如前所述）。 因此，每个建议对象的`renderAttempted`属性都将设置为`true`。 在这种情况下，无需手动呈现这些建议。
 
@@ -122,7 +122,7 @@ alloy("sendEvent", {
   });
 ```
 
-在此示例中，如果在与`salutation`或`discount`范围匹配的服务器上找到建议，则将返回这些建议并将其包含在`result.propositions`数组中。 请注意，无论如何配置`renderDecisions`或`decisionScopes`选项，符合自动呈现条件的建议将继续包含在`propositions`阵列中。 在这种情况下，`propositions`数组将与以下示例类似：
+在此示例中，如果在与`salutation`或`discount`范围匹配的服务器上找到建议，则将返回这些建议并将其包含在`result.propositions`数组中。 请注意，无论如何配置`propositions`或`renderDecisions`选项，符合自动呈现条件的建议将继续包含在`decisionScopes`阵列中。 在这种情况下，`propositions`数组将与以下示例类似：
 
 ```json
 [
@@ -220,11 +220,11 @@ alloy("sendEvent", {
 ]
 ```
 
-此时，您可以根据需要呈现建议内容。 在此示例中，与`discount`范围匹配的建议是使用Adobe Target的基于表单的HTML编辑器构建的体验建议。 假定您的页面上的ID为`daily-special`的元素并希望将`discount`建议中的内容渲染到`daily-special`元素中，请执行以下操作：
+此时，您可以根据需要呈现建议内容。 在此示例中，与`discount`范围匹配的建议是使用HTML的基于表单的体验编辑器构建的Adobe Target建议。 假定您的页面上的ID为`daily-special`的元素并希望将`discount`建议中的内容渲染到`daily-special`元素中，请执行以下操作：
 
 1. 从`result`对象提取建议。
 1. 循环遍历每个建议，查找范围为`discount`的建议。
-1. 如果您找到一个建议，请循环遍历建议中的每个项目，查找包含HTML内容的项目。 （检查总比假设要好。 ）
+1. 如果您找到一个建议，请循环遍历建议中的每个项目，查找作为HTML内容的项目。 （检查总比假设要好。 ）
 1. 如果找到一个包含HTML内容的项目，请在页面上找到`daily-special`元素，并将其HTML替换为个性化内容。
 1. 呈现内容后，发送`display`事件。
 
@@ -252,7 +252,7 @@ alloy("sendEvent", {
   var discountHtml;
   if (discountProposition) {
     // Find the item from proposition that should be rendered.
-    // Rather than assuming there a single item that has HTML
+    // Rather than assuming there is a single item that has HTML
     // content, find the first item whose schema indicates
     // it contains HTML content.
     for (var j = 0; j < discountProposition.items.length; j++) {
@@ -263,7 +263,7 @@ alloy("sendEvent", {
         var dailySpecialElement = document.getElementById("daily-special");
         dailySpecialElement.innerHTML = discountHtml;
         
-        // For this example, we assume there is only a signle place to update in the HTML.
+        // For this example, we assume there is only a single place to update in the HTML.
         break;  
       }
     }
@@ -306,7 +306,7 @@ SDK在个性化过程中为[管理闪烁](../personalization/manage-flicker.md)�
 
 >[!IMPORTANT]
 >
->如果在页面加载时呈现了`__view__`作用域（或Web表面）的建议，则其`renderAttempted`标志将设置为`true`。 `applyPropositions`命令将不会重新呈现具有`renderAttempted: true`标志的`__view__`作用域（或Web表面）建议。
+>如果在页面加载时呈现了`__view__`作用域（或Web表面）的建议，则其`renderAttempted`标志将设置为`true`。 `applyPropositions`命令将不会重新呈现具有`__view__`标志的`renderAttempted: true`作用域（或Web表面）建议。
 
 ### 用例1：重新呈现单页应用程序视图建议
 
@@ -314,7 +314,7 @@ SDK在个性化过程中为[管理闪烁](../personalization/manage-flicker.md)�
 
 在以下示例中，`sendEvent`命令在视图更改时触发，并将生成的对象保存为常量。
 
-接下来，当视图或组件被更新时，使用上一个`sendEvent`命令中的建议调用`applyPropositions`命令以重新呈现视图建议。
+接下来，当视图或组件被更新时，使用上一个`applyPropositions`命令中的建议调用`sendEvent`命令以重新呈现视图建议。
 
 ```js
 var cartPropositions = alloy("sendEvent", {
@@ -341,7 +341,7 @@ alloy("applyPropositions", {
 
 ### 用例2：没有选择器的渲染建议
 
-此使用案例适用于使用[!DNL Target Form-based Experience Composer]或Adobe Journey Optimizer的[基于代码的体验渠道](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/code-based-experience/get-started-code-based)创作的体验。
+此使用案例适用于使用[!DNL Target Form-based Experience Composer]或Adobe Journey Optimizer的[基于代码的体验渠道](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based)创作的体验。
 
 必须在`applyPropositions`调用中提供选择器、操作和范围。
 

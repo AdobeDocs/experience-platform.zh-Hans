@@ -3,7 +3,7 @@ title: Adobe Experience Platform Web SDK的单页应用程序实施
 description: 了解如何使用Adobe Target创建Adobe Experience Platform Web SDK的单页应用程序(SPA)实施。
 keywords: target；adobe target；xdm视图；视图；单页应用程序；SPA；SPA生命周期；客户端；AB测试；AB；体验定位；XT；VEC
 exl-id: cc48c375-36b9-433e-b45f-60e6c6ea4883
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
 source-wordcount: '1818'
 ht-degree: 0%
@@ -49,7 +49,7 @@ Adobe Experience Platform Web SDK提供了丰富的功能，使您的企业能�
 
 当客户决定单击&#x200B;**Load More**&#x200B;按钮浏览站点上的更多产品时，在此情况下，网站URL不会更改，但可以在此处创建视图以仅表示显示的第二行产品。 视图名称可以是“products-page-2”。
 
-![浏览器窗口中单页应用程序的示例图像，示例产品显示在其他页面上。](assets/example-load-more.png)
+![浏览器窗口中单页应用程序的示例图像，其他页面上显示了示例产品。](assets/example-load-more.png)
 
 客户决定从站点购买一些产品并进入结账屏幕。 在结账站点上，客户可以选择正常递送或快递。 “视图”可以是网站上的任意一组可视化元素，因此可以为投放首选项创建一个视图，并将其称为“投放首选项”。
 
@@ -92,7 +92,7 @@ Adobe Experience Platform Web SDK提供了丰富的功能，使您的企业能�
 
 ![浏览器窗口中单页应用程序的示例图像。](assets/use-case-1.png)
 
-要在整个主页网站上运行A/B测试，必须在将XDM `viewName`设置为`home`的情况下调用`sendEvent()`：
+要在整个主页网站上运行A/B测试，必须在将XDM `sendEvent()`设置为`viewName`的情况下调用`home`：
 
 ```jsx
 function onViewChange() { 
@@ -288,6 +288,6 @@ class Checkout extends Component {
 
 >[!NOTE]
 >
->在选择&#x200B;**Express Delivery**&#x200B;单选按钮之前，“checkout-express”视图不会出现在“修改”面板中。 这是因为在选择&#x200B;**Express Delivery**&#x200B;单选按钮时执行`sendEvent()`函数，因此，在选择单选按钮之前，VEC不会察觉“checkout-express”视图。
+>在选择&#x200B;**Express Delivery**&#x200B;单选按钮之前，“checkout-express”视图不会出现在“修改”面板中。 这是因为在选择`sendEvent()`Express Delivery **单选按钮时执行**&#x200B;函数，因此，在选择单选按钮之前，VEC不会察觉“checkout-express”视图。
 
 ![可视化体验编辑器显示投放首选项选择器。](assets/vec-delivery-preference.png)

@@ -3,9 +3,9 @@ title: 用户代理客户端提示
 description: 了解用户代理客户端提示在Web SDK中的工作方式。 客户端提示允许网站所有者访问用户代理字符串中提供的许多相同信息，但保护隐私的方式更加严格。
 keywords: 用户代理；客户端提示；字符串；用户代理字符串；低熵；高熵
 exl-id: a909b1d1-be9d-43ba-bb4b-d28b0c609f65
-source-git-commit: 89dfe037e28bae51e335dc67185afa42b2c418e3
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
-source-wordcount: '1245'
+source-wordcount: '1244'
 ht-degree: 3%
 
 ---
@@ -86,7 +86,7 @@ Adobe Experience Cloud解决方案以各种方式利用用户代理字符串。
 
 低熵客户端提示包括无法用于指纹识别的用户的基本信息。 信息，例如浏览器品牌、平台以及请求是否来自移动设备。
 
-默认情况下，Web SDK中会启用低熵客户端提示，并在每个请求中传递。
+在Web SDK中，默认启用低熵客户端提示，并在每个请求中传递。
 
 | HTTP标头 | JavaScript | 默认情况下包含在用户代理中 | 默认情况下包含在客户端提示中 |
 |---|---|---|---|
@@ -101,15 +101,15 @@ Adobe Experience Cloud解决方案以各种方式利用用户代理字符串。
 | 属性 | 描述 | HTTP标头 | XDM 路径 | 示例 | 默认包含在用户代理中 | 默认情况下包含在客户端提示中 |
 | --- | --- | --- | --- | --- |---|---|
 | 操作系统版本 | 操作系统的版本。 | `Sec-CH-UA-Platform-Version` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.platformVersion` | `10.15.7` | 是 | 否 |
-| 架构 | 底层CPU体系结构。 | `Sec-CH-UA-Arch` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.architecture` | `x86` | 是 | 否 |
+| 架构 | 底层CPU架构。 | `Sec-CH-UA-Arch` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.architecture` | `x86` | 是 | 否 |
 | 设备型号 | 使用的设备的名称。 | `Sec-CH-UA-Model` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.model` | `Intel Mac OS X 10_15_7` | 是 | 否 |
-| 位数 | 基础CPU体系结构支持的位数。 | `Sec-CH-UA-Bitness` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.bitness` | `64` | 是 | 否 |
+| 位数 | 基础CPU架构支持的位数。 | `Sec-CH-UA-Bitness` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.bitness` | `64` | 是 | 否 |
 | 浏览器供应商 | 创建浏览器的公司。 低熵提示`Sec-CH-UA`也收集此元素。 | `Sec-CH-UA-Full-Version-List` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.vendor` | `Google` | 是 | 否 |
 | 浏览器名称 | 使用的浏览器。 低熵提示`Sec-CH-UA`也收集此元素。 | `Sec-UA-Full-Version-List` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.brand` | `Chrome` | 是 | 否 |
 | 浏览器版本 | 浏览器的重要版本。 低熵提示`Sec-CH-UA`也收集此元素。 不会自动收集确切的浏览器版本。 | `Sec-UA-Full-Version-List` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.version` | `105` | 是 | 否 |
 
 
-默认情况下，Web SDK中禁用高熵客户端提示。 要启用它们，您必须手动配置Web SDK以请求高熵客户端提示。
+默认情况下，在Web SDK中禁用高熵客户端提示。 要启用这些功能，您必须手动配置Web SDK以请求高熵客户端提示。
 
 ## 高熵客户端提示对Experience Cloud解决方案的影响 {#impact-in-experience-cloud-solutions}
 
@@ -119,17 +119,17 @@ Adobe Experience Cloud解决方案以各种方式利用用户代理字符串。
 
 ### Adobe Analytics报告依赖于高熵客户端提示 {#analytics}
 
-[操作系统](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-systems.html?lang=zh-Hans)维度包括操作系统版本，该版本存储为高熵客户端提示。 如果未启用高熵客户端提示，则对于从Chromium浏览器收集的点击，操作系统版本可能不准确。
+[操作系统](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-systems.html)维度包括作为高熵客户端提示存储的操作系统版本。 如果未启用高熵客户端提示，则对于从Chromium浏览器收集的点击，操作系统版本可能不准确。
 
 ### 依赖高熵客户端提示的Audience Manager特征 {#aam}
 
-[!DNL Google]已更新[!DNL Chrome]浏览器功能以最小化通过`User-Agent`标头收集的信息。 因此，使用[DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=zh-Hans)的Audience Manager客户将不再收到基于[平台级别密钥](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-device-targeting.html?lang=zh-Hans)的特征可靠信息。
+[!DNL Google]已更新[!DNL Chrome]浏览器功能以最小化通过`User-Agent`标头收集的信息。 因此，使用[DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=zh-Hans)的Audience Manager客户将不再收到基于[平台级别密钥](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-device-targeting.html)的特征的可靠信息。
 
-使用平台级别密钥进行定位的Audience Manager客户必须切换到[Experience PlatformWeb SDK](/help/web-sdk/home.md)而不是[DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=zh-Hans)，并启用[高熵客户端提示](#enabling-high-entropy-client-hints)以继续接收可靠的特征数据。
+使用平台级别密钥进行定位的Audience Manager客户必须切换到[Experience Platform Web SDK](/help/web-sdk/home.md)，而不是[DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=zh-Hans)，并启用[高熵客户端提示](#enabling-high-entropy-client-hints)以继续接收可靠的特征数据。
 
 ## 启用高熵客户端提示 {#enabling-high-entropy-client-hints}
 
-要在Web SDK部署中启用高熵客户端提示，您必须在[`context`](/help/web-sdk/commands/configure/context.md)字段中包含其他`highEntropyUserAgentHints`上下文选项。
+要在Web SDK部署中启用高熵客户端提示，必须在`highEntropyUserAgentHints`字段中包括其他[`context`](/help/web-sdk/commands/configure/context.md)上下文选项。
 
 例如，要从Web属性检索高熵客户端提示，您的配置将如下所示：
 

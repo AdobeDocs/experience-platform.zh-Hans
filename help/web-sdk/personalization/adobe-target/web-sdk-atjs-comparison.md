@@ -3,7 +3,7 @@ title: 将at.js与Experience Platform Web SDK进行比较
 description: 了解at.js功能与Experience Platform Web SDK的比较
 keywords: target；adobe target；activity.id；experience.id；renderDecisions；decisionScopes；预隐藏代码片段；vec；基于表单的体验编辑器；xdm；受众；决策；范围；架构；系统图；图
 exl-id: b63fe47d-856a-4cae-9057-51917b3e58dd
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
 source-wordcount: '2183'
 ht-degree: 2%
@@ -68,7 +68,7 @@ window.adobe.target.init(window, document, {
 });
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetgobalsettings.html?lang=zh-Hans)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetgobalsettings.html)
 
 
 ### 配置Web SDK
@@ -83,7 +83,7 @@ window.adobe.target.init(window, document, {
 
 ### 使用Web SDK
 
-SDK可以自动检索和渲染在Adobe Target的[可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=zh-Hans)中创建的内容。
+SDK可以自动检索和渲染在Adobe Target的[可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)中创建的内容。
 
 要请求并自动呈现Target选件，请使用`sendEvent`命令并将`renderDecisions`选项设置为`true`。 这样做会强制SDK自动呈现任何符合自动呈现条件的个性化内容。
 
@@ -215,11 +215,11 @@ adobe.target.getOffers({
 .catch(console.error);
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/cmp-atjs-functions.html?lang=zh-Hans)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/cmp-atjs-functions.html)
 
 ### 使用Web SDK
 
-在`decisionScopes`下执行具有特殊作用域的`sendEvent`命令： `__view__`。 我们使用此范围作为信号，从Target中提取所有页面加载活动并预取所有视图。 Web SDK还将尝试评估所有基于VEC视图的活动。 Web SDK当前不支持禁用视图预取。
+在`sendEvent`下执行具有特殊作用域的`decisionScopes`命令： `__view__`。 我们使用此范围作为信号，从Target中提取所有页面加载活动并预取所有视图。 Web SDK还将尝试评估所有基于VEC视图的活动。 Web SDK当前不支持禁用视图预取。
 
 要访问任何个性化内容，您可以提供回调函数，在SDK收到来自服务器的成功响应后，将调用该函数。 您的回调提供了一个结果对象，该对象可能包含包含包含任何返回的个性化内容的建议属性。
 
@@ -300,7 +300,7 @@ adobe.target.getOffers({
 .catch(console.error);
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/cmp-atjs-functions.html?lang=zh-Hans)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/cmp-atjs-functions.html)
 
 
 ### 使用Web SDK
@@ -438,7 +438,7 @@ adobe.target.getOffers({...})
   .catch(error => console.log("Error", error));
 ```
 
-从[专用文档](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-applyoffers-atjs-2.html?lang=zh-Hans)了解有关`applyOffers`命令的更多信息。
+从`applyOffers`专用文档[了解有关](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-applyoffers-atjs-2.html)命令的更多信息。
 
 
 ### 使用Web SDK
@@ -453,7 +453,7 @@ alloy("applyPropositions", {
 });
 ```
 
-从[专用文档](../../personalization/rendering-personalization-content.md#applypropositions)了解有关`applyPropositions`命令的更多信息。
+从`applyPropositions`专用文档[了解有关](../../personalization/rendering-personalization-content.md#applypropositions)命令的更多信息。
 
 ## 如何跟踪事件
 
@@ -490,7 +490,7 @@ adobe.target.sendNotifications({
 });
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-trackevent.html?lang=zh-Hans)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-trackevent.html)
 
 ### 使用Web SDK
 
@@ -499,7 +499,7 @@ adobe.target.sendNotifications({
 * `decisioning.propositionDisplay`：表示Target活动的渲染。
 * `decisioning.propositionInteract`：表示用户与活动的交互，如鼠标单击。
 
-`_experience.decisioning.propositions` XDM字段组是一个对象数组。 每个对象的属性派生自`sendEvent`命令中返回的`result.propositions`： `{ id, scope, scopeDetails }`
+`_experience.decisioning.propositions` XDM字段组是一个对象数组。 每个对象的属性派生自`result.propositions`命令中返回的`sendEvent`： `{ id, scope, scopeDetails }`
 
 **示例1 — 呈现活动后跟踪`decisioning.propositionDisplay`事件**
 
@@ -665,12 +665,12 @@ alloy("sendEvent", {
 adobe.target.triggerView("homeView")
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-triggerview-atjs-2.html?lang=zh-Hans)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-triggerview-atjs-2.html)
 
 
 ### 使用Web SDK
 
-要触发或发出单页应用程序视图更改信号，请在`sendEvent`命令的`xdm`选项下设置`web.webPageDetails.viewName`属性。 Web SDK将检查视图缓存，如果`sendEvent`中指定的`viewName`有选件，它将执行这些选件并发送显示通知事件。
+要触发或发出单页应用程序视图更改信号，请在`web.webPageDetails.viewName`命令的`xdm`选项下设置`sendEvent`属性。 Web SDK将检查视图缓存，如果`viewName`中指定的`sendEvent`有选件，它将执行这些选件并发送显示通知事件。
 
 **示例**
 
@@ -691,7 +691,7 @@ alloy("sendEvent", {
 
 ## 如何利用响应令牌
 
-从Adobe Target返回的Personalization内容包括[响应令牌](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=zh-Hans)，这些令牌包含有关活动、选件、体验、用户配置文件、地理信息等的详细信息。 这些详细信息可与第三方工具共享或用于调试。 响应令牌可在Adobe Target用户界面中配置。
+从Adobe Target返回的Personalization内容包括[响应令牌](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)，这些令牌包含有关活动、选件、体验、用户配置文件、地理信息等的详细信息。 这些详细信息可与第三方工具共享或用于调试。 响应令牌可在Adobe Target用户界面中配置。
 
 ### 使用at.js
 
@@ -705,7 +705,7 @@ document.addEventListener(adobe.target.event.REQUEST_SUCCEEDED, function(e) {
 }); 
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=zh-Hans)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)
 
 
 ### 使用Web SDK
@@ -714,7 +714,7 @@ document.addEventListener(adobe.target.event.REQUEST_SUCCEEDED, function(e) {
 >
 >确保您使用的是Experience Platform Web SDK版本2.6.0或更高版本。
 
-响应令牌作为`propositions`的一部分返回，在`sendEvent`命令的结果中公开。 每个建议都包含一个由`items`组成的数组，并且如果在Target管理UI中启用了响应令牌，则每个项目都将有一个用响应令牌填充的`meta`对象。 [了解详情](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=zh-Hans)
+响应令牌作为`propositions`的一部分返回，在`sendEvent`命令的结果中公开。 每个建议都包含一个由`items`组成的数组，并且如果在Target管理UI中启用了响应令牌，则每个项目都将有一个用响应令牌填充的`meta`对象。 [了解详情](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)
 
 **示例**
 
@@ -880,7 +880,7 @@ Analytics有效负载（`tnta`令牌）应包含在使用[数据插入API](https
 
 ![显示Analytics服务器端日志记录工作流的图表](assets/a4t-server-side-atjs.png)
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4timplementation.html?lang=zh-Hans)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4timplementation.html)
 
 ### 使用Web SDK
 
@@ -895,7 +895,7 @@ Web SDK还支持：
 
 ![显示Analytics客户端日志记录工作流的图表](assets/analytics-disabled-datastream-config.png)
 
-客户有权访问需要使用[数据插入API](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md)与Analytics共享的Analytics令牌(`tnta`)
+客户有权访问需要使用`tnta`数据插入API[与Analytics共享的Analytics令牌(](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md))
 在中，方法是链接`sendEvent`命令并迭代结果建议数组。
 
 **示例**
@@ -964,7 +964,7 @@ window.targetGlobalSettings = {
 };
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetgobalsettings.html?lang=zh-Hans)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetgobalsettings.html)
 
 ### 使用Web SDK
 
@@ -1064,7 +1064,7 @@ adobe.target.getOffers({
 .catch(console.error);
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-getoffers-atjs-2.html?lang=zh-Hans)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-getoffers-atjs-2.html)
 
 
 ### 使用Web SDK
@@ -1091,7 +1091,7 @@ alloy("sendEvent", {
 
 ### 使用at.js
 
-使用at.js可通过多种方式使用`getOffer`或`getOffers`发送`mbox3rdPartyId`：
+使用at.js可通过多种方式使用`mbox3rdPartyId`或`getOffer`发送`getOffers`：
 
 **示例1**
 
@@ -1123,7 +1123,7 @@ adobe.target.getOffers({
 .catch(console.error);
 ```
 
-或者可以在`targetPageParams`或`targetPageParamsAll`中设置`mbox3rdPartyId`。
+或者可以在`mbox3rdPartyId`或`targetPageParams`中设置`targetPageParamsAll`。
 在`targetPageParams`中设置它时，它将在`target-global-mbox`（也称为`pag-lLoad`）的请求中发送。
 推荐将使用`targetPageParamsAll`进行设置，因为它将在每个目标请求中发送。
 使用`targetPageParamsAll`的优点是，您可以在页面上定义一次`mbox3rdPartyId`，这将确保所有目标请求都具有正确的`mbox3rdPartyId`。
@@ -1144,7 +1144,7 @@ window.targetPageParams = function() {
 };
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetpageparams.html?lang=zh-Hans)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetpageparams.html)
 
 ### 使用Web SDK
 
@@ -1233,7 +1233,7 @@ adobe.target.getOffers({
 .catch(console.error);
 ```
 
-注意：强烈建议确保`mboxes`数组中的每个`mbox`都有自己的索引。 通常第一个mbox具有`index=0`、下一个`index=1`等。
+注意：强烈建议确保`mbox`数组中的每个`mboxes`都有自己的索引。 通常第一个mbox具有`index=0`、下一个`index=1`等。
 
 ### 使用Web SDK
 
