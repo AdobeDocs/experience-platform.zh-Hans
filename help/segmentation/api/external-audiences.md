@@ -2,9 +2,9 @@
 title: 外部受众API端点
 description: 了解如何使用外部受众API从Adobe Experience Platform创建、更新、激活和删除外部受众。
 exl-id: eaa83933-d301-48cb-8a4d-dfeba059bae1
-source-git-commit: 3e1eb697569d75d0ef3af53be1a556bdcd8a293b
+source-git-commit: bc74f86dca62a62dde39ad2e167e66b511d59086
 workflow-type: tm+mt
-source-wordcount: '2219'
+source-wordcount: '2189'
 ht-degree: 4%
 
 ---
@@ -78,10 +78,12 @@ curl -X POST https://platform.adobe.io/data/core/ais/external-audience/ \
             }
         ],
         "sourceSpec": {
-            "path": "activation/sample-source/example.csv",
-            "type": "file",
-            "sourceType": "Cloud Storage",
-            "baseConnectionId": "1d1d4bc5-b527-46a3-9863-530246a61b2b"
+            "params": {
+                "path": "activation/sample-source/example.csv",
+                "type": "file",
+                "sourceType": "Cloud Storage",
+                "baseConnectionId": "1d1d4bc5-b527-46a3-9863-530246a61b2b"
+            }
         },
         "ttlInDays": "40",
         "labels": ["core/C1"],
@@ -95,8 +97,8 @@ curl -X POST https://platform.adobe.io/data/core/ais/external-audience/ \
 | `name` | 字符串 | 外部受众的名称。 |
 | `description` | 字符串 | 外部受众的可选描述。 |
 | `customAudienceId` | 字符串 | 外部受众的可选标识符。 |
-| `fields` | 对象数组 | 字段及其数据类型的列表。 创建字段列表时，可以添加以下项目： <ul><li>`name`： **必需**&#x200B;作为外部受众规范一部分的字段的名称。</li><li>`type`： **必需**&#x200B;进入字段的数据类型。 支持的值包括`string`、`number`、`long`、`integer`、`date` (`2025-05-13`)、`datetime` (`2025-05-23T20:19:00+00:00`)和`boolean`。</li>`identityNs`： **身份字段必需**&#x200B;身份字段使用的命名空间。 支持的值包括所有有效的命名空间，如`ECID`或`email`.li><li>`labels`： *可选*&#x200B;字段的访问控制标签数组。 有关可用访问控制标签的详细信息，请参阅[数据使用标签术语表](/help/data-governance/labels/reference.md)。 </li></ul> |
-| `sourceSpec` | 对象 | 包含外部受众所在信息的对象。 使用此对象时，您&#x200B;**必须**&#x200B;包括以下信息： <ul><li>`path`： **必需**：外部受众或源中包含外部受众的文件夹的位置。</li><li>`type`： **必需**&#x200B;您要从源检索的对象类型。 此值可以是`file`或`folder`。</li><li>`sourceType`： *可选*&#x200B;您要从中检索的源类型。 当前，唯一支持的值为`Cloud Storage`。</li><li>`cloudType`： *可选*&#x200B;云存储的类型，基于源类型。 支持的值包括`S3`、`DLZ`、`GCS`和`SFTP`。</li><li>`baseConnectionId`：基本连接的ID，由源提供程序提供。 如果使用&#x200B;**、**&#x200B;或`cloudType`的`S3`值，则此值为`GCS`必需`SFTP`。 有关详细信息，请阅读[源连接器概述](../../sources/home.md)li></ul> |
+| `fields` | 对象数组 | 字段及其数据类型的列表。 创建字段列表时，可以添加以下项目： <ul><li>`name`： **必需**&#x200B;作为外部受众规范一部分的字段的名称。</li><li>`type`： **必需**&#x200B;进入字段的数据类型。 支持的值包括`string`、`number`、`long`、`integer`、`date` (`2025-05-13`)、`datetime` (`2025-05-23T20:19:00+00:00`)和`boolean`。</li><li>`identityNs`： **身份字段必需**&#x200B;身份字段使用的命名空间。 支持的值包括所有有效的命名空间，如`ECID`或`email`。</li><li>`labels`： *可选*&#x200B;字段的访问控制标签数组。 有关可用访问控制标签的详细信息，请参阅[数据使用标签术语表](/help/data-governance/labels/reference.md)。 </li></ul> |
+| `sourceSpec` | 对象 | 包含外部受众所在信息的对象。 使用此对象时，您&#x200B;**必须**&#x200B;包括以下信息： <ul><li>`path`： **必需**：外部受众或源中包含外部受众的文件夹的位置。</li><li>`type`： **必需**&#x200B;您要从源检索的对象类型。 此值可以是`file`或`folder`。</li><li>`sourceType`： *可选*&#x200B;您要从中检索的源类型。 当前，唯一支持的值为`Cloud Storage`。</li><li>`cloudType`： *可选*&#x200B;云存储的类型，基于源类型。 支持的值包括`S3`、`DLZ`、`GCS`和`SFTP`。</li><li>`baseConnectionId`：基本连接的ID，由源提供程序提供。 如果使用&#x200B;**、**&#x200B;或`cloudType`的`S3`值，则此值为`GCS`必需`SFTP`。 有关详细信息，请阅读[源连接器概述](../../sources/home.md)</li></ul> |
 | `ttlInDays` | 整数 | 外部受众的数据过期时间（天）。 此值可以设置为1到90。 默认情况下，数据到期设置为30天。 |
 | `audienceType` | 字符串 | 外部受众的受众类型。 当前仅支持`people`。 |
 | `originName` | 字符串 | **必需**&#x200B;受众的来源。 它指明了受众的来源。 对于外部受众，您应使用`CUSTOM_UPLOAD`。 |
@@ -139,11 +141,13 @@ curl -X POST https://platform.adobe.io/data/core/ais/external-audience/ \
             }
         ],
         "sourceSpec": {
-            "path": "activation/sample-source/example.csv",
-            "type": "file",
-            "sourceType": "Cloud Storage",
-            "baseConnectionId": "1d1d4bc5-b527-46a3-9863-530246a61b2b"
-            },
+            "params": {
+                "path": "activation/sample-source/example.csv",
+                "type": "file",
+                "sourceType": "Cloud Storage",
+                "baseConnectionId": "1d1d4bc5-b527-46a3-9863-530246a61b2b"
+            }
+        },
         "ttlInDays": 40,
         "labels": ["core/C1"],
         "audienceType": "people",
@@ -231,11 +235,13 @@ curl -X GET https://platform.adobe.io/data/core/ais/external-audience/operations
             }
         ],
         "sourceSpec": {
-            "path": "activation/sample-source/example.csv",
-            "type": "file",
-            "sourceType": "Cloud Storage",
-            "baseConnectionId": "1d1d4bc5-b527-46a3-9863-530246a61b2b"
-            },
+            "params": {
+                "path": "activation/sample-source/example.csv",
+                "type": "file",
+                "sourceType": "Cloud Storage",
+                "baseConnectionId": "1d1d4bc5-b527-46a3-9863-530246a61b2b"
+            }
+        },
         "ttlInDays": 40,
         "labels": ["core/C1"],
         "audienceType": "people",
@@ -276,6 +282,7 @@ curl -X GET https://platform.adobe.io/data/core/ais/external-audience/operations
 - 受众描述
 - 字段级访问控制标签
 - 受众级别的访问控制标签
+- 受众的数据过期时间
 
 使用此终结点&#x200B;**更新字段将替换**&#x200B;您请求的字段内容。
 
@@ -403,7 +410,6 @@ curl -X POST https://platform.adobe.io/data/core/ais/external-audience/60ccea95-
 | -------- | ---- | ----------- |
 | `dataFilterStartTime` | Epoch时间戳 | **必需**&#x200B;指定运行流的开始时间以选择要处理的文件的范围。 |
 | `dataFilterEndTime` | Epoch时间戳 | 指定流运行的结束时间以选择要处理的文件的范围。 |
-| `differentialIngestion` | 布尔值 | 一个字段，用于根据自上次引入或完全受众引入后的差异确定引入是部分引入还是完全引入。 默认情况下，此值为`true`。 |
 
 +++
 
