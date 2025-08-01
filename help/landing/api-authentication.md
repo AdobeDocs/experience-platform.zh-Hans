@@ -118,7 +118,7 @@ ht-degree: 2%
 
 以下视频教程中也提供了上述步骤的演练，以设置与Experience Platform API的集成：
 
->[!VIDEO](https://video.tv.adobe.com/v/28832/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/31668/?learn=on&captions=chi_hans)
 
 ### 收集凭据 {#gather-credentials}
 
@@ -298,7 +298,7 @@ curl -X GET https://platform.adobe.io/data/foundation/schemaregistry/global/clas
 
 以下视频教程中也提供了有关系统管理员如何授予通过API访问Experience Platform资源所需的权限的详细信息：
 
->[!VIDEO](https://video.tv.adobe.com/v/28832/?learn=on&t=159)
+>[!VIDEO](https://video.tv.adobe.com/v/31668/?learn=on&t=159&captions=chi_hans)
 
 ## 使用Postman验证和测试API调用 {#use-postman}
 
@@ -308,17 +308,17 @@ curl -X GET https://platform.adobe.io/data/foundation/schemaregistry/global/clas
 
 **下载并导入要与Postman API一起使用的Experience Platform环境**
 
->[!VIDEO](https://video.tv.adobe.com/v/28832/?learn=on&t=106)
+>[!VIDEO](https://video.tv.adobe.com/v/31668/?learn=on&t=106&captions=chi_hans)
 
 **使用Postman集合生成访问令牌**
 
 下载[Identity Management服务Postman收藏集](https://github.com/adobe/experience-platform-postman-samples/tree/master/apis/ims)并观看以下视频，了解如何生成访问令牌。
 
->[!VIDEO](https://video.tv.adobe.com/v/29698/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/32725/?learn=on&captions=chi_hans)
 
 **下载Experience Platform API Postman收藏集并与API交互**
 
->[!VIDEO](https://video.tv.adobe.com/v/29704/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/32721/?learn=on&captions=chi_hans)
 
 <!--
 This [Medium post](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) describes how you can set up Postman to automatically perform JWT authentication and use it to consume Experience Platform APIs.
@@ -366,7 +366,7 @@ This [Medium post](https://medium.com/adobetech/using-postman-for-jwt-authentica
 
 以下视频教程还提供了上述步骤的演练，这些步骤用于向产品配置文件添加开发人员并将API分配给角色：
 
->[!VIDEO](https://video.tv.adobe.com/v/3426407/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3446408/?learn=on&captions=chi_hans)
 
 ## 其他资源 {#additional-resources}
 
