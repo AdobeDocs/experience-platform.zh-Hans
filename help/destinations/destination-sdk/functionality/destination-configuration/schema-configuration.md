@@ -2,9 +2,9 @@
 description: 了解如何为使用Destination SDK构建的目标配置合作伙伴架构。
 title: 合作伙伴架构配置
 exl-id: 0548e486-206b-45c5-8d18-0d6427c177c5
-source-git-commit: 30a237c7acf814722d384792366f95289dc3f34a
+source-git-commit: 3c772e99e7f0417672e60d56ace962abda2b7d76
 workflow-type: tm+mt
-source-wordcount: '1896'
+source-wordcount: '1910'
 ht-degree: 3%
 
 ---
@@ -32,7 +32,7 @@ Experience Platform使用架构，以一致且可重用的方式描述数据结�
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -47,7 +47,7 @@ Experience Platform使用架构，以一致且可重用的方式描述数据结�
 
 Destination SDK支持多种架构配置：
 
-* 静态架构是通过`schemaConfig`部分中的`profileFields`数组定义的。 在静态架构中，您定义了`profileFields`数组中应显示在Experience Platform UI中的每个目标属性。 如果需要更新架构，您必须[更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md)。
+* 静态架构是通过`profileFields`部分中的`schemaConfig`数组定义的。 在静态架构中，您定义了`profileFields`数组中应显示在Experience Platform UI中的每个目标属性。 如果需要更新架构，您必须[更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md)。
 * 动态架构使用名为[动态架构服务器](../../authoring-api/destination-server/create-destination-server.md#dynamic-schema-servers)的其他目标服务器类型来动态检索支持的目标属性，并根据您自己的API生成架构。 动态架构不使用`profileFields`数组。 如果需要更新架构，则无需[更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md)。 动态架构服务器而是从API中检索更新的架构。
 * 在架构配置中，您可以选择添加所需的（或预定义的）映射。 用户可以在Experience Platform UI中查看这些映射，但在设置与目标的连接时，无法修改它们。 例如，您可以强制电子邮件地址字段始终发送到目标。
 
@@ -104,9 +104,9 @@ Destination SDK支持多种架构配置：
 | `useCustomerSchemaForAttributeMapping` | 布尔值 | 可选 | 启用或禁用从客户架构到您在`profileFields`数组中定义的属性的映射。 <ul><li>如果设置为`true`，则用户仅在映射字段中看到源列。 `profileFields`不适用于这种情况。</li><li>如果设置为`false`，则用户可以将源属性从其架构映射到您在`profileFields`数组中定义的属性。</li></ul> 默认值为 `false`。 |
 | `profileRequired` | 布尔值 | 可选 | 如果用户应能够将Experience Platform中的配置文件属性映射到目标平台上的自定义属性，则使用`true`。 |
 | `segmentRequired` | 布尔值 | 必需 | Destination SDK需要此参数，应始终将其设置为`true`。 |
-| `identityRequired` | 布尔值 | 必需 | 如果用户应该能够将Experience Platform中的[标识类型](identity-namespace-configuration.md)映射到您在`profileFields`数组中定义的属性，则设置为`true`。 |
+| `identityRequired` | 布尔值 | 必需 | 如果用户应该能够将Experience Platform中的`true`标识类型[映射到您在](identity-namespace-configuration.md)数组中定义的属性，则设置为`profileFields`。 |
 | `segmentNamespaceAllowList` | 数组 | 可选 | 允许用户仅将受众从数组中定义的受众命名空间映射到目标。 <br><br>在大多数情况下不建议使用此参数。 请改用`"segmentNamespaceDenyList":[]`以允许将所有类型的受众导出到您的目标。 <br><br>如果您的配置中同时缺少`segmentNamespaceAllowList`和`segmentNamespaceDenyList`，则用户将只能导出源自[分段服务](../../../../segmentation/home.md)的受众。 <br><br>`segmentNamespaceAllowList`和`segmentNamespaceDenyList`互斥。 |
-| `segmentNamespaceDenyList` | 数组 | 可选 | 限制用户将受众从数组中定义的受众命名空间映射到目标。 <br><br>Adobe建议通过设置`"segmentNamespaceDenyList":[]`允许导出所有受众，而不考虑其来源。 <br><br>如果您的配置中同时缺少`segmentNamespaceAllowed`和`segmentNamespaceDenyList`，则用户将只能导出源自[分段服务](../../../../segmentation/home.md)的受众。 <br><br>`segmentNamespaceAllowList`和`segmentNamespaceDenyList`互斥。 |
+| `segmentNamespaceDenyList` | 数组 | 可选 | 限制用户将受众从数组中定义的受众命名空间映射到目标。 <br><br>Adobe建议通过设置`"segmentNamespaceDenyList":[]`允许导出所有受众，而不考虑其来源。 <br><br>**重要信息：**&#x200B;如果您未在`segmentNamespaceDenyList`中指定`schemaConfig`并且未使用`segmentNamespaceAllowList`，则系统会自动将`segmentNamespaceDenyList`设置为`[]`。 这样可以防止将来丢失自定义受众。 为安全起见，Adobe建议在您的配置中明确设置`"segmentNamespaceDenyList":[]`。 <br><br>`segmentNamespaceAllowList`和`segmentNamespaceDenyList`互斥。 |
 
 {style="table-layout:auto"}
 
@@ -148,13 +148,13 @@ Destination SDK支持创建动态合作伙伴架构。 与静态架构相反，�
 
 | 参数 | 类型 | 必需/可选 | 描述 |
 |---------|----------|------|---|
-| `dynamicEnum.authenticationRule` | 字符串 | 必需 | 指示[!DNL Experience Platform]客户如何连接到您的目标。 接受的值为`CUSTOMER_AUTHENTICATION`、`PLATFORM_AUTHENTICATION`、`NONE`。<br> <ul><li>如果Experience Platform客户通过[此处](customer-authentication.md)描述的任何身份验证方法登录您的系统，请使用`CUSTOMER_AUTHENTICATION`。 </li><li> 如果Adobe与您的目标之间存在全局身份验证系统，并且[!DNL Experience Platform]客户不需要提供任何身份验证凭据即可连接到您的目标，则使用`PLATFORM_AUTHENTICATION`。 在这种情况下，您必须使用凭据API [创建凭据对象](../../credentials-api/create-credential-configuration.md)。 </li><li>如果不需要身份验证即可将数据发送到目标平台，请使用`NONE`。 </li></ul> |
+| `dynamicEnum.authenticationRule` | 字符串 | 必需 | 指示[!DNL Experience Platform]客户如何连接到您的目标。 接受的值为`CUSTOMER_AUTHENTICATION`、`PLATFORM_AUTHENTICATION`、`NONE`。<br> <ul><li>如果Experience Platform客户通过`CUSTOMER_AUTHENTICATION`此处[描述的任何身份验证方法登录您的系统，请使用](customer-authentication.md)。 </li><li> 如果Adobe与您的目标之间存在全局身份验证系统，并且`PLATFORM_AUTHENTICATION`客户不需要提供任何身份验证凭据即可连接到您的目标，则使用[!DNL Experience Platform]。 在这种情况下，您必须使用凭据API [创建凭据对象](../../credentials-api/create-credential-configuration.md)。 </li><li>如果不需要身份验证即可将数据发送到目标平台，请使用`NONE`。 </li></ul> |
 | `dynamicEnum.destinationServerId` | 字符串 | 必需 | 动态架构服务器的`instanceId`。 此目标服务器包括Experience Platform将调用以检索动态架构的API端点。 |
 | `dynamicEnum.value` | 字符串 | 必需 | 动态架构的名称，如动态架构服务器配置中所定义。 |
 | `dynamicEnum.responseFormat` | 字符串 | 必需 | 定义动态架构时，始终设置为`SCHEMA`。 |
 | `profileRequired` | 布尔值 | 可选 | 如果用户应能够将Experience Platform中的配置文件属性映射到目标平台上的自定义属性，则使用`true`。 |
 | `segmentRequired` | 布尔值 | 必需 | Destination SDK需要此参数，应始终将其设置为`true`。 |
-| `identityRequired` | 布尔值 | 必需 | 如果用户应该能够将Experience Platform中的[标识类型](identity-namespace-configuration.md)映射到您在`profileFields`数组中定义的属性，则设置为`true`。 |
+| `identityRequired` | 布尔值 | 必需 | 如果用户应该能够将Experience Platform中的`true`标识类型[映射到您在](identity-namespace-configuration.md)数组中定义的属性，则设置为`profileFields`。 |
 
 {style="table-layout:auto"}
 
