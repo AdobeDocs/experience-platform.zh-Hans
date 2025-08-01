@@ -52,7 +52,7 @@ ht-degree: 2%
 
 ### 获取开发人员访问权限 {#gain-developer-access}
 
-请联系贵组织中的Admin Console管理员，将您作为开发人员添加到Experience Platform产品配置文件。 有关如何[管理产品配置文件的开发人员访问权限](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/manage-developers.ug.html)的特定说明，请参阅Admin Console文档。
+请联系贵组织中的Admin Console管理员，将您作为开发人员添加到Experience Platform产品配置文件。 有关如何[管理产品配置文件的开发人员访问权限](https://helpx.adobe.com/cn/enterprise/admin-guide.html/enterprise/using/manage-developers.ug.html)的特定说明，请参阅Admin Console文档。
 
 一旦您被指定为开发人员，就可以开始在[Adobe Developer Console](https://www.adobe.com/go/devs_console_ui)中创建集成。 这些集成是从外部应用程序和服务到Adobe API的管道。
 
@@ -60,7 +60,7 @@ ht-degree: 2%
 
 您的Admin Console管理员还必须将您作为用户添加到同一产品配置文件。 凭借用户访问权限，您可以在UI中查看您执行的API操作的结果。
 
-有关详细信息，请参阅[在Admin Console中管理用户组](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/user-groups.ug.html)指南。
+有关详细信息，请参阅[在Admin Console中管理用户组](https://helpx.adobe.com/cn/enterprise/admin-guide.html/enterprise/using/user-groups.ug.html)指南。
 
 ## 生成API密钥（客户端ID）和组织ID {#generate-credentials}
 
