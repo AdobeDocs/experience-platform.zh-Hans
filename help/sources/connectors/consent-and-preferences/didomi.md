@@ -2,16 +2,20 @@
 title: Didomi Source概述
 description: 了解如何使用用户界面将Didomi连接到Adobe Experience Platform。
 last-substantial-update: 2025-07-29T00:00:00Z
+badge: Beta 版
 exl-id: c59bcfb8-e831-4a13-8b0e-4c6d538f1059
-source-git-commit: 7596a87309105897a2727faa8e22b06cdf5547c3
+source-git-commit: b0c2d5535bb4cdf7d00eaca43d65f744276494f3
 workflow-type: tm+mt
-source-wordcount: '889'
+source-wordcount: '911'
 ht-degree: 1%
 
 ---
 
 # [!DNL Didomi]
 
+>[!AVAILABILITY]
+>
+>[!DNL Didomi]源为测试版。 有关使用测试版标记源的更多信息，请阅读源概述中的[条款和条件](../../home.md#terms-and-conditions)。
 
 [!DNL Didomi]是一个同意和偏好设置管理平台，可帮助组织跨网站、应用程序和内部工具收集、管理和强制执行有关个人数据的用户选择。
 

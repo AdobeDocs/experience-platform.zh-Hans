@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明（2025 年 7 月）
 description: Adobe Experience Platform 的 2025 年 7 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: ba475df04342424dc0b22cb1d3d429d12701dbd1
+source-git-commit: b0c2d5535bb4cdf7d00eaca43d65f744276494f3
 workflow-type: tm+mt
-source-wordcount: '1573'
+source-wordcount: '1574'
 ht-degree: 22%
 
 ---
@@ -135,7 +135,7 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 | 来源 | 描述 |
 | --- | --- |
-| 支持[!DNL Didomi] (流式SDK) | 使用[!DNL Didomi]源从[!DNL Didomi]中摄取同意和偏好设置管理数据，支持遵守隐私法规和基于同意的营销策略。 有关如何获取设置的信息，请阅读[[!DNL Didomi] 源概述](../../sources/connectors/consent-and-preferences/didomi.md)。 有关创建源连接的步骤，请阅读[[!DNL Didomi] 源连接指南](../../sources/tutorials/ui/create/consent-and-preferences/didomi.md)。 |
+| 对[!BADGE 的]{type=Informative}Beta[!DNL Didomi]支持(流式SDK) | 使用[!DNL Didomi]源从[!DNL Didomi]中摄取同意和偏好设置管理数据，支持遵守隐私法规和基于同意的营销策略。 有关如何获取设置的信息，请阅读[[!DNL Didomi] 源概述](../../sources/connectors/consent-and-preferences/didomi.md)。 有关创建源连接的步骤，请阅读[[!DNL Didomi] 源连接指南](../../sources/tutorials/ui/create/consent-and-preferences/didomi.md)。 |
 
 **新增或更新的功能**
 
