@@ -5,10 +5,10 @@ type: Documentation
 description: 通过Adobe Experience Platform，您可以使用RESTful API或用户界面访问实时客户配置文件数据。 本指南概述如何使用配置文件API访问实体（通常称为“配置文件”）。
 role: Developer
 exl-id: 06a1a920-4dc4-4468-ac15-bf4a6dc885d4
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 1e508ec11b6d371524c87180a41e05ffbacc2798
 workflow-type: tm+mt
-source-wordcount: '1706'
-ht-degree: 3%
+source-wordcount: '1933'
+ht-degree: 2%
 
 ---
 
@@ -23,6 +23,25 @@ Adobe Experience Platform允许您使用RESTful API或用户界面访问[!DNL Re
 ## 快速入门
 
 本指南中使用的API终结点是[[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en)的一部分。 在继续之前，请查看[快速入门指南](getting-started.md)，以获取相关文档的链接、此文档中示例API调用的阅读指南，以及有关成功调用任何[!DNL Experience Platform] API所需的所需标头的重要信息。
+
+>[!BEGINSHADEBOX]
+
+## 实体分辨率
+
+作为架构升级的一部分，Adobe将引入针对客户和商机的实体解决方案，使用基于最新数据的确定性ID匹配。 实体解析作业在批量分段期间每天运行，然后再评估具有B2B属性的多实体受众。
+
+此增强功能使Experience Platform能够识别和统一表示同一实体的多个记录，从而提高数据一致性并实现更准确的受众分段。
+
+以前，“帐户”和“机会”依赖于基于身份图的解决方案，该解决方案将身份（包括所有历史引入）关联起来。 在新的实体解析方法中，标识仅根据最新数据进行链接
+
+### 实体解析如何工作？
+
+- **在**&#x200B;之前：如果将数据通用编号系统(DUNS)编号用作附加标识，并且在源系统（如CRM）中更新了帐户的DUNS编号，则帐户ID将同时链接到旧和新的DUNS编号。
+- **After**：如果将DUNS编号用作附加标识，并且在源系统（如CRM）中更新了帐户的DUNS编号，则帐户ID将仅链接到新的DUNS编号，从而更准确地反映帐户的当前状态。
+
+作为本次更新的结果，[!DNL Profile Access] API现在会在实体解析作业周期完成后反映最新的合并配置文件视图。 此外，一致数据提供了分段、激活和分析等用例，提高了数据准确性和一致性。
+
+>[!ENDSHADEBOX]
 
 ## 检索实体 {#retrieve-entity}
 

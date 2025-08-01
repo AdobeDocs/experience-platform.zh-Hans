@@ -2,10 +2,10 @@
 title: 身份设置UI
 description: 了解如何使用身份设置用户界面。
 exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
-source-git-commit: 38d331bd9265f25a3aebdcbd20ae5fc30a93e960
+source-git-commit: 7596a87309105897a2727faa8e22b06cdf5547c3
 workflow-type: tm+mt
 source-wordcount: '665'
-ht-degree: 2%
+ht-degree: 4%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->[!DNL Identity Graph Linking Rules]现已正式可用。 如果您有一个现有的沙盒，需要在启用身份设置后取消折叠图形（“已修复”），请联系您的Adobe客户团队或Adobe支持。
+>[!DNL Identity Graph Linking Rules] 现已正式发布。如果您有一个现有的沙盒，需要在启用身份设置后取消折叠图形（“已修复”），请联系您的Adobe客户团队或Adobe支持。
 
 身份设置是Adobe Experience Platform Identity Service UI中的一项功能，可用于指定唯一的命名空间并配置命名空间优先级。
 
@@ -28,7 +28,7 @@ ht-degree: 2%
 在开始使用标识设置之前，请阅读以下文档：
 
 * [[!DNL Identity Graph Linking Rules]](./overview.md)
-* [身份优化算法](./identity-optimization-algorithm.md)
+* [身份标识优化算法](./identity-optimization-algorithm.md)
 * [实施指南](./implementation-guide.md)
 * [图形配置示例](./example-configurations.md)
 * [命名空间优先级](./namespace-priority.md)
@@ -85,14 +85,14 @@ ht-degree: 2%
 >
 >* 在保存身份设置之前，不会更改您的数据。
 
-![确认窗口，显示有关在处理配置之前延迟6小时的警告。](../images/rules/complete.png)
+![确认窗口，显示有关延迟24小时之后才处理配置的警告。](../images/rules/complete.png)
 
 ## 后续步骤
 
 有关[!DNL Identity Graph Linking Rules]的详细信息，请阅读以下文档：
 
 * [[!DNL Identity Graph Linking Rules] 概述](./overview.md)
-* [身份优化算法](./identity-optimization-algorithm.md)
+* [身份标识优化算法](./identity-optimization-algorithm.md)
 * [实施指南](./implementation-guide.md)
 * [图形配置示例](./example-configurations.md)
 * [疑难解答和常见问题](./troubleshooting.md)

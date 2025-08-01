@@ -2,7 +2,7 @@
 title: 身份图链接规则的实施指南
 description: 了解在使用Identity Graph链接规则配置实施数据时要遵循的建议步骤。
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: a9c9543783eb85dcaadef64b1c0deb84f850d40e
+source-git-commit: 7596a87309105897a2727faa8e22b06cdf5547c3
 workflow-type: tm+mt
 source-wordcount: '1956'
 ht-degree: 6%
@@ -203,7 +203,11 @@ Identity Service实施流程的第一步是，确保将您的Experience Platform
 
 ![身份浏览页面中突出显示了设置按钮。](../images/implementation/settings.png "身份浏览页面中突出显示了设置按钮。"){zoomable="yes"}
 
-使用身份设置UI指定唯一的命名空间并按优先级配置命名空间。 完成应用设置后，必须至少等待六小时才能继续摄取数据，因为新设置至少需要六小时才能反映在Identity Service中。
+使用身份设置UI指定唯一的命名空间并按优先级配置命名空间。
+
+>[!IMPORTANT]
+>
+>应用完设置后，必须等待至少24小时才能继续摄取数据，因为新设置至少需要24小时才能反映在Identity Service中。
 
 有关详细信息，请阅读[身份设置UI指南](./identity-settings-ui.md)。
 

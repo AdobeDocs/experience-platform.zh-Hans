@@ -3,9 +3,9 @@ title: 分段服务API指南
 description: 分段服务API允许开发人员以编程方式管理Adobe Experience Platform中的分段操作。 参阅本指南，了解如何使用 API 执行关键操作。
 role: Developer
 exl-id: cebecaf3-9746-4b0b-9c50-11789fba66c3
-source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
+source-git-commit: af79493c831c401c0bf14e391eb36a8175b4a2dd
 workflow-type: tm+mt
-source-wordcount: '557'
+source-wordcount: '614'
 ht-degree: 3%
 
 ---
@@ -29,6 +29,12 @@ Adobe Experience Platform [!DNL Segmentation Service]允许您通过Adobe Experi
 导出作业是异步流程，用于将受众区段成员保留到数据集。 您可以使用`/export/jobs`端点检索所有导出作业、创建新的导出作业、检索特定导出作业的详细信息，或取消特定导出作业。
 
 有关使用此端点的详细信息，请阅读[导出作业端点指南](./export-jobs.md)。
+
+## 外部受众
+
+您可以使用`/core/ais/external-audiences`端点将外部受众导入Experience Platform、检索受众的创建状态、更新外部受众、启动受众摄取运行、检索外部受众摄取状态、列出受众摄取运行和删除外部受众。
+
+有关使用此端点的详细信息，请阅读[外部受众端点指南](./external-audiences.md)。
 
 ## 预览和估计
 

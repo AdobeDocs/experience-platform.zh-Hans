@@ -4,14 +4,18 @@ title: 区段定义API端点
 description: Adobe Experience Platform分段服务API中的区段定义端点允许您以编程方式管理组织的区段定义。
 role: Developer
 exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
-source-git-commit: b3c7b97e257f76337bd02d1db9390ab314f7d1cd
+source-git-commit: 424702d7d16eddabefe19d023c3829bd650c88ce
 workflow-type: tm+mt
-source-wordcount: '1519'
+source-wordcount: '1558'
 ht-degree: 2%
 
 ---
 
 # 区段定义端点
+
+>[!WARNING]
+>
+>不建议使用分段服务API通过B2B实体创建受众。 不能再使用以下B2B实体创建受众：帐户、帐户 — 人员关系、营销活动、营销活动成员、营销列表成员、机会和机会 — 人员关系。
 
 Adobe Experience Platform允许您创建区段定义，以从一组配置文件中定义一组特定属性或行为。 区段定义是一个对象，它封装在[!DNL Profile Query Language] (PQL)中编写的查询。 区段定义会应用到用户档案以创建受众。 此对象（区段定义）也称为PQL谓词。 PQL谓词根据与您提供给[!DNL Real-Time Customer Profile]的任何记录或时间序列数据相关的条件定义区段定义的规则。 有关编写PQL查询的更多信息，请参阅[PQL指南](../pql/overview.md)。
 
@@ -338,7 +342,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
 
 ## 检索特定区段定义 {#get}
 
-您可以通过向`/segment/definitions`端点发出GET请求并提供要在请求路径中检索的区段定义的ID，来检索有关特定区段定义的详细信息。
+通过向`/segment/definitions`端点发出GET请求并提供要在请求路径中检索的区段定义的ID，您可以检索有关特定区段定义的详细信息。
 
 **API格式**
 
@@ -427,7 +431,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/definitions/4afe34ae
 
 ## 批量检索区段定义 {#bulk-get}
 
-通过向`/segment/definitions/bulk-get`端点发出POST请求并在请求正文中提供区段定义的`id`值，可以检索有关多个指定区段定义的详细信息。
+通过向`/segment/definitions/bulk-get`端点发出POST请求并在请求正文中提供区段定义的`id`值，您可以检索有关多个指定区段定义的详细信息。
 
 **API格式**
 
@@ -606,7 +610,7 @@ curl -X DELETE https://platform.adobe.io/data/core/ups/segment/definitions/4afe3
 
 ## 更新特定区段定义
 
-您可以通过向`/segment/definitions`端点发出PATCH请求并在请求路径中提供要更新的区段定义的ID来更新特定的区段定义。
+您可以更新特定的区段定义，方法是向`/segment/definitions`端点发出PATCH请求，并在请求路径中提供要更新的区段定义的ID。
 
 **API格式**
 
@@ -709,7 +713,7 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/segment/definitions/4afe34
 
 ## 转换区段定义
 
-您可以通过向`/segment/conversion`终结点发出POST请求，将`pql/text`和`pql/json`或`pql/json`之间的区段定义转换为`pql/text`。
+您可以通过向`pql/text`终结点发出POST请求，将`pql/json`和`pql/json`之间的区段定义或`pql/text`转换为`/segment/conversion`。
 
 **API格式**
 
