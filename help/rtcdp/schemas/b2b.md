@@ -1,25 +1,25 @@
 ---
-title: Real-time Customer Data Platform B2B版本中的架构
-description: Experience Data Model (XDM)架构在Adobe Real-time Customer Data Platform B2B版本中的角色概述。
+title: Real-Time Customer Data Platform B2B edition中的架构
+description: Experience Data Model (XDM)架构在Adobe Real-Time Customer Data Platform B2B edition中的角色概述。
 feature: Get Started, Data Management, Schemas
-badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 3b18d377-108f-443f-86ae-dc7537cf9013
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 09f671af0d04251ab7b0a71528cb4b9745594b1c
 workflow-type: tm+mt
-source-wordcount: '229'
-ht-degree: 13%
+source-wordcount: '251'
+ht-degree: 12%
 
 ---
 
-# Real-time Customer Data Platform B2B版本中的架构
+# Real-Time Customer Data Platform B2B edition中的架构
 
-Adobe Real-time Customer Data Platform B2B版本提供了多个标准的[体验数据模型(XDM)类](../../xdm/schema/composition.md#class)，这些类捕获有关基本B2B数据实体的详细信息，如帐户、机会、营销活动等。 此外，Real-Time CDP B2B Edition允许您定义这些架构之间的多对一关系，以便它们可以参与高级分段用例。
+Adobe Real-Time Customer Data Platform B2B edition提供了多个标准的[体验数据模型(XDM)类](../../xdm/schema/composition.md#class)，这些类捕获有关基本B2B数据实体的详细信息，如帐户、机会、营销活动等。 此外，Real-Time CDP B2B edition允许您定义这些架构之间的多对一关系，以便它们可以参与高级分段用例。
 
 >[!IMPORTANT]
 >
->您必须有权访问Real-Time CDP B2B版本，B2B架构才能参与[实时客户个人资料](../../profile/home.md)。
+>B2B架构可在Experience Platform应用程序中使用(例如，在[Customer Journey Analytics B2B edition](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-overview/cja-b2b/cja-b2b-edition)中)。 <br/>但是，您必须拥有Real-Time CDP B2B edition的访问权限，才能使B2B架构（中的配置文件）参与[实时客户配置文件](../../profile/home.md)。
 
-Real-Time CDP B2B版本中提供了以下标准类：
+Real-Time CDP B2B edition中提供了以下标准类：
 
 * [XDM 业务帐户](../../xdm/classes/b2b/business-account.md)
 * [XDM 业务帐户人员关系](../../xdm/classes/b2b/business-account-person-relation.md)
