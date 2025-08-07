@@ -2,7 +2,7 @@
 description: 了解如何为使用Destination SDK构建的目标配置文件导出设置。
 title: 批次配置
 exl-id: 0ffbd558-a83c-4c3d-b4fc-b6f7a23a163a
-source-git-commit: a149e0b96b68c8ac61e355cf8605742feb4eec41
+source-git-commit: 8e7356bdc5692678e46a61b538d4b6748792a423
 workflow-type: tm+mt
 source-wordcount: '1058'
 ht-degree: 2%
@@ -33,7 +33,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -95,7 +95,7 @@ ht-degree: 2%
 | `defaultExportMode` | 枚举 | 定义默认文件导出模式。 支持的值：<ul><li>`DAILY_FULL_EXPORT`</li><li>`FIRST_FULL_THEN_INCREMENTAL`</li></ul> 默认值为`DAILY_FULL_EXPORT`。 有关文件导出计划的详细信息，请参阅[批量激活文档](../../../ui/activate-batch-profile-destinations.md#scheduling)。 |
 | `allowedExportModes` | 列表 | 定义客户可用的文件导出模式。 支持的值：<ul><li>`DAILY_FULL_EXPORT`</li><li>`FIRST_FULL_THEN_INCREMENTAL`</li></ul> |
 | `allowedScheduleFrequency` | 列表 | 定义客户可用的文件导出频率。 支持的值：<ul><li>`ONCE`</li><li>`EVERY_3_HOURS`</li><li>`EVERY_6_HOURS`</li><li>`EVERY_8_HOURS`</li><li>`EVERY_12_HOURS`</li><li>`DAILY`</li><li>`WEEKLY`</li><li>`MONTHLY`</li></ul> |
-| `defaultFrequency` | 枚举 | 定义默认文件导出频率。支持的值：<ul><li>`ONCE`</li><li>`EVERY_3_HOURS`</li><li>`EVERY_6_HOURS`</li><li>`EVERY_8_HOURS`</li><li>`EVERY_12_HOURS`</li><li>`DAILY`</li></ul> 默认值为 `DAILY`。 |
+| `defaultFrequency` | 枚举 | 定义默认文件导出频率。支持的值：<ul><li>`ONCE`</li><li>`EVERY_3_HOURS`</li><li>`EVERY_6_HOURS`</li><li>`EVERY_8_HOURS`</li><li>`EVERY_12_HOURS`</li><li>`DAILY`</li><li>`WEEKLY`</li><li>`MONTHLY`</li></ul> 默认值为 `DAILY`。 |
 | `defaultStartTime` | 字符串 | 定义文件导出的默认开始时间。 使用24小时文件格式。 默认值为“00:00”。 |
 | `filenameConfig.allowedFilenameAppendOptions` | 字符串 | *必需*。 可供用户选择的可用文件名宏列表。 这会确定哪些项目已附加到导出的文件名（受众ID、组织名称、导出日期和时间等）。 设置`defaultFilename`时，请确保避免复制宏。 <br><br>支持的值： <ul><li>`DESTINATION`</li><li>`SEGMENT_ID`</li><li>`SEGMENT_NAME`</li><li>`DESTINATION_INSTANCE_ID`</li><li>`DESTINATION_INSTANCE_NAME`</li><li>`ORGANIZATION_NAME`</li><li>`SANDBOX_NAME`</li><li>`DATETIME`</li><li>`CUSTOM_TEXT`</li></ul>无论定义宏的顺序如何，Experience Platform UI将始终按此处显示的顺序显示它们。 <br><br>如果`defaultFilename`为空，`allowedFilenameAppendOptions`列表必须至少包含一个宏。 |
 | `filenameConfig.defaultFilenameAppendOptions` | 字符串 | *必需*。 预先选定的默认文件名宏，用户可以取消选中该宏。<br><br>此列表中的宏是`allowedFilenameAppendOptions`中定义的宏的子集。 |
