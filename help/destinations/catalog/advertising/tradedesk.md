@@ -3,9 +3,9 @@ keywords: 广告；交易台；广告交易台
 title: 交易台连接
 description: Trade Desk是一个自助服务平台，供广告购买者跨显示器、视频和移动库存源执行重定位和面向受众的数字活动。
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: 92ba27aeb35685741151a618e64c78b4c8318865
+source-git-commit: 564ee7fbd45677c35057c56de049158f3282d7ad
 workflow-type: tm+mt
-source-wordcount: '910'
+source-wordcount: '1017'
 ht-degree: 3%
 
 ---
@@ -13,6 +13,23 @@ ht-degree: 3%
 # [!DNL The Trade Desk]连接
 
 ## 概述 {#overview}
+
+
+>[!IMPORTANT]
+>
+> 从2025年7月开始，对目标服务进行[内部升级](../../../release-notes/2025/july-2025.md#destinations)后，在到&#x200B;**的数据流中，您可能会遇到激活的配置文件数**&#x200B;减少[!DNL The Trade Desk]的情况。
+> > 导致此下降的原因是，针对此目标平台的所有激活引入了&#x200B;**ECID映射要求**。 有关详细信息，请参阅此页面中的[强制映射](#mandatory-mappings)部分。
+>
+>**更改内容：**
+>
+>* 现在，所有配置文件激活的ECID (Experience Cloud ID)映射都是&#x200B;**必需的**。
+>* 没有ECID映射的配置文件将从现有激活数据流中&#x200B;**删除**。
+>
+>**您需要执行的操作：**
+>
+>* 查看您的受众数据，以确认用户档案具有有效的ECID值。
+>* 监控您的激活量度以验证预期的配置文件计数。
+
 
 使用此目标连接器将配置文件数据发送到[!DNL The Trade Desk]。 此连接器将数据发送到[!DNL The Trade Desk]第一方终结点。 Adobe Experience Platform与[!DNL The Trade Desk]之间的集成不支持将数据导出到[!DNL The Trade Desk]第三方端点。
 
@@ -67,7 +84,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->如果您希望使用[!DNL The Trade Desk]创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/zh-hans/docs/id-service/using/id-service-api/methods/idsync)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL The Trade Desk]集成，则您设置的ID同步将会转移到Experience Platform。
+>如果您希望使用[!DNL The Trade Desk]创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/en/docs/id-service/using/id-service-api/methods/idsync)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL The Trade Desk]集成，则您设置的ID同步将会转移到Experience Platform。
 
 ## 连接到目标 {#connect}
 
@@ -121,7 +138,7 @@ ht-degree: 3%
 * **ECID** (Experience Cloud ID)
 * **交易台ID**
 
-未能映射所有必需的标识将阻止成功将受众激活到[!DNL The Trade Desk]。 每个标识在集成中均用于特定目的，而目标需要所有这些标识才能正常工作。
+无法映射所有必需的标识，因而无法完成激活工作流。 每个标识在集成中均用于特定目的，而目标需要所有这些标识才能正常工作。
 
 ![显示必需映射的屏幕截图](../../assets/catalog/advertising/tradedesk/mandatory-mappings.png)
 
