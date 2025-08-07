@@ -1,48 +1,113 @@
 ---
-keywords: Experience Platform；主页；热门主题；Oracle；oracle
-solution: Experience Platform
-title: 使用流服务API创建Oracle基本连接
-type: Tutorial
-description: 了解如何使用流服务API将Oracle连接到Experience Platform。
+title: 使用流服务API将Oracle DB连接到Experience Platform
+description: 了解如何使用API将Oracle DB连接到Experience Platform。
 exl-id: b1cea714-93ff-425f-8e12-6061da97d094
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: aa5496be968ee6f117649a6fff2c9e83a4ed7681
 workflow-type: tm+mt
-source-wordcount: '424'
-ht-degree: 5%
+source-wordcount: '556'
+ht-degree: 1%
 
 ---
 
-# 使用[!DNL Flow Service] API创建[!DNL Oracle]基本连接
+# 使用[!DNL Oracle DB] API将[!DNL Flow Service]连接到Experience Platform
 
-基本连接表示源和Adobe Experience Platform之间的已验证连接。
-
-本教程将指导您完成使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)为[!DNL Oracle]创建基本连接的步骤。
+阅读本指南，了解如何使用[!DNL Oracle DB]API[[!DNL Flow Service] 将您的](https://developer.adobe.com/experience-platform-apis/references/flow-service/)帐户连接到Adobe Experience Platform。
 
 ## 快速入门
 
-本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
+本指南要求您对Experience Platform的以下组件有一定的了解：
 
-* [源](../../../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强传入数据。
-* [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-以下部分提供使用[!DNL Flow Service] API成功连接到[!DNL Oracle]所需了解的其他信息。
-
-| 凭据 | 描述 |
-| ---------- | ----------- |
-| `connectionString` | 用于连接到[!DNL Oracle]的连接字符串。 [!DNL Oracle]连接字符串模式为： `Host={HOST};Port={PORT};Sid={SID};User Id={USERNAME};Password={PASSWORD}`。 |
-| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL Oracle]的连接规范ID为`d6b52d86-f0f8-475f-89d4-ce54c8527328`。 |
-
-有关入门的详细信息，请参阅此[[!DNL Oracle] 文档](https://docs.oracle.com/database/121/ODPNT/featConnecting.htm#ODPNT199)。
+以下部分提供使用[!DNL Oracle] API成功连接到[!DNL Flow Service]所需了解的其他信息。
 
 ### 使用Experience Platform API
 
 有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../../../landing/api-guide.md)指南。
 
-## 创建基本连接
+### 收集所需的凭据
 
-基本连接会保留源与Experience Platform之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
+有关身份验证的信息，请阅读[[!DNL Oracle DB] 概述](../../../../connectors/databases/oracle.md#prerequisites)。
 
-要创建基本连接ID，请在提供您的[!DNL Oracle]身份验证凭据作为请求参数的一部分时，向`/connections`端点发出POST请求。
+## 将[!DNL Oracle DB]连接到Azure上的Experience Platform {#azure}
+
+有关如何将您的[!DNL Oracle DB]帐户连接到Azure上的Experience Platform的信息，请阅读以下步骤。
+
+### 在Azure上的Experience Platform上为[!DNL Oracle DB]创建基础连接 {#azure-base}
+
+基本连接可将您的源链接到Experience Platform，以存储身份验证详细信息、连接状态和唯一ID。 使用此ID浏览源文件并标识要摄取的特定项目，包括其数据类型和格式。
+
+**API格式**
+
+```https
+POST /connections
+```
+
+要创建基本连接ID，请向`/connections`端点发出POST请求，并在请求参数中提供[!DNL Oracle DB]身份验证凭据。
+
+**请求**
+
+以下请求使用连接字符串身份验证为[!DNL Oracle DB]创建基本连接。
+
++++查看请求
+
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "Oracle DB base connection",
+    "description": "A base connection to connect Oracle DB to Experience Platform on Azure",
+    "auth": {
+      "specName": "ConnectionString",
+      "params": {
+        "connectionString": "Host={HOST};Port={PORT};Sid={SID};UserId={USERNAME};Password={PASSWORD}"
+      }
+    },
+    "connectionSpec": {
+      "id": "d6b52d86-f0f8-475f-89d4-ce54c8527328",
+      "version": "1.0"
+    }
+  }'
+```
+
+| 参数 | 描述 |
+| --------- | ----------- |
+| `auth.params.connectionString` | 用于连接到[!DNL Oracle DB]的连接字符串。 [!DNL Oracle DB]连接字符串模式为： `Host={HOST};Port={PORT};Sid={SID};User Id={USERNAME};Password={PASSWORD}`。 |
+| `connectionSpec.id` | [!DNL Oracle]连接规范ID： `d6b52d86-f0f8-475f-89d4-ce54c8527328`。 |
+
++++
+
+**响应**
+
+成功的响应返回新创建的基本连接的详细信息，包括其唯一标识符(`id`)。
+
++++查看响应
+
+```json
+{
+    "id": "f088e4f2-2464-480c-88e4-f22464b80c90",
+    "etag": "\"43011faa-0000-0200-0000-5ea740cd0000\""
+}
+```
+
++++
+
+## 将[!DNL Oracle DB]连接到Amazon Web Services上的Experience Platform {#aws}
+
+>[!AVAILABILITY]
+>
+>本节适用于在Amazon Web Services (AWS)上运行的Experience Platform的实施。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](../../../../../landing/multi-cloud.md)。
+
+有关如何将您的[!DNL Oracle DB]帐户连接到AWS上的Experience Platform的信息，请阅读以下步骤。
+
+### 在AWS上的Experience Platform上为[!DNL Oracle DB]创建基本连接 {#aws-base}
 
 **API格式**
 
@@ -52,51 +117,69 @@ POST /connections
 
 **请求**
 
-以下请求为[!DNL Oracle]创建基本连接：
+以下请求为[!DNL Oracle DB]创建基本连接以连接到AWS上的Experience Platform。
+
++++查看请求
 
 ```shell
 curl -X POST \
-    'https://platform.adobe.io/data/foundation/flowservice/connections' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -H 'Content-Type: application/json' \
-    -d '{
-        "name": "Oracle connection",
-        "description": "A connection for Oracle",
-        "auth": {
-            "specName": "ConnectionString",
-            "params": {
-                    "connectionString": "Host={HOST};Port={PORT};Sid={SID};UserId={USERNAME};Password={PASSWORD}"
-                }
-        },
-        "connectionSpec": {
-            "id": "d6b52d86-f0f8-475f-89d4-ce54c8527328",
-            "version": "1.0"
-        }
-    }'
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Oracle DB on Experience Platform AWS",
+      "description": "Oracle DB on Experience Platform AWS",
+      "auth": {
+          "specName": "Basic Authentication",
+          "params": {
+              "server": "diy.us-dawkins-1.oraclecloud.com",
+              "port": "1521",
+              "database": "mcmg_profits_diy.oraclecloud.com",
+              "username": "Admin",
+              "password": "xxxx",
+              "schema": "ADMIN",
+              "sslMode": "true"
+          }
+      },
+      "connectionSpec": {
+          "id": "26d738e0-8963-47ea-aadf-c60de735468a",
+          "version": "1.0"
+      }
+  }'
 ```
 
-| 参数 | 描述 |
-| --------- | ----------- |
-| `auth.params.connectionString` | 用于连接到[!DNL Oracle]数据库的连接字符串。 [!DNL Oracle]连接字符串模式为： `Host={HOST};Port={PORT};Sid={SID};User Id={USERNAME};Password={PASSWORD}`。 |
-| `connectionSpec.id` | [!DNL Oracle]连接规范ID： `d6b52d86-f0f8-475f-89d4-ce54c8527328`。 |
+| 属性 | 描述 |
+| --- | --- |
+| `auth.params.server` | [!DNL Oracle DB]服务器的IP地址或主机名。 |
+| `auth.params.port` | [!DNL Oracle DB]服务器的端口号。 |
+| `auth.params.database` | 要连接的[!DNL Oracle DB]实例的名称。 |
+| `auth.params.username` | 与您的[!DNL Oracle DB]实例关联的用户帐户。 |
+| `auth.prams.password` | 与您的[!DNL Oracle DB]用户帐户对应的密码。 |
+| `auth.params.schema` | 包含数据库对象的方案。 |
+| `auth.params.sslMode` | 一个布尔值，指示是否强制执行SSL度量。 |
+| `connectionSpec.id` | 与[!DNL Oracle DB]源对应的连接规范ID。 此ID值固定为： `d6b52d86-f0f8-475f-89d4-ce54c8527328.` |
+
++++
 
 **响应**
 
-成功的响应返回新创建的连接的详细信息，包括其唯一标识符(`id`)。 在下个教程中，需要此ID才能浏览您的数据。
+成功的响应返回新创建的基本连接的详细信息，包括其唯一标识符(`id`)和相应的标识符。 你可以使用此ID [创建源连接](../../collect/database-nosql.md#create-a-source-connection)，并使用`etag`更新你的帐户[。](../../update.md)
+
++++查看响应
 
 ```json
 {
-    "id": "f088e4f2-2464-480c-88e4-f22464b80c90",
-    "etag": "\"43011faa-0000-0200-0000-5ea740cd0000\""
+    "id": "f847950c-1c12-4568-a550-d5312b16fdb8",
+    "etag": "\"0c0099f4-0000-0200-0000-67da91710000\""
 }
 ```
 
-## 后续步骤
++++
 
-通过完成本教程，您已使用[!DNL Flow Service] API创建了[!DNL Oracle]基本连接。 您可以在下列教程中使用此基本连接ID：
 
-* [使用 [!DNL Flow Service] API浏览数据表的结构和内容](../../explore/tabular.md)
-* [使用 [!DNL Flow Service] API创建数据流以将数据库数据引入Experience Platform](../../collect/database-nosql.md)
+## 为[!DNL Oracle DB]数据创建数据流
+
+现在您已成功连接[!DNL Oracle DB]帐户，您现在可以[创建数据流并将数据库中的数据摄取到Experience Platform](../../collect/database-nosql.md)。
