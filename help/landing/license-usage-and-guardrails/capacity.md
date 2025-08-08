@@ -5,7 +5,7 @@ exl-id: 38dad2f1-bd0f-4cc3-a3a6-5105ea866ea4
 source-git-commit: 326710e48ea9d6eb16f62b9f288311a1d255b287
 workflow-type: tm+mt
 source-wordcount: '577'
-ht-degree: 6%
+ht-degree: 11%
 
 ---
 
@@ -20,16 +20,16 @@ ht-degree: 6%
 >[!CONTEXTUALHELP]
 >id="platform_capacity_streamingthroughput"
 >title="流传输吞吐量"
->abstract="流式处理吞吐量值测量在生产和开发沙箱中将摄取流式传输到配置文件服务的每秒合并入站事件峰值。"
+>abstract="流传输吞吐量值衡量了在您所有生产和开发沙盒中流式摄入到轮廓服务的每秒综合峰值入站事件数。"
 
 >[!CONTEXTUALHELP]
 >id="platform_capacity_streamingaudiences"
 >title="流传输受众数量"
->abstract="每个沙盒的最大流传输受众数量。此数字包含您沙盒中的边缘受众数量。"
+>abstract="每个沙盒的最大流传输受众数量。此数字包括您沙盒中的边缘受众数量。"
 
 >[!CONTEXTUALHELP]
 >id="platform_capacity_edgeaudiences"
->title="Edge受众"
+>title="边缘受众"
 >abstract="每个沙盒的最大边缘受众数量。"
 
 目前， Capacity支持以下服务：
