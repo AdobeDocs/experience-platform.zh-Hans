@@ -3,34 +3,34 @@ title: 配额API端点
 description: 通过数据卫生API中的/quota端点，您可以根据组织的每个作业类型的每月配额限制监控高级数据生命周期管理的使用情况。
 role: Developer
 exl-id: 91858a13-e5ce-4b36-a69c-9da9daf8cd66
-source-git-commit: 4d34ae1885f8c4b05c7bb4ff9de9c0c0e26154bd
+source-git-commit: 2c2907c5ed38ce4c87b1b73f96e1a0e64586cb97
 workflow-type: tm+mt
-source-wordcount: '492'
-ht-degree: 1%
+source-wordcount: '372'
+ht-degree: 2%
 
 ---
 
 # 配额终结点
 
-数据卫生API中的`/quota`端点允许您根据组织对每个作业类型的配额限制监控高级数据生命周期管理的使用情况。
+使用数据卫生API中的`/quota`端点检查您组织的当前使用情况和限制。 配额因权利而异，例如Privacy and Security Shield或Healthcare Shield。
 
-跟踪每个数据生命周期作业类型的配额使用情况。 您的实际配额限制取决于您组织的权利并可定期审查。 数据集过期时间受并发活动作业数量的硬限制。
+监视当前配额消耗，以确保符合每个作业类型的组织限制。
 
 ## 快速入门
 
 本指南中使用的端点属于数据卫生API。 在继续之前，请查看[概述](./overview.md)以了解以下信息：
 
-* 相关文档的链接
-* 本文档中有关阅读示例API调用的指南
-* 有关调用任何Experience Platform API所需的标头的重要信息
+* 相关文档链接
+* 如何读取示例API调用
+* Experience Platform API调用所需的标头
 
 ## 配额和处理时间线 {#quotas}
 
 记录删除请求受基于您的许可证授权的配额和服务级别期望值约束。 这些限制同时适用于基于UI和基于API的删除请求。
 
 >[!TIP]
-> 
->本文档说明如何根据基于权利的限制查询您的使用情况。 有关配额层、记录删除权限和SLA行为的完整说明，请参阅基于[UI的记录删除](../ui/record-delete.md#quotas)或基于[API的记录删除](./workorder.md#quotas)文档。
+>
+>本文档说明如何根据基于权利的限制查询您的使用情况。 有关配额层、记录删除权利和SLA行为的完整说明，请参阅基于[UI的记录删除](../ui/record-delete.md#quotas)或基于[API的记录删除](./workorder.md#quotas)文档。
 
 ## 列出配额 {#list}
 
@@ -43,9 +43,15 @@ GET /quota
 GET /quota?quotaType={QUOTA_TYPE}
 ```
 
+>[!NOTE]
+>
+>配额使用情况会在每月的第一天00:00 GMT进行每日和每月重置。
+>
+>只有接受的请求才计入您的配额。 被拒绝的工作单不会减少您的配额。
+
 | 参数 | 描述 |
 | --- | --- |
-| `{QUOTA_TYPE}` | 一个可选的查询参数，它指定要检索的配额类型。 如果未提供`quotaType`参数，则API响应中会返回所有配额值。 接受的类型值包括：<ul><li>`datasetExpirationQuota`：此对象显示贵组织并发活动数据集过期的数量，以及您的总允许过期时间。 </li><li>`dailyConsumerDeleteIdentitiesQuota`：此对象显示贵组织今天发出的记录删除请求总数和每日津贴总额。<br>注意：只计算已接受的请求。 如果工作单因验证失败而被拒绝，则这些标识删除不会计入您的配额。</li><li>`monthlyConsumerDeleteIdentitiesQuota`：此对象显示贵组织本月发出的记录删除请求总数和每月津贴总额。</li><li>`monthlyUpdatedFieldIdentitiesQuota`：此对象显示贵组织本月发出的记录更新请求总数和每月津贴总额。</li></ul> |
+| `{QUOTA_TYPE}` | 一个可选的查询参数，它指定要检索的配额类型。 如果未提供`quotaType`参数，则API响应中会返回所有配额值。 接受的值包括：<ul><li>`datasetExpirationQuota`：活动数据集过期的数量和您的总允许。</li><li>`dailyConsumerDeleteIdentitiesQuota`：今天删除的记录数和每日配额。</li><li>`monthlyConsumerDeleteIdentitiesQuota`：本月删除的记录数和您的每月配额。</li></ul> |
 
 **请求**
 
@@ -67,27 +73,21 @@ curl -X GET \
   "quotas": [
     {
       "name": "datasetExpirationQuota",
-      "description": "The number of concurrently active Expiration Dataset Delete in all workorder requests for the organization.",
-      "consumed": 12,
-      "quota": 50
+      "description": "The number of concurrently active dataset-expiration delete operations in all work order requests for the organization.",
+      "consumed": 11,
+      "quota": 75
     },
     {
       "name": "dailyConsumerDeleteIdentitiesQuota",
-      "description": "The consumed number of deleted identities in all workorder requests for the organization for today.",
-      "consumed": 0,
-      "quota": 1000000
+      "description": "The consumed number of deleted identities in all work order requests for the organization for today.",
+      "consumed": 314,
+      "quota": 700000
     },
     {
       "name": "monthlyConsumerDeleteIdentitiesQuota",
-      "description": "The consumed number of deleted identities in all workorder requests for the organization for this month.",
-      "consumed": 841,
-      "quota": 2000000
-    },
-    {
-      "name": "monthlyUpdatedFieldIdentitiesQuota",
-      "description": "The consumed number of updated identities in all workorder requests for the organization for this month.",
-      "consumed": 0,
-      "quota": 0
+      "description": "The consumed number of deleted identities in all work order requests for the organization this month.",
+      "consumed": 2764,
+      "quota": 12000000
     }
   ]
 }
@@ -95,4 +95,8 @@ curl -X GET \
 
 | 属性 | 描述 |
 | -------- | ------- |
-| `quotas` | 列出每个数据生命周期作业类型的配额信息。 每个配额对象包含以下属性：<ul><li>`name`：数据生命周期作业类型：<ul><li>`expirationDatasetQuota`：数据集过期</li><li>`deleteIdentityWorkOrderDatasetQuota`：记录删除</li></ul></li><li>`description`：数据生命周期作业类型的描述。</li><li>`consumed`：在当前时段中运行的此类型的作业数。 对象名称指示配额周期。</li><li>`quota`：贵组织此作业类型的配额。 对于记录删除和更新，配额表示每个月期间可以运行的作业数。 对于数据集过期，配额表示在任意给定时间可同时处于活动状态的作业数。</li></ul> |
+| `quotas` | 列出每个数据生命周期作业类型的配额信息。 每个配额对象包含以下属性：<ul><li>`name`</li><li>`description`</li><li>`consumed`</li><li>`quota`</li></ul> |
+| `name` | 配额类型标识符。 |
+| `description` | 此配额限制的描述。 |
+| `consumed` | 当前使用的配额量。 对于每日配额，使用量将于当月1日重置为00:00 GMT和00:00 GMT。 |
+| `quota` | 贵组织此配额类型的最大配额。 |
