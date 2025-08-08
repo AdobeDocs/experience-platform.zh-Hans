@@ -1,20 +1,15 @@
 ---
 title: 在源UI Workspace中摄取加密数据
 description: 了解如何在源UI工作区中摄取加密数据。
-badge: Beta 版
 exl-id: 34aaf9b6-5c39-404b-a70a-5553a4db9cdb
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: cad2cafdf39c718c3ba971eaa4e7f2318bd5f517
 workflow-type: tm+mt
-source-wordcount: '1457'
+source-wordcount: '1436'
 ht-degree: 6%
 
 ---
 
 # 在源UI中摄取加密数据
-
->[!AVAILABILITY]
->
->测试版支持在源UI中进行加密数据摄取。 该功能和文档可能会发生更改。
 
 您可以使用云存储批处理源将加密的数据文件和文件夹摄取到Adobe Experience Platform。 通过加密的数据摄取，您可以利用非对称加密机制将批量数据安全地传输到Experience Platform。 支持的非对称加密机制为PGP和GPG。
 
@@ -161,8 +156,8 @@ ht-degree: 6%
 * [为数据流配置摄取计划](../ui/dataflow/batch/cloud-storage.md#schedule-ingestion-runs)
 * [查看您的数据流](../ui/dataflow/batch/cloud-storage.md#review-your-dataflow)
 
-数据流[&#128279;](../ui/update-dataflows.md)成功创建后，您可以继续对其进行更新。
+数据流[成功创建后，您可以继续](../ui/update-dataflows.md)对其进行更新。
 
 ## 后续步骤
 
-通过阅读本文档，您现在可以将加密数据从云存储批处理源摄取到Experience Platform。 有关如何使用API引入加密数据的信息，请阅读有关使用 [!DNL Flow Service] API[&#128279;](../api/encrypt-data.md)引入加密数据的指南。 有关Experience Platform上源的一般信息，请阅读[源概述](../../home.md)。
+通过阅读本文档，您现在可以将加密数据从云存储批处理源摄取到Experience Platform。 有关如何使用API引入加密数据的信息，请阅读有关使用[API [!DNL Flow Service] 引入加密数据的指南](../api/encrypt-data.md)。 有关Experience Platform上源的一般信息，请阅读[源概述](../../home.md)。
