@@ -22,7 +22,7 @@ ht-degree: 0%
 
 在Experience Platform[的](/help/release-notes/2024/september-2024.md#destinations)2024年9月版中，Adobe为2024年9月版之前创建的所有数据集导出数据流引入了默认结束日期&#x200B;**2025年5月1日**。
 
-**对于**&#x200B;在2024年11月之前创建的所有数据集导出数据流，此日期已更新为2025年9月1日&#x200B;****。
+**对于**&#x200B;在2024年11月之前创建的所有数据集导出数据流，此日期已更新为2025年9月1日&#x200B;**&#x200B;**。
 
 除非手动延长过期日期，否则在2024年11月之前创建的数据集导出数据流将停止在2025年9月1日&#x200B;**导出数据**。
 
@@ -57,9 +57,9 @@ ht-degree: 0%
    >
    >使用目录左侧的&#x200B;**[!UICONTROL 数据类型]**&#x200B;筛选器按&#x200B;**[!UICONTROL 数据集]**&#x200B;筛选可用的目标。
 
-3. 选择&#x200B;**[!UICONTROL 数据集]**数据类型以仅显示具有数据集导出功能的数据流。
+3. 选择&#x200B;**[!UICONTROL 数据集]**&#x200B;数据类型以仅显示具有数据集导出功能的数据流。
    ![显示如何按数据类型筛选数据流的屏幕截图。](/help/destinations/assets/ui/export-datasets/dataset-type.png)
-4. 选择&#x200B;**[!UICONTROL 已创建]**&#x200B;列标题并选择&#x200B;**[!UICONTROL 升序排序]**以查看较旧的数据流。
+4. 选择&#x200B;**[!UICONTROL 已创建]**&#x200B;列标题并选择&#x200B;**[!UICONTROL 升序排序]**&#x200B;以查看较旧的数据流。
    ![显示如何对数据流进行升序排序的屏幕截图。](/help/destinations/assets/ui/export-datasets/sort-ascending.png)
 5. 确定要保留在2024年11月之前创建的数据流中的哪个。
 
@@ -68,10 +68,10 @@ ht-degree: 0%
 对于每个要保留的数据流，您需要访问导出数据集工作流以修改计划。
 
 1. 在&#x200B;**[!UICONTROL 名称]**&#x200B;列中选择数据流名称。 这会将您转到&#x200B;**[!UICONTROL 数据流运行]**&#x200B;页面。
-2. 在此页面上，选择&#x200B;**[!UICONTROL 导出数据集]**选项。
+2. 在此页面上，选择&#x200B;**[!UICONTROL 导出数据集]**&#x200B;选项。
    ![在数据流运行页面中显示导出数据集选项的屏幕截图。](/help/destinations/assets/ui/export-datasets/export-datasets-option.png)
 3. 在&#x200B;**[!UICONTROL 选择数据集]**&#x200B;页面上，选择&#x200B;**[!UICONTROL 下一步]**。 您不需要向数据流添加任何新数据集。
-4. 这会将您转到&#x200B;**[!UICONTROL 计划]**页面，您还可以在其中看到通知您数据集导出过期日期的通知。
+4. 这会将您转到&#x200B;**[!UICONTROL 计划]**&#x200B;页面，您还可以在其中看到通知您数据集导出过期日期的通知。
    ![带有过期通知的数据集导出数据流](/help/destinations/assets/ui/export-datasets/dataset-export-notification.png)
 
 ## 第3步：扩展导出计划 {#extend-export-schedule}
