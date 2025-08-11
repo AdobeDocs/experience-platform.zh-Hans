@@ -3,9 +3,9 @@ title: 将数据集导出到云存储目标
 type: Tutorial
 description: 了解如何将数据集从Adobe Experience Platform导出到您首选的云存储位置。
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: b423e51e3e048a5dd7c2c15f80c8c1fcf5c2657b
+source-git-commit: 69a1ae08fefebb7fed54564ed06f42af523d2903
 workflow-type: tm+mt
-source-wordcount: '2722'
+source-wordcount: '2721'
 ht-degree: 7%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 7%
 
 >[!IMPORTANT]
 >
->**操作项**： Experience Platform[&#128279;](/help/release-notes/latest/latest.md#destinations)的2024年9月版本引入了为导出数据集数据流设置`endTime`日期的选项。 在2024年9月版本&#x200B;*之前，Adobe还为*&#x200B;创建的所有数据集导出数据流引入了默认结束日期（2025年9月1日）。
+>**操作项**： Experience Platform[的](/help/release-notes/latest/latest.md#destinations)2024年9月版本引入了为导出数据集数据流设置`endTime`日期的选项。 Adobe还为&#x200B;*在2024年11月1日之前创建的所有数据集导出数据流引入了默认结束日期2025年9月1日*。
 >
 >对于其中任何数据流，您需要手动更新数据流中的结束日期在结束日期之前，否则您的导出将在该日期停止。 使用Experience Platform UI查看哪些数据流将设置为在2025年9月1日停止。
 >
@@ -50,16 +50,16 @@ ht-degree: 7%
   </tr>
   <tr>
     <td>Ultimate</td>
-    <td><ul><li>通过源、Web SDK、Mobile SDK、Analytics Data Connector和Audience Manager摄取或收集数据后，在Experience Platform UI中创建的配置文件和体验事件数据集。</li><li> <a href="https://experienceleague.adobe.com/docs/experience-platform/dashboards/query.html?lang=zh-Hans#profile-attribute-datasets">系统生成的配置文件快照数据集</a>。</li></td>
+    <td><ul><li>通过源、Web SDK、Mobile SDK、Analytics Data Connector和Audience Manager摄取或收集数据后，在Experience Platform UI中创建的配置文件和体验事件数据集。</li><li> <a href="https://experienceleague.adobe.com/docs/experience-platform/dashboards/query.html#profile-attribute-datasets">系统生成的配置文件快照数据集</a>。</li></td>
   </tr>
   <tr>
     <td rowspan="2">Adobe Journey Optimizer</td>
     <td>Prime</td>
-    <td>请参阅<a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html?lang=zh-Hans#datasets"> Adobe Journey Optimizer</a>文档。</td>
+    <td>请参阅<a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html#datasets"> Adobe Journey Optimizer</a>文档。</td>
   </tr>
   <tr>
     <td>Ultimate</td>
-    <td>请参阅<a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html?lang=zh-Hans#datasets"> Adobe Journey Optimizer</a>文档。</td>
+    <td>请参阅<a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html#datasets"> Adobe Journey Optimizer</a>文档。</td>
   </tr>
   <tr>
     <td>Customer Journey Analytics</td>
@@ -78,7 +78,7 @@ ht-degree: 7%
 
 观看以下视频，了解此页面上描述的工作流的端到端说明、使用导出数据集功能的好处以及一些建议的用例。
 
->[!VIDEO](https://video.tv.adobe.com/v/3448828?captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/3424392/)
 
 ## 支持的目标 {#supported-destinations}
 
@@ -213,7 +213,7 @@ Experience Platform目录中的一些基于文件的目标同时支持Audience A
 
 ![自定义文件夹模式窗口中高亮显示的宏选择。](/help/destinations/assets/ui/export-datasets/custom-folder-path-macros.png)
 
-选择所需的宏后，您可以看到将在存储位置创建的文件夹结构的预览。 文件夹结构中的第一个级别表示您在[连接到目标](/help/destinations/ui/connect-destination.md##set-up-connection-parameters)以导出数据集时指示的&#x200B;**[!UICONTROL 文件夹路径]**。
+选择所需的宏后，您可以看到将在存储位置创建的文件夹结构的预览。 文件夹结构中的第一个级别表示您在&#x200B;**[!UICONTROL 连接到目标]**&#x200B;以导出数据集时指示的[文件夹路径](/help/destinations/ui/connect-destination.md##set-up-connection-parameters)。
 
 ![自定义文件夹模式窗口中高亮显示的文件夹路径预览。](/help/destinations/assets/ui/export-datasets/custom-folder-path-preview.png)
 
@@ -231,7 +231,7 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
 >[!TIP]
 > 
->此文件夹结构中的第一个级别 — `folder-name-you-provided` — 表示您[连接到目标](/help/destinations/ui/connect-destination.md##set-up-connection-parameters)以导出数据集时指示的&#x200B;**[!UICONTROL 文件夹路径]**。
+>此文件夹结构中的第一个级别 — `folder-name-you-provided` — 表示您&#x200B;**[!UICONTROL 连接到目标]**&#x200B;以导出数据集时指示的[文件夹路径](/help/destinations/ui/connect-destination.md##set-up-connection-parameters)。
 
 `folder-name-you-provided/datasetID/exportTime=YYYYMMDDHHMM`
 
@@ -280,7 +280,7 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
 ## 数据集导出授权 {#licensing-entitlement}
 
-请参阅产品描述文档，了解您每年有权为每个Experience Platform应用程序导出多少数据。 例如，您可以在[此处](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)查看Real-Time CDP产品说明。
+请参阅产品描述文档，了解您每年有权为每个Experience Platform应用程序导出多少数据。 例如，您可以在[此处](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)查看Real-Time CDP产品说明。
 
 请注意，不同应用程序的数据导出权限不是累加的。 例如，这意味着如果您购买Real-Time CDP Ultimate和Adobe Journey Optimizer Ultimate，则根据产品描述，配置文件导出权利将是两个权利中的较大者。 您的卷权利的计算方法是：取用您的许可配置文件的总数，然后乘以Real-Time CDP Prime的500 KB或Real-Time CDP Ultimate的700 KB，从而确定您有权获得的数据量。
 
