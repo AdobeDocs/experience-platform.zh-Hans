@@ -2,9 +2,9 @@
 title: Adobe Content Analytics扩展概述
 description: 了解Adobe Experience Platform中的Adobe Content Analytics标记扩展。
 exl-id: fcc46c86-e765-4bc7-bfdf-b8b10e8afacc
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 45ce2b0ff57155dccef2f7c94390a6ddff5c17cd
 workflow-type: tm+mt
-source-wordcount: '659'
+source-wordcount: '545'
 ht-degree: 0%
 
 ---
@@ -19,28 +19,26 @@ ht-degree: 0%
 
 ## 安装Adobe Content Analytics标记扩展 {#install}
 
->[!NOTE]
->
->Adobe Content Analytics标记扩展作为标记属性的一部分自动安装，在使用[Content Analytics引导式配置向导](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/content-analytics/configuration/guided){target="_blank"}时，将自动创建该标记属性。
+Adobe Content Analytics标记扩展作为在使用[Content Analytics引导式配置向导](https://experienceleague.adobe.com/en/docs/analytics-platform/using/content-analytics/configuration/guided)时自动创建的标记属性的一部分自动安装。
 
+<!--
+### Manual installation
 
-### 手动安装
+In case of a manual configuration, the Adobe Content Analytics tag extension needs a property to be installed on. If you have not done so already, see the documentation on [creating a tag property](https://experienceleague.adobe.com/en/docs/platform-learn/implement-in-websites/configure-tags/create-a-property).
 
-如果手动配置，Adobe Content Analytics标记扩展需要在上安装资产。 如果您尚未这样做，请参阅有关[创建标记属性](https://experienceleague.adobe.com/zh-hans/docs/platform-learn/implement-in-websites/configure-tags/create-a-property)的文档。
+After you have created a property or when you select the property created using the [Content Analytics guided configuration wizard](https://experienceleague.adobe.com/en/docs/analytics-platform/using/content-analytics/configuration/guided), open the property and select the **[!UICONTROL Extensions]** tab on the left side bar.
 
-创建属性后，或选择使用[Content Analytics引导式配置向导](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/content-analytics/configuration/guided)创建的属性时，请打开该属性并选择左侧栏上的&#x200B;**[!UICONTROL Extensions]**&#x200B;选项卡。
+Select the **[!UICONTROL Catalog]** tab. From the list of available extensions, find the **[!DNL Adobe Content Analytics]** extension and select **[!UICONTROL Install]**.
 
-选择&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡。 从可用扩展列表中，找到&#x200B;**[!DNL Adobe Content Analytics]**&#x200B;扩展并选择&#x200B;**[!UICONTROL 安装]**。
+![Image showing the Tags UI with the Web SDK extension selected](assets/aca-tag-install.png)
 
-![显示选择了Web SDK扩展的Tags UI的图像](assets/aca-tag-install.png)
-
-选择&#x200B;**[!UICONTROL 安装]**&#x200B;后，您必须配置Adobe Content Analytics标记扩展并保存配置。
-
+After selecting **[!UICONTROL Install]**, you must configure the Adobe Content Analytics tag extension and save the configuration.
+-->
 
 <!--
 ## Configure schema
 
-The [Content Analytics guided configuration wizard](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/content-analytics/configuration/guided) automatically populates the proper value for the **[!UICONTROL Tenant Schema Name]**. 
+The [Content Analytics guided configuration wizard](https://experienceleague.adobe.com/en/docs/analytics-platform/using/content-analytics/configuration/guided) automatically populates the proper value for the **[!UICONTROL Tenant Schema Name]**. 
 
 ![Image that shows the Schema configuration of the Adobe Content Analytics tag extension in the Tags UI](assets/aca-tag-schema.png)
 
@@ -52,7 +50,7 @@ The [Content Analytics guided configuration wizard](https://experienceleague.ado
 
 ## 配置数据流
 
-[Content Analytics引导式配置向导](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/content-analytics/configuration/guided)自动为&#x200B;**[!UICONTROL 沙盒]**&#x200B;和&#x200B;**[!UICONTROL 生产数据流]**&#x200B;选择正确的值。 您可以选择配置其他&#x200B;**[!UICONTROL 暂存数据流]**&#x200B;和&#x200B;**[!UICONTROL 开发数据流]**。
+[Content Analytics引导式配置向导](https://experienceleague.adobe.com/en/docs/analytics-platform/using/content-analytics/configuration/guided)自动为&#x200B;**[!UICONTROL 沙盒]**&#x200B;和&#x200B;**[!UICONTROL 生产数据流]**&#x200B;选择正确的值。 您可以选择配置其他&#x200B;**[!UICONTROL 暂存数据流]**&#x200B;和&#x200B;**[!UICONTROL 开发数据流]**。
 
 ![在标记UI中显示Adobe Content Analytics标记扩展的数据流配置的图像](assets/aca-tag-datastreams.png)
 
@@ -83,14 +81,14 @@ The [Content Analytics guided configuration wizard](https://experienceleague.ado
 
 ## 配置事件筛选
 
-在&#x200B;**[!UICONTROL 事件筛选]**&#x200B;部分中，您可以修改正则表达式，以便在为Content Analytics收集数据时筛选&#x200B;**[!UICONTROL 页面URL]**&#x200B;和&#x200B;**[!UICONTROL Assets URL]**。 系统会自动填充您在[Content Analytics引导式配置向导](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/content-analytics/configuration/guided)中定义的正则表达式。
+在&#x200B;**[!UICONTROL 事件筛选]**&#x200B;部分中，您可以修改正则表达式，以便在为Content Analytics收集数据时筛选&#x200B;**[!UICONTROL 页面URL]**&#x200B;和&#x200B;**[!UICONTROL Assets URL]**。 系统会自动填充您在[Content Analytics引导式配置向导](https://experienceleague.adobe.com/en/docs/analytics-platform/using/content-analytics/configuration/guided)中定义的正则表达式。
 
 ![在标记UI中显示Adobe Content Analytics标记扩展的事件过滤设置的图像](assets/aca-tag-eventfiltering.png)
 
 
 ### 示例
 
-* 您要从Content Analytics中排除所有文档页面。<br/>使用以下正则表达式： `^(?!.*documentation).*`
+* 您希望从Content Analytics中排除所有文档页面。<br/>使用以下正则表达式： `^(?!.*documentation).*`
 * 您要从Content Analytics中排除所有徽标JPEG和SVG图像。<br/>使用以下正则表达式： `^(?!.*(logo\.jpg|\.svg)).*$`
 
 您可以使用&#x200B;**[!UICONTROL Test Regex]**&#x200B;在&#x200B;**[!UICONTROL 正则表达式测试器]**&#x200B;中测试正则表达式。
