@@ -2,10 +2,10 @@
 title: 监控配置文件的流式摄取
 description: 了解如何使用监控仪表板监控流配置文件摄取
 exl-id: da7bb08d-2684-45a1-b666-7580f2383748
-source-git-commit: 75e0231aa9a040226584aeb05f10756b6db8bb62
+source-git-commit: 75ccdfdff4ded0a13213089d1c7dcc4d8f14e0f8
 workflow-type: tm+mt
-source-wordcount: '1820'
-ht-degree: 20%
+source-wordcount: '1967'
+ht-degree: 19%
 
 ---
 
@@ -26,7 +26,7 @@ ht-degree: 20%
 
 >[!NOTE]
 >
->流式处理吞吐量容量支持每秒多达1500个入站事件。 您可以购买额外的流分段以最多支持每秒13,500个额外的入站事件&#x200B;。 有关详细信息，请参阅[Real-Time CDP B2C Edition - Prime和Ultimate包产品说明](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)。
+>流式处理吞吐量容量支持每秒多达1500个入站事件。 您可以购买额外的流分段以最多支持每秒13,500个额外的入站事件&#x200B;。 有关详细信息，请参阅[Real-Time CDP B2C Edition - Prime和Ultimate包产品说明](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)。
 
 ## 监控配置文件流式摄取的量度 {#streaming-profile-metrics}
 
@@ -197,6 +197,28 @@ ht-degree: 20%
 | 不必要的数据摄取 | 引入个性化不需要的数据可在不增加价值的情况下增加吞吐量，从而浪费资源。 例如，无论相关性如何，都将所有Analytics流量摄取到用户档案中。 | 过多的不相关数据会产生噪音，使得识别有影响的数据点变得更困难。 在定义和管理受众和用户档案时，这也会造成摩擦。 | 仅摄取用例所需的数据。 确保过滤掉不必要的数据。<ul><li>**Adobe Analytics**：使用[行级筛选](../../sources/tutorials/ui/create/adobe-applications/analytics.md#filtering-for-real-time-customer-profile)优化数据摄取。</li><li>**源**：使用[[!DNL Flow Service] API为支持的源（如](../../sources/tutorials/api/filter.md)和[!DNL Snowflake]）筛选行级数据[!DNL Google BigQuery]。</li></li>**Edge数据流**：配置[动态数据流](../../datastreams/configure-dynamic-datastream.md)以对来自WebSDK的流量执行行级筛选。</li></ul> |
 
 {style="table-layout:auto"}
+
+### 常见问题解答 {#faq}
+
+请阅读此部分，了解有关监控流配置文件摄取的常见问题解答。
+
+#### 为什么我的量度在容量功能板和监控功能板之间在请求吞吐量方面看起来不同？
+
++++回答
+
+[!UICONTROL 监控]仪表板显示用于摄取和处理的实时量度。 这些数字是在活动时记录的准确量度。 相反，[!UICONTROL 容量]仪表板使用平滑机制来计算吞吐量容量。 此机制有助于减少短暂的尖峰，使其不再立即被认定为违规，并确保容量警报侧重于持续趋势，而不是短暂的突发事件。
+
+由于平滑机制，您可能会注意到：
+
+* [!UICONTROL 监控]中未出现在[!UICONTROL 容量]中的小峰值。
+* 与相同时间戳的[!UICONTROL 监控]相比，[!UICONTROL 容量]的值略低。
+
+这两个功能板虽然准确无误，但其设计目的却不尽相同。
+
+* [!UICONTROL 监控]：详细的逐时操作可见性。
+* [!UICONTROL 容量]：用于标识使用和违规模式的策略视图。
+
++++
 
 ## 后续步骤 {#next-steps}
 
