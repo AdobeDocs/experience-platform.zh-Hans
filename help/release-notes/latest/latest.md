@@ -3,9 +3,9 @@ title: Adobe Experience Platform 发行说明（2025 年 7 月）
 description: Adobe Experience Platform 的 2025 年 7 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: b0c2d5535bb4cdf7d00eaca43d65f744276494f3
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1574'
-ht-degree: 89%
+ht-degree: 100%
 
 ---
 
@@ -42,7 +42,7 @@ Adobe Experience Platform 中新功能和现有功能的更新：
 
 “容量”功能可全面显示您组织的[护栏](../../rtcdp/guardrails/overview.md)，并提供建议，帮助您在沙盒层级分配容量，以解决可能发生的容量超限问题。在此发行版本中，您可以查看流式摄取和流式分段的容量情况。
 
-有关详细信息，请阅读[容量概述](../../landing/license-usage-and-guardrails/capacity.md)。
+详细信息请参阅[容量概述](../../landing/license-usage-and-guardrails/capacity.md)。
 
 ## 目标 {#destinations}
 
@@ -53,7 +53,7 @@ Adobe Experience Platform 中新功能和现有功能的更新：
 | 目标 | 描述 |
 | --- | --- |
 | [Google 目标客户匹配功能 + Display &amp; Video 360](/help/destinations/catalog/advertising/google-customer-match-dv360.md) 连接的可用性受到限制 | 该集成曾在 6 月暂时提供给所有客户，Adobe 现已将其恢复为限制提供。目前，只有已启用的客户有权访问该目标，Adobe 正与 Google 共同解决相关的实施问题。如果您希望在恢复更大范围的发布后使用此集成，请联系您的 Adobe 代表并表达您的意愿。 |
-| [[!DNL The Trade Desk]](../../destinations/catalog/advertising/tradedesk.md)内部升级 | 从2025年7月31日开始，您可以在目标目录中并排看到两张[!DNL The Trade Desk]信息卡。 这是由于目标服务内部升级造成的。<br><br>现有[!DNL The Trade Desk]目标连接器已重命名为&#x200B;**[!UICONTROL （已弃用）交易台]**&#x200B;和名称为&#x200B;**[!UICONTROL 交易台]**&#x200B;的新卡现在可用。 使用目录中的新&#x200B;**[!UICONTROL 交易台]**&#x200B;连接获取新的激活数据流。 <br><br>如果您有任何到&#x200B;**[!UICONTROL （已弃用）交易台]**&#x200B;目标的活动数据流，它们会自动更新，因此您无需执行任何操作。 <br><br>如果您是通过[流服务API](https://developer.adobe.com/experience-platform-apis/references/destinations/)创建数据流，则必须将[!DNL flow spec ID]和[!DNL connection spec ID]更新为以下值：<ul><li>流量规范 ID：`86134ea1-b014-49e8-8bd3-689f4ce70578`</li><li>连接规范 ID：`1029798b-a97f-4c21-81b2-e0301471166e`</li></ul> |
+| [[!DNL The Trade Desk]](../../destinations/catalog/advertising/tradedesk.md) 内部升级 | 从 2025 年 7 月 31 日开始，您可以在目标目录中看到并排的两张 [!DNL The Trade Desk] 卡。这是由于目标服务内部升级造成的。<br><br>现有的 [!DNL The Trade Desk] 目标连接器已更名为&#x200B;**[!UICONTROL （已弃用）The Trade Desk]**，现在提供一个名为 **[!UICONTROL The Trade Desk]** 的新卡片。将目录中新的 **[!UICONTROL The Trade Desk]** 连接用于新的激活数据流。<br><br>如果您有任何连接到&#x200B;**[!UICONTROL （已弃用）The Trade Desk]** 目标的激活数据流，它们将自动更新，您无需执行任何操作。<br><br>如果您通过 [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) 创建数据流，则必须将 [!DNL flow spec ID] 和 [!DNL connection spec ID] 更新为以下值：<ul><li>流量规范 ID：`86134ea1-b014-49e8-8bd3-689f4ce70578`</li><li>连接规范 ID：`1029798b-a97f-4c21-81b2-e0301471166e`</li></ul> |
 
 **新增或更新的功能**
 
@@ -62,8 +62,8 @@ Adobe Experience Platform 中新功能和现有功能的更新：
 | 为目标连接提供帐户名称和描述 | 您现在可以在连接目标时[添加帐户名称和描述](/help/destinations/ui/connect-destination.md)，以便更高效地管理包含多个帐户的目标平台。 |
 | 增强边缘目标的数据流信息 | [Adobe Target](/help/destinations/catalog/personalization/adobe-target-v2.md) 和[自定义个性化](/help/destinations/catalog/personalization/custom-personalization.md)目标的右侧信息边栏经过优化，可显示数据流名称，从而能够更清晰地了解相关联的数据流配置，有助于在审查现有数据流时减少混淆。目标配置页面中的&#x200B;**[!UICONTROL 数据流 ID]** 选择器现已更名为&#x200B;**[!UICONTROL 数据流]**，以提升用户界面的清晰度。 |
 | 目标选择中的营销操作可见性 | 在目标工作区的&#x200B;**[[!UICONTROL 浏览]](/help/destinations/ui/destinations-workspace.md#browse)**&#x200B;选项卡以及&#x200B;**[[!UICONTROL 数据流运行]](/help/dataflows/ui/monitor-destinations.md)**&#x200B;页面中，营销操作现在显示在右侧信息边栏，您无需跳转至视图页面即可快速查看营销操作的变化。这一改进有助于在设置目标时更轻松地验证营销操作配置，从而提升用户体验。 |
-| [!BADGE 限量 beta 版]{type=Informative} 编辑目标的营销操作 | 您现在可以[编辑现有目标的营销操作](/help/destinations/ui/edit-activation.md#edit-marketing-actions)。 该功能目前在限量 beta 版中提供。要请求访问权限，请与 Adobe 代表联系。 |
-| [!BADGE 限量 beta 版]{type=Informative} 编辑目标 | 创建目标配置[后，您现在可以](/help/destinations/ui/edit-destination.md)编辑该配置。 该功能目前在限量 beta 版中提供。要请求访问权限，请与 Adobe 代表联系。 |
+| [!BADGE 限量 beta 版]{type=Informative} 编辑目标的营销操作 | 您现在可以为现有目标[编辑营销操作](/help/destinations/ui/edit-activation.md#edit-marketing-actions)。该功能目前在限量 beta 版中提供。要请求访问权限，请与 Adobe 代表联系。 |
+| [!BADGE 限量 beta 版]{type=Informative} 编辑目标 | 您现在可以在目标创建完成后[编辑该目标的配置](/help/destinations/ui/edit-destination.md)。该功能目前在限量 beta 版中提供。要请求访问权限，请与 Adobe 代表联系。 |
 
 **修复**
 
@@ -135,13 +135,13 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 | 来源 | 描述 |
 | --- | --- |
-| 对[!BADGE 的]{type=Informative}Beta[!DNL Didomi]支持(流式SDK) | 使用 [!DNL Didomi] 源摄取来自 [!DNL Didomi] 的同意与偏好管理数据，此方法支持符合隐私法规的合规操作和基于同意的营销策略。请阅读[[!DNL Didomi] 来源概述](../../sources/connectors/consent-and-preferences/didomi.md)，了解设置方法。关于创建来源连接的步骤，请参阅[[!DNL Didomi] 来源连接指南](../../sources/tutorials/ui/create/consent-and-preferences/didomi.md)。 |
+| [!BADGE Beta]{type=Informative} 支持 [!DNL Didomi]（Streaming SDK） | 使用 [!DNL Didomi] 源摄取来自 [!DNL Didomi] 的同意与偏好管理数据，此方法支持符合隐私法规的合规操作和基于同意的营销策略。请阅读[[!DNL Didomi] 来源概述](../../sources/connectors/consent-and-preferences/didomi.md)，了解设置方法。关于创建来源连接的步骤，请参阅[[!DNL Didomi] 来源连接指南](../../sources/tutorials/ui/create/consent-and-preferences/didomi.md)。 |
 
 **新增或更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
 | 支持使用 [!DNL Flow Service] API 实现部分来源中的变更数据捕获 | 您现在可以通过源连接器创建支持变更数据捕获的数据流，以实现增量摄取。该功能允许客户将变更数据类型用于增量摄取，有助于提升数据实时性并降低处理负载。若要了解更多信息，请阅读[为来源使用变更数据捕获](../../sources/tutorials/api/change-data-capture.md)文档 |
-| 支持软删除[!DNL Salesforce]中的记录 | [!DNL Salesforce]源现在支持通过可选的`includeDeletedObjects`参数包含软删除记录。 如果设置为true，客户可以在其[!DNL Salesforce]查询中包含软删除记录，并将这些记录导入Experience Platform。 有关详细信息，请阅读[[!DNL Salesforce] 源文档](../../sources/connectors/crm/salesforce.md)。 |
+| 支持软删除 [!DNL Salesforce] 中的记录 | [!DNL Salesforce] 源现在支持通过一个可选的 `includeDeletedObjects` 参数包含被软删除的记录。设置为 true 后，客户可以在其 [!DNL Salesforce] 查询中包含被软删除的记录，并将这些记录导入 Experience Platform。有关详细信息，请阅读[[!DNL Salesforce] 源文档](../../sources/connectors/crm/salesforce.md)。 |
 
 有关更多信息，请阅读[来源概述](../../sources/home.md)。
