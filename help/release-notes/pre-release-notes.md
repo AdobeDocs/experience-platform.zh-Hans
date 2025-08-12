@@ -4,10 +4,10 @@ description: Adobe Experience Platform最新发行说明预览。
 hide: true
 hidefromtoc: true
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: 7e91181f71b84fdaf04a39e003cbbd415827e282
+source-git-commit: a26ad18b1e44b3198db9e8a36ad3749ed8a0afa2
 workflow-type: tm+mt
-source-wordcount: '1387'
-ht-degree: 21%
+source-wordcount: '1116'
+ht-degree: 33%
 
 ---
 
@@ -27,102 +27,69 @@ ht-degree: 21%
 >- [联合受众构成](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/zh-hans/docs/real-time-cdp-collaboration/using/latest)
 
-**发行日期： 2025年7月29日**
+**发行日期：2025年8月**
 
 Adobe Experience Platform 中新功能和现有功能的更新：
 
+- [警报](#alerts)
 - [目标](#destinations)
-- [数据引入](#ingestion)
-- [查询服务](#query-service)
-- [Real-Time CDP B2B 版](#b2b)
-- [沙盒](#sandboxes)
-- [Segmentation Service](#segmentation)
+- [Experience Data Model (XDM)](#xdm)
+- [Segmentation Service](#segmentation-service)
 - [源](#sources)
 
-## 目标 {#destinations}
+## 警报 {#alerts}
 
-[!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
-
-**已更新目标**
-
-| 目标 | 描述 |
-| --- | --- |
-| Marketo目标卡整合 | Marketo V2和Marketo Engage人员同步目标卡已合并到单个统一目标卡中。 此整合简化了目标选择过程，并为Marketo集成提供了更简化的体验。 |
-
-**新增或更新的功能**
-
-| 功能 | 描述 |
-| --- | --- |
-| 边缘目标的增强数据流信息 | 改进了Adobe Target和自定义Personalization目标的右边栏信息现在可显示数据流名称，从而更清楚地了解关联的数据流配置，并减少查看现有数据流时的混淆。 目标配置屏幕中的&#x200B;**[!UICONTROL 数据流ID]**&#x200B;选择器已更新为&#x200B;**[!UICONTROL 数据流]**，以提高用户界面中的清晰度。 |
-| 目标选择中的营销活动可见性 | 营销操作现在显示在目标&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡的右边栏和&#x200B;**[!UICONTROL 数据流运行]**&#x200B;页面中，因此无需导航到视图页面，即可立即看到营销操作更改。 这项改进增强了用户体验，因为它使得在目标设置期间验证营销行动配置变得更加容易。 |
-| （有限测试版）编辑目标的营销操作 | 您现在可以编辑现有目标的营销操作。 此功能处于有限测试阶段。 要请求访问它，请联系您的Adobe代表。 |
-| （有限测试版）编辑目标 | 现在，您可以在创建目标配置后对其进行编辑。 此功能处于有限测试阶段。 要请求访问它，请联系您的Adobe代表。 |
-| 目标连接的帐户名称和描述 | 现在，您可以在连接到目标时添加帐户名称和描述，从而更好地管理具有多个帐户的目标。 |
-
-**修复**
-
-| 问题 | 描述 |
-| --- | --- |
-| 类别滚动功能 | 修复了目标和源目录中的类别侧菜单未在鼠标悬停时正确滚动的问题，从而提高用户浏览目标类别的导航可用性。 |
-
-有关更多信息，请阅读[目标概述](../destinations/home.md)。
-
-## 数据引入 {#ingestion}
-
-Experience Platform提供了一个全面的数据摄取框架，该框架支持从各种来源进行批量摄取和流式摄取。
+Experience Platform 允许您订阅各种 Experience Platform 活动的基于事件的警报。您可以通过 Experience Platform 用户界面中的[!UICONTROL 警报]选项卡订阅不同的警报规则，并可以选择在用户界面内或通过电子邮件通知接收警报消息。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 支持监控流配置文件摄取 | 现在提供了对流式配置文件摄取的实时监控，从而透明地显示吞吐量、延迟和数据质量指标。 这支持主动警报和可操作的洞察，以帮助数据工程师识别容量违规和摄取问题。 |
+| 流吞吐量容量警报 | 三个新警报允许用户订阅和配置警报，以主动管理和监控流吞吐量容量的性能。 新警报包括流吞吐量达到80%、90%或超出容量限制时的警报。 有关详细信息，请阅读[容量警报规则](../observability/alerts/rules.md#capacity)指南。 |
 
-有关详细信息，请阅读[数据引入概述](../ingestion/home.md)。
+有关警报的更多信息，请阅读[[!DNL Observability Insights] 概述](../observability/home.md)。
 
-## 查询服务 {#query-service}
+## 目标 {#destinations}
 
-Adobe Experience Platform查询服务提供了一个强大的SQL接口，可用于跨平台进行数据分析和探索。
+[!DNL Destinations]是预先构建的与目标平台的集成，允许从Experience Platform无缝激活数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
-**新增功能或更新后的功能**
+**新目标**
 
-| 功能 | 描述 |
-| ------- | ----------- |
-| 增强的会话管理 | Data Distiller现在包括增强的会话管理功能，更好地控制用户会话并改进跨开发和生产环境的性能监控。 |
-| 支持不过期凭据密码字符限制 | Data Distiller现在支持具有特定字符限制的非过期凭据。 虽然密码至少需要一个数字、一个小写字母、一个大写字母和一个特殊字符，但美元符号($)不受支持。 推荐的特殊字符包括`!, @, #, ^, or &`。 |
-| 提高了跨环境的性能一致性 | 数据Distiller性能现在在开发沙盒和生产沙盒之间保持一致，在两个环境中都提供了相似的后端资源。 使用的计算小时数可能因处理时的数据量和可用的后端计算资源而异。 |
+| 目标 | 描述 |
+| --- | --- |
+| [!DNL Acxiom Real ID Audience]目标 | 使用[!DNL Acxiom Real ID Audience Connection]目标通过[!DNL Acxiom's] [Real ID™](https://www.acxiom.com/real-id/real-id/)技术增强受众并将受众激活到多个平台，如[!DNL Altice]、[!DNL Ampersand]、[!DNL Comcast]等。 |
 
-有关详细信息，请阅读[查询服务概述](../query-service/home.md)。
 
-## Real-Time CDP B2B 版 {#b2b}
+**更新的目标**
 
-Real-Time CDP B2B edition提供全面的B2B客户数据管理功能，使组织能够构建统一的客户档案、创建复杂的B2B受众并在各种营销渠道中激活数据。
+| 目标 | 描述 |
+| --- | --- |
+| [!DNL LinkedIn]目标的身份验证到期详细信息 | 不要再担心凭据已过期。 帐户到期信息现在直接显示在Experience Platform界面中，因此您可以看到[!DNL LinkedIn]身份验证何时到期并续订，以免导致数据流中断。 |
+| 对[!DNL Data Landing Zone]目标的加密支持 | 使用加密保护导出的数据。 现在，您可以附加RSA格式公钥来加密导出的文件，从而为您提供与其他云存储目标相同的敏感信息安全级别。 |
+| [[!DNL Microsoft Bing]](../destinations/catalog/advertising/bing.md) 内部升级 | 从2025年8月11日开始，您可以在目标目录中并排看到两个&#x200B;**[!DNL Microsoft Bing]**&#x200B;信息卡。 这是由于目标服务内部升级造成的。现有的&#x200B;**[!DNL Microsoft Bing]**&#x200B;目标连接器已重命名为&#x200B;**[!UICONTROL （已弃用） Microsoft Bing]**，现在您可以使用名为&#x200B;**[!UICONTROL Microsoft Bing]**&#x200B;的新信息卡。 使用目录中的新&#x200B;**[!UICONTROL Microsoft Bing]**&#x200B;连接获取新的激活数据流。 如果您有任何到&#x200B;**[!UICONTROL （已弃用）Microsoft Bing]**&#x200B;目标的活动数据流，它们会自动更新，因此您无需执行任何操作。 <br><br>如果您通过 [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) 创建数据流，则必须将 [!DNL flow spec ID] 和 [!DNL connection spec ID] 更新为以下值：<ul><li>流量规范 ID：`8d42c81d-9ba7-4534-9bf6-cf7c64fbd12e`</li><li>连接规范 ID：`dd69fc59-3bc5-451e-8ec2-1e74a670afd4`</li></ul> 此次升级后，您可能会遇到数据流中向&#x200B;**发送的活动配置文件数**&#x200B;的下降[!DNL Microsoft Bing]。 导致此下降的原因是，针对此目标平台的所有激活引入了&#x200B;**ECID映射要求**。 |
+| [!DNL Amazon Ads]目标的其他标识符 | Amazon广告目标现在支持新标识(`firstName`、`lastName`、`street`、`city`、`state`、`zip`、`country`)。 这些字段旨在提高受众匹配率，并以纯文本形式传递，带有可选的SHA256哈希处理。 |
+| [!DNL Marketo]目标卡合并 | 使用我们统一的目标卡简化您的[!DNL Marketo]目标设置。 我们已将[!DNL Marketo]个V2和V3信息卡整合到一个简化的选项中，以便更轻松地选择正确的目标并快速入门。 |
 
-**新增功能或更新后的功能**
-
-| 功能 | 描述 |
-| ------- | ----------- |
-| B2B架构升级 | Experience Platform正在升级到新的B2B架构，该架构对具有B2B属性的多实体受众引入了重大改进。 此升级整合了合并策略支持，提高了受众计数的准确性，并改进了实体解析功能。 |
-| 多实体受众的合并策略合并 | 具有B2B属性的多实体受众现在仅支持单个合并策略（默认合并策略），不支持多个合并策略。 此更改可确保一致的受众构成并简化合并逻辑管理。 |
-| 更新了帐户受众限制 | 帐户受众不再具有以前对体验事件的30天回溯时间范围的限制、自定义实体限制或使用`inSegment`事件的限制。 这些更新在创建复杂的B2B受众定义方面提供了更大的灵活性。 |
-| 增强了B2B实体的受众计数 | 现在，根据实时分段结果，可以准确地估计具有B2B实体（如客户和机会）的受众规模。 这种改进为涉及复杂B2B关系的受众提供了更准确和可靠的估计。 |
-| 适用于受众成员资格的帐户快照 | 现在，快照导出中包含了“帐户”实体的受众成员资格详细信息，从而可以访问帐户级别的受众状态、时间戳和成员资格指标。 这使得用户档案（人员）和帐户分段模型之间存在功能对等性。 |
-| 多实体受众的沙盒工具更改 | 不再支持在迁移之前通过导出的B2B实体和体验事件导入多实体受众。 这些受众将无法通过导入验证，且无法自动转换为新架构。 迁移后，必须先重新导出受众，然后才能将其导入目标沙盒中。 |
-| B2B实体API弃用 | 现已弃用通过API为B2B实体（帐户、机会、帐户 — 人员关系、机会 — 人员关系、营销活动、营销活动成员、营销列表和营销列表成员）创建受众。 此外，也不建议对这些B2B实体执行配置文件访问API查找和删除操作。 |
-| 更新了实体解析的身份命名空间 | Account和Opportunity实体现在使用基于时间优先级的与特定身份命名空间合并（`b2b_account`用于帐户，`b2b_opportunity`用于机会）。 所有其它实体通过基于时间优先的合并合并与主标识重叠合并。 |
-
-有关详细信息，请阅读[Real-Time CDP B2B edition概述](../rtcdp/b2b-overview.md)。
-
-## 沙盒 {#sandboxes}
-
-Experience Platform旨在丰富全球范围内的数字体验应用程序。 企业通常会同时运行多个数字体验应用程序，并且需要满足这些应用程序的开发、测试和部署要求，同时确保运营合规性。
-
-**新增功能或更新后的功能**
+**新增或更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 对多实体受众导入的更改 | 沙盒工具已更新，以支持新的B2B架构升级。 在架构升级后，必须重新导出包含B2B实体和体验事件的多实体受众，然后才能通过沙盒工具导入目标沙盒中。 导入升级前版本将导致验证失败。 |
+| 延长在2024年11月之前创建的数据流的数据集导出计划 | 如果您的组织在2024年11月之前创建了数据集导出数据流，则这些数据流将于2025年9月1日停止工作。 如果您需要数据流在2025年9月1日之后继续导出数据，则必须按照[本指南](../destinations/ui/dataset-expiration-update.md)中的步骤为要向其中导出数据集的每个目标扩展其计划。 |
+| 增强了目标的搜索、筛选和标记功能 | 通过“浏览”和“帐户”选项卡中增强的搜索、筛选和标记功能，改进您的目标管理工作流。 您现在可以按名称搜索特定数据流和帐户，按各种条件（包括目标平台、状态和日期）进行筛选，以及创建自定义标记以组织目标。 列排序还可用于关键字段，如上次数据流运行时，这使识别和管理目标连接更容易。 |
 
-有关沙盒的更多信息，请阅读[沙盒概述](../sandboxes/home.md)。
+有关更多信息，请阅读[目标概述](../destinations/home.md)。
+
+## Experience Data Model (XDM) {#xdm}
+
+XDM是一个开源规范，为引入Experience Platform的数据提供通用结构和定义（架构）。 通过遵守 XDM 标准，所有客户体验数据都可以合并到一个通用的呈现中，以更快、更加集成的方式提供见解。您可以从客户行为中获得有价值的见解，通过区段定义客户受众，并使用客户属性实现个性化目的。
+
+**新增功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 基于模型的架构 | 使用基于模型的架构简化数据建模。 现在，您可以通过全面的操作方法示例和指导更轻松地创建架构。 此功能目前可供Campaign Orchestration许可证持有人使用，并将在正式发布时扩展到Data Distiller客户，从而使数据建模更易于访问且更有效。 |
+
+有关详细信息，请阅读[XDM概述](../xdm/home.md)。
 
 ## Segmentation Service {#segmentation-service}
 
@@ -132,23 +99,49 @@ Experience Platform旨在丰富全球范围内的数字体验应用程序。 企
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 外部受众API | 您可以使用外部受众API以编程方式将外部生成的受众导入Adobe Experience Platform。 |
+| 受众估计 | 受众评估现在会在区段生成器中自动生成。 此值将在您修改受众时更新，并始终反映最新的受众规则。 |
+
+有关详细信息，请参阅 [[!DNL Segmentation Service]  概述](../segmentation/home.md)。
 
 ## 源 {#sources}
 
 Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各种数据提供者设置源连接。这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 
-**新来源**
-
-| 来源 | 描述 |
-| --- | --- |
-| 支持[!DNL Didomi] (流式SDK) | [!DNL Didomi]源连接器允许您从[!DNL Didomi]的平台中摄取同意管理数据，支持遵守隐私法规和基于同意的营销策略。 |
-
 **新增或更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 支持选定源中的变更数据捕获 | 您现在可以创建数据流，以便使用源连接器为增量摄取启用变更数据捕获。 此功能允许客户为增量摄取引入更改数据类型，从而提高数据新鲜度并减少处理开销。 |
-| 支持软删除[!DNL Salesforce]中的记录 | [!DNL Salesforce]源现在支持通过可选的`includeDeletedObjects`参数包含软删除记录。 如果设置为true，客户可以在其[!DNL Salesforce]查询中包含软删除记录，并将这些记录导入Experience Platform。 |
+| UI中的[!BADGE Beta]{type=Informative} Azure专用链接支持 | 通过专用网络连接保护数据安全。 您现在可以创建私有端点并设置绕过公共Internet的数据流，从而增强敏感数据的安全性和网络隔离。 |
+| [!DNL Marketo]源文档更新 | 全面了解[!DNL Marketo]数据在进入Experience Platform时如何进行转换。 现在，所有字段映射都包含数据转换的详细解释，因此您可以确切了解`PersonID`如何变为`leadID`，`eventType`如何变为`activityType`。 |
+| 支持[!DNL Azure Blob Storage]的服务主体身份验证 | 您现在可以使用服务主体身份验证将您的[!DNL Azure Blob Storage]帐户连接到Experience Platform。 |
 
-有关更多信息，请阅读[数据源概述](../sources/home.md)。
+有关更多信息，请阅读[来源概述](../sources/home.md)。
+
+<!--
+
+## Query Service {#query-service}
+
+Adobe Experience Platform Query Service provides a robust SQL interface for data analysis and exploration across the platform.
+
+**New or updated features**
+
+| Feature | Description |
+| ------- | ----------- |
+| Data Distiller Session Management | Take control of your data analysis sessions with enhanced session management. You can now monitor and manage your sessions more effectively across development and production environments, giving you better visibility into your query performance and resource usage. |
+
+For more information, read the [Query Service overview](../query-service/home.md).
+
+## B2B CDP {#b2b-cdp}
+
+Real-Time CDP B2B Edition provides comprehensive B2B customer data management capabilities, enabling organizations to build unified customer profiles, create sophisticated B2B audiences, and activate data across various marketing channels.
+
+**New or updated features**
+
+| Feature | Description |
+| ------- | ----------- |
+| Lookup Support for B2B Classes Only | Streamline your B2B data access with focused lookup support. You can now look up Person (Profile), Experience Events, Account, and Opportunity entities directly through the Entities API. This simplified approach helps you access the most important B2B data more efficiently while reducing complexity. |
+| B2B Namespace and Schema Updates | Experience a cleaner, more streamlined B2B data model. We've simplified the B2B namespace and schema structure by removing complex relationship mappings and non-primary identity support for certain B2B classes. This makes your B2B data easier to work with and understand. |
+
+For more information, read the [Real-Time CDP B2B Edition overview](../rtcdp/b2b-overview.md).
+
+-->
