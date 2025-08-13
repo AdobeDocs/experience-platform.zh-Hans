@@ -3,10 +3,10 @@ keywords: 广告；必应；
 title: Microsoft Bing连接
 description: 通过Microsoft Bing连接目标，您可以在整个Microsoft Advertising网络（包括显示广告、搜索和原生）中执行重定位和面向受众的数字营销活动。
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
-source-git-commit: c52cdd0f2a3aff506bff31ec0775420c66bea11f
+source-git-commit: 34520b42554a4ff72b05e9254bd923173629d611
 workflow-type: tm+mt
-source-wordcount: '981'
-ht-degree: 9%
+source-wordcount: '877'
+ht-degree: 8%
 
 ---
 
@@ -17,14 +17,9 @@ ht-degree: 9%
 
 >[!IMPORTANT]
 >
->* 从2025年8月11日开始，您可以在目标目录中并排看到两个&#x200B;**[!DNL Microsoft Bing]**&#x200B;信息卡。 这是由于目标服务内部升级造成的。现有的&#x200B;**[!DNL Microsoft Bing]**&#x200B;目标连接器已重命名为&#x200B;**[!UICONTROL （已弃用） Microsoft Bing]**，现在您可以使用名为&#x200B;**[!UICONTROL Microsoft Bing]**&#x200B;的新信息卡。
->* 使用目录中的新&#x200B;**[!UICONTROL Microsoft Bing]**&#x200B;连接获取新的激活数据流。 如果您有任何到&#x200B;**[!UICONTROL （已弃用）Microsoft Bing]**&#x200B;目标的活动数据流，它们会自动更新，因此您无需执行任何操作。
->* 如果您是通过[流服务API](https://developer.adobe.com/experience-platform-apis/references/destinations/)创建数据流，则必须将[!DNL flow spec ID]和[!DNL connection spec ID]更新为以下值：
->   * 流量规范 ID：`8d42c81d-9ba7-4534-9bf6-cf7c64fbd12e`
->   * 连接规范 ID：`dd69fc59-3bc5-451e-8ec2-1e74a670afd4`
+>从2025年8月内部升级到目标服务后，您可能会遇到数据流中激活的配置文件数&#x200B;**降至**&#x200B;的情况。[!DNL Microsoft Bing]
 >
-> 此次升级后，您可能会遇到数据流中向&#x200B;**发送的活动配置文件数**&#x200B;的下降[!DNL Microsoft Bing]。
-> &#x200B;> 导致此下降的原因是，针对此目标平台的所有激活引入了&#x200B;**ECID映射要求**。 有关详细信息，请参阅此页面中的[强制映射](#mandatory-mappings)部分。
+> 导致此下降的原因是，针对此目标平台的所有激活引入了&#x200B;**ECID映射要求**。 有关详细信息，请参阅此页面中的[强制映射](#mandatory-mappings)部分。
 >
 >**更改内容：**
 >
@@ -85,7 +80,7 @@ ht-degree: 9%
 
 >[!IMPORTANT]
 >
->如果您希望使用[!DNL Microsoft Bing]创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html?lang=zh-Hans)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL Microsoft Bing]集成，则您设置的ID同步将会转移到Experience Platform。
+>如果您希望使用[!DNL Microsoft Bing]创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL Microsoft Bing]集成，则您设置的ID同步将会转移到Experience Platform。
 
 配置目标时，必须提供以下信息：
 
