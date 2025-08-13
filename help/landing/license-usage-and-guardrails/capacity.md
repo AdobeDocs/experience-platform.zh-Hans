@@ -2,7 +2,7 @@
 title: 许可证使用量和容量
 description: 了解Adobe Experience Platform中的许可证使用和容量限制。
 exl-id: 38dad2f1-bd0f-4cc3-a3a6-5105ea866ea4
-source-git-commit: b65765d8e93b13fbb3c2a3e44f47725b936223eb
+source-git-commit: 1bde1f2c1bd33756bd20a2524b50d5a2b4bc464e
 workflow-type: tm+mt
 source-wordcount: '1537'
 ht-degree: 6%
@@ -59,7 +59,7 @@ ht-degree: 6%
 
 受众容量处于&#x200B;**沙盒**&#x200B;级别。 这意味着，对于您组织中的每个沙盒，您可以拥有500个流受众，其中150个可以是Edge受众。
 
-吞吐量容量为&#x200B;**组织**&#x200B;级别，可以分发到您的各个沙盒。 例如，使用流式分段吞吐量1500 rps，您可以将生产沙盒设置为1500 rps，将开发沙盒设置为150 rps。
+吞吐量容量为&#x200B;**组织**&#x200B;级别，可以分发到您的各个沙盒。 例如，通过使用流分段吞吐量1500 rps，您可以将生产沙盒设置为1350 rps，将开发沙盒设置为150 rps。
 
 Experience Platform以15分钟滚动间隔计算沙盒的吞吐量。 此吞吐量是实时测量的，每60秒刷新一次数据。
 
