@@ -4,10 +4,10 @@ description: Adobe Experience Platform最新发行说明预览。
 hide: true
 hidefromtoc: true
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: a26ad18b1e44b3198db9e8a36ad3749ed8a0afa2
+source-git-commit: bcf3045fbbf4f9673e954a5ebf95d1225d4cdcd7
 workflow-type: tm+mt
-source-wordcount: '1116'
-ht-degree: 33%
+source-wordcount: '1074'
+ht-degree: 34%
 
 ---
 
@@ -53,28 +53,31 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 
 [!DNL Destinations]是预先构建的与目标平台的集成，允许从Experience Platform无缝激活数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
+>[!IMPORTANT]
+>
+>**数据集导出计划扩展**
+>
+>如果您的组织在2024年11月之前创建了数据集导出数据流，则这些数据流将在&#x200B;**2025年9月1日**&#x200B;停止工作。 如果您需要数据流在2025年9月1日之后继续导出数据，则必须按照[本指南](../destinations/ui/dataset-expiration-update.md)中的步骤为要向其中导出数据集的每个目标扩展其计划。
+
 **新目标**
 
 | 目标 | 描述 |
 | --- | --- |
 | [!DNL Acxiom Real ID Audience]目标 | 使用[!DNL Acxiom Real ID Audience Connection]目标通过[!DNL Acxiom's] [Real ID™](https://www.acxiom.com/real-id/real-id/)技术增强受众并将受众激活到多个平台，如[!DNL Altice]、[!DNL Ampersand]、[!DNL Comcast]等。 |
 
-
 **更新的目标**
 
 | 目标 | 描述 |
 | --- | --- |
-| [!DNL LinkedIn]目标的身份验证到期详细信息 | 不要再担心凭据已过期。 帐户到期信息现在直接显示在Experience Platform界面中，因此您可以看到[!DNL LinkedIn]身份验证何时到期并续订，以免导致数据流中断。 |
+| [!DNL LinkedIn]和[!DNL Pinterest]目标的身份验证到期详细信息 | 帐户过期信息现在直接显示在Experience Platform界面中，因此您可以看到[!DNL LinkedIn]和[!DNL Pinterest]身份验证何时过期并续订，以免对数据流造成任何中断。 |
 | 对[!DNL Data Landing Zone]目标的加密支持 | 使用加密保护导出的数据。 现在，您可以附加RSA格式公钥来加密导出的文件，从而为您提供与其他云存储目标相同的敏感信息安全级别。 |
 | [[!DNL Microsoft Bing]](../destinations/catalog/advertising/bing.md) 内部升级 | 从2025年8月11日开始，您可以在目标目录中并排看到两个&#x200B;**[!DNL Microsoft Bing]**&#x200B;信息卡。 这是由于目标服务内部升级造成的。现有的&#x200B;**[!DNL Microsoft Bing]**&#x200B;目标连接器已重命名为&#x200B;**[!UICONTROL （已弃用） Microsoft Bing]**，现在您可以使用名为&#x200B;**[!UICONTROL Microsoft Bing]**&#x200B;的新信息卡。 使用目录中的新&#x200B;**[!UICONTROL Microsoft Bing]**&#x200B;连接获取新的激活数据流。 如果您有任何到&#x200B;**[!UICONTROL （已弃用）Microsoft Bing]**&#x200B;目标的活动数据流，它们会自动更新，因此您无需执行任何操作。 <br><br>如果您通过 [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) 创建数据流，则必须将 [!DNL flow spec ID] 和 [!DNL connection spec ID] 更新为以下值：<ul><li>流量规范 ID：`8d42c81d-9ba7-4534-9bf6-cf7c64fbd12e`</li><li>连接规范 ID：`dd69fc59-3bc5-451e-8ec2-1e74a670afd4`</li></ul> 此次升级后，您可能会遇到数据流中向&#x200B;**发送的活动配置文件数**&#x200B;的下降[!DNL Microsoft Bing]。 导致此下降的原因是，针对此目标平台的所有激活引入了&#x200B;**ECID映射要求**。 |
-| [!DNL Amazon Ads]目标的其他标识符 | Amazon广告目标现在支持新标识(`firstName`、`lastName`、`street`、`city`、`state`、`zip`、`country`)。 这些字段旨在提高受众匹配率，并以纯文本形式传递，带有可选的SHA256哈希处理。 |
 | [!DNL Marketo]目标卡合并 | 使用我们统一的目标卡简化您的[!DNL Marketo]目标设置。 我们已将[!DNL Marketo]个V2和V3信息卡整合到一个简化的选项中，以便更轻松地选择正确的目标并快速入门。 |
 
 **新增或更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 延长在2024年11月之前创建的数据流的数据集导出计划 | 如果您的组织在2024年11月之前创建了数据集导出数据流，则这些数据流将于2025年9月1日停止工作。 如果您需要数据流在2025年9月1日之后继续导出数据，则必须按照[本指南](../destinations/ui/dataset-expiration-update.md)中的步骤为要向其中导出数据集的每个目标扩展其计划。 |
 | 增强了目标的搜索、筛选和标记功能 | 通过“浏览”和“帐户”选项卡中增强的搜索、筛选和标记功能，改进您的目标管理工作流。 您现在可以按名称搜索特定数据流和帐户，按各种条件（包括目标平台、状态和日期）进行筛选，以及创建自定义标记以组织目标。 列排序还可用于关键字段，如上次数据流运行时，这使识别和管理目标连接更容易。 |
 
 有关更多信息，请阅读[目标概述](../destinations/home.md)。
