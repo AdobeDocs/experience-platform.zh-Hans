@@ -2,10 +2,10 @@
 title: Algolia标记扩展概述
 description: 了解Adobe Experience Platform中的Algolia Tags扩展。
 exl-id: 8409bf8b-fae2-44cc-8466-9942f7d92613
-source-git-commit: 24d2dc76fc4208f8e1555d90fd3c3ef2cf55643e
+source-git-commit: 904200c5d3ef2be58582e4679109390e8d4aebc1
 workflow-type: tm+mt
-source-wordcount: '1635'
-ht-degree: 2%
+source-wordcount: '1977'
+ht-degree: 1%
 
 ---
 
@@ -27,8 +27,8 @@ ht-degree: 2%
 
 | 凭据 | 描述 | 示例 |
 | --- | --- | --- |
-| 应用程序Id | 您的应用程序ID可在[!DNL Algolia]仪表板的[API密钥](https://www.algolia.com/account/api-keys/all)部分找到。 | 0ABCDEFG12 |
-| 搜索API密钥 | 可在[!DNL Algolia]仪表板的[API密钥](https://www.algolia.com/account/api-keys/all)部分中找到您的搜索API密钥。 | 1234a12345678901b1234567890c1ab1 |
+| 应用程序Id | 您的应用程序ID可在[仪表板的](https://www.algolia.com/account/api-keys/all)API密钥[!DNL Algolia]部分找到。 | 0ABCDEFG12 |
+| 搜索API密钥 | 可在[仪表板的](https://www.algolia.com/account/api-keys/all)API密钥[!DNL Algolia]部分中找到您的搜索API密钥。 | 1234a12345678901b1234567890c1ab1 |
 
 ## 安装和配置[!DNL Algolia] Insights扩展 {#install-configure}
 
@@ -42,12 +42,12 @@ ht-degree: 2%
 
 | 属性 | 描述 |
 | --- | --- |
-| 应用程序Id | 输入您之前在[配置详细信息](#configuration-details)部分中收集的[!UICONTROL 应用程序ID]。 |
-| 搜索API密钥 | 输入您之前在[配置详细信息](#configuration-details)部分中收集的[!UICONTROL 搜索API密钥]。 |
-| 索引名称 | [!UICONTROL 索引名称]包含产品或内容。  此索引将用作默认索引。 |
-| 用户令牌数据元素 | 将返回用户令牌的数据元素。 |
-| 经过身份验证的用户令牌数据元素 | 设置将返回经过身份验证的用户令牌的数据元素。 |
-| 货币 | 选择货币类型。  默认值设置为`USD`。 |
+| [!UICONTROL 应用程序ID] | 输入您之前在[!UICONTROL 配置详细信息]部分中收集的[应用程序ID](#configuration-details)。 |
+| [!UICONTROL 搜索API密钥] | 输入您之前在[!UICONTROL 配置详细信息]部分中收集的[搜索API密钥](#configuration-details)。 |
+| [!UICONTROL 索引名称] | [!UICONTROL 索引名称]包含产品或内容。  此索引将用作默认索引。 |
+| [!UICONTROL 用户令牌数据元素] | 将返回用户令牌的数据元素。 |
+| [!UICONTROL 经过身份验证的用户令牌数据元素] | 设置将返回经过身份验证的用户令牌的数据元素。 |
+| [!UICONTROL 货币] | 选择货币类型。 默认值设置为`USD`。 |
 
 ![](../../../images/extensions/client/algolia/configure.png)
 
@@ -80,13 +80,14 @@ ht-degree: 2%
 | 属性 | 描述 |
 | --- | --- |
 | [!UICONTROL 事件名称] | 事件名称，可用于进一步细化此点击事件。 |
-| 事件详细信息数据元素 | 数据元素返回事件详细信息，包括： <ul><li>`indexName`</li><li>`objectIDs`</li><li>`queryID` （可选）</li><li>`position` （可选）</li></ul> |
+| [!UICONTROL 事件详细信息数据元素] | 数据元素返回事件详细信息，包括： <ul><li>`indexName`</li><li>`objectIDs`</li><li>`queryID` （可选）</li><li>`position` （可选）</li></ul> |
+| [!UICONTROL 记录ID数据元素] | 记录ID在`click`事件期间用作存储在浏览器存储中的事件数据的键。 默认情况下，页面URL将用作记录ID。 要覆盖此行为，请使用此属性提供以字符串形式返回记录ID的数据元素。 |
 
 >[!NOTE]
 >
->如果同时包括`queryID`和`position`，则该事件在搜索&#x200B;**后将被分类为**&#x200B;已点击对象ID。 否则，它被分类为&#x200B;**点击的对象ID**&#x200B;事件。
->&#x200B;><br>
->&#x200B;>如果数据元素不提供`indexName`，则在发送事件时将使用&#x200B;**默认索引名称**。
+>如果同时包括`queryID`和`position`，则该事件在搜索&#x200B;**后将被分类为**&#x200B;已点击对象ID。 否则，它被分类为&#x200B;**点击的对象ID**事件。
+>><br>
+>>如果数据元素不提供`indexName`，则在发送事件时将使用&#x200B;**默认索引名称**。
 
 ![](../../../images/extensions/client/algolia/clicked.png)
 
@@ -99,14 +100,16 @@ ht-degree: 2%
 
 | 属性 | 描述 |
 | --- | --- |
-| 活动名称 | 将用于进一步细化此&#x200B;**转换**&#x200B;事件的事件名称。 |
-| 事件详细信息数据元素 | 数据元素返回事件详细信息，包括： <ul><li>`indexName`</li><li>`objectIDs`</li><li>`queryID` （可选）</li></ul> |
+| [!UICONTROL 事件名称] | 将用于进一步细化此&#x200B;**转换**&#x200B;事件的事件名称。 |
+| [!UICONTROL 事件详细信息数据元素] | 数据元素返回事件详细信息，包括： <ul><li>`indexName`</li><li>`objectIDs`</li><li>`queryID` （可选）</li></ul> |
+| [!UICONTROL 禁用删除事件数据] | 发生转化事件时，事件数据会从存储中删除。 如果后续转化事件需要此数据，请禁用移除过程以确保事件数据仍然可用。 |
+| [!UICONTROL 记录ID数据元素] | 记录ID用作查找存储在浏览器存储中的事件数据的键。 页面URL是默认的记录ID。 要覆盖此行为，请使用此属性提供以字符串形式返回记录ID的数据元素。 |
 
 >[!NOTE]
 >
->如果数据元素包含`queryId`，则将该事件分类为&#x200B;**Converted after Search**。 否则，它将被分类为&#x200B;**转化的**&#x200B;事件。
->&#x200B;><br>
->&#x200B;>如果数据元素不提供`indexName`，则在发送事件时将使用&#x200B;**默认索引名称**。
+>如果数据元素包含`queryId`，则将该事件分类为&#x200B;**Converted after Search**。 否则，它将被分类为&#x200B;**转化的**事件。
+>><br>
+>>如果数据元素不提供`indexName`，则在发送事件时将使用&#x200B;**默认索引名称**。
 
 ![](../../../images/extensions/client/algolia/converted.png)
 
@@ -118,17 +121,17 @@ ht-degree: 2%
 
 | 属性 | 描述 |
 | --- | --- |
-| 活动名称 | 将用于进一步细化此&#x200B;**转换**&#x200B;事件的事件名称。 |
-| 事件详细信息数据元素 | 数据元素返回事件详细信息，包括： <ul><li>`indexName`</li><li>`objectIDs`</li><li>`objectData`<ul><li>`queryID` （可选）</li><li>`price`</li><li>`quantity`</li><li>`discount`</li></ul></li><li>`queryID` （可选）</li></ul>。 |
-| 货币 | 指定货币类型，如`USD`。 |
+| [!UICONTROL 事件名称] | 将用于进一步细化此&#x200B;**转换**&#x200B;事件的事件名称。 |
+| [!UICONTROL 事件详细信息数据元素] | 数据元素返回事件详细信息，包括： <ul><li>`indexName`</li><li>`objectIDs`</li><li>`objectData`<ul><li>`queryID` （可选）</li><li>`price`</li><li>`quantity`</li><li>`discount`</li></ul></li><li>`queryID` （可选）</li></ul>。 |
+| [!UICONTROL 货币] | 选择货币类型。 默认值设置为`USD`。 |
 
 >[!NOTE]
 >
->如果数据元素包含`queryId`，则该事件将被分类为&#x200B;**已添加到购物车对象ID（在搜索**&#x200B;之后）。 否则，它将被分类为&#x200B;**添加到购物车对象ID**&#x200B;事件。
->&#x200B;><br>
->&#x200B;>如果数据元素不提供`indexName`，则在发送事件时将使用&#x200B;**默认索引名称**。
->&#x200B;><br>
->&#x200B;>如果默认数据元素不符合您的要求，可以创建自定义一个数据元素以返回所需的事件详细信息。
+>如果数据元素包含`queryId`，则该事件将被分类为&#x200B;**已添加到购物车对象ID（在搜索**&#x200B;之后）。 否则，它将被分类为&#x200B;**添加到购物车对象ID**事件。
+>><br>
+>>如果数据元素不提供`indexName`，则在发送事件时将使用&#x200B;**默认索引名称**。
+>><br>
+>>如果默认数据元素不符合您的要求，可以创建自定义一个数据元素以返回所需的事件详细信息。
 
 ![](../../../images/extensions/client/algolia/added-to-cart.png)
 
@@ -140,17 +143,17 @@ ht-degree: 2%
 
 | 属性 | 描述 |
 | --- | --- |
-| 活动名称 | 将用于进一步细化此&#x200B;**购买**&#x200B;事件的事件名称。 |
-| 事件详细信息数据元素 | 数据元素返回事件详细信息，包括： <ul><li>`indexName`</li><li>`objectIDs`</li><li>`objectData`<ul><li>`queryID` （可选）</li><li>`price`</li><li>`quantity`</li><li>`discount`</li></ul></li><li>`queryID` （可选）</li></ul>。 |
-| 货币 | 指定货币类型，如`USD`。 |
+| [!UICONTROL 事件名称] | 将用于进一步细化此&#x200B;**购买**&#x200B;事件的事件名称。 |
+| [!UICONTROL 事件详细信息数据元素] | 数据元素返回事件详细信息，包括： <ul><li>`indexName`</li><li>`objectIDs`</li><li>`objectData`<ul><li>`queryID` （可选）</li><li>`price`</li><li>`quantity`</li><li>`discount`</li></ul></li><li>`queryID` （可选）</li></ul>。 |
+| [!UICONTROL 货币] | 选择货币类型。 默认值设置为`USD`。 |
 
 >[!NOTE]
 >
->如果数据元素包含`queryId`，则在搜索&#x200B;**后，该事件将被分类为**&#x200B;已购买对象ID。 否则，它将被分类为&#x200B;**购买的对象ID**&#x200B;事件。
->&#x200B;><br>
->&#x200B;>如果数据元素不提供`indexName`，则在发送事件时将使用&#x200B;**默认索引名称**。
->&#x200B;><br>
->&#x200B;>如果默认数据元素不符合您的要求，可以创建自定义一个数据元素以返回所需的事件详细信息。
+>如果数据元素包含`queryId`，则在搜索&#x200B;**后，该事件将被分类为**&#x200B;已购买对象ID。 否则，它将被分类为&#x200B;**购买的对象ID**事件。
+>><br>
+>>如果数据元素不提供`indexName`，则在发送事件时将使用&#x200B;**默认索引名称**。
+>><br>
+>>如果默认数据元素不符合您的要求，可以创建自定义一个数据元素以返回所需的事件详细信息。
 
 ![](../../../images/extensions/client/algolia/purchased.png)
 
@@ -163,8 +166,8 @@ ht-degree: 2%
 
 | 属性 | 描述 |
 | --- | --- |
-| 活动名称 | 将用于进一步细化此&#x200B;**视图**&#x200B;事件的事件名称。 |
-| 事件详细信息数据元素 | 数据元素返回事件详细信息，包括： <ul><li>`indexName`</li><li>`objectIDs`</li></ul> |
+| [!UICONTROL 事件名称] | 将用于进一步细化此&#x200B;**视图**&#x200B;事件的事件名称。 |
+| [!UICONTROL 事件详细信息数据元素] | 数据元素返回事件详细信息，包括： <ul><li>`indexName`</li><li>`objectIDs`</li></ul> |
 
 >[!NOTE]
 >
@@ -184,8 +187,12 @@ ht-degree: 2%
 
 | 属性 | 描述 |
 | --- | --- |
-| 点击元素Div/类名称 | 包含数据集属性的HTML元素名称和/或CSS类名称，这些数据集属性包括HTML元素上的`data-insights-object-id`以及可选的`data-insights-query-id`和`data-insights-position`。 |
-| 索引名元素Div/类名 | 在HTML元素上具有数据集属性(`data-indexname`)的HTML元素名称和/或CSS类名称。 |
+| [!UICONTROL 点击元素Div/类名称] | 包含数据集属性的HTML元素名称和/或CSS类名称，这些数据集属性包括HTML元素上的`data-insights-object-id`以及可选的`data-insights-query-id`和`data-insights-position`。 |
+| [!UICONTROL 索引名元素Div/类名] | 在HTML元素上具有数据集属性(`data-indexname`)的HTML元素名称和/或CSS类名称。 |
+| [!UICONTROL 查询ID数据元素] | 查询ID是从HTML元素上的数据集中检索的。 要覆盖此行为，请使用此属性提供将查询ID作为字符串返回的数据元素。 |
+| [!UICONTROL 对象ID数据元素] | 从HTML元素上的数据集中检索对象ID。 要覆盖此行为，请使用此属性提供一个数据元素，该数据元素将对象ID作为数组返回。 |
+| [!UICONTROL 位置数据元素] | 位置检索自HTML元素上的数据集。 要覆盖此行为，请使用此属性提供一个数据元素，该数据元素会将Positions作为数组返回。 |
+| [!UICONTROL 索引名称数据元素] | 索引名称将从HTML元素上的数据集中检索。 要覆盖此行为，请使用此属性提供一个数据元素，该数据元素将作为字符串返回索引名称。 |
 
 ![](../../../images/extensions/client/algolia/dataset.png)
 
@@ -220,10 +227,10 @@ ht-degree: 2%
 
 | 属性 | 描述 |
 | --- | --- |
-| 对象ID参数名称 | 包含对象ID的查询参数名称。 |
-| 索引名称参数名称（可选） | 包含“索引名称”的查询参数名称。 |
-| 查询ID参数名称（可选） | 包含查询ID的查询参数名称。 |
-| 职位参数名称（可选） | 包含职位的查询参数名称。 |
+| [!UICONTROL 对象ID参数名称] | 包含对象ID的查询参数名称。 |
+| [!UICONTROL 索引名称参数名称] | 包含“索引名称”的查询参数名称。 |
+| [!UICONTROL 查询ID参数名称] | 包含查询ID的查询参数名称。 |
+| [!UICONTROL 位置参数名称] | 包含职位的查询参数名称。 |
 
 ![](../../../images/extensions/client/algolia/query-string.png)
 
@@ -250,6 +257,10 @@ ht-degree: 2%
 
 此数据元素从会话存储中检索事件详细信息。 无需配置。 数据会在&#x200B;*单击*&#x200B;事件操作期间自动添加，并在&#x200B;*转换*&#x200B;事件操作期间删除。
 
+| 属性 | 描述 |
+| --- | --- |
+| [!UICONTROL 记录ID数据元素] | 记录ID用作查找存储在浏览器存储中的事件数据的键。 页面URL是默认的记录ID。 要覆盖此行为，请使用此属性提供以字符串形式返回记录ID的数据元素。 |
+
 ![](../../../images/extensions/client/algolia/storage.png)
 
 此数据元素返回会话存储中存储的内容。
@@ -265,7 +276,7 @@ ht-degree: 2%
 
 ## 搜索后已单击或已转换 {#clicked-converted-after-search}
 
-搜索&#x200B;*后点击的*&#x200B;或搜索&#x200B;*后转换的*&#x200B;事件需要`queryId`，搜索&#x200B;*后点击的*&#x200B;也需要`position`。 在InstantSearch和/或自动完成查询参数中启用`insights`标志时，这些属性可用。 请参阅以下资源，了解如何为网站配置Insights：
+搜索&#x200B;*后点击的*&#x200B;或搜索&#x200B;*后转换的*&#x200B;事件需要`queryId`，搜索`position`后点击的&#x200B;*也需要*。 在InstantSearch和/或自动完成查询参数中启用`insights`标志时，这些属性可用。 请参阅以下资源，了解如何为网站配置Insights：
 
 * [在自动完成时设置分析](https://www.algolia.com/doc/ui-libraries/autocomplete/api-reference/autocomplete-js/autocomplete/#param-insights)
 * [在InstantSearch.js中设置分析](https://www.algolia.com/doc/guides/building-search-ui/events/js/#set-the-insights-option-to-true)
@@ -278,6 +289,6 @@ ht-degree: 2%
 
 ## 后续步骤 {#next-steps}
 
-本指南介绍了如何使用[!DNL Algolia Insights]标记扩展将数据发送到[!DNL Algolia]。 如果您还计划向[!DNL Algolia]发送服务器端事件，则现在可以继续安装和配置[[!DNL Conversions API] 事件转发扩展](../../server/algolia/overview.md)。
+本指南介绍了如何使用[!DNL Algolia]标记扩展将数据发送到[!DNL Algolia Insights]。 如果您还计划向[!DNL Algolia]发送服务器端事件，则现在可以继续安装和配置[[!DNL Conversions API] 事件转发扩展](../../server/algolia/overview.md)。
 
 有关Experience Platform中标记的详细信息，请参阅[标记概述](../../../home.md)。
