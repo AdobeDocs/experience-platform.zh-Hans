@@ -1,13 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；OneTrust；onetrust；同意；同意和偏好设置；合规性
-solution: Experience Platform
 title: OneTrust集成Source连接器概述
 description: 了解如何使用API或用户界面将OneTrust集成连接到Adobe Experience Platform。
-last-substantial-update: 2023-04-26T00:00:00Z
 exl-id: f2229d4d-8aa6-483a-9156-403309f80007
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 0b3053e23f5b13fd7ebf0cf41a64c1bc5b71f2db
 workflow-type: tm+mt
-source-wordcount: '190'
+source-wordcount: '169'
 ht-degree: 0%
 
 ---
@@ -16,13 +13,15 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->[!DNL OneTrust Integration]源仅支持获取同意和偏好设置数据，而不支持Cookie。 有关源连接器的问题，请通过https://support.onetrust.com联系OneTrust支持
+>[!DNL OneTrust Integration]源仅支持获取同意和偏好设置数据，而不支持Cookie。 有关源连接器的问题，请联系[[!DNL OneTrust] 支持](https://support.onetrust.com)。
 
-Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。 您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
+[!DNL OneTrust]是一个隐私、安全和信任管理平台，旨在帮助组织负责任地管理数据，遵守法规，并与客户和利益相关者建立信任。 它为数据治理、风险管理和法规遵从性自动化提供了一整套统一的工具。
 
-Experience Platform支持从第三方同意和偏好设置管理平台中摄取数据。 同意和偏好设置提供商的支持包括[!DNL OneTrust Integration]。
+使用[!DNL OneTrust Integration]源连接您的帐户并将同意和偏好设置数据摄取到Experience Platform。
 
-以下文档提供了有关如何使用API或用户界面将[!DNL OneTrust Integration]连接到Experience Platform的信息：
+>[!IMPORTANT]
+>
+>使用[!DNL OneTrust Integration]源时，每次运行仅摄取在上次运行之后创建的新数据，即使上次运行未成功完成也是如此。
 
 ## 使用API将[!DNL OneTrust Integration]连接到Experience Platform
 
