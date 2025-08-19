@@ -3,9 +3,9 @@ keywords: 目录服务；问题；常见问题解答；常见问题解答；数�
 title: 常见问题解答
 description: 有关Adobe Experience Platform目录服务和数据集的常见问题解答。
 exl-id: 70d2a352-75bd-4bbc-98e6-aeea16306f63
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 38f63f1fc985601c53925a529e603f47dc7fb58b
 workflow-type: tm+mt
-source-wordcount: '473'
+source-wordcount: '487'
 ht-degree: 1%
 
 ---
@@ -27,6 +27,10 @@ ht-degree: 1%
 ### 我可以为数据湖和配置文件服务设置不同的保留策略吗？
 
 +++回答
+
+>[!NOTE]
+>
+>配置文件服务的保留期只能每30天更新一次。
 
 可以，您可以对数据湖和配置文件服务应用不同的保留策略。
 

@@ -2,9 +2,9 @@
 title: 使用TTL在数据湖中管理体验事件数据集保留
 description: 了解如何使用生存时间(TTL)配置和Adobe Experience Platform API评估、设置和管理Data Lake中的Experience Event数据集保留。 本指南介绍TTL行级到期如何支持数据保留策略、优化存储效率并确保有效的数据生命周期管理。 它还提供了用例和最佳实践，帮助您有效应用TTL。
 exl-id: d688d4d0-aa8b-4e93-a74c-f1a1089d2df0
-source-git-commit: 65a132609bc30233ac9f7efbe1981d4f75f3acb9
+source-git-commit: a4662d1042122fa9c3260c0e53c50bd78935cf31
 workflow-type: tm+mt
-source-wordcount: '2458'
+source-wordcount: '2472'
 ht-degree: 0%
 
 ---
@@ -333,7 +333,13 @@ For example, if you apply a 30-day expiration policy on May 15th, the following 
 ### 我是否可以为数据湖和配置文件服务设置不同的保留策略？
 
 +++回答
+
+>[!NOTE]
+>
+>配置文件服务的保留期只能每30天更新一次。
+
 可以，您可以为Data Lake和Profile Services设置不同的保留策略。 配置文件存储区的保留期可以短于或长于数据湖保留期，具体取决于您组织的需求。
+
 +++
 
 ### 如何检查我当前的数据集使用情况？
@@ -366,13 +372,13 @@ For example, if you apply a 30-day expiration policy on May 15th, the following 
 
 ### 我可以在Data Lake Experience Event数据集上配置的最低TTL是多少？
 
-+++回答
++++回答 
 数据湖体验事件数据集的最小TTL为30天。 数据湖在初始摄取和处理期间充当处理备份和恢复系统。 因此，数据必须在摄取后在数据湖中保留至少30天，然后才能过期。
 +++
 
 ### 如果需要保留某些Data Lake字段的时间长于我的TTL策略允许的时间，该怎么办？
 
-+++回答
++++回答 
 使用Data Distiller可保留超出数据集TTL的特定字段，同时不超出利用率限制。 创建一个定期仅将必要字段写入派生数据集的作业。 此工作流可确保遵循更短的TTL，同时保留关键数据以供扩展使用。
 
 有关详细信息，请参阅[使用SQL创建派生数据集指南](../../query-service/data-distiller/derived-datasets/create-derived-datasets-with-sql.md)。

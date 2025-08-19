@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据集UI指南
 description: 了解如何在Adobe Experience Platform用户界面中使用数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 24b0df7025971a999453cd988813aa32b449ba0f
+source-git-commit: 1b278562c815953d2068a5142dbefcf1572baff5
 workflow-type: tm+mt
-source-wordcount: '4482'
+source-wordcount: '4497'
 ht-degree: 5%
 
 ---
@@ -237,6 +237,8 @@ ht-degree: 5%
 >[!NOTE]
 > 
 >数据湖的最短保留时间为30天。 配置文件服务的最短保留期为一天。
+>
+>此外，您只能每30天更新一次配置文件服务的保留期。
 
 为了支持透明度和监视，为&#x200B;**最近**&#x200B;和&#x200B;**下一个**&#x200B;数据保留作业执行提供了时间戳。 时间戳可帮助您了解上次数据清理何时发生以及何时计划下次数据清理。
 
