@@ -33,7 +33,7 @@ ht-degree: 6%
 ## 先决条件 {#prerequisites}
 
 * **确认使用条款：**&#x200B;在配置新的[!DNL Acxiom Audience Distribution]目标之前，您必须阅读并签署[!DNL Acxiom's]使用条款协议。 在您执行的销售订单完成后，您将收到指向协议的链接。 在您签署协议之前，不会在Experience Platform目标目录中看到[!DNL Acxiom Audience Distribution]目标卡。 在您接受并签署协议后，[!DNL Adobe]将完成您的载入流程，您将会看到[!DNL Acxiom Audience Distribution]目标卡。
-* **知道您的Adobe组织ID：**&#x200B;需要您的[!DNL Adobe]组织ID才能完成您的用户协议条款。 有关如何[!DNL Adobe's]查看组织ID *的详细信息，请参阅* [Experience Cloud中的组织](https://experienceleague.adobe.com/en/docs/core-services/interface/administration/organizations#concept_EA8AEE5B02CF46ACBDAD6A8508646255)主题。
+* **知道您的Adobe组织ID：**&#x200B;需要您的[!DNL Adobe]组织ID才能完成您的用户协议条款。 有关如何[!DNL Adobe's]查看组织ID *的详细信息，请参阅* [Experience Cloud中的组织](https://experienceleague.adobe.com/zh-hans/docs/core-services/interface/administration/organizations#concept_EA8AEE5B02CF46ACBDAD6A8508646255)主题。
 
 ## 支持的目标 {#supported-destinations}
 
@@ -128,4 +128,4 @@ ht-degree: 6%
 
 ## 数据使用和治理 {#data-usage-governance}
 
-在处理您的数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据治理的详细信息，请阅读[数据治理概述](https://experienceleague.adobe.com/en/docs/experience-platform/data-governance/home)。
+在处理您的数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据治理的详细信息，请阅读[数据治理概述](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/data-governance/home)。
