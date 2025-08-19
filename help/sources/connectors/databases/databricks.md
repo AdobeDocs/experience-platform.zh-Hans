@@ -5,9 +5,9 @@ badgeUltimate: label="Ultimate" type="Positive"
 badgeBeta: label="Beta 版" type="Informative"
 last-substantial-update: 2025-06-17T00:00:00Z
 exl-id: 2f082898-aa0e-47a1-a4bf-077c21afdfee
-source-git-commit: 11ec772f2b877ceac820f2b8a06ac27377e9b2e9
+source-git-commit: e5ece120329a550204174b7bf588f06cdff45846
 workflow-type: tm+mt
-source-wordcount: '616'
+source-wordcount: '631'
 ht-degree: 2%
 
 ---
@@ -32,7 +32,7 @@ ht-degree: 2%
 
 检索您的Experience Platform [!DNL Azure Blob Storage]凭据，以使您的[!DNL Databricks]帐户以后能够访问它。
 
-要检索您的凭据，请向[!DNL Connectors] API的`/credentials`端点发出GET请求。
+要检索您的凭据，请向`/credentials` API的[!DNL Connectors]端点发出GET请求。
 
 **API格式**
 
@@ -60,7 +60,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应提供了您的凭据(`containerName`、`SASToken`、`storageAccountName`)，供以后在[!DNL Databricks]的[!DNL Apache Spark]配置中使用。
+成功的响应提供了您的凭据(`containerName`、`SASToken`、`storageAccountName`)，供以后在[!DNL Apache Spark]的[!DNL Databricks]配置中使用。
 
 +++查看响应示例
 
@@ -76,7 +76,7 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `containerName` | [!DNL Azure Blob Storage]容器的名称。 稍后在完成[!DNL Databricks]的[!DNL Apache Spark]配置时将使用此值。 |
+| `containerName` | [!DNL Azure Blob Storage]容器的名称。 稍后在完成[!DNL Apache Spark]的[!DNL Databricks]配置时将使用此值。 |
 | `SASToken` | [!DNL Azure Blob Storage]的共享访问签名令牌。 此字符串包含授权请求所需的所有信息。 |
 | `storageAccountName` | 存储帐户的名称。 |
 | `SASUri` | [!DNL Azure Blob Storage]的共享访问签名URI。 此字符串是您正在接受身份验证的[!DNL Azure Blob Storage]的URI及其对应的SAS令牌的组合。 |
@@ -160,6 +160,12 @@ fs.azure.sas.{CONTAINER_NAME}.{STORAGE-ACCOUNT}.blob.core.windows.net {SAS-TOKEN
 | SAS 令牌 | [!DNL Azure Blob Storage]的共享访问签名令牌。 您可以通过检索[!DNL Azure Blob Storage]凭据获取此值。 |
 
 ![Azure上的数据库UI。](../../images/tutorials/create/databricks/databricks-ui.png)
+
+如果未提供，则流运行中的复制活动将失败并返回以下错误：
+
+```shell
+Unable to access container '{CONTAINER_NAME}' in account '{STORAGE_ACCOUNT}.blob.core.windows.net' using anonymous credentials. No credentials found in the configuration. Public access is not permitted on this storage account.
+```
 
 ## 将[!DNL Databricks]连接到Experience Platform
 
