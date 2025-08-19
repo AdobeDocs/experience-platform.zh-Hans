@@ -4,35 +4,51 @@ title: 列入允许列表流目的地的IP地址
 type: Documentation
 description: 此页提供了可添加到允许列表的IP范围，以便安全地将数据从Experience Platform导出到HTTP REST API端点、Amazon Kinesis或Azure事件中心实例。
 exl-id: f41303bd-c886-4c67-9e39-21efc3f5b768
-source-git-commit: 5c67466f5321038e75d22e216a8be2e745adac49
+source-git-commit: 851565b4c40452d102eff134533c9d44ea19ca76
 workflow-type: tm+mt
-source-wordcount: '310'
+source-wordcount: '407'
 ht-degree: 0%
 
 ---
 
-# 列入允许列表流目的地的IP地址 {#ip-address-allowlist}
+
+# 列入允许列表用于基于API的流目标的IP地址 {#ip-address-allowlist}
 
 >[!IMPORTANT]
 >
 > * Adobe建议您将此页面加入书签，每三个月重新访问一次，以检查最新IP地址。 Adobe不提供新IP范围的通知。
-> * 此处记录的IP列表&#x200B;*不适用于您使用*&#x200B;构建的任何目标。[[!DNL Destination SDK]](/help/destinations/destination-sdk/overview.md)
 
 ## 概述 {#overview}
 
-此处记录的IP范围适用于以下目标：
+本页中记录的IP范围适用于以下目标：
 
-* [HTTP API目标](./http-destination.md)
-* [[!DNL Amazon Kinesis]](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)
-* [[!DNL Azure Event Hubs]](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)
+* [高级企业目标](../../destination-types.md#advanced-enterprise-destinations)： [HTTP API目标](./http-destination.md)，[[!DNL Amazon Kinesis]](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)，[[!DNL Azure Event Hubs]](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)
+* [流式受众导出目标](../../destination-types.md#streaming-destinations)，如[Pega CDH实时受众](/help/destinations/catalog/personalization/pega-v2.md)，与[Salesforce Marketing Cloud](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-exact-target.md)和[Oracle Eloqua](/help/destinations/catalog/email-marketing/oracle-eloqua-api.md)的基于API的集成
+* 通过[Destination SDK](../../destination-sdk/getting-started.md)构建的公共或专用目标
 
 从Experience Platform到这些目标的出站流量始终通过此页列出的IP地址。
 
-列入允许列表此页面提供了可添加到IP范围的IP范围，以便安全地将数据从Experience Platform导出到HTTP端点[!DNL Amazon Kinesis]或[!DNL Azure Event Hubs]实例。 如果您的HTTP端点位于企业防火墙之后，或者您的公司安全和合规性标准要求将IP范围列表列入允许列表，则此功能特别有用。
+本页提供了可添加到Experience Platform的IP范围，以便安全地将数据从列入允许列表导出到上面列出的目标。 如果您的HTTP端点位于企业防火墙之后，或者您的公司安全和合规性标准要求将IP范围列表列入允许列表，则此功能特别有用。
 
 您可以通过网络防火墙定义网络访问控制。 通过指定适当的IP范围，您可以允许数据传输服务的通信。
 
-Adobe建议您在使用此页面上提到的目标之前，将以下IP范围添加到允许列表。 使用这些流目标时，如果未能将特定于地区的IP范围添加到允许列表，可能会导致错误或性能下降。
+## 何时允许列表此页中的IP {#when-to-allowlist}
+
+如果您的组织政策要求您允许列表列入允许列表传入流量的IP，则必须先将以下类别的IP范围添加到中，然后再使用本页面上提到的目标：
+
+1. 所有[全局IP地址](#global)
+2. 除了全局IP地址外，还从页面的下面列表中，添加与您预配的区域相对应的IP地址。 使用这些流目标时，如果未能将特定于地区的IP范围添加到允许列表，可能会导致错误或性能下降。
+
+## 全局IP地址 {#global}
+
+* `3.209.222.108`
+* `3.211.230.204`
+* `35.169.227.49`
+* `66.117.18.133`
+* `66.117.18.134`
+* `66.117.18.135`
+
+除了这些全局IP地址外，您还必须允许列表以下列表中您的组织所配置地区的这些IP地址。
 
 ## VA7：美国和美洲客户 {#us-americas}
 
@@ -209,3 +225,4 @@ Adobe建议您在使用此页面上提到的目标之前，将以下IP范围添�
 * `20.244.79.192/28`
 * `20.244.79.208/28`
 * `20.244.79.224/28`
+
