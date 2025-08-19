@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Source连接器概述
 description: Adobe Experience Platform 允许从外部源摄取数据，同时让您能够使用 Experience Platform 服务来构建、标记和增强传入数据。您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: cad2cafdf39c718c3ba971eaa4e7f2318bd5f517
+source-git-commit: 785ddd4ed3a5b8ba2c515ee6390e78b601367814
 workflow-type: tm+mt
 source-wordcount: '1644'
 ht-degree: 12%
@@ -61,7 +61,7 @@ Experience Platform允许从其他Adobe应用程序(包括Adobe Analytics和Adob
 
 ### 高级企业源 {#advanced-enterprise-sources}
 
-以下源仅供[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)客户使用。
+以下源仅供[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)客户使用。
 
 | 来源 | 类别 | 摄取类型 | 云 |
 | --- | --- | --- | --- |
@@ -108,7 +108,7 @@ Experience Platform允许从其他Adobe应用程序(包括Adobe Analytics和Adob
 | 来源 | 摄取类型 | 云 |
 | --- | --- | --- |
 | [[!DNL Azure Data Lake Storage Gen2]](connectors/cloud-storage/adls-gen2.md) | 批次 | Azure |
-| [[!DNL Azure Blob]](connectors/cloud-storage/blob.md) | 批次 | Azure |
+| [[!DNL Azure Blob Storage]](connectors/cloud-storage/blob.md) | 批次 | Azure |
 | [[!DNL Amazon S3]](connectors/cloud-storage/s3.md) | 批次 | Azure，AWS |
 | [[!DNL Apache HDFS]](connectors/cloud-storage/hdfs.md) | 批次 | Azure |
 | [[!DNL Azure File Storage]](connectors/cloud-storage/azure-file-storage.md) | 批次 | Azure |

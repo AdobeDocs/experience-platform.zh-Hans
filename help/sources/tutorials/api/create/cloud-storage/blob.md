@@ -1,19 +1,17 @@
 ---
-title: 使用流服务API创建Azure Blob基本连接
+title: 使用流服务API将Azure Blob Storage连接到Experience Platform
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Azure Blob。
 exl-id: 4ab8033f-697a-49b6-8d9c-1aadfef04a04
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7acdc090c020de31ee1a010d71a2969ec9e5bbe1
 workflow-type: tm+mt
-source-wordcount: '772'
+source-wordcount: '651'
 ht-degree: 3%
 
 ---
 
-# 使用[!DNL Flow Service] API创建[!DNL Azure Blob]基本连接
+# 使用API将[!DNL Azure Blob Storage]连接到Experience Platform
 
-基本连接表示源和Adobe Experience Platform之间的已验证连接。
-
-本教程提供了使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)为[!DNL Azure Blob]（以下称为“[!DNL Blob]”）创建基本连接的步骤。
+阅读本指南，了解如何使用[!DNL Azure Blobg Storage]API[[!DNL Flow Service] 将您的](https://developer.adobe.com/experience-platform-apis/references/flow-service/)帐户连接到Adobe Experience Platform。
 
 ## 快速入门
 
@@ -22,65 +20,45 @@ ht-degree: 3%
 * [源](../../../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
 * [沙盒](../../../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-以下部分提供使用[!DNL Flow Service] API成功创建[!DNL Blob]源连接所需了解的其他信息。
-
-### 收集所需的凭据
-
-为了使[!DNL Flow Service]连接到[!DNL Blob]存储，您必须提供以下连接属性的值：
-
->[!BEGINTABS]
-
->[!TAB 连接字符串身份验证]
-
-| 凭据 | 描述 |
-| --- | --- |
-| `connectionString` | 一个字符串，其中包含向Experience Platform验证[!DNL Blob]所需的授权信息。 [!DNL Blob]连接字符串模式为： `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`。 有关连接字符串的详细信息，请参阅[配置连接字符串](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string)上的此[!DNL Blob]文档。 |
-| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL Blob]的连接规范ID为： `d771e9c1-4f26-40dc-8617-ce58c4b53702`。 |
-
->[!TAB SAS URI身份验证]
-
-| 凭据 | 描述 |
-| --- | --- |
-| `sasUri` | 共享访问签名URI，您可以将其用作替代身份验证类型来连接您的[!DNL Blob]帐户。 [!DNL Blob] SAS URI模式为： `https://{ACCOUNT_NAME}.blob.core.windows.net/?sv=<storage version>&st={START_TIME}&se={EXPIRE_TIME}&sr={RESOURCE}&sp={PERMISSIONS}>&sip=<{IP_RANGE}>&spr={PROTOCOL}&sig={SIGNATURE}>`有关详细信息，请参阅[共享访问签名URI](https://docs.microsoft.com/en-us/azure/data-factory/connector-azure-blob-storage#shared-access-signature-authentication)上的此[!DNL Blob]文档。 |
-| `container` | 要为其指定访问权限的容器的名称。 在使用[!DNL Blob]源创建新帐户时，您可以提供容器名称以指定用户对您选择的子文件夹的访问权限。 |
-| `folderPath` | 要提供访问权限的文件夹的路径。 |
-| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL Blob]的连接规范ID为： `d771e9c1-4f26-40dc-8617-ce58c4b53702`。 |
-
->[!ENDTABS]
-
 ### 使用Experience Platform API
 
 有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../../../landing/api-guide.md)指南。
 
-## 创建基本连接
+### 收集所需的凭据
 
->[!TIP]
+有关身份验证的信息，请阅读[[!DNL Azure Blob Storage] 概述](../../../../connectors/cloud-storage/blob.md#authentication)。
+
+## 将您的[!DNL Azure Blob Storage]帐户连接到Experience Platform {#connect}
+
+有关如何将您的[!DNL Azure Blob Storage]帐户连接到Experience Platform的信息，请阅读以下步骤。
+
+### 创建基本连接
+
+>[!NOTE]
 >
->创建后，无法更改[!DNL Blob]基本连接的身份验证类型。 要更改身份验证类型，必须创建新的基本连接。
+>创建后，无法更改[!DNL Azure Blob Storage]基本连接的身份验证类型。 要更改身份验证类型，必须创建新的基本连接。
 
-基本连接会保留源与Experience Platform之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
+基本连接可将您的源链接到Experience Platform，以存储身份验证详细信息、连接状态和唯一ID。 使用此ID浏览源文件并标识要摄取的特定项目，包括其数据类型和格式。
 
-[!DNL Blob]源支持连接字符串和共享访问签名(SAS)身份验证。 共享访问签名(SAS) URI允许向您的[!DNL Blob]帐户安全委派授权。 您可以使用SAS创建具有不同访问级别的身份验证凭据，因为基于SAS的身份验证允许您设置权限、开始和到期日期，以及配置给特定资源。
+您可以使用以下身份验证类型将您的[!DNL Azure Blob Storage]帐户连接到Experience Platform：
 
-在此步骤中，您还可以通过定义容器名称和子文件夹的路径来指定帐户将有权访问的子文件夹。
-
-要创建基本连接ID，请在提供您的[!DNL Blob]身份验证凭据作为请求参数的一部分时，向`/connections`端点发出POST请求。
+* **帐户密钥身份验证**：使用存储帐户的访问密钥进行身份验证并连接到您的[!DNL Azure Blob Storage]帐户。
+* **共享访问签名(SAS)**：使用SAS URI为您的[!DNL Azure Blob Storage]帐户中的资源提供委派的、有时间限制的访问。
+* **基于服务主体的身份验证**：使用Azure Active Directory (AAD)服务主体（客户端ID和密码）对您的Azure Blob存储帐户进行安全身份验证。
 
 **API格式**
 
-```http
+```https
 POST /connections
 ```
 
-**请求**
+要创建基本连接ID，请向`/connections`端点发出POST请求，并提供您的身份验证凭据作为请求参数的一部分。
 
 >[!BEGINTABS]
 
->[!TAB 连接字符串]
+>[!TAB 帐户密钥身份验证]
 
-以下请求使用基于连接字符串的身份验证为[!DNL Blob]创建基本连接：
-
-+++请求
+若要使用帐户密钥身份验证，请提供您的`connectionString`、`container`和`folderPath`的值。
 
 ```shell
 curl -X POST \
@@ -91,48 +69,33 @@ curl -X POST \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
-      "name": "Azure Blob connection using connectionString",
-      "description": "Azure Blob connection using connectionString",
-      "auth": {
-          "specName": "ConnectionString",
-          "params": {
-              "connectionString": "DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}",
-              "container": "acme-blob-container",
-              "folderPath": "/acme/customers/salesData"
-          }
-      },
-      "connectionSpec": {
-          "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
-          "version": "1.0"
+    "name": "Azure Blob Storage connection using connectingString",
+    "description": "Azure Blob Storage connection using connectionString",
+    "auth": {
+      "specName": "ConnectionString",
+      "params": {
+        "connectionString": "DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}",
+        "container": "acme-blob-container",
+        "folderPath": "/acme/customers/salesData"
       }
+    },
+    "connectionSpec": {
+      "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
+      "version": "1.0"
+    }
   }'
 ```
 
-| 属性 | 描述 |
-| -------- | ----------- |
-| `auth.params.connectionString` | 访问Blob存储中的数据所需的连接字符串。 Blob连接字符串模式为： `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`。 |
-| `connectionSpec.id` | Blob存储连接规范ID为： `4c10e202-c428-4796-9208-5f1f5732b1cf` |
+| 参数 | 描述 |
+| --- | --- |
+| `connectionString` | [!DNL Azure Blob Storage]帐户的连接字符串。 连接字符串模式为： `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY};EndpointSuffix=core.windows.net`。 |
+| `container` | 存储数据文件的[!DNL Azure Blob Storage]容器的名称。 |
+| `folderPath` | 指定容器中文件所在的路径。 |
+| `connectionSpec.id` | [!DNL Azure Blob Storage]源的连接规范ID。 此ID被固定为： `4c10e202-c428-4796-9208-5f1f5732b1cf`。 |
 
-+++
+>[!TAB 共享访问签名]
 
-+++响应
-
-成功的响应返回新创建的基本连接的详细信息，包括其唯一标识符(`id`)。 在下一步创建源连接时需要此ID。
-
-```json
-{
-    "id": "4cb0c374-d3bb-4557-b139-5712880adc55",
-    "etag": "\"1700c57b-0000-0200-0000-5e3b3f440000\""
-}
-```
-
-+++
-
->[!TAB SAS URI身份验证]
-
-若要使用共享访问签名URI创建[!DNL Blob]连接，请在为[!DNL Blob] `sasUri`提供值的同时向[!DNL Flow Service] API发出POST请求。
-
-+++请求
+要使用共享访问签名，请为您的`sasUri`、`container`和`folderPath`提供值。
 
 ```shell
 curl -X POST \
@@ -143,45 +106,88 @@ curl -X POST \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
-      "name": "Azure Blob source connection using SAS URI",
-      "description": "Azure Blob source connection using SAS URI",
-      "auth": {
-          "specName": "SAS URI Authentication",
-          "params": {
-              "sasUri": "https://{ACCOUNT_NAME}.blob.core.windows.net/?sv={STORAGE_VERSION}&st={START_TIME}&se={EXPIRE_TIME}&sr={RESOURCE}&sp={PERMISSIONS}>&sip=<{IP_RANGE}>&spr={PROTOCOL}&sig={SIGNATURE}>",
-              "container": "acme-blob-container",
-              "folderPath": "/acme/customers/salesData"
-          }
-      },
-      "connectionSpec": {
-          "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
-          "version": "1.0"
+    "name": "Azure Blob Storage source connection using SAS URI",
+    "description": "Azure Blob Storage source connection using SAS URI",
+    "auth": {
+      "specName": "SAS URI Authentication",
+      "params": {
+        "sasUri": "https://{ACCOUNT_NAME}.blob.core.windows.net/?sv={STORAGE_VERSION}&st={START_TIME}&se={EXPIRE_TIME}&sr={RESOURCE}&sp={PERMISSIONS}>&sip=<{IP_RANGE}>&spr={PROTOCOL}&sig={SIGNATURE}>",
+        "container": "acme-blob-container",
+        "folderPath": "/acme/customers/salesData"
       }
+    },
+    "connectionSpec": {
+      "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
+      "version": "1.0"
+    }
   }'
 ```
 
-| 属性 | 描述 |
-| -------- | ----------- |
-| `auth.params.connectionString` | 访问[!DNL Blob]存储中的数据所需的SAS URI。 [!DNL Blob] SAS URI模式为： `https://{ACCOUNT_NAME}.blob.core.windows.net/?sv=<storage version>&st={START_TIME}&se={EXPIRE_TIME}&sr={RESOURCE}&sp={PERMISSIONS}>&sip=<{IP_RANGE}>&spr={PROTOCOL}&sig={SIGNATURE}>`。 |
-| `connectionSpec.id` | [!DNL Blob]存储连接规范ID为： `4c10e202-c428-4796-9208-5f1f5732b1cf` |
+| 参数 | 描述 |
+| --- | --- |
+| `sasUri` | 共享访问签名URI，您可以将其用作连接帐户的替代身份验证类型。 SAS URI模式为： `https://{ACCOUNT_NAME}.blob.core.windows.net/?sv={STORAGE_VERSION}&st={START_TIME}&se={EXPIRE_TIME}&sr={RESOURCE}&sp={PERMISSIONS}>&sip=<{IP_RANGE}>&spr={PROTOCOL}&sig={SIGNATURE}`。 |
+| `container` | 存储数据文件的[!DNL Azure Blob Storage]容器的名称。 |
+| `folderPath` | 指定容器中文件所在的路径。 |
+| `connectionSpec.id` | [!DNL Azure Blob Storage]源的连接规范ID。 此ID被固定为： `4c10e202-c428-4796-9208-5f1f5732b1cf`。 |
 
-+++
+>[!TAB 基于服务主体的身份验证]
 
-+++响应
+要通过基于服务主体的身份验证进行连接，请提供以下各项的值： `serviceEndpoint`、`servicePrincipalId`、`servicePrincipalKey`、`accountKind`、`tenant`、`container`和`folderPath`。
 
-成功的响应返回新创建的基本连接的详细信息，包括其唯一标识符(`id`)。 在下一步创建源连接时需要此ID。
-
-```json
-{
-    "id": "4cb0c374-d3bb-4557-b139-5712880adc55",
-    "etag": "\"1700c57b-0000-0200-0000-5e3b3f440000\""
-}
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "Azure Blob Storage source connection using service principal based authentication",
+    "description": "Azure Blob Storage source connection using service principal based authentication",
+    "auth": {
+      "specName": "Service Principal Based Authentication",
+      "params": {
+        "serviceEndpoint": "{SERVICE_ENDPOINT}",
+        "servicePrincipalId": "{SERVICE_PRINCIPAL_ID}",
+        "servicePrincipalKey": "{SERVICE_PRINCIPAL_KEY}",
+        "accountKind": "{ACCOUNT_KIND}",
+        "tenant": "{TENANT}",
+        "container": "acme-blob-container",
+        "folderPath": "/acme/customers/salesData"
+      }
+    },
+    "connectionSpec": {
+      "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
+      "version": "1.0"
+    }
+  }'
 ```
 
-+++
+| 参数 | 描述 |
+| --- | --- |
+| `serviceEndpoint` | [!DNL Azure Blob Storage]帐户的终结点URL。 通常采用以下格式： `https://{ACCOUNT_NAME}.blob.core.windows.net`。 |
+| `servicePrincipalId` | 用于身份验证的Azure Active Directory (AAD)服务主体的客户端/应用程序ID。 |
+| `servicePrincipalKey` | 与Azure服务主体关联的客户端密钥或密码。 |
+| `accountKind` | [!DNL Azure Blob Storage]帐户的类型。 通用值包括`StorageV2`、`BlobStorage`或`Storage`。 |
+| `tenant` | 注册服务主体的Azure Active Directory (AAD)租户ID。 |
+| `container` | 存储数据文件的[!DNL Azure Blob Storage]容器的名称。 |
+| `folderPath` | 指定容器中文件所在的路径。 |
+| `connectionSpec.id` | [!DNL Azure Blob Storage]源的连接规范ID。 此ID被固定为： `4c10e202-c428-4796-9208-5f1f5732b1cf`。 |
 
 >[!ENDTABS]
 
+成功的响应返回新创建的基本连接的详细信息，包括其唯一标识符(`id`)。 在下一步创建源连接时需要此ID。
+
+```json
+{
+    "id": "4cb0c374-d3bb-4557-b139-5712880adc55",
+    "etag": "\"1700c57b-0000-0200-0000-5e3b3f440000\""
+}
+```
+
+
+
 ## 后续步骤
 
-按照本教程，您已使用API创建了[!DNL Blob]连接，并获取了唯一ID作为响应正文的一部分。 您可以使用此连接ID以使用流服务API[&#128279;](../../explore/cloud-storage.md)来浏览云存储。
+按照本教程，您已使用API创建了[!DNL Blob]连接，并获取了唯一ID作为响应正文的一部分。 您可以使用此连接ID以使用流服务API[来](../../explore/cloud-storage.md)浏览云存储。
