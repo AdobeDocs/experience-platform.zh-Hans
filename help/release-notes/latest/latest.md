@@ -2,7 +2,7 @@
 title: Adobe Experience Platform 发行说明（2025 年 8 月）
 description: Adobe Experience Platform 的 2025 年 8 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 8b67b2b33b37d631f73d9ea13786cae0e0db59ce
+source-git-commit: af669d58ac4031354e477954a8a733cf0bd7a64b
 workflow-type: tm+mt
 source-wordcount: '1436'
 ht-degree: 38%
@@ -41,7 +41,7 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 **新增功能**
 
 | 功能 | 描述 |
-| ------- | ----------- |
+| --- | --- |
 | 流吞吐量容量警报 | 三个新警报允许用户订阅和配置警报，以主动管理和监控流吞吐量容量的性能。 新警报包括流吞吐量达到80%、90%或超出容量限制时的警报。 有关详细信息，请阅读[容量警报规则](../../observability/alerts/rules.md#capacity)指南。 |
 
 有关警报的更多信息，请阅读[[!DNL Observability Insights] 概述](../../observability/home.md)。
