@@ -3,10 +3,10 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: d942093bffc680501384f7c8193f4cdddc1cef33
+source-git-commit: 52571689c97fdc2ed052b53537e736f03d666ad5
 workflow-type: tm+mt
-source-wordcount: '5188'
-ht-degree: 11%
+source-wordcount: '5174'
+ht-degree: 10%
 
 ---
 
@@ -330,7 +330,7 @@ ht-degree: 11%
 >[!NOTE]
 >
 >当使用“晚于”时间限制时，后一个事件发生的时间可能超过在时间限制内列出的时间量。 >
->&#x200B;>例如，如果您有一个页面查看事件和一个签出事件，并在这两个事件之间放置了“1小时后”时间限制，则一个在页面查看事件发生2小时后具有签出事件的区段定义符合条件。
+>>例如，如果您有一个页面查看事件和一个签出事件，并在这两个事件之间放置了“1小时后”时间限制，则一个在页面查看事件发生2小时后具有签出事件的区段定义符合条件。
 >
 >此外，这两个时间约束可以相互协调使用。
 >
@@ -375,28 +375,28 @@ ht-degree: 11%
 
 ![合并策略选择器已突出显示。 这允许您选择为区段定义选择的合并策略。](../images/ui/segment-builder/merge-policy-selector.png)
 
-## 区段定义属性 {#segment-properties}
+## 受众属性 {#audience-properties}
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_segmentproperties"
->title="区段定义属性"
->abstract="区段定义属性部分显示生成的区段定义的大小估计值，并显示合格轮廓的数量与轮廓总数的比较情况。这允许您在生成受众本身之前根据需要调整区段定义。"
+>title="受众属性"
+>abstract="受众属性部分估算生成的受众规模，显示符合条件的配置文件数与配置文件总数的对比。 这样，您就可以在构建受众本身之前，根据需要调整受众。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="刷新估计值"
 >abstract="您可以刷新区段定义的估计值，以立即预览符合建议的区段定义资格的轮廓数目。受众估计值是通过使用当天的示例数据的示例大小生成的。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=zh-Hans#estimate-and-preview-an-audience" text="估计和预览受众"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="估计和预览受众"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_qualifiedprofiles"
 >title="符合条件的轮廓"
->abstract="符合条件的轮廓指的是实际满足区段定义规则的轮廓数量。该数字每 24 小时更新一次，更新时间为区段评估任务运行完成之后。"
+>abstract="符合条件的配置文件指示符合受众规则的实际配置文件数。 该数字每 24 小时更新一次，更新时间为区段评估任务运行完成之后。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_estimatedprofiles"
 >title="预估轮廓数"
->abstract="预估轮廓数指的是根据抽样任务得出的近似轮廓数量，这些轮廓可能符合区段定义的规则。"
+>abstract="预计配置文件数表示根据示例作业估计符合受众规则的大致配置文件数。"
 
 在构建区段定义时，工作区右侧的&#x200B;**[!UICONTROL 受众属性]**&#x200B;部分会显示所生成区段定义的大小估计值，这样您可以在构建受众本身之前根据需要调整区段定义。
 
@@ -404,22 +404,22 @@ ht-degree: 11%
 
 合格配置文件的时间戳表示最新的&#x200B;**批次**&#x200B;区段评估作业，对于使用流式或边缘分段评估的区段定义，该时间戳显示为&#x200B;**not**。 如果编辑区段定义，则在运行下一个区段评估作业之前，符合条件的配置文件数将保持不变。
 
-根据&#x200B;**[!UICONTROL 示例作业]**，**预计的配置文件**&#x200B;表示大约&#x200B;**个**&#x200B;配置文件数。 这意味着将样本数据投射到更大的轮廓集上，所得出的预估数量可能会与实际符合条件的轮廓数量有所差异。估计的配置文件样本具有95%的置信区间。
+根据&#x200B;**[!UICONTROL 示例作业]**，**预计的配置文件**&#x200B;表示大约&#x200B;**个配置文件范围**。 这意味着将样本数据投射到更大的轮廓集上，所得出的预估数量可能会与实际符合条件的轮廓数量有所差异。估计的配置文件样本具有95%的置信区间。
 
 在以下两种情况下会更新此数字：
 
-1. 客户数据变化超过5%，或者上一个示例作业超过七天。
+1. 客户数据发生大于3%的更改或上一个示例作业早于三天。
 2. 已修改或删除受众的规则。
 
-选择信息泡可提供错误阈值和最近示例作业时间。
+选择信息气泡可显示上次运行示例作业的日期和时间。
 
 ![合格的用户档案和预计的用户档案在受众属性部分突出显示。](../images/ui/segment-builder/audience-estimates.png)
 
-在&#x200B;**[!UICONTROL 受众属性]**&#x200B;部分中，您还可以指定有关区段定义的重要信息，包括其名称、描述和评估类型。 区段定义名称用于在组织定义的区段定义中标识您的区段定义，因此应具有描述性、简洁性和唯一性。
+在&#x200B;**[!UICONTROL 受众属性]**&#x200B;部分中，您还可以指定有关受众的重要信息，包括其名称、描述和评估类型。 名称用于在组织定义的区段定义中标识您的区段定义，因此应具有描述性、简洁性和唯一性。
 
-在继续构建区段定义时，您可以通过选择&#x200B;**[!UICONTROL 查看配置文件]**&#x200B;来查看受众的分页预览。
+在继续构建受众时，您可以通过选择&#x200B;**[!UICONTROL 查看配置文件]**&#x200B;来查看受众的分页预览。
 
-![区段定义属性部分突出显示。 区段定义属性包括但不限于区段定义名称、描述和评估方法。](../images/ui/segment-builder/segment-properties.png)
+![受众属性部分突出显示。 受众属性包括但不限于：名称、描述和评估方法。](../images/ui/segment-builder/segment-properties.png)
 
 >[!NOTE]
 >
@@ -453,4 +453,4 @@ ht-degree: 11%
 - 为计划分段启用所有区段定义。
 - 为流式分段启用指定的区段定义。
 
-要了解有关[!DNL Segmentation Service]的更多信息，请继续阅读文档并通过观看相关视频补充您的学习。 若要了解有关[!DNL Segmentation Service] UI其他部分的更多信息，请阅读[[!DNL Segmentation Service] 用户指南](./overview.md)
+要了解有关[!DNL Segmentation Service]的更多信息，请继续阅读文档并通过观看相关视频补充您的学习。 若要了解有关[!DNL Segmentation Service] UI其他部分的更多信息，请阅读[[!DNL Segmentation Service] 用户指南](./overview.md)。
