@@ -79,7 +79,7 @@ ht-degree: 0%
 > ![浏览选项卡](../assets/ui/workspace/browse-tab.png)
 > 
 > * 选择`...`名称[!UICONTROL 列中的省略号(])，然后使用![激活受众控件](/help/images/icons/data-add.png) **[!UICONTROL 激活受众]**&#x200B;控件将受众或数据集导出到该目标。
-> * 选择`...`名称[!UICONTROL 列中的省略号(])，并使用![编辑目标控件](/help/images/icons/edit.png)**[!UICONTROL 编辑目标&#x200B;]**控件编辑现有目标连接。 有关详细信息，请阅读有关[编辑目标](/help/destinations/ui/edit-destination.md)的教程。
+> * 选择`...`名称[!UICONTROL 列中的省略号(])，并使用![编辑目标控件](/help/images/icons/edit.png)**[!UICONTROL 编辑目标&#x200B;]**&#x200B;控件编辑现有目标连接。 有关详细信息，请阅读有关[编辑目标](/help/destinations/ui/edit-destination.md)的教程。
 > * 选择`...`名称[!UICONTROL 列中的省略号(])并使用![编辑营销操作控件](/help/images/icons/edit-marketing-actions.svg) **[!UICONTROL 编辑营销操作]**&#x200B;控件将选定目标的营销操作[更改为](/help/destinations/ui/edit-activation.md#edit-marketing-actions)。
 > * 选择`...`Name[!UICONTROL 列中的省略号(])并使用![Delete控件](/help/images/icons/delete.png) **[!UICONTROL Delete]**&#x200B;控件来[删除](delete-destinations.md)到目标的现有连接。
 > * 选择`...`Name[!UICONTROL 列中的省略号(])并使用监视控件中的![视图](/help/images/icons/monitoring.png) **[!UICONTROL 监视控件中的视图]**&#x200B;在[监视仪表板](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard)中查看此目标的激活信息。
@@ -162,7 +162,7 @@ ht-degree: 0%
 标记可帮助您组织和分类目标数据流，以便于管理。 您可以在单个数据流中添加和删除标记，以根据业务需求对它们进行分组。
 
 若要向数据流添加标记，请选择`...`名称&#x200B;**[!UICONTROL 列中的省略号(]**)，然后从上下文菜单中选择&#x200B;**[!UICONTROL 管理标记]**。
-在**[!UICONTROL 标记]**&#x200B;字段中键入新标记的名称，然后选择&#x200B;**[!UICONTROL 保存]**&#x200B;以应用更改。
+在&#x200B;**[!UICONTROL 标记]**&#x200B;字段中键入新标记的名称，然后选择&#x200B;**[!UICONTROL 保存]**&#x200B;以应用更改。
 
 ![显示标记选择和创建选项的“管理标记”对话框](../assets/ui/workspace/tags.gif)
 
@@ -183,9 +183,9 @@ ht-degree: 0%
 
 >[!TIP]
 >
-> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![激活控件](/help/images/icons/data-add.png)**[!UICONTROL 激活&#x200B;]**/**[!UICONTROL &#x200B;激活受众&#x200B;]**/**[!UICONTROL &#x200B;导出数据集&#x200B;]**控件将受众或数据集导出到该目标。
-> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![编辑详细信息控件](/help/images/icons/edit.png)**[!UICONTROL 编辑详细信息&#x200B;]**控件来[更新](update-accounts.md)现有目标帐户的详细信息。
-> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![删除控件](/help/images/icons/delete.png)**[!UICONTROL 删除&#x200B;]**控件来[删除](delete-destination-account.md)现有目标帐户。
+> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![激活控件](/help/images/icons/data-add.png)**[!UICONTROL 激活&#x200B;]**/**[!UICONTROL &#x200B;激活受众&#x200B;]**/**[!UICONTROL &#x200B;导出数据集&#x200B;]**&#x200B;控件将受众或数据集导出到该目标。
+> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![编辑详细信息控件](/help/images/icons/edit.png)**[!UICONTROL 编辑详细信息&#x200B;]**&#x200B;控件来[更新](update-accounts.md)现有目标帐户的详细信息。
+> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![删除控件](/help/images/icons/delete.png)**[!UICONTROL 删除&#x200B;]**&#x200B;控件来[删除](delete-destination-account.md)现有目标帐户。
 
 ![帐户选项卡](../assets/ui/workspace/accounts-tab.png)
 
