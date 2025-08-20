@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2025 年 8 月）
 description: Adobe Experience Platform 的 2025 年 8 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: af669d58ac4031354e477954a8a733cf0bd7a64b
+source-git-commit: 6672ed3fd4ee4f48952dcf5ffb6561de026fe55b
 workflow-type: tm+mt
-source-wordcount: '1436'
-ht-degree: 38%
+source-wordcount: '1448'
+ht-degree: 37%
 
 ---
 
@@ -108,7 +108,8 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 
 | 功能 | 描述 |
 | --- | --- |
-| 增强了目标的搜索、筛选和标记功能 | 通过跨[浏览](../../destinations/ui/destinations-workspace.md#browse)和[帐户](../../destinations/ui/destinations-workspace.md#accounts)选项卡的增强搜索、筛选和标记功能，改进您的目标管理工作流。 您现在可以按名称搜索特定数据流和帐户，按各种条件（包括目标平台、状态和日期）进行筛选，以及创建自定义标记以组织目标。 列排序还可用于关键字段，如上次数据流运行时，这使识别和管理目标连接更容易。 |
+| 增强了目标的搜索、筛选和标记功能 | 通过跨[浏览](../../destinations/ui/destinations-workspace.md#browse)和[帐户](../../destinations/ui/destinations-workspace.md#accounts)选项卡的增强搜索、筛选和标记功能，改进您的目标管理工作流。 <br>您现在可以按名称搜索特定数据流和帐户，按包括目标平台、状态和日期在内的各种条件进行筛选，以及创建自定义标记来组织目标。 列排序还可用于关键字段，如上次数据流运行时，这使识别和管理目标连接更容易。<br> ![在“浏览”选项卡中搜索目标数据流的动画演示](../../destinations/assets/ui/workspace/search.gif) |
+
 
 ## Experience Data Model (XDM) {#xdm}
 
