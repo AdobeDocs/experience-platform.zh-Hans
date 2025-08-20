@@ -361,7 +361,7 @@ Use the arrows to expand objects to view the full list of fields that have been 
 
 以下视频旨在支持您了解沙盒工具，并概述如何创建新包、发布包和导入包。
 
->[!VIDEO](https://video.tv.adobe.com/v/3424763/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3446099/?learn=on&captions=chi_hans)
 
 ## 后续步骤
 
