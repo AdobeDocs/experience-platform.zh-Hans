@@ -6,9 +6,9 @@ user-guide-description: 了解如何部署和管理分析、营销和广告标�
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: f038927d6a19db5e0187ccefd76d9ecc9df91b6a
+source-git-commit: 24ff17af89bc882f08ec0f331ebae53b61f35d78
 workflow-type: tm+mt
-source-wordcount: '785'
+source-wordcount: '787'
 ht-degree: 36%
 
 ---
@@ -92,6 +92,7 @@ ht-degree: 36%
          * [发行说明](./extensions/client/client-data-layer/release-notes.md)
       * Adobe Content Analytics {#content-analytics}
          * [概述](./extensions/client/content-analytics/overview.md)
+         * [发行说明](./extensions/client/content-analytics/release-notes.md)
       * Adobe ContextHub {#contexthub}
          * [概述](./extensions/client/contexthub/overview.md)
       * [Adobe Experience Manager Forms](https://exchange.adobe.com/apps/ec/107493)
@@ -202,7 +203,7 @@ ht-degree: 36%
       * [SDI工具包](https://exchange.adobe.com/apps/ec/101460)
       * [会话摄像头](https://exchange.adobe.com/apps/ec/100517)
       * [存储扳手](https://exchange.adobe.com/apps/ec/102990)
-      * [按循环水平线的标记](https://exchange.adobe.com/apps/ec/106092)
+      * 按循环水平线的[标记](https://exchange.adobe.com/apps/ec/106092)
       * [Tealium收集](https://exchange.adobe.com/apps/ec/104217)
       * [Tealium数据扩充](https://exchange.adobe.com/apps/ec/104217)
       * [TMMData基础平台](https://exchange.adobe.com/apps/ec/100148)
@@ -231,7 +232,7 @@ ht-degree: 36%
          * [概述](./extensions/server/aws/overview.md)
       * [!DNL Braze] {#braze}
          * [概述](./extensions/server/braze/overview.md)
-      * [适用于Google Analytics的Cloud Connector](https://exchange.adobe.com/apps/ec/106542)
+      * 适用于Google Analytics的[Cloud Connector](https://exchange.adobe.com/apps/ec/106542)
       * 核心 {#core}
          * [概述](./extensions/server/core/overview.md)
       * [Epsilon事件API](https://exchange.adobe.com/apps/ec/109127)
