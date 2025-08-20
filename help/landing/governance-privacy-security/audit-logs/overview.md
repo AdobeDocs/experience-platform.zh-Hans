@@ -4,10 +4,10 @@ description: 了解如何通过审核日志查看谁在 Adobe Experience Platfor
 role: Admin,Developer
 feature: Audits
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: d6575e44339ea41740fa18af07ce5b893f331488
 workflow-type: tm+mt
-source-wordcount: '1476'
-ht-degree: 32%
+source-wordcount: '1624'
+ht-degree: 29%
 
 ---
 
@@ -31,6 +31,8 @@ ht-degree: 32%
 为了提高系统中执行的活动的透明度和可见性，Adobe Experience Platform允许您以“审核日志”的形式审核各种服务和功能的用户活动。 这些日志形成审核记录，可以帮助对Experience Platform问题进行故障诊断，并帮助您的企业有效地遵守公司数据管理政策和法规要求。
 
 从基本意义上说，审核日志可告知&#x200B;**谁**&#x200B;执行了&#x200B;**什么**&#x200B;操作，以及&#x200B;**何时**。 日志中记录的每个操作都包含元数据，这些元数据指示操作类型、日期和时间、执行操作的用户的电子邮件ID以及与操作类型相关的其他属性。
+
+当用户执行操作时，会记录两种类型的审核事件。 核心事件捕获操作[!UICONTROL 允许]或[!UICONTROL 拒绝]的授权结果，而增强事件捕获执行结果[!UICONTROL 成功]或[!UICONTROL 失败]。 多个增强事件可以链接到同一个核心事件。 例如，在激活目标时，核心事件记录[!UICONTROL 目标更新]操作的授权，而增强事件记录多个[!UICONTROL 区段激活]操作。
 
 >[!NOTE]
 >
@@ -89,7 +91,7 @@ ht-degree: 32%
 
 审核日志会保留365天，之后将从系统中将其删除。 如果您需要的数据超过365天，则应定期导出日志以满足内部策略要求。
 
-您请求审计日志的方法会更改允许的时间段以及您将有权访问的记录数。 [导出日志](#export-audit-logs)允许您返回365天（以90天为间隔），最多返回10,000条记录，其中由于Experience Platform中的[活动日志UI](#filter-audit-logs)显示过去90天，最多返回1000条记录。
+您请求审计日志的方法会更改允许的时间段以及您将有权访问的记录数。 [导出日志](#export-audit-logs)允许您返回365天（以90天为间隔）至最多10,000个审核日志（核心或增强型），其中Experience Platform中的[活动日志UI](#filter-audit-logs)显示过去90天至最多1000个核心事件，每个事件都具有相应的增强型事件。
 
 从列表中选择一个事件以在右边栏中查看其详细信息。
 
@@ -101,7 +103,7 @@ ht-degree: 32%
 
 >[!NOTE]
 >
->Experience Platform UI仅显示过去90天（最多1000条记录），而不管应用了什么过滤器。 如果您需要超过该期限的日志（最多365天），则需要[导出审核日志](#export-audit-logs)。
+>Experience Platform UI仅显示过去90天的最多1000个核心事件，每个核心事件具有相应的增强事件，而不管应用了什么过滤器。 如果您需要超过该期限的日志（最多365天），则需要[导出审核日志](#export-audit-logs)。
 
 ![已突出显示筛选活动日志的审核仪表板。](../../images/audit-logs/filters.png)
 
@@ -112,7 +114,7 @@ ht-degree: 32%
 | [!UICONTROL 类别] | 使用下拉菜单按[类别](#category)筛选显示的结果。 |
 | [!UICONTROL 操作] | 按操作筛选。 每项服务的可用操作可在上面的资源表中查看。 |
 | [!UICONTROL 用户] | 输入完整的用户ID（例如，`johndoe@acme.com`）以按用户筛选。 |
-| [!UICONTROL 状态] | 按由于缺少[访问控制](../../../access-control/home.md)权限而允许（完成）还是拒绝操作进行筛选。 |
+| [!UICONTROL 状态] | 按结果筛选审核事件：成功、失败、允许或拒绝，因为缺少[访问控制](../../../access-control/home.md)权限。 对于已执行的操作，核心事件显示[!UICONTROL 允许]或[!UICONTROL 拒绝]。 当核心事件为[!UICONTROL 允许]时，它可能已附加了一个或多个显示&#x200B;**[!UICONTROL 成功]**&#x200B;或&#x200B;**[!UICONTROL 失败]**&#x200B;的增强事件。 例如，成功的操作在核心事件上显示[!UICONTROL 允许]，在附加的增强事件上显示[!UICONTROL 成功]。 |
 | [!UICONTROL 日期] | 选择开始日期和/或结束日期，以定义筛选结果的日期范围。 可导出具有90天回顾期的数据（例如，2021-12-15到2022-03-15）。 这可能因事件类型而异。 |
 
 要移除过滤器，请选择相关过滤器的药丸图标上的“X”，或选择&#x200B;**[!UICONTROL 全部清除]**&#x200B;以移除所有过滤器。
@@ -137,7 +139,7 @@ ht-degree: 32%
 
 >[!NOTE]
 >
->可以每90天请求一次日志，最多可请求过去365天内的日志。 但是，单次导出期间最多可返回10,000个日志。
+>可以每90天请求一次日志，最多可请求过去365天内的日志。 但是，在单个导出期间最多可返回10,000个审核事件（核心或增强型）的日志。
 
 ![突出显示了[!UICONTROL 下载日志]的审核仪表板。](../../images/audit-logs/download.png)
 
@@ -167,7 +169,7 @@ ht-degree: 32%
 
 ## 管理Adobe Admin Console的审核日志
 
-要了解如何管理Adobe Admin Console中的活动的审核日志，请参阅以下[文档](https://helpx.adobe.com/cn/enterprise/using/audit-logs.html)。
+要了解如何管理Adobe Admin Console中的活动的审核日志，请参阅以下[文档](https://helpx.adobe.com/enterprise/using/audit-logs.html)。
 
 ## 后续步骤和其他资源
 
@@ -175,4 +177,4 @@ ht-degree: 32%
 
 要加深您对Experience Platform中审核日志的了解，请观看以下视频：
 
->[!VIDEO](https://video.tv.adobe.com/v/344644?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/341450?quality=12&learn=on)

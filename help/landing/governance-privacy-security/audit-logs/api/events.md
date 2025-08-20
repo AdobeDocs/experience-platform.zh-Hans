@@ -4,7 +4,7 @@ description: 了解如何使用审核查询API在Experience Platform中检索审
 role: Developer
 feature: Audits, API
 exl-id: c365b6d8-0432-41a5-9a07-44a995f69b7d
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: dec895e3ea625fb86d1891bad713185d39c47c81
 workflow-type: tm+mt
 source-wordcount: '477'
 ht-degree: 1%
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 # 审核事件端点
 
-审核日志用于提供各种服务和功能的用户活动的详细信息。 日志中记录的每个操作都包含元数据，这些元数据指示操作类型、日期和时间、执行操作的用户的电子邮件ID以及与操作类型相关的其他属性。 [!DNL Audit Query] API中的`/audit/events`端点允许您以编程方式检索[!DNL Experience Platform]中组织活动的事件数据。
+审核日志用于提供各种服务和功能的用户活动的详细信息。 日志中记录的每个操作都包含元数据，这些元数据指示操作类型、日期和时间、执行操作的用户的电子邮件ID以及与操作类型相关的其他属性。 `/audit/events` API中的[!DNL Audit Query]端点允许您以编程方式检索[!DNL Experience Platform]中组织活动的事件数据。
 
 ## 快速入门
 
@@ -55,98 +55,71 @@ curl -X POST \
 
 ```json
 {
-   "_embedded": {
-     "customerAuditLogList": [
-       {
-         "userEmail": "{USER_ID}",
-         "userIpAddresses": [ ],
-         "eventType": "Core",
-         "id": "32b72208-3035-4bc6-b434-39e34401a864",
-         "version": "1.0",
-         "imsOrgId": "{ORGANIZATION_ID}",
-         "sandboxName": "prod",
-         "region": "VA7",
-         "requestId": "5NphpgUQdQnjTWOcS9DSMs2wD1EUMlYG",
-         "authId": "96715f98-d100-4575-8491-ebbcea654eb9",
-         "permissionResource": "Sandbox",
-         "permissionType": "RESET",
-         "assetType": "Sandbox",
-         "assetId": "prod",
-         "assetName": "prod",
-         "action": "Reset",
-         "status": "Allow",
-         "failureCode": "",
-         "timestamp": "2021-08-04T21:58:09.745+0000"
-       },
-       {
-         "userEmail": "{USER_ID}",
-         "userIpAddresses": [ ],
-         "eventType": "Core",
-         "id": "a178736a-8fa1-47da-bac5-b0d9e741e414",
-         "version": "1.0",
-         "imsOrgId": "{ORGANIZATION_ID}",
-         "sandboxName": "prod",
-         "region": "VA7",
-         "requestId": "7AlGIAhWvaEzYWHLzvuf26AAFAkqSyKg",
-         "authId": "60fc1077-4aef-4e1f-a5ff-f64183e060f4",
-         "permissionResource": "Sandbox",
-         "permissionType": "RESET",
-         "assetType": "Sandbox",
-         "assetId": "prod",
-         "assetName": "prod",
-         "action": "Reset",
-         "status": "Allow",
-         "failureCode": "",
-         "timestamp": "2021-08-04T21:28:00.301+0000"
-       },
-       {
-         "userEmail": "{USER_ID}",
-         "userIpAddresses": [ ],
-         "eventType": "Core",
-         "id": "ccfe8c77-9b93-481d-a561-0b2edf3b77dc",
-         "version": "1.0",
-         "imsOrgId": "{ORGANIZATION_ID}",
-         "sandboxName": "prod",
-         "region": "VA7",
-         "requestId": "hArqS4CAa8wfRPnKuxV4yaA82atxwzYu",
-         "authId": "80b7d887-9338-4cd5-9d79-2483b03f0160",
-         "permissionResource": "Sandbox",
-         "permissionType": "RESET",
-         "assetType": "Sandbox",
-         "assetId": "prod",
-         "assetName": "prod",
-         "action": "Reset",
-         "status": "Allow",
-         "failureCode": "",
-         "timestamp": "2021-08-04T20:58:07.750+0000"
-       }
-     ]    
-   },
-   "_links": {
-     "self": {
-       "href": "https://platform.adobe.io/data/foundation/audit/events?limit=10&start=0&property=type%253D%253Dcore"
-     },
-     "next": {
-       "href": "https://platform.adobe.io/data/foundation/audit/events?queryId=cXVlcnlJZD0xYjA4MDM4MV81ZWNkXzRjNTZfYTM2N18zYWExOWI5YzNhNTlfMTYyODExNDY5MTg1NSZ0b3RhbEVsZW1lbnRzPTI2&start=10&limit=10"
-     },
-     "page": {
-       "href": "https://platform.adobe.io/data/foundation/audit/events?queryId=cXVlcnlJZD0xYjA4MDM4MV81ZWNkXzRjNTZfYTM2N18zYWExOWI5YzNhNTlfMTYyODExNDY5MTg1NSZ0b3RhbEVsZW1lbnRzPTI2&limit=10{&start}",
-       "templated": true
-     }
+  "_embedded": {
+    "events": [
+      {
+        "id": "6ecc125d-da03-4882-a944-88c707ddc3f7",
+        "requestId": "5YGdpTX5PvRrdqCfrCT8p8lWphZPzxl8",
+        "permissionResource": "Dataset",
+        "permissionType": "WRITE",
+        "assetType": "Dataset",
+        "action": "Create",
+        "status": "Allow",
+        "failureCode": "",
+        "timestamp": "2025-06-24T16:50:28.318+0000",
+        "version": "1.0",
+        "imsOrgId": "{ORGANIZATION_ID}",
+        "region": "VA7",
+        "authId": "e6b46821-e2b4-4729-952f-2e4afd713b31",
+        "assetId": "685ad754fb1abe2b263df4b3",
+        "assetName": "my-dataset",
+        "sandboxName": "prod",
+        "sandboxId": "{SANDBOX_ID}",
+        "userEmail": "{USER_EMAIL}",
+        "userIpAddresses": [
+          "130.*.*.*",
+          "10.*.*.*"
+        ],
+        "enhancedEvents": [
+          {
+            "id": "0ee91e42-ac46-4f35-a01a-f74a1569c404",
+            "requestId": "5YGdpTX5PvRrdqCfrCT8p8lWphZPzxl8",
+            "permissionResource": "Dataset",
+            "permissionType": "Write",
+            "assetType": "Dataset",
+            "action": "Create",
+            "status": "Success",
+            "failureCode": "",
+            "timestamp": "2025-06-24T16:50:28.883+0000",
+            "assetId": "685ad754fb1abe2b263df4b3",
+            "assetName": "my-dataset"
+          }
+        ]
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://platform.adobe.io/data/foundation/audit/events?property=user%253D%253Ddraghici%2540adobe.com"
+    },
+    "page": {
+      "href": "https://platform.adobe.io/data/foundation/audit/events?queryId=b3JkZXJCeVJ1bGVzPSZwcm9wZXJ0eT11c2VyPT1kcmFnaGljaUBhZG9iZS5jb20mdGltZXN0YW1wSW5kZXg9MTc1MDc4MzgyODMxOCZ0b3RhbEVsZW1lbnRzPTE3&limit=50{&start}",
+      "templated": true
+    }
   },
   "page": {
-    "size": 10,
-    "totalElements": 3,
+    "size": 1,
+    "totalElements": 1,
     "totalPages": 1,
     "number": 1
   },
-  "queryId": "cXVlcnlJZD0xYjA4MDM4MV81ZWNkXzRjNTZfYTM2N18zYWExOWI5YzNhNTlfMTYyODExNDY5MTg1NSZ0b3RhbEVsZW1lbnRzPTI2"
+  "queryId": "b3JkZXJCeVJ1bGVzPSZwcm9wZXJ0eT11c2VyPT1kcmFnaGljaUBhZG9iZS5jb20mdGltZXN0YW1wSW5kZXg9MTc1MDc4MzgyODMxOCZ0b3RhbEVsZW1lbnRzPTE3"
 }
 ```
 
 | 属性 | 描述 |
 | --- | --- |
-| `customerAuditLogList` | 一个数组，其对象表示请求中指定的每个事件。 每个对象都包含有关过滤器配置和返回的事件数据的信息。 |
+| `events` | 一个数组，其对象表示请求中指定的每个事件。 每个对象都包含有关过滤器配置和返回的事件数据的信息。 |
 | `userEmail` | 执行事件的用户的电子邮件。 |
 | `eventType` | 事件的类型。 事件类型包括`Core`和`Enhanced`。 |
 | `imsOrgId` | 发生事件的组织的ID。 |

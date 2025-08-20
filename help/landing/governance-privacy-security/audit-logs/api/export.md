@@ -4,10 +4,10 @@ description: 了解如何使用审核查询API在Experience Platform中导出审
 role: Developer
 feature: Audits, API
 exl-id: 76c5de76-e391-4258-afd8-ddb2c8a9443f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: d6575e44339ea41740fa18af07ce5b893f331488
 workflow-type: tm+mt
-source-wordcount: '159'
-ht-degree: 3%
+source-wordcount: '168'
+ht-degree: 2%
 
 ---
 
@@ -43,4 +43,4 @@ curl -X POST \
 
 **响应**
 
-结果将生成到CSV文件中以供导出。 成功的响应返回HTTP 307，但没有响应正文。 `Location`响应标头中提供了指向导出文件的链接。
+结果将生成为CSV文件以供导出，每个条目表示核心审核事件或增强审核事件。 成功的响应返回HTTP 307，但没有响应正文。 `Location`响应标头中提供了指向导出文件的链接。
