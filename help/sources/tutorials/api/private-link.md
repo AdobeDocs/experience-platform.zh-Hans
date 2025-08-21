@@ -3,9 +3,9 @@ title: 在API中为源使用Azure专用链接
 description: 了解如何为Adobe Experience Platform源创建和使用该专用链接
 badge: Beta 版
 exl-id: 9b7fc1be-5f42-4e29-b552-0b0423a40aa1
-source-git-commit: 52365851aef0e0e0ad532ca19a8e0ddccacf7af7
+source-git-commit: 65063d3b81d7082fc7780949c6ebd2ce09461b88
 workflow-type: tm+mt
-source-wordcount: '1380'
+source-wordcount: '1657'
 ht-degree: 3%
 
 ---
@@ -398,9 +398,13 @@ curl -X GET \
 
 +++
 
-## 启用交互式创作 {#enable-interactive-authoring}
+## 启用[!DNL Interactive Authoring] {#enable-interactive-authoring}
 
-交互式创作用于探索连接或帐户以及预览数据等功能。 要启用交互式创作，请向`/privateEndpoints/interactiveAuthoring`发出POST请求，并在查询参数中将`enable`指定为运算符。
+>[!IMPORTANT]
+>
+>在创建或更新流之前，以及在创建、更新或浏览连接之前，必须启用[!DNL Interactive Authoring]。
+
+[!DNL Interactive Authoring]用于探索连接或帐户以及预览数据等功能。 要启用[!DNL Interactive Authoring]，请向`/privateEndpoints/interactiveAuthoring`发出POST请求，并在查询参数中将`enable`指定为运算符。
 
 **API格式**
 
@@ -410,11 +414,11 @@ POST /privateEndpoints/interactiveAuthoring?op=enable
 
 | 查询参数 | 描述 |
 | --- | --- |
-| `op` | 要执行的操作。 要启用交互式创作，请将`op`值设置为`enable`。 |
+| `op` | 要执行的操作。 要启用[!DNL Interactive Authoring]，请将`op`值设置为`enable`。 |
 
 **请求**
 
-以下请求启用私有端点的交互式创作，并将TTL设置为60分钟。
+以下请求为您的专用终结点启用[!DNL Interactive Authoring]，并将TTL设置为60分钟。
 
 +++选择以查看请求示例
 
@@ -433,7 +437,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `autoTerminationMinutes` | 交互式创作TTL（存留时间）（以分钟为单位）。 交互式创作用于探索连接或帐户以及预览数据等功能。 您最多可以设置120分钟的TTL。 默认TTL为60分钟。 |
+| `autoTerminationMinutes` | [!DNL Interactive Authoring] TTL （生存时间）以分钟为单位。 [!DNL Interactive Authoring]用于探索连接或帐户以及预览数据等功能。 您最多可以设置120分钟的TTL。 默认TTL为60分钟。 |
 
 +++
 
@@ -441,9 +445,9 @@ curl -X POST \
 
 成功的响应返回HTTP状态202（已接受）。
 
-## 检索交互式创作状态 {#retrieve-interactive-authoring-status}
+## 检索[!DNL Interactive Authoring]状态 {#retrieve-interactive-authoring-status}
 
-要查看专用端点的交互式创作的当前状态，请向`/privateEndpoints/interactiveAuthoring`发出GET请求。
+要查看专用终结点[!DNL Interactive Authoring]的当前状态，请向`/privateEndpoints/interactiveAuthoring`发出GET请求。
 
 **API格式**
 
@@ -453,7 +457,7 @@ GET /privateEndpoints/interactiveAuthoring
 
 **请求**
 
-以下请求检索交互式创作状态：
+以下请求检索[!DNL Interactive Authoring]的状态：
 
 +++选择以查看请求示例
 
@@ -481,7 +485,7 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `status` | 交互式创作的状态。 有效值包括： `disabled`、`enabling`、`enabled`。 |
+| `status` | [!DNL Interactive Authoring]的状态。 有效值包括： `disabled`、`enabling`、`enabled`。 |
 
 +++
 
@@ -819,3 +823,124 @@ curl -X GET \
 ```
 
 +++
+
+## 附录
+
+阅读本节以了解在API中使用[!DNL Azure]专用链接的其他信息。
+
+### 配置您的[!DNL Snowflake]帐户以连接到专用链接
+
+要将[!DNL Snowflake]源与专用链接结合使用，您必须完成以下先决条件步骤。
+
+首先，您必须在[!DNL Snowflake]中提出支持票证，并请求&#x200B;**帐户的**&#x200B;区域的[!DNL Azure]端点服务资源ID[!DNL Snowflake]。 按照以下步骤提出[!DNL Snowflake]票证：
+
+1. 导航到[[!DNL Snowflake] UI](https://app.snowflake.com)并使用您的电子邮件帐户登录。 在此步骤中，您必须确保在配置文件设置中验证您的电子邮件。
+2. 选择您的&#x200B;**用户菜单**，然后选择&#x200B;**支持**&#x200B;以访问[!DNL Snowflake]支持。
+3. 要创建支持案例，请选择&#x200B;**[!DNL + Support Case]**。 然后，填写包含相关详细信息的表单并附加任何必要的文件。
+4. 完成后，提交案例。
+
+端点资源ID的格式如下所示：
+
+```shell
+subscriptions/{SUBSCRIPTION_ID}/resourceGroups/az{REGION}-privatelink/providers/microsoft.network/privatelinkservices/sf-pvlinksvc-az{REGION}
+```
+
++++选择以查看示例
+
+```shell
+/subscriptions/4575fb04-6859-4781-8948-7f3a92dc06a3/resourceGroups/azwestus2-privatelink/providers/microsoft.network/privatelinkservices/sf-pvlinksvc-azwestus2
+```
+
++++
+
+| 参数 | 描述 | 示例 |
+| --- | --- | --- |
+| `{SUBSCRIPTION_ID}` | 标识您的[!DNL Azure]订阅的唯一ID。 | `a1b2c3d4-5678-90ab-cdef-1234567890ab` |
+| `{REGION}` | [!DNL Azure]帐户的[!DNL Snowflake]区域。 | `azwestus2` |
+
+### 检索专用链接配置详细信息
+
+要检索专用链接配置详细信息，必须在[!DNL Snowflake]中运行以下命令：
+
+```sql
+USE ROLE accountadmin;
+SELECT key, value::varchar
+FROM TABLE(FLATTEN(input => PARSE_JSON(SYSTEM$GET_PRIVATELINK_CONFIG())));
+```
+
+接下来，检索以下属性的值：
+
+* `privatelink-account-url`
+* `regionless-privatelink-account-url`
+* `privatelink_ocsp-url`
+
+在检索到值后，您可以进行以下调用以创建[!DNL Snowflake]的专用链接。
+
+**请求**
+
+以下请求为[!DNL Snowflake]创建专用终结点：
+
+>[!BEGINTABS]
+
+>[!TAB 模板]
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/connectors/privateEndpoints/' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "{ENDPOINT_NAME}",
+    "subscriptionId": "{AZURE_SUBSCRIPTION_ID}",
+    "resourceGroupName": "{RESOURCE_GROUP_NAME}",
+    "resourceName": "{SNOWFLAKE_ENDPOINT_SERVICE_NAME}",
+    "fqdns": [
+      "{PRIVATELINK_ACCOUNT_URL}",
+      "{REGIONLESS_PRIVATELINK_ACCOUNT_URL}",
+      "{PRIVATELINK_OCSP_URL}"
+    ],
+    "connectionSpec": {
+      "id": "b2e08744-4f1a-40ce-af30-7abac3e23cf3",
+      "version": "1.0"
+    }
+  }'
+```
+
+>[!TAB 示例]
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/connectors/privateEndpoints/' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "TEST_Snowflake_PE",
+    "subscriptionId": "4575fb04-6859-4781-8948-7f3a92dc06a3",
+    "resourceGroupName": "azwestus2-privatelink",
+    "resourceName": "sf-pvlinksvc-azwestus2",
+    "fqdns": [
+      "hf06619.west-us-2.privatelink.snowflakecomputing.com",
+      "adobe-segmentationdbint.privatelink.snowflakecomputing.com",
+      "ocsp.hf06619.west-us-2.privatelink.snowflakecomputing.com"
+    ],
+    "connectionSpec": {
+      "id": "b2e08744-4f1a-40ce-af30-7abac3e23cf3",
+      "version": "1.0"
+    }
+  }'
+```
+
+
+>[!ENDTABS]
+
+### 批准[!DNL Azure Blob]和[!DNL Azure Data Lake Gen2]的专用终结点
+
+要批准[!DNL Azure Blob]和[!DNL Azure Data Lake Gen2]源的专用终结点请求，请登录到[!DNL Azure Portal]。 在左侧导航中，选择&#x200B;**[!DNL Data storage]**，然后转到&#x200B;**[!DNL Security + networking]**&#x200B;选项卡并选择&#x200B;**[!DNL Networking]**。 接下来，选择&#x200B;**[!DNL Private endpoints]**&#x200B;以查看与您的帐户关联的专用端点列表及其当前连接状态。 要批准挂起的请求，请选择所需的终结点，然后单击&#x200B;**[!DNL Approve]**。
+
+![包含待处理专用终结点列表的Azure门户。](../../images/tutorials/private-links/azure.png)
