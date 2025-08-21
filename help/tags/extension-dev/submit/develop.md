@@ -2,10 +2,10 @@
 title: 开发扩展
 description: 本文档提供了标记扩展开发过程的一般概述，以及指向更多文档的链接，这些文档提供了更详细的流程。
 exl-id: fb2f7275-a5da-4a41-b915-822c71c02e5c
-source-git-commit: cfcc70d66a34fa51bf0e21525539ba88de7fc367
+source-git-commit: 73452d0735c6a040ddd25b4cd00cec4b91eaf7ae
 workflow-type: tm+mt
-source-wordcount: '462'
-ht-degree: 31%
+source-wordcount: '447'
+ht-degree: 29%
 
 ---
 
@@ -23,9 +23,7 @@ ht-degree: 31%
 
 制定相应计划后，这些指南可以帮助您了解扩展开发流程：
 
-* 左侧导航栏中&#x200B;**扩展开发**&#x200B;下的[入门指南](../getting-started.md)和其他文档是了解扩展的绝佳参考资料。 其中包括有关扩展功能的详细信息、如何存储用户信息并在扩展和Adobe Experience Platform之间传递用户信息、如何将代码捆绑到库中，以及如何在浏览器中在运行时解释和使用扩展代码。
-<!-- * The [extension tutorial video](https://youtu.be/rxjtC9o4rl0) is a great place to start. -->
-* [扩展简介](https://www.youtube.com/playlist?list=PLOdw8u2F8CIgynzKrPEwCPuDxzHW1WP5m) YouTube 播放列表将讲解创建扩展包的过程。
+* 左侧导航栏中[扩展开发](../getting-started.md)下的&#x200B;**入门指南**&#x200B;和其他文档是了解扩展的绝佳参考资料。 其中包括有关扩展功能的详细信息、如何存储用户信息并在扩展和Adobe Experience Platform之间传递用户信息、如何将代码捆绑到库中，以及如何在浏览器中在运行时解释和使用扩展代码。
 * [了解 JSON 架构](https://spacetelescope.github.io/understanding-json-schema/index.html#)一文。
 * [JSON Lint/验证器](https://jsonlint.com/)。
 * [JSON 查看器](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh)，用于高亮显示和打印 JSON 和 JSONP 的 Chrome 扩展。
