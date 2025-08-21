@@ -2,7 +2,7 @@
 title: 许可证使用量和容量
 description: 了解Adobe Experience Platform中的许可证使用和容量限制。
 exl-id: 38dad2f1-bd0f-4cc3-a3a6-5105ea866ea4
-source-git-commit: 1bde1f2c1bd33756bd20a2524b50d5a2b4bc464e
+source-git-commit: d0b54e15f132d85964d6458da0769548d231a9c4
 workflow-type: tm+mt
 source-wordcount: '1537'
 ht-degree: 6%
@@ -103,7 +103,7 @@ Experience Platform以15分钟滚动间隔计算沙盒的吞吐量。 此吞吐�
 
 #### 流传输吞吐量 {#streaming-throughput}
 
-流吞吐量部分显示有关整个组织沙盒的流吞吐量的信息。 流吞吐量值测量每秒合并的入站事件峰值，用于将摄取流式传输到配置文件服务。
+流吞吐量部分显示有关组织沙盒中的流吞吐量的信息。 流吞吐量值测量每秒合并的入站事件峰值，用于将摄取流式传输到配置文件服务。
 
 ![显示容量详细信息页面中的流吞吐量部分。](/help/landing/images/capacity/streaming-throughput-section.png)
 

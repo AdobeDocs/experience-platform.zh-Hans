@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 流式摄取概述
 description: Adobe Experience Platform的流式摄取为用户提供了一种实时将数据从客户端和服务器端设备发送到Experience Platform的方法。
 exl-id: 851f15fd-7ac5-4a9f-934d-6b907057da87
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: f5ae9170b312d9f24c863a14b8cc2310fcaf1cb2
 workflow-type: tm+mt
-source-wordcount: '424'
-ht-degree: 1%
+source-wordcount: '419'
+ht-degree: 2%
 
 ---
 
@@ -21,7 +21,7 @@ Adobe Experience Platform允许您通过为每个客户生成[!DNL Real-Time Cus
 
 以下视频旨在帮助您了解流摄取，并概述了上述概念。
 
->[!VIDEO](https://video.tv.adobe.com/v/31669?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/28425?quality=12&learn=on)
 
 ### 流配置文件记录和[!DNL ExperienceEvents]
 
@@ -39,7 +39,7 @@ Adobe Experience Platform允许您通过为每个客户生成[!DNL Real-Time Cus
 
 >[!IMPORTANT]
 >
->流式摄取的护栏在组织级别而非沙盒级别计算。 这意味着每个沙盒的数据使用情况绑定到与整个组织对应的许可证使用情况权利总数。 此外，开发沙盒中的数据使用限制为总配置文件的10%。 有关许可证使用授权的更多信息，请阅读[数据管理最佳实践指南](../../landing/license-usage-and-guardrails/data-management-best-practices.md)。
+>流式摄取的护栏将绑定到与您的整个组织对应的总许可证使用授权。 此外，开发沙盒中的数据使用限制为总配置文件的10%。 有关许可证使用授权的更多信息，请阅读[数据管理最佳实践指南](../../landing/license-usage-and-guardrails/data-management-best-practices.md)。 要了解如何设置流吞吐量的限制，请阅读[容量概述](../../landing/license-usage-and-guardrails/capacity.md)。
 
 | 目标 | 预期延迟 |
 | --------- | ---------------- |
