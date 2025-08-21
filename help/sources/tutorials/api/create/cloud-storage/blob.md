@@ -2,9 +2,9 @@
 title: 使用流服务API将Azure Blob Storage连接到Experience Platform
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Azure Blob。
 exl-id: 4ab8033f-697a-49b6-8d9c-1aadfef04a04
-source-git-commit: 7acdc090c020de31ee1a010d71a2969ec9e5bbe1
+source-git-commit: 8e932a25026bef2b785cfddfb8b668b1dd47eb0d
 workflow-type: tm+mt
-source-wordcount: '651'
+source-wordcount: '657'
 ht-degree: 3%
 
 ---
@@ -169,7 +169,7 @@ curl -X POST \
 | `serviceEndpoint` | [!DNL Azure Blob Storage]帐户的终结点URL。 通常采用以下格式： `https://{ACCOUNT_NAME}.blob.core.windows.net`。 |
 | `servicePrincipalId` | 用于身份验证的Azure Active Directory (AAD)服务主体的客户端/应用程序ID。 |
 | `servicePrincipalKey` | 与Azure服务主体关联的客户端密钥或密码。 |
-| `accountKind` | [!DNL Azure Blob Storage]帐户的类型。 通用值包括`StorageV2`、`BlobStorage`或`Storage`。 |
+| `accountKind` | [!DNL Azure Blob Storage]帐户的类型。 通用值包括`Storage` （通用V1）、`StorageV2` （通用V2）、`BlobStorage`和`BlockBlobStorage`。 |
 | `tenant` | 注册服务主体的Azure Active Directory (AAD)租户ID。 |
 | `container` | 存储数据文件的[!DNL Azure Blob Storage]容器的名称。 |
 | `folderPath` | 指定容器中文件所在的路径。 |

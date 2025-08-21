@@ -1,17 +1,16 @@
 ---
-title: 源中的专用链接支持
+title: 在API中为源使用Azure专用链接
 description: 了解如何为Adobe Experience Platform源创建和使用该专用链接
 badge: Beta 版
-hide: true
-hidefromtoc: true
-source-git-commit: 4c91ffc60a2537fcc76ce935bf3b163984fdc5e4
+exl-id: 9b7fc1be-5f42-4e29-b552-0b0423a40aa1
+source-git-commit: 52365851aef0e0e0ad532ca19a8e0ddccacf7af7
 workflow-type: tm+mt
-source-wordcount: '1326'
-ht-degree: 5%
+source-wordcount: '1380'
+ht-degree: 3%
 
 ---
 
-# 源中的专用链接支持
+# 将[!DNL Azure Private Link]用于API中的源
 
 >[!AVAILABILITY]
 >
@@ -22,11 +21,13 @@ ht-degree: 5%
 >* [[!DNL Azure File Storage]](../../connectors/cloud-storage/azure-file-storage.md)
 >* [[!DNL Snowflake]](../../connectors/databases/snowflake.md)
 
-阅读本指南，了解如何通过专用链接建立与基于Azure的源的专用端点连接，并为您的数据提供更安全的传输机制。
+您可以使用[!DNL Azure Private Link]功能为要连接的Adobe Experience Platform源创建专用端点。 使用私有IP地址将源安全地连接到虚拟网络，消除对公共IP的需求，并减少攻击面。通过消除对复杂防火墙或网络地址转换配置的需求，简化网络设置，同时确保数据流量仅能到达批准的服务。
+
+阅读本指南，了解如何使用API创建和使用专用端点。
 
 ## 快速入门
 
-本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
+本指南要求您对Experience Platform的以下组件有一定的了解：
 
 * [源](../../home.md)： Experience Platform允许从各种源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。
 * [沙盒](../../../sandboxes/home.md)： Experience Platform提供了将单个[!DNL Platform]实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
@@ -75,9 +76,9 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `name` | 专用端点的名称。 |
-| `subscriptionId` | 与您的[!DNL Azure]订阅关联的ID。 有关详细信息，请参阅[上的[!DNL Azure]指南，从 [!DNL Azure Portal]](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id)中检索您的订阅和租户ID。 |
-| `resourceGroupName` | [!DNL Azure]上资源组的名称。 资源组包含[!DNL Azure]解决方案的相关资源。 有关详细信息，请阅读有关[管理资源组](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal)的[!DNL Azure]指南。 |
-| `resourceName` | 资源的名称。 在[!DNL Azure]中，资源引用虚拟机、Web应用和数据库等实例。 有关详细信息，请阅读[上的[!DNL Azure]指南，以了解 [!DNL Azure] 资源管理器](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview)。 |
+| `subscriptionId` | 与您的[!DNL Azure]订阅关联的ID。 有关详细信息，请参阅[!DNL Azure]上的[指南，从 [!DNL Azure Portal]](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id)中检索您的订阅和租户ID。 |
+| `resourceGroupName` | [!DNL Azure]上资源组的名称。 资源组包含[!DNL Azure]解决方案的相关资源。 有关详细信息，请阅读有关[!DNL Azure]管理资源组[的](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal)指南。 |
+| `resourceName` | 资源的名称。 在[!DNL Azure]中，资源引用虚拟机、Web应用和数据库等实例。 有关详细信息，请阅读[!DNL Azure]上的[指南，以了解 [!DNL Azure] 资源管理器](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview)。 |
 | `fqdns` | 源的全限定域名。 仅当使用[!DNL Snowflake]源时，才需要此属性。 |
 | `connectionSpec.id` | 您正在使用的源的连接规范ID。 |
 | `connectionSpec.version` | 您正在使用的连接规范ID的版本。 |
@@ -110,9 +111,9 @@ curl -X POST \
 | --- | --- |
 | `id` | 新创建的专用端点的ID。 |
 | `name` | 专用端点的名称。 |
-| `subscriptionId` | 与您的[!DNL Azure]订阅关联的ID。 有关详细信息，请参阅[上的[!DNL Azure]指南，从 [!DNL Azure Portal]](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id)中检索您的订阅和租户ID。 |
-| `resourceGroupName` | [!DNL Azure]上资源组的名称。 资源组包含[!DNL Azure]解决方案的相关资源。 有关详细信息，请阅读有关[管理资源组](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal)的[!DNL Azure]指南。 |
-| `resourceName` | 资源的名称。 在[!DNL Azure]中，资源引用虚拟机、Web应用和数据库等实例。 有关详细信息，请阅读[上的[!DNL Azure]指南，以了解 [!DNL Azure] 资源管理器](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview)。 |
+| `subscriptionId` | 与您的[!DNL Azure]订阅关联的ID。 有关详细信息，请参阅[!DNL Azure]上的[指南，从 [!DNL Azure Portal]](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id)中检索您的订阅和租户ID。 |
+| `resourceGroupName` | [!DNL Azure]上资源组的名称。 资源组包含[!DNL Azure]解决方案的相关资源。 有关详细信息，请阅读有关[!DNL Azure]管理资源组[的](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal)指南。 |
+| `resourceName` | 资源的名称。 在[!DNL Azure]中，资源引用虚拟机、Web应用和数据库等实例。 有关详细信息，请阅读[!DNL Azure]上的[指南，以了解 [!DNL Azure] 资源管理器](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview)。 |
 | `fqdns` | 源的全限定域名。 仅当使用[!DNL Snowflake]源时，才需要此属性。 |
 | `connectionSpec.id` | 您正在使用的源的连接规范ID。 |
 | `connectionSpec.version` | 您正在使用的连接规范ID的版本。 |
@@ -526,7 +527,7 @@ curl -X DELETE \
 
 ### 创建与专用端点的连接 {#create-base-connection}
 
-要在Experience Platform中创建与私有端点的连接，请对[!DNL Flow Service] API的`/connections`端点发出POST请求。
+要在Experience Platform中创建与私有端点的连接，请对`/connections` API的[!DNL Flow Service]端点发出POST请求。
 
 **API格式**
 
