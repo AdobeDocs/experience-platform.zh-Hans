@@ -95,7 +95,7 @@ Marketo V2目标中的改进包括：
 >* 视频中调出的两个限制不再适用。 除了在录制视频时支持的受众成员资格信息之外，您现在可以映射许多其他配置文件属性字段。 您还可以将受众成员导出到Marketo，这些成员尚不存在于Marketo静态列表中，并且会添加到列表中。
 >* 在Marketo V1的激活工作流的&#x200B;**[!UICONTROL 计划受众步骤]**&#x200B;中，您需要手动添加&#x200B;**[!UICONTROL 映射ID]**&#x200B;以成功将数据导出到Marketo。 Marketo V2中不再需要此手动步骤。
 
->[!VIDEO](https://video.tv.adobe.com/v/338248?quality=12)
+>[!VIDEO](https://video.tv.adobe.com/v/3440168?quality=12&captions=chi_hans)
 
 ## 监视目标 {#monitor-destination}
 
