@@ -88,7 +88,7 @@ Adobe Experience Platform UI中的![LinkedIn目标](../../assets/catalog/social/
 >[!NOTE]
 >
 >来自未经过哈希处理的命名空间的数据在激活时会由[!DNL Experience Platform]自动进行哈希处理。
->> 属性源数据不会自动进行哈希处理。
+>&#x200B;> 属性源数据不会自动进行哈希处理。
 > 
 > 在[标识映射](../../ui/activate-segment-streaming-destinations.md#mapping)步骤中，当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以便在激活时让[!DNL Experience Platform]自动对数据进行哈希处理。
 > 
@@ -130,7 +130,7 @@ LinkedIn令牌每60天过期一次。 您可以在&#x200B;**[!UICONTROL 帐户]*
    ![筛选以仅显示LinkedIn帐户](/help/destinations/assets/catalog/social/linkedin/refresh-oauth-filters.png)
 3. 选择要刷新的帐户，选择省略号并选择&#x200B;**[!UICONTROL 编辑详细信息]**。
    ![选择“编辑详细信息”控件](/help/destinations/assets/catalog/social/linkedin/refresh-oauth-edit-details.png)
-4. 在模式窗口中，选择&#x200B;**[!UICONTROL 重新连接OAuth]**并使用您的LinkedIn凭据重新进行身份验证。
+4. 在模式窗口中，选择&#x200B;**[!UICONTROL 重新连接OAuth]**&#x200B;并使用您的LinkedIn凭据重新进行身份验证。
    使用Reconnect OAuth选项的![模式窗口](/help/destinations/assets/catalog/social/linkedin/reconnect-oauth-control.png)
 
 >[!SUCCESS]
