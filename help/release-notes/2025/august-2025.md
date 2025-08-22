@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2025 年 8 月）
 description: Adobe Experience Platform 的 2025 年 8 月发行说明。
 exl-id: d93e98f3-d165-4710-ad1d-2ad3857cd0f8
-source-git-commit: cb32846bcbd917f267cba587b60dc323f6bc7d96
+source-git-commit: d2b605925a8fd7ea06f198ba8a9f85747a2e585b
 workflow-type: tm+mt
-source-wordcount: '1470'
-ht-degree: 37%
+source-wordcount: '1643'
+ht-degree: 33%
 
 ---
 
@@ -98,13 +98,14 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 | 目标 | 描述 |
 | --- | --- |
 | [[!DNL Acxiom Real ID Audience Connection]](../../destinations/catalog/advertising/acxiom-real-id-audience-connection.md)目标 | 使用[!DNL Acxiom Real ID Audience Connection]目标通过[!DNL Acxiom's] [Real ID](https://www.acxiom.com/real-id/real-id/)技术增强受众并将受众激活到多个平台，如[!DNL Altice]、[!DNL Ampersand]、[!DNL Comcast]等。 |
+| 增强的[[!DNL Marketo Engage]](../../destinations/catalog/adobe/marketo-engage-connection.md)目标 | 增强的[[!DNL Marketo Engage]](../../destinations/catalog/adobe/marketo-engage-connection.md)目标是现有[[!DNL (Legacy) (V2) Marketo Engage]](../../destinations/catalog/adobe/marketo-engage.md)连接器的升级版本。 除了旧连接器中的现有受众同步功能之外，此新连接器还引入了配置文件同步功能，从而提供了与[!DNL Marketo Engage]的更紧密集成。 <br> [[!DNL (Legacy) (V2) Marketo Engage]](../../destinations/catalog/adobe/marketo-engage.md)连接器将于&#x200B;**2026年3月**&#x200B;被弃用。 要确保顺利过渡到新&#x200B;**[[!UICONTROL Marketo Engage]](../../destinations/catalog/adobe/marketo-engage-connection.md)**&#x200B;目标，请查看以下关键点和所需的操作： <ul><li>现有&#x200B;**[!UICONTROL （旧版） (V2) Marketo Engage]**&#x200B;的所有用户必须在2026年3月之前迁移到新的&#x200B;**[!UICONTROL Marketo Engage]**&#x200B;目标。</li><li> **不会自动迁移现有数据流。**&#x200B;您必须[设置与新](../../destinations/ui/connect-destination.md)Marketo Engage **[!UICONTROL 目标的新连接]**&#x200B;并在该处激活您的受众。</li></ul> |
 
 **更新的目标**
 
 | 目标 | 描述 |
 | --- | --- |
 | [[!DNL Microsoft Bing]](../../destinations/catalog/advertising/bing.md) 内部升级 | 从2025年8月11日开始，在短期内，您可能会在目标目录中看到两个&#x200B;**[!DNL Microsoft Bing]**&#x200B;卡并排显示。 这是由于目标服务内部升级造成的。现有的&#x200B;**[!DNL Microsoft Bing]**&#x200B;目标连接器已重命名为&#x200B;**[!UICONTROL （已弃用） Microsoft Bing]**，现在您可以使用名为&#x200B;**[!UICONTROL Microsoft Bing]**&#x200B;的新信息卡。 <br>升级已完成，已从目标目录中删除已弃用的信息卡。 使用目录中的&#x200B;**[!UICONTROL Microsoft Bing]**&#x200B;连接获取新的激活数据流。 如果您有任何到&#x200B;**[!UICONTROL （已弃用）Microsoft Bing]**&#x200B;目标的活动数据流，则会自动更新，因此您无需执行任何操作。 <br><br>如果您通过 [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) 创建数据流，则必须将 [!DNL flow spec ID] 和 [!DNL connection spec ID] 更新为以下值：<ul><li>流量规范 ID：`8d42c81d-9ba7-4534-9bf6-cf7c64fbd12e`</li><li>连接规范 ID：`dd69fc59-3bc5-451e-8ec2-1e74a670afd4`</li></ul> 此次升级后，您可能会遇到数据流中向&#x200B;**发送的活动配置文件数**&#x200B;的下降[!DNL Microsoft Bing]。 导致此下降的原因是，针对此目标平台的所有激活引入了&#x200B;**ECID映射要求**。 |
-
+| [[!DNL LinkedIn]](../../destinations/catalog/social/linkedin.md)和[LinkedIn匹配受众](../../destinations/catalog/social/linkedin-b2b.md)目标的身份验证到期详细信息 | [!DNL LinkedIn]目标的身份验证过期信息现在直接显示在Experience Platform界面中，因此您可以查看身份验证何时过期并续订，以免对数据流造成任何中断。 您可以在&#x200B;**[!UICONTROL 帐户]**&#x200B;或&#x200B;**[[!UICONTROL 浏览]](../../destinations/ui/destinations-workspace.md#accounts)**&#x200B;选项卡中从&#x200B;**[[!UICONTROL 帐户到期日期]](../../destinations/ui/destinations-workspace.md#browse)**&#x200B;列监视令牌到期日期。 |
 
 **新增或更新的功能**
 

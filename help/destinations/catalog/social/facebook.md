@@ -3,7 +3,7 @@ keywords: facebook连接；facebook连接；facebook目标；facebook；instagra
 title: Facebook连接
 description: 根据散列邮件激活 Facebook 营销活动的轮廓，以实现受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 6ca3687d067044c3fcb9455ec287863c4ffaafd2
+source-git-commit: c8eedc1f020b8605c9565015461cb1dfd47bba1f
 workflow-type: tm+mt
 source-wordcount: '2690'
 ht-degree: 5%
@@ -16,7 +16,7 @@ ht-degree: 5%
 
 根据哈希电子邮件激活[!DNL Facebook]营销活动的配置文件，以实现受众定位、个性化和抑制。
 
-您可以将此目标用于[!DNL Custom Audiences]支持的[!DNL Facebook's]系列应用中的受众定位，包括[!DNL Facebook]、[!DNL Instagram]、[!DNL Audience Network]和[!DNL Messenger]。 [!DNL Facebook Ads Manager]中的版面级别显示您要针对其运行营销活动的所选应用程序。
+您可以将此目标用于[!DNL Facebook's]支持的[!DNL Custom Audiences]系列应用中的受众定位，包括[!DNL Facebook]、[!DNL Instagram]、[!DNL Audience Network]和[!DNL Messenger]。 [!DNL Facebook Ads Manager]中的版面级别显示您要针对其运行营销活动的所选应用程序。
 
 Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/social/facebook/catalog.png)
 
@@ -118,7 +118,7 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 >[!NOTE]
 >
->无法在[!DNL Facebook]中激活摄取到`Phone`命名空间中的电话号码。
+>无法在`Phone`中激活摄取到[!DNL Facebook]命名空间中的电话号码。
 
 ## 电子邮件哈希处理要求 {#email-hashing-requirements}
 
@@ -138,8 +138,8 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 >[!NOTE]
 >
 >来自未经过哈希处理的命名空间的数据在激活时会由[!DNL Experience Platform]自动进行哈希处理。
->&#x200B;> 属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。
->&#x200B;> **[!UICONTROL 应用转换]**&#x200B;选项仅在您选择属性作为源字段时显示。 当您选择命名空间时，它不会显示。
+>> 属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。
+>> **[!UICONTROL 应用转换]**&#x200B;选项仅在您选择属性作为源字段时显示。 当您选择命名空间时，它不会显示。
 
 ![应用映射步骤中突出显示的转换控件。](../../assets/ui/activate-destinations/identity-mapping-transformation.png)
 
@@ -157,7 +157,7 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 以下视频还演示了配置[!DNL Facebook]目标和激活受众的步骤。
 
->[!VIDEO](https://video.tv.adobe.com/v/3411783/?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 >[!NOTE]
 >
@@ -174,7 +174,7 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 Facebook身份验证令牌每60天过期一次。 令牌过期后，数据导出到目标的操作将停止。
 
-您可以在&#x200B;**[!UICONTROL 帐户]**&#x200B;或&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡中从&#x200B;**[!UICONTROL 帐户到期日期]**&#x200B;列监视令牌到期日期。
+您可以在&#x200B;**[!UICONTROL 帐户]**&#x200B;或&#x200B;**[[!UICONTROL 浏览]](../../ui/destinations-workspace.md#accounts)**&#x200B;选项卡中从&#x200B;**[[!UICONTROL 帐户到期日期]](../../ui/destinations-workspace.md#browse)**&#x200B;列监视令牌到期日期。
 
 在“浏览”选项卡中![Facebook帐户令牌过期日期列](../../assets/catalog/social/facebook/account-expiration-browse.png)
 
@@ -187,7 +187,7 @@ Facebook身份验证令牌每60天过期一次。 令牌过期后，数据导出
    ![筛选以仅显示Facebook帐户](/help/destinations/assets/catalog/social/facebook/refresh-oauth-filters.png)
 3. 选择要刷新的帐户，选择省略号并选择&#x200B;**[!UICONTROL 编辑详细信息]**。
    ![选择“编辑详细信息”控件](/help/destinations/assets/catalog/social/facebook/refresh-oauth-edit-details.png)
-4. 在模式窗口中，选择&#x200B;**[!UICONTROL 重新连接OAuth]**&#x200B;并使用Facebook凭据重新进行身份验证。
+4. 在模式窗口中，选择&#x200B;**[!UICONTROL 重新连接OAuth]**并使用Facebook凭据重新进行身份验证。
    使用Reconnect OAuth选项的![模式窗口](/help/destinations/assets/catalog/social/facebook/reconnect-oauth-control.png)
 
 >[!SUCCESS]
@@ -242,7 +242,7 @@ Facebook身份验证令牌每60天过期一次。 令牌过期后，数据导出
 
 有关将受众激活到此目标的说明，请参阅[将受众数据激活到流式受众导出目标](../../ui/activate-segment-streaming-destinations.md)。
 
-在&#x200B;**[!UICONTROL 区段计划]**&#x200B;步骤中，在向[!DNL Facebook Custom Audiences]发送受众时，必须提供[!UICONTROL 受众来源]。
+在&#x200B;**[!UICONTROL 区段计划]**&#x200B;步骤中，在向[!UICONTROL 发送受众时，必须提供]受众来源[!DNL Facebook Custom Audiences]。
 
 ![Facebook激活步骤中显示的“受众来源”下拉列表。](../../assets/catalog/social/facebook/facebook-origin-audience.png)
 
@@ -253,17 +253,17 @@ Facebook身份验证令牌每60天过期一次。 令牌过期后，数据导出
 选择源字段：
 
 * 如果您使用的电子邮件地址未经过哈希处理，请选择`Email`命名空间作为源标识。
-* 如果您根据[!DNL Facebook] [电子邮件哈希处理要求](#email-hashing-requirements)将数据摄取到[!DNL Experience Platform]时已将客户电子邮件地址哈希处理，请选择`Email_LC_SHA256`命名空间作为源标识。
+* 如果您根据`Email_LC_SHA256` [!DNL Experience Platform]电子邮件哈希处理要求[!DNL Facebook]将数据摄取到[时已将客户电子邮件地址哈希处理，请选择](#email-hashing-requirements)命名空间作为源标识。
 * 如果您的数据由非散列电话号码组成，请选择`PHONE_E.164`命名空间作为源标识。 [!DNL Experience Platform]将散列电话号码以符合[!DNL Facebook]要求。
-* 如果您根据[!DNL Facebook] [电话号码散列要求](#phone-number-hashing-requirements)将数据提取到[!DNL Experience Platform]中时散列电话号码，请选择`Phone_SHA256`命名空间作为源标识。
-* 如果您的数据包含[!DNL Apple]个设备ID，请选择`IDFA`命名空间作为源标识。
-* 如果您的数据包含[!DNL Android]个设备ID，请选择`GAID`命名空间作为源标识。
+* 如果您根据`Phone_SHA256` [!DNL Experience Platform]电话号码散列要求[!DNL Facebook]将数据提取到[中时散列电话号码，请选择](#phone-number-hashing-requirements)命名空间作为源标识。
+* 如果您的数据包含`IDFA`个设备ID，请选择[!DNL Apple]命名空间作为源标识。
+* 如果您的数据包含`GAID`个设备ID，请选择[!DNL Android]命名空间作为源标识。
 * 如果您的数据包含其他类型的标识符，请选择`Custom`命名空间作为源标识。
 
 选择目标字段：
 
-* 当源命名空间为`Email`或`Email_LC_SHA256`时，选择`Email_LC_SHA256`命名空间作为目标标识。
-* 当源命名空间为`PHONE_E.164`或`Phone_SHA256`时，选择`Phone_SHA256`命名空间作为目标标识。
+* 当源命名空间为`Email_LC_SHA256`或`Email`时，选择`Email_LC_SHA256`命名空间作为目标标识。
+* 当源命名空间为`Phone_SHA256`或`PHONE_E.164`时，选择`Phone_SHA256`命名空间作为目标标识。
 * 当源命名空间为`IDFA`或`GAID`时，选择`IDFA`或`GAID`命名空间作为目标标识。
 * 当源命名空间是自定义命名空间时，选择`Extern_ID`命名空间作为目标身份。
 
@@ -277,7 +277,7 @@ Facebook身份验证令牌每60天过期一次。 令牌过期后，数据导出
 
 ## 导出的数据 {#exported-data}
 
-对于[!DNL Facebook]，成功激活意味着将在[[!DNL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/)中以编程方式创建[!DNL Facebook]自定义受众。 由于用户符合或不符合激活受众的资格，因此将添加和删除受众成员资格。
+对于[!DNL Facebook]，成功激活意味着将在[!DNL Facebook][[!DNL Facebook Ads Manager]中以编程方式创建](https://www.facebook.com/adsmanager/manage/)自定义受众。 由于用户符合或不符合激活受众的资格，因此将添加和删除受众成员资格。
 
 >[!TIP]
 >
@@ -295,8 +295,8 @@ Facebook身份验证令牌每60天过期一次。 令牌过期后，数据导出
 
 >[!IMPORTANT]
 >
->确保您接受`business ID 206617933627973`下的[!DNL Facebook Custom Audience Terms of Service]，如[帐户先决条件](#facebook-account-prerequisites)部分中的URL模板所示。
+>确保您接受[!DNL Facebook Custom Audience Terms of Service]下的`business ID 206617933627973`，如[帐户先决条件](#facebook-account-prerequisites)部分中的URL模板所示。
 
-如果在执行[Facebook帐户先决条件](#facebook-account-prerequisites)中的步骤后收到`400 Bad Request`错误消息，请等几天时间，[!DNL Facebook]权限即可生效。
+如果在执行`400 Bad Request`Facebook帐户先决条件[中的步骤后收到](#facebook-account-prerequisites)错误消息，请等几天时间，[!DNL Facebook]权限即可生效。
 
 
