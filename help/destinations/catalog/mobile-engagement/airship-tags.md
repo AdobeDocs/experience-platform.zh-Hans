@@ -3,10 +3,10 @@ keywords: 飞艇标签；飞艇目标
 title: 飞艇标记连接
 description: 将Adobe受众数据作为受众标记无缝传递到飞艇，以便在飞艇中进行定位。
 exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 5619424024eff81fca21408288494402e2a4d4ff
 workflow-type: tm+mt
-source-wordcount: '972'
-ht-degree: 2%
+source-wordcount: '1082'
+ht-degree: 4%
 
 ---
 
@@ -14,9 +14,17 @@ ht-degree: 2%
 
 ## 概述
 
+>[!IMPORTANT]
+>
+>* 从2025年8月21日开始，您可以在目标目录中并排看到两个&#x200B;**[!DNL Airship Tags]**&#x200B;信息卡。 这是由于目标服务内部升级造成的。现有的&#x200B;**[!DNL Airship Tags]**&#x200B;目标连接器已重命名为&#x200B;**[!UICONTROL （已弃用）飞艇标签]**，现在您可以使用名为&#x200B;**[!UICONTROL 飞艇标签]**&#x200B;的新信息卡。
+>* 使用目录中的新&#x200B;**[!UICONTROL 飞艇标签]**&#x200B;连接获取新的激活数据流。 如果您有任何到&#x200B;**[!UICONTROL （已弃用）飞艇标记]**&#x200B;目标的活动数据流，则会自动更新，因此您无需执行任何操作。
+>* 如果您是通过[流服务API](https://developer.adobe.com/experience-platform-apis/references/destinations/)创建数据流，则必须将[!DNL flow spec ID]和[!DNL connection spec ID]更新为以下值：
+>   * 流量规范 ID：`0c7e71c8-4d60-4685-a216-77f57e37b04a`
+>   * 连接规范 ID：`aec13e22-8226-4b5d-9961-6baa35b251d2`
+
 [!DNL Airship]是领先的客户参与平台，帮助您在客户生命周期的每个阶段都向用户传递有意义、个性化的全渠道信息。
 
-此集成将Adobe Experience Platform受众数据作为[标记](https://docs.airship.com/guides/audience/tags/)传递到[!DNL Airship]中，以进行定位或触发。
+此集成将Adobe Experience Platform受众数据作为[!DNL Airship]标记[传递到](https://docs.airship.com/guides/audience/tags/)中，以进行定位或触发。
 
 若要了解有关[!DNL Airship]的更多信息，请参阅[飞艇文档](https://docs.airship.com)。
 
@@ -34,7 +42,7 @@ ht-degree: 2%
 
 >[!TIP]
 > 
->通过[此注册链接](https://go.airship.eu/accounts/register/plan/starter/)创建一个[!DNL Airship]帐户（如果尚未创建）。
+>通过[!DNL Airship]此注册链接[创建一个](https://go.airship.eu/accounts/register/plan/starter/)帐户（如果尚未创建）。
 
 ## 支持的受众 {#supported-audiences}
 
@@ -60,9 +68,9 @@ ht-degree: 2%
 
 ## 标记组
 
-Adobe Experience Platform中的受众概念与Airship中的[标记](https://docs.airship.com/guides/audience/tags/)类似，在实施上略有差异。 此集成将用户在Experience Platform区段[&#128279;](../../../xdm/field-groups/profile/segmentation.md)中的成员资格状态映射到[!DNL Airship]标记的存在或不存在。 例如，在`xdm:status`更改为`realized`的Experience Platform受众中，标记已添加到此配置文件映射到的[!DNL Airship]渠道或命名用户。 如果`xdm:status`更改为`exited`，则标记将被删除。
+Adobe Experience Platform中的受众概念与Airship中的[标记](https://docs.airship.com/guides/audience/tags/)类似，在实施上略有差异。 此集成将用户在Experience Platform区段[中的](../../../xdm/field-groups/profile/segmentation.md)成员资格状态映射到[!DNL Airship]标记的存在或不存在。 例如，在`xdm:status`更改为`realized`的Experience Platform受众中，标记已添加到此配置文件映射到的[!DNL Airship]渠道或命名用户。 如果`xdm:status`更改为`exited`，则标记将被删除。
 
-要启用此集成，请在[!DNL Airship]中创建名为`adobe-segments`的&#x200B;*标记组*。
+要启用此集成，请在&#x200B;*中创建名为*&#x200B;的[!DNL Airship]标记组`adobe-segments`。
 
 >[!IMPORTANT]
 >
@@ -72,7 +80,7 @@ Adobe Experience Platform中的受众概念与Airship中的[标记](https://docs
 
 ## 生成持有者令牌
 
-转到[飞艇仪表板](https://go.airship.com)中的&#x200B;**[!UICONTROL 设置]** &quot; **[!UICONTROL API和集成]**，然后在左侧菜单中选择&#x200B;**[!UICONTROL 令牌]**。
+转到&#x200B;**[!UICONTROL 飞艇仪表板]**&#x200B;中的&#x200B;**[!UICONTROL 设置]** &quot; [API和集成](https://go.airship.com)，然后在左侧菜单中选择&#x200B;**[!UICONTROL 令牌]**。
 
 单击&#x200B;**[!UICONTROL 创建令牌]**。
 
@@ -132,7 +140,7 @@ Adobe Experience Platform中的受众概念与Airship中的[标记](https://docs
 
 ## 映射注意事项 {#mapping-considerations}
 
-[!DNL Airship]标记可以在渠道上设置，该渠道表示设备实例，如iPhone，也可以设置指定用户，该指定用户将用户的所有设备映射到通用标识符，如客户ID。 如果您的架构中将纯文本（未散列）电子邮件地址作为主标识，请选择&#x200B;**[!UICONTROL Source属性]**&#x200B;中的电子邮件字段，并映射到&#x200B;**[!UICONTROL Target标识]**&#x200B;下右列中的[!DNL Airship]指定用户，如下所示。
+[!DNL Airship]标记可以在渠道上设置，该渠道表示设备实例，如iPhone，也可以设置指定用户，该指定用户将用户的所有设备映射到通用标识符，如客户ID。 如果您的架构中将纯文本（未散列）电子邮件地址作为主标识，请选择&#x200B;**[!UICONTROL Source属性]**&#x200B;中的电子邮件字段，并映射到[!DNL Airship]Target标识&#x200B;**[!UICONTROL 下右列中的]**&#x200B;指定用户，如下所示。
 
 ![命名用户映射](../../assets/catalog/mobile-engagement/airship-tags/mapping-option-2.png)
 
