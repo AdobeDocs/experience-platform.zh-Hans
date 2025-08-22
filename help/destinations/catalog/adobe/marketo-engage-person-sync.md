@@ -3,19 +3,29 @@ title: Marketo Engage人员同步
 description: 使用Marketo Engage人员同步连接器将人员受众的更新流式传输到Marketo Engage中的相应记录。
 last-substantial-update: 2025-01-14T00:00:00Z
 badgeBeta: label="Beta 版" type="Informative"
-source-git-commit: c5543997747daa336b0a5bb40c46aa720e8bcadd
+exl-id: 2c909633-b169-4ec8-9f58-276395cb8df2
+source-git-commit: 88864353d4872d62258914d6490b90331692fa96
 workflow-type: tm+mt
-source-wordcount: '1050'
-ht-degree: 3%
+source-wordcount: '1124'
+ht-degree: 5%
 
 ---
-
 
 # Marketo Engage人员同步连接 {#marketo-engage-person-sync}
 
 >[!IMPORTANT]
 >
->此目标连接器为测试版，仅向部分客户提供。 要请求获取访问权限，请联系您的Adobe代表。
+>此目标连接器处于测试阶段，仅提供给特定客户。要请求访问权限，请与 Adobe 代表联系。
+
+>[!IMPORTANT]
+>
+>**[!UICONTROL Marketo Engage人员同步]**&#x200B;目标卡将在&#x200B;**2026年3月**&#x200B;被弃用。
+>
+>要确保顺利过渡到新&#x200B;**[[!UICONTROL Marketo Engage]](marketo-engage-connection.md)**&#x200B;目标，请查看以下关键点和所需的操作：
+>
+>* **[!UICONTROL Marketo Engage人员同步]**&#x200B;目标的所有用户必须在2026年3月之前迁移到新的&#x200B;**[[!UICONTROL Marketo Engage]](marketo-engage-connection.md)**&#x200B;目标。
+>* **不会自动迁移现有数据流。**&#x200B;您必须[设置与新](marketo-engage-connection.md#connect-to-the-destination)Marketo Engage **[!UICONTROL 目标的新连接]**&#x200B;并在该处激活您的受众。
+
 
 ## 概述 {#overview}
 
@@ -37,7 +47,7 @@ ht-degree: 3%
 
 ### 支持的属性 {#supported-attributes}
 
-您可以将属性从Experience Platform映射到贵组织在Marketo中有权访问的任何属性。 在Marketo中，您可以使用[Describe API](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_6)请求来检索您的组织有权访问的属性字段。
+您可以将属性从Experience Platform映射到您的组织在Marketo中有权访问的任何属性。 在Marketo中，您可以使用[Describe API](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_6)请求来检索您的组织有权访问的属性字段。
 
 ## 支持的受众 {#supported-audiences}
 
@@ -45,8 +55,8 @@ ht-degree: 3%
 
 | 受众来源 | 支持 | 描述 |
 | -------------------- | :-------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Segmentation Service | ✓ {\f13 } | 通过Experience Platform[分段服务](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/segmentation/home)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 从CSV文件导入到Experience Platform中的受众。 |
+| Segmentation Service | ✓ | 通过Experience Platform [分段服务](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/segmentation/home)生成的受众。 |
+| 自定义上传 | ✓ | 从CSV文件导入到Experience Platform中的受众。 |
 
 ## 导出类型和频率 {#export-type-and-frequency}
 
@@ -54,7 +64,7 @@ ht-degree: 3%
 
 | 项目 | 类型 | 注释 |
 | ---------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 导出频率 | 流式处理 | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出频率 | 流传输 | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -64,22 +74,22 @@ ht-degree: 3%
 >
 >* 若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。
 
-如果贵公司有权访问多个组织，请确保在Marketo Engage和Real-Time CDP(您将在该处设置到Marketo的目标连接器)中使用相同的组织。  如果您已配置目标，则可以选择现有的Marketo帐户以用于新配置。  如果不包含，请单击“Connector to Destination”提示，在此处，您可以设置所需目标的名称、描述和Marketo Munchkin ID。  您的Marketo实例的Munchkin ID可在管理员 — >Munchkin菜单中找到。
+如果贵公司有权访问多个组织，请确保在Marketo Engage和Real-Time CDP中使用相同的组织，以便在其中设置指向Marketo的目标连接器。  如果您已配置目标，则可以选择现有的Marketo帐户以用于新配置。  如果不包含，请单击“Connector to Destination”提示，在此处，您可以设置所需目标的名称、描述和Marketo Munchkin ID。  您的Marketo实例的Munchkin ID可在管理员 — >Munchkin菜单中找到。
 
 >[!IMPORTANT]
 >
->设置目标的用户必须在Marketo实例和分区中具有[编辑人员](https://experienceleague.adobe.com/zh-hans/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database)权限。
+>设置目标的用户必须在Marketo实例和分区中具有[编辑人员](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database)权限。
 
 ![连接到目标](../../assets/catalog/adobe/marketo-engage-person-sync/connect-to-destination.png)
 
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
 * **[!UICONTROL Munchkin ID]**： Munchkin ID是特定Marketo实例的唯一标识符。
-* **[!UICONTROL 分区]**：Marketo Engage中的一个概念，用于按业务关注点划分潜在客户记录
+* **[!UICONTROL 分区]**： Marketo Engage中的一个概念，用于按业务关注点划分潜在客户记录
 * **[!UICONTROL 第一个可搜索的字段]**：要消除重复项的字段。 字段必须出现在输入的每个潜在客户记录中。 默认为电子邮件
 * **[!UICONTROL 第一个可搜索的字段]**：要消除重复项的辅助字段。 字段必须出现在输入的每个潜在客户记录中。 可选
 
-选择实例后，您还需要选择要与配置集成的Lead分区。 [潜在客户分区](https://experienceleague.adobe.com/zh-hans/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/understanding-workspaces-and-person-partitions)是Marketo Engage中的一个概念，用于按业务部门（如品牌或销售区域）划分潜在客户记录。 如果您的Marketo订阅没有工作区和分区功能，或者您的订阅中未创建其他分区，则只有默认分区可用。 单个配置只能更新其配置分区中存在的潜在客户记录。
+选择实例后，您还需要选择要与配置集成的Lead分区。 [潜在客户分区](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/understanding-workspaces-and-person-partitions)是Marketo Engage中的一个概念，用于按业务部门（如品牌或销售区域）划分潜在客户记录。 如果您的Marketo订阅没有工作区和分区功能，或者您的订阅中未创建其他分区，则只有默认分区可用。 单个配置只能更新其配置分区中存在的潜在客户记录。
 
 >[!IMPORTANT]
 > 
@@ -126,12 +136,12 @@ Experience Platform数据类型和Marketo数据类型可以通过以下方式进
 | 整数 | 整数 |
 | 短 | 整数 |
 | 长 | 浮动 |
-| 两次 | 货币，浮点数，% |
+| 双精度 | 货币，浮点数，% |
 | 布尔值 | 布尔值 |
-| 数组 | 不支持 |
-| 对象 | 不支持 |
-| 地图 | 不支持 |
-| 字节 | 不支持 |
+| 数组 | 不受支持 |
+| 对象 | 不受支持 |
+| 地图 | 不受支持 |
+| 字节 | 不受支持 |
 
 {style="table-layout:auto"}
 

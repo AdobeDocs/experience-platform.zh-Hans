@@ -1,23 +1,25 @@
 ---
 title: Marketo Engage目标
 description: Marketo Engage是唯一一款用于营销、广告、分析和商务的端到端客户体验管理(CXM)解决方案。 您可以从自动化和管理活动，从CRM商机管理和客户参与到基于帐户的营销和收入归因。
-exl-id: 5ae5f114-47ba-4ff6-8e42-f8f43eb079f7
-source-git-commit: c57a519b5a230dc62699808cf5c020d48cc79083
+source-git-commit: 47d808b4dd1736f3444ddb479c3a460c289d09f8
 workflow-type: tm+mt
-source-wordcount: '967'
+source-wordcount: '949'
 ht-degree: 1%
 
 ---
 
-# Marketo Engage目标 {#beta-marketo-engage-destination}
+# （旧版） (V2) Marketo Engage目标 {#beta-marketo-engage-destination}
 
 ## 目标更改日志 {#changelog}
 
 >[!IMPORTANT]
 >
->随着[增强型Marketo V2目标连接器](/help/release-notes/2022/july-2022.md#destinations)的发布，您现在会在目标目录中看到两个Marketo卡。
->* 如果您已经将数据激活到&#x200B;**[!UICONTROL Marketo V1]**&#x200B;目标：请在2023年2月之前创建到&#x200B;**[!UICONTROL Marketo V2]**&#x200B;目标的新数据流并删除到&#x200B;**[!UICONTROL Marketo V1]**&#x200B;目标的现有数据流。 自该日期起，将删除&#x200B;**[!UICONTROL Marketo V1]**&#x200B;目标卡。
->* 如果您尚未创建任何到&#x200B;**[!UICONTROL Marketo V1]**&#x200B;目标的数据流，请使用新的&#x200B;**[!UICONTROL Marketo V2]**&#x200B;卡连接到并将数据导出到Marketo。
+>**[!UICONTROL （旧版） (V2) Marketo Engage]**&#x200B;将于&#x200B;**2026年3月**&#x200B;被弃用。
+>
+>要确保顺利过渡到新&#x200B;**[[!UICONTROL Marketo Engage]](marketo-engage-connection.md)**&#x200B;目标，请查看以下关键点和所需的操作：
+>
+>* 现有&#x200B;**[!UICONTROL （旧版） (V2) Marketo Engage]**&#x200B;的所有用户必须在2026年3月之前迁移到新的&#x200B;**[!UICONTROL Marketo Engage]**&#x200B;目标。
+>* **不会自动迁移现有数据流。**&#x200B;您必须[设置与新](../../ui/connect-destination.md)Marketo Engage **[!UICONTROL 目标的新连接]**&#x200B;并在该处激活您的受众。
 
 ![并排视图中两个Marketo目标卡的图像。](../..//assets/catalog/adobe/marketo-side-by-side-view.png)
 
@@ -80,7 +82,7 @@ Marketo V2目标中的改进包括：
 >* 若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
-有关如何设置目标和激活受众的详细说明，请参阅Marketo文档中的[将Adobe Experience Platform受众推送到Marketo静态列表](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html?lang=zh-Hans)。
+有关如何设置目标和激活受众的详细说明，请参阅Marketo文档中的[将Adobe Experience Platform受众推送到Marketo静态列表](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html)。
 
 以下视频还演示了配置Marketo目标和激活受众的步骤。
 
@@ -93,7 +95,7 @@ Marketo V2目标中的改进包括：
 >* 视频中调出的两个限制不再适用。 除了在录制视频时支持的受众成员资格信息之外，您现在可以映射许多其他配置文件属性字段。 您还可以将受众成员导出到Marketo，这些成员尚不存在于Marketo静态列表中，并且会添加到列表中。
 >* 在Marketo V1的激活工作流的&#x200B;**[!UICONTROL 计划受众步骤]**&#x200B;中，您需要手动添加&#x200B;**[!UICONTROL 映射ID]**&#x200B;以成功将数据导出到Marketo。 Marketo V2中不再需要此手动步骤。
 
->[!VIDEO](https://video.tv.adobe.com/v/3440168?quality=12&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/338248?quality=12)
 
 ## 监视目标 {#monitor-destination}
 
@@ -104,4 +106,3 @@ Marketo V2目标中的改进包括：
 ## 数据使用和治理 {#data-usage-governance}
 
 在处理您的数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据治理的详细信息，请参阅[数据治理概述](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=zh-Hans)。
-
