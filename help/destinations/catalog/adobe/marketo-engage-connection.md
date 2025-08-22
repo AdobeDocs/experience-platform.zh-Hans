@@ -143,7 +143,7 @@ Marketo使用您选择的&#x200B;**[!UICONTROL Marketo重复数据删除字段]*
    * **[!UICONTROL 受众和配置文件]**：如果既要将受众成员添加到Marketo列表，又要使其配置文件信息保持最新，请选择此选项。
    * **[!UICONTROL 仅配置文件]**：如果您希望使用Experience Platform中的最新信息使Marketo潜在客户配置文件保持最新，请选择此选项。
    * **[!UICONTROL 仅限受众]**：如果要将受众成员添加到Marketo列表而不更新其配置文件信息，请选择此选项。
-* **[!UICONTROL 分区]**： *分区选择仅在选择&#x200B;**[!UICONTROL 仅配置文件]**或&#x200B;**[!UICONTROL 受众和配置文件]**同步类型*&#x200B;时可用。 选择与所选工作区关联的Marketo分区ID。 这允许您指定Marketo中的哪个潜在客户分区将接收导出的数据。 如果不选择特定的分区，您的数据将发送到Marketo中的&#x200B;**[!UICONTROL Default]**&#x200B;分区。
+* **[!UICONTROL 分区]**： *分区选择仅在选择&#x200B;**[!UICONTROL 仅配置文件]**&#x200B;或&#x200B;**[!UICONTROL 受众和配置文件]**&#x200B;同步类型*&#x200B;时可用。 选择与所选工作区关联的Marketo分区ID。 这允许您指定Marketo中的哪个潜在客户分区将接收导出的数据。 如果不选择特定的分区，您的数据将发送到Marketo中的&#x200B;**[!UICONTROL Default]**&#x200B;分区。
 * **[!UICONTROL Marketo重复数据删除字段]**：选择要在更新现有Marketo潜在客户时使用的Marketo重复数据删除字段。 此选择器显示您在Marketo中标记为重复数据删除字段的字段。 如果您希望Marketo中的特定字段显示为重复数据删除字段，则必须将该字段标记为Marketo中的[可搜索字段](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/lead-database/lead-database)。
 
   >[!NOTE]
