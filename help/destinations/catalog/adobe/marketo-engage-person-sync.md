@@ -78,7 +78,7 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
->设置目标的用户必须在Marketo实例和分区中具有[编辑人员](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database)权限。
+>设置目标的用户必须在Marketo实例和分区中具有[编辑人员](https://experienceleague.adobe.com/zh-hans/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database)权限。
 
 ![连接到目标](../../assets/catalog/adobe/marketo-engage-person-sync/connect-to-destination.png)
 
@@ -89,7 +89,7 @@ ht-degree: 5%
 * **[!UICONTROL 第一个可搜索的字段]**：要消除重复项的字段。 字段必须出现在输入的每个潜在客户记录中。 默认为电子邮件
 * **[!UICONTROL 第一个可搜索的字段]**：要消除重复项的辅助字段。 字段必须出现在输入的每个潜在客户记录中。 可选
 
-选择实例后，您还需要选择要与配置集成的Lead分区。 [潜在客户分区](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/understanding-workspaces-and-person-partitions)是Marketo Engage中的一个概念，用于按业务部门（如品牌或销售区域）划分潜在客户记录。 如果您的Marketo订阅没有工作区和分区功能，或者您的订阅中未创建其他分区，则只有默认分区可用。 单个配置只能更新其配置分区中存在的潜在客户记录。
+选择实例后，您还需要选择要与配置集成的Lead分区。 [潜在客户分区](https://experienceleague.adobe.com/zh-hans/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/understanding-workspaces-and-person-partitions)是Marketo Engage中的一个概念，用于按业务部门（如品牌或销售区域）划分潜在客户记录。 如果您的Marketo订阅没有工作区和分区功能，或者您的订阅中未创建其他分区，则只有默认分区可用。 单个配置只能更新其配置分区中存在的潜在客户记录。
 
 >[!IMPORTANT]
 > 

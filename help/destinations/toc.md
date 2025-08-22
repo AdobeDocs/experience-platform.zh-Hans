@@ -32,7 +32,7 @@ ht-degree: 5%
    * [删除目标帐户](./api/delete-destination-account.md)
    * [删除目标数据流](./api/delete-destination-dataflow.md)
    * [导出数据集](/help/destinations/api/export-datasets.md)
-   * [排序和筛选目标的API响应](https://experienceleague.adobe.com/docs/experience-platform/dataflows/api/sort-and-filter.html#use-cases)
+   * [排序和筛选目标的API响应](https://experienceleague.adobe.com/docs/experience-platform/dataflows/api/sort-and-filter.html?lang=zh-Hans#use-cases)
 * UI 指南  {#ui}
    * [目标工作区](./ui/destinations-workspace.md)
    * [创建新的目标连接](./ui/connect-destination.md)
@@ -70,7 +70,7 @@ ht-degree: 5%
       * [（旧版） (V2) Marketo Engage连接](./catalog/adobe/marketo-engage.md)
       * [(Beta) Marketo Engage人员同步连接](./catalog/adobe/marketo-engage-person-sync.md)
       * [Marketo Measure Ultimate连接](./catalog/adobe/marketo-measure-ultimate.md)
-      * [Experience Platform受众共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
+      * [Experience Platform受众共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=zh-Hans)
       * [联合受众组合连接](https://www.adobe.com/go/destinations-federated-audience-composition)
    * Advertising目标{#advertising}
       * [(Beta) Acxiom Audience Distribution](./catalog/advertising/acxiom-audience-connection.md)
