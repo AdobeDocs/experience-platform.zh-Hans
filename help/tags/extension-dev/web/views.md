@@ -2,10 +2,10 @@
 title: Web扩展中的视图
 description: 了解如何在Adobe Experience Platform Web扩展中为库模块定义视图。
 exl-id: 4471df3e-75e2-4257-84c0-dd7b708be417
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1bfa2e27e554dc899efc8a32900a926e787a58ac
 workflow-type: tm+mt
-source-wordcount: '2063'
-ht-degree: 73%
+source-wordcount: '2148'
+ht-degree: 70%
 
 ---
 
@@ -68,15 +68,22 @@ window.extensionBridge.register({
 将视图加载到iframe后，标记将立即调用`init`方法。 它将传递一个参数 (`info`)，该参数必须是包含以下属性的对象：
 
 | 属性 | 描述 |
-| --- | --- |
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `settings` | 包含先前从此视图保存的设置的对象。如果 `settings` 为 `null`，则表示用户正在创建初始设置，而不是加载已保存的版本。如果 `settings` 是一个对象，则应该使用它来填充视图，因为用户正在选择编辑以前保留的设置。 |
 | `extensionSettings` | 从扩展配置视图保存的设置。在非扩展配置视图中访问扩展设置时，这可能很有用。如果当前视图是扩展配置视图，请使用`settings`。 |
 | `propertySettings` | 包含属性设置的对象。有关此对象中所包含内容的详细信息，请参阅 [turbine 对象指南](../turbine.md#property-settings)。 |
 | `tokens` | 包含 API 令牌的对象。要从视图内访问 Adobe API，您通常需要使用 `tokens.imsAccess` 下的 IMS 令牌。此令牌将仅可用于Adobe开发的扩展。 如果您是Adobe员工(代表Adobe创作的扩展)，请[向数据收集工程团队发送电子邮件](mailto:reactor@adobe.com)，并提供扩展的名称，以便我们可以将其添加到允许列表中。 |
-| `company` | 包含单个属性`orgId`的对象，该属性本身表示您的Adobe Experience Cloud ID（一个由24个字符组成的字母数字字符串）。 |
+| `company` | 包含`orgId` (您的24字符Adobe Experience Cloud ID)、`id` （贵公司在Reactor API中的唯一标识符）和`tenantId` (Adobe Identity Management System中组织的唯一标识符)的对象。 |
 | `schema` | [JSON 架构](https://json-schema.org/)格式中的对象。此对象将来自[扩展清单](../manifest.md)，并且可能有助于验证您的表单。 |
+| `apiEndpoints` | 包含`reactor`的对象，其中包含对Reactor API的网址的引用。 |
+| `userConsentPermissions` | 一个对象，其中包含来自Adobe [产品使用情况数据](https://experienceleague.adobe.com/en/docs/core-services/interface/features/account-preferences#product-usage-data)的同意标志。 使用存储在`globalDataCollectionAndUsage`标记中的以了解是否允许您的扩展收集&#x200B;*any*&#x200B;客户数据。 |
+| `preferredLanguages` | 语言字符串的数组。 |
 
 您的视图应使用此信息来呈现和管理其表单。您可能只需要处理 `info.settings`，但其他信息会在必要时提供。
+
+>[!IMPORTANT]
+>
+>要使扩展符合GDPR要求，请确保使用`userConsentPermissions.globalDataCollectionAndUsage`标志来确定是否允许扩展收集有关用户的数据。
 
 ### [!DNL validate]
 
@@ -172,7 +179,7 @@ window.extensionBridge.openDataElementSelector().then(function(dataElement) {
 
 >[!NOTE]
 >
->要下载相应的图标，请导航到Adobe Spectrum[&#128279;](https://spectrum.adobe.com/page/icons/)上的图标页面并搜索“[!DNL Data]”。
+>要下载相应的图标，请导航到Adobe Spectrum[上的](https://spectrum.adobe.com/page/icons/)图标页面并搜索“[!DNL Data]”。
 
 当用户选择文本字段旁边的按钮时，将调用 `window.extensionBridge.openDataElementSelector`，[如上所述](#open-data-element)。这会显示用户可以从中进行选择的数据元素列表，而不是强制用户记住数据元素名称并键入百分比符号。用户选择数据元素后，您将收到用百分比符号括起来的选定数据元素的名称（除非您已将 `tokenize` 选项设置为 `false`）。我们建议您随后使用该结果填充文本字段。
 
