@@ -4,9 +4,9 @@ title: 区段定义API端点
 description: Adobe Experience Platform分段服务API中的区段定义端点允许您以编程方式管理组织的区段定义。
 role: Developer
 exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
-source-git-commit: 424702d7d16eddabefe19d023c3829bd650c88ce
+source-git-commit: 5f19bd0601770115cae859fd6dc85bd9c9f6e92c
 workflow-type: tm+mt
-source-wordcount: '1558'
+source-wordcount: '1571'
 ht-degree: 2%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 2%
 
 >[!WARNING]
 >
->不建议使用分段服务API通过B2B实体创建受众。 不能再使用以下B2B实体创建受众：帐户、帐户 — 人员关系、营销活动、营销活动成员、营销列表成员、机会和机会 — 人员关系。
+>不建议使用分段服务API通过B2B实体创建受众。 不能再使用以下B2B实体创建受众：帐户、帐户 — 人员关系、营销活动、营销活动成员、营销列表成员、机会和机会 — 人员关系。 有关详细信息，请阅读[Real-Time CDP B2B edition架构升级](../../rtcdp/b2b-architecture-upgrade.md)指南。
 
 Adobe Experience Platform允许您创建区段定义，以从一组配置文件中定义一组特定属性或行为。 区段定义是一个对象，它封装在[!DNL Profile Query Language] (PQL)中编写的查询。 区段定义会应用到用户档案以创建受众。 此对象（区段定义）也称为PQL谓词。 PQL谓词根据与您提供给[!DNL Real-Time Customer Profile]的任何记录或时间序列数据相关的条件定义区段定义的规则。 有关编写PQL查询的更多信息，请参阅[PQL指南](../pql/overview.md)。
 
