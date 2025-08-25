@@ -76,7 +76,7 @@ window.extensionBridge.register({
 | `company` | 包含`orgId` (您的24字符Adobe Experience Cloud ID)、`id` （贵公司在Reactor API中的唯一标识符）和`tenantId` (Adobe Identity Management System中组织的唯一标识符)的对象。 |
 | `schema` | [JSON 架构](https://json-schema.org/)格式中的对象。此对象将来自[扩展清单](../manifest.md)，并且可能有助于验证您的表单。 |
 | `apiEndpoints` | 包含`reactor`的对象，其中包含对Reactor API的网址的引用。 |
-| `userConsentPermissions` | 一个对象，其中包含来自Adobe [产品使用情况数据](https://experienceleague.adobe.com/en/docs/core-services/interface/features/account-preferences#product-usage-data)的同意标志。 使用存储在`globalDataCollectionAndUsage`标记中的以了解是否允许您的扩展收集&#x200B;*any*&#x200B;客户数据。 |
+| `userConsentPermissions` | 一个对象，其中包含来自Adobe [产品使用情况数据](https://experienceleague.adobe.com/zh-hans/docs/core-services/interface/features/account-preferences#product-usage-data)的同意标志。 使用存储在`globalDataCollectionAndUsage`标记中的以了解是否允许您的扩展收集&#x200B;*any*&#x200B;客户数据。 |
 | `preferredLanguages` | 语言字符串的数组。 |
 
 您的视图应使用此信息来呈现和管理其表单。您可能只需要处理 `info.settings`，但其他信息会在必要时提供。
