@@ -5,7 +5,7 @@ exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: d2b605925a8fd7ea06f198ba8a9f85747a2e585b
 workflow-type: tm+mt
 source-wordcount: '1643'
-ht-degree: 33%
+ht-degree: 81%
 
 ---
 
@@ -21,7 +21,7 @@ ht-degree: 33%
 >- [联合受众构成](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/zh-hans/docs/real-time-cdp-collaboration/using/latest)
 
-**发行日期： 2025年8月19日**
+**发行日期：2025 年 8 月 19 日**
 
 Adobe Experience Platform 中新功能和现有功能的更新：
 
@@ -42,7 +42,7 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 
 | 功能 | 描述 |
 | --- | --- |
-| 流吞吐量容量警报 | 三个新警报允许用户订阅和配置警报，以主动管理和监控流吞吐量容量的性能。 新警报包括流吞吐量达到80%、90%或超出容量限制时的警报。 有关详细信息，请阅读[容量警报规则](../../observability/alerts/rules.md#capacity)指南。 |
+| 流传输吞吐量警报 | 用户可以订阅三个新的警报，并配置警报以主动管理和监控流传输吞吐量的性能。新警报包含了当流传输吞吐量达到 80%、90% 以及超过容量限制三种情况。有关详细信息，请阅读[容量警报规则](../../observability/alerts/rules.md#capacity)指南。 |
 
 有关警报的更多信息，请阅读[[!DNL Observability Insights] 概述](../../observability/home.md)。
 
@@ -54,27 +54,27 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 
 | 功能 | 描述 |
 | --- | --- |
-| Real-time Customer Profile的数据保留 | 您只能&#x200B;**每30天**&#x200B;更新一次实时客户配置文件的数据保留期。 |
+| 实时客户轮廓的数据保留 | 您&#x200B;**只能**&#x200B;每 30 天更新一次实时客户轮廓的数据保留期。 |
 
-有关目录服务的详细信息，请阅读[目录服务概述](../../catalog/home.md)。
+有关目录服务的更多信息，请阅读[目录服务概述](../../catalog/home.md)。
 
 ## 目标 {#destinations}
 
-[!DNL Destinations]是预先构建的与目标平台的集成，允许从Experience Platform无缝激活数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
+[!DNL Destinations] 是预建的与目标平台的集成，可实现从 Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例。
 
 >[!IMPORTANT]
 >
 >**数据集导出计划扩展**
 >
->如果您的组织在2024年11月之前创建了数据集导出数据流，则这些数据流将在&#x200B;**2025年9月1日**&#x200B;停止工作。 如果您需要数据流在2025年9月1日之后继续导出数据，则必须按照[本指南](../../destinations/ui/dataset-expiration-update.md)中的步骤为要向其中导出数据集的每个目标扩展其计划。
+>如果您的组织在 2024 年 11 月之前创建了数据集导出数据流，这些数据流将于 **2025 年 9 月 1 日**&#x200B;停止工作。如果您需要在 2025 年 9 月 1 日之后继续保持导出数据的数据流，则必须按照[这个指南](../../destinations/ui/dataset-expiration-update.md)中的步骤，为每一个数据集导出目标扩展导出计划。
 
 >[!IMPORTANT]
 >
->基于API的目标需要&#x200B;**IP允许列表更新**
+>**必须为基于 API 的目标更新 IP 允许列表**
 >
->列入允许列表 列入允许列表由于升级到流式目标导出引擎，对基于API的目标使用[IP地址](../../destinations/catalog/streaming/ip-address-allow-list.md)的组织必须在2025年9月15日之前将以下IP地址添加到其&#x200B;**中**：
+>由于流传输目标导出引擎升级，为基于 API 的目标使用 [IP 允许列表](../../destinations/catalog/streaming/ip-address-allow-list.md)的组织必须&#x200B;**在 2025 年 9 月 15 日之前**&#x200B;将以下 IP 地址添加到自己的允许列表中：
 >
->**必需的IP地址：**
+>**必需的 IP 地址：**
 >
 >```
 >3.209.222.108
@@ -87,55 +87,55 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 >
 >**此更改适用于以下目标类型：**
 >
->- [流式受众导出目标](../../destinations/destination-types.md#streaming-destinations) ([Pega CDH实时受众](/help/destinations/catalog/personalization/pega-v2.md)，与[Salesforce Marketing Cloud](../../destinations/catalog/email-marketing/salesforce-marketing-cloud-exact-target.md)和[Oracle Eloqua](../../destinations/catalog/email-marketing/oracle-eloqua-api.md)的基于API的集成)
->- 通过[Destination SDK](../../destinations/destination-sdk/getting-started.md)构建的公共或专用目标
+>- [流传输受众导出目标](../../destinations/destination-types.md#streaming-destinations)（[Pega CDH 实时受众](/help/destinations/catalog/personalization/pega-v2.md)，与 [Salesforce Marketing Cloud](../../destinations/catalog/email-marketing/salesforce-marketing-cloud-exact-target.md) 和 [Oracle Eloqua](../../destinations/catalog/email-marketing/oracle-eloqua-api.md) 的基于 API 的集成）
+>- 通过 [Destination SDK](../../destinations/destination-sdk/getting-started.md) 构建的公共或私人目标
 >
->**所需操作：**&#x200B;如果您已与Adobe合作，将任何IP地址允许列表列入允许列表到基于API的流目标，则需要将上述IP地址添加到您的中，以确保数据流不会中断到基于API的目标。
+>**必需的操作：**&#x200B;如果您使用 Adobe 将任何 IP 地址列入基于 API 的流传输目标的允许列表，就需要将上述 IP 地址添加到您的允许列表中，以确保数据流不间断地流向您的基于 API 的目标。
 
 **新目标**
 
 | 目标 | 描述 |
 | --- | --- |
-| [[!DNL Acxiom Real ID Audience Connection]](../../destinations/catalog/advertising/acxiom-real-id-audience-connection.md)目标 | 使用[!DNL Acxiom Real ID Audience Connection]目标通过[!DNL Acxiom's] [Real ID](https://www.acxiom.com/real-id/real-id/)技术增强受众并将受众激活到多个平台，如[!DNL Altice]、[!DNL Ampersand]、[!DNL Comcast]等。 |
+| [[!DNL Acxiom Real ID Audience Connection]](../../destinations/catalog/advertising/acxiom-real-id-audience-connection.md) 目标 | 使用 [!DNL Acxiom Real ID Audience Connection] 目标，通过 [!DNL Acxiom's] [Real ID](https://www.acxiom.com/real-id/real-id/) 技术增强受众，并将受众激活到多个平台，例如 [!DNL Altice]、[!DNL Ampersand]、[!DNL Comcast] 等。 |
 | 增强的[[!DNL Marketo Engage]](../../destinations/catalog/adobe/marketo-engage-connection.md)目标 | 增强的[[!DNL Marketo Engage]](../../destinations/catalog/adobe/marketo-engage-connection.md)目标是现有[[!DNL (Legacy) (V2) Marketo Engage]](../../destinations/catalog/adobe/marketo-engage.md)连接器的升级版本。 除了旧连接器中的现有受众同步功能之外，此新连接器还引入了配置文件同步功能，从而提供了与[!DNL Marketo Engage]的更紧密集成。 <br> [[!DNL (Legacy) (V2) Marketo Engage]](../../destinations/catalog/adobe/marketo-engage.md)连接器将于&#x200B;**2026年3月**&#x200B;被弃用。 要确保顺利过渡到新&#x200B;**[[!UICONTROL Marketo Engage]](../../destinations/catalog/adobe/marketo-engage-connection.md)**&#x200B;目标，请查看以下关键点和所需的操作： <ul><li>现有&#x200B;**[!UICONTROL （旧版） (V2) Marketo Engage]**&#x200B;的所有用户必须在2026年3月之前迁移到新的&#x200B;**[!UICONTROL Marketo Engage]**&#x200B;目标。</li><li> **不会自动迁移现有数据流。**&#x200B;您必须[设置与新](../../destinations/ui/connect-destination.md)Marketo Engage **[!UICONTROL 目标的新连接]**&#x200B;并在该处激活您的受众。</li></ul> |
 
 **更新的目标**
 
 | 目标 | 描述 |
 | --- | --- |
-| [[!DNL Microsoft Bing]](../../destinations/catalog/advertising/bing.md) 内部升级 | 从2025年8月11日开始，在短期内，您可能会在目标目录中看到两个&#x200B;**[!DNL Microsoft Bing]**&#x200B;卡并排显示。 这是由于目标服务内部升级造成的。现有的&#x200B;**[!DNL Microsoft Bing]**&#x200B;目标连接器已重命名为&#x200B;**[!UICONTROL （已弃用） Microsoft Bing]**，现在您可以使用名为&#x200B;**[!UICONTROL Microsoft Bing]**&#x200B;的新信息卡。 <br>升级已完成，已从目标目录中删除已弃用的信息卡。 使用目录中的&#x200B;**[!UICONTROL Microsoft Bing]**&#x200B;连接获取新的激活数据流。 如果您有任何到&#x200B;**[!UICONTROL （已弃用）Microsoft Bing]**&#x200B;目标的活动数据流，则会自动更新，因此您无需执行任何操作。 <br><br>如果您通过 [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) 创建数据流，则必须将 [!DNL flow spec ID] 和 [!DNL connection spec ID] 更新为以下值：<ul><li>流量规范 ID：`8d42c81d-9ba7-4534-9bf6-cf7c64fbd12e`</li><li>连接规范 ID：`dd69fc59-3bc5-451e-8ec2-1e74a670afd4`</li></ul> 此次升级后，您可能会遇到数据流中向&#x200B;**发送的活动配置文件数**&#x200B;的下降[!DNL Microsoft Bing]。 导致此下降的原因是，针对此目标平台的所有激活引入了&#x200B;**ECID映射要求**。 |
+| [[!DNL Microsoft Bing]](../../destinations/catalog/advertising/bing.md) 内部升级 | 从2025年8月11日开始，在短期内，您可能会在目标目录中看到两个&#x200B;**[!DNL Microsoft Bing]**&#x200B;卡并排显示。 这是由于目标服务内部升级造成的。现有的 **[!DNL Microsoft Bing]** 目标连接器已更名为&#x200B;**[!UICONTROL （已弃用）Microsoft Bing]**，现在为您提供一个名为 **[!UICONTROL Microsoft Bing]** 的新卡片。<br>升级已完成，已从目标目录中删除已弃用的信息卡。 使用目录中的&#x200B;**[!UICONTROL Microsoft Bing]**&#x200B;连接获取新的激活数据流。 如果您有任何到&#x200B;**[!UICONTROL （已弃用）Microsoft Bing]**&#x200B;目标的活动数据流，则会自动更新，因此您无需执行任何操作。 <br><br>如果您通过 [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) 创建数据流，则必须将 [!DNL flow spec ID] 和 [!DNL connection spec ID] 更新为以下值：<ul><li>流量规范 ID：`8d42c81d-9ba7-4534-9bf6-cf7c64fbd12e`</li><li>连接规范 ID：`dd69fc59-3bc5-451e-8ec2-1e74a670afd4`</li></ul> 此次升级后，您可能会发现流向 [!DNL Microsoft Bing] 的数据流中&#x200B;**活跃轮廓的数量下降**。出现下降的原因是，为所有流向此目标平台的激活引入了 **ECID 映射要求**。 |
 | [[!DNL LinkedIn]](../../destinations/catalog/social/linkedin.md)和[LinkedIn匹配受众](../../destinations/catalog/social/linkedin-b2b.md)目标的身份验证到期详细信息 | [!DNL LinkedIn]目标的身份验证过期信息现在直接显示在Experience Platform界面中，因此您可以查看身份验证何时过期并续订，以免对数据流造成任何中断。 您可以在&#x200B;**[!UICONTROL 帐户]**&#x200B;或&#x200B;**[[!UICONTROL 浏览]](../../destinations/ui/destinations-workspace.md#accounts)**&#x200B;选项卡中从&#x200B;**[[!UICONTROL 帐户到期日期]](../../destinations/ui/destinations-workspace.md#browse)**&#x200B;列监视令牌到期日期。 |
 
 **新增或更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 增强了目标的搜索、筛选和标记功能 | 通过跨[浏览](../../destinations/ui/destinations-workspace.md#browse)和[帐户](../../destinations/ui/destinations-workspace.md#accounts)选项卡的增强搜索、筛选和标记功能，改进您的目标管理工作流。 <br>您现在可以按名称搜索特定数据流和帐户，按包括目标平台、状态和日期在内的各种条件进行筛选，以及创建自定义标记来组织目标。 列排序还可用于关键字段，如上次数据流运行时，这使识别和管理目标连接更容易。<br> ![在“浏览”选项卡中搜索目标数据流的动画演示](../../destinations/assets/ui/workspace/search.gif) |
+| 增强目标的搜索、过滤和标记功能 | 通过[浏览](../../destinations/ui/destinations-workspace.md#browse)和[帐户](../../destinations/ui/destinations-workspace.md#accounts)选项卡中增强的搜索、过滤和标记功能，改进您的目标管理工作流程。<br>您现在可以按名称搜索特定数据流和帐户，按包括目标平台、状态和日期在内的各种条件进行筛选，以及创建自定义标记来组织目标。 列排序还可用于关键字段，如上次数据流运行时，这使识别和管理目标连接更容易。<br> ![在“浏览”选项卡中搜索目标数据流的动画演示](../../destinations/assets/ui/workspace/search.gif) |
 
 
-## Experience Data Model (XDM) {#xdm}
+## 体验数据模型 (XDM) {#xdm}
 
-XDM是一个开源规范，为引入Experience Platform的数据提供通用结构和定义（架构）。 通过遵守 XDM 标准，所有客户体验数据都可以合并到一个通用的呈现中，以更快、更加集成的方式提供见解。您可以从客户行为中获得有价值的见解，通过区段定义客户受众，并使用客户属性实现个性化目的。
+XDM 是一种开源规范，可为导入 Experience Platform 的数据提供常用的结构和定义（架构）。通过遵守 XDM 标准，所有客户体验数据都可以合并到一个通用的呈现中，以更快、更加集成的方式提供见解。您可以从客户行为中获得有价值的见解，通过区段定义客户受众，并使用客户属性实现个性化目的。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 基于模型的架构 | 使用基于模型的架构简化数据建模。 现在，您可以通过全面的操作方法示例和指导更轻松地创建架构。 此功能目前可供Campaign Orchestration许可证持有人使用，并将在正式发布时扩展到Data Distiller客户，从而使数据建模更易于访问且更有效。 |
+| 基于模型的架构 | 使用基于模型的架构简化您的数据建模。现在，您可以通过全面的操作示例和指导更轻松地创建架构。此功能目前可供营销活动编排许可证持有者使用，未来将扩展到 GA 的数据蒸馏器客户，使数据建模更易于访问、更高效。 |
 
-有关详细信息，请阅读[XDM概述](../../xdm/home.md)。
+有关详细信息，请参阅 [XDM 概述](../../xdm/home.md)。
 
 ## 实时客户轮廓 {#profile}
 
-Real-time Customer Profile通过将所有渠道的数据整合到单个配置文件中，为每个客户提供统一、可操作的视图。
+实时客户轮廓将所有渠道的数据合并到一个轮廓中，为每个客户提供一个统一的、可操作的视图。
 
 **新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 实体API中的增强查找功能 | 实体API现在支持以下内容： <ul><li>人员（个人资料）</li><li>体验事件</li><li>帐户</li><li>机会</li></ul> 此更新简化了API的使用，并帮助确保最佳性能和可靠性。 如果您以前对其他实体类型（包括联接表和自定义多实体类型）使用查找，现在可以借此良机查看API使用情况并利用改进的体验。 有关详细信息，请参阅[Real-Time CDB B2B edition架构升级指南](../../rtcdp/b2b-architecture-upgrade.md)。 |
+| 增强实体 API 中的查找功能 | 实体 API 现在支持以下内容： <ul><li>人员（轮廓）</li><li>体验事件</li><li>帐户</li><li>机会</li></ul> 此更新简化了 API 的使用，并有助于确保最佳性能和可靠性。如果您以前为其他实体类型（包括连接表和自定义多实体类型）使用过查找，那么现在有一个很好的机会来审查您的 API 使用情况，并充分利用改进的体验。更多信息请阅读[实时 CDB B2B Edition 架构升级指南](../../rtcdp/b2b-architecture-upgrade.md)。 |
 
-有关Real-time Customer Profile的详细信息，请阅读[配置文件概述](../../profile/home.md)。
+要了解有关实时客户轮廓的更多信息，请阅读[轮廓概述](../../profile/home.md)。
 
 ## 沙盒 {#sandboxes}
 
@@ -145,8 +145,8 @@ Experience Platform 旨在全球范围内扩充数字体验应用。企业通常
 
 | 功能 | 描述 |
 | --- | --- |
-| 导入工作流中的依赖关系对象重复数据删除 | 沙盒工具现在将始终在检测到具有相同名称的对象时重复使用现有对象，以避免对象激增。 此更改适用于以下对象： <ul><li>架构</li><li>字段组</li><li>受众</li><li>`decisioning_ranking`</li><li>`decisioning_rules`</li></ul> 详情请参阅[沙盒工具支持对象指南](../../sandboxes/ui/sandbox-tooling.md#objects-supported-for-sandbox-tooling)。 |
-| 跨组织包共享提供整个沙盒支持 | 沙盒工具现在支持跨组织包共享中的&#x200B;**整个沙盒**&#x200B;类型。 您现在可以跨组织共享整个沙盒和多对象包。 详情请参阅 [沙盒工具支持对象指南](../../sandboxes/ui/sharing-packages-across-orgs.md)。 |
+| 删除导入工作流中依赖对象的重复数据 | 如果检测到同名的对象，沙盒工具现在将始终重新使用现有的对象，以避免对象数量激增。此更改适用于以下对象： <ul><li>架构</li><li>字段组</li><li>受众</li><li>`decisioning_ranking`</li><li>`decisioning_rules`</li></ul> 详情请参阅[沙盒工具支持对象指南](../../sandboxes/ui/sandbox-tooling.md#objects-supported-for-sandbox-tooling)。 |
+| 整个沙盒支持跨组织包共享 | 现在，沙盒工具在跨组织包共享中支持&#x200B;**整个沙盒**&#x200B;类型。您现在可以在所有组织之间共享整个沙盒和多对象包。详情请参阅 [沙盒工具支持对象指南](../../sandboxes/ui/sharing-packages-across-orgs.md)。 |
 
 有关沙盒的更多信息，请阅读[沙盒概述](../../sandboxes/home.md)。
 
@@ -158,7 +158,7 @@ Experience Platform 旨在全球范围内扩充数字体验应用。企业通常
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 受众估计 | 受众评估现在会在区段生成器中自动生成。 此值将在您修改受众时更新，并始终反映最新的受众规则。 此外，估计值现在将显示为&#x200B;**范围**，该范围基于采样数据的置信区间。 |
+| 受众估计值 | 现在，区段生成器中会自动生成受众估计值。每当您更改受众，此值都会更新，并始终体现最新的受众规则。此外，估计值现在将显示为基于取样数据的置信区间的一个&#x200B;**范围**。 |
 
 有关详细信息，请参阅 [[!DNL Segmentation Service]  概述](../../segmentation/home.md)。
 
@@ -170,7 +170,7 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 | 功能 | 描述 |
 | --- | --- |
-| 用户界面中对[!BADGE 的]{type=Informative}Beta[!DNL Azure Private Links]支持 | 您现在可以将[!DNL Azure Private Links]用于UI中的选定源组。 使用此功能可创建您的源可以连接的专用端点。 使用私有端点，您可以设置绕过公共Internet的连接和数据流，从而增强敏感数据的安全性和网络隔离。 对[!DNL Azure Private Links]的支持可用于以下源： <ul><li>[[!DNL Azure Blob Storage]](../../sources/connectors/cloud-storage/blob.md)</li><li>[[!DNL ADLS Gen2]](../../sources/connectors/cloud-storage/adls-gen2.md)</li><li>[[!DNL Azure File Storage]](../../sources/connectors/cloud-storage/azure-file-storage.md)</li><li>[[!DNL Snowflake]](../../sources/connectors/databases/snowflake.md)</li></ul> 有关详细信息，请阅读[[!DNL Azure Private Links]](../../sources/tutorials/ui/private-link.md)上的指南。 |
-| [!DNL Azure Blob Storage]的增强型身份验证 | 您现在可以使用基于服务主体的身份验证将[!DNL Azure Blob Storage]源连接到Experience Platform。 使用基于服务主体的身份验证增强安全性、更轻松的凭据轮换以及更精细的帐户访问控制。 有关详细信息，请参阅 [[!DNL Azure Blob Storage]  概述](../../sources/connectors/cloud-storage/blob.md)。 |
+| [!BADGE Beta]{type=Informative} 支持用户界面中的 [!DNL Azure Private Links] | 您现在可以在 UI 中为一组精选来源使用 [!DNL Azure Private Links]。使用此功能可以创建一个可以与来源连接的私有端点。使用私有端点，您可以设置绕过公共互联网的连接和数据流，从而为您的敏感数据提供更强的安全性和网络隔离。[!DNL Azure Private Links] 的支持可供以下来源使用： <ul><li>[[!DNL Azure Blob Storage]](../../sources/connectors/cloud-storage/blob.md)</li><li>[[!DNL ADLS Gen2]](../../sources/connectors/cloud-storage/adls-gen2.md)</li><li>[[!DNL Azure File Storage]](../../sources/connectors/cloud-storage/azure-file-storage.md)</li><li>[[!DNL Snowflake]](../../sources/connectors/databases/snowflake.md)</li></ul> 更多信息请阅读 [[!DNL Azure Private Links]](../../sources/tutorials/ui/private-link.md)上的指南。 |
+| 增强 [!DNL Azure Blob Storage] 的身份验证 | 您现在可以使用基于服务主体的身份验证，将您的 [!DNL Azure Blob Storage] 源连接到 Experience Platform。使用基于服务主体的身份验证可增强安全性、简化凭据轮换，并为您的帐户提供粒度更细的访问控制。有关详细信息，请参阅 [[!DNL Azure Blob Storage]  概述](../../sources/connectors/cloud-storage/blob.md)。 |
 
 有关更多信息，请阅读[来源概述](../../sources/home.md)。
