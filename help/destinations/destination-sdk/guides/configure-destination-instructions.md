@@ -2,9 +2,9 @@
 description: 本页列出并描述了使用Destination SDK配置流目标的步骤。
 title: 使用Destination SDK配置流目标
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: 804370a778a4334603f3235df94edaa91b650223
+source-git-commit: 560200a6553a1aae66c608eef7901b3248c886b4
 workflow-type: tm+mt
-source-wordcount: '865'
+source-wordcount: '879'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-本页介绍如何使用目标SDK[&#128279;](../functionality/configuration-options.md)中的配置选项以及其他Destination SDK功能和API参考文档中的信息配置[流目标](../../destination-types.md#streaming-destinations)。 步骤按以下顺序排列。
+本页介绍如何使用目标SDK[中的](../functionality/configuration-options.md)配置选项以及其他Destination SDK功能和API参考文档中的信息配置[流目标](../../destination-types.md#streaming-destinations)。 步骤按以下顺序排列。
 
 ## 先决条件 {#prerequisites}
 
@@ -25,9 +25,9 @@ ht-degree: 0%
 
 ## 步骤1：创建服务器和模板配置 {#create-server-template-configuration}
 
-首先[使用`/destinations-server`端点创建服务器和模板配置](../authoring-api/destination-server/create-destination-server.md)。
+首先[使用](../authoring-api/destination-server/create-destination-server.md)端点创建服务器和模板配置`/destinations-server`。
 
-下面显示了一个配置示例。 请注意，在步骤3 [创建转换模板](#create-transformation-template)中处理了`requestBody.value`参数中的消息转换模板。
+下面显示了一个配置示例。 请注意，在步骤3 `requestBody.value`创建转换模板[中处理了](#create-transformation-template)参数中的消息转换模板。
 
 ```shell
 POST platform.adobe.io/data/core/activation/authoring/destination-servers
@@ -275,7 +275,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 如果您在目标配置中选择了`"authenticationRule": "CUSTOMER_AUTHENTICATION"`，并且目标支持OAuth 2身份验证方法，请阅读[OAuth 2身份验证](../functionality/destination-configuration/oauth2-authorization.md)。
 
-如果您选择了`"authenticationRule": "PLATFORM_AUTHENTICATION"`，则必须创建[凭据配置](../credentials-api/create-credential-configuration.md)。
+如果选择`"authenticationRule": "PLATFORM_AUTHENTICATION"`，则必须创建[凭据配置](../credentials-api/create-credential-configuration.md)，并在`authenticationId`目标投放[配置的](/help/destinations/destination-sdk/functionality/destination-configuration/destination-delivery.md#platform-authentication)参数中传递凭据对象的ID。
 
 ## 步骤6：测试您的目标 {#test-destination}
 
@@ -284,7 +284,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 在测试目标的过程中，您必须使用Experience Platform UI创建区段，并将区段激活到目标。 有关如何在Experience Platform中创建受众的说明，请参阅以下两个资源：
 
 * [创建受众文档页面](/help/segmentation/ui/audience-portal.md#create-audience)
-* [创建受众视频演练](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=zh-Hans)
+* [创建受众视频演练](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)
 
 ## 步骤7：发布目标 {#publish-destination}
 

@@ -2,9 +2,9 @@
 description: 了解如何为使用Destination SDK构建的目标配置合作伙伴架构。
 title: 合作伙伴架构配置
 exl-id: 0548e486-206b-45c5-8d18-0d6427c177c5
-source-git-commit: 3c772e99e7f0417672e60d56ace962abda2b7d76
+source-git-commit: 560200a6553a1aae66c608eef7901b3248c886b4
 workflow-type: tm+mt
-source-wordcount: '1910'
+source-wordcount: '1924'
 ht-degree: 3%
 
 ---
@@ -32,7 +32,7 @@ Experience Platform使用架构，以一致且可重用的方式描述数据结�
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -148,7 +148,7 @@ Destination SDK支持创建动态合作伙伴架构。 与静态架构相反，�
 
 | 参数 | 类型 | 必需/可选 | 描述 |
 |---------|----------|------|---|
-| `dynamicEnum.authenticationRule` | 字符串 | 必需 | 指示[!DNL Experience Platform]客户如何连接到您的目标。 接受的值为`CUSTOMER_AUTHENTICATION`、`PLATFORM_AUTHENTICATION`、`NONE`。<br> <ul><li>如果Experience Platform客户通过`CUSTOMER_AUTHENTICATION`此处[描述的任何身份验证方法登录您的系统，请使用](customer-authentication.md)。 </li><li> 如果Adobe与您的目标之间存在全局身份验证系统，并且`PLATFORM_AUTHENTICATION`客户不需要提供任何身份验证凭据即可连接到您的目标，则使用[!DNL Experience Platform]。 在这种情况下，您必须使用凭据API [创建凭据对象](../../credentials-api/create-credential-configuration.md)。 </li><li>如果不需要身份验证即可将数据发送到目标平台，请使用`NONE`。 </li></ul> |
+| `dynamicEnum.authenticationRule` | 字符串 | 必需 | 指示[!DNL Experience Platform]客户如何连接到您的目标。 接受的值为`CUSTOMER_AUTHENTICATION`、`PLATFORM_AUTHENTICATION`、`NONE`。<br> <ul><li>如果Experience Platform客户通过`CUSTOMER_AUTHENTICATION`此处[描述的任何身份验证方法登录您的系统，请使用](customer-authentication.md)。 </li><li> 如果Adobe与您的目标之间存在全局身份验证系统，并且`PLATFORM_AUTHENTICATION`客户不需要提供任何身份验证凭据即可连接到您的目标，则使用[!DNL Experience Platform]。 在这种情况下，您必须使用凭据API [创建凭据对象](../../credentials-api/create-credential-configuration.md)，并在`authenticationId`目标投放[配置的](/help/destinations/destination-sdk/functionality/destination-configuration/destination-delivery.md#platform-authentication)参数中传递凭据对象的ID。 </li><li>如果不需要身份验证即可将数据发送到目标平台，请使用`NONE`。 </li></ul> |
 | `dynamicEnum.destinationServerId` | 字符串 | 必需 | 动态架构服务器的`instanceId`。 此目标服务器包括Experience Platform将调用以检索动态架构的API端点。 |
 | `dynamicEnum.value` | 字符串 | 必需 | 动态架构的名称，如动态架构服务器配置中所定义。 |
 | `dynamicEnum.responseFormat` | 字符串 | 必需 | 定义动态架构时，始终设置为`SCHEMA`。 |

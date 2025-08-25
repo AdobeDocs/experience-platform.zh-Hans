@@ -2,10 +2,10 @@
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK检索凭据配置的API调用。
 title: 检索凭据配置
 exl-id: cec55073-6e2f-4412-a9dd-1aeb445279c0
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 560200a6553a1aae66c608eef7901b3248c886b4
 workflow-type: tm+mt
-source-wordcount: '478'
-ht-degree: 0%
+source-wordcount: '499'
+ht-degree: 1%
 
 ---
 
@@ -21,17 +21,17 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->在大多数情况下，您&#x200B;***不***&#x200B;需要使用`/credentials` API终结点。 您可以改为通过`/destinations`端点的`customerAuthenticationConfigurations`参数配置目标的身份验证信息。
+>在大多数情况下，您&#x200B;***不***&#x200B;需要使用`/credentials` API终结点。 您可以改为通过`customerAuthenticationConfigurations`端点的`/destinations`参数配置目标的身份验证信息。
 > 
 >有关支持的身份验证类型的详细信息，请阅读[客户身份验证配置](../functionality/destination-configuration/customer-authentication.md)。
 
 仅当在Adobe与目标平台之间存在全局身份验证系统，并且[!DNL Experience Platform]客户不需要提供任何身份验证凭据即可连接到目标时，才使用此API端点创建凭据配置。 在这种情况下，您必须使用`/credentials` API端点创建凭据配置。
 
-使用全局身份验证系统时，在[创建新的目标配置](../authoring-api/destination-configuration/create-destination-configuration.md)时，必须在[目标投放](../functionality/destination-configuration/destination-delivery.md)配置中设置`"authenticationRule":"PLATFORM_AUTHENTICATION"`。
+使用全局身份验证系统时，在`"authenticationRule":"PLATFORM_AUTHENTICATION"`创建新的目标配置[时，必须在](../functionality/destination-configuration/destination-delivery.md)目标投放[配置中设置](../authoring-api/destination-configuration/create-destination-configuration.md)。 然后，您必须创建[凭据配置](../credentials-api/create-credential-configuration.md)，并在`authenticationId`目标投放[配置中的](/help/destinations/destination-sdk/functionality/destination-configuration/destination-delivery.md#platform-authentication)参数中传递凭据对象的ID。
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 凭据API操作快速入门 {#get-started}
 
@@ -39,7 +39,7 @@ ht-degree: 0%
 
 ## 检索凭据配置 {#retrieve}
 
-您可以通过向`/authoring/credentials`端点发出`GET`请求来检索[现有](create-credential-configuration.md)凭据配置。
+您可以通过向[端点发出](create-credential-configuration.md)请求来检索`GET`现有`/authoring/credentials`凭据配置。
 
 **API格式**
 
