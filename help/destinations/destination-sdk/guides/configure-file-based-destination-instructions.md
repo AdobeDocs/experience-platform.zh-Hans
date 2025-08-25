@@ -422,7 +422,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 在测试目标的过程中，您必须使用Experience Platform UI创建受众，并将受众激活到目标。 有关如何在Experience Platform中创建受众的说明，请参阅以下两个资源：
 
 * [创建受众 — 文档页面](/help/segmentation/ui/audience-portal.md#create-audience)
-* [创建受众 — 视频演练](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)
+* [创建受众 — 视频演练](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=zh-Hans)
 
 ## 步骤6：发布目标 {#publish-destination}
 
