@@ -2,16 +2,16 @@
 title: Edge Segmentation指南
 description: 了解如何使用边缘分段在边缘即时评估Experience Platform中的受众，启用同一页面和下一页面个性化用例。
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: a741fdb4393863dbc011c03c733e27572da0ae6c
+source-git-commit: 5de8597dd1d5249297a09976c804d1c1f3d822c5
 workflow-type: tm+mt
-source-wordcount: '1116'
+source-wordcount: '1148'
 ht-degree: 1%
 
 ---
 
 # 边缘分段指南
 
-Edge分段功能能够在边缘[&#128279;](../../landing/edge-and-hub-comparison.md)上即时评估Adobe Experience Platform中的区段定义，从而启用同一页面和下一页面个性化用例。
+Edge分段功能能够在边缘[上即时评估Adobe Experience Platform中的区段定义](../../landing/edge-and-hub-comparison.md)，从而启用同一页面和下一页面个性化用例。
 
 >[!IMPORTANT]
 >
@@ -26,6 +26,8 @@ Edge分段功能能够在边缘[&#128279;](../../landing/edge-and-hub-comparison
 >[!NOTE]
 >
 >如果查询与下表中的任何查询类型匹配，则将使用边缘分段自动评估该查询。 系统会根据查询表达式自动确定此功能。
+>
+>此外，如果受众&#x200B;**仅**&#x200B;包含配置文件属性，则每天都将对其进行评估。 如果您希望实时评估受众，则需要将事件数据添加到受众。
 
 | 查询类型 | 详细信息 | 查询 | 示例 |
 | ---------- | ------- | ----- | ------- |
@@ -329,5 +331,5 @@ curl -X GET \
 
 要了解有关使用Experience Platform用户界面的更多信息，请参阅[分段用户指南](./overview.md)。
 
-有关边缘分段的常见问题解答，请阅读常见问题解答[&#128279;](../faq.md#edge-segmentation)的边缘分段部分。
+有关边缘分段的常见问题解答，请阅读常见问题解答[的](../faq.md#edge-segmentation)边缘分段部分。
 

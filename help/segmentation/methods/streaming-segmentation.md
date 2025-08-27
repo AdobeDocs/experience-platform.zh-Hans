@@ -3,10 +3,10 @@ solution: Experience Platform
 title: 流式分段指南
 description: 了解流式分段，包括内容、如何创建使用流式分段评估的受众，以及如何查看使用流式分段创建的受众。
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: 6935cee30adb59d52db6c6fed7036f81b54edd52
+source-git-commit: c009eb89331758c512abd8ff7ef185489063b48f
 workflow-type: tm+mt
-source-wordcount: '2022'
-ht-degree: 2%
+source-wordcount: '2051'
+ht-degree: 3%
 
 ---
 
@@ -38,6 +38,10 @@ ht-degree: 2%
 为了使用流式分段评估受众，必须将其&#x200B;**限制在24小时时间范围内**。
 
 ## 在流受众中包含批量数据 {#include-batch-data}
+
+>[!NOTE]
+>
+>要在使用批处理数据时保持流式分段准确，请确保批处理数据仅&#x200B;**保留在批处理受众中**&#x200B;并在流式受众中引用。
 
 在此更新之前，您可以创建将批处理数据源和流式数据源结合在一起的流式受众定义。 但是，通过最新更新，将使用批处理分段来评估使用批处理数据源和流式数据源创建受众。
 
@@ -102,7 +106,7 @@ inSegment("e3be6d7f-1727-401f-a41e-c296b45f607a") and inSegment("9e1646bb-57ff-4
 
 >[!IMPORTANT]
 >
->要使用流式分段，您&#x200B;**必须**&#x200B;使用“在Edge上处于活动状态”的合并策略。 有关合并策略的更多信息，请阅读[合并策略概述](../../profile/merge-policies/overview.md)。
+>要使用流式分段，您&#x200B;**必须**&#x200B;使用“在Edge上处于活动状态”的合并策略。 如需了解有关合并策略的更多信息，请参阅[合并策略概述](../../profile/merge-policies/overview.md)。
 
 如果规则集符合下表所列的任何标准，则它有资格进行流式分段。
 
@@ -338,7 +342,7 @@ curl -X GET 'https://platform.adobe.io/data/core/ups/segment/definitions?evaluat
 
 成功的响应会返回HTTP状态200，其中包含组织中启用流式分段的一系列区段定义。
 
-+++一个示例响应，其中包含贵组织中所有支持流式客户细分的区段定义的列表
++++包含组织中所有支持流式分段区段定义的列表的示例响应
 
 ```json
 {
@@ -467,4 +471,4 @@ curl -X GET 'https://platform.adobe.io/data/core/ups/segment/definitions?evaluat
 
 要了解有关使用Adobe Experience Platform用户界面的更多信息，请参阅[分段用户指南](./overview.md)。
 
-有关流式客户细分的常见问题，请阅读常见问题解答[&#128279;](../faq.md#streaming-segmentation)的流式客户细分部分。
+有关流式客户细分的常见问题，请阅读常见问题解答[的](../faq.md#streaming-segmentation)流式客户细分部分。
