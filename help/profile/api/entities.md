@@ -5,18 +5,14 @@ type: Documentation
 description: 通过Adobe Experience Platform，您可以使用RESTful API或用户界面访问实时客户配置文件数据。 本指南概述如何使用配置文件API访问实体（通常称为“配置文件”）。
 role: Developer
 exl-id: 06a1a920-4dc4-4468-ac15-bf4a6dc885d4
-source-git-commit: 1e508ec11b6d371524c87180a41e05ffbacc2798
+source-git-commit: 40400ab8cc87a6c8d6d37f1a20eaf96ab49aabf7
 workflow-type: tm+mt
-source-wordcount: '1933'
+source-wordcount: '1981'
 ht-degree: 2%
 
 ---
 
 # 实体端点（配置文件访问）
-
->[!IMPORTANT]
->
->弃用使用配置文件访问API查找ExperienceEvent 。 请针对需要查找ExperienceEvents的用例使用计算属性等功能。 有关此更改的更多信息，请联系Adobe客户关怀团队。
 
 Adobe Experience Platform允许您使用RESTful API或用户界面访问[!DNL Real-Time Customer Profile]数据。 本指南概述了如何使用API访问实体（通常称为“用户档案”）。 有关使用[!DNL Experience Platform] UI访问配置文件的详细信息，请参阅[配置文件用户指南](../ui/user-guide.md)。
 
@@ -44,6 +40,12 @@ Adobe Experience Platform允许您使用RESTful API或用户界面访问[!DNL Re
 >[!ENDSHADEBOX]
 
 ## 检索实体 {#retrieve-entity}
+
+>[!IMPORTANT]
+>
+>不再通过API支持以下B2B实体查找请求：**帐户 — 人员关系、机会 — 人员关系、营销活动、营销活动成员、营销列表和营销列表成员**。
+>
+>已不再支持这些实体。 如果您现有的集成或工作流依赖于访问这些实体，请更新它们以使用支持的实体类型，以确保功能可继续使用。
 
 您可以通过向`/access/entities`端点发出GET请求以及所需的查询参数来检索配置文件实体。
 
@@ -1202,6 +1204,19 @@ curl -X GET \
 +++
 
 ## 删除实体 {#delete-entity}
+
+>[!IMPORTANT]
+>
+>以下B2B实体的删除请求已被弃用：
+>
+>- 帐户
+>- 帐户 — 人员关系
+>- 机会
+>- 机会 — 人员关系
+>- Campaign
+>- 营销活动成员
+>- 营销列表
+>- 营销列表成员
 
 通过向`/access/entities`端点发出DELETE请求以及必需的查询参数，可以从配置文件存储中删除实体。
 
