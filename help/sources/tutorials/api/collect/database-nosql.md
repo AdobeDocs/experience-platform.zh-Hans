@@ -1,22 +1,22 @@
 ---
 title: 使用流服务API为数据库源创建数据流
 type: Tutorial
-description: 本教程介绍了以下步骤：从数据库检索数据，以及使用源连接器和API将数据提取到Experience Platform中。
+description: 了解如何使用流服务API创建数据流并将数据库中的数据摄取到Experience Platform中。
 exl-id: 1e1f9bbe-eb5e-40fb-a03c-52df957cb683
-source-git-commit: b184319f6c5f5430a5ae1e9de4728b5074bca9b8
+source-git-commit: a5fa939d522b0bf828f42144657ea15f9c3347ed
 workflow-type: tm+mt
-source-wordcount: '1453'
+source-wordcount: '1455'
 ht-degree: 2%
 
 ---
 
 # 使用[!DNL Flow Service] API为数据库源创建数据流
 
-本教程介绍从数据库源检索数据以及使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将数据引入Experience Platform的步骤。
+阅读本教程，了解如何使用[[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/)创建数据流并将数据从数据库摄取到Adobe Experience Platform。
 
 >[!NOTE]
 >
->* 要创建数据流，您必须已经具有带数据库源的有效基本连接ID。 如果没有此ID，请参阅[源概述](../../../home.md#database)，以查看可创建基本连接的数据库源的列表。
+>* 要创建数据流，您必须已经具有带数据库源的有效基本连接ID。 如果您没有此ID，请访问[源目录](../../../home.md#database)以获取可创建基本连接的数据库源的列表。
 >* 要让Experience Platform摄取数据，必须将所有基于表的批处理源的时区配置为UTC时区。 [[!DNL Snowflake] 源](../../../connectors/databases/snowflake.md)唯一支持的时间戳是带有UTC时间的TIMESTAMP_NTZ。
 
 ## 快速入门

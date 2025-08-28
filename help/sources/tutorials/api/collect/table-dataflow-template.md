@@ -1,15 +1,16 @@
 ---
-title: 创建数据流以将数据从CRM摄取到Experience Platform
+title: 创建数据流以将Source数据摄取到Experience Platform
 description: 了解如何使用流服务API创建数据流并将源数据摄取到Experience Platform。
-exl-id: b07dd640-bce6-4699-9d2b-b7096746934a
-source-git-commit: fe310a326f423a32b278b8179578933295de3a87
+hide: true
+hidefromtoc: true
+source-git-commit: 4e9448170a6c3eb378e003bcd7520cb0e573e408
 workflow-type: tm+mt
-source-wordcount: '2105'
+source-wordcount: '2137'
 ht-degree: 2%
 
 ---
 
-# 创建数据流以将数据从CRM摄取到Experience Platform
+# 创建数据流以从源中摄取数据
 
 阅读本指南，了解如何使用[[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/)创建数据流并将数据摄取到Adobe Experience Platform。
 
@@ -29,9 +30,9 @@ ht-degree: 2%
 
 有关如何成功调用Experience Platform API的信息，请阅读[Experience Platform API快速入门](../../../../landing/api-guide.md)指南。
 
-### 创建基本连接 {#base}
+### 创建基本连接
 
-要为源成功创建数据流，您需要一个经过完全身份验证的源帐户及其对应的基本连接ID。 如果没有此ID，请访问[源目录](../../../home.md)查找可为其创建基础连接的源列表。
+您必须具有经过完全身份验证的源帐户及其对应的基本连接ID，才能成功为源创建数据流。 如果没有此ID，请访问[源目录](../../../home.md)以获取可创建基础连接的源列表。
 
 ### 创建目标XDM架构 {#target-schema}
 
@@ -106,7 +107,7 @@ curl -X POST \
 
 +++
 
-## 创建源连接 {#source}
+## 创建源连接
 
 源连接定义如何从外部源将数据引入Experience Platform。 它指定源系统和传入数据的格式，并引用包含身份验证详细信息的基本连接。 每个源连接对于您的组织都是唯一的。
 
@@ -133,8 +134,8 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -d '{
     "name": "ACME source connection",
-    "description": "A source connection for ACME contact data",
     "baseConnectionId": "6990abad-977d-41b9-a85d-17ea8cf1c0e4",
+    "description": "A source connection for ACME contact data",
     "data": {
       "format": "tabular"
     },
@@ -164,7 +165,8 @@ curl -X POST \
             "format": "date-time"
           }
         }
-      ]
+      ],
+      "cdcEnabled": true
     },
     "connectionSpec": {
       "id": "cfc0fee1-7dc0-40ef-b73e-d8b134c436f5",
@@ -181,6 +183,7 @@ curl -X POST \
 | `data.format` | 数据的格式。 对于基于表的源（如数据库、CRM和营销自动化提供程序），将此值设置为`tabular`。 |
 | `params.tableName` | 您的源帐户中要摄取到Experience Platform的表的名称。 |
 | `params.columns` | 要摄取到Experience Platform的特定数据表列。 |
+| `params.cdcEnabled` | 一个布尔值，指示是否启用更改历史记录捕获。 以下数据库源支持此属性： <ul><li>[!DNL Azure Databricks]</li><li>[!DNL Google BigQuery]</li><li>[!DNL Snowflake]</li></ul> 有关详细信息，请阅读有关在源[中使用](../change-data-capture.md)更改数据捕获的指南。 |
 | `connectionSpec.id` | 正在使用的源的连接规范ID。 |
 
 **响应**
@@ -194,9 +197,9 @@ curl -X POST \
 }
 ```
 
-## 创建目标连接 {#target}
+## 创建目标连接 {#target-connection}
 
-目标连接表示与所摄取数据所登陆的目标之间的连接。 要创建目标连接，必须提供与该数据湖关联的固定连接规范ID。 此连接规范ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`。
+目标连接表示与所摄取数据所登陆的目标之间的连接。 要创建目标连接，您必须提供与数据湖关联的固定连接规范ID。 此连接规范ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`。
 
 **API格式**
 
@@ -314,7 +317,7 @@ curl -X POST \
 }
 ```
 
-## 检索数据流规范 {#flow-specs}
+## 检索数据流规范
 
 在创建数据流之前，必须首先检索与源对应的数据流规范。 要检索此信息，请向`/flowSpecs` API的[!DNL Flow Service]端点发出GET请求。
 
@@ -631,16 +634,16 @@ curl -X GET \
 
 +++
 
-## 创建数据流 {#dataflow}
+## 创建数据流
 
 数据流是已配置的管道，可在Experience Platform服务之间传输数据。 它定义如何从外部源（如数据库、云存储或API）摄取数据、如何处理数据并将其路由到目标数据集。 然后，Identity Service、实时客户档案和Destinations等服务使用这些数据集进行激活和分析。
 
 要创建数据流，必须具有以下项的值：
 
-* [Source连接Id](#source)
-* [目标连接ID](#target)
-* [映射 ID](#mapping)
-* [数据流规范ID](#flow-specs)
+* Source连接Id
+* 目标连接ID
+* 映射 ID
+* 数据流规范ID
 
 在此步骤中，您可以在`scheduleParams`中使用以下参数配置数据流的摄取计划：
 
@@ -739,7 +742,7 @@ curl -X POST \
 }
 ```
 
-### 使用用户界面验证API工作流 {#validate-in-ui}
+### 使用用户界面验证API工作流
 
 您可以使用Experience Platform用户界面验证数据流的创建。 导航到Experience Platform UI中的&#x200B;*[!UICONTROL 源]*&#x200B;目录，然后从标题选项卡中选择&#x200B;**[!UICONTROL 数据流]**。 接下来，使用[!UICONTROL 数据流名称]列并找到您使用[!DNL Flow Service] API创建的数据流。
 
