@@ -3,7 +3,7 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: 实时客户个人资料UI指南
 description: Real-time Customer Profile可以为每位客户创建整体视图，结合来自多个渠道（包括在线、离线、CRM和第三方数据）的数据。 本文档提供了在Adobe Experience Platform用户界面中与Real-time Customer Profile交互的指南。
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: d9fc1fa6a1bbc6b13b2600a5ec9400a0b488056a
 workflow-type: tm+mt
 source-wordcount: '2219'
 ht-degree: 3%
@@ -16,7 +16,7 @@ ht-degree: 3%
 
 ## 快速入门
 
-此UI指南要求您了解与管理[!DNL Real-Time Customer Profiles]有关的各种[!DNL Experience Platform]服务。 在阅读本指南或使用UI之前，请查看以下服务的文档：
+此UI指南要求您了解与管理[!DNL Experience Platform]有关的各种[!DNL Real-Time Customer Profiles]服务。 在阅读本指南或使用UI之前，请查看以下服务的文档：
 
 * [[!DNL Real-Time Customer Profile] 概述](../home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
 * [[!DNL Identity Service]](../../identity-service/home.md)：在将[!DNL Real-Time Customer Profile]引入到[!DNL Experience Platform]中时，通过桥接来自不同数据源的标识来启用它们。
@@ -42,7 +42,7 @@ ht-degree: 3%
 
 选择&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡以显示与贵组织的配置文件数据相关的多个量度。 您还可以使用此选项卡使用合并策略或标识浏览配置文件存储区，如本指南下一节中所述。
 
-**[!UICONTROL 浏览]**&#x200B;选项卡的右侧是[配置文件计数](#profile-count)以及按命名空间[&#128279;](#profiles-by-namespace)列出的配置文件。
+**[!UICONTROL 浏览]**&#x200B;选项卡的右侧是[配置文件计数](#profile-count)以及按命名空间[列出的](#profiles-by-namespace)配置文件。
 
 >[!NOTE]
 >
@@ -60,13 +60,13 @@ ht-degree: 3%
 
 #### 更新配置文件计数量度
 
-当将记录摄取到[!DNL Profile]存储区后计数增加或减少超过5%时，将触发作业以更新计数。 对于流数据工作流，会每小时进行一次检查，以确定是否满足了5%的增加或减少阈值。 如果有，则会自动触发作业以更新用户档案计数。 对于批量摄取，在成功将批次摄取到配置文件存储后15分钟内，如果满足5%的增加或减少阈值，将运行作业以更新配置文件计数。
+当将记录摄取到[!DNL Profile]存储区后计数增加或减少超过3%时，将触发作业以更新计数。 对于流数据工作流，会每小时进行一次检查，以确定是否满足增加或减少3%的阈值。 如果有，则会自动触发作业以更新用户档案计数。 对于批量摄取，在成功将批次摄取到配置文件存储后15分钟内，如果满足3%的增加或减少阈值，将运行作业以更新配置文件计数。
 
 ### [!UICONTROL 按命名空间列出的配置文件] {#profiles-by-namespace}
 
 **[!UICONTROL 按命名空间列出的配置文件]**&#x200B;量度显示配置文件存储中所有合并配置文件的命名空间总数和划分情况。 按命名空间划分的配置文件总数（也就是为每个命名空间显示的值相加）将始终高于配置文件计数量度，因为一个配置文件可能具有多个关联的命名空间。 例如，如果客户在多个渠道上与您的品牌互动，则多个命名空间将与该个人客户关联。
 
-#### 正在按命名空间指标更新配置文件
+#### 正在按命名空间[!UICONTROL 指标更新]配置文件
 
 与[配置文件计数](#profile-count)量度类似，当将记录摄取到[!DNL Profile]存储区中的记录增加或减少计数超过5%时，将触发作业以更新命名空间量度。 对于流数据工作流，会每小时进行一次检查，以确定是否满足了5%的增加或减少阈值。 如果有，则会自动触发作业以更新用户档案计数。 对于批次摄取，在成功将批次摄取到[!DNL Profile]存储区后15分钟内，如果达到5%的增加或减少阈值，则会运行作业以更新量度。
 

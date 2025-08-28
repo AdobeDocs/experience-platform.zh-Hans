@@ -4,7 +4,7 @@ title: 使用分段服务API创建区段定义
 type: Tutorial
 description: 按照本教程了解如何使用Adobe Experience Platform分段服务API来开发、测试、预览和保存区段定义。
 exl-id: 78684ae0-3721-4736-99f1-a7d1660dc849
-source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
+source-git-commit: d9fc1fa6a1bbc6b13b2600a5ec9400a0b488056a
 workflow-type: tm+mt
 source-wordcount: '1067'
 ht-degree: 6%
@@ -29,7 +29,7 @@ ht-degree: 6%
 
 ### 正在读取示例 API 调用
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中有关[如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅[疑难解答指南中有关](../../landing/troubleshooting.md#how-do-i-format-an-api-request)如何读取示例API调用[!DNL Experience Platform]的部分。
 
 ### 收集所需标头的值
 
@@ -55,7 +55,7 @@ ht-degree: 6%
 
 分段的第一步是定义区段定义。 区段定义是一个对象，它封装在[!DNL Profile Query Language] (PQL)中编写的查询。 此对象也称为PQL谓词。 PQL谓词根据与您提供给[!DNL Real-Time Customer Profile]的任何记录或时序数据相关的条件定义区段定义的规则。 有关编写PQL查询的更多信息，请参阅[PQL指南](../pql/overview.md)。
 
-您可以通过向[!DNL Segmentation] API中的`/segment/definitions`端点发出POST请求来创建新的区段定义。 以下示例概述了如何设置定义请求的格式，包括成功定义区段定义所需的信息。
+您可以通过向`/segment/definitions` API中的[!DNL Segmentation]端点发出POST请求来创建新的区段定义。 以下示例概述了如何设置定义请求的格式，包括成功定义区段定义所需的信息。
 
 有关如何定义区段定义的详细说明，请参阅[区段定义开发人员指南](../api/segment-definitions.md#create)。
 
@@ -76,8 +76,8 @@ ht-degree: 6%
 
 触发示例的方式取决于所使用的摄取类型：
 
-- 对于流数据工作流，会每小时进行一次检查，以确定是否满足了5%的增加或减少阈值。 如果达到此阈值，则会自动触发示例作业以更新计数。
-- 对于批量摄取，在成功将批次摄取到配置文件存储区后15分钟内，如果满足5%的增加或减少阈值，则会运行作业以更新计数。 使用配置文件API，您可以预览最新成功的示例作业，以及按数据集和身份命名空间列出配置文件分发。
+- 对于流数据工作流，会每小时进行一次检查，以确定是否满足增加或减少3%的阈值。 如果达到此阈值，则会自动触发示例作业以更新计数。
+- 对于批量摄取，在成功将批次摄取到配置文件存储区后15分钟内，如果满足3%的增加或减少阈值，则会运行作业以更新计数。 使用配置文件API，您可以预览最新成功的示例作业，以及按数据集和身份命名空间列出配置文件分发。
 
 样本大小取决于配置文件存储中的实体总数。 下表显示了这些样本量：
 
