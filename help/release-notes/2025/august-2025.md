@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2025 年 8 月）
 description: Adobe Experience Platform 的 2025 年 8 月发行说明。
 exl-id: d93e98f3-d165-4710-ad1d-2ad3857cd0f8
-source-git-commit: 45a50800f74a6a072e4246b11d338b0c134856e0
+source-git-commit: bbeab81e64a86a59a1f85ca139935abf220ef361
 workflow-type: tm+mt
-source-wordcount: '1567'
-ht-degree: 80%
+source-wordcount: '1448'
+ht-degree: 78%
 
 ---
 
@@ -30,7 +30,6 @@ Adobe Experience Platform 中新功能和现有功能的更新：
 - [目录服务](#catalog-service)
 - [目标](#destinations)
 - [Experience Data Model (XDM)](#xdm)
-- [实时客户轮廓](#profile)
 - [沙盒](#sandboxes)
 - [Segmentation Service](#segmentation-service)
 - [源](#sources)
@@ -125,17 +124,20 @@ XDM 是一种开源规范，可为导入 Experience Platform 的数据提供常�
 
 有关详细信息，请参阅 [XDM 概述](../../xdm/home.md)。
 
-## 实时客户轮廓 {#profile}
+<!--
+## Real-Time Customer Profile {#profile}
 
-实时客户轮廓将所有渠道的数据合并到一个轮廓中，为每个客户提供一个统一的、可操作的视图。
+Real-Time Customer Profile provides a unified, actionable view of each customer by consolidating data from all channels into a single profile.
 
-**新增功能或更新后的功能**
+**New or updated features**
 
-| 功能 | 描述 |
+| Feature | Description |
 | --- | --- |
-| 增强实体 API 中的查找功能 | 实体 API 现在支持以下内容： <ul><li>人员（轮廓）</li><li>体验事件</li><li>帐户</li><li>机会</li></ul> 此更新简化了 API 的使用，并有助于确保最佳性能和可靠性。如果您以前为其他实体类型（包括连接表和自定义多实体类型）使用过查找，那么现在有一个很好的机会来审查您的 API 使用情况，并充分利用改进的体验。更多信息请阅读[实时 CDB B2B Edition 架构升级指南](../../rtcdp/b2b-architecture-upgrade.md)。 |
+| Enhanced lookup functionality in the Entities API | The Entities API now supports the following: <ul><li>Person (Profile)</li><li>Experience Events</li><li>Account</li><li>Opportunity</li></ul> This update simplifies API usage and helps ensure optimal performance and reliability. If you previously used lookups for other entity types—including join tables and custom Multi-Entity types—now is a great opportunity to review your API usage and take advantage of the improved experience. For more information, read the [Real-Time CDB B2B Edition architecture upgrade guide](../../rtcdp/b2b-architecture-upgrade.md). |
 
-要了解有关实时客户轮廓的更多信息，请阅读[轮廓概述](../../profile/home.md)。
+For more information on Real-Time Customer Profile, read the [Profile overview](../../profile/home.md).
+
+-->
 
 ## 沙盒 {#sandboxes}
 
