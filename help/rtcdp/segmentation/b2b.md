@@ -2,16 +2,20 @@
 title: Real-Time Customer Data Platform B2B edition的分段用例
 description: 各种可用的Adobe Real-Time Customer Data Platform B2B edition用例的概述。
 feature: Get Started, Audiences, Segments, B2B
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 2a99b85e-71b3-4781-baf7-a4d5436339d3
-source-git-commit: d819a7e72e873ef3a47f9bb7946e242cb5fb7a8a
+source-git-commit: d1f48140922b4c98f75b4c9af9e1706a402319a4
 workflow-type: tm+mt
-source-wordcount: '1636'
+source-wordcount: '1668'
 ht-degree: 0%
 
 ---
 
 # Real-Time Customer Data Platform B2B edition的分段用例
+
+>[!IMPORTANT]
+>
+>不再支持包含引用B2B实体的体验事件（例如营销活动和营销列表）的受众。 有关详细信息，请阅读[Real-Time CDP B2B edition架构升级](../../rtcdp/b2b-architecture-upgrade.md)的概述。
 
 本文档提供了Adobe Real-Time Customer Data Platform B2B edition中的区段定义示例，以及如何为常见的B2B用例组合不同类型的属性。 要了解目标如何适合您的B2B工作流，请参阅[端到端教程](../b2b-tutorial.md#create-a-segment-to-evaluate-your-data)。
 
