@@ -1,16 +1,18 @@
 ---
-title: 在API中为源使用Azure专用链接
+title: 对API中的源的专用链接支持
 description: 了解如何为Adobe Experience Platform源创建和使用该专用链接
 badge: Beta 版
+hide: true
+hidefromtoc: true
 exl-id: 9b7fc1be-5f42-4e29-b552-0b0423a40aa1
-source-git-commit: 65063d3b81d7082fc7780949c6ebd2ce09461b88
+source-git-commit: 45a50800f74a6a072e4246b11d338b0c134856e0
 workflow-type: tm+mt
-source-wordcount: '1657'
+source-wordcount: '1661'
 ht-degree: 3%
 
 ---
 
-# 将[!DNL Azure Private Link]用于API中的源
+# 对API中的源的专用链接支持
 
 >[!AVAILABILITY]
 >
@@ -21,7 +23,7 @@ ht-degree: 3%
 >* [[!DNL Azure File Storage]](../../connectors/cloud-storage/azure-file-storage.md)
 >* [[!DNL Snowflake]](../../connectors/databases/snowflake.md)
 
-您可以使用[!DNL Azure Private Link]功能为要连接的Adobe Experience Platform源创建专用端点。 使用私有IP地址将源安全地连接到虚拟网络，消除对公共IP的需求，并减少攻击面。通过消除对复杂防火墙或网络地址转换配置的需求，简化网络设置，同时确保数据流量仅能到达批准的服务。
+您可以使用专用链接功能为Adobe Experience Platform源创建要连接的专用端点。 使用私有IP地址将源安全地连接到虚拟网络，消除对公共IP的需求，并减少攻击面。 通过消除对复杂防火墙或网络地址转换配置的需求，简化网络设置，同时确保数据流量仅能到达批准的服务。
 
 阅读本指南，了解如何使用API创建和使用专用端点。
 

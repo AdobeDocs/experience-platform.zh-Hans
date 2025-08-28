@@ -1,16 +1,18 @@
 ---
-title: 在UI中为源使用Azure专用链接
+title: 对UI中的源的专用链接支持
 description: 了解如何在Experience Platform UI中为源使用Azure专用链接。
 badge: Beta 版
+hide: true
+hidefromtoc: true
 exl-id: 2882729e-2d46-48dc-9227-51dda5bf7dfb
-source-git-commit: b88cf63e907b3f127f83304aa95f82300b47ce0b
+source-git-commit: 45a50800f74a6a072e4246b11d338b0c134856e0
 workflow-type: tm+mt
-source-wordcount: '744'
+source-wordcount: '750'
 ht-degree: 0%
 
 ---
 
-# 在UI中将[!DNL Azure Private Link]用于源
+# 对UI中的源的专用链接支持
 
 >[!AVAILABILITY]
 >
@@ -21,13 +23,13 @@ ht-degree: 0%
 >* [[!DNL Azure File Storage]](../../connectors/cloud-storage/azure-file-storage.md)
 >* [[!DNL Snowflake]](../../connectors/databases/snowflake.md)
 
-您可以使用[!DNL Azure Private Link]功能为要连接的Adobe Experience Platform源创建专用端点。 使用私有IP地址将源安全地连接到虚拟网络，消除对公共IP的需求，并减少攻击面。通过消除对复杂防火墙或网络地址转换配置的需求，简化网络设置，同时确保数据流量仅能到达批准的服务。
+您可以使用专用链接功能为Adobe Experience Platform源创建要连接的专用端点。 使用私有IP地址将源安全地连接到虚拟网络，消除对公共IP的需求，并减少攻击面。 通过消除对复杂防火墙或网络地址转换配置的需求，简化网络设置，同时确保数据流量仅能到达批准的服务。
 
 阅读本指南，了解如何在Experience Platform UI中使用源工作区来创建和使用专用端点。
 
 ## 创建专用端点
 
-要开始使用[!DNL Azure Private Link]，请导航到Experience Platform UI的&#x200B;*[!UICONTROL 源]*&#x200B;目录，然后从源工作区的选项卡菜单中选择&#x200B;**[!UICONTROL 私有端点]**。
+要开始使用专用链接，请导航到Experience Platform UI的&#x200B;*[!UICONTROL 源]*&#x200B;目录，然后从源工作区的选项卡菜单中选择&#x200B;**[!UICONTROL 专用端点]**。
 
 ![具有“私有端点”的源目录。](../../images/tutorials/private-links/catalog.png)
 
