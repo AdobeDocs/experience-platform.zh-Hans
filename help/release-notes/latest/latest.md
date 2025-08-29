@@ -148,7 +148,7 @@ Experience Platform 旨在全球范围内扩充数字体验应用。企业通常
 
 | 功能 | 描述 |
 | --- | --- |
-| 删除导入工作流中依赖对象的重复数据 | 如果检测到同名的对象，沙盒工具现在将始终重新使用现有的对象，以避免对象数量激增。此更改适用于以下对象： <ul><li>架构</li><li>字段组</li><li>受众</li><li>`decisioning_ranking`</li><li>`decisioning_rules`</li></ul> 详情请参阅[沙盒工具支持对象指南](../../sandboxes/ui/sandbox-tooling.md#objects-supported-for-sandbox-tooling)。 |
+| 删除导入工作流中依赖对象的重复数据 | 如果检测到同名的对象，沙盒工具现在将始终重复使用现有的对象，以避免对象数量激增。此更改适用于以下对象： <ul><li>架构</li><li>字段组</li><li>受众</li><li>`decisioning_ranking`</li><li>`decisioning_rules`</li></ul> 详情请参阅[沙盒工具支持对象指南](../../sandboxes/ui/sandbox-tooling.md#objects-supported-for-sandbox-tooling)。 |
 | 整个沙盒支持跨组织包共享 | 现在，沙盒工具在跨组织包共享中支持&#x200B;**整个沙盒**&#x200B;类型。您现在可以在所有组织之间共享整个沙盒和多对象包。详情请参阅 [沙盒工具支持对象指南](../../sandboxes/ui/sharing-packages-across-orgs.md)。 |
 
 有关沙盒的更多信息，请阅读[沙盒概述](../../sandboxes/home.md)。
@@ -161,7 +161,7 @@ Experience Platform 旨在全球范围内扩充数字体验应用。企业通常
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 受众估计值 | 现在，区段生成器中会自动生成受众估计值。每当您更改受众，此值都会更新，并始终体现最新的受众规则。此外，估计值现在将显示为基于取样数据的置信区间的一个&#x200B;**范围**。 |
+| 受众估计值 | 现在，区段生成器中会自动生成受众估计值。每当您更改受众，此值都会更新，并始终反映最新的受众规则。此外，估计值现在将显示为基于取样数据的置信区间的一个&#x200B;**范围**。 |
 
 有关详细信息，请参阅 [[!DNL Segmentation Service]  概述](../../segmentation/home.md)。
 
