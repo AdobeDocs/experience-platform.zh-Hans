@@ -103,8 +103,8 @@ conversionDetails对象可捕获广告转化的跟踪信息，包括跟踪代码
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `trackingCode` | 字符串 | 事件的转化跟踪代码。 有关可能格式的列表，请参阅[AMO ID格式](https://experienceleague.adobe.com/en/docs/advertising/integrations/customer-journey-analytics/ids#amo-id-formats)。 |
-| `trackingIdentities` | 字符串 | 事件的EF ID或跟踪身份详细信息。 有关可能格式的列表，请参阅[EF ID格式](https://experienceleague.adobe.com/en/docs/advertising/integrations/customer-journey-analytics/ids#ef-id-formats)。 |
+| `trackingCode` | 字符串 | 事件的转化跟踪代码。 有关可能格式的列表，请参阅[AMO ID格式](https://experienceleague.adobe.com/zh-hans/docs/advertising/integrations/customer-journey-analytics/ids#amo-id-formats)。 |
+| `trackingIdentities` | 字符串 | 事件的EF ID或跟踪身份详细信息。 有关可能格式的列表，请参阅[EF ID格式](https://experienceleague.adobe.com/zh-hans/docs/advertising/integrations/customer-journey-analytics/ids#ef-id-formats)。 |
 | `conversionProperties` | 对象 | 转化属性的映射，表示为键值对字符串的数组（如`subscriptions=253`）。 |
 
 ## `fees` {#fees}
