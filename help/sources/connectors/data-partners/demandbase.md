@@ -2,12 +2,12 @@
 title: Demandbase意图
 description: 了解Experience Platform上的Demandbase意图源。
 last-substantial-update: 2025-03-26T00:00:00Z
-badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions newtab=true"
-badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 exl-id: 62dd27e0-b846-4c04-977f-8a3ab99bc464
-source-git-commit: 5757bc84a9aeec18eb5fe21d6f02160b2ba55166
+source-git-commit: 8a5fdcfcf503df1b9d5aa338ff530181a2d03b5d
 workflow-type: tm+mt
-source-wordcount: '1480'
+source-wordcount: '1478'
 ht-degree: 1%
 
 ---
@@ -30,7 +30,7 @@ ht-degree: 1%
 
 ### 在Experience Platform上配置权限
 
-若要将您的[!DNL Demandbase]帐户连接到Experience Platform，您必须同时为您的帐户启用&#x200B;**[!UICONTROL 查看源]**&#x200B;和&#x200B;**[!UICONTROL 管理源]**&#x200B;权限。 请联系您的产品管理员以获取必要的权限。 有关详细信息，请阅读[访问控制UI指南](../../../access-control/abac/ui/permissions.md)。
+若要将您的&#x200B;**[!UICONTROL 帐户连接到Experience Platform，您必须同时为您的帐户启用]**&#x200B;查看源&#x200B;**[!UICONTROL 和]**&#x200B;管理源[!DNL Demandbase]权限。 请联系您的产品管理员以获取必要的权限。 有关详细信息，请阅读[访问控制UI指南](../../../access-control/abac/ui/permissions.md)。
 
 ### 文件和目录的命名约束
 
@@ -54,31 +54,39 @@ Experience Platform上的[!DNL Demandbase]由[!DNL Google Cloud Storage]托管�
 | 存储桶名称 | 将从其中提取数据的[!DNL Demandbase]存储段。 |
 | 文件夹路径 | 要提供访问权限的文件夹的路径。 |
 
-有关这些凭据的详细信息，请阅读[[!DNL Google Cloud Storage] HMAC密钥指南](https://cloud.google.com/storage/docs/authentication/hmackeys#overview)。 有关如何生成自己的访问密钥的步骤，请阅读 [!DNL Google Cloud Storage] 源概述[&#128279;](../cloud-storage/google-cloud-storage.md#prerequisite-setup-for-connecting-your-google-cloud-storage-account)中的先决条件指南。
+有关这些凭据的详细信息，请阅读[[!DNL Google Cloud Storage] HMAC密钥指南](https://cloud.google.com/storage/docs/authentication/hmackeys#overview)。 有关如何生成自己的访问密钥的步骤，请阅读[源概述 [!DNL Google Cloud Storage] 中的](../cloud-storage/google-cloud-storage.md#prerequisite-setup-for-connecting-your-google-cloud-storage-account)先决条件指南。
 
 ## [!DNL Demandbase]架构
 
 有关[!DNL Demandbase]架构和数据结构的信息，请阅读此部分。
 
-[!DNL Demandbase]架构称为&#x200B;**公司意向每周**。 它是指定帐户和关键字的每周意图信息（匿名B2B购买者研究和内容使用）。 数据采用parquet格式。
+[!DNL Demandbase]架构称为&#x200B;**B2B Demandbase帐户意图**。 它是指定帐户和关键字的每周意图信息（匿名B2B购买者研究和内容使用）。 数据采用parquet格式。
 
-| 字段名称 | 数据类型 | 必需 | 业务密钥 | 注释 |
-| --- | --- | --- | --- | --- |
-| `company_id` | 字符串 | TRUE | 是 | 规范的公司ID。 |
-| `domain` | 字符串 | TRUE | 是 | 表明意图的帐户的已识别域。 |
-| `start_date` | 日期 | TRUE | 是 | 在持续时间段内发生意图活动的开始日期。 |
-| `end_date` | 日期 | TRUE | 是 | 持续时间段内发生意图活动的结束日期。 |
-| `duration_type` | 字符串 | TRUE | 是 | 持续时间的类型。 通常，此值可以是每天、每周或每月，具体取决于所选的汇总持续时间。 对于此数据示例，此值为`week`。 |
-| `keyword_set_id` | 字符串 | TRUE | 是 | 关键字集ID。 每个给定客户具有唯一性。 |
-| `keyword_set` | 字符串 | TRUE | 是 | 关键字集名称。 |
-| `keyword` | 字符串 | TRUE | | 意图关键字。 |
-| `is_trending` | 字符串 | TRUE | | 给定趋势的当前状态。 趋势状态是指上周意图活动相对于之前7周平均值的突然增加。 |
-| `intent_strength` | 枚举[字符串] | TRUE | | 意向强度的量化指标。 接受的值包括： `HIGH`、`MED`和`LOW`。 |
-| `num_people_researching` | 整数 | TRUE | | 属于过去七天中研究关键字的`company_id`的人员计数。 |
-| `num_trending_days` | 整数 | TRUE | | 关键字在给定持续时间内趋势化的天数。 |
-| `trending_score` | 整数 | TRUE | | 趋势分数。 |
-| `record_id` | 字符串 | TRUE | | 唯一的主记录ID。 |
-| `partition_date` | 日期 | TRUE | | 快照的日历日期。 这每周在周末完成。 |
+* 类 — XDM [!DNL Demandbase Account Intent]
+* 命名空间 — B2B [!DNL Demandbase Account Intent]
+* 主要身份 — `intentID`
+* 关系 — B2B帐户
+
+| 字段名称 | 数据类型 | 描述 |
+|--------------------------|-----------|-------------------------------------------------------------------------------------------------------------|
+| `extSourceSystemAudit` | 对象 | 此字段包含来自外部源的系统审核信息。 |
+| `_id` | 字符串 | 这是记录的唯一系统标识符。 |
+| `accountDomain` | 字符串 | 此字段包含帐户域。 |
+| `accountID` | 字符串 | 这是与此意图记录关联的B2B帐户ID。 |
+| `demandbaseAccountID` | 字符串 | 这是[!DNL Demandbase]中公司的ID。 |
+| `durationType` | 字符串 | 此字段指定意图有效期类型，例如“周”。 |
+| `endDate` | 日期 | 这是意图有效期的结束日期。 |
+| `intentID` | 字符串 | 这是系统生成的目的记录唯一值。 |
+| `intentStrength` | 字符串 | 此字段指定意图有效期类型，如“DAY”、“WEEK”或“MONTH”。 |
+| `isTrending` | 布尔型 | 此字段指示关键字是否为趋势，可能的值为低、Medium或高。 |
+| `keyword` | 字符串 | 此字段包含表示来自[!DNL Demandbase]的意向的关键字或短语。 |
+| `keywordSetID` | 字符串 | 这是关键字集的标识符。 |
+| `keywordSetName` | 字符串 | 这是关键字集的名称。 |
+| `numTrendingDays` | 整数 | 此字段指示关键词已呈趋势的天数。 |
+| `partitionDate` | 日期 | 这是记录的分区日期。 |
+| `peopleResearchingCount` | 整数 | 此字段表示研究关键字的人数。 |
+| `startDate` | 日期 | 这是意图有效期的开始日期。 |
+| `trendingScore` | 整数 | 此字段包含关键词的趋势分数。 |
 
 {style="table-layout:auto"}
 

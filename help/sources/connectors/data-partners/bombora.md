@@ -2,12 +2,12 @@
 title: 庞博拉意图
 description: 了解Experience Platform上的Bombora Intent源。
 last-substantial-update: 2025-03-26T00:00:00Z
-badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions newtab=true"
-badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 exl-id: d2e81207-8ef5-4e52-bbac-a2fa262d8d08
-source-git-commit: 9ab2c4725d2188f772bde1f7a89db2bb47c7a46b
+source-git-commit: 8a5fdcfcf503df1b9d5aa338ff530181a2d03b5d
 workflow-type: tm+mt
-source-wordcount: '1615'
+source-wordcount: '1607'
 ht-degree: 1%
 
 ---
@@ -48,7 +48,7 @@ ht-degree: 1%
 
 ### 在Experience Platform上配置权限
 
-若要将您的[!DNL Bombora]帐户连接到Experience Platform，您必须同时为您的帐户启用&#x200B;**[!UICONTROL 查看源]**&#x200B;和&#x200B;**[!UICONTROL 管理源]**&#x200B;权限。 请联系您的产品管理员以获取必要的权限。 有关详细信息，请阅读[访问控制UI指南](../../../access-control/abac/ui/permissions.md)。
+若要将您的&#x200B;**[!UICONTROL 帐户连接到Experience Platform，您必须同时为您的帐户启用]**&#x200B;查看源&#x200B;**[!UICONTROL 和]**&#x200B;管理源[!DNL Bombora]权限。 请联系您的产品管理员以获取必要的权限。 有关详细信息，请阅读[访问控制UI指南](../../../access-control/abac/ui/permissions.md)。
 
 ### 文件和目录的命名约束
 
@@ -71,24 +71,33 @@ Experience Platform上的[!DNL Bombora]由[!DNL Google Cloud Storage]托管。 �
 | 访问密钥 | [!DNL Bombora]访问密钥。 这是一个40字符、以base-64编码的字符串，向Experience Platform验证您的帐户时需要使用该字符串。 |
 | 存储桶名称 | 将从其中提取数据的[!DNL Bombora]存储段。 |
 
-有关这些凭据的详细信息，请阅读[[!DNL Google Cloud Storage] HMAC密钥指南](https://cloud.google.com/storage/docs/authentication/hmackeys#overview)。 有关如何生成自己的访问密钥的步骤，请阅读 [!DNL Google Cloud Storage] 源概述[&#128279;](../cloud-storage/google-cloud-storage.md#prerequisite-setup-for-connecting-your-google-cloud-storage-account)中的先决条件指南。
+有关这些凭据的详细信息，请阅读[[!DNL Google Cloud Storage] HMAC密钥指南](https://cloud.google.com/storage/docs/authentication/hmackeys#overview)。 有关如何生成自己的访问密钥的步骤，请阅读[源概述 [!DNL Google Cloud Storage] 中的](../cloud-storage/google-cloud-storage.md#prerequisite-setup-for-connecting-your-google-cloud-storage-account)先决条件指南。
 
 ## [!DNL Bombora]架构 {#schema}
 
 有关[!DNL Bombora]架构和数据结构的信息，请阅读此部分。
 
-[!DNL Bombora]架构称为&#x200B;**帐户意图每周**。 它是关于指定帐户和主题的每周意图信息（匿名B2B购买者研究和内容使用）。 数据采用parquet格式。
+[!DNL Bombora]架构称为&#x200B;**B2B Bombra帐户意图**。 它是关于指定帐户和主题的每周意图信息（匿名B2B购买者研究和内容使用）。 数据采用parquet格式。
 
-| 字段名称 | 数据类型 | 必需 | 业务密钥 | 注释 |
-| --- | --- | --- | --- | --- |
-| `Account_Name` | 字符串 | TRUE | 是 | 公司的正式名称。 |
-| `Domain` | 字符串 | TRUE | 是 | 表明意图的已识别帐户的域。 |
-| `Topic_Id` | 字符串 | TRUE | 是 | [!DNL Bombora]主题ID |
-| `Topic_Name` | 字符串 | TRUE | | [!DNL Bombora]主题名称。 |
-| `Cluster_Name` | 字符串 | TRUE | | 给定主题的[!DNL Bombora]上的群集名称。 |
-| `Cluster_Id` | 字符串 | TRUE | | 与给定主题关联的集群ID。 |
-| `Composite_Score` | 整数 | TRUE | | 复合分数表示指定时间段内给定主题的域消耗模式。 复合分数是介于0和100之间的值，其中100表示可能的最高分数，0表示可能的最低分数。 超过60的复合分数表示领域对特定主题的兴趣增加。 这也称为“激增”。 |
-| `Partition_Date` | 日期 | TRUE | | 快照的日历日期。 每周末以`mm/dd/yyyy`格式完成此工作。 |
+* 类 — XDM [!DNL Bombora Account Intent]
+* 命名空间 — B2B [!DNL Bombora Account Intent]
+* 主要身份 — `intentID`
+* 关系 — B2B帐户
+
+| 字段名称 | 数据类型 | 描述 |
+|------------------------|-----------|----------------------------------------------------------------------------------------|
+| `extSourceSystemAudit` | 对象 | 此字段由系统用于源系统审核。 |
+| `_id` | 字符串 | 此字段由系统用作唯一标识符。 |
+| `accountDomain` | 字符串 | 此字段包含帐户域。 |
+| `accountID` | 字符串 | 此字段包含与此目的记录关联的B2B帐户ID。 |
+| `bomboraAccountName` | 字符串 | 此字段包含公司在邦博拉的ID。 |
+| `clusterID` | 字符串 | 此字段包含群集ID。 |
+| `clusterName` | 字符串 | 此字段包含群集名称。 |
+| `compositeScore` | 整数 | 此字段包含意图的复合分数。 |
+| `intentID` | 字符串 | 此字段包含系统生成的唯一值。 |
+| `partitionDate` | 日期 | 此字段包含分区日期。 每周末以`mm/dd/yyyy`格式完成此工作。 |
+| `topicID` | 字符串 | 此字段包含来自Bombora的意图主题ID。 |
+| `topicName` | 字符串 | 此字段包含来自Bombora的意图主题名称。 |
 
 {style="table-layout:auto"}
 
