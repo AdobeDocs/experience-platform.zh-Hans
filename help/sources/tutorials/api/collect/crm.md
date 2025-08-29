@@ -2,10 +2,10 @@
 title: 创建数据流以将数据从CRM摄取到Experience Platform
 description: 了解如何使用流服务API创建数据流并将源数据摄取到Experience Platform。
 exl-id: b07dd640-bce6-4699-9d2b-b7096746934a
-source-git-commit: fe310a326f423a32b278b8179578933295de3a87
+source-git-commit: b4f8d44c3ce9507ff158cf051b7a4b524b293c64
 workflow-type: tm+mt
-source-wordcount: '2105'
-ht-degree: 2%
+source-wordcount: '2112'
+ht-degree: 1%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 本指南要求您对Experience Platform的以下组件有一定的了解：
 
-* [批量摄取](../../../../ingestion/batch-ingestion/overview.md)：了解如何高效地批量上传大量数据。
+* [批量摄取](../../../../ingestion/batch-ingestion/overview.md)：了解如何快速高效地批量上传大量数据。
 * [目录服务](../../../../catalog/datasets/overview.md)：在Experience Platform中组织和跟踪数据集。
 * [数据准备](../../../../data-prep/home.md)：转换并映射传入的数据以匹配您的架构要求。
 * [数据流](../../../../dataflows/home.md)：设置和管理将数据从源移动到目标的管道。
@@ -31,13 +31,13 @@ ht-degree: 2%
 
 ### 创建基本连接 {#base}
 
-要为源成功创建数据流，您需要一个经过完全身份验证的源帐户及其对应的基本连接ID。 如果没有此ID，请访问[源目录](../../../home.md)查找可为其创建基础连接的源列表。
+要为源创建数据流，您需要一个经过完全身份验证的源帐户及其对应的基本连接ID。 如果没有此ID，请访问[源目录](../../../home.md)查找可为其创建基础连接的源列表。
 
 ### 创建目标XDM架构 {#target-schema}
 
 Experience Data Model (XDM)架构提供了一种标准化的方式，用于在Experience Platform中组织和描述客户体验数据。 要将源数据摄取到Experience Platform，您必须首先创建目标XDM架构，该架构定义要摄取的数据结构和类型。 此架构将用作您摄取的数据将驻留的Experience Platform数据集的蓝图。
 
-通过对[架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/)执行POST请求，可以创建目标XDM架构。 有关如何创建目标XDM模式的步骤，请阅读以下指南：
+通过对[架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/)执行POST请求，可以创建目标XDM架构。 有关如何创建目标XDM架构的详细步骤，请阅读以下指南：
 
 * [使用API创建架构](../../../../xdm/api/schemas.md)。
 * [使用用户界面创建架构](../../../../xdm/tutorials/create-schema-ui.md)。
@@ -46,7 +46,7 @@ Experience Data Model (XDM)架构提供了一种标准化的方式，用于在Ex
 
 ### 创建目标数据集 {#target-dataset}
 
-数据集是用于数据集合的存储和管理结构，通常是表格，其中包含架构（列）和字段（行）。成功引入Experience Platform的数据将作为数据集存储在数据湖中。 在此步骤中，您可以创建新数据集或使用现有数据集。
+数据集是用于数据集合的存储和管理结构，其结构通常类似于具有列（架构）和行（字段）的表。 成功引入Experience Platform的数据将作为数据集存储在数据湖中。 在此步骤中，您可以创建新数据集或使用现有数据集。
 
 您可以创建目标数据集，方法是：向[目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)发出POST请求，同时在有效负载中提供目标架构的ID。 有关如何创建目标数据集的详细步骤，请阅读有关[使用API创建数据集](../../../../catalog/api/create-dataset.md)的指南。
 
@@ -64,7 +64,7 @@ POST /dataSets
 
 **请求**
 
-以下示例显示如何创建已启用实时客户配置文件提取的目标数据集。 在此请求中，`unifiedProfile`属性设置为`true`（在`tags`对象下），以告知Experience Platform将此数据集包含在实时客户配置文件中。
+以下示例显示如何创建已启用实时客户配置文件提取的目标数据集。 在此请求中，`unifiedProfile`属性设置为`true`（在`tags`对象下），以告知Experience Platform在实时客户配置文件中包含数据集。
 
 ```shell
 curl -X POST \
@@ -92,11 +92,11 @@ curl -X POST \
 | --- | --- |
 | `name` | 目标数据集的描述性名称。 使用清晰且唯一的名称，以便在未来操作中更容易识别和管理您的数据集。 |
 | `schemaRef.id` | 目标XDM架构的ID。 |
-| `tags.unifiedProfile` | 一个布尔值，通知Experience Platform是否要将数据摄取到实时客户个人资料。 |
+| `tags.unifiedProfile` | 一个布尔值，通知Experience Platform是否要将数据摄取到实时客户档案中。 |
 
 **响应**
 
-成功的响应将返回您的目标数据集ID。 稍后需要此ID才能创建目标连接。
+成功的响应将返回目标数据集的ID。 稍后创建目标连接时需要此ID。
 
 ```json
 [
@@ -175,12 +175,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 源连接的描述性名称。 使用清晰且唯一的名称，以便在未来操作中更容易识别和管理您的连接。 |
+| `name` | 源连接的描述性名称。 使用清晰且唯一的名称，以便将来操作中更容易识别和管理您的连接。 |
 | `description` | 可添加的可选描述，用于提供源连接的其他信息。 |
 | `baseConnectionId` | 基础连接的`id`。 您可以使用[!DNL Flow Service] API向Experience Platform验证源以检索此ID。 |
 | `data.format` | 数据的格式。 对于基于表的源（如数据库、CRM和营销自动化提供程序），将此值设置为`tabular`。 |
 | `params.tableName` | 您的源帐户中要摄取到Experience Platform的表的名称。 |
-| `params.columns` | 要摄取到Experience Platform的特定数据表列。 |
+| `params.columns` | 要纳入Experience Platform的特定数据表列。 |
 | `connectionSpec.id` | 正在使用的源的连接规范ID。 |
 
 **响应**
@@ -235,7 +235,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 目标连接的描述性名称。 使用清晰且唯一的名称，以便在未来操作中更容易识别和管理您的连接。 |
+| `name` | 目标连接的描述性名称。 使用清晰且唯一的名称，以便将来操作中更容易识别和管理您的连接。 |
 | `description` | 可添加的可选描述，用于提供目标连接的其他信息。 |
 | `data.schema.id` | 目标XDM架构的ID。 |
 | `params.dataSetId` | 目标数据集的ID。 |
@@ -243,7 +243,7 @@ curl -X POST \
 
 ## 映射 {#mapping}
 
-接下来，必须将源数据映射到目标数据集所遵循的目标架构。 要创建映射，请向`mappingSets`API[[!DNL Data Prep] 的](https://developer.adobe.com/experience-platform-apis/references/data-prep/)端点发出POST请求，并提供您的目标XDM架构ID和要创建的映射集的详细信息。
+接下来，将源数据映射到目标数据集所遵循的目标架构。 要创建映射，请向`mappingSets`API[[!DNL Data Prep] 的](https://developer.adobe.com/experience-platform-apis/references/data-prep/)端点发出POST请求。 包含您的目标XDM架构ID以及要创建的映射集的详细信息。
 
 **API格式**
 
@@ -635,7 +635,7 @@ curl -X GET \
 
 数据流是已配置的管道，可在Experience Platform服务之间传输数据。 它定义如何从外部源（如数据库、云存储或API）摄取数据、如何处理数据并将其路由到目标数据集。 然后，Identity Service、实时客户档案和Destinations等服务使用这些数据集进行激活和分析。
 
-要创建数据流，必须具有以下项的值：
+要创建数据流，您需要为以下项提供值：
 
 * [Source连接Id](#source)
 * [目标连接ID](#target)
@@ -647,8 +647,8 @@ curl -X GET \
 | 计划参数 | 描述 |
 | --- | --- |
 | `startTime` | 数据流应启动的时段时间（以秒为单位）。 |
-| `frequency` | 摄取频率。 配置频率以指示数据流运行的频率。 您可以将频率设置为： <ul><li>`once`：将频率设置为`once`以创建一次性摄取。 创建一次性摄取数据流时，间隔和回填配置不可用。 默认情况下，调度频率设置为一次。</li><li>`minute`：将频率设置为`minute`以安排数据流按分钟摄取数据。</li><li>`hour`：将频率设置为`hour`以计划数据流每小时摄取数据。</li><li>`day`：将频率设置为`day`以计划每天摄取数据的数据流。</li><li>`week`：将频率设置为`week`可安排数据流每周摄取数据。</li></ul> |
-| `interval` | 连续摄取之间的间隔（除`once`之外的所有频率均需要此间隔）。 配置间隔设置以建立每次引入之间的时间范围。 例如，如果将频率设置为天并将间隔配置为15，则数据流将每15天运行一次。 不能将间隔设置为零。 每个频率的最小接受间隔值如下：<ul><li>`once`：不适用</li><li>`minute`： 15</li><li>`hour`: 1</li><li>`day`: 1</li><li>`week`: 1</li></ul> |
+| `frequency` | 摄取频率。 配置频率以指示数据流运行的频率。 您可以将频率设置为： <ul><li>`once`：将频率设置为`once`以创建一次性摄取。 间隔和回填设置不适用于一次性摄取作业。 默认情况下，调度频率设置为一次。</li><li>`minute`：将频率设置为`minute`以安排数据流按分钟摄取数据。</li><li>`hour`：将频率设置为`hour`以计划数据流每小时摄取数据。</li><li>`day`：将频率设置为`day`以计划每天摄取数据的数据流。</li><li>`week`：将频率设置为`week`可安排数据流每周摄取数据。</li></ul> |
+| `interval` | 连续摄取之间的间隔（除`once`之外的所有频率均需要此间隔）。 配置间隔设置以建立每次引入之间的时间范围。 例如，如果将频率设置为天并且间隔为15，则数据流将每15天运行一次。 不能将间隔设置为零。 每个频率的最小接受间隔值如下：<ul><li>`once`：不适用</li><li>`minute`： 15</li><li>`hour`: 1</li><li>`day`: 1</li><li>`week`: 1</li></ul> |
 | `backfill` | 指示是否摄取`startTime`之前的历史数据。 |
 
 {style="table-layout:auto"}
@@ -723,7 +723,7 @@ curl -X POST \
 | `transformations.params.mappingId` | 在之前的步骤中生成的映射ID。 |
 | `scheduleParams.startTime` | 数据流以纪元时间表示的开始时间（自Unix纪元以来的秒数）。 确定数据流何时开始首次运行。 |
 | `scheduleParams.frequency` | 数据流运行的频率。 可接受的值包括： `once`、`minute`、`hour`、`day`或`week`。 |
-| `scheduleParams.interval` | 连续数据流运行之间的时间间隔，基于所选频率。 必须为非零整数。 例如，间隔为`15`且频率为`minute`意味着数据流每15分钟运行一次。 |
+| `scheduleParams.interval` | 连续数据流运行之间的时间间隔，基于所选频率。 必须为非零整数。 例如，如果将频率设置为分钟，并且间隔为15，则数据流将每15分钟运行一次。 |
 | `scheduleParams.backfill` | 一个布尔值（`true`或`false`），用于确定在首次创建数据流时是否摄取历史数据（回填）。 |
 
 {style="table-layout:auto"}
@@ -755,11 +755,11 @@ curl -X POST \
 
 ### 监测数据流
 
-创建数据流后，您可以监视通过它摄取的数据，以查看有关摄取率、成功和错误的信息。 有关如何监视数据流的详细信息，请访问有关[监视帐户和数据流](../../../../dataflows/ui/monitor-sources.md)的教程。
+创建数据流后，可直接在Experience Platform UI中监控其性能。 这包括跟踪摄取率、成功量度和发生的任何错误。 有关如何监视数据流的详细信息，请访问有关[监视帐户和数据流](../../../../dataflows/ui/monitor-sources.md)的教程。
 
 ### 更新您的数据流
 
-要更新数据流计划、映射和常规信息的配置，请访问有关[更新源数据流](../../api/update-dataflows.md)的教程。
+要更新数据流计划、映射或常规信息的配置，请访问有关[更新源数据流](../../api/update-dataflows.md)的教程。
 
 ## 删除您的数据流
 
