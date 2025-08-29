@@ -3,7 +3,7 @@ title: 受众API端点
 description: 使用Adobe Experience Platform分段服务API中的受众端点，以编程方式创建、管理和更新贵组织的受众。
 role: Developer
 exl-id: cb1a46e5-3294-4db2-ad46-c5e45f48df15
-source-git-commit: 2ec6bacb44dc9b31fcd5cb4c457ba109a921aa84
+source-git-commit: 63fa87ac9777b3ac66d990dd4bfbd202f07b0eba
 workflow-type: tm+mt
 source-wordcount: '1592'
 ht-degree: 2%
@@ -33,7 +33,7 @@ GET /audiences?{QUERY_PARAMETERS}
 
 >[!NOTE]
 >
->如果您不使用任何查询参数使用此端点，则&#x200B;**不会返回非活动受众**。 但是，如果将此端点与`property=audienceId`查询参数一起使用，则将返回非活动受众&#x200B;**&#x200B;**。
+>如果您不使用任何查询参数使用此端点，则&#x200B;**不会返回非活动受众**。 但是，如果将此端点与`property=audienceId`查询参数一起使用，则将返回非活动受众&#x200B;****。
 
 在检索受众列表时，可以使用以下查询参数：
 
@@ -67,7 +67,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/audiences?limit=2 \
 
 成功的响应会返回HTTP状态200，其中包含您的组织中创建为JSON的受众列表。
 
-+++一个示例响应，其中包含最后两个创建的属于您组织的受众
++++包含属于您组织的最近两个创建的受众的示例响应
 
 ```json
 {
@@ -166,7 +166,12 @@ curl -X GET https://platform.adobe.io/data/core/ups/audiences?limit=2 \
     ],
     "_page":{
       "totalCount": 111,
-      "pageSize": 2,
+      "totalPages": 21,
+      "sortField": "name",
+      "sort": "asc", 
+      "pageSize": 5,
+      "limit": 5,
+      "start": "0",
       "next": "1"
    },
    "_links":{
@@ -550,7 +555,7 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/audiences/60ccea95-1435-41
 | 属性 | 描述 |
 | -------- | ----------- |
 | `op` | 所执行的PATCH操作的类型。 对于此终结点，此值是&#x200B;**始终** `/add`。 |
-| `path` | 要更新的字段的路径。 无法编辑系统生成的字段，如`id`、`audienceId`和`namespace` **&#x200B;**。 |
+| `path` | 要更新的字段的路径。 无法编辑系统生成的字段，如`id`、`audienceId`和`namespace` ****。 |
 | `value` | 分配给`path`中指定的属性的新值。 |
 
 +++
@@ -559,7 +564,7 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/audiences/60ccea95-1435-41
 
 成功的响应会返回包含已更新受众的HTTP状态200。
 
-+++为受众中的字段打补丁时的示例响应。
++++修补受众中的字段时的示例响应。
 
 ```json
 {
