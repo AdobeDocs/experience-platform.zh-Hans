@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2025 年 8 月）
 description: Adobe Experience Platform 的 2025 年 8 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: bbeab81e64a86a59a1f85ca139935abf220ef361
+source-git-commit: 35c3933f5debbba04c885f6000b908e292613395
 workflow-type: tm+mt
-source-wordcount: '1448'
-ht-degree: 78%
+source-wordcount: '1339'
+ht-degree: 85%
 
 ---
 
@@ -96,7 +96,6 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 | 目标 | 描述 |
 | --- | --- |
 | [[!DNL Acxiom Real ID Audience Connection]](../../destinations/catalog/advertising/acxiom-real-id-audience-connection.md) 目标 | 使用 [!DNL Acxiom Real ID Audience Connection] 目标，通过 [!DNL Acxiom's] [Real ID](https://www.acxiom.com/real-id/real-id/) 技术增强受众，并将受众激活到多个平台，例如 [!DNL Altice]、[!DNL Ampersand]、[!DNL Comcast] 等。 |
-| 增强的[[!DNL Marketo Engage]](../../destinations/catalog/adobe/marketo-engage-connection.md)目标 | 增强的[[!DNL Marketo Engage]](../../destinations/catalog/adobe/marketo-engage-connection.md)目标是现有[[!DNL (Legacy) (V2) Marketo Engage]](../../destinations/catalog/adobe/marketo-engage.md)连接器的升级版本。 除了旧连接器中的现有受众同步功能之外，此新连接器还引入了配置文件同步功能，从而提供了与[!DNL Marketo Engage]的更紧密集成。 <br> [[!DNL (Legacy) (V2) Marketo Engage]](../../destinations/catalog/adobe/marketo-engage.md)连接器将于&#x200B;**2026年3月**&#x200B;被弃用。 要确保顺利过渡到新&#x200B;**[[!UICONTROL Marketo Engage]](../../destinations/catalog/adobe/marketo-engage-connection.md)**&#x200B;目标，请查看以下关键点和所需的操作： <ul><li>现有&#x200B;**[!UICONTROL （旧版） (V2) Marketo Engage]**&#x200B;的所有用户必须在2026年3月之前迁移到新的&#x200B;**[!UICONTROL Marketo Engage]**&#x200B;目标。</li><li> **不会自动迁移现有数据流。**&#x200B;您必须[设置与新](../../destinations/ui/connect-destination.md)Marketo Engage **[!UICONTROL 目标的新连接]**&#x200B;并在该处激活您的受众。</li></ul> |
 
 **更新的目标**
 
@@ -180,6 +179,8 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 <!---
 
 | [!BADGE Beta]{type=Informative} Support for [!DNL Azure Private Links] in the UI | You can now use [!DNL Azure Private Links] for a select group of sources in the UI. Use this feature to create a private endpoint that which your source can connect to. With private endpoints, you can set up connections and dataflows that bypass the public internet, giving you enhanced security and network isolation for your sensitive data. Support for [!DNL Azure Private Links] is available to the following following sources: <ul><li>[[!DNL Azure Blob Storage]](../../sources/connectors/cloud-storage/blob.md)</li><li>[[!DNL ADLS Gen2]](../../sources/connectors/cloud-storage/adls-gen2.md)</li><li>[[!DNL Azure File Storage]](../../sources/connectors/cloud-storage/azure-file-storage.md)</li><li>[[!DNL Snowflake]](../../sources/connectors/databases/snowflake.md)</li></ul> For more information, read the guide on [[!DNL Azure Private Links]](../../sources/tutorials/ui/private-link.md). |
+
+| Enhanced [[!DNL Marketo Engage]](../../destinations/catalog/adobe/marketo-engage-connection.md) destination  | The enhanced [[!DNL Marketo Engage]](../../destinations/catalog/adobe/marketo-engage-connection.md) destination is an upgraded version of the existing [[!DNL (Legacy) (V2) Marketo Engage]](../../destinations/catalog/adobe/marketo-engage.md) connector. This new connector brings profile sync capabilities in addition to the existing audience sync capabilities from the legacy connector, providing a tighter integration with [!DNL Marketo Engage]. <br> The [[!DNL (Legacy) (V2) Marketo Engage]](../../destinations/catalog/adobe/marketo-engage.md) connector will be deprecated in **March 2026**. To ensure a smooth transition to the new **[[!UICONTROL Marketo Engage]](../../destinations/catalog/adobe/marketo-engage-connection.md)** destination, review the following key points and required actions: <ul><li>All users of the existing **[!UICONTROL (Legacy) (V2) Marketo Engage]** must migrate to the new **[!UICONTROL Marketo Engage]** destination by March 2026.</li><li> **Existing dataflows will not be migrated automatically.** You must [set up a new connection](../../destinations/ui/connect-destination.md) to the new **[!UICONTROL Marketo Engage]** destination and activate your audiences there.</li></ul>|
 
 -->
 
