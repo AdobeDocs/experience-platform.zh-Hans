@@ -6,7 +6,7 @@ exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
 source-git-commit: 52571689c97fdc2ed052b53537e736f03d666ad5
 workflow-type: tm+mt
 source-wordcount: '5174'
-ht-degree: 10%
+ht-degree: 11%
 
 ---
 
@@ -330,7 +330,7 @@ ht-degree: 10%
 >[!NOTE]
 >
 >当使用“晚于”时间限制时，后一个事件发生的时间可能超过在时间限制内列出的时间量。 >
->&#x200B;>例如，如果您有一个页面查看事件和一个签出事件，并在这两个事件之间放置了“1小时后”时间限制，则一个在页面查看事件发生2小时后具有签出事件的区段定义符合条件。
+>>例如，如果您有一个页面查看事件和一个签出事件，并在这两个事件之间放置了“1小时后”时间限制，则一个在页面查看事件发生2小时后具有签出事件的区段定义符合条件。
 >
 >此外，这两个时间约束可以相互协调使用。
 >
@@ -380,23 +380,23 @@ ht-degree: 10%
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_segmentproperties"
 >title="受众属性"
->abstract="受众属性部分估算生成的受众规模，显示符合条件的配置文件数与配置文件总数的对比。 这样，您就可以在构建受众本身之前，根据需要调整受众。"
+>abstract="受众属性部分显示了生成的受众的大小估计值，并显示合格轮廓数与轮廓总数的对比。这允许您在生成受众之前根据需要调整受众。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="刷新估计值"
 >abstract="您可以刷新区段定义的估计值，以立即预览符合建议的区段定义资格的轮廓数目。受众估计值是通过使用当天的示例数据的示例大小生成的。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=zh-Hans#estimate-and-preview-an-audience" text="估计和预览受众"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="估计和预览受众"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_qualifiedprofiles"
 >title="符合条件的轮廓"
->abstract="符合条件的配置文件指示符合受众规则的实际配置文件数。 该数字每 24 小时更新一次，更新时间为区段评估任务运行完成之后。"
+>abstract="符合条件的轮廓指的是满足受众规则的实际轮廓数量。该数字每 24 小时更新一次，更新时间为区段评估任务运行完成之后。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_estimatedprofiles"
 >title="预估轮廓数"
->abstract="预计配置文件数表示根据示例作业估计符合受众规则的大致配置文件数。"
+>abstract="预估轮廓数指的是在可能符合受众规则的抽样任务的基础上得出的近似轮廓数量。"
 
 在构建区段定义时，工作区右侧的&#x200B;**[!UICONTROL 受众属性]**&#x200B;部分会显示所生成区段定义的大小估计值，这样您可以在构建受众本身之前根据需要调整区段定义。
 
