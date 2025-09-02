@@ -3,9 +3,9 @@ title: MySQL Source Connector概述
 description: 了解如何使用API或用户界面将MySQL连接到Adobe Experience Platform。
 last-substantial-update: 2025-05-20T00:00:00Z
 exl-id: a18e8e69-880f-4bee-b339-726091d6f858
-source-git-commit: b73ced639100c95f6c62be92d4796a206a688958
+source-git-commit: 16fe5340582dcea0ff40000fb516c1b72d5f150e
 workflow-type: tm+mt
-source-wordcount: '625'
+source-wordcount: '622'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ ht-degree: 0%
 | `connectionString` | 与您的帐户关联的[!DNL MySQL]连接字符串。 [!DNL MySQL]连接字符串模式为： `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`。 |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL MySQL]的连接规范ID为`26d738e0-8963-47ea-aadf-c60de735468a`。 |
 
-有关详细信息，请阅读有关连接字符串[&#128279;](https://dev.mysql.com/doc/connector-net/en/connector-net-connections-string.html)的[!DNL MySQL] 文档。
+有关详细信息，请阅读有关连接字符串[[!DNL MySQL] 的](https://dev.mysql.com/doc/connector-net/en/connector-net-connections-string.html)文档。
 
 >[!TAB 基本身份验证]
 

@@ -4,22 +4,22 @@ solution: Experience Platform
 title: Microsoft Dynamics Source Connector概述
 description: 了解如何使用API或用户界面将Microsoft Dynamics连接到Adobe Experience Platform。
 exl-id: 6ca162ce-2016-4270-b741-301cf4230233
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 16fe5340582dcea0ff40000fb516c1b72d5f150e
 workflow-type: tm+mt
-source-wordcount: '285'
-ht-degree: 3%
+source-wordcount: '284'
+ht-degree: 2%
 
 ---
 
-# Microsoft Dynamics 连接器
+# [!DNL Microsoft Dynamics]源
 
-Adobe Experience Platform允许从外部源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强传入数据。 您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
+[!DNL Microsoft Dynamics]是一套业务应用程序，您可以使用它来更有效地管理您的操作。 无论您是管理客户关系、财务还是供应链，[!DNL Microsoft Dynamics]都可以为您提供工具，以简化您的工作流程并做出更明智的决策。 该平台旨在支持企业资源规划和客户关系管理(CRM)，允许您在一个集成系统中统一业务流程。
 
-[!DNL Experience Platform]支持从第三方CRM系统中引入数据。 CRM提供商的支持包括[!DNL Microsoft Dynamics]。
+您可以使用[!DNL Microsoft Dynamics]源将数据从[!DNL Microsoft Dynamics]帐户摄取到Adobe Experience Platform。
 
 ## IP地址允许列表
 
-在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 有关详细信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md)页。
+在将源连接到Experience Platform之前，必须将特定于区域的IP地址添加到允许列表。 有关详细信息，请阅读有关[列入允许列表IP地址以连接到Experience Platform](../../ip-address-allow-list.md)的指南。
 
 ## 从[!DNL Microsoft Dynamics]到XDM的字段映射
 
