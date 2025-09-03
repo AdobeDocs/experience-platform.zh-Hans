@@ -1,43 +1,43 @@
 ---
-title: Acxiom Audience Distribution
-description: 使用 [!DNL Acxiom Audience Distribution] 目标通过 [!DNL Acxiom's Real ID] 技术增强受众并将受众激活到多个平台，如 [!DNL Altice]、 [!DNL Ampersand]、 [!DNL Comcast]等。
+title: Acxiom受众连接
+description: 使用 [!DNL Acxiom Audience Connection] 目标通过 [!DNL Acxiom's Real ID] 技术增强受众并将受众激活到多个平台，如 [!DNL Altice]、 [!DNL Ampersand]、 [!DNL Comcast]等。
 badge: label="Beta 版" type="Informative"
 exl-id: bac0f337-bfab-4779-acc8-f70239552666
-source-git-commit: 290d6eb20b7d35839b4bb37e71e2c993b112d896
+source-git-commit: 70a1cdcfd99ae006f02289ab5a20ced624b51ccc
 workflow-type: tm+mt
 source-wordcount: '927'
-ht-degree: 6%
+ht-degree: 7%
 
 ---
 
-# [!DNL Acxiom Audience Distribution]目标
+# [!DNL Acxiom Audience Connection] 目标
 
 >[!NOTE]
 >
->[!DNL Acxiom Audience Distribution]目标为测试版。 此目标连接器和文档页面由[!DNL Acxiom]团队创建和维护。 如有任何查询或更新请求，请直接[此处](mailto:acxiom-adobe-help@acxiom.com)联系Acxiom。
+>[!DNL Acxiom Audience Connection]目标为测试版。 此目标连接器和文档页面由[!DNL Acxiom]团队创建和维护。 如有任何查询或更新请求，请直接[此处](mailto:acxiom-adobe-help@acxiom.com)联系Acxiom。
 
-使用[!DNL Acxiom Audience Distribution]目标通过[!DNL Acxiom's] [Real ID™](https://www.acxiom.com/real-id/real-id/)技术增强受众并将受众激活到多个平台，如[!DNL Altice]、[!DNL Ampersand]、[!DNL Comcast]等。
+使用[!DNL Acxiom Audience Connection]目标通过[!DNL Acxiom's] [Real ID™](https://www.acxiom.com/real-id/real-id/)技术增强受众并将受众激活到多个平台，如[!DNL Altice]、[!DNL Ampersand]、[!DNL Comcast]等。
 
-本教程提供了使用[!DNL Acxiom Audience Distribution]用户界面创建[!DNL Adobe Experience Platform]目标连接器的说明。 此连接器用于构建受众并将受众分发到选定的目标。
+本教程提供了使用[!DNL Acxiom Audience Connection]用户界面创建[!DNL Adobe Experience Platform]目标连接器的说明。 此连接器用于构建受众并将受众分发到选定的目标。
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解您应如何以及何时使用[!DNL Acxiom Audience Distribution]目标，以下是[!DNL Adobe Experience Platform]客户可以通过使用此连接器解决的示例用例。
+为了帮助您更好地了解您应如何以及何时使用[!DNL Acxiom Audience Connection]目标，以下是[!DNL Adobe Experience Platform]客户可以通过使用此连接器解决的示例用例。
 
 ### 将受众从Experience Platform发送到您的Acxiom帐户 {#send-audiences}
 
 如果您是营销专业人员，想要将受众从[!DNL Experience Platform]发送到您的[!DNL Acxiom]帐户以进行跨渠道客户获取，请使用此目标连接器。
 
-例如，一家全球金融服务品牌的营销运营部对通过多个广告平台进行跨渠道客户获取感兴趣。 他们可以使用[!DNL Acxiom Audience Distribution]目标连接器将受众从[!DNL Experience Platform]发送到[!DNL Acxiom]，通过[!DNL Acxiom's Real ID]技术增强受众，并将受众激活到多个平台，如[!DNL Altice]、[!DNL Ampersand]、[!DNL Comcast]等。
+例如，一家全球金融服务品牌的营销运营部对通过多个广告平台进行跨渠道客户获取感兴趣。 他们可以使用[!DNL Acxiom Audience Connection]目标连接器将受众从[!DNL Experience Platform]发送到[!DNL Acxiom]，通过[!DNL Acxiom's Real ID]技术增强受众，并将受众激活到多个平台，如[!DNL Altice]、[!DNL Ampersand]、[!DNL Comcast]等。
 
 ## 先决条件 {#prerequisites}
 
-* **确认使用条款：**&#x200B;在配置新的[!DNL Acxiom Audience Distribution]目标之前，您必须阅读并签署[!DNL Acxiom's]使用条款协议。 在您执行的销售订单完成后，您将收到指向协议的链接。 在您签署协议之前，不会在Experience Platform目标目录中看到[!DNL Acxiom Audience Distribution]目标卡。 在您接受并签署协议后，[!DNL Adobe]将完成您的载入流程，您将会看到[!DNL Acxiom Audience Distribution]目标卡。
-* **知道您的Adobe组织ID：**&#x200B;需要您的[!DNL Adobe]组织ID才能完成您的用户协议条款。 有关如何[!DNL Adobe's]查看组织ID *的详细信息，请参阅* [Experience Cloud中的组织](https://experienceleague.adobe.com/zh-hans/docs/core-services/interface/administration/organizations#concept_EA8AEE5B02CF46ACBDAD6A8508646255)主题。
+* **确认使用条款：**&#x200B;在配置新的[!DNL Acxiom Audience Connection]目标之前，您必须阅读并签署[!DNL Acxiom's]使用条款协议。 在您执行的销售订单完成后，您将收到指向协议的链接。 在您签署协议之前，不会在Experience Platform目标目录中看到[!DNL Acxiom Audience Connection]目标卡。 在您接受并签署协议后，[!DNL Adobe]将完成您的载入流程，您将会看到[!DNL Acxiom Audience Connection]目标卡。
+* **知道您的Adobe组织ID：**&#x200B;需要您的[!DNL Adobe]组织ID才能完成您的用户协议条款。 有关如何[!DNL Adobe's]查看组织ID *的详细信息，请参阅* [Experience Cloud中的组织](https://experienceleague.adobe.com/en/docs/core-services/interface/administration/organizations#concept_EA8AEE5B02CF46ACBDAD6A8508646255)主题。
 
 ## 支持的目标 {#supported-destinations}
 
-[!DNL Acxiom Audience Distribution]目标当前支持对以下平台进行受众激活。<br>
+[!DNL Acxiom Audience Connection]目标当前支持对以下平台进行受众激活。<br>
 
 * [!DNL Altice]
 * [!DNL Ampersand]
@@ -49,11 +49,11 @@ ht-degree: 6%
 
 ## 连接到目标 {#connect}
 
-为了方便起见，系统将在后台自动处理对[!DNL Acxiom's Audience Distribution]目标的身份验证。
+为了方便起见，系统将在后台自动处理对[!DNL Acxiom's Audience Connection]目标的身份验证。
 
 ## 目标特定的设置 {#destination-settings}
 
-某些[!DNL Acxiom Audience Distribution]目标需要其他信息。 以下部分提供了有关如何配置这些选项的详细指导。
+某些[!DNL Acxiom Audience Connection]目标需要其他信息。 以下部分提供了有关如何配置这些选项的详细指导。
 
 ### [!DNL LG Ads] {#lg-ads}
 
@@ -74,13 +74,13 @@ ht-degree: 6%
 
 >[!NOTE]
 >
->[!DNL Acxiom Audience Distribution]目标仅支持完整文件导出。
+>[!DNL Acxiom Audience Connection]目标仅支持完整文件导出。
 
 ### 映射属性和身份 {#map}
 
-要使[!DNL Acxiom Audience Distribution]目标正确接收受众数据，您必须将源字段从Experience Platform映射到正确的[!DNL Acxiom Audience Distribution]目标字段。
+要使[!DNL Acxiom Audience Connection]目标正确接收受众数据，您必须将源字段从Experience Platform映射到正确的[!DNL Acxiom Audience Connection]目标字段。
 
-[!DNL Acxiom Audience Distribution]仅允许映射到以下目标字段。 必须按照以下显示的顺序映射下表中描述的目标字段。
+[!DNL Acxiom Audience Connection]仅允许映射到以下目标字段。 必须按照以下显示的顺序映射下表中描述的目标字段。
 
 | 字段名称 | 描述 | 必需 | 字段顺序 | 最大长度 |
 |---|---|---|---|---|          
@@ -105,7 +105,7 @@ ht-degree: 6%
 
 ### 审查 {#review}
 
-完成上述所有步骤后，您就有机会在激活（分发）目标连接之前查看其状态和受众详细信息。 您选择的受众将显示在列表底部。 每个受众将是一个对[!DNL Acxiom Audience Distribution] API的单独调用。
+完成上述所有步骤后，您就有机会在激活（分发）目标连接之前查看其状态和受众详细信息。 您选择的受众将显示在列表底部。 每个受众将是一个对[!DNL Acxiom Audience Connection] API的单独调用。
 
 如果您对结果满意，请选择&#x200B;**[!UICONTROL 完成]**&#x200B;以激活您的目标。
 
@@ -128,4 +128,4 @@ ht-degree: 6%
 
 ## 数据使用和治理 {#data-usage-governance}
 
-在处理您的数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据治理的详细信息，请阅读[数据治理概述](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/data-governance/home)。
+在处理您的数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据治理的详细信息，请阅读[数据治理概述](https://experienceleague.adobe.com/en/docs/experience-platform/data-governance/home)。
