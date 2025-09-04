@@ -1,11 +1,10 @@
 ---
 title: 通过UI将您的PathFactory帐户连接到Experience Platform
 description: 了解如何通过UI将您的PathFactory帐户连接到Experience Platform。
-badge: Beta 版
 exl-id: 859dd0c1-8c4b-43e3-a87b-84c879460bc0
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 40c3745920204983f5388de6cba1402d87eda71c
 workflow-type: tm+mt
-source-wordcount: '572'
+source-wordcount: '571'
 ht-degree: 2%
 
 ---
@@ -23,7 +22,7 @@ ht-degree: 2%
    * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
 
-如果您已经拥有[!DNL PathFactory]帐户，则可以跳过本文档的其余部分，并继续学习关于使用UI[&#128279;](../../dataflow/marketing-automation.md)将营销自动化数据引入Experience Platform的教程。
+如果您已经拥有[!DNL PathFactory]帐户，则可以跳过本文档的其余部分，并继续学习关于使用UI[将营销自动化数据引入Experience Platform的](../../dataflow/marketing-automation.md)教程。
 
 ### 收集所需的凭据 {#gather-credentials}
 

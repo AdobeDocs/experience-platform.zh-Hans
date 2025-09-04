@@ -2,20 +2,15 @@
 title: PathFactory Source概述
 description: 了解如何使用API或用户界面将PathFactory连接到Adobe Experience Platform。
 last-substantial-update: 2024-04-30T00:00:00Z
-badge: Beta 版
 exl-id: befb73c4-fd6a-4512-9124-d23a1c27e0e0
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 40c3745920204983f5388de6cba1402d87eda71c
 workflow-type: tm+mt
-source-wordcount: '467'
+source-wordcount: '449'
 ht-degree: 3%
 
 ---
 
 # [!DNL PathFactory]
-
->[!NOTE]
->
->[!DNL PathFactory]源为测试版。 有关使用测试版标记源的更多信息，请阅读[源概述](../../home.md#terms-and-conditions)。
 
 [[!DNL PathFactory]](https://www.pathfactory.com/)提供了一个基于云的平台，可帮助企业管理内容历程并通过智能内容见解促进参与。 本指南详细介绍如何利用PathFactory的连接器将数据从PathFactory集成到Experience Platform中，以实现最佳数据摄取。
 
@@ -37,7 +32,7 @@ ht-degree: 3%
 
 * **一个[PathFactory帐户]**。
    * 如果您还没有有效的帐户，请联系[[!DNL PathFactory]](https://www.pathfactory.com/portal/company/contactus.shtml)。
-* **任何[!DNL PathFactory]产品的活动订阅**。
+* **任何**&#x200B;产品的活动订阅[!DNL PathFactory]。
 * **用户名、密码和域**。
    * 需要这些凭据才能访问您的[!DNL PathFactory]帐户及其数据。
 * **访问令牌**&#x200B;和&#x200B;**API端点**。
@@ -61,7 +56,7 @@ ht-degree: 3%
 
 ### 在Experience Platform上配置权限
 
-若要将您的[!DNL PathFactory]帐户连接到Experience Platform，您必须同时为您的帐户启用&#x200B;**[!UICONTROL 查看源]**&#x200B;和&#x200B;**[!UICONTROL 管理源]**&#x200B;权限。 请联系您的产品管理员以获取必要的权限。 有关详细信息，请阅读[访问控制UI指南](../../../access-control/ui/overview.md)。
+若要将您的&#x200B;**[!UICONTROL 帐户连接到Experience Platform，您必须同时为您的帐户启用]**&#x200B;查看源&#x200B;**[!UICONTROL 和]**&#x200B;管理源[!DNL PathFactory]权限。 请联系您的产品管理员以获取必要的权限。 有关详细信息，请阅读[访问控制UI指南](../../../access-control/ui/overview.md)。
 
 ## 将[!DNL PathFactory]连接到Experience Platform {#pathfactory-connect}
 

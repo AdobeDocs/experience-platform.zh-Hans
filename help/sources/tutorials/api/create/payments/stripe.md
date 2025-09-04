@@ -3,20 +3,16 @@ title: 使用API将付款数据从您的 [!DNL Stripe] 帐户摄取到Experience
 description: 了解如何使用流量服务API将支付数据从Stripe帐户摄取到Experience Platform
 badge: Beta 版
 exl-id: a9cb3ef6-aab0-4a5b-894e-ce90b82f35a8
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 40c3745920204983f5388de6cba1402d87eda71c
 workflow-type: tm+mt
-source-wordcount: '2028'
+source-wordcount: '2006'
 ht-degree: 1%
 
 ---
 
 # 使用API将付款数据从您的[!DNL Stripe]帐户摄取到Experience Platform
 
->[!NOTE]
->
->[!DNL Stripe]源为测试版。 有关使用测试版标记源的更多信息，请阅读源概述中的[条款和条件](../../../../home.md#terms-and-conditions)。
-
-阅读以下教程，了解如何使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将付款数据从[!DNL Stripe]摄取到Adobe Experience Platform。
+阅读以下教程，了解如何使用[!DNL Stripe]API[[!DNL Flow Service] 将付款数据从](https://www.adobe.io/experience-platform-apis/references/flow-service/)摄取到Adobe Experience Platform。
 
 ## 快速入门
 
@@ -41,7 +37,7 @@ ht-degree: 1%
 
 基本连接会保留源与Experience Platform之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 您可以使用基本连接ID浏览和导航源中的文件。 此外，您还可以标识要摄取的特定项目，包括有关这些项目的数据类型和格式的详细信息。
 
-要创建基本连接ID，请在提供您的[!DNL Stripe]身份验证凭据作为请求正文的一部分时，向`/connections`端点发出POST请求。
+要创建基本连接ID，请在提供您的`/connections`身份验证凭据作为请求正文的一部分时，向[!DNL Stripe]端点发出POST请求。
 
 **API格式**
 
@@ -407,7 +403,7 @@ curl -X GET \
 
 ### 创建源连接 {#source-connection}
 
-您可以通过向[!DNL Flow Service] API的`/sourceConnections`端点发出POST请求来创建源连接。 源连接由连接ID、源数据文件的路径以及连接规范ID组成。
+您可以通过向`/sourceConnections` API的[!DNL Flow Service]端点发出POST请求来创建源连接。 源连接由连接ID、源数据文件的路径以及连接规范ID组成。
 
 **API格式**
 
@@ -880,7 +876,7 @@ curl -X POST \
 | `transformations.params.mappingId` | 在之前的步骤中生成的[映射ID](#mapping)。 |
 | `transformations.params.mappingVersion` | 映射ID的相应版本。 此值默认为`0`。 |
 | `scheduleParams.startTime` | 您的数据流将开始的时间。 必须以Unix时间戳的格式提供开始时间值。 |
-| `scheduleParams.frequency` | 数据流收集数据的频率。 您可以将摄取频率配置为：  <ul><li>**一次**：将频率设置为`once`以创建一次性引入。 创建一次性摄取数据流时，间隔和回填配置不可用。 默认情况下，调度频率设置为一次。</li><li>**分钟**：将频率设置为`minute`，以计划数据流以每分钟摄取数据。</li><li>**小时**：将频率设置为`hour`，以计划数据流每小时摄取数据。</li><li>**天**：将频率设置为`day`，以计划数据流每天摄取数据。</li><li>**周**：将频率设置为`week`，以计划数据流每周摄取数据。</li></ul> |
+| `scheduleParams.frequency` | 数据流收集数据的频率。 您可以将摄取频率配置为：  <ul><li>**一次**：将频率设置为`once`以创建一次性引入。 创建一次性摄取数据流时，间隔和回填配置不可用。 默认情况下，调度频率设置为一次。</li><li>**分钟**：将频率设置为`minute`，以计划数据流以每分钟摄取数据。</li><li>**小时**:Set&#x200B;您的频率为`hour`以计划数据流每小时摄取数据。</li><li>**天**：将频率设置为`day`，以计划数据流每天摄取数据。</li><li>**周**：将频率设置为`week`，以计划数据流每周摄取数据。</li></ul> |
 | `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 例如，如果将频率设置为天并将间隔配置为15，则数据流将每15天运行一次。 间隔值应为非零整数。 每个频率的最小接受间隔值如下：<ul><li>**一次**：不适用</li><li>**分钟**： 15</li><li>**小时**： 1</li><li>**天**： 1</li><li>**周**： 1</li></ul> |
 
 **响应**
@@ -904,11 +900,11 @@ curl -X POST \
 
 ### 更新您的数据流
 
-在提供数据流ID的同时，通过向[!DNL Flow Service] API的/flows端点发出PATCH请求，更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 发出PATCH请求时，必须在`If-Match`标头中提供数据流唯一的`etag`。 有关完整的API示例，请阅读有关[使用API更新源数据流](../../update-dataflows.md)的指南。
+在提供数据流ID的同时，通过向[!DNL Flow Service] API的/flows端点发出PATCH请求，更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 发出PATCH请求时，必须在`etag`标头中提供数据流唯一的`If-Match`。 有关完整的API示例，请阅读有关[使用API更新源数据流](../../update-dataflows.md)的指南。
 
 ### 更新您的帐户
 
-在提供基本连接ID作为查询参数的同时，通过向[!DNL Flow Service] API执行PATCH请求来更新源帐户的名称、描述和凭据。 发出PATCH请求时，必须在`If-Match`标头中提供源帐户的唯一`etag`。 有关完整的API示例，请阅读有关[使用API更新源帐户](../../update.md)的指南。
+在提供基本连接ID作为查询参数的同时，通过向[!DNL Flow Service] API执行PATCH请求来更新源帐户的名称、描述和凭据。 发出PATCH请求时，必须在`etag`标头中提供源帐户的唯一`If-Match`。 有关完整的API示例，请阅读有关[使用API更新源帐户](../../update.md)的指南。
 
 ### 删除您的数据流
 
@@ -916,4 +912,4 @@ curl -X POST \
 
 ### 删除您的帐户
 
-在提供要删除的帐户的基本连接ID时，通过向[!DNL Flow Service] API执行DELETE请求来删除您的帐户。 有关完整的API示例，请阅读有关使用API[&#128279;](../../delete.md)删除源帐户的指南。
+在提供要删除的帐户的基本连接ID时，通过向[!DNL Flow Service] API执行DELETE请求来删除您的帐户。 有关完整的API示例，请阅读有关使用API[删除源帐户](../../delete.md)的指南。

@@ -1,20 +1,15 @@
 ---
 title: Stripe
-description: 了解如何将支付数据从Stripe帐户提取到Adobe Experience Platform
-badge: Beta 版
+description: 了解如何将支付数据从Stripe帐户摄取到Adobe Experience Platform
 exl-id: 191d217e-036d-491a-b7dd-abcad74625ba
-source-git-commit: 62bcaa532cdec68a2f4f62e5784c35b91b7d5743
+source-git-commit: 40c3745920204983f5388de6cba1402d87eda71c
 workflow-type: tm+mt
-source-wordcount: '809'
+source-wordcount: '791'
 ht-degree: 1%
 
 ---
 
 # [!DNL Stripe]
-
->[!NOTE]
->
->[!DNL Stripe]源为测试版。 有关使用测试版标记源的更多信息，请阅读[源概述](../../home.md#terms-and-conditions)。
 
 数千家各种规模的企业利用[!DNL Stripe]在线或亲自接受付款、创造新的收入来源，并在Adobe Experience Platform、Adobe Commerce和[!DNL Magento Open Source]的帮助下在全球范围内进行扩展。
 
@@ -22,7 +17,7 @@ ht-degree: 1%
 
 >[!TIP]
 >
->有关Experience Platform上[!DNL Stripe]源的问题，请通过adobe-partnership<span>@stripe.com联系[!DNL Stripe]。
+>有关Experience Platform上[!DNL Stripe]源的问题，请通过adobe-partnership[!DNL Stripe]@stripe.com联系<span>。
 
 >[!BEGINSHADEBOX]
 
@@ -42,10 +37,10 @@ ht-degree: 1%
 
 ### 检索您的访问令牌
 
-* 使用您的[!DNL Stripe]电子邮件地址和密码登录到[[!DNL Stripe] 仪表板](https://dashboard.stripe.com/login)。
+* 使用您的[[!DNL Stripe] 电子邮件地址和密码登录到](https://dashboard.stripe.com/login)仪表板[!DNL Stripe]。
 * 在[!DNL Developers]仪表板中，选择&#x200B;**[!DNL API keys for developers]**。
 * 在&#x200B;**API密钥**&#x200B;选项卡下，选择&#x200B;**[!DNL Reveal test key]**&#x200B;以显示您的访问令牌。
-* 在将[!DNL Stripe]帐户连接到Experience Platform时，您现在可以使用此令牌作为访问令牌，使用[!DNL Flow Service] API或Experience PlatformUI。
+* 当使用[!DNL Stripe] API或Experience Platform UI将您的[!DNL Flow Service]帐户连接到Experience Platform时，您现在可以使用此令牌作为访问令牌。
 
 ### 收集所需的凭据
 
@@ -55,7 +50,7 @@ ht-degree: 1%
 
 >[!TAB API]
 
-在使用[!DNL Flow Service] API连接[!DNL Stripe]帐户时，必须提供以下凭据。
+在使用[!DNL Stripe] API连接[!DNL Flow Service]帐户时，必须提供以下凭据。
 
 | 凭据 | 描述 |
 | --- | --- |
@@ -72,7 +67,7 @@ ht-degree: 1%
 
 >[!ENDTABS]
 
-有关使用[!DNL Stripe] API的更多信息，请阅读有关API密钥[&#128279;](https://docs.stripe.com/keys)的[!DNL Stripe] 文档。
+有关使用[!DNL Stripe] API的更多信息，请阅读有关API密钥[[!DNL Stripe] 的](https://docs.stripe.com/keys)文档。
 
 ### 创建Experience Data Model (XDM)架构
 
@@ -93,7 +88,7 @@ ht-degree: 1%
 
 在[!DNL Stripe]中，**费用**&#x200B;表示尝试将资金转入[!DNL Stripe]。 有关特定收费属性的更多信息，请阅读[[!DNL Stripe] 收费的API指南](https://docs.stripe.com/api/charges)。
 
-+++选择以查看Stripe费用对象
++++选择以查看Stripe Charge对象  
 
 ```json
 {
@@ -186,9 +181,9 @@ ht-degree: 1%
 
 >[!TAB 订阅]
 
-在[!DNL Stripe]中，您可以使用&#x200B;**订阅**&#x200B;定期向客户收费。 有关特定订阅属性的更多信息，请阅读订阅[&#128279;](https://docs.stripe.com/api/subscriptions)上的[!DNL Stripe] API指南。
+在[!DNL Stripe]中，您可以使用&#x200B;**订阅**&#x200B;定期向客户收费。 有关特定订阅属性的更多信息，请阅读订阅[[!DNL Stripe] 上的](https://docs.stripe.com/api/subscriptions)API指南。
 
-+++选择以查看Stripe预订对象
++++选择以查看Stripe订阅对象
 
 ```json
 {
@@ -366,7 +361,7 @@ ht-degree: 1%
 
 在[!DNL Stripe]中，**余额交易记录**&#x200B;表示您的[!DNL Stripe]帐户之间的资金流动。 有关特定余额交易属性的详细信息，请阅读余额交易的[[!DNL Stripe] API指南](https://docs.stripe.com/api/balance_transactions)。
 
-+++选择以查看“Stripe余额事务处理”对象
++++选择以查看Stripe余额事务处理对象
 
 ```json
 {
@@ -432,7 +427,7 @@ ht-degree: 1%
 
 >[!TAB 价格]
 
-在[!DNL Stripe]中，**价格**&#x200B;表示产品循环购买和一次性购买的单位成本、货币和可选帐单周期。 有关特定价格属性的更多信息，请阅读价格[&#128279;](https://docs.stripe.com/api/prices)的[!DNL Stripe] API指南。
+在[!DNL Stripe]中，**价格**&#x200B;表示产品循环购买和一次性购买的单位成本、货币和可选帐单周期。 有关特定价格属性的更多信息，请阅读价格[[!DNL Stripe] 的](https://docs.stripe.com/api/prices)API指南。
 
 +++选择以查看Stripe价格对象
 
@@ -475,13 +470,13 @@ ht-degree: 1%
 
 在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 有关详细信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md)页。
 
-### 配置Experience Platform权限
+### 在Experience Platform上配置权限
 
-若要将您的[!DNL Stripe]帐户连接到Experience Platform，您必须同时为您的帐户启用&#x200B;**[!UICONTROL 查看源]**&#x200B;和&#x200B;**[!UICONTROL 管理源]**&#x200B;权限。 请联系您的产品管理员以获取必要的权限。 有关详细信息，请阅读[访问控制UI指南](../../../access-control/ui/overview.md)。
+若要将您的&#x200B;**[!UICONTROL 帐户连接到Experience Platform，您必须同时为您的帐户启用]**&#x200B;查看源&#x200B;**[!UICONTROL 和]**&#x200B;管理源[!DNL Stripe]权限。 请联系您的产品管理员以获取必要的权限。 有关详细信息，请阅读[访问控制UI指南](../../../access-control/ui/overview.md)。
 
 ## 后续步骤
 
 完成先决条件设置后，您可以继续连接并将[!DNL Stripe]数据摄取到Experience Platform。 请阅读以下指南，了解如何使用API或用户界面将[!DNL Stripe]付款数据摄取到Experience Platform：
 
-* [使用流服务API从您的Stripe帐户引入付款数据以Experience Platform](../../tutorials/api/create/payments/stripe.md)。
-* [使用用户界面](../../tutorials/ui/create/payments/stripe.md)将付款数据从您的Stripe帐户摄取到Experience Platform。
+* [使用流服务API将付款数据从您的Stripe帐户摄取到Experience Platform](../../tutorials/api/create/payments/stripe.md)。
+* [使用用户界面](../../tutorials/ui/create/payments/stripe.md)将付款数据从Stripe帐户摄取到Experience Platform。

@@ -1,20 +1,19 @@
 ---
 title: 使用流服务API创建PathFactory基本连接
 description: 了解如何使用流服务API对Experience Platform验证您的PathFactory帐户。
-badge: Beta 版
 exl-id: 2bdfe38b-d3f7-480f-87c6-0b98b9521be2
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 40c3745920204983f5388de6cba1402d87eda71c
 workflow-type: tm+mt
-source-wordcount: '546'
+source-wordcount: '545'
 ht-degree: 2%
 
 ---
 
-# 使用[!DNL Flow Service] API创建[!DNL PathFactory]基本连接
+# 使用[!DNL PathFactory] API创建[!DNL Flow Service]基本连接
 
 基本连接表示源和Adobe Experience Platform之间的已验证连接。
 
-阅读本文档以了解如何使用[[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>)为[!DNL PathFactory]创建基本连接。
+阅读本文档以了解如何使用[!DNL PathFactory]API[[!DNL Flow Service] 为](<https://www.adobe.io/experience-platform-apis/references/flow-service/>)创建基本连接。
 
 ## 快速入门
 
@@ -27,7 +26,7 @@ ht-degree: 2%
 
 有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../../../landing/api-guide.md)指南。
 
-以下部分提供了使用[!DNL Flow Service] API成功连接到[!DNL PathFactory]时需要了解的其他信息。
+以下部分提供了使用[!DNL PathFactory] API成功连接到[!DNL Flow Service]时需要了解的其他信息。
 
 ### 收集所需的凭据 {#gather-credentials}
 
@@ -47,7 +46,7 @@ ht-degree: 2%
 
 基本连接会保留源与Experience Platform之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-要创建基本连接ID，请在提供您的[!DNL PathFactory]身份验证凭据作为请求正文的一部分时，向`/connections`端点发出POST请求。
+要创建基本连接ID，请在提供您的`/connections`身份验证凭据作为请求正文的一部分时，向[!DNL PathFactory]端点发出POST请求。
 
 **API格式**
 
@@ -104,7 +103,7 @@ curl -X POST \
 
 ## 后续步骤
 
-通过完成本教程，您已使用[!DNL Flow Service] API创建了[!DNL PathFactory]基本连接。 您可以在下列教程中使用此基本连接ID：
+通过完成本教程，您已使用[!DNL PathFactory] API创建了[!DNL Flow Service]基本连接。 您可以在下列教程中使用此基本连接ID：
 
 * [使用 [!DNL Flow Service] API浏览数据表的结构和内容](../../explore/tabular.md)
 * [使用 [!DNL Flow Service] API创建数据流以将营销自动化数据引入Experience Platform](../../collect/marketing-automation.md)

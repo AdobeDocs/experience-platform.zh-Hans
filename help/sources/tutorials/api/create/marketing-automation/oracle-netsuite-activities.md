@@ -1,24 +1,17 @@
 ---
 title: 使用流服务API为Oracle NetSuite活动创建源连接和数据流
 description: 了解如何使用流服务API创建源连接和数据流，将Oracle NetSuite事件数据引入Experience Platform。
-hide: true
-hidefromtoc: true
-badge: Beta 版
 exl-id: 4f695389-2261-469c-8d40-7bd29a4e7f77
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 40c3745920204983f5388de6cba1402d87eda71c
 workflow-type: tm+mt
-source-wordcount: '1974'
+source-wordcount: '1957'
 ht-degree: 1%
 
 ---
 
 # 使用流服务API为[!DNL Oracle NetSuite Activities]创建源连接和数据流
 
->[!NOTE]
->
->[!DNL Oracle NetSuite Activities]源为测试版。 有关使用测试版标记源的更多信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
-
-阅读以下教程，了解如何使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将[!DNL Oracle NetSuite Activities]帐户中的事件数据引入Adobe Experience Platform。
+阅读以下教程，了解如何使用[!DNL Oracle NetSuite Activities]API[[!DNL Flow Service] 将](https://www.adobe.io/experience-platform-apis/references/flow-service/)帐户中的事件数据引入Adobe Experience Platform。
 
 ## 快速入门
 
@@ -27,7 +20,7 @@ ht-degree: 1%
 * [源](../../../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
 * [沙盒](../../../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-以下部分提供使用[!DNL Flow Service] API成功连接到[!DNL Oracle NetSuite Activities]所需了解的其他信息。
+以下部分提供使用[!DNL Oracle NetSuite Activities] API成功连接到[!DNL Flow Service]所需了解的其他信息。
 
 ### 身份验证
 
@@ -37,7 +30,7 @@ ht-degree: 1%
 
 有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../../../landing/api-guide.md)指南。
 
-## 使用[!DNL Flow Service] API将[!DNL Oracle NetSuite Activities]连接到Experience Platform
+## 使用[!DNL Oracle NetSuite Activities] API将[!DNL Flow Service]连接到Experience Platform
 
 按照以下指南了解如何对[!DNL Oracle NetSuite Activities]源进行身份验证、创建源连接和创建数据流以将事件数据引入Experience Platform。
 
@@ -45,7 +38,7 @@ ht-degree: 1%
 
 基本连接会保留源与Experience Platform之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-要创建基本连接ID，请在提供您的[!DNL Oracle NetSuite Activities]身份验证凭据作为请求正文的一部分时，向`/connections`端点发出POST请求。
+要创建基本连接ID，请在提供您的`/connections`身份验证凭据作为请求正文的一部分时，向[!DNL Oracle NetSuite Activities]端点发出POST请求。
 
 **API格式**
 
@@ -93,7 +86,7 @@ curl -X POST \
 | `auth.params.clientId` | 创建集成记录时的客户端ID值。 可在[此处](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_157771733782.html#procedure_157838925981)找到创建交互记录的进程。 该值是一个与`7fce.....b42f`类似的64个字符的字符串。 |
 | `auth.params.clientSecret` | 创建集成记录时的客户端ID值。 可在[此处](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_157771733782.html#procedure_157838925981)找到创建交互记录的进程。 该值是一个与`5c98.....1b46`类似的64个字符的字符串。 |
 | `auth.params.accessTokenUrl` | [!DNL NetSuite]访问令牌URL，类似于`https://{ACCOUNT_ID}.suitetalk.api.netsuite.com/services/rest/auth/oauth2/v1/token`，您将在其中将ACCOUNT_ID替换为您的[!DNL NetSuite]帐户ID。 |
-| `auth.params.accessToken` | 访问令牌值在[OAuth 2.0授权代码授予流程](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_158074210415.html#OAuth-2.0-Authorization-Code-Grant-Flow)教程的[步骤二](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_158081952044.html#Step-Two-POST-Request-to-the-Token-Endpoint)的末尾生成。 访问令牌的过期有效期仅为60分钟。 该值是一个格式为JSON Web令牌(JWT)的1024字符字符串，类似于`eyJr......f4V0`。 |
+| `auth.params.accessToken` | 访问令牌值在[OAuth 2.0授权代码授予流程](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_158081952044.html#Step-Two-POST-Request-to-the-Token-Endpoint)教程的[步骤二](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_158074210415.html#OAuth-2.0-Authorization-Code-Grant-Flow)的末尾生成。 访问令牌的过期有效期仅为60分钟。 该值是一个格式为JSON Web令牌(JWT)的1024字符字符串，类似于`eyJr......f4V0`。 |
 
 **响应**
 
@@ -331,7 +324,7 @@ curl -X GET \
 
 ### 创建源连接 {#source-connection}
 
-您可以通过向[!DNL Flow Service] API的`/sourceConnections`端点发出POST请求来创建源连接。 源连接由连接ID、源数据文件的路径以及连接规范ID组成。
+您可以通过向`/sourceConnections` API的[!DNL Flow Service]端点发出POST请求来创建源连接。 源连接由连接ID、源数据文件的路径以及连接规范ID组成。
 
 **API格式**
 
@@ -639,11 +632,11 @@ curl -X POST \
 
 ### 更新您的数据流
 
-通过提供数据流的ID，向[!DNL Flow Service] API的`/flows`端点发出PATCH请求来更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 发出PATCH请求时，必须在`If-Match`标头中提供数据流唯一的`etag`。 有关完整的API示例，请阅读有关[使用API更新源数据流](../../update-dataflows.md)的指南。
+通过提供数据流的ID，向`/flows` API的[!DNL Flow Service]端点发出PATCH请求来更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 发出PATCH请求时，必须在`etag`标头中提供数据流唯一的`If-Match`。 有关完整的API示例，请阅读有关[使用API更新源数据流](../../update-dataflows.md)的指南。
 
 ### 更新您的帐户
 
-在提供基本连接ID作为查询参数的同时，通过向[!DNL Flow Service] API执行PATCH请求来更新源帐户的名称、描述和凭据。 发出PATCH请求时，必须在`If-Match`标头中提供源帐户的唯一`etag`。 有关完整的API示例，请阅读有关[使用API更新源帐户](../../update.md)的指南。
+在提供基本连接ID作为查询参数的同时，通过向[!DNL Flow Service] API执行PATCH请求来更新源帐户的名称、描述和凭据。 发出PATCH请求时，必须在`etag`标头中提供源帐户的唯一`If-Match`。 有关完整的API示例，请阅读有关[使用API更新源帐户](../../update.md)的指南。
 
 ### 删除您的数据流
 
@@ -651,4 +644,4 @@ curl -X POST \
 
 ### 删除您的帐户
 
-在提供要删除的帐户的基本连接ID时，通过向[!DNL Flow Service] API执行DELETE请求来删除您的帐户。 有关完整的API示例，请阅读有关使用API[&#128279;](../../delete.md)删除源帐户的指南。
+在提供要删除的帐户的基本连接ID时，通过向[!DNL Flow Service] API执行DELETE请求来删除您的帐户。 有关完整的API示例，请阅读有关使用API[删除源帐户](../../delete.md)的指南。

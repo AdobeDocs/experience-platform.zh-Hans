@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2025 年 8 月）
 description: Adobe Experience Platform 的 2025 年 8 月发行说明。
 exl-id: d93e98f3-d165-4710-ad1d-2ad3857cd0f8
-source-git-commit: 35c3933f5debbba04c885f6000b908e292613395
+source-git-commit: 40c3745920204983f5388de6cba1402d87eda71c
 workflow-type: tm+mt
-source-wordcount: '1339'
-ht-degree: 85%
+source-wordcount: '1432'
+ht-degree: 92%
 
 ---
 
@@ -102,14 +102,14 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 
 | 目标 | 描述 |
 | --- | --- |
-| [[!DNL Microsoft Bing]](../../destinations/catalog/advertising/bing.md) 内部升级 | 从2025年8月11日开始，在短期内，您可能会在目标目录中看到两个&#x200B;**[!DNL Microsoft Bing]**&#x200B;卡并排显示。 这是由于目标服务内部升级造成的。现有的 **[!DNL Microsoft Bing]** 目标连接器已更名为&#x200B;**[!UICONTROL （已弃用）Microsoft Bing]**，现在为您提供一个名为 **[!UICONTROL Microsoft Bing]** 的新卡片。<br>升级已完成，已从目标目录中删除已弃用的信息卡。 使用目录中的&#x200B;**[!UICONTROL Microsoft Bing]**&#x200B;连接获取新的激活数据流。 如果您有任何到&#x200B;**[!UICONTROL （已弃用）Microsoft Bing]**&#x200B;目标的活动数据流，则会自动更新，因此您无需执行任何操作。 <br><br>如果您通过 [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) 创建数据流，则必须将 [!DNL flow spec ID] 和 [!DNL connection spec ID] 更新为以下值：<ul><li>流量规范 ID：`8d42c81d-9ba7-4534-9bf6-cf7c64fbd12e`</li><li>连接规范 ID：`dd69fc59-3bc5-451e-8ec2-1e74a670afd4`</li></ul> 此次升级后，您可能会发现流向 [!DNL Microsoft Bing] 的数据流中&#x200B;**活跃轮廓的数量下降**。出现下降的原因是，为所有流向此目标平台的激活引入了 **ECID 映射要求**。 |
-| [[!DNL LinkedIn]](../../destinations/catalog/social/linkedin.md)和[LinkedIn匹配受众](../../destinations/catalog/social/linkedin-b2b.md)目标的身份验证到期详细信息 | [!DNL LinkedIn]目标的身份验证过期信息现在直接显示在Experience Platform界面中，因此您可以查看身份验证何时过期并续订，以免对数据流造成任何中断。 您可以在&#x200B;**[!UICONTROL 帐户]**&#x200B;或&#x200B;**[[!UICONTROL 浏览]](../../destinations/ui/destinations-workspace.md#accounts)**&#x200B;选项卡中从&#x200B;**[[!UICONTROL 帐户到期日期]](../../destinations/ui/destinations-workspace.md#browse)**&#x200B;列监视令牌到期日期。 |
+| [[!DNL Microsoft Bing]](../../destinations/catalog/advertising/bing.md) 内部升级 | 从 2025 年 8 月 11 日开始，您可能会在一段时间内在目标目录中看到有两张并排的 **[!DNL Microsoft Bing]** 卡。这是由于目标服务内部升级造成的。现有的 **[!DNL Microsoft Bing]** 目标连接器已更名为&#x200B;**[!UICONTROL （已弃用）Microsoft Bing]**，现在为您提供一个名为 **[!UICONTROL Microsoft Bing]** 的新卡片。<br> 升级已完成，被弃用的卡已从目标目录中移除。为新的激活数据流使用目录中的 **[!UICONTROL Microsoft Bing]** 连接。如果您有任何流向&#x200B;**[!UICONTROL （已弃用）Microsoft Bing]** 目标的活跃数据流，它们就会自动更新，因此无需您执行任何操作。<br><br>如果您通过 [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) 创建数据流，则必须将 [!DNL flow spec ID] 和 [!DNL connection spec ID] 更新为以下值：<ul><li>流量规范 ID：`8d42c81d-9ba7-4534-9bf6-cf7c64fbd12e`</li><li>连接规范 ID：`dd69fc59-3bc5-451e-8ec2-1e74a670afd4`</li></ul> 此次升级后，您可能会发现流向 [!DNL Microsoft Bing] 的数据流中&#x200B;**活跃轮廓的数量下降**。出现下降的原因是，为所有流向此目标平台的激活引入了 **ECID 映射要求**。 |
+| 关于 [[!DNL LinkedIn]](../../destinations/catalog/social/linkedin.md) 和 [LinkedIn 匹配受众](../../destinations/catalog/social/linkedin-b2b.md)目标的身份验证到期的详细信息 | 现在，您可以直接在 Experience Platform 界面中查看关于 [!DNL LinkedIn] 目标的身份验证到期的信息，您可以查看您的身份验证何时到期，在因其而导致您的数据流中断之前将其更新。您可以从&#x200B;**[[!UICONTROL 帐户]](../../destinations/ui/destinations-workspace.md#accounts)**&#x200B;或&#x200B;**[[!UICONTROL 浏览]](../../destinations/ui/destinations-workspace.md#browse)**&#x200B;选项卡中的&#x200B;**[!UICONTROL 帐户到期日期]**&#x200B;列监控您的令牌到期日期。 |
 
 **新增或更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 增强目标的搜索、过滤和标记功能 | 通过[浏览](../../destinations/ui/destinations-workspace.md#browse)和[帐户](../../destinations/ui/destinations-workspace.md#accounts)选项卡中增强的搜索、过滤和标记功能，改进您的目标管理工作流程。<br>您现在可以按名称搜索特定数据流和帐户，按包括目标平台、状态和日期在内的各种条件进行筛选，以及创建自定义标记来组织目标。 列排序还可用于关键字段，如上次数据流运行时，这使识别和管理目标连接更容易。<br> ![在“浏览”选项卡中搜索目标数据流的动画演示](../../destinations/assets/ui/workspace/search.gif) |
+| 增强目标的搜索、过滤和标记功能 | 通过[浏览](../../destinations/ui/destinations-workspace.md#browse)和[帐户](../../destinations/ui/destinations-workspace.md#accounts)选项卡中增强的搜索、过滤和标记功能，改进您的目标管理工作流程。<br> 您现在可以按名称搜索特定的数据流和帐户，按目标平台、状态和日期等不同的条件进行筛选，以及创建自定义标记来组织您的目标。您还可以对上次数据流运行时间等关键字段进行列排序，从而更轻松地识别和管理您的目标连接。<br> ![在浏览选项卡中搜索目标数据流的动画演示](../../destinations/assets/ui/workspace/search.gif) |
 
 ## 体验数据模型 (XDM) {#xdm}
 
@@ -159,7 +159,7 @@ Experience Platform 旨在全球范围内扩充数字体验应用。企业通常
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 受众估计值 | 现在，区段生成器中会自动生成受众估计值。每当您更改受众，此值都会更新，并始终反映最新的受众规则。此外，估计值现在将显示为基于取样数据的置信区间的一个&#x200B;**范围**。 |
+| 受众估计值 | 受众估计值现在显示为&#x200B;**范围**，它基于采样数据的置信区间。 要了解有关估算值的更多信息，请阅读[区段生成器指南](/help/segmentation/ui/segment-builder.md#audience-properties)。 |
 
 有关详细信息，请参阅 [[!DNL Segmentation Service]  概述](../../segmentation/home.md)。
 
@@ -171,6 +171,9 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 | 功能 | 描述 |
 | --- | --- |
+| [!DNL Oracle NetSuite] 源全面可用 | [!DNL Oracle NetSuite]源现已正式可用。 您现在可以将您的[!DNL Oracle NetSuite]帐户连接到Experience Platform以摄取活动和实体数据以进行统一分析和激活。 有关详细信息，请参阅 [[!DNL Oracle NetSuite]  概述](../../sources/connectors/marketing-automation/oracle-netsuite.md)。 |
+| [!DNL PathFactory] 源全面可用 | [!DNL PathFactory]源现已正式可用。 您可以将[!DNL PathFactory]帐户连接到Experience Platform以摄取访客、会话和页面查看数据，以进行统一分析和激活。 有关详细信息，请参阅 [[!DNL PathFactory]  概述](../../sources/connectors/marketing-automation/pathfactory.md)。 |
+| [!DNL Stripe] 源全面可用 | [!DNL Stripe]源现已正式可用。 您可以将[!DNL Stripe]帐户连接到Experience Platform以摄取付款和交易数据，以进行统一分析和激活。 有关详细信息，请参阅 [[!DNL Stripe]  概述](../../sources/connectors/payments/stripe.md)。 |
 | 增强 [!DNL Azure Blob Storage] 的身份验证 | 您现在可以使用基于服务主体的身份验证，将您的 [!DNL Azure Blob Storage] 源连接到 Experience Platform。使用基于服务主体的身份验证可增强安全性、简化凭据轮换，并为您的帐户提供粒度更细的访问控制。有关详细信息，请参阅 [[!DNL Azure Blob Storage]  概述](../../sources/connectors/cloud-storage/blob.md)。 |
 
 有关更多信息，请阅读[来源概述](../../sources/home.md)。

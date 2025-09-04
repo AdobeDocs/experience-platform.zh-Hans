@@ -1,22 +1,15 @@
 ---
 title: 在UI中创建 [!DNL Oracle NetSuite Activities] 源连接
 description: 了解如何使用Adobe Experience Platform UI创建Oracle NetSuite活动源连接。
-hide: true
-hidefromtoc: true
-badge: Beta 版
 exl-id: 99ef0b50-c8d6-48d6-895f-46b7ade47520
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 40c3745920204983f5388de6cba1402d87eda71c
 workflow-type: tm+mt
-source-wordcount: '624'
+source-wordcount: '607'
 ht-degree: 2%
 
 ---
 
 # 在用户界面中创建[!DNL Oracle NetSuite Activities]源连接
-
->[!NOTE]
->
->[!DNL Oracle NetSuite Activities]源为测试版。 有关使用测试版标记源的更多信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
 
 阅读以下教程，了解如何在UI中将[!DNL Oracle NetSuite Activities]帐户中的事件数据引入Adobe Experience Platform。
 
@@ -77,11 +70,11 @@ Experience Platform根据您选择的目标架构或数据集，为自动映射�
 >
 >显示的字段取决于您的[!DNL Oracle NetSuite]帐户有权访问的订阅。 例如，如果您无权访问计费，则不会看到与计费相关的字段。
 
-### 计划中 {#scheduling}
+### 日程计划 {#scheduling}
 
 在计划[!DNL Oracle NetSuite Activities]数据流进行摄取时，必须选择以下频率和间隔配置：
 
-| 频度 | 间隔 |
+| 频率 | 间隔 |
 | --- | --- |
 | `Once` | 1 |
 

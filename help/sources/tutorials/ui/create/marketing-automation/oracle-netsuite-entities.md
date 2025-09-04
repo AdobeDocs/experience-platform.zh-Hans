@@ -1,22 +1,15 @@
 ---
 title: 在UI中创建 [!DNL Oracle NetSuite Entities] 源连接
 description: 了解如何使用Adobe Experience Platform UI创建Oracle NetSuite实体源连接。
-hide: true
-hidefromtoc: true
-badge: Beta 版
 exl-id: ce0ea37f-16e0-4aef-9809-72c0b11e0440
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 40c3745920204983f5388de6cba1402d87eda71c
 workflow-type: tm+mt
-source-wordcount: '706'
+source-wordcount: '689'
 ht-degree: 2%
 
 ---
 
 # 在用户界面中创建[!DNL Oracle NetSuite Entities]源连接
-
->[!NOTE]
->
->[!DNL Oracle NetSuite Entities]源为测试版。 有关使用测试版标记源的更多信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
 
 阅读以下教程，了解如何在UI中将联系人和客户数据从[!DNL Oracle NetSuite Entities]帐户引入Adobe Experience Platform。
 
@@ -67,7 +60,7 @@ ht-degree: 2%
 
 | 实体类型 | 描述 |
 | --- | --- |
-| 联系 | 检索联系人姓名、电子邮件、电话号码以及与客户关联的任何自定义联系人相关字段。 |
+| 联系人 | 检索联系人姓名、电子邮件、电话号码以及与客户关联的任何自定义联系人相关字段。 |
 | 客户 | 检索特定的客户数据，包括客户名称、地址和关键标识符等详细信息。 |
 
 >[!BEGINTABS]
@@ -98,11 +91,11 @@ Experience Platform根据您选择的目标架构或数据集，为自动映射�
 >
 >显示的字段取决于您的[!DNL Oracle NetSuite]帐户有权访问的订阅。 例如，如果您无权访问计费，则不会看到与计费相关的字段。
 
-### 计划中 {#scheduling}
+### 日程计划 {#scheduling}
 
 在计划[!DNL Oracle NetSuite Entities]数据流进行摄取时，必须选择以下频率和间隔配置：
 
-| 频度 | 间隔 |
+| 频率 | 间隔 |
 | --- | --- |
 | `Once` | 1 |
 
