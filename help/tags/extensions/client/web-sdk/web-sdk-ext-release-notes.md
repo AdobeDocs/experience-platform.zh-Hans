@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 54c609ec995ac8e48c1c6441390b205bfb5a01cc
+source-git-commit: 1cc62ee8c87ff2c1c1d55db2e462d485289120ed
 workflow-type: tm+mt
-source-wordcount: '2825'
-ht-degree: 23%
+source-wordcount: '2947'
+ht-degree: 22%
 
 ---
 
@@ -13,6 +13,18 @@ ht-degree: 23%
 # Web SDK扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[Experience Platform Web SDK发行说明](/help/web-sdk/release-notes.md)。
+
+## 版本2.32.0 - 2025年9月4日
+
+**新增功能**
+
+- 包含Adobe Experience Platform Web SDK的[版本2.29.0](../../../../web-sdk/release-notes.md#2-29-0)。
+- 添加了对Adobe Advertising作为新的自定义构建组件的支持。 在扩展配置以及发送事件调用中进行配置。
+- 添加了对在配置文件中记录推送订阅详细信息的支持。 这是通过新操作“推送订阅详细信息”来实现的
+
+**修复和改进**
+
+- 改进了在架构或沙盒不可用时XDM数据元素编辑。 您现在可以编辑XDM对象和变量数据元素，即使无法找到其引用的架构或无法访问沙盒也是如此。 这解决了在组织迁移到新数据中心期间经常出现的问题，在这些数据中心中，架构ID可能会发生更改，并且以前会导致编辑界面显示错误并变得不可用。
 
 ## 2.31.1版 — 2025年7月31日
 
@@ -34,7 +46,6 @@ ht-degree: 23%
 **已知问题**
 
 - 在v2.31.0版本发布后，发现了[自定义组件生成](/help/web-sdk/install/create-custom-build.md)过程的问题。 虽然自定义内部版本继续运行，但所有组件当前都包含在内部版本中，从而导致无论组件选择如何，包大小都是完整的。 正在开发此问题的修补程序。 如果您依赖自定义组件选择来最大程度地减小生成大小，则建议等待未来版本。
-
 
 ## 2.30.1版 — 2025年5月27日
 
