@@ -3,10 +3,10 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 8fe725ee41472d49cbc8411a0d2db665ac3c1814
+source-git-commit: 2c62ab01fe94e71095df33e24615fa7e596e84d3
 workflow-type: tm+mt
-source-wordcount: '5200'
-ht-degree: 11%
+source-wordcount: '5248'
+ht-degree: 10%
 
 ---
 
@@ -130,7 +130,7 @@ ht-degree: 11%
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_segmentbuilder_externalaudiences"
 >title="外部受众"
->abstract="现在，通过“受众”选项卡导入的受众会自动通过“受众”门户显示出来。从 Audience Manager、Customer Journey Analytics、Segment Match 和其他自定义集成中摄取来的受众现在随时可用，无需先在区段生成器中进行配置。自 2025 年 9 月 1 日起，所有受众都只通过“统一搜索”进行检索，不再支持以前的工作流程。"
+>abstract="现在，通过“受众”选项卡导入的受众会自动通过“受众”门户显示出来。这包括从Audience Manager、Customer Journey Analytics、区段匹配和其他自定义集成摄取的受众。<br/><br/>到2025年9月底，将专门通过统一搜索检索受众，并将不再支持以前的工作流。 在转换服务时，区段匹配仅对少数指定客户可用。 在服务完全停用之前，仍可以根据请求启用新“区段匹配”客户的访问权限。<br/><br/>对于持续的数据协作用例，Adobe建议迁移至Collaboration，这是长期支持的解决方案。"
 >additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/segmentation/ui/audience-portal#list" text="受众门户"
 
 >[!NOTE]
@@ -330,7 +330,7 @@ ht-degree: 11%
 >[!NOTE]
 >
 >当使用“晚于”时间限制时，后一个事件发生的时间可能超过在时间限制内列出的时间量。 >
->&#x200B;>例如，如果您有一个页面查看事件和一个签出事件，并在这两个事件之间放置了“1小时后”时间限制，则一个在页面查看事件发生2小时后具有签出事件的区段定义符合条件。
+>>例如，如果您有一个页面查看事件和一个签出事件，并在这两个事件之间放置了“1小时后”时间限制，则一个在页面查看事件发生2小时后具有签出事件的区段定义符合条件。
 >
 >此外，这两个时间约束可以相互协调使用。
 >
@@ -386,7 +386,7 @@ ht-degree: 11%
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="刷新估计值"
 >abstract="您可以刷新区段定义的估计值，以立即预览符合建议的区段定义资格的轮廓数目。受众估计值是通过使用当天的示例数据的示例大小生成的。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=zh-Hans#estimate-and-preview-an-audience" text="估计和预览受众"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="估计和预览受众"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_qualifiedprofiles"
