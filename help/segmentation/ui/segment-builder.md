@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 52571689c97fdc2ed052b53537e736f03d666ad5
+source-git-commit: 8fe725ee41472d49cbc8411a0d2db665ac3c1814
 workflow-type: tm+mt
-source-wordcount: '5174'
+source-wordcount: '5200'
 ht-degree: 11%
 
 ---
@@ -330,7 +330,7 @@ ht-degree: 11%
 >[!NOTE]
 >
 >当使用“晚于”时间限制时，后一个事件发生的时间可能超过在时间限制内列出的时间量。 >
->&#x200B;>例如，如果您有一个页面查看事件和一个签出事件，并在这两个事件之间放置了“1小时后”时间限制，则一个在页面查看事件发生2小时后具有签出事件的区段定义符合条件。
+>>例如，如果您有一个页面查看事件和一个签出事件，并在这两个事件之间放置了“1小时后”时间限制，则一个在页面查看事件发生2小时后具有签出事件的区段定义符合条件。
 >
 >此外，这两个时间约束可以相互协调使用。
 >
@@ -386,7 +386,7 @@ ht-degree: 11%
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="刷新估计值"
 >abstract="您可以刷新区段定义的估计值，以立即预览符合建议的区段定义资格的轮廓数目。受众估计值是通过使用当天的示例数据的示例大小生成的。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=zh-Hans#estimate-and-preview-an-audience" text="估计和预览受众"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="估计和预览受众"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_qualifiedprofiles"
@@ -406,10 +406,7 @@ ht-degree: 11%
 
 根据&#x200B;**[!UICONTROL 示例作业]**，**预计的配置文件**&#x200B;表示大约&#x200B;**个配置文件范围**。 这意味着将样本数据投射到更大的轮廓集上，所得出的预估数量可能会与实际符合条件的轮廓数量有所差异。估计的配置文件样本具有95%的置信区间。
 
-在以下两种情况下会更新此数字：
-
-1. 客户数据发生大于3%的更改或上一个示例作业早于三天。
-2. 已修改或删除受众的规则。
+当您更改受众的规则时，可以选择&#x200B;**[!UICONTROL 刷新估算]**&#x200B;按钮以查看估算配置文件的更新计数。 但是，此数字仍基于以前的示例作业。 当客户数据发生大于3%的更改或上一个示例作业早于三天时，示例作业将更新。
 
 选择信息气泡可显示上次运行示例作业的日期和时间。
 
