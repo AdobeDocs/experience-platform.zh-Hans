@@ -4,10 +4,10 @@ description: 使用Marketo Engage人员同步连接器将人员受众的更新�
 last-substantial-update: 2025-01-14T00:00:00Z
 badgeBeta: label="Beta 版" type="Informative"
 exl-id: 2c909633-b169-4ec8-9f58-276395cb8df2
-source-git-commit: 88864353d4872d62258914d6490b90331692fa96
+source-git-commit: 7d9f06f77f2265f3ae62542fd7fc1bd09d34d078
 workflow-type: tm+mt
-source-wordcount: '1124'
-ht-degree: 5%
+source-wordcount: '1127'
+ht-degree: 9%
 
 ---
 
@@ -19,12 +19,12 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
->**[!UICONTROL Marketo Engage人员同步]**&#x200B;目标卡将在&#x200B;**2026年3月**&#x200B;被弃用。
+>**[!UICONTROL Marketo Engage人员同步]**&#x200B;目标卡将在&#x200B;**2025年10月**&#x200B;被弃用。
 >
->要确保顺利过渡到新&#x200B;**[[!UICONTROL Marketo Engage]](marketo-engage-connection.md)**&#x200B;目标，请查看以下关键点和所需的操作：
+>为确保顺利过渡到新的 **[[!UICONTROL Marketo Engage]](marketo-engage-connection.md)** 目标，请查看以下要点和必要操作：
 >
->* **[!UICONTROL Marketo Engage人员同步]**&#x200B;目标的所有用户必须在2026年3月之前迁移到新的&#x200B;**[[!UICONTROL Marketo Engage]](marketo-engage-connection.md)**&#x200B;目标。
->* **不会自动迁移现有数据流。**&#x200B;您必须[设置与新](marketo-engage-connection.md#connect-to-the-destination)Marketo Engage **[!UICONTROL 目标的新连接]**&#x200B;并在该处激活您的受众。
+>* 所有用户必须&#x200B;**停止使用Marketo Engage人员同步目标**，并在2025年10月之前迁移到新的&#x200B;**[[!UICONTROL Marketo Engage]](marketo-engage-connection.md)**&#x200B;目标。
+>* **现有数据流不会自动迁移。**&#x200B;您必须[与新的 **[!UICONTROL Marketo Engage]** 目标建立一个新连接](marketo-engage-connection.md#connect-to-the-destination)，在那里激活您的受众。
 
 
 ## 概述 {#overview}
@@ -78,7 +78,7 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
->设置目标的用户必须在Marketo实例和分区中具有[编辑人员](https://experienceleague.adobe.com/zh-hans/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database)权限。
+>设置目标的用户必须在Marketo实例和分区中具有[编辑人员](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database)权限。
 
 ![连接到目标](../../assets/catalog/adobe/marketo-engage-person-sync/connect-to-destination.png)
 
@@ -89,7 +89,7 @@ ht-degree: 5%
 * **[!UICONTROL 第一个可搜索的字段]**：要消除重复项的字段。 字段必须出现在输入的每个潜在客户记录中。 默认为电子邮件
 * **[!UICONTROL 第一个可搜索的字段]**：要消除重复项的辅助字段。 字段必须出现在输入的每个潜在客户记录中。 可选
 
-选择实例后，您还需要选择要与配置集成的Lead分区。 [潜在客户分区](https://experienceleague.adobe.com/zh-hans/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/understanding-workspaces-and-person-partitions)是Marketo Engage中的一个概念，用于按业务部门（如品牌或销售区域）划分潜在客户记录。 如果您的Marketo订阅没有工作区和分区功能，或者您的订阅中未创建其他分区，则只有默认分区可用。 单个配置只能更新其配置分区中存在的潜在客户记录。
+选择实例后，您还需要选择要与配置集成的Lead分区。 [潜在客户分区](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/understanding-workspaces-and-person-partitions)是Marketo Engage中的一个概念，用于按业务部门（如品牌或销售区域）划分潜在客户记录。 如果您的Marketo订阅没有工作区和分区功能，或者您的订阅中未创建其他分区，则只有默认分区可用。 单个配置只能更新其配置分区中存在的潜在客户记录。
 
 >[!IMPORTANT]
 > 
