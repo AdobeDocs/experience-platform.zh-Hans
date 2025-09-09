@@ -4,9 +4,9 @@ title: 使用流服务API将受众激活到基于文件的目标
 description: 了解如何使用流服务API将包含合格配置文件的文件导出到云存储目标。
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: eb7d1b9c167839db39cbb28bf497edac706c0b6c
 workflow-type: tm+mt
-source-wordcount: '4763'
+source-wordcount: '4911'
 ht-degree: 3%
 
 ---
@@ -50,7 +50,7 @@ If you were already using the Flow Service API to export profiles to the Amazon 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
-* [[!DNL Segmentation Service]](../../segmentation/api/overview.md)： [!DNL Adobe Experience Platform Segmentation Service]允许您根据[!DNL Real-Time Customer Profile]数据在[!DNL Adobe Experience Platform]中构建受众并生成受众。
+* [[!DNL Segmentation Service]](../../segmentation/api/overview.md)： [!DNL Adobe Experience Platform Segmentation Service]允许您根据[!DNL Adobe Experience Platform]数据在[!DNL Real-Time Customer Profile]中构建受众并生成受众。
 * [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform]提供了将单个[!DNL Experience Platform]实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了在Experience Platform中将数据激活到基于文件的目标时需要了解的其他信息。
@@ -63,7 +63,7 @@ If you were already using the Flow Service API to export profiles to the Amazon 
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中有关[如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅[疑难解答指南中有关](../../landing/troubleshooting.md#how-do-i-format-an-api-request)如何读取示例API调用[!DNL Experience Platform]的部分。
 
 ### 收集必需标题和可选标题的值 {#gather-values-headers}
 
@@ -87,7 +87,7 @@ If you were already using the Flow Service API to export profiles to the Amazon 
 
 ### API参考文档 {#api-reference-documentation}
 
-您可以在本教程中找到所有API操作的随附参考文档。 请参阅Adobe Developer网站[&#128279;](https://developer.adobe.com/experience-platform-apis/references/destinations/)上的流服务 — 目标API文档。 我们建议您并行使用此教程和API参考文档。
+您可以在本教程中找到所有API操作的随附参考文档。 请参阅Adobe Developer网站[上的](https://developer.adobe.com/experience-platform-apis/references/destinations/)流服务 — 目标API文档。 我们建议您并行使用此教程和API参考文档。
 
 ### 术语表 {#glossary}
 
@@ -118,7 +118,7 @@ If you were already using the Flow Service API to export profiles to the Amazon 
 
 **请求**
 
-+++检索[!DNL Amazon S3]的[!DNL connection spec]
++++检索[!DNL connection spec]的[!DNL Amazon S3]
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs/4fce964d-3f37-408f-9778-e597338a21ee' \
@@ -152,7 +152,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **请求**
 
-+++检索[!DNL Azure Blob Storage]的[!DNL connection spec]
++++检索[!DNL connection spec]的[!DNL Azure Blob Storage]
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs/6d6b59bf-fb58-4107-9064-4d246c0e5bb2' \
@@ -186,7 +186,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **请求**
 
-+++检索[!DNL Azure Data Lake Gen 2(ADLS Gen2]的[!DNL connection spec])
++++检索[!DNL connection spec]的[!DNL Azure Data Lake Gen 2(ADLS Gen2]
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs/be2c3209-53bc-47e7-ab25-145db8b873e1' \
@@ -220,7 +220,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **请求**
 
-+++检索[!DNL Data Landing Zone(DLZ)]的[!DNL connection spec]
++++检索[!DNL connection spec]的[!DNL Data Landing Zone(DLZ)]
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs/10440537-2a7b-4583-ac39-ed38d4b848e8' \
@@ -254,7 +254,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **请求**
 
-+++检索[!DNL Google Cloud Storage]的[!DNL connection spec]
++++检索[!DNL connection spec]的[!DNL Google Cloud Storage]
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs/c5d93acb-ea8b-4b14-8f53-02138444ae99' \
@@ -376,7 +376,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 ![激活受众的步骤，突出显示用户所在的当前步骤](/help/destinations/assets/api/file-based-segment-export/step3.png)
 
-[基本连接](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary)安全地存储到目标的凭据。 根据目标类型，对该目标进行身份验证所需的凭据可能有所不同。 要查找这些身份验证参数，请首先按照[选择导出受众的目标](#select-destination)一节中所述检索所需目标的`connection spec`，然后查看响应的`authSpec`。 请引用下面的选项卡，以查看所有受支持目标的`authSpec`属性。
+[基本连接](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary)安全地存储到目标的凭据。 根据目标类型，对该目标进行身份验证所需的凭据可能有所不同。 要查找这些身份验证参数，请首先按照`connection spec`选择导出受众的目标[一节中所述检索所需目标的](#select-destination)，然后查看响应的`authSpec`。 请引用下面的选项卡，以查看所有受支持目标的`authSpec`属性。
 
 >[!BEGINTABS]
 
@@ -1137,7 +1137,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
             ]
 ```
 
-+++
++++ 
 
 **请求**
 
@@ -1202,7 +1202,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 接下来，您需要创建目标连接。 [Target连接](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary)存储导出受众的导出参数。 导出参数包括导出位置、文件格式、压缩和其他详细信息。 例如，对于CSV文件，您可以选择多个导出选项。 在[文件格式配置页面](/help/destinations/ui/batch-destinations-file-formatting-options.md)中获取有关所有支持的CSV导出选项的详细信息。
 
-请参阅目标的`connection spec`中提供的`targetSpec`属性，以了解每个目标类型支持的属性。 请引用下面的选项卡，以查看所有受支持目标的`targetSpec`属性。
+请参阅目标的`targetSpec`中提供的`connection spec`属性，以了解每个目标类型支持的属性。 请引用下面的选项卡，以查看所有受支持目标的`targetSpec`属性。
 
 >[!BEGINTABS]
 
@@ -2402,7 +2402,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->有关如何获取所需目标参数的信息，请参阅[!DNL Amazon S3]目标文档页面的[填写目标详细信息](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details)部分。
+>有关如何获取所需目标参数的信息，请参阅[目标文档页面的](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details)填写目标详细信息[!DNL Amazon S3]部分。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -2422,7 +2422,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         "bucketName": "your-bucket-name",
         "path": "folder/subfolder",
         "compression": "NONE",
-        "fileType": "JSON"
+        "fileType": "JSON",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     },
     "connectionSpec": {
         "id": "4fce964d-3f37-408f-9778-e597338a21ee", // Amazon S3 connection spec id
@@ -2456,6 +2457,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
       "path":"folder/subfolder",
       "compression":"GZIP",
       "fileType":"CSV",
+      "includeFileManifest": true, //Include this parameter if you want to enable manifest file generation for your destination
       "csvOptions":{
          "nullValue":"null",
          "emptyValue":"",
@@ -2475,7 +2477,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **响应**
 
-+++Target连接 — 响应
++++目标连接 — 响应
 
 ```json
 {
@@ -2494,7 +2496,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->有关如何获取所需目标参数的信息，请参阅[!DNL Azure Blob Storage]目标文档页面的[填写目标详细信息](/help/destinations/catalog/cloud-storage/azure-blob.md#destination-details)部分。
+>有关如何获取所需目标参数的信息，请参阅[目标文档页面的](/help/destinations/catalog/cloud-storage/azure-blob.md#destination-details)填写目标详细信息[!DNL Azure Blob Storage]部分。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -2514,7 +2516,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         "container": "your-container-name",
         "path": "folder/subfolder",
         "compression": "NONE",
-        "fileType": "JSON"
+        "fileType": "JSON",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     },
     "connectionSpec": {
         "id": "6d6b59bf-fb58-4107-9064-4d246c0e5bb2", // Azure Blob Storage connection spec id
@@ -2548,6 +2551,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
       "path":"folder/subfolder",
       "compression":"GZIP",
       "fileType":"CSV",
+      "includeFileManifest": true, //Include this parameter if you want to enable manifest file generation for your destination
       "csvOptions":{
          "nullValue":"null",
          "emptyValue":"",
@@ -2567,7 +2571,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **响应**
 
-+++Target连接 — 响应
++++目标连接 — 响应
 
 ```json
 {
@@ -2586,7 +2590,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->有关如何获取所需目标参数的信息，请参阅Azure [!DNL Data Lake Gen 2(ADLS Gen2)]目标文档页面的[填写目标详细信息](/help/destinations/catalog/cloud-storage/adls-gen2.md#destination-details)部分。
+>有关如何获取所需目标参数的信息，请参阅Azure [目标文档页面的](/help/destinations/catalog/cloud-storage/adls-gen2.md#destination-details)填写目标详细信息[!DNL Data Lake Gen 2(ADLS Gen2)]部分。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -2605,7 +2609,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         "mode": "Server-to-server",
         "path": "folder/subfolder",
         "compression": "NONE",
-        "fileType": "JSON"
+        "fileType": "JSON",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     },
     "connectionSpec": {
         "id": "be2c3209-53bc-47e7-ab25-145db8b873e1", // Azure Data Lake Gen 2(ADLS Gen2) connection spec id
@@ -2639,6 +2644,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
       "path":"folder/subfolder",
       "compression":"GZIP",
       "fileType":"CSV",
+      "includeFileManifest": true, //Include this parameter if you want to enable manifest file generation for your destination
       "csvOptions":{
          "nullValue":"null",
          "emptyValue":"",
@@ -2658,7 +2664,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **响应**
 
-+++Target连接 — 响应
++++目标连接 — 响应
 
 ```json
 {
@@ -2677,7 +2683,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->有关如何获取所需目标参数的信息，请参阅[!DNL Data Landing Zone]目标文档页面的[填写目标详细信息](/help/destinations/catalog/cloud-storage/data-landing-zone.md#destination-details)部分。
+>有关如何获取所需目标参数的信息，请参阅[目标文档页面的](/help/destinations/catalog/cloud-storage/data-landing-zone.md#destination-details)填写目标详细信息[!DNL Data Landing Zone]部分。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -2696,7 +2702,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         "mode": "Server-to-server",
         "path": "folder/subfolder",
         "compression": "NONE",
-        "fileType": "JSON"
+        "fileType": "JSON",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     },
     "connectionSpec": {
         "id": "10440537-2a7b-4583-ac39-ed38d4b848e8", // Data Landing Zone connection spec id
@@ -2730,6 +2737,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
       "path":"folder/subfolder",
       "compression":"GZIP",
       "fileType":"CSV",
+      "includeFileManifest": true, //Include this parameter if you want to enable manifest file generation for your destination
       "csvOptions":{
          "nullValue":"null",
          "emptyValue":"",
@@ -2749,7 +2757,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **响应**
 
-+++Target连接 — 响应
++++目标连接 — 响应
 
 ```json
 {
@@ -2768,7 +2776,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->有关如何获取所需目标参数的信息，请参阅[!DNL Google Cloud Storage]目标文档页面的[填写目标详细信息](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#destination-details)部分。
+>有关如何获取所需目标参数的信息，请参阅[目标文档页面的](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#destination-details)填写目标详细信息[!DNL Google Cloud Storage]部分。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -2788,7 +2796,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         "bucketName": "your-bucket-name",
         "path": "folder/subfolder",
         "compression": "NONE",
-        "fileType": "JSON"
+        "fileType": "JSON",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     },
     "connectionSpec": {
         "id": "c5d93acb-ea8b-4b14-8f53-02138444ae99", // Google Cloud Storage connection spec id
@@ -2822,6 +2831,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
       "path":"folder/subfolder",
       "compression":"GZIP",
       "fileType":"CSV",
+      "includeFileManifest": true, //Include this parameter if you want to enable manifest file generation for your destination
       "csvOptions":{
          "nullValue":"null",
          "emptyValue":"",
@@ -2841,7 +2851,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **响应**
 
-+++Target连接 — 响应
++++目标连接 — 响应
 
 ```json
 {
@@ -2879,7 +2889,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         "mode": "Server-to-server",
         "remotePath": "folder/subfolder",
         "compression": "NONE",
-        "fileType": "JSON"
+        "fileType": "JSON",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     },
     "connectionSpec": {
         "id": "36965a81-b1c6-401b-99f8-22508f1e6a26", // SFTP connection spec id
@@ -2890,7 +2901,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++SFTP — 使用CSV选项的Target连接请求
++++SFTP — 具有CSV选项的Target连接请求
 
 >[!TIP]
 >
@@ -2913,6 +2924,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
       "path":"folder/subfolder",
       "compression":"GZIP",
       "fileType":"CSV",
+      "includeFileManifest": true, //Include this parameter if you want to enable manifest file generation for your destination
       "csvOptions":{
          "nullValue":"null",
          "emptyValue":"",
@@ -2932,7 +2944,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **响应**
 
-+++Target连接 — 响应
++++目标连接 — 响应
 
 ```json
 {
@@ -3292,7 +3304,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **请求获取属性**
 
-+++从合并架构中获取可用属性 — 请求
++++从合并架构获取可用属性 — 请求
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/core/ups/config/entityTypes/_xdm.context.profile?property=fullSchema==true&property=includeRelationshipDescriptors==true' \ 
@@ -3461,7 +3473,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/ups/config/en
 
 **请求获取身份**
 
-+++获取可在映射步骤中使用的可用标识
++++获取可在映射步骤中使用的可用身份
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/core/idnamespace/identities' \ 
@@ -4504,7 +4516,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 ![激活受众的步骤，突出显示用户所在的当前步骤](/help/destinations/assets/api/file-based-segment-export/step7.png)
 
-要对数据流进行任何更新，请使用`PATCH`操作。 例如，您可以向数据流添加营销操作。 或者，您可以更新数据流以选择字段作为必需键或重复数据删除键。
+要对数据流进行任何更新，请使用`PATCH`操作。 例如，您可以向数据流添加营销操作，更新数据流以选择字段作为必需键或重复数据删除键，或者向现有目标添加文件清单生成。
 
 ### 添加营销操作 {#add-marketing-action}
 
@@ -4512,11 +4524,11 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 >[!IMPORTANT]
 >
->发出`PATCH`请求时需要使用`If-Match`标头。 此标头的值是要更新的数据流的唯一版本。 每次成功更新流实体（例如数据流、目标连接等）时，etag值都会更新。
+>发出`If-Match`请求时需要使用`PATCH`标头。 此标头的值是要更新的数据流的唯一版本。 每次成功更新流实体（例如数据流、目标连接等）时，etag值都会更新。
 >
 > 要获取最新版本的etag值，请对`https://platform.adobe.io/data/foundation/flowservice/flows/{ID}`端点执行GET请求，其中`{ID}`是您要更新的数据流ID。
 >
-> 在发出`PATCH`请求时，请确保将`If-Match`标头的值用双引号括起来，如以下示例中所示。
+> 在发出`If-Match`请求时，请确保将`PATCH`标头的值用双引号括起来，如以下示例中所示。
 
 >[!BEGINSHADEBOX]
 
@@ -4581,11 +4593,11 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 >[!IMPORTANT]
 >
->发出`PATCH`请求时需要使用`If-Match`标头。 此标头的值是要更新的数据流的唯一版本。 每次成功更新流实体（例如数据流、目标连接等）时，etag值都会更新。
+>发出`If-Match`请求时需要使用`PATCH`标头。 此标头的值是要更新的数据流的唯一版本。 每次成功更新流实体（例如数据流、目标连接等）时，etag值都会更新。
 >
 > 要获取最新版本的etag值，请对`https://platform.adobe.io/data/foundation/flowservice/flows/{ID}`端点执行GET请求，其中`{ID}`是您要更新的数据流ID。
 >
-> 在发出`PATCH`请求时，请确保将`If-Match`标头的值用双引号括起来，如以下示例中所示。
+> 在发出`If-Match`请求时，请确保将`PATCH`标头的值用双引号括起来，如以下示例中所示。
 
 >[!BEGINSHADEBOX]
 
@@ -4660,17 +4672,17 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 >[!IMPORTANT]
 >
->发出`PATCH`请求时需要使用`If-Match`标头。 此标头的值是要更新的数据流的唯一版本。 每次成功更新流实体（例如数据流、目标连接等）时，etag值都会更新。
+>发出`If-Match`请求时需要使用`PATCH`标头。 此标头的值是要更新的数据流的唯一版本。 每次成功更新流实体（例如数据流、目标连接等）时，etag值都会更新。
 >
 > 要获取最新版本的etag值，请对`https://platform.adobe.io/data/foundation/flowservice/flows/{ID}`端点执行GET请求，其中`{ID}`是您要更新的数据流ID。
 >
-> 在发出`PATCH`请求时，请确保将`If-Match`标头的值用双引号括起来，如以下示例中所示。
+> 在发出`If-Match`请求时，请确保将`PATCH`标头的值用双引号括起来，如以下示例中所示。
 
 >[!BEGINSHADEBOX]
 
 **请求**
 
-+++添加标识作为重复数据删除键 — 请求
++++添加身份作为重复数据删除键 — 请求
 
 ```shell
 curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flowservice/flows/{DATAFLOW_ID}' \
@@ -4736,6 +4748,44 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 ```
 
 +++
+
+>[!ENDSHADEBOX]
+
+### 向现有目标添加文件清单生成 {#add-file-manifest}
+
+要将文件清单生成添加到现有目标，您需要使用`PATCH`操作更新目标连接参数。 这样可以为目标生成清单文件，其中提供有关导出文件的元数据。
+
+>[!IMPORTANT]
+>
+>发出`If-Match`请求时需要使用`PATCH`标头。 此标头的值是要更新的目标连接的唯一版本。 每次成功更新流实体（例如数据流、目标连接等）时，etag值都会更新。
+>
+> 要获取最新版本的etag值，请对`https://platform.adobe.io/data/foundation/flowservice/targetConnections/{ID}`端点执行GET请求，其中`{ID}`是您要更新的目标连接ID。
+>
+> 在发出`If-Match`请求时，请确保将`PATCH`标头的值用双引号括起来，如以下示例中所示。
+
+>[!BEGINSHADEBOX]
+
+**请求**
+
++++将文件清单添加到现有目标连接 — 请求
+
+```shell
+curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flowservice/targetConnections/{TARGET_CONNECTION_ID}' \
+--header 'accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: {API_KEY}' \
+--header 'x-gw-ims-org-id: {ORG_ID}' \
+--header 'x-sandbox-name: {SANDBOX_NAME}' \
+--header 'Authorization: Bearer {ACCESS_TOKEN}' \
+--header 'If-Match: "{ETAG_HERE}"' \
+--data-raw '[
+  {
+    "op": "add",
+    "path": "/params/includeFileManifest",
+    "value": true
+  }
+]'
+```
 
 >[!ENDSHADEBOX]
 
@@ -4813,7 +4863,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 >[!ENDSHADEBOX]
 
-您可以在API参考文档中找到有关数据流运行API[&#128279;](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Dataflow-runs/operation/getFlowRuns)返回的各种参数的信息。
+您可以在API参考文档中找到有关数据流运行API[返回的](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Dataflow-runs/operation/getFlowRuns)各种参数的信息。
 
 ## API错误处理 {#api-error-handling}
 
