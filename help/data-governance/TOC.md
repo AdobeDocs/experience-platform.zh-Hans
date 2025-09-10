@@ -1,14 +1,14 @@
 ---
 audience: user
-user-guide-title: Adobe Experience Platform 数据治理帮助
+user-guide-title: Adobe Experience Platform 数据监管帮助
 breadcrumb-title: Data Governance 指南
-user-guide-description: 通过使用标签、营销操作和治理策略，施加数据使用限制。
+user-guide-description: 通过使用标签、营销操作和监管策略，施加数据使用限制。
 feature: Data Governance
 role: User,Developer,Admin
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
 source-wordcount: '100'
-ht-degree: 47%
+ht-degree: 53%
 
 ---
 
@@ -17,16 +17,16 @@ ht-degree: 47%
 
 * [数据治理概述](home.md)
 * [端到端指南](./e2e.md)
-* 数据使用标签{#labels}
+* 数据使用情况标签 {#labels}
    * [概述](labels/overview.md)
    * [标签术语表](labels/reference.md)
    * [在UI中管理标签](labels/user-guide.md)
    * [使用API管理数据集的标签](labels/dataset-api.md)
-* 数据使用策略{#policies}
+* 数据使用策略 {#policies}
    * [概述](policies/overview.md)
    * [在UI中管理策略](policies/user-guide.md)
    * [在API中创建策略](policies/create.md)
-* 策略实施{#enforcement}
+* 策略实施 {#enforcement}
    * [概述](enforcement/overview.md)
    * [自动执行](enforcement/auto-enforcement.md)
    * [基于API的实施](enforcement/api-enforcement.md)
