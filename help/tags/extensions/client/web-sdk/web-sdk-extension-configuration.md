@@ -2,9 +2,9 @@
 title: 配置Web SDK标记扩展
 description: 了解如何在标记UI中配置Experience Platform Web SDK标记扩展。
 exl-id: 22425daa-10bd-4f06-92de-dff9f48ef16e
-source-git-commit: 57b29c396531ee18c79fad7cce068ff3adf5f2a2
+source-git-commit: 7d5896a4427af54d3a6323744d726bf0b0c3137a
 workflow-type: tm+mt
-source-wordcount: '2965'
+source-wordcount: '3095'
 ht-degree: 3%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 3%
 
 ## 安装Web SDK标记扩展 {#install}
 
-Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参阅有关[创建标记属性](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/configure-tags/create-a-property.html?lang=zh-Hans)的文档。
+Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参阅有关[创建标记属性](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/configure-tags/create-a-property.html)的文档。
 
 创建属性后，打开该属性并选择左侧栏上的&#x200B;**[!UICONTROL 扩展]**&#x200B;选项卡。
 
@@ -42,13 +42,14 @@ Web SDK库包含多个模块，用于提供各种功能，如个性化、身份�
 >[!IMPORTANT]
 >
 >禁用Web SDK组件可能会破坏现有的实施。 每次禁用组件时，请确保彻底测试实施，以确保所需的所有功能都按预期工作。
->&#x200B;>禁用某个组件后，无法再编辑该组件的设置。
+>>禁用某个组件后，无法再编辑该组件的设置。
 
 要使用Web SDK标记扩展创建自定义Web SDK内部版本，请执行以下步骤。
 
 1. 在标记扩展配置页面中，展开&#x200B;**[!UICONTROL 自定义生成组件]**&#x200B;部分。
 1. 根据需要启用或禁用组件。 您可以从以下组件中进行选择：
    * **[!UICONTROL Activity收集器]**：此组件启用自动链接收集和Activity Map跟踪。
+   * **[!UICONTROL Advertising]**：此组件包含Adobe Advertising所需的所有JavaScript代码。 它还在[!UICONTROL Adobe Advertising实例]部分中添加了[!UICONTROL SDK]设置，在标记规则中添加了[!UICONTROL Advertising]设置，以定义如何将广告数据用于归因测量。
    * **[!UICONTROL 受众]**：此组件支持Audience Manager集成，包括URL和基于Cookie的目标以及ID同步。
    * **[!UICONTROL 同意]**：此组件启用同意集成。 禁用此组件将禁用以下元素：
       * [设置同意](action-types.md#set-consent)操作类型
@@ -75,6 +76,11 @@ Web SDK库包含多个模块，用于提供各种功能，如个性化、身份�
 * **[!UICONTROL 名称]**： Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名称用于通过标记配置向多个组织发送数据。 实例名称默认为`alloy`。 但是，您可以将实例名称更改为任何有效的JavaScript对象名称。
 * **[!UICONTROL IMS组织ID]**：您希望在Adobe上发送数据的组织的ID。 大多数情况下，使用自动填充的默认值。 当页面上有多个实例时，使用您要向其发送数据的第二个组织的值填充此字段。
 * **[!UICONTROL Edge域]**：扩展发送和接收数据的域。 Adobe建议对此扩展使用第一方域(CNAME)。 默认的第三方域适用于开发环境，但不适合生产环境。[此处](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html?lang=zh-Hans)列出了有关如何设置第一方 CNAME 的说明。
+* **[!UICONTROL Adobe Advertising]**：在选择`Advertising`组件时可用。 仅使用Adobe Advertising DSP的组织设置：
+   * **[!UICONTROL Adobe Advertising DSP]**：启用显示到达跟踪。
+   * **[!UICONTROL 广告商]**：启用[!UICONTROL Adobe Advertising DSP]时可用。 要为其启用显示到达跟踪的广告商。
+   * **[!UICONTROL ID5合作伙伴ID]**：可选。 在启用[!UICONTROL Adobe Advertising DSP]时可用。 您组织的ID5合作伙伴ID。 此设置允许Web SDK收集ID5通用ID。
+   * **[!UICONTROL RampID JavaScript路径]**：可选。 在启用[!UICONTROL Adobe Advertising DSP]时可用。 您组织的[!DNL LiveRamp RampID] JavaScript代码(`ats.js`)的路径。  此设置允许Web SDK收集[!DNL RampID]个通用ID。
 
 ## 配置数据流设置 {#datastreams}
 
@@ -113,21 +119,20 @@ Web SDK库包含多个模块，用于提供各种功能，如个性化、身份�
 
 ![在标记UI中显示Web SDK标记扩展的标识设置的图像](assets/web-sdk-ext-identity.png)
 
-* **[!UICONTROL 从VisitorAPI迁移ECID]**：默认情况下启用此选项。 启用此功能后，SDK可以读取`AMCV`和`s_ecid` Cookie并设置[!DNL Visitor.js]使用的`AMCV` Cookie。 在迁移到Web SDK时，此功能很重要，因为某些页面可能仍在使用[!DNL Visitor.js]。 此选项允许SDK继续使用同一[!DNL ECID]，这样用户就不会被标识为两个不同的用户。
+* **[!UICONTROL 从VisitorAPI迁移ECID]**：默认情况下启用此选项。 启用此功能后，SDK可以读取`AMCV`和`s_ecid` Cookie并设置`AMCV`使用的[!DNL Visitor.js] Cookie。 在迁移到Web SDK时，此功能很重要，因为某些页面可能仍在使用[!DNL Visitor.js]。 此选项允许SDK继续使用同一[!DNL ECID]，这样用户就不会被标识为两个不同的用户。
 * **[!UICONTROL 使用第三方Cookie]**：启用此选项后，Web SDK会尝试将用户标识符存储在第三方Cookie中。 如果成功，则在用户跨多个域导航时将用户标识为单个用户，而不是在每个域上将用户标识为单独的用户。 如果启用了此选项，则如果SDK不支持第三方Cookie或用户将其配置为不允许第三方Cookie，则浏览器仍可能无法将用户标识符存储在第三方Cookie中。 在这种情况下，SDK只将标识符存储在第一方域中。
 
   >[!IMPORTANT]
-  >&#x200B;>第三方Cookie与Web SDK中的[第一方设备ID](../../../../web-sdk/identity/first-party-device-ids.md)功能不兼容。
-  >&#x200B;>您可以使用第一方设备ID，也可以使用第三方Cookie，但不能同时使用这两项功能。
+  >>第三方Cookie与Web SDK中的[第一方设备ID](../../../../web-sdk/identity/first-party-device-ids.md)功能不兼容。
+  >>您可以使用第一方设备ID，也可以使用第三方Cookie，但不能同时使用这两项功能。
   >
-
 ## 配置个性化设置 {#personalization}
 
 利用此部分，可配置在加载个性化内容时如何隐藏页面的某些部分。 这可确保访客仅看到个性化页面。
 
 ![在标记UI中显示Web SDK标记扩展的个性化设置的图像](assets/web-sdk-ext-personalization.png)
 
-* **[!UICONTROL 将Target从at.js迁移到Web SDK]**：使用此选项可允许[!DNL Web SDK]读取和写入at.js `1.x`或`2.x`库使用的旧版`mbox`和`mboxEdgeCluster` Cookie。 这有助于在从使用Web SDK的页面移动到使用at.js `1.x`或`2.x`库的页面时保留访客配置文件，反之亦然。
+* **[!UICONTROL 将Target从at.js迁移到Web SDK]**：使用此选项可允许[!DNL Web SDK]读取和写入at.js `mbox`或`mboxEdgeCluster`库使用的旧版`1.x`和`2.x` Cookie。 这有助于在从使用Web SDK的页面移动到使用at.js `1.x`或`2.x`库的页面时保留访客配置文件，反之亦然。
 
 ### 预隐藏样式 {#prehiding-style}
 
@@ -141,7 +146,7 @@ Web SDK库包含多个模块，用于提供各种功能，如个性化、身份�
 
 >[!IMPORTANT]
 >
->使用预隐藏代码片段时，Adobe建议使用与[预隐藏样式](#prehiding-style)使用的规则相同的[!DNL CSS]规则。
+>使用预隐藏代码片段时，Adobe建议使用与[!DNL CSS]预隐藏样式[使用的规则相同的](#prehiding-style)规则。
 
 ## 配置数据收集设置 {#data-collection}
 
@@ -162,7 +167,7 @@ Web SDK库包含多个模块，用于提供各种功能，如个性化、身份�
 * **[!UICONTROL 收集外部链接点击次数]**：启用外部链接收集的复选框。
 * **[!UICONTROL 收集下载链接点击次数]**：用于收集下载链接的复选框。
 * **[!UICONTROL 下载链接限定符]**：将链接URL限定为下载链接的正则表达式。
-* **[!UICONTROL 筛选点击属性]**：一个回调函数，用于在集合之前评估和修改与点击相关的属性。 此函数在事件发送回调之前的On之前运行。
+* **[!UICONTROL 筛选点击属性]**：一个回调函数，用于在集合之前评估和修改与点击相关的属性。 此函数在事件发送回调[!UICONTROL 之前的]On之前运行。
 * **上下文设置**：自动收集访客信息，这些信息会为您填充特定的XDM字段。 您可以选择&#x200B;**[!UICONTROL 所有默认上下文信息]**&#x200B;或&#x200B;**[!UICONTROL 特定上下文信息]**。 该标记等同于JavaScript库中的[`context`](/help/web-sdk/commands/configure/context.md)。
    * **[!UICONTROL Web]**：收集有关当前页面的信息。
    * **[!UICONTROL 设备]**：收集有关用户设备的信息。
@@ -206,7 +211,7 @@ Web SDK库包含多个模块，用于提供各种功能，如个性化、身份�
 
 >[!IMPORTANT]
 >
->必须为每个环境配置数据流覆盖。 开发、暂存和生产环境都具有单独的覆盖。 您可以使用以下屏幕中显示的专用选项复制它们之间的设置。
+> 必须为每个环境配置数据流覆盖。 开发、暂存和生产环境都具有单独的覆盖。 您可以使用以下屏幕中显示的专用选项复制它们之间的设置。
 
 ![显示使用Web SDK标记扩展页的数据流配置覆盖的图像。](assets/datastream-overrides.png)
 
