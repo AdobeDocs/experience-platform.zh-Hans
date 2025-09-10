@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 批量摄取API概述
 description: Adobe Experience Platform批量摄取API允许您将数据作为批处理文件接入Experience Platform。 所摄取的数据可以是来自CRM系统中平面文件（如Parquet文件）的配置文件数据，也可以是与Experience Data Model (XDM)注册表中的已知架构相符的数据。
 exl-id: ffd1dc2d-eff8-4ef7-a26b-f78988f050ef
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: dace7bc2f7940748422628b62f0f57854036ad3f
 workflow-type: tm+mt
-source-wordcount: '1390'
+source-wordcount: '1389'
 ht-degree: 4%
 
 ---
@@ -56,7 +56,7 @@ Adobe Experience Platform批量摄取API允许您将数据作为批处理文件�
 
 在摄取数据时有一定的灵活性 — 如果类型与目标架构中的类型不匹配，数据将转换为表达的目标类型。 如果失败，它将失败`TypeCompatibilityException`的批处理。
 
-例如，JSON和CSV都不具有`date`或`date-time`类型。 因此，这些值使用[ISO 8601格式字符串](https://www.iso.org/iso-8601-date-and-time-format.html)&#x200B;(&quot;2018-07-10T15:05:59.000-08:00&quot;)或以毫秒(1531263959000)为单位的Unix时间格式表示，并在摄取时转换为目标XDM类型。
+例如，JSON和CSV都不具有`date`或`date-time`类型。 因此，这些值使用[ISO 8601格式字符串](https://www.iso.org/iso-8601-date-and-time-format.html)&#x200B;(&quot;2018-07-10T15:05:59.000-08:00&quot;)或以毫秒(1531263959000)为单位的Unix时间表示，并在摄取时转换为目标XDM类型。
 
 下表显示了摄取数据时支持的转化。
 
@@ -146,7 +146,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
 
 >[!NOTE]
 >
->批量摄取可用于以增量方式更新用户档案存储中的数据。 有关详细信息，请参阅[批次摄取开发人员指南](api-overview.md)中有关[更新批次](#patch-a-batch)的部分。
+>批量摄取可用于以增量方式更新用户档案存储中的数据。 有关详细信息，请参阅[批次摄取开发人员指南](#patch-a-batch)中有关[更新批次](api-overview.md)的部分。
 
 >[!INFO]
 >
@@ -412,7 +412,7 @@ curl GET "https://platform.adobe.io/data/foundation/catalog/batch/{BATCH_ID}" \
 | 活动 | 已成功提升该批次，可用于下游使用。 此状态可与“Success”互换使用。 |
 | 已删除 | 批次的数据已完全删除。 |
 | 失败 | 因配置错误和/或数据错误导致的终端状态。 失败批次的数据&#x200B;**不会**&#x200B;显示。 此状态可与“失败”互换使用。 |
-| 不活跃 | 批次已成功提升，但已还原或已过期。 该批次不再可用于下游消耗。 |
+| 非活动 | 批次已成功提升，但已还原或已过期。 该批次不再可用于下游消耗。 |
 | 已加载 | 批次的数据已完成，批次已准备好进行升级。 |
 | 正在加载 | 正在上载此批次的数据，批次当前为&#x200B;**未就绪**，无法升级。 |
 | 正在重试 | 正在处理此批次的数据。 但是，由于系统或临时错误，批次失败 — 因此，将重试此批次。 |
