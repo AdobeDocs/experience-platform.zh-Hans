@@ -3,24 +3,16 @@ keywords: 飞艇标签；飞艇目标
 title: 飞艇标记连接
 description: 将Adobe受众数据作为受众标记无缝传递到飞艇，以便在飞艇中进行定位。
 exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
-source-git-commit: 5619424024eff81fca21408288494402e2a4d4ff
+source-git-commit: 5a2f1c87381c39d6d15f569523cfb3b00d02b34b
 workflow-type: tm+mt
-source-wordcount: '1082'
-ht-degree: 4%
+source-wordcount: '970'
+ht-degree: 2%
 
 ---
 
 # [!DNL Airship Tags]连接 {#airship-tags-destination}
 
 ## 概述
-
->[!IMPORTANT]
->
->* 从2025年8月21日开始，您可以在目标目录中并排看到两个&#x200B;**[!DNL Airship Tags]**&#x200B;信息卡。 这是由于目标服务内部升级造成的。现有的&#x200B;**[!DNL Airship Tags]**&#x200B;目标连接器已重命名为&#x200B;**[!UICONTROL （已弃用）飞艇标签]**，现在您可以使用名为&#x200B;**[!UICONTROL 飞艇标签]**&#x200B;的新信息卡。
->* 使用目录中的新&#x200B;**[!UICONTROL 飞艇标签]**&#x200B;连接获取新的激活数据流。 如果您有任何到&#x200B;**[!UICONTROL （已弃用）飞艇标记]**&#x200B;目标的活动数据流，则会自动更新，因此您无需执行任何操作。
->* 如果您是通过[流服务API](https://developer.adobe.com/experience-platform-apis/references/destinations/)创建数据流，则必须将[!DNL flow spec ID]和[!DNL connection spec ID]更新为以下值：
->   * 流量规范 ID：`0c7e71c8-4d60-4685-a216-77f57e37b04a`
->   * 连接规范 ID：`aec13e22-8226-4b5d-9961-6baa35b251d2`
 
 [!DNL Airship]是领先的客户参与平台，帮助您在客户生命周期的每个阶段都向用户传递有意义、个性化的全渠道信息。
 
