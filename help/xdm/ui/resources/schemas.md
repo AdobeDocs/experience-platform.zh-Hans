@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 在UI中创建和编辑架构
 description: 了解如何在Experience Platform用户界面中创建和编辑架构的基础知识。
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 0b03a8873f828faef78e5bf0b66c9773fc693206
 workflow-type: tm+mt
-source-wordcount: '4078'
-ht-degree: 1%
+source-wordcount: '4178'
+ht-degree: 2%
 
 ---
 
@@ -51,11 +51,11 @@ ht-degree: 1%
 
 选择&#x200B;**[!UICONTROL 其他]**&#x200B;时，将显示可用类的列表。 在此处，您可以浏览和过滤预先存在的类。
 
-![在[!UICONTROL 架构详细信息]部分中突出显示[!UICONTROL 使用[!UICONTROL 其他]创建架构]工作流。](../../images/ui/resources/schemas/other-schema-details.png)
+![在[!UICONTROL 架构详细信息]部分中突出显示[!UICONTROL 使用]其他[!UICONTROL 创建架构]工作流。](../../images/ui/resources/schemas/other-schema-details.png)
 
 选择一个单选按钮，以根据类是自定义类还是标准类来筛选这些类。 您还可以根据行业筛选可用的结果，或使用搜索字段搜索特定类。
 
-![已突出显示[!UICONTROL 使用搜索栏[!UICONTROL 自定义]和[!UICONTROL 行业]创建架构]工作流。](../../images/ui/resources/schemas/filter-and-search.png)
+![已突出显示[!UICONTROL 使用搜索栏]自定义[!UICONTROL 和]行业[!UICONTROL 创建架构]工作流。](../../images/ui/resources/schemas/filter-and-search.png)
 
 为了帮助您确定相应的类，每个类都有信息和预览图标。 信息图标(![信息图标。](/help/images/icons/info.png))打开一个对话框，其中提供了类及其关联的行业的说明。
 
@@ -167,27 +167,43 @@ ht-degree: 1%
 
 ### 移除从字段组添加的字段 {#remove-fields}
 
-将字段组添加到架构后，您可以删除任何不需要的字段。
+将字段组添加到架构后，您可以从字段组全局删除字段，或从当前架构本地隐藏它们。 了解这些操作之间的区别对于避免意外模式更改至关重要。
 
->[!NOTE]
+>[!IMPORTANT]
 >
->从字段组中删除字段仅影响正在处理的架构，不影响字段组本身。 如果删除一个架构中的字段，则这些字段在使用相同字段组的所有其他架构中仍然可用。
+>选择&#x200B;**[!UICONTROL 删除]**&#x200B;会从字段组本身中删除该字段，从而影响使用该字段组的&#x200B;*所有*架构。
+>>除非您想要&#x200B;**从包含字段组**&#x200B;的每个架构中删除该字段，否则请不要使用此选项。
 
-在以下示例中，标准字段组&#x200B;**[!UICONTROL 人口统计详细信息]**&#x200B;已添加到架构中。 要删除单个字段，如`taxId`，请在画布中选择该字段，然后在右边栏中选择&#x200B;**[!UICONTROL 删除]**。
+要从字段组中删除字段，请在画布中选择该字段，然后在右边栏中选择&#x200B;**[!UICONTROL 删除]**。 此示例显示`taxId`人口统计详细信息&#x200B;**[!UICONTROL 组中的]**&#x200B;字段。
 
-突出显示了![带有[!UICONTROL 移除]的[!DNL Schema Editor]。 此操作删除单个字段。](../../images/ui/resources/schemas/remove-single-field.png)
+突出显示了![带有[!DNL Schema Editor]移除[!UICONTROL 的]。 此操作删除单个字段。](../../images/ui/resources/schemas/remove-single-field.png)
 
-如果要删除多个字段，则可以整体管理字段组。 在画布中选择属于该组的字段，然后在右边栏中选择&#x200B;**[!UICONTROL 管理相关字段]**。
+要从架构中隐藏多个字段而不从字段组本身中删除它们，请使用&#x200B;**[!UICONTROL 管理相关字段]**&#x200B;选项。 从画布中的组中选择任意字段，然后在右边栏中选择&#x200B;**[!UICONTROL 管理相关字段]**。
 
-![突出显示具有[!UICONTROL 管理相关字段]的[!DNL Schema Editor]。](../../images/ui/resources/schemas/manage-related-fields.png)
+![突出显示具有[!DNL Schema Editor]管理相关字段[!UICONTROL 的]。](../../images/ui/resources/schemas/manage-related-fields.png)
 
-此时将显示一个对话框，其中显示了相关字段组的结构。 在此，您可以使用提供的复选框选择或取消选择所需的字段。 如果满意，请选择&#x200B;**[!UICONTROL 确认]**。
+将出现一个对话框，显示字段组的结构。 使用复选框选择或取消选择要包含的字段。
 
 ![包含选定字段的[!UICONTROL 管理相关字段]对话框和[!UICONTROL 确认]突出显示。](../../images/ui/resources/schemas/select-fields.png)
 
-画布会重新显示，架构结构中仅显示选定的字段。
+选择&#x200B;**[!UICONTROL 确认]**&#x200B;以更新画布并反映所选字段。
+
 
 已添加![个字段](../../images/ui/resources/schemas/fields-added.png)
+
+### 删除或弃用字段时的字段行为 {#field-removal-deprecation-behavior}
+
+使用下表了解每个操作的范围。
+
+| 操作 | 仅适用于当前架构 | 修改字段组 | 影响其他架构 | 描述 |
+|--------------------------|--------------------------------|----------------------|-----------------------|-------------|
+| **删除字段** | 否 | 是 | 是 | 从字段组中删除字段。 这会将其从使用该组的所有架构中删除。 |
+| **管理相关字段** | 是 | 否 | 否 | 仅隐藏当前架构中的字段。 字段组保持不变。 |
+| **弃用字段** | 否 | 是 | 是 | 在字段组中将该字段标记为已弃用。 它不再可用于任何架构。 |
+
+>[!NOTE]
+>
+>在基于记录和基于事件的架构中，这种行为都是一致的。
 
 ### 将自定义字段添加到字段组 {#add-fields}
 
