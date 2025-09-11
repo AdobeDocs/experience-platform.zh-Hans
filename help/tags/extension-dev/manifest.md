@@ -2,10 +2,10 @@
 title: 扩展清单
 description: 了解如何配置JSON清单文件，以告知Adobe Experience Platform如何正确使用您的扩展。
 exl-id: 7cac020b-3cfd-4a0a-a2d1-edee1be125d0
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: a7c66b9172421510510b6acf3466334c33cdaa3d
 workflow-type: tm+mt
-source-wordcount: '2606'
-ht-degree: 67%
+source-wordcount: '2652'
+ht-degree: 66%
 
 ---
 
@@ -22,7 +22,7 @@ ht-degree: 67%
 扩展清单必须包含以下属性：
 
 | 属性 | 描述 |
-| --- | --- |
+|--------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `name` | 扩展的名称。它必须唯一，不同于所有其他扩展，且必须符合[命名规则](#naming-rules)。 **标记将此项用作标识符，在发布扩展后不应更改此项。** |
 | `platform` | 用于此扩展的平台。目前唯一接受的值是 `web`。 |
 | `version` | 此扩展的版本。必须遵循 [semver](https://semver.org/) 版本控制格式。与 [npm 版本字段](https://docs.npmjs.com/files/package.json#version)规则相一致。 |
@@ -30,6 +30,7 @@ ht-degree: 67%
 | `description` | 有关扩展的描述。将显示给Experience Platform用户。 如果您的扩展使用户能够在其网站上实施您的产品，请说明产品的功能。无需提及“标记”或“扩展”；用户已经知道他们正在查看标记扩展。 |
 | `iconPath`*（可选）* | 将为扩展显示的图标的相对路径。 不应以斜杠开头。必须引用一个扩展名为 `.svg` 的 SVG 文件。SVG应为正方形，并且可以由Experience Platform进行缩放。 |
 | `author` | “author”是一个对象，其结构应如下所示： <ul><li>`name`：扩展的作者姓名。或者，也可以在此使用公司名称。</li><li>`url`*（可选）*：一个 URL，可以从中了解有关扩展作者的更多信息。</li><li>`email`*（可选）*：扩展作者的电子邮件地址。</li></ul>与 [npm 作者字段](https://docs.npmjs.com/files/package.json#people-fields-author-contributors)规则相一致。 |
+| `releaseNotesUrl`*（可选）* | 扩展发行说明的URL（如果您有发布此信息的位置）。 此URL将在Adobe Tags UI中使用，以在扩展安装和升级期间显示此链接。 只有Web扩展和Edge扩展支持此属性。 |
 | `exchangeUrl`*（公共扩展的必需属性）* | 指向 Adobe Exchange 上列出的扩展的 URL。必须匹配以下模式：`https://www.adobeexchange.com/experiencecloud.details.######.html`。 |
 | `viewBasePath` | 包含您的所有视图及视图相关资源（HTML、JavaScript、CSS、图像）的子目录的相对路径。Experience Platform将在Web服务器上托管此目录，并从中加载iframe内容。 这是必填字段，且不应以斜杠开头。例如，如果您的所有视图都包含在 `src/view/` 中，则 `viewBasePath` 的值为 `src/view/`。 |
 | `hostedLibFiles`*（可选）* | 我们的许多用户喜欢将所有与标记相关的文件托管在自己的服务器上。 这可以提高用户在运行时对文件可用性的确定级别，而且用户可以轻松扫描代码以发现安全漏洞。如果扩展的库部分需要在运行时加载 JavaScript 文件，则建议使用此属性来列出这些文件。列出的文件将与标记运行时库一起托管。 随后，您的扩展将可以通过使用 [getHostedLibFileUrl](./turbine.md#get-hosted-lib-file) 方法检索到的 URL 来加载文件。<br><br>此选项包含一个数组，其中含有需托管的第三方库文件的相对路径。 |
@@ -74,20 +75,20 @@ ht-degree: 67%
       <td><code>schema</code></td>
       <td><a href="https://json-schema.org/">JSON 架构</a>的对象，用来描述从扩展配置视图中保存的有效对象的格式。由于您是配置视图的开发者，因此您有责任确保所有保存的设置对象都与此架构匹配。当用户尝试使用Experience Platform服务保存数据时，此架构还将用于验证。<br><br>架构对象的示例如下所示：
 <pre class="JSON language-JSON hljs">
-&lbrace;
+{
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "properties": &lbrace;
-    "delay": &lbrace;
+  "properties": {
+    "delay": {
       "type": "number",
       "minimum": 1
-    &rbrace;
-  &rbrace;,
-  "required": &lbrack;
+    }
+  },
+  "required": [
     "delay"
-  &rbrack;,
+  ],
   "additionalProperties": false
-&rbrace;
+}
 </pre>
       我们建议使用诸如 <a href="https://www.jsonschemavalidator.net/">JSON 架构验证器</a>之类的工具，手动测试您的架构。</td>
     </tr>
@@ -134,20 +135,20 @@ ht-degree: 67%
       <td><code>schema</code></td>
       <td><a href="https://json-schema.org/">JSON 架构</a>的对象，用来描述用户可保存的有效设置对象的格式。设置通常由用户使用数据收集用户界面进行配置和保存。 在这些用例中，扩展的视图可采取必要步骤来验证用户提供的设置。另一方面，有些用户选择直接使用标记API，而不借助任何用户界面。 此架构的目的在于允许Experience Platform正确验证用户保存的设置对象（无论是否使用了用户界面）是否采用了与运行时基于该设置对象执行操作的库模块兼容的格式。<br><br>架构对象的示例如下所示：<br>
 <pre class="JSON language-JSON hljs">
-&lbrace;
+{
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "properties": &lbrace;
-    "delay": &lbrace;
+  "properties": {
+    "delay": {
       "type": "number",
       "minimum": 1
-    &rbrace;
-  &rbrace;,
-  "required": &lbrack;
+    }
+  },
+  "required": [
     "delay"
-  &rbrack;,
+  ],
   "additionalProperties": false
-&rbrace;
+}
 </pre>
       我们建议使用诸如 <a href="https://www.jsonschemavalidator.net/">JSON 架构验证器</a>之类的工具，手动测试您的架构。</td>
     </tr>
