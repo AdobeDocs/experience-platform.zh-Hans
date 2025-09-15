@@ -4,9 +4,9 @@ title: HTTP API连接
 description: 使用Adobe Experience Platform中的HTTP API目标将配置文件数据发送到第三方HTTP端点，以运行您自己的Analytics或对从Experience Platform导出的配置文件数据执行您可能所需的任何其他操作。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: b757f61a46930f08fe05be4c0f701113597567a4
+source-git-commit: 6d8386b4d9ed64128c8d9a9537610f0fd07d74cd
 workflow-type: tm+mt
-source-wordcount: '2746'
+source-wordcount: '2852'
 ht-degree: 7%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 7%
 
 >[!IMPORTANT]
 >
-> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
 HTTP API目标是一个[!DNL Adobe Experience Platform]流目标，可帮助您将配置文件数据发送到第三方HTTP端点。
 
@@ -205,7 +205,7 @@ curl --location --request POST 'https://some-api.com/token' \
 * **[!UICONTROL 标头]**：输入任何要包含在目标调用中的自定义标头，格式如下： `header1:value1,header2:value2,...headerN:valueN`。
 * **[!UICONTROL HTTP终结点]**：要将配置文件数据发送到的HTTP终结点的URL。
 * **[!UICONTROL 查询参数]**：您可以选择将查询参数添加到HTTP终结点URL。 格式化您使用的查询参数，如下所示：`parameter1=value&parameter2=value`。
-* **[!UICONTROL 包括区段名称]**：如果希望数据导出包括正在导出的受众的名称，请切换。 有关选择此选项的数据导出示例，请参阅下面的[导出的数据](#exported-data)部分。
+* **[!UICONTROL 包括区段名称]**：如果希望数据导出包括正在导出的受众的名称，请切换。 **注意**：区段名称仅包括映射到目标的区段。 导出中显示的未映射区段不包括`name`字段。 有关选择此选项的数据导出示例，请参阅下面的[导出的数据](#exported-data)部分。
 * **[!UICONTROL 包括区段时间戳]**：如果要在数据导出时包括创建和更新受众时的UNIX时间戳，以及在将受众映射到目标以进行激活时的UNIX时间戳，请切换此选项。 有关选择此选项的数据导出示例，请参阅下面的[导出的数据](#exported-data)部分。
 
 ### 启用警报 {#enable-alerts}
@@ -245,7 +245,7 @@ Experience Platform会优化将配置文件导出到HTTP API目标的行为，�
 
 | 决定目标导出的因素 | 目标导出中包含的内容 |
 |---------|----------|
-| <ul><li>映射的属性和区段会作为目标导出的提示。 这意味着，如果配置文件的`segmentMembership`状态更改为`realized`或`exiting`，或者更新了任何映射的属性，则将启动目标导出。</li><li>由于身份当前无法映射到HTTP API目标，因此给定配置文件上任何身份的更改也将决定目标导出。</li><li>属性的更改被定义为属性上的任何更新，无论其是否为相同的值。 这意味着即使值本身未发生更改，也会将覆盖属性视为更改。</li></ul> | <ul><li>`segmentMembership`对象包括激活数据流中映射的区段，在资格或区段退出事件后，配置文件的状态已发生更改。 请注意，如果符合配置文件条件的其他未映射区段与激活数据流中映射的区段属于同一个[合并策略](/help/profile/merge-policies/overview.md)，则这些区段可以是目标导出的一部分。 </li><li>`identityMap`对象中的所有标识也包括在内(Experience Platform当前不支持HTTP API目标中的标识映射)。</li><li>目标导出中只包含映射的属性。</li></ul> |
+| <ul><li>映射的属性和区段会作为目标导出的提示。 这意味着，如果配置文件的`segmentMembership`状态更改为`realized`或`exiting`，或者更新了任何映射的属性，则将启动目标导出。</li><li>由于身份当前无法映射到HTTP API目标，因此给定配置文件上任何身份的更改也将决定目标导出。</li><li>属性的更改被定义为属性上的任何更新，无论其是否为相同的值。 这意味着即使值本身未发生更改，也会将覆盖属性视为更改。</li></ul> | <ul><li>`segmentMembership`对象包括激活数据流中映射的区段，在资格或区段退出事件后，配置文件的状态已发生更改。 请注意，如果符合配置文件条件的其他未映射区段与激活数据流中映射的区段属于同一个[合并策略](/help/profile/merge-policies/overview.md)，则这些区段可以是目标导出的一部分。<br> **重要信息**：启用&#x200B;**[!UICONTROL 包含区段名称]**&#x200B;选项后，将仅包含映射到目标的区段的区段名称。 导出中显示的未映射区段将不包括`name`字段，即使该选项已启用也是如此。 </li><li>`identityMap`对象中的所有标识也包括在内(Experience Platform当前不支持HTTP API目标中的标识映射)。</li><li>目标导出中只包含映射的属性。</li></ul> |
 
 {style="table-layout:fixed"}
 
@@ -333,10 +333,16 @@ Experience Platform会优化将配置文件导出到HTTP API目标的行为，�
             "mappingCreatedAt": 1649856570000,
             "mappingUpdatedAt": 1649856570000,
             "name": "First name equals John"
+          },
+          "354e086f-2e11-49a2-9e39-e5d9a76be683": {
+            "lastQualificationTime": "2020-04-15T02:41:50+0000",
+            "status": "realized"
           }
         }
       }
 ```
+
+**注意**：在此示例中，第一个区段(`5b998cb9-9488-4ec3-8d95-fa8338ced490`)映射到目标并包含`name`字段。 第二个区段(`354e086f-2e11-49a2-9e39-e5d9a76be683`)未映射到目标，并且不包含`name`字段，即使启用了&#x200B;**[!UICONTROL 包含区段名称]**&#x200B;选项也是如此。
 
 +++
 
