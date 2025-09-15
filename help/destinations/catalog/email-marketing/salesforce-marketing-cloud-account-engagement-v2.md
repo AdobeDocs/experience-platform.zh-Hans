@@ -4,7 +4,7 @@ description: 了解如何使用(V2) Salesforce Marketing Cloud Account Engagemen
 badge: label="Alpha" type="Informative"
 hide: true
 hidefromtoc: true
-source-git-commit: 21ca268d3ade99cf46b6c511360084297e8163d3
+source-git-commit: d1405237698271607fa672ccae1ac731d66df263
 workflow-type: tm+mt
 source-wordcount: '1809'
 ht-degree: 3%
@@ -22,9 +22,9 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 > 
-> 这是[Salesforce Marketing Cloud帐户参与](help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md)目标的V2版本。 此版本取代了以前的目标，当前位于Alpha版本中。
-> &#x200B;> <br>
-> &#x200B;> 如果您当前使用的是[Salesforce Marketing Cloud帐户参与](help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md)目标的早期版本，则必须在&#x200B;**2026年1月**&#x200B;之前迁移到此V2版本。 2026年1月后，Adobe将停用以前的版本，并且不再可用。
+> 这是[Salesforce Marketing Cloud帐户参与](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md)目标的V2版本。 此版本取代了以前的目标，当前位于Alpha版本中。
+> > <br>
+> > 如果您当前使用的是[Salesforce Marketing Cloud帐户参与](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md)目标的早期版本，则必须在&#x200B;**2026年1月**&#x200B;之前迁移到此V2版本。 2026年1月后，Adobe将停用以前的版本，并且不再可用。
 
 
 ## 用例 {#use-cases}
@@ -193,7 +193,7 @@ Salesforce Marketing Cloud帐户参与目标支持下表中描述的目标属性
 1. 导航到您选择的受众之一。 选择 **[!DNL Activation data]** 选项卡。**[!UICONTROL 映射ID]**&#x200B;列显示在[!DNL Marketing Cloud Account Engagement Prospects]页面中生成的自定义字段的名称。
    ![显示选定区段映射ID的Experience Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement-v2/selected-segment-mapping-id.png)
 
-1. 登录到[[!DNL Salesforce]](https://login.salesforce.com/)网站。 然后导航到&#x200B;**[!DNL Account Engagement]** > **[!DNL Prospects]** > **[!DNL Pardot Prospects]**&#x200B;页面，并检查受众中的潜在客户是否已添加/更新。 或者，您也可以访问[[!DNL Account Engagement]](https://pi.pardot.com/)并访问&#x200B;**[!DNL Prospects]**&#x200B;页面。
+1. 登录到[[!DNL Salesforce]](https://login.salesforce.com/)网站。 然后导航到&#x200B;**[!DNL Account Engagement]** > **[!DNL Prospects]** > **[!DNL Pardot Prospects]**&#x200B;页面，并检查受众中的潜在客户是否已添加/更新。 或者，您也可以访问[[!DNL Account Engagement]](https://pi.pardot.com/)并访问&#x200B;**[!DNL Prospects]**页面。
    ![显示“潜在客户”页面的Salesforce UI屏幕截图。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement-v2/prospects.png)
 
 1. 要检查潜在客户是否已更新，请选择一个潜在客户，并验证自定义潜在客户字段是否已使用Experience Platform受众状态进行更新。

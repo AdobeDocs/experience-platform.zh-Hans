@@ -4,9 +4,9 @@ title: 使用流服务API将受众激活到基于文件的目标
 description: 了解如何使用流服务API将包含合格配置文件的文件导出到云存储目标。
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: eb7d1b9c167839db39cbb28bf497edac706c0b6c
+source-git-commit: 833e38559f7150c579840c69fa2658761fc9472c
 workflow-type: tm+mt
-source-wordcount: '4911'
+source-wordcount: '4986'
 ht-degree: 3%
 
 ---
@@ -4752,6 +4752,14 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 >[!ENDSHADEBOX]
 
 ### 向现有目标添加文件清单生成 {#add-file-manifest}
+
+清单JSON文件包含有关导出位置、导出大小等的信息。 清单的命名格式为`manifest-<<destinationId>>-<<dataflowRunId>>.json`。 查看[样本清单文件](/help/destinations/assets/common/manifest-d0420d72-756c-4159-9e7f-7d3e2f8b501e-0ac8f3c0-29bd-40aa-82c1-f1b7e0657b19.json)。 清单文件包含以下字段：
+
+* `flowRunId`：生成导出文件的[数据流运行](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations)。
+* `scheduledTime`：导出文件时的时间（UTC时间）。
+* `exportResults.sinkPath`：存储位置中保存导出文件的路径。
+* `exportResults.name`：导出文件的名称。
+* `size`：导出文件的大小（字节）。
 
 要将文件清单生成添加到现有目标，您需要使用`PATCH`操作更新目标连接参数。 这样可以为目标生成清单文件，其中提供有关导出文件的元数据。
 

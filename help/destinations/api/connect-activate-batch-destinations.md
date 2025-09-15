@@ -5,9 +5,9 @@ title: 使用流服务API连接到批处理目标并激活数据
 description: 分步说明如何使用流服务API在Experience Platform中创建批量云存储或电子邮件营销目标并激活数据
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: 81641f707dbd9fb2952589506bc42c3dd6cd83b3
+source-git-commit: 833e38559f7150c579840c69fa2658761fc9472c
 workflow-type: tm+mt
-source-wordcount: '3416'
+source-wordcount: '3450'
 ht-degree: 2%
 
 ---
@@ -41,7 +41,7 @@ ht-degree: 2%
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
-* [[!DNL Segmentation Service]](../../segmentation/api/overview.md)： [!DNL Adobe Experience Platform Segmentation Service]允许您根据[!DNL Real-Time Customer Profile]数据在[!DNL Adobe Experience Platform]中构建受众。
+* [[!DNL Segmentation Service]](../../segmentation/api/overview.md)： [!DNL Adobe Experience Platform Segmentation Service]允许您根据[!DNL Adobe Experience Platform]数据在[!DNL Real-Time Customer Profile]中构建受众。
 * [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform]提供了将单个[!DNL Experience Platform]实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了在Experience Platform中将数据激活到批处理目标需要了解的其他信息。
@@ -57,11 +57,11 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->[!DNL Amazon S3]连接的凭据`accessId`、`secretKey`与与[!DNL Adobe Campaign]的[!DNL Amazon S3]连接的`accessId`、`secretKey`相同。
+>`accessId`连接的凭据`secretKey`、[!DNL Amazon S3]与与`accessId`的`secretKey`连接的[!DNL Amazon S3]、[!DNL Adobe Campaign]相同。
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中有关[如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅[疑难解答指南中有关](../../landing/troubleshooting.md#how-do-i-format-an-api-request)如何读取示例API调用[!DNL Experience Platform]的部分。
 
 ### 收集必需标题和可选标题的值 {#gather-values-headers}
 
@@ -85,7 +85,7 @@ ht-degree: 2%
 
 ### API参考文档 {#api-reference-documentation}
 
-您可以在本教程中找到所有API操作的随附参考文档。 请参阅Adobe I/O[&#128279;](https://www.adobe.io/experience-platform-apis/references/flow-service/)上的流服务API文档。 我们建议您并行使用此教程和API参考文档。
+您可以在本教程中找到所有API操作的随附参考文档。 请参阅Adobe I/O[上的](https://www.adobe.io/experience-platform-apis/references/flow-service/)流服务API文档。 我们建议您并行使用此教程和API参考文档。
 
 ## 获取可用目标列表 {#get-the-list-of-available-destinations}
 
@@ -234,7 +234,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **响应**
 
-成功的响应返回新建的源连接[!DNL Profile store]的唯一标识符(`id`)。 这将确认您已成功连接到[!DNL Experience Platform]数据。 将此值存储为后续步骤中所需的值。
+成功的响应返回新建的源连接`id`的唯一标识符([!DNL Profile store])。 这将确认您已成功连接到[!DNL Experience Platform]数据。 将此值存储为后续步骤中所需的值。
 
 ```json
 {
@@ -531,8 +531,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 | `name` | 提供到批处理目标的基本连接的名称。 |
 | `description` | 或者，您可以为基本连接提供描述。 |
 | `connectionSpec.id` | 使用连接规范ID作为所需的批处理目标。 您在步骤[获取可用目标的列表](#get-the-list-of-available-destinations)中获取了此ID。 |
-| `auth.specname` | 指示目标的身份验证格式。 要查找目标的specName，请对连接规范端点[&#128279;](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)执行GET调用，并提供所需目标的连接规范。 在响应中查找参数`authSpec.name`。 <br>例如，对于Adobe Campaign目标，您可以使用任何`S3`、`SFTP with Password`或`SFTP with SSH Key`。 |
-| `params` | 根据连接到的目标，必须提供不同的必需身份验证参数。 对于Amazon S3连接，您必须向Amazon S3存储位置提供访问ID和密钥。 <br>要查找目标所需的参数，请对连接规范终结点[&#128279;](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)执行GET调用，并提供所需目标的连接规范。 在响应中查找参数`authSpec.spec.required`。 |
+| `auth.specname` | 指示目标的身份验证格式。 要查找目标的specName，请对连接规范端点[执行](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)GET调用，并提供所需目标的连接规范。 在响应中查找参数`authSpec.name`。 <br>例如，对于Adobe Campaign目标，您可以使用任何`S3`、`SFTP with Password`或`SFTP with SSH Key`。 |
+| `params` | 根据连接到的目标，必须提供不同的必需身份验证参数。 对于Amazon S3连接，您必须向Amazon S3存储位置提供访问ID和密钥。 <br>要查找目标所需的参数，请对连接规范终结点[执行](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)GET调用，并提供所需目标的连接规范。 在响应中查找参数`authSpec.spec.required`。 |
 
 {style="table-layout:auto"}
 
@@ -591,18 +591,21 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         "mode": "S3",
         "bucketName": "{BUCKET_NAME}",
         "path": "{FILEPATH}",
-        "format": "CSV"
+        "format": "CSV",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     }
     "params": {
         "mode": "AZURE_BLOB",
         "container": "{CONTAINER}",
         "path": "{FILEPATH}",
-        "format": "CSV"
+        "format": "CSV",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     }
     "params": {
         "mode": "FTP",
         "remotePath": "{REMOTE_PATH}",
-        "format": "CSV"
+        "format": "CSV",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     }        
 }'
 ```
@@ -638,7 +641,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         "mode": "S3",
         "bucketName": "{BUCKET_NAME}",
         "path": "{FILEPATH}",
-        "format": "CSV"
+        "format": "CSV",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     }
 }'
 ```
@@ -674,7 +678,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         "mode": "AZURE_BLOB",
         "container": "{CONTAINER}",
         "path": "{FILEPATH}",
-        "format": "CSV"
+        "format": "CSV",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     }
 }'
 ```
@@ -710,12 +715,14 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         "mode": "S3",
         "bucketName": "{BUCKET_NAME}",
         "path": "{FILEPATH}",
-        "format": "CSV"
+        "format": "CSV",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     }
     "params": {
         "mode": "FTP",
         "remotePath": "{REMOTE_PATH}",
-        "format": "CSV"
+        "format": "CSV",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     }        
 }'
 ```
@@ -751,12 +758,14 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         "mode": "S3",
         "bucketName": "{BUCKET_NAME}",
         "path": "{FILEPATH}",
-        "format": "CSV"
+        "format": "CSV",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     }
     "params": {
         "mode": "FTP",
         "remotePath": "{REMOTE_PATH}",
-        "format": "CSV"
+        "format": "CSV",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     }        
 }'
 ```
@@ -792,12 +801,14 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         "mode": "S3",
         "bucketName": "{BUCKET_NAME}",
         "path": "{FILEPATH}",
-        "format": "CSV"
+        "format": "CSV",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     }
     "params": {
         "mode": "FTP",
         "remotePath": "{REMOTE_PATH}",
-        "format": "CSV"
+        "format": "CSV",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     }        
 }'
 ```
@@ -832,6 +843,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
     "params": {
         "mode": "FTP",
         "remotePath": "{REMOTE_PATH}",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     }
 }'
 ```
@@ -845,11 +857,12 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 | `description` | 或者，您可以为目标连接提供描述。 |
 | `baseConnectionId` | 使用您在上面的步骤中创建的基本连接的ID。 |
 | `connectionSpec.id` | 使用连接规范ID作为所需的批处理目标。 您在步骤[获取可用目标的列表](#get-the-list-of-available-destinations)中获取了此ID。 |
-| `params` | 根据连接到的目标，必须为存储位置提供不同的必需参数。 对于Amazon S3连接，您必须向Amazon S3存储位置提供访问ID和密钥。 <br>要查找目标所需的参数，请对连接规范终结点[&#128279;](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)执行GET调用，并提供所需目标的连接规范。 在响应中查找参数`targetSpec.spec.required`。 |
-| `params.mode` | 根据目标支持的模式，必须在此处提供不同的值。 要查找目标的所需参数，请对连接规范端点[&#128279;](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)执行GET调用，并提供所需目标的连接规范。 在响应中查找参数`targetSpec.spec.properties.mode.enum`并选择所需的模式。 |
+| `params` | 根据连接到的目标，必须为存储位置提供不同的必需参数。 对于Amazon S3连接，您必须向Amazon S3存储位置提供访问ID和密钥。 <br>要查找目标所需的参数，请对连接规范终结点[执行](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)GET调用，并提供所需目标的连接规范。 在响应中查找参数`targetSpec.spec.required`。 |
+| `params.mode` | 根据目标支持的模式，必须在此处提供不同的值。 要查找目标的所需参数，请对连接规范端点[执行](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)GET调用，并提供所需目标的连接规范。 在响应中查找参数`targetSpec.spec.properties.mode.enum`并选择所需的模式。 |
 | `params.bucketName` | 对于S3连接，提供将导出文件的存储段的名称。 |
 | `params.path` | 对于S3连接，在要导出文件的存储位置中提供文件路径。 |
 | `params.format` | `CSV`是当前唯一支持的文件导出类型。 |
+| `params.includeFileManifest` | *可选*。 设置为`true`以启用目标的清单文件生成。 启用后，清单文件将与导出的数据文件一起创建，并提供有关导出文件的元数据。 查看[样本清单文件](/help/destinations/assets/common/manifest-d0420d72-756c-4159-9e7f-7d3e2f8b501e-0ac8f3c0-29bd-40aa-82c1-f1b7e0657b19.json)。 |
 
 {style="table-layout:auto"}
 
@@ -1028,7 +1041,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 | 属性 | 描述 |
 | --------- | ----------- |
 | `{DATAFLOW_ID}` | 在URL中，使用您在上一步中创建的数据流的ID。 |
-| `{ETAG}` | 从上一步[创建数据流](#create-dataflow)中的响应中获取`{ETAG}`。 上一步中的响应格式对引号进行了转义。 您必须在请求的标头中使用未转义值。 查看以下示例： <br> <ul><li>响应示例：`"etag":""7400453a-0000-1a00-0000-62b1c7a90000""`</li><li>要在您的请求中使用的值： `"etag": "7400453a-0000-1a00-0000-62b1c7a90000"`</li></ul> <br>每次成功更新数据流时，etag值都会更新。 |
+| `{ETAG}` | 从上一步`{ETAG}`创建数据流[中的响应中获取](#create-dataflow)。 上一步中的响应格式对引号进行了转义。 您必须在请求的标头中使用未转义值。 查看以下示例： <br> <ul><li>响应示例：`"etag":""7400453a-0000-1a00-0000-62b1c7a90000""`</li><li>要在您的请求中使用的值： `"etag": "7400453a-0000-1a00-0000-62b1c7a90000"`</li></ul> <br>每次成功更新数据流时，etag值都会更新。 |
 | `{SEGMENT_ID}` | 提供要导出到此目标的受众ID。 要检索要激活的受众的受众ID，请参阅Experience Platform API参考中的[检索受众定义](https://www.adobe.io/experience-platform-apis/references/segmentation/#operation/retrieveSegmentDefinitionById)。 |
 | `{PROFILE_ATTRIBUTE}` | 例如：`"person.lastName"` |
 | `op` | 操作调用，用于定义更新数据流所需的操作。 操作包括： `add`、`replace`和`remove`。 要将受众添加到数据流，请使用`add`操作。 |
@@ -1040,8 +1053,8 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 | `exportMode` | 必填。 选择`"DAILY_FULL_EXPORT"`或`"FIRST_FULL_THEN_INCREMENTAL"`。 有关这两个选项的更多信息，请参阅批处理目标激活教程中的[导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files)和[导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files)。 |
 | `startDate` | 选择受众应开始将用户档案导出到目标的日期。 |
 | `frequency` | 必填。<br> <ul><li>对于`"DAILY_FULL_EXPORT"`导出模式，您可以选择`ONCE`、`DAILY`、`WEEKLY`或`MONTHLY`。</li><li>对于`"FIRST_FULL_THEN_INCREMENTAL"`导出模式，您可以选择`"DAILY"`、`"EVERY_3_HOURS"`、`"EVERY_6_HOURS"`、`"EVERY_8_HOURS"`、`"EVERY_12_HOURS"`。</li></ul> |
-| `triggerType` | 仅适用于&#x200B;*批次目标*。 仅当在`frequency`选择器中选择`"DAILY_FULL_EXPORT"`模式时，才需要此字段。 <br>必填。<br> <ul><li>选择`"AFTER_SEGMENT_EVAL"`以使激活作业在每日Experience Platform批处理分段作业完成后立即运行。 这可确保在激活作业运行时，将最新的配置文件导出到您的目标。</li><li>选择`"SCHEDULED"`以使激活作业在固定时间运行。 这可确保每天在同一时间导出Experience Platform用户档案数据，但您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。 当选择此选项时，还必须添加`startTime`以指示每日导出应在UTC时段的哪个时间发生。</li></ul> |
-| `endDate` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要使用此字段。 选择`"exportMode":"DAILY_FULL_EXPORT"`和`"frequency":"ONCE"`时，<br>不适用。 <br>设置受众成员停止导出到目标的日期。 |
+| `triggerType` | 仅适用于&#x200B;*批次目标*。 仅当在`"DAILY_FULL_EXPORT"`选择器中选择`frequency`模式时，才需要此字段。 <br>必填。<br> <ul><li>选择`"AFTER_SEGMENT_EVAL"`以使激活作业在每日Experience Platform批处理分段作业完成后立即运行。 这可确保在激活作业运行时，将最新的配置文件导出到您的目标。</li><li>选择`"SCHEDULED"`以使激活作业在固定时间运行。 这可确保每天在同一时间导出Experience Platform用户档案数据，但您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。 当选择此选项时，还必须添加`startTime`以指示每日导出应在UTC时段的哪个时间发生。</li></ul> |
+| `endDate` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要使用此字段。 选择<br>和`"exportMode":"DAILY_FULL_EXPORT"`时，`"frequency":"ONCE"`不适用。 <br>设置受众成员停止导出到目标的日期。 |
 | `startTime` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要使用此字段。 <br>必填。 选择应生成包含受众成员的文件并将其导出到目标的时间。 |
 
 {style="table-layout:auto"}
