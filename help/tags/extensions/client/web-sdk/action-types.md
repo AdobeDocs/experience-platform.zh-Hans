@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK扩展中的操作类型
 description: 了解Adobe Experience Platform Web SDK标记扩展提供的各种操作类型。
 solution: Experience Platform
 exl-id: a4bf0bb9-59b4-4c43-97e6-387768176517
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: e274dda06c678bdbd230bc2f06204724bac633e8
 workflow-type: tm+mt
-source-wordcount: '2119'
+source-wordcount: '2301'
 ht-degree: 1%
 
 ---
@@ -81,7 +81,7 @@ ht-degree: 1%
 
 ## 发送事件 {#send-event}
 
-向Experience Platform发送事件，以便Experience Platform可以收集您发送的数据并对该信息执行相应的操作。 您要发送的任何数据均可通过&#x200B;**[!UICONTROL XDM数据]**&#x200B;字段发送。 使用符合[!DNL XDM]架构结构的[!DNL JSON]对象。 此对象可以在您的页面上创建，也可以通过&#x200B;**[!UICONTROL 自定义代码]** **[!UICONTROL 数据元素]**&#x200B;创建。
+向Experience Platform发送事件，以便Experience Platform可以收集您发送的数据并对该信息执行相应的操作。 您要发送的任何数据均可通过&#x200B;**[!UICONTROL XDM数据]**&#x200B;字段发送。 使用符合[!DNL JSON]架构结构的[!DNL XDM]对象。 此对象可以在您的页面上创建，也可以通过&#x200B;**[!UICONTROL 自定义代码]** **[!UICONTROL 数据元素]**&#x200B;创建。
 
 **[!UICONTROL 发送事件]**&#x200B;操作类型支持下述字段和设置。 这些字段都是可选的。
 
@@ -103,16 +103,16 @@ ht-degree: 1%
 
   >[!NOTE]
   >
-  >引导事件与页面事件[&#128279;](../../../../web-sdk/use-cases/top-bottom-page-events.md)的顶部和底部相关。
+  >引导事件与页面事件[的](../../../../web-sdk/use-cases/top-bottom-page-events.md)顶部和底部相关。
 
 
 ### 数据 {#data}
 
 ![显示“发送事件”操作类型的数据元素设置的Experience Platform Tags UI图像。](assets/data.png)
 
-* **[!UICONTROL 类型]**：此字段允许您指定将记录在XDM架构中的事件类型。 有关详细信息，请参阅`sendEvent`命令中的[`type`](/help/web-sdk/commands/sendevent/type.md)。
+* **[!UICONTROL 类型]**：此字段允许您指定将记录在XDM架构中的事件类型。 有关详细信息，请参阅[`type`](/help/web-sdk/commands/sendevent/type.md)命令中的`sendEvent`。
 * **[!UICONTROL XDM]**：
-* **[!UICONTROL 数据]**：使用此字段发送不符合XDM架构的数据。 如果您尝试更新Adobe Target配置文件或发送Target推荐属性，则此字段非常有用。 有关详细信息，请参阅`sendEvent`命令中的[`data`](/help/web-sdk/commands/sendevent/data.md)。
+* **[!UICONTROL 数据]**：使用此字段发送不符合XDM架构的数据。 如果您尝试更新Adobe Target配置文件或发送Target推荐属性，则此字段非常有用。 有关详细信息，请参阅[`data`](/help/web-sdk/commands/sendevent/data.md)命令中的`sendEvent`。
 * **[!UICONTROL 包含已渲染的建议]**：启用此选项可包含已渲染但尚未发送显示事件的所有建议。 将此项与&#x200B;**[!UICONTROL 结合使用。自动发送已禁用的显示事件]**。 此设置使用有关渲染建议的信息更新`_experience.decisioning` XDM字段。
 * **[!UICONTROL 文档将卸载]**：启用此选项以确保事件到达服务器，即使用户离开页面也一样。 这允许事件访问服务器，但响应将被忽略。
 * **[!UICONTROL 合并ID]**： **此字段已弃用**。 这将填充`eventMergeId` XDM字段。
@@ -122,13 +122,28 @@ ht-degree: 1%
 ![Experience Platform Tags UI图像显示“发送事件”操作类型的Personalization设置。](assets/personalization-settings.png)
 
 * **[!UICONTROL 范围]**：选择要从个性化显式请求的范围(Adobe Target [!DNL mboxes])。 您可以手动输入范围，也可以通过提供数据元素来输入范围。
-* **[!UICONTROL 界面]**：设置页面上可用于个性化的Web界面。 有关更多详细信息，请参阅[Adobe Journey Optimizer文档](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html?lang=zh-Hans)。
+* **[!UICONTROL 界面]**：设置页面上可用于个性化的Web界面。 有关更多详细信息，请参阅[Adobe Journey Optimizer文档](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html)。
 * **呈现可视化个性化决策：**&#x200B;如果要在页面上呈现个性化内容，请选中&#x200B;**[!UICONTROL 呈现可视化个性化决策]**&#x200B;复选框。 如有必要，您还可以指定决策范围和/或曲面。 有关呈现个性化内容的更多信息，请参阅[个性化文档](/help/web-sdk/personalization/rendering-personalization-content.md#automatically-rendering-content)。
 * **[!UICONTROL 请求默认个性化]**：使用此部分控制是否请求页面范围的范围（全局mbox）和默认表面（基于当前URL的Web表面）。 默认情况下，这是在页面加载的前`sendEvent`次调用期间自动请求的。 您可以从以下选项中进行选择：
    * **[!UICONTROL 自动]**：这是默认行为。 仅在尚未请求时请求默认个性化。 这对应于Web SDK命令中未设置的`requestDefaultPersonalization`。
-   * **[!UICONTROL 已启用]**：显式请求页面范围和默认表面。 这将更新SPA视图缓存。 这对应于设置为`true`的`requestDefaultPersonalization`。
-   * **[!UICONTROL 已禁用]**：显式禁止请求页面范围和默认表面。 这对应于设置为`false`的`requestDefaultPersonalization`。
+   * **[!UICONTROL 已启用]**：显式请求页面范围和默认表面。 这将更新SPA视图缓存。 这对应于设置为`requestDefaultPersonalization`的`true`。
+   * **[!UICONTROL 已禁用]**：显式禁止请求页面范围和默认表面。 这对应于设置为`requestDefaultPersonalization`的`false`。
 * **[!UICONTROL 决策上下文]**：这是键值映射，在评估设备上决策的Adobe Journey Optimizer规则集时使用。 您可以手动或通过数据元素提供决策上下文。
+
+### Advertising {#advertising}
+
+当您为Web SDK自定义生成组件选择&#x200B;**[!UICONTROL Advertising]**&#x200B;组件时，`sendEvent`操作的规则设置包含[!UICONTROL Advertising]部分，该部分定义如何将广告数据用于归因测量。 当规则包含一系列多个操作时，此设置非常有用。
+
+![Experience Platform Tags UI图像显示“发送事件”操作类型的Advertising设置。](assets/send-event-advertising.png)
+
+**[!UICONTROL 请求默认Advertising数据]**&#x200B;部分提供了以下选项：
+
+* **[!UICONTROL 自动]**：此事件时可用的任何广告数据将自动添加到XDM中。
+* **[!UICONTROL 等待]**：在检索并解析广告数据之前，延迟执行此调用。 然后，将数据添加到XDM。
+* **[!UICONTROL 已禁用]**：不将广告数据添加到XDM。 此函数用于任何不适用于Customer Journey Analytics或Adobe Analytics的请求。
+* **[!UICONTROL 提供数据元素]**：使用数据元素在页面加载期间包含或排除广告数据。 数据元素的解析值可以包括`automatic`、`wait`和`disabled`。
+
+如果不使用规则配置`sendEvent`操作，则广告数据将作为单独的广告扩充事件发送。
 
 ### 数据流配置覆盖 {#datastream-overrides}
 
