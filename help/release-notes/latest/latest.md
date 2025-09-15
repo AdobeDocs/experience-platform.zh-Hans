@@ -3,9 +3,9 @@ title: Adobe Experience Platform 发行说明（2025 年 8 月）
 description: Adobe Experience Platform 的 2025 年 8 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: 40c3745920204983f5388de6cba1402d87eda71c
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1432'
-ht-degree: 92%
+ht-degree: 100%
 
 ---
 
@@ -160,7 +160,7 @@ Experience Platform 旨在全球范围内扩充数字体验应用。企业通常
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 受众估计值 | 受众估计值现在显示为&#x200B;**范围**，它基于采样数据的置信区间。 要了解有关估算值的更多信息，请阅读[区段生成器指南](/help/segmentation/ui/segment-builder.md#audience-properties)。 |
+| 受众估计值 | 现在，受众估计值会显示为基于取样数据的置信区间的一个&#x200B;**范围**。要了解有关估计值的更多信息，请参阅[区段生成器指南](/help/segmentation/ui/segment-builder.md#audience-properties)。 |
 
 有关详细信息，请参阅 [[!DNL Segmentation Service]  概述](../../segmentation/home.md)。
 
@@ -172,9 +172,9 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 | 功能 | 描述 |
 | --- | --- |
-| [!DNL Oracle NetSuite] 源全面可用 | [!DNL Oracle NetSuite]源现已正式可用。 您现在可以将您的[!DNL Oracle NetSuite]帐户连接到Experience Platform以摄取活动和实体数据以进行统一分析和激活。 有关详细信息，请参阅 [[!DNL Oracle NetSuite]  概述](../../sources/connectors/marketing-automation/oracle-netsuite.md)。 |
-| [!DNL PathFactory] 源全面可用 | [!DNL PathFactory]源现已正式可用。 您可以将[!DNL PathFactory]帐户连接到Experience Platform以摄取访客、会话和页面查看数据，以进行统一分析和激活。 有关详细信息，请参阅 [[!DNL PathFactory]  概述](../../sources/connectors/marketing-automation/pathfactory.md)。 |
-| [!DNL Stripe] 源全面可用 | [!DNL Stripe]源现已正式可用。 您可以将[!DNL Stripe]帐户连接到Experience Platform以摄取付款和交易数据，以进行统一分析和激活。 有关详细信息，请参阅 [[!DNL Stripe]  概述](../../sources/connectors/payments/stripe.md)。 |
+| [!DNL Oracle NetSuite] 源全面可用 | [!DNL Oracle NetSuite] 现已正式发布。现在可以将您的 [!DNL Oracle NetSuite] 帐户连接到 Experience Platform，摄取活动和实体数据，实现统一分析与激活。有关详细信息，请参阅 [[!DNL Oracle NetSuite]  概述](../../sources/connectors/marketing-automation/oracle-netsuite.md)。 |
+| [!DNL PathFactory] 源全面可用 | [!DNL PathFactory] 现已正式发布。可以将您的 [!DNL PathFactory] 帐户连接到 Experience Platform，摄取访客、会话及页面浏览数据，实现统一分析与激活。有关详细信息，请参阅 [[!DNL PathFactory]  概述](../../sources/connectors/marketing-automation/pathfactory.md)。 |
+| [!DNL Stripe] 源全面可用 | [!DNL Stripe] 现已正式发布。可以将您的 [!DNL Stripe] 帐户连接到 Experience Platform，摄取支付和交易数据，实现统一分析与激活。有关详细信息，请参阅 [[!DNL Stripe]  概述](../../sources/connectors/payments/stripe.md)。 |
 | 增强 [!DNL Azure Blob Storage] 的身份验证 | 您现在可以使用基于服务主体的身份验证，将您的 [!DNL Azure Blob Storage] 源连接到 Experience Platform。使用基于服务主体的身份验证可增强安全性、简化凭据轮换，并为您的帐户提供粒度更细的访问控制。有关详细信息，请参阅 [[!DNL Azure Blob Storage]  概述](../../sources/connectors/cloud-storage/blob.md)。 |
 
 有关更多信息，请阅读[来源概述](../../sources/home.md)。
