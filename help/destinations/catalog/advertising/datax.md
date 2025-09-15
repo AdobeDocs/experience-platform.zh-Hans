@@ -2,7 +2,7 @@
 title: Verizon MediaYahoo DataX连接
 description: DataX是一个聚合的Verizon Media/Yahoo基础架构，它托管着各种组件，使Verizon Media/Yahoo能够以安全、自动化和可扩展的方式与外部合作伙伴交换数据。
 exl-id: 7d02671d-8650-407d-9c9f-fad7da3156bc
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 65809628e8535027edb08e54e84b308777036ab2
 workflow-type: tm+mt
 source-wordcount: '798'
 ht-degree: 3%
@@ -17,7 +17,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->此目标连接器和文档页面由[!DNL Verizon Media/Yahoo]的[!DNL DataX]团队创建并维护。 如有任何查询或更新请求，请直接通过[dataops@verizonmedia.com](mailto:dataops@verizonmedia.com)联系他们
+>此目标连接器和文档页面由[!DNL Verizon Media/Yahoo]的[!DNL DataX]团队创建并维护。 如有任何查询或更新请求，请直接通过[dataoperations@yahooinc.com](mailto:dataoperations@yahooinc.com)联系他们
 
 ## 先决条件 {#prerequisites}
 
@@ -56,7 +56,7 @@ ht-degree: 3%
 >
 >将超过100个受众激活到[!DNL Verizon Media/Yahoo DataX]时，您可能会收到来自目标的速率限制错误。 将受众激活到此目标时，请尝试在一个激活数据流中激活少于100个受众。 如果需要激活更多区段，请在同一帐户上创建一个新目标。
 
-根据[DataX文档](https://developer.verizonmedia.com/datax/guide/rate-limits/)中概述的分类和受众帖子的配额限制，[!DNL DataX]是费率限制的。
+根据[!DNL DataX]DataX文档[中概述的分类和受众帖子的配额限制，](https://developer.verizonmedia.com/datax/guide/rate-limits/)是费率限制的。
 
 
 | 错误代码 | 错误消息 | 描述 |
@@ -67,7 +67,7 @@ ht-degree: 3%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Verizon Media]支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=zh-Hans#getting-started)的更多信息。
+[!DNL Verizon Media]支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started)的更多信息。
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
@@ -131,4 +131,4 @@ Experience Platform UI中的![Yahoo DataX目标卡](/help/destinations/assets/ca
 
 ## 其他资源 {#additional-resources}
 
-有关详细信息，请参阅 [!DNL DataX][&#128279;](https://developer.verizonmedia.com/datax/guide/)上的[!DNL Yahoo/Verizon Media] 文档。
+有关详细信息，请参阅[!DNL Yahoo/Verizon Media][上的 [!DNL DataX] ](https://developer.verizonmedia.com/datax/guide/)文档。
