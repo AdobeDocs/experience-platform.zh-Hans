@@ -3,9 +3,9 @@ title: 基于文件的云存储目标的IP地址允许列表
 type: Documentation
 description: 本页提供了可添加到允许列表的IP范围，以便安全地将数据从Experience Platform导出到云存储目标。
 exl-id: 0b8086aa-786e-4244-b2a5-a3f57ad59a8b
-source-git-commit: 7cf15550d7619e247052efc4d9b4c72c5d32641a
+source-git-commit: 4ae7ff58d02b46f1b213bd382d3e98b3f63819e8
 workflow-type: tm+mt
-source-wordcount: '299'
+source-wordcount: '305'
 ht-degree: 1%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->以下基于文件的云存储目标不支持此页面上记录的IP范围： *Azure Blob、[!UICONTROL Azure Data Lake Storage Gen2]和[!UICONTROL Data Landing Zone]： 不支持*。
+>以下基于文件的云存储目标不支持此页面上记录的IP范围： *Azure Blob*、[!UICONTROL Azure Data Lake Storage Gen2]、[!UICONTROL Data Landing Zone]以及托管在Microsoft Azure上的SFTP服务器。
 
 ## 概述 {#overview}
 
