@@ -2,10 +2,10 @@
 title: Experience Platform预发行说明
 description: Adobe Experience Platform最新发行说明预览。
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: 491e0881167e3fb383a5a611924bd0d1df07b441
+source-git-commit: c592d007932835f5263d7f78b2e8155790313840
 workflow-type: tm+mt
-source-wordcount: '1271'
-ht-degree: 43%
+source-wordcount: '1217'
+ht-degree: 45%
 
 ---
 
@@ -46,9 +46,8 @@ Adobe Experience Platform AI Assistant是一种对话式体验，可用于跨Ado
 
 | 功能 | 描述 |
 | --- | --- |
-| Agent Orchestrator | Adobe Experience Platform Agent Orchestrator是您的Experience Cloud应用程序智能助手。 当您提出问题或请求帮助时，Agent Orchestrator会自动致电专业代理，以便为您提供正确的答案。 Agent Orchestrator会记住您的对话历史记录，使您能够自然地发展以前的问题，而无需重复上下文，并结合来自多个代理的洞察，为您提供清晰、统一的响应。 您可以通过AI Assistant对话界面利用Agent Orchestrator的功能。 |
+| Agent Orchestrator | Adobe Experience Platform Agent Orchestrator是支持AI Assistant的智能层。 当您提出问题或请求帮助时，Agent Orchestrator会自动致电专业代理，以便为您提供正确的答案。 Agent Orchestrator会记住您的对话历史记录，使您能够自然地发展以前的问题，而无需重复上下文，并结合来自多个代理的洞察，为您提供清晰、统一的响应。 |
 | Audience Agent | 通过Audience Agent，您可以查看关于受众的分析，包括检测受众规模的显着变化、检测重复的受众、探索受众库，以及检索受众规模。 |
-| 字段发现代理 | Field Discovery Agent帮助用户自动发现和了解其架构和数据集中的数据字段。 此智能代理会分析您的数据结构，并提供有关字段使用、关系的洞察和优化建议。 |
 
 有关更多信息，请阅读 [AI 助手概述](../ai-assistant/home.md)。
 
