@@ -2,10 +2,10 @@
 title: Adobe Content Analytics扩展的发行说明
 description: Adobe Experience Platform中的Content Analytics标记扩展的最新发行说明。
 exl-id: 37b34915-655b-40de-b17b-43028c579e37
-source-git-commit: 77d19ab813f881cd3c48c27ed4a9ac02e268e23f
+source-git-commit: dcd880ed73cc8294e6019c43021cb27ea6dd9995
 workflow-type: tm+mt
-source-wordcount: '282'
-ht-degree: 1%
+source-wordcount: '401'
+ht-degree: 0%
 
 ---
 
@@ -15,6 +15,7 @@ ht-degree: 1%
 
 | 版本 | 日期 | 修复 |
 |---|---|---|
+| 1.0.49 | 2025年9月12日 | <ul><li>修复了一个小错误，如果用户没有数据流权限，该错误会导致标记扩展UI完全无法加载。 UI现在将在&#x200B;**[!UICONTROL 从列表]**&#x200B;选择数据流选项中显示权限警告，并且仍允许用户手动输入值。</li><li>更新了l10n的路径问题。</li><li>修复了属于非图像父元素的某些图像未正确捕获这些子图像元素的资产点击量的问题。</li><li>如果用户在`alloy`以外的其他实例名称的标记中配置了WebSDK，则Content Analytics库将检测WebSDK库的第一个实例，并使用它发送Content Analytics事件。</li></ul> |
 | 1.0.48 | 2025年8月25日 | <ul><li>添加了对跟踪文档影子根DOM元素中资源的支持。</li></ul> |
 | 1.0.47 | 2025年7月23日 | <ul><li>修复了未启用体验时发生的错误，该错误会导致体验的正则表达式检查失败。 此问题会导致无法收集Content Analytics数据。</li><li>解决了默认语言设置存在的一个问题，该问题导致无法向某些未在Experience Cloud中设置主要默认语言的用户显示标记UI。</li></ul> |
 | 1.0.46 | 2025年6月18日 | <ul><li>在尝试保存扩展配置时添加了Toast通知（如果生产数据流不存在）。</li><li>通过改为将字符串化的有效负载内容置于控制台，临时修复了Content Analytics有效负载的可见性问题。</li><li>为扩展UI添加了本地化支持。</li><li>部分修复了导致扩展UI内容周围有额外填充的CSS问题。</li></ul> |
