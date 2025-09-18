@@ -4,7 +4,7 @@ title: 使用分段服务API创建区段定义
 type: Tutorial
 description: 按照本教程了解如何使用Adobe Experience Platform分段服务API来开发、测试、预览和保存区段定义。
 exl-id: 78684ae0-3721-4736-99f1-a7d1660dc849
-source-git-commit: d9fc1fa6a1bbc6b13b2600a5ec9400a0b488056a
+source-git-commit: a374d261e3b34b30869f1a9e8486d52f5bd658cb
 workflow-type: tm+mt
 source-wordcount: '1067'
 ht-degree: 6%
@@ -72,7 +72,7 @@ ht-degree: 6%
 
 ### 如何生成估算
 
-启用实时客户配置文件的数据被摄取到Experience Platform后，将存储在配置文件数据存储中。 当将记录摄取到配置文件存储中增加或减少总配置文件计数超过5%时，将触发取样作业以更新计数。 如果配置文件数的变化不超过5%，则取样作业将每周自动运行。
+启用实时客户配置文件的数据被摄取到Experience Platform后，将存储在配置文件数据存储中。 当将记录摄取到配置文件存储中增加或减少总配置文件计数超过3%时，将触发取样作业以更新计数。 如果配置文件数的变化不超过3%，则取样作业将每周自动运行。
 
 触发示例的方式取决于所使用的摄取类型：
 
