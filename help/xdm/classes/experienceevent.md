@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM ExperienceEvent类
 description: 了解XDM ExperienceEvent类和事件数据建模的最佳实践。
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: f00b195567c22f69c05909e76906c8770da4b9d0
 workflow-type: tm+mt
-source-wordcount: '2766'
+source-wordcount: '2777'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 | 属性 | 描述 |
 | --- | --- |
-| `_id`<br>**（必需）** | Experience Event Class `_id`字段唯一标识摄取到Adobe Experience Platform中的各个事件。 此字段用于跟踪单个事件的唯一性，防止数据重复，并在下游服务中查找该事件。<br><br>在检测到重复事件的地方，Experience Platform应用程序和服务可能会以不同的方式处理重复。 例如，如果配置文件存储中已存在具有相同`_id`的事件，则删除配置文件服务中的重复事件。<br><br>在某些情况下，`_id`可以是[通用唯一标识符(UUID)](https://datatracker.ietf.org/doc/html/rfc4122)或[全局唯一标识符(GUID)](https://learn.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0)。<br><br>如果从源连接流式传输数据或直接从Parquet文件中摄取，则应当通过连接特定字段组合生成此值，这些字段组合使事件具有唯一性。 可连接的事件示例包括主ID、时间戳、事件类型等。 连接值必须为`uri-reference`格式字符串，这意味着必须删除任何冒号字符。 之后，应该使用SHA-256或您选择的其他算法对拼接值进行哈希处理。<br><br>请务必注意，**此字段不表示与个人**&#x200B;相关的身份，而是数据本身的记录。 与人员相关的身份数据应委托给兼容字段组提供的[身份字段](../schema/composition.md#identity)。 |
+| `_id`<br>**（必需）** | Experience Event Class `_id`字段唯一标识摄取到Adobe Experience Platform中的各个事件。 此字段用于跟踪单个事件的唯一性，防止数据重复，并在下游服务中查找该事件。<br><br>在检测到重复事件的地方，Experience Platform应用程序和服务可能会以不同的方式处理重复。 例如，如果配置文件存储中已存在具有相同`_id`的事件，则删除配置文件服务中的重复事件。 但是，这些事件仍将记录在数据湖中。<br><br>在某些情况下，`_id`可以是[通用唯一标识符(UUID)](https://datatracker.ietf.org/doc/html/rfc4122)或[全局唯一标识符(GUID)](https://learn.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0)。<br><br>如果从源连接流式传输数据或直接从Parquet文件中摄取，则应当通过连接特定字段组合生成此值，这些字段组合使事件具有唯一性。 可连接的事件示例包括主ID、时间戳、事件类型等。 连接值必须为`uri-reference`格式字符串，这意味着必须删除任何冒号字符。 之后，应该使用SHA-256或您选择的其他算法对拼接值进行哈希处理。<br><br>请务必注意，**此字段不表示与个人**&#x200B;相关的身份，而是数据本身的记录。 与人员相关的身份数据应委托给兼容字段组提供的[身份字段](../schema/composition.md#identity)。 |
 | `eventMergeId` | 如果使用[Adobe Experience Platform Web SDK](/help/web-sdk/home.md)摄取数据，则表示导致创建记录的摄取批次的ID。 此字段在数据摄取时由系统自动填充。 不支持在Web SDK实施的上下文之外使用此字段。 |
 | `eventType` | 一个字符串，它指示事件的类型或类别。 如果要区分同一架构和数据集中的不同事件类型（例如，将产品查看事件与零售公司的添加到购物车事件区分开来），则可以使用此字段。<br><br>此属性的标准值在[附录部分](#eventType)中提供，包括预期使用案例的说明。 此字段是可扩展的枚举，这意味着您还可以使用自己的事件类型字符串对正在跟踪的事件进行分类。<br><br>`eventType`限制您在应用程序上每次点击只使用单个事件，因此您必须使用计算字段让系统知道哪个事件最重要。 有关详细信息，请参阅[计算字段的最佳实践](#calculated)部分。 |
 | `producedBy` | 描述事件生成者或来源的字符串值。 如果需要，可以使用此字段过滤掉某些事件生成器，以用于分段目的。<br><br>该属性的某些建议值在[附录部分](#producedBy)中提供。 此字段是可扩展的枚举，这意味着您还可以使用自己的字符串来表示不同的事件生成器。 |
@@ -38,7 +38,7 @@ ht-degree: 0%
 
 ### 时间戳 {#timestamps}
 
-事件架构的根`timestamp`字段只能&#x200B;**2&rbrace;表示事件本身的观察结果，并且必须发生在过去。**&#x200B;但是，事件&#x200B;**必须**&#x200B;从1970年起发生。 如果分段用例需要使用将来可能发生的时间戳，则这些值必须限制在体验事件架构中的其他位置。
+事件架构的根`timestamp`字段只能&#x200B;**2}表示事件本身的观察结果，并且必须发生在过去。**&#x200B;但是，事件&#x200B;**必须**&#x200B;从1970年起发生。 如果分段用例需要使用将来可能发生的时间戳，则这些值必须限制在体验事件架构中的其他位置。
 
 例如，如果旅游和酒店业的某家公司正在建模航班预订事件，则班级`timestamp`字段表示观察到预订事件的时间。 与事件相关的其他时间戳（如旅行预订的开始日期）应捕获在标准或自定义字段组提供的单独字段中。
 
@@ -54,7 +54,7 @@ ht-degree: 0%
 
 如果您是通过UI将数据手动摄取到Experience Platform，请参阅[计算字段](../../data-prep/ui/mapping.md#calculated-fields)指南，以了解有关如何创建计算字段的特定步骤。
 
-如果您要使用源连接将数据流式传输到Experience Platform，则可以配置源以利用计算字段。 有关如何在配置连接时实施计算字段的说明，请参阅特定源[&#128279;](../../sources/home.md)的文档。
+如果您要使用源连接将数据流式传输到Experience Platform，则可以配置源以利用计算字段。 有关如何在配置连接时实施计算字段的说明，请参阅特定源[的](../../sources/home.md)文档。
 
 ## 兼容的架构字段组 {#field-groups}
 
@@ -155,7 +155,7 @@ Adobe提供了多个标准字段组以用于[!DNL XDM ExperienceEvent]类。 以
 | `media.adSkip` | 此事件在跳过广告时发出信号。 |
 | `media.adStart` | 此事件表示广告的开始。 |
 | `media.bitrateChange` | 此事件在比特率发生更改时发出信号。 |
-| `media.bufferStart` | 缓冲开始时发送`media.bufferStart`事件类型。 没有特定的`bufferResume`事件类型；在发生`bufferStart`事件后发送`play`事件时，将视为已恢复缓冲。 |
+| `media.bufferStart` | 缓冲开始时发送`media.bufferStart`事件类型。 没有特定的`bufferResume`事件类型；在发生`play`事件后发送`bufferStart`事件时，将视为已恢复缓冲。 |
 | `media.chapterComplete` | 此事件表示章节结束。 |
 | `media.chapterSkip` | 当用户向前或向后跳到其他部分或章节时，将触发此事件。 |
 | `media.chapterStart` | 此事件表示章节的开始。 |
@@ -163,7 +163,7 @@ Adobe提供了多个标准字段组以用于[!DNL XDM ExperienceEvent]类。 以
 | `media.error` | 此事件表示媒体播放期间发生错误。 |
 | `media.pauseStart` | 此事件跟踪何时发生`pauseStart`事件。 当用户启动媒体播放暂停时，将触发此事件。 没有恢复事件类型。 在`pauseStart`后发送播放事件时推断为恢复。 |
 | `media.ping` | `media.ping`事件类型用于指示正在进行的播放状态。 对于主内容，在播放期间必须每10秒发送一次此事件，从播放开始后的10秒开始。 对于广告内容，必须在广告跟踪期间每秒发送一次。 Ping事件不应在请求正文中包含参数映射。 |
-| `media.play` | 当播放器从其他状态(如`buffering,` `paused` （用户恢复时）或`error` （恢复时），包括自动播放等场景)转换为`playing`状态时发送`media.play`事件类型。 此事件由播放器的`on('Playing')`回调触发。 |
+| `media.play` | 当播放器从其他状态(如`media.play` `playing` （用户恢复时）或`buffering,` （恢复时），包括自动播放等场景)转换为`paused`状态时发送`error`事件类型。 此事件由播放器的`on('Playing')`回调触发。 |
 | `media.sessionComplete` | 当到达主内容的结尾时，将发送此事件。 |
 | `media.sessionEnd` | 当用户放弃查看并且不太可能返回时，`media.sessionEnd`事件类型会通知Media Analytics后端立即关闭会话。 如果未发送此事件，则会话将在处于不活动状态10分钟后超时，或者播放头未移动30分钟后超时。 任何使用该会话ID的后续媒体调用都将被忽略。 |
 | `media.sessionStart` | `media.sessionStart`事件类型随会话启动调用一起发送。 在收到响应时，将从Location标头中提取会话ID，并将其用于对收集服务器的所有后续事件调用。 |
