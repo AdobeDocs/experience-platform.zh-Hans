@@ -64,7 +64,7 @@ ht-degree: 6%
 >此步骤仅适用于某些受众流目标。 如果您的目标没有&#x200B;**[!UICONTROL 映射]**&#x200B;步骤，请跳至[受众计划](#scheduling)。
 >
 >将受众激活到流式目标时，除了目标配置文件属性外，还必须映射&#x200B;*至少一个目标身份命名空间*。 否则，受众将不会激活到目标平台。
->> ![显示强制标识命名空间映射的映射步骤图像。](../assets/ui/activate-segment-streaming-destinations/identity-mapping-mandatory.png) {zoomable="yes"}
+>&#x200B;> ![显示强制标识命名空间映射的映射步骤图像。](../assets/ui/activate-segment-streaming-destinations/identity-mapping-mandatory.png) {zoomable="yes"}
 
 
 某些受众流目标要求您选择源属性或身份命名空间以映射为目标中的目标身份。
