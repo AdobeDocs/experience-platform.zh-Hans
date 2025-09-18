@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；映射csv；映射csv文
 title: 数据准备UI指南
 description: 了解如何在Experience Platform UI中使用数据准备函数将CSV文件映射到XDM架构。
 exl-id: fafa4aca-fb64-47ff-a97d-c18e58ae4dae
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: c9638cdca887f439c57f1dc01f93d63016869b29
 workflow-type: tm+mt
-source-wordcount: '1474'
+source-wordcount: '1505'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 阅读本指南，了解如何使用Adobe Experience Platform用户界面中的[数据准备](../home.md)映射函数将CSV文件映射到[体验数据模型(XDM)架构](../../xdm/home.md)。
 
-## 开始使用
+## 快速入门
 
 本教程需要您实际了解以下Experience Platform组件：
 
@@ -114,7 +114,7 @@ ht-degree: 0%
 
 >[!BEGINTABS]
 
->[!TAB 从流导入映射]
+>[!TAB 从流]导入映射
 
 如果您有多个基于相似源文件和目标架构的数据流，则可以导入现有映射并将其重新用于新数据流。
 
@@ -138,7 +138,7 @@ ht-degree: 0%
 
 ![上载模板窗口，该窗口显示用于下载和上载映射的导出csv文件的选项。](../images/ui/mapping/upload_template.png)
 
-+++选择以查看导出的映射文件的示例
++++选择以查看导出映射文件的示例
 
 ![映射模板的已下载csv文件。](../images/ui/mapping/mapping_csv_file.png)
 
@@ -151,6 +151,10 @@ ht-degree: 0%
 >[!ENDTABS]
 
 映射完成后，您现在可以选择&#x200B;**[!UICONTROL 完成]**，然后继续下一步以完成数据流。
+
+>[!TIP]
+>
+>完成创建映射后，请等待最多10分钟再开始数据摄取。 此等待期可确保新映射完全保存并在系统中可用。
 
 ![具有完整映射集的映射接口。](../images/ui/mapping/completed_mappings.png)
 
