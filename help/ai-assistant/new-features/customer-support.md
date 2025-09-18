@@ -62,5 +62,5 @@ ht-degree: 5%
 
 有关更多信息，请观看以下视频，了解如何使用产品支持代理在不离开工作流程的情况下无缝进行故障排除。
 
->[!VIDEO](https://video.tv.adobe.com/v/3443183?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3443193?learn=on&captions=chi_hans)
 
