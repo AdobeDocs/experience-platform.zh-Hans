@@ -1,11 +1,11 @@
 ---
 title: 产品支持代理
-description: 了解如何使用AI Assistant中的产品支持代理来简化故障排除和客户支持票证归档流程。
+description: 了解如何在 AI 助手中使用产品支持代理来简化故障排查和客户支持工单提交流程。
 exl-id: 263b8a44-8902-42b9-8390-d7da8e9b5129
 source-git-commit: 6ab9302a40547349c8d0390baafd8591ed6859e1
 workflow-type: tm+mt
 source-wordcount: '402'
-ht-degree: 0%
+ht-degree: 5%
 
 ---
 
@@ -62,5 +62,5 @@ ht-degree: 0%
 
 有关更多信息，请观看以下视频，了解如何使用产品支持代理在不离开工作流程的情况下无缝进行故障排除。
 
->[!VIDEO](https://video.tv.adobe.com/v/3443193?learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/3443183?learn=on)
 
