@@ -3,25 +3,16 @@ keywords: linkedin连接；linkedin连接；linkedin目标；linkedin；
 title: Linkedin匹配的受众连接
 description: 根据散列电子邮件，激活LinkedIn营销活动的用户档案，以实现受众定位、个性化和抑制。
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
-source-git-commit: 13b95db846d70c36233cf8ded491d19e1c93e4c0
+source-git-commit: 653f43ac6afb25445fe8ef3c2832be8f1c4723fe
 workflow-type: tm+mt
-source-wordcount: '1329'
-ht-degree: 6%
+source-wordcount: '1234'
+ht-degree: 5%
 
 ---
 
 # [!DNL LinkedIn Matched Audiences]连接
 
 ## 概述 {#overview}
-
->[!IMPORTANT]
->
->* 从2025年9月9日开始，您可以在目标目录中并排看到两张&#x200B;**[!DNL LinkedIn Matched Audiences]**&#x200B;卡。 这是由于目标服务内部升级造成的。现有的&#x200B;**[!DNL LinkedIn Matched Audiences]**&#x200B;目标连接器已重命名为&#x200B;**[!UICONTROL （已弃用） LinkedIn匹配受众]**，现在您可以获得名为&#x200B;**[!UICONTROL LinkedIn匹配受众]**&#x200B;的新信息卡。
->* 在目录中使用新的&#x200B;**[!UICONTROL LinkedIn匹配受众]**&#x200B;连接获取新的激活数据流。 如果您有任何指向&#x200B;**[!UICONTROL （已弃用）LinkedIn匹配受众]**&#x200B;目标的活动数据流，这些数据流将自动更新，因此您无需执行任何操作。
->* 新的&#x200B;**[!UICONTROL LinkedIn匹配受众]**&#x200B;连接不再支持[!DNL IDFA]标识。
->* 如果您是通过[流服务API](https://developer.adobe.com/experience-platform-apis/references/destinations/)创建数据流，则必须将[!DNL flow spec ID]和[!DNL connection spec ID]更新为以下值：
->   * 流量规范 ID：`963604d1-811d-4ce4-ac66-1fc78bde7c42`
->   * 连接规范 ID：`393a7ce1-e527-4fdb-8d99-0b11dc910279`
 
 根据散列电子邮件和移动ID，激活[!DNL LinkedIn]营销活动的配置文件，以实现受众定位、个性化和抑制。
 
@@ -36,6 +27,11 @@ Adobe Experience Platform UI中的![LinkedIn目标](../../assets/catalog/social/
 ## 支持的身份 {#supported-identities}
 
 [!DNL LinkedIn Matched Audiences]支持激活下表中描述的标识。 了解有关[标识](/help/identity-service/features/namespaces.md)的更多信息。
+
+>[!IMPORTANT]
+>
+>从2025年9月开始，[!DNL LinkedIn Matched Audiences]目标不再支持[!DNL IDFA]（广告商标识符）身份。  此更改是由于LinkedIn的要求而做出的，与任何Experience Platform目标服务升级无关。
+
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
@@ -96,7 +92,7 @@ Adobe Experience Platform UI中的![LinkedIn目标](../../assets/catalog/social/
 >[!NOTE]
 >
 >来自未经过哈希处理的命名空间的数据在激活时会由[!DNL Experience Platform]自动进行哈希处理。
->&#x200B;> 属性源数据不会自动进行哈希处理。
+>> 属性源数据不会自动进行哈希处理。
 > 
 > 在[标识映射](../../ui/activate-segment-streaming-destinations.md#mapping)步骤中，当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以便在激活时让[!DNL Experience Platform]自动对数据进行哈希处理。
 > 
@@ -114,7 +110,7 @@ Adobe Experience Platform UI中的![LinkedIn目标](../../assets/catalog/social/
 
 以下视频还演示了配置[!DNL LinkedIn Matched Audiences]目标和激活受众的步骤。
 
->[!VIDEO](https://video.tv.adobe.com/v/3411783/?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 >[!NOTE]
 >
@@ -138,7 +134,7 @@ LinkedIn令牌每60天过期一次。 您可以从&#x200B;**[[!UICONTROL 帐户]
    ![筛选以仅显示LinkedIn帐户](/help/destinations/assets/catalog/social/linkedin/refresh-oauth-filters.png)
 3. 选择要刷新的帐户，选择省略号并选择&#x200B;**[!UICONTROL 编辑详细信息]**。
    ![选择“编辑详细信息”控件](/help/destinations/assets/catalog/social/linkedin/refresh-oauth-edit-details.png)
-4. 在模式窗口中，选择&#x200B;**[!UICONTROL 重新连接OAuth]**&#x200B;并使用您的LinkedIn凭据重新进行身份验证。
+4. 在模式窗口中，选择&#x200B;**[!UICONTROL 重新连接OAuth]**并使用您的LinkedIn凭据重新进行身份验证。
    使用Reconnect OAuth选项的![模式窗口](/help/destinations/assets/catalog/social/linkedin/reconnect-oauth-control.png)
 
 >[!SUCCESS]

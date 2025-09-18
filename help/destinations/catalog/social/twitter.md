@@ -2,24 +2,16 @@
 title: Twitter自定义受众连接
 description: 在Twitter中定位现有的关注者和客户，并通过激活在Adobe Experience Platform中构建的受众来创建相关的再营销活动
 exl-id: fd244e58-cd94-4de7-81e4-c321eb673b65
-source-git-commit: 5b529a1af62c2745c3226029de1a1ff508bddfc7
+source-git-commit: ee7e85afd48f7b1c40f0152ad76c8c718b8f1432
 workflow-type: tm+mt
-source-wordcount: '971'
-ht-degree: 6%
+source-wordcount: '855'
+ht-degree: 5%
 
 ---
 
 # [!DNL Twitter Custom Audiences]连接
 
 ## 概述 {#overview}
-
->[!IMPORTANT]
->
->* 从2025年9月9日开始，您可以在目标目录中并排看到两张&#x200B;**[!DNL Twitter Custom Audiences]**&#x200B;卡。 这是由于目标服务内部升级造成的。现有的&#x200B;**[!DNL Twitter Custom Audiences]**&#x200B;目标连接器已重命名为&#x200B;**[!UICONTROL （已弃用） Twitter自定义受众]**，现在您可以使用名为&#x200B;**[!UICONTROL Twitter自定义受众]**&#x200B;的新信息卡。
->* 在目录中使用新的&#x200B;**[!UICONTROL Twitter自定义受众]**&#x200B;连接获取新的激活数据流。 如果您有任何到&#x200B;**[!UICONTROL （已弃用） Twitter自定义受众]**&#x200B;目标的活动数据流，则会自动更新，因此您无需执行任何操作。
->* 如果您是通过[流服务API](https://developer.adobe.com/experience-platform-apis/references/destinations/)创建数据流，则必须将[!DNL flow spec ID]和[!DNL connection spec ID]更新为以下值：
->   * 流量规范 ID：`903da9e4-7cf5-442a-9498-a237e4f064f9`
->   * 连接规范 ID：`9eb18875-a095-4b89-854e-39b9e29ccd41`
 
 在Twitter中定位现有的关注者和客户，并通过激活在Adobe Experience Platform中构建的受众来创建相关的再营销活动。
 
@@ -32,7 +24,7 @@ ht-degree: 6%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Twitter Custom Audiences]支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=zh-Hans#getting-started)的更多信息。
+[!DNL Twitter Custom Audiences]支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started)的更多信息。
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
