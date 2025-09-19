@@ -3,9 +3,9 @@ keywords: linkedin连接；linkedin连接；linkedin目标；linkedin；
 title: Linkedin匹配的受众连接
 description: 根据散列电子邮件，激活LinkedIn营销活动的用户档案，以实现受众定位、个性化和抑制。
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
-source-git-commit: 653f43ac6afb25445fe8ef3c2832be8f1c4723fe
+source-git-commit: 6b3b830f822cc02c78d6f593c0a949d3e19ada37
 workflow-type: tm+mt
-source-wordcount: '1234'
+source-wordcount: '1250'
 ht-degree: 5%
 
 ---
@@ -30,7 +30,7 @@ Adobe Experience Platform UI中的![LinkedIn目标](../../assets/catalog/social/
 
 >[!IMPORTANT]
 >
->从2025年9月开始，[!DNL LinkedIn Matched Audiences]目标不再支持[!DNL IDFA]（广告商标识符）身份。  此更改是由于LinkedIn的要求而做出的，与任何Experience Platform目标服务升级无关。
+>从2025年9月开始，您无法再将[!DNL IDFA]映射为目标标识，因为[!DNL IDFA]目标不再支持[!DNL LinkedIn Matched Audiences]。 有关详细信息，请参阅[!DNL LinkedIn Matched Audiences]集成[文档](https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users?view=li-lms-2025-07&tabs=http#idtypes)。 此更改是由于LinkedIn的要求而做出的，与任何Experience Platform目标服务升级无关。
 
 
 | 目标身份 | 描述 | 注意事项 |
@@ -92,7 +92,7 @@ Adobe Experience Platform UI中的![LinkedIn目标](../../assets/catalog/social/
 >[!NOTE]
 >
 >来自未经过哈希处理的命名空间的数据在激活时会由[!DNL Experience Platform]自动进行哈希处理。
->&#x200B;> 属性源数据不会自动进行哈希处理。
+>> 属性源数据不会自动进行哈希处理。
 > 
 > 在[标识映射](../../ui/activate-segment-streaming-destinations.md#mapping)步骤中，当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以便在激活时让[!DNL Experience Platform]自动对数据进行哈希处理。
 > 
@@ -110,7 +110,7 @@ Adobe Experience Platform UI中的![LinkedIn目标](../../assets/catalog/social/
 
 以下视频还演示了配置[!DNL LinkedIn Matched Audiences]目标和激活受众的步骤。
 
->[!VIDEO](https://video.tv.adobe.com/v/3411783/?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 >[!NOTE]
 >
@@ -134,7 +134,7 @@ LinkedIn令牌每60天过期一次。 您可以从&#x200B;**[[!UICONTROL 帐户]
    ![筛选以仅显示LinkedIn帐户](/help/destinations/assets/catalog/social/linkedin/refresh-oauth-filters.png)
 3. 选择要刷新的帐户，选择省略号并选择&#x200B;**[!UICONTROL 编辑详细信息]**。
    ![选择“编辑详细信息”控件](/help/destinations/assets/catalog/social/linkedin/refresh-oauth-edit-details.png)
-4. 在模式窗口中，选择&#x200B;**[!UICONTROL 重新连接OAuth]**&#x200B;并使用您的LinkedIn凭据重新进行身份验证。
+4. 在模式窗口中，选择&#x200B;**[!UICONTROL 重新连接OAuth]**并使用您的LinkedIn凭据重新进行身份验证。
    使用Reconnect OAuth选项的![模式窗口](/help/destinations/assets/catalog/social/linkedin/reconnect-oauth-control.png)
 
 >[!SUCCESS]
