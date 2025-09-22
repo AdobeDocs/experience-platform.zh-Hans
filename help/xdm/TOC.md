@@ -5,10 +5,10 @@ breadcrumb-title: 体验数据模型 (XDM) 指南
 user-guide-description: 浏览 Experience Platform 中的体验数据模型 (XDM) 系统概述，并了解如何使用类和架构字段组使体验数据标准化。
 feature: Schemas
 role: Developer
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1385f91694f9b6dfe96b9d424af0da6f2a1443c2
 workflow-type: tm+mt
-source-wordcount: '698'
-ht-degree: 49%
+source-wordcount: '703'
+ht-degree: 48%
 
 ---
 
@@ -112,6 +112,7 @@ ht-degree: 49%
       * [Partner Prospect详细信息（示例）](./field-groups/prospect-profile/partner-prospect-details.md)
    * XDM ExperienceEvent {#event}
       * [Adobe Analytics完整扩展](./field-groups/event/analytics-full-extension.md)
+      * [Adobe Advertising Cloud完整扩展](./field-groups/event/advertising-full-extension.md)
       * [广告详细信息](./field-groups/event/advertising-details.md)
       * [应用程序详细信息](./field-groups/event/application-details.md)
       * [余额转帐](./field-groups/event/balance-transfers.md)
@@ -203,7 +204,7 @@ ht-degree: 49%
    * [媒体收集详细信息](./data-types/media-collection-details.md)
    * [媒体事件信息](./data-types/media-event-information.md)
    * [媒体报告详细信息](./data-types/media-reporting-details.md)
-   * [顺序](./data-types/order.md)
+   * [订购](./data-types/order.md)
    * [POI详细信息](./data-types/poi-details.md)
    * [POI交互](./data-types/poi-interaction.md)
    * [付款项目](./data-types/payment-item.md)
