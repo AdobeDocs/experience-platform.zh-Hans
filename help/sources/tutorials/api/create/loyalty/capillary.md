@@ -1,16 +1,20 @@
 ---
 title: 使用流量服务API将毛细管连接到Experience Platform
 description: 了解如何使用API将Capillary连接到Experience Platform。
-hide: true
-hidefromtoc: true
-source-git-commit: 7119ca51e0a4db09c8adb68bcde41ab3837439d1
+badge: Beta 版
+exl-id: 763792d0-d5dc-40ac-b86a-6a0d26463b71
+source-git-commit: 91d6206c6ce387fde365fa72dc79ca79fc0e46fa
 workflow-type: tm+mt
-source-wordcount: '1112'
-ht-degree: 1%
+source-wordcount: '1150'
+ht-degree: 2%
 
 ---
 
 # 使用[!DNL Capillary Streaming Events] API将[!DNL Flow Service]连接到Experience Platform
+
+>[!AVAILABILITY]
+>
+>[!DNL Capillary Streaming Events]源为测试版。 有关使用测试版标记源的更多信息，请阅读源概述中的[条款和条件](../../../../home.md#terms-and-conditions)。
 
 阅读本指南，了解如何使用[!DNL Capillary Streaming Events]和[[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/)将数据从[!DNL Capillary]帐户流式传输到Adobe Experience Platform。
 
@@ -39,7 +43,7 @@ ht-degree: 1%
 4. 创建&#x200B;**目标连接**&#x200B;以确保您的数据登陆到数据湖。
 5. 使用数据准备创建将[!DNL Capillary]源字段映射到正确XDM字段的映射。
 6. 使用您的`sourceConnectionId`、`targetConnectionId`和`mappingID`创建数据流
-7. 使用单个示例用户档案/交易事件进行eTest以验证您的数据流。
+7. 使用单个示例用户档案/交易事件进行测试，以验证您的数据流。
 
 >[!ENDSHADEBOX]
 
@@ -230,9 +234,9 @@ curl -X POST \
 
 >[!ENDTABS]
 
-### 受支持的事件
+<!--### Supported Events
 
-[!DNL Capillary]源支持以下事件：
+The [!DNL Capillary] source supports the following events:
 
 * `pointsIssued`
 * `tierDowngraded`
@@ -247,8 +251,7 @@ curl -X POST \
 * `pointsRedeemed`
 * `transactionAdded`
 * `tierRenewed`
-* `customerUpdated`
-
+* `customerUpdated`-->
 
 ### 历史数据迁移
 
@@ -319,11 +322,15 @@ curl -X POST \
 
 | 源架构 | 目标架构 |
 |------------------------------|-------------------------------|
-| `identityMap.email.id` | `xdm:identityMap.email` |
-| `loyalty.points` | `xdm:loyaltyPoints` |
-| `loyalty.tier` | `xdm:loyaltyTier` |
+| `identityMap.email.id` | `xdm:identityMap.email[0].id` |
+| `loyalty.points` | `xdm:loyalty.points` |
+| `loyalty.tier` | `xdm:loyalty.tier` |
 | `commerce.order.priceTotal` | `xdm:commerce.order.priceTotal` |
 | `productLineItems.SKU` | `xdm:productListItems.SKU` |
+
+>[!TIP]
+>
+>您可以在准备映射数据时，为[和](../../../../images/tutorials/create/capillary/mappings.zip)下载[!DNL Capillary]事件和配置文件映射[将文件导入数据准备](../../../../../data-prep/ui/mapping.md#import-mapping)。
 
 ### 创建数据流 {#flow}
 

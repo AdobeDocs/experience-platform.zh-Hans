@@ -1,16 +1,21 @@
 ---
 title: 毛细管流事件概述
 description: 了解如何将数据从Capillary流式传输到Experience Platform。
-hide: true
-hidefromtoc: true
-source-git-commit: 7b733831932c48240340b0a2136e15f5d2144635
+last-substantial-update: 2025-09-23T00:00:00Z
+badge: Beta 版
+exl-id: 3b8eb2f6-3b4a-4b91-89d4-b6d9027c6ab4
+source-git-commit: 91d6206c6ce387fde365fa72dc79ca79fc0e46fa
 workflow-type: tm+mt
-source-wordcount: '273'
+source-wordcount: '295'
 ht-degree: 4%
 
 ---
 
 # [!DNL Capillary Streaming Events]
+
+>[!AVAILABILITY]
+>
+>[!DNL Capillary Streaming Events]源为测试版。 有关使用测试版标记源的更多信息，请阅读源概述中的[条款和条件](../../home.md#terms-and-conditions)。
 
 [!DNL Capillary Technologies]是一个领先的忠诚度和参与平台，受到全球300多个品牌的信任。 使用[!DNL Capillary Streaming Events]源使您的企业能够无缝地将[!DNL Capillary]中的客户个人资料、忠诚度数据和事务性事件流式传输到Adobe Experience Platform中。 连接您的[!DNL Capillary]源以启用实时个性化、高级受众分段和全渠道营销活动编排。
 

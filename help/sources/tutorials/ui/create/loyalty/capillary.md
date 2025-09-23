@@ -1,16 +1,20 @@
 ---
-title: 使用UI将毛细管连接到Experience Platform
+title: 使用UI将Capillary连接到Experience Platform
 description: 了解如何使用UI将Capillary连接到Experience Platform
-hide: true
-hidefromtoc: true
-source-git-commit: 7b733831932c48240340b0a2136e15f5d2144635
+badge: Beta 版
+exl-id: c90e6500-b92c-44ba-8de6-84e772bd9db1
+source-git-commit: 91d6206c6ce387fde365fa72dc79ca79fc0e46fa
 workflow-type: tm+mt
-source-wordcount: '781'
+source-wordcount: '827'
 ht-degree: 5%
 
 ---
 
-# 使用UI将[!DNL Capillary]连接到Experience Platform
+# 使用UI将[!DNL Capillary Streaming Events]连接到Experience Platform
+
+>[!AVAILABILITY]
+>
+>[!DNL Capillary Streaming Events]源为测试版。 有关使用测试版标记源的更多信息，请阅读源概述中的[条款和条件](../../../../home.md#terms-and-conditions)。
 
 阅读本指南，了解如何使用Experience Platform用户界面中的源工作区将您的[!DNL Capillary]数据库连接到Adobe Experience Platform。
 
@@ -74,13 +78,17 @@ ht-degree: 5%
 | --- | --- |
 | 数据流名称 | 数据流的名称。  默认情况下，这将使用正在导入的文件的名称。 |
 | 描述 | （可选）数据流的简短说明。 |
-| 警报 | Experience Platform可生成用户可以订阅的基于事件的警报，这些选项全部为正在运行的数据流以触发这些警报。  有关详细信息，请阅读[警报概述](../../alerts.md) <ul><li>**源数据流运行开始**：选择此警报以在数据流运行开始时接收通知。</li><li>**源数据流运行成功**：选择此警报以在数据流结束且没有任何错误时接收通知。</li><li>**源数据流运行失败**：选择此警报以在数据流运行结束时发生任何错误时接收通知。</li></ul> |
+| 警报 | Experience Platform可生成用户可以订阅的基于事件的警报，这些选项允许正在运行的数据流触发这些警报。  有关详细信息，请阅读[警报概述](../../alerts.md) <ul><li>**源数据流运行开始**：选择此警报以在数据流运行开始时接收通知。</li><li>**源数据流运行成功**：选择此警报以在数据流结束且没有任何错误时接收通知。</li><li>**源数据流运行失败**：选择此警报以在数据流运行结束时发生任何错误时接收通知。</li></ul> |
 
 {style="table-layout:auto"}
 
 ## 映射
 
-在将数据摄取到Experience Platform之前，使用映射界面将源数据映射到相应的架构字段。  有关详细信息，请阅读UI[中的](../../../../../data-prep/ui/mapping.md)映射指南。
+在将数据摄取到Experience Platform之前，使用映射界面将源数据映射到相应的架构字段。 有关详细信息，请阅读UI[中的](../../../../../data-prep/ui/mapping.md)映射指南。
+
+>[!TIP]
+>
+>您可以在准备映射数据时，为[和](../../../../images/tutorials/create/capillary/mappings.zip)下载[!DNL Capillary]事件和配置文件映射[将文件导入数据准备](../../../../../data-prep/ui/mapping.md#import-mapping)。
 
 ![毛细管的映射接口。](../../../../images/tutorials/create/capillary/mappings.png)
 
