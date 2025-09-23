@@ -5,10 +5,10 @@ breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源引入数据。了解如何构建、标记和增强已引入的数据。
 feature: Sources
 role: Developer
-source-git-commit: 197cdc89abd292d87276d792201dedb2373f5564
+source-git-commit: a05e20845b6c111139451f593ef24fb8f760b5bd
 workflow-type: tm+mt
-source-wordcount: '1056'
-ht-degree: 35%
+source-wordcount: '1070'
+ht-degree: 34%
 
 ---
 
@@ -103,6 +103,8 @@ ht-degree: 35%
       - [Shopify流](connectors/ecommerce/shopify-streaming.md)
    - 本地系统 {#local-system}
       - [本地文件上载连接器](connectors/local-system/local-file-upload.md)
+   - 忠诚度 {#loyalty}
+      - [毛细管流事件](connectors/loyalty/capillary.md)
    - 营销自动化 {#marketing-automation}
       - [Braze Currents](connectors/marketing-automation/braze.md)
       - [查特利奥](connectors/marketing-automation/chatlio-webhook.md)
@@ -179,6 +181,8 @@ ht-degree: 35%
          - [SAP COMMERCE](tutorials/api/create/ecommerce/sap-commerce.md)
          - [Shopify](tutorials/api/create/ecommerce/shopify.md)
          - [Shopify流](tutorials/api/create/ecommerce/shopify-streaming.md)
+      - 忠诚度 {#loyalty}
+         - [毛细管流事件](tutorials/api/create/loyalty/capillary.md)
       - 营销自动化 {#marketing-automation}
          - [查特利奥](tutorials/api/create/marketing-automation/chatlio-webhook.md)
          - [Customer.io](tutorials/api/create/marketing-automation/customerio-webhook.md)
@@ -311,6 +315,8 @@ ht-degree: 35%
          - [Shopify流](tutorials/ui/create/ecommerce/shopify-streaming.md)
       - 本地系统 {#local-system}
          - [本地文件上传](tutorials/ui/create/local-system/local-file-upload.md)
+      - 忠诚度 {#loyalty}
+         - [毛细管流事件](tutorials/ui/create/loyalty/capillary.md)
       - 营销自动化 {#marketing-automation}
          - [Braze Currents](tutorials/ui/create/marketing-automation/braze.md)
          - [查特利奥](tutorials/ui/create/marketing-automation/chatlio-webhook.md)
@@ -322,6 +328,7 @@ ht-degree: 35%
          - [Oracle NetSuite活动](tutorials/ui/create/marketing-automation/oracle-netsuite-activities.md)
          - [Oracle NetSuite实体](tutorials/ui/create/marketing-automation/oracle-netsuite-entities.md)
          - [PathFactory](tutorials/ui/create/marketing-automation/pathfactory.md)
+         - [中继连接器](tutorials/ui/create/marketing-automation/relay-connector.md)
          - [Salesforce Marketing Cloud](tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
       - 付款 {#payments}
          - [方形](tutorials/ui/create/payments/square.md)
