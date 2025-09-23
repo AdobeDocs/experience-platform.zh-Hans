@@ -1,20 +1,15 @@
 ---
 title: 在UI中创建SAP Commerce源连接
 description: 了解如何使用Adobe Experience Platform UI创建SAP Commerce源连接。
-badge: Beta 版
 exl-id: 6484e51c-77cd-4dbd-9c68-0a4e3372da33
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: e402a58f51de49b26f9d279cebf551ec11e4698f
 workflow-type: tm+mt
-source-wordcount: '976'
+source-wordcount: '959'
 ht-degree: 2%
 
 ---
 
 # 在用户界面中创建[!DNL SAP Commerce]源连接
-
->[!NOTE]
->
->[!DNL SAP Commerce]源为测试版。 有关使用测试版标记源的更多信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
 
 以下教程将指导您完成使用Adobe Experience Platform用户界面创建[!DNL SAP Commerce]源连接以引入[[!DNL SAP] 订阅账单](https://www.sap.com/products/financial-management/subscription-billing.html)联系人和客户数据的步骤。
 
@@ -208,7 +203,7 @@ Experience Platform根据您选择的目标架构或数据集，为自动映射�
 
 >[!TAB 客户]
 
-对于客户数据，[!DNL SAP Commerce]使用[!DNL SAP Business Partners] API的[客户](https://api.sap.com/api/BusinessPartner_APIs/path/GET_customers)和[客户联系人关系](https://api.sap.com/api/BusinessPartner_APIs/path/GET_relationships-customer-contacts)端点检索数据
+对于客户数据，[!DNL SAP Commerce]使用[ API的](https://api.sap.com/api/BusinessPartner_APIs/path/GET_customers)客户[和](https://api.sap.com/api/BusinessPartner_APIs/path/GET_relationships-customer-contacts)客户联系人关系[!DNL SAP Business Partners]端点检索数据
 
 以下是客户数据的[!DNL SAP Commerce]数据流映射配置示例：
 
@@ -232,7 +227,7 @@ Experience Platform根据您选择的目标架构或数据集，为自动映射�
 
 >[!TAB 联系人]
 
-对于联系人数据，[!DNL SAP Commerce]使用[!DNL SAP Business Partners] API的[联系人](https://api.sap.com/api/BusinessPartner_APIs/path/GET_contacts)端点检索数据。
+对于联系人数据，[!DNL SAP Commerce]使用[ API的](https://api.sap.com/api/BusinessPartner_APIs/path/GET_contacts)联系人[!DNL SAP Business Partners]端点检索数据。
 
 以下是联系数据的[!DNL SAP Commerce]数据流映射配置示例：
 

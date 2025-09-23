@@ -1,21 +1,15 @@
 ---
 title: 在UI中创建Merkury企业身份解析Source连接和数据流
 description: 了解如何使用Adobe Experience Platform UI创建Merkury企业身份解析源连接。
-last-substantial-update: 2023-12=12
-badge: Beta 版
 exl-id: 2af48c18-76f9-4615-8e76-8f030a312a8f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: e402a58f51de49b26f9d279cebf551ec11e4698f
 workflow-type: tm+mt
-source-wordcount: '2146'
+source-wordcount: '2128'
 ht-degree: 1%
 
 ---
 
 # 在UI中创建[!DNL Merkury Enterprise Identity Resolution]源连接和数据流
-
->[!NOTE]
->
->[!DNL Merkury Enterprise Identity Resolution]源为测试版。 有关使用测试版标记源的更多信息，请阅读[源概述](../../../../home.md#terms-and-conditions)。
 
 本教程提供了使用Adobe Experience Platform用户界面创建[!DNL Merkury Enterprise Identity Resolution]源连接和数据流的步骤。
 
@@ -155,7 +149,7 @@ ht-degree: 1%
 
 ### 启用警报
 
-+++选择此选项可查看启用警报的步骤
++++选择以查看启用警报的步骤
 
 您可以启用警报以接收有关数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅源警报指南](../../alerts.md)。
 
@@ -191,7 +185,7 @@ Experience Platform根据您选择的目标架构或数据集，为自动映射�
 
 | 计划配置 | 描述 |
 | --- | --- |
-| 频度 | 配置频率以指示数据流运行的频率。 您可以将频率设置为： <ul><li>**一次**：将频率设置为`once`以创建一次性引入。 创建一次性摄取数据流时，间隔和回填配置不可用。 默认情况下，调度频率设置为一次。</li><li>**分钟**：将频率设置为`minute`，以计划数据流以每分钟摄取数据。</li><li>**小时**：将频率设置为`hour`，以计划数据流每小时摄取数据。</li><li>**天**：将频率设置为`day`，以计划数据流每天摄取数据。</li><li>**周**：将频率设置为`week`，以计划数据流每周摄取数据。</li></ul> |
+| 频率 | 配置频率以指示数据流运行的频率。 您可以将频率设置为： <ul><li>**一次**：将频率设置为`once`以创建一次性引入。 创建一次性摄取数据流时，间隔和回填配置不可用。 默认情况下，调度频率设置为一次。</li><li>**分钟**：将频率设置为`minute`，以计划数据流以每分钟摄取数据。</li><li>**小时**：将频率设置为`hour`，以计划数据流每小时摄取数据。</li><li>**天**：将频率设置为`day`，以计划数据流每天摄取数据。</li><li>**周**：将频率设置为`week`，以计划数据流每周摄取数据。</li></ul> |
 | 间隔 | 选择频率后，可以配置间隔设置以建立每次引入之间的时间范围。 例如，如果将频率设置为天并将间隔配置为15，则数据流将每15天运行一次。 不能将间隔设置为零。 每个频率的最小接受间隔值如下：<ul><li>**一次**：不适用</li><li>**分钟**： 15</li><li>**小时**： 1</li><li>**天**： 1</li><li>**周**： 1</li></ul> |
 | 开始时间 | 预计运行的时间戳，以UTC时区显示。 |
 | 回填 | 回填可确定最初摄取的数据。 如果启用了回填，则指定路径中的所有当前文件将在第一次计划摄取期间摄取。 如果禁用回填，则只摄取在第一次引入运行到开始时间之间加载的文件。 将不会摄取在开始时间之前加载的文件。 |
