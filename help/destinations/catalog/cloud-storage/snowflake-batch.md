@@ -1,24 +1,24 @@
 ---
-title: Snowflake流连接
+title: Snowflake批量连接
 description: 使用专用列表将数据导出到您的Snowflake帐户。
 badgeBeta: label="Beta 版" type="Informative"
-exl-id: 4a00e46a-dedb-4dd3-b496-b0f4185ea9b0
-source-git-commit: 183858daac3a2471cb842f1d7308f91cf514c5ee
+badgeUltimate: label="Ultimate" type="Positive"
+source-git-commit: 3500e5ba00727c6299331cff79c56a99009cfd37
 workflow-type: tm+mt
-source-wordcount: '1438'
-ht-degree: 5%
+source-wordcount: '1642'
+ht-degree: 3%
 
 ---
 
-# Snowflake流连接 {#snowflake-destination}
+# Snowflake批量连接 {#snowflake-destination}
 
 >[!IMPORTANT]
 >
->此目标连接器处于测试阶段，仅提供给特定客户。要请求访问权限，请与 Adobe 代表联系。
+>此目标连接器为测试版，仅适用于Real-Time CDP Ultimate客户。 功能和文档可能会发生更改。
 
 ## 概述 {#overview}
 
-使用Snowflake目标连接器将数据导出到Adobe的Snowflake实例，Adobe随后通过[私有列表](https://other-docs.snowflake.com/en/collaboration/collaboration-listings-about)与您的实例共享。
+使用此目标可将受众数据发送到Snowflake帐户的动态表中。 动态表无需物理数据拷贝即可提供对数据的访问。
 
 请阅读以下部分，了解Snowflake目标的工作方式以及数据在Adobe和Snowflake之间的传输方式。
 
@@ -26,29 +26,35 @@ ht-degree: 5%
 
 此目标使用[!DNL Snowflake]数据共享，这意味着不会向您自己的Snowflake实例实际导出或传输任何数据。 Adobe而是会授予您对Adobe Snowflake环境中托管的活动表的只读访问权限。 您可以直接从Snowflake帐户查询此共享表，但您不是该表的所有者，并且无法在指定的保留期之外修改或保留该表。 Adobe可完全管理共享表的生命周期和结构。
 
-首次将AdobeSnowflake实例中的数据共享到您的实例时，系统会提示您接受Adobe的私有列表。
+首次设置从Adobe到Snowflake帐户的数据流后，系统会提示您接受来自Adobe的私有列表。
 
-![显示Snowflake个人分发名单接受屏幕截图](../../assets/catalog/cloud-storage/snowflake/snowflake-accept-listing.png)
+![显示Snowflake个人分发名单接受屏幕截图](../../assets/catalog/cloud-storage/snowflake-batch/snowflake-accept-listing.png)
 
 ### 数据保留和生存时间(TTL) {#ttl}
 
-通过此集成共享的所有数据的固定生存时间(TTL)为7天。 上次导出后七天，无论数据流是否仍处于活动状态，共享表都会自动过期并变为无法访问状态。 如果您需要将数据保留超过7天，则必须在TTL过期之前将这些内容复制到您自己的Snowflake实例中拥有的表中。
+通过此集成共享的所有数据的固定生存时间(TTL)为7天。 上次导出后七天，无论数据流是否仍处于活动状态，动态表都会自动过期并变为无法访问状态。 如果您需要将数据保留超过7天，则必须在TTL过期之前将这些内容复制到您自己的Snowflake实例中拥有的表中。
+
+>[!IMPORTANT]
+>
+>删除Experience Platform中的数据流将导致动态表从您的Snowflake帐户中消失。
 
 ### 受众更新行为 {#audience-update-behavior}
 
 如果您的受众在[批处理模式](../../../segmentation/methods/batch-segmentation.md)下评估，则共享表中的数据每24小时刷新一次。 这意味着，在受众成员身份发生更改后，这些更改会延迟最多24小时，并且这些更改会反映在共享表中。
 
-### 增量导出逻辑 {#incremental-export}
+### 批量数据共享逻辑 {#batch-data-sharing}
 
-首次针对受众运行数据流时，它将执行回填并共享所有当前符合条件的用户档案。 在此初始回填之后，只有增量更新会反映在共享表中。 这意味着向受众添加配置文件或从受众删除配置文件。 此方法可确保高效更新，并使共享表格保持最新。
+首次针对受众运行数据流时，它将执行回填并共享所有当前符合条件的用户档案。 在此初始回填之后，目标会定期提供完整受众成员资格的快照。 每个快照都会替换共享表中的先前数据，确保您始终能够看到受众的最新完整视图，而无需历史数据。
 
 ## 流数据共享与批量数据共享 {#batch-vs-streaming}
 
-Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](snowflake.md)和[Snowflake Batch](../cloud-storage/snowflake-batch.md)。
+Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](/help/destinations/catalog/cloud-storage/snowflake.md)和[Snowflake Batch](snowflake-batch.md)。
 
-下表将概述每种数据共享方法最适用的场景，帮助您确定要使用的目标。
+虽然两个目标均允许您以零复制方式访问Snowflake中的数据，但在每个连接器的用例方面仍有一些推荐的最佳实践。
 
-|  | 根据需要选择[Snowflake批次](../cloud-storage/snowflake-batch.md) | 根据需要选择[Snowflake流](snowflake.md) |
+下表将概述每种数据共享方法最适合的场景，帮助您确定要使用的连接器。
+
+|  | 根据需要选择[Snowflake批次](snowflake-batch.md) | 根据需要选择[Snowflake流](/help/destinations/catalog/cloud-storage/snowflake.md) |
 |--------|-------------------|----------------------|
 | **更新频率** | 定期快照 | 实时连续更新 |
 | **数据演示** | 替换以前数据的完整受众快照 | 基于配置文件更改的增量更新 |
@@ -56,26 +62,19 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
 | **数据管理** | 始终查看最新的完整快照 | 基于受众成员资格更改的增量更新 |
 | **示例场景** | 业务报告、数据分析、ML模型训练 | 营销活动抑制、实时个性化 |
 
-有关批量数据共享的详细信息，请参阅[Snowflake批量连接](../cloud-storage/snowflake-batch.md)文档。
+有关流式数据共享的更多信息，请参阅[Snowflake流式连接](../cloud-storage/snowflake.md)文档。
 
 ## 用例 {#use-cases}
 
-流式数据共享适用于配置文件更改其成员资格或其他属性时需要立即更新的情况。 这对于需要实时响应的用例至关重要，例如：
+批量数据共享非常适合需要受众完整快照且不需要实时更新的情况，例如：
 
-* **营销活动抑制**：立即抑制已执行特定操作（如注册服务或购买）的用户的营销活动
-* **实时个性化**：在配置文件属性发生更改时（例如，当用户访问网站、查看产品页面或将项目添加到购物车时），立即更新用户体验
-* **立即操作方案**：根据实时数据执行快速抑制和重新定位以减少延迟，并确保营销活动更相关、更及时
-* **效率和细微差别**：通过允许快速响应用户行为变化，提高营销工作的效率和细微差别
-* **实时客户历程优化**：在区段成员资格或配置文件属性发生更改时立即更新客户体验
+* **分析工作负载**：执行需要全面了解受众成员资格的数据分析、报告或业务智能任务时
+* **机器学习工作流**：用于训练ML模型或运行可从完整的受众快照中获益的预测分析
+* **数据仓库**：需要在本身Snowflake实例中维护受众数据的当前副本时
+* **定期报告**：对于常规业务报告，您需要最新的受众状态而没有历史更改跟踪
+* **ETL进程**：需要批量转换或处理受众数据时
 
-流式数据共享根据区段更改、身份映射更改或属性更改提供持续更新，使其适用于延迟严重且需要立即更新的情况。
-
-## 先决条件 {#prerequisites}
-
-在配置Snowflake连接之前，请确保您满足以下先决条件：
-
-* 您有权访问[!DNL Snowflake]帐户。
-* 您的Snowflake帐户已订阅私人列表。 您或您公司中拥有Snowflake帐户管理员权限的人员可以配置此配置。
+批量数据共享通过提供完整的快照简化了数据管理，无需管理增量更新或手动合并更改。
 
 ## 支持的受众 {#supported-audiences}
 
@@ -88,6 +87,17 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
 
 {style="table-layout:auto"}
 
+按受众数据类型划分的受众支持：
+
+| 受众数据类型 | 支持 | 描述 | 用例 |
+|--------------------|-----------|-------------|-----------|
+| [人员受众](/help/segmentation/types/people-audiences.md) | ✓ | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
+| [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
+| [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+
+{style="table-layout:auto"}
+
 ## 导出类型和频率 {#export-type-frequency}
 
 有关目标导出类型和频率的信息，请参阅下表。
@@ -95,7 +105,7 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
 | 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出具有[!DNL Snowflake]目标中使用的标识符（姓名、电话号码或其他）的受众的所有成员。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出频率 | **[!UICONTROL 批次]** | 此目标通过Snowflake数据共享提供完整受众成员资格的定期快照。 每个快照都会替换以前的数据，确保您始终拥有受众的最新完整视图。 |
 
 {style="table-layout:auto"}
 
@@ -109,20 +119,20 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
 
 ### 验证目标 {#authenticate}
 
-要验证到目标，请选择&#x200B;**[!UICONTROL 连接到目标]**。
+要验证到目标，请选择&#x200B;**[!UICONTROL 连接到目标]**&#x200B;并提供帐户名和帐户说明（可选）。
 
-![显示如何向目标进行身份验证的示例屏幕截图](../../assets/catalog/cloud-storage/snowflake/authenticate-destination.png)
+![显示如何向目标进行身份验证的示例屏幕截图](../../assets/catalog/cloud-storage/snowflake-batch/authenticate-destination.png)
 
 ### 填写目标详细信息 {#destination-details}
 
 >[!CONTEXTUALHELP]
->id="platform_destinations_snowflake_accountID"
+>id="platform_destinations_snowflake_batch_accountID"
 >title="输入您的 Snowflake 帐户 ID"
 >abstract="如果您的帐户已链接到某个组织，请使用以下格式：`OrganizationName.AccountName`<br><br> 如果您的帐户未链接到某个组织，请使用以下格式：`AccountName`"
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
-![显示如何填写目标详细信息的示例屏幕截图](../../assets/catalog/cloud-storage/snowflake/configure-destination-details.png)
+![显示如何填写目标详细信息的示例屏幕截图](../../assets/catalog/cloud-storage/snowflake-batch/configure-destination-details.png)
 
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
@@ -148,19 +158,37 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
-有关将受众激活到此目标的说明，请阅读[将配置文件和受众激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md)。
+有关将受众激活到此目标的说明，请阅读[将受众数据激活到批处理配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md)。
 
 ### 映射属性 {#map}
 
-Snowflake目标支持将配置文件属性映射到自定义属性。
+您可以将身份和配置文件属性导出到此目标。
 
-![Experience Platform用户界面图像，显示Snowflake目标的映射屏幕。](../../assets/catalog/cloud-storage/snowflake/mapping.png)
+![Experience Platform用户界面图像，显示Snowflake目标的映射屏幕。](../../assets/catalog/cloud-storage/snowflake-batch/mapping.png)
+
+您可以使用[计算字段控件](../../ui/data-transformations-calculated-fields.md)导出数组，并在数组上执行操作。
 
 使用您在&#x200B;**[!UICONTROL 属性名称]**&#x200B;字段中提供的属性名称，在Snowflake中自动创建目标属性。
 
 ## 导出的数据/验证数据导出 {#exported-data}
 
-检查您的Snowflake帐户，验证是否已正确导出数据。
+数据通过动态表暂存到您的Snowflake帐户中。 检查您的Snowflake帐户，验证是否已正确导出数据。
+
+### 数据结构 {#data-structure}
+
+动态表包含以下列：
+
+* **TS**：表示每个行上次更新的时间戳列
+* **映射属性**：在激活工作流期间选择的每个映射属性在Snowflake中均表示为列标题
+* **受众成员资格**：通过相应单元格中的`active`条目指示映射到数据流的任何受众的成员资格
+
+![显示带有动态表数据的Snowflake界面的屏幕截图](../../assets/catalog/cloud-storage/snowflake-batch/data-validation.png)
+
+## 已知限制 {#known-limitations}
+
+### 多个合并策略
+
+单个数据流不支持具有多个合并策略的受众。 不同的合并策略会生成不同的快照，在实践中，与某个受众相关的数据将被来自另一个受众的数据覆盖，而不是像预期那样同时导出这两个受众的数据。
 
 ## 数据使用和治理 {#data-usage-governance}
 
