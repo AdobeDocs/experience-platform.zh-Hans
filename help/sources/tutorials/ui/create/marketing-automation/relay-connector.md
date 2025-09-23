@@ -80,5 +80,5 @@ ht-degree: 1%
 
 ## 其他资源
 
-* [使用流服务API创建新的连接规范](https://experienceleague.adobe.com/en/docs/experience-platform/sources/sdk/streaming-sdk/create)
-* [使用UI连接到源](https://experienceleague.adobe.com/en/docs/experience-platform/sources/sdk/streaming-sdk/submit#test-your-source-using-the-ui)
+* [使用流服务API创建新的连接规范](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/sources/sdk/streaming-sdk/create)
+* [使用UI连接到源](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/sources/sdk/streaming-sdk/submit#test-your-source-using-the-ui)
