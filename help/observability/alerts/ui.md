@@ -4,10 +4,10 @@ title: 警报UI指南
 description: 了解如何在Experience Platform用户界面中管理警报。
 feature: Alerts
 exl-id: 4ba3ef2b-7394-405e-979d-0e5e1fe676f3
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 57261ca37bf10e394f47ea4bb3c01856a18b197d
 workflow-type: tm+mt
-source-wordcount: '798'
-ht-degree: 7%
+source-wordcount: '814'
+ht-degree: 8%
 
 ---
 
@@ -21,7 +21,7 @@ Adobe Experience Platform用户界面允许您根据Adobe Experience Platform可
 
 若要开始，请在左侧导航中选择&#x200B;**[!UICONTROL 警报]**。
 
-在左侧导航中突出显示[!UICONTROL 警报]的![警报页面。](../images/alerts/ui/workspace.png)
+在左侧导航中突出显示![警报[!UICONTROL 的]警报页面。](../images/alerts/ui/workspace.png)
 
 ## 管理警报规则 {#manage-rules}
 
@@ -96,10 +96,12 @@ Adobe Experience Platform用户界面允许您根据Adobe Experience Platform可
 | 目标流运行延迟 | 延迟阈值 |
 | 身份标识服务流量运行延迟 | 延迟阈值 |
 | 轮廓流量运行延迟 | 延迟阈值 |
+| 超出了轮廓流式摄取失败率 | 错误阈值 |
+| 超过了配置文件流摄取跳过率 | 错误阈值 |
 | 源流量运行延迟 | 延迟阈值 |
+| 源引入错误率超出范围 | 错误阈值 |
 | 查询运行延迟 | 延迟阈值 |
 | 激活跳过率超出范围 | 错误阈值 |
-| 源引入错误率超出范围 | 错误阈值 |
 
 选择规则名称旁边的省略号(**...**)，下拉菜单会显示控件。 选择&#x200B;**[!UICONTROL 编辑]**。
 
