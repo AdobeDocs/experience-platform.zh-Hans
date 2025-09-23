@@ -3,10 +3,10 @@ keywords: 平台；目标；目标工作区；工作区；ui；目标ui；目录
 title: 目标工作区
 description: 目标工作区包括五个部分：“概述”、“目录”、“浏览”、“帐户”和“系统视图”。 以下各节对这些要求进行了说明。
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: c8eedc1f020b8605c9565015461cb1dfd47bba1f
+source-git-commit: ff566e6ec409d237d3831d787d7428859dd4b566
 workflow-type: tm+mt
-source-wordcount: '2240'
-ht-degree: 0%
+source-wordcount: '2369'
+ht-degree: 1%
 
 ---
 
@@ -79,7 +79,7 @@ ht-degree: 0%
 > ![浏览选项卡](../assets/ui/workspace/browse-tab.png)
 > 
 > * 选择`...`名称[!UICONTROL 列中的省略号(])，然后使用![激活受众控件](/help/images/icons/data-add.png) **[!UICONTROL 激活受众]**&#x200B;控件将受众或数据集导出到该目标。
-> * 选择`...`名称[!UICONTROL 列中的省略号(])，并使用![编辑目标控件](/help/images/icons/edit.png)**[!UICONTROL 编辑目标&#x200B;]**&#x200B;控件编辑现有目标连接。 有关详细信息，请阅读有关[编辑目标](/help/destinations/ui/edit-destination.md)的教程。
+> * 选择`...`名称[!UICONTROL 列中的省略号(])，并使用![编辑目标控件](/help/images/icons/edit.png)**[!UICONTROL 编辑目标&#x200B;]**控件编辑现有目标连接。 有关详细信息，请阅读有关[编辑目标](/help/destinations/ui/edit-destination.md)的教程。
 > * 选择`...`名称[!UICONTROL 列中的省略号(])并使用![编辑营销操作控件](/help/images/icons/edit-marketing-actions.svg) **[!UICONTROL 编辑营销操作]**&#x200B;控件将选定目标的营销操作[更改为](/help/destinations/ui/edit-activation.md#edit-marketing-actions)。
 > * 选择`...`Name[!UICONTROL 列中的省略号(])并使用![Delete控件](/help/images/icons/delete.png) **[!UICONTROL Delete]**&#x200B;控件来[删除](delete-destinations.md)到目标的现有连接。
 > * 选择`...`Name[!UICONTROL 列中的省略号(])并使用监视控件中的![视图](/help/images/icons/monitoring.png) **[!UICONTROL 监视控件中的视图]**&#x200B;在[监视仪表板](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard)中查看此目标的激活信息。
@@ -93,12 +93,13 @@ ht-degree: 0%
 | 名称 | 您为此目标的激活流提供的名称。 |
 | 数据类型 | 目标连接支持的数据类型。 支持的数据类型： <ul><li>**[!UICONTROL 客户]**</li><li>**[!UICONTROL 潜在客户]**</li><li>**[!UICONTROL 帐户]**</li><li>**[!UICONTROL 数据集]**</li></ul> |
 | [!UICONTROL 上次数据流运行状态] | 上次数据流运行的状态。 有关数据流运行的详细信息，请参阅[查看目标详细信息](destination-details-page.md)。 |
-| [!UICONTROL 上次数据流运行日期] | 上次数据流运行发生的时间和日期。 有关数据流运行的详细信息，请参阅[查看目标详细信息](destination-details-page.md)。 |
+| [!UICONTROL 上次数据流运行日期] | 上次数据流运行发生的时间和日期。 选择列标题以访问排序选项（**[!UICONTROL 升序排序]**，**[!UICONTROL 降序排序]**）。 有关数据流运行的详细信息，请参阅[查看目标详细信息](destination-details-page.md)。 |
 | [!UICONTROL 目标] | 您为激活流选择的目标平台。 |
-| [!UICONTROL 帐户到期日期] | 此目标的连接授权到期的日期。 <br>**重要信息**：此列当前仅可用于[Facebook](../catalog/social/facebook.md)连接。 |
+| [!UICONTROL 帐户到期日期] | 此目标的连接授权到期的日期。 <br>警告图标![警告：帐户过期图标](/help/images/icons/alert-expiration.png)会在过期日期之前显示，提醒您连接将过期，可能需要续订。 过期连接的数据流已停止，您必须重新进行身份验证才能继续激活工作流。 <br>**重要信息**：此列当前仅适用于[Pinterest](../catalog/advertising/pinterest.md)、[LinkedIn](../catalog/social/linkedin.md)和[LinkedIn匹配的受众](../catalog/social/linkedin-b2b.md)连接。<br> ![浏览选项卡中的帐户过期警告示例](../assets/ui/workspace/account-expiration-browse.png){width="100" zoomable="yes" alt="Screenshot showing the account expiration warning icon and expiration date in the Browse tab."} |
 | [!UICONTROL 用户名] | 您为目标流选择的帐户凭据。 |
 | [!UICONTROL 激活数据] | 指示正在激活到此目标的受众数量。 选择此控件可了解有关已激活受众的更多信息。 有关已激活受众的详细信息，请参阅目标详细信息页面中的[激活数据](/help/destinations/ui/destination-details-page.md#activation-data)。 |
-| [!UICONTROL 已创建] | 创建到目标的激活流的日期和UTC时间。 选择向上/向下箭头符号，按最新先或最旧先对激活流进行排序。 |
+| [!UICONTROL 已创建] | 创建到目标的激活流的日期和时间。 选择向上/向下箭头符号，按最新先或最旧先对激活流进行排序。 |
+| [!UICONTROL 已修改] | 上次修改指向目标的激活流的日期和时间。 |
 | [!UICONTROL 状态] | `Enabled`或`Disabled`。 指示是否正在将数据激活到此目标。 |
 | [!UICONTROL 访问标签] | 显示已添加到此目标数据流的任何访问标签。 了解有关[将访问标签应用于目标数据流](/help/access-control/abac/apply-access-labels-destinations.md)的更多信息。 |
 | [!UICONTROL 标记] | 显示已添加到此目标数据流的任何标记。 使用标记来组织和分类数据流以便轻松管理。 |
@@ -121,7 +122,7 @@ ht-degree: 0%
 >
 > 使用搜索框搜索数据流时，结果可能包括您的[用户访问标签](/help/access-control/abac/apply-access-labels-destinations.md)限制您查看的数据流。 此行为将在以后的更新中纠正。 选择此类数据流不会在右边栏中显示信息，并且无法访问所需标签的用户无法进行任何修改，例如将受众映射到数据流或编辑其计划。
 
-![在“浏览”选项卡中搜索目标数据流的动画演示](../assets/ui/workspace/search.gif)
+![在浏览选项卡中搜索目标数据流的动画演示](../assets/ui/workspace/search.gif)
 
 ### 筛选器选项 {#filter-options-browse}
 
@@ -161,7 +162,7 @@ ht-degree: 0%
 标记可帮助您组织和分类目标数据流，以便于管理。 您可以在单个数据流中添加和删除标记，以根据业务需求对它们进行分组。
 
 若要向数据流添加标记，请选择`...`名称&#x200B;**[!UICONTROL 列中的省略号(]**)，然后从上下文菜单中选择&#x200B;**[!UICONTROL 管理标记]**。
-在&#x200B;**[!UICONTROL 标记]**&#x200B;字段中键入新标记的名称，然后选择&#x200B;**[!UICONTROL 保存]**&#x200B;以应用更改。
+在**[!UICONTROL 标记]**&#x200B;字段中键入新标记的名称，然后选择&#x200B;**[!UICONTROL 保存]**&#x200B;以应用更改。
 
 ![显示标记选择和创建选项的“管理标记”对话框](../assets/ui/workspace/tags.gif)
 
@@ -182,21 +183,21 @@ ht-degree: 0%
 
 >[!TIP]
 >
-> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![激活控件](/help/images/icons/data-add.png)**[!UICONTROL 激活&#x200B;]**/**[!UICONTROL &#x200B;激活受众&#x200B;]**/**[!UICONTROL &#x200B;导出数据集&#x200B;]**&#x200B;控件将受众或数据集导出到该目标。
-> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![编辑详细信息控件](/help/images/icons/edit.png)**[!UICONTROL 编辑详细信息&#x200B;]**&#x200B;控件来[更新](update-accounts.md)现有目标帐户的详细信息。
-> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![删除控件](/help/images/icons/delete.png)**[!UICONTROL 删除&#x200B;]**&#x200B;控件来[删除](delete-destination-account.md)现有目标帐户。
+> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![激活控件](/help/images/icons/data-add.png)**[!UICONTROL 激活&#x200B;]**/**[!UICONTROL &#x200B;激活受众&#x200B;]**/**[!UICONTROL &#x200B;导出数据集&#x200B;]**控件将受众或数据集导出到该目标。
+> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![编辑详细信息控件](/help/images/icons/edit.png)**[!UICONTROL 编辑详细信息&#x200B;]**控件来[更新](update-accounts.md)现有目标帐户的详细信息。
+> * 选择`...`Platform[!UICONTROL 列中的省略号(])并使用![删除控件](/help/images/icons/delete.png)**[!UICONTROL 删除&#x200B;]**控件来[删除](delete-destination-account.md)现有目标帐户。
 
 ![帐户选项卡](../assets/ui/workspace/accounts-tab.png)
 
 | 元素 | 描述 |
 |---|---|
-| [!UICONTROL 名称] | [设置](connect-destination.md#authenticate)目标时分配给目标帐户的名称。 |
+| [!UICONTROL 名称] | [设置](connect-destination.md#authenticate)目标时分配给目标帐户的名称。 选择列标题以访问排序选项（**[!UICONTROL 升序排序]**，**[!UICONTROL 降序排序]**）。 |
 | [!UICONTROL 目标] | 已为其设置连接的目标连接器。 |
 | [!UICONTROL 连接类型] | 表示与存储段或目标的帐户连接类型。 根据目标的不同，身份验证选项有： <ul><li>对于电子邮件营销目标：可以是S3、FTP或Azure Blob。</li><li>对于实时广告目标：服务器到服务器</li><li>对于Amazon S3云存储目标：访问密钥 </li><li>对于SFTP云存储目标：SFTP的基本身份验证</li><li>OAuth 1或OAuth 2身份验证</li><li>持有者令牌身份验证</li></ul> |
 | [!UICONTROL 用户名] | 您在[连接目标工作流](../catalog/email-marketing/overview.md#connect-destination)中选择的用户名。 |
 | [!UICONTROL 连接] | 表示与为目标创建的基本信息连接的唯一成功目标数据流数。 |
 | [!UICONTROL 授权日期] | 授权连接到此目标的日期。 |
-| [!UICONTROL 到期日期] | 此目标的连接授权到期的日期。 <br>**重要信息**：此列当前仅适用于[Facebook](../catalog/social/facebook.md)、[LinkedIn](../catalog/social/linkedin.md)和[LinkedIn匹配的受众](../catalog/social/linkedin-b2b.md)连接。 |
+| [!UICONTROL 到期日期] | 此目标的连接授权到期的日期。 <br>警告图标![帐户过期警告图标。](/help/images/icons/alert-expiration.png)在过期日期之前出现，以提醒您连接将过期，可能需要续订。 过期连接的数据流已停止，您必须重新进行身份验证才能继续激活工作流。 <br>**重要信息**：此列当前仅适用于[Pinterest](../catalog/advertising/pinterest.md)、[LinkedIn](../catalog/social/linkedin.md)和[LinkedIn匹配的受众](../catalog/social/linkedin-b2b.md)连接。<br> ![](../assets/ui/workspace/expired-accounts.png){width="100" zoomable="yes"} |
 
 {style="table-layout:auto"}
 
