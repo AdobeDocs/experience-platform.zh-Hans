@@ -3,9 +3,9 @@ keywords: Experience Platform；配置文件；实时客户配置文件；用户
 title: UI中的配置文件详细信息自定义
 description: 本指南提供了分步说明，用于自定义在Adobe Experience Platform UI中实时客户个人资料数据的显示方式。
 exl-id: 76cf8420-cc50-4a56-9f6d-5bfc01efcdb3
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: e253be0c4e02b82bfc8926ac4531589782b9c8fe
 workflow-type: tm+mt
-source-wordcount: '1395'
+source-wordcount: '1368'
 ht-degree: 0%
 
 ---
@@ -28,8 +28,6 @@ ht-degree: 0%
 
 所选卡片调整到所需的大小，并且周围卡片动态地重新定位。 这可能会导致某些信息卡被移动到其他行，从而需要您向下滚动才能看到所有信息卡。 例如，在调整“[!UICONTROL 基本属性]”卡片大小时，“[!UICONTROL 链接身份]”卡片将不再显示在顶行，而现在显示在配置文件内的新的第二行中（未显示）。 若要将“[!UICONTROL 链接身份]”卡片返回至顶行，可将其拖放到“[!UICONTROL 渠道首选项]”卡片的当前位置。
 
-![重新调整大小的卡已突出显示。](../images/profile-customization/resized.png)
-
 ## 编辑和删除信息卡
 
 除了调整卡片大小并重新排序之外，您还可以编辑某些卡片的内容并从功能板中完全删除某些卡片。 选择卡片右上角的省略号(`...`)以进行编辑或删除。 这将打开一个下拉菜单，其中包含编辑或删除信息卡的选项，具体取决于所选信息卡的属性。
@@ -50,7 +48,7 @@ ht-degree: 0%
 
 ![“基本属性”卡片中的“添加属性”按钮高亮显示。](../images/profile-customization/add-attributes.png)
 
-打开&#x200B;**[!UICONTROL 选择合并架构字段]**&#x200B;对话框时，对话框左侧显示完整的[!UICONTROL XDM个人资料]合并架构，其字段嵌套在下。 有关合并架构的详细信息，请参阅 [!DNL Profile] 用户指南[&#128279;](user-guide.md#union-schema)的合并架构部分。
+打开&#x200B;**[!UICONTROL 选择合并架构字段]**&#x200B;对话框时，对话框左侧显示完整的[!UICONTROL XDM个人资料]合并架构，其字段嵌套在下。 有关合并架构的详细信息，请参阅[用户指南 [!DNL Profile] 的](user-guide.md#union-schema)合并架构部分。
 
 对话框右侧的&#x200B;**[!UICONTROL 选定属性]**&#x200B;部分显示了当前包含在您正在编辑的信息卡中的属性。 您也可以在此处删除和重新排序属性。 显示选定的属性总数，以及可添加到单个卡片的最大属性数(20)。
 
@@ -70,8 +68,6 @@ ht-degree: 0%
 
 保存后，您将返回到&#x200B;**[!UICONTROL 详细信息]**&#x200B;选项卡，其中显示了更新的卡片和属性。
 
-![新添加的属性显示在配置文件仪表板的卡片上。](../images/profile-customization/added-attributes.png)
-
 ## 添加新信息卡 {#add-a-new-card}
 
 要进一步自定义Experience Platform中配置文件的外观，您可以选择向功能板添加新信息卡，并选择您希望在这些信息卡上显示的属性。 要开始，请在&#x200B;**[!UICONTROL 详细信息]**&#x200B;选项卡上选择&#x200B;**[!UICONTROL 修改仪表板]**。
@@ -86,7 +82,7 @@ ht-degree: 0%
 
 ![“编辑”小组件屏幕中显示空白的新小组件卡。](../images/profile-customization/edit-widget.png)
 
-打开&#x200B;**[!UICONTROL 选择合并架构字段]**&#x200B;对话框时，对话框左侧显示完整的[!UICONTROL XDM个人资料]合并架构，对话框右侧的&#x200B;**[!UICONTROL 选定属性]**&#x200B;部分显示您为信息卡选择的属性。 有关添加属性的详细信息，请参阅本文档前面显示的关于添加属性[&#128279;](#add-attributes)的部分。
+打开&#x200B;**[!UICONTROL 选择合并架构字段]**&#x200B;对话框时，对话框左侧显示完整的[!UICONTROL XDM个人资料]合并架构，对话框右侧的&#x200B;**[!UICONTROL 选定属性]**&#x200B;部分显示您为信息卡选择的属性。 有关添加属性的详细信息，请参阅本文档前面显示的关于添加属性[的](#add-attributes)部分。
 
 显示选定的属性总数，以及可添加到单个卡片的最大属性数(20)。 您还可以从此屏幕中删除所选属性并重新排序。 添加要显示在卡片上的所有属性后，选择&#x200B;**[!UICONTROL 选择]**&#x200B;以返回到&#x200B;**[!UICONTROL 编辑构件]**&#x200B;屏幕。
 
@@ -99,8 +95,6 @@ ht-degree: 0%
 ![在“编辑构件”屏幕中预览新构件。](../images/profile-customization/new-widget.png)
 
 保存后，您将返回到&#x200B;**[!UICONTROL 详细信息]**&#x200B;选项卡，其中显示了您的新卡片和属性。
-
-![新构件已添加到配置文件仪表板。](../images/profile-customization/added-widget.png)
 
 ## 恢复默认信息卡
 
