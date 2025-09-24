@@ -1,13 +1,10 @@
 ---
 title: 对UI中的源的专用链接支持
 description: 了解如何在Experience Platform UI中为源使用Azure专用链接。
-badge: Beta 版
-hide: true
-hidefromtoc: true
 exl-id: 2882729e-2d46-48dc-9227-51dda5bf7dfb
-source-git-commit: 45a50800f74a6a072e4246b11d338b0c134856e0
+source-git-commit: 4d82b0a7f5ae9e0a7607fe7cb75261e4d3489eff
 workflow-type: tm+mt
-source-wordcount: '750'
+source-wordcount: '814'
 ht-degree: 0%
 
 ---
@@ -16,16 +13,29 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->此功能处于测试阶段，当前仅支持以下源：
+>以下源支持此功能：
 >
 >* [[!DNL Azure Blob Storage]](../../connectors/cloud-storage/blob.md)
 >* [[!DNL ADLS Gen2]](../../connectors/cloud-storage/adls-gen2.md)
 >* [[!DNL Azure File Storage]](../../connectors/cloud-storage/azure-file-storage.md)
->* [[!DNL Snowflake]](../../connectors/databases/snowflake.md)
+>
+>专用链接支持当前仅适用于已购买Adobe Healthcare Shield或Adobe Privacy &amp; Security Shield的组织。
 
 您可以使用专用链接功能为Adobe Experience Platform源创建要连接的专用端点。 使用私有IP地址将源安全地连接到虚拟网络，消除对公共IP的需求，并减少攻击面。 通过消除对复杂防火墙或网络地址转换配置的需求，简化网络设置，同时确保数据流量仅能到达批准的服务。
 
 阅读本指南，了解如何在Experience Platform UI中使用源工作区来创建和使用专用端点。
+
+>[!BEGINSHADEBOX]
+
+## 专用链接支持的许可证使用授权
+
+源中专用链接支持的许可证使用权利指标如下：
+
+* 客户有权通过受支持的源（[!DNL Azure Blob Storage]、[!DNL ADLS Gen2]和[!DNL Azure File Storage]）在所有沙盒和组织中每年最多传输2 TB的数据。
+* 对于所有生产沙盒，每个组织最多可以有10个端点。
+* 对于所有开发沙盒，每个组织最多可以有1个端点。
+
+>[!ENDSHADEBOX]
 
 ## 创建专用端点
 
@@ -45,7 +55,6 @@ ht-degree: 0%
 | `subscriptionId` | 与您的[!DNL Azure]订阅关联的ID。 有关详细信息，请参阅[!DNL Azure]上的[指南，从 [!DNL Azure Portal]](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id)中检索您的订阅和租户ID。 |
 | `resourceGroupName` | [!DNL Azure]上资源组的名称。 资源组包含[!DNL Azure]解决方案的相关资源。 有关详细信息，请阅读有关[!DNL Azure]管理资源组[的](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal)指南。 |
 | `resourceGroup` | 资源的名称。 在[!DNL Azure]中，资源引用虚拟机、Web应用和数据库等实例。 有关详细信息，请阅读[!DNL Azure]上的[指南，以了解 [!DNL Azure] 资源管理器](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview)。 |
-| `fqdns` | 源的全限定域名。 **注意**：仅当使用[!DNL Snowflake]源时，才需要此属性。 |
 
 {style="table-layout:auto"}
 

@@ -1,13 +1,10 @@
 ---
 title: 对API中的源的专用链接支持
 description: 了解如何为Adobe Experience Platform源创建和使用该专用链接
-badge: Beta 版
-hide: true
-hidefromtoc: true
 exl-id: 9b7fc1be-5f42-4e29-b552-0b0423a40aa1
-source-git-commit: 45a50800f74a6a072e4246b11d338b0c134856e0
+source-git-commit: 4d82b0a7f5ae9e0a7607fe7cb75261e4d3489eff
 workflow-type: tm+mt
-source-wordcount: '1661'
+source-wordcount: '1515'
 ht-degree: 3%
 
 ---
@@ -16,23 +13,36 @@ ht-degree: 3%
 
 >[!AVAILABILITY]
 >
->此功能处于“有限可用”状态，当前仅受以下源支持：
+>以下源支持此功能：
 >
->* [[!DNL Azure Blob]](../../connectors/cloud-storage/blob.md)
->* [[!DNL Azure Data Lake Gen2]](../../connectors/cloud-storage/adls-gen2.md)
+>* [[!DNL Azure Blob Storage]](../../connectors/cloud-storage/blob.md)
+>* [[!DNL ADLS Gen2]](../../connectors/cloud-storage/adls-gen2.md)
 >* [[!DNL Azure File Storage]](../../connectors/cloud-storage/azure-file-storage.md)
->* [[!DNL Snowflake]](../../connectors/databases/snowflake.md)
+>
+>专用链接支持当前仅适用于已购买Adobe Healthcare Shield或Adobe Privacy &amp; Security Shield的组织。
 
 您可以使用专用链接功能为Adobe Experience Platform源创建要连接的专用端点。 使用私有IP地址将源安全地连接到虚拟网络，消除对公共IP的需求，并减少攻击面。 通过消除对复杂防火墙或网络地址转换配置的需求，简化网络设置，同时确保数据流量仅能到达批准的服务。
 
 阅读本指南，了解如何使用API创建和使用专用端点。
 
+>[!BEGINSHADEBOX]
+
+## 专用链接支持的许可证使用授权
+
+源中专用链接支持的许可证使用权利指标如下：
+
+* 客户有权通过受支持的源（[!DNL Azure Blob Storage]、[!DNL ADLS Gen2]和[!DNL Azure File Storage]）在所有沙盒和组织中每年最多传输2 TB的数据。
+* 对于所有生产沙盒，每个组织最多可以有10个端点。
+* 对于所有开发沙盒，每个组织最多可以有1个端点。
+
+>[!ENDSHADEBOX]
+
 ## 快速入门
 
 本指南要求您对Experience Platform的以下组件有一定的了解：
 
-* [源](../../home.md)： Experience Platform允许从各种源摄取数据，同时允许您使用[!DNL Platform]服务来构建、标记和增强传入数据。
-* [沙盒](../../../sandboxes/home.md)： Experience Platform提供了将单个[!DNL Platform]实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ### 使用平台API
 
@@ -67,7 +77,6 @@ curl -X POST \
       "subscriptionId": "4281a16a-696f-4993-a7d3-a3da32b846f3",
       "resourceGroupName": "acme-sources-experience-platform",
       "resourceName": "acmeexperienceplatform",
-      "fqdns": [],
       "connectionSpec": {
           "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
           "version": "1.0"
@@ -81,7 +90,6 @@ curl -X POST \
 | `subscriptionId` | 与您的[!DNL Azure]订阅关联的ID。 有关详细信息，请参阅[!DNL Azure]上的[指南，从 [!DNL Azure Portal]](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id)中检索您的订阅和租户ID。 |
 | `resourceGroupName` | [!DNL Azure]上资源组的名称。 资源组包含[!DNL Azure]解决方案的相关资源。 有关详细信息，请阅读有关[!DNL Azure]管理资源组[的](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal)指南。 |
 | `resourceName` | 资源的名称。 在[!DNL Azure]中，资源引用虚拟机、Web应用和数据库等实例。 有关详细信息，请阅读[!DNL Azure]上的[指南，以了解 [!DNL Azure] 资源管理器](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview)。 |
-| `fqdns` | 源的全限定域名。 仅当使用[!DNL Snowflake]源时，才需要此属性。 |
 | `connectionSpec.id` | 您正在使用的源的连接规范ID。 |
 | `connectionSpec.version` | 您正在使用的连接规范ID的版本。 |
 
@@ -100,7 +108,6 @@ curl -X POST \
   "subscriptionId": "4281a16a-696f-4993-a7d3-a3da32b846f3",
   "resourceGroupName": "acme-sources-experience-platform",
   "resourceName": "acmeexperienceplatform",
-  "fqdns": [],
   "connectionSpec": {
       "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
       "version": "1.0"
@@ -116,7 +123,6 @@ curl -X POST \
 | `subscriptionId` | 与您的[!DNL Azure]订阅关联的ID。 有关详细信息，请参阅[!DNL Azure]上的[指南，从 [!DNL Azure Portal]](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id)中检索您的订阅和租户ID。 |
 | `resourceGroupName` | [!DNL Azure]上资源组的名称。 资源组包含[!DNL Azure]解决方案的相关资源。 有关详细信息，请阅读有关[!DNL Azure]管理资源组[的](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal)指南。 |
 | `resourceName` | 资源的名称。 在[!DNL Azure]中，资源引用虚拟机、Web应用和数据库等实例。 有关详细信息，请阅读[!DNL Azure]上的[指南，以了解 [!DNL Azure] 资源管理器](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview)。 |
-| `fqdns` | 源的全限定域名。 仅当使用[!DNL Snowflake]源时，才需要此属性。 |
 | `connectionSpec.id` | 您正在使用的源的连接规范ID。 |
 | `connectionSpec.version` | 您正在使用的连接规范ID的版本。 |
 | `state` | 私有端点的当前状态。 有效状态包括： <ul><li>`Pending`</li><li>`Failed`</li><li>`Approved`</li><li>`Rejected`</li></ul> |
@@ -543,7 +549,7 @@ POST /connections/
 
 **请求**
 
-以下请求为[!DNL Snowflake]创建经过身份验证的基本连接，同时使用专用端点。
+以下请求为[!DNL Azure Blob Storage]创建经过身份验证的基本连接，同时使用专用端点。
 
 +++选择以查看请求示例
 
@@ -556,8 +562,8 @@ curl -X POST \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
-      "name": "Snowflake base connection",
-      "description": "A base connection for a Snowflake source that uses a private link.",
+      "name": "Azure Blob Storage base connection",
+      "description": "A base connection for a Azure Blob Storage source that uses a private link.",
       "auth": {
           "specName": "ConnectionString",
           "params": {
@@ -566,7 +572,7 @@ curl -X POST \
           }
       },
       "connectionSpec": {
-          "id": "b2e08744-4f1a-40ce-af30-7abac3e23cf3",
+          "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
           "version": "1.0"
       }
   }'
@@ -577,10 +583,10 @@ curl -X POST \
 | `name` | 基础连接的名称。 |
 | `description` | （可选）提供有关连接的附加信息的描述。 |
 | `auth.specName` | 用于将源连接到Experience Platform的身份验证。 |
-| `auth.params.connectionString` | [!DNL Snowflake]连接字符串。 有关详细信息，请阅读[[!DNL Snowflake] API身份验证指南](../api/create/databases/snowflake.md)。 |
+| `auth.params.connectionString` | [!DNL Azure Blob Storage]连接字符串。 有关详细信息，请阅读[[!DNL Azure Blob Storage] API身份验证指南](../api/create/cloud-storage/blob.md)。 |
 | `auth.params.usePrivateLink` | 一个布尔值，用于确定您是否使用私有端点。 如果您使用专用终结点，则将此值设置为`true`。 |
-| `connectionSpec.id` | 连接规范ID [!DNL Snowflake]。 |
-| `connectionSpec.version` | [!DNL Snowflake]连接规范ID的版本。 |
+| `connectionSpec.id` | 连接规范ID [!DNL Azure Blob Storage]。 |
+| `connectionSpec.version` | [!DNL Azure Blob Storage]连接规范ID的版本。 |
 
 +++
 
@@ -830,24 +836,32 @@ curl -X GET \
 
 阅读本节以了解在API中使用[!DNL Azure]专用链接的其他信息。
 
-### 配置您的[!DNL Snowflake]帐户以连接到专用链接
+### 批准[!DNL Azure Blob]和[!DNL Azure Data Lake Gen2]的专用终结点
 
-要将[!DNL Snowflake]源与专用链接结合使用，您必须完成以下先决条件步骤。
+要批准[!DNL Azure Blob]和[!DNL Azure Data Lake Gen2]源的专用终结点请求，请登录到[!DNL Azure Portal]。 在左侧导航中，选择&#x200B;**[!DNL Data storage]**，然后转到&#x200B;**[!DNL Security + networking]**&#x200B;选项卡并选择&#x200B;**[!DNL Networking]**。 接下来，选择&#x200B;**[!DNL Private endpoints]**&#x200B;以查看与您的帐户关联的专用端点列表及其当前连接状态。 要批准挂起的请求，请选择所需的终结点，然后单击&#x200B;**[!DNL Approve]**。
 
-首先，您必须在[!DNL Snowflake]中提出支持票证，并请求&#x200B;**帐户的**&#x200B;区域的[!DNL Azure]端点服务资源ID[!DNL Snowflake]。 按照以下步骤提出[!DNL Snowflake]票证：
+![包含待处理专用终结点列表的Azure门户。](../../images/tutorials/private-links/azure.png)
 
-1. 导航到[[!DNL Snowflake] UI](https://app.snowflake.com)并使用您的电子邮件帐户登录。 在此步骤中，您必须确保在配置文件设置中验证您的电子邮件。
-2. 选择您的&#x200B;**用户菜单**，然后选择&#x200B;**支持**&#x200B;以访问[!DNL Snowflake]支持。
-3. 要创建支持案例，请选择&#x200B;**[!DNL + Support Case]**。 然后，填写包含相关详细信息的表单并附加任何必要的文件。
-4. 完成后，提交案例。
+<!--
 
-端点资源ID的格式如下所示：
+### Configure your [!DNL Snowflake] account to connect to private links
+
+You must complete the following prerequisite steps in order to use the [!DNL Snowflake] source with private links.
+
+First, you must raise a support ticket in [!DNL Snowflake] and request for the **endpoint service resource ID** of the [!DNL Azure] region of your [!DNL Snowflake] account. Follow the steps below to raise a [!DNL Snowflake] ticket:
+
+1. Navigate to the [[!DNL Snowflake] UI](https://app.snowflake.com) and sign in with your email account. During this step, you must ensure that your email is verified in profile settings.
+2. Select your **user menu** and then select **support** to access [!DNL Snowflake] support.
+3. To create a support case, select **[!DNL + Support Case]**. Then, fill out the form with relevant details and attach any necessary files.
+4. When finished, submit the case.
+
+The endpoint resource ID is formatted as follows:
 
 ```shell
 subscriptions/{SUBSCRIPTION_ID}/resourceGroups/az{REGION}-privatelink/providers/microsoft.network/privatelinkservices/sf-pvlinksvc-az{REGION}
 ```
 
-+++选择以查看示例
++++Select to view example
 
 ```shell
 /subscriptions/4575fb04-6859-4781-8948-7f3a92dc06a3/resourceGroups/azwestus2-privatelink/providers/microsoft.network/privatelinkservices/sf-pvlinksvc-azwestus2
@@ -855,14 +869,14 @@ subscriptions/{SUBSCRIPTION_ID}/resourceGroups/az{REGION}-privatelink/providers/
 
 +++
 
-| 参数 | 描述 | 示例 |
+| Parameter | Description | Example |
 | --- | --- | --- |
-| `{SUBSCRIPTION_ID}` | 标识您的[!DNL Azure]订阅的唯一ID。 | `a1b2c3d4-5678-90ab-cdef-1234567890ab` |
-| `{REGION}` | [!DNL Azure]帐户的[!DNL Snowflake]区域。 | `azwestus2` |
+| `{SUBSCRIPTION_ID}` | The unique ID that identifies your [!DNL Azure] subscription. | `a1b2c3d4-5678-90ab-cdef-1234567890ab` |
+| `{REGION}` | The [!DNL Azure] region of your [!DNL Snowflake] account. | `azwestus2` |
 
-### 检索专用链接配置详细信息
+### Retrieve your private link configuration details
 
-要检索专用链接配置详细信息，必须在[!DNL Snowflake]中运行以下命令：
+To retrieve your private link configuration details, you must run the following command in [!DNL Snowflake]:
 
 ```sql
 USE ROLE accountadmin;
@@ -870,21 +884,21 @@ SELECT key, value::varchar
 FROM TABLE(FLATTEN(input => PARSE_JSON(SYSTEM$GET_PRIVATELINK_CONFIG())));
 ```
 
-接下来，检索以下属性的值：
+Next, retrieve values for the following properties:
 
 * `privatelink-account-url`
 * `regionless-privatelink-account-url`
 * `privatelink_ocsp-url`
 
-在检索到值后，您可以进行以下调用以创建[!DNL Snowflake]的专用链接。
+Once you have retrieved the values, you can make the following call to create a private link for [!DNL Snowflake].
 
-**请求**
+**Request**
 
-以下请求为[!DNL Snowflake]创建专用终结点：
+The following request creates a private endpoint for [!DNL Snowflake]:
 
 >[!BEGINTABS]
 
->[!TAB 模板]
+>[!TAB Template]
 
 ```shell
 curl -X POST \
@@ -911,7 +925,7 @@ curl -X POST \
   }'
 ```
 
->[!TAB 示例]
+>[!TAB Example]
 
 ```shell
 curl -X POST \
@@ -938,11 +952,6 @@ curl -X POST \
   }'
 ```
 
-
 >[!ENDTABS]
 
-### 批准[!DNL Azure Blob]和[!DNL Azure Data Lake Gen2]的专用终结点
-
-要批准[!DNL Azure Blob]和[!DNL Azure Data Lake Gen2]源的专用终结点请求，请登录到[!DNL Azure Portal]。 在左侧导航中，选择&#x200B;**[!DNL Data storage]**，然后转到&#x200B;**[!DNL Security + networking]**&#x200B;选项卡并选择&#x200B;**[!DNL Networking]**。 接下来，选择&#x200B;**[!DNL Private endpoints]**&#x200B;以查看与您的帐户关联的专用端点列表及其当前连接状态。 要批准挂起的请求，请选择所需的终结点，然后单击&#x200B;**[!DNL Approve]**。
-
-![包含待处理专用终结点列表的Azure门户。](../../images/tutorials/private-links/azure.png)
+-->
