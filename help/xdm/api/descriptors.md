@@ -525,7 +525,7 @@ API支持两种模式：
 
 >[!NOTE]
 >
->在UI架构编辑器中，版本描述符显示为“[!UICOTRNOL 版本标识符]”。
+>在UI架构编辑器中，版本描述符显示为“[ !UICOTRNOL 版本标识符]”。
 
 版本描述符(`xdm:descriptorVersion`)指定一个字段来检测和防止无序更改事件发生冲突。
 
@@ -547,7 +547,7 @@ API支持两种模式：
 
 >[!NOTE]
 >
->在UI架构编辑器中，时间戳描述符显示为“[!UICOTRNOL 时间戳标识符]”。
+>在UI架构编辑器中，时间戳描述符显示为“[ !UICOTRNOL 时间戳标识符]”。
 
 时间戳描述符(`xdm:descriptorTimestamp`)将日期时间字段指定为具有`"meta:behaviorType": "time-series"`的架构的时间戳。
 

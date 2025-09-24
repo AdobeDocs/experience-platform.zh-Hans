@@ -80,7 +80,7 @@ ht-degree: 1%
 >[!NOTE]
 >
 >保存后，[!UICONTROL 架构属性]侧边栏中的[!UICONTROL Type]字段指示这是基于[!UICONTROL 模型的]架构。 架构库存视图的详细信息侧边栏中也指出了这一点。
->>![架构编辑器画布显示空的基于模型的架构结构，其中高亮显示基于模型的类型。](../../images/ui/resources/schemas/relational-empty-canvas.png)
+>&#x200B;>![架构编辑器画布显示空的基于模型的架构结构，其中高亮显示基于模型的类型。](../../images/ui/resources/schemas/relational-empty-canvas.png)
 
 ### 上载DDL文件 {#upload-ddl-file}
 
@@ -253,7 +253,7 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 >选择&#x200B;**[!UICONTROL 删除]**&#x200B;会从字段组本身中删除该字段，从而影响使用该字段组的&#x200B;*所有*架构。
->>除非您想要&#x200B;**从包含字段组**&#x200B;的每个架构中删除该字段，否则请不要使用此选项。
+>&#x200B;>除非您想要&#x200B;**从包含字段组**&#x200B;的每个架构中删除该字段，否则请不要使用此选项。
 
 要从字段组中删除字段，请在画布中选择该字段，然后在右边栏中选择&#x200B;**[!UICONTROL 删除]**。 此示例显示`taxId`人口统计详细信息&#x200B;**[!UICONTROL 组中的]**&#x200B;字段。
 

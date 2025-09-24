@@ -71,7 +71,7 @@ Experience Platform中的标准XDM架构遵循以下三种数据行为之一：�
 
 >[!NOTE]
 >
->在UI架构编辑器中，版本描述符和时间戳描述符分别显示为“[!UICOTRNOL 版本标识符]”和“[!UICOTRNOL 时间戳标识符]”。
+>在UI架构编辑器中，版本描述符和时间戳描述符分别显示为“[ !UICOTRNOL 版本标识符]”和“[ !UICOTRNOL 时间戳标识符]”。
 
 **示例（单字段）：**
 
