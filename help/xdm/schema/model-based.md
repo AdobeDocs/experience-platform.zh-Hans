@@ -38,7 +38,7 @@ ht-degree: 0%
 
 ## 基于模型的架构与标准XDM架构有何不同
 
-Experience Platform中的标准XDM架构遵循以下三种数据行为之一：记录、时间序列或临时。 有关定义和详细信息，请参阅[XDM数据行为](https://experienceleague.adobe.com/en/docs/experience-platform/xdm/home#data-behaviors)。
+Experience Platform中的标准XDM架构遵循以下三种数据行为之一：记录、时间序列或临时。 有关定义和详细信息，请参阅[XDM数据行为](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/xdm/home#data-behaviors)。
 
 在传统模型中，记录和时间序列架构参与[联合架构](../api/unions.md)（另请参阅[联合架构UI指南](../../profile/ui/union-schema.md)）。 这些架构会随着共享[字段组](./composition.md#field-group)的更新而自动演变，并且自定义字段必须嵌套在租户命名空间下。 虽然此模型功能强大，但可能会减慢载入速度，生成包含未使用字段的过于复杂的架构，并需要额外的数据映射或转换。 这些因素会增加学习曲线和持续的维护工作。
 
