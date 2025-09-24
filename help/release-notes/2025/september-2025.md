@@ -1,9 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明（2025 年 9 月）
 description: Adobe Experience Platform 2025 年 9 月发行说明。
-source-git-commit: e21381f2683070fdbf24c473fa6794b89160864b
+exl-id: 9c5ab487-22b8-4590-b4ea-abec0f377703
+source-git-commit: ac180f045dd3cc7e8ad9de702a3672630d668ee5
 workflow-type: tm+mt
-source-wordcount: '1402'
+source-wordcount: '1388'
 ht-degree: 43%
 
 ---
@@ -138,7 +139,10 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 | --- | --- |
 | 正式发布的新源 | 以下源现已正式发布：多个源连接器已从Beta更新为GA： <ul><li>[Acxiom数据摄取](../../sources/connectors/data-partners/acxiom-data-ingestion.md)</li><li>[Acxiom目标客户数据摄取](../../sources/connectors/data-partners/acxiom-prospecting-data-import.md)</li><li>[Merkury Enterprise](../../sources/connectors/data-partners/merkury.md)</li><li>[SAP Commerce](../../sources/connectors/ecommerce/sap-commerce.md)</li></ul>。这些源现在完全受支持，并可供生产使用。 |
 | [!DNL Snowflake]密钥对身份验证支持 | 增强了Snowflake连接的安全性，支持密钥对身份验证。 基本身份验证（用户名/密码）将于2025年11月被弃用，因此建议客户迁移到密钥对身份验证以提高安全性。 有关更多信息，请阅读该[[!DNL Snowflake] 文档](../../sources/connectors/databases/snowflake.md)。 |
-| [!BADGE Beta]{type=Informative} [!DNL Capillary Streaming Events] | 使用[[!DNL Capillary Streaming Events] 源](../../sources/connectors/loyalty/capillary.md)将[!DNL Capillary]帐户的忠诚度数据流式传输到Experience Platform。 |
 | 在源中正式提供专用链接支持 | 您现在可以为选定的源组使用&#x200B;**专用链接**。 使用此功能可以创建一个可以与来源连接的私有端点。使用私有端点，您可以设置绕过公共互联网的连接和数据流，从而为您的敏感数据提供更强的安全性和网络隔离。对专用链接的支持可从以下来源获得： <ul><li>[[!DNL Azure Blob Storage]](../../sources/connectors/cloud-storage/blob.md)</li><li>[[!DNL ADLS Gen2]](../../sources/connectors/cloud-storage/adls-gen2.md)</li><li>[[!DNL Azure File Storage]](../../sources/connectors/cloud-storage/azure-file-storage.md)</li></ul>。有关详细信息，请参阅在API[中创建专用链接](../../sources/tutorials/api/private-link.md)以及在UI[中创建专用链接](../../sources/tutorials/ui/private-link.md)的指南。 |
 
 有关更多信息，请阅读[来源概述](../../sources/home.md)。
+
+<!--
+| [!BADGE Beta]{type=Informative} [!DNL Capillary Streaming Events] | Use the [[!DNL Capillary Streaming Events] source](../../sources/connectors/loyalty/capillary.md) to stream loyalty data from your [!DNL Capillary] account to Experience Platform. |
+-->

@@ -5,9 +5,9 @@ breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源引入数据。了解如何构建、标记和增强已引入的数据。
 feature: Sources
 role: Developer
-source-git-commit: a05e20845b6c111139451f593ef24fb8f760b5bd
+source-git-commit: 96e395e3b3d977d7eb04c400f6fd290977bf1101
 workflow-type: tm+mt
-source-wordcount: '1070'
+source-wordcount: '1069'
 ht-degree: 34%
 
 ---
@@ -363,7 +363,7 @@ ht-degree: 34%
    - [订阅源提醒](tutorials/ui/alerts.md)
    - [将数据流另存为草稿](tutorials/ui/draft.md)
    - [将访问标签应用于数据流](tutorials/ui/labels.md)
-   - [创建Azure专用端点](tutorials/ui/private-link.md)
+   - [创建专用端点](tutorials/ui/private-link.md)
 - 自助来源(批处理SDK) {#sdk}
    - [概述](sources-sdk/overview.md)
    - 配置连接规范 {#config}

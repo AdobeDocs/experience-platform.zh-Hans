@@ -1,7 +1,10 @@
 ---
 title: 在UI中将中继连接到Experience Platform
 description: 了解如何使用Adobe Experience Platform UI创建中继连接器自定义源连接。
-source-git-commit: b16600888bd5e70dd97d67ceb265e3a1848d2a66
+hide: true
+hidefromtoc: true
+exl-id: f80855f5-0769-4253-b737-28c46e4dea6e
+source-git-commit: b3b1542f7e297f4ca872a155ac3801266bc1e6a6
 workflow-type: tm+mt
 source-wordcount: '568'
 ht-degree: 1%
@@ -80,5 +83,5 @@ ht-degree: 1%
 
 ## 其他资源
 
-* [使用流服务API创建新的连接规范](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/sources/sdk/streaming-sdk/create)
-* [使用UI连接到源](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/sources/sdk/streaming-sdk/submit#test-your-source-using-the-ui)
+* [使用流服务API创建新的连接规范](https://experienceleague.adobe.com/en/docs/experience-platform/sources/sdk/streaming-sdk/create)
+* [使用UI连接到源](https://experienceleague.adobe.com/en/docs/experience-platform/sources/sdk/streaming-sdk/submit#test-your-source-using-the-ui)

@@ -1,26 +1,26 @@
 ---
-title: Azure Databricks
-description: 了解将Azure数据库连接到Experience Platform所需的先决步骤。
+title: 数据块
+description: 了解将Databricks连接到Experience Platform所需的先决步骤。
 badgeUltimate: label="Ultimate" type="Positive"
 badgeBeta: label="Beta 版" type="Informative"
 last-substantial-update: 2025-06-17T00:00:00Z
 exl-id: 2f082898-aa0e-47a1-a4bf-077c21afdfee
-source-git-commit: e5ece120329a550204174b7bf588f06cdff45846
+source-git-commit: 96e395e3b3d977d7eb04c400f6fd290977bf1101
 workflow-type: tm+mt
-source-wordcount: '631'
+source-wordcount: '628'
 ht-degree: 2%
 
 ---
 
-# [!DNL Azure Databricks]
+# [!DNL Databricks]
 
 >[!AVAILABILITY]
 >
->* [!DNL Azure Databricks]源在源目录中可供已购买Real-Time CDP Ultimate的用户使用。
+>* [!DNL Databricks]源在源目录中可供已购买Real-Time CDP Ultimate的用户使用。
 >
->* [!DNL Azure Databricks]源为测试版。 有关使用测试版标记源的更多信息，请阅读源概述中的[条款和条件](../../home.md#terms-and-conditions)。
+>* [!DNL Databricks]源为测试版。 有关使用测试版标记源的更多信息，请阅读源概述中的[条款和条件](../../home.md#terms-and-conditions)。
 
-[!DNL Azure Databricks]是一个基于云的平台，专为数据分析、机器学习和AI而设计。 您可以使用[!DNL Databricks]与[!DNL Azure]集成，并提供用于大规模构建、部署和管理数据解决方案的整体环境。
+[!DNL Databricks]是一个基于云的平台，专为数据分析、机器学习和AI而设计。 您可以使用[!DNL Databricks]集成并提供整体环境，以便大规模构建、部署和管理数据解决方案。
 
 使用[!DNL Databricks]源连接您的帐户并将[!DNL Databricks]数据摄取到Adobe Experience Platform。
 
