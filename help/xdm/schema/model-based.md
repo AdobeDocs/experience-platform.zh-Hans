@@ -4,7 +4,8 @@ solution: Experience Platform
 title: 基于模型的架构
 description: 了解Adobe Experience Platform中基于模型的架构（也称为关系架构），包括功能、必填字段、关系和限制。
 badge: 有限发布版
-source-git-commit: 192e97c97ffcb2d695bcfa6269cc6920f5440832
+exl-id: 397e5937-b892-4fd3-b90e-29ed9229dc69
+source-git-commit: 4586a820556919aeb6cebd94d961c3f726637f16
 workflow-type: tm+mt
 source-wordcount: '1306'
 ht-degree: 0%
@@ -37,7 +38,7 @@ ht-degree: 0%
 
 ## 基于模型的架构与标准XDM架构有何不同
 
-Experience Platform中的标准XDM架构遵循以下三种数据行为之一：记录、时间序列或临时。 有关定义和详细信息，请参阅[XDM数据行为](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/xdm/home#data-behaviors)。
+Experience Platform中的标准XDM架构遵循以下三种数据行为之一：记录、时间序列或临时。 有关定义和详细信息，请参阅[XDM数据行为](https://experienceleague.adobe.com/en/docs/experience-platform/xdm/home#data-behaviors)。
 
 在传统模型中，记录和时间序列架构参与[联合架构](../api/unions.md)（另请参阅[联合架构UI指南](../../profile/ui/union-schema.md)）。 这些架构会随着共享[字段组](./composition.md#field-group)的更新而自动演变，并且自定义字段必须嵌套在租户命名空间下。 虽然此模型功能强大，但可能会减慢载入速度，生成包含未使用字段的过于复杂的架构，并需要额外的数据映射或转换。 这些因素会增加学习曲线和持续的维护工作。
 
@@ -71,7 +72,7 @@ Experience Platform中的标准XDM架构遵循以下三种数据行为之一：�
 
 >[!NOTE]
 >
->在UI架构编辑器中，版本描述符和时间戳描述符分别显示为“[ !UICOTRNOL 版本标识符]”和“[ !UICOTRNOL 时间戳标识符]”。
+>在UI架构编辑器中，版本描述符和时间戳描述符分别显示为“[!UICONTROL 版本标识符]”和“[!UICONTROL 时间戳标识符]”。
 
 **示例（单字段）：**
 
@@ -210,4 +211,3 @@ Should these be `@type: "xdm:descriptorRelationship",` This could be a copy-past
 * 关系仅限于一对一和多对一。
 * 可用性取决于您的许可证或功能支持。
 * 时间序列架构需要复合主键。
-

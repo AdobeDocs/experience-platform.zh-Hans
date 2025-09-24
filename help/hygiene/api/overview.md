@@ -3,9 +3,9 @@ title: 数据卫生API指南
 description: 了解如何在Adobe Experience Platform中以编程方式更正或删除客户存储的个人数据。
 role: Developer
 exl-id: 78c8b15b-b433-4168-a1e8-c97b96e4bf85
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 8aa8a1c42e9656716be746ba447a5f77a8155b4c
 workflow-type: tm+mt
-source-wordcount: '446'
+source-wordcount: '432'
 ht-degree: 6%
 
 ---
@@ -43,9 +43,6 @@ ht-degree: 6%
 ## 记录删除
 
 >[!IMPORTANT]
->
->记录删除请求仅适用于已购买&#x200B;**Adobe Healthcare Shield**&#x200B;的组织。
->
 >
 >记录删除旨在用于数据清理、匿名数据删除或数据最小化。 它们&#x200B;**不是**&#x200B;用于数据主体权利请求（合规性），因为它与《通用数据保护条例》(GDPR)等隐私法规相关。 对于所有合规性用例，请改用[Adobe Experience Platform Privacy Service](../../privacy-service/home.md)。
 

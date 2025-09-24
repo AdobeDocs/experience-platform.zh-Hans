@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM ExperienceEvent类
 description: 了解XDM ExperienceEvent类和事件数据建模的最佳实践。
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: f00b195567c22f69c05909e76906c8770da4b9d0
+source-git-commit: 8aa8a1c42e9656716be746ba447a5f77a8155b4c
 workflow-type: tm+mt
-source-wordcount: '2777'
+source-wordcount: '2783'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ ht-degree: 0%
 
 ### 时间戳 {#timestamps}
 
-事件架构的根`timestamp`字段只能&#x200B;**2&rbrace;表示事件本身的观察结果，并且必须发生在过去。**&#x200B;但是，事件&#x200B;**必须**&#x200B;从1970年起发生。 如果分段用例需要使用将来可能发生的时间戳，则这些值必须限制在体验事件架构中的其他位置。
+事件架构的根`timestamp`字段只能&#x200B;**2}表示事件本身的观察结果，并且必须发生在过去。**&#x200B;但是，事件&#x200B;**必须**&#x200B;从1970年起发生。 如果分段用例需要使用将来可能发生的时间戳，则这些值必须限制在体验事件架构中的其他位置。
 
 例如，如果旅游和酒店业的某家公司正在建模航班预订事件，则班级`timestamp`字段表示观察到预订事件的时间。 与事件相关的其他时间戳（如旅行预订的开始日期）应捕获在标准或自定义字段组提供的单独字段中。
 
@@ -65,6 +65,7 @@ ht-degree: 0%
 Adobe提供了多个标准字段组以用于[!DNL XDM ExperienceEvent]类。 以下是类的一些常用字段组的列表：
 
 * [[!UICONTROL Adobe Analytics ExperienceEvent完整扩展]](../field-groups/event/analytics-full-extension.md)
+* [[!UICONTROL Adobe Advertising Cloud ExperienceEvent完整扩展]](../field-groups/event/advertising-full-extension.md)
 * [[!UICONTROL 余额转帐]](../field-groups/event/balance-transfers.md)
 * [[!UICONTROL 营销活动详细信息]](../field-groups/event/campaign-marketing-details.md)
 * [[!UICONTROL 卡片操作]](../field-groups/event/card-actions.md)

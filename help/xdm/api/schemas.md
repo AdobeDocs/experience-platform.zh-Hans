@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 架构API端点
 description: 架构注册API中的/schemas端点允许您以编程方式管理体验应用程序中的XDM架构。
 exl-id: d0bda683-9cd3-412b-a8d1-4af700297abf
-source-git-commit: 974faad835b5dc2a4d47249bb672573dfb4d54bd
+source-git-commit: 4586a820556919aeb6cebd94d961c3f726637f16
 workflow-type: tm+mt
 source-wordcount: '2095'
 ht-degree: 3%
@@ -302,7 +302,7 @@ curl -X POST \
 
 >[!NOTE]
 >
->在UI架构编辑器中，版本描述符和时间戳描述符分别显示为“[ !UICOTRNOL 版本标识符]”和“[ !UICOTRNOL 时间戳标识符]”。
+>在UI架构编辑器中，版本描述符和时间戳描述符分别显示为“[!UICONTROL 版本标识符]”和“[!UICONTROL 时间戳标识符]”。
 
 <!-- >[!AVAILABILITY]
 >

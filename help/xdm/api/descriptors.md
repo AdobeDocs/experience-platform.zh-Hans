@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 描述符API端点
 description: 架构注册API中的/descriptors端点允许您以编程方式管理体验应用程序中的XDM描述符。
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: 02a22362b9ecbfc5fd7fcf17dc167309a0ea45d5
+source-git-commit: 4586a820556919aeb6cebd94d961c3f726637f16
 workflow-type: tm+mt
 source-wordcount: '2888'
 ht-degree: 1%
@@ -525,7 +525,7 @@ API支持两种模式：
 
 >[!NOTE]
 >
->在UI架构编辑器中，版本描述符显示为“[ !UICOTRNOL 版本标识符]”。
+>在UI架构编辑器中，版本描述符显示为“[!UICONTROL 版本标识符]”。
 
 版本描述符(`xdm:descriptorVersion`)指定一个字段来检测和防止无序更改事件发生冲突。
 
@@ -547,7 +547,7 @@ API支持两种模式：
 
 >[!NOTE]
 >
->在UI架构编辑器中，时间戳描述符显示为“[ !UICOTRNOL 时间戳标识符]”。
+>在UI架构编辑器中，时间戳描述符显示为“[!UICONTROL 时间戳标识符]”。
 
 时间戳描述符(`xdm:descriptorTimestamp`)将日期时间字段指定为具有`"meta:behaviorType": "time-series"`的架构的时间戳。
 
