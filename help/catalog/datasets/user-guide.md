@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 数据集UI指南
 description: 了解如何在Adobe Experience Platform用户界面中使用数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 1b278562c815953d2068a5142dbefcf1572baff5
+source-git-commit: 2f8589ec58d9afe69e21f909f905a941e43f710c
 workflow-type: tm+mt
 source-wordcount: '4497'
-ht-degree: 5%
+ht-degree: 4%
 
 ---
 
@@ -56,8 +56,8 @@ ht-degree: 5%
 
 >[!CONTEXTUALHELP]
 >id="platform_datasets_orchestratedCampaigns_toggle"
->title="编排的营销活动"
->abstract="启用此切换按钮可允许在 Adobe Journey Optimizer 编排的营销活动中使用所选数据集。数据集必须使用关系架构，且每个架构只能创建一个数据集。"
+>title="精心策划的营销活动"
+>abstract="启用此切换可允许在Adobe Journey Optimizer Orchestrated营销活动中使用选定的数据集。 数据集必须使用基于模型的架构，并且每个架构只能创建一个数据集。"
 
 在[!DNL Experience Platform] UI中，从左侧导航中选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以打开&#x200B;**[!UICONTROL 数据集]**&#x200B;仪表板。 仪表板列出您组织的所有可用数据集。 将显示每个列出数据集的详细信息，包括其名称、数据集所遵循的架构以及最近一次摄取运行的状态。
 

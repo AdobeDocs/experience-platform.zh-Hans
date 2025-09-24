@@ -5,9 +5,9 @@ breadcrumb-title: 体验数据模型 (XDM) 指南
 user-guide-description: 浏览 Experience Platform 中的体验数据模型 (XDM) 系统概述，并了解如何使用类和架构字段组使体验数据标准化。
 feature: Schemas
 role: Developer
-source-git-commit: 1385f91694f9b6dfe96b9d424af0da6f2a1443c2
+source-git-commit: f6e63f3fe390c1e47347015e873282719508a0ec
 workflow-type: tm+mt
-source-wordcount: '703'
+source-wordcount: '708'
 ht-degree: 48%
 
 ---
@@ -21,6 +21,7 @@ ht-degree: 48%
    * [数据建模的最佳实践](schema/best-practices.md)
    * [敏感数据和个人数据](./schema/sensitive-and-personal-data.md)
    * [XDM字段类型约束](schema/field-constraints.md)
+   * [基于模型的架构](./schema/model-based.md)
    * [XDM中的命名空间](./schema/namespaces.md)
    * 行业数据模型 {#industries}
       * [概述](./schema/industries/overview.md)
@@ -73,6 +74,8 @@ ht-degree: 48%
          * [计时](./schema/healthcare/data-types/timing.md)
          * [虚拟服务](./schema/healthcare/data-types/virtual-service-detail.md)
    * [XDM字段字典](schema/field-dictionary.md)
+* Data Mirror {#data-mirror}
+   * [概述](./data-mirror/overview.md)
 * 分类 {#classes}
    * [XDM 个人轮廓](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)

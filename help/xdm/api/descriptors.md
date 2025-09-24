@@ -4,26 +4,41 @@ solution: Experience Platform
 title: 描述符API端点
 description: 架构注册API中的/descriptors端点允许您以编程方式管理体验应用程序中的XDM描述符。
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: d6015125e3e29bdd6a6c505b5f5ad555bd17a0e0
+source-git-commit: 02a22362b9ecbfc5fd7fcf17dc167309a0ea45d5
 workflow-type: tm+mt
-source-wordcount: '2192'
+source-wordcount: '2888'
 ht-degree: 1%
 
 ---
 
 # 描述符端点
 
-架构定义了数据实体的静态视图，但未提供基于这些架构（例如数据集）的数据如何相互关联的特定详细信息。 Adobe Experience Platform允许您使用描述符描述这些关系以及有关架构的其他解释性元数据。
+架构定义数据实体的结构，但并不指定根据这些架构创建的任何数据集如何相互关联。 在Adobe Experience Platform中，您可以使用描述符描述这些关系，并将解释性元数据添加到架构中。
 
-架构描述符是租户级别的元数据，这意味着它们对于您的组织是唯一的，并且所有描述符操作都在租户容器中进行。
+描述符是应用于Adobe Experience Platform中架构的租户级别元数据对象。 它们定义影响下游数据的验证、连接或解释方式的结构关系、键和行为字段（例如时间戳或版本控制）。
 
-每个架构可以应用一个或多个架构描述符实体。 每个架构描述符实体包括描述符`@type`及其适用的`sourceSchema`。 应用后，这些描述符将应用于使用该架构创建的所有数据集。
+架构可以有一个或多个描述符。 每个描述符定义一个`@type`以及它适用的`sourceSchema`。 描述符自动应用于从该架构创建的所有数据集。
 
-[!DNL Schema Registry] API中的`/descriptors`端点允许您以编程方式管理体验应用程序中的描述符。
+在Adobe Experience Platform中，描述符是将行为规则或结构含义添加到架构的元数据。
+有多种类型的描述符，包括：
+
+- [标识描述符](#identity-descriptor) — 将字段标记为标识
+- [主键描述符](#primary-key-descriptor) — 强制唯一性
+- [关系描述符](#relationship-descriptor) — 定义外键联接
+- [备用显示信息描述符](#friendly-name) — 允许您重命名用户界面中的字段
+- [版本](#version-descriptor)和[时间戳](#timestamp-descriptor)描述符 — 跟踪事件排序和更改检测
+
+`/descriptors` API中的[!DNL Schema Registry]端点允许您以编程方式管理体验应用程序中的描述符。
 
 ## 快速入门
 
 本指南中使用的终结点是[[!DNL Schema Registry] API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/)的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience Platform API所需的所需标头的重要信息。
+
+除了标准描述符之外，[!DNL Schema Registry]还支持基于模型的架构的描述符类型，如&#x200B;**主键**、**版本**&#x200B;和&#x200B;**时间戳**。 这些选项可强制唯一性、控制版本控制，并在架构级别定义时间序列字段。 如果您不熟悉基于模型的架构，请先查看[Data Mirror概述](../data-mirror/overview.md)和[基于模型的架构技术参考](../schema/model-based.md)，然后再继续。
+
+>[!IMPORTANT]
+>
+>有关所有描述符类型的详细信息，请参阅[附录](#defining-descriptors)。
 
 ## 检索描述符列表 {#list}
 
@@ -51,7 +66,7 @@ curl -X GET \
 
 >[!IMPORTANT]
 >
->描述符需要将`xed`替换为`xdm`的唯一`Accept`标头，并且还提供描述符唯一的`link`选项。 以下示例调用中已包含正确的`Accept`标头，但请格外小心，以确保在使用描述符时使用正确的标头。
+>描述符需要将`Accept`替换为`xed`的唯一`xdm`标头，并且还提供描述符唯一的`link`选项。 以下示例调用中已包含正确的`Accept`标头，但请格外小心，以确保在使用描述符时使用正确的标头。
 
 | `Accept`标头 | 描述 |
 | -------|------------ |
@@ -86,7 +101,7 @@ curl -X GET \
 
 ## 查找描述符 {#lookup}
 
-如果要查看特定描述符的详细信息，可以使用其`@id`查找(GET)单个描述符。
+要查看特定描述符的详细信息，请使用其`@id`发送GET请求。
 
 **API格式**
 
@@ -281,9 +296,9 @@ curl -X DELETE \
 
 成功的响应返回HTTP状态204（无内容）和一个空白正文。
 
-要确认该描述符已被删除，您可以对该描述符`@id`执行[查找请求](#lookup)。 响应返回HTTP状态404 （未找到），因为描述符已从[!DNL Schema Registry]中删除。
+要确认该描述符已被删除，您可以对该描述符[执行](#lookup)查找请求`@id`。 响应返回HTTP状态404 （未找到），因为描述符已从[!DNL Schema Registry]中删除。
 
-## 附录
+## 附录 {#appendix}
 
 以下部分提供了有关在[!DNL Schema Registry] API中使用描述符的其他信息。
 
@@ -299,9 +314,9 @@ curl -X DELETE \
 >
 >您不能为租户命名空间对象添加标签，因为系统将通过该沙盒将该标签应用于每个自定义字段。 相反，您必须在该对象下指定需要标记的叶节点。
 
-#### 身份描述符
+#### 身份描述符 {#identity-descriptor}
 
-标识描述符指示“[!UICONTROL sourceSchema]”的“[!UICONTROL sourceProperty]”是[Adobe Experience Platform Identity Service](../../identity-service/home.md)描述的[!DNL Identity]字段。
+标识描述符指示“[!UICONTROL sourceSchema]”的“[!UICONTROL sourceProperty]”是[!DNL Identity]Experience Platform Identity Service[描述的](../../identity-service/home.md)字段。
 
 ```json
 {
@@ -371,21 +386,36 @@ curl -X DELETE \
 
 #### 关系描述符 {#relationship-descriptor}
 
-关系描述符描述两个不同架构之间的关系，它们以`sourceProperty`和`destinationProperty`中描述的属性作为密钥。 有关详细信息，请参阅有关[定义两个架构](../tutorials/relationship-api.md)之间关系的教程。
+关系描述符描述两个不同架构之间的关系，它们以`xdm:sourceProperty`和`xdm:destinationProperty`中描述的属性作为密钥。 有关详细信息，请参阅有关[定义两个架构](../tutorials/relationship-api.md)之间关系的教程。
+
+使用这些属性声明源字段（外键）与目标字段（[主键](#primary-key-descriptor)或候选键）的关系。
+
+>[!TIP]
+>
+>**外键**&#x200B;是源架构中的字段（由`xdm:sourceProperty`定义），它引用了另一个架构中的键字段。 **候选键**&#x200B;是目标架构中唯一标识记录的任意字段（或字段集），可以代替主键使用。
+
+API支持两种模式：
+
+- `xdm:descriptorOneToOne`：标准1:1关系。
+- `xdm:descriptorRelationship`：用于新工作和基于模型的架构的常规模式（支持基数、命名和非主键目标）。
+
+##### 一对一关系（标准架构）
+
+在维护已依赖于`xdm:descriptorOneToOne`的现有标准架构集成时使用此项。
 
 ```json
 {
   "@type": "xdm:descriptorOneToOne",
-  "xdm:sourceSchema":
-    "https://ns.adobe.com/{TENANT_ID}/schemas/fbc52b243d04b5d4f41eaa72a8ba58be",
+  "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/{SOURCE_SCHEMA_ID}",
   "xdm:sourceVersion": 1,
   "xdm:sourceProperty": "/parentField/subField",
-  "xdm:destinationSchema": 
-    "https://ns.adobe.com/{TENANT_ID}/schemas/78bab6346b9c5102b60591e15e75d254",
+  "xdm:destinationSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/{DEST_SCHEMA_ID}",
   "xdm:destinationVersion": 1,
   "xdm:destinationProperty": "/parentField/subField"
 }
 ```
+
+下表介绍了定义一对一关系描述符所需的字段。
 
 | 属性 | 描述 |
 | --- | --- |
@@ -397,7 +427,143 @@ curl -X DELETE \
 | `xdm:destinationVersion` | 引用架构的主要版本。 |
 | `xdm:destinationProperty` | （可选）引用架构中目标字段的路径。 如果忽略此属性，则包含匹配引用标识描述符的任何字段都会推断目标字段（请参阅下文）。 |
 
-{style="table-layout:auto"}
+##### 一般关系（基于模型的架构和新项目推荐）
+
+请将此描述符用于所有新实施和基于模型的架构。 它允许您定义关系的基数（如一对一或多对一），指定关系名称，以及指向非主键（非主键）的目标字段的链接。
+
+以下示例显示如何定义常规关系描述符。
+
+**最小示例：**
+
+此最小示例仅包括定义两个架构之间的多对一关系的必填字段。
+
+```json
+{
+  "@type": "xdm:descriptorRelationship",
+  "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/{SOURCE_SCHEMA_ID}",
+  "xdm:sourceProperty": "/customer_ref",
+  "xdm:sourceVersion": 1,
+  "xdm:destinationSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/{DEST_SCHEMA_ID}",
+  "xdm:cardinality": "M:1"
+}
+```
+
+**所有可选字段的示例：**
+
+此示例包括所有可选字段，例如关系名称、显示标题和显式非主键目标字段。
+
+```json
+{
+  "@type": "xdm:descriptorRelationship",
+  "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/{SOURCE_SCHEMA_ID}",
+  "xdm:sourceVersion": 1,
+  "xdm:sourceProperty": "/customer_ref",
+  "xdm:destinationSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/{DEST_SCHEMA_ID}",
+  "xdm:destinationProperty": "/customer_id",
+  "xdm:sourceToDestinationName": "CampaignToCustomer",
+  "xdm:destinationToSourceName": "CustomerToCampaign",
+  "xdm:sourceToDestinationTitle": "Customer campaigns",
+  "xdm:destinationToSourceTitle": "Campaign customers",
+  "xdm:cardinality": "M:1"
+}
+```
+
+##### 选择关系描述符
+
+请按照以下准则确定要应用的关系描述符：
+
+| 状况 | 要使用的描述符 |
+| --------------------------------------------------------------------- | ----------------------------------------- |
+| 新的工作或基于模型的架构 | `xdm:descriptorRelationship` |
+| 标准架构中的现有1:1映射 | 继续使用`xdm:descriptorOneToOne`，除非您需要仅由`xdm:descriptorRelationship`支持的功能。 |
+| 需要多对一或可选基数(`1:1`， `1:0`， `M:1`， `M:0`) | `xdm:descriptorRelationship` |
+| UI/下游可读性需要关系名称或标题 | `xdm:descriptorRelationship` |
+| 需要不是标识的目标目标 | `xdm:descriptorRelationship` |
+
+>[!NOTE]
+>
+>对于标准架构中的现有`xdm:descriptorOneToOne`描述符，除非您需要非主标识目标目标、自定义命名或扩展基数选项等功能，否则请继续使用它们。
+
+##### 功能比较
+
+下表比较了两种描述符类型的功能：
+
+| 功能 | `xdm:descriptorOneToOne` | `xdm:descriptorRelationship` |
+| ------------------ | ------------------------ | ------------------------------------------------------------------------ |
+| 基数 | 1:1 | 1:1， 1:0， M:1， M:0 （信息性） |
+| 目标目标 | 标识/显式字段 | 默认主键，或通过`xdm:destinationProperty`的非主键 |
+| 命名字段 | 不受支持 | `xdm:sourceToDestinationName`、`xdm:destinationToSourceName`和标题 |
+| 关系拟合 | 有限 | 基于模型的架构的主要模式 |
+
+##### 约束和验证
+
+在定义一般关系描述符时，请遵循以下要求和建议：
+
+- 对于基于模型的架构，请将源字段（外键）放在根级别。 这是当前的摄取技术限制，而不仅仅是最佳实践建议。
+- 确保源字段和目标字段的数据类型兼容（数字、日期、布尔值、字符串）。
+- 请记住，基数是信息性的；存储不会强制执行。 以`<source>:<destination>`格式指定基数。 接受的值为： `1:1`、`1:0`、`M:1`或`M:0`。
+
+#### 主键描述符 {#primary-key-descriptor}
+
+主键描述符(`xdm:descriptorPrimaryKey`)对架构中的一个或多个字段强制执行唯一性和非null约束。
+
+```json
+{
+  "@type": "xdm:descriptorPrimaryKey",
+  "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
+  "xdm:sourceProperty": ["/orderId", "/orderLineId"]
+}
+```
+
+| 属性 | 描述 |
+| -------------------- | ----------------------------------------------------------------------------- |
+| `@type` | 必须为`xdm:descriptorPrimaryKey`。 |
+| `xdm:sourceSchema` | 架构的`$id` URI。 |
+| `xdm:sourceProperty` | 主键字段的JSON指针。 使用组合键数组。 对于时间序列架构，复合密钥必须包含时间戳字段，以确保事件记录中的唯一性。 |
+
+#### 版本描述符 {#version-descriptor}
+
+>[!NOTE]
+>
+>在UI架构编辑器中，版本描述符显示为“[!UICOTRNOL 版本标识符]”。
+
+版本描述符(`xdm:descriptorVersion`)指定一个字段来检测和防止无序更改事件发生冲突。
+
+```json
+{
+  "@type": "xdm:descriptorVersion",
+  "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
+  "xdm:sourceProperty": "/versionNumber"
+}
+```
+
+| 属性 | 描述 |
+| -------------------- | ------------------------------------------------------------- |
+| `@type` | 必须为`xdm:descriptorVersion`。 |
+| `xdm:sourceSchema` | 架构的`$id` URI。 |
+| `xdm:sourceProperty` | 版本字段的JSON指针。 必须标记为`required`。 |
+
+#### 时间戳描述符 {#timestamp-descriptor}
+
+>[!NOTE]
+>
+>在UI架构编辑器中，时间戳描述符显示为“[!UICOTRNOL 时间戳标识符]”。
+
+时间戳描述符(`xdm:descriptorTimestamp`)将日期时间字段指定为具有`"meta:behaviorType": "time-series"`的架构的时间戳。
+
+```json
+{
+  "@type": "xdm:descriptorTimestamp",
+  "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
+  "xdm:sourceProperty": "/eventTime"
+}
+```
+
+| 属性 | 描述 |
+| -------------------- | ------------------------------------------------------------------------------------------ |
+| `@type` | 必须为`xdm:descriptorTimestamp`。 |
+| `xdm:sourceSchema` | 架构的`$id` URI。 |
+| `xdm:sourceProperty` | 时间戳字段的JSON指针。 必须标记为`required`并且类型为`date-time`。 |
 
 ##### B2B关系描述符 {#B2B-relationship-descriptor}
 
@@ -427,7 +593,7 @@ Real-Time CDP B2B edition引入了一种定义架构之间关系的替代方法�
 | `xdm:sourceProperty` | 要定义关系的源架构中字段的路径。 应该以“/”开头，而不是以“/”结尾。 不要在路径中包含“properties”（例如，“/personalEmail/address”而不是“/properties/personalEmail/properties/address”）。 |
 | `xdm:destinationSchema` | 此描述符正在定义关系的参考架构的`$id` URI。 |
 | `xdm:destinationVersion` | 引用架构的主要版本。 |
-| `xdm:destinationProperty` | （可选）引用架构中目标字段的路径，该字段必须是架构的主ID。 如果忽略此属性，则包含匹配引用标识描述符的任何字段都会推断目标字段（请参阅下文）。 |
+| `xdm:destinationProperty` | （可选）引用架构中目标字段的路径。 这必须解析为架构的主ID，或解析为另一个数据类型与`xdm:sourceProperty`兼容的字段。 如果忽略，则关系可能无法按预期运行。 |
 | `xdm:destinationNamespace` | 引用架构中的主ID的命名空间。 |
 | `xdm:destinationToSourceTitle` | 从引用架构到源架构的关系显示名称。 |
 | `xdm:sourceToDestinationTitle` | 从源架构到引用架构的关系显示名称。 |
@@ -461,7 +627,7 @@ Real-Time CDP B2B edition引入了一种定义架构之间关系的替代方法�
 
 #### 已弃用的字段描述符
 
-您可以[弃用自定义XDM资源](../tutorials/field-deprecation-api.md#custom)中的字段，方法是向相关字段添加设置为`deprecated`的`meta:status`属性。 但是，如果要弃用由架构中的标准XDM资源提供的字段，可向相关架构分配已弃用的字段描述符，以实现相同的效果。 通过使用[正确的`Accept`标头](../tutorials/field-deprecation-api.md#verify-deprecation)，您可以在API中查找架构时查看该架构已弃用的标准字段。
+您可以[弃用自定义XDM资源](../tutorials/field-deprecation-api.md#custom)中的字段，方法是向相关字段添加设置为`meta:status`的`deprecated`属性。 但是，如果要弃用由架构中的标准XDM资源提供的字段，可向相关架构分配已弃用的字段描述符，以实现相同的效果。 通过使用[正确的`Accept`标头](../tutorials/field-deprecation-api.md#verify-deprecation)，您可以在API中查找架构时查看该架构已弃用的标准字段。
 
 ```json
 {

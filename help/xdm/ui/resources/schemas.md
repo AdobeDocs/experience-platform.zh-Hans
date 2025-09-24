@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 在UI中创建和编辑架构
 description: 了解如何在Experience Platform用户界面中创建和编辑架构的基础知识。
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 0b03a8873f828faef78e5bf0b66c9773fc693206
+source-git-commit: 974faad835b5dc2a4d47249bb672573dfb4d54bd
 workflow-type: tm+mt
-source-wordcount: '4178'
-ht-degree: 2%
+source-wordcount: '4873'
+ht-degree: 1%
 
 ---
 
@@ -27,15 +27,96 @@ ht-degree: 2%
 
 ## 创建新架构 {#create}
 
+在[!UICONTROL 架构]工作区中，选择右上角的&#x200B;**[!UICONTROL 创建架构]**。 出现“选择架构类型”下拉菜单，其中包含[!UICONTROL Standard]或[!UICONTROL 基于模型的]架构的选项。
+
+![突出显示具有[!UICONTROL 创建架构]的架构工作区，并显示“选择架构类型”下拉列表](../../images/ui/resources/schemas/create-schema.png)。
+
+## 创建一个基于模型的架构 {#create-model-based-schema}
+
+>[!AVAILABILITY]
+>
+>Data Mirror和基于模型的架构可供Adobe Journey Optimizer **协调的营销活动**&#x200B;许可证持有人使用。 根据您的许可证和功能启用，它们也可用作Customer Journey Analytics用户的&#x200B;**有限版本**。 请联系您的Adobe代表以获取访问权限。
+
+选择&#x200B;**[!UICONTROL 基于模型]**&#x200B;以定义对记录具有细粒度控制的结构化基于模型的样式架构。 基于模型的架构通过主键和外键支持主键实施、记录级别版本控制和架构级别的关系。 它们还针对使用变更数据捕获的增量摄取进行了优化，并支持在Campaign Orchestration、Data Distiller和B2B实施中使用的多个数据模型。
+
+若要了解更多信息，请参阅[Data Mirror](../../data-mirror/overview.md)或[基于模型的架构](../../schema/model-based.md)概述。
+
+### 手动创建 {#create-manually}
+
+>[!AVAILABILITY]
+>
+>DDL文件上传仅适用于Adobe Journey Optimizer Orchestrated促销活动许可证持有者。 您的UI可能显示方式不同。
+
+出现&#x200B;**[!UICONTROL 创建基于模型的架构]**&#x200B;对话框。 您可以选择&#x200B;**[!UICONTROL 手动创建]**&#x200B;或[**[!UICONTROL 上传DDL文件]**](#upload-ddl-file)来定义架构结构。
+
+在&#x200B;**[!UICONTROL 创建基于模型的架构]**&#x200B;对话框中，选择&#x200B;**[!UICONTROL 手动创建]**，然后选择&#x200B;**[!UICONTROL 下一步]**。
+
+![已选中“创建基于模型的架构”对话框，并选中“手动创建”和“下一步”突出显示。](../../images/ui/resources/schemas/relational-dialog.png)
+
+此时将显示&#x200B;**[!UICONTROL 基于模型的架构详细信息]**&#x200B;页面。 输入架构显示名称和可选说明，然后选择&#x200B;**[!UICONTROL 完成]**&#x200B;以创建架构。
+
+![已突出显示[!UICONTROL 架构显示名称]、[!UICONTROL 描述]和[!UICONTROL 完成]的基于模型的架构详细信息视图。](../../images/ui/resources/schemas/relational-details.png)
+
+架构编辑器将打开，并带有用于定义架构结构的空画布。 您可以像往常一样添加字段。
+
+#### 添加版本标识符字段 {#add-version-identifier}
+
+要启用版本跟踪并支持变更数据捕获，必须在架构中指定一个版本标识符字段。 在架构编辑器中，选择加号(![A加号图标。架构名称旁边的](/help/images/icons/plus.png))图标以添加新字段。
+
+输入字段名称，如`updateSequence`，然后选择&#x200B;**[!UICONTROL 日期时间]**&#x200B;或&#x200B;**[!UICONTROL 数字]**&#x200B;的数据类型。
+
+在右边栏中，启用&#x200B;**[!UICONTROL 版本标识符]**&#x200B;复选框，然后选择&#x200B;**[!UICONTROL 应用]**&#x200B;以确认该字段。
+
+![已添加具有名为`updateSequence`的DateTime字段的架构编辑器，并已选中“版本标识符”复选框。](../../images/ui/resources/schemas/add-version-identifier.png)
+
+>[!IMPORTANT]
+>
+>基于模型的架构必须包含版本标识符字段，以支持记录级更新和变更数据捕获引入。
+
+要定义关系，请选择架构编辑器中的&#x200B;**[!UICONTROL 添加关系]**&#x200B;以创建架构级别的主键/外键关系。 有关详细信息，请参阅有关[添加架构级别关系](../../tutorials/relationship-ui.md#relationship-field)的教程。
+
+接下来，继续[定义主键](../fields/identity.md#define-a-identity-field)，并根据需要[添加其他字段](#add-field-groups)。 有关如何在Experience Platform源中启用变更数据捕获的指导，请参阅[变更数据捕获引入指南](../../../sources/tutorials/api/change-data-capture.md)。
+
 >[!NOTE]
 >
->本节介绍如何在UI中手动创建新架构。 如果您正在将CSV数据摄取到Experience Platform，则可以使用机器学习(ML)算法&#x200B;**从示例CSV数据生成架构**。 此工作流可匹配您的数据格式，并根据CSV文件的结构和内容自动创建新架构。 有关此工作流的详细信息，请参阅[ML辅助模式创建指南](../ml-assisted-schema-creation.md)。
+>保存后，[!UICONTROL 架构属性]侧边栏中的[!UICONTROL Type]字段指示这是基于[!UICONTROL 模型的]架构。 架构库存视图的详细信息侧边栏中也指出了这一点。
+>>![架构编辑器画布显示空的基于模型的架构结构，其中高亮显示基于模型的类型。](../../images/ui/resources/schemas/relational-empty-canvas.png)
 
-在[!UICONTROL 架构]工作区中，选择右上角的&#x200B;**[!UICONTROL 创建架构]**。
+### 上载DDL文件 {#upload-ddl-file}
 
-![突出显示具有[!UICONTROL 创建架构]的架构工作区。](../../images/ui/resources/schemas/create-schema.png)
+>[!AVAILABILITY]
+>
+>DDL文件上传仅适用于Adobe Journey Optimizer Orchestrated促销活动许可证持有者。
 
-出现[!UICONTROL 创建架构]对话框。 在此对话框中，您可以选择通过添加字段和字段组手动创建架构，也可以上传CSV文件并使用ML算法生成架构。 从对话框中选择架构创建工作流。
+使用此工作流通过上传DDL文件来定义架构。 在&#x200B;**[!UICONTROL 创建基于模型的架构]**&#x200B;对话框中，选择&#x200B;**[!UICONTROL 上传DDL文件]**，然后从系统中拖动本地DDL文件或选择&#x200B;**[!UICONTROL 选择文件]**。 Experience Platform验证架构，如果文件上传成功，则显示绿色复选标记。 选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以确认上传。
+
+![已选择[!UICONTROL 上传DDL文件]并突出显示[!UICONTROL 下一步]的“创建基于模型的架构”对话框。](../../images/ui/resources/schemas/upload-ddl-file.png)
+
+将显示[!UICONTROL 选择要导入的实体和字段]对话框，允许您预览架构。 查看架构结构，并使用单选按钮和复选框确保每个实体都指定了主键和版本标识符。
+
+>[!IMPORTANT]
+>
+>表结构必须包含&#x200B;**主键**&#x200B;和&#x200B;**版本标识符**，例如datetime或数字类型的`updateSequence`字段。
+>
+>对于变更数据捕获摄取，还需要名为`_change_request_type`且类型为String的特殊列才能启用增量处理。 此字段指示数据更改的类型(例如，`u` (upsert)或`d` (delete))。
+
+虽然在引入期间需要，但诸如`_change_request_type`之类的控件列未存储在架构中，并且未出现在最终架构结构中。 如果一切看起来都正确，请选择&#x200B;**[!UICONTROL 完成]**&#x200B;以创建架构。
+
+>[!NOTE]
+>
+>DDL上载支持的最大文件大小为10MB。
+
+![显示导入字段且突出显示[!UICONTROL 完成]的基于模型的架构审核视图。](../../images/ui/resources/schemas/entities-and-files-to-inport.png)
+
+架构将在架构编辑器中打开，您可以在保存之前调整结构。
+
+接下来，继续[添加其他字段](#add-field-groups)，并根据需要[添加其他架构级别关系](../../tutorials/relationship-ui.md#relationship-field)。
+
+有关如何在Experience Platform源中启用变更数据捕获的指导，请参阅[变更数据捕获引入指南](../../../sources/tutorials/api/change-data-capture.md)。
+
+## 标准架构创建 {#standard-based-creation}
+
+如果从“选择架构类型”下拉菜单中选择“标准架构类型”，将显示[!UICONTROL 创建架构]对话框。 在此对话框中，您可以选择通过添加字段和字段组手动创建架构，也可以上传CSV文件并使用ML算法生成架构。 从对话框中选择架构创建工作流。
 
 ![使用工作流选项创建架构对话框并选择高亮显示。](../../images/ui/resources/schemas/create-a-schema-dialog.png)
 
@@ -172,7 +253,7 @@ ht-degree: 2%
 >[!IMPORTANT]
 >
 >选择&#x200B;**[!UICONTROL 删除]**&#x200B;会从字段组本身中删除该字段，从而影响使用该字段组的&#x200B;*所有*架构。
->&#x200B;>除非您想要&#x200B;**从包含字段组**&#x200B;的每个架构中删除该字段，否则请不要使用此选项。
+>>除非您想要&#x200B;**从包含字段组**&#x200B;的每个架构中删除该字段，否则请不要使用此选项。
 
 要从字段组中删除字段，请在画布中选择该字段，然后在右边栏中选择&#x200B;**[!UICONTROL 删除]**。 此示例显示`taxId`人口统计详细信息&#x200B;**[!UICONTROL 组中的]**&#x200B;字段。
 

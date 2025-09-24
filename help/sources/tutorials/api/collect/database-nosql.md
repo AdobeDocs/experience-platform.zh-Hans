@@ -3,9 +3,9 @@ title: 使用流服务API为数据库源创建数据流
 type: Tutorial
 description: 了解如何使用流服务API创建数据流并将数据库中的数据摄取到Experience Platform中。
 exl-id: 1e1f9bbe-eb5e-40fb-a03c-52df957cb683
-source-git-commit: b4f8d44c3ce9507ff158cf051b7a4b524b293c64
+source-git-commit: 02a22362b9ecbfc5fd7fcf17dc167309a0ea45d5
 workflow-type: tm+mt
-source-wordcount: '1456'
+source-wordcount: '1489'
 ht-degree: 2%
 
 ---
@@ -113,7 +113,7 @@ curl -X POST \
 | -------- | ----------- |
 | `baseConnectionId` | 数据库源的连接ID。 |
 | `params.tableName` | 源文件的路径。 |
-| `params.cdcEnabled` | 一个布尔值，指示是否启用更改历史记录捕获。 以下数据库源支持此属性： <ul><li>[!DNL Azure Databricks]</li><li>[!DNL Google BigQuery]</li><li>[!DNL Snowflake]</li></ul> 有关详细信息，请阅读有关在源[中使用](../change-data-capture.md)更改数据捕获的指南。 |
+| `params.cdcEnabled` | 一个布尔值，指示是否启用更改历史记录捕获。 在与基于模型的架构一起使用时，更改数据捕获会跟踪插入、更新和删除操作，以使目标数据集与源保持同步。 以下数据库源支持此属性： <ul><li>[!DNL Azure Databricks]</li><li>[!DNL Google BigQuery]</li><li>[!DNL Snowflake]</li></ul> 有关此功能的概述，请参阅[Data Mirror概述](../../../../xdm/data-mirror/overview.md)。 有关实施详细信息，请参阅源指南[中的](../change-data-capture.md)更改数据捕获[和基于模型的架构技术参考](../../../../xdm/schema/model-based.md)。 |
 | `connectionSpec.id` | 数据库源的连接规范ID。 有关数据库规范ID的列表，请参阅[附录](#appendix)。 |
 
 **响应**

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Source连接器概述
 description: Adobe Experience Platform 允许从外部源摄取数据，同时让您能够使用 Experience Platform 服务来构建、标记和增强传入数据。您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 91d6206c6ce387fde365fa72dc79ca79fc0e46fa
+source-git-commit: f424c5c7e436a7f4c45d37c004096d3924247158
 workflow-type: tm+mt
-source-wordcount: '1666'
+source-wordcount: '1696'
 ht-degree: 12%
 
 ---
@@ -61,7 +61,7 @@ Experience Platform允许从其他Adobe应用程序(包括Adobe Analytics和Adob
 
 ### 高级企业源 {#advanced-enterprise-sources}
 
-以下源仅供[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)客户使用。
+以下源仅供[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)客户使用。
 
 | 来源 | 类别 | 摄取类型 | 云 |
 | --- | --- | --- | --- |
@@ -306,7 +306,11 @@ Adobe Experience Platform中基于属性的访问控制允许管理员根据属�
 
 - 将标签应用于架构字段以定义对组织中特定架构字段的访问权限。 一旦建立了对特定架构字段的访问权限，用户将只能为他们有权访问的字段创建映射。
 - 不具有相应角色的用户将无法创建或更新包含包含无法访问架构字段的映射的数据流。 此外，未经授权的用户无法更新、删除、启用或禁用具有无法访问架构字段的现有数据流。
-- 此外，数据流在其映射、目标数据集和目标连接中必须具有完全相同的架构ID和版本。
+- 此外，数据流在其映射、目标数据集和目标连接中必须具有完全相同的架构ID和版本。 这适用于标准XDM架构和基于模型的架构。
+
+>[!NOTE]
+>
+>基于模型的架构具有其他要求，包括主键和版本标识符字段。 有关详细信息，请参阅[基于模型的架构概述](../xdm/schema/model-based.md)。
 
 有关基于属性的访问控制的详细信息，请阅读[基于属性的访问控制概述](../access-control/abac/overview.md)。
 

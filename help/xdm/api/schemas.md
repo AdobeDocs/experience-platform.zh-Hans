@@ -4,24 +4,24 @@ solution: Experience Platform
 title: 架构API端点
 description: 架构注册API中的/schemas端点允许您以编程方式管理体验应用程序中的XDM架构。
 exl-id: d0bda683-9cd3-412b-a8d1-4af700297abf
-source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
+source-git-commit: 974faad835b5dc2a4d47249bb672573dfb4d54bd
 workflow-type: tm+mt
-source-wordcount: '1443'
-ht-degree: 2%
+source-wordcount: '2095'
+ht-degree: 3%
 
 ---
 
 # 架构端点
 
-架构可以被视为您要摄取到Adobe Experience Platform的数据的蓝图。 每个架构由一个类和零个或多个架构字段组组成。 [!DNL Schema Registry] API中的`/schemas`端点允许您以编程方式管理体验应用程序中的架构。
+架构可以被视为您要摄取到Adobe Experience Platform的数据的蓝图。 每个架构由一个类和零个或多个架构字段组组成。 `/schemas` API中的[!DNL Schema Registry]端点允许您以编程方式管理体验应用程序中的架构。
 
 ## 快速入门
 
-本指南中使用的API端点是[[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+本指南中使用的API端点是[[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience Platform API所需的所需标头的重要信息。
 
 ## 检索架构列表 {#list}
 
-通过分别向`/global/schemas`或`/tenant/schemas`发出GET请求，可列出`global`或`tenant`容器下的所有架构。
+通过分别向`global`或`tenant`发出GET请求，可列出`/global/schemas`或`/tenant/schemas`容器下的所有架构。
 
 >[!NOTE]
 >
@@ -35,7 +35,7 @@ GET /{CONTAINER_ID}/schemas?{QUERY_PARAMS}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{CONTAINER_ID}` | 存放要检索的架构的容器： `global`用于Adobe创建的架构，或者`tenant`用于您组织拥有的架构。 |
+| `{CONTAINER_ID}` | 存放要检索的架构的容器： `global`用于Adobe创建的架构，或者`tenant`用于您的组织拥有的架构。 |
 | `{QUERY_PARAMS}` | 用于筛选结果的可选查询参数。 有关可用参数的列表，请参阅[附录文档](./appendix.md#query)。 |
 
 {style="table-layout:auto"}
@@ -99,7 +99,7 @@ curl -X GET \
 
 ## 查找架构 {#lookup}
 
-您可以通过在路径中包含架构ID的GET请求来查找特定架构。
+您可以通过发出GET请求来查找特定架构，该请求在路径中包含架构的ID。
 
 **API格式**
 
@@ -109,7 +109,7 @@ GET /{CONTAINER_ID}/schemas/{SCHEMA_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{CONTAINER_ID}` | 包含您要检索的架构的容器：`global`用于Adobe创建的架构，或者`tenant`用于您组织拥有的架构。 |
+| `{CONTAINER_ID}` | 包含您要检索的架构的容器： `global`用于Adobe创建的架构，或者`tenant`用于您的组织拥有的架构。 |
 | `{SCHEMA_ID}` | 要查找的架构的`meta:altId`或URL编码的`$id`。 |
 
 {style="table-layout:auto"}
@@ -128,7 +128,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-响应格式取决于请求中发送的`Accept`标头。 所有查找请求都要求在`Accept`标头中包含`version`。 以下`Accept`标头可用：
+响应格式取决于请求中发送的`Accept`标头。 所有查找请求都要求在`version`标头中包含`Accept`。 以下`Accept`标头可用：
 
 | `Accept`标头 | 描述 |
 | ------- | ------------ |
@@ -137,7 +137,7 @@ curl -X GET \
 | `application/vnd.adobe.xed-notext+json; version=1` | 原始为`$ref`和`allOf`，无标题或描述。 |
 | `application/vnd.adobe.xed-full-notext+json; version=1` | `$ref`和`allOf`已解决，无标题或描述。 |
 | `application/vnd.adobe.xed-full-desc+json; version=1` | 已解决`$ref`和`allOf`，包含描述符。 |
-| `application/vnd.adobe.xed-deprecatefield+json; version=1` | `$ref`和`allOf`已解决，具有标题和描述。 已弃用的字段用`deprecated`的`meta:status`属性表示。 |
+| `application/vnd.adobe.xed-deprecatefield+json; version=1` | `$ref`和`allOf`已解决，具有标题和描述。 已弃用的字段用`meta:status`的`deprecated`属性表示。 |
 
 {style="table-layout:auto"}
 
@@ -198,6 +198,8 @@ curl -X GET \
 
 架构组合过程从指定类开始。 类定义数据的关键行为方面（记录或时间序列），以及描述将摄取的数据所需的最小字段。
 
+有关在不使用类或字段组的情况下创建架构（称为基于模型的架构）的说明，请参阅[创建基于模型的架构](#create-model-based-schema)部分。
+
 >[!NOTE]
 >
 >以下示例调用只是一个基准示例，说明如何在API中创建架构，具有类的最低组合要求，并且没有字段组。 有关如何在API中创建架构的完整步骤，包括如何使用字段组和数据类型分配字段，请参阅[架构创建教程](../tutorials/create-schema-api.md)。
@@ -210,7 +212,7 @@ POST /tenant/schemas
 
 **请求**
 
-该请求必须包含引用类的`$id`的`allOf`特性。 此属性定义架构将实施的“基类”。 在此示例中，基类是以前创建的“属性信息”类。
+该请求必须包含引用类的`allOf`的`$id`特性。 此属性定义架构将实施的“基类”。 在此示例中，基类是以前创建的“属性信息”类。
 
 ```SHELL
 curl -X POST \
@@ -275,13 +277,199 @@ curl -X POST \
 }
 ```
 
-执行GET请求[列出租户容器中的所有架构](#list)将包含新架构。 您可以使用URL编码的`$id` URI执行[查找(GET)请求](#lookup)以直接查看新架构。
+现在执行GET请求以[列出租户容器中的所有架构](#list)将包括新架构。 您可以使用URL编码的[ URI执行](#lookup)查找(GET)请求`$id`以直接查看新架构。
 
 要将其他字段添加到架构，您可以执行[PATCH操作](#patch)以将字段组添加到架构的`allOf`和`meta:extends`数组。
 
+## 创建一个基于模型的架构 {#create-model-based-schema}
+
+>[!AVAILABILITY]
+>
+>Data Mirror和基于模型的架构可供Adobe Journey Optimizer **协调的营销活动**&#x200B;许可证持有人使用。 根据您的许可证和功能启用，它们也可用作Customer Journey Analytics用户的&#x200B;**有限版本**。 请联系您的Adobe代表以获取访问权限。
+
+通过向`/schemas`端点发出POST请求来创建基于模型的架构。 基于模型的架构存储结构化关系样式数据&#x200B;**，但不包含**&#x200B;类或字段组。 直接在架构上定义字段，并使用逻辑行为标记将架构标识为基于模型。
+
+>[!IMPORTANT]
+>
+>要创建基于模型的架构，请将`meta:extends`设置为`"https://ns.adobe.com/xdm/data/adhoc-v2"`。 这是&#x200B;**逻辑行为标识符** （不是物理行为或类）。 在&#x200B;**中**&#x200B;不`allOf`引用类或字段组，在&#x200B;**中**&#x200B;不`meta:extends`包含类或字段组。
+
+首先使用`POST /tenant/schemas`创建架构。 然后使用[描述符API (`POST /tenant/descriptors`)](../api/descriptors.md)添加所需的描述符：
+
+- [主键描述符](../api/descriptors.md#primary-key-descriptor)：主键字段必须在&#x200B;**根级别**&#x200B;且&#x200B;**标记为必需**。
+- [版本描述符](../api/descriptors.md#version-descriptor)： **必需**（主键存在时）。
+- [关系描述符](../api/descriptors.md#relationship-descriptor)：可选，定义联接；引入时未强制使用基数。
+- [时间戳描述符](../api/descriptors.md#timestamp-descriptor)：对于时序架构，主键必须是包含时间戳字段的&#x200B;**复合**&#x200B;键。
+
+>[!NOTE]
+>
+>在UI架构编辑器中，版本描述符和时间戳描述符分别显示为“[!UICOTRNOL 版本标识符]”和“[!UICOTRNOL 时间戳标识符]”。
+
+<!-- >[!AVAILABILITY]
+>
+>Although `meta:behaviorType` technically accepts `time-series`, support is not currently available for model-based schemas. Set `meta:behaviorType` to `"record"`. -->
+
+>[!CAUTION]
+>
+>基于模型的架构&#x200B;**与合并架构**&#x200B;不兼容。 使用基于模型的架构时，请勿将`union`标记应用于`meta:immutableTags`。 此配置在UI中被阻止，但当前未被API阻止。 有关合并架构行为的详细信息，请参阅[联合终结点指南](./unions.md)。
+
+**API格式**
+
+```http
+POST /tenant/schemas
+```
+
+**请求**
+
+```shell
+curl --request POST \
+  --url https://platform.adobe.io/data/foundation/schemaregistry/tenant/schemas \
+  -H 'Accept: application/vnd.adobe.xed+json' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+  "title": "marketing.customers",
+  "type": "object",
+  "description": "Schema of the Marketing Customers table.",
+  "definitions": {
+    "customFields": {
+      "type": "object",
+      "properties": {
+        "customer_id": {
+          "title": "Customer ID",
+          "description": "Primary key of the customer table.",
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "title": "Name",
+          "description": "Name of the customer.",
+          "type": "string"
+        },
+        "email": {
+          "title": "Email",
+          "description": "Email of the customer.",
+          "type": "string",
+          "format": "email",
+          "minLength": 1
+        }
+      },
+      "required": ["customer_id"]
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "#/definitions/customFields",
+      "meta:xdmType": "object"
+    }
+  ],
+  "meta:extends": ["https://ns.adobe.com/xdm/data/adhoc-v2"],
+  "meta:behaviorType": "record"
+}
+'
+```
+
+### 请求正文属性
+
+| 属性 | 类型 | 描述 |
+| ------------------------------- | ------ | --------------------------------------------------------- |
+| `title` | 字符串 | 架构的显示名称。 |
+| `description` | 字符串 | 有关架构用途的简短说明。 |
+| `type` | 字符串 | 对于基于模型的架构，必须为`"object"`。 |
+| `definitions` | 对象 | 包含定义架构字段的根级别对象。 |
+| `definitions.<name>.properties` | 对象 | 字段名称和数据类型。 |
+| `allOf` | 数组 | 引用根级对象定义（例如，`#/definitions/marketing_customers`）。 |
+| `meta:extends` | 数组 | 必须包括`"https://ns.adobe.com/xdm/data/adhoc-v2"`以将架构标识为基于模型。 |
+| `meta:behaviorType` | 字符串 | 设置为`"record"`。 仅在启用和适当的情况下使用`"time-series"`。 |
+
+>[!IMPORTANT]
+>
+>基于模型的架构的架构演化遵循与标准架构相同的附加规则。 您可以通过PATCH请求添加新字段。 仅当未将数据摄取到数据集时，才允许重命名或删除字段等更改。
+
+**响应**
+
+成功的请求返回&#x200B;**HTTP 201 （已创建）**&#x200B;和已创建的架构。
+
+>[!NOTE]
+>
+>基于模型的架构不继承预植入字段（例如，id、时间戳或eventType）。 在架构中显式定义所有必填字段。
+
+**示例响应**
+
+```json
+{
+  "$id": "https://ns.adobe.com/<TENANT_ID>/schemas/<SCHEMA_UUID>",
+  "meta:altId": "_<SCHEMA_ALT_ID>",
+  "meta:resourceType": "schemas",
+  "version": "1.0",
+  "title": "marketing.customers",
+  "description": "Schema of the Marketing Customers table.",
+  "type": "object",
+  "definitions": {
+    "marketing_customers": {
+      "type": "object",
+      "properties": {
+        "customer_id": {
+          "title": "Customer ID",
+          "description": "Primary key of the customer table.",
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "title": "Name",
+          "description": "Name of the customer.",
+          "type": "string"
+        },
+        "email": {
+          "title": "Email",
+          "description": "Email of the customer.",
+          "type": "string",
+          "format": "email",
+          "minLength": 1
+        }
+      },
+      "required": ["customer_id"]
+    }
+  },
+  "allOf": [
+    { "$ref": "#/definitions/marketing_customers" }
+  ],
+  "meta:extends": ["https://ns.adobe.com/xdm/data/adhoc-v2"],
+  "meta:behaviorType": "record",
+  "meta:containerId": "tenant"
+}
+```
+
+### 响应正文属性
+
+| 属性 | 类型 | 描述 |
+| ------------------- | ------ | -------------------------- |
+| `$id` | 字符串 | 已创建架构的唯一URL。 在后续API调用中使用。 |
+| `meta:altId` | 字符串 | 架构的替代标识符。 |
+| `meta:resourceType` | 字符串 | 资源类型（始终为`"schemas"`）。 |
+| `version` | 字符串 | 创建时分配的架构版本。 |
+| `title` | 字符串 | 架构的显示名称。 |
+| `description` | 字符串 | 有关架构用途的简短说明。 |
+| `type` | 字符串 | 架构类型。 |
+| `definitions` | 对象 | 定义架构中使用的可重用对象或字段组。 这通常包括主数据结构，在`allOf`数组中引用它来定义架构根。 |
+| `allOf` | 数组 | 通过引用一个或多个定义（例如，`#/definitions/marketing_customers`）指定架构的根对象。 |
+| `meta:extends` | 数组 | 将架构标识为基于模型(`adhoc-v2`)。 |
+| `meta:behaviorType` | 字符串 | 行为类型（`record`或`time-series`，启用时）。 |
+| `meta:containerId` | 字符串 | 存储架构的容器（例如，`tenant`）。 |
+
+要在基于模型的架构创建后添加字段，请发出[PATCH请求](#patch)。 基于模型的架构不会继承或自动演化。 仅当未将数据摄取到数据集中时，才允许进行重命名或删除字段等结构更改。 一旦存在数据，则仅支持&#x200B;**附加更改**（例如添加新字段）。
+
+您可以添加新的根级别字段（在根定义或根`properties`中），但无法删除、重命名或更改现有字段的类型。
+
+>[!CAUTION]
+>
+>在使用架构初始化数据集后，架构演化将受到限制。 事先仔细规划字段名称和类型，因为一旦接收到数据，就无法删除或修改字段。
+
 ## 更新架构 {#put}
 
-您可以通过PUT操作替换整个架构，从而本质上重新写入资源。 通过PUT请求更新架构时，正文必须包括在POST请求中[创建新架构](#create)时所需的所有字段。
+您可以通过PUT操作替换整个架构，从而本质上重新编写资源。 通过PUT请求更新架构时，正文必须包含在POST请求中[创建新架构](#create)时所需的所有字段。
 
 >[!NOTE]
 >
@@ -368,7 +556,7 @@ curl -X PUT \
 >
 >如果要使用新值替换整个资源，而不是更新单个字段，请参阅[使用PUT操作替换架构](#put)部分。
 
-最常见的PATCH操作之一是将以前定义的字段组添加到架构中，如下面的示例所示。
+PATCH最常见的操作之一是将以前定义的字段组添加到架构中，如以下示例所示。
 
 **API格式**
 
@@ -414,7 +602,7 @@ curl -X PATCH\
 
 **响应**
 
-响应显示两个操作均已成功执行。 字段组`$id`已添加到`meta:extends`数组，并且字段组`$id`的引用(`$ref`)现在显示在`allOf`数组中。
+响应显示两个操作均已成功执行。 字段组`$id`已添加到`meta:extends`数组，并且字段组`$ref`的引用(`$id`)现在显示在`allOf`数组中。
 
 ```JSON
 {
@@ -455,7 +643,7 @@ curl -X PATCH\
 
 ## 启用架构以在实时客户档案中使用 {#union}
 
-为了使架构参与[实时客户个人资料](../../profile/home.md)，您必须将`union`标记添加到架构的`meta:immutableTags`数组。 您可以通过对相关架构发出PATCH请求来实现这一点。
+为了使架构参与[实时客户个人资料](../../profile/home.md)，您必须将`union`标记添加到架构的`meta:immutableTags`数组。 您可以通过向PATCH请求相关架构来实现这一点。
 
 >[!IMPORTANT]
 >

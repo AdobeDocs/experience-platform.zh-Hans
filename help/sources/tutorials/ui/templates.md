@@ -3,9 +3,9 @@ description: 了解如何在Adobe Experience Platform UI中使用模板来加速
 title: 在 UI 中使用模板创建源数据流
 badge1: Beta 版
 exl-id: 48aa36ca-656d-4b9d-954c-48c8da9df1e9
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 02a22362b9ecbfc5fd7fcf17dc167309a0ea45d5
 workflow-type: tm+mt
-source-wordcount: '2250'
+source-wordcount: '2314'
 ht-degree: 10%
 
 ---
@@ -51,7 +51,7 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 >id="platform_sources_templates_accounttype"
 >title="选择业务类型"
 >abstract="为您的用例选择适当的业务类型。您的访问权限可能因 Real-Time Customer Data Platform 订阅帐户而异。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#" text="Real-Time CDP 概述"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#" text="Real-Time CDP 概述"
 
 在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区，并查看Experience Platform中可用的源目录。
 
@@ -65,6 +65,12 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 
 * **浏览模板**：源模板为您自动创建包含映射规则的架构、标识、数据集和数据流。 您可以根据需要自定义这些资源。
 * **使用我的现有资源**：使用您创建的现有数据集和架构摄取您的数据。 如果需要，您还可以创建新数据集和架构。
+
+>[!NOTE]
+>
+>使用需要更改数据捕获工作流或支持多个数据模型的源时，模板可以自动生成基于模型的架构。 这些架构启用了Data Mirror的实时数据同步功能。\
+>将模板与基于模型的架构结合使用时，自动生成的资产将包含所需的主键、版本标识符和时间戳标识符字段。\
+>有关详细信息，请参阅[Data Mirror概述](../../../xdm/data-mirror/overview.md)和[基于模型的架构技术参考](../../../xdm/schema/model-based.md)。
 
 要使用自动生成的资源，请选择&#x200B;**[!UICONTROL 浏览模板]**，然后选择&#x200B;**[!UICONTROL 选择]**。
 
@@ -137,7 +143,7 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 
 | [!DNL Salesforce]个B2C模板 | 描述 |
 | --- | --- |
-| 联系 | Contact模板可捕获联系人的属性，如人口统计信息、联系人信息和相关业务实体。 |
+| 联系人 | Contact模板可捕获联系人的属性，如人口统计信息、联系人信息和相关业务实体。 |
 | 潜在客户 | 商机模板捕获商机的属性，如人口统计详细信息、联系信息和相关业务实体。 |
 
 {style="table-layout:auto"}
@@ -167,7 +173,7 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 
 | [!DNL Microsoft Dynamics]个B2C模板 | 描述 |
 | --- | --- |
-| 联系 | Contact模板可捕获联系人的属性，如人口统计信息、联系人信息和相关业务实体。 |
+| 联系人 | Contact模板可捕获联系人的属性，如人口统计信息、联系人信息和相关业务实体。 |
 | 潜在客户 | 商机模板捕获商机的属性，如人口统计详细信息、联系信息和相关业务实体。 |
 
 {style="table-layout:auto"}
