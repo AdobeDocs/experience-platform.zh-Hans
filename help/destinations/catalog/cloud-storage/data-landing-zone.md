@@ -3,9 +3,9 @@ title: 数据登陆区目标
 description: 了解如何连接到数据登陆区以激活受众和导出数据集。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 4eef1804d6974fd54f5e74e0efe62257190f408b
 workflow-type: tm+mt
-source-wordcount: '1978'
+source-wordcount: '2019'
 ht-degree: 2%
 
 ---
@@ -58,8 +58,8 @@ Experience Platform对上传到[!DNL Data Landing Zone]容器的所有文件强�
 
 此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
 
-* 如何使用Experience Platform用户界面[&#128279;](/help/destinations/ui/export-datasets.md)导出数据集。
-* 如何使用流服务API[&#128279;](/help/destinations/api/export-datasets.md)以编程方式导出数据集。
+* 如何使用Experience Platform用户界面[导出数据集](/help/destinations/ui/export-datasets.md)。
+* 如何使用流服务API[以编程方式](/help/destinations/api/export-datasets.md)导出数据集。
 
 ## 导出数据的文件格式 {#file-format}
 
@@ -71,7 +71,7 @@ Experience Platform对上传到[!DNL Data Landing Zone]容器的所有文件强�
 
 >[!AVAILABILITY]
 >
->本节适用于在Microsoft Azure上运行的Experience Platform的实施。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/landing/multi-cloud)。
+>本节适用于在Microsoft Azure上运行的Experience Platform的实施。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud)。
 
 您可以通过[!DNL Azure Storage Explorer]或命令行界面将文件读取和写入容器。
 
@@ -91,7 +91,7 @@ Experience Platform对上传到[!DNL Data Landing Zone]容器的所有文件强�
 
 ![选择在Azure UI中高亮显示的连接方法。](/help/sources/images/tutorials/create/dlz/select-connection-method.png)
 
-选择连接方法后，必须提供与[!DNL Data Landing Zone]容器对应的&#x200B;**显示名称**&#x200B;和&#x200B;**[!DNL Blob]容器SAS URL**。
+选择连接方法后，必须提供与&#x200B;**容器对应的**&#x200B;显示名称&#x200B;**[!DNL Blob]和**&#x200B;容器SAS URL[!DNL Data Landing Zone]。
 
 >[!BEGINSHADEBOX]
 
@@ -148,7 +148,7 @@ curl -X GET \
 
 ### 更新[!DNL Data Landing Zone]凭据 {#update-dlz-credentials}
 
-您还可以在需要时刷新凭据。 您可以通过向[!DNL Connectors] API的`/credentials`端点发出POST请求来更新`SASToken`。
+您还可以在需要时刷新凭据。 您可以通过向`SASToken` API的`/credentials`端点发出POST请求来更新[!DNL Connectors]。
 
 **API格式**
 
@@ -200,7 +200,7 @@ curl -X POST \
 
 ![Azure UI中显示的设置摘要。](/help/sources/images/tutorials/create/dlz/summary.png)
 
-成功连接将更新包含[!DNL Data Landing Zone]容器的[!DNL Azure Storage Explorer]用户界面。
+成功连接将更新包含[!DNL Azure Storage Explorer]容器的[!DNL Data Landing Zone]用户界面。
 
 ![Azure UI中突出显示的DLZ用户容器摘要。](/help/sources/images/tutorials/create/dlz/dlz-user-container.png)
 
@@ -210,7 +210,7 @@ curl -X POST \
 
 >[!AVAILABILITY]
 >
->本节适用于在Amazon Web Services (AWS)上运行的Experience Platform的实施。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/landing/multi-cloud)。
+>本节适用于在Amazon Web Services (AWS)上运行的Experience Platform的实施。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud)。
 
 执行以下操作以获取在AWS上配置的[!DNL Data Landing Zone]实例的凭据。 然后，使用选择的客户端连接到[!DNL Data Landing Zone]实例。
 
@@ -282,16 +282,18 @@ curl --request GET \
 > 
 >若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
-要连接到此目标，请按照[目标配置教程](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=zh-Hans)中描述的步骤操作。 在目标配置工作流中，填写下面两个部分中列出的字段。
+要连接到此目标，请按照[目标配置教程](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html)中描述的步骤操作。 在目标配置工作流中，填写下面两个部分中列出的字段。
 
 ### 验证目标 {#authenticate}
 
-确保已按照[先决条件](#prerequisites)部分中的说明将您的[!DNL Data Landing Zone]容器连接到[!DNL Azure Storage Explorer]。 由于[!DNL Data Landing Zone]是Adobe配置的存储，您无需在Experience Platform UI中执行任何进一步步骤即可向目标进行身份验证。
+确保已按照[!DNL Data Landing Zone]先决条件[!DNL Azure Storage Explorer]部分中的说明将您的[容器连接到](#prerequisites)。 由于[!DNL Data Landing Zone]是Adobe配置的存储，您无需在Experience Platform UI中执行任何进一步步骤即可向目标进行身份验证。
 
 ### 填写目标详细信息 {#destination-details}
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
+* **[!UICONTROL 加密密钥]**： （可选）您可以附加RSA格式的公钥以向导出的文件添加加密。 查看下图中的加密密钥格式正确示例。
+  ![显示UI中格式正确的PGP密钥示例的图像。](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 * **[!UICONTROL 名称]**：填写此目标的首选名称。
 * **[!UICONTROL 描述]**：可选。 例如，您可以提及要将此目标用于哪个营销活动。
 * **[!UICONTROL 文件夹路径]**：输入将承载导出文件的目标文件夹的路径。
@@ -319,9 +321,9 @@ curl --request GET \
 
 有关将受众激活到此目标的说明，请参阅[将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md)。
 
-### 计划中
+### 日程计划
 
-在&#x200B;**[!UICONTROL 计划]**&#x200B;步骤中，您可以[为[!DNL Data Landing Zone]目标设置导出计划](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling)，还可以[配置导出文件的名称](/help/destinations/ui/activate-batch-profile-destinations.md#file-names)。
+在&#x200B;**[!UICONTROL 计划]**&#x200B;步骤中，您可以[为](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling)目标设置导出计划[!DNL Data Landing Zone]，还可以[配置导出文件的名称](/help/destinations/ui/activate-batch-profile-destinations.md#file-names)。
 
 ### 映射属性和身份 {#map}
 
