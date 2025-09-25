@@ -2,9 +2,9 @@
 title: 身份图形链接规则疑难解答指南
 description: 了解如何解决身份图关联规则中的常见问题。
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: c9b5de33de91b93f179b4720f692eb876e94df72
+source-git-commit: 0381940206d8730f2f7ae2dce849d943316b0451
 workflow-type: tm+mt
-source-wordcount: '3295'
+source-wordcount: '3451'
 ht-degree: 0%
 
 ---
@@ -146,7 +146,27 @@ ht-degree: 0%
    * 例如，体验事件必须同时包含`_id`和`timestamp`。
    * 此外，每个事件（记录）的`_id`必须是唯一的。
 
-在命名空间优先级上下文中，配置文件将拒绝任何包含两个或更多具有最高命名空间优先级的身份的事件。 例如，如果GAID未标记为唯一的命名空间，并且有两个同时具有GAID命名空间和不同的标识值的标识，则Profile将不存储任何事件。
+在命名空间优先级上下文中，配置文件将拒绝在&#x200B;**给定的传入事件**&#x200B;中包含两个或更多具有最高命名空间优先级的身份的任何事件。 例如，假定您的身份设置配置如下：
+
+| 命名空间 | 每个图唯一 | 优先级 |
+| --- | --- | --- |
+| CRMID | ✔️ | 1 |
+| GAID | | 2 |
+| ECID | | 3 |
+
+对于每个方案，假设体验事件包含以下事件：
+
+**方案1:2个GAID，1个ECID**
+
+* 在此方案中，传入的体验事件包含2个GAID和1个ECID。 在这些命名空间之间，GAID被配置为具有最高命名空间优先级的命名空间。 但是，因为有2个GAID，配置文件&#x200B;**不会**&#x200B;存储此体验事件。
+
+**方案2:2个CRMID，1个GAID**
+
+* 在此方案中，传入的体验事件包含2个CRMID和1个GAID。 在这些命名空间之间，CRMID被配置为具有最高命名空间优先级的命名空间。 但是，因为有2个GAID，配置文件&#x200B;**不会**&#x200B;存储此体验事件。
+
+**方案3： 1个CRMID，2个GAID**
+
+* 在此方案中，传入的体验事件包含1个CRMID和2个GAID。 在这些命名空间之间，CRMID被配置为具有最高命名空间优先级的命名空间。 由于只有一个CRMID，配置文件将摄取体验事件，因为只有一个命名空间实例具有最高的命名空间优先级。
 
 **疑难解答步骤**
 
@@ -265,7 +285,7 @@ ORDER BY timestamp desc
    * 您的所有配置文件中没有单个命名空间。
    * 出现[“挂起ID”](./implementation-guide.md#dangling-loginid-scenario)方案。 在此方案中，Identity Service无法确定挂起ID是否与图形中的任何人员实体相关联。
 
-您还可以使用UI[&#128279;](./graph-simulation.md)中的图形模拟工具来模拟事件并配置您自己的唯一命名空间和命名空间优先级设置。 这样做有助于您从根本上了解身份优化算法的行为。
+您还可以使用UI[中的](./graph-simulation.md)图形模拟工具来模拟事件并配置您自己的唯一命名空间和命名空间优先级设置。 这样做有助于您从根本上了解身份优化算法的行为。
 
 如果仿真结果符合图形行为预期，则可以检查[身份设置](./identity-settings-ui.md)是否与您在模拟中配置的设置匹配。
 
@@ -320,7 +340,7 @@ ORDER BY timestamp desc
 
 本节概述有关[!DNL Identity Graph Linking Rules]的常见问题解答列表。
 
-## 身份优化算法 {#identity-optimization-algorithm}
+## 身份标识优化算法 {#identity-optimization-algorithm}
 
 请阅读本节以获取有关[身份优化算法](./identity-optimization-algorithm.md)的常见问题解答。
 

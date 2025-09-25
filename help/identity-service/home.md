@@ -1,17 +1,17 @@
 ---
 keywords: Experience Platform；主页；热门主题；身份；XDM图形；身份服务；身份服务
 solution: Experience Platform
-title: Identity服务概述
+title: 身份标识服务概述
 description: Adobe Experience Platform Identity Service通过跨设备和系统桥接身份，允许您实时提供有影响力的个人数字体验，从而帮助您更好地了解客户及其行为。
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: f791940300036159ceaad11ff725eecfaa8332f4
 workflow-type: tm+mt
-source-wordcount: '1556'
+source-wordcount: '1574'
 ht-degree: 2%
 
 ---
 
-# Adobe Experience Platform Identity Service
+# Adobe Experience Platform 身份标识服务
 
 为了提供相关的数字体验，您需要对构成客户群的真实实体进行全面而准确的呈现。
 
@@ -29,7 +29,7 @@ ht-degree: 2%
 
 在详细了解Identity Service之前，请阅读下表以概览关键术语：
 
-| 搜索词 | 定义 |
+| 术语 | 定义 |
 | --- | --- |
 | 身份标识 | 身份是实体特有的数据。 通常，这是一个现实世界中的对象，例如个人、硬件设备或Web浏览器（由Cookie表示）。 完全限定的标识由两个元素组成：**标识命名空间**&#x200B;和&#x200B;**标识值**。 |
 | 身份标识命名空间 | 身份标识命名空间是给定身份标识的上下文。例如，`Email`的命名空间可能与标识值&#x200B;**julien<span>@acme.com**&#x200B;相对应。 同样，`Phone`的命名空间可以与标识值`555-555-1234`对应。 有关详细信息，请阅读[身份命名空间概述](./features/namespaces.md)。 |
@@ -74,6 +74,10 @@ Identity Service为实现其任务提供了以下操作：
 
 ## Identity Service如何链接身份
 
+>[!IMPORTANT]
+>
+>Identity服务区分大小写。 例如，**abc<span>@gmail.com**&#x200B;和&#x200B;**ABC<span>@GMAIL.COM**&#x200B;将被视为两个单独的电子邮件标识。
+
 当标识命名空间与标识值匹配时，将在两个标识之间建立链接。
 
 典型的登录事件&#x200B;**将两个标识**&#x200B;发送到Experience Platform中：
@@ -89,7 +93,7 @@ Identity Service为实现其任务提供了以下操作：
    * CRMID： ABC是代表您作为经过身份验证的用户的命名空间和值。
    * ECID： 123是命名空间和值，表示您在笔记本电脑上使用Web浏览器的情况。
 * 接下来，如果您使用相同的凭据登录同一电子商务网站，但使用的是手机上的Web浏览器，而不是笔记本电脑上的Web浏览器，则将在Identity Service中注册一个新的ECID。
-* 在后台，Identity Service以`{CRM_ID:ABC, ECID:456}`形式处理此新事件，其中CRM_ID：ABC表示经过身份验证的客户ID，ECID：456表示移动设备上的Web浏览器。
+* 在后台，Identity Service以`{CRM_ID:ABC, ECID:456}`形式处理此新事件，其中CRM_ID：ABC表示经过身份验证的客户ID，ECID:456表示移动设备上的Web浏览器。
 
 考虑到上述情况，Identity Service在`{CRM_ID:ABC, ECID:123}`和`{CRM_ID:ABC, ECID:456}`之间建立链接。 这将生成一个标识图，其中您“拥有”三个标识：一个用于人员标识符(CRMID)，两个用于Cookie标识符(ECID)。
 
@@ -101,7 +105,7 @@ Identity Service为实现其任务提供了以下操作：
 
 以下视频旨在支持您了解身份和身份图。
 
->[!VIDEO](https://video.tv.adobe.com/v/3422769?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/27841?quality=12&learn=on)
 
 ## 了解Identity Service在Experience Platform基础架构中的角色
 

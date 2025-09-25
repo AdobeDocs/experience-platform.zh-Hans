@@ -2,7 +2,7 @@
 title: Identity Graph链接规则配置指南
 description: 了解您可以使用身份图链接规则配置的各种实施类型。
 exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
-source-git-commit: 54a50cd3e122df7f653c06232e0598fa878eeac5
+source-git-commit: 6af5f87c9c32212568e84edbed9f043a766870be
 workflow-type: tm+mt
 source-wordcount: '1951'
 ht-degree: 7%
@@ -133,6 +133,7 @@ CRMID: Jane, ECID: 111, IDFA: a-b-c
 >[!NOTE]
 >
 >要完成下面的实施，您必须使用以下自定义命名空间，其标识符号（区分大小写）为：
+>
 >* `CRMID`
 >* `CChash` （这是一个自定义命名空间，表示经过哈希处理的信用卡号码。）
 
@@ -228,6 +229,7 @@ CRMID: Jill, CChash: undefined
 >[!NOTE]
 >
 >要完成以下实施，您必须使用以下标识符号（区分大小写）创建自定义命名空间：
+>
 >* `CRMID`
 >* `CRMIDhash`
 
@@ -394,7 +396,7 @@ CRMID: John, Email: john@y, Email_LC_SHA256: john_y_hash
 
 高级实施涉及复杂的多层图形场景。 这些类型的实现包括使用&#x200B;**命名空间优先级**&#x200B;以标识必须删除的正确链接以防止图形折叠。
 
-**命名空间优先级**&#x200B;是按命名空间重要性对命名空间进行排名的元数据。 如果图表包含两个身份，每个身份具有不同的唯一命名空间，则Identity Service将使用命名空间优先级来决定要删除的链接。 有关详细信息，请阅读有关命名空间优先级[&#128279;](../identity-graph-linking-rules/namespace-priority.md)的文档。
+**命名空间优先级**&#x200B;是按命名空间重要性对命名空间进行排名的元数据。 如果图表包含两个身份，每个身份具有不同的唯一命名空间，则Identity Service将使用命名空间优先级来决定要删除的链接。 有关详细信息，请阅读有关命名空间优先级[的](../identity-graph-linking-rules/namespace-priority.md)文档。
 
 在复杂的图形场景中，命名空间优先级扮演着关键角色。 图形可以具有多个层 — 一个最终用户可以与多个登录ID相关联，并且这些登录ID可以进行哈希处理。 此外，不同的ECID可以链接到不同的登录ID。 为确保删除正确层中的正确链接，您的命名空间优先级配置必须正确。
 
@@ -477,6 +479,7 @@ loginID: JanePersonal, ECID: 222
 >[!NOTE]
 >
 >要完成以下实施，您必须使用以下标识符号（区分大小写）创建自定义命名空间：
+>
 >* `CRMID`
 >* `loyaltyID`
 >* `thirdPartyID`
