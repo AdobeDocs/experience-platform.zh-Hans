@@ -2,9 +2,9 @@
 title: 配置Web SDK标记扩展
 description: 了解如何在标记UI中配置Experience Platform Web SDK标记扩展。
 exl-id: 22425daa-10bd-4f06-92de-dff9f48ef16e
-source-git-commit: 7d5896a4427af54d3a6323744d726bf0b0c3137a
+source-git-commit: 7c2afd6d823ebb2db0fabb4cc16ef30bcbfeef13
 workflow-type: tm+mt
-source-wordcount: '3095'
+source-wordcount: '3107'
 ht-degree: 3%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 3%
 
 ## 安装Web SDK标记扩展 {#install}
 
-Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参阅有关[创建标记属性](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/configure-tags/create-a-property.html?lang=zh-Hans)的文档。
+Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参阅有关[创建标记属性](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/configure-tags/create-a-property.html)的文档。
 
 创建属性后，打开该属性并选择左侧栏上的&#x200B;**[!UICONTROL 扩展]**&#x200B;选项卡。
 
@@ -42,7 +42,7 @@ Web SDK库包含多个模块，用于提供各种功能，如个性化、身份�
 >[!IMPORTANT]
 >
 >禁用Web SDK组件可能会破坏现有的实施。 每次禁用组件时，请确保彻底测试实施，以确保所需的所有功能都按预期工作。
->&#x200B;>禁用某个组件后，无法再编辑该组件的设置。
+>>禁用某个组件后，无法再编辑该组件的设置。
 
 要使用Web SDK标记扩展创建自定义Web SDK内部版本，请执行以下步骤。
 
@@ -60,7 +60,8 @@ Web SDK库包含多个模块，用于提供各种功能，如个性化、身份�
    * **[!UICONTROL Media Analytics桥]**：此组件使用Media Analytics界面启用Edge Network Streaming Media。 禁用此组件将禁用以下元素：
       * [获取Media Analytics跟踪器](action-types.md#get-media-analytics-tracker)操作类型
    * **[!UICONTROL Personalization]**：此组件启用Adobe Target和Adobe Journey Optimizer集成。 禁用此组件将禁用以下元素：
-      * [应用建议操作](action-types.md)类型
+      * [应用建议](action-types.md#apply-propositions)操作类型
+   * **[!UICONTROL 推送通知]**：此组件启用Adobe Journey Optimizer的Web推送通知。
    * **[!UICONTROL 规则引擎]**：此组件启用Adobe Journey Optimizer设备上决策。 禁用此组件将禁用以下元素：
       * [评估规则集](action-types.md#evaluate-rulesets)操作类型
       * [订阅规则集项](event-types.md#subscribe-ruleset-items)事件类型
@@ -123,10 +124,9 @@ Web SDK库包含多个模块，用于提供各种功能，如个性化、身份�
 * **[!UICONTROL 使用第三方Cookie]**：启用此选项后，Web SDK会尝试将用户标识符存储在第三方Cookie中。 如果成功，则在用户跨多个域导航时将用户标识为单个用户，而不是在每个域上将用户标识为单独的用户。 如果启用了此选项，则如果SDK不支持第三方Cookie或用户将其配置为不允许第三方Cookie，则浏览器仍可能无法将用户标识符存储在第三方Cookie中。 在这种情况下，SDK只将标识符存储在第一方域中。
 
   >[!IMPORTANT]
-  >&#x200B;>第三方Cookie与Web SDK中的[第一方设备ID](../../../../web-sdk/identity/first-party-device-ids.md)功能不兼容。
-  >&#x200B;>您可以使用第一方设备ID，也可以使用第三方Cookie，但不能同时使用这两项功能。
+  >>第三方Cookie与Web SDK中的[第一方设备ID](../../../../web-sdk/identity/first-party-device-ids.md)功能不兼容。
+  >>您可以使用第一方设备ID，也可以使用第三方Cookie，但不能同时使用这两项功能。
   >
-
 ## 配置个性化设置 {#personalization}
 
 利用此部分，可配置在加载个性化内容时如何隐藏页面的某些部分。 这可确保访客仅看到个性化页面。

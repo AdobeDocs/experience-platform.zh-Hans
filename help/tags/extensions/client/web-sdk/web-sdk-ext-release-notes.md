@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 1cc62ee8c87ff2c1c1d55db2e462d485289120ed
+source-git-commit: 7c2afd6d823ebb2db0fabb4cc16ef30bcbfeef13
 workflow-type: tm+mt
-source-wordcount: '2947'
+source-wordcount: '2970'
 ht-degree: 22%
 
 ---
@@ -13,6 +13,13 @@ ht-degree: 22%
 # Web SDK扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[Experience Platform Web SDK发行说明](/help/web-sdk/release-notes.md)。
+
+## 版本2.33.0 - 2025年9月24日
+
+**新增功能**
+
+- 添加了对显示推送通知的支持
+- 包含Adobe Experience Platform Web SDK的[版本2.30.0](../../../../web-sdk/release-notes.md#2-30-0)。
 
 ## 版本2.32.0 - 2025年9月4日
 
