@@ -19,7 +19,7 @@ ht-degree: 3%
 
 ## 安装Web SDK标记扩展 {#install}
 
-Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参阅有关[创建标记属性](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/configure-tags/create-a-property.html)的文档。
+Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参阅有关[创建标记属性](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/configure-tags/create-a-property.html?lang=zh-Hans)的文档。
 
 创建属性后，打开该属性并选择左侧栏上的&#x200B;**[!UICONTROL 扩展]**&#x200B;选项卡。
 
