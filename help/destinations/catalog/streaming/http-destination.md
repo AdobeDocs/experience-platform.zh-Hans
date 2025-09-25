@@ -4,9 +4,9 @@ title: HTTP API连接
 description: 使用Adobe Experience Platform中的HTTP API目标将配置文件数据发送到第三方HTTP端点，以运行您自己的Analytics或对从Experience Platform导出的配置文件数据执行您可能所需的任何其他操作。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 6d8386b4d9ed64128c8d9a9537610f0fd07d74cd
+source-git-commit: d0ee4b30716734b8fce3509a6f3661dfa572cc9f
 workflow-type: tm+mt
-source-wordcount: '2852'
+source-wordcount: '2977'
 ht-degree: 7%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 7%
 
 >[!IMPORTANT]
 >
-> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
 HTTP API目标是一个[!DNL Adobe Experience Platform]流目标，可帮助您将配置文件数据发送到第三方HTTP端点。
 
@@ -245,7 +245,7 @@ Experience Platform会优化将配置文件导出到HTTP API目标的行为，�
 
 | 决定目标导出的因素 | 目标导出中包含的内容 |
 |---------|----------|
-| <ul><li>映射的属性和区段会作为目标导出的提示。 这意味着，如果配置文件的`segmentMembership`状态更改为`realized`或`exiting`，或者更新了任何映射的属性，则将启动目标导出。</li><li>由于身份当前无法映射到HTTP API目标，因此给定配置文件上任何身份的更改也将决定目标导出。</li><li>属性的更改被定义为属性上的任何更新，无论其是否为相同的值。 这意味着即使值本身未发生更改，也会将覆盖属性视为更改。</li></ul> | <ul><li>`segmentMembership`对象包括激活数据流中映射的区段，在资格或区段退出事件后，配置文件的状态已发生更改。 请注意，如果符合配置文件条件的其他未映射区段与激活数据流中映射的区段属于同一个[合并策略](/help/profile/merge-policies/overview.md)，则这些区段可以是目标导出的一部分。<br> **重要信息**：启用&#x200B;**[!UICONTROL 包含区段名称]**&#x200B;选项后，将仅包含映射到目标的区段的区段名称。 导出中显示的未映射区段将不包括`name`字段，即使该选项已启用也是如此。 </li><li>`identityMap`对象中的所有标识也包括在内(Experience Platform当前不支持HTTP API目标中的标识映射)。</li><li>目标导出中只包含映射的属性。</li></ul> |
+| <ul><li>映射的属性和区段会作为目标导出的提示。 这意味着，如果配置文件的`segmentMembership`状态更改为`realized`或`exiting`，或者更新了任何映射的属性，则将启动目标导出。</li><li>由于身份当前无法映射到HTTP API目标，因此给定配置文件上任何身份的更改也将决定目标导出。</li><li>属性的更改被定义为属性上的任何更新，无论其是否为相同的值。 这意味着即使值本身未发生更改，也会将覆盖属性视为更改。</li></ul> | <ul><li>**注意**： HTTP API目标的导出行为已在2025年9月版本中更新。 下面突出显示的新行为当前仅适用于在此版本之后创建的新HTTP API目标。 对于现有HTTP API目标，您可以继续使用旧的导出行为或联系Adobe以迁移到仅导出映射受众的新行为。 2026年，所有组织都将逐渐迁移到新行为。<br><br> <span class="preview"> **新导出行为**：映射到目标且已更改的区段将包含在segmentMembership对象中。 在某些情况下，它们可能会使用多个调用导出。 此外，在某些情况下，某些未更改的区段也可能包含在调用中。 无论如何，将只导出数据流中映射的区段。</span></li><br>**旧行为**： `segmentMembership`对象包括激活数据流中映射的区段，在资格或区段退出事件后，配置文件的状态已发生更改。 如果符合配置文件条件的其他未映射区段与激活数据流中映射的区段属于同一个[合并策略](/help/profile/merge-policies/overview.md)，则这些区段可以是目标导出的一部分。<br> **重要信息**：启用&#x200B;**[!UICONTROL 包含区段名称]**&#x200B;选项后，将仅包含映射到目标的区段的区段名称。 导出中显示的未映射区段将不包括`name`字段，即使该选项已启用也是如此。 <li>`identityMap`对象中的所有标识也包括在内(Experience Platform当前不支持HTTP API目标中的标识映射)。</li><li>目标导出中只包含映射的属性。</li></ul> |
 
 {style="table-layout:fixed"}
 
@@ -253,9 +253,11 @@ Experience Platform会优化将配置文件导出到HTTP API目标的行为，�
 
 ![HTTP API目标数据流示例。](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
 
-配置文件导出到目标可以由符合或退出&#x200B;*三个映射区段*&#x200B;之一的配置文件确定。 但是，在数据导出中，在`segmentMembership`对象（请参阅下面的[导出的数据](#exported-data)部分）中，如果该特定配置文件是其他未映射受众的成员，并且这些受众与触发导出的受众共享相同的合并策略，则可能会显示这些受众。 如果某个配置文件符合&#x200B;**具有DeLorean Cars的客户**&#x200B;区段的资格，但同时也是&#x200B;**观看的“回到未来”**&#x200B;电影和&#x200B;**科幻迷**&#x200B;区段的成员，则另外这两个受众也将出现在数据导出的`segmentMembership`对象中，即使它们未在数据流中映射，前提是它们与&#x200B;**具有DeLorean Cars的客户**&#x200B;区段共享相同的合并策略。
+配置文件导出到目标可以由符合或退出&#x200B;*三个映射区段*&#x200B;之一的配置文件确定。 在数据导出中，在`segmentMembership`对象（请参阅下面的[导出的数据](#exported-data)部分）中，如果该特定配置文件是其他映射受众的成员，并且这些受众与触发导出的受众共享相同的合并策略，则可能会显示其他映射受众。 如果配置文件符合&#x200B;**具有DeLorean Cars的客户**&#x200B;区段的资格并且也是&#x200B;**基本站点活动和达拉斯 — 城市**&#x200B;区段的成员，则另外这两个受众也将出现在数据导出的`segmentMembership`对象中，因为这些受众在数据流中映射，前提是它们与&#x200B;**具有DeLorean Cars的客户**&#x200B;区段共享相同的合并策略。
 
 从配置文件属性的角度来看，对上述四个映射属性所做的任何更改都将决定目标导出，并且配置文件中存在的四个映射属性中的任何一个都会出现在数据导出中。
+
+>[!ENDSHADEBOX]
 
 ## 历史数据回填 {#historical-data-backfill}
 

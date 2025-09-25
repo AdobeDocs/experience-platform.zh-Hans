@@ -4,9 +4,9 @@ title: Azure事件中心连接
 description: 创建到 [!DNL Azure Event Hubs] 存储的实时出站连接，以从Experience Platform流式传输数据。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: 678f80445212edc1edd3f4799999990ddcc2a039
+source-git-commit: d0ee4b30716734b8fce3509a6f3661dfa572cc9f
 workflow-type: tm+mt
-source-wordcount: '2084'
+source-wordcount: '2212'
 ht-degree: 5%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
-> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
 [!DNL Azure Event Hubs]是一个大数据流式传输平台和事件摄取服务。 它每秒可以接收和处理数百万个事件。 发送到事件中心的数据可以使用任何实时分析提供程序或批处理/存储适配器进行转换和存储。
 
@@ -78,8 +78,8 @@ UI中的![AWS Kinesis](../../assets/catalog/cloud-storage/event-hubs/catalog.png
 如果选择&#x200B;**[!UICONTROL 标准身份验证]**&#x200B;类型连接到HTTP终结点，请输入以下字段并选择&#x200B;**[!UICONTROL 连接到目标]**：
 
 * **[!UICONTROL SAS密钥名称]**：授权规则的名称，也称为SAS密钥名称。
-* **[!UICONTROL SAS键]**：事件中心命名空间的主键。 `sasKey`对应的`sasPolicy`必须配置了&#x200B;**管理**&#x200B;权限才能填充事件中心列表。 请参阅[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)以了解如何使用SAS密钥向[!DNL Azure Event Hubs]进行身份验证。
-* **[!UICONTROL 命名空间]**：填写您的[!DNL Azure Event Hubs]命名空间。 在[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace)中了解[!DNL Azure Event Hubs]命名空间。
+* **[!UICONTROL SAS键]**：事件中心命名空间的主键。 `sasPolicy`对应的`sasKey`必须配置了&#x200B;**管理**&#x200B;权限才能填充事件中心列表。 请参阅[!DNL Azure Event Hubs]Microsoft文档[以了解如何使用SAS密钥向](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)进行身份验证。
+* **[!UICONTROL 命名空间]**：填写您的[!DNL Azure Event Hubs]命名空间。 在[!DNL Azure Event Hubs]Microsoft文档[中了解](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace)命名空间。
 
 #### 共享访问签名(SAS)身份验证 {#sas-authentication}
 
@@ -88,9 +88,9 @@ UI中的![AWS Kinesis](../../assets/catalog/cloud-storage/event-hubs/catalog.png
 如果选择&#x200B;**[!UICONTROL 标准身份验证]**&#x200B;类型连接到HTTP终结点，请输入以下字段并选择&#x200B;**[!UICONTROL 连接到目标]**：
 
 * **[!UICONTROL SAS密钥名称]**：授权规则的名称，也称为SAS密钥名称。
-* **[!UICONTROL SAS键]**：事件中心命名空间的主键。 `sasKey`对应的`sasPolicy`必须配置了&#x200B;**管理**&#x200B;权限才能填充事件中心列表。 请参阅[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)以了解如何使用SAS密钥向[!DNL Azure Event Hubs]进行身份验证。
-* **[!UICONTROL 命名空间]**：填写您的[!DNL Azure Event Hubs]命名空间。 在[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace)中了解[!DNL Azure Event Hubs]命名空间。
-* **[!UICONTROL 事件中心名称]**：填写您的[!DNL Azure Event Hub]名称。 在[Microsoft文档](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub)中了解[!DNL Azure Event Hubs]名称。
+* **[!UICONTROL SAS键]**：事件中心命名空间的主键。 `sasPolicy`对应的`sasKey`必须配置了&#x200B;**管理**&#x200B;权限才能填充事件中心列表。 请参阅[!DNL Azure Event Hubs]Microsoft文档[以了解如何使用SAS密钥向](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)进行身份验证。
+* **[!UICONTROL 命名空间]**：填写您的[!DNL Azure Event Hubs]命名空间。 在[!DNL Azure Event Hubs]Microsoft文档[中了解](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace)命名空间。
+* **[!UICONTROL 事件中心名称]**：填写您的[!DNL Azure Event Hub]名称。 在[!DNL Azure Event Hubs]Microsoft文档[中了解](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub)名称。
 
 ### 填写目标详细信息 {#destination-details}
 
@@ -125,7 +125,7 @@ UI中的![AWS Kinesis](../../assets/catalog/cloud-storage/event-hubs/catalog.png
 >[!IMPORTANT]
 > 
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 当前在导出到Azure事件中心目标时不支持[同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。 [了解更多信息](/help/destinations/ui/activate-streaming-profile-destinations.md#consent-policy-evaluation)。
+>* 当前在导出到Azure事件中心目标时不支持[同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。 [了解详情](/help/destinations/ui/activate-streaming-profile-destinations.md#consent-policy-evaluation)。
 
 有关将受众激活到此目标的说明，请参阅[将受众数据激活到流式配置文件导出目标](../../ui/activate-streaming-profile-destinations.md)。
 
@@ -147,17 +147,21 @@ Experience Platform会优化将配置文件导出到[!DNL Azure Event Hubs]目�
 
 | 决定目标导出的因素 | 目标导出中包含的内容 |
 |---------|----------|
-| <ul><li>映射的属性和区段会作为目标导出的提示。 这意味着，如果配置文件的`segmentMembership`状态更改为`realized`或`exiting`，或者更新了任何映射的属性，则将启动目标导出。</li><li>由于身份当前无法映射到[!DNL Azure Event Hubs]目标，因此给定配置文件上任何身份的更改也将决定目标导出。</li><li>属性的更改被定义为属性上的任何更新，无论其是否为相同的值。 这意味着即使值本身未发生更改，也会将覆盖属性视为更改。</li></ul> | <ul><li>`segmentMembership`对象包括激活数据流中映射的区段，在资格或区段退出事件后，配置文件的状态已发生更改。 请注意，如果符合配置文件条件的其他未映射区段与激活数据流中映射的区段属于同一个[合并策略](/help/profile/merge-policies/overview.md)，则这些区段可以是目标导出的一部分。 </li><li>`identityMap`对象中的所有标识也包括在内(Experience Platform当前不支持[!DNL Azure Event Hubs]目标中的标识映射)。</li><li>目标导出中只包含映射的属性。</li></ul> |
+| <ul><li>映射的属性和区段会作为目标导出的提示。 这意味着，如果配置文件的`segmentMembership`状态更改为`realized`或`exiting`，或者更新了任何映射的属性，则将启动目标导出。</li><li>由于身份当前无法映射到[!DNL Azure Event Hubs]目标，因此给定配置文件上任何身份的更改也将决定目标导出。</li><li>属性的更改被定义为属性上的任何更新，无论其是否为相同的值。 这意味着即使值本身未发生更改，也会将覆盖属性视为更改。</li></ul> | <ul><li>**注意**： Azure事件中心目标的导出行为已更新为2025年9月版本。 下面突出显示的新行为当前仅适用于在此版本之后创建的新Azure事件中心目标。 对于现有Azure事件中心目标，您可以继续使用旧的导出行为或联系Adobe以迁移到仅导出映射受众的新行为。 2026年，所有组织都将逐渐迁移到新行为。<br><br> <span class="preview"> **新导出行为**：映射到目标且已更改的区段将包含在segmentMembership对象中。 在某些情况下，它们可能会使用多个调用导出。 此外，在某些情况下，某些未更改的区段也可能包含在调用中。 无论如何，将只导出数据流中映射的区段。</span></li><br>**旧行为**： `segmentMembership`对象包括激活数据流中映射的区段，在资格或区段退出事件后，配置文件的状态已发生更改。 如果符合配置文件条件的其他未映射区段与激活数据流中映射的区段属于同一个[合并策略](/help/profile/merge-policies/overview.md)，则这些区段可以是目标导出的一部分。 <li>`identityMap`对象中的所有标识也包括在内(Experience Platform当前不支持[!DNL Azure Event Hubs]目标中的标识映射)。</li><li>目标导出中只包含映射的属性。</li></ul> |
 
 {style="table-layout:fixed"}
+
+>[!BEGINSHADEBOX]
 
 例如，考虑将此数据流映射到[!DNL Azure Event Hubs]目标，其中在数据流中选择了三个受众，并且四个属性映射到目标。
 
 ![Amazon Kinesis目标数据流](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
 
-配置文件导出到目标可以由符合或退出&#x200B;*三个映射区段*&#x200B;之一的配置文件确定。 但是，在数据导出中，在`segmentMembership`对象（请参阅下面的[导出的数据](#exported-data)部分）中，如果该特定配置文件是其他未映射受众的成员，并且这些受众与触发导出的受众共享相同的合并策略，则可能会显示这些受众。 如果某个配置文件符合&#x200B;**拥有DeLorean Cars的客户**&#x200B;受众的条件，但同时也是&#x200B;**观看的“回到未来”**&#x200B;电影和&#x200B;**科幻迷**&#x200B;区段的成员，则另外这两个受众也将出现在数据导出的`segmentMembership`对象中，即使它们未在数据流中映射，前提是它们与&#x200B;**拥有DeLorean Cars的客户**&#x200B;区段共享相同的合并策略。
+配置文件导出到目标可以由符合或退出&#x200B;*三个映射区段*&#x200B;之一的配置文件确定。 在数据导出中，在`segmentMembership`对象（请参阅下面的[导出的数据](#exported-data)部分）中，如果该特定配置文件是其他映射受众的成员，并且这些受众与触发导出的受众共享相同的合并策略，则可能会显示其他映射受众。 如果配置文件符合&#x200B;**具有DeLorean Cars的客户**&#x200B;区段的资格并且也是&#x200B;**基本站点活动和达拉斯 — 城市**&#x200B;区段的成员，则另外这两个受众也将出现在数据导出的`segmentMembership`对象中，因为这些受众在数据流中映射，前提是它们与&#x200B;**具有DeLorean Cars的客户**&#x200B;区段共享相同的合并策略。
 
 从配置文件属性的角度来看，对上述四个映射属性所做的任何更改都将决定目标导出，并且配置文件中存在的四个映射属性中的任何一个都会出现在数据导出中。
+
+>[!ENDSHADEBOX]
 
 ## 历史数据回填 {#historical-data-backfill}
 

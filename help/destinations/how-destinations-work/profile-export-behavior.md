@@ -2,9 +2,9 @@
 title: 配置文件导出行为
 description: 了解Experience Platform目标中支持的不同集成模式之间的配置文件导出行为差异。
 exl-id: 2be62843-0644-41fa-a860-ccd65472562e
-source-git-commit: ede6f3ed4518babddb537a62cdb16915e2d37310
+source-git-commit: d0ee4b30716734b8fce3509a6f3661dfa572cc9f
 workflow-type: tm+mt
-source-wordcount: '2935'
+source-wordcount: '3068'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,8 @@ Experience Platform中有多种目标类型，如下图所示。 这些目标在
 
 >[!IMPORTANT]
 >
->本文档页面仅介绍图表底部高亮显示的连接的配置文件导出行为。
+>* 请注意2025年9月引入的[企业目标](#enterprise-behavior)导出行为更改
+>* 本文档页面仅介绍图表底部高亮显示的连接的配置文件导出行为。
 
 ![目标图类型](/help/destinations/assets/how-destinations-work/types-of-destinations-v4.png)
 
@@ -27,14 +28,14 @@ Experience Platform目标会以HTTPS调用的形式将数据导出到基于API�
 
 用户档案在发送到目标API端点之前会聚合到HTTPS消息中。
 
-以具有&#x200B;*[可配置聚合](../destination-sdk/functionality/destination-configuration/aggregation-policy.md)*&#x200B;策略的[Facebook目标](/help/destinations/catalog/social/facebook.md)为例 — 数据以聚合方式发送，其中目标服务从配置文件服务获取所有传入数据，并在将数据分派到Facebook之前按下列方式之一对其进行聚合：
+以具有[可配置聚合](/help/destinations/catalog/social/facebook.md)策略的&#x200B;*[Facebook目标](../destination-sdk/functionality/destination-configuration/aggregation-policy.md)*&#x200B;为例 — 数据以聚合方式发送，其中目标服务从配置文件服务获取所有传入数据，并在将数据分派到Facebook之前按下列方式之一对其进行聚合：
 
 * 记录数（最多10,000）或
 * 时间窗口间隔（300秒）
 
 无论首次满足上述哪个阈值，都会触发导出到Facebook。 因此，在[!DNL Facebook Custom Audiences]仪表板中，您可能会看到以10,000条记录增量从Experience Platform输入的受众。 您可能会每2-3分钟看到10,000条记录，因为处理和聚合数据的速度比300秒导出间隔快，而且发送速度也快，所以大约每2-3分钟就会处理一次所有记录。 如果没有足够的记录来组成10,000个批次，则当前记录数将按满足时间窗口阈值时的情况发送，因此您也可能会看到发送到Facebook的较小批次。
 
-作为另一个示例，请考虑具有`maxUsersPerRequest: 10`的&#x200B;*[最大努力聚合](../destination-sdk/functionality/destination-configuration/aggregation-policy.md)*&#x200B;策略的[HTTP API目标](/help/destinations/catalog/streaming/http-destination.md)。 这意味着，在触发对此目标的HTTP调用之前，最多将汇总10个配置文件，但是Experience Platform会在目标服务收到来自上游服务的更新重新评估信息后立即尝试将配置文件调度到目标。
+作为另一个示例，请考虑具有[的](/help/destinations/catalog/streaming/http-destination.md)最大努力聚合&#x200B;*[策略的](../destination-sdk/functionality/destination-configuration/aggregation-policy.md)* HTTP API目标`maxUsersPerRequest: 10`。 这意味着，在触发对此目标的HTTP调用之前，最多将汇总10个配置文件，但是Experience Platform会在目标服务收到来自上游服务的更新重新评估信息后立即尝试将配置文件调度到目标。
 
 聚合策略是可配置的，目标开发人员可以决定如何配置聚合策略以最好地满足下游API端点的速率限制。 有关[聚合策略](../destination-sdk/functionality/destination-configuration/aggregation-policy.md)的详细信息，请参阅Destination SDK文档。
 
@@ -42,7 +43,7 @@ Experience Platform目标会以HTTPS调用的形式将数据导出到基于API�
 
 >[!IMPORTANT]
 >
-> 企业目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+> 企业目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
 Experience Platform中的[企业目标](/help/destinations/destination-types.md#advanced-enterprise-destinations)是Amazon Kinesis、Azure事件中心和HTTP API。
 
@@ -56,13 +57,13 @@ Experience Platform可优化将配置文件导出到企业目标的行为，以�
 
 请注意，所有映射的属性都会导出到配置文件，无论更改位于何处。 因此，在上面的示例中，将导出这五个新配置文件的所有映射属性，即使属性本身未发生更改也是如此。
 
-### 决定数据导出的因素以及导出中包含的内容
+### 决定数据导出的因素以及导出中包含的内容 {#enterprise-behavior}
 
 对于为给定配置文件导出的数据，了解&#x200B;*决定数据导出到企业目标*&#x200B;和&#x200B;*哪些数据包含在导出中*&#x200B;的两个不同概念很重要。
 
 | 决定目标导出的因素 | 目标导出中包含的内容 |
 |---------|----------|
-| <ul><li>映射的属性和区段会作为目标导出的提示。 这意味着，如果配置文件的`segmentMembership`状态更改为`realized`或`exiting`，或者更新了任何映射的属性，则将启动目标导出。</li><li>由于身份当前无法映射到企业目标，因此给定配置文件上任何身份的更改也将决定目标导出。</li><li>属性的更改被定义为属性上的任何更新，无论其是否为相同的值。 这意味着即使值本身未发生更改，也会将覆盖属性视为更改。</li></ul> | <ul><li>`segmentMembership`对象包括激活数据流中映射的区段，在资格或区段退出事件后，配置文件的状态已发生更改。 请注意，如果符合配置文件条件的其他未映射区段与激活数据流中映射的区段属于同一个[合并策略](/help/profile/merge-policies/overview.md)，则这些区段可以是目标导出的一部分。 </li><li>`identityMap`对象中的所有标识也包括在内(Experience Platform当前不支持企业目标中的标识映射)。</li><li>目标导出中只包含映射的属性。</li></ul> |
+| <ul><li>映射的属性和区段会作为目标导出的提示。 这意味着，如果配置文件的`segmentMembership`状态更改为`realized`或`exiting`，或者更新了任何映射的属性，则将启动目标导出。</li><li>由于身份当前无法映射到企业目标，因此给定配置文件上任何身份的更改也将决定目标导出。</li><li>属性的更改被定义为属性上的任何更新，无论其是否为相同的值。 这意味着即使值本身未发生更改，也会将覆盖属性视为更改。</li></ul> | <ul><li>**注意**：企业目标的导出行为已在2025年9月版本中更新。 下面突出显示的新行为当前仅适用于在此版本之后创建的新企业目标。 对于现有企业目标，您可以继续使用旧的导出行为或联系Adobe以迁移到仅导出映射受众的新行为。 2026年，所有组织都将逐渐迁移到新行为。<br><br> <span class="preview"> **新导出行为**：映射到目标且已更改的区段将包含在`segmentMembership`对象中。 在某些情况下，它们可能会使用多个调用导出。 此外，在某些情况下，某些未更改的区段也可能包含在调用中。 无论如何，将只导出数据流中映射的区段。</span></li><br>**旧行为**： `segmentMembership`对象包括激活数据流中映射的区段，在资格或区段退出事件后，配置文件的状态已发生更改。 如果符合配置文件条件的其他未映射区段与激活数据流中映射的区段属于同一个[合并策略](/help/profile/merge-policies/overview.md)，则这些区段可以是目标导出的一部分。<li>`identityMap`对象中的所有标识也包括在内(Experience Platform当前不支持企业目标中的标识映射)。</li><li>目标导出中只包含映射的属性。</li></ul> |
 
 {style="table-layout:fixed"}
 
@@ -76,7 +77,8 @@ Experience Platform可优化将配置文件导出到企业目标的行为，以�
 
 ![企业目标数据流](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
 
-配置文件导出到目标可以由符合或退出&#x200B;*三个映射区段*&#x200B;之一的配置文件确定。 但是，在数据导出的`segmentMembership`对象中，如果该特定配置文件是其他未映射受众的成员，并且这些受众与触发导出的受众共享相同的合并策略，则可能会显示其他未映射受众。 如果某个配置文件符合&#x200B;**拥有DeLorean Cars的客户**&#x200B;受众的条件，但同时也是&#x200B;**观看的“回到未来”电影**&#x200B;和&#x200B;**科幻迷**&#x200B;区段的成员，则另外这两个受众也将出现在数据导出的`segmentMembership`对象中，即使它们未在数据流中映射，前提是它们与&#x200B;**拥有DeLorean Cars的客户**&#x200B;区段共享相同的合并策略。
+配置文件导出到目标可以由符合或退出&#x200B;*三个映射区段*&#x200B;之一的配置文件确定。 在数据导出的`segmentMembership`对象中，如果该特定配置文件是其他映射受众的成员，并且这些受众与触发导出的受众共享相同的合并策略，则可能会显示其他映射受众。 如果某个配置文件符合&#x200B;**具有DeLorean Cars的客户**&#x200B;受众的条件，并且也是&#x200B;**基本站点活动和达拉斯 — 城市**&#x200B;区段的成员，则另外这两个受众也将出现在数据导出的`segmentMembership`对象中，因为这些受众在数据流中进行映射，前提是它们与&#x200B;**具有DeLorean Cars的客户**&#x200B;区段共享相同的合并策略。
+
 
 从配置文件属性的角度来看，对上述四个映射属性所做的任何更改都将决定目标导出，并且配置文件中存在的四个映射属性中的任何一个都会出现在数据导出中。
 
@@ -103,7 +105,7 @@ Experience Platform会优化将配置文件导出到您的流目标的行为，�
 
 请注意，所有映射的属性都会导出到配置文件，无论更改位于何处。 因此，在上面的示例中，将导出这五个新配置文件的所有映射属性，即使属性本身未发生更改也是如此。
 
-### 决定数据导出的因素以及导出中包含的内容
+### 决定数据导出的因素以及导出中包含的内容 {#streaming-behavior}
 
 有关为给定用户档案导出的数据，请务必了解决定数据导出到流API目标的两个不同概念，以及导出中包含哪些数据。
 
@@ -161,7 +163,7 @@ Experience Platform会优化将配置文件导出到您的流目标的行为，�
 
 * 当配置文件&#x200B;*符合或不符合区段资格时，该配置文件包含在增量文件导出中*。
 * 向标识图中添加新电话号码时，增量文件导出中包含配置文件&#x200B;**。
-* 在配置文件上更新任何映射的XDM字段（如`xdm: loyalty.points`、`xdm: loyalty.tier`、`xdm: personalEmail.address`）的值时，增量文件导出中不包含配置文件&#x200B;**。
+* 在配置文件上更新任何映射的XDM字段（如&#x200B;*、*、`xdm: loyalty.points`）的值时，增量文件导出中不包含配置文件`xdm: loyalty.tier``xdm: personalEmail.address`。
 * 无论何时在目标激活工作流中映射`segmentMembership.status` XDM字段，退出受众&#x200B;*的用户档案也包含在导出的增量文件中*，状态为`exited`。
 
 >[!ENDSHADEBOX]
