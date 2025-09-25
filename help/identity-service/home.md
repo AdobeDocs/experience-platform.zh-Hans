@@ -105,7 +105,7 @@ Identity Service为实现其任务提供了以下操作：
 
 以下视频旨在支持您了解身份和身份图。
 
->[!VIDEO](https://video.tv.adobe.com/v/27841?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3422769?quality=12&learn=on&captions=chi_hans)
 
 ## 了解Identity Service在Experience Platform基础架构中的角色
 
