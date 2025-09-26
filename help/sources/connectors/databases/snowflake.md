@@ -3,10 +3,10 @@ title: Snowflake Source Connector概述
 description: 了解如何使用API或用户界面将Snowflake连接到Adobe Experience Platform。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: df066463-1ae6-4ecd-ae0e-fb291cec4bd5
-source-git-commit: 573691db9f71fcbe8b5edd4ea647d718ab3784e4
+source-git-commit: 0476c42924bf0163380e650141fad8e50b98d4cf
 workflow-type: tm+mt
-source-wordcount: '751'
-ht-degree: 0%
+source-wordcount: '1502'
+ht-degree: 3%
 
 ---
 
@@ -18,17 +18,88 @@ ht-degree: 0%
 >* 默认情况下，[!DNL Snowflake]源将`null`解释为空字符串。 请联系您的Adobe代表，以确保在Adobe Experience Platform中将您的`null`值正确写入`null`。
 >* 要让Experience Platform摄取数据，必须将所有基于表的批处理源的时区配置为UTC时区。 [!DNL Snowflake]源支持的唯一时间戳是带有UTC时间的TIMESTAMP_NTZ。
 
->[!WARNING]
->
->[!DNL Snowflake]源的基本身份验证（或帐户密钥身份验证）将于2025年11月被弃用。 您必须迁移到基于密钥对的身份验证，才能继续使用源并从数据库中摄取数据到Experience Platform。 有关弃用的详细信息，请阅读关于降低凭据泄露风险的[[!DNL Snowflake] 最佳实践指南](https://www.snowflake.com/en/resources/white-paper/best-practices-to-mitigate-the-risk-of-credential-compromise/)。
-
-Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。 您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
+Adobe Experience Platform 允许从外部源摄取数据，同时让您能够使用 Experience Platform 服务来构建、标记和增强传入数据。您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
 
 Experience Platform支持从第三方数据库引入数据。 Experience Platform可以连接到各种类型的数据库，例如关系数据库、NoSQL数据库或数据仓库数据库。 对数据库提供程序的支持包括[!DNL Snowflake]。
 
 ## 先决条件 {#prerequisites}
 
 本节概述在将[!DNL Snowflake]源连接到Experience Platform之前需要完成的设置任务。
+
+### IP地址允许列表
+
+在将源连接到Experience Platform之前，必须将特定于区域的IP地址添加到允许列表。 有关详细信息，请阅读有关[将IP地址列入允许列表到Experience Platform](../../ip-address-allow-list.md)的指南。
+
+### 收集所需的凭据
+
+必须提供以下凭据属性的值才能对您的[!DNL Snowflake]源进行身份验证。
+
+>[!BEGINTABS]
+
+>[!TAB 帐户密钥身份验证(Azure)]
+
+提供以下凭据的值，以使用帐户密钥身份验证将[!DNL Snowflake]连接到Azure上的Experience Platform。
+
+| 凭据 | 描述 |
+| ---------- | ----------- |
+| `account` | 帐户名称可唯一标识组织内的帐户。 在这种情况下，您必须跨不同的[!DNL Snowflake]组织唯一标识帐户。 要实现此目的，您必须在帐户名称前添加组织名称。 例如： `orgname-account_name`。 阅读有关[检索 [!DNL Snowflake] 帐户标识符](#retrieve-your-account-identifier)的部分以获取其他指导。 有关更多信息，请参阅[[!DNL Snowflake] 文档](https://docs.snowflake.com/en/user-guide/admin-account-identifier#format-1-preferred-account-name-in-your-organization)。 |
+| `warehouse` | [!DNL Snowflake]仓库管理应用程序的查询执行过程。 每个[!DNL Snowflake]仓库彼此独立，在将数据传送到Experience Platform时必须单独访问。 |
+| `database` | [!DNL Snowflake]数据库包含要带Experience Platform的数据。 |
+| `username` | [!DNL Snowflake]帐户的用户名。 |
+| `password` | [!DNL Snowflake]用户帐户的密码。 |
+| `role` | 在[!DNL Snowflake]会话中使用的默认访问控制角色。 该角色应为已分配给指定用户的现有角色。 默认角色为`PUBLIC`。 |
+| `connectionString` | 用于连接到[!DNL Snowflake]实例的连接字符串。 [!DNL Snowflake]的连接字符串模式为`jdbc:snowflake://{ACCOUNT_NAME}.snowflakecomputing.com/?user={USERNAME}&password={PASSWORD}&db={DATABASE}&warehouse={WAREHOUSE}`。 |
+
+>[!TAB 密钥对身份验证(Azure)]
+
+要使用密钥对身份验证，首先生成2048位RSA密钥对。 接下来，提供以下凭据的值，以使用密钥对身份验证连接到Azure上的Experience Platform。
+
+| 凭据 | 描述 |
+| --- | --- |
+| `account` | 帐户名称可唯一标识组织内的帐户。 在这种情况下，您必须跨不同的[!DNL Snowflake]组织唯一标识帐户。 要实现此目的，您必须在帐户名称前添加组织名称。 例如： `orgname-account_name`。 阅读有关[检索 [!DNL Snowflake] 帐户标识符](#retrieve-your-account-identifier)的部分以获取其他指导。 有关更多信息，请参阅[[!DNL Snowflake] 文档](https://docs.snowflake.com/en/user-guide/admin-account-identifier#format-1-preferred-account-name-in-your-organization)。 |
+| `username` | [!DNL Snowflake]帐户的用户名。 |
+| `privateKey` | [!DNL Base64-]帐户的[!DNL Snowflake]编码私钥。 您可以生成加密或未加密的私钥。 如果您使用的是加密的私钥，那么在针对Experience Platform进行身份验证时，还必须提供私钥密码。 有关详细信息，请阅读[检索私钥](#retrieve-your-private-key)一节。 |
+| `privateKeyPassphrase` | 私钥密码是附加的安全层，在使用加密的私钥进行身份验证时必须使用该安全层。 如果您使用未加密的私钥，则无需提供密码。 |
+| `port` | [!DNL Snowflake]通过Internet连接到服务器时使用的端口号。 |
+| `database` | 包含要摄取到Experience Platform的数据的[!DNL Snowflake]数据库。 |
+| `warehouse` | [!DNL Snowflake]仓库管理应用程序的查询执行过程。 每个[!DNL Snowflake]仓库彼此独立，在将数据传送到Experience Platform时必须单独访问。 |
+
+有关这些值的详细信息，请参阅[[!DNL Snowflake] 密钥对身份验证指南](https://docs.snowflake.com/en/user-guide/key-pair-auth.html)。
+
+>[!TAB 基本身份验证(AWS)]
+
+提供以下凭据的值，以使用基本身份验证将[!DNL Snowflake]连接到AWS上的Experience Platform。
+
+>[!WARNING]
+>
+>[!DNL Snowflake]源的基本身份验证（或帐户密钥身份验证）将于2025年11月被弃用。 您必须迁移到基于密钥对的身份验证，才能继续使用源并从数据库中摄取数据到Experience Platform。 有关弃用的详细信息，请阅读关于降低凭据泄露风险的[[!DNL Snowflake] 最佳实践指南](https://www.snowflake.com/en/resources/white-paper/best-practices-to-mitigate-the-risk-of-credential-compromise/)。
+
+| 凭据 | 描述 |
+| --- | --- |
+| `host` | 您的[!DNL Snowflake]帐户连接到的主机URL。 |
+| `port` | [!DNL Snowflake]通过Internet连接到服务器时使用的端口号。 |
+| `username` | 与您的[!DNL Snowflake]帐户关联的用户名。 |
+| `password` | 与您的[!DNL Snowflake]帐户关联的密码。 |
+| `database` | 将从其中提取数据的[!DNL Snowflake]数据库。 |
+| `schema` | 与您的[!DNL Snowflake]数据库关联的架构的名称。 您必须确保要为其授予数据库访问权限的用户也具有此架构的访问权限。 |
+| `warehouse` | 您正在使用的[!DNL Snowflake]仓库。 |
+
+>[!TAB 密钥对身份验证(AWS)]
+
+要使用密钥对身份验证，首先生成2048位RSA密钥对。 接下来，提供以下凭据的值，以使用密钥对身份验证连接到AWS上的Experience Platform。
+
+| 凭据 | 描述 |
+| --- | --- |
+| `account` | 帐户名称可唯一标识组织内的帐户。 在这种情况下，您必须跨不同的[!DNL Snowflake]组织唯一标识帐户。 要实现此目的，您必须在帐户名称前添加组织名称。 例如： `orgname-account_name`。 请阅读有关[检索 [!DNL Snowflake] 帐户标识符](#etrieve-your-account-identifier)的指南，以获取其他指导。 有关更多信息，请参阅[[!DNL Snowflake] 文档](https://docs.snowflake.com/en/user-guide/admin-account-identifier#format-1-preferred-account-name-in-your-organization)。 |
+| `username` | [!DNL Snowflake]帐户的用户名。 |
+| `privateKey` | [!DNL Snowflake]用户的私钥，以base64编码为单行，无标头或换行符。 要准备它，请复制PEM文件的内容，删除`BEGIN`/`END`行和所有换行符，然后对结果进行base64编码。 有关详细信息，请阅读[检索私钥](#retrieve-your-private-key)一节。 **注意：** AWS连接当前不支持加密的私钥。 |
+| `port` | [!DNL Snowflake]通过Internet连接到服务器时使用的端口号。 |
+| `database` | 包含要摄取到Experience Platform的数据的[!DNL Snowflake]数据库。 |
+| `warehouse` | [!DNL Snowflake]仓库管理应用程序的查询执行过程。 每个[!DNL Snowflake]仓库彼此独立，在将数据传送到Experience Platform时必须单独访问。 |
+
+有关这些值的详细信息，请参阅[[!DNL Snowflake] 密钥对身份验证指南](https://docs.snowflake.com/en/user-guide/key-pair-auth.html)。
+
+>[!ENDTABS]
 
 ### 检索帐户标识符 {#retrieve-your-account-identifier}
 
@@ -101,10 +172,6 @@ MIIE6T...
 ![可在其中验证您的角色和仓库的Snowflake UI。](../../images/tutorials/create/snowflake/snowflake-configs.png)
 
 成功编码后，您可以在Experience Platform上使用该已编码的[!DNL Base64]私钥来验证您的[!DNL Snowflake]帐户。
-
-## IP地址允许列表
-
-在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 有关详细信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md)页。
 
 以下文档提供了有关如何使用API或用户界面将[!DNL Snowflake]连接到Experience Platform的信息：
 
