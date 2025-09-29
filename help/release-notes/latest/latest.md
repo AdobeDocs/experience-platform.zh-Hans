@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2025 年 8 月）
 description: Adobe Experience Platform 的 2025 年 8 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: ac180f045dd3cc7e8ad9de702a3672630d668ee5
+source-git-commit: bd5611b23740f16e41048f3bc65f62312593a075
 workflow-type: tm+mt
-source-wordcount: '1480'
-ht-degree: 40%
+source-wordcount: '1507'
+ht-degree: 93%
 
 ---
 
@@ -21,7 +21,7 @@ ht-degree: 40%
 >- [联合受众构成](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/zh-hans/docs/real-time-cdp-collaboration/using/latest)
 
-**发行日期： 2025年9月23日**
+**发行日期：2025 年 9 月 23 日**
 
 Adobe Experience Platform 中新功能和现有功能的更新：
 
@@ -35,16 +35,16 @@ Adobe Experience Platform 中新功能和现有功能的更新：
 
 ## Agent Orchestrator {#agent-orchestrator}
 
-Adobe Experience Platform Agent Orchestrator是Adobe Experience Platform中的新代理层。
+Adobe Experience Platform Agent Orchestrator 是 Adobe Experience Platform 中新的代理式层。
 
 **新增功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| Agent Orchestrator | Adobe Experience Platform Agent Orchestrator是Adobe Experience Platform中的新代理层。 Experience Platform Agent Orchestrator旨在利用平台丰富的数据和客户知识，为专门构建的Adobe Experience Platform Agent专家提供智能和推理功能，使他们能够快速大规模地执行复杂的决策和问题解决任务，所有这些都由人为监督。 当您在像AI Assistant这样的对话界面中通过自然语言提出问题或请求帮助时，Agent Orchestrator会自动调用专业代理以获得正确的答案。 Agent Orchestrator会记住您的对话历史记录，使您能够自然地发展以前的问题，而无需重复上下文，并结合来自多个代理的洞察，为您提供清晰、统一的响应。 有关详细信息，请阅读[Agent Orchestrator文档](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator)。 |
-| Audience Agent | 通过Audience Agent，您可以查看关于受众的分析，包括检测受众规模的显着变化、检测重复的受众、探索受众库，以及检索受众规模。 有关详细信息，请阅读[Audience Agent文档](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-ai/experience-cloud-ai/agents/audience)。 |
+| Agent Orchestrator | Adobe Experience Platform Agent Orchestrator 是 Adobe Experience Platform 中新的代理式层。Experience Platform Agent Orchestrator 旨在利用平台的丰富数据和客户知识，为专门构建的专业 Adobe Experience Platform 代理赋予智能和推理功能，使后者能够大规模地快速执行复杂的决策和问题解决任务——并全部通过人为监督。当您在 AI 助手这类对话界面中用自然语言提出问题或请求帮助时，Agent Orchestrator 会自动调用专门的代理来为您提供正确的回答。Agent Orchestrator 会记住您的对话历史，使您能够自然地延续以前的问题，无需重复上下文，它还会结合来自多个代理的洞察，为您提供清晰、统一的回答。有关更多信息，请阅读 [Agent Orchestrator 文档](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator)。 |
+| Audience 代理 | 通过 Audience 代理，您可以获得关于受众的洞察，包括发现显著的受众规模变化、发现重复的受众、浏览您的受众库存以及检索受众规模。有关更多信息，请阅读 [Audience 代理文档](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-ai/experience-cloud-ai/agents/audience)。 |
 
-有关详细信息，请阅读[Agent Orchestrator文档](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-ai/experience-cloud-ai/home)。
+有关更多信息，请阅读 [Agent Orchestrator 文档](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-ai/experience-cloud-ai/home)。
 
 ## 警报 {#alerts}
 
@@ -54,7 +54,7 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 
 | 功能 | 描述 |
 | --- | --- |
-| 流配置文件摄取警报 | 现在，您可以订阅两个新的警报，以便在数据流级别进行流式摄取： <ul><li>超过了流摄取失败率</li><li>超过了流摄取的跳过率</li></ul> 当超过默认阈值或您定义的自定义阈值时，平台内警报或电子邮件警报将通知您。 有关详细信息，请参阅[配置文件警报](../../observability/alerts/rules.md#profile)指南。 |
+| 流式摄取轮廓警报 | 现在，您可以订阅数据流级别流式摄取的两个新警报： <ul><li>超出了流式摄取失败率</li><li>超出了流式摄取跳过率</li></ul> 如果实际值超过了默认阈值或您设定的自定义阈值时，就会通过平台内警报或电子邮件警报通知您。更多信息请阅读[轮廓警报](../../observability/alerts/rules.md#profile)指南。 |
 
 {style="table-layout:auto"}
 
@@ -68,16 +68,16 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 
 | 目标 | 描述 |
 | --- | --- |
-| [!BADGE Beta]{type=Informative} [[!DNL Snowflake Batch]](../../destinations/catalog/cloud-storage/snowflake-batch.md)连接器 | 新[!DNL Snowflake Batch]连接器现已可用，为特定用例提供流连接器的替代方法。 |
-| 支持[[!DNL Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md)加密 | 现在，您可以附加RSA格式公钥来加密导出的文件，从而为您提供与其他云存储目标相同的敏感信息安全级别。 |
-| [[!DNL Pinterest]](../../destinations/catalog/advertising/pinterest.md)目标的身份验证到期详细信息 | 现在，您可以直接在 Experience Platform 界面中查看关于 [!DNL Pinterest] 目标的身份验证到期的信息，您可以查看您的身份验证何时到期，在因其而导致您的数据流中断之前将其更新。您可以从&#x200B;**[[!UICONTROL 帐户]](../../destinations/ui/destinations-workspace.md#accounts)**&#x200B;或&#x200B;**[[!UICONTROL 浏览]](../../destinations/ui/destinations-workspace.md#browse)**&#x200B;选项卡中的&#x200B;**[!UICONTROL 帐户到期日期]**&#x200B;列监控您的令牌到期日期。 |
+| [!BADGE Beta]{type=Informative} [[!DNL Snowflake Batch]](../../destinations/catalog/cloud-storage/snowflake-batch.md)连接器 | 现在提供一种新的[!DNL Snowflake Batch]连接器，可为特定用例提供一种流传输连接器的替代方法。 |
+| 支持 [[!DNL Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md) 加密 | 现在，您可以附加 RSA 格式的公钥来加密导出的文件，这为您的敏感信息提供了与其他云存储目标所提供的相同安全等级。 |
+| [[!DNL Pinterest]](../../destinations/catalog/advertising/pinterest.md) 目标的身份验证有效期限详细信息 | 现在，您可以直接在 Experience Platform 界面中查看关于 [!DNL Pinterest] 目标的身份验证到期的信息，您可以查看您的身份验证何时到期，在因其而导致您的数据流中断之前将其更新。您可以从&#x200B;**[[!UICONTROL 帐户]](../../destinations/ui/destinations-workspace.md#accounts)**&#x200B;或&#x200B;**[[!UICONTROL 浏览]](../../destinations/ui/destinations-workspace.md#browse)**&#x200B;选项卡中的&#x200B;**[!UICONTROL 帐户到期日期]**&#x200B;列监控您的令牌到期日期。 |
 
 **新增或更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| Experience Platform UI中增强的目标管理功能 | 使用[[!UICONTROL 浏览]](../../destinations/ui/destinations-workspace.md#browse)和[[!UICONTROL 帐户]](../../destinations/ui/destinations-workspace.md#accounts)选项卡中的新排序功能改进目标管理工作流。 现在，您还可以在帐户身份验证即将过期时看到一个视觉标志。<br> ![](../../destinations/assets/ui/workspace/expired-accounts.png){width="100" zoomable="yes"} |
-| 持久列宽设置 | 现在，当导航离开页面并返回页面时，列宽设置会保留。 例如，如果在[[!UICONTROL 浏览]](../../destinations/ui/destinations-workspace.md#browse)选项卡中调整列宽，则当您离开并返回该选项卡时，自定义列宽将保持不变。 |
+| 增强了 Experience Platform UI 中的目标管理功能 | 通过[[!UICONTROL 浏览]](../../destinations/ui/destinations-workspace.md#browse)和[[!UICONTROL 帐户]](../../destinations/ui/destinations-workspace.md#accounts)选项卡中新增的排序功能改进您的目标管理工作流。现在，您还可以在帐户身份验证即将过期时看到一个指示器。<br> ![](../../destinations/assets/ui/workspace/expired-accounts.png){width="100" zoomable="yes"} |
+| 永久性列宽设置 | 现在，当您离开一个页面之后又重新返回该页面时，列宽设置会保留。例如，如果您在[[!UICONTROL 浏览]](../../destinations/ui/destinations-workspace.md#browse)选项卡中调整了列宽，当您离开此选项卡之后又再返回时，您自定义的列宽将保持不变。 |
 
 有关更多信息，请阅读[目标概述](../../destinations/home.md)。
 
@@ -89,7 +89,7 @@ XDM 是一种开源规范，可为导入 Experience Platform 的数据提供常�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 基于模型的架构 | 使用基于模型的架构简化您的数据建模。现在，您可以通过全面的操作示例和指导更轻松地创建架构。此功能目前可供Campaign Orchestration许可证持有人使用，并将在正式发布时扩展到Data Distiller客户，从而使数据建模更易于访问且更有效。 该功能包括对时间序列数据和变更数据捕获功能的支持。 |
+| 基于模型的架构 | 使用基于模型的架构简化您的数据建模。现在，您可以通过全面的操作示例和指导更轻松地创建架构。此功能目前可供营销活动编排许可证持有者使用，未来将扩展到 GA 的数据蒸馏器客户，使数据建模更易于访问、更高效。此功能包括对时间序列数据和变更数据捕获功能的支持。 |
 | Data Mirror | 使用基于模型的架构，将行级更改从云数据仓库(例如Snowflake、Databricks、BigQuery)摄取到Adobe Experience Platform中。 Data Mirror通过直接将现有数据库结构镜像到数据湖，消除了上游ETL并保留关系、版本控制和删除。 支持具有更改数据捕获功能的时间系列和记录事件模式行为。 此功能目前可供Campaign Orchestration许可证持有人使用，并将在这一有限版本中扩展，包括Customer Journey Analytics客户。 有关更多详细信息，请参阅[Data Mirror文档](../../xdm/data-mirror/overview.md)。 请联系您的Adobe代表以获取访问权限。 |
 
 有关详细信息，请参阅 [XDM 概述](../../xdm/home.md)。
@@ -102,9 +102,9 @@ Adobe Experience Platform 使您能够为客户提供协调、一致且相关的
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 配置文件查看器增强功能 | 2025年9月版本包括以下对Profile查看器的增强功能。 <ul><li>**组合视图**：属性、事件和分析已组合到单个视图中。</li><li>**AI生成的分析**：配置文件详细信息页面现在显示AI生成的分析，让您知道从配置文件生成的详细信息。 这些见解可能包括倾向分数和趋势分析等信息。</li><li>**样式更新**：个人资料详细信息页面已更新为可见内容。</li><li>**浏览**：您现在可以通过交互式基于卡片的轮播来浏览配置文件，该轮播具有搜索和自定义功能。</li></ul> |
+| 轮廓查看器增强功能 | 2025 年 9 月发行的版本包括以下关于轮廓查看器的增强功能。 <ul><li>**组合视图**：将属性、事件和洞察组合到同一个视图中。</li><li>**AI 生成的洞察**：轮廓详细信息页面现在显示 AI 生成的洞察，让您了解从轮廓生成的详细信息。这些洞察可能包括倾向性得分和趋势分析等信息。</li><li>**样式更新**：轮廓详细信息页面更新了外观。</li><li>**浏览**：您现在可以通过一个具有搜索和自定义功能的基于信息卡的交互式轮播组件来浏览轮廓。</li></ul> |
 
-有关详细信息，请阅读[实时客户资料概述](../../profile/home.md)。
+更多信息请阅读[实时客户轮廓概述](../../profile/home.md)。
 
 ## Segmentation Service {#segmentation-service}
 
@@ -114,14 +114,14 @@ Adobe Experience Platform 使您能够为客户提供协调、一致且相关的
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 具有体验事件弃用的帐户受众 | B2B架构升级后，不再支持具有体验事件的帐户受众。 请改用新的“区段划分”方法：通过体验事件创建人员受众，然后在创建帐户受众时引用该人员受众。 这为创建B2B受众提供了更灵活和可维护的方法。 |
+| 带有体验事件的帐户受众被弃用 | B2B 架构升级后，不再支持带有体验事件的帐户受众。请改用新的“区段的区段”方法：创建一个带有体验事件的“人员”受众，然后在创建“帐户”受众时引用这个“人员”受众。这为创建 B2B 受众提供了一种更灵活的可维护的方法。 |
 
 **重要更新**
 
 | 更新 | 描述 |
 | ------- | ----------- |
-| 受众评估自动刷新还原 | 已还原受众估计的自动刷新增强功能。 将继续在区段生成器中生成受众预计值，但已删除自动刷新功能。 |
-| 外部受众 | 从9月30日开始，将通过区段生成器中的统一搜索检索外部受众。 如果您使用区段匹配，则可以在区段生成器中启用旧版体验。 |
+| 受众估计值自动刷新功能被取消 | 受众估计值的自动刷新增强功能已取消。受众估计值将继续在区段生成器中生成，自动刷新功能已移除。 |
+| 外部受众 | 从 9 月 30 日开始，将通过区段生成器中的统一搜索功能检索外部受众。如果您使用区段匹配，就可以启用区段生成器中的旧版体验。 |
 
 有关详细信息，请参阅 [[!DNL Segmentation Service]  概述](../../segmentation/home.md)。
 
@@ -133,12 +133,10 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 | 功能 | 描述 |
 | --- | --- |
-| 正式发布的新源 | 以下源现已正式发布：多个源连接器已从Beta更新为GA： <ul><li>[Acxiom数据摄取](../../sources/connectors/data-partners/acxiom-data-ingestion.md)</li><li>[Acxiom目标客户数据摄取](../../sources/connectors/data-partners/acxiom-prospecting-data-import.md)</li><li>[Merkury Enterprise](../../sources/connectors/data-partners/merkury.md)</li><li>[SAP Commerce](../../sources/connectors/ecommerce/sap-commerce.md)</li></ul>。这些源现在完全受支持，并可供生产使用。 |
-| [!DNL Snowflake]密钥对身份验证支持 | 增强了Snowflake连接的安全性，支持密钥对身份验证。 基本身份验证（用户名/密码）将于2025年11月被弃用，因此建议客户迁移到密钥对身份验证以提高安全性。 有关更多信息，请阅读该[[!DNL Snowflake] 文档](../../sources/connectors/databases/snowflake.md)。 |
-| 在源中正式提供专用链接支持 | 您现在可以为选定的源组使用&#x200B;**专用链接**。 使用此功能可以创建一个可以与来源连接的私有端点。使用私有端点，您可以设置绕过公共互联网的连接和数据流，从而为您的敏感数据提供更强的安全性和网络隔离。对专用链接的支持可从以下来源获得： <ul><li>[[!DNL Azure Blob Storage]](../../sources/connectors/cloud-storage/blob.md)</li><li>[[!DNL ADLS Gen2]](../../sources/connectors/cloud-storage/adls-gen2.md)</li><li>[[!DNL Azure File Storage]](../../sources/connectors/cloud-storage/azure-file-storage.md)</li></ul>。有关详细信息，请参阅在API[中创建专用链接](../../sources/tutorials/api/private-link.md)以及在UI[中创建专用链接](../../sources/tutorials/ui/private-link.md)的指南。 |
+| 正式发布中的新来源 | 正式发布中现在包含以下来源：多个源连接器已从 Beta 版更新为正式发布： <ul><li>[Acxiom 数据摄取](../../sources/connectors/data-partners/acxiom-data-ingestion.md)</li><li>[Acxiom 潜在客户数据摄取](../../sources/connectors/data-partners/acxiom-prospecting-data-import.md)</li><li>[Merkury 企业](../../sources/connectors/data-partners/merkury.md)</li><li>[SAP Commerce](../../sources/connectors/ecommerce/sap-commerce.md)</li></ul>。这些来源现在完全受支持，可供生产使用。 |
+| 支持 [!DNL Snowflake] 密钥对身份验证 | 增强了 Snowflake 连接的安全性，支持密钥对身份验证。2025 年 11 月将弃用基本身份验证（用户名/密码），因此建议客户迁移到密钥对身份验证，以提高安全性。有关更多信息，请阅读该[[!DNL Snowflake] 文档](../../sources/connectors/databases/snowflake.md)。 |
+| [!BADGE Beta]{type=Informative} [!DNL Capillary Streaming Events] | 使用此[[!DNL Capillary Streaming Events] 来源](../../sources/connectors/loyalty/capillary.md)将忠诚度数据从您的 [!DNL Capillary] 帐户流式传输到 Experience Platform。 |
+| [!BADGE Beta]{type=Informative} [!DNL Relay Connector] | 使用[[!DNL Relay Connector]](../../sources/tutorials/ui/create/marketing-automation/relay-connector.md)将[!DNL Relay Network]集成中的事件数据流式传输到Experience Platform中。 |
+| 正式提供来源中的专用链接支持 | 您现在可以为一组选定的来源使用&#x200B;**专用链接**。使用此功能可以创建一个可以与来源连接的私有端点。使用私有端点，您可以设置绕过公共互联网的连接和数据流，从而为您的敏感数据提供更强的安全性和网络隔离。以下来源提供对专用链接的支持： <ul><li>[[!DNL Azure Blob Storage]](../../sources/connectors/cloud-storage/blob.md)</li><li>[[!DNL ADLS Gen2]](../../sources/connectors/cloud-storage/adls-gen2.md)</li><li>[[!DNL Azure File Storage]](../../sources/connectors/cloud-storage/azure-file-storage.md)</li></ul>。有关详细信息，请参阅 [API](../../sources/tutorials/api/private-link.md) 和 [UI](../../sources/tutorials/ui/private-link.md) 中的专用链接创建指南。 |
 
 有关更多信息，请阅读[来源概述](../../sources/home.md)。
-
-<!--
-| [!BADGE Beta]{type=Informative} [!DNL Capillary Streaming Events] | Use the [[!DNL Capillary Streaming Events] source](../../sources/connectors/loyalty/capillary.md) to stream loyalty data from your [!DNL Capillary] account to Experience Platform. |
--->
