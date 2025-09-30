@@ -3,9 +3,9 @@ keywords: 广告；交易台；广告交易台
 title: 交易台连接
 description: Trade Desk是一个自助服务平台，供广告购买者跨显示器、视频和移动库存源执行重定位和面向受众的数字活动。
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: 564ee7fbd45677c35057c56de049158f3282d7ad
+source-git-commit: f078d7b20bc16bf1a6cca065e5e6fba85d9d0648
 workflow-type: tm+mt
-source-wordcount: '1017'
+source-wordcount: '1066'
 ht-degree: 3%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 3%
 >[!IMPORTANT]
 >
 > 从2025年7月开始，对目标服务进行[内部升级](../../../release-notes/2025/july-2025.md#destinations)后，在到&#x200B;**的数据流中，您可能会遇到激活的配置文件数**&#x200B;减少[!DNL The Trade Desk]的情况。
-> &#x200B;> 导致此下降的原因是，针对此目标平台的所有激活引入了&#x200B;**ECID映射要求**。 有关详细信息，请参阅此页面中的[强制映射](#mandatory-mappings)部分。
+> > 导致此下降的原因是，针对此目标平台的所有激活引入了&#x200B;**ECID映射要求**。 有关详细信息，请参阅此页面中的[强制映射](#mandatory-mappings)部分。
 >
 >**更改内容：**
 >
@@ -84,7 +84,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->如果您希望使用[!DNL The Trade Desk]创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/zh-hans/docs/id-service/using/id-service-api/methods/idsync)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL The Trade Desk]集成，则您设置的ID同步将会转移到Experience Platform。
+>如果您希望使用[!DNL The Trade Desk]创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/en/docs/id-service/using/id-service-api/methods/idsync)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL The Trade Desk]集成，则您设置的ID同步将会转移到Experience Platform。
 
 ## 连接到目标 {#connect}
 
@@ -131,16 +131,33 @@ ht-degree: 3%
 
 ### 强制映射 {#mandatory-mappings}
 
-[支持的标识](#supported-identities)部分中描述的所有目标标识都是必需的，必须在受众激活过程中映射。 这包括：
+必须在受众激活工作流的映射步骤中映射[支持的标识](#supported-identities)部分中描述的所有目标标识。 这包括：
 
-* **GAID** (Google Advertising ID)
-* **IDFA** (广告商的Apple ID)
-* **ECID** (Experience Cloud ID)
-* **交易台ID**
-
-无法映射所有必需的标识，因而无法完成激活工作流。 每个标识在集成中均用于特定目的，而目标需要所有这些标识才能正常工作。
+* [!DNL GAID] (Google Advertising ID)
+* [!DNL IDFA] (广告商的Apple ID)
+* [!DNL ECID] (Experience Cloud ID)
+* [!DNL The Trade Desk ID]
 
 ![显示必需映射的屏幕截图](../../assets/catalog/advertising/tradedesk/mandatory-mappings.png)
+
+映射所有目标标识可确保激活可以使用任何存在的标识正确拆分和交付用户档案。 这并不意味着所有身份都必须存在于每个配置文件中。
+
+要成功导出到交易台，配置文件必须包含：
+
+* [!DNL ECID]，和
+* 至少一个： [!DNL GAID]、[!DNL IDFA]或[!DNL The Trade Desk ID]
+
+示例：
+
+* 仅[!DNL ECID]：未导出
+* [!DNL ECID] + [!DNL The Trade Desk ID]：已导出
+* [!DNL ECID] + [!DNL IDFA]：已导出
+* [!DNL ECID] + [!DNL GAID]：已导出
+* [!DNL IDFA] + [!DNL The Trade Desk ID] （无[!DNL ECID]）：未导出
+
+>[!NOTE]
+> 
+>在[2025年7月升级到目标服务](/help/release-notes/2025/july-2025.md#destinations)后，强制执行[!DNL ECID]映射。 缺失[!DNL ECID]的配置文件现在按预期丢弃，与传统行为相比，这可能显示较低的激活计数。
 
 ## 导出的数据 {#exported-data}
 
