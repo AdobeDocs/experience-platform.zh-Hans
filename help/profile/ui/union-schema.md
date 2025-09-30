@@ -4,9 +4,9 @@ title: 合并架构UI指南
 type: Documentation
 description: 在Adobe Experience Platform用户界面(UI)中，您可以轻松查看组织内的任何合并架构，并预览特定类的字段、身份、关系和参与架构。 本指南提供了有关如何使用Experience Platform UI查看和浏览合并架构的详细信息。
 exl-id: 52af0d77-e37d-4ed8-9dee-71a50b337b4e
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: b7f5f08d5b3632a2d80c39559a5fb5116d9567f8
 workflow-type: tm+mt
-source-wordcount: '1204'
+source-wordcount: '1206'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 在Adobe Experience Platform用户界面(UI)中，您可以轻松查看组织内的任何合并架构，并预览特定类的字段、身份、关系和参与架构。 本指南提供了有关如何使用Experience Platform UI查看和浏览合并架构的详细信息。
 
-## 快速入门
+## 快速入门 {#getting-started}
 
 本UI指南要求您了解与管理Real-time Customer Profile数据有关的各种[!DNL Experience Platform]服务。 在阅读本指南或使用UI之前，请查看以下服务的文档：
 
@@ -23,21 +23,28 @@ ht-degree: 0%
 * [[!DNL Identity Service]](../../identity-service/home.md)：在将[!DNL Real-Time Customer Profile]引入到[!DNL Experience Platform]中时，通过桥接来自不同数据源的标识来启用它们。
 * [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
 
-## 了解合并架构
+## 了解合并架构 {#understanding-union-schemas}
+
+>[!CONTEXTUALHELP]
+>id="rtcdp_collaboration_union_schema"
+>title="合并架构"
+>abstract=""
+
+<!-- The above contextual help is used in the Collaboration UI for a read more link. -->
 
 Real-Time Customer Profile使您能够创建强大、集中的用户档案，其中包含客户属性和带有时间戳的事件，以及与Adobe Experience Platform集成的系统间每个客户交互。 此数据的格式和结构由体验数据模型(XDM)架构提供，每个架构都基于XDM类并包含与该类兼容的字段。
 
 可以为多个用例创建架构，这些架构引用同一类，但包含特定于其使用的字段。 为配置文件启用某个架构后，它将成为合并架构的一部分。 换言之，联合架构由共享同一类并已为配置文件启用的多个架构组成。 合并架构允许您查看共享同一类的架构中包含的所有字段的合并。 实时客户配置文件使用合并架构创建每个客户的整体视图。
 
-使用合并模式需要深入了解XDM模式。 有关详细信息，请先阅读架构组合[&#128279;](../../xdm/schema/composition.md)的基础知识。
+使用合并模式需要深入了解XDM模式。 有关详细信息，请先阅读架构组合[的](../../xdm/schema/composition.md)基础知识。
 
-## 查看合并架构
+## 查看合并架构 {#view-union-schemas}
 
 要导航到Experience Platform UI中的合并架构，请从左侧导航中选择&#x200B;**[!UICONTROL 配置文件]**，然后选择&#x200B;**[!UICONTROL 合并架构]**&#x200B;选项卡。 将打开[!UICONTROL 合并架构]选项卡以显示当前选定类的合并架构。
 
 ![将显示“合并架构”页面，并突出显示“配置文件和合并架构”选项卡。](../images/union-schema/landing.png)
 
-## 选择一个类
+## 选择一个类 {#select-a-class}
 
 要显示特定XDM类的合并架构，请从&#x200B;**[!UICONTROL 类]**&#x200B;下拉列表中选择该类。 由于并非所有类都具有联合架构，因此下拉菜单中只有具有联合架构的类（即具有已为配置文件启用的架构的类）可用。
 
@@ -45,7 +52,7 @@ Real-Time Customer Profile使您能够创建强大、集中的用户档案，其
 
 ![包含合并架构的类的下拉列表突出显示。](../images/union-schema/class.png)
 
-## 浏览合并架构
+## 浏览合并架构 {#explore-union-schemas}
 
 您可以通过上下滚动查看完整的架构结构，并选择右尖括号(`>`)展开嵌套字段来浏览合并架构。
 
@@ -61,7 +68,7 @@ Real-Time Customer Profile使您能够创建强大、集中的用户档案，其
 
 ![与架构相关的数据集列表已突出显示。](../images/union-schema/datasets.png)
 
-## 查看参与架构
+## 查看参与架构 {#view-contributing-schemas}
 
 您还可以通过选择&#x200B;**[!UICONTROL 所有参与架构]**&#x200B;来展开架构列表，以查看哪些特定架构正在参与合并架构。 根据您选择的类以及贵组织在Experience Platform中创建的架构数，该列表可以是包含单个架构的简短列表，也可以是包含多个架构的较长列表。
 
@@ -71,7 +78,7 @@ Real-Time Customer Profile使您能够创建强大、集中的用户档案，其
 
 ![选定的参与架构突出显示。 作为参与架构一部分的字段仍为黑色，而作为参与架构一部分的字段呈灰色。](../images/union-schema/select-schema.png)
 
-## 查看身份
+## 查看身份 {#view-identities}
 
 通过UI，您可以通过选择&#x200B;**[!UICONTROL 标识]**&#x200B;展开合并架构中包含的标识列表。
 
@@ -83,7 +90,7 @@ Real-Time Customer Profile使您能够创建强大、集中的用户档案，其
 
 ![所选的标识已突出显示。 有关所选身份的详细信息，将显示在右侧边栏中。](../images/union-schema/select-identity.png)
 
-## 查看关系
+## 查看关系 {#view-relationships}
 
 合并架构UI还允许您查看已根据所选架构类为架构定义的关系。 定义关系是连接属于不同类的两个架构的一种方法，以便获得有关客户数据的更复杂的见解。
 
