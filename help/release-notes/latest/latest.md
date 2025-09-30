@@ -41,7 +41,7 @@ Adobe Experience Platform Agent Orchestrator 是 Adobe Experience Platform 中�
 
 | 功能 | 描述 |
 | --- | --- |
-| Agent Orchestrator | Adobe Experience Platform Agent Orchestrator 是 Adobe Experience Platform 中新的代理式层。Experience Platform Agent Orchestrator 旨在利用平台的丰富数据和客户知识，为专门构建的专业 Adobe Experience Platform 代理赋予智能和推理功能，使后者能够大规模地快速执行复杂的决策和问题解决任务——并全部通过人为监督。当您在 AI 助手这类对话界面中用自然语言提出问题或请求帮助时，Agent Orchestrator 会自动调用专门的代理来为您提供正确的回答。Agent Orchestrator 会记住您的对话历史，使您能够自然地延续以前的问题，无需重复上下文，它还会结合来自多个代理的洞察，为您提供清晰、统一的回答。有关更多信息，请阅读 [Agent Orchestrator 文档](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator)。 |
+| Agent Orchestrator | Adobe Experience Platform Agent Orchestrator 是 Adobe Experience Platform 中新的代理式层。Experience Platform Agent Orchestrator 旨在利用平台的丰富数据和客户知识，为专门构建的专业 Adobe Experience Platform 代理赋予智能和推理功能，使后者在人为监督下大规模地快速执行复杂的决策和问题解决任务。当您在 AI 助手这类对话界面中用自然语言提出问题或请求帮助时，Agent Orchestrator 会自动调用专门的代理来为您提供正确的回答。Agent Orchestrator 会记住您的对话历史，使您能够自然地延续以前的问题，无需重复上下文，它还会结合来自多个代理的洞察，为您提供清晰、统一的回答。有关更多信息，请阅读 [Agent Orchestrator 文档](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator)。 |
 | Audience 代理 | 通过 Audience 代理，您可以获得关于受众的洞察，包括发现显著的受众规模变化、发现重复的受众、浏览您的受众库存以及检索受众规模。有关更多信息，请阅读 [Audience 代理文档](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-ai/experience-cloud-ai/agents/audience)。 |
 
 有关更多信息，请阅读 [Agent Orchestrator 文档](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-ai/experience-cloud-ai/home)。
@@ -58,7 +58,7 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 
 {style="table-layout:auto"}
 
-有关警报的更多信息，请阅读[[!DNL Observability Insights] 概述](../../observability/home.md)。
+有关警报的更多信息，请阅读 [[!DNL Observability Insights] 概述](../../observability/home.md)。
 
 ## 目标 {#destinations}
 
@@ -68,7 +68,7 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 
 | 目标 | 描述 |
 | --- | --- |
-| [!BADGE Beta]{type=Informative} [[!DNL Snowflake Batch]](../../destinations/catalog/cloud-storage/snowflake-batch.md)连接器 | 现在提供一种新的[!DNL Snowflake Batch]连接器，可为特定用例提供一种流传输连接器的替代方法。 |
+| [!BADGE Beta]{type=Informative} [[!DNL Snowflake Batch]](../../destinations/catalog/cloud-storage/snowflake-batch.md)连接器 | 现在提供一种新的 [!DNL Snowflake Batch] 连接器，可为特定用例提供一种流传输连接器的替代方法。 |
 | 支持 [[!DNL Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md) 加密 | 现在，您可以附加 RSA 格式的公钥来加密导出的文件，这为您的敏感信息提供了与其他云存储目标所提供的相同安全等级。 |
 | [[!DNL Pinterest]](../../destinations/catalog/advertising/pinterest.md) 目标的身份验证有效期限详细信息 | 现在，您可以直接在 Experience Platform 界面中查看关于 [!DNL Pinterest] 目标的身份验证到期的信息，您可以查看您的身份验证何时到期，在因其而导致您的数据流中断之前将其更新。您可以从&#x200B;**[[!UICONTROL 帐户]](../../destinations/ui/destinations-workspace.md#accounts)**&#x200B;或&#x200B;**[[!UICONTROL 浏览]](../../destinations/ui/destinations-workspace.md#browse)**&#x200B;选项卡中的&#x200B;**[!UICONTROL 帐户到期日期]**&#x200B;列监控您的令牌到期日期。 |
 
@@ -114,13 +114,13 @@ Adobe Experience Platform 使您能够为客户提供协调、一致且相关的
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 带有体验事件的帐户受众被弃用 | B2B 架构升级后，不再支持带有体验事件的帐户受众。请改用新的“区段的区段”方法：创建一个带有体验事件的“人员”受众，然后在创建“帐户”受众时引用这个“人员”受众。这为创建 B2B 受众提供了一种更灵活的可维护的方法。 |
+| 弃用带有体验事件的帐户受众 | B2B 架构升级后，不再支持带有体验事件的帐户受众。请改用新的区段嵌套方法：创建一个带有体验事件的“人员”受众，然后在创建“帐户”受众时引用这个“人员”受众。这为创建 B2B 受众提供了一种更灵活的可维护的方法。 |
 
 **重要更新**
 
 | 更新 | 描述 |
 | ------- | ----------- |
-| 受众估计值自动刷新功能被取消 | 受众估计值的自动刷新增强功能已取消。受众估计值将继续在区段生成器中生成，自动刷新功能已移除。 |
+| 受众估计值自动刷新回退 | 受众估计值的自动刷新增强功能已回退。受众估计值将继续在区段生成器中生成，自动刷新功能已移除。 |
 | 外部受众 | 从 9 月 30 日开始，将通过区段生成器中的统一搜索功能检索外部受众。如果您使用区段匹配，就可以启用区段生成器中的旧版体验。 |
 
 有关详细信息，请参阅 [[!DNL Segmentation Service]  概述](../../segmentation/home.md)。
@@ -133,9 +133,9 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 | 功能 | 描述 |
 | --- | --- |
-| 正式发布中的新来源 | 正式发布中现在包含以下来源：多个源连接器已从 Beta 版更新为正式发布： <ul><li>[Acxiom 数据摄取](../../sources/connectors/data-partners/acxiom-data-ingestion.md)</li><li>[Acxiom 潜在客户数据摄取](../../sources/connectors/data-partners/acxiom-prospecting-data-import.md)</li><li>[Merkury 企业](../../sources/connectors/data-partners/merkury.md)</li><li>[SAP Commerce](../../sources/connectors/ecommerce/sap-commerce.md)</li></ul>。这些来源现在完全受支持，可供生产使用。 |
-| 支持 [!DNL Snowflake] 密钥对身份验证 | 增强了 Snowflake 连接的安全性，支持密钥对身份验证。2025 年 11 月将弃用基本身份验证（用户名/密码），因此建议客户迁移到密钥对身份验证，以提高安全性。有关更多信息，请阅读该[[!DNL Snowflake] 文档](../../sources/connectors/databases/snowflake.md)。 |
-| [!BADGE Beta]{type=Informative} [!DNL Capillary Streaming Events] | 使用此[[!DNL Capillary Streaming Events] 来源](../../sources/connectors/loyalty/capillary.md)将忠诚度数据从您的 [!DNL Capillary] 帐户流式传输到 Experience Platform。 |
+| 正式发布中的新来源 | 正式发布中现在包含以下来源：多个源连接器已从 Beta 版更新为正式发布： <ul><li>[Acxiom 数据摄取](../../sources/connectors/data-partners/acxiom-data-ingestion.md)</li><li>[Acxiom 潜在客户数据摄取](../../sources/connectors/data-partners/acxiom-prospecting-data-import.md)</li><li>[Merkury Enterprise](../../sources/connectors/data-partners/merkury.md)</li><li>[SAP Commerce](../../sources/connectors/ecommerce/sap-commerce.md)</li></ul>。这些来源现在完全受支持，可供生产使用。 |
+| 支持 [!DNL Snowflake] 密钥对身份验证 | 增强了 Snowflake 连接的安全性，支持密钥对身份验证。2025 年 11 月将弃用基本身份验证（用户名/密码），因此建议客户迁移到密钥对身份验证，以提高安全性。有关更多信息，请阅读该 [[!DNL Snowflake] 文档](../../sources/connectors/databases/snowflake.md)。 |
+| [!BADGE Beta]{type=Informative} [!DNL Capillary Streaming Events] | 使用此 [[!DNL Capillary Streaming Events] 来源](../../sources/connectors/loyalty/capillary.md)将忠诚度数据从您的 [!DNL Capillary] 帐户流式传输到 Experience Platform。 |
 | [!BADGE Beta]{type=Informative} [!DNL Relay Connector] | 使用[[!DNL Relay Connector]](../../sources/tutorials/ui/create/marketing-automation/relay-connector.md)将[!DNL Relay Network]集成中的事件数据流式传输到Experience Platform中。 |
 | 正式提供来源中的专用链接支持 | 您现在可以为一组选定的来源使用&#x200B;**专用链接**。使用此功能可以创建一个可以与来源连接的私有端点。使用私有端点，您可以设置绕过公共互联网的连接和数据流，从而为您的敏感数据提供更强的安全性和网络隔离。以下来源提供对专用链接的支持： <ul><li>[[!DNL Azure Blob Storage]](../../sources/connectors/cloud-storage/blob.md)</li><li>[[!DNL ADLS Gen2]](../../sources/connectors/cloud-storage/adls-gen2.md)</li><li>[[!DNL Azure File Storage]](../../sources/connectors/cloud-storage/azure-file-storage.md)</li></ul>。有关详细信息，请参阅 [API](../../sources/tutorials/api/private-link.md) 和 [UI](../../sources/tutorials/ui/private-link.md) 中的专用链接创建指南。 |
 
