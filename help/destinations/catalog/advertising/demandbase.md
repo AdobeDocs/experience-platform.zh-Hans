@@ -1,14 +1,14 @@
 ---
 title: Demandbase连接
 description: 使用此目标来激活 Account-Based Marketing (ABM) 用例的帐户受众。通过 DemandBase 的 B2B Demand Side Platform（DSP）向目标帐户中的相关人物和角色投放广告。目标帐户还可以通过 Demandbase 第三方数据进行丰富，以用于营销和销售中的其他下游用例。
-badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions newtab=true"
-badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 last-substantial-update: 2024-09-30T00:00:00Z
 exl-id: a84609a2-f1d3-4998-9db4-ad59c0a0b631
-source-git-commit: 08c2c7f5080f0e6afb7be53aad9f88ba0fccf923
+source-git-commit: 39012e2308af57af7c9193bdc4894f8f2e358606
 workflow-type: tm+mt
-source-wordcount: '696'
-ht-degree: 17%
+source-wordcount: '762'
+ht-degree: 16%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 17%
 
 >[!AVAILABILITY]
 >
->&#x200B;>向Demandbase目标激活帐户受众的功能适用于购买[企业对企业](/help/rtcdp/overview.md#rtcdp-b2b)和[企业对个人](/help/rtcdp/overview.md#rtcdp-b2p)版本的Real-Time Customer Data Platform的公司。
+>向Demandbase目标激活帐户受众的功能适用于购买[企业对企业](/help/rtcdp/overview.md#rtcdp-b2b)和[企业对个人](/help/rtcdp/overview.md#rtcdp-b2p)版本的Real-Time Customer Data Platform的公司。
 
 根据[帐户受众](/help/segmentation/types/account-audiences.md) ，激活Demandbase营销活动的配置文件以进行受众定位、个性化和抑制。
 
@@ -24,7 +24,7 @@ ht-degree: 17%
 
 使用此目标来激活 Account-Based Marketing (ABM) 用例的帐户受众。通过 DemandBase 的 B2B Demand Side Platform（DSP）向目标帐户中的相关人物和角色投放广告。目标帐户还可以通过 Demandbase 第三方数据进行丰富，以用于营销和销售中的其他下游用例。
 
-例如，利用Demandbase的广告技术DSP来定位关键客户中的特定角色或角色，以实现漏斗顶级的商机开发，或创建并扩大购买群体。 使用Demandbase目标来探索其他用例，以有效定位您的帐户。
+例如，利用Demandbase的广告技术DSP来定位关键客户中的特定角色或角色，以创造funnel顶级商机，或创建并扩大购买群体。 使用Demandbase目标来探索其他用例，以有效定位您的帐户。
 
 利用此集成，您还可以使用实时帐户信息查找来优化参与，从而个性化网站体验。
 
@@ -46,7 +46,7 @@ ht-degree: 17%
 | 项目 | 类型 | 注释 |
 |--------------|-----------|---------------------------|
 | 导出类型 | 受众导出 | 将使用关键标识符（如姓名、电话号码等）导出所有受众成员。 |
-| 频度 | 流式处理 | 基于“始终运行”API的连接。 配置文件更改后，更新会立即发送到下游。 |
+| 频率 | 流传输 | 基于“始终运行”API的连接。 配置文件更改后，更新会立即发送到下游。 |
 
 {style="table-layout:auto"}
 
@@ -93,6 +93,20 @@ ht-degree: 17%
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 有关将帐户受众激活到此目标的说明，请阅读[激活帐户受众](/help/destinations/ui/activate-account-audiences.md)。
+
+### 强制映射 {#mandatory-mappings}
+
+将受众激活到[!DNL Demandbase]目标时，您必须在映射步骤中配置以下必填字段映射：
+
+| 源字段 | 目标字段 | 描述 |
+|--------------|--------------|-------------|
+| `xdm: accountName` | `xdm: accountName` | 帐户的名称 |
+| `xdm: accountOrganization.domain` | `xdm: accountEmailDomain` | 帐户组织的电子邮件域 |
+| `xdm: accountKey.sourceKey` | `Identity: primaryId` | 帐户的主要标识符 |
+
+![Demandbase映射](/help/destinations/assets/catalog/advertising/demandbase/demandbase-mapping.png)
+
+目标需要这些映射才能正常运行，并且必须先配置这些映射，然后才能继续激活工作流。
 
 ## 其他注释和重要标注 {#additional-notes}
 
