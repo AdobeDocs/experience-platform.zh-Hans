@@ -3,21 +3,21 @@ title: 将您的Snowflake流帐户连接到Adobe Experience Platform
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Snowflake Streaming。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 3fc225a4-746c-4a91-aa77-bbeb091ec364
-source-git-commit: bad1e0a9d86dcce68f1a591060989560435070c5
+source-git-commit: a4a464f1f3b61311754a39f2a6e6a4ef21af3ab0
 workflow-type: tm+mt
-source-wordcount: '880'
+source-wordcount: '874'
 ht-degree: 4%
 
 ---
 
-# 使用[!DNL Flow Service] API将[!DNL Snowflake]数据流式传输到Experience Platform
+# 使用[!DNL Snowflake] API将[!DNL Flow Service]数据流式传输到Experience Platform
 
 >[!IMPORTANT]
 >
 >
 > [!DNL Snowflake]流源在API中可供已购买Real-Time Customer Data Platform Ultimate的用户使用。
 
-本教程提供了有关如何使用[[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>)将数据从[!DNL Snowflake]帐户连接并流式传输到Adobe Experience Platform的步骤。
+本教程提供了有关如何使用[!DNL Snowflake]API[[!DNL Flow Service] 将数据从](<https://www.adobe.io/experience-platform-apis/references/flow-service/>)帐户连接并流式传输到Adobe Experience Platform的步骤。
 
 ## 快速入门
 
@@ -26,17 +26,19 @@ ht-degree: 4%
 * [源](../../../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强传入数据。
 * [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-有关[!DNL Snowflake]流源的先决条件设置和信息。 请阅读[[!DNL Snowflake] 流源概述](../../../../connectors/databases/snowflake-streaming.md)。
-
 ### 使用Experience Platform API
 
 有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../../../landing/api-guide.md)指南。
+
+### 收集所需的凭据
+
+有关身份验证的信息，请阅读[[!DNL Snowflake] 概述](../../../../connectors/databases/snowflake-streaming.md#prerequisites)。
 
 ## 创建基本连接 {#create-a-base-connection}
 
 基本连接会保留源与Experience Platform之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-要创建基本连接ID，请在提供您的[!DNL Snowflake]身份验证凭据作为请求正文的一部分时，向`/connections`端点发出POST请求。
+要创建基本连接ID，请在提供您的`/connections`身份验证凭据作为请求正文的一部分时，向[!DNL Snowflake]端点发出POST请求。
 
 **API格式**
 
@@ -156,7 +158,7 @@ curl -X GET \
 
 源连接创建和管理与摄取数据的外部源的连接。
 
-要创建源连接，请向[!DNL Flow Service] API的`/sourceConnections`端点发出POST请求。
+要创建源连接，请向`/sourceConnections` API的[!DNL Flow Service]端点发出POST请求。
 
 **API格式**
 
@@ -290,7 +292,7 @@ curl -X POST \
 
 ## 后续步骤
 
-通过完成本教程，您已使用[!DNL Flow Service] API为[!DNL Snowflake]数据创建流式数据流。 有关Adobe Experience Platform源的其他信息，请访问以下文档：
+通过完成本教程，您已使用[!DNL Snowflake] API为[!DNL Flow Service]数据创建流式数据流。 有关Adobe Experience Platform源的其他信息，请访问以下文档：
 
 * [源概述](../../../../home.md)
 * [使用API监控数据流](../../monitor.md)

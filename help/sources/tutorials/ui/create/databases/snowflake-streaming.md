@@ -2,16 +2,16 @@
 title: 使用UI将数据从Snowflake数据库流入Experience Platform
 description: 了解如何将数据从Snwoflake数据库流入Experience Platform
 exl-id: 49d488f1-90d8-452a-9f3e-02afdcc79b09
-source-git-commit: 04a1cecbacdaf0b701d3ef18d03497973a8f3263
+source-git-commit: 0d646136da2c508fe7ce99a15787ee15c5921a6c
 workflow-type: tm+mt
-source-wordcount: '1648'
+source-wordcount: '1451'
 ht-degree: 3%
 
 ---
 
 # 使用UI将数据从[!DNL Snowflake]数据库流式传输到Experience Platform
 
-按照本指南了解如何使用用户界面将数据从[!DNL Snowflake]数据库流式传输到Adobe Experience Platform。
+阅读本指南，了解如何使用UI中的源工作区将数据从[!DNL Snowflake]数据库流式传输到Experience Platform。
 
 ## 快速入门
 
@@ -24,13 +24,13 @@ ht-degree: 3%
 
 ### 身份验证
 
-阅读 [!DNL Snowflake] 流式数据[&#128279;](../../../../connectors/databases/snowflake-streaming.md)的必备项设置指南，以了解从[!DNL Snowflake]将流式数据摄取到Experience Platform之前需要完成的步骤的相关信息。
+阅读[流式数据 [!DNL Snowflake] 的](../../../../connectors/databases/snowflake-streaming.md)必备项设置指南，以了解从[!DNL Snowflake]将流式数据摄取到Experience Platform之前需要完成的步骤的相关信息。
 
 ## 使用[!DNL Snowflake Streaming]源将[!DNL Snowflake]数据流式传输到Experience Platform
 
 在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
-在&#x200B;*数据库*&#x200B;类别下，选择&#x200B;**[!DNL Snowflake Streaming]**，然后选择&#x200B;**[!UICONTROL 添加数据]**。
+在&#x200B;*数据库*&#x200B;类别下，选择&#x200B;**[!DNL Snowflake Streaming]**，然后选择&#x200B;**[!UICONTROL 设置]**。
 
 >[!TIP]
 >
@@ -40,37 +40,33 @@ ht-degree: 3%
 
 此时会显示&#x200B;**[!UICONTROL 连接Snowflake流帐户]**&#x200B;页面。 在此页上，您可以使用新的或现有的身份证明。
 
->[!BEGINTABS]
+### 创建新帐户
 
->[!TAB 创建新帐户]
-
-要创建新帐户，请选择&#x200B;**[!UICONTROL 新帐户]**，并提供名称、可选描述和您的凭据。
-
-完成后，选择&#x200B;**[!UICONTROL 连接到源]**，然后留出一些时间来建立新连接。
+要创建新帐户，请选择&#x200B;**[!UICONTROL 新建帐户]**，并为您的帐户提供名称和可选描述。
 
 ![源工作流的新帐户创建界面。](../../../../images/tutorials/create/snowflake-streaming/new.png)
 
-| 凭据 | 描述 |
-| --- | --- |
-| 帐户 | [!DNL Snowflake]帐户的名称。 有关帐户名称的约定，请阅读[[!DNL Snowflake Streaming] 身份验证指南](../../../../connectors/databases/snowflake-streaming.md#gather-required-credentials)。 |
-| 仓库 | [!DNL Snowflake]仓库的名称。 仓库管理[!DNL Snowflake]中查询的执行。 每个[!DNL Snowflake]仓库彼此独立，必须单独访问才能将数据导入Experience Platform。 |
-| 数据库 | [!DNL Snowflake]数据库的名称。 该数据库包含您要带入Experience Platform的数据。 |
-| 架构 | （可选）与您的[!DNL Snowflake]帐户关联的数据库架构。 |
-| 用户名 | [!DNL Snowflake]帐户的用户名。 |
-| 密码 | [!DNL Snowflake]帐户的密码。 |
-| 角色 | （可选）可以为给定连接提供给用户的自定义角色。 如果未提供，此值默认为`public`。 |
+>[!BEGINTABS]
 
-有关帐户创建的更多信息，请参阅[!DNL Snowflake Streaming]概述中有关[配置角色设置](../../../../connectors/databases/snowflake-streaming.md#configure-role-settings)的部分。
+>[!TAB 基本身份验证]
 
->[!TAB 使用现有帐户]
+要使用[!UICONTROL 基本身份验证]，请选择&#x200B;**[!UICONTROL Snowflake的基本身份验证]**，并为您的[!DNL Snowflake]帐户提供凭据。 完成后，选择&#x200B;**[!UICONTROL 连接到源]**，等待一段时间以建立连接。
 
-若要使用现有帐户，请选择&#x200B;**[!UICONTROL 现有帐户]**，然后从现有帐户目录中选择所需的帐户。
+阅读[!DNL Snowflake Streaming]概述以了解有关[收集所需凭据](../../../../connectors/databases/snowflake-streaming.md#gather-required-credentials)的更多信息。
 
-选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
+![源工作流中的新帐户接口，已选择基本身份验证。](../../../../images/tutorials/create/snowflake-streaming/basic-auth.png)
 
-![源目录的现有帐户选择页。](../../../../images/tutorials/create/snowflake-streaming/existing.png)
+>[!TAB KeyPair身份验证]
+
+要使用[!UICONTROL KeyPair身份验证]，请选择&#x200B;**[!UICONTROL Snowflake的KeyPair身份验证]**，并为您的[!DNL Snowflake]帐户提供凭据。 完成后，选择&#x200B;**[!UICONTROL 连接到源]**，等待一段时间以建立连接。
+
+阅读[!DNL Snowflake Streaming]概述以了解有关[收集所需凭据](../../../../connectors/databases/snowflake-streaming.md#gather-required-credentials)的更多信息。
+
+![源工作流中的新帐户接口，已选择密钥对身份验证](../../../../images/tutorials/create/snowflake-streaming/key-pair.png)
 
 >[!ENDTABS]
+
+若要使用现有帐户，请选择&#x200B;**[!UICONTROL 现有帐户]**，从列表中选择您的帐户，然后选择&#x200B;**[!UICONTROL 下一步]**。
 
 ## 选择数据 {#select-data}
 
@@ -78,13 +74,11 @@ ht-degree: 3%
 >
 >* 时间戳列必须存在于源表中，才能创建流数据流。 Experience Platform需要时间戳才能知道何时摄取数据以及何时对增量数据进行流式处理。 您可以为现有连接逆向添加时间戳列并创建新数据流。
 >
->* 确保示例源数据文件中的数据字段的大小写符合[!DNL Snowflake]关于标识符的大小写解析的指南。 有关详细信息，请阅读标识符大小写[&#128279;](https://docs.snowflake.com/en/sql-reference/identifiers-syntax#label-identifier-casing)上的[!DNL Snowflake] 文档。
+>* 确保示例源数据文件中的数据字段的大小写符合[!DNL Snowflake]关于标识符的大小写解析的指南。 有关详细信息，请阅读标识符大小写[[!DNL Snowflake] 上的](https://docs.snowflake.com/en/sql-reference/identifiers-syntax#label-identifier-casing)文档。
 
 出现[!UICONTROL 选择数据]步骤。 在此步骤中，您必须选择要导入到Experience Platform中的数据，配置时间戳和时区，并提供用于摄取原始数据的示例源数据文件。
 
 使用屏幕左侧的数据库目录，并选择要导入到Experience Platform的表。
-
-![选定了数据库表的select数据接口。](../../../../images/tutorials/create/snowflake-streaming/select-table.png)
 
 接下来，选择表的时间戳列类型。 您可以在两种类型的时间戳列之间进行选择： `TIMESTAMP_NTZ`或`TIMESTAMP_LTZ`。 如果选择列类型为`TIMESTAMP_NTZ`，则还必须提供时区。 列应具有非null约束。 有关详细信息，请阅读有关[限制和常见问题解答](../../../../connectors/databases/snowflake-streaming.md#limitations-and-frequently-asked-questions)的部分。
 
@@ -108,13 +102,11 @@ ht-degree: 3%
 
 数据集是用于数据集合的存储和管理结构，通常是表格，其中包含架构（列）和字段（行）。成功引入Experience Platform的数据将作为数据集保留在数据湖中。 在此步骤中，您可以创建新数据集或使用现有数据集。
 
->[!BEGINTABS]
+如果您拥有现有数据集，请选择&#x200B;**[!UICONTROL 现有数据集]**，然后使用&#x200B;**[!UICONTROL 高级搜索]**&#x200B;选项查看组织中所有数据集的窗口，包括其各自的详细信息，例如是否允许将这些数据集摄取到Real-time Customer Profile。
 
->[!TAB 使用新数据集]
+![现有数据集选择界面。](../../../../images/tutorials/create/snowflake-streaming/dataset.png)
 
 要使用新数据集，请选择&#x200B;**[!UICONTROL 新数据集]**，然后为您的数据集提供名称和可选描述。 您还必须选择数据集所遵循的体验数据模型(XDM)架构。
-
-![新的数据集选择界面。](../../../../images/tutorials/create/snowflake-streaming/new-dataset.png)
 
 | 新数据集详细信息 | 描述 |
 | --- | --- |
@@ -122,28 +114,11 @@ ht-degree: 3%
 | 描述 | （可选）新数据集的简短概述。 |
 | 架构 | 您的组织中存在的架构的下拉列表。 您还可以在源配置过程之前创建自己的架构。 有关详细信息，请参阅[在UI](../../../../../xdm/tutorials/create-schema-ui.md)中创建XDM架构的指南。 |
 
->[!TAB 使用现有数据集]
-
-如果您已经有一个现有数据集，请选择&#x200B;**[!UICONTROL 现有数据集]**，然后使用&#x200B;**[!UICONTROL 高级搜索]**&#x200B;选项查看组织中所有数据集的窗口，包括其各自的详细信息，例如是否允许将这些数据集摄取到Real-time Customer Profile。
-
-![现有数据集选择界面。](../../../../images/tutorials/create/snowflake-streaming/existing-dataset.png)
-
->[!ENDTABS]
-
-+++选择相关步骤以启用配置文件摄取、错误诊断和部分摄取。
-
-如果您的数据集启用了实时客户个人资料，那么在此步骤中，您可以切换&#x200B;**[!UICONTROL 个人资料数据集]**&#x200B;以启用您的数据以进行个人资料摄取。 您还可以使用此步骤启用&#x200B;**[!UICONTROL 错误诊断]**&#x200B;和&#x200B;**[!UICONTROL 部分摄取]**。
-
-* **[!UICONTROL 错误诊断]**：选择&#x200B;**[!UICONTROL 错误诊断]**&#x200B;以指示源生成错误诊断，以便以后在监视数据集活动和数据流状态时可以引用这些诊断。
-* **[!UICONTROL 部分摄取]**：部分批次摄取是摄取包含错误的数据的能力，最多可摄取特定可配置阈值。 此功能允许您成功地将所有准确的数据提取到Experience Platform中，同时将所有不正确的数据与有关其无效原因的信息单独进行批处理。
-
-+++
-
 ### 数据流详细信息 {#dataflow-details}
 
 配置数据集后，您必须提供有关数据流的详细信息，包括名称、可选描述和警报配置。
 
-![数据流详细信息配置步骤。](../../../../images/tutorials/create/snowflake-streaming/dataflow-details.png)
+![数据流详细信息配置步骤。](../../../../images/tutorials/create/snowflake-streaming/dataflow-detail.png)
 
 | 数据流配置 | 描述 |
 | --- | --- |
