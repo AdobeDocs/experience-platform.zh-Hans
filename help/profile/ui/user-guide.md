@@ -3,9 +3,9 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: 实时客户个人资料UI指南
 description: Real-time Customer Profile可以为每位客户创建整体视图，结合来自多个渠道（包括在线、离线、CRM和第三方数据）的数据。 本文档提供了在Adobe Experience Platform用户界面中与Real-time Customer Profile交互的指南。
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: e4f303f9de2d36717288d2119458c8df95fc01bf
+source-git-commit: d2694170e2860bd32783ad3f1860b0397e847289
 workflow-type: tm+mt
-source-wordcount: '1990'
+source-wordcount: '2004'
 ht-degree: 4%
 
 ---
@@ -127,7 +127,9 @@ ht-degree: 4%
 
 #### AI 洞察小组件 {#ai-insight-widgets}
 
-**[!UICONTROL AI insight小组件]**&#x200B;部分显示由AI生成的小组件。 这些小组件根据配置文件数据(包括人口统计信息（如年龄、性别或位置）、用户行为（如购买历史记录、网站活动或社交媒体参与）以及心理图形（如兴趣、偏好或生活方式选择），提供对配置文件的快速见解。 所有AI小组件都使用配置文件中已存在&#x200B;**&#x200B;**&#x200B;的数据。
+[!BADGE Alpha]{type=Informative}此功能当前位于Alpha中。
+
+**[!UICONTROL AI insight小组件]**&#x200B;部分显示由AI生成的小组件。 这些小组件根据配置文件数据(包括人口统计信息（如年龄、性别或位置）、用户行为（如购买历史记录、网站活动或社交媒体参与）以及心理图形（如兴趣、偏好或生活方式选择），提供对配置文件的快速见解。 所有AI小组件都使用配置文件中已存在&#x200B;****&#x200B;的数据。
 
 ![将显示AI insight小组件部分。](../images/user-guide/ai-insight-widgets.png)
 
@@ -144,6 +146,8 @@ ht-degree: 4%
 ![显示名称切换已突出显示。](../images/user-guide/show-display-names.png)
 
 #### 自动分类的小组件 {#auto-classified-widgets}
+
+[!BADGE Alpha]{type=Informative}此功能当前位于Alpha中。
 
 **[!UICONTROL 自动分类小组件]**&#x200B;部分显示利用合并架构确定属性所属的源字段组的小组件，提供有关数据来源位置的更清晰的上下文。 您可以使用搜索栏更轻松地在构件中查找关键字。
 
