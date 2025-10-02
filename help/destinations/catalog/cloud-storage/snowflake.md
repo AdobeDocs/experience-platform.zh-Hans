@@ -2,11 +2,12 @@
 title: Snowflake流连接
 description: 使用专用列表将数据导出到您的Snowflake帐户。
 badgeBeta: label="Beta 版" type="Informative"
+badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 4a00e46a-dedb-4dd3-b496-b0f4185ea9b0
-source-git-commit: 183858daac3a2471cb842f1d7308f91cf514c5ee
+source-git-commit: eed90a5ce988acafface0bac9191f1b3ae28f90c
 workflow-type: tm+mt
-source-wordcount: '1438'
-ht-degree: 5%
+source-wordcount: '1442'
+ht-degree: 3%
 
 ---
 
@@ -14,7 +15,7 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
->此目标连接器处于测试阶段，仅提供给特定客户。要请求访问权限，请与 Adobe 代表联系。
+>此目标连接器为测试版，仅适用于Real-Time CDP Ultimate客户。 功能和文档可能会发生更改。
 
 ## 概述 {#overview}
 
