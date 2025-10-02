@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 映射集概述
 description: 了解如何将映射集与Adobe Experience Platform数据准备结合使用。
 exl-id: b45545b7-3ae7-400d-b6fd-b2cb76061093
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bb0366284f1850bd9742b18d95608f901319f642
 workflow-type: tm+mt
-source-wordcount: '960'
+source-wordcount: '979'
 ht-degree: 0%
 
 ---
@@ -82,6 +82,10 @@ ht-degree: 0%
 ## 配置映射源
 
 在映射中，`source`可以是字段、表达式或静态值。 根据给定的源类型，可以通过多种方式提取该值。
+
+>[!TIP]
+>
+>保存映射后，最多等待10分钟再开始数据摄取，以确保完全保存映射。
 
 ### 列数据中的字段
 
