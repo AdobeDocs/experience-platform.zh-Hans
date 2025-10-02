@@ -3,9 +3,9 @@ keywords: 广告目标；目标；平台目标
 title: Advertising目标概述
 description: 将Adobe Experience Platform连接到第三方广告平台(例如DSP、广告网络、SSP)，并在这些平台上共享假名受众。
 exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
-source-git-commit: a0c1ddc5bcdd8b89e7605491441d56199f301e9e
+source-git-commit: d8a4d292747f8ea29709eb13c3344baadba1b6f5
 workflow-type: tm+mt
-source-wordcount: '286'
+source-wordcount: '283'
 ht-degree: 1%
 
 ---
@@ -59,7 +59,6 @@ ht-degree: 1%
 * [DoubleClick Floodlight扩展](doubleclick-floodlight.md)
 * [Facebook Pixel扩展](facebook-pixel.md)
 * [Flashtalking OneTag扩展](flashtalking.md)
-* [Google Ads扩展](google-ads-extension.md)
 * [Google gtag扩展](gtag-advertising.md)
 * [LinkedIn Insight标记扩展](linkedin.md)
 * [Pinterest转化跟踪扩展](pinterest-extension.md)

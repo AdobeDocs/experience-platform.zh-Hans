@@ -5,9 +5,9 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: b71c6ff74fd173a4be12a9a8caf06e27c4fb54cc
+source-git-commit: d8a4d292747f8ea29709eb13c3344baadba1b6f5
 workflow-type: tm+mt
-source-wordcount: '1326'
+source-wordcount: '1323'
 ht-degree: 5%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 5%
    * [删除目标帐户](./api/delete-destination-account.md)
    * [删除目标数据流](./api/delete-destination-dataflow.md)
    * [导出数据集](/help/destinations/api/export-datasets.md)
-   * [排序和筛选目标的API响应](https://experienceleague.adobe.com/docs/experience-platform/dataflows/api/sort-and-filter.html?lang=zh-Hans#use-cases)
+   * [排序和筛选目标的API响应](https://experienceleague.adobe.com/docs/experience-platform/dataflows/api/sort-and-filter.html#use-cases)
 * UI 指南  {#ui}
    * [目标工作区](./ui/destinations-workspace.md)
    * [创建新的目标连接](./ui/connect-destination.md)
@@ -71,7 +71,7 @@ ht-degree: 5%
       * [（旧版） (V2) Marketo Engage连接](./catalog/adobe/marketo-engage.md)
       * [(Beta) Marketo Engage人员同步连接](./catalog/adobe/marketo-engage-person-sync.md)
       * [Marketo Measure Ultimate连接](./catalog/adobe/marketo-measure-ultimate.md)
-      * [Experience Platform受众共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=zh-Hans)
+      * [Experience Platform受众共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
       * [联合受众组合连接](https://www.adobe.com/go/destinations-federated-audience-composition)
    * Advertising目标{#advertising}
       * [(Beta) Acxiom受众连接](./catalog/advertising/acxiom-audience-connection.md)
@@ -92,7 +92,6 @@ ht-degree: 5%
       * [Facebook Pixel扩展](./catalog/advertising/facebook-pixel.md)
       * [Flashtalking OneTag扩展](./catalog/advertising/flashtalking.md)
       * [Google Ads连接](./catalog/advertising/google-ads-destination.md)
-      * [Google Ads扩展](./catalog/advertising/google-ads-extension.md)
       * [Google Ad Manager连接](./catalog/advertising/google-ad-manager.md)
       * [(Beta) Google Ad Manager 360连接](./catalog/advertising/google-ad-manager-360-connection.md)
       * [Google Customer Match连接](./catalog/advertising/google-customer-match.md)
