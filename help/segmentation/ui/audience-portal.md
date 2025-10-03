@@ -2,7 +2,7 @@
 title: 受众门户概述
 description: 了解如何使用Audience Portal在Adobe Experience Platform中查看、管理和创建受众。
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: a374d261e3b34b30869f1a9e8486d52f5bd658cb
+source-git-commit: 06b2bc91524299505bde4e5ee30e03cfc6a3c7ba
 workflow-type: tm+mt
 source-wordcount: '4545'
 ht-degree: 3%
@@ -68,7 +68,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 | [!UICONTROL 副本] | Segmentation Service | 复制所选受众。 有关此函数的更多信息，请参阅[分段常见问题解答](../faq.md#copy)。 |
 | [!UICONTROL 应用访问标签] | 受众构成、自定义上传、分段服务 | 管理属于受众的访问标签。 有关访问标签的详细信息，请阅读有关[管理标签](../../access-control/abac/ui/labels.md)的文档。 |
 | [!UICONTROL 发布] | 自定义上传、分段服务 | 发布选定的受众。 有关生命周期状态管理的更多信息，请阅读分段常见问题解答[的](../faq.md#lifecycle-states)生命周期状态部分。 |
-| [!UICONTROL 停用] | 自定义上传、分段服务 | 停用所选受众。 请注意，为了停用某个受众，无法&#x200B;**任何**&#x200B;目标(包括非Experience Platform目标)中激活该受众&#x200B;**&#x200B;**，也无法将其纳入&#x200B;**任何**&#x200B;其他受众。 有关生命周期状态管理的更多信息，请阅读分段常见问题解答[的](../faq.md#lifecycle-states)生命周期状态部分。 |
+| [!UICONTROL 停用] | 自定义上传、分段服务 | 停用所选受众。 请注意，为了停用某个受众，无法&#x200B;**任何**&#x200B;目标(包括非Experience Platform目标)中激活该受众&#x200B;****，也无法将其纳入&#x200B;**任何**&#x200B;其他受众。 有关生命周期状态管理的更多信息，请阅读分段常见问题解答[的](../faq.md#lifecycle-states)生命周期状态部分。 |
 | [!UICONTROL 删除] | 受众构成、自定义上传、分段服务 | 删除所选受众。 不能删除在下游目标中使用或属于其他受众&#x200B;**中依赖的受众**。 有关受众删除的详细信息，请阅读[分段常见问题解答](../faq.md#lifecycle-states)。 |
 | [!UICONTROL 添加到包] | 受众构成、自定义上传、分段服务 | 在沙盒之间移动受众。 有关此功能的详细信息，请阅读[沙盒工具指南](../../sandboxes/ui/sandbox-tooling.md)。 |
 
@@ -102,7 +102,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 | ----- | ----------- |
 | [!UICONTROL 名称] | 受众的名称。 |
 | [!UICONTROL 轮廓计数] | 符合受众条件的配置文件总数。 |
-| [!UICONTROL Origin] | 受众的来源。 它指明了受众的来源。 可能的值包括[分段服务](#segment-builder)、[自定义上传](#import-audience)、[受众合成](#audience-composition)、[Audience Manager](https://experienceleague.adobe.com/zh-hans/docs/audience-manager/user-guide/aam-home)、[相似受众](../types/lookalike-audiences.md)、[联合受众合成](#fac)、[Customer Journey Analytics](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/cja-overview/cja-overview)、[数据Distiller](#data-distiller)、[AJO B2B](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer-b2b/user/guide-overview)和[Real-Time CDP Collaboration](https://experienceleague.adobe.com/zh-hans/docs/real-time-cdp-collaboration/using/destinations/experience-platform#audience-portal)。 |
+| [!UICONTROL Origin] | 受众的来源。 它指明了受众的来源。 可能的值包括[分段服务](#segment-builder)、[自定义上传](#import-audience)、[受众合成](#audience-composition)、[Audience Manager](https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/aam-home)、[相似受众](../types/lookalike-audiences.md)、[联合受众合成](#fac)、[Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-overview/cja-overview)、[数据Distiller](#data-distiller)、[AJO B2B](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer-b2b/user/guide-overview)和[Real-Time CDP Collaboration](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/destinations/experience-platform#audience-portal)。 |
 | [!UICONTROL 生命周期状态] | 受众的状态。 此字段的可能值包括`Draft`、`Inactive`和`Published`。 有关生命周期状态的更多信息，包括不同状态的含义以及如何将受众移动到不同生命周期状态，请阅读分段常见问题解答[中的](../faq.md#lifecycle-status)生命周期状态部分。 |
 | [!UICONTROL 更新频率] | 一个值，表示受众数据的更新频率。 此字段的可能值包括[!UICONTROL 批次]、[!UICONTROL 流式传输]、[!UICONTROL Edge]和[!UICONTROL 未计划]。 |
 | [!UICONTROL 上次更新者] | 上次更新受众的人员姓名。 |
@@ -138,7 +138,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 ![搜索栏高亮显示。](../images/ui/audience-portal/browse-audience-search.png)
 
-有关[!DNL Unified Search]的详细信息，包括支持的功能，请阅读[统一搜索文档](https://experienceleague.adobe.com/docs/core-services/interface/services/search-experience-cloud.html?lang=zh-Hans)。
+有关[!DNL Unified Search]的详细信息，包括支持的功能，请阅读[统一搜索文档](https://experienceleague.adobe.com/docs/core-services/interface/services/search-experience-cloud.html)。
 
 #### 标记 {#tags}
 
@@ -203,7 +203,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 | 筛选条件 | 描述 |
 | ------ | ----------- |
-| [!UICONTROL Origin] | 允许您根据受众的来源进行筛选。 可能的值包括[分段服务](#segment-builder)、[自定义上传](#import-audience)、[受众合成](#audience-composition)、[Audience Manager](https://experienceleague.adobe.com/zh-hans/docs/audience-manager/user-guide/aam-home)、[相似受众](../types/lookalike-audiences.md)、[联合受众合成](#fac)、[Customer Journey Analytics](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/cja-overview/cja-overview)、[数据Distiller](#data-distiller)、[AJO B2B](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer-b2b/user/guide-overview)和[Real-Time CDP Collaboration](https://experienceleague.adobe.com/zh-hans/docs/real-time-cdp-collaboration/using/destinations/experience-platform#audience-portal)。 |
+| [!UICONTROL Origin] | 允许您根据受众的来源进行筛选。 可能的值包括[分段服务](#segment-builder)、[自定义上传](#import-audience)、[受众合成](#audience-composition)、[Audience Manager](https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/aam-home)、[相似受众](../types/lookalike-audiences.md)、[联合受众合成](#fac)、[Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-overview/cja-overview)、[数据Distiller](#data-distiller)、[AJO B2B](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer-b2b/user/guide-overview)和[Real-Time CDP Collaboration](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/destinations/experience-platform#audience-portal)。 |
 | [!UICONTROL 具有任何标记] | 允许您按标记过滤。 您可以选择在&#x200B;**[!UICONTROL 具有任何标记]**&#x200B;和&#x200B;**[!UICONTROL 具有所有标记]**&#x200B;之间。 选择&#x200B;**[!UICONTROL 具有任何标记]**&#x200B;时，过滤的受众将包含您已添加的&#x200B;**任意**&#x200B;标记。 选择&#x200B;**[!UICONTROL 具有所有标记]**&#x200B;时，筛选的受众必须包括您已添加的&#x200B;**所有**&#x200B;标记。 |
 | [!UICONTROL 生命周期状态] | 可让您根据受众的生命周期状态进行过滤。 可用选项包括[!UICONTROL 已删除]、[!UICONTROL 草稿]、[!UICONTROL 不活动]和[!UICONTROL 已发布]。 |
 | [!UICONTROL 更新频率] | 可让您根据受众的更新频率（评估方法）进行过滤。 可用选项包括[!UICONTROL 批处理]、[!UICONTROL 流式处理]和[!UICONTROL Edge] |
@@ -407,7 +407,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_importaudience_dataexpiration"
 >title="数据过期"
->abstract="受众成员资格将在指定天数后过期。此值可以设置为1天到180天。 受众成员资格过期后，评估将停止，所有用户档案都将退出受众成员资格。 当受众成员资格剩余天数少于7天时，您可以刷新到期窗口。 但是，剩余0天时，您将无法刷新到期窗口。"
+>abstract="受众成员资格将在指定天数后过期。此值可以设置为1天到90天。 受众成员资格过期后，评估将停止，所有用户档案都将退出受众成员资格。 当受众成员资格剩余天数少于7天时，您可以刷新到期窗口。 但是，剩余0天时，您将无法刷新到期窗口。"
 
 >[!IMPORTANT]
 >
@@ -423,7 +423,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 >[!NOTE]
 >
->外部生成的受众&#x200B;**必须**&#x200B;为CSV格式，其最大值为&#x200B;**&#x200B;**，共25列，并且小于1GB。
+>外部生成的受众&#x200B;**必须**&#x200B;为CSV格式，其最大值为&#x200B;****，共25列，并且小于1GB。
 >
 >此外，您&#x200B;**不能**&#x200B;在CSV的第一行或关联的列中使用空格或破折号。
 >
@@ -454,7 +454,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 
 >[!NOTE]
 >
->自定义数据到期设置配置文件在受众成员资格中&#x200B;**保留**&#x200B;的天数。 数据过期后，用户档案将退出受众成员资格。 此值可以设置为1到180天。
+>自定义数据到期设置配置文件在受众成员资格中&#x200B;**保留**&#x200B;的天数。 数据过期后，用户档案将退出受众成员资格。 此值可以设置为1到90天。
 
 填写受众详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
 
