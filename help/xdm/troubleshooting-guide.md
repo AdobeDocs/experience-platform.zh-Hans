@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM系统故障排除指南
 description: 查找有关Experience Data Model (XDM)的常见问题解答，包括解决常见API错误的步骤。
 exl-id: a0c7c661-bee8-4f66-ad5c-f669c52c9de3
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: fa856644a106469f0cafe7f8c0a61219dc7deac7
 workflow-type: tm+mt
-source-wordcount: '2348'
+source-wordcount: '2378'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 本文档提供有关Adobe Experience Platform中[!DNL Experience Data Model] (XDM)和XDM系统的常见问题解答，包括常见错误的疑难解答指南。 有关其他Experience Platform服务的问题和疑难解答，请参阅[Experience Platform疑难解答指南](../landing/troubleshooting.md)。
 
-**[!DNL Experience Data Model] (XDM)**&#x200B;是一个开源规范，它定义了用于客户体验管理的标准化架构。 生成[!DNL Experience Platform]的方法&#x200B;**XDM系统**&#x200B;可使[!DNL Experience Data Model]架构可操作以供[!DNL Experience Platform]服务使用。 **[!DNL Schema Registry]**&#x200B;提供用户界面和RESTful API以访问[!DNL Experience Platform]中的&#x200B;**[!DNL Schema Library]**。 有关详细信息，请参阅[XDM文档](home.md)。
+**[!DNL Experience Data Model](XDM)**&#x200B;是一个开源规范，它定义了用于客户体验管理的标准化架构。 生成[!DNL Experience Platform]的方法&#x200B;**XDM系统**&#x200B;可使[!DNL Experience Data Model]架构可操作以供[!DNL Experience Platform]服务使用。 **[!DNL Schema Registry]**&#x200B;提供用户界面和RESTful API以访问&#x200B;**[!DNL Schema Library]**&#x200B;中的[!DNL Experience Platform]。 有关详细信息，请参阅[XDM文档](home.md)。
 
 ## 常见问题解答
 
@@ -41,7 +41,7 @@ ht-degree: 0%
 
 所有[!DNL Schema Registry]资源（架构、字段组、数据类型、类）都有一个URI，该URI用作唯一ID以供参考和查找。 在API中查看架构时，可在顶级`$id`和`meta:altId`属性中找到该架构。
 
-有关详细信息，请参阅[!DNL Schema Registry] API指南中的[资源标识](api/getting-started.md#resource-identification)部分。
+有关详细信息，请参阅[ API指南中的](api/getting-started.md#resource-identification)资源标识[!DNL Schema Registry]部分。
 
 ### 长字段类型的最大大小是多少？
 
@@ -49,7 +49,7 @@ ht-degree: 0%
 
 有关字段类型的详细信息，请参阅有关[XDM字段类型约束](./schema/field-constraints.md)的文档。
 
-### 什么是meta：AltId？
+### 什么是meta:AltId？
 
 `meta:altId`是架构的唯一标识符。 `meta:altId`提供了一个易于引用的ID以用于API调用。 此ID可避免在每次与JSON URI格式一起使用时进行编码/解码。
 <!-- (Needs clarification - How do I retrieve it INCOMPLETE) ... -->
@@ -63,11 +63,13 @@ ht-degree: 0%
 
 XDM对此数据类型的使用施加以下限制：
 
-- 映射类型必须是对象类型。
+- 映射类型必须是`object`类型。
 - 映射类型不能定义属性（换句话说，它们定义“空”对象）。
-- 映射类型必须包含一个additionalProperties.type字段，该字段描述可以放置在映射中的值（字符串或整数）。
+- 映射类型必须包含描述可以放置在映射中的值的`additionalProperties.type`字段，即`string`或`integer`。
 - 多实体分段只能基于映射键而不是值定义。
 - 帐户受众不支持映射。
+- 在自定义XDM对象中定义的映射被限制在单个级别。 无法创建嵌套映射。 此限制不适用于标准XDM对象中定义的映射。
+- 不支持映射数组。
 
 有关更多详细信息，请参阅映射对象的[使用限制](./ui/fields/map.md#restrictions)。
 
@@ -92,7 +94,7 @@ XDM对此数据类型的使用施加以下限制：
 
 ### 如何定义架构的身份？
 
-在[!DNL Experience Platform]中，无论解释的数据源如何，标识都用于标识主题（通常是个人）。 它们通过在架构中将关键字段标记为“标识”来定义。 身份识别的常用字段包括电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)、CRM ID和其他唯一ID字段。
+在[!DNL Experience Platform]中，无论解释的数据源如何，标识都用于标识主题（通常是个人）。 它们通过在架构中将关键字段标记为“标识”来定义。 身份识别的常用字段包括电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html)、CRM ID和其他唯一ID字段。
 
 可使用API或用户界面将字段标记为标识。
 
@@ -102,7 +104,7 @@ XDM对此数据类型的使用施加以下限制：
 
 标识描述符是由POST请求创建到/descriptors端点。 如果成功，您将收到HTTP状态201（已创建）和一个包含新描述符详细信息的响应对象。
 
-有关在API中创建身份描述符的更多详细信息，请参阅[!DNL Schema Registry]开发人员指南中[描述符](api/descriptors.md)部分的文档。
+有关在API中创建身份描述符的更多详细信息，请参阅[开发人员指南中](api/descriptors.md)描述符[!DNL Schema Registry]部分的文档。
 
 ### 在UI中定义身份
 
@@ -120,27 +122,27 @@ XDM对此数据类型的使用施加以下限制：
 
 ### 如何启用架构以在[!DNL Real-Time Customer Profile]中使用？
 
-通过在架构的`meta:immutableTags`属性中添加“union”标记，启用架构以便在[[!DNL Real-Time Customer Profile]](../profile/home.md)中使用。 可以使用API或用户界面启用用于[!DNL Profile]的架构。
+通过在架构的[[!DNL Real-Time Customer Profile]](../profile/home.md)属性中添加“union”标记，启用架构以便在`meta:immutableTags`中使用。 可以使用API或用户界面启用用于[!DNL Profile]的架构。
 
 ### 使用API启用[!DNL Profile]的现有架构
 
 发出PATCH请求以更新架构，并将`meta:immutableTags`属性添加为包含值“union”的数组。 如果更新成功，响应将显示更新的架构，该架构现在包含合并标记。
 
-有关使用API启用架构以在[!DNL Real-Time Customer Profile]中使用的详细信息，请参阅[!DNL Schema Registry]开发人员指南的[联合](./api/unions.md)文档。
+有关使用API启用架构以在[!DNL Real-Time Customer Profile]中使用的详细信息，请参阅[开发人员指南的](./api/unions.md)联合[!DNL Schema Registry]文档。
 
 ### 正在使用用户界面启用[!DNL Profile]的现有架构
 
 在[!DNL Experience Platform]中，在左侧导航中选择&#x200B;**[!UICONTROL 架构]**，然后从架构列表中选择要启用的架构的名称。 然后，在编辑器的右侧&#x200B;**[!UICONTROL 架构属性]**&#x200B;下，选择&#x200B;**[!UICONTROL 配置文件]**&#x200B;以将其打开。
 
-有关详细信息，请参阅[!UICONTROL 架构编辑器]教程中有关[在实时客户个人资料中使用](./tutorials/create-schema-ui.md#profile)的部分。
+有关详细信息，请参阅[架构编辑器](./tutorials/create-schema-ui.md#profile)教程中有关[!UICONTROL 在实时客户个人资料中使用]的部分。
 
 ### 将Adobe Analytics数据作为源导入时，是否为配置文件启用自动创建的架构？
 
-架构未自动为实时客户配置文件启用。 您需要根据为配置文件启用的架构，为配置文件明确启用数据集。 请参阅文档，了解启用数据集以在Real-Time Customer Profile[&#128279;](../catalog/datasets/user-guide.md#enable-profile)中使用所需的步骤和要求。
+架构未自动为实时客户配置文件启用。 您需要根据为配置文件启用的架构，为配置文件明确启用数据集。 请参阅文档，了解启用数据集以在Real-Time Customer Profile[中使用所需的](../catalog/datasets/user-guide.md#enable-profile)步骤和要求。
 
 ### 我是否可以删除启用配置文件的架构？
 
-为实时客户配置文件启用架构后，您无法删除该架构。 为配置文件启用架构后，无法禁用或删除该架构，并且无法从架构中删除字段。 因此，在为配置文件启用架构配置之前，仔细规划和验证架构配置至关重要。 但是，您可以删除启用了配置文件的数据集。 在此处找到信息： <https://experienceleague.adobe.com/zh-hans/docs/experience-platform/catalog/datasets/user-guide#delete-a-profile-enabled-dataset>
+为实时客户配置文件启用架构后，您无法删除该架构。 为配置文件启用架构后，无法禁用或删除该架构，并且无法从架构中删除字段。 因此，在为配置文件启用架构配置之前，仔细规划和验证架构配置至关重要。 但是，您可以删除启用了配置文件的数据集。 在此处找到信息： <https://experienceleague.adobe.com/en/docs/experience-platform/catalog/datasets/user-guide#delete-a-profile-enabled-dataset>
 
 如果您不再希望使用启用了配置文件的架构，建议将该架构重命名为包含&#x200B;**不使用**&#x200B;或&#x200B;**不活动**。
 
@@ -156,7 +158,7 @@ XDM对此数据类型的使用施加以下限制：
 
 合并模式是只读的，由系统自动生成。 不能直接编辑它们。 在将“union”标记添加到实现特定类的架构时，会为该类创建联合架构。
 
-有关XDM中联合的更多信息，请参阅[!DNL Schema Registry] API指南中的[联合](./api/unions.md)部分。
+有关XDM中联合的更多信息，请参阅[ API指南中的](./api/unions.md)联合[!DNL Schema Registry]部分。
 
 ### 如何格式化数据文件以将数据摄取到我的架构中？
 
@@ -202,7 +204,7 @@ XDM对此数据类型的使用施加以下限制：
 >- `http://ns.adobe.com/aep/errors/XDM-1016-404`
 >- `http://ns.adobe.com/aep/errors/XDM-1017-404`
 
-有关在API中构造查找路径的更多信息，请参阅[!DNL Schema Registry]开发人员指南中的[容器](./api/getting-started.md#container)和[资源标识](api/getting-started.md#resource-identification)部分。
+有关在API中构造查找路径的更多信息，请参阅[开发人员指南中的](./api/getting-started.md#container)容器[和](api/getting-started.md#resource-identification)资源标识[!DNL Schema Registry]部分。
 
 ### 标题不唯一
 
@@ -294,7 +296,7 @@ XDM对此数据类型的使用施加以下限制：
 
 ### [!DNL Real-Time Customer Profile]个错误
 
-以下错误消息与启用[!DNL Real-Time Customer Profile]的架构所涉及的操作相关联。 有关详细信息，请参阅[!DNL Schema Registry] API指南中的[联合](./api/unions.md)部分。
+以下错误消息与启用[!DNL Real-Time Customer Profile]的架构所涉及的操作相关联。 有关详细信息，请参阅[ API指南中的](./api/unions.md)联合[!DNL Schema Registry]部分。
 
 #### 必须存在引用身份描述符
 

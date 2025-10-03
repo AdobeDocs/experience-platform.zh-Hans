@@ -2,9 +2,9 @@
 title: 在UI中定义映射字段
 description: 了解如何在Experience Platform用户界面中定义映射字段。
 exl-id: 657428a2-f184-4d7c-b657-4fc60d77d5c6
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: c0421974493884488e4d639278106835ad1d8b1b
 workflow-type: tm+mt
-source-wordcount: '455'
+source-wordcount: '487'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Adobe Experience Platform允许您完全自定义自定义Experience Data Model (XDM)类、架构字段组和数据类型的结构。
 
-您还可以在架构编辑器中定义映射字段，以建模灵活的动态数据结构或存储键值对的集合。
+您还可以在架构编辑器中定义映射字段，以使用灵活的动态键存储键值对的集合。
 
 在Experience Platform用户界面(UI)中定义新字段时，请使用&#x200B;**[!UICONTROL 类型]**&#x200B;下拉列表，然后从列表中选择“**[!UICONTROL 映射]**”。
 
@@ -36,6 +36,8 @@ XDM对此数据类型的使用施加以下限制：
 * 映射类型必须包含描述可以放置在映射中的值的`additionalProperties.type`字段，即`string`或`integer`。
 * 多实体分段只能基于映射键而不是值定义。
 * 帐户受众不支持映射。
+* 在自定义XDM对象中定义的映射被限制在单个级别。 无法创建嵌套映射。 此限制不适用于标准XDM对象中定义的映射。
+* 不支持映射数组。
 
 确保仅在绝对必要时使用映射类型字段，因为它们存在以下性能缺陷：
 
