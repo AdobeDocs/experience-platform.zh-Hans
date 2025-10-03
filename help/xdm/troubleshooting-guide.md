@@ -15,7 +15,7 @@ ht-degree: 0%
 
 本文档提供有关Adobe Experience Platform中[!DNL Experience Data Model] (XDM)和XDM系统的常见问题解答，包括常见错误的疑难解答指南。 有关其他Experience Platform服务的问题和疑难解答，请参阅[Experience Platform疑难解答指南](../landing/troubleshooting.md)。
 
-**[!DNL Experience Data Model](XDM)**&#x200B;是一个开源规范，它定义了用于客户体验管理的标准化架构。 生成[!DNL Experience Platform]的方法&#x200B;**XDM系统**&#x200B;可使[!DNL Experience Data Model]架构可操作以供[!DNL Experience Platform]服务使用。 **[!DNL Schema Registry]**&#x200B;提供用户界面和RESTful API以访问&#x200B;**[!DNL Schema Library]**&#x200B;中的[!DNL Experience Platform]。 有关详细信息，请参阅[XDM文档](home.md)。
+**[!DNL Experience Data Model] (XDM)**&#x200B;是一个开源规范，它定义了用于客户体验管理的标准化架构。 生成[!DNL Experience Platform]的方法&#x200B;**XDM系统**&#x200B;可使[!DNL Experience Data Model]架构可操作以供[!DNL Experience Platform]服务使用。 **[!DNL Schema Registry]**&#x200B;提供用户界面和RESTful API以访问&#x200B;**[!DNL Schema Library]**&#x200B;中的[!DNL Experience Platform]。 有关详细信息，请参阅[XDM文档](home.md)。
 
 ## 常见问题解答
 
@@ -41,7 +41,7 @@ ht-degree: 0%
 
 所有[!DNL Schema Registry]资源（架构、字段组、数据类型、类）都有一个URI，该URI用作唯一ID以供参考和查找。 在API中查看架构时，可在顶级`$id`和`meta:altId`属性中找到该架构。
 
-有关详细信息，请参阅[ API指南中的](api/getting-started.md#resource-identification)资源标识[!DNL Schema Registry]部分。
+有关详细信息，请参阅[&#x200B; API指南中的](api/getting-started.md#resource-identification)资源标识[!DNL Schema Registry]部分。
 
 ### 长字段类型的最大大小是多少？
 
@@ -158,7 +158,7 @@ XDM对此数据类型的使用施加以下限制：
 
 合并模式是只读的，由系统自动生成。 不能直接编辑它们。 在将“union”标记添加到实现特定类的架构时，会为该类创建联合架构。
 
-有关XDM中联合的更多信息，请参阅[ API指南中的](./api/unions.md)联合[!DNL Schema Registry]部分。
+有关XDM中联合的更多信息，请参阅[&#x200B; API指南中的](./api/unions.md)联合[!DNL Schema Registry]部分。
 
 ### 如何格式化数据文件以将数据摄取到我的架构中？
 
@@ -296,7 +296,7 @@ XDM对此数据类型的使用施加以下限制：
 
 ### [!DNL Real-Time Customer Profile]个错误
 
-以下错误消息与启用[!DNL Real-Time Customer Profile]的架构所涉及的操作相关联。 有关详细信息，请参阅[ API指南中的](./api/unions.md)联合[!DNL Schema Registry]部分。
+以下错误消息与启用[!DNL Real-Time Customer Profile]的架构所涉及的操作相关联。 有关详细信息，请参阅[&#x200B; API指南中的](./api/unions.md)联合[!DNL Schema Registry]部分。
 
 #### 必须存在引用身份描述符
 
