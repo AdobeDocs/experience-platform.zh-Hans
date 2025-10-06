@@ -1,13 +1,13 @@
 ---
 title: Demandbase人员连接
 description: 使用此目标可激活您的受众，并使用Demandbase第三方数据扩充这些受众，以用于营销和销售中的其他下游用例。
-source-git-commit: df2cb1edbf998082fca961e6d9bb567a1ad3b7e6
+exl-id: 748f5518-7cc1-4d65-ab70-4a129d9e2066
+source-git-commit: ab29c1113dbbd1811acd3d5add5a247cb2703884
 workflow-type: tm+mt
-source-wordcount: '745'
+source-wordcount: '819'
 ht-degree: 3%
 
 ---
-
 
 # Demandbase人员连接 {#demandbase-people}
 
@@ -53,7 +53,7 @@ ht-degree: 3%
 | 项目 | 类型 | 注释 |
 |--------------|-----------|---------------------------|
 | 导出类型 | 受众导出 | 您正在导出具有&#x200B;*Demandbase*&#x200B;目标中使用的标识符（姓名、电话号码或其他）的受众的所有成员。 |
-| 频度 | 流式处理 | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 频率 | 流传输 | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -99,6 +99,21 @@ ht-degree: 3%
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 有关将受众激活到此目标的说明，请阅读[将配置文件和受众激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md)。
+
+### 强制映射 {#mandatory-mappings}
+
+将受众激活到[!DNL Demandbase People]目标时，您必须在映射步骤中配置以下必填字段映射：
+
+| 源字段 | 目标字段 | 描述 |
+|--------------|--------------|-------------|
+| `xdm: b2b.personKey.sourceKey` | `xdm: externalPersonId` | 人员的唯一标识符 |
+| `xdm: person.name.lastName` | `xdm: lastName` | 人员的姓氏 |
+| `xdm: person.name.firstName` | `xdm: firstName` | 人员的名字 |
+| `xdm: workEmail.address` | `Identity: email` | 人员的工作电子邮件地址 |
+
+![Demandbase人员映射](/help/destinations/assets/catalog/advertising/demandbase-people/demandbase-people-mapping.png)
+
+目标需要这些映射才能正常运行，并且必须先配置这些映射，然后才能继续激活工作流。
 
 ## 其他注释和重要标注 {#additional-notes}
 
