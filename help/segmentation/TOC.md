@@ -5,10 +5,10 @@ breadcrumb-title: Segmentation Service 指南
 user-guide-description: 使用 Adobe Experience Platform 生成的区段定义或外部来源，根据实时客户轮廓数据生成受众群体。
 feature: Segments
 role: User
-source-git-commit: 74fa66e78ac36c8007eb89e8c271d989845c96f0
+source-git-commit: 043e0c930b30dc4f04acdcab88a5d63ad044fbfc
 workflow-type: tm+mt
-source-wordcount: '208'
-ht-degree: 40%
+source-wordcount: '207'
+ht-degree: 43%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 40%
 
 - [分段服务概述](home.md)
 - [分段数据类型](data-types.md)
-- [分段护栏](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html?lang=zh-Hans#segmentation-guardrails)
+- [分段护栏](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html#segmentation-guardrails)
 - 分段API {#api}
    - [概述](api/overview.md)
    - [快速入门](api/getting-started.md)
@@ -62,7 +62,7 @@ ht-degree: 40%
    - [多实体分段](tutorials/multi-entity-segmentation.md)
    - [尊重同意](tutorials/consents.md)
    - [评估区段定义](tutorials/evaluate-a-segment.md)
-   - [导入和使用外部受众](tutorials/using-external-audiences.md)
+   - [创建外部受众](tutorials/create-external-audience.md)
    - [创建数据集以导出数据](tutorials/create-dataset-export-segment.md)
    - [强制受众遵守数据使用规定](tutorials/governance.md)
 - Profile Query Language {#pql}

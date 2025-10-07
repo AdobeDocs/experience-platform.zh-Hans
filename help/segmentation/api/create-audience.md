@@ -3,17 +3,17 @@ title: 创建受众API端点
 description: 了解如何使用API为外部受众创建元数据。
 hide: true
 hidefromtoc: true
-source-git-commit: 74fa66e78ac36c8007eb89e8c271d989845c96f0
+exl-id: e841a5f6-f406-4e1d-9e8a-acb861ba6587
+source-git-commit: bf90b09693c7b9b7d3ad6ccc6940d255bf7bf4cb
 workflow-type: tm+mt
-source-wordcount: '237'
+source-wordcount: '246'
 ht-degree: 6%
 
 ---
 
-
 # 创建受众端点
 
-POST `/audiences`终结点可用于为外部受众创建元数据。 如果受众摄取在单独的服务中进行管理（如批量摄取），则您应使用此端点。
+POST `/audiences`端点可用于为外部受众创建元数据，从而让受众在受众门户中可见。 如果受众摄取在单独的服务中进行管理（如批量摄取），则您应使用此端点。
 
 ## 快速入门
 

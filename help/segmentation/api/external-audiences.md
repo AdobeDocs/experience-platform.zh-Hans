@@ -2,9 +2,9 @@
 title: 外部受众API端点
 description: 了解如何使用外部受众API从Adobe Experience Platform创建、更新、激活和删除外部受众。
 exl-id: eaa83933-d301-48cb-8a4d-dfeba059bae1
-source-git-commit: bc74f86dca62a62dde39ad2e167e66b511d59086
+source-git-commit: 0a37ef2f5fc08eb515c7c5056936fd904ea6d360
 workflow-type: tm+mt
-source-wordcount: '2189'
+source-wordcount: '2253'
 ht-degree: 4%
 
 ---
@@ -98,7 +98,7 @@ curl -X POST https://platform.adobe.io/data/core/ais/external-audience/ \
 | `description` | 字符串 | 外部受众的可选描述。 |
 | `customAudienceId` | 字符串 | 外部受众的可选标识符。 |
 | `fields` | 对象数组 | 字段及其数据类型的列表。 创建字段列表时，可以添加以下项目： <ul><li>`name`： **必需**&#x200B;作为外部受众规范一部分的字段的名称。</li><li>`type`： **必需**&#x200B;进入字段的数据类型。 支持的值包括`string`、`number`、`long`、`integer`、`date` (`2025-05-13`)、`datetime` (`2025-05-23T20:19:00+00:00`)和`boolean`。</li><li>`identityNs`： **身份字段必需**&#x200B;身份字段使用的命名空间。 支持的值包括所有有效的命名空间，如`ECID`或`email`。</li><li>`labels`： *可选*&#x200B;字段的访问控制标签数组。 有关可用访问控制标签的详细信息，请参阅[数据使用标签术语表](/help/data-governance/labels/reference.md)。 </li></ul> |
-| `sourceSpec` | 对象 | 包含外部受众所在信息的对象。 使用此对象时，您&#x200B;**必须**&#x200B;包括以下信息： <ul><li>`path`： **必需**：外部受众或源中包含外部受众的文件夹的位置。</li><li>`type`： **必需**&#x200B;您要从源检索的对象类型。 此值可以是`file`或`folder`。</li><li>`sourceType`： *可选*&#x200B;您要从中检索的源类型。 当前，唯一支持的值为`Cloud Storage`。</li><li>`cloudType`： *可选*&#x200B;云存储的类型，基于源类型。 支持的值包括`S3`、`DLZ`、`GCS`和`SFTP`。</li><li>`baseConnectionId`：基本连接的ID，由源提供程序提供。 如果使用&#x200B;**、**&#x200B;或`cloudType`的`S3`值，则此值为`GCS`必需`SFTP`。 有关详细信息，请阅读[源连接器概述](../../sources/home.md)</li></ul> |
+| `sourceSpec` | 对象 | 包含外部受众所在信息的对象。 使用此对象时，您&#x200B;**必须**&#x200B;包括以下信息： <ul><li>`path`： **必需**：外部受众或源中包含外部受众的文件夹的位置。 文件路径&#x200B;**不能**&#x200B;包含任何空格。 例如，如果您的路径为`activation/sample-source/Example CSV File.csv`，则将路径设置为`activation/sample-source/ExampleCSVFile.csv`。 您可以在数据流部分的&#x200B;**Source数据**&#x200B;列中查找到源的路径。</li><li>`type`： **必需**&#x200B;您要从源检索的对象类型。 此值可以是`file`或`folder`。</li><li>`sourceType`： *可选*&#x200B;您要从中检索的源类型。 当前，唯一支持的值为`Cloud Storage`。</li><li>`cloudType`： **必需**&#x200B;云存储的类型，基于源类型。 支持的值包括`S3`、`DLZ`、`GCS`、`Azure`和`SFTP`。</li><li>`baseConnectionId`：基本连接的ID，由源提供程序提供。 如果使用&#x200B;**、**&#x200B;或`cloudType`的`S3`值，则此值为`GCS`必需`SFTP`。 否则，您&#x200B;**不**&#x200B;需要包含此参数。 有关详细信息，请阅读[源连接器概述](../../sources/home.md)。</li></ul> |
 | `ttlInDays` | 整数 | 外部受众的数据过期时间（天）。 此值可以设置为1到90。 默认情况下，数据到期设置为30天。 |
 | `audienceType` | 字符串 | 外部受众的受众类型。 当前仅支持`people`。 |
 | `originName` | 字符串 | **必需**&#x200B;受众的来源。 它指明了受众的来源。 对于外部受众，您应使用`CUSTOM_UPLOAD`。 |
@@ -408,8 +408,8 @@ curl -X POST https://platform.adobe.io/data/core/ais/external-audience/60ccea95-
 
 | 属性 | 类型 | 描述 |
 | -------- | ---- | ----------- |
-| `dataFilterStartTime` | Epoch时间戳 | **必需**&#x200B;指定运行流的开始时间以选择要处理的文件的范围。 |
-| `dataFilterEndTime` | Epoch时间戳 | 指定流运行的结束时间以选择要处理的文件的范围。 |
+| `dataFilterStartTime` | Epoch时间戳 | **必需**&#x200B;指定开始时间的范围，以确定将处理哪些文件。 这意味着所选文件将在指定时间&#x200B;**后**&#x200B;成为文件。 |
+| `dataFilterEndTime` | Epoch时间戳 | 指定流运行的结束时间以选择要处理的文件的范围。 这意味着所选文件将在指定时间&#x200B;**之前**&#x200B;的文件。 |
 
 +++
 
