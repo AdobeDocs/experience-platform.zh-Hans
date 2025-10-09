@@ -2,10 +2,10 @@
 title: 复制资源
 description: 了解如何使用Adobe Experience Platform中现有标记资源的设置创建新标记资源。
 exl-id: 7e52ceae-97df-4c64-aba3-4f5ba6018a47
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: a4e4fe0ae0f52a3b4b5bfa2c42ef4dce7f2a6a59
 workflow-type: tm+mt
-source-wordcount: '781'
-ht-degree: 79%
+source-wordcount: '835'
+ht-degree: 74%
 
 ---
 
@@ -42,6 +42,10 @@ ht-degree: 79%
 ## 复制资产
 
 制作完整资产的副本时，关于此过程，您应了解以下几点。
+
+>[!IMPORTANT]
+>
+>使用数据元素更新变量类型的资源在复制后将需要额外的步骤。 编辑每个更新变量操作，编辑数据或XDM对象中的任何值，并保存更改。 随后，发布的库应会按预期运行。 如果您对此流程有任何疑问，请联系技术支持。
 
 * 将按原样复制资产设置（域、高级设置等）
 * 将规则、数据元素和扩展会从原始资产复制到新的目标资产中。不会复制适配器、环境和库。
