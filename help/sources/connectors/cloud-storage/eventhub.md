@@ -3,9 +3,9 @@ title: Azure事件中心Source连接器概述
 description: 了解如何使用API或用户界面将Azure事件中心连接到Adobe Experience Platform。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b4d4bc7f-2241-482d-a5c2-4422c31705bf
-source-git-commit: bad1e0a9d86dcce68f1a591060989560435070c5
+source-git-commit: 02c777b5db9734cf45b35f131d83c35c5ce670fb
 workflow-type: tm+mt
-source-wordcount: '606'
+source-wordcount: '633'
 ht-degree: 0%
 
 ---
@@ -32,18 +32,20 @@ Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等
 
 ### 提高[!DNL Event Hubs]和Experience Platform的并行度
 
-并行是指在多个处理单元上同时执行相同的任务，以提高速度和性能。 您可以通过增加分区或为[!DNL Event Hubs]帐户获取更多处理单元来增加[!DNL Event Hubs]端的并行度。 有关详细信息，请参阅有关缩放[&#128279;](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-scalability)的此[!DNL Event Hubs] 文档。
+并行是指在多个处理单元上同时执行相同的任务，以提高速度和性能。 您可以通过增加分区或为[!DNL Event Hubs]帐户获取更多处理单元来增加[!DNL Event Hubs]端的并行度。 有关详细信息，请参阅有关缩放[[!DNL Event Hubs] 的此](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-scalability)文档。
 
 要提高Experience Platform端的摄取速度，Experience Platform必须增加源连接器中要从[!DNL Event Hubs]分区中读取的任务数。 增加[!DNL Event Hubs]端的并行度后，请联系您的Adobe代表以根据新分区缩放Experience Platform任务。 目前，此过程未自动化。
 
 ## 使用虚拟网络连接到[!DNL Event Hubs]到Experience Platform
 
-在启用防火墙测量时，您可以设置虚拟网络将[!DNL Event Hubs]连接到Experience Platform。 要设置虚拟网络，请转到此[[!DNL Event Hubs] 网络规则集文档](https://learn.microsoft.com/en-us/azure/event-hubs/network-security)，然后执行以下步骤：
+Experience Platform支持通过虚拟网络连接到[!DNL Event Hubs]。 这样，您就可以通过安全的专用连接（而非公共Internet）传输数据。 您可以允许列表Experience Platform VNet通过[!DNL Event Hubs]私有主干安全地路由[!DNL Azure]流量，同时保持现有的防火墙保护。
+
+要设置虚拟网络，请转到此[[!DNL Event Hubs] 网络规则集文档](https://learn.microsoft.com/en-us/azure/event-hubs/network-security)，然后执行以下步骤：
 
 * 从REST API面板中选择&#x200B;**尝试**；
 * 在同一浏览器中使用你的凭据验证你的[!DNL Azure]帐户；
 * 选择要带到Experience Platform的[!DNL Event Hubs]命名空间、资源组和订阅，然后选择&#x200B;**运行**；
-* 在显示的JSON正文中，在`properties`内的`virtualNetworkRules`下添加以下Experience Platform子网：
+* 在显示的JSON正文中，在`virtualNetworkRules`内的`properties`下添加以下Experience Platform子网：
 
 
 >[!IMPORTANT]
