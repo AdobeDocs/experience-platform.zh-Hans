@@ -13,7 +13,7 @@ ht-degree: 14%
 
 [!UICONTROL 配置文件合作伙伴扩充（示例）]是[[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md)的标准架构字段组。 使用此字段组为客户用户档案提供与合作伙伴驱动的扩充功能相关的其他数据。
 
-![ [!UICONTROL 配置文件合作伙伴扩充（示例）]字段组的图表。](../../images/field-groups/profile-partner-enrichment-sample.png)
+![&#x200B; [!UICONTROL 配置文件合作伙伴扩充（示例）]字段组的图表。](../../images/field-groups/profile-partner-enrichment-sample.png)
 
 | 显示名称 | 属性 | 数据类型 | 描述 |
 |-----------------------------|------------------------|-----------|----------------------------------|

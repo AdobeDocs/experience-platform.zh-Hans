@@ -17,7 +17,7 @@ ht-degree: 2%
 
 [!UICONTROL XDM商业营销活动成员]是一个标准体验数据模型(XDM)类，它描述了与商业营销活动关联的联系人或商机。
 
-![ XDM商业营销活动成员类在UI中显示的结构](../../images/classes/b2b/business-campaign-members.png)
+![&#x200B; XDM商业营销活动成员类在UI中显示的结构](../../images/classes/b2b/business-campaign-members.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |

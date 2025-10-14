@@ -17,7 +17,7 @@ ht-degree: 2%
 
 [!UICONTROL XDM业务营销列表成员]是一个标准的体验数据模型(XDM)类，用于描述与营销列表关联的成员、人员或联系人。
 
-![ XDM业务营销列表成员类在UI中显示的结构](../../images/classes/b2b/business-marketing-list-members.png)
+![&#x200B; XDM业务营销列表成员类在UI中显示的结构](../../images/classes/b2b/business-marketing-list-members.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |

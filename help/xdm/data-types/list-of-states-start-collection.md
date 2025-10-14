@@ -13,7 +13,7 @@ ht-degree: 7%
 
 [!UICONTROL 状态列表开始]数据类型是体验数据模型(XDM)数据类型，旨在表示与各种播放器属性的开始状态相关的信息。 它包括[!UICONTROL 播放器状态名称]属性，这些属性指示特定的属性状态（例如，“fullscreen”、“mute”、“closedCaptioning”）。 此数据类型用于捕获和描述不同播放器状态的初始条件。
 
-![ [!UICONTROL 状态列表开始]数据类型的图表。](../images/data-types/list-of-states-start-collection.png)
+![&#x200B; [!UICONTROL 状态列表开始]数据类型的图表。](../images/data-types/list-of-states-start-collection.png)
 
 | 显示名称 | 属性 | 数据类型 | 必需 | 描述 |
 |--------------------------------|--------------|-----------|-----------|-------------------------------------------------|

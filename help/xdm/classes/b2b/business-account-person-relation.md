@@ -17,7 +17,7 @@ ht-degree: 12%
 
 [!UICONTROL XDM业务帐户人员关系]是一个标准体验数据模型(XDM)类，可捕获与业务帐户关联的人员的最低要求属性。
 
-![ XDM业务帐户人员关系类在UI中显示的结构](../../images/classes/b2b/business-account-person-relation.png)
+![&#x200B; XDM业务帐户人员关系类在UI中显示的结构](../../images/classes/b2b/business-account-person-relation.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |

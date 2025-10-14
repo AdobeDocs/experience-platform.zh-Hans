@@ -157,7 +157,7 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 * [[!DNL Customer Match] 电子邮件地址、地址或用户ID](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_email_address_address_or_user_id)
 * [[!DNL Customer Match] 注意事项](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_considerations)
 * [[!DNL Customer Match] 使用电话号码](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_phone_number)
-* 具有移动设备ID的[[!DNL Customer Match] ](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_mobile_device_ids)
+* 具有移动设备ID的[[!DNL Customer Match] &#x200B;](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_mobile_device_ids)
 
 要了解如何在Experience Platform中摄取电子邮件地址，请参阅[批次摄取概述](../../../ingestion/batch-ingestion/overview.md)和[流式摄取概述](../../../ingestion/streaming-ingestion/overview.md)。
 

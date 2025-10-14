@@ -203,7 +203,7 @@ Experience Platform根据您选择的目标架构或数据集，为自动映射�
 
 >[!TAB 客户]
 
-对于客户数据，[!DNL SAP Commerce]使用[ API的](https://api.sap.com/api/BusinessPartner_APIs/path/GET_customers)客户[和](https://api.sap.com/api/BusinessPartner_APIs/path/GET_relationships-customer-contacts)客户联系人关系[!DNL SAP Business Partners]端点检索数据
+对于客户数据，[!DNL SAP Commerce]使用[&#x200B; API的](https://api.sap.com/api/BusinessPartner_APIs/path/GET_customers)客户[和](https://api.sap.com/api/BusinessPartner_APIs/path/GET_relationships-customer-contacts)客户联系人关系[!DNL SAP Business Partners]端点检索数据
 
 以下是客户数据的[!DNL SAP Commerce]数据流映射配置示例：
 
@@ -227,7 +227,7 @@ Experience Platform根据您选择的目标架构或数据集，为自动映射�
 
 >[!TAB 联系人]
 
-对于联系人数据，[!DNL SAP Commerce]使用[ API的](https://api.sap.com/api/BusinessPartner_APIs/path/GET_contacts)联系人[!DNL SAP Business Partners]端点检索数据。
+对于联系人数据，[!DNL SAP Commerce]使用[&#x200B; API的](https://api.sap.com/api/BusinessPartner_APIs/path/GET_contacts)联系人[!DNL SAP Business Partners]端点检索数据。
 
 以下是联系数据的[!DNL SAP Commerce]数据流映射配置示例：
 

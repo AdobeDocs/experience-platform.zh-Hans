@@ -17,7 +17,7 @@ ht-degree: 2%
 
 [!UICONTROL XDM业务帐户]是一个标准体验数据模型(XDM)类，可捕获业务帐户的最低要求属性。
 
-![ XDM业务帐户类在UI中显示的结构](../../images/classes/b2b/business-account.png)
+![&#x200B; XDM业务帐户类在UI中显示的结构](../../images/classes/b2b/business-account.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |

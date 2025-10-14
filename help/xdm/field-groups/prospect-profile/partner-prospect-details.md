@@ -15,7 +15,7 @@ ht-degree: 11%
 
 此字段组在合作伙伴的上下文中扩展[Individual Prospect配置文件类](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/prospect.html?lang=zh-Hans)。
 
-![ [!UICONTROL 合作伙伴潜在客户详细信息（示例）]字段组的图表。](../../images/field-groups/partner/partner-prospect-details-sample.png)
+![&#x200B; [!UICONTROL 合作伙伴潜在客户详细信息（示例）]字段组的图表。](../../images/field-groups/partner/partner-prospect-details-sample.png)
 
 | 显示名称 | 属性 | 数据类型 | 描述 |
 |---------------------------------------|-----------------------------|-----------|--------------------------------------------------|

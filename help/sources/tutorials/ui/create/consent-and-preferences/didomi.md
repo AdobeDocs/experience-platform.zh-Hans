@@ -100,7 +100,7 @@ ht-degree: 3%
 
 映射专门用于将&#x200B;**目的数据**&#x200B;从[!DNL Didomi]传输到Experience Platform数据集。 这些目的表示用户的同意选择（例如，用于分析、个性化、广告等），并且是此集成中唯一接受的映射字段。
 
-使用从[ webhook设置中下载的](../../../../connectors/consent-and-preferences/didomi.md#download-the-sample-payload-file)示例webhook有效负载[!DNL Didomi]将每个[!DNL Didomi]目的映射到Adobe数据集中的相应字段。
+使用从[&#x200B; webhook设置中下载的](../../../../connectors/consent-and-preferences/didomi.md#download-the-sample-payload-file)示例webhook有效负载[!DNL Didomi]将每个[!DNL Didomi]目的映射到Adobe数据集中的相应字段。
 
 完成后，选择&#x200B;**[!UICONTROL 下一步]**。
 

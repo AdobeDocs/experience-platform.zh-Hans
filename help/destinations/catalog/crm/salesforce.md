@@ -45,11 +45,11 @@ ht-degree: 1%
 
 #### 在[!DNL Salesforce]中配置连接的应用 {#prerequisites-connected-app}
 
-首先，您需要在[!DNL Salesforce]帐户中配置[[!DNL Salesforce] 连接的应用](https://help.salesforce.com/s/articleView?id=sf.connected_app_create.htm&amp;language=en_US&amp;r=https%3A%2F%2Fhelp.salesforce.com%2F&amp;type=5)（如果尚未配置）。 [!DNL Salesforce CRM]将利用连接的应用连接到[!DNL Salesforce]。
+首先，您需要在[!DNL Salesforce]帐户中配置[[!DNL Salesforce] 连接的应用](https://help.salesforce.com/s/articleView?id=sf.connected_app_create.htm&language=en_US&r=https%3A%2F%2Fhelp.salesforce.com%2F&type=5)（如果尚未配置）。 [!DNL Salesforce CRM]将利用连接的应用连接到[!DNL Salesforce]。
 
-接下来，为[!DNL Salesforce connected app]启用[!DNL OAuth Settings for API Integration]。 有关指导，请参阅[[!DNL Salesforce]](https://help.salesforce.com/s/articleView?id=connected_app_create_api_integration.htm&amp;type=5&amp;language=en_US)文档。
+接下来，为[!DNL Salesforce connected app]启用[!DNL OAuth Settings for API Integration]。 有关指导，请参阅[[!DNL Salesforce]](https://help.salesforce.com/s/articleView?id=connected_app_create_api_integration.htm&type=5&language=en_US)文档。
 
-另外，请确保为[!DNL Salesforce connected app]选择下面提到的[范围](https://help.salesforce.com/s/articleView?id=connected_app_create_api_integration.htm&amp;type=5&amp;language=en_US)。
+另外，请确保为[!DNL Salesforce connected app]选择下面提到的[范围](https://help.salesforce.com/s/articleView?id=connected_app_create_api_integration.htm&type=5&language=en_US)。
 
 * ``chatter_api``
 * ``lightning``
@@ -62,11 +62,11 @@ ht-degree: 1%
 * ``refresh_token``
 * ``offline_access``
 
-最后，确保在您的[!DNL Salesforce]帐户中启用`password`授权。 如果需要指导，请参阅[!DNL Salesforce] [OAuth 2.0特殊方案的用户名 — 密码流程](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_username_password_flow.htm&amp;type=5)文档。
+最后，确保在您的[!DNL Salesforce]帐户中启用`password`授权。 如果需要指导，请参阅[!DNL Salesforce] [OAuth 2.0特殊方案的用户名 — 密码流程](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_username_password_flow.htm&type=5)文档。
 
 >[!IMPORTANT]
 >
->如果[!DNL Salesforce]帐户管理员限制了对受信任IP范围的访问，则需要联系他们以获取[Experience Platform 列入允许列表 IP的](/help/destinations/catalog/streaming/ip-address-allow-list.md)访问权限。 如果您需要其他指导，请参阅[!DNL Salesforce] [限制对连接应用程序的受信任IP范围的访问](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&amp;type=5)文档。
+>如果[!DNL Salesforce]帐户管理员限制了对受信任IP范围的访问，则需要联系他们以获取[Experience Platform 列入允许列表 IP的](/help/destinations/catalog/streaming/ip-address-allow-list.md)访问权限。 如果您需要其他指导，请参阅[!DNL Salesforce] [限制对连接应用程序的受信任IP范围的访问](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&type=5)文档。
 
 #### 在[!DNL Salesforce]中创建自定义字段 {#prerequisites-custom-field}
 
@@ -74,7 +74,7 @@ ht-degree: 1%
 
 [!DNL Salesforce CRM]需要此值才能正确读取和解释从Experience Platform传入的受众，并在[!DNL Salesforce]中更新其受众状态。 如果您需要受众状态指南，请参阅Experience Platform有关[受众成员资格详细信息架构字段组](/help/xdm/field-groups/profile/segmentation.md)的文档。
 
-对于从Experience Platform激活到[!DNL Salesforce CRM]的每个受众，您需要在[!DNL Salesforce]中创建类型为`Text Area (Long)`的自定义字段。 您可以根据业务要求定义字段字符长度，长度不限，可为256 - 131,072个字符。 有关自定义字段类型的更多信息，请参阅[!DNL Salesforce] [自定义字段类型](https://help.salesforce.com/s/articleView?id=sf.custom_field_types.htm&amp;type=5)文档页面。 如果您在字段创建方面需要帮助，另请参阅[!DNL Salesforce]文档以[创建自定义字段](https://help.salesforce.com/s/articleView?id=mc_cab_create_an_attribute.htm&amp;type=5&amp;language=en_US)。
+对于从Experience Platform激活到[!DNL Salesforce CRM]的每个受众，您需要在[!DNL Salesforce]中创建类型为`Text Area (Long)`的自定义字段。 您可以根据业务要求定义字段字符长度，长度不限，可为256 - 131,072个字符。 有关自定义字段类型的更多信息，请参阅[!DNL Salesforce] [自定义字段类型](https://help.salesforce.com/s/articleView?id=sf.custom_field_types.htm&type=5)文档页面。 如果您在字段创建方面需要帮助，另请参阅[!DNL Salesforce]文档以[创建自定义字段](https://help.salesforce.com/s/articleView?id=mc_cab_create_an_attribute.htm&type=5&language=en_US)。
 
 >[!IMPORTANT]
 >
@@ -94,7 +94,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->* Salesforce中的对象限制为25个外部字段，请参阅[自定义字段属性](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&amp;type=5)。
+>* Salesforce中的对象限制为25个外部字段，请参阅[自定义字段属性](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&type=5)。
 >* 此限制意味着在任何时候，您最多只能有25个Experience Platform受众成员处于活动状态。
 >* 如果您在Salesforce中达到了此限制，则必须先从Salesforce中删除用于根据Experience Platform中的旧受众存储受众状态的自定义属性，然后才能使用新的&#x200B;**[!UICONTROL 映射ID]**。
 
@@ -106,16 +106,16 @@ ht-degree: 1%
 | --- | --- | --- |
 | `Username` | 您的[!DNL Salesforce]帐户用户名。 | |
 | `Password` | 您的[!DNL Salesforce]帐户密码。 | |
-| `Security Token` | 您的[!DNL Salesforce]安全令牌，稍后将附加到您的[!DNL Salesforce]密码的末尾，以创建在[向目标](#authenticate)进行身份验证时用作&#x200B;**[!UICONTROL 密码]**&#x200B;的串联字符串。<br>请参阅[!DNL Salesforce]文档以[重置您的安全令牌](https://help.salesforce.com/s/articleView?id=sf.user_security_token.htm&amp;type=5)，了解如何从[!DNL Salesforce]界面重新生成没有安全令牌的安全令牌。 |  |
-| `Custom Domain` | 您的[!DNL Salesforce]域前缀。 <br>请参阅[[!DNL Salesforce] 文档](https://help.salesforce.com/s/articleView?id=sf.domain_name_setting_login_policy.htm&amp;type=5)以了解如何从[!DNL Salesforce]界面获取此值。 | 如果您的[!DNL Salesforce]域是<br> *`d5i000000isb4eak-dev-ed`.my.salesforce.com*，<br>需要`d5i000000isb4eak-dev-ed`作为值。 |
-| `Client ID` | 您的Salesforce `Consumer Key`。 <br>请参阅[[!DNL Salesforce] 文档](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&amp;type=5)以了解如何从[!DNL Salesforce]界面获取此值。 | |
-| `Client Secret` | 您的Salesforce `Consumer Secret`。 <br>请参阅[[!DNL Salesforce] 文档](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&amp;type=5)以了解如何从[!DNL Salesforce]界面获取此值。 | |
+| `Security Token` | 您的[!DNL Salesforce]安全令牌，稍后将附加到您的[!DNL Salesforce]密码的末尾，以创建在[向目标](#authenticate)进行身份验证时用作&#x200B;**[!UICONTROL 密码]**&#x200B;的串联字符串。<br>请参阅[!DNL Salesforce]文档以[重置您的安全令牌](https://help.salesforce.com/s/articleView?id=sf.user_security_token.htm&type=5)，了解如何从[!DNL Salesforce]界面重新生成没有安全令牌的安全令牌。 |  |
+| `Custom Domain` | 您的[!DNL Salesforce]域前缀。 <br>请参阅[[!DNL Salesforce] 文档](https://help.salesforce.com/s/articleView?id=sf.domain_name_setting_login_policy.htm&type=5)以了解如何从[!DNL Salesforce]界面获取此值。 | 如果您的[!DNL Salesforce]域是<br> *`d5i000000isb4eak-dev-ed`.my.salesforce.com*，<br>需要`d5i000000isb4eak-dev-ed`作为值。 |
+| `Client ID` | 您的Salesforce `Consumer Key`。 <br>请参阅[[!DNL Salesforce] 文档](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&type=5)以了解如何从[!DNL Salesforce]界面获取此值。 | |
+| `Client Secret` | 您的Salesforce `Consumer Secret`。 <br>请参阅[[!DNL Salesforce] 文档](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&type=5)以了解如何从[!DNL Salesforce]界面获取此值。 | |
 
 ### 护栏 {#guardrails}
 
 [!DNL Salesforce]通过强制实施请求、速率和超时限制来平衡事务加载。 有关详细信息，请参阅[API请求限制和分配](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm)。
 
-如果[!DNL Salesforce]帐户管理员已强制执行IP限制，则需要将[Experience Platform IP地址](/help/destinations/catalog/streaming/ip-address-allow-list.md)添加到您的[!DNL Salesforce]帐户的受信任IP范围。 如果您需要其他指导，请参阅[!DNL Salesforce] [限制对连接应用程序的受信任IP范围的访问](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&amp;type=5)文档。
+如果[!DNL Salesforce]帐户管理员已强制执行IP限制，则需要将[Experience Platform IP地址](/help/destinations/catalog/streaming/ip-address-allow-list.md)添加到您的[!DNL Salesforce]帐户的受信任IP范围。 如果您需要其他指导，请参阅[!DNL Salesforce] [限制对连接应用程序的受信任IP范围的访问](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&type=5)文档。
 
 >[!IMPORTANT]
 >
@@ -198,14 +198,14 @@ ht-degree: 1%
 
 在&#x200B;**[!UICONTROL 目标字段]**&#x200B;中指定的属性的名称应与属性映射表中所述完全相同，因为这些属性将构成请求正文。
 
-在&#x200B;**[!UICONTROL Source字段]**&#x200B;中指定的属性不遵循任何此类限制。 您可以根据需要进行映射，但请根据[[!DNL Salesforce] 文档](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&amp;type=5)确保输入数据的格式有效。 如果输入数据无效，则对[!DNL Salesforce]的更新调用将失败，您的联系人/潜在客户将无法更新。
+在&#x200B;**[!UICONTROL Source字段]**&#x200B;中指定的属性不遵循任何此类限制。 您可以根据需要进行映射，但请根据[[!DNL Salesforce] 文档](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&type=5)确保输入数据的格式有效。 如果输入数据无效，则对[!DNL Salesforce]的更新调用将失败，您的联系人/潜在客户将无法更新。
 
 要将XDM字段正确映射到[!DNL (API) Salesforce CRM]目标字段，请执行以下步骤：
 
 1. 在&#x200B;**[!UICONTROL 映射]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL 添加新映射]**，您将在屏幕上看到一个新映射行。
    ![用于添加新映射的Experience Platform UI屏幕快照示例。](../../assets/catalog/crm/salesforce/add-new-mapping.png)
 1. 在&#x200B;**[!UICONTROL 选择源字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择属性]**&#x200B;类别并选择XDM属性，或选择&#x200B;**[!UICONTROL 选择身份命名空间]**&#x200B;并选择身份。
-1. 在&#x200B;**[!UICONTROL 选择目标字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择身份命名空间]**&#x200B;并选择身份，或者根据需要选择&#x200B;**[!UICONTROL 选择自定义属性]**&#x200B;类别并选择属性或使用&#x200B;**[!UICONTROL 属性名称]**&#x200B;字段定义属性。 有关支持的属性的指导，请参阅[[!DNL Salesforce CRM] 文档](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&amp;type=5)。
+1. 在&#x200B;**[!UICONTROL 选择目标字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择身份命名空间]**&#x200B;并选择身份，或者根据需要选择&#x200B;**[!UICONTROL 选择自定义属性]**&#x200B;类别并选择属性或使用&#x200B;**[!UICONTROL 属性名称]**&#x200B;字段定义属性。 有关支持的属性的指导，请参阅[[!DNL Salesforce CRM] 文档](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&type=5)。
    * 重复这些步骤以在XDM配置文件架构和[!DNL (API) Salesforce CRM]之间添加以下映射：
 
    **使用联系人**
@@ -321,7 +321,7 @@ ht-degree: 1%
    * 要修复此错误，请验证您在激活工作流中提供的&#x200B;**[!UICONTROL 映射ID]**&#x200B;到[!DNL Salesforce CRM]目标的值与您在[!DNL Salesforce]中创建的自定义字段类型的值是否完全匹配。 有关指导，请参阅[在 [!DNL Salesforce]](#prerequisites-custom-field)中创建自定义字段。
 
 * 激活区段时，您可能会收到错误消息：`The client's IP address is unauthorized for this account. Allowlist the client's IP address...`
-   * 若要修复此错误，请与[!DNL Salesforce]帐户管理员联系，将[Experience Platform IP地址](/help/destinations/catalog/streaming/ip-address-allow-list.md)添加到您的[!DNL Salesforce]帐户的受信任IP范围。 如果您需要其他指导，请参阅[!DNL Salesforce] [限制对连接应用程序的受信任IP范围的访问](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&amp;type=5)文档。
+   * 若要修复此错误，请与[!DNL Salesforce]帐户管理员联系，将[Experience Platform IP地址](/help/destinations/catalog/streaming/ip-address-allow-list.md)添加到您的[!DNL Salesforce]帐户的受信任IP范围。 如果您需要其他指导，请参阅[!DNL Salesforce] [限制对连接应用程序的受信任IP范围的访问](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&type=5)文档。
 
 ## 其他资源 {#additional-resources}
 

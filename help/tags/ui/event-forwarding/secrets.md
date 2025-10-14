@@ -155,7 +155,7 @@ ht-degree: 2%
 
 完成后，选择&#x200B;**[!UICONTROL 创建密钥]**&#x200B;以保存密钥。
 
-![ [!UICONTROL 创建密钥]选项卡突出显示[!UICONTROL 创建密钥]](../../images/ui/event-forwarding/secrets/oauth-jwt-create-secret.png)
+![&#x200B; [!UICONTROL 创建密钥]选项卡突出显示[!UICONTROL 创建密钥]](../../images/ui/event-forwarding/secrets/oauth-jwt-create-secret.png)
 
 ### [!UICONTROL Google OAuth 2] {#google-oauth2}
 

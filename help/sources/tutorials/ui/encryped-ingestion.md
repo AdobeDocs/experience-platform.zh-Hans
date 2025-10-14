@@ -133,7 +133,7 @@ ht-degree: 6%
 
 接下来，从源数据中选择一个示例文件。 由于您的数据已加密，因此Experience Platform将要求一个示例文件来创建可映射到您的源数据的XDM架构。
 
-![ “此文件是否已加密？” 启用切换并选中“选择示例文件”按钮。](../../images/tutorials/edi/select_sample_file.png)
+![&#x200B; “此文件是否已加密？” 启用切换并选中“选择示例文件”按钮。](../../images/tutorials/edi/select_sample_file.png)
 
 选择样例文件后，配置数据的设置，如对应的数据格式、分隔符和压缩类型。 等待一段时间以完全呈现预览界面，然后选择&#x200B;**[!UICONTROL 保存]**。
 

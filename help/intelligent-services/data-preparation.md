@@ -227,7 +227,7 @@ CEE字段组中有几个键字段应该被使用，以便[!DNL Intelligent Servi
 
 此字段包含有关ExperienceEvent的特定于商业的信息，包括采购订单号和付款信息。
 
-![ xdm：commerce字段的结构，包括子字段，如订单、购买和付款。](./images/data-preparation/commerce.png)
+![&#x200B; xdm：commerce字段的结构，包括子字段，如订单、购买和付款。](./images/data-preparation/commerce.png)
 
 **示例架构**
 

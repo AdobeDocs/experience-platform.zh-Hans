@@ -345,7 +345,7 @@ ht-degree: 0%
 
 **合并策略**：合并策略是Experience Platform用于确定如何合并来自多个来源的客户数据片段以创建单个配置文件的规则。 当发生数据冲突时，合并策略会确定哪些数据应优先包含在配置文件中。
 
-**MHMDAa**： [[!DNL Washington My Health My Data Act]](https://app.leg.wa.gov/RCW/default.aspx?cite=19.373&amp;full=true)增强了消费者对其健康数据的隐私权。 它规定健康数据的披露、消费者同意和删除权利，并禁止未经授权销售健康数据。 此外，该法还规定，在保健设施周围使用地理围栏是非法的。
+**MHMDAa**： [[!DNL Washington My Health My Data Act]](https://app.leg.wa.gov/RCW/default.aspx?cite=19.373&full=true)增强了消费者对其健康数据的隐私权。 它规定健康数据的披露、消费者同意和删除权利，并禁止未经授权销售健康数据。 此外，该法还规定，在保健设施周围使用地理围栏是非法的。
 
 **Mixin**：请参阅“架构字段组”。
 

@@ -48,7 +48,7 @@ Adobe Assurance 可帮助您检查、校对、模拟和验证您在移动应用�
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| [同意策略增强](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-enhancement)用于与[基于文件（批次）的目标](/help/destinations/destination-types.md#file-based)集成 | <p> 当轮廓不再符合同意策略时，Experience Platform 现在会主动将其策略退出通知给基于文件的目标。这是在[ 2023 年 2 月发布](/help/release-notes/2023/january-2023.md#destinations-new-updated-functionality)用于流媒体目标的相同功能后推出的。 </p> <p> <b>注释</b>：此功能仅适用于&#x200B;**[!UICONTROL Privacy and Security Shield]**&#x200B;以及&#x200B;**[!UICONTROL Healthcare Shield]**&#x200B;的客户。 </p> |
+| [同意策略增强](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-enhancement)用于与[基于文件（批次）的目标](/help/destinations/destination-types.md#file-based)集成 | <p> 当轮廓不再符合同意策略时，Experience Platform 现在会主动将其策略退出通知给基于文件的目标。这是在[&#x200B; 2023 年 2 月发布](/help/release-notes/2023/january-2023.md#destinations-new-updated-functionality)用于流媒体目标的相同功能后推出的。 </p> <p> <b>注释</b>：此功能仅适用于&#x200B;**[!UICONTROL Privacy and Security Shield]**&#x200B;以及&#x200B;**[!UICONTROL Healthcare Shield]**&#x200B;的客户。 </p> |
 
 {style="table-layout:auto"}
 

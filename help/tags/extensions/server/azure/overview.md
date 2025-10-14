@@ -42,7 +42,7 @@ ht-degree: 1%
 
 右侧面板将更新，以显示应如何发送数据的配置选项。 具体而言，必须将[数据元素](../../../ui/managing-resources/data-elements.md)分配给表示[!DNL Event Hub]配置的各种属性。
 
-![ UI中显示的[!UICONTROL 将数据发送到事件中心]操作类型的配置选项。](../../../images/extensions/server/azure/event-hub-details.png)
+![&#x200B; UI中显示的[!UICONTROL 将数据发送到事件中心]操作类型的配置选项。](../../../images/extensions/server/azure/event-hub-details.png)
 
 **[!UICONTROL 事件中心详细信息]**
 

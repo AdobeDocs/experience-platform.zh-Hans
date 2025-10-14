@@ -17,7 +17,7 @@ ht-degree: 3%
 
 [!UICONTROL XDM业务营销列表]是一个标准体验数据模型(XDM)类，可捕获营销列表的最低要求属性。营销列表允许您优先考虑最有可能购买您的产品的潜在客户。
 
-![ XDM业务营销列表类在UI中显示的结构](../../images/classes/b2b/business-marketing-list.png)
+![&#x200B; XDM业务营销列表类在UI中显示的结构](../../images/classes/b2b/business-marketing-list.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |

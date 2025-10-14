@@ -13,7 +13,7 @@ ht-degree: 7%
 
 [!UICONTROL 机器人检测]是[[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)的标准架构字段组。 字段组提供有关机器人生成的流量的信息。
 
-![ [!UICONTROL 机器人检测]字段组的图表。](../../images/field-groups/bot-detection-information.png)
+![&#x200B; [!UICONTROL 机器人检测]字段组的图表。](../../images/field-groups/bot-detection-information.png)
 
 | 显示名称 | 属性 | 数据类型 | 描述 |
 |----------------------------|-----------------|-----------|---------------------------------------------------------|

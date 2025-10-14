@@ -64,7 +64,7 @@ ht-degree: 3%
 
 在下一个屏幕上，输入您之前在[配置详细信息](#configuration-details)部分中收集的[!UICONTROL 广告帐户ID]和[!UICONTROL 转化访问令牌]。 完成后，选择&#x200B;**[!UICONTROL 保存]**。
 
-![ [!DNL Pinterest] [!UICONTROL 配置]屏幕突出显示[!UICONTROL 广告帐户ID]和[!UICONTROL 转化访问令牌]输入字段。](../../../images/extensions/server/pinterest/input.png)
+![&#x200B; [!DNL Pinterest] [!UICONTROL 配置]屏幕突出显示[!UICONTROL 广告帐户ID]和[!UICONTROL 转化访问令牌]输入字段。](../../../images/extensions/server/pinterest/input.png)
 
 ## 配置事件转发规则 {#config-rule}
 
@@ -161,7 +161,7 @@ ht-degree: 3%
 
 如果事件收集和[!DNL Experience Platform]集成成功，您将在[!DNL Pinterest] UI中看到事件。
 
-![ [!DNL Pinterest]事件管理器](../../../images/extensions/server/pinterest/event-history.png)
+![&#x200B; [!DNL Pinterest]事件管理器](../../../images/extensions/server/pinterest/event-history.png)
 
 您可以进一步穿透钻取并查看[!DNL Pinterest]事件数据分发。
 

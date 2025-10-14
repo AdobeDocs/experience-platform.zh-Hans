@@ -111,7 +111,7 @@ ht-degree: 3%
 
 如果事件收集和[!DNL Experience Platform]集成成功，您将在[!DNL Twitter] [!UICONTROL 事件管理器]中看到事件。
 
-![ [!DNL Twitter]事件管理器](../../../images/extensions/server/twitter/event-manager.png)
+![&#x200B; [!DNL Twitter]事件管理器](../../../images/extensions/server/twitter/event-manager.png)
 
 ## 后续步骤
 

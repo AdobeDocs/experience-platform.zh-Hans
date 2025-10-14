@@ -22,7 +22,7 @@ ht-degree: 1%
 >以下提及的字段不直接用于创建请求。 实际上，发送到Adobe Experience Platform或Adobe Analytics的字段集是根据您的请求数据组合在一起的，然后，服务器基础架构会合并或处理这些量度。 在Experience Platform收集各种类型的用户事件时，返回给您的报告将侧重于特定事件，如`media.sessionStart`、`media.adStart`和`media.sessionComplete`。 这意味着，虽然您在收集期间传输了12种类型的事件，但您的报表将仅呈现基于下面列出的五个事件的细分。
 
 +++选择以显示[!UICONTROL 媒体报告详细信息]数据类型的图表。
-![ [!UICONTROL 媒体报告详细信息]数据类型的图表。](../images/data-types/media-reporting-details.png)
+![&#x200B; [!UICONTROL 媒体报告详细信息]数据类型的图表。](../images/data-types/media-reporting-details.png)
 +++
 
 | 显示名称 | 属性 | 数据类型 | 描述 |

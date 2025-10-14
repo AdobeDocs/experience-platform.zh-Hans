@@ -42,7 +42,7 @@ Adobe Experience Platform 中现有功能的更新：
 
 {style="table-layout:auto"}
 
-有关更多信息，请参阅[ Real-Time CDP 概述](../../rtcdp/overview.md)。
+有关更多信息，请参阅[&#x200B; Real-Time CDP 概述](../../rtcdp/overview.md)。
 
 ## 基于属性的访问控制 {#abac}
 

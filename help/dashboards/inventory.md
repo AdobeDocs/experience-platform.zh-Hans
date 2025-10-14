@@ -17,7 +17,7 @@ ht-degree: 0%
 
 您的Experience Platform实例上所有可用功能板的列表显示在[!UICONTROL 浏览]选项卡下。 这包括贵组织创建的已通过第三方应用程序配置的集成功能板。
 
-![ UI仪表板部分中的“浏览”选项卡。](./images/inventory/browse-tab.png)
+![&#x200B; UI仪表板部分中的“浏览”选项卡。](./images/inventory/browse-tab.png)
 
 通过从列表中选择仪表板名称，可以查看单个仪表板。
 

@@ -15,7 +15,7 @@ ht-degree: 95%
 
 >[!NOTE]
 >
->为 Privacy Service API 创建集成时，您必须选择现有产品配置文件，以确定该集成有权执行哪些功能或操作。请参阅[ Privacy Service API 入门](./api/getting-started.md)指南，了解更多信息。
+>为 Privacy Service API 创建集成时，您必须选择现有产品配置文件，以确定该集成有权执行哪些功能或操作。请参阅[&#x200B; Privacy Service API 入门](./api/getting-started.md)指南，了解更多信息。
 
 本指南向您展示如何管理 Privacy Service 的权限。
 
@@ -129,7 +129,7 @@ Privacy Service API 集成仪表板出现。在此仪表板中，您可以编辑
 
 #### 确认您的设置已应用 {#confirm-applied-settings}
 
-若要确认您的设置已应用到该帐户。返回到[ Admin Console ](https://adminconsole.adobe.com/)并导航至您新创建的产品配置文件。选择&#x200B;**[!UICONTROL API 凭据]**&#x200B;选项卡，查看关联项目的列表。将产品配置文件分配给技术帐户的 Developer Console 中使用的项目显示在凭据列表中。每个 API 凭据的名称均由项目名称和末尾带有后缀的随机生成的数字组成。选择一个凭据来打开[!UICONTROL 详细信息]面板。
+若要确认您的设置已应用到该帐户。返回到[&#x200B; Admin Console &#x200B;](https://adminconsole.adobe.com/)并导航至您新创建的产品配置文件。选择&#x200B;**[!UICONTROL API 凭据]**&#x200B;选项卡，查看关联项目的列表。将产品配置文件分配给技术帐户的 Developer Console 中使用的项目显示在凭据列表中。每个 API 凭据的名称均由项目名称和末尾带有后缀的随机生成的数字组成。选择一个凭据来打开[!UICONTROL 详细信息]面板。
 
 ![Admin Console 中的产品配置文件，其中突出显示了 API 凭据选项卡和一行项目凭据。](./images/permissions/confirm-credentials-in-admin-console.png)
 
@@ -141,4 +141,4 @@ Privacy Service API 集成仪表板出现。在此仪表板中，您可以编辑
 
 本指南介绍了 Privacy Service 的可用权限以及如何通过 Admin Console 管理它们。
 
-有关如何在设置产品配置文件后创建新的 API 集成的步骤，请参阅[ Privacy Service API 入门指南](./api/getting-started.md)。有关为其他 Adobe Experience Platform 功能管理权限的详细信息，请参阅[访问控制文档](../access-control/home.md)。
+有关如何在设置产品配置文件后创建新的 API 集成的步骤，请参阅[&#x200B; Privacy Service API 入门指南](./api/getting-started.md)。有关为其他 Adobe Experience Platform 功能管理权限的详细信息，请参阅[访问控制文档](../access-control/home.md)。

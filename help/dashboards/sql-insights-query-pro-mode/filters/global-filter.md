@@ -15,7 +15,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->确保将全局过滤器映射到所有图表。 这不是一个自动过程。 若要使用全局筛选器，必须在图表的SQL中包含[查询参数](../../../query-service/ui/parameterized-queries.md)，在构件编辑器中启用全局筛选器[，并在全局筛选器对话框中](#enable-global-filter)为参数选择运行时值[。 ](#select-global-filter)如果需要合并查询参数，请参阅query pro指南以了解如何编辑SQL。
+>确保将全局过滤器映射到所有图表。 这不是一个自动过程。 若要使用全局筛选器，必须在图表的SQL中包含[查询参数](../../../query-service/ui/parameterized-queries.md)，在构件编辑器中启用全局筛选器[，并在全局筛选器对话框中](#enable-global-filter)为参数选择运行时值[。 &#x200B;](#select-global-filter)如果需要合并查询参数，请参阅query pro指南以了解如何编辑SQL。
 
 ![自定义仪表板的“添加筛选器”及其下拉菜单突出显示。](../../images/sql-insights-query-pro-mode/add-filter.png)
 

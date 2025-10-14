@@ -141,7 +141,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 | 数据类型 | [[!UICONTROL 产品列表项目]](https://github.com/adobe/xdm/pull/1685/files) | 添加了[!UICONTROL 退款金额]，以指示该商品的退款金额（如果有）。 |
 | 数据类型 | [[!UICONTROL 订单]](https://github.com/adobe/xdm/pull/1685/files) | 已将[!UICONTROL 退款列表]添加到此订单的退款列表。 |
 | 数据类型 | [[!UICONTROL 产品列表项目]](https://github.com/adobe/xdm/pull/1677/files) | 产品类别已添加到该产品的类别数据列表中。 |
-| 数据类型 | [!UICONTROL 会话详细信息] | 添加了`pev3`字符串字段[，表示用于报告 ](https://github.com/adobe/xdm/pull/1676/files) 的媒体流类型。还添加了 `pccr` 属性，指示是否发生重定向。 |
+| 数据类型 | [!UICONTROL 会话详细信息] | 添加了`pev3`字符串字段[，表示用于报告 &#x200B;](https://github.com/adobe/xdm/pull/1676/files) 的媒体流类型。还添加了 `pccr` 属性，指示是否发生重定向。 |
 | 数据类型 | [!UICONTROL 需求列表] | 提供[需求列表属性](https://github.com/adobe/xdm/pull/1675/files)。其中包括名称、ID 和描述。 |
 | 数据类型 | [!UICONTROL Commerce] | [Commerce 数据类型已更新](https://github.com/adobe/xdm/pull/1675/files)，以包括 `requisitionListOpens`、`requisitionListAdds`、`requisitionListRemovals` 和 `requisitionList`。 |
 

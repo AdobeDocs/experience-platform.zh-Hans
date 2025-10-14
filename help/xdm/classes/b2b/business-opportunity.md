@@ -17,7 +17,7 @@ ht-degree: 3%
 
 [!UICONTROL XDM业务机会]是一个标准体验数据模型(XDM)类，可捕获业务机会的最低要求属性。
 
-![ XDM业务机会类在UI中显示的结构](../../images/classes/b2b/business-opportunity.png)
+![&#x200B; XDM业务机会类在UI中显示的结构](../../images/classes/b2b/business-opportunity.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |

@@ -18,7 +18,7 @@ ht-degree: 1%
 >媒体收集字段会捕获数据并将其发送到其他Adobe服务以供进一步处理。 Adobe服务使用媒体报告字段来分析用户发送的媒体收集字段。 此数据以及其他特定用户量度一起进行计算和报告。
 
 +++选择以显示[!UICONTROL 媒体收集详细信息]数据类型的图表。
-![ [!UICONTROL 媒体收集详细信息]数据类型的图表。](../images/data-types/media-collection-details.png)
+![&#x200B; [!UICONTROL 媒体收集详细信息]数据类型的图表。](../images/data-types/media-collection-details.png)
 +++
 
 | 显示名称 | 属性 | 以下项所需的事件 | 数据类型 | 描述 |

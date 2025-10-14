@@ -55,9 +55,9 @@ ht-degree: 2%
 
 [!DNL Salesforce]需要此值才能正确读取和解释从Experience Platform传入的受众，并在[!DNL Salesforce Marketing Cloud]中更新其受众状态。 如果您需要受众状态指南，请参阅Experience Platform有关[受众成员资格详细信息架构字段组](/help/xdm/field-groups/profile/segmentation.md)的文档。
 
-对于从Experience Platform激活到[!DNL Salesforce]的每个受众，您必须在[!DNL Salesforce Marketing Cloud]内具有链接到[!DNL Email Demographics]数据扩展的`Text`类型的属性。 使用[!DNL Salesforce Marketing Cloud] [!DNL Contact Builder]创建属性。 如果您需要有关创建属性的指导，请参阅[!DNL Salesforce Marketing Cloud]文档以[创建属性](https://help.salesforce.com/s/articleView?id=mc_cab_create_an_attribute.htm&amp;type=5&amp;language=en_US)。
+对于从Experience Platform激活到[!DNL Salesforce]的每个受众，您必须在[!DNL Salesforce Marketing Cloud]内具有链接到[!DNL Email Demographics]数据扩展的`Text`类型的属性。 使用[!DNL Salesforce Marketing Cloud] [!DNL Contact Builder]创建属性。 如果您需要有关创建属性的指导，请参阅[!DNL Salesforce Marketing Cloud]文档以[创建属性](https://help.salesforce.com/s/articleView?id=mc_cab_create_an_attribute.htm&type=5&language=en_US)。
 
-在&#x200B;**[!UICONTROL 映射]**&#x200B;步骤期间，[!DNL (API) Salesforce Marketing Cloud]目标字段使用了属性字段名称。 您可以根据业务需求定义最多4000个字符的字段字符。 有关属性类型的更多信息，请参阅[!DNL Salesforce Marketing Cloud] [数据扩展数据类型](https://help.salesforce.com/s/articleView?id=sf.mc_es_data_extension_data_types.htm&amp;type=5)文档页面。
+在&#x200B;**[!UICONTROL 映射]**&#x200B;步骤期间，[!DNL (API) Salesforce Marketing Cloud]目标字段使用了属性字段名称。 您可以根据业务需求定义最多4000个字符的字段字符。 有关属性类型的更多信息，请参阅[!DNL Salesforce Marketing Cloud] [数据扩展数据类型](https://help.salesforce.com/s/articleView?id=sf.mc_es_data_extension_data_types.htm&type=5)文档页面。
 
 [!DNL Salesforce Marketing Cloud]中的数据设计器屏幕的示例（您将向其中添加属性）如下所示：
 ![Salesforce Marketing Cloud UI数据设计器。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/salesforce-data-designer.png)
@@ -96,7 +96,7 @@ ht-degree: 2%
 要限制访问级别，您还可以使用粒度权限覆盖单个访问。
 ![Salesforce Marketing Cloud UI显示具有粒度权限的电子邮件数据扩展。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/sales-email-attribute-set-permission.png)
 
-有关详细指导，请参阅[[!DNL Marketing Cloud Roles]](https://help.salesforce.com/s/articleView?language=en_US&amp;id=sf.mc_overview_marketing_cloud_roles.htm&amp;type=5)和[[!DNL Marketing Cloud Roles and Permissions]](https://help.salesforce.com/s/articleView?language=en_US&amp;id=sf.mc_overview_roles.htm&amp;type=5)页。
+有关详细指导，请参阅[[!DNL Marketing Cloud Roles]](https://help.salesforce.com/s/articleView?language=en_US&id=sf.mc_overview_marketing_cloud_roles.htm&type=5)和[[!DNL Marketing Cloud Roles and Permissions]](https://help.salesforce.com/s/articleView?language=en_US&id=sf.mc_overview_roles.htm&type=5)页。
 
 #### 收集[!DNL Salesforce Marketing Cloud]凭据 {#gather-credentials}
 
@@ -118,7 +118,7 @@ ht-degree: 2%
    * [API概述](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/apis-overview.html)页面详细介绍了其他限制。
    * 有关整理这些详细信息的页面，请参阅[此处](https://salesforce.stackexchange.com/questions/205898/marketing-cloud-api-limits)。
 * 每个对象&#x200B;*允许的*&#x200B;自定义字段的计数因您的Salesforce版本而异。
-   * 有关其他指导，请参阅[!DNL Salesforce] [文档](https://help.salesforce.com/s/articleView?id=sf.custom_field_allocations.htm&amp;type=5)。
+   * 有关其他指导，请参阅[!DNL Salesforce] [文档](https://help.salesforce.com/s/articleView?id=sf.custom_field_allocations.htm&type=5)。
    * 如果已达到[!DNL Salesforce Marketing Cloud]内每个对象&#x200B;*允许的*&#x200B;自定义字段定义的限制，您将需要
       * 在[!DNL Salesforce Marketing Cloud]中添加新属性之前，请先删除旧属性。
       * 在[受众计划](#schedule-segment-export-example)步骤期间，更新或删除Experience Platform目标中任何使用这些旧属性名称作为&#x200B;**[!UICONTROL 映射ID]**&#x200B;提供的值的激活受众。
@@ -129,7 +129,7 @@ ht-degree: 2%
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| contactKey | [!DNL Salesforce Marketing Cloud]联系人密钥。 如需其他指导，请参阅[!DNL Salesforce Marketing Cloud] [文档](https://help.salesforce.com/s/articleView?id=sf.mc_cab_contact_builder_best_practices.htm&amp;type=5)。 | 必需 |
+| contactKey | [!DNL Salesforce Marketing Cloud]联系人密钥。 如需其他指导，请参阅[!DNL Salesforce Marketing Cloud] [文档](https://help.salesforce.com/s/articleView?id=sf.mc_cab_contact_builder_best_practices.htm&type=5)。 | 必需 |
 
 ## 支持的受众 {#supported-audiences}
 
@@ -293,7 +293,7 @@ ht-degree: 2%
    * 要修复此错误，请验证您在激活工作流中提供的&#x200B;**[!UICONTROL 映射ID]**&#x200B;到[!DNL (API) Salesforce Marketing Cloud]目标的名称是否与您在[!DNL Salesforce Marketing Cloud]中创建的属性的名称完全匹配。 有关指导，请参阅[在 [!DNL Salesforce Marketing Cloud]](#prerequisites-custom-field)中创建属性。
 
 * 激活区段时，您可能会收到错误消息：`The client's IP address is unauthorized for this account. Allowlist the client's IP address...`
-   * 若要修复此错误，请与[!DNL Salesforce Marketing Cloud]帐户管理员联系，将[Experience Platform IP地址](/help/destinations/catalog/streaming/ip-address-allow-list.md)添加到您的[!DNL Salesforce Marketing Cloud]帐户的受信任IP范围。 列入允许列表如果您需要其他指导，请参阅Marketing Cloud[&#128279;](https://help.salesforce.com/s/articleView?id=sf.mc_es_ip_addresses_for_inclusion.htm&amp;type=5)文档中的[!DNL Salesforce Marketing Cloud]个包含的IP地址。
+   * 若要修复此错误，请与[!DNL Salesforce Marketing Cloud]帐户管理员联系，将[Experience Platform IP地址](/help/destinations/catalog/streaming/ip-address-allow-list.md)添加到您的[!DNL Salesforce Marketing Cloud]帐户的受信任IP范围。 列入允许列表如果您需要其他指导，请参阅Marketing Cloud[&#128279;](https://help.salesforce.com/s/articleView?id=sf.mc_es_ip_addresses_for_inclusion.htm&type=5)文档中的[!DNL Salesforce Marketing Cloud]个包含的IP地址。
 
 ## 其他资源 {#additional-resources}
 

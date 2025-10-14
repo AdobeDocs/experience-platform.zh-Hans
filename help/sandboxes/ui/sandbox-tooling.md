@@ -205,7 +205,7 @@ ht-degree: 5%
 
 在&#x200B;**[!UICONTROL 创建包]**&#x200B;对话框中，为[!UICONTROL 包类型]选择[!UICONTROL 整个沙盒]。 为您的新包提供[!UICONTROL 包名称]，然后从下拉列表中选择&#x200B;**[!UICONTROL 沙盒]**。 最后，选择&#x200B;**[!UICONTROL 创建]**&#x200B;以确认您的条目。
 
-![ [!UICONTROL 创建包]对话框显示已完成的字段并突出显示[!UICONTROL 创建]。](../images/ui/sandbox-tooling/create-package-dialog.png)
+![&#x200B; [!UICONTROL 创建包]对话框显示已完成的字段并突出显示[!UICONTROL 创建]。](../images/ui/sandbox-tooling/create-package-dialog.png)
 
 已成功创建包，请选择&#x200B;**[!UICONTROL 发布]**&#x200B;以发布包。
 

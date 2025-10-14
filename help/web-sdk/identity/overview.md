@@ -71,7 +71,7 @@ Web SDK使用Cookie分配和跟踪[!DNL ECIDs]，并使用多种可用方法来�
 根据您的用例，有两种方法可以访问[!DNL ECID]：
 
 * [通过数据准备检索 [!DNL ECID] 以进行数据收集](#retrieve-ecid-data-prep)：建议您使用此方法。
-* [通过`getIdentity()`命令检索 [!DNL ECID] ](#retrieve-ecid-getidentity)：仅在您需要客户端上的[!DNL ECID]信息时使用此方法。
+* [通过`getIdentity()`命令检索 [!DNL ECID] &#x200B;](#retrieve-ecid-getidentity)：仅在您需要客户端上的[!DNL ECID]信息时使用此方法。
 
 ### 通过数据准备检索[!DNL ECID]以进行数据收集 {#retrieve-ecid-data-prep}
 

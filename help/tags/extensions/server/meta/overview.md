@@ -59,7 +59,7 @@ ht-degree: 0%
 
 安装[!UICONTROL Meta Conversions API]扩展时，会出现在Facebook和Instagram中进行身份验证的对话框提示。
 
-![ [!UICONTROL Meta Conversions API扩展]安装页面突出显示[!UICONTROL 连接到元]。](../../../images/extensions/server/meta/mbe-extension-install.png)
+![&#x200B; [!UICONTROL Meta Conversions API扩展]安装页面突出显示[!UICONTROL 连接到元]。](../../../images/extensions/server/meta/mbe-extension-install.png)
 
 在Facebook和Instagram中进行身份验证的对话框提示也会显示在事件转发的快速启动工作流UI中。
 
