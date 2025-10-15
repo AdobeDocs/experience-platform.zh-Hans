@@ -4,9 +4,9 @@ title: Amazon Kinesis连接
 description: 创建到Amazon Kinesis存储的实时出站连接，以从Adobe Experience Platform流式传输数据。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: d0ee4b30716734b8fce3509a6f3661dfa572cc9f
+source-git-commit: 7502810ff329a31f2fdaf6797bc7672118555e6a
 workflow-type: tm+mt
-source-wordcount: '2110'
+source-wordcount: '1978'
 ht-degree: 5%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
-> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
 由[!DNL Kinesis Data Streams]提供的[!DNL Amazon Web Services]服务允许您实时收集和处理大量数据记录流。
 
@@ -182,7 +182,7 @@ Experience Platform会优化将配置文件导出到[!DNL Amazon Kinesis]目标�
 
 | 决定目标导出的因素 | 目标导出中包含的内容 |
 |---------|----------|
-| <ul><li>映射的属性和区段会作为目标导出的提示。 这意味着，如果配置文件的`segmentMembership`状态更改为`realized`或`exiting`，或者更新了任何映射的属性，则将启动目标导出。</li><li>由于身份当前无法映射到[!DNL Amazon Kinesis]目标，因此给定配置文件上任何身份的更改也将决定目标导出。</li><li>属性的更改被定义为属性上的任何更新，无论其是否为相同的值。 这意味着即使值本身未发生更改，也会将覆盖属性视为更改。</li></ul> | <ul><li>**注意**： Amazon Kinesis目标的导出行为已更新为2025年9月版。 下面突出显示的新行为当前仅适用于在此版本之后创建的新Amazon Kinesis目标。 对于现有Amazon Kinesis目标，您可以继续使用旧的导出行为或联系Adobe以迁移到仅导出映射受众的新行为。 2026年，所有组织都将逐渐迁移到新行为。<br><br> <span class="preview"> **新导出行为**：映射到目标且已更改的区段将包含在segmentMembership对象中。 在某些情况下，它们可能会使用多个调用导出。 此外，在某些情况下，某些未更改的区段也可能包含在调用中。 无论如何，将只导出数据流中映射的区段。</span></li><br>**旧行为**： `segmentMembership`对象包括激活数据流中映射的区段，在资格或区段退出事件后，配置文件的状态已发生更改。 如果符合配置文件条件的其他未映射区段与激活数据流中映射的区段属于同一个[合并策略](/help/profile/merge-policies/overview.md)，则这些区段可以是目标导出的一部分。 <li>`identityMap`对象中的所有标识也包括在内(Experience Platform当前不支持[!DNL Amazon Kinesis]目标中的标识映射)。</li><li>目标导出中只包含映射的属性。</li></ul> |
+| <ul><li>映射的属性和区段会作为目标导出的提示。 这意味着，如果配置文件的`segmentMembership`状态更改为`realized`或`exiting`，或者更新了任何映射的属性，则将启动目标导出。</li><li>由于身份当前无法映射到[!DNL Amazon Kinesis]目标，因此给定配置文件上任何身份的更改也将决定目标导出。</li><li>属性的更改被定义为属性上的任何更新，无论其是否为相同的值。 这意味着即使值本身未发生更改，也会将覆盖属性视为更改。</li></ul> | <ul><li>`segmentMembership`对象包括激活数据流中映射的区段，在资格或区段退出事件后，配置文件的状态已发生更改。 请注意，如果符合配置文件条件的其他未映射区段与激活数据流中映射的区段属于同一个[合并策略](/help/profile/merge-policies/overview.md)，则这些区段可以是目标导出的一部分。 </li><li>`identityMap`对象中的所有标识也包括在内(Experience Platform当前不支持[!DNL Amazon Kinesis]目标中的标识映射)。</li><li>目标导出中只包含映射的属性。</li></ul> |
 
 {style="table-layout:fixed"}
 
