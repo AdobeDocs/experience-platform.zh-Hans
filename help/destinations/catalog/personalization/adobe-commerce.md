@@ -23,7 +23,7 @@ ht-degree: 3%
 
 - [Adobe Experience Platform](https://experience.adobe.com/)
 - [Adobe Developer Console](https://developer.adobe.com/developer-console/docs/guides/getting-started/)。 通过访问开发人员控制台，您可以查看在Adobe Commerce中[完成扩展的配置](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html?lang=zh-Hans#configure-the-extension)所需的服务帐户和凭据信息。
-- [Adobe Commerce Cloud版本2.4.4或更高版本](https://business.adobe.com/products/magento/magento-commerce.html)
+- [Adobe Commerce Cloud版本2.4.4或更高版本](https://business.adobe.com/cn/products/magento/magento-commerce.html)
 
 在Experience Platform中，创建以下内容：
 

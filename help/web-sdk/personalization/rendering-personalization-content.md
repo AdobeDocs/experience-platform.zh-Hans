@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # 呈现个性化内容
 
-Adobe Experience Platform Web SDK支持从Adobe个性化解决方案中检索个性化内容，这些解决方案包括[Adobe Target](https://business.adobe.com/products/target/adobe-target.html)、[Offer Decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=zh-Hans)和[Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html?lang=zh-Hans)。
+Adobe Experience Platform Web SDK支持从Adobe个性化解决方案中检索个性化内容，这些解决方案包括[Adobe Target](https://business.adobe.com/cn/products/target/adobe-target.html)、[Offer Decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=zh-Hans)和[Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html?lang=zh-Hans)。
 
 此外，Web SDK还通过Adobe Experience Platform个性化目标(如[Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md)和[自定义个性化连接](../../destinations/catalog/personalization/custom-personalization.md))支持同页和下一页个性化功能。 要了解如何为同页和下一页个性化配置Experience Platform，请参阅[专用指南](../../destinations/ui/activate-edge-personalization-destinations.md)。
 
