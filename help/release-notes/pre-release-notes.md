@@ -2,10 +2,10 @@
 title: Experience Platform预发行说明
 description: Adobe Experience Platform最新发行说明预览。
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: 9cf809f8fd6e424b4dcd800c3d554e4eb0e337dc
+source-git-commit: de95e9a51c979e9249ddf9ceb262fc521d2b38f4
 workflow-type: tm+mt
-source-wordcount: '944'
-ht-degree: 33%
+source-wordcount: '1008'
+ht-degree: 31%
 
 ---
 
@@ -57,7 +57,9 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 | 目标 | 描述 |
 | --- | --- |
 | [!DNL AdForm] | 使用此目标可根据Adobe Real-Time CDP ID (ECID)和[!DNL AdForm]的ID Fusion将Experience Cloud受众发送到[!DNL AdForm]以进行激活。 [!DNL AdForm]的ID Fusion是一种ID解析服务，它允许您根据Experience Cloud ID (ECID)激活第一方受众。 |
-| `Amazon Ads` | 我们添加了其他个人标识符支持，如`firstName`、`lastName`、`street`、`city`、`state`、`zip`和`country`。 将这些字段映射为目标标识可以提高受众匹配率。 |
+| [!DNL Amazon Ads] | 我们添加了其他个人标识符支持，如`firstName`、`lastName`、`street`、`city`、`state`、`zip`和`country`。 将这些字段映射为目标标识可以提高受众匹配率。 |
+| [!DNL Snowflake Batch] （有限可用） | 创建实时[!DNL Snowflake]数据共享，以直接将每日受众更新作为共享表发送到您的帐户。 此集成当前适用于VA7区域中配置的客户组织。 |
+| [!DNL Snowflake Streaming] （有限可用） | 创建实时[!DNL Snowflake]数据共享，以直接将流式受众更新作为共享表发送到您的帐户。 此集成当前适用于VA7区域中配置的客户组织。 |
 
 **新增或更新的功能**
 
