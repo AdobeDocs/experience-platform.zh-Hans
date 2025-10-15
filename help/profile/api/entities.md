@@ -5,9 +5,9 @@ type: Documentation
 description: 通过Adobe Experience Platform，您可以使用RESTful API或用户界面访问实时客户配置文件数据。 本指南概述如何使用配置文件API访问实体（通常称为“配置文件”）。
 role: Developer
 exl-id: 06a1a920-4dc4-4468-ac15-bf4a6dc885d4
-source-git-commit: 40400ab8cc87a6c8d6d37f1a20eaf96ab49aabf7
+source-git-commit: 193045d530d73d8a3e4f7ac3df4e1f43e8ad5b15
 workflow-type: tm+mt
-source-wordcount: '1981'
+source-wordcount: '2141'
 ht-degree: 2%
 
 ---
@@ -66,6 +66,10 @@ GET /access/entities?{QUERY_PARAMETERS}
 - `schema.name`：实体的XDM架构的名称。 在此使用案例中，`schema.name=_xdm.context.profile`。
 - `entityId`：您尝试检索的实体的ID。
 - `entityIdNS`：您尝试检索的实体的命名空间。 如果`entityId`是&#x200B;**而不是** XID，则必须提供此值。
+
+此外，强烈建议使用以下查询参数&#x200B;**：
+
+- `mergePolicyId`：要用于筛选数据的合并策略的ID。 如果未指定合并策略，则将使用贵组织的默认合并策略。
 
 附录的[查询参数](#query-parameters)部分提供了有效参数的完整列表。
 
@@ -180,6 +184,10 @@ GET /access/entities?{QUERY_PARAMETERS}
 - `entityId`：您尝试检索的实体的ID。
 - `entityIdNS`：您尝试检索的实体的命名空间。 如果`entityId`是&#x200B;**而不是** XID，则必须提供此值。
 
+此外，强烈建议使用以下查询参数&#x200B;**：
+
+- `mergePolicyId`：要用于筛选数据的合并策略的ID。 如果未指定合并策略，则将使用贵组织的默认合并策略。
+
 附录的[查询参数](#query-parameters)部分提供了有效参数的完整列表。
 
 **请求**
@@ -271,6 +279,10 @@ GET /access/entities?{QUERY_PARAMETERS}
 - `schema.name`：实体的XDM架构的名称。 在此使用案例中，`schema.name=_xdm.context.opportunity`。
 - `entityId`：您尝试检索的实体的ID。
 - `entityIdNS`：您尝试检索的实体的命名空间。 如果`entityId`是&#x200B;**而不是** XID，则必须提供此值。
+
+此外，强烈建议使用以下查询参数&#x200B;**：
+
+- `mergePolicyId`：要用于筛选数据的合并策略的ID。 如果未指定合并策略，则将使用贵组织的默认合并策略。
 
 附录的[查询参数](#query-parameters)部分提供了有效参数的完整列表。
 
@@ -1207,7 +1219,9 @@ curl -X GET \
 
 >[!IMPORTANT]
 >
->以下B2B实体的删除请求已被弃用：
+>删除实体端点将在2025年10月底之前被弃用。 如果要执行记录删除操作，可以改用[数据生命周期记录删除API工作流](/help/hygiene/api/workorder.md)或[数据生命周期记录删除UI工作流](/help/hygiene/ui/record-delete.md)。
+>
+>此外，以下B2B实体的删除请求已被弃用：
 >
 >- 帐户
 >- 帐户 — 人员关系
@@ -1276,7 +1290,7 @@ curl -X DELETE 'https://platform.adobe.io/data/core/ups/access/entities?schema.n
 | `relatedEntityId` | 如果`schema.name`是`_xdm.context.experienceevent`，则此值&#x200B;**必须**&#x200B;指定相关配置文件实体的ID。 此值遵循与`entityId`相同的规则。 | `relatedEntityId=69935279872410346619186588147492736556` |
 | `relatedEntityIdNS` | 如果`schema.name`是“_xdm.context.experienceevent”，此值必须为`relatedEntityId`中指定的实体指定身份命名空间。 | `relatedEntityIdNS=CRMID` |
 | `fields` | 筛选响应中返回的数据。 使用此选项可指定要包含在检索的数据中的架构字段值。 对于多个字段，请使用逗号分隔值，且中间不应有空格。 | `fields=personalEmail,person.name,person.gender` |
-| `mergePolicyId` | 标识用来管理返回数据的合并策略。 如果未在调用中指定架构，则将使用您组织对该架构的默认值。 如果尚未配置默认合并策略，则默认设置是无配置文件合并和无身份拼接。 | `mergePolicyId=5aa6885fcf70a301dabdfa4a` |
+| `mergePolicyId` | *推荐*&#x200B;标识用于管理返回数据的合并策略。 如果未在调用中指定架构，则将使用您组织对该架构的默认值。 如果没有为您请求的架构定义默认合并策略，则API将返回HTTP 422错误状态代码。 | `mergePolicyId=5aa6885fcf70a301dabdfa4a` |
 | `orderBy` | 按时间戳检索的实体的排序顺序。 此写为`(+/-)timestamp`，默认值为`+timestamp`。 | `orderby=-timestamp` |
 | `startTime` | 指定筛选实体的开始时间（以毫秒为单位）。 | `startTime=1539838505` |
 | `endTime` | 指定筛选实体的结束时间（以毫秒为单位）。 | `endTime=1539838510` |

@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2025 年 9 月）
 description: Adobe Experience Platform 2025 年 9 月发行说明。
 exl-id: 9c5ab487-22b8-4590-b4ea-abec0f377703
-source-git-commit: d2694170e2860bd32783ad3f1860b0397e847289
+source-git-commit: fe8456823d0e7f1b60ea647e044747cfee4bc4c5
 workflow-type: tm+mt
-source-wordcount: '1422'
-ht-degree: 98%
+source-wordcount: '1528'
+ht-degree: 92%
 
 ---
 
@@ -107,6 +107,12 @@ Adobe Experience Platform 使您能够为客户提供协调、一致且相关的
 | 功能 | 描述 |
 | ------- | ----------- |
 | [!BADGE Alpha]{type=Informative}此功能当前位于Alpha中。 轮廓查看器增强功能 | 2025 年 9 月发行的版本包括以下关于轮廓查看器的增强功能。 <ul><li>**组合视图**：将属性、事件和洞察组合到同一个视图中。</li><li>**AI 生成的洞察**：轮廓详细信息页面现在显示 AI 生成的洞察，让您了解从轮廓生成的详细信息。这些洞察可能包括倾向性得分和趋势分析等信息。</li><li>**样式更新**：轮廓详细信息页面更新了外观。</li><li>**浏览**：您现在可以通过一个具有搜索和自定义功能的基于信息卡的交互式轮播组件来浏览轮廓。</li></ul> |
+
+**重要更新**
+
+| 更新 | 描述 |
+| ------ | ----------- |
+| 配置文件删除API弃用 | [配置文件删除API](/help/profile/api/entities.md#delete-entity)将于2025年10月底之前被弃用。 如果要执行记录删除操作，可以改用[数据生命周期记录删除API工作流](/help/hygiene/api/workorder.md)或[数据生命周期记录删除UI工作流](/help/hygiene/ui/record-delete.md)。 数据生命周期工作流提供端到端生命周期跟踪，以及可查看和管理所依据的每月配额。 <br/><br/>在端点被弃用后，当前使用此端点的所有用户将继续拥有对此端点的访问权限。 此产品的生命周期结束将另行宣布。 如果您有任何问题，请联系Adobe客户关怀团队。 |
 
 更多信息请阅读[实时客户轮廓概述](../../profile/home.md)。
 
