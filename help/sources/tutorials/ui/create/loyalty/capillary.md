@@ -3,10 +3,10 @@ title: 使用UI将Capillary连接到Experience Platform
 description: 了解如何使用UI将Capillary连接到Experience Platform
 badge: Beta 版
 exl-id: c90e6500-b92c-44ba-8de6-84e772bd9db1
-source-git-commit: bd5611b23740f16e41048f3bc65f62312593a075
+source-git-commit: 428aed259343f56a2bf493b40ff2388340fffb7b
 workflow-type: tm+mt
-source-wordcount: '827'
-ht-degree: 5%
+source-wordcount: '855'
+ht-degree: 4%
 
 ---
 
@@ -27,6 +27,10 @@ ht-degree: 5%
    * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
 
+>[!NOTE]
+>
+>请阅读[[!DNL Capillary Streaming Events] 概述](../../../../connectors/loyalty/capillary.md)以了解有关[!DNL Capillary]源所需的设置的信息。
+
 ## 导航源目录
 
 在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问&#x200B;*[!UICONTROL 源]*&#x200B;工作区。 在&#x200B;*[!UICONTROL 类别]*&#x200B;面板中选择相应的类别或者，使用搜索栏导航到要使用的特定源。
@@ -42,6 +46,10 @@ ht-degree: 5%
 ## 选择数据
 
 接下来，使用&#x200B;*[!UICONTROL Select data]*&#x200B;接口上传示例JSON文件以定义源架构。 在此步骤中，您可以使用预览界面查看有效载荷的文件结构。 完成后，选择&#x200B;**[!UICONTROL 下一步]**。
+
+>[!TIP]
+>
+>您可以为[下载](../../../../images/tutorials/create/capillary/schemas.zip)事件和配置文件架构[!DNL Capillary]，以便在数据选择界面中使用。
 
 ![源工作流的选择数据步骤](../../../../images/tutorials/create/capillary/select-data.png)
 
