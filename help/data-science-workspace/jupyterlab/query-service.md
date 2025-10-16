@@ -20,7 +20,7 @@ ht-degree: 0%
 >
 >本文档适用于先前有权访问数据科学工作区的现有客户。
 
-[!DNL Adobe Experience Platform]允许您通过作为[!DNL Query Service][!DNL JupyterLab]标准功能集成到中使用结构化查询语言 （SQL[!DNL Data Science Workspace]）。
+[!DNL Adobe Experience Platform]允许您通过作为[!DNL Query Service]&#x200B;[!DNL JupyterLab]标准功能集成到中使用结构化查询语言 （SQL[!DNL Data Science Workspace]）。
 
 本教程演示了常见用例的示例 SQL 查询，以探索、转换和分析 [!DNL Adobe Analytics] 数据。
 

@@ -258,7 +258,7 @@ ht-degree: 38%
 
 从[!UICONTROL 核心产品]表下的[!UICONTROL 产品]选项卡查看产品权利使用情况的摘要。
 
-![产品及预测使用列突出显示的[!UICONTROL 许可证使用情况][!UICONTROL 产品]选项卡。](../images/license-usage/product-predicted-usage.png)
+![产品及预测使用列突出显示的[!UICONTROL 许可证使用情况]&#x200B;[!UICONTROL 产品]选项卡。](../images/license-usage/product-predicted-usage.png)
 
 >[!NOTE]
 >

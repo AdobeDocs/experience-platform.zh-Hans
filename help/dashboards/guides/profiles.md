@@ -81,7 +81,7 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 [!UICONTROL 个人资料] [!UICONTROL 详细信息]工作区显示几个预配置的构件，这些构件传达特定于该个人资料的信息。 此信息使您能够一眼就了解用户档案的关键属性。 您还可以通过创建自己的小组件来自定义您的[!UICONTROL 配置文件] [!UICONTROL 详细信息]工作区。 有关更多详细信息，请参阅[如何添加构件](#add-widgets)部分。
 
-![突出显示[!UICONTROL 详细信息]选项卡的[!UICONTROL 配置文件][!UICONTROL 详细信息]工作区。](../images/profiles/profile-details-workspace.png)
+![突出显示[!UICONTROL 详细信息]选项卡的[!UICONTROL 配置文件]&#x200B;[!UICONTROL 详细信息]工作区。](../images/profiles/profile-details-workspace.png)
 
 ### 配置文件详细信息小组件 {#widgets}
 
@@ -502,7 +502,7 @@ The visualization allows you to monitor the overall health of audiences within A
 
 ![受众大小小组件。](../images/profiles/audiences-size.png)
 
-要查看受众的综合信息，请从提供的列表中选择受众名称，以导航到[!UICONTROL 受众] [!UICONTROL 详细信息]页面。 此外，通过从小部件的末尾选择&#x200B;**[!UICONTROL 查看所有受众]**，您可以导航到[!UICONTROL 受众][!UICONTROL 浏览]选项卡以查找任何现有受众。
+要查看受众的综合信息，请从提供的列表中选择受众名称，以导航到[!UICONTROL 受众] [!UICONTROL 详细信息]页面。 此外，通过从小部件的末尾选择&#x200B;**[!UICONTROL 查看所有受众]**，您可以导航到[!UICONTROL 受众]&#x200B;[!UICONTROL 浏览]选项卡以查找任何现有受众。
 
 ![带受众名称的受众大小小部件和突出显示的查看所有受众文本。](../images/profiles/audiences-size-view-all-audiences.png)
 
