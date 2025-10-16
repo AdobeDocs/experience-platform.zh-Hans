@@ -1,23 +1,22 @@
 ---
 title: 使用UI将Google广告连接到Experience Platform
 description: 了解如何在UI中将您的Google Ads帐户连接到Adobe Experience Platform。
+badge: Beta 版
 exl-id: 33dd2857-aed3-4e35-bc48-1c756a8b3638
-source-git-commit: 009866abc39b06c22b7bea758ce9fdfba8c72b00
+source-git-commit: 906da82a8940233b3eb226d376c454b477514bc5
 workflow-type: tm+mt
-source-wordcount: '877'
-ht-degree: 0%
+source-wordcount: '893'
+ht-degree: 1%
 
 ---
 
 # 使用UI将[!DNL Google Ads]连接到Experience Platform
 
->[!WARNING]
->
->[!DNL Google Ads]源当前在用户界面中不可用。 您可以使用API[&#128279;](../../../api/create/advertising/ads.md)继续将[!DNL Google Ads]数据摄取到Experience Platform 。
-
 >[!NOTE]
 >
->[!DNL Google Ads]源为测试版。 有关使用测试版标记源的更多信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
+> [!DNL Google Ads]源当前为测试版，仅支持一次性摄取。 您可以使用[API方法](../../../api/create/advertising/ads.md)将[!DNL Google Ads]数据增量摄取到Experience Platform中。
+>
+>有关使用测试版标记源的更多信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
 
 阅读本指南，了解如何使用Experience Platform UI中的源工作区将您的[!DNL Google Ads]帐户连接到Adobe Experience Platform。
 
@@ -40,7 +39,7 @@ ht-degree: 0%
 
 在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问&#x200B;*[!UICONTROL 源]*&#x200B;工作区。 您可以在&#x200B;*[!UICONTROL 类别]*&#x200B;面板中选择相应的类别。 或者，您可以使用搜索栏导航到要使用的特定源。
 
-要使用[!DNL Google Ads]，请选择&#x200B;*[!UICONTROL Google]*&#x200B;下的&#x200B;**[!UICONTROL Advertising广告]**&#x200B;源卡，然后选择&#x200B;**[!UICONTROL 添加数据]**。
+要使用[!DNL Google Ads]，请选择&#x200B;**[!UICONTROL Google]**&#x200B;下的&#x200B;*[!UICONTROL Advertising广告]*&#x200B;源卡，然后选择&#x200B;**[!UICONTROL 添加数据]**。
 
 ![Experience Platform UI中的源目录。](../../../../images/tutorials/create/ads/catalog.png)。
 
@@ -64,7 +63,7 @@ ht-degree: 0%
 * **刷新令牌**：刷新令牌是[!DNL OAuth2]身份验证的一部分。 此令牌允许您在访问令牌过期后重新生成访问令牌。
 * **客户端ID**：客户端ID与客户端密钥结合使用，作为[!DNL OAuth2]身份验证的一部分。 客户端ID和客户端密钥共同允许您的应用程序通过向[!DNL Google]标识您的应用程序来代表您的帐户运行。
 * **客户端密钥**：客户端密钥与客户端ID结合使用，作为[!DNL OAuth2]身份验证的一部分。 客户端ID和客户端密钥共同允许您的应用程序通过向[!DNL Google]标识您的应用程序来代表您的帐户运行。
-* **[!DNL Google Ads]API版本**： [!DNL Google Ads]支持的当前API版本。 尽管最新版本是`v18`，但Experience Platform上支持的最新版本是`v17`。
+* **[!DNL Google Ads]API版本**： [!DNL Google Ads]支持的当前API版本。 尽管最新的[!DNL Google Ads] API版本是v21，但Experience Platform当前支持版本v19及更高版本。 确保使用这些受支持的版本之一以确保兼容性。
 
 输入凭据后，选择&#x200B;**[!UICONTROL 连接到源]**，等待一段时间以处理连接。 完成后，选择&#x200B;**[!UICONTROL 下一步]**。
 
@@ -72,7 +71,7 @@ ht-degree: 0%
 
 ## 选择数据 {#select-data}
 
-对于[!DNL Google Ads]，您必须提供在工作流的数据选择阶段进行摄取的属性列表。 为了检索这些属性，您必须使用[[!DNL Google Ads Query Builder]](https://developers.google.com/google-ads/api/fields/v17/overview_query_builder)。
+对于[!DNL Google Ads]，您必须提供在工作流的数据选择阶段进行摄取的属性列表。 为了检索这些属性，您必须使用[[!DNL Google Ads Query Builder]](https://developers.google.com/google-ads/api/fields/v19/overview_query_builder)。
 
 在[!DNL Google Ads Query Builder]中，导航到要使用的资源类型，然后使用属性选择器选择您的属性、区段和量度。
 
