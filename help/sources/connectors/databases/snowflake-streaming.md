@@ -3,9 +3,9 @@ title: Snowflake流Source连接器概述
 description: 了解如何创建源连接和数据流，以将流数据从Snowflake实例摄取到Adobe Experience Platform
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: ed937689-e844-487e-85fb-e3536c851fe5
-source-git-commit: 0d646136da2c508fe7ce99a15787ee15c5921a6c
+source-git-commit: 1d0cc448293ab3cad6ccb971bb2edc86c1b01a5c
 workflow-type: tm+mt
-source-wordcount: '1390'
+source-wordcount: '1510'
 ht-degree: 3%
 
 ---
@@ -157,6 +157,25 @@ MIIE6T...
 >必须在仓库的高级设置配置中启用自动恢复和自动暂停。
 
 有关角色和权限管理的详细信息，请参阅[[!DNL Snowflake] API参考](<https://docs.snowflake.com/en/sql-reference/sql/grant-privilege>)。
+
+## 将Unix时间转换为日期字段
+
+[!DNL Snowflake Streaming]解析并写入` DATE`字段作为自Unix纪元以来的天数(1970-01-01)。 例如，`DATE`值为0表示1970年1月1日，而值为1表示1970年1月2日。 因此，在准备文件以在[!DNL Snowflake Streaming]源中创建映射时，请确保`DATE`列表示为整数。
+
+您可以使用[数据准备数据和时间函数](../../../data-prep/functions.md#date-and-time-functions)将Unix时间转换为可引入Experience Platform的日期字段。 例如：
+
+```shell
+dformat({DATE_COLUMN} * 86400000, "yyyy-MM-dd")
+```
+
+在此函数中：
+
+* `{DATE_COLUMN}`是包含epoch天整数的日期列。
+* 乘以86400000可将纪元天数转换为毫秒。
+* “yyyy-MM-dd”指定所需的日期格式。
+
+此转换可确保日期在您的数据集中正确显示。
+
 
 ## 限制和常见问题解答 {#limitations-and-frequently-asked-questions}
 
