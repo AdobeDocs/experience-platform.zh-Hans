@@ -2,9 +2,9 @@
 title: 在UI中按需引入源数据流
 description: 了解如何使用Experience Platform用户界面按需为源连接创建数据流。
 exl-id: e5a70044-2484-416a-8098-48e6d99c2d98
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: fabacf273fb5774ddcee42d0cdcf12281eb0216b
 workflow-type: tm+mt
-source-wordcount: '552'
+source-wordcount: '574'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 **什么是流运行？**
 
-流运行表示数据流执行的实例。 例如，如果数据流计划在早上9:00、晚上10:00和晚上11:00每小时运行，则您将有三次流运行实例。 流量运行特定于您的特定组织。
+流运行表示数据流执行的实例。 例如，如果数据流计划在上午9:00、上午10:00和上午11:00每小时运行，则您将运行三个流实例。 流量运行特定于您的特定组织。
 
 >[!ENDSHADEBOX]
 
@@ -58,6 +58,10 @@ ht-degree: 0%
 ![按需引入的计划配置窗口。](../../images/tutorials/on-demand/configure-schedule.png)
 
 选择数据流名称以查看数据流活动。 在这里，您将看到已处理的数据流运行的列表。 无论数据流运行是失败还是成功，您都可以重新运行其各个迭代。 对于失败的运行迭代，您可以在诊断并解决创建过程中可能遇到的任何错误后，使用&#x200B;**[!UICONTROL 重试]**&#x200B;再次启动运行。
+
+>[!TIP]
+>
+>重试流运行将只处理时间戳在原始运行范围内的文件。
 
 ![所选数据流已处理的流运行列表。](../../images/tutorials/on-demand/processed.png)
 
