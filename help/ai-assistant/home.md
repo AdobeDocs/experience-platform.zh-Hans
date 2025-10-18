@@ -61,7 +61,7 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 
 观看以下视频，了解有关AI Assistant产品知识的更多信息：
 
->[!VIDEO](https://video.tv.adobe.com/v/3438032/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3475940/?captions=chi_hans&learn=on)
 
 ### 运营洞察 {#operational-insights}
 
