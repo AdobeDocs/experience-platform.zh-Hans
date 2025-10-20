@@ -2,9 +2,9 @@
 title: 标识服务链接逻辑
 description: 了解Identity Service如何链接不同的身份以创建客户的全面视图。
 exl-id: 1c958c0e-0777-48db-862c-eb12b2e7a03c
-source-git-commit: 048d915d33a19a9d50a4951e165b5ade1b9d9734
+source-git-commit: 5c05f2dbcf9088b95eb8d35e455912219e87662f
 workflow-type: tm+mt
-source-wordcount: '968'
+source-wordcount: '966'
 ht-degree: 3%
 
 ---
@@ -22,6 +22,10 @@ ht-degree: 3%
 
 * **配置文件记录**：这些标识通常来自CRM系统。
 * **体验事件**：这些标识通常来自WebSDK实现或Adobe Analytics源。
+
+>[!IMPORTANT]
+>
+>Identity服务区分大小写。 例如，**abc<span>@gmail.com**&#x200B;和&#x200B;**ABC<span>@GMAIL.COM**&#x200B;将被视为两个单独的电子邮件标识。
 
 ## 建立链接的语义含义
 
@@ -54,8 +58,8 @@ ht-degree: 3%
 假设您有一个具有三个链接身份的现有身份图：
 
 * 电话：(555)-555-1234
-* 电子邮件：julien<span>@acme.com
-* CRMID：60013ABC
+* 电子邮件:julien<span>@acme.com
+* CRMID:60013ABC
 
 ![现有图形](../images/identity-settings/existing-graph.png)
 
@@ -63,14 +67,14 @@ ht-degree: 3%
 
 一对标识已摄取到您的图形中，并且此对包含：
 
-* CRMID：60013ABC
-* ECID：100066526
+* CRMID:60013ABC
+* ECID:100066526
 
 ![传入数据](../images/identity-settings/incoming-data.png)
 
 >[!TAB 已更新图形]
 
-Identity Service识别图形中已存在CRMID：60013ABC，因此仅链接新的ECID
+Identity Service识别您的图形中已存在CRMID:60013ABC，因此仅链接新的ECID
 
 ![已更新图形](../images/identity-settings/updated-graph.png)
 
@@ -96,10 +100,10 @@ Identity Service识别图形中已存在CRMID：60013ABC，因此仅链接新的
 
 | 时间戳 | 事件中的身份* | 活动 |
 | --- | --- | --- |
-| `t=1` | ECID：38652 | 查看主页 |
-| `t=2` | ECID：38652， CRMID：31260XYZ | 搜索鞋子 |
-| `t=3` | ECID：44675 | 查看主页 |
-| `t=4` | ECID：44675， CRMID： 31260XYZ | 查看购买历史记录 |
+| `t=1` | ECID:38652 | 查看主页 |
+| `t=2` | ECID:38652， CRMID:31260XYZ | 搜索鞋子 |
+| `t=3` | ECID:44675 | 查看主页 |
+| `t=4` | ECID:44675，CRMID： 31260XYZ | 查看购买历史记录 |
 
 每个事件的主标识将根据[您配置数据元素类型](../../tags/extensions/client/web-sdk/data-element-types.md)的方式确定。
 
@@ -111,10 +115,10 @@ Identity Service识别图形中已存在CRMID：60013ABC，因此仅链接新的
 
 在此示例中：
 
-* `t=1`，使用台式计算机(ECID：38652)并匿名查看主页。
-* `t=2`使用同一台台式计算机登录(CRMID：31260XYZ)，然后搜索鞋子。
+* `t=1`，使用台式计算机(ECID:38652)并匿名查看主页浏览。
+* `t=2`，使用同一台台式计算机，登录(CRMID:31260XYZ)，然后搜索鞋子。
    * 用户登录后，该事件会将ECID和CRMID发送到Identity Service。
-* `t=3`，使用笔记本电脑(ECID：44675)并匿名浏览。
+* `t=3`，使用笔记本电脑(ECID:44675)并匿名浏览。
 * `t=4`使用同一台膝上型计算机，登录(CRMID： 31260XYZ)，然后查看购买历史记录。
 
 
@@ -133,25 +137,25 @@ Identity Service识别图形中已存在CRMID：60013ABC，因此仅链接新的
 
 >[!TAB 时间戳=1]
 
-在`timestamp=1`，客户使用笔记本电脑访问您的电子商务网站、查看您的主页并匿名浏览。 此匿名浏览事件标识为ECID：38652。 由于Identity Service仅存储具有至少两个标识的事件，因此不会存储此信息。
+在`timestamp=1`，客户使用笔记本电脑访问您的电子商务网站、查看您的主页并匿名浏览。 此匿名浏览事件被标识为ECID:38652。 由于Identity Service仅存储具有至少两个标识的事件，因此不会存储此信息。
 
 ![timestamp-one](../images/identity-settings/timestamp-one.png)
 
 >[!TAB 时间戳=2]
 
-在`timestamp=2`，客户使用同一台笔记本电脑访问您的电子商务网站。 他们使用用户名和密码组合登录，并浏览查找鞋子。 Identity Service在客户登录时识别他们的帐户，因为它与其CRMID： 31260XYZ相对应。 此外，Identity Service将ECID：38562与CRMID：31260XYZ关联起来，因为它们都在同一设备上使用相同的浏览器。
+在`timestamp=2`，客户使用同一台笔记本电脑访问您的电子商务网站。 他们使用用户名和密码组合登录，并浏览查找鞋子。 Identity Service在客户登录时识别他们的帐户，因为它与其CRMID： 31260XYZ相对应。 此外，Identity Service将ECID:38562与CRMID:31260XYZ相关联，因为它们都在同一设备上使用相同的浏览器。
 
 ![时间戳 — 二](../images/identity-settings/timestamp-two.png)
 
 >[!TAB 时间戳=3]
 
-在`timestamp=3`，客户使用平板电脑访问您的电子商务网站并匿名浏览。 此匿名浏览事件标识为ECID：44675。 由于Identity Service仅存储具有至少两个标识的事件，因此不会存储此信息。
+在`timestamp=3`，客户使用平板电脑访问您的电子商务网站并匿名浏览。 此匿名浏览事件被标识为ECID:44675。 由于Identity Service仅存储具有至少两个标识的事件，因此不会存储此信息。
 
 ![时间戳 — 三](../images/identity-settings/timestamp-three.png)
 
 >[!TAB 时间戳=4]
 
-在`timestamp=4`，客户使用相同的平板电脑，登录到其帐户(CRMID：31260XYZ)并查看其购买历史记录。 此事件将他们的CRMID：31260XYZ链接到分配给匿名浏览活动的Cookie标识符ECID：44675，并将ECID：44675链接到客户2的标识图。
+在`timestamp=4`，客户使用相同的平板电脑，登录到其帐户(CRMID:31260XYZ)并查看其购买历史记录。 此事件将其CRMID:31260XYZ链接到分配给匿名浏览活动ECID:44675的Cookie标识符，并将ECID:44675链接到客户2的标识图。
 
 ![时间戳–4](../images/identity-settings/timestamp-four.png)
 
