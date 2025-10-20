@@ -5,9 +5,9 @@ breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源引入数据。了解如何构建、标记和增强已引入的数据。
 feature: Sources
 role: Developer
-source-git-commit: 52dfba88ce3549fb93e8cfcca144e6be720bc26b
+source-git-commit: 6debb9eeb811c98d322c99b1b779f5f9eff8573c
 workflow-type: tm+mt
-source-wordcount: '1065'
+source-wordcount: '1073'
 ht-degree: 34%
 
 ---
@@ -105,6 +105,7 @@ ht-degree: 34%
       - [本地文件上载连接器](connectors/local-system/local-file-upload.md)
    - 忠诚度 {#loyalty}
       - [毛细管流事件](connectors/loyalty/capillary.md)
+      - [Talon.One](connectors/loyalty/talon-one.md)
    - 营销自动化 {#marketing-automation}
       - [Braze Currents](connectors/marketing-automation/braze.md)
       - [查特利奥](connectors/marketing-automation/chatlio-webhook.md)
@@ -315,6 +316,8 @@ ht-degree: 34%
          - [本地文件上传](tutorials/ui/create/local-system/local-file-upload.md)
       - 忠诚度 {#loyalty}
          - [毛细管流事件](tutorials/ui/create/loyalty/capillary.md)
+         - [Talon.One流事件](tutorials/ui/create/loyalty/talon-one-streaming.md)
+         - [Talon.One批处理Source连接器](tutorials/ui/create/loyalty/talon-one-batch.md)
       - 营销自动化 {#marketing-automation}
          - [Braze Currents](tutorials/ui/create/marketing-automation/braze.md)
          - [查特利奥](tutorials/ui/create/marketing-automation/chatlio-webhook.md)
