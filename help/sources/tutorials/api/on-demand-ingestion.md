@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；流服务；
 title: 使用流服务API为按需引入创建流运行
 description: 了解如何使用流服务API为按需引入创建流运行
 exl-id: a7b20cd1-bb52-4b0a-aad0-796929555e4a
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: b2b835faf9cf52ea0461d43b29076eaf7b0688f1
 workflow-type: tm+mt
-source-wordcount: '801'
+source-wordcount: '823'
 ht-degree: 1%
 
 ---
@@ -17,6 +17,10 @@ ht-degree: 1%
 按需引入允许您针对给定数据流创建流运行。 这允许您的用户基于给定的参数创建流运行并创建引入周期，而不使用服务令牌。 仅对批来源提供按需摄取支持。
 
 本教程介绍了有关如何使用按需引入和使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)创建流运行的步骤。
+
+>[!TIP]
+>
+>重试流运行将只处理时间戳在原始运行范围内的文件。
 
 ## 快速入门
 
