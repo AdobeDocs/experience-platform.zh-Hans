@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: 了解有关数据激活默认使用量和速率限制的更多信息。
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 8a1ac01c503bd1e5b9873714514d438b22f45cfb
+source-git-commit: 0a9782b6018e5c5405c79ce37d969754d7b99fd6
 workflow-type: tm+mt
-source-wordcount: '1718'
+source-wordcount: '1712'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/cn/legal/product-descriptions.html)中的实际使用限制。
+>除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/legal/product-descriptions.html)中的实际使用限制。
 
 本页提供有关激活行为的默认使用量和速率限制。 查看以下护栏时，假定您已正确[连接到目标](/help/destinations/ui/connect-destination.md)。
 
@@ -105,7 +105,7 @@ ht-degree: 2%
 
 ### 数据集导出 {#dataset-exports}
 
-当前支持在&#x200B;**[!UICONTROL First Full]** [模式](/help/destinations/ui/export-datasets.md#scheduling)中进行数据集导出。 此部分&#x200B;*中描述的护栏适用于数据集导出工作流设置后出现的第一个完全导出*。
+当前在&#x200B;**[!UICONTROL First Full and then Incremental]** [模式](/help/destinations/ui/export-datasets.md#scheduling)中支持数据集导出。 此部分&#x200B;*中描述的护栏适用于数据集导出工作流设置后出现的第一个完全导出*。
 
 <!--
 
@@ -121,11 +121,9 @@ ht-degree: 2%
 
 数据集导出护栏适用于从Experience Platform导出的两种类型的数据集，如下所述：
 
-**基于XDM体验事件架构的数据集**
-对于基于XDM体验事件架构的数据集，数据集架构包含顶级*时间戳*&#x200B;列。 数据以仅追加方式摄取。
+**基于XDM体验事件架构的数据集和基于任何其他架构的数据集**
 
-**基于XDM个人配置文件架构的数据集**
-对于基于XDM个人资料架构的数据集，数据集架构不包括顶级*时间戳*&#x200B;列。 数据以更新插入方式摄取。
+对于基于XDM体验事件架构的数据集，数据集架构包括顶级时间戳列。 数据以仅追加方式摄取。 在基于任何其他架构的数据集的情况下，数据集架构可能包括时间戳列，并且数据以更新插入方式摄取。
 
 以下软护栏适用于从Experience Platform导出的所有数据集。 此外，还请查看下面针对不同数据集和压缩类型的硬护栏。
 
@@ -146,7 +144,7 @@ ht-degree: 2%
 | 数据集类型 | 护栏 | 护栏类型 | 描述 |
 ---------|----------|---------|-------|
 | 基于&#x200B;**XDM体验事件架构**&#x200B;的数据集 | 最近365天的数据 | 系统强制的护栏 | 将导出上一个日历年的数据。 |
-| 基于&#x200B;**XDM Individual Profile架构**&#x200B;的数据集 | 数据流中所有导出文件的十亿条记录 | 系统强制的护栏 | 对于压缩的JSON或parquet文件，数据集的记录数必须少于100亿，对于未压缩的parquet文件，数据集的记录数必须少于100万，否则导出失败。 如果尝试导出的数据集大于允许的阈值，请减小该数据集的大小。 |
+| 基于&#x200B;**除XDM体验事件架构**&#x200B;之外的任何架构的数据集 | 数据流中所有导出文件的十亿条记录 | 系统强制的护栏 | 对于压缩的JSON或parquet文件，数据集的记录数必须少于100亿，对于未压缩的parquet文件，数据集的记录数必须少于100万，否则导出失败。 如果尝试导出的数据集大于允许的阈值，请减小该数据集的大小。 |
 
 {style="table-layout:auto"}
 
@@ -169,7 +167,7 @@ The guardrails below are the same whether you are exporting parquet of JSON file
 
 -->
 
-阅读有关[导出数据集](/help/destinations/ui/export-datasets.md)的更多信息。
+阅读[导出数据集](/help/destinations/ui/export-datasets.md)以了解更多信息。
 
 
 ### Destination SDK护栏 {#destination-sdk-guardrails}
@@ -198,7 +196,7 @@ The guardrails below are the same whether you are exporting parquet of JSON file
 请参阅Real-Time CDP产品描述文档中的以下文档，了解有关其他Experience Platform服务护栏、端到端延迟信息和许可信息的更多信息：
 
 * [Real-Time CDP护栏](/help/rtcdp/guardrails/overview.md)
-* [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=zh-Hans#end-to-end-latency-diagrams)。
-* [Real-Time Customer Data Platform (B2C版本 — Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams)。
+* [Real-Time Customer Data Platform (B2C Edition - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
