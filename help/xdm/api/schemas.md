@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 架构API端点
 description: 架构注册API中的/schemas端点允许您以编程方式管理体验应用程序中的XDM架构。
 exl-id: d0bda683-9cd3-412b-a8d1-4af700297abf
-source-git-commit: 4586a820556919aeb6cebd94d961c3f726637f16
+source-git-commit: dc5ac5427e1eeef47434c3974235a1900d29b085
 workflow-type: tm+mt
-source-wordcount: '2095'
+source-wordcount: '2122'
 ht-degree: 3%
 
 ---
@@ -198,7 +198,7 @@ curl -X GET \
 
 架构组合过程从指定类开始。 类定义数据的关键行为方面（记录或时间序列），以及描述将摄取的数据所需的最小字段。
 
-有关在不使用类或字段组的情况下创建架构（称为基于模型的架构）的说明，请参阅[创建基于模型的架构](#create-model-based-schema)部分。
+有关在不使用类或字段组的情况下创建架构（称为关系架构）的说明，请参阅[创建关系架构](#create-relational-schema)部分。
 
 >[!NOTE]
 >
@@ -277,21 +277,25 @@ curl -X POST \
 }
 ```
 
-现在执行GET请求以[列出租户容器中的所有架构](#list)将包括新架构。 您可以使用URL编码的[&#x200B; URI执行](#lookup)查找(GET)请求`$id`以直接查看新架构。
+现在执行GET请求以[列出租户容器中的所有架构](#list)将包括新架构。 您可以使用URL编码的[ URI执行](#lookup)查找(GET)请求`$id`以直接查看新架构。
 
 要将其他字段添加到架构，您可以执行[PATCH操作](#patch)以将字段组添加到架构的`allOf`和`meta:extends`数组。
 
-## 创建一个基于模型的架构 {#create-model-based-schema}
+## 创建关系架构 {#create-relational-schema}
 
 >[!AVAILABILITY]
 >
->Data Mirror和基于模型的架构可供Adobe Journey Optimizer **协调的营销活动**&#x200B;许可证持有人使用。 根据您的许可证和功能启用，它们也可用作Customer Journey Analytics用户的&#x200B;**有限版本**。 请联系您的Adobe代表以获取访问权限。
+>Data Mirror和关系架构可供Adobe Journey Optimizer **协调的营销活动**&#x200B;许可证持有人使用。 根据您的许可证和功能启用，它们也可用作Customer Journey Analytics用户的&#x200B;**有限版本**。 请联系您的Adobe代表以获取访问权限。
 
-通过向`/schemas`端点发出POST请求来创建基于模型的架构。 基于模型的架构存储结构化关系样式数据&#x200B;**，但不包含**&#x200B;类或字段组。 直接在架构上定义字段，并使用逻辑行为标记将架构标识为基于模型。
+>[!NOTE]
+>
+>关系架构以前在Adobe Experience Platform API文档的早期版本中称为基于模型的架构。 功能保持不变 — 只是更改了术语以更清晰明了。
+
+通过向`/schemas`端点发出POST请求来创建关系架构。 关系架构存储结构化关系样式数据&#x200B;**，但不包含**&#x200B;类或字段组。 直接在架构上定义字段，并使用逻辑行为标记将架构标识为关系。
 
 >[!IMPORTANT]
 >
->要创建基于模型的架构，请将`meta:extends`设置为`"https://ns.adobe.com/xdm/data/adhoc-v2"`。 这是&#x200B;**逻辑行为标识符** （不是物理行为或类）。 在&#x200B;**中**&#x200B;不`allOf`引用类或字段组，在&#x200B;**中**&#x200B;不`meta:extends`包含类或字段组。
+>要创建关系架构，请将`meta:extends`设置为`"https://ns.adobe.com/xdm/data/adhoc-v2"`。 这是&#x200B;**逻辑行为标识符** （不是物理行为或类）。 在&#x200B;**中**&#x200B;不`allOf`引用类或字段组，在&#x200B;**中**&#x200B;不`meta:extends`包含类或字段组。
 
 首先使用`POST /tenant/schemas`创建架构。 然后使用[描述符API (`POST /tenant/descriptors`)](../api/descriptors.md)添加所需的描述符：
 
@@ -302,15 +306,11 @@ curl -X POST \
 
 >[!NOTE]
 >
->在UI架构编辑器中，版本描述符和时间戳描述符分别显示为“[!UICONTROL 版本标识符]”和“[!UICONTROL 时间戳标识符]”。
-
-<!-- >[!AVAILABILITY]
->
->Although `meta:behaviorType` technically accepts `time-series`, support is not currently available for model-based schemas. Set `meta:behaviorType` to `"record"`. -->
+>在UI架构编辑器中，版本描述符和时间戳描述符分别显示为“[!UICONTROL Version identifier]”和“[!UICONTROL Timestamp identifier]”。
 
 >[!CAUTION]
 >
->基于模型的架构&#x200B;**与合并架构**&#x200B;不兼容。 使用基于模型的架构时，请勿将`union`标记应用于`meta:immutableTags`。 此配置在UI中被阻止，但当前未被API阻止。 有关合并架构行为的详细信息，请参阅[联合终结点指南](./unions.md)。
+>关系架构&#x200B;**与合并架构**&#x200B;不兼容。 使用关系架构时，请勿将`union`标记应用于`meta:immutableTags`。 此配置在UI中被阻止，但当前未被API阻止。 有关合并架构行为的详细信息，请参阅[联合终结点指南](./unions.md)。
 
 **API格式**
 
@@ -377,16 +377,16 @@ curl --request POST \
 | ------------------------------- | ------ | --------------------------------------------------------- |
 | `title` | 字符串 | 架构的显示名称。 |
 | `description` | 字符串 | 有关架构用途的简短说明。 |
-| `type` | 字符串 | 对于基于模型的架构，必须为`"object"`。 |
+| `type` | 字符串 | 对于关系架构，必须为`"object"`。 |
 | `definitions` | 对象 | 包含定义架构字段的根级别对象。 |
 | `definitions.<name>.properties` | 对象 | 字段名称和数据类型。 |
 | `allOf` | 数组 | 引用根级对象定义（例如，`#/definitions/marketing_customers`）。 |
-| `meta:extends` | 数组 | 必须包括`"https://ns.adobe.com/xdm/data/adhoc-v2"`以将架构标识为基于模型。 |
+| `meta:extends` | 数组 | 必须包括`"https://ns.adobe.com/xdm/data/adhoc-v2"`才能将架构标识为关系架构。 |
 | `meta:behaviorType` | 字符串 | 设置为`"record"`。 仅在启用和适当的情况下使用`"time-series"`。 |
 
 >[!IMPORTANT]
 >
->基于模型的架构的架构演化遵循与标准架构相同的附加规则。 您可以通过PATCH请求添加新字段。 仅当未将数据摄取到数据集时，才允许重命名或删除字段等更改。
+>关系模式的模式演化遵循与标准模式相同的附加规则。 您可以通过PATCH请求添加新字段。 仅当未将数据摄取到数据集时，才允许重命名或删除字段等更改。
 
 **响应**
 
@@ -394,7 +394,7 @@ curl --request POST \
 
 >[!NOTE]
 >
->基于模型的架构不继承预植入字段（例如，id、时间戳或eventType）。 在架构中显式定义所有必填字段。
+>关系架构不继承预先设置的字段（例如，id、时间戳或eventType）。 在架构中显式定义所有必填字段。
 
 **示例响应**
 
@@ -455,11 +455,11 @@ curl --request POST \
 | `type` | 字符串 | 架构类型。 |
 | `definitions` | 对象 | 定义架构中使用的可重用对象或字段组。 这通常包括主数据结构，在`allOf`数组中引用它来定义架构根。 |
 | `allOf` | 数组 | 通过引用一个或多个定义（例如，`#/definitions/marketing_customers`）指定架构的根对象。 |
-| `meta:extends` | 数组 | 将架构标识为基于模型(`adhoc-v2`)。 |
+| `meta:extends` | 数组 | 将架构标识为关系(`adhoc-v2`)。 |
 | `meta:behaviorType` | 字符串 | 行为类型（`record`或`time-series`，启用时）。 |
 | `meta:containerId` | 字符串 | 存储架构的容器（例如，`tenant`）。 |
 
-要在基于模型的架构创建后添加字段，请发出[PATCH请求](#patch)。 基于模型的架构不会继承或自动演化。 仅当未将数据摄取到数据集中时，才允许进行重命名或删除字段等结构更改。 一旦存在数据，则仅支持&#x200B;**附加更改**（例如添加新字段）。
+要在创建关系架构后添加字段，请发出[PATCH请求](#patch)。 关系架构不会继承或自动演进。 仅当未将数据摄取到数据集中时，才允许进行重命名或删除字段等结构更改。 一旦存在数据，则仅支持&#x200B;**附加更改**（例如添加新字段）。
 
 您可以添加新的根级别字段（在根定义或根`properties`中），但无法删除、重命名或更改现有字段的类型。
 

@@ -2,9 +2,9 @@
 title: 在API中为源连接启用更改数据捕获
 description: 了解如何在API中为源连接启用更改数据捕获
 exl-id: 362f3811-7d1e-4f16-b45f-ce04f03798aa
-source-git-commit: 192e97c97ffcb2d695bcfa6269cc6920f5440832
+source-git-commit: 2ad0ffba128e8c51f173d24d4dd2404b9cbbb59a
 workflow-type: tm+mt
-source-wordcount: '1238'
+source-wordcount: '1261'
 ht-degree: 0%
 
 ---
@@ -17,32 +17,36 @@ Experience Platform当前支持&#x200B;**增量数据副本**，该副本会定�
 
 相反，变更数据捕获会近乎实时地捕获并应用插入、更新和删除。 这一全面的更改跟踪确保数据集与源系统保持完全一致，并提供完整的更改历史记录，超出增量拷贝所支持的范围。 但是，删除操作需要特别考虑，因为它们会影响使用目标数据集的所有应用程序。
 
-Experience Platform中的变更数据捕获需要&#x200B;**[Data Mirror](../../../xdm/data-mirror/overview.md)**&#x200B;和[基于模型的架构](../../../xdm/schema/model-based.md)（也称为关系架构）。 您可以通过两种方式将更改数据提供给Data Mirror：
+Experience Platform中的变更数据捕获需要具有&#x200B;**[关系架构](../../../xdm/data-mirror/overview.md)**&#x200B;的[Data Mirror](../../../xdm/schema/relational.md)。 您可以通过两种方式将更改数据提供给Data Mirror：
 
 * **[手动更改跟踪](#file-based-sources)**：在数据集中包含未原生生成更改数据捕获记录的源的`_change_request_type`列
 * **[本机变更数据捕获导出](#database-sources)**：使用直接从源系统导出的变更数据捕获记录
 
-这两种方法都要求具有基于模型的架构的Data Mirror保持关系并强制实施唯一性。
+这两种方法都要求使用关系架构的Data Mirror保持关系并强制实施唯一性。
 
-## 带有基于模型的架构的Data Mirror
+## 带关系架构的Data Mirror
 
 >[!AVAILABILITY]
 >
->Data Mirror和基于模型的架构可供Adobe Journey Optimizer **协调的营销活动**&#x200B;许可证持有人使用。 根据您的许可证和功能启用，它们也可用作Customer Journey Analytics用户的&#x200B;**有限版本**。 请联系您的Adobe代表以获取访问权限。
+>Data Mirror和关系架构可供Adobe Journey Optimizer **协调的营销活动**&#x200B;许可证持有人使用。 根据您的许可证和功能启用，它们也可用作Customer Journey Analytics用户的&#x200B;**有限版本**。 请联系您的Adobe代表以获取访问权限。
+
+>[!NOTE]
+>
+>关系架构以前在Adobe Experience Platform文档的早期版本中称为基于模型的架构。 功能和变更数据捕获功能保持不变。
 
 >[!NOTE]
 >
 >**协调的营销活动用户**：使用本文档中介绍的Data Mirror功能处理保持引用完整性的客户数据。 即使您的源不使用变更数据捕获格式，Data Mirror也支持关系功能，例如主键实施、记录级别更新插入和架构关系。 这些功能可确保跨连接的数据集进行一致且可靠的数据建模。
 
-Data Mirror使用基于模型的架构来扩展变更数据捕获并启用高级数据库同步功能。 有关Data Mirror的概述，请参阅[Data Mirror概述](../../../xdm/data-mirror/overview.md)。
+Data Mirror使用关系架构来扩展变更数据捕获和启用高级数据库同步功能。 有关Data Mirror的概述，请参阅[Data Mirror概述](../../../xdm/data-mirror/overview.md)。
 
-基于模型的架构扩展了Experience Platform以强制实施主键唯一性、跟踪行级更改和定义架构级关系。 使用变更数据捕获，它们直接在数据湖中应用插入、更新和删除，从而减少了对提取、转换、加载(ETL)或手动协调的需要。
+关系架构扩展了Experience Platform以强制实施主键唯一性、跟踪行级更改和定义架构级关系。 使用变更数据捕获，它们直接在数据湖中应用插入、更新和删除，从而减少了对提取、转换、加载(ETL)或手动协调的需要。
 
-有关详细信息，请参阅[基于模型的架构概述](../../../xdm/schema/model-based.md)。
+有关详细信息，请参阅[关系架构概述](../../../xdm/schema/relational.md)。
 
-### 变更数据捕获的基于模型的架构要求
+### 变更数据捕获的关系架构要求
 
-在将基于模型的方案用于变更数据捕获之前，请配置以下标识符：
+在将关系模式用于变更数据捕获之前，请配置以下标识符：
 
 * 用主键唯一地标识每个记录。
 * 使用版本标识符按顺序应用更新。
@@ -59,9 +63,9 @@ Data Mirror使用基于模型的架构来扩展变更数据捕获并启用高级
 
 ### 工作流 {#workflow}
 
-要使用基于模型的架构启用变更数据捕获，请执行以下操作：
+要启用关系模式的变更数据捕获，请执行以下操作：
 
-1. 创建基于模型的架构。
+1. 创建关系架构。
 2. 添加所需的描述符：
    * [主键描述符](../../../xdm/api/descriptors.md#primary-key-descriptor)
    * [版本描述符](../../../xdm/api/descriptors.md#version-descriptor)
@@ -76,13 +80,13 @@ Data Mirror使用基于模型的架构来扩展变更数据捕获并启用高级
 
 >[!IMPORTANT]
 >
->**需要数据删除计划**。 所有使用基于模型的架构的应用程序都必须先了解删除后果，然后才能实施变更数据捕获。 规划删除操作将如何影响相关数据集、合规性要求和下游流程。 有关指导，请参阅[数据卫生注意事项](../../../hygiene/ui/record-delete.md#model-based-record-delete)。
+>**需要数据删除计划**。 在实施变更数据捕获之前，所有使用关系模式的应用程序都必须了解删除后果。 规划删除操作将如何影响相关数据集、合规性要求和下游流程。 有关指导，请参阅[数据卫生注意事项](../../../hygiene/ui/record-delete.md#relational-record-delete)。
 
 ## 为基于文件的源提供更改数据 {#file-based-sources}
 
 >[!IMPORTANT]
 >
->基于文件的变更数据捕获需要具有基于模型的架构的Data Mirror。 在执行以下文件格式设置步骤之前，请确保您已完成本文档前面所述的[Data Mirror设置工作流](#workflow)。 以下步骤描述了如何格式化数据文件，以包含Data Mirror将处理的更改跟踪信息。
+>基于文件的变更数据捕获要求使用具有关系架构的Data Mirror。 在执行以下文件格式设置步骤之前，请确保您已完成本文档前面所述的[Data Mirror设置工作流](#workflow)。 以下步骤描述了如何格式化数据文件，以包含Data Mirror将处理的更改跟踪信息。
 
 对于基于文件的源（[!DNL Amazon S3]、[!DNL Azure Blob]、[!DNL Google Cloud Storage]和[!DNL SFTP]），请在文件中包含`_change_request_type`列。
 
@@ -115,7 +119,7 @@ Data Mirror使用基于模型的架构来扩展变更数据捕获并启用高级
 
 ### [!DNL Azure Databricks]
 
-若要将变更数据捕获与[!DNL Azure Databricks]一起使用，您必须在源表中启用&#x200B;**变更数据馈送**，并在Experience Platform中使用基于模型的架构配置Data Mirror。
+若要通过[!DNL Azure Databricks]使用变更数据捕获，您必须在源表中启用&#x200B;**变更数据馈送**，并在Experience Platform中通过relational schema配置Data Mirror。
 
 使用以下命令在表上启用更改数据馈送：
 
@@ -152,7 +156,7 @@ set spark.databricks.delta.properties.defaults.enableChangeDataFeed = true;
 
 ### [!DNL Data Landing Zone]
 
-若要将变更数据捕获与[!DNL Data Landing Zone]一起使用，您必须在源表中启用&#x200B;**变更数据馈送**，并在Experience Platform中使用基于模型的架构配置Data Mirror。
+若要通过[!DNL Data Landing Zone]使用变更数据捕获，您必须在源表中启用&#x200B;**变更数据馈送**，并在Experience Platform中通过relational schema配置Data Mirror。
 
 请阅读以下文档，以了解如何为[!DNL Data Landing Zone]源连接启用更改数据捕获的步骤：
 
@@ -161,11 +165,11 @@ set spark.databricks.delta.properties.defaults.enableChangeDataFeed = true;
 
 ### [!DNL Google BigQuery]
 
-要对[!DNL Google BigQuery]使用变更数据捕获，您必须在源表中启用变更历史记录，并在Experience Platform中为Data Mirror配置基于模型的架构。
+要对[!DNL Google BigQuery]使用变更数据捕获，您必须在源表中启用变更历史记录，并在Experience Platform中用“关系架构”配置Data Mirror。
 
 要在[!DNL Google BigQuery]源连接中启用更改历史记录，请在[!DNL Google BigQuery]控制台中导航到您的[!DNL Google Cloud]页面，并将`enable_change_history`设置为`TRUE`。 此属性启用数据表的更改历史记录。
 
-有关详细信息，请阅读[&#x200B; [!DNL GoogleSQL]中](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language#table_option_list)数据定义语言语句的指南。
+有关详细信息，请阅读[ [!DNL GoogleSQL]中](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language#table_option_list)数据定义语言语句的指南。
 
 请阅读以下文档，以了解如何为[!DNL Google BigQuery]源连接启用更改数据捕获的步骤：
 
@@ -174,7 +178,7 @@ set spark.databricks.delta.properties.defaults.enableChangeDataFeed = true;
 
 ### [!DNL Snowflake]
 
-若要通过[!DNL Snowflake]使用变更数据捕获，您必须在源表中启用&#x200B;**变更跟踪**，并在Experience Platform中为Data Mirror配置基于模型的架构。
+若要将变更数据捕获与[!DNL Snowflake]一起使用，您必须在源表中启用&#x200B;**变更跟踪**，并在Experience Platform中使用relational schema配置Data Mirror。
 
 在[!DNL Snowflake]中，通过使用`ALTER TABLE`并将`CHANGE_TRACKING`设置为`TRUE`来启用更改跟踪。
 

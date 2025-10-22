@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2025 年 8 月）
 description: Adobe Experience Platform 的 2025 年 8 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: fe8456823d0e7f1b60ea647e044747cfee4bc4c5
+source-git-commit: 96b9fcd8bfb4ff62eb9d4adce2e486782d918344
 workflow-type: tm+mt
-source-wordcount: '1614'
-ht-degree: 86%
+source-wordcount: '1610'
+ht-degree: 80%
 
 ---
 
@@ -48,7 +48,7 @@ Adobe Experience Platform Agent Orchestrator 是 Adobe Experience Platform 中�
 
 ## 警报 {#alerts}
 
-Experience Platform 允许您订阅各种 Experience Platform 活动的基于事件的警报。您可以通过 Experience Platform 用户界面中的[!UICONTROL 警报]选项卡订阅不同的警报规则，并可以选择在用户界面内或通过电子邮件通知接收警报消息。
+Experience Platform 允许您订阅各种 Experience Platform 活动的基于事件的警报。您可以通过Experience Platform用户界面的[!UICONTROL Alerts]选项卡订阅各种警报规则，并且可以选择在UI中或通过电子邮件通知接收警报消息。
 
 **新增功能**
 
@@ -70,14 +70,14 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 | --- | --- |
 | [!BADGE Beta]{type=Informative} [[!DNL Snowflake Batch]](../../destinations/catalog/cloud-storage/snowflake-batch.md)连接器 | 现在提供一种新的 [!DNL Snowflake Batch] 连接器，可为特定用例提供一种流传输连接器的替代方法。 |
 | 支持 [[!DNL Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md) 加密 | 现在，您可以附加 RSA 格式的公钥来加密导出的文件，这为您的敏感信息提供了与其他云存储目标所提供的相同安全等级。 |
-| [[!DNL Pinterest]](../../destinations/catalog/advertising/pinterest.md) 目标的身份验证有效期限详细信息 | 现在，您可以直接在 Experience Platform 界面中查看关于 [!DNL Pinterest] 目标的身份验证到期的信息，您可以查看您的身份验证何时到期，在因其而导致您的数据流中断之前将其更新。您可以从&#x200B;**[[!UICONTROL 帐户]](../../destinations/ui/destinations-workspace.md#accounts)**&#x200B;或&#x200B;**[[!UICONTROL 浏览]](../../destinations/ui/destinations-workspace.md#browse)**&#x200B;选项卡中的&#x200B;**[!UICONTROL 帐户到期日期]**&#x200B;列监控您的令牌到期日期。 |
+| [[!DNL Pinterest]](../../destinations/catalog/advertising/pinterest.md) 目标的身份验证有效期限详细信息 | 现在，您可以直接在 Experience Platform 界面中查看关于 [!DNL Pinterest] 目标的身份验证到期的信息，您可以查看您的身份验证何时到期，在因其而导致您的数据流中断之前将其更新。您可以从&#x200B;**[!UICONTROL Account expiration date]**&#x200B;或&#x200B;**[[!UICONTROL Accounts]](../../destinations/ui/destinations-workspace.md#accounts)**&#x200B;选项卡中的&#x200B;**[[!UICONTROL Browse]](../../destinations/ui/destinations-workspace.md#browse)**&#x200B;列监视令牌过期日期。 |
 
 **新增或更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 增强了 Experience Platform UI 中的目标管理功能 | 通过[[!UICONTROL 浏览]](../../destinations/ui/destinations-workspace.md#browse)和[[!UICONTROL 帐户]](../../destinations/ui/destinations-workspace.md#accounts)选项卡中新增的排序功能改进您的目标管理工作流。现在，您还可以在帐户身份验证即将过期时看到一个指示器。<br> ![](../../destinations/assets/ui/workspace/expired-accounts.png){width="100" zoomable="yes"} |
-| 永久性列宽设置 | 现在，当您离开一个页面之后又重新返回该页面时，列宽设置会保留。例如，如果您在[[!UICONTROL 浏览]](../../destinations/ui/destinations-workspace.md#browse)选项卡中调整了列宽，当您离开此选项卡之后又再返回时，您自定义的列宽将保持不变。 |
+| 增强了 Experience Platform UI 中的目标管理功能 | 通过[[!UICONTROL Browse]](../../destinations/ui/destinations-workspace.md#browse)和[[!UICONTROL Accounts]](../../destinations/ui/destinations-workspace.md#accounts)选项卡中的新排序功能改进目标管理工作流。 现在，您还可以在帐户身份验证即将过期时看到一个指示器。<br> ![](../../destinations/assets/ui/workspace/expired-accounts.png){width="100" zoomable="yes"} |
+| 永久性列宽设置 | 现在，当您离开一个页面之后又重新返回该页面时，列宽设置会保留。例如，如果在[[!UICONTROL Browse]](../../destinations/ui/destinations-workspace.md#browse)选项卡中调整了列宽，则当您离开并返回该选项卡时，自定义列宽将保持不变。 |
 
 有关更多信息，请阅读[目标概述](../../destinations/home.md)。
 
@@ -89,8 +89,8 @@ XDM 是一种开源规范，可为导入 Experience Platform 的数据提供常�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 基于模型的架构 | 使用基于模型的架构简化您的数据建模。现在，您可以通过全面的操作示例和指导更轻松地创建架构。此功能目前可供营销活动编排许可证持有者使用，未来将扩展到 GA 的数据蒸馏器客户，使数据建模更易于访问、更高效。此功能包括对时间序列数据和变更数据捕获功能的支持。 |
-| Data Mirror | 使用基于模型的架构，将行级更改从云数据仓库(例如Snowflake、Databricks、BigQuery)摄取到Adobe Experience Platform中。 Data Mirror通过直接将现有数据库结构镜像到数据湖，消除了上游ETL并保留关系、版本控制和删除。 支持具有更改数据捕获功能的时间系列和记录事件模式行为。 此功能目前可供Campaign Orchestration许可证持有人使用，并将在这一有限版本中扩展，包括Customer Journey Analytics客户。 有关更多详细信息，请参阅[Data Mirror文档](../../xdm/data-mirror/overview.md)。 请联系您的Adobe代表以获取访问权限。 |
+| 关系架构 | 使用关系架构（以前称为基于模型的架构）简化数据建模。 现在，您可以通过全面的操作示例和指导更轻松地创建架构。此功能目前可供营销活动编排许可证持有者使用，未来将扩展到 GA 的数据蒸馏器客户，使数据建模更易于访问、更高效。此功能包括对时间序列数据和变更数据捕获功能的支持。 |
+| Data Mirror | 使用关系架构将行级更改从云数据仓库(例如Snowflake、Databricks、BigQuery)摄取到Adobe Experience Platform。 Data Mirror通过直接将现有数据库结构镜像到数据湖，消除了上游ETL并保留关系、版本控制和删除。 支持具有更改数据捕获功能的时间系列和记录事件模式行为。 此功能目前可供Campaign Orchestration许可证持有人使用，并将在这一有限版本中扩展，包括Customer Journey Analytics客户。 有关更多详细信息，请参阅[Data Mirror文档](../../xdm/data-mirror/overview.md)。 请联系您的Adobe代表以获取访问权限。 |
 
 有关详细信息，请参阅 [XDM 概述](../../xdm/home.md)。
 

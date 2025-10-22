@@ -5,10 +5,10 @@ breadcrumb-title: 体验数据模型 (XDM) 指南
 user-guide-description: 浏览 Experience Platform 中的体验数据模型 (XDM) 系统概述，并了解如何使用类和架构字段组使体验数据标准化。
 feature: Schemas
 role: Developer
-source-git-commit: f6e63f3fe390c1e47347015e873282719508a0ec
+source-git-commit: 57981d2e4306b2245ce0c1cdd9f696065c508a1d
 workflow-type: tm+mt
-source-wordcount: '708'
-ht-degree: 48%
+source-wordcount: '707'
+ht-degree: 20%
 
 ---
 
@@ -21,7 +21,7 @@ ht-degree: 48%
    * [数据建模的最佳实践](schema/best-practices.md)
    * [敏感数据和个人数据](./schema/sensitive-and-personal-data.md)
    * [XDM字段类型约束](schema/field-constraints.md)
-   * [基于模型的架构](./schema/model-based.md)
+   * [关系架构](./schema/relational.md)
    * [XDM中的命名空间](./schema/namespaces.md)
    * 行业数据模型 {#industries}
       * [概述](./schema/industries/overview.md)
@@ -88,49 +88,49 @@ ht-degree: 48%
    * [提供商](./classes/provider.md)
    * [区段定义](./classes/segment-definition.md)
    * B2B 类 {#b2b}
-      * [XDM 业务帐户](./classes/b2b/business-account.md)
-      * [XDM 业务帐户人员关系](./classes/b2b/business-account-person-relation.md)
-      * [XDM 商业营销活动](./classes/b2b/business-campaign.md)
-      * [XDM 商业营销活动成员](./classes/b2b/business-campaign-members.md)
-      * [XDM 商业机会](./classes/b2b/business-opportunity.md)
-      * [XDM 业务机会人员关系](./classes/b2b/business-opportunity-person-relation.md)
-      * [XDM 商业营销列表](./classes/b2b/business-marketing-list.md)
-      * [XDM 商业营销列表成员](./classes/b2b/business-marketing-list-members.md)
+      * [XDM业务帐户](./classes/b2b/business-account.md)
+      * [XDM业务帐户人员关系](./classes/b2b/business-account-person-relation.md)
+      * [XDM商业营销活动](./classes/b2b/business-campaign.md)
+      * [XDM商业营销活动成员](./classes/b2b/business-campaign-members.md)
+      * [XDM商业机会](./classes/b2b/business-opportunity.md)
+      * [XDM业务机会人员关系](./classes/b2b/business-opportunity-person-relation.md)
+      * [XDM业务营销列表](./classes/b2b/business-marketing-list.md)
+      * [XDM商业营销列表成员](./classes/b2b/business-marketing-list-members.md)
 * 字段组 {#field-groups}
    * XDM 个人轮廓 {#profile}
       * [同意和偏好设置](./field-groups/profile/consents.md)
       * [人口统计详细信息](./field-groups/profile/demographic-details.md)
       * [医疗保健成员详细信息](./field-groups/profile/healthcare-member-details.md)
-      * [IAB TCF 2.0 同意](./field-groups/profile/iab.md)
-      * [IdentityMap](./field-groups/profile/identitymap.md)
+      * [IAB TCF 2.0同意](./field-groups/profile/iab.md)
+      * [Identitymap](./field-groups/profile/identitymap.md)
       * [忠诚度详细信息](./field-groups/profile/loyalty-details.md)
       * [个人联系人详细信息](./field-groups/profile/personal-contact-details.md)
       * [配置文件合作伙伴扩充（示例）](./field-groups/profile/profile-partner-enrichment.md)
       * [区段成员资格详细信息](./field-groups/profile/segmentation.md)
       * [电信订阅](./field-groups/profile/telecom-subscription.md)
       * [工作联系人详细信息](./field-groups/profile/work-contact-details.md)
-      * [XDM 业务人员组件](./field-groups/profile/business-person-components.md)
-      * [XDM 业务人员详细信息](./field-groups/profile/business-person-details.md)
+      * [XDM业务人员组件](./field-groups/profile/business-person-components.md)
+      * [XDM业务人员详细信息](./field-groups/profile/business-person-details.md)
    * XDM单个潜在客户配置文件 {#prospect-profile}
       * [Partner Prospect详细信息（示例）](./field-groups/prospect-profile/partner-prospect-details.md)
    * XDM ExperienceEvent {#event}
       * [Adobe Analytics完整扩展](./field-groups/event/analytics-full-extension.md)
       * [Adobe Advertising Cloud完整扩展](./field-groups/event/advertising-full-extension.md)
-      * [广告详细信息](./field-groups/event/advertising-details.md)
+      * [Advertising详细信息](./field-groups/event/advertising-details.md)
       * [应用程序详细信息](./field-groups/event/application-details.md)
       * [余额转帐](./field-groups/event/balance-transfers.md)
       * [机器人检测](./field-groups/event/bot-detection-information.md)
       * [营销活动详细信息](./field-groups/event/campaign-marketing-details.md)
-      * [卡操作](./field-groups/event/card-actions.md)
+      * [信息卡操作](./field-groups/event/card-actions.md)
       * [渠道详细信息](./field-groups/event/channel-details.md)
-      * [商业详细信息](./field-groups/event/commerce-details.md)
+      * [Commerce详细信息](./field-groups/event/commerce-details.md)
       * [存款明细](./field-groups/event/deposit-details.md)
       * [设备以旧换新详细信息](./field-groups/event/device-trade-in-details.md)
       * [餐饮预订](./field-groups/event/dining-reservation.md)
-      * [最终用户 ID 详细信息](./field-groups/event/enduserids.md)
+      * [最终用户ID详细信息](./field-groups/event/enduserids.md)
       * [环境详细信息](./field-groups/event/environment-details.md)
       * [航班预订](./field-groups/event/flight-reservation.md)
-      * [IAB TCF 2.0 同意](./field-groups/event/iab.md)
+      * [IAB TCF 2.0同意](./field-groups/event/iab.md)
       * [住宿预订](./field-groups/event/lodging-reservation.md)
       * [MediaAnalytics交互详细信息](./field-groups/event/mediaanalytics-interaction.md)
       * [报价请求详细信息](./field-groups/event/quote-request-details.md)
@@ -139,10 +139,10 @@ ht-degree: 48%
       * [支持站点搜索](./field-groups/event/support-site-search.md)
       * [升级详细信息](./field-groups/event/upgrade-details.md)
       * [追加销售详细信息](./field-groups/event/upsell-details.md)
-      * [Web 详细信息](./field-groups/event/web-details.md)
-   * XDM 商业营销活动 {#b2b-campaign}
-      * [XDM 商业营销活动详细信息](./field-groups/b2b-campaign/details.md)
-   * XDM 商业营销活动成员 {#b2b-campaign-members}
+      * [Web详细信息](./field-groups/event/web-details.md)
+   * XDM商业营销活动 {#b2b-campaign}
+      * [XDM商业营销活动详细信息](./field-groups/b2b-campaign/details.md)
+   * XDM商业营销活动成员 {#b2b-campaign-members}
       * [XDM商业营销活动成员详细信息](./field-groups/b2b-campaign-members/details.md)
    * 药物 {#medication}
       * [保健药物](./field-groups/medication/healthcare-medication.md)
@@ -154,7 +154,7 @@ ht-degree: 48%
    * 提供商 {#provider}
       * [医疗保健提供商](./field-groups/provider/healthcare-provider.md)
    * 共享 {#shared}
-      * [外部源系统审计详细信息](./field-groups/shared/external-source-system-audit-details.md)
+      * [外部Source系统审核详细信息](./field-groups/shared/external-source-system-audit-details.md)
    * [字段组名称更新](./field-groups/name-updates.md)
 * 数据类型 {#data-types}
    * [帐户详细信息](./data-types/account-details.md)
@@ -165,7 +165,7 @@ ht-degree: 48%
    * [Advertising面板详细信息收藏集](./data-types/advertising-pod-details-collection.md)
    * [Advertising Pod详细信息报表](./data-types/advertising-pod-details-reporting.md)
    * [应用程序](./data-types/application.md)
-   * [B2B 源](./data-types/b2b-source.md)
+   * [B2B Source](./data-types/b2b-source.md)
    * [信标](./data-types/beacon.md)
    * [浏览器详细信息](./data-types/browser-details.md)
    * [购物车](./data-types/cart.md)
@@ -183,18 +183,18 @@ ht-degree: 48%
    * [电子邮件地址](./data-types/email-address.md)
    * [环境](./data-types/environment.md)
    * [错误详细信息集合](./data-types/error-details-collection.md)
-   * [体验频道](./data-types/experience-channel.md)
-   * [外部源系统审计属性](./data-types/external-source-system-audit-attributes.md)
+   * [体验渠道](./data-types/experience-channel.md)
+   * [外部Source系统审核属性](./data-types/external-source-system-audit-attributes.md)
    * [财务帐户](./data-types/financial-account.md)
    * [通用同意字段](./data-types/consent-field.md)
    * [具有订阅的通用营销偏好设置字段](./data-types/marketing-field-subscriptions.md)
    * [通用营销偏好设置字段](./data-types/marketing-field.md)
-   * [通用个性化偏好设置字段](./data-types/personalization-field.md)
-   * [圆形地理区域](./data-types/geo-circle.md)
+   * [通用Personalization首选项字段](./data-types/personalization-field.md)
+   * [地理圈](./data-types/geo-circle.md)
    * [地理坐标](./data-types/geo-coordinates.md)
    * [地理形状](./data-types/geo-shape.md)
    * [地理位置交互详细信息](./data-types/geo-interaction-details.md)
-   * [地理](./data-types/geo.md)
+   * [地域](./data-types/geo.md)
    * [身份标识](./data-types/identity.md)
    * [实施详细信息](./data-types/implementation-details.md)
    * [展示次数](./data-types/impressions.md)
@@ -227,14 +227,14 @@ ht-degree: 48%
    * [搜索](./data-types/search.md)
    * [会话详细信息集合](./data-types/session-details-collection.md)
    * [会话详细信息报告](./data-types/session-details-reporting.md)
-   * [运输](./data-types/shipping.md)
+   * [配送](./data-types/shipping.md)
    * [订阅](./data-types/subscription.md)
    * [电信订阅](./data-types/telecom-subscription.md)
    * [交易](./data-types/transaction.md)
    * [Web信息](./data-types/web-information.md)
-   * [Web 交互](./data-types/web-interaction.md)
+   * [Web交互](./data-types/web-interaction.md)
    * [网页详细信息](./data-types/webpage-details.md)
-* [!UICONTROL 架构] UI {#ui}
+* [!UICONTROL Schemas] UI {#ui}
    * [概述](./ui/overview.md)
    * [浏览XDM资源](./ui/explore.md)
    * 创建和编辑资源 {#resources}

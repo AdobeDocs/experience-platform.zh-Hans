@@ -5,7 +5,7 @@ title: 使用流服务API为云存储源创建数据流
 type: Tutorial
 description: 本教程涵盖了从第三方云存储检索数据，以及使用源连接器和API将数据引入Experience Platform的步骤。
 exl-id: 95373c25-24f6-4905-ae6c-5000bf493e6f
-source-git-commit: 02a22362b9ecbfc5fd7fcf17dc167309a0ea45d5
+source-git-commit: 2ad0ffba128e8c51f173d24d4dd2404b9cbbb59a
 workflow-type: tm+mt
 source-wordcount: '1834'
 ht-degree: 2%
@@ -101,7 +101,7 @@ curl -X POST \
 | `data.properties.compressionType` | （可选）一个属性，定义用于摄取的压缩文件类型。 支持的压缩文件类型为： `bzip2`、`gzip`、`deflate`、`zipDeflate`、`tarGzip`和`tar`。 **注意**： `compressionType`属性只能在引入分隔文件或JSON文件时使用。 |
 | `params.path` | 您正在访问的源文件的路径。 此参数指向单个文件或整个文件夹。  **注意**：您可以使用星号代替文件名来指定整个文件夹的摄取。 例如： `/acme/summerCampaign/*.csv`将摄取整个`/acme/summerCampaign/`文件夹。 |
 | `params.type` | 您正在摄取的源数据文件的文件类型。 使用类型`file`摄取单个文件，使用类型`folder`摄取整个文件夹。 |
-| `params.cdcEnabled` | 一个布尔值，指示是否启用更改历史记录捕获。 与基于模型的架构一起使用时，变更数据捕获依赖于`_change_request_type`控件列(`u` — upsert， `d` — delete)，该列在引入期间进行计算，但未存储在目标架构中。 以下云存储源支持此属性： <ul><li>[!DNL Azure Blob]</li><li>[!DNL Data Landing Zone]</li><li>[!DNL Google Cloud Storage]</li><li>[!DNL SFTP]</li></ul>有关此功能的概述，请参阅[Data Mirror概述](../../../../xdm/data-mirror/overview.md)。 有关实施详细信息，请阅读有关在源[中使用](../change-data-capture.md)更改数据捕获的指南[基于模型的架构技术参考](../../../../xdm/schema/model-based.md)。 |
+| `params.cdcEnabled` | 一个布尔值，指示是否启用更改历史记录捕获。 在与关系架构一起使用时，变更数据捕获依赖于`_change_request_type`控件列(`u` — upsert， `d` — delete)，该列在引入期间进行评估，但未存储在目标架构中。 以下云存储源支持此属性： <ul><li>[!DNL Azure Blob]</li><li>[!DNL Data Landing Zone]</li><li>[!DNL Google Cloud Storage]</li><li>[!DNL SFTP]</li></ul>有关此功能的概述，请参阅[Data Mirror概述](../../../../xdm/data-mirror/overview.md)。 有关实现详细信息，请阅读在源[中使用](../change-data-capture.md)更改数据捕获的指南[关系架构技术参考](../../../../xdm/schema/relational.md)。 |
 | `connectionSpec.id` | 与特定云存储源关联的连接规范ID。 有关连接规范ID的列表，请参阅[附录](#appendix)。 |
 
 **响应**

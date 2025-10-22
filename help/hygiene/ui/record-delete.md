@@ -2,16 +2,16 @@
 title: 记录删除请求（UI工作流）
 description: 了解如何在Adobe Experience Platform UI中删除记录。
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
-source-git-commit: a25187339a930f7feab4a1e0059bc9ac09f1a707
+source-git-commit: 83aed6a79d47ee4043a8303ec8f8c8c20482e12a
 workflow-type: tm+mt
-source-wordcount: '2420'
-ht-degree: 5%
+source-wordcount: '2383'
+ht-degree: 6%
 
 ---
 
 # 记录删除请求（UI工作流） {#record-delete}
 
-使用[[!UICONTROL 数据生命周期]工作区](./overview.md)根据记录的主要标识删除Adobe Experience Platform中的记录。 这些记录可以绑定到个人消费者或身份图中包含的任何其他实体。
+使用[[!UICONTROL Data Lifecycle]工作区](./overview.md)根据记录的主要身份删除Adobe Experience Platform中的记录。 这些记录可以绑定到个人消费者或身份图中包含的任何其他实体。
 
 >[!IMPORTANT]
 >
@@ -31,35 +31,35 @@ ht-degree: 5%
 
 ## 创建请求 {#create-request}
 
-要开始此过程，请在Experience Platform UI的左侧导航中选择&#x200B;**[!UICONTROL 数据生命周期]**。 出现[!UICONTROL 数据生命周期请求]工作区。 接下来，从工作区的主页中选择&#x200B;**[!UICONTROL 创建请求]**。
+要开始此过程，请在Experience Platform UI的左侧导航中选择&#x200B;**[!UICONTROL Data Lifecycle]**。 出现[!UICONTROL Data lifecycle requests]工作区。 接下来，从工作区的主页中选择&#x200B;**[!UICONTROL Create request]**。
 
-![已选择[!UICONTROL 创建请求]的[!UICONTROL 数据生命周期请求]工作区。](../images/ui/record-delete/create-request-button.png)
+![已选择[!UICONTROL Data lifecycle requests]的[!UICONTROL Create request]工作区。](../images/ui/record-delete/create-request-button.png)
 
-此时将显示请求创建工作流。 默认情况下，**[!UICONTROL 请求的操作]**&#x200B;部分下选择了&#x200B;**[!UICONTROL 删除记录]**&#x200B;选项。 保持选中此选项。
+此时将显示请求创建工作流。 默认情况下，**[!UICONTROL Delete record]**&#x200B;部分下的&#x200B;**[!UICONTROL Requested Action]**&#x200B;选项处于选中状态。 保持选中此选项。
 
 >[!IMPORTANT]
 > 
 >为了提高效率并降低数据集操作的成本，已迁移到Delta格式的组织可以从Identity Service、实时客户档案和数据湖中删除数据。 此类型的用户称为增量迁移。 已增量迁移的组织中的用户可以选择删除单个或所有数据集的记录。 来自未经历增量迁移的组织中的用户无法从单个数据集或所有数据集中有选择地删除记录，如下图所示。 在这种情况下，请继续指南的[提供标识](#provide-identities)部分。
 
-![选择并突出显示[!UICONTROL 删除记录]选项的请求创建工作流。](../images/ui/record-delete/delete-record.png)
+![已选择并突出显示[!UICONTROL Delete record]选项的请求创建工作流。](../images/ui/record-delete/delete-record.png)
 
 ## 选择数据集 {#select-dataset}
 
 下一步是确定要从单个数据集还是从所有数据集删除记录。 数据集选择选项可能不可用，具体取决于您组织的配置。 如果未看到此选项，请继续阅读指南的[提供标识](#provide-identities)部分。
 
-在&#x200B;**[!UICONTROL 记录详细信息]**&#x200B;部分中，选择一个单选按钮以选择特定数据集或所有数据集。
+在&#x200B;**[!UICONTROL Record Details]**&#x200B;部分中，选择一个单选按钮以选择特定数据集或所有数据集。
 
-若要从特定数据集删除，请选择&#x200B;**[!UICONTROL 选择数据集]**，然后选择数据库图标（![数据库图标](/help/images/icons/database.png)）。 在显示的对话框中，选择一个数据集，然后选择&#x200B;**[!UICONTROL 完成]**&#x200B;以进行确认。
+若要从特定数据集中删除，请选择&#x200B;**[!UICONTROL Select dataset]**，然后选择数据库图标（![数据库图标](/help/images/icons/database.png)）。 在显示的对话框中，选择一个数据集并选择要确认的&#x200B;**[!UICONTROL Done]**。
 
-![包含选定数据集并突出显示[!UICONTROL 完成]的[!UICONTROL 选择数据集]对话框。](../images/ui/record-delete/select-dataset.png)
+![包含选定数据集并突出显示[!UICONTROL Select dataset]的[!UICONTROL Done]对话框。](../images/ui/record-delete/select-dataset.png)
 
-要从所有数据集删除，请选择&#x200B;**[!UICONTROL 所有数据集]**。 此选项会增加操作的范围，并要求您提供所有相关标识类型。
+要从所有数据集中删除，请选择&#x200B;**[!UICONTROL All datasets]**。 此选项会增加操作的范围，并要求您提供所有相关标识类型。
 
-![已选择[!UICONTROL 所有数据集]选项的[!UICONTROL 选择数据集]对话框。](../images/ui/record-delete/all-datasets.png)
+![已选择带有[!UICONTROL Select dataset]选项的[!UICONTROL All datasets]对话框。](../images/ui/record-delete/all-datasets.png)
 
 >[!WARNING]
 >
->选择&#x200B;**[!UICONTROL 所有数据集]**&#x200B;会将操作扩展到组织中的所有数据集。 每个数据集可能使用不同的主标识类型。 您必须提供&#x200B;**所有必需的标识类型**&#x200B;以确保准确匹配。
+>选择&#x200B;**[!UICONTROL All datasets]**&#x200B;会将此操作扩展到组织中的所有数据集。 每个数据集可能使用不同的主标识类型。 您必须提供&#x200B;**所有必需的标识类型**&#x200B;以确保准确匹配。
 >
 >如果缺少任何标识类型，则在删除过程中可能会跳过某些记录。 这可能会降低处理速度，并导致&#x200B;**部分结果**。
 
@@ -86,7 +86,7 @@ Experience Platform中的每个数据集仅支持一种主要身份类型。
 
 >[!TIP]
 >
->如果您不知道特定数据集的身份命名空间，则可以在Experience Platform UI中找到它。 在&#x200B;**[!UICONTROL 数据集]**&#x200B;工作区中，从列表中选择相关数据集。 在数据集的详细信息页面上，将鼠标悬停在右边栏中数据集架构的名称上。 身份命名空间与架构名称和描述一起显示。
+>如果您不知道特定数据集的身份命名空间，则可以在Experience Platform UI中找到它。 在&#x200B;**[!UICONTROL Datasets]**&#x200B;工作区中，从列表中选择有问题的数据集。 在数据集的详细信息页面上，将鼠标悬停在右边栏中数据集架构的名称上。 身份命名空间与架构名称和描述一起显示。
 >
 >![已选定数据集的数据集仪表板，并从数据集详细信息面板中打开了架构对话框。 数据集的主ID已突出显示。](../images/ui/record-delete/dataset-primary-identity.png)
 
@@ -97,7 +97,7 @@ Experience Platform中的每个数据集仅支持一种主要身份类型。
 
 ### 上传JSON文件 {#upload-json}
 
-要上传JSON文件，可以将文件拖放到提供的区域，或选择&#x200B;**[!UICONTROL 选择文件]**&#x200B;以浏览并从本地目录中选择。
+要上传JSON文件，您可以将该文件拖放到提供的区域，或选择&#x200B;**[!UICONTROL Choose files]**&#x200B;以浏览并从本地目录中选择。
 
 ![请求创建工作流中突出显示了用于上传JSON文件的选择文件和拖放界面。](../images/ui/record-delete/upload-json.png)
 
@@ -125,15 +125,15 @@ JSON文件必须格式化为一组对象，每个对象表示一个标识。
 
 ### 手动输入身份 {#manual-identity}
 
-要手动输入身份，请选择&#x200B;**[!UICONTROL 添加身份]**。
+要手动输入身份，请选择&#x200B;**[!UICONTROL Add identity]**。
 
-![突出显示了[!UICONTROL 添加身份]选项的请求创建工作流。](../images/ui/record-delete/add-identity.png)
+![突出显示了[!UICONTROL Add identity]选项的请求创建工作流。](../images/ui/record-delete/add-identity.png)
 
-显示的控件允许您一次输入一个身份。 在&#x200B;**[!UICONTROL 身份命名空间]**&#x200B;下，使用下拉菜单选择身份类型。 在&#x200B;**[!UICONTROL 主标识值]**&#x200B;下，提供记录的标识命名空间值。
+显示的控件允许您一次输入一个身份。 在&#x200B;**[!UICONTROL identity namespace]**&#x200B;下，使用下拉菜单选择身份类型。 在&#x200B;**[!UICONTROL Primary Identity Value]**&#x200B;下，提供记录的身份命名空间值。
 
 ![手动添加了具有标识字段的请求创建工作流。](../images/ui/record-delete/identity-added.png)
 
-要添加更多标识，请选择加号图标(![A加号图标。](/help/images/icons/tree-expand-all.png))，或选择&#x200B;**[!UICONTROL 添加标识]**。
+要添加更多标识，请选择加号图标(![A加号图标。](/help/images/icons/tree-expand-all.png))，或选择&#x200B;**[!UICONTROL Add identity]**。
 
 ![加号图标和添加身份图标突出显示的请求创建工作流。](../images/ui/record-delete/more-identities.png)
 
@@ -185,29 +185,33 @@ JSON文件必须格式化为一组对象，每个对象表示一个标识。
 
 ## 提交请求 {#submit}
 
-完成向请求添加身份后，在&#x200B;**[!UICONTROL 请求设置]**&#x200B;下，在选择&#x200B;**[!UICONTROL 提交]**&#x200B;之前，提供请求的名称和可选描述。
+完成向请求添加身份后，在&#x200B;**[!UICONTROL Request settings]**&#x200B;下，为请求提供名称和可选描述，然后再选择&#x200B;**[!UICONTROL Submit]**。
 
 >[!TIP]
 >
 >您通过UI每个请求最多可提交10,000个身份。 若要提交较大的卷（每个请求最多100,000个ID），请使用[API方法](../api/workorder.md#create)。
 
-![请求设置的[!UICONTROL Name]和[!UICONTROL Description]字段已突出显示[!UICONTROL Submit]。](../images/ui/record-delete/submit.png)
+![请求设置的[!UICONTROL Name]和[!UICONTROL Description]字段突出显示[!UICONTROL Submit]。](../images/ui/record-delete/submit.png)
 
-出现[!UICONTROL 确认请求]对话框，指示标识一旦删除就无法恢复。 选择&#x200B;**[!UICONTROL 提交]**&#x200B;以确认要删除其数据的标识列表。
+出现[!UICONTROL Confirm request]对话框指示标识删除后无法恢复。 选择&#x200B;**[!UICONTROL Submit]**&#x200B;以确认要删除其数据的标识列表。
 
-![[!UICONTROL 确认请求]对话框。](../images/ui/record-delete/confirm-request.png)
+![该[!UICONTROL Confirm request]对话框。](../images/ui/record-delete/confirm-request.png)
 
-提交请求后，将创建一个工作单，该工作单将出现在[!UICONTROL 数据生命周期]工作区的[!UICONTROL 记录]选项卡上。 从此处，您可以监控工作单处理请求时的状态。
+提交请求后，将创建一个工作单，该工作单将出现在[!UICONTROL Record]工作区的[!UICONTROL Data Lifecycle]选项卡上。 从此处，您可以监控工作单处理请求时的状态。
 
 >[!NOTE]
 >
 >有关执行记录删除后如何处理这些删除的详细信息，请参阅[时间线和透明度](../home.md#record-delete-transparency)的概述部分。
 
-![数据生命周期[!UICONTROL 工作区的]记录[!UICONTROL 选项卡，其中新请求突出显示。]](../images/ui/record-delete/request-log.png)
+![突出显示新请求的[!UICONTROL Record]工作区的[!UICONTROL Data Lifecycle]选项卡。](../images/ui/record-delete/request-log.png)
 
-## 从基于模型的数据集中删除记录 {#model-based-record-delete}
+## 从基于关系架构的数据集中删除记录 {#relational-record-delete}
 
-如果要删除的数据集是基于模型的架构，请查看以下注意事项，以确保正确删除记录，并且不会由于Experience Platform与源系统之间的不匹配而重新摄取记录。
+如果要从中删除的数据集基于关系架构，请查看以下注意事项，以确保正确删除记录，并且不会由于Experience Platform与源系统之间的不匹配而重新摄取记录。
+
+>[!NOTE]
+>
+>关系架构以前在Adobe Experience Platform文档的早期版本中称为基于模型的架构。 功能和删除行为保持不变。
 
 ### 记录删除行为
 
@@ -224,22 +228,22 @@ JSON文件必须格式化为一组对象，每个对象表示一个标识。
 
 ### 更改数据捕获和控制列
 
-将源用于变更数据捕获的基于模型的架构在区分删除与更新插入时可以使用`_change_request_type`控制列。 在摄取期间，使用`d`标记的记录将从数据集中删除，而使用`u`或未使用列标记的记录将被视为更新插入。 `_change_request_type`列仅在摄取时读取，并且未存储在目标架构中或映射到XDM字段。
+将源用于变更数据捕获的关系架构在区分删除与更新插入时可以使用`_change_request_type`控件列。 在摄取期间，使用`d`标记的记录将从数据集中删除，而使用`u`或未使用列标记的记录将被视为更新插入。 `_change_request_type`列仅在摄取时读取，并且未存储在目标架构中或映射到XDM字段。
 
 >[!NOTE]
 >
 >通过数据生命周期UI删除记录不会影响源系统。 要从这两个位置删除数据，请同时在Experience Platform和源中删除该数据。
 
-### 基于模型的架构的其他删除方法
+### 关系架构的其他删除方法
 
-除了标准记录删除工作流之外，基于模型的架构还支持用于特定用例的其他方法：
+除了标准记录删除工作流之外，关系架构还支持用于特定用例的其他方法：
 
 * **安全复制数据集方法**：复制生产数据集并将删除应用于副本，以进行受控测试或协调，然后再将更改应用于生产数据。
 * **仅删除批次上传**：需要删除特定记录而不影响其他数据时，请上传仅包含目标保健删除操作的文件。
 
 ### 对保健操作的描述符支持 {#descriptor-support}
 
-基于模型的架构描述符为精准卫生操作提供基本元数据：
+关系模式描述符为精确卫生操作提供基本元数据：
 
 * **主键描述符**：唯一标识目标更新或删除的记录，确保正确的记录受到影响。
 * **版本描述符**：确保按正确的时间顺序应用删除和更新，防止操作顺序混乱。
@@ -249,7 +253,7 @@ JSON文件必须格式化为一组对象，每个对象表示一个标识。
 >
 >卫生流程在数据集级别运行。 对于启用了用户档案的数据集，可能需要其他用户档案工作流来保持实时客户档案的一致性。
 
-### 基于模型的架构的计划保留
+### 关系架构的计划保留
 
 有关基于数据年龄而不是特定身份的自动卫生，请参阅[管理体验事件数据集保留(TTL)](../../catalog/datasets/experience-event-dataset-retention-ttl-guide.md)以了解数据湖中的计划行级保留。
 
@@ -257,7 +261,7 @@ JSON文件必须格式化为一组对象，每个对象表示一个标识。
 >
 >只有使用时间序列行为的数据集才支持行级到期。
 
-### 基于模型的记录删除的最佳实践
+### 关系记录删除的最佳实践
 
 要避免无意中再次摄取并维护跨系统的数据一致性，请遵循以下最佳实践：
 
@@ -265,8 +269,9 @@ JSON文件必须格式化为一组对象，每个对象表示一个标识。
 * **监视变更数据捕获流**：在Platform中删除记录后，监视数据流并确认源系统删除了相同的记录或将其与`_change_request_type = 'd'`包含在内。
 * **清理源**：对于使用完全刷新摄取的源或不支持通过更改数据捕获进行删除的源，请直接从源系统中删除记录以避免重新摄取。
 
-有关架构要求的更多详细信息，请参阅[基于模型的架构描述符要求](../../xdm/schema/model-based.md#model-based-schemas)。\
-要了解变更数据捕获如何与源一起使用，请参阅[在源中启用变更数据捕获](../../sources/tutorials/api/change-data-capture.md#using-change-data-capture-with-model-based-schemas)。
+有关架构要求的详细信息，请参阅[关系架构描述符要求](../../xdm/schema/relational.md#relational-schemas)。
+
+要了解变更数据捕获如何与源一起使用，请参阅[在源中启用变更数据捕获](../../sources/tutorials/api/change-data-capture.md#using-change-data-capture-with-relational-schemas)。
 
 ## 后续步骤
 

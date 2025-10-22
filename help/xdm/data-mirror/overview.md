@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform；数据镜像；基于模型的架构；关系架构；更改数据捕获；数据库同步；主键；关系
+keywords: Experience Platform；数据镜像；关系架构；更改数据捕获；数据库同步；主键；关系
 solution: Experience Platform
 title: Data Mirror概述
-description: 了解Data Mirror如何使用具有强制唯一性、关系和版本控制的基于模型的架构，实现从外部数据库的行级更改引入Adobe Experience Platform。
+description: 了解Data Mirror如何使用具有强制唯一性、关系和版本控制的关系架构，实现从外部数据库到Adobe Experience Platform的行级更改引入。
 badge: 有限发布版
-source-git-commit: 6ce214073f625a253fcc5bb14dfdb6a4a61e6e7b
+exl-id: bb92c77a-6c7a-47df-885a-794cf55811dd
+source-git-commit: 57981d2e4306b2245ce0c1cdd9f696065c508a1d
 workflow-type: tm+mt
-source-wordcount: '1355'
+source-wordcount: '1356'
 ht-degree: 0%
 
 ---
@@ -15,9 +16,13 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Data Mirror和基于模型的架构可供Adobe Journey Optimizer **协调的营销活动**&#x200B;许可证持有人使用。 根据您的许可证和功能启用，它们也可用作Customer Journey Analytics用户的&#x200B;**有限版本**。 请联系您的Adobe代表以获取访问权限。
+>Data Mirror和关系架构可供Adobe Journey Optimizer **协调的营销活动**&#x200B;许可证持有人使用。 根据您的许可证和功能启用，它们也可用作Customer Journey Analytics用户的&#x200B;**有限版本**。 请联系您的Adobe代表以获取访问权限。
 
-Data Mirror是一项Adobe Experience Platform功能，它允许使用基于模型的架构，将外部数据库中的行级更改引入数据湖。 它保留数据关系，强制唯一性，并支持版本控制，而无需上游提取、转换、加载(ETL)过程。
+>[!NOTE]
+>
+>关系架构以前在Adobe Experience Platform文档的早期版本中称为基于模型的架构。 功能保持不变。
+
+Data Mirror是一项Adobe Experience Platform功能，允许使用关系架构将外部数据库中的行级更改引入数据湖。 它保留数据关系，强制唯一性，并支持版本控制，而无需上游提取、转换、加载(ETL)过程。
 
 使用Data Mirror将外部系统（如[!DNL Snowflake]、[!DNL Databricks]或[!DNL BigQuery]）的插入、更新和删除（可变数据）直接同步到Experience Platform中。 这有助于在将数据导入Platform时保持现有数据库模型结构和数据完整性。
 
@@ -33,7 +38,7 @@ Data Mirror提供了以下基本数据库同步功能：
 
 使用Data Mirror直接从源系统中摄取更改，强制实施架构完整性，并将数据用于Analytics、Journey Orchestration和合规性工作流。 Data Mirror通过启用现有数据库模型的直接镜像，消除了复杂的上游ETL流程并加快了实施。
 
-在使用Data Mirror实施基于模型的架构时，规划删除和数据卫生要求。 在部署之前，所有应用程序都必须考虑删除操作对相关数据集、合规性工作流和下游进程的影响。
+在使用Data Mirror实施关系架构时，规划删除和数据卫生要求。 在部署之前，所有应用程序都必须考虑删除操作对相关数据集、合规性工作流和下游进程的影响。
 
 ## 先决条件 {#prerequisites}
 
@@ -42,12 +47,12 @@ Data Mirror提供了以下基本数据库同步功能：
 * [在Experience Platform UI](../ui/resources/schemas.md)或[API中创建架构](../api/schemas.md)
 * [配置云源连接](../../sources/home.md#cloud-storage)
 * [应用变更数据捕获概念](../../sources/tutorials/api/change-data-capture.md) （更新插入、删除）
-* 区分[标准](../schema/composition.md)和[基于模型的架构](../schema/model-based.md)
+* 区分[标准](../schema/composition.md)和[关系架构](../schema/relational.md)
 * [定义与描述符的结构关系](../api/descriptors.md)
 
 ### 实施要求
 
-您的Platform实例和源数据必须满足特定要求，Data Mirror才能正常运行。 Data Mirror需要&#x200B;**基于模型的架构**，这些架构是具有强制约束的灵活数据结构。 目前，Data Mirror主要处理基于模型的架构，但通过即将推出的B2B自定义对象功能（计划于2025年10月推出）支持与标准XDM架构的集成。
+您的Platform实例和源数据必须满足特定要求，Data Mirror才能正常运行。 Data Mirror需要&#x200B;**关系架构**，这些架构是具有强制约束的灵活数据结构。
 
 在所有架构中包括&#x200B;**主键和版本描述符**。 如果您使用的是时间序列架构，则还需要&#x200B;**时间戳描述符**。
 
@@ -61,17 +66,17 @@ Data Mirror提供了以下基本数据库同步功能：
 
 ### 定义架构结构
 
-创建具有所需描述符（定义架构行为和约束的元数据）的[基于模型的架构](../schema/model-based.md)。 通过UI或直接通过API，选择适合您团队工作流程的方法。
+创建具有所需描述符（定义架构行为和约束的元数据）的[关系架构](../schema/relational.md)。 通过UI或直接通过API，选择适合您团队工作流程的方法。
 
-* **UI方法**： [在架构编辑器中创建基于模型的架构](../ui/resources/schemas.md#create-model-based-schema)
-* **API方法**：[通过架构注册表API创建架构](../api/schemas.md#create-model-based-schema)
+* **UI方法**： [在架构编辑器中创建关系架构](../ui/resources/schemas.md#create-relational-schema)
+* **API方法**：[通过架构注册表API创建架构](../api/schemas.md#create-relational-schema)
 
 ### 映射关系并定义数据管理
 
 使用关系描述符定义数据集之间的连接。 跨数据集管理关系并保持数据质量。 这些任务可确保一致的联接，并支持符合数据卫生要求。
 
 * **架构关系**： [使用描述符定义数据集之间的关系](../api/descriptors.md)
-* **记录卫生**： [管理Precision记录删除](../../hygiene/ui/record-delete.md#model-based-record-delete)
+* **记录卫生**： [管理基于关系架构的数据集的Precision记录删除](../../hygiene/ui/record-delete.md#relational-record-delete)
 
 ### 配置源连接
 
@@ -93,7 +98,7 @@ Data Mirror提供了以下基本数据库同步功能：
 
 ### 关系数据建模
 
-在Data Mirror中使用[基于模型的架构](../schema/model-based.md)（也称为关系架构）来表示实体，在行级别处理插入、更新和删除，并维护数据源中存在的主键和外键关系。 此方法将关系数据建模原则引入到Experience Platform中，并确保跨数据集的结构一致性。
+在Data Mirror中使用[关系架构](../schema/relational.md)表示实体，在行级别处理插入、更新和删除，并维护数据源中存在的主键和外键关系。 此方法将关系数据建模原则引入到Experience Platform中，并确保跨数据集的结构一致性。
 
 ### 仓库到湖同步
 
@@ -121,11 +126,11 @@ Data Mirror提供了以下基本数据库同步功能：
 
 ### 数据删除和卫生要求
 
-所有使用基于模型的架构和Data Mirror的应用程序都必须了解数据删除后果。 基于模型的架构支持精确的记录级别删除，这些删除可能会影响连接数据集中的相关数据。 无论您的特定使用情形如何，这些删除功能都会影响数据完整性、法规遵从性和下游应用程序行为。 在实施之前审查[数据卫生要求](../../hygiene/ui/record-delete.md#model-based-record-delete)并规划删除方案。
+所有使用关系架构和Data Mirror的应用程序都必须了解数据删除后果。 关系架构支持精确的记录级别删除，这些删除可能会影响连接数据集中的相关数据。 无论您的特定使用情形如何，这些删除功能都会影响数据完整性、法规遵从性和下游应用程序行为。 在实施之前，查看基于关系架构[的数据集的](../../hygiene/ui/record-delete.md#relational-record-delete)数据卫生要求，并规划删除方案。
 
 ### 架构行为选择
 
-基于模型的架构默认为&#x200B;**记录行为**，用于捕获实体状态（客户、帐户等）。 如果您需要&#x200B;**时序行为**&#x200B;才能进行事件跟踪，则必须对其进行显式配置。
+关系架构默认为&#x200B;**记录行为**，用于捕获实体状态（客户、帐户等）。 如果您需要&#x200B;**时序行为**&#x200B;才能进行事件跟踪，则必须对其进行显式配置。
 
 ### 摄取方法比较
 
@@ -146,8 +151,8 @@ Data Mirror支持使用描述符的&#x200B;**一对一**&#x200B;和&#x200B;**多
 查看此概述后，您应该能够确定Data Mirror是否适合您的用例，并了解实施的要求。 要开始使用，请执行以下操作：
 
 1. **数据架构师**&#x200B;应该评估您的数据模型，以确保它支持主键、版本控制和更改跟踪功能。
-2. **业务利益相关者**&#x200B;应确认您的许可证包含基于模型的架构支持和所需的Experience Platform版本。
+2. **业务利益相关者**&#x200B;应确认您的许可证包含关系架构支持和所需的Experience Platform版本。
 3. **架构设计器**&#x200B;应该规划架构结构，以确定所需的描述符、字段关系和数据治理需求。
 4. **实施团队**&#x200B;应根据您的源系统、实时要求和操作工作流选择摄取方法。
 
-有关实施详细信息，请参阅[基于模型的架构文档](../schema/model-based.md)。
+有关实施详细信息，请参阅[关系架构文档](../schema/relational.md)。

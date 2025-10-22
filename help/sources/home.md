@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Source连接器概述
 description: Adobe Experience Platform 允许从外部源摄取数据，同时让您能够使用 Experience Platform 服务来构建、标记和增强传入数据。您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: bd5611b23740f16e41048f3bc65f62312593a075
+source-git-commit: fac942a469f61461b5a14d9be5b9a39d921c6b25
 workflow-type: tm+mt
-source-wordcount: '1696'
+source-wordcount: '1666'
 ht-degree: 12%
 
 ---
@@ -61,7 +61,7 @@ Experience Platform允许从其他Adobe应用程序(包括Adobe Analytics和Adob
 
 ### 高级企业源 {#advanced-enterprise-sources}
 
-以下源仅供[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)客户使用。
+以下源仅供[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)客户使用。
 
 | 来源 | 类别 | 摄取类型 | 云 |
 | --- | --- | --- | --- |
@@ -282,15 +282,15 @@ Experience Platform支持从第三方数据库引入数据。 有关特定源连
 
 ## 数据摄取中源的访问控制
 
-数据摄取中源的权限可在Adobe Admin Console中管理。 您可以通过特定产品配置文件中的&#x200B;**[!UICONTROL 权限]**&#x200B;选项卡来访问权限。 从&#x200B;**[!UICONTROL 编辑权限]**&#x200B;面板中，您可以通过&#x200B;**[!UICONTROL 数据摄取]**&#x200B;菜单项访问与源相关的权限。 **[!UICONTROL 查看源]**&#x200B;权限授予对&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡中的可用源和&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡中的已验证源的只读访问权限，而&#x200B;**[!UICONTROL 管理源]**&#x200B;权限授予读取、创建、编辑和禁用源的完全访问权限。
+数据摄取中源的权限可在Adobe Admin Console中管理。 您可以通过特定产品配置文件中的&#x200B;**[!UICONTROL Permissions]**&#x200B;选项卡访问权限。 从&#x200B;**[!UICONTROL Edit Permissions]**&#x200B;面板中，您可以通过&#x200B;**[!UICONTROL data ingestion]**&#x200B;菜单项访问与源相关的权限。 **[!UICONTROL View Sources]**&#x200B;权限授予对&#x200B;**[!UICONTROL Catalog]**&#x200B;选项卡中的可用源和&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡中的已验证源的只读访问权限，而&#x200B;**[!UICONTROL Manage Sources]**&#x200B;权限授予对读取、创建、编辑和禁用源的完全访问权限。
 
 下表概述了UI基于这些权限的不同组合的行为方式：
 
 | 权限级别 | 描述 |
 | ---- | ----|
-| **[!UICONTROL 查看源]** | 授予对“目录”选项卡中每种源类型以及“浏览”、“帐户”和“数据流”选项卡中的源的只读访问权限。 |
-| **[!UICONTROL 管理源]**&#x200B;时间 | 除了&#x200B;**[!UICONTROL 查看源]**&#x200B;中包含的功能外，还授予对&#x200B;**[!UICONTROL 目录]**&#x200B;中的&#x200B;**[!UICONTROL 连接Source]**&#x200B;选项和&#x200B;**[!UICONTROL 浏览]**&#x200B;中的&#x200B;**[!UICONTROL 选择数据]**&#x200B;选项的访问权限。 **[!UICONTROL 管理源]**&#x200B;还允许您启用或禁用&#x200B;**[!UICONTROL DataFlow]**&#x200B;并编辑其计划。 |
-| 关闭&#x200B;**[!UICONTROL 查看源]**&#x200B;并关闭&#x200B;**[!UICONTROL 管理源]** | 撤销对源的所有访问权限。 |
+| **[!UICONTROL View Sources]**&#x200B;于 | 授予对“目录”选项卡中每种源类型以及“浏览”、“帐户”和“数据流”选项卡中的源的只读访问权限。 |
+| **[!UICONTROL Manage Sources]**&#x200B;于 | 除了&#x200B;**[!UICONTROL View Sources]**&#x200B;中包含的函数之外，还授予对&#x200B;**[!UICONTROL Connect Source]**&#x200B;中&#x200B;**[!UICONTROL Catalog]**&#x200B;选项和&#x200B;**[!UICONTROL Select Data]**&#x200B;中&#x200B;**[!UICONTROL Browse]**&#x200B;选项的访问权限。 **[!UICONTROL Manage Sources]**&#x200B;还允许您启用或禁用&#x200B;**[!UICONTROL DataFlows]**&#x200B;并编辑其计划。 |
+| **[!UICONTROL View Sources]**&#x200B;关，**[!UICONTROL Manage Sources]**&#x200B;关 | 撤销对源的所有访问权限。 |
 
 有关通过Adobe权限授予的可用权限的详细信息，请阅读[访问控制概述](../access-control/home.md)。
 
@@ -308,11 +308,11 @@ Adobe Experience Platform中基于属性的访问控制允许管理员根据属�
 
 - 将标签应用于架构字段以定义对组织中特定架构字段的访问权限。 一旦建立了对特定架构字段的访问权限，用户将只能为他们有权访问的字段创建映射。
 - 不具有相应角色的用户将无法创建或更新包含包含无法访问架构字段的映射的数据流。 此外，未经授权的用户无法更新、删除、启用或禁用具有无法访问架构字段的现有数据流。
-- 此外，数据流在其映射、目标数据集和目标连接中必须具有完全相同的架构ID和版本。 这适用于标准XDM架构和基于模型的架构。
+- 此外，数据流在其映射、目标数据集和目标连接中必须具有完全相同的架构ID和版本。 这同时适用于标准XDM架构和关系架构。
 
 >[!NOTE]
 >
->基于模型的架构具有其他要求，包括主键和版本标识符字段。 有关详细信息，请参阅[基于模型的架构概述](../xdm/schema/model-based.md)。
+>关系架构具有其他要求，包括主键和版本标识符字段。 有关详细信息，请参阅[关系架构概述](../xdm/schema/relational.md)。
 
 有关基于属性的访问控制的详细信息，请阅读[基于属性的访问控制概述](../access-control/abac/overview.md)。
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据集UI指南
 description: 了解如何在Adobe Experience Platform用户界面中使用数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 2f8589ec58d9afe69e21f909f905a941e43f710c
+source-git-commit: 57981d2e4306b2245ce0c1cdd9f696065c508a1d
 workflow-type: tm+mt
-source-wordcount: '4497'
+source-wordcount: '4259'
 ht-degree: 4%
 
 ---
@@ -57,24 +57,24 @@ ht-degree: 4%
 >[!CONTEXTUALHELP]
 >id="platform_datasets_orchestratedCampaigns_toggle"
 >title="精心策划的营销活动"
->abstract="启用此切换可允许在Adobe Journey Optimizer Orchestrated营销活动中使用选定的数据集。 数据集必须使用基于模型的架构，并且每个架构只能创建一个数据集。"
+>abstract="启用此切换可允许在Adobe Journey Optimizer Orchestrated营销活动中使用选定的数据集。 数据集必须使用关系架构，且每个架构只能创建一个数据集。"
 
-在[!DNL Experience Platform] UI中，从左侧导航中选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以打开&#x200B;**[!UICONTROL 数据集]**&#x200B;仪表板。 仪表板列出您组织的所有可用数据集。 将显示每个列出数据集的详细信息，包括其名称、数据集所遵循的架构以及最近一次摄取运行的状态。
+在[!DNL Experience Platform] UI中，从左侧导航中选择&#x200B;**[!UICONTROL Datasets]**&#x200B;以打开&#x200B;**[!UICONTROL Datasets]**&#x200B;仪表板。 仪表板列出您组织的所有可用数据集。 将显示每个列出数据集的详细信息，包括其名称、数据集所遵循的架构以及最近一次摄取运行的状态。
 
 ![左侧导航栏中突出显示了数据集项的Experience Platform UI。](../images/datasets/user-guide/browse-datasets.png)
 
-从[!UICONTROL 浏览]选项卡中选择数据集的名称以访问其&#x200B;**[!UICONTROL 数据集活动]**&#x200B;屏幕，并查看所选数据集的详细信息。 活动选项卡包含一个图表，其中可查看消息使用率，以及成功批次和失败批次的列表。
+从[!UICONTROL Browse]选项卡中选择数据集的名称以访问其&#x200B;**[!UICONTROL Dataset activity]**&#x200B;屏幕，并查看所选数据集的详细信息。 活动选项卡包含一个图表，其中可查看消息使用率，以及成功批次和失败批次的列表。
 
 ![选定数据集的量度和可视化图表突出显示。](../images/datasets/user-guide/dataset-activity-1.png)
 ![与选定数据集相关的示例批次突出显示。](../images/datasets/user-guide/dataset-activity-2.png)
 
 ## 更多操作 {#more-actions}
 
-您可以从[!UICONTROL 数据集]详细信息视图中[!UICONTROL 删除]或[!UICONTROL 为配置文件]启用数据集。 要查看可用的操作，请选择&#x200B;**[!UICONTROL ...UI右上角的更多]**。 出现下拉菜单。
+您可以从[!UICONTROL Delete]详细信息视图[!UICONTROL Enable a dataset for Profile]或[!UICONTROL Dataset]。 要查看可用的操作，请选择UI右上角的&#x200B;**[!UICONTROL ... More]**。 出现下拉菜单。
 
-![具有[!UICONTROL 的数据集工作区……其他]下拉菜单突出显示。](../images/datasets/user-guide/more-actions.png)
+![突出显示[!UICONTROL ... More]下拉菜单的数据集工作区。](../images/datasets/user-guide/more-actions.png)
 
-如果选择&#x200B;**[!UICONTROL 为配置文件]**&#x200B;启用数据集，则会显示确认对话框。 选择&#x200B;**[!UICONTROL 启用]**&#x200B;以确认您的选择。
+如果选择&#x200B;**[!UICONTROL Enable a dataset for Profile]**，将显示确认对话框。 选择&#x200B;**[!UICONTROL Enable]**&#x200B;以确认您的选择。
 
 >[!NOTE]
 >
@@ -82,13 +82,13 @@ ht-degree: 4%
 
 ![启用数据集确认对话框。](../images/datasets/user-guide/profile-enable-confirmation-dialog.png)
 
-如果选择&#x200B;**[!UICONTROL 删除]**，将显示[!UICONTROL 删除数据集]确认对话框。 选择&#x200B;**[!UICONTROL 删除]**&#x200B;以确认您的选择。
+如果选择&#x200B;**[!UICONTROL Delete]**，将显示[!UICONTROL Delete dataset]确认对话框。 选择&#x200B;**[!UICONTROL Delete]**&#x200B;以确认您的选择。
 
 >[!NOTE]
 >
 >您无法删除系统数据集。
 
-您还可以从[!UICONTROL 浏览]选项卡上的内联操作中删除数据集或添加数据集以用于实时客户配置文件。 有关详细信息，请参阅[内联操作部分](#inline-actions)。
+您还可以从[!UICONTROL Browse]选项卡上的内联操作中删除数据集或添加数据集以用于实时客户个人资料。 有关详细信息，请参阅[内联操作部分](#inline-actions)。
 
 ![删除数据集确认对话框。](../images/datasets/user-guide/delete-confirmation-dialog.png)
 
@@ -96,21 +96,21 @@ ht-degree: 4%
 
 数据集UI现在为每个可用数据集提供一组内联操作。 选择要管理的数据集的省略号(...)可在弹出菜单中查看可用选项。 可用的操作包括：
 
-* [[!UICONTROL 预览数据集]](#preview)
-* [[!UICONTROL 管理数据和访问标签]](#manage-and-enforce-data-governance)
-* [[!UICONTROL 启用统一配置文件]](#enable-profile)
-* [[!UICONTROL 管理标记]](#manage-tags)
-* [[!UICONTROL 设置数据保留策略]](#data-retention-policy)
-* [[!UICONTROL 移动到文件夹]](#move-to-folders)
-* [[!UICONTROL 删除]](#delete)。
+* [[!UICONTROL Preview dataset]](#preview)
+* [[!UICONTROL Manage data and access labels]](#manage-and-enforce-data-governance)
+* [[!UICONTROL Enable unified profile]](#enable-profile)
+* [[!UICONTROL Manage tags]](#manage-tags)
+* [[!UICONTROL Set data retention policy]](#data-retention-policy)
+* [[!UICONTROL Move to folders]](#move-to-folders)
+* [[!UICONTROL Delete]](#delete)。
 
 有关这些可用操作的更多信息，请参阅其各自部分。 要了解如何同时管理大量数据集，请参阅[批量操作](#bulk-actions)部分。
 
 ### 预览数据集 {#preview}
 
-您可以从[!UICONTROL 浏览]选项卡中的内联选项或[!UICONTROL 数据集活动]视图中预览任何数据集的最多100行示例数据。
+您可以从[!UICONTROL Browse]选项卡中的内联选项或[!UICONTROL Dataset activity]视图中预览任何数据集的最多100行示例数据。
 
-从[!UICONTROL 浏览]选项卡中，选择数据集名称旁边的省略号(...)，然后选择[!UICONTROL 预览数据集]。 如果数据集为空，则取消激活预览选项。 或者，从&#x200B;**[!UICONTROL 数据集活动]**&#x200B;屏幕中，选择屏幕右上角附近的&#x200B;**[!UICONTROL 预览数据集]**。
+从[!UICONTROL Browse]选项卡中，选择数据集名称旁边的省略号(...)，然后选择[!UICONTROL Preview dataset]。 如果数据集为空，则取消激活预览选项。 或者，从&#x200B;**[!UICONTROL Dataset activity]**&#x200B;屏幕，选择屏幕右上角附近的&#x200B;**[!UICONTROL Preview dataset]**。
 
 ![选定数据集的“数据集”工作区的“浏览”选项卡，其中突出显示了省略号和预览数据集选项。](../images/datasets/user-guide/preview-dataset-option.png)
 
@@ -122,7 +122,7 @@ ht-degree: 4%
 
 ![将显示数据集预览对话框，其中包含有关数据集的结构信息以及示例值。](../images/datasets/user-guide/preview-dataset.png)
 
-或者，从&#x200B;**[!UICONTROL 数据集活动]**&#x200B;屏幕中，选择&#x200B;**[!UICONTROL 预览数据集]**&#x200B;以打开预览窗口并查看数据集的结构和值示例。
+或者，从&#x200B;**[!UICONTROL Dataset activity]**&#x200B;屏幕中选择&#x200B;**[!UICONTROL Preview dataset]**&#x200B;以打开预览窗口并查看数据集的结构和值的示例。
 
 ![预览数据集按钮突出显示。](../images/datasets/user-guide/select-preview.png)
 
@@ -146,13 +146,13 @@ ht-degree: 4%
 
 #### 高级查询编辑器快捷键 {#query-editor-shortcut}
 
-如果您的组织具有Data Distiller许可证，则可以直接从数据集预览窗口访问[!UICONTROL 高级查询编辑器]。 使用此快捷方式可在查询服务中无缝地从预览示例数据移动到运行和优化查询。
+如果您的组织具有Data Distiller许可证，则可以直接从数据集预览窗口访问[!UICONTROL Advanced Query Editor]。 使用此快捷方式可在查询服务中无缝地从预览示例数据移动到运行和优化查询。
 
 >[!AVAILABILITY]
 >
->[!UICONTROL 高级查询编辑器]的访问权限仅限于具有Data Distiller SKU许可证的组织。 如果贵组织没有所需的许可证，则此选项不会出现在数据集预览窗口中。
+>[!UICONTROL Advanced Query Editor]的访问仅限于具有Data Distiller SKU许可证的组织。 如果贵组织没有所需的许可证，则此选项不会出现在数据集预览窗口中。
 
-选择预览窗口右上角的[!UICONTROL 高级查询编辑器]以打开预加载并执行当前SQL查询的查询服务。 您可以继续分析或修改SQL，而无需重新输入查询。
+选择预览窗口右上角的[!UICONTROL Advanced Query Editor]以打开查询服务，并预加载和执行当前SQL查询。 您可以继续分析或修改SQL，而无需重新输入查询。
 
 ![数据集预览窗口在右上角显示“高级查询编辑器”按钮。](../images/datasets/user-guide/dataset-preview-advanced-query-editor.png)
 
@@ -163,7 +163,7 @@ ht-degree: 4%
 
 ### 在数据集上管理和强制执行数据治理 {#manage-and-enforce-data-governance}
 
-您可以通过选择[!UICONTROL 浏览]选项卡的内联选项来管理数据集的数据治理标签。 选择要管理的数据集名称旁边的省略号(...)，然后从下拉菜单中&#x200B;**[!UICONTROL 管理数据和访问标签]**。
+您可以通过选择[!UICONTROL Browse]选项卡的内联选项来管理数据集的数据治理标签。 选择要管理的数据集名称旁边的省略号(...)，然后从下拉菜单中选择&#x200B;**[!UICONTROL Manage data and access labels]**。
 
 通过在架构级别应用数据使用标签，您可以根据应用于该数据的使用策略对数据集和字段进行分类。 请参阅[数据管理概述](../../data-governance/home.md)以了解有关标签的更多信息，或参阅[数据使用标签用户指南](../../data-governance/labels/overview.md)以了解有关如何将标签应用于架构以传播到数据集的说明。
 
@@ -176,11 +176,11 @@ ht-degree: 4%
 
 有关为[!DNL Profile]启用架构的更多信息，请参阅[架构编辑器用户指南](../../xdm/tutorials/create-schema-ui.md)。
 
-您可以从[!UICONTROL 浏览]选项卡的内联选项以及[!UICONTROL 数据集活动]视图中启用配置文件的数据集。 从[!UICONTROL 数据集]工作区的[!UICONTROL 浏览]选项卡中，选择要为配置文件启用的数据集的省略号。 出现一个选项菜单列表。 接下来，从可用选项列表中选择&#x200B;**[!UICONTROL 启用统一配置文件]**。
+您可以从[!UICONTROL Browse]选项卡的内联选项以及[!UICONTROL Dataset activity]视图为配置文件启用数据集。 从[!UICONTROL Browse]工作区的[!UICONTROL Datasets]选项卡中，选择要为配置文件启用的数据集的省略号。 出现一个选项菜单列表。 接下来，从可用选项列表中选择&#x200B;**[!UICONTROL Enable unified profile]**。
 
 ![突出显示省略号和启用统一配置文件的数据集工作区的“浏览”选项卡。](../images/datasets/user-guide/enable-for-profile.png)
 
-或者，从数据集的&#x200B;**[!UICONTROL 数据集活动]**&#x200B;屏幕中，选择&#x200B;**[!UICONTROL 属性]**&#x200B;列中的&#x200B;**[!UICONTROL 配置文件]**&#x200B;切换开关。 启用后，还将使用摄取到数据集的数据来填充客户配置文件。
+或者，从数据集的&#x200B;**[!UICONTROL Dataset activity]**&#x200B;屏幕中，选择&#x200B;**[!UICONTROL Profile]**&#x200B;列中的&#x200B;**[!UICONTROL Properties]**&#x200B;切换开关。 启用后，还将使用摄取到数据集的数据来填充客户配置文件。
 
 >[!NOTE]
 >
@@ -192,15 +192,15 @@ ht-degree: 4%
 
 ### 管理数据集标记 {#manage-tags}
 
-添加自定义创建的标记以组织数据集并改进搜索、筛选和排序功能。 从[!UICONTROL 数据集]工作区的[!UICONTROL 浏览]选项卡中，选择要管理的数据集的省略号，然后从下拉菜单中选择&#x200B;**[!UICONTROL 管理标记]**。
+添加自定义创建的标记以组织数据集并改进搜索、筛选和排序功能。 在[!UICONTROL Browse]工作区的[!UICONTROL Datasets]选项卡中，选择要管理的数据集的省略号，然后从下拉菜单中选择&#x200B;**[!UICONTROL Manage tags]**。
 
 ![选定数据集的“数据集”工作区的“浏览”选项卡（带有省略号和“管理标记”选项）突出显示。](../images/datasets/user-guide/manage-tags.png)
 
-出现[!UICONTROL 管理标记]对话框。 输入简短描述以创建自定义标记，或从预先存在的标记中选择以标记您的数据集。 选择&#x200B;**[!UICONTROL 保存]**&#x200B;以确认您的设置。
+出现[!UICONTROL Manage tags]对话框。 输入简短描述以创建自定义标记，或从预先存在的标记中选择以标记您的数据集。 选择&#x200B;**[!UICONTROL Save]**&#x200B;以确认您的设置。
 
 ![突出显示自定义标记的“管理标记”对话框。](../images/datasets/user-guide/manage-tags-dialog.png)
 
-[!UICONTROL 管理标记]对话框也可以从数据集中删除现有标记。 只需选择要删除的标记旁边的“x”并选择&#x200B;**[!UICONTROL 保存]**&#x200B;即可。
+[!UICONTROL Manage tags]对话框还可以从数据集中删除现有标记。 只需选择要删除的标记旁边的“x”并选择&#x200B;**[!UICONTROL Save]**&#x200B;即可。
 
 将标记添加到数据集后，可以根据相应的标记筛选数据集。 有关详细信息，请参阅有关如何[按标记](#enable-profile)筛选数据集的部分。
 
@@ -208,11 +208,11 @@ ht-degree: 4%
 
 ### 设置数据保留策略 {#data-retention-policy}
 
-使用[!UICONTROL 数据集]工作区的[!UICONTROL 浏览]选项卡中的内联操作菜单管理数据集到期和保留设置。 您可以使用此功能配置数据在数据湖和配置文件存储中保留的时长。 到期日期基于数据被摄取到Experience Platform中的时间和您配置的保留期。
+使用[!UICONTROL Browse]工作区的[!UICONTROL Datasets]选项卡中的内联操作菜单管理数据集到期和保留设置。 您可以使用此功能配置数据在数据湖和配置文件存储中保留的时长。 到期日期基于数据被摄取到Experience Platform中的时间和您配置的保留期。
 
 >[!IMPORTANT]
 >
->要为ExperienceEvent数据集应用或更新保留规则，您的用户角色必须包括&#x200B;**[!UICONTROL 管理数据集]**&#x200B;权限。 这种基于角色的访问控制可确保只有授权用户可以修改数据集保留设置。
+>要为ExperienceEvent数据集应用或更新保留规则，您的用户角色必须包含&#x200B;**[!UICONTROL Manage datasets]**&#x200B;权限。 这种基于角色的访问控制可确保只有授权用户可以修改数据集保留设置。
 >
 >有关在Adobe Experience Platform中分配权限的更多信息，请参阅[访问控制概述](../../access-control/home.md#platform-permissions)。
 
@@ -220,11 +220,11 @@ ht-degree: 4%
 >
 >数据湖存储原始的未处理数据（如事件日志、点击流数据和批量摄取的记录），以供分析和处理。 配置文件存储区包含客户可识别的数据（包括身份拼接事件和属性信息），以支持实时个性化和激活。
 
-要配置保留期，请选择数据集旁边的省略号，然后从下拉菜单中选择&#x200B;**[!UICONTROL 设置数据保留策略]**。
+要配置保留期，请从下拉菜单中选择数据集旁边的省略号，后跟&#x200B;**[!UICONTROL Set data retention policy]**。
 
 ![带有省略号的数据集工作区的“浏览”选项卡和突出显示的设置数据保留策略选项。](../images/datasets/user-guide/set-data-retention-policy-dropdown.png)
 
-出现[!UICONTROL 设置数据集保留]对话框。 该对话框显示沙盒级别的许可证使用量度、数据集级别的详细信息以及当前数据保留设置。 这些量度显示与您的权利对比的使用情况，并帮助您评估特定于数据集的存储和保留期配置。 这些量度包括数据集名称、类型、配置文件启用状态以及数据湖和配置文件存储使用情况。
+出现[!UICONTROL Set dataset retention]对话框。 该对话框显示沙盒级别的许可证使用量度、数据集级别的详细信息以及当前数据保留设置。 这些量度显示与您的权利对比的使用情况，并帮助您评估特定于数据集的存储和保留期配置。 这些量度包括数据集名称、类型、配置文件启用状态以及数据湖和配置文件存储使用情况。
 
 >[!NOTE]
 >
@@ -244,7 +244,7 @@ ht-degree: 4%
 
 #### 存储影响洞察 {#storage-impact-insights}
 
-要打开不同保留策略对存储影响的直观预测，请选择&#x200B;**[!UICONTROL 查看体验事件数据分发]**。
+要打开不同保留策略对存储影响的直观预测，请选择&#x200B;**[!UICONTROL View Experience Event Data distribution]**。
 
 图表显示了当前选定数据集跨不同保留期的体验事件分布。 将鼠标悬停在每个条上，可查看在应用所选保留期时将删除的记录的精确数量。
 
@@ -256,7 +256,7 @@ ht-degree: 4%
 
 ![显示了“设置数据保留”对话框，其中显示了“体验事件”分布图。](../images/datasets/user-guide/visual-forecast.png)
 
-如果对配置满意，请选择&#x200B;**[!UICONTROL 保存]**&#x200B;以确认设置。
+如果对配置感到满意，请选择&#x200B;**[!UICONTROL Save]**&#x200B;以确认设置。
 
 >[!IMPORTANT]
 >
@@ -274,7 +274,7 @@ ht-degree: 4%
 
 #### 增强了保留期和存储量度的可见性 {#retention-and-storage-metrics}
 
-四个新列可让您更清楚地了解数据管理： **[!UICONTROL 数据湖存储]**、**[!UICONTROL 数据湖保留]**、**[!UICONTROL 配置文件存储]**&#x200B;和&#x200B;**[!UICONTROL 配置文件保留]**。 这些量度显示数据在Data Lake和Profile Service中消耗的存储量及其保留期。
+四个新列提供了对您的数据管理的更高可见性：**[!UICONTROL Data Lake Storage]**、**[!UICONTROL Data Lake Retention]**、**[!UICONTROL Profile Storage]**&#x200B;和&#x200B;**[!UICONTROL Profile Retention]**。 这些量度显示数据在Data Lake和Profile Service中消耗的存储量及其保留期。
 
 这种更高的可见性使您能够作出明智的决策，更有效地管理存储成本。 按存储大小排序数据集，以识别当前沙盒中最大的数据集。 这些见解支持数据管理最佳实践，并有助于确保符合许可授权。
 
@@ -284,10 +284,10 @@ ht-degree: 4%
 
 | 列标题 | 描述 |
 |---|---|
-| [!UICONTROL 数据湖保留] | 数据湖中每个数据集的当前保留期。 此值可配置，并决定在删除之前保留数据的时间。 |
-| [!UICONTROL 数据湖存储] | 数据湖中每个数据集的当前存储使用情况。 使用此量度管理存储限制并优化使用情况。 |
-| [!UICONTROL 配置文件存储] | 配置文件服务中每个数据集的当前存储使用情况。 帮助监控存储消耗和支持数据管理决策。 |
-| [!UICONTROL 配置文件保留] | 配置文件数据集的当前保留期。 您可以更新此值以控制配置文件数据保留多长时间。 |
+| [!UICONTROL Data Lake Retention] | 数据湖中每个数据集的当前保留期。 此值可配置，并决定在删除之前保留数据的时间。 |
+| [!UICONTROL Data Lake Storage] | 数据湖中每个数据集的当前存储使用情况。 使用此量度管理存储限制并优化使用情况。 |
+| [!UICONTROL Profile Storage] | 配置文件服务中每个数据集的当前存储使用情况。 帮助监控存储消耗和支持数据管理决策。 |
+| [!UICONTROL Profile Retention] | 配置文件数据集的当前保留期。 您可以更新此值以控制配置文件数据保留多长时间。 |
 
 {style="table-layout:auto"}
 
@@ -295,33 +295,33 @@ ht-degree: 4%
 
 ### 移至文件夹 {#move-to-folders}
 
-您可以将数据集放在文件夹中，以便更好地管理数据集。 要将数据集移动到文件夹中，请选择要管理的数据集名称旁边的省略号(...)，然后从下拉菜单中&#x200B;**[!UICONTROL 移动到文件夹]**。
+您可以将数据集放在文件夹中，以便更好地管理数据集。 要将数据集移动到文件夹中，请选择要管理的数据集名称旁边的省略号(...)，然后从下拉菜单中选择&#x200B;**[!UICONTROL Move to folder]**。
 
-![突出显示带有椭圆形和[!UICONTROL 移动到文件夹]的[!UICONTROL 数据集]仪表板。](../images/datasets/user-guide/move-to-folder.png)
+![突出显示带有椭圆和[!UICONTROL Datasets]的[!UICONTROL Move to folder]仪表板。](../images/datasets/user-guide/move-to-folder.png)
 
-出现[!UICONTROL 将]数据集移动到文件夹对话框。 选择要将受众移动到的文件夹，然后选择&#x200B;**[!UICONTROL 移动]**。 弹出通知会告知您已成功移动数据集。
+此时将显示[!UICONTROL Move]数据集到文件夹对话框。 选择要将受众移动到的文件夹，然后选择&#x200B;**[!UICONTROL Move]**。 弹出通知会告知您已成功移动数据集。
 
-![突出显示带有[!UICONTROL 移动]的[!UICONTROL 移动]数据集对话框。](../images/datasets/user-guide/move-dialog.png)
+![突出显示与[!UICONTROL Move]的[!UICONTROL Move]数据集对话框。](../images/datasets/user-guide/move-dialog.png)
 
 >[!TIP]
 >
 >您还可以直接从“移动数据集”对话框创建文件夹。 要创建文件夹，请选择创建文件夹图标（![创建文件夹图标）。](/help/images/icons/folder-add.png))。
 >
->![突出显示了[!UICONTROL 移动]数据集对话框（创建文件夹图标）。](/help/catalog/images/datasets/user-guide/create-folder.png)
+>![突出显示创建文件夹图标的[!UICONTROL Move]数据集对话框。](/help/catalog/images/datasets/user-guide/create-folder.png)
 
 数据集位于文件夹中后，您可以选择仅显示属于特定文件夹的数据集。 要打开文件夹结构，请选择显示文件夹图标（![显示文件夹图标](/help/images/icons/rail-left.png)）。 接下来，选择您选择的文件夹以查看所有关联的数据集。
 
-![显示数据集文件夹结构的[!UICONTROL 数据集]仪表板、显示文件夹图标和突出显示的选定文件夹。](../images/datasets/user-guide/folder-structure.png)
+![显示了数据集文件夹结构的[!UICONTROL Datasets]功能板、显示文件夹图标和突出显示的选定文件夹。](../images/datasets/user-guide/folder-structure.png)
 
 ### 删除数据集 {#delete}
 
-您可以从[!UICONTROL 浏览]选项卡或[!UICONTROL 数据集活动]视图右上角的数据集内联操作中删除数据集。 从[!UICONTROL 浏览]视图中，选择要删除的数据集名称旁边的省略号(...)。 出现一个选项菜单列表。 接下来，从下拉菜单中选择&#x200B;**[!UICONTROL 删除]**。
+您可以从[!UICONTROL Browse]选项卡或[!UICONTROL Dataset activity]视图右上角的数据集内联操作中删除数据集。 从[!UICONTROL Browse]视图中，选择要删除的数据集名称旁边的省略号(...)。 出现一个选项菜单列表。 接下来，从下拉菜单中选择&#x200B;**[!UICONTROL Delete]**。
 
 ![选定数据集的“数据集”工作区的“浏览”选项卡上带有省略号，且“删除”选项突出显示。](../images/datasets/user-guide/inline-delete-dataset.png)
 
-将显示确认对话框。 选择&#x200B;**[!UICONTROL 删除]**&#x200B;以确认。
+将显示确认对话框。 选择&#x200B;**[!UICONTROL Delete]**&#x200B;以确认。
 
-或者，从&#x200B;**[!UICONTROL 数据集活动]**&#x200B;屏幕中选择&#x200B;**[!UICONTROL 删除数据集]**。
+或者，从&#x200B;**[!UICONTROL Delete dataset]**&#x200B;屏幕中选择&#x200B;**[!UICONTROL Dataset activity]**。
 
 >[!NOTE]
 >
@@ -329,7 +329,7 @@ ht-degree: 4%
 
 ![“删除数据集”按钮在数据集详细信息页面中突出显示。](../images/datasets/user-guide/delete-dataset.png)
 
-将出现一个确认框。 选择&#x200B;**[!UICONTROL 删除]**&#x200B;以确认删除数据集。
+将出现一个确认框。 选择&#x200B;**[!UICONTROL Delete]**&#x200B;以确认删除数据集。
 
 ![将显示删除的确认模式，并突出显示删除按钮。](../images/datasets/user-guide/confirm-delete.png)
 
@@ -341,7 +341,7 @@ ht-degree: 4%
 
 ## 搜索和筛选数据集 {#search-and-filter}
 
-要搜索或筛选可用数据集的列表，请选择筛选器图标（![筛选器图标）。](/help/images/icons/filter.png))。 左边栏中显示一组过滤器选项。 有多种方法可用于筛选可用数据集。 这些包括：[[!UICONTROL 显示系统数据集]](#show-system-datasets)、[[!UICONTROL 包含在配置文件]](#filter-profile-enabled-datasets)中、[[!UICONTROL 标记]](#filter-by-tag)、[[!UICONTROL 创建日期]](#filter-by-creation-date)、[[!UICONTROL 修改日期]、[!UICONTROL 创建者]](#filter-by-creation-date)和[[!UICONTROL 架构]](#filter-by-schema)。
+要搜索或筛选可用数据集的列表，请选择筛选器图标（![筛选器图标）。](/help/images/icons/filter.png))。 左边栏中显示一组过滤器选项。 有多种方法可用于筛选可用数据集。 其中包括： [[!UICONTROL Show System Datasets]](#show-system-datasets)、[[!UICONTROL Included in profile]](#filter-profile-enabled-datasets)、[[!UICONTROL Tags]](#filter-by-tag)、[[!UICONTROL Creation date]](#filter-by-creation-date)、[[!UICONTROL Modified date]、[!UICONTROL Created by]](#filter-by-creation-date)和[[!UICONTROL Schema]](#filter-by-schema)。
 
 应用的过滤器列表显示在过滤结果上方。
 
@@ -349,31 +349,31 @@ ht-degree: 4%
 
 ### 显示系统数据集 {#show-system-datasets}
 
-默认情况下，仅显示已摄取数据的数据集。 如果要查看系统生成的数据集，请选择&#x200B;**[!UICONTROL 显示系统数据集]**&#x200B;部分中的[!UICONTROL 是]复选框。 系统生成的数据集仅用于处理其他组件。 例如，系统生成的配置文件导出数据集用于处理配置文件仪表板。
+默认情况下，仅显示已摄取数据的数据集。 如果要查看系统生成的数据集，请选中&#x200B;**[!UICONTROL Yes]**&#x200B;部分中的[!UICONTROL Show system datasets]复选框。 系统生成的数据集仅用于处理其他组件。 例如，系统生成的配置文件导出数据集用于处理配置文件仪表板。
 
-![突出显示[!UICONTROL 显示系统数据集]节的数据集工作区的筛选器选项。](../images/datasets/user-guide/show-system-datasets.png)
+![突出显示了[!UICONTROL Show system datasets]部分的数据集工作区的筛选器选项。](../images/datasets/user-guide/show-system-datasets.png)
 
 ### 启用筛选配置文件的数据集 {#filter-profile-enabled-datasets}
 
 为配置文件数据启用的数据集用于在引入数据后填充客户配置文件。 请参阅有关[为配置文件](#enable-profile)启用数据集的部分以了解详情。
 
-要根据是否已为配置文件启用数据集来筛选数据集，请从筛选选项中选择[!UICONTROL 是]复选框。
+要根据是否已为配置文件启用数据集来筛选数据集，请从筛选选项中选择[!UICONTROL Yes]复选框。
 
-![已突出显示[!UICONTROL 包含在配置文件]部分的数据集工作区的筛选器选项。](../images/datasets/user-guide/included-in-profile.png)
+![突出显示了[!UICONTROL Included in Profile]部分的数据集工作区的筛选器选项。](../images/datasets/user-guide/included-in-profile.png)
 
 ### 按标记筛选数据集 {#filter-by-tag}
 
-在[!UICONTROL 标记]输入中输入您的自定义标记名称，然后从可用选项列表中选择您的标记，以搜索和筛选与该标记对应的数据集。
+在[!UICONTROL Tags]输入中输入您的自定义标记名称，然后从可用选项列表中选择您的标记，以搜索和筛选与该标记对应的数据集。
 
-![数据集工作区的筛选器选项，突出显示[!UICONTROL 标记]输入和筛选器图标。](../images/datasets/user-guide/filter-tags.png)
+![数据集工作区的筛选器选项，其中突出显示[!UICONTROL Tags]输入和筛选器图标。](../images/datasets/user-guide/filter-tags.png)
 
 ### 按创建日期筛选数据集 {#filter-by-creation-date}
 
-可以在自定义时段内按创建日期筛选数据集。 这可用于排除历史数据或生成特定的按时间顺序排列的数据洞察和报表。 通过选择每个字段的日历图标，选择[!UICONTROL 开始日期]和[!UICONTROL 结束日期]。 之后，只有符合该条件的数据集才会显示在浏览选项卡中。
+可以在自定义时段内按创建日期筛选数据集。 这可用于排除历史数据或生成特定的按时间顺序排列的数据洞察和报表。 通过选择每个字段的日历图标来选择[!UICONTROL Start date]和[!UICONTROL End date]。 之后，只有符合该条件的数据集才会显示在浏览选项卡中。
 
 ### 按修改日期筛选数据集 {#filter-by-modified-date}
 
-与创建日期过滤器类似，您可以根据上次修改数据集的日期来筛选数据集。 在[!UICONTROL 修改日期]部分中，通过选择每个字段的日历图标来选择[!UICONTROL 开始日期]和[!UICONTROL 结束日期]。 之后，只有在该时段修改的数据集才会显示在浏览选项卡中。
+与创建日期过滤器类似，您可以根据上次修改数据集的日期来筛选数据集。 在[!UICONTROL Modified date]部分中，通过选择每个字段的日历图标来选择[!UICONTROL Start date]和[!UICONTROL End date]。 之后，只有在该时段修改的数据集才会显示在浏览选项卡中。
 
 ### 按架构筛选 {#filter-by-schema}
 
@@ -394,13 +394,13 @@ ht-degree: 4%
 
 ## 按创建日期排序数据集 {#sort}
 
-[!UICONTROL 浏览]选项卡中的数据集可以按升序或降序日期排序。 选择[!UICONTROL Created]或[!UICONTROL Last updated]列标题在升序和降序之间替换。 选中后，列将通过列标题侧的向上或向下箭头指示此信息。
+[!UICONTROL Browse]选项卡中的数据集可以按升序或降序日期排序。 选择[!UICONTROL Created]或[!UICONTROL Last updated]列标题，在升序和降序之间切换。 选中后，列将通过列标题侧的向上或向下箭头指示此信息。
 
 ![数据集工作区的“浏览”选项卡，其中已创建列和上次更新列突出显示。](../images/datasets/user-guide/ascending-descending-columns.png)
 
 ## 创建数据集 {#create}
 
-要创建新数据集，请在&#x200B;**[!UICONTROL 数据集]**&#x200B;仪表板中选择&#x200B;**[!UICONTROL 创建数据集]**。
+要创建新数据集，请在&#x200B;**[!UICONTROL Create dataset]**&#x200B;功能板中选择&#x200B;**[!UICONTROL Datasets]**。
 
 ![已突出显示“创建数据集”按钮。](../images/datasets/user-guide/select-create.png)
 
@@ -411,15 +411,15 @@ ht-degree: 4%
 
 ### 使用现有架构创建数据集 {#schema}
 
-在&#x200B;**[!UICONTROL 创建数据集]**&#x200B;屏幕中，选择&#x200B;**[!UICONTROL 从架构创建数据集]**&#x200B;以创建新的空数据集。
+在&#x200B;**[!UICONTROL Create dataset]**&#x200B;屏幕中，选择&#x200B;**[!UICONTROL Create dataset from schema]**&#x200B;以创建新的空数据集。
 
 ![从架构创建数据集按钮突出显示。](../images/datasets/user-guide/create-dataset-schema.png)
 
-出现&#x200B;**[!UICONTROL 选择架构]**&#x200B;步骤。 浏览架构列表并选择数据集将遵循的架构，然后选择&#x200B;**[!UICONTROL 下一步]**。
+此时会显示&#x200B;**[!UICONTROL Select schema]**&#x200B;步骤。 浏览架构列表并选择数据集将遵循的架构，然后再选择&#x200B;**[!UICONTROL Next]**。
 
 ![将显示架构列表。 将用于创建数据集的架构已突出显示。](../images/datasets/user-guide/select-schema.png)
 
-将显示&#x200B;**[!UICONTROL 配置数据集]**&#x200B;步骤。 为数据集提供名称和可选描述，然后选择&#x200B;**[!UICONTROL 完成]**&#x200B;以创建数据集。
+此时会显示&#x200B;**[!UICONTROL Configure dataset]**&#x200B;步骤。 为数据集提供名称和可选描述，然后选择&#x200B;**[!UICONTROL Finish]**&#x200B;以创建数据集。
 
 ![已插入数据集的配置详细信息。 这包括数据集名称和描述等详细信息。](../images/datasets/user-guide/configure-dataset-schema.png)
 
@@ -427,15 +427,15 @@ ht-degree: 4%
 
 ### 使用CSV文件创建数据集 {#csv}
 
-使用CSV文件创建数据集时，将创建一个临时架构，以便为数据集提供匹配提供的CSV文件的结构。 在&#x200B;**[!UICONTROL 创建数据集]**&#x200B;屏幕中，选择&#x200B;**[!UICONTROL 从CSV文件创建数据集]**。
+使用CSV文件创建数据集时，将创建一个临时架构，以便为数据集提供匹配提供的CSV文件的结构。 在&#x200B;**[!UICONTROL Create dataset]**&#x200B;屏幕中，选择&#x200B;**[!UICONTROL Create dataset from CSV file]**。
 
 ![已突出显示“从CSV文件创建数据集”按钮。](../images/datasets/user-guide/create-dataset-csv.png)
 
-出现&#x200B;**[!UICONTROL 配置]**&#x200B;步骤。 为数据集提供名称和可选描述，然后选择&#x200B;**[!UICONTROL 下一步]**。
+此时会显示&#x200B;**[!UICONTROL Configure]**&#x200B;步骤。 为数据集提供名称和可选描述，然后选择&#x200B;**[!UICONTROL Next]**。
 
 ![已插入数据集的配置详细信息。 这包括数据集名称和描述等详细信息。](../images/datasets/user-guide/configure-dataset-csv.png)
 
-出现&#x200B;**[!UICONTROL 添加数据]**&#x200B;步骤。 通过将CSV文件拖放到屏幕中心来上载该文件，或者选择&#x200B;**[!UICONTROL 浏览]**&#x200B;浏览文件目录。 文件大小最多可达10 GB。 上传CSV文件后，选择&#x200B;**[!UICONTROL 保存]**&#x200B;以创建数据集。
+此时会显示&#x200B;**[!UICONTROL Add data]**&#x200B;步骤。 通过将CSV文件拖放到屏幕中心来上载该文件，或选择&#x200B;**[!UICONTROL Browse]**&#x200B;浏览文件目录。 文件大小最多可达10 GB。 上传CSV文件后，选择&#x200B;**[!UICONTROL Save]**&#x200B;以创建数据集。
 
 >[!NOTE]
 >
@@ -445,15 +445,15 @@ ht-degree: 4%
 
 ## 监测数据摄取
 
-在[!DNL Experience Platform] UI的左侧导航中选择&#x200B;**[!UICONTROL 监视]**。 通过&#x200B;**[!UICONTROL 监控]**&#x200B;仪表板，可查看来自批处理或流式摄取的入站数据状态。 要查看各个批次的状态，请选择&#x200B;**[!UICONTROL 批次端对端]**&#x200B;或&#x200B;**[!UICONTROL 流式端对端]**。 仪表板将列出所有批次或流式摄取运行，包括成功、失败或仍在进行的批次或流式摄取运行。 每个列表都提供了批次的详细信息，包括批次ID、目标数据集的名称和摄取的记录数。 如果为[!DNL Profile]启用了目标数据集，则还会显示已摄取的身份和配置文件记录数。
+在[!DNL Experience Platform] UI的左侧导航中选择&#x200B;**[!UICONTROL Monitoring]**。 **[!UICONTROL Monitoring]**&#x200B;仪表板允许您查看来自批次或流式摄取的入站数据的状态。 要查看各个批次的状态，请选择&#x200B;**[!UICONTROL Batch end-to-end]**&#x200B;或&#x200B;**[!UICONTROL Streaming end-to-end]**。 仪表板将列出所有批次或流式摄取运行，包括成功、失败或仍在进行的批次或流式摄取运行。 每个列表都提供了批次的详细信息，包括批次ID、目标数据集的名称和摄取的记录数。 如果为[!DNL Profile]启用了目标数据集，则还会显示已摄取的身份和配置文件记录数。
 
 ![将显示监控批次的端到端屏幕。 监视和批处理都高亮显示。](../images/datasets/user-guide/batch-listing.png)
 
-您可以选择单个&#x200B;**[!UICONTROL 批次ID]**&#x200B;来访问&#x200B;**[!UICONTROL 批次概述]**&#x200B;仪表板，并查看批次的详细信息，包括批次无法摄取时的错误日志。
+您可以选择单个&#x200B;**[!UICONTROL Batch ID]**&#x200B;访问&#x200B;**[!UICONTROL Batch overview]**&#x200B;仪表板，并查看批次的详细信息，包括批次摄取失败时的错误日志。
 
 ![显示选定批次的详细信息。 这包括摄取的记录数、失败的记录数、批次状态、文件大小、摄取的开始和结束时间、数据集和批次ID、组织ID、数据集名称和访问信息。](../images/datasets/user-guide/batch-overview.png)
 
-如果要删除批次，请选择仪表板右上角附近的&#x200B;**[!UICONTROL 删除批次]**。 删除批次也会从最初将批次摄取到的数据集中删除其记录。
+如果要删除批次，请选择仪表板右上角附近的&#x200B;**[!UICONTROL Delete batch]**。 删除批次也会从最初将批次摄取到的数据集中删除其记录。
 
 >[!NOTE]
 >

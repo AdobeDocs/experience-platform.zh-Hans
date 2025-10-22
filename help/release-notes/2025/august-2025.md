@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2025 年 8 月）
 description: Adobe Experience Platform 的 2025 年 8 月发行说明。
 exl-id: d93e98f3-d165-4710-ad1d-2ad3857cd0f8
-source-git-commit: 6b3b830f822cc02c78d6f593c0a949d3e19ada37
+source-git-commit: ba16b870b49ccd13cf927b9460e81976d8be0048
 workflow-type: tm+mt
-source-wordcount: '1485'
-ht-degree: 96%
+source-wordcount: '1474'
+ht-degree: 88%
 
 ---
 
@@ -36,7 +36,7 @@ Adobe Experience Platform 中新功能和现有功能的更新：
 
 ## 警报 {#alerts}
 
-Experience Platform 允许您订阅各种 Experience Platform 活动的基于事件的警报。您可以通过 Experience Platform 用户界面中的[!UICONTROL 警报]选项卡订阅不同的警报规则，并可以选择在用户界面内或通过电子邮件通知接收警报消息。
+Experience Platform 允许您订阅各种 Experience Platform 活动的基于事件的警报。您可以通过Experience Platform用户界面的[!UICONTROL Alerts]选项卡订阅各种警报规则，并且可以选择在UI中或通过电子邮件通知接收警报消息。
 
 **新增功能**
 
@@ -102,8 +102,8 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 
 | 目标 | 描述 |
 | --- | --- |
-| [[!DNL Microsoft Bing]](../../destinations/catalog/advertising/bing.md) 内部升级 | 从 2025 年 8 月 11 日开始，您可能会在一段时间内在目标目录中看到有两张并排的 **[!DNL Microsoft Bing]** 卡。这是由于目标服务内部升级造成的。现有的 **[!DNL Microsoft Bing]** 目标连接器已更名为&#x200B;**[!UICONTROL （已弃用）Microsoft Bing]**，现在为您提供一个名为 **[!UICONTROL Microsoft Bing]** 的新卡片。<br> 升级已完成，被弃用的卡已从目标目录中移除。为新的激活数据流使用目录中的 **[!UICONTROL Microsoft Bing]** 连接。如果您有任何流向&#x200B;**[!UICONTROL （已弃用）Microsoft Bing]** 目标的活跃数据流，它们就会自动更新，因此无需您执行任何操作。<br><br>如果您通过 [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) 创建数据流，则必须将 [!DNL flow spec ID] 和 [!DNL connection spec ID] 更新为以下值：<ul><li>流量规范 ID：`8d42c81d-9ba7-4534-9bf6-cf7c64fbd12e`</li><li>连接规范 ID：`dd69fc59-3bc5-451e-8ec2-1e74a670afd4`</li></ul> 此次升级后，您可能会发现流向 [!DNL Microsoft Bing] 的数据流中&#x200B;**活跃轮廓的数量下降**。出现下降的原因是，为所有流向此目标平台的激活引入了 **ECID 映射要求**。 |
-| 关于 [[!DNL LinkedIn]](../../destinations/catalog/social/linkedin.md) 和 [领英匹配受众](../../destinations/catalog/social/linkedin-b2b.md)目标的身份验证到期的详细信息 | 现在，您可以直接在 Experience Platform 界面中查看关于 [!DNL LinkedIn] 目标的身份验证到期的信息，您可以查看您的身份验证何时到期，在因其而导致您的数据流中断之前将其更新。您可以从&#x200B;**[[!UICONTROL 帐户]](../../destinations/ui/destinations-workspace.md#accounts)**&#x200B;或&#x200B;**[[!UICONTROL 浏览]](../../destinations/ui/destinations-workspace.md#browse)**&#x200B;选项卡中的&#x200B;**[!UICONTROL 帐户到期日期]**&#x200B;列监控您的令牌到期日期。 |
+| [[!DNL Microsoft Bing]](../../destinations/catalog/advertising/bing.md) 内部升级 | 从 2025 年 8 月 11 日开始，您可能会在一段时间内在目标目录中看到有两张并排的 **[!DNL Microsoft Bing]** 卡。这是由于目标服务内部升级造成的。现有&#x200B;**[!DNL Microsoft Bing]**&#x200B;目标连接器已重命名为&#x200B;**[!UICONTROL (Deprecated) Microsoft Bing]**，现在您可以使用名称为&#x200B;**[!UICONTROL Microsoft Bing]**&#x200B;的新信息卡。 <br> 升级已完成，被弃用的卡已从目标目录中移除。使用目录中的&#x200B;**[!UICONTROL Microsoft Bing]**&#x200B;连接获取新的激活数据流。 如果您有任何到&#x200B;**[!UICONTROL (Deprecated) Microsoft Bing]**&#x200B;目标的活动数据流，则会自动更新，因此您无需执行任何操作。 <br><br>如果您通过 [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) 创建数据流，则必须将 [!DNL flow spec ID] 和 [!DNL connection spec ID] 更新为以下值：<ul><li>流量规范 ID：`8d42c81d-9ba7-4534-9bf6-cf7c64fbd12e`</li><li>连接规范 ID：`dd69fc59-3bc5-451e-8ec2-1e74a670afd4`</li></ul> 此次升级后，您可能会发现流向 [!DNL Microsoft Bing] 的数据流中&#x200B;**活跃轮廓的数量下降**。出现下降的原因是，为所有流向此目标平台的激活引入了 **ECID 映射要求**。 |
+| 关于 [[!DNL LinkedIn]](../../destinations/catalog/social/linkedin.md) 和 [领英匹配受众](../../destinations/catalog/social/linkedin-b2b.md)目标的身份验证到期的详细信息 | 现在，您可以直接在 Experience Platform 界面中查看关于 [!DNL LinkedIn] 目标的身份验证到期的信息，您可以查看您的身份验证何时到期，在因其而导致您的数据流中断之前将其更新。您可以从&#x200B;**[!UICONTROL Account expiration date]**&#x200B;或&#x200B;**[[!UICONTROL Accounts]](../../destinations/ui/destinations-workspace.md#accounts)**&#x200B;选项卡中的&#x200B;**[[!UICONTROL Browse]](../../destinations/ui/destinations-workspace.md#browse)**&#x200B;列监视令牌过期日期。 |
 | [LinkedIn匹配的受众](../../destinations/catalog/social/linkedin-b2b.md) [!DNL IDFA]标识支持移除 | 从2025年9月开始，您无法再将[!DNL IDFA]映射为目标标识，因为[!DNL IDFA]目标不再支持[!DNL LinkedIn Matched Audiences]。 有关详细信息，请参阅[!DNL LinkedIn Matched Audiences]集成[文档](https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users?view=li-lms-2025-07&tabs=http#idtypes)。 此更改是由于LinkedIn的要求而做出的，与任何Experience Platform目标服务升级无关。 |
 
 **新增或更新的功能**
@@ -120,7 +120,7 @@ XDM 是一种开源规范，可为导入 Experience Platform 的数据提供常�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 基于模型的架构 | 使用基于模型的架构简化您的数据建模。现在，您可以通过全面的操作示例和指导更轻松地创建架构。此功能目前可供营销活动编排许可证持有者使用，未来将扩展到 GA 的数据蒸馏器客户，使数据建模更易于访问、更高效。 |
+| 关系架构 | 使用关系架构（以前称为基于模型的架构）简化数据建模。 现在，您可以通过全面的操作示例和指导更轻松地创建架构。此功能目前可供营销活动编排许可证持有者使用，未来将扩展到 GA 的数据蒸馏器客户，使数据建模更易于访问、更高效。 |
 
 有关详细信息，请参阅 [XDM 概述](../../xdm/home.md)。
 

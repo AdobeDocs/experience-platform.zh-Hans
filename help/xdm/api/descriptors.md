@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 描述符API端点
 description: 架构注册API中的/descriptors端点允许您以编程方式管理体验应用程序中的XDM描述符。
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: 4586a820556919aeb6cebd94d961c3f726637f16
+source-git-commit: 57981d2e4306b2245ce0c1cdd9f696065c508a1d
 workflow-type: tm+mt
-source-wordcount: '2888'
+source-wordcount: '2916'
 ht-degree: 1%
 
 ---
@@ -34,7 +34,11 @@ ht-degree: 1%
 
 本指南中使用的终结点是[[!DNL Schema Registry] API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/)的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience Platform API所需的所需标头的重要信息。
 
-除了标准描述符之外，[!DNL Schema Registry]还支持基于模型的架构的描述符类型，如&#x200B;**主键**、**版本**&#x200B;和&#x200B;**时间戳**。 这些选项可强制唯一性、控制版本控制，并在架构级别定义时间序列字段。 如果您不熟悉基于模型的架构，请先查看[Data Mirror概述](../data-mirror/overview.md)和[基于模型的架构技术参考](../schema/model-based.md)，然后再继续。
+除了标准描述符之外，[!DNL Schema Registry]还支持关系架构的描述符类型，如&#x200B;**主键**、**版本**&#x200B;和&#x200B;**时间戳**。 这些选项可强制唯一性、控制版本控制，并在架构级别定义时间序列字段。 如果您不熟悉关系架构，请先查看[Data Mirror概述](../data-mirror/overview.md)和[关系架构技术参考](../schema/relational.md)，然后再继续。
+
+>[!NOTE]
+>
+>关系架构以前在Adobe Experience Platform文档的早期版本中称为基于模型的架构。 描述符功能和API端点保持不变。 为清楚起见，仅更新了术语。
 
 >[!IMPORTANT]
 >
@@ -316,7 +320,7 @@ curl -X DELETE \
 
 #### 身份描述符 {#identity-descriptor}
 
-标识描述符指示“[!UICONTROL sourceSchema]”的“[!UICONTROL sourceProperty]”是[!DNL Identity]Experience Platform Identity Service[描述的](../../identity-service/home.md)字段。
+身份描述符信号“[!UICONTROL sourceProperty]”的“[!UICONTROL sourceSchema]”是[!DNL Identity]Experience Platform Identity Service[描述的](../../identity-service/home.md)字段。
 
 ```json
 {
@@ -397,7 +401,7 @@ curl -X DELETE \
 API支持两种模式：
 
 - `xdm:descriptorOneToOne`：标准1:1关系。
-- `xdm:descriptorRelationship`：用于新工作和基于模型的架构的常规模式（支持基数、命名和非主键目标）。
+- `xdm:descriptorRelationship`：新工作和关系架构的常规模式（支持基数、命名和非主键目标）。
 
 ##### 一对一关系（标准架构）
 
@@ -427,9 +431,9 @@ API支持两种模式：
 | `xdm:destinationVersion` | 引用架构的主要版本。 |
 | `xdm:destinationProperty` | （可选）引用架构中目标字段的路径。 如果忽略此属性，则包含匹配引用标识描述符的任何字段都会推断目标字段（请参阅下文）。 |
 
-##### 一般关系（基于模型的架构和新项目推荐）
+##### 一般关系（关系架构和建议用于新项目）
 
-请将此描述符用于所有新实施和基于模型的架构。 它允许您定义关系的基数（如一对一或多对一），指定关系名称，以及指向非主键（非主键）的目标字段的链接。
+请将此描述符用于所有新实施和关系架构。 它允许您定义关系的基数（如一对一或多对一），指定关系名称，以及指向非主键（非主键）的目标字段的链接。
 
 以下示例显示如何定义常规关系描述符。
 
@@ -474,7 +478,7 @@ API支持两种模式：
 
 | 状况 | 要使用的描述符 |
 | --------------------------------------------------------------------- | ----------------------------------------- |
-| 新的工作或基于模型的架构 | `xdm:descriptorRelationship` |
+| 新工作或关系架构 | `xdm:descriptorRelationship` |
 | 标准架构中的现有1:1映射 | 继续使用`xdm:descriptorOneToOne`，除非您需要仅由`xdm:descriptorRelationship`支持的功能。 |
 | 需要多对一或可选基数(`1:1`， `1:0`， `M:1`， `M:0`) | `xdm:descriptorRelationship` |
 | UI/下游可读性需要关系名称或标题 | `xdm:descriptorRelationship` |
@@ -493,13 +497,13 @@ API支持两种模式：
 | 基数 | 1:1 | 1:1， 1:0， M:1， M:0 （信息性） |
 | 目标目标 | 标识/显式字段 | 默认主键，或通过`xdm:destinationProperty`的非主键 |
 | 命名字段 | 不受支持 | `xdm:sourceToDestinationName`、`xdm:destinationToSourceName`和标题 |
-| 关系拟合 | 有限 | 基于模型的架构的主要模式 |
+| 关系拟合 | 有限 | 关系架构的主要模式 |
 
 ##### 约束和验证
 
 在定义一般关系描述符时，请遵循以下要求和建议：
 
-- 对于基于模型的架构，请将源字段（外键）放在根级别。 这是当前的摄取技术限制，而不仅仅是最佳实践建议。
+- 对于关系架构，请将源字段（外键）置于根级别。 这是当前的摄取技术限制，而不仅仅是最佳实践建议。
 - 确保源字段和目标字段的数据类型兼容（数字、日期、布尔值、字符串）。
 - 请记住，基数是信息性的；存储不会强制执行。 以`<source>:<destination>`格式指定基数。 接受的值为： `1:1`、`1:0`、`M:1`或`M:0`。
 
@@ -525,7 +529,7 @@ API支持两种模式：
 
 >[!NOTE]
 >
->在UI架构编辑器中，版本描述符显示为“[!UICONTROL 版本标识符]”。
+>在UI架构编辑器中，版本描述符显示为“[!UICONTROL Version identifier]”。
 
 版本描述符(`xdm:descriptorVersion`)指定一个字段来检测和防止无序更改事件发生冲突。
 
@@ -547,7 +551,7 @@ API支持两种模式：
 
 >[!NOTE]
 >
->在UI架构编辑器中，时间戳描述符显示为“[!UICONTROL 时间戳标识符]”。
+>在UI架构编辑器中，时间戳描述符显示为“[!UICONTROL Timestamp identifier]”。
 
 时间戳描述符(`xdm:descriptorTimestamp`)将日期时间字段指定为具有`"meta:behaviorType": "time-series"`的架构的时间戳。
 

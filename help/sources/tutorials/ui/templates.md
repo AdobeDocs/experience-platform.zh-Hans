@@ -3,9 +3,9 @@ description: 了解如何在Adobe Experience Platform UI中使用模板来加速
 title: 在 UI 中使用模板创建源数据流
 badge1: Beta 版
 exl-id: 48aa36ca-656d-4b9d-954c-48c8da9df1e9
-source-git-commit: 02a22362b9ecbfc5fd7fcf17dc167309a0ea45d5
+source-git-commit: f9e3c19fdfd4ca0e03fdf3b3a7b5e82b72490dbc
 workflow-type: tm+mt
-source-wordcount: '2314'
+source-wordcount: '2271'
 ht-degree: 10%
 
 ---
@@ -51,13 +51,13 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 >id="platform_sources_templates_accounttype"
 >title="选择业务类型"
 >abstract="为您的用例选择适当的业务类型。您的访问权限可能因 Real-Time Customer Data Platform 订阅帐户而异。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#" text="Real-Time CDP 概述"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#" text="Real-Time CDP 概述"
 
-在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区，并查看Experience Platform中可用的源目录。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL Sources]**&#x200B;以访问[!UICONTROL Sources]工作区，并查看Experience Platform中可用的源目录。
 
-使用&#x200B;*[!UICONTROL 类别]*&#x200B;菜单按类别筛选源。 或者，在搜索栏中输入源名称，以从目录查找特定源。
+使用&#x200B;*[!UICONTROL Categories]*&#x200B;菜单按类别筛选源。 或者，在搜索栏中输入源名称，以从目录查找特定源。
 
-转到[!UICONTROL Adobe应用程序]类别以查看[!DNL Marketo Engage]源卡，然后选择[!UICONTROL 添加数据]以开始。
+转到[!UICONTROL Adobe applications]类别以查看[!DNL Marketo Engage]源卡，然后选择[!UICONTROL Add data]以开始。
 
 ![突出显示Marketo Engage源的源工作区的目录。](../../images/tutorials/templates/catalog.png)
 
@@ -68,11 +68,11 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 
 >[!NOTE]
 >
->使用需要更改数据捕获工作流或支持多个数据模型的源时，模板可以自动生成基于模型的架构。 这些架构启用了Data Mirror的实时数据同步功能。\
->将模板与基于模型的架构结合使用时，自动生成的资产将包含所需的主键、版本标识符和时间戳标识符字段。\
->有关详细信息，请参阅[Data Mirror概述](../../../xdm/data-mirror/overview.md)和[基于模型的架构技术参考](../../../xdm/schema/model-based.md)。
+>使用需要更改数据捕获工作流或支持多个数据模型的源时，模板可以自动生成关系架构。 这些架构启用了Data Mirror的实时数据同步功能。\
+>将模板与关系架构结合使用时，自动生成的资产将包含必需的主键、版本标识符和时间戳标识符字段。\
+>有关详细信息，请参阅[Data Mirror概述](../../../xdm/data-mirror/overview.md)和[关系架构技术参考](../../../xdm/schema/relational.md)。
 
-要使用自动生成的资源，请选择&#x200B;**[!UICONTROL 浏览模板]**，然后选择&#x200B;**[!UICONTROL 选择]**。
+要使用自动生成的资源，请选择&#x200B;**[!UICONTROL Browse templates]**，然后选择&#x200B;**[!UICONTROL Select]**。
 
 ![一个弹出窗口，其中包含浏览模板或使用现有资源的选项。](../../images/tutorials/templates/browse-templates.png)
 
@@ -84,13 +84,13 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 
 >[!TAB 使用现有帐户]
 
-要使用现有帐户，请选择[!UICONTROL 现有帐户]，然后从显示的列表中选择要使用的帐户。
+要使用现有帐户，请选择[!UICONTROL Existing account]，然后从显示的列表中选择要使用的帐户。
 
 ![现有帐户的选择页面，其中包含您可以访问的现有帐户列表。](../../images/tutorials/templates/existing-account.png)
 
 >[!TAB 创建新帐户]
 
-要创建新帐户，请选择&#x200B;**[!UICONTROL 新建帐户]**，然后提供源连接详细信息和帐户身份验证凭据。 完成后，选择&#x200B;**[!UICONTROL 连接到源]**&#x200B;并留出一些时间来建立新连接。
+要创建新帐户，请选择&#x200B;**[!UICONTROL New account]**，然后提供源连接详细信息和帐户身份验证凭据。 完成后，选择&#x200B;**[!UICONTROL Connect to source]**&#x200B;并留出一些时间来建立新连接。
 
 ![具有源连接详细信息和帐户身份验证凭据的新帐户的身份验证页面。](../../images/tutorials/templates/new-account.png)
 
@@ -184,11 +184,11 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 
 ![突出显示预览图标的模板列表。](../../images/tutorials/templates/templates.png)
 
-此时将显示预览窗口，允许您浏览并检查模板中的示例数据。 完成后，选择&#x200B;**[!UICONTROL 获得]**。
+此时将显示预览窗口，允许您浏览并检查模板中的示例数据。 完成后，选择&#x200B;**[!UICONTROL Got it]**。
 
 ![预览示例数据窗口。](../../images/tutorials/templates/preview-sample-data.png)
 
-接下来，从列表中选择要使用的模板。 您可以选择多个模板并一次创建多个数据流。 但是，每个帐户只能使用一次模板。 选择模板后，请选择&#x200B;**[!UICONTROL 完成]**，并等待一段时间以生成资源。
+接下来，从列表中选择要使用的模板。 您可以选择多个模板并一次创建多个数据流。 但是，每个帐户只能使用一次模板。 选择模板后，请选择&#x200B;**[!UICONTROL Finish]**&#x200B;并等待一段时间以生成资产。
 
 如果从可用模板列表中选择一个或多个项目，则仍将生成所有B2B架构和身份命名空间，以确保正确配置架构之间的B2B关系。
 
@@ -210,7 +210,7 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 
 在此步骤中，您还可以启用&#x200B;**回填**&#x200B;并为增量数据摄取定义列。 回填用于摄取历史数据，而您为增量摄取定义的列允许从现有数据中区分新数据。
 
-完成摄取计划的配置后，请选择&#x200B;**[!UICONTROL 完成]**。
+完成摄取计划的配置后，请选择&#x200B;**[!UICONTROL Finish]**。
 
 ![已启用回填的Dynamics和Salesforce模板的计划界面。](../../images/tutorials/templates/backfill.png)
 
@@ -221,17 +221,17 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 >title="查看自动生成的资产"
 >abstract="生成所有资产最多需要五分钟时间。如果您选择离开页面，在生成完资产后，将向您发送通知以返回页面。您可以在资产生成后查看资产，并随时对数据流进行其他配置。"
 
-[!UICONTROL 审核模板资产]页面将显示作为模板的一部分自动生成的资产。 在此页中，可以查看与源连接关联的自动生成的架构、数据集、身份命名空间和数据流。 生成所有资产最多需要五分钟时间。如果您选择离开页面，在生成完资产后，将向您发送通知以返回页面。您可以在资产生成后查看资产，并随时对数据流进行其他配置。
+[!UICONTROL Review template assets]页面将显示作为模板的一部分自动生成的资源。 在此页中，可以查看与源连接关联的自动生成的架构、数据集、身份命名空间和数据流。 生成所有资产最多需要五分钟时间。如果您选择离开页面，在生成完资产后，将向您发送通知以返回页面。您可以在资产生成后查看资产，并随时对数据流进行其他配置。
 
-默认情况下，自动生成的数据流设置为草稿状态，以允许对配置进行进一步自定义，如映射规则或计划频率。 选择数据流名称旁边的省略号(`...`)，然后选择&#x200B;**[!UICONTROL 预览映射]**&#x200B;以查看为草稿数据流创建的映射集。
+默认情况下，自动生成的数据流设置为草稿状态，以允许对配置进行进一步自定义，如映射规则或计划频率。 选择数据流名称旁边的省略号(`...`)，然后选择&#x200B;**[!UICONTROL Preview mappings]**&#x200B;以查看为草稿数据流创建的映射集。
 
 ![已选择预览映射选项的下拉窗口。](../../images/tutorials/templates/preview.png)
 
-此时将显示一个预览页面，允许您检查源数据字段与目标架构字段之间的映射关系。 查看数据流的映射后。 选择&#x200B;**[!UICONTROL 获得。]**
+此时将显示一个预览页面，允许您检查源数据字段与目标架构字段之间的映射关系。 查看数据流的映射后。 选择&#x200B;**[!UICONTROL Got it.]**
 
 ![映射预览窗口。](../../images/tutorials/templates/preview-mappings.png)
 
-在执行之后，您可以随时更新数据流。 选择数据流名称旁边的省略号(`...`)，然后选择&#x200B;**[!UICONTROL 更新数据流]**。 您将转到源工作流页面，可以在其中更新数据流详细信息，包括部分摄取、错误诊断和警报通知的设置以及数据流的映射。
+在执行之后，您可以随时更新数据流。 选择数据流名称旁边的省略号(`...`)，然后选择&#x200B;**[!UICONTROL Update dataflow]**。 您将转到源工作流页面，可以在其中更新数据流详细信息，包括部分摄取、错误诊断和警报通知的设置以及数据流的映射。
 
 您可以使用架构编辑器视图对自动生成的架构进行更新。 有关详细信息，请访问[上的使用架构编辑器](../../../xdm/tutorials/create-schema-ui.md)的指南。
 
@@ -239,29 +239,29 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 
 >[!TIP]
 >
->您可以通过源工作区中的[!UICONTROL 数据流]目录页面访问草稿数据流。 从顶部标题中选择&#x200B;**[!UICONTROL 数据流]**，然后从列表中选择要更新的数据流。
+>您可以通过源工作区中的[!UICONTROL Dataflows]目录页面访问草稿数据流。 从顶部标题中选择&#x200B;**[!UICONTROL Dataflows]**，然后从列表中选择要更新的数据流。
 >
 >![源工作区数据流目录中的现有数据流列表。](../../images/tutorials/templates/dataflows.png)
 
 ### 发布数据流
 
-通过浏览源工作流开始发布流程。 选择[!UICONTROL 更新数据流]后，您将进入工作流的&#x200B;*[!UICONTROL 添加数据]*&#x200B;步骤。 选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
+通过浏览源工作流开始发布流程。 选择[!UICONTROL Update dataflow]后，您将进入工作流的&#x200B;*[!UICONTROL Add data]*&#x200B;步骤。 选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续。
 
 ![为草稿数据流添加数据步骤](../../images/tutorials/templates/continue-draft.png)
 
-接下来，确认数据流详细信息，并配置错误诊断、部分摄取和警报通知的设置。 完成后，选择&#x200B;**[!UICONTROL 下一步]**。
+接下来，确认数据流详细信息，并配置错误诊断、部分摄取和警报通知的设置。 完成后，选择&#x200B;**[!UICONTROL Next]**。
 
 ![草稿数据流的数据流详细信息步骤。](../../images/tutorials/templates/dataflow-detail.png)
 
 >[!NOTE]
 >
->您可以随时选择&#x200B;**[!UICONTROL 另存为草稿]**&#x200B;以停止并保存对数据流所做的更改。
+>您可以随时选择&#x200B;**[!UICONTROL Save as draft]**&#x200B;以停止并保存您对数据流所做的更改。
 
 此时将显示映射步骤。 在此步骤中，您可以重新配置数据流的映射配置。 有关用于映射的数据准备功能的综合指南，请访问[数据准备UI指南](../../../data-prep/ui/mapping.md)。
 
 ![草稿数据流的映射步骤。](../../images/tutorials/templates/mapping.png)
 
-最后，查看数据流的详细信息，然后选择&#x200B;**[!UICONTROL 保存并摄取]**&#x200B;以发布草稿。
+最后，查看数据流的详细信息，然后选择&#x200B;**[!UICONTROL Save & ingest]**&#x200B;以发布草稿。
 
 ![草稿数据流的审核步骤。](../../images/tutorials/templates/review.png)
 
