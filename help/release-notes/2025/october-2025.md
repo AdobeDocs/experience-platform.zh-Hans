@@ -1,7 +1,6 @@
 ---
 title: Adobe Experience Platform 发行说明（2025 年 10 月）
 description: Adobe Experience Platform 的 2025 年 10 月发行说明。
-exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: 199acd8d3bdbb0e89fc1ab881bff4d94063b7f78
 workflow-type: tm+mt
 source-wordcount: '920'
