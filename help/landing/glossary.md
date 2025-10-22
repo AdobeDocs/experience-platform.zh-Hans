@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform术语表
 description: Experience Platform 中的重要术语的词汇表。
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: b960e67789acaeb27a0a39db933a2bbb7d84f4d5
+source-git-commit: 0ff9adc8869528f9e13ee384b866b8dcc3d781bd
 workflow-type: tm+mt
-source-wordcount: '8170'
+source-wordcount: '8169'
 ht-degree: 0%
 
 ---
