@@ -2,7 +2,7 @@
 title: Adobe Experience Platform 发行说明（2025 年 9 月）
 description: Adobe Experience Platform 2025 年 9 月发行说明。
 exl-id: 9c5ab487-22b8-4590-b4ea-abec0f377703
-source-git-commit: 96b9fcd8bfb4ff62eb9d4adce2e486782d918344
+source-git-commit: 1e1e91a4006a55a94c64bbc8e89ff3e2e58c4918
 workflow-type: tm+mt
 source-wordcount: '1524'
 ht-degree: 85%
@@ -68,7 +68,7 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 
 | 目标 | 描述 |
 | --- | --- |
-| [!BADGE Beta]{type=Informative} [[!DNL Snowflake Batch]](../../destinations/catalog/cloud-storage/snowflake-batch.md)连接器 | 现在提供一种新的 [!DNL Snowflake Batch] 连接器，可为特定用例提供一种流传输连接器的替代方法。 |
+| [!BADGE Beta]{type=Informative} [[!DNL Snowflake Batch]](../../destinations/catalog/warehouses/snowflake-batch.md)连接器 | 现在提供一种新的 [!DNL Snowflake Batch] 连接器，可为特定用例提供一种流传输连接器的替代方法。 |
 | 支持 [[!DNL Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md) 加密 | 现在，您可以附加 RSA 格式的公钥来加密导出的文件，这为您的敏感信息提供了与其他云存储目标所提供的相同安全等级。 |
 | [[!DNL Pinterest]](../../destinations/catalog/advertising/pinterest.md) 目标的身份验证有效期限详细信息 | 现在，您可以直接在 Experience Platform 界面中查看关于 [!DNL Pinterest] 目标的身份验证到期的信息，您可以查看您的身份验证何时到期，在因其而导致您的数据流中断之前将其更新。您可以从&#x200B;**[!UICONTROL Account expiration date]**&#x200B;或&#x200B;**[[!UICONTROL Accounts]](../../destinations/ui/destinations-workspace.md#accounts)**&#x200B;选项卡中的&#x200B;**[[!UICONTROL Browse]](../../destinations/ui/destinations-workspace.md#browse)**&#x200B;列监视令牌过期日期。 |
 
