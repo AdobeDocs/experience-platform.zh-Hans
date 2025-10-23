@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明（2025 年 10 月）
 description: Adobe Experience Platform 的 2025 年 10 月发行说明。
-source-git-commit: 199acd8d3bdbb0e89fc1ab881bff4d94063b7f78
+source-git-commit: 57cb9f5e57c83576a125ec2de5eb3e4526d5b572
 workflow-type: tm+mt
-source-wordcount: '920'
-ht-degree: 24%
+source-wordcount: '1004'
+ht-degree: 25%
 
 ---
 
@@ -24,9 +24,22 @@ ht-degree: 24%
 
 Adobe Experience Platform 中新功能和现有功能的更新：
 
+- [Agent Orchestrator](#agent-orchestrator)
 - [警报](#alerts)
 - [目标](#destinations)
 - [源](#sources)
+
+## Agent Orchestrator {#agent-orchestrator}
+
+Adobe Experience Platform Agent Orchestrator 是 Adobe Experience Platform 中新的代理式层。
+
+**更新的功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| Audience 代理 | Audience Agent现在支持基于帐户的受众进行对话受众探索和检测重复受众。 有关更多信息，请阅读 [Audience 代理文档](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-ai/experience-cloud-ai/agents/audience)。 |
+
+有关代理的详细信息，请阅读[Agent Orchestrator文档](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-ai/experience-cloud-ai/home)。
 
 ## 警报 {#alerts}
 
@@ -36,7 +49,7 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 
 | 功能 | 描述 |
 | --- | --- |
-| 目标失败率警报 | 已添加目标的新警报： **目标失败率超过阈值**。 此警报在数据激活期间失败的记录数超过允许的阈值时通知您，使您能够快速响应激活问题。 有关详细信息，请阅读有关[标准警报规则](../../observability/alerts/rules.md)的文档。 |
+| 激活失败率警报 | 已添加目标的新警报： **激活失败率超过阈值**。 此警报在数据激活期间失败的记录数超过允许的阈值时通知您，使您能够快速响应激活问题。 有关详细信息，请阅读有关[标准警报规则](../../observability/alerts/rules.md)的文档。 |
 
 {style="table-layout:auto"}
 
@@ -52,6 +65,8 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 | --- | --- |
 | [!DNL Adform] | 使用此目标可根据Adobe Real-Time CDP ID (ECID)和[!DNL Adform]的ID Fusion将Experience Cloud受众发送到[!DNL Adform]以进行激活。 [!DNL Adform]的ID Fusion是一种ID解析服务，它允许您根据Experience Cloud ID (ECID)激活第一方受众。 有关详细信息，请阅读[[!DNL Adform] 文档](../../destinations/catalog/advertising/adform.md) |
 | [!DNL Amazon Ads] | 添加了其他个人标识符支持。 这包括`firstName`、`lastName`、`street`、`city`、`state`、`zip`和`country`等字段。 将这些字段映射为目标标识可以提高受众匹配率。 有关详细信息，请阅读[[!DNL Amazon Ads] 文档](../../destinations/catalog/advertising/amazon-ads.md)。 |
+| [!DNL Snowflake Batch] （有限可用） | 创建实时[!DNL Snowflake]数据共享，以直接将每日受众更新作为共享表发送到您的帐户。 此集成当前适用于VA7区域中配置的客户组织。 有关详细信息，请阅读[[!DNL Snowflake Batch] 文档](../../destinations/catalog/warehouses/snowflake-batch.md)。 |
+| [!DNL Snowflake Streaming] （有限可用） | 创建实时[!DNL Snowflake]数据共享，以直接将流式受众更新作为共享表发送到您的帐户。 此集成当前适用于VA7区域中配置的客户组织。 有关详细信息，请阅读[[!DNL Snowflake Streaming] 文档](../../destinations/catalog/warehouses/snowflake.md)。 |
 
 {style="table-layout:auto"}
 
@@ -59,7 +74,6 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 
 | 功能 | 描述 |
 | --- | --- |
-| 支持[!DNL AES256]目标中的[!DNL Amazon S3]服务器端加密 | [!DNL Amazon S3]目标现在支持[!DNL AES256]服务器端加密，可为导出的数据提供增强的安全性。 您可以在设置或更新[!DNL Amazon S3]目标连接时配置此加密方法，确保使用行业标准[!DNL AES256]加密算法静态加密数据。 有关更多信息，请阅读该 [[!DNL Amazon] 文档](https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html)。 |
 | [多个支持受众级别监视的新目标](../../dataflows/ui/monitor-destinations.md#audience-level-view) | 以下目标现在支持受众级别的监控： <ul><li>[!DNL Airship Tags]</li><li>(API) [!DNL Salesforce Marketing Cloud]</li><li>[!DNL Marketo Engage]</li><li>[!DNL Microsoft Bing]</li><li>(V1) [!DNL Pega CDH Realtime Audience]</li><li>(V2) [!DNL Pega CDH Realtime Audience]</li><li>[!DNL Salesforce Marketing Cloud]帐户参与度</li><li>[!DNL The Trade Desk]</li></ul> |
 | 数据集导出护栏修复 | 已修复数据集导出护栏。 以前，某些包含时间戳列但基于XDM体验事件架构&#x200B;_而非_&#x200B;的数据集被错误地视为体验事件数据集，因此将导出限制为365天的回溯时段。 记录的365天回顾护栏现在仅适用于Experience Events数据集。 使用XDM体验事件架构以外的任何架构的数据集现在受100亿记录护栏的控制。 一些客户可能会看到数据集的导出数量增加，这错误地落到了365天的回看窗口下面。 这使您能够为具有较长回溯时段的预测工作流导出数据集。 有关详细信息，请阅读[数据集导出护栏](../../destinations/guardrails.md#dataset-exports)。 |
 | 增强了企业目标的受众级别报表 | 在此版本之后，客户将看到更准确的受众报表编号，其中仅包含与所选目标相关的受众。 这种监控调整可确保报表仅包含映射到数据流的受众，从而更清楚地了解实际的数据激活。 这不会影响正在激活的数据量 — 它纯粹是为了提高报告准确性而提供的监视增强功能。 |
