@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明（2025 年 10 月）
 description: Adobe Experience Platform 的 2025 年 10 月发行说明。
-source-git-commit: 7f37ba35111f6fa96d1889d74a66e32302b8ab85
+source-git-commit: 0191fc8419c696d8cd114a5eb575b8cc0a815a72
 workflow-type: tm+mt
-source-wordcount: '1068'
-ht-degree: 24%
+source-wordcount: '1159'
+ht-degree: 25%
 
 ---
 
@@ -27,6 +27,7 @@ Adobe Experience Platform 中新功能和现有功能的更新：
 - [Agent Orchestrator](#agent-orchestrator)
 - [警报](#alerts)
 - [目标](#destinations)
+- [Real-Time CDP B2B Edition](#b2b)
 - [源](#sources)
 
 ## Agent Orchestrator {#agent-orchestrator}
@@ -82,6 +83,18 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 {style="table-layout:auto"}
 
 有关更多信息，请阅读[目标概述](../../destinations/home.md)。
+
+## Real-Time CDP B2B Edition {#b2b}
+
+Real-Time CDP B2B Edition 提供全面的 B2B 客户数据管理能力，支持组织构建统一的客户轮廓、创建复杂的 B2B 受众，并在各种不同的营销渠道中激活数据。
+
+**新增或更新的功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 弃用B2B对B2B实体之间的非标准关系的支持 | 从2026年1月开始，Real-Time CDP B2B edition将不再支持B2B实体之间的&#x200B;**非标准**&#x200B;关系。 因此，建议您更新B2B实体以使用[B2B命名空间和架构指南](../../rtcdp/schemas/b2b.md)中概述的标准关系。 |
+
+{style="table-layout:auto"}
 
 ## 源 {#sources}
 
