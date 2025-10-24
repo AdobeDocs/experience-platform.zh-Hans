@@ -1,18 +1,18 @@
 ---
-title: 使用访问标签管理用户对目标数据流的访问
+title: 使用访问标签管理用户对目标数据流的访问权限
 description: 了解如何使用访问标签来管理用户对目标数据流的访问，以便只有贵组织中的一部分用户有权访问特定的目标数据流。
 role: Developer, Admin, User
 exl-id: 85944720-8551-491c-8991-dd9668beb0ca
-source-git-commit: e1b8ca463146d300b48257304778a82aa745df73
+source-git-commit: de71e9e7825ab9a3eaf1e06d03046636406493db
 workflow-type: tm+mt
-source-wordcount: '995'
-ht-degree: 1%
+source-wordcount: '1019'
+ht-degree: 3%
 
 ---
 
-# 使用访问标签管理用户对目标数据流的访问
+# 使用访问标签管理用户对目标数据流的访问权限
 
-作为Real-Time CDP中基于[[!UICONTROL 属性的访问控制]](overview.md)功能的一部分，您现在可以对[目标数据流](../../dataflows/ui/monitor-destinations.md)应用访问标签。 这样，您就可以确保组织中只有一部分用户有权访问特定的目标数据流。
+作为Real-Time CDP中[[!UICONTROL attribute-based access control]](overview.md)功能的一部分，您现在可以对[目标数据流](../../dataflows/ui/monitor-destinations.md)应用访问标签。 这样，您就可以确保组织中只有一部分用户有权访问特定的目标数据流。
 
 向特定目标添加访问标签时，只有对分配了该标签的角色具有访问权限的用户才能查看和编辑该目标数据流。 如果目标数据流未标记任何标签，则属于您组织的所有用户都可看到它。
 
@@ -20,18 +20,18 @@ ht-degree: 1%
 
 ## 先决条件 {#prerequisites}
 
-在开始使用此功能之前，请注意要完成的以下先决条件。 要熟悉[!UICONTROL 基于属性的访问控制]，Adobe还建议您阅读以下文章：
+在开始使用此功能之前，请注意要完成的以下先决条件。 为了熟悉[!UICONTROL attribute-based access control]，Adobe还建议您阅读以下文章：
 
 * [基于属性的访问控制概述](/help/access-control/abac/overview.md)
 * [基于属性的访问控制端到端指南](/help/access-control/abac/end-to-end-guide.md)
 
 ### 访问权限UI {#access-permissions-ui}
 
-[!UICONTROL 权限]是Experience Cloud的区域，管理员可以在其中定义用户角色和策略，以管理产品应用程序内功能和对象的权限。 阅读[权限部分](/help/access-control/abac/end-to-end-guide.md#permissions)以开始。
+[!UICONTROL Permissions]是Experience Cloud的区域，管理员可以在其中定义用户角色和策略，以管理产品应用程序中功能和对象的权限。 阅读[权限部分](/help/access-control/abac/end-to-end-guide.md#permissions)以开始。
 
 ### 创建角色、标签和分配用户 {#create-roles-labels-assign-users}
 
-在访问[!UICONTROL 权限] UI后，您或您的团队成员必须设置角色并将所需的标签添加到这些角色中。 最后，必须将应该访问带有特定标签的资源的用户添加到角色中。 请参阅以下文档部分：
+在访问[!UICONTROL permissions] UI后，您或您的团队成员必须设置角色并将所需的标签添加到这些角色中。 最后，必须将应该访问带有特定标签的资源的用户添加到角色中。 请参阅以下文档部分：
 
 * [创建新角色](/help/access-control/abac/ui/roles.md)
 * [向角色添加标签](/help/access-control/abac/end-to-end-guide.md#label-roles)
@@ -55,10 +55,10 @@ ht-degree: 1%
 
 要将访问标签应用于特定数据流，请执行以下操作：
 
-1. 导航到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**，并找到要限制用户访问的目标数据流。
-1. 选择[!UICONTROL 名称]列中的省略号(`...`)并使用![编辑详细信息控件](/help/images/icons/key.png) **[!UICONTROL 应用访问标签]**&#x200B;控件来添加新标签和管理数据流的现有标签。
+1. 导航到&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**&#x200B;并找到要限制用户访问的目标数据流。
+1. 选择`...`列中的省略号([!UICONTROL Name])并使用![编辑详细信息控件](/help/images/icons/key.png) **[!UICONTROL Apply access labels]**控件添加新标签并管理数据流的现有标签。
    ![在目标工作区的浏览视图中选择“应用访问标签”。](/help/access-control/images/olac/apply-access-labels.png)
-1. 选择要添加到目标数据流的标签并选择&#x200B;**[!UICONTROL 保存]**。
+1. 选择要添加到目标数据流的标签并选择&#x200B;**[!UICONTROL Save]**。
    ![选择中应应用于目标数据流的访问标签。](/help/access-control/images/olac/view-access-labels.png)
 1. 请注意数据流现在如何在UI中显示访问标签。
    ![具有选定数据流的多个目标数据流的视图如何显示访问标签。](/help/access-control/images/olac/dataflow-with-access-label.png)
@@ -73,15 +73,16 @@ ht-degree: 1%
 
 ## 要了解的重要标注和项 {#important-callouts}
 
-目前，访问标签只能应用于现有数据流。 这意味着在应用访问标签之前，您需要创建指向目标的数据流。
+* 目前，访问标签只能应用于现有数据流。 这意味着在应用访问标签之前，您需要创建指向目标的数据流。
+* 如果您无权访问某个访问标签，则无法将该访问标签应用于目标数据流。
+* 向目标数据流添加多个标签时，必须将应该能够查看和编辑数据流的用户添加到至少具有相同标签组合的角色中。 例如，如果将标签C1、I2和另一个自定义标签应用于目标数据流，则只有添加到角色且具有这三个标签组合访问权限的用户才能查看和编辑此特定目标数据流。
+* 由于访问标签配置而用户无权访问的目标数据流可能会以灰色状态显示在UI中；用户无法对这些数据流执行任何操作。
 
-如果您无权访问某个访问标签，则无法将该访问标签应用于目标数据流。
-
-向目标数据流添加多个标签时，必须将应该能够查看和编辑数据流的用户添加到至少具有相同标签组合的角色中。 例如，如果将标签C1、I2和另一个自定义标签应用于目标数据流，则只有添加到角色且具有这三个标签组合访问权限的用户才能查看和编辑此特定目标数据流。
+![目标浏览目录，操作窗口灰显。](../images/olac/destinations-greyed-edit.png)
 
 >[!NOTE]
 >
-> 使用Experience Platform用户界面顶部的搜索框搜索目标数据流时，结果可能包括您的用户访问标签限制您查看的目标数据流。 此行为将在以后的更新中纠正。
+> 使用Experience Platform用户界面顶部的搜索框搜索目标数据流时，结果可能包括您的用户访问标签限制您查看的目标数据流。 这种行为将在未来的更新中得到纠正。
 
 ![维恩图显示仅某些用户如何访问应用了多个标签的目标。](/help/access-control/images/olac/multiple-labels-venn.png)
 
@@ -89,4 +90,4 @@ ht-degree: 1%
 
 通过执行本文档中的步骤，您现在知道如何将访问标签应用于目标数据流，以便只有组织中的用户子集才能访问特定的目标数据流。
 
-接下来，您可以了解有关将数据激活到目标时[!UICONTROL 基于属性的访问控制]所支持的其他功能的更多信息。 例如，您可以将用户的访问权限限制为[仅查看和激活特定字段](/help/access-control/abac/overview.md#destinations)。
+接下来，您可以了解有关将数据激活到目标时[!UICONTROL attribute-based access control]所支持的其他功能的更多信息。 例如，您可以将用户的访问权限限制为[仅查看和激活特定字段](/help/access-control/abac/overview.md#destinations)。

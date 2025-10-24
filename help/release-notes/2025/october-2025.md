@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明（2025 年 10 月）
 description: Adobe Experience Platform 的 2025 年 10 月发行说明。
-source-git-commit: 57cb9f5e57c83576a125ec2de5eb3e4526d5b572
+source-git-commit: 7f37ba35111f6fa96d1889d74a66e32302b8ab85
 workflow-type: tm+mt
-source-wordcount: '1004'
-ht-degree: 25%
+source-wordcount: '1068'
+ht-degree: 24%
 
 ---
 
@@ -77,15 +77,11 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 | [多个支持受众级别监视的新目标](../../dataflows/ui/monitor-destinations.md#audience-level-view) | 以下目标现在支持受众级别的监控： <ul><li>[!DNL Airship Tags]</li><li>(API) [!DNL Salesforce Marketing Cloud]</li><li>[!DNL Marketo Engage]</li><li>[!DNL Microsoft Bing]</li><li>(V1) [!DNL Pega CDH Realtime Audience]</li><li>(V2) [!DNL Pega CDH Realtime Audience]</li><li>[!DNL Salesforce Marketing Cloud]帐户参与度</li><li>[!DNL The Trade Desk]</li></ul> |
 | 数据集导出护栏修复 | 已修复数据集导出护栏。 以前，某些包含时间戳列但基于XDM体验事件架构&#x200B;_而非_&#x200B;的数据集被错误地视为体验事件数据集，因此将导出限制为365天的回溯时段。 记录的365天回顾护栏现在仅适用于Experience Events数据集。 使用XDM体验事件架构以外的任何架构的数据集现在受100亿记录护栏的控制。 一些客户可能会看到数据集的导出数量增加，这错误地落到了365天的回看窗口下面。 这使您能够为具有较长回溯时段的预测工作流导出数据集。 有关详细信息，请阅读[数据集导出护栏](../../destinations/guardrails.md#dataset-exports)。 |
 | 增强了企业目标的受众级别报表 | 在此版本之后，客户将看到更准确的受众报表编号，其中仅包含与所选目标相关的受众。 这种监控调整可确保报表仅包含映射到数据流的受众，从而更清楚地了解实际的数据激活。 这不会影响正在激活的数据量 — 它纯粹是为了提高报告准确性而提供的监视增强功能。 |
+| 由于访问标签，UI数据流灰显 | 为了解决某些用户因无权访问的目标数据流被完全隐藏而看到空白页面的问题，UI现在以灰色状态显示这些受限制的数据流，而不是完全忽略它们。 有关更多详细信息，请阅读有关[使用访问标签管理用户对目标数据流](../../access-control/abac/apply-access-labels-destinations.md#important-callouts-and-items-to-know)的访问权限的文档。 |
 
 {style="table-layout:auto"}
 
 有关更多信息，请阅读[目标概述](../../destinations/home.md)。
-
-<!--
-| [!DNL Snowflake Batch] (Limited availability) | Create a live [!DNL Snowflake] data share to receive daily audience updates directly as shared tables into your account. This integration is currently available for customer organizations provisioned in the VA7 region. |
-| [!DNL Snowflake Streaming] (Limited availability) | Create a live [!DNL Snowflake] data share to receive streaming audience updates directly as shared tables into your account. This integration is currently available for customer organizations provisioned in the VA7 region. |
--->
 
 ## 源 {#sources}
 

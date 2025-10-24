@@ -2,7 +2,7 @@
 title: 标识服务链接逻辑
 description: 了解Identity Service如何链接不同的身份以创建客户的全面视图。
 exl-id: 1c958c0e-0777-48db-862c-eb12b2e7a03c
-source-git-commit: 5c05f2dbcf9088b95eb8d35e455912219e87662f
+source-git-commit: bbfc1d749fbe0e74489a48e0c962d9f51d19ccde
 workflow-type: tm+mt
 source-wordcount: '966'
 ht-degree: 3%
@@ -23,10 +23,6 @@ ht-degree: 3%
 * **配置文件记录**：这些标识通常来自CRM系统。
 * **体验事件**：这些标识通常来自WebSDK实现或Adobe Analytics源。
 
->[!IMPORTANT]
->
->Identity服务区分大小写。 例如，**abc<span>@gmail.com**&#x200B;和&#x200B;**ABC<span>@GMAIL.COM**&#x200B;将被视为两个单独的电子邮件标识。
-
 ## 建立链接的语义含义
 
 标识表示真实世界的实体。 如果两个身份之间建立了链接，则意味着这两个身份相互关联。 以下是说明此概念的一些示例：
@@ -44,6 +40,7 @@ ht-degree: 3%
 
 * 身份命名空间是给定的身份值到的上下文。 身份命名空间的常见示例包括CRMID、电子邮件和电话。
 * 标识值是表示实际实体的字符串。 例如：“julien<span>@acme.com”可以是电子邮件命名空间的身份值，555-555-1234可以是手机命名空间的相应身份值。
+* Identity服务区分大小写。 例如，**julien<span>@gmail.com**&#x200B;和&#x200B;**JULIEN<span>@GMAIL.COM**&#x200B;将被视为两个单独的电子邮件标识。
 
 >[!TIP]
 >
