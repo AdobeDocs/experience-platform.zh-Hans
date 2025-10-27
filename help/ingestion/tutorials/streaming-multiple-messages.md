@@ -5,9 +5,9 @@ title: 在一个HTTP请求中发送多条消息
 type: Tutorial
 description: 本文档提供了一个教程，介绍如何使用流摄取，在单个HTTP请求中将多条消息发送到Adobe Experience Platform。
 exl-id: 04045090-8a2c-42b6-aefa-09c043ee414f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 31c00e69dd92f7c3232e09f02da36c60cd8cf486
 workflow-type: tm+mt
-source-wordcount: '1489'
+source-wordcount: '1483'
 ht-degree: 1%
 
 ---
@@ -43,7 +43,7 @@ ht-degree: 1%
 
 以下示例显示如何在单个HTTP请求中将多个消息发送到特定数据集。 在消息标头中插入数据集ID，以便将该消息直接摄取到其中。
 
-您可以使用[!DNL Experience Platform] UI或API中的列表操作获取现有数据集的ID。 通过转至&#x200B;**[!UICONTROL 数据集]**&#x200B;选项卡，单击要查找数据集ID的数据集，然后从&#x200B;**[!UICONTROL 信息]**&#x200B;选项卡上的数据集ID字段中复制字符串，可以在[Experience Platform](https://platform.adobe.com)上找到数据集ID。 有关如何使用API检索数据集的信息，请参阅[目录服务概述](../../catalog/home.md)。
+您可以使用[!DNL Experience Platform] UI或API中的列表操作获取现有数据集的ID。 在[Experience Platform](https://platform.adobe.com)上可以找到数据集ID，方法是转到&#x200B;**[!UICONTROL Datasets]**&#x200B;选项卡，单击要查找此ID的数据集，然后从&#x200B;**[!UICONTROL Info]**&#x200B;选项卡上的数据集ID字段中复制字符串。 有关如何使用API检索数据集的信息，请参阅[目录服务概述](../../catalog/home.md)。
 
 您可以创建新数据集，而不是使用现有数据集。 有关使用API创建数据集的更多信息，请参阅[使用API创建数据集](../../catalog/api/create-dataset.md)教程。
 
@@ -68,7 +68,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
       "header": {
         "schemaRef": {
           "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-          "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+          "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
         },
         "imsOrgId": "{ORG_ID}",
         "datasetId": "{DATASET_ID}",
@@ -78,7 +78,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
         "xdmMeta": {
           "schemaRef": {
             "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-            "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+            "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
           }
         },
         "xdmEntity": {
@@ -127,7 +127,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
       "header": {
         "schemaRef": {
           "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-          "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+          "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
         },
         "imsOrgId": "{ORG_ID}",
         "datasetId": "{DATASET_ID}",
@@ -137,7 +137,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
         "xdmMeta": {
           "schemaRef": {
             "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-            "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+            "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
           }
         },
         "xdmEntity": {
@@ -244,7 +244,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
       "header": {
         "schemaRef": {
           "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-          "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+          "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
         },
         "imsOrgId": "{ORG_ID}",
         "datasetId": "{DATASET_ID}",
@@ -254,7 +254,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
         "xdmMeta": {
           "schemaRef": {
             "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-            "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+            "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
           }
         },
         "xdmEntity": {
@@ -303,7 +303,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
       "header": {
         "schemaRef": {
           "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-          "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+          "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
         },
         "imsOrgId": "{ORG_ID}",
         "datasetId": "{DATASET_ID}",
@@ -314,7 +314,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
       "header": {
         "schemaRef": {
           "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-          "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+          "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
         },
         "imsOrgId": "invalidIMSOrg@AdobeOrg",
         "datasetId": "{DATASET_ID}",
@@ -324,7 +324,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
         "xdmMeta": {
           "schemaRef": {
             "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-            "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+            "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
           }
         },
         "xdmEntity": {
@@ -373,7 +373,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
       "header": {
         "schemaRef": {
           "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-          "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+          "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
         },
         "imsOrgId": "{ORG_ID}",
         "datasetId": "{DATASET_ID}",
@@ -383,7 +383,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
         "xdmMeta": {
           "schemaRef": {
             "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-            "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+            "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
           }
         },
         "xdmEntity": {
@@ -498,7 +498,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
         "xdmMeta": {
           "schemaRef": {
             "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-            "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+            "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
           }
         },
         "xdmEntity": {
@@ -508,7 +508,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
     },
 ```
 
-第三个消息失败，因为标头中使用了无效的组织ID。 组织必须与尝试向其发布内容的{CONNECTION_ID}匹配。 要确定哪个组织ID与您正在使用的流连接匹配，您可以使用[[!DNL Streaming Ingestion API]](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/)执行`GET inlet`请求。 有关如何检索先前创建的流连接的示例，请参阅[检索流连接](./create-streaming-connection.md#get-data-collection-url)。
+第三个消息失败，因为标头中使用了无效的组织ID。 组织必须与尝试向其发布内容的{CONNECTION_ID}匹配。 要确定哪个组织ID与您正在使用的流连接匹配，您可以使用`GET inlet`[[!DNL Streaming Ingestion API]执行](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/)请求。 有关如何检索先前创建的流连接的示例，请参阅[检索流连接](./create-streaming-connection.md#get-data-collection-url)。
 
 第四条　消息失败，因为它未遵循预期的XDM架构。 请求标头和正文中包含的`xdmSchema`与`{DATASET_ID}`的XDM架构不匹配。 更正消息标头和正文中的架构可使其通过DCCS验证并成功发送到[!DNL Experience Platform]。 还必须更新消息正文以匹配`{DATASET_ID}`的XDM架构，才能使其在[!DNL Experience Platform]上传递流验证。 有关成功流式传输到Experience Platform的邮件发生情况的更多信息，请参阅本教程的[确认已摄取的邮件](#confirm-messages-ingested)部分。
 
@@ -523,7 +523,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
 
 通过DCCS验证的邮件将流式传输到[!DNL Experience Platform]。 在[!DNL Experience Platform]上，批处理消息在被引入[!DNL Data Lake]之前通过流式验证进行测试。 批次的状态（无论是否成功）将显示在`{DATASET_ID}`指定的数据集内。
 
-使用[Experience Platform UI](https://platform.adobe.com)可以查看成功流式传输到[!DNL Experience Platform]的批处理消息的状态，方法是转到&#x200B;**[!UICONTROL 数据集]**&#x200B;选项卡，单击要流式传输的数据集，然后检查&#x200B;**[!UICONTROL 数据集活动]**&#x200B;选项卡。
+使用[!DNL Experience Platform]Experience Platform UI[可以查看成功流式传输到](https://platform.adobe.com)的批处理消息的状态，方法是转到&#x200B;**[!UICONTROL Datasets]**&#x200B;选项卡，单击要流式传输到的数据集，然后选中&#x200B;**[!UICONTROL Dataset Activity]**&#x200B;选项卡。
 
 在[!DNL Experience Platform]上通过流验证的批处理消息将被摄取到[!DNL Data Lake]中。 然后，即可分析或导出消息。
 
