@@ -1,8 +1,8 @@
 ---
 title: Adform
 description: Adform是程序化媒体购买和销售解决方案的领先提供商。 将Adform连接到Adobe Experience Platform后，您可以通过基于Experience Cloud ID (ECID)的Adform激活第一方受众。
-last-substantial-update: 2025-10-22T00:00:00Z
-source-git-commit: f7fd7a83f6d047877697b72e78ac0d4b08c0ff00
+last-substantial-update: 2025-10-23T00:00:00Z
+source-git-commit: c429ee227bd93455f541a32266bfbef9ddeaae06
 workflow-type: tm+mt
 source-wordcount: '972'
 ht-degree: 3%
@@ -28,16 +28,16 @@ Adform是程序化媒体购买和销售解决方案的领先提供商。 将Adfo
 
 使用此目标可根据Adobe Real-Time CDP ID (ECID)和Adform的ID Fusion将Experience Cloud受众发送到Adform以进行激活。 Adform的ID Fusion是Adform的ID解析服务，允许您根据Experience Cloud ID (ECID)激活第一方受众。
 
-一种常见的情况是，根据Experience Cloud ID (ECID)将网站访客重新定位到您的网站或应用程序。 您只需通过现成的[事件流](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking)或[客户端](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/catalog/analytics/adform) Adform扩展将Experience Cloud ID (ECID)发送到Adform。 之后，您可以通过Adform激活目标与Adform共享受众 — 完全基于Experience Cloud ID (ECID)。
+一种常见的情况是，根据Experience Cloud ID (ECID)将网站访客重新定位到您的网站或应用程序。 您只需通过现成的[事件流](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking)或[客户端](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/analytics/adform) Adform扩展将Experience Cloud ID (ECID)发送到Adform。 之后，您可以通过Adform激活目标与Adform共享受众 — 完全基于Experience Cloud ID (ECID)。
 
 ## 先决条件 {#prerequisites}
 
 * 您必须是现有Adform客户才能使用此目标。
 * 您需要拥有Adform Audience Base数据连接凭据。
    * 如果您没有Adform Audience Base数据连接凭据，请联系您的Adform代表。
-* 要正确同步，您需要具有从实体到Adform站点跟踪的[事件流](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking)或[客户端](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/catalog/analytics/adform)连接。
+* 要正确同步，您需要具有从实体到Adform站点跟踪的[事件流](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking)或[客户端](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/analytics/adform)连接。
    * 如果您没有从实体到Adform站点跟踪的事件流或客户端连接，请联系您的Adform代表。
-   * Adform为[事件流](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking)和[客户端](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/catalog/analytics/adform)提供了Adobe Experience Cloud扩展。
+   * Adform为[事件流](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking)和[客户端](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/analytics/adform)提供了Adobe Experience Cloud扩展。
 
 
 ## 支持的身份 {#supported-identities}
