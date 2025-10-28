@@ -5,10 +5,10 @@ breadcrumb-title: Data Governance 指南
 user-guide-description: 通过使用标签、营销操作和监管策略，施加数据使用限制。
 feature: Data Governance
 role: User,Developer,Admin
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 6e9ea451eafd08a72a5f26dabe229fdb7c6c909d
 workflow-type: tm+mt
-source-wordcount: '100'
-ht-degree: 53%
+source-wordcount: '105'
+ht-degree: 50%
 
 ---
 
@@ -26,6 +26,7 @@ ht-degree: 53%
    * [概述](policies/overview.md)
    * [在UI中管理策略](policies/user-guide.md)
    * [在API中创建策略](policies/create.md)
+   * [同意策略规则构建参考](policies/consent-policy-rule-building-reference.md)
 * 策略实施 {#enforcement}
    * [概述](enforcement/overview.md)
    * [自动执行](enforcement/auto-enforcement.md)
