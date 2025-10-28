@@ -4,9 +4,9 @@ title: 预览示例状态（配置文件预览） API端点
 description: 实时客户个人资料API的预览示例状态端点允许您预览个人资料数据的最新成功示例，按数据集和身份列出个人资料分发，并生成显示数据集重叠、身份重叠和未拼接个人资料的报告。
 role: Developer
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: d1eb9191c74add1ab21cd268327bab9a3255d182
 workflow-type: tm+mt
-source-wordcount: '2909'
+source-wordcount: '2904'
 ht-degree: 1%
 
 ---
@@ -37,12 +37,12 @@ Adobe Experience Platform允许您从多个来源摄取客户数据，以便为�
 
 ## 如何触发示例作业
 
-启用实时客户资料的数据被摄取到[!DNL Experience Platform]后，将存储在资料数据存储中。 当将记录摄取到配置文件存储中增加或减少总配置文件计数超过5%时，将触发取样作业以更新计数。 触发示例的方式取决于所使用的摄取类型：
+启用实时客户资料的数据被摄取到[!DNL Experience Platform]后，将存储在资料数据存储中。 当将记录摄取到配置文件存储中增加或减少总配置文件计数超过3%时，将触发取样作业以更新计数。 触发示例的方式取决于所使用的摄取类型：
 
-* 对于&#x200B;**流式数据工作流**，每小时进行一次检查，以确定是否已达到5%的增加或减少阈值。 如果有，则会自动触发示例作业以更新计数。
-* 对于&#x200B;**批次摄取**，在成功将批次摄取到配置文件存储区后15分钟内，如果达到5%的增加或减少阈值，则会运行作业以更新计数。 使用配置文件API，您可以预览最新成功的示例作业，以及按数据集和身份命名空间列出配置文件分发。
+* 对于&#x200B;**流式数据工作流**，每小时进行一次检查，以确定是否已达到3%的增加或减少阈值。 如果有，则会自动触发示例作业以更新计数。
+* 对于&#x200B;**批次摄取**，在成功将批次摄取到配置文件存储区后15分钟内，如果达到3%的增加或减少阈值，则会运行作业以更新计数。 使用配置文件API，您可以预览最新成功的示例作业，以及按数据集和身份命名空间列出配置文件分发。
 
-在Experience Platform UI的[!UICONTROL 配置文件]部分中，还提供了按命名空间量度列出的配置文件计数和配置文件。 有关如何使用UI访问配置文件数据的信息，请访问[[!DNL Profile] UI指南](../ui/user-guide.md)。
+Experience Platform UI的[!UICONTROL Profiles]部分中也提供了按命名空间量度列出的配置文件计数和配置文件。 有关如何使用UI访问配置文件数据的信息，请访问[[!DNL Profile] UI指南](../ui/user-guide.md)。
 
 ## 查看上一个示例状态 {#view-last-sample-status}
 
@@ -195,9 +195,9 @@ curl -X GET \
 | 属性 | 描述 |
 |---|---|
 | `sampleCount` | 具有此数据集ID的采样合并用户档案总数。 |
-| `samplePercentage` | 以小数格式表示的`sampleCount`占抽样合并配置文件总数的百分比（在[上次采样状态](#view-last-sample-status)中返回的`numRowsToRead`值）。 |
+| `samplePercentage` | 以小数格式表示的`sampleCount`占抽样合并配置文件总数的百分比（在`numRowsToRead`上次采样状态[中返回的](#view-last-sample-status)值）。 |
 | `fullIDsCount` | 具有此数据集ID的合并用户档案总数。 |
-| `fullIDsPercentage` | `fullIDsCount`占合并配置文件总数的百分比（在[上次采样状态](#view-last-sample-status)中返回的`totalRows`值），以小数格式表示。 |
+| `fullIDsPercentage` | `fullIDsCount`占合并配置文件总数的百分比（在`totalRows`上次采样状态[中返回的](#view-last-sample-status)值），以小数格式表示。 |
 | `name` | 数据集的名称，在数据集创建期间提供。 |
 | `description` | 数据集的描述，在数据集创建期间提供。 |
 | `value` | 数据集的ID。 |
@@ -294,12 +294,12 @@ curl -X GET \
 | 属性 | 描述 |
 |---|---|
 | `sampleCount` | 命名空间中采样的合并配置文件总数。 |
-| `samplePercentage` | `sampleCount`以采样合并配置文件的百分比表示（在[上次采样状态](#view-last-sample-status)中返回的`numRowsToRead`值），以十进制格式表示。 |
+| `samplePercentage` | `sampleCount`以采样合并配置文件的百分比表示（在`numRowsToRead`上次采样状态[中返回的](#view-last-sample-status)值），以十进制格式表示。 |
 | `reportTimestamp` | 报表的时间戳。 如果在请求期间提供了`date`参数，则返回的报告将对应于提供的日期。 如果未提供`date`参数，则返回最新报告。 |
 | `fullIDsFragmentCount` | 命名空间中的配置文件片段总数。 |
 | `fullIDsCount` | 命名空间中合并的配置文件总数。 |
-| `fullIDsPercentage` | `fullIDsCount`占合并配置文件总数的百分比（在[上次采样状态](#view-last-sample-status)中返回的`totalRows`值），以小数格式表示。 |
-| `code` | 命名空间的`code`。 使用[Adobe Experience Platform Identity Service API](../../identity-service/api/list-namespaces.md)处理命名空间时可找到此项，在Experience Platform UI中也称为[!UICONTROL Identity符号]。 若要了解详细信息，请访问[身份命名空间概述](../../identity-service/features/namespaces.md)。 |
+| `fullIDsPercentage` | `fullIDsCount`占合并配置文件总数的百分比（在`totalRows`上次采样状态[中返回的](#view-last-sample-status)值），以小数格式表示。 |
+| `code` | 命名空间的`code`。 使用[Adobe Experience Platform Identity Service API](../../identity-service/api/list-namespaces.md)处理命名空间时可以找到此项，在Experience Platform UI中也称为[!UICONTROL Identity symbol]。 若要了解详细信息，请访问[身份命名空间概述](../../identity-service/features/namespaces.md)。 |
 | `value` | 命名空间的`id`值。 使用[Identity服务API](../../identity-service/api/list-namespaces.md)处理命名空间时可以找到此项。 |
 
 ## 生成数据集重叠报告
@@ -445,7 +445,7 @@ curl -X GET \
 | 属性 | 描述 |
 |---|---|
 | `data` | `data`对象包含以逗号分隔的列表，这些列表具有身份命名空间代码及其各自配置文件计数的唯一组合。 |
-| 命名空间代码 | `code`是每个身份命名空间名称的简短形式。 可以使用[Adobe Experience Platform Identity服务API](../../identity-service/api/list-namespaces.md)找到每个`code`到其`name`的映射。 在Experience Platform UI中，`code`也称为[!UICONTROL 标识符号]。 若要了解详细信息，请访问[身份命名空间概述](../../identity-service/features/namespaces.md)。 |
+| 命名空间代码 | `code`是每个身份命名空间名称的简短形式。 可以使用`code`Adobe Experience Platform Identity服务API`name`找到每个[到其](../../identity-service/api/list-namespaces.md)的映射。 在Experience Platform UI中，`code`也称为[!UICONTROL Identity symbol]。 若要了解详细信息，请访问[身份命名空间概述](../../identity-service/features/namespaces.md)。 |
 | `reportTimestamp` | 报表的时间戳。 如果在请求期间提供了`date`参数，则返回的报告将对应于提供的日期。 如果未提供`date`参数，则返回最新报告。 |
 
 ### 解释身份命名空间重叠报表
@@ -554,12 +554,12 @@ curl -X GET \
 | `unstitchedProfiles` | 一个对象，其中包含按时间段划分的未拼接用户档案。 未拼合的用户档案报表提供了7、30、60、90和120天时间段的配置文件细目。 |
 | `countOfProfiles` | 时间段内未拼接用户档案的计数或命名空间未拼接用户档案的计数。 |
 | `eventsAssociated` | 时间范围的ExperienceEvents数或命名空间的事件数。 |
-| `nsDistribution` | 一个对象，其中包含各个身份命名空间，每个命名空间均分配有未拼接的用户档案和事件。 注意：将`nsDistribution`对象中每个身份命名空间的总和`countOfProfiles`相加等于时间段内的`countOfProfiles`。 每个命名空间的`eventsAssociated`和每个时段的总数`eventsAssociated`也是如此。 |
+| `nsDistribution` | 一个对象，其中包含各个身份命名空间，每个命名空间均分配有未拼接的用户档案和事件。 注意：将`countOfProfiles`对象中每个身份命名空间的总和`nsDistribution`相加等于时间段内的`countOfProfiles`。 每个命名空间的`eventsAssociated`和每个时段的总数`eventsAssociated`也是如此。 |
 | `reportTimestamp` | 报表的时间戳。 |
 
 ### 解释未拼合的用户档案报告
 
-该报表的结果可以让您深入了解您的组织在其配置文件存储区中有多少个未拼合和不活动的配置文件。
+该报表的结果可为insight提供贵组织在其个人资料存储区中有多少未拼合和不活动的个人资料。
 
 请考虑以下来自`data`对象的摘录：
 
