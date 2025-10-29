@@ -140,7 +140,7 @@ ht-degree: 2%
 
 ![受众](/help/destinations/assets/catalog/advertising/snapchat-ads/audiences.png)
 
-请注意，首次将Adobe受众激活到Snap Inc时，您最初会将其视为空受众。 这是因为Adobe Experience Platform在评估受众之前，不会将成员数据导出到Snap Inc。 有关如何在Experience Platform中评估受众的更多信息，请参阅[分段服务概述](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html#evaluate-segments)。
+请注意，首次将Adobe受众激活到Snap Inc时，您最初会将其视为空受众。 这是因为Adobe Experience Platform在评估受众之前，不会将成员数据导出到Snap Inc。 有关如何在Experience Platform中评估受众的更多信息，请参阅[分段服务概述](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html?lang=zh-Hans#evaluate-segments)。
 
 ## 数据使用和治理 {#data-usage-governance}
 

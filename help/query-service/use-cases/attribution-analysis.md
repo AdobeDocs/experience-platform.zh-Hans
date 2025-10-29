@@ -19,8 +19,8 @@ ht-degree: 0%
 
 * [报告包数据概述的Adobe Analytics源连接器](../../sources/connectors/adobe-applications/mapping/analytics.md)。
 * [Analytics字段映射文档](../../sources/connectors/adobe-applications/mapping/analytics.md)提供了有关摄取和映射Analytics数据以便与查询服务一起使用的更多信息。
-* [Attribution IQ概述](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html)
-* [Adobe Analytics归因面板指南](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/panels/attribution.html)。
+* [Attribution IQ概述](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html?lang=zh-Hans)
+* [Adobe Analytics归因面板指南](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/panels/attribution.html?lang=zh-Hans)。
 
 可以在`OVER()`窗口函数部分[中找到](../sql/adobe-defined-functions.md#window-functions)函数中参数的说明。 [Adobe营销和Commerce术语表](https://business.adobe.com/glossary/index.html)可能也很有用。
 

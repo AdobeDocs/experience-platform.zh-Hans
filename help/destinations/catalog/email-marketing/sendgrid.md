@@ -34,7 +34,7 @@ SendGrid使用API持有者令牌作为与SendGrid API通信的身份验证机制
 
 ![](../../assets/catalog/email-marketing/sendgrid/01-api-key.jpg)
 
-在将数据激活到SendGrid目标之前，您必须在[中创建](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)区段[!DNL Experience Platform]。 另请参阅此页面下面的[限制](#limits)部分。
+在将数据激活到SendGrid目标之前，您必须在[中创建](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=zh-Hans)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=zh-Hans)区段[!DNL Experience Platform]。 另请参阅此页面下面的[限制](#limits)部分。
 
 >[!IMPORTANT]
 >
@@ -98,7 +98,7 @@ SendGrid支持激活下表中描述的标识。 了解有关[标识](/help/ident
 
 ### 填写目标详细信息 {#destination-details}
 
-在[设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html)此目标时，必须提供以下信息：
+在[设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=zh-Hans)此目标时，必须提供以下信息：
 
 * **[!UICONTROL Name]**：将来用于识别此目标的名称。
 * **[!UICONTROL Description]**：一个可选描述，可帮助您以后识别此目标。

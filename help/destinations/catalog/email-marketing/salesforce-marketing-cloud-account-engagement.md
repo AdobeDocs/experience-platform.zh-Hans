@@ -34,7 +34,7 @@ ht-degree: 2%
 
 ### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL Marketing Cloud Account Engagement]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)区段[!DNL Experience Platform]。
+在将数据激活到[!DNL Marketing Cloud Account Engagement]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=zh-Hans)区段[!DNL Experience Platform]。
 
 ### [!DNL Marketing Cloud Account Engagement]中的先决条件 {#prerequisites-destination}
 

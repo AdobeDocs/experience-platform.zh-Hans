@@ -32,7 +32,7 @@ Destination SDK文档为您提供了相关说明，指导您使用Adobe Experien
                 <li><a href="/help/destinations/destination-sdk/functionality/configuration-options.md">解释所有配置选项</a></li>
                 <li> 目标服务器配置 — <a href="/help/destinations/destination-sdk/functionality/destination-server/server-specs.md">服务器规范</a>和<a href="/help/destinations/destination-sdk/functionality/destination-server/templating-specs.md">模板规范</a></li>
                 <li><a href="/help/destinations/destination-sdk/functionality/destination-configuration/customer-data-fields.md">客户数据字段和其他目标配置组件</a></li>
-                <li><a href="https://experienceleague.adobe.com/en/docs/experience-platform/destinations/destination-sdk/functionality/destination-server/message-format">模板化和宏</a></li>
+                <li><a href="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/destination-sdk/functionality/destination-server/message-format">模板化和宏</a></li>
             </ul>
         </td>
         <td>
@@ -68,7 +68,7 @@ Destination SDK文档为您提供了相关说明，指导您使用Adobe Experien
                 <li><a href="/help/destinations/destination-sdk/guides/configure-destination-instructions.md">配置流目标端到端指南</a></li>
                 <li><a href="/help/destinations/destination-sdk/functionality/destination-server/message-format.md">通过Pebble模板了解数据转换</a>和<a href="/help/destinations/destination-sdk/functionality/destination-server/supported-functions.md">查看支持的模板功能</a></li>
                 <li><a href="/help/destinations/destination-sdk/functionality/destination-configuration/aggregation-policy.md">了解数据聚合策略</a></li>
-                <li><a href="https://experienceleague.adobe.com/en/docs/experience-platform/destinations/destination-sdk/functionality/destination-server/message-format">实时配置示例</a></li>
+                <li><a href="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/destination-sdk/functionality/destination-server/message-format">实时配置示例</a></li>
                 <li><a href="/help/destinations/destination-sdk/testing-api/streaming-destinations/streaming-destination-testing-overview.md">测试您的流目标</a></li>
             </ul>
         </td>
@@ -103,7 +103,7 @@ Destination SDK文档为您提供了相关说明，指导您使用Adobe Experien
 
 >[!IMPORTANT]
 >
-> 此功能仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户，可用于创建专用自定义目标。
+> 此功能仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户，可用于创建专用自定义目标。
 
 作为Destination SDK合作伙伴，您可以将产品化的目标添加到[Experience Platform目录](../catalog/overview.md)，从而从中受益：
 
@@ -144,7 +144,7 @@ Destination SDK访问权限因您作为合作伙伴或Experience Platform、Real
 |---------|----------|
 | 独立软件供应商(ISV) | 加入[Adobe技术合作伙伴计划](https://partners.adobe.com/technologyprogram/experiencecloud.html)并请求获取Experience Platform沙盒以进行访问Destination SDK。 |
 | 系统集成商(SI) | 您需要在[Adobe解决方案合作伙伴计划](https://solutionpartners.adobe.com/home.html)中处于金级或白金级才能配置Experience Platform沙盒并访问Destination SDK。 |
-| [Real-Time CDP Ultimate包](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)上的Experience Platform客户 | 默认情况下，您有权访问Experience Platform沙盒和Destination SDK，从而允许您为组织构建专用目标。 |
+| [Real-Time CDP Ultimate包](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)上的Experience Platform客户 | 默认情况下，您有权访问Experience Platform沙盒和Destination SDK，从而允许您为组织构建专用目标。 |
 
 {style="table-layout:auto"}
 
@@ -152,7 +152,7 @@ Destination SDK访问权限因您作为合作伙伴或Experience Platform、Real
 
 下面概述了在Experience Platform中配置目标的过程：
 
-1. 如果您是ISV或SI，请参阅上文部分中的[获取访问权限](#get-access)信息。 [Real-Time CDP Ultimate包](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户可以跳过此步骤。
+1. 如果您是ISV或SI，请参阅上文部分中的[获取访问权限](#get-access)信息。 [Real-Time CDP Ultimate包](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户可以跳过此步骤。
 2. [请求预配Experience Platform沙盒](https://adobeexchangeec.zendesk.com/hc/en-us/articles/360037457812-Adobe-Experience-Platform-Sandbox-Accounts-Access-Adding-Users-and-Support)并启用目标创作权限。
 3. 构建集成。 按照产品文档中的说明配置[流式目标](guides/configure-destination-instructions.md)或[基于文件的目标](guides/configure-file-based-destination-instructions.md)。
 4. 测试您的集成。 按照产品文档中的说明测试[流式目标](testing-api/streaming-destinations/streaming-destination-testing-overview.md)或[基于文件的目标](testing-api/batch-destinations/file-based-destination-testing-overview.md)。
@@ -166,5 +166,5 @@ Destination SDK访问权限因您作为合作伙伴或Experience Platform、Real
 Adobe建议您阅读并了解以下Experience Platform文档：
 
 * [Adobe Experience Platform目标概述](https://experienceleague.adobe.com/docs/experience-platform/destinations/home.html?lang=zh-Hans)
-* [XDM架构组合的基础](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html)
+* [XDM架构组合的基础](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=zh-Hans)
 * [身份命名空间概述](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=zh-Hans)

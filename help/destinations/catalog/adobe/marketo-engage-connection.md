@@ -45,7 +45,7 @@ ht-degree: 1%
 
 ## 先决条件 {#prerequisites}
 
-* 设置目标的用户在其Marketo实例和分区中必须具有[编辑人员](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database)权限。
+* 设置目标的用户在其Marketo实例和分区中必须具有[编辑人员](https://experienceleague.adobe.com/zh-hans/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database)权限。
 * 设置此目标时，只有同一Adobe Real-Time CDP组织上的Marketo Engage实例可用。
 * 只有在Adobe Admin Console中管理用户的Marketo Engage实例才能使用此目标。
 
@@ -146,7 +146,7 @@ Marketo使用您选择的&#x200B;**[!UICONTROL Marketo deduplication field]**&#x
    * **[!UICONTROL Profile only]**：当您想要使用Experience Platform中的最新信息使Marketo潜在客户配置文件保持最新时，请选择此选项。
    * **[!UICONTROL Audience only]**：如果要将受众成员添加到Marketo列表而不更新其配置文件信息，请选择此选项。
 * **[!UICONTROL Partition]**： *分区选择仅在选择&#x200B;**[!UICONTROL Profile only]**&#x200B;或&#x200B;**[!UICONTROL Audience and profile]**&#x200B;同步类型*&#x200B;时可用。 选择与所选工作区关联的Marketo分区ID。 这允许您指定Marketo中的哪个潜在客户分区将接收导出的数据。 如果不选择特定的分区，您的数据将发送到Marketo中的&#x200B;**[!UICONTROL Default]**&#x200B;分区。
-* **[!UICONTROL Marketo deduplication field]**：选择更新现有Marketo潜在客户时要使用的Marketo重复数据删除字段。 此选择器显示您在Marketo中标记为重复数据删除字段的字段。 如果您希望Marketo中的特定字段显示为重复数据删除字段，则必须将该字段标记为Marketo中的[可搜索字段](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/lead-database/lead-database)。
+* **[!UICONTROL Marketo deduplication field]**：选择更新现有Marketo潜在客户时要使用的Marketo重复数据删除字段。 此选择器显示您在Marketo中标记为重复数据删除字段的字段。 如果您希望Marketo中的特定字段显示为重复数据删除字段，则必须将该字段标记为Marketo中的[可搜索字段](https://experienceleague.adobe.com/zh-hans/docs/marketo-developer/marketo/rest/lead-database/lead-database)。
 
   >[!NOTE]
   >
