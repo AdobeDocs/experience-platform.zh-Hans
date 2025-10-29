@@ -200,4 +200,4 @@ Adobe Experience Platform中的所有数据都符合标准化的XDM架构，从�
 
 以下视频旨在支持您了解[!DNL Data Science Workspace]。
 
->[!VIDEO](https://video.tv.adobe.com/v/30567?quality=12&enable10seconds=on&speedcontrol=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3412909?captions=chi_hans&quality=12&enable10seconds=on&speedcontrol=on)
