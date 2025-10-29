@@ -3,10 +3,10 @@ title: 激活受众以边缘个性化目标
 description: 了解如何为同一页面和下一页面个性化用例将受众从Adobe Experience Platform激活到边缘个性化目标。
 type: Tutorial
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: 25697d341b2970eeb20d9f2507ee701ade8046d3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '1964'
-ht-degree: 2%
+source-wordcount: '1885'
+ht-degree: 0%
 
 ---
 
@@ -25,9 +25,9 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/ed
 
 >[!IMPORTANT]
 > 
-> * 要激活数据并启用工作流的[映射步骤](#mapping)，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。
-> * 要激活数据而不执行工作流的[映射步骤](#mapping)，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活没有映射的区段]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。
->* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+>* 要激活数据并启用工作流的[映射步骤](#mapping)，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。
+>* 若要在不执行工作流的[映射步骤](#mapping)的情况下激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Segment without Mapping]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 > 
 > 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
@@ -39,11 +39,11 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/ed
 >
 >Experience Platform用户界面经常更新，自从录制此视频以来，可能已经发生了变化。 有关最新信息，请参阅以下部分中描述的配置步骤。
 
->[!VIDEO](https://video.tv.adobe.com/v/3449803/?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/3418799/?quality=12&learn=on)
 
 有关如何将受众和配置文件属性共享到Adobe Target和自定义个性化目标的简短概述，请观看以下视频。
 
->[!VIDEO](https://video.tv.adobe.com/v/3447365/?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/3419036/?quality=12&learn=on)
 
 ## 用例 {#use-cases}
 
@@ -55,7 +55,7 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/ed
 
 ### 同一页面个性化 {#same-page}
 
-用户访问您网站的页面。 您可以使用当前页面访问信息（例如引荐URL、浏览器语言、嵌入的产品信息）为非Adobe平台（例如，[!DNL Pega]、[!DNL Optimizely]或其他）使用[自定义个性化](../catalog/personalization/custom-personalization.md)连接来选择下一个操作或决策（例如个性化）。
+用户访问您网站的页面。 您可以使用当前页面访问信息（例如引荐URL、浏览器语言、嵌入的产品信息）为非Adobe平台（例如，[、](../catalog/personalization/custom-personalization.md)或其他）使用[!DNL Pega]自定义个性化[!DNL Optimizely]连接来选择下一个操作或决策（例如个性化）。
 
 ### 下一页面个性化 {#next-page}
 
@@ -77,7 +77,7 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/ed
 
 设置个性化目标的第一步是为Experience Platform Web SDK配置数据流。 可在数据收集UI中完成此操作。
 
-配置数据流时，在&#x200B;**[!UICONTROL Adobe Experience Platform]**&#x200B;下，确保同时选择&#x200B;**[!UICONTROL Edge分段]**&#x200B;和&#x200B;**[!UICONTROL Personalization目标]**。
+配置数据流时，在&#x200B;**[!UICONTROL Adobe Experience Platform]**&#x200B;下，确保同时选择&#x200B;**[!UICONTROL Edge Segmentation]**&#x200B;和&#x200B;**[!UICONTROL Personalization Destinations]**。
 
 >[!TIP]
 >
@@ -89,13 +89,13 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/ed
 
 ### 创建[!DNL Active-On-Edge]合并策略 {#create-merge-policy}
 
-创建目标连接后，必须创建[!DNL Active-On-Edge]合并策略。 [!DNL Active-On-Edge]合并策略确保在[&#128279;](../../segmentation/methods/edge-segmentation.md)边缘上持续评估受众，并且可用于实时和下一页个性化用例。
+创建目标连接后，必须创建[!DNL Active-On-Edge]合并策略。 [!DNL Active-On-Edge]合并策略确保在[边缘上持续评估受众](../../segmentation/methods/edge-segmentation.md)，并且可用于实时和下一页个性化用例。
 
 >[!IMPORTANT]
 >
 >目前，边缘目标仅支持激活使用设置为默认的[Edge上的活动合并策略](../../segmentation/ui/segment-builder.md#merge-policies)的受众。 如果将使用不同合并策略的受众映射到边缘目标，则不会评估这些受众。
 
-按照[创建合并策略](../../profile/merge-policies/ui-guide.md#create-a-merge-policy)中的说明进行操作，并确保启用&#x200B;**[!UICONTROL Edge上的活动合并策略]**&#x200B;切换开关。
+按照[创建合并策略](../../profile/merge-policies/ui-guide.md#create-a-merge-policy)中的说明进行操作，并确保启用&#x200B;**[!UICONTROL Active-On-Edge Merge Policy]**&#x200B;切换开关。
 
 ### 在Experience Platform中创建新受众 {#create-audience}
 
@@ -118,15 +118,15 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/ed
 
 完成先决条件后，您现在可以选择用于同一页面和下一页面个性化的边缘个性化目标。
 
-1. 转到&#x200B;**[!UICONTROL 连接>目标]**，然后选择&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡。
+1. 转到&#x200B;**[!UICONTROL Connections > Destinations]**，然后选择&#x200B;**[!UICONTROL Catalog]**&#x200B;选项卡。
 
    在Experience Platform UI中突出显示![目标目录选项卡。](../assets/ui/activate-edge-personalization-destinations/catalog-tab.png)
 
-1. 在与您要激活受众的个性化目标对应的卡片上，选择&#x200B;**[!UICONTROL 激活受众]**，如下图所示。
+1. 在要激活受众的个性化目标对应的卡片中选择&#x200B;**[!UICONTROL Activate audiences]**，如下图所示。
 
    ![激活目录中目标卡上突出显示的受众控件。](../assets/ui/activate-edge-personalization-destinations/activate-audiences-button.png)
 
-1. 选择要用于激活受众的目标连接，然后选择&#x200B;**[!UICONTROL 下一步]**。
+1. 选择要用于激活受众的目标连接，然后选择&#x200B;**[!UICONTROL Next]**。
 
    ![在激活工作流中选择目标步骤。](../assets/ui/activate-edge-personalization-destinations/select-destination.png)
 
@@ -134,14 +134,14 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/ed
 
 ## 选择您的受众 {#select-audiences}
 
-使用受众名称左侧的复选框选择要激活到目标的受众，然后选择&#x200B;**[!UICONTROL 下一步]**。
+使用受众名称左侧的复选框选择要激活到目标的受众，然后选择&#x200B;**[!UICONTROL Next]**。
 
-要选择要激活到目标的受众，请使用受众名称左侧的复选框，然后选择&#x200B;**[!UICONTROL 下一步]**。
+要选择要激活到目标的受众，请使用受众名称左侧的复选框，然后选择&#x200B;**[!UICONTROL Next]**。
 
 您可以从多种类型的受众中进行选择，具体取决于其来源：
 
-* **[!UICONTROL 分段服务]**：分段服务在Experience Platform中生成的受众。 有关详细信息，请参阅[分段文档](../../segmentation/ui/overview.md)。
-* **[!UICONTROL 自定义上传]**：受众在Experience Platform外部生成，并以CSV文件形式上传到Experience Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/audience-portal.md#import-audience)的文档。
+* **[!UICONTROL Segmentation Service]**：分段服务在Experience Platform中生成的受众。 有关详细信息，请参阅[分段文档](../../segmentation/ui/overview.md)。
+* **[!UICONTROL Custom upload]**：受众在Experience Platform之外生成，并以CSV文件形式上传到Experience Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/audience-portal.md#import-audience)的文档。
 * 其他类型的受众，来自其他Adobe解决方案，如[!DNL Audience Manager]。
 
 ![在激活工作流中选择突出显示多个受众的受众步骤。](../assets/ui/activate-edge-personalization-destinations/select-audiences.png)
@@ -150,7 +150,7 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/ed
 
 >[!IMPORTANT]
 >
->配置文件属性可能包含敏感数据。 为了保护此数据，**[!UICONTROL 自定义Personalization]**&#x200B;目标要求您在为基于属性的个性化配置目标时使用[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/)。 所有Edge Network API调用必须在[经过身份验证的上下文](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication/)中进行。
+>配置文件属性可能包含敏感数据。 为了保护此数据，**[!UICONTROL Custom Personalization]**&#x200B;目标要求您在配置基于属性的个性化的目标时使用[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/)。 所有Edge Network API调用必须在[经过身份验证的上下文](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication/)中进行。
 >
 ><br>如果您已在使用Web SDK或Mobile SDK进行集成，则可以通过添加服务器端集成来通过Edge Network API检索属性。
 >
@@ -164,13 +164,13 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/ed
 
 ### 选择源属性 {#select-source-attributes}
 
-要添加源属性，请在&#x200B;**[!UICONTROL Source字段]**&#x200B;列上选择&#x200B;**[!UICONTROL 添加新字段]**&#x200B;控件，然后搜索或导航到所需的XDM属性字段，如下所示。
+要添加源属性，请选择&#x200B;**[!UICONTROL Add new field]**&#x200B;列上的&#x200B;**[!UICONTROL Source field]**&#x200B;控件，然后搜索或导航到所需的XDM属性字段，如下所示。
 
 ![显示如何在映射步骤中选择目标属性的屏幕录制。](../assets/ui/activate-edge-personalization-destinations/mapping-step-select-attribute.gif)
 
 ### 选择目标属性 {#select-target-attributes}
 
-要添加目标属性，请选择&#x200B;**[!UICONTROL 目标字段]**&#x200B;列上的&#x200B;**[!UICONTROL 添加新字段]**&#x200B;控件，并键入要将源属性映射到其中的自定义属性名称。
+要添加目标属性，请选择&#x200B;**[!UICONTROL Add new field]**&#x200B;列上的&#x200B;**[!UICONTROL Target field]**&#x200B;控件，并键入要将源属性映射到其中的自定义属性名称。
 
 >[!NOTE]
 >
@@ -180,31 +180,31 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/ed
 
 ## 计划受众导出 {#scheduling}
 
-默认情况下，[!UICONTROL 受众计划]页面仅显示您在当前激活流程中选择的新选定受众。
+默认情况下，[!UICONTROL Audience schedule]页面仅显示您在当前激活流程中选择的新受众。
 
-要查看激活到目标的所有受众，请使用筛选选项并禁用&#x200B;**[!UICONTROL 仅显示新受众]**&#x200B;筛选器。
+要查看激活到目标的所有受众，请使用筛选选项并禁用&#x200B;**[!UICONTROL Show new audiences only]**&#x200B;筛选器。
 
 ![突出显示所有受众筛选器。](../assets/ui/activate-edge-personalization-destinations/all-audiences.png)
 
-在&#x200B;**[!UICONTROL 受众计划]**&#x200B;页面上，选择每个受众，然后使用&#x200B;**[!UICONTROL 开始日期]**&#x200B;和&#x200B;**[!UICONTROL 结束日期]**&#x200B;选择器来配置将数据发送到目标的时间间隔。
+在&#x200B;**[!UICONTROL Audience schedule]**&#x200B;页面上，选择每个受众，然后使用&#x200B;**[!UICONTROL Start date]**&#x200B;和&#x200B;**[!UICONTROL End date]**&#x200B;选择器配置将数据发送到目标的时间间隔。
 
 ![激活工作流的“受众计划”步骤（开始和结束日期突出显示）。](../assets/ui/activate-edge-personalization-destinations/audience-schedule.png)
 
-选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以转到[!UICONTROL 审阅]页面。
+选择&#x200B;**[!UICONTROL Next]**&#x200B;以转到[!UICONTROL Review]页面。
 
 ## 审查 {#review}
 
-在&#x200B;**[!UICONTROL 审核]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL 取消]**&#x200B;以中断流，**[!UICONTROL 上一步]**&#x200B;以修改您的设置，或者选择&#x200B;**[!UICONTROL 完成]**&#x200B;以确认您的选择并开始将数据发送到目标。
+在&#x200B;**[!UICONTROL Review]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL Cancel]**&#x200B;以中断流，**[!UICONTROL Back]**&#x200B;以修改您的设置，或&#x200B;**[!UICONTROL Finish]**&#x200B;以确认您的选择并开始将数据发送到目标。
 
 ![审核步骤中的选择摘要。](../assets/ui/activate-edge-personalization-destinations/review.png)
 
 ### 同意策略评估 {#consent-policy-evaluation}
 
-如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的轮廓数量。有关详细信息，请阅读[同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。
+如果您的组织购买了&#x200B;**Adobe Healthcare Shield**&#x200B;或&#x200B;**Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL View applicable consent policies]**&#x200B;以查看应用的同意政策以及激活中因此包含的用户档案数。 有关详细信息，请阅读[同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。
 
 ### 数据使用策略检查 {#data-usage-policy-checks}
 
-在&#x200B;**[!UICONTROL 审核]**&#x200B;步骤中，Experience Platform还会检查是否存在任何数据使用策略违规。 下面显示了一个违反策略的示例。 在解决该违规之前，您无法完成受众激活工作流。 有关如何解决策略违规的信息，请参阅数据治理文档部分中的[数据使用策略违规](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation)。
+在&#x200B;**[!UICONTROL Review]**&#x200B;步骤中，Experience Platform还会检查是否存在任何数据使用策略违规。 下面显示了一个违反策略的示例。 在解决该违规之前，您无法完成受众激活工作流。 有关如何解决策略违规的信息，请参阅数据治理文档部分中的[数据使用策略违规](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation)。
 
 ![数据策略违规示例。](../assets/common/data-policy-violation.png)
 
@@ -214,7 +214,7 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/ed
 
 ![显示审核步骤中可用的受众过滤器的屏幕录制。](../assets/ui/activate-edge-personalization-destinations/filter-audiences-review-step.gif)
 
-如果您对您的选择感到满意，并且未检测到任何违反策略的情况，请选择&#x200B;**[!UICONTROL 完成]**&#x200B;以确认您的选择并开始将数据发送到目标。
+如果您对您的选择感到满意，并且未检测到任何违反策略的情况，请选择&#x200B;**[!UICONTROL Finish]**&#x200B;以确认您的选择并开始将数据发送到目标。
 
 <!--
 

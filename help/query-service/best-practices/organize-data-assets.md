@@ -2,7 +2,7 @@
 title: 查询服务中数据资产组织的最佳实践
 description: 本文档概述整理数据以通过查询服务轻松使用的逻辑方法。
 exl-id: 12d6af99-035a-4f80-b7c0-c6413aa50697
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '787'
 ht-degree: 0%
@@ -56,9 +56,9 @@ ALTER VIEW v1  ADD SCHEMA databaseA.schema1;
 
 ## 从数据容器访问数据资产
 
-通过适当限定数据库名称，任何[!DNL PostgreSQL]客户端都可以连接到您使用SHOW关键字创建的任何数据结构。 有关SHOW关键字的详细信息，请参阅SQL语法文档[&#128279;](../sql/syntax.md#show)中的SHOW部分。
+通过适当限定数据库名称，任何[!DNL PostgreSQL]客户端都可以连接到您使用SHOW关键字创建的任何数据结构。 有关SHOW关键字的详细信息，请参阅SQL语法文档[中的](../sql/syntax.md#show)SHOW部分。
 
-“all”是默认数据库名称，其中包含沙盒中的每个数据库和架构容器。 当您使用`dbname="all"`建立[!DNL PostgreSQL]连接时，您可以访问已创建的&#x200B;**任何**&#x200B;数据库和架构以从逻辑上组织数据。
+“all”是默认数据库名称，其中包含沙盒中的每个数据库和架构容器。 当您使用[!DNL PostgreSQL]建立`dbname="all"`连接时，您可以访问已创建的&#x200B;**任何**&#x200B;数据库和架构以从逻辑上组织数据。
 
 列出`dbname="all"`下的所有数据库将显示三个可用数据库。
 
@@ -66,7 +66,7 @@ ALTER VIEW v1  ADD SCHEMA databaseA.schema1;
 SHOW DATABASES;
   
 name     
----------
+|---------
 databaseA
 databaseB
 databaseC
@@ -78,26 +78,26 @@ databaseC
 SHOW SCHEMAS;
   
 database       | schema
-----------------------
+|----------------------
 databaseA      | schema1
 databaseA      | schema2
 databaseB      | schema3
 ```
 
-当您使用`dbname="databaseA"`建立[!DNL PostgreSQL]连接时，您可以访问与该特定数据库关联的任何架构，如下面的示例所示。
+当您使用[!DNL PostgreSQL]建立`dbname="databaseA"`连接时，您可以访问与该特定数据库关联的任何架构，如下面的示例所示。
 
 ```sql
 SHOW DATABASES;
   
 name     
----------
+|---------
 databaseA
  
 
 SHOW SCHEMAS;
   
 database       | schema
-----------------------
+|----------------------
 databaseA      | schema1
 databaseA      | schema2
 ```
@@ -108,20 +108,20 @@ databaseA      | schema2
 SHOW DATABASES;
   
 name     
----------
+|---------
 databaseA
 
 
 SHOW SCHEMAS;
   
 database       | schema
-----------------------
+|----------------------
 databaseA      | schema1
 
 
 SHOW tables;
 name       | type
-----------------------
+|----------------------
 dataset1| table
 dataset2| table
 dataset3| table
@@ -129,7 +129,7 @@ dataset3| table
 
 ## 从数据容器更新或删除数据资产
 
-随着组织（或沙盒）中数据资产量的增长，有必要更新数据容器或从数据容器中删除数据资产。 通过使用点表示法引用相应的数据库和架构名称，可以从组织容器中删除单个资产。 第一个示例中添加到`databaseA.schema1`的表和视图（`t1`和`v1`）将使用以下示例中的语法删除。
+随着组织（或沙盒）中数据资产量的增长，有必要更新数据容器或从数据容器中删除数据资产。 通过使用点表示法引用相应的数据库和架构名称，可以从组织容器中删除单个资产。 第一个示例中添加到`t1`的表和视图（`v1`和`databaseA.schema1`）将使用以下示例中的语法删除。
 
 ```sql
 ALTER TABLE databaseA.schema2.t1 REMOVE SCHEMA databaseA.schema2;

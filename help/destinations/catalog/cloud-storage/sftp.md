@@ -2,9 +2,9 @@
 title: SFTP连接
 description: 创建到SFTP服务器的实时出站连接，定期从Adobe Experience Platform导出分隔的数据文件。
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: 45f22addbff9ec81d64e9e756e4c27e8af4b477d
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '1231'
+source-wordcount: '1182'
 ht-degree: 7%
 
 ---
@@ -49,9 +49,9 @@ ht-degree: 7%
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
----------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如[目标激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes)的选择配置文件属性屏幕中所选。 |
-| 导出频率 | **[!UICONTROL 批次]** | 批量目标以三、六、八、十二或二十四小时的增量将文件导出到下游平台。 阅读有关[基于批处理文件的目标](/help/destinations/destination-types.md#file-based)的详细信息。 |
+|---------|----------|---------|
+| 导出类型 | **[!UICONTROL Profile-based]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如[目标激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes)的选择配置文件属性屏幕中所选。 |
+| 导出频率 | **[!UICONTROL Batch]** | 批量目标以三、六、八、十二或二十四小时的增量将文件导出到下游平台。 阅读有关[基于批处理文件的目标](/help/destinations/destination-types.md#file-based)的详细信息。 |
 
 {style="table-layout:auto"}
 
@@ -61,8 +61,8 @@ ht-degree: 7%
 
 此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
 
-* 如何使用Experience Platform用户界面[&#128279;](/help/destinations/ui/export-datasets.md)导出数据集。
-* 如何使用流服务API[&#128279;](/help/destinations/api/export-datasets.md)以编程方式导出数据集。
+* 如何使用Experience Platform用户界面[导出数据集](/help/destinations/ui/export-datasets.md)。
+* 如何使用流服务API[以编程方式](/help/destinations/api/export-datasets.md)导出数据集。
 
 ## 导出数据的文件格式 {#file-format}
 
@@ -86,7 +86,7 @@ ht-degree: 7%
 
 >[!IMPORTANT]
 > 
->若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写下面两个部分中列出的字段。
 
@@ -102,15 +102,15 @@ ht-degree: 7%
 >title="专用 SSH 密钥"
 >abstract="私有 SSH 密钥的格式必须为 RSA 格式的 Base64 编码的字符串，并且不得受密码保护。"
 
-如果选择带有密码&#x200B;**身份验证类型的** SFTP连接到您的SFTP位置：
+如果选择&#x200B;**[!UICONTROL SFTP with password]**&#x200B;身份验证类型连接到SFTP位置：
 
 ![使用密码的SFTP目标基本身份验证。](../../assets/catalog/cloud-storage/sftp/stfp-basic-authentication.png)
 
-* **[!UICONTROL 域]**： SFTP存储位置的地址；
-* **[!UICONTROL 用户名]**：用于登录到SFTP存储位置的用户名；
-* **[!UICONTROL 端口]**： SFTP存储位置使用的端口；
-* **[!UICONTROL 密码]**：用于登录到SFTP存储位置的密码。
-* **[!UICONTROL 加密密钥]**： （可选）您可以附加RSA格式的公钥以向导出的文件添加加密。 查看下图中的加密密钥格式正确示例。
+* **[!UICONTROL Domain]**： SFTP存储位置的地址；
+* **[!UICONTROL Username]**：用于登录到SFTP存储位置的用户名；
+* **[!UICONTROL Port]**： SFTP存储位置使用的端口；
+* **[!UICONTROL Password]**：用于登录到SFTP存储位置的密码。
+* **[!UICONTROL Encryption key]**： （可选）您可以附加RSA格式公钥以向导出的文件添加加密。 查看下图中的加密密钥格式正确示例。
 
   ![显示UI中格式正确的PGP密钥示例的图像。](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
@@ -119,11 +119,11 @@ ht-degree: 7%
 
 ![SFTP目标SSH密钥身份验证。](../../assets/catalog/cloud-storage/sftp/sftp-ssh-key-authentication.png)
 
-* **[!UICONTROL 域]**：填写SFTP帐户的IP地址或域名
-* **[!UICONTROL 端口]**： SFTP存储位置使用的端口；
-* **[!UICONTROL 用户名]**：用于登录到SFTP存储位置的用户名；
-* **[!UICONTROL SSH密钥]**：用于登录到SFTP存储位置的私有SSH密钥。 私钥必须是RSA格式的Base64编码字符串，且不得受密码保护。
-* **[!UICONTROL 加密密钥]**： （可选）您可以附加RSA格式的公钥以向导出的文件添加加密。 查看下图中的加密密钥格式正确示例。
+* **[!UICONTROL Domain]**：填写SFTP帐户的IP地址或域名
+* **[!UICONTROL Port]**： SFTP存储位置使用的端口；
+* **[!UICONTROL Username]**：用于登录到SFTP存储位置的用户名；
+* **[!UICONTROL SSH Key]**：用于登录到SFTP存储位置的私有SSH密钥。 私钥必须是RSA格式的Base64编码字符串，且不得受密码保护。
+* **[!UICONTROL Encryption key]**： （可选）您可以附加RSA格式公钥以向导出的文件添加加密。 查看下图中的加密密钥格式正确示例。
 
   ![显示UI中格式正确的PGP密钥示例的图像。](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
@@ -133,12 +133,12 @@ ht-degree: 7%
 
 ![SFTP目标的目标详细信息字段。](../../assets/catalog/cloud-storage/sftp/sftp-destination-details.png)
 
-* **[!UICONTROL 名称]**：输入一个名称，帮助您在Experience Platform用户界面中识别此目标；
-* **[!UICONTROL 描述]**：输入此目标的描述；
-* **[!UICONTROL 文件夹路径]**：在要导出文件的SFTP位置中输入文件夹的路径。
-* **[!UICONTROL 文件类型]**：选择Experience Platform应用于导出文件的格式。 在选择[!UICONTROL CSV]选项时，您还可以[配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md)。
-* **[!UICONTROL 压缩格式]**：选择Experience Platform应用于导出文件的压缩类型。
-* **[!UICONTROL 包含清单文件]**：如果希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。 清单的命名格式为`manifest-<<destinationId>>-<<dataflowRunId>>.json`。 查看[样本清单文件](/help/destinations/assets/common/manifest-d0420d72-756c-4159-9e7f-7d3e2f8b501e-0ac8f3c0-29bd-40aa-82c1-f1b7e0657b19.json)。 清单文件包含以下字段：
+* **[!UICONTROL Name]**：输入一个名称，帮助您在Experience Platform用户界面中识别此目标；
+* **[!UICONTROL Description]**：输入此目标的描述；
+* **[!UICONTROL Folder path]**：在要导出文件的SFTP位置中输入文件夹的路径。
+* **[!UICONTROL File type]**：选择Experience Platform应用于导出文件的格式。 在选择[!UICONTROL CSV]选项时，您还可以[配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md)。
+* **[!UICONTROL Compression format]**：选择Experience Platform应该用于导出文件的压缩类型。
+* **[!UICONTROL Include manifest file]**：如果您希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。 清单的命名格式为`manifest-<<destinationId>>-<<dataflowRunId>>.json`。 查看[样本清单文件](/help/destinations/assets/common/manifest-d0420d72-756c-4159-9e7f-7d3e2f8b501e-0ac8f3c0-29bd-40aa-82c1-f1b7e0657b19.json)。 清单文件包含以下字段：
    * `flowRunId`：生成导出文件的[数据流运行](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations)。
    * `scheduledTime`：导出文件时的时间（UTC时间）。
    * `exportResults.sinkPath`：存储位置中保存导出文件的路径。
@@ -149,8 +149,8 @@ ht-degree: 7%
 
 >[!IMPORTANT]
 > 
->* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+>* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 有关将受众激活到此目标的说明，请参阅[将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md)。
 

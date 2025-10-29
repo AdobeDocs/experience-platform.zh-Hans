@@ -2,9 +2,9 @@
 title: 上载和实施扩展的端到端测试
 description: 了解如何在Adobe Experience Platform中验证、上传和测试您的扩展。
 exl-id: 6176a9e1-fa06-447e-a080-42a67826ed9e
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '2347'
+source-wordcount: '2344'
 ht-degree: 22%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 22%
 
 上载之前，请验证是否存在任何必填字段或设置。例如，最佳做法是（至少）查看[扩展清单](../manifest.md)、[扩展配置](../configuration.md)、[视图](../web/views.md)和[库模块](../web/format.md)。
 
-您的徽标文件就是一个具体示例：向您的`extension.json`文件中添加`"iconPath": "example.svg",`行，并将该徽标图像文件包含在您的项目中。 这是将为扩展显示的图标的相对路径。 它不应以斜杠开头，必须引用一个扩展名为 `.svg` 的 SVG 文件。SVG在呈现正方形时应正常显示，并且可以通过用户界面缩放。 有关更多详细信息，请参阅[如何缩放SVG文章](https://css-tricks.com/scale-svg/)。
+您的徽标文件就是一个具体示例：向您的`"iconPath": "example.svg",`文件中添加`extension.json`行，并将该徽标图像文件包含在您的项目中。 这是将为扩展显示的图标的相对路径。 它不应以斜杠开头，必须引用一个扩展名为 `.svg` 的 SVG 文件。SVG在呈现正方形时应正常显示，并且可以通过用户界面缩放。 有关更多详细信息，请参阅[如何缩放SVG文章](https://css-tricks.com/scale-svg/)。
 
 >[!NOTE]
 >
@@ -63,10 +63,10 @@ npx @adobe/reactor-uploader
 
 >[!NOTE]
 > 默认情况下，Uploader需要服务器到服务器Oauth流的Adobe I/O凭据。 旧版`jwt-auth`凭据
-> 通过运行`npx @adobe/reactor-uploader@v5.2.0`一直使用到2025年1月1日弃用。 所需的参数
-> [此处](https://github.com/adobe/reactor-uploader/tree/cdc27f4f0e9fa3136b8cd5ca8c7271428b842452)找到`jwt-auth`版本以运行。
+> > 通过运行`npx @adobe/reactor-uploader@v5.2.0`一直使用到2025年1月1日弃用。 所需的参数
+> > `jwt-auth`此处[找到](https://github.com/adobe/reactor-uploader/tree/cdc27f4f0e9fa3136b8cd5ca8c7271428b842452)版本以运行。
 
-上传程序仅要求您输入几条信息。 可以从Adobe I/O控制台检索`clientId`和`clientSecret`。 导航到I/O控制台中的[集成页面](https://console.adobe.io/integrations)。 从下拉菜单中选择正确的组织，找到正确的集成，然后选择&#x200B;**[!UICONTROL 查看]**。
+上传程序仅要求您输入几条信息。 可以从Adobe I/O控制台检索`clientId`和`clientSecret`。 导航到I/O控制台中的[集成页面](https://console.adobe.io/integrations)。 从下拉列表中选择正确的组织，找到正确的集成，然后选择&#x200B;**[!UICONTROL View]**。
 
 - 您的`clientId`是什么？ 请从I/O控制台复制并粘贴此项。
 - 您的`clientSecret`是什么？ 请从I/O控制台复制并粘贴此项。
@@ -82,11 +82,11 @@ npx @adobe/reactor-uploader
 >
 >如果您打算经常运行Uploader，那么每次输入所有这些信息可能会造成负担。 您也可以从命令行将这些信息作为参数传入。 有关更多信息，请参阅 NPM 文档的[命令行参数](https://www.npmjs.com/package/@adobe/reactor-uploader#command-line-arguments)部分。
 
-如果您希望直接使用API管理扩展上传，请在API文档中参阅[创建](../../api/endpoints/extension-packages.md/#create)或[更新](../../api/endpoints/extension-packages.md#update)扩展包的示例调用，以获取更多详细信息。
+如果您希望直接使用API管理扩展上传，请在API文档中参阅[创建](../../api/endpoints/extension-packages.md#create)或[更新](../../api/endpoints/extension-packages.md#update)扩展包的示例调用，以获取更多详细信息。
 
 ## 创建开发资产 {#property}
 
-登录UI并在左侧导航中选择&#x200B;**[!UICONTROL 标记]**&#x200B;后，将显示[!UICONTROL 属性]屏幕。 资产是要部署的标记的容器，可用于一个或多个网站。
+登录UI并在左侧导航中选择&#x200B;**[!UICONTROL Tags]**&#x200B;后，将显示[!UICONTROL Properties]屏幕。 资产是要部署的标记的容器，可用于一个或多个网站。
 
 ![](../images/getting-started/properties-screen.png)
 

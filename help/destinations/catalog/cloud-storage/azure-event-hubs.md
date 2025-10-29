@@ -4,9 +4,9 @@ title: Azure事件中心连接
 description: 创建到 [!DNL Azure Event Hubs] 存储的实时出站连接，以从Experience Platform流式传输数据。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: 7502810ff329a31f2fdaf6797bc7672118555e6a
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '2077'
+source-wordcount: '2022'
 ht-degree: 5%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
-> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
 [!DNL Azure Event Hubs]是一个大数据流式传输平台和事件摄取服务。 它每秒可以接收和处理数百万个事件。 发送到事件中心的数据可以使用任何实时分析提供程序或批处理/存储适配器进行转换和存储。
 
@@ -51,9 +51,9 @@ UI中的![AWS Kinesis](../../assets/catalog/cloud-storage/event-hubs/catalog.png
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
----------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如[目标激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes)的选择配置文件属性屏幕中所选。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+|---------|----------|---------|
+| 导出类型 | **[!UICONTROL Profile-based]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如[目标激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes)的选择配置文件属性屏幕中所选。 |
+| 导出频率 | **[!UICONTROL Streaming]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -65,7 +65,7 @@ UI中的![AWS Kinesis](../../assets/catalog/cloud-storage/event-hubs/catalog.png
 
 >[!IMPORTANT]
 > 
->若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 连接到此目标时，必须提供以下信息：
 
@@ -75,22 +75,22 @@ UI中的![AWS Kinesis](../../assets/catalog/cloud-storage/event-hubs/catalog.png
 
 ![显示Azure事件中心标准身份验证详细信息已完成字段的UI屏幕图像](../../assets/catalog/cloud-storage/event-hubs/event-hubs-standard-authentication.png)
 
-如果选择&#x200B;**[!UICONTROL 标准身份验证]**&#x200B;类型连接到HTTP终结点，请输入以下字段并选择&#x200B;**[!UICONTROL 连接到目标]**：
+如果选择&#x200B;**[!UICONTROL Standard authentication]**&#x200B;类型以连接到HTTP端点，请输入以下字段并选择&#x200B;**[!UICONTROL Connect to destination]**：
 
-* **[!UICONTROL SAS密钥名称]**：授权规则的名称，也称为SAS密钥名称。
-* **[!UICONTROL SAS键]**：事件中心命名空间的主键。 `sasPolicy`对应的`sasKey`必须配置了&#x200B;**管理**&#x200B;权限才能填充事件中心列表。 请参阅[!DNL Azure Event Hubs]Microsoft文档[以了解如何使用SAS密钥向](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)进行身份验证。
-* **[!UICONTROL 命名空间]**：填写您的[!DNL Azure Event Hubs]命名空间。 在[!DNL Azure Event Hubs]Microsoft文档[中了解](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace)命名空间。
+* **[!UICONTROL SAS Key Name]**：授权规则的名称，也称为SAS密钥名称。
+* **[!UICONTROL SAS Key]**：事件中心命名空间的主键。 `sasPolicy`对应的`sasKey`必须配置了&#x200B;**管理**&#x200B;权限才能填充事件中心列表。 请参阅[!DNL Azure Event Hubs]Microsoft文档[以了解如何使用SAS密钥向](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)进行身份验证。
+* **[!UICONTROL Namespace]**：填写您的[!DNL Azure Event Hubs]命名空间。 在[!DNL Azure Event Hubs]Microsoft文档[中了解](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace)命名空间。
 
 #### 共享访问签名(SAS)身份验证 {#sas-authentication}
 
 ![显示Azure事件中心标准身份验证详细信息已完成字段的UI屏幕图像](../../assets/catalog/cloud-storage/event-hubs/event-hubs-sas-authentication.png)
 
-如果选择&#x200B;**[!UICONTROL 标准身份验证]**&#x200B;类型连接到HTTP终结点，请输入以下字段并选择&#x200B;**[!UICONTROL 连接到目标]**：
+如果选择&#x200B;**[!UICONTROL Standard authentication]**&#x200B;类型以连接到HTTP端点，请输入以下字段并选择&#x200B;**[!UICONTROL Connect to destination]**：
 
-* **[!UICONTROL SAS密钥名称]**：授权规则的名称，也称为SAS密钥名称。
-* **[!UICONTROL SAS键]**：事件中心命名空间的主键。 `sasPolicy`对应的`sasKey`必须配置了&#x200B;**管理**&#x200B;权限才能填充事件中心列表。 请参阅[!DNL Azure Event Hubs]Microsoft文档[以了解如何使用SAS密钥向](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)进行身份验证。
-* **[!UICONTROL 命名空间]**：填写您的[!DNL Azure Event Hubs]命名空间。 在[!DNL Azure Event Hubs]Microsoft文档[中了解](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace)命名空间。
-* **[!UICONTROL 事件中心名称]**：填写您的[!DNL Azure Event Hub]名称。 在[!DNL Azure Event Hubs]Microsoft文档[中了解](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub)名称。
+* **[!UICONTROL SAS Key Name]**：授权规则的名称，也称为SAS密钥名称。
+* **[!UICONTROL SAS Key]**：事件中心命名空间的主键。 `sasPolicy`对应的`sasKey`必须配置了&#x200B;**管理**&#x200B;权限才能填充事件中心列表。 请参阅[!DNL Azure Event Hubs]Microsoft文档[以了解如何使用SAS密钥向](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)进行身份验证。
+* **[!UICONTROL Namespace]**：填写您的[!DNL Azure Event Hubs]命名空间。 在[!DNL Azure Event Hubs]Microsoft文档[中了解](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace)命名空间。
+* **[!UICONTROL Event Hub Name]**：填写您的[!DNL Azure Event Hub]名称。 在[!DNL Azure Event Hubs]Microsoft文档[中了解](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub)名称。
 
 ### 填写目标详细信息 {#destination-details}
 
@@ -108,23 +108,23 @@ UI中的![AWS Kinesis](../../assets/catalog/cloud-storage/event-hubs/catalog.png
 
 ![显示Azure事件中心目标详细信息已完成字段的UI屏幕图像](../../assets/catalog/cloud-storage/event-hubs/event-hubs-destination-details.png)
 
-* **[!UICONTROL 名称]**：填写与[!DNL Azure Event Hubs]的连接名称。
-* **[!UICONTROL 描述]**：提供连接的描述。  示例：“高级层客户”、“对风筝冲浪感兴趣的客户”。
+* **[!UICONTROL Name]**：填写与[!DNL Azure Event Hubs]的连接名称。
+* **[!UICONTROL Description]**：提供连接的描述。  示例：“高级层客户”、“对风筝冲浪感兴趣的客户”。
 * **[!UICONTROL eventHubName]**：为流提供一个名称，以连接到[!DNL Azure Event Hubs]目标。
-* **[!UICONTROL 包括区段名称]**：如果希望数据导出包括正在导出的受众的名称，请切换。 有关选择此选项的数据导出示例，请参阅下面的[导出的数据](#exported-data)部分。
-* **[!UICONTROL 包括区段时间戳]**：如果要在数据导出时包括创建和更新受众时的UNIX时间戳，以及在将受众映射到目标以进行激活时的UNIX时间戳，请切换此选项。 有关选择此选项的数据导出示例，请参阅下面的[导出的数据](#exported-data)部分。
+* **[!UICONTROL Include Segment Names]**：如果希望数据导出包含正在导出的受众的名称，请切换。 有关选择此选项的数据导出示例，请参阅下面的[导出的数据](#exported-data)部分。
+* **[!UICONTROL Include Segment Timestamps]**：如果希望数据导出包括创建和更新受众时的UNIX时间戳，以及映射受众到目标以供激活时的UNIX时间戳，请进行切换。 有关选择此选项的数据导出示例，请参阅下面的[导出的数据](#exported-data)部分。
 
 ### 启用警报 {#enable-alerts}
 
 您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
->* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 当前在导出到Azure事件中心目标时不支持[同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。 [了解详情](/help/destinations/ui/activate-streaming-profile-destinations.md#consent-policy-evaluation)。
 
 有关将受众激活到此目标的说明，请参阅[将受众数据激活到流式配置文件导出目标](../../ui/activate-streaming-profile-destinations.md)。
@@ -224,7 +224,7 @@ Experience Platform会优化将配置文件导出到[!DNL Azure Event Hubs]目�
 }
 ```
 
-下面是导出数据的更多示例，具体取决于您在连接目标流中&#x200B;**[!UICONTROL 包括区段名称]**&#x200B;和&#x200B;**[!UICONTROL 包括区段时间戳]**&#x200B;选项选择的UI设置：
+下面是导出数据的更多示例，具体取决于您在连接目标流中&#x200B;**[!UICONTROL Include Segment Names]**&#x200B;和&#x200B;**[!UICONTROL Include Segment Timestamps]**&#x200B;选项选择的UI设置：
 
 +++ 以下数据导出示例在`segmentMembership`部分中包含受众名称
 

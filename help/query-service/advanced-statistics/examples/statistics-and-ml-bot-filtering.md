@@ -1,7 +1,8 @@
 ---
 title: 使用统计和机器学习进行机器人过滤
 description: 了解如何使用Data Distiller统计和机器学习来识别和过滤机器人活动，以确保准确分析并改进数据完整性。
-source-git-commit: a8abbf61bdc646c0834c296a64b27c71c98ea1d3
+exl-id: 30d98281-7d15-47a6-b365-3baa07356010
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1623'
 ht-degree: 0%
@@ -18,7 +19,7 @@ ht-degree: 0%
 
 通过检测特定时间间隔内用户操作的峰值，可以识别机器人活动。 例如，单个用户在较短时间范围内执行过多点击可能表示机器人行为。 机器人过滤中使用的两个关键属性是：
 
-- **ECID(Experience Cloud访客ID)：**&#x200B;用于标识访客的通用、永久性ID。
+- **ECID (Experience Cloud访客ID)：**&#x200B;用于标识访客的通用、永久性ID。
 - **时间戳：**&#x200B;网站上发生活动的时间和日期。
 
 以下示例演示了如何使用SQL和机器学习技术来识别、优化和预测机器人活动。 使用这些方法可提高数据完整性并确保分析可操作性。
@@ -117,7 +118,7 @@ FROM (
 )
 ```
 
-该语句使用`mcid`值和网页联接来自`table_count_1_min`、`table_count_5_mins`和`table_count_30_mins`的数据。 然后，它跨多个时间间隔合并每个用户的点击计数，以提供用户活动的完整视图。 最后，标记逻辑会识别一分钟内超过50次点击的用户，并将它们标记为机器人(`isBot = 1`)。
+该语句使用`table_count_1_min`值和网页联接来自`table_count_5_mins`、`table_count_30_mins`和`mcid`的数据。 然后，它跨多个时间间隔合并每个用户的点击计数，以提供用户活动的完整视图。 最后，标记逻辑会识别一分钟内超过50次点击的用户，并将它们标记为机器人(`isBot = 1`)。
 
 ### 输出数据集结构
 
@@ -179,7 +180,7 @@ root
 1. 要在数字、字符串和布尔列中填充null值，请分别使用`numeric_imputer`、`string_imputer`和`boolean_imputer`函数。 此步骤确保机器学习算法能够处理数据而不会出错。
 2. 应用特征转换来准备数据以进行建模。 应用`binarized`、`quantile_discretizer`或`string_indexer`对列进行分类或标准化。 接下来，将输入器（`numeric_imputer`和`string_imputer`）的输出馈送到后续转换器（如`string_indexer`或`quantile_discretizer`）以创建有意义的功能。
 3. 使用`vector_assembler`函数将转换后的列组合为一个功能列。 然后使用`min_max_scaler`缩放特征以标准化值以获得更好的模型性能。 注意：在SQL示例中，TRANSFORM子句中提到的最后一个转换将成为机器学习模型使用的特征列。
-4. 在OPTIONS子句中指定模型类型和任何其他超参数。 例如，此处选择了`decision_tree_classifier`，因为这是一个分类问题。 已调整(`MAX_DEPTH=4`)其他参数（如`max_depth`）以优化模型以获得更好的性能。
+4. 在OPTIONS子句中指定模型类型和任何其他超参数。 例如，此处选择了`decision_tree_classifier`，因为这是一个分类问题。 已调整(`max_depth`)其他参数（如`MAX_DEPTH=4`）以优化模型以获得更好的性能。
 5. 组合特征并标记输出数据。 使用SELECT子句指定用于训练的数据集。 此子句应包括功能列(`count_per_id`、`web`、`id`)和标签列(`isBot`)，后者指示操作是否可能是机器人。
 
 您的语句可能与下面的示例类似。
@@ -209,7 +210,7 @@ SELECT count_per_id, isBot, web, id FROM analytics_events_clicks_count_criteria;
 
 ```console
            Created Model ID           |       Created Model       | Version
---------------------------------------+---------------------------+---------
+|--------------------------------------+---------------------------+---------
  2fb4b49e-d35c-44cf-af19-cc210e7dc72c | bot_filtering_model       |       1
 ```
 
@@ -244,7 +245,7 @@ FROM   model_evaluate(bot_filtering_model, 1,
 
 ```console
 auc_roc | accuracy | precision | recall
----------+----------+-----------+--------
+|---------+----------+-----------+--------
      1.0 |      1.0 |       1.0 |    1.0
 ```
 
@@ -282,7 +283,7 @@ FROM model_predict(bot_filtering_model, 1,
 
 ```console
          id          | count.one_minute | count.five_minute | count.thirty_minute |                                                                  web.webpagedetails.name                                                                  | prediction
----------------------+------------------+-------------------+---------------------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------+------------
+|---------------------+------------------+-------------------+---------------------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------+------------
                      |              110 |                   |                     |   4UNDilcY5VAgu2pRmX4/gtVnj+YxDDQaJd1G8p8WX46//wYcrHy+APUN0I556E80j1gIzFmilA6DV4s0Zcs4ruiP36gLgC7bj4TH0q6LU0E=                                             |        1.0  
                      |              105 |                   |                     |   lrSaZk04Yq+5P9+6l4BohwXik0s0/XeW9X28ZgWt1yj1QQztiAt9Qgt2WYrWcAeoGZChAJw/l8e4ojZDT5WHCjteSt35S01Vv1JzDGPAg+IyhIzMTsVyLpW8WWpXjJoMCt6Tv7fFdF73EIH+IrK5fA== |        1.0
  2553215812530219515 |               99 |                 1 |                   1 |   KR+CC8TQzPyK4ord6w1PfJay1+h6snSF++xFERc4ogrEX4clJROgzkGgnSTSGWWZfNS/Ouz2K0VtkHG77vwoTg==                                                                 |        1.0

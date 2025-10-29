@@ -3,9 +3,9 @@ keywords: 自定义个性化；目标；experience platform自定义目标；
 title: 自定义个性化连接
 description: 此目标提供外部个性化、内容管理系统、广告服务器以及在您的网站上运行的其他应用程序，以便从Adobe Experience Platform检索受众信息。 此目标根据用户个人资料受众成员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: c037e75da7fa419051a7e38b365a5b6b3a1fc346
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '960'
+source-wordcount: '923'
 ht-degree: 9%
 
 ---
@@ -17,13 +17,13 @@ ht-degree: 9%
 
 | 发行月份 | 更新类型 | 描述 |
 |---|---|---|
-| 2023 年 5 月 | 功能和文档更新 | 自2023年5月起，**[!UICONTROL 自定义个性化]**&#x200B;连接支持[基于属性的个性化](../../ui/activate-edge-personalization-destinations.md#map-attributes)，通常可供所有客户使用。 |
+| 2023 年 5 月 | 功能和文档更新 | 自2023年5月起，**[!UICONTROL Custom personalization]**&#x200B;连接支持基于[属性的个性化](../../ui/activate-edge-personalization-destinations.md#map-attributes)，通常向所有客户提供。 |
 
 {style="table-layout:auto"}
 
 >[!IMPORTANT]
 >
->配置文件属性可能包含敏感数据。 要保护此数据，在为基于属性的个性化配置[自定义Personalization](https://developer.adobe.com/data-collection-apis/docs/)目标时，必须使用&#x200B;**[!UICONTROL Edge Network API]**。 所有Edge Network API调用必须在[经过身份验证的上下文](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication)中进行。
+>配置文件属性可能包含敏感数据。 要保护此数据，在为基于属性的个性化配置[目标时，必须使用](https://developer.adobe.com/data-collection-apis/docs/)Edge Network API **[!UICONTROL Custom Personalization]**。 所有Edge Network API调用必须在[经过身份验证的上下文](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication)中进行。
 >
 ><br>您可以添加一个服务器端集成，该集成利用您已经用于Web或Mobile SDK实施的相同数据流，从而通过[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/)检索配置文件属性。
 >
@@ -59,9 +59,9 @@ ht-degree: 9%
 ## 导出类型和频率 {#export-type-frequency}
 
 | 项目 | 类型 | 注释 |
----------|----------|---------|
+|---------|----------|---------|
 | 导出类型 | **[!DNL Profile request]** | 您正在请求在单个配置文件的自定义个性化目标中映射的所有受众。 可以为不同的[Adobe数据收集数据流](../../../datastreams/overview.md)设置不同的自定义个性化目标。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出频率 | **[!UICONTROL Streaming]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 ## 连接到目标 {#connect}
 
@@ -69,11 +69,11 @@ ht-degree: 9%
 >id="platform_destinations_custom_personalization_datastream"
 >title="关于数据流"
 >abstract="此选项确定受众将包含在哪个数据收集数据流中以响应页面。下拉菜单仅显示已启用目标配置的数据流。您必须先配置数据流，然后才能配置目标。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html?lang=zh-Hans#" text="了解如何配置数据流"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html#" text="了解如何配置数据流"
 
 >[!IMPORTANT]
 > 
->若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
 
@@ -81,22 +81,22 @@ ht-degree: 9%
 
 在[设置](../../ui/connect-destination.md)此目标时，必须提供以下信息：
 
-* **[!UICONTROL 名称]**：填写此目标的首选名称。
-* **[!UICONTROL 描述]**：输入目标的描述。 例如，您可以提及要将此目标用于哪个营销活动。 此字段为可选字段。
-* **[!UICONTROL 集成别名]**：此值作为JSON对象名称发送到Experience Platform Web SDK。
-* **[!UICONTROL 数据流]**：这将确定在对页面的响应中将包含受众的数据收集数据流。 下拉菜单仅显示已启用目标配置的数据流。有关详细信息，请参阅[配置数据流](../../../datastreams/overview.md)。
+* **[!UICONTROL Name]**：填写此目标的首选名称。
+* **[!UICONTROL Description]**：输入目标的描述。 例如，您可以提及要将此目标用于哪个营销活动。 此字段为可选字段。
+* **[!UICONTROL Integration alias]**：此值作为JSON对象名称发送到Experience Platform Web SDK。
+* **[!UICONTROL Datastream]**：这将确定在对页面的响应中将包含受众的数据收集数据流。 下拉菜单仅显示已启用目标配置的数据流。有关详细信息，请参阅[配置数据流](../../../datastreams/overview.md)。
 
 ### 启用警报 {#enable-alerts}
 
 您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
->若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 有关将受众激活到此目标的说明，请阅读[激活配置文件和受众边缘个性化目标](../../ui/activate-edge-personalization-destinations.md)。
 
@@ -160,11 +160,11 @@ alloy("sendEvent", {
   });
 ```
 
-### 具有属性[!UICONTROL 的]自定义Personalization的示例响应
+### [!UICONTROL Custom Personalization With Attributes]的示例响应
 
-使用具有属性&#x200B;**[!UICONTROL 的]**&#x200B;自定义Personalization时，API响应将与以下示例类似。
+使用&#x200B;**[!UICONTROL Custom Personalization With Attributes]**&#x200B;时，API响应将与以下示例类似。
 
-**[!UICONTROL 具有属性的自定义Personalization]**&#x200B;与&#x200B;**[!UICONTROL 自定义Personalization]**&#x200B;之间的区别在于API响应中包含`attributes`部分。
+**[!UICONTROL Custom Personalization With Attributes]**&#x200B;和&#x200B;**[!UICONTROL Custom Personalization]**&#x200B;之间的区别在于API响应中包含了`attributes`部分。
 
 ```json
 [

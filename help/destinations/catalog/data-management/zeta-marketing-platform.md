@@ -4,9 +4,9 @@ description: Zeta Marketing Platform (ZMP)是一个基于云的系统，借助�
 hide: true
 hidefromtoc: true
 exl-id: 291ee60c-aa81-4f1e-9df2-9905a8eeb612
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '1356'
+source-wordcount: '1327'
 ht-degree: 1%
 
 ---
@@ -51,7 +51,7 @@ Zeta Marketing Platform (ZMP)是一个基于云的系统，借助智能（专有
 > Zeta Marketing Platform目标要求您将源身份命名空间映射到ZMP `uid`目标身份。 这有助于Zeta营销平台以独特的方式区分每个配置文件。
 
 | 目标身份 | 描述 | 注意事项 | 注释 |
----------|----------|----------|----------|
+|---------|----------|----------|----------|
 | uid | ZMP用于区分客户个人资料的唯一ID | 必需 | 如果要使用其电子邮件地址识别唯一配置文件，请选择`Email`标准身份命名空间。 或者，如果客户配置文件没有电子邮件，您可以选择将自定义命名空间映射到`uid`。 |
 | email_md5_id | 发送电子邮件至MD5，表示每个客户配置文件 | 可选 | 当您希望使用电子邮件MD5值唯一标识客户配置文件时，请选择此目标标识。 电子邮件地址在Experience Platform中必须已采用MD5格式，因为Experience Platform不会将纯文本转换为MD5。 在此方案中，将`uid`（必需）设置为相同的电子邮件MD5值或其他适当的标识命名空间。 |
 
@@ -76,8 +76,8 @@ Zeta Marketing Platform (ZMP)是一个基于云的系统，借助智能（专有
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
----------|----------|---------|
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+|---------|----------|---------|
+| 导出频率 | **[!UICONTROL Streaming]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -85,39 +85,40 @@ Zeta Marketing Platform (ZMP)是一个基于云的系统，借助智能（专有
 
 >[!IMPORTANT]
 > 
->若要连接到目标，您需要&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写下面两个部分中列出的字段。
 
 ### 验证目标 {#authenticate}
 
-要验证到目标，请填写必填字段并选择&#x200B;**[!UICONTROL 连接到目标]**。
+要验证目标，请填写必填字段并选择&#x200B;**[!UICONTROL Connect to destination]**。
 
-* **[!UICONTROL 用户名]**： `api`
-* **[!UICONTROL 密码]**：您的ZMP REST API密钥。 登录到ZMP帐户并导航到&#x200B;**设置** > **集成** > **密钥和应用程序**&#x200B;部分，即可找到您的REST API密钥。 有关详细信息，请参阅[ZMP文档](https://knowledgebase.zetaglobal.com/kb/integrations)。
+* **[!UICONTROL Username]**: `api`
+* **[!UICONTROL Password]**：您的ZMP REST API密钥。 登录到ZMP帐户并导航到&#x200B;**设置** > **集成** > **密钥和应用程序**&#x200B;部分，即可找到您的REST API密钥。 有关详细信息，请参阅[ZMP文档](https://knowledgebase.zetaglobal.com/kb/integrations)。
 
 ### 填写目标详细信息 {#destination-details}
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
 ![显示ZMP配置的图像](../../assets/catalog/data-management-platform/zeta-marketing-platform/zeta-configure-new-destination.png)
-* **[!UICONTROL 名称]**：将来用于识别此目标的名称。
-* **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
-* **[!UICONTROL ZMP帐户站点ID]**：您要将受众发送到的ZMP **站点ID**。 您可以通过导航到&#x200B;**设置** > **集成** > **密钥和应用程序**&#x200B;部分来查看您的网站ID。 可在[此处](https://knowledgebase.zetaglobal.com/kb/integrations)找到更多信息。
-* **[!UICONTROL ZMP区段]**：您的ZMP站点ID帐户中要与Experience Platform受众一起更新的客户列表区段。
+
+* **[!UICONTROL Name]**：将来用于识别此目标的名称。
+* **[!UICONTROL Description]**：可帮助您将来识别此目标的描述。
+* **[!UICONTROL ZMP Account Site Id]**：您要将受众发送到的ZMP **站点ID**。 您可以通过导航到&#x200B;**设置** > **集成** > **密钥和应用程序**&#x200B;部分来查看您的网站ID。 可在[此处](https://knowledgebase.zetaglobal.com/kb/integrations)找到更多信息。
+* **[!UICONTROL ZMP Segment]**：您的ZMP站点ID帐户中要与Experience Platform受众一起更新的客户列表区段。
 
 ### 启用警报 {#enable-alerts}
 
 您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
 ## 将区段激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
->* 若要激活数据，您需要&#x200B;**[!UICONTROL 管理目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+>* 若要激活数据，您需要&#x200B;**[!UICONTROL Manage Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 有关将受众区段激活到此目标的说明，请阅读[将配置文件和区段激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md)。
 
@@ -126,10 +127,12 @@ Zeta Marketing Platform (ZMP)是一个基于云的系统，借助智能（专有
 下面是将配置文件导出到[!DNL Zeta Marketing Platform]时正确标识映射的示例。
 
 选择源字段：
-* 选择在Adobe Experience Platform和[!DNL Zeta Marketing Platform]中唯一标识配置文件的源标识命名空间（自定义或标准，如`Email`）。
+
+* 选择在Adobe Experience Platform和`Email`中唯一标识配置文件的源标识命名空间（自定义或标准，如[!DNL Zeta Marketing Platform]）。
 * 选择需要导出到[!DNL Zeta Marketing Platform]并在中更新的任何XDM源配置文件属性。
 
 选择目标字段：
+
 * （必需）选择`uid`作为要将源身份命名空间映射到的目标身份。
 * （可选）选择`email_md5_id`作为目标身份，您将代表电子邮件md5值的源身份命名空间映射到此目标身份。 电子邮件地址在Experience Platform中必须已采用MD5格式，因为Experience Platform不会将纯文本转换为MD5
 * 根据需要选择任何其他目标映射。

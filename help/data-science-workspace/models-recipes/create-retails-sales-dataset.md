@@ -3,9 +3,9 @@ keywords: Experience Platform；零售指导方针；数据科学Workspace；热
 solution: Experience Platform
 title: 创建零售架构和数据集
 type: Tutorial
-description: 本教程提供了所有其他Adobe Experience Platform数据科学Workspace教程所需的先决条件和资源。 完成后，零售架构和数据集将可供您和贵组织的成员在Experience Platform时使用。
+description: 本教程提供了所有其他Adobe Experience Platform数据科学Workspace教程所需的先决条件和资源。 完成后，您和您的组织成员将可以在Experience Platform上使用零售架构和数据集。
 exl-id: 1b868c8c-7c92-4f99-8486-54fd7aa1af48
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '557'
 ht-degree: 2%
@@ -26,6 +26,7 @@ ht-degree: 2%
 ## 快速入门
 
 在开始本教程之前，您必须满足以下先决条件：
+
 - 访问[!DNL Adobe Experience Platform]。 如果您无权访问[!DNL Experience Platform]中的组织，请在继续之前与系统管理员交谈。
 - 授权进行[!DNL Experience Platform] API调用。 要成功完成本教程，请完成[身份验证和访问Adobe Experience Platform API](https://www.adobe.com/go/platform-api-authentication-en)教程以获取以下值：
    - 授权： `{ACCESS_TOKEN}`
@@ -33,7 +34,7 @@ ht-degree: 2%
    - x-gw-ims-org-id： `{ORG_ID}`
    - 客户端密码： `{CLIENT_SECRET}`
    - 客户端证书： `{PRIVATE_KEY}`
-- [零售销售方法](../pre-built-recipes/retail-sales.md)的示例数据和源文件。 从[Adobe的公共Git存储库](https://github.com/adobe/experience-platform-dsw-reference/)下载此教程和其他[!DNL Data Science Workspace]教程所需的资源。
+- [零售销售方法](../pre-built-recipes/retail-sales.md)的示例数据和源文件。 从[!DNL Data Science Workspace]Adobe公共Git存储库[下载此教程和其他](https://github.com/adobe/experience-platform-dsw-reference/)教程所需的资源。
 - [Python >= 2.7](https://www.python.org/downloads/)和以下[!DNL Python]包：
    - [pip](https://pypi.org/project/pip/)
    - [PyYAML](https://pyyaml.org/)
@@ -41,7 +42,7 @@ ht-degree: 2%
    - [JWT](https://pypi.org/project/jwt/)
 - 对本教程中使用的以下概念的实用了解：
    - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)
-   - [架构组合基础](../../xdm/schema/field-dictionary.md)
+   - [架构构成基础](../../xdm/schema/field-dictionary.md)
 
 ## 创建零售架构和数据集
 
@@ -76,7 +77,7 @@ ht-degree: 2%
    - `ims_token`：您的`{ACCESS_TOKEN}`转到此处。
    - `ingest_data`：在本教程中，请将此值设置为`"True"`以创建零售架构和数据集。 值为`"False"`将仅创建架构。
    - `build_recipe_artifacts`：在本教程中，请将此值设置为`"False"`以防止脚本生成方法构件。
-   - `kernel_type`：方法工件的执行类型。 如果`build_recipe_artifacts`设置为`"False"`，则将此值保留为`Python`，否则请指定正确的执行类型。
+   - `kernel_type`：方法工件的执行类型。 如果`Python`设置为`build_recipe_artifacts`，则将此值保留为`"False"`，否则请指定正确的执行类型。
 
 4. 在`Titles`部分下，为零售样本数据适当提供以下信息，并在进行编辑后保存并关闭文件。 示例如下所示：
 
@@ -117,6 +118,7 @@ ht-degree: 2%
 您还已成功使用提供的引导脚本将零售业样本数据摄取到[!DNL Experience Platform]。
 
 要继续使用摄取的数据，请执行以下操作：
+
 - [使用 Jupyter Notebooks 分析数据](../jupyterlab/analyze-your-data.md)
    - 使用数据科学Workspace中的Jupyter Notebooks访问、浏览、可视化和了解您的数据。
 - [将源文件打包到方法中](./package-source-files-recipe.md)

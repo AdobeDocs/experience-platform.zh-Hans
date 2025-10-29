@@ -4,7 +4,7 @@ description: 创建实时Snowflake数据共享，以直接将每日受众更新�
 last-substantial-update: 2025-10-23T00:00:00Z
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 6959ccd0-ba30-4750-a7de-d0a709292ef7
-source-git-commit: c429ee227bd93455f541a32266bfbef9ddeaae06
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1659'
 ht-degree: 3%
@@ -113,7 +113,7 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
----------|----------|---------|
+|---------|----------|---------|
 | 导出类型 | **[!UICONTROL Audience export]** | 您正在导出具有[!DNL Snowflake]目标中使用的标识符（姓名、电话号码或其他）的受众的所有成员。 |
 | 导出频率 | **[!UICONTROL Batch]** | 此目标通过Snowflake数据共享提供完整受众成员资格的定期快照。 每个快照都会替换以前的数据，确保您始终拥有受众的最新完整视图。 |
 

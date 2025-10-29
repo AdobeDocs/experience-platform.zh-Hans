@@ -2,7 +2,7 @@
 title: 数据集统计信息计算
 description: 本文档介绍如何使用SQL命令计算Azure Data Lake Storage (ADLS)数据集的列级统计信息。
 exl-id: 66f11cd4-b115-40b8-ba8a-c4bb3606bbbf
-source-git-commit: 37aeff5131b9f67dbc99f6199918403e699478c8
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1085'
 ht-degree: 0%
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # 数据集统计信息计算
 
-您现在可以使用`COMPUTE STATISTICS` SQL命令计算[!DNL Azure Data Lake Storage] (ADLS)数据集的列级统计信息。 用于计算数据集统计信息的SQL命令是`ANALYZE TABLE`命令的扩展。 有关`ANALYZE TABLE`命令的完整详细信息可在[SQL参考文档](../sql/syntax.md#analyze-table)中找到。
+您现在可以使用[!DNL Azure Data Lake Storage] SQL命令计算`COMPUTE STATISTICS` (ADLS)数据集的列级统计信息。 用于计算数据集统计信息的SQL命令是`ANALYZE TABLE`命令的扩展。 有关`ANALYZE TABLE`命令的完整详细信息可在[SQL参考文档](../sql/syntax.md#analyze-table)中找到。
 
 >[!NOTE]
 >
@@ -68,7 +68,7 @@ ANALYZE TABLE adc_geometric COMPUTE STATISTICS AS alias_name;
 (1 row)
 ```
 
-然后，您可以通过引用`Statistics ID`直接&#x200B;**查询计算的统计信息**。 下面的示例语句允许您在与`Statistics ID`或别名一起使用时完整查看输出。
+然后，您可以通过引用&#x200B;**直接**&#x200B;查询计算的统计信息`Statistics ID`。 下面的示例语句允许您在与`Statistics ID`或别名一起使用时完整查看输出。
 
 ```sql
 SELECT * FROM adc_geometric_stats_1; 
@@ -78,7 +78,7 @@ SELECT * FROM adc_geometric_stats_1;
 
 ```console
  columnName                                                 |      mean      |      max       |      min       | standardDeviation | approxDistinctCount | nullCount | dataType  
-------------------------------------------------------------+----------------+----------------+----------------+-------------------+---------------------+-----------+-----------
+|------------------------------------------------------------+----------------+----------------+----------------+-------------------+---------------------+-----------+-----------
  marketing.trackingcode                                     |            0.0 |            0.0 |            0.0 |               0.0 |              1213.0 |         0 | String
  _experience.analytics.customdimensions.evars.evar13        |            0.0 |            0.0 |            0.0 |               0.0 |              8765.0 |        20 | String
  _experience.analytics.customdimensions.evars.evar74        |            0.0 |            0.0 |            0.0 |               0.0 |                11.0 |         0 | String
@@ -102,7 +102,7 @@ SELECT * FROM adc_geometric_stats_1;
 
 ```console
       statsId         |   tableName   | columnSet |         filterContext       |      timestamp
-----------------------+---------------+-----------+-----------------------------+--------------------
+|----------------------+---------------+-----------+-----------------------------+--------------------
 adc_geometric_stats_1 | adc_geometric |   (age)   |                             | 25/06/2023 09:22:26
 demo_table_stats_1    |  demo_table   |    (*)    |       ((age > 25))          | 25/06/2023 12:50:26
 age_stats             | castedtitanic |   (age)   | ((age > 25) AND (age < 40)) | 25/06/2023 09:22:26
@@ -122,7 +122,7 @@ age_stats             | castedtitanic |   (age)   | ((age > 25) AND (age < 40)) 
 
 ## 限制包含的列 {#limit-included-columns}
 
-要集中分析，您可以通过按名称引用特定数据集列来计算这些列的统计信息。 使用`FOR COLUMNS (<col1>, <col2>)`语法定位特定列。 以下示例计算数据集`tableName`的列`commerce`、`id`和`timestamp`的统计信息。
+要集中分析，您可以通过按名称引用特定数据集列来计算这些列的统计信息。 使用`FOR COLUMNS (<col1>, <col2>)`语法定位特定列。 以下示例计算数据集`commerce`的列`id`、`timestamp`和`tableName`的统计信息。
 
 ```sql
 ANALYZE TABLE tableName COMPUTE STATISTICS FOR columns (commerce, id, timestamp);
@@ -144,7 +144,7 @@ ANALYZE TABLE adcgeometric COMPUTE STATISTICS FOR columns (commerce, commerce.pu
 ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-04-01 00:00:00') and timestamp <= to_timestamp('2023-04-05 00:00:00')) COMPUTE STATISTICS FOR ALL COLUMNS;
 ```
 
-您可以将列限制和过滤器结合使用，为数据集列创建高度特定的计算查询。 例如，以下查询计算数据集`tableName`的列`commerce`、`id`和`timestamp`的统计信息，其中列时间戳的值介于指定的范围`2023-04-01 00:00:00`和`2023-04-05 00:00:00`之间。
+您可以将列限制和过滤器结合使用，为数据集列创建高度特定的计算查询。 例如，以下查询计算数据集`commerce`的列`id`、`timestamp`和`tableName`的统计信息，其中列时间戳的值介于指定的范围`2023-04-01 00:00:00`和`2023-04-05 00:00:00`之间。
 
 ```sql
 ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-04-01 00:00:00') and timestamp <= to_timestamp('2023-04-05 00:00:00')) COMPUTE STATISTICS FOR columns (commerce, id, timestamp);

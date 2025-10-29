@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；查询服务；查询服务；adobe定义函数；sql；
+keywords: Experience Platform；主页；热门主题；查询服务；查询服务；adobe定义的函数；sql；
 solution: Experience Platform
 title: 查询服务中的Adobe定义的SQL函数
-description: 本文档提供了有关Adobe Experience Platform查询服务中可用的Adobe定义函数的信息。
+description: 本文档介绍了Adobe查询服务中可用的Adobe Experience Platform定义函数的信息。
 exl-id: 275aa14e-f555-4365-bcd6-0dd6df2456b3
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1468'
 ht-degree: 2%
@@ -13,13 +13,13 @@ ht-degree: 2%
 
 # 查询服务中的Adobe定义的SQL函数
 
-Adobe定义的函数（此处称为ADF）是Adobe Experience Platform查询服务中的预建函数，可帮助对[!DNL Experience Event]数据执行常见的业务相关任务。 这些功能包括[会话化](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html?lang=zh-Hans)和[归因](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html?lang=zh-Hans)的功能，这些功能与Adobe Analytics中的功能类似。
+Adobe定义的函数（此处称为ADF）是Adobe Experience Platform查询服务中的预建函数，有助于对[!DNL Experience Event]数据执行常见的业务相关任务。 这些功能包括[会话化](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html)和[归因](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html)的功能，这些功能与Adobe Analytics中的功能类似。
 
-本文档提供了[!DNL Query Service]中可用的Adobe定义函数的信息。
+本文档提供[!DNL Query Service]中可用的Adobe定义函数的信息。
 
 >[!NOTE]
 >
->Experience CloudID (ECID)也称为MCID，它将继续用在命名空间中。
+>Experience Cloud ID (ECID)也称为MCID，将继续在命名空间中使用。
 
 ## 窗口函数 {#window-functions}
 
@@ -47,7 +47,7 @@ OVER ({PARTITION} {ORDER} {FRAME})
 
 这种数据分组或会话化有助于关联事件，以揭示有关客户体验的更多上下文。
 
-有关Adobe Analytics中的会话化的更多信息，请参阅有关[上下文感知会话](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html?lang=zh-Hans)的文档。
+有关Adobe Analytics中的会话化的更多信息，请参阅有关[上下文感知会话](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html)的文档。
 
 **查询语法**
 
@@ -60,7 +60,7 @@ SESS_TIMEOUT({TIMESTAMP}, {EXPIRATION_IN_SECONDS}) OVER ({PARTITION} {ORDER} {FR
 | `{TIMESTAMP}` | 在数据集中找到的时间戳字段。 |
 | `{EXPIRATION_IN_SECONDS}` | 事件之间限定当前会话结束和新会话开始所需的秒数。 |
 
-可以在[窗口函数部分](#window-functions)中找到`OVER()`函数中参数的说明。
+可以在`OVER()`窗口函数部分[中找到](#window-functions)函数中参数的说明。
 
 **示例查询**
 
@@ -82,7 +82,7 @@ LIMIT 10
 
 ```console
                 id                |       timestamp       |      session       
-----------------------------------+-----------------------+--------------------
+|----------------------------------+-----------------------+--------------------
  100080F22A45CB40-3A2B7A8E11096B6 | 2018-01-18 06:55:53.0 | (0,1,true,1)
  100080F22A45CB40-3A2B7A8E11096B6 | 2018-01-18 06:56:51.0 | (58,1,false,2)
  100080F22A45CB40-3A2B7A8E11096B6 | 2018-01-18 06:57:47.0 | (56,1,false,3)
@@ -124,7 +124,7 @@ SESS_START_IF({TIMESTAMP}, {TEST_EXPRESSION}) OVER ({PARTITION} {ORDER} {FRAME})
 | `{TIMESTAMP}` | 在数据集中找到的时间戳字段。 |
 | `{TEST_EXPRESSION}` | 要检查数据字段的表达式。 例如：`application.launches > 0`。 |
 
-可以在[窗口函数部分](#window-functions)中找到`OVER()`函数中参数的说明。
+可以在`OVER()`窗口函数部分[中找到](#window-functions)函数中参数的说明。
 
 **示例查询**
 
@@ -147,7 +147,7 @@ SELECT
 
 ```console
                 id                |       timestamp       | isLaunch |      session       
-----------------------------------+-----------------------+----------+--------------------
+|----------------------------------+-----------------------+----------+--------------------
  100080F22A45CB40-3A2B7A8E11096B6 | 2018-01-18 06:55:53.0 | true     | (0,1,true,1)
  100080F22A45CB40-3A2B7A8E11096B6 | 2018-01-18 06:56:51.0 | false    | (58,1,false,2)
  100080F22A45CB40-3A2B7A8E11096B6 | 2018-01-18 06:57:47.0 | false    | (56,1,false,3)
@@ -189,7 +189,7 @@ SESS_END_IF({TIMESTAMP}, {TEST_EXPRESSION}) OVER ({PARTITION} {ORDER} {FRAME})
 | `{TIMESTAMP}` | 在数据集中找到的时间戳字段。 |
 | `{TEST_EXPRESSION}` | 要检查数据字段的表达式。 例如：`application.launches > 0`。 |
 
-可以在[窗口函数部分](#window-functions)中找到`OVER()`函数中参数的说明。
+可以在`OVER()`窗口函数部分[中找到](#window-functions)函数中参数的说明。
 
 **示例查询**
 
@@ -212,7 +212,7 @@ SELECT
 
 ```console
                 id                |       timestamp       | isExit   |      session       
-----------------------------------+-----------------------+----------+--------------------
+|----------------------------------+-----------------------+----------+--------------------
  100080F22A45CB40-3A2B7A8E11096B6 | 2018-01-18 06:55:53.0 | false    | (0,1,true,1)
  100080F22A45CB40-3A2B7A8E11096B6 | 2018-01-18 06:56:51.0 | false    | (58,1,false,2)
  100080F22A45CB40-3A2B7A8E11096B6 | 2018-01-18 06:57:47.0 | true     | (56,1,false,3)
@@ -262,7 +262,7 @@ PREVIOUS({KEY}, {SHIFT}, {IGNORE_NULLS}) OVER ({PARTITION} {ORDER} {FRAME})
 | `{SHIFT}` | （可选）当前事件之外的事件数。 默认情况下，该值为1。 |
 | `{IGNORE_NULLS}` | （可选）一个布尔值，指示是否应忽略null `{KEY}`值。 默认情况下，值为`false`。 |
 
-可以在[窗口函数部分](#window-functions)中找到`OVER()`函数中参数的说明。
+可以在`OVER()`窗口函数部分[中找到](#window-functions)函数中参数的说明。
 
 **示例查询**
 
@@ -281,7 +281,7 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 
 ```console
                 id                 |       timestamp       |                 name                |                    previous_page                    
------------------------------------+-----------------------+-------------------------------------+-----------------------------------------------------
+|-----------------------------------+-----------------------+-------------------------------------+-----------------------------------------------------
  457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 17:15:28.0 |                                     | 
  457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 17:53:05.0 | Home                                | 
  457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 17:53:45.0 | Kids                                | (Home)
@@ -313,7 +313,7 @@ NEXT({KEY}, {SHIFT}, {IGNORE_NULLS}) OVER ({PARTITION} {ORDER} {FRAME})
 | `{SHIFT}` | （可选）当前事件之外的事件数。 默认情况下，该值为1。 |
 | `{IGNORE_NULLS}` | （可选）一个布尔值，指示是否应忽略null `{KEY}`值。 默认情况下，值为`false`。 |
 
-可以在[窗口函数部分](#window-functions)中找到`OVER()`函数中参数的说明。
+可以在`OVER()`窗口函数部分[中找到](#window-functions)函数中参数的说明。
 
 **示例查询**
 
@@ -333,7 +333,7 @@ LIMIT 10
 
 ```console
                 id                 |       timestamp       |                name                 |             previous_page             
------------------------------------+-----------------------+-------------------------------------+---------------------------------------
+|-----------------------------------+-----------------------+-------------------------------------+---------------------------------------
  457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 17:15:28.0 |                                     | (Home)
  457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 17:53:05.0 | Home                                | (Kids)
  457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 17:53:45.0 | Kids                                | (Home)
@@ -371,7 +371,7 @@ TIME_BETWEEN_PREVIOUS_MATCH(
 | `{EVENT_DEFINITION}` | 限定上一个事件的表达式。 |
 | `{TIME_UNIT}` | 输出单位。 可能的值包括天、小时、分钟和秒。 默认情况下，该值为秒。 |
 
-可以在[窗口函数部分](#window-functions)中找到`OVER()`函数中参数的说明。
+可以在`OVER()`窗口函数部分[中找到](#window-functions)函数中参数的说明。
 
 **示例查询**
 
@@ -401,7 +401,7 @@ LIMIT 10
 
 ```console
              page_name             | average_minutes_since_registration 
------------------------------------+------------------------------------
+|-----------------------------------+------------------------------------
                                    |                                   
  Account Registration|Confirmation |                                0.0
  Seasonal                          |                   5.47029702970297
@@ -433,7 +433,7 @@ TIME_BETWEEN_NEXT_MATCH({TIMESTAMP}, {EVENT_DEFINITION}, {TIME_UNIT}) OVER ({PAR
 | `{EVENT_DEFINITION}` | 用于限定下一个事件的表达式。 |
 | `{TIME_UNIT}` | （可选）输出单位。 可能的值包括天、小时、分钟和秒。 默认情况下，该值为秒。 |
 
-可以在[窗口函数部分](#window-functions)中找到`OVER()`函数中参数的说明。
+可以在`OVER()`窗口函数部分[中找到](#window-functions)函数中参数的说明。
 
 **示例查询**
 
@@ -463,7 +463,7 @@ LIMIT 10
 
 ```console
              page_name             | average_minutes_until_order_confirmation 
------------------------------------+------------------------------------------
+|-----------------------------------+------------------------------------------
  Shopping Cart|Order Confirmation  |                                      0.0
  Men                               |                       -9.465295629820051
  Equipment                         |                       -9.682098765432098
@@ -481,10 +481,10 @@ LIMIT 10
 
 ## 后续步骤
 
-使用此处描述的函数，您可以编写查询以使用[!DNL Query Service]访问您自己的[!DNL Experience Event]数据集。 有关在[!DNL Query Service]中创作查询的更多信息，请参阅有关[创建查询](../best-practices/writing-queries.md)的文档。
+使用此处描述的函数，您可以编写查询以使用[!DNL Experience Event]访问您自己的[!DNL Query Service]数据集。 有关在[!DNL Query Service]中创作查询的更多信息，请参阅有关[创建查询](../best-practices/writing-queries.md)的文档。
 
 ## 其他资源
 
-以下视频介绍了如何在Adobe Experience Platform界面和PSQL客户端中运行查询。 此外，该视频还使用涉及XDM对象中各个属性、使用Adobe定义的函数以及使用CREATE TABLE AS SELECT (CTAS)的示例。
+以下视频介绍了如何在Adobe Experience Platform界面和PSQL客户端中运行查询。 此外，该视频还使用了以下示例：XDM对象中的各个属性；使用Adobe定义的函数；使用CREATE TABLE AS SELECT (CTAS)。
 
->[!VIDEO](https://video.tv.adobe.com/v/32702?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)

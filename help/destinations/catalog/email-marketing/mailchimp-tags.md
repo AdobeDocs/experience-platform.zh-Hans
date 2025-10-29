@@ -3,9 +3,9 @@ title: Mailchimp标记
 description: 通过Mailchimp标记目标，可导出帐户数据并在Mailchimp中激活以与联系人接洽。
 last-substantial-update: 2024-02-20T00:00:00Z
 exl-id: 0f278ca8-4fcf-4c47-b538-9cffa45a3d90
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '1657'
+source-wordcount: '1599'
 ht-degree: 2%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 2%
 
 与根据联系人的兴趣和偏好对联系人进行排序的[!DNL Mailchimp Interest Categories]相比，[!DNL Mailchimp Tags]用于管理您的联系人可能感兴趣的主题订阅。 *请注意，Experience Platform也具有[!DNL Mailchimp Interest Categories]的连接，您可以在[[!DNL Mailchimp Interest Categories]](/help/destinations/catalog/email-marketing/mailchimp-interest-categories.md)页面上将其签出。*
 
-此[!DNL Adobe Experience Platform] [目标](/help/destinations/home.md)利用[[!DNL Mailchimp batch subscribe or unsubscribe API]](https://mailchimp.com/developer/marketing/api/lists/batch-subscribe-or-unsubscribe/)终结点。 在激活现有[!DNL Mailchimp]受众中的现有[!DNL Mailchimp]联系人&#x200B;**后，您可以**&#x200B;添加新联系人&#x200B;**或**&#x200B;更新这些联系人的标记。 [!DNL Mailchimp Tags]使用从Experience Platform中选择的受众名称作为[!DNL Mailchimp]中的标记名称。
+此[!DNL Adobe Experience Platform] [目标](/help/destinations/home.md)利用[[!DNL Mailchimp batch subscribe or unsubscribe API]](https://mailchimp.com/developer/marketing/api/lists/batch-subscribe-or-unsubscribe/)终结点。 在激活现有&#x200B;**受众中的现有**&#x200B;联系人&#x200B;**后，您可以[!DNL Mailchimp]添加新联系人**&#x200B;或[!DNL Mailchimp]更新这些联系人的标记。 [!DNL Mailchimp Tags]使用从Experience Platform中选择的受众名称作为[!DNL Mailchimp]中的标记名称。
 
 ## 用例 {#use-cases}
 
@@ -34,7 +34,7 @@ ht-degree: 2%
 
 ### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL Mailchimp Tags]目标之前，您必须在[!DNL Experience Platform]中创建一个[架构](/help/xdm/schema/composition.md)、[数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)和[受众](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html?lang=zh-Hans)。
+在将数据激活到[!DNL Mailchimp Tags]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html)受众[!DNL Experience Platform]。
 
 ### [!DNL Mailchimp Tags]目标的先决条件 {#prerequisites-destination}
 
@@ -46,7 +46,7 @@ ht-degree: 2%
 
 #### 收集[!DNL Mailchimp] API密钥 {#gather-credentials}
 
-您需要您的[!DNL Mailchimp] **API密钥**&#x200B;来针对您的[!DNL Mailchimp]帐户验证[!DNL Mailchimp Interest Categories]目标。 当您[对目标](#authenticate)进行身份验证时，**API密钥**&#x200B;将用作&#x200B;**密码**。
+您需要您的[!DNL Mailchimp] **API密钥**&#x200B;来针对您的[!DNL Mailchimp Interest Categories]帐户验证[!DNL Mailchimp]目标。 当您&#x200B;**对目标**&#x200B;进行身份验证时，**API密钥**&#x200B;将用作[密码](#authenticate)。
 
 如果您没有&#x200B;**API密钥**，请登录您的[!DNL Mailchimp]帐户，并参阅[!DNL Mailchimp]文档，了解如何生成[API密钥](https://mailchimp.com/developer/marketing/guides/quick-start/#generate-your-api-key)。
 
@@ -70,7 +70,7 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 ### 护栏 {#guardrails}
 
-有关[!DNL Mailchimp] API施加的限制的详细信息，请参阅[!DNL Mailchimp] [速率限制](https://mailchimp.com/developer/marketing/docs/fundamentals/#api-limits)。
+有关[!DNL Mailchimp] API施加的限制的详细信息，请参阅[ ](https://mailchimp.com/developer/marketing/docs/fundamentals/#api-limits)速率限制[!DNL Mailchimp]。
 
 ## 支持的身份 {#supported-identities}
 
@@ -98,9 +98,9 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
----------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在导出受众的所有成员，以及所需的架构字段&#x200B;*（例如：电子邮件地址、电话号码、姓氏）*（根据字段映射）。</li><li> 对于在Experience Platform中选择的每个受众，相应的[!DNL Mailchimp Tags]区段状态将通过Experience Platform中的受众状态进行更新。</li></ul> |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+|---------|----------|---------|
+| 导出类型 | **[!UICONTROL Profile-based]** | <ul><li>您正在导出受众的所有成员，以及所需的架构字段&#x200B;*（例如：电子邮件地址、电话号码、姓氏）*（根据字段映射）。</li><li> 对于在Experience Platform中选择的每个受众，相应的[!DNL Mailchimp Tags]区段状态将通过Experience Platform中的受众状态进行更新。</li></ul> |
+| 导出频率 | **[!UICONTROL Streaming]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -108,26 +108,26 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 >[!IMPORTANT]
 >
->若要连接到目标，您需要&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写下面两个部分中列出的字段。
 
-在&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**&#x200B;中，搜索[!DNL Mailchimp Tags]。 或者，您可以在&#x200B;**[!UICONTROL 电子邮件营销]**&#x200B;类别下找到它。
+在&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**&#x200B;内，搜索[!DNL Mailchimp Tags]。 或者，您可以在&#x200B;**[!UICONTROL Email marketing]**&#x200B;类别下找到它。
 
 ### 验证目标 {#authenticate}
 
-要验证到目标，请填写下面的必填字段，然后选择&#x200B;**[!UICONTROL 连接到目标]**。
+要验证目标，请填写下面的必填字段并选择&#x200B;**[!UICONTROL Connect to destination]**。
 
 | 字段 | 描述 |
 | --- | --- |
-| **[!UICONTROL 用户名]** | 您的[!DNL Mailchimp]用户名。 |
-| **[!UICONTROL 密码]** | 您的[!DNL Mailchimp] **API密钥**，您已在[收集 [!DNL Mailchimp] 凭据](#gather-credentials)部分中记录该密钥。<br>您的API密钥采用`{KEY}-{DC}`的形式，其中`{KEY}`部分引用[[!DNL Mailchimp] API密钥](#gather-credentials)部分中记下的值，而`{DC}`部分引用[[!DNL Mailchimp] 数据中心](#identify-data-center)。 <br>您可以提供`{KEY}`部分或整个表单。<br>例如，如果您的API密钥是&#x200B;<br>*`0123456789abcdef0123456789abcde-us14`*，<br>，则可以提供&#x200B;*`0123456789abcdef0123456789abcde`*或&#x200B;*`0123456789abcdef0123456789abcde-us14`*作为值。 |
+| **[!UICONTROL Username]** | 您的[!DNL Mailchimp]用户名。 |
+| **[!UICONTROL Password]** | 您的[!DNL Mailchimp] **API密钥**，您已在[收集 [!DNL Mailchimp] 凭据](#gather-credentials)部分中记录该密钥。<br>您的API密钥采用`{KEY}-{DC}`的形式，其中`{KEY}`部分引用[[!DNL Mailchimp] API密钥](#gather-credentials)部分中记下的值，而`{DC}`部分引用[[!DNL Mailchimp] 数据中心](#identify-data-center)。 <br>您可以提供`{KEY}`部分或整个表单。<br>例如，如果您的API密钥是&#x200B;<br>*`0123456789abcdef0123456789abcde-us14`*，<br>，则可以提供&#x200B;*`0123456789abcdef0123456789abcde`*或&#x200B;*`0123456789abcdef0123456789abcde-us14`*作为值。 |
 
 {style="table-layout:auto"}
 
 ![Experience Platform UI屏幕截图显示如何进行身份验证。](../../assets/catalog/email-marketing/mailchimp-tags/authenticate-destination.png)
 
-如果提供的详细信息有效，则UI会显示&#x200B;**[!UICONTROL 已连接]**&#x200B;状态，并带有绿色复选标记。 然后，您可以继续执行下一步。
+如果提供的详细信息有效，则UI会显示&#x200B;**[!UICONTROL Connected]**&#x200B;状态并显示绿色复选标记。 然后，您可以继续执行下一步。
 
 ### 填写目标详细信息 {#destination-details}
 
@@ -137,10 +137,10 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 | 字段 | 描述 |
 | --- | --- |
-| **[!UICONTROL 名称]** | 将来用于识别此目标的名称。 |
-| **[!UICONTROL 描述]** | 可帮助您以后识别此目标的描述。 |
-| **[!UICONTROL 数据中心]** | 您的[!DNL Mailchimp]帐户`data center`。 有关任何指导，请参阅[识别 [!DNL Mailchimp] 数据中心](#identify-data-center)部分。 |
-| **[!UICONTROL 受众名称（请先输入数据中心）]** | 输入&#x200B;**[!UICONTROL 数据中心]**&#x200B;后，此下拉列表将自动填充[!DNL Mailchimp]帐户中的受众名称。 选择要使用Experience Platform中的数据更新的受众。 |
+| **[!UICONTROL Name]** | 将来用于识别此目标的名称。 |
+| **[!UICONTROL Description]** | 可帮助您以后识别此目标的描述。 |
+| **[!UICONTROL Data center]** | 您的[!DNL Mailchimp]帐户`data center`。 有关任何指导，请参阅[识别 [!DNL Mailchimp] 数据中心](#identify-data-center)部分。 |
+| **[!UICONTROL Audience Name (Please enter Data center first)]** | 输入&#x200B;**[!UICONTROL Data center]**&#x200B;后，此下拉列表中将自动填充[!DNL Mailchimp]帐户中的受众名称。 选择要使用Experience Platform中的数据更新的受众。 |
 
 {style="table-layout:auto"}
 
@@ -148,14 +148,14 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
->* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+>* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 有关将受众激活到此目标的说明，请阅读[将受众激活到流式目标](/help/destinations/ui/activate-segment-streaming-destinations.md)。
 
@@ -165,12 +165,12 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 要将XDM字段正确映射到[!DNL Mailchimp Tags]目标字段，请执行以下步骤：
 
-1. 在&#x200B;**[!UICONTROL 映射]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL 添加新映射]**。 您将在屏幕上看到一个新映射行。
-1. 在&#x200B;**[!UICONTROL 选择源字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择身份命名空间]**&#x200B;并选择`Email`身份命名空间。
+1. 在&#x200B;**[!UICONTROL Mapping]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL Add new mapping]**。 您将在屏幕上看到一个新映射行。
+1. 在&#x200B;**[!UICONTROL Select source field]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL Select identity namespace]**&#x200B;并选择`Email`身份命名空间。
 
    ![Experience Platform UI屏幕截图，其中Source字段为来自身份命名空间的电子邮件。](../../assets/catalog/email-marketing/mailchimp-tags/source-field.png)
 
-1. 在&#x200B;**[!UICONTROL 选择目标字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择身份命名空间]**&#x200B;并选择`Email`身份命名空间。
+1. 在&#x200B;**[!UICONTROL Select target field]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL Select identity namespace]**&#x200B;并选择`Email`身份命名空间。
 
    ![Experience Platform UI屏幕截图，其中Target字段为来自身份命名空间的电子邮件。](../../assets/catalog/email-marketing/mailchimp-tags/target-field.png)
 
@@ -183,13 +183,13 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
    下面显示了具有已完成映射的示例：
    ![显示字段映射的Experience Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/mailchimp-tags/mappings.png)
 
-完成提供目标连接的映射后，请选择&#x200B;**[!UICONTROL 下一步]**。
+完成提供目标连接的映射后，请选择&#x200B;**[!UICONTROL Next]**。
 
 ## 验证数据导出 {#exported-data}
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 登录到您的[[!DNL Mailchimp]](https://login.mailchimp.com/)帐户。 然后导航到&#x200B;**[!DNL Audience]** > **[!DNL All Contacts]**&#x200B;页面，并检查受众中的联系人是否已添加以及受众中的联系人是否已使用受众名称进行更新。
+1. 登录到您的[[!DNL Mailchimp]](https://login.mailchimp.com/)帐户。 然后导航到&#x200B;**[!DNL Audience]** > **[!DNL All Contacts]**页面，并检查受众中的联系人是否已添加以及受众中的联系人是否已使用受众名称进行更新。
    ![显示“受众”页面的Mailchimp UI屏幕截图。](../../assets/catalog/email-marketing/mailchimp-tags/contacts.png)
 
 ## 数据使用和治理 {#data-usage-governance}
@@ -203,6 +203,7 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 ## 其他资源 {#additional-resources}
 
 [!DNL Mailchimp]文档中的其他有用信息如下：
+
 * [开始使用 [!DNL Mailchimp]](https://mailchimp.com/help/getting-started-with-mailchimp/)
 * [受众入门](https://mailchimp.com/help/getting-started-audience/)
 * [创建受众](https://mailchimp.com/help/create-audience/)

@@ -2,7 +2,7 @@
 title: 在临时数据集中设置主要身份
 description: Adobe Experience Platform查询服务允许您直接通过SQL ALTER TABLE命令为临时模式数据集字段设置标识或主标识。 本文档说明如何使用ALTER TABLE命令设置主标识或辅助标识。
 exl-id: b8e6b87e-c6e5-4688-a936-a3a1510a3c5b
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '447'
 ht-degree: 1%
@@ -17,7 +17,7 @@ Adobe Experience Platform查询服务允许您使用SQL `ALTER TABLE`命令的�
 
 将数据集列标记为主标识或辅助标识需要了解`ALTER TABLE` SQL命令并充分了解数据隐私要求。 在继续阅读本文档之前，请查看以下文档：
 
-* [&#x200B; `ALTER TABLE`命令的SQL语法指南](../sql/syntax.md)。
+* [ `ALTER TABLE`命令的SQL语法指南](../sql/syntax.md)。
 * [数据管理概述](../../data-governance/home.md)，以了解更多信息。
 
 ## 添加约束 {#add-constraints}
@@ -44,7 +44,7 @@ ALTER TABLE t1 ADD CONSTRAINT IDENTITY(id) NAMESPACE 'IDFA';
 
 **示例**
 
-以下示例删除了在现有`t1`表中将`c1`列标记为主标识的要求。
+以下示例删除了在现有`c1`表中将`t1`列标记为主标识的要求。
 
 ```sql
 ALTER TABLE t1 DROP CONSTRAINT PRIMARY IDENTITY (c1) ;
@@ -68,7 +68,7 @@ ALTER TABLE t1 DROP CONSTRAINT IDENTITY (c1) ;
 
 ```console
  tableName | columnName | datatype | namespace | ifPrimary
------------+------------+----------+-----------+----------
+|-----------+------------+----------+-----------+----------
 (0 rows)
 ```
 

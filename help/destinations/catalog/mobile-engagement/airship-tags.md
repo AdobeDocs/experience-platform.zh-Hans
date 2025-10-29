@@ -3,9 +3,9 @@ keywords: 飞艇标签；飞艇目标
 title: 飞艇标记连接
 description: 将Adobe受众数据作为受众标记无缝传递到飞艇，以便在飞艇中进行定位。
 exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
-source-git-commit: 5a2f1c87381c39d6d15f569523cfb3b00d02b34b
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '970'
+source-wordcount: '934'
 ht-degree: 2%
 
 ---
@@ -52,9 +52,9 @@ ht-degree: 2%
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
----------|----------|---------|
-| 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出具有飞艇标记目标中所用标识符的受众的所有成员。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+|---------|----------|---------|
+| 导出类型 | **[!UICONTROL Audience export]** | 您正在导出具有飞艇标记目标中所用标识符的受众的所有成员。 |
+| 导出频率 | **[!UICONTROL Streaming]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -72,13 +72,13 @@ Adobe Experience Platform中的受众概念与Airship中的[标记](https://docs
 
 ## 生成持有者令牌
 
-转到&#x200B;**[!UICONTROL 飞艇仪表板]**&#x200B;中的&#x200B;**[!UICONTROL 设置]** &quot; [API和集成](https://go.airship.com)，然后在左侧菜单中选择&#x200B;**[!UICONTROL 令牌]**。
+转到&#x200B;**[!UICONTROL Settings]**&#x200B;飞艇仪表板&#x200B;**[!UICONTROL APIs & Integrations]**&#x200B;中的[ &#39;&#39; ](https://go.airship.com)，然后在左侧菜单中选择&#x200B;**[!UICONTROL Tokens]**。
 
-单击&#x200B;**[!UICONTROL 创建令牌]**。
+单击 **[!UICONTROL Create Token]**。
 
 为您的令牌提供一个用户友好的名称，例如“Adobe标记目标”，并为该角色选择“完全访问”。
 
-单击&#x200B;**[!UICONTROL 创建令牌]**&#x200B;并将详细信息保存为机密。
+单击&#x200B;**[!UICONTROL Create Token]**&#x200B;并将详细信息保存为机密。
 
 ## 用例
 
@@ -98,41 +98,41 @@ Adobe Experience Platform中的受众概念与Airship中的[标记](https://docs
 
 >[!IMPORTANT]
 > 
->若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写下面两个部分中列出的字段。
 
 ### 验证目标 {#authenticate}
 
-要验证到目标，请填写必填字段并选择&#x200B;**[!UICONTROL 连接到目标]**。
+要验证目标，请填写必填字段并选择&#x200B;**[!UICONTROL Connect to destination]**。
 
-* **[!UICONTROL 持有者令牌]**：从[!DNL Airship]仪表板生成的持有者令牌。
+* **[!UICONTROL Bearer token]**：您从[!DNL Airship]仪表板生成的持有者令牌。
 
 ### 填写目标详细信息 {#destination-details}
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
-* **[!UICONTROL 名称]**：输入有助于识别此目标的名称。
-* **[!UICONTROL 描述]**：输入此目标的描述。
-* **[!UICONTROL 域]**：选择美国或欧盟数据中心，具体取决于哪个[!DNL Airship]数据中心适用于此目标。
+* **[!UICONTROL Name]**：输入有助于识别此目标的名称。
+* **[!UICONTROL Description]**：输入此目标的描述。
+* **[!UICONTROL Domain]**：选择美国或欧盟数据中心，具体取决于哪个[!DNL Airship]数据中心适用于此目标。
 
 ### 启用警报 {#enable-alerts}
 
 您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
->若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 有关将受众激活到此目标的说明，请参阅[将受众数据激活到流式受众导出目标](../../ui/activate-segment-streaming-destinations.md)。
 
 ## 映射注意事项 {#mapping-considerations}
 
-[!DNL Airship]标记可以在渠道上设置，该渠道表示设备实例，如iPhone，也可以设置指定用户，该指定用户将用户的所有设备映射到通用标识符，如客户ID。 如果您的架构中将纯文本（未散列）电子邮件地址作为主标识，请选择&#x200B;**[!UICONTROL Source属性]**&#x200B;中的电子邮件字段，并映射到[!DNL Airship]Target标识&#x200B;**[!UICONTROL 下右列中的]**&#x200B;指定用户，如下所示。
+[!DNL Airship]标记可以在渠道上设置，该渠道表示设备实例，如iPhone，也可以设置指定用户，该指定用户将用户的所有设备映射到通用标识符，如客户ID。 如果您的架构中将纯文本（未散列）电子邮件地址作为主标识，请选择&#x200B;**[!UICONTROL Source Attributes]**&#x200B;中的电子邮件字段，并映射到[!DNL Airship]下右列的&#x200B;**[!UICONTROL Target Identities]**&#x200B;指定用户，如下所示。
 
 ![命名用户映射](../../assets/catalog/mobile-engagement/airship-tags/mapping-option-2.png)
 

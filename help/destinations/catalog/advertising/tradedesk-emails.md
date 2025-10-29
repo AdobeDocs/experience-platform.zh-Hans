@@ -3,9 +3,9 @@ title: 交易台 — CRM连接
 description: 激活交易台帐户中的配置文件，以根据CRM数据进行受众定位和抑制。
 last-substantial-update: 2025-01-16T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '1122'
+source-wordcount: '1088'
 ht-degree: 5%
 
 ---
@@ -15,6 +15,7 @@ ht-degree: 5%
 >[!IMPORTANT]
 >
 >随着 EUID (European Unified ID) 的发布，现在您在[目标目录](/help/destinations/catalog/overview.md)中会看到两个 [!DNL The Trade Desk - CRM] 目标。
+>
 >* 如果您在欧盟获取数据，请使用 **[!DNL The Trade Desk - CRM (EU)]** 目标。
 >* 如果您在 APAC 或 NAMER 地区获取数据，请使用 **[!DNL The Trade Desk - CRM (NAMER & APAC)]** 目标。
 >
@@ -74,9 +75,9 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
----------|----------|---------|
-| 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出具有在交易台目标中使用的标识符（电子邮件或哈希电子邮件）的受众的所有成员。 |
-| 导出频率 | **[!UICONTROL 每日批次]** | 由于配置文件是根据受众评估在Experience Platform中进行更新的，因此配置文件（身份）每天会更新一次以流向目标平台。 阅读有关[批处理导出](/help/destinations/destination-types.md#file-based)的详细信息。 |
+|---------|----------|---------|
+| 导出类型 | **[!UICONTROL Audience export]** | 您正在导出具有在交易台目标中使用的标识符（电子邮件或哈希电子邮件）的受众的所有成员。 |
+| 导出频率 | **[!UICONTROL Daily Batch]** | 由于配置文件是根据受众评估在Experience Platform中进行更新的，因此配置文件（身份）每天会更新一次以流向目标平台。 阅读有关[批处理导出](/help/destinations/destination-types.md#file-based)的详细信息。 |
 
 {style="table-layout:auto"}
 
@@ -88,12 +89,12 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 
 ### 填写目标详细信息 {#fill-in-details}
 
-在将受众数据发送到或激活到目标之前，您必须先设置与自己的目标平台的连接。 在[设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=zh-Hans)此目标时，必须提供以下信息：
+在将受众数据发送到或激活到目标之前，您必须先设置与自己的目标平台的连接。 在[设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html)此目标时，必须提供以下信息：
 
-* **[!UICONTROL 帐户类型]**：请选择&#x200B;**[!UICONTROL 现有帐户]**&#x200B;选项。
-* **[!UICONTROL 名称]**：将来用于识别此目标的名称。
-* **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
-* **[!UICONTROL 广告商ID]**：您的[!DNL Trade Desk Advertiser ID]，可以由您的[!DNL Trade Desk]帐户管理员共享，也可以在[!DNL Trade Desk] UI中的[!DNL Advertiser Preferences]下找到。
+* **[!UICONTROL Account Type]**：请选择&#x200B;**[!UICONTROL Existing Account]**&#x200B;选项。
+* **[!UICONTROL Name]**：将来用于识别此目标的名称。
+* **[!UICONTROL Description]**：可帮助您将来识别此目标的描述。
+* **[!UICONTROL Advertiser ID]**：您的[!DNL Trade Desk Advertiser ID]，可以由您的[!DNL Trade Desk]帐户管理员共享或在[!DNL Advertiser Preferences] UI中的[!DNL Trade Desk]下找到。
 
 ![Experience Platform UI屏幕截图显示如何填写目标详细信息。](/help/destinations/assets/catalog/advertising/tradedesk/configuredestination2.png)
 
@@ -103,12 +104,12 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 
 >[!IMPORTANT]
 > 
->* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+>* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 有关将受众激活到目标的说明，请阅读[将受众数据激活到批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md)。
 
-在&#x200B;**[!UICONTROL 计划]**&#x200B;页面中，您可以为要导出的每个受众配置计划和文件名。 配置时间表是强制性的，但配置文件名是可选的。
+在&#x200B;**[!UICONTROL Scheduling]**&#x200B;页面中，您可以为要导出的每个受众配置计划和文件名。 配置时间表是强制性的，但配置文件名是可选的。
 
 ![Experience Platform UI屏幕截图以安排Audience Activation。](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment1.png)
 
@@ -118,7 +119,7 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 
 ![Experience Platform UI屏幕截图以安排Audience Activation。](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment2.png)
 
-在&#x200B;**[!UICONTROL 映射]**&#x200B;页中，必须从源列中选择特性或身份命名空间并映射到目标列。
+在&#x200B;**[!UICONTROL Mapping]**&#x200B;页中，必须从源列中选择属性或身份命名空间并映射到目标列。
 
 ![用于映射受众激活的Experience Platform UI屏幕截图。](/help/destinations/assets/catalog/advertising/tradedesk/mappingsegment1.png)
 
@@ -135,16 +136,16 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 
 选择目标字段：
 
-* 当源命名空间或属性为`Email`时，输入`email`作为目标标识。
-* 当源命名空间或属性为`Email_LC_SHA256`时，输入`hashed_email`作为目标标识。
+* 当源命名空间或属性为`email`时，输入`Email`作为目标标识。
+* 当源命名空间或属性为`hashed_email`时，输入`Email_LC_SHA256`作为目标标识。
 
 ## 验证数据导出 {#validate}
 
 要验证数据是否已从Experience Platform正确导出到[!DNL The Trade Desk]，请在[!DNL The Trade Desk]数据管理平台(DMP)的Adobe 1PD数据拼贴下找到受众。 以下是在[!DNL Trade Desk] UI中查找相应ID的步骤：
 
-1. 首先，选择&#x200B;**[!UICONTROL 数据]**&#x200B;选项卡，并查看&#x200B;**[!UICONTROL 第一方]**&#x200B;部分。
-2. 向下滚动该页面，在&#x200B;**[!UICONTROL 导入的数据]**&#x200B;下，您会找到&#x200B;**[!UICONTROL Adobe 1PD磁贴]**。
-3. 单击&#x200B;**[!UICONTROL Adobe 1PD]**&#x200B;图块，它会列出激活到广告商的[!DNL Trade Desk]目标的所有受众。 您还可以使用搜索功能。
+1. 首先，选择&#x200B;**[!UICONTROL Data]**&#x200B;选项卡，并查看&#x200B;**[!UICONTROL First-Party]**&#x200B;部分。
+2. 向下滚动该页面，在&#x200B;**[!UICONTROL Imported Data]**&#x200B;下，您会找到&#x200B;**[!UICONTROL Adobe 1PD Tile]**。
+3. 单击**[!UICONTROL Adobe 1PD]**图块，它将列出激活到您的广告商的[!DNL Trade Desk]目标的所有受众。 您还可以使用搜索功能。
 4. Experience Platform中的区段ID #将显示为[!DNL Trade Desk] UI中的区段名称。
 
 ## 数据使用和治理 {#data-usage-governance}

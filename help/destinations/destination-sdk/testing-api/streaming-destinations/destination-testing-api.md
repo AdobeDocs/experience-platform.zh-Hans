@@ -2,7 +2,7 @@
 description: 了解如何使用目标测试API来测试您的流目标配置是否正确，以及验证流向您配置的目标的数据流的完整性。
 title: 使用示例配置文件测试您的流目标
 exl-id: 2b54250d-ec30-4ad7-a8be-b86b14e4f074
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '607'
 ht-degree: 1%
@@ -26,9 +26,9 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->* 要使用此API，您必须在Experience PlatformUI中拥有到目标的现有连接。 阅读[连接到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=zh-Hans)和[将配置文件和受众激活到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=zh-Hans)以了解详细信息。
-> * 建立与目标的连接后，获取在[浏览与目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html?lang=zh-Hans)的连接时您应在对此端点的API调用中使用的目标实例ID。
->![UI图像如何获取目标实例ID](../../assets/testing-api/get-destination-instance-id.png)
+>* 要使用此API，您必须在Experience Platform UI中拥有到目标的现有连接。 阅读[连接到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html)和[将配置文件和受众激活到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html)以了解详细信息。
+>* 建立与目标的连接后，获取在[浏览与目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html)的连接时您应在对此端点的API调用中使用的目标实例ID。
+>  >![UI图像如何获取目标实例ID](../../assets/testing-api/get-destination-instance-id.png)
 
 ## 目标测试API操作快速入门 {#get-started}
 
@@ -158,7 +158,7 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 | -------- | ----------- |
 | `aggregationKey` | 包含有关为目标配置的聚合策略的信息。 有关详细信息，请阅读[聚合策略](../../functionality/destination-configuration/aggregation-policy.md)文档。 |
 | `traceId` | 操作的唯一标识符。 遇到错误时，您可以与Adobe团队共享此ID，以进行故障排除。 |
-| `results.httpCalls.request` | 包括Adobe发送到目标的请求。 |
+| `results.httpCalls.request` | 包含Adobe发送到目标的请求。 |
 | `results.httpCalls.response` | 包含Adobe从目标收到的响应。 |
 | `inputProfiles` | 包含在调用目标时导出的用户档案。 配置文件与您的源架构匹配。 |
 
@@ -322,8 +322,8 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 
 ## API错误处理 {#api-error-handling}
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅平台疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
+Destination SDK API端点遵循常规Experience Platform API错误消息原则。 请参阅平台疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤
 
-阅读本文档后，您现在知道如何测试您的目标。 您现在可以使用Adobe[自助文档流程](../../docs-framework/documentation-instructions.md)为您的目标创建文档页面。
+阅读本文档后，您现在知道如何测试您的目标。 您现在可以使用Adobe [自助式文档流程](../../docs-framework/documentation-instructions.md)为您的目标创建文档页面。

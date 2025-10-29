@@ -1,7 +1,8 @@
 ---
 title: 使用基于SQL的Logistic回归预测客户流失
 description: 了解如何使用基于SQL的Logistic回归预测客户流失。 本指南涵盖从模型创建到评估和预测的整个过程。 从客户购买行为中获得切实可行的洞察，以实施主动保留策略并优化业务决策。
-source-git-commit: 95c7ad3f8eb86cacd42077008824eea9e25b4db0
+exl-id: 3b18870d-104c-4dce-8549-a6818dc40d24
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1126'
 ht-degree: 1%
@@ -45,7 +46,7 @@ ht-degree: 1%
 | `timestamp` | 每个购买事件的确切日期和时间。 |
 | `commerce.order.purchaseID` | 用于确认已完成购买的必需值。 |
 
-数据集必须包含结构化历史客户交易记录，其中每一行表示一个购买事件。 每个事件都必须包含与SQL `DATEDIFF`函数兼容的适当日期时间格式的时间戳（例如，YYYY-MM-DD HH:MI:SS）。 此外，每个记录都必须在`identityMap`字段中包含有效的Experience CloudID (`ECID`)，以唯一标识客户。
+数据集必须包含结构化历史客户交易记录，其中每一行表示一个购买事件。 每个事件都必须包含与SQL `DATEDIFF`函数兼容的适当日期时间格式的时间戳（例如，YYYY-MM-DD HH:MI:SS）。 此外，每个记录都必须在`ECID`字段中包含有效的Experience Cloud ID (`identityMap`)，以唯一标识客户。
 
 >[!TIP]
 >
@@ -128,7 +129,7 @@ LIMIT 500000;  -- Limit the dataset to 500,000 rows for model training
 
 ```console
  customer_id  | total_purchases | total_revenue | avg_order_value  | customer_lifetime | days_since_last_purchase | purchase_frequency | churned |
---------------+-----------------+---------------+------------------+-------------------+--------------------------+--------------------+----------
+|--------------+-----------------+---------------+------------------+-------------------+--------------------------+--------------------+----------
   100001      | 25              | 1250.00       | 50.00            | 540               | 20                       | 10                 | 0       
   100002      | 3               | 90.00         | 30.00            | 120               | 95                       | 1                  | 1       
   100003      | 60              | 7200.00       | 120.00           | 800               | 5                        | 24                 | 0       
@@ -203,7 +204,7 @@ ON f.customer_id = l.customer_id); -- Joins customer features with churn labels
 
 ```console
  auc_roc | accuracy | precision | recall 
----------+----------+-----------+--------
+|---------+----------+-----------+--------
 1        | 0.99998  |  1        |  1      
 ```
 
@@ -279,7 +280,7 @@ ON f.customer_id = l.customer_id);  -- Matches features with their churn labels 
 
 ```console
  total_purchases | total_revenue | avg_order_value | customer_lifetime | days_since_last_purchase | purchase_frequency | churned | prediction
------------------+---------------+-----------------+-------------------+--------------------------+--------------------+---------+------------
+|-----------------+---------------+-----------------+-------------------+--------------------------+--------------------+---------+------------
  2               | 299           | 149.5           | 0                 | 13                        | 1                  | 0       | 0
  1               | 710           | 710.00          | 0                 | 149                       | 1                  | 1       | 1
  1               | 19.99         | 19.99           | 0                 | 30                        | 1                  | 0       | 0

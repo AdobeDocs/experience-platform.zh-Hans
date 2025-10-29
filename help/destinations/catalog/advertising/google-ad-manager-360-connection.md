@@ -2,10 +2,10 @@
 title: (Beta) [!DNL Google Ad Manager 360] 连接
 description: Google Ad Manager 360是Google的一个广告投放平台，它使发布者能够通过视频和移动应用程序管理其网站上的广告显示。
 exl-id: 3251145a-3e4d-40aa-b120-d79c8c9c7cae
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '1221'
-ht-degree: 6%
+source-wordcount: '1162'
+ht-degree: 7%
 
 ---
 
@@ -13,15 +13,15 @@ ht-degree: 6%
 
 >[!IMPORTANT]
 >
-> Google将发布对[Google Ads API](https://developers.google.com/google-ads/api/docs/start)、[Customer Match](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html)和[Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview)的更改，以支持欧盟（[EU用户同意政策](https://www.google.com/about/company/user-consent-policy/)）中[Digital Markets Act](https://digital-markets-act.ec.europa.eu/index_en) (DMA)定义的合规性和同意相关要求。 自2024年3月6日起，将开始实施对同意要求的这些更改。
-><br/>
->为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为 Google 合作伙伴，Adobe 为您提供必要的工具，以遵守欧盟 DMA 下的这些同意要求。
-><br/>
->如果客户购买了Adobe Privacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未经同意的用户档案，则无需采取任何操作。
-><br/>
->未购买Adobe Privacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/ui/segment-builder.md)中的[区段定义](../../../segmentation/home.md#segment-definitions)功能来过滤掉未经同意的用户档案，以便继续使用现有的Real-Time CDP Google目标而不中断。
+> Google将发布对[Google Ads API](https://developers.google.com/google-ads/api/docs/start)、[Customer Match](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html)和[Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview)的更改，以支持欧盟（[EU用户同意政策](https://digital-markets-act.ec.europa.eu/index_en)）中[Digital Markets Act](https://www.google.com/about/company/user-consent-policy/) (DMA)定义的合规性和同意相关要求。 自2024年3月6日起，将开始实施对同意要求的这些更改。
+> ><br/>
+> >为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为 Google 合作伙伴，Adobe 为您提供必要的工具，以遵守欧盟 DMA 下的这些同意要求。
+> ><br/>
+> >如果客户购买了Adobe Privacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未经同意的用户档案，则无需采取任何操作。
+> ><br/>
+> >未购买Adobe Privacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/home.md#segment-definitions)中的[区段定义](../../../segmentation/ui/segment-builder.md)功能来过滤掉未经同意的用户档案，以便继续使用现有的Real-Time CDP Google目标而不中断。
 
-[!DNL Google Ad Manager 360]连接允许通过[!DNL Google Cloud Storage]将[!DNL publisher provided identifiers] (PPID)的批次上载到[!DNL Google Ad Manager 360]。
+[!DNL Google Ad Manager 360]连接允许通过[!DNL publisher provided identifiers]将[!DNL Google Ad Manager 360] (PPID)的批次上载到[!DNL Google Cloud Storage]。
 
 有关发布者提供的标识符如何在Google Ad Manager 360中工作的详细信息，请参阅[Google官方文档](https://support.google.com/admanager/answer/2880055?hl=en)。
 
@@ -64,9 +64,9 @@ ht-degree: 6%
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
----------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有成员，以及适用的架构字段（例如，PPID），如[目标激活工作流](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes)的选择配置文件属性屏幕中所选。 |
-| 导出频率 | **[!UICONTROL 批次]** | 批量目标以三、六、八、十二或二十四小时的增量将文件导出到下游平台。 阅读有关[基于批处理文件的目标](/help/destinations/destination-types.md#file-based)的详细信息。 |
+|---------|----------|---------|
+| 导出类型 | **[!UICONTROL Profile-based]** | 您正在导出区段的所有成员，以及适用的架构字段（例如，PPID），如[目标激活工作流](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes)的选择配置文件属性屏幕中所选。 |
+| 导出频率 | **[!UICONTROL Batch]** | 批量目标以三、六、八、十二或二十四小时的增量将文件导出到下游平台。 阅读有关[基于批处理文件的目标](/help/destinations/destination-types.md#file-based)的详细信息。 |
 
 {style="table-layout:auto"}
 
@@ -78,26 +78,26 @@ ht-degree: 6%
 
 >[!NOTE]
 >
->此规则的例外适用于现有[Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html?lang=zh-Hans)客户。 如果您已在Audience Manager中创建了到此Google目标的连接，则无需再次完成允许列表流程，您可以继续后续步骤。
+>此规则的例外适用于现有[Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html)客户。 如果您已在Audience Manager中创建了到此Google目标的连接，则无需再次完成允许列表流程，您可以继续后续步骤。
 
 1. 按照[Google Ad Manager文档](https://support.google.com/admanager/answer/3289669?hl=en)中描述的步骤，将Adobe添加为链接的数据管理平台(DMP)。
-2. 在[!DNL Google Ad Manager]界面中，转到&#x200B;**[!UICONTROL 管理员]** > **[!UICONTROL 全局设置]** > **[!UICONTROL 网络设置]**，并启用&#x200B;**[!UICONTROL API访问]**&#x200B;滑块。
+2. 在[!DNL Google Ad Manager]界面中，转到&#x200B;**[!UICONTROL Admin]** > **[!UICONTROL Global Settings]** > **[!UICONTROL Network Settings]**&#x200B;并启用&#x200B;**[!UICONTROL API Access]**&#x200B;滑块。
 
 
 ## 连接到目标 {#connect}
 
 >[!IMPORTANT]
 > 
->若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
-要连接到此目标，请按照[目标配置教程](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=zh-Hans)中描述的步骤操作。 在目标配置工作流中，填写下面两个部分中列出的字段。
+要连接到此目标，请按照[目标配置教程](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html)中描述的步骤操作。 在目标配置工作流中，填写下面两个部分中列出的字段。
 
 ### 验证目标 {#authenticate}
 
-要验证到目标，请填写必填字段并选择&#x200B;**[!UICONTROL 连接到目标]**。
+要验证目标，请填写必填字段并选择&#x200B;**[!UICONTROL Connect to destination]**。
 
-* **[!UICONTROL 访问密钥ID]**：一个由61个字符组成的字母数字字符串，用于向Experience Platform验证您的[!DNL Google Cloud Storage]帐户。
-* **[!UICONTROL 访问密钥]**：用于向Experience Platform验证您的[!DNL Google Cloud Storage]帐户的40字符base64编码字符串。
+* **[!UICONTROL Access key ID]**：一个由61个字符组成的字母数字字符串，用于向Experience Platform验证您的[!DNL Google Cloud Storage]帐户。
+* **[!UICONTROL Secret access key]**：用于向Experience Platform验证您的[!DNL Google Cloud Storage]帐户的40个字符base64编码字符串。
 
 有关这些值的更多信息，请参阅[Google Cloud Storage HMAC密钥](https://cloud.google.com/storage/docs/authentication/hmackeys#overview)指南。 有关如何生成自己的访问密钥ID和访问密钥的步骤，请参阅[[!DNL Google Cloud Storage] 源概述](/help/sources/connectors/cloud-storage/google-cloud-storage.md)。
 
@@ -110,28 +110,28 @@ ht-degree: 6%
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
-* **[!UICONTROL 名称]**：填写此目标的首选名称。
-* **[!UICONTROL 描述]**：可选。 例如，您可以提及要将此目标用于哪个营销活动。
-* **[!UICONTROL 文件夹路径]**：输入将承载导出文件的目标文件夹的路径。
-* **[!UICONTROL Bucket名称]**：输入要由此目标使用的[!DNL Google Cloud Storage]存储段的名称。
-* **[!UICONTROL 帐户ID]**：输入您的[!DNL Google]帐户中的[!DNL Audience Link ID]。 这是与您的[!DNL Google Ad Manager]网络（而不是[!DNL Network code]）关联的特定标识符。 您可以在[!DNL Google Ad Manager]界面的&#x200B;**[!UICONTROL 管理员>全局设置]**&#x200B;下找到此项。
-* **[!UICONTROL 帐户类型]**：根据您的[!DNL Google]帐户选择一个选项：
+* **[!UICONTROL Name]**：填写此目标的首选名称。
+* **[!UICONTROL Description]**：可选。 例如，您可以提及要将此目标用于哪个营销活动。
+* **[!UICONTROL Folder path]**：输入将承载导出文件的目标文件夹的路径。
+* **[!UICONTROL Bucket name]**：输入要由此目标使用的[!DNL Google Cloud Storage]存储段的名称。
+* **[!UICONTROL Account ID]**：输入您的[!DNL Audience Link ID]帐户中的[!DNL Google]。 这是与您的[!DNL Google Ad Manager]网络（而不是[!DNL Network code]）关联的特定标识符。 您可以在&#x200B;**[!UICONTROL Admin > Global settings]**&#x200B;界面的[!DNL Google Ad Manager]下找到此内容。
+* **[!UICONTROL Account Type]**：根据您的[!DNL Google]帐户选择一个选项：
    * 将`AdX buyer`用于[!DNL Google AdX]
    * 将`DFP by Google`用于[!DNL DoubleClick]发布者
-* **[!UICONTROL 将受众ID附加到受众名称]**：选择此选项可使Google Ad Manager 360中的受众名称包含来自Experience Platform的受众ID，如下所示： `Audience Name (Audience ID)`。
+* **[!UICONTROL Append audience ID to audience name]**：选择此选项以使Google Ad Manager 360中的受众名称包含Experience Platform中的受众ID，如下所示： `Audience Name (Audience ID)`。
 
 ### 启用警报 {#enable-alerts}
 
 您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
->* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+>* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 有关将受众激活到此目标的说明，请参阅[将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md)。
 
@@ -157,5 +157,5 @@ ht-degree: 6%
 
 这些是Adobe的Google帐户ID：
 
-* **[!UICONTROL 帐户ID]**： 87933855
-* **[!UICONTROL 客户ID]**： 89690775
+* **[!UICONTROL Account ID]**： 87933855
+* **[!UICONTROL Customer ID]**： 89690775

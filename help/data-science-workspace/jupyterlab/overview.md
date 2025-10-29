@@ -4,9 +4,9 @@ solution: Experience Platform
 title: JupyterLab UI概述
 description: JupyterLab是Project Jupyter的基于Web的用户界面，并且已紧密集成到Adobe Experience Platform中。 它为数据科学家提供了交互式开发环境，以便使用Jupyter Notebooks、代码和数据。 本文档概述了JupyterLab及其功能，并提供了执行常见操作的说明。
 exl-id: 13786fbd-ef16-49cd-8bcf-46320c33e902
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '1838'
+source-wordcount: '1831'
 ht-degree: 2%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 2%
 
 本文档概述了[!DNL JupyterLab]及其功能，并提供了执行常见操作的说明。
 
-## [!DNL Experience Platform]上的[!DNL JupyterLab]
+## [!DNL JupyterLab]上的[!DNL Experience Platform]
 
 Experience Platform的JupyterLab集成伴随着体系结构变化、设计注意事项、自定义笔记本扩展、预安装的库和Adobe主题的界面。
 
@@ -33,7 +33,7 @@ Experience Platform的JupyterLab集成伴随着体系结构变化、设计注意
 | --- | --- |
 | **内核** | 内核提供笔记本和其他[!DNL JupyterLab]前端以不同编程语言执行和内部检查代码的功能。 [!DNL Experience Platform]提供了额外的内核以支持[!DNL Python]、R、PySpark和[!DNL Spark]中的开发。 有关更多详细信息，请参阅[内核](#kernels)部分。 |
 | **数据访问** | 直接从[!DNL JupyterLab]中访问现有数据集，完全支持读取和写入功能。 |
-| **[!DNL Experience Platform]服务集成** | 内置集成允许您直接从[!DNL JupyterLab]中利用其他[!DNL Experience Platform]服务。 有关[与其他Experience Platform服务](#service-integration)的集成的部分中提供了支持的集成的完整列表。 |
+| **[!DNL Experience Platform]服务集成** | 内置集成允许您直接从[!DNL Experience Platform]中利用其他[!DNL JupyterLab]服务。 有关[与其他Experience Platform服务](#service-integration)的集成的部分中提供了支持的集成的完整列表。 |
 | **身份验证** | 除了<a href="https://jupyter-notebook.readthedocs.io/en/stable/security.html" target="_blank">JupyterLab的内置安全模型</a>之外，您的应用程序与Experience Platform之间的每次交互(包括Experience Platform服务到服务通信)都通过<a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">[!DNL Adobe Identity Management System] (IMS)</a>进行加密和身份验证。 |
 | **开发库** | 在[!DNL Experience Platform]中，[!DNL JupyterLab]为[!DNL Python]、R和PySpark提供预安装的库。 有关支持的库的完整列表，请参阅[附录](#supported-libraries)。 |
 | **库控制器** | 当预安装的库无法满足您的需求时，可以为Python和R安装其他库，并临时存储在隔离的容器中，以保持[!DNL Experience Platform]的完整性并保持数据的安全。 有关更多详细信息，请参阅[内核](#kernels)部分。 |
@@ -53,7 +53,7 @@ Experience Platform的JupyterLab集成伴随着体系结构变化、设计注意
 
 >[!NOTE]
 >
->[!DNL JupyterLab]上的某些[!DNL Experience Platform]服务集成仅限于特定内核。 有关更多详细信息，请参阅[内核](#kernels)部分。
+>[!DNL Experience Platform]上的某些[!DNL JupyterLab]服务集成仅限于特定内核。 有关更多详细信息，请参阅[内核](#kernels)部分。
 
 ## 主要功能和常见操作
 
@@ -68,7 +68,7 @@ Experience Platform的JupyterLab集成伴随着体系结构变化、设计注意
 
 ### 访问[!DNL JupyterLab] {#access-jupyterlab}
 
-在[Adobe Experience Platform](https://platform.adobe.com)中，从左侧导航列中选择&#x200B;**[!UICONTROL 笔记本]**。 留出一段时间让[!DNL JupyterLab]完全初始化。
+在[Adobe Experience Platform](https://platform.adobe.com)中，从左侧导航列中选择&#x200B;**[!UICONTROL Notebooks]**。 留出一段时间让[!DNL JupyterLab]完全初始化。
 
 ![](../images/jupyterlab/user-guide/access_jupyterlab.png)
 
@@ -112,7 +112,7 @@ Experience Platform的JupyterLab集成伴随着体系结构变化、设计注意
 
 ### [!DNL Python]/R中的GPU和内存服务器配置
 
-在[!DNL JupyterLab]中，选择右上角的齿轮图标以打开&#x200B;*笔记本服务器配置*。 您可以通过滑块打开GPU并分配所需的内存量。 可分配的内存量取决于您的组织已配置的内存量。 选择&#x200B;**[!UICONTROL 更新配置]**&#x200B;以进行保存。
+在[!DNL JupyterLab]中，选择右上角的齿轮图标以打开&#x200B;*笔记本服务器配置*。 您可以通过滑块打开GPU并分配所需的内存量。 可分配的内存量取决于您的组织已配置的内存量。 选择要保存的&#x200B;**[!UICONTROL Update configs]**。
 
 >[!NOTE]
 >
@@ -122,9 +122,9 @@ Experience Platform的JupyterLab集成伴随着体系结构变化、设计注意
 
 ### 终止并重新启动[!DNL JupyterLab]
 
-在[!DNL JupyterLab]中，您可以终止会话以防止使用其他资源。 首先选择&#x200B;**电源图标** ![电源图标](/help/images/icons/power.png)，然后从似乎将终止会话的弹出框中选择&#x200B;**[!UICONTROL 关闭]**。 笔记本会话在12小时不活动后自动终止。
+在[!DNL JupyterLab]中，您可以终止会话以防止使用其他资源。 首先，选择&#x200B;**电源图标** ![电源图标](/help/images/icons/power.png)，然后从似乎要终止会话的弹出框中选择&#x200B;**[!UICONTROL Shut Down]**。 笔记本会话在12小时不活动后自动终止。
 
-若要重新启动[!DNL JupyterLab]，请选择电源图标左边的&#x200B;**重新启动图标** ![重新启动图标](/help/images/icons/restart.png)，然后从显示的弹出框中选择&#x200B;**[!UICONTROL 重新启动]**。
+若要重新启动[!DNL JupyterLab]，请选择电源图标左边的&#x200B;**重新启动图标** ![重新启动图标](/help/images/icons/restart.png)，然后从显示的弹出框中选择&#x200B;**[!UICONTROL Restart]**。
 
 ![终止jupyterlab](../images/jupyterlab/user-guide/shutdown-jupyterlab.gif)
 
@@ -140,7 +140,7 @@ Experience Platform的JupyterLab集成伴随着体系结构变化、设计注意
 
 * **移动单元格：**&#x200B;将光标放在要移动的单元格的右侧，然后单击并将单元格拖到新位置。 此外，将单元格从一个笔记本移动到另一个笔记本会复制该单元格及其内容。
 
-* **执行单元格：**&#x200B;单击要执行的单元格正文，然后单击笔记本菜单中的&#x200B;**播放**&#x200B;图标(**▶**)。 当内核正在处理执行时，单元格的执行计数器中会显示一个星号(**\***)，完成时该星号会被替换为整数。
+* **执行单元格：**&#x200B;单击要执行的单元的主体，然后单击笔记本菜单中的&#x200B;**播放**&#x200B;图标(**▶**)。 当内核正在处理执行时，单元格的执行计数器中会显示一个星号(**\***)，完成时该星号会被替换为整数。
 
 * **删除单元格：**&#x200B;单击要删除单元格的正文，然后单击&#x200B;**剪刀**&#x200B;图标。
 
@@ -178,7 +178,7 @@ Experience Platform的JupyterLab集成伴随着体系结构变化、设计注意
 | 起始者 | 一个预填充的笔记本，演示使用示例数据探索数据。 |
 | 零售业 | 使用样本数据预填充的笔记本，其中包含[零售销售方法](../pre-built-recipes/retail-sales.md)。 |
 | 方法生成器 | 用于在[!DNL JupyterLab]中创建方法的笔记本模板。 它预先填充了代码和注释，用于演示和描述处方创建过程。 有关详细演练，请参阅[笔记本到方法教程](https://www.adobe.com/go/data-science-create-recipe-notebook-tutorial-en)。 |
-| [!DNL Query Service] | 预填充的笔记本，用于演示直接在[!DNL JupyterLab]中使用[!DNL Query Service]，并提供大规模分析数据的示例工作流。 |
+| [!DNL Query Service] | 预填充的笔记本，用于演示直接在[!DNL Query Service]中使用[!DNL JupyterLab]，并提供大规模分析数据的示例工作流。 |
 | XDM事件 | 一个预填充的笔记本，演示关于后值体验事件数据的数据探索，重点介绍整个数据结构中的共有功能。 |
 | XDM查询 | 一个预填充的笔记本，用于演示有关体验事件数据的示例业务查询。 |
 | 聚合 | 一个预填充的笔记本，演示将大量数据聚合到较小、可管理的块中的示例工作流。 |
@@ -264,6 +264,7 @@ Experience Platform的JupyterLab集成伴随着体系结构变化、设计注意
 ![示例](../images/jupyterlab/user-guide/libraries.PNG)
 
 此外，还使用了以下依赖项，但未列出这些依赖项：
+
 * CUDA 11.2
 * CUDNN 8.1
 

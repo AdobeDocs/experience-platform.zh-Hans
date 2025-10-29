@@ -1,15 +1,15 @@
 ---
 title: 庞博拉连接
 description: 根据客户受众，激活Bombora营销活动的用户档案，以实现受众定位、个性化和抑制。
-badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions newtab=true"
-badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions newtab=true"
-source-git-commit: 026d8e4c2bcea407d2a750e66b11766b1114b758
+badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+exl-id: a2f8e399-e192-4104-876a-fe60f8403143
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '878'
+source-wordcount: '846'
 ht-degree: 3%
 
 ---
-
 
 # 庞博拉连接 {#bombora}
 
@@ -48,7 +48,7 @@ ht-degree: 3%
 此部分介绍可将哪种类型的受众导出到此目标。
 
 | 受众来源 | 支持 | 描述 |
----------|----------|----------|
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
 | 自定义上传 | X | 受众[已从CSV文件将](../../../segmentation/ui/overview.md#import-audience)导入Experience Platform。 |
 
@@ -69,9 +69,9 @@ Bombora需要下表描述的目标标识映射。 了解有关[标识](/help/ide
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
----------|----------|---------|
-| 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出具有[!DNL Bombora]目标中使用的标识符（姓名、电话号码或其他）的受众的所有成员。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+|---------|----------|---------|
+| 导出类型 | **[!UICONTROL Audience export]** | 您正在导出具有[!DNL Bombora]目标中使用的标识符（姓名、电话号码或其他）的受众的所有成员。 |
+| 导出频率 | **[!UICONTROL Streaming]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -80,24 +80,24 @@ Bombora需要下表描述的目标标识映射。 了解有关[标识](/help/ide
 要将客户受众导出到Bombora，您需要以下信息。
 
 1. 一个庞博拉的账户。
-2. Bombora **[!UICONTROL 客户端ID]**&#x200B;和&#x200B;**[!UICONTROL 客户端密钥]**。
+2. 庞博拉&#x200B;**[!UICONTROL client ID]**&#x200B;和&#x200B;**[!UICONTROL client secret]**。
 
 ## 连接到目标 {#connect}
 
 >[!IMPORTANT]
 > 
->若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写下面两个部分中列出的字段。
 
 ### 验证目标 {#authenticate}
 
-要验证到目标，请填写必填字段并选择&#x200B;**[!UICONTROL 连接到目标]**。
+要验证目标，请填写必填字段并选择&#x200B;**[!UICONTROL Connect to destination]**。
 
 ![添加持有者令牌](../../assets/catalog/advertising/bombora/add-bearer-token.png)
 
-* **[!UICONTROL 客户端ID]**：输入您的[!DNL Bombora]客户端ID。
-* **[!UICONTROL 客户端密钥]**：输入您的[!DNL Bombora]客户端密钥。
+* **[!UICONTROL Client ID]**：输入您的[!DNL Bombora]客户端ID。
+* **[!UICONTROL Client secret]**：输入您的[!DNL Bombora]客户端密钥。
 
 ### 填写目标详细信息 {#destination-details}
 
@@ -105,8 +105,8 @@ Bombora需要下表描述的目标标识映射。 了解有关[标识](/help/ide
 
 ![添加有关目标连接的信息](../..//assets/catalog/advertising/bombora/name-and-description.png)
 
-* **[!UICONTROL 名称]**：将来用于识别此目标的名称。
-* **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
+* **[!UICONTROL Name]**：将来用于识别此目标的名称。
+* **[!UICONTROL Description]**：可帮助您将来识别此目标的描述。
 
 现在，您已准备好在庞博拉中激活受众。
 
@@ -114,8 +114,8 @@ Bombora需要下表描述的目标标识映射。 了解有关[标识](/help/ide
 
 >[!IMPORTANT]
 > 
->* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+>* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 有关将帐户受众激活到此目标的说明，请阅读[激活帐户受众](/help/destinations/ui/activate-account-audiences.md)。
 
@@ -136,4 +136,3 @@ Bombora目标要求您配置以下映射以便成功激活数据。
 ## 其他注释和重要标注 {#additional-notes}
 
 如果之前已将具有相同名称的帐户受众激活到Bombora，则当您尝试通过指向Bombora目标的不同数据流再次激活该受众时，将会收到错误。
-

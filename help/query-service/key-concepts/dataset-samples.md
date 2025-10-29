@@ -2,7 +2,7 @@
 title: 数据集示例
 description: 查询服务示例数据集使您能够对大数据进行探索性查询，从而大大减少处理时间，而代价是查询准确性。 本指南提供了有关如何管理样本以进行近似查询处理的信息
 exl-id: 9e676d7c-c24f-4234-878f-3e57bf57af44
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '633'
 ht-degree: 1%
@@ -18,12 +18,12 @@ Adobe Experience Platform查询服务提供了示例数据集，作为其近似�
 为了帮助您管理用于近似查询处理的示例，查询服务支持对数据集示例执行以下操作：
 
 - [数据集样本](#dataset-samples)
-   - [快速入门{#get-started}](#getting-started-get-started)
-   - [创建统一的随机数据集示例{#create-a-sample}](#create-a-uniform-random-dataset-sample-create-a-sample)
-   - [（可选）指定筛选条件{#optional-filter-criteria}](#optionally-specify-a-filter-criteria-optional-filter-criteria)
-   - [查看示例列表{#view-list-of-samples}](#view-the-list-of-samples-view-list-of-samples)
-   - [查询示例数据集{#query-sample-datasets}](#query-the-sample-dataset-query-sample-datasets)
-   - [删除数据集示例{#delete-a-sample}](#delete-dataset-samples-delete-a-sample)
+   - [快速入门](#getting-started-get-started)
+   - [创建统一的随机数据集示例](#create-a-uniform-random-dataset-sample-create-a-sample)
+   - [（可选）指定筛选条件](#optionally-specify-a-filter-criteria-optional-filter-criteria)
+   - [查看示例列表](#view-the-list-of-samples-view-list-of-samples)
+   - [查询示例数据集](#query-the-sample-dataset-query-sample-datasets)
+   - [删除数据集示例](#delete-dataset-samples-delete-a-sample)
 
 ## 快速入门 {#get-started}
 
@@ -83,7 +83,7 @@ SELECT sample_meta('example_dataset_name')
 
 ```shell
                   sample_table_name                  |    sample_dataset_id     |    parent_dataset_id     | sample_type | sampling_rate | sample_num_rows |       created      
------------------------------------------------------+--------------------------+--------------------------+-------------+---------------+-----------------+---------------------
+|-----------------------------------------------------+--------------------------+--------------------------+-------------+---------------+-----------------+---------------------
  x5e5cd8ea0a83c418a8ef0928_uniform_4_0_percent_ughk7 | 62ff19853d338f1c07b18965 | 5e5cd8ea0a83c418a8ef0928 | uniform     |           4.0 |             391 | 19/08/2022 05:03:01
 (1 row)
 ```

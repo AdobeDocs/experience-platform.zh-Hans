@@ -4,9 +4,10 @@ description: 了解如何使用(V2) Salesforce Marketing Cloud Account Engagemen
 badge: label="Alpha" type="Informative"
 hide: true
 hidefromtoc: true
-source-git-commit: d1405237698271607fa672ccae1ac731d66df263
+exl-id: cd792eb0-9e90-49e4-8c50-c65126e355c2
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '1809'
+source-wordcount: '1742'
 ht-degree: 3%
 
 ---
@@ -23,8 +24,8 @@ ht-degree: 3%
 >[!IMPORTANT]
 > 
 > 这是[Salesforce Marketing Cloud帐户参与](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md)目标的V2版本。 此版本取代了以前的目标，当前位于Alpha版本中。
-> &#x200B;> <br>
-> &#x200B;> 如果您当前使用的是[Salesforce Marketing Cloud帐户参与](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md)目标的早期版本，则必须在&#x200B;**2026年1月**&#x200B;之前迁移到此V2版本。 2026年1月后，Adobe将停用以前的版本，并且不再可用。
+> > <br>
+> > 如果您当前使用的是[Salesforce Marketing Cloud帐户参与](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md)目标的早期版本，则必须在&#x200B;**2026年1月**&#x200B;之前迁移到此V2版本。 2026年1月后，Adobe将停用以前的版本，并且不再可用。
 
 
 ## 用例 {#use-cases}
@@ -65,7 +66,7 @@ ht-degree: 3%
 
 | 凭据 | 描述 |
 | --- | --- |
-| **[!UICONTROL 帐户参与业务部门ID]** | 您的[!DNL Salesforce]帐户参与业务部门ID。 请参阅Salesforce [文档](https://help.salesforce.com/s/articleView?id=000381973&type=1)以了解如何查找该ID。 |
+| **[!UICONTROL Account Engagement Business Unit ID]** | 您的[!DNL Salesforce]帐户参与业务部门ID。 请参阅Salesforce [文档](https://help.salesforce.com/s/articleView?id=000381973&type=1)以了解如何查找该ID。 |
 
 {style="table-layout:auto"}
 
@@ -88,9 +89,9 @@ ht-degree: 3%
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
----------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在导出受众的所有成员，以及所需的架构字段&#x200B;*（例如：电子邮件地址、电话号码、姓氏）*（根据字段映射）。</li><li>此目标支持使用Salesforce Import API v5批量导出配置文件数据。</li></ul> |
-| 导出频率 | **[!UICONTROL 批次]** | <ul><li>**初始导出**：映射后立即完全导出</li><li>**后续导出**：每3小时增量导出一次</li><li>此计划是固定的，无法在Alpha中自定义</li></ul> |
+|---------|----------|---------|
+| 导出类型 | **[!UICONTROL Profile-based]** | <ul><li>您正在导出受众的所有成员，以及所需的架构字段&#x200B;*（例如：电子邮件地址、电话号码、姓氏）*（根据字段映射）。</li><li>此目标支持使用Salesforce Import API v5批量导出配置文件数据。</li></ul> |
+| 导出频率 | **[!UICONTROL Batch]** | <ul><li>**初始导出**：映射后立即完全导出</li><li>**后续导出**：每3小时增量导出一次</li><li>此计划是固定的，无法在Alpha中自定义</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -98,48 +99,48 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写下面两个部分中列出的字段。
 
 ### 验证目标 {#authenticate}
 
-要验证到目标，请选择&#x200B;**[!UICONTROL 连接到目标]**。
+要验证目标，请选择&#x200B;**[!UICONTROL Connect to destination]**。
 
 ![Salesforce Marketing Cloud帐户参与V2目标连接工作流](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement-v2/connect-to-destination.png "Salesforce Marketing Cloud帐户参与V2目标连接工作流")
 
-您将被重定向到[!DNL Salesforce]登录页面。 输入您的[!DNL Marketing Cloud Account Engagement]帐户凭据并选择&#x200B;**[!UICONTROL 登录]**。
+您将被重定向到[!DNL Salesforce]登录页面。 输入您的[!DNL Marketing Cloud Account Engagement]帐户凭据并选择&#x200B;**[!UICONTROL Log In]**。
 
 ![Salesforce登录页面](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement-v2/salesforce-auth.png "Salesforce登录页面。")
 
-接下来，选择&#x200B;**[!UICONTROL 允许]**&#x200B;授予&#x200B;**Adobe Experience Platform**&#x200B;应用访问您的[!DNL Salesforce Marketing Cloud Account Engagement]帐户的权限。 *您只需执行此操作一次*。
+接下来，选择&#x200B;**[!UICONTROL Allow]**&#x200B;以授予&#x200B;**Adobe Experience Platform**&#x200B;应用访问您的[!DNL Salesforce Marketing Cloud Account Engagement]帐户的权限。 *您只需执行此操作一次*。
 
 ![Salesforce App屏幕快照确认弹出窗口，用于授予Experience Platform App访问Marketing Cloud Account Engagement的权限。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement-v2/allow-app.png)
 
-如果提供的详细信息有效，则UI会显示一条消息： *您已成功连接到(V2) Salesforce Marketing Cloud帐户参与帐户*&#x200B;以及带有绿色复选标记的&#x200B;**[!UICONTROL 已连接]**&#x200B;状态。
+如果提供的详细信息有效，则UI会显示一条消息： *您已成功连接到(V2) Salesforce Marketing Cloud帐户参与帐户*&#x200B;以及带有绿色复选标记的&#x200B;**[!UICONTROL Connected]**&#x200B;状态。
 
 ### 填写目标详细信息 {#destination-details}
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
-* **[!UICONTROL 名称]**：将来用于识别此目标的名称。
-* **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
-* **[!UICONTROL 帐户参与业务部门ID]**：您的[!DNL Salesforce] `Account Engagement Business Unit ID`。
-* **[!UICONTROL 帐户参与API]**：选择您要使用帐户参与API的生产端点(`https://pi.pardot.com`)还是演示端点(`https://pi.demo.pardot.com`)。
-* **[!UICONTROL 帐户参与促销活动ID]**：每个[!DNL Account Engagement]潜在客户都必须与某个促销活动关联。 如果您未设置促销活动ID，那么当您的Salesforce帐户中存在默认帐户时，帐户参与度将尝试自动分配一个ID。
+* **[!UICONTROL Name]**：将来用于识别此目标的名称。
+* **[!UICONTROL Description]**：可帮助您将来识别此目标的描述。
+* **[!UICONTROL Account Engagement Business Unit ID]**：您的[!DNL Salesforce] `Account Engagement Business Unit ID`。
+* **[!UICONTROL Account Engagement API]**：选择您要使用帐户参与API的生产端点(`https://pi.pardot.com`)还是演示端点(`https://pi.demo.pardot.com`)。
+* **[!UICONTROL Account Engagement Campaign ID]**：每个[!DNL Account Engagement]潜在客户都必须与某个营销活动关联。 如果您未设置促销活动ID，那么当您的Salesforce帐户中存在默认帐户时，帐户参与度将尝试自动分配一个ID。
 
 ### 启用警报 {#enable-alerts}
 
 您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
->* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+>* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 有关将受众激活到此目标的说明，请阅读[将受众数据激活到批处理配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md)。
 
@@ -171,7 +172,7 @@ Salesforce Marketing Cloud帐户参与目标支持下表中描述的目标属性
 
 在开始映射数据之前，请查看以下必需的字段映射。
 
-| 目标字段 | 类型 | 必需 | 何时使用 |
+| 目标字段 | 类型 | 必需 | 使用时间 |
 |---|---|---|---|
 | `email` | 属性 | 始终必需 | 潜在客户的电子邮件地址。 当您没有`matchId`或`matchSalesforceId`时，这是用于查找和匹配客户参与中的目标客户记录的主要标识符。<br> **注意：**&#x200B;如果帐户参与具有“允许多个潜在客户使用同一电子邮件地址”功能，则仅依赖电子邮件可能会导致模棱两可，因为同一电子邮件存在多个潜在客户。 在这种情况下，客户参与通常默认为使用最近的活动更新潜在客户。 |
 | `matchId` | 身份标识 | 这三种身份中至少需要一种 | 由帐户参与为每个目标客户记录生成的唯一标识符。 当您已经拥有客户参与潜在客户ID并且希望确保将更新应用于正确的目标客户时，尤其是当多个潜在客户共享同一电子邮件地址时，请使用此选项。 |
@@ -180,9 +181,9 @@ Salesforce Marketing Cloud帐户参与目标支持下表中描述的目标属性
 
 请按照以下步骤映射正确的字段。
 
-1. 在&#x200B;**[!UICONTROL 映射]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL 添加新映射]**。 您将在屏幕上看到一个新映射行。
-1. 在&#x200B;**[!UICONTROL 选择源字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择属性]**&#x200B;类别并选择XDM属性，或选择&#x200B;**[!UICONTROL 选择身份命名空间]**&#x200B;并选择身份。
-1. 在&#x200B;**[!UICONTROL 选择目标字段]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL 选择身份命名空间]**&#x200B;并选择身份，或者选择&#x200B;**[!UICONTROL 选择自定义属性]**&#x200B;类别并从标准Account Engagement目标客户字段列表中指定。
+1. 在&#x200B;**[!UICONTROL Mapping]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL Add new mapping]**。 您将在屏幕上看到一个新映射行。
+1. 在&#x200B;**[!UICONTROL Select source field]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL Select attributes]**&#x200B;类别并选择XDM属性或选择&#x200B;**[!UICONTROL Select identity namespace]**&#x200B;并选择身份。
+1. 在&#x200B;**[!UICONTROL Select target field]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL Select identity namespace]**&#x200B;并选择身份，或选择&#x200B;**[!UICONTROL Select custom attributes]**&#x200B;类别并从标准Account Engagement目标客户字段列表中指定。
 
 ![将XDM字段和标识映射到Salesforce Marketing Cloud帐户参与V2字段](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement-v2/mapping.png "将XDM字段和标识映射到Salesforce Marketing Cloud帐户参与V2字段的示例")
 
@@ -190,10 +191,10 @@ Salesforce Marketing Cloud帐户参与目标支持下表中描述的目标属性
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 导航到您选择的受众之一。 选择 **[!DNL Activation data]** 选项卡。**[!UICONTROL 映射ID]**&#x200B;列显示在[!DNL Marketing Cloud Account Engagement Prospects]页面中生成的自定义字段的名称。
+1. 导航到您选择的受众之一。 选择 **[!DNL Activation data]** 选项卡。**[!UICONTROL Mapping ID]**&#x200B;列显示在[!DNL Marketing Cloud Account Engagement Prospects]页面中生成的自定义字段的名称。
    ![显示选定区段映射ID的Experience Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement-v2/selected-segment-mapping-id.png)
 
-1. 登录到[[!DNL Salesforce]](https://login.salesforce.com/)网站。 然后导航到&#x200B;**[!DNL Account Engagement]** > **[!DNL Prospects]** > **[!DNL Pardot Prospects]**&#x200B;页面，并检查受众中的潜在客户是否已添加/更新。 或者，您也可以访问[[!DNL Account Engagement]](https://pi.pardot.com/)并访问&#x200B;**[!DNL Prospects]**&#x200B;页面。
+1. 登录到[[!DNL Salesforce]](https://login.salesforce.com/)网站。 然后导航到&#x200B;**[!DNL Account Engagement]** > **[!DNL Prospects]** > **[!DNL Pardot Prospects]**&#x200B;页面，并检查受众中的潜在客户是否已添加/更新。 或者，您也可以访问[[!DNL Account Engagement]](https://pi.pardot.com/)并访问&#x200B;**[!DNL Prospects]**页面。
    ![显示“潜在客户”页面的Salesforce UI屏幕截图。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement-v2/prospects.png)
 
 1. 要检查潜在客户是否已更新，请选择一个潜在客户，并验证自定义潜在客户字段是否已使用Experience Platform受众状态进行更新。

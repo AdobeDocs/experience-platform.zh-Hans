@@ -3,10 +3,10 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: ec0a51bc8a6151a6d713d8f4639d6733989bbb16
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '4678'
-ht-degree: 13%
+source-wordcount: '4506'
+ht-degree: 12%
 
 ---
 
@@ -15,9 +15,9 @@ ht-degree: 13%
 
 >[!IMPORTANT]
 > 
-> * 要激活受众并启用工作流的[映射步骤](#mapping)，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。
-> * 要激活受众而不执行工作流的[映射步骤](#mapping)，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活没有映射的区段]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。
->* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+>* 要激活受众并启用工作流的[映射步骤](#mapping)，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。
+>* 要激活受众而不执行工作流的[映射步骤](#mapping)，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Segment without Mapping]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 > 
 > 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
@@ -43,15 +43,15 @@ ht-degree: 13%
 
 ## 选择您的目标 {#select-destination}
 
-1. 转到&#x200B;**[!UICONTROL 连接>目标]**，然后选择&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡。
+1. 转到&#x200B;**[!UICONTROL Connections > Destinations]**，然后选择&#x200B;**[!UICONTROL Catalog]**&#x200B;选项卡。
 
    ![突出显示如何访问目标目录选项卡的图像。](../assets/ui/activate-batch-profile-destinations/catalog-tab.png)
 
-1. 在与您要激活受众的目标对应的卡片上，选择&#x200B;**[!UICONTROL 激活受众]**，如下图所示。
+1. 在与您要激活受众的目标对应的卡片中选择&#x200B;**[!UICONTROL Activate audiences]**，如下图所示。
 
    ![激活目录页面中突出显示的受众控件。](../assets/ui/activate-batch-profile-destinations/activate-audiences-button.png)
 
-1. 选择要用于激活受众的目标连接，然后选择&#x200B;**[!UICONTROL 下一步]**。
+1. 选择要用于激活受众的目标连接，然后选择&#x200B;**[!UICONTROL Next]**。
 
    ![高亮显示的复选框用于选择一个或多个要将受众激活到的目标。](../assets/ui/activate-batch-profile-destinations/select-destination.png)
 
@@ -59,12 +59,12 @@ ht-degree: 13%
 
 ## 选择您的受众 {#select-audiences}
 
-要选择要激活到目标的受众，请使用受众名称左侧的复选框，然后选择&#x200B;**[!UICONTROL 下一步]**。
+要选择要激活到目标的受众，请使用受众名称左侧的复选框，然后选择&#x200B;**[!UICONTROL Next]**。
 
 您可以从多种类型的受众中进行选择，具体取决于其来源：
 
-* **[!UICONTROL 分段服务]**：分段服务在Experience Platform中生成的受众。 有关详细信息，请参阅[分段文档](../../segmentation/ui/overview.md)。
-* **[!UICONTROL 自定义上传]**：受众在Experience Platform外部生成，并以CSV文件形式上传到Experience Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/audience-portal.md#import-audience)的文档。 选择源自&#x200B;**[!UICONTROL 自定义上传]**&#x200B;的受众会自动启用[选择扩充属性](#select-enrichment-attributes)步骤。
+* **[!UICONTROL Segmentation Service]**：分段服务在Experience Platform中生成的受众。 有关详细信息，请参阅[分段文档](../../segmentation/ui/overview.md)。
+* **[!UICONTROL Custom upload]**：受众在Experience Platform之外生成，并以CSV文件形式上传到Experience Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/audience-portal.md#import-audience)的文档。 选择源自&#x200B;**[!UICONTROL Custom uploads]**&#x200B;的受众会自动启用[选择扩充属性](#select-enrichment-attributes)步骤。
 * 其他类型的受众，来自其他Adobe解决方案，如[!DNL Audience Manager]。
 
 >[!IMPORTANT]
@@ -75,7 +75,7 @@ ht-degree: 13%
 
 >[!TIP]
 >
->要从现有激活流程中删除受众，请使用&#x200B;**[!UICONTROL 激活数据]**&#x200B;页面。 阅读有关如何[从激活流](../ui/destination-details-page.md#bulk-remove)中删除多个受众的部分以了解详细信息。
+>要从现有激活流中删除受众，请使用&#x200B;**[!UICONTROL Activation data]**&#x200B;页面。 阅读有关如何[从激活流](../ui/destination-details-page.md#bulk-remove)中删除多个受众的部分以了解详细信息。
 
 ## 计划受众导出 {#scheduling}
 
@@ -94,19 +94,19 @@ ht-degree: 13%
 >title="每月导出"
 >abstract="<sup>*</sup> 选择开始日期，后续导出将在一个月的这一天进行，直到选定的结束日期。对于少于 30 或 31 天的月份，导出将在该月的最后一天进行。"
 
-[!DNL Adobe Experience Platform]将电子邮件营销和云存储目标的数据导出为[不同的文件类型](#supported-file-formats-export)。 在&#x200B;**[!UICONTROL 计划]**&#x200B;页面中，您可以为要导出的每个受众配置计划和文件名。
+[!DNL Adobe Experience Platform]将电子邮件营销和云存储目标的数据导出为[不同的文件类型](#supported-file-formats-export)。 在&#x200B;**[!UICONTROL Scheduling]**&#x200B;页面中，您可以为要导出的每个受众配置计划和文件名。
 
 Experience Platform会自动为每次文件导出设置默认计划。 您可以根据需要修改默认计划，方法是选择每个计划旁边的铅笔图标，并定义自定义计划。
 
 ![编辑计划步骤中突出显示的计划控件。](../assets/ui/activate-batch-profile-destinations/edit-default-schedule.png)
 
-要同时编辑多个计划，请使用屏幕左侧的复选框选择受众，然后选择&#x200B;**[!UICONTROL 编辑计划]**。 然后，您配置的计划将被应用于选定受众的所有导出文件。
+要同时编辑多个计划，请使用屏幕左侧的复选框选择受众，然后选择&#x200B;**[!UICONTROL Edit schedule]**。 然后，您配置的计划将被应用于选定受众的所有导出文件。
 
 ![显示多个选定受众的“编辑计划”选项的Experience Platform用户界面的图像。](../assets/ui/activate-batch-profile-destinations/edit-schedule.png)
 
 >[!TIP]
 >
->您可以从&#x200B;**[!UICONTROL 激活数据]**&#x200B;页面编辑现有激活流的受众激活计划。 有关详细信息，请参阅有关[批量编辑激活计划](../ui/destination-details-page.md#bulk-edit-schedule)的文档。
+>您可以从&#x200B;**[!UICONTROL Activation data]**&#x200B;页面编辑现有激活流的受众激活计划。 有关详细信息，请参阅有关[批量编辑激活计划](../ui/destination-details-page.md#bulk-edit-schedule)的文档。
 
 >[!IMPORTANT]
 >
@@ -120,7 +120,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >id="platform_destinations_activate_exportoptions"
 >title="文件导出选项"
 >abstract="选择&#x200B;**导出全部文件**&#x200B;以导出符合受众资格的所有轮廓的完整快照。选择&#x200B;**导出增量文件**&#x200B;以仅导出自上次导出后符合受众资格的轮廓。<br>第一个增量文件导出包括符合受众资格的所有轮廓，充当回填。后续增量文件仅包含自第一个增量文件导出后符合受众资格的轮廓。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=zh-Hans#export-incremental-files" text="导出增量文件"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#export-incremental-files" text="导出增量文件"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_aftersegmentevaluation"
@@ -132,16 +132,16 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >title="计划的激活"
 >abstract="激活在一天中的固定时间运行。"
 
-选择&#x200B;**[!UICONTROL 导出完整文件]**&#x200B;以触发导出包含所选受众的所有配置文件资格的完整快照的文件。
+选择&#x200B;**[!UICONTROL Export full files]**&#x200B;以触发导出包含所选受众的所有配置文件资格的完整快照的文件。
 
 ![导出完整文件切换选定项。](../assets/ui/activate-batch-profile-destinations/export-full-files.png)
 
-1. 使用&#x200B;**[!UICONTROL 频率]**&#x200B;选择器选择导出频率：
+1. 使用&#x200B;**[!UICONTROL Frequency]**&#x200B;选择器选择导出频率：
 
-   * **[!UICONTROL 一次]**：计划一次按需完整文件导出。
-   * **[!UICONTROL 每日]**：计划每天在指定时间导出一次完整文件。
-   * **[!UICONTROL 每周]**：选择开始日期，后续导出将发生在一周的该日，直到所选的结束日期。
-   * **[!UICONTROL 每月]**：选择开始日期，后续导出将在该月的该日期进行，直到所选的结束日期为止。 对于少于 30 或 31 天的月份，导出将在该月的最后一天进行。
+   * **[!UICONTROL Once]**：计划一次按需完整文件导出。
+   * **[!UICONTROL Daily]**：计划每天在指定的时间导出一次完整文件。
+   * **[!UICONTROL Weekly]**：选择开始日期，后续导出将发生在一周的该日，直到所选的结束日期。
+   * **[!UICONTROL Monthly]**：选择开始日期，后续导出将在该月的该日期进行，直到所选的结束日期为止。 对于少于 30 或 31 天的月份，导出将在该月的最后一天进行。
 
    >[!NOTE]
    >
@@ -155,9 +155,9 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
    > 
    > 每周和每月计划选项不适用于其他目标类型。
 
-2. 使用&#x200B;**[!UICONTROL 时间]**&#x200B;切换开关选择导出是在受众评估后立即执行，还是在指定时间按计划执行。 在选择&#x200B;**[!UICONTROL 已计划]**&#x200B;选项时，您可以使用选择器以[!DNL UTC]格式选择一天中何时进行导出。
+2. 使用&#x200B;**[!UICONTROL Time]**&#x200B;切换开关可选择导出是在受众评估后立即执行，还是在指定时间按计划执行。 在选择&#x200B;**[!UICONTROL Scheduled]**&#x200B;选项时，您可以使用选择器以[!DNL UTC]格式选择何时进行导出。
 
-   使用&#x200B;**[!UICONTROL 区段评估后]**&#x200B;选项可在每日Experience Platform批处理分段作业完成后立即运行激活作业。 此选项可确保当激活作业运行时，将最新的配置文件导出到您的目标。 这可能会导致根据您的操作，每天多次导出受众。
+   使用&#x200B;**[!UICONTROL After segment evaluation]**&#x200B;选项可在每日Experience Platform批处理分段作业完成后立即运行激活作业。 此选项可确保当激活作业运行时，将最新的配置文件导出到您的目标。 这可能会导致根据您的操作，每天多次导出受众。
 
    >[!IMPORTANT]
    >
@@ -166,7 +166,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
    <!-- Batch segmentation currently runs at {{insert time of day}} and lasts for an average {{x hours}}. Adobe reserves the right to modify this schedule. -->
 
    ![在批处理目标的激活流程中，突出显示区段后评估选项。](../assets/ui/activate-batch-profile-destinations/after-segment-evaluation-option.png)
-使用&#x200B;**[!UICONTROL 已计划]**&#x200B;选项使激活作业在固定时间运行。 此选项可确保每天在同一时间导出Experience Platform配置文件数据。 但是，您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。
+使用**[!UICONTROL Scheduled]**&#x200B;选项可让激活作业在固定时间运行。 此选项可确保每天在同一时间导出Experience Platform配置文件数据。 但是，您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。
 
    ![突出显示批处理目标激活流中的“已计划”选项并显示时间选择器的图像。](../assets/ui/activate-batch-profile-destinations/scheduled-option.png)
 
@@ -180,7 +180,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
    >
    > 选择导出间隔时，该间隔的最后一天不包含在导出中。 例如，如果选择1月4日至11日之间的时间间隔，则最后一次文件导出将在1月10日进行。
 
-4. 选择&#x200B;**[!UICONTROL 创建]**&#x200B;以保存计划。
+4. 选择&#x200B;**[!UICONTROL Create]**&#x200B;以保存计划。
 
 ### 导出增量文件
 
@@ -189,7 +189,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >title="轮廓名"
 >abstract="对于基于文件的目标，为每个受众生成一个唯一的文件名。使用文件名编辑器可创建和编辑唯一文件名或保留默认名称。"
 
-选择&#x200B;**[!UICONTROL 导出增量文件]**&#x200B;以触发导出，其中第一个文件是选定受众的所有配置文件资格的完整快照，后续文件是自上次导出以来的增量配置文件资格。
+选择&#x200B;**[!UICONTROL Export incremental files]**&#x200B;以触发导出，其中第一个文件是选定受众的所有配置文件资格的完整快照，后续文件是自上次导出以来的增量配置文件资格。
 
 >[!IMPORTANT]
 >
@@ -197,21 +197,21 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
 ![导出增量文件切换选定项。](../assets/ui/activate-batch-profile-destinations/export-incremental-files.png)
 
-1. 使用&#x200B;**[!UICONTROL 频率]**&#x200B;选择器选择导出频率：
+1. 使用&#x200B;**[!UICONTROL Frequency]**&#x200B;选择器选择导出频率：
 
-   * **[!UICONTROL 每日]**：安排每天在指定的时间导出一次增量文件。
-   * **[!UICONTROL 小时]**：计划每3、6、8或12小时执行一次增量文件导出。
+   * **[!UICONTROL Daily]**：计划每天在指定的时间导出一次增量文件。
+   * **[!UICONTROL Hourly]**：每3、6、8或12小时安排一次增量文件导出。
 
 
-2. 使用&#x200B;**[!UICONTROL Time]**&#x200B;选择器以[!DNL UTC]格式选择一天中何时进行导出。
+2. 使用&#x200B;**[!UICONTROL Time]**&#x200B;选择器以[!DNL UTC]格式选择何时进行导出。
 
-3. 使用&#x200B;**[!UICONTROL 日期]**&#x200B;选择器选择应执行导出的时间间隔。 最佳实践是将您的开始和结束日期设置为与下游平台中的促销活动持续时间一致。
+3. 使用&#x200B;**[!UICONTROL Date]**&#x200B;选择器选择应进行导出的时间间隔。 最佳实践是将您的开始和结束日期设置为与下游平台中的促销活动持续时间一致。
 
    >[!IMPORTANT]
    >
    >间隔的最后一天不包含在导出中。 例如，如果选择1月4日至11日之间的时间间隔，则最后一次文件导出将在1月10日进行。
 
-4. 选择&#x200B;**[!UICONTROL 创建]**&#x200B;以保存计划。
+4. 选择&#x200B;**[!UICONTROL Create]**&#x200B;以保存计划。
 
 ### 轮廓名 {#configure-file-names}
 
@@ -238,47 +238,47 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
 | 文件名选项 | 描述 |
 |---------|----------|
-| **[!UICONTROL 受众名称]** | 导出受众的名称。 |
-| **[!UICONTROL 日期和时间]** | 在添加`MMDDYYYY_HHMMSS`格式或文件生成时间的UNIX 10位时间戳之间选择。 如果希望文件随每次增量导出而生成动态文件名，请选择以下选项之一。 |
-| **[!UICONTROL 自定义文本]** | 要添加到文件名的任何自定义文本。 |
-| **[!UICONTROL 目标ID]** | 用于导出受众的目标数据流的ID。 |
-| **[!UICONTROL 目标名称]** | 用于导出受众的目标数据流的名称。 |
-| **[!UICONTROL 组织名称]** | 您在Experience Platform中的组织名称。 |
-| **[!UICONTROL 沙盒名称]** | 用于导出受众的沙盒的ID。 |
+| **[!UICONTROL Audience name]** | 导出受众的名称。 |
+| **[!UICONTROL Date and time]** | 在添加`MMDDYYYY_HHMMSS`格式或文件生成时间的UNIX 10位时间戳之间选择。 如果希望文件随每次增量导出而生成动态文件名，请选择以下选项之一。 |
+| **[!UICONTROL Custom text]** | 要添加到文件名的任何自定义文本。 |
+| **[!UICONTROL Destination ID]** | 用于导出受众的目标数据流的ID。 |
+| **[!UICONTROL Destination name]** | 用于导出受众的目标数据流的名称。 |
+| **[!UICONTROL Organization name]** | 您在Experience Platform中的组织名称。 |
+| **[!UICONTROL Sandbox name]** | 用于导出受众的沙盒的ID。 |
 
 {style="table-layout:auto"}
 
-要同时编辑多个文件名，请使用屏幕左侧的复选框选择受众，然后选择&#x200B;**[!UICONTROL 编辑文件名]**。 然后，您配置的文件名选项将应用于所选受众的所有导出文件。
+要同时编辑多个文件名，请使用屏幕左侧的复选框选择受众，然后选择&#x200B;**[!UICONTROL Edit file name]**。 然后，您配置的文件名选项将应用于所选受众的所有导出文件。
 
 ![显示多个选定受众的“编辑文件名”选项的Experience Platform用户界面的图像。](../assets/ui/activate-batch-profile-destinations/edit-file-name.png)
 
-选择&#x200B;**[!UICONTROL 应用更改]**&#x200B;以确认您的选择。
+选择&#x200B;**[!UICONTROL Apply changes]**&#x200B;以确认您的选择。
 
 >[!IMPORTANT]
 > 
->如果不选择&#x200B;**[!UICONTROL 日期和时间]**&#x200B;组件，文件名将是静态的，新的导出文件将使用每次导出覆盖存储位置中的上一个文件。 将周期性导入作业从存储位置运行到电子邮件营销平台时，这是推荐的选项。
+>如果不选择&#x200B;**[!UICONTROL Date and Time]**&#x200B;组件，文件名将是静态的，并且新的导出文件将使用每次导出覆盖存储位置中的上一个文件。 将周期性导入作业从存储位置运行到电子邮件营销平台时，这是推荐的选项。
 
-配置完所有受众后，选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
+配置完所有受众后，选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续。
 
 ## 映射 {#mapping}
 
 在此步骤中，必须选择要添加到导出到目标目标的文件中的配置文件属性。 要选择要导出的配置文件属性和标识，请执行以下操作：
 
-1. 在&#x200B;**[!UICONTROL 映射]**&#x200B;页面中，选择&#x200B;**[!UICONTROL 添加新映射]**。
+1. 在&#x200B;**[!UICONTROL Mapping]**&#x200B;页面中，选择&#x200B;**[!UICONTROL Add new mapping]**。
 
    ![添加映射工作流中突出显示的新字段控件。](../assets/ui/activate-batch-profile-destinations/add-new-field-mapping.png)
 
-1. 选择&#x200B;**[!UICONTROL Source字段]**&#x200B;条目右侧的箭头。
+1. 选择&#x200B;**[!UICONTROL Source field]**&#x200B;条目右侧的箭头。
 
    ![选择映射工作流中突出显示的源字段控件。](../assets/ui/activate-batch-profile-destinations/select-source-field.png)
 
-1. 在&#x200B;**[!UICONTROL 选择源字段]**&#x200B;页面中，选择要包含在导出到目标文件中的配置文件属性和身份，然后选择&#x200B;**[!UICONTROL 选择]**。
+1. 在&#x200B;**[!UICONTROL Select source field]**&#x200B;页中，选择要包含在导出到目标文件中的配置文件属性和身份，然后选择&#x200B;**[!UICONTROL Select]**。
 
    >[!TIP]
    > 
    >您可以使用搜索字段缩小选择范围，如下图所示。
 
-   使用&#x200B;**[!UICONTROL 仅显示包含数据的字段]**&#x200B;切换开关可仅显示填充了值的架构字段。 默认情况下，仅显示填充的架构字段。
+   使用&#x200B;**[!UICONTROL Show only fields with data]**&#x200B;切换可仅显示用值填充的架构字段。 默认情况下，仅显示填充的架构字段。
 
    ![模式窗口，显示可导出到目标的配置文件属性。](../assets/ui/activate-batch-profile-destinations/select-source-field-modal.png)
 
@@ -291,7 +291,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
    ![模式窗口，显示可导出到目标的配置文件属性。](../assets/ui/activate-batch-profile-destinations/mapping-step-select-target-field.png)
 
-1. 在&#x200B;**[!UICONTROL 选择目标字段]**&#x200B;页中，键入导出文件中标题的所需名称，然后选择&#x200B;**[!UICONTROL 选择]**。
+1. 在&#x200B;**[!UICONTROL Select target field]**&#x200B;页中，键入导出文件中标题的所需名称，然后选择&#x200B;**[!UICONTROL Select]**。
 
    ![显示标题键入友好名称的模态窗口。](../assets/ui/activate-batch-profile-destinations/select-target-field-mapping.png)
 
@@ -341,8 +341,8 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
 有三种方法可以在[!DNL Experience Platform]中使用重复数据删除键：
 
-* 将单个身份命名空间用作[!UICONTROL 重复数据删除键]
-* 将[!DNL XDM]配置文件中的单个配置文件属性用作[!UICONTROL 重复数据删除键]
+* 将单个身份命名空间用作[!UICONTROL deduplication key]
+* 将[!DNL XDM]配置文件中的单个配置文件属性用作[!UICONTROL deduplication key]
 * 将[!DNL XDM]配置文件中的两个配置文件属性的组合用作复合键
 
 >[!IMPORTANT]
@@ -466,7 +466,7 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 
 ### 具有相同时间戳的用户档案的重复数据删除行为 {#deduplication-same-timestamp}
 
-将轮廓导出到基于文件的目标时，删除重复项可确保当多个轮廓共享相同的删除重复项键和相同的参考时间戳时仅导出一个轮廓。此时间戳表示个人资料的受众成员资格或身份图的上次更新时间。 有关如何更新和导出配置文件的更多信息，请参阅[配置文件导出行为](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2)文档。
+将轮廓导出到基于文件的目标时，删除重复项可确保当多个轮廓共享相同的删除重复项键和相同的参考时间戳时仅导出一个轮廓。此时间戳表示个人资料的受众成员资格或身份图的上次更新时间。 有关如何更新和导出配置文件的更多信息，请参阅[配置文件导出行为](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2)文档。
 
 #### 关键注意事项
 
@@ -503,11 +503,11 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 
 ### 已知限制 {#known-limitations}
 
-新&#x200B;**[!UICONTROL 映射]**&#x200B;页面具有以下已知限制：
+新&#x200B;**[!UICONTROL Mapping]**&#x200B;页面具有以下已知限制：
 
 #### 无法通过映射工作流选择受众成员资格属性
 
-由于已知限制，您当前无法使用&#x200B;**[!UICONTROL 选择字段]**&#x200B;窗口将`segmentMembership.seg_namespace.seg_id.status`添加到文件导出。 相反，您需要将值`xdm: segmentMembership.seg_namespace.seg_id.status`手动粘贴到架构字段中，如下所示。
+由于已知限制，您当前无法使用&#x200B;**[!UICONTROL Select field]**&#x200B;窗口将`segmentMembership.seg_namespace.seg_id.status`添加到文件导出。 相反，您需要将值`xdm: segmentMembership.seg_namespace.seg_id.status`手动粘贴到架构字段中，如下所示。
 
 ![显示激活工作流映射步骤中受众成员资格解决方法的屏幕录制。](../assets/ui/activate-batch-profile-destinations/segment-membership-mapping-step.gif)
 
@@ -521,14 +521,14 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 
 文件导出将因以下方式而异，具体取决于是否选择了`segmentMembership.seg_namespace.seg_id.status`：
 
-* 如果选择了`segmentMembership.seg_namespace.seg_id.status`字段，则导出的文件在初始完整快照中包含&#x200B;**[!UICONTROL Active]**&#x200B;成员，在后续增量导出中包含&#x200B;**[!UICONTROL Active]**&#x200B;和&#x200B;**[!UICONTROL Expired]**&#x200B;成员。
-* 如果未选择`segmentMembership.seg_namespace.seg_id.status`字段，则导出的文件在初始完整快照和后续增量导出中仅包含&#x200B;**[!UICONTROL 活动]**&#x200B;成员。
+* 如果选择了`segmentMembership.seg_namespace.seg_id.status`字段，则导出的文件在初始完整快照中包含&#x200B;**[!UICONTROL Active]**&#x200B;个成员，在后续增量导出中包含&#x200B;**[!UICONTROL Active]**&#x200B;和&#x200B;**[!UICONTROL Expired]**&#x200B;个新成员。
+* 如果未选择`segmentMembership.seg_namespace.seg_id.status`字段，则导出的文件在初始完整快照和后续增量导出中仅包含&#x200B;**[!UICONTROL Active]**&#x200B;个成员。
 
 阅读有关[基于文件的目标的配置文件导出行为](/help/destinations/how-destinations-work/profile-export-behavior.md#file-based-destinations)的详细信息。
 
 #### 当前无法选择要导出的身份命名空间
 
-当前不支持选择导出身份命名空间（如下图所示）。 选择任何要导出的身份命名空间都将导致&#x200B;**[!UICONTROL 审核]**&#x200B;步骤出错。
+当前不支持选择导出身份命名空间（如下图所示）。 选择要导出的任何身份命名空间将导致&#x200B;**[!UICONTROL Review]**&#x200B;步骤中出现错误。
 
 ![显示身份导出的映射不受支持。](../assets/ui/activate-batch-profile-destinations/unsupported-identity-mapping.png)
 
@@ -540,21 +540,21 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 
 >[!IMPORTANT]
 > 
->目录中的所有云存储目标都可以查看改进的[[!UICONTROL 映射]步骤](#mapping)，该步骤取代了本节中描述的&#x200B;**[!UICONTROL 选择属性]**&#x200B;步骤。
+>目录中的所有云存储目标都可以查看改进的[[!UICONTROL Mapping]步骤](#mapping)，该步骤取代了本节中描述的&#x200B;**[!UICONTROL Select attributes]**&#x200B;步骤。
 >
->对于Adobe Campaign、Oracle Responsys、Oracle Eloqua和Salesforce Marketing Cloud电子邮件营销目标，仍会显示此&#x200B;**[!UICONTROL 选择属性]**&#x200B;步骤。
+>对于Adobe Campaign、Oracle Responsys、Oracle Eloqua和Salesforce Marketing Cloud电子邮件营销目标，仍会显示此&#x200B;**[!UICONTROL Select attributes]**&#x200B;步骤。
 
 对于基于配置文件的目标，必须选择要发送到目标目标的配置文件属性。
 
-1. 在&#x200B;**[!UICONTROL 选择属性]**&#x200B;页面中，选择&#x200B;**[!UICONTROL 添加新字段]**。
+1. 在&#x200B;**[!UICONTROL Select attributes]**&#x200B;页面中，选择&#x200B;**[!UICONTROL Add new field]**。
 
    ![突出显示“添加新字段”按钮的图像。](../assets/ui/activate-batch-profile-destinations/add-new-field.png)
 
-2. 选择&#x200B;**[!UICONTROL 架构字段]**&#x200B;条目右侧的箭头。
+2. 选择&#x200B;**[!UICONTROL Schema field]**&#x200B;条目右侧的箭头。
 
    ![突出显示如何选择源字段的图像。](../assets/ui/activate-batch-profile-destinations/select-source-field.png)
 
-3. 在&#x200B;**[!UICONTROL 选择字段]**&#x200B;页面中，选择要发送到目标的XDM属性或身份命名空间，然后选择&#x200B;**[!UICONTROL 选择]**。
+3. 在&#x200B;**[!UICONTROL Select field]**&#x200B;页面中，选择要发送到目标的XDM属性或身份命名空间，然后选择&#x200B;**[!UICONTROL Select]**。
 
    ![显示可用作源字段的各种字段的图像。](../assets/ui/activate-batch-profile-destinations/target-field-page.png)
 
@@ -568,14 +568,14 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 
 >[!IMPORTANT]
 >
->由于已知限制，您当前无法使用&#x200B;**[!UICONTROL 选择字段]**&#x200B;窗口将`segmentMembership.seg_namespace.seg_id.status`添加到文件导出。 相反，您必须将值`xdm: segmentMembership.seg_namespace.seg_id.status`手动粘贴到架构字段中，如下所示。
+>由于已知限制，您当前无法使用&#x200B;**[!UICONTROL Select field]**&#x200B;窗口将`segmentMembership.seg_namespace.seg_id.status`添加到文件导出。 相反，您必须将值`xdm: segmentMembership.seg_namespace.seg_id.status`手动粘贴到架构字段中，如下所示。
 >
 >![显示激活工作流映射步骤中受众成员资格解决方法的屏幕录制。](../assets/ui/activate-batch-profile-destinations/segment-membership.gif)
 
 文件导出在以下方面有所不同，具体取决于是否选择了`segmentMembership.seg_namespace.seg_id.status`：
 
-* 如果选择了`segmentMembership.seg_namespace.seg_id.status`字段，则导出的文件在初始完整快照中包含&#x200B;**[!UICONTROL Active]**&#x200B;成员，在后续增量导出中包含&#x200B;**[!UICONTROL Active]**&#x200B;和&#x200B;**[!UICONTROL Expired]**&#x200B;成员。
-* 如果未选择`segmentMembership.seg_namespace.seg_id.status`字段，则导出的文件在初始完整快照和后续增量导出中仅包含&#x200B;**[!UICONTROL 活动]**&#x200B;成员。
+* 如果选择了`segmentMembership.seg_namespace.seg_id.status`字段，则导出的文件在初始完整快照中包含&#x200B;**[!UICONTROL Active]**&#x200B;个成员，在后续增量导出中包含&#x200B;**[!UICONTROL Active]**&#x200B;和&#x200B;**[!UICONTROL Expired]**&#x200B;个成员。
+* 如果未选择`segmentMembership.seg_namespace.seg_id.status`字段，则导出的文件在初始完整快照和后续增量导出中仅包含&#x200B;**[!UICONTROL Active]**&#x200B;个成员。
 
 ## 选择扩充属性 {#select-enrichment-attributes}
 
@@ -586,28 +586,28 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 
 >[!IMPORTANT]
 >
->仅当您在&#x200B;**[!UICONTROL 受众选择]**&#x200B;步骤中选择了[自定义上传](#select-audiences)受众时，才会显示此步骤。
+>仅当您在&#x200B;**[!UICONTROL Custom upload]**&#x200B;受众选择[步骤中选择了](#select-audiences)受众时，才会显示此步骤。
 
-扩充属性对应于Experience Platform中作为&#x200B;**[!UICONTROL 自定义上传]**&#x200B;摄取的自定义上传受众。 在此步骤中，您可以为每个选定的外部受众选择要导出到目标的属性。
+扩充属性对应于Experience Platform中作为&#x200B;**[!UICONTROL Custom uploads]**&#x200B;摄取的自定义上传受众。 在此步骤中，您可以为每个选定的外部受众选择要导出到目标的属性。
 
 ![显示扩充属性选择步骤的UI图像。](../assets/ui/activate-batch-profile-destinations/select-enrichment-attributes-step.png)
 
 请按照以下步骤为每个外部受众选择扩充属性：
 
-1. 在&#x200B;**[!UICONTROL 扩充属性]**&#x200B;列中，选择![编辑按钮](/help/images/icons/edit.png)（编辑）按钮。
-1. 选择&#x200B;**[!UICONTROL 添加扩充属性]**。 将显示一个新的空架构字段。
+1. 在&#x200B;**[!UICONTROL Enrichment attributes]**&#x200B;列中，选择![编辑按钮](/help/images/icons/edit.png) （编辑）按钮。
+1. 选择 **[!UICONTROL Add enrichment attribute]**。将显示一个新的空架构字段。
    ![显示扩充属性模式屏幕的UI图像。](../assets/ui/activate-batch-profile-destinations/add-enrichment-attribute.png)
 1. 选择空字段右侧的按钮以打开字段选择屏幕。
 1. 选择要为受众导出的属性。
    ![显示扩充属性列表的UI图像。](../assets/ui/activate-batch-profile-destinations/select-enrichment-attributes.png)
-1. 添加所有要导出的属性后，选择&#x200B;**[!UICONTROL 保存并关闭]**。
+1. 添加要导出的所有属性后，选择&#x200B;**[!UICONTROL Save and close]**。
 1. 对每个外部受众重复这些步骤。
 
-如果要在不导出任何属性的情况下将外部受众激活到目标，请启用&#x200B;**[!UICONTROL 排除扩充属性]**&#x200B;切换开关。 此选项会从外部受众导出用户档案，但不会将其任何相应的属性发送到您的目标。
+如果要在不导出任何属性的情况下将外部受众激活到目标，请启用&#x200B;**[!UICONTROL Exclude enrichment attributes]**&#x200B;切换开关。 此选项会从外部受众导出用户档案，但不会将其任何相应的属性发送到您的目标。
 
 ![UI图像显示“排除扩充属性”切换。](../assets/ui/activate-batch-profile-destinations/exclude-enrichment-attributes.png)
 
-选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以移至[审阅](#review)步骤。
+选择&#x200B;**[!UICONTROL Next]**&#x200B;以移至[审核](#review)步骤。
 
 ## 审查 {#review}
 
@@ -620,7 +620,7 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 >
 > 例如，如果字段`person.name.firstName`的某些数据使用标签与目标的营销操作冲突，您将在审核步骤中看到数据使用策略冲突。 有关详细信息，请参阅[Adobe Experience Platform中的数据管理](../../rtcdp/privacy/data-governance-overview.md#destinations)。
 
-在&#x200B;**[!UICONTROL 审核]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL 取消]**&#x200B;以中断流，**[!UICONTROL 上一步]**&#x200B;以修改您的设置，或者选择&#x200B;**[!UICONTROL 完成]**&#x200B;以确认您的选择并开始将数据发送到目标。
+在&#x200B;**[!UICONTROL Review]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL Cancel]**&#x200B;以中断流，**[!UICONTROL Back]**&#x200B;以修改您的设置，或&#x200B;**[!UICONTROL Finish]**&#x200B;以确认您的选择并开始将数据发送到目标。
 
 ![审核步骤中显示的选择摘要。](../assets/ui/activate-batch-profile-destinations/review.png)
 
@@ -629,13 +629,13 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 >[!CONTEXTUALHELP]
 >id="platform_governance_policies_viewApplicableConsentPolicies"
 >title="查看适用的同意策略"
->abstract="如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的轮廓数量。如果您的公司无权访问上述 SKU，则此控件将被禁用。"
+>abstract="如果您的组织购买了&#x200B;**Adobe Healthcare Shield**&#x200B;或&#x200B;**Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL View applicable consent policies]**&#x200B;以查看应用的同意政策以及激活中因此包含的用户档案数。 如果您的公司无权访问上述 SKU，则此控件将被禁用。"
 
-如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的轮廓数量。有关详细信息，请阅读[同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。
+如果您的组织购买了&#x200B;**Adobe Healthcare Shield**&#x200B;或&#x200B;**Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL View applicable consent policies]**&#x200B;以查看应用的同意政策以及激活中因此包含的用户档案数。 有关详细信息，请阅读[同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。
 
 ### 数据使用策略检查 {#data-usage-policy-checks}
 
-在&#x200B;**[!UICONTROL 审核]**&#x200B;步骤中，Experience Platform还会检查是否存在任何数据使用策略违规。 下面显示了一个违反策略的示例。 在解决该违规之前，您无法完成受众激活工作流。 有关如何解决策略违规的信息，请参阅数据治理文档部分中的[数据使用策略违规](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation)。
+在&#x200B;**[!UICONTROL Review]**&#x200B;步骤中，Experience Platform还会检查是否存在任何数据使用策略违规。 下面显示了一个违反策略的示例。 在解决该违规之前，您无法完成受众激活工作流。 有关如何解决策略违规的信息，请参阅数据治理文档部分中的[数据使用策略违规](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation)。
 
 ![激活工作流中显示的数据策略违规示例。](../assets/common/data-policy-violation.png)
 
@@ -645,7 +645,7 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 
 ![显示审核步骤中可用的受众过滤器的屏幕录制。](../assets/ui/activate-batch-profile-destinations/filter-audiences-batch-review.gif)
 
-如果您对您的选择感到满意，并且未检测到任何违反策略的情况，请选择&#x200B;**[!UICONTROL 完成]**&#x200B;以确认您的选择并开始将数据发送到目标。
+如果您对您的选择感到满意，并且未检测到任何违反策略的情况，请选择&#x200B;**[!UICONTROL Finish]**&#x200B;以确认您的选择并开始将数据发送到目标。
 
 ## 验证受众激活 {#verify}
 

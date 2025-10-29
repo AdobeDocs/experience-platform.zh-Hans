@@ -3,9 +3,9 @@ title: 区段搜索API端点
 description: 在Adobe Experience Platform分段服务API中，分段搜索用于搜索各种数据源中包含的字段并近乎实时地返回它们。 本指南提供的信息可帮助您更好地了解区段搜索，包括用于使用API执行基本操作的示例API调用。
 role: Developer
 exl-id: bcafbed7-e4ae-49c0-a8ba-7845d8ad663b
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '1189'
+source-wordcount: '1178'
 ht-degree: 2%
 
 ---
@@ -225,7 +225,9 @@ curl -X GET \
 
 以下部分提供有关搜索词工作方式的其他信息。 搜索查询的编写方式如下： `s={FieldName}:{SearchExpression}`。 例如，要搜索名为AAM或[!DNL Platform]的区段定义，您可以使用以下搜索查询： `s=segmentName:AAM%20OR%20Platform`。
 
-> 为获得最佳实践，搜索表达式应进行HTML编码，如上面的示例所示。
+>[!NOTE]
+>
+>对于最佳实践，搜索表达式应采用HTML编码，如上面的示例所示。
 
 ### 搜索字段 {#search-fields}
 
@@ -244,7 +246,9 @@ curl -X GET \
 
 下表列出了使用区段搜索API时搜索查询的工作方式的详细信息。
 
-> 为了更加清晰明了，以下示例以非HTML编码格式显示。 为获得最佳实践，HTML对搜索表达式进行编码。
+>[!NOTE]
+>
+>为了更加清晰明了，以下示例以非HTML编码格式显示。 为获得最佳实践，HTML将对您的搜索表达式进行编码。
 
 | 示例搜索表达式 | 描述 |
 | ------------------------- | ----------- |

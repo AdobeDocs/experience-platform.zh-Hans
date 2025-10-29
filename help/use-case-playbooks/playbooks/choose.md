@@ -4,16 +4,16 @@ title: 从一系列行动手册中进行选择
 description: 了解如何为您的用例选择正确的行动手册启用行动手册。
 role: User
 exl-id: 3dae6ad6-adb3-4606-ad63-c0d4ef6beeba
-source-git-commit: 1781aa552107b6ca1fed357c053a4f892960dc55
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '757'
-ht-degree: 88%
+source-wordcount: '738'
+ht-degree: 83%
 
 ---
 
 # 从一系列行动手册中进行选择
 
-若要使用行动手册，请从左侧导航中选择&#x200B;**[!UICONTROL 行动手册]**。 浏览并使用页面上的各种搜索和过滤选项来选择并开始使用特定的战术手册。
+若要使用行动手册，请从左侧导航中选择&#x200B;**[!UICONTROL Playbooks]**。 浏览并使用页面上的各种搜索和过滤选项来选择并开始使用特定的战术手册。
 
 ## 搜索和过滤 {#search-and-filter}
 
@@ -35,7 +35,7 @@ ht-degree: 88%
 
 ## 查看战术手册并生成资产 {#view-playbook-generate-assets}
 
-在确定战术手册并创建它的实例之前，应对其进行检查，以确保它符合您的需求。为了帮助您更好地理解它们涵盖的用例，所有战术手册都包含下面列出的部分。当您准备好继续并生成资产时，请选择&#x200B;**[!UICONTROL 创建实例]**。
+在确定战术手册并创建它的实例之前，应对其进行检查，以确保它符合您的需求。为了帮助您更好地理解它们涵盖的用例，所有战术手册都包含下面列出的部分。当您准备好继续并生成资源时，请选择&#x200B;**[!UICONTROL Create Instance]**。
 
 ### 思维导图 {#mindmap}
 
@@ -55,10 +55,10 @@ ht-degree: 88%
 检查摘要部分，以了解从战术手册创建实例后会生成哪些资产。为每个战术手册生成的资产都是根据该战术手册支持的用例定制的。在下面获取有关摘要部分中所有项目的详细信息。
 
 | 项目 | 描述 |
----------|----------|
-| **[!UICONTROL 目标受众]** | 描述您希望通过此用例战术手册接触到的角色。 |
-| **[!UICONTROL 营销渠道]** | 描述用于接触战术手册中目标角色的渠道。 |
-| **[!UICONTROL 技术资产]** | 创建战术手册实例后生成的技术资产列表。生成的资产因战术手册而异，具体取决于用例。一些战术手册可能会生成架构、区段和历程。其他可能会生成目标。有关如何使用和重用生成的资产的更多信息，请参阅有关创建和重用实例的指南中的[了解生成的资产](/help/use-case-playbooks/playbooks/create-share-reuse.md#understand-assets)部分。 |
+|---------|----------|
+| **[!UICONTROL Target audience]** | 描述您希望通过此用例战术手册接触到的角色。 |
+| **[!UICONTROL Marketing Channels]** | 描述用于接触战术手册中目标角色的渠道。 |
+| **[!UICONTROL Technical assets]** | 创建战术手册实例后生成的技术资产列表。生成的资产因战术手册而异，具体取决于用例。一些战术手册可能会生成架构、区段和历程。其他可能会生成目标。有关如何使用和重用生成的资产的更多信息，请参阅有关创建和重用实例的指南中的[了解生成的资产](/help/use-case-playbooks/playbooks/create-share-reuse.md#understand-assets)部分。 |
 
 {style="table-layout:auto"}
 
@@ -70,11 +70,11 @@ ht-degree: 88%
 
 | 项目 | 描述 |
 |---------|----------|
-| **[!UICONTROL 名称]** | 基于战术手册的实例名称。您可以自定义实例的名称和描述。阅读有关[如何编辑实例元数据](/help/use-case-playbooks/playbooks/create-share-reuse.md#edit-instance-metadata)的部分，了解更多信息。 |
-| **[!UICONTROL 状态]** | 指示实例的状态。**[!UICONTROL 已提交]**&#x200B;实例可供使用。 |
-| **[!UICONTROL 已创建]** | 指示创建实例的时间。 |
-| **[!UICONTROL 创建者]** | 指示创建实例的人。 |
-| **[!UICONTROL 上次修改时间]** | 指示修改实例的时间。 |
+| **[!UICONTROL Name]** | 基于战术手册的实例名称。您可以自定义实例的名称和描述。阅读有关[如何编辑实例元数据](/help/use-case-playbooks/playbooks/create-share-reuse.md#edit-instance-metadata)的部分，了解更多信息。 |
+| **[!UICONTROL Status]** | 指示实例的状态。**[!UICONTROL submitted]**&#x200B;实例已准备就绪。 |
+| **[!UICONTROL Created]** | 指示创建实例的时间。 |
+| **[!UICONTROL Created By]** | 指示创建实例的人。 |
+| **[!UICONTROL Last Modified]** | 指示修改实例的时间。 |
 
 {style="table-layout:auto"}
 
@@ -82,4 +82,4 @@ ht-degree: 88%
 
 ## 接下来的步骤——创建一个战术手册实例。 {#next-steps-create-instance}
 
-当您准备好继续使用战术手册并创建实例时，请选择&#x200B;**[!UICONTROL 创建实例]**，以继续执行战术手册，并生成技术资产。阅读有关[如何创建、共享和重用战术手册实例](/help/use-case-playbooks/playbooks/create-share-reuse.md)的指南，了解更多信息。
+当您准备好继续使用行动手册并创建实例时，请选择&#x200B;**[!UICONTROL Create Instance]**&#x200B;以继续使用行动手册并生成技术资产。 阅读有关[如何创建、共享和重用战术手册实例](/help/use-case-playbooks/playbooks/create-share-reuse.md)的指南，了解更多信息。

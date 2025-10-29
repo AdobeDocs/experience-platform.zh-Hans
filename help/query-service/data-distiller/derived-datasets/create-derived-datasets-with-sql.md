@@ -2,7 +2,7 @@
 title: 使用SQL创建派生数据集
 description: 了解如何使用SQL创建为用户档案启用的派生数据集，以及如何将该数据集用于Real-time Customer Profile和Segmentation Service。
 exl-id: bb1a1d8d-4662-40b0-857a-36efb8e78746
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1238'
 ht-degree: 1%
@@ -69,13 +69,13 @@ Created Table DataSet Id
 (1 row)
 ```
 
-在`CREATE TABLE`命令上使用`label='PROFILE'`创建启用配置文件的数据集。 默认情况下，`upsert`功能处于打开状态。 可以使用`ALTER`命令覆盖`upsert`功能，如下面的示例所示。
+在`label='PROFILE'`命令上使用`CREATE TABLE`创建启用配置文件的数据集。 默认情况下，`upsert`功能处于打开状态。 可以使用`upsert`命令覆盖`ALTER`功能，如下面的示例所示。
 
 ```sql
 ALTER TABLE <your_table_name> DROP label upsert;
 ```
 
-有关在CTAS查询[&#128279;](../../sql/syntax.md#create-table-as-select)中使用[ALTER TABLE](../../sql/syntax.md#alter-table)命令和标签的详细信息，请参阅SQl语法文档。
+有关在CTAS查询[中使用](../../sql/syntax.md#alter-table)ALTER TABLE[命令和](../../sql/syntax.md#create-table-as-select)标签的详细信息，请参阅SQl语法文档。
 
 ## 帮助通过SQL管理派生数据集的构造
 
@@ -141,7 +141,7 @@ ALTER TABLE table_name ADD LABEL 'UPSERT';
 ALTER TABLE table_with_a_decile ADD label 'UPSERT';
 ```
 
-此SQL语句提供了使用API调用的高效替代方法。 有关详细信息，请参阅有关如何使用数据集API[&#128279;](../../../catalog/datasets/enable-upsert.md#enable-the-dataset)启用用于Real-Time CDP和UPSERT的数据集的文档。
+此SQL语句提供了使用API调用的高效替代方法。 有关详细信息，请参阅有关如何使用数据集API[启用用于Real-Time CDP和UPSERT的数据集](../../../catalog/datasets/enable-upsert.md#enable-the-dataset)的文档。
 
 ### 禁用数据集的更新和插入功能 {#disable-upsert-functionality-for-dataset}
 
@@ -167,7 +167,7 @@ ALTER TABLE table_with_a_decile DROP label 'UPSERT';
 
 ```sql
        name          |        dataSetId         |     dataSet    | description | labels 
----------------------+--------------------------+----------------+-------------+----------
+|---------------------+--------------------------+----------------+-------------+----------
  luma_midvalues      | 5bac030c29bb8d12fa992e58 | Luma midValues |             | false
  luma_postvalues     | 5c86b896b3c162151785b43c | Luma midValues |             | false
  table_with_a_decile | 5c86b896b3c162151785b43c | Luma midValues |             | 'UPSERT', 'PROFILE'
@@ -189,7 +189,7 @@ CREATE FIELDGROUP <field_group_name> [IF NOT EXISTS]  (field_name <data_type> pr
 >[!IMPORTANT]
 >
 >如果语句中未提供`label`标志或字段组已存在，则通过SQL创建字段组将失败。
->请确保查询包含`IF NOT EXISTS`子句，以避免查询失败，因为该字段组已存在。
+>>请确保查询包含`IF NOT EXISTS`子句，以避免查询失败，因为该字段组已存在。
 
 现实世界的例子可能与下面所示的例子类似。
 
@@ -199,7 +199,7 @@ CREATE FIELDGROUP field_group_for_test123 (decile1Month map<text, integer>, deci
 
 成功执行此语句将返回创建的字段组ID。 例如：`c731a1eafdfdecae1683c6dca197c66ed2c2b49ecd3a9525`。
 
-有关替代方法的详细信息，请参阅有关如何在架构编辑器[&#128279;](../../../xdm/ui/resources/field-groups.md#create)中创建新字段组或使用[架构注册表API](../../../xdm/api/field-groups.md#create)的文档。
+有关替代方法的详细信息，请参阅有关如何在架构编辑器[中](../../../xdm/ui/resources/field-groups.md#create)创建新字段组或使用[架构注册表API](../../../xdm/api/field-groups.md#create)的文档。
 
 ### 放置字段组
 
@@ -227,7 +227,7 @@ DROP FIELDGROUP field_group_for_test123;
 
 ```sql
        name                      |        fieldgroupId                             |     owner      |
----------------------------------+-------------------------------------------------+-----------------
+|---------------------------------+-------------------------------------------------+-----------------
  AEP Mobile Lifecycle Details    | _experience.aep-mobile-lifecycle-details        | Luma midValues |
  AEP Web SDK ExperienceEvent     | _experience.aep-web-sdk-experienceevent         | Luma midValues |
  AJO Classification Fields       | _experience.journeyOrchestration.classification | Luma midValues |

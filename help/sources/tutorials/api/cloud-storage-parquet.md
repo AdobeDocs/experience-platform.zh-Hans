@@ -5,10 +5,10 @@ title: 使用流服务API从第三方云存储系统摄取Parquet数据
 type: Tutorial
 description: 本教程使用流服务API来指导您完成从第三方云存储系统摄取Apache Parquet数据的步骤。
 exl-id: fb1b19d6-16bb-4a5f-9e81-f537bac95041
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '1088'
-ht-degree: 9%
+source-wordcount: '1072'
+ht-degree: 13%
 
 ---
 
@@ -29,11 +29,11 @@ ht-degree: 9%
 
 ### 正在读取示例 API 调用
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中有关[如何读取示例API调用](../../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
 
 ### 收集所需标头的值
 
-要调用[!DNL Experience Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+为调用 [!DNL Experience Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
@@ -259,7 +259,10 @@ curl -X POST \
 
 为了将外部数据摄取到[!DNL Experience Platform]，必须首先获取[!DNL Experience Platform]数据集基本连接。
 
-要创建数据集基本连接，请按照[数据集基本连接教程](./create-dataset-base-connection.md)中所述的步骤操作。
+<!--
+broken link. this file not in TOC.
+To create a dataset base connection, follow the steps outlined in the [dataset base connection tutorial](./create-dataset-base-connection.md).
+-->
 
 继续按照开发人员指南中概述的步骤操作，直到创建数据集基本连接为止。 获取并存储唯一标识符(`$id`)，然后继续将其用作创建目标连接的下一个步骤中的基本连接ID。
 

@@ -3,7 +3,7 @@ keywords: 云存储目标；云存储
 title: 云存储目标概述
 description: Adobe Experience Platform可以将受众作为数据文件交付到Amazon S3、AWS Kinesis、Azure事件中心或SFTP云存储位置。
 exl-id: d29f0a6e-b323-4f78-bbd0-dee2f1e0fedb
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '464'
 ht-degree: 6%
@@ -46,7 +46,7 @@ Adobe Experience Platform支持将数据导出到以下云存储目标：
 
 ![如何使用宏在存储中创建文件夹](../../assets/catalog/cloud-storage/workflow/macros-folder-path.png)
 
-以下示例引用了ID为`25768be6-ebd5-45cc-8913-12fb3f348615`的示例受众`Luxury Audience`。
+以下示例引用了ID为`Luxury Audience`的示例受众`25768be6-ebd5-45cc-8913-12fb3f348615`。
 
 **宏1：`%SEGMENT_NAME%`**
 
@@ -73,6 +73,7 @@ Adobe Experience Platform支持将数据导出到以下云存储目标：
 ## 数据导出类型 {#export-type}
 
 云存储目标支持以下导出类型：
+
 * **基于配置文件的导出**。 这意味着您正在导出有关受众中个人的详细信息。 个性化时需要这些详细信息，它们可以包括属性、事件、受众成员资格等。
 * **数据集导出**。 此功能允许您将整个数据集导出到云存储目标。 [参阅更多](/help/destinations/ui/export-datasets.md)关于该功能的信息。
 

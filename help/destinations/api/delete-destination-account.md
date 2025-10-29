@@ -5,10 +5,10 @@ title: 使用流服务API删除目标帐户
 type: Tutorial
 description: 了解如何使用流服务API删除目标帐户。
 exl-id: a963073c-ecba-486b-a5c2-b85bdd426e72
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '765'
-ht-degree: 16%
+source-wordcount: '762'
+ht-degree: 21%
 
 ---
 
@@ -28,18 +28,18 @@ ht-degree: 16%
 
 本教程还要求您实际了解Adobe Experience Platform的以下组件：
 
-* [目标](../home.md)： [!DNL Destinations]是预先构建的与目标平台的集成，可无缝激活Adobe Experience Platform中的数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
+* [目标](../home.md)： [!DNL Destinations]是预先构建的与目标平台的集成，可无缝激活Adobe Experience Platform中的数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例。
 * [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 以下部分提供使用[!DNL Flow Service] API成功删除目标帐户所需了解的其他信息。
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中有关[如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
 
 ### 收集所需标头的值 {#gather-values-for-required-headers}
 
-要调用[!DNL Experience Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+为调用 [!DNL Experience Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
@@ -64,7 +64,7 @@ ht-degree: 16%
 
 删除目标帐户的第一步是查找与要删除的目标帐户对应的连接ID。
 
-在Experience Platform UI中，浏览到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 帐户]**，并通过选择&#x200B;**[!UICONTROL 目标]**&#x200B;列中的数字来选择要删除的帐户。
+在Experience Platform UI中，浏览到&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Accounts]**，并通过选择&#x200B;**[!UICONTROL Destinations]**&#x200B;列中的数字来选择要删除的帐户。
 
 ![选择要删除的目标帐户](/help/destinations/assets/api/delete-destination-account/select-destination-account.png)
 
@@ -147,7 +147,8 @@ A successful response returns the current details of your connection including i
 >[!IMPORTANT]
 >
 >在删除目标帐户之前，必须删除指向目标帐户的任何现有数据流。
->要删除现有数据流，请参阅以下页面：
+>>要删除现有数据流，请参阅以下页面：
+>
 >* [使用Experience Platform UI](../ui/delete-destinations.md)删除现有数据流；
 >* [使用流服务API](delete-destination-dataflow.md)删除现有数据流。
 

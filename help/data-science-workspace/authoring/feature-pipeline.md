@@ -4,7 +4,7 @@ title: 使用模型创作SDK创建功能管道
 type: Tutorial
 description: Adobe Experience Platform允许您构建和创建自定义功能管道，以通过Sensei机器学习框架运行时大规模执行功能工程。 本文档介绍了功能管道中的各种类，并分步说明了如何使用PySpark中的“模型创作SDK”创建自定义功能管道。
 exl-id: c2c821d5-7bfb-4667-ace9-9566e6754f98
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1438'
 ht-degree: 0%
@@ -40,6 +40,7 @@ Adobe Experience Platform允许您构建和创建自定义功能管道，以通�
 ## 快速入门
 
 要在任何组织中运行处方，必须满足以下条件：
+
 - 输入数据集。
 - 数据集的架构。
 - 转换后的架构和基于该架构的空数据集。
@@ -404,11 +405,11 @@ https://www.postman.com/collections/c5fc0d1d5805a5ddd41a
 
 ### 创建功能管道引擎 {#create-engine-api}
 
-获得Docker图像位置后，可通过对`/engines`执行POST，使用[!DNL Sensei Machine Learning] API [创建功能管道引擎](../api/engines.md#feature-pipeline-docker)。 成功创建功能管道引擎将为您提供引擎唯一标识符(`id`)。 请确保保存此值后再继续。
+获得Docker图像位置后，可通过对[执行POST，使用](../api/engines.md#feature-pipeline-docker) API [!DNL Sensei Machine Learning]创建功能管道引擎`/engines`。 成功创建功能管道引擎将为您提供引擎唯一标识符(`id`)。 请确保保存此值后再继续。
 
 ### 创建MLInstance {#create-mlinstance}
 
-使用新创建的`engineID`，您需要[通过向`/mlInstance`端点发出POST请求来创建MLIstance](../api/mlinstances.md#create-an-mlinstance)。 成功的响应将返回一个有效负载，该有效负载包含新创建的MLInstance的详细信息，包括其下次API调用中使用的唯一标识符(`id`)。
+使用新创建的`engineID`，您需要[通过向](../api/mlinstances.md#create-an-mlinstance)端点发出POST请求来创建MLIstance`/mlInstance`。 成功的响应将返回一个有效负载，该有效负载包含新创建的MLInstance的详细信息，包括其下次API调用中使用的唯一标识符(`id`)。
 
 ### 创建试验 {#create-experiment}
 
@@ -416,7 +417,7 @@ https://www.postman.com/collections/c5fc0d1d5805a5ddd41a
 
 ### 指定试验运行功能管道任务 {#specify-feature-pipeline-task}
 
-创建试验后，必须将试验的模式更改为`featurePipeline`。 要更改模式，请使用您的`EXPERIMENT_ID`进行额外的POST为[`experiments/{EXPERIMENT_ID}/runs`](../api/experiments.md#experiment-training-scoring)，并在正文中发送`{ "mode":"featurePipeline"}`以指定功能管道试验运行。
+创建试验后，必须将试验的模式更改为`featurePipeline`。 要更改模式，请使用您的[`experiments/{EXPERIMENT_ID}/runs`](../api/experiments.md#experiment-training-scoring)进行额外的POST为`EXPERIMENT_ID`，并在正文中发送`{ "mode":"featurePipeline"}`以指定功能管道试验运行。
 
 完成后，向`/experiments/{EXPERIMENT_ID}`发出GET请求以[检索试验状态](../api/experiments.md#retrieve-specific)，并等待试验状态更新以完成。
 

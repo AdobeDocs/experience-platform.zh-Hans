@@ -5,9 +5,9 @@ title: 在数据科学Workspace UI中为模型评分
 type: Tutorial
 description: 在Adobe Experience Platform数据科学Workspace中，可通过将输入数据馈送到现有的已训练模型来实现评分。 评分结果将作为新批次存储在指定的输出数据集中并可供查看。
 exl-id: 00d6a872-d71a-47f4-8625-92621d4eed56
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '670'
+source-wordcount: '641'
 ht-degree: 1%
 
 ---
@@ -32,21 +32,21 @@ ht-degree: 1%
 
 ## 创建新的评分运行
 
-使用先前完成和评估的培训运行中的优化配置来创建评分运行。 模型的最佳配置集通常通过查看培训运行评估指标来确定。
+评分运行是使用先前完成并评估的训练运行中的优化配置创建的。 模型的最佳配置集通常通过查看训练运行评估指标来确定。
 
 找到最佳训练运行，以使用其配置进行评分。 然后，通过选择附加到其名称的超链接来打开所需的训练运行。
 
 ![选择训练运行](../images/models-recipes/score/select-run.png)
 
-从训练运行&#x200B;**[!UICONTROL 评估]**&#x200B;选项卡中，选择位于屏幕右上角的&#x200B;**[!UICONTROL 分数]**。 新的评分工作流开始。
+从训练运行&#x200B;**[!UICONTROL Evaluation]**&#x200B;选项卡中，选择位于屏幕右上角的&#x200B;**[!UICONTROL Score]**。 新的评分工作流开始。
 
 ![](../images/models-recipes/score/training_run_overview.png)
 
-选择输入评分数据集并选择&#x200B;**[!UICONTROL 下一步]**。
+选择输入评分数据集并选择&#x200B;**[!UICONTROL Next]**。
 
 ![](../images/models-recipes/score/scoring_input.png)
 
-选择输出评分数据集，这是存储评分结果的专用输出数据集。 确认您的选择，然后选择&#x200B;**[!UICONTROL 下一步]**。
+选择输出评分数据集，这是存储评分结果的专用输出数据集。 确认您的选择并选择&#x200B;**[!UICONTROL Next]**。
 
 ![](../images/models-recipes/score/scoring_results.png)
 
@@ -55,25 +55,26 @@ ht-degree: 1%
 
 ![配置](../images/models-recipes/score/configuration.png)
 
-查看并确认评分配置并选择&#x200B;**[!UICONTROL 完成]**&#x200B;以创建并执行评分运行。 您被定向到&#x200B;**[!UICONTROL 评分运行]**&#x200B;选项卡，并显示状态为&#x200B;**[!UICONTROL 待处理]**&#x200B;的新评分运行。
+查看并确认评分配置并选择&#x200B;**[!UICONTROL Finish]**&#x200B;以创建并执行评分运行。 您被定向到&#x200B;**[!UICONTROL Scoring Runs]**&#x200B;选项卡，并显示状态为&#x200B;**[!UICONTROL Pending]**&#x200B;的新评分运行。
 
 ![评分运行选项卡](../images/models-recipes/score/scoring_runs_tab.png)
 
 评分运行可以显示为以下状态之一：
+
 - 待处理
 - 完成
 - 失败
 - 正在运行
 
-状态会自动更新。 如果状态为&#x200B;**[!UICONTROL 完成]**&#x200B;或&#x200B;**[!UICONTROL 失败]**，则继续执行下一步。
+状态会自动更新。 如果状态为&#x200B;**[!UICONTROL Complete]**&#x200B;或&#x200B;**[!UICONTROL Failed]**，则继续执行下一步。
 
 ## 查看评分结果
 
-要查看评分结果，请先选择培训运行。
+要查看评分结果，请从选择训练运行开始。
 
-![选择培训运行](../images/models-recipes/score/select-run.png)
+![选择训练运行](../images/models-recipes/score/select-run.png)
 
-您将被重定向到训练运行&#x200B;**[!UICONTROL 评估]**&#x200B;页面。 在训练运行评估页面顶部附近，选择&#x200B;**[!UICONTROL 评分运行]**&#x200B;选项卡以查看现有评分运行的列表。
+您将被重定向到训练运行&#x200B;**[!UICONTROL Evaluation]**&#x200B;页面。 在训练运行评估页面顶部附近，选择&#x200B;**[!UICONTROL Scoring Runs]**&#x200B;选项卡以查看现有评分运行的列表。
 
 ![评估页](../images/models-recipes/score/view_scoring_runs.png)
 
@@ -81,15 +82,15 @@ ht-degree: 1%
 
 ![运行详细信息](../images/models-recipes/score/view_details.png)
 
-如果选定的评分运行的状态为“完成”或“失败”，则会提供&#x200B;**[!UICONTROL 查看活动日志]**&#x200B;链接。 如果评分运行失败，执行日志可提供有用的信息来确定失败原因。 要下载执行日志，请选择&#x200B;**[!UICONTROL 查看活动日志]**。
+如果选定的评分运行的状态为“完成”或“失败”，则提供&#x200B;**[!UICONTROL View Activity Logs]**&#x200B;链接。 如果评分运行失败，执行日志可提供有用的信息来确定失败原因。 要下载执行日志，请选择&#x200B;**[!UICONTROL View Activity Logs]**。
 
 ![选择查看日志](../images/models-recipes/score/view_logs.png)
 
-出现&#x200B;**[!UICONTROL 查看活动日志]**&#x200B;弹出框。 选择一个URL以自动下载关联的日志。
+出现&#x200B;**[!UICONTROL View activity logs]**&#x200B;弹出框。 选择一个URL以自动下载关联的日志。
 
 ![](../images/models-recipes/score/activity_logs.png)
 
-您还可以通过选择&#x200B;**[!UICONTROL 预览评分结果数据集]**&#x200B;来查看您的评分结果。
+您还可以通过选择&#x200B;**[!UICONTROL Preview scoring results dataset]**&#x200B;来查看评分结果。
 
 ![选择预览结果](../images/models-recipes/score/view_results.png)
 
@@ -97,8 +98,8 @@ ht-degree: 1%
 
 ![预览结果](../images/models-recipes/score/preview_results.png)
 
-对于完整的评分结果集，请选择在右列中找到的&#x200B;**[!UICONTROL 评分结果数据集]**&#x200B;链接。
+对于完整的评分结果集，请选择在右列中找到的&#x200B;**[!UICONTROL Scoring Results Dataset]**&#x200B;链接。
 
 ## 后续步骤
 
-本教程向您介绍了使用[!DNL Data Science Workspace]中经过培训的模型为数据分数的步骤。 按照[在UI中发布模型作为服务](./publish-model-service-ui.md)上的教程进行操作，通过提供对机器学习服务的轻松访问，组织内的用户可以对数据进行评分。
+本教程将指导您完成在[!DNL Data Science Workspace]中使用经过训练的模型为数据评分的步骤。 按照有关[在UI中发布模型即服务](./publish-model-service-ui.md)的教程进行操作，通过提供对机器学习服务的轻松访问，允许组织内的用户评分数据。

@@ -1,17 +1,17 @@
 ---
-keywords: 体验平台;产品购买配方;数据科学工作区;热门话题;食谱;预构建配方
+keywords: Experience Platform；产品购买方法；数据科学Workspace；热门主题；方法；预构建方法
 solution: Experience Platform
-title: 产品购买预测配方
-description: 产品购买预测配方使您能够预测特定类型的客户购买事件（例如产品购买）的可能性。
+title: 产品购买预测方法
+description: 产品购买预测方法使您能够预测特定类型的客户购买事件（例如，产品购买）的可能性。
 exl-id: 66a45629-33a3-4081-8dbd-b864983b8f57
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '415'
-ht-degree: 5%
+ht-degree: 4%
 
 ---
 
-# 产品购买预测配方
+# 产品购买预测方法
 
 >[!NOTE]
 >
@@ -24,12 +24,13 @@ ht-degree: 5%
 ![](../images/pre-built-recipes/ppp_bigpicture.png)
 
 以下文档将回答类似下面的问题：
+
 * 这个配方是为谁设计的？
 * 这个配方有什么用？
 
-## 这个食谱是为谁建造的？
+## 这个配方是为谁设计的？
 
-您的品牌寻求通过向客户进行有效和有针对性的促销活动来提高产品线的季度销售额。 但是，并非所有客户都是一样的，您希望您的钱物有所值。 你针对谁？ 您的哪些客户最有可能在不发现您的促销具有侵入性的情况下做出回应？ 您如何为每个客户定制促销活动？ 您应该依靠哪些渠道以及何时发送促销活动？
+您的品牌寻求通过针对客户的有效促销活动来提高产品线的季度销售额。 不过，并不是所有客户都一样，你希望自己的钱值钱。 你瞄准谁？ 您的哪些客户最有可能作出响应，而不会认为您的促销活动会造成干扰？ 如何针对每位客户自定义促销活动？ 您应该依赖哪些渠道？何时应发送促销活动？
 
 ## 这个配方有什么用？
 
@@ -41,22 +42,22 @@ ht-degree: 5%
 
 | 字段名称 | 类型 |
 | --- | --- |
-| 用户 ID | 字符串 |
-| 性别比例 | 数值 |
+| userId | 字符串 |
+| genderRatio | 数值 |
 | ageY | 数值 |
 | ageM | 数值 |
 | optinEmail | 布尔值 |
 | optinMobile | 布尔值 |
-| 选择地址 | 布尔值 |
+| optinAddress | 布尔值 |
 | 已创建 | 整数 |
 | totalorders | 数值 |
 | totalitems | 数值 |
 | orderDate1 | 数值 |
-| 发货日期1 | 数值 |
-| 总价1 | 数值 |
+| shippingDate1 | 数值 |
+| totalPrice1 | 数值 |
 | tax1 | 数值 |
-| 订单日期2 | 数值 |
-| 发货日期2 | 数值 |
+| orderDate2 | 数值 |
+| shippingDate2 | 数值 |
 | totalPrice2 | 数值 |
 
 
@@ -64,4 +65,4 @@ ht-degree: 5%
 
 首先，加载&#x200B;*ProductPrediction*&#x200B;架构中的训练数据集。 在此处，使用[随机林分类器](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)训练模型。 随机森林分类器是一种集成算法，它综合了多种算法来提高预测性能。 该算法的基本思想是随机森林分类器构建多个决策树，并将它们合并，以创建更准确、更稳定的预测。
 
-此过程从创建一组随机选择训练数据子集的决策树开始。 之后，对每个决策树的结果进行平均。
+此过程从创建一组决策树开始，决策树用于随机选择训练数据的子集。 然后，对各决策树的结果进行平均。

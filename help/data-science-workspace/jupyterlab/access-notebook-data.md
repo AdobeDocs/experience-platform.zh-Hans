@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Jupyterlab Notebooks中的数据访问
 description: 本指南重点介绍如何使用Jupyter Notebooks(内置于数据科学Workspace中)访问您的数据。
 exl-id: 2035a627-5afc-4b72-9119-158b95a35d32
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '3346'
+source-wordcount: '3274'
 ht-degree: 3%
 
 ---
@@ -154,13 +154,13 @@ df = dataset_reader.limit(100).offset(10).read()
 
 ### 写入Python中的数据集 {#write-python}
 
-要写入JupyterLab笔记本中的数据集，请在JupyterLab的左侧导航中选择“数据”图标选项卡（下面高亮显示）。 出现&#x200B;**[!UICONTROL 数据集]**&#x200B;和&#x200B;**[!UICONTROL 架构]**&#x200B;目录。 选择&#x200B;**[!UICONTROL 数据集]**&#x200B;并右键单击，然后从要使用的数据集上的下拉菜单中选择&#x200B;**[!UICONTROL 在笔记本中写入数据]**&#x200B;选项。 笔记本底部会显示一个可执行代码条目。
+要写入JupyterLab笔记本中的数据集，请在JupyterLab的左侧导航中选择“数据”图标选项卡（下面高亮显示）。 出现&#x200B;**[!UICONTROL Datasets]**&#x200B;和&#x200B;**[!UICONTROL Schemas]**&#x200B;目录。 选择&#x200B;**[!UICONTROL Datasets]**&#x200B;并右键单击，然后从要使用的数据集上的下拉菜单中选择&#x200B;**[!UICONTROL Write Data in Notebook]**&#x200B;选项。 笔记本底部会显示一个可执行代码条目。
 
 ![](../images/jupyterlab/data-access/write-dataset.png)
 
-- 使用&#x200B;**[!UICONTROL 在笔记本中写入数据]**&#x200B;生成包含选定数据集的写入单元格。
-- 使用&#x200B;**[!UICONTROL 浏览笔记本中的数据]**&#x200B;生成选定数据集的读取单元格。
-- 使用&#x200B;**[!UICONTROL 笔记本中的查询数据]**&#x200B;生成包含选定数据集的基本查询单元格。
+- 使用&#x200B;**[!UICONTROL Write Data in Notebook]**&#x200B;生成包含选定数据集的写入单元格。
+- 使用&#x200B;**[!UICONTROL Explore Data in Notebook]**&#x200B;生成具有选定数据集的读取单元格。
+- 使用&#x200B;**[!UICONTROL Query Data in Notebook]**&#x200B;生成包含选定数据集的基本查询单元格。
 
 或者，您可以复制并粘贴以下代码单元格。 同时替换`{DATASET_ID}`和`{PANDA_DATAFRAME}`。
 
@@ -173,17 +173,17 @@ dataset_writer = DatasetWriter(get_platform_sdk_client_context(), dataset)
 write_tracker = dataset_writer.write({PANDA_DATAFRAME}, file_format='json')
 ```
 
-### 在[!DNL Python]中使用[!DNL Query Service]查询数据 {#query-data-python}
+### 在[!DNL Query Service]中使用[!DNL Python]查询数据 {#query-data-python}
 
-[!DNL Experience Platform]上的[!DNL JupyterLab]允许您使用[!DNL Python]笔记本中的SQL通过[Adobe Experience Platform查询服务](https://www.adobe.com/go/query-service-home-en)访问数据。 通过[!DNL Query Service]访问数据对于处理大型数据集很有用，因为其运行时间较长。 请注意，使用[!DNL Query Service]查询数据的处理时间限制为10分钟。
+[!DNL JupyterLab]上的[!DNL Experience Platform]允许您使用[!DNL Python]笔记本中的SQL通过[Adobe Experience Platform查询服务](https://www.adobe.com/go/query-service-home-en)访问数据。 通过[!DNL Query Service]访问数据对于处理大型数据集很有用，因为其运行时间较长。 请注意，使用[!DNL Query Service]查询数据的处理时间限制为10分钟。
 
-在[!DNL JupyterLab]中使用[!DNL Query Service]之前，请确保您对[[!DNL Query Service] SQL语法](https://www.adobe.com/go/query-service-sql-syntax-en)有一定的了解。
+在[!DNL Query Service]中使用[!DNL JupyterLab]之前，请确保您对[[!DNL Query Service] SQL语法](https://www.adobe.com/go/query-service-sql-syntax-en)有一定的了解。
 
-使用[!DNL Query Service]查询数据需要您提供目标数据集的名称。 您可以使用&#x200B;**[!UICONTROL 数据资源管理器]**&#x200B;查找所需的数据集来生成必要的代码单元格。 右键单击数据集列表并单击&#x200B;**[!UICONTROL 在笔记本中查询数据]**&#x200B;以在笔记本中生成两个代码单元格。 下面将更详细地概述这两个单元格。
+使用[!DNL Query Service]查询数据需要您提供目标数据集的名称。 您可以使用&#x200B;**[!UICONTROL Data explorer]**&#x200B;查找所需的数据集来生成必要的代码单元格。 右键单击数据集列表，然后单击&#x200B;**[!UICONTROL Query Data in Notebook]**&#x200B;以在笔记本中生成两个代码单元格。 下面将更详细地概述这两个单元格。
 
 ![](../images/jupyterlab/data-access/python-query-dataset.png)
 
-为了在[!DNL JupyterLab]中利用[!DNL Query Service]，您必须首先在正在处理的[!DNL Python]笔记本和[!DNL Query Service]之间创建连接。 这可以通过执行第一个生成的单元格来实现。
+为了在[!DNL Query Service]中利用[!DNL JupyterLab]，您必须首先在正在处理的[!DNL Python]笔记本和[!DNL Query Service]之间创建连接。 这可以通过执行第一个生成的单元格来实现。
 
 ```python
 qs_connect()
@@ -214,7 +214,7 @@ FROM {table_name}
 
 ### 筛选[!DNL ExperienceEvent]数据 {#python-filter}
 
-要访问和筛选[!DNL Python]笔记本中的[!DNL ExperienceEvent]数据集，您必须提供数据集(`{DATASET_ID}`)的ID以及使用逻辑运算符定义特定时间范围的筛选规则。 定义时间范围后，将忽略任何指定的分页，并会考虑整个数据集。
+要访问和筛选[!DNL ExperienceEvent]笔记本中的[!DNL Python]数据集，您必须提供数据集(`{DATASET_ID}`)的ID以及使用逻辑运算符定义特定时间范围的筛选规则。 定义时间范围后，将忽略任何指定的分页，并会考虑整个数据集。
 
 筛选运算符列表如下所述：
 
@@ -290,12 +290,12 @@ df0 <- dataset_reader$limit(100L)$offset(10L)$read()
 
 ### 写入R中的数据集 {#write-r}
 
-要写入JupyterLab笔记本中的数据集，请在JupyterLab的左侧导航中选择“数据”图标选项卡（下面高亮显示）。 出现&#x200B;**[!UICONTROL 数据集]**&#x200B;和&#x200B;**[!UICONTROL 架构]**&#x200B;目录。 选择&#x200B;**[!UICONTROL 数据集]**&#x200B;并右键单击，然后从要使用的数据集上的下拉菜单中选择&#x200B;**[!UICONTROL 在笔记本中写入数据]**&#x200B;选项。 笔记本底部会显示一个可执行代码条目。
+要写入JupyterLab笔记本中的数据集，请在JupyterLab的左侧导航中选择“数据”图标选项卡（下面高亮显示）。 出现&#x200B;**[!UICONTROL Datasets]**&#x200B;和&#x200B;**[!UICONTROL Schemas]**&#x200B;目录。 选择&#x200B;**[!UICONTROL Datasets]**&#x200B;并右键单击，然后从要使用的数据集上的下拉菜单中选择&#x200B;**[!UICONTROL Write Data in Notebook]**&#x200B;选项。 笔记本底部会显示一个可执行代码条目。
 
 ![](../images/jupyterlab/data-access/r-write-dataset.png)
 
-- 使用&#x200B;**[!UICONTROL 在笔记本中写入数据]**&#x200B;生成包含选定数据集的写入单元格。
-- 使用&#x200B;**[!UICONTROL 浏览笔记本中的数据]**&#x200B;生成选定数据集的读取单元格。
+- 使用&#x200B;**[!UICONTROL Write Data in Notebook]**&#x200B;生成包含选定数据集的写入单元格。
+- 使用&#x200B;**[!UICONTROL Explore Data in Notebook]**&#x200B;生成具有选定数据集的读取单元格。
 
 或者，您可以复制并粘贴以下代码单元格：
 
@@ -372,7 +372,7 @@ spark = SparkSession.builder.getOrCreate()
 
 **描述**
 
-用于从[!DNL PySpark]笔记本（[!DNL Python] 3内核）读取或写入数据集的自定义[!DNL Data Science Workspace]魔术命令。
+用于从[!DNL Data Science Workspace]笔记本（[!DNL PySpark] 3内核）读取或写入数据集的自定义[!DNL Python]魔术命令。
 
 | 名称 | 描述 | 必需 |
 | --- | --- | --- |
@@ -402,10 +402,10 @@ spark = SparkSession.builder.getOrCreate()
 
 您可以使用以下方法在JupyterLab buy中自动生成上述示例：
 
-选择JupyterLab左侧导航栏中的数据图标选项卡（突出显示如下）。 出现&#x200B;**[!UICONTROL 数据集]**&#x200B;和&#x200B;**[!UICONTROL 架构]**&#x200B;目录。 选择&#x200B;**[!UICONTROL 数据集]**&#x200B;并右键单击，然后从要使用的数据集上的下拉菜单中选择&#x200B;**[!UICONTROL 在笔记本中写入数据]**&#x200B;选项。 笔记本底部会显示一个可执行代码条目。
+选择JupyterLab左侧导航栏中的数据图标选项卡（突出显示如下）。 出现&#x200B;**[!UICONTROL Datasets]**&#x200B;和&#x200B;**[!UICONTROL Schemas]**&#x200B;目录。 选择&#x200B;**[!UICONTROL Datasets]**&#x200B;并右键单击，然后从要使用的数据集上的下拉菜单中选择&#x200B;**[!UICONTROL Write Data in Notebook]**&#x200B;选项。 笔记本底部会显示一个可执行代码条目。
 
-- 使用&#x200B;**[!UICONTROL 浏览笔记本中的数据]**&#x200B;生成读取单元格。
-- 使用&#x200B;**[!UICONTROL 在笔记本中写入数据]**&#x200B;生成写入单元格。
+- 使用&#x200B;**[!UICONTROL Explore Data in Notebook]**&#x200B;生成读取单元格。
+- 使用&#x200B;**[!UICONTROL Write Data in Notebook]**&#x200B;生成写单元格。
 
 ![](../images/jupyterlab/data-access/pyspark-write-dataset.png)
 
@@ -534,10 +534,12 @@ df1.show(10)
 
 可以使用以下方法在JupyterLab buy中自动生成上述示例：
 
-选择JupyterLab左侧导航栏中的数据图标选项卡（突出显示如下）。 出现&#x200B;**[!UICONTROL 数据集]**&#x200B;和&#x200B;**[!UICONTROL 架构]**&#x200B;目录。 选择&#x200B;**[!UICONTROL 数据集]**&#x200B;并右键单击，然后从要使用的数据集上的下拉菜单中选择&#x200B;**[!UICONTROL 在笔记本中浏览数据]**&#x200B;选项。 笔记本底部会显示一个可执行代码条目。
+选择JupyterLab左侧导航栏中的数据图标选项卡（突出显示如下）。 出现&#x200B;**[!UICONTROL Datasets]**&#x200B;和&#x200B;**[!UICONTROL Schemas]**&#x200B;目录。 选择&#x200B;**[!UICONTROL Datasets]**&#x200B;并右键单击，然后从要使用的数据集上的下拉菜单中选择&#x200B;**[!UICONTROL Explore Data in Notebook]**&#x200B;选项。 笔记本底部会显示一个可执行代码条目。
+
 与
-- 使用&#x200B;**[!UICONTROL 浏览笔记本中的数据]**&#x200B;生成读取单元格。
-- 使用&#x200B;**[!UICONTROL 在笔记本中写入数据]**&#x200B;生成写入单元格。
+
+- 使用&#x200B;**[!UICONTROL Explore Data in Notebook]**&#x200B;生成读取单元格。
+- 使用&#x200B;**[!UICONTROL Write Data in Notebook]**&#x200B;生成写单元格。
 
 ![](../images/jupyterlab/data-access/scala-write-dataset.png)
 

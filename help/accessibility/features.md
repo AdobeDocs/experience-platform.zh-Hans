@@ -4,7 +4,7 @@ title: Experience Platform中的常规辅助功能
 type: Documentation
 description: 详细了解Adobe Experience Platform支持的常规辅助功能，包括键盘导航、调色板和对比度以及辅助技术支持。
 exl-id: 4b7e2f2b-af51-4376-8a63-16c921cc7135
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '483'
 ht-degree: 0%
@@ -24,6 +24,7 @@ Adobe Experience Platform致力于为所有用户提供无障碍和具有包容�
 Experience Platform致力于支持完整的键盘辅助功能。
 
 以下导航元素有助于促进无障碍功能：
+
 * Tab键可在UI元素、部分和菜单组之间移动。
 * 箭头键在菜单组中移动，以将焦点设置为单个活动元素。
 * Shift + Tab键向后移动Tab键顺序。

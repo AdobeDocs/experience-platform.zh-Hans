@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 检索数据摄取错误诊断
 description: 本文档提供了有关监控批次摄取、管理部分批次摄取错误的信息，以及部分批次摄取类型的参考。
 exl-id: b885fb00-b66d-453b-80b7-8821117c2041
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '976'
-ht-degree: 8%
+ht-degree: 12%
 
 ---
 
@@ -26,11 +26,11 @@ Adobe Experience Platform提供两种上传和摄取数据的方法。 您可以
 
 ### 正在读取示例 API 调用
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中有关[如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
 
 ### 收集所需标头的值
 
-要调用[!DNL Experience Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+为调用 [!DNL Experience Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
@@ -132,7 +132,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/af838510-22
 
 **响应**
 
-成功的响应将返回包含`path`个对象的JSON对象，这些对象详细说明诊断的保存位置。 响应将返回[JSON行](https://jsonlines.readthedocs.io/en/latest/)格式的`path`对象。
+成功的响应将返回包含`path`个对象的JSON对象，这些对象详细说明诊断的保存位置。 响应将返回`path`JSON行[格式的](https://jsonlines.readthedocs.io/en/latest/)对象。
 
 ```json
 {"path": "F1.json"}
@@ -214,7 +214,7 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `metrics.failedRecordCount` | 由于解析、转换或验证而无法处理的行数。 此值可以通过从`outputRecordCount`中减去`inputRecordCount`而派生。 此值在所有批次中生成，无论是否启用了`errorDiagnostics`。 |
+| `metrics.failedRecordCount` | 由于解析、转换或验证而无法处理的行数。 此值可以通过从`inputRecordCount`中减去`outputRecordCount`而派生。 此值在所有批次中生成，无论是否启用了`errorDiagnostics`。 |
 
 **带有错误的响应**
 
@@ -277,8 +277,8 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `metrics.failedRecordCount` | 由于解析、转换或验证而无法处理的行数。 此值可以通过从`outputRecordCount`中减去`inputRecordCount`而派生。 此值在所有批次中生成，无论是否启用了`errorDiagnostics`。 |
-| `errors.recordCount` | 因指定的错误代码而失败的行数。 如果启用了`errorDiagnostics`，则只生成&#x200B;**1&rbrace;值。** |
+| `metrics.failedRecordCount` | 由于解析、转换或验证而无法处理的行数。 此值可以通过从`inputRecordCount`中减去`outputRecordCount`而派生。 此值在所有批次中生成，无论是否启用了`errorDiagnostics`。 |
+| `errors.recordCount` | 因指定的错误代码而失败的行数。 如果启用了&#x200B;**，则只生成** 1}值。`errorDiagnostics` |
 
 >[!NOTE]
 >

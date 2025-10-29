@@ -4,9 +4,9 @@ title: Amazon Kinesis连接
 description: 创建到Amazon Kinesis存储的实时出站连接，以从Adobe Experience Platform流式传输数据。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: 7502810ff329a31f2fdaf6797bc7672118555e6a
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '1978'
+source-wordcount: '1944'
 ht-degree: 5%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
-> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
 由[!DNL Kinesis Data Streams]提供的[!DNL Amazon Web Services]服务允许您实时收集和处理大量数据记录流。
 
@@ -51,9 +51,9 @@ UI中的![Amazon Kinesis](../../assets/catalog/cloud-storage/amazon-kinesis/cata
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
----------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如[目标激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes)的选择配置文件属性屏幕中所选。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+|---------|----------|---------|
+| 导出类型 | **[!UICONTROL Profile-based]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如[目标激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes)的选择配置文件属性屏幕中所选。 |
+| 导出频率 | **[!UICONTROL Streaming]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -106,18 +106,18 @@ UI中的![Amazon Kinesis](../../assets/catalog/cloud-storage/amazon-kinesis/cata
 
 >[!IMPORTANT]
 > 
->若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 连接到此目标时，必须提供以下信息：
 
 ### 身份验证信息 {#authentication-information}
 
-输入下面的字段并选择&#x200B;**[!UICONTROL 连接到目标]**：
+输入以下字段并选择&#x200B;**[!UICONTROL Connect to destination]**：
 
 ![显示Amazon Kinesis身份验证详细信息已完成字段的UI屏幕图像](../../assets/catalog/cloud-storage/amazon-kinesis/kinesis-authentication-fields.png)
 
 * **[!DNL Amazon Web Services]访问密钥和密钥**：在[!DNL Amazon Web Services]中，生成`access key - secret access key`对以授予Experience Platform对您[!DNL Amazon Kinesis]帐户的访问权限。 请参阅[Amazon Web Services文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)以了解详情。
-* **[!UICONTROL 区域]**：指示要将数据流式传输到哪个[!DNL Amazon Web Services]区域。
+* **[!UICONTROL Region]**：指示要将数据流式传输到哪个[!DNL Amazon Web Services]区域。
 
 ### 填写目标详细信息 {#destination-details}
 
@@ -135,11 +135,11 @@ UI中的![Amazon Kinesis](../../assets/catalog/cloud-storage/amazon-kinesis/cata
 
 ![显示Amazon Kinesis目标详细信息已完成字段的UI屏幕图像](../../assets/catalog/cloud-storage/amazon-kinesis/kinesis-destination-details.png)
 
-* **[!UICONTROL 名称]**：为与[!DNL Amazon Kinesis]的连接提供一个名称
-* **[!UICONTROL 描述]**：提供您与[!DNL Amazon Kinesis]的连接描述。
-* **[!UICONTROL 流]**：提供您[!DNL Amazon Kinesis]帐户中现有数据流的名称。 Experience Platform会将数据导出到此流。
-* **[!UICONTROL 包括区段名称]**：如果希望数据导出包括正在导出的受众的名称，请切换。 有关选择此选项的数据导出示例，请参阅下面的[导出的数据](#exported-data)部分。
-* **[!UICONTROL 包括区段时间戳]**：如果要在数据导出时包括创建和更新受众时的UNIX时间戳，以及在将受众映射到目标以进行激活时的UNIX时间戳，请切换此选项。 有关选择此选项的数据导出示例，请参阅下面的[导出的数据](#exported-data)部分。
+* **[!UICONTROL Name]**：为与[!DNL Amazon Kinesis]的连接提供一个名称
+* **[!UICONTROL Description]**：提供您与[!DNL Amazon Kinesis]的连接描述。
+* **[!UICONTROL Stream]**：提供[!DNL Amazon Kinesis]帐户中现有数据流的名称。 Experience Platform会将数据导出到此流。
+* **[!UICONTROL Include Segment Names]**：如果希望数据导出包含正在导出的受众的名称，请切换。 有关选择此选项的数据导出示例，请参阅下面的[导出的数据](#exported-data)部分。
+* **[!UICONTROL Include Segment Timestamps]**：如果希望数据导出包括创建和更新受众时的UNIX时间戳，以及映射受众到目标以供激活时的UNIX时间戳，请进行切换。 有关选择此选项的数据导出示例，请参阅下面的[导出的数据](#exported-data)部分。
 
 <!--
 
@@ -153,13 +153,13 @@ UI中的![Amazon Kinesis](../../assets/catalog/cloud-storage/amazon-kinesis/cata
 
 您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
->* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 当前在导出到Amazon Kinesis目标时不支持[同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。 [了解详情](/help/destinations/ui/activate-streaming-profile-destinations.md#consent-policy-evaluation)。
 
 有关将受众激活到此目标的说明，请参阅[将受众数据激活到流式配置文件导出目标](../../ui/activate-streaming-profile-destinations.md)。
@@ -259,7 +259,7 @@ Experience Platform会优化将配置文件导出到[!DNL Amazon Kinesis]目标�
 }
 ```
 
-下面是导出数据的更多示例，具体取决于您在连接目标流中&#x200B;**[!UICONTROL 包括区段名称]**&#x200B;和&#x200B;**[!UICONTROL 包括区段时间戳]**&#x200B;选项选择的UI设置：
+下面是导出数据的更多示例，具体取决于您在连接目标流中&#x200B;**[!UICONTROL Include Segment Names]**&#x200B;和&#x200B;**[!UICONTROL Include Segment Timestamps]**&#x200B;选项选择的UI设置：
 
 +++ 以下数据导出示例在`segmentMembership`部分中包含受众名称
 

@@ -2,7 +2,7 @@
 title: 查询Accelerated Store报告分析指南
 description: 了解如何通过查询服务构建报表见解数据模型，以便与加速的商店数据和用户定义的仪表板一起使用。
 exl-id: 216d76a3-9ea3-43d3-ab6f-23d561831048
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1037'
 ht-degree: 0%
@@ -15,7 +15,7 @@ Query accelerated store允许您减少从数据中获得关键见解所需的时
 
 查询加速存储允许您构建自定义数据模型和/或扩展现有Adobe Real-Time Customer Data Platform数据模型。 然后，您可以参与报表分析，或将报表分析嵌入到您选择的报表/可视化框架中。 请参阅Real-Time Customer Data Platform分析数据模型文档，了解如何[自定义您的SQL查询模板，以便为您的营销和关键绩效指标(KPI)用例创建Real-Time CDP报告](../../../dashboards/data-models/cdp-insights-data-model-b2c.md)。
 
-Adobe Experience Platform的Real-Time CDP数据模型提供了有关用户档案、受众和目标的洞察，并启用了Real-Time CDP洞察功能板。 本文档将指导您完成创建报表见解数据模型的过程，并且还会指导您根据需要扩展Real-Time CDP数据模型。
+Adobe Experience Platform的Real-Time CDP数据模型提供了有关用户档案、受众和目标的见解，并启用了Real-Time CDP insight功能板。 本文档将指导您完成创建报表见解数据模型的过程，并且还会指导您根据需要扩展Real-Time CDP数据模型。
 
 ## 先决条件
 
@@ -27,17 +27,17 @@ Adobe Experience Platform的Real-Time CDP数据模型提供了有关用户档案
 
 ## 构建报表见解数据模型
 
-本教程以构建受众分析数据模型为例。 如果您使用一个或多个广告商平台来访问受众，则可以使用广告商的API来获取受众的大致匹配计数。
+本教程以构建受众insight数据模型为例。 如果您使用一个或多个广告商平台来访问受众，则可以使用广告商的API来获取受众的大致匹配计数。
 
 首先，您拥有来自您的源（可能来自广告商平台API）的初始数据模型。 要生成原始数据的汇总视图，请按照下图所述创建报表分析模型。 这样允许一个数据集获得受众匹配的上限和下限。
 
-![受众分析用户模型的实体关系图(ERD)。](../../images/data-distiller/sql-insights/audience-insight-user-model.png)
+![受众insight用户模型的实体关系图(ERD)。](../../images/data-distiller/sql-insights/audience-insight-user-model.png)
 
 在此示例中，`externalaudiencereach`表/数据集基于ID并跟踪匹配计数的下限和上限。 `externalaudiencemapping`维度表/数据集将外部ID映射到Experience Platform上的目标和受众。
 
 ## 使用Data Distiller创建报表见解模型
 
-接下来，创建一个报表分析模型（在此示例中为`audienceinsight`），并使用SQL命令`ACCOUNT=acp_query_batch and TYPE=QSACCEL`来确保在加速存储上创建它。 然后使用查询服务为`audienceinsight`数据库创建`audienceinsight.audiencemodel`架构。
+接下来，创建一个报表insight模型（在此示例中为`audienceinsight`），并使用SQL命令`ACCOUNT=acp_query_batch and TYPE=QSACCEL`来确保在加速存储上创建它。 然后使用查询服务为`audienceinsight.audiencemodel`数据库创建`audienceinsight`架构。
 
 >[!NOTE]
 >
@@ -51,7 +51,7 @@ CREATE schema audienceinsight.audiencemodel;
 
 ## 创建表、关系和填充数据
 
-现在您已经创建了`audienceinsight`报表分析模型，请创建`externalaudiencereach`和`externalaudiencemapping`表并建立它们之间的关系。 接下来，使用`ALTER TABLE`命令在表之间添加外键约束并定义关系。 以下SQL示例演示了如何执行此操作。
+现在您已经创建了`audienceinsight`报表insight模型，请创建`externalaudiencereach`和`externalaudiencemapping`表并建立它们之间的关系。 接下来，使用`ALTER TABLE`命令在表之间添加外键约束并定义关系。 以下SQL示例演示了如何执行此操作。
 
 ```sql
 CREATE TABLE IF NOT exists audienceinsight.audiencemodel.externalaudiencereach
@@ -88,12 +88,12 @@ ALTER TABLE externalaudiencereach ADD  CONSTRAINT FOREIGN KEY (ext_custom_audien
 
 ```console
     Database     |    Schema     | GroupType |      ChildType       |        ChildName        | PhysicalParent |               ChildId               
------------------+---------------+-----------+----------------------+-------------------------+----------------+--------------------------------------
+|-----------------+---------------+-----------+----------------------+-------------------------+----------------+--------------------------------------
  audienceinsight | audiencemodel | QSACCEL   | Data Warehouse Table | externalaudiencemapping | true           | 9155d3b4-889d-41da-9014-5b174f6fa572
  audienceinsight | audiencemodel | QSACCEL   | Data Warehouse Table | externalaudiencereach   | true           | 1b941a6d-6214-4810-815c-81c497a0b636
 ```
 
-## 查询报表分析数据模型
+## 查询报表insight数据模型
 
 使用查询服务查询`audiencemodel.externalaudiencereach`维度表。 下面显示了示例查询。
 
@@ -113,7 +113,7 @@ LIMIT  5000 ;
 
 ```console
 ext_custom_audience_id | approximate_count_upper_bound
-------------------------+-------------------------------
+|------------------------+-------------------------------
  23850912218170554      |                          1000
  23850808585120554      |                       1012000
  23850808585220554      |                        100000
@@ -131,7 +131,7 @@ ext_custom_audience_id | approximate_count_upper_bound
 
 您可以通过其他详细信息扩展受众模型，以创建更丰富的维度表。 例如，您可以将受众名称和目标名称映射到外部受众标识符。 要实现此目的，请使用查询服务创建或刷新新数据集，并将其添加到将受众和目标与外部身份结合的受众模型。 下图说明了此数据模型扩展的概念。
 
-![链接Real-Time CDP分析数据模型和查询加速存储模型的ERD图。](../../images/data-distiller/sql-insights/updatingAudienceInsightUserModel.png)
+![链接Real-Time CDP insight数据模型和查询加速存储模型的ERD图。](../../images/data-distiller/sql-insights/updatingAudienceInsightUserModel.png)
 
 ## 创建维度表以扩展您的报表分析模型
 
@@ -158,7 +158,7 @@ ALTER TABLE externalaudiencereach  ADD  CONSTRAINT FOREIGN KEY (ext_custom_audie
 
 ```console
     Database     |     Schema     | GroupType |      ChildType       |                ChildName  | PhysicalParent |               ChildId               
------------------+----------------+-----------+----------------------+----------------------------------------------------+----------------+--------------------------------------
+|-----------------+----------------+-----------+----------------------+----------------------------------------------------+----------------+--------------------------------------
  audienceinsight | audiencemodel | QSACCEL   | Data Warehouse Table | external_seg_dest_map      | true           | 4b4b86b7-2db7-48ee-a67e-4b28cb900810
  audienceinsight | audiencemodel | QSACCEL   | Data Warehouse Table | externalaudiencemapping    | true           | b0302c05-28c3-488b-a048-1c635d88dca9
  audienceinsight | audiencemodel | QSACCEL   | Data Warehouse Table | externalaudiencereach      | true           | 4485c610-7424-4ed6-8317-eed0991b9727
@@ -186,7 +186,7 @@ LIMIT  25;
 
 ```console
 ext_custom_audience_id | destination_name |       audience_name        | destination_status | destination_id | audience_id 
-------------------------+------------------+---------------------------+--------------------+----------------+-------------
+|------------------------+------------------+---------------------------+--------------------+----------------+-------------
  23850808595110554      | FCA_Test2        | United States             | enabled            |     -605911558 | -1357046572
  23850799115800554      | FCA_Test2        | Born in 1980s             | enabled            |     -605911558 | -1224554872
  23850799115790554      | FCA_Test2        | Born in 1970s             | enabled            |     -605911558 |  1899603869

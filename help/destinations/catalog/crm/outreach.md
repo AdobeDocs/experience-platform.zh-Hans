@@ -3,9 +3,9 @@ keywords: CRM；CRM；CRM目标；外联；外联CRM目标
 title: 外联联系
 description: 外联目标允许您导出帐户数据，并在外联中激活它以满足您的业务需求。
 exl-id: 7433933d-7a4e-441d-8629-a09cb77d5220
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '1698'
+source-wordcount: '1639'
 ht-degree: 2%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 2%
 
 此[!DNL Adobe Experience Platform] [目标](/help/destinations/home.md)利用[外联更新资源API](https://api.outreach.io/api/v2/docs#update-an-existing-resource)，允许您更新与[!DNL Outreach]中潜在客户对应的受众中的身份。
 
-[!DNL Outreach]使用具有授权授权的OAuth 2作为身份验证机制与[!DNL Outreach] [!DNL Update Resource API]通信。 下面在[向目标身份验证](#authenticate)部分中进一步提供了向您的[!DNL Outreach]实例进行身份验证的说明。
+[!DNL Outreach]使用具有授权授权的OAuth 2作为身份验证机制与[!DNL Outreach] [!DNL Update Resource API]通信。 下面在[!DNL Outreach]向目标身份验证[部分中进一步提供了向您的](#authenticate)实例进行身份验证的说明。
 
 ## 用例 {#use-cases}
 
@@ -28,7 +28,7 @@ ht-degree: 2%
 
 ### Experience Platform先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL Outreach]目标之前，您必须在[!DNL Experience Platform]中创建一个[架构](/help/xdm/schema/composition.md)、[数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)和[区段](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=zh-Hans)。
+在将数据激活到[!DNL Outreach]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)区段[!DNL Experience Platform]。
 
 如果您需要有关受众状态的指导，请参阅Adobe有关[受众成员资格详细信息架构字段组](/help/xdm/field-groups/profile/segmentation.md)的文档。
 
@@ -82,9 +82,9 @@ ht-degree: 2%
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
----------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li> 您正在根据字段映射导出区段的所有成员，以及所需的架构字段&#x200B;*（例如：电子邮件地址、电话号码、姓氏）*。</li><li> 根据[受众计划](#schedule-segment-export-example)步骤期间提供的[!UICONTROL 映射ID]值，[!DNL Outreach]中的每个区段状态都将从Experience Platform更新为相应的受众状态。</li></ul> |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | <ul><li> 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。</li></ul> |
+|---------|----------|---------|
+| 导出类型 | **[!UICONTROL Profile-based]** | <ul><li> 您正在根据字段映射导出区段的所有成员，以及所需的架构字段&#x200B;*（例如：电子邮件地址、电话号码、姓氏）*。</li><li> 根据[!DNL Outreach]受众计划[!UICONTROL Mapping ID]步骤期间提供的[值，](#schedule-segment-export-example)中的每个区段状态都会从Experience Platform更新为相应的受众状态。</li></ul> |
+| 导出频率 | **[!UICONTROL Streaming]** | <ul><li> 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -92,15 +92,15 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 > 
-> 若要连接到目标，您需要&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+> 若要连接到目标，您需要&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写下面两个部分中列出的字段。
 
-在&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**&#x200B;中，搜索[!DNL Outreach]。 或者，您可以在CRM类别下找到它。
+在&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**&#x200B;内，搜索[!DNL Outreach]。 或者，您可以在CRM类别下找到它。
 
 ### 验证目标 {#authenticate}
 
-要验证到目标，请选择&#x200B;**[!UICONTROL 连接到目标]**。
+要验证目标，请选择&#x200B;**[!UICONTROL Connect to destination]**。
 
 ![Experience Platform UI屏幕截图，显示如何对外联进行身份验证。](../../assets/catalog/crm/outreach/authenticate-destination.png)
 
@@ -112,8 +112,8 @@ ht-degree: 2%
 
 ![外联UI屏幕截图，显示用于输入密码步骤以验证外联的字段。](../../assets/catalog/crm/outreach/authenticate-destination-login-password.png)
 
-* **[!UICONTROL 用户名]**：您的[!DNL Outreach]帐户电子邮件。
-* **[!UICONTROL 密码]**：您的[!DNL Outreach]帐户密码。
+* **[!UICONTROL Username]**：您的[!DNL Outreach]帐户电子邮件。
+* **[!UICONTROL Password]**：您的[!DNL Outreach]帐户密码。
 
 如果提供的详细信息有效，则UI会显示&#x200B;**已连接**&#x200B;状态，并带有绿色复选标记。 然后，您可以继续执行下一步。
 
@@ -122,21 +122,21 @@ ht-degree: 2%
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 ![Experience Platform UI屏幕截图显示如何填写外联目标的详细信息。](../../assets/catalog/crm/outreach/destination-details.png)
 
-* **[!UICONTROL 名称]**：将来用于识别此目标的名称。
-* **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
+* **[!UICONTROL Name]**：将来用于识别此目标的名称。
+* **[!UICONTROL Description]**：可帮助您将来识别此目标的描述。
 
 ### 启用警报 {#enable-alerts}
 
 您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
->* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+>* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 有关将受众激活到此目标的说明，请阅读[将配置文件和受众激活到流式受众导出目标](../../ui/activate-segment-streaming-destinations.md)。
 
@@ -144,15 +144,14 @@ ht-degree: 2%
 
 要将受众数据从Adobe Experience Platform正确发送到[!DNL Outreach]目标，您需要完成字段映射步骤。 映射包括在Experience Platform帐户中的Experience Data Model (XDM)架构字段与其与目标中的相应等效字段之间创建链接。 要将XDM字段正确映射到[!DNL Outreach]目标字段，请执行以下步骤：
 
-1. 在[!UICONTROL 映射]步骤中，单击&#x200B;**[!UICONTROL 添加新映射]**。 您将在屏幕上看到一个新映射行。
+1. 在[!UICONTROL Mapping]步骤中，单击&#x200B;**[!UICONTROL Add new mapping]**。 您将在屏幕上看到一个新映射行。
    ![Experience Platform UI屏幕截图显示如何添加新映射](../../assets/catalog/crm/outreach/add-new-mapping.png)
 
-1. 在[!UICONTROL 选择源字段]窗口中，选择&#x200B;**[!UICONTROL 选择身份命名空间]**&#x200B;类别并添加所需的映射。
+1. 在[!UICONTROL Select source field]窗口中，选择&#x200B;**[!UICONTROL Select identity namespace]**类别并添加所需的映射。
    ![Experience Platform UI屏幕截图显示Source映射](../../assets/catalog/crm/outreach/source-mapping.png)
 
-1. 在[!UICONTROL 选择目标字段]窗口中，选择要将源字段映射到的目标字段类型。
-   * **[!UICONTROL 选择身份命名空间]**：选择此选项可将源字段映射到列表中的身份命名空间。
-
+1. 在[!UICONTROL Select target field]窗口中，选择要将源字段映射到的目标字段类型。
+   * **[!UICONTROL Select identity namespace]**：选择此选项可从列表中将源字段映射到标识命名空间。
      ![Experience Platform UI屏幕截图显示使用ExtendeoId的Target映射。](../../assets/catalog/crm/outreach/target-mapping.png)
 
    * 在XDM配置文件架构和[!DNL Outreach]实例之间添加以下映射：
@@ -161,8 +160,7 @@ ht-degree: 2%
      |---|---|---|
      | `Oid` | `OutreachId` | 是 |
 
-   * **[!UICONTROL 选择自定义属性]**：选择此选项可将源字段映射到您在[!UICONTROL 属性名称]字段中定义的自定义属性。 有关支持的属性的完整列表，请参阅[[!DNL Outreach] 潜在客户文档](https://api.outreach.io/api/v2/docs#prospect)。
-
+   * **[!UICONTROL Select custom attributes]**：选择此选项以将源字段映射到您在[!UICONTROL Attribute name]字段中定义的自定义属性。 有关支持的属性的完整列表，请参阅[[!DNL Outreach] 潜在客户文档](https://api.outreach.io/api/v2/docs#prospect)。
      ![Experience Platform UI屏幕截图显示使用LastName的Target映射。](../../assets/catalog/crm/outreach/target-mapping-lastname.png)
 
    * 例如，根据要更新的值，在XDM配置文件架构和[!DNL Outreach]实例之间添加以下映射：
@@ -173,18 +171,17 @@ ht-degree: 2%
      | `person.name.lastName` | `lastName` |
 
    * 下面显示了使用这些映射的示例：
-
      ![显示Target映射的Experience Platform UI屏幕快照示例。](../../assets/catalog/crm/outreach/mappings.png)
 
 ### 计划受众导出和示例 {#schedule-segment-export-example}
 
 * 执行[计划受众导出](../../ui/activate-segment-streaming-destinations.md)步骤时，必须手动将Experience Platform受众映射到[!DNL Outreach]中的自定义字段属性。
 
-* 为此，请选择每个区段，然后输入与&#x200B;**[!UICONTROL 映射ID]**&#x200B;字段中来自[!DNL Outreach]的&#x200B;*自定义字段`N`标签*&#x200B;字段对应的数值。
+* 为此，请选择每个区段，然后输入与&#x200B;*字段中`N`的*&#x200B;自定义字段[!DNL Outreach]标签&#x200B;**[!UICONTROL Mapping ID]**&#x200B;字段对应的数值。
 
   >[!IMPORTANT]
   >
-  > * 在[!UICONTROL 映射ID]中使用的数值&#x200B;*(`N`)*&#x200B;应该与后缀为[!DNL Outreach]中的数字值的自定义属性键匹配。 示例： *自定义字段`N`标签*。
+  > * 在&#x200B;*内使用的数值`N`(*)[!UICONTROL Mapping ID]应该与[!DNL Outreach]内以数值为后缀的自定义属性键匹配。 示例： *自定义字段`N`标签*。
   > * 您只需指定数值，而无需指定整个自定义字段标签。
   > * [!DNL Outreach]支持最多150个自定义标签字段。
   > * 有关详细信息，请参阅[[!DNL Outreach] 潜在客户文档](https://api.outreach.io/api/v2/docs#prospect)。
@@ -201,19 +198,19 @@ ht-degree: 2%
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 选择&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**&#x200B;以导航到目标列表。
+1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**以导航到目标列表。
    ![显示“浏览目标”的Experience Platform UI屏幕截图。](../../assets/catalog/crm/outreach/browse-destinations.png)
 
-1. 选择目标并验证状态为&#x200B;**[!UICONTROL 已启用]**。
+1. 选择目标并验证状态为&#x200B;**[!UICONTROL enabled]**。
    ![Experience Platform UI屏幕截图显示针对所选目标运行的目标数据流。](../../assets/catalog/crm/outreach/destination-dataflow-run.png)
 
-1. 切换到&#x200B;**[!DNL Activation data]**&#x200B;选项卡，然后选择受众名称。
+1. 切换到&#x200B;**[!DNL Activation data]**选项卡，然后选择受众名称。
    ![显示“目标激活”数据的Experience Platform UI屏幕截图。](../../assets/catalog/crm/outreach/destinations-activation-data.png)
 
 1. 监控受众摘要，并确保用户档案计数对应于在区段内创建的计数。
    ![Experience Platform UI屏幕截图显示区段摘要。](../../assets/catalog/crm/outreach/segment.png)
 
-1. 登录到[!DNL Outreach]网站，然后导航到[!DNL Apps] > [!DNL Contacts]页面，并检查是否已添加受众中的配置文件。 您可以看到，根据[受众计划](#schedule-segment-export-example)步骤中提供的[!UICONTROL 映射ID]值，[!DNL Outreach]中的每个受众状态都已更新为Experience Platform中的相应受众状态。
+1. 登录到[!DNL Outreach]网站，然后导航到[!DNL Apps] > [!DNL Contacts]页面，并检查是否已添加受众中的配置文件。 您可以看到，根据[!DNL Outreach]受众计划[!UICONTROL Mapping ID]步骤期间提供的[值，](#schedule-segment-export-example)中的每个受众状态都更新为Experience Platform中的相应受众状态。
 
 ![外联UI屏幕截图显示具有更新受众状态的外联潜在客户页面。](../../assets/catalog/crm/outreach/outreach-prospect.png)
 
@@ -227,7 +224,7 @@ ht-degree: 2%
 
 ![Experience Platform UI屏幕截图显示“错误请求错误”。](../../assets/catalog/crm/outreach/error.png)
 
-要修复此错误，请验证您在Experience Platform中为[!DNL Outreach]受众提供的[!UICONTROL 映射ID]是否有效并且存在于[!DNL Outreach]中。
+要修复此错误，请确认您在Experience Platform中为[!UICONTROL Mapping ID]受众提供的[!DNL Outreach]有效且存在于[!DNL Outreach]中。
 
 ## 其他资源 {#additional-resources}
 

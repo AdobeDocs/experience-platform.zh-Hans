@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform；训练和评估；数据科学Workspace；热门主题；Sensei机器学习API
+keywords: Experience Platform；培训和评估；数据科学Workspace；热门主题；Sensei机器学习API
 solution: Experience Platform
 title: 使用Sensei机器学习API训练和评估模型
 type: Tutorial
 description: 本教程将向您展示如何使用Sensei机器学习API调用创建、训练和评估模型。
 exl-id: 8107221f-184c-426c-a33e-0ef55ed7796e
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1240'
 ht-degree: 1%
@@ -26,7 +26,7 @@ ht-degree: 1%
 
 按照[使用API导入打包的方法](./import-packaged-recipe-api.md)创建引擎，使用API训练和评估模型需要该引擎。
 
-按照[Experience PlatformAPI身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)开始进行API调用。
+按照[Experience Platform API身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)中的说明开始进行API调用。
 
 在本教程中，您现在应该具有以下值：
 
@@ -55,7 +55,7 @@ ht-degree: 1%
 
 ### 创建MLInstance
 
-可以使用以下请求来创建MLInstance。 您将使用通过[使用API导入打包的处方](./import-packaged-recipe-ui.md)教程创建引擎时返回的`{ENGINE_ID}`。
+可以使用以下请求来创建MLInstance。 您将使用通过`{ENGINE_ID}`使用API导入打包的处方[教程创建引擎时返回的](./import-packaged-recipe-ui.md)。
 
 **请求**
 
@@ -270,7 +270,7 @@ curl -X POST \
 }
 ```
 
-创建试验时，正文`{JSON_PAYLOAD}`应包含`mlInstanceId`或`mlInstanceQuery`参数。 在此示例中，计划试验将调用从`startTime`到`endTime`的每20分钟运行一次（在`cron`参数中设置）。
+创建试验时，正文`{JSON_PAYLOAD}`应包含`mlInstanceId`或`mlInstanceQuery`参数。 在此示例中，计划试验将调用从`cron`到`startTime`的每20分钟运行一次（在`endTime`参数中设置）。
 
 **响应**
 
@@ -438,6 +438,7 @@ GET调用将在`state`参数中提供状态，如下所示：
 `{EXPERIMENT_ID}`：表示试验运行所在试验的ID。
 
 除了`DONE`状态之外，其他状态包括：
+
 - `PENDING`
 - `RUNNING`
 - `FAILED`

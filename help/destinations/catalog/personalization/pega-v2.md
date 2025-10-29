@@ -1,9 +1,10 @@
 ---
 title: (V2) Pega CDH实时受众连接
 description: 使用Adobe Experience Platform中的Pega客户决策中心实时受众目标，将用户档案属性和受众成员资格数据发送到Pega客户决策中心，以便做出次优决策。
-source-git-commit: a51f6bd189bc25018cf25e69fe23bc9f6b3372dd
+exl-id: cbb998f9-c268-4d65-87d8-fab56c0844dc
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '1033'
+source-wordcount: '1000'
 ht-degree: 3%
 
 ---
@@ -36,9 +37,9 @@ Adobe Experience Platform中的配置文件受众成员资格在加载到[!DNL P
 
 使用此目标将数据导出到Adobe Experience Platform之前，请确保在[!DNL Pega Customer Decision Hub]中完成以下先决条件：
 
-* 在您的[!DNL Pega Customer Decision Hub]实例中配置[Adobe Experience Platform配置文件和受众成员资格集成组件](https://docs.pega.com/bundle/components/page/customer-decision-hub/components/adobe-membership-component.html)。
-* 在[!DNL Pega Customer Decision Hub]实例中使用客户端凭据[&#128279;](https://docs.pega.com/bundle/platform/page/platform/security/configure-oauth-2-client-registration.html)授权类型配置OAuth 2.0 客户端注册。
-* 在[!DNL Pega Customer Decision Hub]实例中为Adobe受众成员资格数据流配置[实时运行数据流](https://docs.pega.com/bundle/platform/page/platform/decision-management/data-flow-run-real-time-create.html)。
+* 在您的[实例中配置](https://docs.pega.com/bundle/components/page/customer-decision-hub/components/adobe-membership-component.html)Adobe Experience Platform配置文件和受众成员资格集成组件[!DNL Pega Customer Decision Hub]。
+* 在[实例中使用客户端凭据](https://docs.pega.com/bundle/platform/page/platform/security/configure-oauth-2-client-registration.html)授权类型配置OAuth 2.0 [!DNL Pega Customer Decision Hub]客户端注册。
+* 在[实例中为Adobe受众成员资格数据流配置](https://docs.pega.com/bundle/platform/page/platform/decision-management/data-flow-run-real-time-create.html)实时运行数据流[!DNL Pega Customer Decision Hub]。
 
 ## 支持的身份 {#supported-identities}
 
@@ -55,9 +56,9 @@ Adobe Experience Platform中的配置文件受众成员资格在加载到[!DNL P
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
----------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | 导出具有标识符(*CustomerID*)、属性（姓氏、名字、位置等）和受众成员资格数据的受众的所有成员。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流式目标始终基于API连接。 根据受众评估，在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 有关详细信息，请参阅[流式目标](/help/destinations/destination-types.md#streaming-destinations)。 |
+|---------|----------|---------|
+| 导出类型 | **[!UICONTROL Profile-based]** | 导出具有标识符(*CustomerID*)、属性（姓氏、名字、位置等）和受众成员资格数据的受众的所有成员。 |
+| 导出频率 | **[!UICONTROL Streaming]** | 流式目标始终基于API连接。 根据受众评估，在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 有关详细信息，请参阅[流式目标](/help/destinations/destination-types.md#streaming-destinations)。 |
 
 {style="table-layout:auto"}
 
@@ -71,11 +72,11 @@ Adobe Experience Platform中的配置文件受众成员资格在加载到[!DNL P
 
 ![UI屏幕的图像，在该屏幕中，您可以使用带有客户端凭据身份验证的OAuth 2连接到Pega CDH目标](../../assets/catalog/personalization/pega/pega-api-authentication-oauth2-client-credentials.png)
 
-填写下面的字段并选择&#x200B;**[!UICONTROL 连接到目标]**：
+填写下面的字段并选择&#x200B;**[!UICONTROL Connect to destination]**：
 
-* **[!UICONTROL 访问令牌URL]**： [!DNL Pega Customer Decision Hub]实例上的OAuth 2访问令牌URL。
-* **[!UICONTROL 客户端ID]**：您在[!DNL Pega Customer Decision Hub]实例中生成的OAuth 2 [!DNL client ID]。
-* **[!UICONTROL 客户端密钥]**：您在[!DNL Pega Customer Decision Hub]实例中生成的OAuth 2 [!DNL client secret]。
+* **[!UICONTROL Access Token URL]**： [!DNL Pega Customer Decision Hub]实例上的OAuth 2访问令牌URL。
+* **[!UICONTROL Client ID]**：您在[!DNL client ID]实例中生成的OAuth 2 [!DNL Pega Customer Decision Hub]。
+* **[!UICONTROL Client Secret]**：您在[!DNL client secret]实例中生成的OAuth 2 [!DNL Pega Customer Decision Hub]。
 
 ### 填写目标详细信息 {#destination-details}
 
@@ -83,25 +84,25 @@ Adobe Experience Platform中的配置文件受众成员资格在加载到[!DNL P
 
 ![显示Pega CDH目标详细信息已完成字段的UI屏幕图像](../../assets/catalog/personalization/pega/pega-connect-destination-v2.png)
 
-要配置目标的详细信息，请填写必填字段并选择&#x200B;**[!UICONTROL 下一步]**。
+要配置目标的详细信息，请填写必填字段并选择&#x200B;**[!UICONTROL Next]**。
 
-* **[!UICONTROL 名称]**：将来用于识别此目标的名称。
-* **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
-* **[!UICONTROL Pega CDH主机名]**：配置文件将导出为JSON数据的Pega客户决策中心主机名。
-* **[!UICONTROL 应用程序别名]**：您为客户决策中心帐户配置的应用程序别名。 有关详细信息，请参阅[在您的[!DNL Pega Customer Decision Hub]实例中添加应用程序URL别名](https://docs.pega.com/bundle/platform/page/platform/user-experience/adding-application-url-alias.html)。
+* **[!UICONTROL Name]**：将来用于识别此目标的名称。
+* **[!UICONTROL Description]**：可帮助您将来识别此目标的描述。
+* **[!UICONTROL Pega CDH Host Name]**：将配置文件导出为JSON数据的Pega客户决策中心主机名。
+* **[!UICONTROL Application alias]**：您为客户决策中心帐户配置的应用程序别名。 有关详细信息，请参阅[在您的](https://docs.pega.com/bundle/platform/page/platform/user-experience/adding-application-url-alias.html)实例中添加应用程序URL别名[!DNL Pega Customer Decision Hub]。
 
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
->* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+>* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 有关将受众激活到此目标的说明，请参阅[将受众数据激活到流式配置文件导出目标](../../ui/activate-streaming-profile-destinations.md)。
 
 ### 映射 {#mapping}
 
-在[!UICONTROL 映射]步骤中，从合并架构和任何其他要导出到目标的XDM字段中选择一个唯一标识符。
+在[!UICONTROL Mapping]步骤中，从合并架构和任何其他要导出到目标的XDM字段中选择一个唯一标识符。
 
 ### 映射示例：在[!DNL Pega Customer Decision Hub]中激活配置文件更新 {#mapping-example}
 

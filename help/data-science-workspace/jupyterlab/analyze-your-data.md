@@ -5,9 +5,9 @@ title: 使用笔记本分析数据
 type: Tutorial
 description: 本教程重点介绍如何使用内置于Data Science Workspace中的Jupyter Notebooks来访问、探索和可视化您的数据。
 exl-id: 3b0148d1-9c08-458b-9601-979cb6c7a0fb
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '1730'
+source-wordcount: '1727'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ ht-degree: 0%
 
 在此部分中，将探讨之前摄取到零售模式的数据。
 
-数据科学Workspace允许用户通过[!DNL JupyterLab]平台创建[!DNL Jupyter Notebooks]，他们可以在其中创建和编辑机器学习工作流。 [!DNL JupyterLab]是一种服务器 — 客户端协作工具，允许用户通过Web浏览器编辑笔记本文档。 这些笔记本可以包含可执行代码和富文本元素。 出于我们的目的，我们将使用Markdown作为分析描述和可执行[!DNL Python]代码来执行数据探索和分析。
+数据科学Workspace允许用户通过[!DNL Jupyter Notebooks]平台创建[!DNL JupyterLab]，他们可以在其中创建和编辑机器学习工作流。 [!DNL JupyterLab]是一种服务器 — 客户端协作工具，允许用户通过Web浏览器编辑笔记本文档。 这些笔记本可以包含可执行代码和富文本元素。 出于我们的目的，我们将使用Markdown作为分析描述和可执行[!DNL Python]代码来执行数据探索和分析。
 
 ### 选择工作区
 
@@ -44,7 +44,7 @@ ht-degree: 0%
 
 ### 创建新笔记本
 
-在[!DNL Adobe Experience Platform] UI中，从顶部菜单中选择[!UICONTROL 数据科学]以转到数据科学Workspace。 从该页面中，选择[!DNL JupyterLab]以打开[!DNL JupyterLab]启动器。 您应会看到一个类似于此内容的页面。
+在[!DNL Adobe Experience Platform] UI中，从顶部菜单中选择[!UICONTROL Data Science]以转到数据科学Workspace。 从该页面中，选择[!DNL JupyterLab]以打开[!DNL JupyterLab]启动器。 您应会看到一个类似于此内容的页面。
 
 ![](../images/jupyterlab/analyze-data/jupyterlab-launcher-new.png)
 
@@ -84,7 +84,7 @@ ht-degree: 0%
 
 对于此部分，我们使用的是“零售额”数据集，该数据集与“零售额”示例笔记本中使用的数据集相同。
 
-在Jupyter Notebook中，您可以从左侧的&#x200B;**数据**&#x200B;选项卡![数据选项卡](../images/jupyterlab/analyze-data/dataset-tab.png)访问您的数据。 选择该选项卡后，将提供两个文件夹。 选择&#x200B;**[!UICONTROL 数据集]**&#x200B;文件夹。
+在Jupyter Notebook中，您可以从左侧的&#x200B;**数据**&#x200B;选项卡![数据选项卡](../images/jupyterlab/analyze-data/dataset-tab.png)访问您的数据。 选择该选项卡后，将提供两个文件夹。 选择&#x200B;**[!UICONTROL Datasets]**&#x200B;文件夹。
 
 ![](../images/jupyterlab/analyze-data/dataset_tab.png)
 
@@ -120,6 +120,7 @@ df.head()
 ### 探索您的数据
 
 现在，我们可以访问您的数据，接下来让我们通过使用统计和可视化来关注数据本身。 我们正在使用的数据集是一个零售数据集，它提供了一天中有关45个不同商店的各种信息。 给定`date`和`store`的某些特性包括：
+
 - `storeType`
 - `weeklySales`
 - `storeSize`
@@ -161,6 +162,7 @@ df.describe()
 #### 数据可视化
 
 现在我们知道了数据帧的值，我们要用可视化图表来补充此信息，以使事情更清晰、更易于识别模式。 在将结果传递给受众时，图形也很有用。 一些[!DNL Python]库对可视化图表很有用，其中包括：
+
 - [Matplotlib](https://matplotlib.org/)
 - [熊猫](https://pandas.pydata.org/)
 - [海港](https://seaborn.pydata.org/)
@@ -201,8 +203,9 @@ df.describe()
 ## 后续步骤
 
 本教程介绍了如何在数据科学Workspace中创建新的Jupyter Notebook，以及如何从外部和从[!DNL Adobe Experience Platform]访问数据。 具体来说，我们执行了以下步骤：
+
 - 创建新的Jupyter Notebook
 - 访问数据集和架构
-- 浏览数据集
+- 探索数据集
 
 现在您已准备好转至[下一部分](../models-recipes/package-source-files-recipe.md)以打包方法并导入数据科学Workspace。

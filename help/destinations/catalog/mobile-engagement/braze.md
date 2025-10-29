@@ -4,9 +4,9 @@ title: 钎焊连接
 description: Braze是一个全面的客户参与平台，可为客户与他们所喜爱的品牌之间提供相关且令人难忘的体验。
 last-substantial-update: 2024-08-20T00:00:00Z
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: 2440a4d4ec5d572d1d44228fe99914a01e19d60d
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '1123'
+source-wordcount: '1068'
 ht-degree: 2%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 2%
 
 请注意以下特定于[!DNL Braze]目标的详细信息：
 
-* [!DNL Adobe Experience Platform]受众导出到`AdobeExperiencePlatformSegments`属性下的[!DNL Braze]。
+* [!DNL Adobe Experience Platform]受众导出到[!DNL Braze]属性下的`AdobeExperiencePlatformSegments`。
 
 >[!NOTE]
 >
@@ -41,7 +41,7 @@ ht-degree: 2%
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| external_id | 支持映射任何标识的自定义[!DNL Braze]标识符。 | 只要将任何[标识](../../../identity-service/features/namespaces.md)映射到[!DNL Braze] [`external_id`](https://www.braze.com/docs/api/basics/#external-user-id-explanation)，就可以将其发送到[!DNL Braze]目标。 |
+| external_id | 支持映射任何标识的自定义[!DNL Braze]标识符。 | 只要将任何[标识](../../../identity-service/features/namespaces.md)映射到[!DNL Braze] [!DNL Braze][`external_id`，就可以将其发送到](https://www.braze.com/docs/api/basics/#external-user-id-explanation)目标。 |
 
 {style="table-layout:auto"}
 
@@ -61,9 +61,9 @@ ht-degree: 2%
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
----------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏）和/或身份（根据字段映射）。[!DNL Adobe Experience Platform]受众导出到`AdobeExperiencePlatformSegments`属性下的[!DNL Braze]。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+|---------|----------|---------|
+| 导出类型 | **[!UICONTROL Profile-based]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏）和/或身份（根据字段映射）。[!DNL Adobe Experience Platform]受众导出到[!DNL Braze]属性下的`AdobeExperiencePlatformSegments`。 |
+| 导出频率 | **[!UICONTROL Streaming]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -71,36 +71,36 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 > 
->若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写下面两个部分中列出的字段。
 
 ### 验证目标 {#authenticate}
 
-要验证到目标，请填写必填字段并选择&#x200B;**[!UICONTROL 连接到目标]**。
+要验证目标，请填写必填字段并选择&#x200B;**[!UICONTROL Connect to destination]**。
 
-* **[!UICONTROL Braze帐户令牌]**：这是您的[!DNL Braze] [!DNL API]密钥。 您可以在此处找到有关如何获取[!DNL API]密钥的详细说明： [REST API密钥概述](https://www.braze.com/docs/api/api_key/)。
+* **[!UICONTROL Braze account token]**：这是您的[!DNL Braze] [!DNL API]密钥。 您可以在此处找到有关如何获取[!DNL API]密钥的详细说明： [REST API密钥概述](https://www.braze.com/docs/api/api_key/)。
 
 ### 填写目标详细信息 {#destination-details}
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
-* **[!UICONTROL 名称]**：输入将来用于识别此目标的名称。
-* **[!UICONTROL 描述]**：输入可帮助您将来识别此目标的描述。
-* **[!UICONTROL 终结点实例]**：询问您的[!DNL Braze]代表您应该使用哪个终结点实例。
+* **[!UICONTROL Name]**：输入一个名称，您以后将通过该名称识别此目标。
+* **[!UICONTROL Description]**：输入可帮助您将来识别此目标的描述。
+* **[!UICONTROL Endpoint Instance]**：询问您的[!DNL Braze]代表您应使用哪个终结点实例。
 
 ### 启用警报 {#enable-alerts}
 
 您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
->* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+>* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 有关将受众激活到此目标的说明，请参阅[将受众数据激活到流式受众导出目标](../../ui/activate-segment-streaming-destinations.md)。
 
@@ -108,40 +108,42 @@ ht-degree: 2%
 
 要将受众数据从[!DNL Adobe Experience Platform]正确发送到[!DNL Braze]目标，您需要执行字段映射步骤。
 
-映射包括在[!DNL Experience Platform]帐户中的[!DNL Experience Data Model] (XDM)架构字段及其来自目标目标的对应项之间创建链接。
+映射包括在[!DNL Experience Data Model]帐户中的[!DNL Experience Platform] (XDM)架构字段及其来自目标目标的对应项之间创建链接。
 
 要将XDM字段正确映射到[!DNL Braze]目标字段，请执行以下步骤：
 
-在[!UICONTROL 映射]步骤中，单击&#x200B;**[!UICONTROL 添加新映射]**。
+在[!UICONTROL Mapping]步骤中，单击&#x200B;**[!UICONTROL Add new mapping]**。
 
 ![钎焊目标添加映射](../../assets/catalog/mobile-engagement/braze/mapping.png)
 
-在[!UICONTROL Source字段]部分中，单击空字段旁边的箭头按钮。
+在[!UICONTROL Source Field]部分中，单击空字段旁边的箭头按钮。
 
 ![钎焊目标Source映射](../../assets/catalog/mobile-engagement/braze/mapping-source.png)
 
-在[!UICONTROL 选择源字段]窗口中，您可以选择以下两种类别的XDM字段：
-* [!UICONTROL 选择属性]：使用此选项将XDM架构中的特定字段映射到[!DNL Braze]属性。
+在[!UICONTROL Select source field]窗口中，您可以选择以下两种类别的XDM字段：
+
+* [!UICONTROL Select attributes]：使用此选项将XDM架构中的特定字段映射到[!DNL Braze]属性。
 
 ![钎焊目标映射Source属性](../../assets/catalog/mobile-engagement/braze/mapping-attributes.png)
 
-* [!UICONTROL 选择身份命名空间]：使用此选项将[!DNL Experience Platform]身份命名空间映射到[!DNL Braze]命名空间。
+* [!UICONTROL Select identity namespace]：使用此选项将[!DNL Experience Platform]身份命名空间映射到[!DNL Braze]命名空间。
 
 ![钎焊目标映射Source命名空间](../../assets/catalog/mobile-engagement/braze/mapping-namespaces.png)
 
-选择源字段，然后单击&#x200B;**[!UICONTROL 选择]**。
+选择源字段，然后单击&#x200B;**[!UICONTROL Select]**。
 
-在[!UICONTROL 目标字段]部分中，单击字段右侧的映射图标。
+在[!UICONTROL Target Field]部分中，单击字段右侧的映射图标。
 
 ![钎焊目标映射](../../assets/catalog/mobile-engagement/braze/mapping-target.png)
 
-在[!UICONTROL 选择目标字段]窗口中，您可以选择以下两种目标字段类别：
-* [!UICONTROL 选择身份命名空间]：使用此选项将[!DNL Experience Platform]身份命名空间映射到[!DNL Braze]身份命名空间。
-* [!UICONTROL 选择自定义属性]：使用此选项将XDM属性映射到您在[!DNL Braze]帐户中定义的自定义[!DNL Braze]属性。 <br>您还可以使用此选项将现有XDM属性重命名为[!DNL Braze]。 例如，将`lastName` XDM属性映射到[!DNL Braze]中的自定义`Last_Name`属性，将在[!DNL Braze]中创建`Last_Name`属性（如果该属性不存在），并将`lastName` XDM属性映射到它。
+在[!UICONTROL Select target field]窗口中，您可以选择以下两种目标字段类别：
+
+* [!UICONTROL Select identity namespace]：使用此选项将[!DNL Experience Platform]身份命名空间映射到[!DNL Braze]身份命名空间。
+* [!UICONTROL Select custom attributes]：使用此选项将XDM属性映射到您在[!DNL Braze]帐户中定义的自定义[!DNL Braze]属性。 <br>您还可以使用此选项将现有XDM属性重命名为[!DNL Braze]。 例如，将`lastName` XDM属性映射到`Last_Name`中的自定义[!DNL Braze]属性，将在`Last_Name`中创建[!DNL Braze]属性（如果该属性不存在），并将`lastName` XDM属性映射到它。
 
 ![钎焊目标映射字段](../../assets/catalog/mobile-engagement/braze/mapping-target-fields.png)
 
-选择您的目标字段，然后单击&#x200B;**[!UICONTROL 选择]**。
+选择您的目标字段，然后单击&#x200B;**[!UICONTROL Select]**。
 
 您现在应在列表中看到字段映射。
 
@@ -164,7 +166,7 @@ ht-degree: 2%
 
 ## 导出的数据 {#exported-data}
 
-要验证数据是否已成功导出到[!DNL Braze]目标，请检查您的[!DNL Braze]帐户。 [!DNL Adobe Experience Platform]受众导出到`AdobeExperiencePlatformSegments`属性下的[!DNL Braze]。
+要验证数据是否已成功导出到[!DNL Braze]目标，请检查您的[!DNL Braze]帐户。 [!DNL Adobe Experience Platform]受众导出到[!DNL Braze]属性下的`AdobeExperiencePlatformSegments`。
 
 ## 故障排除 {#troubleshooting}
 

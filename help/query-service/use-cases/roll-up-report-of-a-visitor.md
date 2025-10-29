@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；主页；热门主题；查询服务；查询服务；experienceevent查询；experienceevent查询；Experience Event查询；
+keywords: Experience Platform；主页；热门主题；查询服务；查询服务；experienceevent查询；experienceevent查询；体验事件查询；
 title: 查看特定访客的汇总报表
 description: 以下文档提供了在Adobe Experience Platform查询服务中涉及Experience事件的查询示例。
 exl-id: 1348503f-65c1-41f9-b111-1284a49449a1
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '276'
 ht-degree: 1%
@@ -43,7 +43,7 @@ ORDER BY pageViews DESC;
 
 ```console
                id                 | pageViews |   A   |   B   |   C   | viewedParkas
-----------------------------------+-----------+-------+-------+-------+--------------
+|----------------------------------+-----------+-------+-------+-------+--------------
 457C3510571E5930-69AA721C4CBF9339 |     706.0 | 83.0  |  7.0  | 38.0  |          22
 ```
 

@@ -2,7 +2,7 @@
 title: 加密值
 description: 了解如何在使用Reactor API时加密敏感值。
 exl-id: d89e7f43-3bdb-40a5-a302-bad6fd1f4596
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '366'
 ht-degree: 1%
@@ -65,7 +65,7 @@ echo -n 'Example value' | gpg --armor --encrypt -r "Tags Data Encryption <launch
 该命令的输出将类似于以下内容：
 
 ```shell
------BEGIN PGP MESSAGE-----
+|-----BEGIN PGP MESSAGE-----
 
 hQIMAxJHCI6fydT/ARAAwQ0Y0k7eSAbd0T9seoaWX75G70O2gxAF20KY5FWiZ9/m
 /RkgJwhJusZyEdazC/CmAdfXi9bsVxQT0i06ErUxXfQF0VtweRlcyRBsxzLz6Hr+
@@ -81,7 +81,7 @@ ekGD+p3PyyvxjfS5G/wf9HQZ085+mnjpKFa7fuFBQPbg4WpBadhWrhobthC+hN3S
 SAE9yWU11Y3xpoxqg4y7iYZ6rnX+qP2oUNYxC2/hdhsFbbZtUh4s51qaoLbe0iWB
 OUoIPf4KxTaboHZOEy32ZBng5heVrn4i9w==
 =jrfE
------END PGP MESSAGE-----
+|-----END PGP MESSAGE-----
 ```
 
 此输出只能由拥有私钥的系统解密，

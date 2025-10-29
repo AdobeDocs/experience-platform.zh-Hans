@@ -2,7 +2,7 @@
 title: 使用高阶函数管理阵列和映射数据类型
 description: 了解如何使用查询服务中的高位函数管理数组并映射数据类型。 示例与常见用例一起提供。
 exl-id: dec4e4f6-ad6b-4482-ae8c-f10cc939a634
-source-git-commit: d2bc580ba1cacdfab45bdc6356c630a63e7d0f6e
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1470'
 ht-degree: 0%
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # 使用高阶函数管理阵列和映射数据类型
 
-使用本指南了解高阶函数如何处理复杂的数据类型，如数组和映射。 这些函数免除了分解数组、执行函数以及合并结果的需要。 高阶函数对于分析或处理时间序列数据集和分析特别有用，这些数据集和分析通常具有复杂的嵌套结构、数组、映射和多种用例。
+使用本指南了解高阶函数如何处理复杂的数据类型，如数组和映射。 这些函数免除了分解数组、执行函数以及合并结果的需要。 高阶函数对于分析或处理时间序列数据集和分析特别有用，这些数据集通常具有复杂的嵌套结构、数组、映射和多种用例。
 
 以下用例列表包含高阶数组和映射操作函数的示例。
 
@@ -27,7 +27,7 @@ ht-degree: 0%
 
 **示例**
 
-下面的SQL示例演示了此用例。 查询从指定的表中检索有限的行集，通过将每个项的`priceTotal`属性乘以73来转换`productListItems`数组。 结果包括`_id`、`productListItems`和转换后的`price_in_inr`列。 选择基于特定的时间戳范围。
+下面的SQL示例演示了此用例。 查询从指定的表中检索有限的行集，通过将每个项的`productListItems`属性乘以73来转换`priceTotal`数组。 结果包括`_id`、`productListItems`和转换后的`price_in_inr`列。 选择基于特定的时间戳范围。
 
 ```sql
 SELECT _id,
@@ -46,7 +46,7 @@ LIMIT  10;
 
 ```console
  productListItems | price_in_inr
--------------------+----------------
+|-------------------+----------------
 (8376, NULL, NULL) | 611448.0
 {(Burbank Hills Jeans, NULL, NULL), (Thermomax Steel, NULL, NULL), (Bruin Point Shearling Boots, NULL, NULL), (Uintas Pro Ski Gloves, NULL, NULL), (Timberline Survival Knife, NULL, NULL), (Thermomax Steel, NULL, NULL), (Timpanogos Scarf, NULL, NULL), (Lost Prospector Beanie, NULL, NULL), (Timpanogos Scarf, NULL, NULL), (Uintas Pro Ski Gloves, NULL, NULL)} | {0.0,0.0.0.0,0,0,0,0,0,0,0,0,0,0,0,0,0.0}
 (84763,NULL, NULL) | 6187699.0
@@ -64,7 +64,7 @@ LIMIT  10;
 
 **示例**
 
-在以下SQL示例中，查询从`geometrixxx_999_xdm_pqs_1batch_10k_rows`表中提取`productListItems`，并评估`productListItems`数组中是否存在SKU等于`123679`的元素。 然后，它根据特定时间戳范围筛选结果，并将最终结果限制为10行。
+在以下SQL示例中，查询从`productListItems`表中提取`geometrixxx_999_xdm_pqs_1batch_10k_rows`，并评估`123679`数组中是否存在SKU等于`productListItems`的元素。 然后，它根据特定时间戳范围筛选结果，并将最终结果限制为10行。
 
 ```sql
 SELECT productListItems
@@ -80,7 +80,7 @@ AND timestamp < to_timestamp('2017-11-02 00:00:00')limit 10;
 
 ```console
 productListItems
------------------
+|-----------------
 {(123679, NULL,NULL)}
 {(123679, NULL, NULL)}
 {(123679, NULL, NULL), (150196, NULL, NULL)}
@@ -120,7 +120,7 @@ LIMIT 10;
 
 ```console
 productListItems | _filter
------------------+---------
+|-----------------+---------
 (123679, NULL, NULL) (123679, NULL, NULL)
 (1346, NULL, NULL) |
 (98347, NULL, NULL) |
@@ -133,7 +133,7 @@ productListItems | _filter
 
 `aggregate(array<T>, A, function<A, T, A>[, function<A, R>]): R`
 
-此聚合操作将二元运算符应用于初始状态和数组中的所有元素。 它还会将多个值减小到单个状态。 然后，使用finish函数将最终状态转换为最终结果。 finish函数将二元运算符应用于所有数组元素后得到的最后一个状态取出，并对其进行运算以产生最终结果。
+此聚合操作将二元运算符应用于初始状态和数组中的所有元素。 它还会将多个值降为单个状态。 经过此缩减之后，最终状态通过使用finish函数转换为最终结果。 finish函数将二元算符应用于所有数组元素后得到的最后一个状态取出来，并对它做一些处理以产生最终结果。
 
 **示例**
 
@@ -159,7 +159,7 @@ LIMIT 50;
 
 ```console
 productListItems | max_value
------------------+---------
+|-----------------+---------
 (123679, NULL, NULL) | 247358
 (1346,NULL, NULL) | 2692
 (98347, NULL, NULL) | 196694
@@ -172,7 +172,7 @@ productListItems | max_value
 
 `zip_with(array<T>, array<U>, function<T, U, R>): array<R>`
 
-此代码段将两个数组的元素合并为一个新数组。 操作在阵列的每个元素上独立执行，并生成值对。 如果一个数组较短，则添加空值以匹配较长数组的长度。 这发生在应用该函数之前。
+此代码片段将两个数组的元素组合为一个新数组。 该操作在阵列的每个元素上独立地执行，并产生值对。 如果一个数组较短，则添加空值以匹配较长数组的长度。 这发生在应用函数之前。
 
 **示例**
 
@@ -193,7 +193,7 @@ limit 10;
 
 ```console
 productListItems     | zip_with
----------------------+---------
+|---------------------+---------
                      | {(1,NULL), (2,NULL), (3,NULL),(4,NULL), (5,NULL)}
 (123679, NULL, NULL) | {(1,123679), (2,NULL), (3,NULL), (4,NULL), (5,NULL)}
                      | {(1,NULL), (2,NULL),(3,NULL),(4,NULL), (5,NULL)}
@@ -212,11 +212,11 @@ productListItems     | zip_with
 
 `map_from_entries(array<struct<K, V>>): map<K, V>`
 
-此代码片段将键值对数组转换为映射。 在处理键值对数据时，该功能非常有用，因为这样有助于从更有条理和高效的结构中获益。
+此代码片段将键值对数组转换为映射。 在处理键值对数据（可从更有条理、效率更高的结构中受益）时，此插件非常有用。
 
 **示例**
 
-以下查询从序列和productListItems数组创建值对，使用map_from_entries将这些值对转换为映射，然后选择原始productListItems列以及新创建的map_from_entries列。 根据指定的时间戳范围对结果进行筛选和限制。
+以下查询从序列和productListItems数组创建值对，使用map_from_entries将这些值对转换为映射，然后选择原始productListItems列以及新创建的map_from_entries列。 系统会根据指定的时间戳范围对结果进行过滤和限制。
 
 ```sql
 SELECT productListItems,      map_from_entries(zip_with(Sequence(1,Size(productListItems)), productListItems, (x,y) -> struct(x, y))) AS map_from_entries
@@ -228,11 +228,11 @@ LIMIT 10;
 
 **结果**
 
-此SQL的结果与下面显示的结果类似。
+此SQL的结果将与下面所示的结果类似。
 
 ```console
 productListItems     | map_from_entries
----------------------+------------------
+|---------------------+------------------
 (123679, NULL, NULL) | [1 -> "(123679,NULL,NULL)"]
 (1346, NULL, NULL)   | [1 -> "(1346, NULL, NULL)"]
 (98347, NULL, NULL)  | [1 -> "(98347, NULL, NULL)"]
@@ -255,11 +255,11 @@ productListItems     | map_from_entries
 
 >[!IMPORTANT]
 >
->键中不应存在空元素。
+>键中应该没有空元素。
 
 **示例**
 
-下面的SQL将创建一个映射，其中键是使用`Sequence`函数生成的序列数字，而值是来自`productListItems`数组的元素。 查询选择`productListItems`列并使用`Map_from_arrays`函数根据生成的数字序列和数组的元素创建映射。 结果限制为十行，并根据时间戳范围进行筛选。
+下面的SQL创建了一个映射，其中键是使用`Sequence`函数生成的顺序数字，值是来自`productListItems`数组的元素。 查询选择`productListItems`列并使用`Map_from_arrays`函数根据生成的数字序列和数组的元素创建映射。 结果限制为10行，并根据时间戳范围进行筛选。
 
 ```sql
 SELECT productListItems,
@@ -278,7 +278,7 @@ LIMIT  10;
 
 ```console
 productListItems     | map_from_entries
----------------------+------------------
+|---------------------+------------------
 (123679, NULL, NULL) | [1 -> "(123679,NULL,NULL)"]
 (1346, NULL, NULL)   | [1 -> "(1346, NULL, NULL)"]
 (98347, NULL, NULL)  | [1 -> "(98347, NULL, NULL)"]
@@ -301,7 +301,7 @@ productListItems     | map_from_entries
 
 **示例**
 
-下面的SQL创建一个映射，其中`productListItems`中的每个项都与一个序列号相关联，该序列号随后与另一个映射连接，在该映射中键在特定序列范围内生成。
+下面的SQL创建一个映射，其中`productListItems`中的每个项都与一个序列号关联，该序列号随后与另一个映射关联，其中键在特定序列范围内生成。
 
 ```sql
 SELECT productListItems,
@@ -321,7 +321,7 @@ limit 10;
 
 ```console
 productListItems     | map_from_entries
----------------------+------------------
+|---------------------+------------------
 (123679, NULL, NULL) | [1 -> "(123679,NULL,NULL)",2 -> "(123679, NULL, NULL)"]
 (1346, NULL, NULL)   | [1 -> "(1346, NULL, NULL)",2 -> "(1346, NULL, NULL)"]
 (98347, NULL, NULL)  | [1 -> "(98347, NULL, NULL)",2 -> "(98347, NULL, NULL)"]
@@ -346,7 +346,7 @@ productListItems     | map_from_entries
 
 **示例**
 
-查询从表`geometrixxx_999_xdm_pqs_1batch_10k_rows`中选择`identitymap`列，并为每一行提取与键`AAID`关联的值。 结果仅限于指定时间戳范围内的行，而查询将输出限制为10行。
+查询从表`identitymap`中选择`geometrixxx_999_xdm_pqs_1batch_10k_rows`列，并为每一行提取与键`AAID`关联的值。 结果仅限于指定时间戳范围内的行，而查询将输出限制为10行。
 
 ```sql
 SELECT identitymap,
@@ -363,7 +363,7 @@ LIMIT 10;
 
 ```console
                                                                   identitymap                                            |  element_at(identitymap, AAID) 
--------------------------------------------------------------------------------------------------------------------------+-------------------------------------
+|-------------------------------------------------------------------------------------------------------------------------+-------------------------------------
 [AAID -> "(3617FBB942466D79-5433F727AD6A0AD, false)",ECID -> "(67383754798169392543508586197135045866,true)"]            | (3617FBB942466D79-5433F727AD6A0AD, false) 
 [AAID -> "[AAID -> "(533F56A682C059B1-396437F68879F61D, false)",ECID -> "(91989370462250197735311833131353001213,true)"] | (533F56A682C059B1-396437F68879F61D, false) 
 [AAID -> "(22E195F8A8ECCC6A-A39615C93B72A9F, false)",ECID -> "(57699241367342030964647681192998909474,true)"]            | (22E195F8A8ECCC6A-A39615C93B72A9F, false) 
@@ -401,7 +401,7 @@ LIMIT  10;
 
 ```console
                                                                   identitymap                                            |  size(identitymap) 
--------------------------------------------------------------------------------------------------------------------------+-------------------------------------
+|-------------------------------------------------------------------------------------------------------------------------+-------------------------------------
 [AAID -> "(3617FBB942466D79-5433F727AD6A0AD, false)",ECID -> "(67383754798169392543508586197135045866,true)"]            |      2  
 [AAID -> "[AAID -> "(533F56A682C059B1-396437F68879F61D, false)",ECID -> "(91989370462250197735311833131353001213,true)"] |      2  
 [AAID -> "(22E195F8A8ECCC6A-A39615C93B72A9F, false)",ECID -> "(57699241367342030964647681192998909474,true)"]            |      2  
@@ -439,7 +439,7 @@ LIMIT 10;
 
 ```console
 productListItems     | array_distinct(productListItems)
----------------------+---------------------------------
+|---------------------+---------------------------------
                      |
 (123679, NULL, NULL) | (123679, NULL, NULL)
                      |
@@ -460,6 +460,6 @@ productListItems     | array_distinct(productListItems)
 
 [`transform`函数示例](../use-cases/retrieve-similar-records.md#length-adjustment)涵盖了产品列表的标记化。
 
-[`filter`函数示例](../use-cases/retrieve-similar-records.md#filter-results)演示了从文本数据中更精细、更精确地提取相关信息。
+[`filter`函数示例](../use-cases/retrieve-similar-records.md#filter-results)演示了从文本数据中更精细、更精确的相关信息提取。
 
-[`reduce`函数](../use-cases/retrieve-similar-records.md#higher-order-function-solutions)提供了导出累积值或聚合的方法，这在各种分析和规划过程中可能至关重要。
+[`reduce`函数](../use-cases/retrieve-similar-records.md#higher-order-function-solutions)提供了一种导出累计值或汇总的方法，这些值或汇总在各种分析和计划流程中可能至关重要。

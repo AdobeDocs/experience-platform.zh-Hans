@@ -2,7 +2,7 @@
 title: Adform
 description: Adform是程序化媒体购买和销售解决方案的领先提供商。 将Adform连接到Adobe Experience Platform后，您可以通过基于Experience Cloud ID (ECID)的Adform激活第一方受众。
 last-substantial-update: 2025-10-23T00:00:00Z
-source-git-commit: c429ee227bd93455f541a32266bfbef9ddeaae06
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '972'
 ht-degree: 3%
@@ -28,16 +28,16 @@ Adform是程序化媒体购买和销售解决方案的领先提供商。 将Adfo
 
 使用此目标可根据Adobe Real-Time CDP ID (ECID)和Adform的ID Fusion将Experience Cloud受众发送到Adform以进行激活。 Adform的ID Fusion是Adform的ID解析服务，允许您根据Experience Cloud ID (ECID)激活第一方受众。
 
-一种常见的情况是，根据Experience Cloud ID (ECID)将网站访客重新定位到您的网站或应用程序。 您只需通过现成的[事件流](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking)或[客户端](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/catalog/analytics/adform) Adform扩展将Experience Cloud ID (ECID)发送到Adform。 之后，您可以通过Adform激活目标与Adform共享受众 — 完全基于Experience Cloud ID (ECID)。
+一种常见的情况是，根据Experience Cloud ID (ECID)将网站访客重新定位到您的网站或应用程序。 您只需通过现成的[事件流](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking)或[客户端](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/analytics/adform) Adform扩展将Experience Cloud ID (ECID)发送到Adform。 之后，您可以通过Adform激活目标与Adform共享受众 — 完全基于Experience Cloud ID (ECID)。
 
 ## 先决条件 {#prerequisites}
 
 * 您必须是现有Adform客户才能使用此目标。
 * 您需要拥有Adform Audience Base数据连接凭据。
    * 如果您没有Adform Audience Base数据连接凭据，请联系您的Adform代表。
-* 要正确同步，您需要具有从实体到Adform站点跟踪的[事件流](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking)或[客户端](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/catalog/analytics/adform)连接。
+* 要正确同步，您需要具有从实体到Adform站点跟踪的[事件流](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking)或[客户端](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/analytics/adform)连接。
    * 如果您没有从实体到Adform站点跟踪的事件流或客户端连接，请联系您的Adform代表。
-   * Adform为[事件流](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking)和[客户端](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/catalog/analytics/adform)提供了Adobe Experience Cloud扩展。
+   * Adform为[事件流](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking)和[客户端](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/analytics/adform)提供了Adobe Experience Cloud扩展。
 
 
 ## 支持的身份 {#supported-identities}
@@ -55,7 +55,7 @@ Adform支持激活下表中描述的标识。 了解有关[标识](/help/identit
 此部分介绍可将哪种类型的受众导出到此目标。
 
 | 受众来源 | 支持 | 描述 |
----------|----------|----------|
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
 | 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/overview.md#import-audience)导入Experience Platform。 |
 
@@ -66,7 +66,7 @@ Adform支持激活下表中描述的标识。 了解有关[标识](/help/identit
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
----------|----------|---------|
+|---------|----------|---------|
 | 导出类型 | **[!UICONTROL Segment export]** | 您正在导出区段（受众）的所有成员，其中包含&#x200B;*YourDestination*&#x200B;目标中使用的标识符（姓名、电话号码或其他）。 |
 | 导出频率 | **[!UICONTROL Batch]** | 批量目标以三、六、八、十二或二十四小时的增量将文件导出到下游平台。 阅读有关[基于批处理文件的目标](/help/destinations/destination-types.md#file-based)的详细信息。 |
 
