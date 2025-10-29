@@ -5,7 +5,7 @@ breadcrumb-title: Segmentation Service 指南
 user-guide-description: 使用 Adobe Experience Platform 生成的区段定义或外部来源，根据实时客户轮廓数据生成受众群体。
 feature: Segments
 role: User
-source-git-commit: 0f1ccaf9ea698737eccc25cec6f5b46b7184fc11
+source-git-commit: 60775eeeb0a07a95f3fac86dc4ecc8603328ed49
 workflow-type: tm+mt
 source-wordcount: '210'
 ht-degree: 43%
@@ -17,7 +17,7 @@ ht-degree: 43%
 
 - [分段服务概述](home.md)
 - [分段数据类型](data-types.md)
-- [分段护栏](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html?lang=zh-Hans#segmentation-guardrails)
+- [分段护栏](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html#segmentation-guardrails)
 - 分段API {#api}
    - [概述](api/overview.md)
    - [快速入门](api/getting-started.md)
@@ -35,7 +35,7 @@ ht-degree: 43%
    - [受众仪表板](ui/audience-dashboard.md)
    - [受众门户](ui/audience-portal.md)
    - [受众构成](ui/audience-composition.md)
-   - [受众构成增强功能](ui/composition-enchancements.md)
+   - [受众构成增强功能](ui/composition-enhancements.md)
    - [区段生成器](ui/segment-builder.md)
    - [联合受众构成](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/home)
    - [忽略年份时间限制更新](ui/ignore-year.md)
