@@ -2,10 +2,10 @@
 description: 了解如何在Experience Platform UI中更新现有源数据流。
 title: 在UI中更新Source连接数据流
 exl-id: 0499a2a3-5a22-47b1-ac0e-76a432bd26c0
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 4c4f221a5060360fa0381c8532227e854ad40a77
 workflow-type: tm+mt
-source-wordcount: '768'
-ht-degree: 8%
+source-wordcount: '885'
+ht-degree: 7%
 
 ---
 
@@ -27,21 +27,21 @@ ht-degree: 8%
 >title="数据集有效期限"
 >abstract="此列指示目标数据集在自动到期之前剩余的天数。<br>如果目标数据集到期，则数据流将失败。要防止数据流失败，请确保将目标数据集设置为在正确的日期到期。请参阅文档以了解如何更新过期日期。"
 
-在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**，然后从顶部标题中选择&#x200B;**[!UICONTROL 数据流]**。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL Sources]**，然后从顶部标题中选择&#x200B;**[!UICONTROL Dataflows]**。
 
 ![选择了数据流标题选项卡的源目录。](../../images/tutorials/update-dataflows/catalog.png)
 
 >[!TIP]
 >
->您可以使用过滤功能对数据流进行排序和过滤。 有关详细信息，请阅读在UI[&#128279;](./filter.md)中筛选源对象的指南。
+>您可以使用过滤功能对数据流进行排序和过滤。 有关详细信息，请阅读在UI[中筛选](./filter.md)源对象的指南。
 
-[!UICONTROL 数据流]页面显示组织中所有现有数据流的列表。 找到要更新的数据流，然后选择它旁边的省略号(`...`)。 此时会显示一个下拉菜单，其中显示了可供选择的选项列表，用于对现有数据流进行其他配置。
+[!UICONTROL Dataflows]页面显示贵组织中所有现有数据流的列表。 找到要更新的数据流，然后选择它旁边的省略号(`...`)。 此时会显示一个下拉菜单，其中显示了可供选择的选项列表，用于对现有数据流进行其他配置。
 
-要更新数据流，请选择&#x200B;**[!UICONTROL 更新数据流]**。
+要更新数据流，请选择&#x200B;**[!UICONTROL Update dataflow]**。
 
 ![列出了更新数据流的选项的下拉菜单。](../../images/tutorials/update-dataflows/dropdown_update.png)
 
-您将进入源工作流，您可以继续更新数据流的各个方面，包括在[!UICONTROL 提供数据流详细信息]步骤中的详细信息。
+您将进入源工作流，可以在其中继续更新数据流的各个方面，包括在[!UICONTROL Provide dataflow details]步骤中更新的详细信息。
 
 ### 更新映射 {#update-mapping}
 
@@ -61,21 +61,30 @@ ht-degree: 8%
 
 您还可以使用数据流页面中提供的内联更新选项更新数据流的摄取计划。
 
-从数据流页面中，选择数据流名称旁边的省略号(`...`)，然后从显示的下拉菜单中选择&#x200B;**[!UICONTROL 编辑计划]**。
+从数据流页面中，选择数据流名称旁边的省略号(`...`)，然后从显示的下拉菜单中选择&#x200B;**[!UICONTROL Edit schedule]**。
 
 ![源工作流的计划步骤。 使用此步骤更新数据流的计划。](../../images/tutorials/update-dataflows/dropdown_edit.png)
 
-**[!UICONTROL 编辑计划]**&#x200B;对话框为您提供了更新数据流的摄取频率和间隔率的选项。 设置更新的频率和间隔值后，选择&#x200B;**[!UICONTROL 保存]**。
+**[!UICONTROL Edit schedule]**&#x200B;对话框为您提供了用于更新数据流的摄取频率和间隔率的选项。 设置更新的频率和间隔值后，请选择&#x200B;**[!UICONTROL Save]**。
 
 ![可用于编辑数据流摄取计划的弹出窗口。](../../images/tutorials/update-dataflows/edit_schedule.png)
 
+请阅读以下部分，了解有关每周摄取计划如何工作的详细信息。
+
+#### 了解每周摄取计划 {#weekly}
+
+当您选择将数据流设置为按周计划运行时，数据流将基于以下任一情况运行：
+
+* 如果您的数据源已创建，但尚未摄取数据，则第一个每周数据流将在源创建日期后7天运行。 无论您何时设置计划，此7天间隔始终从创建源的时间开始。 初次运行后，数据流将根据配置的计划继续每周执行。
+* 如果源中的数据以前已被摄取，并且您再次计划每周摄取，则下一个数据流将在最近一次成功摄取7天后运行。
+
 ### 禁用数据流
 
-您可以使用相同的下拉菜单禁用数据流。 要禁用数据流，请选择&#x200B;**[!UICONTROL 禁用数据流]**。
+您可以使用相同的下拉菜单禁用数据流。 要禁用数据流，请选择&#x200B;**[!UICONTROL Disable dataflow]**。
 
 ![包含用于禁用数据流的选项的下拉菜单。](../../images/tutorials/update-dataflows/dropdown_disable.png)
 
-接下来，从出现的弹出窗口中选择[!UICONTROL 禁用]。
+接下来，从出现的弹出窗口中选择[!UICONTROL Disable]。
 
 ![必须确认要禁用数据流的弹出窗口。](../../images/tutorials/update-dataflows/disable_dataflow.png)
 
@@ -83,6 +92,6 @@ ht-degree: 8%
 
 ## 后续步骤
 
-通过学习本教程，您已成功使用[!UICONTROL 源]工作区来更新数据流的摄取计划和映射集。
+通过学习本教程，您已成功使用[!UICONTROL Sources]工作区来更新数据流的摄取计划和映射集。
 
 有关如何使用[!DNL Flow Service] API以编程方式执行这些操作的步骤，请参阅有关[使用流服务API更新数据流](../../tutorials/api/update-dataflows.md)的教程。
