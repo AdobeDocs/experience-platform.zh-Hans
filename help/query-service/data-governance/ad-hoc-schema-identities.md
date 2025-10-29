@@ -17,7 +17,7 @@ Adobe Experience Platform查询服务允许您使用SQL `ALTER TABLE`命令的�
 
 将数据集列标记为主标识或辅助标识需要了解`ALTER TABLE` SQL命令并充分了解数据隐私要求。 在继续阅读本文档之前，请查看以下文档：
 
-* [ `ALTER TABLE`命令的SQL语法指南](../sql/syntax.md)。
+* [&#x200B; `ALTER TABLE`命令的SQL语法指南](../sql/syntax.md)。
 * [数据管理概述](../../data-governance/home.md)，以了解更多信息。
 
 ## 添加约束 {#add-constraints}

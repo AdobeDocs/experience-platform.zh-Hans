@@ -79,7 +79,7 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 >请勿在字段名称中包含空白字符。 请改用下划线`(_)`字符作为分隔符。
->>在[!DNL Salesforce]内，您必须创建其自定义字段的&#x200B;**[!UICONTROL Field Name]**，该字段与在&#x200B;**[!UICONTROL Mapping ID]**&#x200B;内为每个激活的Experience Platform区段指定的值完全匹配。 例如，下面的屏幕截图显示了一个名为`crm_2_seg`的自定义字段。 将受众激活到此目标时，请将`crm_2_seg`添加为&#x200B;**[!UICONTROL Mapping ID]**&#x200B;以将受众从Experience Platform填充到此自定义字段中。
+>&#x200B;>在[!DNL Salesforce]内，您必须创建其自定义字段的&#x200B;**[!UICONTROL Field Name]**，该字段与在&#x200B;**[!UICONTROL Mapping ID]**&#x200B;内为每个激活的Experience Platform区段指定的值完全匹配。 例如，下面的屏幕截图显示了一个名为`crm_2_seg`的自定义字段。 将受众激活到此目标时，请将`crm_2_seg`添加为&#x200B;**[!UICONTROL Mapping ID]**&#x200B;以将受众从Experience Platform填充到此自定义字段中。
 
 下面显示了[!DNL Salesforce]，*步骤1 — 选择数据类型*中的自定义字段创建示例：
 ![显示自定义字段创建的Salesforce UI屏幕截图，步骤1 — 选择数据类型。](../../assets/catalog/crm/salesforce/create-salesforce-custom-field-step-1.png)
@@ -255,7 +255,7 @@ ht-degree: 1%
 以下显示了[!DNL Salesforce]中的自定义字段示例：
 ![[!DNL Salesforce]显示自定义字段的UI屏幕截图。](../../assets/catalog/crm/salesforce/salesforce-custom-field.png)
 
-以下显示了一个指示[!DNL Salesforce CRM] **[!UICONTROL Mapping ID]**位置的示例：
+以下显示了一个指示[!DNL Salesforce CRM] **[!UICONTROL Mapping ID]**&#x200B;位置的示例：
 ![显示计划受众导出的Experience Platform UI屏幕截图示例。](../../assets/catalog/crm/salesforce/schedule-segment-export.png)
 
 如上所示，[!DNL Salesforce] **[!UICONTROL Field Name]**&#x200B;与[!DNL Salesforce CRM] **[!UICONTROL Mapping ID]**&#x200B;中指定的值完全匹配。
@@ -273,13 +273,13 @@ ht-degree: 1%
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**以导航到目标列表。
+1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**&#x200B;以导航到目标列表。
    ![显示“浏览目标”的Experience Platform UI屏幕截图。](../../assets/catalog/crm/salesforce/browse-destinations.png)
 
 1. 选择目标并验证状态为&#x200B;**[!UICONTROL enabled]**。
    ![Experience Platform UI屏幕截图显示目标数据流运行。](../../assets/catalog/crm/salesforce/destination-dataflow-run.png)
 
-1. 切换到&#x200B;**[!UICONTROL Activation data]**选项卡，然后选择受众名称。
+1. 切换到&#x200B;**[!UICONTROL Activation data]**&#x200B;选项卡，然后选择受众名称。
    ![显示目标激活数据的Experience Platform UI屏幕截图示例。](../../assets/catalog/crm/salesforce/destinations-activation-data.png)
 
 1. 监控受众摘要，并确保用户档案计数对应于在区段内创建的计数。
@@ -289,7 +289,7 @@ ht-degree: 1%
 
    **使用联系人**
 
-   * 如果您在Experience Platform区段中选择了&#x200B;*联系人*，请导航到&#x200B;**[!DNL Apps]** > **[!DNL Contacts]**页面。
+   * 如果您在Experience Platform区段中选择了&#x200B;*联系人*，请导航到&#x200B;**[!DNL Apps]** > **[!DNL Contacts]**&#x200B;页面。
      ![Salesforce CRM屏幕截图显示了包含区段中的配置文件的“联系人”页面。](../../assets/catalog/crm/salesforce/contacts.png)
 
    * 选择&#x200B;*联系人*&#x200B;并检查字段是否已更新。 您可以看到，根据[!DNL Salesforce CRM]受众计划&#x200B;**[!UICONTROL Mapping ID]**&#x200B;期间提供的[值，](#schedule-segment-export-example)中的每个受众状态都更新为Experience Platform中的相应受众状态。
@@ -297,7 +297,7 @@ ht-degree: 1%
 
    **使用潜在客户**
 
-   * 如果您在Experience Platform区段中选择了&#x200B;*潜在客户*，请导航到&#x200B;**[!DNL Apps]** > **[!DNL Leads]**页面。
+   * 如果您在Experience Platform区段中选择了&#x200B;*潜在客户*，请导航到&#x200B;**[!DNL Apps]** > **[!DNL Leads]**&#x200B;页面。
      ![Salesforce CRM屏幕截图显示具有此区段中的配置文件的“潜在客户”页面。](../../assets/catalog/crm/salesforce/leads.png)
 
    * 选择&#x200B;*潜在客户*&#x200B;并检查字段是否已更新。 您可以看到，根据[!DNL Salesforce CRM]受众计划&#x200B;**[!UICONTROL Mapping ID]**&#x200B;期间提供的[值，](#schedule-segment-export-example)中的每个受众状态都更新为Experience Platform中的相应受众状态。

@@ -167,7 +167,7 @@ Edge配置文件查找用例受下表所述的特定性能护栏的约束。 有
 >[!IMPORTANT]
 >
 >配置文件属性可能包含敏感数据。 要保护此数据，必须通过[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/getting-started/)检索配置文件属性。 此外，您必须通过Edge Network API [交互式数据收集终结点](https://developer.adobe.com/data-collection-apis/docs/endpoints/interact/)检索配置文件属性，才能对API调用进行身份验证。
->><br>如果您不遵循上述要求，则将仅基于受众成员资格进行个性化，并且用户档案属性将不可使用。
+>&#x200B;><br>如果您不遵循上述要求，则将仅基于受众成员资格进行个性化，并且用户档案属性将不可使用。
 
 您在[步骤1](#create-datastream)中配置的数据流现在已准备好接受传入事件数据并使用边缘配置文件信息进行响应。
 

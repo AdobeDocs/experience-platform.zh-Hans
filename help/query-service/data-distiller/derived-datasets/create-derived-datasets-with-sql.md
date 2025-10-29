@@ -189,7 +189,7 @@ CREATE FIELDGROUP <field_group_name> [IF NOT EXISTS]  (field_name <data_type> pr
 >[!IMPORTANT]
 >
 >如果语句中未提供`label`标志或字段组已存在，则通过SQL创建字段组将失败。
->>请确保查询包含`IF NOT EXISTS`子句，以避免查询失败，因为该字段组已存在。
+>&#x200B;>请确保查询包含`IF NOT EXISTS`子句，以避免查询失败，因为该字段组已存在。
 
 现实世界的例子可能与下面所示的例子类似。
 

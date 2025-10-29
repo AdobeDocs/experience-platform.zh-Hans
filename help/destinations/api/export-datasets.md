@@ -83,7 +83,7 @@ ht-degree: 4%
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) [!DNL Experience Platform]。
 
 ### 收集必需标题和可选标题的值 {#gather-values-headers}
 
@@ -1632,7 +1632,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 >[!TIP]
 >
 >有关如何获取所需目标参数的信息，请参阅[目标文档页面的](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details)填写目标详细信息[!DNL Amazon S3]部分。
->>有关`datasetFileType`的其他支持值，请参阅API参考文档。
+>&#x200B;>有关`datasetFileType`的其他支持值，请参阅API参考文档。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -1685,7 +1685,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 >[!TIP]
 >
 >有关如何获取所需目标参数的信息，请参阅[目标文档页面的](/help/destinations/catalog/cloud-storage/azure-blob.md#destination-details)填写目标详细信息[!DNL Azure Blob Storage]部分。
->>有关`datasetFileType`的其他支持值，请参阅API参考文档。
+>&#x200B;>有关`datasetFileType`的其他支持值，请参阅API参考文档。
 
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
@@ -1739,7 +1739,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 >[!TIP]
 >
 >有关如何获取所需目标参数的信息，请参阅Azure [目标文档页面的](/help/destinations/catalog/cloud-storage/adls-gen2.md#destination-details)填写目标详细信息[!DNL Data Lake Gen 2(ADLS Gen2)]部分。
->>有关`datasetFileType`的其他支持值，请参阅API参考文档。
+>&#x200B;>有关`datasetFileType`的其他支持值，请参阅API参考文档。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -1791,7 +1791,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 >[!TIP]
 >
 >有关如何获取所需目标参数的信息，请参阅[目标文档页面的](/help/destinations/catalog/cloud-storage/data-landing-zone.md#destination-details)填写目标详细信息[!DNL Data Landing Zone]部分。
->>有关`datasetFileType`的其他支持值，请参阅API参考文档。
+>&#x200B;>有关`datasetFileType`的其他支持值，请参阅API参考文档。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -1843,7 +1843,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 >[!TIP]
 >
 >有关如何获取所需目标参数的信息，请参阅[目标文档页面的](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#destination-details)填写目标详细信息[!DNL Google Cloud Storage]部分。
->>有关`datasetFileType`的其他支持值，请参阅API参考文档。
+>&#x200B;>有关`datasetFileType`的其他支持值，请参阅API参考文档。
 
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
@@ -1897,7 +1897,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 >[!TIP]
 >
 >有关如何获取所需目标参数的信息，请参阅SFTP目标文档页面的[填写目标详细信息](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#destination-details)部分。
->>有关`datasetFileType`的其他支持值，请参阅API参考文档。
+>&#x200B;>有关`datasetFileType`的其他支持值，请参阅API参考文档。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 

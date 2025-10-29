@@ -147,7 +147,7 @@ ht-degree: 2%
 1. 在[!UICONTROL Mapping]步骤中，单击&#x200B;**[!UICONTROL Add new mapping]**。 您将在屏幕上看到一个新映射行。
    ![Experience Platform UI屏幕截图显示如何添加新映射](../../assets/catalog/crm/outreach/add-new-mapping.png)
 
-1. 在[!UICONTROL Select source field]窗口中，选择&#x200B;**[!UICONTROL Select identity namespace]**类别并添加所需的映射。
+1. 在[!UICONTROL Select source field]窗口中，选择&#x200B;**[!UICONTROL Select identity namespace]**&#x200B;类别并添加所需的映射。
    ![Experience Platform UI屏幕截图显示Source映射](../../assets/catalog/crm/outreach/source-mapping.png)
 
 1. 在[!UICONTROL Select target field]窗口中，选择要将源字段映射到的目标字段类型。
@@ -181,7 +181,7 @@ ht-degree: 2%
 
   >[!IMPORTANT]
   >
-  > * 在&#x200B;*内使用的数值`N`(*)[!UICONTROL Mapping ID]应该与[!DNL Outreach]内以数值为后缀的自定义属性键匹配。 示例： *自定义字段`N`标签*。
+  > * 在&#x200B;*内使用的数值`N`(*) [!UICONTROL Mapping ID]应该与[!DNL Outreach]内以数值为后缀的自定义属性键匹配。 示例： *自定义字段`N`标签*。
   > * 您只需指定数值，而无需指定整个自定义字段标签。
   > * [!DNL Outreach]支持最多150个自定义标签字段。
   > * 有关详细信息，请参阅[[!DNL Outreach] 潜在客户文档](https://api.outreach.io/api/v2/docs#prospect)。
@@ -198,13 +198,13 @@ ht-degree: 2%
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**以导航到目标列表。
+1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**&#x200B;以导航到目标列表。
    ![显示“浏览目标”的Experience Platform UI屏幕截图。](../../assets/catalog/crm/outreach/browse-destinations.png)
 
 1. 选择目标并验证状态为&#x200B;**[!UICONTROL enabled]**。
    ![Experience Platform UI屏幕截图显示针对所选目标运行的目标数据流。](../../assets/catalog/crm/outreach/destination-dataflow-run.png)
 
-1. 切换到&#x200B;**[!DNL Activation data]**选项卡，然后选择受众名称。
+1. 切换到&#x200B;**[!DNL Activation data]**&#x200B;选项卡，然后选择受众名称。
    ![显示“目标激活”数据的Experience Platform UI屏幕截图。](../../assets/catalog/crm/outreach/destinations-activation-data.png)
 
 1. 监控受众摘要，并确保用户档案计数对应于在区段内创建的计数。

@@ -64,7 +64,7 @@ ht-degree: 2%
 
 此时会显示&#x200B;**[!UICONTROL Settings]**&#x200B;页面。 在此处，您可以看到有关您的[!DNL Google]项目ID的信息以及有关您的[!DNL Google Cloud Storage]帐户的详细信息。 要访问互操作性设置，请从顶部标题中选择&#x200B;**[!UICONTROL Interoperability]**。
 
-![ Google Cloud Platform仪表板中突出显示的“互操作性”选项卡。](../../../sources/images/tutorials/create/google-cloud-storage/project-access.png)
+![&#x200B; Google Cloud Platform仪表板中突出显示的“互操作性”选项卡。](../../../sources/images/tutorials/create/google-cloud-storage/project-access.png)
 
 **[!UICONTROL Interoperability]**&#x200B;页面包含与您的服务帐户关联的身份验证、访问密钥和默认项目的信息。 要为您的服务帐户生成新的访问密钥ID和秘密访问密钥，请选择&#x200B;**[!UICONTROL Create a Key for a Service Account]**。
 

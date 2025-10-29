@@ -35,7 +35,7 @@ ht-degree: 21%
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) [!DNL Experience Platform]。
 
 ### 收集所需标头的值 {#gather-values-for-required-headers}
 
@@ -147,7 +147,7 @@ A successful response returns the current details of your connection including i
 >[!IMPORTANT]
 >
 >在删除目标帐户之前，必须删除指向目标帐户的任何现有数据流。
->>要删除现有数据流，请参阅以下页面：
+>&#x200B;>要删除现有数据流，请参阅以下页面：
 >
 >* [使用Experience Platform UI](../ui/delete-destinations.md)删除现有数据流；
 >* [使用流服务API](delete-destination-dataflow.md)删除现有数据流。

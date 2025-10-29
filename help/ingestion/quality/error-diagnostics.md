@@ -26,7 +26,7 @@ Adobe Experience Platform提供两种上传和摄取数据的方法。 您可以
 
 ### 正在读取示例 API 调用
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) [!DNL Experience Platform]。
 
 ### 收集所需标头的值
 
@@ -278,7 +278,7 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
 | 属性 | 描述 |
 | -------- | ----------- |
 | `metrics.failedRecordCount` | 由于解析、转换或验证而无法处理的行数。 此值可以通过从`inputRecordCount`中减去`outputRecordCount`而派生。 此值在所有批次中生成，无论是否启用了`errorDiagnostics`。 |
-| `errors.recordCount` | 因指定的错误代码而失败的行数。 如果启用了&#x200B;**，则只生成** 1}值。`errorDiagnostics` |
+| `errors.recordCount` | 因指定的错误代码而失败的行数。 如果启用了&#x200B;**，则只生成** 1&rbrace;值。`errorDiagnostics` |
 
 >[!NOTE]
 >

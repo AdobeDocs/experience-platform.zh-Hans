@@ -70,7 +70,7 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 ### 护栏 {#guardrails}
 
-有关[!DNL Mailchimp] API施加的限制的详细信息，请参阅[ ](https://mailchimp.com/developer/marketing/docs/fundamentals/#api-limits)速率限制[!DNL Mailchimp]。
+有关[!DNL Mailchimp] API施加的限制的详细信息，请参阅[&#x200B; &#x200B;](https://mailchimp.com/developer/marketing/docs/fundamentals/#api-limits)速率限制[!DNL Mailchimp]。
 
 ## 支持的身份 {#supported-identities}
 
@@ -189,7 +189,7 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 登录到您的[[!DNL Mailchimp]](https://login.mailchimp.com/)帐户。 然后导航到&#x200B;**[!DNL Audience]** > **[!DNL All Contacts]**页面，并检查受众中的联系人是否已添加以及受众中的联系人是否已使用受众名称进行更新。
+1. 登录到您的[[!DNL Mailchimp]](https://login.mailchimp.com/)帐户。 然后导航到&#x200B;**[!DNL Audience]** > **[!DNL All Contacts]**&#x200B;页面，并检查受众中的联系人是否已添加以及受众中的联系人是否已使用受众名称进行更新。
    ![显示“受众”页面的Mailchimp UI屏幕截图。](../../assets/catalog/email-marketing/mailchimp-tags/contacts.png)
 
 ## 数据使用和治理 {#data-usage-governance}

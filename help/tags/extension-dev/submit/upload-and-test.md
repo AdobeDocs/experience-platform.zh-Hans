@@ -63,8 +63,8 @@ npx @adobe/reactor-uploader
 
 >[!NOTE]
 > 默认情况下，Uploader需要服务器到服务器Oauth流的Adobe I/O凭据。 旧版`jwt-auth`凭据
-> > 通过运行`npx @adobe/reactor-uploader@v5.2.0`一直使用到2025年1月1日弃用。 所需的参数
-> > `jwt-auth`此处[找到](https://github.com/adobe/reactor-uploader/tree/cdc27f4f0e9fa3136b8cd5ca8c7271428b842452)版本以运行。
+> &#x200B;> 通过运行`npx @adobe/reactor-uploader@v5.2.0`一直使用到2025年1月1日弃用。 所需的参数
+> &#x200B;> `jwt-auth`此处[找到](https://github.com/adobe/reactor-uploader/tree/cdc27f4f0e9fa3136b8cd5ca8c7271428b842452)版本以运行。
 
 上传程序仅要求您输入几条信息。 可以从Adobe I/O控制台检索`clientId`和`clientSecret`。 导航到I/O控制台中的[集成页面](https://console.adobe.io/integrations)。 从下拉列表中选择正确的组织，找到正确的集成，然后选择&#x200B;**[!UICONTROL View]**。
 

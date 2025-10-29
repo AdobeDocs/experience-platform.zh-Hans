@@ -28,7 +28,7 @@ ht-degree: 1%
 >
 >* 要使用此API，您必须在Experience Platform UI中拥有到目标的现有连接。 阅读[连接到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html)和[将配置文件和受众激活到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html)以了解详细信息。
 >* 建立与目标的连接后，获取在[浏览与目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html)的连接时您应在对此端点的API调用中使用的目标实例ID。
->  >![UI图像如何获取目标实例ID](../../assets/testing-api/get-destination-instance-id.png)
+>  &#x200B;>![UI图像如何获取目标实例ID](../../assets/testing-api/get-destination-instance-id.png)
 
 ## 目标测试API操作快速入门 {#get-started}
 

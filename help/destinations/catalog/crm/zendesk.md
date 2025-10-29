@@ -154,16 +154,16 @@ ht-degree: 3%
 要验证您是否正确设置了目标，请执行以下步骤：
 
 1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**&#x200B;并导航到目标列表。
-1. 接下来，选择目标并切换到&#x200B;**[!UICONTROL Activation data]**选项卡，然后选择受众名称。
+1. 接下来，选择目标并切换到&#x200B;**[!UICONTROL Activation data]**&#x200B;选项卡，然后选择受众名称。
    ![显示目标激活数据的Experience Platform UI屏幕截图示例。](../../assets/catalog/crm/zendesk/destinations-activation-data.png)
 
 1. 监控受众摘要，并确保用户档案计数对应于区段中的计数。
    ![显示区段的Experience Platform UI屏幕快照示例。](../../assets/catalog/crm/zendesk/segment.png)
 
-1. 登录到[!DNL Zendesk]网站，然后导航到&#x200B;**[!UICONTROL Contacts]**&#x200B;页面以检查受众中的配置文件是否已添加。 此列表可以配置为显示使用受众**[!UICONTROL Mapping ID]**和受众状态创建的其他字段的列。
+1. 登录到[!DNL Zendesk]网站，然后导航到&#x200B;**[!UICONTROL Contacts]**&#x200B;页面以检查受众中的配置文件是否已添加。 此列表可以配置为显示使用受众&#x200B;**[!UICONTROL Mapping ID]**&#x200B;和受众状态创建的其他字段的列。
    ![Zendesk UI屏幕截图显示“联系人”页面，其中包含使用受众名称创建的其他字段。](../../assets/catalog/crm/zendesk/contacts.png)
 
-1. 或者，您可以向下钻取到单个&#x200B;**[!UICONTROL Person]**&#x200B;页面，并检查显示受众名称和受众状态的&#x200B;**[!UICONTROL Additional fields]**部分。
+1. 或者，您可以向下钻取到单个&#x200B;**[!UICONTROL Person]**&#x200B;页面，并检查显示受众名称和受众状态的&#x200B;**[!UICONTROL Additional fields]**&#x200B;部分。
    ![显示“人员”页面的Zendesk UI屏幕截图，“其他字段”部分显示受众名称和受众状态。](../../assets/catalog/crm/zendesk/contact.png)
 
 ## 数据使用和治理 {#data-usage-governance}

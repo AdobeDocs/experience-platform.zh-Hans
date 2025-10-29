@@ -38,8 +38,8 @@ npx @adobe/reactor-releaser
 
 >[!NOTE]
 > 默认情况下，发布者需要服务器到服务器Oauth流的Adobe I/O凭据。 旧版`jwt-auth`凭据
-> > 通过运行`npx @adobe/reactor-releaser@v3.1.3`一直使用到2025年1月1日弃用。 所需的参数
-> > `jwt-auth`此处[找到](https://github.com/adobe/reactor-releaser/tree/9ea66aa2c683fe7da0cca50ff5c9b9372f183bb5)版本以运行。
+> &#x200B;> 通过运行`npx @adobe/reactor-releaser@v3.1.3`一直使用到2025年1月1日弃用。 所需的参数
+> &#x200B;> `jwt-auth`此处[找到](https://github.com/adobe/reactor-releaser/tree/9ea66aa2c683fe7da0cca50ff5c9b9372f183bb5)版本以运行。
 
 发行商仅要求您输入几条信息。 可以从Adobe I/O控制台检索`clientId`和`clientSecret`。 导航到I/O控制台中的[集成页面](https://console.adobe.io/integrations)。 从下拉列表中选择正确的组织，找到正确的集成，然后选择&#x200B;**[!UICONTROL View]**。
 

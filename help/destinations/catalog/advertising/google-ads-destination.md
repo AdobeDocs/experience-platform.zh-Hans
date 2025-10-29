@@ -77,7 +77,7 @@ ht-degree: 2%
 >[!NOTE]
 >
 >在Experience Platform中设置您的第一个[!DNL Google Ads]目标之前，必须将该目标列入允许列表。 在创建目标之前，请确保[!DNL Google]已完成下面描述的允许列表流程。
->>此规则的例外情况适用于[Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html)客户。 如果您已在Audience Manager中创建了到此Google目标的连接，则无需再次完成允许列表流程，您可以继续后续步骤。
+>&#x200B;>此规则的例外情况适用于[Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html)客户。 如果您已在Audience Manager中创建了到此Google目标的连接，则无需再次完成允许列表流程，您可以继续后续步骤。
 
 在Experience Platform中创建[!DNL Google Ads]目标之前，您必须联系[!DNL Google]，以便Adobe列入允许列表被列入允许的数据提供程序列表，并且您的帐户将被添加到中。 联系[!DNL Google]并提供以下信息：
 
