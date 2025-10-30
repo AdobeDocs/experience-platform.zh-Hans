@@ -71,7 +71,7 @@ Experience Platform中的Edge个性化目标包括[Adobe Target](/help/destinati
 
 以下视频介绍这两种类型目标的特性：
 
->[!VIDEO](https://video.tv.adobe.com/v/29707?quality=12)
+>[!VIDEO](https://video.tv.adobe.com/v/32148?captions=chi_hans&quality=12)
 
 ## 导出的受众的类型 {#exported-audiences-types}
 

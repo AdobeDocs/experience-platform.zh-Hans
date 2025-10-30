@@ -69,7 +69,7 @@ ht-degree: 0%
 
 以下视频教程介绍Luma倾向模型笔记本：
 
->[!VIDEO](https://video.tv.adobe.com/v/333570)
+>[!VIDEO](https://video.tv.adobe.com/v/3452502?captions=chi_hans)
 
 ### 要求文件 {#requirements-file}
 
