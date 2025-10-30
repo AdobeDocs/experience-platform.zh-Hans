@@ -91,7 +91,7 @@ Adobe Experience Platform标记现在支持&#x200B;**[!UICONTROL Usage Authoriza
 
 在&#x200B;**[!UICONTROL OK]**&#x200B;对话框中选择&#x200B;**[!UICONTROL Authorization Usages]**。
 
-![ [!UICONTROL Authorization Usages]对话框，突出显示[!UICONTROL OK]](../images/shared-extensions/confirmation.png)
+![&#x200B; [!UICONTROL Authorization Usages]对话框，突出显示[!UICONTROL OK]](../images/shared-extensions/confirmation.png)
 
 返回到[!UICONTROL Usage Authorizations]选项卡，此时可以看到扩展现在显示&#x200B;**已批准**&#x200B;状态。
 

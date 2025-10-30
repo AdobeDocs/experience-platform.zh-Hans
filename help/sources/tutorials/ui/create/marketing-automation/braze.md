@@ -26,7 +26,7 @@ ht-degree: 1%
 要完成本指南中的步骤，您将需要：
 
 * 登录到[Adobe Experience Platform](https://platform.adobe.com)并拥有创建新的流源连接的权限。
-* 登录您的[[!DNL Braze] 仪表板](https://dashboard.braze.com/sign_in)、未使用的[Currences Connector许可证](https://www.braze.com/docs/user_guide/data_and_analytics/braze_currents)以及创建连接器的权限。 有关详细信息，请阅读设置[ [!DNL Currents]的](https://www.braze.com/docs/user_guide/data_and_analytics/braze_currents/setting_up_currents/#requirements)要求。
+* 登录您的[[!DNL Braze] 仪表板](https://dashboard.braze.com/sign_in)、未使用的[Currences Connector许可证](https://www.braze.com/docs/user_guide/data_and_analytics/braze_currents)以及创建连接器的权限。 有关详细信息，请阅读设置[&#x200B; [!DNL Currents]的](https://www.braze.com/docs/user_guide/data_and_analytics/braze_currents/setting_up_currents/#requirements)要求。
 
 ## 快速入门
 
@@ -94,7 +94,7 @@ ht-degree: 1%
 
 ### 收集所需的凭据
 
-创建连接后，必须收集以下凭据值，随后将在硬仪表板上提供这些值，以将数据发送到Experience Platform。 有关详细信息，请阅读有关导航到Currences[!DNL Braze]的[ ](https://www.braze.com/docs/user_guide/data_and_analytics/braze_currents/setting_up_currents/#step-2-navigate-to-currents)指南。
+创建连接后，必须收集以下凭据值，随后将在硬仪表板上提供这些值，以将数据发送到Experience Platform。 有关详细信息，请阅读有关导航到Currences[!DNL Braze]的[&#x200B; &#x200B;](https://www.braze.com/docs/user_guide/data_and_analytics/braze_currents/setting_up_currents/#step-2-navigate-to-currents)指南。
 
 | 字段 | 描述 |
 | --- | --- |

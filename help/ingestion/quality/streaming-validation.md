@@ -25,7 +25,7 @@ ht-degree: 15%
 
 ### 正在读取示例 API 调用
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) [!DNL Experience Platform]。
 
 ### 收集所需标头的值
 
@@ -208,5 +208,5 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID} \
 | 400 | 错误。 您的请求存在问题。 从流验证服务接收带有更多详细信息的错误消息。 |
 | 401 | 错误。 您的请求未获授权 — 您需要使用持有者令牌进行请求。 有关如何请求访问的详细信息，请查看此[教程](https://www.adobe.com/go/platform-api-authentication-en)或此[博客帖子](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f)。 |
 | 500 | 错误。 存在内部系统错误。 |
-| 501 | 错误。 这意味着此位置不支持同步验证&#x200B;****。 |
+| 501 | 错误。 这意味着此位置不支持同步验证&#x200B;**&#x200B;**。 |
 | 503 | 错误。 该服务当前不可用。 客户端应使用指数回退策略至少重试三次。 |

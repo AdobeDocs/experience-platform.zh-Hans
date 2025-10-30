@@ -11,7 +11,7 @@ ht-degree: 99%
 
 # 天气数据字段映射
 
-Adobe 已与 [!DNL [The Weather Company]](https://www.ibm.com/weather) 合作，将美国天气的其他上下文引入通过数据流收集的数据中。您可以将此数据用于 Experience Platform 中的分析、定位和区段创建操作。
+Adobe 已与 [[!DNL [The Weather Company]]](https://www.ibm.com/weather) 合作，将美国天气的其他上下文引入通过数据流收集的数据中。您可以将此数据用于 Experience Platform 中的分析、定位和区段创建操作。
 
 此页面列出了可用于扩充受众数据的所有可用字段。
 
@@ -110,7 +110,7 @@ Adobe 已与 [!DNL [The Weather Company]](https://www.ibm.com/weather) 合作，
 | [!DNL Day 1 Forecast Night Snow Range] | 一天的天气预测。夜间的天气信息。可能的降雪量（1-3&quot;、3-6&quot; 等）。 | `weather.forecast.day01Forecast.night.snowRange` |
 | [!DNL Day 1 Forecast Night Temperature Celsius] | 一天的天气预测。夜间的天气信息。以定义的测量单位表示的温度。范围 -140 到 140。温度（摄氏度） | `weather.forecast.day01Forecast.night.temperature.celsius` |
 | [!DNL Day 1 Forecast Night Temperature Fahrenheit] | 一天的天气预测。夜间的天气信息。以定义的测量单位表示的温度。范围 -140 到 140。温度（华氏度） | `weather.forecast.day01Forecast.night.temperature.fahrenheit` |
-| [!DNL  Day 1 Forecast Night Temperature Heat Index Celsius] | 一天的天气预测。夜间的天气信息。根据温度和湿度，暴露人员的体感温度。温度（摄氏度） | `weather.forecast.day01Forecast.night.temperatureHeatIndex.celsius` |
+| [!DNL &#x200B; Day 1 Forecast Night Temperature Heat Index Celsius] | 一天的天气预测。夜间的天气信息。根据温度和湿度，暴露人员的体感温度。温度（摄氏度） | `weather.forecast.day01Forecast.night.temperatureHeatIndex.celsius` |
 | [!DNL Day 1 Forecast Night Temperature Heat Index Fahrenheit] | 一天的天气预测。夜间的天气信息。根据温度和湿度，暴露人员的体感温度。温度（华氏度） | `weather.forecast.day01Forecast.night.temperatureHeatIndex.fahrenheit` |
 | [!DNL Day 1 Forecast Night Temperature Wind Chill Celsius] | 一天的天气预测。夜间的天气信息。根据温度和风速，暴露人员的体感温度。温度（摄氏度） | `weather.forecast.day01Forecast.night.temperatureWindChill.celsius` |
 | [!UICONTROL Day 1 Forecast Night Temperature Wind Chill Fahrenheit] | 一天的天气预测。夜间的天气信息。根据温度和风速，暴露人员的体感温度。温度（华氏度） | `weather.forecast.day01Forecast.night.temperatureWindChill.fahrenheit` |
