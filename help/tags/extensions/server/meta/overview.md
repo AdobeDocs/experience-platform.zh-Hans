@@ -1,10 +1,10 @@
 ---
-title: 元转换API扩展概述
+title: Meta转化API扩展概述
 description: 了解Adobe Experience Platform中用于事件转发的Meta Conversions API扩展。
 exl-id: 6b5836d6-6674-4978-9165-0adc1d7087b7
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '2583'
+source-wordcount: '2437'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 [[!DNL Meta Conversions API]](https://developers.facebook.com/docs/marketing-api/conversions-api/)允许您将服务器端营销数据连接到[!DNL Meta]技术，以优化广告定位、降低每次操作的成本和测量结果。 事件链接到[[!DNL Meta Pixel]](https://developers.facebook.com/docs/meta-pixel/) ID，并以类似于客户端事件的方式处理。
 
-使用[!DNL Meta Conversions API]扩展，您可以利用[事件转发](../../../ui/event-forwarding/overview.md)规则中API的功能，将数据从Adobe Experience PlatformEdge Network发送到[!DNL Meta]。 本文档介绍如何安装扩展并在事件转发[规则](../../../ui/managing-resources/rules.md)中使用其功能。
+使用[!DNL Meta Conversions API]扩展，您可以利用[事件转发](../../../ui/event-forwarding/overview.md)规则中API的功能，将数据从Adobe Experience Platform Edge Network发送到[!DNL Meta]。 本文档介绍如何安装扩展并在事件转发[规则](../../../ui/managing-resources/rules.md)中使用其功能。
 
 ## 演示
 
@@ -37,17 +37,17 @@ ht-degree: 0%
 
 ## 安装扩展
 
-要安装[!DNL Meta Conversions API]扩展，请导航到数据收集UI或Experience PlatformUI，然后从左侧导航中选择&#x200B;**[!UICONTROL 事件转发]**。 在此处，选择要将扩展添加到的资产，或改为创建新资产。
+要安装[!DNL Meta Conversions API]扩展，请导航到数据收集UI或Experience Platform UI，然后从左侧导航中选择&#x200B;**[!UICONTROL Event Forwarding]**。 在此处，选择要将扩展添加到的资产，或改为创建新资产。
 
-选择或创建所需的属性后，在左侧导航中选择&#x200B;**[!UICONTROL 扩展]**，然后选择&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡。 搜索[!UICONTROL Meta Conversions API]卡，然后选择&#x200B;**[!UICONTROL 安装]**。
+选择或创建所需的属性后，在左侧导航中选择&#x200B;**[!UICONTROL Extensions]**，然后选择&#x200B;**[!UICONTROL Catalog]**&#x200B;选项卡。 搜索[!UICONTROL Meta Conversions API]卡，然后选择&#x200B;**[!UICONTROL Install]**。
 
-![正在数据收集UI中为[!UICONTROL Meta Conversions API]扩展选择[!UICONTROL 安装]选项。](../../../images/extensions/server/meta/install.png)
+![正在数据收集UI中为[!UICONTROL Install]扩展选择[!UICONTROL Meta Conversions API]选项。](../../../images/extensions/server/meta/install.png)
 
 在显示的配置视图中，必须提供您之前复制的[!DNL Pixel] ID以将扩展关联到您的帐户。 您可以将ID直接粘贴到输入中，也可以改用数据元素。
 
-您还需要提供访问令牌以专门使用[!DNL Conversions API]。 有关如何获取此值的步骤，请参阅有关[生成访问令牌](https://developers.facebook.com/docs/marketing-api/conversions-api/get-started#access-token)的[!DNL Conversions API]文档。
+您还需要提供访问令牌以专门使用[!DNL Conversions API]。 有关如何获取此值的步骤，请参阅有关[!DNL Conversions API]生成访问令牌[的](https://developers.facebook.com/docs/marketing-api/conversions-api/get-started#access-token)文档。
 
-完成后，选择&#x200B;**[!UICONTROL 保存]**
+完成后，选择&#x200B;**[!UICONTROL Save]**
 
 ![在扩展配置视图中作为数据元素提供的[!DNL Pixel] ID。](../../../images/extensions/server/meta/configure.png)
 
@@ -55,56 +55,56 @@ ht-degree: 0%
 
 ## 与Facebook和Instagram扩展集成 {#facebook}
 
-使用Facebook和Instagram扩展进行的集成允许您快速对元业务帐户进行身份验证。 然后，这会自动填充您的[!UICONTROL 像素ID]和元转换API [!UICONTROL 访问令牌]，从而更轻松地安装和配置元转换API。
+通过使用Facebook和Instagram扩展的集成，您可以快速对Meta商业帐户进行身份验证。 然后，这将自动填充您的[!UICONTROL Pixel ID]和Meta Conversions API [!UICONTROL Access Token]，以便更轻松地安装和配置Meta Conversions API。
 
 安装[!UICONTROL Meta Conversions API]扩展时，会出现在Facebook和Instagram中进行身份验证的对话框提示。
 
-![&#x200B; [!UICONTROL Meta Conversions API扩展]安装页面突出显示[!UICONTROL 连接到元]。](../../../images/extensions/server/meta/mbe-extension-install.png)
+![突出显示[!UICONTROL Meta Conversions API Extension]的[!UICONTROL Connect to Meta]安装页面。](../../../images/extensions/server/meta/mbe-extension-install.png)
 
-在Facebook和Instagram中进行身份验证的对话框提示也会显示在事件转发的快速启动工作流UI中。
+在事件转发的快速启动工作流UI中，还会显示用于在Facebook和Instagram中进行身份验证的对话框提示。
 
-![快速启动工作流UI突出显示[!UICONTROL 连接到Meta]。](../../../images/extensions/server/meta/mbe-extension-quick-start.png)
+![快速启动工作流UI突出显示[!UICONTROL Connect to Meta]。](../../../images/extensions/server/meta/mbe-extension-quick-start.png)
 
 ## 与事件质量匹配分数(EMQ)集成 {#emq}
 
-与事件质量匹配分数(EMQ)集成允许您通过显示EMQ分数来轻松查看实施的有效性。 此集成最大限度地减少了上下文切换，并帮助您提高元转换API实施的成功。 这些事件分数显示在[!UICONTROL Meta Conversions API扩展]配置屏幕中。
+与事件质量匹配分数(EMQ)集成允许您通过显示EMQ分数来轻松查看实施的有效性。 此集成最大限度地减少了上下文切换，并帮助您提高Meta Conversions API实施的成功。 这些事件分数显示在[!UICONTROL Meta Conversions API extension]配置屏幕中。
 
-![Meta Conversions API扩展]配置页面突出显示[!UICONTROL 查看EMQ得分]。(../../../images/extensions/server/meta/emq-score.png)
+![突出显示[!UICONTROL Meta Conversions API Extension]的[!UICONTROL View EMQ Score]配置页面。](../../../images/extensions/server/meta/emq-score.png)
 
-## 与LiveRamp(Alpha)集成 {#alpha}
+## 与LiveRamp (Alpha)集成 {#alpha}
 
 [!DNL LiveRamp]在其网站上部署了[!DNL LiveRamp]的经过身份验证的流量解决方案(ATS)的客户可以选择将RampID作为客户信息参数共享。 请与您的[!DNL Meta]帐户团队合作，加入此功能的Alpha计划。
 
-![元事件转发[!UICONTROL 规则]配置页面突出显示[!UICONTROL 合作伙伴名称(alpha)]和[!UICONTROL 合作伙伴ID (alpha)]。](../../../images/extensions/server/meta/live-ramp.png)
+![Meta事件转发[!UICONTROL Rule]配置页面突出显示[!UICONTROL Partner Name (alpha)]和[!UICONTROL Partner ID (alpha)]。](../../../images/extensions/server/meta/live-ramp.png)
 
 ## 配置事件转发规则 {#rule}
 
-本节介绍如何在通用事件转发规则中使用[!DNL Conversions API]扩展。 实际上，您应该配置多个规则，以便通过[!DNL Meta Pixel]和[!DNL Conversions API]发送所有已接受的[标准事件](https://developers.facebook.com/docs/meta-pixel/reference)。 有关移动应用数据，请在[此处](https://developers.facebook.com/docs/marketing-api/conversions-api/app-events)查看必填字段、应用数据字段、客户信息参数和自定义数据详细信息。
+本节介绍如何在通用事件转发规则中使用[!DNL Conversions API]扩展。 实际上，您应该配置多个规则，以便通过[和](https://developers.facebook.com/docs/meta-pixel/reference)发送所有已接受的[!DNL Meta Pixel]标准事件[!DNL Conversions API]。 有关移动应用数据，请在[此处](https://developers.facebook.com/docs/marketing-api/conversions-api/app-events)查看必填字段、应用数据字段、客户信息参数和自定义数据详细信息。
 
 >[!NOTE]
 >
 >事件应为[实时发送](https://www.facebook.com/business/help/379226453470947?id=818859032317965)或尽可能接近实时发送，以便更好地优化广告促销活动。
 
-开始创建新的事件转发规则，并根据需要配置其条件。 为规则选择操作时，请为扩展选择&#x200B;**[!UICONTROL 元转换API扩展]**，然后为操作类型选择&#x200B;**[!UICONTROL 发送转换API事件]**。
+开始创建新的事件转发规则，并根据需要配置其条件。 为规则选择操作时，请为扩展选择&#x200B;**[!UICONTROL Meta Conversions API Extension]**，然后选择操作类型的&#x200B;**[!UICONTROL Send Conversions API Event]**。
 
-![正在为数据收集UI中的规则选择[!UICONTROL 发送页面视图]操作类型。](../../../images/extensions/server/meta/select-action.png)
+![为数据收集UI中的规则选择的[!UICONTROL Send Page View]操作类型。](../../../images/extensions/server/meta/select-action.png)
 
-显示的控件允许您配置将通过[!DNL Conversions API]发送到[!DNL Meta]的事件数据。 这些选项可以直接输入到提供的输入中，也可以选择现有数据元素来表示值。 配置选项分为四个主要部分，如下所述。
+显示的控件允许您配置将通过[!DNL Meta]发送到[!DNL Conversions API]的事件数据。 这些选项可以直接输入到提供的输入中，也可以选择现有数据元素来表示值。 配置选项分为四个主要部分，如下所述。
 
 | 配置区域 | 描述 |
 | --- | --- |
-| [!UICONTROL 服务器事件参数] | 有关事件的常规信息，包括发生时间和触发该事件的源操作。 有关[!DNL Conversions API]接受的[标准事件参数](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/server-event)的更多信息，请参阅[!DNL Meta]开发人员文档。<br><br>如果您同时使用[!DNL Meta Pixel]和[!DNL Conversions API]来发送事件，请确保每个事件都包含&#x200B;**[!UICONTROL 事件名称]** (`event_name`)和&#x200B;**[!UICONTROL 事件ID]** (`event_id`)，因为这些值用于[事件去重](#deduplication)。<br><br>您还可以选择&#x200B;**[!UICONTROL 启用有限数据使用]**，以帮助遵守客户选择退出的要求。 有关此功能的详细信息，请参阅有关[数据处理选项](https://developers.facebook.com/docs/marketing-apis/data-processing-options/)的[!DNL Conversions API]文档。 |
-| [!UICONTROL 客户信息参数] | 用于将事件归因于客户的用户身份数据。 在将某些值发送到API之前，必须对它们进行哈希处理。<br><br>为确保良好的通用API连接和高事件匹配质量(EMQ)，建议您随服务器事件一起发送所有[接受的客户信息参数](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters)。 这些参数也应根据它们对EMQ[&#128279;](https://www.facebook.com/business/help/765081237991954?id=818859032317965)的重要性和影响进行优先级排序。 |
-| [!UICONTROL 自定义数据] | 用于广告投放优化的附加数据，以JSON对象的形式提供。 请参阅[[!DNL Conversions API] 文档](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/custom-data)，了解有关此对象所接受属性的更多信息。<br><br>如果要发送购买事件，则必须使用此部分提供必需的特性`currency`和`value`。 |
-| [!UICONTROL 测试事件] | 此选项用于验证您的配置是否导致[!DNL Meta]按预期接收服务器事件。 要使用此功能，请选中&#x200B;**[!UICONTROL 作为测试事件发送]**&#x200B;复选框，然后在下面的输入中提供您选择的测试事件代码。 部署事件转发规则后，如果您正确配置了扩展和操作，则应该会在[!DNL Meta Events Manager]中看到&#x200B;**[!DNL Test Events]**&#x200B;视图内出现活动。 |
+| [!UICONTROL Server Event Parameters] | 有关事件的常规信息，包括发生时间和触发该事件的源操作。 有关[!DNL Meta]接受的[标准事件参数](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/server-event)的更多信息，请参阅[!DNL Conversions API]开发人员文档。<br><br>如果您同时使用[!DNL Meta Pixel]和[!DNL Conversions API]来发送事件，请确保每个事件都包含&#x200B;**[!UICONTROL Event Name]** (`event_name`)和&#x200B;**[!UICONTROL Event ID]** (`event_id`)，因为这些值用于[事件去重](#deduplication)。<br><br>您还可以选择&#x200B;**[!UICONTROL Enable Limited Data Use]**&#x200B;以帮助遵守客户选择退出的要求。 有关此功能的详细信息，请参阅有关[!DNL Conversions API]数据处理选项[的](https://developers.facebook.com/docs/marketing-apis/data-processing-options/)文档。 |
+| [!UICONTROL Customer Information Parameters] | 用于将事件归因于客户的用户身份数据。 在将某些值发送到API之前，必须对它们进行哈希处理。<br><br>为确保良好的通用API连接和高事件匹配质量(EMQ)，建议您随服务器事件一起发送所有[接受的客户信息参数](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters)。 这些参数也应根据它们对EMQ[的重要性和影响进行](https://www.facebook.com/business/help/765081237991954?id=818859032317965)优先级排序。 |
+| [!UICONTROL Custom Data] | 用于广告投放优化的附加数据，以JSON对象的形式提供。 请参阅[[!DNL Conversions API] 文档](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/custom-data)，了解有关此对象所接受属性的更多信息。<br><br>如果要发送购买事件，则必须使用此部分提供必需的特性`currency`和`value`。 |
+| [!UICONTROL Test Event] | 此选项用于验证您的配置是否导致[!DNL Meta]按预期接收服务器事件。 要使用此功能，请选中&#x200B;**[!UICONTROL Send as Test Event]**&#x200B;复选框，然后在下面的输入中提供您选择的测试事件代码。 部署事件转发规则后，如果您正确配置了扩展和操作，则应该会在&#x200B;**[!DNL Test Events]**&#x200B;中看到[!DNL Meta Events Manager]视图内出现活动。 |
 
 {style="table-layout:auto"}
 
-完成后，选择&#x200B;**[!UICONTROL Keep Changes]**&#x200B;以将该操作添加到规则配置中。
+完成后，选择&#x200B;**[!UICONTROL Keep Changes]**&#x200B;以将该操作添加到规则配置。
 
-![[!UICONTROL 保留为操作配置选择的更改]。](../../../images/extensions/server/meta/keep-changes.png)
+正在为操作配置选择![[!UICONTROL Keep Changes]。](../../../images/extensions/server/meta/keep-changes.png)
 
-如果对规则满意，请选择&#x200B;**[!UICONTROL 保存到库]**。 最后，发布新的事件转发[生成](../../../ui/publishing/builds.md)以启用对库所做的更改。
+如果对规则满意，请选择&#x200B;**[!UICONTROL Save to Library]**。 最后，发布新的事件转发[生成](../../../ui/publishing/builds.md)以启用对库所做的更改。
 
 ## 事件去重 {#deduplication}
 
@@ -112,24 +112,25 @@ ht-degree: 0%
 
 如果您从客户端和服务器发送不同的事件类型，且两者之间没有重叠，则无需进行重复数据删除。 但是，如果任何单个事件由[!DNL Meta Pixel]和[!DNL Conversions API]共享，则必须确保对这些冗余事件进行重复数据删除，以免对您的报告产生不利影响。
 
-发送共享事件时，请确保包括事件ID和名称，以及您从客户端和服务器发送的每个事件。 收到具有相同ID和名称的多个事件时，[!DNL Meta]会自动使用多种策略来消除重复并保留最相关的数据。 有关此过程的详细信息，请参阅有关 [!DNL Meta Pixel] 和 [!DNL Conversions API] 事件的[重复数据删除](https://www.facebook.com/business/help/823677331451951?id=1205376682832142)的[!DNL Meta]文档。
+发送共享事件时，请确保包括事件ID和名称，以及您从客户端和服务器发送的每个事件。 收到具有相同ID和名称的多个事件时，[!DNL Meta]会自动使用多种策略来消除重复并保留最相关的数据。 有关此过程的详细信息，请参阅有关[!DNL Meta]和[事件的 [!DNL Meta Pixel] 重复数据删除 [!DNL Conversions API] 的](https://www.facebook.com/business/help/823677331451951?id=1205376682832142)文档。
 
-## 快速入门工作流：元转化API扩展(Beta) {#quick-start}
+## 快速入门工作流： Meta Conversions API扩展(Beta) {#quick-start}
 
 >[!IMPORTANT]
 >
->* 已购买Real-Time CDP Prime和Ultimate包的客户可以使用快速入门功能。 请联系您的Adobe代表以获取更多信息。
+>* 已购买Real-Time CDP Prime和Ultimate软件包的客户可以使用快速入门功能。 有关更多信息，请联系您的Adobe代表。
 >* 此功能适用于全新实施，当前不支持在现有标记和事件转发属性上自动安装扩展和配置。
 
 >[!NOTE]
 >
 >任何现有客户端都可以使用快速入门工作流创建可用于以下项目的参考实施：
+>
 >* 使用它作为全新实施的开始。
 >* 将其用作参考实施，您可以检查该实施，以了解其配置方式，然后将其复制到当前生产实施中。
 
-快速入门功能可帮助您通过元转化API和元像素扩展轻松高效地完成设置。 此工具可自动执行在Adobe标签和事件转发中执行的多个步骤，从而显着缩短设置时间。
+快速入门功能可帮助您轻松高效地设置Meta Conversions API和Meta Pixel扩展。 此工具可自动执行在Adobe标记和事件转发中执行的多个步骤，从而显着缩短设置时间。
 
-此功能会在新自动生成的标记上自动安装和配置元转化API和元像素扩展，并使用必要的规则和数据元素来配置事件转发属性。 此外，它还会自动安装和配置Experience PlatformWeb SDK和数据流。 最后，快速启动功能会将库自动发布到开发环境中的指定URL，从而支持通过事件转发和Experience PlatformEdge Network进行实时客户端数据收集和服务器端事件转发。
+此功能会在新自动生成的标记上自动安装和配置Meta转化API和Meta像素扩展，并使用必要的规则和数据元素来配置事件转发属性。 此外，它还会自动安装和配置Experience Platform Web SDK和数据流。 最后，快速入门功能会自动将库发布到开发环境中的指定URL，从而可以通过事件转发和Experience Platform Edge Network实时实现客户端数据收集和服务器端事件转发。
 
 以下视频介绍了快速入门功能。
 
@@ -141,42 +142,42 @@ ht-degree: 0%
 >
 >此功能旨在帮助您开始实施事件转发。 它不会提供可容纳所有用例的端到端、完全正常的实施。
 
-此设置会自动安装元转化API和元像素扩展。 Meta建议使用此混合实施来收集和转发事件转换。
+此设置会自动安装Meta Conversions API和Meta Pixel扩展。 Meta建议使用此混合实施来收集和转发事件转换。
 快速设置功能旨在帮助客户开始事件转发实施，而不是提供可适应所有用例的端到端、功能齐全的实施。
 
-要安装该功能，请在Adobe Experience Platform数据收集&#x200B;**[!UICONTROL 主页]**&#x200B;页面上为&#x200B;**[!DNL Send Conversions Data to Meta]**&#x200B;选择&#x200B;**[!UICONTROL 开始]**。
+要安装该功能，请在Adobe Experience Platform数据收集&#x200B;**[!UICONTROL Get Started]**&#x200B;页面上为&#x200B;**[!DNL Send Conversions Data to Meta]**&#x200B;选择&#x200B;**[!UICONTROL Home]**。
 
 ![数据收集主页，显示转换到meta](../../../images/extensions/server/meta/conversion-data-to-meta.png)的数据
 
-输入您的&#x200B;**[!UICONTROL 域]**，然后选择&#x200B;**[!UICONTROL 下一步]**。 此域将用作自动生成的标记和事件转发属性、规则、数据元素、数据流等的命名约定。
+输入您的&#x200B;**[!UICONTROL Domain]**，然后选择&#x200B;**[!UICONTROL Next]**。 此域将用作自动生成的标记和事件转发属性、规则、数据元素、数据流等的命名约定。
 
 ![请求域名的欢迎屏幕](../../../images/extensions/server/meta/welcome.png)
 
-在&#x200B;**[!UICONTROL 初始设置]**&#x200B;对话框中，输入您的&#x200B;**[!UICONTROL 元像素ID]**、**[!UICONTROL 元转换API访问令牌]**&#x200B;和&#x200B;**[!UICONTROL 数据层路径]**，然后选择&#x200B;**[!UICONTROL 下一步]**。
+在&#x200B;**[!UICONTROL Initial Setup]**&#x200B;对话框中，输入您的&#x200B;**[!UICONTROL Meta Pixel ID]**、**[!UICONTROL Meta Conversion API Access Token]**&#x200B;和&#x200B;**[!UICONTROL Data Layer Path]**，然后选择&#x200B;**[!UICONTROL Next]**。
 
 ![初始设置对话框](../../../images/extensions/server/meta/initial-setup.png)
 
-请等待几分钟以完成初始设置过程，然后选择&#x200B;**[!UICONTROL 下一步]**。
+请等待几分钟以完成初始设置过程，然后选择&#x200B;**[!UICONTROL Next]**。
 
 ![初始设置完成确认屏幕](../../../images/extensions/server/meta/setup-complete.png)
 
-从&#x200B;**[!UICONTROL 在您的网站上添加代码]**&#x200B;对话框中，复制使用复制![复制](/help/images/icons/copy.png)函数提供的代码，并将其粘贴到源网站的`<head>`中。 实施后，选择&#x200B;**[!UICONTROL 开始验证]**
+从&#x200B;**[!UICONTROL Add Code on Your Site]**&#x200B;对话框中，复制使用复制![复制](/help/images/icons/copy.png)函数提供的代码，并将其粘贴到源网站的`<head>`中。 实施后，选择&#x200B;**[!UICONTROL Start Validation]**
 
 ![在您的网站对话框中添加代码](../../../images/extensions/server/meta/add-code-on-your-site.png)
 
-[!UICONTROL 验证结果]对话框显示元扩展实施结果。 选择&#x200B;**[!UICONTROL 下一步]**。 您还可以通过选择&#x200B;**[!UICONTROL 保证]**&#x200B;链接来查看其他验证结果。
+[!UICONTROL Validation Results]对话框显示Meta扩展实施结果。 选择 **[!UICONTROL Next]**。您还可以通过选择&#x200B;**[!UICONTROL Assurance]**&#x200B;链接来查看其他验证结果。
 
 ![显示实施结果的测试结果对话框](../../../images/extensions/server/meta/test-results.png)
 
-**[!UICONTROL 后续步骤]**&#x200B;屏幕显示确认安装完成。 在此处，您可以选择通过添加新事件来优化实施，下一部分将显示这些事件。
+**[!UICONTROL Next Steps]**&#x200B;屏幕显示确认安装完成。 在此处，您可以选择通过添加新事件来优化实施，下一部分将显示这些事件。
 
-如果不想添加其他事件，请选择&#x200B;**[!UICONTROL 关闭]**。
+如果不想添加其他事件，请选择&#x200B;**[!UICONTROL Close]**。
 
 ![后续步骤对话框](../../../images/extensions/server/meta/next-steps.png)
 
 #### 添加其他事件
 
-要添加新事件，请选择&#x200B;**[!UICONTROL 编辑您的标记Web属性]**。
+要添加新事件，请选择&#x200B;**[!UICONTROL Edit Your Tags Web Property]**。
 
 ![显示编辑标记Web属性的后续步骤对话框](../../../images/extensions/server/meta/edit-your-tags-web-property.png)
 
@@ -186,19 +187,19 @@ ht-degree: 0%
 >
 >如果没有事件，则此规则将不会运行。 所有规则均如此，其中&#x200B;**MetaConversion_PageView**&#x200B;规则为异常。
 
-要添加事件，请在[!UICONTROL 事件]标题下选择&#x200B;**[!UICONTROL 添加]**。
+要添加事件，请选择&#x200B;**[!UICONTROL Add]**&#x200B;标题下的[!UICONTROL Events]。
 
 ![标记属性页面未显示任何事件](../../../images/extensions/server/meta/edit-rule.png)
 
-选择[!UICONTROL 事件类型]。 在此示例中，我们已选择[!UICONTROL Click]事件并将其配置为在选择&#x200B;**.add-to-cart-button**&#x200B;时触发。 选择&#x200B;**[!UICONTROL 保留更改]**。
+选择 [!UICONTROL Event Type]。在此示例中，我们已选择[!UICONTROL Click]事件并将其配置为在选择&#x200B;**.add-to-cart-button**&#x200B;时触发。 选择 **[!UICONTROL Keep Changes]**。
 
 ![显示点击事件的事件配置屏幕](../../../images/extensions/server/meta/event-configuration.png)
 
-已保存新事件。 选择&#x200B;**[!UICONTROL 选择工作库]**&#x200B;并选择要生成到的库。
+已保存新事件。 选择&#x200B;**[!UICONTROL Select a working library]**&#x200B;并选择要生成到的库。
 
 ![选择工作库下拉列表](../../../images/extensions/server/meta/working-library.png)
 
-接下来，选择&#x200B;**[!UICONTROL 保存到库]**&#x200B;旁边的下拉列表，然后选择&#x200B;**[!UICONTROL 保存到库并生成]**。 这会将更改发布到库中。
+接下来，选择&#x200B;**[!UICONTROL Save to Library]**&#x200B;旁边的下拉菜单并选择&#x200B;**[!UICONTROL Save to Library and Build]**。 这会将更改发布到库中。
 
 ![选择保存到库并生成](../../../images/extensions/server/meta/save-and-build.png)
 
@@ -216,7 +217,7 @@ ht-degree: 0%
 
 这一点务必要理解，因为每个`MetaConversion_*`规则都使用此数据结构将相关数据段传递到[!DNL Meta Pixel]扩展和[!DNL Meta Conversions API]。 请参阅有关[标准事件](https://developers.facebook.com/docs/meta-pixel/reference#standard-events)的文档，了解有关不同元事件需要哪些数据的更多信息。
 
-例如，如果要使用`MetaConversion_Subscribe`规则，则需要根据[标准事件](https://developers.facebook.com/docs/meta-pixel/reference#standard-events)的文档中所述的对象属性更新`window.dataLayer.meta.currency`、`window.dataLayer.meta.predicted_ltv`和`window.dataLayer.meta.value`。
+例如，如果要使用`MetaConversion_Subscribe`规则，则需要根据`window.dataLayer.meta.currency`标准事件`window.dataLayer.meta.predicted_ltv`的文档中所述的对象属性更新`window.dataLayer.meta.value`、[和](https://developers.facebook.com/docs/meta-pixel/reference#standard-events)。
 
 以下是在执行规则之前需要在网站上运行以更新数据层的示例。
 
@@ -228,9 +229,9 @@ ht-degree: 0%
 
 ## 后续步骤
 
-本指南介绍了如何使用[!DNL Meta Conversions API]扩展将服务器端事件数据发送到[!DNL Meta]。 在此处，建议通过连接更多[!DNL Pixels]并共享更多事件（如果适用）来扩展您的集成。 执行以下任一操作均有助于进一步改善广告性能：
+本指南介绍了如何使用[!DNL Meta]扩展将服务器端事件数据发送到[!DNL Meta Conversions API]。 在此处，建议通过连接更多[!DNL Pixels]并共享更多事件（如果适用）来扩展您的集成。 执行以下任一操作均有助于进一步改善广告性能：
 
-* 连接尚未连接到[!DNL Conversions API]集成的任何其他[!DNL Pixels]。
+* 连接尚未连接到[!DNL Pixels]集成的任何其他[!DNL Conversions API]。
 * 如果您专门通过客户端上的[!DNL Meta Pixel]发送某些事件，则也从服务器端将这些相同的事件发送到[!DNL Conversions API]。
 
-有关如何有效实施集成的更多指导，请参阅有关 [!DNL Conversions API][&#128279;](https://www.facebook.com/business/help/308855623839366?id=818859032317965)的最佳实践的[!DNL Meta]文档。 有关Adobe Experience Cloud中标记和事件转发的更多常规信息，请参阅[标记概述](../../../home.md)。
+有关如何有效实施集成的更多指导，请参阅有关[!DNL Meta][的 [!DNL Conversions API]最佳实践的](https://www.facebook.com/business/help/308855623839366?id=818859032317965)文档。 有关Adobe Experience Cloud中标记和事件转发的更多常规信息，请参阅[标记概述](../../../home.md)。

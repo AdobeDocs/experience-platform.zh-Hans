@@ -2,9 +2,9 @@
 title: 在源UI Workspace中摄取加密数据
 description: 了解如何在源UI工作区中摄取加密数据。
 exl-id: 34aaf9b6-5c39-404b-a70a-5553a4db9cdb
-source-git-commit: cad2cafdf39c718c3ba971eaa4e7f2318bd5f517
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '1436'
+source-wordcount: '1414'
 ht-degree: 6%
 
 ---
@@ -51,19 +51,19 @@ ht-degree: 6%
 
 >[!ENDSHADEBOX]
 
-在Experience Platform UI中，导航到源工作区，然后从顶部标题中选择[!UICONTROL 键对]。
+在Experience Platform UI中，导航到源工作区，然后从顶部标题中选择[!UICONTROL Key Pairs]。
 
 ![选择“键对”标头的源目录。](../../images/tutorials/edi/catalog.png)
 
-此时您会进入一个页面，该页面显示组织中现有加密密钥对的列表。 本页提供有关给定密钥的标题、ID、类型、加密算法、到期和状态的信息。 要创建新的密钥对，请选择&#x200B;**[!UICONTROL 创建密钥]**。
+此时您会进入一个页面，该页面显示组织中现有加密密钥对的列表。 本页提供有关给定密钥的标题、ID、类型、加密算法、到期和状态的信息。 要创建新的密钥对，请选择&#x200B;**[!UICONTROL Create Key]**。
 
 ![密钥对页面，选择“加密密钥”作为密钥类型并选定“创建密钥”按钮。](../../images/tutorials/edi/encryption_key_page.png)
 
-接下来，选择要创建的键类型。 若要创建加密密钥，请选择&#x200B;**[!UICONTROL 加密密钥]**，然后选择&#x200B;**[!UICONTROL 继续]**。
+接下来，选择要创建的键类型。 要创建加密密钥，请选择&#x200B;**[!UICONTROL Encryption Key]**，然后选择&#x200B;**[!UICONTROL Continue]**。
 
 ![密钥创建窗口，已选择加密密钥。](../../images/tutorials/edi/choose_encryption_key_type.png)
 
-提供加密密钥的标题和密码。 密码是加密密钥的附加保护层。 创建后，Experience Platform会将该密码短语存储在与公钥不同的安全保管库中。 您必须提供非空字符串作为密码短语。 完成后，选择&#x200B;**[!UICONTROL 创建]**。
+提供加密密钥的标题和密码。 密码是加密密钥的附加保护层。 创建后，Experience Platform会将该密码短语存储在与公钥不同的安全保管库中。 您必须提供非空字符串作为密码短语。 完成后，选择&#x200B;**[!UICONTROL Create]**。
 
 ![加密密钥创建窗口，其中提供了标题和密码。](../../images/tutorials/edi/create_encryption_key.png)
 
@@ -71,7 +71,7 @@ ht-degree: 6%
 
 ![显示新创建的加密密钥对信息的窗口。](../../images/tutorials/edi/encryption_key_details.png)
 
-要查看现有加密密钥的信息，请选择密钥标题旁边的省略号(`...`)。 选择&#x200B;**[!UICONTROL 密钥详细信息]**&#x200B;以查看公钥和密钥ID。 或者，如果您要删除加密密钥，请选择&#x200B;**[!UICONTROL 删除]**。
+要查看现有加密密钥的信息，请选择密钥标题旁边的省略号(`...`)。 选择&#x200B;**[!UICONTROL Key details]**&#x200B;以查看公钥和密钥ID。 或者，如果您要删除加密密钥，请选择&#x200B;**[!UICONTROL Delete]**。
 
 ![密钥对页面，其中显示加密密钥列表。 选择“acme-encryption-key”旁边的省略号，下拉菜单显示查看密钥详细信息或删除密钥的选项。](../../images/tutorials/edi/configuration_options.png)
 
@@ -90,11 +90,11 @@ ht-degree: 6%
 
 >[!ENDSHADEBOX]
 
-若要创建签名验证密钥，请从密钥类型选择窗口中选择&#x200B;**[!UICONTROL 签名验证密钥]**，然后选择&#x200B;**[!UICONTROL 继续]**。
+若要创建签名验证密钥，请从密钥类型选择窗口中选择&#x200B;**[!UICONTROL Sign Verification Key]**，然后选择&#x200B;**[!UICONTROL Continue]**。
 
 ![选择签名验证密钥的密钥类型选择窗口。](../../images/tutorials/edi/choose_sign_verification_key_type.png)
 
-接下来，提供标题和[!DNL Base64]编码的PGP密钥作为您的公共密钥，然后选择&#x200B;**[!UICONTROL 创建]**。
+接下来，提供标题和[!DNL Base64]编码的PGP密钥作为您的公共密钥，然后选择&#x200B;**[!UICONTROL Create]**。
 
 ![创建签名验证密钥窗口。](../../images/tutorials/edi/create_sign_verification_key.png)
 
@@ -127,15 +127,15 @@ ht-degree: 6%
 * [[!DNL Oracle Object Storage]](../ui/create/cloud-storage/oracle-object-storage.md)
 * [[!DNL SFTP]](../ui/create/cloud-storage/sftp.md)
 
-使用您选择的云存储源进行身份验证。 在工作流的数据选择步骤中，选择要摄取的加密文件或文件夹，然后启用&#x200B;**[!UICONTROL 是否对文件加密]**&#x200B;切换开关。
+使用您选择的云存储源进行身份验证。 在工作流的数据选择步骤中，选择要摄取的加密文件或文件夹，然后启用&#x200B;**[!UICONTROL Is the file encrypted]**&#x200B;切换开关。
 
 ![源工作流的“选择数据”步骤，其中选择加密数据文件以进行摄取。](../../images/tutorials/edi/select_data.png)
 
 接下来，从源数据中选择一个示例文件。 由于您的数据已加密，因此Experience Platform将要求一个示例文件来创建可映射到您的源数据的XDM架构。
 
-![&#x200B; “此文件是否已加密？” 启用切换并选中“选择示例文件”按钮。](../../images/tutorials/edi/select_sample_file.png)
+![ “此文件是否已加密？” 启用切换并选择“选择示例文件”按钮](../../images/tutorials/edi/select_sample_file.png)。
 
-选择样例文件后，配置数据的设置，如对应的数据格式、分隔符和压缩类型。 等待一段时间以完全呈现预览界面，然后选择&#x200B;**[!UICONTROL 保存]**。
+选择样例文件后，配置数据的设置，如对应的数据格式、分隔符和压缩类型。 留出一段时间让预览界面完全呈现，然后选择&#x200B;**[!UICONTROL Save]**。
 
 ![已选择一个示例进行摄取，并且文件预览已完全加载。](../../images/tutorials/edi/file_preview.png)
 
@@ -147,7 +147,7 @@ ht-degree: 6%
 
 ![与您的签名验证加密对应的密钥ID的签名验证密钥标题。](../../images/tutorials/edi/custom_key_id.png)
 
-完成后，选择&#x200B;**[!UICONTROL 下一步]**。
+完成后，选择&#x200B;**[!UICONTROL Next]**。
 
 完成源工作流中的其余步骤，以完成创建数据流。
 

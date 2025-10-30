@@ -4,9 +4,9 @@ feature: Attribution AI
 title: Attribution AI中的输入和输出
 description: 以下文档概述了归因人工智能中使用的不同输入和输出。
 exl-id: d6dbc9ee-0c1a-4a5f-b922-88c7a36a5380
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '2474'
+source-wordcount: '2467'
 ht-degree: 3%
 
 ---
@@ -41,7 +41,7 @@ ht-degree: 3%
 
 | 建议的列 | 需要 |
 | --- | --- |
-| 主要标识字段 | 接触点/转化 |
+| 主要身份标识字段 | 接触点/转化 |
 | 时间戳 | 接触点/转化 |
 | 渠道。_type | 接触点 |
 | Channel.mediaAction | 接触点 |
@@ -64,6 +64,7 @@ ht-degree: 3%
 >[!IMPORTANT]
 >
 > Attribution AI运行所需的最少数据量如下所示：
+>
 > - 您需要提供至少3个月（90天）的数据才能运行良好的模型。
 > - 您至少需要1000次转化。
 
@@ -102,9 +103,10 @@ ht-degree: 3%
 
 >[!NOTE]
 >
-> 仅当满足以下任一条件时，您才能在得分输出数据集的输入数据集中看到任何所需的报表列：
-> - 报告列作为接触点或转化定义配置的一部分包含在配置页面中。
-> - 报表列包含在附加得分数据集列中。
+>仅当满足以下任一条件时，您才能在得分输出数据集的输入数据集中看到任何所需的报表列：
+>
+>- 报告列作为接触点或转化定义配置的一部分包含在配置页面中。
+>- 报表列包含在附加得分数据集列中。
 
 下表概述了原始分数示例输出中的架构字段：
 
@@ -137,18 +139,18 @@ ht-degree: 3%
 | identity（对象） | False | 包含用于构建模型的用户的详细信息，如`id`和`namespace`。 |
 | id（字符串） | True | 用户的身份ID，如Cookie ID、Adobe Analytics ID (AAID)或Experience Cloud ID （ECID，也称为MCID或访客ID）等。<br> **示例：** 17348762725408656344688320891369597404 |
 | 命名空间（字符串） | True | 用于构建路径并因此构建模型的身份命名空间。<br> **示例：** aaid |
-| touchpointsDetail（对象数组） | True | 导致转化的接触点详细信息列表，排序方式： | 接触点发生次数或时间戳。 |
+| touchpointsDetail（对象数组） | True | 导致转化的接触点详细信息列表，按接触点出现次数或时间戳排序。 |
 | touchpointName（字符串） | True | 在安装期间配置的接触点的名称。<br> **示例：** PAID_SEARCH_CLICK |
 | 分数（对象） | True | 作为得分的接触点对此转化的贡献。 有关此对象内生成的分数的更多信息，请参阅[聚合的归因分数](#aggregated-attribution-scores)部分。 |
 | touchPoint（对象） | True | 接触点元数据。 有关此对象内生成的分数的更多信息，请参阅[聚合分数](#aggregated-scores)部分。 |
 
 ### 查看原始得分路径(UI) {#raw-score-path}
 
-您可以在UI中查看原始分数的路径。 首先，在Experience Platform UI中选择&#x200B;**[!UICONTROL 架构]**，然后在&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡中搜索并选择您的归因人工智能得分架构。
+您可以在UI中查看原始分数的路径。 首先，在Experience Platform UI中选择&#x200B;**[!UICONTROL Schemas]**，然后在&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡中搜索并选择您的归因人工智能得分架构。
 
 ![选择您的架构](./images/input-output/schemas_browse.png)
 
-接下来，在UI的&#x200B;**[!UICONTROL 结构]**&#x200B;窗口中选择一个字段，**[!UICONTROL 字段属性]**&#x200B;选项卡将打开。 在&#x200B;**[!UICONTROL 字段属性]**&#x200B;中，是映射到原始分数的路径字段。
+接下来，在UI的&#x200B;**[!UICONTROL Structure]**&#x200B;窗口中选择一个字段，将打开&#x200B;**[!UICONTROL Field properties]**&#x200B;选项卡。 **[!UICONTROL Field properties]**&#x200B;内是映射到原始分数的路径字段。
 
 ![选择架构](./images/input-output/field_properties.png)
 

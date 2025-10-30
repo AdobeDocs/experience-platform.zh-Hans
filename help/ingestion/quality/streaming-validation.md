@@ -5,10 +5,10 @@ title: 流式摄取验证
 type: Tutorial
 description: 流式摄取允许您使用流式端点实时将数据上传到Adobe Experience Platform。 流式引入API支持两种验证模式 — 同步和异步。
 exl-id: 6e9ac943-6d73-44de-a13b-bef6041d3834
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '906'
-ht-degree: 11%
+ht-degree: 15%
 
 ---
 
@@ -25,11 +25,11 @@ ht-degree: 11%
 
 ### 正在读取示例 API 调用
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中有关[如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
 
 ### 收集所需标头的值
 
-要调用[!DNL Experience Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+为调用 [!DNL Experience Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 - 授权：持有人`{ACCESS_TOKEN}`
 - x-api-key： `{API_KEY}`
@@ -50,6 +50,7 @@ ht-degree: 11%
 ### 验证范围
 
 [!DNL Streaming Validation Service]包括以下方面的验证：
+
 - Range
 - 存在
 - 枚举
@@ -207,5 +208,5 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID} \
 | 400 | 错误。 您的请求存在问题。 从流验证服务接收带有更多详细信息的错误消息。 |
 | 401 | 错误。 您的请求未获授权 — 您需要使用持有者令牌进行请求。 有关如何请求访问的详细信息，请查看此[教程](https://www.adobe.com/go/platform-api-authentication-en)或此[博客帖子](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f)。 |
 | 500 | 错误。 存在内部系统错误。 |
-| 501 | 错误。 这意味着此位置不支持同步验证&#x200B;**&#x200B;**。 |
+| 501 | 错误。 这意味着此位置不支持同步验证&#x200B;****。 |
 | 503 | 错误。 该服务当前不可用。 客户端应使用指数回退策略至少重试三次。 |

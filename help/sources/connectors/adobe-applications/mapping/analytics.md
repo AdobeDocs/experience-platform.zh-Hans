@@ -2,10 +2,10 @@
 title: Adobe Analytics Source连接器的映射字段
 description: 使用Adobe Analytics Source Connector将Analytics字段映射到XDM字段。
 exl-id: 15dc1368-5cf1-42e1-9683-d5158f8aa2db
-source-git-commit: 316879afe8c94657156c768cdc14d4710da9fd35
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '3914'
-ht-degree: 6%
+source-wordcount: '3854'
+ht-degree: 5%
 
 ---
 
@@ -23,10 +23,10 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 | --- | --- | --- | --- |
 | `videoname` | `mediaReporting.sessionDetails.friendlyName` | 字符串 | 视频的友好（人类可读）名称。 |
 | `videoaudioauthor` | `mediaReporting.sessionDetails.author` | 字符串 | 媒体作者的姓名。 |
-| `videoaudioartist` | `mediaReporting.sessionDetails.artist` | 字符串 | 执行音乐录制或视频创作的专辑艺术家姓名或组合名称。 |
-| `videoaudioalbum` | `mediaReporting.sessionDetails.album` | 字符串 | 音乐录音或视频所属的专辑的名称。 |
-| `videolength` | `mediaReporting.sessionDetails.length ` | 整数 | 视频的长度或运行时间。 |
-| `videoshowtype` | `mediaReporting.sessionDetails.showType` | 字符串 |
+| `videoaudioartist` | `mediaReporting.sessionDetails.artist` | 字符串 | 执行音乐录制或视频的唱片艺术家或群体的名称。 |
+| `videoaudioalbum` | `mediaReporting.sessionDetails.album` | 字符串 | 音乐录制或视频所属的专辑的名称。 |
+| `videolength` | `mediaReporting.sessionDetails.length` | 整数 | 视频的长度或运行时间。 |
+| `videoshowtype` | `mediaReporting.sessionDetails.showType` | 字符串 |  |
 | `video` | `mediaReporting.sessionDetails.name` | 字符串 | 视频的ID。 |
 | `videoshow` | `mediaReporting.sessionDetails.show` | 字符串 | 节目或系列节目的名称。 只有在节目属于某个系列节目的组成部分时，才需要提供节目/系列的名称。 |
 | `videostreamtype` | mediaReporting.sessionDetails.streamType | 字符串 | 流媒体的类型，如“视频”或“音频”。 |
@@ -34,12 +34,12 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 | `videoepisode` | `mediaReporting.sessionDetails.episode` | 字符串 | 剧集的数量。 |
 | `videogenre` | `mediaReporting.sessionDetails.genreList[]` | 字符串[] | 视频的流派。 |
 | `videosessionid` | `mediaReporting.sessionDetails.ID` | 字符串 | 单个播放所独有的内容流实例的标识符。 |
-| `videoplayername` | `mediaReporting.sessionDetails.playerName ` | 字符串 | 视频播放器的名称。 |
+| `videoplayername` | `mediaReporting.sessionDetails.playerName` | 字符串 | 视频播放器的名称。 |
 | `videochannel` | `mediaReporting.sessionDetails.channel` | 字符串 | 播放内容的分发渠道。 |
 | `videocontenttype` | `mediaReporting.sessionDetails.contentType` | 字符串 | 用于内容的流投放类型。 对于所有视频查看，此参数自动设置为“视频”。 推荐值包括：VOD、Live、Linear、UGC、DVOD、Radio、Podcast、Audiobook和Song。 |
 | `videonetwork` | `mediaReporting.sessionDetails.network` | 字符串 | 网络或通道名称。 |
 | `videofeedtype` | `mediaReporting.sessionDetails.feed` | 字符串 | 馈送的类型。 这可以表示与馈送相关的实际数据（例如“East HD”或“SD”），也可以表示馈送的来源（例如URL）。 |
-| `videosegment` | `mediaReporting.sessionDetails.segment` | 字符串 |
+| `videosegment` | `mediaReporting.sessionDetails.segment` | 字符串 |  |
 | `videostart` | `mediaReporting.sessionDetails.isViewed` | 布尔 | 一个布尔值，指示视频是否已启动。 一旦用户选择播放按钮，即使存在前置广告、缓冲、错误等，也会发生这种情况，并计为播放次数。 |
 | `videoplay` | `mediaReporting.sessionDetails.isPlayed` | 布尔 | 一个布尔值，指示媒体的第一帧是否已开始。 如果用户在任何广告或缓冲时间中断，则“内容开始”不符合条件。 |
 | `videotime` | `mediaReporting.sessionDetails.timePlayed` | 整数 | 主内容上`type=PLAY`的所有事件的持续时间（以秒为单位）。 |
@@ -57,7 +57,7 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 | `videopausetime` | `mediaReporting.sessionDetails.pauseTime` | 整数 | 用户暂停播放的总持续时间（以秒为单位）。 |
 | `videomvpd` | `mediaReporting.sessionDetails.mvpd` | 字符串 | 通过MVPD身份验证提供的Adobe标识符。 |
 | `videoauthorized` | `mediaReporting.sessionDetails.authorized` | 字符串 | 定义用户是否已通过Adobe身份验证获得授权。 |
-| `videodaypart` | `mediaReporting.sessionDetails.dayPart` | 定义一天中广播或播放内容的时间。 |
+| `videodaypart` | `mediaReporting.sessionDetails.dayPart` | 定义一天中广播或播放内容的时间。 |  |
 | `videoresume` | `mediaReporting.sessionDetails.hasResume` | 布尔 | 一个布尔值，标记在超过30分钟的缓冲、暂停或停滞时段后恢复的每次播放。 |
 | `videosegmentviews` | `mediaReporting.sessionDetails.hasSegmentView` | 布尔 | 布尔值，指示至少已查看了一个帧。 此帧不必是第一帧。 |
 | `videoaudiolabel` | `mediaReporting.sessionDetails.label` | 字符串 | 记录标签的名称。 |
@@ -133,11 +133,11 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 | --- | --- | --- | --- |
 | `videoqoebitrateaverage` | `mediaReporting.qoeDataDetails.bitrateAverage` | 数字 | 平均比特率（以kbps为单位，整数）。 此量度计算为在播放会话期间发生的播放持续时间的所有相关比特率值的加权平均值。 |
 | `videoqoebitratechange` | `mediaReporting.qoeDataDetails.hasBitrateChangeImpactedStreams` | 布尔 | 一个布尔值，指示发生比特率更改的流数量。 只有在播放会话期间发生至少一次比特率更改事件时，此量度才设置为true。 |
-| `videoqoebitratechangecountevar` | `mediaReporting.qoeDataDetails.bitrateChangeCount` | 整数 |
+| `videoqoebitratechangecountevar` | `mediaReporting.qoeDataDetails.bitrateChangeCount` | 整数 |  |
 | `videoqoebitrateaverageevar` | `mediaReporting.qoeDataDetails.bitrateAverageBucket` | 字符串 | 比特率更改的次数。 此值计算为在播放会话期间发生的所有比特率更改事件的总和。 |
 | `videoqoetimetostartevar` | `mediaReporting.qoeDataDetails.timeToStart` | 整数 | 视频加载和视频开始之间经过的持续时间（以秒为单位）。 |
 | `videoqoedroppedframes` | `mediaReporting.qoeDataDetails.hasDroppedFrameImpactedStreams` | 布尔 | 一个布尔值，指示丢帧的流数量。 只有在播放会话期间至少丢失了一个帧时，此量度才设置为true。 |
-| `videoqoedroppedframecountevar` | `mediaReporting.qoeDataDetails.droppedFrames` | 整数 | 主要内容播放期间丢帧的数量。 |
+| `videoqoedroppedframecountevar` | `mediaReporting.qoeDataDetails.droppedFrames` | 整数 | 主内容播放期间丢帧的数量。 |
 | `videoqoebuffercountevar` | `mediaReporting.qoeDataDetails.bufferCount` | 整数 | 缓冲事件的次数。 此量度计算为在播放会话期间发生不同缓冲状态的次数。 此量度计算播放器从其他状态（例如播放或暂停）进入缓冲状态的次数。 |
 | `videoqoebuffertimeevar` | `mediaReporting.qoeDataDetails.bufferTime` | 整数 | 缓冲所花费的总时间，以秒为单位。 此值计算为在播放会话期间发生的所有缓冲事件持续时间的总和。 |
 | `videoqoebuffer` | `mediaReporting.qoeDataDetails.hasBufferImpactedStreams` | 布尔 | 布尔值，指示受缓冲影响的流数量。 只有在播放会话期间发生至少一次缓冲事件时，此量度才设置为true。 |
@@ -155,7 +155,7 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 
 ### 直接映射字段
 
-+++选择此选项可查看已弃用的直接映射字段的表
++++选择可查看已弃用的直接映射字段的表
 
 | 数据馈送 | XDM字段 | XDM类型 | 描述 |
 | --- | --- | --- | --- |
@@ -182,7 +182,7 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 | `m_zip` | `_experience.analytics.customDimensions.`<br/>`postalCode` | 字符串 | 用于填充邮政编码维度的变量。 |
 | `accept_language` | `environment.browserDetails.acceptLanguage` | 字符串 | 列出所有接受的语言，如Accept-Language HTTP标头所示。 |
 | `homepage` | `web.webPageDetails.isHomePage` | 布尔 | 已不再使用。 指示当前URL是否为浏览器的主页。 |
-| `ipv6` | `environment.ipV6` | 字符串 |
+| `ipv6` | `environment.ipV6` | 字符串 |  |
 | `j_jscript` | `environment.browserDetails.javaScriptVersion` | 字符串 | 浏览器支持的JavaScript版本。 |
 | `user_agent` | `environment.browserDetails.userAgent` | 字符串 | HTTP标头中发送的用户代理字符串。 |
 | `mobileappid` | `application.name` | 字符串 | 移动设备应用程序ID，以下列格式存储： `[AppName][BundleVersion]`。 |
@@ -196,21 +196,21 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 | `mobilebeaconmajor` | `placeContext.POIinteraction.POIDetail.`<br/>`beaconInteractionDetails.beaconMajor` | 数字 | Mobile Services信标主要。 |
 | `mobilebeaconminor` | `placeContext.POIinteraction.POIDetail.`<br/>`beaconInteractionDetails.beaconMinor` | 数字 | Mobile Services信标次要。 |
 | `mobilebeaconuuid` | `placeContext.POIinteraction.POIDetail.`<br/>`beaconInteractionDetails.proximityUUID` | 字符串 | 移动服务信标UUID。 |
-| `mobileinstalls` | `application.firstLaunches` | 对象 | 在安装或重新安装后首次运行时会触发此事件 | {id （字符串），值（数字）} |
-| `mobileupgrades` | `application.upgrades` | 对象 | 报告应用程序升级次数。 升级后或版本号更改后首次运行时触发。 | {id （字符串），值（数字）} |
-| `mobilelaunches` | `application.launches` | 对象 | 应用程序已启动的次数。 | {id （字符串），值（数字）} |
-| `mobilecrashes` | `application.crashes` | 对象 |  | {id （字符串），值（数字）} |
-| `mobilemessageclicks` | `directMarketing.clicks` | 对象 |  | {id （字符串），值（数字）} |
-| `mobileplaceentry` | `placeContext.POIinteraction.poiEntries` | 对象 | | {id （字符串），值（数字）} |
-| `mobileplaceexit` | `placeContext.POIinteraction.poiExits` | 对象 | | {id （字符串），值（数字）} |
-| `videoqoetimetostart` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.timeToStart` | 对象 | 视频品质：开始时间。 | {id （字符串），值（数字）} |
-| `videoqoedropbeforestart` | `media.mediaTimed.dropBeforeStarts` | 对象 | | {id （字符串），值（数字）} |
-| `videoqoebuffercount` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.buffers` | 对象 | 视频品质：缓冲计数 | {id （字符串），值（数字）} |
-| `videoqoebuffertime` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.bufferTime` | 对象 | 视频品质：缓冲时间 | {id （字符串），值（数字）} |
-| `videoqoebitratechangecount` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.bitrateChanges` | 对象 | 视频品质：变化计数 | {id （字符串），值（数字）} |
-| `videoqoebitrateaverage` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.bitrateAverage` | 对象 | 视频品质：平均比特率 | {id （字符串），值（数字）} |
-| `videoqoeerrorcount` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.errors` | 对象 | 视频品质：错误计数 | {id （字符串），值（数字）} |
-| `videoqoedroppedframecount` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.droppedFrames` | 对象 | | {id （字符串），值（数字）} |
+| `mobileinstalls` | `application.firstLaunches` | 对象 | 在安装或重新安装后`{id (string), value (number)}`首次运行时会触发此事件 |
+| `mobileupgrades` | `application.upgrades` | 对象 | 报告应用程序升级次数。 升级后或版本号更改后首次运行时触发。 | `{id (string), value (number)}` |
+| `mobilelaunches` | `application.launches` | 对象 | 应用程序已启动的次数。 `{id (string), value (number)}` |
+| `mobilecrashes` | `application.crashes` | 对象 | `{id (string), value (number)}` |
+| `mobilemessageclicks` | `directMarketing.clicks` | 对象 | `{id (string), value (number)}` |
+| `mobileplaceentry` | `placeContext.POIinteraction.poiEntries` | 对象 | `{id (string), value (number)}` |
+| `mobileplaceexit` | `placeContext.POIinteraction.poiExits` | 对象 | `{id (string), value (number)}` |
+| `videoqoetimetostart` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.timeToStart` | 对象 | 视频品质：开始时间。`{id (string), value (number)}` |
+| `videoqoedropbeforestart` | `media.mediaTimed.dropBeforeStarts` | 对象 | `{id (string), value (number)}` |
+| `videoqoebuffercount` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.buffers` | 对象 | 视频品质：缓冲区计数`{id (string), value (number)}` |
+| `videoqoebuffertime` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.bufferTime` | 对象 | 视频品质：缓冲时间`{id (string), value (number)}` |
+| `videoqoebitratechangecount` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.bitrateChanges` | 对象 | 视频质量更改计数`{id (string), value (number)}` |
+| `videoqoebitrateaverage` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.bitrateAverage` | 对象 | 视频品质：平均比特率`{id (string), value (number)}` |
+| `videoqoeerrorcount` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.errors` | 对象 | 视频品质：错误计数`{id (string), value (number)}` |
+| `videoqoedroppedframecount` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.droppedFrames` | 对象 | `{id (string), value (number)}` |
 
 {style="table-layout:auto"}
 
@@ -220,7 +220,7 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 
 必须转换来自ADC的选择字段，这要求在XDM中生成来自Adobe Analytics的直接副本以外的逻辑。
 
-+++选择此选项可查看已弃用生成的映射字段的表
++++选择可查看已弃用生成的映射字段的表
 
 | 数据馈送 | XDM字段 | XDM类型 | 描述 |
 | --- | --- | --- | --- |
@@ -276,7 +276,7 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 
 这些字段具有单个源，但映射到&#x200B;**多个** XDM位置。
 
-+++选择此选项可查看已弃用的拆分映射字段的表
++++选择可查看已弃用的拆分映射字段的表
 
 | 数据馈送 | XDM字段 | XDM类型 | 描述 |
 | --- | --- | --- | --- |
@@ -295,7 +295,7 @@ Analytics Source Connector将预处理的数据发送到Experience Platform的�
 
 要了解有关使用查询服务执行这些转换的更多信息，请参阅查询服务用户指南中的[Adobe定义的函数](/help/query-service/sql/adobe-defined-functions.md)。
 
-+++选择此选项可查看已弃用的高级映射字段的表
++++选择可查看已弃用的高级映射字段的表
 
 | 数据馈送 | XDM字段 | XDM类型 | 描述 |
 | — | — | — | — ||

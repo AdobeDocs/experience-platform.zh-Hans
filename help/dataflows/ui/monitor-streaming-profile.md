@@ -2,9 +2,9 @@
 title: 监控配置文件的流式摄取
 description: 了解如何使用监控仪表板监控流配置文件摄取
 exl-id: da7bb08d-2684-45a1-b666-7580f2383748
-source-git-commit: 75ccdfdff4ded0a13213089d1c7dcc4d8f14e0f8
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '1967'
+source-wordcount: '1932'
 ht-degree: 19%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 19%
 
 >[!NOTE]
 >
->流式处理吞吐量容量支持每秒多达1500个入站事件。 您可以购买额外的流分段以最多支持每秒13,500个额外的入站事件&#x200B;。 有关详细信息，请参阅[Real-Time CDP B2C Edition - Prime和Ultimate包产品说明](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)。
+>流式处理吞吐量容量支持每秒多达1500个入站事件。 您可以购买额外的流分段以最多支持每秒13,500个额外的入站事件&#x200B;。 有关详细信息，请参阅[Real-Time CDP B2C Edition - Prime和Ultimate包产品说明](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)。
 
 ## 监控配置文件流式摄取的量度 {#streaming-profile-metrics}
 
@@ -91,7 +91,7 @@ ht-degree: 19%
 | 请求吞吐量 | 此量度表示每秒进入摄取系统的事件数。 | 沙盒/数据流 | 实时监控，每60秒刷新一次数据。 |
 | 处理吞吐量 | 此量度表示系统每秒成功摄取的事件数。 | 沙盒/数据流 | 实时监控，每60秒刷新一次数据。 |
 | P95 摄取延迟 | 此量度测量从某个事件到达 Experience Platform 到成功摄入配置文件存储区的第 95 个百分位数延迟。 | 沙盒/数据流 | 实时监控，每60秒刷新一次数据。 |
-| 最大吞吐量 | 此量度表示每秒进入流配置文件摄取的最大入站请求数 | <ul><li>沙盒/数据流</li><li>数据流运行</li></ul> |
+| 最大吞吐量 | 此量度表示每秒进入流配置文件摄取的最大入站请求数 | <ul><li>沙盒/数据流</li><li>数据流运行</li></ul> |  |
 | 已提取的记录 | 此量度表示在某个已配置的时间窗口内摄入配置文件存储区的记录总数。 | <ul><li>沙盒/数据流</li><li>数据流运行</li></ul> | <ul><li>沙盒/数据流：实时监控，每60秒刷新一次数据。</li><li>数据流运行：15分钟后分组。</li></ul> |
 | 失败的记录 | 此量度表示在某个已配置的时间窗口内由于出错而未能摄入配置文件存储区的记录总数。 | <ul><li>沙盒/数据流</li><li>数据流运行</li></ul> | <ul><li>沙盒/数据流：实时监控，每60秒刷新一次数据。</li><li>数据流运行：15分钟后分组。</li></ul> |
 | 跳过的记录数 | 此量度表示在某个已配置的时间窗口内由于配置或容量违规而被丢失的记录总数。 | <ul><li>沙盒/数据流</li><li>数据流运行</li></ul> | <ul><li>沙盒/数据流：实时监控，每60秒刷新一次数据。</li><li>数据流运行：15分钟后分组。</li></ul> |
@@ -101,31 +101,31 @@ ht-degree: 19%
 
 ## 使用监视仪表板进行流式处理配置文件摄取
 
-要访问用于流式处理配置文件摄取的监视仪表板，请转到Experience Platform UI，从左侧导航中选择&#x200B;**[!UICONTROL 监视]**，然后选择&#x200B;**[!UICONTROL 流式处理端到端]**。
+要访问流配置文件摄取的监视仪表板，请转到Experience Platform UI，从左侧导航中选择&#x200B;**[!UICONTROL Monitoring]**，然后选择&#x200B;**[!UICONTROL Streaming end-to-end]**。
 
 ![用于流式处理配置文件摄取的监视仪表板。](../assets/ui/streaming-profiles/monitoring-dashboard.png)
 
-请参阅&#x200B;*[!UICONTROL 个人资料]*&#x200B;量度卡片仪表板的顶部标题。 使用此显示可查看有关已摄取、失败和跳过的记录的信息，以及有关请求吞吐量和延迟的当前状态的信息。
+请参阅&#x200B;*[!UICONTROL Profile]*&#x200B;量度卡片的仪表板顶部标题。 使用此显示可查看有关已摄取、失败和跳过的记录的信息，以及有关请求吞吐量和延迟的当前状态的信息。
 
 ![个人资料卡。](../assets/ui/streaming-profiles/profile-card.png)
 
 接下来，使用界面查看有关流配置文件摄取量度的详细信息。 使用日历功能在不同的时间范围之间进行切换。 您可以从以下预配置的时间窗口中选择：
 
-* [!UICONTROL 最近6小时]
-* [!UICONTROL 最近12个小时]
-* [!UICONTROL 最近24小时]
-* [!UICONTROL 最近7天]
-* [!UICONTROL 最近30天]
+* [!UICONTROL Last 6 hours]
+* [!UICONTROL Last 12 hours]
+* [!UICONTROL Last 24 hours]
+* [!UICONTROL Last 7 days]
+* [!UICONTROL Last 30 days]
 
 或者，您可以使用日历手动配置自己的时间范围。
 
-您可以在监视仪表板中使用三种不同的量度类别来流式处理配置文件摄取：[!UICONTROL 吞吐量]、[!UICONTROL 摄取]和[!UICONTROL 延迟]。
+您可以在监视仪表板中使用三个不同的量度类别来流式处理配置文件摄取： [!UICONTROL Throughput]、[!UICONTROL Ingestion]和[!UICONTROL Latency]。
 
 >[!BEGINTABS]
 
 >[!TAB 吞吐量]
 
-选择&#x200B;**[!UICONTROL 吞吐量]**&#x200B;可查看有关Experience Platform在配置的时间段内正在处理的数据量的信息。 请参阅此量度以评估系统的效率和容量。
+选择&#x200B;**[!UICONTROL Throughput]**&#x200B;可查看有关Experience Platform在配置的时间段内正在处理的数据量的信息。 请参阅此量度以评估系统的效率和容量。
 
 ![显示设置为“吞吐量”的仪表板。](../assets/ui/streaming-profiles/throughput.png)
 
@@ -135,7 +135,7 @@ ht-degree: 19%
 
 >[!TAB 引入]
 
-**摄取**：选择&#x200B;**[!UICONTROL 摄取]**&#x200B;可查看有关沙盒中的摄取作业的信息。 这些摄取作业通过三个不同的指标进行测量。
+**摄取**：选择&#x200B;**[!UICONTROL Ingestion]**&#x200B;可查看有关沙盒中的摄取作业的信息。 这些摄取作业通过三个不同的指标进行测量。
 
 ![显示设置为“摄取”的仪表板。](../assets/ui/streaming-profiles/ingestion.png)
 
@@ -145,7 +145,7 @@ ht-degree: 19%
 
 >[!TAB 延迟]
 
-选择&#x200B;**[!UICONTROL 延迟]**&#x200B;可查看有关Experience Platform在给定时间段内响应请求或完成操作所花费时间的信息。
+选择&#x200B;**[!UICONTROL Latency]**&#x200B;可查看有关Experience Platform在给定时间段内响应请求或完成操作所花费时间的信息。
 
 ![显示设置为“延迟”的仪表板。](../assets/ui/streaming-profiles/latency.png)
 
@@ -155,7 +155,7 @@ ht-degree: 19%
 
 数据流表列出了所有流式摄取活动及其对应的实时客户资料量度集。 每个数据流都与其对应的数据集一起列出。
 
-如果您即将达到沙盒级别的容量限制，则可以参考[!UICONTROL 最大吞吐量]列，以识别任何影响使用率的现有数据流。 有关数据流管理最佳实践的更多信息，请阅读[最佳实践部分](#best-practices)。
+如果您即将达到沙盒级别的容量限制，则可以参考[!UICONTROL Max throughput]列以识别任何对您的使用率有贡献的现有数据流。 有关数据流管理最佳实践的更多信息，请阅读[最佳实践部分](#best-practices)。
 
 要监视特定数据流中摄取的数据，请选择数据流名称旁边的过滤器图标![过滤器](/help/images/icons/filter-add.png)。
 
@@ -206,17 +206,17 @@ ht-degree: 19%
 
 +++回答
 
-[!UICONTROL 监控]仪表板显示用于摄取和处理的实时量度。 这些数字是在活动时记录的准确量度。 相反，[!UICONTROL 容量]仪表板使用平滑机制来计算吞吐量容量。 此机制有助于减少短暂的尖峰，使其不再立即被认定为违规，并确保容量警报侧重于持续趋势，而不是短暂的突发事件。
+[!UICONTROL Monitoring]仪表板显示用于摄取和处理的实时量度。 这些数字是在活动时记录的准确量度。 相反，[!UICONTROL Capacity]仪表板使用平滑机制来计算吞吐量容量。 此机制有助于减少短暂的尖峰，使其不再立即被认定为违规，并确保容量警报侧重于持续趋势，而不是短暂的突发事件。
 
 由于平滑机制，您可能会注意到：
 
-* [!UICONTROL 监控]中未出现在[!UICONTROL 容量]中的小峰值。
-* 与相同时间戳的[!UICONTROL 监控]相比，[!UICONTROL 容量]的值略低。
+* 未出现在[!UICONTROL Monitoring]中的[!UICONTROL Capacity]的小峰值。
+* [!UICONTROL Capacity]中的值比相同时间戳的[!UICONTROL Monitoring]略低。
 
 这两个功能板虽然准确无误，但其设计目的却不尽相同。
 
-* [!UICONTROL 监控]：详细的逐时操作可见性。
-* [!UICONTROL 容量]：用于标识使用和违规模式的策略视图。
+* [!UICONTROL Monitoring]：详细的逐刻操作可见性。
+* [!UICONTROL Capacity]：用于标识使用和违规模式的策略视图。
 
 +++
 

@@ -9,7 +9,7 @@ type: Documentation
 role: Developer
 feature: API, Audiences, Data Ingestion, Datasets, Destinations, Privacy, Queries, Schemas, Sandboxes, Sources
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1817'
 ht-degree: 4%
@@ -68,16 +68,20 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 
 [Postman](https://www.postman.com/)是一种用于可视化对RESTful API的调用的有用工具。 [Experience Platform API快速入门指南](api-guide.md)包含有关导入Postman收藏集的视频和说明。 此外，还提供了每个服务的Postman收藏集列表。
 
-## [!DNL Experience Platform]的系统要求是什么？{#what-are-the-system-requirements-for-platform}
+## [!DNL Experience Platform]的系统要求是什么？ {#what-are-the-system-requirements-for-platform}
 
 根据您使用的是UI还是API，将应用以下系统要求：
 
 **对于基于UI的操作：**
+
 - 一种现代化的标准网络浏览器。 虽然建议使用最新版本的[!DNL Chrome]，但也支持[!DNL Firefox]、[!DNL Internet Explorer]和Safari的当前和以前的主要版本。
+
    - 每次发布新的主要版本时，[!DNL Experience Platform]开始支持最新版本，而不再支持第三个最新版本。
+
 - 所有浏览器都必须启用Cookie和JavaScript。
 
 **对于API和开发人员交互：**
+
 - 要为REST、流和Webhook集成开发的开发环境。
 
 ## 错误和故障排除 {#errors-and-troubleshooting}
@@ -94,7 +98,7 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 | 401 | 身份验证失败 | 请求未通过身份验证检查。 您的访问令牌可能缺失或无效。 有关更多详细信息，请参阅下面的[OAuth令牌错误](#oauth-token-is-missing)部分。 |
 | 403 | 禁止 | 已找到该资源，但您没有查看该资源的正确凭据。 <br>导致此错误的可能原因是您可能没有访问或编辑资源所需的[访问控制权限](/help/access-control/home.md)。 了解如何[获取必要的基于属性的访问控制权限](/help/landing/api-authentication.md#get-abac-permissions)以使用Experience Platform API。 </p> |
 | 404 | 未找到 | 在服务器上找不到请求的资源。 该资源可能已被删除，或者所请求的路径输入不正确。 |
-| 500 | 内部服务器错误 | 这是服务器端错误。 如果您同时发起多个调用，则可能会达到API限制，需要筛选结果。 （请参阅[过滤数据](../catalog/api/filter-data.md)上的[!DNL Catalog Service] API开发人员指南子指南以了解详情。） 在重试您的请求之前，请等待片刻，如果问题仍然存在，请联系您的管理员。 |
+| 500 | 内部服务器错误 | 这是服务器端错误。 如果您同时发起多个调用，则可能会达到API限制，需要筛选结果。 （请参阅[!DNL Catalog Service]过滤数据[上的](../catalog/api/filter-data.md) API开发人员指南子指南以了解详情。） 在重试您的请求之前，请等待片刻，如果问题仍然存在，请联系您的管理员。 |
 
 ## 请求标头错误 {#request-header-errors}
 
@@ -164,7 +168,7 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 }
 ```
 
-当用户或Adobe I/O集成（由`Authorization`标头中的[访问令牌](#how-do-i-get-an-access-token)标识）无权为`x-gw-ims-org-id`标头中提供的组织调用[!DNL Experience Platform] API时，将显示此错误消息。 在重试之前，请确保已在标头中为您的组织提供了正确的ID。 如果您不知道自己的组织ID，可以在[Adobe I/O控制台](https://console.adobe.io)中找到它：在&#x200B;**集成**&#x200B;选项卡中，导航到&#x200B;**概述**&#x200B;部分以进行特定集成，从而在&#x200B;**客户端凭据**&#x200B;下找到该ID。
+当用户或Adobe I/O集成（由[标头中的](#how-do-i-get-an-access-token)访问令牌`Authorization`标识）无权为[!DNL Experience Platform]标头中提供的组织调用`x-gw-ims-org-id` API时，将显示此错误消息。 在重试之前，请确保已在标头中为您的组织提供了正确的ID。 如果您不知道自己的组织ID，可以在[Adobe I/O控制台](https://console.adobe.io)中找到它：在&#x200B;**集成**&#x200B;选项卡中，导航到&#x200B;**概述**&#x200B;部分以进行特定集成，从而在&#x200B;**客户端凭据**&#x200B;下找到该ID。
 
 ### 刷新etag错误 {#refresh-etag-error}
 
@@ -201,6 +205,7 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 ```
 
 此错误消息在以下两种情况之一中显示：
+
 - 在API请求中传递不正确或格式错误的组织ID标头(`x-gw-ims-org-id`)时。 在重试之前，请确保包含组织的正确ID。
 - 当您的帐户（由提供的身份验证凭据表示）未与Experience Platform的产品配置文件关联时。 按照Experience Platform API身份验证教程中[生成访问凭据](./api-authentication.md#authentication-for-each-session)的步骤操作，将Experience Platform添加到您的帐户并相应地更新身份验证凭据。
 
@@ -208,14 +213,14 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 
 以下是[!DNL Experience Platform] API的疑难解答指南和API参考文档列表。 每个疑难解答指南都提供常见问题的解答以及单个[!DNL Experience Platform]服务特有的问题的解决方案。 API参考文档为每个服务的所有可用端点提供全面的指南，并显示您可能收到的请求正文、响应和错误代码示例。
 
-| 服务 | API参考 | 故障排除 |
+| 服务 | API 参考 | 故障排除 |
 | --- | --- | --- |
 | 访问控制 | [访问控制API](https://www.adobe.io/experience-platform-apis/references/access-control/) | [访问控制疑难解答指南](../access-control/troubleshooting-guide.md) |
 | Adobe Experience Platform数据摄取 | [[!DNL Batch Ingestion API]](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) | [批处理摄取疑难解答指南](../ingestion/batch-ingestion/troubleshooting.md) |
 | Adobe Experience Platform数据摄取 | [[!DNL Streaming Ingestion API]](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/) | [流式摄取疑难解答指南](../ingestion/streaming-ingestion/troubleshooting.md) |
 | Adobe Experience Platform数据科学Workspace | [[!DNL Sensei Machine Learning API]](https://developer.adobe.com/experience-platform-apis/references/sensei-machine-learning/) | [[!DNL Data Science Workspace] 疑难解答指南](../data-science-workspace/troubleshooting-guide.md) |
 | Adobe Experience Platform数据管理 | [[!DNL Policy Service API]](https://www.adobe.io/experience-platform-apis/references/policy-service/) |  |
-| Adobe Experience Platform Identity Service | [[!DNL Identity Service API]](https://www.adobe.io/experience-platform-apis/references/identity-service) | [[!DNL Identity Service] 疑难解答指南](../identity-service/troubleshooting-guide.md) |
+| Adobe Experience Platform 身份标识服务 | [[!DNL Identity Service API]](https://www.adobe.io/experience-platform-apis/references/identity-service) | [[!DNL Identity Service] 疑难解答指南](../identity-service/troubleshooting-guide.md) |
 | Adobe Experience Platform查询服务 | [[!DNL Query Service API]](https://www.adobe.io/experience-platform-apis/references/query-service/) | [[!DNL Query Service] 疑难解答指南](../query-service/troubleshooting-guide.md) |
 | Adobe Experience Platform区段 | [[!DNL Segmentation API]](https://www.adobe.io/experience-platform-apis/references/segmentation/) |
 | [!DNL Catalog Service] | [[!DNL Catalog Service API]](https://www.adobe.io/experience-platform-apis/references/catalog/) |  |

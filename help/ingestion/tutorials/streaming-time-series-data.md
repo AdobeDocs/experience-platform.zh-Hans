@@ -5,7 +5,7 @@ title: 使用流式引入API流式传输时间序列数据
 type: Tutorial
 description: 本教程将帮助您开始使用流摄取API，它是Adobe Experience Platform数据摄取服务API的一部分。
 exl-id: 720b15ea-217c-4c13-b68f-41d17b54d500
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1214'
 ht-degree: 2%
@@ -193,7 +193,7 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/des
 
 >[!NOTE]
 >
->{0&#x200B;}身份命名空间代码&#x200B;**&#x200B;**
+>{0&#x200B;}身份命名空间代码&#x200B;****
 >
 > 请确保代码有效 — 上面的示例使用“email”，它是一个标准身份命名空间。 在[身份服务常见问题解答](../../identity-service/troubleshooting-guide.md#what-are-the-standard-identity-namespaces-provided-by-experience-platform)中可以找到其他常用的标准身份命名空间。
 >
@@ -402,7 +402,7 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?syncValidation=t
 | -------- | ----------- |
 | `{CONNECTION_ID}` | 之前创建的流连接的`inletId`。 |
 | `xactionId` | 在服务器端为您刚刚发送的记录生成的唯一标识符。 此ID可帮助Adobe跟踪此记录在各种系统和调试中的生命周期。 |
-| `receivedTimeMs`：时间戳（以毫秒为单位），显示收到请求的时间。 |
+| `receivedTimeMs`：时间戳（以毫秒为单位），显示收到请求的时间。 |  |
 | `syncValidation.status` | 由于添加了查询参数`syncValidation=true`，因此将显示此值。 如果验证成功，状态将为`pass`。 |
 
 ## 检索新摄取的时间序列数据

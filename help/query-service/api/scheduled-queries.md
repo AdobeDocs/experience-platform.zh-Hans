@@ -5,9 +5,9 @@ title: 计划端点
 description: 以下部分介绍了您可以使用查询服务API对计划查询进行的各种API调用。
 role: Developer
 exl-id: f57dbda5-da50-4812-a924-c8571349f1cd
-source-git-commit: 10c0c5c639226879b1ca25391fc4a1006cf40003
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '1410'
+source-wordcount: '1409'
 ht-degree: 2%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 2%
 >
 >管理计划查询时的重要注意事项：<ul><li>如果用于创建计划的查询的帐户（技术或用户）失去访问权限或权限，计划的查询将失败。</li><li>在通过API或UI删除之前，必须禁用计划查询。</li><li>不支持无限期计划而不设置结束日期；必须始终指定结束日期。</li></ul>
 
-有关帐户要求、权限设置和管理计划查询的详细指导，请参阅[查询计划文档](../ui/query-schedules.md#technical-account-user-requirements)。 有关创建和配置技术帐户的逐步说明，请参阅[Developer Console设置](https://experienceleague.adobe.com/zh-hans/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/set-up-developer-console-and-postman)和[端到端技术帐户设置](https://experienceleague.adobe.com/zh-hans/docs/platform-learn/tutorial-comprehensive-technical/setup)。
+有关帐户要求、权限设置和管理计划查询的详细指导，请参阅[查询计划文档](../ui/query-schedules.md#technical-account-user-requirements)。 有关创建和配置技术帐户的逐步说明，请参阅[Developer Console设置](https://experienceleague.adobe.com/en/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/set-up-developer-console-and-postman)和[端到端技术帐户设置](https://experienceleague.adobe.com/en/docs/platform-learn/tutorial-comprehensive-technical/setup)。
 
 ## 示例API调用
 
@@ -176,7 +176,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/schedules
 | `query.sql` | 要按定义的计划执行的SQL查询。 |
 | `query.name` | 计划查询的名称。 |
 | `query.description` | 计划查询的可选描述。 |
-| `schedule.schedule` | 查询的cron计划。 请参阅[Crontab.guru](https://crontab.guru/)以交互方式创建、验证和了解cron表达式。 在此示例中，“30 * * * *”表示查询将每小时在30分钟标记处运行。<br><br>或者，您可以使用以下简写表达式：<ul><li>`@once`：查询只运行一次。</li><li>`@hourly`：查询每小时在一小时的开头运行一次。 这相当于cron表达式`0 * * * *`。</li><li>`@daily`：查询每天午夜运行一次。 这相当于cron表达式`0 0 * * *`。</li><li>`@weekly`：查询每周运行一次，于星期日、午夜运行。 这相当于cron表达式`0 0 * * 0`。</li><li>`@monthly`：查询每月运行一次，在每月的第一天午夜运行。 这相当于cron表达式`0 0 1 * *`。</li><li>`@yearly`：查询每年运行一次，于1月1日午夜。 这相当于cron表达式`0 0 1 1 *`。 |
+| `schedule.schedule` | 查询的cron计划。 请参阅[Crontab.guru](https://crontab.guru/)以交互方式创建、验证和了解cron表达式。 在此示例中，“`30 * * * *`”表示查询将每小时以30分钟标记运行。<br><br>或者，您可以使用以下简写表达式：<ul><li>`@once`：查询只运行一次。</li><li>`@hourly`：查询每小时在一小时的开头运行一次。 这相当于cron表达式`0 * * * *`。</li><li>`@daily`：查询每天午夜运行一次。 这相当于cron表达式`0 0 * * *`。</li><li>`@weekly`：查询每周运行一次，于星期日、午夜运行。 这相当于cron表达式`0 0 * * 0`。</li><li>`@monthly`：查询每月运行一次，在每月的第一天午夜运行。 这相当于cron表达式`0 0 1 * *`。</li><li>`@yearly`：查询每年运行一次，于1月1日午夜。 这相当于cron表达式`0 0 1 1 *`。 |
 | `schedule.startDate` | 以UTC时间戳写入的计划查询开始日期。 |
 
 **响应**

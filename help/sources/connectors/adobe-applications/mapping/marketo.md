@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Marketo Engage Source的映射字段
 description: 下表包含Marketo数据集中的字段与其对应的XDM字段之间的映射。
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: 3b21d952da603b519c9919b08467cd5c6091f235
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '1454'
+source-wordcount: '1451'
 ht-degree: 5%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->`iif(${web\.ecid} != null, to_object('ECID', arrays_to_objects('id', explode(last(split(${web\.ecid}, ":")), " "))), null)`源字段是计算字段，必须使用Experience Platform UI中的&#x200B;**[!UICONTROL 添加计算字段]**&#x200B;选项添加该字段。 阅读有关[添加计算字段](../../../../data-prep/ui/mapping.md#calculated-fields)的教程以了解更多信息。
+>`iif(${web\.ecid} != null, to_object('ECID', arrays_to_objects('id', explode(last(split(${web\.ecid}, ":")), " "))), null)`源字段是一个计算字段，必须使用Experience Platform UI中的&#x200B;**[!UICONTROL Add calculated field]**&#x200B;选项添加该字段。 阅读有关[添加计算字段](../../../../data-prep/ui/mapping.md#calculated-fields)的教程以了解更多信息。
 
 | Marketo源字段 | 活动类型标识 | Source数据集 | XDM目标字段 | 注释 |
 | -------------------- | ---------------- | -------------- | ---------------- | ----- |
@@ -66,7 +66,7 @@ ht-degree: 5%
 | 在(7， 8， 9， 10， 11， 27)中的activityTypeId时primaryAttributeValueId | 7、8、9、10、11、27 | `directMarketing.mailingName` | `directMarketing.mailingName` |  |
 |  |  | `directMarketing.testVariantName` | `directMarketing.testVariantName` |  |
 | `attributes.Test Variant` |  | `directMarketing.testVariantID` | `directMarketing.testVariantID` |  |
-| `attributes.Subcategory` <ul><li><strong>activityTypeId = 8</strong><ul><li>1099 →消息被阻止</li><li>Source上阻止了1003 →垃圾邮件</li><li>邮件已阻止1004 →垃圾邮件</li><li>2003 →电子邮件地址无效</li><li>2001 →电子邮件地址错误</li><li>* →退回原因未知</li></ul></li><li><strong>activityTypeId = 27</strong><ul><li>3999 →消息未被接受</li><li>3001 →邮箱已满</li><li>3004 →发生超时</li><li>4003 → DNS故障</li><li>4002 →消息太大</li><li>4006 →策略违规</li><li>4999 →瞬时故障</li><li>收到9999 →错误响应</li><li>* →软退回原因未知</li></ul></li></ul> | 8， 27 | `directMarketing.emailBouncedCode` | `directMarketing.emailBouncedCode` |  |
+| `attributes.Subcategory` <ul><li><strong>activityTypeId = 8</strong><ul><li>1099 →消息被阻止</li><li>Source上阻止了1003 →垃圾邮件</li><li>邮件已阻止1004 →垃圾邮件</li><li>2003 →电子邮件地址无效</li><li>2001 →电子邮件地址错误</li><li>*` &rarr;`未知的退回原因</li></ul></li><li><strong>activityTypeId = 27</strong><ul><li>3999 →消息未被接受</li><li>3001 →邮箱已满</li><li>3004 →发生超时</li><li>4003 → DNS故障</li><li>4002 →消息太大</li><li>4006 →策略违规</li><li>4999 →瞬时故障</li><li>收到9999 →错误响应</li><li>*→软退回原因未知</li></ul></li></ul> | 8， 27 | `directMarketing.emailBouncedCode` | `directMarketing.emailBouncedCode` |  |
 | `attributes.Details` |  | `directMarketing.emailBouncedDetails` | `directMarketing.emailBouncedDetails` |  |
 | `attributes.Email` |  | `directMarketing.email` | `directMarketing.email` |  |
 | `attributes.Is Mobile Device` |  | `device.isMobileDevice` | `device.isMobileDevice` |  |

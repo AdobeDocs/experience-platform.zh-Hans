@@ -2,9 +2,9 @@
 title: 同意分析和跟踪
 description: 了解如何构建同意分析仪表板，以跟踪用户同意随时间变化的趋势。
 exl-id: 34accae5-8b4f-4281-8333-187a91db8199
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '1910'
+source-wordcount: '1805'
 ht-degree: 0%
 
 ---
@@ -24,43 +24,43 @@ ht-degree: 0%
 
 ## 创建同意的受众 {#create-consent-audiences}
 
-要构建同意仪表板，您必须首先创建同意联系的所有用户档案的受众。 要导航到Real-Time Customer Data Platform区段生成器，请在Experience Platform UI的左侧导航中选择&#x200B;**[!UICONTROL 受众]**。 从[!UICONTROL 受众]仪表板的[!UICONTROL 客户]选项卡中，选择视图右上角的&#x200B;**[!UICONTROL 创建受众]**，然后选择&#x200B;**[!UICONTROL 生成规则]**。
+要构建同意仪表板，您必须首先创建同意联系的所有用户档案的受众。 要导航到Real-Time Customer Data Platform区段生成器，请在Experience Platform UI的左侧导航中选择&#x200B;**[!UICONTROL Audiences]**。 从[!UICONTROL Customer]仪表板的[!UICONTROL Audiences]选项卡中，选择视图右上角的&#x200B;**[!UICONTROL Create audience]**，然后选择&#x200B;**[!UICONTROL Build rules]**。
 
-突出显示具有[!UICONTROL 客户]、[!UICONTROL 受众]和[!UICONTROL 创建区段]的[!UICONTROL 受众]仪表板。![&#128279;](../images/insights-use-cases/consent-analysis/create-audience.png)
+![突出显示了[!UICONTROL Audiences]、[!UICONTROL Customer]和[!UICONTROL Audiences]的[!UICONTROL Create segment]仪表板。](../images/insights-use-cases/consent-analysis/create-audience.png)
 
 此时将显示“区段生成器”。 接下来，从可用选项中选择&#x200B;**[!UICONTROL XDM Individual Profile]**。 有关[规则生成器画布](../../segmentation/ui/segment-builder.md#rule-builder-canvas)的详细信息，请参阅文档。
 
-![突出显示具有[!UICONTROL XDM个人配置文件]属性文件夹的区段生成器。](../images/insights-use-cases/consent-analysis/xdm-individual-profile.png)
+![突出显示[!UICONTROL XDM Individual Profile]属性文件夹的区段生成器。](../images/insights-use-cases/consent-analysis/xdm-individual-profile.png)
 
-从可用的选项中找到您的同意属性。 选择&#x200B;**[!UICONTROL 同意和偏好设置]**。
+从可用的选项中找到您的同意属性。 选择 **[!UICONTROL Consents and Preferences]**。
 
 >[!NOTE]
 >
 >如果您在与Adobe推荐字段组不同的属性中维护了用户同意，则必须选择这些属性，而不是下面显示的属性。
 
-有关分段[&#128279;](../../segmentation/tutorials/consents.md#handling-consent-in-segmentation)文档中同意处理的更多信息。
+有关分段[文档中](../../segmentation/tutorials/consents.md#handling-consent-in-segmentation)同意处理的更多信息。
 
-![带有[!UICONTROL 同意和首选项]属性文件夹的区段生成器突出显示。](../images/insights-use-cases/consent-analysis/consent-and-preferences.png)
+![突出显示[!UICONTROL Consent and Preferences]属性文件夹的区段生成器。](../images/insights-use-cases/consent-analysis/consent-and-preferences.png)
 
-将显示各种同意和偏好设置选项。 由于此演示侧重于同意通过各种营销渠道进行联系，因此请选择&#x200B;**[!UICONTROL 营销偏好设置]**。
+将显示各种同意和偏好设置选项。 由于此演示侧重于同意通过各种营销渠道进行联系，因此请选择&#x200B;**[!UICONTROL Marketing Preferences]**。
 
-![突出显示具有[!UICONTROL 营销首选项]文件夹的区段生成器。](../images/insights-use-cases/consent-analysis/marketing-preferences.png)
+![突出显示了[!UICONTROL Marketing Preferences]文件夹的区段生成器。](../images/insights-use-cases/consent-analysis/marketing-preferences.png)
 
 将显示营销偏好设置列表。 虽然此示例用例侧重于电子邮件、短信和调用，但您也可以为任何其他组合或整个选项构建见解。 对于每个渠道，执行以下步骤以创建受众。
 
-要开始配置受众，请选择&#x200B;**[!UICONTROL 接收短信]** / **[!UICONTROL 接收电子邮件]** / **[!UICONTROL 接收呼叫]**。
+要开始配置受众，请选择&#x200B;**[!UICONTROL Receive SMS]** / **[!UICONTROL Receive email]** / **[!UICONTROL Receive calls]**。
 
 ![受众生成器中突出显示营销的可用联系渠道。](../images/insights-use-cases/consent-analysis/channels.png)
 
-将显示[!UICONTROL 订阅]文件夹。 从可用选项中，选择&#x200B;**[!UICONTROL 选择值]**&#x200B;属性并将其拖动到中心窗格，然后从下拉列表中选择所需的值。 在这种情况下，请选择&#x200B;**是（选择启用）**。 接下来，根据业务需求为受众命名，并提供用户友好的描述。
+出现[!UICONTROL Subscriptions]文件夹。 从可用选项中，选择&#x200B;**[!UICONTROL Choice Value]**&#x200B;属性并将其拖动到中心窗格，然后从下拉列表中选择所需的值。 在这种情况下，请选择&#x200B;**是（选择启用）**。 接下来，根据业务需求为受众命名，并提供用户友好的描述。
 
 >[!NOTE]
 >
 >建议您创建的受众数量存在软限制。 有关详细信息，请参阅[分段护栏文档](../../profile/guardrails.md#segmentation-guardrails)。
 
-![区段生成器中突出显示[!UICONTROL 是（选择加入）]值的[!UICONTROL 选择值]属性。 受众的名称和描述也突出显示。](../images/insights-use-cases/consent-analysis/choice-value.png)
+![在区段生成器中高亮显示值为[!UICONTROL Choice Value]的[!UICONTROL Yes (opt-in)]属性。 受众的名称和描述也突出显示。](../images/insights-use-cases/consent-analysis/choice-value.png)
 
-创建必要的受众后，这些受众将列在[!UICONTROL 受众] [!UICONTROL 浏览]选项卡中。
+创建必要的受众后，这些受众将列在[!UICONTROL Audiences] [!UICONTROL Browse]选项卡中。
 
 >[!NOTE]
 >
@@ -72,13 +72,13 @@ Adobe已创建各种见解，这些见解自动在“用户档案”、“受众
 
 ## 受众重叠 {#audience-overlap}
 
-要检查任意两个同意受众之间的重叠，请将[!UICONTROL 按合并策略列出的受众重叠]添加到您的配置文件仪表板，然后在下拉菜单中选择所需的受众。 有关洞察的更多信息，请参阅文档，了解如何将&#x200B;[*按合并策略*](../guides/profiles.md#audience-overlap-by-merge-policy)&#x200B;划分的受众重叠添加到功能板。
+要检查任意两个同意受众之间的重叠，请将[!UICONTROL Audience overlap by merge policy]添加到您的配置文件仪表板，然后在下拉菜单中选择所需的受众。 有关insight的更多信息，请参阅文档，了解如何将&#x200B;[*按合并策略划分的受众重叠*](../guides/profiles.md#audience-overlap-by-merge-policy)&#x200B;添加到仪表板中的小部件。
 
 <!-- Image needs updating to night mode -->
 
 ![突出显示具有按合并策略小组件划分的受众重叠的用户档案仪表板。 该小组件显示两个同意受众之间的重叠。](../images/insights-use-cases/consent-analysis/audience-overlap-by-merge-policy.png)
 
-您可以使用受众仪表板中的受众重叠报表查看所有受众的重叠，其中用户已同意接收所有其他受众的呼叫。 要查看同意受众的重叠，请先导航到[!UICONTROL 受众] [!UICONTROL 概述]选项卡。 从该位置，您可以将[!UICONTROL 受众重叠报表]构件添加到受众仪表板。 创建构件后，从页面顶部的受众概述下拉菜单中选择&#x200B;**[!UICONTROL 用户同意调用]**&#x200B;受众。 接下来，在受众重叠报表小组件中选择&#x200B;**[!UICONTROL 查看更多]**，以查看最多50个顶部重叠，以及有关所选区段的最少重叠中的50个。
+您可以使用受众仪表板中的受众重叠报表查看所有受众的重叠，其中用户已同意接收所有其他受众的呼叫。 要查看同意受众的重叠，请先导航到[!UICONTROL Audiences] [!UICONTROL Overview]选项卡。 从该位置，您可以将[!UICONTROL Audience overlap report]小组件添加到受众仪表板。 创建构件后，从页面顶部的受众概述下拉菜单中选择&#x200B;**[!UICONTROL User consented to calls]**&#x200B;受众。 接下来，在受众重叠报表小组件中选择&#x200B;**[!UICONTROL View more]**&#x200B;以查看最多50个顶级重叠，以及与所选区段相关的最少重叠中的50个。
 
 <!-- Image needs updating to night mode -->
 
@@ -92,7 +92,7 @@ Adobe已创建各种见解，这些见解自动在“用户档案”、“受众
 
 ## 受众规模趋势 {#audience-size-trends}
 
-创建基于同意的受众时，会自动显示自创建受众日期起最多12个月的趋势。 要获得客户同意的完整功能趋势，请将以下构件添加到[!UICONTROL 区段] [!UICONTROL 概述]页面。 这些见解提供了一种强大的手段，用于跟踪您的同意如何随时间变化。 它们甚至与您并行运行的任何可能对同意产生正面或负面影响的活动相关联。 为这些构件提供的描述适用于同意用例。
+创建基于同意的受众时，会自动显示自创建受众日期起最多12个月的趋势。 要显示客户同意的完整功能趋势，请将以下小组件添加到[!UICONTROL Segments] [!UICONTROL Overview]页面。 这些见解提供了一种强大的手段，用于跟踪您的同意如何随时间变化。 它们甚至与您并行运行的任何可能对同意产生正面或负面影响的活动相关联。 为这些构件提供的描述适用于同意用例。
 
 - [受众规模趋势](../guides/audiences.md#audience-size-trend)：此构件提供了一种跟踪您的同意如何随时间的变化的方法。
 - [受众规模变化趋势](../guides/audiences.md#audience-size-change-trend)：此构件跟踪您的客户同意如何每天发生更改。 例如，如果客户同意的数量减少了100,000，则可以查看每天发生的更改。
@@ -104,7 +104,7 @@ Adobe已创建各种见解，这些见解自动在“用户档案”、“受众
 
 ## 受众概述功能板 {#audiences-overview-dashboard}
 
-创建同意相关的受众（例如“用户同意短信”）后，您可以通过向受众概述仪表板添加相应的小部件，查看有关受众的关键个性化同意信息。 导航到[!UICONTROL 受众] [!UICONTROL 概述]，并从构件库中添加您选择的构件。 添加到仪表板视图的任何构件都可以使用[!UICONTROL 修改仪表板]功能调整大小和移动。 您的个性化视图可以包含各种见解，例如一段时间的趋势（最多12个月）、与其他受众的重叠以及受众的身份构成。 下面显示了一个示例视图。
+创建同意相关的受众（例如“用户同意短信”）后，您可以通过向受众概述仪表板添加相应的小部件，查看有关受众的关键个性化同意信息。 导航到[!UICONTROL Audiences] [!UICONTROL Overview]，并从构件库中添加您选择的构件。 添加到仪表板视图的任何构件都可以使用[!UICONTROL Modify dashboard]功能调整大小和移动。 您的个性化视图可以包含各种见解，例如一段时间的趋势（最多12个月）、与其他受众的重叠以及受众的身份构成。 下面显示了一个示例视图。
 
 ![用户同意短信受众的受众仪表板在全局受众下拉菜单中突出显示。](../images/insights-use-cases/consent-analysis/audience-dashboard-user-consent-to-sms.png)
 
@@ -112,11 +112,11 @@ Adobe已创建各种见解，这些见解自动在“用户档案”、“受众
 
 您还可以使用用户定义的仪表板构建自己的小组件。 通过构建您自己的构件，您可以完全控制构件的类型，还可以灵活地直接在Adobe Real-Time CDP中添加过滤器等。
 
-例如，如果您希望在同一图表中显示多个同意受众的趋势，以便了解每个同意偏好设置随时间的变化。 通过用户定义的功能板，只需最少的步骤和一次性设置即可实现此类型的可视化。 首先，在左侧导航中选择&#x200B;**[!UICONTROL 功能板]**。 将显示[!UICONTROL 功能板]工作区。 然后选择&#x200B;**[!UICONTROL 创建仪表板]**。 有关如何[创建功能板和自定义小组件](../standard-dashboards.md)的完整说明，请参阅用户定义的功能板指南。
+例如，如果您希望在同一图表中显示多个同意受众的趋势，以便了解每个同意偏好设置随时间的变化。 通过用户定义的功能板，只需最少的步骤和一次性设置即可实现此类型的可视化。 首先，在左侧导航中选择&#x200B;**[!UICONTROL Dashboards]**。 出现[!UICONTROL Dashboards]工作区。 然后选择&#x200B;**[!UICONTROL Create dashboard]**。 有关如何[创建功能板和自定义小组件](../standard-dashboards.md)的完整说明，请参阅用户定义的功能板指南。
 
 ![突出显示包含功能板和创建功能板的功能板工作区。](../images/standard-dashboards/create-dashboard.png)
 
-当在小组件编辑器中[选择数据模型](../standard-dashboards.md#select-data-model)时，依次选择`CDPInsights`和&#x200B;**[!UICONTROL 下一步]**。 出现[!UICONTROL 选择表]对话框。
+当在小组件编辑器中[选择数据模型](../standard-dashboards.md#select-data-model)时，依次选择`CDPInsights`和&#x200B;**[!UICONTROL Next]**。 出现[!UICONTROL Select table]对话框。
 
 ![突出显示了CDPInsights模型的“选择数据模型”对话框。](../images/standard-dashboards/select-data-model-dialog.png)
 
@@ -126,17 +126,17 @@ Adobe已创建各种见解，这些见解自动在“用户档案”、“受众
 
 使用所选表中的数据填充构件编辑器后，请执行以下步骤：
 
-- [搜索[!UICONTROL 属性]](../standard-dashboards.md#add-filter-attributes)以查找`[!UICONTROL date]`，然后使用+图标从下拉菜单中将`[!UICONTROL date]`属性添加到X轴。
+- [在[!UICONTROL Attributes]](../standard-dashboards.md#add-filter-attributes)中搜索`[!UICONTROL date]`，然后使用+图标从下拉菜单中将`[!UICONTROL date]`属性添加到X轴。
   ![突出显示添加图标和下拉菜单的小组件编辑器。](../images/standard-dashboards/attributes-dropdown.png)
-- 在[!UICONTROL 属性]中搜索`[!UICONTROL count_of_profiles]`，然后使用+图标将`[!UICONTROL count_of_profiles]`属性从下拉菜单添加到Y轴。
-- 选择[!UICONTROL Y轴]字段中的`...`（省略号）图标，然后从下拉菜单中选择[!UICONTROL SUM]聚合函数。
-  ![小组件编辑器同意显示小组件趋势，其中数据模型、表格和Y轴下拉菜单及SUM功能突出显示。](../images/insights-use-cases/consent-analysis/y-axis-sum-function.png)
-- 选择[!UICONTROL 标记]下拉菜单，并将图表类型更改为[!UICONTROL 线]。
-- 在[!UICONTROL 属性]中搜索`[!UICONTROL segment_name]`，然后使用+图标将`segment_name`添加为下拉菜单中的[!UICONTROL 筛选器]。 将显示[!UICONTROL 筛选器：区段名称]对话框。 选择之前创建的与同意相关的受众。 对于此示例，请选择&#x200B;**[!UICONTROL 用户同意呼叫]**、**[!UICONTROL 用户同意短信]**&#x200B;和&#x200B;**[!UICONTROL 用户同意电子邮件]**，然后依次选择&#x200B;**[!UICONTROL 应用]**。
-- 在[!UICONTROL 属性]中搜索`[!UICONTROL segment_name]`，然后从下拉菜单中选择+图标以将`segment_name`添加为[!UICONTROL 颜色]。
-- 打开[[!UICONTROL 属性]面板](../standard-dashboards.md#widget-properties)并提供适当的[!UICONTROL 小组件标题]和[!UICONTROL 轴标签]。
+- 在[!UICONTROL Attributes]中搜索`[!UICONTROL count_of_profiles]`，然后使用+图标从下拉菜单中将`[!UICONTROL count_of_profiles]`属性添加到Y轴。
+- 在`...`字段中选择[!UICONTROL Y-axis]（省略号）图标，然后从下拉菜单中选择[!UICONTROL SUM]聚合函数。
+  ![小组件编辑器同意趋势小组件，其中数据模型、表格和Y轴下拉菜单及SUM功能突出显示。](../images/insights-use-cases/consent-analysis/y-axis-sum-function.png)
+- 选择[!UICONTROL Marks]下拉菜单，并将图表类型更改为[!UICONTROL Line]。
+- 在[!UICONTROL Attributes]中搜索`[!UICONTROL segment_name]`，然后使用+图标从下拉菜单将`segment_name`添加为[!UICONTROL Filter]。 出现[!UICONTROL Filter: Segment_name]对话框。 选择之前创建的与同意相关的受众。 对于此示例，请选择&#x200B;**[!UICONTROL Users Consented to Calls]**、**[!UICONTROL Users Consented to SMS]**&#x200B;和&#x200B;**[!UICONTROL Users Consented to Email]**，然后选择&#x200B;**[!UICONTROL Apply]**。
+- 在[!UICONTROL Attributes]中搜索`[!UICONTROL segment_name]`，然后从下拉菜单中选择+图标以将`segment_name`添加为[!UICONTROL Color]。
+- 打开[面板[!UICONTROL Properties]](../standard-dashboards.md#widget-properties)并提供适当的[!UICONTROL Widget title]和[!UICONTROL Axis label]。
   ![突出显示属性图标和小组件标题的小组件编辑器。](../images/standard-dashboards/properties-panel.png)
-- 选择&#x200B;**[!UICONTROL 保存并关闭]**&#x200B;以确认您的设置。
+- 选择&#x200B;**[!UICONTROL Save and close]**&#x200B;以确认您的设置。
 
 >[!TIP]
 >

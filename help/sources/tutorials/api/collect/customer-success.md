@@ -5,7 +5,7 @@ title: 使用流服务API为客户成功源创建数据流
 type: Tutorial
 description: 本教程涵盖以下步骤：从客户成功系统中检索数据，以及使用源连接器和API将数据引入Experience Platform。
 exl-id: 0fae04d0-164b-4113-a274-09677f4bbde5
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1267'
 ht-degree: 2%
@@ -210,7 +210,7 @@ curl -X POST \
 
 要将源数据摄取到目标数据集中，必须首先将其映射到目标数据集所遵循的目标架构。
 
-要创建映射集，请在提供目标XDM架构`$id`和要创建的映射集的详细信息时，向[[!DNL Data Prep] API](https://developer.adobe.com/experience-platform-apis/references/data-prep/)的`mappingSets`端点发出POST请求。
+要创建映射集，请在提供目标XDM架构`mappingSets`和要创建的映射集的详细信息时，向[[!DNL Data Prep] API](https://developer.adobe.com/experience-platform-apis/references/data-prep/)的`$id`端点发出POST请求。
 
 **API格式**
 

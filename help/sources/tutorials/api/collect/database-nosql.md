@@ -3,7 +3,7 @@ title: 使用流服务API为数据库源创建数据流
 type: Tutorial
 description: 了解如何使用流服务API创建数据流并将数据库中的数据摄取到Experience Platform中。
 exl-id: 1e1f9bbe-eb5e-40fb-a03c-52df957cb683
-source-git-commit: 2ad0ffba128e8c51f173d24d4dd2404b9cbbb59a
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1489'
 ht-degree: 2%

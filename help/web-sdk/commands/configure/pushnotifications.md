@@ -1,9 +1,9 @@
 ---
 title: pushNotifications
 description: 配置Web SDK的推送通知以启用基于浏览器的推送消息。
-source-git-commit: 84faff58bac199c1113d7451f8cc865b6a870680
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '510'
+source-wordcount: '511'
 ht-degree: 2%
 
 ---
@@ -105,4 +105,4 @@ alloy("configure", {
 
 ## 后续步骤 {#next-steps}
 
-配置推送通知后，使用[`sendPushSubscription`](../sendpushsubscription.md)命令在Adobe Experience Platform中注册推送订阅。
+配置推送通知后，使用[sendPushSubscription](../sendpushsubscription.md)命令在Adobe Experience Platform中注册推送订阅。

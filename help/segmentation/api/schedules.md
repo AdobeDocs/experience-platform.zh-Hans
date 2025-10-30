@@ -4,9 +4,9 @@ title: 计划API端点
 description: 计划是一种可用于每天自动运行一次批处理分段作业的工具。
 role: Developer
 exl-id: 92477add-2e7d-4d7b-bd81-47d340998ff1
-source-git-commit: bf90e478b38463ec8219276efe71fcc1aab6b2aa
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '2104'
+source-wordcount: '2088'
 ht-degree: 2%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 2%
 
 ## 检索计划列表 {#retrieve-list}
 
-您可以通过向`/config/schedules`端点发出GET请求来检索组织的所有计划的列表。
+您可以通过向`/config/schedules`端点发出GET请求来检索贵组织所有计划的列表。
 
 **API格式**
 
@@ -110,7 +110,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/config/schedules?limit=10 \
 | `children.type` | 字符串形式的作业类型。 支持的两种类型是“batch_segmentation”和“export”。 |
 | `children.properties` | 包含与计划相关的其他属性的对象。 |
 | `children.properties.segments` | 使用`["*"]`可确保包含所有区段。 |
-| `children.schedule` | 包含作业计划的字符串。 作业只能被安排每天运行一次，这意味着您不能将作业安排在24小时期间运行多次。 有关cron计划的详细信息，请阅读[cron表达式格式](#appendix)的附录。 在此示例中，“0 0 1 * *”表示此计划将在每天凌晨1:00运行。 |
+| `children.schedule` | 包含作业计划的字符串。 作业只能被安排每天运行一次，这意味着您不能将作业安排在24小时期间运行多次。 有关cron计划的详细信息，请阅读[cron表达式格式](#appendix)的附录。 在此示例中，“`0 0 1 * *`”表示此计划将在每天凌晨1:00运行。 |
 | `children.state` | 包含计划状态的字符串。 支持的两种状态分别为“活动”和“不活动”。 默认情况下，状态设置为“不活动”。 |
 
 +++
@@ -127,7 +127,7 @@ POST /config/schedules
 
 **请求**
 
-+++ 创建计划的示例请求。
++++ 创建计划的示例请求。 
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/config/schedules \
@@ -156,7 +156,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/config/schedules \
 | `type` | **必填。**&#x200B;作为字符串的作业类型。 支持的两种类型是“batch_segmentation”和“export”。 |
 | `properties` | **必填。**&#x200B;包含与计划相关的其他属性的对象。 |
 | `properties.segments` | **当`type`等于“batch_segmentation”时必需。**&#x200B;使用`["*"]`确保包含所有区段。 |
-| `schedule` | *可选。*&#x200B;包含作业计划的字符串。 作业只能被安排每天运行一次，这意味着您不能将作业安排在24小时期间运行多次。 有关cron计划的详细信息，请阅读[cron表达式格式](#appendix)的附录。 在此示例中，“0 0 1 * *”表示此计划将在每天凌晨1:00运行。 <br><br>如果未提供此字符串，将自动生成系统生成的计划。 |
+| `schedule` | *可选。*&#x200B;包含作业计划的字符串。 作业只能被安排每天运行一次，这意味着您不能将作业安排在24小时期间运行多次。 有关cron计划的详细信息，请阅读[cron表达式格式](#appendix)的附录。 在此示例中，“`0 0 1 * *`”表示此计划将在每天凌晨1:00运行。 <br><br>如果未提供此字符串，将自动生成系统生成的计划。 |
 | `state` | *可选。*&#x200B;包含计划状态的字符串。 支持的两种状态分别为“活动”和“不活动”。 默认情况下，状态设置为“不活动”。 |
 
 +++
@@ -195,7 +195,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/config/schedules \
 
 ## 检索特定计划 {#get}
 
-您可以通过向`/config/schedules`端点发出GET请求并在请求路径中提供要检索的调度的ID，来检索有关特定调度的详细信息。
+您可以通过向`/config/schedules`端点发出GET请求，并在请求路径中提供要检索的计划ID，来检索有关特定计划的详细信息。
 
 **API格式**
 
@@ -209,7 +209,7 @@ GET /config/schedules/{SCHEDULE_ID}
 
 **请求**
 
-+++ 用于检索计划的示例请求。
++++ 用于检索计划的示例请求。 
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/config/schedules/4e538382-dbd8-449e-988a-4ac639ebe72b
@@ -257,14 +257,14 @@ curl -X GET https://platform.adobe.io/data/core/ups/config/schedules/4e538382-db
 | `type` | 字符串形式的作业类型。 两种受支持的类型是`batch_segmentation`和`export`。 |
 | `properties` | 包含与计划相关的其他属性的对象。 |
 | `properties.segments` | 使用`["*"]`可确保包含所有区段。 |
-| `schedule` | 包含作业计划的字符串。 作业只能被安排每天运行一次，这意味着您不能将作业安排在24小时内运行多次。 有关cron计划的详细信息，请阅读[cron表达式格式](#appendix)的附录。 在此示例中，“0 0 1 * *”表示此计划将在每天凌晨1:00运行。 |
+| `schedule` | 包含作业计划的字符串。 作业只能被安排每天运行一次，这意味着您不能将作业安排在24小时内运行多次。 有关cron计划的详细信息，请阅读[cron表达式格式](#appendix)的附录。 在此示例中，“`0 0 1 * *`”表示此计划将在每天凌晨1:00运行。 |
 | `state` | 包含计划状态的字符串。 两个支持的状态是`active`和`inactive`。 默认情况下，状态设置为`inactive`。 |
 
 +++
 
 ## 更新特定计划的详细信息 {#update}
 
-您可以通过向`/config/schedules`端点发出PATCH请求并在请求路径中提供您尝试更新的计划的ID来更新特定计划。
+您可以更新特定计划，方法是向`/config/schedules`端点发出PATCH请求，并在请求路径中提供您尝试更新的计划的ID。
 
 PATCH请求允许您更新单个计划的[状态](#update-state)或[cron计划](#update-schedule)。
 
@@ -405,10 +405,10 @@ cron表达式是由6或7个字段组成的字符串。 该表达式将类似于�
 | Seconds | 是 | 0-59 | `, - * /` |
 | Minutes | 是 | 0-59 | `, - * /` |
 | 小时 | 是 | 0-23 | `, - * /` |
-| 日期 | 是 | 1-31 | `, - * ? / L W` |
-| 月 | 是 | 1-12,12月1日 | `, - * /` |
-| Day of week | 是 | 1-7，星期六 | `, - * ? / L #` |
-| 年 | 否 | 空的，1970-2099 | `, - * /` |
+| 每月的第几日 | 是 | 1-31 | `, - * ? / L W` |
+| Month | 是 | 1-12,12月1日 | `, - * /` |
+| 每周时间 | 是 | 1-7，星期六 | `, - * ? / L #` |
+| Year | 否 | 空的，1970-2099 | `, - * /` |
 
 >[!NOTE]
 >
@@ -434,10 +434,10 @@ cron表达式是由6或7个字段组成的字符串。 该表达式将类似于�
 | 表达式 | 说明 |
 | ---------- | ----------- |
 | `0 0 13 * * ?` | 事件将在每天下午1点触发。 |
-| `0 30 9 * * ? 2022` | 该活动将于2022年每天上午9:30触发。 |
-| `0 * 18 * * ?` | 该事件将每分钟触发一次，从下午6点开始，到每天下午6:59结束。 |
+| `0 30 9 * * ? 2022` | 该活动将在2022年的每天的9:30AM触发。 |
+| `0 * 18 * * ?` | 该事件将每分钟触发一次，从下午6点开始，到每天6:59PM结束。 |
 | `0 0/10 17 * * ?` | 该活动每10分钟触发一次，从下午5点开始，到每天下午6点结束。 |
-| `0 13,38 5 ? 6 WED` | 该活动将于每年6月星期三清晨5点13分和清晨5点38分开始。 |
-| `0 30 12 ? * 4#3` | 活动将于每月第三周的中午12:30激发。 |
-| `0 30 12 ? * 6L` | 活动将于每月最后一个星期五中午12:30触发。 |
-| `0 45 11 ? * MON-THU` | 事件将在每星期一、星期二、星期三和星期四上午11:45激发。 |
+| `0 13,38 5 ? 6 WED` | 该事件将在6月的每个星期三的5:13AM和5:38AM触发。 |
+| `0 30 12 ? * 4#3` | 该活动将于每月第三个星期三的12:30PM触发。 |
+| `0 30 12 ? * 6L` | 该事件将在每月最后一个星期五的12:30PM触发。 |
+| `0 45 11 ? * MON-THU` | 事件将在每个星期一、星期二、星期三和星期四的11:45AM触发。 |

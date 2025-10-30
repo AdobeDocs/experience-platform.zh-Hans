@@ -1,8 +1,8 @@
 ---
 title: Adobe客户端数据层扩展
-description: 了解Adobe Experience Platform中的Adobe客户端数据层标记扩展。
+description: 了解Adobe Experience Platform中的Adobe Client Data Layer标记扩展。
 exl-id: c4d1b4d3-4b51-4701-be2e-31b08e109bf6
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '647'
 ht-degree: 0%
@@ -18,9 +18,9 @@ If you would like to have more details on development consideration, [please rea
 
 ## 安装
 
-要安装扩展，请在Experience PlatformUI或数据收集UI中导航到扩展目录，然后选择Adobe客户端数据层。
+要安装扩展，请导航到Experience Platform UI或数据收集UI中的扩展目录，然后选择Adobe Client Data Layer 。
 
-目录![&#128279;](./images/catalog.png)中的ACDL扩展视图
+目录![中的](./images/catalog.png)ACDL扩展视图
 
 <!-- (GitHub link?)
 There is also the possibility to fork this project. You can download this github project, realize the change that you deem required for your specific use-case and re-upload it on your Organization as a private extension.
@@ -37,7 +37,7 @@ This installation will not be supported on our end.<br>
 >
 >更改对象名称时，原始`adobeDataLayer`对象仍在实例化中，然后复制到您选择的新变量名称。
 
-## 活动
+## 事件
 
 通过扩展，您可以侦听Data Layer上的事件。 可以使用以下事件：
 
@@ -51,12 +51,12 @@ This installation will not be supported on our end.<br>
 
 监听程序将跟踪以下示例推送事件：
 
-* ` adobeDataLayer.push({"data":"something"})`
-* ` adobeDataLayer.push({"event":"myevent","data":"something"})`
+* `adobeDataLayer.push({"data":"something"})`
+* `adobeDataLayer.push({"event":"myevent","data":"something"})`
 
 监听程序将不会跟踪以下示例推送事件：
 
-* ` adobeDataLayer.push({"event":"myevent"})`
+* `adobeDataLayer.push({"event":"myevent"})`
 
 ### 收听所有活动
 
@@ -64,8 +64,8 @@ This installation will not be supported on our end.<br>
 
 监听程序将跟踪以下示例推送事件：
 
-* ` adobeDataLayer.push({"event":"myevent"})`
-* ` adobeDataLayer.push({"event":"myevent","data":"something"})`
+* `adobeDataLayer.push({"event":"myevent"})`
+* `adobeDataLayer.push({"event":"myevent","data":"something"})`
 
 监听程序将不会跟踪以下示例推送事件：
 
@@ -91,7 +91,7 @@ This installation will not be supported on our end.<br>
 
 ### 重置数据层
 
-扩展提供了一种重置数据层长度的方法，可以帮助保持单页应用程序(SPA)的有限大小。
+扩展提供了一种重置数据层长度的方法，可以帮助保持单页应用程序(SPA)的大小受限。
 
 但是，当前不可能完全删除之前在推送方法期间设置的信息。
 

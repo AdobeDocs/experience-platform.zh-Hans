@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据准备映射函数
 description: 本文档介绍了与数据准备一起使用的映射函数。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '6009'
 ht-degree: 1%
@@ -126,7 +126,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | 日期 | 将日期字符串转换为ZonedDateTime对象（ISO 8601格式）。 | <ul><li>日期： **必需**&#x200B;表示日期的字符串。</li><li>格式： **必需**&#x200B;表示源日期格式的字符串。**注意：**&#x200B;这&#x200B;**不**&#x200B;表示要将日期字符串转换为的格式。 </li><li>DEFAULT_DATE： **必需**&#x200B;如果提供的日期为null，则返回默认日期。</li></ul> | date(DATE， FORMAT， DEFAULT_DATE) | date(&quot;2019-10-23 11:24&quot;， &quot;yyyy-MM-dd HH:mm&quot;， now()) | `2019-10-23T11:24:00Z` |
 | 日期 | 将日期字符串转换为ZonedDateTime对象（ISO 8601格式）。 | <ul><li>日期： **必需**&#x200B;表示日期的字符串。</li><li>格式： **必需**&#x200B;表示源日期格式的字符串。**注意：**&#x200B;这&#x200B;**不**&#x200B;表示要将日期字符串转换为的格式。 </li></ul> | 日期（日期，格式） | date(&quot;2019-10-23 11:24&quot;， &quot;yyyy-MM-dd HH:mm&quot;) | `2019-10-23T11:24:00Z` |
 | 日期 | 将日期字符串转换为ZonedDateTime对象（ISO 8601格式）。 | <ul><li>日期： **必需**&#x200B;表示日期的字符串。</li></ul> | date(DATE) | date(&quot;2019-10-23 11:24&quot;) | “2019-10-23T11:24:00Z” |
-| date_part | 检索日期的各个部分。 支持以下组件值： <br><br>&quot;year&quot;<br>&quot;yyyy&quot;<br>&quot;yy&quot;<br><br>&quot;quarter&quot;<br>&quot;qq&quot;<br>&quot;q&quot;<br><br>&quot;month&quot;<br>&quot;mm&quot;<br>&quot;m&quot;<br><br>&quot;dayofyear&quot;<br>&quot;dy&quot;<br>&quot;y&quot;<br><br>&quot;day&quot;<br>&quot;dd&quot;<br>&quot;d&quot;<br><br>&quot;week&quot;<br>&quot;ww&quot;<br>&quot;w&quot;<br><br>&quot;weekday&quot;<br>&quot;dw&quot;&lbrace;20&quot;<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> | <ul><li>组件： **必需**&#x200B;表示日期部分的字符串。 </li><li>日期： **必需**&#x200B;标准格式的日期。</li></ul> | date_part&#x200B;(COMPONENT， DATE) | date_part(&quot;MM&quot;， date(&quot;2019-10-17 11:55:12&quot;) | 10 |
+| date_part | 检索日期的各个部分。 支持以下组件值： <br><br>&quot;year&quot;<br>&quot;yyyy&quot;<br>&quot;yy&quot;<br><br>&quot;quarter&quot;<br>&quot;qq&quot;<br>&quot;q&quot;<br><br>&quot;month&quot;<br>&quot;mm&quot;<br>&quot;m&quot;<br><br>&quot;dayofyear&quot;<br>&quot;dy&quot;<br>&quot;y&quot;<br><br>&quot;day&quot;<br>&quot;dd&quot;<br>&quot;d&quot;<br><br>&quot;week&quot;<br>&quot;ww&quot;<br>&quot;w&quot;<br><br>&quot;weekday&quot;<br>&quot;dw&quot;{20&quot;<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> | <ul><li>组件： **必需**&#x200B;表示日期部分的字符串。 </li><li>日期： **必需**&#x200B;标准格式的日期。</li></ul> | date_part&#x200B;(COMPONENT， DATE) | date_part(&quot;MM&quot;， date(&quot;2019-10-17 11:55:12&quot;) | 10 |
 | set_date_part | 替换给定日期中的组件。 接受以下组件： <br><br>&quot;year&quot;<br>&quot;yyyy&quot;<br>&quot;yy&quot;<br><br>&quot;month&quot;<br>&quot;mm&quot;<br>&quot;m&quot;<br><br>&quot;day&quot;<br>&quot;dd&quot;<br>&quot;d&quot;<br><br>&quot;hour&quot;<br>&quot;hh&quot;<br><br>&quot;minute&quot;<br>&quot;mi&quot;<br>&quot;n&quot;<br><br>&quot;second&quot;<br>&quot;ss&quot;<br>&quot;s&quot; | <ul><li>组件： **必需**&#x200B;表示日期部分的字符串。 </li><li>值： **必需**&#x200B;为给定日期的组件设置的值。</li><li>日期： **必需**&#x200B;标准格式的日期。</li></ul> | set_date_part&#x200B;(COMPONENT， VALUE， DATE) | set_date_part(&quot;m&quot;， 4， date(&quot;2016-11-09T11:44:44.797&quot;) | “2016-04-09T11:44:44Z” |
 | make_date_time | 从部件创建日期。 此函数也可以使用make_timestamp进行感应。 | <ul><li>YEAR： **必需**&#x200B;用四位数字表示的年份。</li><li>月份： **必需**&#x200B;月份。 允许的值为1到12。</li><li>日： **必需**&#x200B;日。 允许的值为1到31。</li><li>小时：**必需**&#x200B;小时。 允许的值为0到23。</li><li>MINUTE： **必需**&#x200B;分钟。 允许的值为0到59。</li><li>NANOSECOND： **必需**&#x200B;纳秒值。 允许的值为0到999999999。</li><li>时区： **必需**&#x200B;日期时间的时区。</li></ul> | make_date_time&#x200B;（年、月、日、小时、分钟、秒、纳秒、时区） | make_date_time&#x200B;（2019， 10， 17， 11， 55， 12， 999，“美国/洛杉矶”） | `2019-10-17T11:55:12Z` |
 | zone_date_to_utc | 将任何时区的日期转换为UTC格式的日期。 | <ul><li>日期： **必需**&#x200B;尝试转换的日期。</li></ul> | zone_date_to_utc&#x200B;(DATE) | `zone_date_to_utc&#x200B;(2019-10-17T11:55:&#x200B;12 PST` | `2019-10-17T19:55:12Z` |
@@ -154,8 +154,8 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | map_has_keys | 如果提供了一个或多个输入键，则函数返回true。 如果提供字符串数组作为输入，则函数在找到的第一个键上返回true。 | <ul><li>映射： **必需**&#x200B;输入映射数据</li><li>密钥： **必需**&#x200B;密钥可以是单个字符串或字符串数组。 如果提供了任何其他基元类型（数据/数字），则会将其视为字符串。</li></ul> | map_has_keys(MAP， KEY) | 有关代码示例，请参阅[附录](#map_has_keys)。 | |
 | add_to_map | 接受至少两个输入。 可以提供任意数量的映射作为输入。 数据准备返回具有来自所有输入的所有键值对的单个映射。 如果一个或多个键重复（在同一映射中或跨映射），数据准备会删除重复的键，以便第一个键值对按它们在输入中传递的顺序持续存在。 | 映射： **必需**&#x200B;输入映射数据。 | add_to_map(MAP 1， MAP 2， MAP 3， ...) | 有关代码示例，请参阅[附录](#add_to_map)。 | |
 | object_to_map（语法1） | 使用此函数可创建Map数据类型。 | <ul><li>密钥： **必需的**&#x200B;密钥必须是字符串。 如果提供了任何其他基元值（如整数或日期），则它们会自动转换为字符串并被视为字符串。</li><li>ANY_TYPE： **必需**&#x200B;引用除映射之外的任何受支持的XDM数据类型。</li></ul> | object_to_map(KEY， ANY_TYPE， KEY， ANY_TYPE， ... ) | 有关代码示例，请参阅[附录](#object_to_map)。 | |
-| object_to_map（语法2） | 使用此函数可创建Map数据类型。 | <ul><li>对象： **必需**&#x200B;您可以提供传入对象或对象数组，并以键的形式指向对象内的属性。</li></ul> | object_to_map(OBJECT) | 有关代码示例，请参阅[附录](#object_to_map)。 |
-| object_to_map（语法3） | 使用此函数可创建Map数据类型。 | <ul><li>对象： **必需**&#x200B;您可以提供传入对象或对象数组，并以键的形式指向对象内的属性。</li></ul> | object_to_map(OBJECT_ARRAY， ATTRIBUTE_IN_OBJECT_TO_BE_USED_AS_A_KEY) | 有关代码示例，请参阅[附录](#object_to_map)。 |
+| object_to_map（语法2） | 使用此函数可创建Map数据类型。 | <ul><li>对象： **必需**&#x200B;您可以提供传入对象或对象数组，并以键的形式指向对象内的属性。</li></ul> | object_to_map(OBJECT) | 有关代码示例，请参阅[附录](#object_to_map)。 |  |
+| object_to_map（语法3） | 使用此函数可创建Map数据类型。 | <ul><li>对象： **必需**&#x200B;您可以提供传入对象或对象数组，并以键的形式指向对象内的属性。</li></ul> | object_to_map(OBJECT_ARRAY， ATTRIBUTE_IN_OBJECT_TO_BE_USED_AS_A_KEY) | 有关代码示例，请参阅[附录](#object_to_map)。 |  |
 
 {style="table-layout:auto"}
 
@@ -180,7 +180,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | upsert_array_replace | 此函数用于替换数组中的元素。 此函数仅&#x200B;**适用**&#x200B;于更新期间。 如果在插入的上下文中使用，则此函数按原样返回输入。 | <ul><li>数组： **必需**&#x200B;要替换配置文件中数组的数组。</li></li> | upsert_array_replace(ARRAY) | `upsert_array_replace([123, 456], 1)` | [123， 456] |
 | [!BADGE 仅限目标]{type=Informative} array_to_string | 使用指定的分隔符连接数组中元素的字符串表示形式。 如果数组是多维数组，则在连接前将其扁平化。 **注意**：此函数用于目标。 有关详细信息，请阅读[文档](../destinations/ui/export-arrays-maps-objects.md)。 | <ul><li>SEPARATOR： **必需**&#x200B;用于连接数组中元素的分隔符。</li><li>数组： **必需**&#x200B;要连接的数组（拼合后）。</li></ul> | array_to_string(SEPARATOR， ARRAY) | `array_to_string(";", ["Hello", "world"])` | “Hello；world” |
 | [!BADGE 仅目标]{type=Informative} filterArray* | 基于谓词筛选给定数组。 **注意**：此函数用于目标。 有关详细信息，请阅读[文档](../destinations/ui/export-arrays-maps-objects.md)。 | <ul><li>数组： **必需**&#x200B;要过滤的数组</li><li>谓词： **必需**&#x200B;要应用于给定数组的每个元素的谓词。 | filterArray(ARRAY， PREDICATE) | `filterArray([5, -6, 0, 7], x -> x > 0)` | [5， 7] |
-| [!BADGE 仅目标]{type=Informative} transformArray* | 基于谓词转换给定的数组。 **注意**：此函数用于目标。 有关详细信息，请阅读[文档](../destinations/ui/export-arrays-maps-objects.md)。 | <ul><li>数组： **必需**&#x200B;要转换的数组。</li><li>谓词： **必需**&#x200B;要应用于给定数组的每个元素的谓词。 | transformArray(ARRAY， PREDICATE) | ` transformArray([5, 6, 7], x -> x + 1)` | [6， 7， 8] |
+| [!BADGE 仅目标]{type=Informative} transformArray* | 基于谓词转换给定的数组。 **注意**：此函数用于目标。 有关详细信息，请阅读[文档](../destinations/ui/export-arrays-maps-objects.md)。 | <ul><li>数组： **必需**&#x200B;要转换的数组。</li><li>谓词： **必需**&#x200B;要应用于给定数组的每个元素的谓词。 | transformArray(ARRAY， PREDICATE) | `transformArray([5, 6, 7], x -> x + 1)` | [6， 7， 8] |
 | [!BADGE 仅目标]{type=Informative} flattenArray* | 将给定的（多维）数组平面化为一维数组。 **注意**：此函数用于目标。 有关详细信息，请阅读[文档](../destinations/ui/export-arrays-maps-objects.md)。 | <ul><li>数组： **必需**&#x200B;要平面化的数组。</li></ul> | flattenArray(ARRAY) | flattenArray([[[&#39;a&#39;， &#39;b&#39;]， [&#39;c&#39;， &#39;d&#39;]]， [[&#39;e&#39;]， [&#39;f&#39;]]]) | [&#39;a&#39;、&#39;b&#39;、&#39;c&#39;、&#39;d&#39;、&#39;e&#39;、&#39;f&#39;] |
 
 {style="table-layout:auto"}
@@ -193,7 +193,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 | 函数 | 描述 | 参数 | 句法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
-| array_to_map | 此函数将对象数组和键作为输入，并返回键字段的映射，其中值为键，数组元素为值。 | <ul><li>INPUT： **必需**&#x200B;要查找的第一个非null对象的对象数组。</li><li>KEY： **必需**&#x200B;键必须是对象数组中的字段名称，并且对象必须是值。</li></ul> | array_to_map（对象[]输入，键） | 请阅读[附录](#object_to_map)中的代码示例。 |
+| array_to_map | 此函数将对象数组和键作为输入，并返回键字段的映射，其中值为键，数组元素为值。 | <ul><li>INPUT： **必需**&#x200B;要查找的第一个非null对象的对象数组。</li><li>KEY： **必需**&#x200B;键必须是对象数组中的字段名称，并且对象必须是值。</li></ul> | array_to_map（对象[]输入，键） | 请阅读[附录](#object_to_map)中的代码示例。 |  |
 | object_to_map | 此函数将对象作为参数并返回键值对的映射。 | <ul><li>INPUT： **必需**&#x200B;要查找的第一个非null对象的对象数组。</li></ul> | object_to_map(OBJECT_INPUT) | &quot;object_to_map(address)，输入为&quot; + &quot;address： {line1 ： \&quot;345 park ave\&quot;，line2： \&quot;bldg 2\&quot;，City ： \&quot;san jose\&quot;，State ： \&quot;CA\&quot;，type： \&quot;office\&quot;}&quot; | 返回具有给定字段名称和值对的映射，如果输入为null，则返回null。 例如：`"{line1 : \"345 park ave\",line2: \"bldg 2\",City : \"san jose\",State : \"CA\",type: \"office\"}"` |
 | to_map | 此函数接受键值对列表并返回键值对的映射。 | | to_map(OBJECT_INPUT) | &quot;to_map(\&quot;firstName\&quot;， \&quot;John\&quot;， \&quot;lastName\&quot;， \&quot;Doe\&quot;)&quot; | 返回具有给定字段名称和值对的映射，如果输入为null，则返回null。 例如：`"{\"firstName\" : \"John\", \"lastName\": \"Doe\"}"` |
 
@@ -261,7 +261,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | 函数 | 描述 | 参数 | 句法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | uuid /<br>guid | 生成伪随机ID。 | | uuid()<br>guid() | uuid()<br>guid() | 7c0267d2-bb74-4e1a-9275-3bf4fccda5f4<br>c7016dc7-3163-43f7-afc7-2e1c9c206333 |
-| `fpid_to_ecid ` | 此函数接受FPID字符串并将其转换为ECID，以便在Adobe Experience Platform和Adobe Experience Cloud应用程序中使用。 | <ul><li>字符串： **必需**&#x200B;要转换为ECID的FPID字符串。</li></ul> | `fpid_to_ecid(STRING)` | `fpid_to_ecid("4ed70bee-b654-420a-a3fd-b58b6b65e991")` | `"28880788470263023831040523038280731744"` |
+| `fpid_to_ecid` | 此函数接受FPID字符串并将其转换为ECID，以便在Adobe Experience Platform和Adobe Experience Cloud应用程序中使用。 | <ul><li>字符串： **必需**&#x200B;要转换为ECID的FPID字符串。</li></ul> | `fpid_to_ecid(STRING)` | `fpid_to_ecid("4ed70bee-b654-420a-a3fd-b58b6b65e991")` | `"28880788470263023831040523038280731744"` |
 
 {style="table-layout:auto"}
 
@@ -387,11 +387,11 @@ address.line1 -> addr.addrLine1
 | > | %3E |
 | ? | %3F |
 | @ | %40 |
-| &lbrack; | %5B |
+| [ | %5B |
 | | | %5C |
-| &rbrack; | %5D |
+| ] | %5D |
 | ^ | %5E |
-| &grave; | %60 |
+| ` | %60 |
 | ~ | %7E |
 
 {style="table-layout:auto"}

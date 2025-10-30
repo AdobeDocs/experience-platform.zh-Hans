@@ -2,10 +2,10 @@
 title: 验证编辑器视图
 description: 本指南详细介绍了 Adobe Experience Platform Assurance 中的应用验证编辑器视图的信息。
 exl-id: 09be531c-8dc3-48b8-814f-b7a06adf1da3
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '502'
-ht-degree: 100%
+source-wordcount: '496'
+ht-degree: 93%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 100%
 
 ## 开始使用验证编辑器
 
-在[设置 Assurance](../tutorials/implement-assurance.md) 后，在&#x200B;**[!UICONTROL 主页]**&#x200B;视图中，选择&#x200B;**[!UICONTROL 验证编辑器]**
+在[设置Assurance](../tutorials/implement-assurance.md)后，在&#x200B;**[!UICONTROL Home]**&#x200B;视图中，选择&#x200B;**[!UICONTROL Validation Editor]**。
 
 ![Validation-Editor-Screen-Shot](https://user-images.githubusercontent.com/6597105/198680074-f548a646-6f2f-4a65-82fd-0f1687d869bf.png)
 
@@ -23,11 +23,11 @@ ht-degree: 100%
 
 此功能允许您为 Adobe Experience Platform Assurance 会话创建、编辑或删除验证功能。
 
-1. 选择&#x200B;**[!UICONTROL 创建新的验证]**。
+1. 选择 **[!UICONTROL Create a New Validation]**。
 2. 输入一个&#x200B;**名称**，以识别验证，然后提供一个&#x200B;**类别**&#x200B;和一个&#x200B;**描述**。
 3. 在编辑器中编辑代码以验证 Assurance 会话的事件。
 
-功能测试完成后，选择&#x200B;**[!UICONTROL 发布]**&#x200B;来保存您的验证。
+完成功能测试后，选择&#x200B;**[!UICONTROL Publish]**&#x200B;以保存验证。
 
 ### 事件定义
 
@@ -57,7 +57,7 @@ ht-degree: 100%
 | :--- | :--- | :--- |
 | `message` | 字符串 | 要在摘要结果中显示的验证消息。 |
 | `events` | 数组 | 要报告为匹配或不匹配的事件 uuid 的数组。 |
-| `links` | 数组 | 参考文档和其他资源的`ValidationResultLink`对象数组`{( type: 'doc'|'product', url: String )}` |
+| `links` | 数组 | `ValidationResultLink`对象的数组，用于引用文档和其他资源`{( type: 'doc'`&amp;amp；vert；`'product', url: String )}` |
 | `result` | 字符串 | 这是验证结果，并且预计会是枚举字符串之一：&quot;matched&quot;, &quot;not matched&quot;, &quot;unknown&quot; |
 
 ## 查看验证结果

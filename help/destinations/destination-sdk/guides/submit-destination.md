@@ -2,7 +2,7 @@
 description: 本页提供了在使用Destination SDK创作产品化目标时提交该目标以供审阅所需的所有信息。
 title: 提交已生产的目的地以供审查
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1045'
 ht-degree: 0%
@@ -263,6 +263,7 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 目标目录包含每个目标卡的徽标。 在提交电子邮件中，加入带有目标徽标的图像。
 
 图像要求包括：
+
 * **格式**： `SVG`
 * **大小**：小于2MB
 

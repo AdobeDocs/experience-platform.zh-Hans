@@ -2,7 +2,7 @@
 description: 了解如何在发布流目标配置之前，使用目标测试API对其进行测试。
 title: 流式目标测试API概述
 exl-id: 21e4d647-1168-4cb4-a2f8-22d201e39bba
-source-git-commit: 0befd65b91e49cacab67c76fd9ed5d77bf790b9d
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '512'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 要&#x200B;**测试目标是否正确配置以及验证流向所配置目标**&#x200B;的数据流的完整性，请使用&#x200B;*目标测试工具*。 使用此工具，您可以通过向REST API端点发送消息来测试目标配置。
 
-以下说明测试目标如何适应Destination SDK中的[目标配置工作流](../../guides/configure-destination-instructions.md)：
+下图说明了测试目标如何适应Destination SDK中的[目标配置工作流](../../guides/configure-destination-instructions.md)：
 
 ![目标测试步骤适合目标配置工作流的图形](../../assets/testing-api/test-destination-step.png)
 
@@ -25,10 +25,12 @@ ht-degree: 0%
 使用目标测试工具，通过向[服务器配置](../../authoring-api/destination-server/create-destination-server.md)中提供的合作伙伴端点发送消息来测试目标配置。
 
 在使用工具之前，请确保：
+
 * 按照[目标配置工作流](../../authoring-api/destination-configuration/create-destination-configuration.md)中所述的步骤配置目标，并且
 * 建立与目标的连接，如[如何获取目标实例ID](../../testing-api/streaming-destinations/destination-testing-api.md#get-destination-instance-id)中所述。
 
 使用此工具，在配置目标后，您可以：
+
 * 测试目标配置是否正确；
 * 验证流向您配置的目标的数据流的完整性。
 
@@ -43,9 +45,10 @@ ht-degree: 0%
 如果您未在请求中添加任何配置文件，Adobe将在内部为您生成这些配置文件，并将它们添加到请求中。 如果要生成配置文件以在此请求中使用，请参阅[示例配置文件生成API参考](../../testing-api/streaming-destinations/sample-profile-generation-api.md)。 您需要基于源XDM架构生成配置文件，如[API引用](../../testing-api/streaming-destinations/sample-profile-generation-api.md#generate-sample-profiles-source-schema)中所示。 请注意，源架构是您正在使用的沙盒的[合并架构](../../../../profile/ui/union-schema.md)。
 
 响应包含目标请求处理的结果。 该请求包括三个主要部分：
+
 * Adobe为目标生成的请求。
 * 从目标收到的响应。
-* 在请求中发送的用户档案列表，无论这些用户档案是您在[&#128279;](../../testing-api/streaming-destinations/destination-testing-api.md#test-with-added-profiles)请求中添加的，还是Adobe生成的（如果[目标测试请求正文为空](../../testing-api/streaming-destinations/destination-testing-api.md#test-without-adding-profiles)）。
+* 在请求中发送的用户档案列表，无论这些用户档案是您在[请求中添加的](../../testing-api/streaming-destinations/destination-testing-api.md#test-with-added-profiles)，还是Adobe生成的（如果[目标测试请求正文为空](../../testing-api/streaming-destinations/destination-testing-api.md#test-without-adding-profiles)）。
 
 >[!NOTE]
 >
@@ -232,4 +235,4 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 
 ## 后续步骤
 
-测试目标并确认配置正确后，使用[目标发布API](../../publishing-api/create-publishing-request.md)将配置提交给Adobe进行审核。
+测试目标并确认配置正确后，使用[目标发布API](../../publishing-api/create-publishing-request.md)将配置提交到Adobe以供审查。

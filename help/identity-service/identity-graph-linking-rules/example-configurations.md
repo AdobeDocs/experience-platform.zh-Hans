@@ -2,7 +2,7 @@
 title: Identity Graph链接规则配置指南
 description: 了解您可以使用身份图链接规则配置的各种实施类型。
 exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
-source-git-commit: 6af5f87c9c32212568e84edbed9f043a766870be
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1951'
 ht-degree: 7%
@@ -407,6 +407,7 @@ CRMID: John, Email: john@y, Email_LC_SHA256: john_y_hash
 >[!NOTE]
 >
 >要完成以下实施，您必须使用以下标识符号（区分大小写）创建自定义命名空间：
+>
 >* `CRMID`
 >* `loginID`
 

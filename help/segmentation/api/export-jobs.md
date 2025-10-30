@@ -4,7 +4,7 @@ title: 区段导出作业API端点
 description: 导出作业是异步流程，用于将受众区段成员保留到数据集。 您可以使用Adobe Experience Platform Segmentation Service API中的/export/jobs端点，它允许您以编程方式检索、创建和取消导出作业。
 role: Developer
 exl-id: 5b504a4d-291a-4969-93df-c23ff5994553
-source-git-commit: bf90e478b38463ec8219276efe71fcc1aab6b2aa
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1678'
 ht-degree: 1%
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->本指南介绍[!DNL Segmentation API]中导出作业的使用情况。 有关如何管理[!DNL Real-Time Customer Profile]数据的导出作业的信息，请参阅配置文件API[&#128279;](../../profile/api/export-jobs.md)中有关导出作业的指南
+>本指南介绍[!DNL Segmentation API]中导出作业的使用情况。 有关如何管理[!DNL Real-Time Customer Profile]数据的导出作业的信息，请参阅配置文件API[中有关](../../profile/api/export-jobs.md)导出作业的指南
 
 ## 快速入门
 
@@ -297,7 +297,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
 | `filter.segmentQualificationTime` | 根据区段鉴别时间进行筛选。 可以提供开始时间和/或结束时间。 |
 | `filter.segmentQualificationTime.startTime` | 给定状态的区段ID的区段资格开始时间。 如果未提供，则区段ID鉴别的开始时间将不存在过滤器。 时间戳必须以[RFC 3339](https://tools.ietf.org/html/rfc3339)格式提供。 |
 | `filter.segmentQualificationTime.endTime` | 给定状态的区段ID的区段资格结束时间。 如果未提供，则区段ID鉴别的结束时间将没有过滤器。 时间戳必须以[RFC 3339](https://tools.ietf.org/html/rfc3339)格式提供。 |
-| `filter.fromIngestTimestamp ` | 限制导出的配置文件仅包括在此时间戳之后更新的配置文件。 时间戳必须以[RFC 3339](https://tools.ietf.org/html/rfc3339)格式提供。 <ul><li>**配置文件**&#x200B;的`fromIngestTimestamp`（如果提供）：包括合并的更新时间戳大于给定时间戳的所有合并配置文件。 支持`greater_than`操作数。</li><li>**个事件**&#x200B;的`fromIngestTimestamp`：将导出在此时间戳之后摄取的所有事件，以对应于生成的配置文件结果。 这不是事件时间本身，而是事件的摄取时间。</li> |
+| `filter.fromIngestTimestamp` | 限制导出的配置文件仅包括在此时间戳之后更新的配置文件。 时间戳必须以[RFC 3339](https://tools.ietf.org/html/rfc3339)格式提供。 <ul><li>`fromIngestTimestamp`配置文件&#x200B;**的**（如果提供）：包括合并的更新时间戳大于给定时间戳的所有合并配置文件。 支持`greater_than`操作数。</li><li>`fromIngestTimestamp`个事件&#x200B;**的**：将导出在此时间戳之后摄取的所有事件，以对应于生成的配置文件结果。 这不是事件时间本身，而是事件的摄取时间。</li> |
 | `filter.emptyProfiles` | 一个布尔值，指示是否筛选空配置文件。 配置文件可以包含配置文件记录、ExperienceEvent记录，或同时包含两者。 没有配置文件记录且只有ExperienceEvent记录的配置文件称为“emptyProfiles”。 要导出配置文件存储中的所有配置文件，包括“emptyProfiles”，请将`emptyProfiles`的值设置为`true`。 如果`emptyProfiles`设置为`false`，则仅导出存储中具有配置文件记录的配置文件。 默认情况下，如果不包括`emptyProfiles`属性，则只导出包含配置文件记录的配置文件。 |
 | `additionalFields.eventList` | 通过提供以下一个或多个设置，控制为子对象或关联对象导出的时间序列事件字段：<ul><li>`fields`：控制要导出的字段。</li><li>`filter`：指定限制从关联对象包含结果的条件。 需要导出所需的最小值，通常为日期。</li><li>`filter.fromIngestTimestamp`：将时间序列事件筛选为提供的时间戳之后摄取的那些事件。 这不是事件时间本身，而是事件的摄取时间。</li><li>`filter.toIngestTimestamp`：将时间戳过滤为提供的时间戳之前摄取的那些时间戳。 这不是事件时间本身，而是事件的摄取时间。</li></ul> |
 | `destination` | **（必需）**&#x200B;有关导出数据的信息：<ul><li>`datasetId`： **（必需）**&#x200B;要导出数据的数据集的ID。</li><li>`segmentPerBatch`： *（可选）*&#x200B;布尔值，如果未提供，则默认为“false”。 如果值为“false”，则会将所有区段ID导出到单个批次ID中。 值为“true”会将一个区段ID导出到一个批次ID中。 请注意，将该值设置为“true”可能会影响批量导出性能。</li></ul> |

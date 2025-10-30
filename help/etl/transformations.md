@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 示例ETL转换
 description: 本文演示了提取、转换、加载(ETL)开发人员可以遇到的以下示例转换。
 exl-id: 8084f5fd-b621-4515-a329-5a06c137d11c
-source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '474'
-ht-degree: 2%
+source-wordcount: '452'
+ht-degree: 1%
 
 ---
 
@@ -42,6 +42,7 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
 ### 映射
 
 下表概述了CRM数据的映射要求，并包括以下转换：
+
 - `identityMap`属性的标识列
 - 出生日期(DOB)到年和月 — 日
 - 双精度或短整数的字符串。
@@ -54,10 +55,10 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
 | 性别 | person.gender | 将性别转换为对应的person.gender枚举值 |
 | DOB | person.birthDayAndMonth： &quot;MM-DD&quot;<br/>person.birthDate： &quot;YYYY-MM-DD&quot;<br/>person.birthYear： YYYY | 将birthDayAndMonth转换为string<br/>将birthDate转换为string<br/>将birthYear转换为short int |
 | EMAIL | personalEmail.address | 复制为字符串 |
-| CRMID | identityMap.CRMID[{&quot;id&quot;：x， primary：false}] | 将字符串形式复制到identityMap中的CRMID数组，并将“主要”设置为false |
-| ECID | identityMap.ECID[{&quot;id&quot;：x，primary： false}] | 将字符串形式复制到identityMap的ECID数组中的第一个条目，并将“主要”设置为false |
-| LOYALTYID | identityMap.LOYALTYID[{&quot;id&quot;：x， primary：true}] | 将字符串形式复制到identityMap中的LOYALTYID数组，并将Primary设置为true |
-| ECID2 | identityMap.ECID[{&quot;id&quot;：x， primary：false}] | 将字符串形式复制到identityMap的ECID数组中的第二个条目，并将Primary设置为false |
+| CRMID | identityMap.CRMID[{&quot;id&quot;:x，primary:false}] | 将字符串形式复制到identityMap中的CRMID数组，并将“主要”设置为false |
+| ECID | identityMap.ECID[{&quot;id&quot;:x，主要： false}] | 将字符串形式复制到identityMap的ECID数组中的第一个条目，并将“主要”设置为false |
+| LOYALTYID | identityMap.LOYALTYID[{&quot;id&quot;:x，primary:true}] | 将字符串形式复制到identityMap中的LOYALTYID数组，并将Primary设置为true |
+| ECID2 | identityMap.ECID[{&quot;id&quot;:x，primary:false}] | 将字符串形式复制到identityMap的ECID数组中的第二个条目，并将Primary设置为false |
 | 电话 | homePhone.number | 复制为字符串 |
 | 街道 | homeAddress.street1 | 复制为字符串 |
 | 城市 | homeAddress.city | 复制为字符串 |
@@ -284,9 +285,9 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
 
 | 标识字段 | identityMap字段 | 数据类型 |
 | -------------- | ----------------- | --------- |
-| 身份[0].id | identityMap[电子邮件][{"id"}] | 复制为字符串 |
-| 标识[1].id | identityMap[CRMID][{"id"}] | 复制为字符串 |
-| 身份[2].id | identityMap[LOYALTYID][{"id"}] | 复制为字符串 |
+| `identities[0].id` | `identityMap[Email][{"id"}]` | 复制为字符串 |
+| `identities[1].id` | `identityMap[CRMID][{"id"}]` | 复制为字符串 |
+| `identities[2].id` | `identityMap[LOYALTYID][{"id"}]` | 复制为字符串 |
 
 ### 输出XDM
 

@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；Audience Manager映射；Audience Manager映射
+keywords: Experience Platform；主页；热门主题；Audience Manager映射；audience manager映射
 solution: Experience Platform
 title: Adobe Audience Manager Source连接器的映射字段
-description: 了解如何将Adobe Audience Manager数据（实时、已载入和用户档案数据）映射到Audience Manager源连接器的相应Experience Data Model (XDM)字段。
+description: 了解如何将Adobe Audience Manager数据（实时、已载入和配置文件数据）映射到Audience Manager源连接器的相应Experience Data Model (XDM)字段。
 exl-id: b800ba43-c308-4334-adce-3d554d50cefb
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '156'
 ht-degree: 0%
@@ -27,7 +27,7 @@ ht-degree: 0%
 | `requestIds[]` | `ExperienceEvent.endUserIds` - *仅适用于endUserIds中存在的命名空间和第一个值。* |
 | `primaryDeviceId` | `ExperienceEvent.identityMap["CORE"]` |
 | `primaryDeviceId` | ExperienceEvent.endUserIds - *仅适用于endUserIds中存在的命名空间和第一个值。* |
-| `trait[] ` | `ExperienceEvent.segmentMemberships["AAMTraits"]` |
+| `trait[]` | `ExperienceEvent.segmentMemberships["AAMTraits"]` |
 | `segments[]` | `ExperienceEvent.segmentMemberships["AAMSegments"]` |
 | `mergeRules[]` | `ExperienceEvent.profileStitch[]` |
 | `timestamps` | `ExperienceEvent.timeStamp` |

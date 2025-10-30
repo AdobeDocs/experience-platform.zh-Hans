@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: November 18, 2019
 author: crhoades, ens28527
 exl-id: 2c417c56-cc61-4788-b248-d98ea6cf89f0
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1889'
 ht-degree: 8%
@@ -17,11 +17,13 @@ ht-degree: 8%
 **发行日期： 2019年11月18日**
 
 Adobe Experience Platform 的新功能：
+
 * [[!DNL Real-Time Customer Data Platform]](#rtcdp)
 * [[!DNL Destinations]](#destinations)
 * [[!DNL Sources]](#sources)
 
 现有功能更新：
+
 * [[!DNL Data Science Workspace]](#dsw)
 * [[!DNL Experience Data Model (XDM) System]](#xdm)
 * [[!DNL Real-Time Customer Profile]](#profile)
@@ -148,7 +150,7 @@ Adobe Experience Platform 使您能够为客户提供协调、一致且相关的
 | 清理给定数据集的数据 | 用户现在可以使用[!DNL Profile]系统作业API删除给定数据集或批次的数据。 |
 | Edge [!DNL Profile]查询增强功能 | 应用程序现在可以按给定配置文件的任意标识查询Edge [!DNL Profile]。 |
 | 为每个投影配置合并策略 | 应用程序现在可以按投影配置合并策略，以生成受特定合并策略控制的数据视图。 |
-| 计算属性 | 计算属性会根据其他值、计算和表达式自动计算字段的值。 计算属性在配置文件级别运行，以根据传入事件、传入事件和配置文件数据或传入事件、配置文件数据和历史事件来聚合值，如“总购买”、“生命周期值”或“漏斗状态”。 |
+| 计算属性 | 计算属性会根据其他值、计算和表达式自动计算字段的值。 计算属性在配置文件级别运行，以根据传入事件、传入事件和配置文件数据或传入事件、配置文件数据和历史事件来聚合值，如“总购买”、“生命周期值”或“funnel状态”。 |
 
 **错误修复**
 

@@ -2,7 +2,7 @@
 description: 本页介绍从Adobe Experience Platform导出到目标的数据中的消息格式和配置文件转换。
 title: 消息格式
 exl-id: ab05d34e-530f-456c-b78a-7f3389733d35
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '2489'
 ht-degree: 0%
@@ -13,16 +13,16 @@ ht-degree: 0%
 
 ## 先决条件 — Adobe Experience Platform概念 {#prerequisites}
 
-要了解Adobe端的报文格式以及用户档案配置和转换流程，请熟悉以下Experience Platform概念：
+要了解Adobe端的消息格式以及用户档案配置和转换过程，请熟悉以下Experience Platform概念：
 
 * **体验数据模型(XDM)**。 [XDM概述](../../../../xdm/home.md)和[如何在Adobe Experience Platform中创建XDM架构](../../../../xdm/tutorials/create-schema-ui.md)。
 * **类**。 [在UI中创建和编辑类](../../../../xdm/ui/resources/classes.md)。
-* **IdentityMap**。 标识映射表示Adobe Experience Platform中所有最终用户标识的映射。 请参阅[XDM字段词典](../../../../xdm/schema/field-dictionary.md)中的`xdm:identityMap`。
+* **IdentityMap**。 标识映射表示Adobe Experience Platform中所有最终用户标识的映射。 请参阅`xdm:identityMap`XDM字段词典[中的](../../../../xdm/schema/field-dictionary.md)。
 * **区段成员资格**。 [segmentMembership](../../../../xdm/schema/field-dictionary.md) XDM属性通知配置文件是哪些受众的成员。 对于`status`字段中的三个不同值，请阅读有关[受众成员资格详细信息架构字段组](../../../../xdm/field-groups/profile/segmentation.md)的文档。
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -59,7 +59,7 @@ Users who want to activate data to your destination need to map the fields in th
 
 **目标XDM架构(2)**：根据目标预期格式的JSON标准架构(3)以及目标可以解释的属性，您可以在目标XDM架构中定义配置文件属性和身份。 您可以在目标配置的[schemaConfig](../../functionality/destination-configuration/schema-configuration.md)和[identityNamespaces](../../functionality/destination-configuration/identity-namespace-configuration.md)对象中执行此操作。
 
-**目标配置文件属性的JSON标准架构(3)**：此示例表示您的平台支持的所有配置文件属性及其类型（例如：对象、字符串、数组）的[JSON架构](https://json-schema.org/learn/miscellaneous-examples.html)。 目标可以支持的示例字段可以是`firstName`、`lastName`、`gender`、`email`、`phone`、`productId`、`productName`等。 您需要[消息转换模板](#using-templating)来定制导出为Experience Platform的数据以符合您的预期格式。
+**目标配置文件属性的JSON标准架构(3)**：此示例表示您的平台支持的所有配置文件属性及其类型（例如：对象、字符串、数组）的[JSON架构](https://json-schema.org/learn/miscellaneous-examples.html)。 目标可以支持的示例字段可以是`firstName`、`lastName`、`gender`、`email`、`phone`、`productId`、`productName`等。 您需要[消息转换模板](#using-templating)来定制从Experience Platform导出的数据，使其符合您的预期格式。
 
 根据上述架构转换，下面说明了源XDM架构与合作伙伴端示例架构之间的配置文件配置更改方式：
 
@@ -71,7 +71,7 @@ Users who want to activate data to your destination need to map the fields in th
 
 >[!NOTE]
 >
->在[激活目标工作流](../../../ui/activate-segment-streaming-destinations.md#mapping)的&#x200B;**映射**&#x200B;步骤中，客户将属性从源XDM架构映射到Adobe Experience Platform UI中的合作伙伴XDM架构。
+>在&#x200B;**激活目标工作流**&#x200B;的[映射](../../../ui/activate-segment-streaming-destinations.md#mapping)步骤中，客户将属性从源XDM架构映射到Adobe Experience Platform UI中的合作伙伴XDM架构。
 
 假设您的平台可以接收如下消息格式：
 
@@ -94,7 +94,7 @@ Authorization: Bearer YOUR_REST_API_KEY
 
 | Adobe端的合作伙伴XDM架构中的属性 | 转换 | 您这边HTTP消息中的属性 |
 |---------|----------|---------|
-| `_your_custom_schema.firstName` | ` attributes.first_name` | `first_name` |
+| `_your_custom_schema.firstName` | `attributes.first_name` | `first_name` |
 | `_your_custom_schema.lastName` | `attributes.last_name` | `last_name` |
 | `personalEmail.address` | `attributes.external_id` | `external_id` |
 
@@ -102,7 +102,7 @@ Authorization: Bearer YOUR_REST_API_KEY
 
 ## Experience Platform中的配置文件结构 {#profile-structure}
 
-要进一步了解页面上下面的示例，请务必了解Experience Platform中用户档案的结构。
+要进一步了解页面上下文的示例，请务必了解Experience Platform中的用户档案结构。
 
 配置文件包含3个部分：
 
@@ -114,7 +114,7 @@ Authorization: Bearer YOUR_REST_API_KEY
    * 对于&#x200B;*自由格式属性*，如果配置文件中存在该属性，则它们包含`.value`路径（请参阅示例1中的`lastName`属性）。 如果它们不在配置文件中，则不会包含`.value`路径（请参阅示例1中的`firstName`属性）。
    * 对于&#x200B;*预定义属性*，这些属性不包含`.value`路径。 配置文件中存在的所有映射属性都将出现在属性映射中。 不存在属性（请参阅示例2 — 配置文件上不存在`firstName`属性）。
 
-请参阅下面两个Experience Platform中配置文件的示例：
+请参阅下面两个Experience Platform中的配置文件示例：
 
 ### 具有自由格式属性的`segmentMembership`、`identityMap`和属性的示例1 {#example-1}
 
@@ -172,7 +172,7 @@ Authorization: Bearer YOUR_REST_API_KEY
 
 ## 使用模板语言进行身份、属性和受众成员资格转换 {#using-templating}
 
-Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)类似的模板化语言）将字段从Experience PlatformXDM架构转换为目标支持的格式。
+Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)类似的模板语言）将字段从Experience Platform XDM架构转换为目标支持的格式。
 
 此部分提供了多个如何进行这些转换的示例 — 从输入XDM模式通过模板，然后输出到目标接受的有效负载格式。 下面的示例通过提高复杂性来显示，如下所示：
 
@@ -223,7 +223,7 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
 
 >[!IMPORTANT]
 >
->对于您使用的所有模板，在[目标服务器配置](../../authoring-api/destination-server/create-destination-server.md)中插入[模板](../../functionality/destination-server/templating-specs.md)之前，必须转义非法字符，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)中的第9章。
+>对于您使用的所有模板，在`""`目标服务器配置[中插入](../../functionality/destination-server/templating-specs.md)模板[之前，必须转义非法字符，如双引号](../../authoring-api/destination-server/create-destination-server.md)。 有关转义双引号的更多信息，请参阅[JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)中的第9章。
 
 ```python
 {
@@ -320,7 +320,7 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
 
 >[!IMPORTANT]
 >
->对于您使用的所有模板，在[目标服务器配置](../../authoring-api/destination-server/create-destination-server.md)中插入[模板](../../functionality/destination-server/templating-specs.md)之前，必须转义非法字符，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)中的第9章。
+>对于您使用的所有模板，在`""`目标服务器配置[中插入](../../functionality/destination-server/templating-specs.md)模板[之前，必须转义非法字符，如双引号](../../authoring-api/destination-server/create-destination-server.md)。 有关转义双引号的更多信息，请参阅[JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)中的第9章。
 
 
 ```python
@@ -378,7 +378,7 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
 }
 ```
 
-### 标识 {#identities}
+### 身份标识 {#identities}
 
 有关Experience Platform中标识的信息，请参阅[标识命名空间概述](../../../../identity-service/features/namespaces.md)。
 
@@ -424,7 +424,7 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
 
 >[!IMPORTANT]
 >
->对于您使用的所有模板，在[目标服务器配置](../../authoring-api/destination-server/create-destination-server.md)中插入[模板](../../functionality/destination-server/templating-specs.md)之前，必须转义非法字符，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)中的第9章。
+>对于您使用的所有模板，在`""`目标服务器配置[中插入](../../functionality/destination-server/templating-specs.md)模板[之前，必须转义非法字符，如双引号](../../authoring-api/destination-server/create-destination-server.md)。 有关转义双引号的更多信息，请参阅[JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)中的第9章。
 
 ```python
 {
@@ -492,7 +492,7 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
 
 ### 创建用于发送受众和身份的模板 {#segments-and-identities}
 
-本节提供了AdobeXDM架构与合作伙伴目标架构之间常用转换的示例。
+此部分提供了Adobe XDM架构与合作伙伴目标架构之间常用转换的示例。
 以下示例显示了如何转换受众成员资格和身份格式并将它们输出到您的目标。
 
 **输入**
@@ -561,7 +561,7 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
 
 >[!IMPORTANT]
 >
->对于您使用的所有模板，在[目标服务器配置](../../authoring-api/destination-server/create-destination-server.md)中插入[模板](../../functionality/destination-server/templating-specs.md)之前，必须转义非法字符，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)中的第9章。
+>对于您使用的所有模板，在`""`目标服务器配置[中插入](../../functionality/destination-server/templating-specs.md)模板[之前，必须转义非法字符，如双引号](../../authoring-api/destination-server/create-destination-server.md)。 有关转义双引号的更多信息，请参阅[JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)中的第9章。
 
 ```python
 {
@@ -659,7 +659,7 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
 
 ### 创建用于发送区段、身份和配置文件属性的模板 {#segments-identities-attributes}
 
-本节提供了AdobeXDM架构与合作伙伴目标架构之间常用转换的示例。
+此部分提供了Adobe XDM架构与合作伙伴目标架构之间常用转换的示例。
 
 另一个常见用例是导出包含受众成员资格、身份（例如：电子邮件地址、电话号码、广告ID）和配置文件属性的数据。 要以这种方式导出数据，请参阅以下示例：
 
@@ -743,7 +743,7 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
 
 >[!IMPORTANT]
 >
->对于您使用的所有模板，在[目标服务器配置](../../authoring-api/destination-server/create-destination-server.md)中插入[模板](../../functionality/destination-server/templating-specs.md)之前，必须转义非法字符，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)中的第9章。
+>对于您使用的所有模板，在`""`目标服务器配置[中插入](../../functionality/destination-server/templating-specs.md)模板[之前，必须转义非法字符，如双引号](../../authoring-api/destination-server/create-destination-server.md)。 有关转义双引号的更多信息，请参阅[JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)中的第9章。
 
 ```python
 {
@@ -861,7 +861,7 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
 
 在目标配置中使用[可配置的聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation)时，可以根据受众ID、受众别名、受众成员资格或身份命名空间等条件对导出到目标的配置文件进行分组。
 
-在消息转换模板中，您可以访问上述聚合键，如以下部分中的示例所示。 使用聚合密钥构造导出为Experience Platform的HTTP消息，以匹配目标所需的格式和速率限制。
+在消息转换模板中，您可以访问上述聚合键，如以下部分中的示例所示。 使用聚合密钥构造从Experience Platform导出的HTTP消息，以匹配目标所需的格式和速率限制。
 
 #### 在模板中使用受众ID聚合密钥 {#aggregation-key-segment-id}
 
@@ -963,7 +963,7 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
 
 >[!IMPORTANT]
 >
->对于您使用的所有模板，在[目标服务器配置](../../authoring-api/destination-server/create-destination-server.md)中插入[模板](../../functionality/destination-server/templating-specs.md)之前，必须转义非法字符，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)中的第9章。
+>对于您使用的所有模板，在`""`目标服务器配置[中插入](../../functionality/destination-server/templating-specs.md)模板[之前，必须转义非法字符，如双引号](../../authoring-api/destination-server/create-destination-server.md)。 有关转义双引号的更多信息，请参阅[JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)中的第9章。
 
 请注意以下如何在模板中使用`audienceId`来访问受众ID。 此示例假定您将`audienceId`用于目标分类中的受众成员资格。 您可以改用任何其他字段名称，具体取决于您自己的分类。
 
@@ -1043,7 +1043,7 @@ action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}AD
 
 #### 在模板中使用身份命名空间聚合密钥 {#aggregation-key-identity}
 
-下面是一个示例，其中目标配置中的[可配置聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation)设置为按身份命名空间聚合导出的配置文件，格式为`"namespaces": ["email", "phone"]`和`"namespaces": ["GAID", "IDFA"]`。 有关分组的更多详细信息，请参阅[创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)文档中的`groups`参数。
+下面是一个示例，其中目标配置中的[可配置聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation)设置为按身份命名空间聚合导出的配置文件，格式为`"namespaces": ["email", "phone"]`和`"namespaces": ["GAID", "IDFA"]`。 有关分组的更多详细信息，请参阅`groups`创建目标配置[文档中的](../../authoring-api/destination-configuration/create-destination-configuration.md)参数。
 
 **输入**
 
@@ -1115,7 +1115,7 @@ action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}AD
 
 >[!IMPORTANT]
 >
->对于您使用的所有模板，在[目标服务器配置](../../authoring-api/destination-server/create-destination-server.md)中插入[模板](../../functionality/destination-server/templating-specs.md)之前，必须转义非法字符，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)中的第9章。
+>对于您使用的所有模板，在`""`目标服务器配置[中插入](../../functionality/destination-server/templating-specs.md)模板[之前，必须转义非法字符，如双引号](../../authoring-api/destination-server/create-destination-server.md)。 有关转义双引号的更多信息，请参阅[JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)中的第9章。
 
 请注意，下面的模板中使用了`input.aggregationKey.identityNamespaces`
 
@@ -1199,17 +1199,17 @@ https://api.example.com/audience/{{input.aggregationKey.segmentId}}
 
 ### 引用：转换模板中使用的上下文和函数 {#reference}
 
-提供给模板的上下文包含`input` （在此调用中导出的配置文件/数据）和`destination` (有关Adobe将数据发送到的目标的数据，对所有配置文件都有效)。
+提供给模板的上下文包含`input`（此调用中导出的配置文件/数据）和`destination`(有关Adobe将数据发送到的目标的数据，对所有配置文件都有效)。
 
 下表提供了上述示例中函数的说明。
 
 | 函数 | 描述 | 示例 |
 |---------|----------|----------|
-| `input.profile` | 以[JsonNode](https://fasterxml.github.io/jackson-databind/javadoc/2.11/com/fasterxml/jackson/databind/node/JsonNodeType.html)表示的配置文件。 遵循此页面上进一步提到的合作伙伴XDM架构。 |
+| `input.profile` | 以[JsonNode](https://fasterxml.github.io/jackson-databind/javadoc/2.11/com/fasterxml/jackson/databind/node/JsonNodeType.html)表示的配置文件。 遵循此页面上进一步提到的合作伙伴XDM架构。 |  |
 | `hasSegments` | 此函数采用命名空间受众ID的映射作为参数。 如果地图中至少有一个受众（无论其状态如何），则函数返回`true`，否则返回`false`。 您可以使用此函数确定是否对受众映射进行迭代。 | `hasSegments(input.profile.segmentMembership)` |
 | `destination.namespaceSegmentAliases` | 将特定Adobe Experience Platform命名空间中的受众ID映射到合作伙伴系统中的受众别名。 | `destination.namespaceSegmentAliases["ups"]["seg-id-1"]` |
 | `destination.namespaceSegmentNames` | 将特定Adobe Experience Platform命名空间中的受众名称映射到合作伙伴系统中的受众名称。 | `destination.namespaceSegmentNames["ups"]["seg-name-1"]` |
-| `destination.namespaceSegmentTimestamps` | 以UNIX时间戳格式返回创建、更新或激活受众的时间。 | <ul><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].createdAt`：以UNIX时间戳格式返回从`ups`命名空间创建ID为`seg-id-1`的区段的时间。</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].updatedAt`：返回从`ups`命名空间更新ID为`seg-id-1`的受众的时间，格式为UNIX时间戳。</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].mappingCreatedAt`：返回从`ups`命名空间中将ID为`seg-id-1`的受众激活到目标的时间（采用UNIX时间戳格式）。</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].mappingUpdatedAt`：以UNIX时间戳格式返回目标上受众激活更新的时间。</li></ul> |
+| `destination.namespaceSegmentTimestamps` | 以UNIX时间戳格式返回创建、更新或激活受众的时间。 | <ul><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].createdAt`：以UNIX时间戳格式返回从`seg-id-1`命名空间创建ID为`ups`的区段的时间。</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].updatedAt`：返回从`seg-id-1`命名空间更新ID为`ups`的受众的时间，格式为UNIX时间戳。</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].mappingCreatedAt`：返回从`seg-id-1`命名空间中将ID为`ups`的受众激活到目标的时间（采用UNIX时间戳格式）。</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].mappingUpdatedAt`：以UNIX时间戳格式返回目标上受众激活更新的时间。</li></ul> |
 | `addedSegments(mapOfNamespacedSegmentIds)` | 在所有命名空间中仅返回状态为`realized`的受众。 | `addedSegments(input.profile.segmentMembership)` |
 | `removedSegments(mapOfNamespacedSegmentIds)` | 在所有命名空间中仅返回状态为`exited`的受众。 | `removedSegments(input.profile.segmentMembership)` |
 | `destination.segmentAliases` | **已弃用。 替换为`destination.namespaceSegmentAliases`** <br><br>将Adobe Experience Platform命名空间中的受众ID映射到合作伙伴系统中的受众别名。 | `destination.segmentAliases["seg-id-1"]` |
@@ -1220,7 +1220,7 @@ https://api.example.com/audience/{{input.aggregationKey.segmentId}}
 
 ## 后续步骤 {#next-steps}
 
-阅读本文档后，您现在知道如何转换从Experience Platform导出的数据。 接下来，请阅读以下页面，以了解有关为目标创建消息转换模板的知识：
+阅读本文档后，您现在了解如何转换从Experience Platform导出的数据。 接下来，请阅读以下页面，以了解有关为目标创建消息转换模板的知识：
 
 * [创建和测试消息转换模板](../../testing-api/streaming-destinations/create-template.md)
 * [呈现模板API操作](../../testing-api/streaming-destinations/render-template-api.md)
@@ -1228,6 +1228,6 @@ https://api.example.com/audience/{{input.aggregationKey.segmentId}}
 
 要了解有关其他目标服务器组件的更多信息，请参阅以下文章：
 
-* [使用Destination SDK创建的目标的服务器规范](server-specs.md)
+* [使用Destination SDK创建目标的服务器规范](server-specs.md)
 * [模板规范](templating-specs.md)
 * [文件格式配置](file-formatting.md)

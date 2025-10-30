@@ -2,7 +2,7 @@
 title: 搜索端点
 description: 了解如何在Reactor API中调用/search端点。
 exl-id: 14eb8d8a-3b42-42f3-be87-f39e16d616f4
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '652'
 ht-degree: 1%
@@ -33,8 +33,9 @@ Reactor API中的`/search`端点提供了一种查找符合所需条件（以查
 >[!IMPORTANT]
 >
 >搜索功能具有以下注意事项和例外：
+>
 >* meta不可搜索，且未在搜索结果中返回。
->* 扩展包委托的架构字段（操作、条件等） 可作为文本进行搜索，而非作为嵌套数据结构搜索。
+>* 扩展包代理（操作、条件等）的架构字段可作为文本进行搜索，而非作为嵌套数据结构进行搜索。
 >* 范围查询目前仅支持整数。
 
 有关如何使用此功能的详细信息，请参阅[搜索指南](../guides/search.md)。

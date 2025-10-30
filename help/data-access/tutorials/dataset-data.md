@@ -5,10 +5,10 @@ title: 使用数据访问API查看数据集数据
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform中的数据访问API查找、访问和下载存储在数据集中的数据。 本文档介绍数据访问API的一些独特功能，例如分页和部分下载。
 exl-id: 1c1e5549-d085-41d5-b2c8-990876000f08
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1365'
-ht-degree: 7%
+ht-degree: 9%
 
 ---
 
@@ -24,7 +24,7 @@ ht-degree: 7%
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中有关[如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
 
 ### 收集所需标头的值
 
@@ -428,7 +428,7 @@ GET /files/{FILE_ID}?path={FILE_NAME}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{FILE_ID} ` | 文件的标识符。 |
+| `{FILE_ID}` | 文件的标识符。 |
 | `{FILE_NAME}` | 文件名（例如，profiles.parquet） |
 
 **请求**

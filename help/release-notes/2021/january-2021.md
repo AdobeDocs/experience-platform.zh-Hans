@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: January 27, 2021
 author: ens60013
 exl-id: 6fb92e35-922c-47ba-8cf4-44edd92acfa1
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '720'
+source-wordcount: '722'
 ht-degree: 27%
 
 ---
@@ -78,8 +78,8 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 | ------- | ----------- |
 | Adobe Audience Manager源连接器增强功能 | 您现在可以从Audience Manager中筛选和选择单个第一方区段以摄取到Experience Platform中，并筛选掉第一方特征。 有关详细信息，请参阅有关[创建Audience Manager源连接器](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md)的教程。 |
 | [!DNL Google BigQuery]源连接器增强功能 | 您现在可以使用[!DNL BigQuery]源连接器在一次流运行中摄取大于10GB的文件。 有关详细信息，请参阅[[!DNL BigQuery] 源连接器概述](../../sources/connectors/databases/bigquery.md)。 |
-| 支持云存储的复杂数据类型 | 使用云存储源连接器时，您现在可以摄取复杂的数据类型，例如JSON文件中的数组。 有关详细信息，请参阅有关在UI[&#128279;](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md)中创建云存储数据流[或使用 [!DNL Flow Service] API](../../sources/tutorials/api/collect/cloud-storage.md)创建的教程。 |
+| 支持云存储的复杂数据类型 | 使用云存储源连接器时，您现在可以摄取复杂的数据类型，例如JSON文件中的数组。 有关详细信息，请参阅有关在UI[中创建云存储数据流](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md)或使用[API [!DNL Flow Service] 创建](../../sources/tutorials/api/collect/cloud-storage.md)的教程。 |
 | 支持[!DNL Microsoft Dynamics]源的基于服务主体密钥的身份验证 | 您现在可以使用服务主体密钥对您的[!DNL Dynamics]帐户进行身份验证，作为基于密码的身份验证的替代方法。 有关详细信息，请参阅[[!DNL Dynamics] 源连接器概述](../../sources/connectors/crm/ms-dynamics.md)。 |
-| 云存储源中对自定义分隔符的UI支持 | 您现在可以设置自定义列分隔符，如逗号(`,`)、制表符(`\t`)或管道字符(`|`)，以在UI中收集分隔的文件。 有关详细信息，请参阅有关[使用云存储源连接器](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md)创建数据流的教程 |
+| 云存储源中对自定义分隔符的UI支持 | 您现在可以设置自定义列分隔符，如逗号(`,`)、制表符(`\t`)或管道字符(&amp;amp；vert；)，以在UI中收集分隔的文件。 有关详细信息，请参阅有关[使用云存储源连接器](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md)创建数据流的教程 |
 
 要了解有关源的更多信息，请参阅[源概述](../../sources/home.md)。

@@ -3,9 +3,9 @@ title: Amazon Ads
 description: Amazon Ads提供一系列选项，帮助您向注册销售商、供应商、图书供应商、Kindle Direct Publishing (KDP)作者、应用程序开发人员和/或代理商实现广告目标。 Amazon Ads与Adobe Experience Platform的集成提供了与Amazon Ads产品(包括Amazon DSP (ADSP))的统包集成。 通过使用Adobe Experience Platform中的Amazon广告目标，用户能够定义广告商受众，以便在Amazon DSP中进行定位和激活。
 last-substantial-update: 2025-10-08T00:00:00Z
 exl-id: 724f3d32-65e0-4612-a882-33333e07c5af
-source-git-commit: 6afb8d56b8af8e5b0450f769414d3afcac1d58eb
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '2038'
+source-wordcount: '1977'
 ht-degree: 2%
 
 ---
@@ -55,15 +55,15 @@ AMC将来自Amazon自有资产和运营资产的独特信号整合在一起，�
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| phone_sha256 | 使用SHA256算法散列的电话号码 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
-| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Experience Platform]在激活时自动对数据进行哈希处理。 |
-| `firstName` | 用户的名字 | 支持纯文本或SHA256。 如果使用纯文本，请在Adobe UI中启用[!UICONTROL 应用转换]。 |
-| `lastName` | 用户的姓氏 | 支持纯文本或SHA256。 如果使用纯文本，请在Adobe UI中启用[!UICONTROL 应用转换]。 |
+| phone_sha256 | 使用SHA256算法散列的电话号码 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以便在激活时自动对[!DNL Experience Platform]数据进行哈希处理。 |
+| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以便在激活时自动对[!DNL Experience Platform]数据进行哈希处理。 |
+| `firstName` | 用户的名字 | 支持纯文本或SHA256。 如果使用纯文本，请在Adobe UI中启用[!UICONTROL Apply transformation]。 |
+| `lastName` | 用户的姓氏 | 支持纯文本或SHA256。 如果使用纯文本，请在Adobe UI中启用[!UICONTROL Apply transformation]。 |
 | `street` | 用户的街道级别地址 | 仅支持SHA256哈希输入。 在哈希处理之前进行标准化。 请&#x200B;**不**&#x200B;启用Adobe端转换。 |
-| `city` | 用户的城市 | 支持纯文本或SHA256。 如果使用纯文本，请在Adobe UI中启用[!UICONTROL 应用转换]。 |
-| `state` | 用户的省/市/自治区 | 支持纯文本或SHA256。 如果使用纯文本，请在Adobe UI中启用[!UICONTROL 应用转换]。 |
-| `zip` | 用户的邮政编码 | 支持纯文本或SHA256。 如果使用纯文本，请在Adobe UI中启用[!UICONTROL 应用转换]。 |
-| `country` | 用户的国家/地区 | 支持纯文本或SHA256。 如果使用纯文本，请在Adobe UI中启用[!UICONTROL 应用转换]。 |
+| `city` | 用户的城市 | 支持纯文本或SHA256。 如果使用纯文本，请在Adobe UI中启用[!UICONTROL Apply transformation]。 |
+| `state` | 用户的省/市/自治区 | 支持纯文本或SHA256。 如果使用纯文本，请在Adobe UI中启用[!UICONTROL Apply transformation]。 |
+| `zip` | 用户的邮政编码 | 支持纯文本或SHA256。 如果使用纯文本，请在Adobe UI中启用[!UICONTROL Apply transformation]。 |
+| `country` | 用户的国家/地区 | 支持纯文本或SHA256。 如果使用纯文本，请在Adobe UI中启用[!UICONTROL Apply transformation]。 |
 
 {style="table-layout:auto"}
 
@@ -73,8 +73,8 @@ AMC将来自Amazon自有资产和运营资产的独特信号整合在一起，�
 
 | 项目 | 类型 | 注释 |
 | ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出具有&#x200B;*[!DNL Amazon Ads]*&#x200B;目标中使用的标识符（姓名、电话号码或其他）的受众的所有成员。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出类型 | **[!UICONTROL Audience export]** | 您正在导出具有&#x200B;*[!DNL Amazon Ads]*&#x200B;目标中使用的标识符（姓名、电话号码或其他）的受众的所有成员。 |
+| 导出频率 | **[!UICONTROL Streaming]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -82,13 +82,13 @@ AMC将来自Amazon自有资产和运营资产的独特信号整合在一起，�
 
 >[!IMPORTANT]
 > 
->若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写下面两个部分中列出的字段。
 
 ### 验证目标 {#authenticate}
 
-要验证到目标，请填写必填字段并选择&#x200B;**[!UICONTROL 连接到目标]**。
+要验证目标，请填写必填字段并选择&#x200B;**[!UICONTROL Connect to destination]**。
 
 您将转到[!DNL Amazon Ads]连接界面，在该界面中，您将首先选择要连接的广告商帐户。 建立连接后，系统会通过新连接将您重定向回Adobe Experience Platform，同时还会提供您选择的广告商帐户ID。 请在目标配置屏幕上选择相应的广告商帐户以继续。
 
@@ -96,17 +96,17 @@ AMC将来自Amazon自有资产和运营资产的独特信号整合在一起，�
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
-* **[!UICONTROL 名称]**：将来用于识别此目标的名称。
-* **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
-* **[!UICONTROL Amazon Ads连接]**：选择用于目标的目标[!DNL Amazon Ads]帐户的ID。
+* **[!UICONTROL Name]**：将来用于识别此目标的名称。
+* **[!UICONTROL Description]**：可帮助您将来识别此目标的描述。
+* **[!UICONTROL Amazon Ads Connection]**：选择用于目标的目标[!DNL Amazon Ads]帐户的ID。
 
 >[!NOTE]
 >
 >保存目标配置后，您将无法更改[!DNL Amazon Ads]广告商ID，即使您通过Amazon帐户重新进行身份验证也是如此。 要使用其他[!DNL Amazon Ads]广告商ID，您必须创建新的目标连接。 已设置与ADSP集成以便能够将受众交付到AMC或其他ADSP帐户的广告商，必须创建新的目标流。
 
-* **[!UICONTROL 广告商地区]**：选择您的广告商所在的适当地区。 有关每个地区支持的市场的详细信息，请访问[Amazon广告文档](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints)。
+* **[!UICONTROL Advertiser Region]**：选择您的广告商所在的适当地区。 有关每个地区支持的市场的详细信息，请访问[Amazon广告文档](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints)。
 
-* **[!UICONTROL Amazon广告同意信号]**：确认通过此连接发送的所有数据均已同意将个人数据用于广告目的。 “GRANTED”表示同意Amazon将客户的个人数据用于广告。 允许的值为“GRANTED”和“DENIED”。 任何通过连接发送的记录若具有“DENIED”，则将被拒绝，以便在Amazon Ads中进一步使用。
+* **[!UICONTROL Amazon Ads Consent Signal]**：确认通过此连接发送的所有数据均已同意将个人数据用于广告目的。 “GRANTED”表示同意Amazon将客户的个人数据用于广告。 允许的值为“GRANTED”和“DENIED”。 任何通过连接发送的记录若具有“DENIED”，则将被拒绝，以便在Amazon Ads中进一步使用。
 
 ![配置新目标](../../assets/catalog/advertising/amazon-ads/amazon_ads_consent_input.png)
 
@@ -114,14 +114,14 @@ AMC将来自Amazon自有资产和运营资产的独特信号整合在一起，�
 
 您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
->* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+>* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 有关将受众激活到此目标的说明，请阅读[将配置文件和受众激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md)。
 
@@ -152,15 +152,15 @@ AMC将来自Amazon自有资产和运营资产的独特信号整合在一起，�
 
 上传受众后，您可以使用以下步骤验证受众是否已正确创建和上传：
 
-用于Amazon DSP的&#x200B;**&#x200B;**
+用于Amazon DSP的&#x200B;****
 
-导航到您的&#x200B;**[!UICONTROL 广告商ID]** > **[!UICONTROL 受众]** > **[!UICONTROL 广告商受众]**。 如果受众已成功创建并且满足最小受众成员数，您将看到`Active`状态。 有关受众规模和范围的其他详细信息，请参阅Amazon DSP用户界面右侧的预测范围面板。
+导航到您的&#x200B;**[!UICONTROL Advertiser ID]** > **[!UICONTROL Audiences]** > **[!UICONTROL Advertiser Audiences]**。 如果受众已成功创建并且满足最小受众成员数，您将看到`Active`状态。 有关受众规模和范围的其他详细信息，请参阅Amazon DSP用户界面右侧的预测范围面板。
 
 ![Amazon DSP受众创建验证](../../assets/catalog/advertising/amazon-ads/amazon_ads_image_3.png)
 
 **的[!DNL Amazon Marketing Cloud]**
 
-在左侧架构浏览器中，在&#x200B;**[!UICONTROL 已上传的广告商]** > **[!UICONTROL aep_audiences]**&#x200B;下找到您的受众。 然后，您可以在AMC SQL编辑器中使用以下子句查询受众：
+在左侧架构浏览器中的&#x200B;**[!UICONTROL Advertiser Uploaded]** > **[!UICONTROL aep_audiences]**&#x200B;下找到您的受众。 然后，您可以在AMC SQL编辑器中使用以下子句查询受众：
 
 `select count(user_id) from adobeexperienceplatf_audience_view_000xyz where external_audience_segment_name = '1234567'`
 
@@ -185,7 +185,7 @@ AMC将来自Amazon自有资产和运营资产的独特信号整合在一起，�
 | 发行月份 | 更新类型 | 描述 |
 |---|---|---|
 | 2025 年 10 月 | 添加了对其他身份字段的支持 | 添加了其他个人标识符支持，如`firstName`、`lastName`、`street`、`city`、`state`、`zip`和`country`。 映射这些字段可以提高受众匹配率。 |
-| 2025 年 2 月 | 添加了添加&#x200B;**[!UICONTROL Amazon广告同意信号]**&#x200B;以导出数据流的要求，并将目标从Beta版提升为正式可用。 |
+| 2025 年 2 月 | 添加了将&#x200B;**[!UICONTROL Amazon Ads Consent Signal]**&#x200B;添加到导出数据流的要求并将目标从Beta版提升为正式可用。 |  |
 | 2024 年 5 月 | 功能和文档更新 | 添加了映射选项，用于将`countryCode`参数导出到Amazon Ads中。 `countryCode` 在 [映射步骤](#map) 中使用，以提高您与亚马逊的身份标识匹配率。 |
 | 2024 年 3 月 | 功能和文档更新 | 添加了导出要在[!DNL Amazon Marketing Cloud] (AMC)中使用的受众的选项。 |
 | 2023 年 5 月 | 功能和文档更新 | <ul><li>在[目标连接工作流](#destination-details)中添加了对广告商区域选择的支持。</li><li>更新了文档以反映添加了“广告商区域”选择。 有关选择正确的广告商地区的更多信息，请参阅[Amazon文档](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints)。</li></ul> |

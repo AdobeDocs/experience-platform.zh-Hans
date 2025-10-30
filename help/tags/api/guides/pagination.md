@@ -2,7 +2,7 @@
 title: 在Reactor API中分页响应
 description: 了解在Reactor API中列出资源时如何分页结果。
 exl-id: bccb6e78-4ac8-4786-b398-6e55109d99dd
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '102'
 ht-degree: 0%
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # 在Reactor API中分页响应
 
-Reactor API返回的响应将分页。 默认页面大小为25个元素。 有关分页的详细信息，将在API响应对象的`meta.pagination `部分中报告：
+Reactor API返回的响应将分页。 默认页面大小为25个元素。 在API响应对象的`meta.pagination`部分中报告有关分页的详细信息：
 
 ```json
 "meta": {

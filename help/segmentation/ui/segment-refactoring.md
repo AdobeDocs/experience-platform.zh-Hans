@@ -4,9 +4,9 @@ title: 重构的分段时间约束UI指南
 description: 区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 hidefromtoc: true
 exl-id: 3a352d46-829f-4a58-b676-73c3147f792c
-source-git-commit: c7d71113ddcef6aca8b2637814b46e589a6b7fdf
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '354'
+source-wordcount: '352'
 ht-degree: 9%
 
 ---
@@ -38,6 +38,6 @@ Adobe Experience Platform 2024年1月版对Adobe Experience Platform分段服务
 
 ![画布级别的时间约束已突出显示。](../images/ui/segment-refactoring/canvas-time-constraint.png)
 
-要在卡片级别应用时间限制，请选择要对其应用时间限制的特定卡片。 出现&#x200B;**[!UICONTROL 事件规则]**&#x200B;容器。 您现在可以选择要应用于卡的时间限制。
+要在卡片级别应用时间限制，请选择要对其应用时间限制的特定卡片。 出现&#x200B;**[!UICONTROL Event Rules]**&#x200B;容器。 您现在可以选择要应用于卡的时间限制。
 
 ![卡片级别的时间限制已突出显示。](../images/ui/segment-refactoring/card-time-constraint.png)

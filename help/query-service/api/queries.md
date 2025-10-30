@@ -5,10 +5,10 @@ title: 查询API端点
 description: 以下部分介绍了您可以在查询服务API中使用/queries端点进行的调用。
 role: Developer
 exl-id: d6273e82-ce9d-4132-8f2b-f376c6712882
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '950'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 ## API调用示例
 
-以下部分介绍了您可以在[!DNL Query Service] API中使用`/queries`端点进行的调用。 每个调用包括常规API格式、显示所需标头的示例请求以及示例响应。
+以下部分介绍了您可以在`/queries` API中使用[!DNL Query Service]端点进行的调用。 每个调用包括常规API格式、显示所需标头的示例请求以及示例响应。
 
 ### 检索查询列表
 
@@ -37,10 +37,10 @@ GET /queries?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `orderby` | 指定排序结果所依据的字段。 支持的字段为`created`和`updated`。 例如，`orderby=created`将按创建的结果以升序排序。 在创建之前(`orderby=-created`)添加`-`将按创建的顺序降序对项进行排序。 |
+| `orderby` | 指定排序结果所依据的字段。 支持的字段为`created`和`updated`。 例如，`orderby=created`将按创建的结果以升序排序。 在创建之前(`-`)添加`orderby=-created`将按创建的顺序降序对项进行排序。 |
 | `limit` | 指定页大小限制，以控制页中包含的结果数。 （*默认值： 20*） |
 | `start` | 指定ISO格式时间戳对结果进行排序。 如果未指定开始日期，则API调用将首先返回创建的最旧查询，然后继续列出更新的结果。<br>个ISO时间戳允许在日期和时间使用不同级别的粒度。 基本ISO时间戳采用`2020-09-07`格式，表示日期2020年9月7日。 一个更复杂的示例将编写为`2022-11-05T08:15:30-05:00`，对应于2022年11月5日美国东部标准时间上午8:15:30。 可以为时区提供UTC偏移量，时区由后缀“Z”(`2020-01-01T01:01:01Z`)表示。 如果未提供时区，则默认设置为0。 |
-| `property` | 根据字段筛选结果。 筛选器&#x200B;**必须**&#x200B;进行HTML转义。 逗号用于组合多组过滤器。 支持的字段为`created`、`updated`、`state`和`id`。 支持的运算符列表为： `>` （大于）、`<` （小于）、`>=` （大于或等于）、`<=` （小于或等于）、`==` （等于）、`!=` （不等于）和`~` （包含）。 例如，`id==6ebd9c2d-494d-425a-aa91-24033f3abeec`将返回具有指定ID的所有查询。 |
+| `property` | 根据字段筛选结果。 筛选器&#x200B;**必须**&#x200B;对HTML进行转义。 逗号用于组合多组过滤器。 支持的字段为`created`、`updated`、`state`和`id`。 支持的运算符列表为： `>` （大于）、`<` （小于）、`>=` （大于或等于）、`<=` （小于或等于）、`==` （等于）、`!=` （不等于）和`~` （包含）。 例如，`id==6ebd9c2d-494d-425a-aa91-24033f3abeec`将返回具有指定ID的所有查询。 |
 | `excludeSoftDeleted` | 指示是否应包含已软删除的查询。 例如，`excludeSoftDeleted=false`将&#x200B;**包括**&#x200B;软删除的查询。 （*布尔值，默认值： true*） |
 | `excludeHidden` | 指示是否应显示非用户驱动的查询。 将此值设置为false将&#x200B;**包括**&#x200B;非用户驱动的查询，如CURSOR定义、FETCH或元数据查询。 （*布尔值，默认值： true*） |
 | `isPrevLink` | `isPrevLink`查询参数用于分页。 API调用的结果使用其`created`时间戳和`orderby`属性排序。 在结果页面中导航时，向后分页时，`isPrevLink`设置为true。 这会使查询的顺序相反。 请参阅“下一个”和“上一个”链接作为示例。 |
@@ -227,7 +227,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/queries \
 
 ### 按ID检索查询
 
-您可以通过向`/queries`端点发出GET请求并在请求路径中提供查询的`id`值来检索有关特定查询的详细信息。
+您可以通过向`/queries`端点发出GET请求并在请求路径中提供查询的`id`值，来检索有关特定查询的详细信息。
 
 **API格式**
 
@@ -329,7 +329,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/query/queries/4d64cd49-c
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `op` | 要对资源执行的操作的类型。 接受的值为`cancel`和`soft_delete`。 要取消查询，您必须使用值`cancel `设置op参数。 请注意，软删除操作会阻止在GET请求时返回查询，但不会将其从系统中删除。 |
+| `op` | 要对资源执行的操作的类型。 接受的值包括 `cancel` 和 `soft_delete`。要取消查询，您必须使用值`cancel`设置op参数。 请注意，软删除操作会阻止在GET请求中返回查询，但不会将其从系统中删除。 |
 
 **响应**
 

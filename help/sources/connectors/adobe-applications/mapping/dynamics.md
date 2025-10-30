@@ -1,8 +1,8 @@
 ---
-title: Microsoft动态映射字段
+title: Microsoft Dynamics映射字段
 description: 下表包含Microsoft Dynamics源字段及其对应的XDM字段之间的映射。
 exl-id: 32f51761-5de3-4192-8f23-c1412ca12c08
-source-git-commit: ec42cf27c082611acb1a08500b7bbd23fc34d730
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '499'
 ht-degree: 8%
@@ -17,44 +17,44 @@ ht-degree: 8%
 
 | 源字段 | 目标XDM字段 | 注释 |
 | --- | --- | --- |
-| `address1_addressid` | `workAddress._id` |
-| `address1_city` | `workAddress.city` |
-| `address1_country` | `workAddress.country` |
-| `address1_county` | `workAddress.stateProvince` |
-| `address1_latitude` | `workAddress._schema.latitude` |
-| `address1_line1` | `workAddress.street1` |
-| `address1_line2` | `workAddress.street2` |
-| `address1_line3` | `workAddress.street3` |
-| `address1_longitude` | `workAddress._schema.longitude` |
-| `address1_postalcode` | `workAddress.postalCode` |
-| `address1_postofficebox` | `workAddress.postOfficeBox` |
-| `address1_stateorprovince` | `workAddress.state` |
-| `assistantname` | `extendedWorkDetails.assistantDetails.name.fullName` |
-| `assistantphone` | `extendedWorkDetails.assistantDetails.phone.number` |
-| `birthdate` | `person.birthDate` |
-| `"Dynamics"` | `b2b.personKey.sourceType` |
+| `address1_addressid` | `workAddress._id` |  |
+| `address1_city` | `workAddress.city` |  |
+| `address1_country` | `workAddress.country` |  |
+| `address1_county` | `workAddress.stateProvince` |  |
+| `address1_latitude` | `workAddress._schema.latitude` |  |
+| `address1_line1` | `workAddress.street1` |  |
+| `address1_line2` | `workAddress.street2` |  |
+| `address1_line3` | `workAddress.street3` |  |
+| `address1_longitude` | `workAddress._schema.longitude` |  |
+| `address1_postalcode` | `workAddress.postalCode` |  |
+| `address1_postofficebox` | `workAddress.postOfficeBox` |  |
+| `address1_stateorprovince` | `workAddress.state` |  |
+| `assistantname` | `extendedWorkDetails.assistantDetails.name.fullName` |  |
+| `assistantphone` | `extendedWorkDetails.assistantDetails.phone.number` |  |
+| `birthdate` | `person.birthDate` |  |
+| `"Dynamics"` | `b2b.personKey.sourceType` |  |
 | `"${CRM_ORG_ID}"` | `b2b.personKey.sourceInstanceID` | 将自动替换`"${CRM_ORG_ID}"`的值。 |
-| `contactid` | `b2b.personKey.sourceID` |
+| `contactid` | `b2b.personKey.sourceID` |  |
 | `concat(contactid,"@${CRM_ORG_ID}.Dynamics")` | `b2b.personKey.sourceKey` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
-| `iif(contactid != null && contactid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", contactid, "sourceKey", concat(contactid,"@${CRM_ORG_ID}.Dynamics")), null)` | `personComponents.sourcePersonKey` |
-| `department` | `extendedWorkDetails.departments` |
-| `fullname` | `person.name.fullName` |
-| `suffix` | `person.name.suffix` |
-| `iif(parentcustomerid != null && parentcustomerid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", parentcustomerid, "sourceKey", concat(parentcustomerid,"@${CRM_ORG_ID}.Dynamics")), null)` | `personComponents.sourceAccountKey` |
-| `iif(parentcustomerid != null && parentcustomerid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", parentcustomerid, "sourceKey",  concat(parentcustomerid, "@${CRM_ORG_ID}.Dynamics")), null)` | `b2b.accountKey` |
-| `createdon` | `extSourceSystemAudit.createdDate` |
+| `iif(contactid != null && contactid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", contactid, "sourceKey", concat(contactid,"@${CRM_ORG_ID}.Dynamics")), null)` | `personComponents.sourcePersonKey` |  |
+| `department` | `extendedWorkDetails.departments` |  |
+| `fullname` | `person.name.fullName` |  |
+| `suffix` | `person.name.suffix` |  |
+| `iif(parentcustomerid != null && parentcustomerid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", parentcustomerid, "sourceKey", concat(parentcustomerid,"@${CRM_ORG_ID}.Dynamics")), null)` | `personComponents.sourceAccountKey` |  |
+| `iif(parentcustomerid != null && parentcustomerid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", parentcustomerid, "sourceKey",  concat(parentcustomerid, "@${CRM_ORG_ID}.Dynamics")), null)` | `b2b.accountKey` |  |
+| `createdon` | `extSourceSystemAudit.createdDate` |  |
 | `emailaddress1` | `workEmail.address` | 次要标识符。 |
-| `emailaddress2` | `personalEmail.address` |
-| `emailaddress1` | `personComponents.workEmail.address` |
-| `firstname` | `person.name.firstName` |
-| `fullname` | `person.name.fullName` |
-| `lastname` | `person.name.lastName` |
-| `jobtitle` | `extendedWorkDetails.jobTitle` |
-| `middlename` | `person.name.middleName` |
-| `mobilephone` | `mobilePhone.number` |
-| `modifiedon` | `extSourceSystemAudit.lastUpdatedDate` |
-| `salutation` | `person.name.courtesyTitle` |
-| `telephone1` | `workPhone.number` |
+| `emailaddress2` | `personalEmail.address` |  |
+| `emailaddress1` | `personComponents.workEmail.address` |  |
+| `firstname` | `person.name.firstName` |  |
+| `fullname` | `person.name.fullName` |  |
+| `lastname` | `person.name.lastName` |  |
+| `jobtitle` | `extendedWorkDetails.jobTitle` |  |
+| `middlename` | `person.name.middleName` |  |
+| `mobilephone` | `mobilePhone.number` |  |
+| `modifiedon` | `extSourceSystemAudit.lastUpdatedDate` |  |
+| `salutation` | `person.name.courtesyTitle` |  |
+| `telephone1` | `workPhone.number` |  |
 
 {style="table-layout:auto"}
 
@@ -253,7 +253,7 @@ ht-degree: 8%
 | --- | --- |
 | `decode(genderCode, "1", "male", "2", "female", "default")` | `person.gender` |
 
-在此方案中，该值对应于键（如果在选项中找到键）或`default`（如果存在`default`但未找到键）。 如果选项为`null`或没有`default`且未找到键，则该值对应于`null`。
+在此方案中，该值对应于键（如果在选项中找到键）或`default`（如果存在`default`但未找到键）。 如果选项为`null`或没有`null`且未找到键，则该值对应于`default`。
 
 #### 使用计算字段
 
@@ -265,4 +265,4 @@ ht-degree: 8%
 >
 >上述操作的嵌套迭代将类似于： `iif(condition, iif(cond1, tv1, fv1), iif(cond2, tv2, fv2))`。
 
-有关详细信息，请参阅 [!DNL Data Prep][&#128279;](../../../../data-prep/functions.md##logical-operators)中关于逻辑运算符的文档
+有关详细信息，请参阅[中关于逻辑运算符的 [!DNL Data Prep]](../../../../data-prep/functions.md##logical-operators)文档

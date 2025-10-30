@@ -3,10 +3,11 @@ keywords: adform集成； adform；
 title: 用于未经身份验证的重定位的Adform集成
 description: 此Adobe Experience Platform集成允许您根据ECID重新定位用户。
 last-substantial-update: 2025-03-26T00:00:00Z
-source-git-commit: 23da6e12b1f5bdc37240d7aa11a44e040b29e3f7
+exl-id: 37eb9453-fc3c-481e-94ea-54d9b1545631
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '726'
-ht-degree: 2%
+ht-degree: 1%
 
 ---
 
@@ -47,7 +48,7 @@ Adform可帮助您：
 2. **CDP或连接SKU**：您必须拥有Adobe客户数据平台(CDP) Prime、Ultimate SKU或连接SKU，才能实现无缝的客户端和服务器端通信。
 
 3. **Adobe Experience Platform Edge Network配置**：
-   * 确保将Edge Network配置为支持实时事件转发以实现异地重定位。 有关详细信息，请参阅Adobe的[事件转发快速入门指南](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/tags/event-forwarding/getting-started)。
+   * 确保将Edge Network配置为支持实时事件转发以实现异地重定位。 有关详细信息，请参阅Adobe的[事件转发快速入门指南](https://experienceleague.adobe.com/en/docs/experience-platform/tags/event-forwarding/getting-started)。
    * 此步骤对于高效地将数据发送到Adform的服务器端端点至关重要。
 
 满足这些先决条件后，您可以继续配置和部署[!DNL Adform]扩展。
@@ -105,6 +106,7 @@ Adform可帮助您：
 ## 验证和部署
 
 确保已正确安装和配置该扩展，并且已映射所有必需的数据元素，包括：
+
 * [ECID](/help/identity-service/features/ecid.md)
 * 页面名称
 * 反向链接URL

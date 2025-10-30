@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: January 15, 2020
 author: crhoades, ens28527
 exl-id: e488a50c-2a87-4649-b3a4-f9d45cb12fcb
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '890'
-ht-degree: 24%
+source-wordcount: '887'
+ht-degree: 26%
 
 ---
 
@@ -54,7 +54,7 @@ XDM是一个公开记录的规范，旨在提高数字体验的强大功能。 �
 | 新的 API 端点 | [!DNL Privacy Service] API的基本路径已从`/data/privacy/gdpr`更新为`/data/core/privacy/jobs`。 |
 | 新的必需 `regulation` 属性 | 在 [!DNL Privacy Service] API 中创建新作业时，必须在请求负载中提供 `regulation` 属性，以指示根据哪条规定跟踪该作业。接受的值为`gdpr`和`ccpa`。 |
 | 支持 [!DNL Adobe Primetime Authentication] | [!DNL Privacy Service]现在接受来自Adobe [!DNL Primetime Authentication]的访问/删除请求，使用`primetimeAuthentication`作为其产品值。 |
-| Privacy Service UI增强 | 根据GDPR和CCPA法规，单独设置作业跟踪页面。 新的&#x200B;**法规类型**&#x200B;下拉列表，用于在GDPR和CCPA的跟踪数据之间切换。 |
+| Privacy Service UI增强 | 根据GDPR和CCPA法规，单独设置作业跟踪页面。 新的&#x200B;**法规类型**&#x200B;下拉菜单可在 GDPR 和 CCPA 的跟踪数据之间切换。 |
 
 **已知问题**
 
@@ -80,8 +80,8 @@ Adobe Experience Platform可以从外部源摄取数据，同时允许您使用[
 
 | 类别 | 权限 | 描述 |
 |--- | --- | ---|
-| 数据引入 | 管理源 | 有权读取、创建、编辑和禁用源。 |
-| 数据引入 | 查看源 | 对&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡中的可用源以及&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡中的已验证源的只读访问权限。 |
+| 数据摄取 | 管理源 | 有权读取、创建、编辑和禁用源。 |
+| 数据摄取 | 查看源 | 对&#x200B;**[!UICONTROL Catalog]**&#x200B;选项卡中的可用源和&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡中的已验证源的只读访问权限。 |
 
 **已知问题**
 
@@ -104,7 +104,7 @@ Adobe Experience Platform可以从外部源摄取数据，同时允许您使用[
 | 类别 | 权限 | 描述 |
 |--- | --- | ---|
 | 目标 | 管理目标 | 有权读取、创建、编辑和禁用目标。 |
-| 目标 | 查看目标 | 对&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡中的可用目标和&#x200B;**浏览**&#x200B;选项卡中的已验证目标的只读访问。 |
+| 目标 | 查看目标 | 对&#x200B;**[!UICONTROL Catalog]**&#x200B;选项卡中的可用目标和&#x200B;**浏览**&#x200B;选项卡中的已验证目标的只读访问。 |
 | 目标 | 激活目标 | 能够将数据激活到目标。 此权限要求将“管理目标”或“查看目标”添加到产品配置文件中。 |
 
 **已知问题**

@@ -2,9 +2,9 @@
 title: Google数据层扩展
 description: 了解Adobe Experience Platform中的Google Client Data Layer标记扩展。
 exl-id: 7990351d-8669-432b-94a9-4f9db1c2b3fe
-source-git-commit: c61afdc2c3df98a0ef815d7cb034ba2907c52908
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '937'
+source-wordcount: '934'
 ht-degree: 0%
 
 ---
@@ -13,11 +13,11 @@ ht-degree: 0%
 
 Google数据层扩展允许您在标记实施中使用Google数据层。 该扩展可以独立使用，也可以与Google解决方案以及Google的开源[数据层帮助程序库](https://github.com/google/data-layer-helper)同时使用。
 
-帮助程序库提供了与Adobe客户端数据层(ACDL)类似的事件驱动功能。 Google Data Layer扩展的数据元素、规则和操作提供了与[ACDL扩展](../client-data-layer/overview.md)中类似的功能。
+帮助程序库提供了与Adobe Client Data Layer (ACDL)类似的事件驱动功能。 Google Data Layer扩展的数据元素、规则和操作提供了与[ACDL扩展](../client-data-layer/overview.md)中类似的功能。
 
 ## 安装
 
-要安装扩展，请导航到数据收集UI中的扩展目录，然后选择&#x200B;**[!UICONTROL Google Data Layer]**。
+要安装扩展，请导航到数据收集UI中的扩展目录并选择&#x200B;**[!UICONTROL Google Data Layer]**。
 
 安装后，扩展会在每次加载Adobe Experience Platform Tags库时创建或访问数据层。
 
@@ -31,11 +31,12 @@ Google数据层扩展允许您在标记实施中使用Google数据层。 该扩�
 >
 >无论是Google还是Adobe代码先加载并创建数据层，这都无关紧要。 两个系统的行为相同 — 如果数据层不存在则创建数据层，或者使用现有的数据层。
 
-## 活动
+## 事件
 
 >[!NOTE]
 >
 >在Adobe Experience Platform Tags中使用事件驱动的数据层时，单词&#x200B;_event_&#x200B;会过载。 _事件_&#x200B;可以是：
+>
 > - Adobe Experience Platform Tags事件（Library Loaded等）。
 > - JavaScript活动。
 > - 使用&#x200B;_event_&#x200B;关键字推送到Data Layer的数据。
@@ -49,7 +50,7 @@ Google数据层扩展允许您在标记实施中使用Google数据层。 该扩�
 
 ### Google事件类型
 
-Google支持两种推送事件的方式：使用`push()`方法的Google Tag Manager和使用`gtag()`方法的Google Analytics4。
+Google支持两种推送事件的方式：使用`push()`方法的Google Tag Manager和使用`gtag()`方法的Google Analytics 4。
 
 1.2.1之前的Google Data Layer扩展版本仅支持由`push()`创建的事件，如本页上的代码示例所示。
 

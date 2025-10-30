@@ -3,9 +3,9 @@ title: 实时查找边缘配置文件属性
 description: 了解如何使用自定义Personalization目标和Edge Network API实时查找边缘配置文件属性
 type: Tutorial
 exl-id: e185d741-af30-4706-bc8f-d880204d9ec7
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '1843'
+source-wordcount: '1839'
 ht-degree: 1%
 
 ---
@@ -54,7 +54,7 @@ Edge配置文件查找用例受下表所述的特定性能护栏的约束。 有
 >
 >Enabling edge segmentation limits the maximum number of lookup requests to 1500 request per second. If you need a higher request throughput, disable edge segmentation for your datastream. See the [guardrails documentation](../guardrails.md#edge-destinations-activation) for detailed information. -->
 
-    ![显示数据流配置屏幕的Experience Platform UI图像。](../assets/ui/activate-edge-profile-lookup/datastream-config.png)
+![显示数据流配置屏幕的Experience Platform UI图像。](../assets/ui/activate-edge-profile-lookup/datastream-config.png)
 
 
 ## 步骤2：配置受众以进行Edge评估 {#audience-edge-evaluation}
@@ -125,8 +125,6 @@ Edge配置文件查找用例受下表所述的特定性能护栏的约束。 有
 
      ![显示如何在映射步骤](../assets/ui/activate-edge-personalization-destinations/mapping-step-select-target-attribute.gif)中选择XDM属性的屏幕录制
 
-
-
 完成配置文件属性的映射后，选择&#x200B;**[!UICONTROL Next]**。
 
 在&#x200B;**[!UICONTROL Review]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL Cancel]**&#x200B;以中断流，**[!UICONTROL Back]**&#x200B;以修改您的设置，或&#x200B;**[!UICONTROL Finish]**&#x200B;以确认您的选择并开始将配置文件数据发送到Edge Network。
@@ -167,7 +165,8 @@ Edge配置文件查找用例受下表所述的特定性能护栏的约束。 有
 >[!IMPORTANT]
 >
 >配置文件属性可能包含敏感数据。 要保护此数据，必须通过[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/getting-started/)检索配置文件属性。 此外，您必须通过Edge Network API [交互式数据收集终结点](https://developer.adobe.com/data-collection-apis/docs/endpoints/interact/)检索配置文件属性，才能对API调用进行身份验证。
->&#x200B;><br>如果您不遵循上述要求，则将仅基于受众成员资格进行个性化，并且用户档案属性将不可使用。
+>
+>如果您不遵循上述要求，则将仅基于受众成员资格进行个性化，并且用户档案属性将不可使用。
 
 您在[步骤1](#create-datastream)中配置的数据流现在已准备好接受传入事件数据并使用边缘配置文件信息进行响应。
 

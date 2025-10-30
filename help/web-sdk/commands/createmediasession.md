@@ -2,7 +2,7 @@
 title: createMediaSession
 description: 了解如何配置Web SDK以自动管理媒体会话
 exl-id: abcb26f6-7249-4235-99eb-e4b9aeecff3e
-source-git-commit: 57d42d88ec9a93744450a2a352590ab57d9e5bb7
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '356'
 ht-degree: 7%
@@ -17,7 +17,7 @@ ht-degree: 7%
 
 您可以通过两种方式在Web SDK中创建媒体会话：
 
-* [自动跟踪的媒体会话](#automatic)允许Web SDK管理向[Adobe Analytics for Streaming Media](https://experienceleague.adobe.com/zh-hans/docs/media-analytics/using/media-overview)发送的媒体Ping事件。 这些ping的频率由[streamingMedia](configure/streamingmedia.md)组件的配置设置决定。
+* [自动跟踪的媒体会话](#automatic)允许Web SDK管理向[Adobe Analytics for Streaming Media](https://experienceleague.adobe.com/zh-hans/docs/media-analytics/using/media-overview)发送媒体Ping事件。 这些ping的频率由[streamingMedia](configure/streamingmedia.md)组件的配置设置决定。
 * [手动跟踪的媒体会话](#manual)让您能够更好地控制向[Adobe Analytics for Streaming Media](https://experienceleague.adobe.com/zh-hans/docs/media-analytics/using/media-overview)发送会话Ping事件。 此外，您还可以为媒体会话存储`sessionID`。
 
 ## 创建自动跟踪的媒体会话 {#automatic}
@@ -52,8 +52,8 @@ ht-degree: 7%
 | 属性 | 类型 | 必需 | 描述 |
 |---------|----------|---------|---------|
 | `playerId` | 字符串 | 是 | 播放器ID，表示媒体会话的唯一标识符。 |
-| `getPlayerDetails` | 函数 | 是 | 返回播放器详细信息的函数。 Web SDK将在所提供的`playerId`的每个媒体事件之前调用此回调函数。 |
-| `xdm.eventType ` | 对象 | 否 | 媒体事件类型。 如果未提供，则此项自动设置为`media.sessionStart`。 |
+| `getPlayerDetails` | 函数 | 是 | 返回播放器详细信息的函数。 此回调函数将在所提供的`playerId`的每个媒体事件之前由Web SDK调用。 |
+| `xdm.eventType` | 对象 | 否 | 媒体事件类型。 如果未提供，则此项自动设置为`media.sessionStart`。 |
 | `xdm.mediaCollection.sessionDetails` | 对象 | 是 | 会话详细信息对象。 `sessionDetails`对象应包含会话详细信息属性。 有关详细信息，请参阅[媒体收集架构](../../xdm/data-types/media-collection-details.md)文档。 |
 
 

@@ -2,9 +2,9 @@
 title: 目标概述
 description: 目标是预先构建的与目标平台的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用Adobe Experience Platform中的“目标”来激活跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例的已知和未知数据。
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '1368'
+source-wordcount: '1296'
 ht-degree: 3%
 
 ---
@@ -61,12 +61,12 @@ Experience Platform中的目标功能可与Adobe Experience Platform访问控制
 
 | 权限级别 | 描述 |
 | ---- | ---- |
-| **[!UICONTROL 查看目标]** | 要访问Experience Platform UI中的“目标”选项卡，您需要&#x200B;**[!UICONTROL 查看目标]** [访问控制权限](/help/access-control/home.md#permissions)。 |
-| **[!UICONTROL 查看目标]**，**[!UICONTROL 管理目标]** | 若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 |
-| **[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** | 要将受众激活到目标并启用工作流的[映射步骤](ui/activate-batch-profile-destinations.md#mapping)，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 |
-| **[!UICONTROL 查看目标]**、**[!UICONTROL 激活没有映射的区段]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** | 要在没有访问工作流的[映射步骤](ui/activate-batch-profile-destinations.md#mapping)的情况下在现有数据流中添加或删除受众，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活没有映射的区段]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 |
-| **[!UICONTROL 查看目标]**，**[!UICONTROL 管理和激活数据集目标]** | 要将数据集导出到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理和激活数据集目标]** [访问控制权限](/help/access-control/home.md#permissions)。 |
-| **[!UICONTROL 查看身份图]** | 要将&#x200B;*标识*&#x200B;导出到目标，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"} |
+| **[!UICONTROL View Destinations]** | 要访问Experience Platform UI中的“目标”选项卡，您需要&#x200B;**[!UICONTROL View Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 |
+| **[!UICONTROL View Destinations]**、**[!UICONTROL Manage Destinations]** | 若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 |
+| **[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** | 要将受众激活到目标并启用工作流的[映射步骤](ui/activate-batch-profile-destinations.md#mapping)，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 |
+| **[!UICONTROL View Destinations]**、**[!UICONTROL Activate Segments without Mapping]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** | 要在现有数据流中添加或删除受众而不访问工作流的[映射步骤](ui/activate-batch-profile-destinations.md#mapping)，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Segments without Mapping]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 |
+| **[!UICONTROL View Destinations]**、**[!UICONTROL Manage and Activate Dataset Destinations]** | 要将数据集导出到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage and Activate Dataset Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 |
+| **[!UICONTROL View Identity Graph]** | 要将&#x200B;*标识*&#x200B;导出到目标，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"} |
 
 {style="table-layout:auto"}
 
@@ -86,7 +86,7 @@ Adobe Experience Platform中基于属性的访问控制允许管理员根据属�
 
 ## 从目标中删除配置文件 {#profile-removal}
 
-在从激活到目标的受众中删除配置文件时，该配置文件也会从目标平台中的相应受众中删除。 例如，如果从先前激活到LinkedIn的受众中删除某个用户档案，则该用户档案将从关联的[!UICONTROL LinkedIn匹配的受众]中删除。
+在从激活到目标的受众中删除配置文件时，该配置文件也会从目标平台中的相应受众中删除。 例如，如果从先前激活到LinkedIn的受众中删除某个用户档案，则该用户档案将从关联的[!UICONTROL LinkedIn Matched Audience]中删除。
 
 从目标中删除配置文件（也称为取消分段）的频率与分段相同。 从Experience Platform的受众中删除配置文件后，下一个发送到目标的计划数据流就会反映该更改，并从目标受众中删除该配置文件。
 
@@ -118,7 +118,7 @@ Adobe Experience Platform中基于属性的访问控制允许管理员根据属�
 * [电子邮件营销目标](./catalog/email-marketing/overview.md)
 * [社交目标](./catalog/social/overview.md)
 
-有关受众激活工作流中数据策略违规的详细信息，请参阅以下指南中的&#x200B;**[!UICONTROL 审核]**&#x200B;步骤：
+有关受众激活工作流中数据策略违规的详细信息，请参阅以下指南中的&#x200B;**[!UICONTROL Review]**&#x200B;步骤：
 
 * [将受众数据激活到流式受众导出目标](./ui/activate-segment-streaming-destinations.md#review)
 * [将受众数据激活到流式配置文件导出目标](./ui/activate-streaming-profile-destinations.md#review)

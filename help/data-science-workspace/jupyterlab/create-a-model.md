@@ -5,7 +5,7 @@ title: 使用JupyterLab Notebooks创建模型
 type: Tutorial
 description: 本教程将指导您完成使用JupyterLab Notebooks方法生成器模板创建方法所需的步骤。
 exl-id: d3f300ce-c9e8-4500-81d2-ea338454bfde
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '2079'
 ht-degree: 0%
@@ -69,7 +69,7 @@ ht-degree: 0%
 
 以下视频教程介绍Luma倾向模型笔记本：
 
->[!VIDEO](https://video.tv.adobe.com/v/3452502?captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/333570)
 
 ### 要求文件 {#requirements-file}
 
@@ -93,13 +93,13 @@ data_access_sdk_python
 
 配置文件`training.conf`和`scoring.conf`用于指定要用于训练和评分以及添加超参数的数据集。 有单独的训练和评分配置。
 
-为了使模型运行训练，您必须提供`trainingDataSetId`、`ACP_DSW_TRAINING_XDM_SCHEMA`和`tenantId`。 此外，为了进行评分，您必须提供`scoringDataSetId`、`tenantId`和`scoringResultsDataSetId `。
+为了使模型运行训练，您必须提供`trainingDataSetId`、`ACP_DSW_TRAINING_XDM_SCHEMA`和`tenantId`。 此外，为了进行评分，您必须提供`scoringDataSetId`、`tenantId`和`scoringResultsDataSetId`。
 
 要查找数据集和架构ID，请转到左侧导航栏上notebooks中的数据选项卡![数据选项卡](../images/jupyterlab/create-recipe/dataset-tab.png)（文件夹图标下）。 需要提供三个不同的数据集ID。 `scoringResultsDataSetId`用于存储模型评分结果，并且应为空数据集。 这些数据集以前在[必需资产](#assets)步骤中创建。
 
 ![](../images/jupyterlab/create-recipe/dataset_tab.png)
 
-在[架构](https://platform.adobe.com/)**[和](https://platform.adobe.com/schema)数据集**&#x200B;**[选项卡下的](https://platform.adobe.com/dataset/overview)Adobe Experience Platform**&#x200B;上可找到相同的信息。
+在[架构](https://platform.adobe.com/)**[和](https://platform.adobe.com/schema)数据集****[选项卡下的](https://platform.adobe.com/dataset/overview)Adobe Experience Platform**&#x200B;上可找到相同的信息。
 
 竞争后，您的训练和评分配置应类似于以下屏幕截图：
 

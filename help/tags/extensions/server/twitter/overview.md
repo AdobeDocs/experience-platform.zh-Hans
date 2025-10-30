@@ -4,10 +4,10 @@ title: Twitter事件转发扩展
 description: 通过这个Adobe Experience Platform事件转发扩展，您可以将事件摄取到Twitter中，以满足您的业务要求。
 last-substantial-update: 2023-05-24T00:00:00Z
 exl-id: 54c240e5-6160-4654-ac5b-6afa8d99a765
-source-git-commit: 374c140a5db678adfa2e038b69478ad8c7f8dc95
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '1048'
-ht-degree: 3%
+source-wordcount: '999'
+ht-degree: 2%
 
 ---
 
@@ -45,17 +45,17 @@ ht-degree: 3%
 
 | 键类型 | 描述 |
 | --- | --- |
-| 使用者密钥 | 用&#x200B;于访问[!DNL Twitter] API的应用程序API密钥。 有关指导，请参阅有关[API密钥和密钥](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/api-key-and-secret)的[!DNL Twitter]文档。 |
-| 使用者密码 | API密钥允许您的应用程序访问[!DNL Twitter] API。 有关指导，请参阅有关[API密钥和密钥](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/api-key-and-secret)的[!DNL Twitter]文档。 |
-| 令牌密码 | 您应用程序的不过期令牌密码，用于通过OAuth向[!DNL Twitter] API进行身份验证。 有关指导，请参阅有关[获取使用访问令牌](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/obtaining-user-access-tokens)的[!DNL Twitter]文档。 |
-| 访问令牌 | 您应用程序的不过期访问令牌，用于通过OAuth对[!DNL Twitter] API进行身份验证。 有关指导，请参阅有关[获取使用访问令牌](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/obtaining-user-access-tokens)的[!DNL Twitter]文档。 |
-| 像素ID | [!DNL Twitter]像素是在您的网站上实施的网站标记，用于跟踪网站操作或转化。 有关指导，请参阅有关[网站](https://business.twitter.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites.html)的转化跟踪的[!DNL Twitter]文档。 |
+| 使用者密钥 | 用&#x200B;于访问[!DNL Twitter] API的应用程序API密钥。 有关指导，请参阅有关[!DNL Twitter]API密钥和密钥[的](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/api-key-and-secret)文档。 |
+| 使用者密码 | API密钥允许您的应用程序访问[!DNL Twitter] API。 有关指导，请参阅有关[!DNL Twitter]API密钥和密钥[的](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/api-key-and-secret)文档。 |
+| 令牌密码 | 您应用程序的不过期令牌密码，用于通过OAuth向[!DNL Twitter] API进行身份验证。 有关指导，请参阅有关[!DNL Twitter]获取使用访问令牌[的](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/obtaining-user-access-tokens)文档。 |
+| 访问令牌 | 您应用程序的不过期访问令牌，用于通过OAuth对[!DNL Twitter] API进行身份验证。 有关指导，请参阅有关[!DNL Twitter]获取使用访问令牌[的](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/obtaining-user-access-tokens)文档。 |
+| 像素ID | [!DNL Twitter]像素是在您的网站上实施的网站标记，用于跟踪网站操作或转化。 有关指导，请参阅有关[!DNL Twitter]网站[的转化跟踪的](https://business.twitter.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites.html)文档。 |
 
 ## 安装和配置[!DNL Twitter]扩展 {#install}
 
 若要安装该扩展，请[创建事件转发属性](../../../ui/event-forwarding/overview.md#properties)或选择现有属性进行编辑。
 
-在左侧导航中选择&#x200B;**[!UICONTROL 扩展]**。 在&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡中，在[!DNL Twitter]扩展的卡片中选择&#x200B;**[!UICONTROL 安装]**。
+在左侧导航中选择&#x200B;**[!UICONTROL Extensions]**。 在&#x200B;**[!UICONTROL Catalog]**&#x200B;选项卡中，选择&#x200B;**[!UICONTROL Install]**&#x200B;扩展卡片上的[!DNL Twitter]。
 
 ![目录显示[!DNL Twitter]扩展突出显示安装。](../../../images/extensions/server/twitter/install.png)
 
@@ -63,55 +63,55 @@ ht-degree: 3%
 >
 >根据您的实施需求，您可能需要在配置扩展之前创建架构、数据元素和数据集。 请在开始之前查看所有配置步骤，以确定需要为用例设置哪些实体。
 
-在下一个屏幕上，输入您之前从[!DNL Twitter]收集的以下[配置值](#configuration-details)：
+在下一个屏幕上，输入您之前从[收集的以下](#configuration-details)配置值[!DNL Twitter]：
 
-* **[!UICONTROL 像素ID]**
-* **[!UICONTROL 使用者密钥]**
-* **[!UICONTROL 使用者密码]**
-* **[!UICONTROL 令牌]**
-* **[!UICONTROL 令牌密码]**
+* **[!UICONTROL Pixel Id]**
+* **[!UICONTROL Consumer Key]**
+* **[!UICONTROL Consumer Secret]**
+* **[!UICONTROL Token]**
+* **[!UICONTROL Token Secret]**
 
-完成后，选择&#x200B;**[!UICONTROL 保存]**。
+完成后，选择&#x200B;**[!UICONTROL Save]**。
 
-[!DNL Twitter]扩展的![[!DNL Twitter]配置屏幕。](../../../images/extensions/server/twitter/configure.png)
+![[!DNL Twitter]扩展的[!DNL Twitter]配置屏幕。](../../../images/extensions/server/twitter/configure.png)
 
 ## 配置事件转发规则 {#config-rule}
 
 设置完所有数据元素后，即可开始创建事件转发规则，以确定将事件发送到[!DNL Twitter]的时间和方式。
 
-在事件转发属性中创建新的[规则](../../../ui/managing-resources/rules.md)。 在&#x200B;**[!UICONTROL 操作]**&#x200B;下，添加新操作并将扩展设置为&#x200B;**[!UICONTROL Twitter]**。 要将Edge Network事件发送到[!DNL Twitter]，请将&#x200B;**[!UICONTROL 操作类型]**&#x200B;设置为&#x200B;**[!UICONTROL 发送Web转换]。**
+在事件转发属性中创建新的[规则](../../../ui/managing-resources/rules.md)。 在&#x200B;**[!UICONTROL Actions]**&#x200B;下，添加新操作并将扩展设置为&#x200B;**[!UICONTROL Twitter]**。 要将Edge Network事件发送到[!DNL Twitter]，请将&#x200B;**[!UICONTROL Action Type]**&#x200B;设置为&#x200B;**[!UICONTROL Send Web Conversion]。**
 
 选择后，会显示其他控件以进一步配置事件。 您需要将[!DNL Twitter]事件属性映射到您之前创建的数据元素。 有关详细信息，请参阅[[!DNL Twitter] Web转换API](https://developer.twitter.com/en/docs/twitter-ads-api/measurement/api-reference/conversions)。
 
 ![创建转化事件规则的[!DNL Twitter]。](../../../images/extensions/server/twitter/action-configuration.png)
 
-**[!UICONTROL 用户标识]**
+**[!UICONTROL User Identification]**
 
 | 字段名称 | 描述 | 示例 | 必需 |
 | --- | --- | --- | --- |
-| [!UICONTROL [!DNL Twitter]点击ID] | [!DNL Twitter]点进URL中解析的点击ID。 | 26l6412g5p4iyj65a2oic2ayg2 | 如果未添加其他标识符，则此为必填字段。 |
-| [!UICONTROL 电子邮件] | 使用SHA256进行哈希处理的电子邮件地址。 文本必须为小写，并且必须在进行哈希处理之前删除任何尾随或前导空格。 | eventforwarding@example.com | 如果未添加其他标识符，则此为必填字段。 |
-| [!UICONTROL 电话] | 电话用作匹配转化事件的标识符。 在进行哈希处理之前，电话号码必须采用E164格式[+][国家/地区代码][区号][local phone number]。 | +911234567875 | 如果未添加其他标识符，则此为必填字段。 |
+| [!UICONTROL [!DNL Twitter] Click ID] | [!DNL Twitter]点进URL中解析的点击ID。 | `26l6412g5p4iyj65a2oic2ayg2` | 如果未添加其他标识符，则此为必填字段。 |
+| [!UICONTROL Email] | 使用SHA256进行哈希处理的电子邮件地址。 文本必须为小写，并且必须在进行哈希处理之前删除任何尾随或前导空格。 | `eventforwarding@example.com` | 如果未添加其他标识符，则此为必填字段。 |
+| [!UICONTROL Phone] | 电话用作匹配转化事件的标识符。 在进行哈希处理之前，电话号码必须是E164格式`[+][country code][area code][local phone number]`。 | `+911234567875` | 如果未添加其他标识符，则此为必填字段。 |
 
-**[!UICONTROL 转化数据]**
+**[!UICONTROL Conversion Data]**
 
 | 字段名称 | 描述 | 示例 | 必需 |
 | --- | --- | --- | --- |
-| [!UICONTROL 转换时间] | ISO 8601或`yyyy-MM-dd'T'HH:mm:ss:SSSZ`格式字符串形式的日期时间。 | 2022-02-18T01:14:00.603Z | 是 |
-| [!UICONTROL 事件ID] | 特定事件的以36为底的ID。 此ID应与您的[!DNL Twitter]广告帐户中包含的预配置事件匹配。 这称为事件管理器中相应事件的ID。 | o87ne或tw-o8z6j-o87ne (tw-pixel_id-event-id) | 是 |
-| [!UICONTROL 项数] | 在事件中购买的项目数。 该值必须为大于0的正数。 | 4 | 否 |
-| [!UICONTROL 货币] | 在事件中购买项目的货币。 这以ISO-4217表示，如果未提供，则默认为USD。 | 美元 | 否 |
-| [!UICONTROL 值] | 在事件中购买项目的价格值。 | 100.00 | 否 |
-| [!UICONTROL 转换ID] | 转化事件的标识符，可用于同一事件标记中Web像素转化和转化API转化之间的重复数据删除。 | 23294827 | 否 |
-| [!UICONTROL 描述] | 包含有关转化的任何其他信息的描述。 | 测试转换 | 否 |
+| [!UICONTROL Conversion Time] | ISO 8601或`yyyy-MM-dd'T'HH:mm:ss:SSSZ`格式字符串形式的日期时间。 | 2022-02-18T01:14:00.603Z | 是 |
+| [!UICONTROL Event Id] | 特定事件的以36为底的ID。 此ID应与您的[!DNL Twitter]广告帐户中包含的预配置事件匹配。 这称为事件管理器中相应事件的ID。 | o87ne或tw-o8z6j-o87ne (tw-pixel_id-event-id) | 是 |
+| [!UICONTROL Number of Items] | 在事件中购买的项目数。 该值必须为大于0的正数。 | 4 | 否 |
+| [!UICONTROL Currency] | 在事件中购买项目的货币。 这以ISO-4217表示，如果未提供，则默认为USD。 | 美元 | 否 |
+| [!UICONTROL Value] | 在事件中购买项目的价格值。 | 100.00 | 否 |
+| [!UICONTROL Conversion ID] | 转化事件的标识符，可用于同一事件标记中Web像素转化和转化API转化之间的重复数据删除。 | 23294827 | 否 |
+| [!UICONTROL Description] | 包含有关转化的任何其他信息的描述。 | 测试转换 | 否 |
 
 ## 验证[!DNL Twitter]中的数据
 
 创建并执行事件转发规则后，验证发送到[!DNL Twitter] API的事件是否在[!DNL Twitter] UI中按预期显示。
 
-如果事件收集和[!DNL Experience Platform]集成成功，您将在[!DNL Twitter] [!UICONTROL 事件管理器]中看到事件。
+如果事件收集和[!DNL Experience Platform]集成成功，您将会在[!DNL Twitter] [!UICONTROL Events manager]中看到事件。
 
-![&#x200B; [!DNL Twitter]事件管理器](../../../images/extensions/server/twitter/event-manager.png)
+![ [!DNL Twitter]事件管理器](../../../images/extensions/server/twitter/event-manager.png)
 
 ## 后续步骤
 

@@ -1,13 +1,13 @@
 ---
-keywords: Experience Cloud；快速入门；内容标记；热门主题；Intelligent Services
+keywords: Experience Cloud；快速入门；内容标记；热门主题；智能服务
 solution: Experience Platform
 title: 内容标记概述
 description: 内容标记是一组AI服务，可让您从内容中提取智能功能、组织和简化内容流，并向客户提供更具影响力的个性化体验。
 exl-id: 65c527d7-b1bd-414f-aba1-8445676a7052
-source-git-commit: a42bb4af3ec0f752874827c5a9bf70a66beb6d91
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '322'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -31,16 +31,19 @@ ht-degree: 1%
 内容标记的总体愿景分为三个步骤，以实现最佳客户参与和最大化客户驱动的KPI。
 
 **步骤1：了解内容**
+
 - 提取智能功能和元数据。
 - 组织内容（标记、分类、分组、消除重复）。
 - 将内容数据与资产关联。
 
 **步骤2：了解客户**
+
 - 将客户的操作与内容功能相关联。
 - 从内容和操作中获取客户的偏好和亲和度。
 - 将首选项添加到客户的配置文件。
 
 **步骤3：启用体验优化**
+
 - 使用客户配置文件在会话中和为后续体验提供经过改进的个性化体验。
 - 使用内容功能深入分析客户推动KPI的行为。
 - 使用内容见解可改进内容的创建、创作和选择。

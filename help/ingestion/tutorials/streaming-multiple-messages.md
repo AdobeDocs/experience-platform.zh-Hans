@@ -5,7 +5,7 @@ title: 在一个HTTP请求中发送多条消息
 type: Tutorial
 description: 本文档提供了一个教程，介绍如何使用流摄取，在单个HTTP请求中将多条消息发送到Adobe Experience Platform。
 exl-id: 04045090-8a2c-42b6-aefa-09c043ee414f
-source-git-commit: 31c00e69dd92f7c3232e09f02da36c60cd8cf486
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1483'
 ht-degree: 1%
@@ -219,6 +219,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
 以下示例显示了当批次包含有效消息和无效消息时发生的情况。
 
 请求有效负载是表示XDM架构中事件的JSON对象数组。 请注意，要成功验证报文，需要满足以下条件：
+
 - 消息标头中的`imsOrgId`字段必须与入口定义匹配。 如果请求有效负载不包含`imsOrgId`字段，[!DNL Data Collection Core Service] (DCCS)将自动添加该字段。
 - 消息的标头应引用在[!DNL Experience Platform] UI中创建的现有XDM架构。
 - `datasetId`字段需要引用[!DNL Experience Platform]中的现有数据集，并且其架构需要匹配请求正文中包含的每个消息中的`header`对象中提供的架构。

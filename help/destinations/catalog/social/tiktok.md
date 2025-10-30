@@ -3,7 +3,7 @@ title: TikTok连接
 description: 使用您的数据在TikTok上构建自定义受众，以便通过广告促销活动进行定位。 这些受众可能是访问您的网站或与您的内容进行交互的人。 使用Adobe与TikTok Ads Manager的实时集成，快速而安全地将所需受众从Adobe Experience Platform推送到TikTok。
 last-substantial-update: 2023-03-20T00:00:00Z
 exl-id: 7b12d17f-7d9a-4615-9830-92bffe3f6927
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1111'
 ht-degree: 3%
@@ -117,7 +117,7 @@ TikTok支持激活下表中描述的标识。 了解有关[标识](/help/identit
 
 选择源字段：
 
-* 选择一个标识符（例如：` Email_LC_SHA256`）作为源标识，该标识符唯一标识Adobe Experience Platform和[!DNL TikTok Ads Manager]中的配置文件。
+* 选择一个标识符（例如： `Email_LC_SHA256`）作为源标识，该标识符唯一标识Adobe Experience Platform和[!DNL TikTok Ads Manager]中的配置文件。
 
 选择目标字段：
 

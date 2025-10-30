@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用Adobe Experience Platform SDK创作模型
 description: 本教程向您提供有关在Python和R中将data_access_sdk_python转换为新Python platform_sdk的信息。
 exl-id: 20909cae-5cd2-422b-8dbb-35bc63e69b2a
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '506'
+source-wordcount: '508'
 ht-degree: 3%
 
 ---
@@ -161,7 +161,7 @@ df2
 | 小于(`<`) | `lt()` |
 | 小于或等于(`<=`) | `le()` |
 | 和(`&`) | `And()` |
-| 或(`|`) | `Or()` |
+| 或(&amp;amp；vert； ) | `Or()` |
 
 ## 按所选列筛选 {#filter-by-selected-columns}
 
@@ -226,4 +226,4 @@ write_tracker <- dataset_writer$write({PANDA_DATAFRAME}, file_format='json')
 
 ## 后续步骤
 
-配置`platform_sdk`数据加载器后，数据将进行准备，然后拆分到`train`和`val`数据集。 要了解有关数据准备和功能工程的信息，请访问使用[!DNL JupyterLab]笔记本创建方法的教程中有关[数据准备和功能工程](../jupyterlab/create-a-model.md#data-preparation-and-feature-engineering)的部分。
+配置`platform_sdk`数据加载器后，数据将进行准备，然后拆分到`train`和`val`数据集。 要了解有关数据准备和功能工程的信息，请访问使用[笔记本创建方法的教程中有关](../jupyterlab/create-a-model.md#data-preparation-and-feature-engineering)数据准备和功能工程[!DNL JupyterLab]的部分。

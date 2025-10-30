@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 批量摄取疑难解答指南
 description: 本文档将有助于解答有关Adobe Experience Platform批量数据摄取API的常见问题。
 exl-id: 0a750d7e-a4ee-4a79-a697-b4b732478b2b
-source-git-commit: 37b241f15f297263cc7aa20f382c115a2d131c7e
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1426'
 ht-degree: 1%
@@ -186,7 +186,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID
 | 活动/成功 | x | 已成功将批次从暂存提升到母版，现在可用于下游使用。 **注意：**&#x200B;活动和成功可互换使用。 |
 | 已存档 | | 该批次已存档到冷存储中。 |
 | 失败/失败 | | 因配置错误和/或数据错误导致的终端状态。 将记录可操作错误以及批处理，以使客户端能够更正并重新提交数据。 **注意：**&#x200B;失败和失败可互换使用。 |
-| 不活跃 | x | 已成功提升批次，但已还原或已过期。 该批次将无法再用于下游使用，但基础数据将保留在主数据中，直到它被保留、存档或以其他方式删除。 |
+| 非活动 | x | 已成功提升批次，但已还原或已过期。 该批次将无法再用于下游使用，但基础数据将保留在主数据中，直到它被保留、存档或以其他方式删除。 |
 | 正在加载 | | 客户端当前正在写入批次数据。 此时批次&#x200B;**未**&#x200B;准备好进行提升。 |
 | 已加载 | | 客户端已完成为批次写入数据。 该批次已准备好进行升级。 |
 | 已保留 | | 数据已从Master中获取，并存放在Adobe数据湖中的指定存档中。 |
@@ -272,4 +272,4 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID
 | 200 | 该批次已被接受处理，并将转换为最终状态，如“活动”或“失败”。 提交后，可以使用`GetBatch`终结点监视批处理。 |
 | 400 | 错误请求。 如果批次中存在缺失或重叠的块，则返回。 |
 
-[large-file-upload]: batch_data_ingestion_developer_guide.md#how-to-ingest-large-parquet-files
+`[large-file-upload]: batch_data_ingestion_developer_guide.md#how-to-ingest-large-parquet-files`
