@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 部分批量摄取概述
 description: 本文档提供了有关管理部分批处理摄取的教程。
 exl-id: 25a34da6-5b7c-4747-8ebd-52ba516b9dc3
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: bc72f77b1b4a48126be9b49c5c663ff11e9054ea
 workflow-type: tm+mt
-source-wordcount: '946'
-ht-degree: 7%
+source-wordcount: '1209'
+ht-degree: 9%
 
 ---
 
@@ -28,11 +28,11 @@ ht-degree: 7%
 
 ### 正在读取示例 API 调用
 
-本指南提供了示例 API 调用来演示如何格式化请求。这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中有关[如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。
+本指南提供了示例 API 调用来演示如何格式化请求。这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
 
 ### 收集所需标头的值
 
-要调用[!DNL Experience Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+为调用 [!DNL Experience Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 - 授权：持有人`{ACCESS_TOKEN}`
 - x-api-key： `{API_KEY}`
@@ -54,7 +54,7 @@ ht-degree: 7%
 
 您可以创建一个启用了部分摄取的新批次。
 
-要创建新批次，请按照[批次摄取开发人员指南](./api-overview.md)中的步骤操作。 完成&#x200B;**[!UICONTROL 创建批次]**&#x200B;步骤后，在请求正文中添加以下字段：
+要创建新批次，请按照[批次摄取开发人员指南](./api-overview.md)中的步骤操作。 完成&#x200B;**[!UICONTROL Create batch]**&#x200B;步骤后，在请求正文中添加以下字段：
 
 ```json
 {
@@ -75,21 +75,21 @@ ht-degree: 7%
 >
 >本节介绍如何使用UI为部分批次摄取启用批处理。 如果已使用API为部分批次摄取启用批次，则可以跳至下一部分。
 
-要通过[!DNL Experience Platform] UI为部分摄取启用批次，您可以通过源连接创建新批次、在现有数据集中创建新批次或通过“[!UICONTROL 将CSV映射到XDM流]”创建新批次。
+要通过[!DNL Experience Platform] UI为部分摄取启用批次，您可以通过源连接创建新批次、在现有数据集中创建新批次或通过“[!UICONTROL Map CSV to XDM flow]”创建新批次。
 
 ### 创建新的源连接 {#new-source}
 
-要创建新的源连接，请按照[源概述](../../sources/home.md)中列出的步骤操作。 完成&#x200B;**[!UICONTROL 数据流详细信息]**&#x200B;步骤后，请记下&#x200B;**[!UICONTROL 部分摄取]**&#x200B;和&#x200B;**[!UICONTROL 错误诊断]**&#x200B;字段。
+要创建新的源连接，请按照[源概述](../../sources/home.md)中列出的步骤操作。 完成&#x200B;**[!UICONTROL Dataflow detail]**&#x200B;步骤后，请记下&#x200B;**[!UICONTROL Partial ingestion]**&#x200B;和&#x200B;**[!UICONTROL Error diagnostics]**&#x200B;字段。
 
 ![](../images/batch-ingestion/partial-ingestion/configure-batch.png)
 
-通过&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换，您可以启用或禁用部分批次摄取。
+**[!UICONTROL Partial ingestion]**&#x200B;切换允许您启用或禁用部分批次摄取。
 
-仅当&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换关闭时，才会显示&#x200B;**[!UICONTROL 错误诊断]**&#x200B;切换。 此功能允许[!DNL Experience Platform]生成有关您摄取的批次的详细错误消息。 如果启用了&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换，则会自动强制实施增强的错误诊断。
+**[!UICONTROL Error diagnostics]**&#x200B;切换仅在关闭&#x200B;**[!UICONTROL Partial ingestion]**&#x200B;切换时显示。 此功能允许[!DNL Experience Platform]生成有关您摄取的批次的详细错误消息。 如果&#x200B;**[!UICONTROL Partial ingestion]**&#x200B;切换处于打开状态，则会自动强制实施增强的错误诊断。
 
 ![](../images/batch-ingestion/partial-ingestion/configure-batch-partial-ingestion-focus.png)
 
-**[!UICONTROL 错误阈值]**&#x200B;允许您在整个批次失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
+**[!UICONTROL Error threshold]**&#x200B;允许您在整个批次失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
 
 ### 使用现有数据集 {#existing-dataset}
 
@@ -97,29 +97,129 @@ ht-degree: 7%
 
 ![](../images/batch-ingestion/partial-ingestion/monitor-dataset.png)
 
-通过&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换，您可以启用或禁用部分批次摄取。
+**[!UICONTROL Partial ingestion]**&#x200B;切换允许您启用或禁用部分批次摄取。
 
-仅当&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换关闭时，才会显示&#x200B;**[!UICONTROL 错误诊断]**&#x200B;切换。 此功能允许[!DNL Experience Platform]生成有关您摄取的批次的详细错误消息。 如果启用了&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换，则会自动强制实施增强的错误诊断。
+**[!UICONTROL Error diagnostics]**&#x200B;切换仅在关闭&#x200B;**[!UICONTROL Partial ingestion]**&#x200B;切换时显示。 此功能允许[!DNL Experience Platform]生成有关您摄取的批次的详细错误消息。 如果&#x200B;**[!UICONTROL Partial ingestion]**&#x200B;切换处于打开状态，则会自动强制实施增强的错误诊断。
 
 ![](../images/batch-ingestion/partial-ingestion/monitor-dataset-partial-ingestion-focus.png)
 
-**[!UICONTROL 错误阈值]**&#x200B;允许您在整个批次失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
+**[!UICONTROL Error threshold]**&#x200B;允许您在整个批次失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
 
 现在，您可以使用&#x200B;**添加数据**&#x200B;按钮上传数据，该数据将使用部分摄取来摄取。
 
-### 使用“[!UICONTROL 将CSV映射到XDM架构]”流程 {#map-flow}
+### 使用“[!UICONTROL Map CSV to XDM schema]”流 {#map-flow}
 
-要使用“[!UICONTROL 将CSV映射到XDM架构]”流程，请按照[映射CSV文件教程](../tutorials/map-csv/overview.md)中列出的步骤操作。 完成&#x200B;**[!UICONTROL 添加数据]**&#x200B;步骤后，请记下&#x200B;**[!UICONTROL 部分摄取]**&#x200B;和&#x200B;**[!UICONTROL 错误诊断]**&#x200B;字段。
+要使用“[!UICONTROL Map CSV to XDM schema]”流程，请按照[映射CSV文件教程](../tutorials/map-csv/overview.md)中列出的步骤操作。 完成&#x200B;**[!UICONTROL Add data]**&#x200B;步骤后，请记下&#x200B;**[!UICONTROL Partial ingestion]**&#x200B;和&#x200B;**[!UICONTROL Error diagnostics]**&#x200B;字段。
 
 ![](../images/batch-ingestion/partial-ingestion/xdm-csv-workflow.png)
 
-通过&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换，您可以启用或禁用部分批次摄取。
+**[!UICONTROL Partial ingestion]**&#x200B;切换允许您启用或禁用部分批次摄取。
 
-仅当&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换关闭时，才会显示&#x200B;**[!UICONTROL 错误诊断]**&#x200B;切换。 此功能允许[!DNL Experience Platform]生成有关您摄取的批次的详细错误消息。 如果启用了&#x200B;**[!UICONTROL 部分摄取]**&#x200B;切换，则会自动强制实施增强的错误诊断。
+**[!UICONTROL Error diagnostics]**&#x200B;切换仅在关闭&#x200B;**[!UICONTROL Partial ingestion]**&#x200B;切换时显示。 此功能允许[!DNL Experience Platform]生成有关您摄取的批次的详细错误消息。 如果&#x200B;**[!UICONTROL Partial ingestion]**&#x200B;切换处于打开状态，则会自动强制实施增强的错误诊断。
 
 ![](../images/batch-ingestion/partial-ingestion/xdm-csv-workflow-partial-ingestion-focus.png)
 
-**[!UICONTROL 错误阈值]**&#x200B;允许您在整个批次失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
+**[!UICONTROL Error threshold]**&#x200B;允许您在整个批次失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
+
+## 为现有数据流启用部分摄取和错误诊断
+
+如果在Experience Platform中创建数据流时未启用部分摄取或错误诊断，则您仍然可以启用这些功能而不重新创建数据流。 通过启用部分摄取和强大的错误诊断，您可以极大地增强数据摄取工作流中的可靠性和故障排查的便利性。 请阅读以下部分，了解如何使用[!DNL Flow Service] API为现有数据流启用部分摄取和错误诊断。
+
+默认情况下，数据流可能没有启用部分摄取或错误诊断。 这些功能有助于识别和隔离数据摄取期间的问题。 使用[!DNL Flow Service] API，您可以检索当前数据流配置，并使用PATCH请求应用必要的更改。
+
+按照以下步骤为现有数据流启用部分摄取和错误诊断。
+
+### 检索流详细信息
+
+要检索数据流配置，请向`/flows/{FLOW_ID}`端点发出GET请求，并提供数据流的ID。 有关检索数据流详细信息的详细信息，请参阅[使用 [!DNL Flow Service] API](../../sources/tutorials/api/update-dataflows.md)更新数据流指南。
+
+确保保存响应中返回的`etag`字段的值。 这对于更新请求来说是必需的，以确保版本一致性。
+
+### 更新流配置
+
+接下来，向`/flows/`端点发出PATCH请求，并提供要为其启用部分摄取和错误诊断的数据流的ID。
+
+>[!IMPORTANT]
+>
+>- 使用If-Match键在请求标头中包含之前保存的`etag`值。
+>- 您可以修改`partialIngestionPercent`值以满足您的特定需求。
+
+**API格式**
+
+```http
+PATCH /flows/{FLOW_ID}
+```
+
+**请求**
+
+```shell
+curl -X PATCH \
+    'https://platform.adobe.io/data/foundation/flowservice/flows/2edc08ac-4df5-4fe6-936f-81a19ce92f5c' \
+    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+    -H 'x-api-key: {API_KEY}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
+    -H 'x-sandbox-name: {SANDBOX_NAME}'
+    -H 'If-Match: "1a0037e4-0000-0200-0000-602e06f60000"' \
+    -d '[
+        {
+            "op": "add",
+            "path": "/options",
+            "value": {
+                "partialIngestionPercent": "10"
+            }
+        },
+        {
+            "op": "add",
+            "path": "/options/errorDiagnosticsEnabled",
+            "value": true
+        }
+    ]'
+```
+
+**响应**
+
+成功的响应返回数据流的`id`和更新的`etag`。
+
+```json
+{
+    "id": "2edc08ac-4df5-4fe6-936f-81a19ce92f5c",
+    "etag": "\"2c000802-0000-0200-0000-613976440000\""
+}
+```
+
+### 验证更新
+
+PATCH完成后，发出GET请求并检索您的数据流，以验证更改是否已成功完成。
+
+**API格式**
+
+```http
+GET /flows/{FLOW_ID}
+```
+
+**请求**
+
+以下请求将检索有关您的流ID的更新信息。
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/flowservice/flows/2edc08ac-4df5-4fe6-936f-81a19ce92f5c' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
+**响应**
+
+成功响应将返回您的数据流详细信息，确认现在已在`options`部分启用部分摄取和错误诊断。
+
+```json
+"options": {
+    "partialIngestionPercent": 10,
+    "errorDiagnosticsEnabled": true
+}
+```
 
 ## 后续步骤 {#next-steps}
 
