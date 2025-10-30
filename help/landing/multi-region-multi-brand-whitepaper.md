@@ -80,13 +80,13 @@ Experience Platform中的一个关键架构原则是，根据治理策略和要�
 
 考虑一位数据工程师，他可能不需要访问所有Experience Platform和基于平台的应用程序功能。 他们通常负责创建数据定义（架构）、配置数据源以摄取数据和创建数据集。 但是，他们可能与创建和激活受众以实现个性化客户体验的角色不同。 对于此角色，创建角色，添加适当的权限，并仅授予对所需功能的访问权限。 相反，营销人员角色不会创建架构和摄取数据，而是专注于创建和激活受众以实现个性化的客户体验。
 
-如果需要，请考虑添加粒度访问控制，以限制对具有基于属性的访问控制/字段级访问控制功能的统一客户配置文件上特定字段的访问。 Experience Platform中的这些治理机制允许您根据预定义标签限制对数据属性的访问。 通过字段级访问控制，可以管理个人身份数据，并且所有Experience Platform和应用程序工作流的访问都受到限制。 有关访问控制功能的更多详细信息，请参阅[访问控制文档](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home)。
+如果需要，请考虑添加粒度访问控制，以限制对具有基于属性的访问控制/字段级访问控制功能的统一客户配置文件上特定字段的访问。 Experience Platform中的这些治理机制允许您根据预定义标签限制对数据属性的访问。 通过字段级访问控制，可以管理个人身份数据，并且所有Experience Platform和应用程序工作流的访问都受到限制。 有关访问控制功能的更多详细信息，请参阅[访问控制文档](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/home)。
 
 ![CDP访问控制，配置角色权限](./images/whitepaper/Access-Controls-Configure-RolePermissions.png)
 
 **使用开发沙盒的开发生命周期**
 
-开发沙盒在所有功能方面的行为与生产沙盒的行为相同。 不同之处在于，它将提供一些合同保障，以使您保持在许可限制之内。 它专门针对具有非生产用户档案的开发和测试而设计，支持最多10%的许可用户档案承诺（在所有授权的开发沙盒中累积测量）。 有关其他详细信息和护栏，请参阅[沙盒概述文档](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/sandbox/home)和[产品描述页面](https://helpx.adobe.com/legal/product-descriptions.html)以了解权利详细信息。
+开发沙盒在所有功能方面的行为与生产沙盒的行为相同。 不同之处在于，它将提供一些合同保障，以使您保持在许可限制之内。 它专门针对具有非生产用户档案的开发和测试而设计，支持最多10%的许可用户档案承诺（在所有授权的开发沙盒中累积测量）。 有关其他详细信息和护栏，请参阅[沙盒概述文档](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/sandbox/home)和[产品描述页面](https://helpx.adobe.com/cn/legal/product-descriptions.html)以了解权利详细信息。
 
 在开发和测试生命周期中，您可以有多个开发沙盒（在此企业示例中，最多有4个，因为我们正在使用一个生产沙盒）。
 
@@ -102,7 +102,7 @@ Experience Platform中的一个关键架构原则是，根据治理策略和要�
 
 您可以选择使用Experience Platform API来自动执行沙盒部署和配置任务。 API允许对重复任务（如导出、导入或修改沙盒配置）进行可编程控制，如果您希望使用自动化工作流，则提供了灵活性。
 
-有关沙盒工具的其他详细信息，请参阅[沙盒工具文档](https://experienceleague.adobe.com/en/docs/experience-platform/sandbox/ui/sandbox-tooling)。
+有关沙盒工具的其他详细信息，请参阅[沙盒工具文档](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/sandbox/ui/sandbox-tooling)。
 
 | ![CDP — 创建包](./images/whitepaper/create-package.png) | ![CDP列表包](./images/whitepaper/list-packages.png) |
 | --- | --- |
@@ -229,7 +229,7 @@ Experience Platform中的一个关键架构原则是，根据治理策略和要�
 
 该区段共享服务允许两个或更多用户以安全、受管且有利于隐私的方式交换区段数据。
 
-有关区段匹配功能的更多详细信息，请参阅[区段匹配文档](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/segment-match/overview)。
+有关区段匹配功能的更多详细信息，请参阅[区段匹配文档](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/segmentation/ui/segment-match/overview)。
 
 ### 针对全球运营、地区和品牌的特定方法组合
 
