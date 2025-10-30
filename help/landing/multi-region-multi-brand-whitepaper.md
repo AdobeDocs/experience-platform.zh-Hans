@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform面向多地区、多品牌企业
 description: 了解如何让您的实施团队拥有有效导航Adobe Experience Platform的复杂性所需的工具和见解。
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 6e96cf7660a9a7fe1b4eaef645bca55ed89b7673
 workflow-type: tm+mt
-source-wordcount: '5325'
+source-wordcount: '5322'
 ht-degree: 0%
 
 ---
@@ -42,7 +42,7 @@ Experience Platform使您能够表示结构并管理您的业务数据，以实�
 - 重点：数据的准确性和质量。
 - 目标：确保数据隐私和信任，设计架构和数据模型，管理数据源。
 
-### 1.以有限的数据隔离方式运营的企业
+### 以有限的数据隔离进行运营的企业
 
 Experience Platform中的一个关键架构原则是，根据治理策略和要求，将客户数据限制到特定的生产沙盒。
 
@@ -80,13 +80,13 @@ Experience Platform中的一个关键架构原则是，根据治理策略和要�
 
 考虑一位数据工程师，他可能不需要访问所有Experience Platform和基于平台的应用程序功能。 他们通常负责创建数据定义（架构）、配置数据源以摄取数据和创建数据集。 但是，他们可能与创建和激活受众以实现个性化客户体验的角色不同。 对于此角色，创建角色，添加适当的权限，并仅授予对所需功能的访问权限。 相反，营销人员角色不会创建架构和摄取数据，而是专注于创建和激活受众以实现个性化的客户体验。
 
-如果需要，请考虑添加粒度访问控制，以限制对具有基于属性的访问控制/字段级访问控制功能的统一客户配置文件上特定字段的访问。 Experience Platform中的这些治理机制允许您根据预定义标签限制对数据属性的访问。 通过字段级访问控制，可以管理个人身份数据，并且所有Experience Platform和应用程序工作流的访问都受到限制。 有关访问控制功能的更多详细信息，请参阅[访问控制文档](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/home)。
+如果需要，请考虑添加粒度访问控制，以限制对具有基于属性的访问控制/字段级访问控制功能的统一客户配置文件上特定字段的访问。 Experience Platform中的这些治理机制允许您根据预定义标签限制对数据属性的访问。 通过字段级访问控制，可以管理个人身份数据，并且所有Experience Platform和应用程序工作流的访问都受到限制。 有关访问控制功能的更多详细信息，请参阅[访问控制文档](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home)。
 
 ![CDP访问控制，配置角色权限](./images/whitepaper/Access-Controls-Configure-RolePermissions.png)
 
 **使用开发沙盒的开发生命周期**
 
-开发沙盒在所有功能方面的行为与生产沙盒的行为相同。 不同之处在于，它将提供一些合同保障，以使您保持在许可限制之内。 它专门针对具有非生产用户档案的开发和测试而设计，支持最多10%的许可用户档案承诺（在所有授权的开发沙盒中累积测量）。 有关其他详细信息和护栏，请参阅[沙盒概述文档](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/sandbox/home)和[产品描述页面](https://helpx.adobe.com/cn/legal/product-descriptions.html)以了解权利详细信息。
+开发沙盒在所有功能方面的行为与生产沙盒的行为相同。 不同之处在于，它将提供一些合同保障，以使您保持在许可限制之内。 它专门针对具有非生产用户档案的开发和测试而设计，支持最多10%的许可用户档案承诺（在所有授权的开发沙盒中累积测量）。 有关其他详细信息和护栏，请参阅[沙盒概述文档](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/sandbox/home)和[产品描述页面](https://helpx.adobe.com/legal/product-descriptions.html)以了解权利详细信息。
 
 在开发和测试生命周期中，您可以有多个开发沙盒（在此企业示例中，最多有4个，因为我们正在使用一个生产沙盒）。
 
@@ -102,12 +102,12 @@ Experience Platform中的一个关键架构原则是，根据治理策略和要�
 
 您可以选择使用Experience Platform API来自动执行沙盒部署和配置任务。 API允许对重复任务（如导出、导入或修改沙盒配置）进行可编程控制，如果您希望使用自动化工作流，则提供了灵活性。
 
-有关沙盒工具的其他详细信息，请参阅[沙盒工具文档](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/sandbox/ui/sandbox-tooling)。
+有关沙盒工具的其他详细信息，请参阅[沙盒工具文档](https://experienceleague.adobe.com/en/docs/experience-platform/sandbox/ui/sandbox-tooling)。
 
 | ![CDP — 创建包](./images/whitepaper/create-package.png) | ![CDP列表包](./images/whitepaper/list-packages.png) |
 | --- | --- |
 
-### 2.区域或品牌特定数据隔离
+### 区域或品牌特定数据隔离
 
 如果您需要完全隔离（例如，区域或基于品牌），则可能需要遵循严格的数据访问策略或法律要求来操作，以限制品牌团队访问特定于其各自区域或品牌的数据。 您可以根据特定于区域或品牌的数据定义访问模式，以确保遵守内部、法规和数据治理协议。 如果您在高度管控的行业中运营（例如，处理PII数据），或者需要为不同的地理区域或品牌标识维护不同的分段数据，则此方法至关重要。
 
@@ -229,9 +229,9 @@ Experience Platform中的一个关键架构原则是，根据治理策略和要�
 
 该区段共享服务允许两个或更多用户以安全、受管且有利于隐私的方式交换区段数据。
 
-有关区段匹配功能的更多详细信息，请参阅[区段匹配文档](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/segmentation/ui/segment-match/overview)。
+有关区段匹配功能的更多详细信息，请参阅[区段匹配文档](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/segment-match/overview)。
 
-### 3. 针对全球运营、地区和品牌的特定方法组合
+### 针对全球运营、地区和品牌的特定方法组合
 
 许多多品牌企业都在全球范围内运营，因此往往寻求统一和独立的数据管理方法相结合的解决方案。 在此场景中，他们尝试为多个区域或国家分离数据。 组织内的品牌可以期望仅对与其特定品牌关联的数据进行操作，而所有这些操作都在地理区域或国家/地区的相同数据边界内。 这种方法允许集中管理区域或国家/地区数据，同时仍便于特定品牌的营销和数据操作。 它是一种将统一数据管理的优势与特定于品牌和区域的隔离的必要性相结合的模型。
 
@@ -434,7 +434,7 @@ Experience Platform为企业提供了一个强大的框架，用于跨多品牌�
 
    - 您必须根据数据驻留、法规遵从性和操作需要，仔细评估是部署&#x200B;**多个组织ID还是部署多个沙盒**。
 
-   - **组织ID**&#x200B;提供完全隔离&#x200B;**，而多沙盒设置可在共享治理框架中提供操作灵活性**。
+   - **组织ID**&#x200B;提供完全隔离**，而多沙盒设置可在共享治理框架中提供操作灵活性**。
 
 ## 最后想法
 
