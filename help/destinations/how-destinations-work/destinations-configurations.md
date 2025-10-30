@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ## 各种目标类型通用的导出设置 {#common-settings-across-destination-types}
 
-对于属于某个目标类型的目标，有关&#x200B;*触发目标导出的内容*&#x200B;以及&#x200B;*目标导出中包含的内容*，目标导出行为是一致的。 目标导出由目标服务从[上游实时客户档案服务](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html#adobe-experience-platform-%26-applications-detailed-architecture-diagram)收到的通知触发。
+对于属于某个目标类型的目标，有关&#x200B;*触发目标导出的内容*&#x200B;以及&#x200B;*目标导出中包含的内容*，目标导出行为是一致的。 目标导出由目标服务从[上游实时客户档案服务](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html?lang=zh-Hans#adobe-experience-platform-%26-applications-detailed-architecture-diagram)收到的通知触发。
 
 目标导出中包含的内容因目标类型而异。 详细了解每个目标类型[的](/help/destinations/how-destinations-work/profile-export-behavior.md)常见导出行为模式。 目标开发人员或Real-Time CDP用户无法编辑这些设置。
 

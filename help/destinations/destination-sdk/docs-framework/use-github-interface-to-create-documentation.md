@@ -17,14 +17,14 @@ ht-degree: 0%
 >
 >另请参阅Adobe参与者指南中的支持文档：
 >
->* [安装Git和Markdown创作工具](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html)
->* [在本地为文档设置Git存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html)
->* 针对主要更改的[GitHub贡献工作流](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html)。
+>* [安装Git和Markdown创作工具](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html?lang=zh-Hans)
+>* [在本地为文档设置Git存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=zh-Hans)
+>* 针对主要更改的[GitHub贡献工作流](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html?lang=zh-Hans)。
 
 ## 设置GitHub创作环境 {#set-up-environment}
 
 1. 在浏览器中，导航到`https://github.com/AdobeDocs/experience-platform.en`。
-1. 要[创建分支存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html#fork-the-repository)，请单击&#x200B;**创建分支存储库**，如下所示。 这会在您自己的GitHub帐户中创建Experience Platform存储库的副本。
+1. 要[创建分支存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=zh-Hans#fork-the-repository)，请单击&#x200B;**创建分支存储库**，如下所示。 这会在您自己的GitHub帐户中创建Experience Platform存储库的副本。
 
    ![分支Adobe文档存储库](../assets/docs-framework/ssd-fork-repository.gif)
 
@@ -47,7 +47,7 @@ ht-degree: 0%
    >
    >您可以随时关闭浏览器窗口，稍后再重新打开。 您的工作会自动保存，并在您重新打开浏览器时等待您。
 1. 将内容从Markdown编辑器复制到GitHub中的新文件中。
-1. 对于您计划使用的任何屏幕截图或图像，请使用GitHub界面将文件上传到`experience-platform.en/help/destinations/assets/catalog/[...]`，其中`[...]`是您目标的所需类别。 例如，如果要向Experience Platform添加个性化目标，请选择`personalization`类别。 您需要从正在创作的页面链接到图像。 请参阅[有关如何链接到图像的说明](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html#link-to-images)。
+1. 对于您计划使用的任何屏幕截图或图像，请使用GitHub界面将文件上传到`experience-platform.en/help/destinations/assets/catalog/[...]`，其中`[...]`是您目标的所需类别。 例如，如果要向Experience Platform添加个性化目标，请选择`personalization`类别。 您需要从正在创作的页面链接到图像。 请参阅[有关如何链接到图像的说明](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html?lang=zh-Hans#link-to-images)。
 
    ![将图像上传到GitHub](../assets/docs-framework/upload-image.gif)
 
@@ -83,4 +83,4 @@ ht-degree: 0%
 
 >[!TIP]
 >
->若要在文档中添加图像和链接，以及有关Markdown的任何其他问题，请阅读Adobe协作编写指南中的[使用Markdown](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html)。
+>若要在文档中添加图像和链接，以及有关Markdown的任何其他问题，请阅读Adobe协作编写指南中的[使用Markdown](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=zh-Hans)。

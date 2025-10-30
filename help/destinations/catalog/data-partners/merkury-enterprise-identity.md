@@ -46,8 +46,8 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->* 若要连接到目标，您需要&#x200B;**查看目标**&#x200B;和&#x200B;**管理目标**、**激活目标**、**查看配置文件**&#x200B;和&#x200B;**查看区段** [[访问控制权限]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions)。 阅读[[访问控制概述]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/ui/overview)或联系您的产品管理员以获取所需的权限。
->* 要导出&#x200B;*标识*，您需要&#x200B;**查看标识图形** [[访问控制权限]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions)。\！[选择工作流中突出显示的身份命名空间以将受众激活到目标。](../../assets/catalog/data-partners/merkury-identity/media/image3.png)
+>* 若要连接到目标，您需要&#x200B;**查看目标**&#x200B;和&#x200B;**管理目标**、**激活目标**、**查看配置文件**&#x200B;和&#x200B;**查看区段** [[访问控制权限]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/home#permissions)。 阅读[[访问控制概述]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/ui/overview)或联系您的产品管理员以获取所需的权限。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**查看标识图形** [[访问控制权限]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/home#permissions)。\！[选择工作流中突出显示的身份命名空间以将受众激活到目标。](../../assets/catalog/data-partners/merkury-identity/media/image3.png)
 
 ## 支持的身份 {#supported-identities}
 
@@ -69,7 +69,7 @@ ht-degree: 3%
 | **受众** | **支持** | **描述** |
 |---|---|---|
 | Segmentation Service | ✓ | 通过Experience Platform [[分段服务]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/segmentation/home)生成的受众。 |
-| 自定义上传 | x | 受众[[已将]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience)从CSV文件导入Experience Platform。 |
+| 自定义上传 | x | 受众[[已将]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/segmentation/ui/overview#import-audience)从CSV文件导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -80,7 +80,7 @@ ht-degree: 3%
 | **受众** | **支持** | **描述来源** |
 |---|---|---|      
 | Segmentation Service | ✓ | 通过Experience Platform [[分段服务]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/segmentation/home)生成的受众。 |
-| 自定义上传 | X | 受众[[已将]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience)从CSV文件导入Experience Platform。 |
+| 自定义上传 | X | 受众[[已将]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/segmentation/ui/overview#import-audience)从CSV文件导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -88,9 +88,9 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->若要连接到目标，您需要&#x200B;**查看目标**&#x200B;和&#x200B;**管理和激活数据集目标** [[访问控制权限]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions)。 阅读[[访问控制概述]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/ui/overview)或联系您的产品管理员以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**查看目标**&#x200B;和&#x200B;**管理和激活数据集目标** [[访问控制权限]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/home#permissions)。 阅读[[访问控制概述]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/ui/overview)或联系您的产品管理员以获取所需的权限。
 
-要连接到此目标，请按照[[目标配置教程]](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/connect-destination)中描述的步骤操作。 在目标配置工作流中，填写下面两个部分中列出的字段。
+要连接到此目标，请按照[[目标配置教程]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/ui/connect-destination)中描述的步骤操作。 在目标配置工作流中，填写下面两个部分中列出的字段。
 
 ### 验证目标
 
@@ -136,7 +136,7 @@ csv选项![的](../../assets/catalog/data-partners/merkury-identity/media/image8
 
 ### 启用警报
 
-您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/alerts)。
+您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/ui/alerts)。
 
 完成提供目标连接的详细信息后，选择&#x200B;**下一步**。
 
@@ -147,7 +147,7 @@ csv选项![的](../../assets/catalog/data-partners/merkury-identity/media/image8
 >* 若要激活数据，您需要&#x200B;**查看目标**、**激活目标**、**查看配置文件**&#x200B;和&#x200B;**查看区段**&#x200B;访问控制权限。 请阅读访问控制概述或联系您的产品管理员以获取所需权限。
 >* 要导出身份，您需要&#x200B;**查看身份图形**&#x200B;访问控制权限。
 
-有关将受众激活到此目标的说明，请阅读[将受众数据激活到批处理配置文件导出目标](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations)。
+有关将受众激活到此目标的说明，请阅读[将受众数据激活到批处理配置文件导出目标](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations)。
 
 ## 映射建议
 
@@ -176,7 +176,7 @@ csv选项![的](../../assets/catalog/data-partners/merkury-identity/media/image8
 
 ## 数据使用和治理
 
-在处理您的数据时，所有Adobe Experience Platform目标都符合数据使用策略。 有关Adobe Experience Platform如何实施数据治理的详细信息，请阅读[数据管理概述](https://experienceleague.adobe.com/en/docs/experience-platform/data-governance/home)。
+在处理您的数据时，所有Adobe Experience Platform目标都符合数据使用策略。 有关Adobe Experience Platform如何实施数据治理的详细信息，请阅读[数据管理概述](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/data-governance/home)。
 
 ## 后续步骤
 

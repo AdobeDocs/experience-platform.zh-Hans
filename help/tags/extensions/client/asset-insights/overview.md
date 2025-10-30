@@ -15,7 +15,7 @@ ht-degree: 87%
 >
 >经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
-这项扩展旨在与 [AEM 资产分析](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html)结合使用。更具体地说，它可以替换“pageTracker”进程和嵌入代码。当完成配置后，这项扩展会向 Adobe Analytics 发送资产“展示次数”和“单击次数”量度，随后，这些量度将导入 AEM 资产分析报表中。**&#x200B;**&#x200B;接下来，可使用 AEM 资产分析或 Adobe Analytics 项目工作区来报告资产量度。
+这项扩展旨在与 [AEM 资产分析](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html?lang=zh-Hans)结合使用。更具体地说，它可以替换“pageTracker”进程和嵌入代码。当完成配置后，这项扩展会向 Adobe Analytics 发送资产“展示次数”和“单击次数”量度，随后，这些量度将导入 AEM 资产分析报表中。**&#x200B;**&#x200B;接下来，可使用 AEM 资产分析或 Adobe Analytics 项目工作区来报告资产量度。
 
 ## 扩展的先决条件
 
@@ -38,7 +38,7 @@ Adobe Experience Platform的“*Adobe Analytics*”标记扩展必须安装到�
 
 ### Adobe Experience Manager (AEM)
 
-1. 启用 [AEM 资产分析](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html)。在 AEM 中，选择 **[!UICONTROL Tools > Assets]**，然后打开 **[!UICONTROL Insights Configuration]** 面板。
+1. 启用 [AEM 资产分析](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html?lang=zh-Hans)。在 AEM 中，选择 **[!UICONTROL Tools > Assets]**，然后打开 **[!UICONTROL Insights Configuration]** 面板。
 
 1. 禁用 UUID 跟踪。
 
@@ -54,15 +54,15 @@ Adobe Experience Platform的“*Adobe Analytics*”标记扩展必须安装到�
 
 ### 将AEM与标记集成
 
-通过Adobe I/O，完成了建议的[Experience Platform](https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/experience-platform-launch/overview.html)与Adobe Experience Manager的集成。
+通过Adobe I/O，完成了建议的[Experience Platform](https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/experience-platform-launch/overview.html?lang=zh-Hans)与Adobe Experience Manager的集成。
 
-1. [使用Adobe I/O连接AEM和标记](https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/experience-platform-launch/connect-aem-launch-adobe-io.html)。
+1. [使用Adobe I/O连接AEM和标记](https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/experience-platform-launch/connect-aem-launch-adobe-io.html?lang=zh-Hans)。
 
-2. [创建Adobe Experience Platform Cloud Service配置](https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/experience-platform-launch/create-launch-cloud-service.html)。
+2. [创建Adobe Experience Platform Cloud Service配置](https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/experience-platform-launch/create-launch-cloud-service.html?lang=zh-Hans)。
 
 ### 在 AEM 中启用资产分析
 
-有关启用资产分析的操作说明，请参阅 [Experience Manager 6.5 Assets 用户指南](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html)。
+有关启用资产分析的操作说明，请参阅 [Experience Manager 6.5 Assets 用户指南](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html?lang=zh-Hans)。
 
 ### 启用资产的 UUID 跟踪
 
@@ -133,7 +133,7 @@ Adobe Experience Platform的“*Adobe Analytics*”标记扩展必须安装到�
 
    * 浏览器的查看区域从未出现任何资产
 
-   * 页面上的资产均未使用 AEM 中启用的[资产分析](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html)进行配置。
+   * 页面上的资产均未使用 AEM 中启用的[资产分析](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html?lang=zh-Hans)进行配置。
 
 **单击次数**
 
@@ -143,7 +143,7 @@ Adobe Experience Platform的“*Adobe Analytics*”标记扩展必须安装到�
 
 在生成的 Analytics 图像请求（从下一页开始）中，如果 `a.assets.idlist` 在目标页面上具有资产 ID，并且 `a.assets.clickedid` 具有在原始页面上选择的资产的资产 ID，那么该规则可以正确运行。
 
-如果图像请求中没有出现 `a.assets.clickedid`，则很可能是因为已选择资产未在 AEM 中启用[资产分析](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html)。
+如果图像请求中没有出现 `a.assets.clickedid`，则很可能是因为已选择资产未在 AEM 中启用[资产分析](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html?lang=zh-Hans)。
 
 **无目标单击次数**
 
@@ -153,4 +153,4 @@ Adobe Experience Platform的“*Adobe Analytics*”标记扩展必须安装到�
 
 在生成的 Analytics 图像请求中，如果 `a.assets.clickedid` 具有资产 ID，则该规则可以正确运行。
 
-如果图像请求中没有出现 `a.assets.clickedid`，则很可能是因为已选择资产未在 AEM 中启用[资产分析](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html)。
+如果图像请求中没有出现 `a.assets.clickedid`，则很可能是因为已选择资产未在 AEM 中启用[资产分析](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html?lang=zh-Hans)。

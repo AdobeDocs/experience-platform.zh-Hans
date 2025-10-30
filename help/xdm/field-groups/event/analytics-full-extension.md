@@ -37,17 +37,17 @@ ht-degree: 5%
 
 ## `customDimensions` {#custom-dimensions}
 
-`customDimensions`捕获Analytics跟踪的自定义[维度](https://experienceleague.adobe.com/docs/analytics/components/dimensions/overview.html)。
+`customDimensions`捕获Analytics跟踪的自定义[维度](https://experienceleague.adobe.com/docs/analytics/components/dimensions/overview.html?lang=zh-Hans)。
 
 ![customDimension字段](../../images/field-groups/analytics-full-extension/customDimensions.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
 | `eVars` | 对象 | 捕获最多250个转化变量的对象([eVars](https://experienceleague.adobe.com/docs/analytics/components/dimensions/evar.html?lang=zh-CN))。 此对象的属性被设置为`eVar1`到`eVar250`的键值，并且仅接受其数据类型的字符串。 |
-| `hierarchies` | 对象 | 捕获最多五个自定义层次结构变量([hiers](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/hier.html))的对象。 此对象的属性被设置为`hier1`到`hier5`的键值，这些属性本身是具有以下子属性的对象：<ul><li>`delimiter`：用于生成`values`下提供的列表的原始分隔符。</li><li>`values`：层次结构级别名称的分隔列表，以字符串形式表示。</li></ul> |
-| `listProps` | 对象 | 捕获最多75个[列表属性](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/prop.html#list-props)的对象。 此对象的属性被设置为`prop1`到`prop75`的键值，这些属性本身是具有以下子属性的对象：<ul><li>`delimiter`：用于生成`values`下提供的列表的原始分隔符。</li><li>`values`：属性值的分隔列表，以字符串形式表示。</li></ul> |
-| `lists` | 对象 | 捕获最多三个[列表](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/list.html)的对象。 此对象的属性被设置为`list1`到`list3`的键值。 每个属性都包含一个`list`数组，其中包含[[!UICONTROL Key Value Pair]](../../data-types/key-value-pair.md)数据类型。 |
-| `props` | 对象 | 捕获最多75个[prop](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/prop.html)的对象。 此对象的属性被设置为`prop1`到`prop75`的键值，并且仅接受其数据类型的字符串。 |
+| `hierarchies` | 对象 | 捕获最多五个自定义层次结构变量([hiers](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/hier.html?lang=zh-Hans))的对象。 此对象的属性被设置为`hier1`到`hier5`的键值，这些属性本身是具有以下子属性的对象：<ul><li>`delimiter`：用于生成`values`下提供的列表的原始分隔符。</li><li>`values`：层次结构级别名称的分隔列表，以字符串形式表示。</li></ul> |
+| `listProps` | 对象 | 捕获最多75个[列表属性](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/prop.html?lang=zh-Hans#list-props)的对象。 此对象的属性被设置为`prop1`到`prop75`的键值，这些属性本身是具有以下子属性的对象：<ul><li>`delimiter`：用于生成`values`下提供的列表的原始分隔符。</li><li>`values`：属性值的分隔列表，以字符串形式表示。</li></ul> |
+| `lists` | 对象 | 捕获最多三个[列表](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/list.html?lang=zh-Hans)的对象。 此对象的属性被设置为`list1`到`list3`的键值。 每个属性都包含一个`list`数组，其中包含[[!UICONTROL Key Value Pair]](../../data-types/key-value-pair.md)数据类型。 |
+| `props` | 对象 | 捕获最多75个[prop](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/prop.html?lang=zh-Hans)的对象。 此对象的属性被设置为`prop1`到`prop75`的键值，并且仅接受其数据类型的字符串。 |
 | `postalCode` | 字符串 | 客户提供的邮政编码。 |
 | `stateProvince` | 字符串 | 客户端提供的州或省位置。 |
 
@@ -72,12 +72,12 @@ ht-degree: 5%
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `browserIDStr` | 字符串 | 所用浏览器的Adobe Analytics标识符（也称为[浏览器类型维度](https://experienceleague.adobe.com/docs/analytics/components/dimensions/browser-type.html)）。 |
-| `operatingSystemIDStr` | 字符串 | 所用操作系统的Adobe Analytics标识符（也称为[操作系统类型维度](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-system-types.html)）。 |
+| `browserIDStr` | 字符串 | 所用浏览器的Adobe Analytics标识符（也称为[浏览器类型维度](https://experienceleague.adobe.com/docs/analytics/components/dimensions/browser-type.html?lang=zh-Hans)）。 |
+| `operatingSystemIDStr` | 字符串 | 所用操作系统的Adobe Analytics标识符（也称为[操作系统类型维度](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-system-types.html?lang=zh-Hans)）。 |
 
 ## 自定义事件字段 {#events}
 
-Analytics扩展字段组提供了10个对象字段，每个字段最多可捕获100个[自定义事件量度](https://experienceleague.adobe.com/docs/analytics/components/metrics/custom-events.html)，字段组的总数量为1000。
+Analytics扩展字段组提供了10个对象字段，每个字段最多可捕获100个[自定义事件量度](https://experienceleague.adobe.com/docs/analytics/components/metrics/custom-events.html?lang=zh-Hans)，字段组的总数量为1000。
 
 每个顶级事件对象包含其各自范围内的单个事件对象。 例如，`event101to200`包含从`event101`到`event200`的键值事件。
 

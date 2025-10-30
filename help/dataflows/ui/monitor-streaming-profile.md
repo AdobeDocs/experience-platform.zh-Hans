@@ -26,7 +26,7 @@ ht-degree: 19%
 
 >[!NOTE]
 >
->流式处理吞吐量容量支持每秒多达1500个入站事件。 您可以购买额外的流分段以最多支持每秒13,500个额外的入站事件&#x200B;。 有关详细信息，请参阅[Real-Time CDP B2C Edition - Prime和Ultimate包产品说明](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)。
+>流式处理吞吐量容量支持每秒多达1500个入站事件。 您可以购买额外的流分段以最多支持每秒13,500个额外的入站事件&#x200B;。 有关详细信息，请参阅[Real-Time CDP B2C Edition - Prime和Ultimate包产品说明](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)。
 
 ## 监控配置文件流式摄取的量度 {#streaming-profile-metrics}
 
