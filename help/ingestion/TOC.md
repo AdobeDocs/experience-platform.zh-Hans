@@ -5,9 +5,9 @@ breadcrumb-title: Data Ingestion 指南
 user-guide-description: 通过批次引入或流式处理引入将您的数据引入 Experience Platform。
 feature: Data Ingestion
 role: Developer
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: f1d851afae5ad271e3c7d9d887f614058a262874
 workflow-type: tm+mt
-source-wordcount: '143'
+source-wordcount: '146'
 ht-degree: 21%
 
 ---
@@ -20,6 +20,7 @@ ht-degree: 21%
    - [概述](streaming-ingestion/overview.md)
    - [Kafka连接器](streaming-ingestion/kafka.md)
    - [故障排除](streaming-ingestion/troubleshooting.md)
+   - [列入允许列表 IP地址](streaming-ingestion/allowlisting.md)
 - 批量摄取{#batch}
    - [批量摄取API快速入门](batch-ingestion/getting-started.md)
    - [API概述](batch-ingestion/overview.md)
