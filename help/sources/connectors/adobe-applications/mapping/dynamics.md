@@ -2,7 +2,7 @@
 title: Microsoft Dynamics映射字段
 description: 下表包含Microsoft Dynamics源字段及其对应的XDM字段之间的映射。
 exl-id: 32f51761-5de3-4192-8f23-c1412ca12c08
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 83a249daddbee1ec264b6e505517325c76ac9b09
 workflow-type: tm+mt
 source-wordcount: '499'
 ht-degree: 8%
@@ -62,38 +62,38 @@ ht-degree: 8%
 
 | 源字段 | 目标XDM字段 | 注释 |
 | --- | --- | --- |
-| `address1_addressid` | `workAddress._id` |
-| `address1_city` | `workAddress.city` |
-| `address1_country` | `workAddress.country` |
-| `address1_county` | `workAddress.stateProvince` |
-| `address1_latitude` | `workAddress._schema.latitude` |
-| `address1_line1` | `workAddress.street1` |
-| `address1_line2` | `workAddress.street2` |
-| `address1_line3` | `workAddress.street3` |
-| `address1_longitude` | `workAddress._schema.longitude` |
-| `address1_postalcode` | `workAddress.postalCode` |
-| `address1_postofficebox` | `workAddress.postOfficeBox` |
-| `address1_stateorprovince` | `workAddress.state` |
-| `telephone1` | `workPhone.number` |
-| `mobilephone` | `mobilePhone.number` |
-| `createdon` | `extSourceSystemAudit.createdDate` |
+| `address1_addressid` | `workAddress._id` |  |
+| `address1_city` | `workAddress.city` |  |
+| `address1_country` | `workAddress.country` |  |
+| `address1_county` | `workAddress.stateProvince` |  |
+| `address1_latitude` | `workAddress._schema.latitude` |  |
+| `address1_line1` | `workAddress.street1` |  |
+| `address1_line2` | `workAddress.street2` |  |
+| `address1_line3` | `workAddress.street3` |  |
+| `address1_longitude` | `workAddress._schema.longitude` |  |
+| `address1_postalcode` | `workAddress.postalCode` |  |
+| `address1_postofficebox` | `workAddress.postOfficeBox` |  |
+| `address1_stateorprovince` | `workAddress.state` |  |
+| `telephone1` | `workPhone.number` |  |
+| `mobilephone` | `mobilePhone.number` |  |
+| `createdon` | `extSourceSystemAudit.createdDate` |  |
 | `emailaddress1` | `workEmail.address` | 次要标识符 |
-| `emailaddress2` | `personalEmail.address` |
-| `emailaddress1` | `personComponents.workEmail.address` |
-| `fax` | `faxPhone.number` |
-| `firstname` | `person.name.firstName` |
-| `fullname` | `person.name.fullName` |
-| `jobtitle` | `extendedWorkDetails.jobTitle` |
-| `lastname` | `person.name.lastName` |
-| `"Dynamics"` | `b2b.personKey.sourceType` |
+| `emailaddress2` | `personalEmail.address` |  |
+| `emailaddress1` | `personComponents.workEmail.address` |  |
+| `fax` | `faxPhone.number` |  |
+| `firstname` | `person.name.firstName` |  |
+| `fullname` | `person.name.fullName` |  |
+| `jobtitle` | `extendedWorkDetails.jobTitle` |  |
+| `lastname` | `person.name.lastName` |  |
+| `"Dynamics"` | `b2b.personKey.sourceType` |  |
 | `"${CRM_ORG_ID}"` | `b2b.personKey.sourceInstanceID` | 将自动替换`"${CRM_ORG_ID}"`的值。 |
-| `leadid` | `b2b.personKey.sourceID` |
+| `leadid` | `b2b.personKey.sourceID` |  |
 | `concat(leadid,"@${CRM_ORG_ID}.Dynamics")` | `b2b.personKey.sourceKey` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
-| `iif(leadid != null && leadid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", leadid, "sourceKey", concat(leadid,"@${CRM_ORG_ID}.Dynamics")), null)` | `personComponents.sourcePersonKey` |
-| `middlename` | `person.name.middleName` |
-| `mobilephone` | `mobilePhone.number` |
-| `modifiedon` | `extSourceSystemAudit.lastUpdatedDate` |
-| `salutation` | `person.name.courtesyTitle` |
+| `iif(leadid != null && leadid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", leadid, "sourceKey", concat(leadid,"@${CRM_ORG_ID}.Dynamics")), null)` | `personComponents.sourcePersonKey` |  |
+| `middlename` | `person.name.middleName` |  |
+| `mobilephone` | `mobilePhone.number` |  |
+| `modifiedon` | `extSourceSystemAudit.lastUpdatedDate` |  |
+| `salutation` | `person.name.courtesyTitle` |  |
 
 {style="table-layout:auto"}
 
@@ -101,36 +101,36 @@ ht-degree: 8%
 
 | 源字段 | 目标XDM字段 | 注释 |
 | --- | --- | --- |
-| `"Dynamics"` | `accountKey.sourceType` |
+| `"Dynamics"` | `accountKey.sourceType` |  |
 | `"${CRM_ORG_ID}"` | `accountKey.sourceInstanceID` | 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `accountid` | `accountKey.sourceID` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
-| `accountnumber` | `accountNumber` |
-| `accountratingcode` | `accountOrganization.rating` |
-| `address1_addressid` | `accountPhysicalAddress._id` |
-| `address1_city` | `accountPhysicalAddress.city` |
-| `address1_country` | `accountPhysicalAddress.country` |
-| `address1_county` | `accountPhysicalAddress.region` |
-| `address1_latitude` | `accountPhysicalAddress._schema.latitude` |
-| `address1_line1` | `accountPhysicalAddress.street1` |
-| `address1_line2` | `accountPhysicalAddress.street2` |
-| `address1_line3` | `accountPhysicalAddress.street3` |
-| `address1_longitude` | `accountPhysicalAddress._schema.longitude` |
-| `address1_name` | `accountPhysicalAddress.label` |
-| `address1_postalcode` | `accountPhysicalAddress.postalCode` |
-| `address1_postofficebox` | `accountPhysicalAddress.postOfficeBox` |
-| `address1_stateorprovince` | `accountPhysicalAddress.state` |
-| `createdon` | `extSourceSystemAudit.createdDate` |
-| `description` | `accountDescription` |
-| `fax` | `accountFax.number` |
-| `modifiedon` | `extSourceSystemAudit.lastUpdatedDate` |
-| `name` | `accountName` |
-| `numberofemployees` | `accountOrganization.numberOfEmployees` |
-| `revenue` | `accountOrganization.annualRevenue.amount` |
-| `sic` | `accountOrganization.SICCode` |
-| `telephone1` | `accountPhone.number` |
-| `tickersymbol` | `accountOrganization.tickerSymbol` |
-| `websiteurl` | `accountOrganization.website` |
-| `concat(accountid,"@${CRM_ORG_ID}.Dynamics")` | `accountKey.sourceKey` |
+| `accountnumber` | `accountNumber` |  |
+| `accountratingcode` | `accountOrganization.rating` |  |
+| `address1_addressid` | `accountPhysicalAddress._id` |  |
+| `address1_city` | `accountPhysicalAddress.city` |  |
+| `address1_country` | `accountPhysicalAddress.country` |  |
+| `address1_county` | `accountPhysicalAddress.region` |  |
+| `address1_latitude` | `accountPhysicalAddress._schema.latitude` |  |
+| `address1_line1` | `accountPhysicalAddress.street1` |  |
+| `address1_line2` | `accountPhysicalAddress.street2` |  |
+| `address1_line3` | `accountPhysicalAddress.street3` |  |
+| `address1_longitude` | `accountPhysicalAddress._schema.longitude` |  |
+| `address1_name` | `accountPhysicalAddress.label` |  |
+| `address1_postalcode` | `accountPhysicalAddress.postalCode` |  |
+| `address1_postofficebox` | `accountPhysicalAddress.postOfficeBox` |  |
+| `address1_stateorprovince` | `accountPhysicalAddress.state` |  |
+| `createdon` | `extSourceSystemAudit.createdDate` |  |
+| `description` | `accountDescription` |  |
+| `fax` | `accountFax.number` |  |
+| `modifiedon` | `extSourceSystemAudit.lastUpdatedDate` |  |
+| `name` | `accountName` |  |
+| `numberofemployees` | `accountOrganization.numberOfEmployees` |  |
+| `revenue` | `accountOrganization.annualRevenue.amount` |  |
+| `sic` | `accountOrganization.SICCode` |  |
+| `telephone1` | `accountPhone.number` |  |
+| `tickersymbol` | `accountOrganization.tickerSymbol` |  |
+| `websiteurl` | `accountOrganization.website` |  |
+| `concat(accountid,"@${CRM_ORG_ID}.Dynamics")` | `accountKey.sourceKey` |  |
 
 {style="table-layout:auto"}
 
@@ -138,23 +138,23 @@ ht-degree: 8%
 
 | 源字段 | 目标XDM字段 | 注释 |
 | --- | --- | --- |
-| `name` | `opportunityName` |
-| `"Dynamics"` | `opportunityKey.sourceType` |
+| `name` | `opportunityName` |  |
+| `"Dynamics"` | `opportunityKey.sourceType` |  |
 | `"${CRM_ORG_ID}"` | `opportunityKey.sourceInstanceID` | 将自动替换`"${CRM_ORG_ID}"`的值。 |
-| `iif(parentaccountid != null && parentaccountid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", parentaccountid, "sourceKey", concat(parentaccountid, "@${CRM_ORG_ID}.Dynamics")), null)` | `accountKey` |
-| `actualclosedate` | `actualCloseDate` |
-| `actualvalue` | `opportunityAmount.amount` |
-| `iif(campaignid != null && campaignid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", campaignid, "sourceKey", concat(campaignid,"@${CRM_ORG_ID}.Dynamics")), null)` | `campaignKey` |
-| `closeprobability` | `probabilityPercentage` |
-| `createdon` | `extSourceSystemAudit.createdDate` |
-| `description` | `opportunityDescription` |
-| `estimatedclosedate` | `expectedCloseDate` |
-| `estimatedvalue` | `expectedRevenue.amount` |
-| `modifiedon` | `extSourceSystemAudit.lastUpdatedDate` |
-| `opportunityid` | `opportunityKey.sourceID` |
+| `iif(parentaccountid != null && parentaccountid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", parentaccountid, "sourceKey", concat(parentaccountid, "@${CRM_ORG_ID}.Dynamics")), null)` | `accountKey` |  |
+| `actualclosedate` | `actualCloseDate` |  |
+| `actualvalue` | `opportunityAmount.amount` |  |
+| `iif(campaignid != null && campaignid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", campaignid, "sourceKey", concat(campaignid,"@${CRM_ORG_ID}.Dynamics")), null)` | `campaignKey` |  |
+| `closeprobability` | `probabilityPercentage` |  |
+| `createdon` | `extSourceSystemAudit.createdDate` |  |
+| `description` | `opportunityDescription` |  |
+| `estimatedclosedate` | `expectedCloseDate` |  |
+| `estimatedvalue` | `expectedRevenue.amount` |  |
+| `modifiedon` | `extSourceSystemAudit.lastUpdatedDate` |  |
+| `opportunityid` | `opportunityKey.sourceID` |  |
 | `concat(opportunityid,"@${CRM_ORG_ID}.Dynamics")` | `opportunityKey.sourceKey` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
-| `salesstage` | `opportunityStage` |
-| `stepname` | `nextStep` |
+| `salesstage` | `opportunityStage` |  |
+| `stepname` | `nextStep` |  |
 
 {style="table-layout:auto"}
 
@@ -162,15 +162,15 @@ ht-degree: 8%
 
 | 源字段 | 目标XDM字段 | 注释 |
 | --- | --- | --- |
-| `"Dynamics"` | `opportunityPersonKey.sourceType` |
+| `"Dynamics"` | `opportunityPersonKey.sourceType` |  |
 | `"${CRM_ORG_ID}"` | `opportunityPersonKey.sourceInstanceID` | 将自动替换`"${CRM_ORG_ID}"`的值。 |
-| `connectionid` | `opportunityPersonKey.sourceID` |
+| `connectionid` | `opportunityPersonKey.sourceID` |  |
 | `concat(connectionid,"@${CRM_ORG_ID}.Dynamics")` | `opportunityPersonKey.sourceKey` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
-| `createdon` | `extSourceSystemAudit.createdDate` |
-| `modifiedon` | `extSourceSystemAudit.lastUpdatedDate` |
-| `iif(record1id != null && record1id != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", record1id, "sourceKey", concat(record1id,"@${CRM_ORG_ID}.Dynamics")), null)` | `opportunityKey` |
-| `iif(record2id != null && record2id != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", record2id, "sourceKey", concat(record2id,"@${CRM_ORG_ID}.Dynamics")), null)` | `personKey` |
-| `connectionrole1.name` | `personRole` |
+| `createdon` | `extSourceSystemAudit.createdDate` |  |
+| `modifiedon` | `extSourceSystemAudit.lastUpdatedDate` |  |
+| `iif(record1id != null && record1id != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", record1id, "sourceKey", concat(record1id,"@${CRM_ORG_ID}.Dynamics")), null)` | `opportunityKey` |  |
+| `iif(record2id != null && record2id != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", record2id, "sourceKey", concat(record2id,"@${CRM_ORG_ID}.Dynamics")), null)` | `personKey` |  |
+| `connectionrole1.name` | `personRole` |  |
 | `record1objecttypecode` | *自定义字段组必须定义为目标架构。*&#x200B;请参阅附录部分以了解有关[如何将选取列表类型源字段映射到目标XDM架构](#picklist-type-fields)的步骤，以获取更多信息。 | 有关`record1objecttypecode`源字段的可能值及标签列表，请参阅此[[!DNL Microsoft Dynamics] 连接实体参考文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/connection?view=op-9-1#record1objecttypecode-options)。 |
 | `record2objecttypecode` | *自定义字段组必须定义为目标架构。*&#x200B;请参阅附录部分以了解有关[如何将选取列表类型源字段映射到目标XDM架构](#picklist-type-fields)的步骤，以获取更多信息。 | 有关`record2objecttypecode`源字段的可能值及标签列表，请参阅此[[!DNL Microsoft Dynamics] 连接实体参考文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/connection?view=op-9-1#record2objecttypecode-options)。 |
 
@@ -180,24 +180,24 @@ ht-degree: 8%
 
 | 源字段 | 目标XDM字段 | 注释 |
 | --- | --- | --- |
-| `campaignid` | `campaignKey.sourceID` |
+| `campaignid` | `campaignKey.sourceID` |  |
 | `"${CRM_ORG_ID}"` | `campaignKey.sourceInstanceID` | 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `concat(campaignid,"@${CRM_ORG_ID}.Dynamics")` | `campaignKey.sourceKey` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
-| `"Dynamics"` | `campaignKey.sourceType` |
+| `"Dynamics"` | `campaignKey.sourceType` |  |
 | `iif(campaignid != null && campaignid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", campaignid, "sourceKey", concat(campaignid,"@${CRM_ORG_ID}.Dynamics")), null)` | `extSourceSystemAudit.externalKey` | `extSourceSystemAudit.externalKey`是辅助标识。 将自动替换`"${CRM_ORG_ID}"`的值。 |
-| `createdon` | `extSourceSystemAudit.createdDate` |
-| `modifiedby` | `extSourceSystemAudit.lastUpdatedBy` |
-| `modifiedon` | `extSourceSystemAudit.lastUpdatedDate` |
-| `description` | `campaignDescription` |
-| `name` | `campaignName` |
-| `totalactualcost` | `actualCost.amount` |
-| `budgetedcost` | `budgetedCost.amount` |
-| `expectedrevenue` | `expectedRevenue.amount` |
-| `actualend` | `campaignEndDate` |
-| `actualstart` | `campaignStartDate` |
-| `expectedresponse` | `expectedResponse` |
-| `utcconversiontimezonecode` | `timeZone` |
-| `utcconversiontimezonecode` | `timezoneName` |
+| `createdon` | `extSourceSystemAudit.createdDate` |  |
+| `modifiedby` | `extSourceSystemAudit.lastUpdatedBy` |  |
+| `modifiedon` | `extSourceSystemAudit.lastUpdatedDate` |  |
+| `description` | `campaignDescription` |  |
+| `name` | `campaignName` |  |
+| `totalactualcost` | `actualCost.amount` |  |
+| `budgetedcost` | `budgetedCost.amount` |  |
+| `expectedrevenue` | `expectedRevenue.amount` |  |
+| `actualend` | `campaignEndDate` |  |
+| `actualstart` | `campaignStartDate` |  |
+| `expectedresponse` | `expectedResponse` |  |
+| `utcconversiontimezonecode` | `timeZone` |  |
+| `utcconversiontimezonecode` | `timezoneName` |  |
 
 {style="table-layout:auto"}
 
@@ -205,14 +205,14 @@ ht-degree: 8%
 
 | 源字段 | 目标XDM字段 | 注释 |
 | --- | --- | --- |
-| `"Dynamics"` | `marketingListKey.sourceType` |
+| `"Dynamics"` | `marketingListKey.sourceType` |  |
 | `"${CRM_ORG_ID}"` | `marketingListKey.sourceInstanceID` | 将自动替换`"${CRM_ORG_ID}"`的值。 |
-| `description` | `marketingListDescription` |
-| `listname` | `marketingListName` |
-| `listid` | `marketingListKey.sourceID` |
+| `description` | `marketingListDescription` |  |
+| `listname` | `marketingListName` |  |
+| `listid` | `marketingListKey.sourceID` |  |
 | `concat(listid,"@${CRM_ORG_ID}.Dynamics")` | `marketingListKey.sourceKey` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
-| `modifiedon` | `extSourceSystemAudit.lastUpdatedDate` |
-| `createdon` | `extSourceSystemAudit.createdDate` |
+| `modifiedon` | `extSourceSystemAudit.lastUpdatedDate` |  |
+| `createdon` | `extSourceSystemAudit.createdDate` |  |
 
 {style="table-layout:auto"}
 
@@ -220,13 +220,13 @@ ht-degree: 8%
 
 | 源字段 | 目标XDM字段 | 注释 |
 | --- | --- | --- |
-| `"Dynamics"` | `marketingListMemberKey.sourceType` |
+| `"Dynamics"` | `marketingListMemberKey.sourceType` |  |
 | `"${CRM_ORG_ID}"` | `marketingListMemberKey.sourceInstanceID` | 将自动替换`"${CRM_ORG_ID}"`的值。 |
 | `iif(entityid != null && entityid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", entityid, "sourceKey", concat(entityid,"@${CRM_ORG_ID}.Dynamics")), null)` | `personKey` |
-| `listmemberid` | `marketingListMemberKey.sourceID` |
+| `listmemberid` | `marketingListMemberKey.sourceID` |  |
 | `concat(listmemberid,"@${CRM_ORG_ID}.Dynamics")` | `marketingListMemberKey.sourceKey` | 主要身份。 将自动替换`"${CRM_ORG_ID}"`的值。 |
-| `iif(listid != null && listid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", listid, "sourceKey", concat(listid,"@${CRM_ORG_ID}.Dynamics")), null)` | `marketingListKey` |
-| `createdon` | `extSourceSystemAudit.createdDate` |
+| `iif(listid != null && listid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", listid, "sourceKey", concat(listid,"@${CRM_ORG_ID}.Dynamics")), null)` | `marketingListKey` |  |
+| `createdon` | `extSourceSystemAudit.createdDate` |  |
 
 {style="table-layout:auto"}
 

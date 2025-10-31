@@ -4,7 +4,7 @@ title: 区段作业API端点
 description: Adobe Experience Platform Segmentation Service API中的区段作业端点允许您以编程方式管理组织的区段作业。
 role: Developer
 exl-id: 105481c2-1c25-4f0e-8fb0-c6577a4616b3
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 83a249daddbee1ec264b6e505517325c76ac9b09
 workflow-type: tm+mt
 source-wordcount: '1232'
 ht-degree: 2%
@@ -43,7 +43,7 @@ GET /segment/jobs?{QUERY_PARAMETERS}
 | `start` | 为返回的区段作业指定起始偏移。 | `start=1` |
 | `limit` | 指定每页返回的区段作业数。 | `limit=20` |
 | `status` | 根据状态筛选结果。 支持的值为NEW、QUEUED、PROCESSING、SUCCEEDED、FAILED、CANCELING、CANCELED | `status=NEW` |
-| `sort` | 区段作业返回的订单。 以`[attributeName]:[desc|asc]`格式编写。`sort=creationTime:desc` |
+| `sort` | 区段作业返回的订单。 | 以`[attributeName]:[desc\|asc]`格式编写。`sort=creationTime:desc` |
 | `property` | 过滤区段作业，并获取给定过滤器的精确匹配项。 可采用以下任一格式编写： <ul><li>`[jsonObjectPath]==[value]` — 在对象键上筛选</li><li>`[arrayTypeAttributeName]~[objectKey]==[value]` — 在数组中筛选</li></ul> | `property=segments~segmentId==workInUS` |
 
 +++

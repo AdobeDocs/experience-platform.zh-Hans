@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Marketo Engage Source的映射字段
 description: 下表包含Marketo数据集中的字段与其对应的XDM字段之间的映射。
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 83a249daddbee1ec264b6e505517325c76ac9b09
 workflow-type: tm+mt
 source-wordcount: '1451'
 ht-degree: 5%
@@ -66,7 +66,7 @@ ht-degree: 5%
 | 在(7， 8， 9， 10， 11， 27)中的activityTypeId时primaryAttributeValueId | 7、8、9、10、11、27 | `directMarketing.mailingName` | `directMarketing.mailingName` |  |
 |  |  | `directMarketing.testVariantName` | `directMarketing.testVariantName` |  |
 | `attributes.Test Variant` |  | `directMarketing.testVariantID` | `directMarketing.testVariantID` |  |
-| `attributes.Subcategory` <ul><li><strong>activityTypeId = 8</strong><ul><li>1099 →消息被阻止</li><li>Source上阻止了1003 →垃圾邮件</li><li>邮件已阻止1004 →垃圾邮件</li><li>2003 →电子邮件地址无效</li><li>2001 →电子邮件地址错误</li><li>*` &rarr;`未知的退回原因</li></ul></li><li><strong>activityTypeId = 27</strong><ul><li>3999 →消息未被接受</li><li>3001 →邮箱已满</li><li>3004 →发生超时</li><li>4003 → DNS故障</li><li>4002 →消息太大</li><li>4006 →策略违规</li><li>4999 →瞬时故障</li><li>收到9999 →错误响应</li><li>*→软退回原因未知</li></ul></li></ul> | 8， 27 | `directMarketing.emailBouncedCode` | `directMarketing.emailBouncedCode` |  |
+| `attributes.Subcategory` <ul><li><strong>activityTypeId = 8</strong><ul><li>1099 →消息被阻止</li><li>Source上阻止了1003 →垃圾邮件</li><li>邮件已阻止1004 →垃圾邮件</li><li>2003 →电子邮件地址无效</li><li>2001 →电子邮件地址错误</li><li> `&rarr;`未知的退回原因</li></ul></li><li><strong>activityTypeId = 27</strong><ul><li>3999 →消息未被接受</li><li>3001 →邮箱已满</li><li>3004 →发生超时</li><li>4003 → DNS故障</li><li>4002 →消息太大</li><li>4006 →策略违规</li><li>4999 →瞬时故障</li><li>收到9999 →错误响应</li><li> →软退回的未知原因</li></ul></li></ul> | 8， 27 | `directMarketing.emailBouncedCode` | `directMarketing.emailBouncedCode` |  |
 | `attributes.Details` |  | `directMarketing.emailBouncedDetails` | `directMarketing.emailBouncedDetails` |  |
 | `attributes.Email` |  | `directMarketing.email` | `directMarketing.email` |  |
 | `attributes.Is Mobile Device` |  | `device.isMobileDevice` | `device.isMobileDevice` |  |

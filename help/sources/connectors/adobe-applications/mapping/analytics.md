@@ -2,9 +2,9 @@
 title: Adobe Analytics Source连接器的映射字段
 description: 使用Adobe Analytics Source Connector将Analytics字段映射到XDM字段。
 exl-id: 15dc1368-5cf1-42e1-9683-d5158f8aa2db
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 83a249daddbee1ec264b6e505517325c76ac9b09
 workflow-type: tm+mt
-source-wordcount: '3854'
+source-wordcount: '3838'
 ht-degree: 5%
 
 ---
@@ -197,7 +197,7 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 | `mobilebeaconminor` | `placeContext.POIinteraction.POIDetail.`<br/>`beaconInteractionDetails.beaconMinor` | 数字 | Mobile Services信标次要。 |
 | `mobilebeaconuuid` | `placeContext.POIinteraction.POIDetail.`<br/>`beaconInteractionDetails.proximityUUID` | 字符串 | 移动服务信标UUID。 |
 | `mobileinstalls` | `application.firstLaunches` | 对象 | 在安装或重新安装后`{id (string), value (number)}`首次运行时会触发此事件 |
-| `mobileupgrades` | `application.upgrades` | 对象 | 报告应用程序升级次数。 升级后或版本号更改后首次运行时触发。 | `{id (string), value (number)}` |
+| `mobileupgrades` | `application.upgrades` | 对象 | 报告应用程序升级次数。 升级后或版本号更改后首次运行时触发。`{id (string), value (number)}` |
 | `mobilelaunches` | `application.launches` | 对象 | 应用程序已启动的次数。 `{id (string), value (number)}` |
 | `mobilecrashes` | `application.crashes` | 对象 | `{id (string), value (number)}` |
 | `mobilemessageclicks` | `directMarketing.clicks` | 对象 | `{id (string), value (number)}` |
@@ -224,13 +224,13 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 
 | 数据馈送 | XDM字段 | XDM类型 | 描述 |
 | --- | --- | --- | --- |
-| `m_prop1`<br/>`[...]`<br/>`m_prop75` | `_experience.analytics.customDimensions`<br/>`.listprops.prop1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`listprops.prop75` | 对象 | 自定义Analytics属性，配置为列表属性。 它包含分隔的值列表。 | {} |
-| `m_hier1`<br/>`[...]`<br/>`m_hier5` | `_experience.analytics.customDimensions.`<br/>`hierarchies.hier1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`hierarchies.hier5` | 对象 | 由层次结构变量使用。 它包含分隔的值列表。 | {values (array)， delimiter (string)} |
-| `m_mvvar1`<br/>`[...]`<br/>`m_mvvar3` | `_experience.analytics.customDimensions.`<br/>`lists.list1.list[]`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`lists.list3.list[]` | 数组 | 自定义Analytics列表变量。 包含分隔的值列表。 | {值（字符串），键（字符串）} |
+| `m_prop1`<br/>`[...]`<br/>`m_prop75` | `_experience.analytics.customDimensions`<br/>`.listprops.prop1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`listprops.prop75` | 对象 | 自定义Analytics属性，配置为列表属性。 它包含分隔的值列表。`{}` |
+| `m_hier1`<br/>`[...]`<br/>`m_hier5` | `_experience.analytics.customDimensions.`<br/>`hierarchies.hier1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`hierarchies.hier5` | 对象 | 由层次结构变量使用。 它包含分隔的值列表。`{values (array), delimiter (string)}` |
+| `m_mvvar1`<br/>`[...]`<br/>`m_mvvar3` | `_experience.analytics.customDimensions.`<br/>`lists.list1.list[]`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`lists.list3.list[]` | 数组 | 自定义Analytics列表变量。 包含分隔的值列表。 `{value (string), key (string)}` |
 | `m_color` | `device.colorDepth` | 整数 | 颜色深度ID，它基于c_color列的值。 |
 | `m_cookies` | `environment.browserDetails.cookiesEnabled` | 布尔 | 在“Cookie支持”维度中使用的变量。 |
-| `m_event_list` | `commerce.purchases`，<br/>`commerce.productViews`，<br/>`commerce.productListOpens`，<br/>`commerce.checkouts`，<br/>`commerce.productListAdds`，<br/>`commerce.productListRemovals`，<br/>`commerce.productListViews` | 对象 | 点击时触发的标准商务事件。 | {id （字符串），值（数字）} |
-| `m_event_list` | `_experience.analytics.event1to100.event1`<br/>`[...]`<br/>`_experience.analytics.event901to1000.event1000` | 对象 | 点击时触发的自定义事件。 | {id（对象），值（对象）} |
+| `m_event_list` | `commerce.purchases`，<br/>`commerce.productViews`，<br/>`commerce.productListOpens`，<br/>`commerce.checkouts`，<br/>`commerce.productListAdds`，<br/>`commerce.productListRemovals`，<br/>`commerce.productListViews` | 对象 | 点击时触发的标准商务事件。`{id (string), value (number)}` |
+| `m_event_list` | `_experience.analytics.event1to100.event1`<br/>`[...]`<br/>`_experience.analytics.event901to1000.event1000` | 对象 | 点击时触发的自定义事件。`{id (Object), value (Object)}` |
 | `m_geo_country` | `placeContext.geo.countryCode` | 字符串 | 点击来源国家/地区的缩写，基于IP地址。 |
 | `m_geo_latitude` | `placeContext.geo._schema.latitude` | 数字 | |
 | `m_geo_longitude` | `placeContext.geo._schema.longitude` | 数字 | |
