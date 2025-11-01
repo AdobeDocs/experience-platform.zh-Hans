@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；源；连接器；源连
 title: 为自助源配置源规范(批处理SDK)
 description: 本文档概述了为使用自助源(批处理SDK)而需要准备的配置。
 exl-id: f814c883-b529-4ecc-bedd-f638bf0014b5
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
 workflow-type: tm+mt
 source-wordcount: '2090'
 ht-degree: 1%
@@ -229,41 +229,41 @@ Source规范包含特定于某个源的信息，包括与源的类别、测试�
 
 | 属性 | 描述 | 示例 |
 | --- | --- | --- |
-| `sourceSpec.attributes` | 包含有关UI或API专属源的信息。 |
-| `sourceSpec.attributes.uiAttributes` | 显示特定于UI的源的信息。 |
+| `sourceSpec.attributes` | 包含有关UI或API专属源的信息。 |  |
+| `sourceSpec.attributes.uiAttributes` | 显示特定于UI的源的信息。 |  |
 | `sourceSpec.attributes.uiAttributes.isBeta` | 一个布尔属性，指示源是否需要客户提供更多反馈才能添加到其功能中。 | <ul><li>`true`</li><li>`false`</li></ul> |
 | `sourceSpec.attributes.uiAttributes.category` | 定义源的类别。 | <ul><li>`advertising`</li><li>`crm`</li><li>`customer success`</li><li>`database`</li><li>`ecommerce`</li><li>`marketing automation`</li><li>`payments`</li><li>`protocols`</li></ul> |
 | `sourceSpec.attributes.uiAttributes.icon` | 定义用于在Experience Platform UI中呈现源的图标。 | `mailchimp-icon.svg` |
-| `sourceSpec.attributes.uiAttributes.description` | 显示源的简要说明。 |
-| `sourceSpec.attributes.uiAttributes.label` | 显示用于在Experience Platform UI中呈现源的标签。 |
-| `sourceSpec.attributes.spec.properties.urlParams` | 包含有关URL资源路径、方法和支持的查询参数的信息。 |
+| `sourceSpec.attributes.uiAttributes.description` | 显示源的简要说明。 |  |
+| `sourceSpec.attributes.uiAttributes.label` | 显示用于在Experience Platform UI中呈现源的标签。 |  |
+| `sourceSpec.attributes.spec.properties.urlParams` | 包含有关URL资源路径、方法和支持的查询参数的信息。 |  |
 | `sourceSpec.attributes.spec.properties.urlParams.properties.path` | 定义从中获取数据的资源路径。 | `/3.0/reports/${campaignId}/email-activity` |
 | `sourceSpec.attributes.spec.properties.urlParams.properties.method` | 定义请求资源获取数据时使用的HTTP方法。 | `GET`、`POST` |
 | `sourceSpec.attributes.spec.properties.urlParams.properties.queryParams` | 定义支持的查询参数，这些参数可用于在发出获取数据的请求时附加源URL。 **注意**：任何用户提供的参数值都必须设置为占位符格式。 例如： `${USER_PARAMETER}`。 | `"queryParams" : {"key" : "value", "key1" : "value1"}`将附加到源URL中： `/?key=value&key1=value1` |
 | `sourceSpec.attributes.spec.properties.spec.properties.headerParams` | 定义在提取数据时需要在到源URL的HTTP请求中提供的标头。 | `"headerParams" : {"Content-Type" : "application/json", "x-api-key" : "key"}` |
-| `sourceSpec.attributes.spec.properties.bodyParams` | 此属性可以配置为通过POST请求发送HTTP正文。 |
+| `sourceSpec.attributes.spec.properties.bodyParams` | 此属性可以配置为通过POST请求发送HTTP正文。 |  |
 | `sourceSpec.attributes.spec.properties.contentPath` | 定义包含需要摄取到Experience Platform的项列表的节点。 此属性应遵循有效的JSON路径语法，且必须指向特定数组。 | 查看[其他资源部分](#content-path)以了解内容路径中包含的资源示例。 |
 | `sourceSpec.attributes.spec.properties.contentPath.path` | 指向要引入到Experience Platform的收藏集记录的路径。 | `$.emails` |
 | `sourceSpec.attributes.spec.properties.contentPath.skipAttributes` | 通过此属性，可识别内容路径中标识的资源中将被排除在摄取范围之外的特定项目。 | `[total_items]` |
 | `sourceSpec.attributes.spec.properties.contentPath.keepAttributes` | 此属性允许您明确指定要保留的个别属性。 | `[total_items]` |
 | `sourceSpec.attributes.spec.properties.contentPath.overrideWrapperAttribute` | 此属性允许您覆盖在`contentPath`中指定的属性名称值。 | `email` |
-| `sourceSpec.attributes.spec.properties.explodeEntityPath` | 此属性允许您扁平化两个数组并将资源数据转换为Experience Platform资源。 |
+| `sourceSpec.attributes.spec.properties.explodeEntityPath` | 此属性允许您扁平化两个数组并将资源数据转换为Experience Platform资源。 |  |
 | `sourceSpec.attributes.spec.properties.explodeEntityPath.path` | 指向要拼合的收藏集记录的路径。 | `$.email.activity` |
 | `sourceSpec.attributes.spec.properties.explodeEntityPath.skipAttributes` | 此属性允许您从实体路径中标识的资源中标识要排除以不被引入的特定项目。 | `[total_items]` |
 | `sourceSpec.attributes.spec.properties.explodeEntityPath.keepAttributes` | 此属性允许您明确指定要保留的个别属性。 | `[total_items]` |
 | `sourceSpec.attributes.spec.properties.explodeEntityPath.overrideWrapperAttribute` | 此属性允许您覆盖在`explodeEntityPath`中指定的属性名称值。 | `activity` |
-| `sourceSpec.attributes.spec.properties.paginationParams` | 定义从用户的当前页面响应中或在创建下一页URL时必须提供的参数或字段，才能获取到下一页的链接。 |
+| `sourceSpec.attributes.spec.properties.paginationParams` | 定义从用户的当前页面响应中或在创建下一页URL时必须提供的参数或字段，才能获取到下一页的链接。 |  |
 | `sourceSpec.attributes.spec.properties.paginationParams.type` | 显示源支持的分页类型的类型。 | <ul><li>`OFFSET`：此分页类型允许您通过指定从何处开始结果数组的索引以及返回结果数的限制来解析结果。</li><li>`POINTER`：此分页类型允许您使用`pointer`变量指向需要随请求发送的特定项。 指针类型分页要求有效负载中的路径指向下一页。</li><li>`CONTINUATION_TOKEN`：此分页类型允许您将查询或标头参数附加到接续令牌，以从源中检索因预设最大值而未最初返回的剩余返回数据。</li><li>`PAGE`：此分页类型允许您将查询参数附加到分页参数，以按页遍历返回数据，从第0页开始。</li><li>`NONE`：此分页类型可用于不支持任何可用分页类型的源。 分页类型`NONE`在请求后返回整个响应数据。</li></ul> |
 | `sourceSpec.attributes.spec.properties.paginationParams.limitName` | 限制的名称，API可通过该名称指定页面中要提取的记录数。 | `limit`或`count` |
 | `sourceSpec.attributes.spec.properties.paginationParams.limitValue` | 页面中要获取的记录数。 | `limit=10`或`count=10` |
 | `sourceSpec.attributes.spec.properties.paginationParams.offSetName` | 偏移属性名称。 如果分页类型设置为`offset`，则需要此项。 | `offset` |
 | `sourceSpec.attributes.spec.properties.paginationParams.pointerPath` | 指针属性名称。 这需要指向指向下一页的属性的json路径。 如果分页类型设置为`pointer`，则需要此项。 | `pointer` |
-| `sourceSpec.attributes.spec.properties.scheduleParams` | 包含定义源支持的计划格式的参数。 计划参数包括`startTime`和`endTime`，这两个参数允许您为批处理运行设置特定的时间间隔，从而确保不再获取在上一次批处理运行中获取的记录。 |
+| `sourceSpec.attributes.spec.properties.scheduleParams` | 包含定义源支持的计划格式的参数。 计划参数包括`startTime`和`endTime`，这两个参数允许您为批处理运行设置特定的时间间隔，从而确保不再获取在上一次批处理运行中获取的记录。 |  |
 | `sourceSpec.attributes.spec.properties.scheduleParams.scheduleStartParamName` | 定义开始时间参数名称 | `since_last_changed` |
 | `sourceSpec.attributes.spec.properties.scheduleParams.scheduleEndParamName` | 定义结束时间参数名称 | `before_last_changed` |
 | `sourceSpec.attributes.spec.properties.scheduleParams.scheduleStartParamFormat` | 为`scheduleStartParamName`定义支持的格式。 | `yyyy-MM-ddTHH:mm:ssZ` |
 | `sourceSpec.attributes.spec.properties.scheduleParams.scheduleEndParamFormat` | 为`scheduleEndParamName`定义支持的格式。 | `yyyy-MM-ddTHH:mm:ssZ` |
-| `sourceSpec.spec.properties` | 定义用户提供的用于获取资源值的参数。 | 有关`spec.properties`的用户输入参数的示例，请参阅[其他资源](#user-input)。 |
+| `sourceSpec.spec.properties` | 定义用户提供的用于获取资源值的参数。 | 有关[的用户输入参数的示例，请参阅](#user-input)其他资源`spec.properties`。 |
 
 {style="table-layout:auto"}
 
@@ -273,7 +273,7 @@ Source规范包含特定于某个源的信息，包括与源的类别、测试�
 
 ### 内容路径示例 {#content-path}
 
-以下是[!DNL MailChimp Members]连接规范中`contentPath`属性的内容示例。
+以下是`contentPath`连接规范中[!DNL MailChimp Members]属性的内容示例。
 
 ```json
 "contentPath": {
@@ -541,7 +541,7 @@ Source规范包含特定于某个源的信息，包括与源的类别、测试�
 | `scheduleParams.incremental` | 源的增量查询。 增量是指仅摄取新数据或修改数据的摄取方法。 |
 | `scheduleParams.backfill` | 源的回填查询。 回填是指摄取历史数据的摄取方法。 |
 
-配置高级计划后，您必须在URL、正文或标头参数部分中引用`scheduleParams`，具体取决于特定源支持的内容。 在下面的示例中，`{SCHEDULE_QUERY}`是用于指定将使用增量计划和回填计划表达式的占位符。 在[!DNL Zendesk]源的情况下，`queryParams`中使用`query`来指定高级计划。
+配置高级计划后，您必须在URL、正文或标头参数部分中引用`scheduleParams`，具体取决于特定源支持的内容。 在下面的示例中，`{SCHEDULE_QUERY}`是用于指定将使用增量计划和回填计划表达式的占位符。 在[!DNL Zendesk]源的情况下，`query`中使用`queryParams`来指定高级计划。
 
 ```json
 "urlParams": {
@@ -556,7 +556,7 @@ Source规范包含特定于某个源的信息，包括与源的类别、测试�
 
 ### 添加自定义架构以定义源的动态属性
 
-您可以在`sourceSpec`中包含自定义架构，以定义源所需的所有属性，包括可能需要的任何动态属性。 您可以更新源对应的连接规范，方法是向[!DNL Flow Service] API的`/connectionSpecs`端点发出PUT请求，同时在连接规范的`sourceSpec`部分中提供自定义架构。
+您可以在`sourceSpec`中包含自定义架构，以定义源所需的所有属性，包括可能需要的任何动态属性。 您可以更新源对应的连接规范，方法是向`/connectionSpecs` API的[!DNL Flow Service]端点发出PUT请求，同时在连接规范的`sourceSpec`部分中提供自定义架构。
 
 以下是您可以添加到源的连接规范中的自定义架构示例：
 

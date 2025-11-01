@@ -4,9 +4,9 @@ description: 了解如何使用用户界面将Didomi连接到Adobe Experience Pl
 last-substantial-update: 2025-07-29T00:00:00Z
 badge: Beta 版
 exl-id: c59bcfb8-e831-4a13-8b0e-4c6d538f1059
-source-git-commit: b0c2d5535bb4cdf7d00eaca43d65f744276494f3
+source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
 workflow-type: tm+mt
-source-wordcount: '911'
+source-wordcount: '893'
 ht-degree: 1%
 
 ---
@@ -35,7 +35,7 @@ Adobe Experience Platform支持通过源连接器系统从各种外部系统中�
 
 ### 在Experience Platform上配置权限
 
-若要将您的&#x200B;**[!UICONTROL 帐户连接到Experience Platform，您必须同时为您的帐户启用]**&#x200B;查看源&#x200B;**[!UICONTROL 和]**&#x200B;管理源[!DNL Didomi]权限。 请联系您的产品管理员以获取必要的权限。 有关详细信息，请阅读[访问控制UI指南](../../../access-control/ui/overview.md)。
+您必须同时为您的帐户启用&#x200B;**[!UICONTROL View Sources]**&#x200B;和&#x200B;**[!UICONTROL Manage Sources]**&#x200B;权限，才能将您的[!DNL Didomi]帐户连接到Experience Platform。 请联系您的产品管理员以获取必要的权限。 有关详细信息，请阅读[访问控制UI指南](../../../access-control/ui/overview.md)。
 
 ### 收集Adobe API凭据
 
@@ -51,9 +51,9 @@ Adobe Experience Platform支持通过源连接器系统从各种外部系统中�
 
 **Experience Data Model (XDM)架构**&#x200B;定义了您将从[!DNL Didomi]发送到Experience Platform的数据的结构（例如，用户ID、同意目的）。
 
-要创建架构，请在Experience Platform UI的左侧导航中选择[!UICONTROL 架构]，然后选择&#x200B;**[!UICONTROL 创建架构]**。 接下来，选择&#x200B;**[!UICONTROL Standard]**&#x200B;作为架构类型，然后选择&#x200B;**[!UICONTROL 手动]**&#x200B;以手动创建字段。 为您的架构选择基类并提供架构的名称。
+要创建架构，请在Experience Platform UI的左侧导航中选择[!UICONTROL Schemas]，然后选择&#x200B;**[!UICONTROL Create schema]**。 接下来，选择&#x200B;**[!UICONTROL Standard]**&#x200B;作为架构类型，然后选择&#x200B;**[!UICONTROL Manual]**&#x200B;以手动创建字段。 为您的架构选择基类并提供架构的名称。
 
-创建后，通过添加任何必填字段来更新架构。 确保至少一个字段是[!UICONTROL 标识]字段，以通知Experience Platform您的主要标识值。 最后，确保启用[!UICONTROL 配置文件]切换功能，以便成功存储您的数据。
+创建后，通过添加任何必填字段来更新架构。 确保至少一个字段是[!UICONTROL Identity]字段，以通知Experience Platform您的主要标识值。 最后，确保启用[!UICONTROL Profile]切换功能，以便成功存储您的数据。
 
 ![create-schema](../../images/tutorials/create/didomi/create-schema.png)
 
@@ -67,7 +67,7 @@ Adobe Experience Platform支持通过源连接器系统从各种外部系统中�
 
 Experience Platform中的&#x200B;**数据集**&#x200B;用于根据您定义的架构存储传入数据。
 
-要创建数据集，请在Experience Platform UI的左侧导航中选择[!UICONTROL 数据集]，然后选择&#x200B;**[!UICONTROL 创建数据集]**。 接下来，选择&#x200B;**[!UICONTROL 从架构]**&#x200B;创建数据集，然后选择您的架构以与新数据集关联。
+要创建数据集，请在Experience Platform UI的左侧导航中选择[!UICONTROL Datasets]，然后选择&#x200B;**[!UICONTROL Create dataset]**。 接下来，选择&#x200B;**[!UICONTROL Create dataset from schema]**，然后选择要与新数据集关联的架构。
 
 ![创建数据集](../../images/tutorials/create/didomi/create-dataset.png)
 
@@ -82,7 +82,7 @@ Experience Platform中的&#x200B;**数据集**&#x200B;用于根据您定义的�
 | 字段 | 描述 | 示例 |
 | --- | --- | --- | 
 | 客户端密码 | 与您的Adobe API凭据关联的密钥。 | `d8f3b2e1-4c9a-4a7f-9b2e-8f1c3d2a1b6e` |
-| API密钥 | 用于对Adobe服务的请求进行身份验证的公共API密钥。 |
+| API密钥 | 用于对Adobe服务的请求进行身份验证的公共API密钥。 |  |
 | 授权类型 | 应用程序从授权服务器获取访问令牌的方法。 将此值设置为`client_credentials`。 | `client_credentials` |
 | 范围 | 授权范围定义应用程序向API提供程序请求的特定权限或访问级别。 | `openid,AdobeID,read_organizations,additional_info.projectedProductContext,session` |
 | 身份验证标头 | Adobe令牌请求所需的其他标头。 | `{"Content-type": "application/x-www-form-urlencoded"}` |

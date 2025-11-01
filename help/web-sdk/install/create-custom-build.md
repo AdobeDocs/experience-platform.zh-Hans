@@ -1,13 +1,13 @@
 ---
 title: 使用NPM包创建自定义Web SDK内部版本
 description: 创建一个仅包含所需模块的自定义Web SDK内部版本。
-source-git-commit: 0f77023b07102ac2bc812034afacb1522ef209e5
+exl-id: 0ba5ae55-9ec0-41b6-9675-e76ade8ca4cd
+source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
 workflow-type: tm+mt
 source-wordcount: '509'
 ht-degree: 6%
 
 ---
-
 
 # 创建自定义Web SDK内部版本
 
@@ -40,7 +40,7 @@ Experience Platform Web SDK库包含多个模块，用于提供各种功能，�
 | 活动收集器 | [`clickCollectionEnabled`](../commands/configure/clickcollectionenabled.md) | 不适用 | 媒介 |
 | 受众 | 不适用 | 不适用 | 小 |
 | 上下文 | [`context`](../commands/configure/context.md) | 不适用 | 小 |
-| 规则引擎 | `personalizationStorageEnabled` | | <ul><li>`evaluateRulesets`</li><li>[`subscribeRulesetItems`](../commands/subscriberulesetitems.md)</li></ul> | 媒介 |
+| 规则引擎 | `personalizationStorageEnabled` | <ul><li>`evaluateRulesets`</li><li>[`subscribeRulesetItems`](../commands/subscriberulesetitems.md)</li></ul> | 媒介 |
 | 事件合并 | 不适用 | `createEventMergeId` | 小 |
 | Media Analytics Bridge | 不适用 | [`getMediaAnalyticsTracker`](../commands/getmediaanalyticstracker.md) | 大 |
 | 个性化 | <ul><li>[`prehidingStyle`](../commands/configure/prehidingstyle.md)</li><li>[`targetMigrationEnabled`](../commands/configure/targetmigrationenabled.md)</li><li>[`autoCollectPropositionInteractions`](../commands/configure/autocollectpropositioninteractions.md)</li></ul> | 不适用 | 大 |
@@ -71,4 +71,3 @@ Experience Platform Web SDK库包含多个模块，用于提供各种功能，�
 1. 确认位置后，将生成并保存您的自定义内部版本。
 
    ![显示自定义生成保存位置的终端图像。](../assets/custom-build/saved.png)
-

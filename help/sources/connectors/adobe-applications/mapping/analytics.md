@@ -2,9 +2,9 @@
 title: Adobe Analytics Source连接器的映射字段
 description: 使用Adobe Analytics Source Connector将Analytics字段映射到XDM字段。
 exl-id: 15dc1368-5cf1-42e1-9683-d5158f8aa2db
-source-git-commit: 83a249daddbee1ec264b6e505517325c76ac9b09
+source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
 workflow-type: tm+mt
-source-wordcount: '3838'
+source-wordcount: '3832'
 ht-degree: 5%
 
 ---
@@ -242,7 +242,7 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 | `m_page_type` | `web.webPageDetails.isErrorPage` | 布尔 | 用于填充页面未找到维度的变量。 此变量应为空或包含“ErrorPage”。 |
 | `m_pagename_no_url` | `web.webPageDetails.name` | 数字 | 页面的名称（如果已设置）。 如果未指定页面，此值将留空。 |
 | `m_paid_search` | `search.isPaid` | 布尔 | 如果点击与付费搜索检测相匹配，则设置此标记。 |
-| `m_product_list` | `productListItems[].items` | 数组 | 产品列表，通过products变量传入。 | {SKU （字符串）、数量（整数）、价格总计（数字）} |
+| `m_product_list` | `productListItems[].items` | 数组 | 产品列表，通过products变量传入。`{SKU (string), quantity (integer), priceTotal (number)}` |
 | `m_ref_type` | `web.webReferrer.type` | 字符串 | 表示点击的反向链接类型的数值ID。<br/>`1`：网站内<br/>`2`：其他网站<br/>`3`：搜索引擎<br/>`4`：硬盘<br/>`5`：未发送<br/>`6`：已输入/添加书签（无反向链接）<br/>`7`：电子邮件<br/>`8`：无JavaScript<br/>`9`：社交网络 |
 | `m_search_engine` | `search.searchEngine` | 字符串 | 表示将访客引荐至您的网站的搜索引擎的数值ID。 |
 | `post_currency` | `commerce.order.currencyCode` | 字符串 | 交易期间使用的货币代码。 |

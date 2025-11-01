@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；源；连接器；源连
 title: 为自助源配置身份验证规范(批处理SDK)
 description: 本文档概述了为使用自助源(批处理SDK)而需要准备的配置。
 exl-id: 68ed22fe-1f22-46d2-9d58-72ad8a9e6b98
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
 workflow-type: tm+mt
 source-wordcount: '772'
 ht-degree: 3%
@@ -116,20 +116,20 @@ OAuth 2刷新代码允许通过生成临时访问令牌和刷新令牌来安全�
 | --- | --- | --- |
 | `authSpec.name` | 显示支持的身份验证类型的名称。 | `oAuth2-refresh-code` |
 | `authSpec.type` | 定义源支持的身份验证类型。 | `oAuth2-refresh-code` |
-| `authSpec.spec` | 包含有关身份验证架构、数据类型和属性的信息。 |
+| `authSpec.spec` | 包含有关身份验证架构、数据类型和属性的信息。 |  |
 | `authSpec.spec.$schema` | 定义用于身份验证的架构。 | `http://json-schema.org/draft-07/schema#` |
 | `authSpec.spec.type` | 定义架构的数据类型。 | `object` |
-| `authSpec.spec.properties` | 包含有关用于身份验证的凭据的信息。 |
-| `authSpec.spec.properties.description` | 显示凭据的简短说明。 |
+| `authSpec.spec.properties` | 包含有关用于身份验证的凭据的信息。 |  |
+| `authSpec.spec.properties.description` | 显示凭据的简短说明。 |  |
 | `authSpec.spec.properties.type` | 定义凭据的数据类型。 | `string` |
-| `authSpec.spec.properties.clientId` | 与您的应用程序关联的客户端ID。 客户端ID将与您的客户端密钥结合使用，以检索您的访问令牌。 |
-| `authSpec.spec.properties.clientSecret` | 与您的应用程序关联的客户端密钥。 客户端密钥将与您的客户端ID结合使用，以检索您的访问令牌。 |
-| `authSpec.spec.properties.accessToken` | 访问令牌可授权您对应用程序的安全访问。 |
-| `authSpec.spec.properties.refreshToken` | 刷新令牌用于在访问令牌过期时生成新的访问令牌。 |
-| `authSpec.spec.properties.expirationDate` | 定义访问令牌的过期日期。 |
-| `authSpec.spec.properties.refreshTokenUrl` | 用于检索刷新令牌的URL。 |
-| `authSpec.spec.properties.accessTokenUrl` | 用于检索刷新令牌的URL。 |
-| `authSpec.spec.properties.requestParameterOverride` | 允许您指定验证时要覆盖的凭据参数。 |
+| `authSpec.spec.properties.clientId` | 与您的应用程序关联的客户端ID。 客户端ID将与您的客户端密钥结合使用，以检索您的访问令牌。 |  |
+| `authSpec.spec.properties.clientSecret` | 与您的应用程序关联的客户端密钥。 客户端密钥将与您的客户端ID结合使用，以检索您的访问令牌。 |  |
+| `authSpec.spec.properties.accessToken` | 访问令牌可授权您对应用程序的安全访问。 |  |
+| `authSpec.spec.properties.refreshToken` | 刷新令牌用于在访问令牌过期时生成新的访问令牌。 |  |
+| `authSpec.spec.properties.expirationDate` | 定义访问令牌的过期日期。 |  |
+| `authSpec.spec.properties.refreshTokenUrl` | 用于检索刷新令牌的URL。 |  |
+| `authSpec.spec.properties.accessTokenUrl` | 用于检索刷新令牌的URL。 |  |
+| `authSpec.spec.properties.requestParameterOverride` | 允许您指定验证时要覆盖的凭据参数。 |  |
 | `authSpec.spec.required` | 显示进行身份验证所需的凭据。 | `accessToken` |
 
 {style="table-layout:auto"}
@@ -173,13 +173,13 @@ OAuth 2刷新代码允许通过生成临时访问令牌和刷新令牌来安全�
 | --- | --- | --- |
 | `authSpec.name` | 显示支持的身份验证类型的名称。 | `Basic Authentication` |
 | `authSpec.type` | 定义源支持的身份验证类型。 | `BasicAuthentication` |
-| `authSpec.spec` | 包含有关身份验证架构、数据类型和属性的信息。 |
+| `authSpec.spec` | 包含有关身份验证架构、数据类型和属性的信息。 |  |
 | `authSpec.spec.$schema` | 定义用于身份验证的架构。 | `http://json-schema.org/draft-07/schema#` |
 | `authSpec.spec.type` | 定义架构的数据类型。 | `object` |
-| `authSpec.spec.description` | 显示特定于您的身份验证类型的详细信息。 |
-| `authSpec.spec.properties` | 包含有关用于身份验证的凭据的信息。 |
-| `authSpec.spec.properties.username` | 与您的应用程序关联的帐户用户名。 |
-| `authSpec.spec.properties.password` | 与应用程序关联的帐户密码。 |
+| `authSpec.spec.description` | 显示特定于您的身份验证类型的详细信息。 |  |
+| `authSpec.spec.properties` | 包含有关用于身份验证的凭据的信息。 |  |
+| `authSpec.spec.properties.username` | 与您的应用程序关联的帐户用户名。 |  |
+| `authSpec.spec.properties.password` | 与应用程序关联的帐户密码。 |  |
 | `authSpec.spec.required` | 指定所需的字段作为在Experience Platform中输入的必需值。 | `username` |
 
 {style="table-layout:auto"}

@@ -1,29 +1,29 @@
 ---
-keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK；SDK
+keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源sdk；sdk；SDK
 solution: Experience Platform
 title: 使用流服务API创建新的连接规范
 description: 以下文档提供了有关如何使用Flow Service API创建连接规范以及通过自助式源集成新源的步骤。
 exl-id: 0b0278f5-c64d-4802-a6b4-37557f714a97
-source-git-commit: f47b7f725475fc7f7fac6dd406975b46f257e390
+source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
 workflow-type: tm+mt
-source-wordcount: '785'
+source-wordcount: '773'
 ht-degree: 2%
 
 ---
 
 # 使用[!DNL Flow Service] API创建新的连接规范
 
-连接规范表示源的结构。 它包含有关源身份验证要求的信息，定义如何探索和检查源数据，并提供有关给定源属性的信息。 [!DNL Flow Service] API中的`/connectionSpecs`端点允许您以编程方式管理组织内的连接规范。
+连接规范表示源的结构。 它包含有关源身份验证要求的信息，定义如何探索和检查源数据，并提供有关给定源属性的信息。 `/connectionSpecs` API中的[!DNL Flow Service]端点允许您以编程方式管理组织内的连接规范。
 
-以下文档提供了有关如何使用[!DNL Flow Service] API创建连接规范以及通过自助源（批处理SDK）集成新源的步骤。
+以下文档提供了有关如何使用[!DNL Flow Service] API创建连接规范以及通过自助源(批处理SDK)集成新源的步骤。
 
 ## 快速入门
 
-在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience Platform API所需的所需标头的重要信息。
 
 ## 收集工件
 
-要使用自助源创建新的批次源，您必须首先协调Adobe、请求专用Git存储库并与Adobe保持一致，了解有关源的标签、描述、类别和图标的详细信息。
+要使用自助源创建新的批次源，您必须首先与Adobe协调，请求专用Git存储库，并在与源的标签、描述、类别和图标相关的详细信息中与Adobe保持一致。
 
 提供后，您必须构建私有Git存储库，如下所示：
 
@@ -39,10 +39,10 @@ ht-degree: 2%
 | 工件（文件名） | 描述 | 示例 |
 | --- | --- | --- |
 | {your_source} | 源的名称。 此文件夹应包含与您的源相关的所有工件，位于您的专用Git存储库中。 | `mailchimp-members` |
-| {your_source}-category.txt | 源所属的类别，格式为文本文件。 自助源（批处理SDK）支持的可用源类别列表包括： <ul><li>Advertising</li><li>Analytics</li><li>同意和偏好设置</li><li>CRM</li><li>客户成功</li><li>数据库</li><li>e-Commerce</li><li>营销自动化</li><li>付款</li><li>协议</li></ul> **注意**：如果您认为您的源不适合以上任何类别，请与您的Adobe代表联系以进行讨论。 | `mailchimp-members-category.txt`在文件中，请指定源的类别，如： `marketingAutomation`。 |
+| {your_source}-category.txt | 源所属的类别，格式为文本文件。 自助源(批处理SDK)支持的可用源类别列表包括： <ul><li>Advertising</li><li>Analytics</li><li>同意和偏好设置</li><li>CRM</li><li>客户成功</li><li>数据库</li><li>e-Commerce</li><li>营销自动化</li><li>付款</li><li>协议</li></ul> **注意**：如果您认为您的源不适合以上任何类别，请联系您的Adobe代表进行讨论。 | `mailchimp-members-category.txt`在文件中，请指定源的类别，如： `marketingAutomation`。 |
 | {your_source}-description.txt | 源的简要说明。 | [!DNL Mailchimp Members]是营销自动化源，可用于将[!DNL Mailchimp Members]数据引入Experience Platform。 |
-| {your_source}-icon.svg | 用于在Experience Platform源目录中表示您的源的图像。 此图标必须是SVG文件。 |
-| {your_source}-label.txt | 应显示在Experience Platform源目录中的源名称。 | Mailchimp 会员 |
+| {your_source}-icon.svg | 在Experience Platform源目录中用于表示源的图像。 此图标必须是SVG文件。 |  |
+| {your_source}-label.txt | 您源的名称，应当显示在Experience Platform源目录中。 | Mailchimp 会员 |
 | {your_source}-connectionSpec.json | 包含源连接规范的JSON文件。 最初不需要此文件，因为您将在完成本指南时填充连接规范。 | `mailchimp-members-connectionSpec.json` |
 
 {style="table-layout:auto"}
@@ -452,7 +452,7 @@ ht-degree: 2%
 * [配置源规范](../config/sourcespec.md)
 * [配置浏览规范](../config/explorespec.md)
 
-更新您的规范信息后，您可以通过向[!DNL Flow Service] API的`/connectionSpecs`端点发出POST请求来提交新的连接规范。
+更新您的规范信息后，您可以通过向`/connectionSpecs` API的[!DNL Flow Service]端点发出POST请求来提交新的连接规范。
 
 **API格式**
 

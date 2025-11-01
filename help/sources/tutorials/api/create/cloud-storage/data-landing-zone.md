@@ -2,9 +2,9 @@
 title: 使用流服务API将数据登陆区连接到Adobe Experience Platform
 description: 了解如何使用流服务API将Adobe Experience Platform连接到数据登陆区。
 exl-id: bdb60ed3-7c63-4a69-975a-c6f1508f319e
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
 workflow-type: tm+mt
-source-wordcount: '1419'
+source-wordcount: '1417'
 ht-degree: 3%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 3%
 
 [!DNL Data Landing Zone]是一种安全的基于云的文件存储工具，可将文件导入Adobe Experience Platform。 数据会在七天后自动从[!DNL Data Landing Zone]中删除。
 
-本教程将指导您完成有关如何使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)创建[!DNL Data Landing Zone]源连接的步骤。 本教程还提供了有关如何检索[!DNL Data Landing Zone]以及查看和刷新凭据的说明。
+本教程将指导您完成有关如何使用[!DNL Data Landing Zone]API[[!DNL Flow Service] 创建](https://www.adobe.io/experience-platform-apis/references/flow-service/)源连接的步骤。 本教程还提供了有关如何检索[!DNL Data Landing Zone]以及查看和刷新凭据的说明。
 
 ## 快速入门
 
@@ -28,15 +28,15 @@ ht-degree: 3%
 
 本教程还要求您阅读[Experience Platform API快速入门](../../../../../landing/api-guide.md)指南，了解如何对Experience Platform API进行身份验证并解释文档中提供的示例调用。
 
-以下部分提供使用[!DNL Flow Service] API成功创建[!DNL Data Landing Zone]源连接所需了解的其他信息。
+以下部分提供使用[!DNL Data Landing Zone] API成功创建[!DNL Flow Service]源连接所需了解的其他信息。
 
 ## 检索可用的登陆区域
 
 >[!IMPORTANT]
 >
->您必须具有&#x200B;**[!UICONTROL 管理源]**&#x200B;访问控制权限才能使用[!DNL Data Landing Zone] API并检索`type=user_drop_zone`。 有关详细信息，请阅读[访问控制概述](../../../../../access-control/home.md)或联系您的产品管理员以获取所需的权限。
+>您必须具有&#x200B;**[!UICONTROL Manage Sources]**&#x200B;访问控制权限才能使用[!DNL Data Landing Zone] API并检索`type=user_drop_zone`。 有关详细信息，请阅读[访问控制概述](../../../../../access-control/home.md)或联系您的产品管理员以获取所需的权限。
 
-使用API访问[!DNL Data Landing Zone]的第一步是向[!DNL Connectors] API的`/landingzone`端点发出GET请求，同时将`type=user_drop_zone`作为请求标头的一部分提供。
+使用API访问[!DNL Data Landing Zone]的第一步是向`/landingzone` API的[!DNL Connectors]端点发出GET请求，同时将`type=user_drop_zone`作为请求标头的一部分提供。
 
 **API格式**
 
@@ -67,7 +67,8 @@ curl -X GET \
 根据您的提供商，成功的请求会返回以下内容：
 
 >[!BEGINTABS]
->[!TAB 在Azure上 响应]
+
+>在Azure上[!TAB 响应]
 
 ```json
 {
@@ -82,7 +83,7 @@ curl -X GET \
 | `containerTTL` | 适用于登陆区域内数据的过期时间（以天为单位）。 七天后，会删除给定登陆区域内的任何区域。 |
 
 
->[!TAB 在AWS上 响应]
+>在AWS上[!TAB 响应]
 
 ```json
 {
@@ -103,7 +104,7 @@ curl -X GET \
 
 ## 检索[!DNL Data Landing Zone]凭据
 
-要检索[!DNL Data Landing Zone]的凭据，请向[!DNL Connectors] API的`/credentials`端点发出GET请求。
+要检索[!DNL Data Landing Zone]的凭据，请向`/credentials` API的[!DNL Connectors]端点发出GET请求。
 
 **API格式**
 
@@ -130,7 +131,8 @@ curl -X GET \
 根据您的提供商，成功的请求会返回以下内容：
 
 >[!BEGINTABS]
->[!TAB 在Azure上 响应]
+
+>在Azure上[!TAB 响应]
 
 ```json
 {
@@ -150,7 +152,7 @@ curl -X GET \
 | `SASUri` | [!DNL Data Landing Zone]的共享访问签名URI。 此字符串是您正在接受身份验证的[!DNL Data Landing Zone]的URI及其对应的SAS令牌的组合。 |
 | `expiryDate` | SAS令牌的过期日期。 您必须在到期日期之前刷新您的令牌，以便继续在您的应用程序中使用它来将数据上载到[!DNL Data Landing Zone]。 如果您没有在规定的到期日之前手动刷新令牌，则会在执行GET凭据调用时自动刷新并提供新令牌。 |
 
->[!TAB 在AWS上 响应]
+>在AWS上[!TAB 响应]
 
 ```json
 {
@@ -285,7 +287,7 @@ public class Main {
 
 ## 更新[!DNL Data Landing Zone]凭据
 
-您可以通过向[!DNL Connectors] API的`/credentials`端点发出POST请求来更新`SASToken`。
+您可以通过向`SASToken` API的`/credentials`端点发出POST请求来更新[!DNL Connectors]。
 
 **API格式**
 
@@ -328,7 +330,7 @@ curl -X POST \
 
 ## 探索登陆区域文件结构和内容
 
-您可以通过向[!DNL Flow Service] API的`connectionSpecs`端点发出GET请求来探索登陆区域的文件结构和内容。
+您可以通过向`connectionSpecs` API的[!DNL Flow Service]端点发出GET请求来探索登陆区域的文件结构和内容。
 
 **API格式**
 
@@ -393,7 +395,7 @@ GET /connectionSpecs/{CONNECTION_SPEC_ID}/explore?objectType=file&object={OBJECT
 
 | 参数 | 描述 | 示例 |
 | --- | --- | --- |
-| `{CONNECTION_SPEC_ID}` | 对应于[!DNL Data Landing Zone]的连接规范ID。 此固定ID为： `26f526f2-58f4-4712-961d-e41bf1ccc0e8`。 |
+| `{CONNECTION_SPEC_ID}` | 对应于[!DNL Data Landing Zone]的连接规范ID。 此固定ID为： `26f526f2-58f4-4712-961d-e41bf1ccc0e8`。 |  |
 | `{OBJECT_TYPE}` | 要访问的对象的类型。 | `file` |
 | `{OBJECT}` | 要访问的对象的路径和名称。 | `dlz-user-container/data8.csv` |
 | `{FILE_TYPE}` | 文件的类型。 | <ul><li>`delimited`</li><li>`json`</li><li>`parquet`</li></ul> |
@@ -513,7 +515,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回查询文件的结构，包括文件名和数据类型，以及包含有关`fileType`、`compressionType`和`columnDelimiter`信息的`properties`键。
+成功的响应将返回查询文件的结构，包括文件名和数据类型，以及包含有关`properties`、`fileType`和`compressionType`信息的`columnDelimiter`键。
 
 +++单击我
 
@@ -617,7 +619,7 @@ curl -X GET \
 
 源连接创建和管理与摄取数据的外部源的连接。 源连接由数据源、数据格式和创建数据流所需的源连接ID等信息组成。 源连接实例特定于租户和组织。
 
-要创建源连接，请向[!DNL Flow Service] API的`/sourceConnections`端点发出POST请求。
+要创建源连接，请向`/sourceConnections` API的[!DNL Flow Service]端点发出POST请求。
 
 
 **API格式**
@@ -671,4 +673,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过完成本教程，您已检索到[!DNL Data Landing Zone]凭据，探索了其文件结构以查找要带到Experience Platform的文件，并创建了源连接以开始将您的数据带到Experience Platform。 您现在可以继续下一教程，其中您将了解如何使用 [!DNL Flow Service] API[&#128279;](../../collect/cloud-storage.md)创建数据流以将云存储数据引入Experience Platform。
+通过完成本教程，您已检索到[!DNL Data Landing Zone]凭据，探索了其文件结构以查找要带到Experience Platform的文件，并创建了源连接以开始将您的数据带到Experience Platform。 您现在可以继续下一教程，其中您将了解如何使用[API [!DNL Flow Service] 创建数据流以将云存储数据引入Experience Platform。](../../collect/cloud-storage.md)

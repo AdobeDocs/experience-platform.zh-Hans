@@ -2,20 +2,20 @@
 title: 使用流服务API将Salesforce Marketing Cloud连接到Experience Platform
 description: 了解如何使用API将您的Salesforce Marketing Cloud帐户连接到Experience Platform。
 exl-id: fbf68d3a-f8b1-4618-bd56-160cc6e3346d
-source-git-commit: 0c0a58df4beae499008e52c118b40bed86ff0596
+source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
 workflow-type: tm+mt
 source-wordcount: '587'
 ht-degree: 1%
 
 ---
 
-# 使用[!DNL Flow Service] API将[!DNL Salesforce Marketing Cloud]连接到Experience Platform
+# 使用[!DNL Salesforce Marketing Cloud] API将[!DNL Flow Service]连接到Experience Platform
 
 >[!WARNING]
 >
 >[!DNL Salesforce Marketing Cloud]源将于2026年1月被弃用。 作为替代方案，将在今年晚些时候发布新的信息源。 发布新源后，您必须计划在2026年1月底之前通过创建新帐户连接和数据流迁移到新源。
 
-阅读本指南，了解如何使用[[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/)将您的[!DNL Salesforce Marketing Cloud]帐户连接到Adobe Experience Platform。
+阅读本指南，了解如何使用[!DNL Salesforce Marketing Cloud]API[[!DNL Flow Service] 将您的](https://developer.adobe.com/experience-platform-apis/references/flow-service/)帐户连接到Adobe Experience Platform。
 
 ## 快速入门
 
@@ -24,14 +24,14 @@ ht-degree: 1%
 * [源](../../../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
 * [沙盒](../../../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-以下部分提供使用[!DNL Flow Service] API成功连接到[!DNL Azure Synapse Analytics]所需了解的其他信息。
+以下部分提供使用[!DNL Azure Synapse Analytics] API成功连接到[!DNL Flow Service]所需了解的其他信息。
 
 
 ### 使用Experience Platform API
 
 有关如何成功调用Experience Platform API的信息，请参阅[Experience Platform API快速入门](../../../../../landing/api-guide.md)指南。
 
-以下部分提供了使用[!DNL Flow Service] API成功连接到[!DNL Salesforce Marketing Cloud]时需要了解的其他信息。
+以下部分提供了使用[!DNL Salesforce Marketing Cloud] API成功连接到[!DNL Flow Service]时需要了解的其他信息。
 
 ### 收集所需的凭据
 
@@ -101,7 +101,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `auth.params.host` |
+| `auth.params.host` |  |
 | `auth.params.clientId` | 与您的[!DNL Salesforce Marketing Cloud]应用程序关联的客户端ID。 |
 | `auth.params.clientSecret` | 与您的[!DNL Salesforce Marketing Cloud]应用程序关联的客户端密钥。 |
 | `connectionSpec.id` | [!DNL Salesforce Marketing Cloud]连接规范ID： `ea1c2a08-b722-11eb-8529-0242ac130003`。 |
