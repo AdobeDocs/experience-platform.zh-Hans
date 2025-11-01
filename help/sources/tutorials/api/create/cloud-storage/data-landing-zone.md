@@ -68,7 +68,7 @@ curl -X GET \
 
 >[!BEGINTABS]
 
->在Azure上[!TAB 响应]
+>[!TAB 在Azure上 响应]
 
 ```json
 {
@@ -83,7 +83,7 @@ curl -X GET \
 | `containerTTL` | 适用于登陆区域内数据的过期时间（以天为单位）。 七天后，会删除给定登陆区域内的任何区域。 |
 
 
->在AWS上[!TAB 响应]
+>[!TAB 在AWS上 响应]
 
 ```json
 {
@@ -132,7 +132,7 @@ curl -X GET \
 
 >[!BEGINTABS]
 
->在Azure上[!TAB 响应]
+>[!TAB 在Azure上 响应]
 
 ```json
 {
@@ -152,7 +152,7 @@ curl -X GET \
 | `SASUri` | [!DNL Data Landing Zone]的共享访问签名URI。 此字符串是您正在接受身份验证的[!DNL Data Landing Zone]的URI及其对应的SAS令牌的组合。 |
 | `expiryDate` | SAS令牌的过期日期。 您必须在到期日期之前刷新您的令牌，以便继续在您的应用程序中使用它来将数据上载到[!DNL Data Landing Zone]。 如果您没有在规定的到期日之前手动刷新令牌，则会在执行GET凭据调用时自动刷新并提供新令牌。 |
 
->在AWS上[!TAB 响应]
+>[!TAB 在AWS上 响应]
 
 ```json
 {
