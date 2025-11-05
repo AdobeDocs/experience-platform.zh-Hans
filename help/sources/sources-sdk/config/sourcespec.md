@@ -3,10 +3,10 @@ keywords: Experience Platform；主页；热门主题；源；连接器；源连
 title: 为自助源配置源规范(批处理SDK)
 description: 本文档概述了为使用自助源(批处理SDK)而需要准备的配置。
 exl-id: f814c883-b529-4ecc-bedd-f638bf0014b5
-source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
+source-git-commit: 2ff70ee6e4aa7fd723293e66000ccb161d61ab6a
 workflow-type: tm+mt
-source-wordcount: '2090'
-ht-degree: 1%
+source-wordcount: '2107'
+ht-degree: 0%
 
 ---
 
@@ -231,6 +231,7 @@ Source规范包含特定于某个源的信息，包括与源的类别、测试�
 | --- | --- | --- |
 | `sourceSpec.attributes` | 包含有关UI或API专属源的信息。 |  |
 | `sourceSpec.attributes.uiAttributes` | 显示特定于UI的源的信息。 |  |
+| `sourceSpec.attributes.uiAttributes.isPreview` | 布尔属性，指示源是否显示为预览（不适用于生产/一般可用性）。 | <ul><li>`true`</li><li>`false`</li></ul> |
 | `sourceSpec.attributes.uiAttributes.isBeta` | 一个布尔属性，指示源是否需要客户提供更多反馈才能添加到其功能中。 | <ul><li>`true`</li><li>`false`</li></ul> |
 | `sourceSpec.attributes.uiAttributes.category` | 定义源的类别。 | <ul><li>`advertising`</li><li>`crm`</li><li>`customer success`</li><li>`database`</li><li>`ecommerce`</li><li>`marketing automation`</li><li>`payments`</li><li>`protocols`</li></ul> |
 | `sourceSpec.attributes.uiAttributes.icon` | 定义用于在Experience Platform UI中呈现源的图标。 | `mailchimp-icon.svg` |
