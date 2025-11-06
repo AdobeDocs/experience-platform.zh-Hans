@@ -2,16 +2,16 @@
 title: 监控配置文件的流式摄取
 description: 了解如何使用监控仪表板监控流配置文件摄取
 exl-id: da7bb08d-2684-45a1-b666-7580f2383748
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 450a59b406684b456a67df43fbf954edbae49ff7
 workflow-type: tm+mt
-source-wordcount: '1932'
-ht-degree: 19%
+source-wordcount: '1835'
+ht-degree: 18%
 
 ---
 
 # 监控配置文件的流式摄取
 
-您可以使用Adobe Experience Platform UI中的监控仪表板对贵组织中的流式配置文件摄取进行实时监控。 使用此功能可访问与流数据相关的吞吐量、延迟和数据质量指标的更高透明度。 此外，使用此功能发出主动警报并检索可操作洞察，以帮助识别潜在的容量违规和数据摄取问题。
+您可以使用Adobe Experience Platform UI中的监控仪表板对贵组织中的流式配置文件摄取进行实时监控。 使用此功能可访问与流数据相关的吞吐量和数据质量量度的更高透明度。 此外，使用此功能发出主动警报并检索可操作洞察，以帮助识别潜在的容量违规和数据摄取问题。
 
 请阅读以下指南，了解如何使用监视仪表板跟踪组织中流配置文件摄取作业的速率和量度。
 
@@ -21,19 +21,19 @@ ht-degree: 19%
 
 * [数据流](../home.md)：数据流表示跨Experience Platform传输信息的数据作业。 它们可在各种服务中进行配置，以促进数据从源连接器移动到目标数据集以及Identity Service、Real-Time Customer Profile和Destinations。
 * [实时客户个人资料](../../profile/home.md)： Real-Time Customer Profile将来自多个来源（在线、离线、CRM和第三方）的数据合并到每个客户的单个可操作视图中，从而实现跨所有接触点的一致且个性化的体验。
-* [流式摄取](../../ingestion/streaming-ingestion/overview.md)：Experience Platform流式摄取为用户提供了一种方法，可实时将数据从客户端和服务器端设备发送到Experience Platform。Experience Platform允许您为每个客户生成实时客户档案，从而提供协调、一致和相关体验。&#x200B;AEM流式摄取在尽可能缩短延迟的情况下构建这些用户档案方面发挥着关键作用。
+* [流式摄取](../../ingestion/streaming-ingestion/overview.md)：Experience Platform流式摄取为用户提供了一种方法，可实时将数据从客户端和服务器端设备发送到Experience Platform。Experience Platform允许您为每个客户生成实时客户档案，从而提供协调、一致和相关体验。.
 * [能力](../../landing/license-usage-and-guardrails/capacity.md)：在Experience Platform中，能力让您知道您的组织是否超出了任何护栏，并为您提供如何解决这些问题的信息。
 
 >[!NOTE]
 >
->流式处理吞吐量容量支持每秒多达1500个入站事件。 您可以购买额外的流分段以最多支持每秒13,500个额外的入站事件&#x200B;。 有关详细信息，请参阅[Real-Time CDP B2C Edition - Prime和Ultimate包产品说明](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)。
+>流式处理吞吐量容量支持每秒多达1500个入站事件。 您可以购买额外的流分段以最多支持每秒13,500个额外的入站事件&#x200B;。 有关详细信息，请参阅[Real-Time CDP B2C Edition - Prime和Ultimate包产品说明](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)。
 
 ## 监控配置文件流式摄取的量度 {#streaming-profile-metrics}
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_streaming_profile"
 >title="监控配置文件的流式摄取"
->abstract="流式处理配置文件的监控仪表板显示有关吞吐量、摄取率和延迟的信息。使用此仪表板查看、了解和分析数据处理量度。将您的流式处理配置文件导入 Experience Platform。"
+>abstract="流配置文件的监视仪表板显示有关吞吐量和摄取率的信息。 使用此仪表板查看、了解和分析数据处理量度。将您的流式处理配置文件导入 Experience Platform。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
@@ -90,7 +90,6 @@ ht-degree: 19%
 | --- | --- | --- | --- |
 | 请求吞吐量 | 此量度表示每秒进入摄取系统的事件数。 | 沙盒/数据流 | 实时监控，每60秒刷新一次数据。 |
 | 处理吞吐量 | 此量度表示系统每秒成功摄取的事件数。 | 沙盒/数据流 | 实时监控，每60秒刷新一次数据。 |
-| P95 摄取延迟 | 此量度测量从某个事件到达 Experience Platform 到成功摄入配置文件存储区的第 95 个百分位数延迟。 | 沙盒/数据流 | 实时监控，每60秒刷新一次数据。 |
 | 最大吞吐量 | 此量度表示每秒进入流配置文件摄取的最大入站请求数 | <ul><li>沙盒/数据流</li><li>数据流运行</li></ul> |  |
 | 已提取的记录 | 此量度表示在某个已配置的时间窗口内摄入配置文件存储区的记录总数。 | <ul><li>沙盒/数据流</li><li>数据流运行</li></ul> | <ul><li>沙盒/数据流：实时监控，每60秒刷新一次数据。</li><li>数据流运行：15分钟后分组。</li></ul> |
 | 失败的记录 | 此量度表示在某个已配置的时间窗口内由于出错而未能摄入配置文件存储区的记录总数。 | <ul><li>沙盒/数据流</li><li>数据流运行</li></ul> | <ul><li>沙盒/数据流：实时监控，每60秒刷新一次数据。</li><li>数据流运行：15分钟后分组。</li></ul> |
@@ -105,7 +104,7 @@ ht-degree: 19%
 
 ![用于流式处理配置文件摄取的监视仪表板。](../assets/ui/streaming-profiles/monitoring-dashboard.png)
 
-请参阅&#x200B;*[!UICONTROL Profile]*&#x200B;量度卡片的仪表板顶部标题。 使用此显示可查看有关已摄取、失败和跳过的记录的信息，以及有关请求吞吐量和延迟的当前状态的信息。
+请参阅&#x200B;*[!UICONTROL Profile]*&#x200B;量度卡片的仪表板顶部标题。 使用此显示可查看有关已摄取、失败和跳过的记录的信息，以及有关请求吞吐量的当前状态的信息。
 
 ![个人资料卡。](../assets/ui/streaming-profiles/profile-card.png)
 
@@ -119,7 +118,7 @@ ht-degree: 19%
 
 或者，您可以使用日历手动配置自己的时间范围。
 
-您可以在监视仪表板中使用三个不同的量度类别来流式处理配置文件摄取： [!UICONTROL Throughput]、[!UICONTROL Ingestion]和[!UICONTROL Latency]。
+您可以在监视仪表板中使用两个不同的量度类别来流式处理配置文件摄取：[!UICONTROL Throughput]和[!UICONTROL Ingestion]。
 
 >[!BEGINTABS]
 
@@ -142,12 +141,6 @@ ht-degree: 19%
 * **已摄取的记录**：在给定时间段内创建的记录总数。 此量度表示沙盒中成功的数据摄取流程。
 * **跳过的记录数**：由于错误而未引入的记录总数。
 * **跳过的记录数**：由于违反容量限制而被丢弃的记录总数。
-
->[!TAB 延迟]
-
-选择&#x200B;**[!UICONTROL Latency]**&#x200B;可查看有关Experience Platform在给定时间段内响应请求或完成操作所花费时间的信息。
-
-![显示设置为“延迟”的仪表板。](../assets/ui/streaming-profiles/latency.png)
 
 >[!ENDTABS]
 
