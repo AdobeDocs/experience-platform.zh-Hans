@@ -51,13 +51,13 @@ ht-degree: 0%
 
 为了创建模型，Experience Platform中必须具有一个用于训练和评分模型的数据集。 [数据科学Workspace课程](https://experienceleague.adobe.com/?lang=zh-hans&recommended=ExperiencePlatform-U-1-2021.1.dsw)中的以下视频教程将指导您完成创建Luma架构以及摄取购买倾向模型使用的数据的过程。
 
->[!VIDEO](https://video.tv.adobe.com/v/333312)
+>[!VIDEO](https://video.tv.adobe.com/v/3447164?captions=chi_hans)
 
 ### 创建训练、评分和评分结果数据集
 
 要运行方法生成器笔记本或使用API来训练和评分模型，您需要指定用于训练/评分的数据集和架构。 以下视频教程将指导您设置培训、评分和评分结果数据集，以及在Luma购买倾向模型中使用的评分结果架构。
 
->[!VIDEO](https://video.tv.adobe.com/v/333426)
+>[!VIDEO](https://video.tv.adobe.com/v/3447431?captions=chi_hans)
 
 ## 后续步骤
 
