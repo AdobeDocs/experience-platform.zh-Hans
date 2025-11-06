@@ -5,9 +5,9 @@ title: 创建Luma Web架构和数据集
 type: Tutorial
 description: 本教程向您提供Luma演示倾向模型所需的先决条件和资产。
 exl-id: a791e532-1116-4407-b745-fd6c2ac0d8f7
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 219305a71c70a5bbec2fad591c166761e3aaa9ee
 workflow-type: tm+mt
-source-wordcount: '480'
+source-wordcount: '479'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ ht-degree: 0%
 
 ## 下载资源 {#assets}
 
-以下教程使用自定义Luma购买倾向模型。 在继续之前，[下载所需的资产](https://experienceleague.adobe.com/docs/platform-learn/assets/DSW-course-sample-assets.zip) zip文件夹。 此文件夹包含：
+以下教程使用自定义Luma购买倾向模型。 在继续之前，[下载所需的资产](../assets/DSW-course-sample-assets.7z) zip文件夹。 此文件夹包含：
 
 - 购买倾向模型笔记本
 - 用于将数据摄取到训练和评分数据集（Luma Web数据的子集）的笔记本
@@ -49,15 +49,15 @@ ht-degree: 0%
 
 ### 创建Luma Web数据架构并摄取数据
 
-为了创建模型，Experience Platform中必须具有一个用于训练和评分模型的数据集。 [数据科学Workspace课程](https://experienceleague.adobe.com/?lang=zh-hans&recommended=ExperiencePlatform-U-1-2021.1.dsw)中的以下视频教程将指导您完成创建Luma架构以及摄取购买倾向模型使用的数据的过程。
+为了创建模型，Experience Platform中必须具有一个用于训练和评分模型的数据集。 [数据科学Workspace课程](https://experienceleague.adobe.com/?recommended=ExperiencePlatform-U-1-2021.1.dsw)中的以下视频教程将指导您完成创建Luma架构以及摄取购买倾向模型使用的数据的过程。
 
->[!VIDEO](https://video.tv.adobe.com/v/3447164?captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/333312)
 
 ### 创建训练、评分和评分结果数据集
 
 要运行方法生成器笔记本或使用API来训练和评分模型，您需要指定用于训练/评分的数据集和架构。 以下视频教程将指导您设置培训、评分和评分结果数据集，以及在Luma购买倾向模型中使用的评分结果架构。
 
->[!VIDEO](https://video.tv.adobe.com/v/3447431?captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/333426)
 
 ## 后续步骤
 
