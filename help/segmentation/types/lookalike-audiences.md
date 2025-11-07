@@ -3,18 +3,14 @@ solution: Experience Platform
 title: 相似受众
 description: 了解如何使用相似受众在Adobe Experience Platform中定位新的高价值受众。
 exl-id: c43dac6c-18a0-482f-803e-b75e1b211e98
-source-git-commit: d978437479bedd0f943a6d68de78073f318cccb5
+source-git-commit: 03f8124f0fc750efa9b7bca0ff80de4c9263915d
 workflow-type: tm+mt
-source-wordcount: '2299'
+source-wordcount: '2250'
 ht-degree: 9%
 
 ---
 
 # 相似受众指南
-
->[!AVAILABILITY]
->
->相似见解和相似受众仅在&#x200B;**B2C版本**&#x200B;中可用。
 
 >[!IMPORTANT]
 >
@@ -41,7 +37,7 @@ ht-degree: 9%
 
 要使用相似见解，基本受众&#x200B;**必须**&#x200B;满足以下资格条件：
 
-- 必须在Experience Platform中创建基础受众&#x200B;**&#x200B;**。
+- 必须在Experience Platform中创建基础受众&#x200B;****。
    - 外部生成的受众&#x200B;**无**&#x200B;资格获得相似见解。
 - 基础受众&#x200B;**必须**&#x200B;使用默认合并策略。
 - 基础受众&#x200B;**必须**&#x200B;不使用数据治理所限制的字段。
@@ -85,15 +81,15 @@ ht-degree: 9%
 
 ## 访问 {#access}
 
-要确认您是否可以访问相似受众，请在Audience Portal中选择任意受众，并检查&#x200B;**[!UICONTROL 相似见解]**&#x200B;选项卡是否可见。
+要确认您是否可以访问相似受众，请选择受众门户中的任意受众，并检查&#x200B;**[!UICONTROL Look-alike insights]**&#x200B;选项卡是否可见。
 
 ## 查看相似见解 {#view}
 
-受众详细信息页面中内置相似见解。 要查看某个受众的相似见解，请在左侧导航栏中选择&#x200B;**[!UICONTROL 受众]**，然后选择&#x200B;**[!UICONTROL 浏览]**&#x200B;以及要查看其见解的受众。
+受众详细信息页面中内置相似见解。 要查看某个受众的相似见解，请在左侧导航栏中选择&#x200B;**[!UICONTROL Audiences]**，然后选择&#x200B;**[!UICONTROL Browse]**&#x200B;以及要查看其见解的受众。
 
 ![已突出显示“受众”按钮，以及用于相似人群拓展建模的基本受众。](../images/types/lookalike/browse.png)
 
-此时会显示受众详细信息页面。 选择&#x200B;**[!UICONTROL 相似见解]**&#x200B;选项卡以查看受众的相似见解。 显示&#x200B;**[!UICONTROL 相似见解]**&#x200B;页面。 此页面包含三个主要元素 — 相似性和可访问图、相似受众和影响因素。
+此时会显示受众详细信息页面。 选择&#x200B;**[!UICONTROL Look-alike insights]**&#x200B;选项卡以查看受众的相似见解。 显示&#x200B;**[!UICONTROL Look-alike insights]**&#x200B;页面。 此页面包含三个主要元素 — 相似性和可访问图、相似受众和影响因素。
 
 ![相似分析选项卡突出显示，显示基本受众的相似分析。](../images/types/lookalike/look-alike-insights.png)
 
@@ -128,7 +124,7 @@ Y轴显示具有与x轴的匹配值相对应的相似性百分比的配置文件
 >id="platform_audiences_lookAlike_influentialFactors"
 >title="影响因素"
 >abstract="影响因素包括属性、事件和受众成员资格，这些因素对于解释轮廓与基础受众成员的相似性非常重要。数据使用标签和策略可用于排除某些数据，使其不被视为相似模型中的影响因素。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/types/lookalike-audiences.html?lang=zh-Hans#exclude" text="排除数据"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/types/lookalike-audiences.html#exclude" text="排除数据"
 
 影响因素部分显示影响所选基础受众相似人群拓展模型的前100个因素。 这些影响因素包括用户档案属性、体验事件和受众成员资格，它们在解释基础受众的相似之处时最为重要。 通过了解主要影响因素，您可以更好地为此受众以及从中创建的任何相似受众将营销内容个性化。 请注意，不会显示影响相似人群拓展模型的所有影响因素。
 
@@ -155,17 +151,17 @@ Y轴显示具有与x轴的匹配值相对应的相似性百分比的配置文件
 >
 >您&#x200B;**不能**&#x200B;将相似受众用作其他相似受众的基本受众。 也就是说，您&#x200B;**无法**&#x200B;创建链接相似受众。
 
-要创建相似受众，您需要选择要为其构建相似受众基础的受众。 要访问可用受众列表，请在左侧导航栏中选择&#x200B;**[!UICONTROL 受众]**，然后选择&#x200B;**[!UICONTROL 浏览]**。 此时将显示受众列表。 在此页面上，您可以选择要用作基础受众的受众。
+要创建相似受众，您需要选择要为其构建相似受众基础的受众。 要访问可用受众列表，请在左侧导航栏中选择&#x200B;**[!UICONTROL Audiences]**，然后选择&#x200B;**[!UICONTROL Browse]**。 此时将显示受众列表。 在此页面上，您可以选择要用作基础受众的受众。
 
 ![已突出显示“受众”按钮，以及用于相似人群拓展建模的基本受众。](../images/types/lookalike/browse.png)
 
-在受众详细信息页面上，选择&#x200B;**[!UICONTROL 创建相似受众]**&#x200B;以开始创建相似受众的过程。
+在受众详细信息页面上，选择&#x200B;**[!UICONTROL Create look-alike audience]**&#x200B;以开始创建相似受众的过程。
 
-![已高亮显示[!UICONTROL 创建相似受众]按钮。](../images/types/lookalike/create-look-alike-audience.png)
+![已突出显示[!UICONTROL Create look-alike audience]按钮。](../images/types/lookalike/create-look-alike-audience.png)
 
-出现&#x200B;**[!UICONTROL 创建相似受众]**&#x200B;弹出框。 在此页面上，您可以为相似受众设置相似性百分比。
+出现&#x200B;**[!UICONTROL Create a look-alike audience]**&#x200B;弹出框。 在此页面上，您可以为相似受众设置相似性百分比。
 
-![显示[!UICONTROL 创建相似受众]弹出框。](../images/types/lookalike/create-audience.png)
+![显示[!UICONTROL Create a look-alike audience]弹出框。](../images/types/lookalike/create-audience.png)
 
 您可以通过三种不同的方式设置此相似性百分比：
 
@@ -175,21 +171,21 @@ Y轴显示具有与x轴的匹配值相对应的相似性百分比的配置文件
 
 您还可以更新有关相似受众的详细信息，包括其名称和描述。 默认情况下，将根据基础受众的名称以及之前指定的相似度百分比生成相似受众的名称。
 
-![基本信息在[!UICONTROL 创建相似受众]弹出框内突出显示。](../images/types/lookalike/basic-info.png)
+![基本信息在[!UICONTROL Create a look-alike audience]弹出框内突出显示。](../images/types/lookalike/basic-info.png)
 
-选择&#x200B;**[!UICONTROL 创建]**&#x200B;以完成创建相似受众。
+选择&#x200B;**[!UICONTROL Create]**&#x200B;以完成创建相似受众。
 
-![创建按钮在[!UICONTROL 创建相似受众]弹出框内突出显示。](../images/types/lookalike/create-audience.png)
+![创建按钮在[!UICONTROL Create a look-alike audience]弹出框内高亮显示。](../images/types/lookalike/create-audience.png)
 
-可以在受众详细信息页面的&#x200B;**[!UICONTROL 相似受众]**&#x200B;部分访问新创建的相似受众，也可以在Audience Portal中和其他下游使用中访问这些受众。 请注意，对相似受众进行评分需要一点时间。 在得分之前，用户档案计数将显示为0。
+可以在受众详细信息页面的&#x200B;**[!UICONTROL Look-alike audiences]**&#x200B;部分访问新创建的相似受众，该受众也可以在Audience Portal中用于其他下游用途。 请注意，对相似受众进行评分需要一点时间。 在得分之前，用户档案计数将显示为0。
 
 ## 查看相似受众详细信息 {#view-details}
 
-要查看相似受众的详细信息，请在基础受众的&#x200B;**[!UICONTROL 相似受众]**&#x200B;部分中选择相似受众。
+要查看相似受众的详细信息，请在基础受众的&#x200B;**[!UICONTROL Look-alike audiences]**&#x200B;部分中选择相似受众。
 
 ![相似受众部分已突出显示。](../images/types/lookalike/select-laa.png)
 
-此时会显示受众详细信息页面。 有关此页面的详细信息，请阅读受众门户概述[&#128279;](../ui/audience-portal.md#audience-details)的受众详细信息部分。
+此时会显示受众详细信息页面。 有关此页面的详细信息，请阅读受众门户概述[的](../ui/audience-portal.md#audience-details)受众详细信息部分。
 
 ![显示相似受众的详细信息。](../images/types/lookalike/laa-details.png)
 
