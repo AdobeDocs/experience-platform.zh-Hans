@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ## 连接到GitHub并设置本地创作环境 {#set-up-environment}
 
-1. 在浏览器中，导航到`https://github.com/AdobeDocs/experience-platform.en`
+1. 在浏览器中，导航到`https://github.com/AdobeDocs/experience-platform.zh-Hans`
 2. 要[创建分支存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=zh-Hans#fork-the-repository)，请单击&#x200B;**创建分支存储库**，如下所示。 这会在您自己的GitHub帐户中创建Experience Platform存储库的副本。
 
    ![分支Adobe文档存储库](../assets/docs-framework/ssd-fork-repository.gif)
@@ -75,7 +75,7 @@ ht-degree: 0%
 
 1. 此时，将显示一条通知，提示您签署Adobe参与者许可协议(CLA)。 这是强制步骤。 签署CLA后，刷新PR页面并提交拉取请求。
 
-1. 您可以通过检查&#x200B;**中的**&#x200B;拉取请求`https://github.com/AdobeDocs/experience-platform.en`选项卡来确认拉取请求已提交。
+1. 您可以通过检查&#x200B;**中的**&#x200B;拉取请求`https://github.com/AdobeDocs/experience-platform.zh-Hans`选项卡来确认拉取请求已提交。
 
 ![PR成功](../assets/docs-framework/ssd-pr-successful.png)
 

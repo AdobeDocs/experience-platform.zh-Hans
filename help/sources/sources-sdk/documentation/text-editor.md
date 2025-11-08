@@ -25,7 +25,7 @@ ht-degree: 0%
 
 ## 连接到GitHub并设置本地创作环境
 
-设置本地创作环境的第一步是导航到[Adobe Experience Platform GitHub存储库](https://github.com/AdobeDocs/experience-platform.en)。
+设置本地创作环境的第一步是导航到[Adobe Experience Platform GitHub存储库](https://github.com/AdobeDocs/experience-platform.zh-Hans)。
 
 ![平台存储库](../assets/platform-repo.png)
 

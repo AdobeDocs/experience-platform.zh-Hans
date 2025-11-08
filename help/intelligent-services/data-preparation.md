@@ -96,7 +96,7 @@ GROUP BY channel.typeAtSource
 
 与所有XDM架构一样，CEE架构字段组是可扩展的。 换句话说，可以将其他字段添加到CEE字段组，并且如果需要，可以在多个架构中包含不同的变体。
 
-可在[公共XDM存储库](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-consumer.schema.md)中找到字段组的完整示例。 此外，您可以查看和复制以下[JSON文件](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json)，以示例说明如何构建数据以符合CEE架构。 在了解下节中概述的关键字段时，请参阅这两个示例，以确定如何将您自己的数据映射到架构。
+可在[公共XDM存储库](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-consumer.schema.md)中找到字段组的完整示例。 此外，您可以查看和复制以下[JSON文件](https://github.com/AdobeDocs/experience-platform.zh-Hans/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json)，以示例说明如何构建数据以符合CEE架构。 在了解下节中概述的关键字段时，请参阅这两个示例，以确定如何将您自己的数据映射到架构。
 
 ## 关键字段
 
@@ -355,7 +355,7 @@ CEE字段组中有几个键字段应该被使用，以便[!DNL Intelligent Servi
 
 #### 映射和摄取数据 {#ingest}
 
-创建CEE架构和数据集后，您可以开始将数据表映射到架构，并将这些数据摄取到Experience Platform中。 请参阅有关[将CSV文件映射到XDM架构](../ingestion/tutorials/map-csv/overview.md)的教程，以了解如何在UI中执行此操作的步骤。 您可以使用以下[示例JSON文件](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json)测试摄取过程，然后再使用您自己的数据。
+创建CEE架构和数据集后，您可以开始将数据表映射到架构，并将这些数据摄取到Experience Platform中。 请参阅有关[将CSV文件映射到XDM架构](../ingestion/tutorials/map-csv/overview.md)的教程，以了解如何在UI中执行此操作的步骤。 您可以使用以下[示例JSON文件](https://github.com/AdobeDocs/experience-platform.zh-Hans/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json)测试摄取过程，然后再使用您自己的数据。
 
 填充某个数据集后，可使用相同的数据集来摄取其他数据文件。
 
