@@ -2,9 +2,9 @@
 title: 使用流服务API更新数据流
 description: 了解如何使用流服务API创建数据流，包括其名称、描述和计划。
 exl-id: 367a3a9e-0980-4144-a669-e4cfa7a9c722
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 292fb89d457a86ee9f63cebd461abf1f2ecb9662
 workflow-type: tm+mt
-source-wordcount: '661'
+source-wordcount: '684'
 ht-degree: 2%
 
 ---
@@ -177,7 +177,9 @@ curl -X GET \
 
 >[!IMPORTANT]
 >
->发出PATCH请求时需要使用`If-Match`标头。 此标头的值是您要更新的连接的唯一版本。 每次成功更新数据流时，etag值都会更新。
+>* 发出PATCH请求时需要使用`If-Match`标头。 此标头的值是您要更新的连接的唯一版本。 每次成功更新数据流时，etag值都会更新。
+>
+>* 如果初始计划的`startTime`已经发生，则无法更新数据流的`startTime`。 此限制同时适用于已启用和已禁用的数据流。
 
 **API格式**
 
@@ -191,29 +193,29 @@ PATCH /flows/{FLOW_ID}
 
 ```shell
 curl -X PATCH \
-    'https://platform.adobe.io/data/foundation/flowservice/flows/2edc08ac-4df5-4fe6-936f-81a19ce92f5c' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}'
-    -H 'If-Match: "1a0037e4-0000-0200-0000-602e06f60000"' \
-    -d '[
-            {
-                "op": "replace",
-                "path": "/scheduleParams/frequency",
-                "value": "day"
-            },
-            {
-                "op": "replace",
-                "path": "/name",
-                "value": "Database Dataflow Feb2021"
-            },
-            {
-                "op": "replace",
-                "path": "/description",
-                "value": "Database dataflow for testing update API"
-            }
-        ]'
+  'https://platform.adobe.io/data/foundation/flowservice/flows/2edc08ac-4df5-4fe6-936f-81a19ce92f5c' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+  -H 'If-Match: "1a0037e4-0000-0200-0000-602e06f60000"' \
+  -d '[
+          {
+              "op": "replace",
+              "path": "/scheduleParams/frequency",
+              "value": "day"
+          },
+          {
+              "op": "replace",
+              "path": "/name",
+              "value": "Database Dataflow Feb2021"
+          },
+          {
+              "op": "replace",
+              "path": "/description",
+              "value": "Database dataflow for testing update API"
+          }
+      ]'
 ```
 
 | 属性 | 描述 |
@@ -249,25 +251,25 @@ PATCH /flows/{FLOW_ID}
 
 ```shell
 curl -X PATCH \
-    'https://platform.adobe.io/data/foundation/flowservice/flows/2edc08ac-4df5-4fe6-936f-81a19ce92f5c' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}'
-    -H 'If-Match: "50014cc8-0000-0200-0000-6036eb720000"' \
-    -d '[
-        {
-            "op": "replace",
-            "path": "/transformations/0",
-            "value": {
-                "name": "Mapping",
-                "params": {
-                    "mappingId": "c5f22f04e09f44498e528901546a83b1",
-                    "mappingVersion": 2
-                }
-            }
-        }
-    ]'
+  'https://platform.adobe.io/data/foundation/flowservice/flows/2edc08ac-4df5-4fe6-936f-81a19ce92f5c' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+  -H 'If-Match: "50014cc8-0000-0200-0000-6036eb720000"' \
+  -d '[
+      {
+          "op": "replace",
+          "path": "/transformations/0",
+          "value": {
+              "name": "Mapping",
+              "params": {
+                  "mappingId": "c5f22f04e09f44498e528901546a83b1",
+                  "mappingVersion": 2
+              }
+          }
+      }
+  ]'
 ```
 
 | 属性 | 描述 |
