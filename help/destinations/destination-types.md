@@ -3,9 +3,9 @@ keywords: 目标；目标；目标类型
 title: 目标类型和类别
 description: 了解Adobe Experience Platform中目标的各种类型和类别。
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: d57af88cc9507e0164b044a7203c66fe9fd9240e
 workflow-type: tm+mt
-source-wordcount: '801'
+source-wordcount: '831'
 ht-degree: 1%
 
 ---
@@ -41,7 +41,7 @@ Adobe Experience Platform中的&#x200B;**[!UICONTROL Profile Export]**、**[!UIC
 
 >[!IMPORTANT]
 >
->高级企业目标或流式配置文件导出目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+>高级企业目标或流式配置文件导出目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
 使用高级企业目标数据连接器近乎实时地将Adobe Real-Time Customer Data Platform配置文件交付给内部系统或其他第三方系统，以便进行数据同步、分析和进一步扩充配置文件用例。
 
@@ -52,6 +52,12 @@ Adobe Experience Platform中的&#x200B;**[!UICONTROL Profile Export]**、**[!UIC
 * [HTTP API目标](catalog/streaming/http-destination.md)
 * [Amazon Kinesis](catalog/cloud-storage/amazon-kinesis.md)
 * [Azure 事件中心](catalog/cloud-storage/azure-event-hubs.md)
+* [Snowflake 流](catalog/warehouses/snowflake.md)
+* [Snowflake批处理](catalog/warehouses/snowflake-batch.md)
+
+>[!NOTE]
+>
+>Snowflake目标目前仅对美国客户可用。 如果您需要美国以外的访问权限，请联系您的Adobe客户团队。
 
 ### 批处理（基于文件）目标 {#file-based}
 
@@ -71,7 +77,7 @@ Experience Platform中的Edge个性化目标包括[Adobe Target](/help/destinati
 
 以下视频介绍这两种类型目标的特性：
 
->[!VIDEO](https://video.tv.adobe.com/v/32148?captions=chi_hans&quality=12)
+>[!VIDEO](https://video.tv.adobe.com/v/29707?quality=12)
 
 ## 导出的受众的类型 {#exported-audiences-types}
 
