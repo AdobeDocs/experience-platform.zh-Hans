@@ -3,10 +3,10 @@ keywords: 广告；交易台；广告交易台
 title: 交易台连接
 description: Trade Desk是一个自助服务平台，供广告购买者跨显示器、视频和移动库存源执行重定位和面向受众的数字活动。
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 940128bf73f856d8459bee23905213651b44916e
 workflow-type: tm+mt
-source-wordcount: '1028'
-ht-degree: 3%
+source-wordcount: '1093'
+ht-degree: 2%
 
 ---
 
@@ -17,19 +17,18 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
-> 从2025年7月开始，对目标服务进行[内部升级](../../../release-notes/2025/july-2025.md#destinations)后，在到&#x200B;**的数据流中，您可能会遇到激活的配置文件数**&#x200B;减少[!DNL The Trade Desk]的情况。
-> &#x200B;> 导致此下降的原因是，针对此目标平台的所有激活引入了&#x200B;**ECID映射要求**。 有关详细信息，请参阅此页面中的[强制映射](#mandatory-mappings)部分。
+> 从2025年7月开始，对目标服务进行[内部升级](../../../release-notes/2025/july-2025.md#destinations)后，您可能会注意到&#x200B;**的数据流中激活的配置文件数**&#x200B;减少了[!DNL The Trade Desk]。
+> 这种下降是由于监视可见性提高造成的。 现在，没有ECID的用户档案会在激活量度中正确计为已丢弃。 有关详细信息，请参阅此页面中的[强制映射](#mandatory-mappings)部分。
 >
 >**更改内容：**
 >
->* 现在，所有配置文件激活的ECID (Experience Cloud ID)映射都是&#x200B;**必需的**。
->* 没有ECID映射的配置文件将从现有激活数据流中&#x200B;**删除**。
+>* 现在，目标服务可正确报告何时从激活中删除没有ECID的配置文件。
+>* **重要信息：**&#x200B;在此升级之前，没有ECID的配置文件从未使用过[!DNL The Trade Desk]。 集成始终需要ECID。 此升级修复了之前阻止这些丢弃在量度中可见的错误。
 >
 >**您需要执行的操作：**
 >
 >* 查看您的受众数据，以确认用户档案具有有效的ECID值。
->* 监控您的激活量度以验证预期的配置文件计数。
-
+>* 监控您的激活量度以验证预期的配置文件计数。 计数减少反映的是准确的报表，而不是目标行为的变化。
 
 使用此目标连接器将配置文件数据发送到[!DNL The Trade Desk]。 此连接器将数据发送到[!DNL The Trade Desk]第一方终结点。 Adobe Experience Platform与[!DNL The Trade Desk]之间的集成不支持将数据导出到[!DNL The Trade Desk]第三方端点。
 
@@ -84,7 +83,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->如果您希望使用[!DNL The Trade Desk]创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/zh-hans/docs/id-service/using/id-service-api/methods/idsync)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL The Trade Desk]集成，则您设置的ID同步将会转移到Experience Platform。
+>如果您希望使用[!DNL The Trade Desk]创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/en/docs/id-service/using/id-service-api/methods/idsync)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL The Trade Desk]集成，则您设置的ID同步将会转移到Experience Platform。
 
 ## 连接到目标 {#connect}
 
@@ -157,7 +156,7 @@ ht-degree: 3%
 
 >[!NOTE]
 > 
->在[2025年7月升级到目标服务](/help/release-notes/2025/july-2025.md#destinations)后，强制执行[!DNL ECID]映射。 缺失[!DNL ECID]的配置文件现在按预期丢弃，与传统行为相比，这可能显示较低的激活计数。
+>在[2025年7月升级到目标服务后，](/help/release-notes/2025/july-2025.md#destinations)缺失的配置文件现在会在激活量度中正确报告为已丢弃。 [!DNL ECID]集成的行为始终如此 — 不具有[!DNL ECID]的用户档案从未达到[!DNL The Trade Desk] — 但现在可在数据流监视中正确显示丢弃。 较低的激活计数反映的是准确的报表，而不是目标功能的更改。
 
 ## 导出的数据 {#exported-data}
 
