@@ -79,7 +79,7 @@ ht-degree: 1%
 
 *用于创建数据流的其余步骤的工作流将被模块化。 如果您想针对您的源发起任何特定的号召，请参阅下面的其他资源部分。*
 
-通过学习本教程，您已建立与&#x200B;*YOURSOURCE*&#x200B;帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/crm.html)。
+通过学习本教程，您已建立与&#x200B;*YOURSOURCE*&#x200B;帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/crm.html?lang=zh-Hans)。
 
 ## 其他资源
 
