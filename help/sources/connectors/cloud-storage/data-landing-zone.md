@@ -211,7 +211,7 @@ aws s3 cp example.txt s3://bucketName/dlzFolder/example.txt
 ```
 
 
->[!TAB 从Amazon S3]下载文件
+>[!TAB 从Amazon S3下载文件]
 
 模板：
 

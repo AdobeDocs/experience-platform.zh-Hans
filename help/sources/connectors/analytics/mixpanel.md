@@ -42,7 +42,7 @@ Experience Platform支持从第三方Analytics应用程序中摄取数据。 对
 
 ![Mixpanel服务帐户](../../images/tutorials/create/mixpanel-export-events/mixpanel-service-account.png)
 
-最后，创建[所需的Experience Platform ](../../../xdm/schema/composition.md)架构[!DNL Mixpanel Event Export API]。 有关架构所需的映射的详细信息，请参阅有关在UI[中创建 [!DNL Mixpanel] 源连接的指南](../../tutorials/ui/create/analytics/mixpanel.md#additional-resources)。
+最后，创建[所需的Experience Platform &#x200B;](../../../xdm/schema/composition.md)架构[!DNL Mixpanel Event Export API]。 有关架构所需的映射的详细信息，请参阅有关在UI[中创建 [!DNL Mixpanel] 源连接的指南](../../tutorials/ui/create/analytics/mixpanel.md#additional-resources)。
 
 ![创建架构](../../images/tutorials/create/mixpanel-export-events/schema.png)
 
