@@ -4,9 +4,9 @@ solution: Experience Platform
 title: IBM DB2 Source Connector概述
 description: 了解如何使用API或用户界面将IBM DB2连接到Adobe Experience Platform。
 exl-id: 939e0151-fc07-4963-8ea2-0432dee713eb
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '229'
+source-wordcount: '215'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Adobe Experience Platform为数据库提供程序（如[!DNL Microsoft]、MySQL�
 
 ## IP地址允许列表
 
-在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 有关详细信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md)页。
+在将源连接到Experience Platform之前，必须将特定于区域的IP地址添加到允许列表。 有关详细信息，请阅读有关[将IP地址列入允许列表到Experience Platform](../../ip-address-allow-list.md)的指南。
 
 以下文档提供了有关如何使用API或用户界面将IBM DB2连接到[!DNL Experience Platform]的信息：
 

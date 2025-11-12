@@ -4,9 +4,9 @@ description: 了解如何使用API或用户界面将SAP Commerce连接到Adobe E
 last-substantial-update: 2023-07-26T00:00:00Z
 badge: Beta 版
 exl-id: d2ddfec3-a421-48a7-b765-86ce9162f26f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '351'
+source-wordcount: '335'
 ht-degree: 3%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 3%
 
 ## IP地址允许列表 {#ip-allow-list}
 
-在使用源连接器之前，可能需要将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 有关详细信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md)页。
+在将源连接到Experience Platform之前，必须将特定于区域的IP地址添加到允许列表。 有关详细信息，请阅读有关[将IP地址列入允许列表到Experience Platform](../../ip-address-allow-list.md)的指南。
 
 ## 先决条件 {#prerequisites}
 
@@ -39,7 +39,7 @@ ht-degree: 3%
 * [!DNL SAP]服务密钥。 [!DNL SAP]服务密钥允许您通过Experience Platform访问[!DNL SAP Subscription Billing] API。 [!DNL SAP Commerce] 要求您满足以下条件：
    * 客户端 ID
    * 客户端密码
-   * URL。 URL模式如下： `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`。 当您使用API [创建基本连接](../../tutorials/api/create/ecommerce/sap-commerce.md#base-connection)或通过Experience Platform UI [连接您的 [!DNL SAP Commerce] 帐户](../../tutorials/ui/create/ecommerce/sap-commerce.md#connect-account)时，此值稍后将用于获取`region`和`tokenEndpoint`的值。
+   * URL。 URL模式如下： `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`。 当您使用API `region`创建基本连接`tokenEndpoint`或通过Experience Platform UI [连接您的](../../tutorials/api/create/ecommerce/sap-commerce.md#base-connection)帐户[时，此值稍后将用于获取 [!DNL SAP Commerce] 和](../../tutorials/ui/create/ecommerce/sap-commerce.md#connect-account)的值。
 
 +++选择以查看服务键的示例
 

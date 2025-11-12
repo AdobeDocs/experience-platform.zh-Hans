@@ -3,14 +3,14 @@ title: 适用于流SDK API的文档自助服务模板
 description: 了解如何使用流服务API将流数据从源引入Adobe Experience Platform。
 exl-id: a06384a2-cd99-456d-9f00-babcf3f7b7d9
 badge: Beta 版
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '1645'
+source-wordcount: '1644'
 ht-degree: 1%
 
 ---
 
-# 创建源连接和数据流，以使用[!DNL Flow Service] API流式传输&#x200B;*YOURSOURCE*&#x200B;数据
+# 创建源连接和数据流，以使用&#x200B;*API流式传输* YOURSOURCE[!DNL Flow Service]数据
 
 *浏览此模板时，替换或删除所有斜体段落（从此段落开始）。*
 
@@ -49,9 +49,9 @@ ht-degree: 1%
 
 *流式传输SDK要求您的源能够支持Webhook以便与Experience Platform通信。 在本节中，您必须提供用户必须遵循的步骤，才能将YOURSOURCE与webhook集成。*
 
-## 使用[!DNL Flow Service] API将&#x200B;*YOURSOURCE*&#x200B;连接到Experience Platform
+## 使用&#x200B;*API将* YOURSOURCE[!DNL Flow Service]连接到Experience Platform
 
-以下教程将指导您完成以下步骤：创建&#x200B;*YOURSOURCE*&#x200B;源连接和创建数据流以使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将&#x200B;*YOURSOURCE*&#x200B;数据引入Experience Platform。
+以下教程将指导您完成以下步骤：创建&#x200B;*YOURSOURCE*&#x200B;源连接和创建数据流以使用&#x200B;*API*&#x200B;将[[!DNL Flow Service] YOURSOURCE](https://www.adobe.io/experience-platform-apis/references/flow-service/)数据引入Experience Platform。
 
 ### 创建源连接 {#source-connection}
 
@@ -113,13 +113,13 @@ curl -X POST \
 
 通过对[架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/)执行POST请求，可以创建目标XDM架构。
 
-有关如何创建目标XDM架构的详细步骤，请参阅有关使用API [创建架构的教程](https://experienceleague.adobe.com/docs/experience-platform/xdm/api/schemas.html?lang=zh-Hans#create)。
+有关如何创建目标XDM架构的详细步骤，请参阅有关使用API [创建架构的教程](https://experienceleague.adobe.com/docs/experience-platform/xdm/api/schemas.html#create)。
 
 ### 创建目标数据集 {#target-dataset}
 
 通过向[目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)执行POST请求，在有效负载中提供目标架构的ID，可以创建目标数据集。
 
-有关如何创建目标数据集的详细步骤，请参阅有关[使用API创建数据集的教程](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html?lang=zh-Hans)。
+有关如何创建目标数据集的详细步骤，请参阅有关[使用API创建数据集的教程](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html)。
 
 ### 创建目标连接 {#target-connection}
 
@@ -434,20 +434,20 @@ curl -X GET \
 
 ### 监测数据流
 
-创建数据流后，您可以监视通过它摄取的数据，以查看有关流运行、完成状态和错误的信息。 有关完整的API示例，请阅读有关[使用API监视源数据流](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/monitor.html?lang=zh-Hans)的指南。
+创建数据流后，您可以监视通过它摄取的数据，以查看有关流运行、完成状态和错误的信息。 有关完整的API示例，请阅读有关[使用API监视源数据流](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/monitor.html)的指南。
 
 ### 更新您的数据流
 
-通过提供数据流的ID，向[!DNL Flow Service] API的`/flows`端点发出PATCH请求来更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 发出PATCH请求时，必须在`If-Match`标头中提供数据流唯一的`etag`。 有关完整的API示例，请阅读有关使用API [更新源数据流的指南](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update-dataflows.html?lang=zh-Hans)
+通过提供数据流的ID，向`/flows` API的[!DNL Flow Service]端点发出PATCH请求来更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 发出PATCH请求时，必须在`etag`标头中提供数据流唯一的`If-Match`。 有关完整的API示例，请阅读有关使用API [更新源数据流的指南](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update-dataflows.html)
 
 ### 更新您的帐户
 
-在提供基本连接ID作为查询参数的同时，通过向[!DNL Flow Service] API执行PATCH请求来更新源帐户的名称、描述和凭据。 发出PATCH请求时，必须在`If-Match`标头中提供源帐户的唯一`etag`。 有关完整的API示例，请阅读有关[使用API更新源帐户](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update.html?lang=zh-Hans)的指南。
+在提供基本连接ID作为查询参数的同时，通过向[!DNL Flow Service] API执行PATCH请求来更新源帐户的名称、描述和凭据。 发出PATCH请求时，必须在`etag`标头中提供源帐户的唯一`If-Match`。 有关完整的API示例，请阅读有关[使用API更新源帐户](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update.html)的指南。
 
 ### 删除您的数据流
 
-在查询参数中提供要删除的数据流的ID时，通过向[!DNL Flow Service] API执行DELETE请求来删除数据流。 有关完整的API示例，请阅读有关[使用API删除数据流](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete-dataflows.html?lang=zh-Hans)的指南。
+在查询参数中提供要删除的数据流的ID时，通过向[!DNL Flow Service] API执行DELETE请求来删除数据流。 有关完整的API示例，请阅读有关[使用API删除数据流](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete-dataflows.html)的指南。
 
 ### 删除您的帐户
 
-在提供要删除的帐户的基本连接ID时，通过向[!DNL Flow Service] API执行DELETE请求来删除您的帐户。 有关完整的API示例，请阅读有关使用API[&#128279;](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete.html?lang=zh-Hans)删除源帐户的指南。
+在提供要删除的帐户的基本连接ID时，通过向[!DNL Flow Service] API执行DELETE请求来删除您的帐户。 有关完整的API示例，请阅读有关使用API[删除源帐户](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete.html)的指南。

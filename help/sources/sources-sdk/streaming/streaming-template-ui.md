@@ -3,9 +3,9 @@ title: 适用于流SDK UI的文档自助服务模板
 description: 了解如何使用UI将流数据从源引入Adobe Experience Platform。
 exl-id: 82254be0-fa31-4114-a0ec-179a990e0904
 badge: Beta 版
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '1194'
+source-wordcount: '1164'
 ht-degree: 1%
 
 ---
@@ -53,11 +53,11 @@ ht-degree: 1%
 
 ## 连接您的&#x200B;*YOURSOURCE*&#x200B;帐户
 
-在Experience Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
+在Experience Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL Sources]**&#x200B;以访问[!UICONTROL Sources]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
-在&#x200B;**流**&#x200B;类别下，选择&#x200B;*YOURSOURCE*，然后选择&#x200B;**[!UICONTROL 添加数据]**。
+在&#x200B;**流**&#x200B;类别下，选择&#x200B;*YOURSOURCE*，然后选择&#x200B;**[!UICONTROL Add data]**。
 
 >[!TIP]
 >
@@ -67,18 +67,18 @@ ht-degree: 1%
 
 ## 选择数据
 
-此时将显示&#x200B;**[!UICONTROL 选择数据]**&#x200B;步骤，该步骤为您提供了一个界面来选择将带到Experience Platform的数据。
+此时会显示&#x200B;**[!UICONTROL Select data]**&#x200B;步骤，提供一个界面以供您选择将导入Experience Platform的数据。
 
 * 界面的左侧是一个浏览器，允许您查看帐户内的可用数据流；
 * 界面的右侧部分允许您预览JSON文件中最多100行数据。
 
-选择&#x200B;**[!UICONTROL 上载文件]**&#x200B;以从本地系统上载JSON文件。 或者，您也可以将要上传的JSON文件拖放到[!UICONTROL 拖放文件]面板。
+选择&#x200B;**[!UICONTROL Upload files]**&#x200B;以从本地系统上传JSON文件。 或者，您也可以将要上传的JSON文件拖放到[!UICONTROL Drag and drop files]面板中。
 
 ![源工作流的添加数据步骤。](../assets/streaming/add-data.png)
 
-上传文件后，预览界面会更新，以显示您上传的架构预览。 预览界面允许您检查文件的内容和结构。 您还可以使用[!UICONTROL 搜索字段]实用工具访问架构中的特定项目。
+上传文件后，预览界面会更新，以显示您上传的架构预览。 预览界面允许您检查文件的内容和结构。 您还可以使用[!UICONTROL Search field]实用工具从架构中访问特定项目。
 
-完成后，选择&#x200B;**[!UICONTROL 下一步]**。
+完成后，选择&#x200B;**[!UICONTROL Next]**。
 
 ![源工作流的预览步骤。](../assets/streaming/preview.png)
 
@@ -86,28 +86,28 @@ ht-degree: 1%
 
 此时将显示&#x200B;**数据流详细信息**&#x200B;步骤，该步骤为您提供了使用现有数据集或为数据流建立新数据集的选项，以及提供数据流名称和描述的机会。 在此步骤中，您还可以配置配置文件摄取、错误诊断、部分摄取和警报的设置。
 
-完成后，选择&#x200B;**[!UICONTROL 下一步]**。
+完成后，选择&#x200B;**[!UICONTROL Next]**。
 
 ![源工作流的数据流详细信息步骤。](../assets/streaming/dataflow-detail.png)
 
 ## 映射
 
-此时将显示[!UICONTROL 映射]步骤，该步骤为您提供了一个接口，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
+此时将显示[!UICONTROL Mapping]步骤，为您提供了一个界面，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
 
-Experience Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](https://experienceleague.adobe.com/docs/experience-platform/data-prep/ui/mapping.html?lang=zh-Hans)。
+Experience Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](https://experienceleague.adobe.com/docs/experience-platform/data-prep/ui/mapping.html)。
 
-成功映射源数据后，选择&#x200B;**[!UICONTROL 下一步]**。
+成功映射源数据后，请选择&#x200B;**[!UICONTROL Next]**。
 
 ![源工作流的映射步骤。](../assets/streaming/mapping.png)
 
 ## 审查
 
-将显示&#x200B;**[!UICONTROL 审核]**&#x200B;步骤，允许您在创建新数据流之前对其进行审核。 详细信息分为以下类别：
+此时将显示&#x200B;**[!UICONTROL Review]**&#x200B;步骤，允许您在创建新数据流之前对其进行查看。 详细信息分为以下类别：
 
-* **[!UICONTROL 连接]**：显示源类型、所选源文件的相关路径以及该源文件中的列数。
-* **[!UICONTROL 分配数据集和映射字段]**：显示要将源数据摄取到哪个数据集，包括数据集所遵循的架构。
+* **[!UICONTROL Connection]**：显示源类型、所选源文件的相关路径以及该源文件中的列数。
+* **[!UICONTROL Assign dataset & map fields]**：显示要将源数据摄取到哪个数据集，包括该数据集所遵循的架构。
 
-查看数据流后，单击&#x200B;**[!UICONTROL 完成]**&#x200B;并留出一些时间来创建数据流。
+查看数据流后，单击&#x200B;**[!UICONTROL Finish]**&#x200B;并留出一段时间来创建数据流。
 
 ![源工作流的审核步骤。](../assets/streaming/review.png)
 
@@ -115,7 +115,7 @@ Experience Platform根据您选择的目标架构或数据集，为自动映射�
 
 创建流数据流后，您现在可以检索流端点URL。 此端点将用于订阅您的webhook，允许您的流源与Experience Platform通信。
 
-要检索您的流端点，请转到刚刚创建的数据流的[!UICONTROL 数据流活动]页面，并从[!UICONTROL 属性]面板的底部复制端点。
+要检索您的流端点，请转到刚刚创建的数据流的[!UICONTROL Dataflow activity]页面，并从[!UICONTROL Properties]面板底部复制该端点。
 
 ![数据流活动中的流终结点。](../assets/testing/endpoint-test.png)
 
@@ -123,7 +123,7 @@ Experience Platform根据您选择的目标架构或数据集，为自动映射�
 
 *用于创建数据流的其余步骤的工作流将被模块化。 如果您想针对您的源发起任何特定的号召，请参阅下面的其他资源部分。*
 
-通过学习本教程，您已建立与&#x200B;*YOURSOURCE*&#x200B;帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/crm.html?lang=zh-Hans)。
+通过学习本教程，您已建立与&#x200B;*YOURSOURCE*&#x200B;帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/crm.html)。
 
 ## 其他资源
 

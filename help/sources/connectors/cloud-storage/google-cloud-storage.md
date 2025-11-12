@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Google Cloud Storage Source连接器概述
 description: 了解如何使用API或用户界面将Google Cloud Storage连接到Adobe Experience Platform。
 exl-id: f7ebd213-f914-4c49-aebd-1df4514ffec0
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '616'
+source-wordcount: '589'
 ht-degree: 0%
 
 ---
@@ -23,25 +23,25 @@ Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等
 
 ## IP地址允许列表
 
-在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 有关详细信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md)页。
+在将源连接到Experience Platform之前，必须将特定于区域的IP地址添加到允许列表。 有关详细信息，请阅读有关[将IP地址列入允许列表到Experience Platform](../../ip-address-allow-list.md)的指南。
 
 ## 用于连接[!DNL Google Cloud Storage]帐户的必备设置
 
-要连接到Experience Platform，您必须首先为您的[!DNL Google Cloud Storage]帐户启用互操作性。 要访问互操作性设置，请打开[!DNL Google Cloud Platform]并从导航面板的&#x200B;**[!UICONTROL 云存储]**&#x200B;选项中选择&#x200B;**[!UICONTROL 设置]**。
+要连接到Experience Platform，您必须首先为您的[!DNL Google Cloud Storage]帐户启用互操作性。 要访问互操作性设置，请打开[!DNL Google Cloud Platform]并从导航面板的&#x200B;**[!UICONTROL Settings]**&#x200B;选项中选择&#x200B;**[!UICONTROL Cloud Storage]**。
 
 <!-- ![](../../images/tutorials/create/google-cloud-storage/nav.png) -->
 
-此时会显示&#x200B;**[!UICONTROL 设置]**&#x200B;页面。 在此处，您可以看到有关您的[!DNL Google]项目ID的信息以及有关您的[!DNL Google Cloud Storage]帐户的详细信息。 要访问互操作性设置，请从顶部标题中选择&#x200B;**[!UICONTROL 互操作性]**。
+此时会显示&#x200B;**[!UICONTROL Settings]**&#x200B;页面。 在此处，您可以看到有关您的[!DNL Google]项目ID的信息以及有关您的[!DNL Google Cloud Storage]帐户的详细信息。 要访问互操作性设置，请从顶部标题中选择&#x200B;**[!UICONTROL Interoperability]**。
 
 <!-- ![](../../images/tutorials/create/google-cloud-storage/project-access.png) -->
 
-**[!UICONTROL 互操作性]**&#x200B;页面包含有关身份验证、访问密钥以及与您的服务帐户关联的默认项目的信息。 要为您的服务帐户生成新的访问密钥ID和访问密钥，请选择&#x200B;**[!UICONTROL 为服务帐户创建密钥]**。
+**[!UICONTROL Interoperability]**&#x200B;页面包含与您的服务帐户关联的身份验证、访问密钥和默认项目的信息。 要为您的服务帐户生成新的访问密钥ID和秘密访问密钥，请选择&#x200B;**[!UICONTROL Create a Key for a Service Account]**。
 
 <!-- ![](../../images/tutorials/create/google-cloud-storage/interoperability.png) -->
 
 您可以使用新生成的访问密钥ID和访问密钥将[!DNL Google Cloud Storage]帐户连接到Experience Platform。
 
-有关详细信息，请参阅[!DNL Google Cloud]文档中的[创建和管理服务帐户密钥](https://cloud.google.com/iam/docs/creating-managing-service-account-keys)指南。
+有关详细信息，请参阅[文档中的](https://cloud.google.com/iam/docs/creating-managing-service-account-keys)创建和管理服务帐户密钥[!DNL Google Cloud]指南。
 
 ## 文件和目录的命名约束
 

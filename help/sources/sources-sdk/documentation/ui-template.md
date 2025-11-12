@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；源；连接器；源连
 title: UI的自助文档模板
 description: 了解如何使用Adobe Experience Platform UI创建YOURSOURCE源连接。
 exl-id: 6471c0a2-22e8-4133-a76f-ee3c5c669ef8
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '725'
+source-wordcount: '710'
 ht-degree: 1%
 
 ---
@@ -49,11 +49,11 @@ ht-degree: 1%
 
 ## 连接您的&#x200B;*YOURSOURCE*&#x200B;帐户
 
-在Experience Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
+在Experience Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL Sources]**&#x200B;以访问[!UICONTROL Sources]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
-在&#x200B;*YOURSOURCE的类别*&#x200B;类别下，选择&#x200B;*YOURSOURCE*，然后选择&#x200B;**[!UICONTROL 添加数据]**。
+在&#x200B;*YOURSOURCE的类别*&#x200B;类别下，选择&#x200B;*YOURSOURCE*，然后选择&#x200B;**[!UICONTROL Add data]**。
 
 >[!TIP]
 >
@@ -61,17 +61,17 @@ ht-degree: 1%
 
 ![目录](../assets/ui/catalog.png)
 
-出现&#x200B;**[!UICONTROL 连接YOURSOURCE帐户]**&#x200B;页面。 在此页上，您可以使用新凭据或现有凭据。
+此时会显示&#x200B;**[!UICONTROL Connect YOURSOURCE account]**&#x200B;页面。 在此页上，您可以使用新凭据或现有凭据。
 
 ### 现有账户
 
-若要使用现有帐户，请选择您要用来创建新数据流的&#x200B;*YOURSOURCE*&#x200B;帐户，然后选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
+若要使用现有帐户，请选择您想要用来创建新数据流的&#x200B;*YOURSOURCE*&#x200B;帐户，然后选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续。
 
 ![现有](../assets/ui/existing.png)
 
 ### 新帐户
 
-如果要创建新帐户，请选择&#x200B;**[!UICONTROL 新建帐户]**，然后提供名称、可选描述和凭据。 完成后，选择&#x200B;**[!UICONTROL 连接到源]**，然后留出一些时间来建立新连接。
+如果要创建新帐户，请选择&#x200B;**[!UICONTROL New account]**，然后提供名称、可选描述和凭据。 完成后，选择&#x200B;**[!UICONTROL Connect to source]**，然后留出一些时间来建立新连接。
 
 ![新](../assets/ui/new.png)
 
@@ -79,7 +79,7 @@ ht-degree: 1%
 
 *用于创建数据流的其余步骤的工作流将被模块化。 如果您想针对您的源发起任何特定的号召，请参阅下面的其他资源部分。*
 
-通过学习本教程，您已建立与&#x200B;*YOURSOURCE*&#x200B;帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/crm.html?lang=zh-Hans)。
+通过学习本教程，您已建立与&#x200B;*YOURSOURCE*&#x200B;帐户的连接。 您现在可以继续下一教程，并[配置数据流以将数据导入Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/crm.html)。
 
 ## 其他资源
 

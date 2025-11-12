@@ -2,9 +2,9 @@
 title: Data Landing Zone Source
 description: 了解如何将Data Landing Zone连接到Adobe Experience Platform
 exl-id: bdc10095-7de4-4183-bfad-a7b5c89197e3
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '1366'
+source-wordcount: '1361'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 [!DNL Data Landing Zone]是由Adobe Experience Platform设置的[!DNL Azure Blob]存储接口，允许您访问安全的基于云的文件存储设施，以将文件导入Experience Platform。 您有权访问每个沙盒一个[!DNL Data Landing Zone]容器，所有容器的总数据量以您的Experience Platform产品和服务许可证提供的总数据为限。 Experience Platform的所有客户都为每个沙盒配置一个[!DNL Data Landing Zone]容器。 您可以通过[!DNL Azure Storage Explorer]或命令行界面将文件读取和写入容器。
 
-[!DNL Data Landing Zone]支持基于SAS的身份验证，其数据受标准[!DNL Azure Blob]存储安全机制的静态和传输保护。 基于SAS的身份验证允许您通过公共Internet连接安全地访问[!DNL Data Landing Zone]容器。 访问[!DNL Data Landing Zone]容器不需要更改网络，这意味着您不需要为网络配置任何允许列表或跨区域设置。 Experience Platform对上传到[!DNL Data Landing Zone]容器的所有文件和文件夹强制实施严格的七天过期时间。 所有文件和文件夹都会在七天后删除。
+[!DNL Data Landing Zone]支持基于SAS的身份验证，其数据受标准[!DNL Azure Blob]存储安全机制的静态和传输保护。 基于SAS的身份验证允许您通过公共Internet连接安全地访问[!DNL Data Landing Zone]容器。 列入允许列表访问[!DNL Data Landing Zone]容器不需要更改网络，这意味着您不需要为网络配置任何或跨区域设置。 Experience Platform对上传到[!DNL Data Landing Zone]容器的所有文件和文件夹强制实施严格的七天过期时间。 所有文件和文件夹都会在七天后删除。
 
 ## 在Azure上为Experience Platform设置[!DNL Data Landing Zone]源 {#azure}
 
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->如果要从[!DNL Azure Data Factory]访问[!DNL Data Landing Zone]，则必须使用Experience Platform提供的[SAS凭据](../../tutorials/ui/create/cloud-storage/data-landing-zone.md#retrieve-your-data-landing-zone-credentials)为[!DNL Data Landing Zone]创建链接的服务。 创建链接的服务后，您可以通过选择容器路径而不是默认的根路径来浏览[!DNL Data Landing Zone]。
+>如果要从[!DNL Data Landing Zone]访问[!DNL Azure Data Factory]，则必须使用Experience Platform提供的[!DNL Data Landing Zone]SAS凭据[为](../../tutorials/ui/create/cloud-storage/data-landing-zone.md#retrieve-your-data-landing-zone-credentials)创建链接的服务。 创建链接的服务后，您可以通过选择容器路径而不是默认的根路径来浏览[!DNL Data Landing Zone]。
 
 ### 文件和目录的命名约束
 
@@ -50,7 +50,7 @@ ht-degree: 0%
 
 ![Azure Explorer上的选择连接方法，已选择共享访问签名。](../../images/tutorials/create/dlz/select-connection-method.png)
 
-选择连接方法后，必须提供与[!DNL Data Landing Zone]容器对应的&#x200B;**显示名称**&#x200B;和&#x200B;**[!DNL Blob]容器SAS URL**。
+选择连接方法后，必须提供与&#x200B;**容器对应的**&#x200B;显示名称&#x200B;**[!DNL Blob]和**&#x200B;容器SAS URL[!DNL Data Landing Zone]。
 
 >[!TIP]
 >
@@ -64,7 +64,7 @@ ht-degree: 0%
 
 ![重新获取资源连接设置的Azure资源管理器摘要工作区。](../../images/tutorials/create/dlz/summary.png)
 
-成功连接将更新包含[!DNL Data Landing Zone]容器的[!DNL Azure Storage Explorer]用户界面。
+成功连接将更新包含[!DNL Azure Storage Explorer]容器的[!DNL Data Landing Zone]用户界面。
 
 ![Azure Explorer上的数据登陆区域导航工作区。](../../images/tutorials/create/dlz/dlz-user-container.png)
 
@@ -87,7 +87,7 @@ ht-degree: 0%
 
 ### 使用Bash上载文件
 
-以下示例使用Bash和cURL通过[!DNL Azure Blob Storage] REST API将文件上传到[!DNL Data Landing Zone]：
+以下示例使用Bash和cURL通过[!DNL Data Landing Zone] REST API将文件上传到[!DNL Azure Blob Storage]：
 
 ```shell
 # Set Azure Blob-related settings
@@ -117,7 +117,7 @@ curl -v -X PUT \
 
 >[!TIP]
 >
->虽然下面的示例使用完整的SAS URI连接到[!DNL Azure Blob]容器，但您可以使用其他方法和操作进行身份验证。 有关详细信息，请参阅Python v12 SDK[&#128279;](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-python)上的此[!DNL Microsoft] 文档。
+>虽然下面的示例使用完整的SAS URI连接到[!DNL Azure Blob]容器，但您可以使用其他方法和操作进行身份验证。 有关详细信息，请参阅Python v12 SDK[[!DNL Microsoft] 上的此](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-python)文档。
 
 ```py
 import os
@@ -146,7 +146,7 @@ except Exception as ex:
 
 >[!TIP]
 >
->当下面的示例使用`copy`命令时，您可以使用其他命令和选项使用[!DNL AzCopy]将文件上载到[!DNL Data Landing Zone]。 有关详细信息，请参阅此[[!DNL Microsoft AzCopy] 文档](https://docs.microsoft.com/en-us/azure/storage/common/storage-ref-azcopy?toc=/azure/storage/blobs/toc.json)。
+>当下面的示例使用`copy`命令时，您可以使用其他命令和选项使用[!DNL Data Landing Zone]将文件上载到[!DNL AzCopy]。 有关详细信息，请参阅此[[!DNL Microsoft AzCopy] 文档](https://docs.microsoft.com/en-us/azure/storage/common/storage-ref-azcopy?toc=/azure/storage/blobs/toc.json)。
 
 ```bat
 set sasUri=<FULL SAS URI, PROPERLY ESCAPED>
@@ -159,7 +159,7 @@ azcopy copy "%srcFilePath%" "%sasUri%" --overwrite=true --recursive=true
 
 >[!AVAILABILITY]
 >
->本节适用于在Amazon Web Services (AWS)上运行的Experience Platform的实施。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/landing/multi-cloud)。
+>本节适用于在Amazon Web Services (AWS)上运行的Experience Platform的实施。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud)。
 
 请按照以下步骤了解如何在Amazon Web Services (AWS)上为Experience Platform设置[!DNL Data Landing Zone]帐户。
 
@@ -211,7 +211,7 @@ aws s3 cp example.txt s3://bucketName/dlzFolder/example.txt
 ```
 
 
->[!TAB 从Amazon S3下载文件]
+>[!TAB 从Amazon S3]下载文件
 
 模板：
 
@@ -305,7 +305,7 @@ print(f"Sign-in URL: {signin_url}")
 
 >[!IMPORTANT]
 >
->- 若要连接到源，您需要&#x200B;**[!UICONTROL 查看源]**&#x200B;和&#x200B;**[!UICONTROL 管理源]**&#x200B;访问控制权限。 有关详细信息，请阅读[访问控制概述](../../../access-control/home.md)或联系您的产品管理员以获取所需的权限。
+>- 若要连接到源，您需要&#x200B;**[!UICONTROL View Sources]**&#x200B;和&#x200B;**[!UICONTROL Manage Sources]**&#x200B;访问控制权限。 有关详细信息，请阅读[访问控制概述](../../../access-control/home.md)或联系您的产品管理员以获取所需的权限。
 >
 >- 使用[!DNL Data Landing Zone]连接到Experience Platform时，当前不支持专用链接。 唯一支持访问的方法是[此处](#manage-the-contents-of-your-data-landing-zone)列出的方法。
 
