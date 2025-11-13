@@ -160,7 +160,7 @@ Adobe Campaign Managed Cloud Services提供了跨渠道客户体验设计平台�
 
    ![](../../assets/catalog/email-marketing/adobe-campaign-managed-services/mapping.png)
 
-1. 执行映射后，您可以查看并完成目标配置以开始向&#x200B;**[!DNL Campaign]**发送数据。
+1. 执行映射后，您可以查看并完成目标配置以开始向&#x200B;**[!DNL Campaign]**&#x200B;发送数据。
    [了解如何查看和完成目标配置](/help/destinations/destination-types.md#review)。
 
 ## 导出的数据/验证数据导出 {#exported-data}
