@@ -2,9 +2,9 @@
 title: Adobe Campaign Managed Cloud Services连接
 description: Adobe Campaign Managed Cloud Services提供了跨渠道客户体验设计平台，并为可视化的活动编排、实时互动管理和跨渠道执行提供了环境。
 exl-id: fe151ad3-c431-4b5a-b453-9d1d9aedf775
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: f0db626401d76997e19632c3e27a133f577bc571
 workflow-type: tm+mt
-source-wordcount: '1571'
+source-wordcount: '1610'
 ht-degree: 2%
 
 ---
@@ -13,11 +13,11 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->此集成适用于[Adobe Campaign 8.4或更高版本](https://experienceleague.adobe.com/docs/campaign/campaign-v8/new/release-notes.html?lang=zh-Hans#release-8-4-1)。
+>此集成适用于[Adobe Campaign 8.4或更高版本](https://experienceleague.adobe.com/docs/campaign/campaign-v8/new/release-notes.html#release-8-4-1)。
 
 ## 概述 {#overview}
 
-Adobe Campaign Managed Cloud Services提供了跨渠道客户体验设计平台，并为可视化的活动编排、实时互动管理和跨渠道执行提供了环境。 [开始使用营销活动](https://experienceleague.adobe.com/docs/campaign/campaign-v8/start/get-started.html?lang=zh-Hans)
+Adobe Campaign Managed Cloud Services提供了跨渠道客户体验设计平台，并为可视化的活动编排、实时互动管理和跨渠道执行提供了环境。 [开始使用营销活动](https://experienceleague.adobe.com/docs/campaign/campaign-v8/start/get-started.html)
 
 使用 Campaign 可以：
 
@@ -31,7 +31,7 @@ Adobe Campaign Managed Cloud Services提供了跨渠道客户体验设计平台�
 
 * 您最多可以[激活](#activate)25个受众到此目标。
 
-  您可以通过更新Campaign资源管理器的&#x200B;**>** > **[!UICONTROL Administration]**&#x200B;文件夹中的&#x200B;**[!UICONTROL Platform]** NmsCdp_Aep_Audience_List_Limit **[!UICONTROL Options]**&#x200B;选项的值来更改此限制。
+  您可以通过更新Campaign资源管理器的&#x200B;**>** > **[!UICONTROL Administration]**&#x200B;文件夹中的&#x200B;**[!UICONTROL Platform]** NmsCdp_Aep_Audience_List_Limit **[!UICONTROL Options]**&#x200B;选项的值来更改此限制。 此护栏限制了在所有配置的目标中可导出到单个Campaign实例的Experience Platform受众总数。
 
 * 对于每个受众，您最多可以添加20个字段到[将](#map)映射到Adobe Campaign。
 
@@ -40,6 +40,7 @@ Adobe Campaign Managed Cloud Services提供了跨渠道客户体验设计平台�
 * Azure Blob Storage Data Landing Zone (DLZ)上的数据保留：7天。
 * 激活频率至少为3小时。
 * 此连接支持的最大文件名长度为255个字符。 当您[配置导出的文件名](../../ui/activate-batch-profile-destinations.md#configure-file-names)时，请确保文件名不超过255个字符。 超过最大文件名长度会导致激活错误。
+* 将受众导出到Adobe Campaign时，不支持包含特殊字符（例如： `&`）的区段/受众。
 
 ## 用例 {#use-cases}
 
@@ -60,7 +61,7 @@ Adobe Campaign Managed Cloud Services提供了跨渠道客户体验设计平台�
   >
   >配置文件属性同步适用于Adobe Campaign数据库中已存在的配置文件。
 
-[了解有关Adobe Campaign与Adobe Experience Platform集成的更多信息](https://experienceleague.adobe.com/docs/campaign/campaign-v8/connect/ac-aep.html?lang=zh-Hans)
+[了解有关Adobe Campaign与Adobe Experience Platform集成的更多信息](https://experienceleague.adobe.com/docs/campaign/campaign-v8/connect/ac-aep.html)
 
 ## 支持的身份 {#supported-identities}
 
@@ -105,7 +106,7 @@ Adobe Campaign Managed Cloud Services提供了跨渠道客户体验设计平台�
 * **[!UICONTROL Name]**：将来用于识别此目标的名称。
 * **[!UICONTROL Description]**：可帮助您将来识别此目标的描述。
 * **[!UICONTROL Select instance]**：您的&#x200B;**[!DNL Campaign]**&#x200B;营销实例。
-* **[!UICONTROL Target mapping]**：选择您在&#x200B;**[!DNL Adobe Campaign]**&#x200B;中使用的目标映射以发送投放。 [了解详情](https://experienceleague.adobe.com/docs/campaign/campaign-v8/profiles-and-audiences/add-profiles/target-mappings.html?lang=zh-Hans)。
+* **[!UICONTROL Target mapping]**：选择您在&#x200B;**[!DNL Adobe Campaign]**&#x200B;中使用的目标映射以发送投放。 [了解详情](https://experienceleague.adobe.com/docs/campaign/campaign-v8/profiles-and-audiences/add-profiles/target-mappings.html)。
 * **[!UICONTROL Select sync type]**：
 
    * **[!UICONTROL Audience sync]**：使用此选项将Adobe Experience Platform受众发送到Adobe Campaign。
@@ -130,7 +131,7 @@ Adobe Campaign Managed Cloud Services提供了跨渠道客户体验设计平台�
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
-有关将受众数据激活到此目标的说明，请阅读[将受众数据激活到批量配置文件导出目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=zh-Hans)。
+有关将受众数据激活到此目标的说明，请阅读[将受众数据激活到批量配置文件导出目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html)。
 
 ### 映射属性和身份 {#map}
 
@@ -159,7 +160,7 @@ Adobe Campaign Managed Cloud Services提供了跨渠道客户体验设计平台�
 
    ![](../../assets/catalog/email-marketing/adobe-campaign-managed-services/mapping.png)
 
-1. 执行映射后，您可以查看并完成目标配置以开始向&#x200B;**[!DNL Campaign]**&#x200B;发送数据。
+1. 执行映射后，您可以查看并完成目标配置以开始向&#x200B;**[!DNL Campaign]**发送数据。
    [了解如何查看和完成目标配置](/help/destinations/destination-types.md#review)。
 
 ## 导出的数据/验证数据导出 {#exported-data}
