@@ -5,9 +5,9 @@ product: experience platform
 type: Documentation
 description: 了解轮廓数据和分段的性能和系统强制护栏，以确保充分使用 Real-Time CDP 功能。
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: f5ae9170b312d9f24c863a14b8cc2310fcaf1cb2
+source-git-commit: 28009ec826e76a9ef07f0c36ff1a7230ced812eb
 workflow-type: tm+mt
-source-wordcount: '2668'
+source-wordcount: '2744'
 ht-degree: 2%
 
 ---
@@ -18,7 +18,7 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 
 >[!IMPORTANT]
 >
->除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/cn/legal/product-descriptions.html)中的实际使用限制。
+>除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/legal/product-descriptions.html)中的实际使用限制。
 >
 >或者，您可以使用[Capacity服务](../landing/license-usage-and-guardrails/capacity.md)在Experience Platform中监控和设置流吞吐量及其他。
 
@@ -126,14 +126,17 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 | 每个沙盒的流受众 | 500 | 性能护栏 | 每个沙盒最多可以有500个&#x200B;**活动**&#x200B;流受众。 只要每个&#x200B;**个人**&#x200B;沙盒中的流受众少于500个，则每个组织可以拥有超过500个流受众。 其中包括流受众和Edge受众。 尝试创建其他流受众可能会影响系统性能。 阅读有关[流式受众](/help/segmentation/methods/streaming-segmentation.md)的更多信息。 |
 | 流传输所有沙盒的吞吐量 | 1500 RPS | 性能护栏 | 流式分段支持您的生产和开发沙盒中每秒1500个入站事件的峰值组合。 流式分段最多可能需要5分钟才能使配置文件获得区段成员资格。 阅读有关[流式受众](/help/segmentation/methods/streaming-segmentation.md)的更多信息。 |
 | 每个沙盒的批量受众 | 4000 | 性能护栏 | 每个沙盒最多可以有4000个&#x200B;**活动**&#x200B;批次受众。 只要每个&#x200B;**个人**&#x200B;沙盒中有少于4000个批次受众，则每个组织可以有4000个以上的批次受众。 尝试创建其他批处理受众可能会影响系统性能。 |
-| 每个沙盒的帐户受众 | 50 | 系统强制的护栏 | 在一个沙盒中最多可创建50个帐户受众。 在一个沙盒中达到50个受众后，在尝试创建新帐户受众时，**[!UICONTROL 创建受众]**&#x200B;控件被禁用。 了解有关[帐户受众](/help/segmentation/types/account-audiences.md)的更多信息。 |
+| 每个沙盒的帐户受众 | 50 | 系统强制的护栏 | 在一个沙盒中最多可创建50个帐户受众。 在一个沙盒中达到50个受众后，在尝试创建新帐户受众时将禁用&#x200B;**[!UICONTROL Create audience]**&#x200B;控件。 了解有关[帐户受众](/help/segmentation/types/account-audiences.md)的更多信息。 |
 | 每个沙盒已发布的合成 | 10 | 性能护栏 | 一个沙盒中最多可以有10个已发布的合成。 有关UI指南[中](/help/segmentation/ui/audience-composition.md)受众组合的详细信息。 **注意**：使用联合受众组合创建的合成&#x200B;**不包括在此护栏中**。 |
 | 最大受众规模 | 30% | 性能护栏 | 建议的最大受众成员数为系统中配置文件总数的30%。 将超过30%的用户档案创建为成员或多个大型受众是可行的，但将影响系统性能。 |
 | 灵活的受众评估运行 | 每年50（生产沙盒）<br/>100（开发沙盒） | 系统强制的护栏 | 您每年每个&#x200B;**生产**&#x200B;沙盒最多有50次灵活的受众评估运行。 每个&#x200B;**开发**&#x200B;沙盒每年最多可运行100次灵活受众评估。 |
 | 灵活的受众评估运行 | 每天2次 | 系统强制的护栏 | 每个沙盒每天最多运行2次。 |
 | 每次灵活受众评估运行的受众 | 20 | 系统强制的护栏 | 每个灵活受众评估运行最多可以有20个受众。 |
+| 每个B2B沙盒的区段定义 | 400 | 性能护栏 | 只要每个B2B沙盒中的区段定义少于400个，组织就可以总计超过400个区段定义。 尝试创建其他区段定义可能会影响系统性能。 有关详细信息，请阅读[Real-Time Customer Data Platform B2B edition的默认护栏](../rtcdp/b2b-guardrails.md)。 |
 
 {style="table-layout:auto"}
+
+要了解有关特定于B2B的护栏的更多信息，请参阅Real-Time Customer Data Platform B2B edition的[默认护栏](../rtcdp/b2b-guardrails.md)文档。
 
 ## 预期可用性
 
@@ -190,7 +193,7 @@ Dimension实体提供查找数据，可帮助和简化多实体区段定义，�
 请参阅Real-Time CDP产品描述文档中的以下文档，了解有关其他Experience Platform服务护栏、端到端延迟信息和许可信息的更多信息：
 
 * [Real-Time CDP护栏](/help/rtcdp/guardrails/overview.md)
-* [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=zh-Hans#end-to-end-latency-diagrams)。
-* [Real-Time Customer Data Platform (B2C Edition - Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams)。
+* [Real-Time Customer Data Platform (B2C Edition - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
