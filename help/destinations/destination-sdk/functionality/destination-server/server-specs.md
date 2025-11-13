@@ -2,9 +2,9 @@
 description: 了解如何通过“/authoring/destination-servers”端点在Adobe Experience Platform Destination SDK中配置目标服务器规范。
 title: 使用Destination SDK创建目标的服务器规范
 exl-id: 62202edb-a954-42ff-9772-863cea37a889
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 455886806d46a227eddb5ba060c15e1a00e13edf
 workflow-type: tm+mt
-source-wordcount: '2753'
+source-wordcount: '2775'
 ht-degree: 2%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -78,7 +78,7 @@ ht-degree: 2%
          "templatingStrategy":"NONE",
          "value":"Your/hardcoded/path/here"
       },
-      "useCase": "Your use case"
+      "useCase": "dlz_destination"
    }
 }
 ```
@@ -106,7 +106,7 @@ ht-degree: 2%
 }
 ```
 
-要允许用户选择从Experience Platform UI中的值，还必须在[目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)中将`region`参数定义为客户数据字段，如下所示：
+要允许用户选择从Experience Platform UI中的值，还必须在`region`目标配置[中将](../../authoring-api/destination-configuration/create-destination-configuration.md)参数定义为客户数据字段，如下所示：
 
 ```json
 "customerDataFields":[
@@ -153,7 +153,7 @@ ht-degree: 2%
 |---|---|---|
 | `name` | 字符串 | *必填。*&#x200B;表示您的服务器的友好名称，仅对Adobe可见。 合作伙伴或客户看不到此名称。 示例：`Moviestar destination server`。 |
 | `destinationServerType` | 字符串 | *必填。*&#x200B;为流式目标将此项设置为`URL_BASED`。 |
-| `templatingStrategy` | 字符串 | *必需。* <ul><li>如果您在`value`字段中使用模板化字段而不是硬编码值，请使用`PEBBLE_V1`。 如果您具有如下端点，请使用此选项： `https://api.moviestar.com/data/{{customerData.region}}/items`，用户必须从Experience Platform UI中选择该端点区域。 </li><li> 如果Adobe端不需要模板化转换，例如，如果您有如下端点，请使用`NONE`： `https://api.moviestar.com/data/items` </li></ul> |
+| `templatingStrategy` | 字符串 | *必需。* <ul><li>如果您在`PEBBLE_V1`字段中使用模板化字段而不是硬编码值，请使用`value`。 如果您具有如下端点，请使用此选项： `https://api.moviestar.com/data/{{customerData.region}}/items`，用户必须从Experience Platform UI中选择该端点区域。 </li><li> 如果Adobe端不需要模板化转换，例如，如果您有如下端点，请使用`NONE`： `https://api.moviestar.com/data/items` </li></ul> |
 | `value` | 字符串 | *必填。*&#x200B;填写Experience Platform应连接到的API终结点的地址。 |
 
 {style="table-layout:auto"}
@@ -307,7 +307,7 @@ ht-degree: 2%
          "templatingStrategy":"PEBBLE_V1",
          "value":"{{customerData.path}}"
       },
-      "useCase": "Your use case"
+      "useCase": "dlz_destination"
    }
 }
 ```
@@ -318,6 +318,7 @@ ht-degree: 2%
 | `destinationServerType` | 字符串 | 根据目标平台设置此值。 对于[!DNL Data Landing Zone]目标，请将此项设置为`FILE_BASED_DLZ`。 |
 | `fileBasedDlzDestination.path.templatingStrategy` | 字符串 | *必需*。 根据`path.value`字段中使用的值类型设置此值。<ul><li>如果希望用户在Experience Platform UI中输入自己的[!DNL Data Landing Zone]帐户，请将此值设置为`PEBBLE_V1`。 在这种情况下，您必须对`path.value`字段进行模板化，以从用户填写的[客户数据字段](../destination-configuration/customer-data-fields.md)中读取值。 上述示例中显示了此用例。</li><li>如果您正在使用硬编码路径进行集成，如`"path.value": "https://myaccount.blob.core.windows.net/"`，则将此值设置为`NONE`。 |
 | `fileBasedDlzDestination.path.value` | 字符串 | 将托管导出文件的目标文件夹的路径。 |
+| `fileBasedDlzDestination.useCase` | 字符串 | *必需*。 将此项设置为`"dlz_destination"`。 此属性将目标标识为[!DNL Data Landing Zone]目标。 此属性仅在创建[!DNL Data Landing Zone]目标时使用。 |
 
 {style="table-layout:auto"}
 
