@@ -3,10 +3,10 @@ keywords: google客户匹配；Google客户匹配；Google客户匹配
 title: Google Customer Match连接
 description: Google Customer Match允许您使用在线和离线数据，通过Google自有资产和运营资产（如搜索、购物和Gmail）与客户联系并重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: a119418e8da7594a99116b4de65f60fdaa95ba8e
 workflow-type: tm+mt
-source-wordcount: '2413'
-ht-degree: 8%
+source-wordcount: '2719'
+ht-degree: 7%
 
 ---
 
@@ -15,12 +15,12 @@ ht-degree: 8%
 >[!IMPORTANT]
 >
 > Google将发布对[Google Ads API](https://developers.google.com/google-ads/api/docs/start)、[Customer Match](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html)和[Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview)的更改，以支持欧盟（[EU用户同意政策](https://digital-markets-act.ec.europa.eu/index_en)）中[Digital Markets Act](https://www.google.com/about/company/user-consent-policy/) (DMA)定义的合规性和同意相关要求。 自2024年3月6日起，将开始实施对同意要求的这些更改。
-> &#x200B;><br/>
-> &#x200B;>为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为 Google 合作伙伴，Adobe 为您提供必要的工具，以遵守欧盟 DMA 下的这些同意要求。
-> &#x200B;><br/>
-> &#x200B;>如果客户购买了Adobe Privacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未经同意的用户档案，则无需采取任何操作。
-> &#x200B;><br/>
-> &#x200B;>未购买Adobe Privacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/home.md#segment-definitions)中的[区段定义](../../../segmentation/ui/segment-builder.md)功能来过滤掉未经同意的用户档案，以便继续使用现有的Real-Time CDP Google目标而不中断。
+><br/>
+>为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为 Google 合作伙伴，Adobe 为您提供必要的工具，以遵守欧盟 DMA 下的这些同意要求。
+><br/>
+>如果客户购买了Adobe Privacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未经同意的用户档案，则无需采取任何操作。
+><br/>
+>未购买Adobe Privacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/home.md#segment-definitions)中的[区段定义](../../../segmentation/ui/segment-builder.md)功能来过滤掉未经同意的用户档案，以便继续使用现有的Real-Time CDP Google目标而不中断。
 
 [[!DNL Google Customer Match]](https://support.google.com/google-ads/answer/6379332?hl=en)允许您使用在线和离线数据，通过Google拥有和运营的资产（如： [!DNL Search]、[!DNL Shopping]和[!DNL Gmail]）联系客户并重新与其互动。
 
@@ -130,7 +130,7 @@ Experience Platform中的某些目标对于发送到目标平台或从目标平�
 * [[!DNL Customer Match] 电子邮件地址、地址或用户ID](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_email_address_address_or_user_id)
 * [[!DNL Customer Match] 注意事项](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_considerations)
 * [[!DNL Customer Match] 使用电话号码](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_phone_number)
-* 具有移动设备ID的[[!DNL Customer Match] &#x200B;](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_mobile_device_ids)
+* 具有移动设备ID的[[!DNL Customer Match] ](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_mobile_device_ids)
 
 
 要了解如何在Experience Platform中摄取电子邮件地址，请参阅[批次摄取概述](../../../ingestion/batch-ingestion/overview.md)和[流式摄取概述](../../../ingestion/streaming-ingestion/overview.md)。
@@ -156,13 +156,13 @@ Attribute source data is not automatically hashed. When your source field contai
 
 The video below demonstrates the steps to configure a [!DNL Google Customer Match] destination and activate audiences. The steps are also laid out sequentially in the next sections.
 
->[!VIDEO](https://video.tv.adobe.com/v/3411783/?quality=12&learn=on&captions=chi_hans) -->
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng) -->
 
 ## 视频概述 {#video-overview}
 
 观看以下视频，了解如何获取优势以及如何将数据激活到Google Customer Match。
 
->[!VIDEO](https://video.tv.adobe.com/v/326483?captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/38180/)
 
 ## 连接到目标 {#connect}
 
@@ -187,6 +187,12 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 >[!IMPORTANT]
 >
 > * 默认情况下已为&#x200B;**[!UICONTROL Combine with PII]**&#x200B;目标选择[!DNL Google Customer Match]营销操作，无法移除。
+
+### 身份验证和权限 {#authentication-permissions}
+
+当您连接Google Ads帐户时，Google会提示您授予对Adobe应用程序的访问权限。 您必须批准Google广告API权限，这样Adobe才能创建和管理您的客户列表。 使用对要激活的客户帐户具有“标准”或“更高”访问权限的Google Ads用户。 如果您使用的是经理帐户(MCC)，请使用客户帐户上的用户登录，并提供客户帐户ID（而不是MCC ID）。
+
+如果在OAuth流程期间未授予Google广告权限，则激活稍后可能会失败，并出现Google Ads API错误。 有关如何解决权限相关错误的更多信息，请参阅[疑难解答部分](#troubleshooting)。
 
 ### 启用警报 {#enable-alerts}
 
@@ -218,7 +224,7 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 * 如果您使用的电子邮件地址未经过哈希处理，请选择`Email`命名空间作为源标识。
 * 如果您根据`Email_LC_SHA256` [!DNL Experience Platform]电子邮件哈希处理要求[!DNL Google Customer Match]将数据摄取到[时已将客户电子邮件地址哈希处理，请选择](#hashing-requirements)命名空间作为源标识。
 * 如果您的数据由非散列电话号码组成，请选择`PHONE_E.164`命名空间作为源标识。 [!DNL Experience Platform]将散列电话号码以符合[!DNL Google Customer Match]要求。
-* 如果您根据`Phone_SHA256_E.164` [!DNL Experience Platform]电话号码散列要求[!DNL Facebook]将数据提取到[中时散列电话号码，请选择](#phone-number-hashing-requirements)命名空间作为源标识。
+* 如果您根据`Phone_SHA256_E.164` [!DNL Experience Platform]电话号码散列要求[!DNL Google Customer Match]将数据提取到[中时散列电话号码，请选择](#phone-number-hashing-requirements)命名空间作为源标识。
 * 如果您的数据包含`IDFA`个设备ID，请选择[!DNL Apple]命名空间作为源标识。
 * 如果您的数据包含`GAID`个设备ID，请选择[!DNL Android]命名空间作为源标识。
 * 如果您的数据包含其他类型的标识符，请选择`Custom`命名空间作为源标识。
@@ -261,3 +267,26 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 `{"message":"Google Customer Match Error: OperationAccessDenied.ACTION_NOT_PERMITTED","code":"400 BAD_REQUEST"}`
 
 当客户帐户不符合[先决条件](#google-account-prerequisites)时，会发生此错误。 要解决此问题，请联系Google并确保您的帐户已列入允许列表并配置为[!DNL Standard]或更高权限级别。 有关详细信息，请参阅[Google广告文档](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&rd=1)。
+
+### 500内部服务器错误 — 身份验证作用域不足 {#insufficient-scopes}
+
+将受众激活到此目标时，您可能会收到以下错误：
+
+`{"message":"com.google.api.gax.rpc.PermissionDeniedException: io.grpc.StatusRuntimeException: PERMISSION_DENIED: Request had insufficient authentication scopes.","code":"500 INTERNAL_SERVER_ERROR"}`
+
+当创建用于此目标连接的Google OAuth令牌时没有所需的Google Ads API范围，或者登录用户缺少目标客户帐户的足够权限时，会发生此错误。
+
+要解决此问题，请执行以下步骤：
+
+1. **为此目标帐户重新生成Google身份验证**，并确保您接受请求的Google Ads权限：
+   * 在Experience Platform中，转到&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Accounts]**
+   * 找到您的Google Customer Match帐户
+   * 选择&#x200B;**[!UICONTROL More actions]** (⋯) > **[!UICONTROL Edit]** > **[!UICONTROL Renew]**
+   * 完成Google登录和同意流程，并批准所有请求的权限
+2. 如果您通过经理帐户(MCC)管理广告，请确认您正在向对目标客户帐户具有[!DNL Standard]或更高访问权限的用户进行身份验证，并且目标中配置的&#x200B;**[!UICONTROL Account ID]**&#x200B;是客户帐户ID（而不是MCC ID）。
+3. 重新运行激活。
+
+如果问题仍然存在：
+
+* 验证您的Google Ads帐户是否已列入允许列表为符合客户要求并符合[政策要求](#google-account-prerequisites)。
+* 确保用户在Google Ads客户帐户中的访问级别为[!DNL Standard]或更高。 有关详细信息，请参阅[Google广告文档](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&rd=1)。
