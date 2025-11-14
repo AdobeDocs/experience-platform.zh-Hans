@@ -47,7 +47,7 @@ XDM是一个公开记录的规范，为应用程序提供了通用结构和定�
 >
 >请按照以下最佳实践操作，避免超出您的许可证权利范围，并避免超出您的总存储和数据丰富度指标：
 >
->* 一开始就设置体验事件数据集保留生存时间(TTL) ，以优化数据生命周期管理和存储效率。 有关更多详细信息，请参阅有关使用TTL在数据湖中管理Experience Event数据集保留的指南[](../../../catalog/datasets/experience-event-dataset-retention-ttl-guide.md)。
+>* 一开始就设置体验事件数据集保留生存时间(TTL) ，以优化数据生命周期管理和存储效率。 有关更多详细信息，请参阅有关使用TTL在数据湖中管理Experience Event数据集保留的指南[&#128279;](../../../catalog/datasets/experience-event-dataset-retention-ttl-guide.md)。
 >
 >* 创建Analytics源数据流时，首先要将连接器配置为仅将数据摄取到数据湖中。 确认数据流可以正常工作后，您可以为数据集启用配置文件摄取。 当行和列过滤器有效地减少数据量时，这种方法效果最佳。 请参阅[将Adobe Analytics连接到Experience Platform](../../tutorials/ui/create/adobe-applications/analytics.md)文档以了解详情。
 
