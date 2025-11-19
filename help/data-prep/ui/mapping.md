@@ -3,14 +3,19 @@ keywords: Experience Platform；主页；热门主题；映射csv；映射csv文
 title: 数据准备UI指南
 description: 了解如何在Experience Platform UI中使用数据准备函数将CSV文件映射到XDM架构。
 exl-id: fafa4aca-fb64-47ff-a97d-c18e58ae4dae
-source-git-commit: c9638cdca887f439c57f1dc01f93d63016869b29
+source-git-commit: 789d00912edd0ce8e2871b7e22445a043868ccf5
 workflow-type: tm+mt
-source-wordcount: '1505'
+source-wordcount: '1416'
 ht-degree: 0%
 
 ---
 
-# 数据准备UI指南
+# 数据准备UI指南 {#data-prep-ui-guide}
+
+>[!CONTEXTUALHELP]
+>id="platform_data_prep_import_mapping"
+>title="下载模板"
+>abstract="下载csv模板以离线执行映射。"
 
 阅读本指南，了解如何使用Adobe Experience Platform用户界面中的[数据准备](../home.md)映射函数将CSV文件映射到[体验数据模型(XDM)架构](../../xdm/home.md)。
 
@@ -29,7 +34,7 @@ ht-degree: 0%
 
 您可以通过两种不同的路径访问UI中的映射界面。
 
-1. 在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 工作流]**，然后选择&#x200B;**[!UICONTROL 将CSV映射到XDM架构]**。 接下来，提供数据流详细信息并选择要摄取的数据。 完成后，您将转到映射界面，您可以在其中配置源数据和XDM架构之间的映射。
+1. 在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL Workflows]**，然后选择&#x200B;**[!UICONTROL Map CSV to XDM schema]**。 接下来，提供数据流详细信息并选择要摄取的数据。 完成后，您将转到映射界面，您可以在其中配置源数据和XDM架构之间的映射。
 2. 您还可以通过源工作区访问映射界面。
 
 ## 将CSV文件映射到XDM架构
@@ -44,10 +49,10 @@ ht-degree: 0%
 
 | 属性 | 描述 |
 | --- | --- |
-| [!UICONTROL 映射的字段] | 显示已映射到目标XDM字段的源字段总数，无论是否存在错误。 |
-| [!UICONTROL 必填字段] | 显示所需映射字段的数量。 |
-| [!UICONTROL 标识字段] | 显示定义为标识的映射字段总数。 这些映射字段由指纹图标表示。 |
-| [!UICONTROL 个错误] | 显示错误映射字段的数量。 |
+| [!UICONTROL Mapped fields] | 显示已映射到目标XDM字段的源字段总数，无论是否存在错误。 |
+| [!UICONTROL Required fields] | 显示所需映射字段的数量。 |
+| [!UICONTROL Identity fields] | 显示定义为标识的映射字段总数。 这些映射字段由指纹图标表示。 |
+| [!UICONTROL Errors] | 显示错误映射字段的数量。 |
 
 {style="table-layout:auto"}
 
@@ -55,32 +60,32 @@ ht-degree: 0%
 
 | 选项 | 描述 |
 | --- | --- |
-| [!UICONTROL 搜索源字段] | 使用搜索栏导航到特定源字段。 |
-| [!UICONTROL 所有字段] | 选择&#x200B;**[!UICONTROL 所有字段]**&#x200B;以查看用于筛选映射的选项的下拉菜单。 可用的筛选选项包括：<ul><li>**[!UICONTROL 必填字段]**：筛选界面以仅显示完成工作流所需的字段。</li><li> **[!UICONTROL 标识字段]**：筛选界面以仅显示标记为标识的字段。</li><li>**[!UICONTROL 映射的字段]**：筛选界面以仅显示已映射的字段。</li><li>**[!UICONTROL 未映射的字段]**：筛选界面以仅显示尚未映射的字段。</li><li>**[!UICONTROL 有错误的字段]**：筛选界面以仅显示有错误的字段。</li></ul> |
-| [!UICONTROL 新字段类型] | 选择&#x200B;**[!UICONTROL 新字段类型]**&#x200B;以添加新字段或计算字段。 有关详细信息，请阅读有关[添加新字段类型](#add-a-new-field-type)的部分。 |
-| [!UICONTROL 导入映射] | 选择&#x200B;**[!UICONTROL 导入映射]**&#x200B;以从现有文件或数据流导入映射。 有关详细信息，请阅读有关[导入映射](#import-mapping)的部分。 |
-| [!UICONTROL 验证] | 选择&#x200B;**[!UICONTROL 验证]**&#x200B;以检查映射中是否存在错误。 |
-| [!UICONTROL 下载模板] | 选择&#x200B;**[!UICONTROL 下载模板]**&#x200B;以导出并下载映射的CSV文件。 |
-| [!UICONTROL 预览数据] | 选择&#x200B;**[!UICONTROL 预览数据]**&#x200B;以使用预览面板并检查源数据集的结构和内容。 |
-| [!UICONTROL 全部清除] | 选择&#x200B;**[!UICONTROL 全部清除]**&#x200B;以删除界面中的所有映射。 |
+| [!UICONTROL Search source fields] | 使用搜索栏导航到特定源字段。 |
+| [!UICONTROL All fields] | 选择&#x200B;**[!UICONTROL All fields]**&#x200B;以查看包含用于筛选映射的选项的下拉菜单。 可用的筛选选项包括：<ul><li>**[!UICONTROL Required fields]**：筛选界面以仅显示完成工作流所需的字段。</li><li> **[!UICONTROL Identity fields]**：筛选界面以仅显示标记为标识的字段。</li><li>**[!UICONTROL Mapped fields]**：筛选界面以仅显示已映射的字段。</li><li>**[!UICONTROL Unmapped fields]**：筛选界面以仅显示尚未映射的字段。</li><li>**[!UICONTROL Fields with errors]**：筛选接口以仅显示有错误的字段。</li></ul> |
+| [!UICONTROL New field type] | 选择&#x200B;**[!UICONTROL New field type]**&#x200B;以添加新字段或计算字段。 有关详细信息，请阅读有关[添加新字段类型](#add-a-new-field-type)的部分。 |
+| [!UICONTROL Import mappings] | 选择&#x200B;**[!UICONTROL Import mappings]**&#x200B;以从现有文件或数据流导入映射。 有关详细信息，请阅读有关[导入映射](#import-mapping)的部分。 |
+| [!UICONTROL Validate] | 选择&#x200B;**[!UICONTROL Validate]**&#x200B;以检查映射中的错误。 |
+| [!UICONTROL Download template] | 选择&#x200B;**[!UICONTROL Download template]**&#x200B;以导出和下载映射的CSV文件。 |
+| [!UICONTROL Preview data] | 选择&#x200B;**[!UICONTROL Preview data]**&#x200B;以使用预览面板并检查源数据集的结构和内容。 |
+| [!UICONTROL Clear all] | 选择&#x200B;**[!UICONTROL Clear all]**&#x200B;以删除界面中的所有映射。 |
 
 {style="table-layout:auto"}
 
 ### 添加新字段类型 {#add-a-new-field-type}
 
-您可以通过选择&#x200B;**[!UICONTROL 新字段类型]**&#x200B;来添加新的映射字段或计算字段。
+您可以通过选择&#x200B;**[!UICONTROL New field type]**&#x200B;来添加新的映射字段或计算字段。
 
 #### 新建映射字段
 
-要添加新映射字段，请选择&#x200B;**[!UICONTROL 新字段类型]**，然后从出现的下拉菜单中选择&#x200B;**[!UICONTROL 添加新字段]**。
+要添加新映射字段，请选择&#x200B;**[!UICONTROL New field type]**，然后从显示的下拉菜单中选择&#x200B;**[!UICONTROL Add new field]**。
 
 ![选择了“添加新字段”按钮的映射接口。](../images/ui/mapping/add_new_field.png)
 
-接下来，从显示的源架构树中选择要添加的源字段，然后选择&#x200B;**[!UICONTROL 选择]**。
+接下来，从显示的源架构树中选择要添加的源字段，然后选择&#x200B;**[!UICONTROL Select]**。
 
 ![已选择“国家/地区”作为附加新字段的源架构。](../images/ui/mapping/source_field.png)
 
-映射界面将使用您选择的源字段和空的目标字段进行更新。 选择&#x200B;**[!UICONTROL 映射目标字段]**&#x200B;以开始将新的源字段映射到其相应的目标XDM字段。
+映射界面将使用您选择的源字段和空的目标字段进行更新。 选择&#x200B;**[!UICONTROL Map target field]**&#x200B;开始将新的源字段映射到其相应的目标XDM字段。
 
 ![具有新的未映射源字段的映射接口。](../images/ui/mapping/new_field_added.png)
 
@@ -92,21 +97,21 @@ ht-degree: 0%
 
 计算字段允许根据输入架构中的属性创建值。 然后，可以将这些值分配给目标架构中的属性，并提供名称和描述以便更轻松地引用。 计算字段的最大长度为4096个字符。
 
-要创建计算字段，请选择&#x200B;**[!UICONTROL 新字段类型]**，然后选择&#x200B;**[!UICONTROL 添加计算字段]**
+要创建计算字段，请选择&#x200B;**[!UICONTROL New field type]**，然后选择&#x200B;**[!UICONTROL Add calculated field]**
 
 ![选择了“添加计算字段”按钮的映射接口。](../images/ui/mapping/new_calculated_field.png)
 
-出现&#x200B;**[!UICONTROL 创建计算字段]**&#x200B;窗口。 使用界面输入计算字段，并参阅左侧的对话框以了解支持的字段、函数和运算符。
+出现&#x200B;**[!UICONTROL Create calculated field]**&#x200B;窗口。 使用界面输入计算字段，并参阅左侧的对话框以了解支持的字段、函数和运算符。
 
 | 选项卡 | 描述 |
 | --- | ----------- |
-| [!UICONTROL 函数] | 函数选项卡列出了可用于转换数据的函数。 若要了解有关可在计算字段中使用的函数的更多信息，请阅读有关[使用数据准备（映射器）函数](../functions.md)的指南。 |
-| [!UICONTROL 字段] | 字段选项卡列出了源架构中可用的字段和属性。 |
-| [!UICONTROL 操作员] | 运算符选项卡列出了可用于转换数据的运算符。 |
+| [!UICONTROL Function] | 函数选项卡列出了可用于转换数据的函数。 若要了解有关可在计算字段中使用的函数的更多信息，请阅读有关[使用数据准备（映射器）函数](../functions.md)的指南。 |
+| [!UICONTROL Field] | 字段选项卡列出了源架构中可用的字段和属性。 |
+| [!UICONTROL Operator] | 运算符选项卡列出了可用于转换数据的运算符。 |
 
 ![计算字段接口](../images/ui/mapping/calculated_field.png)
 
-您可以使用位于中心的表达式编辑器手动添加字段、函数和运算符。 选择编辑器以开始创建表达式。 完成后，选择&#x200B;**[!UICONTROL 保存]**&#x200B;以继续。
+您可以使用位于中心的表达式编辑器手动添加字段、函数和运算符。 选择编辑器以开始创建表达式。 完成后，选择&#x200B;**[!UICONTROL Save]**&#x200B;以继续。
 
 ### 导入映射 {#import-mapping}
 
@@ -114,15 +119,15 @@ ht-degree: 0%
 
 >[!BEGINTABS]
 
->[!TAB 从流导入映射]
+>[!TAB 从流]导入映射
 
 如果您有多个基于相似源文件和目标架构的数据流，则可以导入现有映射并将其重新用于新数据流。
 
-要从现有数据流导入映射，请选择&#x200B;**[!UICONTROL 导入映射]**，然后选择&#x200B;**[!UICONTROL 从流]**&#x200B;导入映射。
+要从现有数据流导入映射，请选择&#x200B;**[!UICONTROL Import mappings]**，然后选择&#x200B;**[!UICONTROL Import mapping from flow]**。
 
 ![已选择具有“导入映射”和“从流导入映射”的映射接口。](../images/ui/mapping/import_from_flow.png)
 
-接下来，使用弹出窗口找到要导入其映射的数据流。 在此步骤中，您还可以使用搜索功能来隔离特定数据流并检索其映射。 完成后，选择&#x200B;**[!UICONTROL 选择]**。
+接下来，使用弹出窗口找到要导入其映射的数据流。 在此步骤中，您还可以使用搜索功能来隔离特定数据流并检索其映射。 完成后，选择&#x200B;**[!UICONTROL Select]**。
 
 ![可以导入其相应映射的现有数据流列表。](../images/ui/mapping/import_flow_window.png)
 
@@ -130,11 +135,11 @@ ht-degree: 0%
 
 在某些情况下，您可能需要为数据实施大量映射。 您可以使用映射界面手动执行此操作，但也可以导出映射模板并在离线电子表格上配置映射，以节省时间并避免用户在Experience Platform上超时。
 
-若要从导出的文件导入映射，请选择&#x200B;**[!UICONTROL 导入映射]**，然后选择&#x200B;**[!UICONTROL 从文件]**&#x200B;导入映射。
+要从导出的文件导入映射，请选择&#x200B;**[!UICONTROL Import mappings]**，然后选择&#x200B;**[!UICONTROL Import mapping from file]**。
 
 ![已选择具有“导入映射”和“从文件导入映射”的映射接口。](../images/ui/mapping/import_from_file.png)
 
-接下来，使用[!UICONTROL 上载模板]窗口下载映射的CSV副本。 然后，您可以使用支持编辑CSV文件类型的任何软件，在设备上本地配置映射。 在此步骤中，您必须确保仅使用源文件和目标架构中提供的字段。
+接下来，使用[!UICONTROL Upload template]窗口下载映射的CSV副本。 然后，您可以使用支持编辑CSV文件类型的任何软件，在设备上本地配置映射。 在此步骤中，您必须确保仅使用源文件和目标架构中提供的字段。
 
 ![上载模板窗口，该窗口显示用于下载和上载映射的导出csv文件的选项。](../images/ui/mapping/upload_template.png)
 
@@ -144,13 +149,13 @@ ht-degree: 0%
 
 +++
 
-完成后，选择&#x200B;**[!UICONTROL 上载文件]**，然后选择映射的更新csv文件。 等待系统处理一段时间，然后选择&#x200B;**[!UICONTROL 完成]**。
+完成后，选择&#x200B;**[!UICONTROL Upload file]**&#x200B;并选择映射的更新csv文件。 请稍等片刻让系统处理，然后选择&#x200B;**[!UICONTROL Done]**。
 
 ![上载了新文件的上载模板窗口。](../images/ui/mapping/upload_successful.png)
 
 >[!ENDTABS]
 
-映射完成后，您现在可以选择&#x200B;**[!UICONTROL 完成]**，然后继续下一步以完成数据流。
+完成映射后，您现在可以选择&#x200B;**[!UICONTROL Finish]**&#x200B;并继续下一步以完成数据流。
 
 >[!TIP]
 >
