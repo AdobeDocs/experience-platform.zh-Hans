@@ -326,7 +326,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/b31aed3d-b3b1-4
 
 以下视频演示了如何在Experience Platform中访问和使用灵活的受众评估。
 
->[!VIDEO](https://video.tv.adobe.com/v/3453640?)
+>[!VIDEO](https://video.tv.adobe.com/v/3453650?captions=chi_hans&)
 
 ## 常见问题解答 {#faq}
 

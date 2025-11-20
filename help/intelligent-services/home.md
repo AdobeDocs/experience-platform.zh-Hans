@@ -22,7 +22,7 @@ ht-degree: 2%
 
 以下视频旨在支持您对Intelligent Services的理解。 本视频使用示例商业用例，说明了高级工作流程，并概述了归因人工智能和客户人工智能的功能。
 
->[!VIDEO](https://video.tv.adobe.com/v/32654?learn=on&quality=12)
+>[!VIDEO](https://video.tv.adobe.com/v/36593?captions=chi_hans&learn=on&quality=12)
 
 ## 智能服务的好处
 

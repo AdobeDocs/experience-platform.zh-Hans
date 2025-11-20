@@ -132,8 +132,8 @@ Adobe Experience Platform的核心功能之一是将来自多个企业系统的�
 
 以下视频旨在支持您了解数据管理框架。
 
->[!VIDEO](https://video.tv.adobe.com/v/29708?quality=12&enable10seconds=on&speedcontrol=on)
+>[!VIDEO](https://video.tv.adobe.com/v/32134?captions=chi_hans&quality=12&enable10seconds=on&speedcontrol=on)
 
 以下视频提供了有关如何将数据使用标签应用于您的架构或Experience Platform中的整个数据集的指南。
 
->[!VIDEO](https://video.tv.adobe.com/v/29709/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3422787/?captions=chi_hans&learn=on)

@@ -53,7 +53,7 @@ ht-degree: 4%
 
 请观看以下视频，快速了解如何在Experience Platform中使用沙盒。
 
->[!VIDEO](https://video.tv.adobe.com/v/29838/?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3430297/?captions=chi_hans&quality=12&learn=on)
 
 要创建新沙盒，请选择屏幕右上角的&#x200B;**[!UICONTROL Create sandbox]**。
 
