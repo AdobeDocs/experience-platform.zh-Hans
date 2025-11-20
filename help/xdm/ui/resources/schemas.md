@@ -83,7 +83,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->保存后，[!UICONTROL Type]侧边栏中的[!UICONTROL  Schema properties]字段指示这是[!UICONTROL Relational]架构。 架构库存视图的详细信息侧边栏中也指出了这一点。
+>保存后，[!UICONTROL Type]侧边栏中的[!UICONTROL &#x200B; Schema properties]字段指示这是[!UICONTROL Relational]架构。 架构库存视图的详细信息侧边栏中也指出了这一点。
 >![架构编辑器画布显示空的关系架构结构，突出显示了关系类型。](../../images/ui/resources/schemas/relational-empty-canvas.png)
 
 ### 上载DDL文件 {#upload-ddl-file}

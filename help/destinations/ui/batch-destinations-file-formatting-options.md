@@ -177,14 +177,14 @@ ht-degree: 17%
 *未显示在用户界面屏幕快照中*。 指示是否应跳过导出值前导空格的标记。
 
 已选择&#x200B;**[!UICONTROL True]**&#x200B;的示例输出： `"male","John","TestLastName"`
-已选择**[!UICONTROL False]**&#x200B;的示例输出： `" male","John","TestLastName"`
+已选择&#x200B;**[!UICONTROL False]**&#x200B;的示例输出： `" male","John","TestLastName"`
 
 ### 忽略尾随空格
 
 未显示在UI屏幕快照中。 指示是否应跳过导出值的尾随空格标志。
 
 已选择&#x200B;**[!UICONTROL True]**&#x200B;的示例输出： `"male","John","TestLastName"`
-已选择**[!UICONTROL False]**&#x200B;的示例输出： `"male ","John","TestLastName"`
+已选择&#x200B;**[!UICONTROL False]**&#x200B;的示例输出： `"male ","John","TestLastName"`
 
 ### 后续步骤 {#next-steps}
 

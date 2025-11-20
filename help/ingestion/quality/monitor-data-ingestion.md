@@ -44,7 +44,7 @@ ht-degree: 4%
 
 >[!NOTE]
 >
->为了让数据显示在此图表上，数据必须为&#x200B;**明确启用**[!DNL Profile]。 要了解如何为[!DNL Profile]启用流数据，请阅读[数据集用户指南](../../catalog/datasets/user-guide.md#enable-a-dataset-for-real-time-customer-profile)。
+>为了让数据显示在此图表上，数据必须为&#x200B;**明确启用**&#x200B;[!DNL Profile]。 要了解如何为[!DNL Profile]启用流数据，请阅读[数据集用户指南](../../catalog/datasets/user-guide.md#enable-a-dataset-for-real-time-customer-profile)。
 
 ![](../images/quality/monitor-data-flows/ingested-by-profile.png)
 
