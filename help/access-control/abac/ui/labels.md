@@ -29,7 +29,7 @@ ht-degree: 26%
 >id="platform_permissions_labels_about_create"
 >title="创建新标签"
 >abstract="可自行创建自定义标签以适合组织需求。自定义标签可用于将数据治理和访问控制配置应用于您的数据。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html#manage-labels" text="管理自定义标签"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html?lang=zh-Hans#manage-labels" text="管理自定义标签"
 
 >[!NOTE]
 >

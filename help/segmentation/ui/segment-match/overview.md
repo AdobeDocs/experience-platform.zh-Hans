@@ -15,9 +15,9 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->Adobe在2021年引入了[!DNL Segment Match]供客户协作和交换受众。 2025年初，Adobe引入了[Real-Time CDP Collaboration](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/home)，这是满足此用例的较长期方法。
+>Adobe在2021年引入了[!DNL Segment Match]供客户协作和交换受众。 2025年初，Adobe引入了[Real-Time CDP Collaboration](https://experienceleague.adobe.com/zh-hans/docs/real-time-cdp-collaboration/using/home)，这是满足此用例的较长期方法。
 >
->* 对于美国、加拿大、澳大利亚和新西兰的客户： Adobe建议Real-Time CDP Prime和Ultimate客户将数据协作用例从[!DNL Segment Match]过渡到Real-Time CDP Collaboration。 查看Real-Time CDP Collaboration的[文档](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/home)和[快速入门指南](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/quick-start-guide)，并联系Adobe客户团队以了解详情。
+>* 对于美国、加拿大、澳大利亚和新西兰的客户： Adobe建议Real-Time CDP Prime和Ultimate客户将数据协作用例从[!DNL Segment Match]过渡到Real-Time CDP Collaboration。 查看Real-Time CDP Collaboration的[文档](https://experienceleague.adobe.com/zh-hans/docs/real-time-cdp-collaboration/using/home)和[快速入门指南](https://experienceleague.adobe.com/zh-hans/docs/real-time-cdp-collaboration/using/quick-start-guide)，并联系Adobe客户团队以了解详情。
 >* 对于所有其他地区的客户：[!DNL Segment Match]是推荐选项，直到2026年在这些地区中发布Real-Time CDP Collaboration为止。
 
 Adobe Experience Platform区段匹配是一项区段共享服务，允许两个或更多Experience Platform用户以安全、受管且隐私友好的方式交换区段数据。 [!DNL Segment Match]使用Experience Platform隐私标准和个人标识符，例如经过哈希处理的电子邮件、经过哈希处理的电话号码以及设备标识符（如IDFA和GAID）。
@@ -51,7 +51,7 @@ Adobe Experience Platform区段匹配是一项区段共享服务，允许两个�
 
 | 命名空间 | 描述 |
 | --------- | ----------- |
-| 电子邮件（SHA256，小写） | 预哈希电子邮件地址的命名空间。使用SHA256进行哈希处理之前，此命名空间中提供的值将转换为小写。 在规范化电子邮件地址之前，需要修剪前导空格和尾随空格。 此设置不能进行追溯性更改。 Experience Platform提供两种方法，通过[`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html#hashing-support)和通过[数据准备](../../../data-prep/functions.md#hashing)来支持数据收集中的哈希处理。 |
+| 电子邮件（SHA256，小写） | 预哈希电子邮件地址的命名空间。使用SHA256进行哈希处理之前，此命名空间中提供的值将转换为小写。 在规范化电子邮件地址之前，需要修剪前导空格和尾随空格。 此设置不能进行追溯性更改。 Experience Platform提供两种方法，通过[`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html?lang=zh-Hans#hashing-support)和通过[数据准备](../../../data-prep/functions.md#hashing)来支持数据收集中的哈希处理。 |
 | 电话(SHA256_E.164) | 表示需要使用 SHA256 和 E.164 格式进行哈希处理的原始电话号码的命名空间。 |
 | ECID | 表示Experience Cloud ID (ECID)值的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 有关详细信息，请参阅[ECID概述](../../../identity-service/features/ecid.md)。 |
 | Apple IDFA（广告商的ID） | 表示广告商的Apple ID的命名空间。 有关详细信息，请参阅以下有关[基于兴趣的广告](https://support.apple.com/en-us/HT202074)的文档。 |

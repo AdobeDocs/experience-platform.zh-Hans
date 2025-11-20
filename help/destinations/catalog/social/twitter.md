@@ -24,7 +24,7 @@ ht-degree: 5%
 
 ## 支持的标识 {#supported-identities}
 
-[!DNL Twitter Custom Audiences]支持激活下表所述的标识。 详细了解[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started)。
+[!DNL Twitter Custom Audiences]支持激活下表所述的标识。 详细了解[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=zh-Hans#getting-started)。
 
 | 目标标识 | 描述 | 考虑事项 |
 |---|---|---|

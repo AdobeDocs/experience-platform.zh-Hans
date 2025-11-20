@@ -42,7 +42,7 @@ ht-degree: 7%
 |---|---|---|
 | GAID | [!DNL Google Advertising ID] |  |
 | IDFA | [!DNL Apple ID for Advertisers] |  |
-| AAM UUID | [Adobe Audience Manager [!DNL Unique User ID]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html)，也称为[!DNL Device ID]。 38位数字设备ID，Audience Manager与与其交互的每个设备相关联。 | Google使用[AAM UUID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html)来定位加利福尼亚州的用户，并使用Google Cookie ID来定位所有其他用户。 |
+| AAM UUID | [Adobe Audience Manager [!DNL Unique User ID]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html?lang=zh-Hans)，也称为[!DNL Device ID]。 38位数字设备ID，Audience Manager与与其交互的每个设备相关联。 | Google使用[AAM UUID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html?lang=zh-Hans)来定位加利福尼亚州的用户，并使用Google Cookie ID来定位所有其他用户。 |
 | [!DNL Google] Cookie ID | [!DNL Google] Cookie ID | [!DNL Google]使用此ID定位加州以外的用户。 |
 | RIDA | Advertising的Roku ID。 此ID唯一标识Roku设备。 |  |
 | 女佣 | Microsoft Advertising ID。 此ID唯一标识运行Windows 10的设备。 |  |
@@ -74,7 +74,7 @@ ht-degree: 7%
 
 ## 先决条件 {#prerequisites}
 
-如果您希望使用[!DNL Google Ad Manager]创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL Google]集成，则您设置的ID同步将会转移到Experience Platform。
+如果您希望使用[!DNL Google Ad Manager]创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html?lang=zh-Hans)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL Google]集成，则您设置的ID同步将会转移到Experience Platform。
 
 ### 允许列表 {#allow-listing}
 
