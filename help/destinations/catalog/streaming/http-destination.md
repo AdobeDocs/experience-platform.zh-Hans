@@ -6,7 +6,7 @@ badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
 source-git-commit: 7502810ff329a31f2fdaf6797bc7672118555e6a
 workflow-type: tm+mt
-source-wordcount: '2852'
+source-wordcount: '2752'
 ht-degree: 7%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 7%
 
 >[!IMPORTANT]
 >
-> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
 HTTP API目标是一个[!DNL Adobe Experience Platform]流目标，可帮助您将配置文件数据发送到第三方HTTP端点。
 
@@ -27,11 +27,11 @@ HTTP API目标是一个[!DNL Adobe Experience Platform]流目标，可帮助您�
 
 HTTP API目标允许您将XDM配置文件数据和受众导出到通用HTTP端点。 在那里，您可以运行自己的分析，或对从Experience Platform导出的用户档案数据执行任何其他您可能需要的操作。
 
-HTTP端点可以是客户自己的系统或第三方解决方案。
+HTTP端点可以是客户自己的系统，也可以是第三方解决方案。
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍哪些类型的受众可以导出到此目标。
+本节介绍可以导出到此目标的受众类型。
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
@@ -46,8 +46,8 @@ HTTP端点可以是客户自己的系统或第三方解决方案。
 
 | 项目 | 类型 | 注释 |
 | ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如[目标激活工作流](../../ui/activate-segment-streaming-destinations.md#mapping)的映射屏幕中所选。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出类型 | **[!UICONTROL Profile-based]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如[目标激活工作流](../../ui/activate-segment-streaming-destinations.md#mapping)的映射屏幕中所选。 |
+| 导出频率 | **[!UICONTROL Streaming]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -68,9 +68,9 @@ HTTP端点可以是客户自己的系统或第三方解决方案。
 
 您可以使用[!DNL Mutual Transport Layer Security] ([!DNL mTLS])来确保到HTTP API目标连接的出站连接中的增强安全性。
 
-[!DNL mTLS]是一种用于相互身份验证的端到端安全方法，可确保共享信息的双方在共享数据之前都是声明的身份。 与[!DNL mTLS]相比，[!DNL TLS]包含额外的步骤，其中服务器还会请求客户端的证书并在其末尾验证它。
+[!DNL mTLS]是一种用于相互身份验证的端到端安全方法，该方法可确保共享信息的双方在共享数据之前是各自声称的身份。 与[!DNL mTLS]相比，[!DNL TLS]还包括一个额外的步骤，其中服务器还会请求客户端的证书并在其末尾验证它。
 
-如果要将[!DNL mTLS]与[!DNL HTTP API]目标一起使用，则放入[目标详细信息](#destination-details)页面的服务器地址必须禁用[!DNL TLS]协议，并且仅启用[!DNL mTLS]。 如果终结点上仍启用[!DNL TLS] 1.2协议，则不会为客户端身份验证发送证书。 这意味着要将[!DNL mTLS]与您的[!DNL HTTP API]目标一起使用，您的“接收”服务器终结点必须是仅启用[!DNL mTLS]的连接终结点。
+如果要将[!DNL mTLS]与[!DNL HTTP API]目标一起使用，则在[目标详细信息](#destination-details)页中放入的服务器地址必须禁用[!DNL TLS]协议，并且仅启用[!DNL mTLS]。 如果在终结点上仍然启用了[!DNL TLS] 1.2协议，则不会为客户端身份验证发送证书。 这意味着要将[!DNL mTLS]与您的[!DNL HTTP API]目标一起使用，您的“接收”服务器终结点必须是仅支持[!DNL mTLS]的连接终结点。
 
 ### 检索和检查证书详细信息 {#certificate}
 
@@ -113,7 +113,7 @@ curl --location --request POST 'https://some-api.com/token' \
 
 >[!IMPORTANT]
 > 
->若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 连接到此目标时，必须提供以下信息：
 
@@ -126,48 +126,48 @@ curl --location --request POST 'https://some-api.com/token' \
 
 #### 持有者令牌身份验证 {#bearer-token-authentication}
 
-如果选择&#x200B;**[!UICONTROL 持有者令牌]**&#x200B;身份验证类型连接到HTTP终结点，请输入以下字段并选择&#x200B;**[!UICONTROL 连接到目标]**：
+如果选择&#x200B;**[!UICONTROL Bearer token]**&#x200B;身份验证类型连接到HTTP端点，请输入以下字段并选择&#x200B;**[!UICONTROL Connect to destination]**：
 
 ![可以使用持有者令牌身份验证连接到HTTP API目标的UI屏幕图像。](../../assets/catalog/http/http-api-authentication-bearer.png)
 
-* **[!UICONTROL 持有者令牌]**：插入持有者令牌以对HTTP位置进行身份验证。
+* **[!UICONTROL Bearer token]**：插入持有者令牌以向您的HTTP位置进行身份验证。
 
 #### 无身份验证 {#no-authentication}
 
-如果选择&#x200B;**[!UICONTROL 无]**&#x200B;身份验证类型连接到HTTP终结点：
+如果选择&#x200B;**[!UICONTROL None]**&#x200B;身份验证类型连接到HTTP端点：
 
 ![UI屏幕的图像，您可以通过该屏幕不使用身份验证连接到HTTP API目标。](../../assets/catalog/http/http-api-authentication-none.png)
 
-当选择此身份验证打开时，您只需要选择&#x200B;**[!UICONTROL 连接到目标]**，并且与终结点的连接已建立。
+当您选择打开此身份验证时，您只需要选择&#x200B;**[!UICONTROL Connect to destination]**，并且与端点的连接已建立。
 
 #### OAuth 2密码身份验证 {#oauth-2-password-authentication}
 
-如果选择&#x200B;**[!UICONTROL OAuth 2密码]**&#x200B;身份验证类型以连接到您的HTTP端点，请输入以下字段并选择&#x200B;**[!UICONTROL 连接到目标]**：
+如果您选择&#x200B;**[!UICONTROL OAuth 2 Password]**&#x200B;身份验证类型以连接到HTTP终结点，请输入以下字段并选择&#x200B;**[!UICONTROL Connect to destination]**：
 
-![UI屏幕的图像，在该屏幕中，您可以使用带有密码身份验证的OAuth 2连接到HTTP API目标。](../../assets/catalog/http/http-api-authentication-oauth2-password.png)
+![UI屏幕的图像，在该屏幕中，您可以结合使用OAuth 2和密码身份验证连接到HTTP API目标。](../../assets/catalog/http/http-api-authentication-oauth2-password.png)
 
-* **[!UICONTROL 访问令牌URL]**：您颁发访问令牌以及（可选）刷新令牌的一方URL。
-* **[!UICONTROL 客户端ID]**：系统分配给Adobe Experience Platform的[!DNL client ID]。
-* **[!UICONTROL 客户端密钥]**：系统分配给Adobe Experience Platform的[!DNL client secret]。
-* **[!UICONTROL 用户名]**：用于访问HTTP端点的用户名。
-* **[!UICONTROL 密码]**：用于访问HTTP端点的密码。
+* **[!UICONTROL Access Token URL]**：您颁发访问令牌以及（可选）刷新令牌的URL。
+* **[!UICONTROL Client ID]**：系统分配给Adobe Experience Platform的[!DNL client ID]。
+* **[!UICONTROL Client Secret]**：系统分配给Adobe Experience Platform的[!DNL client secret]。
+* **[!UICONTROL Username]**：用于访问HTTP端点的用户名。
+* **[!UICONTROL Password]**：用于访问HTTP端点的密码。
 
 #### OAuth 2客户端凭据身份验证 {#oauth-2-client-credentials-authentication}
 
-如果选择&#x200B;**[!UICONTROL OAuth 2客户端凭据]**&#x200B;身份验证类型连接到您的HTTP端点，请输入以下字段并选择&#x200B;**[!UICONTROL 连接到目标]**：
+如果选择&#x200B;**[!UICONTROL OAuth 2 Client Credentials]**&#x200B;身份验证类型连接到HTTP端点，请输入以下字段并选择&#x200B;**[!UICONTROL Connect to destination]**：
 
 ![UI屏幕的图像，在该屏幕中，您可以将OAuth 2与客户端凭据身份验证结合使用，连接到HTTP API目标。](../../assets/catalog/http/http-api-authentication-oauth2-client-credentials.png)
 
 >[!WARNING]
 > 
->使用[!UICONTROL OAuth 2客户端凭据]身份验证时，[!UICONTROL 访问令牌URL]最多可以有一个查询参数。 添加具有更多查询参数的[!UICONTROL 访问令牌URL]可能会导致在连接到端点时出现问题。
+>使用[!UICONTROL OAuth 2 Client Credentials]身份验证时，[!UICONTROL Access Token URL]最多可以有一个查询参数。 添加具有更多查询参数的[!UICONTROL Access Token URL]可能会导致在连接到端点时出现问题。
 
-* **[!UICONTROL 访问令牌URL]**：您颁发访问令牌以及（可选）刷新令牌的一方URL。
-* **[!UICONTROL 客户端ID]**：系统分配给Adobe Experience Platform的[!DNL client ID]。
-* **[!UICONTROL 客户端密钥]**：系统分配给Adobe Experience Platform的[!DNL client secret]。
-* **[!UICONTROL 客户端凭据类型]**：选择您的终结点支持的OAuth2客户端凭据授予类型：
-   * **[!UICONTROL 正文表单已编码]**：在这种情况下，[!DNL client ID]和[!DNL client secret]包含在发送到目标的请求&#x200B;*的正文中*。 有关示例，请参阅[支持的身份验证类型](#supported-authentication-types)部分。
-   * **[!UICONTROL 基本授权]**：在这种情况下，[!DNL client ID]和[!DNL client secret]在经过base64编码并发送到目标之后，包含在&#x200B;*标头`Authorization`中的*&#x200B;中。 有关示例，请参阅[支持的身份验证类型](#supported-authentication-types)部分。
+* **[!UICONTROL Access Token URL]**：您颁发访问令牌以及（可选）刷新令牌的URL。
+* **[!UICONTROL Client ID]**：系统分配给Adobe Experience Platform的[!DNL client ID]。
+* **[!UICONTROL Client Secret]**：系统分配给Adobe Experience Platform的[!DNL client secret]。
+* **[!UICONTROL Client Credentials Type]**：选择您的端点支持的OAuth2客户端凭据授予类型：
+   * **[!UICONTROL Body Form Encoded]**：在这种情况下，[!DNL client ID]和[!DNL client secret]包含在发送到目标的请求&#x200B;*的正文中*。 有关示例，请参阅[支持的身份验证类型](#supported-authentication-types)部分。
+   * **[!UICONTROL Basic Authorization]**：在这种情况下，[!DNL client ID]和[!DNL client secret]在经过base64编码并发送到目标之后，包含在&#x200B;*标头`Authorization`中的*。 有关示例，请参阅[支持的身份验证类型](#supported-authentication-types)部分。
 
 ### 填写目标详细信息 {#destination-details}
 
@@ -200,32 +200,32 @@ curl --location --request POST 'https://some-api.com/token' \
 
 ![显示HTTP目标详细信息已完成字段的UI屏幕图像。](../../assets/catalog/http/http-api-destination-details.png)
 
-* **[!UICONTROL 名称]**：输入将来用于识别此目标的名称。
-* **[!UICONTROL 描述]**：输入有助于以后识别此目标的描述。
-* **[!UICONTROL 标头]**：输入任何要包含在目标调用中的自定义标头，格式如下： `header1:value1,header2:value2,...headerN:valueN`。
-* **[!UICONTROL HTTP终结点]**：要将配置文件数据发送到的HTTP终结点的URL。
-* **[!UICONTROL 查询参数]**：您可以选择将查询参数添加到HTTP终结点URL。 格式化您使用的查询参数，如下所示：`parameter1=value&parameter2=value`。
-* **[!UICONTROL 包括区段名称]**：如果希望数据导出包括正在导出的受众的名称，请切换。 **注意**：区段名称仅包括映射到目标的区段。 导出中显示的未映射区段不包括`name`字段。 有关选择此选项的数据导出示例，请参阅下面的[导出的数据](#exported-data)部分。
-* **[!UICONTROL 包括区段时间戳]**：如果要在数据导出时包括创建和更新受众时的UNIX时间戳，以及在将受众映射到目标以进行激活时的UNIX时间戳，请切换此选项。 有关选择此选项的数据导出示例，请参阅下面的[导出的数据](#exported-data)部分。
+* **[!UICONTROL Name]**：输入一个名称，您以后将通过该名称识别此目标。
+* **[!UICONTROL Description]**：输入可帮助您将来识别此目标的描述。
+* **[!UICONTROL Headers]**：输入要包含在目标调用中的任何自定义标头，格式如下： `header1:value1,header2:value2,...headerN:valueN`。
+* **[!UICONTROL HTTP Endpoint]**：要将配置文件数据发送到的HTTP终结点的URL。
+* **[!UICONTROL Query parameters]**：您可以选择将查询参数添加到HTTP终结点URL。 格式化您使用的查询参数，如下所示：`parameter1=value&parameter2=value`。
+* **[!UICONTROL Include Segment Names]**：如果希望数据导出包含正在导出的受众的名称，请切换。 **注意**：区段名称仅包括映射到目标的区段。 导出中显示的未映射区段不包括`name`字段。 有关选择此选项的数据导出示例，请参阅下面的[导出的数据](#exported-data)部分。
+* **[!UICONTROL Include Segment Timestamps]**：如果希望数据导出包括创建和更新受众时的UNIX时间戳，以及映射受众到目标以供激活时的UNIX时间戳，请进行切换。 有关选择此选项的数据导出示例，请参阅下面的[导出的数据](#exported-data)部分。
 
 ### 启用警报 {#enable-alerts}
 
-您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
+您可以启用警报，以接收有关到达目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报](../../ui/alerts.md)指南。
 
-完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
+完成提供目标连接的详细信息后，请选择&#x200B;**[!UICONTROL Next]**。
 
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
->* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 当前在导出到HTTP API目标时不支持[同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。 [了解详情](/help/destinations/ui/activate-streaming-profile-destinations.md#consent-policy-evaluation)。
 
 有关将受众激活到此目标的说明，请参阅[将受众数据激活到流式配置文件导出目标](../../ui/activate-streaming-profile-destinations.md)。
 
 ### 目标属性 {#attributes}
 
-在[[!UICONTROL 选择属性]](../../ui/activate-streaming-profile-destinations.md#select-attributes)步骤中，Adobe建议您从[合并架构](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择要导出到目标的唯一标识符和任何其他XDM字段。
+在[[!UICONTROL Select attributes]](../../ui/activate-streaming-profile-destinations.md#select-attributes)步骤中，Adobe建议您从[合并架构](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择要导出到目标的唯一标识符和任何其他XDM字段。
 
 ## 配置文件导出行为 {#profile-export-behavior}
 
@@ -233,7 +233,7 @@ Experience Platform会优化将配置文件导出到HTTP API目标的行为，�
 
 * 配置文件更新取决于映射到目标的至少一个受众的受众成员身份发生更改。 例如，配置文件已符合映射到目标的其中一个受众的条件，或已退出映射到目标的其中一个受众。
 * 配置文件更新由[标识映射](/help/xdm/field-groups/profile/identitymap.md)中的更改决定。 例如，对于已经符合映射到目标的其中一个受众资格的用户档案，在身份映射属性中添加了一个新身份。
-* 配置文件更新由映射到目标的至少一个属性的更改确定。 例如，将映射步骤中映射到目标的某个属性添加到配置文件中。
+* 配置文件更新由映射到目标的至少一个属性的属性变化决定。 例如，将映射步骤中映射到目标的某个属性添加到配置文件。
 
 在上述所有情况中，只会将已发生相关更新的用户档案导出到您的目标。 例如，如果映射到目标流的受众具有一百个成员，并且有五个新配置文件符合该区段的条件，则导出到目标的操作将以增量方式进行，并且只包括五个新配置文件。
 
@@ -245,11 +245,11 @@ Experience Platform会优化将配置文件导出到HTTP API目标的行为，�
 
 | 决定目标导出的因素 | 目标导出中包含的内容 |
 |---------|----------|
-| <ul><li>映射的属性和区段会作为目标导出的提示。 这意味着，如果配置文件的`segmentMembership`状态更改为`realized`或`exiting`，或者更新了任何映射的属性，则将启动目标导出。</li><li>由于身份当前无法映射到HTTP API目标，因此给定配置文件上任何身份的更改也将决定目标导出。</li><li>属性的更改被定义为属性上的任何更新，无论其是否为相同的值。 这意味着即使值本身未发生更改，也会将覆盖属性视为更改。</li></ul> | <ul><li>`segmentMembership`对象包括激活数据流中映射的区段，在资格或区段退出事件后，配置文件的状态已发生更改。 请注意，如果符合配置文件条件的其他未映射区段与激活数据流中映射的区段属于同一个[合并策略](/help/profile/merge-policies/overview.md)，则这些区段可以是目标导出的一部分。<br> **重要信息**：启用&#x200B;**[!UICONTROL 包含区段名称]**&#x200B;选项后，将仅包含映射到目标的区段的区段名称。 导出中显示的未映射区段将不包括`name`字段，即使该选项已启用也是如此。 </li><li>`identityMap`对象中的所有标识也包括在内(Experience Platform当前不支持HTTP API目标中的标识映射)。</li><li>目标导出中只包含映射的属性。</li></ul> |
+| <ul><li>映射的属性和区段会作为目标导出的提示。 这意味着，如果配置文件的`segmentMembership`状态更改为`realized`或`exiting`，或者更新了任何映射的属性，则将启动目标导出。</li><li>由于身份当前无法映射到HTTP API目标，因此给定配置文件上任何身份的更改也将决定目标导出。</li><li>属性的更改被定义为属性上的任何更新，无论其是否为相同的值。 这意味着即使值本身未发生更改，也会将覆盖属性视为更改。</li></ul> | <ul><li>`segmentMembership`对象包括激活数据流中映射的区段，在资格或区段退出事件后，配置文件的状态已发生更改。 请注意，如果符合配置文件条件的其他未映射区段与激活数据流中映射的区段属于同一个[合并策略](/help/profile/merge-policies/overview.md)，则这些区段可以是目标导出的一部分。<br> **重要信息**：启用&#x200B;**[!UICONTROL Include Segment Names]**&#x200B;选项后，区段名称仅包括映射到目标的区段。 导出中显示的未映射区段将不包括`name`字段，即使该选项已启用也是如此。 </li><li>`identityMap`对象中的所有标识也包括在内(Experience Platform当前不支持HTTP API目标中的标识映射)。</li><li>目标导出中只包含映射的属性。</li></ul> |
 
 {style="table-layout:fixed"}
 
-例如，考虑将此数据流映射到HTTP目标，其中在数据流中选择了三个受众，并且四个属性映射到目标。
+例如，将此数据流考虑为HTTP目标，其中在数据流中选择了三个访问群体，并将四个属性映射到该目标。
 
 ![HTTP API目标数据流示例。](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
 
@@ -318,7 +318,7 @@ Experience Platform会优化将配置文件导出到HTTP API目标的行为，�
 }
 ```
 
-下面是导出数据的更多示例，具体取决于您在连接目标流中&#x200B;**[!UICONTROL 包括区段名称]**&#x200B;和&#x200B;**[!UICONTROL 包括区段时间戳]**&#x200B;选项选择的UI设置：
+下面是导出数据的更多示例，具体取决于您在连接目标流中&#x200B;**[!UICONTROL Include Segment Names]**&#x200B;和&#x200B;**[!UICONTROL Include Segment Timestamps]**&#x200B;选项选择的UI设置：
 
 +++ 以下数据导出示例在`segmentMembership`部分中包含受众名称
 
@@ -342,7 +342,7 @@ Experience Platform会优化将配置文件导出到HTTP API目标的行为，�
       }
 ```
 
-**注意**：在此示例中，第一个区段(`5b998cb9-9488-4ec3-8d95-fa8338ced490`)映射到目标并包含`name`字段。 第二个区段(`354e086f-2e11-49a2-9e39-e5d9a76be683`)未映射到目标，并且不包含`name`字段，即使启用了&#x200B;**[!UICONTROL 包含区段名称]**&#x200B;选项也是如此。
+**注意**：在此示例中，第一个区段(`5b998cb9-9488-4ec3-8d95-fa8338ced490`)映射到目标并包含`name`字段。 第二个区段(`354e086f-2e11-49a2-9e39-e5d9a76be683`)未映射到目标，并且不包含`name`字段，即使启用了&#x200B;**[!UICONTROL Include Segment Names]**&#x200B;选项也是如此。
 
 +++
 

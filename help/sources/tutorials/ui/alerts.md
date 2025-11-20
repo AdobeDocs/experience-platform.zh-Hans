@@ -1,26 +1,26 @@
 ---
 keywords: Experience Platform；主页；热门主题；警报
-description: 您可以在创建数据流时订阅警报，以接收有关流运行的状态、成功或失败的警报消息。
-title: 在UI中订阅上下文警报
+description: 您可以在创建数据流时订阅警报，以接收有关工作流运行的状态、成功或失败的警报消息。
+title: 订阅UI中的上下文警报
 exl-id: 5d51edaa-ecba-4ac0-8d3c-49010466b9a5
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '825'
-ht-degree: 7%
+source-wordcount: '809'
+ht-degree: 13%
 
 ---
 
-# 订阅UI中源数据流的警报
+# 在UI中订阅源数据流警报
 
-通过Adobe Experience Platform，可订阅有关Adobe Experience Platform活动的基于事件的警报。 警报可减少或消除轮询[[!DNL Observability Insights] API](../../../observability/api/overview.md)以检查作业是否已完成、是否已达到工作流中的某个里程碑或是否已发生任何错误的需要。
+Adobe Experience Platform 允许您订阅关于 Adobe Experience Platform 活动的基于事件的警报。通过警报可以减少或消除轮询 [[!DNL Observability Insights] API](../../../observability/api/overview.md) 的需要，用于检查任务是否已完成，或者是否已达到工作流中的某个里程碑，或者是否发生任何错误。
 
-在创建数据流以接收有关流运行的状态、成功或失败的警报消息时，您可以订阅警报。
+您可以在创建数据流时订阅警报，以接收有关工作流运行的状态、成功或失败的警报消息。
 
-本文档提供了有关如何订阅源数据流接收警报消息的步骤。
+本文档提供有关如何订阅源数据流的接收警报消息的步骤。
 
 ## 快速入门
 
-本文档要求您对Adobe Experience Platform的以下组件有一定的了解：
+本文档要求您了解Adobe Experience Platform的以下组件：
 
 * [源](../../home.md)： [!DNL Experience Platform]允许从各种源摄取数据，同时允许您使用[!DNL Experience Platform]服务来构建、标记和增强传入数据。
 * [可观察性](../../../observability/home.md)： [!DNL Observability Insights]允许您通过使用统计指标和事件通知来监视Experience Platform活动。
@@ -36,25 +36,25 @@ ht-degree: 7%
 
 >[!IMPORTANT]
 >
->您必须为Experience Platform帐户启用电子邮件即时通知，才能接收数据流基于电子邮件的警报通知。
+>您必须为Experience Platform帐户启用电子邮件即时通知，才能接收针对数据流的电子邮件警报通知。
 
-您可以在源工作区中源工作流的[!UICONTROL 数据流详细信息]步骤期间为数据流启用警报。
+您可以在源工作区中的源工作流程的[!UICONTROL Dataflow detail]步骤期间为数据流启用警报。
 
-![数据流详细信息](../../images/tutorials/alerts/dataflow-detail.png)
+![dataflow-detail](../../images/tutorials/alerts/dataflow-detail.png)
 
 源数据流的可用警报包括：
 
 >[!NOTE]
 >
->警报当前不支持流源。 您只能订阅批次来源的警报通知。
+>警报当前不支持流源。 您只能订阅批处理源的警报通知。
 
 | 警报 | 描述 |
 | --- | --- |
-| 源流运行开始 | 此警报会在源数据流启动时向您发送消息。 |
-| 源流运行成功 | 当源中的数据成功摄取到Experience Platform时，此警报会向您发送消息。 |
-| 源流运行失败 | 如果数据流中发生错误，此警报会向您发送消息。 |
+| 源流运行开始 | 当源数据流启动时，此警报会向您发送消息。 |
+| 源流运行成功 | 当源中的数据成功引入到Experience Platform中时，此警报会向您发送一条消息。 |
+| 源流运行失败 | 如果数据流出现错误，此警报会向您发送消息。 |
 
-选择要订阅的警报，然后选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以查看并完成数据流。
+选择要订阅的警报，然后选择&#x200B;**[!UICONTROL Next]**&#x200B;以查看并完成数据流。
 
 ![选择警报](../../images/tutorials/alerts/select-alerts.png)
 
@@ -72,15 +72,15 @@ ht-degree: 7%
 
 ## 接收警报
 
-数据流运行后，您可以通过UI或电子邮件接收警报。
+数据流运行后，您可以通过UI或通过电子邮件接收警报。
 
-### 在UI中
+### 在UI
 
-警报在UI中由Experience Platform UI顶部标题中的通知图标表示。 选择通知图标可查看有关数据流的特定警报消息。
+警报在UI中由Experience PlatformUI顶部标题中的通知图标表示。 选择通知图标以查看与您的数据流相关的特定警报消息。
 
 ![通知](../../images/tutorials/alerts/notification.png)
 
-此时会显示通知面板，其中显示您创建的数据流中的状态更新列表。
+此时会显示通知面板，其中显示您创建的数据流上的状态更新列表。
 
 ![警报窗口](../../images/tutorials/alerts/alert-window.png)
 
@@ -92,33 +92,33 @@ ht-degree: 7%
 
 ![select-alert-message](../../images/tutorials/alerts/select-alert-message.png)
 
-此时会显示[!UICONTROL 数据流运行概述]页面。 屏幕的上半部分显示有关数据流的概述，包括有关其属性、相应数据流运行ID和高级别错误摘要的信息。
+此时会显示[!UICONTROL Dataflow run overview]页。 屏幕的上半部分显示有关数据流的概述，包括有关其属性、相应数据流的运行ID和高级错误摘要的信息。
 
-![数据流概述](../../images/tutorials/alerts/dataflow-overview.png)
+![dataflow-overview](../../images/tutorials/alerts/dataflow-overview.png)
 
-页面下半部分显示在数据流运行阶段期间出现的所有[!UICONTROL 数据流运行错误]。 在此处，您可以预览错误诊断或使用[[!DNL Data Access] API](https://www.adobe.io/experience-platform-apis/references/data-access/)下载错误诊断或对应于您的数据流的文件清单。
+页面下半部分显示在数据流运行阶段出现的任何[!UICONTROL Dataflow run errors]。 在此处，您可以预览错误诊断或使用[[!DNL Data Access] API](https://www.adobe.io/experience-platform-apis/references/data-access/)下载错误诊断或对应于您的数据流的文件清单。
 
 ![数据流运行错误](../../images/tutorials/alerts/dataflow-run-error.png)
 
-有关处理数据流错误的更多信息，请参阅[在UI](../../../dataflows/ui/monitor-sources.md)中监视源数据流的指南。
+有关处理数据流错误的详细信息，请参阅有关[在UI中监视源数据流](../../../dataflows/ui/monitor-sources.md)的指南。
 
-### 按电子邮件
+### 通过电子邮件
 
-您的数据流的警报也将通过电子邮件发送给您。 选择电子邮件正文中的数据流名称可查看有关数据流的更多信息。
+您的数据流的警报也会通过电子邮件发送给您。 在电子邮件正文中选择数据流的名称，以查看有关数据流的更多信息。
 
 ![电子邮件](../../images/tutorials/alerts/email.png)
 
-与UI警报类似，将显示[!UICONTROL 数据流运行概述]页面，为您提供调查与数据流关联的任何错误的界面。
+与UI警报类似，出现[!UICONTROL Dataflow run overview]页面，为您提供了一个界面来调查与您的数据流关联的任何错误。
 
-![数据流概述](../../images/tutorials/alerts/dataflow-overview.png)
+![dataflow-overview](../../images/tutorials/alerts/dataflow-overview.png)
 
 ## 订阅和取消订阅警报
 
-您可以在[!UICONTROL 数据流]页面中为现有数据流订阅更多警报或取消订阅已建立的警报。 找到从列表中创建的数据流，然后选择省略号(`...`)以查看选项的下拉菜单。 接下来，选择&#x200B;**[!UICONTROL 订阅警报]**&#x200B;以修改数据流的警报设置。
+您可以在[!UICONTROL Dataflows]页面中订阅更多警报，或者取消订阅现有数据流的已建立警报。 从列表中找到您创建的数据流，然后选择省略号(`...`)以查看选项的下拉菜单。 接下来，选择&#x200B;**[!UICONTROL Subscribe alerts]**&#x200B;以修改数据流的警报设置。
 
 ![选项](../../images/tutorials/alerts/options.png)
 
-此时会出现一个弹出窗口，为您提供源警报列表。 选择要订阅的任何警报，或取消选择要取消订阅的警报。 完成后，选择&#x200B;**[!UICONTROL 保存]**。
+此时会显示一个弹出窗口，其中提供了源警报的列表。 选择要订阅的警报，或取消选择要取消订阅的警报。 完成后，选择&#x200B;**[!UICONTROL Save]**。
 
 ![保存](../../images/tutorials/alerts/save.png)
 

@@ -5,7 +5,7 @@ description: 了解如何根据Adobe Experience Platform用户界面中的现有
 exl-id: e60eedb2-2245-42cd-b574-43caf9e3426c
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '402'
+source-wordcount: '395'
 ht-degree: 14%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 14%
 
 对于您在Experience Platform UI中定义的任何架构，可以生成符合架构结构的示例JSON对象。 此对象可用作模板，用于提取到采用相关架构的数据集中的任何数据。
 
-在Experience Platform UI的左侧导航中选择&#x200B;**[!UICONTROL 架构]**。 在&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡下，找到要为其生成示例数据的架构。 从列表中选择架构，右边栏将进行更新以显示有关架构的详细信息。 从此处选择&#x200B;**[!UICONTROL 下载样本文件]**。
+在Experience Platform UI的左侧导航中选择&#x200B;**[!UICONTROL Schemas]**。 在&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡下，找到要为其生成示例数据的架构。 从列表中选择架构，右边栏将进行更新以显示有关架构的详细信息。 从此处选择&#x200B;**[!UICONTROL Download sample file]**。
 
 ![选定了架构的架构工作区的“浏览”选项卡，下载高亮显示的示例文件。](../images/ui/sample/sample-data.png)
 
@@ -33,4 +33,4 @@ ht-degree: 14%
 
 准备好开始摄取数据后，请参阅有关[将CSV文件映射到XDM](../../ingestion/tutorials/map-csv/overview.md)的教程，了解如何将平面数据文件（如CSV）映射到XDM架构并将其摄取到Experience Platform。 或者，您可以建立[源连接](../../sources/home.md)以从外部源引入您的数据并将其映射到XDM。
 
-有关UI中[!UICONTROL 架构]工作区的功能的更多信息，请参阅[[!UICONTROL 架构]工作区概述](./overview.md)。
+有关UI中[!UICONTROL Schemas]工作区的功能的更多信息，请参阅[[!UICONTROL Schemas]工作区概述](./overview.md)。

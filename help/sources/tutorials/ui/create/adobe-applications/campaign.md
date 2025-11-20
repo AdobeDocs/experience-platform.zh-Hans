@@ -5,7 +5,7 @@ description: 了解如何使用Adobe Experience Platform UI将Experience Platfor
 exl-id: 067ed558-b239-4845-8c85-3bf9b1d4caed
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1246'
+source-wordcount: '1202'
 ht-degree: 6%
 
 ---
@@ -26,11 +26,11 @@ ht-degree: 6%
 
 ## 将Adobe Campaign Managed Cloud Services连接到Experience Platform
 
-在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL Sources]**&#x200B;以访问[!UICONTROL Sources]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 您还可以使用搜索栏缩小显示的源。
 
-在&#x200B;**[!UICONTROL Adobe应用程序]**&#x200B;类别下，选择&#x200B;**[!UICONTROL Adobe Campaign Managed Cloud Services]**，然后选择&#x200B;**[!UICONTROL 添加数据]**。
+在&#x200B;**[!UICONTROL Adobe applications]**&#x200B;类别下，选择&#x200B;**[!UICONTROL Adobe Campaign Managed Cloud Services]**，然后选择&#x200B;**[!UICONTROL Add data]**。
 
 ![显示Adobe Campaign Managed Cloud Services卡的源目录。](../../../../images/tutorials/create/campaign/catalog.png)
 
@@ -54,7 +54,7 @@ ht-degree: 6%
 >abstract="Adobe Campaign 数据库中定义的实体的名称。"
 >text="Learn more in documentation"
 
-此时将显示[!UICONTROL 选择数据]步骤，该步骤为您提供了一个用于配置[!UICONTROL Adobe Campaign实例]、[!UICONTROL 目标映射]和[!UICONTROL 架构名称]的界面。
+此时会显示[!UICONTROL Select data]步骤，为您提供用于配置[!UICONTROL Adobe Campaign instance]、[!UICONTROL Target mapping]和[!UICONTROL Schema name]的界面。
 
 | 属性 | 描述 |
 | --- | --- |
@@ -64,15 +64,15 @@ ht-degree: 6%
 
 ![可配置Adobe Campaign实例、目标映射和架构名称的界面。](../../../../images/tutorials/create/campaign/select-data.png)
 
-为Campaign实例、目标映射和架构名称提供值后，屏幕会更新以显示架构预览和示例数据集。 完成后，选择&#x200B;**[!UICONTROL 下一步]**。
+为Campaign实例、目标映射和架构名称提供值后，屏幕会更新以显示架构预览和示例数据集。 完成后，选择&#x200B;**[!UICONTROL Next]**。
 
 ![架构层次结构的预览以及数据集的示例](../../../../images/tutorials/create/campaign/preview.png)
 
 ### 使用现有数据集
 
-[!UICONTROL 数据流详细信息]页面允许您选择是要使用现有数据集，还是要为数据流配置新数据集。
+[!UICONTROL Dataflow detail]页面允许您选择是要使用现有数据集，还是要为数据流配置新数据集。
 
-要使用现有数据集，请选择&#x200B;**[!UICONTROL 现有数据集]**。 您可以使用[!UICONTROL 高级搜索]选项或通过滚动下拉菜单中的现有数据集列表来检索现有数据集。
+要使用现有数据集，请选择&#x200B;**[!UICONTROL Existing dataset]**。 您可以使用[!UICONTROL Advanced search]选项或通过滚动下拉菜单中的现有数据集列表来检索现有数据集。
 
 选择数据集后，为数据流提供名称和可选描述。
 
@@ -80,7 +80,7 @@ ht-degree: 6%
 
 ### 使用新数据集
 
-若要使用新数据集，请选择&#x200B;**[!UICONTROL 新数据集]**，然后提供输出数据集名称和可选描述。 接下来，使用[!UICONTROL 高级搜索]选项或通过滚动下拉菜单中的现有架构列表来选择要映射到的架构。 完成后，选择&#x200B;**[!UICONTROL 下一步]**。
+要使用新数据集，请选择&#x200B;**[!UICONTROL New dataset]**，然后提供输出数据集名称和可选描述。 接下来，使用[!UICONTROL Advanced search]选项或通过滚动下拉菜单中的现有架构列表来选择要映射到的架构。 完成后，选择&#x200B;**[!UICONTROL Next]**。
 
 ![显示新数据集选项的界面。](../../../../images/tutorials/create/campaign/new-dataset.png)
 
@@ -88,13 +88,13 @@ ht-degree: 6%
 
 您可以启用警报以接收有关数据流状态的通知。 从列表中选择警报以订阅并接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅源警报指南](../../alerts.md)。
 
-完成向数据流提供详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
+完成向数据流提供详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
 ![可为数据流启用的不同警报类型选择。](../../../../images/tutorials/create/campaign/alerts.png)
 
 ### 将数据字段映射到XDM架构
 
-此时将显示[!UICONTROL 映射]步骤，该步骤为您提供了一个接口，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
+此时将显示[!UICONTROL Mapping]步骤，为您提供了一个界面，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
 
 Experience Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅[数据准备UI指南](../../../../../data-prep/ui/mapping.md)。
 
@@ -104,18 +104,18 @@ Experience Platform根据您选择的目标架构或数据集，为自动映射�
 >
 >对于每个受众，您最多可以添加20个要映射到Adobe Campaign的字段。 您可以通过更新Campaign资源管理器的“管理” > “平台” > “选项”文件夹中`NmsCdp_Aep_Sources_Max_Columns`选项的值来更改此限制。
 
-成功映射源数据后，选择&#x200B;**[!UICONTROL 下一步]**。
+成功映射源数据后，请选择&#x200B;**[!UICONTROL Next]**。
 
 ![具有四个源数据字段的映射树映射到它们对应的XDM架构字段。](../../../../images/tutorials/create/campaign/mapping.png)
 
 ### 查看您的数据流
 
-将显示&#x200B;**[!UICONTROL 审核]**&#x200B;步骤，允许您在创建新数据流之前对其进行审核。 详细信息分为以下类别：
+此时将显示&#x200B;**[!UICONTROL Review]**&#x200B;步骤，允许您在创建新数据流之前对其进行查看。 详细信息分为以下类别：
 
-* **[!UICONTROL 连接]**：显示源类型、所选源文件的相关路径以及该源文件中的列数。
-* **[!UICONTROL 分配数据集和映射字段]**：显示要将源数据摄取到哪个数据集，包括数据集所遵循的架构。
+* **[!UICONTROL Connection]**：显示源类型、所选源文件的相关路径以及该源文件中的列数。
+* **[!UICONTROL Assign dataset & map fields]**：显示要将源数据摄取到哪个数据集，包括该数据集所遵循的架构。
 
-查看数据流后，选择&#x200B;**[!UICONTROL 完成]**，然后等待一些时间来创建数据流。
+查看数据流后，选择&#x200B;**[!UICONTROL Finish]**&#x200B;并留出一段时间来创建数据流。
 
 ![显示连接和数据集信息的审核页面。](../../../../images/tutorials/create/campaign/review.png)
 
@@ -123,7 +123,7 @@ Experience Platform根据您选择的目标架构或数据集，为自动映射�
 
 创建数据流后，您可以监视通过该数据流摄取的数据，以查看有关摄取率以及成功和失败的批次的信息。
 
-要开始查看数据集活动，请在源目录中选择&#x200B;**[!UICONTROL 数据流]**。
+要开始查看数据集活动，请在源目录中选择&#x200B;**[!UICONTROL Dataflows]**。
 
 ![选择了数据流标题选项卡的源目录页。](../../../../images/tutorials/create/campaign/dataflows.png)
 

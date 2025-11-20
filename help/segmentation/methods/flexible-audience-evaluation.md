@@ -5,7 +5,7 @@ role: Developer, User
 exl-id: b85bf735-be02-4bf7-bd63-8d74ae905e58
 source-git-commit: 7a0a98ea035892943a0e9a9a2b059701f6f1f612
 workflow-type: tm+mt
-source-wordcount: '1140'
+source-wordcount: '1124'
 ht-degree: 5%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 5%
 - 您每&#x200B;**生产**&#x200B;沙盒每年最多有&#x200B;**个**&#x200B;灵活的受众评估运行，共50个。
 - 您每&#x200B;**开发**&#x200B;沙盒每年最多有&#x200B;**次**&#x200B;运行100次灵活受众评估。
 - 所有受众&#x200B;**都必须**&#x200B;具有“分段服务”的来源。
-- 必须使用批处理分段评估所有受众&#x200B;**&#x200B;**。
+- 必须使用批处理分段评估所有受众&#x200B;****。
 - 所有受众&#x200B;**必须**&#x200B;是基于人员的受众。
 - 每个灵活受众评估运行最多只能选择20个受众。
 
@@ -45,7 +45,7 @@ ht-degree: 5%
 
 要使用灵活的受众评估，您必须具有以下权限：
 
-- 在&#x200B;**[!DNL Profile Management]**&#x200B;部分下&#x200B;**[!UICONTROL 评估受众的区段]**。
+- **[!UICONTROL Evaluate Segment to an Audience]**&#x200B;部分下的&#x200B;**[!DNL Profile Management]**。
 
 有关基于角色的访问控制的详细信息，请阅读[访问控制概述](../../access-control/home.md)。
 
@@ -300,15 +300,15 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/b31aed3d-b3b1-4
 
 >[!TAB Experience Platform UI]
 
-要在Experience Platform UI中运行灵活的受众评估，请在&#x200B;**[!UICONTROL 客户]**&#x200B;部分中选择&#x200B;**[!UICONTROL 受众]**。
+要在Experience Platform UI中运行灵活的受众评估，请在&#x200B;**[!UICONTROL Audiences]**&#x200B;部分中选择&#x200B;**[!UICONTROL Customers]**。
 
 ![“客户”部分中的“受众”按钮高亮显示。 将显示客户配置文件的受众门户。](../images/methods/fae/audience-portal.png)
 
-此时将显示“受众门户”，其中包含组织内所有人员受众的列表。 在Audience Portal中，您可以选择想要评估的受众，然后选择&#x200B;**[!UICONTROL 评估受众]**。
+此时将显示“受众门户”，其中包含组织内所有人员受众的列表。 在Audience Portal中，您可以选择要评估的受众并选择&#x200B;**[!UICONTROL Evaluate audience]**。
 
 ![已选择您要对其使用灵活受众评估的受众。](../images/methods/fae/evaluate-audiences.png)
 
-此时将显示&#x200B;**[!UICONTROL 按需评估受众]**&#x200B;弹出框，其中显示了将使用按需区段作业评估的受众列表。 如果受众不符合按需评估的条件，则它将被自动从评估作业中删除。 确认列出的受众就是您要评估的受众。
+此时将显示&#x200B;**[!UICONTROL Evaluate audiences on demand]**&#x200B;弹出框，其中显示了将使用按需区段作业评估的受众列表。 如果受众不符合按需评估的条件，则它将被自动从评估作业中删除。 确认列出的受众就是您要评估的受众。
 
 ![显示可以使用灵活受众评估进行评估的受众。](../images/methods/fae/evaluate-audiences-modal.png)
 
@@ -318,7 +318,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/b31aed3d-b3b1-4
 >
 >区段作业的状态可能会在监控仪表板中报告为“已排队”状态。 您可以查看区段作业的最新状态，方法是向`/segment/jobs`端点发出GET请求，并在请求路径中提供区段作业的ID。 在“API”选项卡中可找到有关使用此端点的更多信息。
 >
->如果您运行灵活的受众评估并希望评估将受众激活到目标，则需要确保将频率设置为&#x200B;**[!UICONTROL 在区段评估后]**。 对已设置为在区段评估[&#128279;](../../destinations/ui/activate-batch-profile-destinations.md#export-full-files)后激活的受众运行灵活的受众评估，将在灵活的受众评估作业完成后立即激活受众，而不考虑任何之前的每日激活作业。
+>如果您运行灵活的受众评估，并希望评估将受众激活到目标，则需要确保将频率设置为&#x200B;**[!UICONTROL After segment evaluation]**。 对已设置为在区段评估[后](../../destinations/ui/activate-batch-profile-destinations.md#export-full-files)激活的受众运行灵活的受众评估，将在灵活的受众评估作业完成后立即激活受众，而不考虑任何之前的每日激活作业。
 
 >[!ENDTABS]
 
@@ -326,7 +326,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/b31aed3d-b3b1-4
 
 以下视频演示了如何在Experience Platform中访问和使用灵活的受众评估。
 
->[!VIDEO](https://video.tv.adobe.com/v/3453650?&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/3453640?)
 
 ## 常见问题解答 {#faq}
 
@@ -400,6 +400,6 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/b31aed3d-b3b1-4
 
 +++ 回答
 
-不会。灵活的受众评估将自动评估所有依赖的受众。 例如，如果受众A依赖于受众B，则您只需要评估受众B。灵活的受众评估将自动评估受众A，然后评估受众B。
+不是。灵活的受众评估将自动评估所有依赖的受众。 例如，如果受众A依赖于受众B，则您只需要评估受众B。灵活的受众评估将自动评估受众A，然后评估受众B。
 
 +++

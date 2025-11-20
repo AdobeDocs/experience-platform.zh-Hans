@@ -1,12 +1,12 @@
 ---
 title: 帐户受众
 description: 了解如何创建和使用帐户受众，以便在下游目标中定位帐户配置文件。
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
-badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 047930d6-939f-4418-bbcb-8aafd2cf43ba
 source-git-commit: 1e508ec11b6d371524c87180a41e05ffbacc2798
 workflow-type: tm+mt
-source-wordcount: '1528'
+source-wordcount: '1498'
 ht-degree: 21%
 
 ---
@@ -35,11 +35,11 @@ ht-degree: 21%
 
 ## 访问 {#access}
 
-要访问帐户受众，请在&#x200B;**[!UICONTROL 帐户]**&#x200B;部分中选择&#x200B;**[!UICONTROL 受众]**。
+要访问帐户受众，请在&#x200B;**[!UICONTROL Audiences]**&#x200B;部分中选择&#x200B;**[!UICONTROL Accounts]**。
 
 ![“帐户”部分中的“受众”按钮突出显示。](../images/types/account/select.png)
 
-此时将显示[!UICONTROL 浏览]页面，其中显示该组织的所有帐户受众列表。
+此时将显示[!UICONTROL Browse]页面，其中显示该组织的所有帐户受众的列表。
 
 ![将显示属于组织的帐户受众。](../images/types/account/browse.png)
 
@@ -53,19 +53,19 @@ ht-degree: 21%
 >
 >帐户受众是使用&#x200B;**批次**&#x200B;分段进行评估的，每24小时进行一次评估。
 
-要创建帐户受众，请在&#x200B;**[!UICONTROL 浏览]**&#x200B;页面上选择[!UICONTROL 创建受众]。
+要创建帐户受众，请在&#x200B;**[!UICONTROL Create audience]**&#x200B;页面上选择[!UICONTROL Browse]。
 
-![帐户受众浏览页面上突出显示[!UICONTROL 创建受众]按钮。](../images/types/account/select-create-audience.png)
+![帐户受众浏览页面上突出显示[!UICONTROL Create audience]按钮。](../images/types/account/select-create-audience.png)
 
-此时将显示“区段生成器”。 帐户属性和受众将显示在左侧导航栏中。 在[!UICONTROL 属性]选项卡下，您可以同时添加Experience Platform创建的属性和自定义属性。
+此时将显示“区段生成器”。 帐户属性和受众将显示在左侧导航栏中。 在[!UICONTROL Attributes]选项卡下，您可以同时添加Experience Platform创建和自定义属性。
 
 ![将显示区段生成器。 请注意，仅显示属性和受众。](../images/types/account/segment-builder.png)
 
-在创建帐户受众时，请注意，事件列在&#x200B;**[!UICONTROL 人员]**&#x200B;下，而不是作为他们自己的选项卡，因为这些属性与人员相关联。
+在创建帐户受众时，请注意，事件列在&#x200B;**[!UICONTROL People]**&#x200B;下，而不是作为事件自己的选项卡，因为这些属性与人员关联。
 
-![位于[!UICONTROL People]文件夹中的查找事件的位置突出显示。](../images/types/account/attributes.png)
+![在[!UICONTROL People]文件夹中查找事件的位置突出显示。](../images/types/account/attributes.png)
 
-在[!UICONTROL 受众]选项卡下，您可以添加之前创建的基于人员的受众，以便在创建您自己的帐户受众时构建。
+在[!UICONTROL Audiences]选项卡下，您可以添加之前创建的基于人员的受众，以便在创建您自己的帐户受众时从中构建。
 
 ![区段生成器中的“受众”选项卡高亮显示。](../images/types/account/audiences.png)
 
@@ -79,11 +79,11 @@ ht-degree: 21%
 
 ![设置图标在“字段”部分突出显示。](../images/types/account/select-settings.png)
 
-在[!UICONTROL 设置]选项卡上，在&#x200B;**[!UICONTROL 字段的关系]**&#x200B;部分中选择&#x200B;**[!UICONTROL 显示关系选择器]**。
+在[!UICONTROL Settings]选项卡上，选择&#x200B;**[!UICONTROL Show relationship selectors]**&#x200B;部分中的&#x200B;**[!UICONTROL Relationship of fields]**。
 
 ![在“设置”选项卡的“字段的关系”部分中选择了“显示关系选择器”切换开关。](../images/types/account/show-relation-selectors.png)
 
-再次选择![设置图标](../../images/icons/settings.png)以返回[!UICONTROL 字段]选项卡。 您现在可以看到&#x200B;**[!UICONTROL 建立关系]**&#x200B;部分，该部分允许您建立帐户与人员的连接方式以及该人员与机会的连接方式。
+再次选择![设置图标](../../images/icons/settings.png)以返回[!UICONTROL Fields]选项卡。 您现在可以看到&#x200B;**[!UICONTROL Establish relationships]**&#x200B;部分，该部分允许您确定帐户如何连接到人员以及该人员如何连接到机会。
 
 ![已突出显示“建立关系”部分，其中显示了有关如何将帐户与人员连接以及如何将人员与机会连接的选项。](../images/types/account/establish-relationships.png)
 
@@ -112,11 +112,11 @@ ht-degree: 21%
 
 创建帐户受众后，您可以将该受众激活到其他下游服务。
 
-选择要激活的受众，然后&#x200B;**[!UICONTROL 激活到目标]**。
+选择要激活的受众，然后选择&#x200B;**[!UICONTROL Activate to destination]**。
 
-![所选受众的快速操作菜单中突出显示[!UICONTROL 激活到目标]按钮。](../images/types/account/activate.png)
+![所选受众的快速操作菜单中突出显示[!UICONTROL Activate to destination]按钮。](../images/types/account/activate.png)
 
-此时会显示[!UICONTROL 激活目标]页面。 有关激活过程的更多信息（包括支持的目标和字段映射的详细信息），请阅读[激活帐户受众](/help/destinations/ui/activate-account-audiences.md)教程。
+此时会显示[!UICONTROL Activate destination]页面。 有关激活过程的更多信息（包括支持的目标和字段映射的详细信息），请阅读[激活帐户受众](/help/destinations/ui/activate-account-audiences.md)教程。
 
 ## 后续步骤 {#next-steps}
 

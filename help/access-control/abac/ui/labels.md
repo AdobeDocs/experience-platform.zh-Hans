@@ -5,8 +5,8 @@ description: 本文档提供了有关通过Adobe Experience Cloud中的权限界
 exl-id: c790f09c-fda6-48bf-95db-3f5053cd882e
 source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '249'
-ht-degree: 24%
+source-wordcount: '238'
+ht-degree: 26%
 
 ---
 
@@ -29,18 +29,18 @@ ht-degree: 24%
 >id="platform_permissions_labels_about_create"
 >title="创建新标签"
 >abstract="可自行创建自定义标签以适合组织需求。自定义标签可用于将数据治理和访问控制配置应用于您的数据。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html?lang=zh-Hans#manage-labels" text="管理自定义标签"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html#manage-labels" text="管理自定义标签"
 
 >[!NOTE]
 >
->整个组织只有一个标签列表。 要创建自定义标签，您需要在生产沙盒上具有&#x200B;**[!UICONTROL 管理使用标签]**&#x200B;权限。 当前不支持删除标签。
+>整个组织只有一个标签列表。 要创建自定义标签，您需要具有生产沙盒的&#x200B;**[!UICONTROL Manage Usage Labels]**&#x200B;权限。 当前不支持删除标签。
 
-要创建新标签，请选择侧边栏中的&#x200B;**[!UICONTROL 标签]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 创建标签]**。
+要创建新标签，请选择侧边栏中的&#x200B;**[!UICONTROL Labels]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL Create Label]**。
 
 ![flac-new-label](../../images/flac-ui/create-label.png)
 
-出现&#x200B;**[!UICONTROL 创建新标签]**&#x200B;对话框，提示您输入名称、可选的友好名称和可选的说明。
+出现&#x200B;**[!UICONTROL Create a new label]**&#x200B;对话框，提示您输入名称、可选的友好名称和可选的说明。
 
 ![new-label-info](../../images/flac-ui/new-label-info.png)
 
-完成后，选择&#x200B;**[!UICONTROL 确认]**。
+完成后，选择&#x200B;**[!UICONTROL Confirm]**。

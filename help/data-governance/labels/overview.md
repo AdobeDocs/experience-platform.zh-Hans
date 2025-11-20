@@ -6,7 +6,7 @@ description: 了解如何使用数据使用标签来帮助在Adobe Experience Pl
 exl-id: 4f113000-b9a1-4dfb-9502-6a5d08f0b26f
 source-git-commit: 916eb01ea7878366620b859c1d6a667a88b850c9
 workflow-type: tm+mt
-source-wordcount: '789'
+source-wordcount: '786'
 ht-degree: 16%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 16%
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataUsageLabels_description"
 >title="控制访问敏感和受保护的数据"
->abstract="<h2>描述</h2><p>通过控制访问特定的数据属性和/或区段，可为操作 Experience Platform 用例的各种角色和团队设计灵活的工作流。</p>"
+>abstract="<h2>描述</h2><p>通过控制访问特定的数据属性和/或区段，可为操作 Experience Platform 用例的各种用户画像和团队设计灵活的工作流。</p>"
 
 Adobe Experience Platform允许您将数据使用标签应用于数据集和字段，并根据相关的[数据治理策略](../policies/overview.md)和[访问控制策略](../../access-control/abac/ui/policies.md)对每个数据集和字段进行分类。
 
@@ -44,7 +44,7 @@ Adobe Experience Platform允许您将数据使用标签应用于数据集和字�
 
 [!DNL Experience Platform]能够与Adobe Audience Manager共享区段。 已应用于Audience Manager区段的任何数据导出控件都将转换为[!DNL Experience Platform]数据管理识别的等效标签和营销操作。
 
-有关特定数据导出控件如何映射到[!DNL Experience Platform]中的数据使用标签的参考，请参阅[Audience Manager文档](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=zh-Hans#aam-data-export-control-in-aep)。
+有关特定数据导出控件如何映射到[!DNL Experience Platform]中的数据使用标签的参考，请参阅[Audience Manager文档](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aam-data-export-control-in-aep)。
 
 ## 管理 [!DNL Experience Platform] 中的数据使用标签 {#manage-labels}
 
@@ -57,15 +57,15 @@ Adobe Experience Platform允许您将数据使用标签应用于数据集和字�
 
 ### 使用UI
 
-[!DNL Experience Platform] UI中的&#x200B;**[!UICONTROL 策略]**&#x200B;工作区允许您查看和管理组织的核心标签和自定义标签。 您可以使用&#x200B;**[!UICONTROL 架构]**&#x200B;工作区来[将标签应用于您的Experience Data Model (XDM)架构](../../xdm/tutorials/labels.md)，或通过阅读数据使用标签用户指南，了解如何[在&#x200B;**[!UICONTROL 策略]** UI](./user-guide.md)中创建和管理自定义标签。
+**[!UICONTROL Policies]** UI中的[!DNL Experience Platform]工作区允许您查看和管理组织的核心标签和自定义标签。 您可以使用&#x200B;**[!UICONTROL Schemas]**&#x200B;工作区来[将标签应用于您的体验数据模型(XDM)架构](../../xdm/tutorials/labels.md)，或者通过阅读数据使用标签用户指南，了解如何[在&#x200B;**[!UICONTROL Policies]** UI](./user-guide.md)中创建和管理自定义标签。
 
 >[!IMPORTANT]
 >
->标签无法再应用于数据集级别的字段。 此工作流已弃用，支持在架构级别应用标签。 在2024年5月31日之前，之前在数据集对象级别应用的任何标签仍将通过Experience Platform UI受到支持。 要确保您的标签在所有架构中保持一致，在未来一年中，必须将之前附加到数据集级别字段的任何标签迁移到架构级别。 有关如何迁移先前应用的标签[&#128279;](../e2e.md#migrate-labels)的说明，请参阅部分。
+>标签无法再应用于数据集级别的字段。 此工作流已弃用，支持在架构级别应用标签。 在2024年5月31日之前，之前在数据集对象级别应用的任何标签仍将通过Experience Platform UI受到支持。 要确保您的标签在所有架构中保持一致，在未来一年中，必须将之前附加到数据集级别字段的任何标签迁移到架构级别。 有关如何迁移先前应用的标签[的说明，请参阅](../e2e.md#migrate-labels)部分。
 
 ### 使用API
 
-[策略服务API](https://www.adobe.io/experience-platform-apis/references/policy-service/)中的`/labels`端点允许您以编程方式管理数据使用标签，包括创建自定义标签。 有关详细信息，请参阅[标签终结点指南](../api/labels.md)。
+`/labels`策略服务API[中的](https://www.adobe.io/experience-platform-apis/references/policy-service/)端点允许您以编程方式管理数据使用标签，包括创建自定义标签。 有关详细信息，请参阅[标签终结点指南](../api/labels.md)。
 
 [数据集服务API](https://www.adobe.io/experience-platform-apis/references/dataset-service/)用于管理数据集和字段的标签。 有关详细信息，请参阅[管理数据集标签](./dataset-api.md)指南。
 

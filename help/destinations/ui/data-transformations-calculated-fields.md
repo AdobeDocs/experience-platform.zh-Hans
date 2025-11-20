@@ -5,7 +5,7 @@ description: 了解如何使用计算字段功能对导出到云存储目标的�
 exl-id: 1e14f964-4c03-4d0c-be8d-c3dcb48a335a
 source-git-commit: bd9efc1bcf6058827cc5c603b9976c9e42c7ec9e
 workflow-type: tm+mt
-source-wordcount: '1625'
+source-wordcount: '1604'
 ht-degree: 8%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 8%
 >id="platform_destinations_export_arrays_flat_files"
 >title="添加计算字段"
 >abstract="<p>使用&#x200B;**添加计算字段**&#x200B;控件对导出到云存储目标的数据进行各种数据转换。例如，您可以对数据进行哈希处理，将数组连接成字符串等。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/data-transformations-calculated-fields.html?lang=zh-Hans#examples" text="示例"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/data-transformations-calculated-fields.html#examples" text="示例"
 
 >[!AVAILABILITY]
 >
@@ -31,8 +31,8 @@ ht-degree: 8%
 
 要将计算字段用于数据转换：
 
-1. [将](/help/destinations/ui/connect-destination.md)连接到所需的云存储目标。 连接到所需的云目标时，将&#x200B;**[!UICONTROL 导出数组、映射、对象]** [选项切换为关闭](/help/destinations/ui/export-arrays-maps-objects.md##export-arrays-maps-objects-toggle)。
-2. 执行云存储目标[&#128279;](/help/destinations/ui/activate-batch-profile-destinations.md)的激活步骤并转到[映射](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)步骤。
+1. [将](/help/destinations/ui/connect-destination.md)连接到所需的云存储目标。 连接到所需的云目标时，将&#x200B;**[!UICONTROL Export arrays, maps, objects]** [选项切换为off](/help/destinations/ui/export-arrays-maps-objects.md##export-arrays-maps-objects-toggle)。
+2. 执行云存储目标[的](/help/destinations/ui/activate-batch-profile-destinations.md)激活步骤并转到[映射](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)步骤。
 
 ## 如何使用计算字段 {#how-to-export-calculated-fields}
 
@@ -50,11 +50,11 @@ ht-degree: 8%
 >
 >无论何时使用计算字段，除了应用的任何数据转换函数之外，还必须使用`array_to_string`函数将字段连接到字符串中。
 
-在云存储目标的激活工作流的映射步骤中，选择&#x200B;**[!UICONTROL 添加计算字段]**。
+在云存储目标的激活工作流的映射步骤中，选择&#x200B;**[!UICONTROL Add calculated field]**。
 
 >[!TIP]
 >
->对于已关闭&#x200B;**[!UICONTROL 导出数组、映射和对象]**&#x200B;控件的目标连接，**[!UICONTROL 添加计算字段]**&#x200B;控件已禁用。 [了解更多信息](/help/destinations/ui/export-arrays-maps-objects.md#export-arrays-maps-objects-toggle)。
+>对于已关闭&#x200B;**[!UICONTROL Add calculated field]**&#x200B;控件的目标连接，**[!UICONTROL Export arrays, maps, and objects]**&#x200B;控件被禁用。 [了解详情](/help/destinations/ui/export-arrays-maps-objects.md#export-arrays-maps-objects-toggle)。
 
 ![添加在批处理激活工作流的映射步骤中突出显示的计算字段。](/help/destinations/assets/ui/export-arrays-calculated-fields/add-calculated-fields.png)
 
@@ -62,21 +62,21 @@ ht-degree: 8%
 
 ![尚未选择函数的计算字段功能的模式窗口。](/help/destinations/assets/ui/export-arrays-calculated-fields/add-calculated-fields-2.png)
 
-例如，使用如下所示的`organizations`字段上的`array_to_string`函数将组织数组导出为CSV文件中的字符串。 查看[&#128279;](#array-to-string-function-export-arrays)下方的有关此示例和其他示例的详细信息。
+例如，使用如下所示的`array_to_string`字段上的`organizations`函数将组织数组导出为CSV文件中的字符串。 查看[下方的](#array-to-string-function-export-arrays)有关此示例和其他示例的详细信息。
 
 ![选定了数组到字符串函数的计算字段功能的模式窗口。](/help/destinations/assets/ui/export-arrays-calculated-fields/add-calculated-fields-3.png)
 
-选择&#x200B;**[!UICONTROL 保存]**&#x200B;以保留计算字段并返回映射步骤。
+选择&#x200B;**[!UICONTROL Save]**&#x200B;以保留计算字段并返回映射步骤。
 
 ![选定了array-to-string函数且突出显示Save控件的计算字段功能的模式窗口。](/help/destinations/assets/ui/export-arrays-calculated-fields/save-calculated-field.png)
 
-返回工作流的映射步骤，使用导出文件中该字段所需的列标题值填写&#x200B;**[!UICONTROL 目标字段]**。
+返回工作流的映射步骤，在&#x200B;**[!UICONTROL Target field]**&#x200B;中填写导出文件中此字段的列标题值。
 
 ![映射步骤，目标字段突出显示。](/help/destinations/assets/ui/export-arrays-calculated-fields/fill-in-target-field.png)
 
 ![选择目标字段2](/help/destinations/assets/ui/export-arrays-calculated-fields/target-field-filled-in.png)
 
-准备就绪后，选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续执行激活工作流的下一步。
+准备就绪后，选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续执行激活工作流的下一步。
 
 ![映射步骤，其中目标字段高亮显示且目标值已填充。](/help/destinations/assets/ui/export-arrays-calculated-fields/select-next-to-proceed.png)
 
@@ -101,11 +101,11 @@ ht-degree: 8%
 
 ## 用于执行数据转换的函数示例 {#examples}
 
-有关上面列出的某些函数，请参阅以下部分中的示例和更多信息。 对于列出的其余函数，请参阅数据准备部分[&#128279;](/help/data-prep/functions.md)中的常规函数文档。
+有关上面列出的某些函数，请参阅以下部分中的示例和更多信息。 对于列出的其余函数，请参阅数据准备部分[中的](/help/data-prep/functions.md)常规函数文档。
 
 ### `array_to_string`函数以导出数组 {#array-to-string-function-export-arrays}
 
-使用所需的分隔符（如`_`或`|`），使用`array_to_string`函数将数组的元素连接到字符串中。 当您想要将数组的元素从Experience Platform导出到CSV文件时，此函数非常有用。
+使用所需的分隔符（如`array_to_string`或`_`），使用`|`函数将数组的元素连接到字符串中。 当您想要将数组的元素从Experience Platform导出到CSV文件时，此函数非常有用。
 
 例如，您可以使用`array_to_string('_',organizations)`语法将以下XDM字段组合在一起，如映射屏幕快照中所示：
 
@@ -191,7 +191,7 @@ John,Doe, johndoe@acme.org,"Marketing_Sales_Finance_2023"
 
 使用`coalesce`函数访问数组的第一个非null元素并将其导出到字符串中。
 
-例如，通过使用`coalesce(subscriptions.hasPromotion)`语法返回数组中`false`值的前`true`个，您可以组合下面的XDM字段，如映射屏幕快照中所示：
+例如，通过使用`coalesce(subscriptions.hasPromotion)`语法返回数组中`true`值的前`false`个，您可以组合下面的XDM字段，如映射屏幕快照中所示：
 
 * `"subscriptions.hasPromotion": [null, true, null, false, true]`数组
 * `person.name.firstName`字符串
@@ -229,7 +229,7 @@ johndoe@acme.org,"5"
 
 >[!IMPORTANT]
 >
->与此页面上描述的其他函数不同，要导出数组的单个元素，您&#x200B;*不需要*&#x200B;在UI中使用&#x200B;**[!UICONTROL 计算字段]**&#x200B;控件。
+>与此页面上描述的其他函数不同，要导出数组的单个元素，您&#x200B;*不需要*&#x200B;在UI中使用&#x200B;**[!UICONTROL Calculated fields]**&#x200B;控件。
 
 您可以访问数组的索引以从数组导出单个项。 例如，与上述针对`size_of`函数的示例类似，如果您只想在客户购买特定产品时访问和导出，则可以使用`purchaseTime[0]`导出时间戳的第一个元素，使用`purchaseTime[1]`导出时间戳的第二个元素，使用`purchaseTime[2]`导出时间戳的第三个元素，依此类推。
 

@@ -21,7 +21,7 @@ ht-degree: 4%
 
 * [数据集](overview.md)： [!DNL Experience Platform]中用于数据持久性的存储和管理结构。
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
-   * [架构组合的基础知识](../../xdm/schema/composition.md)：了解XDM架构的基本构建块，包括架构组合中的关键原则和最佳实践。
+   * [架构合成基础知识](../../xdm/schema/composition.md)：了解XDM架构的基本构造块，包括架构合成中的关键原则和最佳实践。
    * [架构编辑器](../../xdm/tutorials/create-schema-ui.md)：了解如何在[!DNL Schema Editor]用户界面中使用[!DNL Experience Platform]构建您自己的自定义XDM架构。
 * [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
 * [[!DNL Adobe Experience Platform Data Governance]](../../data-governance/home.md)：确保遵守有关客户数据使用的法规、限制和策略。
@@ -57,11 +57,11 @@ ht-degree: 4%
 >[!CONTEXTUALHELP]
 >id="platform_datasets_orchestratedCampaigns_toggle"
 >title="精心策划的营销活动"
->abstract="启用此切换可允许在Adobe Journey Optimizer Orchestrated营销活动中使用选定的数据集。 数据集必须使用关系架构，且每个架构只能创建一个数据集。"
+>abstract="启用此切换可允许将所选数据集用于Adobe Journey Optimizer协调营销活动。 数据集必须使用关系架构，且每个架构只能创建一个数据集。"
 
-在[!DNL Experience Platform] UI中，从左侧导航中选择&#x200B;**[!UICONTROL Datasets]**&#x200B;以打开&#x200B;**[!UICONTROL Datasets]**&#x200B;仪表板。 仪表板列出您组织的所有可用数据集。 将显示每个列出数据集的详细信息，包括其名称、数据集所遵循的架构以及最近一次摄取运行的状态。
+在[!DNL Experience Platform] UI中，选择左侧导航栏中的&#x200B;**[!UICONTROL Datasets]**&#x200B;以打开&#x200B;**[!UICONTROL Datasets]**&#x200B;仪表板。 仪表板会列出您的组织的所有可用数据集。 将显示每个列出数据集的详细信息，包括其名称、数据集所遵循的架构以及最近一次引入运行的状态。
 
-![左侧导航栏中突出显示了数据集项的Experience Platform UI。](../images/datasets/user-guide/browse-datasets.png)
+![左侧导航栏中突出显示数据集项的Experience PlatformUI。](../images/datasets/user-guide/browse-datasets.png)
 
 从[!UICONTROL Browse]选项卡中选择数据集的名称以访问其&#x200B;**[!UICONTROL Dataset activity]**&#x200B;屏幕，并查看所选数据集的详细信息。 活动选项卡包含一个图表，其中可查看消息使用率，以及成功批次和失败批次的列表。
 
@@ -118,11 +118,11 @@ ht-degree: 4%
 
 >[!NOTE]
 >
->左侧的架构图仅显示包含数据的字段。 无数据的字段会自动隐藏，以简化UI并专注于相关信息。
+>左侧的架构图仅显示包含数据的字段。 无数据字段会自动隐藏，以简化UI并集中处理相关信息。
 
 ![将显示数据集预览对话框，其中包含有关数据集的结构信息以及示例值。](../images/datasets/user-guide/preview-dataset.png)
 
-或者，从&#x200B;**[!UICONTROL Dataset activity]**&#x200B;屏幕中选择&#x200B;**[!UICONTROL Preview dataset]**&#x200B;以打开预览窗口并查看数据集的结构和值的示例。
+或者，在&#x200B;**[!UICONTROL Dataset activity]**&#x200B;屏幕中选择&#x200B;**[!UICONTROL Preview dataset]**&#x200B;以打开预览窗口并查看数据集结构和值的示例。
 
 ![预览数据集按钮突出显示。](../images/datasets/user-guide/select-preview.png)
 
@@ -133,11 +133,11 @@ ht-degree: 4%
 
 以下动画显示了数据集预览窗口及其导航和数据探索功能：
 
-![屏幕录制，显示数据集预览窗口。 该记录突出显示对象浏览器侧栏、数据类型指示器、SQL查询显示和格式化数据表。](../images/datasets/user-guide/dataset-preview-demo.gif)
+![显示数据集预览窗口的屏幕录制。 该记录突出显示对象浏览器侧栏、数据类型指示器、SQL查询显示和格式化数据表。](../images/datasets/user-guide/dataset-preview-demo.gif)
 
 数据集预览窗口包括：
 
-* 左侧用于导航和筛选数据集字段的对象浏览器侧栏。
+* 左侧有一个对象浏览器边栏，用于导航和过滤数据集字段。
 * 数据集结构中insight每个列名称旁边的数据类型指示器。
 * SQL查询显示在窗口顶部，显示用于生成数据集的查询。
 * 具有格式化的表格视图，最多可包含100行，以便有效审查数据。
@@ -156,7 +156,7 @@ ht-degree: 4%
 
 ![数据集预览窗口在右上角显示“高级查询编辑器”按钮。](../images/datasets/user-guide/dataset-preview-advanced-query-editor.png)
 
-若要进行其他分析，请使用下游服务，如[!DNL Query Service]和[!DNL JupyterLab]。 有关详细信息，请参阅以下文档：
+若要进行其他分析，请使用下游服务，如[!DNL Query Service]和[!DNL JupyterLab]。 有关更多信息，请参阅以下文档：
 
 * [查询服务概述](../../query-service/home.md)
 * [JupyterLab 用户指南](../../data-science-workspace/jupyterlab/overview.md)
@@ -165,13 +165,13 @@ ht-degree: 4%
 
 您可以通过选择[!UICONTROL Browse]选项卡的内联选项来管理数据集的数据治理标签。 选择要管理的数据集名称旁边的省略号(...)，然后从下拉菜单中选择&#x200B;**[!UICONTROL Manage data and access labels]**。
 
-通过在架构级别应用数据使用标签，您可以根据应用于该数据的使用策略对数据集和字段进行分类。 请参阅[数据管理概述](../../data-governance/home.md)以了解有关标签的更多信息，或参阅[数据使用标签用户指南](../../data-governance/labels/overview.md)以了解有关如何将标签应用于架构以传播到数据集的说明。
+在架构级别应用的数据使用标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 请参阅[数据管理概述](../../data-governance/home.md)以了解有关标签的更多信息，或参阅[数据使用标签用户指南](../../data-governance/labels/overview.md)以了解有关如何将标签应用于架构以便传播到数据集的说明。
 
-## 为实时客户个人资料启用数据集 {#enable-profile}
+## 为Real-Time Customer Profile启用数据集 {#enable-profile}
 
-每个数据集都能够使用其摄取的数据扩充客户用户档案。 为此，数据集所遵循的架构必须兼容才能在[!DNL Real-Time Customer Profile]中使用。 兼容的架构满足以下要求：
+每个数据集都能够使用所收录的数据丰富客户资料。 为此，数据集所遵循的架构必须兼容才能在[!DNL Real-Time Customer Profile]中使用。 兼容的架构满足以下要求：
 
-* 架构至少有一个指定为标识属性的属性。
+* 架构至少有一个属性被指定为标识属性。
 * 架构具有定义为主标识的标识属性。
 
 有关为[!DNL Profile]启用架构的更多信息，请参阅[架构编辑器用户指南](../../xdm/tutorials/create-schema-ui.md)。
@@ -184,7 +184,7 @@ ht-degree: 4%
 
 >[!NOTE]
 >
->如果某个数据集已包含数据，然后为[!DNL Profile]启用，则[!DNL Profile]不会自动使用现有数据。 为[!DNL Profile]启用数据集后，建议您重新摄取任何现有数据，以使其贡献到客户个人资料。
+>如果数据集已包含数据，然后为[!DNL Profile]启用，则[!DNL Profile]不会自动使用现有数据。 为[!DNL Profile]启用数据集后，建议您重新摄取任何现有数据，以使其贡献到客户个人资料。
 
 ![数据集详细信息页面中高亮显示配置文件切换。](../images/datasets/user-guide/enable-dataset-profiles.png)
 
@@ -218,11 +218,11 @@ ht-degree: 4%
 
 >[!TIP]
 >
->数据湖存储原始的未处理数据（如事件日志、点击流数据和批量摄取的记录），以供分析和处理。 配置文件存储区包含客户可识别的数据（包括身份拼接事件和属性信息），以支持实时个性化和激活。
+>数据湖存储未经处理的原始数据（如事件日志、点击流数据和批量摄取的记录），以供分析和处理。 Profile store包含客户可识别的数据（包括身份缝合事件和属性信息），以支持实时个性化处理和激活。
 
 要配置保留期，请从下拉菜单中选择数据集旁边的省略号，后跟&#x200B;**[!UICONTROL Set data retention policy]**。
 
-![带有省略号的数据集工作区的“浏览”选项卡和突出显示的设置数据保留策略选项。](../images/datasets/user-guide/set-data-retention-policy-dropdown.png)
+![突出显示省略号和“设置数据保留策略”选项的“数据集”工作区的“浏览”选项卡。](../images/datasets/user-guide/set-data-retention-policy-dropdown.png)
 
 出现[!UICONTROL Set dataset retention]对话框。 该对话框显示沙盒级别的许可证使用量度、数据集级别的详细信息以及当前数据保留设置。 这些量度显示与您的权利对比的使用情况，并帮助您评估特定于数据集的存储和保留期配置。 这些量度包括数据集名称、类型、配置文件启用状态以及数据湖和配置文件存储使用情况。
 
@@ -232,7 +232,7 @@ ht-degree: 4%
 <!-- replace this screenshot with a dataset that enabled unified profile so user can see the Profile TTL settings -->
 ![设置数据集保留对话框。](../images/datasets/user-guide/set-data-retention-dialog.png)
 
-在数据保留设置对话框中配置首选保留期。 输入一个数字并从下拉菜单中选择一个时间单位（天、月或年）。 您可以为数据湖和配置文件服务配置单独的保留设置。
+在数据保留设置对话框中配置首选的保留期。 输入数字，然后从下拉菜单中选择时间单位（天、月或年）。 您可以为数据湖和配置文件服务配置单独的保留设置。
 
 >[!NOTE]
 > 
@@ -256,17 +256,17 @@ ht-degree: 4%
 
 ![显示了“设置数据保留”对话框，其中显示了“体验事件”分布图。](../images/datasets/user-guide/visual-forecast.png)
 
-如果对配置感到满意，请选择&#x200B;**[!UICONTROL Save]**&#x200B;以确认设置。
+如果对配置感到满意，请选择“**[!UICONTROL Save]**”以确认您的设置。
 
 >[!IMPORTANT]
 >
->应用数据保留规则后，任何超过过期值所定义天数的数据将被永久删除，并且无法恢复。
+>应用数据保留规则后，任何早于到期值定义天数的数据都将被永久删除，且无法恢复。
 
 配置保留设置后，使用监控UI确认系统执行了更改。 监控UI可集中查看所有数据集的数据保留活动。 从此处，您可以跟踪作业执行，查看删除了多少数据，并确保保留策略按预期运行。
 
 要探索保留策略如何跨不同的服务应用，请参阅有关配置文件[中的](../../profile/event-expirations.md)体验事件数据集保留和数据湖中的[体验事件数据集保留](./experience-event-dataset-retention-ttl-guide.md)的专用指南。 此可见性支持治理、法规遵从性和高效的数据生命周期管理。
 
-要了解如何使用监视仪表板在Experience Platform UI中跟踪源数据流，请参阅UI[文档中的](../../dataflows/ui/monitor-sources.md)监视源数据流。
+要了解如何使用监视仪表板在Experience PlatformUI中跟踪源数据流，请参阅UI中的[监视源数据流](../../dataflows/ui/monitor-sources.md)文档。
 
 <!-- Improve the link above. I cannot link to a 100% appropriate document yet. -->
 
@@ -284,7 +284,7 @@ ht-degree: 4%
 
 | 列标题 | 描述 |
 |---|---|
-| [!UICONTROL Data Lake Retention] | 数据湖中每个数据集的当前保留期。 此值可配置，并决定在删除之前保留数据的时间。 |
+| [!UICONTROL Data Lake Retention] | 数据湖中每个数据集的当前保留期。 此值可配置，并确定数据在删除前可以保留多长时间。 |
 | [!UICONTROL Data Lake Storage] | 数据湖中每个数据集的当前存储使用情况。 使用此量度管理存储限制并优化使用情况。 |
 | [!UICONTROL Profile Storage] | 配置文件服务中每个数据集的当前存储使用情况。 帮助监控存储消耗和支持数据管理决策。 |
 | [!UICONTROL Profile Retention] | 配置文件数据集的当前保留期。 您可以更新此值以控制配置文件数据保留多长时间。 |
@@ -297,7 +297,7 @@ ht-degree: 4%
 
 您可以将数据集放在文件夹中，以便更好地管理数据集。 要将数据集移动到文件夹中，请选择要管理的数据集名称旁边的省略号(...)，然后从下拉菜单中选择&#x200B;**[!UICONTROL Move to folder]**。
 
-![突出显示带有椭圆和[!UICONTROL Datasets]的[!UICONTROL Move to folder]仪表板。](../images/datasets/user-guide/move-to-folder.png)
+![省略号为[!UICONTROL Datasets]且[!UICONTROL Move to folder]突出显示的仪表板。](../images/datasets/user-guide/move-to-folder.png)
 
 此时将显示[!UICONTROL Move]数据集到文件夹对话框。 选择要将受众移动到的文件夹，然后选择&#x200B;**[!UICONTROL Move]**。 弹出通知会告知您已成功移动数据集。
 
@@ -315,7 +315,7 @@ ht-degree: 4%
 
 ### 删除数据集 {#delete}
 
-您可以从[!UICONTROL Browse]选项卡或[!UICONTROL Dataset activity]视图右上角的数据集内联操作中删除数据集。 从[!UICONTROL Browse]视图中，选择要删除的数据集名称旁边的省略号(...)。 出现一个选项菜单列表。 接下来，从下拉菜单中选择&#x200B;**[!UICONTROL Delete]**。
+您可以从[!UICONTROL Browse]选项卡或[!UICONTROL Dataset activity]视图右上角的数据集内联操作中删除数据集。 从[!UICONTROL Browse]视图中，选择要删除的数据集名称旁边的省略号(...)。 此时会显示选项菜单列表。 接下来，从下拉菜单中选择&#x200B;**[!UICONTROL Delete]**。
 
 ![选定数据集的“数据集”工作区的“浏览”选项卡上带有省略号，且“删除”选项突出显示。](../images/datasets/user-guide/inline-delete-dataset.png)
 
@@ -329,11 +329,11 @@ ht-degree: 4%
 
 ![“删除数据集”按钮在数据集详细信息页面中突出显示。](../images/datasets/user-guide/delete-dataset.png)
 
-将出现一个确认框。 选择&#x200B;**[!UICONTROL Delete]**&#x200B;以确认删除数据集。
+此时会显示一个确认框。 选择&#x200B;**[!UICONTROL Delete]**&#x200B;以确认删除数据集。
 
-![将显示删除的确认模式，并突出显示删除按钮。](../images/datasets/user-guide/confirm-delete.png)
+![显示删除的确认模式，并突出显示“删除”按钮。](../images/datasets/user-guide/confirm-delete.png)
 
-### 删除启用配置文件的数据集
+### 删除启用了配置文件的数据集
 
 如果为配置文件启用了某个数据集，则通过UI删除该数据集会将其从数据湖、身份服务以及配置文件存储中与该数据集关联的任何配置文件数据中删除。
 
@@ -377,7 +377,7 @@ ht-degree: 4%
 
 ### 按架构筛选 {#filter-by-schema}
 
-您可以根据定义数据集结构的架构筛选数据集。 选择下拉图标或将架构名称输入文本字段。 此时将显示一个潜在匹配项列表。 从列表中选择相应的架构。
+您可以根据定义数据集结构的架构来过滤数据集。 选择下拉图标或将架构名称输入文本字段。 此时会显示可能的匹配项列表。 从列表中选择相应的架构。
 
 ## 批量操作 {#bulk-actions}
 
@@ -390,7 +390,7 @@ ht-degree: 4%
 对数据集应用批量操作时，将应用以下条件：
 
 * 您可以从UI的不同页面选择数据集。
-* 如果选择筛选器，则选定的数据集将重置。
+* 如果选择过滤器，选定数据集将重置。
 
 ## 按创建日期排序数据集 {#sort}
 
@@ -413,7 +413,7 @@ ht-degree: 4%
 
 在&#x200B;**[!UICONTROL Create dataset]**&#x200B;屏幕中，选择&#x200B;**[!UICONTROL Create dataset from schema]**&#x200B;以创建新的空数据集。
 
-![从架构创建数据集按钮突出显示。](../images/datasets/user-guide/create-dataset-schema.png)
+![突出显示了“从架构创建数据集”按钮。](../images/datasets/user-guide/create-dataset-schema.png)
 
 此时会显示&#x200B;**[!UICONTROL Select schema]**&#x200B;步骤。 浏览架构列表并选择数据集将遵循的架构，然后再选择&#x200B;**[!UICONTROL Next]**。
 

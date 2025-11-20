@@ -6,7 +6,7 @@ type: Tutorial
 exl-id: c467666d-55bc-4134-b8f4-7758d49c4786
 source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '657'
+source-wordcount: '636'
 ht-degree: 11%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 11%
 
 架构库中的所有资源都包含在组织内的特定沙盒中。 在某些情况下，您可能希望在沙盒和组织之间共享Experience Data Model (XDM)资源。
 
-为了满足此需求，Adobe Experience Platform UI中的[!UICONTROL 架构]工作区允许您为架构库中的任何架构生成导出有效负载。 然后，可以在调用架构注册表API中使用此有效负载，将架构（以及所有依赖的资源）导入目标沙盒和组织。
+为了满足此需求，Adobe Experience Platform UI中的[!UICONTROL Schemas]工作区允许您为架构库中的任何架构生成导出有效负载。 然后，可以在调用架构注册表API中使用此有效负载，将架构（以及所有依赖的资源）导入目标沙盒和组织。
 
 >[!NOTE]
 >
@@ -32,17 +32,17 @@ ht-degree: 11%
 
 ## 生成导出有效负载 {#generate-export-payload}
 
-可以在Experience Platform UI中通过[!UICONTROL 浏览]选项卡中的详细信息面板生成导出负载，也可以直接从架构编辑器的架构画布生成导出负载。
+导出负载可在Experience Platform UI中从[!UICONTROL Browse]选项卡的详细信息面板生成，或直接从架构编辑器的架构画布生成。
 
-要生成导出有效负载，请在左侧导航中选择&#x200B;**[!UICONTROL 架构]**。 在[!UICONTROL 架构]工作区中，选择要导出的架构的行以在右侧边栏中显示架构详细信息。
+要生成导出有效负载，请在左侧导航中选择&#x200B;**[!UICONTROL Schemas]**。 在[!UICONTROL Schemas]工作区中，选择要导出的架构的行以在右侧边栏中显示架构详细信息。
 
 >[!TIP]
 >
 >有关如何查找您所寻找的XDM资源的详细信息，请参阅[浏览XDM资源](./explore.md)指南。
 
-接下来，从可用选项中选择&#x200B;**[!UICONTROL 复制JSON]**&#x200B;图标（![复制图标](/help/images/icons/copy.png)）。
+接下来，从可用选项中选择&#x200B;**[!UICONTROL Copy JSON]**&#x200B;图标（![复制图标](/help/images/icons/copy.png)）。
 
-![突出显示具有架构行和[!UICONTROL 复制到JSON]的架构工作区。](../images/ui/export/copy-json.png)
+![突出显示具有架构行和[!UICONTROL Copy to JSON]的架构工作区。](../images/ui/export/copy-json.png)
 
 这会将JSON有效负载复制到剪贴板，该剪贴板是基于架构结构生成的。 对于上面显示的“[!DNL Loyalty Members]”架构，会生成以下JSON：
 
@@ -212,13 +212,13 @@ ht-degree: 11%
 
 +++
 
-通过选择架构编辑器右上角的[!UICONTROL More]，还可以复制有效负载。 下拉菜单提供两个选项：[!UICONTROL 复制JSON结构]和[!UICONTROL 删除架构]。
+通过选择架构编辑器右上角的[!UICONTROL More]，也可以复制有效负载。 下拉菜单提供两个选项：[!UICONTROL Copy JSON structure]和[!UICONTROL Delete schema]。
 
 >[!NOTE]
 >
 >为配置文件启用某个架构或具有关联的数据集时，无法删除该架构。
 
-![带有[!UICONTROL 更多]和[!UICONTROL 复制到JSON]的架构编辑器已突出显示。](../images/ui/export/schema-editor-copy-json.png)
+![已高亮显示带有[!UICONTROL More]和[!UICONTROL Copy to JSON]的架构编辑器。](../images/ui/export/schema-editor-copy-json.png)
 
 有效负载采用数组的形式，每个数组项都是一个对象，表示要导出的自定义XDM资源。 在上述示例中，包括“[!DNL Loyalty details]”自定义字段组和“[!DNL Loyalty Members]”架构。 架构使用的任何核心资源都不会包含在导出中，因为这些资源在所有沙盒和组织中都可用。
 
@@ -230,4 +230,4 @@ ht-degree: 11%
 
 ## 后续步骤
 
-按照本指南，您已成功将XDM架构导出到其他组织或沙盒。 有关[!UICONTROL 架构] UI功能的详细信息，请参阅[[!UICONTROL 架构] UI概述](./overview.md)。
+按照本指南，您已成功将XDM架构导出到其他组织或沙盒。 有关[!UICONTROL Schemas] UI功能的更多信息，请参阅[[!UICONTROL Schemas] UI概述](./overview.md)。

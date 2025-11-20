@@ -5,14 +5,14 @@ title: 订阅上下文目标警报
 exl-id: 134144a0-cdfe-49a8-bd8b-e36a4f053de5
 source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
-source-wordcount: '953'
-ht-degree: 8%
+source-wordcount: '935'
+ht-degree: 14%
 
 ---
 
 # 订阅上下文目标警报
 
-通过Adobe Experience Platform，可订阅有关Adobe Experience Platform活动的基于事件的警报。 警报可减少或消除轮询[[!DNL Observability Insights] API](../../observability/api/overview.md)以检查作业是否已完成、是否已达到工作流中的某个里程碑或是否已发生任何错误的需要。
+Adobe Experience Platform 允许您订阅关于 Adobe Experience Platform 活动的基于事件的警报。通过警报可以减少或消除轮询 [[!DNL Observability Insights] API](../../observability/api/overview.md) 的需要，用于检查任务是否已完成，或者是否已达到工作流中的某个里程碑，或者是否发生任何错误。
 
 在创建数据流以接收有关流运行的状态、成功或失败的警报消息时，您可以订阅警报。
 
@@ -22,7 +22,7 @@ ht-degree: 8%
 
 本文档要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [目标](../home.md)：与目标平台预先构建的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
+* [目标](../home.md)：与目标平台预先构建的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例。
 * [可观察性](../../observability/home.md)： [!DNL Observability Insights]允许您通过使用统计指标和事件通知来监视Experience Platform活动。
    * [警报](../../observability/alerts/overview.md)：当您的Experience Platform操作中达到一组特定条件（例如，当系统超出阈值时可能会出现问题）时，Experience Platform可以向您组织中订阅了警报消息的任何用户发送警报消息。
 
@@ -38,11 +38,11 @@ ht-degree: 8%
 >
 >您必须为Experience Platform帐户启用电子邮件即时通知，才能接收数据流基于电子邮件的警报通知。
 
-您可以在[!UICONTROL 目标连接]工作流的[配置新目标](connect-destination.md)步骤期间为数据流启用警报。
+您可以在[!UICONTROL Configure new destination]目标连接[工作流的](connect-destination.md)步骤期间为数据流启用警报。
 
 ![显示目标警报分区的UI图像。](../assets/ui/alerts/destination-alerts.png)
 
-选择要订阅的警报，然后选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以查看并完成数据流。
+选择要订阅的警报，然后选择&#x200B;**[!UICONTROL Next]**&#x200B;以查看并完成数据流。
 
 下表介绍了可用于目标数据流的警报。
 
@@ -79,11 +79,11 @@ ht-degree: 8%
 
 显示如何选择通知的![UI图像](../assets/ui/alerts/select-alert-message.png)
 
-此时将显示[!UICONTROL 数据流运行详细信息]页面。 屏幕的上半部分显示有关数据流的概述，包括有关其属性、相应数据流运行ID和高级别错误摘要的信息。
+此时会显示[!UICONTROL Dataflow run details]页面。 屏幕的上半部分显示有关数据流的概述，包括有关其属性、相应数据流运行ID和高级别错误摘要的信息。
 
 ![显示数据流运行详细信息页面的UI图像。](../assets/ui/alerts/dataflow-overview.png)
 
-页面下半部分显示在数据流运行阶段期间发生的所有[!UICONTROL 数据流运行错误]。 在此处，您可以预览错误诊断或使用[[!DNL Data Access] API](https://www.adobe.io/experience-platform-apis/references/data-access/)下载错误诊断或对应于您的数据流的文件清单。
+页面下半部分显示在数据流运行阶段发生的任何[!UICONTROL Dataflow run errors]。 在此处，您可以预览错误诊断或使用[[!DNL Data Access] API](https://www.adobe.io/experience-platform-apis/references/data-access/)下载错误诊断或对应于您的数据流的文件清单。
 
 ![显示数据流运行详细信息页面的UI图像，错误部分突出显示。](../assets/ui/alerts/dataflow-run-error.png)
 
@@ -95,21 +95,21 @@ ht-degree: 8%
 
 ![警报电子邮件的屏幕截图](../assets/ui/alerts/email.png)
 
-与UI警报类似，将显示[!UICONTROL 数据流运行概述]页面，为您提供调查与数据流关联的任何错误的界面。
+与UI警报类似，将显示[!UICONTROL Dataflow run overview]页面，为您提供调查与数据流关联的任何错误的界面。
 
 ![数据流概述](../assets/ui/alerts/dataflow-overview.png)
 
 ## 订阅和取消订阅警报 {#subscribe-and-unsubscribe}
 
-您可以订阅目标[!UICONTROL 浏览]页面中现有目标数据流的更多警报或取消订阅已建立的警报。
+您可以订阅目标[!UICONTROL Browse]页面中现有目标数据流的更多警报或取消订阅已建立的警报。
 
 显示“目标浏览”页面的![UI图像](../assets/ui/alerts/destination-list.png)
 
-找到要接收警报的目标连接，然后选择省略号(`...`)以查看选项的下拉菜单。 接下来，选择&#x200B;**[!UICONTROL 订阅警报]**&#x200B;以修改目标数据流的警报设置。
+找到要接收警报的目标连接，然后选择省略号(`...`)以查看选项的下拉菜单。 接下来，选择&#x200B;**[!UICONTROL Subscribe to alerts]**&#x200B;以修改目标数据流的警报设置。
 
 ![显示目标选项的UI图像](../assets/ui/alerts/destination-alerts-subscribe.png)
 
-此时会出现一个弹出窗口，为您提供目标警报的列表。 选择要订阅的任何警报，或取消选择要取消订阅的警报。 完成后，选择&#x200B;**[!UICONTROL 保存]**。
+此时会出现一个弹出窗口，为您提供目标警报的列表。 选择要订阅的任何警报，或取消选择要取消订阅的警报。 完成后，选择&#x200B;**[!UICONTROL Save]**。
 
 ![显示目标警报订阅页面的UI图像](../assets/ui/alerts/destination-alerts-list.png)
 

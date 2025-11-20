@@ -6,7 +6,7 @@ description: 了解如何在Experience Platform用户界面中定义字符串字
 exl-id: 67ec5382-31de-4f8d-9618-e8919bb5a472
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1257'
+source-wordcount: '1222'
 ht-degree: 8%
 
 ---
@@ -20,27 +20,27 @@ ht-degree: 8%
 
 在Experience Data Model (XDM)中，可以为字符串字段提供一组预定义的接受或建议值，以便更好地控制哪些值被引入到该字段中，或者如何在分段中表现。
 
-**[!UICONTROL 枚举]**&#x200B;将可以为字符串字段摄取的值约束为预定义集。 如果您尝试将数据摄取到枚举字段，但值与其配置中定义的任何值都不匹配，则将拒绝摄取。
+**[!UICONTROL Enums]**&#x200B;将可以为字符串字段摄取的值限制为预定义集。 如果您尝试将数据摄取到枚举字段，但值与其配置中定义的任何值都不匹配，则将拒绝摄取。
 
-与枚举相反，**[!UICONTROL 建议值]**&#x200B;选项允许为字符串字段表示一组建议值，这些建议值不会约束它可以摄取的值。 建议值反而会影响[分段UI](../../../segmentation/ui/overview.md)中哪些预定义值在将该字符串字段作为属性包含时可用。
+与枚举相反，**[!UICONTROL Suggested values]**&#x200B;选项允许表示一组字符串字段的推荐值，这些值不会约束它可以摄取的值。 建议值反而会影响[分段UI](../../../segmentation/ui/overview.md)中哪些预定义值在将该字符串字段作为属性包含时可用。
 
-在Adobe Experience Platform用户界面中定义新字段[&#128279;](./overview.md#define)并将类型设置为[!UICONTROL 字符串]时，为您提供了为该字段定义[枚举](#enum)或[建议值](#suggested-values)的选项。
+在Adobe Experience Platform用户界面中定义新字段[并将类型设置为](./overview.md#define)时，为您提供了为该字段定义[!UICONTROL String]枚举[或](#enum)建议值[的选项。](#suggested-values)
 
 ![图像显示UI中为字符串字段启用了“枚举和建议值”选项](../../images/ui/fields/enum/enum-options-selected.png)
 
-本文档介绍如何在[!UICONTROL 架构] UI工作区中定义枚举和建议值。 要快速了解枚举和建议值（包括如何在UI中配置它们及其下游影响），请观看以下视频：
+本文档介绍如何在[!UICONTROL Schemas] UI工作区中定义枚举和建议值。 要快速了解枚举和建议值（包括如何在UI中配置它们及其下游影响），请观看以下视频：
 
->[!VIDEO](https://video.tv.adobe.com/v/3413675/?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/3409501/?quality=12&learn=on)
 
 ## 定义枚举 {#enum}
 
-选择&#x200B;**[!UICONTROL 枚举和建议值]**，然后选择&#x200B;**[!UICONTROL 枚举]**。 将显示其他控件，允许您为枚举指定值约束。 要添加约束，请选择&#x200B;**[!UICONTROL 添加行]**。
+选择&#x200B;**[!UICONTROL Enums and Suggested Values]**，然后选择&#x200B;**[!UICONTROL Enums]**。 将显示其他控件，允许您为枚举指定值约束。 要添加约束，请选择&#x200B;**[!UICONTROL Add row]**。
 
 ![显示在UI中选择的枚举选项的图像](../../images/ui/fields/enum/enum-add-row.png)
 
-在&#x200B;**[!UICONTROL 值]**&#x200B;列下，必须提供要将该字段约束到的确切值。 您还可以选择为约束提供人性化的&#x200B;**[!UICONTROL 显示名称]**，这会影响分段中值的表示方式。
+在&#x200B;**[!UICONTROL Value]**&#x200B;列下，必须提供要将该字段约束到的确切值。 您还可以选择为约束提供人性化的&#x200B;**[!UICONTROL Display Name]**，这会影响分段中值的表示方式。
 
-继续使用&#x200B;**[!UICONTROL 添加行]**&#x200B;将所需的约束和可选标签添加到枚举中，或选择以前添加的行旁边的删除图标（![删除图标的图像](/help/images/icons/remove-circle.png)）以将其删除。 完成后，选择&#x200B;**[!UICONTROL 应用]**&#x200B;以将更改应用到架构。
+继续使用&#x200B;**[!UICONTROL Add row]**&#x200B;将所需的约束和可选标签添加到枚举中，或选择以前添加的行旁边的删除图标（![删除图标的图像](/help/images/icons/remove-circle.png)）以将其删除。 完成后，选择&#x200B;**[!UICONTROL Apply]**&#x200B;以将更改应用到架构。
 
 ![显示为UI中的字符串字段填写的枚举值和显示名称的图像](../../images/ui/fields/enum/enum-confirm.png)
 
@@ -48,13 +48,13 @@ ht-degree: 8%
 
 ## 定义建议值 {#suggested-values}
 
-选择&#x200B;**[!UICONTROL 枚举和建议值]**，然后选择&#x200B;**[!UICONTROL 建议值]**&#x200B;以显示其他控件。 从此处选择&#x200B;**[!UICONTROL 添加行]**&#x200B;以开始添加建议值。
+选择&#x200B;**[!UICONTROL Enums and Suggested Values]**，然后选择&#x200B;**[!UICONTROL Suggested Values]**&#x200B;以显示其他控件。 从此处选择&#x200B;**[!UICONTROL Add row]**&#x200B;以开始添加建议值。
 
 ![显示在UI中选择的“建议值”选项的图像](../../images/ui/fields/enum/suggested-add-row.png)
 
-在&#x200B;**[!UICONTROL 显示名称]**&#x200B;列下，为值提供您希望在分段UI中显示的友好名称。 要添加更多建议值，请再次选择&#x200B;**[!UICONTROL 添加行]**&#x200B;并根据需要重复该过程。 要删除以前添加的行，请选择相关行旁边的![删除图标](/help/images/icons/remove-circle.png)。
+在&#x200B;**[!UICONTROL Display Name]**&#x200B;列下，为值提供您希望其在分段UI中显示的友好名称。 要添加更多建议值，请再次选择&#x200B;**[!UICONTROL Add row]**&#x200B;并根据需要重复该过程。 要删除以前添加的行，请选择相关行旁边的![删除图标](/help/images/icons/remove-circle.png)。
 
-完成后，选择&#x200B;**[!UICONTROL 应用]**&#x200B;以将更改应用到架构。
+完成后，选择&#x200B;**[!UICONTROL Apply]**&#x200B;以将更改应用到架构。
 
 ![显示为UI中的字符串字段填写的枚举值和显示名称的图像](../../images/ui/fields/enum/suggested-confirm.png)
 
@@ -64,11 +64,11 @@ ht-degree: 8%
 
 ### 管理标准字段的建议值
 
-标准XDM组件中的某些字段包含其自己的建议值，例如[[!UICONTROL XDM ExperienceEvent]类](../../classes/experienceevent.md)中的`eventType`。 虽然可以为标准字段创建其他建议值，但无法修改或删除任何未由组织定义的建议值。 在UI中查看标准字段时，其建议值会显示，但为只读。
+标准XDM组件中的某些字段包含其自己的建议值，例如`eventType`类[[!UICONTROL XDM ExperienceEvent]中的](../../classes/experienceevent.md)。 虽然可以为标准字段创建其他建议值，但无法修改或删除任何未由组织定义的建议值。 在UI中查看标准字段时，其建议值会显示，但为只读。
 
 ![显示为UI中的字符串字段填写的枚举值和显示名称的图像](../../images/ui/fields/enum/suggested-standard.png)
 
-要为标准字段添加新的建议值，请选择&#x200B;**[!UICONTROL 添加行]**。 要删除贵组织以前添加的建议值，请选择相关行旁边的![删除图标](/help/images/icons/remove-circle.png)。
+要为标准字段添加新的建议值，请选择&#x200B;**[!UICONTROL Add row]**。 要删除贵组织以前添加的建议值，请选择相关行旁边的![删除图标](/help/images/icons/remove-circle.png)。
 
 ![显示为UI中的字符串字段填写的枚举值和显示名称的图像](../../images/ui/fields/enum/suggested-standard-add.png)
 

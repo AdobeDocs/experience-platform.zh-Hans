@@ -6,7 +6,7 @@ description: 了解如何在Experience Platform用户界面中定义标识字段
 exl-id: 11a53345-4c3f-4537-b3eb-ee7a5952df2a
 source-git-commit: 3570197ca6cff95368b4facb034386e793033fe2
 workflow-type: tm+mt
-source-wordcount: '665'
+source-wordcount: '657'
 ht-degree: 6%
 
 ---
@@ -30,19 +30,19 @@ ht-degree: 6%
 >title="对主要身份标识的限制"
 >abstract="此架构使用旨在用于特定源连接的字段组。该连接要求将 identityMap 用作主要标识并已自动设置。"
 
-在UI中[定义新字段](./overview.md#define)时，您可以通过选中右边栏中的&#x200B;**[!UICONTROL 标识]**&#x200B;复选框将其设置为标识字段。
+在UI中定义[新字段](./overview.md#define)时，您可以通过选中右边栏中的&#x200B;**[!UICONTROL Identity]**&#x200B;复选框将其设置为标识字段。
 
 ![](../../images/ui/fields/special/identity.png)
 
-选中此复选框后，将显示其他控件。 如果要将此字段作为架构的主标识，请选中&#x200B;**[!UICONTROL 主标识]**&#x200B;复选框。
+选中此复选框后，将显示其他控件。 如果您希望此字段作为架构的主标识，请选中&#x200B;**[!UICONTROL Primary identity]**&#x200B;复选框。
 
 >[!NOTE]
 >
 >单个架构可以定义多个标识字段，但只能有一个主标识。 所有身份字段（主要或其他类型）都有助于单个客户的身份图，但在合并数据片段时，实时客户配置文件仅使用主要身份作为真实来源。 如果要启用架构以便在Profile中使用，则架构必须定义主标识。
 
-在&#x200B;**[!UICONTROL 身份命名空间]**&#x200B;下，使用下拉菜单为身份字段选择适当的命名空间。 列出了Adobe提供的标准命名空间以及您的组织定义的任何自定义命名空间。
+在&#x200B;**[!UICONTROL Identity namespace]**&#x200B;下，使用下拉菜单为标识字段选择适当的命名空间。 列出了Adobe提供的标准命名空间以及您的组织定义的任何自定义命名空间。
 
-完成后，选择&#x200B;**[!UICONTROL 应用]**&#x200B;以将更改应用到架构。
+完成后，选择&#x200B;**[!UICONTROL Apply]**&#x200B;以将更改应用于架构。
 
 >[!IMPORTANT]
 >
@@ -52,7 +52,7 @@ ht-degree: 6%
 
 画布将更新以反映这些更改，所选字段将获得指纹符号(![](/help/images/icons/identity-service.png))以将其指定为标识。 在左边栏中，标识字段现在列在为架构提供字段的类或架构字段组的名称下。
 
-如果该字段也设置为主标识，则它还将列在左边栏中的&#x200B;**[!UICONTROL 必填字段]**&#x200B;下。 如果标识字段嵌套在架构结构中，则所有父字段也将按要求列出。
+如果该字段也设置为主标识，则它也会在左边栏中列在&#x200B;**[!UICONTROL Required fields]**&#x200B;下。 如果标识字段嵌套在架构结构中，则所有父字段也将按要求列出。
 
 ![](../../images/ui/fields/special/identity-applied.png)
 

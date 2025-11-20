@@ -6,14 +6,14 @@ role: User, Developer
 exl-id: b06d8186-c41f-4150-bac4-69c616151ef9
 source-git-commit: 54b3d2ef22f7afb47fa8c9430c5c1645c94c837d
 workflow-type: tm+mt
-source-wordcount: '785'
-ht-degree: 81%
+source-wordcount: '769'
+ht-degree: 71%
 
 ---
 
 # 创建、共享和重用战术手册实例
 
-要使用战术手册，请导航至&#x200B;**[!UICONTROL 用例战术手册] > [!UICONTROL 战术手册]**。浏览并使用页面上的各种搜索和过滤选项来选择并开始使用特定的战术手册。
+要使用行动手册，请导航到&#x200B;**[!UICONTROL Use Case Playbooks]>[!UICONTROL Playbooks]**。 浏览并使用页面上的各种搜索和过滤选项来选择并开始使用特定的战术手册。
 
 ## 创建一个战术手册实例。 {#create-playbook-instance}
 
@@ -22,7 +22,7 @@ ht-degree: 81%
 >title="创建实例"
 >abstract="生成要在历程或激活场景中使用的历程、受众、架构或目标等资源的列表。"
 
-在创建行动手册实例之前，请浏览可用的行动手册[选择正确的行动手册](/help/use-case-playbooks/playbooks/choose.md)。 当您准备好继续使用战术手册并创建实例时，请选择&#x200B;**[!UICONTROL 创建实例]**，以继续执行战术手册，并生成技术资产。
+在创建行动手册实例之前，请浏览可用的行动手册[选择正确的行动手册](/help/use-case-playbooks/playbooks/choose.md)。 当您准备好继续使用行动手册并创建实例时，请选择&#x200B;**[!UICONTROL Create Instance]**&#x200B;以继续使用行动手册并生成技术资产。
 
 ![创建一个战术手册实例。](/help/use-case-playbooks/assets/playbooks/ui-guide/create-playbook-instance.png)
 
@@ -32,7 +32,7 @@ ht-degree: 81%
 
 ### 使用配置控件编辑实例名称和描述 {#edit-instance-metadata}
 
-基于战术手册创建实例后，您可以对其进行个性化设置，以将其与从同一战术手册创建的其他实例区分开来。选择配置控件，如下所示。编辑名称、描述和注释，并在完成时选择&#x200B;**[!UICONTROL 保存]**。
+基于战术手册创建实例后，您可以对其进行个性化设置，以将其与从同一战术手册创建的其他实例区分开来。选择配置控件，如下所示。编辑名称、说明和注释，并在完成后选择&#x200B;**[!UICONTROL Save]**。
 
 ![编辑实例的名称和描述。](/help/use-case-playbooks/assets/playbooks/ui-guide/playbook-settings.gif)
 
@@ -45,9 +45,9 @@ ht-degree: 81%
 您需要知道，所生成的资产根据您启用的用例而有所不同：
 
 * 不同类型的战术手册会生成不同的资产。这些资产是专门为通过战术手册实现的用例创建的。例如，行动手册生成架构、受众、历程和消息。 另一个行动手册生成架构、受众和将数据激活到的目标。
-* 不同战术手册之间的资产本身有所不同。例如，对于&#x200B;**[!UICONTROL 向宾客发送生日消息]**&#x200B;战术手册，创建的受众具有规则 `birthday=today AND year=any`。
+* 不同战术手册之间的资产本身有所不同。例如，对于&#x200B;**[!UICONTROL Send A Birthday Message To Guests]**&#x200B;剧本，创建的受众具有规则`birthday=today AND year=any`。
 
-为了举例说明，对于&#x200B;**[!UICONTROL 已放弃购物车：商品]**&#x200B;战术手册中，您可以看到创建了一个特定的历程，其中包括为此用例创建的消息。
+为了说明一个示例，对于&#x200B;**[!UICONTROL Abandoned Cart: Merchandise]**&#x200B;行动手册，您可以看到已创建特定历程，其中包括为此用例创建的消息。
 
 ![根据用例战术手册创建的历程。](/help/use-case-playbooks/assets/playbooks/ui-guide/journey-preview.png)
 

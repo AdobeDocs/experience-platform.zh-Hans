@@ -4,7 +4,7 @@ description: 了解在使用Identity Graph链接规则配置实施数据时要�
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
 source-git-commit: 7596a87309105897a2727faa8e22b06cdf5547c3
 workflow-type: tm+mt
-source-wordcount: '1956'
+source-wordcount: '1944'
 ht-degree: 6%
 
 ---
@@ -45,7 +45,7 @@ ht-degree: 6%
 
 +++
 
-+++选择以查看具有单个人员标识符命名空间的图形示例
++++选择可查看具有单个人员标识符命名空间的图形示例
 
 给定唯一的命名空间（在本例中，是指CRMID而不是两个完全不同的命名空间），Identity Service能够识别上次与ECID关联的人员标识符。 在此示例中，由于存在唯一的CRMID，因此Identity Service能够识别“共享设备”方案，即两个实体共享同一设备。
 
@@ -94,7 +94,7 @@ ht-degree: 6%
   "timestamp": "2024-09-24T15:02:32+00:00",
   "web": {
       "webPageDetails": {
-          "URL": "https://business.adobe.com/cn/",
+          "URL": "https://business.adobe.com/",
           "name": "Adobe Business"
       }
   }
@@ -133,7 +133,7 @@ ht-degree: 6%
   "timestamp": "2024-09-24T15:02:32+00:00",
   "web": {
       "webPageDetails": {
-          "URL": "https://business.adobe.com/cn/",
+          "URL": "https://business.adobe.com/",
           "name": "Adobe Business"
       }
   }
@@ -169,7 +169,7 @@ ht-degree: 6%
     "timestamp": "2024-09-24T15:02:32+00:00",
     "web": {
         "webPageDetails": {
-            "URL": "https://business.adobe.com/cn/",
+            "URL": "https://business.adobe.com/",
             "name": "Adobe Business"
         }
     }
@@ -182,8 +182,8 @@ ht-degree: 6%
 
 Identity Service实施流程的第一步是，确保将您的Experience Platform帐户添加到配置了必要权限的角色。 管理员可通过导航到Adobe Experience Cloud中的权限UI，配置您帐户的权限。 从那里，必须将您的帐户添加到具有以下权限的角色：
 
-* [!UICONTROL 查看身份设置]：应用此权限以便在身份命名空间浏览页中查看唯一的命名空间和命名空间优先级。
-* [!UICONTROL 编辑身份设置]：应用此权限以便能够编辑和保存您的身份设置。
+* [!UICONTROL View Identity Settings]：应用此权限以便能够在身份命名空间浏览页中查看唯一的命名空间和命名空间优先级。
+* [!UICONTROL Edit Identity Settings]：应用此权限以便能够编辑和保存您的身份设置。
 
 有关权限的详细信息，请阅读[权限指南](../../access-control/abac/ui/permissions.md)。
 
@@ -199,7 +199,7 @@ Identity Service实施流程的第一步是，确保将您的Experience Platform
 
 ## 配置身份设置 {#identity-settings}
 
-了解图形的行为方式后，请导航到Identity Service UI工作区中的[身份设置UI](./identity-settings-ui.md)。 要访问身份设置UI，请从左侧导航中选择&#x200B;**[!UICONTROL 身份]**，然后选择&#x200B;**[!UICONTROL 设置]**。
+了解图形的行为方式后，请导航到Identity Service UI工作区中的[身份设置UI](./identity-settings-ui.md)。 要访问身份设置UI，请从左侧导航中选择&#x200B;**[!UICONTROL Identities]**，然后选择&#x200B;**[!UICONTROL Settings]**。
 
 ![身份浏览页面中突出显示了设置按钮。](../images/implementation/settings.png "身份浏览页面中突出显示了设置按钮。"){zoomable="yes"}
 
@@ -245,13 +245,13 @@ Identity Service实施流程的第一步是，确保将您的Experience Platform
 >
 >摄取数据后，XDM原始数据有效负载不会发生更改。 您仍可能会在UI中看到主要身份配置。 但是，这些配置将由身份设置覆盖。
 
-若要获得任何反馈，请使用Identity Service UI工作区中的&#x200B;**[!UICONTROL Beta反馈]**&#x200B;选项。
+若要获得任何反馈，请使用Identity Service UI工作区中的&#x200B;**[!UICONTROL Beta feedback]**&#x200B;选项。
 
 ## 验证图形 {#validate}
 
 使用身份仪表板可以查看身份图的状态，例如总体身份计数和图形计数趋势、按命名空间划分的身份计数以及按图形大小划分的图形计数。 您还可以使用身份仪表板查看具有两个或多个身份（按命名空间组织）的图形的趋势。
 
-选择省略号(`...`)，然后选择&#x200B;**[!UICONTROL 查看更多]**&#x200B;以获取详细信息，并验证没有折叠的图形。
+选择省略号(`...`)，然后选择&#x200B;**[!UICONTROL View more]**&#x200B;以获取详细信息，并验证没有折叠的图形。
 
 ![Identity Service UI工作区中的身份仪表板。](../images/implementation/identity_dashboard.png "Identity Service UI工作区中的身份仪表板。"){zoomable="yes"}
 

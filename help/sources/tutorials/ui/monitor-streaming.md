@@ -5,14 +5,14 @@ title: 在UI中监控流源的数据流
 exl-id: b080e398-e71f-40bd-aea1-7ea3ce86b55d
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1041'
-ht-degree: 10%
+source-wordcount: '990'
+ht-degree: 11%
 
 ---
 
 # 在UI中监控流源的数据流
 
-本教程介绍了使用[!UICONTROL 源]工作区监控流源数据流所需的步骤。
+本教程介绍了使用[!UICONTROL Sources]工作区监控流源的数据流的步骤。
 
 ## 快速入门
 
@@ -25,13 +25,13 @@ ht-degree: 10%
 
 ## 监控流源的数据流
 
-在Experience Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以为其创建帐户的各种源。
+在Experience Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL Sources]**&#x200B;以访问[!UICONTROL Sources]工作区。 [!UICONTROL Catalog]屏幕显示各种来源，您可以使用这些来源创建帐户。
 
-要查看流源的现有数据流，请从顶部标题中选择&#x200B;**[!UICONTROL 数据流]**。
+要查看流源的现有数据流，请从顶部标题中选择&#x200B;**[!UICONTROL Dataflows]**。
 
 ![目录](../../images/tutorials/monitor-streaming/catalog.png)
 
-[!UICONTROL 数据流]页面包含组织中所有现有数据流的列表，包括有关其源数据、帐户名称和数据流运行状态的信息。
+[!UICONTROL Dataflows]页面包含贵组织中所有现有数据流的列表，包括有关其源数据、帐户名称和数据流运行状态的信息。
 
 选择要查看的数据流的名称。
 
@@ -47,13 +47,13 @@ ht-degree: 10%
 | 错误 | `Error`状态表示数据流的激活过程已中断。 |
 | 没有运行 | `No runs`状态表示数据流已创建，但未启动数据流运行。 |
 
-[!UICONTROL 数据流活动]页面显示有关您的流数据流的特定信息。 顶部的横幅包含在选定日期范围内所有流数据流运行中摄取和失败记录的累计数量。
+[!UICONTROL Dataflow Activity]页面显示有关您的流数据流的特定信息。 顶部的横幅包含在选定日期范围内所有流数据流运行中摄取和失败记录的累计数量。
 
 ![数据流活动](../../images/tutorials/monitor-streaming/dataflow-activity.png)
 
-默认情况下，显示的数据包含过去七天的摄取率。 选择&#x200B;**[!UICONTROL 最近7天]**&#x200B;以调整所显示记录的时间范围。
+默认情况下，显示的数据包含过去七天的摄取率。 选择&#x200B;**[!UICONTROL Last 7 days]**&#x200B;以调整所显示记录的时间范围。
 
-此时会出现一个日历弹出窗口，为您提供替代摄取时间范围的选项。 您可以配置数据流运行时间范围以查看过去7天或过去30天的流运行。 或者，您可以配置交互式日历，以设置您选择的自定义时间范围。 完成后，选择&#x200B;**[!UICONTROL 应用]**。
+此时会出现一个日历弹出窗口，为您提供替代摄取时间范围的选项。 您可以配置数据流运行时间范围以查看过去7天或过去30天的流运行。 或者，您可以配置交互式日历，以设置您选择的自定义时间范围。 完成后，选择&#x200B;**[!UICONTROL Apply]**。
 
 ![日历](../../images/tutorials/monitor-streaming/calendar.png)
 
@@ -89,24 +89,24 @@ ht-degree: 10%
 
 每次数据流运行都会显示以下详细信息：
 
-* **[!UICONTROL 数据流运行开始]**：数据流运行开始的时间。
-* **[!UICONTROL 处理时间]**：数据流处理所用的时间。
-* **[!UICONTROL 接收的记录数]**：数据流中从源连接器接收的记录总数。
-* 已摄取&#x200B;**[!UICONTROL 条记录]**：已摄取到[!DNL Data Lake]中的记录总数。
-* **[!UICONTROL 带有警告的记录]**：已摄取的带有警告的记录总数。 所有映射器转换错误均报告为警告，部分摄取的行标记为`success`并带有警告。 **注意**：仅对流源支持摄取带有警告的记录。
-* **[!UICONTROL 记录失败]**：由于数据错误而未引入[!DNL Data Lake]的记录数。
-* **[!UICONTROL 摄取率]**：摄取到[!DNL Data Lake]的记录的成功率。 此量度在启用[!UICONTROL 部分摄取]时适用。
-* **[!UICONTROL 状态]**：表示数据流所处的状态： [!UICONTROL 已完成]或[!UICONTROL 正在处理]。 [!UICONTROL 已完成]表示相应数据流运行的所有记录都在一小时期间进行处理。 [!UICONTROL 正在处理]意味着数据流运行尚未完成。
+* **[!UICONTROL Dataflow run start]**：数据流运行开始的时间。
+* **[!UICONTROL Processing time]**：数据流处理所花费的时间。
+* **[!UICONTROL Records Received]**：在来自源连接器的数据流中接收的记录总数。
+* **[!UICONTROL Records Ingested]**：摄取到[!DNL Data Lake]中的记录总数。
+* **[!UICONTROL Records with Warnings]**：已摄取带有警告的记录总数。 所有映射器转换错误均报告为警告，部分摄取的行标记为`success`并带有警告。 **注意**：仅对流源支持摄取带有警告的记录。
+* **[!UICONTROL Records Failed]**：由于数据错误而未引入[!DNL Data Lake]的记录数。
+* **[!UICONTROL Ingestion Rate]**：摄取到[!DNL Data Lake]中的记录的成功率。 此量度在启用[!UICONTROL Partial Ingestion]时适用。
+* **[!UICONTROL Status]**：表示数据流所处的状态： [!UICONTROL Completed]或[!UICONTROL Processing]。 [!UICONTROL Completed]表示相应数据流运行的所有记录都在一小时内处理。 [!UICONTROL Processing]表示数据流运行尚未完成。
 
-[!UICONTROL 数据流运行概述]页面包含有关数据流的附加信息，例如其相应的数据流运行ID、目标数据集和组织ID。
+[!UICONTROL Dataflow run overview]页面包含有关数据流的附加信息，例如其对应的数据流运行ID、目标数据集和组织ID。
 
-有错误的流运行还包含[!UICONTROL 数据流运行错误]面板，该面板显示导致运行失败的特定错误以及失败的记录总数。
+有错误的流运行还包含[!UICONTROL Dataflow run errors]面板，该面板显示导致运行失败的特定错误以及失败的记录总数。
 
 ![数据流运行概述](../../images/tutorials/monitor-streaming/dataflow-run-overview.png)
 
 ### 查看有警告的记录 {#warnings}
 
-[!UICONTROL 有警告的记录]显示流程运行期间发生的映射器转换警告的列表。 部分摄取的行被视为成功，如果发现任何映射器转换错误，则会附加警告。
+[!UICONTROL Records with warnings]显示在流运行期间发生的映射器转换警告列表。 部分摄取的行被视为成功，如果发现任何映射器转换错误，则会附加警告。
 
 默认情况下，所有映射器转换错误均被视为警告，除非它们属于以下任一情况：
 
@@ -114,17 +114,17 @@ ht-degree: 10%
 * 对不存在属性的引用
 * XDM数据类型不匹配
 
-要查看错误诊断，请选择&#x200B;**[!UICONTROL 预览错误诊断]**。
+要查看错误诊断，请选择&#x200B;**[!UICONTROL Preview error diagnostics]**。
 
 ![个有警告的记录](../../images/tutorials/monitor-streaming/records-with-warnings.png)
 
-[!UICONTROL 错误诊断预览]窗口允许您预览有关数据流运行的最多100个错误和/或警告。 您还可以在此使用[!DNL Data Access] API下载摄取失败清单以了解更多信息。
+[!UICONTROL Error diagnostics preview]窗口允许您预览有关数据流运行的最多100个错误和/或警告。 您还可以在此使用[!DNL Data Access] API下载摄取失败清单以了解更多信息。
 
 ![诊断](../../images/tutorials/monitor-streaming/diagnostics.png)
 
 ## 后续步骤
 
-通过学习本教程，您已成功使用[!UICONTROL 源]工作区来监视您的流数据流并识别导致任何失败的数据流的错误。 有关详细信息，请参阅以下文档：
+通过完成本教程，您已成功使用[!UICONTROL Sources]工作区监视您的流数据流并识别导致任何失败的数据流的错误。 有关详细信息，请参阅以下文档：
 
 * [源概述](../../home.md)
 * [数据流概述](../../../dataflows/home.md)

@@ -7,7 +7,7 @@ description: Adobe Experience Platform Data Science Workspace允许您发布经�
 exl-id: ebbec1b1-20d3-43b5-82d3-89c79757625a
 source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '528'
+source-wordcount: '509'
 ht-degree: 4%
 
 ---
@@ -37,15 +37,15 @@ Adobe Experience Platform Data Science Workspace允许您发布经过培训和�
 
 ## 发布模型 {#publish-a-model}
 
-在Adobe Experience Platform中，选择位于左侧导航列中的&#x200B;**[!UICONTROL 模型]**，然后选择&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡以列出所有现有模型。 选择要作为服务发布的模型的名称。
+在Adobe Experience Platform中，选择位于左侧导航列中的&#x200B;**[!UICONTROL Models]**，然后选择&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡以列出所有现有模型。 选择要作为服务发布的模型的名称。
 
 ![](../images/models-recipes/publish-model/browse_model.png)
 
-选择模型概述页面右上角附近的&#x200B;**[!UICONTROL 发布]**&#x200B;以启动服务创建过程。
+选择模型概述页面右上角附近的&#x200B;**[!UICONTROL Publish]**&#x200B;以启动服务创建过程。
 
 ![](../images/models-recipes/publish-model/view_training.png)
 
-输入所需的服务名称并提供服务说明（可选），完成后，选择&#x200B;**[!UICONTROL 下一步]**。
+为服务输入所需的名称，并选择性地提供服务说明，完成后，选择&#x200B;**[!UICONTROL Next]**。
 
 ![](../images/models-recipes/publish-model/configure_training.png)
 
@@ -53,32 +53,32 @@ Adobe Experience Platform Data Science Workspace允许您发布经过培训和�
 
 ![](../images/models-recipes/publish-model/select_training_run.png)
 
-选择&#x200B;**[!UICONTROL 完成]**&#x200B;以创建服务，并重定向到&#x200B;**[!UICONTROL 服务库]**&#x200B;以显示所有可用的服务，包括新创建的服务。
+选择&#x200B;**[!UICONTROL Finish]**&#x200B;以创建服务，并重定向到&#x200B;**[!UICONTROL Service Gallery]**&#x200B;以显示所有可用的服务，包括新创建的服务。
 
 ![](../images/models-recipes/publish-model/service_gallery.png)
 
 ## 使用服务计分 {#access-a-service}
 
-在Adobe Experience Platform中，选择位于左侧导航列中的&#x200B;**[!UICONTROL 服务]**&#x200B;选项卡以访问&#x200B;**[!UICONTROL 服务库]**。 查找要使用的服务，然后选择&#x200B;**[!UICONTROL 打开]**。
+在Adobe Experience Platform中，选择位于左侧导航列中的&#x200B;**[!UICONTROL Services]**&#x200B;选项卡以访问&#x200B;**[!UICONTROL Service Gallery]**。 找到要使用的服务并选择&#x200B;**[!UICONTROL Open]**。
 
 ![](../images/models-recipes/publish-model/open_service.png)
 
-在服务概述页面中，选择&#x200B;**[!UICONTROL 得分]**。
+在服务概述页面中，选择&#x200B;**[!UICONTROL Score]**。
 
 ![](../images/models-recipes/publish-model/score_service.png)
 
-为评分运行选择适当的输入数据集，然后选择&#x200B;**[!UICONTROL 下一步]**。 系统会要求您对评分数据集执行相同的步骤。 选择输入和输出数据集后，即可更新配置。
+为评分运行选择适当的输入数据集，然后选择&#x200B;**[!UICONTROL Next]**。 系统会要求您对评分数据集执行相同的步骤。 选择输入和输出数据集后，即可更新配置。
 
 ![](../images/models-recipes/publish-model/select_datasets.png)
 
-创建服务后，它会继承默认的评分配置。 您可以查看这些配置，并根据需要通过双击值来调整它们。 对配置感到满意后，选择&#x200B;**[!UICONTROL 完成]**&#x200B;以开始评分运行。
+创建服务后，它会继承默认的评分配置。 您可以查看这些配置，并根据需要通过双击值来调整它们。 对配置感到满意后，选择&#x200B;**[!UICONTROL Finish]**&#x200B;开始评分运行。
 
 ![](../images/models-recipes/publish-model/scoring_configs.png)
 
-在服务的&#x200B;**概述**&#x200B;页面上，将显示新评分作业及其进度的详细信息。 作业完成后，**[!UICONTROL 得分]**&#x200B;容器中的&#x200B;**[!UICONTROL 最近]**&#x200B;标头将更新。
+在服务的&#x200B;**概述**&#x200B;页面上，将显示新评分作业及其进度的详细信息。 作业完成后，**[!UICONTROL Most Recent]**&#x200B;容器中的&#x200B;**[!UICONTROL Scoring]**&#x200B;标头将更新。
 
 ![](../images/models-recipes/publish-model/pending_scoring.png)
 
 ## 后续步骤 {#next-steps}
 
-通过完成本教程，您已成功将模型发布为可访问服务，并通过[!UICONTROL 服务库]使用新服务对数据进行评分。 继续下一教程，了解如何[安排服务的自动培训和评分运行](./schedule-models-ui.md)。
+通过完成本教程，您已成功将模型发布为可访问服务，并通过[!UICONTROL Service Gallery]使用新服务对数据进行评分。 继续下一教程，了解如何[安排服务的自动培训和评分运行](./schedule-models-ui.md)。

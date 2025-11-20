@@ -4,7 +4,7 @@ description: 了解Adobe Experience Platform中的许可证使用和容量限制
 exl-id: 38dad2f1-bd0f-4cc3-a3a6-5105ea866ea4
 source-git-commit: ae0c626eaad66f663c9d97137087b2cca24d747e
 workflow-type: tm+mt
-source-wordcount: '1621'
+source-wordcount: '1605'
 ht-degree: 6%
 
 ---
@@ -58,7 +58,7 @@ ht-degree: 6%
    - 在这500个流受众中，边缘受众的最大数量为150个
 - 流式摄取的初始组合吞吐量为每秒1500条记录(rps)
    - 此合并的流吞吐量测量每秒合并的入站事件峰值，用于跨生产和开发沙盒将信息流式摄取到实时客户档案。
-   - 您可以购买额外的流式分段支持，每秒最多可支持13,500条记录。 有关购买其他权利的更多信息，请参阅[Real-Time CDP产品描述](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)。
+   - 您可以购买额外的流式分段支持，每秒最多可支持13,500条记录。 有关购买其他权利的更多信息，请参阅[Real-Time CDP产品描述](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)。
 
 受众容量处于&#x200B;**沙盒**&#x200B;级别。 这意味着，对于您组织中的每个沙盒，您可以拥有500个流受众，其中150个可以是Edge受众。
 
@@ -72,7 +72,7 @@ Experience Platform以15分钟滚动间隔计算沙盒的吞吐量。 此吞吐�
 
 ## 访问 {#access}
 
-要访问容量概述，请选择&#x200B;**[!UICONTROL 许可证使用情况]**，然后选择&#x200B;**[!UICONTROL 容量]**。
+要访问容量概述，请依次选择&#x200B;**[!UICONTROL License usage]**&#x200B;和&#x200B;**[!UICONTROL Capacity]**。
 
 ![访问“容量”部分的方法已突出显示。](/help/landing/images/capacity/access-capacity.png)
 
@@ -82,7 +82,7 @@ Experience Platform以15分钟滚动间隔计算沙盒的吞吐量。 此吞吐�
 
 ### 警报历史记录 {#alert-history}
 
-**[!UICONTROL 警报历史记录]**&#x200B;部分显示您组织内最近的容量违规列表。
+**[!UICONTROL Alert history]**&#x200B;部分显示组织内最近的容量违规列表。
 
 ![将显示警报历史记录部分。](/help/landing/images/capacity/alert-history.png)
 
@@ -92,7 +92,7 @@ Experience Platform以15分钟滚动间隔计算沙盒的吞吐量。 此吞吐�
 | 警报 | 沙盒中已被破坏的容量。 |
 | 时间戳 | 违规发生的数据和时间。 |
 
-要查看贵组织警报的完整历史记录，请选择![三个圆点图标](/help/images/icons/more.png)，然后选择&#x200B;**[!UICONTROL 查看全部]**。
+要查看贵组织警报的完整历史记录，请选择![三个圆点图标](/help/images/icons/more.png)，然后选择&#x200B;**[!UICONTROL View all]**。
 
 ![显示组织的完整警报历史记录。](/help/landing/images/capacity/full-alert-history.png)
 
@@ -127,7 +127,7 @@ Experience Platform以15分钟滚动间隔计算沙盒的吞吐量。 此吞吐�
 
 ![显示流吞吐量页面，显示有关所选沙盒的流吞吐量的详细信息。](/help/landing/images/capacity/streaming-capacity-allocation.png)
 
-要更新组织的流吞吐量容量，请选择&#x200B;**[!UICONTROL 分配容量]**。
+要更新组织的流吞吐量容量，请选择&#x200B;**[!UICONTROL Allocate capacities]**。
 
 ![流吞吐量详细信息页面中突出显示“分配容量”按钮。](/help/landing/images/capacity/select-allocate.png)
 
@@ -141,11 +141,11 @@ Experience Platform以15分钟滚动间隔计算沙盒的吞吐量。 此吞吐�
 >
 >如果该值的顺序不是100，则会相应地向上或向下舍入。
 
-更新容量分配后，选择&#x200B;**[!UICONTROL 保存]**&#x200B;以完成更新。 请注意，最多可能需要10分钟才能将更改反映在您的组织中。
+更新容量分配后，选择&#x200B;**[!UICONTROL Save]**&#x200B;以完成更新。 请注意，最多可能需要10分钟才能将更改反映在您的组织中。
 
 #### 受众人数 {#audience-count}
 
-**[!UICONTROL 流式受众数]**&#x200B;和&#x200B;**[!UICONTROL Edge受众数]**&#x200B;部分显示沙盒中流式受众和边缘受众的数量以及沙盒中允许的最大流式受众和边缘受众数量。
+**[!UICONTROL Streaming audience count]**&#x200B;和&#x200B;**[!UICONTROL Edge audience count]**&#x200B;部分显示沙盒中流式受众和边缘受众的数量，以及沙盒中允许的最大流式受众和边缘受众数量。
 
 ![将显示受众计数部分。](/help/landing/images/capacity/audience-count.png)
 
@@ -175,7 +175,7 @@ Experience Platform以15分钟滚动间隔计算沙盒的吞吐量。 此吞吐�
 
 以下视频概述了容量。
 
->[!VIDEO](https://video.tv.adobe.com/v/3475283/?learn=on&enablevpops&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/3475272/?learn=on&enablevpops)
 
 ## 常见问题解答 {#faq}
 
@@ -185,7 +185,7 @@ Experience Platform以15分钟滚动间隔计算沙盒的吞吐量。 此吞吐�
 
 +++ 回答
 
-不会。最大组合吞吐量限制&#x200B;**必须**&#x200B;总计为贵组织的护栏。
+不是。最大组合吞吐量限制&#x200B;**必须**&#x200B;总计为贵组织的护栏。
 
 +++
 

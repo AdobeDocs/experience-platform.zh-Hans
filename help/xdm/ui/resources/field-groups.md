@@ -6,8 +6,8 @@ description: 了解如何在Experience Platform用户界面中创建和编辑架
 exl-id: 928d70a6-0468-4fb7-a53a-6686ac77f2a3
 source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1001'
-ht-degree: 8%
+source-wordcount: '966'
+ht-degree: 9%
 
 ---
 
@@ -34,11 +34,11 @@ Adobe Experience Platform提供了许多标准字段组，涵盖广泛的营销�
 
 要创建新字段组，您必须首先选择要将该字段组添加到的架构。 您可以选择[创建新架构](./schemas.md#create)或[选择要编辑的现有架构](./schemas.md#edit)。
 
-在[!DNL Schema Editor]中打开架构后，选择左边栏中[!UICONTROL 字段组]部分旁边的&#x200B;**[!UICONTROL 添加]**。
+在[!DNL Schema Editor]中打开架构后，选择左边栏中&#x200B;**[!UICONTROL Add]**&#x200B;部分旁边的[!UICONTROL Field groups]。
 
 ![](../../images/ui/resources/field-groups/add-field-group.png)
 
-在出现的对话框中，选择&#x200B;**[!UICONTROL 新建字段组]**。 您可以在此为字段组提供&#x200B;**[!UICONTROL 显示名称]**&#x200B;和&#x200B;**[!UICONTROL 描述]**。 完成后，选择&#x200B;**[!UICONTROL 添加字段组]**。
+在出现的对话框中，选择&#x200B;**[!UICONTROL Create new field group]**。 您可以在此处为字段组提供&#x200B;**[!UICONTROL Display name]**&#x200B;和&#x200B;**[!UICONTROL Description]**。 完成后，选择&#x200B;**[!UICONTROL Add field groups]**。
 
 ![](../../images/ui/resources/field-groups/create-field-group.png)
 
@@ -48,9 +48,9 @@ Adobe Experience Platform提供了许多标准字段组，涵盖广泛的营销�
 
 ## 筛选字段组 {#filter}
 
-根据如何创建可用的字段预先过滤可用的字段的列表。默认设置显示由Adobe定义的字段组。 但是，您还可以筛选列表以显示由您的组织创建的列表。 选择单选按钮以在[!UICONTROL 标准]和[!UICONTROL 自定义]选项之间进行选择。 [!UICONTROL Standard]选项显示Adobe创建的实体，[!UICONTROL Custom]选项显示组织内创建的实体。
+根据如何创建可用的字段预先过滤可用的字段的列表。默认设置显示由Adobe定义的字段组。 但是，您还可以筛选列表以显示由您的组织创建的列表。 选择单选按钮以在[!UICONTROL Standard]和[!UICONTROL Custom]选项之间进行选择。 [!UICONTROL Standard]选项显示由Adobe创建的实体，[!UICONTROL Custom]选项显示组织内创建的实体。
 
-![已突出显示[!UICONTROL 架构]工作区的[!UICONTROL 字段组]选项卡，其中包含[!UICONTROL 标准]和[!UICONTROL 自定义]。](../../images/ui/resources/field-groups/standard-and-custom-field-groups.png)
+![突出显示带有[!UICONTROL Field groups]和[!UICONTROL Schemas]的[!UICONTROL Standard]工作区的[!UICONTROL Custom]选项卡。](../../images/ui/resources/field-groups/standard-and-custom-field-groups.png)
 
 ## 编辑现有字段组 {#edit}
 
@@ -74,17 +74,17 @@ Adobe Experience Platform提供了许多标准字段组，涵盖广泛的营销�
 
 ![](../../images/ui/resources/field-groups/add-field.png)
 
-画布中显示&#x200B;**[!UICONTROL 无标题字段]**&#x200B;占位符，右边栏更新以显示用于配置字段属性的控件。 有关如何配置不同字段类型的特定步骤，请参阅[在UI](../fields/overview.md#define)中定义字段的指南。
+画布中显示&#x200B;**[!UICONTROL Untitled Field]**&#x200B;占位符，右边栏更新以显示用于配置字段属性的控件。 有关如何配置不同字段类型的特定步骤，请参阅[在UI](../fields/overview.md#define)中定义字段的指南。
 
-在&#x200B;**[!UICONTROL 分配给]**&#x200B;下，选择&#x200B;**[!UICONTROL 字段组]**&#x200B;选项，然后使用下拉菜单从列表中选择所需的字段组。 您可以开始键入字段组的名称来缩小结果范围。
-
-![](../../images/ui/resources/field-groups/select-field-group.png)
-
-在&#x200B;**[!UICONTROL 分配给]**&#x200B;下，选择&#x200B;**[!UICONTROL 字段组]**&#x200B;选项，然后使用下拉菜单从列表中选择所需的字段组。 您可以开始键入字段组的名称来缩小结果范围。
+在&#x200B;**[!UICONTROL Assign to]**&#x200B;下，选择&#x200B;**[!UICONTROL Field Group]**&#x200B;选项，然后使用下拉菜单从列表中选择所需的字段组。 您可以开始键入字段组的名称来缩小结果范围。
 
 ![](../../images/ui/resources/field-groups/select-field-group.png)
 
-将字段添加到架构后，即会将其分配给所选的字段组。 继续向字段组添加所需数量的字段。 完成后，选择&#x200B;**[!UICONTROL 保存]**&#x200B;以保存架构和字段组。
+在&#x200B;**[!UICONTROL Assign to]**&#x200B;下，选择&#x200B;**[!UICONTROL Field Group]**&#x200B;选项，然后使用下拉菜单从列表中选择所需的字段组。 您可以开始键入字段组的名称来缩小结果范围。
+
+![](../../images/ui/resources/field-groups/select-field-group.png)
+
+将字段添加到架构后，即会将其分配给所选的字段组。 继续向字段组添加所需数量的字段。 完成后，选择&#x200B;**[!UICONTROL Save]**&#x200B;以保存架构和字段组。
 
 ![](../../images/ui/resources/field-groups/complete-field-group.png)
 
@@ -92,6 +92,6 @@ Adobe Experience Platform提供了许多标准字段组，涵盖广泛的营销�
 
 ## 后续步骤 {#next-steps}
 
-本指南介绍了如何使用Experience Platform UI创建和编辑字段组。 有关[!UICONTROL 架构]工作区的功能的更多信息，请参阅[[!UICONTROL 架构]工作区概述](../overview.md)。
+本指南介绍了如何使用Experience Platform UI创建和编辑字段组。 有关[!UICONTROL Schemas]工作区的功能的更多信息，请参阅[[!UICONTROL Schemas]工作区概述](../overview.md)。
 
 要了解如何使用[!DNL Schema Registry] API管理字段组，请参阅[字段组端点指南](../../api/field-groups.md)。

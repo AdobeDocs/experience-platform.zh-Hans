@@ -5,7 +5,7 @@ description: 了解如何在Adobe Experience Platform中连接到目标、启用
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
 source-git-commit: ec6f055de02610e23f30051c4fed4f362e9fbc53
 workflow-type: tm+mt
-source-wordcount: '1280'
+source-wordcount: '1236'
 ht-degree: 4%
 
 ---
@@ -14,8 +14,8 @@ ht-degree: 4%
 
 >[!IMPORTANT]
 > 
->* 若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 要连接到支持数据集导出的目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理和激活数据集目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 要连接到支持数据集导出的目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage and Activate Dataset Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 ## 概述 {#overview}
 
@@ -23,29 +23,29 @@ ht-degree: 4%
 
 ## 在目录中找到所需的目标 {#setup}
 
-1. 转到&#x200B;**[!UICONTROL 连接]** > **[!UICONTROL 目标]**，然后选择&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡。
+1. 转到&#x200B;**[!UICONTROL Connections]** > **[!UICONTROL Destinations]**，然后选择&#x200B;**[!UICONTROL Catalog]**&#x200B;选项卡。
 
    ![Experience Platform UI屏幕截图，显示目标目录页面。](../assets/ui/connect-destinations/catalog.png)
 
 2. 目录中的目标卡片可能具有不同的操作控件，具体取决于您是否具有到目标的现有连接，以及目标是否支持激活受众、导出数据集，或同时支持两者。 您可能会看到目标信息卡的以下任意控件：
 
-   * **[!UICONTROL 设置]**。 在激活受众或导出数据集之前，需要先设置与此目标的连接。
-   * **[!UICONTROL 激活]**。 已为此目标设置了连接。 此目标支持受众激活和数据集导出。
-   * **[!UICONTROL 激活受众]**。 已为此目标设置了连接。 此目标仅支持受众激活。
+   * **[!UICONTROL Set up]**&#x200B;的问题。在激活受众或导出数据集之前，需要先设置与此目标的连接。
+   * **[!UICONTROL Activate]**&#x200B;的问题。已为此目标设置了连接。 此目标支持受众激活和数据集导出。
+   * **[!UICONTROL Activate audiences]**&#x200B;的问题。已为此目标设置了连接。 此目标仅支持受众激活。
 
    有关这些控件之间差异的更多信息，您还可以参阅目标工作区文档的[目录](../ui/destinations-workspace.md#catalog)部分。
 
-   根据您可用的控件，选择&#x200B;**[!UICONTROL 设置]**、**[!UICONTROL 激活]**&#x200B;或&#x200B;**[!UICONTROL 激活受众]**。
+   根据您可用的控件，选择&#x200B;**[!UICONTROL Set up]**、**[!UICONTROL Activate]**&#x200B;或&#x200B;**[!UICONTROL Activate audiences]**。
 
    ![Experience Platform UI屏幕截图，其中显示了突出显示“设置”控件的目标目录页面。](../assets/ui/connect-destinations/set-up.png)
 
    ![Experience Platform UI屏幕截图，显示突出显示了“激活受众”控件的目标目录页面。](../assets/ui/connect-destinations/activate-segments.png)
 
-3. 如果您选择了&#x200B;**[!UICONTROL 设置]**，请跳到下一步，以对目标[进行身份验证](#authenticate)。
+3. 如果您选择了&#x200B;**[!UICONTROL Set up]**，请跳到下一步，以对目标[进行身份验证](#authenticate)。
 
-   如果您选择了&#x200B;**[!UICONTROL 激活]**、**[!UICONTROL 激活受众]**&#x200B;或&#x200B;**[!UICONTROL 导出数据集]**，您现在可以看到现有目标连接的列表。
+   如果您选择了&#x200B;**[!UICONTROL Activate]**、**[!UICONTROL Activate audiences]**&#x200B;或&#x200B;**[!UICONTROL Export datasets]**，您现在可以看到现有目标连接的列表。
 
-   选择&#x200B;**[!UICONTROL 配置新目标]**&#x200B;以建立与该目标的新连接。
+   选择&#x200B;**[!UICONTROL Configure new destination]**&#x200B;以建立与目标的新连接。
 
    ![Experience Platform UI屏幕截图，显示可用目标的列表，并突出显示了“配置新目标”控件。](../assets/ui/connect-destinations/configure-new-destination.png)
 
@@ -60,10 +60,10 @@ ht-degree: 4%
 
 根据您连接到的目标，系统可能会将您带到目标合作伙伴的页面进行身份验证，或者可能会要求您直接在Experience Platform工作流中输入身份验证凭据。
 
-在设置新的目标连接时，必须提供&#x200B;**[!UICONTROL 帐户名]**&#x200B;和&#x200B;**[!UICONTROL 描述]**（可选）。 这些字段适用于所有目标。
+在设置新的目标连接时，必须提供&#x200B;**[!UICONTROL Account name]**&#x200B;以及（可选）一个&#x200B;**[!UICONTROL Description]**。 这些字段适用于所有目标。
 
-* **[!UICONTROL 帐户名称]**：输入一个名称，以便将来轻松识别此目标帐户。 如果您与同一个目标有多个连接，这个名称将特别有用。
-* **[!UICONTROL 描述]**（可选）：添加任何有助于您或您的团队区分帐户的其他详细信息，例如连接的目的或相关的业务上下文。
+* **[!UICONTROL Account name]**：输入一个名称，以帮助您将来轻松识别此目标帐户。 如果您与同一个目标有多个连接，这个名称将特别有用。
+* **[!UICONTROL Description]**（可选）：添加任何有助于您或您的团队区分帐户的其他详细信息，例如连接的目的或相关的业务上下文。
 
 在这些字段中提供清楚且具有描述性的信息，使您能够更轻松地在激活受众时管理和选择正确的目标帐户。
 
@@ -113,7 +113,7 @@ ht-degree: 4%
 
    ![突出显示了“配置新目标”对话框的内容中目标警报订阅选项。](../assets/ui/connect-destinations/subscribe-to-alerts.png)
 
-2. 选择&#x200B;**[!UICONTROL 下一步]**。
+2. 选择 **[!UICONTROL Next]**。
 
    ![突出显示了“配置新目标”对话框，其中显示了“下一步”控件，允许用户继续工作流中的下一步。](../assets/ui/connect-destinations/next.png)
 
@@ -123,7 +123,7 @@ ht-degree: 4%
 
    ![突出显示可用营销操作的“配置新目标”对话框。 用于完成“连接到目标”工作流的可用控件也突出显示。](../assets/ui/connect-destinations/governance.png)
 
-2. 选择&#x200B;**[!UICONTROL 保存并退出]**&#x200B;以保存目标配置，或选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续执行受众数据[激活流程](activation-overview.md)。
+2. 选择&#x200B;**[!UICONTROL Save & Exit]**&#x200B;以保存目标配置，或选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续访问受众数据[激活流程](activation-overview.md)。
 
 ## 后续步骤 {#next-steps}
 

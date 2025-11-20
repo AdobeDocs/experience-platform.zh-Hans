@@ -39,9 +39,9 @@ ht-degree: 83%
 
 ### 思维导图 {#mindmap}
 
-使用战术手册中的思维导图部分来了解战术手册可以帮助您解决的工作流程的步骤。从用例中的目标角色的角度，可视化所有生成的对象帮助您实现用例的流程。
+使用战术手册中的思维导图部分来了解战术手册可以帮助您解决的工作流程的步骤。从用例中的目标用户画像的角度，可视化所有生成的对象帮助您实现用例的流程。
 
-思维导图首先定义用户历程中会接触到的人，并在每一步描述 Adobe 是否发出了某些内容（例如新消息或提醒），或者目标角色是否执行了触发下一条消息或事件的操作。
+思维导图首先定义用户历程中会接触到的人，并在每一步描述 Adobe 是否发出了某些内容（例如新消息或提醒），或者目标用户画像是否执行了触发下一条消息或事件的操作。
 
 ![突出显示了战术手册思维导图。](/help/use-case-playbooks/assets/playbooks/ui-guide/playbook-mindmap.png)
 
@@ -56,8 +56,8 @@ ht-degree: 83%
 
 | 项目 | 描述 |
 |---------|----------|
-| **[!UICONTROL Target audience]** | 描述您希望通过此用例战术手册接触到的角色。 |
-| **[!UICONTROL Marketing Channels]** | 描述用于接触战术手册中目标角色的渠道。 |
+| **[!UICONTROL Target audience]** | 描述您希望通过此用例战术手册接触到的用户画像。 |
+| **[!UICONTROL Marketing Channels]** | 描述用于接触战术手册中目标用户画像的渠道。 |
 | **[!UICONTROL Technical assets]** | 创建战术手册实例后生成的技术资产列表。生成的资产因战术手册而异，具体取决于用例。一些战术手册可能会生成架构、区段和历程。其他可能会生成目标。有关如何使用和重用生成的资产的更多信息，请参阅有关创建和重用实例的指南中的[了解生成的资产](/help/use-case-playbooks/playbooks/create-share-reuse.md#understand-assets)部分。 |
 
 {style="table-layout:auto"}

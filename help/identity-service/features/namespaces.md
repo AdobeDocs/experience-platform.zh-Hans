@@ -4,7 +4,7 @@ description: 了解Identity Service中的身份命名空间。
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1860'
+source-wordcount: '1848'
 ht-degree: 17%
 
 ---
@@ -74,7 +74,7 @@ ht-degree: 17%
 * 是否将生成身份图：
    * 对于以下身份标识类型不生成身份标识图：非个人身份标识符和合作伙伴 ID。
    * 为所有其他身份类型生成身份图。
-* 达到系统限制时，将从身份图中删除哪些身份。 有关详细信息，请阅读标识数据[&#128279;](../guardrails.md)的护栏。
+* 达到系统限制时，将从身份图中删除哪些身份。 有关详细信息，请阅读标识数据[的](../guardrails.md)护栏。
 
 Experience Platform中提供了以下身份类型：
 
@@ -99,19 +99,19 @@ Experience Platform提供了多个可用于所有组织的身份命名空间。 
 | 显示名称 | 描述 |
 | ------------ | ----------- |
 | AdCloud | 表示Adobe AdCloud的命名空间。 |
-| Adobe Analytics（旧版 ID） | 表示Adobe Analytics的命名空间。 有关详细信息，请参阅以下有关[Adobe Analytics命名空间](https://experienceleague.adobe.com/docs/analytics/admin/data-governance/gdpr-namespaces.html?lang=zh-Hans#namespaces)的文档。 |
+| Adobe Analytics（旧版 ID） | 表示Adobe Analytics的命名空间。 有关详细信息，请参阅以下有关[Adobe Analytics命名空间](https://experienceleague.adobe.com/docs/analytics/admin/data-governance/gdpr-namespaces.html#namespaces)的文档。 |
 | Apple IDFA（广告商的ID） | 表示广告商的Apple ID的命名空间。 有关详细信息，请参阅以下有关[基于兴趣的广告](https://support.apple.com/en-us/HT202074)的文档。 |
 | Apple推送通知服务 | 表示使用Apple推送通知服务收集的标识的命名空间。 有关详细信息，请参阅有关[Apple推送通知服务](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1)的以下文档。 |
 | ECID | 表示ECID的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 有关详细信息，请参阅[ECID](./ecid.md)上的以下文档。 |
 | 电子邮件 | 表示电子邮件地址的命名空间。 此类命名空间通常与单个人员关联，因此可用于跨不同渠道识别该人员。 |
-| 电子邮件（SHA256，小写） | 预哈希电子邮件地址的命名空间。使用SHA256进行哈希处理之前，此命名空间中提供的值将转换为小写。 在规范化电子邮件地址之前，需要修剪前导空格和尾随空格。 此设置不能进行追溯性更改。 有关详细信息，请参阅以下有关[SHA256哈希处理支持](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html?lang=zh-Hans#hashing-support)的文档。 |
+| 电子邮件（SHA256，小写） | 预哈希电子邮件地址的命名空间。使用SHA256进行哈希处理之前，此命名空间中提供的值将转换为小写。 在规范化电子邮件地址之前，需要修剪前导空格和尾随空格。 此设置不能进行追溯性更改。 有关详细信息，请参阅以下有关[SHA256哈希处理支持](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html#hashing-support)的文档。 |
 | Firebase云消息 | 一个命名空间，它表示使用Google Firebase Cloud Messaging为推送通知收集的身份。 有关详细信息，请参阅以下有关[Google Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging)的文档。 |
 | Google Ad ID (GAID) | 表示Google Advertising ID的命名空间。 有关详细信息，请参阅以下有关[Google Advertising ID](https://support.google.com/googleplay/android-developer/answer/6048248?hl=en)的文档。 |
 | 电话 | 表示电话号码的命名空间。 此类命名空间通常与单个人员关联，因此可用于跨不同渠道识别该人员。 |
 | 电话(E.164) | 表示需要以E.164格式进行哈希处理的原始电话号码的命名空间。 E.164格式包括加号(`+`)、国际国家/地区呼叫代码、本地区号和电话号码。 例如： `(+)(country code)(area code)(phone number)`。 |
 | 手机 (SHA256) | 一个命名空间，它表示需要使用SHA256进行哈希处理的电话号码。 必须删除符号、字母和任何前导零。 您还必须添加国家/地区呼叫代码作为前缀。 |
 | 电话(SHA256_E.164) | 表示需要使用 SHA256 和 E.164 格式进行哈希处理的原始电话号码的命名空间。 |
-| TNTID | 表示Adobe Target的命名空间。 有关详细信息，请参阅[Target](https://experienceleague.adobe.com/docs/target/using/target-home.html?lang=zh-Hans)上的以下文档。 |
+| TNTID | 表示Adobe Target的命名空间。 有关详细信息，请参阅[Target](https://experienceleague.adobe.com/docs/target/using/target-home.html)上的以下文档。 |
 | Windows AID | 表示Windows Advertising ID的命名空间。 有关详细信息，请参阅[Windows Advertising ID](https://docs.microsoft.com/en-us/uwp/api/windows.system.userprofile.advertisingmanager.advertisingid?view=winrt-19041)上的以下文档。 |
 
 ### 查看身份标识命名空间 {#view-identity-namespaces}
@@ -121,7 +121,7 @@ Experience Platform提供了多个可用于所有组织的身份命名空间。 
 >title="查看集成身份标识"
 >abstract="集成身份标识是用于连接其他系统的命名空间，不用于身份标识解析或拼接身份标识。<br>默认情况下，这些身份标识是隐藏的。使用切换功能来查看集成命名空间。"
 
-要在UI中查看身份命名空间，请在左侧导航中选择&#x200B;**[!UICONTROL 身份]**，然后选择&#x200B;**[!UICONTROL 浏览]**。
+要在UI中查看身份命名空间，请在左侧导航中选择&#x200B;**[!UICONTROL Identities]**，然后选择&#x200B;**[!UICONTROL Browse]**。
 
 此时会出现组织中的命名空间目录，其中显示有关其名称、身份符号、上次更新日期、相应身份类型和说明的信息。
 
@@ -131,19 +131,19 @@ Experience Platform提供了多个可用于所有组织的身份命名空间。 
 
 根据您的组织数据和用例，您可能需要自定义命名空间。 可以使用[[!DNL Identity Service]](../api/create-custom-namespace.md) API或通过UI创建自定义命名空间。
 
-要创建自定义命名空间，请选择&#x200B;**[!UICONTROL 创建身份命名空间]**。
+要创建自定义命名空间，请选择&#x200B;**[!UICONTROL Create identity namespace]**。
 
 >[!TIP]
 >
->集成身份是用于与其他系统连接的命名空间。 它们不用于身份解析，也不用于拼接身份。 选择&#x200B;**[!UICONTROL 查看集成标识]**&#x200B;以更新列表并包含集成标识。 但是，默认情况下，集成身份是隐藏的，因为它们仅供查看，您不需要配置它们。
+>集成身份是用于与其他系统连接的命名空间。 它们不用于身份解析，也不用于拼接身份。 选择&#x200B;**[!UICONTROL View integration identities]**&#x200B;以更新列表并包含集成标识。 但是，默认情况下，集成身份是隐藏的，因为它们仅供查看，您不需要配置它们。
 
 ![身份工作区中的“创建身份命名空间”按钮。](../images/namespace/create-identity-namespace.png)
 
-出现[!UICONTROL 创建身份命名空间]窗口。 首先，必须为要创建的自定义命名空间提供显示名称和标识符号。 您还可以选择提供描述，以便在您创建的自定义命名空间上添加更多上下文。
+出现[!UICONTROL Create identity namespace]窗口。 首先，必须为要创建的自定义命名空间提供显示名称和标识符号。 您还可以选择提供描述，以便在您创建的自定义命名空间上添加更多上下文。
 
 ![一个弹出窗口，可在其中输入有关自定义身份命名空间的信息。](../images/namespace/name-and-symbol.png)
 
-接下来，选择要分配给自定义命名空间的身份类型。 完成后，选择&#x200B;**[!UICONTROL 创建]**。
+接下来，选择要分配给自定义命名空间的身份类型。 完成后，选择&#x200B;**[!UICONTROL Create]**。
 
 ![您可以选择并分配给自定义身份命名空间的一组身份类型。](../images/namespace/select-identity-type.png)
 

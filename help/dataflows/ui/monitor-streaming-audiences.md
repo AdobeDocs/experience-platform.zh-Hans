@@ -5,7 +5,7 @@ hide: true
 hidefromtoc: true
 source-git-commit: 6fe0a36a8f2ac2cb954935ee8fe64432442b6e84
 workflow-type: tm+mt
-source-wordcount: '372'
+source-wordcount: '368'
 ht-degree: 6%
 
 ---
@@ -54,8 +54,8 @@ ht-degree: 6%
 
 ## 使用流受众的监控功能板 {#monitoring-dashboard}
 
-要访问流受众的监控仪表板，请转到Experience Platform UI，从左侧导航中选择&#x200B;**[!UICONTROL 监控]**，然后选择&#x200B;**[!UICONTROL 流端到端]**。
+要访问流受众的监控仪表板，请转到Experience Platform UI，从左侧导航中选择&#x200B;**[!UICONTROL Monitoring]**，然后选择&#x200B;**[!UICONTROL Streaming end-to-end]**。
 
 图像
 
-仪表板顶部是&#x200B;**[!UICONTROL 受众]**&#x200B;量度卡。 这会显示有关受众的&#x200B;**评估率**&#x200B;的信息。
+仪表板顶部是&#x200B;**[!UICONTROL Audiences]**&#x200B;量度卡。 这会显示有关受众的&#x200B;**评估率**&#x200B;的信息。

@@ -5,7 +5,7 @@ description: 了解如何将阵列、映射和对象从Real-Time CDP导出到云
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
 source-git-commit: f7ff10dd6489842adb8de49b3f8634c20d77cc71
 workflow-type: tm+mt
-source-wordcount: '1077'
+source-wordcount: '1062'
 ht-degree: 13%
 
 ---
@@ -38,7 +38,7 @@ ht-degree: 13%
 
 在此部分中获取有关功能的最重要信息，并继续在下面转到文档的其他部分以了解详细信息。
 
-* 对于云存储目标，导出阵列、映射和对象的功能取决于您选择的&#x200B;**导出阵列、映射、对象**&#x200B;切换开关。 请在页面[&#128279;](#export-arrays-maps-objects-toggle)上的下方阅读更多相关信息。
+* 对于云存储目标，导出阵列、映射和对象的功能取决于您选择的&#x200B;**导出阵列、映射、对象**&#x200B;切换开关。 请在页面[上的下方](#export-arrays-maps-objects-toggle)阅读更多相关信息。
 * 您可以在`JSON`和`Parquet`文件中将阵列、映射和对象导出到云存储目标。 对于Enterprise和Edge个性化目标，导出的数据类型为`JSON`。 人员和潜在客户受众受支持，而帐户受众不受支持。
 * 对于基于文件的云存储目标，您&#x200B;*可以*&#x200B;将数组、映射和对象导出到CSV文件，但前提是使用`array_to_string`函数使用计算字段功能并将它们串联为字符串。
 
@@ -71,11 +71,11 @@ organizations = [{
 
 ## 先决条件 {#prerequisites}
 
-[将](/help/destinations/ui/connect-destination.md)连接到所需的云存储目标，完成云存储目标的[激活步骤](/help/destinations/ui/activate-batch-profile-destinations.md)并转到[映射](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)步骤。 连接到所需的云目标时，必须选择&#x200B;**[!UICONTROL 导出数组、映射、对象]**&#x200B;切换开关。 有关更多信息，请参阅以下部分。
+[将](/help/destinations/ui/connect-destination.md)连接到所需的云存储目标，完成云存储目标的[激活步骤](/help/destinations/ui/activate-batch-profile-destinations.md)并转到[映射](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)步骤。 连接到所需的云目标时，必须选择&#x200B;**[!UICONTROL Export arrays, maps, objects]**&#x200B;切换开关。 有关更多信息，请参阅以下部分。
 
 >[!NOTE]
 >
->对于企业和边缘个性化目标，无需选择&#x200B;**[!UICONTROL 导出数组、映射、对象]**&#x200B;切换开关，即可提供对映射类型字段的导出支持。 连接到这些类型的目标时，此切换不可用或需要使用。
+>对于企业和边缘个性化目标，无需选择&#x200B;**[!UICONTROL Export arrays, maps, objects]**&#x200B;切换开关，即可提供对映射类型字段的导出支持。 连接到这些类型的目标时，此切换不可用或需要使用。
 
 ## 导出数组、映射和对象切换 {#export-arrays-maps-objects-toggle}
 
@@ -84,7 +84,7 @@ organizations = [{
 >title="导出数组、映射和对象"
 >abstract="<p> 将此设置切换为<b>开</b>，以启用将数组、映射和对象导出到 JSON 或 Parquet 文件的功能。您可以在映射步骤中的源字段视图中选择这些对象类型。将其切换为开后，您就无法使用映射步骤中的计算字段选项。</p><p>将其切换为<b>关</b>后，您可以在激活受众时使用计算字段选项并应用各种数据转换功能。但是，您<i>不能</i>将数组、映射和对象导出到 JSON 或 Parquet 文件，要达到此目的必须配置单独的目标。</p>"
 
-当连接到基于文件的云存储目标时，可以设置打开或关闭&#x200B;**[!UICONTROL 导出阵列、映射、对象]**&#x200B;的切换开关。
+在连接到基于文件的云存储目标时，可以打开或关闭&#x200B;**[!UICONTROL Export arrays, maps, objects]**&#x200B;切换开关。
 
 ![使用打开或关闭设置以及突出显示弹出框来导出数组、映射、对象切换。](/help/destinations/assets/ui/export-arrays-calculated-fields/export-objects-toggle.gif)
 
@@ -98,7 +98,7 @@ organizations = [{
 
 ![在激活工作流的映射步骤中，通过源字段选择器选择对象。](/help/destinations/assets/ui/export-arrays-calculated-fields/select-object.gif)
 
-选中此选项后，用户界面会阻止用户使用计算字段，并且禁用&#x200B;**[!UICONTROL 添加计算字段]**&#x200B;控件，如下所示。 要将计算字段用于数据转换，请在关闭切换的情况下设置目标连接。
+选中此选项后，用户界面会阻止用户使用计算字段，并且禁用&#x200B;**[!UICONTROL Add calculated fields]**&#x200B;控件，如下所示。 要将计算字段用于数据转换，请在关闭切换的情况下设置目标连接。
 
 ![已禁用计算字段控件。](/help/destinations/assets/ui/export-arrays-calculated-fields/calculated-fields-disabled.png)
 

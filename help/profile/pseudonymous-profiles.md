@@ -6,7 +6,7 @@ description: 本文档提供有关在Adobe Experience Platform中为假名配置
 exl-id: e8d31718-0b50-44b5-a15b-17668a063a9c
 source-git-commit: 8734b85914d965eebc2f8ccd8c09dd1ffede8cf9
 workflow-type: tm+mt
-source-wordcount: '1264'
+source-wordcount: '1260'
 ht-degree: 7%
 
 ---
@@ -49,15 +49,15 @@ ht-degree: 7%
 >
 >有关Experience Platform中权限的更多信息，请参阅[访问控制概述](../access-control/home.md#permissions)。
 
-要将假名配置文件数据过期添加到您的组织，请转到配置文件仪表板并选择&#x200B;**[!UICONTROL 设置]**。
+要将假名配置文件数据过期添加到您的组织，请转到配置文件仪表板并选择&#x200B;**[!UICONTROL Settings]**。
 
 ![配置文件仪表板上的“设置”按钮高亮显示。](./images/pseudonymous-profiles/profile-settings.png)
 
-出现[!UICONTROL 配置文件设置]弹出框。 在此弹出窗口中，您可以设置假名配置文件数据到期的天数以及用于数据到期的标识命名空间。
+出现[!UICONTROL Profile settings]弹出框。 在此弹出窗口中，您可以设置假名配置文件数据到期的天数以及用于数据到期的标识命名空间。
 
 对于生产沙盒，默认的假名配置文件数据到期为14天，最小为1天，最大为365天。 对于开发沙盒，默认的假名配置文件数据到期为3天，最小为1天，最大为365天。
 
-选择&#x200B;**[!UICONTROL 应用]**&#x200B;以保存数据过期设置。
+选择&#x200B;**[!UICONTROL Apply]**&#x200B;以保存数据过期设置。
 
 ![将假名配置文件数据过期添加到您组织的配置文件的弹出框。 应用按钮突出显示。](./images/pseudonymous-profiles/profile-settings-data-expiry.png){width="800" zoomable="yes"}
 

@@ -34,12 +34,12 @@ ht-degree: 4%
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍哪些类型的受众可以导出到此目标。
+本节介绍可以导出到此目标的受众类型。
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
+| [!DNL Segmentation Service] | ✓ | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的访问群体。 |
+| 自定义上传 | ✓ | 访问群体[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -111,21 +111,21 @@ ht-degree: 4%
 * **[!UICONTROL Region]**： LiveRamp SFTP存储实例的地理区域。
 * **[!UICONTROL Folder path]**：将托管导出文件的[!DNL LiveRamp] `uploads`子文件夹的路径。 `uploads`前缀会自动添加到文件夹路径中。 [!DNL LiveRamp]建议为Adobe Real-Time CDP中的投放创建一个专用的子文件夹，以将文件与其他任何现有的馈送分开，并确保所有自动化运行顺利。
    * 例如，如果要将文件导出到`uploads/my_export_folder`，请在`my_export_folder`字段中键入&#x200B;**[!UICONTROL Folder path]**。
-* **[!UICONTROL Compression format]**：选择Experience Platform应该用于导出文件的压缩类型。 可用选项为&#x200B;**[!UICONTROL GZIP]**&#x200B;或&#x200B;**[!UICONTROL None]**。
+* **[!UICONTROL Compression format]**：选择Experience Platform应用于导出文件的压缩类型。 可用选项为&#x200B;**[!UICONTROL GZIP]**&#x200B;或&#x200B;**[!UICONTROL None]**。
 
 ### 启用警报 {#enable-alerts}
 
 您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请阅读有关使用UI订阅目标警报[的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
+完成提供目标连接的详细信息后，请选择&#x200B;**[!UICONTROL Next]**。
 
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
->若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
-有关将受众激活到此目标的说明，请阅读[将受众数据激活到批处理配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md)。
+有关将受众激活到此目标的说明，请阅读[激活受众数据到批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md)。
 
 ### 日程计划 {#scheduling}
 
@@ -155,15 +155,15 @@ Luma_LiveRamp_52137231-4a99-442d-804c-39a09ddd005d_20230330_153857.csv
 
 >[!IMPORTANT]
 >
->此目标支持为每个激活流激活一个源身份命名空间。 如果需要导出多个标识命名空间（如`Email`和`Phone`），您必须[为每个标识创建单独的激活流程](../../ui/activate-batch-profile-destinations.md)。
+>此目标支持为每个激活流激活一个源标识命名空间。 如果需要导出多个标识命名空间（如`Email`和`Phone`），则必须为每个标识[创建单独的激活流](../../ui/activate-batch-profile-destinations.md)。
 
-在&#x200B;**[!UICONTROL Mapping]**&#x200B;步骤中，**[!UICONTROL Target field]**&#x200B;映射定义导出的CSV文件中的列标题的名称。 您可以为&#x200B;**[!UICONTROL Target field]**&#x200B;提供自定义名称，以将导出文件中的CSV列标题更改为所需的任何友好名称。
+在&#x200B;**[!UICONTROL Mapping]**&#x200B;步骤中，**[!UICONTROL Target field]**&#x200B;映射定义导出的CSV文件中的列标题名称。 通过为&#x200B;**[!UICONTROL Target field]**&#x200B;提供自定义名称，您可以将导出文件中的CSV列标题更改为所需的任何友好名称。
 
 >[!IMPORTANT]
 >
->如果在向[!DNL LiveRamp]提交初始文件后对目标字段进行了任何更改，请通知您的[!DNL LiveRamp]帐户团队或[将票证提交到LiveRamp支持](https://docs.liveramp.com/connect/en/considerations-when-uploading-the-first-file-to-an-audience.html#creating-a-support-case)，以确保这些更改反映在自动化过程中。
+>对于在首次将文件传递到[!DNL LiveRamp]后对目标字段所做的任何更改，请通知您的[!DNL LiveRamp]帐户团队或[向LiveRamp支持团队](https://docs.liveramp.com/connect/en/considerations-when-uploading-the-first-file-to-an-audience.html#creating-a-support-case)提交票证，以确保这些更改反映在自动化流程中。
 
-1. 在&#x200B;**[!UICONTROL Mapping]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL Add new mapping]**。 您将在屏幕上看到一个新映射行。
+1. 在&#x200B;**[!UICONTROL Mapping]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL Add new mapping]**。 您将在屏幕上看到一个新的映射行。
 
    ![显示映射屏幕的Experience Platform UI屏幕快照。](../../assets/catalog/advertising/liveramp-onboarding/liveramp-add-new-mapping.png)
 
@@ -235,7 +235,7 @@ abc101@testemailabc.com,active,active,
 
 ## 将导出的数据上传到LiveRamp {#upload-to-liveramp}
 
-将数据成功导出到[!DNL LiveRamp - Onboarding]存储后，必须将数据上传到[!DNL LiveRamp]平台。
+将数据成功导出到[!DNL LiveRamp - Onboarding]存储之后，必须将数据上传到[!DNL LiveRamp]平台。
 
 有关如何将文件从[!DNL LiveRamp - Onboarding]存储上传到[!DNL LiveRamp]受众的更多信息，请参阅以下文档： [将第一个文件上传到受众时的注意事项](https://docs.liveramp.com/connect/en/considerations-when-uploading-the-first-file-to-an-audience.html#considerations-when-uploading-the-first-file-to-an-audience)。
 
@@ -245,7 +245,7 @@ abc101@testemailabc.com,active,active,
 
 ## 其他资源 {#additional-resources}
 
-有关如何配置[!DNL LiveRamp - Onboarding]存储的更多详细信息，请参阅[官方文档](https://docs.liveramp.com/connect/en/upload-a-file-via-liveramp-s-sftp.html)。
+有关如何配置[!DNL LiveRamp - Onboarding]存储空间的更多详细信息，请参阅[正式文档](https://docs.liveramp.com/connect/en/upload-a-file-via-liveramp-s-sftp.html)。
 
 ## Changelog {#changelog}
 
@@ -255,7 +255,7 @@ abc101@testemailabc.com,active,active,
 
 | 发行月份 | 更新类型 | 描述 |
 |---|---|---|
-| 2024 年 3 月 | 功能和文档更新 | <ul><li>添加了对向欧洲和澳大利亚[!DNL LiveRamp]个[!DNL SFTP]实例的投放的支持。</li><li>更新了描述新支持区域的特定配置的文档。</li><li>将文件的最大文件大小增加到1000万行（以前是500万行）。</li><li>更新了文档以反映增加的文件大小。</li></ul> |
+| 2024 年 3 月 | 功能和文档更新 | <ul><li>添加了对向欧洲和澳大利亚[!DNL LiveRamp]个[!DNL SFTP]实例的投放的支持。</li><li>更新了描述新支持区域的特定配置的文档。</li><li>已将最大文件大小增加到1,000万行（以前是500万行）。</li><li>更新了文档以反映增加的文件大小。</li></ul> |
 | 2023 年 7 月 | 初始版本 | 发布了初始目标版本和文档。 |
 
 {style="table-layout:auto"}

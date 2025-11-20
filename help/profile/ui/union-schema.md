@@ -6,12 +6,12 @@ description: 在Adobe Experience Platform用户界面(UI)中，您可以轻松�
 exl-id: 52af0d77-e37d-4ed8-9dee-71a50b337b4e
 source-git-commit: b7f5f08d5b3632a2d80c39559a5fb5116d9567f8
 workflow-type: tm+mt
-source-wordcount: '1206'
+source-wordcount: '1190'
 ht-degree: 0%
 
 ---
 
-# [!UICONTROL 合并架构] UI指南
+# [!UICONTROL Union schema] UI 指南
 
 在Adobe Experience Platform用户界面(UI)中，您可以轻松查看组织内的任何合并架构，并预览特定类的字段、身份、关系和参与架构。 本指南提供了有关如何使用Experience Platform UI查看和浏览合并架构的详细信息。
 
@@ -40,15 +40,15 @@ Real-Time Customer Profile使您能够创建强大、集中的用户档案，其
 
 ## 查看合并架构 {#view-union-schemas}
 
-要导航到Experience Platform UI中的合并架构，请从左侧导航中选择&#x200B;**[!UICONTROL 配置文件]**，然后选择&#x200B;**[!UICONTROL 合并架构]**&#x200B;选项卡。 将打开[!UICONTROL 合并架构]选项卡以显示当前选定类的合并架构。
+要导航到Experience Platform UI中的合并架构，请从左侧导航中选择&#x200B;**[!UICONTROL Profiles]**，然后选择&#x200B;**[!UICONTROL Union Schema]**&#x200B;选项卡。 将打开[!UICONTROL Union Schema]选项卡以显示当前选定类的合并架构。
 
 ![将显示“合并架构”页面，并突出显示“配置文件和合并架构”选项卡。](../images/union-schema/landing.png)
 
 ## 选择一个类 {#select-a-class}
 
-要显示特定XDM类的合并架构，请从&#x200B;**[!UICONTROL 类]**&#x200B;下拉列表中选择该类。 由于并非所有类都具有联合架构，因此下拉菜单中只有具有联合架构的类（即具有已为配置文件启用的架构的类）可用。
+要显示特定XDM类的合并架构，请从&#x200B;**[!UICONTROL Class]**&#x200B;下拉列表中选择该类。 由于并非所有类都具有联合架构，因此下拉菜单中只有具有联合架构的类（即具有已为配置文件启用的架构的类）可用。
 
-选择类后，显示的架构将更新以反映所选类的合并架构。 例如，您可以选择&#x200B;**[!UICONTROL XDM Individual Profile]**&#x200B;来查看该类的合并架构。
+选择类后，显示的架构将更新以反映所选类的合并架构。 例如，您可以选择&#x200B;**[!UICONTROL XDM Individual Profile]**&#x200B;查看该类的合并架构。
 
 ![包含合并架构的类的下拉列表突出显示。](../images/union-schema/class.png)
 
@@ -70,7 +70,7 @@ Real-Time Customer Profile使您能够创建强大、集中的用户档案，其
 
 ## 查看参与架构 {#view-contributing-schemas}
 
-您还可以通过选择&#x200B;**[!UICONTROL 所有参与架构]**&#x200B;来展开架构列表，以查看哪些特定架构正在参与合并架构。 根据您选择的类以及贵组织在Experience Platform中创建的架构数，该列表可以是包含单个架构的简短列表，也可以是包含多个架构的较长列表。
+您还可以通过选择&#x200B;**[!UICONTROL All contributing schemas]**&#x200B;展开架构列表来查看哪些特定架构对合并架构有贡献。 根据您选择的类以及贵组织在Experience Platform中创建的架构数，该列表可以是包含单个架构的简短列表，也可以是包含多个架构的较长列表。
 
 ![对合并架构有贡献的架构列表已突出显示。](../images/union-schema/contributing-schemas.png)
 
@@ -80,7 +80,7 @@ Real-Time Customer Profile使您能够创建强大、集中的用户档案，其
 
 ## 查看身份 {#view-identities}
 
-通过UI，您可以通过选择&#x200B;**[!UICONTROL 标识]**&#x200B;展开合并架构中包含的标识列表。
+通过UI，您可以通过选择&#x200B;**[!UICONTROL Identities]**&#x200B;展开合并架构中包含的标识列表。
 
 ![属于合并架构的标识已突出显示。](../images/union-schema/identities.png)
 
@@ -94,7 +94,7 @@ Real-Time Customer Profile使您能够创建强大、集中的用户档案，其
 
 合并架构UI还允许您查看已根据所选架构类为架构定义的关系。 定义关系是连接属于不同类的两个架构的一种方法，以便获得有关客户数据的更复杂的见解。
 
-如果已为所选类建立了关系，则选择&#x200B;**[!UICONTROL 关系]**&#x200B;将显示用于创建关系的字段列表。 并非所有架构都使用或需要定义关系，因此关系部分通常不包含任何字段。
+如果已为所选类建立了关系，则选择&#x200B;**[!UICONTROL Relationships]**&#x200B;将显示用于创建关系的字段列表。 并非所有架构都使用或需要定义关系，因此关系部分通常不包含任何字段。
 
 若要了解有关架构关系的详细信息，包括如何使用UI定义这些关系，请访问[有关架构关系的本文档](../../xdm/tutorials/relationship-ui.md)。
 

@@ -15,7 +15,7 @@ ht-degree: 4%
 
 [[!DNL Oracle Eloqua]](https://www.oracle.com/cx/marketing/automation/)使营销人员能够计划和执行营销活动，同时为其潜在客户提供个性化的客户体验。 借助集成的商机管理和轻松的营销活动创建，它可帮助营销人员在其购买者的历程中在正确的时间吸引正确的受众，并进行优雅的扩展以跨渠道（包括电子邮件、显示搜索、视频和移动设备）触及受众。 销售团队能够以更快的速度完成更多交易，从而通过实时insight提高营销投资回报率。
 
-此[!DNL Adobe Experience Platform] [目标](/help/destinations/home.md)利用[&#x200B; REST API中的](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-id-put.html)更新联系人[!DNL Oracle Eloqua]操作，该操作允许您&#x200B;**将受众中的身份**&#x200B;更新为[!DNL Oracle Eloqua]。
+此[!DNL Adobe Experience Platform] [目标](/help/destinations/home.md)利用[ REST API中的](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-id-put.html)更新联系人[!DNL Oracle Eloqua]操作，该操作允许您&#x200B;**将受众中的身份**&#x200B;更新为[!DNL Oracle Eloqua]。
 
 [!DNL Oracle Eloqua]使用[基本身份验证](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/Authentication_Basic.html)与[!DNL Oracle Eloqua] REST API通信。 下面的[!DNL Oracle Eloqua]向目标身份验证[部分中进一步提供了向您的](#authenticate)实例进行身份验证的说明。
 
@@ -27,7 +27,7 @@ ht-degree: 4%
 
 ### Experience Platform先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL Oracle Eloqua]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=zh-Hans)区段[!DNL Experience Platform]。
+在将数据激活到[!DNL Oracle Eloqua]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)区段[!DNL Experience Platform]。
 
 如果您需要受众状态指南，请参阅Experience Platform有关[受众成员资格详细信息架构字段组](/help/xdm/field-groups/profile/segmentation.md)的文档。
 
@@ -35,7 +35,7 @@ ht-degree: 4%
 
 要将数据从Experience Platform导出到您的[!DNL Oracle Eloqua]帐户，您需要拥有[!DNL Oracle Eloqua]帐户。
 
-此外，您至少需要&#x200B;*实例的*“高级用户 — 营销权限”[!DNL Oracle Eloqua]。 有关指导，请参阅&#x200B;*安全用户访问*&#x200B;页面上的[“安全组”](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-user/Help/SecurityOverview/SecuredUserAccess.htm)部分。 目标需要在调用[&#x200B; API时以编程方式](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/DeterminingBaseURL.html)确定您的基本URL[!DNL Oracle Eloqua]，也需要该访问权限。
+此外，您至少需要&#x200B;*实例的*“高级用户 — 营销权限”[!DNL Oracle Eloqua]。 有关指导，请参阅&#x200B;*安全用户访问*&#x200B;页面上的[“安全组”](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-user/Help/SecurityOverview/SecuredUserAccess.htm)部分。 目标需要在调用[ API时以编程方式](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/DeterminingBaseURL.html)确定您的基本URL[!DNL Oracle Eloqua]，也需要该访问权限。
 
 #### 收集[!DNL Oracle Eloqua]凭据 {#gather-credentials}
 
@@ -148,7 +148,7 @@ ht-degree: 4%
 
 1. 在&#x200B;**[!UICONTROL Mapping]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL Add new mapping]**。 您将在屏幕上看到一个新映射行。
 1. 在&#x200B;**[!UICONTROL Select source field]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL Select attributes]**&#x200B;类别并选择XDM属性或选择&#x200B;**[!UICONTROL Select identity namespace]**&#x200B;并选择身份。
-1. 在&#x200B;**[!UICONTROL Select target field]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL Select identity namespace]**&#x200B;并选择身份，或选择&#x200B;**[!UICONTROL Select custom attributes]**&#x200B;并在&#x200B;**[!UICONTROL Attribute name]**&#x200B;字段中键入所需的属性名称。 您提供的属性名称应与[!DNL Oracle Eloqua]中的现有联系人属性匹配。 有关您可以在[[!DNL create a contact]中使用的确切属性名称，请参阅](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-post.html) [!DNL Oracle Eloqua]。
+1. 在&#x200B;**[!UICONTROL Select target field]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL Select identity namespace]**&#x200B;并选择身份，或选择&#x200B;**[!UICONTROL Select custom attributes]**&#x200B;并在&#x200B;**[!UICONTROL Attribute name]**&#x200B;字段中键入所需的属性名称。 您提供的属性名称应与[!DNL Oracle Eloqua]中的现有联系人属性匹配。 有关您可以在[[!DNL create a contact]中使用的确切属性名称，请参阅](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-post.html)[!DNL Oracle Eloqua]。
 
    * 重复这些步骤以在XDM配置文件架构和[!DNL Oracle Eloqua]之间添加所需的和任何所需的属性映射：
 
@@ -201,7 +201,7 @@ ht-degree: 4%
 要验证您是否正确设置了目标，请执行以下步骤：
 
 1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**&#x200B;并导航到目标列表。
-1. 接下来，选择目标并切换到&#x200B;**[!UICONTROL Activation data]**&#x200B;选项卡，然后选择受众名称。
+1. 接下来，选择目标并切换到&#x200B;**[!UICONTROL Activation data]**选项卡，然后选择受众名称。
    ![显示目标激活数据的Experience Platform UI屏幕截图示例。](../../assets/catalog/email-marketing/oracle-eloqua-api/destinations-activation-data.png)
 
 1. 监控受众摘要，并确保用户档案计数对应于区段中的计数。

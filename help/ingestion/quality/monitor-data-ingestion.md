@@ -6,7 +6,7 @@ description: 本用户指南提供了有关如何在Adobe Experience Platform用
 exl-id: 85711a06-2756-46f9-83ba-1568310c9f73
 source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
-source-wordcount: '649'
+source-wordcount: '641'
 ht-degree: 4%
 
 ---
@@ -24,15 +24,15 @@ ht-degree: 4%
 >title="摄取率"
 >abstract="每秒成功处理的事件的数目。"
 >text="Learn more in the documentation"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-sources.html?lang=zh-Hans" text="在 UI 中监控源的数据流"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-sources.html" text="在 UI 中监控源的数据流"
 
 >[!TIP]
 >
 >要计算特定日期的总事件数，请使用表达式： `total events / day = ingestion rate * 60 * 60 * 24`。
 
-在[Experience Platform UI](https://platform.adobe.com)中，从左侧导航菜单中选择&#x200B;**[!UICONTROL 监视]**，然后选择&#x200B;**[!UICONTROL 流到端]**。
+在[Experience Platform UI](https://platform.adobe.com)中，从左侧导航菜单中选择&#x200B;**[!UICONTROL Monitoring]**，然后选择&#x200B;**[!UICONTROL Streaming end-to-end]**。
 
-出现&#x200B;**[!UICONTROL 流端对端]**&#x200B;监视页面。 此工作区提供了一个图形，该图形显示[!DNL Experience Platform]接收流式事件的速率，该图形显示[[!DNL Real-Time Customer Profile]](../../profile/home.md)成功处理的流式事件的速率，以及传入数据的详细列表。
+此时会显示&#x200B;**[!UICONTROL Streaming end-to-end]**&#x200B;监视页面。 此工作区提供了一个图形，该图形显示[!DNL Experience Platform]接收流式事件的速率，该图形显示[[!DNL Real-Time Customer Profile]](../../profile/home.md)成功处理的流式事件的速率，以及传入数据的详细列表。
 
 ![](../images/quality/monitor-data-flows/list-streams.png)
 
@@ -44,7 +44,7 @@ ht-degree: 4%
 
 >[!NOTE]
 >
->为了让数据显示在此图表上，数据必须为[!DNL Profile]明确启用&#x200B;**&#x200B;**。 要了解如何为[!DNL Profile]启用流数据，请阅读[数据集用户指南](../../catalog/datasets/user-guide.md#enable-a-dataset-for-real-time-customer-profile)。
+>为了让数据显示在此图表上，数据必须为&#x200B;**明确启用**[!DNL Profile]。 要了解如何为[!DNL Profile]启用流数据，请阅读[数据集用户指南](../../catalog/datasets/user-guide.md#enable-a-dataset-for-real-time-customer-profile)。
 
 ![](../images/quality/monitor-data-flows/ingested-by-profile.png)
 
@@ -72,9 +72,9 @@ ht-degree: 4%
 
 ## 监控批量端到端数据摄取
 
-在[[!DNL Experience Platform UI]](https://platform.adobe.com)中，从左侧导航菜单中选择&#x200B;**[!UICONTROL 监视]**。
+在[[!DNL Experience Platform UI]](https://platform.adobe.com)中，从左侧导航菜单中选择&#x200B;**[!UICONTROL Monitoring]**。
 
-此时将显示&#x200B;**[!UICONTROL 批次端对端]**&#x200B;监视页面，该页面显示以前摄取的批次的列表。 您可以选择任何批次，以了解有关该记录的更多详细信息。
+此时会显示&#x200B;**[!UICONTROL Batch end-to-end]**&#x200B;监视页面，其中显示以前摄取的批次的列表。 您可以选择任何批次，以了解有关该记录的更多详细信息。
 
 ![](../images/quality/monitor-data-flows/batch-monitoring.png)
 

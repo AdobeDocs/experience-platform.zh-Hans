@@ -22,13 +22,13 @@ Adobe Experience Platform [!DNL Segmentation Service]提供了一个用户界面
 
 - **受众**：一组具有相似行为和/或特征的人员。 此人员集合可以由Adobe Experience Platform使用区段定义（Experience-Platform生成的受众）生成，也可以由外部源（外部生成的受众）生成。
 - **区段定义**： Adobe Experience Platform用于描述目标受众关键特征或行为的规则集。
-- **区段**：将用户档案划分为受众的操作。
+- **区段**：将个人资料划分为受众的行为。
 
 ## 分段的工作方式
 
-分段是定义由配置文件存储中的配置文件子集共享的特定属性或行为的过程，以区分可营销的人员组和您的客户群。 例如，在名为“您是否忘记购买运动鞋？”的电子邮件促销活动中，您可能希望受众包含在最近30天内搜索跑鞋但未完成购买的所有用户。
+分段是定义由您的个人资料存储中的个人资料子集共享的特定属性或行为的过程，以区分可销售人群和您的客户群。 例如，在名为“您忘记买运动鞋了吗？”的电子邮件营销活动中，您可能想要获得在过去30天内搜索跑鞋但未完成购买的所有用户的受众。
 
-从概念上定义受众后，即会在[!DNL Experience Platform]中生成该受众。 通常，受众由营销人员或受众专家构建，但有些组织希望由营销部门与数据分析师合作创建。 在查看发送到[!DNL Experience Platform]的数据时，数据分析师可以通过两种方式创建受众 — 通过选择将用于构建受众规则或条件的字段和值来创建区段定义，或通过使用受众构成构成构成受众。
+在概念定义受众后，将在[!DNL Experience Platform]中生成该受众。 通常，受众由营销人员或受众专家创建，但有些组织更希望由营销部门与数据分析师合作创建。 在查看发送到[!DNL Experience Platform]的数据时，数据分析师可以通过两种方式创建受众 — 通过选择将用于构建受众规则或条件的字段和值来创建区段定义，或通过使用受众构成构成构成受众。
 
 ## 创建受众
 
@@ -67,7 +67,7 @@ Adobe Experience Platform [!DNL Segmentation Service]提供了一个用户界面
 >id="platform_segments_evaluation_streaming"
 >title="流式处理评估"
 >abstract="流式处理分段是一个持续的数据选择过程，会更新受众以响应用户活动。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/methods/streaming-segmentation.html?lang=zh-Hans" text="通过流式处理分段近乎实时地评估事件"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/methods/streaming-segmentation.html" text="通过流式处理分段近乎实时地评估事件"
 
 Experience Platform 目前支持三种受众评估方法：流式处理分段、批次分段和边缘分段。
 
@@ -86,7 +86,7 @@ Experience Platform 目前支持三种受众评估方法：流式处理分段、
 
 作为持续数据选择过程的替代方案，批次分段通过区段定义一次性移动所有轮廓数据以产生相应的受众。创建受众后，将保存并存储生成的受众，以便将其导出以供使用。
 
-每24小时自动评估批次受众。 如果要根据需要评估批受众，则可以使用区段作业。 要了解有关区段作业的更多信息，请阅读[区段作业文档](./api/segment-jobs.md)。
+每24小时自动评估批次受众。 如果要按需评估批受众，您可以使用段任务。 要了解有关区段作业的更多信息，请阅读[区段作业文档](./api/segment-jobs.md)。
 
 ### 边缘分段 {#edge}
 
@@ -94,9 +94,9 @@ Experience Platform 目前支持三种受众评估方法：流式处理分段、
 >id="platform_segments_evaluation_edge"
 >title="边缘评估"
 >abstract="边缘分段能够在 Edge Network 上即时评估 Experience Platform 中的区段，从而实现同一页和下一页个性化用例。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/methods/edge-segmentation.html?lang=zh-Hans" text="边缘分段指南"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/methods/edge-segmentation.html" text="边缘分段指南"
 
-Edge分段是在Edge Network[&#128279;](../landing/edge-and-hub-comparison.md)上即时评估Experience Platform中的区段的能力，从而启用同页和下一页个性化用例。
+Edge分段是在Edge Network[上即时评估Experience Platform中的区段的能力](../landing/edge-and-hub-comparison.md)，从而启用同页和下一页个性化用例。
 
 若要了解有关边缘分段的更多信息，请阅读[边缘分段概述](./methods/edge-segmentation.md)。
 
@@ -128,11 +128,11 @@ Edge分段是在Edge Network[&#128279;](../landing/edge-and-hub-comparison.md)�
 
 >[!NOTE]
 >
->受众规模的估计基于组织的默认配置文件合并策略。
+>受众大小估计基于组织的默认档案合并策略。
 
 ### 其他区段定义元数据
 
-除了名称和合并策略之外，[!DNL Segment Builder]还为您提供了一个额外的描述元数据字段，您可以在其中概述区段定义的用途。
+除了名称和合并策略之外，[!DNL Segment Builder]还为您提供了一个附加说明元数据字段，您可以在其中总结段定义的用途。
 
 ## 高级分段功能
 
@@ -166,7 +166,7 @@ Edge分段是在Edge Network[&#128279;](../landing/edge-and-hub-comparison.md)�
 
 ### 多实体分段 {#multi-entity}
 
-利用高级多实体分段功能，您可以使用基于产品、商店或其他非人员（也称为“维度”实体）的其他数据来扩展[!DNL Real-Time Customer Profile]数据。 因此，[!DNL Segmentation Service]可以在区段定义期间访问其他字段，就像这些字段是[!DNL Profile]数据存储的本机字段一样。 在根据与您的独特业务需求相关的数据确定受众时，多实体分段可提供灵活性。 有关详细信息（包括用例和工作流），请参阅[多实体分段指南](./tutorials/multi-entity-segmentation.md)。
+使用高级多实体分段功能，您可以基于产品、商店或其他非人员（也称为“维度”实体）将[!DNL Real-Time Customer Profile]数据与其他数据一起扩展。 因此，[!DNL Segmentation Service]可以在段定义期间访问其他字段，就好像这些字段是[!DNL Profile]数据存储的原生字段一样。 当根据与您独特的业务需求相关的数据确定受众时，多实体分段可提供灵活性。 有关更多信息（包括用例和工作流程），请参阅[多实体分段指南](./tutorials/multi-entity-segmentation.md)。
 
 ## [!DNL Segmentation Service]数据类型
 

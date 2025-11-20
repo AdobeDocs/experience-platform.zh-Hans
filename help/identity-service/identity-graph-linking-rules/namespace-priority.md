@@ -4,7 +4,7 @@ description: 了解Identity Service中的命名空间优先级。
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
 source-git-commit: 7df0d0c7eb97760190ac8b20d1b74472b87e8b6a
 workflow-type: tm+mt
-source-wordcount: '2120'
+source-wordcount: '2119'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 每个客户实施都是独一无二的，并且是根据特定组织的目标而量身定制的，因此，给定命名空间的重要性因客户而异。 现实世界的例子包括：
 
 * 您的公司可能会将每个电子邮件地址视为单个人员实体，因此使用[身份设置](./identity-settings-ui.md)将电子邮件命名空间配置为唯一。 但是，另一家公司可能希望将单一人员实体表示为具有多个电子邮件地址，因此将电子邮件命名空间配置为不唯一。 这些公司需要使用另一个唯一身份命名空间，如CRMID命名空间，因此可以有一个与多个电子邮件地址关联的单一人员标识符。
-* 您可能会使用“登录ID”命名空间收集在线行为。 此登录ID可能与CRMID具有1:1关系，然后CRMID存储CRM系统中的属性，并且可能被视为最重要的命名空间。 在这种情况下，您需要确定CRMID命名空间是人员的更准确表示形式，而登录ID命名空间是第二重要的命名空间。
+* 您可能会使用“登录ID”命名空间收集在线行为。 此登录ID可能与CRMID有1:1关系，CRMID随后存储来自CRM系统的属性，并且可能被视为最重要的命名空间。 在这种情况下，您需要确定CRMID命名空间是人员的更准确表示形式，而登录ID命名空间是第二重要的命名空间。
 
 您必须在Identity Service中进行反映命名空间重要性的配置，因为这会影响配置文件及其相关身份图的形成和拆分方式。
 
@@ -65,7 +65,7 @@ ht-degree: 2%
 
 ## 命名空间优先级使用情况
 
-目前，命名空间优先级影响实时客户配置文件的系统行为。 下图说明了此概念。 有关详细信息，请阅读[Adobe Experience Platform和应用程序体系结构图](https://experienceleague.adobe.com/zh-hans/docs/blueprints-learn/architecture/architecture-overview/platform-applications)的指南。
+目前，命名空间优先级影响实时客户配置文件的系统行为。 下图说明了此概念。 有关详细信息，请阅读[Adobe Experience Platform和应用程序体系结构图](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications)的指南。
 
 ![命名空间优先级应用程序作用域的图表。](../images/namespace-priority/application-scope.png "命名空间优先级应用程序作用域的关系图。"){zoomable="yes"}
 
@@ -78,7 +78,7 @@ ht-degree: 2%
 * 为给定沙盒配置身份设置后，体验事件的主要身份将由配置中的最高命名空间优先级确定。
    * 这是因为体验事件在本质上是动态的。 身份映射可以包含三个或更多身份，命名空间优先级可确保最重要的命名空间与体验事件相关联。
 * 因此，实时客户个人资料&#x200B;**将不再使用下列配置**：
-   * 使用Web SDK、Mobile SDK或Edge Network API在`identityMap`中发送身份时的主要身份配置(`primary=true`)（将继续在配置文件中使用身份命名空间和身份值）。 **注意**： Real-time Customer Profile之外的服务(如Data Lake Storage或Adobe Target)将继续使用主标识配置(`primary=true`)。
+   * 使用Web SDK、Mobile SDK或Edge Network API在`primary=true`中发送身份时的主要身份配置(`identityMap`)（将继续在配置文件中使用身份命名空间和身份值）。 **注意**： Real-time Customer Profile之外的服务(如Data Lake Storage或Adobe Target)将继续使用主标识配置(`primary=true`)。
    * 在XDM体验事件类架构中标记为主要标识的任何字段。
    * Adobe Analytics源连接器（ECID或AAID）中的默认主标识设置。
 * 另一方面，**命名空间优先级不能确定配置文件记录**&#x200B;的主要身份。
@@ -111,7 +111,7 @@ ht-degree: 2%
 | 用户操作（体验事件） | 身份验证状态 | 数据源 | 事件中的命名空间 | 主要身份的命名空间 |
 | --- | --- | --- | --- | --- |
 | 查看信用卡优惠页面 | 未经身份验证（匿名） | Web SDK | `{ECID}` | ECID |
-| 查看帮助页面 | 未验证 | Mobile SDK | `{ECID, IDFA}` | IDFA |
+| 查看帮助页面 | 未经身份验证 | Mobile SDK | `{ECID, IDFA}` | IDFA |
 | 查看支票帐户余额 | Authenticated | Web SDK | `{CRMID, ECID}` | CRMID |
 | 注册家庭贷款 | Authenticated | Analytics源连接器 | `{CRMID, ECID, AAID}` | CRMID |
 | 将1,000美元从支票转帐到节省额 | Authenticated | Mobile SDK | `{CRMID, GAID, ECID}` | CRMID |
@@ -162,7 +162,7 @@ ht-degree: 2%
 
 ### Experience Data Model (XDM)架构
 
-任何不是XDM体验事件的架构（如XDM个人资料）将继续遵循您标记为身份[&#128279;](../../xdm/ui/fields/identity.md)的任何字段。
+任何不是XDM体验事件的架构（如XDM个人资料）将继续遵循您标记为身份[的任何](../../xdm/ui/fields/identity.md)字段。
 
 有关XDM架构的更多信息，请阅读[架构概述](../../xdm/home.md)。
 
@@ -204,17 +204,17 @@ ht-degree: 2%
 
 #### 边缘分段
 
-在给定事件中，确保在`identityMap`中包含所有表示人员实体的命名空间，因为作为XDM字段[&#128279;](../../xdm/ui/fields/identity.md)发送的身份将被忽略，并且不会用于区段成员资格元数据存储。
+在给定事件中，确保在`identityMap`中包含所有表示人员实体的命名空间，因为作为XDM字段[发送的](../../xdm/ui/fields/identity.md)身份将被忽略，并且不会用于区段成员资格元数据存储。
 
 * **事件适用性**：此行为仅适用于直接发送到Edge Network的事件(如WebSDK和Mobile SDK)。 从[Experience Platform中心](../../landing/edge-and-hub-comparison.md)摄取的事件，例如通过HTTP API源、其他流源和批处理源摄取的事件，不受此限制的约束。
 * **Edge分段特异性**：此行为特定于边缘分段。 批量分段和流式分段是在中心服务器上进行评估的单独服务，并且不遵循相同的流程。 有关详细信息，请阅读[边缘分段指南](../../segmentation/methods/edge-segmentation.md)。
-* 有关详细信息，请阅读[Adobe Experience Platform和应用程序体系结构图](https://experienceleague.adobe.com/zh-hans/docs/blueprints-learn/architecture/architecture-overview/platform-applications#detailed-architecture-diagram)和[Edge Network和中心比较](../../landing/edge-and-hub-comparison.md)页。
+* 有关详细信息，请阅读[Adobe Experience Platform和应用程序体系结构图](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications#detailed-architecture-diagram)和[Edge Network和中心比较](../../landing/edge-and-hub-comparison.md)页。
 
 #### Edge Network应用程序
 
 要确保Edge Network上的应用程序可以毫不延迟地访问Edge配置文件，请确保您的事件包括CRMID上的`primary=true`。 这可以确保立即可用，而无需等待来自中心的标识图更新。
 
 * Edge Network上的应用程序(如Adobe Target、Offer Decisioning和自定义Personalization目标)将继续依赖事件中的主要身份来从Edge配置文件访问配置文件。
-* 有关Experience Platform行为的详细信息，请阅读[Edge Network Web SDK和Edge Network架构图](https://experienceleague.adobe.com/zh-hans/docs/blueprints-learn/architecture/architecture-overview/deployment/websdk#experience-platform-webmobile-sdk-or-edge-network-server-api-deployment)。
-* 有关如何在Web SDK[&#128279;](../../web-sdk/identity/overview.md)上配置主身份的详细信息，请阅读有关[数据元素类型](../../tags/extensions/client/web-sdk/data-element-types.md)和Web SDK中的身份数据的文档。
+* 有关Experience Platform行为的详细信息，请阅读[Edge Network Web SDK和Edge Network架构图](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/deployment/websdk#experience-platform-webmobile-sdk-or-edge-network-server-api-deployment)。
+* 有关如何在Web SDK[上配置主身份的详细信息，请阅读有关](../../tags/extensions/client/web-sdk/data-element-types.md)数据元素类型[和](../../web-sdk/identity/overview.md)Web SDK中的身份数据的文档。
 * 确保ECID包含在体验事件中。 如果ECID缺失，则会将其添加到具有`primary=true`的事件有效负载中，这可能会导致意外结果。

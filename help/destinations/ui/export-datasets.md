@@ -5,8 +5,8 @@ description: 了解如何将数据集从Adobe Experience Platform导出到您首
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
 source-git-commit: 69a1ae08fefebb7fed54564ed06f42af523d2903
 workflow-type: tm+mt
-source-wordcount: '2721'
-ht-degree: 7%
+source-wordcount: '2656'
+ht-degree: 8%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 7%
 
 >[!AVAILABILITY]
 >
->已购买Real-Time CDP Prime或Ultimate包、Adobe Journey Optimizer或Customer Journey Analytics的客户可使用此功能。 有关更多信息，请与Adobe代表联系。
+>已购买Real-Time CDP Prime或Ultimate包、Adobe Journey Optimizer或Customer Journey Analytics的客户可使用此功能。 请联系 Adobe 代表以获取更多信息。
 
 >[!IMPORTANT]
 >
@@ -50,16 +50,16 @@ ht-degree: 7%
   </tr>
   <tr>
     <td>Ultimate</td>
-    <td><ul><li>通过源、Web SDK、Mobile SDK、Analytics Data Connector和Audience Manager摄取或收集数据后，在Experience Platform UI中创建的配置文件和体验事件数据集。</li><li> <a href="https://experienceleague.adobe.com/docs/experience-platform/dashboards/query.html?lang=zh-Hans#profile-attribute-datasets">系统生成的配置文件快照数据集</a>。</li></td>
+    <td><ul><li>通过源、Web SDK、Mobile SDK、Analytics Data Connector和Audience Manager摄取或收集数据后，在Experience Platform UI中创建的配置文件和体验事件数据集。</li><li> <a href="https://experienceleague.adobe.com/docs/experience-platform/dashboards/query.html#profile-attribute-datasets">系统生成的配置文件快照数据集</a>。</li></td>
   </tr>
   <tr>
     <td rowspan="2">Adobe Journey Optimizer</td>
     <td>Prime</td>
-    <td>请参阅<a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html?lang=zh-Hans#datasets"> Adobe Journey Optimizer</a>文档。</td>
+    <td>请参阅<a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html#datasets"> Adobe Journey Optimizer</a>文档。</td>
   </tr>
   <tr>
     <td>Ultimate</td>
-    <td>请参阅<a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html?lang=zh-Hans#datasets"> Adobe Journey Optimizer</a>文档。</td>
+    <td>请参阅<a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html#datasets"> Adobe Journey Optimizer</a>文档。</td>
   </tr>
   <tr>
     <td>Customer Journey Analytics</td>
@@ -78,7 +78,7 @@ ht-degree: 7%
 
 观看以下视频，了解此页面上描述的工作流的端到端说明、使用导出数据集功能的好处以及一些建议的用例。
 
->[!VIDEO](https://video.tv.adobe.com/v/3448828?captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/3424392/)
 
 ## 支持的目标 {#supported-destinations}
 
@@ -111,35 +111,35 @@ Experience Platform目录中的一些基于文件的目标同时支持Audience A
 
 ### 所需的权限 {#permissions}
 
-要导出数据集，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 查看数据集]**&#x200B;和&#x200B;**[!UICONTROL 管理和激活数据集目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+要导出数据集，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL View Datasets]**&#x200B;和&#x200B;**[!UICONTROL Manage and Activate Dataset Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
-要确保您具有导出数据集的必要权限并且目标支持导出数据集，请浏览目标目录。 如果目标具有&#x200B;**[!UICONTROL 激活]**&#x200B;或&#x200B;**[!UICONTROL 导出数据集]**&#x200B;控件，则您具有相应的权限。
+要确保您具有导出数据集的必要权限并且目标支持导出数据集，请浏览目标目录。 如果目标具有&#x200B;**[!UICONTROL Activate]**&#x200B;或&#x200B;**[!UICONTROL Export datasets]**&#x200B;控件，则您具有相应的权限。
 
 ## 选择您的目标 {#select-destination}
 
 按照相关说明选择一个可导出数据集的目标：
 
-1. 转到&#x200B;**[!UICONTROL 连接>目标]**，然后选择&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡。
+1. 转到&#x200B;**[!UICONTROL Connections > Destinations]**，然后选择&#x200B;**[!UICONTROL Catalog]**&#x200B;选项卡。
 
    ![目录控件突出显示的目标目录选项卡。](/help/destinations/assets/ui/export-datasets/catalog-tab.png)
 
-1. 在与要将数据集导出到的目标对应的卡片上，选择&#x200B;**[!UICONTROL 激活]**&#x200B;或&#x200B;**[!UICONTROL 导出数据集]**。
+1. 在与要将数据集导出到的目标对应的卡片中选择&#x200B;**[!UICONTROL Activate]**&#x200B;或&#x200B;**[!UICONTROL Export datasets]**。
 
    ![突出显示了“激活”控件的“目标目录”选项卡。](/help/destinations/assets/ui/export-datasets/activate-button.png)
 
-1. 选择&#x200B;**[!UICONTROL 数据类型数据集]**&#x200B;并选择要将数据集导出到的目标连接，然后选择&#x200B;**[!UICONTROL 下一步]**。
+1. 选择&#x200B;**[!UICONTROL Data type Datasets]**&#x200B;并选择要将数据集导出到的目标连接，然后选择&#x200B;**[!UICONTROL Next]**。
 
 >[!TIP]
 > 
->如果要设置新目标以导出数据集，请选择&#x200B;**[!UICONTROL 配置新目标]**&#x200B;以触发[连接到目标](/help/destinations/ui/connect-destination.md)工作流。
+>如果要设置新目标以导出数据集，请选择&#x200B;**[!UICONTROL Configure new destination]**&#x200B;以触发[连接到目标](/help/destinations/ui/connect-destination.md)工作流。
 
 ![数据集控件突出显示的目标激活工作流。](/help/destinations/assets/ui/export-datasets/select-datatype-datasets.png)
 
-1. 出现&#x200B;**[!UICONTROL 选择数据集]**&#x200B;视图。 继续到[选择要导出的数据集](#select-datasets)的下一部分。
+1. 出现&#x200B;**[!UICONTROL Select datasets]**&#x200B;视图。 继续到[选择要导出的数据集](#select-datasets)的下一部分。
 
 ## 选择您的数据集 {#select-datasets}
 
-使用数据集名称左侧的复选框选择要导出到目标的数据集，然后选择&#x200B;**[!UICONTROL 下一步]**。
+使用数据集名称左侧的复选框选择要导出到目标的数据集，然后选择&#x200B;**[!UICONTROL Next]**。
 
 ![数据集导出工作流显示“选择数据集”步骤，您可以在其中选择要导出哪些数据集。](/help/destinations/assets/ui/export-datasets/select-datasets.png)
 
@@ -160,17 +160,17 @@ Experience Platform目录中的一些基于文件的目标同时支持Audience A
 >title="更新此数据流主体的结束日期"
 >abstract="由于此目标最近进行了更新，数据流现在需要结束日期。Adobe 将默认结束日期设置为 2025 年 9 月 1 日。请更新为您希望的结束日期，否则数据导出将在默认日期停止。"
 
-使用&#x200B;**[!UICONTROL 计划]**&#x200B;步骤可以：
+使用&#x200B;**[!UICONTROL Scheduling]**&#x200B;步骤可以：
 
 * 设置数据集导出的开始日期和结束日期以及导出节奏。
 * 配置导出的数据集文件是应导出数据集的完整成员资格，还是只应在每次导出时增量更改成员资格。
 * 自定义存储位置中应导出数据集的文件夹路径。 阅读有关如何[编辑导出文件夹路径](#edit-folder-path)的详细信息。
 
-使用页面上的&#x200B;**[!UICONTROL Edit schedule]**&#x200B;控件编辑导出的频率，并选择是导出完整文件还是增量文件。
+使用页面上的&#x200B;**[!UICONTROL Edit schedule]**&#x200B;控件编辑导出的导出节奏，并选择是导出完整文件还是增量文件。
 
 ![编辑计划步骤中突出显示的计划控件。](/help/destinations/assets/ui/export-datasets/edit-schedule-control-highlight.png)
 
-默认情况下已选中&#x200B;**[!UICONTROL 导出增量文件]**&#x200B;选项。 这会触发导出一个或多个表示数据集的完整快照的文件。 后续文件是自上次导出以来向数据集添加的增量文件。 您还可以选择&#x200B;**[!UICONTROL 导出完整文件]**。 在这种情况下，选择频率&#x200B;**[!UICONTROL 一次]**&#x200B;以一次性完全导出数据集。
+默认情况下已选中&#x200B;**[!UICONTROL Export incremental files]**&#x200B;选项。 这会触发导出一个或多个表示数据集的完整快照的文件。 后续文件是自上次导出以来向数据集添加的增量文件。 您还可以选择&#x200B;**[!UICONTROL Export full files]**。 在这种情况下，选择频率&#x200B;**[!UICONTROL Once]**&#x200B;以一次性完全导出数据集。
 
 >[!IMPORTANT]
 >
@@ -178,16 +178,16 @@ Experience Platform目录中的一些基于文件的目标同时支持Audience A
 
 ![数据集导出工作流显示计划步骤。](/help/destinations/assets/ui/export-datasets/export-incremental-datasets.png)
 
-1. 使用&#x200B;**[!UICONTROL 频率]**&#x200B;选择器选择导出频率：
+1. 使用&#x200B;**[!UICONTROL Frequency]**&#x200B;选择器选择导出频率：
 
-   * **[!UICONTROL 每日]**：计划每天在指定的时间导出一次增量文件。
-   * **[!UICONTROL 小时]**：计划每3、6、8或12小时导出一次增量文件。
+   * **[!UICONTROL Daily]**：计划每天在指定的时间导出一次增量文件。
+   * **[!UICONTROL Hourly]**：计划每3、6、8或12小时导出一次增量文件。
 
-2. 使用&#x200B;**[!UICONTROL Time]**&#x200B;选择器以[!DNL UTC]格式选择一天中何时进行导出。
+2. 使用&#x200B;**[!UICONTROL Time]**&#x200B;选择器以[!DNL UTC]格式选择何时进行导出。
 
-3. 使用&#x200B;**[!UICONTROL 日期]**&#x200B;选择器选择应执行导出的时间间隔。
+3. 使用&#x200B;**[!UICONTROL Date]**&#x200B;选择器选择应进行导出的时间间隔。
 
-4. 选择&#x200B;**[!UICONTROL 保存]**&#x200B;以保存计划并继续&#x200B;**[!UICONTROL 审阅]**&#x200B;步骤。
+4. 选择&#x200B;**[!UICONTROL Save]**&#x200B;以保存计划并继续&#x200B;**[!UICONTROL Review]**&#x200B;步骤。
 
 >[!NOTE]
 > 
@@ -205,7 +205,7 @@ Experience Platform目录中的一些基于文件的目标同时支持Audience A
 >title="数据集文件夹路径预览"
 >abstract="预览根据您在此窗口中添加的宏在您的存储位置中创建的文件夹结构。"
 
-选择&#x200B;**[!UICONTROL 编辑文件夹路径]**&#x200B;以自定义存储导出数据集的存储位置的文件夹结构。
+选择&#x200B;**[!UICONTROL Edit folder path]**&#x200B;以自定义存储导出数据集的存储位置的文件夹结构。
 
 ![编辑计划步骤中突出显示的文件夹路径控件。](/help/destinations/assets/ui/export-datasets/edit-folder-path.png)
 
@@ -213,13 +213,13 @@ Experience Platform目录中的一些基于文件的目标同时支持Audience A
 
 ![自定义文件夹模式窗口中高亮显示的宏选择。](/help/destinations/assets/ui/export-datasets/custom-folder-path-macros.png)
 
-选择所需的宏后，您可以看到将在存储位置创建的文件夹结构的预览。 文件夹结构中的第一个级别表示您在&#x200B;**[!UICONTROL 连接到目标]**&#x200B;以导出数据集时指示的[文件夹路径](/help/destinations/ui/connect-destination.md##set-up-connection-parameters)。
+选择所需的宏后，您可以看到将在存储位置创建的文件夹结构的预览。 文件夹结构中的第一个级别表示您在&#x200B;**[!UICONTROL Folder path]**&#x200B;连接到目标[以导出数据集时指示的](/help/destinations/ui/connect-destination.md##set-up-connection-parameters)。
 
 ![自定义文件夹模式窗口中高亮显示的文件夹路径预览。](/help/destinations/assets/ui/export-datasets/custom-folder-path-preview.png)
 
 ## 审查 {#review}
 
-在&#x200B;**[!UICONTROL 审核]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL 取消]**&#x200B;以中断流，**[!UICONTROL 返回]**&#x200B;以修改您的设置，或者选择&#x200B;**[!UICONTROL 完成]**&#x200B;以确认您的选择并开始将数据集导出到目标。
+在&#x200B;**[!UICONTROL Review]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL Cancel]**&#x200B;以拆分流，**[!UICONTROL Back]**&#x200B;以修改您的设置，或&#x200B;**[!UICONTROL Finish]**&#x200B;以确认您的选择并开始将数据集导出到目标。
 
 ![数据集导出工作流显示审核步骤。](/help/destinations/assets/ui/export-datasets/review.png)
 
@@ -231,7 +231,7 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
 >[!TIP]
 > 
->此文件夹结构中的第一个级别 — `folder-name-you-provided` — 表示您&#x200B;**[!UICONTROL 连接到目标]**&#x200B;以导出数据集时指示的[文件夹路径](/help/destinations/ui/connect-destination.md##set-up-connection-parameters)。
+>此文件夹结构中的第一个级别 — `folder-name-you-provided` — 表示当您&#x200B;**[!UICONTROL Folder path]**&#x200B;连接到目标[以导出数据集时指示的](/help/destinations/ui/connect-destination.md##set-up-connection-parameters)。
 
 `folder-name-you-provided/datasetID/exportTime=YYYYMMDDHHMM`
 
@@ -258,7 +258,7 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
 要从现有数据流中删除数据集，请执行以下步骤：
 
-1. 登录到[Experience Platform UI](https://experience.adobe.com/platform/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL 目标]**。 从顶部标题中选择&#x200B;**[!UICONTROL 浏览]**&#x200B;以查看现有目标数据流。
+1. 登录到[Experience Platform UI](https://experience.adobe.com/platform/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL Destinations]**。 从顶部标题中选择&#x200B;**[!UICONTROL Browse]**&#x200B;以查看现有目标数据流。
 
    ![目标浏览视图，其中显示目标连接，其余连接模糊。](../assets/ui/export-datasets/browse-dataset-connections.png)
 
@@ -266,21 +266,21 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
    > 
    >选择左上角的过滤器图标![过滤器图标](/help/images/icons/filter.png)以启动排序面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的过滤选择。
 
-2. 从&#x200B;**[!UICONTROL 激活数据]**&#x200B;列中，选择数据集控件以查看映射到此导出数据流的所有数据集。
+2. 从&#x200B;**[!UICONTROL Activation data]**&#x200B;列中，选择数据集控件以查看映射到此导出数据流的所有数据集。
 
    ![在“激活数据”列中突出显示的可用数据集导航选项。](../assets/ui/export-datasets/go-to-datasets-data.png)
 
-3. 此时将显示目标的&#x200B;**[!UICONTROL 激活数据]**&#x200B;页面。 使用数据集列表左侧的复选框选择要删除的数据集，然后在右边栏中选择&#x200B;**[!UICONTROL 删除数据集]**&#x200B;以触发删除数据集确认对话框。
+3. 将显示目标的&#x200B;**[!UICONTROL Activation data]**&#x200B;页面。 使用数据集列表左侧的复选框选择要删除的数据集，然后在右边栏中选择&#x200B;**[!UICONTROL Remove datasets]**&#x200B;以触发删除数据集确认对话框。
 
    ![在右边栏中显示删除数据集控件的“删除数据集”对话框。](../assets/ui/export-datasets/bulk-remove-datasets.png)
 
-4. 在确认对话框中，选择&#x200B;**[!UICONTROL 移除]**&#x200B;以立即从导出到目标的数据集中移除数据集。
+4. 在确认对话框中，选择&#x200B;**[!UICONTROL Remove]**&#x200B;以立即从导出到目标的数据集中删除该数据集。
 
    ![显示从数据流中删除确认数据集选项的对话框。](../assets/ui/export-datasets/remove-dataset-confirm.png)
 
 ## 数据集导出授权 {#licensing-entitlement}
 
-请参阅产品描述文档，了解您每年有权为每个Experience Platform应用程序导出多少数据。 例如，您可以在[此处](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)查看Real-Time CDP产品说明。
+请参阅产品描述文档，了解您每年有权为每个Experience Platform应用程序导出多少数据。 例如，您可以在[此处](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)查看Real-Time CDP产品说明。
 
 请注意，不同应用程序的数据导出权限不是累加的。 例如，这意味着如果您购买Real-Time CDP Ultimate和Adobe Journey Optimizer Ultimate，则根据产品描述，配置文件导出权利将是两个权利中的较大者。 您的卷权利的计算方法是：取用您的许可配置文件的总数，然后乘以Real-Time CDP Prime的500 KB或Real-Time CDP Ultimate的700 KB，从而确定您有权获得的数据量。
 

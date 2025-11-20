@@ -4,8 +4,8 @@ description: 有关如何在Adobe Experience Platform中管理权限和控制对
 exl-id: 8426d54b-ec1d-475a-a769-f45a8c924fe7
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1358'
-ht-degree: 27%
+source-wordcount: '1335'
+ht-degree: 26%
 
 ---
 
@@ -16,15 +16,15 @@ ht-degree: 27%
 >title="权限"
 >abstract="了解在 Adobe Experience Platform 中使用数据流、模式、身份标识和沙盒所需的关键权限。"
 
-Adobe Experience Platform[&#128279;](./home.md)中的数据收集由多种不同的技术组成，这些技术可共同收集和传输您的数据。 在Adobe Admin Console中，可通过基于角色的细粒度权限来控制对这些技术的访问。
+Adobe Experience Platform[中的](./home.md)数据收集由多种不同的技术组成，这些技术可共同收集和传输您的数据。 在Adobe Admin Console中，可通过基于角色的细粒度权限来控制对这些技术的访问。
 
 本指南向您说明如何管理数据收集功能的权限。
 
 ## 快速入门
 
-要为数据收集配置访问控制，您必须对与Adobe Experience Platform数据收集集成了产品的组织具有管理员权限。 可以授予或撤回权限的最低角色是&#x200B;**产品轮廓管理员**。其他可以管理权限的管理员角色是&#x200B;**产品管理员**（可以管理产品内的所有轮廓）和&#x200B;**系统管理员**（无限制）。有关更多信息，请参阅 Adobe Enterprise 管理指南中关于[管理角色](https://helpx.adobe.com/cn/enterprise/using/admin-roles.html)的文章。
+要为数据收集配置访问控制，您必须对与Adobe Experience Platform数据收集集成了产品的组织具有管理员权限。 可以授予或撤回权限的最低角色是&#x200B;**产品轮廓管理员**。其他可以管理权限的管理员角色是&#x200B;**产品管理员**（可以管理产品内的所有轮廓）和&#x200B;**系统管理员**（无限制）。有关更多信息，请参阅 Adobe Enterprise 管理指南中关于[管理角色](https://helpx.adobe.com/enterprise/using/admin-roles.html)的文章。
 
-本指南假设您熟悉基本的 Admin Console 概念，例如产品轮廓以及它们如何向单个用户和用户组授予产品权限。有关详细信息，请参阅 [Admin Console 用户指南](https://helpx.adobe.com/cn/enterprise/using/admin-console.html)。
+本指南假设您熟悉基本的 Admin Console 概念，例如产品轮廓以及它们如何向单个用户和用户组授予产品权限。有关详细信息，请参阅 [Admin Console 用户指南](https://helpx.adobe.com/enterprise/using/admin-console.html)。
 
 ## 可用权限
 
@@ -87,13 +87,13 @@ Adobe Experience Platform数据收集下的权限可控制对标记和事件转�
 >
 >要管理角色的权限，您需要管理员权限。 如果您没有管理员权限，请联系您的系统管理员。
 
-Experience Cloud的&#x200B;**[!UICONTROL 权限]**&#x200B;部分允许您定义用户角色和策略，以管理对产品应用程序内功能和对象的访问。
+Experience Cloud的&#x200B;**[!UICONTROL Permissions]**&#x200B;部分允许您定义用户角色和策略，以管理对产品应用程序中功能和对象的访问。
 
-通过[!UICONTROL 权限]，您可以创建和管理角色，并为这些角色分配所需的资源权限。
+通过[!UICONTROL Permissions]，您可以创建和管理角色，并为这些角色分配所需的资源权限。
 
 ![Adobe Experience Cloud高亮显示权限产品。](./images/permissions/permissions-product.png)
 
-要访问数据收集功能，您必须启用&#x200B;**[!UICONTROL 沙盒]**、**[!UICONTROL 数据建模]**、**[!UICONTROL Identity Management]**&#x200B;和&#x200B;**[!UICONTROL 数据收集]**&#x200B;类别中的所有权限。
+要访问数据收集功能，必须启用&#x200B;**[!UICONTROL Sandboxes]**、**[!UICONTROL Data Modeling]**、**[!UICONTROL Identity Management]**&#x200B;和&#x200B;**[!UICONTROL Data Collection]**&#x200B;类别中的所有权限。
 
 ![显示Admin Console中的数据收集产品卡的图像](./images/permissions/platform-permission-card.png)
 
@@ -105,17 +105,17 @@ Experience Cloud的&#x200B;**[!UICONTROL 权限]**&#x200B;部分允许您定义�
 
 ### 在Adobe Experience Platform数据收集下管理权限 {#manage-collection}
 
-要管理这些权限，请登录到Admin Console并从顶部导航中选择&#x200B;**[!UICONTROL 产品]**，然后选择&#x200B;**[!UICONTROL Adobe Experience Platform数据收集]**。
+要管理这些权限，请登录到Admin Console并从顶部导航中选择&#x200B;**[!UICONTROL Products]**，然后选择&#x200B;**[!UICONTROL Adobe Experience Platform Data Collection]**。
 
 ![显示Admin Console中的数据收集产品卡的图像](./images/permissions/data-collection-card.png)
 
 #### 选择或创建产品轮廓
 
-下一个屏幕显示贵组织下数据收集的可用产品配置文件列表，默认配置文件为&#x200B;**[!DNL Default Data Collection All Access]**。 您可以根据需要选择编辑默认的产品配置文件，也可以选择&#x200B;**[!UICONTROL 新建配置文件]**&#x200B;来创建配置文件。 如果您的组织中有多个角色或用户组需要不同级别的访问权限，则应为每个角色或用户组创建单独的产品轮廓。
+下一个屏幕显示贵组织下数据收集的可用产品配置文件列表，默认配置文件为&#x200B;**[!DNL Default Data Collection All Access]**。 您可以根据需要选择编辑默认的产品配置文件，也可以选择&#x200B;**[!UICONTROL New Profile]**&#x200B;创建产品配置文件。 如果您的组织中有多个角色或用户组需要不同级别的访问权限，则应为每个角色或用户组创建单独的产品轮廓。
 
 ![显示Admin Console中数据收集的产品配置文件的图像](./images/permissions/new-profile.png)
 
-选择或创建产品配置文件后，您可以使用&#x200B;**[!UICONTROL 编辑]**&#x200B;图标来启动[编辑配置文件权限](#edit-permissions)，或选择&#x200B;**[!UICONTROL 用户]**&#x200B;选项卡来启动[将用户分配给配置文件](#assign-users)。
+选择或创建产品配置文件后，您可以使用&#x200B;**[!UICONTROL Edit]**&#x200B;图标来启动配置文件的[编辑权限](#edit-permissions)，或选择&#x200B;**[!UICONTROL Users]**&#x200B;选项卡以启动[将用户分配给配置文件](#assign-users)。
 
 ![显示产品轮廓 Admin Console 的权限选项卡的图像](./images/permissions/edit-permission-categories.png)
 
@@ -129,7 +129,7 @@ Experience Cloud的&#x200B;**[!UICONTROL 权限]**&#x200B;部分允许您定义�
 
 ![图像显示权限下的“公司权限”部分](./images/permissions/switch-category.png)
 
-配置完权限后，选择&#x200B;**[!UICONTROL 保存]**。
+配置完权限后，选择&#x200B;**[!UICONTROL Save]**。
 
 ![显示为产品轮廓保存的权限配置的图像](./images/permissions/save-permissions.png)
 
@@ -139,11 +139,11 @@ Experience Cloud的&#x200B;**[!UICONTROL 权限]**&#x200B;部分允许您定义�
 
 #### 将用户分配给产品配置文件 {#assign-users}
 
-要将用户分配给产品轮廓（并授予其为该轮廓配置的权限），请选择&#x200B;**[!UICONTROL 用户]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 添加用户]**。
+要将用户分配给产品配置文件（并授予他们配置文件配置的权限），请选择&#x200B;**[!UICONTROL Users]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL Add user]**。
 
 ![显示 Admin Console 中产品轮廓的用户选项卡的图像](./images/permissions/manage-users.png)
 
-有关为产品轮廓管理用户的详细信息，请参阅 [Admin Console 文档](https://helpx.adobe.com/cn/enterprise/using/manage-product-profiles.html)。
+有关为产品轮廓管理用户的详细信息，请参阅 [Admin Console 文档](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html)。
 
 ## 后续步骤
 

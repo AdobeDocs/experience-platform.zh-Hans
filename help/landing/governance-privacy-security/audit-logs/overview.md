@@ -6,7 +6,7 @@ feature: Audits
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
 source-git-commit: d6575e44339ea41740fa18af07ce5b893f331488
 workflow-type: tm+mt
-source-wordcount: '1624'
+source-wordcount: '1579'
 ht-degree: 29%
 
 ---
@@ -32,7 +32,7 @@ ht-degree: 29%
 
 从基本意义上说，审核日志可告知&#x200B;**谁**&#x200B;执行了&#x200B;**什么**&#x200B;操作，以及&#x200B;**何时**。 日志中记录的每个操作都包含元数据，这些元数据指示操作类型、日期和时间、执行操作的用户的电子邮件ID以及与操作类型相关的其他属性。
 
-当用户执行操作时，会记录两种类型的审核事件。 核心事件捕获操作[!UICONTROL 允许]或[!UICONTROL 拒绝]的授权结果，而增强事件捕获执行结果[!UICONTROL 成功]或[!UICONTROL 失败]。 多个增强事件可以链接到同一个核心事件。 例如，在激活目标时，核心事件记录[!UICONTROL 目标更新]操作的授权，而增强事件记录多个[!UICONTROL 区段激活]操作。
+当用户执行操作时，会记录两种类型的审核事件。 核心事件捕获操作[!UICONTROL allow]或[!UICONTROL deny]的授权结果，而增强事件捕获执行结果[!UICONTROL success]或[!UICONTROL failure]。 多个增强事件可以链接到同一个核心事件。 例如，在激活目标时，核心事件记录[!UICONTROL Destination Update]操作的授权，而增强事件记录多个[!UICONTROL Segment Activate]操作。
 
 >[!NOTE]
 >
@@ -76,7 +76,7 @@ ht-degree: 29%
 
 为您的组织启用该功能后，系统会在活动发生时自动收集审核日志。 您无需手动启用日志收集。
 
-为了查看和导出审核日志，您必须授予&#x200B;**[!UICONTROL 查看用户活动日志]**&#x200B;访问控制权限（可在[!UICONTROL 数据管理]类别下找到）。 要了解如何管理Experience Platform功能的各个权限，请参阅[访问控制文档](../../../access-control/home.md)。
+要查看和导出审核日志，您必须具有&#x200B;**[!UICONTROL View User Activity Log]**&#x200B;访问控制权限（可在[!UICONTROL Data Governance]类别下找到）。 要了解如何管理Experience Platform功能的各个权限，请参阅[访问控制文档](../../../access-control/home.md)。
 
 ## 在 UI 中管理审核日志 {#managing-audit-logs-in-the-ui}
 
@@ -85,7 +85,7 @@ ht-degree: 29%
 >title="说明"
 >abstract="<ul><li>在左侧导航中选择<b>审核</b>。“审核”工作区显示记录日志的列表，默认按最新到最旧排序。</li>   <li> 注意：将审核日志保留 365 天，此后将从系统中删除审核日志。因此，只能回溯最长为期 365 天。如果需要回溯超过 365 天之前的数据，则应定期导出日志以满足您的内部政策要求。 </li><li>从列表中选择一个事件以在右边栏中查看其详细信息。 </li><li>选择漏斗图标以显示过滤器控件的列表，帮助缩小结果范围。无论选择什么过滤器，都仅显示最后 1000 条记录。 </li><li>要导出审核日志的当前列表，请选择&#x200B;**下载日志**。</li><li>有关此功能的更多帮助，请参阅 Experience League 上的<a href="https://experienceleague.adobe.com/docs/experience-platform/landing/governance-privacy-security/audit-logs/overview.html?lang=zh-Hans">审核日志概述</a>。</li></ul>"
 
-您可以在Experience Platform UI的&#x200B;**[!UICONTROL 审核]**&#x200B;工作区中查看其他Experience Platform功能的审核日志。 工作区会显示记录的日志列表，默认情况下，这些日志按从最近到最近的顺序排序。
+您可以在Experience Platform UI的&#x200B;**[!UICONTROL Audits]**&#x200B;工作区中查看其他Experience Platform功能的审核日志。 工作区会显示记录的日志列表，默认情况下，这些日志按从最近到最近的顺序排序。
 
 ![左侧菜单中突出显示“审核”的“审核”仪表板。](../../images/audit-logs/audits.png)
 
@@ -99,7 +99,7 @@ ht-degree: 29%
 
 ### 筛选审核日志
 
-选择漏斗图标（![筛选器图标](/help/images/icons/filter.png)）以显示筛选器控件列表，帮助缩小结果范围。
+选择funnel图标（![筛选器图标](/help/images/icons/filter.png)）以显示筛选器控件列表以帮助缩小结果范围。
 
 >[!NOTE]
 >
@@ -111,13 +111,13 @@ ht-degree: 29%
 
 | 筛选条件 | 描述 |
 | --- | --- |
-| [!UICONTROL 类别] | 使用下拉菜单按[类别](#category)筛选显示的结果。 |
-| [!UICONTROL 操作] | 按操作筛选。 每项服务的可用操作可在上面的资源表中查看。 |
-| [!UICONTROL 用户] | 输入完整的用户ID（例如，`johndoe@acme.com`）以按用户筛选。 |
-| [!UICONTROL 状态] | 按结果筛选审核事件：成功、失败、允许或拒绝，因为缺少[访问控制](../../../access-control/home.md)权限。 对于已执行的操作，核心事件显示[!UICONTROL 允许]或[!UICONTROL 拒绝]。 当核心事件为[!UICONTROL 允许]时，它可能已附加了一个或多个显示&#x200B;**[!UICONTROL 成功]**&#x200B;或&#x200B;**[!UICONTROL 失败]**&#x200B;的增强事件。 例如，成功的操作在核心事件上显示[!UICONTROL 允许]，在附加的增强事件上显示[!UICONTROL 成功]。 |
-| [!UICONTROL 日期] | 选择开始日期和/或结束日期，以定义筛选结果的日期范围。 可导出具有90天回顾期的数据（例如，2021-12-15到2022-03-15）。 这可能因事件类型而异。 |
+| [!UICONTROL Category] | 使用下拉菜单按[类别](#category)筛选显示的结果。 |
+| [!UICONTROL Action] | 按操作筛选。 每项服务的可用操作可在上面的资源表中查看。 |
+| [!UICONTROL User] | 输入完整的用户ID（例如，`johndoe@acme.com`）以按用户筛选。 |
+| [!UICONTROL Status] | 按结果筛选审核事件：成功、失败、允许或拒绝，因为缺少[访问控制](../../../access-control/home.md)权限。 对于已执行的操作，核心事件显示[!UICONTROL Allow]或[!UICONTROL Deny]。 当核心事件为[!UICONTROL Allow]时，它可能附加了一个或多个显示&#x200B;**[!UICONTROL Success]**&#x200B;或&#x200B;**[!UICONTROL Failure]**&#x200B;的增强型事件。 例如，成功的操作在核心事件上显示[!UICONTROL Allow]，在附加的增强事件上显示[!UICONTROL Success]。 |
+| [!UICONTROL Date] | 选择开始日期和/或结束日期，以定义筛选结果的日期范围。 可导出具有90天回顾期的数据（例如，2021-12-15到2022-03-15）。 这可能因事件类型而异。 |
 
-要移除过滤器，请选择相关过滤器的药丸图标上的“X”，或选择&#x200B;**[!UICONTROL 全部清除]**&#x200B;以移除所有过滤器。
+要移除过滤器，请选择相关过滤器的药丸图标上的“X”，或选择&#x200B;**[!UICONTROL Clear all]**&#x200B;以移除所有过滤器。
 
 ![带有清除筛选器的审核仪表板突出显示。](../../images/audit-logs/clear-filters.png)
 
@@ -125,27 +125,27 @@ ht-degree: 29%
 
 | 列名 | 描述 |
 |---|---|
-| [!UICONTROL 时间戳] | 以`month/day/year hour:minute AM/PM`格式执行的操作的确切日期和时间。 |
-| [!UICONTROL 资源名称] | [!UICONTROL 资源名称]字段的值取决于选择作为筛选器的类别。 |
-| [!UICONTROL 类别] | 此字段与在筛选器下拉列表中选定的类别匹配。 |
-| [!UICONTROL 操作] | 可用的操作取决于选作过滤器的类别。 |
-| [!UICONTROL 用户] | 此字段提供执行查询的用户ID。 |
+| [!UICONTROL Timestamp] | 以`month/day/year hour:minute AM/PM`格式执行的操作的确切日期和时间。 |
+| [!UICONTROL Asset Name] | [!UICONTROL Asset Name]字段的值取决于选择作为过滤器的类别。 |
+| [!UICONTROL Category] | 此字段与在筛选器下拉列表中选定的类别匹配。 |
+| [!UICONTROL Action] | 可用的操作取决于选作过滤器的类别。 |
+| [!UICONTROL User] | 此字段提供执行查询的用户ID。 |
 
 ![已突出显示筛选活动日志的审核仪表板。](../../images/audit-logs/filtered.png)
 
 ### 导出审核日志 {#export-audit-logs}
 
-要导出审核日志的当前列表，请选择&#x200B;**[!UICONTROL 下载日志]**。
+要导出审核日志的当前列表，请选择&#x200B;**[!UICONTROL Download log]**。
 
 >[!NOTE]
 >
 >可以每90天请求一次日志，最多可请求过去365天内的日志。 但是，在单个导出期间最多可返回10,000个审核事件（核心或增强型）的日志。
 
-![突出显示了[!UICONTROL 下载日志]的审核仪表板。](../../images/audit-logs/download.png)
+![突出显示[!UICONTROL Download log]的审核仪表板。](../../images/audit-logs/download.png)
 
-在出现的对话框中，选择您首选的格式（**[!UICONTROL CSV]**&#x200B;或&#x200B;**[!UICONTROL JSON]**），然后选择&#x200B;**[!UICONTROL 下载]**。 浏览器下载生成的文件，并将其保存到您的计算机。
+在出现的对话框中，选择您首选的格式（**[!UICONTROL CSV]**&#x200B;或&#x200B;**[!UICONTROL JSON]**），然后选择&#x200B;**[!UICONTROL Download]**。 浏览器下载生成的文件，并将其保存到您的计算机。
 
-![带有[!UICONTROL 下载]的文件格式选择对话框突出显示。](../../images/audit-logs/select-download-format.png)
+![突出显示带有[!UICONTROL Download]的文件格式选择对话框。](../../images/audit-logs/select-download-format.png)
 
 ## 启用警报 {#enable-alerts}
 
@@ -169,7 +169,7 @@ ht-degree: 29%
 
 ## 管理Adobe Admin Console的审核日志
 
-要了解如何管理Adobe Admin Console中的活动的审核日志，请参阅以下[文档](https://helpx.adobe.com/cn/enterprise/using/audit-logs.html)。
+要了解如何管理Adobe Admin Console中的活动的审核日志，请参阅以下[文档](https://helpx.adobe.com/enterprise/using/audit-logs.html)。
 
 ## 后续步骤和其他资源
 
@@ -177,4 +177,4 @@ ht-degree: 29%
 
 要加深您对Experience Platform中审核日志的了解，请观看以下视频：
 
->[!VIDEO](https://video.tv.adobe.com/v/344644?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/341450?quality=12&learn=on)

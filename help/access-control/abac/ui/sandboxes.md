@@ -5,7 +5,7 @@ description: 本文档提供了有关通过Adobe Experience Cloud中的“权限
 exl-id: c21eb319-fc0d-442a-b778-bbfa2d6bb22d
 source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '260'
+source-wordcount: '258'
 ht-degree: 18%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 18%
 
 ## 配置沙盒
 
-要查看沙盒分配到的详细信息/角色，请选择&#x200B;**[!UICONTROL 沙盒]**&#x200B;选项卡。
+要查看沙盒分配到的详细信息/角色，请选择&#x200B;**[!UICONTROL Sandboxes]**&#x200B;选项卡。
 
 ![flac-sandboxes-tab](../../images/flac-ui/flac-sandboxes-tab.png)
 
@@ -32,7 +32,7 @@ ht-degree: 18%
 
 ![flac-sandboxes-details](../../images/flac-ui/flac-sandboxes-details.png)
 
-选择&#x200B;**[!UICONTROL 角色]**&#x200B;选项卡以查看沙盒所分配到的角色。
+选择&#x200B;**[!UICONTROL Roles]**&#x200B;选项卡以查看沙盒所分配到的角色。
 
 ![flac-sandboxes-roles](../../images/flac-ui/flac-sandboxes-roles.png)
 

@@ -7,7 +7,7 @@ type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
 source-git-commit: 5f9fdc9eff4d8bba049c03058d24e80e9b89e953
 workflow-type: tm+mt
-source-wordcount: '1376'
+source-wordcount: '1342'
 ht-degree: 9%
 
 ---
@@ -35,7 +35,7 @@ ht-degree: 9%
 
 >[!NOTE]
 >
->如果源架构和目标架构都属于同一类，则不应使用专用关系字段&#x200B;**&#x200B;**。 在这种情况下，请使用合并架构UI查看关系。 有关如何执行此操作的说明，请参阅合并架构UI指南的[查看关系](../../profile/ui/union-schema.md#view-relationships)部分。
+>如果源架构和目标架构都属于同一类，则不应使用专用关系字段&#x200B;****。 在这种情况下，请使用合并架构UI查看关系。 有关如何执行此操作的说明，请参阅合并架构UI指南的[查看关系](../../profile/ui/union-schema.md#view-relationships)部分。
 
 本文档提供了一个教程，介绍如何在[!DNL Experience Platform]用户界面中使用架构编辑器定义两个架构之间的关系。 有关使用API定义架构关系的步骤，请参阅有关[使用架构注册表API定义关系的教程](relationship-api.md)。
 
@@ -65,15 +65,15 @@ ht-degree: 9%
 
 ### [!DNL Loyalty Members]架构
 
-源架构“[!DNL Loyalty Members]”基于[!DNL XDM Individual Profile]类，其中包含描述忠诚度计划成员的字段。 这些字段之一`personalEmail.addess`用作[!UICONTROL 电子邮件]命名空间下的架构的主要标识。 如&#x200B;**[!UICONTROL 架构属性]**&#x200B;下所示，此架构已在[!DNL Real-Time Customer Profile]中启用。
+源架构“[!DNL Loyalty Members]”基于[!DNL XDM Individual Profile]类，其中包含描述忠诚度计划成员的字段。 这些字段之一`personalEmail.addess`用作[!UICONTROL Email]命名空间下的架构的主要标识。 如在&#x200B;**[!UICONTROL Schema Properties]**&#x200B;下看到的，此架构已启用以便在[!DNL Real-Time Customer Profile]中使用。
 
 ![](../images/tutorials/relationship/loyalty-members.png)
 
 ### [!DNL Hotels]架构
 
-引用架构“[!DNL Hotels]”基于自定义“[!DNL Hotels]”类，并包含描述酒店的字段。 为了参与关系，参考架构还必须定义主标识并为[!UICONTROL 配置文件]启用。 在这种情况下，`_tenantId.hotelId`使用自定义“[!DNL Hotel ID]”标识命名空间作为架构的主标识。
+引用架构“[!DNL Hotels]”基于自定义“[!DNL Hotels]”类，并包含描述酒店的字段。 为了参与关系，引用架构还必须定义主标识并为[!UICONTROL Profile]启用。 在这种情况下，`_tenantId.hotelId`使用自定义“[!DNL Hotel ID]”标识命名空间作为架构的主标识。
 
-为配置文件![&#128279;](../images/tutorials/relationship/hotels.png)启用
+为配置文件![启用](../images/tutorials/relationship/hotels.png)
 
 >[!NOTE]
 >
@@ -91,15 +91,15 @@ ht-degree: 9%
 
 ![](../images/tutorials/relationship/loyalty-add-field.png)
 
-画布中将显示一个新的字段占位符。 在&#x200B;**[!UICONTROL 字段属性]**&#x200B;下，提供字段名称和显示名称，并将其类型设置为“[!UICONTROL 字符串]”。 在&#x200B;**[!UICONTROL 分配给]**&#x200B;下，选择要扩展的现有字段组，或键入唯一名称以创建新字段组。 在这种情况下，将创建一个新的&quot;[!DNL Preferred Hotel]&quot;字段组。
+画布中将显示一个新的字段占位符。 在&#x200B;**[!UICONTROL Field properties]**&#x200B;下，为字段提供字段名称和显示名称，并将其类型设置为“[!UICONTROL String]”。 在&#x200B;**[!UICONTROL Assign to]**&#x200B;下，选择要扩展的现有字段组，或键入唯一名称以创建新字段组。 在这种情况下，将创建一个新的&quot;[!DNL Preferred Hotel]&quot;字段组。
 
 ![](../images/tutorials/relationship/relationship-field-details.png)
 
-完成后，选择&#x200B;**[!UICONTROL 应用]**。
+完成后，选择&#x200B;**[!UICONTROL Apply]**。
 
 ![](../images/tutorials/relationship/relationship-field-apply.png)
 
-更新的`preferredHotel`字段显示在画布中，位于`_tenantId`对象下方，因为它是自定义字段。 选择&#x200B;**[!UICONTROL 保存]**&#x200B;以完成对架构的更改。
+更新的`preferredHotel`字段显示在画布中，位于`_tenantId`对象下方，因为它是自定义字段。 选择&#x200B;**[!UICONTROL Save]**&#x200B;以完成对架构的更改。
 
 ![](../images/tutorials/relationship/relationship-field-save.png)
 
@@ -111,11 +111,11 @@ ht-degree: 9%
 >
 >只能对字符串或字符串数组字段支持关系。
 
-在画布中选择`preferredHotel`字段，然后在&#x200B;**[!UICONTROL 字段属性]**&#x200B;侧边栏中选择&#x200B;**[!UICONTROL 添加关系]**。
+在画布中选择`preferredHotel`字段，然后在&#x200B;**[!UICONTROL Add relationship]**&#x200B;侧边栏中选择&#x200B;**[!UICONTROL Field properties]**。
 
 ![字段属性侧边栏中突出显示了具有Add关系的架构编辑器。](../images/tutorials/relationship/add-relationship.png)
 
-出现[!UICONTROL 添加关系]对话框。 通过此对话框，您可以设置配置关系字段所需的参数。 对于Real-Time CDP B2C用户，您只能&#x200B;**1&rbrace;在源架构和引用架构之间设置一对一关系。**
+出现[!UICONTROL Add relationship]对话框。 通过此对话框，您可以设置配置关系字段所需的参数。 对于Real-Time CDP B2C用户，您只能&#x200B;**1}在源架构和引用架构之间设置一对一关系。**
 
 >[!NOTE]
 >
@@ -123,33 +123,33 @@ ht-degree: 9%
 
 ![添加关系对话框。](../images/tutorials/relationship/add-relationship-dialog.png)
 
-使用&#x200B;**[!UICONTROL 引用架构]**&#x200B;的下拉列表并为关系选择引用架构（本示例中为“[!DNL Hotels]”）。
+使用&#x200B;**[!UICONTROL Reference schema]**&#x200B;的下拉列表并选择关系的引用架构（本示例中为“[!DNL Hotels]”）。
 
 >[!NOTE]
 >
 >只有包含主标识的架构才会包含在引用架构下拉菜单中。 此安全保护可防止您意外与尚未正确配置的架构创建关系。
 
-引用架构的标识命名空间（在本例中为“[!DNL Hotel ID]”）自动填充到&#x200B;**[!UICONTROL 引用标识命名空间]**&#x200B;下。 完成时选择&#x200B;**[!UICONTROL 应用]**。
+引用架构的标识命名空间（在本例中为“[!DNL Hotel ID]”）自动填充到&#x200B;**[!UICONTROL Reference identity namespace]**&#x200B;下。 完成后，选择 **[!UICONTROL Apply]**。
 
 ![已配置关系参数并突出显示了“添加关系”对话框。](../images/tutorials/relationship/apply-relationship.png)
 
-`preferredHotel`字段现在在画布中作为关系突出显示，显示引用架构的名称。 选择&#x200B;**[!UICONTROL 保存]**&#x200B;以保存更改并完成工作流。
+`preferredHotel`字段现在在画布中作为关系突出显示，显示引用架构的名称。 选择&#x200B;**[!UICONTROL Save]**&#x200B;以保存更改并完成工作流。
 
 ![突出显示关系引用和“保存”的架构编辑器。](../images/tutorials/relationship/relationship-save.png)
 
 ### 编辑现有关系字段 {#edit-relationship}
 
-要更改引用架构，请选择具有现有关系的字段，然后在&#x200B;**[!UICONTROL 字段属性]**&#x200B;侧边栏中选择&#x200B;**[!UICONTROL 编辑关系]**。
+要更改引用架构，请选择具有现有关系的字段，然后在&#x200B;**[!UICONTROL Edit relationship]**&#x200B;侧边栏中选择&#x200B;**[!UICONTROL Field properties]**。
 
 ![已突出显示具有编辑关系的架构编辑器。](../images/tutorials/relationship/edit-relationship.png)
 
-出现[!UICONTROL 编辑关系]对话框。 从此处，您可以按照[中列出的流程定义关系字段](#relationship-field)或删除关系。 选择&#x200B;**[!UICONTROL 删除关系]**&#x200B;以删除与引用架构的关系。
+出现[!UICONTROL Edit relationship]对话框。 从此处，您可以按照[中列出的流程定义关系字段](#relationship-field)或删除关系。 选择&#x200B;**[!UICONTROL Delete relationship]**&#x200B;以移除与引用架构的关系。
 
 ![编辑关系对话框。](../images/tutorials/relationship/edit-relationship-dialog.png)
 
 ## 筛选和搜索关系 {#filter-and-search}
 
-您可以从[!UICONTROL 架构]工作区的[!UICONTROL 关系]选项卡筛选和搜索架构中的特定关系。 您可以使用此视图快速找到和管理您的关系。 有关筛选选项的详细说明，请阅读有关[浏览架构资源](../ui/explore.md#lookup)的文档。
+您可以从[!UICONTROL Relationships]工作区的[!UICONTROL Schemas]选项卡筛选和搜索架构中的特定关系。 您可以使用此视图快速找到和管理您的关系。 有关筛选选项的详细说明，请阅读有关[浏览架构资源](../ui/explore.md#lookup)的文档。
 
 ![架构工作区中的“关系”选项卡。](../images/tutorials/relationship-b2b/relationship-tab.png)
 

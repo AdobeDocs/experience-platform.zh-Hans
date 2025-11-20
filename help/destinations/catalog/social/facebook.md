@@ -74,7 +74,7 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 | 项目 | 类型 | 注释 |
 |---------|----------|---------|
-| 导出类型 | **[!UICONTROL Audience export]** | 您正在导出具有Facebook目标中所用标识符（姓名、电话号码或其他）的受众的所有成员。 |
+| 导出类型 | **[!UICONTROL Audience export]** | You are exporting all members of an audience with the identifiers (name, phone number, or others) used in the Facebook destination. |
 | 导出频率 | **[!UICONTROL Streaming]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
@@ -138,8 +138,8 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 >[!NOTE]
 >
 >来自未经过哈希处理的命名空间的数据在激活时会由[!DNL Experience Platform]自动进行哈希处理。
->&#x200B;> 属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以便在激活时自动对[!DNL Experience Platform]数据进行哈希处理。
->&#x200B;> **[!UICONTROL Apply transformation]**&#x200B;选项仅在您选择属性作为源字段时显示。 当您选择命名空间时，它不会显示。
+> 属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以便在激活时自动对[!DNL Experience Platform]数据进行哈希处理。
+> **[!UICONTROL Apply transformation]**&#x200B;选项仅在您选择属性作为源字段时显示。 当您选择命名空间时，它不会显示。
 
 ![应用映射步骤中突出显示的转换控件。](../../assets/ui/activate-destinations/identity-mapping-transformation.png)
 
@@ -157,7 +157,7 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 以下视频还演示了配置[!DNL Facebook]目标和激活受众的步骤。
 
->[!VIDEO](https://video.tv.adobe.com/v/3411783/?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 >[!NOTE]
 >
@@ -187,7 +187,7 @@ Facebook身份验证令牌每60天过期一次。 令牌过期后，数据导出
    ![筛选以仅显示Facebook帐户](/help/destinations/assets/catalog/social/facebook/refresh-oauth-filters.png)
 3. 选择要刷新的帐户，选择省略号并选择&#x200B;**[!UICONTROL Edit details]**。
    ![选择“编辑详细信息”控件](/help/destinations/assets/catalog/social/facebook/refresh-oauth-edit-details.png)
-4. 在模式窗口中，选择&#x200B;**[!UICONTROL Reconnect OAuth]**&#x200B;并使用您的Facebook凭据重新进行身份验证。
+4. 在模式窗口中，选择&#x200B;**[!UICONTROL Reconnect OAuth]**并使用您的Facebook凭据重新进行身份验证。
    使用Reconnect OAuth选项的![模式窗口](/help/destinations/assets/catalog/social/facebook/reconnect-oauth-control.png)
 
 >[!SUCCESS]

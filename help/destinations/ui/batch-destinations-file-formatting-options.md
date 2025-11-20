@@ -4,7 +4,7 @@ title: 为基于文件的目标配置文件格式选项
 exl-id: f59b1952-e317-40ba-81d1-35535e132a72
 source-git-commit: 4dd6e8685ff5cc61342b20e971216416918b95da
 workflow-type: tm+mt
-source-wordcount: '1228'
+source-wordcount: '1191'
 ht-degree: 17%
 
 ---
@@ -55,11 +55,11 @@ ht-degree: 17%
 
 通过UI中的每个选择，查看导出CSV文件中内容的以下示例。
 
-* 示例输出中选定了&#x200B;**[!UICONTROL 冒号`(:)`]**： `male:John:Doe`
-* 示例输出中选定了&#x200B;**[!UICONTROL 逗号`(,)`]**： `male,John,Doe`
-* 已选择&#x200B;**[!UICONTROL 管道`(|)`]**&#x200B;的示例输出： `male|John|Doe`
-* 示例输出中选定了&#x200B;**[!UICONTROL 分号`(;)`]**： `male;John;Doe`
-* 已选择&#x200B;**[!UICONTROL 选项卡`(\t)`]**&#x200B;的示例输出： `male \t John \t Doe`
+* 已选择&#x200B;**[!UICONTROL Colon `(:)`]**&#x200B;的示例输出： `male:John:Doe`
+* 已选择&#x200B;**[!UICONTROL Comma `(,)`]**&#x200B;的示例输出： `male,John,Doe`
+* 已选择&#x200B;**[!UICONTROL Pipe `(|)`]**&#x200B;的示例输出： `male|John|Doe`
+* 已选择&#x200B;**[!UICONTROL Semicolon `(;)`]**&#x200B;的示例输出： `male;John;Doe`
+* 已选择&#x200B;**[!UICONTROL Tab `(\t)`]**&#x200B;的示例输出： `male \t John \t Doe`
 
 ### 引号字符 {#quote-character}
 
@@ -72,8 +72,8 @@ ht-degree: 17%
 
 可用的选项包括：
 
-* **[!UICONTROL Null字符(\0000)]**。 使用此选项可从导出的CSV文件中删除双引号。
-* **[!UICONTROL 双引号(“)]**。 当字符串值包含分隔符或双引号时，请使用此选项。 此选项可帮助您在导出的CSV文件中保留分隔符或双引号，以便您能够正确识别哪个值对应于哪个字段。
+* **[!UICONTROL Null Character (\0000)]**&#x200B;的问题。使用此选项可从导出的CSV文件中删除双引号。
+* **[!UICONTROL Double Quotes (")]**&#x200B;的问题。当字符串值包含分隔符或双引号时，请使用此选项。 此选项可帮助您在导出的CSV文件中保留分隔符或双引号，以便您能够正确识别哪个值对应于哪个字段。
 
 #### 示例
 
@@ -81,8 +81,8 @@ ht-degree: 17%
 
 在UI中选择每个内容，查看导出CSV文件中的以下内容示例。
 
-* 已选择&#x200B;**[!UICONTROL Null字符(\0000)]**&#x200B;的输出示例： `Anna,Doe,John`
-* 示例输出中选定了&#x200B;**[!UICONTROL 双引号(&quot;)]**： `Anna,"Doe,John"`
+* 已选择&#x200B;**[!UICONTROL Null Character (\0000)]**&#x200B;的示例输出： `Anna,Doe,John`
+* 已选择&#x200B;**[!UICONTROL Double Quotes (")]**&#x200B;的示例输出： `Anna,"Doe,John"`
 
 ### 转义字符 {#escape-character}
 
@@ -100,8 +100,8 @@ ht-degree: 17%
 
 在UI中选择每个内容，查看导出CSV文件中的以下内容示例。
 
-* 示例输出&#x200B;**[!UICONTROL 反斜杠`(\)`]**&#x200B;已选定： `"Test,\"John\",LastName"`
-* 已选择&#x200B;**[!UICONTROL 单引号`(')`]**&#x200B;的输出示例： `"Test,'"John'",LastName"`
+* 已选择&#x200B;**[!UICONTROL Back slash `(\)`]**&#x200B;的示例输出： `"Test,\"John\",LastName"`
+* 已选择&#x200B;**[!UICONTROL Single quote `(')`]**&#x200B;的示例输出： `"Test,'"John'",LastName"`
 
 ### 空值输出 {#empty-value-output}
 
@@ -114,7 +114,7 @@ ht-degree: 17%
 
 * **[!UICONTROL Null (null)]**
 * **双引号(“)**&#x200B;中的空字符串
-* **[!UICONTROL 空字符串]**
+* **[!UICONTROL Empty string]**
 
 #### 示例
 
@@ -122,7 +122,7 @@ ht-degree: 17%
 
 * 已选择&#x200B;**[!UICONTROL null]**&#x200B;的示例输出： `male,NULL,TestLastName`。 在这种情况下，Experience Platform会将空值转换为null值。
 * 已选择&#x200B;**“**”的示例输出： `male,"",TestLastName`。 在这种情况下，Experience Platform将空值转换为一对双引号。
-* 已选择&#x200B;**[!UICONTROL 空字符串]**&#x200B;的示例输出： `male,,TestLastName`。 在这种情况下，Experience Platform将维护空值并按原样导出（不带双引号）。
+* 已选择&#x200B;**[!UICONTROL Empty string]**&#x200B;的示例输出： `male,,TestLastName`。 在这种情况下，Experience Platform将维护空值并按原样导出（不带双引号）。
 
 >[!TIP]
 >
@@ -139,7 +139,7 @@ ht-degree: 17%
 
 * **[!UICONTROL Null (null)]**
 * **双引号(“)**&#x200B;中的空字符串
-* **[!UICONTROL 空字符串]**
+* **[!UICONTROL Empty string]**
 
 #### 示例
 
@@ -147,7 +147,7 @@ ht-degree: 17%
 
 * 已选择&#x200B;**[!UICONTROL null]**&#x200B;的示例输出： `male,NULL,TestLastName`。 在这种情况下，不会进行任何转换，并且CSV文件包含null值。
 * 已选择&#x200B;**“**”的示例输出： `male,"",TestLastName`。 在这种情况下，Experience Platform会在空字符串周围使用双引号替换空值。
-* 已选择&#x200B;**[!UICONTROL 空字符串]**&#x200B;的示例输出： `male,,TestLastName`。 在这种情况下，Experience Platform会将null值替换为空字符串（不带双引号）。
+* 已选择&#x200B;**[!UICONTROL Empty string]**&#x200B;的示例输出： `male,,TestLastName`。 在这种情况下，Experience Platform会将null值替换为空字符串（不带双引号）。
 
 ### 压缩格式 {#compression-format}
 
@@ -177,14 +177,14 @@ ht-degree: 17%
 *未显示在用户界面屏幕快照中*。 指示是否应跳过导出值前导空格的标记。
 
 已选择&#x200B;**[!UICONTROL True]**&#x200B;的示例输出： `"male","John","TestLastName"`
-已选择&#x200B;**[!UICONTROL False]**&#x200B;的示例输出： `" male","John","TestLastName"`
+已选择**[!UICONTROL False]**&#x200B;的示例输出： `" male","John","TestLastName"`
 
 ### 忽略尾随空格
 
 未显示在UI屏幕快照中。 指示是否应跳过导出值的尾随空格标志。
 
 已选择&#x200B;**[!UICONTROL True]**&#x200B;的示例输出： `"male","John","TestLastName"`
-已选择&#x200B;**[!UICONTROL False]**&#x200B;的示例输出： `"male ","John","TestLastName"`
+已选择**[!UICONTROL False]**&#x200B;的示例输出： `"male ","John","TestLastName"`
 
 ### 后续步骤 {#next-steps}
 

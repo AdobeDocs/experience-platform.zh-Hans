@@ -4,7 +4,7 @@ description: 了解如何在Adobe Real-Time Customer Data Platform B2B edition�
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1771'
+source-wordcount: '1726'
 ht-degree: 12%
 
 ---
@@ -67,15 +67,15 @@ Adobe Real-Time Customer Data Platform B2B edition提供了多个可捕获基本
 
 ### 机会模式
 
-源架构“[!DNL Opportunities]”基于[!UICONTROL XDM业务机会]类。 类`opportunityKey`提供的字段之一用作架构的标识符。 具体而言，`opportunityKey`对象下的`sourceKey`字段在名为[!DNL B2B Opportunity]的自定义命名空间下设置为架构的主要标识。
+源架构“[!DNL Opportunities]”基于[!UICONTROL XDM Business Opportunity]类。 类`opportunityKey`提供的字段之一用作架构的标识符。 具体而言，`sourceKey`对象下的`opportunityKey`字段在名为[!DNL B2B Opportunity]的自定义命名空间下设置为架构的主要标识。
 
-如&#x200B;**[!UICONTROL 字段属性]**&#x200B;下所示，此架构已在[!DNL Real-Time Customer Profile]中启用。
+如在&#x200B;**[!UICONTROL Field Properties]**&#x200B;下看到的，此架构已启用以便在[!DNL Real-Time Customer Profile]中使用。
 
 ![架构编辑器中的Opportunity架构带有opportunityKey对象和Enable for profile切换突出显示。](../images/tutorials/relationship-b2b/opportunities.png)
 
 ### [!DNL Accounts]架构
 
-引用架构“[!DNL Accounts]”基于[!UICONTROL XDM帐户]类。 根级别`accountKey`字段包含`sourceKey`，它在名为[!DNL B2B Account]的自定义命名空间下充当其主要标识。 此架构还被允许在配置文件中使用。
+引用架构“[!DNL Accounts]”基于[!UICONTROL XDM Account]类。 根级别`accountKey`字段包含`sourceKey`，它在名为[!DNL B2B Account]的自定义命名空间下充当其主要标识。 此架构还被允许在配置文件中使用。
 
 ![架构编辑器中的“帐户”架构突出显示accountKey对象和“启用配置文件”切换。](../images/tutorials/relationship-b2b/accounts.png)
 
@@ -91,21 +91,21 @@ Adobe Real-Time Customer Data Platform B2B edition提供了多个可捕获基本
 >title="参考架构中的关系名称"
 >abstract="描述参考架构与当前架构之间的关系的标签（例如，“相关机会”）。此标签在轮廓和分段中用于为来自相关 B2B 实体的数据提供上下文。请参阅文档以了解有关生成 B2B 架构关系的更多信息。"
 
-为了定义两个架构之间的关系，源架构必须具有指示引用架构的主要标识的专用字段。 标准B2B类包括用于通常相关的业务实体的专用源密钥字段。 例如，[!UICONTROL XDM业务机会]类包含相关帐户(`accountKey`)和相关营销活动(`campaignKey`)的源键字段。 但是，如果您需要多个默认组件，则还可以使用自定义字段组将其他[!UICONTROL B2B Source]字段添加到架构中。
+为了定义两个架构之间的关系，源架构必须具有指示引用架构的主要标识的专用字段。 标准B2B类包括用于通常相关的业务实体的专用源密钥字段。 例如，[!UICONTROL XDM Business Opportunity]类包含相关帐户(`accountKey`)和相关营销活动(`campaignKey`)的源键字段。 但是，如果需要的组件多于默认组件，则还可以使用自定义字段组将其他[!UICONTROL B2B Source]字段添加到架构。
 
 >[!NOTE]
 >
 >目前，只能定义从源架构到引用架构的多对一和一对一关系。 对于一对多关系，必须在表示“多个”的架构中定义关系字段。
 
-要设置关系字段，请在画布中选择有问题的字段，然后在[!UICONTROL 架构属性]侧边栏中&#x200B;**[!UICONTROL 添加关系]**。 对于[!DNL Opportunities]架构，这是`accountKey.sourceKey`字段，因为目标是与帐户建立多对一关系。
+要设置关系字段，请在画布中选择有问题的字段，然后在&#x200B;**[!UICONTROL Add relationship]**&#x200B;侧边栏中选择[!UICONTROL Schema properties]。 对于[!DNL Opportunities]架构，这是`accountKey.sourceKey`字段，因为目标是与帐户建立多对一关系。
 
 ![架构编辑器突出显示sourceKey字段和Add关系。](../images/tutorials/relationship-b2b/add-relationship.png)
 
-出现[!UICONTROL 添加关系]对话框。 使用此对话框指定关系详细信息。 默认情况下，关系类型设置为&#x200B;**[!UICONTROL 多对一]**。
+出现[!UICONTROL Add relationship]对话框。 使用此对话框指定关系详细信息。 默认情况下，关系类型设置为&#x200B;**[!UICONTROL Many-to-one]**。
 
 ![突出显示具有多对一架构关系的“添加关系”对话框。](../images/tutorials/relationship-b2b/relationship-dialog.png)
 
-在&#x200B;**[!UICONTROL 引用架构]**&#x200B;下，使用搜索栏或下拉菜单查找引用架构的名称。 当您突出显示引用架构的名称时，**[!UICONTROL 引用身份命名空间]**&#x200B;字段会自动更新为引用架构的主要身份的命名空间。
+在&#x200B;**[!UICONTROL Reference Schema]**&#x200B;下，使用搜索栏或下拉菜单查找引用架构的名称。 当您突出显示引用架构的名称时，**[!UICONTROL Reference Identity Namespace]**&#x200B;字段会自动更新为引用架构主要标识的命名空间。
 
 >[!NOTE]
 >
@@ -113,7 +113,7 @@ Adobe Real-Time Customer Data Platform B2B edition提供了多个可捕获基本
 
 ![突出显示了“引用架构”和“引用身份”命名空间字段的“添加关系”对话框。](../images/tutorials/relationship-b2b/reference-schema.png)
 
-在&#x200B;**[!UICONTROL 来自当前架构的关系名称]**&#x200B;和来自引用架构的关系名称&#x200B;**[!UICONTROL 下，分别为源架构和引用架构上下文中的关系提供友好名称。]**&#x200B;完成后，选择&#x200B;**[!UICONTROL 应用]**&#x200B;以确认更改并保存关系。
+在&#x200B;**[!UICONTROL Relationship Name From Current Schema]**&#x200B;和&#x200B;**[!UICONTROL Relationship Name From Reference Schema]**&#x200B;下，分别为源和引用架构上下文中的关系提供友好名称。 完成后，选择&#x200B;**[!UICONTROL Apply]**&#x200B;以确认更改并保存关系。
 
 >[!NOTE]
 >
@@ -131,16 +131,16 @@ Adobe Real-Time Customer Data Platform B2B edition提供了多个可捕获基本
 
 ## 编辑B2B架构关系 {#edit-schema-relationship}
 
-建立架构关系后，请在源架构中选择关系字段，然后选择&#x200B;**[!UICONTROL 编辑关系]**。
+建立架构关系后，在源架构中选择关系字段，后跟&#x200B;**[!UICONTROL Edit relationship]**。
 
 >[!NOTE]
 >
->要查看所有关联关系，请选择引用架构中的主标识字段，后跟[!UICONTROL 查看关系]。
+>要查看所有关联关系，请选择引用架构中的主标识字段，后跟[!UICONTROL View relationships]。
 >![架构编辑器，其中选定了relationship字段，并突出显示了View relationship。](../images/tutorials/relationship-b2b/view-relationships.png "架构编辑器选定了关系字段并突出显示了“视图”关系。"){width="100" zoomable="yes"}
 
 ![架构编辑器突出显示了关系字段和编辑关系。](../images/tutorials/relationship-b2b/edit-b2b-relationship.png)
 
-出现[!UICONTROL 编辑关系]对话框。 从该对话框中，您可以更改引用架构和关系名称，或删除关系。 无法更改多对一关系类型。
+出现[!UICONTROL Edit relationship]对话框。 从该对话框中，您可以更改引用架构和关系名称，或删除关系。 无法更改多对一关系类型。
 
 ![编辑关系对话框。](../images/tutorials/relationship-b2b/edit-b2b-relationship-dialog.png)
 
@@ -152,7 +152,7 @@ Adobe Real-Time Customer Data Platform B2B edition提供了多个可捕获基本
 
 ## 筛选和搜索关系 {#filter-and-search}
 
-您可以从[!UICONTROL 架构]工作区的[!UICONTROL 关系]选项卡筛选和搜索架构中的特定关系。 您可以使用此视图快速找到和管理您的关系。 有关筛选选项的详细说明，请阅读有关[浏览架构资源](../ui/explore.md#lookup)的文档。
+您可以从[!UICONTROL Relationships]工作区的[!UICONTROL Schemas]选项卡筛选和搜索架构中的特定关系。 您可以使用此视图快速找到和管理您的关系。 有关筛选选项的详细说明，请阅读有关[浏览架构资源](../ui/explore.md#lookup)的文档。
 
 ![架构工作区中的“关系”选项卡。](../images/tutorials/relationship-b2b/relationship-tab.png)
 

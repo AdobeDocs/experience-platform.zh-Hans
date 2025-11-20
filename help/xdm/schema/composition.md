@@ -6,7 +6,7 @@ description: 了解Experience Data Model (XDM)架构以及在Adobe Experience Pl
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
 source-git-commit: dcb6770d739d0da5cfa339584a769f5311a8c7e1
 workflow-type: tm+mt
-source-wordcount: '4350'
+source-wordcount: '4308'
 ht-degree: 8%
 
 ---
@@ -48,7 +48,7 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 
 记录和时间序列架构都包含标识映射(`xdm:identityMap`)。 此字段包含主体的身份表示形式，从标记为“身份”的字段绘制，如下节所述。
 
-### [!UICONTROL 身份标识] {#identity}
+### [!UICONTROL Identity] {#identity}
 
 >[!CONTEXTUALHELP]
 >id="platform_schemas_identities"
@@ -57,11 +57,11 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 
 架构定义摄取到Experience Platform的数据的结构。 该数据为平台中的多项服务提供支持，并帮助创建每个人的单一、统一的视图。 因此，在设计架构时，请仔细考虑要标记为身份的字段，这些字段控制如何跨数据集拼合用户档案。
 
-为了帮助完成此过程，架构中的关键字段可以标记为标识。 摄取数据时，这些字段中的数据将插入该个人的“[!UICONTROL 身份图]”中。 然后，[[!DNL Real-Time Customer Profile]](../../profile/home.md)和其他Experience Platform服务可以访问图形数据，以提供每个客户的拼合视图。
+为了帮助完成此过程，架构中的关键字段可以标记为标识。 摄取数据时，这些字段中的数据将插入该用户的“[!UICONTROL Identity Graph]”中。 然后，[[!DNL Real-Time Customer Profile]](../../profile/home.md)和其他Experience Platform服务可以访问图形数据，以提供每个客户的拼合视图。
 
-通常标记为“[!UICONTROL 标识]”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)、CRM ID或其他唯一ID字段。 请考虑特定于贵组织的任何唯一标识符，因为它们可能也是有效的“[!UICONTROL 标识]”字段。
+通常标记为“[!UICONTROL Identity]”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html)、CRM ID或其他唯一ID字段。 请考虑特定于贵组织的任何唯一标识符，因为它们也可以是好的&quot;[!UICONTROL Identity]&quot;字段。
 
-要了解有关身份信息如何帮助您向客户提供数字体验的更多信息，请参阅[身份服务概述](../../identity-service/home.md)。 有关创建架构[&#128279;](./best-practices.md#data-validation-fields)时使用标识的提示，请参阅数据建模最佳实践文档。
+要了解有关身份信息如何帮助您向客户提供数字体验的更多信息，请参阅[身份服务概述](../../identity-service/home.md)。 有关创建架构[时使用标识的提示，请参阅数据建模最佳实践文档](./best-practices.md#data-validation-fields)。
 
 有两种方法可以将身份数据发送到Experience Platform：
 
@@ -109,7 +109,7 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 }
 ```
 
-如上面的示例所示，`identityMap`对象中的每个键都表示一个身份命名空间。 每个键的值是一个对象数组，表示相应命名空间的标识值(`id`)。 请参阅[!DNL Identity Service]文档，了解Adobe应用程序识别的标准身份命名空间[&#128279;](../../identity-service/troubleshooting-guide.md#standard-namespaces)的列表。
+如上面的示例所示，`identityMap`对象中的每个键都表示一个身份命名空间。 每个键的值是一个对象数组，表示相应命名空间的标识值(`id`)。 请参阅[!DNL Identity Service]文档，了解Adobe应用程序识别的标准身份命名空间[的](../../identity-service/troubleshooting-guide.md#standard-namespaces)列表。
 
 >[!NOTE]
 >
@@ -185,7 +185,7 @@ Adobe提供了多个标准（“核心”）XDM类。 几乎所有下游Experien
 
 以下屏幕截图演示了类在Experience Platform UI中的表示方式。 由于显示的示例架构不包含任何字段组，因此显示的所有字段均由架构的类([!UICONTROL XDM Individual Profile])提供。
 
-架构编辑器中的[XDM个人配置文件]![[!UICONTROL 。]](../images/schema-composition/class.png)
+架构编辑器中的![The [!UICONTROL XDM Individual Profile]。](../images/schema-composition/class.png)
 
 有关可用标准XDM类的最新列表，请参阅[官方XDM存储库](https://github.com/adobe/xdm/tree/master/components/classes)。 或者，如果您希望在UI中查看资源，可以参考有关[浏览XDM组件](../ui/explore.md)的指南。
 
@@ -207,7 +207,7 @@ Adobe提供了多个标准（“核心”）XDM类。 几乎所有下游Experien
 
 Experience Platform包括许多标准的Adobe字段组，同时还允许供应商为其用户定义字段组，以及单个用户为其自己的特定概念定义字段组。
 
-例如，要捕获“[!UICONTROL 忠诚度成员]”架构的详细信息，如“[!UICONTROL 名字]”和“[!UICONTROL 家庭地址]”，您可以使用定义这些通用概念的标准字段组。 但是，标准字段组可能未涵盖的对您的组织更具体的概念（例如自定义忠诚度计划详细信息或产品属性）。 在这种情况下，您必须定义自己的字段组来捕获此信息。
+例如，要捕获“[!UICONTROL First Name]”架构的“[!UICONTROL Home Address]”和“[!UICONTROL Loyalty Members]”等详细信息，您可以使用定义这些通用概念的标准字段组。 但是，标准字段组可能未涵盖的对您的组织更具体的概念（例如自定义忠诚度计划详细信息或产品属性）。 在这种情况下，您必须定义自己的字段组来捕获此信息。
 
 >[!NOTE]
 >
@@ -217,9 +217,9 @@ Experience Platform包括许多标准的Adobe字段组，同时还允许供应�
 
 请记住，架构由“零个或多个”字段组组成，这意味着您无需使用任何字段组即可构建有效架构。
 
-以下屏幕截图演示了字段组在Experience Platform UI中的表示方式。 在此示例中，向架构中添加了单个字段组（[!UICONTROL 人口统计详细信息]），该组为架构的结构提供字段分组。
+以下屏幕截图演示了字段组在Experience Platform UI中的表示方式。 在此示例中，向架构中添加了单个字段组([!UICONTROL Demographic Details])，该组为架构的结构提供字段分组。
 
-![示例架构中突出显示了具有[!UICONTROL 人口统计详细信息]字段组的架构编辑器。](../images/schema-composition/field-group.png)
+![在示例架构中突出显示[!UICONTROL Demographic Details]字段组的架构编辑器。](../images/schema-composition/field-group.png)
 
 有关可用标准XDM字段组的最新列表，请参阅[官方XDM存储库](https://github.com/adobe/xdm/tree/master/components/fieldgroups)。 或者，如果您希望在UI中查看资源，可以参考有关[浏览XDM组件](../ui/explore.md)的指南。
 
@@ -237,7 +237,7 @@ Experience Platform包括许多标准的Adobe字段组，同时还允许供应�
 
 Experience Platform在[!DNL Schema Registry]中提供了许多常见数据类型，以支持使用标准模式描述常见数据结构。 在[架构注册表教程](../tutorials/create-schema-api.md)中对此进行了更详细的说明，当您逐步完成定义数据类型的步骤时，这些说明会更加清晰。
 
-以下屏幕截图演示了数据类型在Experience Platform UI中的表示方式。 [!UICONTROL 人口统计详细信息]字段组提供的字段之一使用了“[!UICONTROL 对象]”数据类型，如字段名称旁边的管道字符(`|`)后面的文本所示。 此特定数据类型提供了多个与个人姓名相关的子字段，这是一种构造，可重复用于需要捕获个人姓名的其他字段。
+以下屏幕截图演示了数据类型在Experience Platform UI中的表示方式。 [!UICONTROL Demographic Details]字段组提供的字段之一使用“[!UICONTROL Object]”数据类型，如字段名称旁边的管道字符(`|`)后面的文本所示。 此特定数据类型提供了多个与个人姓名相关的子字段，这是一种构造，可重复用于需要捕获个人姓名的其他字段。
 
 ![架构编辑器中的图表，该图表针对全名对象和属性突出显示的个人。](../images/schema-composition/data-type.png)
 
@@ -280,11 +280,11 @@ Experience Platform在[!DNL Schema Registry]中提供了许多常见数据类型
 
 架构是使用组合模型构建的，表示要引入[!DNL Experience Platform]的数据的格式和结构。 如前所述，这些架构由一个类以及与该类兼容的零个或多个字段组组成。
 
-例如，描述在零售商店进行的购买的架构可能称为“[!UICONTROL 商店交易]”。 该架构实现了与标准[!UICONTROL Commerce]字段组和用户定义的[!UICONTROL 产品信息]字段组组合的[!DNL XDM ExperienceEvent]类。
+例如，描述在零售商店购买的架构可能称为“[!UICONTROL Store Transactions]”。 架构实现了与标准[!DNL XDM ExperienceEvent]字段组和用户定义的[!UICONTROL Commerce]字段组组合的[!UICONTROL Product Info]类。
 
-另一个跟踪网站流量的架构可能称为“[!UICONTROL 网站访问次数]”。 它也实现[!DNL XDM ExperienceEvent]类，但这次组合了标准[!UICONTROL Web]字段组。
+另一个跟踪网站流量的架构可能称为“[!UICONTROL Web Visits]”。 它还实现了[!DNL XDM ExperienceEvent]类，但这次组合了标准[!UICONTROL Web]字段组。
 
-下图显示了这些架构以及每个字段组贡献的字段。 它还包含基于[!DNL XDM Individual Profile]类的两个架构，包括本指南中前面提到的&quot;[!UICONTROL 忠诚度成员]&quot;架构。
+下图显示了这些架构以及每个字段组贡献的字段。 它还包含两个基于[!DNL XDM Individual Profile]类的架构，包括本指南中前面提到的“[!UICONTROL Loyalty Members]”架构。
 
 ![包含四个架构和参与架构的字段组的流程图。](../images/schema-composition/composition.png)
 
@@ -306,8 +306,8 @@ Experience Platform在[!DNL Schema Registry]中提供了许多常见数据类型
 
 如果您将受众从外部系统引入到Experience Platform中，则必须使用以下组件在架构中捕获这些受众：
 
-* [[!UICONTROL 区段定义]类](../classes/segment-definition.md)：使用此标准类捕获外部区段定义的键属性。
-* [[!UICONTROL 区段成员资格详细信息]字段组](../field-groups/profile/segmentation.md)：将此字段组添加到您的[!UICONTROL XDM个人资料]架构以将客户个人资料与特定受众关联。
+* [[!UICONTROL Segment definition]类](../classes/segment-definition.md)：使用此标准类捕获外部区段定义的键属性。
+* [[!UICONTROL Segment Membership Details]字段组](../field-groups/profile/segmentation.md)：将此字段组添加到您的[!UICONTROL XDM Individual Profile]架构以关联客户配置文件和特定受众。
 
 ## 后续步骤
 

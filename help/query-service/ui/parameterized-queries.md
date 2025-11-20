@@ -4,7 +4,7 @@ description: 了解如何在Adobe Experience Platform UI中使用参数化查询
 exl-id: 5c5ac691-5e29-4262-ba53-84dcc56e744f
 source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '691'
+source-wordcount: '681'
 ht-degree: 11%
 
 ---
@@ -47,7 +47,7 @@ SELECT
 
 要在UI中创建参数化查询，请导航到查询编辑器。 有关更多说明，请参阅[访问查询编辑器](./user-guide.md#accessing-query-editor)一节。
 
-在文本编辑器中使用 `'$'` 序言将查询参数输入到查询中。接下来，选择[!UICONTROL 控制台]旁边的&#x200B;**[!UICONTROL 查询参数]**&#x200B;选项卡，为键添加缺少的值。 如果您忽略向任何所需键添加值，则无法执行查询。 警报图标(![警报图标。](/help/images/icons/alert.png))出现在“查询参数”部分的任何空[!UICONTROL 值]输入字段旁边。
+在文本编辑器中使用 `'$'` 序言将查询参数输入到查询中。接下来，选择&#x200B;**[!UICONTROL Query parameters]**&#x200B;旁边的[!UICONTROL Console]选项卡，为键添加缺少的值。 如果您忽略向任何所需键添加值，则无法执行查询。 警报图标(![警报图标。](/help/images/icons/alert.png))出现在“查询参数”部分的任何空[!UICONTROL Value]输入字段旁边。
 
 >[!NOTE]
 >
@@ -57,11 +57,11 @@ SELECT
 
 >[!TIP]
 >
->将选项卡从[!UICONTROL 查询参数]更改为[!UICONTROL 控制台]以查看查询的控制台输出。
+>将选项卡从[!UICONTROL Query parameters]更改为[!UICONTROL Console]以查看查询的控制台输出。
 
 ## 使用查询日志详细信息检查参数值 {#check-parameter-values}
 
-不能在模板中保存参数，因为使用的值不是永久性的。 但是，您可以检查[!UICONTROL 查询日志详细信息]页面以查找查询运行中使用的参数值。 在这种情况下，日志不会指示查询是参数化查询。 有关如何查找所用值的说明，请参阅[查询日志文档](./query-logs.md)。
+不能在模板中保存参数，因为使用的值不是永久性的。 但是，您可以检查[!UICONTROL Query log details]页面以查找查询运行中使用的参数值。 在这种情况下，日志不会指示查询是参数化查询。 有关如何查找所用值的说明，请参阅[查询日志文档](./query-logs.md)。
 
 ![查询日志视图，其参数化查询的SQL在详细信息节中突出显示。](../images/ui/parameterized-queries/parameterized-query-logs.png)
 

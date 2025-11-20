@@ -4,8 +4,8 @@ description: 了解如何在Adobe Experience Platform用户界面中查看和管
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
 source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '843'
-ht-degree: 27%
+source-wordcount: '812'
+ht-degree: 26%
 
 ---
 
@@ -23,15 +23,15 @@ ht-degree: 27%
 
 ## 列出和筛选现有工作单
 
-首次在UI中访问&#x200B;**[!UICONTROL 数据生命周期]**&#x200B;工作区时，将显示现有工作单列表及其基本详细信息。
+首次在UI中访问&#x200B;**[!UICONTROL Data Lifecycle]**&#x200B;工作区时，将显示现有工作单列表及其基本详细信息。
 
-在Experience Platform UI中显示[!UICONTROL 数据生命周期]工作区的![图像](../images/ui/browse/work-order-list.png)
+![图像显示Experience Platform UI中的[!UICONTROL Data Lifecycle]工作区](../images/ui/browse/work-order-list.png)
 
-该列表一次只显示一个类别的工作单。 选择&#x200B;**[!UICONTROL 使用者]**&#x200B;以查看记录删除任务列表，选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以查看计划的数据集过期列表。
+该列表一次只显示一个类别的工作单。 选择&#x200B;**[!UICONTROL Consumer]**&#x200B;以查看记录删除任务列表，选择&#x200B;**[!UICONTROL Dataset]**&#x200B;以查看计划的数据集过期列表。
 
-![图像显示[!UICONTROL 数据集]选项卡](../images/ui/browse/dataset-tab.png)
+![图像显示[!UICONTROL Dataset]选项卡](../images/ui/browse/dataset-tab.png)
 
-选择漏斗图标（![漏斗图标的图像](/help/images/icons/filter.png)）以查看所显示工作单的过滤器列表。
+选择funnel图标(![funnel图标的图像](/help/images/icons/filter.png))以查看所显示工作单的过滤器列表。
 
 ![显示的工作单过滤器图像](../images/ui/browse/filters.png)
 
@@ -43,9 +43,9 @@ ht-degree: 27%
 
 | 筛选条件 | 描述 |
 | --- | --- |
-| [!UICONTROL 状态] | 根据工作单的当前状态进行筛选：<ul><li>**[!UICONTROL 已完成]**：作业已完成。</li><li>**[!UICONTROL 失败]**：作业遇到错误，无法完成。</li><li>**[!UICONTROL 正在处理]**：请求已启动，当前正在处理。</li></ul> |
-| [!UICONTROL 创建日期] | 根据生成工单的时间进行筛选。 |
-| [!UICONTROL 日期已更新] | 根据上次更新工单的时间进行筛选。 创建的内容将被计为更新。 |
+| [!UICONTROL Status] | 根据工作单的当前状态进行筛选：<ul><li>**[!UICONTROL Completed]**：作业已完成。</li><li>**[!UICONTROL Failed]**：作业遇到错误，无法完成。</li><li>**[!UICONTROL Processing]**：请求已启动，当前正在处理。</li></ul> |
+| [!UICONTROL Date created] | 根据生成工单的时间进行筛选。 |
+| [!UICONTROL Date updated] | 根据上次更新工单的时间进行筛选。 创建的内容将被计为更新。 |
 
 ### 数据集过期的筛选器
 
@@ -53,10 +53,10 @@ ht-degree: 27%
 
 | 筛选条件 | 描述 |
 | --- | --- |
-| [!UICONTROL 状态] | 根据工作单的当前状态进行筛选：<ul><li>**[!UICONTROL 已完成]**：作业已完成。</li><li>**[!UICONTROL 挂起]**：作业已创建，但尚未执行。 [数据集到期请求](./dataset-expiration.md)在计划的删除日期之前假定此状态。 一旦到达删除日期，除非提前取消作业，否则状态将更新为[!UICONTROL 正在执行]。</li><li>**[!UICONTROL 正在执行]**：数据集过期请求已启动，当前正在处理。</li><li>**[!UICONTROL 已取消]**：作业已作为手动用户请求的一部分取消。</li></ul> |
-| [!UICONTROL 创建日期] | 根据生成工单的时间进行筛选。 |
-| [!UICONTROL 到期日期] | 根据相关数据集的计划删除日期筛选数据集到期请求。 |
-| [!UICONTROL 日期已更新] | 根据上次更新工单的时间进行筛选。 创建和过期都将被计为更新。 |
+| [!UICONTROL Status] | 根据工作单的当前状态进行筛选：<ul><li>**[!UICONTROL Completed]**：作业已完成。</li><li>**[!UICONTROL Pending]**：作业已创建，但尚未执行。 [数据集到期请求](./dataset-expiration.md)在计划的删除日期之前假定此状态。 一旦到达删除日期，除非提前取消作业，否则状态将更新为[!UICONTROL Executing]。</li><li>**[!UICONTROL Executing]**：数据集到期请求已启动，当前正在处理。</li><li>**[!UICONTROL Cancelled]**：作业已作为手动用户请求的一部分取消。</li></ul> |
+| [!UICONTROL Date created] | 根据生成工单的时间进行筛选。 |
+| [!UICONTROL Expiration date] | 根据相关数据集的计划删除日期筛选数据集到期请求。 |
+| [!UICONTROL Date updated] | 根据上次更新工单的时间进行筛选。 创建和过期都将被计为更新。 |
 
 {style="table-layout:auto"}
 
@@ -75,7 +75,7 @@ ht-degree: 27%
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_responsemessages"
 >title="记录删除响应"
->abstract="当记录删除过程收到来自系统的响应时，这些消息将显示在&#x200B;**[!UICONTROL 结果]**&#x200B;部分下。如果在处理工单时出现问题，任何相关的错误消息都会显示在此部分中，帮助您解决问题。要了解详情，请参阅数据生命周期 UI 指南。"
+>abstract="当记录删除进程收到来自系统的响应时，这些消息显示在&#x200B;**[!UICONTROL Result]**&#x200B;部分下。 如果在处理工单时出现问题，任何相关的错误消息都会显示在此部分中，帮助您解决问题。要了解详情，请参阅数据生命周期 UI 指南。"
 
 选择已列出工作单的ID以查看其详细信息。
 
@@ -85,7 +85,7 @@ ht-degree: 27%
 
 ### 记录删除详细信息 {#record-delete}
 
-记录删除请求的详细信息包括其当前状态和自发出请求以来经过的时间。 每个请求还包含一个&#x200B;**[!UICONTROL 按服务分类的状态]**&#x200B;部分，该部分提供有关删除中涉及的每个下游服务的单独状态详细信息。 在右边栏中，您可以使用控件来更新工作单的名称和描述。
+记录删除请求的详细信息包括其当前状态和自发出请求以来经过的时间。 每个请求还包含一个&#x200B;**[!UICONTROL Status by service]**&#x200B;部分，该部分提供有关删除中涉及的每个下游服务的各个状态详细信息。 在右边栏中，您可以使用控件来更新工作单的名称和描述。
 
 ![显示记录删除工作单的详细信息页面的图像](../images/ui/browse/record-delete-details.png)
 

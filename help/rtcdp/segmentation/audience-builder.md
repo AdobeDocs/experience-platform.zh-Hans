@@ -2,12 +2,12 @@
 title: Real-Time Customer Data Platform中的Audience Builder
 description: 了解如何使用Real-Time Customer Data Platform中的受众生成器创建受众。
 feature: Get Started, Audiences
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: da87baad-b82a-4a45-89c3-cf20d66fe657
 source-git-commit: 3829f506d0b4d78b543b949e8e11806d8fe10b9c
 workflow-type: tm+mt
-source-wordcount: '983'
-ht-degree: 8%
+source-wordcount: '957'
+ht-degree: 9%
 
 ---
 
@@ -42,19 +42,19 @@ ht-degree: 8%
 
 >[!NOTE]
 >
->**[!UICONTROL 字段选项]**&#x200B;部分当前为测试版，仅向部分客户提供。 有关更多信息，请联系Adobe客户关怀部门。
+>**[!UICONTROL Field options]**&#x200B;部分当前为测试版，仅向部分客户提供。 有关详细信息，请联系 Adobe 客户关怀。
 
-将显示[!UICONTROL 设置]部分。 在此部分中，您可以更新显示哪些字段以及字段之间的关系。
+将显示[!UICONTROL Settings]节。 在此部分中，您可以更新显示哪些字段以及字段之间的关系。
 
-对于&#x200B;**[!UICONTROL 字段选项]**，您可以只显示包含数据的字段或完整XDM架构。
+对于&#x200B;**[!UICONTROL Field options]**，您可以只显示包含数据的字段或完整XDM架构。
 
-对于字段的&#x200B;**[!UICONTROL 关系]**，您可以使用组织的标准关系或显示关系选择器。
+对于&#x200B;**[!UICONTROL Relationship of fields]**，您可以为组织使用标准关系，也可以显示关系选择器。
 
 ![显示设置模块。](../assets/segmentation/audience-builder/settings.png){width="300"}
 
 ### 属性 {#attributes}
 
-通过[!UICONTROL 属性]选项卡，可浏览属于XDM业务帐户类的帐户属性，以及机会和基于人员的属性。 可以展开每个文件夹以显示其他属性，其中每个属性都是一个可以拖到工作区中心的[规则生成器画布](#rule-builder-canvas)上的拼贴。
+通过[!UICONTROL Attributes]选项卡，可浏览属于XDM Business Account类的帐户属性，以及机会和基于人员的属性。 可以展开每个文件夹以显示其他属性，其中每个属性都是一个可以拖到工作区中心的[规则生成器画布](#rule-builder-canvas)上的拼贴。
 
 ![受众生成器中会显示“属性”选项卡](../assets/segmentation/audience-builder/attributes.png)
 
@@ -76,7 +76,7 @@ ht-degree: 8%
 
 ### 受众 {#audiences}
 
-**[!UICONTROL 受众]**&#x200B;选项卡列出了Experience Platform中可用的所有基于人员和基于帐户的受众。
+**[!UICONTROL Audiences]**&#x200B;选项卡列出了Experience Platform中可用的所有基于人员和基于帐户的受众。
 
 您可以将鼠标悬停在受众旁边的![信息图标](../../images/icons/info.png)上，以查看有关受众的信息，包括其ID、描述以及用于查找受众的文件夹层次结构。
 
@@ -86,7 +86,7 @@ ht-degree: 8%
 
 在Audience Builder中创建的受众是用于描述目标受众关键特征或行为的规则集合。 这些规则是使用位于受众生成器中心的规则生成器画布创建的。
 
-要向区段定义添加新规则，请从&#x200B;**[!UICONTROL 字段]**&#x200B;选项卡中拖动一个拼贴，然后将其放到规则生成器画布上。
+要向区段定义添加新规则，请从&#x200B;**[!UICONTROL Fields]**&#x200B;选项卡中拖动一个拼贴，然后将其放到规则生成器画布上。
 
 ![已添加字段的规则生成器画布。](../assets/segmentation/audience-builder/added-field.png){zoomable="yes"}
 
@@ -100,25 +100,25 @@ ht-degree: 8%
 
 ## 受众属性 {#properties}
 
-**[!UICONTROL 受众属性]**&#x200B;部分显示有关受众的信息，包括预计的受众大小。 您还可以指定有关受众的详细信息，包括其名称、描述和标记。
+**[!UICONTROL Audience properties]**&#x200B;部分显示有关受众的信息，包括预计的受众规模。 您还可以指定有关受众的详细信息，包括其名称、描述和标记。
 
 ![在受众生成器中显示受众的“受众属性”部分。](../assets/segmentation/audience-builder/audience-properties.png){width="300"}
 
-**[!UICONTROL 合格帐户]**&#x200B;指示符合受众规则的实际帐户数。 此数字在分段作业运行后，每24小时更新一次。
+**[!UICONTROL Qualified accounts]**&#x200B;指示符合受众规则的实际帐户数。 此数字在分段作业运行后，每24小时更新一次。
 
-**[!UICONTROL 估计帐户]**&#x200B;表示基于示例作业的大致帐户数。 添加新规则或条件并选择&#x200B;**[!UICONTROL 刷新估算]**&#x200B;后，您可以更新此值。
+**[!UICONTROL Estimated accounts]**&#x200B;表示基于示例作业的大致帐户数。 添加新规则或条件并选择&#x200B;**[!UICONTROL Refresh estimate]**&#x200B;后，您可以更新此值。
 
 ![显示受众属性部分中的估算部分。](../assets/segmentation/audience-builder/account-estimates.png){width="300"}
 
-您可以选择&#x200B;**[!UICONTROL 查看帐户]**&#x200B;以查看符合受众当前规则的帐户的抽样。
+您可以选择&#x200B;**[!UICONTROL View accounts]**&#x200B;以查看符合当前规则受众条件的帐户的采样。
 
 ![“查看帐户”按钮高亮显示。](../assets/segmentation/audience-builder/view-accounts.png){width="300"}
 
-**[!UICONTROL 代码视图]**&#x200B;提供了受众规则的基于文本的代码描述。
+**[!UICONTROL Code view]**&#x200B;提供受众规则的基于文本的代码描述。
 
 ![帐户受众的代码视图版本。](../assets/segmentation/audience-builder/code-view.png)
 
-您可以选择&#x200B;**[!UICONTROL 应用访问标签]**&#x200B;以应用受众的相关访问标签。 有关访问标签的详细信息，请参阅[管理标签指南](../../access-control/abac/ui/labels.md){target="_blank"}。
+您可以选择&#x200B;**[!UICONTROL Apply access labels]**&#x200B;以应用受众的相关访问标签。 有关访问标签的详细信息，请参阅[管理标签指南](../../access-control/abac/ui/labels.md){target="_blank"}。
 
 ![将显示“应用访问和数据治理标签”弹出框。](../assets/segmentation/audience-builder/apply-access-labels.png)
 
