@@ -7,7 +7,7 @@ role: Developer
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
 source-wordcount: '62'
-ht-degree: 66%
+ht-degree: 67%
 
 ---
 
@@ -19,7 +19,7 @@ ht-degree: 66%
 - 映射服务API {#api}
    - [概述](./api/overview.md)
    - [快速入门](./api/getting-started.md)
-   - [功能](./api/functions.md)
+   - [函数](./api/functions.md)
    - [映射集](./api/mapping-set.md)
 - UI {#ui}
    - [数据准备UI指南](./ui/mapping.md)

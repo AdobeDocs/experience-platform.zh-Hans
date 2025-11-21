@@ -19,13 +19,13 @@ ht-degree: 50%
 * [安装扩展](./install-debugger.md)
 * [配置扩展](./configure-debugger.md)
 * [“摘要”选项卡](./summary.md)
-* “解决方案”选项卡{#solutions}
+* “解决方案”选项卡 {#solutions}
    * [概述](./solutions/overview.md)
    * [Adobe Target](./solutions/target.md)
 * [“日志”选项卡](./logs.md)
 * [“网络”选项卡](./network.md)
 * [“事件”选项卡](./events.md)
-* Auditor选项卡{#auditor}
+* Auditor选项卡 {#auditor}
    * [概述](./auditor/overview.md)
    * [标记一致性测试](./auditor/tag-consistency.md)
    * [标记存在性测试](./auditor/tag-presence.md)

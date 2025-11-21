@@ -44,7 +44,7 @@ ht-degree: 21%
 
 以下视频旨在支持您了解客户人工智能。
 
->[!VIDEO](https://video.tv.adobe.com/v/36439?learn=on&quality=12&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/32664?learn=on&quality=12)
 
 ## 工作原理
 

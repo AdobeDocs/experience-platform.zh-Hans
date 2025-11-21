@@ -2,7 +2,7 @@
 audience: user
 user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
-user-guide-description: 从多种来源引入数据。了解如何构建、标记和增强已引入的数据。
+user-guide-description: 从多种来源引入数据。了解如何构建、赋予标签和增强已摄取的数据。
 feature: Sources
 role: Developer
 source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1

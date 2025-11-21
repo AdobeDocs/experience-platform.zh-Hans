@@ -7,7 +7,7 @@ role: Admin,User,Developer,Leader
 source-git-commit: 40f7ea3e6477590dc2eed5af8aa9848901a8c204
 workflow-type: tm+mt
 source-wordcount: '118'
-ht-degree: 30%
+ht-degree: 33%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 30%
 # Adobe Experience Platform的人工智能助手 {#ai-assistant}
 
 * [AI助手产品文档](landing.md)
-* [AI Assistant概述](home.md)
+* [AI 助手概述](home.md)
 * [功能访问](access.md)
 * [AI助手的问题指南](questions.md)
 * [AI助手UI指南](ui-guide.md)

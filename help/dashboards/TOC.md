@@ -37,13 +37,13 @@ ht-degree: 46%
    * [导出为CSV](sql-insights-query-pro-mode/download-csv.md)
    * [导出为PDF](sql-insights-query-pro-mode/export-pdf.md)
 * 可用仪表板 {#guides}
-   * [轮廓](guides/profiles.md)
+   * [用户档案](guides/profiles.md)
    * [帐户轮廓](guides/account-profiles.md)
    * [受众](guides/audiences.md)
    * [目标](guides/destinations.md)
    * [许可证使用](guides/license-usage.md)
 * 可用分析 {#insights}
-   * [轮廓](insights/profiles.md)
+   * [用户档案](insights/profiles.md)
    * [受众](insights/audiences.md)
    * [目标](insights/destinations.md)
    * [帐户轮廓](insights/account-profiles.md)

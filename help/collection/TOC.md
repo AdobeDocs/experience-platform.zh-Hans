@@ -21,6 +21,6 @@ ht-degree: 67%
 - [事件重复处理](event-duplication.md)
 - [权限管理](permissions.md)
 - [客户端状态管理](client-state.md)
-- 访客标识{#visitor-identification}
+- 访客识别 {#visitor-identification}
    - [概述](visitor-identification.md)
    - [通过FPID进行访客识别](visitor-identification-fpid.md)

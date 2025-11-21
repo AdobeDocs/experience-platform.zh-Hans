@@ -6,8 +6,8 @@ feature: Alerts
 exl-id: c38a93c6-1618-4ef9-8f94-41c7ab4af43c
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '804'
-ht-degree: 3%
+source-wordcount: '799'
+ht-degree: 12%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 3%
 >
 >由于警报在生产沙盒和开发沙盒中均受支持，因此您可以在任意沙盒中订阅警报。 重置沙盒时，也将重置所有订阅警报；删除沙盒时，将删除所有订阅警报。
 
-通过Adobe Experience Platform，可订阅有关Adobe Experience Platform活动的基于事件的警报。 警报可减少或消除轮询[[!DNL Observability Insights] API](../api/overview.md)以检查作业是否已完成、是否已达到工作流中的某个里程碑或是否已发生任何错误的需要。
+Adobe Experience Platform 允许您订阅关于 Adobe Experience Platform 活动的基于事件的警报。通过警报可以减少或消除轮询 [[!DNL Observability Insights] API](../api/overview.md) 的需要，用于检查任务是否已完成，或者是否已达到工作流中的某个里程碑，或者是否发生任何错误。
 
 当您的Experience Platform操作达到一组特定条件时（例如系统违反阈值时可能会出现问题），Experience Platform可以向您组织中订阅这些条件的任意用户发送警报消息。 这些消息可在预定义的时间间隔内重复出现，直到警报得到解决为止。
 
@@ -56,28 +56,28 @@ Experience Platform警报可以发送一次，也可以按预定义的间隔重�
 * [Adobe I/O Events](#events)
 * [EXPERIENCE PLATFORM UI](#ui)
 
-### I/O事件 {#events}
+### I/O 事件 {#events}
 
-可将警报发送到配置的webhook以促进活动监控的高效自动化。 要通过webhook接收警报，您必须在Adobe Developer Console中为Experience Platform警报注册webhook 。 有关具体步骤，请参阅[订阅Adobe I/O事件通知](./subscribe.md)指南。
+可以将警报发送到经过配置的网络钩子，促进有效地自动化对活动的监控。要通过webhook接收警报，您必须在Adobe Developer Console中为Experience Platform警报注册webhook 。 有关具体步骤，请参阅[订阅Adobe I/O事件通知](./subscribe.md)指南。
 
 ### EXPERIENCE PLATFORM UI {#ui}
 
 Experience Platform UI允许您查看收到的警报和管理警报规则。 以下视频介绍了这些功能。
 
->[!VIDEO](https://video.tv.adobe.com/v/3423917?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/336218?quality=12&learn=on)
 
 要在Experience Platform UI中使用警报，您必须通过Adobe Admin Console启用以下访问控制权限：
 
 | 权限 | 描述 |
 | --- | --- |
 | 查看警报 | 用于查看已接收的警报消息。 |
-| 查看警报历史记录* | 允许您通过[!UICONTROL 警报]选项卡查看已接收警报的历史记录。 |
-| 管理警报* | 允许您通过[!UICONTROL 警报]选项卡启用和禁用警报规则。 |
-| 解决警报* | 允许您通过[!UICONTROL 警报]选项卡解决触发的警报。 |
+| 查看警报历史记录* | 允许您通过[!UICONTROL Alerts]选项卡查看已接收警报的历史记录。 |
+| 管理警报* | 允许您通过[!UICONTROL Alerts]选项卡启用和禁用警报规则。 |
+| 解决警报* | 允许您通过[!UICONTROL Alerts]选项卡解决触发的警报。 |
 
 {style="table-layout:auto"}
 
-**要访问[!UICONTROL 警报]选项卡，还必须同时授予您查看警报权限和其他权限之一。*
+**要访问[!UICONTROL Alerts]选项卡，还必须同时授予您查看警报权限和其他权限之一。*
 
 >[!NOTE]
 >
@@ -91,7 +91,7 @@ Experience Platform UI允许您查看收到的警报和管理警报规则。 以
 >
 > 选择警报以导航到相关仪表板，了解有关触发警报原因的更多详细信息。
 
-此外，UI中的[!UICONTROL 警报]选项卡允许个人用户订阅特定的警报类型，并允许管理员完全启用或禁用警报规则。 有关管理警报的更多信息，请参阅[UI指南](./ui.md)。
+此外，UI中的[!UICONTROL Alerts]选项卡允许个人用户订阅特定的警报类型，并允许管理员完全启用或禁用警报规则。 有关管理警报的更多信息，请参阅[UI指南](./ui.md)。
 
 ## 后续步骤
 

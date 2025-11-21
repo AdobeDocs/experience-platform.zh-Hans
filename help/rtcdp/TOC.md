@@ -21,7 +21,7 @@ ht-degree: 62%
       * [Real-Time CDP 概述](overview.md)
       * [开始使用 Real-Time CDP](get-started.md)
       * [主页](home-page-dashboards.md)
-   * Real-Time CDP B2B 版 {#rtcdpb2b-intro}
+   * Real-Time CDP B2B Edition {#rtcdpb2b-intro}
       * [Real-Time CDP B2B 版概述](b2b-overview.md)
       * [示例用例](./b2b-use-case.md)
       * [端到端教程](./b2b-tutorial.md)
@@ -47,12 +47,12 @@ ht-degree: 62%
    * [Real-Time CDP B2B 版本中的目标](destinations/b2b.md)
 * 护栏 {#guardrails}
    * [Real-Time CDP护栏概述](guardrails/overview.md)
-   * [用于数据引入的护栏](https://experienceleague.adobe.com/docs/experience-platform/ingestion/guardrails.html?lang=zh-Hans){target="_blank"}
-   * [&#x200B; [!DNL Edge Network API]的护栏](https://developer.adobe.com/data-collection-apis/docs/getting-started/guardrails/){target="_blank"}
+   * 用于数据引入的[护栏](https://experienceleague.adobe.com/docs/experience-platform/ingestion/guardrails.html){target="_blank"}
+   * [ [!DNL Edge Network API]的](https://developer.adobe.com/data-collection-apis/docs/getting-started/guardrails/){target="_blank"}护栏
    * [针对 [!DNL Real-Time Customer Profile] 数据和分段的护栏](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html?lang=zh-Hans){target="_blank"}
-   * [数据 [!DNL Identity Service] 的护栏](https://experienceleague.adobe.com/docs/experience-platform/identity/guardrails.html?lang=zh-Hans){target="_blank"}
-   * [&#x200B; [!DNL Query Service]的护栏](https://experienceleague.adobe.com/docs/experience-platform/query/guardrails.html?lang=zh-Hans){target="_blank"}
-   * [通过目标激活数据的护栏](https://experienceleague.adobe.com/docs/experience-platform/destinations/guardrails.html?lang=zh-Hans){target="_blank"}
+   * [数据 [!DNL Identity Service] 的](https://experienceleague.adobe.com/docs/experience-platform/identity/guardrails.html){target="_blank"}护栏
+   * [ [!DNL Query Service]的](https://experienceleague.adobe.com/docs/experience-platform/query/guardrails.html){target="_blank"}护栏
+   * 通过目标激活数据的[护栏](https://experienceleague.adobe.com/docs/experience-platform/destinations/guardrails.html){target="_blank"}
 * 身份标识 {#identity}
    * [身份标识和身份标识命名空间](profile/identities-overview.md)
 * 合并策略 {#merge-policies}
@@ -60,7 +60,7 @@ ht-degree: 62%
 * 隐私和数据治理 {#privacy}
    * [隐私概述](privacy/privacy-overview.md)
    * [数据治理概述](privacy/data-governance-overview.md)
-* 轮廓 {#profile}
+* 用户档案 {#profile}
    * [轮廓概述](profile/profile-overview.md)
    * [轮廓浏览](profile/profile-browse.md)
 * Real-Time CDP B2B edition AI/ML服务 {#b2b-cdp-ai-ml}

@@ -18,7 +18,7 @@ ht-degree: 26%
 - [查询服务概述](home.md)
 - [查询服务打包](packaging.md)
 - [查询服务护栏](guardrails.md)
-- 开始使用 {#get-started}
+- 快速入门 {#get-started}
    - [先决条件](get-started/prerequisites.md)
 - 数据蒸馏器 {#data-distiller}
    - [概述](data-distiller/overview.md)

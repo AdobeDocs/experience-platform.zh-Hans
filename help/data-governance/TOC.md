@@ -38,7 +38,7 @@ ht-degree: 50%
 * 策略服务API {#api}
    * [概述](api/overview.md)
    * [快速入门](api/getting-started.md)
-   * [标记](api/labels.md)
+   * [标签](api/labels.md)
    * [支持](api/policies.md)
    * [营销操作](api/marketing-actions.md)
    * [评估](api/evaluation.md)

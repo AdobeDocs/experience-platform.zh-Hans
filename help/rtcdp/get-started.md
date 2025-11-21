@@ -6,7 +6,7 @@ feature: Get Started, Use Cases
 exl-id: 9f775d33-27a1-4a49-a4c5-6300726a531b
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2326'
+source-wordcount: '2321'
 ht-degree: 1%
 
 ---
@@ -156,7 +156,7 @@ Luma团队将所有行为和客户数据放在一个位置。
 
    <!--    ![image](assets/luma-source-import.png) -->
 
-   例如，选择&#x200B;**[!UICONTROL 联系人]**。 联系人数据的预览会自动加载，以便您可以确保一切按预期显示。
+   例如，选择&#x200B;**[!UICONTROL Contacts]**。 联系人数据的预览会自动加载，以便您可以确保一切按预期显示。
 
    通过自动将标准字段映射到[!DNL Experience Data Model] (XDM)配置文件架构，Real-Time CDP可避免此流程中的大量手动工作。
 
@@ -194,7 +194,7 @@ Luma拥有的关于Sarah显示的所有配置文件信息。 这包括她的个�
 | 类别 | 描述 |
 |---|---|
 | 身份标识 | 显示通过Sarah与Luma跨渠道和设备的交互在[!DNL Experience Platform]中链接在一起的身份。 此时会显示她在该网站中的ECID。 她的身份还包括来自其移动设备应用程序的ECID、电子邮件ID、最近添加的[!DNL Microsoft Dynamics]数据集中的CRM ID，以及从Luma忠诚度系统传递到Adobe Experience Platform的忠诚度ID。 |
-| 活动 | 显示Sarah与Luma品牌的所有交互数据。 这包括她刚刚查看的项目、以前查看过的任何内容、收到的电子邮件、与呼叫中心的互动，以及每次互动时所使用的渠道和设备。 |
+| 事件 | 显示Sarah与Luma品牌的所有交互数据。 这包括她刚刚查看的项目、以前查看过的任何内容、收到的电子邮件、与呼叫中心的互动，以及每次互动时所使用的渠道和设备。 |
 
 Real-Time CDP配置文件将Luma营销团队的工作流程从几周缩短到几分钟，并根据这个全方位客户视图解锁个性化的可能性。 配置文件将她在登录之前浏览网站时的行为数据与她现有的客户配置文件合并，从而全面了解Sarah。
 
@@ -235,7 +235,7 @@ Loyalty member
 
 当您添加“赠品购物车放弃者”受众时，您可以大致查看有多少人属于该受众。 您可以对其执行操作，并使其可用于跨渠道个性化。
 
-选择&#x200B;**[!UICONTROL 发送到目标]**。
+选择 **[!UICONTROL Send to destinations]**。
 
 在Real-Time CDP中，Luma可无缝地针对其受众进行个性化操作。\
 在这里，我们看到可供Luma将此目标发送到Adobe和非Adobe解决方案的所有目标：
@@ -260,7 +260,7 @@ Loyalty member
 >
 >（可选）如果选择日期字段，则它会自动安排90天的有效期。
 
-选择&#x200B;**[!UICONTROL 保存]**&#x200B;以转到下一页。
+选择&#x200B;**[!UICONTROL Save]**&#x200B;以转到下一页。
 
 当该受众中的客户进行购买时，其对该受众的成员资格将实时禁止。 他们不再符合条件，因为其状态已更改。
 

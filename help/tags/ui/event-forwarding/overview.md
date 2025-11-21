@@ -5,7 +5,7 @@ feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1190'
+source-wordcount: '1181'
 ht-degree: 8%
 
 ---
@@ -30,7 +30,7 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 >
 >有关事件转发如何适应Experience Platform中的数据收集生态系统的信息，请参阅[数据收集概述](../../../collection/home.md)。
 
-与Adobe Experience Platform [Web SDK](/help/web-sdk/home.md)和[Mobile SDK](https://experienceleague.adobe.com/docs/platform-learn/data-collection/mobile-sdk/overview.html?lang=zh-Hans)结合使用的事件转发具有以下优点：
+与Adobe Experience Platform [Web SDK](/help/web-sdk/home.md)和[Mobile SDK](https://experienceleague.adobe.com/docs/platform-learn/data-collection/mobile-sdk/overview.html)结合使用的事件转发具有以下优点：
 
 **性能**：
 
@@ -53,7 +53,7 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 
 ### 属性 {#properties}
 
-事件转发会维护其自身与标记分开的属性存储，您可以通过选择左侧导航中的&#x200B;**[!UICONTROL 事件转发]**，在Experience Platform UI或数据收集UI中查看这些属性。
+事件转发会维护其自身与标记分开的属性存储，您可以通过选择左侧导航中的&#x200B;**[!UICONTROL Event Forwarding]**，在Experience Platform UI或数据收集UI中查看这些属性。
 
 >[!TIP]
 >
@@ -61,11 +61,11 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 
 ![数据收集UI中的事件转发属性。](../../images/ui/event-forwarding/overview/properties.png)
 
-所有事件转发属性都将&#x200B;**[!UICONTROL Edge]**&#x200B;作为其平台。 它们不会区分Web或移动，因为它们仅处理从Experience Platform Edge Network接收的数据，后者本身可以接收来自Web和移动平台的事件数据。
+所有事件转发属性都将&#x200B;**[!UICONTROL Edge]**&#x200B;列为其平台。 它们不会区分Web或移动，因为它们仅处理从Experience Platform Edge Network接收的数据，后者本身可以接收来自Web和移动平台的事件数据。
 
 ### 扩展 {#extensions}
 
-事件转发具有自己的兼容扩展目录，如[Core](../../extensions/server/core/overview.md)扩展和[Adobe Cloud Connector](../../extensions/server/cloud-connector/overview.md)扩展。 您可以在左侧导航中选择&#x200B;**[!UICONTROL 扩展]**，然后选择&#x200B;**[!UICONTROL 目录]**，从而查看UI中事件转发属性的可用扩展。
+事件转发具有自己的兼容扩展目录，如[Core](../../extensions/server/core/overview.md)扩展和[Adobe Cloud Connector](../../extensions/server/cloud-connector/overview.md)扩展。 您可以在左侧导航中选择&#x200B;**[!UICONTROL Extensions]**，然后选择&#x200B;**[!UICONTROL Catalog]**，来查看UI中事件转发属性的可用扩展。
 
 您可以从右侧面板中选择![about](../../images/ui/event-forwarding/overview/about.png)，以查看其他可用资源以了解有关此功能的更多信息。
 
@@ -79,9 +79,9 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 
 #### 引用Experience Platform Edge Network中的数据 {#data-element-path}
 
-要引用Experience Platform Edge Network中的数据，您必须创建一个数据元素，以便提供指向该数据的有效路径。 在UI中创建数据元素时，为扩展选择&#x200B;**[!UICONTROL Core]**，为类型选择&#x200B;**[!UICONTROL Path]**。
+要引用Experience Platform Edge Network中的数据，您必须创建一个数据元素，以便提供指向该数据的有效路径。 在UI中创建数据元素时，请为扩展选择&#x200B;**[!UICONTROL Core]**，为类型选择&#x200B;**[!UICONTROL Path]**。
 
-数据元素的&#x200B;**[!UICONTROL 路径]**&#x200B;值必须遵循模式`arc.event.{ELEMENT}`（例如： `arc.event.xdm.web.webPageDetails.URL`）。 必须正确指定此路径才能发送数据。
+数据元素的&#x200B;**[!UICONTROL Path]**&#x200B;值必须遵循模式`arc.event.{ELEMENT}`（例如： `arc.event.xdm.web.webPageDetails.URL`）。 必须正确指定此路径才能发送数据。
 
 您可以从右侧面板中选择![about](../../images/ui/event-forwarding/overview/about.png)，以查看其他可用资源以了解有关此功能的更多信息。
 
@@ -107,7 +107,7 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 
 #### 规则的操作顺序 {#action-sequencing}
 
-事件转发规则的[!UICONTROL 操作]部分始终按顺序执行。 例如，如果规则具有两个操作，则第二个操作将直到上一个操作完成才会开始执行（并且在需要从端点响应的情况下，该端点已响应）。 您在保存规则时，应确保操作顺序正确。无法像使用标记规则那样异步执行此执行序列。
+事件转发规则的[!UICONTROL Actions]部分始终按顺序执行。 例如，如果规则具有两个操作，则第二个操作将直到上一个操作完成才会开始执行（并且在需要从端点响应的情况下，该端点已响应）。 您在保存规则时，应确保操作顺序正确。无法像使用标记规则那样异步执行此执行序列。
 
 ## 密钥 {#secrets}
 

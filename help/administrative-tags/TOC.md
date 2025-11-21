@@ -6,7 +6,7 @@ user-guide-description: 使用统一标记管理元数据分类法。了解如�
 source-git-commit: cc8e7074eafae11887486b0cec54154d96eb5a5c
 workflow-type: tm+mt
 source-wordcount: '45'
-ht-degree: 93%
+ht-degree: 86%
 
 ---
 
@@ -19,6 +19,6 @@ ht-degree: 93%
    * [快速入门](api/getting-started.md)
    * [文件夹](api/folders.md)
    * [标记](api/tags.md)
-* 统一标记 UI{#ui}
+* 统一标记UI {#ui}
    * [管理标记](ui/managing-tags.md)
    * [标记类别](ui/tags-categories.md)

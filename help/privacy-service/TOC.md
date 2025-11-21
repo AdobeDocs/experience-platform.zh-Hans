@@ -8,7 +8,7 @@ role: User,Admin
 source-git-commit: 306f7fcd09f395895fde241b668c41a2479a8d2d
 workflow-type: tm+mt
 source-wordcount: '92'
-ht-degree: 100%
+ht-degree: 93%
 
 ---
 
@@ -18,16 +18,16 @@ ht-degree: 100%
 * [Privacy Service 概述](./home.md)
 * [管理 Privacy Service 权限](./permissions.md)
 * [Privacy Service 和 Experience Cloud 应用程序](./experience-cloud-apps.md)
-* [隐私请求的身份数据](./identity-data.md)
+* [隐私请求的身份标识数据](./identity-data.md)
 * [隐私 JS 库概述](./js-library.md)
-* Privacy Service API {#api}
+* PRIVACY SERVICE API {#api}
    * [概述](./api/overview.md)
    * [验证并访问 Privacy Service API](./api/getting-started.md)
    * [隐私任务](./api/privacy-jobs.md)
    * [同意](./api/consent.md)
    * [内容](./api/content.md)
    * [附录](./api/appendix.md)
-* Privacy Service UI {#ui}
+* PRIVACY SERVICE UI {#ui}
    * [概述](./ui/overview.md)
    * [管理隐私任务](./ui/user-guide.md)
 * [订阅隐私活动](./privacy-events.md)

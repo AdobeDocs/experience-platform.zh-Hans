@@ -8,7 +8,7 @@ role: Admin
 source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
 source-wordcount: '132'
-ht-degree: 58%
+ht-degree: 57%
 
 ---
 
@@ -22,7 +22,7 @@ ht-degree: 58%
    * [使用访问标签管理用户对目标数据流的访问权限](/help/access-control/abac/apply-access-labels-destinations.md)
    * 权限 {#permissions-ui}
       * [浏览](abac/ui/browse.md)
-      * [标记](abac/ui/labels.md)
+      * [标签](abac/ui/labels.md)
       * [权限](abac/ui/permissions.md)
       * [支持](abac/ui/policies.md)
       * [角色](abac/ui/roles.md)

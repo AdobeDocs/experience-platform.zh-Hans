@@ -34,7 +34,7 @@ ht-degree: 33%
    * [试验](api/experiments.md)
    * [模型](api/models.md)
    * [MLServices](api/mlservices.md)
-   * [洞察](api/insights.md)
+   * [Insights](api/insights.md)
    * [附录](api/appendix.md)
 * 预建配方 {#pre-built-recipes}
    * [产品推荐方法](pre-built-recipes/product-recommendations.md)

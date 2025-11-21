@@ -1,12 +1,12 @@
 ---
 title: 使用合作伙伴提供的属性补充第一方轮廓
-description: 了解如何使用可信赖的数据合作伙伴的属性来补充第一方轮廓，以改善您的数据基础，获得对客户群的全新见解，并提升受众优化。
+description: 了解如何使用可信赖的数据合作伙伴的属性来补充第一方轮廓，以改善您的数据基础，获得对客户群的全新洞察，并提升受众优化。
 feature: Use Cases, Profile Enrichment
 exl-id: ee21b988-88f9-4c8e-bd82-7fc55c37ec24
 source-git-commit: 7ee472294e8f255d9de3c15982a6f5d2d3654755
 workflow-type: tm+mt
-source-wordcount: '1257'
-ht-degree: 78%
+source-wordcount: '1249'
+ht-degree: 73%
 
 ---
 
@@ -14,9 +14,9 @@ ht-degree: 78%
 
 >[!AVAILABILITY]
 >
->* 已获得许可Real-Time CDP（应用程序服务）、Adobe Experience Platform Activation、Real-Time CDP、Real-Time CDP Prime、Real-Time CDP Ultimate的客户可以使用此功能。 阅读[产品说明](https://helpx.adobe.com/cn/legal/product-descriptions.html)中关于这些软件包的详细信息，并联系您的 Adobe 代表了解更多信息。
+>* 已获得许可Real-Time CDP（应用程序服务）、Adobe Experience Platform Activation、Real-Time CDP、Real-Time CDP Prime、Real-Time CDP Ultimate的客户可以使用此功能。 阅读[产品说明](https://helpx.adobe.com/legal/product-descriptions.html)中关于这些软件包的详细信息，并联系您的 Adobe 代表了解更多信息。
 
-使用可信赖的数据合作伙伴的属性来补充第一方轮廓，以改善您的数据基础，获得对客户群的全新见解，并提升受众优化。
+使用可信赖的数据合作伙伴的属性来补充第一方轮廓，以改善您的数据基础，获得对客户群的全新洞察，并提升受众优化。
 
 ![利用合作伙伴提供的属性扩充轮廓用例高级视觉概述。](/help/rtcdp/assets/partner-data/enrichment/enrichment-use-case-overview.png)
 
@@ -41,13 +41,13 @@ Adobe知道没有一种放之四海而皆准的方法，它允许与数据和身
 
 >[!WARNING]
 >
->摄取到Real-Time CDP中的其他合作伙伴提供的属性会影响您的&#x200B;*总数据量*。 阅读[Real-Time Customer Data Platform产品说明](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)以了解有关总数据量的详细信息。
+>摄取到Real-Time CDP中的其他合作伙伴提供的属性会影响您的&#x200B;*总数据量*。 阅读[Real-Time Customer Data Platform产品说明](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)以了解有关总数据量的详细信息。
 
 ## 视频演练 {#video-walkthrough}
 
 查看下面的视频教程，了解如何使用合作伙伴提供的属性来补充第一方受众：
 
->[!VIDEO](https://video.tv.adobe.com/v/3452471/?learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/3423075/?learn=on)
 
 ## 如何实现该用例：大致概述 {#achieve-the-use-case-high-level}
 
@@ -56,7 +56,7 @@ Adobe知道没有一种放之四海而皆准的方法，它允许与数据和身
 1. 作为&#x200B;**客户**，您许可&#x200B;**数据合作伙伴**&#x200B;的属性。
 2. 作为&#x200B;**客户**，您可以扩展您的轮廓数据和治理模型，以适应&#x200B;**合作伙伴**&#x200B;提供的属性。
 3. 作为&#x200B;**客户**，您加入希望通过数据合作伙伴扩充的受众。一般来说，这些受众去除了输入标识符，例如电子邮件、姓名、地址或其他个人身份信息 (PII) 元素。
-4. **合作伙伴**&#x200B;为他们能够匹配的轮廓附加许可属性。可以选择将[合作伙伴 ID &#x200B;](/help/identity-service/features/namespaces.md)包含在合作伙伴范围的 ID 命名空间中。
+4. **合作伙伴**&#x200B;为他们能够匹配的轮廓附加许可属性。可以选择将[合作伙伴 ID ](/help/identity-service/features/namespaces.md)包含在合作伙伴范围的 ID 命名空间中。
 5. 作为&#x200B;**客户**，您可以在 Real-Time CDP 中将数据合作伙伴的属性加载到客户轮廓中。
 
 ## 如何实现用例：分步说明 {#step-by-step-instructions}
@@ -71,14 +71,14 @@ Adobe知道没有一种放之四海而皆准的方法，它允许与数据和身
 
 目前，您正在扩展 Real-Time CDP 中的数据管理框架，以适应合作伙伴提供的属性。
 
-您可以选择创建&#x200B;**[!UICONTROL XDM 单个轮廓]**&#x200B;类的新架构，或者扩展相同类型的现有架构，以包括合作伙伴提供的属性。Adobe 强烈建议使用一组新的字段组创建新架构，这些字段组最能代表数据供应商的附加属性。这可以确保您的数据架构是干净的，并且可以相互独立地发展。
+您可以选择创建&#x200B;**[!UICONTROL XDM Individual Profile]**&#x200B;类的新架构，或者扩展相同类型的现有架构以包含合作伙伴提供的属性。 Adobe 强烈建议使用一组新的字段组创建新架构，这些字段组最能代表数据供应商的附加属性。这可以确保您的数据架构是干净的，并且可以相互独立地发展。
 
 要在架构中包含合作伙伴提供的属性，您可以使用所需的属性创建新字段组，也可以使用 Adobe 提供的预配置字段组之一。
 
 有关更多信息，请阅读以下的文档页面：
 
 * [架构构成基础](/help/xdm/schema/composition.md)
-* [对 [!UICONTROL XDM 单个轮廓]类的概述](/help/xdm/classes/individual-profile.md)
+* [[!UICONTROL XDM Individual Profile]类概述](/help/xdm/classes/individual-profile.md)
 * [在 UI 中创建和编辑架构](/help/xdm/ui/resources/schemas.md)
 * [在 UI 中创建和编辑架构字段组](/help/xdm/ui/resources/field-groups.md)
 
@@ -99,7 +99,7 @@ Commenting out links for now
 
 >[!TIP]
 >
->如果您选择使用数据供应商提供的基于个人的身份标识符来补充您的客户轮廓，您可以创建类型为&#x200B;**[[!UICONTROL 合作伙伴 ID]](/help/identity-service/features/namespaces.md)** 的新身份标识类型。
+>如果您选择使用数据供应商提供的基于人员的标识符补充您的客户配置文件，则可以创建类型为&#x200B;**[[!UICONTROL Partner ID]](/help/identity-service/features/namespaces.md)**&#x200B;的新标识类型。
 >
 >阅读[身份标识类型部分](/help/identity-service/features/namespaces.md)，了解有关合作伙伴 ID 的更多信息。
 >阅读 Experience Platform 用户界面中有关[如何定义身份标识字段](/help/xdm/ui/fields/identity.md)的内容。
