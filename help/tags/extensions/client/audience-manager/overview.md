@@ -51,7 +51,7 @@ ht-degree: 87%
 
 #### Use DIL Site Catalyst Module
 
-[SiteCatalyst 模块](https://experiencecloud.adobe.com/resources/help/en_US/aam/r_dil_sc_init.html)可与 DIL 配合使用，以将 Analytics 标记元素发送至 Audience Manager。
+[SiteCatalyst 模块](https://experiencecloud.adobe.com/resources/help/zh_CN/aam/r_dil_sc_init.html)可与 DIL 配合使用，以将 Analytics 标记元素发送至 Audience Manager。
 
 使用代码编辑器配置 siteCatalyst.init 文件。
 
@@ -59,15 +59,15 @@ ht-degree: 87%
 
 #### Use DIL Google Analytics Module
 
-启用 [Google Analytics 模块](https://experiencecloud.adobe.com/resources/help/en_US/aam/dil-google-universal-analytics.html)。
+启用 [Google Analytics 模块](https://experiencecloud.adobe.com/resources/help/zh_CN/aam/dil-google-universal-analytics.html)。
 
 #### DIL.create Initialization Properties
 
-添加 [DIL.create](https://experiencecloud.adobe.com/resources/help/en_US/aam/r_dil_create.html) 使用的初始化属性，以及 [visitorService 对象](https://experiencecloud.adobe.com/resources/help/en_US/aam/r_dil_visitor_service.html)的命名空间子属性。在代码编辑器中，代码注释包含两个示例用例。
+添加 [DIL.create](https://experiencecloud.adobe.com/resources/help/zh_CN/aam/r_dil_create.html) 使用的初始化属性，以及 [visitorService 对象](https://experiencecloud.adobe.com/resources/help/zh_CN/aam/r_dil_visitor_service.html)的命名空间子属性。在代码编辑器中，代码注释包含两个示例用例。
 
 选择 **[!UICONTROL Choose an Item]** 可添加其他属性。
 
-将鼠标悬停在“i”图标上，可了解每个属性的用途。您可以在 [Audience Manager DIL 文档](https://experiencecloud.adobe.com/resources/help/en_US/aam/r_dil_create.html)中找到有关这些属性的更多信息。
+将鼠标悬停在“i”图标上，可了解每个属性的用途。您可以在 [Audience Manager DIL 文档](https://experiencecloud.adobe.com/resources/help/zh_CN/aam/r_dil_create.html)中找到有关这些属性的更多信息。
 
 配置完该扩展后，选择 **[!UICONTROL Save]**。
 

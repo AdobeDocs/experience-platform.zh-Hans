@@ -50,7 +50,7 @@ ht-degree: 35%
    * [将数据添加到实时客户个人资料](tutorials/add-profile-data.md)
    * [为配置文件配置数据集](tutorials/dataset-configuration.md)
    * [生成数据集重叠报告](tutorials/dataset-overlap-report.md)
-   * [更多教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html)
+   * [更多教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html?lang=zh-Hans)
 * [隐私请求处理](privacy.md)
 * [[!DNL Profile]疑难解答指南](troubleshooting.md)
 * [配置文件API引用](https://www.adobe.com/go/profile-apis-en)

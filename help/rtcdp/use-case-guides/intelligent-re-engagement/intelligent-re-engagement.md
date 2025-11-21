@@ -36,18 +36,18 @@ ht-degree: 45%
 
 在您完成实施用例的步骤后，您将使用以下Real-Time CDP和Adobe Journey Optimizer功能（按使用顺序列出）。 确保您拥有所有这些区域所需的[基于属性的访问控制权限](/help/access-control/home.md)，或让系统管理员授予您这些必要的权限。
 
-* [[!DNL Adobe Real-Time Customer Data Platform (Real-Time CDP)]](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/understanding-the-real-time-customer-data-platform.html)——跨数据源集成数据，以推动活动。然后，该数据可用于创建活动受众，并显示电子邮件和网络促销图块中使用的个性化数据元素（例如，姓名或与帐户相关的信息）。CDP 还可用于通过电子邮件和网络激活受众（通过 [!DNL Adobe Target]）。
+* [[!DNL Adobe Real-Time Customer Data Platform (Real-Time CDP)]](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/understanding-the-real-time-customer-data-platform.html?lang=zh-Hans)——跨数据源集成数据，以推动活动。然后，该数据可用于创建活动受众，并显示电子邮件和网络促销图块中使用的个性化数据元素（例如，姓名或与帐户相关的信息）。CDP 还可用于通过电子邮件和网络激活受众（通过 [!DNL Adobe Target]）。
    * [架构](/help/xdm/home.md)
    * [轮廓](/help/profile/home.md)
    * [数据集](/help/catalog/datasets/overview.md)
    * [受众](/help/segmentation/home.md)
-   * [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html)
+   * [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html?lang=zh-Hans)
    * [目标](/help/destinations/home.md)
 
 * [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer-learn/tutorials/introduction-to-journey-optimizer/introduction.html?lang=zh-Hans) — 帮助您为客户提供互联、情境式和个性化的体验。
-   * [事件或受众触发器](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioning/collect-event-data/data-collection.html)
-   * [受众/事件](https://experienceleague.adobe.com/docs/journey-optimizer/using/audiences-profiles-identities/audiences/about-audiences.html)
-   * [历程操作](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html)
+   * [事件或受众触发器](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioning/collect-event-data/data-collection.html?lang=zh-Hans)
+   * [受众/事件](https://experienceleague.adobe.com/docs/journey-optimizer/using/audiences-profiles-identities/audiences/about-audiences.html?lang=zh-Hans)
+   * [历程操作](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html?lang=zh-Hans)
 
 ## 如何实现用例 {#achieve-use-case-instruction}
 
@@ -141,7 +141,7 @@ ht-degree: 45%
 
 +++配置文件测试详细信息（字段组）
 
-此字段组允许您使用测试用户档案在发布历程之前测试历程。 有关创建测试配置文件的详细信息，请阅读[创建测试配置文件教程](https://experienceleague.adobe.com/docs/journeys/using/building-journeys/about-journey-building/creating-test-profiles.html)和[测试历程教程](https://experienceleague.adobe.com/docs/journeys/using/building-journeys/testing-the-journey.html)。
+此字段组允许您使用测试用户档案在发布历程之前测试历程。 有关创建测试配置文件的详细信息，请阅读[创建测试配置文件教程](https://experienceleague.adobe.com/docs/journeys/using/building-journeys/about-journey-building/creating-test-profiles.html?lang=zh-Hans)和[测试历程教程](https://experienceleague.adobe.com/docs/journeys/using/building-journeys/testing-the-journey.html?lang=zh-Hans)。
 
 +++
 
@@ -314,11 +314,11 @@ ht-degree: 45%
 
 >[!IMPORTANT]
 >
->向客户提供取消订阅以停止从品牌接收通信的功能，以及确保遵循此选择是一项法律要求。 通过[隐私法规概述](https://experienceleague.adobe.com/docs/experience-platform/privacy/regulations/overview.html)了解有关适用法律的更多信息。
+>向客户提供取消订阅以停止从品牌接收通信的功能，以及确保遵循此选择是一项法律要求。 通过[隐私法规概述](https://experienceleague.adobe.com/docs/experience-platform/privacy/regulations/overview.html?lang=zh-Hans)了解有关适用法律的更多信息。
 
 #### 同意政策
 
-创建重新参与路径时，请考虑添加以下[同意策略](https://experienceleague.adobe.com/docs/platform-learn/data-collection/web-sdk/consent/overview.html)：
+创建重新参与路径时，请考虑添加以下[同意策略](https://experienceleague.adobe.com/docs/platform-learn/data-collection/web-sdk/consent/overview.html?lang=zh-Hans)：
 
 * 如果 `consents.marketing.email.val = "Y"`，则可以发送电子邮件
 * 如果 `consents.marketing.sms.val = "Y"`，则可以发送短信
@@ -346,7 +346,7 @@ ht-degree: 45%
 
 重新参与方案使用受众来定义由配置文件存储中的配置文件子集共享的特定属性或行为，以将可销售的人员组与客户群区分开来。 可以在[!DNL Adobe Experience Platform]中以多种方式创建受众。
 
-有关如何创建受众的更多信息，请阅读[受众服务UI指南](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html#create-audience)。
+有关如何创建受众的更多信息，请阅读[受众服务UI指南](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html?lang=zh-Hans#create-audience)。
 
 有关如何直接组成[受众](/help/segmentation/home.md)的更多信息，请参阅[受众构成 UI 指南。](/help/segmentation/ui/audience-composition.md)
 
@@ -436,7 +436,7 @@ ht-degree: 45%
 >
 >[!DNL Adobe Journey Optimizer] 并不涵盖图中所示的所有内容。所有[付费媒体广告](/help/destinations/catalog/social/overview.md)都是在[!UICONTROL Destinations]中创建的。
 
-[[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html) 可帮助您为客户提供贴合心意的、上下文和个性化的体验。客户历程是客户与品牌互动的整个过程。每个用例历程都需要特定的信息。下面列出了每个历程所需的精确数据。
+[[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html?lang=zh-Hans) 可帮助您为客户提供贴合心意的、上下文和个性化的体验。客户历程是客户与品牌互动的整个过程。每个用例历程都需要特定的信息。下面列出了每个历程所需的精确数据。
 
 >[!BEGINTABS]
 
@@ -446,7 +446,7 @@ ht-degree: 45%
 
 +++事件
 
-事件允许您统一触发历程，向流入历程的个人实时发送消息。有关事件的详细信息，请阅读[常规事件指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html)。
+事件允许您统一触发历程，向流入历程的个人实时发送消息。有关事件的详细信息，请阅读[常规事件指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html?lang=zh-Hans)。
 
 * 事件 1：产品查看次数
    * 架构：客户数字交易
@@ -571,7 +571,7 @@ ht-degree: 45%
 
 +++事件
 
-事件允许您统一触发历程，向流入历程的个人实时发送消息。有关事件的详细信息，请阅读[常规事件指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html)。
+事件允许您统一触发历程，向流入历程的个人实时发送消息。有关事件的详细信息，请阅读[常规事件指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html?lang=zh-Hans)。
 
 * 事件 2：加入购物车
    * 架构：客户数字交易
@@ -704,7 +704,7 @@ ht-degree: 45%
 
 +++事件
 
-事件允许您统一触发历程，向流入历程的个人实时发送消息。有关事件的详细信息，请阅读[常规事件指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html)。
+事件允许您统一触发历程，向流入历程的个人实时发送消息。有关事件的详细信息，请阅读[常规事件指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html?lang=zh-Hans)。
 
 * 事件 4：在线购买
    * 架构：客户数字交易
@@ -755,7 +755,7 @@ ht-degree: 45%
 
 >[!ENDTABS]
 
-有关在 [!DNL Adobe Journey Optimizer] 中创建历程的更多信息，请阅读[开始使用历程指南。](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html)
+有关在 [!DNL Adobe Journey Optimizer] 中创建历程的更多信息，请阅读[开始使用历程指南。](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html?lang=zh-Hans)
 
 ### 在目标内设置付费媒体广告 {#paid-media-ads}
 
