@@ -2,9 +2,9 @@
 title: Edge Segmentation指南
 description: 了解如何使用边缘分段在边缘即时评估Experience Platform中的受众，启用同一页面和下一页面个性化用例。
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: 1b69fa4ecadb1f6b8575358ca4a81549221430e1
+source-git-commit: d93bf7a3b7447a71fa3ead96e5c35ec9cd2dd99a
 workflow-type: tm+mt
-source-wordcount: '1148'
+source-wordcount: '1191'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,9 @@ Edge分段功能能够在边缘[上即时评估Adobe Experience Platform中的�
 >
 > 边缘数据将存储在距离收集位置最近的边缘服务器位置。 此数据也可以存储在指定为Adobe Experience Platform数据中心中心（或主体）以外的位置。
 >
-> 此外，边缘分段引擎将仅在具有&#x200B;**一个**&#x200B;主标记身份的边缘上处理请求，这与不基于边缘的主身份一致。
+> 边缘分段引擎将仅在具有&#x200B;**一个**&#x200B;主标记身份的边缘上处理请求，这与不基于边缘的主身份一致。
+>
+> 此外，由于边缘分段旨在大规模处理请求，因此边缘服务器会动态加载所需的元数据。 因此，无论沙盒类型如何，第一次调用可能会遇到“冷启动”延迟。 在此窗口内，前几个评估调用可能会导致超时。 短暂的预热突发或真实负载有助于消除误报测试失败。
 
 ## Edge分段查询类型 {#query-types}
 
@@ -151,15 +153,15 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
 
 >[!TAB 受众门户]
 
-在受众门户中，选择&#x200B;**[!UICONTROL 创建受众]**。
+在受众门户中，选择&#x200B;**[!UICONTROL Create audience]**。
 
 ![受众门户中突出显示“创建受众”按钮。](../images/methods/edge/select-create-audience.png){zoomable="yes"}
 
-此时会出现弹出窗口。 选择&#x200B;**[!UICONTROL 生成规则]**&#x200B;以进入区段生成器。
+此时会出现弹出窗口。 选择&#x200B;**[!UICONTROL Build rules]**&#x200B;以输入区段生成器。
 
 ![在“创建受众”弹出框中突出显示“生成规则”按钮。](../images/methods/edge/select-build-rules.png){zoomable="yes"}
 
-在区段生成器中，创建与[符合条件的查询类型](#eligible-query-types)之一匹配的区段定义。 如果区段定义符合边缘分段条件，您将能够选择&#x200B;**[!UICONTROL Edge]**&#x200B;作为&#x200B;**[!UICONTROL 评估方法]**。
+在区段生成器中，创建与[符合条件的查询类型](#eligible-query-types)之一匹配的区段定义。 如果区段定义符合边缘分段条件，您将能够选择&#x200B;**[!UICONTROL Edge]**&#x200B;作为&#x200B;**[!UICONTROL Evaluation method]**。
 
 ![将显示区段定义。 评估类型已突出显示，显示可以使用边缘分段评估区段定义。](../images/methods/edge/edge-evaluation-method.png){zoomable="yes"}
 
@@ -315,11 +317,11 @@ curl -X GET \
 
 ![对于使用边缘分段评估的受众，将显示受众详细信息页面。](../images/methods/edge/audience-details.png)
 
-对于启用Edge的受众，将显示&#x200B;**[!UICONTROL 随时间变化的配置文件]**&#x200B;信息卡，其中显示符合条件的总量度和新受众更新的量度。
+对于启用了Edge的受众，将显示&#x200B;**[!UICONTROL Profiles over time]**&#x200B;卡片，该卡片显示符合条件的总量度和新受众更新的量度。
 
-**[!UICONTROL 合格受众总数]**&#x200B;指标表示基于此受众的边缘评估的合格受众总数。
+**[!UICONTROL Total qualified]**&#x200B;量度表示基于此受众的边缘评估的合格受众总数。
 
-**[!UICONTROL 新受众已更新]**&#x200B;量度由一个折线图表示，该折线图显示通过边缘分段所发生的受众规模变化。 您可以调整下拉菜单以显示过去24小时、上周或过去30天。
+**[!UICONTROL New audience updated]**&#x200B;量度由折线图表示，该折线图显示通过边缘分段而发生的受众规模变化。 您可以调整下拉菜单以显示过去24小时、上周或过去30天。
 
 ![已突出显示“随时间变化的配置文件”信息卡。](../images/methods/edge/profiles-over-time.png){zoomable="yes"}
 
