@@ -3,9 +3,9 @@ keywords: 自定义个性化；目标；experience platform自定义目标；
 title: 自定义个性化连接
 description: 此目标提供外部个性化、内容管理系统、广告服务器以及在您的网站上运行的其他应用程序，以便从Adobe Experience Platform检索受众信息。 此目标根据用户个人资料受众成员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 44a4d5c592e13cdd1d4d75787dee5e1763fae9a4
 workflow-type: tm+mt
-source-wordcount: '923'
+source-wordcount: '992'
 ht-degree: 9%
 
 ---
@@ -43,6 +43,12 @@ ht-degree: 9%
 
 >[!IMPORTANT]
 >
+>**基于属性的个性化要求：**&#x200B;如果您要基于配置文件属性（而不仅仅是受众成员资格）进行个性化，则&#x200B;**必须**&#x200B;使用具有经过身份验证的服务器端集成的[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/)，无论您同时使用Web SDK还是Mobile SDK进行数据收集。
+>
+>仅Web SDK和Mobile SDK支持基于受众成员资格的个性化。 需要&#x200B;**Edge Network API**&#x200B;才能安全检索用于个性化的配置文件属性。
+
+>[!IMPORTANT]
+>
 >在创建自定义个性化连接之前，请阅读有关如何[将受众数据激活到边缘个性化目标](../../ui/activate-edge-personalization-destinations.md)的指南。 本指南将指导您跨多个Experience Platform组件完成相同页面和下一页面个性化用例所需的配置步骤。
 
 ## 支持的受众 {#supported-audiences}
@@ -69,7 +75,7 @@ ht-degree: 9%
 >id="platform_destinations_custom_personalization_datastream"
 >title="关于数据流"
 >abstract="此选项确定受众将包含在哪个数据收集数据流中以响应页面。下拉菜单仅显示已启用目标配置的数据流。您必须先配置数据流，然后才能配置目标。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html?lang=zh-Hans#" text="了解如何配置数据流"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html#" text="了解如何配置数据流"
 
 >[!IMPORTANT]
 > 
