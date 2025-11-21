@@ -4,10 +4,10 @@ title: HTTP API连接
 description: 使用Adobe Experience Platform中的HTTP API目标将配置文件数据发送到第三方HTTP端点，以运行您自己的Analytics或对从Experience Platform导出的配置文件数据执行您可能所需的任何其他操作。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 7502810ff329a31f2fdaf6797bc7672118555e6a
+source-git-commit: 6d1b73c1557124f283558e1daeb3ddeaaec8e8a4
 workflow-type: tm+mt
-source-wordcount: '2752'
-ht-degree: 7%
+source-wordcount: '3079'
+ht-degree: 6%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 7%
 
 >[!IMPORTANT]
 >
-> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
 HTTP API目标是一个[!DNL Adobe Experience Platform]流目标，可帮助您将配置文件数据发送到第三方HTTP端点。
 
@@ -27,11 +27,11 @@ HTTP API目标是一个[!DNL Adobe Experience Platform]流目标，可帮助您�
 
 HTTP API目标允许您将XDM配置文件数据和受众导出到通用HTTP端点。 在那里，您可以运行自己的分析，或对从Experience Platform导出的用户档案数据执行任何其他您可能需要的操作。
 
-HTTP端点可以是客户自己的系统，也可以是第三方解决方案。
+HTTP端点可以是客户自己的系统或第三方解决方案。
 
 ## 支持的受众 {#supported-audiences}
 
-本节介绍可以导出到此目标的受众类型。
+此部分介绍哪些类型的受众可以导出到此目标。
 
 | 受众来源 | 支持 | 描述 |
 |---------|----------|----------|
@@ -59,6 +59,7 @@ HTTP端点可以是客户自己的系统，也可以是第三方解决方案。
 * 您的HTTP端点必须支持Experience Platform配置文件架构。 HTTP API目标不支持转换到第三方有效负载架构。 有关Experience Platform输出架构的示例，请参阅[导出的数据](#exported-data)部分。
 * 您的HTTP端点必须支持标头。
 * HTTP端点必须在2秒内响应，以确保正确的数据处理并避免超时错误。
+* 如果您计划使用mTLS：您的数据接收端点必须禁用TLS，并且仅启用mTLS。 如果您还使用OAuth 2身份验证，则必须为令牌检索维护单独的标准HTTPS端点。 有关详细信息，请参阅[mTLS注意事项](#mtls-considerations)部分。
 
 >[!TIP]
 >
@@ -68,9 +69,27 @@ HTTP端点可以是客户自己的系统，也可以是第三方解决方案。
 
 您可以使用[!DNL Mutual Transport Layer Security] ([!DNL mTLS])来确保到HTTP API目标连接的出站连接中的增强安全性。
 
-[!DNL mTLS]是一种用于相互身份验证的端到端安全方法，该方法可确保共享信息的双方在共享数据之前是各自声称的身份。 与[!DNL mTLS]相比，[!DNL TLS]还包括一个额外的步骤，其中服务器还会请求客户端的证书并在其末尾验证它。
+[!DNL mTLS]是一种相互身份验证协议，它确保共享信息的双方在共享数据之前都是他们声称的身份。 [!DNL mTLS]包含与标准[!DNL TLS]相比的附加步骤，其中服务器还请求并验证客户端的证书，而客户端验证服务器的证书。
 
-如果要将[!DNL mTLS]与[!DNL HTTP API]目标一起使用，则在[目标详细信息](#destination-details)页中放入的服务器地址必须禁用[!DNL TLS]协议，并且仅启用[!DNL mTLS]。 如果在终结点上仍然启用了[!DNL TLS] 1.2协议，则不会为客户端身份验证发送证书。 这意味着要将[!DNL mTLS]与您的[!DNL HTTP API]目标一起使用，您的“接收”服务器终结点必须是仅支持[!DNL mTLS]的连接终结点。
+### mTLS注意事项 {#mtls-considerations}
+
+HTTP API目标的mTLS支持仅将&#x200B;**应用于发送配置文件导出的数据接收终结点**（**[!UICONTROL HTTP Endpoint]**&#x200B;目标详细信息[中的](#destination-details)字段）。
+
+OAuth 2身份验证终结点不支持&#x200B;**mTLS：**
+
+* OAuth 2客户端凭据或OAuth 2密码身份验证中使用的&#x200B;**[!UICONTROL Access Token URL]**&#x200B;不支持mTLS
+* 令牌检索和刷新请求通过标准HTTPS发送，无需客户端证书身份验证
+
+**必需的架构：**&#x200B;如果您需要数据接收端点的mTLS并使用OAuth 2身份验证，则必须维护两个单独的端点：
+
+* **身份验证终结点：**&#x200B;令牌管理的标准HTTPS（不带mTLS）
+* **数据接收终结点：**&#x200B;为配置文件导出启用了仅mTLS的HTTPS
+
+此架构是当前平台的一个限制。 正在评估未来版本对身份验证端点上的mTLS的支持。
+
+### 配置用于数据导出的mTLS {#configuring-mtls}
+
+若要将[!DNL mTLS]与[!DNL HTTP API]目标一起使用，您在&#x200B;**[!UICONTROL HTTP Endpoint]**&#x200B;目标详细信息[页面中配置的](#destination-details) （数据接收终结点）必须禁用[!DNL TLS]协议，并且仅启用[!DNL mTLS]。 如果终结点上仍启用[!DNL TLS] 1.2协议，则不会为客户端身份验证发送证书。 这意味着要将[!DNL mTLS]与您的[!DNL HTTP API]目标一起使用，您的数据接收服务器终结点必须是仅启用[!DNL mTLS]的连接终结点。
 
 ### 检索和检查证书详细信息 {#certificate}
 
@@ -142,11 +161,15 @@ curl --location --request POST 'https://some-api.com/token' \
 
 #### OAuth 2密码身份验证 {#oauth-2-password-authentication}
 
-如果您选择&#x200B;**[!UICONTROL OAuth 2 Password]**&#x200B;身份验证类型以连接到HTTP终结点，请输入以下字段并选择&#x200B;**[!UICONTROL Connect to destination]**：
+如果选择&#x200B;**[!UICONTROL OAuth 2 Password]**&#x200B;身份验证类型连接到HTTP端点，请输入以下字段并选择&#x200B;**[!UICONTROL Connect to destination]**：
 
-![UI屏幕的图像，在该屏幕中，您可以结合使用OAuth 2和密码身份验证连接到HTTP API目标。](../../assets/catalog/http/http-api-authentication-oauth2-password.png)
+![UI屏幕的图像，在该屏幕中，您可以使用带有密码身份验证的OAuth 2连接到HTTP API目标。](../../assets/catalog/http/http-api-authentication-oauth2-password.png)
 
-* **[!UICONTROL Access Token URL]**：您颁发访问令牌以及（可选）刷新令牌的URL。
+>[!NOTE]
+>
+>**mTLS限制：** [!UICONTROL Access Token URL]不支持mTLS。 如果您计划将mTLS用于数据接收端点，则您的身份验证端点必须使用标准HTTPS。 有关所需体系结构的更多详细信息，请参阅[mTLS注意事项](#mtls-considerations)部分。
+
+* **[!UICONTROL Access Token URL]**：您颁发访问令牌以及（可选）刷新令牌的URL。 此端点必须使用标准HTTPS，并且不支持mTLS。
 * **[!UICONTROL Client ID]**：系统分配给Adobe Experience Platform的[!DNL client ID]。
 * **[!UICONTROL Client Secret]**：系统分配给Adobe Experience Platform的[!DNL client secret]。
 * **[!UICONTROL Username]**：用于访问HTTP端点的用户名。
@@ -162,7 +185,11 @@ curl --location --request POST 'https://some-api.com/token' \
 > 
 >使用[!UICONTROL OAuth 2 Client Credentials]身份验证时，[!UICONTROL Access Token URL]最多可以有一个查询参数。 添加具有更多查询参数的[!UICONTROL Access Token URL]可能会导致在连接到端点时出现问题。
 
-* **[!UICONTROL Access Token URL]**：您颁发访问令牌以及（可选）刷新令牌的URL。
+>[!NOTE]
+>
+>**mTLS限制：** [!UICONTROL Access Token URL]不支持mTLS。 如果您计划将mTLS用于数据接收端点，则您的身份验证端点必须使用标准HTTPS。 有关所需体系结构的更多详细信息，请参阅[mTLS注意事项](#mtls-considerations)部分。
+
+* **[!UICONTROL Access Token URL]**：您颁发访问令牌以及（可选）刷新令牌的URL。 此端点必须使用标准HTTPS，并且不支持mTLS。
 * **[!UICONTROL Client ID]**：系统分配给Adobe Experience Platform的[!DNL client ID]。
 * **[!UICONTROL Client Secret]**：系统分配给Adobe Experience Platform的[!DNL client secret]。
 * **[!UICONTROL Client Credentials Type]**：选择您的端点支持的OAuth2客户端凭据授予类型：
@@ -179,7 +206,7 @@ curl --location --request POST 'https://some-api.com/token' \
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_endpoint"
 >title="HTTP 端点"
->abstract="要将轮廓数据发送到的 HTTP 端点的 URL。"
+>abstract="要将配置文件数据发送到的HTTP端点的URL。 这是您的数据接收端点，如果配置了，则支持mTLS。 这不同于不支持mTLS的OAuth 2访问令牌URL。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_includesegmentnames"
@@ -203,22 +230,22 @@ curl --location --request POST 'https://some-api.com/token' \
 * **[!UICONTROL Name]**：输入一个名称，您以后将通过该名称识别此目标。
 * **[!UICONTROL Description]**：输入可帮助您将来识别此目标的描述。
 * **[!UICONTROL Headers]**：输入要包含在目标调用中的任何自定义标头，格式如下： `header1:value1,header2:value2,...headerN:valueN`。
-* **[!UICONTROL HTTP Endpoint]**：要将配置文件数据发送到的HTTP终结点的URL。
+* **[!UICONTROL HTTP Endpoint]**：要将配置文件数据发送到的HTTP终结点的URL。 这是您的数据接收端点。 如果使用mTLS，则此端点必须禁用TLS，并且仅启用mTLS。 请注意，这与在身份验证期间配置的OAuth 2访问令牌URL不同。
 * **[!UICONTROL Query parameters]**：您可以选择将查询参数添加到HTTP终结点URL。 格式化您使用的查询参数，如下所示：`parameter1=value&parameter2=value`。
 * **[!UICONTROL Include Segment Names]**：如果希望数据导出包含正在导出的受众的名称，请切换。 **注意**：区段名称仅包括映射到目标的区段。 导出中显示的未映射区段不包括`name`字段。 有关选择此选项的数据导出示例，请参阅下面的[导出的数据](#exported-data)部分。
 * **[!UICONTROL Include Segment Timestamps]**：如果希望数据导出包括创建和更新受众时的UNIX时间戳，以及映射受众到目标以供激活时的UNIX时间戳，请进行切换。 有关选择此选项的数据导出示例，请参阅下面的[导出的数据](#exported-data)部分。
 
 ### 启用警报 {#enable-alerts}
 
-您可以启用警报，以接收有关到达目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报](../../ui/alerts.md)指南。
+您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，请选择&#x200B;**[!UICONTROL Next]**。
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
->* 要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 当前在导出到HTTP API目标时不支持[同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。 [了解详情](/help/destinations/ui/activate-streaming-profile-destinations.md#consent-policy-evaluation)。
 
 有关将受众激活到此目标的说明，请参阅[将受众数据激活到流式配置文件导出目标](../../ui/activate-streaming-profile-destinations.md)。
@@ -233,7 +260,7 @@ Experience Platform会优化将配置文件导出到HTTP API目标的行为，�
 
 * 配置文件更新取决于映射到目标的至少一个受众的受众成员身份发生更改。 例如，配置文件已符合映射到目标的其中一个受众的条件，或已退出映射到目标的其中一个受众。
 * 配置文件更新由[标识映射](/help/xdm/field-groups/profile/identitymap.md)中的更改决定。 例如，对于已经符合映射到目标的其中一个受众资格的用户档案，在身份映射属性中添加了一个新身份。
-* 配置文件更新由映射到目标的至少一个属性的属性变化决定。 例如，将映射步骤中映射到目标的某个属性添加到配置文件。
+* 配置文件更新由映射到目标的至少一个属性的更改确定。 例如，将映射步骤中映射到目标的某个属性添加到配置文件中。
 
 在上述所有情况中，只会将已发生相关更新的用户档案导出到您的目标。 例如，如果映射到目标流的受众具有一百个成员，并且有五个新配置文件符合该区段的条件，则导出到目标的操作将以增量方式进行，并且只包括五个新配置文件。
 
@@ -249,7 +276,7 @@ Experience Platform会优化将配置文件导出到HTTP API目标的行为，�
 
 {style="table-layout:fixed"}
 
-例如，将此数据流考虑为HTTP目标，其中在数据流中选择了三个访问群体，并将四个属性映射到该目标。
+例如，考虑将此数据流映射到HTTP目标，其中在数据流中选择了三个受众，并且四个属性映射到目标。
 
 ![HTTP API目标数据流示例。](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
 
