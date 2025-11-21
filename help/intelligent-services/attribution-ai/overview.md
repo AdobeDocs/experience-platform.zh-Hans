@@ -29,7 +29,7 @@ Attribution AI作为Intelligent Services的一部分，是一种多渠道算法�
 
 以下视频旨在支持您了解归因人工智能。
 
->[!VIDEO](https://video.tv.adobe.com/v/32667?learn=on&quality=12)
+>[!VIDEO](https://video.tv.adobe.com/v/36584?captions=chi_hans&learn=on&quality=12)
 
 ## 业务用例示例
 
