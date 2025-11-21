@@ -5,9 +5,9 @@ title: 使用流服务API更新目标数据流
 type: Tutorial
 description: 本教程介绍了更新目标数据流的步骤。 了解如何使用流服务API启用或禁用数据流、更新其基本信息或添加和删除受众和属性。
 exl-id: 3f69ad12-940a-4aa1-a1ae-5ceea997a9ba
-source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
+source-git-commit: 7f8fbbec8927dffb3c8456b2a1d908d27d4b03c2
 workflow-type: tm+mt
-source-wordcount: '2410'
+source-wordcount: '2471'
 ht-degree: 3%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 3%
 
 本教程还要求您实际了解Adobe Experience Platform的以下组件：
 
-* [目标](../home.md)： [!DNL Destinations]是预先构建的与目标平台的集成，可无缝激活Adobe Experience Platform中的数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
+* [目标](../home.md)： [!DNL Destinations]是预先构建的与目标平台的集成，可无缝激活Adobe Experience Platform中的数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例。
 * [沙盒](../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了您需要了解的其他信息，以便使用[!DNL Flow Service] API成功更新数据流。
@@ -749,6 +749,14 @@ curl -X PATCH \
 ## 向数据流添加配置文件属性 {#add-profile-attribute}
 
 要向目标数据流添加配置文件属性，请在提供流ID、版本和要添加的配置文件属性的同时，对[!DNL Flow Service] API执行PATCH请求。
+
+>[!IMPORTANT]
+>
+>**目标特定的映射要求**
+>
+>本节中介绍的`profileSelectors`方法适用于大多数流目标。 但是，某些流目标(包括&#x200B;**Adobe Target**)需要改为使用数据准备映射集工作流。
+>
+>**如果成功API响应(202)**&#x200B;后，您的配置文件属性未显示在Experience Platform UI中，则必须使用[将受众激活到批处理目标](../api/activate-segments-file-based-destinations.md#attribute-and-identity-mapping)中记录的映射集方法。
 
 **API格式**
 
