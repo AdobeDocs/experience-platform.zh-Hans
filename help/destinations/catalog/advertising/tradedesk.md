@@ -3,9 +3,9 @@ keywords: 广告；交易台；广告交易台
 title: 交易台连接
 description: Trade Desk是一个自助服务平台，供广告购买者跨显示器、视频和移动库存源执行重定位和面向受众的数字活动。
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: 940128bf73f856d8459bee23905213651b44916e
+source-git-commit: 4472548fc5b5181cdf8ef8b1666d6e1fafbce588
 workflow-type: tm+mt
-source-wordcount: '1093'
+source-wordcount: '1084'
 ht-degree: 2%
 
 ---
@@ -50,10 +50,10 @@ ht-degree: 2%
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| GAID | GOOGLE ADVERTISING ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |
-| IDFA | 广告商的Apple ID | 当源身份是IDFA命名空间时，选择IDFA目标身份。 |
-| ECID | Experience Cloud ID | 此身份是集成正常工作的必备条件，但不会用于受众激活。 |
-| 交易台ID | [!DNL The Trade Desk]平台中的广告商ID | 在根据交易台的专有ID激活受众时，请使用此标识。 |
+| [!DNL GAID] | GOOGLE ADVERTISING ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |
+| [!DNL IDFA] | 广告商的Apple ID | 当源身份是IDFA命名空间时，选择IDFA目标身份。 |
+| [!DNL ECID] | Experience Cloud ID | 此身份是集成正常工作的必备条件，但不会用于受众激活。 |
+| [!DNL Tradedesk] | [!DNL TDID]平台中的[!DNL The Trade Desk] | 在根据交易台的专有ID激活受众时，请使用此标识。 |
 
 {style="table-layout:auto"}
 
@@ -83,7 +83,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->如果您希望使用[!DNL The Trade Desk]创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/zh-hans/docs/id-service/using/id-service-api/methods/idsync)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL The Trade Desk]集成，则您设置的ID同步将会转移到Experience Platform。
+>如果您希望使用[!DNL The Trade Desk]创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/en/docs/id-service/using/id-service-api/methods/idsync)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL The Trade Desk]集成，则您设置的ID同步将会转移到Experience Platform。
 
 ## 连接到目标 {#connect}
 
