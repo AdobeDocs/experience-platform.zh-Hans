@@ -3,10 +3,10 @@ title: 将数据集导出到云存储目标
 type: Tutorial
 description: 了解如何将数据集从Adobe Experience Platform导出到您首选的云存储位置。
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 69a1ae08fefebb7fed54564ed06f42af523d2903
+source-git-commit: de161bcb29a0d4fc9b0c419506537b18255c79a4
 workflow-type: tm+mt
-source-wordcount: '2656'
-ht-degree: 8%
+source-wordcount: '3005'
+ht-degree: 7%
 
 ---
 
@@ -50,16 +50,16 @@ ht-degree: 8%
   </tr>
   <tr>
     <td>Ultimate</td>
-    <td><ul><li>通过源、Web SDK、Mobile SDK、Analytics Data Connector和Audience Manager摄取或收集数据后，在Experience Platform UI中创建的配置文件和体验事件数据集。</li><li> <a href="https://experienceleague.adobe.com/docs/experience-platform/dashboards/query.html?lang=zh-Hans#profile-attribute-datasets">系统生成的配置文件快照数据集</a>。</li></td>
+    <td><ul><li>通过源、Web SDK、Mobile SDK、Analytics Data Connector和Audience Manager摄取或收集数据后，在Experience Platform UI中创建的配置文件和体验事件数据集。</li><li> <a href="https://experienceleague.adobe.com/docs/experience-platform/dashboards/query.html#profile-attribute-datasets">系统生成的配置文件快照数据集</a>。</li></td>
   </tr>
   <tr>
     <td rowspan="2">Adobe Journey Optimizer</td>
     <td>Prime</td>
-    <td>请参阅<a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html?lang=zh-Hans#datasets"> Adobe Journey Optimizer</a>文档。</td>
+    <td>请参阅<a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html#datasets"> Adobe Journey Optimizer</a>文档。</td>
   </tr>
   <tr>
     <td>Ultimate</td>
-    <td>请参阅<a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html?lang=zh-Hans#datasets"> Adobe Journey Optimizer</a>文档。</td>
+    <td>请参阅<a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html#datasets"> Adobe Journey Optimizer</a>文档。</td>
   </tr>
   <tr>
     <td>Customer Journey Analytics</td>
@@ -78,7 +78,7 @@ ht-degree: 8%
 
 观看以下视频，了解此页面上描述的工作流的端到端说明、使用导出数据集功能的好处以及一些建议的用例。
 
->[!VIDEO](https://video.tv.adobe.com/v/3448828?captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/3424392/)
 
 ## 支持的目标 {#supported-destinations}
 
@@ -143,6 +143,10 @@ Experience Platform目录中的一些基于文件的目标同时支持Audience A
 
 ![数据集导出工作流显示“选择数据集”步骤，您可以在其中选择要导出哪些数据集。](/help/destinations/assets/ui/export-datasets/select-datasets.png)
 
+>[!NOTE]
+>
+>此处选择的所有数据集都将共享相同的导出计划。 如果您需要不同的导出计划（例如，某些数据集的增量导出以及其他数据集的一次性完全导出），请为每个计划类型创建单独的数据流。
+
 ## 计划数据集导出 {#scheduling}
 
 >[!CONTEXTUALHELP]
@@ -160,6 +164,16 @@ Experience Platform目录中的一些基于文件的目标同时支持Audience A
 >title="更新此数据流主体的结束日期"
 >abstract="由于此目标最近进行了更新，数据流现在需要结束日期。Adobe 将默认结束日期设置为 2025 年 9 月 1 日。请更新为您希望的结束日期，否则数据导出将在默认日期停止。"
 
+>[!IMPORTANT]
+>
+>**计划适用于数据流中的所有数据集**
+>
+>当您配置或修改导出计划时，它将应用于当前通过您配置的数据流导出的&#x200B;**所有数据集**。 不能为同一数据流中的各个数据集设置不同的计划。
+>
+>如果不同数据集需要不同的导出计划，则必须为每个计划类型创建单独的数据流（单独的目标连接）。
+>
+>**示例：**&#x200B;如果您增量导出数据集A，并且使用一次性完整导出计划添加数据集B，则数据集A也将更新为一次性完整导出计划。
+
 使用&#x200B;**[!UICONTROL Scheduling]**&#x200B;步骤可以：
 
 * 设置数据集导出的开始日期和结束日期以及导出节奏。
@@ -167,6 +181,10 @@ Experience Platform目录中的一些基于文件的目标同时支持Audience A
 * 自定义存储位置中应导出数据集的文件夹路径。 阅读有关如何[编辑导出文件夹路径](#edit-folder-path)的详细信息。
 
 使用页面上的&#x200B;**[!UICONTROL Edit schedule]**&#x200B;控件编辑导出的导出节奏，并选择是导出完整文件还是增量文件。
+
+>[!WARNING]
+>
+>在此处修改计划将更新此数据流中所有数据集的导出行为。 如果此数据流包含多个数据集，则所有数据集都将受此更改的影响。
 
 ![编辑计划步骤中突出显示的计划控件。](/help/destinations/assets/ui/export-datasets/edit-schedule-control-highlight.png)
 
@@ -213,9 +231,18 @@ Experience Platform目录中的一些基于文件的目标同时支持Audience A
 
 ![自定义文件夹模式窗口中高亮显示的宏选择。](/help/destinations/assets/ui/export-datasets/custom-folder-path-macros.png)
 
-选择所需的宏后，您可以看到将在存储位置创建的文件夹结构的预览。 文件夹结构中的第一个级别表示您在&#x200B;**[!UICONTROL Folder path]**&#x200B;连接到目标[以导出数据集时指示的](/help/destinations/ui/connect-destination.md##set-up-connection-parameters)。
+选择所需的宏后，您可以看到将在存储位置创建的文件夹结构的预览。 文件夹结构中的第一个级别表示您在&#x200B;**[!UICONTROL Folder path]**&#x200B;连接到目标[以导出数据集时指示的](/help/destinations/ui/connect-destination.md#set-up-connection-parameters)。
 
 ![自定义文件夹模式窗口中高亮显示的文件夹路径预览。](/help/destinations/assets/ui/export-datasets/custom-folder-path-preview.png)
+
+### 管理多个数据集的最佳实践 {#best-practices-multiple-datasets}
+
+导出多个数据集时，请考虑以下最佳实践：
+
+* **相同的计划要求**：将需要相同导出计划（频率、类型）的数据集分组到单个数据流中，以便于管理。
+* **不同的计划要求**：为需要不同导出计划或导出类型（增量与完全）的数据集创建单独的数据流。 这可确保每个数据集都根据其特定需求进行导出。
+* **修改前复查**：在更改现有数据流上的计划之前，复查已通过该数据流导出哪些数据集，以避免对其导出行为无意中更改。
+* **记录您的设置**：跟踪哪些数据集包含数据流，尤其是在跨不同目标管理多个导出计划时。
 
 ## 审查 {#review}
 
@@ -280,7 +307,7 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
 ## 数据集导出授权 {#licensing-entitlement}
 
-请参阅产品描述文档，了解您每年有权为每个Experience Platform应用程序导出多少数据。 例如，您可以在[此处](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)查看Real-Time CDP产品说明。
+请参阅产品描述文档，了解您每年有权为每个Experience Platform应用程序导出多少数据。 例如，您可以在[此处](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)查看Real-Time CDP产品说明。
 
 请注意，不同应用程序的数据导出权限不是累加的。 例如，这意味着如果您购买Real-Time CDP Ultimate和Adobe Journey Optimizer Ultimate，则根据产品描述，配置文件导出权利将是两个权利中的较大者。 您的卷权利的计算方法是：取用您的许可配置文件的总数，然后乘以Real-Time CDP Prime的500 KB或Real-Time CDP Ultimate的700 KB，从而确定您有权获得的数据量。
 
@@ -352,4 +379,10 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
 +++回答
 对于大多数类型的系统错误，会自动进行重试。
++++
+
+**我可以为同一数据流中的不同数据集设置不同的导出计划吗？**
+
++++回答
+不会，单个数据流中的所有数据集共享相同的导出计划。 如果不同数据集需要不同的导出计划，则必须为每个计划类型创建单独的数据流（目标连接）。 例如，如果您希望数据集A每天增量导出，而数据集B导出为一次性完全导出，则需要创建两个单独的数据流。
 +++
