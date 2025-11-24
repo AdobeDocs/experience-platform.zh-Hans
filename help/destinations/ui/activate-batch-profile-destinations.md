@@ -3,9 +3,9 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: ba41de0085b578ddb43fb61210a23dbbcc84a2f1
 workflow-type: tm+mt
-source-wordcount: '4506'
+source-wordcount: '4555'
 ht-degree: 12%
 
 ---
@@ -96,11 +96,11 @@ ht-degree: 12%
 
 [!DNL Adobe Experience Platform]将电子邮件营销和云存储目标的数据导出为[不同的文件类型](#supported-file-formats-export)。 在&#x200B;**[!UICONTROL Scheduling]**&#x200B;页面中，您可以为要导出的每个受众配置计划和文件名。
 
-Experience Platform会自动为每次文件导出设置默认计划。 您可以根据需要修改默认计划，方法是选择每个计划旁边的铅笔图标，然后定义自定义计划。
+Experience Platform会自动为每次文件导出设置默认计划。 您可以根据需要修改默认计划，方法是选择每个计划旁边的铅笔图标，并定义自定义计划。
 
-![编辑计划控制已在计划步骤中突出显示。](../assets/ui/activate-batch-profile-destinations/edit-default-schedule.png)
+![编辑计划步骤中突出显示的计划控件。](../assets/ui/activate-batch-profile-destinations/edit-default-schedule.png)
 
-要同时编辑多个计划，请使用屏幕左侧的复选框选择访问群体，然后选择&#x200B;**[!UICONTROL Edit schedule]**。 然后，您配置的计划会应用于所选访问群体的所有导出文件。
+要同时编辑多个计划，请使用屏幕左侧的复选框选择受众，然后选择&#x200B;**[!UICONTROL Edit schedule]**。 然后，您配置的计划将被应用于选定受众的所有导出文件。
 
 ![显示多个选定受众的“编辑计划”选项的Experience Platform用户界面的图像。](../assets/ui/activate-batch-profile-destinations/edit-schedule.png)
 
@@ -120,7 +120,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >id="platform_destinations_activate_exportoptions"
 >title="文件导出选项"
 >abstract="选择&#x200B;**导出全部文件**&#x200B;以导出符合受众资格的所有轮廓的完整快照。选择&#x200B;**导出增量文件**&#x200B;以仅导出自上次导出后符合受众资格的轮廓。<br>第一个增量文件导出包括符合受众资格的所有轮廓，充当回填。后续增量文件仅包含自第一个增量文件导出后符合受众资格的轮廓。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=zh-Hans#export-incremental-files" text="导出增量文件"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#export-incremental-files" text="导出增量文件"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_aftersegmentevaluation"
@@ -166,13 +166,13 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
    <!-- Batch segmentation currently runs at {{insert time of day}} and lasts for an average {{x hours}}. Adobe reserves the right to modify this schedule. -->
 
    ![在批处理目标的激活流程中，突出显示区段后评估选项。](../assets/ui/activate-batch-profile-destinations/after-segment-evaluation-option.png)
-使用&#x200B;**[!UICONTROL Scheduled]**&#x200B;选项可让激活作业在固定时间运行。 此选项可确保每天在同一时间导出Experience Platform配置文件数据。 但是，您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。
+使用**[!UICONTROL Scheduled]**&#x200B;选项可让激活作业在固定时间运行。 此选项可确保每天在同一时间导出Experience Platform配置文件数据。 但是，您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。
 
    ![突出显示批处理目标激活流中的“已计划”选项并显示时间选择器的图像。](../assets/ui/activate-batch-profile-destinations/scheduled-option.png)
 
-   >[!IMPORTANT]
-   >
-   >在映射过去24小时内创建并通过[批量分段](../../segmentation/methods/batch-segmentation.md)评估的受众时，请将每日导出计划设置为至少从第二天开始。 这样可确保首先运行每日批次评估作业，并且您正在导出完整的受众数据。
+   在映射过去24小时内创建并通过[批量分段](../../segmentation/methods/batch-segmentation.md)评估的受众时，请将每日导出计划设置为至少从第二天开始。 这样可确保首先运行每日批次评估作业，并且您正在导出完整的受众数据。
+
+   配置导出计划时，请在完成激活流程后至少将开始时间设置为&#x200B;**1小时**。 在整个系统中传播受众激活可能耗时1小时。 如果您计划导出在激活后1小时内运行，则可能会错过计划的导出。
 
 3. 使用&#x200B;**[!UICONTROL Date]**&#x200B;选择器选择应该执行导出的日期或时间间隔。 对于每日导出，最佳实践是将开始和结束日期设置为与下游平台中的促销活动持续时间一致。
 
@@ -205,11 +205,11 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
 2. 使用&#x200B;**[!UICONTROL Time]**&#x200B;选择器以[!DNL UTC]格式选择何时进行导出。
 
-3. 使用&#x200B;**[!UICONTROL Date]**&#x200B;选择器选择执行导出的时间间隔。 最佳做法是设置您的开始日期和结束日期，以与您的下游平台中的活动持续时间一致。
+3. 使用&#x200B;**[!UICONTROL Date]**&#x200B;选择器选择应进行导出的时间间隔。 最佳实践是将您的开始和结束日期设置为与下游平台中的促销活动持续时间一致。
 
    >[!IMPORTANT]
    >
-   >导出中不包括间隔的最后一天。 例如，如果选择1月4日至11日的时间间隔，则最后一次文件导出将于1月10日进行。
+   >间隔的最后一天不包含在导出中。 例如，如果选择1月4日至11日之间的时间间隔，则最后一次文件导出将在1月10日进行。
 
 4. 选择&#x200B;**[!UICONTROL Create]**&#x200B;以保存计划。
 
@@ -222,7 +222,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
 对于大多数目标，默认文件名由目标名称、受众ID以及日期和时间指示器组成。 例如，您可以编辑导出的文件名，以区分不同的促销活动，或者将数据导出时间附加到文件。 请注意，某些目标开发人员可能选择为其目标显示不同的默认文件名附加选项。
 
-要打开模式窗口并编辑文件名，请选择“铅笔”图标。 文件名不能超过255个字符。
+要打开模式窗口并编辑文件名，请选择铅笔图标。 文件名限制为255个字符。
 
 >[!NOTE]
 >
@@ -320,9 +320,9 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >title="关于强制属性"
 >abstract="选择所有导出的轮廓应包含的 XDM 架构属性。不会将没有强制密钥的轮廓导出到目标。不选择强制密钥会导出所有合格的轮廓，而不管其属性如何。"
 
-强制属性是一个由用户启用的复选框，它确保所有配置文件记录都包含选定的属性。 例如：所有导出的配置文件都包含一个电子邮件地址。&#x200B;
+必填属性是启用用户的复选框，可确保所有配置文件记录都包含所选属性。 例如：所有导出的用户档案都包含电子邮件地址&#x200B;。
 
-您可以将属性标记为必需，以确保[!DNL Experience Platform]仅导出包含特定属性的配置文件。 因此，它可以用作附加形式的过滤。 将属性标记为必需是&#x200B;**非**&#x200B;必需的。
+您可以将属性标记为必需，以确保[!DNL Experience Platform]仅导出包含特定属性的配置文件。 因此，它可以用作附加的筛选形式。 将属性标记为必需是&#x200B;**非**&#x200B;必需的。
 
 不选择强制属性会导出所有符合条件的配置文件，而不管其属性如何。
 
@@ -453,11 +453,11 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 | johndoe@example.com | John | D |
 
 
-### 重复数据消除使用情形4：基于两个配置文件属性的重复数据消除 {#deduplication-use-case-4}
+### 重复数据删除使用案例4：基于两个配置文件属性的重复数据删除 {#deduplication-use-case-4}
 
-假设使用复合键`personalEmail + lastName`进行重复数据删除，则导出文件将包含以下条目。
+假定按复合键`personalEmail + lastName`删除重复项，则导出文件将包含以下条目。
 
-| 个人电子邮件* | lastName* | firstName |
+| 个人电子邮件* | 姓氏* | firstName |
 |---|---|---|
 | johndoe@example.com | D | John |
 | johndoe@example.com | Doe | John |
@@ -466,7 +466,7 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 
 ### 具有相同时间戳的用户档案的重复数据删除行为 {#deduplication-same-timestamp}
 
-将轮廓导出到基于文件的目标时，重复数据删除可确保当多个轮廓共享相同的重复数据删除键和相同的参考时间戳时仅导出一个轮廓。此时间戳表示个人资料的受众成员资格或身份图的上次更新时间。 有关如何更新和导出配置文件的更多信息，请参阅[配置文件导出行为](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2)文档。
+将轮廓导出到基于文件的目标时，重复数据删除可确保当多个轮廓共享相同的重复数据删除键和相同的参考时间戳时仅导出一个轮廓。此时间戳表示个人资料的受众成员资格或身份图的上次更新时间。 有关如何更新和导出配置文件的更多信息，请参阅[配置文件导出行为](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2)文档。
 
 #### 关键注意事项
 
@@ -528,14 +528,14 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 
 #### 当前无法选择要导出的身份命名空间
 
-当前不支持选择导出身份命名空间（如下图所示）。 选择要导出的任何标识命名空间将在&#x200B;**[!UICONTROL Review]**&#x200B;步骤中导致错误。
+当前不支持选择导出身份命名空间（如下图所示）。 选择要导出的任何身份命名空间将导致&#x200B;**[!UICONTROL Review]**&#x200B;步骤中出现错误。
 
-![显示标识导出的映射不受支持。](../assets/ui/activate-batch-profile-destinations/unsupported-identity-mapping.png)
+![显示身份导出的映射不受支持。](../assets/ui/activate-batch-profile-destinations/unsupported-identity-mapping.png)
 
-作为临时解决方法，如果您在Beta版期间需要向导出的文件添加身份命名空间，可以执行以下操作：
+作为临时解决方法，如果您需要在测试版期间将身份命名空间添加到导出的文件，您可以：
 
-* 对于要在导出中包含标识命名空间的数据流，使用旧版云存储目标
-* 将身份作为属性上传到Experience Platform，然后将其导出到云存储目标。
+* 对于要在导出中包含身份命名空间的数据流，请使用旧版云存储目标
+* 将身份作为属性上传到Experience Platform，然后将其导出到您的云存储目标。
 
 ## 选择配置文件属性 {#select-attributes}
 
