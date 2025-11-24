@@ -1,14 +1,14 @@
 ---
 title: Demandbase连接
-description: 使用此目标来激活 Account-Based Marketing (ABM) 用例的帐户受众。通过 DemandBase 的 B2B Demand Side Platform（DSP）向目标帐户中的相关人物和角色投放广告。目标帐户还可以通过 Demandbase 第三方数据进行丰富，以用于营销和销售中的其他下游用例。
-badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions newtab=true"
-badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions newtab=true"
+description: 使用此目标来激活 Account-Based Marketing (ABM) 用例的帐户受众。通过 DemandBase 的 B2B Demand Side Platform（DSP）向目标帐户中的相关用户画像和角色投放广告。目标帐户还可以通过 Demandbase 第三方数据进行丰富，以用于营销和销售中的其他下游用例。
+badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 last-substantial-update: 2024-09-30T00:00:00Z
 exl-id: a84609a2-f1d3-4998-9db4-ad59c0a0b631
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: cc05ca282cdfd012366e3deccddcae92a29fef1c
 workflow-type: tm+mt
-source-wordcount: '737'
-ht-degree: 17%
+source-wordcount: '785'
+ht-degree: 16%
 
 ---
 
@@ -22,7 +22,7 @@ ht-degree: 17%
 
 ## 用例 {#use-case}
 
-使用此目标来激活 Account-Based Marketing (ABM) 用例的帐户受众。通过 DemandBase 的 B2B Demand Side Platform（DSP）向目标帐户中的相关人物和角色投放广告。目标帐户还可以通过 Demandbase 第三方数据进行丰富，以用于营销和销售中的其他下游用例。
+使用此目标来激活 Account-Based Marketing (ABM) 用例的帐户受众。通过 DemandBase 的 B2B Demand Side Platform（DSP）向目标帐户中的相关用户画像和角色投放广告。目标帐户还可以通过 Demandbase 第三方数据进行丰富，以用于营销和销售中的其他下游用例。
 
 例如，利用Demandbase的广告技术DSP来定位关键客户中的特定角色或角色，以创造funnel顶级商机，或创建并扩大购买群体。 使用Demandbase目标来探索其他用例，以有效定位您的帐户。
 
@@ -110,5 +110,7 @@ ht-degree: 17%
 
 ## 其他注释和重要标注 {#additional-notes}
 
-* 如果之前已将具有相同名称的帐户受众激活到Demandbase，则无法再通过其他数据流将其激活到Demandbase目标。
-* 如果您已将受众导出到Demandbase，并且在Experience Platform中成功导出，但并非所有数据都会到达Demandbase，则您可能会在Demandbase端遇到API限制。 请联系他们以获取说明。
+* **受众命名**：如果之前已将具有相同名称的帐户受众激活到Demandbase，则无法通过其他数据流将其再次激活到Demandbase目标。
+* **Demandbase API护栏**：如果您已将受众导出到Demandbase，并且在Experience Platform中成功导出，但并非所有数据都到达Demandbase，则您可能会在Demandbase端遇到API限制。 请联系他们以获取说明。
+* **列表删除**：帐户列表是唯一的，因此不能使用名称重新创建新列表。 当您从列表中删除帐户时，这些帐户将不再可用，但不会删除。
+* **激活时间**：在Demandbase中加载的数据需要过夜处理。

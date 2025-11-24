@@ -2,9 +2,9 @@
 title: Demandbase人员连接
 description: 使用此目标可激活您的受众，并使用Demandbase第三方数据扩充这些受众，以用于营销和销售中的其他下游用例。
 exl-id: 748f5518-7cc1-4d65-ab70-4a129d9e2066
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: cc05ca282cdfd012366e3deccddcae92a29fef1c
 workflow-type: tm+mt
-source-wordcount: '797'
+source-wordcount: '891'
 ht-degree: 4%
 
 ---
@@ -106,10 +106,25 @@ ht-degree: 4%
 
 | 源字段 | 目标字段 | 描述 |
 |--------------|--------------|-------------|
+| `xdm: workEmail.address` | `Identity: email` | 人员的工作电子邮件地址 |
+
+### 推荐的映射 {#recommended-mappings}
+
+为获得最佳匹配准确性，除了上述[强制映射](#mandatory-mappings)之外，还应在激活流中包含以下可选映射。
+
+| 源字段 | 目标字段 | 描述 |
+|--------------|--------------|-------------|
 | `xdm: b2b.personKey.sourceKey` | `xdm: externalPersonId` | 人员的唯一标识符 |
 | `xdm: person.name.lastName` | `xdm: lastName` | 人员的姓氏 |
 | `xdm: person.name.firstName` | `xdm: firstName` | 人员的名字 |
-| `xdm: workEmail.address` | `Identity: email` | 人员的工作电子邮件地址 |
+
+### 映射最佳实践 {#mapping-best-practices}
+
+将字段映射到[!DNL Demandbase People]时，请考虑以下匹配行为：
+
+* **主要匹配**：如果存在`externalPersonId`，则Demandbase会将其用作人员匹配的主要标识符。
+* **回退匹配**：如果`externalPersonId`不可用，则Demandbase使用`email`字段进行标识。
+* **必需与推荐**：虽然Demandbase仅需要`email`，但Adobe建议映射上述推荐映射表中的所有可用字段，以提高匹配准确性和营销活动性能。
 
 ![Demandbase人员映射](/help/destinations/assets/catalog/advertising/demandbase-people/demandbase-people-mapping.png)
 
@@ -120,4 +135,4 @@ ht-degree: 4%
 * **Demandbase API护栏**：如果您已将受众导出到Demandbase，并且在Experience Platform中成功导出，但并非所有数据都到达Demandbase，则您可能会在Demandbase端遇到API限制。 请联系他们以获取说明。
 * **列表删除**：人员列表是唯一的，因此不能使用名称重新创建新列表。 从列表中删除人员后，这些人员将不再可用，但不会被删除。
 * **激活时间**：在Demandbase中加载的数据需要过夜处理。
-* **受众命名**：如果之前已将具有相同名称的帐户受众激活到Demandbase，则无法通过其他数据流将其再次激活到Demandbase目标。
+* **受众命名**：如果之前已将具有相同名称的用户受众激活到Demandbase，则无法通过其他数据流将其再次激活到Demandbase目标。
