@@ -1,8 +1,8 @@
 ---
 title: Demandbase连接
 description: 使用此目标来激活 Account-Based Marketing (ABM) 用例的帐户受众。通过 DemandBase 的 B2B Demand Side Platform（DSP）向目标帐户中的相关用户画像和角色投放广告。目标帐户还可以通过 Demandbase 第三方数据进行丰富，以用于营销和销售中的其他下游用例。
-badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
-badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions newtab=true"
+badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions newtab=true"
 last-substantial-update: 2024-09-30T00:00:00Z
 exl-id: a84609a2-f1d3-4998-9db4-ad59c0a0b631
 source-git-commit: cc05ca282cdfd012366e3deccddcae92a29fef1c
