@@ -3,9 +3,9 @@ title: 记录删除工作单
 description: 了解如何使用数据卫生API中的/workorder端点在Adobe Experience Platform中管理记录删除工作单。 本指南涵盖配额、处理时间表和API使用情况。
 role: Developer
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
-source-git-commit: 4f4b668c2b29228499dc28b2c6c54656e98aaeab
+source-git-commit: f1f37439bd4d77faf1015741e604eee7188c58d7
 workflow-type: tm+mt
-source-wordcount: '2104'
+source-wordcount: '2440'
 ht-degree: 1%
 
 ---
@@ -300,6 +300,110 @@ curl -X POST \
 >[!NOTE]
 >
 >记录删除工作单的操作属性当前在API响应中为`identity-delete`。 如果API更改为使用其他值（如`delete_identity`），则将相应地更新此文档。
+
+## 将ID列表转换为JSON以用于记录删除请求
+
+若要从包含标识符的CSV、TSV或TXT文件创建记录删除工作单，您可以使用转换脚本为`/workorder`端点生成所需的JSON负载。 此方法在处理现有数据文件时特别有用。 有关现成的脚本和全面说明，请访问[csv到数据卫生GitHub存储库](https://github.com/perlmonger42/csv-to-data-hygiene)。
+
+### 生成JSON负载
+
+以下bash脚本示例演示了如何在Python或Ruby中运行转换脚本：
+
+>[!BEGINTABS]
+
+>[!TAB 运行Python脚本的示例]
+
+```bash
+#!/usr/bin/env bash
+
+rm -rf ./output && mkdir output
+for NAME in UTF8 CSV TSV TXT XYZ big; do
+  ./csv-to-DI-payload.py sample/sample-$NAME.* \
+      --verbose \
+      --column 2 \
+      --namespace email \
+      --dataset-id 66f4161cc19b0f2aef3edf10 \
+      --description 'a simple sample' \
+      --output-dir output
+  echo Checking output/sample-$NAME-*.json against expect/sample-$NAME-*.json
+  diff <(cat output/sample-$NAME-*.json) <(cat expect/sample-$NAME-*.json) || echo Unexpected output in sample-$NAME-*.*
+done
+```
+
+>[!TAB 运行Ruby脚本的示例]
+
+```bash
+#!/usr/bin/env bash
+
+rm -rf ./output && mkdir output
+for NAME in UTF8 CSV TSV TXT XYZ big; do
+  ./csv-to-DI-payload.rb sample/sample-$NAME.* \
+      --verbose \
+      --column 2 \
+      --namespace email \
+      --dataset-id 66f4161cc19b0f2aef3edf10 \
+      --description 'a simple sample' \
+      --output-dir output
+  echo Checking output/sample-$NAME-*.json against expect/sample-$NAME-*.json
+  diff <(cat output/sample-$NAME-*.json) <(cat expect/sample-$NAME-*.json) || echo Unexpected output in sample-$NAME-*.*
+done
+```
+
+>[!ENDTABS]
+
+下表介绍了bash脚本中的参数。
+
+| 参数 | 描述 |
+| ---           | ---     |
+| `verbose` | 启用详细输出。 |
+| `column` | 包含要删除的标识值的列的索引（从1开始）或标头名称。 如果未指定，则默认为第一列。 |
+| `namespace` | 具有指定身份命名空间的`code`属性的对象（例如，“电子邮件”）。 |
+| `dataset-id` | 与工作单关联的数据集的唯一标识符。 如果该请求适用于所有数据集，则此字段将设置为`ALL`。 |
+| `description` | 记录删除工作单的描述。 |
+| `output-dir` | 用于写入输出JSON有效负载的目录。 |
+
+{style="table-layout:auto"}
+
+以下示例展示了从CSV、TSV或TXT文件转换而来的成功JSON有效负载。 它包含与指定命名空间关联的记录，用于删除由电子邮件地址标识的记录。
+
+```json
+{
+  "action": "delete_identity",
+  "datasetId": "66f4161cc19b0f2aef3edf10",
+  "displayName": "output/sample-big-001.json",
+  "description": "a simple sample",
+  "identities": [
+    {
+      "namespace": {
+        "code": "email"
+      },
+      "id": "1"
+    },
+    {
+      "namespace": {
+        "code": "email"
+      },
+      "id": "2"
+    }
+  ]
+}
+```
+
+下表介绍了JSON有效负载中的属性。
+
+| 属性 | 描述 |
+| ---          | ---     |
+| `action` | 为记录删除工作单请求的操作。 转换脚本自动设置为`delete_identity`。 |
+| `datasetId` | 数据集的唯一标识符。 |
+| `displayName` | 此记录删除工作单的人工可读标签。 |
+| `description` | 记录删除工作单的描述。 |
+| `identities` | 一个对象数组，每个对象包含：<br><ul><li> `namespace`：具有`code`属性的对象，该属性指定身份命名空间（例如，“email”）。</li><li> `id`：要删除此命名空间的身份值。</li></ul> |
+
+{style="table-layout:auto"}
+
+### 将生成的JSON数据提交到`/workorder`端点
+
+要提交请求，请按照[创建记录删除工作单](#create)部分中的说明操作。 在将`-d` POST请求发送到`curl` API端点时，请确保使用转换的JSON有效负载作为请求正文(`/workorder`)。
 
 ## 检索特定记录删除工作单的详细信息 {#lookup}
 
