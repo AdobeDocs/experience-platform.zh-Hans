@@ -4,9 +4,9 @@ title: 使用流服务API将受众激活到基于文件的目标
 description: 了解如何使用流服务API将包含合格配置文件的文件导出到云存储目标。
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 290c20d3deb70372fb2fc691c6e6d04d34a72853
 workflow-type: tm+mt
-source-wordcount: '4975'
+source-wordcount: '4976'
 ht-degree: 4%
 
 ---
@@ -63,7 +63,7 @@ If you were already using the Flow Service API to export profiles to the Amazon 
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) [!DNL Experience Platform]。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
 
 ### 收集必需标题和可选标题的值 {#gather-values-headers}
 
@@ -1096,7 +1096,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 ### 向导出的文件添加加密
 
-或者，您也可以向导出的文件添加加密。 为此，您需要从`encryptionSpecs`添加项。 请查阅下面的请求示例，其中必填参数突出显示：
+或者，您也可以向导出的文件添加加密。 为此，您需要从`encryption`对象添加项。 请查阅下面的请求示例，其中必填参数突出显示：
 
 
 >[!BEGINSHADEBOX]
@@ -1104,7 +1104,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 +++ 查看云存储目标的加密规范
 
 ```json {line-numbers="true" start-line="1" highlight="26-27"}
-           "encryptionSpecs": [
+           "encryption": [
                 {
                     "name": "File PGP/GPG Encryption",
                     "type": "FileAsymmetric",
@@ -1163,12 +1163,12 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
       "sshKey": "<Add SSH key>"
       }
     },
-  "encryptionSpecs":{
-     "specName": "Encryption spec",
-     "params": {
-         "encryptionAlgo":"PGPGPG",
-         "publicKey":"<Add public key>"
-      }            
+  "encryption": {
+    "specName": "File Encryption",
+        "params": {
+            "encryptionAlgo": "PGP/GPG",
+            "publicKey": "<Add public key>"
+        }
     },
   "connectionSpec": {
     "id": "36965a81-b1c6-401b-99f8-22508f1e6a26", // SFTP connection spec
@@ -1221,7 +1221,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
             "providerId": "14e34fac-d307-11e9-bb65-2a2ae2dbcce4",
             "version": "1.0",
             "authSpec": [...],
-            "encryptionSpecs": [...],
+            "encryption": [...],
             "targetSpec": { //describes the target connection parameters
                 "name": "User based target",
                 "type": "UserNamespace",
@@ -1432,7 +1432,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
             "providerId": "14e34fac-d307-11e9-bb65-2a2ae2dbcce4",
             "version": "1.0",
             "authSpec": [...],
-            "encryptionSpecs": [...],
+            "encryption": [...],
             "targetSpec": { // describes the target connection parameters
                 "name": "User based target",
                 "type": "UserNamespace",
@@ -1632,7 +1632,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
             "providerId": "14e34fac-d307-11e9-bb65-2a2ae2dbcce4",
             "version": "1.0",
             "authSpec": [...],
-            "encryptionSpecs": [...],
+            "encryption": [...],
             "targetSpec": { // describes the target connection parameters
                 "name": "User based target",
                 "type": "UserNamespace",
@@ -1822,11 +1822,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         "providerId": "14e34fac-d307-11e9-bb65-2a2ae2dbcce4",
         "version": "1.0",
         "authSpec": [],
-        "encryptionSpecs": [],
-            "targetSpec": { // describes the target connection parameters
-                "name": "User based target",
-                "type": "UserNamespace",
-                "spec": {
+        "encryption": [],
+        "targetSpec": { // describes the target connection parameters
+            "name": "User based target",
+            "type": "UserNamespace",
+            "spec": {
                     "$schema": "http://json-schema.org/draft-07/schema#",
                     "type": "object",
                     "properties": {
@@ -2013,7 +2013,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
             "providerId": "14e34fac-d307-11e9-bb65-2a2ae2dbcce4",
             "version": "1.0",
             "authSpec": [...],
-            "encryptionSpecs": [...],
+            "encryption": [...],
             "targetSpec": { // describes the target connection parameters
                 "name": "User based target",
                 "type": "UserNamespace",
@@ -2212,7 +2212,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
             "providerId": "14e34fac-d307-11e9-bb65-2a2ae2dbcce4",
             "version": "1.0",
             "authSpec": [...],
-            "encryptionSpecs": [...],
+            "encryption": [...],
             "targetSpec": { // describes the target connection parameters
                 "name": "User based target",
                 "type": "UserNamespace",
