@@ -114,7 +114,7 @@ ht-degree: 5%
 
 
 
-在&#x200B;**[!UICONTROL Source Field]**&#x200B;列中，输入要映射到相应目标字段的源属性的名称，或选择箭头图标以打开&#x200B;**[!UICONTROL  Select source field]**&#x200B;屏幕。 然后选择&#x200B;**[!UICONTROL Next]**。
+在&#x200B;**[!UICONTROL Source Field]**&#x200B;列中，输入要映射到相应目标字段的源属性的名称，或选择箭头图标以打开&#x200B;**[!UICONTROL &#x200B; Select source field]**&#x200B;屏幕。 然后选择&#x200B;**[!UICONTROL Next]**。
 ![映射屏幕](../../assets/catalog/advertising/acxiom-real-id-audience-connection/real_id_mapping_screen.png)
 
 
