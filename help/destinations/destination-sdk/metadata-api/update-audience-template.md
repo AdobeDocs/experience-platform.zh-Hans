@@ -2,7 +2,7 @@
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK更新受众模板的API调用。
 title: 更新受众模板
 exl-id: 8185a015-256d-46a7-af33-8475832fb6c1
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: fda542e62c448788099d63951277278a146fdfc8
 workflow-type: tm+mt
 source-wordcount: '321'
 ht-degree: 1%
@@ -21,7 +21,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 受众模板API操作快速入门 {#get-started}
 
@@ -29,7 +29,7 @@ ht-degree: 1%
 
 ## 更新受众模板 {#create}
 
-您可以通过向`/authoring/audience-templates`终结点发出包含已更新有效负载的`PUT`请求来更新[现有](create-audience-template.md)受众模板。
+您可以通过向[终结点发出包含已更新有效负载的](create-audience-template.md)请求来更新`PUT`现有`/authoring/audience-templates`受众模板。
 
 要获取现有的受众模板及其对应的`{INSTANCE_ID}`，请参阅有关[检索受众模板](retrieve-audience-template.md)的文章。
 
@@ -48,7 +48,7 @@ PUT /authoring/audience-templates/{INSTANCE_ID}
 +++请求
 
 ```shell
-curl -X POST https://platform.adobe.io/data/core/activation/authoring/audience-templates/{INSTANCE_ID} \
+curl -X PUT https://platform.adobe.io/data/core/activation/authoring/audience-templates/{INSTANCE_ID} \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json' \
  -H 'x-gw-ims-org-id: {ORG_ID}' \

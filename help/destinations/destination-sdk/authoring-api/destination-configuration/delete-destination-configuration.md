@@ -2,10 +2,10 @@
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK删除现有目标配置的API调用。
 title: 删除目标配置
 exl-id: c7309ab7-1b8d-46d4-8017-fd4aa5918cdd
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: fda542e62c448788099d63951277278a146fdfc8
 workflow-type: tm+mt
-source-wordcount: '280'
-ht-degree: 1%
+source-wordcount: '279'
+ht-degree: 2%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 目标配置API操作快速入门 {#get-started}
 
@@ -23,7 +23,7 @@ ht-degree: 1%
 
 ## 删除目标配置 {#delete}
 
-您可以删除[现有](create-destination-configuration.md)目标服务器配置，方法是使用要删除的目标配置的`{INSTANCE_ID}`向`/authoring/destinations`端点发出`DELETE`请求。
+您可以通过向具有要删除的目标配置的[的](create-destination-configuration.md)端点发出`DELETE`请求来删除`/authoring/destinations`现有`{INSTANCE_ID}`目标配置。
 
 >[!TIP]
 >
