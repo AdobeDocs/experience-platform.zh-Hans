@@ -2,9 +2,9 @@
 description: 本页介绍了Destination SDK支持的各种OAuth 2授权流程，并提供了有关为目标设置OAuth 2授权的说明。
 title: OAuth 2授权
 exl-id: 280ecb63-5739-491c-b539-3c62bd74e433
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 0cde918c693d06d735397aad721fd3cd5c4e760e
 workflow-type: tm+mt
-source-wordcount: '2181'
+source-wordcount: '2182'
 ht-degree: 2%
 
 ---
@@ -18,7 +18,7 @@ Destination SDK支持多种针对目标的授权方法。 其中有一个选项�
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -82,7 +82,7 @@ Experience Platform支持下表中的三种OAuth 2授权类型。 如果您设�
 Adobe为OAuth 2授权设计的系统：
 
 * 支持所有三个OAuth 2授权，并会考虑其中的任何变量，例如附加数据字段、非标准API调用等。
-* 支持具有不同生命周期值（90天、30分钟或您指定的任何其他生命周期值）的访问令牌。
+* 支持具有不同生命周期值的访问令牌。 Adobe建议您将令牌生命周期值设置为至少24小时。
 * 支持使用或不使用刷新令牌的OAuth 2授权流。
 
 ## OAuth 2，带有授权代码 {#authorization-code}
