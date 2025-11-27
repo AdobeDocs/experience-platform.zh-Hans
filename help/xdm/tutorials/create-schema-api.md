@@ -5,9 +5,9 @@ title: 使用架构注册表API创建架构
 type: Tutorial
 description: 本教程使用架构注册表API来指导您完成使用标准类构建架构的步骤。
 exl-id: fa487a5f-d914-48f6-8d1b-001a60303f3d
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: cc1c2edc8980c562e323357376c2594fd8ea482a
 workflow-type: tm+mt
-source-wordcount: '2584'
+source-wordcount: '2853'
 ht-degree: 2%
 
 ---
@@ -55,7 +55,7 @@ POST /tenant/schemas
 
 **请求**
 
-该请求必须包含引用类的`$id`的`allOf`特性。 此属性定义架构将实施的“基类”。 在此示例中，基类是[!DNL XDM Individual Profile]类。 [!DNL XDM Individual Profile]类的`$id`用作下面`allOf`数组中`$ref`字段的值。
+该请求必须包含引用类的`allOf`的`$id`特性。 此属性定义架构将实施的“基类”。 在此示例中，基类是[!DNL XDM Individual Profile]类。 `$id`类的[!DNL XDM Individual Profile]用作下面`$ref`数组中`allOf`字段的值。
 
 ```SHELL
 curl -X POST \
@@ -221,7 +221,7 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 
 **请求**
 
-此请求更新忠诚度会员架构以包含[[!UICONTROL 人口统计详细信息]字段组](../field-groups/profile/demographic-details.md) (`profile-person-details`)中的字段。
+此请求更新忠诚度会员架构以包含[[!UICONTROL Demographic Details]字段组](../field-groups/profile/demographic-details.md) (`profile-person-details`)中的字段。
 
 通过添加`profile-person-details`字段组，忠诚度会员架构现在可捕获忠诚度计划会员的人口统计信息，如其名字、姓氏和生日。
 
@@ -240,7 +240,7 @@ curl -X PATCH \
 
 **响应**
 
-响应显示`meta:extends`数组中新添加的字段组，并包含`allOf`属性中字段组的`$ref`。
+响应显示`meta:extends`数组中新添加的字段组，并包含`$ref`属性中字段组的`allOf`。
 
 ```JSON
 {
@@ -304,7 +304,7 @@ curl -X PATCH \
 
 >[!TIP]
 >
->有必要查看所有可用的字段组，以熟悉每个组中包含的字段。 通过针对每个“全局”和“租户”容器执行请求，可以列出(GET)所有可用于特定类的字段组，仅返回“meta：intendedToExtend”字段与您使用的类匹配的字段组。 在这种情况下，它是[!DNL XDM Individual Profile]类，因此使用[!DNL XDM Individual Profile] `$id`：
+>有必要查看所有可用的字段组，以熟悉每个组中包含的字段。 通过针对每个“全局”和“租户”容器执行请求，可以列出(GET)所有可用于特定类的字段组，仅返回“meta:intendedToExtend”字段与您使用的类匹配的字段组。 在这种情况下，它是[!DNL XDM Individual Profile]类，因此使用[!DNL XDM Individual Profile] `$id`：
 >
 >```http
 >GET /global/fieldgroups?property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile
@@ -325,8 +325,8 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 
 此请求会更新忠诚度成员架构，以包含以下标准字段组中的字段：
 
-* [[!UICONTROL 个人联系人详细信息]](../field-groups/profile/personal-contact-details.md) (`profile-personal-details`)：添加联系人信息，如家庭地址、电子邮件地址和家庭电话。
-* [[!UICONTROL 忠诚度详细信息]](../field-groups/profile/loyalty-details.md) (`profile-loyalty-details`)：添加联系信息，如家庭地址、电子邮件地址和家庭电话。
+* [[!UICONTROL Personal Contact Details]](../field-groups/profile/personal-contact-details.md) (`profile-personal-details`)：添加联系信息，如家庭地址、电子邮件地址和家庭电话。
+* [[!UICONTROL Loyalty Details]](../field-groups/profile/loyalty-details.md) (`profile-loyalty-details`)：添加联系信息，如家庭地址、电子邮件地址和家庭电话。
 
 ```SHELL
 curl -X PATCH \
@@ -344,9 +344,9 @@ curl -X PATCH \
 
 **响应**
 
-响应显示`meta:extends`数组中新添加的字段组，并包含`allOf`属性中字段组的`$ref`。
+响应显示`meta:extends`数组中新添加的字段组，并包含`$ref`属性中字段组的`allOf`。
 
-忠诚度成员架构现在应在`allOf`数组中包含四个`$ref`值： `profile`、`profile-person-details`、`profile-personal-details`和`profile-loyalty-details`，如下所示。
+忠诚度成员架构现在应在`$ref`数组中包含四个`allOf`值： `profile`、`profile-person-details`、`profile-personal-details`和`profile-loyalty-details`，如下所示。
 
 ```JSON
 {
@@ -420,7 +420,7 @@ curl -X PATCH \
 
 ### 定义新的字段组
 
-虽然标准[!UICONTROL 忠诚度详细信息]字段组为架构提供了有用的忠诚度相关字段，但还有其他忠诚度字段未包含在任何标准字段组中。
+虽然标准[!UICONTROL Loyalty Details]字段组为架构提供了有用的忠诚度相关字段，但还有其他忠诚度字段未包含在任何标准字段组中。
 
 要添加这些字段，您可以在`tenant`容器中定义自己的自定义字段组。 这些字段组是您的组织所独有的，组织外的任何人不可见或编辑。
 
@@ -619,7 +619,7 @@ curl -X PATCH \
 
 **响应**
 
-您会看到已成功添加字段组，因为响应现在显示`meta:extends`数组中新添加的字段组，并包含`allOf`属性中字段组的`$ref`。
+您会看到已成功添加字段组，因为响应现在显示`meta:extends`数组中新添加的字段组，并包含`$ref`属性中字段组的`allOf`。
 
 ```JSON
 {
@@ -955,7 +955,7 @@ curl -X POST \
 }
 ```
 
-您可以使用编码的URL `$id` URI执行查找(GET)请求，以直接查看新数据类型。 请确保在查找请求的`Accept`标头中包含`version`。
+您可以使用编码的URL `$id` URI执行查找(GET)请求，以直接查看新数据类型。 请确保在查找请求的`version`标头中包含`Accept`。
 
 ### 在架构中使用数据类型
 
@@ -998,7 +998,7 @@ curl -X PATCH \
 
 **响应**
 
-响应现在包含对`loyaltyTier`对象中数据类型的引用(`$ref`)，而不是以前定义的字段。
+响应现在包含对`$ref`对象中数据类型的引用(`loyaltyTier`)，而不是以前定义的字段。
 
 ```JSON
 {
@@ -1114,9 +1114,9 @@ curl -X PATCH \
 
 架构用于将数据摄取到[!DNL Experience Platform]。 此数据最终跨多个服务使用，以创建个人的单个统一视图。 为了帮助完成此过程，可以将关键字段标记为“身份”，并在摄取数据时，将这些字段中的数据插入该个人的“身份图”中。 然后，[[!DNL Real-Time Customer Profile]](../../profile/home.md)和其他[!DNL Experience Platform]服务可以访问图形数据，以提供每个客户的拼合视图。
 
-通常标记为“标识”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)、CRM ID或其他唯一ID字段。 请考虑特定于贵组织的任何唯一标识符，因为它们可能是良好的标识字段。
+通常标记为“标识”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html)、CRM ID或其他唯一ID字段。 请考虑特定于贵组织的任何唯一标识符，因为它们可能是良好的标识字段。
 
-身份描述符指示`sourceSchema`的`sourceProperty`是应被视为身份的唯一标识符。
+身份描述符指示`sourceProperty`的`sourceSchema`是应被视为身份的唯一标识符。
 
 有关使用描述符的详细信息，请参阅[架构注册开发人员指南](../api/getting-started.md)。
 
@@ -1151,7 +1151,7 @@ curl -X POST \
 
 >[!NOTE]
 >
->您可以使用[[!DNL Identity Service API]](https://www.adobe.io/experience-platform-apis/references/identity-service)列出可用的“xdm：namespace”值或创建新值。 “xdm：property”的值可以是“xdm：code”或“xdm：id”，具体取决于使用的“xdm：namespace”。
+>您可以使用:namespace[[!DNL Identity Service API]列出可用的&quot;xdm](https://www.adobe.io/experience-platform-apis/references/identity-service)&quot;值或创建新值。 “xdm:property”的值可以是“xdm:code”或“xdm:id”，具体取决于使用的“xdm:namespace”。
 
 **响应**
 
@@ -1177,15 +1177,15 @@ curl -X POST \
 
 ## 启用架构以便在[!DNL Real-Time Customer Profile]中使用 {#profile}
 
-在架构应用了主标识描述符后，您可以通过向`meta:immutableTags`属性添加`union`标记来启用忠诚度成员架构以供[!DNL Real-Time Customer Profile]使用。
+在架构应用了主标识描述符后，您可以通过向[!DNL Real-Time Customer Profile]属性添加`union`标记来启用忠诚度成员架构以供`meta:immutableTags`使用。
 
 >[!NOTE]
 >
->有关使用联合视图的更多信息，请参阅[!DNL Schema Registry]开发人员指南中有关[联合](../api/unions.md)的章节。
+>有关使用联合视图的更多信息，请参阅[开发人员指南中有关](../api/unions.md)联合[!DNL Schema Registry]的章节。
 
 ### 添加`union`标记
 
-为了将架构包含在合并合并视图中，必须将`union`标记添加到架构的`meta:immutableTags`属性。 这是通过PATCH请求完成的，该请求用于更新架构并添加值为`union`的`meta:immutableTags`数组。
+为了将架构包含在合并合并视图中，必须将`union`标记添加到架构的`meta:immutableTags`属性。 这是通过PATCH请求完成的，该请求用于更新架构并添加值为`meta:immutableTags`的`union`数组。
 
 **API格式**
 
@@ -1300,7 +1300,7 @@ curl -X PATCH \
 
 您现在已成功将架构添加到[!DNL XDM Individual Profile]联合。 要查看属于同一合并的所有架构的列表，您可以使用查询参数执行GET请求以筛选响应。
 
-使用`property`查询参数，您可以指定只返回包含`meta:immutableTags`字段的架构，该字段的`meta:class`等于[!DNL XDM Individual Profile]类的`$id`。
+使用`property`查询参数，您可以指定只返回包含`meta:immutableTags`字段的架构，该字段的`meta:class`等于`$id`类的[!DNL XDM Individual Profile]。
 
 **API格式**
 
@@ -1368,6 +1368,52 @@ curl -X GET \
 }
 ```
 
+## 使用用户界面验证架构 {#validate-in-ui}
+
+使用Experience Platform UI验证您通过[!DNL Schema Registry] API创建的架构是否具有正确的结构、属性和标识配置。 执行以下步骤：
+
+### 找到您的架构
+
+要开始，请导航到&#x200B;**[!UICONTROL Schemas]** > **[!UICONTROL Browse]**。 使用文本输入字段搜索架构名称（例如，`Campaign Member`）并从表中选择架构名称。
+
+![架构浏览视图，文本输入字段突出显示，用于搜索和选择您的架构。](../images/tutorials/create-schema/schemas-browse.png)
+
+### 确认架构结构
+
+架构画布显示架构的完整结构。 验证：
+
+* 您添加的所有标准字段组都会显示在画布中。
+* 您的自定义字段组显示在结构中，并展开以显示其字段。
+
+![架构画布显示扩展了标准和自定义字段组的完整架构结构。](../images/tutorials/create-schema/schema-canvas.png)
+
+### 查看架构属性
+
+接下来，选择架构根节点以打开&#x200B;**[!UICONTROL Schema properties]**&#x200B;面板并确认关键元数据：
+
+* 架构`$id`
+* 显示名称
+* 配置文件启用状态
+
+`$id`应与您的API响应中返回的值匹配。
+
+>[!NOTE]
+>
+>分配的类（本示例中为&#x200B;**[!UICONTROL XDM Business Campaign Members]**）显示在左侧&#x200B;**[!UICONTROL Composition]**&#x200B;面板中。
+
+![架构编辑器视图选定了架构根并打开了架构属性面板，以查看关键元数据。](../images/tutorials/create-schema/review-schema-properties.png)
+
+### 验证身份字段
+
+添加到架构的每个标识字段都列在&#x200B;**[!UICONTROL Identities]**&#x200B;面板的&#x200B;**[!UICONTROL Composition]**&#x200B;部分中。 选择一个标识字段，以在右侧面板中显示其属性。 对于每个标识字段，请确认：
+
+* 身份命名空间正确。
+* 字段在适用的情况下标记为主标识。
+
+![选定了标识字段的组合面板标识部分，其标识属性显示在右侧面板中。](../images/tutorials/create-schema/identitiy-confirmation.png)
+
+如果结构、属性和标识配置与您的API配置匹配，则表示您已成功通过[!DNL Schema Registry] API创建和配置架构。
+
 ## 后续步骤
 
 通过遵循本教程，您已使用标准字段组和您定义的字段组成功编写了架构。 您现在可以使用此架构创建数据集并将记录数据摄取到Adobe Experience Platform。
@@ -1384,7 +1430,7 @@ curl -X GET \
 
 在本教程中，将构成一个模式来描述零售忠诚度计划的成员。
 
-架构实现[!DNL XDM Individual Profile]类并合并多个字段组。 它使用标准[!DNL Demographic Details]、[!UICONTROL 个人联系人详细信息]和[!UICONTROL 忠诚度详细信息]字段组，以及通过教程中定义的自定义忠诚度级别字段组捕获有关忠诚度成员的信息。
+架构实现[!DNL XDM Individual Profile]类并合并多个字段组。 它使用标准[!DNL Demographic Details]、[!UICONTROL Personal Contact Details]和[!UICONTROL Loyalty Details]字段组以及通过教程中定义的自定义忠诚度级别字段组捕获有关忠诚度成员的信息。
 
 以下显示以JSON格式表示的已完成的忠诚度成员架构：
 

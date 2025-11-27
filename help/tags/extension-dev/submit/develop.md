@@ -2,10 +2,10 @@
 title: 开发扩展
 description: 本文档提供了标记扩展开发过程的一般概述，以及指向更多文档的链接，这些文档提供了更详细的流程。
 exl-id: fb2f7275-a5da-4a41-b915-822c71c02e5c
-source-git-commit: 36870fa5359b5382cb9f1e9a5220ce8311f0c45c
+source-git-commit: 3f5e432ef381c10d8197724783135637d01a120e
 workflow-type: tm+mt
-source-wordcount: '443'
-ht-degree: 28%
+source-wordcount: '436'
+ht-degree: 26%
 
 ---
 
@@ -42,11 +42,7 @@ ht-degree: 28%
 
 ## 扩展示例
 
-GitHub上有一些扩展示例，您可以查看这些示例或将其用作起始项目：
-
-* [Hello World 扩展示例](https://github.com/adobe/reactor-helloworld-extension)
-* [Typekit 扩展示例](https://github.com/jeffchasin/extension-typekit)
-* [Pinterest 扩展示例](https://github.com/jeffchasin/extension-pinterest)
+您可以查看或使用GitHub中的示例扩展，如[Hello World示例扩展](https://github.com/adobe/reactor-helloworld-extension)，作为起始项目。
 
 ## Slack 工作区
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM字段类型约束
 description: 参考体验数据模型(XDM)中的字段类型约束，包括它们可以映射到的其他序列化格式以及如何在API中定义您自己的字段类型。
 exl-id: 63839a28-6d26-46f1-8bbf-b524e82ac4df
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 8ddedb5ff8c12b05cdf39fa8dc2b59258389e522
 workflow-type: tm+mt
-source-wordcount: '684'
+source-wordcount: '635'
 ht-degree: 1%
 
 ---
@@ -41,7 +41,7 @@ XDM基于JSON架构构建，因此XDM字段在定义其类型时继承类似的�
   </thead>
   <tbody>
     <tr>
-      <td>[!UICONTROL 字符串]</td>
+      <td>[!UICONTROL String]</td>
       <td>
         <pre class="JSON language-JSON hljs">
 {"type"： "string"}</pre>
@@ -49,7 +49,7 @@ XDM基于JSON架构构建，因此XDM字段在定义其类型时继承类似的�
       <td><code>"Platinum"</code></td>
     </tr>
     <tr>
-      <td>[!UICONTROL 编号]</td>
+      <td>[!UICONTROL Number]</td>
       <td>
         <pre class="JSON language-JSON hljs">
 {"type"： "number"}</pre>
@@ -60,23 +60,23 @@ XDM基于JSON架构构建，因此XDM字段在定义其类型时继承类似的�
       <td>[!UICONTROL Long]</td>
       <td>
         <pre class="JSON language-JSON hljs">
-&lbrace;
+{
   "type"： "integer"，
   "maximum"：9007199254740991，
   "minimum"： -9007199254740991
-&rbrace;</pre>
+}</pre>
       </td>
       <td><code>1478108935</code></td>
     </tr>
     <tr>
-      <td>[!UICONTROL 整数]</td>
+      <td>[!UICONTROL Integer]</td>
       <td>
         <pre class="JSON language-JSON hljs">
-&lbrace;
+{
   "type"： "integer"，
   "maximum"：2147483648，
   "minimum"： -2147483648
-&rbrace;</pre>
+}</pre>
       </td>
       <td><code>24906290</code></td>
     </tr>
@@ -84,45 +84,45 @@ XDM基于JSON架构构建，因此XDM字段在定义其类型时继承类似的�
       <td>[!UICONTROL Short]</td>
       <td>
         <pre class="JSON language-JSON hljs">
-&lbrace;
+{
   "type"： "integer"，
-  "maximum"：32768，
+  "maximum"：32767，
   "minimum"： -32768
-&rbrace;</pre>
+}</pre>
       </td>
       <td><code>15781</code></td>
     </tr>
     <tr>
-      <td>[!UICONTROL 字节]</td>
+      <td>[!UICONTROL Byte]</td>
       <td>
         <pre class="JSON language-JSON hljs">
-&lbrace;
+{
   "type"： "integer"，
   “最大值”：128，
   “最小值”：-128
-&rbrace;</pre>
+}</pre>
       </td>
       <td><code>90</code></td>
     </tr>
     <tr>
-      <td>[!UICONTROL 日期]*</td>
+      <td>[!UICONTROL Date]*</td>
       <td>
         <pre class="JSON language-JSON hljs">
-&lbrace;
+{
   "type"： "string"，
   "format"： "date"
-&rbrace;</pre>
+}</pre>
       </td>
       <td><code>"2019-05-15"</code></td>
     </tr>
     <tr>
-      <td>[!UICONTROL 日期时间]*</td>
+      <td>[!UICONTROL DateTime]*</td>
       <td>
         <pre class="JSON language-JSON hljs">
-&lbrace;
+{
   "type"： "string"，
   "format"： "date-time"
-&rbrace;</pre>
+}</pre>
       </td>
       <td><code>"2019-05-15T20:20:39+00:00"</code></td>
     </tr>
@@ -157,16 +157,16 @@ XDM基于JSON架构构建，因此XDM字段在定义其类型时继承类似的�
 
 | XDM类型 | Parquet | Spark SQL | Java |
 | --- | --- | --- | --- |
-| [!UICONTROL 字符串] | 类型： `BYTE_ARRAY`<br>批注： `UTF8` | `StringType` | `java.lang.String` |
-| [!UICONTROL 数字] | 类型：`DOUBLE` | `LongType` | `java.lang.Double` |
-| [!UICONTROL 长] | 类型：`INT64` | `LongType` | `java.lang.Long` |
-| [!UICONTROL 整数] | 类型： `INT32`<br>批注： `INT_32` | `IntegerType` | `java.lang.Integer` |
-| [!UICONTROL 短] | 类型： `INT32`<br>批注： `INT_16` | `ShortType` | `java.lang.Short` |
-| [!UICONTROL 字节] | 类型： `INT32`<br>批注： `INT_8` | `ByteType` | `java.lang.Short` |
-| [!UICONTROL 日期] | 类型： `INT32`<br>批注： `DATE` | `DateType` | `java.util.Date` |
-| [!UICONTROL 日期时间] | 类型： `INT64`<br>批注： `TIMESTAMP_MILLIS` | `TimestampType` | `java.util.Date` |
-| [!UICONTROL 布尔值] | 类型：`BOOLEAN` | `BooleanType` | `java.lang.Boolean` |
-| [!UICONTROL 地图] | `MAP` — 注释的组<br><br>（`<key-type>`必须为`STRING`） | `MapType`<br><br>（`keyType`必须为`StringType`） | `java.util.Map` |
+| [!UICONTROL String] | 类型： `BYTE_ARRAY`<br>批注： `UTF8` | `StringType` | `java.lang.String` |
+| [!UICONTROL Number] | 类型：`DOUBLE` | `LongType` | `java.lang.Double` |
+| [!UICONTROL Long] | 类型：`INT64` | `LongType` | `java.lang.Long` |
+| [!UICONTROL Integer] | 类型： `INT32`<br>批注： `INT_32` | `IntegerType` | `java.lang.Integer` |
+| [!UICONTROL Short] | 类型： `INT32`<br>批注： `INT_16` | `ShortType` | `java.lang.Short` |
+| [!UICONTROL Byte] | 类型： `INT32`<br>批注： `INT_8` | `ByteType` | `java.lang.Short` |
+| [!UICONTROL Date] | 类型： `INT32`<br>批注： `DATE` | `DateType` | `java.util.Date` |
+| [!UICONTROL DateTime] | 类型： `INT64`<br>批注： `TIMESTAMP_MILLIS` | `TimestampType` | `java.util.Date` |
+| [!UICONTROL Boolean] | 类型：`BOOLEAN` | `BooleanType` | `java.lang.Boolean` |
+| [!UICONTROL Map] | `MAP` — 注释的组<br><br>（`<key-type>`必须为`STRING`） | `MapType`<br><br>（`keyType`必须为`StringType`） | `java.util.Map` |
 
 {style="table-layout:auto"}
 
@@ -174,16 +174,16 @@ XDM基于JSON架构构建，因此XDM字段在定义其类型时继承类似的�
 
 | XDM类型 | Scala | .NET | CosmosDB |
 | --- | --- | --- | --- |
-| [!UICONTROL 字符串] | `String` | `System.String` | `String` |
-| [!UICONTROL 数字] | `Double` | `System.Double` | `Number` |
-| [!UICONTROL 长] | `Long` | `System.Int64` | `Number` |
-| [!UICONTROL 整数] | `Int` | `System.Int32` | `Number` |
-| [!UICONTROL 短] | `Short` | `System.Int16` | `Number` |
-| [!UICONTROL 字节] | `Byte` | `System.SByte` | `Number` |
-| [!UICONTROL 日期] | `java.util.Date` | `System.DateTime` | `String` |
-| [!UICONTROL 日期时间] | `java.util.Date` | `System.DateTime` | `String` |
-| [!UICONTROL 布尔值] | `Boolean` | `System.Boolean` | `Boolean` |
-| [!UICONTROL 地图] | `Map` | （不适用） | `object` |
+| [!UICONTROL String] | `String` | `System.String` | `String` |
+| [!UICONTROL Number] | `Double` | `System.Double` | `Number` |
+| [!UICONTROL Long] | `Long` | `System.Int64` | `Number` |
+| [!UICONTROL Integer] | `Int` | `System.Int32` | `Number` |
+| [!UICONTROL Short] | `Short` | `System.Int16` | `Number` |
+| [!UICONTROL Byte] | `Byte` | `System.SByte` | `Number` |
+| [!UICONTROL Date] | `java.util.Date` | `System.DateTime` | `String` |
+| [!UICONTROL DateTime] | `java.util.Date` | `System.DateTime` | `String` |
+| [!UICONTROL Boolean] | `Boolean` | `System.Boolean` | `Boolean` |
+| [!UICONTROL Map] | `Map` | （不适用） | `object` |
 
 {style="table-layout:auto"}
 
@@ -191,16 +191,16 @@ XDM基于JSON架构构建，因此XDM字段在定义其类型时继承类似的�
 
 | XDM类型 | MongoDB | 塞式火箭 | Protobuf 2 |
 | --- | --- | --- | --- |
-| [!UICONTROL 字符串] | `string` | `String` | `string` |
-| [!UICONTROL 数字] | `double` | `Double` | `double` |
-| [!UICONTROL 长] | `long` | `Integer` | `int64` |
-| [!UICONTROL 整数] | `int` | `Integer` | `int32` |
-| [!UICONTROL 短] | `int` | `Integer` | `int32` |
-| [!UICONTROL 字节] | `int` | `Integer` | `int32` |
-| [!UICONTROL 日期] | `date` | `Integer`<br>（Unix毫秒） | `int64`<br>（Unix毫秒） |
-| [!UICONTROL 日期时间] | `timestamp` | `Integer`<br>（Unix毫秒） | `int64`<br>（Unix毫秒） |
-| [!UICONTROL 布尔值] | `bool` | `Integer`<br>（0/1二进制文件） | `bool` |
-| [!UICONTROL 地图] | `object` | `map` | `map<key_type, value_type>` |
+| [!UICONTROL String] | `string` | `String` | `string` |
+| [!UICONTROL Number] | `double` | `Double` | `double` |
+| [!UICONTROL Long] | `long` | `Integer` | `int64` |
+| [!UICONTROL Integer] | `int` | `Integer` | `int32` |
+| [!UICONTROL Short] | `int` | `Integer` | `int32` |
+| [!UICONTROL Byte] | `int` | `Integer` | `int32` |
+| [!UICONTROL Date] | `date` | `Integer`<br>（Unix毫秒） | `int64`<br>（Unix毫秒） |
+| [!UICONTROL DateTime] | `timestamp` | `Integer`<br>（Unix毫秒） | `int64`<br>（Unix毫秒） |
+| [!UICONTROL Boolean] | `bool` | `Integer`<br>（0/1二进制文件） | `bool` |
+| [!UICONTROL Map] | `object` | `map` | `map<key_type, value_type>` |
 
 {style="table-layout:auto"}
 
