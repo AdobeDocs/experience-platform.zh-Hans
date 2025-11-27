@@ -4,9 +4,9 @@ title: HTTP API连接
 description: 使用Adobe Experience Platform中的HTTP API目标将配置文件数据发送到第三方HTTP端点，以运行您自己的Analytics或对从Experience Platform导出的配置文件数据执行您可能所需的任何其他操作。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 6d1b73c1557124f283558e1daeb3ddeaaec8e8a4
+source-git-commit: aacc3cbbc2bc8c02e50f375f78733a851138e1c7
 workflow-type: tm+mt
-source-wordcount: '3079'
+source-wordcount: '2908'
 ht-degree: 6%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 6%
 
 >[!IMPORTANT]
 >
-> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
 HTTP API目标是一个[!DNL Adobe Experience Platform]流目标，可帮助您将配置文件数据发送到第三方HTTP端点。
 
@@ -59,7 +59,7 @@ HTTP端点可以是客户自己的系统或第三方解决方案。
 * 您的HTTP端点必须支持Experience Platform配置文件架构。 HTTP API目标不支持转换到第三方有效负载架构。 有关Experience Platform输出架构的示例，请参阅[导出的数据](#exported-data)部分。
 * 您的HTTP端点必须支持标头。
 * HTTP端点必须在2秒内响应，以确保正确的数据处理并避免超时错误。
-* 如果您计划使用mTLS：您的数据接收端点必须禁用TLS，并且仅启用mTLS。 如果您还使用OAuth 2身份验证，则必须为令牌检索维护单独的标准HTTPS端点。 有关详细信息，请参阅[mTLS注意事项](#mtls-considerations)部分。
+* 如果您计划使用mTLS：您的数据接收端点必须禁用TLS，并且仅启用mTLS。 如果您的端点需要OAuth 2密码或客户端凭据身份验证，则不支持mTLS。
 
 >[!TIP]
 >
@@ -75,17 +75,7 @@ HTTP端点可以是客户自己的系统或第三方解决方案。
 
 HTTP API目标的mTLS支持仅将&#x200B;**应用于发送配置文件导出的数据接收终结点**（**[!UICONTROL HTTP Endpoint]**&#x200B;目标详细信息[中的](#destination-details)字段）。
 
-OAuth 2身份验证终结点不支持&#x200B;**mTLS：**
-
-* OAuth 2客户端凭据或OAuth 2密码身份验证中使用的&#x200B;**[!UICONTROL Access Token URL]**&#x200B;不支持mTLS
-* 令牌检索和刷新请求通过标准HTTPS发送，无需客户端证书身份验证
-
-**必需的架构：**&#x200B;如果您需要数据接收端点的mTLS并使用OAuth 2身份验证，则必须维护两个单独的端点：
-
-* **身份验证终结点：**&#x200B;令牌管理的标准HTTPS（不带mTLS）
-* **数据接收终结点：**&#x200B;为配置文件导出启用了仅mTLS的HTTPS
-
-此架构是当前平台的一个限制。 正在评估未来版本对身份验证端点上的mTLS的支持。
+如果您的端点需要OAuth 2密码或客户端凭据身份验证，则mTLS是&#x200B;**不受支持**。
 
 ### 配置用于数据导出的mTLS {#configuring-mtls}
 
@@ -167,9 +157,9 @@ curl --location --request POST 'https://some-api.com/token' \
 
 >[!NOTE]
 >
->**mTLS限制：** [!UICONTROL Access Token URL]不支持mTLS。 如果您计划将mTLS用于数据接收端点，则您的身份验证端点必须使用标准HTTPS。 有关所需体系结构的更多详细信息，请参阅[mTLS注意事项](#mtls-considerations)部分。
+>**mTLS限制： OAuth 2密码身份验证不支持** mTLS。 有关详细信息，请参阅[mTLS注意事项](#mtls-considerations)部分。
 
-* **[!UICONTROL Access Token URL]**：您颁发访问令牌以及（可选）刷新令牌的URL。 此端点必须使用标准HTTPS，并且不支持mTLS。
+* **[!UICONTROL Access Token URL]**：您颁发访问令牌以及（可选）刷新令牌的URL。
 * **[!UICONTROL Client ID]**：系统分配给Adobe Experience Platform的[!DNL client ID]。
 * **[!UICONTROL Client Secret]**：系统分配给Adobe Experience Platform的[!DNL client secret]。
 * **[!UICONTROL Username]**：用于访问HTTP端点的用户名。
@@ -187,9 +177,9 @@ curl --location --request POST 'https://some-api.com/token' \
 
 >[!NOTE]
 >
->**mTLS限制：** [!UICONTROL Access Token URL]不支持mTLS。 如果您计划将mTLS用于数据接收端点，则您的身份验证端点必须使用标准HTTPS。 有关所需体系结构的更多详细信息，请参阅[mTLS注意事项](#mtls-considerations)部分。
+>**mTLS限制： OAuth 2客户端凭据身份验证不支持** mTLS。 有关详细信息，请参阅[mTLS注意事项](#mtls-considerations)部分。
 
-* **[!UICONTROL Access Token URL]**：您颁发访问令牌以及（可选）刷新令牌的URL。 此端点必须使用标准HTTPS，并且不支持mTLS。
+* **[!UICONTROL Access Token URL]**：您颁发访问令牌以及（可选）刷新令牌的URL。
 * **[!UICONTROL Client ID]**：系统分配给Adobe Experience Platform的[!DNL client ID]。
 * **[!UICONTROL Client Secret]**：系统分配给Adobe Experience Platform的[!DNL client secret]。
 * **[!UICONTROL Client Credentials Type]**：选择您的端点支持的OAuth2客户端凭据授予类型：
@@ -206,7 +196,7 @@ curl --location --request POST 'https://some-api.com/token' \
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_endpoint"
 >title="HTTP 端点"
->abstract="要将配置文件数据发送到的HTTP端点的URL。 这是您的数据接收端点，如果配置了，则支持mTLS。 这不同于不支持mTLS的OAuth 2访问令牌URL。"
+>abstract="要将配置文件数据发送到的HTTP端点的URL。 这是您的数据接收端点，如果进行了配置，则支持mTLS（不适用于OAuth 2密码或客户端凭据身份验证）。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_includesegmentnames"
@@ -230,7 +220,7 @@ curl --location --request POST 'https://some-api.com/token' \
 * **[!UICONTROL Name]**：输入一个名称，您以后将通过该名称识别此目标。
 * **[!UICONTROL Description]**：输入可帮助您将来识别此目标的描述。
 * **[!UICONTROL Headers]**：输入要包含在目标调用中的任何自定义标头，格式如下： `header1:value1,header2:value2,...headerN:valueN`。
-* **[!UICONTROL HTTP Endpoint]**：要将配置文件数据发送到的HTTP终结点的URL。 这是您的数据接收端点。 如果使用mTLS，则此端点必须禁用TLS，并且仅启用mTLS。 请注意，这与在身份验证期间配置的OAuth 2访问令牌URL不同。
+* **[!UICONTROL HTTP Endpoint]**：要将配置文件数据发送到的HTTP终结点的URL。 这是您的数据接收端点。 如果您使用mTLS，则此端点必须禁用TLS，并且仅启用mTLS。
 * **[!UICONTROL Query parameters]**：您可以选择将查询参数添加到HTTP终结点URL。 格式化您使用的查询参数，如下所示：`parameter1=value&parameter2=value`。
 * **[!UICONTROL Include Segment Names]**：如果希望数据导出包含正在导出的受众的名称，请切换。 **注意**：区段名称仅包括映射到目标的区段。 导出中显示的未映射区段不包括`name`字段。 有关选择此选项的数据导出示例，请参阅下面的[导出的数据](#exported-data)部分。
 * **[!UICONTROL Include Segment Timestamps]**：如果希望数据导出包括创建和更新受众时的UNIX时间戳，以及映射受众到目标以供激活时的UNIX时间戳，请进行切换。 有关选择此选项的数据导出示例，请参阅下面的[导出的数据](#exported-data)部分。
