@@ -1114,7 +1114,7 @@ curl -X PATCH \
 
 架构用于将数据摄取到[!DNL Experience Platform]。 此数据最终跨多个服务使用，以创建个人的单个统一视图。 为了帮助完成此过程，可以将关键字段标记为“身份”，并在摄取数据时，将这些字段中的数据插入该个人的“身份图”中。 然后，[[!DNL Real-Time Customer Profile]](../../profile/home.md)和其他[!DNL Experience Platform]服务可以访问图形数据，以提供每个客户的拼合视图。
 
-通常标记为“标识”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html)、CRM ID或其他唯一ID字段。 请考虑特定于贵组织的任何唯一标识符，因为它们可能是良好的标识字段。
+通常标记为“标识”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)、CRM ID或其他唯一ID字段。 请考虑特定于贵组织的任何唯一标识符，因为它们可能是良好的标识字段。
 
 身份描述符指示`sourceProperty`的`sourceSchema`是应被视为身份的唯一标识符。
 
