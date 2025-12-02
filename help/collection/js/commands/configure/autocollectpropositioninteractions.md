@@ -50,7 +50,7 @@ alloy("configure", {
 | 名称 | 数据属性 | 描述 |
 | --- | --- | --- |
 | **[!UICONTROL Label]** | `data-aep-click-label` | 如果点击的元素上存在label数据属性，则该属性将包含在发送到Edge Network的交互详细信息中。 Web SDK会查找以单击元素并向DOM树上走开的label数据属性。 Web SDK使用它找到的第一个标签。 |
-| **[!UICONTROL Token]** | `data-aep-click-token` | 在[Adobe Journey Optimizer基于代码的营销活动](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based)中利用决策策略时，请使用此令牌。 您可以使用令牌区分点击了哪个决策策略项目。 当点击的元素上存在令牌数据属性时，它会包含在发送到Edge Network的交互详细信息中。 Web SDK会查找以单击元素并向DOM树上走开始的令牌数据属性。 Web SDK使用它找到的第一个令牌。 |
+| **[!UICONTROL Token]** | `data-aep-click-token` | 在[Adobe Journey Optimizer基于代码的营销活动](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/code-based-experience/get-started-code-based)中利用决策策略时，请使用此令牌。 您可以使用令牌区分点击了哪个决策策略项目。 当点击的元素上存在令牌数据属性时，它会包含在发送到Edge Network的交互详细信息中。 Web SDK会查找以单击元素并向DOM树上走开始的令牌数据属性。 Web SDK使用它找到的第一个令牌。 |
 | **[!UICONTROL Interact ID]** | `data-aep-interact-id` | 呈现建议时，Web SDK会自动将此唯一ID添加到容器元素。 Web SDK使用此ID将DOM元素与建议关联。 由于这是Web SDK所需的ID，因此您不应以任何方式对其进行更改。 您可以放心地忽略它。 |
 
 ## 示例

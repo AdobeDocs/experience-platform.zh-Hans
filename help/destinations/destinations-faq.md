@@ -229,7 +229,7 @@ Yes, you can activate a maximum of 150 edge audiences per sandbox.  For more inf
 ### 在Adobe Target中，我可以在哪里查看激活的属性？
 
 +++回答
-可在[JSON](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html)和[HTML](https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html)选件的Target中使用属性。
+可在[JSON](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html?lang=zh-Hans)和[HTML](https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html?lang=zh-Hans)选件的Target中使用属性。
 +++
 
 ### 我是否可以创建没有数据流的目标，然后在以后将数据流添加到同一目标？
@@ -265,7 +265,7 @@ Yes, you can activate a maximum of 150 edge audiences per sandbox.  For more inf
 ### [!DNL Adobe Target]和[!DNL Custom Personalization]目标是否符合[!DNL HIPAA]？
 
 +++回答
-[!DNL Adobe Target]与[!DNL HIPPA][[!DNL Adobe Healthcare Shield]不符合](https://business.adobe.com/solutions/industries/healthcare.html)。 在通过[!DNL HIPPA]或[!DNL Adobe Target]目标使用边缘个性化之前，客户应当与自己的法律团队确认[!DNL Custom Personalization]对自定义优化渠道的准备情况。
+[!DNL Adobe Target]与[!DNL HIPPA][[!DNL Adobe Healthcare Shield]不符合](https://business.adobe.com/cn/solutions/industries/healthcare.html)。 在通过[!DNL HIPPA]或[!DNL Adobe Target]目标使用边缘个性化之前，客户应当与自己的法律团队确认[!DNL Custom Personalization]对自定义优化渠道的准备情况。
 
 对于需要大规模应用同意策略管理的用例，客户必须购买[!DNL Adobe Privacy & Security Shield]。 [!DNL Adobe Privacy & Security Shield]功能作为高级功能套件销售，不能单独购买。
 

@@ -53,7 +53,7 @@ Web SDK无需其他配置即可接受查询字符串中的`ECID`值。
 
 移动设备与Web ID共享使用`adobe_mc`参数。 当`adobe_mc`参数存在且有效时，查询字符串中的`ECID`将自动添加到向Edge Network发出的第一个请求中的标识映射。 所有后续Edge Network交互将使用该`ECID`。
 
-有关如何将访客ID从移动应用程序传递到WebView的更多信息，请参阅有关[处理WebViews](https://experienceleague.adobe.com/docs/platform-learn/implement-mobile-sdk/app-implementation/web-views.html#implementation)的文档。
+有关如何将访客ID从移动应用程序传递到WebView的更多信息，请参阅有关[处理WebViews](https://experienceleague.adobe.com/docs/platform-learn/implement-mobile-sdk/app-implementation/web-views.html?lang=zh-Hans#implementation)的文档。
 
 ## 实施跨域ID共享 {#cross-domain-sharing}
 

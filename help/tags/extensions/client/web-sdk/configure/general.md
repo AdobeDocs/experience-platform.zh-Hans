@@ -32,4 +32,4 @@ Adobe Experience Platform Web SDK标记扩展支持页面上的多个实例。 �
 
 ## [!UICONTROL Edge domain]
 
-扩展发送和接收数据的域。 虽然默认值`edge.adobedc.net`有效，但Adobe建议在大多数情况下使用第一方域。 有关如何设置适用于数据收集的第一方域的说明，请参阅[Adobe管理的证书计划](https://experienceleague.adobe.com/en/docs/core-services/interface/data-collection/adobe-managed-cert)。 另请参阅JavaScript库文档中的[`edgeDomain`](/help/collection/js/commands/configure/edgedomain.md)，以获取设置此值的指南。
+扩展发送和接收数据的域。 虽然默认值`edge.adobedc.net`有效，但Adobe建议在大多数情况下使用第一方域。 有关如何设置适用于数据收集的第一方域的说明，请参阅[Adobe管理的证书计划](https://experienceleague.adobe.com/zh-hans/docs/core-services/interface/data-collection/adobe-managed-cert)。 另请参阅JavaScript库文档中的[`edgeDomain`](/help/collection/js/commands/configure/edgedomain.md)，以获取设置此值的指南。

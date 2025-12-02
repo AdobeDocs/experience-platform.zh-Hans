@@ -50,7 +50,7 @@ ht-degree: 0%
 >
 >此数据元素会设置Cookie并允许将用户生成的值存储在Cookie中。 有关更多信息，请参阅特定于插件的文档。
 
-允许您设置和配置[`getAndPersistValue` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getandpersistvalue.html)。 `getAndPersistValue`数据元素将值存储在Cookie中，稍后可在访问期间进行检索。
+允许您设置和配置[`getAndPersistValue` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getandpersistvalue.html?lang=zh-Hans)。 `getAndPersistValue`数据元素将值存储在Cookie中，稍后可在访问期间进行检索。
 
 `getAndPersistValue`数据元素提供了以下参数：
 
@@ -66,7 +66,7 @@ ht-degree: 0%
 >
 >此插件需要在客户端上拥有位置访问权限，但如果无法获取该权限，则不会引发异常。
 
-允许您设置和配置[`getGeoCoordinates` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getgeocoordinates.html)。 `getGeoCoordinates`数据元素捕获访客设备的经度和纬度。
+允许您设置和配置[`getGeoCoordinates` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getgeocoordinates.html?lang=zh-Hans)。 `getGeoCoordinates`数据元素捕获访客设备的经度和纬度。
 
 `getGeoCoordinates`数据元素不使用任何参数。 它会返回以下值之一：
 
@@ -80,7 +80,7 @@ ht-degree: 0%
 >
 >此数据元素设置Cookie。 有关更多信息，请参阅特定于插件的文档。
 
-允许您设置和配置[`getNewRepeat` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getnewrepeat.html)。 `getNewRepeat`数据元素确定网站访客是新访客还是所需天数内的回访访客。
+允许您设置和配置[`getNewRepeat` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getnewrepeat.html?lang=zh-Hans)。 `getNewRepeat`数据元素确定网站访客是新访客还是所需天数内的回访访客。
 
 `getNewRepeat`数据元素使用以下参数：
 
@@ -90,7 +90,7 @@ ht-degree: 0%
 
 ### `getPageName`
 
-允许您设置和配置[`getPageName` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getpagename.html)。 `getPageName`数据元素为当前URL创建易读、友好的格式化版本。
+允许您设置和配置[`getPageName` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getpagename.html?lang=zh-Hans)。 `getPageName`数据元素为当前URL创建易读、友好的格式化版本。
 
 `getPageName`数据元素使用以下参数：
 
@@ -107,7 +107,7 @@ ht-degree: 0%
 >
 >此数据元素会设置Cookie并允许将用户生成的值存储在Cookie中。 有关更多信息，请参阅特定于插件的文档。
 
-允许您设置和配置[`getPreviousValue` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getpreviousvalue.html)。 `getPreviousValue`数据元素将变量设置为在上一次点击时设置的值。
+允许您设置和配置[`getPreviousValue` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getpreviousvalue.html?lang=zh-Hans)。 `getPreviousValue`数据元素将变量设置为在上一次点击时设置的值。
 
 `getPreviousValue`数据元素使用以下参数：
 
@@ -118,7 +118,7 @@ ht-degree: 0%
 
 ### `getQueryParam`
 
-允许您设置和配置[`getQueryParam` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getqueryparam.html)。 `getQueryParam`数据元素提取URL中包含的任何查询字符串参数的值。 在从登陆页面URL中提取内部和外部促销活动代码时，此插件非常有用。 在提取搜索词或其他查询字符串参数时，此插件也很有价值。 此数据元素在解析复杂URL（包括散列和包含多个查询字符串参数的URL）方面提供了强大的功能。
+允许您设置和配置[`getQueryParam` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getqueryparam.html?lang=zh-Hans)。 `getQueryParam`数据元素提取URL中包含的任何查询字符串参数的值。 在从登陆页面URL中提取内部和外部促销活动代码时，此插件非常有用。 在提取搜索词或其他查询字符串参数时，此插件也很有价值。 此数据元素在解析复杂URL（包括散列和包含多个查询字符串参数的URL）方面提供了强大的功能。
 
 `getQueryParam`数据元素使用以下参数：
 
@@ -135,7 +135,7 @@ ht-degree: 0%
 
 ### `getTimeParting`
 
-允许您设置和配置[`getTimeParting` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/gettimeparting.html)。 `getTimeParting`数据元素捕获网站上发生任何可测量活动的时间的详细信息。 当您想要按给定日期范围内的任何可重复时间划分来细分指标时，此数据元素很有价值。 例如，您可以比较一周内某两天的转化率，如所有星期日的转化率与所有星期四的转化率。 您还可以比较一天内的不同时段，如比较所有上午与所有晚上。
+允许您设置和配置[`getTimeParting` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/gettimeparting.html?lang=zh-Hans)。 `getTimeParting`数据元素捕获网站上发生任何可测量活动的时间的详细信息。 当您想要按给定日期范围内的任何可重复时间划分来细分指标时，此数据元素很有价值。 例如，您可以比较一周内某两天的转化率，如所有星期日的转化率与所有星期四的转化率。 您还可以比较一天内的不同时段，如比较所有上午与所有晚上。
 
 `getTimeParting`数据元素使用以下参数：
 
@@ -162,7 +162,7 @@ ht-degree: 0%
 >
 >此数据元素设置Cookie。 有关更多信息，请参阅特定于插件的文档。
 
-允许您设置和配置[`getTimeSinceLastVisit` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/gettimesincelastvisit.html)。 `getTimeSinceLastVisit`数据元素跟踪访客在距上次访问后多久返回您的网站。
+允许您设置和配置[`getTimeSinceLastVisit` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/gettimesincelastvisit.html?lang=zh-Hans)。 `getTimeSinceLastVisit`数据元素跟踪访客在距上次访问后多久返回您的网站。
 
 `getTimeSinceLastVisit`数据元素不使用任何参数。 此方法将返回自访客上次访问网站以来经过的时间，并按以下格式存储该时间：
 
@@ -177,7 +177,7 @@ ht-degree: 0%
 >
 >此数据元素会设置Cookie并允许将用户生成的值存储在Cookie中。 有关更多信息，请参阅特定于插件的文档。
 
-允许您设置和配置[`getValOnce` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getvalonce.html)。 `getValOnce`数据元素阻止将一个变量多次设置为等于同一个值。
+允许您设置和配置[`getValOnce` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getvalonce.html?lang=zh-Hans)。 `getValOnce`数据元素阻止将一个变量多次设置为等于同一个值。
 
 `getValOnce`数据元素使用以下参数：
 
@@ -194,7 +194,7 @@ ht-degree: 0%
 >
 >此数据元素设置Cookie。 有关更多信息，请参阅特定于插件的文档。
 
-允许您设置和配置[`getVisitDuration` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getvisitduration.html)。 `getVisitDuration`数据元素跟踪访客在某个时间点之前在网站上停留的时间（以分钟为单位）。
+允许您设置和配置[`getVisitDuration` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getvisitduration.html?lang=zh-Hans)。 `getVisitDuration`数据元素跟踪访客在某个时间点之前在网站上停留的时间（以分钟为单位）。
 
 `getVisitDuration`数据元素不使用任何参数。 它会返回以下值之一：
 
@@ -209,7 +209,7 @@ ht-degree: 0%
 >
 >此数据元素设置Cookie。 有关更多信息，请参阅特定于插件的文档。
 
-允许您设置和配置[`getVisitNum` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getvisitnum.html)。 `getVisitNum`数据元素返回在所需天数内访问网站的所有访客的访问数量。
+允许您设置和配置[`getVisitNum` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getvisitnum.html?lang=zh-Hans)。 `getVisitNum`数据元素返回在所需天数内访问网站的所有访客的访问数量。
 
 `getVisitNum`数据元素使用以下参数：
 
@@ -223,7 +223,7 @@ ht-degree: 0%
 
 ### `p_fo` （仅页面优先）
 
-允许您设置和配置[`p_fo` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/p-fo.html)。 `p_fo`数据元素是一个实用程序，用于检查特定JavaScript对象是否存在。 如果该对象不存在，则插件将创建该对象并返回`true`。 如果页面上已存在JavaScript对象，则返回`false`。 此数据元素可用于在页面上只运行一次代码。
+允许您设置和配置[`p_fo` Analytics插件](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/p-fo.html?lang=zh-Hans)。 `p_fo`数据元素是一个实用程序，用于检查特定JavaScript对象是否存在。 如果该对象不存在，则插件将创建该对象并返回`true`。 如果页面上已存在JavaScript对象，则返回`false`。 此数据元素可用于在页面上只运行一次代码。
 
 `p_fo`数据元素使用以下参数：
 

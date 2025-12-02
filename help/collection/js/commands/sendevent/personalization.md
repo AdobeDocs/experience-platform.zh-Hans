@@ -51,7 +51,7 @@ personalization: {
 
 ## `personalization.surfaces`
 
-`surfaces`属性是[表面URI](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/channels/code-based-experience/configure-code-based-channel/code-based-surface#surface-uri)字符串的数组，这些字符串手动定义从中请求个性化的渠道、设备或上下文。 它们允许您区分不同的数字体验，例如跨渠道生态系统内的域、应用程序或设备平台。 默认情况下，库推断来自当前页面的缺省曲面。 可以使用此属性覆盖当前页面的自动推断表面。
+`surfaces`属性是[表面URI](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/channels/code-based-experience/configure-code-based-channel/code-based-surface#surface-uri)字符串的数组，这些字符串手动定义从中请求个性化的渠道、设备或上下文。 它们允许您区分不同的数字体验，例如跨渠道生态系统内的域、应用程序或设备平台。 默认情况下，库推断来自当前页面的缺省曲面。 可以使用此属性覆盖当前页面的自动推断表面。
 
 当您想要使用跨渠道个性化并且必须区分个性化在单独的渠道之间的工作方式时，此属性很有价值。 它允许您为同一Adobe Experience Platform组织下的不同站点创建不同的选件。
 

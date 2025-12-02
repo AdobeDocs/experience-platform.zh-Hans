@@ -25,8 +25,8 @@ ht-degree: 0%
 
 有关创建和配置技术帐户的其他指导，请参阅：
 
-- [Developer Console设置](https://experienceleague.adobe.com/en/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/set-up-developer-console-and-postman)：有关配置Adobe Developer Console和获取OAuth凭据的分步说明。
-- [端到端技术帐户设置](https://experienceleague.adobe.com/en/docs/platform-learn/tutorial-comprehensive-technical/setup)：在Adobe Experience Platform中创建和配置技术帐户的完整演练。
+- [Developer Console设置](https://experienceleague.adobe.com/zh-hans/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/set-up-developer-console-and-postman)：有关配置Adobe Developer Console和获取OAuth凭据的分步说明。
+- [端到端技术帐户设置](https://experienceleague.adobe.com/zh-hans/docs/platform-learn/tutorial-comprehensive-technical/setup)：在Adobe Experience Platform中创建和配置技术帐户的完整演练。
 
 如果仅使用查询服务UI，请确保您拥有必要权限，或与管理技术帐户的管理员进行协调。 任何计划的查询都将添加到[!UICONTROL Scheduled queries]选项卡的列表中，您可以在其中监视所有计划查询作业的状态、计划详细信息和错误消息，以及订阅警报。 有关监视和管理查询的详细信息，请参阅[监视计划查询文档](./monitor-queries.md)。
 

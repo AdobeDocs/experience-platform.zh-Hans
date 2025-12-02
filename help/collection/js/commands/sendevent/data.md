@@ -32,7 +32,7 @@ alloy("sendEvent", {
 
 ## 在Adobe Analytics中使用`data`对象 {#analytics}
 
-您可以将`data`对象与Adobe Analytics结合使用，以将数据发送到没有XDM架构的报表包。 将变量配置为使用与AppMeasurement变量相同的语法，从而简化升级到Web SDK的过程。 有关详细信息，请参阅Adobe Analytics实施指南中的[映射到Adobe Analytics的数据对象变量](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/data-var-mapping)。
+您可以将`data`对象与Adobe Analytics结合使用，以将数据发送到没有XDM架构的报表包。 将变量配置为使用与AppMeasurement变量相同的语法，从而简化升级到Web SDK的过程。 有关详细信息，请参阅Adobe Analytics实施指南中的[映射到Adobe Analytics的数据对象变量](https://experienceleague.adobe.com/zh-hans/docs/analytics/implementation/aep-edge/data-var-mapping)。
 
 ## 通过Web SDK标记扩展使用`data`对象
 

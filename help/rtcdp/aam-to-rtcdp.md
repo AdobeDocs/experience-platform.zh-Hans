@@ -17,7 +17,7 @@ ht-degree: 67%
 
 ## &#x200B;1. 考虑 Audience Manager 中的数据架构
 
-当您考虑从 Audience Manager 演进到 Real-Time CDP 时，现在是分析 [Audience Manager 区段](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/segments/segments-purpose.html)并确定有哪些[信号](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-explorer/data-explorer-understanding-signals.html)、[特征](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-details-page.html)和[规则](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/segments/segment-builder.html#segment-builder-section)组成这些区段的关键时刻。
+当您考虑从 Audience Manager 演进到 Real-Time CDP 时，现在是分析 [Audience Manager 区段](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/segments/segments-purpose.html?lang=zh-Hans)并确定有哪些[信号](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-explorer/data-explorer-understanding-signals.html?lang=zh-Hans)、[特征](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-details-page.html?lang=zh-Hans)和[规则](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/segments/segment-builder.html?lang=zh-Hans#segment-builder-section)组成这些区段的关键时刻。
 
 此外，请考虑您当前在 Audience Manager 中使用的数据源。
 
@@ -41,7 +41,7 @@ Adobe 建议将区段分为以下几类：
 
 ## &#x200B;4. 今天您在 Audience Manager 中有哪些目标可开始迁移到 Real-Time CDP？
 
-Adobe强烈建议将Audience Manager中激活到[基于人员的目标](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html)的区段通过[!UICONTROL Audience Manager Source Connector]推送到Real-Time CDP，然后通过Real-Time CDP进行激活。
+Adobe强烈建议将Audience Manager中激活到[基于人员的目标](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html?lang=zh-Hans)的区段通过[!UICONTROL Audience Manager Source Connector]推送到Real-Time CDP，然后通过Real-Time CDP进行激活。
 
 Audience Manager中提供的所有基于人员的目标([Facebook](/help/destinations/catalog/social/facebook.md)、[[!UICONTROL Google Customer Match]](/help/destinations/catalog/advertising/google-customer-match.md)、[LinkedIn](/help/destinations/catalog/social/linkedin.md))也在Real-Time CDP中提供。
 
