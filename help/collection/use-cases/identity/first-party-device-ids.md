@@ -164,7 +164,7 @@ DNS中的[!DNL CNAME]记录允许您创建一个域名之间的别名。 这有�
 >
 >此功能要求您启用[第一方数据收集](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=en)。
 
-**步骤 2. 为您的数据流&#x200B;**[!UICONTROL First Party ID Cookie]**启用**&#x200B;功能
+**步骤 2. 为您的数据流&#x200B;**&#x200B;[!UICONTROL First Party ID Cookie]&#x200B;**启用**&#x200B;功能
 
 配置CNAME后，必须为数据流启用&#x200B;**[!UICONTROL First Party ID Cookie]**&#x200B;选项。 此设置会告知Edge Network在查找第一方设备ID时引用指定的Cookie，而不是在[标识映射](#identityMap)中查找此值。
 

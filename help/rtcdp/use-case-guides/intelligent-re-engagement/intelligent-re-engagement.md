@@ -781,4 +781,4 @@ ht-degree: 45%
 
 通过以明智和负责任的方式重新吸引放弃转化的客户，您有望提高转化率并增加客户存留期的价值。
 
-接下来，您可以探索Real-Time CDP支持的其他用例，例如在Web资产上向未经身份验证的用户显示个性化内容[](/help/rtcdp/partner-data/onsite-personalization.md)。
+接下来，您可以探索Real-Time CDP支持的其他用例，例如在Web资产上向未经身份验证的用户显示个性化内容[&#128279;](/help/rtcdp/partner-data/onsite-personalization.md)。

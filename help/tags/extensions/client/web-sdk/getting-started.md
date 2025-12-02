@@ -36,7 +36,8 @@ ht-degree: 3%
 
 ![架构画布](assets/getting-started/schema-structure.png)
 
->[!NOTE]\
+>[!NOTE]
+>\
 >保存后，架构仅允许&#x200B;*累加*&#x200B;更改。 有关详细信息，请参阅[架构演变](/help/xdm/schema/composition.md#evolution)。
 
 ## 创建数据流 {#datastream}

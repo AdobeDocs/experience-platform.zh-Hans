@@ -47,7 +47,7 @@ ht-degree: 18%
 
 >[!TIP]
 >
->可导出配置文件受众的目标在卡片的右上角以图标指示，类似于下面高亮显示的目标，或者，您可以使用数据类型筛选器仅显示可导出目标受众的目标，如页面上较高位置显示的[](#supported-destinations)。
+>可导出配置文件受众的目标在卡片的右上角以图标指示，类似于下面高亮显示的目标，或者，您可以使用数据类型筛选器仅显示可导出目标受众的目标，如页面上较高位置显示的[&#128279;](#supported-destinations)。
 
 ![可导出突出显示的配置文件受众的Amazon S3目标页面。](/help/destinations/assets/ui/activate-prospect-audiences/amazon-s3-icon-activate-prospect-audiences.png)
 
@@ -87,4 +87,4 @@ Note that we will need to add links to other destination types here as more dest
 
 * [用受信任的数据合作伙伴提供的属性补充第一方轮廓](/help/rtcdp/partner-data/supplement-first-party-profiles.md)，以改善您的数据基础、洞察客户群的新情况并获得更好的受众优化。
 * 使用 Real-Time CDP 中的第三方数据支持，[通过数据合作伙伴提供的潜在客户轮廓扩充您的轮廓基础并与其交流以获取或接触新客户](/help/rtcdp/partner-data/prospecting.md)。
-* [](/help/rtcdp/partner-data/onsite-personalization.md)利用合作伙伴辅助的认可在访问期间提供个性化现场体验，而无需用户进行身份验证或之前使用过您的品牌。
+* [&#128279;](/help/rtcdp/partner-data/onsite-personalization.md)利用合作伙伴辅助的认可在访问期间提供个性化现场体验，而无需用户进行身份验证或之前使用过您的品牌。
