@@ -17,4 +17,4 @@ Adobe Experience Platform Web SDK标记扩展通过Adobe Experience Platform Edg
 
 观看以下视频以了解Adobe Experience Platform [!DNL Web SDK]和[!DNL Edge Network]的实际操作情况，只需一次调用即可将数据发送到[!DNL Experience Platform]、[!DNL Analytics]、[!DNL Audience Manager]和[!DNL Target]。
 
->[!VIDEO](https://video.tv.adobe.com/v/34148)
+>[!VIDEO](https://video.tv.adobe.com/v/3413663?captions=chi_hans)

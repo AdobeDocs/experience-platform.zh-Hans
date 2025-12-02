@@ -48,7 +48,7 @@ ht-degree: 43%
 
 有关“为数据收集准备数据”过程的快速演示，请观看以下视频：
 
->[!VIDEO](https://video.tv.adobe.com/v/342120?quality=12&enable10seconds=on&speedcontrol=on)
+>[!VIDEO](https://video.tv.adobe.com/v/345562?captions=chi_hans&quality=12&enable10seconds=on&speedcontrol=on)
 
 ## [!UICONTROL Select data] {#select-data}
 
