@@ -4,33 +4,33 @@ title: 用例行动手册入门
 description: 了解如何开始使用用例战术手册功能。
 role: Admin
 exl-id: 1c39792e-49fe-4c5f-9796-fa29f60b7461
-source-git-commit: 703c84e61af105bc3933e4750a3cb27df8ac19fe
+source-git-commit: d6b62b9539a04be2d2adc7aa66436a294e08303a
 workflow-type: tm+mt
-source-wordcount: '989'
-ht-degree: 14%
+source-wordcount: '942'
+ht-degree: 8%
 
 ---
 
 
 # 快速入门
 
-了解如何为用例行动手册设置您的帐户，这些行动手册专为未自动设置的Real-time Customer Data Platform和Adobe Journey Optimizer设计。 三个主要配置步骤为：
+了解如何为用例行动手册设置您的帐户，这些行动手册专为未自动设置的Real-Time Customer Data Platform和Adobe Journey Optimizer设计。 三个主要配置步骤为：
 
 * 创建沙盒
 * 配置用户权限
 * 为电子邮件、推送和短信通知配置Journey Optimizer渠道界面(如果您计划使用Journey Optimizer行动手册)
 
-要在Experience PlatformUI中访问丰富的用例行动手册，请从左侧导航中选择&#x200B;**[!UICONTROL 行动手册]**。 阅读有关如何[导航用例行动手册](../playbooks/navigate.md)并开始使用[启发型沙盒](../playbooks/navigate.md)的文档。
+要在Experience Platform UI中访问丰富的用例行动手册库，请从左侧导航中选择&#x200B;**[!UICONTROL Playbooks]**。 阅读有关如何[导航用例行动手册](../playbooks/navigate.md)并开始使用[启发型沙盒](../playbooks/navigate.md)的文档。
 
 ## 配置用例行动手册 — 视频演练 {#video}
 
 观看本视频，了解在Journey Optimizer中创建沙盒、配置权限和配置电子邮件、推送和短信通知的渠道界面所需的步骤。
 
->[!VIDEO](https://video.tv.adobe.com/v/3449836?learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/3426987?learn=on)
 
 ## 创建开发沙盒 {#create-development-sandbox}
 
-用例行动手册使用特殊类型的开发沙盒。 要开始使用并访问[[!UICONTROL 使用用例战术手册]](/help/use-case-playbooks/playbooks/overview.md)功能性，[创建一个新的开发沙盒](/help/sandboxes/ui/user-guide.md#create)（确保您没有选择生产沙盒），其名称（而不是标题）后缀中包含 `-ucp` 或者 `-UCP`，如下所示。
+用例行动手册使用特殊类型的开发沙盒。 要开始使用并访问[[!UICONTROL Use Case Playbooks]](/help/use-case-playbooks/playbooks/overview.md)功能，请[创建一个新的开发沙盒](/help/sandboxes/ui/user-guide.md#create)（确保您未选择生产沙盒），其名称（不是标题）的后缀中包含`-ucp`或`-UCP`，如下所示。
 
 >[!IMPORTANT]
 >
@@ -39,15 +39,15 @@ ht-degree: 14%
 
 ![为用例战术手册创建开发沙盒](/help/use-case-playbooks/assets/playbooks/get-started/create-sandbox-ucp.png)
 
-现在，您应该会在左边栏中的[!UICONTROL 用例行动手册]下看到[!UICONTROL 行动手册]。
+现在，您应该会在左边栏中的[!UICONTROL Playbooks]下看到[!UICONTROL Use Case Playbooks]。
 
 ![创建沙盒后，UI 中的用例战术手册。](/help/use-case-playbooks/assets/playbooks/get-started/ucp-sandbox-in-ui.png)
 
-如果您在左栏中没有看到如上图所示的[!UICONTROL 战术手册]，请使用此链接`https://experience.adobe.com/#/@<YOUR_ORG>/sname:<YOUR_SANDBOX_NAME>/platform/mexp/templates`直接导航到那里。在链接中，`<YOUR_ORG>` 是您的组织的名称，而 `<YOUR_SANDBOX_NAME>` 是您创建的开发沙盒的名称。
+如果您在左边栏中没有看到如上所示的[!UICONTROL Playbooks]，请使用此链接`https://experience.adobe.com/#/@<YOUR_ORG>/sname:<YOUR_SANDBOX_NAME>/platform/mexp/templates`直接导航到那里。 在链接中，`<YOUR_ORG>` 是您的组织的名称，而 `<YOUR_SANDBOX_NAME>` 是您创建的开发沙盒的名称。
 
 ## 授予您的团队所需的访问权限 {#grant-access-permissions}
 
-要开始使用[!UICONTROL 用例行动手册]，您的营销团队成员需要正确的权限，以便他们可以查看已创建的行动手册的列表或自行创建行动手册。
+要开始使用[!UICONTROL Use Case Playbooks]，您的营销团队成员需要正确的权限，以便他们可以查看已创建的行动手册的列表或自行创建行动手册。
 
 **所需权限**
 
@@ -69,15 +69,15 @@ ht-degree: 14%
 
 架构的&#x200B;**权限**
 
-若要创建和管理架构，请利用数据建模权限；**[!UICONTROL 管理架构]**、**[!UICONTROL 查看架构]**、**[!UICONTROL 管理关系]**、**[!UICONTROL 管理身份元数据]**
+要创建和管理架构，请利用数据建模权限；**[!UICONTROL Manage Schemas]**、**[!UICONTROL View Schemas]**、**[!UICONTROL Manage Relationships]**、**[!UICONTROL Manage Identity Metadata]**
 
 目标的&#x200B;**权限**
 
-要创建和管理目标，请使用目标权限；**[!UICONTROL 管理]**、**[!UICONTROL 目标]**、**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 激活不含映射的区段]**、**[!UICONTROL 管理和激活数据集目标]**、**[!UICONTROL 目标创作]**。
+要创建和管理目标，请使用目标权限；**[!UICONTROL Manage]**、**[!UICONTROL Destinations]**、**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL Activate Segment without Mapping]**、**[!UICONTROL Manage and Activate Dataset Destination]**、**[!UICONTROL Destination Authoring]**。
 
 历程的&#x200B;**权限**
 
-要创建和管理历程，请使用历程权限；**[!UICONTROL 管理历程]**、**[!UICONTROL 查看历程]**、**[!UICONTROL 查看历程报告]**、**[!UICONTROL 管理历程]**、**[!UICONTROL 事件]**、**[!UICONTROL 数据源和操作]**、**[!UICONTROL 查看历程]**、**[!UICONTROL 事件]**、**[!UICONTROL 数据源和操作、&lbrace;Publish历程]**。
+要创建和管理历程，请使用历程权限；**[!UICONTROL Manage Journeys]**、**[!UICONTROL View Journeys]**、**[!UICONTROL View Journeys Report]**、**[!UICONTROL Manage Journeys]**、**[!UICONTROL Events]**、**[!UICONTROL Data Sources and Actions]**、**[!UICONTROL View Journeys]**、**[!UICONTROL Events]**、**[!UICONTROL Data Sources and Actions, Publish Journeys]**。
 
 下图显示了用户查看、创建和管理行动手册以及行动手册生成的资产的建议权限快照。
 
@@ -89,13 +89,13 @@ ht-degree: 14%
 
 ## 在Journey Optimizer中配置沙盒和渠道表面 {#configure-channel-surfaces}
 
-如果您的组织获得[Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=zh-Hans)的许可，并且您打算使用针对Journey Optimizer设计的行动手册，则需要在沙盒中配置渠道预设，这些预设可定义消息所需的技术参数。 [了解如何在 Adobe Journey Optimizer 中设置渠道界面。](https://experienceleague.adobe.com/docs/journey-optimizer/using/configuration/channel-surfaces.html?lang=zh-Hans)
+如果贵组织获得[Adobe Journey Optimizer](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/ajo-home)许可，并且要使用针对Journey Optimizer设计的行动手册，请在沙盒中配置渠道界面。 渠道界面定义消息所需的所有技术参数，如电子邮件类型、发件人电子邮件和姓名、移动应用程序、短信配置等。 [了解如何在 Adobe Journey Optimizer 中设置渠道界面。](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/channel-surfaces)
 
 要在Journey Optimizer中创建行动手册的实例，您需要为电子邮件、推送和短信通知配置渠道平面。
 
 ### 电子邮件渠道表面
 
-在Journey Optimizer界面中转到`Channels`。 为营销电子邮件和事务性消息配置单独的子域和IP池（如果尚未配置）。 这些是确保事务型消息（如订单确认电子邮件）传递给客户的最佳实践。 输入姓名、电子邮件地址和其他设置。 选择页面右上角的&#x200B;**提交**&#x200B;以创建营销渠道表面。 阅读有关[如何设置电子邮件渠道界面](https://experienceleague.adobe.com/docs/journey-optimizer/using/email/configure-email/email-settings.html?lang=zh-Hans)的文档。
+在Journey Optimizer界面中转到`Channels`。 为营销电子邮件和事务性消息配置单独的子域和IP池（如果尚未配置）。 这些是确保事务型消息（如订单确认电子邮件）传递给客户的最佳实践。 输入姓名、电子邮件地址和其他设置。 选择页面右上角的&#x200B;**提交**&#x200B;以创建营销渠道表面。 阅读有关[如何设置电子邮件渠道界面](https://experienceleague.adobe.com/docs/journey-optimizer/using/email/configure-email/email-settings.html)的文档。
 
 ### SMS渠道表面
 
@@ -111,7 +111,7 @@ ht-degree: 14%
 
 接下来，选择您在渠道配置中查看的渠道、平台和应用程序。 选择&#x200B;**提交**&#x200B;以创建推送渠道表面。
 
-阅读有关[如何设置推送渠道界面](https://experienceleague.adobe.com/docs/journey-optimizer/using/push/push-config/push-configuration.html?lang=zh-Hans)的文档。
+阅读有关[如何设置推送渠道界面](https://experienceleague.adobe.com/docs/journey-optimizer/using/push/push-config/push-configuration.html)的文档。
 
 ## 后续步骤 {#next-steps}
 
