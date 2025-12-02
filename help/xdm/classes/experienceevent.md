@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM ExperienceEvent类
 description: 了解XDM ExperienceEvent类和事件数据建模的最佳实践。
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: 8aa8a1c42e9656716be746ba447a5f77a8155b4c
+source-git-commit: dc333f30f9a2cb7cd485d1cb13272c078da0bd76
 workflow-type: tm+mt
-source-wordcount: '2783'
+source-wordcount: '2728'
 ht-degree: 0%
 
 ---
@@ -23,8 +23,8 @@ ht-degree: 0%
 
 | 属性 | 描述 |
 | --- | --- |
-| `_id`<br>**（必需）** | Experience Event Class `_id`字段唯一标识摄取到Adobe Experience Platform中的各个事件。 此字段用于跟踪单个事件的唯一性，防止数据重复，并在下游服务中查找该事件。<br><br>在检测到重复事件的地方，Experience Platform应用程序和服务可能会以不同的方式处理重复。 例如，如果配置文件存储中已存在具有相同`_id`的事件，则删除配置文件服务中的重复事件。 但是，这些事件仍将记录在数据湖中。<br><br>在某些情况下，`_id`可以是[通用唯一标识符(UUID)](https://datatracker.ietf.org/doc/html/rfc4122)或[全局唯一标识符(GUID)](https://learn.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0)。<br><br>如果从源连接流式传输数据或直接从Parquet文件中摄取，则应当通过连接特定字段组合生成此值，这些字段组合使事件具有唯一性。 可连接的事件示例包括主ID、时间戳、事件类型等。 连接值必须为`uri-reference`格式字符串，这意味着必须删除任何冒号字符。 之后，应该使用SHA-256或您选择的其他算法对拼接值进行哈希处理。<br><br>请务必注意，**此字段不表示与个人**&#x200B;相关的身份，而是数据本身的记录。 与人员相关的身份数据应委托给兼容字段组提供的[身份字段](../schema/composition.md#identity)。 |
-| `eventMergeId` | 如果使用[Adobe Experience Platform Web SDK](/help/web-sdk/home.md)摄取数据，则表示导致创建记录的摄取批次的ID。 此字段在数据摄取时由系统自动填充。 不支持在Web SDK实施的上下文之外使用此字段。 |
+| `_id`<br>**（必需）** | Experience Event Class `_id`字段唯一标识摄取到Adobe Experience Platform中的各个事件。 此字段用于跟踪单个事件的唯一性，防止数据重复，并在下游服务中查找该事件。<br><br>在检测到重复事件的地方，Experience Platform应用程序和服务可能会以不同的方式处理重复。 例如，如果配置文件存储中已存在具有相同`_id`的事件，则删除配置文件服务中的重复事件。 但是，这些事件仍记录在数据湖中。<br><br>在某些情况下，`_id`可以是[通用唯一标识符(UUID)](https://datatracker.ietf.org/doc/html/rfc4122)或[全局唯一标识符(GUID)](https://learn.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0)。<br><br>如果从源连接流式传输数据或直接从Parquet文件中摄取，则应当通过连接特定字段组合生成此值，这些字段组合使事件具有唯一性。 可连接的事件示例包括主ID、时间戳、事件类型等。 连接值必须为`uri-reference`格式字符串，这意味着必须删除任何冒号字符。 之后，应该使用SHA-256或您选择的其他算法对拼接值进行哈希处理。<br><br>请务必注意，**此字段不表示与个人**&#x200B;相关的身份，而是数据本身的记录。 与人员相关的身份数据应委托给兼容字段组提供的[身份字段](../schema/composition.md#identity)。 |
+| `eventMergeId` | 如果使用[Adobe Experience Platform Web SDK](/help/collection/js/js-overview.md)摄取数据，则表示导致创建记录的摄取批次的ID。 此字段在数据摄取时由系统自动填充。 不支持在Web SDK实施的上下文之外使用此字段。 |
 | `eventType` | 一个字符串，它指示事件的类型或类别。 如果要区分同一架构和数据集中的不同事件类型（例如，将产品查看事件与零售公司的添加到购物车事件区分开来），则可以使用此字段。<br><br>此属性的标准值在[附录部分](#eventType)中提供，包括预期使用案例的说明。 此字段是可扩展的枚举，这意味着您还可以使用自己的事件类型字符串对正在跟踪的事件进行分类。<br><br>`eventType`限制您在应用程序上每次点击只使用单个事件，因此您必须使用计算字段让系统知道哪个事件最重要。 有关详细信息，请参阅[计算字段的最佳实践](#calculated)部分。 |
 | `producedBy` | 描述事件生成者或来源的字符串值。 如果需要，可以使用此字段过滤掉某些事件生成器，以用于分段目的。<br><br>该属性的某些建议值在[附录部分](#producedBy)中提供。 此字段是可扩展的枚举，这意味着您还可以使用自己的字符串来表示不同的事件生成器。 |
 | `identityMap` | 一个映射字段，其中包含事件应用于的个人的一组命名空间标识。 此字段在摄取身份数据时由系统自动更新。 要为[实时客户档案](../../profile/home.md)正确使用此字段，请不要尝试在数据操作中手动更新字段的内容。<br /><br />有关其用例的更多信息，请参阅[架构组合基础知识](../schema/composition.md#identityMap)中关于标识映射的部分。 |
@@ -38,7 +38,7 @@ ht-degree: 0%
 
 ### 时间戳 {#timestamps}
 
-事件架构的根`timestamp`字段只能&#x200B;**2&rbrace;表示事件本身的观察结果，并且必须发生在过去。**&#x200B;但是，事件&#x200B;**必须**&#x200B;从1970年起发生。 如果分段用例需要使用将来可能发生的时间戳，则这些值必须限制在体验事件架构中的其他位置。
+事件架构的根`timestamp`字段只能&#x200B;**2}表示事件本身的观察结果，并且必须发生在过去。**&#x200B;但是，事件&#x200B;**必须**&#x200B;从1970年起发生。 如果分段用例需要使用将来可能发生的时间戳，则这些值必须限制在体验事件架构中的其他位置。
 
 例如，如果旅游和酒店业的某家公司正在建模航班预订事件，则班级`timestamp`字段表示观察到预订事件的时间。 与事件相关的其他时间戳（如旅行预订的开始日期）应捕获在标准或自定义字段组提供的单独字段中。
 
@@ -64,25 +64,25 @@ ht-degree: 0%
 
 Adobe提供了多个标准字段组以用于[!DNL XDM ExperienceEvent]类。 以下是类的一些常用字段组的列表：
 
-* [[!UICONTROL Adobe Analytics ExperienceEvent完整扩展]](../field-groups/event/analytics-full-extension.md)
-* [[!UICONTROL Adobe Advertising Cloud ExperienceEvent完整扩展]](../field-groups/event/advertising-full-extension.md)
-* [[!UICONTROL 余额转帐]](../field-groups/event/balance-transfers.md)
-* [[!UICONTROL 营销活动详细信息]](../field-groups/event/campaign-marketing-details.md)
-* [[!UICONTROL 卡片操作]](../field-groups/event/card-actions.md)
-* [[!UICONTROL 渠道详细信息]](../field-groups/event/channel-details.md)
-* [[!UICONTROL Commerce详细信息]](../field-groups/event/commerce-details.md)
-* [[!UICONTROL 存款详细信息]](../field-groups/event/deposit-details.md)
-* [[!UICONTROL 设备以旧换新详细信息]](../field-groups/event/device-trade-in-details.md)
-* [[!UICONTROL 餐饮预订]](../field-groups/event/dining-reservation.md)
-* [[!UICONTROL 最终用户ID详细信息]](../field-groups/event/enduserids.md)
-* [[!UICONTROL 环境详细信息]](../field-groups/event/environment-details.md)
-* [[!UICONTROL 航班预订]](../field-groups/event/flight-reservation.md)
-* [[!UICONTROL IAB TCF 2.0同意]](../field-groups/event/iab.md)
-* [[!UICONTROL 住宿预订]](../field-groups/event/lodging-reservation.md)
-* [[!UICONTROL MediaAnalytics交互详细信息]](../field-groups/event/mediaanalytics-interaction.md)
-* [[!UICONTROL 报价请求详细信息]](../field-groups/event/quote-request-details.md)
-* [[!UICONTROL 预订详细信息]](../field-groups/event/reservation-details.md)
-* [[!UICONTROL Web详细信息]](../field-groups/event/web-details.md)
+* [[!UICONTROL Adobe Analytics ExperienceEvent Full Extension]](../field-groups/event/analytics-full-extension.md)
+* [[!UICONTROL Adobe Advertising Cloud ExperienceEvent Full Extension]](../field-groups/event/advertising-full-extension.md)
+* [[!UICONTROL Balance Transfers]](../field-groups/event/balance-transfers.md)
+* [[!UICONTROL Campaign Marketing Details]](../field-groups/event/campaign-marketing-details.md)
+* [[!UICONTROL Card Actions]](../field-groups/event/card-actions.md)
+* [[!UICONTROL Channel Details]](../field-groups/event/channel-details.md)
+* [[!UICONTROL Commerce Details]](../field-groups/event/commerce-details.md)
+* [[!UICONTROL Deposit Details]](../field-groups/event/deposit-details.md)
+* [[!UICONTROL Device Trade-In Details]](../field-groups/event/device-trade-in-details.md)
+* [[!UICONTROL Dining Reservation]](../field-groups/event/dining-reservation.md)
+* [[!UICONTROL End User ID Details]](../field-groups/event/enduserids.md)
+* [[!UICONTROL Environment Details]](../field-groups/event/environment-details.md)
+* [[!UICONTROL Flight Reservation]](../field-groups/event/flight-reservation.md)
+* [[!UICONTROL IAB TCF 2.0 Consent]](../field-groups/event/iab.md)
+* [[!UICONTROL Lodging Reservation]](../field-groups/event/lodging-reservation.md)
+* [[!UICONTROL MediaAnalytics Interaction Details]](../field-groups/event/mediaanalytics-interaction.md)
+* [[!UICONTROL Quote Request Details]](../field-groups/event/quote-request-details.md)
+* [[!UICONTROL Reservation Details]](../field-groups/event/reservation-details.md)
+* [[!UICONTROL Web Details]](../field-groups/event/web-details.md)
 
 ## 附录
 
@@ -126,7 +126,7 @@ Adobe提供了多个标准字段组以用于[!DNL XDM ExperienceEvent]类。 以
 | `decisioning.propositionFetch` | 用于指示某个事件主要用于获取决策。 Adobe Analytics将自动删除此事件。 |
 | `decisioning.propositionInteract` | 此事件类型用于跟踪个性化内容上的交互（例如点击）。 |
 | `decisioning.propositionSend` | 此事件会跟踪何时决定向潜在客户发送推荐或选件以供考虑。 |
-| `decisioning.propositionTrigger` | 此类型的事件由[Web SDK](../../web-sdk/home.md)存储在本地存储中，但未发送到Experience Edge。 每次满足规则集时，都会生成一个事件并将其存储在本地存储中（如果该设置已启用）。 |
+| `decisioning.propositionTrigger` | 此类事件由Web SDK存储在本地存储中，但不会发送到Edge Network。 每次满足规则集时，都会生成一个事件并将其存储在本地存储中（如果该设置已启用）。 |
 | `delivery.feedback` | 此事件跟踪投放的反馈事件，如电子邮件投放。 |
 | `directMarketing.emailBounced` | 此事件可跟踪发送给人员的电子邮件何时退回。 |
 | `directMarketing.emailBouncedSoft` | 此事件可跟踪发送给人员的电子邮件何时软退回。 |

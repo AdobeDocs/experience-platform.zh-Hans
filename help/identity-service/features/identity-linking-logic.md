@@ -2,7 +2,7 @@
 title: 标识服务链接逻辑
 description: 了解Identity Service如何链接不同的身份以创建客户的全面视图。
 exl-id: 1c958c0e-0777-48db-862c-eb12b2e7a03c
-source-git-commit: bbfc1d749fbe0e74489a48e0c962d9f51d19ccde
+source-git-commit: 5d08a6d90e53aa2f5b1fb72c36e19156e3ac5299
 workflow-type: tm+mt
 source-wordcount: '966'
 ht-degree: 3%
@@ -102,7 +102,7 @@ Identity Service识别您的图形中已存在CRMID:60013ABC，因此仅链接�
 | `t=3` | ECID:44675 | 查看主页 |
 | `t=4` | ECID:44675，CRMID： 31260XYZ | 查看购买历史记录 |
 
-每个事件的主标识将根据[您配置数据元素类型](../../tags/extensions/client/web-sdk/data-element-types.md)的方式确定。
+每个事件的主标识将根据[您配置数据元素类型](/help/tags/extensions/client/web-sdk/data-element-types.md)的方式确定。
 
 >[!NOTE]
 >

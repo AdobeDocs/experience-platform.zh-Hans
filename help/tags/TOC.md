@@ -6,9 +6,9 @@ user-guide-description: 了解如何部署和管理分析、营销和广告标�
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: cc89bf68011499e69f4ed8c7dc891ec02a34d361
+source-git-commit: c7bedcdb04d5c5483d0239a9fb99388d5e1e1fe5
 workflow-type: tm+mt
-source-wordcount: '791'
+source-wordcount: '834'
 ht-degree: 36%
 
 ---
@@ -50,7 +50,6 @@ ht-degree: 36%
 * 客户端信息 {#client-side}
    * [概述](./ui/client-side/overview.md)
    * [异步部署](./ui/client-side/asynchronous-deployment.md)
-   * [卫星对象引用](./ui/client-side/satellite-object.md)
    * [部署JavaScript标记以管理客户同意](./ui/client-side/consent.md)
    * [内容安全策略(CSP)支持](./ui/client-side/content-security-policy.md)
    * [子资源完整性(SRI)支持](./ui/client-side/sri.md)
@@ -99,21 +98,46 @@ ht-degree: 36%
       * Adobe Experience Cloud ID服务 {#id-service}
          * [概述](./extensions/client/id-service/overview.md)
          * [发行说明](./extensions/client/id-service/release-notes.md)
-      * Adobe Experience Platform演示 {#platform-demo}
-         * [概述](./extensions/client/platform-demo/overview.md)
-      * Adobe Experience Platform Web SDK {#web-sdk}
-         * [概述](./extensions/client/web-sdk/overview.md)
-         * [配置Web SDK标记扩展](./extensions/client/web-sdk/web-sdk-extension-configuration.md)
-         * [事件类型](./extensions/client/web-sdk/event-types.md)
-         * [操作类型](./extensions/client/web-sdk/action-types.md)
-         * [数据元素类型](./extensions/client/web-sdk/data-element-types.md)
-         * [访问ECID](./extensions/client/web-sdk/accessing-the-ecid.md)
-         * [Web SDK插件](./extensions/client/web-sdk/web-sdk-plugins.md)
-         * [Web SDK扩展发行说明](./extensions/client/web-sdk/web-sdk-ext-release-notes.md)
-         * [Web SDK插件发行说明](./extensions/client/web-sdk/web-sdk-plugins-release-notes.md)
       * Adobe Experience Manager资产分析 {#asset-insights}
          * [概述](./extensions/client/asset-insights/overview.md)
          * [发行说明](./extensions/client/asset-insights/release-notes.md)
+      * Adobe Experience Platform演示 {#platform-demo}
+         * [概述](./extensions/client/platform-demo/overview.md)
+      * Adobe Experience Platform Web SDK {#web-sdk}
+         * [概述](extensions/client/web-sdk/overview.md)
+         * [快速入门](extensions/client/web-sdk/getting-started.md)
+         * 配置 {#configure}
+            * [概述](extensions/client/web-sdk/configure/config-overview.md)
+            * [自定义生成组件](extensions/client/web-sdk/configure/custom-build-components.md)
+            * [SDK实例](extensions/client/web-sdk/configure/general.md)
+            * [数据流](extensions/client/web-sdk/configure/datastreams.md)
+            * [同意](extensions/client/web-sdk/configure/consent.md)
+            * [身份标识](extensions/client/web-sdk/configure/identity.md)
+            * [个性化](extensions/client/web-sdk/configure/personalization.md)
+            * [数据收集](extensions/client/web-sdk/configure/data-collection.md)
+            * [流媒体](extensions/client/web-sdk/configure/streaming-media.md)
+            * [推送通知](extensions/client/web-sdk/configure/push-notifications.md)
+            * [Advertising](extensions/client/web-sdk/configure/advertising.md)
+            * [配置覆盖](extensions/client/web-sdk/configure/configuration-overrides.md)
+            * [高级设置](extensions/client/web-sdk/configure/advanced-settings.md)
+         * [事件类型](extensions/client/web-sdk/event-types.md)
+         * 操作类型 {#actions}
+            * [概述](extensions/client/web-sdk/actions/actions-overview.md)
+            * [应用建议](extensions/client/web-sdk/actions/apply-propositions.md)
+            * [应用响应](extensions/client/web-sdk/actions/apply-response.md)
+            * [评估规则集](extensions/client/web-sdk/actions/evaluate-rulesets.md)
+            * [获取Media Analytics跟踪器](extensions/client/web-sdk/actions/get-media-analytics-tracker.md)
+            * [带标识的重定向](extensions/client/web-sdk/actions/redirect-with-identity.md)
+            * [重置事件合并ID](extensions/client/web-sdk/actions/reset-event-merge-id.md)
+            * [发送事件](extensions/client/web-sdk/actions/send-event.md)
+            * [发送媒体事件](extensions/client/web-sdk/actions/send-media-event.md)
+            * [发送推送订阅](extensions/client/web-sdk/actions/send-push-subscription.md)
+            * [设置同意](extensions/client/web-sdk/actions/set-consent.md)
+            * [更新变量](extensions/client/web-sdk/actions/update-variable.md)
+         * [数据元素类型](extensions/client/web-sdk/data-element-types.md)
+         * [访问ECID](extensions/client/web-sdk/accessing-the-ecid.md)
+         * [Web SDK扩展发行说明](extensions/client/web-sdk/web-sdk-ext-release-notes.md)
+      * [Adobe Experience Platform Web SDK插件](extensions/client/web-sdk-plugins/web-sdk-plugins.md)
       * [Adobe Fonts](https://exchange.adobe.com/apps/ec/101538)
       * Adobe Media Analytics for Audio and Video {#media-analytics}
          * [概述](./extensions/client/media-analytics/overview.md)
@@ -205,7 +229,7 @@ ht-degree: 36%
       * [!DNL Snap Pixel] {#snap-pixel}
          * [概述](./extensions/client/snap-pixel/overview.md)
       * [存储扳手](https://exchange.adobe.com/apps/ec/102990)
-      * [按循环水平线的标记](https://exchange.adobe.com/apps/ec/106092)
+      * 按循环水平线的[标记](https://exchange.adobe.com/apps/ec/106092)
       * [Tealium收集](https://exchange.adobe.com/apps/ec/104217)
       * [Tealium数据扩充](https://exchange.adobe.com/apps/ec/104217)
       * [TMMData基础平台](https://exchange.adobe.com/apps/ec/100148)
@@ -234,7 +258,7 @@ ht-degree: 36%
          * [概述](./extensions/server/aws/overview.md)
       * [!DNL Braze] {#braze}
          * [概述](./extensions/server/braze/overview.md)
-      * [适用于Google Analytics的Cloud Connector](https://exchange.adobe.com/apps/ec/106542)
+      * 适用于Google Analytics的[Cloud Connector](https://exchange.adobe.com/apps/ec/106542)
       * 核心 {#core}
          * [概述](./extensions/server/core/overview.md)
       * [Epsilon事件API](https://exchange.adobe.com/apps/ec/109127)
@@ -341,7 +365,7 @@ ht-degree: 36%
       * [关系](./api/guides/relationships.md)
       * [搜索资源](./api/guides/search.md)
       * [密钥](./api/guides/secrets.md)
-* [常见问题解答](./faq.md)
+* [常见问题](./faq.md)
 * [术语更新](./term-updates.md)
 * [弃用对Internet Explorer 10和11的支持](./ie-deprecation.md)
 * [Experience Platform 发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

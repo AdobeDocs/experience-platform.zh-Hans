@@ -1,71 +1,42 @@
 ---
-keywords: Experience Platform；主页；热门主题；数据收集；Launch；Web SDK
 solution: Experience Platform
 title: 数据收集概述
-description: 了解在Adobe Experience Platform中收集客户体验数据涉及的各种技术。
+description: 了解如何将数据发送到Adobe Experience Platform。
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
+source-git-commit: 3d51f01d314587510d900d335dc92fedb8ac31e8
 workflow-type: tm+mt
-source-wordcount: '479'
-ht-degree: 3%
+source-wordcount: '287'
+ht-degree: 2%
 
 ---
 
 # 数据收集概述
 
-Adobe Experience Platform提供了一套方法，可让您从客户端源收集客户体验数据，并将该数据发送到Adobe Experience Platform Edge Network，可在其中丰富和转换数据，并在几秒钟内将数据分发到Adobe或非Adobe目标。
+Adobe Experience Platform提供了一套方法，可让您从各种来源收集客户体验数据并将这些数据发送到Adobe Experience Platform Edge Network。 然后，可以扩充和转换这些数据，并将其分发到Adobe或非Adobe目标。
 
-以下客户端源支持数据收集：
+Adobe通过用于数据收集的专用库支持以下代码语言：
 
-* 基于Web的应用
-* 本机移动设备应用程序
-* 过顶(OTT)应用程序
+* **JavaScript**：适用于网站和基于Web的应用程序
+* **Kotlin**：用于Android设备
+* **Swift**：适用于iOS设备
+* **Brightscript**：适用于Roku设备
+* **颤动**：对于使用颤动的Android + iOS应用程序
+* **React Native**：对于使用React Native的Android + iOS应用程序
 
-数据收集侧重于摄取的数据集的可发现性和可访问性，包括以下内容：
+Adobe Experience Platform数据收集中的标记UI包括Web SDK和Mobile SDK扩展。
 
-* [Adobe Experience Platform Edge Network](https://experienceleague.adobe.com/docs/web-sdk-learn/tutorials/introduction-to-web-sdk-and-edge-network.html?lang=zh-Hans)
-* [标记](../tags/home.md)
-* [数据流](../datastreams/overview.md)
-* [事件转发](../tags/ui/event-forwarding/overview.md)
-* [Adobe Experience Platform Web SDK](../web-sdk/home.md)
-* [Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/)
-* [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/)
-* [Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob?hl=en)
-* [Experience Platform Assurance](../assurance/home.md)
+如果上述SDK都不能满足您的项目需求，则可以使用[Adobe Experience Platform Edge Network API](https://developer.adobe.com/data-collection-apis/docs/)将数据直接发送到Adobe。
 
+## 数据收集过程
 
-本指南简要介绍数据收集以及它如何通过Experience Platform Edge Network将数据发送到Adobe Experience Cloud产品和非Adobe应用程序。
+您可以实施以上某个SDK或标记扩展，以将所有所需数据聚合到单个有效负载中，而不是为每个Adobe产品安装和实施单独的库。 该有效负载被发送到Adobe Experience Platform Edge Network中的[数据流](/help/datastreams/overview.md)。
 
-## 标记、Web SDK和Mobile SDK
+![数据收集图表](assets/tags-sdks.png)
 
-Experience Platform Web SDK和Experience Platform Mobile SDK可折叠所有Adobe产品库，并将其分别压缩为适用于Web平台和移动平台的单个开发工具包。 可以使用原始代码或通过数据收集UI或Adobe Experience Platform UI使用[标记](../tags/home.md)实现这些目标。
+Adobe Experience Platform Edge Network是一个全球分布式、快速且可靠的服务器网络，能够大规模接收和处理数据。 当数据流接收数据时，它将该数据分发到您配置的各个解决方案。 数据以每个产品都能理解的格式传递。
 
-压缩这些库可加快数据收集速度，并将从客户端设备到Experience Platform Edge Network的操作整合到单个流中。
+![Adobe解决方案图表](assets/adobe-solutions.png)
 
-![标记， Web SDK， Mobile SDK](./images/home/tags-sdks.png)
+您还可以使用[事件转发](/help/tags/ui/event-forwarding/overview.md)来转换、扩充数据，并将其发送到任何非Adobe目标，且延迟较低，无需任何客户端实现代码。
 
-## Experience Platform Edge Network和数据流 {#edge}
-
-Experience Platform Edge Network是一个全球分布式、快速且可靠的服务器网络，能够大规模接收和处理数据。 使用标记，您可以为Adobe Target、Adobe Audience Manager和Adobe Analytics等产品设置[数据流](../datastreams/overview.md)，这样您就可以在服务器端激活这些产品，而无需更改客户端代码。
-
-此外，数据流与多项Experience Platform功能集成，这有助于确保您发送的任何敏感数据都能在组织政策和法律法规方面得到适当处理。 有关详细信息，请参阅数据流文档中有关[处理敏感数据](../datastreams/overview.md#sensitive)的部分。
-
-![数据流和Adobe解决方案](./images/home/adobe-solutions.png)
-
-## 事件转发
-
-[事件转发](../tags/ui/event-forwarding/overview.md)可以进入任何Experience Platform数据流，从而允许您转换、扩充数据并以极低的延迟将数据发送到任何非Adobe目标，而无需向客户端设备添加任何第三方代码。
-
-![事件转发](./images/home/event-forwarding.png)
-
->[!NOTE]
->
->事件转发是一项付费功能，包含在Adobe Real-Time Customer Data Platform连接、Prime或Ultimate产品中。
-
-## 后续步骤
-
-本文档全面概述了数据收集如何自动将收集的客户体验数据发送到Adobe产品和第三方目标。
-
-![数据收集框架](./images/home/collection.png)
-
-有关通过Edge Network发送事件数据时涉及的常规工作流的详细信息，请参阅[端到端概述](./e2e.md)。
+![事件转发图](assets/event-forwarding.png)

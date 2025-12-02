@@ -2,9 +2,9 @@
 title: Edge配置文件
 description: 了解边缘配置文件以及相关术语、边缘配置文件的可用区域以及边缘配置文件的可用服务。
 exl-id: dcae267f-1d5a-4e90-b634-afd42b0d4edc
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
 workflow-type: tm+mt
-source-wordcount: '656'
+source-wordcount: '654'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ Express Profile Service (XPS)将检索不同边缘上的配置文件。 此服�
 
 ## 后续步骤
 
-阅读本指南后，您应该对边缘配置文件有基本的了解，包括有关边缘配置文件的可用区域和服务的信息。 有关AdobeExperience Edge的更多信息，请阅读[Edge Network概述](../web-sdk/home.md#edge-network)。
+阅读本指南后，您应该对边缘配置文件有基本的了解，包括有关边缘配置文件的可用区域和服务的信息。 有关Adobe Experience Edge的更多信息，请参阅[数据收集概述](/help/collection/home.md)。
 
 ## 附录
 

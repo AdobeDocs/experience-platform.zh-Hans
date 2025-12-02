@@ -7,9 +7,9 @@ level: Beginner
 role: User, Developer, Admin
 topic: Integrations
 exl-id: a52870c4-10e6-45a0-a502-f48da3398f3f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
 workflow-type: tm+mt
-source-wordcount: '1267'
+source-wordcount: '1251'
 ht-degree: 5%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 5%
 
 >[!NOTE]
 >  
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](https://experienceleague.adobe.com/docs/experience-platform/tags/term-updates.html?lang=zh-Hans)。
+>经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](https://experienceleague.adobe.com/docs/experience-platform/tags/term-updates.html)。
 
 Mailchimp [事件转发](../../../ui/event-forwarding/overview.md)扩展将事件发送到Mailchimp营销API，这可以触发Mailchimp营销活动、历程或交易的电子邮件。
 
@@ -79,17 +79,17 @@ Mailchimp [事件转发](../../../ui/event-forwarding/overview.md)扩展将事�
 
 ### 创建密码和数据元素
 
-在事件转发属性中，[创建名为`Mailchimp API Key`的[!UICONTROL 令牌]密码](../../../ui/event-forwarding/secrets.md#token)。
+在事件转发属性中，[创建一个名为[!UICONTROL Token]的](../../../ui/event-forwarding/secrets.md#token)密码`Mailchimp API Key`。
 
-接下来，[使用[!UICONTROL Core]扩展和[!UICONTROL Secret]数据元素类型创建数据元素](../../../ui/managing-resources/data-elements.md#create-a-data-element)以引用您刚刚创建的`Mailchimp API Key`密码。 输入`Mailchimp Token`作为数据元素名称。
+接下来，[使用](../../../ui/managing-resources/data-elements.md#create-a-data-element)扩展和[!UICONTROL Core]数据元素类型创建数据元素[!UICONTROL Secret]以引用您刚刚创建的`Mailchimp API Key`密码。 输入`Mailchimp Token`作为数据元素名称。
 
 ### 安装和配置扩展
 
-在同一事件转发属性中，选择&#x200B;**[!UICONTROL 扩展]、**&#x200B;和&#x200B;**[!UICONTROL 目录]**&#x200B;以显示可供安装的扩展。 从此处搜索Mailchimp扩展并选择&#x200B;**[!UICONTROL 安装]**。
+在同一事件转发属性中，选择&#x200B;**[!UICONTROL Extensions]、**&#x200B;和&#x200B;**[!UICONTROL Catalog]**&#x200B;以显示可用于安装的扩展。 在此处，搜索Mailchimp扩展并选择&#x200B;**[!UICONTROL Install]**。
 
 ![安装Mailchimp扩展](../../../images/extensions/server/mailchimp/install.png)
 
-出现配置屏幕。 在&#x200B;**[!UICONTROL Mailchimp服务器前缀域名]**&#x200B;下，输入您之前从Mailchimp帐户复制的域，包括唯一的域前缀。
+出现配置屏幕。 在&#x200B;**[!UICONTROL Mailchimp Server Prefix Domain Name]**&#x200B;下，输入您之前从Mailchimp帐户复制的域，包括唯一的域前缀。
 
 >[!IMPORTANT]
 >
@@ -97,7 +97,7 @@ Mailchimp [事件转发](../../../ui/event-forwarding/overview.md)扩展将事�
 
 ![扩展配置](../../../images/extensions/server/mailchimp/mailchimp-domain.png)
 
-在&#x200B;**[!UICONTROL Mailchimp令牌]**&#x200B;下，选择数据元素图标，然后选择您之前创建的`Mailchimp Token`数据元素。 选择&#x200B;**[!UICONTROL 保存]**&#x200B;以保存更改。
+在&#x200B;**[!UICONTROL Mailchimp token]**&#x200B;下，选择数据元素图标，然后选择您之前创建的`Mailchimp Token`数据元素。 选择&#x200B;**[!UICONTROL Save]**&#x200B;以保存更改。
 
 扩展现在已安装并配置为可在资产中使用。
 
@@ -105,7 +105,7 @@ Mailchimp [事件转发](../../../ui/event-forwarding/overview.md)扩展将事�
 
 在[规则](../../../ui/managing-resources/rules.md)中使用此扩展时，该扩展会通过每个事件向Mailchimp发送多个数据值。 对于典型实施，您可以将[Adobe Experience Platform Web SDK扩展](../../client/web-sdk/overview.md)配置为将该数据发送到[!DNL Experience Platform Edge Network]，以供扩展在事件转发属性中使用。
 
-此扩展所需的数据可以作为XDM数据（使用[`xdm`](/help/web-sdk/commands/sendevent/xdm.md)对象）或非XDM数据（使用[`data`](/help/web-sdk/commands/sendevent/data.md)对象）从Web SDK发送。
+此扩展所需的数据可以作为XDM数据（使用[`xdm`](/help/collection/js/commands/sendevent/xdm.md)对象）或非XDM数据（使用[`data`](/help/collection/js/commands/sendevent/data.md)对象）从Web SDK发送。
 
 例如，如果客户购买产品或注册了您网站上的事件，则您可以使用此扩展通过Mailchimp发送确认电子邮件。 将所需信息从Web SDK发送到Edge Network后，该扩展将通过Mailchimp触发电子邮件。
 
@@ -132,7 +132,7 @@ Mailchimp [事件转发](../../../ui/event-forwarding/overview.md)扩展将事�
 >  
 >上述&#x200B;**示例路径**&#x200B;值仅为示例。 这些数据元素中引用的字段名称和[路径](../../../ui/event-forwarding/overview.md#data-element-path)在您的资产中可能不同，具体取决于您在上面步骤中命名和配置Web SDK的方式。
 
-在事件转发属性中，您可以为上述每个字段创建一个数据元素。 创建后，您可以引用此扩展的[!UICONTROL 添加事件]操作中的数据元素。
+在事件转发属性中，您可以为上述每个字段创建一个数据元素。 创建后，您可以引用此扩展的[!UICONTROL Add Event]操作中的数据元素。
 
 ![添加事件操作配置](../../../images/extensions/server/mailchimp/action-configurations.png)
 

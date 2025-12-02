@@ -2,7 +2,7 @@
 title: 命名空间优先级
 description: 了解Identity Service中的命名空间优先级。
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 7df0d0c7eb97760190ac8b20d1b74472b87e8b6a
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
 workflow-type: tm+mt
 source-wordcount: '2119'
 ht-degree: 2%
@@ -65,7 +65,7 @@ ht-degree: 2%
 
 ## 命名空间优先级使用情况
 
-目前，命名空间优先级影响实时客户配置文件的系统行为。 下图说明了此概念。 有关详细信息，请阅读[Adobe Experience Platform和应用程序体系结构图](https://experienceleague.adobe.com/zh-hans/docs/blueprints-learn/architecture/architecture-overview/platform-applications)的指南。
+目前，命名空间优先级影响实时客户配置文件的系统行为。 下图说明了此概念。 有关详细信息，请阅读[Adobe Experience Platform和应用程序体系结构图](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications)的指南。
 
 ![命名空间优先级应用程序作用域的图表。](../images/namespace-priority/application-scope.png "命名空间优先级应用程序作用域的关系图。"){zoomable="yes"}
 
@@ -82,7 +82,7 @@ ht-degree: 2%
    * 在XDM体验事件类架构中标记为主要标识的任何字段。
    * Adobe Analytics源连接器（ECID或AAID）中的默认主标识设置。
 * 另一方面，**命名空间优先级不能确定配置文件记录**&#x200B;的主要身份。
-   * 对于配置文件记录，您应该继续在架构中定义您的身份字段，包括主要身份。 有关详细信息，请阅读[在UI](../../xdm/ui/fields/identity.md)中定义标识字段的指南。
+   * 对于配置文件记录，您应该继续在架构中定义您的身份字段，包括主要身份。 有关详细信息，请阅读[在UI](/help/xdm/ui/fields/identity.md)中定义标识字段的指南。
 
 >[!TIP]
 >
@@ -148,23 +148,23 @@ ht-degree: 2%
 * Real-time Customer Profile：删除指定为主要标识的任何配置文件片段。 **现在将根据命名空间优先级确定配置文件上的主要身份。**
 * 数据湖：删除将指定标识作为主标识的所有记录。 与实时客户配置文件不同，数据湖中的主标识基于WebSDK (`primary=true`)中指定的主标识或标记为主标识的字段
 
-有关详细信息，请阅读[高级生命周期管理概述](../../hygiene/home.md)。
+有关详细信息，请阅读[高级生命周期管理概述](/help/hygiene/home.md)。
 
 ### 计算属性
 
-如果启用了身份设置，则计算属性将使用命名空间优先级来存储计算属性值。 对于给定事件，具有最高命名空间优先级的身份将具有针对其写入的计算属性的值。 有关详细信息，请阅读[计算属性UI指南](../../profile/computed-attributes/ui.md)。
+如果启用了身份设置，则计算属性将使用命名空间优先级来存储计算属性值。 对于给定事件，具有最高命名空间优先级的身份将具有针对其写入的计算属性的值。 有关详细信息，请阅读[计算属性UI指南](/help/profile/computed-attributes/ui.md)。
 
 ### 数据湖
 
-数据摄取到数据湖将继续遵循在[Web SDK](../../tags/extensions/client/web-sdk/data-element-types.md#identity-map)和架构上配置的主要身份设置。
+数据摄取到数据湖将继续遵循在[Web SDK](/help/tags/extensions/client/web-sdk/data-element-types.md#identity-map)和架构上配置的主要身份设置。
 
 数据湖不会根据命名空间优先级确定主身份。 例如，即使在启用了命名空间优先级（例如，向新连接添加数据集），Adobe Customer Journey Analytics仍将继续使用身份映射中的值，因为Customer Journey Analytics会使用来自数据湖的数据。
 
 ### Experience Data Model (XDM)架构
 
-任何不是XDM体验事件的架构（如XDM个人资料）将继续遵循您标记为身份[的任何](../../xdm/ui/fields/identity.md)字段。
+任何不是XDM体验事件的架构（如XDM个人资料）将继续遵循您标记为身份[的任何](/help/xdm/ui/fields/identity.md)字段。
 
-有关XDM架构的更多信息，请阅读[架构概述](../../xdm/home.md)。
+有关XDM架构的更多信息，请阅读[架构概述](/help/xdm/home.md)。
 
 ### 智能服务
 
@@ -175,7 +175,7 @@ ht-degree: 2%
 
 此配置导致仅使用已验证的事件计算得分。
 
-有关详细信息，请阅读[归因人工智能](../../intelligent-services/attribution-ai/overview.md)和[客户人工智能](../../intelligent-services/customer-ai/overview.md)上的文档。
+有关详细信息，请阅读[归因人工智能](/help/intelligent-services/attribution-ai/overview.md)和[客户人工智能](/help/intelligent-services/customer-ai/overview.md)上的文档。
 
 ### 合作伙伴构建的目标
 
@@ -184,7 +184,7 @@ ht-degree: 2%
 * 受众资格仅基于匿名活动。
 * 在短时间内跨多个用户档案登录。
 
-有关合作伙伴构建目标的详细信息，请阅读[目标概述](../../destinations/home.md#adobe-built-and-partner-built-destinations)。
+有关合作伙伴构建目标的详细信息，请阅读[目标概述](/help/destinations/home.md#adobe-built-and-partner-built-destinations)。
 
 ### Privacy Service
 
@@ -193,7 +193,7 @@ ht-degree: 2%
 * Real-time Customer Profile：删除将指定标识值作为主标识的任何配置文件片段。 **现在将根据命名空间优先级确定配置文件上的主要身份。**
 * 数据湖：删除具有指定身份作为主身份或辅助身份的任何记录。
 
-有关详细信息，请阅读[Privacy Service概述](../../privacy-service/home.md)。
+有关详细信息，请阅读[Privacy Service概述](/help/privacy-service/home.md)。
 
 ### Edge分段和Edge Network应用程序
 
@@ -204,17 +204,17 @@ ht-degree: 2%
 
 #### 边缘分段
 
-在给定事件中，确保在`identityMap`中包含所有表示人员实体的命名空间，因为作为XDM字段[发送的](../../xdm/ui/fields/identity.md)身份将被忽略，并且不会用于区段成员资格元数据存储。
+在给定事件中，确保在`identityMap`中包含所有表示人员实体的命名空间，因为作为XDM字段[发送的](/help/xdm/ui/fields/identity.md)身份将被忽略，并且不会用于区段成员资格元数据存储。
 
-* **事件适用性**：此行为仅适用于直接发送到Edge Network的事件(如WebSDK和Mobile SDK)。 从[Experience Platform中心](../../landing/edge-and-hub-comparison.md)摄取的事件，例如通过HTTP API源、其他流源和批处理源摄取的事件，不受此限制的约束。
-* **Edge分段特异性**：此行为特定于边缘分段。 批量分段和流式分段是在中心服务器上进行评估的单独服务，并且不遵循相同的流程。 有关详细信息，请阅读[边缘分段指南](../../segmentation/methods/edge-segmentation.md)。
-* 有关详细信息，请阅读[Adobe Experience Platform和应用程序体系结构图](https://experienceleague.adobe.com/zh-hans/docs/blueprints-learn/architecture/architecture-overview/platform-applications#detailed-architecture-diagram)和[Edge Network和中心比较](../../landing/edge-and-hub-comparison.md)页。
+* **事件适用性**：此行为仅适用于直接发送到Edge Network的事件(如WebSDK和Mobile SDK)。 从[Experience Platform中心](/help/landing/edge-and-hub-comparison.md)摄取的事件，例如通过HTTP API源、其他流源和批处理源摄取的事件，不受此限制的约束。
+* **Edge分段特异性**：此行为特定于边缘分段。 批量分段和流式分段是在中心服务器上进行评估的单独服务，并且不遵循相同的流程。 有关详细信息，请阅读[边缘分段指南](/help/segmentation/methods/edge-segmentation.md)。
+* 有关详细信息，请阅读[Adobe Experience Platform和应用程序体系结构图](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications#detailed-architecture-diagram)和[Edge Network和中心比较](/help/landing/edge-and-hub-comparison.md)页。
 
 #### Edge Network应用程序
 
 要确保Edge Network上的应用程序可以毫不延迟地访问Edge配置文件，请确保您的事件包括CRMID上的`primary=true`。 这可以确保立即可用，而无需等待来自中心的标识图更新。
 
 * Edge Network上的应用程序(如Adobe Target、Offer Decisioning和自定义Personalization目标)将继续依赖事件中的主要身份来从Edge配置文件访问配置文件。
-* 有关Experience Platform行为的详细信息，请阅读[Edge Network Web SDK和Edge Network架构图](https://experienceleague.adobe.com/zh-hans/docs/blueprints-learn/architecture/architecture-overview/deployment/websdk#experience-platform-webmobile-sdk-or-edge-network-server-api-deployment)。
-* 有关如何在Web SDK[上配置主身份的详细信息，请阅读有关](../../tags/extensions/client/web-sdk/data-element-types.md)数据元素类型[和](../../web-sdk/identity/overview.md)Web SDK中的身份数据的文档。
+* 有关Experience Platform行为的详细信息，请阅读[Edge Network Web SDK和Edge Network架构图](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/deployment/websdk#experience-platform-webmobile-sdk-or-edge-network-server-api-deployment)。
+* 有关如何在Web SDK[上配置主身份的详细信息，请阅读有关](/help/tags/extensions/client/web-sdk/data-element-types.md)数据元素类型[和](/help/collection/use-cases/identity/id-overview.md)Web SDK中的身份数据的文档。
 * 确保ECID包含在体验事件中。 如果ECID缺失，则会将其添加到具有`primary=true`的事件有效负载中，这可能会导致意外结果。

@@ -2,10 +2,10 @@
 title: 属性
 description: 了解如何在Adobe Experience Platform中为您的组织组织和分组扩展、环境和库。
 exl-id: e5b4a853-c23e-498c-9e20-e773ea1de88b
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 9f4ce2a3a8af72342683c859caa270662b161b7d
 workflow-type: tm+mt
-source-wordcount: '1178'
-ht-degree: 59%
+source-wordcount: '1153'
+ht-degree: 64%
 
 ---
 
@@ -97,7 +97,7 @@ Properties 列表显示了以下信息：
 
 开始之前，请参阅[规划资产的最佳做法](companies-and-properties.md#best-practices-for-planning-properties)以了解资产。
 
-导航到您的公司页面，然后选择&#x200B;**[!UICONTROL 添加属性]**，或从列表中选择现有属性并选择&#x200B;**[!UICONTROL 配置]**。
+导航到您的公司页面，然后选择 **[!UICONTROL Add Property]**，或从列表中选择现有资产并选择 **[!UICONTROL Configure]**。
 
 ![](../../images/property-settings.png)
 
@@ -111,10 +111,10 @@ Properties 列表显示了以下信息：
 
    **Domains：**&#x200B;您计划将此资产部署到的任何站点的基本 URL
 
-1. （高级） **[!UICONTROL 按顺序运行规则组件]**&#x200B;选中此复选框可使条件和操作等到前一个条件和操作完成后再运行
-1. （高级） **[!UICONTROL 为缺少的数据元素返回空字符串：]**&#x200B;如果您引用的数据元素在库中不存在，则通常将返回`undefined`。  如果希望场景返回空字符串，则选中此复选框。
-1. （高级） **[!UICONTROL 配置扩展开发：]**&#x200B;如果计划安装公司正在积极开发的开发扩展，请选中此复选框
-1. 选择&#x200B;**[!UICONTROL 保存]**。
+1. （高级）**[!UICONTROL Run rule components in sequence]** 选中此复选框可使条件和操作等到前一个条件和操作完成之后再运行
+1. （高级） **[!UICONTROL Return an empty string for missing data elements:]**&#x200B;如果您引用的数据元素在库中不存在，则通常会返回`undefined`。 如果希望场景返回空字符串，请启用此复选框。
+1. （高级） **[!UICONTROL Configure for extension development:]**&#x200B;如果您计划安装公司正在积极开发的开发扩展，请启用此复选框
+1. 选择 **[!UICONTROL Save]**。
 
 ### 对于移动设备
 
@@ -131,7 +131,7 @@ Properties 列表显示了以下信息：
 
    * **Use HTTPS：**&#x200B;选择是应当通过 HTTP 还是 HTTPS 来发送所有数据通信。
 
-1. 选择&#x200B;**[!UICONTROL 保存]**。
+1. 选择 **[!UICONTROL Save]**。
 
 创建资产后，Experience Platform会自动添加默认主机、环境组（开发、暂存和生产）以及默认扩展。
 
@@ -147,4 +147,4 @@ Properties 列表显示了以下信息：
 
    您可以选择多个要删除的资产。
 
-1. 选择&#x200B;**[!UICONTROL 删除]**，然后确认移除该属性。
+1. 选择 **[!UICONTROL Delete]**，然后确认移除该资产。

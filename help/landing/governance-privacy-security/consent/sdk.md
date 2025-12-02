@@ -4,9 +4,9 @@ description: 了解如何在Adobe Experience Platform中集成Adobe Experience P
 role: Developer
 feature: Consent, Web SDK
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
 workflow-type: tm+mt
-source-wordcount: '1322'
+source-wordcount: '1293'
 ht-degree: 0%
 
 ---
@@ -27,8 +27,8 @@ Adobe Experience Platform Web SDK允许您检索同意管理平台(CMP)生成的
 本指南遵循使用UI中的标记扩展设置SDK的工作流。 如果您不想使用扩展，并且希望直接在您的网站上嵌入SDK的独立版本，请参阅以下文档而不是本指南：
 
 * [配置数据流](/help/datastreams/overview.md)
-* [安装SDK](/help/web-sdk/install/overview.md)
-* [为同意命令配置SDK](/help/web-sdk/commands/configure/defaultconsent.md)
+* [安装SDK](/help/collection/js/install/overview.md)
+* [为同意命令配置SDK](/help/collection/js/commands/configure/defaultconsent.md)
 
 本指南中的安装步骤需要您实际了解标记扩展及其在Web应用程序中的安装方式。 有关更多信息，请参阅以下文档：
 
@@ -38,7 +38,7 @@ Adobe Experience Platform Web SDK允许您检索同意管理平台(CMP)生成的
 
 ## 设置数据流
 
-为了让SDK将数据发送到Experience Platform，您必须首先配置数据流。 在数据收集UI或Experience Platform UI中，在左侧导航中选择&#x200B;**[!UICONTROL 数据流]**。
+为了让SDK将数据发送到Experience Platform，您必须首先配置数据流。 在数据收集UI或Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL Datastreams]**。
 
 创建新数据流或选择要编辑的现有数据流后，选择&#x200B;**[!UICONTROL Adobe Experience Platform]**&#x200B;旁边的切换按钮。 接下来，使用下面列出的值完成表单。
 
@@ -46,23 +46,23 @@ Adobe Experience Platform Web SDK允许您检索同意管理平台(CMP)生成的
 
 | 数据流字段 | 值 |
 | --- | --- |
-| [!UICONTROL 沙盒] | 包含设置数据流所需的流连接和数据集的Experience Platform [沙盒](../../../sandboxes/home.md)的名称。 |
-| [!UICONTROL 事件数据集] | 您计划使用SDK将事件数据发送到的[!DNL XDM ExperienceEvent]数据集。 虽然您需要提供事件数据集才能创建Experience Platform数据流，但请注意，下游实施工作流程不会处理通过事件发送的同意数据。 |
-| [!UICONTROL 轮廓数据集] | 已启用[!DNL Profile]且包含您之前创建[earter](#prerequisites)的客户同意字段的数据集。 |
+| [!UICONTROL Sandbox] | 包含设置数据流所需的流连接和数据集的Experience Platform [沙盒](/help/sandboxes/home.md)的名称。 |
+| [!UICONTROL Event Dataset] | 您计划使用SDK将事件数据发送到的[!DNL XDM ExperienceEvent]数据集。 虽然您需要提供事件数据集才能创建Experience Platform数据流，但请注意，下游实施工作流程不会处理通过事件发送的同意数据。 |
+| [!UICONTROL Profile Dataset] | 已启用[!DNL Profile]且包含您之前创建[earter](#prerequisites)的客户同意字段的数据集。 |
 
-完成后，选择屏幕底部的&#x200B;**[!UICONTROL 保存]**，然后按照任何其他提示继续完成配置。
+完成后，选择屏幕底部的&#x200B;**[!UICONTROL Save]**，然后按照任何其他提示继续完成配置。
 
 ## 安装和配置Experience Platform Web SDK
 
-创建数据流（如上一节所述）后，必须配置Experience Platform Web SDK扩展，您最终将在网站上部署该扩展。 如果您的标记属性上未安装SDK扩展，请在左侧导航中选择&#x200B;**[!UICONTROL 扩展]**，然后选择&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡。 然后，在可用扩展列表中选择Experience Platform SDK扩展下的&#x200B;**[!UICONTROL 安装]**。
+创建数据流（如上一节所述）后，必须配置Experience Platform Web SDK扩展，您最终将在网站上部署该扩展。 如果您的标记属性上未安装SDK扩展，请在左侧导航中选择&#x200B;**[!UICONTROL Extensions]**，然后选择&#x200B;**[!UICONTROL Catalog]**&#x200B;选项卡。 然后，在可用扩展列表中，选择Experience Platform SDK扩展下的&#x200B;**[!UICONTROL Install]**。
 
 ![](../../images/governance-privacy-security/consent/adobe/sdk/install.png)
 
-配置SDK时，在&#x200B;**[!UICONTROL Edge配置]**&#x200B;下，选择您在上一步中创建的数据流。
+配置SDK时，在&#x200B;**[!UICONTROL Edge Configurations]**&#x200B;下，选择您在上一步中创建的数据流。
 
 ![](../../images/governance-privacy-security/consent/adobe/sdk/config-sdk.png)
 
-选择&#x200B;**[!UICONTROL 保存]**&#x200B;以安装扩展。
+选择&#x200B;**[!UICONTROL Save]**&#x200B;以安装扩展。
 
 ### 创建数据元素以设置默认同意
 
@@ -80,19 +80,19 @@ Adobe Experience Platform Web SDK允许您检索同意管理平台(CMP)生成的
 1. 在事件处理程序中，根据用户的区域设置一个`adobeDefaultConsent`变量，然后使用JavaScript加载标记库脚本。
 1. 设置使用`adobeDefaultConsent` JavaScript变量的数据元素，并将此数据元素用作用户的默认同意值。
 
-要在UI中创建数据元素，请在左侧导航中选择&#x200B;**[!UICONTROL 数据元素]**，然后选择&#x200B;**[!UICONTROL 添加数据元素]**&#x200B;以导航到数据元素创建对话框。
+要在UI中创建数据元素，请在左侧导航中选择&#x200B;**[!UICONTROL Data Elements]**，然后选择&#x200B;**[!UICONTROL Add Data Element]**&#x200B;以导航到数据元素创建对话框。
 
-从此处，您必须基于`adobeDefaultConsent`创建一个[!UICONTROL JavaScript Variable]数据元素。 完成后选择&#x200B;**[!UICONTROL 保存]**。
+从此处，您必须基于[!UICONTROL JavaScript Variable]创建一个`adobeDefaultConsent`数据元素。 完成后，选择 **[!UICONTROL Save]**。
 
 ![](../../images/governance-privacy-security/consent/adobe/sdk/data-element.png)
 
-创建数据元素后，导航回Web SDK扩展配置页面。 在[!UICONTROL 隐私]部分下，选择&#x200B;**[!UICONTROL 数据元素提供的]**，然后使用提供的对话框选择您之前创建的默认同意数据元素。
+创建数据元素后，导航回Web SDK扩展配置页面。 在[!UICONTROL Privacy]部分下，选择&#x200B;**[!UICONTROL Provided by data element]**，然后使用提供的对话框选择您之前创建的默认同意数据元素。
 
 ![](../../images/governance-privacy-security/consent/adobe/sdk/default-consent.png)
 
 ### 在您的网站上部署该扩展
 
-配置完该扩展后，可以将其集成到您的网站中。 有关如何部署更新的库内部版本的详细信息，请参阅标记文档中的[发布指南](../../../tags/ui/publishing/overview.md)。
+配置完该扩展后，可以将其集成到您的网站中。 有关如何部署更新的库内部版本的详细信息，请参阅标记文档中的[发布指南](/help/tags/ui/publishing/overview.md)。
 
 ## 发出consent-change命令 {#commands}
 
@@ -101,7 +101,7 @@ Adobe Experience Platform Web SDK允许您检索同意管理平台(CMP)生成的
 `setConsent`命令执行两个操作：
 
 1. 直接在配置文件存储中更新用户的配置文件属性。 这不会向数据湖发送任何数据。
-1. 创建一个[体验事件](../../../xdm/classes/experienceevent.md)，用于记录同意更改事件的带有时间戳的帐户。 此数据直接发送到数据湖，并可用于跟踪同意偏好设置随时间发生的变化。
+1. 创建一个[体验事件](/help/xdm/classes/experienceevent.md)，用于记录同意更改事件的带有时间戳的帐户。 此数据直接发送到数据湖，并可用于跟踪同意偏好设置随时间发生的变化。
 
 ### 何时调用`setConsent`
 
@@ -112,7 +112,7 @@ Adobe Experience Platform Web SDK允许您检索同意管理平台(CMP)生成的
 
 ### `setConsent`语法
 
-[`setConsent`](/help/web-sdk/commands/setconsent.md)命令需要包含单个数组类型属性的有效负荷对象： `consent`。 `consent`数组必须至少包含一个对象，该对象提供Adobe标准所需的同意字段。
+[`setConsent`](/help/collection/js/commands/setconsent.md)命令需要包含单个数组类型属性的有效负荷对象： `consent`。 `consent`数组必须至少包含一个对象，该对象提供Adobe标准所需的同意字段。
 
 以下示例`setConsent`调用中显示了Adobe标准所需的同意字段：
 
@@ -195,9 +195,9 @@ var setConsent = function () {
 
 ## 处理SDK响应
 
-所有[!DNL Experience Platform SDK]命令都将返回指示调用成功或失败的承诺。 然后，您可以将这些响应用于其他逻辑，例如向客户显示确认消息。 有关详细信息，请参阅[命令响应](/help/web-sdk/commands/command-responses.md)。
+所有[!DNL Experience Platform SDK]命令都将返回指示调用成功或失败的承诺。 然后，您可以将这些响应用于其他逻辑，例如向客户显示确认消息。 有关详细信息，请参阅[命令响应](/help/collection/js/commands/command-responses.md)。
 
-成功使用SDK进行`setConsent`调用后，您可以在Experience Platform UI中使用配置文件查看器验证数据是否登录在配置文件存储中。 有关详细信息，请参阅有关[按身份浏览配置文件](../../../profile/ui/user-guide.md#browse-identity)的部分。
+成功使用SDK进行`setConsent`调用后，您可以在Experience Platform UI中使用配置文件查看器验证数据是否登录在配置文件存储中。 有关详细信息，请参阅有关[按身份浏览配置文件](/help/profile/ui/user-guide.md#browse-identity)的部分。
 
 ## 后续步骤
 

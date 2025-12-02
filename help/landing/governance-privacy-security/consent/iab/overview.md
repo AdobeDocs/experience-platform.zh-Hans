@@ -6,9 +6,9 @@ description: 了解如何配置数据操作和架构，以在将Adobe Experience
 role: Developer
 feature: Consent
 exl-id: af787adf-b46e-43cf-84ac-dfb0bc274025
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: f988d7665a40b589ca281d439b6fca508f23cd03
 workflow-type: tm+mt
-source-wordcount: '2524'
+source-wordcount: '2509'
 ht-degree: 0%
 
 ---
@@ -42,8 +42,8 @@ Adobe Experience Platform是已注册的[IAB TCF 2.0供应商列表](https://iab
 * [体验数据模型(XDM)](/help/xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
 * [Adobe Experience Platform Identity Service](/help/identity-service/home.md)：通过跨设备和系统桥接身份，解决了客户体验数据碎片化带来的基本挑战。
 * [实时客户个人资料](/help/profile/home.md)：使用[!DNL Identity Service]从您的数据集实时创建详细的客户个人资料。 [!DNL Real-Time Customer Profile]从数据湖中提取数据，并将客户配置文件保留在其自己的单独数据存储中。
-* [Adobe Experience Platform Web SDK](/help/web-sdk/home.md)：客户端JavaScript库，它允许您将各种Experience Platform服务集成到面向客户的网站上。
-   * [SDK同意命令](../../../../web-sdk/commands/setconsent.md)：本指南中显示的与同意相关的SDK命令的用例概述。
+* [Adobe Experience Platform Web SDK](/help/collection/js/js-overview.md)：客户端JavaScript库，它允许您将各种Experience Platform服务集成到面向客户的网站上。
+   * [SDK同意命令](/help/collection/js/commands/setconsent.md)：本指南中显示的与同意相关的SDK命令的用例概述。
 * [Adobe Experience Platform分段服务](/help/segmentation/home.md)：允许您将[!DNL Real-Time Customer Profile]数据划分为共享相似特征并对营销策略做出类似响应的个人组。
 
 除了上面列出的Experience Platform服务之外，您还应熟悉[目标](/help/data-governance/home.md)及其在Experience Platform生态系统中的角色。
@@ -63,7 +63,7 @@ Experience Platform允许您通过下列流程收集客户同意数据：
 
 除了CMP同意更改挂接触发的SDK命令之外，同意数据还可以通过任何客户生成的XDM数据流入Experience Platform，这些数据直接上传到启用了[!DNL Profile]的数据集。
 
-如果通过[!DNL Experience Cloud Identity Service]将相应字段应用于由Adobe Audience Manager与Experience Platform共享的任何区段（通过[!DNL Audience Manager]源连接器或其他方式），则这些区段也可能会包含同意数据。 有关在[!DNL Audience Manager]中收集同意数据的更多信息，请参阅适用于IAB TCF的[Adobe Audience Manager插件上的文档](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/consent-management/aam-iab-plugin.html?lang=zh-Hans)。
+如果通过[!DNL Audience Manager]将相应字段应用于由Adobe Audience Manager与Experience Platform共享的任何区段（通过[!DNL Experience Cloud Identity Service]源连接器或其他方式），则这些区段也可能会包含同意数据。 有关在[!DNL Audience Manager]中收集同意数据的更多信息，请参阅适用于IAB TCF的[Adobe Audience Manager插件上的文档](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/consent-management/aam-iab-plugin.html?lang=zh-Hans)。
 
 ### 下游同意执行
 
@@ -126,14 +126,14 @@ Experience Platform允许您通过下列流程收集客户同意数据：
 
 | 数据流字段 | 值 |
 | --- | --- |
-| [!UICONTROL 沙盒] | 包含设置数据流所需的流连接和数据集的Experience Platform [沙盒](/help/sandboxes/home.md)的名称。 |
-| [!UICONTROL 流式入口] | Experience Platform的有效流连接。 如果您没有现有的流入口，请参阅有关[创建流连接](/help/ingestion/tutorials/create-streaming-connection-ui.md)的教程。 |
-| [!UICONTROL 事件数据集] | 选择在[上一步](#datasets)中创建的[!DNL XDM ExperienceEvent]数据集。 如果在此数据集的架构中包含[[!UICONTROL IAB TCF 2.0同意]字段组](/help/xdm/field-groups/event/iab.md)，则可以使用[`sendEvent`](#sendEvent)命令跟踪一段时间的同意更改事件，并将该数据存储在此数据集中。 请记住，此数据集中存储的同意值&#x200B;**不在自动实施工作流中使用**。 |
-| [!UICONTROL 轮廓数据集] | 选择在[上一步](#datasets)中创建的[!DNL XDM Individual Profile]数据集。 使用[`setConsent`](#setConsent)命令响应CMP同意更改挂接时，收集的数据将存储在此数据集中。 由于此数据集启用了配置文件，在自动实施工作流期间，将遵循此数据集中存储的同意值。 |
+| [!UICONTROL Sandbox] | 包含设置数据流所需的流连接和数据集的Experience Platform [沙盒](/help/sandboxes/home.md)的名称。 |
+| [!UICONTROL Streaming Inlet] | Experience Platform的有效流连接。 如果您没有现有的流入口，请参阅有关[创建流连接](/help/ingestion/tutorials/create-streaming-connection-ui.md)的教程。 |
+| [!UICONTROL Event Dataset] | 选择在[!DNL XDM ExperienceEvent]上一步[中创建的](#datasets)数据集。 如果您在此数据集的架构中包含[[!UICONTROL IAB TCF 2.0 Consent]字段组](/help/xdm/field-groups/event/iab.md)，则可以使用[`sendEvent`](#sendEvent)命令跟踪一段时间的同意更改事件，并将该数据存储在此数据集中。 请记住，此数据集中存储的同意值&#x200B;**不在自动实施工作流中使用**。 |
+| [!UICONTROL Profile Dataset] | 选择在[!DNL XDM Individual Profile]上一步[中创建的](#datasets)数据集。 使用[`setConsent`](#setConsent)命令响应CMP同意更改挂接时，收集的数据将存储在此数据集中。 由于此数据集启用了配置文件，在自动实施工作流期间，将遵循此数据集中存储的同意值。 |
 
 ![](../../../images/governance-privacy-security/consent/iab/overview/edge-config.png)
 
-完成后，选择屏幕底部的&#x200B;**[!UICONTROL 保存]**，然后按照任何其他提示继续完成配置。
+完成后，选择屏幕底部的&#x200B;**[!UICONTROL Save]**，然后按照任何其他提示继续完成配置。
 
 ### 发出consent-change命令
 
@@ -141,7 +141,7 @@ Experience Platform允许您通过下列流程收集客户同意数据：
 
 #### 使用CMP同意更改挂接 {#setConsent}
 
-许多CMP提供开箱即用的挂接，用于侦听同意更改事件。 发生这些事件时，您可以使用[`setConsent`](/help/web-sdk/commands/setconsent.md)命令更新该客户的同意数据。
+许多CMP提供开箱即用的挂接，用于侦听同意更改事件。 发生这些事件时，您可以使用[`setConsent`](/help/collection/js/commands/setconsent.md)命令更新该客户的同意数据。
 
 `setConsent`命令需要两个参数：
 
@@ -224,7 +224,7 @@ alloy("sendEvent", {
 
 ### 处理SDK响应
 
-许多Web SDK命令会返回指示调用是成功还是失败的promise。 然后，您可以将这些响应用于其他逻辑，例如向客户显示确认消息。 有关详细信息，请参阅[命令响应](/help/web-sdk/commands/command-responses.md)。
+许多Web SDK命令会返回指示调用是成功还是失败的promise。 然后，您可以将这些响应用于其他逻辑，例如向客户显示确认消息。 有关详细信息，请参阅[命令响应](/help/collection/js/commands/command-responses.md)。
 
 ## 导出区段 {#export}
 

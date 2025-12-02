@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2024 年 4 月）
 description: Adobe Experience Platform 的 2024 年 4 月发行说明。
 exl-id: 86d72fd8-a464-4715-abc9-4177236e423c
-source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
-workflow-type: ht
-source-wordcount: '1896'
-ht-degree: 100%
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
+workflow-type: tm+mt
+source-wordcount: '1893'
+ht-degree: 98%
 
 ---
 
@@ -31,7 +31,7 @@ Experience Platform 中现有功能的更新：
 
 ## 仪表板 {#dashboards}
 
-Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查看在每天保存快照期间捕获的关于您组织的数据的重要见解。
+Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查看在每天保存快照期间捕获的关于您组织的数据的重要洞察。
 
 **新增功能或更新后的功能**
 
@@ -52,16 +52,16 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 | 类型 | 功能 | 描述 |
 | --- | --- | --- |
 | 扩展 | [!DNL Acxiom Anonymous Visitor Insights] 标记扩展 | 使用 [!DNL Acxiom's Visitor Insights]了解您的网站访问者来自哪里。通过利用地理 IP 查找技术，Acxiom 可以精确定位匿名浏览器的位置。一旦确定，在其组织的数据库中进行搜索就会产生额外的洞察，并将其发送回浏览器。内容创建者因此可以定制他们的内容来匹配这些数据点，为访问者提供更加个性化和更具吸引力的体验，即使他们一开始是陌生人。 |
-| 数据流 | [Edge Network 机器人检测](../../datastreams/bot-detection.md) | 来自非人类实体（例如自动程序、网络爬虫、蜘蛛、脚本扫描器）的流量会使识别来自人类访问者的事件变得更加困难。这种类型的流量会对重要的业务指标产生负面影响，导致流量报告不正确。<br>机器人检测允许您识别那些通过 [Web SDK](../../web-sdk/home.md)、[Mobile SDK](https://developer.adobe.com/client-sdks/home/) 和 [[!DNL Edge Network API]](https://developer.adobe.com/data-collection-apis/docs/getting-started/) 生成的事件是否是由已知的爬虫程序和机器人生成。通过为数据流配置机器人检测，您可以识别想要归类为机器人事件的特定 IP 地址、IP 范围和请求标头。<br> 识别机器人流量可以为您提供对网站或移动应用程序上用户活动的更准确测量。 |
+| 数据流 | [Edge Network 机器人检测](../../datastreams/bot-detection.md) | 来自非人类实体（例如自动程序、网络爬虫、蜘蛛、脚本扫描器）的流量会使识别来自人类访问者的事件变得更加困难。这种类型的流量会对重要的业务指标产生负面影响，导致流量报告不正确。<br>机器人检测允许您识别由[Adobe Experience Platform数据收集](/help/collection/home.md)生成的事件，该事件是由已知蜘蛛程序和机器人生成的。 通过为数据流配置机器人检测，您可以识别想要归类为机器人事件的特定 IP 地址、IP 范围和请求标头。<br> 识别机器人流量可以为您提供对网站或移动应用程序上用户活动的更准确测量。 |
 | Mobile SDK | 主要版本发布 | 已针对以下平台发布了 Mobile SDK 的新主要版本：iOS Mobile Core 5.x 和兼容的 iOS 扩展、Android Mobile Core 3.x 和兼容的Android 扩展、React Native Core 6.x 和兼容的 React Native 扩展、Flutter Core 4.x 和兼容的 Flutter 扩展。这些版本提供了几个新功能和增强功能，包括 Android SDK 对 Jetpack Compose 的支持、对 Adobe Journey Optimizer 基于代码的体验的支持以及对 Flutter 的 Adobe Journey Optimizer Messaging 扩展的普遍可用性。有关更详细的发行说明，请参阅[移动 SDK 发行说明](https://developer.adobe.com/client-sdks/home/release-notes/)。 |
 | Mobile SDK | 隐私 | 由于Apple 的政策更新，从 2024 年 5 月 1 日开始，开发人员必须实现新的隐私功能才能提交给 App Store。所有使用移动 SDK 的 Adobe 客户如果希望在 5 月 1 日之后获得 App Store 批准，都需要升级到 SDK 5.x 版本。 |
 | Roku SDK | Roku SDK | Roku SDK 的第一个主要版本已经发布，支持 Experience Platform Edge Network 的流媒体。 |
-| 标记和事件转发 | 产品内指导 | Experience Platform [标记](../../tags/home.md)和 [ Event Forwarding ](../../tags/ui/event-forwarding/overview.md) 提供一系列全新的体验，帮助您快速入门并快速实现价值。这些体验包括新的加入屏幕、产品内教程和工具提示。<br>![Event Forwarding，并突出显示产品内的指导。](../2024/assets/april/event-forwarding.png "Schemas Editor 中类型和映射值类型字段突出显示。"){width="100" zoomable="yes"}<br> |
+| 标记和事件转发 | 产品内指导 | Experience Platform [标记](../../tags/home.md)和[事件转发](../../tags/ui/event-forwarding/overview.md)提供一系列全新的体验，帮助您快速入门并快速实现价值。这些体验包括新的加入屏幕、产品内教程和工具提示。<br>![事件转发，突出显示产品内的指导。](../2024/assets/april/event-forwarding.png "Schemas Editor 中类型和映射值类型字段突出显示。"){width="100" zoomable="yes"}<br> |
 | Web SDK | 简化 Audience Manager 客户的 Web SDK 采用 | 现在，多个 Web SDK 更新简化了 Web SDK 的采用，无需使用体验数据模型 (XDM) 即可实现 Experience Cloud 解决方案，例如 Audience Manager、Analytics 和 Target。请通过以下指南了解有关 Audience Manager Web SDK 采用的更多信息： <ul><li><a href="https://experienceleague.adobe.com/zh-hans/docs/audience-manager/user-guide/migrate-to-web-sdk/dil-extension-to-web-sdk">将 Audience Manager 的数据收集库从 Audience Manager 标记扩展更新为 Web SDK 标记扩展</li><li><a href="https://experienceleague.adobe.com/zh-hans/docs/audience-manager/user-guide/migrate-to-web-sdk/appmeasurement-to-web-sdk">将 Audience Manager 的数据收集库从 AppMeasurement JavaScript 库更新为 Web SDK JavaScript 库</li></ul> |
 
 {style="table-layout:auto"}
 
-<!--| Web SDK | [Streaming Media Collection support in Web SDK](../../web-sdk/commands/configure/streamingmedia.md) | You can now use Experience Platform Web SDK to collect data related to media sessions on your website. The collected data can include information about media playbacks, pauses, completions, and other related events. Once collected, you can send this data to Adobe Experience Platform and/or Adobe Analytics, to generate reports. This feature provides a comprehensive solution for tracking and understanding media consumption behavior on your website. <br>See the [Web SDK](../../web-sdk/commands/configure/streamingmedia.md) documentation to learn how to configure the `streamingMedia` component. <br>See the guide on [migrating your Analytics for Streaming Media implementation from Media JS to Web SDK](https://experienceleague.adobe.com/zh-hans/docs/media-analytics/using/implementation/edge-recommended/media-edge-sdk/edge-web-sdk) for more details.|-->
+<!--| Web SDK | [Streaming Media Collection support in Web SDK](/help/collection/js/commands/configure/streamingmedia.md) | You can now use Experience Platform Web SDK to collect data related to media sessions on your website. The collected data can include information about media playbacks, pauses, completions, and other related events. Once collected, you can send this data to Adobe Experience Platform and/or Adobe Analytics, to generate reports. This feature provides a comprehensive solution for tracking and understanding media consumption behavior on your website. <br>See the [Web SDK](/help/collection/js/commands/configure/streamingmedia.md) documentation to learn how to configure the `streamingMedia` component. <br>See the guide on [migrating your Analytics for Streaming Media implementation from Media JS to Web SDK](https://experienceleague.adobe.com/en/docs/media-analytics/using/implementation/edge-recommended/media-edge-sdk/edge-web-sdk) for more details.|-->
 
 要详细了解数据收集，请参阅[数据收集概述](../../collection/home.md)。
 

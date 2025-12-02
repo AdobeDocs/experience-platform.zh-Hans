@@ -2,9 +2,9 @@
 title: 将GitHub Copilot和Visual Studio代码连接到查询服务
 description: 了解如何将GitHub Copilot和Visual Studio代码与Adobe Experience Platform查询服务连接起来。
 exl-id: c5b71cc8-1d30-48c0-a8e2-135445a66639
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 9f4ce2a3a8af72342683c859caa270662b161b7d
 workflow-type: tm+mt
-source-wordcount: '1378'
+source-wordcount: '1370'
 ht-degree: 0%
 
 ---
@@ -21,9 +21,9 @@ ht-degree: 0%
 
 ## 快速入门 {#get-started}
 
-本指南要求您已经拥有GitHub帐户的访问权限并注册了[!DNL GitHub Copilot]。 您可以[从GitHub网站](https://github.com/github-copilot/signup)注册。 您还需要[!DNL VS Code]。 您可从他们的官方网站[&#128279;](https://code.visualstudio.com/download)下载1&rbrace;。 [!DNL VS Code] 
+本指南要求您已经拥有GitHub帐户的访问权限并注册了[!DNL GitHub Copilot]。 您可以[从GitHub网站](https://github.com/github-copilot/signup)注册。 您还需要[!DNL VS Code]。 您可从他们的官方网站[下载 [!DNL VS Code] 1}。](https://code.visualstudio.com/download)
 
-安装[!DNL VS Code]并激活[!DNL Copilot]订阅后，获取Experience Platform的连接凭据。 这些凭据位于Experience Platform UI中[!UICONTROL 查询]工作区的[!UICONTROL 凭据]选项卡中。 阅读[的凭据指南，了解如何在Experience Platform UI](../ui/credentials.md)中找到这些值。 如果您当前无权访问[!UICONTROL 查询]工作区，请联系您的组织管理员。
+安装[!DNL VS Code]并激活[!DNL Copilot]订阅后，获取Experience Platform的连接凭据。 这些凭据位于Experience Platform UI中[!UICONTROL Credentials]工作区的[!UICONTROL Queries]选项卡中。 阅读[的凭据指南，了解如何在Experience Platform UI](../ui/credentials.md)中找到这些值。 如果您当前无权访问[!UICONTROL Queries]工作区，请联系您的组织管理员。
 
 ### 所需的[!DNL Visual Studio Code]扩展 {#required-extensions}
 
@@ -39,7 +39,7 @@ ht-degree: 0%
 
 ## 创建连接 {#create-connection}
 
-选择圆柱图标(![圆柱图标。](../images/clients/github-copilot/cylinder-icon.png))，后跟&#x200B;**[!DNL Add New Connection]**&#x200B;或圆柱加号图标（![圆柱加号图标。](../images/clients/github-copilot/cylinder-plus-icon.png)）。[!DNL VS Code]
+选择圆柱图标(![圆柱图标。](../images/clients/github-copilot/cylinder-icon.png))，后跟[!DNL VS Code]或圆柱加号图标（**[!DNL Add New Connection]**&#x200B;圆柱加号图标。![）。](../images/clients/github-copilot/cylinder-plus-icon.png)
 
 ![突出显示带有SQL Tool扩展和添加新连接的Visual Studio代码UI。](../images/clients/github-copilot/add-new-connection.png)
 
@@ -53,13 +53,13 @@ ht-degree: 0%
 
 | 属性 | 描述 |
 | --- |--- |
-| [!DNL Connection name] | 提供诸如`Prod_MySQL_Server`之类的“[!DNL Connection name]”，它具有描述性并清楚地指示其用途（例如，用于MySQL服务器的生产环境）。 最佳实践包括：<br><ul><li>遵循贵组织的命名惯例，以确保该名称在系统中唯一。</li><li>保持简明扼要，以保持清晰度并避免与其他连接混淆。</li><li>在名称中包含有关连接功能或环境的相关详细信息。</li></ul> |
+| [!DNL Connection name] | 提供诸如[!DNL Connection name]之类的“`Prod_MySQL_Server`”，它具有描述性并清楚地指示其用途（例如，用于MySQL服务器的生产环境）。 最佳实践包括：<br><ul><li>遵循贵组织的命名惯例，以确保该名称在系统中唯一。</li><li>保持简明扼要，以保持清晰度并避免与其他连接混淆。</li><li>在名称中包含有关连接功能或环境的相关详细信息。</li></ul> |
 | [!DNL Connect using] | 使用&#x200B;**[!DNL Server and Port]**&#x200B;选项指定服务器地址（主机名）和端口号，以建立与Experience Platform的直接连接 |
-| [!DNL Server address] | 输入在Experience Platform Postgres凭据中提供的&#x200B;**[!UICONTROL 主机]**&#x200B;值，如`acmeprod.platform-query.adobe.io`。 |
+| [!DNL Server address] | 输入在Experience Platform Postgres凭据中提供的&#x200B;**[!UICONTROL Host]**&#x200B;值，如`acmeprod.platform-query.adobe.io`。 |
 | [!DNL Port] | 对于Experience Platform服务，此值通常为`80`。 |
-| [!DNL Database] | 输入在Experience Platform Postgres凭据中提供的&#x200B;**[!UICONTROL 数据库]**&#x200B;值，如`prod:all`。 |
-| [!DNL Username] | 此属性是指您的组织ID。 输入在Experience Platform Postgres凭据中提供的&#x200B;**[!UICONTROL 用户名]**&#x200B;值。 |
-| [!DNL Password] | 此属性是您的访问令牌。 输入在Experience Platform Postgres凭据中提供的&#x200B;**[!UICONTROL 密码]**&#x200B;值。 |
+| [!DNL Database] | 输入在Experience Platform Postgres凭据中提供的&#x200B;**[!UICONTROL Database]**&#x200B;值，如`prod:all`。 |
+| [!DNL Username] | 此属性是指您的组织ID。 输入在Experience Platform Postgres凭据中提供的&#x200B;**[!UICONTROL Username]**&#x200B;值。 |
+| [!DNL Password] | 此属性是您的访问令牌。 输入在Experience Platform Postgres凭据中提供的&#x200B;**[!UICONTROL Password]**&#x200B;值。 |
 
 ![带有多个设置的连接助手工作区已突出显示。](../images/clients/github-copilot/connection-settings.png)
 
@@ -95,9 +95,9 @@ ht-degree: 0%
 
 ## [!DNL GitHub Copilot] 入门 {#get-started-with-copilot}
 
-首先，确保您已安装[!DNL VS Code]的最新版本。 过时的[!DNL VS Code]版本可能会阻止键[!DNL Copilot]功能按预期工作。 接下来，请确保已启用[!DNL Enable Auto Completions]设置。 如果[!DNL Copilot]运行正常，则状态栏中会显示&#x200B;**[!DNL Copilot]图标** （![Copilot图标](../images/clients/github-copilot/copilot-icon.png)）（如果有问题，则会显示[!DNL Copilot]错误图标）。 选择&#x200B;**[!DNL Copilot]图标**&#x200B;以打开[!DNL [!DNL GitHub Copilot]菜单]。 从&#x200B;**[!DNL [!DNL GitHub Copilot]菜单]**&#x200B;中选择&#x200B;**[!DNL Edit Settings]**
+首先，确保您已安装[!DNL VS Code]的最新版本。 过时的[!DNL VS Code]版本可能会阻止键[!DNL Copilot]功能按预期工作。 接下来，请确保已启用[!DNL Enable Auto Completions]设置。 如果[!DNL Copilot]运行正常，则状态栏中会显示&#x200B;**[!DNL Copilot]图标** （![Copilot图标](../images/clients/github-copilot/copilot-icon.png)）（如果有问题，则会显示[!DNL Copilot]错误图标）。 选择&#x200B;**[!DNL Copilot]图标**&#x200B;以打开[！DNL [!DNL GitHub Copilot]菜单]。 从&#x200B;**[！DNL [!DNL GitHub Copilot]菜单]**&#x200B;中选择&#x200B;**[!DNL Edit Settings]**
 
-![显示[!DNL GitHub Copilot Menu]并突出显示[!DNL Copilot]图标和“编辑设置”的[!DNL VS Code]编辑器。](../images/clients/github-copilot/github-copilot-menu.png)
+![显示[!DNL VS Code]并突出显示[!DNL GitHub Copilot Menu]图标和“编辑设置”的[!DNL Copilot]编辑器。](../images/clients/github-copilot/github-copilot-menu.png)
 
 向下滚动选项，并确保为[!DNL Enable Auto Completions]设置启用该复选框。
 
@@ -119,7 +119,7 @@ ht-degree: 0%
 
 >[!TIP]
 >  
->如果未获得建议，请确保以文件的语言[&#128279;](#get-started-with-copilot)启用[!DNL Copilot] 。
+>如果未获得建议，请确保以文件的语言[[!DNL Copilot] 启用](#get-started-with-copilot)。
 
 ![在[!DNL VS Code]编辑器中，部分键入的代码旁边显示[!DNL GitHub Copilot]的灰色文本建议为Ghost Text。](../images/clients/github-copilot/accept-partial-suggestions.png)
 
@@ -143,7 +143,7 @@ There are inline features for chat including doc, expalin, fix and test
 
 ## 专用聊天视图 {#dedicated-chat}
 
-您可以使用更传统的聊天界面和专用的聊天侧边栏来形成想法和策略、解决编码问题并讨论实施详细信息。 选择聊天图标(![Copilot聊天图标。[!DNL VS Code]侧边栏中的](../images/clients/github-copilot/chat-icon.png))打开专用聊天窗口。
+您可以使用更传统的聊天界面和专用的聊天侧边栏来形成想法和策略、解决编码问题并讨论实施详细信息。 选择聊天图标(![Copilot聊天图标。](../images/clients/github-copilot/chat-icon.png)侧边栏中的[!DNL VS Code])打开专用聊天窗口。
 
 ![突出显示聊天图标的[!DNL GitHub Copilot]聊天边栏。](../images/clients/github-copilot/chat-sidebar.png)
 

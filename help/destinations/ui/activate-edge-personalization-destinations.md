@@ -3,9 +3,9 @@ title: 激活受众以边缘个性化目标
 description: 了解如何为同一页面和下一页面个性化用例将受众从Adobe Experience Platform激活到边缘个性化目标。
 type: Tutorial
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 5d08a6d90e53aa2f5b1fb72c36e19156e3ac5299
 workflow-type: tm+mt
-source-wordcount: '1885'
+source-wordcount: '1883'
 ht-degree: 0%
 
 ---
@@ -39,11 +39,11 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/ed
 >
 >Experience Platform用户界面经常更新，自从录制此视频以来，可能已经发生了变化。 有关最新信息，请参阅以下部分中描述的配置步骤。
 
->[!VIDEO](https://video.tv.adobe.com/v/3449803/?captions=chi_hans&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3418799/?quality=12&learn=on)
 
 有关如何将受众和配置文件属性共享到Adobe Target和自定义个性化目标的简短概述，请观看以下视频。
 
->[!VIDEO](https://video.tv.adobe.com/v/3447365/?captions=chi_hans&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3419036/?quality=12&learn=on)
 
 ## 用例 {#use-cases}
 

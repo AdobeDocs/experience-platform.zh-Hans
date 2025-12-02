@@ -1,10 +1,10 @@
 ---
-title: 报告包数据的Adobe Analytics Source Connector
+title: 报告包数据的Adobe Analytics source connector
 description: 本文档概述了Analytics，并描述了Analytics数据的用例。
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: d9dad6b5da413740559e6c8de7392bc2e169d5d9
+source-git-commit: 60447ef6f881bf2a34f5502f2259328bf73d08c0
 workflow-type: tm+mt
-source-wordcount: '1343'
+source-wordcount: '1345'
 ht-degree: 0%
 
 ---
@@ -47,7 +47,7 @@ XDM是一个公开记录的规范，为应用程序提供了通用结构和定�
 >
 >请按照以下最佳实践操作，避免超出您的许可证权利范围，并避免超出您的总存储和数据丰富度指标：
 >
->* 一开始就设置体验事件数据集保留生存时间(TTL) ，以优化数据生命周期管理和存储效率。 有关更多详细信息，请参阅有关使用TTL在数据湖中管理Experience Event数据集保留的指南[&#128279;](../../../catalog/datasets/experience-event-dataset-retention-ttl-guide.md)。
+>* 一开始就设置体验事件数据集保留生存时间(TTL) ，以优化数据生命周期管理和存储效率。 有关更多详细信息，请参阅有关使用TTL在数据湖中管理Experience Event数据集保留的指南[](../../../catalog/datasets/experience-event-dataset-retention-ttl-guide.md)。
 >
 >* 创建Analytics源数据流时，首先要将连接器配置为仅将数据摄取到数据湖中。 确认数据流可以正常工作后，您可以为数据集启用配置文件摄取。 当行和列过滤器有效地减少数据量时，这种方法效果最佳。 请参阅[将Adobe Analytics连接到Experience Platform](../../tutorials/ui/create/adobe-applications/analytics.md)文档以了解详情。
 
@@ -60,11 +60,11 @@ XDM是一个公开记录的规范，为应用程序提供了通用结构和定�
 | [!DNL Real-Time Customer Profile]的新数据（A4T **未**&#x200B;启用） | &lt; 2分钟 |
 | [!DNL Real-Time Customer Profile]的新数据（A4T **已启用**） | 长达30分钟 |
 | 数据湖的新数据 | &lt; 2.25小时 |
-| 未拼合[的新数据到Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/stitching/overview.html?lang=zh-Hans) | &lt; 3.75小时 |
+| 未拼合[的新数据到Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/stitching/overview.html?lang=en) | &lt; 3.75小时 |
 | 通过拼合向Customer Journey Analytics提供新数据 | &lt; 7小时 |
 | 少于100亿个事件的回填 | &lt; 4周 |
 
-有关Customer Journey Analytics延迟的详细信息，请参阅：[Customer Journey Analytics护栏](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-admin/guardrails.html?lang=zh-Hans)。
+有关Customer Journey Analytics延迟的详细信息，请参阅：[Customer Journey Analytics护栏](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-admin/guardrails.html?lang=en)。
 
 生产沙盒的Analytics回填默认为13个月。 对于非生产沙盒中的Analytics数据，回填将设置为三个月。 上表中提到的100亿个事件的限制严格与预期延迟有关。
 
@@ -87,9 +87,9 @@ XDM是一个公开记录的规范，为应用程序提供了通用结构和定�
 
 | 标识字段 | 描述 |
 | --- | --- |
-| AAID | AAID是Adobe Analytics中的主要设备标识符，并且必定存在于通过[!DNL Analytics]源传递的每个事件中。 AAID有时称为&#x200B;*旧版Analytics ID*&#x200B;或`s_vi` Cookie ID。 尽管如此，即使不存在`s_vi` Cookie，也会创建AAID。 AAID由`post_visid_high`数据馈送`post_visid_low`中的[[!DNL Analytics] 和](https://experienceleague.adobe.com/docs/analytics/export/analytics-data-feed/data-feed-contents/datafeeds-reference.html?lang=zh-Hans)列表示。 在任何给定事件上，AAID字段都包含单个标识，该标识可能是[ID [!DNL Analytics] 的](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/analytics-order-of-operations.html?lang=zh-Hans)操作顺序中描述的几种不同类型之一。 **注意**：在整个报表包中，AAID可能包含跨事件的多种类型。 |
-| ECID | ECID (Experience Cloud ID)是一个单独的设备标识符字段，当使用Adobe Analytics Identity Service实现[!DNL Analytics]时，将在Experience Cloud中填充该字段。 ECID有时也称为MCID (Marketing Cloud ID)。 如果事件中存在ECID，则AAID可能基于ECID，具体取决于是否配置了Analytics [宽限期](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html?lang=zh-Hans)。 在Analytics数据馈送中，ECID由`mcvisid`表示。 有关ECID的详细信息，请参阅[ECID概述](../../../identity-service/features/ecid.md)。 有关ECID如何与[!DNL Analytics]配合使用的信息，请参阅有关[Analytics和Experience Cloud ID请求](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/legacy-analytics.html?lang=zh-Hans)的文档。 |
-| AACUSTOMID | AACUSTOMID是一个单独的标识符字段，将根据`s.VisitorID`实现中[!DNL Analytics]变量的使用情况在Adobe Analytics中填充该字段。 在`cust_visid`数据馈送[[!DNL Analytics] 中，AACUSTOMID由](https://experienceleague.adobe.com/docs/analytics/export/analytics-data-feed/data-feed-contents/datafeeds-reference.html?lang=zh-Hans)列表示。 如果AACUSTOMID存在，则AAID将基于AACUSTOMID，因为AACUSTOMID优于[ID [!DNL Analytics] 的](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/analytics-order-of-operations.html?lang=zh-Hans)操作顺序所定义的所有其他标识符。 |
+| AAID | AAID是Adobe Analytics中的主要设备标识符，并且必定存在于通过[!DNL Analytics]源传递的每个事件中。 AAID有时称为&#x200B;*旧版Analytics ID*&#x200B;或`s_vi` Cookie ID。 尽管如此，即使不存在`s_vi` Cookie，也会创建AAID。 AAID由`post_visid_high`数据馈送`post_visid_low`中的[[!DNL Analytics] 和](https://experienceleague.adobe.com/docs/analytics/export/analytics-data-feed/data-feed-contents/datafeeds-reference.html)列表示。 在任何给定事件上，AAID字段都包含单个标识，该标识可能是[ID [!DNL Analytics] 的](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/analytics-order-of-operations.html)操作顺序中描述的几种不同类型之一。 **注意**：在整个报表包中，AAID可能包含跨事件的多种类型。 |
+| ECID | ECID (Experience Cloud ID)是一个单独的设备标识符字段，当使用Adobe Analytics Identity Service实现[!DNL Analytics]时，将在Experience Cloud中填充该字段。 ECID有时也称为MCID (Marketing Cloud ID)。 如果事件中存在ECID，则AAID可能基于ECID，具体取决于是否配置了Analytics [宽限期](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html)。 在Analytics数据馈送中，ECID由`mcvisid`表示。 有关ECID的详细信息，请参阅[ECID概述](../../../identity-service/features/ecid.md)。 有关ECID如何与[!DNL Analytics]配合使用的信息，请参阅有关[Analytics和Experience Cloud ID请求](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/legacy-analytics.html)的文档。 |
+| AACUSTOMID | AACUSTOMID是一个单独的标识符字段，将根据`s.VisitorID`实现中[!DNL Analytics]变量的使用情况在Adobe Analytics中填充该字段。 在`cust_visid`数据馈送[[!DNL Analytics] 中，AACUSTOMID由](https://experienceleague.adobe.com/docs/analytics/export/analytics-data-feed/data-feed-contents/datafeeds-reference.html)列表示。 如果AACUSTOMID存在，则AAID将基于AACUSTOMID，因为AACUSTOMID优于[ID [!DNL Analytics] 的](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/analytics-order-of-operations.html)操作顺序所定义的所有其他标识符。 |
 
 ### [!DNL Analytics]源如何处理标识
 
@@ -111,7 +111,7 @@ XDM是一个公开记录的规范，为应用程序提供了通用结构和定�
 * 如果存在ECID，则`endUserIDs._experience.mcid.namespace.code`设置为“ECID”。
 * 如果存在AACUSTOMID，则`endUserIDs._experience.aacustomid.namespace.code`设置为“AACUSTOMID”。
 
-在身份映射中，如果存在ECID，则将其标记为事件的主身份。 在这种情况下，由于[Identity服务宽限期](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html?lang=zh-Hans)，AAID可能基于ECID。 否则，AAID将标记为事件的主标识。 绝不会将AACUSTOMID标记为事件的主ID。 但是，如果存在AACUSTOMID，则由于Experience Cloud操作顺序，AAID将基于AACUSTOMID。
+在身份映射中，如果存在ECID，则将其标记为事件的主身份。 在这种情况下，由于[Identity服务宽限期](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html)，AAID可能基于ECID。 否则，AAID将标记为事件的主标识。 绝不会将AACUSTOMID标记为事件的主ID。 但是，如果存在AACUSTOMID，则由于Experience Cloud操作顺序，AAID将基于AACUSTOMID。
 
 >[!NOTE]
 >

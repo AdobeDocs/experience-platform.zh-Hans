@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 7c2afd6d823ebb2db0fabb4cc16ef30bcbfeef13
+source-git-commit: 0b3f4ec51cac182b637c79b9fcb883e5f8f78d02
 workflow-type: tm+mt
-source-wordcount: '2970'
+source-wordcount: '2949'
 ht-degree: 22%
 
 ---
@@ -12,20 +12,20 @@ ht-degree: 22%
 
 # Web SDK扩展发行说明
 
-本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[Experience Platform Web SDK发行说明](/help/web-sdk/release-notes.md)。
+本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[Experience Platform Web SDK发行说明](/help/collection/js/release-notes.md)。
 
 ## 版本2.33.0 - 2025年9月24日
 
 **新增功能**
 
-- 添加了对显示推送通知的支持
-- 包含Adobe Experience Platform Web SDK的[版本2.30.0](../../../../web-sdk/release-notes.md#2-30-0)。
+- 添加了对显示推送通知的支持。
+- 包含Adobe Experience Platform Web SDK的[版本2.30.0](/help/collection/js/release-notes.md#2-30-0)。
 
 ## 版本2.32.0 - 2025年9月4日
 
 **新增功能**
 
-- 包含Adobe Experience Platform Web SDK的[版本2.29.0](../../../../web-sdk/release-notes.md#2-29-0)。
+- 包含Adobe Experience Platform Web SDK的[版本2.29.0](/help/collection/js/release-notes.md#2-29-0)。
 - 添加了对Adobe Advertising作为新的自定义构建组件的支持。 在扩展配置以及发送事件调用中进行配置。
 - 添加了对在配置文件中记录推送订阅详细信息的支持。 这是通过新操作“推送订阅详细信息”来实现的
 
@@ -36,13 +36,13 @@ ht-degree: 22%
 ## 2.31.1版 — 2025年7月31日
 
 - 修复了阻止自定义内部版本运行的问题。
-- 包含[版本2.28.1](../../../../web-sdk/release-notes.md#2-28-1)的Adobe Experience Platform Web SDK。
+- 包含[版本2.28.1](/help/collection/js/release-notes.md#2-28-1)的Adobe Experience Platform Web SDK。
 
 ## 2.31.0版 — 2025年7月24日
 
 **新增功能**
 
-- 包含Adobe Experience Platform Web SDK的[版本2.28.0](../../../../web-sdk/release-notes.md#2-28-0)。
+- 包含Adobe Experience Platform Web SDK的[版本2.28.0](/help/collection/js/release-notes.md#2-28-0)。
 
 **修复和改进**
 
@@ -52,7 +52,7 @@ ht-degree: 22%
 
 **已知问题**
 
-- 在v2.31.0版本发布后，发现了[自定义组件生成](/help/web-sdk/install/create-custom-build.md)过程的问题。 虽然自定义内部版本继续运行，但所有组件当前都包含在内部版本中，从而导致无论组件选择如何，包大小都是完整的。 正在开发此问题的修补程序。 如果您依赖自定义组件选择来最大程度地减小生成大小，则建议等待未来版本。
+- 在v2.31.0版本发布后，发现了[自定义组件生成](/help/collection/js/install/create-custom-build.md)过程的问题。 虽然自定义内部版本继续运行，但所有组件当前都包含在内部版本中，从而导致无论组件选择如何，包大小都是完整的。 正在开发此问题的修补程序。 如果您依赖自定义组件选择来最大程度地减小生成大小，则建议等待未来版本。
 
 ## 2.30.1版 — 2025年5月27日
 
@@ -66,7 +66,7 @@ ht-degree: 22%
 
 - 现在，您可以在启用第三方Cookie时指定数据元素。
 - 向代码字段添加了清除按钮。
-- 包含Adobe Experience Platform Web SDK的[版本2.27.0](../../../../web-sdk/release-notes.md#2-27-0)。
+- 包含Adobe Experience Platform Web SDK的[版本2.27.0](/help/collection/js/release-notes.md)。
 
 **修复和改进**
 
@@ -82,13 +82,13 @@ ht-degree: 22%
 
 **新增功能**
 
-- 您现在可以创建自定义Web SDK内部版本，并从标记扩展用户界面中选择所需的组件。 通过排除未使用的组件，这可能会导致生成更小的版本。 请参阅有关[创建自定义Web SDK内部版本](web-sdk-extension-configuration.md#custom-build)的文档。
-- 包含Adobe Experience Platform Web SDK的[版本2.26.0](../../../../web-sdk/release-notes.md#2-26-0)。
+- 您现在可以创建自定义Web SDK内部版本，并从标记扩展用户界面中选择所需的组件。 通过排除未使用的组件，这可能会导致生成更小的版本。 查看[自定义生成组件](configure/custom-build-components.md)。
+- 包含Adobe Experience Platform Web SDK的[版本2.26.0](/help/collection/js/release-notes.md)。
 
 **修复和改进**
 
-- 在[更新变量](action-types.md#update-variable)操作中添加了对缺少的数据元素的正常处理。 以前，编辑缺少数据元素的更新变量操作会显示错误消息。 现在，您可以选择其他数据元素，并且更新变量操作的所有设置仍会应用。 如果删除数据元素或复制Tags属性，则可能缺少数据元素。
-- 添加了对使用[带有标识](action-types.md#redirect-with-identity)的重定向操作打开新选项卡的支持。 现在，使用操作时，在重定向浏览器时使用锚点标记的`target`属性。
+- 在[更新变量](actions/update-variable.md)操作中添加了对缺少的数据元素的正常处理。 以前，编辑缺少数据元素的更新变量操作会显示错误消息。 现在，您可以选择其他数据元素，并且更新变量操作的所有设置仍会应用。 如果删除数据元素或复制Tags属性，则可能缺少数据元素。
+- 添加了对使用[带有标识](actions/redirect-with-identity.md)的重定向操作打开新选项卡的支持。 现在，使用操作时，在重定向浏览器时使用锚点标记的`target`属性。
 - 修复了在配置覆盖中无法禁用Adobe Audience Manager的问题。
 
 ## 版本2.28.0 - 2025年1月23日
@@ -102,14 +102,14 @@ ht-degree: 22%
 **新增功能**
 
 - 添加了新功能，以便在XDM对象中的技术名称和显示名称之间进行切换。
-- 包含Adobe Experience Platform Web SDK的[版本2.25.0](../../../../web-sdk/release-notes.md#2-25-0)。
+- 包含Adobe Experience Platform Web SDK的[版本2.25.0](/help/collection/js/release-notes.md)。
 
 ## 版本2.27.0 - 2024年10月31日
 
 **新增功能**
 
-- [数据流覆盖](../web-sdk/web-sdk-extension-configuration.md#datastream-overrides)现在包含用于禁用Experience Cloud解决方案和Adobe Experience Platform服务的设置。
-- 您现在可以为媒体会话创建[数据流覆盖](../web-sdk/web-sdk-extension-configuration.md)。
+- [配置覆盖](configure/configuration-overrides.md)现在包含用于禁用Experience Cloud解决方案和Adobe Experience Platform服务的设置。
+- 您现在可以为媒体会话创建配置覆盖。
 
 包含2.24.0版本的Adobe Experience Platform Web SDK。
 
@@ -126,12 +126,12 @@ ht-degree: 22%
 **新增功能**
 
 - 已添加监视挂接`triggered`事件。
-- [引导式事件](action-types.md#instance)、[请求默认个性化](action-types.md#personalization)、[订阅规则集项](event-types.md#subscribe-ruleset-items)和[评估规则集](action-types.md#evaluate-rulesets)现已正式可用。
+- [引导式事件](actions/actions-overview.md)、[请求默认个性化](configure/personalization.md)、[订阅规则集项](event-types.md#subscribe-ruleset-items)和[评估规则集](actions/evaluate-rulesets.md)现已正式可用。
 
 **修复和改进**
 
 - 修复了重复的变量数据元素可能会相互覆盖的问题。
-- 使用[请求默认个性化](action-types.md#personalization)引导式事件时，现在会自动启用可视化个性化决策。
+- 使用[请求默认个性化](configure/personalization.md)引导式事件时，现在会自动启用可视化个性化决策。
 
 包含2.22.0版本的Adobe Experience Platform Web SDK。
 
@@ -159,16 +159,16 @@ ht-degree: 22%
 
 **新增功能**
 
-- 在扩展配置中添加了对[`Streaming Media Collection`](web-sdk-extension-configuration.md#streaming-media)组件的支持。
-- 为[`Send Media Event`](action-types.md#send-media-event)功能添加了[!DNL Streaming Media Collection]操作。
+- 在扩展配置中添加了对[`Streaming Media Collection`](configure/streaming-media.md)组件的支持。
+- 为[`Send Media Event`](actions/send-media-event.md)功能添加了[!DNL Streaming Media Collection]操作。
 - 为[`Media: Quality of Experience`](data-element-types.md#quality-experience)功能添加了[!DNL Streaming Media Collection]数据元素。
 
 包含2.20.0版本的Adobe Experience Platform Web SDK。
 
 **修复和改进**
 
-- 修复了在[更新变量](action-types.md#update-variable)操作中搜索数据元素时发生的错误。
-- 已从建议在[!UICONTROL 操作中使用的事件类型中删除]媒体`sendEvent`事件类型。
+- 修复了在[更新变量](actions/update-variable.md)操作中搜索数据元素时发生的错误。
+- 已从建议在[!UICONTROL Media]操作中使用的事件类型中删除`sendEvent`事件类型。
 
 ## 版本2.22.0 - 2024年5月3日
 
@@ -235,7 +235,7 @@ ht-degree: 22%
 
 ## 2.19.0版 — 2023年6月21日
 
-- **[!UICONTROL 变量]**&#x200B;数据元素和&#x200B;**[!UICONTROL 更新变量]**&#x200B;操作现已正式可用。
+- **[!UICONTROL Variable]**&#x200B;数据元素和&#x200B;**[!UICONTROL Update Variable]**&#x200B;操作现已正式可用。
 
 ## 2.18.0版 — 2023年5月18日
 
@@ -262,11 +262,11 @@ ht-degree: 22%
 **新增功能**
 
 - (Beta)已添加&#x200B;**[!UICONTROL Update variable]**&#x200B;操作和&#x200B;**[!UICONTROL Variable]**&#x200B;数据元素。
-- 添加了[`onBeforeLinkClickSend`](/help/web-sdk/commands/configure/onbeforelinkclicksend.md)回调函数的配置。
+- 添加了[`onBeforeLinkClickSend`](/help/collection/js/commands/configure/onbeforelinkclicksend.md)回调函数的配置。
 
 **修复和改进**
 
-- 修复了在使用具有标识&#x200B;**[!UICONTROL 的]**&#x200B;重定向操作时，导致单击锚点标记中的元素无法正常工作的问题。
+- 修复了在使用&#x200B;**[!UICONTROL Redirect with identity]**&#x200B;操作时导致单击锚点标记中的元素无法正常工作的问题。
 - 修复了仅存在一个架构时，XDM对象数据元素无法工作的问题。
 - 包含Adobe Experience Platform Web SDK的版本2.15.0。
 
@@ -300,7 +300,7 @@ ht-degree: 22%
 ## 版本2.12.0 - 2022年6月13日
 
 - 更新了`identityMap`数据元素，以根据扩展设置定义的沙盒填充命名空间选项。
-- 添加了允许跨域身份共享的&#x200B;**[!UICONTROL 重定向（带有标识]**）操作。
+- 添加了&#x200B;**[!UICONTROL Redirect with identity]**&#x200B;操作以允许跨域身份共享。
 - 添加了指向`sendEvent`操作的文档链接。
 - 升级了React Spectrum UI库。
 - 多个用户界面增强。
@@ -385,10 +385,10 @@ ht-degree: 22%
 
 包含 Adobe Experience Platform Web SDK 库的版本 2.4.0。
 
-- 添加了[“文档卸载”](/help/web-sdk/commands/sendevent/documentunloading.md)复选框以发送事件操作UI。
-- 在`out`配置默认同意[时添加了对](/help/web-sdk/commands/configure/defaultconsent.md)选项的支持，该默认同意会丢弃所有事件直到收到同意为止（现有`pending`选项将事件排入队列，并在收到同意后发送这些事件）。
+- 向[发送事件](actions/send-event.md)操作添加了“文档卸载”复选框。
+- 在`out`配置默认同意[时添加了对](configure/consent.md)选项的支持，该默认同意会丢弃所有事件直到收到同意为止（现有`pending`选项将事件排入队列，并在收到同意后发送这些事件）。
 - 向默认同意字段添加了工具提示。
-- 添加了对使用[`setConsent`](/help/web-sdk/commands/setconsent.md)命令时Adobe的Consent 2.0标准的支持。
+- 添加了在使用[`Set consent`](actions/set-consent.md)操作时对Adobe Consent 2.0标准的支持。
 - 如果用户的访问令牌无效或配置不正确，则XDM对象数据元素UI中现在会显示更好的错误。
 - 修复了在查看XDM对象数据元素时浏览器开发人员控制台上显示的跨源错误（不会影响扩展的操作）。
 
@@ -413,7 +413,7 @@ ht-degree: 22%
 ## 版本2.1.0 - 2020年8月5日
 
 - 重大变更：移除了 `syncIdentity` 操作，取而代之，在 `sendEvent` 操作中支持传递这些 ID。请在升级扩展之前，通过这项操作来禁用任何现有规则。
-- 更新至 Alloy v. 2.1.0（[发行说明](/help/web-sdk/release-notes.md)）
+- 已更新至Alloy版本2.1.0。
 - 在 `setConsent` 操作中支持 IAB 2.0 Consent Standard。
 - 在 `sendEvent` 操作中支持覆盖数据集 ID。
 - 增加了 `IdentityMap` 类型的新数据元素，该数据元素可用于在（现已启用的）XDM 对象数据元素和 `setConsent` 操作中填充 `identityMap` 条目。

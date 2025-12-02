@@ -3,9 +3,9 @@ title: 实时查找边缘配置文件属性
 description: 了解如何使用自定义Personalization目标和Edge Network API实时查找边缘配置文件属性
 type: Tutorial
 exl-id: e185d741-af30-4706-bc8f-d880204d9ec7
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 60447ef6f881bf2a34f5502f2259328bf73d08c0
 workflow-type: tm+mt
-source-wordcount: '1839'
+source-wordcount: '1838'
 ht-degree: 1%
 
 ---

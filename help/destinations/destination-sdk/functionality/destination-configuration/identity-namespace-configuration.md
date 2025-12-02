@@ -2,9 +2,9 @@
 description: 了解如何为使用Destination SDK构建的目标配置支持的目标身份。
 title: 身份命名空间配置
 exl-id: 30c0939f-b968-43db-b09b-ce5b34349c6e
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 9f4ce2a3a8af72342683c859caa270662b161b7d
 workflow-type: tm+mt
-source-wordcount: '925'
+source-wordcount: '918'
 ht-degree: 3%
 
 ---
@@ -15,7 +15,7 @@ Experience Platform使用身份命名空间来描述特定身份的类型。 例
 
 根据您创建的目标类型（流或基于文件），请牢记以下身份命名空间要求：
 
-* 在通过Destination SDK创建实时（流）目标时，除了[配置用户可将配置文件属性和身份映射到的合作伙伴架构](schema-configuration.md)之外，还必须定义目标平台支持的至少&#x200B;*个*&#x200B;身份命名空间。 例如，如果您的目标平台接受经过哈希处理的电子邮件和[!DNL IDFA]，则必须将这两个标识定义为此文档[&#128279;](#supported-parameters)中进一步描述的。
+* 在通过Destination SDK创建实时（流）目标时，除了[配置用户可将配置文件属性和身份映射到的合作伙伴架构](schema-configuration.md)之外，还必须定义目标平台支持的至少&#x200B;*个*&#x200B;身份命名空间。 例如，如果您的目标平台接受经过哈希处理的电子邮件和[!DNL IDFA]，则必须将这两个标识定义为此文档[中进一步描述的](#supported-parameters)。
 
   >[!IMPORTANT]
   >
@@ -42,7 +42,7 @@ Experience Platform使用身份命名空间来描述特定身份的类型。 例
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -62,8 +62,8 @@ Experience Platform使用身份命名空间来描述特定身份的类型。 例
 | `acceptsAttributes` | 布尔值 | 可选 | 指示客户是否可以将标准配置文件属性映射到您配置的身份。 |
 | `acceptsCustomNamespaces` | 布尔值 | 可选 | 指示客户是否可以将自定义身份命名空间映射到您配置的身份命名空间。 |
 | `acceptedGlobalNamespaces` | - | 可选 | 指示客户可以将哪些[标准身份命名空间](../../../../identity-service/features/namespaces.md#standard)（例如[!UICONTROL IDFA]）映射到您正在配置的身份。 |
-| `transformation` | 字符串 | 可选 | 当源字段是XDM属性或自定义身份命名空间时，在Experience Platform UI中显示[[!UICONTROL 应用转换]](../../../ui/activate-segment-streaming-destinations.md#apply-transformation)复选框。 使用此选项可让用户在导出时散列源属性。 要启用此选项，请将值设置为`sha256(lower($))`。 |
-| `requiredTransformation` | 字符串 | 可选 | 当客户选择此源身份命名空间时，[[!UICONTROL 应用转换]](../../../ui/activate-segment-streaming-destinations.md#apply-transformation)复选框将自动应用于映射，客户无法禁用它。 要启用此选项，请将值设置为`sha256(lower($))`。 |
+| `transformation` | 字符串 | 可选 | 当源字段是XDM属性或自定义身份命名空间时，在Experience Platform UI中显示[[!UICONTROL Apply transformation]](../../../ui/activate-segment-streaming-destinations.md#apply-transformation)复选框。 使用此选项可让用户在导出时散列源属性。 要启用此选项，请将值设置为`sha256(lower($))`。 |
+| `requiredTransformation` | 字符串 | 可选 | 当客户选择此源身份命名空间时，[[!UICONTROL Apply transformation]](../../../ui/activate-segment-streaming-destinations.md#apply-transformation)复选框将自动应用于映射，客户无法禁用它。 要启用此选项，请将值设置为`sha256(lower($))`。 |
 
 {style="table-layout:auto"}
 
@@ -124,7 +124,7 @@ Experience Platform客户可以选择以哈希格式或纯文本将数据摄取�
 
 ## 配置强制源字段散列
 
-如果您的目标仅接受哈希数据，则可以配置导出的属性，以使其由Experience Platform自动进行哈希处理。 在映射`Email`和`Phone`标识时，以下配置会自动检查&#x200B;**应用转换**&#x200B;选项。
+如果您的目标仅接受哈希数据，则可以配置导出的属性，以使其由Experience Platform自动进行哈希处理。 在映射&#x200B;**和**&#x200B;标识时，以下配置会自动检查`Email`应用转换`Phone`选项。
 
 ```json {line-numbers="true" highlight="8,11"}
 "identityNamespaces":{

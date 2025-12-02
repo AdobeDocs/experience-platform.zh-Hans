@@ -3,10 +3,10 @@ title: 将一次性客户价值提升至存留期价值
 description: 了解如何根据特定客户的属性、行为和过去购买情况创建个性化促销活动，以提供最佳的补充性产品或服务。
 feature: Use Cases
 exl-id: 45f72b5e-a63b-44ac-a186-28bac9cdd442
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: f988d7665a40b589ca281d439b6fca508f23cd03
 workflow-type: tm+mt
-source-wordcount: '3181'
-ht-degree: 26%
+source-wordcount: '3156'
+ht-degree: 21%
 
 ---
 
@@ -39,16 +39,16 @@ ht-degree: 26%
 >
 >确保您拥有所有这些区域所需的[基于属性的访问控制权限](/help/access-control/abac/end-to-end-guide.md)，或让系统管理员授予您这些必要的权限。
 
-* [[!DNL Adobe Real-Time Customer Data Platform (Real-Time CDP)]](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/understanding-the-real-time-customer-data-platform.html?lang=zh-Hans)：跨数据源集成数据以推动营销活动。 然后，该数据可用于创建活动受众，并显示电子邮件和网络促销图块中使用的个性化数据元素（例如，姓名或与帐户相关的信息）。最后，Real-Time CDP还可用于将受众激活到付费媒体目标。
+* [[!DNL Adobe Real-Time Customer Data Platform (Real-Time CDP)]](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/understanding-the-real-time-customer-data-platform.html)：跨数据源集成数据以推动营销活动。 然后，该数据可用于创建活动受众，并显示电子邮件和网络促销图块中使用的个性化数据元素（例如，姓名或与帐户相关的信息）。最后，Real-Time CDP还可用于将受众激活到付费媒体目标。
    * [架构](/help/xdm/home.md)
    * [轮廓](/help/profile/home.md)
    * [数据集](/help/catalog/datasets/overview.md)
    * [受众](/help/segmentation/home.md)
    * [目标](/help/destinations/home.md)
-* [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html?lang=zh-Hans)：设计历程、设置触发器并创建正确的消息以向访客发送地址。
-   * [事件或受众触发器](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioning/collect-event-data/data-collection.html?lang=zh-Hans)
-   * [受众和活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/audiences-profiles-identities/audiences/about-audiences.html?lang=zh-Hans)
-   * [历程](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html?lang=zh-Hans)
+* [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html)：设计历程、设置触发器并创建正确的消息以向访客发送地址。
+   * [事件或受众触发器](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioning/collect-event-data/data-collection.html)
+   * [受众和活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/audiences-profiles-identities/audiences/about-audiences.html)
+   * [历程](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html)
 
 ## Real-Time CDP和Journey Optimizer架构
 
@@ -72,7 +72,7 @@ ht-degree: 26%
 
 ![逐步将一次性值转换为生命周期值高级视觉概览。](../evolve-one-time-value-lifetime-value/images/step-by-step.png){zoomable="yes"}
 
-1. 创建架构和数据集，然后为[!UICONTROL 配置文件]标记这些架构和数据集。
+1. 您可以创建架构和数据集，然后为[!UICONTROL Profile]标记这些架构和数据集。
 2. 通过Web SDK、Mobile Edge SDK或API收集数据并集成到Experience Platform中。 也可以使用分析数据连接器，但可能会导致历程延迟。
 3. 您将轮廓加载到 Real-Time CDP 中，并制定治理策略来确保负责任的使用。
 4. 您可以从用户档案列表中构建重点受众，以检查高值和低值客户。
@@ -91,9 +91,9 @@ ht-degree: 26%
 
 ### 创建架构设计并指定字段组 {#schema-design}
 
-体验数据模型 (XDM) 资源在 [!DNL Adobe Experience Platform] 的[!UICONTROL “架构”]工作区中进行管理。您可以查看和浏览[!DNL Adobe]提供的核心资源（例如，[!UICONTROL 字段组]），并为您的组织创建自定义资源和架构。
+在[!UICONTROL Schemas]的[!DNL Adobe Experience Platform]工作区中管理体验数据模型(XDM)资源。 您可以查看和浏览[!DNL Adobe]提供的核心资源（例如，[!UICONTROL field groups]），并为您的组织创建自定义资源和架构。
 
-有关创建[架构](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=zh-Hans)的更多信息，请阅读[“创建架构教程”。](/help/xdm/tutorials/create-schema-ui.md)
+有关创建[架构](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html)的更多信息，请阅读[“创建架构教程”。](/help/xdm/tutorials/create-schema-ui.md)
 
 在此示例实施中，可为用例使用多种架构设计以将一次性值演化为生命周期值。 每个架构都包含要设置的特定必填字段，以及一些建议的字段。
 
@@ -109,7 +109,7 @@ ht-degree: 26%
 
 ![字段组突出显示的客户属性架构](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/customer-attributes-schema.png)
 
-客户属性架构由 [!UICONTROL XDM 个人轮廓]类表示，该类包括以下字段组：
+客户属性架构由[!UICONTROL XDM Individual Profile]类表示，该类包含以下字段组：
 
 +++人口统计详细信息（字段组）
 
@@ -117,13 +117,13 @@ ht-degree: 26%
 
 +++
 
-+++个人联系方式（字段组）
++++个人联系人详细信息（字段组）
 
 [个人联系人详细信息](/help/xdm/field-groups/profile/personal-contact-details.md)是XDM个人资料类的标准架构字段组，用于描述个人联系信息。
 
 +++
 
-+++外部源系统审计详细信息（字段组）
++++外部Source系统审核详细信息（字段组）
 
 [外部来源系统审计属性](/help/xdm/data-types/external-source-system-audit-attributes.md)是一种标准体验数据模型 (XDM) 数据类型，用于捕获有关外部来源系统的审核详细信息。
 
@@ -137,11 +137,11 @@ ht-degree: 26%
 
 #### 客户数字交易架构 {#customer-digital-transactions-schema}
 
-此架构用于构建和引用构成您的客户活动的事件数据，这些活动发生在您的网站或其他关联的数字平台上。 此数据通常通过[Web SDK](/help/web-sdk/home.md)摄取到[!DNL Adobe Experience Platform]中，并且是引用各种浏览和转化事件所必需的，这些事件用于触发历程、详细的在线客户分析和增强的分段功能。
+此架构用于构建和引用构成您的客户活动的事件数据，这些活动发生在您的网站或其他关联的数字平台上。 此数据通常通过[!DNL Adobe Experience Platform]Web SDK[摄取到](/help/collection/js/js-overview.md)中，并且是引用各种浏览和转化事件所必需的，这些事件用于触发历程、详细的在线客户分析和增强的分段功能。
 
 ![突出显示字段组的客户数字交易架构](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/customer-digital-transactions-schema.png)
 
-客户数字交易架构由 [!UICONTROL XDM ExperienceEvent] 类表示，其中包括以下字段组：
+客户数字交易架构由[!UICONTROL XDM ExperienceEvent]类表示，其中包括以下字段组：
 
 +++Adobe Experience Platform Web SDK ExperienceEvent（字段组）
 
@@ -152,13 +152,13 @@ ht-degree: 26%
 
 +++
 
-+++Web 详细信息（字段组）
++++Web详细信息（字段组）
 
 [Web详细信息](/help/xdm/field-groups/event/web-details.md)是XDM ExperienceEvent类的标准架构字段组，用于描述有关Web详细信息事件的信息，例如交互、页面详细信息和反向链接。
 
 +++
 
-+++消费者体验事件（字段组）
++++使用者体验事件（字段组）
 
 此字段组包含有关用户在您的Web资产上执行的操作（如购买或浏览事件）的各种信息。
 
@@ -196,13 +196,13 @@ ht-degree: 26%
 
 +++
 
-+++最终用户 ID 详细信息（字段组）
++++最终用户ID详细信息（字段组）
 
 [最终用户ID详细信息](/help/xdm/field-groups/event/enduserids.md)字段组包含有关您的用户的各种信息，例如访问时他们是否在您的网站上进行了身份验证，以及有关其身份的信息。
 
 +++
 
-+++外部源系统审计详细信息（字段组）
++++外部Source系统审核详细信息（字段组）
 
 外部来源系统审计属性是一种标准体验数据模型 (XDM) 数据类型，用于捕获有关外部来源系统的审核详细信息。
 
@@ -214,21 +214,21 @@ ht-degree: 26%
 
 ![突出显示字段组的客户离线交易架构](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/customer-offline-transactions-schema.png)
 
-客户离线交易架构由 [!UICONTROL XDM ExperienceEvent] 类表示，其中包括以下字段组：
+客户离线交易架构由[!UICONTROL XDM ExperienceEvent]类表示，该类包含以下字段组：
 
-+++商务详细信息（字段组）
++++Commerce详细信息（字段组）
 
 [Commerce详细信息](/help/xdm/field-groups/event/commerce-details.md)是[!DNL XDM ExperienceEvent]类的标准架构字段组，用于描述商业数据，如产品信息（SKU、名称、数量）和标准购物车操作（订单、结帐、放弃）。
 
 +++
 
-+++个人联系方式（字段组）
++++个人联系人详细信息（字段组）
 
-[[!UICONTROL 个人联系人详细信息]](/help/xdm/field-groups/profile/personal-contact-details.md)是[!DNL XDM Individual Profile]类的标准架构字段组，用于描述个人联系信息。
+[[!UICONTROL Personal Contact Details]](/help/xdm/field-groups/profile/personal-contact-details.md)是[!DNL XDM Individual Profile]类的标准架构字段组，用于描述个人联系信息。
 
 +++
 
-+++外部源系统审计详细信息（字段组）
++++外部Source系统审核详细信息（字段组） 
 
 外部来源系统审计属性是一种标准体验数据模型 (XDM) 数据类型，用于捕获有关外部来源系统的审核详细信息。
 
@@ -244,11 +244,11 @@ ht-degree: 26%
 
 ![字段组突出显示的Adobe Web连接器架构](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/adobe-web-schema.png)
 
-[!DNL Adobe]Web 连接器架构由 [!UICONTROL XDM 体验事件]类表示，其中包括以下字段组：
+[!DNL Adobe] Web连接器架构由[!UICONTROL XDM ExperienceEvent]类表示，该类包含以下字段组：
 
-+++Adobe Analytics ExperienceEvent 模板（字段组）
++++Adobe Analytics ExperienceEvent模板（字段组）
 
-[[!UICONTROL Adobe Analytics ExperienceEvent完整扩展]](/help/xdm/field-groups/event/analytics-full-extension.md)是一个标准架构字段组，用于捕获Adobe Analytics收集的常见指标。
+[[!UICONTROL Adobe Analytics ExperienceEvent Full Extension]](/help/xdm/field-groups/event/analytics-full-extension.md)是一个标准架构字段组，用于捕获Adobe Analytics收集的常见量度。
 
 +++
 
@@ -268,9 +268,9 @@ ht-degree: 26%
 
 >[!IMPORTANT]
 >
->向客户提供取消订阅以停止从品牌接收通信的功能，以及确保遵循此选择是一项法律要求。 通过[隐私法规概述](https://experienceleague.adobe.com/docs/experience-platform/privacy/regulations/overview.html?lang=zh-Hans)了解有关适用法律的更多信息。
+>向客户提供取消订阅以停止从品牌接收通信的功能，以及确保遵循此选择是一项法律要求。 通过[隐私法规概述](https://experienceleague.adobe.com/docs/experience-platform/privacy/regulations/overview.html)了解有关适用法律的更多信息。
 
-考虑实施以下[同意政策](https://experienceleague.adobe.com/docs/platform-learn/data-collection/web-sdk/consent/overview.html?lang=zh-Hans)，并在联系访客之前请求其同意：
+考虑实施以下[同意政策](https://experienceleague.adobe.com/docs/platform-learn/data-collection/web-sdk/consent/overview.html)，并在联系访客之前请求其同意：
 
 * 如果 `consents.marketing.email.val = "Y"`，则可以发送电子邮件
 * 如果 `consents.marketing.sms.val = "Y"`，则可以发送短信
@@ -298,7 +298,7 @@ ht-degree: 26%
 
 此用例要求您创建两个受众以定义由配置文件存储中的配置文件子集共享的特定属性或行为，从而区分可营销的人员群体。 在Adobe Experience Platform中，可以通过多种方式创建受众：
 
-* 有关如何创建受众的信息，请阅读[受众服务UI指南](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html?lang=zh-Hans#create-audience)。
+* 有关如何创建受众的信息，请阅读[受众服务UI指南](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html#create-audience)。
 * 有关如何构建[受众](/help/segmentation/home.md)的信息，请阅读[受众构建UI指南](/help/segmentation/ui/audience-composition.md)。
 * 有关如何通过Experience Platform派生的区段定义构建受众的信息，请阅读[Audience Builder UI指南](/help/segmentation/ui/segment-builder.md)。
 
@@ -342,9 +342,9 @@ ht-degree: 26%
 
 >[!NOTE]
 >
->[!DNL Adobe Journey Optimizer] 并不涵盖图中所示的所有内容。所有[付费媒体广告](/help/destinations/catalog/social/overview.md)都是在[!UICONTROL 目标] [工作区](/help/destinations/ui/destinations-workspace.md)中创建的。
+>[!DNL Adobe Journey Optimizer] 并不涵盖图中所示的所有内容。所有[付费媒体广告](/help/destinations/catalog/social/overview.md)都是在[!UICONTROL destinations] [工作区](/help/destinations/ui/destinations-workspace.md)中创建的。
 
-[[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html?lang=zh-Hans) 可帮助您为客户提供贴合心意的、上下文和个性化的体验。客户历程是客户与品牌互动的整个过程。每个用例历程都需要特定信息。
+[[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html) 可帮助您为客户提供贴合心意的、上下文和个性化的体验。客户历程是客户与品牌互动的整个过程。每个用例历程都需要特定信息。
 
 要完成此用例，您必须创建两个单独的历程：
 
@@ -367,15 +367,15 @@ ht-degree: 26%
 
 上面显示的历程遵循以下逻辑。
 
-1. 读取受众：对于在上面的受众部分中创建的第一个受众，使用[读取受众活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/read-audience.html?lang=zh-Hans)。
+1. 读取受众：对于在上面的受众部分中创建的第一个受众，使用[读取受众活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/read-audience.html?lang=en)。
 
-2. 条件 — 首选渠道：使用[条件活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/condition-activity.html?lang=zh-Hans)来确定如何通过电子邮件、短信或推送通知联系客户。 使用三个操作活动创建三个分支。
+2. 条件 — 首选渠道：使用[条件活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/condition-activity.html)来确定如何通过电子邮件、短信或推送通知联系客户。 使用三个操作活动创建三个分支。
 
-3. 等待：使用[等待活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/read-audience.html?lang=zh-Hans)等待直至您侦听购买。
+3. 等待：使用[等待活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/read-audience.html)等待直至您侦听购买。
 
 4. 条件 — 过去7天内购买的订阅？使用条件活动可侦听过去七天内的产品购买。
 
-5. JourneyStepEventTracker — 未购买订阅：对尚未购买订阅的访客使用[自定义操作](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/using-custom-actions.html?lang=zh-Hans)，即使收到您的消息。 作为历程结束时的自定义条件的一部分，创建一个`journey.feedback`事件并将其添加到基于[!UICONTROL 历程步骤事件]架构的数据集。 您将使用此事件对尚未购买订阅且可通过付费媒体广告定位的受众进行分段。
+5. JourneyStepEventTracker — 未购买订阅：对尚未购买订阅的访客使用[自定义操作](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/using-custom-actions.html)，即使收到您的消息。 作为历程结束时的自定义条件的一部分，创建一个`journey.feedback`事件并将其添加到基于[!UICONTROL Journey Step Event]架构的数据集。 您将使用此事件对尚未购买订阅且可通过付费媒体广告定位的受众进行分段。
 
 +++
 
@@ -430,13 +430,13 @@ ht-degree: 26%
       * 短信
 
    * 渠道内容个性化
-      * 显示订购详细信息，并可以使用表格格式显示产品列表。
+      * 显示订单详细信息，并可以使用表格格式显示产品列表。
 
 +++
 
 >[!ENDTABS]
 
-有关在[!DNL Adobe Journey Optimizer]中创建历程的更多信息，请阅读[历程入门](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html?lang=zh-Hans)指南。
+有关在[!DNL Adobe Journey Optimizer]中创建历程的更多信息，请阅读[历程入门](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html)指南。
 
 ### 设置显示付费媒体广告的目标 {#paid-media-ads}
 

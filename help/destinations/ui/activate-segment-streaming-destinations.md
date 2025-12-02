@@ -1,11 +1,11 @@
 ---
-title: Activate audience data to streaming destinations
+title: 将受众数据激活到流目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将现有受众映射到流目标来激活这些受众。
 exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
-source-git-commit: 595856842a3890426bb196218bd8be4e321ff8aa
+source-git-commit: 2eb890f06097f1b9766408aad3b6ab11d5d12f9f
 workflow-type: tm+mt
-source-wordcount: '1099'
+source-wordcount: '1098'
 ht-degree: 3%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 3%
 
 ## 概述 {#overview}
 
-This article explains the workflow required to activate audiences in Adobe Experience Platform streaming destinations.
+本文介绍了在Adobe Experience Platform流目标中激活受众所需的工作流。
 
 ## 先决条件 {#prerequisites}
 
@@ -55,15 +55,15 @@ This article explains the workflow required to activate audiences in Adobe Exper
 * **[!UICONTROL Custom upload]**：受众在Experience Platform之外生成，并以CSV文件形式上传到Experience Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/audience-portal.md#import-audience)的文档。
 * 其他类型的受众，来自其他Adobe解决方案，如[!DNL Audience Manager]。
 
-![Several audiences highlighted in the Select audiences step.](../assets/ui/activate-segment-streaming-destinations/select-audiences.png)
+![在选择受众步骤中突出显示的多个受众。](../assets/ui/activate-segment-streaming-destinations/select-audiences.png)
 
 ## 映射属性和身份 {#mapping}
 
 >[!IMPORTANT]
 >
->This step only applies to some audience streaming destinations. If your destination does not have a **[!UICONTROL Mapping]** step, skip to [audience scheduling](#scheduling).
+>此步骤仅适用于某些受众流目标。 如果您的目标没有&#x200B;**[!UICONTROL Mapping]**&#x200B;步骤，请跳至[受众计划](#scheduling)。
 >
->When activating audiences to streaming destinations, you must also map *at least one target identity namespace*, in addition to target profile attributes. 否则，受众将不会激活到目标平台。
+>将受众激活到流式目标时，除了目标配置文件属性外，还必须映射&#x200B;*至少一个目标身份命名空间*。 否则，受众将不会激活到目标平台。
 > ![显示强制标识命名空间映射的映射步骤图像。](../assets/ui/activate-segment-streaming-destinations/identity-mapping-mandatory.png) {zoomable="yes"}
 
 
@@ -83,7 +83,7 @@ This article explains the workflow required to activate audiences in Adobe Exper
 
    ![显示多个可用源字段的“选择源字段”页。](../assets/ui/activate-segment-streaming-destinations/select-source-field-modal.png)
 
-1. Select the button to the right of the **[!UICONTROL Target field]** entry.
+1. 选择&#x200B;**[!UICONTROL Target field]**&#x200B;条目右侧的按钮。
 
    ![选择突出显示的目标字段。](../assets/ui/activate-segment-streaming-destinations/select-target-field.png)
 
@@ -119,19 +119,19 @@ This article explains the workflow required to activate audiences in Adobe Exper
 
 1. 在&#x200B;**[!UICONTROL Audience schedule]**&#x200B;页面上，选择每个受众，然后使用&#x200B;**[!UICONTROL Start date]**&#x200B;和&#x200B;**[!UICONTROL End date]**&#x200B;选择器配置将数据发送到目标的时间间隔。
 
-   ![Audience schedule filter highlighted.](../assets/ui/activate-segment-streaming-destinations/audience-schedule.png)
+   ![受众计划筛选器突出显示。](../assets/ui/activate-segment-streaming-destinations/audience-schedule.png)
 
-   * Some destinations require you to select the **[!UICONTROL Origin of audience]** for each audience, using the drop-down menu underneath the calendar selectors. 如果您的目标不包含此选择器，请跳过此步骤。
+   * 某些目标要求您使用日历选择器下的下拉菜单为每个受众选择&#x200B;**[!UICONTROL Origin of audience]**。 如果您的目标不包含此选择器，请跳过此步骤。
 
      ![映射ID下拉列表突出显示。](../assets/ui/activate-segment-streaming-destinations/origin-of-audience.png)
 
    * 某些目标要求您手动将[!DNL Experience Platform]受众映射到其在目标目标中的对应受众。 为此，请选择每个受众，然后在&#x200B;**[!UICONTROL Mapping ID]**&#x200B;字段中输入目标平台中相应的受众ID。 如果您的目标不包含此字段，请跳过此步骤。
 
-     ![Origin of audience dropdown highlighted.](../assets/ui/activate-segment-streaming-destinations/mapping-id.png)
+     ![突出显示的受众来源下拉列表。](../assets/ui/activate-segment-streaming-destinations/mapping-id.png)
 
-   * Some destinations require you to enter an **[!UICONTROL App ID]** when activating [!DNL IDFA] or [!DNL GAID] audiences. If your destination does not include this field, skip this step.
+   * 激活&#x200B;**[!UICONTROL App ID]**&#x200B;或[!DNL IDFA]受众时，某些目标要求您输入[!DNL GAID]。 如果您的目标不包含此字段，请跳过此步骤。
 
-     ![App ID dropdown highlighted.](../assets/ui/activate-segment-streaming-destinations/destination-appid.png)
+     ![应用程序ID下拉列表突出显示。](../assets/ui/activate-segment-streaming-destinations/destination-appid.png)
 
 1. 选择&#x200B;**[!UICONTROL Next]**&#x200B;以转到[!UICONTROL Review]页面。
 

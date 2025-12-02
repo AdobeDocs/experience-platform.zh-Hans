@@ -3,9 +3,9 @@ keywords: Experience Platform；身份；身份服务；故障排除；护栏；
 title: Identity服务的护栏
 description: 本文档提供了有关Identity Service数据的使用和速率限制的信息，以帮助您优化身份图的使用。
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
 workflow-type: tm+mt
-source-wordcount: '1586'
+source-wordcount: '1576'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/cn/legal/product-descriptions.html)中的实际使用限制。
+>除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/legal/product-descriptions.html)中的实际使用限制。
 
 ## 快速入门
 
@@ -109,7 +109,7 @@ Adobe如果您的生产沙盒包含：
 如果要保留针对CRMID的已验证事件，则建议您将主ID从ECID更改为CRMID。 有关如何实施此更改的步骤，请阅读以下文档：
 
 * [为Experience Platform标记配置标识映射](../tags/extensions/client/web-sdk/data-element-types.md#identity-map)。
-* [Experience Platform Web SDK中的身份数据](../web-sdk/identity/overview.md#using-identitymap)
+* [Experience Platform Web SDK中的身份数据](/help/collection/use-cases/identity/id-overview.md)
 
 ### 示例场景
 
@@ -137,19 +137,19 @@ Adobe如果您的生产沙盒包含：
 * 下图假设在`timestamp=50`处，标识图中有50个标识。
 * `(...)`表示图形中已链接的其他标识。
 
-在此示例中，ECID：32110被摄取并链接到`timestamp=51`处的大型图形，从而超过了50个标识的限制。
+在此示例中，ECID:32110被摄取并链接到`timestamp=51`处的大型图形，从而超过了50个标识的限制。
 
 ![](./images/guardrails/before-split.png)
 
 >[!TAB 删除进程]
 
-因此，Identity Service会根据时间戳和身份类型删除最早的身份。 在这种情况下，只会从身份图中删除ECID：35577。
+因此，Identity Service会根据时间戳和身份类型删除最早的身份。 在这种情况下，ECID:35577仅从身份图中删除。
 
 ![](./images/guardrails/during-split.png)
 
 >[!TAB 图形输出]
 
-删除ECID：35577后，将CRMID：60013和CRMID：25212与现在已删除的ECID：35577关联的边缘也会被删除。 此删除过程会导致将图形拆分为两个较小的图形。
+删除ECID:35577后，将CRMID:60013和CRMID:25212与现在已删除的ECID:35577关联的边缘也会被删除。 此删除过程会导致将图形拆分为两个较小的图形。
 
 ![](./images/guardrails/after-split.png)
 
@@ -168,15 +168,15 @@ Adobe如果您的生产沙盒包含：
 
 借助删除逻辑，某些“中心”身份也可以被删除。 这些中心身份是指链接到多个单独身份（这些身份在其他情况下将被取消链接）的节点。
 
-在下面的示例中，ECID：21011被摄取并链接到`timestamp=51`处的图形，从而超过了50个标识的限制。
+在下面的示例中，ECID:21011被摄取并链接到`timestamp=51`处的图形，从而超过了50个标识的限制。
 
 ![](./images/guardrails/hub-and-spoke-start.png)
 
 >[!TAB 删除进程]
 
-因此，Identity Service仅会从身份图中删除最早的身份，在本例中为ECID：35577。 删除ECID：35577也会导致删除以下内容：
+因此，Identity Service只从身份图中删除最旧的身份，在本例中为ECID:35577。 删除ECID:35577也会导致删除以下内容：
 
-* CRMID：60013和现已删除的ECID：35577之间的链接，从而导致图形拆分方案。
+* CRMID： 60013与现已删除的ECID:35577之间的链接，从而产生图形拆分方案。
 * IDFA： 32110、IDFA： 02383以及`(...)`表示的其余标识。 这些标识会被删除，因为单个标识未链接到任何其他标识，因此无法在图形中表示它们。
 
 ![](./images/guardrails/hub-and-spoke-process.png)
@@ -199,7 +199,7 @@ Adobe如果您的生产沙盒包含：
 请参阅Real-Time CDP产品描述文档中的以下文档，了解有关其他Experience Platform服务护栏、端到端延迟信息和许可信息的更多信息：
 
 * [Real-Time CDP护栏](/help/rtcdp/guardrails/overview.md)
-* [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=zh-Hans#end-to-end-latency-diagrams)。
-* [Real-Time Customer Data Platform (B2C版本 — Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams)。
+* [Real-Time Customer Data Platform (B2C Edition - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)

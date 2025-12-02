@@ -6,9 +6,9 @@ description: 了解如何使用Adobe 2.0标准在Adobe Experience Platform中处
 role: Developer
 feature: Consent
 exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: f988d7665a40b589ca281d439b6fca508f23cd03
 workflow-type: tm+mt
-source-wordcount: '1573'
+source-wordcount: '1562'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Adobe Experience Platform允许您处理从客户那里收集的同意数据，�
 
 >[!NOTE]
 >
->本文档重点介绍如何使用Adobe标准处理同意数据。 如果您在按照IAB透明度和同意框架(TCF) 2.0处理同意数据，请参阅Adobe Real-Time Customer Data Platform[&#128279;](../iab/overview.md)中有关TCF 2.0支持的指南。
+>本文档重点介绍如何使用Adobe标准处理同意数据。 如果您在按照IAB透明度和同意框架(TCF) 2.0处理同意数据，请参阅Adobe Real-Time Customer Data Platform[中有关](../iab/overview.md)TCF 2.0支持的指南。
 
 ## 先决条件
 
@@ -30,8 +30,8 @@ Adobe Experience Platform允许您处理从客户那里收集的同意数据，�
 * [体验数据模型(XDM)](/help/xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
 * [Adobe Experience Platform Identity Service](/help/identity-service/home.md)：通过跨设备和系统桥接身份，解决了客户体验数据碎片化带来的基本挑战。
 * [实时客户个人资料](/help/profile/home.md)：使用[!DNL Identity Service]功能从您的数据集实时创建详细的客户个人资料。 Real-time Customer Profile从数据湖中提取数据，并将客户配置文件保留在其自己的单独数据存储中。
-* [Adobe Experience Platform Web SDK](/help/web-sdk/home.md)：客户端JavaScript库，它允许您将各种Experience Platform服务集成到面向客户的网站上。
-   * [SDK同意命令](../../../../web-sdk/commands/setconsent.md)：本指南中显示的与同意相关的SDK命令的用例概述。
+* [Adobe Experience Platform Web SDK](/help/collection/js/js-overview.md)：客户端JavaScript库，它允许您将各种Experience Platform服务集成到面向客户的网站上。
+   * [SDK同意命令](/help/collection/js/commands/setconsent.md)：本指南中显示的与同意相关的SDK命令的用例概述。
 * [Adobe Experience Platform分段服务](/help/segmentation/home.md)：允许您将Real-time Customer Profile数据划分为共享相似特征并对营销策略做出类似响应的个人组。
 
 ## 同意处理流程摘要 {#summary}
@@ -51,7 +51,7 @@ Adobe Experience Platform允许您处理从客户那里收集的同意数据，�
 
 >[!NOTE]
 >
->有关上述XDM同意字段结构的更多信息，请参阅[[!UICONTROL 同意和偏好设置]数据类型](/help/xdm/data-types/consents.md)的指南。
+>有关上述XDM同意字段结构的更多信息，请参阅[[!UICONTROL Consents and Preferences]数据类型](/help/xdm/data-types/consents.md)的指南。
 
 配置系统后，Experience Platform Web SDK会解释当前用户的数据收集同意值，以确定数据应发送到Adobe Experience Platform Edge Network、从客户端删除还是保留，直到数据收集权限设置为“是”或“否”。
 
@@ -77,7 +77,7 @@ Adobe Experience Platform允许您处理从客户那里收集的同意数据，�
 >
 >如果没有任何冲突的数据集，则应该为合并策略设置时间戳优先顺序。 这有助于确保客户指定的最新同意是使用的同意设置。
 
-有关如何使用合并策略的更多信息，请从阅读[合并策略概述](../../../../profile/merge-policies/overview.md)开始。 在设置合并策略时，必须确保配置文件包含[!UICONTROL 同意和偏好设置]架构字段组提供的所有必需同意属性，如[数据集准备](./dataset.md)指南中所述。
+有关如何使用合并策略的更多信息，请从阅读[合并策略概述](../../../../profile/merge-policies/overview.md)开始。 在设置合并策略时，必须确保配置文件包含[!UICONTROL Consents and Preferences]架构字段组提供的所有必需同意属性，如[数据集准备](./dataset.md)指南中所述。
 
 ## 将同意数据引入Experience Platform
 
@@ -95,13 +95,13 @@ Adobe Experience Platform允许您处理从客户那里收集的同意数据，�
 
 如果您的移动应用程序需要客户同意首选项，则可以集成Experience Platform Mobile SDK以检索和更新同意设置，并在调用同意API时将它们发送到Experience Platform。
 
-请参阅移动SDK文档，了解[使用同意API配置同意移动扩展](https://developer.adobe.com/client-sdks/documentation/consent-for-edge-network/)和[&#128279;](https://developer.adobe.com/client-sdks/documentation/consent-for-edge-network/api-reference/)。 有关如何使用Mobile SDK处理隐私问题的更多详细信息，请参阅[隐私和GDPR](https://developer.adobe.com/client-sdks/resources/privacy-and-gdpr/)部分。
+请参阅移动SDK文档，了解[使用同意API配置同意移动扩展](https://developer.adobe.com/client-sdks/documentation/consent-for-edge-network/)和[](https://developer.adobe.com/client-sdks/documentation/consent-for-edge-network/api-reference/)。 有关如何使用Mobile SDK处理隐私问题的更多详细信息，请参阅[隐私和GDPR](https://developer.adobe.com/client-sdks/resources/privacy-and-gdpr/)部分。
 
 ### 直接摄取符合XDM标准的同意数据 {#batch}
 
 您可以使用批量摄取从CSV文件中摄取符合XDM的同意数据。 如果您有以前收集的同意数据的积压，但尚未将其集成到客户配置文件中，此功能会很有用。
 
-请阅读有关[将CSV文件映射到XDM](../../../../ingestion/tutorials/map-csv/overview.md)的教程，了解如何将数据字段转换为XDM并将其摄取到Experience Platform。 为映射选择[!UICONTROL 目标]时，请确保选择&#x200B;**[!UICONTROL 使用现有数据集]**&#x200B;选项，然后选择您之前创建的启用[!DNL Profile]的同意数据集。
+请阅读有关[将CSV文件映射到XDM](../../../../ingestion/tutorials/map-csv/overview.md)的教程，了解如何将数据字段转换为XDM并将其摄取到Experience Platform。 为映射选择[!UICONTROL Destination]时，请确保您选择&#x200B;**[!UICONTROL Use existing dataset]**&#x200B;选项并选择您之前创建的已启用[!DNL Profile]的同意数据集。
 
 ## 测试实施 {#test-implementation}
 
@@ -113,9 +113,9 @@ Adobe Experience Platform允许您处理从客户那里收集的同意数据，�
 >
 >如果您无权访问此信息，则可以选择摄取您自己的测试同意数据，并将其与您已知的身份值/命名空间关联。
 
-有关如何查找配置文件详细信息的具体步骤，请参阅[!DNL Profile] UI指南中有关[按身份浏览配置文件](../../../../profile/ui/user-guide.md#browse)的部分。
+有关如何查找配置文件详细信息的具体步骤，请参阅[ UI指南中有关](../../../../profile/ui/user-guide.md#browse)按身份浏览配置文件[!DNL Profile]的部分。
 
-默认情况下，新的同意属性不会显示在用户档案的仪表板上。 因此，您必须导航到配置文件详细信息页面上的&#x200B;**[!UICONTROL 属性]**&#x200B;选项卡，以确认已按预期摄取这些属性。 请参阅[配置文件仪表板](../../../../profile/ui/profile-dashboard.md)上的指南，了解如何根据您的需求自定义仪表板。
+默认情况下，新的同意属性不会显示在用户档案的仪表板上。 因此，您必须导航到配置文件详细信息页面上的&#x200B;**[!UICONTROL Attributes]**&#x200B;选项卡，以确认已按预期摄取这些区段。 请参阅[配置文件仪表板](../../../../profile/ui/profile-dashboard.md)上的指南，了解如何根据您的需求自定义仪表板。
 
 <!-- (To be included once CJM is GA)
 ## Handling consent in Customer Journey Management

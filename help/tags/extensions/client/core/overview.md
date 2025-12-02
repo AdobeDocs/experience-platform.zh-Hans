@@ -2,10 +2,10 @@
 title: 核心扩展概述
 description: 了解Adobe Experience Platform中的核心标记扩展。
 exl-id: 841f32ad-a6a8-49fb-a131-ef4faab47187
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: c76b64e76229db8f9da544a79aed903a134f7351
 workflow-type: tm+mt
-source-wordcount: '5447'
-ht-degree: 61%
+source-wordcount: '5425'
+ht-degree: 62%
 
 ---
 
@@ -178,8 +178,8 @@ ht-degree: 61%
 
 #### Specific Elements \| Any Element
 
-* 如果选择&#x200B;**[!UICONTROL Specific Elements]**，则会显示用于选择元素和属性值的选项。
-* 如果选择&#x200B;**[!UICONTROL Any Element]**，则无需显示其他选项来缩小元素范围。
+* 如果选择 **[!UICONTROL Specific Elements]**，则会显示用于选择元素和属性值的选项。
+* 如果选择 **[!UICONTROL Any Element]**，则无需显示其他选项来缩小元素范围。
 
 #### Elements matching the CSS selector
 
@@ -231,9 +231,9 @@ ht-degree: 61%
 
 使用内置代码编辑器输入自定义代码：
 
-1. 选择&#x200B;**[!UICONTROL 打开编辑器]**。
+1. 选择 **[!UICONTROL Open Editor]**。
 1. 键入自定义代码。
-1. 选择&#x200B;**[!UICONTROL 保存]**。
+1. 选择 **[!UICONTROL Save]**。
 
 将自动提供一个名为 `event` 的变量，您可以从自定义代码中引用该变量。`event` 对象将包含有关触发规则的事件的有用信息。确定哪些事件数据可用的最简单方法是从自定义代码中将 `event` 记录到控制台：
 
@@ -557,8 +557,8 @@ return new Promise(function(resolve, reject) {
    * JavaScript
    * HTML
 1. 选择是否要全局执行操作代码。
-1. 选择&#x200B;**[!UICONTROL 打开编辑器]**。
-1. 编辑代码，然后选择&#x200B;**[!UICONTROL 保存]**。
+1. 选择 **[!UICONTROL Open Editor]**。
+1. 编辑代码，然后选择 **[!UICONTROL Save]**。
 
 选择 JavaScript 作为语言时，将自动提供一个名为 `event` 的变量，您可以从自定义代码中引用该变量。`event` 对象将包含有关触发规则的事件的有用信息。确定哪些事件数据可用的最简单方法是从自定义代码中将 `event` 记录到控制台：
 
@@ -636,7 +636,7 @@ setTimeout(function() {
 
 ![数据收集UI中触发器直接调用操作的屏幕截图](../../../images/extensions/client/core/direct-call-action.png)
 
-该操作直接映射到`satellite`对象中的[`track`方法](../../../ui/client-side/satellite-object.md#track)，可通过客户端代码访问该对象。
+此操作直接映射到[`_satellite.track()`](/help/collection/tags/track.md)。
 
 ## 核心扩展数据元素类型
 
@@ -866,7 +866,7 @@ CSS 选择器链：
 允许您选择以下变量之一：
 
 * 环境暂存 — 返回`_satellite.environment.stage`以区分开发/暂存/生产环境。
-* 库生成日期 — 返回包含相同值（如`_satellite.buildInfo.buildDate`）的`turbine.buildInfo.buildDate`。
+* 库生成日期 — 返回包含相同值（如`turbine.buildInfo.buildDate`）的`_satellite.buildInfo.buildDate`。
 * 属性名称 — 返回`_satellite.property.name`以获取Launch属性的名称。
 * 属性ID — 返回`_satellite.property.id`以获取Launch属性的ID
 * 规则名称 — 返回包含已执行规则名称的`event.$rule.name`。

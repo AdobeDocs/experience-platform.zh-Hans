@@ -3,7 +3,7 @@ title: 使用合作伙伴辅助的访客识别功能，为未知访客提供个�
 description: 了解如何使用合作伙伴辅助的访客识别为访客营造个性化的现场体验。
 feature: Use Cases, Personalization, Customer Acquisition
 exl-id: 99677988-1df8-47b1-96b1-0ef6db818a1d
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: f988d7665a40b589ca281d439b6fca508f23cd03
 workflow-type: tm+mt
 source-wordcount: '2568'
 ht-degree: 72%
@@ -14,7 +14,7 @@ ht-degree: 72%
 
 >[!AVAILABILITY]
 >
->已获得许可Real-Time CDP（应用程序服务）、Adobe Experience Platform Activation、Real-Time CDP、Real-Time CDP Prime、Real-Time CDP Ultimate的客户可以使用此功能。 阅读[产品说明](https://helpx.adobe.com/cn/legal/product-descriptions.html)中关于这些软件包的详细信息，并联系您的 Adobe 代表了解更多信息。
+>已获得许可Real-Time CDP（应用程序服务）、Adobe Experience Platform Activation、Real-Time CDP、Real-Time CDP Prime、Real-Time CDP Ultimate的客户可以使用此功能。 阅读[产品说明](https://helpx.adobe.com/legal/product-descriptions.html)中关于这些软件包的详细信息，并联系您的 Adobe 代表了解更多信息。
 
 了解如何使用合作伙伴辅助的识别为您的 Web 资产访客营造个性化的体验。使用本教程了解为了向经过身份验证和未经身份验证的访客展现个性化体验，Experience Platform 和其他 Experience Cloud 解决方案中各个元素的实施顺序。
 
@@ -47,7 +47,7 @@ ht-degree: 72%
 要成功实施此用例，您必须使用 Real-Time Customer Data Platform 和其他 Experience Cloud 解决方案的多个区域。确保您拥有所有这些区域所需的[基于属性的访问控制权限](/help/access-control/abac/overview.md)，或让系统管理员授予您这些必要的权限。
 
 * 数据收集
-   * [Adobe Experience Platform Web SDK](/help/web-sdk/home.md)
+   * [Adobe Experience Platform Web SDK](/help/collection/js/js-overview.md)
    * [标记](/help/tags/home.md)
    * [数据流](/help/datastreams/overview.md)
 * Real-Time CDP 中的数据管理
@@ -64,7 +64,7 @@ ht-degree: 72%
 
 查看下面的视频教程，逐步了解如何为未知访客提供个性化的现场体验：
 
->[!VIDEO](https://video.tv.adobe.com/v/3449262/?captions=chi_hans&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3423076/?learn=on)
 
 ## 如何实现该用例：高级概述 {#achieve-the-use-case-high-level}
 
@@ -73,7 +73,7 @@ ht-degree: 72%
 1. 作为&#x200B;**客户**，您通过&#x200B;**数据合作伙伴**&#x200B;可实时洞察以其他方式匿名的网站访客。
 2. 作为&#x200B;**客户**，您在资产上部署客户端库以调用&#x200B;**合作伙伴** API，并且您配置 Web SDK 或移动 SDK 以将合作伙伴提供的信号发送到 Real-Time CDP。
 3. 当&#x200B;**访客**&#x200B;浏览您的网站或应用程序时，**合作伙伴**&#x200B;按概率识别访客，并返回属性和 ID。
-4. Real-Time CDP 运行边缘分段以评估传入的事件点击，并根据 [ECID 标识符](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)将结果保持不变。
+4. Real-Time CDP 运行边缘分段以评估传入的事件点击，并根据 [ECID 标识符](https://experienceleague.adobe.com/docs/id-service/using/home.html)将结果保持不变。
 5. Adobe Target 使用边缘分段输出将体验呈现回&#x200B;**访客**&#x200B;以供进行会话中个性化。
 6. 事件完整地保存下来，用于分析和重新定位等下游工作流。
 
@@ -157,7 +157,7 @@ Experience Platform UI的![数据收集部分。](/help/rtcdp/assets/partner-dat
 
 ![填写新资产的必填字段。](/help/rtcdp/assets/partner-data/onsite-personalization/tag-property-fields.png)
 
-获取有关如何[创建标记资产](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/configure-tags/create-a-property.html?lang=zh-Hans)的完整信息。
+获取有关如何[创建标记资产](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/configure-tags/create-a-property.html)的完整信息。
 
 接下来，您必须在该资产内安装各种扩展。选择您的标记属性并导航到[!UICONTROL Extensions]部分。
 
@@ -175,7 +175,7 @@ Experience Platform UI的![数据收集部分。](/help/rtcdp/assets/partner-dat
 
 在配置Web SDK的屏幕中，向下导航到&#x200B;**[!UICONTROL Datastreams]**&#x200B;部分，并提供有关您正在使用的Experience Platform沙盒的信息。 从下一个下拉列表中选择适当的沙盒和在前面的步骤中创建的数据流。您可以为所有其他环境选择相同的沙盒和数据流值。保持其他设置不变，并选择&#x200B;**[!UICONTROL Save]**。
 
-获取有关[如何安装 Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/tags-configuration/install-web-sdk.html?lang=zh-Hans) 的完整信息。
+获取有关[如何安装 Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/tags-configuration/install-web-sdk.html) 的完整信息。
 
 #### 安装 ID 服务扩展
 

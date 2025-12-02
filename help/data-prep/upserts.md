@@ -3,14 +3,14 @@ keywords: Experience Platform；主页；热门主题；数据准备；数据准
 title: 使用数据准备将部分行更新发送到实时客户个人资料
 description: 了解如何使用数据准备将部分行更新发送到Real-Time Customer Profile。
 exl-id: f9f9e855-0f72-4555-a4c5-598818fc01c2
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: f988d7665a40b589ca281d439b6fca508f23cd03
 workflow-type: tm+mt
-source-wordcount: '1361'
+source-wordcount: '1363'
 ht-degree: 0%
 
 ---
 
-# 使用[!DNL Data Prep]将部分行更新发送到[!DNL Real-Time Customer Profile]
+# 使用[!DNL Real-Time Customer Profile]将部分行更新发送到[!DNL Data Prep]
 
 >[!IMPORTANT]
 >
@@ -52,7 +52,7 @@ ht-degree: 0%
 [!DNL Data Prep]中的流更新插入按如下方式工作：
 
 * 您必须首先创建并启用[!DNL Profile]使用情况的数据集。 有关详细信息，请参阅[启用 [!DNL Profile]](../catalog/datasets/enable-for-profile.md)的数据集的指南。
-* 如果必须链接新标识，则还必须创建一个与您的[!DNL Profile]数据集具有相同架构&#x200B;**的其他数据集**。
+* 如果必须链接新标识，则还必须创建一个与您的&#x200B;**数据集具有相同架构**&#x200B;的其他数据集[!DNL Profile]。
 * 准备好数据集后，必须创建一个数据流以将传入请求映射到[!DNL Profile]数据集；
 * 接下来，必须更新传入请求以包含必要的标头。 这些标头定义：
    * 需要对[!DNL Profile]执行的数据操作： `create`、`merge`和`delete`。
@@ -64,7 +64,7 @@ ht-degree: 0%
 
 * 身份数据集必须具有其关联的架构作为[!DNL Profile]数据集。 架构不匹配可能导致系统行为不一致。
 * 但是，您必须确保标识数据集不同于[!DNL Profile]数据集。 如果数据集相同，则将覆盖数据而不是更新数据。
-* 虽然必须为[!DNL Profile]启用初始数据集，但不应为[!DNL Profile]启用标识数据集&#x200B;**&#x200B;**。 否则，数据也将被覆盖而不是更新。 但是，应该为[!DNL Identity Service]启用标识数据集&#x200B;**&#x200B;**。
+* 虽然必须为[!DNL Profile]启用初始数据集，但不应为&#x200B;**启用标识数据集**[!DNL Profile]。 否则，数据也将被覆盖而不是更新。 但是，应该为&#x200B;**启用标识数据集**[!DNL Identity Service]。
 
 #### 与身份数据集关联的架构中的必填字段 {#identity-dataset-required-fileds}
 
@@ -220,7 +220,7 @@ curl -X POST 'https://dcs.adobedc.net/collection/9aba816d350a69c4abbd283eb5818ec
 
 ### 通过XDM架构中的身份映射字段组指定其中一个身份字段作为主身份
 
-在此示例中，标头包含具有`identity`和`identityDatasetId`属性的`operations`属性。 这允许将数据与[!DNL Real-Time Customer Profile]合并，也允许将标识传递到[!DNL Identity Service]。
+在此示例中，标头包含具有`operations`和`identity`属性的`identityDatasetId`属性。 这允许将数据与[!DNL Real-Time Customer Profile]合并，也允许将标识传递到[!DNL Identity Service]。
 
 ```shell
 curl -X POST 'https://dcs.adobedc.net/collection/9aba816d350a69c4abbd283eb5818ec3583275ffce4880ffc482be5a9d810c4b' \
@@ -271,7 +271,7 @@ curl -X POST 'https://dcs.adobedc.net/collection/9aba816d350a69c4abbd283eb5818ec
 
 * 仅当向[!DNL Real-Time Customer Profile]发送部分行更新时，才应使用流更新插入方法。 部分行更新&#x200B;**不是**&#x200B;被数据湖使用。
 * 流更新插入方法不支持更新、替换和删除身份。 如果不存在新标识，则会创建新标识。 因此，必须始终将`identity`操作设置为创建。 如果标识已存在，则该操作是无操作。
-* 流更新插入方法当前不支持[Adobe Experience Platform Web SDK](/help/web-sdk/home.md)和[Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/)。
+* 流更新插入方法当前不支持[Adobe Experience Platform Web SDK](/help/collection/js/js-overview.md)或[Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/)。
 
 ## 后续步骤
 

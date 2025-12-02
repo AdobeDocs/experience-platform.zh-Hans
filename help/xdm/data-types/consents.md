@@ -3,33 +3,33 @@ keywords: Experience Platform；配置文件；实时客户配置文件；疑难
 title: 同意和偏好设置数据类型
 description: 隐私同意、Personalization和营销偏好设置数据类型旨在支持从您的数据操作中收集由同意管理平台(CMP)和其他源生成的客户权限和偏好设置。
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
 workflow-type: tm+mt
-source-wordcount: '2334'
-ht-degree: 0%
+source-wordcount: '2305'
+ht-degree: 1%
 
 ---
 
-# [!UICONTROL 同意和偏好设置]数据类型
+# [!UICONTROL Consents and Preferences]数据类型
 
-[!UICONTROL 隐私同意、Personalization和营销偏好设置]数据类型（以下简称“[!UICONTROL 同意和偏好设置]数据类型”）是一种[!DNL Experience Data Model] (XDM)数据类型，旨在支持从您的数据操作中收集由同意管理平台(CMP)和其他源生成的客户权限和偏好设置。
+[!UICONTROL Consent for Privacy, Personalization and Marketing Preferences]数据类型（以下简称“[!UICONTROL Consents and Preferences]数据类型”）是[!DNL Experience Data Model] (XDM)数据类型，旨在支持从您的数据操作中收集由同意管理平台(CMP)和其他源生成的客户权限和偏好设置。
 
-本文档介绍[!UICONTROL 同意和偏好设置]数据类型提供的字段的结构和预期用途。
+本文档介绍了[!UICONTROL Consents and Preferences]数据类型提供的字段的结构和预期用途。
 
 ## 先决条件 {#prerequisites}
 
 本文档要求您对XDM和架构在[!DNL Experience Platform]中的使用有一定的了解。 请在继续之前查看以下文档：
 
-* [XDM系统概述](https://www.adobe.com/go/xdm-home-en)
+* [XDM 系统概述](https://www.adobe.com/go/xdm-home-en)
 * [架构组合的基础知识](https://www.adobe.com/go/xdm-schema-best-practices-en)
 
 ## 数据类型结构 {#structure}
 
 >[!IMPORTANT]
 >
->[!UICONTROL 同意和偏好设置]数据类型旨在涵盖一系列同意和偏好设置管理用例。 因此，本文档笼统地说明了数据类型字段的用法，并仅就应如何解释这些字段的使用提出了建议。 请咨询您的隐私法律团队，以调整数据类型的结构，使其与您的组织如何解读并向客户展示这些同意和偏好设置选择相对应。
+>[!UICONTROL Consents and Preferences]数据类型旨在涵盖一系列同意和偏好设置管理用例。 因此，本文档笼统地说明了数据类型字段的用法，并仅就应如何解释这些字段的使用提出了建议。 请咨询您的隐私法律团队，以调整数据类型的结构，使其与您的组织如何解读并向客户展示这些同意和偏好设置选择相对应。
 
-[!UICONTROL 同意和偏好设置]数据类型提供了几个用于捕获&#x200B;**同意**&#x200B;和&#x200B;**偏好设置**&#x200B;信息的字段。
+[!UICONTROL Consents and Preferences]数据类型提供了几个用于捕获&#x200B;**同意**&#x200B;和&#x200B;**首选项**&#x200B;信息的字段。
 
 同意是一个选项，允许客户指定如何使用其数据。 大多数同意都有法律含义，其中有些司法管辖区要求先获得许可，然后数据才能以特定方式使用，或者要求客户在不需要明确同意的情况下可以选择停止使用（选择退出）。
 
@@ -46,7 +46,7 @@ ht-degree: 0%
 >
 >有关如何在Experience Platform UI中查找任何XDM资源并检查其结构的步骤，请参阅关于[探索XDM资源](../ui/explore.md)的指南。
 
-以下JSON显示了[!UICONTROL 同意和偏好设置]数据类型可以处理的数据类型示例。 有关这些字段中每个字段的特定用途的信息，请参见以下部分。
+以下JSON显示了[!UICONTROL Consents and Preferences]数据类型可以处理的数据类型示例。 有关这些字段中每个字段的特定用途的信息，请参见以下部分。
 
 ```json
 {
@@ -255,23 +255,23 @@ ht-degree: 0%
 
 ## 使用数据类型摄取数据 {#ingest}
 
-要使用[!UICONTROL 同意和偏好设置]数据类型从客户中摄取同意数据，您必须基于包含该数据类型的架构创建数据集。
+要使用[!UICONTROL Consents and Preferences]数据类型从客户那里摄取同意数据，您必须基于包含该数据类型的架构创建数据集。
 
-有关如何将数据类型分配给字段的步骤，请参阅有关[在UI](https://www.adobe.com/go/xdm-schema-editor-tutorial-en)中创建架构的教程。 创建包含具有[!UICONTROL 同意和偏好设置]数据类型的字段的架构后，请参阅数据集用户指南中有关[创建数据集](../../catalog/datasets/user-guide.md#create)的章节，其中介绍了使用现有架构创建数据集的步骤。
+有关如何将数据类型分配给字段的步骤，请参阅有关[在UI](https://www.adobe.com/go/xdm-schema-editor-tutorial-en)中创建架构的教程。 创建包含具有[!UICONTROL Consents and Preferences]数据类型的字段的架构后，请参阅数据集用户指南中有关[创建数据集](../../catalog/datasets/user-guide.md#create)的部分，并按照使用现有架构创建数据集的步骤操作。
 
 >[!IMPORTANT]
 >
->如果要将同意数据发送到[!DNL Real-Time Customer Profile]，需要您根据包含[!UICONTROL 同意和偏好设置]数据类型的[!DNL XDM Individual Profile]类创建启用[!DNL Profile]的架构。 还必须为[!DNL Profile]启用您根据该架构创建的数据集。 请参阅上面链接的教程，了解与架构和数据集的[!DNL Real-Time Customer Profile]要求相关的特定步骤。
+>如果要将同意数据发送到[!DNL Real-Time Customer Profile]，则需要您根据包含[!DNL Profile]数据类型的[!DNL XDM Individual Profile]类创建一个启用[!UICONTROL Consents and Preferences]的架构。 还必须为[!DNL Profile]启用您根据该架构创建的数据集。 请参阅上面链接的教程，了解与架构和数据集的[!DNL Real-Time Customer Profile]要求相关的特定步骤。
 >
 >此外，您还必须确保将合并策略配置为优先考虑包含最新同意和偏好设置数据的数据集，以便正确更新客户配置文件。 有关详细信息，请参阅有关[合并策略](../../rtcdp/profile/merge-policies.md)的概述。
 
 ## 处理同意和偏好设置更改
 
-当客户在您的网站上更改其同意或偏好设置时，应使用[Adobe Experience Platform Web SDK](../../web-sdk/commands/setconsent.md)收集并立即实施这些更改。 如果客户选择退出数据收集，则必须立即停止所有数据收集。 如果客户选择退出个性化，则他们访问的下一个页面上应该不会显示个性化。
+当客户在您的网站上更改其同意或偏好设置时，应收集这些更改，并通过在所用的数据收集库中设置同意来立即实施这些更改。 如果客户选择退出数据收集，则必须立即停止所有数据收集。 如果客户选择退出个性化，则他们访问的下一个页面上应该不会显示个性化。 请参阅使用JavaScript库的[`setConsent`](/help/collection/js/commands/setconsent.md)或使用标记扩展的[[!UICONTROL Set consent]](/help/tags/extensions/client/web-sdk/actions/set-consent.md)操作。
 
 ## 附录 {#appendix}
 
-以下部分提供了有关[!UICONTROL 同意和偏好设置]数据类型的其他参考信息。
+以下部分提供了有关[!UICONTROL Consents and Preferences]数据类型的其他参考信息。
 
 ### `val`的接受值 {#choice-values}
 
@@ -281,7 +281,7 @@ ht-degree: 0%
 | --- | --- | --- |
 | `y` | 是（选择启用） | 客户已选择加入以获得同意或偏好设置。 换言之，他们&#x200B;**do**&#x200B;同意使用相关同意或偏好设置所指示的数据。 |
 | `n` | 否（选择退出） | 客户已选择退出同意或偏好设置。 换言之，他们&#x200B;**不**&#x200B;同意使用相关同意或偏好设置所指示的数据。 |
-| `p` | 等待验证 | 系统尚未收到最终同意或偏好设置值。 这通常用作需要两步验证的同意的一部分。 例如，如果客户选择接收电子邮件，该同意将设置为`p`，直到他们在电子邮件中选择链接以验证他们提供了正确的电子邮件地址，此时同意将更新为`y`。<br><br>如果此同意或偏好设置未使用两集验证流程，则可能使用`p`选项来指示客户尚未响应同意提示。 例如，在客户响应同意提示之前，您可以在网站的第一个页面上自动将值设置为`p`。 在不要求明确同意的司法辖区中，您还可以使用它来表示客户没有明确选择退出（换言之，假定您同意该选项）。<br><br>虽然可以使用其他机制（如流式摄取）在[!DNL Profile]中摄取此值，但在[!DNL Edge Network]上数据收集或同意收集时&#x200B;**不支持**。 虽然无法显式发送`p`值，但[[!DNL Web SDK]](../../landing/governance-privacy-security/consent/sdk.md)仍处理事件排队，一旦最终用户的同意明确为`in`，事件将调度到[!DNL Edge Network]。 |
+| `p` | 等待验证 | 系统尚未收到最终同意或偏好设置值。 这通常用作需要两步验证的同意的一部分。 例如，如果客户选择接收电子邮件，该同意将设置为`p`，直到他们在电子邮件中选择链接以验证他们提供了正确的电子邮件地址，此时同意将更新为`y`。<br><br>如果此同意或偏好设置未使用两集验证流程，则可能使用`p`选项来指示客户尚未响应同意提示。 例如，在客户响应同意提示之前，您可以在网站的第一个页面上自动将值设置为`p`。 在不要求明确同意的司法辖区中，您还可以使用它来表示客户没有明确选择退出（换言之，假定您同意该选项）。<br><br>虽然可以使用其他机制（如流式摄取）在[!DNL Profile]中摄取此值，但在&#x200B;**上数据收集或同意收集时**&#x200B;不支持[!DNL Edge Network]。 虽然无法显式发送`p`值，但[[!DNL Web SDK]](../../landing/governance-privacy-security/consent/sdk.md)仍处理事件排队，一旦最终用户的同意明确为[!DNL Edge Network]，事件将调度到`in`。 |
 | `u` | 未知 | 客户的同意或偏好设置信息未知。 |
 | `dy` | 默认为“是（选择启用）” | 客户本身未提供同意值，默认情况下将视为选择加入（“是”）。 换言之，除非客户另有指示，否则将假定客户同意。<br><br>请注意，如果法律或公司隐私策略的更改导致某些或所有用户的默认值发生更改，则必须手动更新包含默认值的所有用户档案。 |
 | `dn` | 默认为“否”（选择退出） | 客户本身并未提供同意值，并默认被视为选择退出（“否”）。 换言之，客户被假定已拒绝同意，直到他们表示不同意。<br><br>请注意，如果法律或公司隐私策略的更改导致某些或所有用户的默认值发生更改，则必须手动更新包含默认值的所有用户档案。 |
@@ -315,6 +315,6 @@ ht-degree: 0%
 
 {style="table-layout:auto"}
 
-### 完整的[!UICONTROL 同意和偏好设置]架构 {#full-schema}
+### 完整[!UICONTROL Consents and Preferences]架构 {#full-schema}
 
-要查看[!UICONTROL 同意和偏好设置]数据类型的完整架构，请参阅[官方XDM存储库](https://github.com/adobe/xdm/blob/master/components/datatypes/consent/consent-preferences.schema.json)。
+要查看[!UICONTROL Consents and Preferences]数据类型的完整架构，请参阅[官方XDM存储库](https://github.com/adobe/xdm/blob/master/components/datatypes/consent/consent-preferences.schema.json)。

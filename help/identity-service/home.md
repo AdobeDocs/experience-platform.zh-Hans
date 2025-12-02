@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 身份标识服务概述
 description: Adobe Experience Platform Identity Service通过跨设备和系统桥接身份，允许您实时提供有影响力的个人数字体验，从而帮助您更好地了解客户及其行为。
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: 8dc4393232f5e256f375d2104d4fe0eaffc1d716
+source-git-commit: d252fc30d93fa4440c6ef47146830d0423e1839a
 workflow-type: tm+mt
-source-wordcount: '1574'
+source-wordcount: '1580'
 ht-degree: 2%
 
 ---
@@ -105,15 +105,15 @@ Identity Service为实现其任务提供了以下操作：
 
 以下视频旨在支持您了解身份和身份图。
 
->[!VIDEO](https://video.tv.adobe.com/v/3422769?captions=chi_hans&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/27841?quality=12&learn=on)
 
 ## 了解Identity Service在Experience Platform基础架构中的角色
 
 Identity服务在Experience Platform中起着至关重要的作用。 其中一些关键集成包括：
 
 * [架构](../xdm/home.md)：在给定的架构中，标记为标识的架构字段允许生成标识图。
-* [数据集](../catalog/datasets/overview.md)：启用数据集以摄取到Real-time Customer Profile时，如果数据集至少有两个标记为身份的字段，则将从该数据集生成身份图。
-* [Web SDK](../web-sdk/home.md)： Web SDK将体验事件发送到Adobe Experience Platform，当事件中存在两个或多个标识时，标识服务会生成图形。
+* [数据集](../catalog/datasets/overview.md)：启用数据集以摄取到Real-time Customer Profile时，将从该数据集生成身份图，假定该数据集至少有两个标记为身份的字段。
+* [数据收集](/help/collection/home.md)：数据收集库(如Web SDK)将体验事件发送到Adobe Experience Platform。 当事件中存在两个或多个身份时，Identity Service会生成一个图形。
 * [实时客户个人资料](../profile/home.md)：在合并给定个人资料的属性和事件之前，实时客户个人资料可以引用标识图。 有关详细信息，请阅读[上的指南，以了解Identity Service与Real-Time Customer Profile](./identity-and-profile.md)之间的关系。
 * [目标](../destinations/home.md)：目标可以根据身份命名空间将配置文件信息发送到其他系统，如经过哈希处理的电子邮件。
 * [区段匹配](../segmentation/ui/segment-match/overview.md)：区段匹配在两个不同沙盒中匹配两个配置文件，这两个沙盒具有相同的标识命名空间和标识值。

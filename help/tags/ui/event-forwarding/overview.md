@@ -3,7 +3,7 @@ title: 事件转发概述
 description: 了解 Adobe Experience Platform 中的事件转发，通过此功能，无需更改您的标记实施，即可使用 Experience Platform Edge Network 执行任务。
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 88995c933bf067fe3d077d1be8b92b076e461707
 workflow-type: tm+mt
 source-wordcount: '1181'
 ht-degree: 8%
@@ -24,13 +24,13 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 
 本文档全面概述了Experience Platform中的事件转发。
 
-![数据收集生态系统中的事件转发。](../../../collection/images/home/event-forwarding.png)
+![数据收集生态系统中的事件转发。](/help/collection/assets/event-forwarding.png)
 
 >[!NOTE]
 >
->有关事件转发如何适应Experience Platform中的数据收集生态系统的信息，请参阅[数据收集概述](../../../collection/home.md)。
+>有关事件转发如何适应Experience Platform中的数据收集生态系统的信息，请参阅[数据收集概述](/help/collection/home.md)。
 
-与Adobe Experience Platform [Web SDK](/help/web-sdk/home.md)和[Mobile SDK](https://experienceleague.adobe.com/docs/platform-learn/data-collection/mobile-sdk/overview.html?lang=zh-Hans)结合使用的事件转发具有以下优点：
+与Adobe Experience Platform [Web SDK](/help/collection/js/js-overview.md)和[Mobile SDK](https://experienceleague.adobe.com/docs/platform-learn/data-collection/mobile-sdk/overview.html)结合使用的事件转发具有以下优点：
 
 **性能**：
 
@@ -89,7 +89,7 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 
 ### 规则 {#rules}
 
-在事件转发属性中创建规则的工作方式与标记类似，主要区别在于您不能选择事件作为规则组件。 相反，事件转发规则会处理从[数据流](../../../datastreams/overview.md)接收的所有事件，并在满足某些条件时将这些事件转发到目标。
+在事件转发属性中创建规则的工作方式与标记类似，主要区别在于您不能选择事件作为规则组件。 相反，事件转发规则会处理从[数据流](/help/datastreams/overview.md)接收的所有事件，并在满足某些条件时将这些事件转发到目标。
 
 此外，还有30秒的超时时间，适用于单个事件，因为会在一个事件转发属性内的所有规则（以及因此产生的所有操作）中处理该事件。 这意味着必须在此时间范围内完成单个事件的所有规则和所有操作。
 

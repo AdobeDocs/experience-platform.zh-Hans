@@ -1,21 +1,21 @@
 ---
 title: 数据流概述
-description: 了解数据流如何帮助您将客户端Experience PlatformSDK集成与Adobe产品和第三方目标连接起来。
+description: 了解数据流如何帮助您将客户端Experience Platform SDK集成与Adobe产品和第三方目标连接起来。
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: e3768a3f695abeedc9a3ce2fef591c6ecae9a897
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
 workflow-type: tm+mt
-source-wordcount: '712'
-ht-degree: 70%
+source-wordcount: '709'
+ht-degree: 60%
 
 ---
 
 # 数据流概述
 
-数据流表示Adobe Experience Platform Web和Mobile SDK的服务器端配置。 虽然SDK中的[`configure`](/help/web-sdk/commands/configure/overview.md)命令可处理客户端设置（如`edgeDomain`），但数据流可管理所有其他配置。
+数据流表示Adobe Experience Platform Web和Mobile SDK的服务器端配置。 虽然SDK中的[`configure`](/help/collection/js/commands/configure/overview.md)命令可处理客户端设置（如`edgeDomain`），但数据流可管理所有其他配置。
 
 向Edge Network发送请求时，`datastreamId`引用发送数据的数据流。 这允许您更新服务器端配置，而无需更改网站的代码。
 
-您可以通过在 Adobe Experience Platform UI 或数据收集 UI 的左侧导航中选择&#x200B;**[!UICONTROL 数据流]**&#x200B;来创建和管理数据流。
+通过在Adobe Experience Platform UI或数据收集UI的左侧导航中选择&#x200B;**[!UICONTROL Datastreams]**，可以创建和管理数据流。
 
 ![UI 中的“数据流”选项卡](assets/overview/datastreams-tab.png)
 
@@ -45,13 +45,13 @@ ht-degree: 70%
 
 以下视频简要概述了如何在 UI 中为数据流配置和实施数据使用限制：
 
->[!VIDEO](https://video.tv.adobe.com/v/3413100/?quality=12&learn=on&speedcontrol=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/3409588/?quality=12&learn=on&speedcontrol=on)
 
 在 Experience Platform 中，您可以将[敏感数据使用标签](../data-governance/labels/reference.md#sensitive)应用于架构和字段，其中包含您组织视为敏感信息的数据。例如，`RHD` 标签用于表示受保护的健康信息 (PHI)，而 `S1` 标签表示地理位置数据。
 
 >[!NOTE]
 >
->有关如何在 Experience Platform UI 或数据收集 UI 中的[!UICONTROL 架构]选项卡中应用数据使用标签的详细信息，请参阅[架构标记教程](../xdm/tutorials/labels.md)。
+>有关如何在Experience Platform UI或数据收集UI的[!UICONTROL Schemas]选项卡中应用数据使用标签的详细信息，请参阅[架构标签设置教程](../xdm/tutorials/labels.md)。
 
 在创建数据流时，如果所选架构包含敏感数据使用标签，则只能配置数据流以将该数据发送到支持HIPAA的目标。 目前，数据流支持的唯一符合 HIPAA 标准的目标是 Adobe Experience Platform。将为包含敏感数据使用标签的数据流禁用其他目标服务，包括 Adobe Target、Adobe Analytics、Adobe Audience Manager、事件转发和边缘目标。
 
@@ -61,7 +61,7 @@ ht-degree: 70%
 
 在 Experience Platform 中，可以审核日志形式监控数据流活动。审核日志显示&#x200B;**谁**&#x200B;执行了&#x200B;**什么**&#x200B;操作，何时执行&#x200B;**什么时间**，以及其他上下文数据，可帮助您排除与数据流相关的问题，以帮助您的企业遵守公司数据管理政策和法规要求。
 
-当用户创建、更新或删除数据流时，将创建审核日志以记录操作。当用户通过[为数据收集准备数据](./data-prep.md)过程创建、更新或删除映射时，会发生相同的情况。无论更新的是数据流还是映射，生成的审核日志都会归类于[!UICONTROL 数据流]资源类型。
+当用户创建、更新或删除数据流时，将创建审核日志以记录操作。当用户通过[为数据收集准备数据](./data-prep.md)过程创建、更新或删除映射时，会发生相同的情况。无论更新了数据流还是映射，生成的审核日志都分类到[!UICONTROL Datastreams]资源类型下。
 
 请参阅有关[审核日志](../landing/governance-privacy-security/audit-logs/overview.md)的文档，详细了解如何解释来自数据流和其他支持服务的日志。
 

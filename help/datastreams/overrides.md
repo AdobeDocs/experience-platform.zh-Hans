@@ -2,10 +2,10 @@
 title: 配置数据流覆盖
 description: 了解如何在数据流UI中配置数据流覆盖并通过Web SDK或Mobile SDK激活它们。
 exl-id: 3f17a83a-dbea-467b-ac67-5462c07c884c
-source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
 workflow-type: tm+mt
-source-wordcount: '1083'
-ht-degree: 57%
+source-wordcount: '1045'
+ht-degree: 53%
 
 ---
 
@@ -20,14 +20,14 @@ ht-degree: 57%
 1. 首先，必须在[数据流配置页面](configure.md)中定义数据流配置覆盖。
 2. 然后，您必须通过以下方式之一将覆盖发送到Edge Network：
    * 通过`sendEvent`或`configure` [Web SDK](#send-overrides)命令。
-   * 通过Web SDK [标记扩展](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md)。
+   * 通过Web SDK [标记扩展](../tags/extensions/client/web-sdk/configure/configuration-overrides.md)。
    * 通过Mobile SDK [sendEvent](#send-overrides) API或使用[Rules](#send-overrides)。
 
 本文介绍每种受支持的覆盖的端到端数据流配置覆盖过程。
 
 >[!IMPORTANT]
 >
->只有[Web SDK](../web-sdk/home.md)和[Mobile SDK](https://developer.adobe.com/client-sdks/home/)集成支持数据流覆盖。 [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/)集成当前不支持数据流覆盖。
+>[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/)集成当前不支持数据流覆盖。
 ><br>
 >在需要将不同的数据发送到不同的数据流时应使用数据流覆盖。请勿对个性化用例或同意数据使用数据流覆盖。
 
@@ -62,7 +62,7 @@ ht-degree: 57%
 
 要为 Adobe Target 数据流配置数据流覆盖，您必须首先创建 Adobe Target 数据流。按照说明进行操作，使用 [Adobe Target](configure.md#target) 服务[配置数据流](configure.md)。
 
-创建数据流后，编辑已添加的[Adobe Target](configure.md#target)服务，并使用&#x200B;**[!UICONTROL 属性令牌覆盖]**&#x200B;部分添加所需的数据流覆盖，如下图所示。 每行添加一个属性令牌。
+创建数据流后，编辑已添加的[Adobe Target](configure.md#target)服务，并使用&#x200B;**[!UICONTROL Property Token Overrides]**&#x200B;部分添加所需的数据流覆盖，如下图所示。 每行添加一个属性令牌。
 
 ![数据流 UI 屏幕快照，显示了 Adobe Target 服务设置，并突出显示了属性令牌覆盖。](assets/overrides/override-target.png)
 
@@ -74,9 +74,9 @@ ht-degree: 57%
 
 要为 Adobe Analytics 数据流配置数据流覆盖，您必须首先创建 [Adobe Analytics](configure.md#analytics) 数据流。按照说明进行操作，使用 [Adobe Analytics](configure.md#analytics) 服务[配置数据流](configure.md)。
 
-创建数据流后，编辑已添加的[Adobe Analytics](configure.md#target)服务，并使用&#x200B;**[!UICONTROL 报表包覆盖]**&#x200B;部分添加所需的数据流覆盖，如下图所示。
+创建数据流后，编辑已添加的[Adobe Analytics](configure.md#target)服务，并使用&#x200B;**[!UICONTROL Report Suite Overrides]**&#x200B;部分添加所需的数据流覆盖，如下图所示。
 
-选择&#x200B;**[!UICONTROL 显示批处理模式]**&#x200B;可启用报告包覆盖的批量编辑。您可以复制并粘贴报告包覆盖列表，每行输入一个报告包。
+选择&#x200B;**[!UICONTROL Show Batch Mode]**&#x200B;以启用对报表包覆盖的批量编辑。 您可以复制并粘贴报告包覆盖列表，每行输入一个报告包。
 
 ![数据流 UI 屏幕快照，显示了 Adobe Analytics 服务设置，并突出显示了报告包覆盖。](assets/overrides/override-analytics.png)
 
@@ -88,7 +88,7 @@ ht-degree: 57%
 
 要为 Experience Platform 事件数据集配置数据流覆盖，您必须首先创建 [Adobe Experience Platform](configure.md#aep) 数据流。按照说明进行操作，使用 [Adobe Experience Platform](configure.md#aep) 服务[配置数据流](configure.md)。
 
-创建数据流后，编辑已添加的[Adobe Experience Platform](configure.md#aep)服务，并选择&#x200B;**[!UICONTROL 添加事件数据集]**&#x200B;选项以添加一个或多个覆盖事件数据集，如下图所示。
+创建数据流后，编辑已添加的[Adobe Experience Platform](configure.md#aep)服务，并选择&#x200B;**[!UICONTROL Add Event Dataset]**&#x200B;选项以添加一个或多个覆盖事件数据集，如下图所示。
 
 ![数据流 UI 屏幕快照，显示了 Adobe Experience Platform 服务设置，并突出显示了事件数据集覆盖。](assets/overrides/override-aep.png)
 
@@ -100,9 +100,9 @@ ht-degree: 57%
 
 要为第三方 ID 同步容器配置数据流覆盖，您必须首先创建数据流。按照说明进行操作，[配置数据流](configure.md)以创建一个数据流。
 
-创建数据流后，请转到&#x200B;**[!UICONTROL 高级选项]**&#x200B;并启用&#x200B;**[!UICONTROL 第三方 ID 同步]**&#x200B;选项。
+创建数据流后，转到&#x200B;**[!UICONTROL Advanced Options]**&#x200B;并启用&#x200B;**[!UICONTROL Third Party ID Sync]**&#x200B;选项。
 
-然后，使用&#x200B;**[!UICONTROL 容器 ID 覆盖]**&#x200B;部分添加要覆盖默认设置的容器 ID，如下图所示。
+然后，使用&#x200B;**[!UICONTROL Container ID Overrides]**&#x200B;部分添加要覆盖默认设置的容器ID，如下图所示。
 
 >[!IMPORTANT]
 >
@@ -118,7 +118,7 @@ ht-degree: 57%
 
 在数据收集UI中配置数据流覆盖后，您可以通过Web SDK或Mobile SDK将覆盖发送到Edge Network。
 
-* **Web SDK**：有关标记扩展说明和JavaScript库代码示例，请参阅[数据流配置覆盖](../web-sdk/commands/datastream-overrides.md#library)。
+* **Web SDK**：有关JavaScript库代码示例，请参阅[数据流配置覆盖](/help/collection/js/commands/configure/edgeconfigoverrides.md)。
 * **移动SDK**：您可以使用[sendEvent API](https://developer.adobe.com/client-sdks/edge/edge-network/tutorials/send-overrides-sendevent/)或使用[Rules](https://developer.adobe.com/client-sdks/edge/edge-network/tutorials/send-overrides-rules/)发送数据流ID覆盖。
 
 ## 负载示例 {#payload-example}

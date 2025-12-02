@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2023 年 4 月）
 description: Adobe Experience Platform 的 2023 年 4 月发行说明。
 exl-id: 7b501467-99a7-4aee-ae86-66c851250ecf
-source-git-commit: 2e41a1716e057cd33e4635c11ba9c3cfc185418a
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
 workflow-type: tm+mt
-source-wordcount: '2010'
-ht-degree: 96%
+source-wordcount: '1983'
+ht-degree: 95%
 
 ---
 
@@ -31,13 +31,13 @@ Adobe Experience Platform 中现有功能的更新：
 
 ## 仪表板 {#dashboards}
 
-Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查看在每天保存快照期间捕获的关于您组织的数据的重要见解。
+Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查看在每天保存快照期间捕获的关于您组织的数据的重要洞察。
 
 **新增功能或更新后的功能** {#dashboards-new-updated-features}
 
 | 功能 | 描述 |
 | --- | --- |
-| 用户定义的仪表板 | 现在可从“见解”小组件中&#x200B;**筛选历史数据**，并使用最近的数据或自定义的分析周期。有关详细信息，请参阅[用户定义的仪表板指南](../../dashboards/standard-dashboards.md#filter-historical-data)。<br>现在还可&#x200B;**复制现有小组件**。通过自定义副本并编辑其属性，在创建新的独特小组件时可避免从头开始创建。请阅读[小组件复制指南](../../dashboards/standard-dashboards.md#duplicate-a-widget)以了解详情。 |
+| 用户定义的仪表板 | 现在可从“洞察”小组件中&#x200B;**筛选历史数据**，并使用最近的数据或自定义的分析周期。有关详细信息，请参阅[用户定义的仪表板指南](../../dashboards/standard-dashboards.md#filter-historical-data)。<br>现在还可&#x200B;**复制现有小组件**。通过自定义副本并编辑其属性，在创建新的独特小组件时可避免从头开始创建。请阅读[小组件复制指南](../../dashboards/standard-dashboards.md#duplicate-a-widget)以了解详情。 |
 
 {style="table-layout:auto"}
 
@@ -66,10 +66,10 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 功能 | 描述 |
 | --- | --- |
-| 对数据流进行 IP 地址模糊处理 | 现在可在[数据流配置 UI](../../datastreams/configure.md) 中定义部分或全部数据流级别 IP 模糊处理选项。<br><br>数据流级别 IP 模糊处理设置优先于任何在 Adobe Target 和 Audience Manager 中的任何 IP 模糊处理功能。<br><br>数据流级别 [!UICONTROL IP 模糊处理]设置不影响发送到 Adobe Analytics 的数据。Adobe Analytics 当前接收未经模糊处理的 IP 地址。要让 Analytics 接收经过模糊处理的 IP 地址，您必须在 Adobe Analytics 中单独配置 IP 模糊处理。将在后续版本中更新此行为。<br><br>有关 IP 模糊处理的更多详细信息以及有关如何配置它的说明，请参阅[数据流配置文档](../../datastreams/configure.md#advanced-options)。 |
-| [数据流配置覆盖](../../datastreams/overrides.md) | 您现在可以为数据流定义其他配置选项，这些选项可用于覆盖特定设置，例如事件数据集、Target 属性令牌、ID 同步容器和 Analytics 报表包。<br><br>覆盖数据流配置是一个两步过程： <ol><li>首先，您必须在[数据流配置页面](../../datastreams/configure.md)中定义数据流配置覆盖。</li><li>然后，您必须通过 Web SDK 命令或使用 Web SDK [标记扩展](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md)将这些覆盖发送到 Edge Network。</li></ol> |
-| OAuth JWT 机密 | 通过 [OAuth JWT 机密](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html?lang=zh-Hans)，客户可以使用 Adobe 和 Google 服务令牌在事件转发中支持服务器到服务器的交互。 |
-| [!DNL Pinterest Conversions API] 扩展 | 通过 [[!DNL Pinterest Conversions API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/pinterest/overview.html?lang=zh-Hans) 事件转发扩展，可利用在 Adobe Experience Platform Edge Network 中捕获的数据，并使用 [!DNL Pinterest Conversions API] 以服务器端事件的形式将数据发送到 [!DNL Pinterest]。 |
+| 对数据流进行 IP 地址模糊处理 | 现在可在[数据流配置 UI](../../datastreams/configure.md) 中定义部分或全部数据流级别 IP 模糊处理选项。<br><br>数据流级别 IP 模糊处理设置优先于任何在 Adobe Target 和 Audience Manager 中的任何 IP 模糊处理功能。<br><br>发送到Adobe Analytics的数据不受数据流级别[!UICONTROL IP Obfuscation]设置的影响。 Adobe Analytics 当前接收未经模糊处理的 IP 地址。要让 Analytics 接收经过模糊处理的 IP 地址，您必须在 Adobe Analytics 中单独配置 IP 模糊处理。将在后续版本中更新此行为。<br><br>有关 IP 模糊处理的更多详细信息以及有关如何配置它的说明，请参阅[数据流配置文档](../../datastreams/configure.md#advanced-options)。 |
+| [数据流配置覆盖](../../datastreams/overrides.md) | 您现在可以为数据流定义其他配置选项，这些选项可用于覆盖特定设置，例如事件数据集、Target 属性令牌、ID 同步容器和 Analytics 报表包。<br><br>覆盖数据流配置是一个两步过程： <ol><li>首先，您必须在[数据流配置页面](../../datastreams/configure.md)中定义数据流配置覆盖。</li><li>然后，您必须通过 Web SDK 命令或使用 Web SDK [标记扩展](/help/tags/extensions/client/web-sdk/configure/configuration-overrides.md)将这些覆盖发送到 Edge Network。</li></ol> |
+| OAuth JWT 机密 | 通过 [OAuth JWT 机密](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html)，客户可以使用 Adobe 和 Google 服务令牌在事件转发中支持服务器到服务器的交互。 |
+| [!DNL Pinterest Conversions API] 扩展 | 通过 [[!DNL Pinterest Conversions API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/pinterest/overview.html) 事件转发扩展，可利用在 Adobe Experience Platform Edge Network 中捕获的数据，并使用 [!DNL Pinterest Conversions API] 以服务器端事件的形式将数据发送到 [!DNL Pinterest]。 |
 
 {style="table-layout:auto"}
 
@@ -90,7 +90,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 | 功能 | 描述 |
 | ----------- | ----------- |
 | [!DNL Custom Personalization] 和 [!DNL Adobe Commerce] 目标的数据流监控 | <p> 您现在可以看到 [Adobe Commerce](/help/destinations/catalog/personalization/adobe-commerce.md)、[自定义个性化](../../destinations/catalog/personalization/custom-personalization.md)和[带属性自定义个性化](../../destinations/catalog/personalization/custom-personalization.md)连接的激活指标。 </p> <p>![Adobe Commerce 图像](/help/destinations/assets/common/adobe-commerce-metrics.png "Adobe Commerce 指标"){width="100" zoomable="yes"}</p>  请参阅[在“目标”工作区中监视数据流](../../dataflows/ui/monitor-destinations.md#monitor-dataflows-in-the-destinations-workspace)以了解详情。 |
-| [!DNL Google Ad Manager] 和 [!DNL Google Ad Manager 360] 目标新增&#x200B;**[!UICONTROL 将区段 ID 附加到区段名称]**&#x200B;字段 | <p>您现在可以让 [[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md#parameters) 和 [[!DNL Google Ad Manager 360]](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) 中的区段名称包含来自 Experience Platform 的区段 ID，例如：`Segment Name (Segment ID)`。</p><p>![附加区段 ID 图像](/help/destinations/assets/common/append-segment-id-to-segment-name.png "新增的“将区段 ID 附加到区段名称”字段"){width="100" zoomable="yes"}</p> |
+| **[!UICONTROL Append segment ID to segment name]**&#x200B;和[!DNL Google Ad Manager]目标的新[!DNL Google Ad Manager 360]字段 | <p>您现在可以让 [[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md#parameters) 和 [[!DNL Google Ad Manager 360]](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) 中的区段名称包含来自 Experience Platform 的区段 ID，例如：`Segment Name (Segment ID)`。</p><p>![附加区段 ID 图像](/help/destinations/assets/common/append-segment-id-to-segment-name.png "新增的“将区段 ID 附加到区段名称”字段"){width="100" zoomable="yes"}</p> |
 | 安排受众回填 | <p>对于 [[!DNL Google Display & Video 360]](/help/destinations/catalog/advertising/google-dv360.md#specifics) 目标，安排在区段首次映射到目标连接 24 至 48 小时后激活对目标的受众回填。此更新是为了响应Google的策略而进行的，该策略等待24小时直到摄取数据，此更新将提高Real-Time CDP与[!DNL Google Display & Video 360]之间的匹配率。</p> <p>请注意，这是仅适用于该目标的后端配置，并与 UI 中任何客户可配置的计划选项无关。</p> |
 
 {style="table-layout:auto"}
@@ -109,13 +109,13 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 ## Experience Data Model (XDM) {#xdm}
 
-XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提供通用结构和定义（架构）。通过遵守 XDM 标准，所有客户体验数据都可以合并到一个通用的呈现中，以更快、更加集成的方式提供见解。您可以从客户行为中获得有价值的见解，通过区段定义客户受众，并使用客户属性实现个性化目的。
+XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提供通用结构和定义（架构）。通过遵守 XDM 标准，所有客户体验数据都可以合并到一个通用的呈现中，以更快、更加集成的方式提供洞察。您可以从客户行为中获得有价值的洞察，通过区段定义客户受众，并使用客户属性实现个性化目的。
 
 **更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 显示名称切换 | 架构编辑器现在提供了一个切换功能，可以在原始字段名称和更易于理解的显示名称之间进行更改。<br>![显示名称切换高亮显示的架构编辑器。](../../xdm/images/ui/resources/schemas/display-name-toggle.png "架构编辑器显示名称切换"){width="100" zoomable="yes"}<br>这种灵活性可以提高字段发现能力和架构编辑功能。标准字段组的显示名称是由系统生成的，但如果需要，也可以通过 UI 进行自定义。请阅读[显示名称切换文档](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/resources/schemas.html?lang=zh-Hans#display-name-toggle)，了解详情。 |
+| 显示名称切换 | 架构编辑器现在提供了一个切换功能，可以在原始字段名称和更易于理解的显示名称之间进行更改。<br>![显示名称切换高亮显示的架构编辑器。](../../xdm/images/ui/resources/schemas/display-name-toggle.png "架构编辑器显示名称切换"){width="100" zoomable="yes"}<br>这种灵活性可以提高字段发现能力和架构编辑功能。标准字段组的显示名称是由系统生成的，但如果需要，也可以通过 UI 进行自定义。请阅读[显示名称切换文档](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/resources/schemas.html#display-name-toggle)，了解详情。 |
 
 {style="table-layout:auto"}
 
@@ -123,7 +123,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 组件类型 | 名称 | 描述 |
 | --- | --- | --- |
-| 架构 | [[!UICONTROL Adobe Target 分类字段]](https://github.com/adobe/xdm/pull/1719/files) | Target 分类数据集的新 XDM 架构包含一组元数据字段，用于对 Target 活动和体验进行分类。 |
+| 架构 | [[!UICONTROL Adobe Target Classification Fields]](https://github.com/adobe/xdm/pull/1719/files) | Target 分类数据集的新 XDM 架构包含一组元数据字段，用于对 Target 活动和体验进行分类。 |
 
 {style="table-layout:auto"}
 
@@ -131,11 +131,11 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 组件类型 | 名称 | 描述 |
 | --- | --- | --- |
-| 字段组 | [[!UICONTROL Adobe 联合轮廓服务帐户合并扩展]](https://github.com/adobe/xdm/pull/1696/files) | 为实时客户轮廓添加了帐户扩展字段组，使用户能够在帐户合并中添加区段成员资格。 |
-| 架构 | [[!UICONTROL 计算属性系统架构]](https://github.com/adobe/xdm/pull/1696/files) | 实时客户轮廓使用的计算属性字段组已更新为系统只读全局架构。 |
-| 字段组 | 多种 | 添加了几个事件作为[[!UICONTROL 时间序列架构]](https://github.com/adobe/xdm/pull/1718/files)的字段。 |
+| 字段组 | [[!UICONTROL Adobe Unified Profile Service Account Union Extension]](https://github.com/adobe/xdm/pull/1696/files) | 为实时客户轮廓添加了帐户扩展字段组，使用户能够在帐户合并中添加区段成员资格。 |
+| 架构 | [[!UICONTROL Computed Attributes System Schema]](https://github.com/adobe/xdm/pull/1696/files) | 实时客户轮廓使用的计算属性字段组已更新为系统只读全局架构。 |
+| 字段组 | 多种 | 已添加多个事件作为[[!UICONTROL Time-series Schema]](https://github.com/adobe/xdm/pull/1718/files)的字段。 |
 | 字段组 | 轮廓忠诚度详细信息 | [将 `xdm:upgradeDate` 的标题](https://github.com/adobe/xdm/pull/1717/files)从“程序名称”改为“升级日期”。 |
-| 字段组 | 多种 | [[!UICONTROL 决策项]](https://github.com/adobe/xdm/pull/1714/files)中的几个字段已更新，以删除双重嵌套层级。 |
+| 字段组 | 多种 | [[!UICONTROL Decision Item]](https://github.com/adobe/xdm/pull/1714/files)中的多个字段已更新为删除双嵌套层次结构。 |
 
 {style="table-layout:auto"}
 
