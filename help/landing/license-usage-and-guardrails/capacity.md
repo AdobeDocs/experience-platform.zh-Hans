@@ -58,7 +58,7 @@ ht-degree: 6%
    - 在这500个流受众中，边缘受众的最大数量为150个
 - 流式摄取的初始组合吞吐量为每秒1500条记录(rps)
    - 此合并的流吞吐量测量每秒合并的入站事件峰值，用于跨生产和开发沙盒将信息流式摄取到实时客户档案。
-   - 您可以购买额外的流式分段支持，每秒最多可支持13,500条记录。 有关购买其他权利的更多信息，请参阅[Real-Time CDP产品描述](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)。
+   - 您可以购买额外的流式分段支持，每秒最多可支持13,500条记录。 有关购买其他权利的更多信息，请参阅[Real-Time CDP产品描述](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)。
 
 受众容量处于&#x200B;**沙盒**&#x200B;级别。 这意味着，对于您组织中的每个沙盒，您可以拥有500个流受众，其中150个可以是Edge受众。
 
