@@ -2,10 +2,10 @@
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK更新现有目标服务器配置的API调用。
 title: 更新目标服务器配置
 exl-id: 579d2cc1-5110-4fba-9dcc-ff4b8d259827
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: e1dd6ae9bf28014e8e84de85bdf67707744ea0ad
 workflow-type: tm+mt
 source-wordcount: '1103'
-ht-degree: 7%
+ht-degree: 8%
 
 ---
 
@@ -26,7 +26,7 @@ ht-degree: 7%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 目标服务器API操作快速入门 {#get-started}
 
@@ -34,7 +34,7 @@ ht-degree: 7%
 
 ## 更新目标服务器配置 {#update}
 
-您可以通过向`/authoring/destination-servers`终结点发出具有已更新负载的`PUT`请求来更新[现有](create-destination-server.md)目标服务器配置。
+您可以通过向[终结点发出具有已更新负载的](create-destination-server.md)请求来更新`PUT`现有`/authoring/destination-servers`目标服务器配置。
 
 >[!TIP]
 >
@@ -94,7 +94,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 | -------- | ----------- | ----------- |
 | `name` | 字符串 | *必填。*&#x200B;表示您的服务器的友好名称，仅对Adobe可见。 合作伙伴或客户看不到此名称。 示例`Moviestar destination server`。 |
 | `destinationServerType` | 字符串 | *必填。对于实时（流）目标，*&#x200B;设置为`URL_BASED`。 |
-| `urlBasedDestination.url.templatingStrategy` | 字符串 | *必需。* <ul><li>如果Adobe需要转换以下`value`字段中的URL，请使用`PEBBLE_V1`。 如果您具有类似以下的端点，请使用此选项： `https://api.moviestar.com/data/{{customerData.region}}/items`。 </li><li> 如果Adobe端不需要转换，例如，如果您有类似`https://api.moviestar.com/data/items`的端点，则使用`NONE`。</li></ul> |
+| `urlBasedDestination.url.templatingStrategy` | 字符串 | *必需。* <ul><li>如果Adobe需要转换以下`PEBBLE_V1`字段中的URL，请使用`value`。 如果您具有类似以下的端点，请使用此选项： `https://api.moviestar.com/data/{{customerData.region}}/items`。 </li><li> 如果Adobe端不需要转换，例如，如果您有类似`NONE`的端点，则使用`https://api.moviestar.com/data/items`。</li></ul> |
 | `urlBasedDestination.url.value` | 字符串 | *必填。*&#x200B;填写Experience Platform应连接到的API终结点的地址。 |
 | `httpTemplate.httpMethod` | 字符串 | *必填。* Adobe将在对服务器的调用中使用的方法。 选项为`GET`、`PUT`、`PUT`、`DELETE`、`PATCH`。 |
 | `httpTemplate.requestBody.templatingStrategy` | 字符串 | *必填。*&#x200B;使用`PEBBLE_V1`。 |
@@ -238,7 +238,11 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
       "rootDirectory":{
          "templatingStrategy":"PEBBLE_V1",
          "value":"{{customerData.rootDirectory}}"
-      }, 
+      },
+      "hostName":{
+         "templatingStrategy":"PEBBLE_V1",
+         "value":"{{customerData.hostName}}"
+      },
       "port": 22,
       "encryptionMode" : "PGP"
    },
@@ -557,7 +561,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
          "templatingStrategy":"PEBBLE_V1",
          "value":"{{customerData.path}}"
       },
-      "useCase": "Your use case"
+      "useCase": "dlz_destination"
    },
    "fileConfigurations": {
         "compression": {

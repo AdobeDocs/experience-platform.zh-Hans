@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中监视目标的数据流
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: a4db84f5918e99b3c6dd63ff5a25063b89be2ba7
+source-git-commit: 4faa15431fe069b5be964f0f8643a73633338a89
 workflow-type: tm+mt
-source-wordcount: '3484'
+source-wordcount: '3550'
 ht-degree: 10%
 
 ---
@@ -82,12 +82,17 @@ ht-degree: 10%
 - **[!UICONTROL Identities excluded]**：基于缺少属性和同意违规而跳过了激活的配置文件标识总数。
 - **[!UICONTROL Identities failed]**：由于错误而未激活到目标的配置文件标识总数。
 
+>[!NOTE]
+>
+>激活、排除和失败的身份总数表示所有单个数据流运行计数的总和。 由于数据流运行的生存时间(TTL)为90天，因此这些总计通常涵盖大约过去3个月。 当旧的数据流运行到期并从系统中删除时，您可能会看到显示的总计数减少。
+
 ![数据流为流式目标运行详细信息。](../assets/ui/monitor-destinations/dataflow-runs-stream.png)
 
 每次数据流运行都会显示以下详细信息：
 
 - **[!UICONTROL Dataflow run start]**：数据流运行的开始时间。 对于流式数据流运行，Experience Platform会以每小时量度的形式，根据数据流运行的开始捕获量度。 这意味着对于流数据流运行，如果数据流运行开始于（例如）10:30PM，则量度在UI中将开始时间显示为10:00 PM。
-- **[!UICONTROL Processing time]**：数据流运行处理所花费的时间。
+- **[!UICONTROL Audience]**：与每个数据流运行关联的受众数。
+- **[!UICONTROL Processing duration]**：数据流运行处理所花费的时间。
    - 对于&#x200B;**[!UICONTROL completed]**&#x200B;运行，处理时间量度始终显示一个小时。
    - 对于仍处于&#x200B;**[!UICONTROL processing]**&#x200B;状态的数据流运行，捕获所有量度的窗口将保持打开状态超过一小时，以便处理与该数据流运行对应的所有量度。 例如，在上午9:30开始的数据流运行可能会保持处理状态1小时30分钟，以捕获和处理所有量度。 处理时间的长度直接受因目标响应失败而完成的重试的影响。 然后，在处理窗口关闭且数据流运行状态更新为&#x200B;**已完成**&#x200B;后，显示的处理时间将更改为1小时。
 - **[!UICONTROL Profiles received]**：数据流中接收的配置文件总数。
@@ -137,7 +142,7 @@ ht-degree: 10%
 >id="platform_monitoring_dataflow_run_details_activation"
 >title="数据流运行详细信息"
 >abstract="目标数据流运行详细信息包含有关受众激活状态的信息，以及从实时客户轮廓中获取的量度，以生成唯一身份标识。若要了解更多信息，请查看量度定义指南。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html?lang=zh-Hans#dataflow-runs-for-streaming-destinations" text="流式处理目标的数据流运行"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html#dataflow-runs-for-streaming-destinations" text="流式处理目标的数据流运行"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_batch"
@@ -165,7 +170,7 @@ ht-degree: 10%
 
 - **[!UICONTROL Dataflow run start]**：数据流运行的开始时间。
 - **[!UICONTROL Audience]**：与每个数据流运行关联的受众的名称。
-- **[!UICONTROL Processing time]**：处理数据流运行所花费的时间。
+- **[!UICONTROL Processing duration]**：处理数据流运行所花费的时间。
 - **[!UICONTROL Profiles received]**：数据流中接收的配置文件总数。 该值每 60 分钟更新一次。
 - **[!UICONTROL Identities activated]**：作为数据流运行的一部分成功激活到所选目标的配置文件身份总数。 此量度包括创建、更新和从导出的受众中移除的身份标识。
 - **[!UICONTROL Identities excluded]**：基于缺少属性和同意违规而从激活中排除的配置文件身份总数。
