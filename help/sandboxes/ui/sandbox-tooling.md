@@ -2,10 +2,10 @@
 title: 沙盒工具
 description: 在沙盒之间无缝导出和导入沙盒配置。
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: 84817abfbd5023310c37427f426684929cd57fe6
+source-git-commit: ee8c270c63cd9e61c28ea990914a96988524bc03
 workflow-type: tm+mt
-source-wordcount: '3539'
-ht-degree: 5%
+source-wordcount: '3431'
+ht-degree: 6%
 
 ---
 
@@ -70,16 +70,8 @@ ht-degree: 5%
 | [!DNL Adobe Journey Optimizer] | 自定义操作 |  | 自定义操作可以单独添加到资源包中。 将自定义操作分配给历程后，便无法再编辑它。 要更新自定义操作，您应： <ul><li>在迁移历程之前移动自定义操作</li><li>在迁移后更新自定义操作的配置（如请求标头、查询参数和身份验证）</li><li>使用您在第一步中添加的自定义操作迁移历程对象</li></ul> |
 | [!DNL Adobe Journey Optimizer] | 内容模板 | | 内容模板可以作为历程对象的依赖对象复制。 通过独立模板，可轻松地在Journey Optimizer营销活动和历程中重用自定义内容。 |
 | [!DNL Adobe Journey Optimizer] | 片段 | 所有嵌套片段。 | 片段可以作为历程对象的依赖对象复制。 片段是可重用的组件，可以在各个Journey Optimizer营销活动和历程中的一个或多个电子邮件中引用。 |
-| [!DNL Adobe Journey Optimizer] | 营销活动 | 促销活动中使用的以下对象将作为从属对象复制： <ul><li>营销活动</li><li>受众</li><li>架构</li><li>内容模板</li><li>片段</li><li>消息/内容</li><li>渠道配置</li><li>统一的决策对象</li><li>试验设置/变体</li></ul> | <ul><li>营销活动可与所有与用户档案、受众、架构、内联消息和依赖对象相关的项目一起复制。 不会复制某些项目，例如数据使用标签和语言设置。 有关无法复制的对象的完整列表，请参阅[将对象导出到另一个沙盒](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox)指南。</li><li>如果存在相同的配置，系统将自动检测并重新使用目标沙盒中的现有渠道配置对象。 如果未找到匹配的配置，则在导入期间跳过渠道配置，并且用户必须手动更新此历程的目标沙盒中的渠道设置。</li><li>用户可以重复使用目标沙盒中的现有试验和受众作为所选营销活动的依赖对象。</li></ul> |
-| [!DNL Adobe Journey Optimizer] | 决策 | 在复制决策对象之前，目标沙盒中必须存在以下对象： <ul><li>在决策对象间使用的配置文件属性</li><li>自定义选件属性的字段组</li><li>用于跨规则、排名或上限的上下文属性的数据流架构。</li></ul> | <ul><li>当前不支持复制使用AI模型的排名公式。</li><li>决策项（优惠项）不会自动包含在内。 为确保它们已传输，请使用&#x200B;**添加到包**&#x200B;选项手动添加它们。</li><li>使用选择策略的策略要求在复制过程中手动添加关联的决策项。 使用手动或备用决策项目的策略会自动将这些项目作为直接依赖项包含在内。</li><li>必须先复制决策项目，然后再复制任何其他相关对象。</li></ul> |
-
-在决策对象间使用的配置文件属性，
-自定义选件属性的字段组，
-用于跨规则、排名或上限的上下文属性的数据流架构。
-
-曲面（例如预设）不会被复制。 系统根据消息类型和表面名称，自动选择目标沙盒上最接近的匹配项。 如果在目标沙盒上未找到表面，则表面复制将失败，导致消息复制失败，因为消息需要表面才可供设置。 在这种情况下，需要为消息的正确渠道至少创建一个表面，以便副本正常工作。
-
-导出历程时，不支持将自定义身份类型作为依赖对象。
+| [!DNL Adobe Journey Optimizer] | 营销活动 | 促销活动中使用的以下对象将作为从属对象复制： <ul><li>营销活动</li><li>受众</li><li>架构</li><li>内容模板</li><li>片段</li><li>消息/内容</li><li>渠道配置</li><li>统一的决策对象</li><li>试验设置/变体</li></ul> | <ul><li>营销活动可与所有与用户档案、受众、架构、内联消息和依赖对象相关的项目一起复制。 不会复制某些项目，例如数据使用标签和语言设置。 有关无法复制的对象的完整列表，请参阅[将对象导出到另一个沙盒](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox)指南。</li><li>如果存在相同的配置，系统将自动检测并重新使用目标沙盒中的现有渠道配置对象。 如果未找到匹配的配置，则在导入期间跳过渠道配置，并且用户必须手动更新此历程的目标沙盒中的渠道设置。</li><li>用户可以重复使用目标沙盒中的现有试验和受众作为所选营销活动的依赖对象。</li></ul> |
+| [!DNL Adobe Journey Optimizer] | 决策 | 在复制决策对象之前，目标沙盒中必须存在以下对象： <ul><li>在决策对象间使用的配置文件属性</li><li>自定义选件属性的字段组</li><li>用于跨规则、排名或上限的上下文属性的数据流架构。</li></ul> | <ul><li>当前不支持复制使用AI模型的排名公式。</li><li>决策项（优惠项）不会自动包含在内。 为确保它们已传输，请使用&#x200B;**添加到包**&#x200B;选项手动添加它们。</li><li>使用选择策略的策略要求在复制过程中手动添加关联的决策项。 使用手动或备用决策项目的策略会自动将这些项目作为直接依赖项包含在内。</li><li>必须先复制决策项目，然后再复制任何其他相关对象。</li><li>有关支持的对象的完整列表，请参阅[将对象导出到另一个沙盒](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox)指南。</li></ul> |
 
 ## 将对象导出到包中 {#export-objects}
 
@@ -361,7 +353,7 @@ Use the arrows to expand objects to view the full list of fields that have been 
 
 以下视频旨在支持您了解沙盒工具，并概述如何创建新包、发布包和导入包。
 
->[!VIDEO](https://video.tv.adobe.com/v/3446099/?captions=chi_hans&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3424763/?learn=on)
 
 ## 后续步骤
 
