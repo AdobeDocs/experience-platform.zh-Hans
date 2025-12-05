@@ -2,14 +2,16 @@
 title: 卫星对象引用
 description: 了解客户端_satellite对象以及可在标记中使用该对象执行的各种功能。
 exl-id: f8b31c23-409b-471e-bbbc-b8f24d254761
-source-git-commit: a36e5af39f904370c1e97a9ee1badad7a2eac32e
+source-git-commit: 05bf3a8c92aa221af153b4ce9949f0fdfc3c86ab
 workflow-type: tm+mt
-source-wordcount: '166'
+source-wordcount: '208'
 ht-degree: 0%
 
 ---
 
 # `_satellite`对象引用
+
+_这些页面概述了如何使用`_satellite`对象，该对象允许您使用JavaScript管理和自定义标记逻辑。 有关如何在数据收集UI中设置实施的详细信息，请参阅[Adobe Experience Platform Web SDK标记扩展](/help/tags/extensions/client/web-sdk/overview.md)。_
 
 `_satellite`对象公开了多个受支持的入口点，可帮助您与网站上发布的标记库交互。 如果正确实施加载程序标记，则所有标记部署都会公开`_satellite`。 此对象有几个主要用例：
 
@@ -26,16 +28,18 @@ ht-degree: 0%
 ## 常见用法示例
 
 ```js
-// Read and write a temporary data element value
-const region = _satellite.getVar('user_region');
-_satellite.setVar('promo_code', code);
+// Read and write a temporary data element value (guarded)
+if(window._satellite?.getVar && window._satellite?.setVar) {
+  const region = _satellite.getVar('user_region');
+  _satellite.setVar('promo_code', code);
+}
 
-// Local debugging
-_satellite.setDebug(true);
-_satellite.logger.log('Rule evaluated');
-
-// Manually trigger a rule configured in your tag property
+// Manually trigger a rule configured in your tag property (guarded)
 if (window._satellite?.track) {
   _satellite.track('cart_add', { sku: '123', qty: 2 });
 }
+
+// Local console debugging (guarding not needed)
+_satellite.setDebug(true);
+_satellite.logger.log('Rule evaluated');
 ```
