@@ -2,12 +2,12 @@
 title: Demandbase意图
 description: 了解Experience Platform上的Demandbase意图源。
 last-substantial-update: 2025-03-26T00:00:00Z
-badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions newtab=true"
-badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 exl-id: 62dd27e0-b846-4c04-977f-8a3ab99bc464
-source-git-commit: 8a5fdcfcf503df1b9d5aa338ff530181a2d03b5d
+source-git-commit: e223ea754a250956e65c3f526119a3ebd7bb067c
 workflow-type: tm+mt
-source-wordcount: '1478'
+source-wordcount: '1504'
 ht-degree: 1%
 
 ---
@@ -30,7 +30,7 @@ ht-degree: 1%
 
 ### 在Experience Platform上配置权限
 
-若要将您的&#x200B;**[!UICONTROL 帐户连接到Experience Platform，您必须同时为您的帐户启用]**&#x200B;查看源&#x200B;**[!UICONTROL 和]**&#x200B;管理源[!DNL Demandbase]权限。 请联系您的产品管理员以获取必要的权限。 有关详细信息，请阅读[访问控制UI指南](../../../access-control/abac/ui/permissions.md)。
+您必须同时为您的帐户启用&#x200B;**[!UICONTROL View Sources]**&#x200B;和&#x200B;**[!UICONTROL Manage Sources]**&#x200B;权限，才能将您的[!DNL Demandbase]帐户连接到Experience Platform。 请联系您的产品管理员以获取必要的权限。 有关详细信息，请阅读[访问控制UI指南](../../../access-control/abac/ui/permissions.md)。
 
 ### 文件和目录的命名约束
 
@@ -57,6 +57,10 @@ Experience Platform上的[!DNL Demandbase]由[!DNL Google Cloud Storage]托管�
 有关这些凭据的详细信息，请阅读[[!DNL Google Cloud Storage] HMAC密钥指南](https://cloud.google.com/storage/docs/authentication/hmackeys#overview)。 有关如何生成自己的访问密钥的步骤，请阅读[源概述 [!DNL Google Cloud Storage] 中的](../cloud-storage/google-cloud-storage.md#prerequisite-setup-for-connecting-your-google-cloud-storage-account)先决条件指南。
 
 ## [!DNL Demandbase]架构
+
+>[!IMPORTANT]
+>
+>在Experience Platform UI中创建B2B Demandbase帐户意图架构时，请确保为架构启用配置文件摄取。 有关详细信息，请参阅[在UI](../../../xdm/ui/resources/schemas.md)中创建和编辑架构的指南。
 
 有关[!DNL Demandbase]架构和数据结构的信息，请阅读此部分。
 
@@ -98,7 +102,7 @@ Experience Platform上的[!DNL Demandbase]由[!DNL Google Cloud Storage]托管�
 
 完成先决条件设置后，请阅读有关[将您的 [!DNL Demandbase] 帐户连接到Experience Platform](../../tutorials/ui/create/data-partners/demandbase.md)的教程以开始集成。
 
-## 常见问题解答 {#faq}
+## 常见问题 {#faq}
 
 请阅读本节以获取有关[!DNL Demandbase]源的常见问题解答。
 
