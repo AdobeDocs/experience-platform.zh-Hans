@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；Experience Platform Web SDK；Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: dc333f30f9a2cb7cd485d1cb13272c078da0bd76
+source-git-commit: 7f932e9868e84cf8abdaa6cf0b2da5bac837234d
 workflow-type: tm+mt
-source-wordcount: '2585'
+source-wordcount: '2584'
 ht-degree: 2%
 
 ---
@@ -152,7 +152,7 @@ ht-degree: 2%
 **新增功能**
 
 - 添加了对自动建议交互跟踪的支持。
-- 添加了提供alloy.js文件的自定义构建脚本。
+- 添加了提供`alloy.js`文件的自定义生成脚本。
 - 通过ActivityMap和事件分组支持改进了点击收集。
 
 ## 2.20.0版 — 2024年5月21日

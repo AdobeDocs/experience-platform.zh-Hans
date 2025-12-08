@@ -1,15 +1,15 @@
 ---
-title: 卫星对象引用
+title: 标记客户端JavaScript概述(_satellite)
 description: 了解客户端_satellite对象以及可在标记中使用该对象执行的各种功能。
 exl-id: f8b31c23-409b-471e-bbbc-b8f24d254761
-source-git-commit: 05bf3a8c92aa221af153b4ce9949f0fdfc3c86ab
+source-git-commit: 7f932e9868e84cf8abdaa6cf0b2da5bac837234d
 workflow-type: tm+mt
-source-wordcount: '208'
+source-wordcount: '212'
 ht-degree: 0%
 
 ---
 
-# `_satellite`对象引用
+# 标记客户端JavaScript概述(`_satellite`)
 
 _这些页面概述了如何使用`_satellite`对象，该对象允许您使用JavaScript管理和自定义标记逻辑。 有关如何在数据收集UI中设置实施的详细信息，请参阅[Adobe Experience Platform Web SDK标记扩展](/help/tags/extensions/client/web-sdk/overview.md)。_
 

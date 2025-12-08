@@ -6,10 +6,10 @@ breadcrumb-title: 数据收集
 user-guide-description: 了解如何将数据发送到Adobe Experience Platform。
 feature: Data Collection
 role: Developer
-source-git-commit: 3abe25a9c538bf4d1b439d48f624d8cad109a99e
+source-git-commit: 7f932e9868e84cf8abdaa6cf0b2da5bac837234d
 workflow-type: tm+mt
-source-wordcount: '135'
-ht-degree: 31%
+source-wordcount: '139'
+ht-degree: 30%
 
 ---
 
@@ -21,7 +21,7 @@ ht-degree: 31%
 + BrightScript {#brightscript}
    + [BrightScript概述](brightscript/brs-overview.md)
 + JavaScript {#js}
-   + [JavaScript概述](js/js-overview.md)
+   + [Web SDK JavaScript概述](js/js-overview.md)
    + [发行说明](js/release-notes.md)
    + 安装 {#install}
       + [安装概述](js/install/overview.md)
@@ -75,7 +75,7 @@ ht-degree: 31%
       + [命令响应](js/commands/command-responses.md)
    + [监控挂钩](js/monitoring-hooks.md)
    + [常见问题](js/faq.md)
-+ 标记 {#tags}
++ 标记客户端JavaScript {#tags}
    + [概述](tags/overview.md)
    + [buildInfo](tags/buildinfo.md)
    + [公司](tags/company.md)

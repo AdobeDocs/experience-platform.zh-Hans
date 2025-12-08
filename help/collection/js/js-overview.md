@@ -1,26 +1,19 @@
 ---
-title: JavaScript概述
+title: Web SDK JavaScript库概述
 description: 使用JavaScript将数据发送到Adobe Experience Platform Edge Network。
 exl-id: 1348144a-7d25-4c27-bc40-3daee2f043a6
-source-git-commit: 09799847c61d82ed5b7cd372d92aa436697d54f3
+source-git-commit: 7f932e9868e84cf8abdaa6cf0b2da5bac837234d
 workflow-type: tm+mt
-source-wordcount: '438'
+source-wordcount: '440'
 ht-degree: 0%
 
 ---
 
-# JavaScript概述
+# Web SDK JavaScript库概述
 
-**Adobe Experience Platform Web SDK**&#x200B;是客户端JavaScript库，它允许您将数据发送到Adobe Experience Platform Edge Network。
+**Adobe Experience Platform Web SDK**&#x200B;是客户端JavaScript库，它允许您将数据发送到Adobe Experience Platform Edge Network。 本指南记录了Web SDK JavaScript库(`alloy.js`)实施路径，包括核心概念、安装、配置和命令。 有关数据收集UI中的Web SDK标记扩展，请参阅[Web SDK标记扩展](/help/tags/extensions/client/web-sdk/overview.md)。
 
 Web SDK以与解决方案无关的方式(XDM)将数据发送到Experience Platform Edge Network，会将数据映射到解决方案特定的格式和目标，并实时发送。
-
-您可以通过两种方式实施Web SDK：
-
-* 使用[JavaScript库](install/library.md)手动实施（此文档）
-* [Web SDK标记扩展](/help/tags/extensions/client/web-sdk/overview.md)
-
-本指南包含有关使用Web Experience Cloud JavaScript库与SDK解决方案交互的说明。
 
 ## Experience Platform Edge Network {#edge-network}
 
@@ -37,7 +30,7 @@ Adobe Experience Platform Edge Network提供了低延迟数据收集、可插拔
 
 通过整合的边缘系统，您可以跨所有渠道管理广告、营销和个性化营销活动。 它降低了总拥有成本并支持各种数据类型，使您能够映射数据模型以用于多个Experience Cloud产品。
 
->[!VIDEO](https://video.tv.adobe.com/v/37264?captions=chi_hans&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/34141?quality=12&learn=on)
 
 ## 由Web SDK替换的库 {#sdks}
 
