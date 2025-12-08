@@ -30,7 +30,7 @@ Adobe Experience Platform Edge Network提供了低延迟数据收集、可插拔
 
 通过整合的边缘系统，您可以跨所有渠道管理广告、营销和个性化营销活动。 它降低了总拥有成本并支持各种数据类型，使您能够映射数据模型以用于多个Experience Cloud产品。
 
->[!VIDEO](https://video.tv.adobe.com/v/34141?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/37264?captions=chi_hans&quality=12&learn=on)
 
 ## 由Web SDK替换的库 {#sdks}
 
