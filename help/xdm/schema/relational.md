@@ -2,12 +2,12 @@
 keywords: Experience Platform；主页；热门主题；关系架构；关系架构；架构；架构；xdm；体验数据模型；
 solution: Experience Platform
 title: 关系架构
-description: 了解Adobe Experience Platform中的关系架构（以前称为基于模型的架构），包括功能、必填字段、关系和限制。
+description: 了解Adobe Experience Platform中的关系架构，包括功能、必填字段、关系和限制。
 badge: 有限发布版
 exl-id: 397e5937-b892-4fd3-b90e-29ed9229dc69
-source-git-commit: 605c169c9de7a978e6d2f0bdc809371c82cd3280
+source-git-commit: 491588dab1388755176b5e00f9d8ae3e49b7f856
 workflow-type: tm+mt
-source-wordcount: '1303'
+source-wordcount: '1280'
 ht-degree: 0%
 
 ---
@@ -24,10 +24,6 @@ ht-degree: 0%
 >
 >数据删除注意事项适用于所有关系架构实施。 使用这些架构的应用程序必须了解删除操作如何影响相关数据集、合规性要求和下游流程。 在实施之前，规划删除方案并审查[数据卫生指导](../../hygiene/ui/record-delete.md#relational-record-delete)。
 
->[!NOTE]
->
->关系架构以前在Adobe Experience Platform文档的早期版本中称为基于模型的架构。
-
 使用关系架构可以：
 
 * 使用强制的单字段或复合主键确保数据完整性。
@@ -38,7 +34,7 @@ ht-degree: 0%
 
 ## 关系架构与标准XDM架构有何不同
 
-Experience Platform中的标准XDM架构遵循以下三种数据行为之一：记录、时间序列或临时。 有关定义和详细信息，请参阅[XDM数据行为](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/xdm/home#data-behaviors)。
+Experience Platform中的标准XDM架构遵循以下三种数据行为之一：记录、时间序列或临时。 有关定义和详细信息，请参阅[XDM数据行为](https://experienceleague.adobe.com/en/docs/experience-platform/xdm/home#data-behaviors)。
 
 在传统模型中，记录和时间序列架构参与[联合架构](../api/unions.md)（另请参阅[联合架构UI指南](../../profile/ui/union-schema.md)）。 这些架构会随着共享[字段组](./composition.md#field-group)的更新而自动演变，并且自定义字段必须嵌套在租户命名空间下。 虽然此模型功能强大，但可能会减慢载入速度，生成包含未使用字段的过于复杂的架构，并需要额外的数据映射或转换。 这些因素会增加学习曲线和持续的维护工作。
 

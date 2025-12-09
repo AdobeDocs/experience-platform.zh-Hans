@@ -5,9 +5,9 @@ title: Data Mirror概述
 description: 了解Data Mirror如何使用具有强制唯一性、关系和版本控制的关系架构，实现从外部数据库到Adobe Experience Platform的行级更改引入。
 badge: 有限发布版
 exl-id: bb92c77a-6c7a-47df-885a-794cf55811dd
-source-git-commit: 57981d2e4306b2245ce0c1cdd9f696065c508a1d
+source-git-commit: 491588dab1388755176b5e00f9d8ae3e49b7f856
 workflow-type: tm+mt
-source-wordcount: '1356'
+source-wordcount: '1334'
 ht-degree: 0%
 
 ---
@@ -17,10 +17,6 @@ ht-degree: 0%
 >[!AVAILABILITY]
 >
 >Data Mirror和关系架构可供Adobe Journey Optimizer **协调的营销活动**&#x200B;许可证持有人使用。 根据您的许可证和功能启用，它们也可用作Customer Journey Analytics用户的&#x200B;**有限版本**。 请联系您的Adobe代表以获取访问权限。
-
->[!NOTE]
->
->关系架构以前在Adobe Experience Platform文档的早期版本中称为基于模型的架构。 功能保持不变。
 
 Data Mirror是一项Adobe Experience Platform功能，允许使用关系架构将外部数据库中的行级更改引入数据湖。 它保留数据关系，强制唯一性，并支持版本控制，而无需上游提取、转换、加载(ETL)过程。
 

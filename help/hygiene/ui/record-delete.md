@@ -2,9 +2,9 @@
 title: 记录删除请求（UI工作流）
 description: 了解如何在Adobe Experience Platform UI中删除记录。
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
-source-git-commit: 83aed6a79d47ee4043a8303ec8f8c8c20482e12a
+source-git-commit: 491588dab1388755176b5e00f9d8ae3e49b7f856
 workflow-type: tm+mt
-source-wordcount: '2383'
+source-wordcount: '2358'
 ht-degree: 6%
 
 ---
@@ -208,10 +208,6 @@ JSON文件必须格式化为一组对象，每个对象表示一个标识。
 ## 从基于关系架构的数据集中删除记录 {#relational-record-delete}
 
 如果要从中删除的数据集基于关系架构，请查看以下注意事项，以确保正确删除记录，并且不会由于Experience Platform与源系统之间的不匹配而重新摄取记录。
-
->[!NOTE]
->
->关系架构以前在Adobe Experience Platform文档的早期版本中称为基于模型的架构。 功能和删除行为保持不变。
 
 ### 记录删除行为
 

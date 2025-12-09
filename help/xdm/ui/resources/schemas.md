@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 在UI中创建和编辑架构
 description: 了解如何在Experience Platform用户界面中创建和编辑架构的基础知识。
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: dc5ac5427e1eeef47434c3974235a1900d29b085
+source-git-commit: 491588dab1388755176b5e00f9d8ae3e49b7f856
 workflow-type: tm+mt
-source-wordcount: '4652'
-ht-degree: 1%
+source-wordcount: '4635'
+ht-degree: 2%
 
 ---
 
@@ -36,10 +36,6 @@ ht-degree: 1%
 >[!AVAILABILITY]
 >
 >Data Mirror和关系架构可供Adobe Journey Optimizer **协调的营销活动**&#x200B;许可证持有人使用。 根据您的许可证和功能启用，它们也可用作Customer Journey Analytics用户的&#x200B;**有限版本**。 请联系您的Adobe代表以获取访问权限。
-
->[!NOTE]
->
->关系架构以前在Adobe Experience Platform文档的早期版本中称为基于模型的架构。
 
 选择&#x200B;**[!UICONTROL Relational]**&#x200B;以定义对记录具有细粒度控制的结构化关系样式架构。 关系架构通过主键和外键支持主键强制、记录级版本控制和架构级关系。 它们还针对使用变更数据捕获的增量摄取进行了优化，并支持在Campaign Orchestration、Data Distiller和B2B实施中使用的多个数据模型。
 
@@ -83,7 +79,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->保存后，[!UICONTROL Type]侧边栏中的[!UICONTROL &#x200B; Schema properties]字段指示这是[!UICONTROL Relational]架构。 架构库存视图的详细信息侧边栏中也指出了这一点。
+>保存后，[!UICONTROL Type]侧边栏中的[!UICONTROL  Schema properties]字段指示这是[!UICONTROL Relational]架构。 架构库存视图的详细信息侧边栏中也指出了这一点。
 >![架构编辑器画布显示空的关系架构结构，突出显示了关系类型。](../../images/ui/resources/schemas/relational-empty-canvas.png)
 
 ### 上载DDL文件 {#upload-ddl-file}

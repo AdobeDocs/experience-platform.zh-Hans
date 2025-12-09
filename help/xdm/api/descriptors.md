@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 描述符API端点
 description: 架构注册API中的/descriptors端点允许您以编程方式管理体验应用程序中的XDM描述符。
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: 57981d2e4306b2245ce0c1cdd9f696065c508a1d
+source-git-commit: 491588dab1388755176b5e00f9d8ae3e49b7f856
 workflow-type: tm+mt
-source-wordcount: '2916'
+source-wordcount: '2882'
 ht-degree: 1%
 
 ---
@@ -35,10 +35,6 @@ ht-degree: 1%
 本指南中使用的终结点是[[!DNL Schema Registry] API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/)的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，以获取相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience Platform API所需的所需标头的重要信息。
 
 除了标准描述符之外，[!DNL Schema Registry]还支持关系架构的描述符类型，如&#x200B;**主键**、**版本**&#x200B;和&#x200B;**时间戳**。 这些选项可强制唯一性、控制版本控制，并在架构级别定义时间序列字段。 如果您不熟悉关系架构，请先查看[Data Mirror概述](../data-mirror/overview.md)和[关系架构技术参考](../schema/relational.md)，然后再继续。
-
->[!NOTE]
->
->关系架构以前在Adobe Experience Platform文档的早期版本中称为基于模型的架构。 描述符功能和API端点保持不变。 为清楚起见，仅更新了术语。
 
 >[!IMPORTANT]
 >

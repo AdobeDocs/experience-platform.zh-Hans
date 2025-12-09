@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 架构API端点
 description: 架构注册API中的/schemas端点允许您以编程方式管理体验应用程序中的XDM架构。
 exl-id: d0bda683-9cd3-412b-a8d1-4af700297abf
-source-git-commit: dc5ac5427e1eeef47434c3974235a1900d29b085
+source-git-commit: 491588dab1388755176b5e00f9d8ae3e49b7f856
 workflow-type: tm+mt
-source-wordcount: '2122'
+source-wordcount: '2091'
 ht-degree: 3%
 
 ---
@@ -277,7 +277,7 @@ curl -X POST \
 }
 ```
 
-现在执行GET请求以[列出租户容器中的所有架构](#list)将包括新架构。 您可以使用URL编码的[&#x200B; URI执行](#lookup)查找(GET)请求`$id`以直接查看新架构。
+现在执行GET请求以[列出租户容器中的所有架构](#list)将包括新架构。 您可以使用URL编码的[ URI执行](#lookup)查找(GET)请求`$id`以直接查看新架构。
 
 要将其他字段添加到架构，您可以执行[PATCH操作](#patch)以将字段组添加到架构的`allOf`和`meta:extends`数组。
 
@@ -286,10 +286,6 @@ curl -X POST \
 >[!AVAILABILITY]
 >
 >Data Mirror和关系架构可供Adobe Journey Optimizer **协调的营销活动**&#x200B;许可证持有人使用。 根据您的许可证和功能启用，它们也可用作Customer Journey Analytics用户的&#x200B;**有限版本**。 请联系您的Adobe代表以获取访问权限。
-
->[!NOTE]
->
->关系架构以前在Adobe Experience Platform API文档的早期版本中称为基于模型的架构。 功能保持不变 — 只是更改了术语以更清晰明了。
 
 通过向`/schemas`端点发出POST请求来创建关系架构。 关系架构存储结构化关系样式数据&#x200B;**，但不包含**&#x200B;类或字段组。 直接在架构上定义字段，并使用逻辑行为标记将架构标识为关系。
 
