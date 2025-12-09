@@ -2,9 +2,9 @@
 description: 了解如何在UI中创建Adobe Analytics源连接器，以将分类数据引入Adobe Experience Platform。
 title: 在UI中为分类数据创建Adobe Analytics Source连接
 exl-id: d606720d-f1ca-47cc-919b-643a8fc61e07
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: dfc8a1d51e6dd25210a0b6f24dad4d0f00052414
 workflow-type: tm+mt
-source-wordcount: '514'
+source-wordcount: '508'
 ht-degree: 0%
 
 ---
@@ -29,31 +29,31 @@ Analytics Classifications Source Connector要求在使用之前，将您的数�
 
 ## 选择您的分类
 
-在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL Sources]**&#x200B;以访问[!UICONTROL Sources]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
-在&#x200B;*Adobe应用程序*&#x200B;类别下，选择&#x200B;**[!UICONTROL Adobe Analytics]**，然后选择&#x200B;**[!UICONTROL 设置]**。
+在&#x200B;*Adobe应用程序*&#x200B;类别下，选择&#x200B;**[!UICONTROL Adobe Analytics]**，然后选择&#x200B;**[!UICONTROL Set up]**。
 
 >[!TIP]
 >
->如果没有经过身份验证的帐户，源目录中的源将显示&#x200B;**[!UICONTROL 设置]**&#x200B;选项。 帐户通过身份验证后，该选项将更改为&#x200B;**[!UICONTROL 添加数据]**。
+>如果没有经过身份验证的帐户，则源目录中的源将显示&#x200B;**[!UICONTROL Set up]**&#x200B;选项。 帐户通过身份验证后，选项将更改为&#x200B;**[!UICONTROL Add data]**。
 
 ![已选择Adobe Analytics源的Experience Platform UI中的源目录。](../../../../images/tutorials/create/classifications/catalog.png)
 
-接下来，选择[!UICONTROL 分类]，然后选择要摄取到Experience Platform的分类数据集。
+接下来，选择[!UICONTROL Classifications]，然后选择要摄取到Experience Platform的分类数据集。 或者，您可以使用搜索来过滤并选择特定分类。
 
-您最多可以选择30个不同的分类数据集以引入Experience Platform。 您选择的任何数据集都将出现在右边栏中。 完成后，选择[!UICONTROL 下一步]以继续。
+您最多可以选择30个不同的分类数据集以引入Experience Platform。 您选择的任何数据集都将出现在右边栏中。 完成后，选择[!UICONTROL Next]以继续。
 
 ![选择了多个分类数据集的分类页面。](../../../../images/tutorials/create/classifications/select.png)
 
 ## 查看分类
 
-此时将显示&#x200B;**[!UICONTROL 审核]**&#x200B;步骤，允许您在创建选定的分类数据集之前对其进行审核。 详细信息分为以下类别：
+此时将显示&#x200B;**[!UICONTROL Review]**&#x200B;步骤，允许您在创建选定的分类数据集之前对其进行查看。 详细信息分为以下类别：
 
-* **[!UICONTROL 连接]**：显示源平台和连接的状态。
-* **[!UICONTROL 数据类型]**：显示所选分类的数量。
-* **[!UICONTROL 正在计划]**：显示分类数据的同步频率。 **注意**：分类数据每周更新一次。
+* **[!UICONTROL Connection]**：显示源平台和连接的状态。
+* **[!UICONTROL Data type]**：显示所选分类的数量。
+* **[!UICONTROL Scheduling]**：显示分类数据的同步频率。 **注意**：分类数据每周更新一次。
 
-查看数据流后，单击&#x200B;**[!UICONTROL 完成]**&#x200B;并留出一些时间来创建数据流。
+查看数据流后，单击&#x200B;**[!UICONTROL Finish]**&#x200B;并留出一段时间来创建数据流。
 
 ![Adobe Analytics分类数据的审核页面。](../../../../images/tutorials/create/classifications/review.png)
 
@@ -63,4 +63,4 @@ Analytics Classifications Source Connector要求在使用之前，将您的数�
 
 * [Adobe Analytics源连接器概述](../../../../connectors/adobe-applications/analytics.md)
 * [在UI中为报表包数据创建Analytics源连接](./analytics.md)
-* [关于分类](https://experienceleague.adobe.com/docs/analytics/components/classifications/c-classifications.html?lang=zh-Hans)
+* [关于分类](https://experienceleague.adobe.com/docs/analytics/components/classifications/c-classifications.html)
