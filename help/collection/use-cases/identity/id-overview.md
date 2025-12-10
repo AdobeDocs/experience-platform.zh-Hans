@@ -162,7 +162,7 @@ alloy("sendEvent", {
 | `authenticatedState` | 字符串 | **（必需）** ID的身份验证状态。 可能的值为`ambiguous`、`authenticated`和`loggedOut`。 |
 | `primary` | 布尔值 | 确定是否应当将此标识用作配置文件中的主片段。 默认情况下，会将ECID设置为用户的主要标识符。 如果忽略，此值将默认为`false`。 |
 
-使用`identityMap`字段识别设备或用户产生的结果与使用[`setCustomerIDs`中的](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/setcustomerids.html)[!DNL ID Service API]方法产生的结果相同。 有关详细信息，请参阅[ID服务API文档](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/get-set.html)。
+使用`identityMap`字段识别设备或用户产生的结果与使用[`setCustomerIDs`中的](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/setcustomerids.html) [!DNL ID Service API]方法产生的结果相同。 有关详细信息，请参阅[ID服务API文档](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/get-set.html)。
 
 ## 从访客API迁移到ECID {#migrating-visitor-api-ecid}
 
