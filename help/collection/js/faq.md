@@ -78,7 +78,7 @@ Adobe Experience Platform Web SDK也可以将数据直接发送到Adobe Experien
 * 具有&#x200B;*非*&#x200B;访问权限且希望使用[!DNL Web SDK]的Experience Platform或Real-time CDP客户将需要配置正确权限，才能在数据收集UI或Experience Platform UI中创建架构和数据流。
 * 有权访问Experience Platform或Real-time CDP并希望使用[!DNL Web SDK]的客户将需要配置正确权限，以便在Experience Platform UI或Data Collection UI中创建架构、数据集、身份命名空间和数据流。
 
-有关配置这些权限的详细信息，请参阅我们关于[数据收集权限管理](https://experienceleague.adobe.com/docs/experience-platform/collection/permissions.html)的文档。
+有关配置这些权限的详细信息，请参阅我们关于[数据收集权限管理](https://experienceleague.adobe.com/docs/experience-platform/collection/permissions.html?lang=zh-Hans)的文档。
 
 ## 谁应该使用Web SDK？
 
@@ -144,11 +144,11 @@ Web SDK正在快速演变。 正在处理更多用例。 您可以在此处找�
 
 ## 什么是CNAME或第一方域，它为什么重要？
 
-请参阅核心服务指南中的[Adobe管理的证书计划](https://experienceleague.adobe.com/en/docs/core-services/interface/data-collection/adobe-managed-cert)。
+请参阅核心服务指南中的[Adobe管理的证书计划](https://experienceleague.adobe.com/zh-hans/docs/core-services/interface/data-collection/adobe-managed-cert)。
 
 ## Adobe Experience Platform Web SDK是否使用Cookie？ 如果是这样，它使用哪些Cookie？
 
-请参阅核心服务指南中的[Adobe Experience Platform Web SDK Cookie](https://experienceleague.adobe.com/en/docs/core-services/interface/data-collection/cookies/web-sdk)。
+请参阅核心服务指南中的[Adobe Experience Platform Web SDK Cookie](https://experienceleague.adobe.com/zh-hans/docs/core-services/interface/data-collection/cookies/web-sdk)。
 
 ## Adobe Experience Platform Web SDK支持哪些浏览器？
 
