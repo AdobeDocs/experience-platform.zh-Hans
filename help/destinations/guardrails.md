@@ -6,7 +6,7 @@ product: experience platform
 type: Documentation
 description: 了解有关数据激活默认使用量和速率限制的更多信息。
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 216621652697c378164125a6d0e125a33ee008be
+source-git-commit: 0b607decfa687f89c74fb81055ac2bf4cc54d59b
 workflow-type: tm+mt
 source-wordcount: '1763'
 ht-degree: 2%
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/cn/legal/product-descriptions.html)中的实际使用限制。
+>除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/legal/product-descriptions.html)中的实际使用限制。
 
 本页提供有关激活行为的默认使用量和速率限制。 查看以下护栏时，假定您已正确[连接到目标](/help/destinations/ui/connect-destination.md)。
 
@@ -177,7 +177,7 @@ The guardrails below are the same whether you are exporting parquet of JSON file
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
 | [私有自定义目标的最大数目](/help/destinations/destination-sdk/overview.md#productized-custom-integrations) | 5 | 性能护栏 | 使用Destination SDK，您最多可以创建5个私有自定义流或批处理目标。 如果您需要创建5个以上的此类目标，请联系自定义关怀代表。 |
-| Destination SDK的配置文件导出策略 | <ul><li>`maxBatchAgeInSecs`（最小1,800个，最大3,600个）</li><li>`maxNumEventsInBatch`（最小1,000个，最大10,000个）</li></ul> | 系统强制的护栏 | 对您的目标使用[可配置的聚合](destination-sdk/functionality/destination-configuration/aggregation-policy.md#configurable-aggregation)选项时，请注意用于确定HTTP消息发送到基于API的目标的频率以及消息应包含的用户档案数的最小值和最大值。 |
+| Destination SDK的配置文件导出策略 | <ul><li>`maxBatchAgeInSecs`（最小301，最大3,600）</li><li>`maxNumEventsInBatch`（最小1,000个，最大10,000个）</li></ul> | 系统强制的护栏 | 对您的目标使用[可配置的聚合](destination-sdk/functionality/destination-configuration/aggregation-policy.md#configurable-aggregation)选项时，请注意用于确定HTTP消息发送到基于API的目标的频率以及消息应包含的用户档案数的最小值和最大值。 |
 | Destination SDK的OAuth 2令牌生命周期 | 建议至少24小时 | 性能护栏 | 对于使用[OAuth 2授权](/help/destinations/destination-sdk/functionality/destination-configuration/oauth2-authorization.md)的目标，Adobe建议将访问令牌生命周期值设置为至少24小时。 如果连接中的令牌的生命周期不到1小时，则可能会导致配置文件在激活期间被丢弃。 |
 
 {style="table-layout:auto"}
@@ -197,7 +197,7 @@ The guardrails below are the same whether you are exporting parquet of JSON file
 请参阅Real-Time CDP产品描述文档中的以下文档，了解有关其他Experience Platform服务护栏、端到端延迟信息和许可信息的更多信息：
 
 * [Real-Time CDP护栏](/help/rtcdp/guardrails/overview.md)
-* [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=zh-Hans#end-to-end-latency-diagrams)。
-* [Real-Time Customer Data Platform (B2C Edition - Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams)。
+* [Real-Time Customer Data Platform (B2C Edition - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
