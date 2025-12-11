@@ -65,7 +65,7 @@ ht-degree: 30%
 1. 选择 **[!UICONTROL Save]**。
 
 创建资产后，转到新资产的 **[!UICONTROL Environments]** 选项卡，并记下
-环境 ID。如果数据流中使用的Adobe组织不同于事件转发中使用的Adobe组织，则可以从**[!UICONTROL Environments]**&#x200B;选项卡复制环境ID，并在创建数据流时粘贴它。 您也可以从下拉菜单中选择环境。
+环境 ID。如果数据流中使用的Adobe组织不同于事件转发中使用的Adobe组织，则可以从&#x200B;**[!UICONTROL Environments]**&#x200B;选项卡复制环境ID，并在创建数据流时粘贴它。 您也可以从下拉菜单中选择环境。
 
 ## 创建数据流
 

@@ -29,7 +29,7 @@ ht-degree: 82%
 
 **Munchkin ID：（必需）**&#x200B;位于“Admin”>“Integration”>“Munchkin”菜单下的 Munchkin 帐户 ID。
 
-**Configurations：**[此处](https://developers.marketo.com/javascript-api/lead-tracking/configuration/)介绍了所有可配置参数。
+**Configurations：**&#x200B;[此处](https://developers.marketo.com/javascript-api/lead-tracking/configuration/)介绍了所有可配置参数。
 
 ### 访问网页
 

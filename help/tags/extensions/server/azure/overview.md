@@ -70,7 +70,7 @@ ht-degree: 0%
 
 ## 附录：获取SAS授权值 {#sas}
 
-通过[!DNL Event Hubs]共享访问签名(SAS)[授予外部应用程序对](https://learn.microsoft.com/en-us/azure/event-hubs/authorize-access-shared-access-signature)的访问权限。 每个[!DNL Event Hubs]命名空间和事件中心实例都有一个在创建时自动分配的默认SAS授权规则，但您也可以根据需要为每个资源创建其他策略。
+通过[!DNL Event Hubs]共享访问签名(SAS) [授予外部应用程序对](https://learn.microsoft.com/en-us/azure/event-hubs/authorize-access-shared-access-signature)的访问权限。 每个[!DNL Event Hubs]命名空间和事件中心实例都有一个在创建时自动分配的默认SAS授权规则，但您也可以根据需要为每个资源创建其他策略。
 
 使用[扩展配置](#rule)事件转发规则[!DNL Azure]时，必须提供管理要向其发送数据的命名空间或特定事件中心的授权规则的名称和主密钥。 有关如何从[!DNL Azure]门户获取这些值的详细信息，请参阅[!DNL Azure]文档中的以下部分：
 

@@ -11,7 +11,7 @@ ht-degree: 86%
 
 # AEM资产分析扩展概述
 
-这项扩展旨在与 [AEM 资产洞察](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html)结合使用。更具体地说，它可以替换“pageTracker”进程和嵌入代码。当完成配置后，这项扩展会向 Adobe Analytics 发送资产“展示次数”和“单击次数”量度，随后，这些量度将导入 AEM 资产洞察报告中。****&#x200B;接下来，可使用 AEM 资产洞察或 Adobe Analytics 项目工作区来报告资产量度。
+这项扩展旨在与 [AEM 资产洞察](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html)结合使用。更具体地说，它可以替换“pageTracker”进程和嵌入代码。当完成配置后，这项扩展会向 Adobe Analytics 发送资产“展示次数”和“单击次数”量度，随后，这些量度将导入 AEM 资产洞察报告中。**&#x200B;**&#x200B;接下来，可使用 AEM 资产洞察或 Adobe Analytics 项目工作区来报告资产量度。
 
 ## 扩展的先决条件
 

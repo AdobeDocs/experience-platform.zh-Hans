@@ -34,7 +34,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->访问策略需要附加到用于生成访问凭据的[!DNL AWS]帐户。 必须将此策略配置为授予将数据发送到[!DNL Kinesis]数据流的访问权限。 请参阅&#x200B;**策略示例（适用于**[!DNL AWS]）中的[示例2 [!DNL Kinesis Data Streams]（在](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html#kinesis-using-iam-examples)文档中），了解应如何定义该策略。
+>访问策略需要附加到用于生成访问凭据的[!DNL AWS]帐户。 必须将此策略配置为授予将数据发送到[!DNL Kinesis]数据流的访问权限。 请参阅&#x200B;**策略示例（适用于**&#x200B;[!DNL AWS]）中的[示例2 [!DNL Kinesis Data Streams]（在](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html#kinesis-using-iam-examples)文档中），了解应如何定义该策略。
 
 完成后，选择&#x200B;**[!UICONTROL Save]**&#x200B;并安装扩展。
 

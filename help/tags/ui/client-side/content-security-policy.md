@@ -61,7 +61,7 @@ Content-Security-Policy: script-src 'self' assets.adobedtm.com
 **HTML `<meta>` 标记**
 
 
-有一个非常重要的先决条件：必须异步加载标记库[](./asynchronous-deployment.md)。 同步加载标记库行不通（因为会导致控制台错误和规则无法正确执行）。
+有一个非常重要的先决条件：必须异步加载标记库[&#128279;](./asynchronous-deployment.md)。 同步加载标记库行不通（因为会导致控制台错误和规则无法正确执行）。
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="script-src 'self' assets.adobedtm.com">
