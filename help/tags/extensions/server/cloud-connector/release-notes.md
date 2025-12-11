@@ -2,18 +2,14 @@
 title: Adobe Experience Platform 云连接器扩展发行说明
 description: Adobe Experience Platform 中 Cloud Connector 扩展的最新发行说明。
 exl-id: 5ee85d9f-71f4-46ee-9064-4ceee1cf90e7
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
-workflow-type: ht
-source-wordcount: '128'
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
+workflow-type: tm+mt
+source-wordcount: '83'
 ht-degree: 100%
 
 ---
 
 # Adobe Experience Platform 云连接器扩展发行说明
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 ## 2023 年 1 月 17 日
 

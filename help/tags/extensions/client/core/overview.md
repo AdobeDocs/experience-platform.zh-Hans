@@ -2,18 +2,14 @@
 title: 核心扩展概述
 description: 了解Adobe Experience Platform中的核心标记扩展。
 exl-id: 841f32ad-a6a8-49fb-a131-ef4faab47187
-source-git-commit: c76b64e76229db8f9da544a79aed903a134f7351
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '5425'
-ht-degree: 62%
+source-wordcount: '5380'
+ht-degree: 61%
 
 ---
 
 # 核心扩展概述
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 核心标记扩展是随Adobe Experience Platform一起发布的默认扩展。
 

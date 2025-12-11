@@ -1,18 +1,14 @@
 ---
 title: Meta Pixel扩展的发行说明
 description: Adobe Experience Platform中的Meta Pixel扩展的最新发行说明。
-source-git-commit: 8e447324e324c9770dcfa348df92c429454b06d6
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '121'
+source-wordcount: '76'
 ht-degree: 0%
 
 ---
 
-# 元像素扩展发行说明
-
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+# Meta Pixel扩展发行说明
 
 ## 2023年2月13日
 

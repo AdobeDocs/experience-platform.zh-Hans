@@ -2,18 +2,14 @@
 title: 事件转发扩展参考
 description: 在Adobe Experience Platform中查找有关事件转发扩展的文档。
 exl-id: e7b42241-b41c-4d12-8551-4df14e3c9b74
-source-git-commit: 8896ffb78ae01bfe6d7974d781acea104a6356a9
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '166'
-ht-degree: 2%
+source-wordcount: '119'
+ht-degree: 4%
 
 ---
 
 # 事件转发扩展参考
-
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 <div id="recs-overview-body-1"></div>
 <div id="recs-overview-body-2"></div>
@@ -26,12 +22,12 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->任何扩展名称后跟一个星号(*)的链接，均指向Adobe Exchange上该扩展列表，其中包含安装和使用说明。 所有其他链接均指向该扩展在Adobe Experience League上的文档。
+>任何扩展名称后跟一个星号(*)的链接，均指向Adobe Exchange上的扩展列表，其中包含安装和使用说明。 所有其他链接都指向Adobe Experience League上的扩展文档。
 
 * [Adobe Experience Platform云连接器](./cloud-connector/overview.md)
 * [[!DNL AWS]](./aws/overview.md)
 * [[!DNL Braze]](./braze/overview.md)
-* Google Analytics的[Cloud Connector](https://exchange.adobe.com/apps/ec/106542)*
+* 适用于Google Analytics的[Cloud Connector](https://exchange.adobe.com/apps/ec/106542)*
 <!-- * [Cloud Connector for Google Analytics 4](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.109820.html)* -->
 * [核心](./core/overview.md)
 * [Epsilon事件API](https://exchange.adobe.com/apps/ec/109127)*

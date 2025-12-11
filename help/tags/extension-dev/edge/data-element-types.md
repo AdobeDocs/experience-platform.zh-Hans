@@ -2,18 +2,14 @@
 title: Edge扩展的数据元素类型
 description: 了解如何在Edge属性中为标记扩展定义数据元素类型库模块。
 exl-id: ddbc3912-1c25-4d21-bde8-e40e583b4278
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '439'
-ht-degree: 18%
+source-wordcount: '394'
+ht-degree: 20%
 
 ---
 
 # Edge扩展中的数据元素类型
-
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 在标记中，数据元素是Web或移动页面上数据段的别名，与在服务器接收的事件内发现的数据位置无关。 数据元素可以被规则引用，并充当访问这些数据段的抽象。当数据的位置在将来发生更改（例如更改包含值的事件键）时，可以重新配置单个数据元素，而引用该数据元素的所有规则都可以保持不变。
 
@@ -29,7 +25,7 @@ ht-degree: 18%
 
 数据元素类型通常包含以下内容：
 
-1. Experience PlatformUI和数据收集UI中显示的视图，允许用户修改数据元素的设置。
+1. Experience Platform UI和数据收集UI中显示的视图，允许用户修改数据元素的设置。
 2. 在标记运行时库中发出的库模块，用于解释设置并检索数据段。
 
 如果您希望允许用户从自定义数据层检索一段数据，则您的模块可能类似于此示例。

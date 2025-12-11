@@ -2,18 +2,14 @@
 title: 快速入门指南
 description: 了解如何快速启动并运行Adobe Experience Platform中的标记。
 exl-id: 490ee344-3b18-4189-9293-2378f86fb10d
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1522'
-ht-degree: 44%
+source-wordcount: '1473'
+ht-degree: 42%
 
 ---
 
 # 快速入门指南
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../term-updates.md)。
 
 标记是Adobe Experience Platform的下一代标记管理技术。 它从头开始构建，以支持开放且可持续的生态系统，在该生态系统中，任何人都可以构建自己的集成，供Adobe客户部署到其站点。 Launch 是一个以 API 为主导的应用程序，因此所有可以通过用户界面执行的操作也都可以通过 API 以编程方式执行。
 
@@ -27,7 +23,7 @@ ht-degree: 44%
 6. 在开发环境中测试。
 7. 提升至生产。
 
-## 1. 设置组和用户
+## &#x200B;1. 设置组和用户
 
 标记已与您的Adobe ID完全集成。 用户权限可与[!DNL Creative Cloud]、[!DNL Document Cloud]和Experience Cloud中的其他Adobe产品和解决方案一同通过Admin Console进行管理。
 
@@ -35,29 +31,29 @@ ht-degree: 44%
 
 有关如何为标记创建组并添加用户的详细说明，请参阅[数据收集权限指南](../../collection/permissions.md)。
 
-## 2. 登录
+## &#x200B;2. 登录
 
-将标记权限添加到Adobe ID后，您需要登录到Experience Platform UI或数据收集UI。 为此，您可以直接导航到[Experience Cloud登录屏幕](https://experience.adobe.com/)，然后选择&#x200B;**[!UICONTROL 数据收集]**&#x200B;或&#x200B;**[!UICONTROL Experience Platform]**。
+将标记权限添加到Adobe ID后，您需要登录到Experience Platform UI或数据收集UI。 为此，您可以直接导航到[Experience Cloud登录屏幕](https://experience.adobe.com/)，然后选择&#x200B;**[!UICONTROL Data Collection]**&#x200B;或&#x200B;**[!UICONTROL Experience Platform]**。
 
 >[!NOTE]
 >
 >如果您有一个对多个组织具有权限的帐户，则可以通过在屏幕顶部的Control栏中选择组织名称，然后从下拉列表中选择不同的组织来更改组织。
 
-## 3. 创建资产
+## &#x200B;3. 创建资产
 
 登录UI后，首要任务便是创建资产。 资产基本上就是一个容器，在将标记部署到网站时可在其中填充扩展、规则、数据元素和库。很多人会为想要在其中部署同一组标记的每个网站（或一组密切相关的网站）创建一个资产。
 
 有关创建资产的更多信息，请参阅[创建资产](../ui/administration/companies-and-properties.md)。
 
-## 4. 安装扩展
+## &#x200B;4. 安装扩展
 
 扩展是由Adobe或Adobe合作伙伴构建的集成，可为您能够部署到网站的标记添加无限数量的新选项。 如果将标记看作一种操作系统，那么扩展就是您安装的应用程序，用来完成您所需的特定操作。
 
 所有新资产均随安装的[核心扩展](../extensions/client/core/overview.md)一起提供。移动资产则随其他扩展一起提供。核心扩展由Adobe构建，可提供一组可靠的默认数据元素类型和事件类型，分别供数据层和规则使用。 您要执行的大多数操作（获取 ECID、发送 [!DNL Adobe Analytics] 信标、加载 [!DNL Target] 全局 mbox 等等）都来自于您从目录安装的扩展。
 
-Experience Platform中的标记之所以真正独特，是因为这些扩展可由任何人构建。 您是否需要丢弃网站上的 Facebook 再营销像素？可考虑使用 Facebook 构建的扩展。您是否希望对 Twitter 或 Linked In 执行相同的操作？可使用这些扩展。您是否需要运行调查？可考虑使用 Question Pro 或 Foresee。您是否需要管理最终用户的隐私和同意，以帮助遵循[!DNL GDPR]？ 可认真考虑使用 Evidon 和 Trust Arc。您是否希望对网站上各个用户的行为有细致入微的了解？ 或许可以考虑使用 Clicktale。有关详细信息，请参阅有关[添加新扩展](../ui/managing-resources/extensions/overview.md#add-a-new-extension)的部分。
+Experience Platform中的标记之所以真正独特，是因为这些扩展可由任何人构建。 您是否需要丢弃网站上的 Facebook 再营销像素？可考虑使用 Facebook 构建的扩展。您是否希望对 Twitter 或 Linked In 执行相同的操作？可使用这些扩展。您是否需要运行调查？可考虑使用 Question Pro 或 Foresee。您是否需要管理最终用户的隐私和同意，以帮助遵循[!DNL GDPR]？ 可认真考虑使用 Evidon 和 Trust Arc。您是否希望通过精细的insight了解网站上各个用户的行为？ 或许可以考虑使用 Clicktale。有关详细信息，请参阅有关[添加新扩展](../ui/managing-resources/extensions/overview.md#add-a-new-extension)的部分。
 
-## 5. 创建数据元素和规则
+## &#x200B;5. 创建数据元素和规则
 
 **数据元素**&#x200B;是指向您要收集并发送到页面上不同位置的信息的指针：
 
@@ -71,7 +67,7 @@ Experience Platform中的标记之所以真正独特，是因为这些扩展可�
 
 **规则**&#x200B;处于实施的逻辑核心，可控制您网站上所有标记的内容、时间、位置和方式。定义事件、设置条件和例外，然后定义操作和顺序。最后，发布您所做的更改以查看结果。有关更多信息，请参阅[规则](../ui/managing-resources/rules.md)。
 
-## 6. 在开发环境中测试
+## &#x200B;6. 在开发环境中测试
 
 ### 库和内部版本
 
@@ -116,7 +112,7 @@ Experience Platform中的标记之所以真正独特，是因为这些扩展可�
 1. 创建库并将其分配到您创建的开发环境。
 1. 生成库。
 
-## 7. 提升至生产
+## &#x200B;7. 提升至生产
 
 在开发环境中测试内部版本后，请确保创建暂存和生产环境，并将嵌入的代码置于必要位置。 您可以为此目的重复使用现有主机。
 
@@ -136,4 +132,4 @@ Experience Platform中的标记之所以真正独特，是因为这些扩展可�
 
 * **[数据收集社区](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-data/ct-p/adobe-launch-community)**：提问或回答他人提出的问题、发表自己的意见、对他人的意见进行投票。 使用您的Adobe ID登录。
 * **[开发人员文档](../api/overview.md)**：加入标记开发人员社区，构建扩展或使用标记API
-* **[教程概述](https://experienceleague.adobe.com/docs/core-services-learn/tutorials/overview.html?lang=zh-Hans)**：这些文档将向您介绍Android应用程序中的标记概念，包括事件转发和Mobile SDK。
+* **[教程概述](https://experienceleague.adobe.com/docs/core-services-learn/tutorials/overview.html)**：这些文档将向您介绍Android应用程序中的标记概念，包括事件转发和Mobile SDK。

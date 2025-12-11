@@ -2,18 +2,14 @@
 title: Web扩展流程
 description: 了解Web扩展组件如何在Adobe Experience Platform中在运行时相互交互。
 exl-id: 90a0c64c-d240-4e2c-876b-22f05d6f3f82
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '272'
-ht-degree: 59%
+source-wordcount: '227'
+ht-degree: 47%
 
 ---
 
 # Web 扩展流程
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 在 Web 扩展中，每个事件、条件、操作和数据元素类型都有一个允许用户修改设置的视图，以及一个基于用户定义的这些设置进行操作的库模块。
 
@@ -31,4 +27,4 @@ ht-degree: 59%
 1. 当事件库模块确定事件已发生时，事件库模块调用 `trigger`。
 1. 标记将`settings`传递到规则的条件库模块中，并在此模块中对条件进行评估。
 1. 每个条件库模块返回条件的值是否为 true。
-1. 如果所有条件都评估通过，则执行规则操作。
+1. 如果所有条件都评估通过，则执行规则的操作。

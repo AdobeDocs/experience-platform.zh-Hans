@@ -2,18 +2,14 @@
 title: Turbine自由变量
 description: 了解turbine对象，这是一个自由变量，提供特定于Adobe Experience Platform标记运行时的信息和实用程序。
 exl-id: 1664ab2e-8704-4a56-8b6b-acb71534084e
-source-git-commit: d81c4c8630598597ec4e253ef5be9f26c8987203
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '606'
-ht-degree: 43%
+source-wordcount: '561'
+ht-degree: 47%
 
 ---
 
 # Turbine 自由变量
-
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../term-updates.md)。
 
 `turbine` 对象是扩展库模块范围内的“自由变量”。它提供特定于Adobe Experience Platform标记运行时的信息和实用程序，并且始终可供库模块使用，而无需使用`require()`。
 

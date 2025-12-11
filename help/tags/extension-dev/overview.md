@@ -2,18 +2,14 @@
 title: 扩展开发概述
 description: 了解 Adobe Experience Platform 中的不同标记扩展类型的主要组件以及扩展开发流程。
 exl-id: b72df3df-f206-488d-a690-0f086973c5b6
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '938'
-ht-degree: 23%
+source-wordcount: '893'
+ht-degree: 20%
 
 ---
 
 # 扩展开发概述
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../term-updates.md)。
 
 Adobe Experience Platform中标记的主要目标之一是创建一个开放的生态系统，在该生态系统中，Adobe以外的工程师可以在其网站和移动应用程序上展示其他功能。 这可以通过标记扩展来实现。 将扩展安装在标记资产上后，该扩展的功能即可供该资产的所有用户使用。
 
@@ -25,7 +21,7 @@ Adobe Experience Platform中标记的主要目标之一是创建一个开放的�
 
 ### 清单文件
 
-清单文件([`extension.json`](./manifest.md))必须存在于目录的根中。 此文件描述扩展的组成以及某些文件在目录中的位置。 清单的功能与[`package.json`npm](https://docs.npmjs.com/files/package.json)项目中的[&#128279;](https://www.npmjs.com/)文件类似。
+清单文件([`extension.json`](./manifest.md))必须存在于目录的根中。 此文件描述扩展的组成以及某些文件在目录中的位置。 清单的功能与[`package.json`npm](https://docs.npmjs.com/files/package.json)项目中的[](https://www.npmjs.com/)文件类似。
 
 ### 库模块
 

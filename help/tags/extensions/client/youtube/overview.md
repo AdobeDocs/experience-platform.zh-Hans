@@ -2,18 +2,14 @@
 title: YouTube视频跟踪扩展概述
 description: 了解Adobe Experience Platform中的YouTube视频跟踪标记扩展。
 exl-id: 703f7b04-f72f-415f-80d6-45583fa661bc
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '897'
-ht-degree: 35%
+source-wordcount: '852'
+ht-degree: 32%
 
 ---
 
 # YouTube视频跟踪扩展概述
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 **先决条件**
 
@@ -98,9 +94,9 @@ document.onreadystatechange = function () {
 
 >[!TIP]
 > 
->对于无法对每个视频元素使用多个eVar或prop的实施，可在Experience Platform中连接数据元素值，使用分类规则生成器工具解析为分类报表(如[https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html?lang=zh-Hans](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html?lang=zh-Hans)中所述)，然后在Analysis Workspace中作为区段应用。
+>对于无法对每个视频元素使用多个eVar或prop的实施，可在Experience Platform中连接数据元素值，使用分类规则生成器工具解析为分类报表(如[https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html)中所述)，然后在Analysis Workspace中作为区段应用。
 
-要连接视频信息值，请创建一个名为“视频元数据”的新数据元素，然后对其进行编程以提取所有视频数据元素（上面所列），并将它们组合在一起。 例如：
+要连接视频信息值，请创建一个名为“视频Meta数据”的新数据元素，然后对其进行编程以拉入所有视频数据元素（上面所列）并将它们组合在一起。 例如：
 
 ```javascript
 var r = [];

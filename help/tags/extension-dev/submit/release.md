@@ -2,18 +2,14 @@
 title: 发布扩展
 description: 了解如何在Adobe Experience Platform中私密或公开发布标记扩展。
 exl-id: a5eb6902-4b0f-4717-a431-a290c50fb5a6
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '478'
-ht-degree: 25%
+source-wordcount: '433'
+ht-degree: 17%
 
 ---
 
 # 发布扩展
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 测试和文档记录完成后，扩展即可发布。 当前，可执行两种类型的发布：
 
@@ -38,8 +34,8 @@ npx @adobe/reactor-releaser
 
 >[!NOTE]
 > 默认情况下，发布者需要服务器到服务器Oauth流的Adobe I/O凭据。 旧版`jwt-auth`凭据
-> &#x200B;> 通过运行`npx @adobe/reactor-releaser@v3.1.3`一直使用到2025年1月1日弃用。 所需的参数
-> &#x200B;> `jwt-auth`此处[找到](https://github.com/adobe/reactor-releaser/tree/9ea66aa2c683fe7da0cca50ff5c9b9372f183bb5)版本以运行。
+> 通过运行`npx @adobe/reactor-releaser@v3.1.3`一直使用到2025年1月1日弃用。 所需的参数
+> `jwt-auth`此处[找到](https://github.com/adobe/reactor-releaser/tree/9ea66aa2c683fe7da0cca50ff5c9b9372f183bb5)版本以运行。
 
 发行商仅要求您输入几条信息。 可以从Adobe I/O控制台检索`clientId`和`clientSecret`。 导航到I/O控制台中的[集成页面](https://console.adobe.io/integrations)。 从下拉列表中选择正确的组织，找到正确的集成，然后选择&#x200B;**[!UICONTROL View]**。
 

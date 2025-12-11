@@ -2,18 +2,14 @@
 title: 开发扩展
 description: 本文档提供了标记扩展开发过程的一般概述，以及指向更多文档的链接，这些文档提供了更详细的流程。
 exl-id: fb2f7275-a5da-4a41-b915-822c71c02e5c
-source-git-commit: 3f5e432ef381c10d8197724783135637d01a120e
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '436'
-ht-degree: 26%
+source-wordcount: '391'
+ht-degree: 18%
 
 ---
 
 # 开发扩展
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 标记扩展应被视为具有自身要求的（小型）产品。 确定Adobe Experience Platform用户将希望如何使用您的扩展，可以帮助您将功能分类为扩展应提供的事件类型、条件类型、操作类型和数据元素类型。
 

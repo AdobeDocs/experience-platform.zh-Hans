@@ -1,19 +1,15 @@
 ---
-title: AdobeContextHub扩展概述
-description: 了解Adobe Experience Platform中的AdobeContextHub标记扩展。
+title: Adobe ContextHub扩展概述
+description: 了解Adobe Experience Platform中的Adobe ContextHub标记扩展。
 exl-id: 90700ce2-14fd-4d15-bbb8-98a8bbca5005
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '222'
-ht-degree: 45%
+source-wordcount: '172'
+ht-degree: 79%
 
 ---
 
-# AdobeContextHub扩展概述
-
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+# Adobe ContextHub扩展概述
 
 使用本参考可了解有关配置 Adobe ContextHub 扩展以及使用此扩展构建规则时可用的选项的信息。
 
@@ -21,9 +17,9 @@ ht-degree: 45%
 
 此部分提供有关配置 Adobe ContextHub 扩展时可用的选项的参考。
 
-如果尚未安装AdobeContextHub扩展，请打开您的资产，然后选择&#x200B;**[!UICONTROL 扩展>目录]**，将鼠标悬停在AdobeContextHub扩展上，然后选择&#x200B;**[!UICONTROL 安装]**。
+如果尚未安装 Adobe ContextHub 扩展，请打开您的资产，选择 **[!UICONTROL Extensions > Catalog]**，将鼠标悬停在 Adobe ContextHub 扩展上，然后选择 **[!UICONTROL Install]**。
 
-要配置该扩展，请打开[!UICONTROL 扩展]选项卡，将鼠标悬停在该扩展上，然后选择&#x200B;**[!UICONTROL 配置]**。
+要配置该扩展，请打开 [!UICONTROL Extensions] 选项卡，将鼠标悬停在该扩展上，然后选择 **[!UICONTROL Configure]**。
 
 ![](../../../images/ext-contexthub-config.png)
 

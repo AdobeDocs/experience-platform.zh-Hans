@@ -2,20 +2,16 @@
 title: Adobe Experience Cloud Identity Service扩展的发行说明
 description: Adobe Experience Platform中的Adobe Experience Cloud Identity服务标签扩展的最新发行说明。
 exl-id: f9bfbed7-1eec-4916-9235-a75b5e2efcf8
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '688'
-ht-degree: 62%
+source-wordcount: '643'
+ht-degree: 67%
 
 ---
 
 # Adobe Experience Cloud Identity Service扩展发行说明
 
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
-
-本文档介绍Adobe Experience Cloud Identity服务标签扩展的发行说明。 有关Experience CloudIdentity服务本身的发行说明，请参阅[Identity服务文档](https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html?lang=zh-Hans)。
+本文档介绍Adobe Experience Cloud Identity服务标签扩展的发行说明。 有关Experience Cloud Identity Service本身的发行说明，请参阅[Identity Service文档](https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html)。
 
 ## 2022 年 10 月 17 日
 
@@ -42,7 +38,7 @@ ht-degree: 62%
    * 隐私Cookie的最新选择加入带有`Secure`和`SameSite`标记
    * 修复了将页面加载到子iFrame中时的Firefox浏览器问题
 
-## 2021年1月12日
+## 2021 年 1 月 12 日
 
 ### Experience Cloud ID 扩展 5.2.0
 
@@ -83,7 +79,7 @@ ht-degree: 62%
 
 ### Experience Cloud ID 扩展 4.6.0
 
-* 默认情况下将 `loadSSL` 标记设为开启。所有对 Identity 服务的调用都将默认开启 `https`。如果客户希望在 http 上从其非 ssl 页面调用 Identity 服务，则客户可以将其设置为 false。
+* 默认情况下将 `loadSSL` 标记设为开启。所有对身份标识服务的调用都将默认开启 `https`。如果客户希望在 http 上从其非 ssl 页面调用身份标识服务，则客户可以将其设置为 false。
 * 更新了用于检测 Internet-Explorer (IE) 版本的功能，以修复由 ESLint 报告的问题。
 * 修复了一个错误：当为 ECID 提供 optIn 批准并稍后更新时，Internet-Explorer (IE) 11 上出现性能问题。
 

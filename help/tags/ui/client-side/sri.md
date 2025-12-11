@@ -2,18 +2,14 @@
 title: 子资源完整性(SRI)支持
 description: 了解Adobe Experience Platform如何支持子资源完整性(SRI)。
 exl-id: bd8bc3f7-9a85-44e2-ae07-f0664179b51c
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '594'
-ht-degree: 67%
+source-wordcount: '549'
+ht-degree: 72%
 
 ---
 
 # 子资源完整性(SRI)支持
-
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 本文档介绍Adobe Experience Platform如何支持子资源完整性(SRI)。
 

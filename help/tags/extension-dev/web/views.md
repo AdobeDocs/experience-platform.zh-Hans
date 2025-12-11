@@ -2,18 +2,14 @@
 title: Web扩展中的视图
 description: 了解如何在Adobe Experience Platform Web扩展中为库模块定义视图。
 exl-id: 4471df3e-75e2-4257-84c0-dd7b708be417
-source-git-commit: 1bfa2e27e554dc899efc8a32900a926e787a58ac
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '2148'
-ht-degree: 70%
+source-wordcount: '2103'
+ht-degree: 69%
 
 ---
 
 # Web扩展中的视图
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 每个事件、条件、操作或数据元素类型可以提供允许用户提供设置的视图。扩展还可以具有顶级[扩展配置视图](../configuration.md)，通过该视图，用户可以为整个扩展提供全局设置。在所有类型的视图中，视图的构建过程都是相同的。
 
@@ -76,7 +72,7 @@ window.extensionBridge.register({
 | `company` | 包含`orgId` (您的24字符Adobe Experience Cloud ID)、`id` （贵公司在Reactor API中的唯一标识符）和`tenantId` (Adobe Identity Management System中组织的唯一标识符)的对象。 |
 | `schema` | [JSON 架构](https://json-schema.org/)格式中的对象。此对象将来自[扩展清单](../manifest.md)，并且可能有助于验证您的表单。 |
 | `apiEndpoints` | 包含`reactor`的对象，其中包含对Reactor API的网址的引用。 |
-| `userConsentPermissions` | 一个对象，其中包含来自Adobe [产品使用情况数据](https://experienceleague.adobe.com/zh-hans/docs/core-services/interface/features/account-preferences#product-usage-data)的同意标志。 使用存储在`globalDataCollectionAndUsage`标记中的以了解是否允许您的扩展收集&#x200B;*any*&#x200B;客户数据。 |
+| `userConsentPermissions` | 一个对象，其中包含来自Adobe [产品使用情况数据](https://experienceleague.adobe.com/en/docs/core-services/interface/features/account-preferences#product-usage-data)的同意标志。 使用存储在`globalDataCollectionAndUsage`标记中的以了解是否允许您的扩展收集&#x200B;*any*&#x200B;客户数据。 |
 | `preferredLanguages` | 语言字符串的数组。 |
 
 您的视图应使用此信息来呈现和管理其表单。您可能只需要处理 `info.settings`，但其他信息会在必要时提供。

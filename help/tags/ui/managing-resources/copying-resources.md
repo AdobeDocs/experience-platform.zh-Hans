@@ -2,18 +2,14 @@
 title: 复制资源
 description: 了解如何使用Adobe Experience Platform中现有标记资源的设置创建新标记资源。
 exl-id: 7e52ceae-97df-4c64-aba3-4f5ba6018a47
-source-git-commit: 319496975bcdbfd0a670cf8d36fb7e562b2ef2de
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '834'
-ht-degree: 74%
+source-wordcount: '785'
+ht-degree: 79%
 
 ---
 
 # 复制资源
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 有时，使用现有资源的设置制作新资源会很方便。 在这些情况下，您可以制作副本。
 
@@ -23,11 +19,11 @@ ht-degree: 74%
 
 ## 启动复制操作
 
-您可以启动扩展的复制操作，方法是查看已安装的扩展，选择&#x200B;**[!UICONTROL 配置]**&#x200B;按钮上的下拉箭头，然后选择&#x200B;**[!UICONTROL 复制]**。
+您可以启动扩展的复制操作，方法是查看已安装的扩展，选择 **[!UICONTROL Configure]** 按钮上的下拉箭头，然后选择 **[!UICONTROL Copy]**。
 
 ![复制 Analytics 扩展](../../images/copy-initiate-extension.png)
 
-对于属性、规则和数据元素，只需选择要复制的资源，然后在操作菜单中选择&#x200B;**[!UICONTROL 复制]**&#x200B;即可。
+对于属性、规则和数据元素，只需选择要复制的资源，然后选择操作菜单中的 **[!UICONTROL Copy]** 即可。
 
 ![复制 Analytics 规则](../../images/copy-initiate-rule.png)
 
@@ -37,7 +33,7 @@ ht-degree: 74%
 >
 >如果一个资产配置了进行扩展开发，而另一个资产没有配置，则无法将资源复制到另一个资产。
 
-配置所需的行为后，选择&#x200B;**[!UICONTROL 复制]**。
+配置所需的行为后，选择 **[!UICONTROL Copy]**。
 
 ## 复制资产
 

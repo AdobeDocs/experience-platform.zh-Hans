@@ -2,23 +2,19 @@
 title: 向后兼容标准
 description: 了解Adobe Experience Platform中的向后兼容性标准，该标准可确保标记扩展的更新版本与先前版本兼容。
 exl-id: 325390f1-88c7-4b9e-a484-5442ca649bdf
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '833'
-ht-degree: 81%
+source-wordcount: '788'
+ht-degree: 86%
 
 ---
 
 # 向后兼容标准
 
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../term-updates.md)。
-
 对Adobe Experience Platform中的标记扩展进行的更新必须能够向后兼容该扩展的先前版本。 这意味着：
 
 * 对扩展的主要组件所做的任何修改必须能够与先前版本兼容。这包括扩展配置、事件类型、条件类型、操作类型、数据元素类型和共享模块。
-* 用户使用旧版本扩展创建的组件必须能够通过针对较新版本提供的模式执行的验证。
+* 用户使用旧版本扩展创建的组件必须能够通过针对较新版本提供的架构执行的验证。
 * Adobe Experience Platform用户应该能够安装扩展的更新版本，并在他们做出刻意更改之前，使其完成的所有操作继续按原样运行。
 
 ## 允许的更改
@@ -44,7 +40,7 @@ ht-degree: 81%
 
 * 规则不再正确呈现，因为其中一个规则组件正在查找不存在的组件
 * 所有构建操作都会失败，因为库中包含扩展中不再存在的上游资源
-* 所有构建操作都会失败，因为库中包含的某个资源的设置未能通过针对新模式执行的验证
+* 所有构建操作都会失败，因为库中包含的某个资源的设置未能通过针对新架构执行的验证
 
 尤其在第二种情况下，用户可能没有相应的补救措施，并且也没有办法修复其资产，以便他们可以再次发布。
 

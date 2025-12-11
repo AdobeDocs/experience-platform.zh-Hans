@@ -2,18 +2,14 @@
 title: Edge扩展的操作类型
 description: 了解如何在Edge属性中为标记扩展定义操作类型库模块。
 exl-id: c0b058aa-f0fe-4fd8-a873-018482c3e4db
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '377'
-ht-degree: 34%
+source-wordcount: '332'
+ht-degree: 38%
 
 ---
 
 # Edge 扩展的操作类型
-
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 在标记规则中，操作是在规则条件通过评估后执行的操作。 操作类型由扩展提供，其效果完全由扩展作者定义。
 
@@ -29,7 +25,7 @@ ht-degree: 34%
 
 操作类型通常包含以下内容：
 
-1. Experience PlatformUI和数据收集UI中显示的视图，允许用户修改操作的设置。
+1. Experience Platform UI和数据收集UI中显示的视图，允许用户修改操作的设置。
 2. 在标记运行时库中发出的库模块，用于解释设置并执行操作。
 
 例如，将某些数据转发到第三方端点的模块可能如下所示。

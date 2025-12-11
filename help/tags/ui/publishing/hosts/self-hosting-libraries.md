@@ -2,18 +2,14 @@
 title: 自托管库
 description: 了解如何在Adobe Experience Platform中为标记库内部版本实施自托管。
 exl-id: 8c3bf202-de7a-46e0-801f-0cede24865fd
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '491'
-ht-degree: 72%
+source-wordcount: '446'
+ht-degree: 69%
 
 ---
 
 # 自托管库
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 Adobe Experience Platform中的标记允许生成一组名为[内部版本](../builds.md)的文件。 这组文件控制应用程序在运行时的行为。
 

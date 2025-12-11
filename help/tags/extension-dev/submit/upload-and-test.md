@@ -2,18 +2,14 @@
 title: 上载和实施扩展的端到端测试
 description: 了解如何在Adobe Experience Platform中验证、上传和测试您的扩展。
 exl-id: 6176a9e1-fa06-447e-a080-42a67826ed9e
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '2344'
-ht-degree: 22%
+source-wordcount: '2299'
+ht-degree: 20%
 
 ---
 
 # 上载和实施端到端测试
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 要在Adobe Experience Platform中测试标记扩展，请使用标记API和/或命令行工具来上传扩展包。 接下来，使用Experience Platform UI或数据收集UI将扩展包安装到资产，并在标记库和内部版本中执行其功能。
 
@@ -63,8 +59,8 @@ npx @adobe/reactor-uploader
 
 >[!NOTE]
 > 默认情况下，Uploader需要服务器到服务器Oauth流的Adobe I/O凭据。 旧版`jwt-auth`凭据
-> &#x200B;> 通过运行`npx @adobe/reactor-uploader@v5.2.0`一直使用到2025年1月1日弃用。 所需的参数
-> &#x200B;> `jwt-auth`此处[找到](https://github.com/adobe/reactor-uploader/tree/cdc27f4f0e9fa3136b8cd5ca8c7271428b842452)版本以运行。
+> 通过运行`npx @adobe/reactor-uploader@v5.2.0`一直使用到2025年1月1日弃用。 所需的参数
+> `jwt-auth`此处[找到](https://github.com/adobe/reactor-uploader/tree/cdc27f4f0e9fa3136b8cd5ca8c7271428b842452)版本以运行。
 
 上传程序仅要求您输入几条信息。 可以从Adobe I/O控制台检索`clientId`和`clientSecret`。 导航到I/O控制台中的[集成页面](https://console.adobe.io/integrations)。 从下拉列表中选择正确的组织，找到正确的集成，然后选择&#x200B;**[!UICONTROL View]**。
 

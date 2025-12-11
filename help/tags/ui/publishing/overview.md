@@ -2,18 +2,14 @@
 title: 发布概述
 description: 了解将更改发布到Adobe Experience Platform中的标记管理代码库的流程。
 exl-id: 32eaad87-d7dc-4812-b546-a136511512fe
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '610'
-ht-degree: 79%
+source-wordcount: '565'
+ht-degree: 78%
 
 ---
 
 # 发布概述
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 Adobe Experience Platform允许您将对标记管理代码的更改封装到单独的库中。 由于多个库现在可以由不同的团队并行开发，这些库必须遵循一个精心设计、有权限控制的流程，以便在推送到生产环境之前将更改合并在一起。
 

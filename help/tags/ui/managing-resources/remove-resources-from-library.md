@@ -2,18 +2,14 @@
 title: 从库中移除资源
 description: 了解如何从标记库中删除资源。
 exl-id: ad1dd093-962c-4f6d-85eb-c5ed1b644927
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '314'
-ht-degree: 80%
+source-wordcount: '268'
+ht-degree: 94%
 
 ---
 
 # 从库中移除资源
-
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 当您不再希望资源在内部版本内产生影响时，必须从包含该资源的库中将其移除，然后创建新的内部版本。
 
@@ -47,7 +43,7 @@ ht-degree: 80%
 
 1. 禁用资源。
    1. 从列表视图中选择资源。
-   1. 选择&#x200B;**[!UICONTROL 禁用]**。
+   1. 选择 **[!UICONTROL Disable]**。
 1. 创建新的开发库。
 1. 添加已禁用资源的 `latest` 版本。
 1. 保存并生成。

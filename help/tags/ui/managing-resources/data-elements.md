@@ -2,18 +2,14 @@
 title: 数据元素
 description: 数据元素是数据字典（或数据映射）的构建块。使用数据元素可跨市场营销和广告技术收集、组织和交付数据。
 exl-id: 1e7b03cc-5a54-403d-bf8d-dbc206cfeb2d
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1615'
-ht-degree: 71%
+source-wordcount: '1549'
+ht-degree: 75%
 
 ---
 
 # 数据元素
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 数据元素是数据字典（或数据映射）的构建块。使用数据元素可跨市场营销和广告技术收集、组织和交付数据。
 
@@ -56,7 +52,7 @@ ht-degree: 71%
 
 数据元素是规则的构建块。数据元素可用于创建页面上常用项目的数据字典（或数据映射），而无需考虑网站中所包含对象的项目源自何处（查询字符串、URL 或 Cookie 值）。
 
-1. 在属性页中，打开[!UICONTROL 数据元素]选项卡，然后选择&#x200B;**[!UICONTROL 创建新数据元素]**。
+1. 在资产页面中，打开 [!UICONTROL Data Elements] 选项卡，然后选择 **[!UICONTROL Create New Data Element]**。
 1. 命名数据元素。
 1. 选择扩展和类型。
 
@@ -85,9 +81,9 @@ ht-degree: 71%
    * Visitor
       * 该值会无限期地存储在浏览器的本地存储中。
 
-1. 选择&#x200B;**[!UICONTROL 保存]**。
+1. 选择 **[!UICONTROL Save]**。
 
-创建或编辑元素后，您可以将其保存并生成到[活动库](../publishing/libraries.md#active-library)。这会立即将更改保存到库并执行生成操作。随即会显示生成操作的状态。您还可以从[!UICONTROL 活动库]下拉列表中创建新库。
+创建或编辑元素后，您可以将其保存并生成到[活动库](../publishing/libraries.md#active-library)。这会立即将更改保存到库并执行生成操作。随即会显示生成操作的状态。您还可以从[!UICONTROL Active Library]下拉菜单中创建新库。
 
 ## 数据元素类型 {#types-of-data-elements}
 
@@ -107,7 +103,7 @@ ht-degree: 71%
 
 ### 自定义代码
 
-通过选择[!UICONTROL 打开编辑器]并将代码插入编辑器窗口，可以将自定义JavaScript输入到用户界面中。
+通过选择 [!UICONTROL Open Editor] 并将代码插入编辑器窗口，可以将自定义 JavaScript 输入到用户界面中。
 
 编辑器窗口中需要一个返回语句，以指示应该将什么值设置为数据元素值。如果不包含返回语句，数据元素则解析为 `undefined`。这会触发回退去查找存储的值，如果没有存储的值，则使用默认值。
 
@@ -184,7 +180,7 @@ CSS 选择器链：
 
 ### 本地存储
 
-在[!UICONTROL 本地存储项名称]字段中提供本地存储项的名称。
+在 [!UICONTROL Local Storage Item Name] 字段中提供本地存储项目的名称。
 
 本地存储允许浏览器将信息从一个页面存储到另一个页面 ([https://www.w3schools.com/html/html5\_webstorage.asp](https://www.w3schools.com/html/html5_webstorage.asp))。本地存储的工作方式与Cookie非常相似，但更大也更加灵活。
 
@@ -205,7 +201,7 @@ CSS 选择器链：
 
 ### 查询字符串参数
 
-在[!UICONTROL URL参数]字段中指定单个URL参数。
+在 [!UICONTROL URL Parameter] 字段中指定单个 URL 参数。
 
 只有名称部分是必需提供的，并且应该忽略任何特殊标志符，例如“?”或“=”
 
@@ -232,7 +228,7 @@ CSS 选择器链：
 
 ### 会话存储
 
-在[!UICONTROL 会话存储项名称]字段中提供会话存储项的名称。
+在 [!UICONTROL Session Storage Item Name] 字段中提供会话存储项目的名称。
 
 会话存储类似于本地存储，不同之处在于，会话存储在会话结束后会丢弃数据，而本地存储或 Cookie 则可以保留数据。
 

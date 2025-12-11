@@ -2,18 +2,14 @@
 title: Adobe Target扩展概述
 description: 了解Adobe Experience Platform中Adobe Target的标记扩展。
 exl-id: b1c5e25b-42ea-4835-b2d4-913fa2536e77
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1179'
-ht-degree: 71%
+source-wordcount: '1126'
+ht-degree: 78%
 
 ---
 
 # Adobe Target扩展概述
-
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用本参考可了解有关使用此扩展构建规则时可用的选项的信息。
 
@@ -23,9 +19,9 @@ ht-degree: 71%
 >
 > Adobe Target 扩展需要使用 at.js。它不支持 mbox.js。
 
-如果尚未安装Adobe Target扩展，请打开您的资产，然后选择&#x200B;**[!UICONTROL 扩展>目录]**，将鼠标悬停在Target扩展上，然后选择&#x200B;**[!UICONTROL 安装]**。
+如果尚未安装 Adobe Target 扩展，请打开您的资产，接下来选择 **[!UICONTROL Extensions > Catalog]**，将鼠标悬停在 Target 扩展上，然后选择 **[!UICONTROL Install]**。
 
-要配置该扩展，请打开[!UICONTROL 扩展]选项卡，将鼠标悬停在该扩展上，然后选择&#x200B;**[!UICONTROL 配置]**。
+要配置该扩展，请打开 [!UICONTROL Extensions] 选项卡，将鼠标悬停在该扩展上，然后选择 **[!UICONTROL Configure]**。
 
 ![](../../../images/ext-target-config.png)
 
@@ -68,11 +64,11 @@ ht-degree: 71%
 
 如果在定义的时间段内未收到来自 Target 的响应，则请求会超时并显示默认内容。在访客会话期间会继续尝试发起其他请求。默认值为 3000 毫秒，这可能与 Target 用户界面中配置的超时不同。
 
-有关超时设置的工作方式的更多信息，请参阅 [Adobe Target 帮助](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/deploy-at-js/implementing-target-without-a-tag-manager.html?lang=zh-Hans)。
+有关超时设置的工作方式的更多信息，请参阅 [Adobe Target 帮助](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/deploy-at-js/implementing-target-without-a-tag-manager.html)。
 
 #### Target 用户界面中可用的其他 at.js 设置
 
-Target UI的[!UICONTROL 编辑at.js设置]页面上可用的多个设置未包含在Target扩展中。 下面列出了建议的解决方法：
+Target UI的[!UICONTROL Edit at.js settings]页面上可用的一些设置未包含在Target扩展中。 下面列出了建议的解决方法：
 
 * 自动创建全局 mbox：此设置将在 Target 扩展中替换为 Fire Global Mbox 操作。
 * 库标题：此设置未包含在 Target 扩展中。可在使用 Load Target 操作之前，将需要在 at.js 之前加载的代码置于核心扩展的 Custom Code 操作中。
@@ -115,7 +111,7 @@ Target 扩展在规则的 Then 部分中提供了以下操作：
 * **Body Hiding：**&#x200B;您可以启用或禁用此设置。默认值为 Enabled，表示隐藏 HTML 主体。
 * **Body Hidden Style：**&#x200B;默认值为 `body{opacity:0}`。此值可更改为其他内容，如 `body{display:none}`。
 
-有关更多信息，请参阅 [Target 联机帮助文档](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html?lang=zh-Hans)。
+有关更多信息，请参阅 [Target 联机帮助文档](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html)。
 
 ## Adobe Target 基本部署
 

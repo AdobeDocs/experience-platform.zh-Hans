@@ -2,18 +2,14 @@
 title: Web扩展中的库模块
 description: 了解如何在Adobe Experience Platform中为Web扩展设置库模块的格式。
 exl-id: 08f2bb01-9071-49c5-a0ff-47d592cc34a5
-source-git-commit: b3754c94843f32ba58aa1e020dface1179372de3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '372'
-ht-degree: 63%
+source-wordcount: '327'
+ht-degree: 72%
 
 ---
 
 # Web 扩展中的库模块
-
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 >[!IMPORTANT]
 >

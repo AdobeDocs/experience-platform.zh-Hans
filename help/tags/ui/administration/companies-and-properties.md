@@ -2,18 +2,14 @@
 title: 属性
 description: 了解如何在Adobe Experience Platform中为您的组织组织和分组扩展、环境和库。
 exl-id: e5b4a853-c23e-498c-9e20-e773ea1de88b
-source-git-commit: 9f4ce2a3a8af72342683c859caa270662b161b7d
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1153'
-ht-degree: 64%
+source-wordcount: '1108'
+ht-degree: 63%
 
 ---
 
 # 属性
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 ## Web 资产
 

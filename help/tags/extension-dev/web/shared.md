@@ -2,18 +2,14 @@
 title: Web扩展中的共享模块
 description: 了解如何在Adobe Experience Platform中为Web扩展定义共享库模块。
 exl-id: ec013a39-966c-43f3-bc36-31198990a17e
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '263'
-ht-degree: 45%
+source-wordcount: '218'
+ht-degree: 55%
 
 ---
 
 # Web扩展中的共享模块
-
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 共享模块是一种可用来与其他扩展进行通信的机制。例如，扩展 A 可以异步加载某个数据段，并通过 [promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise) 将其提供给扩展 B。
 

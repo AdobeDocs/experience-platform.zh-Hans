@@ -2,18 +2,14 @@
 title: 库
 description: 了解标记库的概念以及标记库在Adobe Experience Platform中的运行方式。
 exl-id: 4d6f86e6-5684-4635-aaf1-87ba10cd7d94
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '791'
-ht-degree: 49%
+source-wordcount: '711'
+ht-degree: 67%
 
 ---
 
 # 库
-
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 库由一系列指令构成，这些指令用于指示扩展、数据元素和规则在部署后如何相互交互。 创建库时，您可以指定要对库进行的更改。 生成时，这些更改将与在之前的库中提交、批准或发布的所有内容组合到一起。
 
@@ -29,17 +25,17 @@ ht-degree: 49%
 
 要创建库，请完成以下步骤。
 
-1. 打开[!UICONTROL 发布]选项卡。
+1. 打开 [!UICONTROL Publishing] 选项卡。
 
-   [!UICONTROL Publishing]页面列出了开发库，并提供了提交这些库以供审批、将其移至暂存环境或将其发布到生产环境的方法。
+   [!UICONTROL Publishing] 页面会列出开发库，并提供提交这些库以供审批、将其移至暂存环境或将其发布到生产环境的方法。
 
-1. 选择&#x200B;**[!UICONTROL 添加新库]**。
+1. 选择 **[!UICONTROL Add New Library]**。
 
    ![](../../images/library-create.jpg)
 
 1. 命名库。
 1. 将库分配到开发环境。
-1. 向库中添加更改。要添加项目，请选择&#x200B;**[!UICONTROL 添加更改]**，然后选择要添加的项目。 任何已编辑或已删除的项目均可添加到所选库中。
+1. 向库中添加更改。要添加项目，请选择 **[!UICONTROL Add a Change]**，然后选取要添加的项目。任何已编辑或已删除的项目均可添加到所选库中。
 
    ![](../../images/library-add-change.jpg)
 
@@ -49,8 +45,8 @@ ht-degree: 49%
    * 数据元素
    * 扩展配置
 
-1. 要添加任何已更改的资源，请选择&#x200B;**[!UICONTROL 添加所有已更改的资源]**。
-1. 选择&#x200B;**[!UICONTROL 保存]**&#x200B;或&#x200B;**[!UICONTROL 保存并生成以进行开发]**。
+1. 要添加任何已更改的资源，请选择 **[!UICONTROL Add All Changed Resources]**。
+1. 选择 **[!UICONTROL Save]** 或 **[!UICONTROL Save and Build for Development]**。
 
    部署时将编译一个内部版本并将其部署到所分配的环境。
 
@@ -72,8 +68,8 @@ ht-degree: 49%
 
 1. 安装要添加的[扩展](../managing-resources/extensions/overview.md)。
 1. 创建要添加的[数据元素](../managing-resources/data-elements.md)和规则。
-1. 打开&#x200B;**[!UICONTROL 发布]**&#x200B;选项卡。
-1. 选择要更改的[库](libraries.md)，然后选择&#x200B;**[!UICONTROL 编辑]**。
+1. 打开 **[!UICONTROL Publishing]** 选项卡。
+1. 选择要更改的[库](libraries.md)，然后选择 **[!UICONTROL Edit]**。
 1. 使用规则、数据元素和扩展按钮选择要添加到库中的项目。
 1. 保存更改。
 
@@ -89,7 +85,7 @@ ht-degree: 49%
 
 1. 禁用要移除的扩展，以及依赖这些扩展的任何数据元素和规则。
 1. 禁用要移除的数据元素和规则。
-1. 打开&#x200B;**[!UICONTROL 发布]**&#x200B;选项卡。
+1. 打开 **[!UICONTROL Publishing]** 选项卡。
 1. 选择要更改的库。
 1. 使用规则、数据元素和扩展按钮选择要从库中移除的已禁用项目。
 1. 保存更改。
@@ -98,7 +94,7 @@ ht-degree: 49%
 
 要编辑库选项，请完成以下步骤。
 
-1. 选择库，然后选择&#x200B;**[!UICONTROL 编辑]**&#x200B;以查看库更改。 所有更改都显示在[!UICONTROL 库内容]列表中。
+1. 选择库，然后选择 **[!UICONTROL Edit]** 以查看库更改。所有更改都将显示在 [!UICONTROL Library Contents] 列表中。
 
    ![](../../images/library-contents.jpg)
 
@@ -107,14 +103,14 @@ ht-degree: 49%
    ![](../../images/library-contents-revision.jpg)
 
 1. 选择是显示&#x200B;**所有**&#x200B;项还是&#x200B;**已更改**&#x200B;项。
-1. 选择修订版本，然后选择&#x200B;**[!UICONTROL 选择修订版本]**。
-1. 选择&#x200B;**[!UICONTROL 添加更改]**&#x200B;或&#x200B;**[!UICONTROL 添加所有更改的资源]**。
+1. 选择修订版本，然后选择 **[!UICONTROL Select Revision]**。
+1. 选择 **[!UICONTROL Add a Change]** 或 **[!UICONTROL Add All Changed Resources]**。
 
 ## 活动库 {#active-library}
 
 库可以封装一系列您希望对已部署代码进行的更改。活动库可以为您提供更大的便利，允许您快速循环访问各项更改并查看相应影响。
 
-扩展、规则和数据元素现在可以直接保存到您正在处理的库中。 如果需要，还可以从[!UICONTROL 活动库]下拉列表中创建新内部版本，甚至创建新库。
+扩展、规则和数据元素现在可以直接保存到您正在处理的库中。 如果需要，还可以从[!UICONTROL Active Library]下拉列表中创建新内部版本，甚至创建新库。
 
 以下列表提供了有关管理活动库的更多信息。
 

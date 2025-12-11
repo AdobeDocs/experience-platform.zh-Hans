@@ -2,18 +2,14 @@
 title: Adobe Media Analytics (3.x SDK) for Audio and Video扩展概述
 description: 了解Adobe Experience Platform中的Adobe Media Analytics (3.x SDK) for Audio and Video标记扩展。
 exl-id: 7289d57d-7e7f-4832-9469-3b5a62183a32
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '708'
-ht-degree: 72%
+source-wordcount: '648'
+ht-degree: 81%
 
 ---
 
 # Adobe Media Analytics (3.x SDK) for Audio and Video扩展概述
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用本文档了解有关安装、配置和实施 Adobe Media Analytics (3.x SDK) for Audio and Video 扩展（Media Analytics 扩展）的信息。其中包括使用此扩展构建规则时可用的选项，以及一些示例和指向示例的链接。
 
@@ -33,9 +29,9 @@ Media Analytics (MA) 扩展添加了核心 JavaScript Media SDK (Media 3.x SDK)�
 
 ## 安装和配置 MA 扩展
 
-* **安装：**&#x200B;要安装MA扩展，请打开您的扩展属性，选择&#x200B;**[!UICONTROL Extensions > Catalog]**，将鼠标悬停在&#x200B;**[!UICONTROL Adobe Media Analytics (3.x SDK) for Audio and Video]**&#x200B;扩展上，然后选择&#x200B;**[!UICONTROL 安装]**。
+* **安装：**&#x200B;要安装 MA 扩展，请打开您的扩展资产，选择 **[!UICONTROL Extensions > Catalog]**，将鼠标悬停在 **[!UICONTROL Adobe Media Analytics (3.x SDK) for Audio and Video]** 扩展上方，然后选择 **[!UICONTROL Install]**。
 
-* **配置：**&#x200B;要配置MA扩展，请打开[!UICONTROL 扩展]选项卡，将鼠标悬停在该扩展上，然后选择&#x200B;**[!UICONTROL 配置]**：
+* **配置：**&#x200B;要配置 MA 扩展，请打开 [!UICONTROL Extensions] 选项卡，将鼠标悬停在该扩展上方，然后选择 **[!UICONTROL Configure]**：
 
 ![MA 扩展配置](../../../images/ext-ma-config.png)
 
@@ -58,7 +54,7 @@ Media Analytics (MA) 扩展添加了核心 JavaScript Media SDK (Media 3.x SDK)�
 
 ### 通过网页/JS 应用程序使用
 
-MA扩展通过启用[!UICONTROL 配置]页面中的“Export APIs to Window Object”设置，在全局窗口对象中导出Media API。 它将在配置的变量名称下导出 API。例如，如果变量名称配置为 `ADB`，则 `window.ADB.Media` 可以访问 Media API。
+MA 扩展通过启用 [!UICONTROL Configuration] 页面中的“Export APIs to Window Object”设置，在全局窗口对象中导出 Media API。它将在配置的变量名称下导出 API。例如，如果变量名称配置为 `ADB`，则 `window.ADB.Media` 可以访问 Media API。
 
 >[!IMPORTANT]
 >

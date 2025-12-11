@@ -7,18 +7,14 @@ level: Beginner
 role: User, Developer, Admin
 topic: Integrations
 exl-id: a52870c4-10e6-45a0-a502-f48da3398f3f
-source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1251'
-ht-degree: 5%
+source-wordcount: '1205'
+ht-degree: 2%
 
 ---
 
 # Mailchimp事件转发扩展概述
-
->[!NOTE]
->  
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](https://experienceleague.adobe.com/docs/experience-platform/tags/term-updates.html?lang=zh-Hans)。
 
 Mailchimp [事件转发](../../../ui/event-forwarding/overview.md)扩展将事件发送到Mailchimp营销API，这可以触发Mailchimp营销活动、历程或交易的电子邮件。
 
@@ -124,7 +120,7 @@ Mailchimp [事件转发](../../../ui/event-forwarding/overview.md)扩展将事�
 | `name` | `arc.event.xdm._tenant.name`<br />或<br /> `arc.event.data._tenant.name` | 字符串 | 事件名称 | **是** | 2-30个字符长 |
 | `properties` | `arc.event.xdm._tenant.properties`<br />或<br /> `arc.event.data._tenant.properties` | 对象 | JSON格式的可选属性列表，其中包含有关事件的详细信息 | 否 |  |
 | `isSyncing` | `arc.event.xdm._tenant.isSyncing`<br />或<br /> `arc.event.data._tenant.isSyncing` | 布尔 | 使用`is_syncing`设置为`true` **创建的事件将不会**&#x200B;触发自动处理 | 否 |  |
-| `occurredAt` | `arc.event.xdm._tenant.occuredAt`<br />或`arc.event.data._tenant.occuredAt` | 字符串 | 事件发生时间的ISO 8601时间戳 | 否 |  |
+| `occurredAt` | `arc.event.xdm._tenant.occuredAt`<br /> 或 `arc.event.data._tenant.occuredAt` | 字符串 | 事件发生时间的ISO 8601时间戳 | 否 |  |
 
 {style="table-layout:auto"}
 

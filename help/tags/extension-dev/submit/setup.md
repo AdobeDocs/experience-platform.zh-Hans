@@ -2,18 +2,14 @@
 title: Experience Cloud组织设置
 description: 了解如何注册Adobe Experience Cloud组织，以便开始开发Adobe Experience Platform的扩展。
 exl-id: ee36319d-5de8-462e-879b-311445cf334c
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '573'
-ht-degree: 31%
+source-wordcount: '528'
+ht-degree: 34%
 
 ---
 
 # Experience Cloud 组织设置
-
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 要在Adobe Experience Platform中开发标记扩展，必须注册Adobe Experience Cloud组织。
 
@@ -41,9 +37,9 @@ ht-degree: 31%
 >
 >当前，贵公司电子邮件一次只能在一个合作伙伴计划中使用，因此您将需要使用其他的公司电子邮件作为每个计划的注册联系人。
 
-在您的公司加入Exchange合作伙伴计划后，您可以通过登录到[Exchange合作伙伴网站](https://partners.adobe.com/exchangeprogram/experiencecloud)并按照以下步骤操作，来请求访问Adobe解决方案。
+贵公司加入Exchange合作伙伴计划后，您可以通过登录到[Exchange合作伙伴网站](https://partners.adobe.com/exchangeprogram/experiencecloud)并按照以下步骤操作，来请求访问Adobe解决方案。
 
-如果您拥有Experience Cloud帐户需要访问数据收集UI和Experience PlatformUI，请参阅[数据收集权限指南](../../../collection/permissions.md)。
+如果您拥有Experience Cloud帐户需要访问数据收集UI和Experience Platform UI，请参阅[数据收集权限指南](../../../collection/permissions.md)。
 
 ## 对于独立开发人员
 

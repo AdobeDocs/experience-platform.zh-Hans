@@ -2,18 +2,14 @@
 title: 扩展清单
 description: 了解如何配置JSON清单文件，以告知Adobe Experience Platform如何正确使用您的扩展。
 exl-id: 7cac020b-3cfd-4a0a-a2d1-edee1be125d0
-source-git-commit: a7c66b9172421510510b6acf3466334c33cdaa3d
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '2652'
-ht-degree: 66%
+source-wordcount: '2607'
+ht-degree: 65%
 
 ---
 
 # 扩展清单
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../term-updates.md)。
 
 在扩展的基目录中，必须创建一个名为 `extension.json` 的文件。其中包含有关扩展的重要详细信息，借助这些信息，Adobe Experience Platform可以正确使用扩展。 其中的部分内容采用 [npm 的 `package.json`](https://docs.npmjs.com/files/package.json) 方式构成。
 
@@ -75,20 +71,20 @@ ht-degree: 66%
       <td><code>schema</code></td>
       <td><a href="https://json-schema.org/">JSON 架构</a>的对象，用来描述从扩展配置视图中保存的有效对象的格式。由于您是配置视图的开发者，因此您有责任确保所有保存的设置对象都与此架构匹配。当用户尝试使用Experience Platform服务保存数据时，此架构还将用于验证。<br><br>架构对象的示例如下所示：
 <pre class="JSON language-JSON hljs">
-&lbrace;
+{
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "properties": &lbrace;
-    "delay": &lbrace;
+  "properties": {
+    "delay": {
       "type": "number",
       "minimum": 1
-    &rbrace;
-  &rbrace;,
-  "required": &lbrack;
+    }
+  },
+  "required": [
     "delay"
-  &rbrack;,
+  ],
   "additionalProperties": false
-&rbrace;
+}
 </pre>
       我们建议使用诸如 <a href="https://www.jsonschemavalidator.net/">JSON 架构验证器</a>之类的工具，手动测试您的架构。</td>
     </tr>
@@ -135,20 +131,20 @@ ht-degree: 66%
       <td><code>schema</code></td>
       <td><a href="https://json-schema.org/">JSON 架构</a>的对象，用来描述用户可保存的有效设置对象的格式。设置通常由用户使用数据收集用户界面进行配置和保存。 在这些用例中，扩展的视图可采取必要步骤来验证用户提供的设置。另一方面，有些用户选择直接使用标记API，而不借助任何用户界面。 此架构的目的在于允许Experience Platform正确验证用户保存的设置对象（无论是否使用了用户界面）是否采用了与运行时基于该设置对象执行操作的库模块兼容的格式。<br><br>架构对象的示例如下所示：<br>
 <pre class="JSON language-JSON hljs">
-&lbrace;
+{
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "properties": &lbrace;
-    "delay": &lbrace;
+  "properties": {
+    "delay": {
       "type": "number",
       "minimum": 1
-    &rbrace;
-  &rbrace;,
-  "required": &lbrack;
+    }
+  },
+  "required": [
     "delay"
-  &rbrack;,
+  ],
   "additionalProperties": false
-&rbrace;
+}
 </pre>
       我们建议使用诸如 <a href="https://www.jsonschemavalidator.net/">JSON 架构验证器</a>之类的工具，手动测试您的架构。</td>
     </tr>

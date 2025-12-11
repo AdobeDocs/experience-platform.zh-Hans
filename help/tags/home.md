@@ -2,20 +2,16 @@
 title: 标记概述
 description: Adobe Experience Platform中的标记是Adobe推出的新一代标记管理功能。 标记为客户提供了一种简单的方式来部署和管理所有用来加强相关客户体验的分析、营销和广告标记。
 exl-id: 23d882a5-1ddd-404b-a7e9-3000f1804971
-source-git-commit: 31811b7448a285ee5d25872641354a6981c64471
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '588'
-ht-degree: 53%
+source-wordcount: '550'
+ht-degree: 56%
 
 ---
 
 # 标记概述
 
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](./term-updates.md)。
-
-Adobe Experience Platform中的标记是Adobe推出的新一代标记管理功能。 标记为客户提供了一种简单的方式来部署和管理所有用来加强相关客户体验的分析、营销和广告标记。
+Adobe Experience Platform(以前称为Adobe Experience Platform Launch)中的标记是Adobe推出的新一代标记管理功能。 标记为客户提供了一种简单的方式来部署和管理所有用来加强相关客户体验的分析、营销和广告标记。
 
 标记可让任何人构建并维护他们自己的集成，这称为&#x200B;*扩展*。 [!DNL Adobe Experience Cloud] 客户可在应用商店中获取这些扩展，从而可以快速安装、配置和部署自己的标记。
 

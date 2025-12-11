@@ -2,18 +2,14 @@
 title: Web扩展的操作类型
 description: 了解如何在Web属性中为标记扩展定义操作类型库模块。
 exl-id: d4539132-a72c-40b0-84b6-50cbe3785d2d
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '412'
-ht-degree: 44%
+source-wordcount: '367'
+ht-degree: 49%
 
 ---
 
 # Web 扩展的操作类型
-
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 在数据收集标记的上下文中，操作是在发生规则事件且所有条件都通过评估后执行的操作。
 
@@ -29,7 +25,7 @@ ht-degree: 44%
 
 操作类型通常包含以下内容：
 
-1. Experience PlatformUI和数据收集UI中显示的[视图](./views.md)，允许用户修改操作的设置。
+1. Experience Platform UI和数据收集UI中显示的[视图](./views.md)，允许用户修改操作的设置。
 2. 在标记运行时库中发出的库模块，用于解释设置并执行操作。
 
 ```js

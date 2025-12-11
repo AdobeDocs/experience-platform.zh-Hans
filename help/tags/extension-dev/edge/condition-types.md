@@ -2,18 +2,14 @@
 title: Edge扩展的条件类型
 description: 了解如何在Adobe Experience Platform中为Edge扩展定义条件类型库模块。
 exl-id: fe13420e-ffa7-49d6-92c4-965ebd9d7390
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '403'
-ht-degree: 38%
+source-wordcount: '358'
+ht-degree: 43%
 
 ---
 
 # Edge 扩展的条件类型
-
->[!NOTE]
->
-> Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 在标记规则中，会在事件发生后评估条件。 所有条件必须返回 true，规则才会继续处理。条件类型由扩展提供，可评估某些内容是true还是false，从而返回布尔值。
 
@@ -29,7 +25,7 @@ ht-degree: 38%
 
 条件类型通常包含以下内容：
 
-1. Experience PlatformUI和数据收集UI中显示的视图，允许用户修改条件的设置。
+1. Experience Platform UI和数据收集UI中显示的视图，允许用户修改条件的设置。
 2. 在标记运行时库中发出的库模块，用于解释设置并评估条件。
 
 例如，如果要评估用户是否位于主机`example.com`上，则您的模块可能如下所示。

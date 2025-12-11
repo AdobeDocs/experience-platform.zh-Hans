@@ -2,18 +2,14 @@
 title: 标记的用户权限
 description: 了解标记可用的不同类型的权限以及不同业务用例的一些基本实施策略。
 exl-id: 9b48847a-6133-4dbd-b17d-e7b88152ad7d
-source-git-commit: fa4fc154f57243250dec9bdf9557db13ef7768e8
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1305'
+source-wordcount: '1260'
 ht-degree: 11%
 
 ---
 
 # 标记的用户权限
-
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 Adobe Experience Platform中标记的用户权限通过Adobe Admin Console分配给用户。 不同的权限集不会分配给单个用户，而是单独配置为产品配置文件。 然后，会将用户分配到这些产品配置文件，以便授予他们已配置的权限。
 
@@ -21,7 +17,7 @@ Adobe Experience Platform中标记的用户权限通过Adobe Admin Console分配
 
 >[!NOTE]
 >
->有关如何使用Admin Console配置用户权限的步骤，请参阅有关[管理数据收集权限](../../../collection/permissions.md)的教程。
+>有关如何为使用Admin Console的用户配置权限的步骤，请参阅有关[管理数据收集权限](../../../collection/permissions.md)的教程。
 
 ## 权限类型
 
@@ -54,7 +50,7 @@ Adobe Experience Platform中标记的用户权限通过Adobe Admin Console分配
 | --- | --- |
 | **开发** | 这允许您执行以下操作：<ul><li>创建规则和数据元素</li><li>创建库并在现有开发环境中构建库</li><li>提交库以供审批</li></ul>UI中的大多数日常任务都需要此权限。 |
 | **批准** | 这样，您就可以获取已提交的库并将该库生成到暂存环境。 测试完成后，您还可以批准库以进行发布。 |
-| **Publish** | 这样，您就可以将批准的库发布到生产环境。 |
+| **发布** | 这样，您就可以将批准的库发布到生产环境。 |
 | **管理扩展** | 这允许您执行以下操作： <ul><li>将新扩展安装到资产</li><li>修改已安装扩展的配置</li><li>删除扩展</li></ul>有关[扩展的更多信息](../managing-resources/extensions/overview.md)，请参阅扩展概述文档。 此角色通常属于 IT 或营销组，具体取决于您的组织。 |
 | **管理环境** | 这允许您创建和修改环境。 有关详细信息，请参阅[环境文档](../publishing/environments.md)。 此角色通常属于 IT 组。 |
 
@@ -68,7 +64,7 @@ Adobe Experience Platform中标记的用户权限通过Adobe Admin Console分配
 | --- | --- |
 | **管理属性** | 这允许您执行以下操作：<ul><li>创建新属性</li><li>修改属性级别的元数据和设置</li><li>删除属性</li></ul>管理员通常执行此角色。 有关详细信息，请参阅[属性文档](companies-and-properties.md)。 |
 | **开发扩展** | 允许创建和修改公司拥有的扩展包，包括私有版本和公共发布请求。 |
-| **管理应用程序配置** | 仅当您拥有Adobe Journey Optimizer或其他解决方案的许可证来授予对移动应用程序内消息和推送消息的访问权限时，才可使用此选项。  这允许您管理Experience Cloud了解的应用程序，以及与Firebase Cloud Messaging服务和Apple推送通知服务通信所需的推送凭据。 |
+| **管理应用程序配置** | 仅当您拥有Adobe Journey Optimizer或其他解决方案的许可证来授予对移动应用程序内消息和推送消息的访问权限时，才可使用此选项。  这允许您管理Experience Cloud知道的应用程序，以及与Firebase Cloud Messaging服务和Apple推送通知服务通信所需的推送凭据。 |
 
 {style="table-layout:auto"}
 
@@ -76,7 +72,7 @@ Adobe Experience Platform中标记的用户权限通过Adobe Admin Console分配
 
 单个用户的总权限取决于其在不同产品配置文件中的总成员资格。 如果用户属于多个产品配置文件，则每个配置文件的权限会相加在一起，而不是相乘。
 
-例如，产品配置文件A授予您资产1的开发权限。 产品配置文件B授予您资产2的Publish权限。 在这种情况下，您可以在资产1中进行开发，在资产2中进行Publish，但无法在资产1中发布或在资产2中进行开发，因为您未获得明确权限。
+例如，产品配置文件A授予您资产1的开发权限。 产品配置文件B授予您资产2的发布权限。 在这种情况下，您可以在资产1中开发并在资产2中发布，但不能在资产1中发布或在资产2中开发，因为您未获得明确权限。
 
 ## 权限方案
 
@@ -102,7 +98,7 @@ Adobe Experience Platform中标记的用户权限通过Adobe Admin Console分配
 
 企业公司可能已按地理区域划分其多个网站，每个地理区域由不同的团队负责。在这些团队中，开发和发布均由不同的人员负责。
 
-这类似于上面的“职责分离”，只是按地理区域进行组织。 例如，您可以为北美创建“开发”配置文件和“Publish”配置文件，并为欧洲创建单独的“开发”组和“Publish”组。
+这类似于上面的“职责分离”，只是按地理区域进行组织。 例如，您可以为北美创建“开发”配置文件和“发布”配置文件，并为欧洲创建单独的“开发”和“发布”组。
 
 ## 示例角色
 

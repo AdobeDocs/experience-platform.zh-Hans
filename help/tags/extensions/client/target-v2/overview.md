@@ -2,18 +2,14 @@
 title: Adobe Target v2扩展概述
 description: 了解Adobe Experience Platform中的Adobe Target v2标记扩展。
 exl-id: 8f491d67-86da-4e27-92bf-909cd6854be1
-source-git-commit: 5b88692117c984cd6331e7886d5bf0846309acee
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1351'
+source-wordcount: '1298'
 ht-degree: 60%
 
 ---
 
 # Adobe Target v2扩展概述
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用本参考可了解有关使用此扩展构建规则时可用的选项的信息。
 
@@ -23,9 +19,9 @@ ht-degree: 60%
 >
 >Adobe Target 扩展需要使用 At.js 2.x。
 
-如果尚未安装Adobe Target扩展，请打开您的资产，然后选择&#x200B;**[!UICONTROL 扩展>目录]**，将鼠标悬停在Target扩展上，然后选择&#x200B;**[!UICONTROL 安装]**。
+如果尚未安装 Adobe Target 扩展，请打开您的资产，接下来选择 **[!UICONTROL Extensions > Catalog]**，将鼠标悬停在 Target 扩展上，然后选择 **[!UICONTROL Install]**。
 
-要配置该扩展，请打开“扩展”选项卡，将鼠标悬停在该扩展上，然后选择&#x200B;**[!UICONTROL 配置]**。
+要配置该扩展，请打开 Extensions 选项卡，将鼠标悬停在该扩展上，然后选择 **[!UICONTROL Configure]**。
 
 ![](../../../images/targetv2config.png)
 
@@ -49,13 +45,13 @@ ht-degree: 60%
 
 #### GDPR Opt-In
 
-如果启用此选项，Adobe Target 将提供选择启用功能，以帮助支持您的同意管理策略。选择启用功能让客户可自行决定如何以及何时触发 Target 标记。有关 Adobe 选择启用的更多信息，请参阅[隐私和一般数据保护条例  (GDPR)](https://experienceleague.adobe.com/docs/target/using/implement-target/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.html?lang=zh-Hans)。
+如果启用此选项，Adobe Target 将提供选择启用功能，以帮助支持您的同意管理策略。选择启用功能让客户可自行决定如何以及何时触发 Target 标记。有关 Adobe 选择启用的更多信息，请参阅[隐私和一般数据保护条例  (GDPR)](https://experienceleague.adobe.com/docs/target/using/implement-target/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.html)。
 
 #### Timeout (ms)
 
 如果在定义的时间段内未收到来自 Target 的响应，则请求会超时并显示默认内容。在访客会话期间会继续尝试发起其他请求。默认值为 3000 毫秒，这可能与 Target 用户界面中配置的超时不同。
 
-有关超时设置的工作方式的更多信息，请参阅 [Adobe Target 帮助](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/deploy-at-js/implementing-target-without-a-tag-manager.html?lang=zh-Hans)。
+有关超时设置的工作方式的更多信息，请参阅 [Adobe Target 帮助](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/deploy-at-js/implementing-target-without-a-tag-manager.html)。
 
 ## Target 扩展操作类型
 
@@ -71,7 +67,7 @@ Target 扩展在规则的 Then 部分中提供了以下操作：
 
 ### 通过设备上决策加载Target
 
-将此操作添加到标记规则中，其中加载在规则上下文中启用[设备上决策](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/on-device-decisioning/on-device-decisioning.html?lang=zh-Hans)的Target是可行的。 此操作会将启用了设备上决策的at.js库加载到页面中。 在大多数实施中，应在您网站的每个页面上加载 Target。Adobe建议，仅在执行Target调用之后再结合使用Load Target和“设备端决策”操作。 否则，您可能会遇到 Analytics 调用延迟等问题。
+将此操作添加到标记规则中，其中加载在规则上下文中启用[设备上决策](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/on-device-decisioning/on-device-decisioning.html)的Target是可行的。 此操作会将启用了设备上决策的at.js库加载到页面中。 在大多数实施中，应在您网站的每个页面上加载 Target。Adobe建议，仅在执行Target调用之后再结合使用“Load Target与设备上决策”操作。 否则，您可能会遇到 Analytics 调用延迟等问题。
 
 >[!IMPORTANT]
 >
@@ -98,9 +94,9 @@ Target 扩展在规则的 Then 部分中提供了以下操作：
 必须指定是否启用主体隐藏以防止闪烁，以及在隐藏主体元素时使用的样式。 可以使用以下选项：
 
 * **Body Hiding：**&#x200B;您可以启用或禁用此设置。默认值为 Enabled，表示隐藏 HTML 主体。
-* **Body Hidden Style：**&#x200B;默认值为 body{opacity:0}。此值可更改为其他内容，如 body{display:none}。
+* **Body Hidden Style：**&#x200B;默认值为body{opacity:0}。 此值可更改为其他内容，如body{display:none}。
 
-有关更多信息，请参阅 [Target 联机帮助文档](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html?lang=zh-Hans)。
+有关更多信息，请参阅 [Target 联机帮助文档](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html)。
 
 ### Trigger View
 
@@ -109,7 +105,7 @@ Target 扩展在规则的 Then 部分中提供了以下操作：
 1. 指定必须触发的视图名称。
 1. 通过选中 Page 复选框，指定是否应将视图触发归因于要报告的展示。如果视图与重新渲染的组件相关，而不归因于要报告的展示，则应将 Page 复选框保留为取消选中状态。
 
-有关触发视图的更多信息，请参阅[`triggerView()`帮助文档](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/functions-overview/adobe-target-triggerview-atjs-2.html?lang=zh-Hans)。
+有关触发视图的更多信息，请参阅[`triggerView()`帮助文档](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/functions-overview/adobe-target-triggerview-atjs-2.html)。
 
 ## Adobe Target 基本部署
 

@@ -2,18 +2,14 @@
 title: 实施第三方库
 description: 了解在Adobe Experience Platform标记扩展中托管第三方库的各种方法。
 exl-id: d8eaf814-cce8-499d-9f02-b2ed3c5ee4d0
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1315'
-ht-degree: 65%
+source-wordcount: '1270'
+ht-degree: 66%
 
 ---
 
 # 实施第三方库
-
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../term-updates.md)。
 
 Adobe Experience Platform中标记扩展的主要用途之一，是让您能够轻松地在网站中实施现有的营销技术（库）。 通过使用扩展，您可以实施由第三方内容交付网络 (CDN) 提供的库，而无需手动编辑网站的 HTML。
 
@@ -84,7 +80,7 @@ firstScriptElement.parentNode.insertBefore(
 
 ## 标记实施选项
 
-以下各部分演示了在扩展中加载供应商库的不同方式，以前面展示的 Pinterest 基础代码为例。每个示例都涉及为Web扩展[&#128279;](./web/action-types.md)创建一个操作类型，该操作类型将库加载到您的网站上。
+以下各部分演示了在扩展中加载供应商库的不同方式，以前面展示的 Pinterest 基础代码为例。每个示例都涉及为Web扩展[创建一个](./web/action-types.md)操作类型，该操作类型将库加载到您的网站上。
 
 >[!NOTE]
 >
@@ -98,7 +94,7 @@ firstScriptElement.parentNode.insertBefore(
    - [基础代码加载流程](#base-code-loading-process)
       - [基础代码示例](#base-code-example)
    - [标记实施选项](#tags-implementation-options)
-      - [运行时从供应商主机加载{#vendor-host}](#load-at-runtime-from-the-vendor-host-vendor-host)
+      - [运行时从供应商主机加载](#load-at-runtime-from-the-vendor-host-vendor-host)
       - [运行时从标记库主机加载](#load-at-runtime-from-the-tag-library-host)
       - [直接嵌入库](#embed-the-library-directly)
    - [后续步骤](#next-steps)

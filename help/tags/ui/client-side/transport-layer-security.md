@@ -2,18 +2,14 @@
 title: 传输层安全性(TLS)信息
 description: 有关使用哪些TLS版本和密码的信息
 exl-id: 04948cd8-6cf0-4159-a9d3-3130b97af106
-source-git-commit: 236c5a11f40490fc7ee536358fb146027fe64545
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '201'
-ht-degree: 15%
+source-wordcount: '156'
+ht-degree: 0%
 
 ---
 
 # 传输层安全性(TLS)信息
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅[术语更新](../../term-updates.md)文档。
 
 传输层安全性(TLS)是一种加密协议，为通过Internet在应用程序之间发送的数据提供端到端的安全性。 有关TLS的更多详细信息，请阅读[TLS基础知识](https://www.internetsociety.org/deploy360/tls/basics/)文档。
 

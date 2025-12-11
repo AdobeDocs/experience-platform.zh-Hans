@@ -3,10 +3,10 @@ title: 事件转发概述
 description: 了解 Adobe Experience Platform 中的事件转发，通过此功能，无需更改您的标记实施，即可使用 Experience Platform Edge Network 执行任务。
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
-source-git-commit: 88995c933bf067fe3d077d1be8b92b076e461707
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1181'
-ht-degree: 8%
+source-wordcount: '1144'
+ht-degree: 4%
 
 ---
 
@@ -16,11 +16,7 @@ ht-degree: 8%
 >
 >事件转发是一项付费功能，包含在Adobe Real-Time Customer Data Platform连接、Prime或Ultimate产品中。
 
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
-
-Adobe Experience Platform中的事件转发允许您将收集的事件数据发送到目标以进行服务器端处理。 事件转发通过使用Adobe Experience Platform Edge Network执行通常在客户端上完成的任务，减轻了网页和应用程序的负担。 通过与标记类似的方式实施，事件转发规则可以转换数据并将数据发送到新目标，但不会从Web浏览器等客户端应用程序发送此数据，而是从Adobe的服务器发送。
+Adobe Experience Platform(以前称为Adobe Experience Platform Launch服务器端)中的事件转发允许您将收集的事件数据发送到目标以进行服务器端处理。 事件转发通过使用Adobe Experience Platform Edge Network执行通常在客户端上完成的任务，减轻了网页和应用程序的负担。 通过与标记类似的方式实施，事件转发规则可以转换数据并将数据发送到新目标，但不会从Web浏览器等客户端应用程序发送此数据，而是从Adobe的服务器发送。
 
 本文档全面概述了Experience Platform中的事件转发。
 
@@ -30,7 +26,7 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 >
 >有关事件转发如何适应Experience Platform中的数据收集生态系统的信息，请参阅[数据收集概述](/help/collection/home.md)。
 
-与Adobe Experience Platform [Web SDK](/help/collection/js/js-overview.md)和[Mobile SDK](https://experienceleague.adobe.com/docs/platform-learn/data-collection/mobile-sdk/overview.html?lang=zh-Hans)结合使用的事件转发具有以下优点：
+与Adobe Experience Platform [Web SDK](/help/collection/js/js-overview.md)和[Mobile SDK](https://experienceleague.adobe.com/docs/platform-learn/data-collection/mobile-sdk/overview.html)结合使用的事件转发具有以下优点：
 
 **性能**：
 

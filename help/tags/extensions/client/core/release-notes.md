@@ -2,18 +2,14 @@
 title: 核心扩展的发行说明
 description: Adobe Experience Platform中的核心扩展的最新发行说明。
 exl-id: a049b2d5-7a00-435d-bcc7-112658a53a1e
-source-git-commit: 1dab2b2778844ac08c1fbc013405dc81fa7dc0b5
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1723'
-ht-degree: 46%
+source-wordcount: '1678'
+ht-degree: 45%
 
 ---
 
 # 核心扩展发行说明
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 ## 2025年9月25日
 
@@ -46,7 +42,7 @@ v3.4.1
    * Keydown
    * 键控
 * 添加了针对以下委托根据多个值（“添加其他”选项）进行测试的功能：
-   * 活动
+   * 事件
       * 更改
    * 条件
       * Cookie

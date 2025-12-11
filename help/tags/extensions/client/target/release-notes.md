@@ -2,18 +2,14 @@
 title: Adobe Target扩展的发行说明
 description: Adobe Experience Platform中的Adobe Target标记扩展的最新发行说明。
 exl-id: ba29f614-c3cd-4e0b-b043-2b1c17567def
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '578'
-ht-degree: 70%
+source-wordcount: '533'
+ht-degree: 76%
 
 ---
 
 # Adobe Target发行说明
-
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 ## 2021 年 9 月 16 日
 
@@ -135,7 +131,7 @@ ht-degree: 70%
 
 #### **功能**
 
-* 更新了 Target 扩展以使用 at.js v1.3.1。现在，将 Target 与 Analytics 一起部署时，我们会先等到所有 Target 调用均已解析（包括重定向选件），然后再触发 Analytics，从而解决之前存在的争用情况。
+* 更新了 Target 扩展以使用 at.js v1.3.1。现在，将 Target 与 Analytics 一起部署时，我们会先等到所有 Target 调用均已解析（包括重定向产品建议），然后再触发 Analytics，从而解决之前存在的争用情况。
 
 ## 2018 年 2 月 22 日
 
@@ -157,4 +153,4 @@ ht-degree: 70%
 #### **功能**
 
 * 更新了扩展配置屏幕中的视图
-* 已将 at.js 更新到版本 1.2.3（添加了对 JSON 选件的支持）
+* 已将 at.js 更新到版本 1.2.3（添加了对 JSON 产品建议的支持）

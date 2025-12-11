@@ -2,18 +2,14 @@
 title: Adobe Experience Platform演示扩展概述
 description: 了解Adobe Experience Platform中的Adobe Experience Platform Demo扩展。
 exl-id: 4bafa132-0d21-4140-ab46-f09cc20bce6f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1071'
-ht-degree: 74%
+source-wordcount: '1009'
+ht-degree: 81%
 
 ---
 
 # Adobe Experience Platform 演示扩展
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 >[!NOTE]
 >
@@ -37,21 +33,21 @@ ht-degree: 74%
 
 此部分提供有关配置 Adobe Experience Platform 扩展时可用的选项的参考。
 
-如果尚未安装Adobe Experience Platform扩展，请打开您的资产，然后选择&#x200B;**[!UICONTROL 扩展>目录]**，将鼠标悬停在Adobe Experience Platform扩展上，然后选择&#x200B;**[!UICONTROL 安装]**。
+如果尚未安装 Adobe Experience Platform 扩展，请打开您的资产，选择 **[!UICONTROL Extensions > Catalog]**，将鼠标悬停在 Adobe Experience Platform 扩展上，然后选择 **[!UICONTROL Install]**。
 
-要配置该扩展，请打开[!UICONTROL 扩展]选项卡，将鼠标悬停在该扩展上，然后选择&#x200B;**[!UICONTROL 配置]**。
+要配置该扩展，请打开 [!UICONTROL Extensions] 选项卡，将鼠标悬停在该扩展上，然后选择 **[!UICONTROL Configure]**。
 
 ![](../../../images/adobe-experience-platform-extension-configuration.png)
 
 ### 流连接
 
-要开始将数据流式传输到 Adobe Experience Platform，第一步便是选择一个流连接。您可以从流连接组合框中选择一个。流连接为必填字段。如果尚未创建任何流连接，则可以通过选择&#x200B;**[!UICONTROL 创建流连接]**&#x200B;按钮来创建一个。
+要开始将数据流式传输到 Adobe Experience Platform，第一步便是选择一个流连接。您可以从流连接组合框中选择一个。流连接为必填字段。如果尚未创建任何流连接，则可以通过选择 **[!UICONTROL Create a streaming connection]** 按钮来创建一个。
 
-如果选择&#x200B;**[!UICONTROL 创建流连接]**，将显示一个模式窗口。
+如果选择 **[!UICONTROL Create a streaming connection]**，将会显示一个模式窗口。
 
 ![](../../../images/adobe-experienc-platform-create-streaming-connection.png)
 
-该模式窗口中包含预先填充了值的字段，您可以根据需要更改这些值。如果您计划创建多个流连接，则应当注意&#x200B;**[!UICONTROL 数据Source]**&#x200B;字段必须是唯一的。 尝试使用已用于其他连接的&#x200B;**[!UICONTROL 数据Source]**&#x200B;创建另一个流连接时，操作将失败。
+该模式窗口中包含预先填充了值的字段，您可以根据需要更改这些值。如果您计划创建多个流连接，则应当注意&#x200B;**[!UICONTROL Data Source]**&#x200B;字段必须是唯一的。 因此，在尝试使用已用于其他连接的 **[!UICONTROL Data Source]** 来创建另一个流连接时，操作将会失败。
 
 选择流端点后，您将需要提供流端点 URL 和源。
 

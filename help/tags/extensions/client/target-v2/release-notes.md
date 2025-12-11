@@ -2,18 +2,14 @@
 title: Adobe Target v2扩展的发行说明
 description: Adobe Experience Platform中的Adobe Target v2标记扩展的最新发行说明。
 exl-id: c1a04e62-026d-4b16-aa70-bc6d5dbe6b2d
-source-git-commit: a062305e3ed0eb4d127f93ff37efe15e41eaa601
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '834'
-ht-degree: 12%
+source-wordcount: '788'
+ht-degree: 15%
 
 ---
 
 # Adobe Target v2扩展发行说明
-
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 ## v0.20.3（2024年1月23日）
 
@@ -34,7 +30,7 @@ ht-degree: 12%
 
 - 更新以支持`at.js` 2.11.0。
 - 添加了对在targetGlobalSettings中设置自定义Adobe Experience Platform sandboxId和sandboxName的支持，这些设置将传递到getOffer/getOffers调用上的交付API。
-- 选择器中的链接：eq()的影子DOM修复。
+- 选择器中链接:eq()的影子DOM修复。
 
 ## v0.19.3（2023年9月18日）
 
@@ -71,7 +67,7 @@ ht-degree: 12%
 
 ## v0.17.0（2022年1月7日）
 
-- 更新以支持`at.js` v2.8.0，它现在正在收集功能使用情况和性能遥测数据。  不收集个人数据。 要选择退出此功能，请在`targetGlobalSettings`中将`telemetryEnabled`设置为`false`。
+- 更新以支持`at.js` v2.8.0，它现在正在收集功能使用情况和性能遥测数据。  不收集个人数据。要选择退出此功能，请在`telemetryEnabled`中将`false`设置为`targetGlobalSettings`。
 
 ## v0.16.0（2021年10月28日）
 
@@ -113,13 +109,13 @@ ht-degree: 12%
 
 ## v0.13.7（2021年3月25日）
 
-- 修复了mbox请求中包含`targetPageParams`的问题。 `targetPageParams`应仅包含在`pageLoad`请求中。
+- 修复了 mbox 请求中包含的 `targetPageParams` 存在的问题。`targetPageParams`应仅包含在`pageLoad`请求中。
 - 修复了标记扩展中文档和窗口全局对象的问题，方法是将全局对象依赖项替换为对它们的直接引用。
 - 已将`at.js`更新至2.4.1。
 
 ## v0.13.6（2021年1月25日）
 
-- 添加了对统一配置文件/平台 ID 交付 API customerId 的支持
+- 添加了对统一轮廓/平台 ID 交付 API customerId 的支持
 - 修复了无效样式标记注入的问题
 - 已将at.s更新至2.4.0
 - 解决了未定义参数可能导致投放请求错误的问题
@@ -150,7 +146,7 @@ ht-degree: 12%
 ## v0.12.0（2019年10月10日）
 
 - 已将`at.js`更新至v2.2。
-- 改进了Experience CloudID库(ECID) v4.4和`at.js` 2.2之间集成的性能。
+- 改进了Experience Cloud ID库(ECID) v4.4和`at.js` 2.2之间集成的性能。
 - 以前，在`at.js`获取体验之前，ECID库会进行两次阻止调用。 现已减少为一次调用，显著提高了性能。
 
 >[!NOTE]

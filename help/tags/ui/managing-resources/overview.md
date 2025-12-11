@@ -2,18 +2,14 @@
 title: 管理资源
 description: 了解如何在Adobe Experience Platform中管理各种资源，包括扩展、数据元素和规则。
 exl-id: 3ec0078e-76a6-42ac-94cf-df9572b37b52
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '183'
-ht-degree: 55%
+source-wordcount: '138'
+ht-degree: 73%
 
 ---
 
 # 管理资源
-
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 在Experience Platform中的标记上下文中，“资源”一词是指以下任意项目：
 

@@ -2,18 +2,14 @@
 title: 重新发布库
 description: 了解如何在Adobe Experience Platform中重新发布之前的标记库。
 exl-id: 026b01f2-a93d-4e8a-9ed2-47c4f011e70f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '651'
-ht-degree: 56%
+source-wordcount: '604'
+ht-degree: 53%
 
 ---
 
 # 重新发布库
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 有关Web属性的五个最新库已发布到您的生产环境，可供您以后检索。 当您在生产库中发现错误并需要立即回退到已知的正常状态时，这项功能会很有帮助。
 
@@ -57,7 +53,7 @@ ht-degree: 56%
 
 1. 在“Published”（已发布）列中查找要重新发布的库。
 1. 选择库卡片右上角的省略号 (`...`)。
-1. 选择&#x200B;**[!UICONTROL 重新发布]**。
+1. 选择 **[!UICONTROL Republish]**。
 
 ## 下载
 
@@ -71,4 +67,4 @@ ht-degree: 56%
 
 1. 在“Published”（已发布）列中查找要下载的库。
 1. 选择库卡片右上角的省略号 (`...`)。
-1. 选择&#x200B;**[!UICONTROL 下载]**。
+1. 选择 **[!UICONTROL Download]**。

@@ -2,18 +2,14 @@
 title: Edge扩展模块中的上下文
 description: 了解上下文对象及其在与Edge属性的标记扩展中的库模块交互中发挥的作用。
 exl-id: 04e4e369-687e-4b46-9d24-18a97a218555
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '729'
-ht-degree: 73%
+source-wordcount: '681'
+ht-degree: 82%
 
 ---
 
 # Edge 扩展模块中的上下文
-
->[!NOTE]
->
-> Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 Edge 扩展中的所有库模块在执行时，都会获得一个 `context` 对象。本文档介绍了 `context` 对象提供的属性，以及些属性在库模块中发挥的作用。
 
@@ -42,7 +38,7 @@ logger.log(context.arc.event);
 logger.log(context.arc.request)
 ```
 
-`request` 对象有两个顶级属性：`body` 和 `head`。`body`属性包含体验数据模型(XDM)信息，当您导航到&#x200B;**[!UICONTROL Launch]**&#x200B;并选择&#x200B;**[!UICONTROL Edge跟踪]**&#x200B;选项卡时，可在Adobe Experience Platform Debugger中检查该属性。
+`request` 对象有两个顶级属性：`body` 和 `head`。`body` 属性包含体验数据模型 (XDM) 信息，当您导航到 **[!UICONTROL Launch]** 并选择 **[!UICONTROL Edge Trace]** 选项卡时，可在 Adobe Experience Platform Debugger 中检查该属性。
 
 ### [!DNL ruleStash] {#rulestash}
 
@@ -104,7 +100,7 @@ module.exports = (context) => {
 
 ### [!DNL logger]
 
-`logger`实用程序允许您记录使用[Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob)时调试会话期间显示的消息。
+`logger`实用程序允许您记录使用[Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob)调试会话期间显示的消息。
 
 ```js
 context.utils.logger.error('Error!');

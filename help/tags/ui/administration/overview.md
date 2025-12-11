@@ -2,18 +2,14 @@
 title: 管理概述
 description: 了解有关Adobe Experience Platform Launch管理员的重要信息。
 exl-id: 56ae72fb-5599-4794-a7e3-71ea9a40f9e4
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '109'
-ht-degree: 1%
+source-wordcount: '64'
+ht-degree: 3%
 
 ---
 
 # 管理概述
-
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 以下文档包含对Adobe Experience Platform中的标记管理员有用的信息：
 

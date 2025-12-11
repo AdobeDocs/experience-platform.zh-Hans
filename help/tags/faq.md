@@ -2,24 +2,20 @@
 title: 标记疑难解答指南
 description: 获取有关Adobe Experience Platform中的标记的常见问题解答。
 exl-id: c06b8e25-4d79-4a11-94da-94ac096b5e33
-source-git-commit: 9701a14dc2915e0d6dcc6051c15d5113f305487f
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1032'
-ht-degree: 23%
+source-wordcount: '987'
+ht-degree: 25%
 
 ---
 
 # 标记疑难解答指南
 
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](./term-updates.md)。
-
 本文档提供了有关Adobe Experience Platform中的标记的常见问题解答。
 
 ## 什么是标记？
 
-Tags是Adobe提供的新一代标签管理功能，内置于Adobe Experience Platform中。 标记使客户端能够：
+标记是Adobe提供的下一代标记管理功能，内置于Adobe Experience Platform中。 标记使客户端能够：
 
 - 使用称为“扩展”**&#x200B;的集成部署客户端 Web 产品
 - 以动态方式交付配置来更新本机移动设备应用程序中的客户端实现
@@ -33,7 +29,7 @@ Tags是Adobe提供的新一代标签管理功能，内置于Adobe Experience Pla
 
 ## 我听说，现在已经推出了插件。是什么插件？
 
-标记内置于Adobe Experience Platform中并且具有完全可扩展性。 客户、Adobe合作伙伴、代理以及营销或广告技术供应商可以构建标记扩展，该扩展可添加新功能或修改现有功能。 该系统允许合作伙伴和客户自行构建、管理和更新集成。这只是Adobe开放Adobe Experience Platform的一种方式，以便客户和合作伙伴能够在其上构建产品和业务。 这样可以帮助所有人更轻松地将 Adobe 技术与由其他供应商提供的营销和广告技术相连接。
+标记内置于Adobe Experience Platform中并且具有完全可扩展性。 客户、Adobe合作伙伴、代理以及营销或广告技术供应商可以构建标记扩展，该扩展可添加新功能或修改现有功能。 该系统允许合作伙伴和客户自行构建、管理和更新集成。这只是Adobe开放Adobe Experience Platform，以便客户和合作伙伴能够在其上构建产品和业务的一种方式。 这样可以帮助所有人更轻松地将 Adobe 技术与由其他供应商提供的营销和广告技术相连接。
 
 ## 所有第三方扩展都将立即可用吗？
 
@@ -93,4 +89,4 @@ Tags已经开放了其虚拟自助门户，扩展开发人员可以利用这个�
 
 ## 如果我遇到其他问题，该怎么办？
 
-如果您还有其他问题，可以在Experience League的[Adobe Experience Platform数据收集社区页面](https://adobe.com/go/launchme)上提问，或加入适用于开发人员和技术实施主题的[社区Slack工作区](https://docs.google.com/forms/d/e/1FAIpQLScq1m63YkDrRpvPLhzUqtfoleWiDDTTXZsSivIXRfFdlSMzpQ/viewform)。
+如果您还有其他问题，可以在Experience League上的[Adobe Experience Platform数据收集社区页面](https://adobe.com/go/launchme)上提问，或加入适用于开发人员和技术实施主题的[社区Slack工作区](https://docs.google.com/forms/d/e/1FAIpQLScq1m63YkDrRpvPLhzUqtfoleWiDDTTXZsSivIXRfFdlSMzpQ/viewform)。

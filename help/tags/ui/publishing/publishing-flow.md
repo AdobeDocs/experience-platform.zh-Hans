@@ -2,10 +2,10 @@
 title: 发布流
 description: 了解在Adobe Experience Platform中创建库、测试内部版本以及批准将它们用于生产环境的流程。
 exl-id: 4885f60b-6401-4ec7-aa1a-29c135087847
-source-git-commit: 2d71eafb00098d958c8cff9350caa27bd3f0260d
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1407'
-ht-degree: 66%
+source-wordcount: '1362'
+ht-degree: 65%
 
 ---
 
@@ -15,10 +15,6 @@ ht-degree: 66%
 >id="platform_tags_publishing_flow"
 >title="发布流"
 >abstract="了解发布流量所需的用户权限级别，包括开发、批准和发布权限。"
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 Adobe Experience Platform中的标记发布流是指创建库、测试内部版本以及批准将它们用于生产环境的过程。
 

@@ -2,18 +2,14 @@
 title: Adobe-Managed主机概述
 description: 了解用于在Adobe Experience Platform中部署标记库内部版本的默认托管选项。
 exl-id: 9042c313-b0d3-4f6e-963d-0051d760fd16
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1181'
-ht-degree: 55%
+source-wordcount: '1129'
+ht-degree: 56%
 
 ---
 
 # Adobe-managed 主机概述
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 Adobe-managed主机是您在Adobe Experience Platform中部署标记库内部版本时默认的主机设置。 当您通过数据收集用户界面创建新资产时，您会获得一个默认的Adobe-managed主机。
 
@@ -96,8 +92,8 @@ CDN的主要用途是智能地将内容分发到地理位置更接近于最终�
 >
 >如果默认的 Adobe-managed 主机未从所有环境中分配，则可以删除该主机。如果要在执行此操作后切换回 Adobe-managed 主机，可通过以下步骤创建新主机：
 >
->1. 选择属性上的&#x200B;**[!UICONTROL 主机]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 添加主机]**。
->1. 提供主机的名称，选择&#x200B;**[!UICONTROL 由Adobe管理]**&#x200B;作为主机类型，然后选择&#x200B;**[!UICONTROL 保存]**。
+>1. 选择属性上的 **[!UICONTROL Hosts]** 选项卡，然后选择 **[!UICONTROL Add Host]**。
+>1. 为主机命名，选择 **[!UICONTROL Managed by Adobe]** 作为主机类型，然后选择 **[!UICONTROL Save]**。
 >
 >接下来，您可以根据需要将环境重新分配给 Adobe-managed 主机。
 

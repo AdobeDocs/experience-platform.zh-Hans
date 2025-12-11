@@ -2,18 +2,14 @@
 title: 内部版本
 description: 了解内部版本的概念以及它们在Adobe Experience Platform中的运行方式。
 exl-id: af899282-aa2d-4395-8dbd-18d91be3f041
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '791'
-ht-degree: 54%
+source-wordcount: '746'
+ht-degree: 51%
 
 ---
 
 # 内部版本
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 内部版本是一组文件，其中包含在客户端设备上运行的所有代码。
 

@@ -2,24 +2,20 @@
 title: Adobe Analytics 扩展的共享模块
 description: 了解由Adobe Experience Platform中的Adobe Analytics标记扩展提供的共享库模块。
 exl-id: f1d7cb2b-0058-46f9-983c-079079e06057
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '425'
-ht-degree: 70%
+source-wordcount: '380'
+ht-degree: 78%
 
 ---
 
 # Adobe Analytics 扩展的共享模块
 
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
-
 [Adobe Analytics 扩展](./overview.md)提供两个不同的[共享模块](../../../extension-dev/web/shared.md)，您可以将这两个模块集成到体验应用程序中。以下各部分将对这些模块进行介绍。
 
 ## [!DNL get-tracker]
 
-Adobe Analytics 在发送任何信标之前，必须先初始化跟踪器对象。初始化过程首先需加载 [AppMeasurement](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html?lang=zh-Hans)，然后创建跟踪器对象。
+Adobe Analytics 在发送任何信标之前，必须先初始化跟踪器对象。初始化过程首先需加载 [AppMeasurement](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html)，然后创建跟踪器对象。
 
 在使用 `get-tracker` 共享模块完全初始化跟踪器对象后，您才有权访问该对象，如下所示：
 

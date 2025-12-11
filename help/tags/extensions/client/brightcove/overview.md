@@ -2,18 +2,14 @@
 title: BrightCove视频跟踪扩展概述
 description: 了解Adobe Experience Platform中的BrightCove视频跟踪标记扩展。
 exl-id: d27eff21-2abf-4495-8382-08cab32742e0
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '898'
-ht-degree: 35%
+source-wordcount: '853'
+ht-degree: 36%
 
 ---
 
 # BrightCove视频跟踪扩展概述
-
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 ## 先决条件
 
@@ -23,7 +19,7 @@ Adobe Experience Platform中的每个标记属性都需要在“扩展”屏幕�
 * Experience Cloud 访客 ID 服务
 * 已安装的核心扩展
 
-在要呈现视频播放器的每个网页的HTML中使用“页面内嵌入代码（高级）”代码片段。 可以在[Brightcove文档](https://studio.support.brightcove.com/publish/choosing-correct-embed-code.html#inpage)中找到“页面内嵌入代码（高级）”HTML片段。 以下链接提供了有关[如何为预览和已发布的视频播放器生成嵌入代码的详细信息](https://studio.support.brightcove.com/players/generating-player-embed-code.html)。
+在要呈现视频播放器的每个网页的HTML中使用“页面内嵌入代码（高级）”代码片段。 可以在[Brightcove文档](https://studio.support.brightcove.com/publish/choosing-correct-embed-code.html#inpage)中找到“页面内嵌入代码（高级）”HTML代码片段。 以下链接提供了有关[如何为预览和已发布的视频播放器生成嵌入代码的详细信息](https://studio.support.brightcove.com/players/generating-player-embed-code.html)。
 
 此扩展版本1.1.0支持在单个网页上嵌入多个BrightCove视频。 如果高级嵌入标记中有多个`id`属性，请确保每个属性都具有唯一值。 例如，`player1`、`player2`等。
 
@@ -100,7 +96,7 @@ Adobe Experience Platform中的每个标记属性都需要在“扩展”屏幕�
 
 >[!TIP]
 >
->对于可能不想为每个视频元素预配多个eVar或prop的用户，数据元素值将作为替代方法连接。 接下来，使用分类规则生成器工具将它们解析为分类报表。 有关详细信息，请参阅[分类规则生成器工具](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html?lang=zh-Hans)文档。 最后，将它们用作Analysis Workspace中的区段。
+>对于可能不想为每个视频元素预配多个eVar或prop的用户，数据元素值将作为替代方法连接。 接下来，使用分类规则生成器工具将它们解析为分类报表。 有关详细信息，请参阅[分类规则生成器工具](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html)文档。 最后，将它们用作Analysis Workspace中的区段。
 >
 >为此，请创建一个名称类似于“Video MetaData”的新数据元素，然后对其进行编程以提取所有视频数据元素（上面所列），并将它们连接在一起。
 

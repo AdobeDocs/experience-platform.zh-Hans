@@ -2,18 +2,14 @@
 title: Adobe Audience Manager扩展概述
 description: 了解 Adobe Experience Platform 中的 Adobe Audience Manager 标记扩展。
 exl-id: d345e145-fdb9-4ca3-88c2-9c2a247ea59a
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '440'
-ht-degree: 87%
+source-wordcount: '395'
+ht-degree: 85%
 
 ---
 
 # Adobe Audience Manager扩展概述
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 通过Audience Manager标记扩展，您可以将Audience Manager使用的DIL代码与Adobe Experience Platform中的资产相集成。
 
@@ -51,7 +47,7 @@ ht-degree: 87%
 
 #### Use DIL Site Catalyst Module
 
-[SiteCatalyst 模块](https://experiencecloud.adobe.com/resources/help/zh_CN/aam/r_dil_sc_init.html)可与 DIL 配合使用，以将 Analytics 标记元素发送至 Audience Manager。
+[SiteCatalyst 模块](https://experiencecloud.adobe.com/resources/help/en_US/aam/r_dil_sc_init.html)可与 DIL 配合使用，以将 Analytics 标记元素发送至 Audience Manager。
 
 使用代码编辑器配置 siteCatalyst.init 文件。
 
@@ -59,15 +55,15 @@ ht-degree: 87%
 
 #### Use DIL Google Analytics Module
 
-启用 [Google Analytics 模块](https://experiencecloud.adobe.com/resources/help/zh_CN/aam/dil-google-universal-analytics.html)。
+启用 [Google Analytics 模块](https://experiencecloud.adobe.com/resources/help/en_US/aam/dil-google-universal-analytics.html)。
 
 #### DIL.create Initialization Properties
 
-添加 [DIL.create](https://experiencecloud.adobe.com/resources/help/zh_CN/aam/r_dil_create.html) 使用的初始化属性，以及 [visitorService 对象](https://experiencecloud.adobe.com/resources/help/zh_CN/aam/r_dil_visitor_service.html)的命名空间子属性。在代码编辑器中，代码注释包含两个示例用例。
+添加 [DIL.create](https://experiencecloud.adobe.com/resources/help/en_US/aam/r_dil_create.html) 使用的初始化属性，以及 [visitorService 对象](https://experiencecloud.adobe.com/resources/help/en_US/aam/r_dil_visitor_service.html)的命名空间子属性。在代码编辑器中，代码注释包含两个示例用例。
 
 选择 **[!UICONTROL Choose an Item]** 可添加其他属性。
 
-将鼠标悬停在“i”图标上，可了解每个属性的用途。您可以在 [Audience Manager DIL 文档](https://experiencecloud.adobe.com/resources/help/zh_CN/aam/r_dil_create.html)中找到有关这些属性的更多信息。
+将鼠标悬停在“i”图标上，可了解每个属性的用途。您可以在 [Audience Manager DIL 文档](https://experiencecloud.adobe.com/resources/help/en_US/aam/r_dil_create.html)中找到有关这些属性的更多信息。
 
 配置完该扩展后，选择 **[!UICONTROL Save]**。
 

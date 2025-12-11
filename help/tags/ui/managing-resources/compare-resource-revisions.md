@@ -2,28 +2,24 @@
 title: 比较资源修订版本
 description: 了解如何在Adobe Experience Platform中查看标记资源的修订历史记录。
 exl-id: 95b22641-9f6f-4aac-a727-d99098f040a4
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '912'
-ht-degree: 83%
+source-wordcount: '859'
+ht-degree: 97%
 
 ---
 
 # 比较资源修订版本
 
->[!NOTE]
->
->Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。 有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
-
 比较资源修订版本可查看单个资源的历史记录。您可以将资源的当前状态与旧版本进行比较，也可以将资源的当前已发布版本与已保存的一组最新更改进行比较。
 
 ## 启动比较
 
-对于所有资源类型，启动比较的过程都是相同的。打开单个资源的编辑视图，然后找到&#x200B;**[!UICONTROL 保存]**&#x200B;按钮旁边的三个圆点图标，以查看该资源的可用操作。  从列表中选择&#x200B;**[!UICONTROL 比较修订版本]**。
+对于所有资源类型，启动比较的过程都是相同的。打开单个资源的编辑视图，然后找到 **[!UICONTROL Save]** 按钮旁边的三个圆点图标，即可查看该资源的可用操作。从列表中选择 **[!UICONTROL Compare Revisions]**。
 
 ![启动扩展比较](../../images/compare-initiate-extension.png)
 
-对于扩展，在查看已安装的扩展列表时，选择&#x200B;**[!UICONTROL Configure]**&#x200B;按钮即可访问详细信息视图。  对于数据元素和规则，从列表中选择一个即可。
+对于扩展，您可以在查看已安装的扩展列表时，通过选择 **[!UICONTROL Configure]** 按钮来访问详细信息视图。对于数据元素和规则，从列表中选择一个即可。
 
 ## 使用比较视图
 
@@ -33,7 +29,7 @@ ht-degree: 83%
 
 ![比较 Analytics 扩展的版本](../../images/compare-interpret-extension.png)
 
-选择&#x200B;**[!UICONTROL 使用这些更改]**&#x200B;将所选修订版本（左）的设置复制到最新版本（右）。  此操作会将旧版本的设置复制到最新的未保存更改中。如果希望保留这些更改，请确保在退出比较视图后&#x200B;**[!UICONTROL 保存]**。
+选择 **[!UICONTROL Use These Changes]** 可将所选修订版本（左）的设置复制到最新版本（右）中。此操作会将旧版本的设置复制到最新的未保存更改中。如果您希望保留这些更改，请确保在退出比较视图后单击 **[!UICONTROL Save]**。
 
 >[!TIP]
 >单个资源可以同时具有属性和设置。这些设置会存储为 JSON 块。JSON 块是一种存储数据的结构化方式，但灵活性较高，扩展开发人员可以放置他们所需的任何内容，以便能够利用扩展实现所需的任何操作。

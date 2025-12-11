@@ -2,18 +2,14 @@
 title: 标记扩展参考
 description: 在Adobe Experience Platform中查找有关标记扩展的文档。
 exl-id: 226948f4-7738-4cfd-ad22-5934820b1399
-source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '472'
-ht-degree: 12%
+source-wordcount: '427'
+ht-degree: 3%
 
 ---
 
 # 标记扩展参考
-
->[!NOTE]
->
->经过品牌重塑，Adobe Experience Platform Launch 已变为 Adobe Experience Platform 中的一套数据收集技术。因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 以下是客户端标记扩展的文档列表。 有关可用服务器端扩展的列表，请改为参阅[事件转发扩展引用](../server/overview.md)。
 
