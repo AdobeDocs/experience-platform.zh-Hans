@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 数据管理概述
 description: Adobe Experience Platform数据管理允许您管理客户数据，并确保遵守适用于数据使用的法规、限制和策略。 它在 Experience Platform 的各个层面中发挥着关键作用，包括编目、数据谱系、数据使用标签、数据使用策略以及控制营销活动数据的使用。
 exl-id: 00ca6bc2-1c58-4ea2-8bb5-30fd3fa5944a
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 9b1630a4876c0bcd7331f8da264e4f19ce00b59a
 workflow-type: tm+mt
-source-wordcount: '1619'
-ht-degree: 9%
+source-wordcount: '1656'
+ht-degree: 8%
 
 ---
 
@@ -132,8 +132,12 @@ Adobe Experience Platform的核心功能之一是将来自多个企业系统的�
 
 以下视频旨在支持您了解数据管理框架。
 
->[!VIDEO](https://video.tv.adobe.com/v/32134?captions=chi_hans&quality=12&enable10seconds=on&speedcontrol=on)
+>[!IMPORTANT]
+>
+>视频引用将标签应用于单个数据集字段。 此工作流已弃用。 [标签现在必须应用于架构字段级别](./e2e.md#labels)。 视频中的概念仍保持准确，但标记工作流程已更改。
+
+>[!VIDEO](https://video.tv.adobe.com/v/29708?quality=12&enable10seconds=on&speedcontrol=on)
 
 以下视频提供了有关如何将数据使用标签应用于您的架构或Experience Platform中的整个数据集的指南。
 
->[!VIDEO](https://video.tv.adobe.com/v/3422787/?captions=chi_hans&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/29709/?learn=on)
