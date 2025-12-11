@@ -96,7 +96,7 @@ Adobe Experience Platform中的每个标记属性都需要在“扩展”屏幕�
 
 >[!TIP]
 >
->对于可能不想为每个视频元素预配多个eVar或prop的用户，数据元素值将作为替代方法连接。 接下来，使用分类规则生成器工具将它们解析为分类报表。 有关详细信息，请参阅[分类规则生成器工具](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html)文档。 最后，将它们用作Analysis Workspace中的区段。
+>对于可能不想为每个视频元素预配多个eVar或prop的用户，数据元素值将作为替代方法连接。 接下来，使用分类规则生成器工具将它们解析为分类报表。 有关详细信息，请参阅[分类规则生成器工具](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html?lang=zh-Hans)文档。 最后，将它们用作Analysis Workspace中的区段。
 >
 >为此，请创建一个名称类似于“Video MetaData”的新数据元素，然后对其进行编程以提取所有视频数据元素（上面所列），并将它们连接在一起。
 

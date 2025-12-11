@@ -11,7 +11,7 @@ ht-degree: 67%
 
 # Adobe Experience Cloud Identity Service扩展发行说明
 
-本文档介绍Adobe Experience Cloud Identity服务标签扩展的发行说明。 有关Experience Cloud Identity Service本身的发行说明，请参阅[Identity Service文档](https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html)。
+本文档介绍Adobe Experience Cloud Identity服务标签扩展的发行说明。 有关Experience Cloud Identity Service本身的发行说明，请参阅[Identity Service文档](https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html?lang=zh-Hans)。
 
 ## 2022 年 10 月 17 日
 

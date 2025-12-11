@@ -23,7 +23,7 @@ ht-degree: 94%
 Category;Product;Quantity;Price;eventN=X|eventN2=X2;eVarN=merch_category|eVarN2=merch_category2
 ```
 
-有关完整文档，请访问[产品](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/products.html)。
+有关完整文档，请访问[产品](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/products.html?lang=zh-Hans)。
 
 ## 扩展说明
 

@@ -132,4 +132,4 @@ Experience Platform中的标记之所以真正独特，是因为这些扩展可�
 
 * **[数据收集社区](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-data/ct-p/adobe-launch-community)**：提问或回答他人提出的问题、发表自己的意见、对他人的意见进行投票。 使用您的Adobe ID登录。
 * **[开发人员文档](../api/overview.md)**：加入标记开发人员社区，构建扩展或使用标记API
-* **[教程概述](https://experienceleague.adobe.com/docs/core-services-learn/tutorials/overview.html)**：这些文档将向您介绍Android应用程序中的标记概念，包括事件转发和Mobile SDK。
+* **[教程概述](https://experienceleague.adobe.com/docs/core-services-learn/tutorials/overview.html?lang=zh-Hans)**：这些文档将向您介绍Android应用程序中的标记概念，包括事件转发和Mobile SDK。

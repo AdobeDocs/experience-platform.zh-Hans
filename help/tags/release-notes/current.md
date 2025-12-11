@@ -17,11 +17,11 @@ ht-degree: 87%
 
 ## 2023 年 4 月 26 日
 
-* **OAuth JWT 机密**：[OAuth JWT 机密](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html)客户可以使用 Adobe 和 Google 服务令牌在事件转发中支持服务器到服务器的交互。
+* **OAuth JWT 机密**：[OAuth JWT 机密](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html?lang=zh-Hans)客户可以使用 Adobe 和 Google 服务令牌在事件转发中支持服务器到服务器的交互。
 
 以下新扩展已发布：
 
-* **[!DNL Pinterest Conversions API]扩展**：通过使用 [[!DNL Pinterest Conversions API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/pinterest/overview.html) 事件转发扩展功能，可利用在 Adobe Experience Platform Edge Network 中捕获的数据，并使用 [!DNL Pinterest Conversions API] 以服务器端事件的形式将数据发送到 [!DNL Pinterest]。
+* **[!DNL Pinterest Conversions API]扩展**：通过使用 [[!DNL Pinterest Conversions API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/pinterest/overview.html?lang=zh-Hans) 事件转发扩展功能，可利用在 Adobe Experience Platform Edge Network 中捕获的数据，并使用 [!DNL Pinterest Conversions API] 以服务器端事件的形式将数据发送到 [!DNL Pinterest]。
 
 ## 2023 年 3 月 29 日
 
@@ -29,14 +29,14 @@ ht-degree: 87%
 
 从数据收集主屏幕访问“开始使用”下新的快速启动工作流！以下工作流现在以公开 Beta 版的形式提供给客户。
 
-* **[Meta Conversions API](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/meta/overview.html#quick-start)**：事件转发客户可以快速收集事件数据并将其从服务器端转发到 Meta，只需几个简单的步骤即可实现广告转换。
+* **[Meta Conversions API](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/meta/overview.html?lang=zh-Hans#quick-start)**：事件转发客户可以快速收集事件数据并将其从服务器端转发到 Meta，只需几个简单的步骤即可实现广告转换。
 * **[移动 SDK](https://developer.adobe.com/client-sdks/documentation/)**：客户只需几个简单的步骤即可快速实施移动 SDK 并验证基本的移动事件。
 
 已发布新扩展：
 
-* **[!DNL Braze]事件转发扩展**：[[!DNL Braze Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) 事件转发扩展允许您利用 Adobe Experience Platform Edge Network 中捕获的数据，并使用 [!DNL Braze] User Track API 以服务器端事件的形式将其发送到 [!DNL Braze]。
-* **[Epsilon 事件 API] 事件转发扩展**：[[!DNL Epsilon Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) 扩展允许您利用事件转发功能在 Adobe Experience Platform Edge Network 中捕获事件信息，并使用 [!DNL Epsilon] Event API 将其发送给 [!DNL Epsilon]。
-* **[!DNL Mixpanel]事件转发扩展**：[[!DNL Mixpanel Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) 扩展允许您利用事件转发功能在 Adobe Experience Platform Edge Network 中捕获事件信息，并使用 Track Events API 将其发送给 [!DNL Mixpanel]。
+* **[!DNL Braze]事件转发扩展**：[[!DNL Braze Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html?lang=zh-Hans) 事件转发扩展允许您利用 Adobe Experience Platform Edge Network 中捕获的数据，并使用 [!DNL Braze] User Track API 以服务器端事件的形式将其发送到 [!DNL Braze]。
+* **[Epsilon 事件 API] 事件转发扩展**：[[!DNL Epsilon Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html?lang=zh-Hans) 扩展允许您利用事件转发功能在 Adobe Experience Platform Edge Network 中捕获事件信息，并使用 [!DNL Epsilon] Event API 将其发送给 [!DNL Epsilon]。
+* **[!DNL Mixpanel]事件转发扩展**：[[!DNL Mixpanel Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html?lang=zh-Hans) 扩展允许您利用事件转发功能在 Adobe Experience Platform Edge Network 中捕获事件信息，并使用 Track Events API 将其发送给 [!DNL Mixpanel]。
 
 ## 2023 年 1 月 25 日
 

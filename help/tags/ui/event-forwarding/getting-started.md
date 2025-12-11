@@ -50,7 +50,7 @@ ht-degree: 30%
 
 1. 保存架构并记下您提供的名称。
 
-有关架构的更多信息，请参阅 [Experience Data Model (XDM) 系统帮助](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html)。
+有关架构的更多信息，请参阅 [Experience Data Model (XDM) 系统帮助](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=zh-Hans)。
 
 ## 创建事件转发属性
 
