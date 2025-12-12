@@ -26,7 +26,7 @@ ht-degree: 1%
 
 使用此选项可允许Web SDK读取和写入`mbox` 1.x或2.x库使用的旧版`mboxEdgeCluster`和`at.js` Cookie。 此设置有助于在使用Web SDK或同一网站上的`at.js`在页面之间移动时保持访客配置文件不变。 如果您未在网站上的任意位置实施`at.js`，则无需启用此复选框。 与此复选框等效的JavaScript库为[`targetMigrationEnabled`](/help/collection/js/commands/configure/targetmigrationenabled.md)。
 
-启用此选项时，请确保同时在[`overrideMboxEdgeServer`中启用](https://experienceleague.adobe.com/en/docs/target-dev/developer/client-side/at-js-implementation/functions-overview/targetglobalsettings#overridemboxedgeserver)`targetGlobalSettings()`。
+启用此选项时，请确保同时在[`overrideMboxEdgeServer`中启用](https://experienceleague.adobe.com/zh-hans/docs/target-dev/developer/client-side/at-js-implementation/functions-overview/targetglobalsettings#overridemboxedgeserver)`targetGlobalSettings()`。
 
 ## [!UICONTROL Prehiding style] {#prehiding-style}
 
