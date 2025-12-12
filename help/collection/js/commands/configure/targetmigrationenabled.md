@@ -2,18 +2,20 @@
 title: Targetmigrationenabled
 description: 允许Web SDK读取和写入Adobe Target Cookie。
 exl-id: 4b9203c6-31b7-45af-a6a6-a206d7edac3f
-source-git-commit: dade74bf4a5cfd7b60eaf216583deb67b93a61db
+source-git-commit: 051374def898d3797711525c5343e0a8454970a2
 workflow-type: tm+mt
-source-wordcount: '124'
+source-wordcount: '141'
 ht-degree: 0%
 
 ---
 
 # `targetMigrationEnabled`
 
-`targetMigrationEnabled`属性是一个布尔值，它允许Web SDK读取和写入Adobe Target 1.x和2.x库使用的[`mbox`和`mboxEdgeCluster` Cookie](https://experienceleague.adobe.com/zh-hans/docs/core-services/interface/data-collection/cookies/web-sdk)。 通过此选项，您可以在使用以前的Adobe Target实施的页面与使用Web SDK的页面之间保留访客配置文件。
+`targetMigrationEnabled`属性是一个布尔值，它允许Web SDK读取和写入Adobe Target 1.x和2.x库使用的[`mbox`和`mboxEdgeCluster` Cookie](https://experienceleague.adobe.com/en/docs/core-services/interface/data-collection/cookies/web-sdk)。 通过此选项，您可以在使用以前的Adobe Target实施的页面与使用Web SDK的页面之间保留访客配置文件。
 
 运行`targetMigrationEnabled`命令时设置`configure`布尔值。 如果在配置Web SDK时省略此属性，则默认设置为`false`。 如果您的某些页面仍使用Adobe Target 1.x或2.x库，请将此值设置为`true`。
+
+使用此属性时，请确保同时在Adobe Target实施的[`overrideMboxEdgeServer`中启用](https://experienceleague.adobe.com/en/docs/target-dev/developer/client-side/at-js-implementation/functions-overview/targetglobalsettings#overridemboxedgeserver)`targetGlobalSettings()`。
 
 ```js
 alloy("configure", {
