@@ -3,9 +3,9 @@ keywords: Experience Platform；查询服务；查询服务；嵌套数据结构
 title: 拼合嵌套数据结构以用于BI工具
 description: 本文档介绍在将第三方BI工具与查询服务结合使用时，如何在会话期间拼合所有表和视图的XDM架构。
 exl-id: 7e534c0a-db6c-463e-85da-88d7b2534ece
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: fc98b111aa15cdeb64eacdc05cac33a00ee98d80
 workflow-type: tm+mt
-source-wordcount: '858'
+source-wordcount: '854'
 ht-degree: 0%
 
 ---
@@ -42,19 +42,19 @@ ht-degree: 0%
 
 输入内容应采用以下格式：
 
-```terminal
+```bash
 {sandbox_name}:{all/ID/database_name}?FLATTEN
 ```
 
 连接字符串示例可能如下所示：
 
-```terminal
+```bash
 prod:all?FLATTEN
 ```
 
 ## 示例 {#example}
 
-本指南中使用的示例架构使用了标准字段组[!UICONTROL Commerce详细信息]，该组使用`commerce`对象结构和`productListItems`数组。 有关[!UICONTROL Commerce详细信息]字段组[&#128279;](../../xdm/field-groups/event/commerce-details.md)的更多信息，请参阅XDM文档。 架构结构的表示形式可以在下图中看到。
+本指南中使用的示例架构使用标准字段组[!UICONTROL Commerce Details]，该组使用`commerce`对象结构和`productListItems`数组。 有关[字段组[!UICONTROL Commerce Details]的](../../xdm/field-groups/event/commerce-details.md)更多信息，请参阅XDM文档。 架构结构的表示形式可以在下图中看到。
 
 ![Commerce详细信息字段组的架构图，包括`commerce`和`productListItems`结构。](../images/key-concepts/commerce-details.png)
 
@@ -62,13 +62,13 @@ prod:all?FLATTEN
 
 以下值在格式不正确的嵌套字段中表示`commerce.order.priceTotal` (3018.0)、`commerce.order.purchaseID` (c9b5aff9-25de-450b-98f4-4484a2170180)和`commerce.purchases.value` (1.0)。
 
-```terminal
+```bash
 ("(3018.0,c9b5aff9-25de-450b-98f4-4484a2170180)","(1.0)")
 ```
 
 通过使用`FLATTEN`设置，您可以使用点表示法及其原始路径名访问架构中的单独字段或嵌套数据结构的整个部分。 下面给出了使用`commerce`字段组的格式示例。
 
-```terminal
+```bash
 commerce.order.priceTotal
 commerce.order.purchaseID
 commerce.purchases.value
