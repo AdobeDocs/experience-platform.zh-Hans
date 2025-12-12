@@ -3,14 +3,20 @@ solution: Experience Platform
 title: Audiences UI指南
 description: Adobe Experience Platform UI中的受众组合提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了一些直观的控件，可用于为贵组织构建和编辑受众。
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: 65a3b5b904a9dfc6a2fbc09ab869e5642e088363
+source-git-commit: 66084e9847cca7ce6afd6a5b8c67689c9deef580
 workflow-type: tm+mt
-source-wordcount: '2258'
+source-wordcount: '2293'
 ht-degree: 16%
 
 ---
 
 # 受众合成UI指南
+
+>[!BEGINSHADEBOX]
+
+如果您是Adobe Journey Optimizer客户，请阅读Adobe Journey Optimizer文档中的[受众构成快速入门指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/audiences-profiles-identities/audiences/audience-orchestration/get-started-audience-orchestration.html)，了解有关在该上下文中使用受众构成的更多信息。
+
+>[!ENDSHADEBOX]
 
 >[!AVAILABILITY]
 >
@@ -20,21 +26,21 @@ ht-degree: 16%
 >- 管理配置文件
 >- 管理合并策略
 >
->有关Experience Platform内权限的详细信息，请参阅[访问控制概述](../../access-control/home.md#permissions)。
+>有关Experience Platform中权限的更多信息，请参阅[访问控制概述](../../access-control/home.md#permissions)。
 
 >[!NOTE]
 >
->本指南介绍如何使用“受众合成”创建受众。 要了解如何使用区段生成器通过区段定义创建受众，请参阅[区段生成器UI指南](./segment-builder.md)。
+>本指南介绍如何使用受众构成创建受众。 要了解如何使用区段生成器通过区段定义创建受众，请参阅[区段生成器UI指南](./segment-builder.md)。
 
 受众构成提供了一个工作区，通过用来表示不同操作的块来构建和编辑受众。
 
 ![受众合成UI。](../images/ui/audience-composition/audience-composition.png)
 
-要更改合成的详细信息（包括标题和说明），请选择![滑块](/help/images/icons/properties.png)按钮。
+要更改构成的详细信息（包括标题和描述），请选择![滑块](/help/images/icons/properties.png)按钮。
 
-出现&#x200B;**[!UICONTROL Composition properties]**&#x200B;弹出窗口。 您可以在此处插入构图的详细信息，包括标题和说明。
+出现&#x200B;**[!UICONTROL Composition properties]**&#x200B;弹出框。 您可以在此处插入构图的详细信息，包括标题和描述。
 
-![显示合成属性弹出窗口。](../images/ui/audience-composition/composition-properties.png)
+![显示组合属性弹出框。](../images/ui/audience-composition/composition-properties.png)
 
 >[!NOTE]
 >
@@ -78,11 +84,11 @@ ht-degree: 16%
 >
 >此外，只能使用使用使用区段生成器创建的&#x200B;**已发布**&#x200B;受众。 使用受众组合和外部生成的受众创建的受众&#x200B;**不可用**。
 
-此时会显示受众列表。 选择要包含的受众，之后选择&#x200B;**[!UICONTROL Add]**&#x200B;以将其附加到受众块。
+此时将显示受众列表。 选择要包含的受众，然后依次选择&#x200B;**[!UICONTROL Add]**&#x200B;以将它们附加到受众块。
 
-![此时会显示受众列表。 您可以从此对话框中选择要添加的访问群体。](../images/ui/audience-composition/select-audience.png)
+![将显示受众列表。 您可以通过此对话框选择要添加的受众。](../images/ui/audience-composition/select-audience.png)
 
-当选择&#x200B;**[!UICONTROL Audience]**&#x200B;块时，您选择的受众现在会显示在右边栏中。 在此处，您可以更改组合受众的合并类型。
+现在，当选择&#x200B;**[!UICONTROL Audience]**&#x200B;块时，您选择的受众会显示在右边栏中。 在此处，您可以更改组合受众的合并类型。
 
 ![受众可能的合并类型已突出显示。](../images/ui/audience-composition/merge-types.png)
 
@@ -135,13 +141,13 @@ ht-degree: 16%
 
 ### 按受众排除 {#exclude-audience}
 
-如果按受众排除，可通过选择&#x200B;**[!UICONTROL Add Audience]**&#x200B;选择要排除的受众。
+如果按受众排除，则可以通过选择&#x200B;**[!UICONTROL Add Audience]**&#x200B;来选择要排除的受众。
 
-![已选择“[!UICONTROL Add audience]”按钮，可让您选择要排除的受众。](../images/ui/audience-composition/add-excluded-audience.png)
+![已选择[!UICONTROL Add audience]按钮，可让您选择要排除的受众。](../images/ui/audience-composition/add-excluded-audience.png)
 
 >[!IMPORTANT]
 >
->只能使用&#x200B;**已发布**&#x200B;使用Segment Builder创建的受众。 使用受众合成和外部生成的受众创建的受众&#x200B;**不可用**。
+>只能使用使用使用区段生成器创建的&#x200B;**已发布**&#x200B;受众。 使用受众组合和外部生成的受众创建的受众&#x200B;**不可用**。
 
 此时将显示受众列表。 选择&#x200B;**[!UICONTROL Add]**&#x200B;以将要排除的受众添加到排除块。
 
@@ -154,7 +160,7 @@ ht-degree: 16%
 >title="按属性排除"
 >abstract="按属性排除时，您可以根据所选属性排除特定轮廓出现在构成中。"
 
-如果按属性排除，可通过在“![”部分中选择“](/help/images/icons/project-edit.png)筛选器&#x200B;**[!UICONTROL Exclusion rule]**”图标而选择要排除的属性。 排除属性可让您从生成的受众中排除任何包含此属性的配置文件。
+如果按属性排除，则可以通过选择![部分中的](/help/images/icons/project-edit.png)过滤器&#x200B;**[!UICONTROL Exclusion rule]**&#x200B;图标来选择要排除的属性。 通过排除属性，您可以从生成的受众中排除任何包含此属性的配置文件。
 
 ![属性部分高亮显示，显示从何处选择要排除的属性。](../images/ui/audience-composition/exclude-attribute.png)
 
@@ -198,9 +204,9 @@ ht-degree: 16%
 
 ![已选择[!UICONTROL Enrich]选项。](../images/ui/audience-composition/add-enrich-block.png)
 
-已添加&#x200B;**[!UICONTROL Enrich]**&#x200B;块。 选择此块后，右侧边栏中会显示有关丰富功能的详细信息。 这包括块的标签和富集数据集。
+已添加&#x200B;**[!UICONTROL Enrich]**&#x200B;块。 选择此块后，有关扩充的详细信息将显示在右边栏中。 这包括块的标签和扩充数据集。
 
-若要选择要丰富受众的数据集，请选择![筛选器](/help/images/icons/project-edit.png)图标。
+要选择要扩充受众的数据集，请选择![过滤器](/help/images/icons/project-edit.png)图标。
 
 ![筛选器按钮突出显示。 选择此选项将转到[!UICONTROL Select dataset]弹出框。](../images/ui/audience-composition/enrich-select-dataset.png)
 
@@ -228,7 +234,7 @@ ht-degree: 16%
 
 要选择&#x200B;**[!UICONTROL Enrichment dataset join key]**，请选择![筛选器](/help/images/icons/project-edit.png)图标。
 
-出现&#x200B;**[!UICONTROL Enrichment attributes]**&#x200B;弹出窗口。 选择您要用作强化数据集联接键的属性，之后选择&#x200B;**[!UICONTROL Select]**&#x200B;以将该属性用作强化数据集联接键。
+出现&#x200B;**[!UICONTROL Enrichment attributes]**&#x200B;弹出框。 选择要用作扩充数据集联接键的属性，然后&#x200B;**[!UICONTROL Select]**&#x200B;选择该属性作为扩充数据集联接键。
 
 ![要用作扩充数据集联接键的属性突出显示。](../images/ui/audience-composition/select-enrichment-dataset-join-key.png)
 
@@ -276,9 +282,9 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 
 ![已选择“排名”选项。](../images/ui/audience-composition/add-rank-block.png)
 
-选择块时，有关排名的详细信息显示在右边栏中，包括块的标签、排名依据的属性、排名顺序，以及用于限制排名配置文件数量的切换开关。
+选择块后，右侧边栏中显示有关排名的详细信息，包括块的标签、要排名的属性、排名顺序以及用于限制要排名的配置文件数量的切换开关。
 
-![高亮显示秩块以及秩块的详细信息。](../images/ui/audience-composition/rank.png)
+![已突出显示排名块，并突出显示排名块的详细信息。](../images/ui/audience-composition/rank.png)
 
 要选择受众排名所依据的属性，请选择![过滤器](/help/images/icons/project-edit.png)图标。
 
@@ -286,11 +292,11 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 
 此时将显示配置文件属性列表。 在此弹出窗口中，您可以选择要按其对受众进行排名的属性类型。 选择&#x200B;**[!UICONTROL Select]**&#x200B;以将其添加到您的排名块。 请注意，所选属性&#x200B;**只能**&#x200B;是数字。
 
-![显示了属性列表。](../images/ui/audience-composition/rank-attribute.png)
+![将显示属性列表。](../images/ui/audience-composition/rank-attribute.png)
 
-选择属性后，可以选择排名顺序。 可以按升序（从最低到最高）或降序（从最高到最低）排列。
+选择属性后，您可以选择排序依据。 这是以升序（从最低到最高）或降序（从最高到最低）顺序显示的。
 
-此外，您可以通过启用&#x200B;**[!UICONTROL Add profile limit]**&#x200B;切换来限制返回的配置文件数量。 启用此切换后，您可以设置&#x200B;**[!UICONTROL Included profiles]**&#x200B;字段中返回的最大配置文件数。
+此外，您可以通过启用&#x200B;**[!UICONTROL Add profile limit]**&#x200B;切换来限制返回的用户档案数。 启用此切换后，您可以设置&#x200B;**[!UICONTROL Included profiles]**&#x200B;字段中返回的最大配置文件数。
 
 ![高亮显示“添加配置文件限制”切换开关，该开关允许您限制返回的配置文件数。](../images/ui/audience-composition/add-profile-limit-rank.png)
 
@@ -321,7 +327,7 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 
 ![已选择“拆分”选项。](../images/ui/audience-composition/add-split-block.png)
 
-在拆分受众时，您可以按百分比或按属性拆分。
+在拆分受众时，您可以按百分比拆分或按属性拆分。
 
 ### 按百分比拆分 {#split-percentage}
 
@@ -370,7 +376,7 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 
 >[!IMPORTANT]
 >
->发布您的受众合成时，请注意，评估并激活它以在下游服务(如Real-Time CDP目标或Adobe Journey Optimizer渠道)中使用可能需要长达48小时。
+>在发布受众构成时，请注意，评估和激活它以在下游服务(例如Real-Time CDP目标或Adobe Journey Optimizer渠道)中使用可能需要48小时。
 
 创建合成后，您可以通过选择&#x200B;**[!UICONTROL Publish]**&#x200B;来保存和发布合成。
 
