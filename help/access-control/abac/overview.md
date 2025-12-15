@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制概述
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的信息
 exl-id: 5495c55f-b808-40c1-8896-e03eace0ca4d
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 14028928362d8396c30babfc2279135011dd7c6f
 workflow-type: tm+mt
-source-wordcount: '1874'
+source-wordcount: '1929'
 ht-degree: 13%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 13%
 
 以下视频旨在支持您了解基于属性的访问控制，并概述如何配置角色、资源和策略。
 
->[!VIDEO](https://video.tv.adobe.com/v/3451849?learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/345641?learn=on)
 
 ## 基于属性的访问控制术语
 
@@ -33,7 +33,7 @@ ht-degree: 13%
 | 术语 | 定义 |
 | --- | --- |
 | 属性 | 属性是指示用户与其有权访问的Experience Platform资源之间关联的标识符。 属性可以是添加到对象的元数据，例如添加到架构字段或区段的标签。 管理员定义包括管理用户访问权限的属性的访问策略。 |
-| 标记 | 通过标签，可根据适用于数据的使用策略将数据集和字段分类。您可以随时应用标签，灵活地选择管理数据的方式。 最佳实践鼓励在将数据摄取到Experience Platform中后立即为其设置标签，或者当数据在Experience Platform中可用时立即为其设置标签。 |
+| 标签 | 通过标签，可根据适用于数据的使用策略将数据集和字段分类。您可以随时应用标签，灵活地选择管理数据的方式。 最佳实践鼓励在将数据摄取到Experience Platform中后立即为其设置标签，或者当数据在Experience Platform中可用时立即为其设置标签。 |
 | 权限 | 权限包括查看和/或使用Experience Platform功能的功能，例如创建沙盒、定义架构和管理数据集。 |
 | 权限集 | 权限集表示管理员可以应用于角色的一组权限。 管理员可以为角色分配权限集，而不是分配单个权限。 这允许您从包含一组权限的预定义角色创建自定义角色。 |
 | 支持 | 策略是一些语句，它将若干属性组合在一起以确定允许执行和不允许执行的操作。策略可以是本地策略，也可以是全局策略，并且可以覆盖其他策略。 |
@@ -80,7 +80,7 @@ Experience Platform利用[Adobe Admin Console](https://adminconsole.adobe.com)�
 
 ### 目标 {#destinations}
 
-[!DNL Destinations]是预先构建的与目标平台的集成，允许从Experience Platform无缝激活数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
+[!DNL Destinations] 是预建的与目标平台的集成，可实现从 Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例。
 
 作为管理员，您可以使用基于属性的访问控制功能来：
 
@@ -94,7 +94,7 @@ Experience Platform利用[Adobe Admin Console](https://adminconsole.adobe.com)�
 >总之，在使用目标和基于属性的访问控制时，请牢记以下含义：
 >
 >* 您只能激活您有权在[受众门户](/help/segmentation/ui/audience-portal.md#browse)和激活工作流的[选择区段步骤](/help/destinations/ui/activate-batch-profile-destinations.md#select-segments)中访问和查看的受众。
->* 在激活工作流[&#128279;](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)的映射步骤中，您只能查看和选择您有访问权限的字段进行激活。
+>* 在激活工作流[的](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)映射步骤中，您只能查看和选择您有访问权限的字段进行激活。
 >* 如果您希望将其他区段激活到现有目标，而您无权访问映射为导出的所有字段，则会为您阻止激活工作流。
 
 有关[!DNL Destinations]的详细信息，请参阅[[!DNL Destinations] 概述](../../destinations/home.md)。
@@ -133,7 +133,7 @@ Adobe Experience Platform [!DNL Identity Service]通过跨设备和系统桥接�
 
 ### XDM
 
-体验数据模型(XDM)是一种开源规范，旨在提高数字体验的强大功能。 它为任何应用程序提供通用结构和定义，以便与Experience Platform上的服务进行通信。 通过遵守 XDM 标准，所有客户体验数据都可以合并到一个通用的呈现中，以更快、更加集成的方式提供见解。您可以从客户行为中获得有价值的见解，通过区段定义客户受众，并使用客户属性实现个性化目的。
+体验数据模型(XDM)是一种开源规范，旨在提高数字体验的强大功能。 它为任何应用程序提供通用结构和定义，以便与Experience Platform上的服务进行通信。 通过遵守 XDM 标准，所有客户体验数据都可以合并到一个通用的呈现中，以更快、更加集成的方式提供洞察。您可以从客户行为中获得有价值的洞察，通过区段定义客户受众，并使用客户属性实现个性化目的。
 
 通过基于属性的访问控制，您可以：
 
@@ -141,3 +141,9 @@ Adobe Experience Platform [!DNL Identity Service]通过跨设备和系统桥接�
 * 根据应用于分配给用户的角色的权限集，配置用户对特定XDM架构字段的访问权限。
 
 有关XDM的更多信息，请参阅[XDM概述](../../xdm/home.md)。
+
+### Customer Journey Analytics (CJA)
+
+在CJA中，Customer Journey Analytics (CJA)访问权限在应用程序级别进行管理。 CJA使用自己的基于属性的访问控制，不会继承或应用Adobe Experience Platform中定义的基于属性的访问控制。
+
+有关CJA访问控制的详细信息，请参阅[CJA访问控制](https://experienceleague.adobe.com/en/docs/analytics-platform/using/technotes/access-control)文档。
