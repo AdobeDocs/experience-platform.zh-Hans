@@ -94,7 +94,7 @@ XDM对此数据类型的使用施加以下限制：
 
 ### 如何定义架构的身份？
 
-在[!DNL Experience Platform]中，无论解释的数据源如何，标识都用于标识主题（通常是个人）。 它们通过在架构中将关键字段标记为“标识”来定义。 身份识别的常用字段包括电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html)、CRM ID和其他唯一ID字段。
+在[!DNL Experience Platform]中，无论解释的数据源如何，标识都用于标识主题（通常是个人）。 它们通过在架构中将关键字段标记为“标识”来定义。 身份识别的常用字段包括电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)、CRM ID和其他唯一ID字段。
 
 可使用API或用户界面将字段标记为标识。
 
