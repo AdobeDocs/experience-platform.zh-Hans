@@ -146,4 +146,4 @@ Adobe Experience Platform [!DNL Identity Service]通过跨设备和系统桥接�
 
 在CJA中，Customer Journey Analytics (CJA)访问权限在应用程序级别进行管理。 CJA使用自己的基于属性的访问控制，不会继承或应用Adobe Experience Platform中定义的基于属性的访问控制。
 
-有关CJA访问控制的详细信息，请参阅[CJA访问控制](https://experienceleague.adobe.com/en/docs/analytics-platform/using/technotes/access-control)文档。
+有关CJA访问控制的详细信息，请参阅[CJA访问控制](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/technotes/access-control)文档。
