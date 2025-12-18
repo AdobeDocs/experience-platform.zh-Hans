@@ -2,9 +2,9 @@
 description: 了解如何设置聚合策略，以确定应如何对发往您目标的HTTP请求进行分组和批处理。
 title: 聚合策略
 exl-id: 2dfa8815-2d69-4a22-8938-8ea41be8b9c5
-source-git-commit: d5d7841cc8799e7f7d4b607bfb8adea63a7eb1db
+source-git-commit: 92d7abcbd642cea4e0fa041d2926ba8868f506e5
 workflow-type: tm+mt
-source-wordcount: '1007'
+source-wordcount: '1235'
 ht-degree: 2%
 
 ---
@@ -30,7 +30,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -52,7 +52,26 @@ ht-degree: 2%
    "aggregationType":"BEST_EFFORT",
    "bestEffortAggregation":{
       "maxUsersPerRequest":10,
-      "splitUserById":false
+      "splitUserById":false,
+      "aggregationKey":{
+         "includeSegmentId":true,
+         "includeSegmentStatus":true,
+         "includeIdentity":true,
+         "oneIdentityPerGroup":true,
+         "groups":[
+            {
+               "namespaces":[
+                  "IDFA",
+                  "GAID"
+               ]
+            },
+            {
+               "namespaces":[
+                  "EMAIL"
+               ]
+            }
+         ]
+      }
    }
 }
 ```
@@ -62,6 +81,12 @@ ht-degree: 2%
 | `aggregationType` | 字符串 | 指示目标应使用的聚合策略的类型。 支持的聚合类型： <ul><li>`BEST_EFFORT`</li><li>`CONFIGURABLE_AGGREGATION`</li></ul> |
 | `bestEffortAggregation.maxUsersPerRequest` | 整数 | Experience Platform可以在单个HTTP调用中聚合多个导出的用户档案。 <br><br>此值指示您的终结点在一个HTTP调用中应接收的最大配置文件数。 请注意，这是最大努力汇总。 例如，如果指定值100，Experience Platform在调用中可能会发送任何数量小于100的用户档案。 <br><br>如果您的服务器不接受每个请求多个用户，请将此值设置为`1`。 |
 | `bestEffortAggregation.splitUserById` | 布尔值 | 如果对目标的调用应按身份拆分，则使用此标志。 如果您的服务器在每次调用中只接受一个给定身份命名空间中的身份，请将此标志设置为`true`。 |
+| `bestEffortAggregation.aggregationKey` | 对象 | *可选*。 允许您根据下述参数聚合映射到目标的导出用户档案。 如果不需要聚合，则可以忽略此参数或将其设置为`null`。 提供后，它在可配置的聚合中的功能与聚合密钥相同。 |
+| `bestEffortAggregation.aggregationKey.includeSegmentId` | 布尔值 | 如果要按受众ID对导出到目标的配置文件进行分组，请将此参数设置为`true`。 |
+| `bestEffortAggregation.aggregationKey.includeSegmentStatus` | 布尔值 | 如果要按受众ID和受众状态对导出到目标的配置文件进行分组，请将此参数和`includeSegmentId`设置为`true`。 |
+| `bestEffortAggregation.aggregationKey.includeIdentity` | 布尔值 | 如果要按身份命名空间对导出到目标的配置文件进行分组，请将此参数设置为`true`。 |
+| `bestEffortAggregation.aggregationKey.oneIdentityPerGroup` | 布尔值 | 如果您希望导出的用户档案根据单个身份（GAID、IDFA、电话号码、电子邮件等）聚合到组中，请将此参数设置为`true`。 如果要使用`false`参数定义自定义身份命名空间分组，则设置为`groups`。 |
+| `bestEffortAggregation.aggregationKey.groups` | 数组 | 当`oneIdentityPerGroup`设置为`false`时，使用此参数。 如果要按身份命名空间组对导出到目标的配置文件进行分组，请创建身份组列表。 例如，可以使用上例中显示的配置，将包含IDFA和GAID移动标识符的用户档案合并到一个对目标的调用中，并将电子邮件合并到另一个调用中。 |
 
 {style="table-layout:auto"}
 
@@ -115,8 +140,8 @@ ht-degree: 2%
 | `configurableAggregation.aggregationKey.includeSegmentId` | 布尔值 | 如果要按受众ID对导出到目标的配置文件进行分组，请将此参数设置为`true`。 |
 | `configurableAggregation.aggregationKey.includeSegmentStatus` | 布尔值 | 如果要按受众ID和受众状态对导出到目标的配置文件进行分组，请将此参数和`includeSegmentId`设置为`true`。 |
 | `configurableAggregation.aggregationKey.includeIdentity` | 布尔值 | 如果要按身份命名空间对导出到目标的配置文件进行分组，请将此参数设置为`true`。 |
-| `configurableAggregation.aggregationKey.oneIdentityPerGroup` | 布尔值 | 如果您希望导出的用户档案根据单个身份（GAID、IDFA、电话号码、电子邮件等）聚合到组中，请将此参数设置为`true`。 |
-| `configurableAggregation.aggregationKey.groups` | 数组 | 如果要按身份命名空间组对导出到目标的配置文件进行分组，请创建身份组列表。 例如，可以使用上例中显示的配置，将包含IDFA和GAID移动标识符的用户档案合并到一个对目标的调用中，并将电子邮件合并到另一个调用中。 |
+| `configurableAggregation.aggregationKey.oneIdentityPerGroup` | 布尔值 | 如果您希望导出的用户档案根据单个身份（GAID、IDFA、电话号码、电子邮件等）聚合到组中，请将此参数设置为`true`。 如果要使用`false`参数定义自定义身份命名空间分组，则设置为`groups`。 |
+| `configurableAggregation.aggregationKey.groups` | 数组 | 当`oneIdentityPerGroup`设置为`false`时，使用此参数。 如果要按身份命名空间组对导出到目标的配置文件进行分组，请创建身份组列表。 例如，可以使用上例中显示的配置，将包含IDFA和GAID移动标识符的用户档案合并到一个对目标的调用中，并将电子邮件合并到另一个调用中。 |
 
 {style="table-layout:auto"}
 
