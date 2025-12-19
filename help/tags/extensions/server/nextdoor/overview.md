@@ -112,7 +112,7 @@ ht-degree: 8%
 
 | 参数 | 描述 | 数据类型 | 必需 | 格式 | 示例 |
 | ------------------------------ | ---------------------------------------------- | ------------------- | -------------------------------- | --------------------------------------- | ----------------------- |
-| [!UICONTROL Order Value] | 采购交易记录的总值。 | 字符串 | 购买事件需要&#x200B;**** | ISO 4217货币+金额（无空格） | `USD123.45` |
+| [!UICONTROL Order Value] | 采购交易记录的总值。 | 字符串 | 购买事件需要&#x200B;**&#x200B;** | ISO 4217货币+金额（无空格） | `USD123.45` |
 | [!UICONTROL Order ID] | 唯一交易或订单标识符。 | 字符串 | 可选 | 任何唯一字符串 | `order_12345` |
 | [!UICONTROL Delivery Category] | 产品/服务交付方法。 | 字符串 | 可选 | <ul><li>`in_store`</li><li>`curbside`</li><li>`home_delivery`</li></ul> | `home_delivery` |
 | [!UICONTROL Product Context] | 有关已购买产品的详细信息。 | 字符串（JSON数组） | 可选 | 产品对象的JSON数组 | `[{"id":"SKU123","content_name":"Widget","item_price":29.99,"quantity":1}]` |
@@ -123,10 +123,10 @@ ht-degree: 8%
 
 | 参数 | 描述 | 数据类型 | 必需 | 格式 | 示例 |
 | --------------------------------- | --------------------------------------------- | --------- | --------------------------- | ----------------------------------------- | ----------------- |
-| [!UICONTROL App ID*] | 移动应用程序标识符。 | 字符串 | 应用程序事件需要&#x200B;**** | <ul><li>捆绑包ID (iOS)</li><li>包名称(Android)</li></ul> | `com.company.app` |
-| [!UICONTROL App Tracking Enabled] | iOS应用程序跟踪透明度同意状态。 | 字符串 | 应用程序事件需要&#x200B;**** | 布尔字符串 | `true` |
-| [!UICONTROL Platform] | 移动操作系统。 | 字符串 | 应用程序事件需要&#x200B;**** | <ul><li>`iOS`</li><li>`Android`</li></ul> | `Android` |
-| [!UICONTROL App Version] | 移动应用程序的版本。 | 字符串 | 应用程序事件需要&#x200B;**** | 应用程序定义的版本字符串 | `2.0.0-beta` |
+| [!UICONTROL App ID*] | 移动应用程序标识符。 | 字符串 | 应用程序事件需要&#x200B;**&#x200B;** | <ul><li>捆绑包ID (iOS)</li><li>包名称(Android)</li></ul> | `com.company.app` |
+| [!UICONTROL App Tracking Enabled] | iOS应用程序跟踪透明度同意状态。 | 字符串 | 应用程序事件需要&#x200B;**&#x200B;** | 布尔字符串 | `true` |
+| [!UICONTROL Platform] | 移动操作系统。 | 字符串 | 应用程序事件需要&#x200B;**&#x200B;** | <ul><li>`iOS`</li><li>`Android`</li></ul> | `Android` |
+| [!UICONTROL App Version] | 移动应用程序的版本。 | 字符串 | 应用程序事件需要&#x200B;**&#x200B;** | 应用程序定义的版本字符串 | `2.0.0-beta` |
 
 ## 事件类型 {#event-types}
 
