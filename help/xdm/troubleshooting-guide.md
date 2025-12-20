@@ -142,7 +142,7 @@ XDM对此数据类型的使用施加以下限制：
 
 ### 我是否可以删除启用配置文件的架构？ {#delete-profile-enabled}
 
-为实时客户配置文件启用架构后，您无法删除该架构。 为配置文件启用架构后，无法禁用或删除该架构，并且无法从架构中删除字段。 因此，在为配置文件启用架构配置之前，仔细规划和验证架构配置至关重要。 但是，您可以删除启用了配置文件的数据集。 在此处找到信息： <https://experienceleague.adobe.com/en/docs/experience-platform/catalog/datasets/user-guide#delete-a-profile-enabled-dataset>
+为实时客户配置文件启用架构后，您无法删除该架构。 为配置文件启用架构后，无法禁用或删除该架构，并且无法从架构中删除字段。 因此，在为配置文件启用架构配置之前，仔细规划和验证架构配置至关重要。 但是，您可以删除启用了配置文件的数据集。 在此处找到信息： <https://experienceleague.adobe.com/zh-hans/docs/experience-platform/catalog/datasets/user-guide#delete-a-profile-enabled-dataset>
 
 如果您不再希望使用启用了配置文件的架构，建议将该架构重命名为包含&#x200B;**不使用**&#x200B;或&#x200B;**不活动**。
 
