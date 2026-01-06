@@ -6,9 +6,9 @@ user-guide-description: 了解如何部署和管理分析、营销和广告标�
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
+source-git-commit: 321cb9b2b9add2460cbde2dfe571ad41a9be163b
 workflow-type: tm+mt
-source-wordcount: '824'
+source-wordcount: '825'
 ht-degree: 36%
 
 ---
@@ -229,7 +229,7 @@ ht-degree: 36%
       * [!DNL Snap Pixel] {#snap-pixel}
          * [概述](./extensions/client/snap-pixel/overview.md)
       * [存储扳手](https://exchange.adobe.com/apps/ec/102990)
-      * [按循环水平线的标记](https://exchange.adobe.com/apps/ec/106092)
+      * 按循环水平线的[标记](https://exchange.adobe.com/apps/ec/106092)
       * [Tealium收集](https://exchange.adobe.com/apps/ec/104217)
       * [Tealium数据扩充](https://exchange.adobe.com/apps/ec/104217)
       * [TMMData基础平台](https://exchange.adobe.com/apps/ec/100148)
@@ -258,7 +258,7 @@ ht-degree: 36%
          * [概述](./extensions/server/aws/overview.md)
       * [!DNL Braze] {#braze}
          * [概述](./extensions/server/braze/overview.md)
-      * [适用于Google Analytics的Cloud Connector](https://exchange.adobe.com/apps/ec/106542)
+      * 适用于Google Analytics的[Cloud Connector](https://exchange.adobe.com/apps/ec/106542)
       * 核心 {#core}
          * [概述](./extensions/server/core/overview.md)
       * [Epsilon事件API](https://exchange.adobe.com/apps/ec/109127)
@@ -276,6 +276,8 @@ ht-degree: 36%
          * [概述](./extensions/server/azure/overview.md)
       * [!DNL Mixpanel] {#mixpanel}
          * [概述](./extensions/server/mixpanel/overview.md)
+      * [!DNL Nextdoor] {#nextdoor}
+         * [概述](./extensions/server/nextdoor/overview.md)
       * [Pega客户决策中心](https://exchange.adobe.com/apps/ec/107597)
       * [!DNL Pinterest] {#pinterest}
          * [概述](./extensions/server/pinterest/overview.md)
