@@ -17,11 +17,11 @@ ht-degree: 0%
 
 >[!TIP]
 >
->可以使用Adobe参与指南中的以下文档来进一步支持您的文档流程： <ul><li>[安装Git和Markdown创作工具](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html)</li><li>[在本地为文档设置Git存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html)</li><li>针对主要更改的[GitHub贡献工作流](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html)</li></ul>
+>可以使用Adobe参与指南中的以下文档来进一步支持您的文档流程： <ul><li>[安装Git和Markdown创作工具](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html?lang=zh-Hans)</li><li>[在本地为文档设置Git存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=zh-Hans)</li><li>针对主要更改的[GitHub贡献工作流](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html?lang=zh-Hans)</li></ul>
 
 ## 设置GitHub环境
 
-设置GitHub环境的第一步是导航到[Adobe Experience Platform GitHub存储库](https://github.com/AdobeDocs/experience-platform.en)。
+设置GitHub环境的第一步是导航到[Adobe Experience Platform GitHub存储库](https://github.com/AdobeDocs/experience-platform.zh-Hans)。
 
 ![平台存储库](../assets/platform-repo.png)
 
@@ -33,11 +33,11 @@ ht-degree: 0%
 
 ![create-branch](../assets/create-branch.png)
 
-在分支存储库的GitHub文件夹结构中，导航到[`experience-platform.en/help/sources/tutorials/api/create/`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/tutorials/api/create)，然后从列表中选择适用于您的源的类别。 例如，如果要为新的CRM源创建文档，请选择&#x200B;**crm**。
+在分支存储库的GitHub文件夹结构中，导航到[`experience-platform.en/help/sources/tutorials/api/create/`](https://github.com/AdobeDocs/experience-platform.zh-Hans/tree/main/help/sources/tutorials/api/create)，然后从列表中选择适用于您的源的类别。 例如，如果要为新的CRM源创建文档，请选择&#x200B;**crm**。
 
 >[!TIP]
 >
->如果您正在创建UI文档，请导航到[`experience-platform.en/help/sources/tutorials/ui/create/`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/tutorials/ui/create)并为您的源选择适当的类别。 要添加图像，请导航到[`experience-platform.en/help/sources/images/tutorials/create/sdk`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/images/tutorials/create)，然后将屏幕截图添加到`sdk`文件夹。
+>如果您正在创建UI文档，请导航到[`experience-platform.en/help/sources/tutorials/ui/create/`](https://github.com/AdobeDocs/experience-platform.zh-Hans/tree/main/help/sources/tutorials/ui/create)并为您的源选择适当的类别。 要添加图像，请导航到[`experience-platform.en/help/sources/images/tutorials/create/sdk`](https://github.com/AdobeDocs/experience-platform.zh-Hans/tree/main/help/sources/images/tutorials/create)，然后将屏幕截图添加到`sdk`文件夹。
 
 ![crm](../assets/crm.png)
 
