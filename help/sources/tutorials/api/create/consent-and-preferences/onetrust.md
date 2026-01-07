@@ -17,7 +17,7 @@ ht-degree: 1%
 >
 >[!DNL OneTrust Integration]源仅支持获取同意和偏好设置数据，而不支持Cookie。
 
-以下教程将指导您完成创建源连接和数据流的步骤，以便使用[[!DNL OneTrust Integration]API](https://my.onetrust.com/s/contactsupport?language=en_US)将历史同意数据和计划同意数据从[[!DNL Flow Service] ](https://www.adobe.io/experience-platform-apis/references/flow-service/)引入Adobe Experience Platform。
+以下教程将指导您完成创建源连接和数据流的步骤，以便使用[[!DNL OneTrust Integration]API](https://my.onetrust.com/s/contactsupport?language=en_US)将历史同意数据和计划同意数据从[[!DNL Flow Service] &#x200B;](https://www.adobe.io/experience-platform-apis/references/flow-service/)引入Adobe Experience Platform。
 
 ## 先决条件
 
