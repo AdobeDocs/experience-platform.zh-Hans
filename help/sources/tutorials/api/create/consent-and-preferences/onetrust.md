@@ -4,20 +4,20 @@ solution: Experience Platform
 title: 使用流服务API为OneTrust集成源创建数据流
 description: 了解如何使用Flow Service API将Adobe Experience Platform连接到OneTrust集成。
 exl-id: e224efe0-4756-4b8a-b446-a3e1066f2050
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: f9ca6b7683c64c36772d02c1a88c3ef18f961b92
 workflow-type: tm+mt
 source-wordcount: '1924'
 ht-degree: 1%
 
 ---
 
-# 使用[!DNL Flow Service] API为[!DNL OneTrust Integration]源创建数据流
+# 使用[!DNL OneTrust Integration] API为[!DNL Flow Service]源创建数据流
 
 >[!NOTE]
 >
 >[!DNL OneTrust Integration]源仅支持获取同意和偏好设置数据，而不支持Cookie。
 
-以下教程将指导您完成创建源连接和数据流的步骤，以便使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将历史同意数据和计划同意数据从[[!DNL OneTrust Integration]](https://my.onetrust.com/s/contactsupport?language=en_US)引入Adobe Experience Platform。
+以下教程将指导您完成创建源连接和数据流的步骤，以便使用[[!DNL OneTrust Integration]API](https://my.onetrust.com/s/contactsupport?language=en_US)将历史同意数据和计划同意数据从[[!DNL Flow Service] ](https://www.adobe.io/experience-platform-apis/references/flow-service/)引入Adobe Experience Platform。
 
 ## 先决条件
 
@@ -29,19 +29,19 @@ ht-degree: 1%
 
 访问令牌过期后不会自动刷新，因为[!DNL OneTrust]不支持系统到系统刷新令牌。 因此，在访问令牌过期之前，必须确保连接中的访问令牌已更新。 访问令牌的最大可配置生命周期为一年。 要了解有关更新访问令牌的更多信息，请参阅有关管理OAuth 2.0客户端凭据的[[!DNL OneTrust] 文档](https://developer.onetrust.com/docs/documentation/ZG9jOjIyODk1MTUw-managing-o-auth-2-0-client-credentials)。
 
-## 使用[!DNL Flow Service] API将[!DNL OneTrust Integration]连接到Experience Platform
+## 使用[!DNL OneTrust Integration] API将[!DNL Flow Service]连接到Experience Platform
 
 >[!NOTE]
 >
 >正在与Adobe共享[!DNL OneTrust Integration] API规范以进行数据摄取。
 
-以下教程将指导您完成创建[!DNL OneTrust Integration]源连接和创建数据流以使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将[!DNL OneTrust Integration]数据引入Experience Platform的步骤。
+以下教程将指导您完成创建[!DNL OneTrust Integration]源连接和创建数据流以使用[!DNL OneTrust Integration]API[[!DNL Flow Service] 将](https://www.adobe.io/experience-platform-apis/references/flow-service/)数据引入Experience Platform的步骤。
 
 ### 创建基本连接 {#base-connection}
 
 基本连接会保留源与Experience Platform之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-要创建基本连接ID，请在提供您的[!DNL OneTrust Integration]身份验证凭据作为请求正文的一部分时，向`/connections`端点发出POST请求。
+要创建基本连接ID，请在提供您的`/connections`身份验证凭据作为请求正文的一部分时，向[!DNL OneTrust Integration]端点发出POST请求。
 
 **API格式**
 
@@ -757,8 +757,13 @@ curl -X POST \
               "sourceType": "ATTRIBUTE",
               "source": "content.Purposes",
               "destination": "_exchangesandboxbravo.Purposes"
+          },
+          {
+              "sourceType": "ATTRIBUTE",
+              "source": "content.LinkToken",
+              "destination": "_exchangesandboxbravo.LinkToken",
+              "description": "Link Token"
           }
-
       ]
   }'
 ```
@@ -878,11 +883,11 @@ curl -X POST \
 
 ### 更新您的数据流
 
-通过提供数据流的ID，向[!DNL Flow Service] API的`/flows`端点发出PATCH请求来更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 发出PATCH请求时，必须在`If-Match`标头中提供数据流唯一的`etag`。 有关完整的API示例，请阅读有关[使用API更新源数据流](../../update-dataflows.md)的指南。
+通过提供数据流的ID，向`/flows` API的[!DNL Flow Service]端点发出PATCH请求来更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 发出PATCH请求时，必须在`etag`标头中提供数据流唯一的`If-Match`。 有关完整的API示例，请阅读有关[使用API更新源数据流](../../update-dataflows.md)的指南。
 
 ### 更新您的帐户
 
-在提供基本连接ID作为查询参数的同时，通过向[!DNL Flow Service] API执行PATCH请求来更新源帐户的名称、描述和凭据。 发出PATCH请求时，必须在`If-Match`标头中提供源帐户的唯一`etag`。 有关完整的API示例，请阅读有关[使用API更新源帐户](../../update.md)的指南。
+在提供基本连接ID作为查询参数的同时，通过向[!DNL Flow Service] API执行PATCH请求来更新源帐户的名称、描述和凭据。 发出PATCH请求时，必须在`etag`标头中提供源帐户的唯一`If-Match`。 有关完整的API示例，请阅读有关[使用API更新源帐户](../../update.md)的指南。
 
 ### 删除您的数据流
 
@@ -890,4 +895,4 @@ curl -X POST \
 
 ### 删除您的帐户
 
-在提供要删除的帐户的基本连接ID时，通过向[!DNL Flow Service] API执行DELETE请求来删除您的帐户。 有关完整的API示例，请阅读有关使用API[&#128279;](../../delete.md)删除源帐户的指南。
+在提供要删除的帐户的基本连接ID时，通过向[!DNL Flow Service] API执行DELETE请求来删除您的帐户。 有关完整的API示例，请阅读有关使用API[删除源帐户](../../delete.md)的指南。
