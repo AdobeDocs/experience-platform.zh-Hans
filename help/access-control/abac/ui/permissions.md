@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；主页；热门主题；访问控制；基于属性的访问控制；ABAC
 title: 基于属性的访问控制管理角色权限
-description: 本文档提供了有关通过Adobe Experience Cloud中的“权限”界面为角色配置权限的信息
+description: 了解如何通过Adobe Experience Cloud中的“权限”界面配置角色。
 exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 157fb27ae492971a48ad62c2d6b3eddd674167f4
 workflow-type: tm+mt
-source-wordcount: '1608'
+source-wordcount: '1603'
 ht-degree: 17%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 17%
 >id="platform_permissions_roles_about"
 >title="角色是什么？"
 >abstract="角色定义了管理员、专家或最终用户对组织中的资源的访问权限。它们会对与您的 Experience Platform 实例交互的用户进行分类，是访问控制策略的构建基块。一个角色具有一组给定的权限，可将您组织的成员分配给一个或多个角色，具体取决于他们需要的查看或写入访问权限的范围。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html?lang=zh-Hans" text="管理角色"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html" text="管理角色"
 
 >[!IMPORTANT]
 >
@@ -36,7 +36,7 @@ ht-degree: 17%
 
 以下过滤器可用于UI中的角色：
 
-| 筛选条件 | 描述 |
+| 过滤器 | 描述 |
 | --- | --- |
 | [!UICONTROL Created between] | 选择开始日期和/或结束日期，以定义筛选结果的日期范围。 |
 | [!UICONTROL Created by] | 通过从下拉菜单中选择用户，按角色创建者过滤。 |
@@ -116,7 +116,7 @@ ht-degree: 17%
 
 以下视频旨在支持您了解如何创建新角色以及如何管理该角色的用户。
 
->[!VIDEO](https://video.tv.adobe.com/v/3475983/?captions=chi_hans&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/336081/?learn=on)
 
 ## 管理角色的 API 凭据 {#manage-api-credentials-for-role}
 
