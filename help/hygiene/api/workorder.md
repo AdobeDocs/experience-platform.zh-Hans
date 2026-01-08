@@ -3,9 +3,9 @@ title: 记录删除工作单
 description: 了解如何使用数据卫生API中的/workorder端点在Adobe Experience Platform中管理记录删除工作单。 本指南涵盖配额、处理时间表和API使用情况。
 role: Developer
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
-source-git-commit: f1f37439bd4d77faf1015741e604eee7188c58d7
+source-git-commit: 1d923e6c4a344959176abb30a8757095c711a601
 workflow-type: tm+mt
-source-wordcount: '2440'
+source-wordcount: '2541'
 ht-degree: 1%
 
 ---
@@ -202,6 +202,14 @@ POST /workorder
 >[!NOTE]
 >
 >您只能从关联XDM架构定义主身份或身份映射的数据集中删除记录。
+
+>[!IMPORTANT]
+>
+>记录删除工作单仅对&#x200B;**主标识**&#x200B;字段起作用。 以下限制适用：
+>
+>- **未扫描辅助标识。**&#x200B;如果数据集包含多个标识字段，则仅使用主标识进行匹配。 无法根据非主标识定位或删除记录。
+>- **跳过没有填充主标识的记录。**&#x200B;如果记录未填充主身份元数据，则无法将其删除。
+>- **在身份配置之前摄取的数据不合格。**&#x200B;如果在数据摄取后将主标识字段添加到架构，则无法通过记录删除工作单来删除以前摄取的记录。
 
 >[!NOTE]
 >

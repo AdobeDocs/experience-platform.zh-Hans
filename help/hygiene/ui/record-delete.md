@@ -2,10 +2,10 @@
 title: 记录删除请求（UI工作流）
 description: 了解如何在Adobe Experience Platform UI中删除记录。
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
-source-git-commit: 491588dab1388755176b5e00f9d8ae3e49b7f856
+source-git-commit: 56ae47f511a7392286c4f85173dba30e93fc07d0
 workflow-type: tm+mt
-source-wordcount: '2358'
-ht-degree: 6%
+source-wordcount: '2520'
+ht-degree: 4%
 
 ---
 
@@ -19,7 +19,7 @@ ht-degree: 6%
 
 ## 先决条件 {#prerequisites}
 
-删除记录需要深入了解标识字段在Experience Platform中的工作原理。 具体而言，您必须知道要删除其记录的实体的身份命名空间值，具体取决于从中删除这些记录的数据集（或数据集）。
+删除记录需要深入了解标识字段在Experience Platform中的工作原理。 具体而言，您必须知道要删除其记录的实体的主身份命名空间和值，具体取决于从中删除这些记录的数据集（或数据集）。
 
 有关Experience Platform中标识的更多信息，请参阅以下文档：
 
@@ -28,6 +28,14 @@ ht-degree: 6%
 * [实时客户个人资料](../../profile/home.md)：使用标识图根据来自多个来源的汇总数据提供统一的使用者个人资料，这些数据近乎实时更新。
 * [体验数据模型(XDM)](../../xdm/home.md)：通过使用架构为Experience Platform数据提供标准定义和结构。 所有Experience Platform数据集都符合特定的XDM架构，该架构定义哪些字段是身份。
 * [标识字段](../../xdm/ui/fields/identity.md)：了解如何在XDM架构中定义标识字段。
+
+>[!IMPORTANT]
+>
+>记录删除仅对数据集架构中定义的&#x200B;**主标识**&#x200B;字段起作用。 以下限制适用：
+>
+>* **未扫描辅助标识。**&#x200B;如果数据集包含多个标识字段，则仅使用主标识进行匹配。 无法根据非主标识定位或删除记录。
+>* **跳过没有填充主标识的记录。**&#x200B;如果记录未填充主身份元数据，则无法将其删除。
+>* **在身份配置之前摄取的数据不合格。**&#x200B;如果在数据摄取后将主标识字段添加到架构，则无法通过此工作流删除以前摄取的记录。
 
 ## 创建请求 {#create-request}
 
@@ -53,13 +61,13 @@ ht-degree: 6%
 
 ![包含选定数据集并突出显示[!UICONTROL Select dataset]的[!UICONTROL Done]对话框。](../images/ui/record-delete/select-dataset.png)
 
-要从所有数据集中删除，请选择&#x200B;**[!UICONTROL All datasets]**。 此选项会增加操作的范围，并要求您提供所有相关标识类型。
+要从所有数据集中删除，请选择&#x200B;**[!UICONTROL All datasets]**。 此选项会增加操作的范围，并要求您为要定位的每个数据集提供主标识类型。
 
 ![已选择带有[!UICONTROL Select dataset]选项的[!UICONTROL All datasets]对话框。](../images/ui/record-delete/all-datasets.png)
 
 >[!WARNING]
 >
->选择&#x200B;**[!UICONTROL All datasets]**&#x200B;会将此操作扩展到组织中的所有数据集。 每个数据集可能使用不同的主标识类型。 您必须提供&#x200B;**所有必需的标识类型**&#x200B;以确保准确匹配。
+>选择&#x200B;**[!UICONTROL All datasets]**&#x200B;会将此操作扩展到组织中的所有数据集。 每个数据集可能使用不同的主标识类型。 您必须为每个数据集&#x200B;**提供**&#x200B;主标识类型以确保准确匹配。
 >
 >如果缺少任何标识类型，则在删除过程中可能会跳过某些记录。 这可能会降低处理速度，并导致&#x200B;**部分结果**。
 
@@ -72,17 +80,21 @@ Experience Platform中的每个数据集仅支持一种主要身份类型。
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_primaryidentity"
->title="身份标识命名空间"
->abstract="身份标识命名空间是一个用于将记录与 Experience Platform 中的消费者轮廓相关联的属性。数据集的身份标识命名空间字段由数据集所基于的架构定义。在此列中，您必须为记录的身份标识命名空间提供类型（或命名空间），例如 `email`（对于电子邮件地址）和 `ecid`（对于 Experience Cloud ID）。要了解详情，请参阅数据生命周期 UI 指南。"
+>title="主要身份标识命名空间"
+>abstract="主身份命名空间是唯一将记录与Experience Platform中的消费者配置文件关联的属性。 数据集的主要身份标识字段由数据集所基于的架构定义。在此列中，您必须提供与数据集架构匹配的主要身份命名空间(例如，电子邮件地址为`email`，Experience Cloud ID为`ecid`)。 要了解详情，请参阅数据生命周期 UI 指南。"
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_identityvalue"
 >title="主要身份标识值"
 >abstract="在此列中，您必须提供记录的身份标识命名空间的值，该值必须与左列中提供的身份标识类型相对应。如果身份标识命名空间类型是 `email`，则值应是记录的电子邮件地址。要了解详情，请参阅数据生命周期 UI 指南。"
 
-删除记录时，必须提供身份信息，以便系统能够确定要删除的记录。 对于Experience Platform中的任何数据集，会根据由该数据集的架构定义的&#x200B;**身份命名空间**&#x200B;字段删除记录。
+删除记录时，必须提供身份信息，以便系统能够确定要删除的记录。 对于Experience Platform中的任何数据集，会根据由数据集的架构定义的&#x200B;**主标识**&#x200B;字段删除记录。
 
-与Experience Platform中的所有身份字段一样，身份命名空间由两部分组成：**类型**（有时也称为身份命名空间）和&#x200B;**值**。 标识类型提供有关字段如何标识记录的上下文（如电子邮件地址）。 该值表示该类型记录的特定标识（例如，`jdoe@example.com`标识类型的`email`）。 用作标识的常见字段包括帐户信息、设备ID和Cookie ID。
+>[!NOTE]
+>
+>虽然UI允许您选择身份命名空间，但在执行时只使用在数据集架构中配置的&#x200B;**主身份**。 确保您提供的身份值对应于数据集的主身份字段。
+
+与Experience Platform中的所有标识字段一样，主标识由两部分组成：**type**（标识命名空间）和&#x200B;**value**。 标识类型提供有关字段如何标识记录的上下文（如电子邮件地址）。 该值表示该类型记录的特定标识（例如，`jdoe@example.com`标识类型的`email`）。 用作主标识的常见字段包括帐户信息、设备ID和Cookie ID。
 
 >[!TIP]
 >
@@ -101,7 +113,7 @@ Experience Platform中的每个数据集仅支持一种主要身份类型。
 
 ![请求创建工作流中突出显示了用于上传JSON文件的选择文件和拖放界面。](../images/ui/record-delete/upload-json.png)
 
-JSON文件必须格式化为一组对象，每个对象表示一个标识。
+JSON文件必须采用对象数组的格式，每个对象表示目标数据集的主要标识值。
 
 ```json
 [
@@ -118,7 +130,7 @@ JSON文件必须格式化为一组对象，每个对象表示一个标识。
 
 | 属性 | 描述 |
 | --- | --- |
-| `namespaceCode` | 身份类型。 |
+| `namespaceCode` | 目标数据集的主要身份命名空间。 |
 | `value` | 类型表示的主要标识值。 |
 
 上传文件后，您可以继续[提交请求](#submit)。
