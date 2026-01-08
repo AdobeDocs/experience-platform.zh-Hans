@@ -54,7 +54,7 @@ ht-degree: 8%
 
 ### 手动管理沙盒 {#manually-manage-sandboxes}
 
-关闭**[!UICONTROL Auto-include]**后，您可以手动添加或从策略中删除特定沙盒。 这让您能够精确控制哪些沙盒强制执行策略的访问控制规则。
+关闭&#x200B;**[!UICONTROL Auto-include]**&#x200B;后，您可以手动添加或从策略中删除特定沙盒。 这让您能够精确控制哪些沙盒强制执行策略的访问控制规则。
 
 >[!NOTE]
 >
