@@ -21,7 +21,7 @@ ht-degree: 0%
 - **所需权限**：您的用户帐户有权访问Experience Platform中的查询服务。 如果服务在UI中不可用，请查看[权限文档](../../access-control/home.md#permissions)并与系统管理员联系。
 - **数据摄取**：您已将数据摄取到Experience Platform。
 
-如果需要摄取数据，请查看[数据摄取教程视频](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)，以了解有关数据集创建、架构映射、摄取和验证的概述。 有关更深入的信息和其他学习资源的链接，请阅读[引入概述文档](../../ingestion/home.md)。
+如果需要摄取数据，请查看[数据摄取教程视频](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)，以了解有关数据集创建、架构映射、摄取和验证的概述。 有关更深入的信息和其他学习资源的链接，请阅读[引入概述文档](../../ingestion/home.md)。
 
 ## 快速入门路径
 
