@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Real-Time Customer Data Platform B2B edition快速入门
 description: 使用此情景作为示例，来设置Adobe Real-Time Customer Data Platform B2B edition实施。
 feature: Get Started, B2B
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: ad9ace46-9915-4b8f-913a-42e735859edf
 source-git-commit: ed655be7ad274c06deea1e50001c28c58f68796e
 workflow-type: tm+mt
@@ -100,7 +100,7 @@ Bodea营销人员检查所有字段组是否都已正确映射，并通过初始
 
 >[!NOTE]
 > 
->有关如何完成此操作的完整步骤，请参阅有关[将受众激活到目标](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html)的教程。
+>有关如何完成此操作的完整步骤，请参阅有关[将受众激活到目标](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html?lang=zh-Hans)的教程。
 
 Bodea营销人员可将受众激活到目标，从而允许他们将受众数据从Experience Platform推送到其营销自动化平台。 有关可用目标的详细信息，请阅读[目标目录](../destinations/catalog/overview.md)。
 
