@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据建模的最佳实践
 description: 本文档介绍了Experience Data Model (XDM)架构以及用于构成要在Adobe Experience Platform中使用的架构的构建块、原则和最佳实践。
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-source-git-commit: 7521273c0ea4383b7141e9d7a82953257ff18c34
+source-git-commit: 7a763a978443c0a074e6368448320056759f72bb
 workflow-type: tm+mt
-source-wordcount: '3236'
+source-wordcount: '3429'
 ht-degree: 1%
 
 ---
@@ -81,11 +81,11 @@ ht-degree: 1%
 
 如果要分析实体中的某些属性如何随时间变化，则很可能是事件实体。 例如，可以将产品项目添加到购物车作为Experience Platform中的添加到购物车事件进行跟踪：
 
-| 客户ID | 类型 | 产品 ID | 数量 | 时间戳 |
+| 客户ID | 类型 | 产品ID | 数量 | 时间戳 |
 | --- | --- | --- | --- | --- |
-| 1234567 | Add | 275098 | 2 | 10月1日，上午10点32分 |
-| 1234567 | 移除 | 275098 | 1 | 10月1日，上午10点33分 |
-| 1234567 | Add | 486502 | 1 | 10月1日，上午10点41分 |
+| 1234567 | Add | 275098 | 2 | 10月1日上午10:32 |
+| 1234567 | 删除 | 275098 | 1 | 10月1日上午10:33 |
+| 1234567 | Add | 486502 | 1 | 10月1日上午10:41 |
 | 1234567 | Add | 910482 | 5 | 10月3日，下午2:15 |
 
 {style="table-layout:auto"}
@@ -198,7 +198,7 @@ ht-degree: 1%
 
 ### 采用迭代建模方法 {#iterative-modeling}
 
-架构演变[&#128279;](./composition.md#evolution)的规则规定，一旦实施架构，只能对架构进行非破坏性更改。 换言之，一旦您将字段添加到架构并且已根据该字段摄取数据，则无法再移除该字段。 因此，在首次创建架构时，务必要采用迭代建模方法，从随着时间推移逐渐增加复杂性的简化实施开始。
+架构演变[的](./composition.md#evolution)规则规定，一旦实施架构，只能对架构进行非破坏性更改。 换言之，一旦您将字段添加到架构并且已根据该字段摄取数据，则无法再移除该字段。 因此，在首次创建架构时，务必要采用迭代建模方法，从随着时间推移逐渐增加复杂性的简化实施开始。
 
 如果您不确定某个特定字段是否必须包含在架构中，最佳实践是将其排除在外。 如果之后确定该字段是必需的，则始终可以将该字段添加到架构的下一个迭代中。
 
@@ -217,9 +217,9 @@ Experience Platform提供了多个现成的XDM架构字段组，用于捕获与�
 * Adobe Campaign
 * Adobe Target
 
-例如，您可以使用[[!UICONTROL Adobe Analytics ExperienceEvent模板]字段组](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json)将[!DNL Analytics]特定的字段映射到您的XDM架构。 根据您使用的Adobe应用程序，您应在架构中使用这些Adobe提供的字段组。
+例如，您可以使用[[!UICONTROL Adobe Analytics ExperienceEvent Template]字段组](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json)将特定于[!DNL Analytics]的字段映射到您的XDM架构。 根据您使用的Adobe应用程序，您应在架构中使用这些Adobe提供的字段组。
 
-![Adobe Analytics ExperienceEvent模板]的架构图(../images/best-practices/analytics-field-group.png)
+![ [!UICONTROL Adobe Analytics ExperienceEvent Template].](../images/best-practices/analytics-field-group.png)的架构图
 
 Adobe应用程序字段组通过使用`identityMap`字段自动分配默认主标识，该字段是系统生成的只读对象，用于映射单个客户的标准标识值。
 
@@ -231,35 +231,55 @@ Adobe应用程序字段组通过使用`identityMap`字段自动分配默认主�
 
 ## 数据验证字段 {#data-validation-fields}
 
-将数据摄取到数据湖中时，仅对约束字段强制执行数据验证。 要在批量摄取期间验证特定字段，您必须在XDM架构中将字段标记为受约束。 为了防止将错误数据摄取到Experience Platform中，建议在创建架构时定义字段级验证标准。
+将数据摄取到数据湖中时，仅对约束字段强制执行数据验证。 要在批量摄取期间验证特定字段，您必须在XDM架构中将字段标记为受约束。 要防止错误数据进入Experience Platform，请在创建架构时定义验证要求。
 
 >[!IMPORTANT]
 >
->验证不适用于嵌套列。 如果字段格式位于数组列中，将不会验证数据。
+>验证不适用于嵌套列。 如果字段格式位于数组列中，则不会验证数据。
 
-要设置特定字段的约束，请从架构编辑器中选择该字段以打开&#x200B;**[!UICONTROL 字段属性]**&#x200B;侧栏。 有关可用字段的精确说明，请参阅有关[特定类型的字段属性](../ui/fields/overview.md#type-specific-properties)的文档。
+要对字段设置约束，请在架构编辑器中选择该字段以打开&#x200B;**[!UICONTROL Field properties]**&#x200B;侧栏。 有关可用字段的精确说明，请参阅有关[特定类型的字段属性](../ui/fields/overview.md#type-specific-properties)的文档。
 
-![在[!UICONTROL 字段属性]侧边栏中突出显示约束字段的架构编辑器。](../images/best-practices/data-validation-fields.png)
+![在[!UICONTROL Field properties]侧边栏中突出显示约束字段的架构编辑器。](../images/best-practices/data-validation-fields.png)
 
 ### 维护数据完整性的提示 {#data-integrity-tips}
 
-以下是在创建架构时维护数据完整性的建议集合。
+以下建议可帮助您在创建架构时保持数据完整性。
 
 * **考虑主标识**：对于Web SDK、移动SDK、Adobe Analytics和Adobe Journey Optimizer等Adobe产品，`identityMap`字段通常用作主标识。 避免将其他字段指定为该架构的主标识。
 * **确保`_id`未用作标识**： Experience Event架构中的`_id`字段不能用作标识，因为它用于记录唯一性。
 * **设置长度约束**：最佳做法是在标记为标识的字段上设置最小和最大长度。 如果您尝试将自定义命名空间分配给身份字段，但不满足最小和最大长度约束，则会触发警告。 这些限制有助于保持一致性和数据质量。
-* **为一致值应用模式**：如果您的标识值遵循特定模式，则应使用&#x200B;**[!UICONTROL 模式]**&#x200B;设置强制实施此约束。 此设置可以包括仅数字、大写或小写或特定字符组合等规则。 使用正则表达式匹配字符串中的模式。
+* **为一致值应用模式**：如果您的标识值遵循特定模式，请使用&#x200B;**[!UICONTROL Pattern]**&#x200B;设置强制实施约束。 此设置可以包括仅数字、大写或小写或特定字符组合等规则。 使用正则表达式匹配字符串中的模式。
 * **在Analytics架构中限制eVar**：通常，一个Analytics架构应仅将一个eVar指定为标识。 如果您打算使用多个eVar作为身份，则应仔细检查数据结构是否可以优化。
 * **确保所选字段的唯一性**：与架构中的主标识相比，您选择的字段应该是唯一的。 如果不是，请不要将其标记为标识。 例如，如果多个客户可以提供相同的电子邮件地址，则该命名空间不是合适的身份。 此原则也适用于其他身份命名空间，如电话号码。 将非唯一字段标记为标识可能会导致不需要的用户档案折叠。
 * **验证最小字符串长度**：所有字符串字段的长度应至少为一个字符，因为字符串值绝不应为空。 但是，可接受非必填字段的空值。 默认情况下，新字符串字段的最小长度为1。
+
+## 管理启用配置文件的架构 {#managing-profile-enabled-schemas}
+
+本节介绍如何管理已为Real-time Customer Profile启用的架构。 启用架构后，无法禁用或删除该架构。 您必须确定如何防止进一步使用以及如何管理无法删除的数据集。
+
+为配置文件启用架构后，配置将无法撤销。 如果某个模式不再使用，请将其重命名以阐明其状态，并创建一个具有正确结构和身份配置的替换模式。 这有助于防止在用户创建新数据集或配置摄取工作流时意外重用已弃用的架构。
+
+系统数据集有时与启用实时客户个人资料的架构一起显示。 无法删除系统数据集，即使关联的架构已被弃用。 要防止意外使用，请重命名已弃用的启用配置文件的架构，并确认没有任何摄取工作流指向保留不变的系统数据集。
+
+使用以下最佳实践以防止意外重用已弃用的启用配置文件的架构：
+
+* 在弃用架构时，请使用明确的命名约定。 包括诸如“已弃用”、“请勿使用”或版本标记之类的标签。
+* 停止根据要弃用的架构将数据摄取到任何数据集中。
+* 使用正确的结构、身份配置和命名模式创建新架构。
+* 审查无法删除的系统数据集，并确认没有摄取工作流引用这些数据集。
+* 在内部记录更改，以便其他用户了解架构被弃用的原因。
+
+>[!TIP]
+>
+>有关启用配置文件的架构和相关限制的其他指导，请参阅[XDM疑难解答指南](../troubleshooting-guide.md#delete-profile-enabled)。
 
 ## 后续步骤
 
 本文档介绍了为Experience Platform设计数据模型的一般准则和最佳实践。 总结一下：
 
-* 在构建架构之前，使用自上而下的方法，将数据表排序为用户档案、查找和事件类别。
-* 在为不同目的设计架构时，通常有多种方法和选项。
-* 您的数据模型应支持您的业务用例，例如分段或客户历程分析。
-* 使您的架构尽可能简单，并仅在绝对必要时添加新字段。
+* 在构建架构之前，将数据表按配置文件、查找和事件类别排序。
+* 当您针对不同用例设计架构时，请评估多种方法。
+* 确保您的数据模型支持分段或客户历程目标。
+* 保持架构尽可能简单。 仅在必要时添加新字段。
 
-准备就绪后，请参阅有关[在UI中创建架构](../tutorials/create-schema-ui.md)的教程，以了解有关如何创建架构、为实体分配适当的类以及添加要将数据映射到其中的字段的分步说明。
+准备就绪后，请参阅有关[在UI](../tutorials/create-schema-ui.md)中创建架构的教程，以了解有关架构创建、类分配和字段映射的分步说明。
