@@ -219,7 +219,7 @@ Experience Platform提供了多个现成的XDM架构字段组，用于捕获与�
 
 例如，您可以使用[[!UICONTROL Adobe Analytics ExperienceEvent Template]字段组](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json)将特定于[!DNL Analytics]的字段映射到您的XDM架构。 根据您使用的Adobe应用程序，您应在架构中使用这些Adobe提供的字段组。
 
-![ [!UICONTROL Adobe Analytics ExperienceEvent Template].](../images/best-practices/analytics-field-group.png)的架构图
+![&#x200B; [!UICONTROL Adobe Analytics ExperienceEvent Template].](../images/best-practices/analytics-field-group.png)的架构图
 
 Adobe应用程序字段组通过使用`identityMap`字段自动分配默认主标识，该字段是系统生成的只读对象，用于映射单个客户的标准标识值。
 
