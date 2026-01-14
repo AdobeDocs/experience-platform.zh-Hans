@@ -126,7 +126,7 @@ Experience Platform使用架构，以一致且可重用的方式描述数据结�
 
 ## 后续步骤
 
-要了解如何将您的[!DNL Marketo]数据连接到Experience Platform，请参阅关于在UI中创建Marketo源连接器的教程[](../../../tutorials/ui/create/adobe-applications/marketo.md)。
+要了解如何将您的[!DNL Marketo]数据连接到Experience Platform，请参阅关于在UI中创建Marketo源连接器的教程[&#128279;](../../../tutorials/ui/create/adobe-applications/marketo.md)。
 
 <!--
 
