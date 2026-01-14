@@ -2,9 +2,9 @@
 title: B2B命名空间和架构
 description: 本文档概述了创建B2B源连接器时所需的自定义命名空间。
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
+source-git-commit: 5eeb0397ddc96a224919a776f94058ae3a539b69
 workflow-type: tm+mt
-source-wordcount: '1500'
+source-wordcount: '1538'
 ht-degree: 6%
 
 ---
@@ -13,7 +13,9 @@ ht-degree: 6%
 
 >[!AVAILABILITY]
 >
->您必须有权访问[Adobe Real-Time Customer Data Platform B2B edition](../../../../rtcdp/b2b-overview.md)，您的B2B架构才能在[实时客户档案](../../../../profile/home.md)中获得资格。
+>- 您必须有权访问[Adobe Real-Time Customer Data Platform B2B edition](../../../../rtcdp/b2b-overview.md)，您的B2B架构才能在[实时客户档案](../../../../profile/home.md)中获得资格。
+>
+>- 从2026年1月开始，Real-Time CDP B2B edition将不再支持B2B实体之间的&#x200B;**非标准**&#x200B;关系。 因此，建议您更新B2B实体以使用[B2B命名空间和架构指南](../../../../rtcdp/schemas/b2b.md)中概述的标准关系。
 
 >[!NOTE]
 >
@@ -124,7 +126,7 @@ Experience Platform使用架构，以一致且可重用的方式描述数据结�
 
 ## 后续步骤
 
-要了解如何将您的[!DNL Marketo]数据连接到Experience Platform，请参阅关于在UI中创建Marketo源连接器的教程[&#128279;](../../../tutorials/ui/create/adobe-applications/marketo.md)。
+要了解如何将您的[!DNL Marketo]数据连接到Experience Platform，请参阅关于在UI中创建Marketo源连接器的教程[](../../../tutorials/ui/create/adobe-applications/marketo.md)。
 
 <!--
 
