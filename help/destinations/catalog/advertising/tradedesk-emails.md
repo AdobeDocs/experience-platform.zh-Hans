@@ -3,9 +3,9 @@ title: 交易台 — CRM连接
 description: 激活交易台帐户中的配置文件，以根据CRM数据进行受众定位和抑制。
 last-substantial-update: 2025-01-16T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: b9713d5155f89ee895d9fb623088eda77b931d89
 workflow-type: tm+mt
-source-wordcount: '1088'
+source-wordcount: '1140'
 ht-degree: 5%
 
 ---
@@ -89,7 +89,7 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 
 ### 填写目标详细信息 {#fill-in-details}
 
-在将受众数据发送到或激活到目标之前，您必须先设置与自己的目标平台的连接。 在[设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=zh-Hans)此目标时，必须提供以下信息：
+在将受众数据发送到或激活到目标之前，您必须先设置与自己的目标平台的连接。 在[设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html)此目标时，必须提供以下信息：
 
 * **[!UICONTROL Account Type]**：请选择&#x200B;**[!UICONTROL Existing Account]**&#x200B;选项。
 * **[!UICONTROL Name]**：将来用于识别此目标的名称。
@@ -101,6 +101,11 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 连接到目标时，设置数据管理策略是完全可选的。 有关更多详细信息，请查看Experience Platform [数据管理概述](/help/data-governance/policies/overview.md)。
 
 ## 激活此目标的受众 {#activate}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_required_mappings_ttdg"
+>title="预配置的映射集"
+>abstract="我们已为您预配置了这四个映射集。 将数据激活到交易台时，符合激活受众资格的用户档案不一定需要在用户档案中存在全部四个标识，因为此目标将使用此处显示的任何目标标识。"
 
 >[!IMPORTANT]
 > 
@@ -145,7 +150,7 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 
 1. 首先，选择&#x200B;**[!UICONTROL Data]**&#x200B;选项卡，并查看&#x200B;**[!UICONTROL First-Party]**&#x200B;部分。
 2. 向下滚动该页面，在&#x200B;**[!UICONTROL Imported Data]**&#x200B;下，您会找到&#x200B;**[!UICONTROL Adobe 1PD Tile]**。
-3. 单击&#x200B;**[!UICONTROL Adobe 1PD]**&#x200B;图块，它将列出激活到您的广告商的[!DNL Trade Desk]目标的所有受众。 您还可以使用搜索功能。
+3. 单击**[!UICONTROL Adobe 1PD]**图块，它将列出激活到您的广告商的[!DNL Trade Desk]目标的所有受众。 您还可以使用搜索功能。
 4. Experience Platform中的区段ID #将显示为[!DNL Trade Desk] UI中的区段名称。
 
 ## 数据使用和治理 {#data-usage-governance}
