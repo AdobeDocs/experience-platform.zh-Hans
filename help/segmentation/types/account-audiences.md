@@ -1,12 +1,12 @@
 ---
 title: 帐户受众
 description: 了解如何创建和使用帐户受众，以便在下游目标中定位帐户配置文件。
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
-badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 047930d6-939f-4418-bbcb-8aafd2cf43ba
-source-git-commit: 1e508ec11b6d371524c87180a41e05ffbacc2798
+source-git-commit: 6cb5afb78502c34e0eba99af29d7a67119b7e05a
 workflow-type: tm+mt
-source-wordcount: '1498'
+source-wordcount: '1461'
 ht-degree: 21%
 
 ---
@@ -60,10 +60,6 @@ ht-degree: 21%
 此时将显示“区段生成器”。 帐户属性和受众将显示在左侧导航栏中。 在[!UICONTROL Attributes]选项卡下，您可以同时添加Experience Platform创建和自定义属性。
 
 ![将显示区段生成器。 请注意，仅显示属性和受众。](../images/types/account/segment-builder.png)
-
-在创建帐户受众时，请注意，事件列在&#x200B;**[!UICONTROL People]**&#x200B;下，而不是作为事件自己的选项卡，因为这些属性与人员关联。
-
-![在[!UICONTROL People]文件夹中查找事件的位置突出显示。](../images/types/account/attributes.png)
 
 在[!UICONTROL Audiences]选项卡下，您可以添加之前创建的基于人员的受众，以便在创建您自己的帐户受众时从中构建。
 
@@ -208,8 +204,8 @@ ht-degree: 21%
    - 跨实体是指您在受众内的不同实体之间进行切换。例如，从帐户到人员再到营销列表。
 - 可在单个字段中检查的值的最大数量为 **50**。
    - 例如，如果字段为“City Name”，则可以根据50个城市名称检查该值。
-- 帐户受众&#x200B;**不能**&#x200B;使用顺序事件。
 - 帐户受众&#x200B;**不能**&#x200B;使用映射。
+- 帐户受众&#x200B;**不能**&#x200B;使用事件。
 - 最大嵌套数组深度为 **5**。
 - 嵌套对象的最大数量为&#x200B;**10**。
 
