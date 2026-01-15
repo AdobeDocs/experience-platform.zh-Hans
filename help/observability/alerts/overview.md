@@ -4,9 +4,9 @@ title: 警报概述
 description: 了解 Adobe Experience Platform 中的警报，包括有关如何定义警报规则的结构。
 feature: Alerts
 exl-id: c38a93c6-1618-4ef9-8f94-41c7ab4af43c
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: f33bcf982216d25e514992d5ebf978b5535abd77
 workflow-type: tm+mt
-source-wordcount: '799'
+source-wordcount: '791'
 ht-degree: 12%
 
 ---
@@ -31,7 +31,7 @@ Experience Platform警报可以发送一次，也可以按预定义的间隔重�
 | --- | --- |
 | 并不一定表示存在问题。 | 指示可能不受欢迎的状态。 |
 | 不重复。 | 如果异常情况持续存在，可能会重复此操作。 |
-| 示例包括：<ul><li>数据摄取已成功完成。</li><li>查询执行已完成。</li><li>已删除数据。</li></ul> | 示例包括：<ul><li>摄取持续时间超过服务级别协议(SLA)。</li><li>在过去24小时内未发生每日摄取。</li><li>流处理器的错误率高于配置的阈值。</li><li>配置文件总数超过授权。</li></ul> |
+| 示例包括：<ul><li>数据摄取已成功完成。</li><li>查询执行已完成。</li><li>已删除数据。</li></ul> | 示例包括：<ul><li>摄取持续时间超过服务级别协议(SLA)。</li><li>在过去24小时内未发生每日摄取。</li><li>流处理器的错误率高于配置的阈值。</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -64,7 +64,7 @@ Experience Platform警报可以发送一次，也可以按预定义的间隔重�
 
 Experience Platform UI允许您查看收到的警报和管理警报规则。 以下视频介绍了这些功能。
 
->[!VIDEO](https://video.tv.adobe.com/v/3423917?captions=chi_hans&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/336218?quality=12&learn=on)
 
 要在Experience Platform UI中使用警报，您必须通过Adobe Admin Console启用以下访问控制权限：
 
