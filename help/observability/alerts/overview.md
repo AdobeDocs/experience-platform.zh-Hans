@@ -64,7 +64,7 @@ Experience Platform警报可以发送一次，也可以按预定义的间隔重�
 
 Experience Platform UI允许您查看收到的警报和管理警报规则。 以下视频介绍了这些功能。
 
->[!VIDEO](https://video.tv.adobe.com/v/336218?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3423917?captions=chi_hans&quality=12&learn=on)
 
 要在Experience Platform UI中使用警报，您必须通过Adobe Admin Console启用以下访问控制权限：
 
