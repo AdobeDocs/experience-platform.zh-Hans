@@ -4,16 +4,16 @@ solution: Experience Platform
 title: 架构组合基础
 description: 了解Experience Data Model (XDM)架构以及在Adobe Experience Platform中构建架构的构建块、原则和最佳实践。
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: dcb6770d739d0da5cfa339584a769f5311a8c7e1
+source-git-commit: 5b59d491834854829a89a240ccd612367cf558d4
 workflow-type: tm+mt
-source-wordcount: '4308'
+source-wordcount: '4291'
 ht-degree: 8%
 
 ---
 
 # 架构构成基础
 
-了解Experience Data Model (XDM)架构以及在Adobe Experience Platform中构建架构的构建块、原则和最佳实践。 有关XDM及其在[!DNL Experience Platform]中的使用方式的一般信息，请参阅[XDM系统概述](../home.md)。
+了解Experience Data Model (XDM)架构以及在Adobe Experience Platform中构建架构的构建块、原则和最佳实践。 有关XDM及其在Experience Platform中的使用方式的一般信息，请参阅[XDM系统概述](../home.md)。
 
 ## 了解架构 {#understanding-schemas}
 
@@ -44,7 +44,7 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 * **记录数据**：提供有关主题属性的信息。 主体可以是组织，也可以是个人。
 * **时序数据**：提供记录主体直接或间接执行操作时的系统快照。
 
-所有XDM架构都描述了可归类为记录或时间序列的数据。 架构的数据行为由架构的类定义，该类在首次创建架构时分配给架构。 本文档后面详细介绍了XDM类。
+所有XDM架构都描述了可归类为记录或时间序列的数据。 架构的数据行为由架构的类定义，该类在首次创建架构时分配给架构。
 
 记录和时间序列架构都包含标识映射(`xdm:identityMap`)。 此字段包含主体的身份表示形式，从标记为“身份”的字段绘制，如下节所述。
 
@@ -59,7 +59,7 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 
 为了帮助完成此过程，架构中的关键字段可以标记为标识。 摄取数据时，这些字段中的数据将插入该用户的“[!UICONTROL Identity Graph]”中。 然后，[[!DNL Real-Time Customer Profile]](../../profile/home.md)和其他Experience Platform服务可以访问图形数据，以提供每个客户的拼合视图。
 
-通常标记为“[!UICONTROL Identity]”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)、CRM ID或其他唯一ID字段。 请考虑特定于贵组织的任何唯一标识符，因为它们也可以是好的&quot;[!UICONTROL Identity]&quot;字段。
+通常标记为“[!UICONTROL Identity]”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html)、CRM ID或其他唯一ID字段。 请考虑特定于贵组织的任何唯一标识符，因为它们也可以是好的&quot;[!UICONTROL Identity]&quot;字段。
 
 要了解有关身份信息如何帮助您向客户提供数字体验的更多信息，请参阅[身份服务概述](../../identity-service/home.md)。 有关创建架构[时使用标识的提示，请参阅数据建模最佳实践文档](./best-practices.md#data-validation-fields)。
 
@@ -78,7 +78,7 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 >
 >使用`identityMap`的架构可以用作关系中的源架构，但不能用作引用架构。 这是因为所有引用架构必须具有可见标识，该标识可以在源架构内的引用字段中映射。 请参阅[关系](../tutorials/relationship-ui.md)上的UI指南，了解有关源架构和参考架构要求的更多信息。
 
-但是，如果架构的标识数可变，或者您要从将标识存储在一起的源(如[!DNL Airship]或Adobe Audience Manager)引入数据，则标识映射可能很有用。 此外，如果您使用[Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/home/)，则需要标识映射。
+但是，如果架构的标识数可变，或者您要从将标识存储在一起的源(如[!DNL Airship]或Adobe Audience Manager)引入数据，则标识映射可能很有用。 此外，如果您使用[Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/home/)，则需要标识映射。
 
 简单标识映射的示例如下所示：
 
@@ -113,7 +113,7 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 
 >[!NOTE]
 >
->还可以为每个标识值提供一个布尔值，用于指示该值是否为主标识(`primary`)。 您只需要为打算在[!DNL Real-Time Customer Profile]中使用的架构设置主身份。 有关详细信息，请参阅[合并架构](#union)部分。
+>还可以为每个标识值提供一个布尔值，用于指示该值是否为主标识(`primary`)。 您只需要为打算在[!DNL Real-Time Customer Profile]中使用的架构设置主身份。
 
 ### 模式演化原则 {#evolution}
 
@@ -123,7 +123,7 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 
 >[!NOTE]
 >
->只有在架构尚未用于将数据摄取到Experience Platform并且未启用以在Real-time Customer Profile中使用时，您才可以对其引入重大更改。 但是，一旦在[!DNL Experience Platform]中使用了架构，它就必须遵守附加版本控制策略。
+>只有在架构尚未用于将数据摄取到Experience Platform并且未启用以在Real-time Customer Profile中使用时，您才可以对其引入重大更改。 但是，一旦在Experience Platform中使用了架构，它就必须遵守附加版本控制策略。
 
 下表列出了在编辑架构、字段组和数据类型时支持的更改：
 
@@ -148,16 +148,16 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 将以前的可选字段设置为必填字段时，请牢记以下几点：
 
 1. 如果您查询历史数据并将结果写入新数据集，则某些行将失败，因为它们包含必填字段的空值。
-1. 如果该字段参与了[实时客户个人资料](../../profile/home.md)，并且您在根据需要设置它之前导出数据，则某些个人资料可能为空。
+1. 如果字段参与了Real-time Customer Profile，并且您在根据需要设置它之前导出数据，则某些用户档案可能为空。
 1. 您可以使用架构注册表API查看Experience Platform中所有XDM资源的带时间戳的更改日志，包括新的必填字段。 有关详细信息，请参阅[审核日志终结点](../api/audit-log.md)指南。
 
 ### 架构和数据摄取
 
-要将数据摄取到Experience Platform，必须首先创建一个数据集。 数据集是[[!DNL Catalog Service]](../../catalog/home.md)的数据转换和跟踪的构建块，通常表示包含摄取数据的表或文件。 所有数据集都基于现有XDM架构，这些架构为引入的数据应包含的内容以及应如何构建提供了限制。 有关详细信息，请参阅有关[Adobe Experience Platform数据摄取](../../ingestion/home.md)的概述。
+要将数据摄取到Experience Platform，必须首先创建一个数据集。 数据集是[[!DNL Catalog Service]](../../catalog/home.md)的数据转换和跟踪的构建块，通常表示包含摄取数据的表或文件。 所有数据集都基于现有XDM架构，这些架构为引入的数据应包含的内容以及应如何构建提供了限制。 有关详细信息，请参阅有关[Experience Platform数据摄取](../../ingestion/home.md)的概述。
 
 ## 架构的构建块 {#schema-building-blocks}
 
-Experience Platform使用组合方法，通过组合标准构建块来创建架构。 此方法促进现有组件的可重用性，并推动整个行业的标准化，以支持[!DNL Experience Platform]中的供应商架构和组件。
+Experience Platform使用组合方法，通过组合标准构建块来创建架构。 这种方法促进现有组件的可重用性，并推动整个行业的标准化，以支持Experience Platform中的供应商架构和组件。
 
 架构使用以下公式组成：
 
@@ -179,7 +179,7 @@ Experience Platform使用组合方法，通过组合标准构建块来创建架�
 
 架构的合成从指定类开始。 类定义架构将包含的数据的行为方面（记录或时间序列）。 除此之外，类还描述了基于该类的所有架构所需包含的最少数量的公共属性，并提供了一种合并多个兼容数据集的方法。
 
-架构的类确定哪些字段组适合在该架构中使用。 将在[下一节](#field-group)中对此进行详细讨论。
+架构的类确定哪些字段组适合在该架构中使用。
 
 Adobe提供了多个标准（“核心”）XDM类。 几乎所有下游Experience Platform进程都需要其中两个类[!DNL XDM Individual Profile]和[!DNL XDM ExperienceEvent]。 除了这些核心类之外，您还可以创建自己的自定义类，以描述组织更具体的用例。 当没有Adobe定义的核心类可用于描述独特用例时，自定义类由组织定义。
 
@@ -211,9 +211,9 @@ Experience Platform包括许多标准的Adobe字段组，同时还允许供应�
 
 >[!NOTE]
 >
->强烈建议您在架构中尽可能使用标准字段组，因为Experience Platform服务隐式理解这些字段，并且在跨[!DNL Experience Platform]组件使用时可提供更高的一致性。
+>强烈建议您在架构中尽可能使用标准字段组，因为Experience Platform服务隐式理解这些字段，并在跨Experience Platform组件使用时提供更高的一致性。
 >
->标准组件（如“名字”和“电子邮件地址”）提供的字段包含基本标量字段类型以外的附加含义。 它们告知[!DNL Experience Platform]，共享相同数据类型的任何字段将以相同的方式运行。 无论数据来自何处或数据正在哪个[!DNL Experience Platform]服务中使用，都可以信任此行为的一致性。
+>标准组件（如“名字”和“电子邮件地址”）提供的字段包含基本标量字段类型以外的附加含义。 它们告知Experience Platform，任何共享相同数据类型的字段都将以相同的方式运行。 可以相信无论数据来自何处，也不论数据被用于哪种Experience Platform服务中，这种行为都是一致的。
 
 请记住，架构由“零个或多个”字段组组成，这意味着您无需使用任何字段组即可构建有效架构。
 
@@ -245,11 +245,11 @@ Experience Platform在[!DNL Schema Registry]中提供了许多常见数据类型
 
 >[!NOTE]
 >
-> 标准XDM数据类型一直在演变，并且某些数据类型已被弃用。 有关已弃用数据类型的最新列表，请参阅官方XDM存储库中的[已弃用数据类型部分](https://github.com/adobe/xdm/tree/master/components/datatypes/deprecated)。
+> 标准XDM数据类型一直在演变，并且某些数据类型已被弃用。 有关已弃用数据类型的更新列表，请参阅官方XDM存储库中的[已弃用数据类型部分](https://github.com/adobe/xdm/tree/master/components/datatypes/deprecated)。
 
 ### 字段 {#field}
 
-字段是架构的最基本构建块。 字段通过定义特定数据类型，提供了有关它们可以包含的数据类型的约束。 这些基本数据类型定义单个字段，而前面提到的[数据类型](#data-type)允许您定义多个子字段并在各种架构中重用相同的多字段结构。 因此，除了将字段的“数据类型”定义为注册表中所定义的数据类型之一之外，Experience Platform还支持基本标量类型，例如：
+字段是架构的最基本构建块。 字段通过定义特定数据类型，提供了有关它们可以包含的数据类型的约束。 这些基本数据类型定义了单个字段，而之前提到的数据类型允许您定义多个子字段并在各种架构中重用相同的多字段结构。 因此，除了将字段的“数据类型”定义为注册表中所定义的数据类型之一之外，Experience Platform还支持基本标量类型，例如：
 
 * 字符串
 * 整数
@@ -278,7 +278,7 @@ Experience Platform在[!DNL Schema Registry]中提供了许多常见数据类型
 
 ## 组合示例 {#composition-example}
 
-架构是使用组合模型构建的，表示要引入[!DNL Experience Platform]的数据的格式和结构。 如前所述，这些架构由一个类以及与该类兼容的零个或多个字段组组成。
+架构是使用组合模型构建的，用于表示要引入Experience Platform的数据的格式和结构。 如前所述，这些架构由一个类以及与该类兼容的零个或多个字段组组成。
 
 例如，描述在零售商店购买的架构可能称为“[!UICONTROL Store Transactions]”。 架构实现了与标准[!DNL XDM ExperienceEvent]字段组和用户定义的[!UICONTROL Commerce]字段组组合的[!UICONTROL Product Info]类。
 
@@ -294,7 +294,7 @@ Experience Platform在[!DNL Schema Registry]中提供了许多常见数据类型
 
 ![描述组成这些字段的合并架构流程图。](../images/schema-composition/union.png)
 
-通过启用用于[!DNL Real-Time Customer Profile]的架构，它包含在该类类型的并集中。 [!DNL Profile]提供了可靠的集中式客户属性配置文件，以及客户在与[!DNL Experience Platform]集成的任何系统中发生的每个事件的带时间戳的帐户。 [!DNL Profile]使用合并视图来表示此数据，并提供每个客户的整体视图。
+通过启用用于[!DNL Real-Time Customer Profile]的架构，它包含在该类类型的并集中。 [!DNL Profile]为客户属性提供了可靠的集中式配置文件，并为客户在与Experience Platform集成的任何系统中发生的每个事件提供了带有时间戳的帐户。 [!DNL Profile]使用合并视图来表示此数据，并提供每个客户的整体视图。
 
 有关使用[!DNL Profile]的更多信息，请参阅[实时客户资料概述](../../profile/home.md)。
 
@@ -318,7 +318,7 @@ Experience Platform在[!DNL Schema Registry]中提供了许多常见数据类型
 * [[!DNL XDM Individual Profile]](../classes/individual-profile.md)
 * [[!DNL XDM ExperienceEvent]](../classes/experienceevent.md)
 
-[!DNL Schema Registry]用于访问Adobe Experience Platform中的[!DNL Schema Library]，并提供一个用户界面和RESTful API，所有可用库资源都可从其中访问。 [!DNL Schema Library]包含由Adobe定义的行业资源、由Experience Platform合作伙伴定义的供应商资源，以及由贵组织成员组成的类、字段组、数据类型和架构。
+[!DNL Schema Registry]用于访问Experience Platform中的[!DNL Schema Library]，并提供一个用户界面和RESTful API，所有可用库资源都可从其中访问。 [!DNL Schema Library]包含由Adobe定义的行业资源、由Experience Platform合作伙伴定义的供应商资源，以及由贵组织成员组成的类、字段组、数据类型和架构。
 
 要开始使用UI合成架构，请按照[架构编辑器教程](../tutorials/create-schema-ui.md)中的说明来构建本文档中提到的“忠诚会员”架构。
 
@@ -364,7 +364,7 @@ Experience Platform在[!DNL Schema Registry]中提供了许多常见数据类型
 **缺点**：
 
 * 字段变得更加嵌套。
-* 使用[Adobe Experience Platform查询服务](../../query-service/home.md)时，必须为嵌套在对象中的查询字段提供更长的引用字符串。
+* 使用[Experience Platform查询服务](../../query-service/home.md)时，必须为嵌套在对象中的查询字段提供更长的引用字符串。
 
 #### 自由格式字段
 
