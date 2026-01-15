@@ -2,7 +2,7 @@
 title: Adobe Commerce目标连接器
 description: 了解Adobe Commerce和Real-Time CDP商家如何通过提供高度相关的网站内容和促销活动，针对Real-Time CDP中构建和管理的客户受众进行自定义，从而个性化购物体验。
 exl-id: f7aa3c6c-ba7a-440c-a4d7-5d7b50dbbc0d
-source-git-commit: fb8a17b8ea2ba1ddd64ceee7544f17058b43a943
+source-git-commit: 70556134a96260ae111c71ee288d4d646481270b
 workflow-type: tm+mt
 source-wordcount: '668'
 ht-degree: 3%
@@ -22,12 +22,12 @@ ht-degree: 3%
 要使用此目标连接，请确保您有权访问：
 
 - [Adobe Experience Platform](https://experience.adobe.com/)
-- [Adobe Developer Console](https://developer.adobe.com/developer-console/docs/guides/getting-started/)。 通过访问开发人员控制台，您可以查看在Adobe Commerce中[完成扩展的配置](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html?lang=zh-Hans#configure-the-extension)所需的服务帐户和凭据信息。
-- [Adobe Commerce版本2.4.4或更高版本](https://business.adobe.com/cn/products/commerce.html)
+- [Adobe Developer Console](https://developer.adobe.com/developer-console/docs/guides/getting-started/)。 通过访问开发人员控制台，您可以查看在Adobe Commerce中[完成扩展的配置](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html#configure-the-extension)所需的服务帐户和凭据信息。
+- [Adobe Commerce版本2.4.4或更高版本](https://business.adobe.com/products/commerce.html)
 
 在Experience Platform中，创建以下内容：
 
-- [架构](../../../xdm/schema/composition.md)。 您创建的架构表示您计划从Adobe Commerce中摄取的数据。 [了解更多](https://experienceleague.adobe.com/docs/commerce-merchant-services/data-connection/fundamentals/update-xdm.html?lang=zh-Hans)有关如何创建包含特定于Commerce的字段组的架构。
+- [架构](../../../xdm/schema/composition.md)。 您创建的架构表示您计划从Adobe Commerce中摄取的数据。 [了解更多](https://experienceleague.adobe.com/docs/commerce-merchant-services/data-connection/fundamentals/update-xdm.html)有关如何创建包含特定于Commerce的字段组的架构。
 - [数据集](../../../catalog/datasets/user-guide.md#create)。 数据集是用于数据收集的存储和管理结构。 您可以使用上面创建的架构创建此数据集。
 - [数据流](../../../datastreams/overview.md#create)。 允许数据从Adobe Experience Platform流向其他Adobe DX产品的ID。 此ID必须关联到您的特定Adobe Commerce实例中的特定网站。 创建此数据流时，请指定您在上面创建的XDM架构。
 
@@ -71,7 +71,7 @@ ht-degree: 3%
 
 ## [!DNL Adobe Commerce]中的后续步骤
 
-现在您已在Experience Platform中配置了[!DNL Commerce]目标，您需要在[!DNL Audience Activation]中安装[!DNL Commerce]扩展并配置[!DNL Commerce Admin]以导入您创建的Real-Time CDP受众。 请参阅[[!DNL Commerce] 文档](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html?lang=zh-Hans)以了解详情。
+现在您已在Experience Platform中配置了[!DNL Commerce]目标，您需要在[!DNL Audience Activation]中安装[!DNL Commerce]扩展并配置[!DNL Commerce Admin]以导入您创建的Real-Time CDP受众。 请参阅[[!DNL Commerce] 文档](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html)以了解详情。
 
 ## 验证Commerce中的Audience Activation {#exported-data}
 
