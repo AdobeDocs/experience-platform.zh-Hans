@@ -2,9 +2,9 @@
 description: 本页介绍了Destination SDK支持的各种OAuth 2授权流程，并提供了有关为目标设置OAuth 2授权的说明。
 title: OAuth 2授权
 exl-id: 280ecb63-5739-491c-b539-3c62bd74e433
-source-git-commit: 0cde918c693d06d735397aad721fd3cd5c4e760e
+source-git-commit: 720f599810d119ac4997d24d400199d8efe087c2
 workflow-type: tm+mt
-source-wordcount: '2182'
+source-wordcount: '2273'
 ht-degree: 2%
 
 ---
@@ -18,7 +18,7 @@ Destination SDK支持多种针对目标的授权方法。 其中有一个选项�
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -109,7 +109,10 @@ Adobe为OAuth 2授权设计的系统：
       "refreshTokenUrl": "https://api.moviestar.com/OAuth/refresh_token",
       "clientId": "Experience-Platform-client-id",
       "clientSecret": "Experience-Platform-client-secret",
-      "scope": ["read", "write"]
+      "scope": ["read", "write"],
+      "options": {
+          "useBasicAuth": true 
+      }
     }
   ]
 //...
@@ -126,6 +129,7 @@ Adobe为OAuth 2授权设计的系统：
 | `clientId` | 字符串 | 系统分配给Adobe Experience Platform的客户端ID。 |
 | `clientSecret` | 字符串 | 系统分配给Adobe Experience Platform的客户端密码。 |
 | `scope` | 字符串列表 | *可选*。 设置访问令牌允许Experience Platform对您的资源执行的范围。 示例：“read， write”。 |
+| `options.useBasicAuth` | 布尔值 | *可选*。 一个布尔值，用于控制在交换访问令牌的授权代码时，如何将客户端凭据（客户端ID和客户端密码）发送到OAuth提供程序的令牌端点。 <ul><li>如果设置为`false`或未定义，则凭据将作为POST请求正文中的`client_id`和`client_secret`参数发送（默认行为）。</li><li>如果此参数设置为`true`，则将使用基本身份验证格式在HTTP `Authorization`标头中发送凭据： `Authorization: Basic base64(clientID:clientSecret)`。</li></ul> 当OAuth提供程序要求在`useBasicAuth`标头而不是请求正文中发送客户端凭据时，将`true`设置为`Authorization`。 |
 
 {style="table-layout:auto"}
 
