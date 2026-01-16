@@ -5,9 +5,9 @@ breadcrumb-title: Privacy Service 指南
 user-guide-description: 管理客户数据请求以遵守 GDPR 和 CCPA 等隐私保护相关的法律法规。
 feature: Privacy
 role: User,Admin
-source-git-commit: 306f7fcd09f395895fde241b668c41a2479a8d2d
+source-git-commit: bc180437c42ab2eea946e1a4d6d9dbd77e0896c8
 workflow-type: tm+mt
-source-wordcount: '92'
+source-wordcount: '94'
 ht-degree: 93%
 
 ---
@@ -26,6 +26,7 @@ ht-degree: 93%
    * [隐私任务](./api/privacy-jobs.md)
    * [同意](./api/consent.md)
    * [内容](./api/content.md)
+   * [错误代码](./api/error-codes.md)
    * [附录](./api/appendix.md)
 * PRIVACY SERVICE UI {#ui}
    * [概述](./ui/overview.md)
@@ -33,9 +34,9 @@ ht-degree: 93%
 * [订阅隐私活动](./privacy-events.md)
 * 隐私法规 {#regulations}
    * [概述](./regulations/overview.md)
-   * [常见问题解答](./regulations/faq.md)
+   * [常见问题](./regulations/faq.md)
    * [术语](./regulations/terminology.md)
-* [最佳实践](./best-practices.md)
+* [最佳做法](./best-practices.md)
 * [疑难解答指南](./troubleshooting-guide.md)
 * [API 参考](https://www.adobe.io/experience-platform-apis/references/privacy-service/)
 * [发行说明](./release-notes.md)
