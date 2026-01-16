@@ -89,7 +89,7 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 
 ### 填写目标详细信息 {#fill-in-details}
 
-在将受众数据发送到或激活到目标之前，您必须先设置与自己的目标平台的连接。 在[设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=zh-Hans)此目标时，必须提供以下信息：
+在将受众数据发送到或激活到目标之前，您必须先设置与自己的目标平台的连接。 在[设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html)此目标时，必须提供以下信息：
 
 * **[!UICONTROL Account Type]**：请选择&#x200B;**[!UICONTROL Existing Account]**&#x200B;选项。
 * **[!UICONTROL Name]**：将来用于识别此目标的名称。
@@ -150,7 +150,7 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 
 1. 首先，选择&#x200B;**[!UICONTROL Data]**&#x200B;选项卡，并查看&#x200B;**[!UICONTROL First-Party]**&#x200B;部分。
 2. 向下滚动该页面，在&#x200B;**[!UICONTROL Imported Data]**&#x200B;下，您会找到&#x200B;**[!UICONTROL Adobe 1PD Tile]**。
-3. 单击&#x200B;**[!UICONTROL Adobe 1PD]**&#x200B;图块，它将列出激活到您的广告商的[!DNL Trade Desk]目标的所有受众。 您还可以使用搜索功能。
+3. 单击**[!UICONTROL Adobe 1PD]**图块，它将列出激活到您的广告商的[!DNL Trade Desk]目标的所有受众。 您还可以使用搜索功能。
 4. Experience Platform中的区段ID #将显示为[!DNL Trade Desk] UI中的区段名称。
 
 ## 数据使用和治理 {#data-usage-governance}
