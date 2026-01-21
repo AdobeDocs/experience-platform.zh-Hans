@@ -2,10 +2,10 @@
 title: Experience Platform预发行说明
 description: Adobe Experience Platform最新发行说明预览。
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: acb8303673c3271794dcda87b149b473328a7a21
+source-git-commit: d401707e263f09ccd8575f02a71d7e74899e02db
 workflow-type: tm+mt
-source-wordcount: '1150'
-ht-degree: 24%
+source-wordcount: '1395'
+ht-degree: 20%
 
 ---
 
@@ -54,11 +54,24 @@ Agent Orchestrator允许您构建和部署支持AI的代理，这些代理可以
 
 [!DNL Destinations] 是预建的与目标平台的集成，可实现从 Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例。
 
+**新增或更新目标**
+
+| 目标 | 描述 |
+| --- | --- |
+| Kevel目标连接器现已可用 | [[!DNL Kevel]](https://www.kevel.com/)提供支持人工智能的技术和专家指导，帮助创新的商业领袖在零售媒体中启动、扩展和取得成功。 [!DNL Kevel]的Retail Media Cloud功能支持针对网站内和网站外广告采用可归因的可自定义广告格式。 |
+| 索引Exchange目标连接器现已可用 | [!DNL Index]是一个全球广告供应方平台，可帮助媒体所有者最大限度地实现其内容在每个屏幕上的价值。 凭借超过20年的行业领先地位，[!DNL Index]将世界上最大的品牌与高级体验制作者联系起来，以提供高质量的消费者体验。 |
+| 对Braze连接的区域端点支持 | [支持的所有](https://www.braze.com/docs/user_guide/administrative/access_braze/sdk_endpoints)区域特定的端点[!DNL Braze]现在都可在目标配置流期间进行选择。 询问您的[!DNL Braze]代表您应使用哪个端点实例。 |
+| 对Liveramp入门的每周和每月计划支持 | 您现在可以为Liveramp载入目标配置每周和每月导出计划。 |
+| 对Amazon S3目标的AES256加密支持 | 您现在可以为Amazon S3导出配置AES256加密。 |
+| 增强了Trade Desk和Microsoft Bing目标的激活体验 | Trade Desk和Microsoft Bing目标现在包含预定义的强制映射，以便优化激活体验。 |
+
 **新增或更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 更新了Adobe Target目标的护栏限制 | 可以映射到单个Adobe Target目标的受众的最大数量已从50增至250。 这使Adobe Target与其他目标的标准受众限制保持一致，从而提供了更大的受众激活工作流灵活性。 客户现在可以将更多受众激活到Adobe Target目标，而无需创建多个数据流。 |
+| 更新了Adobe Target目标的护栏限制 | 可以映射到单个Adobe Target目标的受众的最大数量已从50增至250。 这使Adobe Target与其他目标的标准受众限制保持一致，从而提供了更大的受众激活工作流灵活性。 您现在可以向Adobe Target目标激活更多受众，而无需创建多个数据流。 |
+| [编辑目标](/help/destinations/ui/edit-destination.md)和[编辑营销操作](/help/destinations/ui/edit-activation.md#edit-marketing-actions)一般可用性 | 编辑目标和营销操作的选项现在可供所有用户使用。 |
+| 在“映射”步骤中切换字段显示名称 | 将架构字段映射到目标时，您现在可以在显示完整XDM字段名称和仅显示显示名称之间进行切换。 |
 
 {style="table-layout:auto"}
 
