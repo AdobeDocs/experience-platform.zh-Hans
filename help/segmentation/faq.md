@@ -2,14 +2,14 @@
 title: 受众常见问题解答
 description: 了解有关受众的常见问题解答以及其他与分段相关的概念。
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: 56bf7ae20c33b013a1710fba8c04d9edc23baf89
+source-git-commit: a55272e3124c3fceedcadc33883445132bfec6bd
 workflow-type: tm+mt
-source-wordcount: '4849'
+source-wordcount: '4853'
 ht-degree: 2%
 
 ---
 
-# 常见问题解答
+# 常见问题
 
 Adobe Experience Platform [!DNL Segmentation Service]提供了一个用户界面和RESTful API，允许您通过[!DNL Real-Time Customer Profile]数据的区段定义或其他来源创建受众。 这些受众是在Experience Platform上集中配置和维护的，并且可供任何Adobe解决方案随时访问。 以下是有关受众和分段的常见问题解答列表。
 
@@ -43,7 +43,7 @@ Audience Portal和Audience Composition可供所有Real-Time CDP Prime和Ultimate
 
 外部生成的受众中的所有其他数据均被视为&#x200B;**有效负载属性**。 这些属性&#x200B;**仅**&#x200B;可在激活期间用于个性化和扩充，并且&#x200B;**不**&#x200B;附加到配置文件。 但是，这些属性存储在数据湖中。
 
-虽然在使用区段生成器创建受众时可引用外部生成的受众，但无法使用单个配置文件属性&#x200B;**&#x200B;**。
+虽然在使用区段生成器创建受众时可引用外部生成的受众，但无法使用单个配置文件属性&#x200B;****。
 
 ### 我能否将外部生成的受众数据与Experience Platform中的现有配置文件相协调？
 
@@ -65,7 +65,7 @@ Audience Portal和Audience Composition可供所有Real-Time CDP Prime和Ultimate
 
 ### 多久评估一次外部生成的受众？
 
-导入期间只评估外部生成的受众&#x200B;**1&rbrace;。**&#x200B;由于与这些导入受众关联的属性是非持久属性，且&#x200B;**不是**&#x200B;个人资料存储的一部分，因此，外部生成的受众唯一一次更新是手动更新现有受众。
+导入期间只评估外部生成的受众&#x200B;**1}。**&#x200B;由于与这些导入受众关联的属性是非持久属性，且&#x200B;**不是**&#x200B;个人资料存储的一部分，因此，外部生成的受众唯一一次更新是手动更新现有受众。
 
 ### 我能否在分段过程中使用外部上传的属性？
 
@@ -120,7 +120,7 @@ Audience Portal和Audience Composition可供所有Real-Time CDP Prime和Ultimate
 
 | 激活渠道 | CSV自定义上传的受众 | 受众构成中的受众 |
 | --- | --- | --- |
-| Real-Time CDP目标 | 可以激活有效负载属性和受众。 | 只能激活受众。 无法激活扩充属性&#x200B;**&#x200B;**。 |
+| Real-Time CDP目标 | 可以激活有效负载属性和受众。 | 只能激活受众。 无法激活扩充属性&#x200B;****。 |
 | Adobe Journey Optimizer Campaigns | 无法激活受众和有效负载属性。 | 受众和扩充属性都可以激活。 |
 
 ## 生命周期状态 {#lifecycle-states}
@@ -135,7 +135,7 @@ Audience Portal和Audience Composition可供所有Real-Time CDP Prime和Ultimate
 | --- | --- | --- | --- | --- | --- | --- | --- | -- |
 | 草稿 | 处于&#x200B;**草稿**&#x200B;状态的受众仍在开发中，尚未准备好用于其他服务。 | 是的，但可以隐藏。 | 否 | 是 | 可在细化过程中导入或更新。 | 评估以获取准确的发布计数。 | 是，但不建议使用。 | 是 |
 | 发布日期 | 处于&#x200B;**Published**&#x200B;状态的受众是准备用于所有下游服务的受众。 | 是 | 是 | 是 | 可以导入或更新。 | 使用批量、流式或边缘分段进行评估。 | 是 | 是 |
-| 不活跃 | 处于&#x200B;**不活动**&#x200B;状态的受众是当前未使用的受众。 它仍存在于Experience Platform中，但在标记为草稿或发布之前，**将**&#x200B;不可用。 | 否，但可以显示。 | 否 | 否 | 不再更新。 | Experience Platform不再评估或更新。 | 否 | 是 |
+| 非活跃 | 处于&#x200B;**不活动**&#x200B;状态的受众是当前未使用的受众。 它仍存在于Experience Platform中，但在标记为草稿或发布之前，**将**&#x200B;不可用。 | 否，但可以显示。 | 否 | 否 | 不再更新。 | Experience Platform不再评估或更新。 | 否 | 是 |
 | 已删除 | 处于&#x200B;**已删除**&#x200B;状态的受众是已被删除的受众。 实际删除数据最多可能需要几分钟才能执行。 | 否 | 否 | 否 | 已删除基础数据。 | 删除完成后，不会进行数据评估或执行。 | 否 | 否 |
 
 ### 我可以在哪些状态下编辑受众？
@@ -146,7 +146,7 @@ Audience Portal和Audience Composition可供所有Real-Time CDP Prime和Ultimate
 - **已发布**：如果编辑的受众处于已发布状态，则该受众将保持已发布状态，并且受众将会自动更新。
 - **不活动**：如果编辑的受众处于不活动状态，则该受众将保持不活动。 这意味着它不会进行评估或更新。 如果需要更新受众，则需要发布受众。
 
-删除受众后，就无法对其进行编辑&#x200B;**&#x200B;**。
+删除受众后，就无法对其进行编辑&#x200B;****。
 
 ### 可以将受众移动到哪些生命周期状态？
 
@@ -170,7 +170,7 @@ Audience Portal和Audience Composition可供所有Real-Time CDP Prime和Ultimate
 
 将受众置于草稿状态的方法取决于受众的来源。
 
-对于使用区段生成器创建的受众，您可以通过选择区段生成器中的“[!UICONTROL 另存为草稿]”，将受众设置为草稿状态。
+对于使用区段生成器创建的受众，您可以通过选择区段生成器中的“[!UICONTROL Save as draft]”，将受众设置为草稿状态。
 
 对于在受众构成中创建的受众，受众会自动另存为草稿，直到发布为止。
 
@@ -180,13 +180,13 @@ Audience Portal和Audience Composition可供所有Real-Time CDP Prime和Ultimate
 
 ### 如何将受众置于已发布状态？
 
-对于使用区段生成器或受众组合创建的受众，您可以通过在其各自的UI中选择“[!UICONTROL 发布]”，将受众设置为已发布状态。
+对于使用区段生成器或受众组合创建的受众，您可以通过在其各自的UI中选择“[!UICONTROL Publish]”，将受众设置为已发布状态。
 
 外部创建的受众会自动设置为已发布。
 
 ### 如何将受众置于不活动状态？
 
-您可以通过打开受众门户中的快速操作菜单，然后选择“[!UICONTROL 停用]”，将已发布的受众置于不活动状态。
+您可以通过打开受众门户中的快速操作菜单并选择“[!UICONTROL Deactivate]”将已发布的受众置于不活动状态。
 
 ### 如何重新发布受众？
 
@@ -194,7 +194,7 @@ Audience Portal和Audience Composition可供所有Real-Time CDP Prime和Ultimate
 >
 >“重新发布”状态与受众行为的已发布状态相同。
 
-您可以通过以下方式重新发布受众：选择处于非活动状态的受众，在受众门户上打开快速操作菜单，然后选择[!UICONTROL 发布]。
+您可以通过以下方式重新发布受众：选择处于非活动状态的受众，打开受众门户上的快速操作菜单，然后选择[!UICONTROL Publish]。
 
 ### 如何将受众置于已删除状态？
 
@@ -202,7 +202,7 @@ Audience Portal和Audience Composition可供所有Real-Time CDP Prime和Ultimate
 >
 >您只能删除在任何下游激活中都使用&#x200B;**而非**&#x200B;的受众。 此外，您无法删除另一个受众中引用的受众。 如果您无法删除受众，请确保您&#x200B;**不**&#x200B;在任何下游服务中使用此受众，或将其用作其他受众的构建块。
 
-您可以通过打开受众门户中的快速操作菜单，然后选择[!UICONTROL 删除]，将受众置于删除状态。
+您可以通过打开受众门户中的快速操作菜单并选择[!UICONTROL Delete]来将受众置于删除状态。
 
 ### 对于生命周期状态转换，是否有任何注意事项？
 
@@ -228,7 +228,7 @@ Audience Portal和Audience Composition可供所有Real-Time CDP Prime和Ultimate
 
 为了将子受众移动到已发布状态，其所有父受众&#x200B;**必须**&#x200B;处于已发布状态。 可以在发布子受众之前发布父受众，或者，如果用户确认，则可以在发布子受众时自动发布父受众。
 
-为了将父受众移动到非活动状态或删除状态，必须停用或删除其所有子受众&#x200B;**&#x200B;**。
+为了将父受众移动到非活动状态或删除状态，必须停用或删除其所有子受众&#x200B;****。
 
 ### 能否引用处于不同生命周期状态的受众？
 
@@ -274,7 +274,7 @@ Audience Portal和Audience Composition可供所有Real-Time CDP Prime和Ultimate
 
 在Experience Platform中创建受众时，受众构成和区段生成器均会发挥重要作用。
 
-区段生成器更适合创建受众&#x200B;**&#x200B;**（用于从头开始创建受众），而受众合成更适合受众&#x200B;**策划和个性化**（基于现有受众创建新受众）。
+区段生成器更适合创建受众&#x200B;****（用于从头开始创建受众），而受众合成更适合受众&#x200B;**策划和个性化**（基于现有受众创建新受众）。
 
 下表说明了这两种服务之间的差异：
 
@@ -304,11 +304,11 @@ Audience Portal和Audience Composition可供所有Real-Time CDP Prime和Ultimate
 
 组合元件的放置遵循如下刚性结构：
 
-1. 您&#x200B;**始终**&#x200B;以[!UICONTROL 受众]块开始以选择开始活动。 您最多可以有&#x200B;**个** [!UICONTROL 受众]块。
-2. 您可以选择添加[!UICONTROL 受众]块之后的[!UICONTROL 排除]块。
-3. 您可以选择添加跟随[!UICONTROL 排除]块的[!UICONTROL 扩充]块。 每个组合只能使用&#x200B;**一个** [!UICONTROL 扩充]块。
-4. 您可以选择添加[!UICONTROL 排名]或[!UICONTROL 拆分]块。 您只能&#x200B;**针对每个组合**&#x200B;具有其中一个块。
-5. 您&#x200B;**始终**&#x200B;以[!UICONTROL 保存]块结尾，以保存您的受众。
+1. 您&#x200B;**始终**&#x200B;以[!UICONTROL Audience]块开头，以选择开始活动。 最多可以有&#x200B;**个** [!UICONTROL Audience]块。
+2. 您可以选择添加[!UICONTROL Exclude]块之后的[!UICONTROL Audience]块。
+3. 您可以选择添加[!UICONTROL Enrich]块之后的[!UICONTROL Exclude]块。 每个组合只能使用&#x200B;**one** [!UICONTROL Enrich]块。
+4. 您可以选择添加[!UICONTROL Rank]或[!UICONTROL Split]块。 您只能&#x200B;**针对每个组合**&#x200B;具有其中一个块。
+5. 您&#x200B;**始终**&#x200B;以[!UICONTROL Save]块结尾，以保存您的受众。
 
 此外，使用这些块时适用以下限制：
 
@@ -360,7 +360,7 @@ Audience Portal和Audience Composition可供所有Real-Time CDP Prime和Ultimate
 
 ### 如何确认个人资料在受众中的成员资格？
 
-要确认配置文件的受众成员资格，请访问要确认的配置文件的配置文件详细信息页面。 选择&#x200B;**[!UICONTROL 属性]**，然后选择&#x200B;**[!UICONTROL 查看JSON]**，您可以确认`segmentMembership`对象包含受众的ID。
+要确认配置文件的受众成员资格，请访问要确认的配置文件的配置文件详细信息页面。 选择&#x200B;**[!UICONTROL Attributes]**，然后选择&#x200B;**[!UICONTROL View JSON]**，您可以确认`segmentMembership`对象包含受众的ID。
 
 ### 受众会员资格在理想会员资格和实际会员资格之间会偏移吗？
 
@@ -392,7 +392,7 @@ Audience Portal和Audience Composition可供所有Real-Time CDP Prime和Ultimate
 
 在批量分段工作流中可以使用流数据最多可能需要三个小时。
 
-例如，如果批处理分段作业在晚上9点运行，则保证包含流摄取的数据&#x200B;**一直到晚上** 6点。 包括下午6点后但晚上9点&#x200B;**&#x200B;**&#x200B;之前摄取的流式摄取数据。
+例如，如果批处理分段作业在晚上9点运行，则保证包含流摄取的数据&#x200B;**一直到晚上** 6点。 包括下午6点后但晚上9点&#x200B;****&#x200B;之前摄取的流式摄取数据。
 
 ## 边缘分段 {#edge-segmentation}
 
@@ -408,7 +408,7 @@ Audience Portal和Audience Composition可供所有Real-Time CDP Prime和Ultimate
 
 ### 流式客户细分“不合格”是否也会实时发生？
 
-在大多数情况下，流式分段取消资格会实时发生。 但是，使用区段的流区段不会&#x200B;**实时**&#x200B;取消资格，而是在24小时后取消资格。
+根据受众的组成，会发生流式分段取消资格。 对于基于事件的受众，取消资格将在回顾窗口过期时实时发生。 对于基于配置文件的受众或使用配置文件属性的受众，在通过流源更改配置文件属性值时或在每日批量评估作业期间发生取消资格。
 
 ### 流式分段处理哪些数据？
 
@@ -418,7 +418,7 @@ Audience Portal和Audience Composition可供所有Real-Time CDP Prime和Ultimate
 
 区段定义定义为基于查询类型和事件历史记录持续时间的组合的批处理、流式或边缘分段。 可以在[流式分段查询类型部分](#query-types)中找到将作为流式分段定义评估的区段的列表。
 
-请注意，如果区段定义同时包含&#x200B;**1&rbrace;和**&#x200B;表达式以及直接单事件链，则它不符合流式分段条件。 `inSegment`如果您希望此区段定义符合流式分段条件，则应将直接单事件链设置为自己的区段。
+请注意，如果区段定义同时包含&#x200B;**1}和**&#x200B;表达式以及直接单事件链，则它不符合流式分段条件。 `inSegment`如果您希望此区段定义符合流式分段条件，则应将直接单事件链设置为自己的区段。
 
 ### 为什么“符合条件的总数”区段数持续增加，而“最近X天”下的区段定义详细信息部分中的数保持为零？
 

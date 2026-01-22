@@ -2,9 +2,9 @@
 title: Experience Platform预发行说明
 description: Adobe Experience Platform最新发行说明预览。
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: d401707e263f09ccd8575f02a71d7e74899e02db
+source-git-commit: 26dabf21959fde0b6ce7111524a20e3f342aec75
 workflow-type: tm+mt
-source-wordcount: '1395'
+source-wordcount: '1389'
 ht-degree: 20%
 
 ---
@@ -86,7 +86,7 @@ Agent Orchestrator允许您构建和部署支持AI的代理，这些代理可以
 | 功能 | 描述 |
 | --- | --- |
 | 流容量实施 | Experience Platform现在为Real-time Customer Profile和Identity Service强制执行流式处理吞吐量功能。 当客户超过其合同规定的流容量时，数据将以“先进先出”的方式排队和处理。 这可以确保可预测的系统性能，并防止容量违规影响数据摄取质量。 重要说明：超出容量时，流更新插入在数据湖中不可用，此强制实施不适用于具有Adobe Journey Optimizer许可证的客户，排队的数据将在容量可用时按顺序处理。 |
-| 弃用Real-Time CDP Prime的API访问 | 现已为所有Real-Time CDP Prime客户弃用针对体验事件的API访问。 此更改会影响直接通过API查询体验事件的能力。 Real-Time CDP Ultimate客户可以通过正式的例外流程请求例外，以便在其用例需要时启用体验事件API访问。 此弃用可帮助优化系统性能，并遵循数据访问模式的最佳实践。 |
+| 弃用Real-Time CDP Prime的API访问 | 现已为所有Real-Time CDP Prime客户弃用针对体验事件的API访问。 此更改会影响直接通过API查询体验事件的能力。 Real-Time CDP Ultimate客户可以通过正式的例外流程请求例外，以便在其用例需要时启用体验事件API访问。 此弃用内容有助于使Real-Time CDP与许可功能保持一致。 |
 | 监测数据流运行 | 您现在可以在Profile中监视数据流运行的进度和就绪性。 |
 
 {style="table-layout:auto"}

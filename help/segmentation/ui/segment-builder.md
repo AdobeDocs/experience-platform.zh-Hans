@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 27071d79f52fa47e27da84b970729eb52fbbb7d3
 workflow-type: tm+mt
-source-wordcount: '5161'
+source-wordcount: '5175'
 ht-degree: 12%
 
 ---
@@ -21,6 +21,31 @@ ht-degree: 12%
 ![将显示区段生成器UI。](../images/ui/segment-builder/segment-builder.png)
 
 ## 区段定义生成块 {#building-blocks}
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_segmentbuilder_cnfcomplexitycheck"
+>title="逻辑复杂性"
+>abstract=""
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_segmentbuilder_chaincountcheck"
+>title="事件序列限制"
+>abstract=""
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_segmentbuilder_rewritescheck"
+>title="查询效率警报"
+>abstract=""
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_segmentbuilder_countaggregationcheck"
+>title="计数筛选器警告"
+>abstract=""
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_segmentbuilder_arraydepthcheck"
+>title="嵌套数据警告"
+>abstract=""
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_fields"
@@ -62,7 +87,7 @@ ht-degree: 12%
 
 ![区段生成器字段的“属性”部分已突出显示。](../images/ui/segment-builder/attributes.png)
 
-### 事件
+### 活动
 
 通过&#x200B;**[!UICONTROL Events]**&#x200B;选项卡，可根据使用[!DNL XDM ExperienceEvent]数据元素发生的事件或操作创建受众。 您还可以在&#x200B;**[!UICONTROL Events]**&#x200B;选项卡上找到事件类型，这是常用事件的集合，使您能够更快地创建区段定义。
 
@@ -115,7 +140,7 @@ ht-degree: 12%
 
 映射报表包后，您可以在配置文件相关的工作流程和分段中使用这些新映射的字段。
 
-| 方案 | 合并架构体验 | 分段通用变量 | 分段映射变量 |
+| 场景 | 合并架构体验 | 分段通用变量 | 分段映射变量 |
 | -------- | ----------------------- | ----------------------------- | ---------------------------- |
 | 单个报表包 | 通用变量中包含友好名称描述符。 <br><br>**示例：**&#x200B;页面名称(eVar2) | <ul><li>通用变量中包含的友好名称描述符</li><li>查询使用来自特定数据集的数据，因为它是唯一的数据集</li></ul> | 查询可以使用Adobe Analytics数据和潜在的其他源。 |
 | 多个报表包 | 泛型变量中未包含任何友好名称描述符。 <br><br>**示例：** eVar2 | <ul><li>任何具有多个描述符的字段均以通用形式显示。 这意味着UI中不会显示友好名称。</li><li>查询可以使用包含eVar的任何数据集中的数据，这可能会导致混合或不正确的结果。</li></ul> | 查询使用来自多个数据集的正确组合结果。 |
@@ -386,7 +411,7 @@ ht-degree: 12%
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="刷新估计值"
 >abstract="您可以刷新区段定义的估计值，以立即预览符合建议的区段定义资格的轮廓数目。受众估计值是通过使用当天的示例数据的示例大小生成的。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=zh-Hans#estimate-and-preview-an-audience" text="估计和预览受众"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="估计和预览受众"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_qualifiedprofiles"
