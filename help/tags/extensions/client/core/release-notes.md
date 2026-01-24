@@ -136,7 +136,7 @@ v2.0.4
 
 * 为各个字段添加了数据元素支持 — 为以下事件添加了数据元素支持：“页面停留时间”、“Enters Viewport”、“悬停”和“媒体播放时间”。 以及以下条件：“网站逗留时间”和“值比较”
 * 添加了对使用“链接延迟”时ctrl/cmd +单击和鼠标中键单击的默认行为的支持
-* **在点击事件上将链接延迟标记为“不再支持”。** — 可在[数据收集博客](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-launch/explainer-link-delay/ba-p/398403)上找到有关Adobe Experience Platform的更多信息
+* **在点击事件上将链接延迟标记为“不再支持”。** — 可在[数据收集博客](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-launch/explainer-link-delay/ba-p/398403?profile.language=zh-Hans)上找到有关Adobe Experience Platform的更多信息
 
 ## 2021 年 1 月 6 日
 

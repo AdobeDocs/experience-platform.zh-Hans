@@ -211,4 +211,4 @@ ht-degree: 15%
 </tr></table>
 
 <table style="table-layout:auto"><tr style="border: 0;"><td><img src="assets/do-not-localize/newsletter.png"></td><td>
-<b>随时了解最新动态，为社区贡献力量，提升您的Adobe Real-Time CDP体验！</b><br/>访问Real-Time Customer Data Platform社区，与其他从业人员讨论功能。 <a href="https://experienceleaguecommunities.adobe.com/t5/real-time-customer-data-platform/ct-p/Real-time-CDP">立即加入社区！</a></td></tr></table>
+<b>随时了解最新动态，为社区贡献力量，提升您的Adobe Real-Time CDP体验！</b><br/>访问Real-Time Customer Data Platform社区，与其他从业人员讨论功能。 <a href="https://experienceleaguecommunities.adobe.com/t5/real-time-customer-data-platform/ct-p/Real-time-CDP?profile.language=zh-Hans">立即加入社区！</a></td></tr></table>
