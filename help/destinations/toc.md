@@ -5,9 +5,9 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: 66f117ee5818618794a20561484eae21dd420899
+source-git-commit: 17bc44d4c7e21f6d8fe544b3052fed32453002b6
 workflow-type: tm+mt
-source-wordcount: '1328'
+source-wordcount: '1330'
 ht-degree: 5%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 5%
    * [删除目标帐户](./api/delete-destination-account.md)
    * [删除目标数据流](./api/delete-destination-dataflow.md)
    * [导出数据集](/help/destinations/api/export-datasets.md)
-   * [排序和筛选目标的API响应](https://experienceleague.adobe.com/docs/experience-platform/dataflows/api/sort-and-filter.html?lang=zh-Hans#use-cases)
+   * [排序和筛选目标的API响应](https://experienceleague.adobe.com/docs/experience-platform/dataflows/api/sort-and-filter.html#use-cases)
 * UI 指南  {#ui}
    * [目标工作区](./ui/destinations-workspace.md)
    * [创建新的目标连接](./ui/connect-destination.md)
@@ -71,7 +71,7 @@ ht-degree: 5%
       * [（旧版） (V2) Marketo Engage连接](./catalog/adobe/marketo-engage.md)
       * [(Beta) Marketo Engage人员同步连接](./catalog/adobe/marketo-engage-person-sync.md)
       * [Marketo Measure Ultimate连接](./catalog/adobe/marketo-measure-ultimate.md)
-      * [Experience Platform受众共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=zh-Hans)
+      * [Experience Platform受众共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
       * [联合受众组合连接](https://www.adobe.com/go/destinations-federated-audience-composition)
    * Advertising目标{#advertising}
       * [(Beta) Acxiom受众连接](./catalog/advertising/acxiom-audience-connection.md)
@@ -100,6 +100,7 @@ ht-degree: 5%
       * [Google显示和视频360连接](./catalog/advertising/google-dv360.md)
       * [Google gtag扩展](./catalog/advertising/gtag-advertising.md)
       * [索引Exchange连接](./catalog/advertising/index-exchange.md)
+      * [Kevel连接](./catalog/advertising/kevel.md)
       * [LinkedIn Insight标记扩展](./catalog/advertising/linkedin.md)
       * [LiveRamp — 载入连接](./catalog/advertising/liveramp-onboarding.md)
       * [LiveRamp — 分发连接](./catalog/advertising/liveramp-distribution.md)
