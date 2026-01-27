@@ -3,9 +3,9 @@ keywords: 广告；必应；
 title: Microsoft Bing连接
 description: 通过Microsoft Bing连接目标，您可以在整个Microsoft Advertising网络（包括显示广告、搜索和原生）中执行重定位和面向受众的数字营销活动。
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
-source-git-commit: b9713d5155f89ee895d9fb623088eda77b931d89
+source-git-commit: da9ac560f65c8e0fd6c84517a47cd7e4dd868117
 workflow-type: tm+mt
-source-wordcount: '897'
+source-wordcount: '906'
 ht-degree: 5%
 
 ---
@@ -80,7 +80,7 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
->如果您希望使用[!DNL Microsoft Bing]创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html?lang=zh-Hans)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL Microsoft Bing]集成，则您设置的ID同步将会转移到Experience Platform。
+>如果您希望使用[!DNL Microsoft Bing]创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL Microsoft Bing]集成，则您设置的ID同步将会转移到Experience Platform。
 
 配置目标时，必须提供以下信息：
 
@@ -118,7 +118,7 @@ ht-degree: 5%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_required_mappings_bing"
 >title="预配置的映射集"
->abstract="我们已为您预配置了这两个映射集。 在激活数据到Microsoft Bing时，符合激活受众条件的配置文件必须至少有一个与其配置文件关联的ECID标识，才能成功导出到目标。"
+>abstract="我们已为您预配置了这两个映射集。 在激活数据到Microsoft Bing时，符合激活受众条件的配置文件必须至少有一个与其配置文件关联的ECID标识，才能成功导出到目标。 详细了解&lt;a href=&quot;https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/advertising/bing#preconfigured-mappings&quot;>预配置的映射</a>"
 
 >[!IMPORTANT]
 > 
