@@ -2,10 +2,10 @@
 title: 许可证使用量和容量
 description: 了解Adobe Experience Platform中的许可证使用和容量限制。
 exl-id: 38dad2f1-bd0f-4cc3-a3a6-5105ea866ea4
-source-git-commit: 5520e449b4cbe45eb9664ce3c913dd5d544e088c
+source-git-commit: 8cef502f60a42de9c89c29923811215b3a8086c6
 workflow-type: tm+mt
-source-wordcount: '1603'
-ht-degree: 6%
+source-wordcount: '1670'
+ht-degree: 5%
 
 ---
 
@@ -58,7 +58,7 @@ ht-degree: 6%
    - 在这500个流受众中，边缘受众的最大数量为150个
 - 流式摄取的初始组合吞吐量为每秒1500条记录(rps)
    - 此合并的流吞吐量测量每秒合并的入站事件峰值，用于跨生产和开发沙盒将信息流式摄取到实时客户档案。
-   - 您可以购买额外的流式分段支持，每秒最多可支持13,500条记录。 有关购买其他权利的更多信息，请参阅[Real-Time CDP产品描述](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)。
+   - 您可以购买额外的流式分段支持，每秒最多可支持13,500条记录。 有关购买其他权利的更多信息，请参阅[Real-Time CDP产品描述](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)。
 
 受众容量处于&#x200B;**沙盒**&#x200B;级别。 这意味着，对于您组织中的每个沙盒，您可以拥有500个流受众，其中150个可以是Edge受众。
 
@@ -68,7 +68,17 @@ Experience Platform以15分钟滚动间隔计算沙盒的吞吐量。 此吞吐�
 
 如果您的使用率达到许可容量的80%和90%，Experience Platform将发出警报，通知您已达到指定容量的最大值。 您可以修改设置以自定义接收警报的容量百分比或完全删除警报。
 
-如果您的使用量超过许可容量的100%，则将被视为容量不足。 此时，您将会遇到性能延迟，并且您的服务级别目标(SLT)将&#x200B;**无法保证**。
+如果您的使用量超过许可容量的100%，则将被视为容量不足。 如果您超出能力，将应用以下限制：
+
+>[!NOTE]
+>
+>如果您有权访问Adobe Journey Optimizer，则&#x200B;**不**&#x200B;应用以下限制。
+
+- 如果事件处理队列超过12小时，则可以从流式个性化中删除事件数据&#x200B;****
+- 删除的事件数据将&#x200B;**不会**&#x200B;被摄取到配置文件中
+   - 您将能够查看何时删除事件
+   - 根据您的权限，事件将在数据湖中可用
+   - 如果需要，您&#x200B;*可以*&#x200B;使用查询服务直接重新摄取数据
 
 ## 访问 {#access}
 
@@ -166,7 +176,7 @@ Experience Platform以15分钟滚动间隔计算沙盒的吞吐量。 此吞吐�
 
 此外，您可以查看数据流，看看是否可以优化数据策略。
 
-| 促成因素 | 内容 | 对用例的影响 | 最佳实践 |
+| 促成因素 | 内容 | 对用例的影响 | 最佳做法 |
 | --- | --- | --- | --- |
 | 批量到流式转换 | 批量工作负载转换为流式传输会显着增加吞吐量，从而影响性能和资源分配。 例如，在没有速率限制的事件后执行批量配置文件更新。 | 当不需要低延迟处理时，无需对批量用例使用流策略。 | 评估用例要求。 对于批量出站营销，请考虑使用[批量摄取](/help/ingestion/batch-ingestion/overview.md)而不是流式处理来更有效地管理数据摄取。 |
 | 不必要的数据摄取 | 引入个性化不需要的数据可在不增加价值的情况下增加吞吐量，从而浪费资源。 例如，无论相关性如何，都将所有Analytics流量摄取到用户档案中。 | 过多的不相关数据会产生噪音，使得识别有影响的数据点变得更困难。 在定义和管理受众和用户档案时，这也会造成摩擦。 | 仅摄取用例所需的数据。 确保过滤掉不必要的数据。<ul><li>**Adobe Analytics**：使用[行级筛选](/help/sources/tutorials/ui/create/adobe-applications/analytics.md#filtering-for-real-time-customer-profile)优化数据摄取。</li><li>**源**：使用[[!DNL Flow Service] API为支持的源（如](/help/sources/tutorials/api/filter.md)和[!DNL Snowflake]）筛选行级数据[!DNL Google BigQuery]。</li></li>**Edge数据流**：配置[动态数据流](/help/datastreams/configure-dynamic-datastream.md)以对来自WebSDK的流量执行行级筛选。</li></ul> |
@@ -175,9 +185,9 @@ Experience Platform以15分钟滚动间隔计算沙盒的吞吐量。 此吞吐�
 
 以下视频概述了容量。
 
->[!VIDEO](https://video.tv.adobe.com/v/3475283/?captions=chi_hans&learn=on&enablevpops)
+>[!VIDEO](https://video.tv.adobe.com/v/3475272/?learn=on&enablevpops)
 
-## 常见问题解答 {#faq}
+## 常见问题 {#faq}
 
 以下部分概述了有关Capacity功能的常见问题。
 
