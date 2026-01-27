@@ -4,10 +4,10 @@ description: 实时客户配置文件允许您通过组合来自多个渠道的�
 title: 在UI中监控用户档案的数据流
 type: Tutorial
 exl-id: 00b624b2-f6d1-4ef2-abf2-52cede89b684
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1d60afdf486642398a2d31302db339eb9cb45130
 workflow-type: tm+mt
-source-wordcount: '1000'
-ht-degree: 8%
+source-wordcount: '1240'
+ht-degree: 6%
 
 ---
 
@@ -65,8 +65,6 @@ ht-degree: 8%
 
 您可以选择源名称旁边的过滤器图标![过滤器图标](/help/images/icons/filter.png)以查看所选源的数据流的配置文件处理信息。
 
-![筛选器图标高亮显示。 选择此图标可查看所选源的数据流。](../assets/ui/monitor-profiles/sources-filter.png)
-
 或者，您可以在切换中选择&#x200B;**[!UICONTROL Dataflows]**&#x200B;以查看过去24小时内贵组织数据流的配置文件处理详细信息。
 
 ![用户档案仪表板。 将显示有关每个数据流接收的配置文件记录数的信息。](../assets/ui/monitor-profiles/dataflows.png)
@@ -78,6 +76,7 @@ ht-degree: 8%
 | **[!UICONTROL Dataflow]** | 数据流的名称。 |
 | **[!UICONTROL Dataset]** | 数据流正在插入的数据集的名称。 |
 | **[!UICONTROL Source name]** | 数据流所属的源的名称。 |
+| **[!UICONTROL Data type]** | 从数据集接收的数据类型。 |
 | **[!UICONTROL Records received**] | 从数据湖接收的记录数。 |
 | **[!UICONTROL Records failed]** | 已摄取但因错误未摄取到[!DNL Profile]中的记录数。 |
 | **[!UICONTROL Profile fragments created]** | 添加的新[!DNL Profile]净片段的数量。 |
@@ -88,7 +87,31 @@ ht-degree: 8%
 
 选择数据流运行开始时间旁边的过滤器图标![过滤器](/help/images/icons/filter.png)以查看有关您的[!DNL Profile]数据流运行的更多信息。
 
-![筛选器图标高亮显示。 选择此图标可查看有关所选数据流的详细信息。](../assets/ui/monitor-profiles/dataflows-filter.png)
+此时会出现一个仪表板，其中显示所有数据流运行。 此仪表板包含有关数据流运行的量度，以及显示成功率、创建的配置文件片段和更新的配置文件片段的图表。
+
+![数据流运行仪表板。 显示有关数据流运行的信息。](../assets/ui/monitor-profiles/dataflow-run.png)
+
+以下指标可用于此仪表板视图：
+
+>[!NOTE]
+>
+>当数据流运行处于&#x200B;**[!UICONTROL Processing]**&#x200B;状态时，您可以通过查看摄取进程中的检查点状态来查看有关准备情况的信息。
+>
+>![显示配置文件摄取准备情况气泡。](../assets/ui/monitor-profiles/profile-ingestion-readiness.png){zoomable="yes" width="300"}
+
+| 量度 | 描述 |
+| ------ | ----------- |
+| **[!UICONTROL Dataflow run start]** | 数据流以UTC时间开始运行的时间。 |
+| **[!UICONTROL Data type]** | 数据流接收的数据类型。 |
+| **[!UICONTROL Records received]** | 从数据湖接收的记录数。 |
+| **[!UICONTROL Records failed]** | 已摄取但因错误未摄取到[!DNL Profile]中的记录数。 |
+| **[!UICONTROL Profile fragments created]** | 添加的新[!DNL Profile]净片段的数量。 |
+| **[!UICONTROL Profile fragments updated]** | 已更新现有[!DNL Profile]片段的数量。 |
+| **[!UICONTROL Total profile fragments]** | 写入[!DNL Profile]的记录总数，包括所有已更新的现有[!DNL Profile]片段和已创建的新[!DNL Profile]片段。 |
+| **[!UICONTROL Processing time]** | 数据流运行处理所用的时间。 |
+| **[!UICONTROL Status]** | 数据流运行的状态。 可能的值包括[!UICONTROL Success]、[!UICONTROL Failed]、[!UICONTROL Queued]和[!UICONTROL Processing]。 |
+| **[!UICONTROL Ready for customer segmentation]** | 显示所摄取的记录是否准备好用于客户细分的状态。 可能的值包括[!UICONTROL Yes]、[!UICONTROL Failed]、[!UICONTROL Queued]和[!UICONTROL Processing]。 即使数据流的&#x200B;**状态**&#x200B;正在处理，如果此字段的值为“是”，则可以在客户细分中使用用户档案。 |
+| **[!UICONTROL Ready for lookup]** | 显示已摄取的记录是否可以在Adobe Journey Optimizer查找中使用的状态。  可能的值包括[!UICONTROL Yes]、[!UICONTROL Failed]、[!UICONTROL Queued]和[!UICONTROL Processing]。 即使数据流的&#x200B;**状态**&#x200B;正在处理，如果此字段的值为“是”，则可以在Journey Optimizer查找中使用配置文件。 |
 
 [!UICONTROL Dataflow run details]页面显示有关您的[!DNL Profile]数据流运行的更多信息，包括其组织ID和数据流运行ID。 此页面还会显示由[!DNL Profile]提供的相应错误代码和错误消息（如果在摄取过程中发生任何错误）。
 
