@@ -185,7 +185,7 @@ Experience Platform以15分钟滚动间隔计算沙盒的吞吐量。 此吞吐�
 
 以下视频概述了容量。
 
->[!VIDEO](https://video.tv.adobe.com/v/3475272/?learn=on&enablevpops)
+>[!VIDEO](https://video.tv.adobe.com/v/3475283/?captions=chi_hans&learn=on&enablevpops)
 
 ## 常见问题 {#faq}
 
