@@ -5,9 +5,9 @@ breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源引入数据。了解如何构建、赋予标签和增强已摄取的数据。
 feature: Sources
 role: Developer
-source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
+source-git-commit: ded7a095f95bd43a34e694fb0a6fd4b468b4e246
 workflow-type: tm+mt
-source-wordcount: '1072'
+source-wordcount: '1080'
 ht-degree: 34%
 
 ---
@@ -116,6 +116,7 @@ ht-degree: 34%
       - [Oracle NetSuite](connectors/marketing-automation/oracle-netsuite.md)
       - [PathFactory](connectors/marketing-automation/pathfactory.md)
       - [Salesforce Marketing Cloud](connectors/marketing-automation/salesforce-marketing-cloud.md)
+      - [Salesforce Marketing Cloud (V2)](connectors/marketing-automation/sfmc.md)
    - 付款 {#payments}
       - [方形连接器](connectors/payments/square.md)
       - [Stripe连接器](connectors/payments/stripe.md)
@@ -223,7 +224,7 @@ ht-degree: 34%
       - [收集付款数据](tutorials/api/collect/payments.md)
       - [收集协议数据](tutorials/api/collect/protocols.md)
       - [收集流数据](tutorials/api/collect/streaming.md)
-   - [按需引入](tutorials/api/on-demand-ingestion.md)
+   - [按需摄取](tutorials/api/on-demand-ingestion.md)
    - [在源级别过滤数据](tutorials/api/filter.md)
    - [监测数据流](tutorials/api/monitor.md)
    - [更新帐户](tutorials/api/update.md)
@@ -331,6 +332,7 @@ ht-degree: 34%
          - [PathFactory](tutorials/ui/create/marketing-automation/pathfactory.md)
          - [中继连接器](tutorials/ui/create/marketing-automation/relay-connector.md)
          - [Salesforce Marketing Cloud](tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
+         - [Salesforce Marketing Cloud (V2)](tutorials/ui/create/marketing-automation/sfmc.md)
       - 付款 {#payments}
          - [方形](tutorials/ui/create/payments/square.md)
          - [Stripe](tutorials/ui/create/payments/stripe.md)
@@ -354,7 +356,7 @@ ht-degree: 34%
    - [在 UI 中使用模板创建源数据流](tutorials/ui/templates.md)
    - [筛选源对象](tutorials/ui/filter.md)
    - [提取加密数据](tutorials/ui/encryped-ingestion.md)
-   - [按需引入](tutorials/ui/on-demand-ingestion.md)
+   - [按需摄取](tutorials/ui/on-demand-ingestion.md)
    - [监测批量数据流](tutorials/ui/monitor.md)
    - [监测流数据流](tutorials/ui/monitor-streaming.md)
    - [更新帐户](tutorials/ui/update.md)
@@ -399,6 +401,6 @@ ht-degree: 34%
    - [流服务中的错误消息](./errors/flow-service-errors.md)
 - [流量运行通知](notifications.md)
 - [IP地址允许列表](ip-address-allow-list.md)
-- [常见问题解答](./troubleshooting.md)
+- [常见问题](./troubleshooting.md)
 - [API 参考](https://www.adobe.io/experience-platform-apis/references/flow-service/)
 - [Experience Platform 发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
