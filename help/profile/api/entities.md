@@ -5,14 +5,22 @@ type: Documentation
 description: 通过Adobe Experience Platform，您可以使用RESTful API或用户界面访问实时客户配置文件数据。 本指南概述如何使用配置文件API访问实体（通常称为“配置文件”）。
 role: Developer
 exl-id: 06a1a920-4dc4-4468-ac15-bf4a6dc885d4
-source-git-commit: 2f32cae89d69f6dc2930c3908c87b79e1b724f4b
+source-git-commit: 17bd3494c2d9b2a05ca86903297ebec85c9350f2
 workflow-type: tm+mt
-source-wordcount: '2211'
+source-wordcount: '2290'
 ht-degree: 2%
 
 ---
 
 # 实体端点（配置文件访问）
+
+>[!IMPORTANT]
+>
+>如果您有Real-Time CDP Ultimate，则&#x200B;**只能**&#x200B;使用这些端点。
+>
+>如果您拥有Real-Time CDP Prime，则可以继续在Experience Platform UI中摄取和使用体验事件进行个性化用例以及查看事件，但&#x200B;**无法**&#x200B;使用API以编程方式查找体验事件。
+>
+>如果您拥有Real-Time CDP Ultimate并且&#x200B;**当前未以编程方式查找活动，请联系Adobe客户关怀团队以启用此功能。**
 
 Adobe Experience Platform允许您使用RESTful API或用户界面访问[!DNL Real-Time Customer Profile]数据。 本指南概述了如何使用API访问实体（通常称为“用户档案”）。 有关使用[!DNL Experience Platform] UI访问配置文件的详细信息，请参阅[配置文件用户指南](../ui/user-guide.md)。
 

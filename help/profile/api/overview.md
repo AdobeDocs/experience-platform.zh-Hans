@@ -4,9 +4,9 @@ title: Real-Time Customer Profile API指南
 description: 实时客户个人资料API允许开发人员浏览和使用个人资料数据，包括查看个人资料、创建和更新合并策略、导出或示例个人资料数据，以及删除不再需要或添加错误的个人资料数据。 参阅本指南，了解如何使用 API 执行关键操作。
 role: Developer
 exl-id: ce39b95b-cff7-46cf-a14c-8203017c8826
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 82a9b405a1d36155c84cd27a005c7ec469164ef3
 workflow-type: tm+mt
-source-wordcount: '862'
+source-wordcount: '874'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 要查看所有可用的端点和CRUD操作，请访问[实时客户个人资料API参考swagger](https://www.adobe.com/go/profile-apis-en)。
 
-有关在[!DNL Experience Platform] UI中使用[!DNL Real-Time Customer Profile]数据的指南，请参阅[配置文件用户指南](../ui/user-guide.md)。
+有关在[!DNL Real-Time Customer Profile] UI中使用[!DNL Experience Platform]数据的指南，请参阅[配置文件用户指南](../ui/user-guide.md)。
 
 ## 计算属性 {#computed-attributes}
 
@@ -30,6 +30,10 @@ ht-degree: 2%
 您可以使用`ca/attributes/`端点创建、查看、编辑和删除计算属性。 要了解如何使用计算属性，请参阅[计算属性概述](../computed-attributes/overview.md)。 对于API操作，请访问[计算属性API终结点指南](../computed-attributes/api.md)。
 
 ## 实体（[!DNL Profile]访问权限） {#entities}
+
+>[!NOTE]
+>
+>如果您有Real-Time CDP Ultimate，则只能使用这些端点。
 
 通过Adobe Experience Platform，您可以使用RESTful API或用户界面访问[!DNL Real-Time Customer Profile]数据。 要了解如何使用API访问实体（通常称为“配置文件”），请按照[实体端点指南](entities.md)中所述的步骤操作。 要使用[!DNL Experience Platform] UI访问配置文件，请参阅[配置文件用户指南](../ui/user-guide.md)。
 
@@ -49,7 +53,7 @@ ht-degree: 2%
 
 ## 配置文件系统作业 {#profile-system-jobs}
 
-引入到[!DNL Experience Platform]中的启用配置文件的数据存储在[!DNL Data Lake]以及[!DNL Real-Time Customer Profile]数据存储中。 有时候，可能有必要从配置文件存储中删除与数据集关联的配置文件数据，以便删除不再需要或添加错误的数据。 这需要使用API创建一个[!DNL Profile System Job]，也称为“[!DNL delete request]”，如果需要，可以修改、监视或删除它。 要了解如何使用[!DNL Real-Time Customer Profile] API中的`/system/jobs`端点处理删除请求，请按照[配置文件系统作业端点指南](profile-system-jobs.md)中所述的步骤操作。
+引入到[!DNL Experience Platform]中的启用配置文件的数据存储在[!DNL Data Lake]以及[!DNL Real-Time Customer Profile]数据存储中。 有时候，可能有必要从配置文件存储中删除与数据集关联的配置文件数据，以便删除不再需要或添加错误的数据。 这需要使用API创建一个[!DNL Profile System Job]，也称为“[!DNL delete request]”，如果需要，可以修改、监视或删除它。 要了解如何使用`/system/jobs` API中的[!DNL Real-Time Customer Profile]端点处理删除请求，请按照[配置文件系统作业端点指南](profile-system-jobs.md)中所述的步骤操作。
 
 ## 更新用户档案属性 {#update-profile}
 
@@ -57,4 +61,4 @@ ht-degree: 2%
 
 ## 后续步骤 {#next-steps}
 
-若要开始使用[!DNL Real-Time Customer Profile] API进行调用，请阅读[入门指南](getting-started.md)，然后选择其中一个端点指南，以了解如何使用特定的[!DNL Profile]相关端点。 要使用[!DNL Experience Platform] UI处理[!DNL Profile]数据，请参阅[实时客户资料用户指南](../ui/user-guide.md)。
+若要开始使用[!DNL Real-Time Customer Profile] API进行调用，请阅读[入门指南](getting-started.md)，然后选择其中一个端点指南，以了解如何使用特定的[!DNL Profile]相关端点。 要使用[!DNL Profile] UI处理[!DNL Experience Platform]数据，请参阅[实时客户资料用户指南](../ui/user-guide.md)。
