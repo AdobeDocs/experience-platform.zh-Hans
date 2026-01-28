@@ -133,7 +133,7 @@ ht-degree: 2%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_required_mappings_ttd"
 >title="预配置的映射集"
->abstract="我们已为您预配置了这四个映射集。 当您向交易台激活数据时，符合激活受众资格的用户档案不一定需要在用户档案中存在全部四个标识，因为此目标将使用此处显示的任何目标标识。
+>abstract="我们已为您预配置了这四个映射集。 当您向交易台激活数据时，符合激活受众资格的用户档案不一定需要在用户档案中存在全部四个标识，因为此目标将使用此处显示的任何目标标识。"
 >additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/advertising/tradedesk#preconfigured-mappings" text="阅读有关预配置映射的更多信息"
 
 必须在受众激活工作流的映射步骤中映射[支持的标识](#supported-identities)部分中描述的所有目标标识。 这包括：

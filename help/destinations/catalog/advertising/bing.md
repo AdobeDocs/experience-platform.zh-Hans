@@ -118,7 +118,7 @@ ht-degree: 5%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_required_mappings_bing"
 >title="预配置的映射集"
->abstract="我们已为您预配置了这两个映射集。 在激活数据到Microsoft Bing时，符合激活受众条件的配置文件必须至少有一个与其配置文件关联的ECID标识，才能成功导出到目标。
+>abstract="我们已为您预配置了这两个映射集。 在激活数据到Microsoft Bing时，符合激活受众条件的配置文件必须至少有一个与其配置文件关联的ECID标识，才能成功导出到目标。"
 >additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/advertising/bing#preconfigured-mappings" text="阅读有关预配置映射的更多信息"
 
 >[!IMPORTANT]
