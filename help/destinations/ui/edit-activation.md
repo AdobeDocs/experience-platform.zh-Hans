@@ -4,9 +4,9 @@ title: 编辑激活数据流
 type: Tutorial
 description: 按照本文中的步骤进行操作，以在Adobe Experience Platform中编辑现有的激活数据流。
 exl-id: 0d79fbff-bfde-4109-8353-c7530e9719fb
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 5fae3fe6a3647ba416a26f4cdb9e5b6ce308e990
 workflow-type: tm+mt
-source-wordcount: '917'
+source-wordcount: '927'
 ht-degree: 0%
 
 ---
@@ -111,11 +111,11 @@ ht-degree: 0%
 
 ![Experience Platform UI图像显示“导出数据集”数据流运行选项。](../assets/ui/edit-activation/export-datasets.png)
 
-## [!BADGE Beta]{type=Informative}编辑营销操作 {#edit-marketing-actions}
+## 编辑市场营销操作 {#edit-marketing-actions}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->此功能当前处于&#x200B;**测试版**&#x200B;中。 要请求访问它，请联系您的Adobe代表。
+>要编辑营销操作，您需要&#x200B;**[!UICONTROL Activate Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 您可以添加或删除在最初连接到目标时设置的营销操作。
 

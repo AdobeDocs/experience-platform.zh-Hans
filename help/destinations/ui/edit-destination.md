@@ -2,11 +2,10 @@
 title: 编辑目标
 type: Tutorial
 description: 了解如何在Adobe Experience Platform UI中编辑和更新现有目标帐户
-badgeBeta: label="Beta 版" type="Informative"
 exl-id: f3298836-668b-43fb-b4f3-85a650766f05
-source-git-commit: 990fe9162c5b2970f269a5b0668916b7b6e61f44
+source-git-commit: f91551c460c7d6fd4f98111210f29cf16ec5b565
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '370'
 ht-degree: 0%
 
 ---
@@ -15,20 +14,22 @@ ht-degree: 0%
 
 了解如何编辑现有目标连接的各种组件，包括如何使用Experience Platform UI更新身份验证凭据、导出位置等。
 
->[!IMPORTANT]
->
->此功能处于测试阶段，仅向部分客户提供。 要请求访问权限，请与 Adobe 代表联系。
-
 >[!NOTE]
 >
 > 此外，还通过API操作支持本教程中描述的编辑操作。 阅读有关如何[编辑API中的目标](/help/destinations/api/edit-destination.md)的教程以了解更多信息。
 
+## 先决条件 {#prerequisites}
+
+要编辑目标连接，您需要&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+
+## 编辑目标连接 {#edit}
+
 要编辑现有目标连接的各种组件，请执行以下操作：
 
-1. 导航到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**。
+1. 导航到&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**。
 2. 选择要编辑的所需目标。
-3. 选择`...`名称[!UICONTROL 列中的省略号(])，并使用![编辑目标控件](/help/images/icons/edit.png)**[!UICONTROL 编辑目标&#x200B;]**&#x200B;控件编辑现有目标连接。
-4. 在模式窗口中，编辑任何所需的设置。 完成时选择&#x200B;**[!UICONTROL 保存]**。
+3. 选择`...`列中的省略号([!UICONTROL Name])并使用![编辑目标控件&#x200B;](/help/images/icons/edit.png)**[!UICONTROL Edit destination]**控件编辑现有目标连接。
+4. 在模式窗口中，编辑任何所需的设置。 完成后选择&#x200B;**[!UICONTROL Save]**。
 
 在“编辑目标”窗口中，可以更新最初连接到目标时配置的任何设置。 这些设置因要更新的目标平台而异。
 
@@ -60,6 +61,6 @@ ht-degree: 0%
 
 ## 后续步骤
 
-通过学习本教程，您已成功使用&#x200B;**[!UICONTROL 目标]**&#x200B;工作区来更新现有的目标连接。
+通过完成本教程，您已成功使用&#x200B;**[!UICONTROL destinations]**&#x200B;工作区来更新现有的目标连接。
 
 有关目标的详细信息，请参阅[目标概述](../catalog/overview.md)。
