@@ -3,10 +3,10 @@ title: 交易台 — CRM连接
 description: 激活交易台帐户中的配置文件，以根据CRM数据进行受众定位和抑制。
 last-substantial-update: 2025-01-16T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: 036d784014e7cdb101f39f63f9d6e8bac01fdc97
+source-git-commit: 47d4078acc73736546d4cbb2d17b49bf8945743a
 workflow-type: tm+mt
-source-wordcount: '1088'
-ht-degree: 5%
+source-wordcount: '1643'
+ht-degree: 2%
 
 ---
 
@@ -14,10 +14,10 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
->随着 EUID (European Unified ID) 的发布，现在您在[目标目录](/help/destinations/catalog/overview.md)中会看到两个 [!DNL The Trade Desk - CRM] 目标。
+>[目标目录](/help/destinations/catalog/overview.md)中有两个交易台 — CRM目标。
 >
->* 如果您在欧盟获取数据，请使用 **[!DNL The Trade Desk - CRM (EU)]** 目标。
->* 如果您在 APAC 或 NAMER 地区获取数据，请使用 **[!DNL The Trade Desk - CRM (NAMER & APAC)]** 目标。
+>* 如果您在欧盟境内收集数据，请使用&#x200B;**[!DNL The Trade Desk - CRM (EU)]**&#x200B;目标。
+>* 如果您在APAC或NAMER区域获取数据，请使用&#x200B;**[!DNL The Trade Desk - CRM (NAMER & APAC)]**&#x200B;目标。
 >
 >此目标连接器和文档页面由&#x200B;*[!DNL Trade Desk]*&#x200B;团队创建和维护。 有关查询或更新请求，请联系您的[!DNL Trade Desk]代表。
 
@@ -25,19 +25,17 @@ ht-degree: 5%
 
 了解如何根据CRM数据向[!DNL Trade Desk]帐户激活配置文件以进行受众定位和抑制。
 
-此连接器将数据发送到[!DNL The Trade Desk]第一方终结点。 Adobe Experience Platform与[!DNL The Trade Desk]之间的集成不支持将数据导出到[!DNL The Trade Desk]第三方端点。
-
-[!DNL The Trade Desk(TTD)]不会随时直接处理电子邮件地址的上传文件，[!DNL The Trade Desk]也不会存储您的原始（未散列）电子邮件。
+此连接器将数据发送到[!DNL The Trade Desk]以进行第一方数据激活。 [!DNL The Trade Desk]存储您的原始（未散列）电子邮件和电话号码。
 
 >[!TIP]
 >
->使用[!DNL The Trade Desk]个CRM目标进行CRM数据映射，如电子邮件或哈希电子邮件地址。 使用Adobe Experience Platform目录中的[其他交易台目标](/help/destinations/catalog/advertising/tradedesk.md)进行Cookie和设备ID映射。
+>使用[!DNL The Trade Desk - CRM]目标发送CRM数据（如电子邮件和电话号码）和其他第一方数据标识符（如Cookie和设备ID）。 您可以继续将Experience Platform目录中的[交易台目标](/help/destinations/catalog/advertising/tradedesk.md)用于Cookie和设备ID映射。
 
 ## 先决条件 {#prerequisites}
 
 >[!IMPORTANT]
 >
->您必须先联系[!DNL Trade Desk]客户经理以签署CRM载入合同，然后才能将受众激活到交易台。 [!DNL The Trade Desk]将允许使用UID2 / EUID并共享其他详细信息以帮助您配置目标。
+>在激活交易台受众之前，必须联系[!DNL Trade Desk]客户经理以启用该功能。 如果您要发送电子邮件、电话号码和UID2/EUID，则必须与[!DNL The Trade Desk]共享已签名的UID2/EUID协议。
 
 ## ID匹配要求 {#id-matching-requirements}
 
@@ -47,16 +45,28 @@ ht-degree: 5%
 
 [!DNL The Trade Desk]支持激活下表中描述的标识。 了解有关[标识](/help/identity-service/features/namespaces.md)的更多信息。
 
-Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按照ID匹配要求部分中的说明进行操作，并分别将适当的命名空间用于纯文本和经过哈希处理的电子邮件地址。
+Adobe Experience Platform支持未哈希和哈希处理的电子邮件地址和电话号码。 按照ID匹配要求部分中的说明进行操作，并分别将适当的命名空间用于纯文本和经过哈希处理的电子邮件地址。
 
-| 目标身份 | 描述 | 注意事项 |
-|---|---|---|
-| 电子邮件 | 电子邮件地址（明文） | 当您的源身份是电子邮件命名空间或属性时，输入`email`作为目标身份。 |
-| Email_LC_SHA256 | 电子邮件地址需要使用SHA256和小写进行哈希处理。 您以后将无法更改此设置。 | 当源身份是Email_LC_SHA256命名空间或属性时，输入`hashed_email`作为目标身份。 |
+| 目标身份 | 描述 |
+|---|---|
+| 电子邮件 | 电子邮件地址（明文） |
+| Email_LC_SHA256 | 电子邮件地址需要使用SHA256和小写进行哈希处理。 您以后将无法更改此设置。 |
+| 电话(E.164) | 需要以E.164格式规范化的电话号码。 E.164格式包括加号(+)、国际国家/地区呼叫代码、本地区号和电话号码。 例如：(+)（国家代码）（区号）（电话号码）。 此标识符不适用于交易台 — 第一方数据(EU)。 |
+| 电话(SHA256_E.164) | 已经标准化为E.164格式，然后使用SHA-256进行哈希处理的电话号码，生成的哈希值为Base64-encoded。 此标识符不适用于交易台 — 第一方数据(EU)。 |
+| TDID | 交易台中的Cookie ID |
+| GAID | GOOGLE ADVERTISING ID |
+| IDFA | 广告商的Apple ID |
+| UID2 | 原始UID2值 |
+| UID2Token | 加密的UID2令牌，也称为广告令牌。 |
+| EUID | 原始欧盟ID值 |
+| EUIDToken | 加密的EUID令牌，也称为广告令牌。 |
+| RampID | 49个字符或70个字符的RampID（以前称为IdentityLink或IDL）。 这必须是专门为交易台映射的LiveRamp中的RampID。 |
+| netid | 用户的netID，作为70个字符的base64编码字符串。 此ID仅在欧洲受支持。 |
+| 第一ID | 用户的First-id，这是法国出版商通常设置的第一方Cookie。 此ID仅在欧洲受支持。 |
 
 {style="table-layout:auto"}
 
-## 电子邮件哈希处理要求 {#hashing-requirements}
+## 电子邮件哈希处理要求 {#email-hashing}
 
 您可以在将电子邮件地址摄取到Adobe Experience Platform中之前对其进行哈希处理，或者使用原始电子邮件地址。
 
@@ -67,8 +77,49 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 * 删除前导空格和尾随空格。
 * 将所有ASCII字符转换为小写。
 * 在`gmail.com`电子邮件地址中，从电子邮件地址的用户名部分删除以下字符：
-   * 句点(. （ASCII代码46）。 例如，将`jane.doe@gmail.com`标准化为`janedoe@gmail.com`。
-   * 加号(+ （ASCII代码43）)和所有后续字符。 例如，将`janedoe+home@gmail.com`标准化为`janedoe@gmail.com`。
+
+      *句点(“。”) 字符（ASCII代码46）。 例如，将“jane.doe@gmail.com”标准化为“janedoe@gmail.com”。
+     *加号(“+”)字符（ASCII代码43）和所有后续字符。 例如，将“janedoe+home@gmail.com”标准化为“janedoe@gmail.com”。
+  
+## 电话号码规范化和哈希处理要求 {#phone-hashing}
+
+以下是关于上传电话号码的须知信息：
+
+* 无论是在请求中发送经过哈希处理还是未经哈希处理的电话号码，在请求中发送电话号码之前都必须对其进行标准化。
+* 要上传规范化、哈希化和编码的数据，您必须将电话号码作为规范化电话号码的Base64编码SHA-256哈希发送。
+
+无论您是要上传原始电话号码还是经过哈希处理的电话号码，都必须将其规范化。
+
+>[!IMPORTANT]
+>
+>哈希处理前的标准化可以确保生成的ID值始终相同，并且数据可以准确匹配。
+
+以下是您需要了解的有关电话号码标准化要求的内容：
+
+* UID2运营商接受E.164格式的电话号码，这是确保全球唯一性的国际电话号码格式。
+* E.164电话号码最多可有15位。
+* 规范化E.164电话号码使用以下语法： `[+][country code][subscriber number including area code]`不含空格、连字符、括号或其他特殊字符。 下面是一些示例：
+
+      *美国： 1 (234) 567-8901被标准化为+12345678901。
+     *新加坡： 65 1243 5678已标准化为+6512345678。
+     *澳大利亚：手机号码0491 570 006已规范化，添加国家/地区代码并去除前导零： +61491570006。
+     *英国：手机号码07812 345678已标准化，以添加国家/地区代码并丢弃前导零： +447812345678。
+  
+确保规范化的电话号码是UTF-8，而不是其他编码系统，如UTF-16。
+
+电话号码哈希是规范化电话号码的Base64编码SHA-256哈希。 首先规范化电话号码，然后使用SHA-256散列算法进行散列，然后使用Base64编码对散列值的结果字节进行编码。 请注意，Base64编码应用于哈希值的字节，而不是十六进制编码的字符串表示形式。
+下表显示了一个简单输入电话号码的示例，并在应用每个步骤时获得一个安全、不透明的值。
+
+| 类型 | 示例 | 注释和使用情况 |
+|---|---|---|
+| 原始电话号码 | 1 (234) 567-8901 | 这是起点。 |
+| 规范化的电话号码 | +12345678901 | 标准化始终是第一步。 |
+| 规范化电话号码的SHA-256哈希值 | 10e6f0b47054a83359477dcb35231db6de5c69fb1816e1a6b98e192de9e5b9ee | 此64个字符的字符串是32字节SHA-256的十六进制编码表示形式。 |
+| 规范化和散列电话号码的十六进制到Base64 SHA-256编码 | EObwtHBUqDNZR33LNSMdtt5cafsYFuGmuY4ZLenlue4 | 此44字符字符串是32字节SHA-256的Base64编码表示形式。 SHA-256哈希为十六进制值。 必须使用采用十六进制值作为输入的Base64编码器。 对请求正文中发送的phone_hash值使用此编码。 |
+
+>[!IMPORTANT]
+>
+>应用Base64编码时，请确保使用接受十六进制值作为输入的函数。 如果您使用接受文本作为输入的函数，则结果会是一个较长的字符串，并且对于UID2而言，该字符串无效。
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -89,7 +140,7 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 
 ### 填写目标详细信息 {#fill-in-details}
 
-在将受众数据发送到或激活到目标之前，您必须先设置与自己的目标平台的连接。 在[设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=zh-Hans)此目标时，必须提供以下信息：
+在将受众数据发送到或激活到目标之前，您必须先设置与自己的目标平台的连接。 在[设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html)此目标时，必须提供以下信息：
 
 * **[!UICONTROL Account Type]**：请选择&#x200B;**[!UICONTROL Existing Account]**&#x200B;选项。
 * **[!UICONTROL Name]**：将来用于识别此目标的名称。
@@ -125,28 +176,34 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 
 以下是激活受众到[!DNL The Trade Desk] CRM目标时正确标识映射的示例。
 
->[!IMPORTANT]
->
-> [!DNL The Trade Desk] CRM目标不接受原始和经过哈希处理的电子邮件地址作为同一激活流中的标识。 为原始电子邮件地址和经过哈希处理的电子邮件地址创建单独的激活流程。
+选择源字段和目标字段：
 
-选择源字段：
+| 源字段 | 目标字段 |
+|---|---|
+| 电子邮件 | 电子邮件 |
+| Email_LC_SHA256 | hashed_email |
+| 电话(E.164) | 电话 |
+| 电话(SHA256_E.164) | hashed_phone |
+| TDID | tdid |
+| GAID | daid |
+| IDFA | idfa |
+| UID2 | uid2 |
+| UID2Token | uid2_token |
+| EUID | euid |
+| EUIDToken | euid_token |
+| RampID | idl |
+| ID5 | id5 |
+| netid | net_id |
+| 第一ID | first_id |
 
-* 如果在数据摄取时使用原始电子邮件地址，请选择`Email`命名空间或属性作为源标识。
-* 如果您在数据摄取到Experience Platform时经过哈希处理的客户电子邮件地址，请选择`Email_LC_SHA256`命名空间或属性作为源身份。
-
-选择目标字段：
-
-* 当源命名空间或属性为`email`时，输入`Email`作为目标标识。
-* 当源命名空间或属性为`hashed_email`时，输入`Email_LC_SHA256`作为目标标识。
 
 ## 验证数据导出 {#validate}
 
-要验证数据是否已从Experience Platform正确导出到[!DNL The Trade Desk]，请在[!DNL The Trade Desk]数据管理平台(DMP)的Adobe 1PD数据拼贴下找到受众。 以下是在[!DNL Trade Desk] UI中查找相应ID的步骤：
+要验证数据是否已从Experience Platform正确导出到[!DNL The Trade Desk]，请在[!DNL The Trade Desk]“广告商数据和标识”库的“Adobe 1PD”选项卡下找到受众。 以下是在[!DNL Trade Desk] UI中查找相应ID的步骤：
 
-1. 首先，选择&#x200B;**[!UICONTROL Data]**&#x200B;选项卡，并查看&#x200B;**[!UICONTROL First-Party]**&#x200B;部分。
-2. 向下滚动该页面，在&#x200B;**[!UICONTROL Imported Data]**&#x200B;下，您会找到&#x200B;**[!UICONTROL Adobe 1PD Tile]**。
-3. 单击&#x200B;**[!UICONTROL Adobe 1PD]**&#x200B;图块，它将列出激活到您的广告商的[!DNL Trade Desk]目标的所有受众。 您还可以使用搜索功能。
-4. Experience Platform中的区段ID #将显示为[!DNL Trade Desk] UI中的区段名称。
+1. 首先，选择&#x200B;**[!UICONTROL Libraries]**&#x200B;选项卡，并查看&#x200B;**[!UICONTROL Advertiser data and identity]**&#x200B;部分。
+2. 单击&#x200B;**[!UICONTROL Adobe 1PD]**，它将列出激活到[!DNL The Trade Desk]的所有受众。
+3. Experience Platform中的区段名称或区段ID将显示为[!DNL Trade Desk] UI中的区段名称。
 
 ## 数据使用和治理 {#data-usage-governance}
 

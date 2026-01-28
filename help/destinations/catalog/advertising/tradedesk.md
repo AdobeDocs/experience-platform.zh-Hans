@@ -3,7 +3,7 @@ keywords: 广告；交易台；广告交易台
 title: 交易台连接
 description: Trade Desk是一个自助服务平台，供广告购买者跨显示器、视频和移动库存源执行重定位和面向受众的数字活动。
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: b282dbae9131e0d2acdcd999d57f2e08b0bd7810
+source-git-commit: e75a5562820490bc56adaa1d21e4066fc649cc44
 workflow-type: tm+mt
 source-wordcount: '1144'
 ht-degree: 2%
@@ -83,7 +83,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->如果您希望使用[!DNL The Trade Desk]创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/zh-hans/docs/id-service/using/id-service-api/methods/idsync)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL The Trade Desk]集成，则您设置的ID同步将会转移到Experience Platform。
+>如果您希望使用[!DNL The Trade Desk]创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/en/docs/id-service/using/id-service-api/methods/idsync)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL The Trade Desk]集成，则您设置的ID同步将会转移到Experience Platform。
 
 ## 连接到目标 {#connect}
 
@@ -134,7 +134,7 @@ ht-degree: 2%
 >id="platform_destinations_required_mappings_ttd"
 >title="预配置的映射集"
 >abstract="我们已为您预配置了这四个映射集。 当您向交易台激活数据时，符合激活受众资格的用户档案不一定需要在用户档案中存在全部四个标识，因为此目标将使用此处显示的任何目标标识。"
->additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/catalog/advertising/tradedesk#preconfigured-mappings" text="阅读有关预配置映射的更多信息"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/advertising/tradedesk#preconfigured-mappings" text="阅读有关预配置映射的更多信息"
 
 必须在受众激活工作流的映射步骤中映射[支持的标识](#supported-identities)部分中描述的所有目标标识。 这包括：
 
