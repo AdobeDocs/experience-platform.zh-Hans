@@ -28,7 +28,7 @@ ht-degree: 0%
 
 1. 导航到&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**。
 2. 选择要编辑的所需目标。
-3. 选择`...`列中的省略号([!UICONTROL Name])并使用![编辑目标控件&#x200B;](/help/images/icons/edit.png)**[!UICONTROL Edit destination]**控件编辑现有目标连接。
+3. 选择`...`列中的省略号([!UICONTROL Name])并使用![编辑目标控件&#x200B;](/help/images/icons/edit.png)**[!UICONTROL Edit destination]**&#x200B;控件编辑现有目标连接。
 4. 在模式窗口中，编辑任何所需的设置。 完成后选择&#x200B;**[!UICONTROL Save]**。
 
 在“编辑目标”窗口中，可以更新最初连接到目标时配置的任何设置。 这些设置因要更新的目标平台而异。
