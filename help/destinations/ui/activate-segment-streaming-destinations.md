@@ -3,9 +3,9 @@ title: 将受众数据激活到流目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将现有受众映射到流目标来激活这些受众。
 exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
-source-git-commit: 2eb890f06097f1b9766408aad3b6ab11d5d12f9f
+source-git-commit: 99bac2ea71003b678a25b3afc10a68d36472bfbc
 workflow-type: tm+mt
-source-wordcount: '1098'
+source-wordcount: '1124'
 ht-degree: 3%
 
 ---
@@ -83,6 +83,10 @@ ht-degree: 3%
 
    ![显示多个可用源字段的“选择源字段”页。](../assets/ui/activate-segment-streaming-destinations/select-source-field-modal.png)
 
+   使用&#x200B;**[!UICONTROL Show display names for fields]**&#x200B;切换显示字段的友好名称，而不是架构字段名称。
+
+   ![显示显示显示名称切换的源字段页。](../assets/ui/activate-segment-streaming-destinations/show-display-names.gif)
+
 1. 选择&#x200B;**[!UICONTROL Target field]**&#x200B;条目右侧的按钮。
 
    ![选择突出显示的目标字段。](../assets/ui/activate-segment-streaming-destinations/select-target-field.png)
@@ -135,7 +139,7 @@ ht-degree: 3%
 
 1. 选择&#x200B;**[!UICONTROL Next]**&#x200B;以转到[!UICONTROL Review]页面。
 
-## 审查 {#review}
+## 审阅 {#review}
 
 在&#x200B;**[!UICONTROL Review]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL Cancel]**&#x200B;以中断流，**[!UICONTROL Back]**&#x200B;以修改您的设置，或&#x200B;**[!UICONTROL Finish]**&#x200B;以确认您的选择并开始将数据发送到目标。
 

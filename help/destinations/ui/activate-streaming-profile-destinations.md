@@ -4,9 +4,9 @@ type: Tutorial
 description: 了解如何通过将受众发送到基于个人资料的流目标来激活您在Adobe Experience Platform中的受众数据。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: bc0f781e-60de-44a5-93cb-06b4a3148591
-source-git-commit: 9f4ce2a3a8af72342683c859caa270662b161b7d
+source-git-commit: 99bac2ea71003b678a25b3afc10a68d36472bfbc
 workflow-type: tm+mt
-source-wordcount: '717'
+source-wordcount: '762'
 ht-degree: 1%
 
 ---
@@ -75,13 +75,19 @@ ht-degree: 1%
 
    ![突出显示映射步骤中如何选择源字段的图像。](../assets/ui/activate-streaming-profile-destinations/select-schema-field.png)
 
-1. 在&#x200B;**[!UICONTROL Select field]**&#x200B;页面中，选择要发送到目标的XDM属性，然后选择&#x200B;**[!UICONTROL Select]**。
+1. 在&#x200B;**[!UICONTROL Select source field]**&#x200B;页面中，选择要发送到目标的XDM属性，然后选择&#x200B;**[!UICONTROL Save]**。
 
-   ![该图像显示了一组您可以选择作为源字段的XDM字段。](../assets/ui/activate-streaming-profile-destinations/target-field-page.png)
+   ![该图像显示了一组您可以选择作为源字段的XDM字段。](../assets/ui/activate-streaming-profile-destinations/select-source-field-modal.png)
+
+   使用&#x200B;**[!UICONTROL Show only fields with data]**&#x200B;切换可仅显示用值填充的架构字段。 默认情况下，仅显示填充的架构字段。
+
+   使用&#x200B;**[!UICONTROL Show display names for fields]**&#x200B;切换显示字段的友好名称，而不是架构字段名称。
+
+   ![显示显示显示名称切换的源字段页。](../assets/ui/activate-batch-profile-destinations/show-display-names.gif)
 
 1. 要添加更多字段，请重复步骤1至3，然后选择&#x200B;**[!UICONTROL Next]**。
 
-## 审查 {#review}
+## 审阅 {#review}
 
 在&#x200B;**[!UICONTROL Review]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL Cancel]**&#x200B;以中断流，**[!UICONTROL Back]**&#x200B;以修改您的设置，或&#x200B;**[!UICONTROL Finish]**&#x200B;以确认您的选择并开始将数据发送到目标。
 
