@@ -2,9 +2,9 @@
 title: Experience Platform预发行说明
 description: Adobe Experience Platform最新发行说明预览。
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: 26dabf21959fde0b6ce7111524a20e3f342aec75
+source-git-commit: 6fa71c48151e937f2e18d8b9761aad94eca85ade
 workflow-type: tm+mt
-source-wordcount: '1389'
+source-wordcount: '1316'
 ht-degree: 20%
 
 ---
@@ -113,7 +113,6 @@ Experience Platform使用架构，以一致且可重用的方式描述数据结�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 流式分段监控 | 流式客户细分的实时监控在沙盒、数据集和受众级别提供了评估率、延迟和数据质量量度的透明度。 该功能支持主动预警和可操作的洞察，以帮助数据工程师识别容量违规和摄取问题。监测指标包括评估率、P95摄取延迟以及接收、评估、失败和跳过的记录。 逐个数据集查看和逐个受众查看功能可全面查看符合条件或被取消资格的净新用户档案。 |
 | 外部受众TTL刷新 | 外部受众（例如CSV上传）现在支持对生存时间(TTL)设置进行强制刷新功能。 此功能允许用户手动刷新外部受众的TTL过期，从而更好地控制受众生命周期管理。 这对于需要在初始TTL时间段后持续存在或需要重新激活而不重新上传数据的受众特别有用。 |
 
 有关详细信息，请参阅 [[!DNL Segmentation Service]  概述](../segmentation/home.md)。
