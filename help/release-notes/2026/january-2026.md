@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明（2026 年 1 月）
 description: Adobe Experience Platform 的 2026 年 1 月发行说明。
-source-git-commit: 436e65f22b8866fb9922afcf51811f537c05fc9f
+source-git-commit: 8ce256234be0917242f117ee7e9b806abe90888c
 workflow-type: tm+mt
-source-wordcount: '1272'
-ht-degree: 21%
+source-wordcount: '1287'
+ht-degree: 20%
 
 ---
 
@@ -45,7 +45,7 @@ Agent Orchestrator enables you to build and deploy AI-powered agents that can au
 
 {style="table-layout:auto"}
 
-For more information, see the [Agent Orchestrator documentation](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator). -->
+For more information, see the [Agent Orchestrator documentation](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator). -->
 
 ## 目标 {#destinations}
 
@@ -59,7 +59,7 @@ For more information, see the [Agent Orchestrator documentation](https://experie
 | [索引Exchange](/help/destinations/catalog/advertising/index-exchange.md)目标连接器现已可用 | 使用此目标连接器将受众区段直接从Adobe Experience Platform导出到[!DNL Index Exchange]的程序化广告平台。 [!DNL Index]是一个全球广告供应方平台，可帮助媒体所有者最大限度地实现其内容在每个屏幕上的价值。 凭借超过20年的行业领先地位，[!DNL Index]将世界上最大的品牌与高级体验制作者联系起来，以提供高质量的消费者体验。 |
 | 对Braze连接的区域端点支持 | [支持的所有](https://www.braze.com/docs/user_guide/administrative/access_braze/sdk_endpoints)区域特定的端点[!DNL Braze]现在都可在目标配置流期间进行选择。 询问您的[!DNL Braze]代表您应使用哪个端点实例。 |
 | 对[Liveramp入门](../../destinations/catalog/advertising/liveramp-onboarding.md#scheduling)的每周和每月计划支持 | 您现在可以为Liveramp载入目标配置每周和每月导出计划。 <br>此版本正在逐步推出，将于1月30日前完成。 |
-| 增强了[交易台](../../destinations/catalog/advertising/tradedesk.md)和[Microsoft Bing](../../destinations/catalog/advertising/bing.md)目标的激活体验 | Trade Desk和Microsoft Bing目标现在包含预定义的强制映射，以便优化激活体验。  <br>此版本正在逐步推出，将于1月30日前完成。 |
+| 增强了[交易台](../../destinations/catalog/advertising/tradedesk.md)和[Microsoft Bing](../../destinations/catalog/advertising/bing.md)目标的激活体验 | Trade Desk和Microsoft Bing目标现在包含预定义的强制映射，以便优化激活体验。  <br>此版本正在逐步推出，将于1月30日前完成。 ![显示交易台](assets/january/mandatory-mappings-ttd.png)的预定义映射的图像{width="150" align="center" zoomable="yes"} <br> ![图像显示Microsoft Bing的预定义映射](assets/january/mandatory-mappings-bing.png) {width="150" align="center" zoomable="yes"} |
 | 对[Amazon S3](../../destinations/catalog/cloud-storage/amazon-s3.md#destination-details)目标的AES256加密支持 | 您现在可以为Amazon S3导出配置AES256加密。 提供了两个选项： <ul><li>**[!UICONTROL Default]**：将使用存储段上设置的默认加密算法对静态数据进行加密。</li><li>**[!UICONTROL SSE-S3/AES256]**： Experience Platform在导出中添加了`s3:x-amz-server-side-encryption": "AES256`标头，当数据登录到S3时，将使用AES256算法静态加密数据。 **此选项优先于S3存储桶**&#x200B;上配置的任何默认加密算法。</li></ul> 此版本正在逐步推出，将于1月30日完成。 |
 | [交易台 — CRM](../../destinations/catalog/advertising/tradedesk-emails.md#phone-hashing)连接的电话号码激活支持 | 除了电子邮件地址之外，Trade Desk - CRM目标现在还支持电话号码激活。 您可以对交易台帐户激活E.164格式的未哈希处理电话号码和哈希处理电话号码（SHA256_E.164格式），以便根据CRM数据确定受众目标和进行抑制。 在激活之前，电话号码必须标准化为E.164格式。 |
 
