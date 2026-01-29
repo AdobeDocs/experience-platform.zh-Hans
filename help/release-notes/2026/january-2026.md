@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明（2026 年 1 月）
 description: Adobe Experience Platform 的 2026 年 1 月发行说明。
-source-git-commit: 8ce256234be0917242f117ee7e9b806abe90888c
+source-git-commit: cbe9dd4babb31061405dee3ebe4bd40acad82e90
 workflow-type: tm+mt
-source-wordcount: '1287'
-ht-degree: 20%
+source-wordcount: '1454'
+ht-degree: 19%
 
 ---
 
@@ -25,27 +25,26 @@ ht-degree: 20%
 
 Adobe Experience Platform 中新功能和现有功能的更新：
 
-<!-- - [Agent Orchestrator](#agent-orchestrator) -->
-
+- [Agent Orchestrator](#agent-orchestrator)
 - [目标](#destinations)
 - [实时客户轮廓](#real-time-customer-profile)
 - [架构](#schemas)
 - [Segmentation Service](#segmentation-service)
 - [源](#sources)
 
-<!-- ## Agent Orchestrator {#agent-orchestrator}
+## Agent Orchestrator {#agent-orchestrator}
 
-Agent Orchestrator enables you to build and deploy AI-powered agents that can automate workflows and interact with customers across multiple channels.
+Agent Orchestrator允许您构建和部署支持AI的代理，这些代理可以自动执行工作流并在多个渠道上与客户进行交互。
 
-**New or updated features**
+**新增功能或更新后的功能**
 
-| Feature | Description |
+| 功能 | 描述 |
 | --- | --- |
-| Trial motion for Adobe Experience Platform Agents | **Select customers now have access to Adobe Experience Platform Agents for a complimentary trial**, enabling them to explore and interact with these Agents through the AI Assistant interface powered by Adobe Experience Platform Agent Orchestrator. The trial offers hands-on experience with AI Agents that operate within the context of customers' existing Experience Cloud products and environments, allowing teams to evaluate value before committing to a full purchase. Adobe Experience Platform Agents are guided by user input and oversight and respect existing product-level access controls, ensuring users can only perform actions or view data for which they are authorized within the underlying Experience Cloud applications.|
+| 面向Adobe Experience Platform代理使用的试用版 | **选择客户现在可以免费试用访问Adobe Experience Platform代理**。 您可以通过由Adobe Experience Platform Agent Orchestrator提供支持的AI Assistant界面，使用该试用版来探索代理并与代理交互。 该试用版提供了在客户现有Experience Cloud产品和环境的环境中运行的AI代理的实践体验，使团队能够在承诺完全购买之前评估价值。 Adobe Experience Platform代理受用户输入和监督的指导，并遵守现有的产品级访问控制，确保用户只能执行操作或查看他们在基础Experience Cloud应用程序中获得授权的数据。 有关如何开始使用的信息，请阅读[Experience Platform代理使用情况绑定的试用概述](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/agents/trial)。 |
 
 {style="table-layout:auto"}
 
-For more information, see the [Agent Orchestrator documentation](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator). -->
+有关详细信息，请参阅[Agent Orchestrator文档](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator)。
 
 ## 目标 {#destinations}
 
