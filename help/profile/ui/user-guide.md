@@ -3,9 +3,9 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: 实时客户个人资料UI指南
 description: Real-time Customer Profile可以为每位客户创建整体视图，结合来自多个渠道（包括在线、离线、CRM和第三方数据）的数据。 本文档提供了在Adobe Experience Platform用户界面中与Real-time Customer Profile交互的指南。
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: d2694170e2860bd32783ad3f1860b0397e847289
+source-git-commit: 5db5d0763b1d1456ba184bd24e7ef4c3047e25d1
 workflow-type: tm+mt
-source-wordcount: '1921'
+source-wordcount: '1924'
 ht-degree: 4%
 
 ---
@@ -42,7 +42,7 @@ ht-degree: 4%
 
 在&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡上，您可以通过选择切换开关在&#x200B;**卡片**&#x200B;视图或&#x200B;**图形**&#x200B;视图中查看配置文件。
 
-![卡片视图和图形视图切换已高亮显示。](../images/user-guide/card-graph-view.png)
+![卡片视图和图形视图切换已高亮显示。](../images/user-guide/change-browse-view.png)
 
 此外，您可以使用合并策略浏览配置文件，或使用身份命名空间和值查找特定配置文件。
 
@@ -127,9 +127,11 @@ ht-degree: 4%
 
 #### AI 洞察小组件 {#ai-insight-widgets}
 
-[!BADGE Alpha]{type=Informative}此功能当前位于Alpha中。
+>[!IMPORTANT]
+>
+>如果您是Healthcare Shield客户，则&#x200B;**无法**&#x200B;使用AI insight小组件。
 
-**[!UICONTROL AI insight widgets]**&#x200B;部分显示由AI生成的构件。 这些小组件根据配置文件数据(包括人口统计信息（如年龄、性别或位置）、用户行为（如购买历史记录、网站活动或社交媒体参与）以及心理图形（如兴趣、偏好或生活方式选择），提供对配置文件的快速见解。 所有AI小组件都使用配置文件中已存在&#x200B;**&#x200B;**&#x200B;的数据。
+**[!UICONTROL AI insight widgets]**&#x200B;部分显示由AI生成的构件。 这些小组件根据配置文件数据(包括人口统计信息（如年龄、性别或位置）、用户行为（如购买历史记录、网站活动或社交媒体参与）以及心理图形（如兴趣、偏好或生活方式选择），提供对配置文件的快速见解。 所有AI小组件都使用配置文件中已存在&#x200B;****&#x200B;的数据。
 
 ![将显示AI insight小组件部分。](../images/user-guide/ai-insight-widgets.png)
 
@@ -146,8 +148,6 @@ ht-degree: 4%
 ![显示名称切换已突出显示。](../images/user-guide/show-display-names.png)
 
 #### 自动分类的小组件 {#auto-classified-widgets}
-
-[!BADGE Alpha]{type=Informative}此功能当前位于Alpha中。
 
 **[!UICONTROL Auto-classified widgets]**&#x200B;部分显示利用合并架构确定属性所属源字段组的构件，可提供更清晰的数据来源上下文。 您可以使用搜索栏更轻松地在构件中查找关键字。
 

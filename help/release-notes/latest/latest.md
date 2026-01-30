@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明（2026 年 1 月）
 description: Adobe Experience Platform 的 2026 年 1 月发行说明。
-source-git-commit: 905c8853fadc08bb7e357f43f358844b560b3097
+source-git-commit: 76b2537b47c0f7bdf115afdec655a1de8460384c
 workflow-type: tm+mt
-source-wordcount: '1529'
-ht-degree: 18%
+source-wordcount: '1622'
+ht-degree: 21%
 
 ---
 
@@ -40,7 +40,7 @@ Agent Orchestrator允许您构建和部署支持AI的代理，这些代理可以
 
 | 功能 | 描述 |
 | --- | --- |
-| 面向Adobe Experience Platform代理使用的试用版 | **选择客户现在可以免费试用访问Adobe Experience Platform代理**。 您可以通过由Adobe Experience Platform Agent Orchestrator提供支持的AI Assistant界面，使用该试用版来探索代理并与代理交互。 该试用版提供了在客户现有Experience Cloud产品和环境的环境中运行的AI代理的实践体验，使团队能够在承诺完全购买之前评估价值。 Adobe Experience Platform代理受用户输入和监督的指导，并遵守现有的产品级访问控制，确保用户只能执行操作或查看他们在基础Experience Cloud应用程序中获得授权的数据。 有关如何开始使用的信息，请阅读[Experience Platform代理使用情况绑定的试用概述](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-ai/experience-cloud-ai/agents/trial)。 |
+| 面向Adobe Experience Platform代理使用的试用版 | **选择客户现在可以免费试用访问Adobe Experience Platform代理**。 您可以通过由Adobe Experience Platform Agent Orchestrator提供支持的AI Assistant界面，使用该试用版来探索代理并与代理交互。 该试用版提供了在客户现有Experience Cloud产品和环境的环境中运行的AI代理的实践体验，使团队能够在承诺完全购买之前评估价值。 Adobe Experience Platform代理受用户输入和监督的指导，并遵守现有的产品级访问控制，确保用户只能执行操作或查看他们在基础Experience Cloud应用程序中获得授权的数据。 有关如何开始使用的信息，请阅读[Experience Platform代理使用情况绑定的试用概述](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/agents/trial)。 |
 
 {style="table-layout:auto"}
 
@@ -85,7 +85,8 @@ Agent Orchestrator允许您构建和部署支持AI的代理，这些代理可以
 | --- | --- |
 | [流式处理容量](/help/landing/license-usage-and-guardrails/capacity.md)实施 | Experience Platform现在为Real-time Customer Profile和Identity Service强制执行流式处理吞吐量功能。 当客户超过其合同规定的流容量时，数据将以“先进先出”的方式排队和处理。 这可以确保可预测的系统性能，并防止容量违规影响数据摄取质量。 重要说明： <ul><li>当超出容量时，流更新插入将不在数据湖上可用</li><li>此强制不适用于具有Adobe Journey Optimizer许可证的客户</li><li>一旦容量可用，将按顺序处理排队的数据。</li></ul> 有关详细信息，请阅读[容量概述](/help/landing/license-usage-and-guardrails/capacity.md)。 |
 | 实体查找已弃用 | 现在，所有Real-Time CDP Prime客户都不再使用体验事件的实体查找API。 此弃用内容有助于使Real-Time CDP与许可功能保持一致。 计划使用此功能的Real-Time CDP Ultimate客户可以联系Adobe客户关怀团队以重新启用此功能。  有关详细信息，请阅读[实体API指南](/help/profile/api/entities.md)。 |
-| 监测配置文件摄取作业状态 | 您现在可以监测批量配置文件摄取数据流运行的作业级进度百分比。 此功能可实时查看批量摄取作业的当前进度，包括指示摄取是否准备好进行客户细分和Adobe Journey Optimizer查找的关键检查点。 对于可能需要几个小时才能处理的大型引入，此进度透明度可帮助您了解作业是正常进行还是遇到问题，从而减少数据处理过程中的不确定性。有关详细信息，请参阅[监视器配置文件指南](/help/dataflows/ui/monitor-profiles.md)。 |
+| 监测配置文件摄取作业状态 | 您现在可以监测批量配置文件摄取数据流运行的作业级进度百分比。 此功能可实时查看批量摄取作业的当前进度，包括指示摄取是否准备好进行客户细分和Adobe Journey Optimizer查找的关键检查点。 对于可能需要几个小时才能处理的大型摄取，此进度透明度可帮助您了解作业是正常进行还是遇到问题，从而减少数据处理过程中的不确定性。 有关详细信息，请阅读[监视器配置文件指南](/help/dataflows/ui/monitor-profiles.md)。 |
+| 配置文件查看器增强功能(GA) | 现在正式提供了配置文件查看器的以下增强功能。 <ul><li>**组合视图**：将属性、事件和洞察组合到同一个视图中。</li><li>**AI 生成的洞察**：轮廓详细信息页面现在显示 AI 生成的洞察，让您了解从轮廓生成的详细信息。这些洞察可能包括倾向性得分和趋势分析等信息。</li><li>**样式更新**：轮廓详细信息页面更新了外观。</li><li>**浏览**：您现在可以通过一个具有搜索和自定义功能的基于信息卡的交互式轮播组件来浏览轮廓。</li></ul> 有关详细信息，请阅读[配置文件查看器指南](/help/profile/ui/user-guide.md)。 |
 
 {style="table-layout:auto"}
 
