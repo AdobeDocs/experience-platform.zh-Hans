@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明（2026 年 1 月）
 description: Adobe Experience Platform 的 2026 年 1 月发行说明。
-source-git-commit: cbe9dd4babb31061405dee3ebe4bd40acad82e90
+source-git-commit: 905c8853fadc08bb7e357f43f358844b560b3097
 workflow-type: tm+mt
-source-wordcount: '1454'
-ht-degree: 19%
+source-wordcount: '1529'
+ht-degree: 18%
 
 ---
 
@@ -40,7 +40,7 @@ Agent Orchestrator允许您构建和部署支持AI的代理，这些代理可以
 
 | 功能 | 描述 |
 | --- | --- |
-| 面向Adobe Experience Platform代理使用的试用版 | **选择客户现在可以免费试用访问Adobe Experience Platform代理**。 您可以通过由Adobe Experience Platform Agent Orchestrator提供支持的AI Assistant界面，使用该试用版来探索代理并与代理交互。 该试用版提供了在客户现有Experience Cloud产品和环境的环境中运行的AI代理的实践体验，使团队能够在承诺完全购买之前评估价值。 Adobe Experience Platform代理受用户输入和监督的指导，并遵守现有的产品级访问控制，确保用户只能执行操作或查看他们在基础Experience Cloud应用程序中获得授权的数据。 有关如何开始使用的信息，请阅读[Experience Platform代理使用情况绑定的试用概述](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-ai/experience-cloud-ai/agents/trial)。 |
+| 面向Adobe Experience Platform代理使用的试用版 | **选择客户现在可以免费试用访问Adobe Experience Platform代理**。 您可以通过由Adobe Experience Platform Agent Orchestrator提供支持的AI Assistant界面，使用该试用版来探索代理并与代理交互。 该试用版提供了在客户现有Experience Cloud产品和环境的环境中运行的AI代理的实践体验，使团队能够在承诺完全购买之前评估价值。 Adobe Experience Platform代理受用户输入和监督的指导，并遵守现有的产品级访问控制，确保用户只能执行操作或查看他们在基础Experience Cloud应用程序中获得授权的数据。 有关如何开始使用的信息，请阅读[Experience Platform代理使用情况绑定的试用概述](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/agents/trial)。 |
 
 {style="table-layout:auto"}
 
@@ -61,6 +61,7 @@ Agent Orchestrator允许您构建和部署支持AI的代理，这些代理可以
 | 增强了[交易台](../../destinations/catalog/advertising/tradedesk.md)和[Microsoft Bing](../../destinations/catalog/advertising/bing.md)目标的激活体验 | Trade Desk和Microsoft Bing目标现在包含预定义的强制映射，以便优化激活体验。  <br>此版本正在逐步推出，将于1月30日前完成。 ![显示交易台](../2026/assets/january/mandatory-mappings-ttd.png)的预定义映射的图像{width="150" align="center" zoomable="yes"} <br> ![图像显示Microsoft Bing的预定义映射](../2026/assets/january/mandatory-mappings-bing.png) {width="150" align="center" zoomable="yes"} |
 | 对[Amazon S3](../../destinations/catalog/cloud-storage/amazon-s3.md#destination-details)目标的AES256加密支持 | 您现在可以为Amazon S3导出配置AES256加密。 提供了两个选项： <ul><li>**[!UICONTROL Default]**：将使用存储段上设置的默认加密算法对静态数据进行加密。</li><li>**[!UICONTROL SSE-S3/AES256]**： Experience Platform在导出中添加了`s3:x-amz-server-side-encryption": "AES256`标头，当数据登录到S3时，将使用AES256算法静态加密数据。 **此选项优先于S3存储桶**&#x200B;上配置的任何默认加密算法。</li></ul> 此版本正在逐步推出，将于1月30日完成。 |
 | [交易台 — CRM](../../destinations/catalog/advertising/tradedesk-emails.md#phone-hashing)连接的电话号码激活支持 | 除了电子邮件地址之外，Trade Desk - CRM目标现在还支持电话号码激活。 您可以对交易台帐户激活E.164格式的未哈希处理电话号码和哈希处理电话号码（SHA256_E.164格式），以便根据CRM数据确定受众目标和进行抑制。 在激活之前，电话号码必须标准化为E.164格式。 |
+| [Snowflake批次](../../destinations/catalog/warehouses/snowflake-batch.md)目标更新 | Snowflake批处理目标现在在目标配置期间包括区域选择功能。 您现在可以选择为实例配置的特定Snowflake区域，确保最佳数据传输并符合区域要求。 此外，已删除默认合并策略限制，允许您导出映射到任何合并策略的受众。 <br> [!DNL Snowflake]批次目标当前仅适用于Experience Platform VA7区域中配置的Real-Time CDP客户。 |
 
 **新增或更新的功能**
 

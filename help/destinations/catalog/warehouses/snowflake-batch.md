@@ -4,9 +4,9 @@ description: 创建实时Snowflake数据共享，以直接将每日受众更新�
 last-substantial-update: 2025-10-23T00:00:00Z
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 6959ccd0-ba30-4750-a7de-d0a709292ef7
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 905c8853fadc08bb7e357f43f358844b560b3097
 workflow-type: tm+mt
-source-wordcount: '1659'
+source-wordcount: '1662'
 ht-degree: 3%
 
 ---
@@ -149,7 +149,8 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
 * **[!UICONTROL Snowflake Account ID]**：您的Snowflake帐户ID。 根据您的帐户是否链接到组织，使用以下帐户ID格式：
    * 如果您的帐户链接到组织： `OrganizationName.AccountName`。
    * 如果您的帐户未链接到组织： `AccountName`。
-* **[!UICONTROL Account acknowledgment]**：打开Snowflake帐户ID确认，以确认您的帐户ID正确且属于您。
+* **[!UICONTROL Select Snowflake Region]**：选择预配Snowflake实例的区域。 有关支持的云区域的详细信息，请参阅Snowflake [文档](https://docs.snowflake.com/en/user-guide/intro-regions)。
+* **[!UICONTROL Account acknowledgment]**：输入&#x200B;**[!UICONTROL Snowflake Account ID]**&#x200B;后，在此下拉列表中选择&#x200B;**[!UICONTROL Yes]**&#x200B;以确认您的&#x200B;**[!UICONTROL Snowflake Account ID]**&#x200B;正确且属于您。
 
 >[!IMPORTANT]
 >
@@ -195,10 +196,6 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
 ![显示带有动态表数据的Snowflake界面的屏幕截图](../../assets/catalog/cloud-storage/snowflake-batch/data-validation.png)
 
 ## 已知限制 {#known-limitations}
-
-### 默认合并策略限制 {#default-merge-policy-restriction}
-
-目前，只能导出映射到默认合并策略的受众。
 
 ### 地区可用性 {#regional-availability}
 
