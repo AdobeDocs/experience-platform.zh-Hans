@@ -3,9 +3,9 @@ keywords: 广告；必应；
 title: Microsoft Bing连接
 description: 通过Microsoft Bing连接目标，您可以在整个Microsoft Advertising网络（包括显示广告、搜索和原生）中执行重定位和面向受众的数字营销活动。
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
-source-git-commit: e75a5562820490bc56adaa1d21e4066fc649cc44
+source-git-commit: ec31c1d967be4764b22f735429e2f9437f31ed20
 workflow-type: tm+mt
-source-wordcount: '904'
+source-wordcount: '918'
 ht-degree: 5%
 
 ---
@@ -13,23 +13,6 @@ ht-degree: 5%
 # [!DNL Microsoft Bing]连接 {#bing-destination}
 
 ## 概述 {#overview}
-
-
->[!IMPORTANT]
->
->从2025年8月内部升级到目标服务后，您可能会遇到数据流中激活的配置文件数&#x200B;**降至**&#x200B;的情况。[!DNL Microsoft Bing]
->
-> 导致此下降的原因是，针对此目标平台的所有激活引入了&#x200B;**ECID映射要求**。 有关详细信息，请参阅此页面中的[强制映射](#mandatory-mappings)部分。
->
->**更改内容：**
->
->* 现在，所有配置文件激活的ECID (Experience Cloud ID)映射都是&#x200B;**必需的**。
->* 没有ECID映射的配置文件将从现有激活数据流中&#x200B;**删除**。
->
->**您需要执行的操作：**
->
->* 查看您的受众数据，以确认用户档案具有有效的ECID值。
->* 监控您的激活量度以验证预期的配置文件计数。
 
 使用[!DNL Microsoft Bing]目标将配置文件数据发送到整个[!DNL Microsoft Advertising Network]，包括[!DNL Display Advertising]、[!DNL Search]和[!DNL Native]。
 
@@ -45,10 +28,12 @@ ht-degree: 5%
 
 [!DNL Microsoft Bing]支持根据下表所示的标识激活受众。 了解有关[标识](/help/identity-service/features/namespaces.md)的更多信息。
 
-| 身份标识 | 描述 |
-|---|---|
-| 女佣 | MICROSOFT ADVERTISING ID |
-| ECID | Experience Cloud ID。 此身份是集成正常工作的必备条件，但不会用于受众激活。 |
+下表中的所有标识均已预配置，并在激活期间自动映射。 您无需手动配置这些映射。
+
+| 身份标识 | 描述 | 注意事项 |
+|---|---|---|
+| 女佣 | MICROSOFT ADVERTISING ID | 当配置文件上存在Microsoft Advertising ID时激活。 |
+| ECID | Experience Cloud ID | **必填。**&#x200B;所有配置文件都必须具有ECID，以及要导出的相应Microsoft Advertising ID映射。 |
 
 {style="table-layout:auto"}
 
@@ -78,9 +63,12 @@ ht-degree: 5%
 
 ## 先决条件 {#prerequisites}
 
->[!IMPORTANT]
->
->如果您希望使用[!DNL Microsoft Bing]创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html?lang=zh-Hans)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL Microsoft Bing]集成，则您设置的ID同步将会转移到Experience Platform。
+[!DNL Microsoft Bing]目标需要以下安装程序才能正常工作：
+
+1. **启用ID同步功能**：如果您是第一次设置[!DNL Microsoft Bing]激活，并且以前未在Experience Cloud ID服务中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html)&#x200B;(使用Adobe Audience Manager或其他应用程序)，请与Adobe Consulting或客户关怀部门联系以启用ID同步。
+   * 如果您之前在Audience Manager中设置[!DNL Microsoft Bing]集成，则您现有的ID同步会自动转移到Experience Platform。
+
+2. **确保在配置文件上使用ECID**：所有配置文件都必须具有ECID，才能成功导出。 此目标的ECID为&#x200B;**强制**。
 
 配置目标时，必须提供以下信息：
 
@@ -119,7 +107,7 @@ ht-degree: 5%
 >id="platform_destinations_required_mappings_bing"
 >title="预配置的映射集"
 >abstract="我们已为您预配置了这两个映射集。 在激活数据到Microsoft Bing时，符合激活受众条件的配置文件必须至少有一个与其配置文件关联的ECID标识，才能成功导出到目标。"
->additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/catalog/advertising/bing#preconfigured-mappings" text="阅读有关预配置映射的更多信息"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/advertising/bing#preconfigured-mappings" text="阅读有关预配置映射的更多信息"
 
 >[!IMPORTANT]
 > 
@@ -131,14 +119,24 @@ ht-degree: 5%
 
 ![显示受众计划屏幕的UI图像，其中包含如何将受众名称映射到Bing映射ID的示例。](../../assets/catalog/advertising/bing/mapping-id.png)
 
-### 强制映射 {#mandatory-mappings}
+### 预配置的映射 {#preconfigured-mappings}
 
-[支持的标识](#supported-identities)部分中描述的所有目标标识都是必需的，必须在受众激活过程中映射。 这包括：
+在受众激活工作流期间，预配置并自动填充以下标识映射&#x200B;**：**
 
 * **MAID** (Microsoft Advertising ID)
 * **ECID** (Experience Cloud ID)
 
-无法映射所有必需的标识，因而无法完成激活工作流。 每个标识在集成中均用于特定目的，而目标需要所有这些标识才能正常工作。
+这些映射呈灰显状态且只读。 您无需在此步骤中配置任何内容。 选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续。
+
+>[!IMPORTANT]
+>
+>需要&#x200B;**ECID才能成功导出。将不会导出**&#x200B;个没有ECID或ECID与Microsoft Advertising ID之间没有ID同步映射的配置文件。
+
+### 激活示例
+
+* **具有ECID和Microsoft Advertising ID映射的配置文件：**&#x200B;已成功导出和激活配置文件
+* **仅具有ECID的配置文件(无Microsoft Advertising ID映射)：**&#x200B;配置文件&#x200B;**未导出**。 需要ECID和MAID之间的ID同步映射。
+* **没有ECID的配置文件：**&#x200B;未导出配置文件&#x200B;****。 此目标必须具有ECID。
 
 ## 导出的数据 {#exported-data}
 
