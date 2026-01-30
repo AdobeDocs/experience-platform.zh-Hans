@@ -2,10 +2,10 @@
 title: Experience Platform预发行说明
 description: Adobe Experience Platform最新发行说明预览。
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: 6fa71c48151e937f2e18d8b9761aad94eca85ade
+source-git-commit: 76e8f0678c4634258170ca1161134dd1176c24e7
 workflow-type: tm+mt
-source-wordcount: '1316'
-ht-degree: 20%
+source-wordcount: '1110'
+ht-degree: 22%
 
 ---
 
@@ -32,7 +32,6 @@ Adobe Experience Platform 中新功能和现有功能的更新：
 - [Agent Orchestrator](#agent-orchestrator)
 - [目标](#destinations)
 - [实时客户轮廓](#real-time-customer-profile)
-- [架构](#schemas)
 - [Segmentation Service](#segmentation-service)
 - [源](#sources)
 
@@ -92,18 +91,6 @@ Agent Orchestrator允许您构建和部署支持AI的代理，这些代理可以
 {style="table-layout:auto"}
 
 有关详细信息，请参阅 [[!DNL Real-Time Customer Profile]  概述](../profile/home.md)。
-
-## 架构 {#schemas}
-
-Experience Platform使用架构，以一致且可重用的方式描述数据结构。 通过在系统中以一致的方式定义数据，更容易保留含义并因此从数据中获取价值。 架构由一个基类以及零个或多个架构字段组组成。
-
-**新增功能或更新后的功能**
-
-| 功能 | 描述 |
-| ------- | ----------- |
-| 使用搜索、筛选、标记和文件夹实现架构库存现代化 | 架构浏览页面已进行现代化改造，可提供增强的组织和发现功能。 新增功能包括高级搜索和筛选选项，支持用户生成的标记和文件夹来组织架构，以及内联操作来简化工作流。 关键改进包括：更新了列（名称、类、数据集、身份、关系、启用配置文件、行为、架构类型、标记、创建日期、上次修改）、高级过滤器（显示配置文件、架构类型、类、具有任何标记、创建者、创建日期、修改日期、具有主身份、具有关系、主身份命名空间）、内联操作（编辑、删除、应用标签、为非关系架构创建数据集、管理标记、移动到文件夹、添加到包、复制JSON结构、下载示例文件）以及组织能力使用标记和文件夹的架构。 这些增强功能提供了对架构资源的全面可视性，并支持在沙盒级别进行更高效的架构管理。 |
-
-有关详细信息，请参阅 [[!DNL Schemas]  概述](../xdm/home.md)。
 
 ## Segmentation Service {#segmentation-service}
 
