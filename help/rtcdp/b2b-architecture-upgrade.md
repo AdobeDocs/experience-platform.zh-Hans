@@ -1,7 +1,7 @@
 ---
 title: Real-Time CDP B2B edition的架构升级
 description: 请阅读本文档，了解对Real-Time CDP B2B edition的全面架构升级。
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: d958a947-e195-4dd4-a04c-63ad82829728
 source-git-commit: da288d1a917df85b3c003bc6592fda7a6f1eafe7
 workflow-type: tm+mt
