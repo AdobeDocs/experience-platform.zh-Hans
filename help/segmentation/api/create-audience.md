@@ -4,9 +4,9 @@ description: 了解如何使用API为外部受众创建元数据。
 hide: true
 hidefromtoc: true
 exl-id: e841a5f6-f406-4e1d-9e8a-acb861ba6587
-source-git-commit: a3b82eb1efaf257723208504c90210850a44b4a4
+source-git-commit: ea7fd13675a95941be7267f1cf75056b224efcd3
 workflow-type: tm+mt
-source-wordcount: '246'
+source-wordcount: '264'
 ht-degree: 6%
 
 ---
@@ -61,7 +61,8 @@ curl -X POST https://platform.adobe.io/data/core/ais/audiences?createAudienceMet
  -H 'Accept: application/vnd.adobe.external.audiences+json; version=2'
  -d '{
     "name": "Sample audience name",
-    "description" "A sample description for the audience.",
+    "description": "A sample description for the audience.",
+    "audienceId": "4a815904-f2f9-4237-82fb-55605bcc2ad7",
     "namespace": "agora",
     "originName": "Agora_Collaboration"
  }'
@@ -71,6 +72,7 @@ curl -X POST https://platform.adobe.io/data/core/ais/audiences?createAudienceMet
 | -------- | ---- | ----------- |
 | `name` | 字符串 | 受众的名称。 |
 | `description` | 字符串 | 受众的可选描述。 |
+| `audienceId` | 字符串 | 受众的外部生成的ID。 |
 | `namespace` | 字符串 | 受众的命名空间。 |
 | `originName` | 字符串 | 受众来源的名称。 |
 
@@ -80,6 +82,7 @@ curl -X POST https://platform.adobe.io/data/core/ais/audiences?createAudienceMet
 
 ```json
 {
+    "id": "6bb1ee15-8f64-49fd-bce3-d5c2f22f1f14",
     "name": "Sample audience name",
     "audienceId": "4a815904-f2f9-4237-82fb-55605bcc2ad7"
 }
@@ -87,5 +90,6 @@ curl -X POST https://platform.adobe.io/data/core/ais/audiences?createAudienceMet
 
 | 属性 | 类型 | 描述 |
 | -------- | ---- | ----------- |
+| `id` | 字符串 | 系统为受众生成的ID。 |
 | `name` | 字符串 | 您创建的受众的名称。 |
-| `audienceId` | 字符串 | 您创建的受众的ID。 |
+| `audienceId` | 字符串 | 您创建的受众的外部提供ID。 |

@@ -1,12 +1,12 @@
 ---
 title: Real-Time CDP B2B edition的架构升级
 description: 请阅读本文档，了解对Real-Time CDP B2B edition的全面架构升级。
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: d958a947-e195-4dd4-a04c-63ad82829728
-source-git-commit: 1a3be99ca3c270dda6e8dc559359cbe21bb8f4fb
+source-git-commit: da288d1a917df85b3c003bc6592fda7a6f1eafe7
 workflow-type: tm+mt
-source-wordcount: '1074'
-ht-degree: 0%
+source-wordcount: '1096'
+ht-degree: 1%
 
 ---
 
@@ -28,7 +28,7 @@ Adobe重新设计了Real-Time CDP B2B和B2P版本，以增强可扩展性、性�
 
 请阅读以下内容，了解体系结构升级中包含的关键增强功能。
 
-### 适用于受众成员资格的帐户快照
+### 受众会员资格的帐户快照
 
 在新的B2B架构中，受众成员资格详细信息现在包含在快照导出中的帐户实体。 通过此功能，可访问帐户级别的受众状态、时间戳和成员资格指标。
 
@@ -39,7 +39,7 @@ Adobe重新设计了Real-Time CDP B2B和B2P版本，以增强可扩展性、性�
 
 有关详细信息，请阅读有关[帐户受众](../segmentation/types/account-audiences.md)的文档。
 
-### 包含B2B实体的受众的受众计数
+### 包含B2B实体的受众受众规模
 
 现在，可以精确计算具有B2B实体的受众的估计受众规模。 这些估计值可在预览期间使用，并为涉及复杂B2B关系的受众提供更准确和可靠的见解。
 
@@ -123,6 +123,10 @@ Adobe重新设计了Real-Time CDP B2B和B2P版本，以增强可扩展性、性�
 * 营销列表成员
 
 有关详细信息，请阅读[[!DNL Profile Access] API](../profile/api/entities.md)。
+
+### 弃用区段作业API
+
+在新架构下，*不支持“创建区段作业”端点和灵活的受众评估。
 
 ### 帐户和机会配置文件查找
 
