@@ -2,18 +2,18 @@
 keywords: Experience Platform；主页；热门主题；源连接器；源连接器；源；数据源；数据源；数据源连接
 solution: Experience Platform
 title: Source连接器概述
-description: Adobe Experience Platform 允许从外部源摄取数据，同时让您能够使用 Experience Platform 服务来构建、标记和增强传入数据。您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
+description: Adobe Experience Platform 允许从外部源摄取数据，同时让您能够使用 Experience Platform 服务来构建、赋予标签和增强传入数据。您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: fac942a469f61461b5a14d9be5b9a39d921c6b25
+source-git-commit: 4d47eae91711596677335b03568add9f6fbade74
 workflow-type: tm+mt
-source-wordcount: '1666'
+source-wordcount: '1667'
 ht-degree: 12%
 
 ---
 
 # Source连接器概述
 
-Adobe Experience Platform 允许从外部源摄取数据，同时让您能够使用 Experience Platform 服务来构建、标记和增强传入数据。您可以从各种源中摄取数据，如 Adobe 应用程序、基于云的存储、数据库和许多其他源。
+Adobe Experience Platform 允许从外部源摄取数据，同时让您能够使用 Experience Platform 服务来构建、赋予标签和增强传入数据。您可以从各种源中摄取数据，如 Adobe 应用程序、基于云的存储、数据库和许多其他源。
 
 [!DNL Flow Service]用于收集和集中Experience Platform中各种不同来源的客户数据。 该服务提供了一个用户界面和RESTful API，可让您轻松设置到各种数据提供商的源连接。 通过这些源连接，您可以验证第三方系统、设置摄取运行的时间，以及管理数据摄取吞吐量。
 
@@ -61,7 +61,7 @@ Experience Platform允许从其他Adobe应用程序(包括Adobe Analytics和Adob
 
 ### 高级企业源 {#advanced-enterprise-sources}
 
-以下源仅供[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)客户使用。
+以下源仅供[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)客户使用。
 
 | 来源 | 类别 | 摄取类型 | 云 |
 | --- | --- | --- | --- |
@@ -240,11 +240,11 @@ Experience Platform支持从第三方数据库引入数据。 有关特定源连
 | [[!DNL Customer.io]](connectors/marketing-automation/customerio-webhook.md) | 流传输 | Azure |
 | [[!DNL HubSpot]](connectors/marketing-automation/hubspot.md) | 批次 | Azure |
 | [[!DNL Mailchimp]](connectors/marketing-automation/mailchimp.md) | 批次 | Azure |
-| [[!DNL Oracle Eloqua]](connectors/marketing-automation/oracle-eloqua.md) | 批次 | Azure |
+| [[!DNL Oracle Eloqua] (V2)](connectors/marketing-automation/eloqua.md) | 批次 | Azure |
 | [[!DNL Oracle NetSuite]](connectors/marketing-automation/oracle-netsuite.md) | 批次 | Azure |
 | [[!DNL PathFactory]](connectors/marketing-automation/pathfactory.md) | 批次 | Azure |
 | [[!DNL Relay Connector]](tutorials/ui/create/marketing-automation/relay-connector.md) | 流传输 | Azure |
-| [[!DNL Salesforce Marketing Cloud]](connectors/marketing-automation/salesforce-marketing-cloud.md) | 批次 | Azure，AWS |
+| [[!DNL Salesforce Marketing Cloud] (V2)](connectors/marketing-automation/sfmc.md) | 批次 | Azure |
 
 {style="table-layout:auto"}
 
