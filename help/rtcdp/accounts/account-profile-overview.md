@@ -2,13 +2,13 @@
 keywords: rtcdp b2b；b2b；帐户；帐户配置文件；帐户配置文件rtcdp；实时客户数据平台；
 title: Real-Time CDP B2B edition中的帐户配置文件
 description: 了解如何通过 Adobe Real-Time Customer Data Platform B2B 版本，可使用帐户轮廓从多个来源统一帐户信息。
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 feature: Profiles, B2B
 exl-id: 67515fe0-975e-4ee1-b172-60bc93ba1010
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 769d83155ae70516a296b71baec37d797dd81f34
 workflow-type: tm+mt
-source-wordcount: '306'
-ht-degree: 7%
+source-wordcount: '339'
+ht-degree: 6%
 
 ---
 
@@ -25,6 +25,10 @@ ht-degree: 7%
 ## 帐户个人资料查看器
 
 借助Real-Time CDP和B2B edition，您可以使用Experience Platform用户界面查看帐户配置文件，并使用连接的企业源中的帐户ID或直接输入源详细信息来搜索特定帐户。 有关如何在Experience Platform UI中查看帐户配置文件的更多信息，请参阅[帐户配置文件UI指南](account-profile-ui-guide.md)。
+
+>[!IMPORTANT]
+>
+>帐户配置文件需要启用每日批次分段评估来显示数据。 确保已配置和计划批量分段，以维护准确的帐户用户档案信息。 有关更多详细信息，请参阅[批次分段指南](../../segmentation/methods/batch-segmentation.md)。
 
 ## 创建和激活帐户受众
 
