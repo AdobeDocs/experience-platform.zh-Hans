@@ -1,7 +1,8 @@
 ---
 title: Kevel连接
 description: 使用Kevel流目标将受众直接激活到Kevel的UserDB和区段管理API中，并支持在决策时实时定位。
-source-git-commit: d820485fd81efd08d8626f8476338558c4585c20
+last-substantial-update: 2026-01-27T00:00:00Z
+source-git-commit: 04d01b2deafb1b8f1b0c256f31475bb75989a2c4
 workflow-type: tm+mt
 source-wordcount: '1037'
 ht-degree: 3%
@@ -69,7 +70,7 @@ Kevel目标![的](/help/destinations/assets/catalog/advertising/kevel-destinatio
 
 ## 支持的受众 {#supported-audiences}
 
-| 受众来源 | 支持 | 描述 |
+| 受众来源 | 受支持 | 描述 |
 |-----------------------|-----------|---------------------------------------------------------- |
 | Segmentation Service | 是 | 分段引擎评估的Adobe配置文件受众。 |
 | 自定义上传 | 否 | 目前不支持。 |

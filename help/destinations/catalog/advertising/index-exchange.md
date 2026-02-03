@@ -1,7 +1,8 @@
 ---
 title: 索引交换
 description: 连接到Index Exchange （索引）并激活您的数据，以便您的受众区段可以通过在索引UI中创建的交易定位。
-source-git-commit: 4ecd3b60a6b45a94285785049fd4dee99d7c9bdf
+last-substantial-update: 2026-01-27T00:00:00Z
+source-git-commit: 04d01b2deafb1b8f1b0c256f31475bb75989a2c4
 workflow-type: tm+mt
 source-wordcount: '1083'
 ht-degree: 2%
@@ -60,7 +61,7 @@ ht-degree: 2%
 
 此部分介绍哪些受众类型可以导出到此目标。
 
-| 受众来源 | 支持 | 描述 |
+| 受众来源 | 受支持 | 描述 |
 | --------- | ---------- | ---------- |
 | [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
 | 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/overview.md#import-audience)导入Experience Platform。 |
@@ -114,7 +115,7 @@ ht-degree: 2%
 ### 启用警报 {#enable-alerts}
 
 您可以启用警报，以接收有关此目标数据流状态的通知。 从列表中选择一个或多个警报以订阅数据流的状态通知。 有关详细信息，请参阅[使用UI订阅目标警报指南](../../ui/alerts.md)。
-完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
+完成提供目标连接的详细信息后，选择**[!UICONTROL Next]**。
 
 ## 将区段激活到此目标 {#activate}
 
