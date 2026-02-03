@@ -4,7 +4,7 @@ description: 创建实时Snowflake数据共享，以直接将每日受众更新�
 last-substantial-update: 2025-10-23T00:00:00Z
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 6959ccd0-ba30-4750-a7de-d0a709292ef7
-source-git-commit: 905c8853fadc08bb7e357f43f358844b560b3097
+source-git-commit: 271700625e8cc1d2b5e737e89435c543caa86264
 workflow-type: tm+mt
 source-wordcount: '1662'
 ht-degree: 3%
@@ -90,7 +90,7 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
 
 此部分介绍哪些类型的受众可以导出到此目标。 以下两个表按受众中包含的&#x200B;_受众来源_&#x200B;和&#x200B;_配置文件类型_&#x200B;指明了此连接器支持的受众：
 
-| 受众来源 | 支持 | 描述 |
+| 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
 | 所有其他受众来源 | ✓ | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
@@ -99,7 +99,7 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
 
 按受众数据类型划分的受众支持：
 
-| 受众数据类型 | 支持 | 描述 | 用例 |
+| 受众数据类型 | 受支持 | 描述 | 用例 |
 |--------------------|-----------|-------------|-----------|
 | [人员受众](/help/segmentation/types/people-audiences.md) | ✓ | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
@@ -136,7 +136,7 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
 ### 填写目标详细信息 {#destination-details}
 
 >[!CONTEXTUALHELP]
->id="platform_destinations_snowflake_batch_accountID"
+>id="platform_destinations_snowflake_batch_accountid"
 >title="输入您的 Snowflake 帐户 ID"
 >abstract="如果您的帐户已链接到某个组织，请使用以下格式：`OrganizationName.AccountName`<br><br> 如果您的帐户未链接到某个组织，请使用以下格式：`AccountName`"
 
