@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 流式摄取概述
 description: Adobe Experience Platform的流式摄取为用户提供了一种实时将数据从客户端和服务器端设备发送到Experience Platform的方法。
 exl-id: 851f15fd-7ac5-4a9f-934d-6b907057da87
-source-git-commit: ea693cb4bb732c829d9a477cbd3dcb209da524f3
+source-git-commit: a77be4ef97540b929192fa6f367830f4a29e5af7
 workflow-type: tm+mt
-source-wordcount: '419'
+source-wordcount: '433'
 ht-degree: 2%
 
 ---
@@ -21,7 +21,7 @@ Adobe Experience Platform允许您通过为每个客户生成[!DNL Real-Time Cus
 
 以下视频旨在帮助您了解流摄取，并概述了上述概念。
 
->[!VIDEO](https://video.tv.adobe.com/v/31669?captions=chi_hans&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/28425?quality=12&learn=on)
 
 ### 流配置文件记录和[!DNL ExperienceEvents]
 
@@ -43,7 +43,7 @@ Adobe Experience Platform允许您通过为每个客户生成[!DNL Real-Time Cus
 
 | 目标 | 预期延迟 |
 | --------- | ---------------- |
-| 实时客户轮廓 | &lt; 15分钟，位于第95百分位数 |
+| 实时客户轮廓 | <ul><li>&lt; 15分钟，在第95百分位进行B2C数据摄取。</li><li>&lt; 30分钟（对于B2B数据摄取，位于第95百分位数）。</li></ul> |
 | 数据湖 | &lt; 60分钟 |
 
 ## 流摄取的每秒请求(RPS)指南
