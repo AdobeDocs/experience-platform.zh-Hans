@@ -34,8 +34,8 @@ ht-degree: 6%
 ## 先决条件 {#prerequisites}
 
 * **确认使用条款：**&#x200B;在配置新的[!DNL Acxiom Real ID Audience Connection]目标之前，您必须阅读并签署[!DNL Acxiom's]使用条款协议。 在您执行的销售订单完成后，您将收到指向协议的链接。
-* **知道您的Adobe组织ID：**&#x200B;需要您的[!DNL Adobe]组织ID才能完成您的用户协议条款。 有关如何[!DNL Adobe's]查看组织ID *的详细信息，请参阅* [Experience Cloud中的组织](https://experienceleague.adobe.com/en/docs/core-services/interface/administration/organizations#concept_EA8AEE5B02CF46ACBDAD6A8508646255)主题。
-* **获取[!DNL Acxiom's Real ID]产品的许可证：**&#x200B;获取许可证后，在Real-Time CDP中提供Acxiom的实际ID。 有关详细信息，请参阅[Acxiom数据增强](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/data-partner/acxiom-data-enhancement)。
+* **知道您的Adobe组织ID：**&#x200B;需要您的[!DNL Adobe]组织ID才能完成您的用户协议条款。 有关如何[!DNL Adobe's]查看组织ID *的详细信息，请参阅* [Experience Cloud中的组织](https://experienceleague.adobe.com/zh-hans/docs/core-services/interface/administration/organizations#concept_EA8AEE5B02CF46ACBDAD6A8508646255)主题。
+* **获取[!DNL Acxiom's Real ID]产品的许可证：**&#x200B;获取许可证后，在Real-Time CDP中提供Acxiom的实际ID。 有关详细信息，请参阅[Acxiom数据增强](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/catalog/data-partner/acxiom-data-enhancement)。
 
 
 ## 支持的身份 {#supported-identities}
@@ -54,7 +54,7 @@ ht-degree: 6%
 | 受众来源 | 受支持 | 描述 |
 |---------------|----------------|----------------|
 | Segmentation Service | ✓ | 通过Experience Platform [分段服务](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/segmentation/home)生成的受众。 |
-| 自定义上传 | ✓ | 受众[已从CSV文件将](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/audience-portal#import-audience)导入Experience Platform。 |
+| 自定义上传 | ✓ | 受众[已从CSV文件将](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/segmentation/ui/audience-portal#import-audience)导入Experience Platform。 |
 
 
 ## 支持的目标 {#supported-destinations}
@@ -95,7 +95,7 @@ ht-degree: 6%
 
 
 
-有关将受众激活到此目标的说明，请阅读[将受众数据激活到批处理配置文件导出目标](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations)。
+有关将受众激活到此目标的说明，请阅读[将受众数据激活到批处理配置文件导出目标](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations)。
 
 >[!NOTE]
 >
@@ -132,7 +132,7 @@ ht-degree: 6%
 
 ## 数据使用和治理 {#data-usage-governance}
 
-在处理您的数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据治理的详细信息，请阅读[数据治理概述](https://experienceleague.adobe.com/en/docs/experience-platform/data-governance/home)。
+在处理您的数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据治理的详细信息，请阅读[数据治理概述](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/data-governance/home)。
 
 ## 故障排除 {#troubleshooting}
 
