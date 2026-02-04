@@ -5,9 +5,9 @@ title: 使用策略服务API强制执行数据使用策略
 type: Tutorial
 description: 一旦您为数据创建了数据使用标签，并针对这些标签创建了营销操作的使用策略，就可以使用策略服务API来评估对数据集或任意一组标签执行的营销操作是否构成策略违规。 然后，您可以设置自己的内部协议，以根据API响应处理策略违规。
 exl-id: 093db807-c49d-4086-a676-1426426b43fd
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: c3e12c17967ad46bf2eb8bcbfd00a92317aec8a2
 workflow-type: tm+mt
-source-wordcount: '999'
+source-wordcount: '1021'
 ht-degree: 1%
 
 ---
@@ -51,7 +51,7 @@ GET /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints?duleLabels={LAB
 
 **请求**
 
-以下请求根据标签`C1`和`C3`测试`exportToThirdParty`营销操作。 由于您之前在本教程中创建的数据使用策略将`C1`标签定义为其策略表达式中的`deny`条件之一，因此营销操作应触发策略冲突。
+以下请求根据标签`exportToThirdParty`和`C1`测试`C3`营销操作。 由于您之前在本教程中创建的数据使用策略将`C1`标签定义为其策略表达式中的`deny`条件之一，因此营销操作应触发策略冲突。
 
 >[!NOTE]
 >
@@ -128,9 +128,13 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `violatedPolicies` | 一个数组，列出了通过针对提供的`duleLabels`测试营销操作（在`marketingActionRef`中指定）而违反的任何策略。 |
+| `violatedPolicies` | 一个数组，列出了通过针对提供的`marketingActionRef`测试营销操作（在`duleLabels`中指定）而违反的任何策略。 |
 
 ## 使用数据集进行评估
+
+>[!WARNING]
+>
+>已弃用基于数据集的评估的`/constraints`端点。 要评估策略违规或执行多个评估作业，请改用[批量评估API (`/bulk-eval`)](../api/evaluation.md#evaluate-policies-in-bulk)。
 
 您可以通过针对可从中收集标签的一个或多个数据集测试营销操作，来评估数据使用策略。 这是通过对`/marketingActions/core/{MARKETING_ACTION_NAME}/constraints`发出POST请求并在请求正文中提供数据集ID来完成的，如下面的示例所示。
 
@@ -370,7 +374,7 @@ curl -X POST \
 | --- | --- |
 | `duleLabels` | 从请求有效负载中提供的数据集中提取的数据使用标签列表。 |
 | `discoveredLabels` | 在请求有效负载中提供的数据集列表，其中显示了在每个数据集中找到的数据集级别和字段级别标签。 |
-| `violatedPolicies` | 一个数组，列出了通过针对提供的`duleLabels`测试营销操作（在`marketingActionRef`中指定）而违反的任何策略。 |
+| `violatedPolicies` | 一个数组，列出了通过针对提供的`marketingActionRef`测试营销操作（在`duleLabels`中指定）而违反的任何策略。 |
 
 ## 后续步骤
 
