@@ -17,7 +17,7 @@ ht-degree: 42%
 
 - [分段服务概述](home.md)
 - [分段数据类型](data-types.md)
-- [分段护栏](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html#segmentation-guardrails)
+- [分段护栏](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html?lang=zh-Hans#segmentation-guardrails)
 - [受众验证](./validation.md)
 - 分段API {#api}
    - [概述](api/overview.md)
