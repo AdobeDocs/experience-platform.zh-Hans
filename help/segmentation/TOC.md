@@ -5,10 +5,10 @@ breadcrumb-title: Segmentation Service 指南
 user-guide-description: 使用 Adobe Experience Platform 生成的区段定义或外部来源，根据实时客户轮廓数据生成受众群体。
 feature: Segments
 role: User
-source-git-commit: 60775eeeb0a07a95f3fac86dc4ecc8603328ed49
+source-git-commit: d70aa03400362bb5609623ca5eceefeadd6fe1ce
 workflow-type: tm+mt
-source-wordcount: '210'
-ht-degree: 43%
+source-wordcount: '212'
+ht-degree: 42%
 
 ---
 
@@ -17,7 +17,8 @@ ht-degree: 43%
 
 - [分段服务概述](home.md)
 - [分段数据类型](data-types.md)
-- [分段护栏](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html?lang=zh-Hans#segmentation-guardrails)
+- [分段护栏](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html#segmentation-guardrails)
+- [受众验证](./validation.md)
 - 分段API {#api}
    - [概述](api/overview.md)
    - [快速入门](api/getting-started.md)
@@ -81,6 +82,6 @@ ht-degree: 43%
    - [逻辑量化符](pql/logical-quantifiers.md)
    - [杂项函数](pql/misc-functions.md)
 - [资格标准更新](./eligibility-criteria-update.md)
-- [常见问题解答](./faq.md)
+- [常见问题](./faq.md)
 - [API 参考](https://www.adobe.io/experience-platform-apis/references/segmentation/)
 - [平台发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

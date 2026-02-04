@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform 发行说明（2026 年 1 月）
 description: Adobe Experience Platform 的 2026 年 1 月发行说明。
-source-git-commit: a8eefb3330d0de21fbb8648593eb912c063529d7
+source-git-commit: 1761acbcab12acf1596daf5461476d5b91bb0e9b
 workflow-type: tm+mt
-source-wordcount: '1532'
+source-wordcount: '1570'
 ht-degree: 22%
 
 ---
@@ -40,7 +40,7 @@ Agent Orchestrator允许您构建和部署支持AI的代理，这些代理可以
 
 | 功能 | 描述 |
 | --- | --- |
-| 面向Adobe Experience Platform代理使用的试用版 | **选择客户现在可以免费试用访问Adobe Experience Platform代理**。 您可以通过由Adobe Experience Platform Agent Orchestrator提供支持的AI Assistant界面，使用该试用版来探索代理并与代理交互。 该试用版提供了在客户现有Experience Cloud产品和环境的环境中运行的AI代理的实践体验，使团队能够在承诺完全购买之前评估价值。 Adobe Experience Platform代理受用户输入和监督的指导，并遵守现有的产品级访问控制，确保用户只能执行操作或查看他们在基础Experience Cloud应用程序中获得授权的数据。 有关如何开始使用的信息，请阅读[Experience Platform代理使用情况绑定的试用概述](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-ai/experience-cloud-ai/agents/trial)。 |
+| 面向Adobe Experience Platform代理使用的试用版 | **选择客户现在可以免费试用访问Adobe Experience Platform代理**。 您可以通过由Adobe Experience Platform Agent Orchestrator提供支持的AI Assistant界面，使用该试用版来探索代理并与代理交互。 该试用版提供了在客户现有Experience Cloud产品和环境的环境中运行的AI代理的实践体验，使团队能够在承诺完全购买之前评估价值。 Adobe Experience Platform代理受用户输入和监督的指导，并遵守现有的产品级访问控制，确保用户只能执行操作或查看他们在基础Experience Cloud应用程序中获得授权的数据。 有关如何开始使用的信息，请阅读[Experience Platform代理使用情况绑定的试用概述](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/agents/trial)。 |
 
 {style="table-layout:auto"}
 
@@ -103,6 +103,7 @@ Agent Orchestrator允许您构建和部署支持AI的代理，这些代理可以
 | 功能 | 描述 |
 | ------- | ----------- |
 | 外部受众数据过期刷新 | 外部受众（例如CSV上传）现在支持对数据过期设置进行强制刷新功能。 此功能允许用户手动刷新外部受众的数据过期时间，从而更好地控制受众生命周期管理。 这对于需要在初始数据过期后保留数据或需要在不重新上传数据的情况下重新激活的受众尤其有用。 有关此功能的详细信息，请阅读[受众门户概述](../../segmentation/ui/audience-portal.md#audience-summary)。 |
+| 受众验证 | Experience Platform现在提供内置验证，确保受众准确、稳定且可扩展。 在创建受众定义时，这些检查将自动实时运行。 有关详细信息，请阅读[受众验证概述](/help/segmentation/validation.md)。 |
 
 有关详细信息，请参阅 [[!DNL Segmentation Service]  概述](../../segmentation/home.md)。
 

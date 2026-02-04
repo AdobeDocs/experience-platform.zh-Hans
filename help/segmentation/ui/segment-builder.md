@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 054b34875a0eb2676bcb4a8a8a555b4465410d66
+source-git-commit: 1b836a86a6b55a4e80a7fd3a52160f3974e4c9a4
 workflow-type: tm+mt
-source-wordcount: '5355'
+source-wordcount: '5354'
 ht-degree: 12%
 
 ---
@@ -189,34 +189,9 @@ ht-degree: 12%
 
 ![将显示一个警告，指出您已达到最大值数。](../images/ui/segment-builder/maximum-values.png)
 
-### 查询验证 {#query-validation}
+### 受众验证 {#audience-validation}
 
->[!CONTEXTUALHELP]
->id="platform_segmentation_segmentbuilder_cnfcomplexitycheck"
->title="逻辑复杂性"
->abstract=""
-
->[!CONTEXTUALHELP]
->id="platform_segmentation_segmentbuilder_chaincountcheck"
->title="事件序列限制"
->abstract=""
-
->[!CONTEXTUALHELP]
->id="platform_segmentation_segmentbuilder_rewritescheck"
->title="查询效率警报"
->abstract=""
-
->[!CONTEXTUALHELP]
->id="platform_segmentation_segmentbuilder_countaggregationcheck"
->title="计数筛选器警告"
->abstract=""
-
->[!CONTEXTUALHELP]
->id="platform_segmentation_segmentbuilder_arraydepthcheck"
->title="嵌套数据警告"
->abstract=""
-
-区段生成器会自动分析和验证受众查询，以确保您遵循受众定义最佳实践。 这些最佳实践可以分为两类：关键验证和性能优化。
+区段生成器会自动分析和验证您的受众定义，以确保您遵循受众定义最佳实践。 这些最佳实践可以分为两类：关键验证和性能优化。
 
 如果受众定义违反了关键的验证最佳实践，您将&#x200B;**无法**&#x200B;保存更改以保持沙盒稳定。 如果受众定义违反了性能优化最佳实践，您可以保存更改，但&#x200B;*强烈建议*&#x200B;更新受众定义以避免性能问题。
 
@@ -227,6 +202,8 @@ ht-degree: 12%
 | 汇总计数 | 性能优化 | 受众定义中有3个以上的聚合函数。 |
 | 嵌套数据 | 性能优化 | 受众定义中的嵌套数据（数组或映射数据类型）深度超过2级。 |
 | 受众规模 | 性能优化 | 受众资格大小大于沙盒中配置文件总数的30%。 |
+
+有关受众验证如何工作的更多信息，请阅读[受众验证指南](/help/segmentation/validation.md)。
 
 ### 添加受众
 
@@ -425,7 +402,7 @@ ht-degree: 12%
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="刷新估计值"
 >abstract="您可以刷新区段定义的估计值，以立即预览符合建议的区段定义资格的轮廓数目。受众估计值是通过使用当天的示例数据的示例大小生成的。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=zh-Hans#estimate-and-preview-an-audience" text="估计和预览受众"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="估计和预览受众"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_qualifiedprofiles"
