@@ -96,7 +96,7 @@ ht-degree: 7%
 | 电子邮件 | 主电子邮件默认情况下，此字段用作重复数据删除键以使记录唯一 | 否 | 10 | 255 |
 | 电话 | 个人电话号码（区号+号码）<br>默认情况下，此字段用作重复数据删除键以使记录唯一。 | 否 | 11 | 10 |
 
-在&#x200B;**[!UICONTROL Source Field]**&#x200B;列中，输入要映射到相应目标字段的每个源属性的名称，或选择箭头图标以打开&#x200B;**[!UICONTROL  Select source field]**&#x200B;屏幕。<br>
+在&#x200B;**[!UICONTROL Source Field]**&#x200B;列中，输入要映射到相应目标字段的每个源属性的名称，或选择箭头图标以打开&#x200B;**[!UICONTROL &#x200B; Select source field]**&#x200B;屏幕。<br>
 ![映射屏幕](../../assets/catalog/advertising/acxiom-audience-distribution/mapping_screen.png)
 
 映射所有字段后，选择&#x200B;**[!UICONTROL Next]**。
