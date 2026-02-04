@@ -1,7 +1,7 @@
 ---
 title: Adobe Experience Platform 发行说明（2026 年 1 月）
 description: Adobe Experience Platform 的 2026 年 1 月发行说明。
-source-git-commit: 1761acbcab12acf1596daf5461476d5b91bb0e9b
+source-git-commit: f4d5ddc430b0f5b895c1c3ff462c5a79b31956d7
 workflow-type: tm+mt
 source-wordcount: '1570'
 ht-degree: 22%
@@ -17,8 +17,8 @@ ht-degree: 22%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/releases/pre-release-notes)
->- [联合受众构成](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/releases/latest)
+>- [联合受众构成](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/zh-hans/docs/real-time-cdp-collaboration/using/latest)
 
 **发行日期： 2026年1月27日**
@@ -39,7 +39,7 @@ Agent Orchestrator允许您构建和部署支持AI的代理，这些代理可以
 
 | 功能 | 描述 |
 | --- | --- |
-| 面向Adobe Experience Platform代理使用的试用版 | **选择客户现在可以免费试用访问Adobe Experience Platform代理**。 您可以通过由Adobe Experience Platform Agent Orchestrator提供支持的AI Assistant界面，使用该试用版来探索代理并与代理交互。 该试用版提供了在客户现有Experience Cloud产品和环境的环境中运行的AI代理的实践体验，使团队能够在承诺完全购买之前评估价值。 Adobe Experience Platform代理受用户输入和监督的指导，并遵守现有的产品级访问控制，确保用户只能执行操作或查看他们在基础Experience Cloud应用程序中获得授权的数据。 有关如何开始使用的信息，请阅读[Experience Platform代理使用情况绑定的试用概述](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-ai/experience-cloud-ai/agents/trial)。 |
+| 面向Adobe Experience Platform代理使用的试用版 | **选择客户现在可以免费试用访问Adobe Experience Platform代理**。 您可以通过由Adobe Experience Platform Agent Orchestrator提供支持的AI Assistant界面，使用该试用版来探索代理并与代理交互。 该试用版提供了在客户现有Experience Cloud产品和环境的环境中运行的AI代理的实践体验，使团队能够在承诺完全购买之前评估价值。 Adobe Experience Platform代理受用户输入和监督的指导，并遵守现有的产品级访问控制，确保用户只能执行操作或查看他们在基础Experience Cloud应用程序中获得授权的数据。 有关如何开始使用的信息，请阅读[Experience Platform代理使用情况绑定的试用概述](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/agents/trial)。 |
 
 {style="table-layout:auto"}
 
