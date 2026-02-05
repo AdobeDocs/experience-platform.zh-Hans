@@ -31,7 +31,7 @@ Adobe Experience Platform 允许从外部源摄取数据，同时让您能够使
 
 ## 设置Adobe组织映射
 
-在为[!DNL Marketo Engage]建立映射集之前，必须先设置Adobe组织映射。 有关如何完成此操作的详细步骤，请参阅有关[为 [!DNL Marketo Engage]](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html)设置Adobe组织映射的指南。
+在为[!DNL Marketo Engage]建立映射集之前，必须先设置Adobe组织映射。 有关如何完成此操作的详细步骤，请参阅有关[为 [!DNL Marketo Engage]](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html?lang=zh-Hans)设置Adobe组织映射的指南。
 
 ## 验证您的[!DNL Marketo Engage]连接器
 
