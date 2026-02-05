@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Marketo Engage连接器
 description: 本文档提供了Marketo Engage源连接器的概述，包括有关其身份验证、映射和数据延迟的信息。
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 659e873f9bccdbc0e52a1943a924dc70d3170e96
 workflow-type: tm+mt
-source-wordcount: '742'
-ht-degree: 1%
+source-wordcount: '740'
+ht-degree: 5%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 1%
 >
 >在Amazon Web Services (AWS)上运行Adobe Experience Platform时，您现在可以使用[!DNL Marketo Engage]源。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](../../../../landing/multi-cloud.md)。
 
-Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。 您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
+Adobe Experience Platform 允许从外部源摄取数据，同时让您能够使用 Experience Platform 服务来构建、赋予标签和增强传入数据。您可以从各种源(如Adobe应用程序、基于云的存储、数据库和许多其他源)中摄取数据。
 
 [[!DNL Marketo Engage]](https://www.marketo.com/software/)是一个完整的解决方案，面向希望通过参与复杂购买历程的每个阶段来转变客户体验的潜在客户管理人员和B2B营销人员。
 
@@ -31,7 +31,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 ## 设置Adobe组织映射
 
-在为[!DNL Marketo Engage]建立映射集之前，必须先设置Adobe组织映射。 有关如何完成此操作的详细步骤，请参阅有关[为 [!DNL Marketo Engage]](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html?lang=zh-Hans)设置Adobe组织映射的指南。
+在为[!DNL Marketo Engage]建立映射集之前，必须先设置Adobe组织映射。 有关如何完成此操作的详细步骤，请参阅有关[为 [!DNL Marketo Engage]](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html)设置Adobe组织映射的指南。
 
 ## 验证您的[!DNL Marketo Engage]连接器
 
@@ -43,7 +43,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 接下来，使用B2B命名空间和架构自动生成实用程序来设置Experience Platform开发人员控制台和Postman环境。 这允许您自动填充B2B命名空间和架构。 有关详细说明，请参阅[设置B2B命名空间和架构自动生成实用程序的指南](./marketo-namespaces.md)
 
-## Experience Data Model (XDM)
+## 体验数据模型 (XDM)
 
 XDM是一个公开记录的规范，它提供了通用结构和定义，允许您从第三方源摄取数据以用于下游Experience Platform服务。
 
@@ -74,18 +74,18 @@ XDM是一个公开记录的规范，它提供了通用结构和定义，允许�
 
 | 目标 | 预期延迟 |
 | ----------- | ---------------- |
-| [!DNL Real-Time Customer Profile] | &lt; 10分钟 |
+| [!DNL Real-Time Customer Profile] | &lt; 20分钟 |
 | 数据湖 | &lt; 60分钟 |
 
 >[!NOTE]
 >
->以上延迟数字代表了95%置信水平的预期。 实际延迟时间将有所不同，在极少数情况下可能会超出这些数字50%。
+>以上延迟数字代表了95%置信水平的预期。 实际延迟将有所不同，在某些情况下，延迟时间将超过这些数字。
 
 ## 后续步骤和其他资源
 
 以下文档提供了有关创建[!DNL Marketo Engage]源连接的详细信息：
 
-* 有关如何将[!DNL Marketo Engage]数据连接到Experience Platform的信息，请阅读有关在UI中创建 [!DNL Marketo Engage] 源连接[的教程](../../../tutorials/ui/create/adobe-applications/marketo.md)。
+* 有关如何将[!DNL Marketo Engage]数据连接到Experience Platform的信息，请阅读有关在UI中创建[源连接 [!DNL Marketo Engage] 的教程](../../../tutorials/ui/create/adobe-applications/marketo.md)。
    * 有关如何设置架构和摄取自定义活动数据的信息，请阅读有关[为 [!DNL Marketo Engage] 自定义活动数据创建源连接和数据流](../../../tutorials/ui/create/adobe-applications/marketo-custom-activities.md)的教程
    * 有关如何将ECID映射从[!DNL Person]数据集迁移到[!DNL Activity]数据集的信息，请阅读[ECID映射迁移指南](./migration.md)。
 * 有关用于[!DNL Marketo Engage]的B2B命名空间和架构的基础设置的信息，请阅读有关[B2B命名空间和架构](./marketo-namespaces.md)的文档。
