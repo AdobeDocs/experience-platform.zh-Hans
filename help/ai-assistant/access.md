@@ -62,7 +62,7 @@ ht-degree: 0%
 
 观看以下视频，了解如何为组织和用户配置对AI Assistant的访问权限。
 
->[!VIDEO](https://video.tv.adobe.com/v/3436470/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3475929/?captions=chi_hans&learn=on)
 
 ## 后续步骤
 
