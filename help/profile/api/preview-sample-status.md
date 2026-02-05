@@ -4,9 +4,9 @@ title: 预览示例状态（配置文件预览） API端点
 description: 实时客户个人资料API的预览示例状态端点允许您预览个人资料数据的最新成功示例，按数据集和身份列出个人资料分发，并生成显示数据集重叠、身份重叠和未拼接个人资料的报告。
 role: Developer
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: bb2cfb479031f9e204006ba489281b389e6c6c04
+source-git-commit: 399b76f260732015f691fd199c977d6f7e772b01
 workflow-type: tm+mt
-source-wordcount: '2306'
+source-wordcount: '2119'
 ht-degree: 1%
 
 ---
@@ -434,110 +434,6 @@ curl -X GET https://platform.adobe.io/data/core/ups/previewsamplestatus/report/d
 | `profileFragments` | 数据集中存在的配置文件片段总数。 |
 | `records` | 引入数据集的配置文件记录总数。 |
 | `totalProfiles` | 引入数据集的配置文件总数。 |
-
-+++
-
-## 获取数据集大小 {#character-count}
-
-您可以使用此端点逐周获取数据集的大小（以字节为单位）。
-
-**API格式**
-
-```http
-GET /previewsamplestatus/report/character_count
-```
-
-**请求**
-
-+++用于生成字符计数报告的示例请求。
-
-```shell
-curl -X GET https://platform.adobe.io/data/core/ups/previewsamplestatus/report/character_count \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}' \
-```
-
-+++
-
-**响应**
-
-成功的响应返回HTTP状态200，其中包含有关数据集在整周中的大小的信息。
-
-+++ 包含有关数据过期后数据集大小的信息的示例响应。
-
->[!NOTE]
->
->以下响应已被截断以显示三个数据集。
-
-```json
-{
-    "data": [
-        {
-            "datasetIds": [
-                {
-                    "datasetId": "67aba91a453f7d298cd2a643",
-                    "recordType": "keyvalue",
-                    "weeks": [
-                        {
-                            "size": 107773533894,
-                            "week": "2025-10-26"
-                        }
-                    ]
-                },
-                {
-                    "datasetId": "67aa6c867c3110298b017f0e",
-                    "recordType": "timeseries",
-                    "weeks": [
-                        {
-                            "size": 242902062440,
-                            "week": "2025-10-26"
-                        },
-                        {
-                            "size": 837539413062,
-                            "week": "2025-10-19"
-                        },
-                        {
-                            "size": 479253986484,
-                            "week": "2025-10-12"
-                        },
-                        {
-                            "size": 358911988990,
-                            "week": "2025-10-05"
-                        },
-                        {
-                            "size": 349701073042,
-                            "week": "2025-09-28"
-                        }
-                    ]
-                },
-                {
-                    "datasetId": "680c043667c0d7298c9ea275",
-                    "recordType": "keyvalue",
-                    "weeks": [
-                        {
-                            "size": 18392459832,
-                            "week": "2025-10-26"
-                        }
-                    ]
-                }
-            ],
-            "modelName": "_xdm.context.profile",
-            "reportTimestamp": "2025-10-30T00:28:30.069Z"
-        }
-    ],
-    "reportTimestamp": "2025-10-30T00:28:30.069Z"
-}
-```
-
-| 属性 | 描述 |
-| -------- | ----------- |
-| `datasetId` | 数据集的ID。 |
-| `recordType` | 数据集中的数据类型。 记录类型影响`weeks`变量的值。 支持的值包括`keyvalue`和`timeseries`。 |
-| `weeks` | 一个数组，包含有关数据集的大小信息。 对于记录类型`keyvalue`的数据集，这包含最近一周以及数据集的总大小（以字节为单位）。 对于记录类型`timeseries`的数据集，这会包含从数据集摄取到最近一周的每一周，以及这些周中每个周的数据集总大小（以字节为单位）。 |
-| `modelName` | 数据集的模型名称。 可能的值包括`_xdm.context.profile`和`_xdm.context.experienceevent`。 |
-| `reportTimestamp` | 生成报告的日期和时间。 |
 
 +++
 
