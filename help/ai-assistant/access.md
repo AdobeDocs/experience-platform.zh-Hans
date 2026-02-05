@@ -46,13 +46,13 @@ ht-degree: 0%
 
 对AI Assistant的访问受以下参数控制：
 
-* **访问应用程序：**&#x200B;您可以在Adobe Experience Platform、Adobe Real-Time CDP、Adobe Journey Optimizer和[Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/ai-assistant)中访问AI助手。
+* **访问应用程序：**&#x200B;您可以在Adobe Experience Platform、Adobe Real-Time CDP、Adobe Journey Optimizer和[Customer Journey Analytics](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/ai-assistant)中访问AI助手。
 <!-- * **Contractual access:** Your company must agree to certain [!DNL GenAI]-related legal terms before your organization can use AI Assistant. Contact your organization's administrator or your Adobe Account Team if you are not able to access AI Assistant.  -->
 * **权限：**&#x200B;使用[权限UI](../access-control/abac/ui/permissions.md)授予或撤消对您组织中的AI助理的访问权限。 要使用AI助手，给定用户必须属于配置了&#x200B;**启用AI助手**&#x200B;和&#x200B;**查看操作分析**&#x200B;权限的角色。
    * 作为管理员，您可以将&#x200B;**启用AI助手**&#x200B;添加到给定角色，并将用户添加到该角色，以允许他们访问您组织中的AI助手。 **注意**：此权限允许所述用户访问AI助手，但不会授予他们任何管理能力，因此不会授予其他人访问AI助手的权利。
    * 作为管理员，您可以将&#x200B;**查看操作分析**&#x200B;添加到给定角色，并将用户添加到该角色，以便他们能够使用AI助手的操作分析功能。
 
-使用[权限UI](../access-control/abac/ui/roles.md)授予在Experience Platform和Journey Optimizer中使用AI助理的权限。 有关如何在Customer Journey Analytics中访问AI助手的信息。 阅读[Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/ai-assistant)中的文档。
+使用[权限UI](../access-control/abac/ui/roles.md)授予在Experience Platform和Journey Optimizer中使用AI助理的权限。 有关如何在Customer Journey Analytics中访问AI助手的信息。 阅读[Customer Journey Analytics](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/ai-assistant)中的文档。
 
 ![具有给定角色中包含的“启用AI助手”和“查看操作分析”权限的权限UI页面。](./images/access/access-permissions.png)
 
