@@ -5,7 +5,7 @@ title: 策略评估API端点
 description: 创建营销操作和定义策略后，您可以使用策略服务API来评估某些操作是否违反了任何策略。 返回的约束采用一组策略的形式，通过尝试对包含数据使用标签的指定数据执行营销操作，将违反这些策略。
 role: Developer
 exl-id: f9903939-268b-492c-aca7-63200bfe4179
-source-git-commit: 32e5b2ba04554ba8ed2a73009fae2ea3a3f5328a
+source-git-commit: f8995ff1e460038b0e254cb500a6d23badeaa991
 workflow-type: tm+mt
 source-wordcount: '1560'
 ht-degree: 1%
@@ -125,7 +125,7 @@ curl -X GET \
 
 >[!WARNING]
 >
->已弃用基于数据集的评估的`/constraints`端点。 要评估策略违规或执行多个评估作业，请改用[批量评估API (`/bulk-eval`)](#evaluate-policies-in-bulk)。
+>已弃用基于数据集的评估的`/constraints`端点。 要评估策略违规或执行多个评估作业，请改用[批量评估API (`/bulk-eval`)](#bulk)。
 
 您可以根据一个或多个数据集集评估策略违规，可以从这些数据集收集数据使用标签。 这是通过对特定营销操作的`/constraints`端点执行POST请求并在请求正文中提供数据集ID列表来完成的。
 

@@ -5,7 +5,7 @@ title: 使用策略服务API强制执行数据使用策略
 type: Tutorial
 description: 一旦您为数据创建了数据使用标签，并针对这些标签创建了营销操作的使用策略，就可以使用策略服务API来评估对数据集或任意一组标签执行的营销操作是否构成策略违规。 然后，您可以设置自己的内部协议，以根据API响应处理策略违规。
 exl-id: 093db807-c49d-4086-a676-1426426b43fd
-source-git-commit: c3e12c17967ad46bf2eb8bcbfd00a92317aec8a2
+source-git-commit: f8995ff1e460038b0e254cb500a6d23badeaa991
 workflow-type: tm+mt
 source-wordcount: '1021'
 ht-degree: 1%
@@ -134,7 +134,7 @@ curl -X GET \
 
 >[!WARNING]
 >
->已弃用基于数据集的评估的`/constraints`端点。 要评估策略违规或执行多个评估作业，请改用[批量评估API (`/bulk-eval`)](../api/evaluation.md#evaluate-policies-in-bulk)。
+>已弃用基于数据集的评估的`/constraints`端点。 要评估策略违规或执行多个评估作业，请改用[批量评估API (`/bulk-eval`)](../api/evaluation.md#bulk)。
 
 您可以通过针对可从中收集标签的一个或多个数据集测试营销操作，来评估数据使用策略。 这是通过对`/marketingActions/core/{MARKETING_ACTION_NAME}/constraints`发出POST请求并在请求正文中提供数据集ID来完成的，如下面的示例所示。
 
