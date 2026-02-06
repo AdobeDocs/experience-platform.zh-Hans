@@ -128,7 +128,7 @@ Real-Time CDP、B2B edition支持执行直接查找的功能，允许您为要�
 >
 >[!UICONTROL People]选项卡显示与该帐户关联的最多25人的列表。 对于关联人员超过25人的客户，系统显示25条记录的随机抽样。
 
-除了向您显示该联系人的信息快照外，列出的每个人员还包含一个&#x200B;**[!UICONTROL Profile ID]**，这是一个可单击的链接，允许您浏览该人员的实时客户档案。 要了解有关查看与您的帐户相关的个人客户配置文件的详细信息，请访问指南，以在B2B edition的Real-Time CDP中浏览个人资料[](../profile/profile-browse.md)。
+除了向您显示该联系人的信息快照外，列出的每个人员还包含一个&#x200B;**[!UICONTROL Profile ID]**，这是一个可单击的链接，允许您浏览该人员的实时客户档案。 要了解有关查看与您的帐户相关的个人客户配置文件的详细信息，请访问指南，以在B2B edition的Real-Time CDP中浏览个人资料[&#128279;](../profile/profile-browse.md)。
 
 ![人员选项卡](images/b2b-account-people.png)
 

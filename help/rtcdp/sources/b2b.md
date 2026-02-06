@@ -29,7 +29,7 @@ Adobe Real-Time Customer Data Platform B2B edition允许您通过各种源引入
 
 以下文档提供了有关使用[!DNL Marketo]将B2B数据引入Experience Platform的更多信息：
 
-* 有关如何将[!DNL Marketo]数据连接到Experience Platform的信息，请参阅关于在UI中创建Marketo源连接器的教程[](../../sources/tutorials/ui/create/adobe-applications/marketo.md)。
+* 有关如何将[!DNL Marketo]数据连接到Experience Platform的信息，请参阅关于在UI中创建Marketo源连接器的教程[&#128279;](../../sources/tutorials/ui/create/adobe-applications/marketo.md)。
 * 有关B2B命名空间和架构的基础设置的信息，请参阅[B2B命名空间和架构的文档](../../sources/connectors/adobe-applications/marketo/marketo-namespaces.md)。
 * 有关查找[!DNL Marketo] Munchkin ID和生成凭据的信息，请参阅[[!DNL Marketo] 身份验证指南](../../sources/connectors/adobe-applications/marketo/marketo-auth.md)。
 * 有关应用于[!DNL Marketo]数据集的特定映射规则的信息，请参阅有关[[!DNL Marketo] 字段映射](../../sources/connectors/adobe-applications//mapping/marketo.md)的文档。
