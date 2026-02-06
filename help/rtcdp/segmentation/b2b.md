@@ -2,11 +2,11 @@
 title: Real-Time Customer Data Platform B2B edition的分段用例
 description: 各种可用的Adobe Real-Time Customer Data Platform B2B edition用例的概述。
 feature: Get Started, Audiences, Segments, B2B
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 exl-id: 2a99b85e-71b3-4781-baf7-a4d5436339d3
-source-git-commit: d1f48140922b4c98f75b4c9af9e1706a402319a4
+source-git-commit: 5998adf98aa7250864983d7e4e629921633e1a1c
 workflow-type: tm+mt
-source-wordcount: '1668'
+source-wordcount: '1603'
 ht-degree: 0%
 
 ---
@@ -60,7 +60,7 @@ ht-degree: 0%
 
 由于数据模型可能很复杂，因此您可以使用Platform UI查看数据模型的更详细的可视化表示形式，以帮助查找用例的相关属性。 要开始，请转到Platform UI并在左侧导航中选择架构。
 
-从可用列表中选择相应的架构，然后从[!UICONTROL 合成]侧边栏中选择相应的关系。 在以下示例中，选择“人员”关系将显示当前架构中哪个属性引用了相关的“人员”架构（如果它是关系中的源架构），或被“人员”架构（如果它是关系中的引用架构）引用。
+从可用列表中选择相应的架构，然后从[!UICONTROL Composition]侧边栏中选择相应的关系。 在以下示例中，选择“人员”关系将显示当前架构中哪个属性引用了相关的“人员”架构（如果它是关系中的源架构），或被“人员”架构（如果它是关系中的引用架构）引用。
 
 ![在架构工作区中使用人员关系的源密钥示例](../assets/segmentation/b2b/source-key-schema-relationship-example.png)
 
@@ -74,23 +74,23 @@ ht-degree: 0%
 
 ## 不同分段用例的示例 {#use-cases}
 
-以下用例可用于使用B2B edition进行分段。 每个示例都提供了受众所执行操作的说明以及用于创建受众的类的说明。 提供的图像突出显示[!UICONTROL 属性]侧边栏中的文件路径，该路径反映了架构的结构。 显示屏右侧的[!UICONTROL 区段属性]部分包含受众属性的书面细分。
+以下用例可用于使用B2B edition进行分段。 每个示例都提供了受众所执行操作的说明以及用于创建受众的类的说明。 提供的图像突出显示[!UICONTROL Attributes]侧边栏中的文件路径，反映了架构的结构。 显示屏右侧的[!UICONTROL Segment properties]部分包含受众属性的书面细分。
 
 ### 示例1：查找B2B机会的“决策者” {#find-decision-maker}
 
-查找所有作为任何机会的“决策者”的人员。 此受众需要[!UICONTROL XDM个人配置文件]类和[!UICONTROL XDM业务机会人员关系]类之间的链接。
+查找所有作为任何机会的“决策者”的人员。 此受众需要[!UICONTROL XDM Individual Profile]类和[!UICONTROL XDM Business Opportunity Person Relation]类之间的链接。
 
 ![显示示例1设置的UI](../assets/segmentation/b2b/example-1.png)
 
 ### 示例2：查找分配给超过特定美元金额的业务机会的B2B配置文件 {#find-opportunities-amount}
 
-查找直接分配到任何商机金额大于给定金额（$100万）的人员的所有。 此受众需要[!UICONTROL XDM Individual Profile]类、[!UICONTROL XDM业务机会人员关系]类和[!UICONTROL XDM业务机会]类之间的链接。
+查找直接分配到任何商机金额大于给定金额（$100万）的人员的所有。 此受众需要[!UICONTROL XDM Individual Profile]类、[!UICONTROL XDM Business Opportunity Person Relation]类和[!UICONTROL XDM Business Opportunity]类之间的链接。
 
 ![显示示例2设置的UI](../assets/segmentation/b2b/example-2.png)
 
 ### 示例3：按地点查找分配给业务机会的B2B配置文件 {#find-opportunities-location}
 
-查找直接分配到客户位于指定位置（加拿大）的任何业务机会的所有人员。 此受众需要[!UICONTROL XDM个人配置文件]类、[!UICONTROL XDM业务机会人员关系]类、[!UICONTROL XDM业务机会]类和[!UICONTROL XDM业务帐户]类之间的链接。
+查找直接分配到客户位于指定位置（加拿大）的任何业务机会的所有人员。 此受众需要[!UICONTROL XDM Individual Profile]类、[!UICONTROL XDM Business Opportunity Person Relation]类、[!UICONTROL XDM Business Opportunity]类和[!UICONTROL XDM Business Account]类之间的链接。
 
 ![显示示例3设置的UI](../assets/segmentation/b2b/example-3.png)
 

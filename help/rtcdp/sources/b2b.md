@@ -2,11 +2,11 @@
 title: Real-Time Customer Data Platform B2B edition中的源
 description: 源在Adobe Real-Time Customer Data Platform B2B edition中的角色概述。
 feature: Sources, Data Ingestion, Get Started, B2B
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 exl-id: eeea4b2e-67c5-4491-9b8e-4b8987e44777
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 5998adf98aa7250864983d7e4e629921633e1a1c
 workflow-type: tm+mt
-source-wordcount: '243'
+source-wordcount: '241'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Adobe Real-Time Customer Data Platform B2B edition允许您通过各种源引入
 
 以下文档提供了有关使用[!DNL Marketo]将B2B数据引入Experience Platform的更多信息：
 
-* 有关如何将[!DNL Marketo]数据连接到Experience Platform的信息，请参阅关于在UI中创建Marketo源连接器的教程[&#128279;](../../sources/tutorials/ui/create/adobe-applications/marketo.md)。
+* 有关如何将[!DNL Marketo]数据连接到Experience Platform的信息，请参阅关于在UI中创建Marketo源连接器的教程[](../../sources/tutorials/ui/create/adobe-applications/marketo.md)。
 * 有关B2B命名空间和架构的基础设置的信息，请参阅[B2B命名空间和架构的文档](../../sources/connectors/adobe-applications/marketo/marketo-namespaces.md)。
 * 有关查找[!DNL Marketo] Munchkin ID和生成凭据的信息，请参阅[[!DNL Marketo] 身份验证指南](../../sources/connectors/adobe-applications/marketo/marketo-auth.md)。
 * 有关应用于[!DNL Marketo]数据集的特定映射规则的信息，请参阅有关[[!DNL Marketo] 字段映射](../../sources/connectors/adobe-applications//mapping/marketo.md)的文档。

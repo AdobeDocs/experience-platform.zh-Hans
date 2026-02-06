@@ -2,12 +2,10 @@
 title: 庞博拉意图
 description: 了解Experience Platform上的Bombora Intent源。
 last-substantial-update: 2025-03-26T00:00:00Z
-badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions newtab=true"
-badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions newtab=true"
 exl-id: d2e81207-8ef5-4e52-bbac-a2fa262d8d08
-source-git-commit: 8a5fdcfcf503df1b9d5aa338ff530181a2d03b5d
+source-git-commit: 04af34d439ba76b0d0053ba9de45ca962458d3e8
 workflow-type: tm+mt
-source-wordcount: '1607'
+source-wordcount: '1593'
 ht-degree: 1%
 
 ---
@@ -48,7 +46,7 @@ ht-degree: 1%
 
 ### 在Experience Platform上配置权限
 
-若要将您的&#x200B;**[!UICONTROL 帐户连接到Experience Platform，您必须同时为您的帐户启用]**&#x200B;查看源&#x200B;**[!UICONTROL 和]**&#x200B;管理源[!DNL Bombora]权限。 请联系您的产品管理员以获取必要的权限。 有关详细信息，请阅读[访问控制UI指南](../../../access-control/abac/ui/permissions.md)。
+您必须同时为您的帐户启用&#x200B;**[!UICONTROL View Sources]**&#x200B;和&#x200B;**[!UICONTROL Manage Sources]**&#x200B;权限，才能将您的[!DNL Bombora]帐户连接到Experience Platform。 请联系您的产品管理员以获取必要的权限。 有关详细信息，请阅读[访问控制UI指南](../../../access-control/abac/ui/permissions.md)。
 
 ### 文件和目录的命名约束
 
@@ -109,7 +107,7 @@ Experience Platform上的[!DNL Bombora]由[!DNL Google Cloud Storage]托管。 �
 
 完成先决条件设置后，请阅读有关[将您的 [!DNL Bombora] 帐户连接到Experience Platform](../../tutorials/ui/create/data-partners/bombora.md)的教程以开始集成。
 
-## 常见问题解答 {#faq}
+## 常见问题 {#faq}
 
 请阅读本节以获取有关[!DNL Bombora]源的常见问题解答。
 

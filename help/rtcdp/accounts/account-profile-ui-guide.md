@@ -2,12 +2,12 @@
 keywords: rtcdp配置文件；配置文件rtcdp；rtcdp身份；rtcdp合并策略；实时客户配置文件
 title: 帐户配置文件UI指南
 description: 通过使用帐户配置文件，Adobe Real-Time Customer Data Platform B2B edition使您能够统一来自多个来源的帐户信息。 本指南提供了有关在Adobe Experience Platform用户界面中与Account Profiles交互的详细信息。
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 feature: Profiles, B2B
 exl-id: a05e8b84-026e-4482-a288-aa25b441bd69
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 5998adf98aa7250864983d7e4e629921633e1a1c
 workflow-type: tm+mt
-source-wordcount: '1681'
+source-wordcount: '1608'
 ht-degree: 0%
 
 ---
@@ -24,11 +24,11 @@ ht-degree: 0%
 
 ## 帐户配置文件概述 {#account-profiles-overview}
 
-在左侧导航中选择[!UICONTROL 帐户]下的&#x200B;**[!UICONTROL 配置文件]**&#x200B;以查看帐户配置文件的概述。 在[!UICONTROL 概述]选项卡下，仪表板在单个入口点中显示一个显示小部件的图形或图表。
+在左侧导航中选择&#x200B;**[!UICONTROL Profiles]**&#x200B;下的[!UICONTROL Accounts]以查看帐户配置文件的概述。 在[!UICONTROL Overview]选项卡下，仪表板显示一个图形或图表，其中显示单个入口点中的小组件。
 
 ![帐户配置文件概述选项卡，在左侧导航中显示配置文件并突出显示概述。](images/b2b-account-profile-overview.png)
 
-请参阅有关[[!UICONTROL 帐户配置文件]](../../dashboards/guides/account-profiles.md)仪表板的文档以了解更多信息。 有关如何使用分析数据模型为仪表板创建自定义图表的更多信息，请参阅有关[Real-time Customer Data Platform Insights数据模型B2B edition](../../dashboards/data-models/cdp-insights-data-model-b2b.md)的文档。
+请参阅[[!UICONTROL Account Profiles]](../../dashboards/guides/account-profiles.md)仪表板上的文档以了解详情。 有关如何使用分析数据模型为仪表板创建自定义图表的更多信息，请参阅有关[Real-time Customer Data Platform Insights数据模型B2B edition](../../dashboards/data-models/cdp-insights-data-model-b2b.md)的文档。
 
 ## 配置潜在客户与帐户匹配 {#configure-lead-to-account-matching}
 
@@ -36,11 +36,11 @@ ht-degree: 0%
 >
 > 只有B2B AI管理员可以启用、禁用和配置潜在客户到帐户的匹配服务。 禁用服务后，将在24小时内删除匹配的结果。
 
-要配置潜在客户与帐户的匹配，请在左侧导航中选择[!UICONTROL 帐户]下的&#x200B;**[!UICONTROL 配置文件]**。 在&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡上，选择右上方的&#x200B;**[!UICONTROL 设置]**。
+要配置潜在客户与帐户的匹配，请在左侧导航的&#x200B;**[!UICONTROL Profiles]**&#x200B;下选择[!UICONTROL Accounts]。 在&#x200B;**[!UICONTROL Overview]**&#x200B;选项卡上，选择右上角的&#x200B;**[!UICONTROL Settings]**。
 
 ![突出显示设置的“帐户配置文件概述”选项卡。](images/b2b-configuring-accounts-profile.png)
 
-将打开&#x200B;**[!UICONTROL 帐户设置]**&#x200B;对话框。 在此处，选择&#x200B;**[!UICONTROL 启用商机帐户匹配]**&#x200B;切换开关以启用该功能。 使用下拉菜单为&#x200B;**[!UICONTROL 匹配节奏]**&#x200B;设置选择&#x200B;**[!UICONTROL 每日]**。 最后，选择相关的&#x200B;**[!UICONTROL 匹配条件]**&#x200B;选项，然后选择&#x200B;**[!UICONTROL 保存]**&#x200B;以确认您的设置并返回&#x200B;**[!UICONTROL 帐户配置文件]**&#x200B;屏幕。
+将打开&#x200B;**[!UICONTROL Account settings]**&#x200B;对话框。 在此处，选择&#x200B;**[!UICONTROL Enable lead-to-account-matching]**&#x200B;切换以启用该功能。 使用下拉菜单为&#x200B;**[!UICONTROL Daily]**&#x200B;设置选择&#x200B;**[!UICONTROL Matching cadence]**。 最后，选择相关的&#x200B;**[!UICONTROL Matching criteria]**&#x200B;选项，后跟&#x200B;**[!UICONTROL Save]**&#x200B;以确认您的设置并返回到&#x200B;**[!UICONTROL Account Profiles]**&#x200B;屏幕。
 
 >[!NOTE]
 >
@@ -52,19 +52,19 @@ ht-degree: 0%
 
 ## 浏览帐户配置文件 {#browse-account-profiles}
 
-要浏览帐户配置文件，请在左侧导航中选择[!UICONTROL 帐户]下的&#x200B;**[!UICONTROL 配置文件]**。
+要浏览帐户配置文件，请在左侧导航中选择&#x200B;**[!UICONTROL Profiles]**&#x200B;下的[!UICONTROL Accounts]开始。
 
-在&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡上，您可以使用连接的企业源中的帐户ID或直接输入源详细信息来浏览帐户配置文件。
+在&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡上，您可以使用连接的企业源中的帐户ID或直接输入源详细信息来浏览帐户配置文件。
 
 ![使用帐户ID浏览配置文件](images/b2b-account-browse-by.png)
 
-### 按[!UICONTROL 连接的企业源]浏览 {#browse-by-connected-enterprise-source}
+### 按[!UICONTROL Connected enterprise source]浏览 {#browse-by-connected-enterprise-source}
 
-要按连接的企业源浏览帐户配置文件，请从&#x200B;**[!UICONTROL 浏览方式]**&#x200B;下拉列表中选择&#x200B;**[!UICONTROL 连接的企业源]**，然后使用&#x200B;**[!UICONTROL Source]**&#x200B;字段旁边的选择器按钮选择连接的源。
+要按连接的企业源浏览帐户配置文件，请从&#x200B;**[!UICONTROL Connected enterprise source]**&#x200B;下拉列表中选择&#x200B;**[!UICONTROL Browse by]**，然后使用&#x200B;**[!UICONTROL Source]**&#x200B;字段旁边的选择器按钮选择连接的源。
 
 ![按连接的企业源浏览帐户配置文件](images/b2b-account-browse.png)
 
-这将打开&#x200B;**[!UICONTROL 选择源]**&#x200B;对话框，您可以在其中根据组织已建立的连接选择源。
+这将打开&#x200B;**[!UICONTROL Select source]**&#x200B;对话框，您可以在其中根据组织已建立的连接选择源。
 
 >[!NOTE]
 >
@@ -72,11 +72,11 @@ ht-degree: 0%
 
 要了解有关连接企业源的更多信息，请参阅[源概述](../sources/sources-overview.md)。
 
-您可以通过选择连接名称旁边的单选按钮来选择源，然后使用&#x200B;**[!UICONTROL 选择]**&#x200B;返回[!UICONTROL 浏览]选项卡。
+您可以通过选择连接名称旁边的单选按钮来选择源，然后使用&#x200B;**[!UICONTROL Select]**&#x200B;返回[!UICONTROL Browse]选项卡。
 
 ![选择源工作流](images/b2b-account-select-source.png)
 
-选定源后，您现在必须输入与该源相关的&#x200B;**[!UICONTROL 帐户ID]**。 例如，选择一个Salesforce源需要您从Salesforce实例中输入一个帐户ID，才能查看与该ID关联的帐户配置文件。
+选定源后，您现在必须输入与该源相关的&#x200B;**[!UICONTROL Account ID]**。 例如，选择一个Salesforce源需要您从Salesforce实例中输入一个帐户ID，才能查看与该ID关联的帐户配置文件。
 
 >[!NOTE]
 >
@@ -86,21 +86,21 @@ ht-degree: 0%
 
 ![帐户ID选择](images/b2b-account-browse-id.png)
 
-### 按[!UICONTROL 其他]浏览 {#browse-by-others}
+### 按[!UICONTROL Others]浏览 {#browse-by-others}
 
-Real-Time CDP、B2B edition支持执行直接查找的功能，允许您为要查看的帐户输入&#x200B;**[!UICONTROL Source名称]**、**[!UICONTROL Source实例]**&#x200B;和&#x200B;**[!UICONTROL 帐户ID]**。 通过直接输入源名称和实例，您可以提供Experience Platform搜索和显示正确帐户配置文件数据所需的上下文。
+Real-Time CDP、B2B edition支持执行直接查找的功能，允许您为要查看的帐户输入&#x200B;**[!UICONTROL Source name]**、**[!UICONTROL Source instance]**&#x200B;和&#x200B;**[!UICONTROL Account ID]**。 通过直接输入源名称和实例，您可以提供Experience Platform搜索和显示正确帐户配置文件数据所需的上下文。
 
 在无法与数据直接建立源连接的情况下，执行直接查找的功能会很有用。 例如，如果贵组织制定了数据治理策略，阻止直接连接到CRM，则您可以将该数据导出到云存储系统，然后将其摄取到Experience Platform。
 
 另一个示例可能是，从离开系统到进入Experience Platform期间您正在对数据执行转换。 您可以使用直接查找功能来提供数据的上下文(例如，指定它是Marketo数据，尽管它来自Amazon S3存储桶)，以便系统知道在哪里查找以及如何正确呈现数据。
 
-要开始直接查找，请从&#x200B;**[!UICONTROL 浏览者]**&#x200B;下拉列表中选择&#x200B;**[!UICONTROL 其他]**，然后为要查看的帐户输入&#x200B;**[!UICONTROL Source名称]**、**[!UICONTROL Source实例]**&#x200B;和&#x200B;**[!UICONTROL 帐户ID]**。
+要开始直接查找，请从&#x200B;**[!UICONTROL Others]**&#x200B;下拉列表中选择&#x200B;**[!UICONTROL Browse by]**，然后为要查看的帐户输入&#x200B;**[!UICONTROL Source name]**、**[!UICONTROL Source instance]**&#x200B;和&#x200B;**[!UICONTROL Account ID]**。
 
 ![由其他人浏览](images/b2b-account-browse-adhoc.png)
 
 ## 查看帐户个人资料详细信息 {#view-account-profile-details}
 
-使用&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡查找帐户配置文件后，选择&#x200B;**[!UICONTROL 配置文件ID]**&#x200B;将打开帐户配置文件的&#x200B;**[!UICONTROL 详细信息]**&#x200B;选项卡。 显示在&#x200B;**[!UICONTROL 详细信息]**&#x200B;选项卡上的配置文件信息已从多个配置文件片段合并在一起，以形成单个帐户的单个视图。 这包括帐户详细信息，例如基本属性和社交媒体数据。
+使用&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡查找帐户配置文件后，选择&#x200B;**[!UICONTROL Profile ID]**&#x200B;将打开帐户配置文件的&#x200B;**[!UICONTROL Detail]**&#x200B;选项卡。 **[!UICONTROL Detail]**&#x200B;选项卡上显示的配置文件信息已从多个配置文件片段合并在一起，以形成单个帐户的单个视图。 这包括帐户详细信息，例如基本属性和社交媒体数据。
 
 显示的默认字段也可以在组织级别更改以显示首选帐户配置文件属性。
 
@@ -114,7 +114,7 @@ Real-Time CDP、B2B edition支持执行直接查找的功能，允许您为要�
 
 ## “属性”选项卡 {#attributes-tab}
 
-**[!UICONTROL 属性]**&#x200B;选项卡列出了与该帐户相关的所有记录信息。 这包括来自多个源的属性数据，这些数据已合并到一起，以形成帐户的单个视图。
+**[!UICONTROL Attributes]**&#x200B;选项卡列出了与该帐户相关的所有记录信息。 这包括来自多个源的属性数据，这些数据已合并到一起，以形成帐户的单个视图。
 
 除了能够查看列表中的数据之外，您还可以使用搜索栏搜索特定属性或以JSON格式查看记录数据。
 
@@ -122,23 +122,23 @@ Real-Time CDP、B2B edition支持执行直接查找的功能，允许您为要�
 
 ## “人员”选项卡 {#people-tab}
 
-**[!UICONTROL 人员]**&#x200B;选项卡提供与帐户关联的个人人员的列表。 这些人员可能是来自贵组织内不同团队管理的不同企业系统的联系人和潜在客户，但在Real-Time CDP中，B2B edition将这些人员作为单个列表显示，以便您更加全面地查看帐户联系人。
+**[!UICONTROL People]**&#x200B;选项卡提供与帐户关联的个人人员的列表。 这些人员可能是来自贵组织内不同团队管理的不同企业系统的联系人和潜在客户，但在Real-Time CDP中，B2B edition将这些人员作为单个列表显示，以便您更加全面地查看帐户联系人。
 
 >[!NOTE]
 >
->[!UICONTROL 人员]选项卡显示与该帐户关联的最多25人的列表。 对于关联人员超过25人的客户，系统显示25条记录的随机抽样。
+>[!UICONTROL People]选项卡显示与该帐户关联的最多25人的列表。 对于关联人员超过25人的客户，系统显示25条记录的随机抽样。
 
-除了向您显示联系人的信息快照外，列出的每个人员还包含&#x200B;**[!UICONTROL 配置文件ID]**，这是一个可单击的链接，允许您浏览该人员的实时客户配置文件。 要了解有关查看与您的帐户相关的个人客户配置文件的详细信息，请访问指南，以在B2B edition的Real-Time CDP中浏览个人资料[&#128279;](../profile/profile-browse.md)。
+除了向您显示该联系人的信息快照外，列出的每个人员还包含一个&#x200B;**[!UICONTROL Profile ID]**，这是一个可单击的链接，允许您浏览该人员的实时客户档案。 要了解有关查看与您的帐户相关的个人客户配置文件的详细信息，请访问指南，以在B2B edition的Real-Time CDP中浏览个人资料[](../profile/profile-browse.md)。
 
 ![人员选项卡](images/b2b-account-people.png)
 
 ## “业务机会”选项卡 {#opportunities-tab}
 
-**[!UICONTROL 业务机会]**&#x200B;选项卡提供有关与帐户相关的未结和已结业务机会的信息。 这些机会可能会从多个来源引入Experience Platform，但是Real-Time CDP中的B2B edition使营销人员能够轻松地在一个位置一起查看所有这些机会。
+**[!UICONTROL Opportunities]**&#x200B;选项卡提供与帐户相关的未结和已结业务机会的信息。 这些机会可能会从多个来源引入Experience Platform，但是Real-Time CDP中的B2B edition使营销人员能够轻松地在一个位置一起查看所有这些机会。
 
 >[!NOTE]
 >
->[!UICONTROL 业务机会]选项卡显示与帐户关联的业务机会列表，最多可包含25个业务机会。 对于关联业务机会超过25个的客户，系统显示25条记录的随机抽样。
+>[!UICONTROL Opportunities]选项卡显示一个列表，其中包含与该帐户关联的最多25个机会。 对于关联业务机会超过25个的客户，系统显示25条记录的随机抽样。
 
 每个机会都包括一些信息，如机会的名称、数量、阶段，以及机会是开放、关闭、成功还是失败。
 
@@ -146,12 +146,12 @@ Real-Time CDP、B2B edition支持执行直接查找的功能，允许您为要�
 
 ## “相关帐户”选项卡 {#related-accounts-tab}
 
-**[!UICONTROL 相关帐户]**&#x200B;选项卡提供有关可能与您正在浏览的帐户相关的其他帐户的信息。 有关功能的详细信息，请阅读[相关帐户概述](/help/rtcdp/b2b-ai-ml-services/related-accounts.md)。
+“**[!UICONTROL Related accounts]**”选项卡提供有关可能与您正在浏览的帐户相关的其他帐户的信息。 有关功能的详细信息，请阅读[相关帐户概述](/help/rtcdp/b2b-ai-ml-services/related-accounts.md)。
 
 >[!NOTE]
 >
 >* 相关帐户组最多可以具有30个帐户配置文件。 如果发现超过30个帐户配置文件相关，则将其任意拆分为多个组，每个组的成员不超过30个。 帐户配置文件的“相关帐户”组始终包含自身。
->* [!UICONTROL 相关帐户]选项卡当前显示一个列表，其中包含最多25个与您正在浏览的帐户相关联的相关帐户。 此限制将在以后的更新中解决。 尽管存在这种UI限制，当您在区段定义中使用相关帐户时，对于包含30个相关帐户配置文件的组，所有配置文件都用于定位。
+>* [!UICONTROL Related accounts]选项卡当前显示一个列表，其中包含与正在浏览的帐户关联的最多25个相关帐户。 此限制将在以后的更新中解决。 尽管存在这种UI限制，当您在区段定义中使用相关帐户时，对于包含30个相关帐户配置文件的组，所有配置文件都用于定位。
 
 每个相关帐户包括帐户资料ID和名称、帐户源密钥，以及与主页、地址、父帐户、电话、行业和年收入相关的更多信息。
 

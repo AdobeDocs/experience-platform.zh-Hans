@@ -1,14 +1,14 @@
 ---
 title: Real-Time CDP B2B中的商机帐户匹配
 type: Documentation
-description: 有关Experience PlatformCDP B2B中的商机帐户匹配功能的概述和更多信息。
+description: 有关Experience Platform CDP B2B中的商机帐户匹配功能的概述和更多信息。
 feature: Get Started, Profiles, B2B
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 exl-id: 2f853599-6bca-4ba6-bbba-131a49d8854e
-source-git-commit: 4ba609e777716b1b38f5b143587e5476d851e344
+source-git-commit: 5998adf98aa7250864983d7e4e629921633e1a1c
 workflow-type: tm+mt
-source-wordcount: '408'
-ht-degree: 3%
+source-wordcount: '402'
+ht-degree: 2%
 
 ---
 
@@ -56,13 +56,13 @@ workEmail属性可作为B2B人员架构中的顶级字段组找到。
 
 仅当匹配分数超过内部置信度阈值时，才会最佳匹配用户档案。 结果保存在现有帐户人员关系XDM的新系统数据集中。
 
-当有新的人员配置文件快照可用（每24小时一次）时，会运行商机帐户匹配服务。 有关商机与帐户匹配[&#128279;](/help/rtcdp/accounts/account-profile-ui-guide.md)的配置的更多信息，请参阅文档。
+当有新的人员配置文件快照可用（每24小时一次）时，会运行商机帐户匹配服务。 有关商机与帐户匹配[的](/help/rtcdp/accounts/account-profile-ui-guide.md)配置的更多信息，请参阅文档。
 
 ## 如何查看潜在客户与帐户的匹配输出 {#how-to-view}
 
 作业运行后，结果将保存在现有帐户人员关系XDM的新数据集中。
 
-要预览数据集，请选择右上角的&#x200B;**[!UICONTROL 预览数据集]**。
+要预览数据集，请选择右上方的&#x200B;**[!UICONTROL Preview dataset]**。
 
 ![新数据集](/help/rtcdp/accounts/images/b2b-dataset-output.png)
 
@@ -74,4 +74,4 @@ workEmail属性可作为B2B人员架构中的顶级字段组找到。
 
 您可以通过仪表板监控任何潜在客户到帐户匹配作业的作业状态和相关量度。
 
-有关商机与帐户匹配[&#128279;](/help/dataflows/ui/b2b/monitor-profile-enrichment.md)的监视作业的详细信息，请参阅文档。
+有关商机与帐户匹配[的](/help/dataflows/ui/b2b/monitor-profile-enrichment.md)监视作业的详细信息，请参阅文档。

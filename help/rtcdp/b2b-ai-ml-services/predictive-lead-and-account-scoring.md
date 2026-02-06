@@ -1,20 +1,20 @@
 ---
 title: Real-Time CDP B2B中的预测性商机和客户评分
 type: Documentation
-description: 有关Experience PlatformCDP B2B中的预测商机和客户评分功能的概述和更多信息。
+description: 有关Experience Platform CDP B2B中的预测商机和客户评分功能的概述和更多信息。
 feature: Profiles, B2B
-badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 exl-id: d3afbabb-005d-4537-831a-857c88043759
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 5998adf98aa7250864983d7e4e629921633e1a1c
 workflow-type: tm+mt
-source-wordcount: '859'
-ht-degree: 2%
+source-wordcount: '853'
+ht-degree: 3%
 
 ---
 
 # Real-Time CDP B2B中的预测性商机和客户评分
 
-B2B营销人员在营销漏斗顶部面临多种挑战。 为了变得有效，B2B营销人员需要一种自动化方法来鉴别大量人员，以便他们能够专注于高价值目标。 资格鉴定应与最终销售结果保持一致，而不仅仅是营销转化。
+B2B营销人员在营销funnel的顶部面临多个挑战。 为了变得有效，B2B营销人员需要一种自动化方法来鉴别大量人员，以便他们能够专注于高价值目标。 资格鉴定应与最终销售结果保持一致，而不仅仅是营销转化。
 
 客户，是购买B2B产品和服务的最终实体。 为了有效地营销和销售，B2B营销人员不仅要了解个人的购买情况，还要了解账户的购买可能性。
 
@@ -52,7 +52,7 @@ B2B营销人员在营销漏斗顶部面临多种挑战。 为了变得有效，B
 
 >[!NOTE]
 > 
->算法仅检查Person：personComponents字段组中的`sourceAccountKey.sourceKey`字段。
+>算法仅检查Person`sourceAccountKey.sourceKey`字段组中的:personComponents字段。
 
 * 帐户轮廓
 
@@ -95,20 +95,20 @@ B2B营销人员在营销漏斗顶部面临多种挑战。 为了变得有效，B
 | 属性 | 描述 |
 | --- | --- |
 | 得分 | 用户档案在定义的时间范围内实现预测目标的相对可能性。 该值不应被视为概率百分比，而应被视为用户档案相对于群体总数的可能性。 此得分从0到100不等。 |
-| 百分点值 | 此值提供有关用户档案相对于其他类似评分的用户档案的性能信息。 百分位数的范围是1到100。 |
+| 百分位数 | 此值提供有关用户档案相对于其他类似评分的用户档案的性能信息。 百分位数的范围是1到100。 |
 | 模型类型 | 所选模型类型指示这是人员分数还是帐户分数。 |
 | 得分日期 | 评分发生的日期。 |
 | 影响因素 | 个人资料可能发生转化的预测原因。 因子由以下属性组成：<ul><li>代码：对个人资料的预测得分产生积极影响的个人资料或行为属性。</li><li>值：配置文件或行为属性的值。</li><li>重要性：指示用户档案或行为属性对预测得分（低、中、高）的权重。</li></ul> |
 
 ### 查看客户个人资料分数
 
-要查看人员配置文件的预测得分，请选择左侧面板中客户部分下的&#x200B;**[!UICONTROL 配置文件]**，然后输入身份命名空间和身份值。 完成后，选择&#x200B;**[!UICONTROL 视图]**。
+要查看人员配置文件的预测得分，请选择左侧面板中客户部分下的&#x200B;**[!UICONTROL Profiles]**，然后输入身份命名空间和身份值。 完成后，选择&#x200B;**[!UICONTROL View]**。
 
 接下来，从列表中选择配置文件。
 
 ![客户个人资料](/help/rtcdp/accounts/images/b2b-view-customer-profile.png)
 
-**[!UICONTROL 详细信息]**&#x200B;页面现在包含预测得分。 单击预测得分旁边的图表图标。
+**[!UICONTROL Detail]**&#x200B;页面现在包含预测得分。 单击预测得分旁边的图表图标。
 
 ![客户个人资料预测得分](/help/rtcdp/accounts/images/b2b-view-customer-profile-predictive-score.png)
 

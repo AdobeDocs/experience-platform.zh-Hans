@@ -1,12 +1,10 @@
 ---
 title: 使用UI将Demandbase意图连接到Experience Platform
 description: 了解如何将Demandbase意图连接到Experience Platform
-badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions newtab=true"
-badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions newtab=true"
 exl-id: 7dc87067-cdf6-4dde-b077-19666dcb12e2
-source-git-commit: a1af85c6b76cc7bded07ab4acaec9c3213a94397
+source-git-commit: 04af34d439ba76b0d0053ba9de45ca962458d3e8
 workflow-type: tm+mt
-source-wordcount: '1017'
+source-wordcount: '986'
 ht-degree: 4%
 
 ---
@@ -29,13 +27,13 @@ ht-degree: 4%
 
 ## 导航源目录 {#navigate}
 
-在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问&#x200B;*[!UICONTROL 源]*&#x200B;工作区。 您可以在&#x200B;*[!UICONTROL 类别]*&#x200B;面板中选择相应的类别。 或者，您可以使用搜索栏导航到要使用的特定源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL Sources]**&#x200B;以访问&#x200B;*[!UICONTROL Sources]*&#x200B;工作区。 您可以在&#x200B;*[!UICONTROL Categories]*&#x200B;面板中选择相应的类别。 或者，您可以使用搜索栏导航到要使用的特定源。
 
-要使用[!DNL Demandbase]，请选择[!UICONTROL 数据和标识合作伙伴]下的&#x200B;**[!UICONTROL Demandbase意图]**&#x200B;源卡，然后选择&#x200B;**[!UICONTROL 添加数据]**。
+要使用[!DNL Demandbase]，请选择&#x200B;**[!UICONTROL Demandbase Intent]**&#x200B;下的[!UICONTROL Data & Identity Partners]源卡，然后选择&#x200B;**[!UICONTROL Add data]**。
 
 >[!TIP]
 >
->当给定的源尚未具有经过身份验证的帐户时，源目录中的源会显示&#x200B;**[!UICONTROL 设置]**&#x200B;选项。 一旦存在经过身份验证的帐户，此选项将更改为&#x200B;**[!UICONTROL 添加数据]**。
+>当给定的源尚未拥有经过身份验证的帐户时，源目录中的源会显示&#x200B;**[!UICONTROL Set up]**&#x200B;选项。 一旦存在经过身份验证的帐户，此选项将更改为&#x200B;**[!UICONTROL Add data]**。
 
 ![已选择“Demandbase意图”卡的源目录。](../../../../images/tutorials/create/demandbase/catalog.png)
 
@@ -43,9 +41,9 @@ ht-degree: 4%
 
 ### 使用现有帐户 {#existing}
 
-要使用现有帐户，请选择&#x200B;**[!UICONTROL 现有帐户]**，然后从界面上的帐户列表中选择要使用的帐户。
+要使用现有帐户，请选择&#x200B;**[!UICONTROL Existing account]**，然后从界面上的帐户列表中选择要使用的帐户。
 
-选择帐户后，选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续执行下一步。
+选择帐户后，请选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续执行下一步。
 
 ![源工作流的现有帐户接口。](../../../../images/tutorials/create/demandbase/existing.png)
 
@@ -53,7 +51,7 @@ ht-degree: 4%
 
 如果您没有现有帐户，则必须通过提供与您的源对应的必需身份验证凭据来创建新帐户。
 
-要创建新帐户，请选择&#x200B;**[!UICONTROL 新帐户]**，然后提供帐户名称以及帐户详细信息的描述（可选）。 接下来，提供相应的身份验证值，以便针对Experience Platform验证您的源。 要连接您的[!DNL Demandbase Intent]帐户，您必须具有以下凭据：
+要创建新帐户，请选择&#x200B;**[!UICONTROL New account]**，然后提供帐户名称以及帐户详细信息的描述（可选）。 接下来，提供相应的身份验证值，以便针对Experience Platform验证您的源。 要连接您的[!DNL Demandbase Intent]帐户，您必须具有以下凭据：
 
 * **访问密钥ID**：您的[!DNL Demandbase]访问密钥ID。 这是一个由61个字符组成的字母数字字符串，向Experience Platform验证您的帐户时需要使用该字符串。
 * **访问密钥**：您的[!DNL Demandbase]访问密钥。 这是一个40字符、以base-64编码的字符串，向Experience Platform验证您的帐户时需要使用该字符串。
@@ -77,16 +75,16 @@ ht-degree: 4%
 
 * **频率**：配置频率以指示数据流运行的频率。 您可以安排[!DNL Demandbase]数据流每周摄取一次数据。
 * **间隔**：间隔表示每个摄取周期之间的时间量。 [!DNL Demandbase]数据流唯一支持的间隔为`1`。 这意味着您的数据流将每周、每周摄取一次数据。
-* **开始时间**：开始时间指示数据流首次运行迭代的时间。 [!DNL Demandbase]每周一次将数据丢到Adobe，时间是UTC时间周一的中午12:00。 因此，您必须在UTC中午12:00之后设置摄取开始时间。 此外，在将文件拖放到Adobe时，必须通过[!DNL Demandbase]确认摄取时间，因为他们可能会更改其计划。
+* **开始时间**：开始时间指示数据流首次运行迭代的时间。 [!DNL Demandbase]每周一次将数据丢到Adobe，时间是UTC星期一中午12:00点。 因此，您必须在UTC中午12:00后设置摄取开始时间。 此外，在将文件拖放到Adobe时，必须通过[!DNL Demandbase]确认摄取时间，因为他们可能会更改其计划。
 * **回填**：回填确定最初摄取的数据。 如果启用了回填，则指定路径中的所有当前文件将在第一次计划摄取期间摄取。 如果禁用回填，则只摄取在第一次引入运行到开始时间之间加载的文件。 将不会摄取在开始时间之前加载的文件。
 
-配置数据流的摄取计划后，选择&#x200B;**[!UICONTROL 下一步]**。
+配置数据流的摄取计划后，选择&#x200B;**[!UICONTROL Next]**。
 
 ![源工作流的计划接口。](../../../../images/tutorials/create/demandbase/scheduling.png)
 
 ## 查看数据流 {#review-dataflow}
 
-数据流创建过程的最后一步是在执行数据流之前对其进行检查。 使用&#x200B;*[!UICONTROL 查看]*&#x200B;步骤可在新数据流运行之前查看其详细信息。 详细信息按以下类别分组：
+数据流创建过程的最后一步是在执行数据流之前对其进行检查。 使用&#x200B;*[!UICONTROL Review]*&#x200B;步骤可在新数据流运行之前查看其详细信息。 详细信息按以下类别分组：
 
 * **连接**：显示源类型、所选源文件的相关路径以及该源文件中的列数。
 * **计划**：显示摄取计划的活动时段、频率和间隔。
@@ -107,4 +105,4 @@ ht-degree: 4%
 
 ### 删除您的数据流
 
-您可以删除不再必需的数据流或使用&#x200B;**[!UICONTROL 数据流]**&#x200B;工作区中提供的&#x200B;**[!UICONTROL 删除]**&#x200B;功能错误地创建的数据流。 有关如何删除数据流的详细信息，请访问有关[在UI中删除数据流](../../delete.md)的教程。
+您可以删除不再必需的数据流或使用&#x200B;**[!UICONTROL Delete]**&#x200B;工作区中可用的&#x200B;**[!UICONTROL Dataflows]**&#x200B;功能错误创建的数据流。 有关如何删除数据流的详细信息，请访问有关[在UI中删除数据流](../../delete.md)的教程。

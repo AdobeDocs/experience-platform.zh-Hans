@@ -1,18 +1,18 @@
 ---
-title: Real-Time CDP B2B版本中的相关帐户
+title: Real-Time CDP B2B edition中的相关帐户
 type: Documentation
-description: 有关Experience PlatformReal-Time CDP B2B中相关帐户功能的概述和更多信息。
+description: 有关Experience Platform Real-Time CDP B2B中相关帐户功能的概述和更多信息。
 feature: Get Started, Profiles, B2B
-badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 exl-id: 37fd2cdb-87c0-4e5e-9599-ad4f397f7c28
-source-git-commit: 82535ec3ac2dd27e685bb591fdf661d3ab5dd2c9
+source-git-commit: 5998adf98aa7250864983d7e4e629921633e1a1c
 workflow-type: tm+mt
-source-wordcount: '435'
-ht-degree: 4%
+source-wordcount: '427'
+ht-degree: 5%
 
 ---
 
-# Real-Time CDP B2B版本中的相关帐户
+# Real-Time CDP B2B edition中的相关帐户
 
 ## 概述 {#overview}
 
@@ -30,17 +30,17 @@ B2B企业通常将其客户信息存储在多个系统中，每个系统仅包�
 
 通过相关帐户，[!DNL Real-Time CDP B2B]现在会显示与正在浏览的帐户类似的帐户列表。
 
-![显示Experience PlatformUI中相关帐户的屏幕。](/help/rtcdp/b2b-ai-ml-services/assets/related-accounts-in-ui.png)
+![显示Experience Platform UI中相关帐户的屏幕。](/help/rtcdp/b2b-ai-ml-services/assets/related-accounts-in-ui.png)
 
-使用此功能可在Experience PlatformUI中查看帐户配置文件的相关帐户配置文件，然后将相关帐户包含在区段定义中，以扩大您的影响范围或在受众中应用更广泛的标准。
+使用此功能可在Experience Platform UI中查看帐户配置文件的相关帐户配置文件，然后将相关帐户包含在区段定义中，以扩大您的影响范围或在受众中应用更广泛的标准。
 
 ## 启用相关的帐户服务 {#enable}
 
-要启用该服务，请在侧栏中选择&#x200B;**[!UICONTROL 配置文件]**，然后选择&#x200B;**[!UICONTROL 设置]**。
+要启用该服务，请在侧边栏中选择&#x200B;**[!UICONTROL Profiles]**，然后选择&#x200B;**[!UICONTROL Settings]**。
 
-![Experience PlatformUI突出显示配置文件和设置。](../assets/../b2b-ai-ml-services/assets/related-account-settings.png)
+![Experience Platform UI高亮显示配置文件和设置。](../assets/../b2b-ai-ml-services/assets/related-account-settings.png)
 
-选择[!UICONTROL 启用相关帐户]旁边的切换以启用该服务，然后选择&#x200B;**[!UICONTROL 保存]**。
+选择[!UICONTROL Enable related accounts]旁边的切换以启用该服务，然后选择&#x200B;**[!UICONTROL Save]**。
 
 ![帐户设置屏幕突出显示切换并保存。](../assets/../b2b-ai-ml-services/assets/related-account-toggle.png)
 
@@ -58,7 +58,7 @@ B2B企业通常将其客户信息存储在多个系统中，每个系统仅包�
 
 ## 如何查看相关帐户 {#how-to-view}
 
-您可以查看在Experience PlatformUI中浏览的帐户的相关帐户。
+您可以在Experience Platform UI中查看正在浏览的帐户的相关帐户。
 
 有关[如何在UI](/help/rtcdp/accounts/account-profile-ui-guide.md#related-accounts-tab)中查找相关帐户的详细信息，请参阅文档。
 

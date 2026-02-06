@@ -1,12 +1,11 @@
 ---
 title: 帐户配置文件分析
 description: 发现支持您的帐户配置文件分析的SQL，并使用这些查询生成自定义分析，从而进一步探索您的客户及其消费者体验。
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
-badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: null
 exl-id: a953dd56-7dd8-4cd0-baa0-85f92d192789
-source-git-commit: cce576c00823a0c02e4b639f0888a466a5af6a0c
+source-git-commit: a32064848809d1cad07f769f04d82c35df451e38
 workflow-type: tm+mt
-source-wordcount: '771'
+source-wordcount: '745'
 ht-degree: 0%
 
 ---
@@ -19,15 +18,15 @@ ht-degree: 0%
 
 <!-- Add link to new generate insights with SQL workflow doc after April release.-->
 
-以下分析均可用作[帐户配置文件仪表板](../guides/account-profiles.md)或[自定义仪表板](../standard-dashboards.md)的一部分。 有关如何自定义仪表板或[&#128279;](../customize/custom-widgets.md)在构件库和[用户定义的仪表板](../standard-dashboards.md#create-widget)中创建和编辑新构件的说明，请参阅[自定义概述](../customize/overview.md)。
+以下分析均可用作[帐户配置文件仪表板](../guides/account-profiles.md)或[自定义仪表板](../standard-dashboards.md)的一部分。 有关如何自定义仪表板或[在构件库和](../customize/overview.md)用户定义的仪表板[中创建和编辑新构件](../customize/custom-widgets.md)的说明，请参阅[自定义概述](../standard-dashboards.md#create-widget)。
 
 ## 已添加帐户轮廓 {#account-profiles-added}
 
-通过此洞察回答的问题：
+此insight回答的问题：
 
 - 在给定时间段内添加了多少帐户配置文件？
 
-+++选择以显示生成此分析的SQL
++++选择以显示生成此insight的SQL
 
 ```sql
 WITH accounts_by_mm_dd AS
@@ -49,11 +48,11 @@ ORDER BY date_key limit 5000;
 
 ## 按行业划分的新客户 {#accounts-by-industry}
 
-通过此洞察回答的问题：
+此insight回答的问题：
 
 - 帐户配置文件所属的前五个行业是什么？
 
-+++选择以显示生成此分析的SQL
++++选择以显示生成此insight的SQL
 
 ```sql
 WITH rankedindustries AS
@@ -85,11 +84,11 @@ ORDER BY total_accounts DESC limit 5000;
 
 ## 按类型的新帐户 {#accounts-by-type}
 
-通过此洞察回答的问题：
+此insight回答的问题：
 
 - 按帐户类型划分的帐户数是多少？
 
-+++选择以显示生成此分析的SQL
++++选择以显示生成此insight的SQL
 
 ```sql
 SELECT t.account_type,
@@ -108,11 +107,11 @@ LIMIT  5000;
 
 ## 新增机会 {#opportunities-added}
 
-通过此洞察回答的问题：
+此insight回答的问题：
 
 - 在给定时间段内添加了多少个机会？
 
-+++选择以显示生成此分析的SQL
++++选择以显示生成此insight的SQL
 
 ```sql
 SELECT d.date_key,
@@ -131,11 +130,11 @@ LIMIT  5000;
 
 ## 按人员角色显示的新机会 {#opportunities-by-person-role}
 
-通过此洞察回答的问题：
+此insight回答的问题：
 
 - 机会中各种角色的相对规模和数量是多少？
 
-+++选择以显示生成此分析的SQL
++++选择以显示生成此insight的SQL
 
 ```sql
 SELECT p.person_role,
@@ -153,11 +152,11 @@ LIMIT  5000;
 
 ## 按收入显示的新机会 {#opportunities-by-revenue}
 
-通过此洞察回答的问题：
+此insight回答的问题：
 
 - 按收入排名的前20个机会是什么（以美元计）？
 
-+++选择以显示生成此分析的SQL
++++选择以显示生成此insight的SQL
 
 ```sql
 WITH ranked_opportunities AS
@@ -193,12 +192,12 @@ ORDER BY total_expected_revenue DESC limit 5000;
 
 ## 按状态和阶段显示的新机会 {#opportunities-by-status-and-stage}
 
-通过此洞察回答的问题：
+此insight回答的问题：
 
-- 存在哪些潜在机会？这些机会位于销售或营销漏斗的哪个阶段？
-- 存在哪些已结束的销售机会？它们在销售或营销漏斗的哪个阶段完成？
+- 存在哪些潜在机会？这些机会处于销售或营销funnel的哪个阶段？
+- 存在哪些已结束的销售机会？这些机会处于销售或营销funnel的哪个阶段？
 
-+++选择以显示生成此分析的SQL
++++选择以显示生成此insight的SQL
 
 ```sql
 WITH opportunities_by_isclosed AS
@@ -226,11 +225,11 @@ FROM   opportunities_by_isclosed limit 5000;
 
 ## 赢得新机会 {#opportunities-won}
 
-通过此洞察回答的问题：
+此insight回答的问题：
 
 - 已成功关闭或最终完成的机会数量是多少？
 
-+++选择以显示生成此分析的SQL
++++选择以显示生成此insight的SQL
 
 ```sql
 WITH opportunities_by_iswon AS
@@ -255,11 +254,11 @@ FROM   opportunities_by_iswon limit 5000;
 
 <!-- Q) Can we change this name? -->
 
-通过此洞察回答的问题：
+此insight回答的问题：
 
 - 在给定时间段内成功关闭或完成（赢得）多少机会？
 
-+++选择以显示生成此分析的SQL
++++选择以显示生成此insight的SQL
 
 ```sql
 WITH opportunities_won_counts AS
@@ -285,13 +284,13 @@ ORDER BY  d.date_key limit 5000;
 
 >[!NOTE]
 >
->[!UICONTROL 每个帐户的客户概述]图表包括三个穿透钻取见解：每个帐户的[!UICONTROL 客户详细信息]、[!UICONTROL 每个帐户的机会]和每个帐户的[!UICONTROL 机会]。 这些深入分析可提供更细粒度的洞察，按类别（如直接和间接客户）和范围（如客户和机会计数范围）划分客户和机会计数。 这些图表不受您可能已设置的任何全局日期过滤器的影响。
+>[!UICONTROL Customers per Account Overview]图表包括三个穿透钻取分析：[!UICONTROL Customers per Account Detail]、[!UICONTROL Opportunities per Account Overview]和[!UICONTROL Opportunities per Account Detail]。 这些深入分析可提供更细粒度的洞察，按类别（如直接和间接客户）和范围（如客户和机会计数范围）划分客户和机会计数。 这些图表不受您可能已设置的任何全局日期过滤器的影响。
 
-通过此洞察回答的问题：
+此insight回答的问题：
 
 - 根据客户是否有直接或间接客户，客户分配情况如何？
 
-+++选择以显示生成此分析的SQL
++++选择以显示生成此insight的SQL
 
 ```sql
 WITH LatestDate AS (SELECT MAX(inserted_date) AS max_inserted_date FROM adwh_b2b_account_person_association),
@@ -329,13 +328,13 @@ ORDER BY ac.Account_Category;
 
 >[!NOTE]
 >
->此洞察不受全局日期过滤器的影响。
+>此insight不受全局日期过滤器的影响。
 
-通过此洞察回答的问题：
+此insight回答的问题：
 
 - 有多少客户拥有不同范围的直接或间接客户？
 
-+++选择以显示生成此分析的SQL
++++选择以显示生成此insight的SQL
 
 ```sql
 WITH customer_ranges AS (
@@ -403,13 +402,13 @@ ORDER BY cr.customer_type,
 
 >[!NOTE]
 >
->此洞察不受全局日期过滤器的影响。
+>此insight不受全局日期过滤器的影响。
 
-通过此洞察回答的问题：
+此insight回答的问题：
 
 - 根据客户是否具有相关业务机会，客户分配情况如何？
 
-+++选择以显示生成此分析的SQL
++++选择以显示生成此insight的SQL
 
 ```sql
 WITH LatestDate AS (
@@ -453,13 +452,13 @@ ORDER BY ac.Opportunity_Category;
 
 >[!NOTE]
 >
->此洞察不受全局日期过滤器的影响。
+>此insight不受全局日期过滤器的影响。
 
-通过此洞察回答的问题：
+此insight回答的问题：
 
 - 有多少客户拥有不同范围的关联机会？
 
-+++选择以显示生成此分析的SQL
++++选择以显示生成此insight的SQL
 
 ```sql
 WITH opportunity_ranges AS (

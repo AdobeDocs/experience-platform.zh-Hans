@@ -1,14 +1,14 @@
 ---
-keywords: 个人资料；实时客户个人资料；故障排除；护栏；指南；限制；实体；主要实体；维度实体；RTCDP；CDP；B2B edition；Real-Time Customer Data Platform；实时客户数据平台；实时cdp；b2b；cdp；
+keywords: 配置文件；Real-time Customer Profile；故障排除；护栏；准则；限制；实体；主要实体；维度实体；RTCDP；CDP；B2B edition；Real-Time Customer Data Platform；Real-time Customer Data Platform；Real Time Cdp；B2B；CDP；
 title: Real-Time Customer Data Platform B2B edition的默认护栏
 type: Documentation
 description: Adobe Experience Platform 使用与传统关系数据模型不同的高度非规范化混合数据模型。本文档提供了默认的使用和速率限制，以帮助您使用Adobe Real-Time Customer Data Platform B2B edition为数据建模，以获得最佳系统性能。
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 feature: Guardrails, B2B
 exl-id: 8eff8c3f-a250-4aec-92a1-719ce4281272
-source-git-commit: bc399f3af0524232671af780ea1380f1a71a5b7e
+source-git-commit: 5998adf98aa7250864983d7e4e629921633e1a1c
 workflow-type: tm+mt
-source-wordcount: '1817'
+source-wordcount: '1815'
 ht-degree: 2%
 
 ---
@@ -23,7 +23,7 @@ Real-Time Customer Data Platform B2B edition允许您以实时客户配置文件
 
 >[!IMPORTANT]
 >
->除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/cn/legal/product-descriptions.html)中的实际使用限制。
+>除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/legal/product-descriptions.html)中的实际使用限制。
 
 本文档提供了默认的使用和速率限制，帮助您建模数据以获得最佳系统性能。 查看以下护栏时，假定您已正确建模数据。 如果您对如何建立数据模型有疑问，请联系您的客户服务代表。
 

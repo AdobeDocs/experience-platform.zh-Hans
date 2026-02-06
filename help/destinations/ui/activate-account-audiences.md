@@ -2,12 +2,10 @@
 title: 将帐户受众激活到目标
 type: Tutorial
 description: 了解如何将帐户受众激活到目标
-badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions newtab=true"
-badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions newtab=true"
 exl-id: ad69d0a8-bf5b-42ac-97a3-401eadda62cd
-source-git-commit: 9f4ce2a3a8af72342683c859caa270662b161b7d
+source-git-commit: 044306709747c32c4ce265d03d3908bbae169edc
 workflow-type: tm+mt
-source-wordcount: '782'
+source-wordcount: '778'
 ht-degree: 0%
 
 ---
@@ -55,7 +53,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->可导出帐户受众的目标在卡片的右上角以图标指示，类似于下面高亮显示的目标，或者，您可以使用数据类型筛选器以仅显示可导出帐户受众的目标，如页面上较高位置显示的[&#128279;](#supported-destinations)。
+>可导出帐户受众的目标在卡片的右上角以图标指示，类似于下面高亮显示的目标，或者，您可以使用数据类型筛选器以仅显示可导出帐户受众的目标，如页面上较高位置显示的[](#supported-destinations)。
 
 ![可导出突出显示的配置文件受众的Demandbase目标页面。](/help/destinations/assets/ui/activate-account-audiences/demandbase-icon-activate-account-audiences.png)
 
