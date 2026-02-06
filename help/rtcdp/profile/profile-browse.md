@@ -3,7 +3,7 @@ keywords: 查看配置文件rtcdp；rtcdp配置文件视图；rtcdp配置文件
 title: 在Real-Time Customer Data Platform中浏览配置文件
 description: Adobe Real-Time Customer Data Platform允许您使用Adobe Experience Platform用户界面浏览实时客户配置文件数据。
 feature: Get Started, Profiles
-badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions" newtab=true
 exl-id: 8481e286-2ff0-484f-85d2-a8db9b08d8d3
 source-git-commit: 5998adf98aa7250864983d7e4e629921633e1a1c
 workflow-type: tm+mt

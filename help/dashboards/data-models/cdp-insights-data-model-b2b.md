@@ -12,7 +12,7 @@ ht-degree: 1%
 
 # Real-Time CDP Insights数据模型B2B edition
 
-B2B edition的Real-Time CDP分析数据模型公开了支持[帐户配置文件](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/account/account-profile-overview)的分析的数据模型和SQL。 您可以自定义这些SQL查询模板，以为B2B营销和关键绩效指标(KPI)用例创建Real-Time CDP报表。 这些见解随后可用作功能板的自定义构件。
+B2B edition的Real-Time CDP分析数据模型公开了支持[帐户配置文件](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/rtcdp/account/account-profile-overview)的分析的数据模型和SQL。 您可以自定义这些SQL查询模板，以为B2B营销和关键绩效指标(KPI)用例创建Real-Time CDP报表。 这些见解随后可用作功能板的自定义构件。
 
 >[!AVAILABILITY]
 >

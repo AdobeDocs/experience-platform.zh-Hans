@@ -3,7 +3,7 @@ description: 使用[!UICONTROL Profile Enrichment]仪表板了解用户档案扩
 solution: Experience Platform
 title: 监控配置文件扩充作业
 type: Tutorial
-badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions" newtab=true
 exl-id: 096a2212-ed7f-4419-8ead-fa1ca01c2804
 source-git-commit: 0e993f7d0791f5f6f9dce63eb3848609d892e788
 workflow-type: tm+mt

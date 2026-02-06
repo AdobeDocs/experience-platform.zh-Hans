@@ -3,7 +3,7 @@ keywords: RTCDP；CDP；Real-Time Customer Data Platform；实时客户数据平
 title: Real-Time Customer Data Platform B2B edition的示例用例
 description: 此样板场景提供一个示例，其中配置您实施的 Adobe Real-Time Customer Data Platform B2B 版本。
 feature: Get Started, Use Cases, B2B
-badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions" newtab=true
 exl-id: 15505980-ac33-44b2-8989-c08cbabd212b
 source-git-commit: 5998adf98aa7250864983d7e4e629921633e1a1c
 workflow-type: tm+mt

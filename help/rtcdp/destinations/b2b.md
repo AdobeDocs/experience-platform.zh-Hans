@@ -2,7 +2,7 @@
 title: Real-Time Customer Data Platform B2B edition中的目标
 description: 目标在Adobe Real-Time Customer Data Platform B2B edition中的角色概述。
 feature: Destinations
-badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions" newtab=true
 exl-id: 81b502dd-d1b2-409e-972c-652c0a01526c
 source-git-commit: 5998adf98aa7250864983d7e4e629921633e1a1c
 workflow-type: tm+mt
@@ -27,4 +27,4 @@ Adobe Real-Time Customer Data Platform B2B edition允许您通过Marketo Engage�
 
 - 有关Real-Time Customer Data Platform B2B edition可用的任何目标的信息，请浏览[目标目录](../../destinations/catalog/overview.md)。
 - 有关可导出到Marketo Engage的标识的信息，请阅读[Marketo Engage目标文档](../../destinations/catalog/adobe/marketo-engage.md)。
-- 有关如何在Experience Platform UI中连接到Marketo Engage目标并导出数据的信息，请阅读[“将Adobe Experience Platform区段推送到Marketo静态列表”](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-platform-segment-to-a-marketo-static-list.html)。
+- 有关如何在Experience Platform UI中连接到Marketo Engage目标并导出数据的信息，请阅读[“将Adobe Experience Platform区段推送到Marketo静态列表”](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-platform-segment-to-a-marketo-static-list.html?lang=zh-Hans)。

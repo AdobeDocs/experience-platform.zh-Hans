@@ -2,7 +2,7 @@
 title: Real-Time Customer Data Platform B2B edition中的访问控制
 description: 访问控制在Adobe Real-Time Customer Data Platform B2B edition中的角色概述。
 feature: Access Control, Sandboxes
-badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions" newtab=true
 source-git-commit: 5998adf98aa7250864983d7e4e629921633e1a1c
 workflow-type: tm+mt
 source-wordcount: '146'

@@ -2,7 +2,7 @@
 title: Real-Time Customer Data Platform B2B edition中的架构
 description: Experience Data Model (XDM)架构在Adobe Real-Time Customer Data Platform B2B edition中的角色概述。
 feature: Get Started, Data Management, Schemas
-badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions" newtab=true
 exl-id: 3b18d377-108f-443f-86ae-dc7537cf9013
 source-git-commit: 5998adf98aa7250864983d7e4e629921633e1a1c
 workflow-type: tm+mt
@@ -17,7 +17,7 @@ Adobe Real-Time Customer Data Platform B2B edition提供了多个标准的[体�
 
 >[!IMPORTANT]
 >
->B2B架构可在Experience Platform应用程序中使用(例如，在[Customer Journey Analytics B2B edition](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-overview/cja-b2b/cja-b2b-edition)中)。 <br/>但是，您必须拥有Real-Time CDP B2B edition的访问权限，才能使B2B架构（中的配置文件）参与[实时客户配置文件](../../profile/home.md)。
+>B2B架构可在Experience Platform应用程序中使用(例如，在[Customer Journey Analytics B2B edition](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/cja-overview/cja-b2b/cja-b2b-edition)中)。 <br/>但是，您必须拥有Real-Time CDP B2B edition的访问权限，才能使B2B架构（中的配置文件）参与[实时客户配置文件](../../profile/home.md)。
 
 Real-Time CDP B2B edition中提供了以下标准类：
 
