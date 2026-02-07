@@ -1,7 +1,7 @@
 ---
 title: 在Real-Time Customer Data Platform B2B edition中定义两个架构之间的关系
 description: 了解如何在Adobe Real-Time Customer Data Platform B2B edition中定义两个架构之间的多对一关系。
-badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions" newtab=true
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
 source-git-commit: cb036262ff81d245fe436fc337b3911170c61425
 workflow-type: tm+mt
