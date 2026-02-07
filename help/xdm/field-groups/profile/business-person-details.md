@@ -1,17 +1,22 @@
 ---
 title: XDM业务人员详细信息架构字段组
 description: 了解XDM业务人员详细信息架构字段组。
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 exl-id: e9da5c1c-5a30-4cbc-beb2-cc5efe57cab0
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 3fafccef44823b80938db96a7751edbff5a2fd02
 workflow-type: tm+mt
-source-wordcount: '567'
-ht-degree: 5%
+source-wordcount: '572'
+ht-degree: 4%
 
 ---
 
-# [!UICONTROL XDM业务人员详细信息]架构字段组
+# [!UICONTROL XDM Business Person Details]架构字段组
 
-[!UICONTROL XDM业务人员详细信息]是[[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md)的标准架构字段组，用于捕获企业对企业(B2B)上下文中的个人信息。
+>[!AVAILABILITY]
+>
+>此字段组仅适用于有权访问Real-Time CDP B2B edition的组织。
+
+[!UICONTROL XDM Business Person Details]是[[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md)的标准架构字段组，用于捕获企业对企业(B2B)上下文中的个人信息。
 
 ![](../../images/field-groups/business-person-details.png)
 
@@ -30,7 +35,7 @@ ht-degree: 5%
 | `b2b.isMarketingSuspended` | 布尔值 | 指示人员营销是否暂停。 |
 | `b2b.marketingSuspendedCause` | 字符串 | 如果暂停了人员的营销，则此属性提供了原因。 |
 | `b2b.personGroupID` | 字符串 | 人员的组标识符。 |
-| `b2b.personScore` | 两次 | CRM系统为人员生成的分数。 |
+| `b2b.personScore` | 双精度 | CRM系统为人员生成的分数。 |
 | `b2b.personSource` | 字符串 | 此人信息的来源。 |
 | `b2b.personStatus` | 字符串 | 人员的当前营销或销售状态。 |
 | `b2b.personType` | 字符串 | B2B人员的类型。 |

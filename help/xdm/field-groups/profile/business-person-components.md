@@ -1,17 +1,22 @@
 ---
 title: XDM业务人员组件架构字段组
 description: 了解XDM业务人员组件架构字段组。
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 exl-id: 965b89f4-59f5-43f4-8778-3549e15b44d4
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 3fafccef44823b80938db96a7751edbff5a2fd02
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '516'
 ht-degree: 2%
 
 ---
 
-# [!UICONTROL XDM业务人员组件]架构字段组
+# [!UICONTROL XDM Business Person Components]架构字段组
 
-[!UICONTROL XDM业务人员组件]是[[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md)的标准架构字段组，可捕获人员的多个源记录以及人员分段所需的其他属性。
+>[!AVAILABILITY]
+>
+>此字段组仅适用于有权访问Real-Time CDP B2B edition的组织。
+
+[!UICONTROL XDM Business Person Components]是[[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md)的标准架构字段组，可捕获人员的多个源记录以及人员分段所需的其他属性。
 
 在Real-Time CDP的B2B edition中通过[实时客户个人资料](../../../profile/home.md)为某个人创建个人资料时，用于创建该个人资料的信息可能来自许多源记录。 例如，如果某人供职于两家不同的公司，则许多CRM系统将创建该人的有意重复副本，以便其中一个副本与公司A关联，而另一个副本与公司B关联。将数据引入Adobe Experience Platform时，此字段组用于将这些不同的源记录合并到单个表示形式中。
 
@@ -34,7 +39,7 @@ ht-degree: 2%
 | `sourceConvertedContactKey` | [[!UICONTROL B2B Source]](../../data-types/b2b-source.md) | 如果此商机已转化，则为相关联系人的复合标识符。 |
 | `sourceExternalKey` | [[!UICONTROL B2B Source]](../../data-types/b2b-source.md) | 人员数据源自的源系统的复合标识符。 |
 | `sourcePersonKey` | [[!UICONTROL B2B Source]](../../data-types/b2b-source.md) | 人员的复合标识符。 |
-| `workEmail` | [[!UICONTROL 电子邮件地址]](../../data-types/b2b-source.md) | 人员的工作电子邮件ID。 |
+| `workEmail` | [[!UICONTROL Email address]](../../data-types/b2b-source.md) | 人员的工作电子邮件ID。 |
 | `personGroupID` | 字符串 | 人员的组标识符。 |
 | `personScore` | 字符串 | CRM系统为人员生成的分数。 |
 | `personSource` | 字符串 | 人员数据源自的源系统的基于字符串的唯一标识符。 |
