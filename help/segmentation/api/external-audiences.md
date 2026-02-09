@@ -2,9 +2,9 @@
 title: 外部受众API端点
 description: 了解如何使用外部受众API从Adobe Experience Platform创建、更新、激活和删除外部受众。
 exl-id: eaa83933-d301-48cb-8a4d-dfeba059bae1
-source-git-commit: 0a37ef2f5fc08eb515c7c5056936fd904ea6d360
+source-git-commit: ff58324446f28cbdca369ecbb58d8261614ae684
 workflow-type: tm+mt
-source-wordcount: '2253'
+source-wordcount: '2340'
 ht-degree: 4%
 
 ---
@@ -12,6 +12,16 @@ ht-degree: 4%
 # 外部受众端点
 
 外部受众允许您将外部源中的配置文件数据上传到Adobe Experience Platform。 您可以使用分段服务API中的`/external-audience`端点将外部受众摄取到Experience Platform、查看详细信息和更新外部受众，以及删除外部受众。
+
+## 护栏
+
+从3月版本开始，在使用外部受众端点时，将强制实施以下防护：
+
+| 护栏 | 限制 | 限制类型 | 描述 |
+| --------- | ----- | ---------- | ----------- |
+| 每天运行的受众引入次数 | 100 | 系统强制的护栏 | 每天允许的最大受众摄取运行次数。 此限制为每个&#x200B;**沙盒**&#x200B;级别。 |
+| 每个受众的摄取数 | 10 | 系统强制的护栏 | 可对指定受众执行的引入次数。 |
+| 外部受众规模 | 10 GB | 性能护栏 | 建议外部受众的总大小为10 GB。 |
 
 ## 快速入门
 
