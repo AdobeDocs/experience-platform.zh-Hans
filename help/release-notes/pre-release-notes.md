@@ -1,11 +1,11 @@
 ---
 title: Experience Platform预发行说明
 description: Adobe Experience Platform最新发行说明预览。
-exl-id: a1b52e9f-1c4d-4a2b-9d3e-5f6a7b8c9d0e
-source-git-commit: 3a45b3aadb08af98d6d379ecfc858474ea1e55db
+exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
+source-git-commit: 695b8486211c2fee03bc29243d65d5bbf6d561db
 workflow-type: tm+mt
-source-wordcount: '1052'
-ht-degree: 32%
+source-wordcount: '1050'
+ht-degree: 33%
 
 ---
 
@@ -79,7 +79,7 @@ Adobe Experience Platform数据收集提供了一系列技术，可让您收集�
 
 {style="table-layout:auto"}
 
-有关详细信息，请阅读[数据收集文档](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/collection/home)。
+有关详细信息，请阅读[数据收集文档](https://experienceleague.adobe.com/en/docs/experience-platform/collection/home)。
 
 ## 目标 {#destinations}
 
@@ -107,7 +107,7 @@ XDM 是一种开源规范，可为导入 Experience Platform 的数据提供常�
 | ------- | ----------- |
 | 架构库存组织和搜索 | 架构浏览页面现在包括增强的搜索和筛选、内联操作以及用户定义的标记和文件夹支持。 这些更新可让您更轻松地跨沙盒查找、组织和管理架构，同时减少手动导航和维护工作量。 |
 
-有关详细信息，请阅读[[!DNL Schemas]概述] (../xdm/home.md)。
+有关详细信息，请参阅 [[!DNL XDM]  概述](../xdm/home.md)。
 
 ## 查询服务 {#query-service}
 
