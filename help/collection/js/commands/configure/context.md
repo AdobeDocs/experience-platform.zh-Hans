@@ -97,7 +97,7 @@ ht-degree: 5%
 
 ### 一次性Analytics反向链接 {#one-time-analytics-referrer}
 
-`"oneTimeAnalyticsReferrer"`关键字仅在页面的第一个非决策`sendEvent`调用中将反向链接值发送到Adobe Analytics。 此上下文关键字的主要用例是防止Adobe Analytics中的[反向链接](https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/referrer)维度被主要用于Analytics和Target集成的点击夸大。
+`"oneTimeAnalyticsReferrer"`关键字仅在页面的第一个非决策`sendEvent`调用中将反向链接值发送到Adobe Analytics。 此上下文关键字的主要用例是防止Adobe Analytics中的[反向链接](https://experienceleague.adobe.com/zh-hans/docs/analytics/components/dimensions/referrer)维度被主要用于Analytics和Target集成的点击夸大。
 
 如果给定`sendEvent`命令使用决策事件类型(`decisioning.propositionFetch`、`decisioning.propositionDisplay`、`decisioning.propositionInteract`)，则在计算页面上的前`sendEvent`个时，将忽略该类型。 如果反向链接值在页面上发生更改并触发另一个`sendEvent`，则有效负载中将包含新的反向链接值。 此条件允许将功能用于单页应用程序。
 
