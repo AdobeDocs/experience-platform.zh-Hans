@@ -2,10 +2,10 @@
 title: Experience Platform预发行说明
 description: Adobe Experience Platform最新发行说明预览。
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: 695b8486211c2fee03bc29243d65d5bbf6d561db
+source-git-commit: b8c257ad9ab4e7ee085687f6c03cf55d7fb83ef0
 workflow-type: tm+mt
-source-wordcount: '1050'
-ht-degree: 33%
+source-wordcount: '1022'
+ht-degree: 34%
 
 ---
 
@@ -79,7 +79,7 @@ Adobe Experience Platform数据收集提供了一系列技术，可让您收集�
 
 {style="table-layout:auto"}
 
-有关详细信息，请阅读[数据收集文档](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/collection/home)。
+有关详细信息，请阅读[数据收集文档](https://experienceleague.adobe.com/en/docs/experience-platform/collection/home)。
 
 ## 目标 {#destinations}
 
@@ -89,7 +89,6 @@ Adobe Experience Platform数据收集提供了一系列技术，可让您收集�
 
 | 目标 | 描述 |
 | --- | --- |
-| [!DNL ZoomInfo]帐户目标 | B2B CDP用户现在可以通过新的[!DNL ZoomInfo]帐户目标连接器将帐户级别的数据激活到[!DNL ZoomInfo]。 设置连接器以开始将帐户受众发送到[!DNL ZoomInfo]。 |
 | [!DNL Snowflake]批次一般可用 | [!DNL Snowflake]批次目标已移至一般可用性。 现在，您可以在导出数据中连同现有列（例如时间戳、映射属性和受众成员资格）一起查看合并策略ID列。 |
 | 对[Amazon S3](../destinations/catalog/cloud-storage/amazon-s3.md#destination-details)目标的AES256加密支持 | 您现在可以为Amazon S3导出配置AES256加密。 从两个选项中进行选择： <ul><li>**[!UICONTROL Default]**： Experience Platform使用存储段上设置的默认加密算法对静态数据进行加密。</li><li>**[!UICONTROL SSE-S3/AES256]**：Experience Platform将`s3:x-amz-server-side-encryption": "AES256`标头添加到导出中，并在数据登录到S3时使用AES256算法加密静态数据。 **此选项优先于您在S3存储桶上配置的任何默认加密算法**。</li></ul> |
 
