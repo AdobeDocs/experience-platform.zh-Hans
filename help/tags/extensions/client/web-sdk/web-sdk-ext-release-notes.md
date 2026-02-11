@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 0b3f4ec51cac182b637c79b9fcb883e5f8f78d02
+source-git-commit: 9693f53cc1a31622d63fb93c0d51e1f5896c6524
 workflow-type: tm+mt
-source-wordcount: '2949'
-ht-degree: 22%
+source-wordcount: '3118'
+ht-degree: 21%
 
 ---
 
@@ -13,6 +13,29 @@ ht-degree: 22%
 # Web SDK扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[Experience Platform Web SDK发行说明](/help/collection/js/release-notes.md)。
+
+## 2.34.0版 — 2026年2月9日
+
+**新增功能**
+
+- 包含[版本2.31.0](/help/collection/js/release-notes.md#2-31-0)的Adobe Experience Platform Web SDK。
+- 为标记扩展添加了[基础代码支持](/help/collection/js/install/base-code.md)。
+- 已将&#x200B;**[!UICONTROL Send referrer to Adobe Analytics only once per page view]** [上下文](configure/data-collection.md#context-settings)添加到扩展设置。
+- 添加了Brand Concierge组件。
+- 添加了一个选项，以允许将自托管合金实例与标记一起使用。
+
+**修复和改进**
+
+- 更新了[默认边缘域](configure/general.md#edge-domain)以包含公司ID作为子域。
+- 向&#x200B;**[!UICONTROL No overrides]**&#x200B;数据流配置覆盖[添加了](configure/configuration-overrides.md)选项。
+- 添加了刷新按钮以重新填充某些输入字段上的项目。
+- 现在，每次创建实例时，都会自动生成唯一的实例名称。
+- 修复了值是`combinedValidator`或`undefined`时`null`引发错误的错误。
+- 修复了删除实例时显示的错误。
+- 修复了获取架构时出错，导致XDM对象数据元素不可用的问题。
+- 修复了[发送媒体事件](actions/send-media-event.md)操作中的保存设置。
+- 修复了配置视图中的流媒体字段未正确恢复的问题。
+- 修复了XDM对象编辑器中嵌套值的错误自动填充警报。
 
 ## 版本2.33.0 - 2025年9月24日
 

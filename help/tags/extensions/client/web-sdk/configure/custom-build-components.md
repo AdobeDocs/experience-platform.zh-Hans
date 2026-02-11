@@ -1,9 +1,10 @@
 ---
 title: 自定义生成组件
 description: 创建自定义Web SDK内部版本，该内部版本会禁用相关功能以减小内部版本大小。
-source-git-commit: d6aea91d6989775ff5b6038b216ed2518f4a7d98
+exl-id: 853e0a6c-0953-4e08-9a7d-334aab022583
+source-git-commit: 0a45b688243b17766143b950994f0837dc0d0b48
 workflow-type: tm+mt
-source-wordcount: '257'
+source-wordcount: '262'
 ht-degree: 0%
 
 ---
@@ -31,6 +32,7 @@ Adobe提供禁用以下Web SDK构建组件的功能：
 | **[!UICONTROL Activity collector]** | 允许自动链接收集和Activity Map跟踪。 | |
 | **[!UICONTROL Advertising]** | 启用Adobe Advertising与Customer Journey Analytics的集成。 | |
 | **[!UICONTROL Audiences]** | 支持与Adobe Audience Manager的集成，例如ID同步。 | |
+| **[!UICONTROL Brand concierge]** | 支持与Brand Concierge集成。 |
 | **[!UICONTROL Consent]** | 允许使用同意功能。 | [[!UICONTROL Set consent]](../actions/set-consent.md)操作 |
 | **[!UICONTROL Event merge]** | 已弃用。 | [[!UICONTROL Event merge ID]](../data-element-types.md)数据元素（已弃用）<br>[[!UICONTROL Reset event merge ID]](../actions/reset-event-merge-id.md)操作（已弃用） |
 | **[!UICONTROL Media Analytics bridge]** | 支持与旧版Media Analytics的集成。 | [[!UICONTROL Get media analytics tracker]](../actions/get-media-analytics-tracker.md)操作 |

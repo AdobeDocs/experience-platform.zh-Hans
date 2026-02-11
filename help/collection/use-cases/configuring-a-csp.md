@@ -5,9 +5,9 @@ description: 了解如何为Experience Platform Web SDK配置CSP
 seo-description: Learn how to configure a CSP for the Experience Platform Web SDK
 keywords: 配置；配置；SDK；edge；Web SDK；配置；上下文；Web；设备；环境；Web SDK设置；内容安全策略；
 exl-id: 661d0001-9e10-479e-84c1-80e58f0e9c0b
-source-git-commit: 217282135bcd750740f4d3f8c6e17a0b8f9578bd
+source-git-commit: 010192e91185c11d5454d4153913c06b90fe2122
 workflow-type: tm+mt
-source-wordcount: '339'
+source-wordcount: '341'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ connect-src 'self' EDGE-DOMAIN
 default-src 'nonce-SERVER-GENERATED-NONCE'
 ```
 
-此外，需要将CSP nonce作为属性添加到[!DNL Experience Platform Web SDK] [基础代码](../js/install/library.md)脚本标记中。 然后，[!DNL Experience Platform Web SDK]将在向页面添加内联脚本或样式标记时使用该nonce：
+此外，需要将CSP nonce作为属性添加到Web SDK [基础代码](../js/install/base-code.md)中。 然后，Web SDK在将内联脚本或样式标记添加到页面时，会使用该nonce：
 
 ```html
 <script nonce="SERVER-GENERATED-NONCE">

@@ -6,10 +6,10 @@ breadcrumb-title: 数据收集
 user-guide-description: 了解如何将数据发送到Adobe Experience Platform。
 feature: Data Collection
 role: Developer
-source-git-commit: 7f932e9868e84cf8abdaa6cf0b2da5bac837234d
+source-git-commit: 0a45b688243b17766143b950994f0837dc0d0b48
 workflow-type: tm+mt
-source-wordcount: '139'
-ht-degree: 30%
+source-wordcount: '142'
+ht-degree: 32%
 
 ---
 
@@ -25,6 +25,7 @@ ht-degree: 30%
    + [发行说明](js/release-notes.md)
    + 安装 {#install}
       + [安装概述](js/install/overview.md)
+      + [基础代码](js/install/base-code.md)
       + [库](js/install/library.md)
       + [npm](js/install/npm.md)
       + [自定义内部版本](js/install/create-custom-build.md)
@@ -38,6 +39,7 @@ ht-degree: 30%
          + [clickCollection](js/commands/configure/clickcollection.md)
          + [clickCollectionEnabled](js/commands/configure/clickcollectionenabled.md)
          + [上下文](js/commands/configure/context.md)
+         + [对话](js/commands/configure/conversation.md)
          + [datastreamId](js/commands/configure/datastreamid.md)
          + [debugEnabled](js/commands/configure/debugenabled.md)
          + [defaultconsent](js/commands/configure/defaultconsent.md)
@@ -88,7 +90,7 @@ ht-degree: 30%
    + [监视器(_M)](tags/monitors.md)
    + [setDebug](tags/setdebug.md)
    + [setVar](tags/setvar.md)
-   + [track](tags/track.md)
+   + [跟踪](tags/track.md)
 + 用例 {#use-cases}
    + [概述](use-cases/overview.md)
    + [客户端提示](use-cases/client-hints.md)

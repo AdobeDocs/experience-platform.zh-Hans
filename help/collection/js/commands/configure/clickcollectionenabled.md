@@ -2,9 +2,9 @@
 title: clickCollectionEnabled
 description: 了解如何配置Web SDK以确定是否自动收集链接点击数据。
 exl-id: e91b5bc6-8880-4884-87f9-60ec8787027e
-source-git-commit: 364b9adc406f732ea5ba450730397c4ce1bf03cf
+source-git-commit: 4d251ff7323e83ac5c47b5817f81e8fde64cb7d9
 workflow-type: tm+mt
-source-wordcount: '486'
+source-wordcount: '514'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,21 @@ ht-degree: 0%
 1. 如果链接目标域与当前`window.location.hostname`不同，`xdm.web.webInteraction.type`将设置为`"exit"`（如果已启用`clickCollection.exitLinkEnabled`）。
 1. 如果该链接不符合`"download"`或`"exit"`的条件，则`xdm.web.webInteraction.type`将设置为`"other"`。
 
-在所有情况下，`xdm.web.webInteraction.name`都设置为链接文本标签，`xdm.web.webInteraction.URL`设置为链接目标URL。 如果您还想将链接名称设置为URL，则可以使用`filterClickDetails`对象中的`clickCollection`回调覆盖此XDM字段。
+在所有情况下，`xdm.web.webInteraction.name`都会按以下顺序检查所单击的元素及其子项中第一个非空值：
+
+1. `innerText` （回退到`textContent`）
+1. 从支持的后代文本节点连接`nodeValue`
+1. `alt`属性
+1. `title`属性
+1. `<input value="...">`属性
+1. `<img src="...">`属性
+1. `aria-label`属性
+1. `name`属性
+1. 空字符串
+
+`xdm.web.webInteraction.URL`字段设置为链接目标URL。 如果您还想将链接名称设置为URL，则可以使用`filterClickDetails`对象中的`clickCollection`回调覆盖此XDM字段。
+
+## 实施
 
 运行`clickCollectionEnabled`命令时设置`configure`布尔值。 如果在配置Web SDK时省略此属性，则默认设置为`true`。 如果您希望手动设置`false`和`xdm.web.webInteraction.type`，请将此值设置为`xdm.web.webInteraction.value`。
 

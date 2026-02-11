@@ -1,9 +1,10 @@
 ---
 title: SDK实例配置设置
 description: 配置Web SDK实例的常规设置。
-source-git-commit: 09799847c61d82ed5b7cd372d92aa436697d54f3
+exl-id: cc22b8b3-88c6-4030-91b4-60e14a3b0f42
+source-git-commit: 50881ef9498196f2de5519f050800334019a2586
 workflow-type: tm+mt
-source-wordcount: '250'
+source-wordcount: '261'
 ht-degree: 2%
 
 ---
@@ -32,4 +33,6 @@ Adobe Experience Platform Web SDK标记扩展支持页面上的多个实例。 �
 
 ## [!UICONTROL Edge domain]
 
-扩展发送和接收数据的域。 虽然默认值`edge.adobedc.net`有效，但Adobe建议在大多数情况下使用第一方域。 有关如何设置适用于数据收集的第一方域的说明，请参阅[Adobe管理的证书计划](https://experienceleague.adobe.com/zh-hans/docs/core-services/interface/data-collection/adobe-managed-cert)。 另请参阅JavaScript库文档中的[`edgeDomain`](/help/collection/js/commands/configure/edgedomain.md)，以获取设置此值的指南。
+扩展发送和接收数据的域。 默认情况下，该字段包含`<COMPANYID>.data.adobedc.net`。 较旧的实施可能包含默认值`edge.adobedc.net`，该值也是有效的。
+
+Adobe建议在大多数情况下使用第一方域。 有关如何设置适用于数据收集的第一方域的说明，请参阅[Adobe管理的证书计划](https://experienceleague.adobe.com/en/docs/core-services/interface/data-collection/adobe-managed-cert)。 另请参阅JavaScript库文档中的[`edgeDomain`](/help/collection/js/commands/configure/edgedomain.md)，以获取设置此值的指南。

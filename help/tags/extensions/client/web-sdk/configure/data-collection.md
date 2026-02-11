@@ -1,9 +1,10 @@
 ---
 title: 数据收集配置设置
 description: 在Web SDK标记扩展中配置数据收集设置。
-source-git-commit: 46c8748e9ab972705b8283c174c285e571acb2ed
+exl-id: 88c34545-9a58-4d49-a939-36edaa9a46be
+source-git-commit: 9693f53cc1a31622d63fb93c0d51e1f5896c6524
 workflow-type: tm+mt
-source-wordcount: '692'
+source-wordcount: '702'
 ht-degree: 0%
 
 ---
@@ -119,3 +120,4 @@ if (myBotDetector.isABot()) {
 * **[!UICONTROL Environment]**：收集有关用户浏览器的信息。
 * **[!UICONTROL Place context]**：收集有关用户位置的信息。
 * **[!UICONTROL High entropy user-agent hints]**：收集有关用户设备的更多详细信息。
+* **[!UICONTROL Send referrer to Adobe Analytics only once per page view]**：阻止将重复的反向链接数据发送到Adobe Analytics。
