@@ -79,7 +79,7 @@ Adobe Experience Platform数据收集提供了一系列技术，可让您收集�
 
 {style="table-layout:auto"}
 
-有关详细信息，请阅读[数据收集文档](https://experienceleague.adobe.com/en/docs/experience-platform/collection/home)。
+有关详细信息，请阅读[数据收集文档](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/collection/home)。
 
 ## 目标 {#destinations}
 
