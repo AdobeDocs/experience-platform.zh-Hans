@@ -2,12 +2,12 @@
 keywords: IP地址、IP范围、允许列表目标、允许列表 列入允许列表、流目标
 title: 列入允许列表流目的地的IP地址
 type: Documentation
-description: 此页提供了可添加到允许列表的IP范围，以便安全地将数据从Experience Platform导出到HTTP REST API端点、Amazon Kinesis或Azure事件中心实例。
+description: 此页面提供了可添加到允许列表的IP范围，以便安全地将数据从Experience Platform导出到HTTP REST API端点或Amazon Kinesis实例。
 exl-id: f41303bd-c886-4c67-9e39-21efc3f5b768
-source-git-commit: 851565b4c40452d102eff134533c9d44ea19ca76
+source-git-commit: 6d59d0555dda124acfd16483e11c2899ff5c846e
 workflow-type: tm+mt
-source-wordcount: '407'
-ht-degree: 0%
+source-wordcount: '425'
+ht-degree: 2%
 
 ---
 
@@ -22,9 +22,14 @@ ht-degree: 0%
 
 本页中记录的IP范围适用于以下目标：
 
-* [高级企业目标](../../destination-types.md#advanced-enterprise-destinations)： [HTTP API目标](./http-destination.md)，[[!DNL Amazon Kinesis]](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)，[[!DNL Azure Event Hubs]](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)
+* [高级企业目标](../../destination-types.md#advanced-enterprise-destinations)：[HTTP API目标](./http-destination.md)和[[!DNL Amazon Kinesis]](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)
 * [流式受众导出目标](../../destination-types.md#streaming-destinations)，如[Pega CDH实时受众](/help/destinations/catalog/personalization/pega-v2.md)，与[Salesforce Marketing Cloud](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-exact-target.md)和[Oracle Eloqua](/help/destinations/catalog/email-marketing/oracle-eloqua-api.md)的基于API的集成
-* 通过[Destination SDK](../../destination-sdk/getting-started.md)构建的公共或专用目标
+* 通过 [Destination SDK](../../destination-sdk/getting-started.md) 构建的公共或私人目标
+
+>[!IMPORTANT]
+>
+>此页面上记录的IP范围&#x200B;*不支持*&#x200B;用于[!DNL Azure Event Hubs]目标以及托管在Microsoft Azure上的基于流API的目标。
+
 
 从Experience Platform到这些目标的出站流量始终通过此页列出的IP地址。
 
