@@ -4,9 +4,9 @@ description: 了解如何使用用户界面将Databricks连接到Experience Plat
 badgeUltimate: label="Ultimate" type="Positive"
 badgeBeta: label="Beta 版" type="Informative"
 exl-id: 877e22c0-cb77-45bb-88c9-54fdde2d6905
-source-git-commit: 96e395e3b3d977d7eb04c400f6fd290977bf1101
+source-git-commit: 6a30e1983a6dcf8e1340281a9385eb8e73b927f6
 workflow-type: tm+mt
-source-wordcount: '481'
+source-wordcount: '461'
 ht-degree: 4%
 
 ---
@@ -43,34 +43,35 @@ ht-degree: 4%
 
 ## 导航源目录
 
-在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问&#x200B;*[!UICONTROL 源]*&#x200B;工作区。 选择类别或使用搜索栏查找您的源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL Sources]**&#x200B;以访问&#x200B;*[!UICONTROL Sources]*&#x200B;工作区。 选择类别或使用搜索栏查找您的源。
 
-若要连接到[!DNL Databricks]，请转到&#x200B;*[!UICONTROL 数据库]*&#x200B;类别，选择&#x200B;**[!UICONTROL Azure数据库]**&#x200B;源卡，然后选择&#x200B;**[!UICONTROL 设置]**。
+要连接到[!DNL Databricks]，请转到&#x200B;*[!UICONTROL Databases]*&#x200B;类别，选择&#x200B;**[!UICONTROL Azure Databricks]**&#x200B;源卡，然后选择&#x200B;**[!UICONTROL Set up]**。
 
 >[!TIP]
 >
->当给定的源尚未具有经过身份验证的帐户时，源目录中的源会显示&#x200B;**[!UICONTROL 设置]**&#x200B;选项。 创建经过身份验证的帐户后，此选项将更改为&#x200B;**[!UICONTROL 添加数据]**。
+>当给定的源尚未拥有经过身份验证的帐户时，源目录中的源会显示&#x200B;**[!UICONTROL Set up]**&#x200B;选项。 创建经过身份验证的帐户后，此选项将更改为&#x200B;**[!UICONTROL Add data]**。
 
 ![已选择Azure Databricks源卡的源目录。](../../../../images/tutorials/create/databricks/catalog.png)
 
 ### 使用现有帐户
 
-若要使用现有帐户，请选择&#x200B;**[!UICONTROL 现有帐户]**，然后选择要使用的[!DNL Azure Databricks]帐户。
+要使用现有帐户，请选择&#x200B;**[!UICONTROL Existing account]**，然后选择要使用的[!DNL Azure Databricks]帐户。
 
 ![源工作流中已选择“现有帐户”的现有帐户接口。](../../../../images/tutorials/create/databricks/existing.png)
 
 ### 创建新帐户
 
-要创建新帐户，请选择&#x200B;**[!UICONTROL 新帐户]**，并提供帐户名称并选择性地为您的帐户添加描述。 接下来，提供以下身份验证凭据的值：
+要创建新帐户，请选择&#x200B;**[!UICONTROL New account]**&#x200B;并提供名称，还可以选择为您的帐户添加描述。 接下来，提供以下身份验证凭据的值：
 
 * 域
 * 群集ID
 * 访问令牌
 * 数据库
+* Catalog
 
 ![源工作流中的新帐户接口，提供了帐户名称和可选描述。](../../../../images/tutorials/create/databricks/new.png)
 
-此外，您必须将[!UICONTROL 暂存SAS URI]凭据复制并粘贴到[!DNL Azure Databricks]环境。 完成后，选择&#x200B;**[!UICONTROL 连接到源]**，等待一段时间以建立连接。
+此外，您必须将[!UICONTROL Staging SAS URI]凭据复制并粘贴到[!DNL Azure Databricks]环境。 完成后，选择&#x200B;**[!UICONTROL Connect to source]**，等待一段时间以建立连接。
 
 ![SAS URI临时凭据。](../../../../images/tutorials/create/databricks/sas-uri.png)
 

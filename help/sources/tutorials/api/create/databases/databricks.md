@@ -4,9 +4,9 @@ description: 了解如何使用API将Databricks连接到Experience Platform。
 badgeUltimate: label="Ultimate" type="Positive"
 badgeBeta: label="Beta 版" type="Informative"
 exl-id: c3974bab-8e67-49a1-b1a5-d453cf7bfd1d
-source-git-commit: 96e395e3b3d977d7eb04c400f6fd290977bf1101
+source-git-commit: 6a30e1983a6dcf8e1340281a9385eb8e73b927f6
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '553'
 ht-degree: 3%
 
 ---
@@ -46,6 +46,7 @@ ht-degree: 3%
 | `clusterId` | [!DNL Databricks]中集群的ID。 此群集必须已经是现有的群集，并且应该是一个交互式群集。 |
 | `accessToken` | 用于验证您的[!DNL Databricks]帐户的访问令牌。 您可以使用[!DNL Databricks]工作区生成访问令牌。 |
 | `database` | 增量湖中数据库的名称。 |
+| `catalog` | 德尔塔湖中目录的名称。 您无需为默认目录指定值。 |
 | `connectionSpec.Id` | 连接规范ID返回源的连接器属性，包括与创建基础连接和源连接相关的身份验证规范。 [!DNL Databricks]的连接规范ID为`e9d7ec6b-0873-4e57-ad21-b3a7c65e310b`。 |
 
 有关详细信息，请参阅 [[!DNL Databricks]  概述](../../../../connectors/databases/databricks.md)。
