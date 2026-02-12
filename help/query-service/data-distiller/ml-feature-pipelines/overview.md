@@ -2,9 +2,9 @@
 title: AI/ML 功能管道
 description: 了解如何使用Data Distiller通过源自Adobe Experience Platform数据的功能丰富您的机器学习管道。 将原始数据转换为功能并投放功能数据，以训练或评分支持您的营销用例的模型。
 exl-id: 3b452181-e254-4155-8bf5-0990533f202d
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: eceafa1852fc7c17660263d6ef7878a3e7bd0841
 workflow-type: tm+mt
-source-wordcount: '473'
+source-wordcount: '465'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ Data Distiller使数据科学家和工程师能够利用Adobe Experience Platfor
 
 >[!IMPORTANT]
 >
->此工作流需要Data Distiller和Adobe Experience Platform Intelligence许可证。 如果您没有这两种产品，请与您的Adobe服务代表联系。
+>此工作流需要Data Distiller许可证。 如果您没有此产品，请联系您的Adobe服务代表。
 
 ![详细介绍AI-ML功能管道的信息图形。](../../images/data-distiller/ai-ml-feature-pipeline.png)
 

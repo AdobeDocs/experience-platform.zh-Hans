@@ -2,10 +2,10 @@
 title: Experience Platform预发行说明
 description: Adobe Experience Platform最新发行说明预览。
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: b8c257ad9ab4e7ee085687f6c03cf55d7fb83ef0
+source-git-commit: eceafa1852fc7c17660263d6ef7878a3e7bd0841
 workflow-type: tm+mt
-source-wordcount: '1022'
-ht-degree: 34%
+source-wordcount: '1086'
+ht-degree: 32%
 
 ---
 
@@ -79,7 +79,7 @@ Adobe Experience Platform数据收集提供了一系列技术，可让您收集�
 
 {style="table-layout:auto"}
 
-有关详细信息，请阅读[数据收集文档](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/collection/home)。
+有关详细信息，请阅读[数据收集文档](https://experienceleague.adobe.com/en/docs/experience-platform/collection/home)。
 
 ## 目标 {#destinations}
 
@@ -105,6 +105,7 @@ XDM 是一种开源规范，可为导入 Experience Platform 的数据提供常�
 | 功能 | 描述 |
 | ------- | ----------- |
 | 架构库存组织和搜索 | 架构浏览页面现在包括增强的搜索和筛选、内联操作以及用户定义的标记和文件夹支持。 这些更新可让您更轻松地跨沙盒查找、组织和管理架构，同时减少手动导航和维护工作量。 |
+| 限制编辑包含数据集的架构 | 现在，在架构存在数据集后，会限制导致重大更改的编辑操作。 关联数据集后，您将无法再重命名或删除字段、更改字段数据类型或格式、修改身份描述符、管理相关字段以删除现有字段或更改分配的类；仍支持添加更改和字段弃用。 |
 
 有关详细信息，请参阅 [[!DNL XDM]  概述](../xdm/home.md)。
 
