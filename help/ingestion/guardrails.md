@@ -3,7 +3,7 @@ keywords: Experience Platform；故障排除；护栏；指南；
 title: 数据引入的护栏
 description: 了解Adobe Experience Platform中的数据摄取防护。
 exl-id: f07751cb-f9d3-49ab-bda6-8e6fec59c337
-source-git-commit: a862e532382472eadf29aee2568c550b1a71211a
+source-git-commit: b5b975308d28ae82ea4d811652681215bc2cfbdb
 workflow-type: tm+mt
 source-wordcount: '827'
 ht-degree: 0%
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/cn/legal/product-descriptions.html)中的实际使用限制。
+>除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/legal/product-descriptions.html)中的实际使用限制。
 
 本文档提供了有关Adobe Experience Platform中数据摄取防护的指南。
 
@@ -28,7 +28,7 @@ ht-degree: 0%
 
 下表概述了使用[批处理摄取API](./batch-ingestion/overview.md)或源时应考虑的护栏：
 
-| 摄取类型 | 指南 | 注释 |
+| 摄取类型 | 准则 | 注释 |
 | --- | --- | --- |
 | 使用批量摄取API进行数据湖摄取 | <ul><li>您可以使用批量摄取API，每小时向Data Lake摄取多达20 GB的数据。</li><li>每批次的最大文件数为1500。</li><li>最大批次大小为100 GB。</li><li>每行的属性或字段的最大数量为10000。</li><li>每个用户每分钟的最大批次数为2000。</li></ul> | |
 | 使用批处理源摄取数据湖 | <ul><li>您可以使用批量摄取源（如[!DNL Azure Blob]、[!DNL Amazon S3]和[!DNL SFTP]）每小时最多可摄取200 GB的数据到数据湖。</li><li>批次大小应介于256 MB和100 GB之间。 这同时适用于未压缩数据和压缩数据。 在数据湖中解压缩压缩数据时，将应用这些限制。</li><li>每批次的最大文件数为1500。</li><li>文件或文件夹的最小大小为1字节。 无法摄取0字节大小的文件或文件夹。</li></ul> | 请阅读[源概述](../sources/home.md)，了解可用于数据摄取的源目录。 |
@@ -47,9 +47,9 @@ ht-degree: 0%
 
 下表概述了使用流源时要考虑的防护：
 
-| 摄取类型 | 指南 | 注释 |
+| 摄取类型 | 准则 | 注释 |
 | --- | --- | --- |
-| 流源 | <ul><li>最大记录大小为1 MB，建议的大小为10 KB。</li><li>在摄取到数据湖时，流媒体源支持每秒钟在4000到5000个请求之间。 除了现有的源连接外，这还适用于新创建的源连接。 **注意**：流式处理数据最多可能需要30分钟才能完全处理到数据湖。</li><li>当将数据摄取到用户档案或流式分段时，流式源支持每秒最多1500个请求。</li></ul> | 流源（如[!DNL Kafka]、[!DNL Azure Event Hubs]和[!DNL Amazon Kinesis]）不使用[!DNL Data Collection Core Service] (DCCS)路由，因此可能有不同的吞吐量限制。 有关可用于数据摄取的源的目录，请参阅[源概述](../sources/home.md)。 |
+| 流源 | <ul><li>最大记录大小为1 MB，建议的大小为10 KB。</li><li>在摄取到数据湖时，流媒体源支持每秒钟在4000到5000个请求之间。 除了现有的源连接外，这还适用于新创建的源连接。 **注意**：流式处理数据最多可能需要60分钟才能完全处理到数据湖。</li><li>当将数据摄取到用户档案或流式分段时，流式源支持每秒最多1500个请求。</li></ul> | 流源（如[!DNL Kafka]、[!DNL Azure Event Hubs]和[!DNL Amazon Kinesis]）不使用[!DNL Data Collection Core Service] (DCCS)路由，因此可能有不同的吞吐量限制。 有关可用于数据摄取的源的目录，请参阅[源概述](../sources/home.md)。 |
 
 {style="table-layout:auto"}
 
@@ -58,7 +58,7 @@ ht-degree: 0%
 请参阅Real-Time CDP产品描述文档中的以下文档，了解有关其他Experience Platform服务护栏、端到端延迟信息和许可信息的更多信息：
 
 * [Real-Time CDP护栏](/help/rtcdp/guardrails/overview.md)
-* [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=zh-Hans#end-to-end-latency-diagrams)。
-* [Real-Time Customer Data Platform (B2C版本 — Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams)。
+* [Real-Time Customer Data Platform (B2C Edition - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)

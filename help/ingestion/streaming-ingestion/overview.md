@@ -2,38 +2,38 @@
 keywords: Experience Platform；主页；热门主题；数据摄取；引入的数据；流；概述；流摄取；延迟；流延迟；
 solution: Experience Platform
 title: 流式摄取概述
-description: Adobe Experience Platform的流式摄取为用户提供了一种实时将数据从客户端和服务器端设备发送到Experience Platform的方法。
+description: 了解Adobe Experience Platform中的流式摄取。
 exl-id: 851f15fd-7ac5-4a9f-934d-6b907057da87
-source-git-commit: a77be4ef97540b929192fa6f367830f4a29e5af7
+source-git-commit: 568208c9b2cb774bbbeed74ae2d456c87e99bca9
 workflow-type: tm+mt
-source-wordcount: '433'
+source-wordcount: '431'
 ht-degree: 2%
 
 ---
 
 # 流摄取概述
 
-Adobe Experience Platform的流式摄取为用户提供了一种方法，可实时将数据从客户端和服务器端设备发送到[!DNL Experience Platform]。
+Adobe Experience Platform的流式摄取为用户提供了一种实时将数据从客户端和服务器端设备发送到Experience Platform的方法。
 
 ## 您可以使用流式摄取做什么？
 
-Adobe Experience Platform允许您通过为每个客户生成[!DNL Real-Time Customer Profile]来推动协调、一致和相关体验。 流式摄取在生成这些配置文件方面发挥着关键作用，它允许您以尽可能少的延迟将[!DNL Profile]数据传送到[!DNL Data Lake]。
+Adobe Experience Platform允许您通过为每个客户生成实时客户配置文件来推动协调、一致和相关体验。 流式摄取通过让您以尽可能少的延迟将配置文件数据传送到数据湖，在构建这些配置文件方面发挥着关键作用。
 
 以下视频旨在帮助您了解流摄取，并概述了上述概念。
 
->[!VIDEO](https://video.tv.adobe.com/v/31669?captions=chi_hans&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/28425?quality=12&learn=on)
 
 ### 流配置文件记录和[!DNL ExperienceEvents]
 
-通过流式摄取，用户可在几秒内流式传输配置文件记录和[!DNL ExperienceEvents]到[!DNL Experience Platform]，以帮助实现实时个性化。 发送到流式引入API的所有数据都会自动保留在[!DNL Data Lake]中。
+通过流式摄取，用户可在几秒钟内将配置文件记录和[!DNL ExperienceEvents]流式传输到Experience Platform，以帮助实现实时个性化。 发送到流式引入API的所有数据都会自动保留在数据湖中。
 
 有关详细信息，请参阅[创建流连接指南](../tutorials/create-streaming-connection.md)。
 
 ### 流到数据集
 
-一旦您确信数据是干净的，就可以为[!DNL Real-Time Customer Profile]和[!DNL Identity Service]启用数据集。
+一旦您确信您的数据是干净的，就可以为Real-time Customer Profile和[!DNL Identity Service]启用数据集。
 
-有关为[!DNL Profile]和[!DNL Identity Service]启用数据集的详细信息，请参阅[配置数据集指南](/help/profile/tutorials/dataset-configuration.md)。
+有关为配置文件和[!DNL Identity Service]启用数据集的详细信息，请参阅[配置数据集指南](/help/profile/tutorials/dataset-configuration.md)。
 
 ## 在Experience Platform上流式摄取的预期滞后时间是多少？
 
