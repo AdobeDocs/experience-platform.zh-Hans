@@ -2,14 +2,19 @@
 title: 数据收集配置设置
 description: 在Web SDK标记扩展中配置数据收集设置。
 exl-id: 88c34545-9a58-4d49-a939-36edaa9a46be
-source-git-commit: 9693f53cc1a31622d63fb93c0d51e1f5896c6524
+source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
-source-wordcount: '702'
-ht-degree: 0%
+source-wordcount: '719'
+ht-degree: 1%
 
 ---
 
-# 数据收集配置设置
+# 数据收集配置设置 {#data-collection}
+
+>[!CONTEXTUALHELP]
+>id="platform_tags_websdk_datacollection"
+>title="数据收集"
+>abstract="确定要收集的数据以及如何在标记扩展中收集这些数据。"
 
 通过此配置部分，可决定如何跨扩展收集数据。
 

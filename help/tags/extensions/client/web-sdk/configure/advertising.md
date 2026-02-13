@@ -1,18 +1,24 @@
 ---
 title: Adobe Advertising配置设置
 description: 启用或禁用需求端平台功能。
-source-git-commit: 526cb473a6288f367db9cb00c0277cce7543cd57
+exl-id: 594fd75d-bb13-4146-9105-1398e24c4c16
+source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
-source-wordcount: '164'
-ht-degree: 0%
+source-wordcount: '209'
+ht-degree: 1%
 
 ---
 
-# Adobe Advertising配置设置
+# Adobe Advertising配置设置 {#advertising}
 
 >[!AVAILABILITY]
 >
 >适用于Web SDK的Adobe Advertising当前处于&#x200B;**测试版**&#x200B;中。 功能和文档可能会发生更改。
+
+>[!CONTEXTUALHELP]
+>id="platform_tags_websdk_advertising"
+>title="Adobe Advertising"
+>abstract="配置Adobe Advertising集成的设置。 请注意，启用点进测量无需广告配置。 Search、Social和Commerce客户端无需执行进一步操作；但是，需求方平台(DSP)用户需要在此部分中配置广告商以测量显示到达转化。"
 
 **[!UICONTROL Adobe Advertising]**&#x200B;部分允许您启用或禁用需求端平台(DSP)功能（如果在实施中使用）。 仅当您的实施使用DSP时，才需要设置此字段。
 

@@ -1,14 +1,20 @@
 ---
 title: 流媒体配置设置
 description: 自定义Web SDK标记扩展收集流媒体数据的方式。
-source-git-commit: 46e5d007b27eaa67c9ee49e35a711424de383d68
+exl-id: f486d729-b7ad-4720-8399-71495cb9c57e
+source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
-source-wordcount: '297'
-ht-degree: 4%
+source-wordcount: '310'
+ht-degree: 3%
 
 ---
 
-# 流媒体配置设置
+# 流媒体配置设置 {#streaming-media}
+
+>[!CONTEXTUALHELP]
+>id="platform_tags_websdk_streamingmedia"
+>title="流媒体"
+>abstract="确定在媒体播放会话期间如何收集流媒体数据。"
 
 媒体收集功能可帮助您收集与媒体会话相关的数据，例如媒体回放、暂停、结束和其他相关事件。 收集之后，您可以将此数据发送到Adobe Experience Platform或Adobe Analytics以生成报表。 此功能为跟踪和了解您网站上的媒体消费行为提供了全面的解决方案。
 

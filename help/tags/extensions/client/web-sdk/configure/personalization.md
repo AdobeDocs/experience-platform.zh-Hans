@@ -1,14 +1,20 @@
 ---
 title: Personalization配置设置
 description: 在Web SDK标记扩展中配置个性化设置。
-source-git-commit: 9a617b6e97aec22a6726266f2628bd2c2a05da19
+exl-id: 24009a40-92ad-49d6-b768-49d64dccf4e0
+source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
-source-wordcount: '454'
+source-wordcount: '463'
 ht-degree: 1%
 
 ---
 
-# Personalization配置设置
+# Personalization配置设置 {#personalization}
+
+>[!CONTEXTUALHELP]
+>id="platform_tags_websdk_personalization"
+>title="个性化"
+>abstract="确定标记扩展如何处理个性化内容。"
 
 通过此配置部分，可决定如何在加载个性化内容时隐藏页面的某些部分。 正确配置后，这些设置可确保访客看到正确的个性化内容。
 
@@ -26,7 +32,7 @@ ht-degree: 1%
 
 使用此选项可允许Web SDK读取和写入`mbox` 1.x或2.x库使用的旧版`mboxEdgeCluster`和`at.js` Cookie。 此设置有助于在使用Web SDK或同一网站上的`at.js`在页面之间移动时保持访客配置文件不变。 如果您未在网站上的任意位置实施`at.js`，则无需启用此复选框。 与此复选框等效的JavaScript库为[`targetMigrationEnabled`](/help/collection/js/commands/configure/targetmigrationenabled.md)。
 
-启用此选项时，请确保同时在[`overrideMboxEdgeServer`中启用](https://experienceleague.adobe.com/zh-hans/docs/target-dev/developer/client-side/at-js-implementation/functions-overview/targetglobalsettings#overridemboxedgeserver)`targetGlobalSettings()`。
+启用此选项时，请确保同时在[`overrideMboxEdgeServer`中启用](https://experienceleague.adobe.com/en/docs/target-dev/developer/client-side/at-js-implementation/functions-overview/targetglobalsettings#overridemboxedgeserver)`targetGlobalSettings()`。
 
 ## [!UICONTROL Prehiding style] {#prehiding-style}
 

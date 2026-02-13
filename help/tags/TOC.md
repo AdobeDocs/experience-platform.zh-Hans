@@ -6,9 +6,9 @@ user-guide-description: 了解如何部署和管理分析、营销和广告标�
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: b1666521d135ac953dbde5b4ff64138a187e4b9e
+source-git-commit: d61deb73493200bc10ada4745f725bb656f3e802
 workflow-type: tm+mt
-source-wordcount: '827'
+source-wordcount: '826'
 ht-degree: 37%
 
 ---
@@ -108,7 +108,7 @@ ht-degree: 37%
          * [快速入门](extensions/client/web-sdk/getting-started.md)
          * 配置 {#configure}
             * [概述](extensions/client/web-sdk/configure/config-overview.md)
-            * [自定义生成组件](extensions/client/web-sdk/configure/custom-build-components.md)
+            * [生成选项](extensions/client/web-sdk/configure/custom-build-components.md)
             * [SDK实例](extensions/client/web-sdk/configure/general.md)
             * [数据流](extensions/client/web-sdk/configure/datastreams.md)
             * [同意](extensions/client/web-sdk/configure/consent.md)
@@ -230,7 +230,7 @@ ht-degree: 37%
       * [!DNL Snap Pixel] {#snap-pixel}
          * [概述](./extensions/client/snap-pixel/overview.md)
       * [存储扳手](https://exchange.adobe.com/apps/ec/102990)
-      * [按循环水平线的标记](https://exchange.adobe.com/apps/ec/106092)
+      * 按循环水平线的[标记](https://exchange.adobe.com/apps/ec/106092)
       * [Tealium收集](https://exchange.adobe.com/apps/ec/104217)
       * [Tealium数据扩充](https://exchange.adobe.com/apps/ec/104217)
       * [TMMData基础平台](https://exchange.adobe.com/apps/ec/100148)
@@ -259,7 +259,7 @@ ht-degree: 37%
          * [概述](./extensions/server/aws/overview.md)
       * [!DNL Braze] {#braze}
          * [概述](./extensions/server/braze/overview.md)
-      * [适用于Google Analytics的Cloud Connector](https://exchange.adobe.com/apps/ec/106542)
+      * 适用于Google Analytics的[Cloud Connector](https://exchange.adobe.com/apps/ec/106542)
       * 核心 {#core}
          * [概述](./extensions/server/core/overview.md)
       * [Epsilon事件API](https://exchange.adobe.com/apps/ec/109127)

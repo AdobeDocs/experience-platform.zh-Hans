@@ -1,15 +1,20 @@
 ---
-title: 自定义生成组件
+title: 生成选项
 description: 创建自定义Web SDK内部版本，该内部版本会禁用相关功能以减小内部版本大小。
 exl-id: 853e0a6c-0953-4e08-9a7d-334aab022583
-source-git-commit: 0a45b688243b17766143b950994f0837dc0d0b48
+source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
-source-wordcount: '262'
+source-wordcount: '277'
 ht-degree: 0%
 
 ---
 
-# 自定义生成组件
+# 生成选项 {#build-options}
+
+>[!CONTEXTUALHELP]
+>id="platform_tags_websdk_buildoptions"
+>title="生成选项"
+>abstract="从JavaScript库中选择性地包含或排除模块，可以减小库大小并提高性能。"
 
 Web SDK库包含多个模块，用于提供各种功能，如个性化、身份识别、链接跟踪等。 根据您的用例，您可能只需要特定功能，而无需整个库。 通过禁用生成组件，您可以仅使用所需的模块，从而减小库大小并提高性能。
 

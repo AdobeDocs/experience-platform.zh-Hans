@@ -1,14 +1,20 @@
 ---
 title: 高级配置设置
 description: 为Web SDK标记扩展配置高级设置。
-source-git-commit: d6aea91d6989775ff5b6038b216ed2518f4a7d98
+exl-id: d830a210-77ab-4823-b5fa-c1194a01bea3
+source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
-source-wordcount: '136'
-ht-degree: 0%
+source-wordcount: '150'
+ht-degree: 2%
 
 ---
 
-# 高级配置设置
+# 高级配置设置 {#advanced}
+
+>[!CONTEXTUALHELP]
+>id="platform_tags_websdk_advanced"
+>title="高级设置"
+>abstract="高级配置设置。 Adobe建议在大多数实施中保持这些选项不变。"
 
 此配置部分允许您更改高级设置。 Adobe建议在大多数实施中保持这些选项不变。
 

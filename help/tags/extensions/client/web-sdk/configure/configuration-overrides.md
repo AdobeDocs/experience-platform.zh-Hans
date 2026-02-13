@@ -1,14 +1,20 @@
 ---
 title: 数据流配置覆盖设置
 description: 在满足某些条件时修改配置设置。
-source-git-commit: 46e5d007b27eaa67c9ee49e35a711424de383d68
+exl-id: 68227148-3d74-4807-836c-14acd8a9c1dc
+source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
-source-wordcount: '564'
+source-wordcount: '600'
 ht-degree: 3%
 
 ---
 
-# 数据流配置覆盖设置
+# 数据流配置覆盖设置 {#config-overrides}
+
+>[!CONTEXTUALHELP]
+>id="platform_tags_websdk_overrides"
+>title="数据流配置覆盖"
+>abstract="有条件地触发不同的数据流行为，而无需单独的数据流。 在此部分中为环境设置任何客户端数据流配置覆盖将覆盖该环境的任何服务器端动态数据流配置和规则。"
 
 数据流覆盖允许您为数据流定义其他配置，这些配置通过Web SDK传递到Edge Network。 此功能可帮助您有条件地触发不同的数据流行为，而无需创建新数据流或修改现有设置。
 
