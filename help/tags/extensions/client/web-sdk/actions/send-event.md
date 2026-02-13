@@ -49,7 +49,7 @@ ht-degree: 0%
 ![Experience Platform Tags UI图像显示“发送事件”操作类型的Personalization设置。](../assets/personalization-settings.png)
 
 * **[!UICONTROL Scopes]**：要从个性化明确请求的作用域数组。 您可以手动输入范围，也可以提供数据元素。 手动输入范围时，每个字段表示一个范围。 选择&#x200B;**[!UICONTROL Add scope]**&#x200B;以向操作添加更多作用域。
-* **[!UICONTROL Surfaces]**：要使用事件进行查询的表面数组。 有关详细信息，请参阅Adobe Journey Optimizer文档中的[创建Web体验](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html)。 手动输入曲面时，每个字段表示一个曲面。 选择&#x200B;**[!UICONTROL Add surface]**&#x200B;可向操作添加更多表面。
+* **[!UICONTROL Surfaces]**：要使用事件进行查询的表面数组。 有关详细信息，请参阅Adobe Journey Optimizer文档中的[创建Web体验](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html?lang=zh-Hans)。 手动输入曲面时，每个字段表示一个曲面。 选择&#x200B;**[!UICONTROL Add surface]**&#x200B;可向操作添加更多表面。
 * **呈现可视化个性化决策：**&#x200B;一个复选框，启用后可让您在页面上呈现个性化内容。 有关详细信息，请参阅[自动呈现DOM操作](/help/collection/use-cases/personalization/render-auto-pers-content.md)。
 * **[!UICONTROL Request default personalization]**：控制是否请求页面范围的范围和默认表面。 默认情况下，在页面加载的第一个`sendEvent`调用期间自动请求它。 与这些单选按钮等效的JavaScript库为[`requestDefaultPersonalization`](/help/collection/js/commands/sendevent/personalization.md)。 您可以从以下选项中进行选择：
    * **[!UICONTROL Automatic]**：默认行为。 仅在尚未请求时请求默认个性化。
