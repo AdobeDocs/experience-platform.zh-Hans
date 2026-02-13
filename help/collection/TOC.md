@@ -6,10 +6,10 @@ breadcrumb-title: 数据收集
 user-guide-description: 了解如何将数据发送到Adobe Experience Platform。
 feature: Data Collection
 role: Developer
-source-git-commit: 0a45b688243b17766143b950994f0837dc0d0b48
+source-git-commit: caaf5cad7276d6429fbbf35585fd4845de6ff60c
 workflow-type: tm+mt
-source-wordcount: '142'
-ht-degree: 32%
+source-wordcount: '149'
+ht-degree: 30%
 
 ---
 
@@ -106,7 +106,9 @@ ht-degree: 32%
    + [多个SDK实例](use-cases/multiple-instances.md)
    + 个性化 {#personalization}
       + [概述](use-cases/personalization/pers-overview.md)
-      + [显示事件](use-cases/personalization/display-events.md)
+      + [自动渲染DOM操作](use-cases/personalization/render-auto-pers-content.md)
+      + [呈现HTML选件](use-cases/personalization/render-html-offers.md)
+      + [手动呈现建议](use-cases/personalization/render-manual-propositions.md)
       + [管理闪烁](use-cases/personalization/manage-flicker.md)
-      + [呈现个性化内容](use-cases/personalization/rendering-personalization-content.md)
+      + [显示事件](use-cases/personalization/display-events.md)
       + [排名最前和排名最前的页面事件](use-cases/personalization/top-bottom-page-events.md)

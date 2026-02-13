@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；Experience Platform Web SDK；Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: d61deb73493200bc10ada4745f725bb656f3e802
+source-git-commit: 5ef0b97d6908753be738d7ad2dfd423d02f87c8d
 workflow-type: tm+mt
-source-wordcount: '2725'
+source-wordcount: '2718'
 ht-degree: 2%
 
 ---
@@ -293,7 +293,7 @@ ht-degree: 2%
 **新增功能**
 
 - 现在，通过在移动应用程序和移动Web内容之间以及跨域共享访客ID，您可以更准确地提供个性化体验。 有关详细信息，请参阅[专用文档](../use-cases/identity/id-sharing.md)。
-- 您现在可以将[!DNL Adobe Target]中的一系列建议渲染或执行到单页应用程序中，而无需增加Analytics量度。 这减少了报告错误，并提高了分析准确性。 有关详细信息，请参阅[专用文档](../use-cases/personalization/rendering-personalization-content.md)。
+- 您现在可以将[!DNL Adobe Target]中的一系列建议渲染或执行到单页应用程序中，而无需增加Analytics量度。 这减少了报告错误，并提高了分析准确性。
 - 向`getLibraryInfo`命令添加了其他信息，包括可用命令和实例的最终配置。
 
 **修复和改进**

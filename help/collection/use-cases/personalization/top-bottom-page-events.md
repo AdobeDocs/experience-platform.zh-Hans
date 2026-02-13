@@ -2,9 +2,9 @@
 title: 在Web SDK中配置页面顶部和底部事件
 description: 本文介绍了如何在Web SDK中使用页面顶部和底部事件。
 exl-id: 43c6d53a-6bf9-45f8-b001-d148adaff829
-source-git-commit: db7e6df1b1a0eb19518d9c6ccd6e6bb9131d5a3e
+source-git-commit: e150fa51953edbb0e21de962e066deedaf8bd2d7
 workflow-type: tm+mt
-source-wordcount: '805'
+source-wordcount: '790'
 ht-degree: 1%
 
 ---
@@ -117,7 +117,7 @@ alloy("sendEvent", {
 
 | 参数 | 必需/可选 | 描述 |
 |---|---|---|
-| `xdm._experience.decisioning.propositions` | 必需 | 此部分定义手动呈现的建议。 必须包括建议`ID`、`scope`和`scopeDetails`。 请参阅有关如何[手动渲染个性化](../personalization/rendering-personalization-content.md#manually)的文档，以了解有关如何记录手动渲染内容的显示事件的更多信息。 手动呈现的个性化内容必须包含在页面点击的底部。 |
+| `xdm._experience.decisioning.propositions` | 必需 | 此部分定义手动呈现的建议。 必须包括建议`ID`、`scope`和`scopeDetails`。 有关详细信息，请参阅[管理显示事件](display-events.md)。 手动呈现的个性化内容必须包含在页面点击的底部。 |
 | `xdm._experience.decisioning.propositionEventType` | 必需 | 将此参数设置为`display: 1`。 |
 | `xdm` | 可选 | 使用此部分可包含页面底部事件所需的所有数据。 |
 

@@ -2,9 +2,9 @@
 title: applyPropositions
 description: 重新呈现已使用sendEvent呈现的建议。
 exl-id: 6b79f334-4ea6-4ba4-8640-d35b7f90df98
-source-git-commit: db7e6df1b1a0eb19518d9c6ccd6e6bb9131d5a3e
+source-git-commit: e150fa51953edbb0e21de962e066deedaf8bd2d7
 workflow-type: tm+mt
-source-wordcount: '265'
+source-wordcount: '287'
 ht-degree: 0%
 
 ---
@@ -21,6 +21,10 @@ ht-degree: 0%
    * 范围
    * 选择器
    * 操作类型
+
+>[!NOTE]
+>
+>`applyPropositions`命令不会自动发送显示事件。 如果需要录制显示，请使用`sendEvent`命令，如[管理显示事件](/help/collection/use-cases/personalization/display-events.md)中所述。
 
 调用Web SDK的配置实例时运行`applyPropositions`命令。 包含配置选项的对象支持以下字段：
 
