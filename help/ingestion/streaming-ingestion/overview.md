@@ -21,7 +21,7 @@ Adobe Experience Platform允许您通过为每个客户生成实时客户配置�
 
 以下视频旨在帮助您了解流摄取，并概述了上述概念。
 
->[!VIDEO](https://video.tv.adobe.com/v/28425?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/31669?captions=chi_hans&quality=12&learn=on)
 
 ### 流配置文件记录和[!DNL ExperienceEvents]
 
