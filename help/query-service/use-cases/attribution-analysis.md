@@ -22,7 +22,7 @@ ht-degree: 0%
 * [Attribution IQ概述](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html?lang=zh-Hans)
 * [Adobe Analytics归因面板指南](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/panels/attribution.html?lang=zh-Hans)。
 
-可以在`OVER()`窗口函数部分[中找到](../sql/adobe-defined-functions.md#window-functions)函数中参数的说明。 [Adobe营销和Commerce术语表](https://business.adobe.com/glossary/index.html)可能也很有用。
+可以在`OVER()`窗口函数部分[中找到](../sql/adobe-defined-functions.md#window-functions)函数中参数的说明。 [Adobe营销和Commerce术语表](https://business.adobe.com/cn/glossary/index.html)可能也很有用。
 
 对于以下每个用例，都会提供一个参数化SQL查询示例作为模板供您自定义。 在SQL示例中任何您想要评估的`{ }`处提供参数。
 
