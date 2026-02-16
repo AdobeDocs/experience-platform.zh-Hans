@@ -4,11 +4,10 @@ solution: Experience Platform
 title: 检查作业计划
 type: Tutorial
 hide: true
-hidefromtoc: true
-source-git-commit: 3696ebffc4bd1e588a04e5789ff0c7971e636b56
+source-git-commit: 436ce6843e96b76dac0595ff5ab8a6067fb521ea
 workflow-type: tm+mt
 source-wordcount: '828'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -45,7 +44,7 @@ ht-degree: 1%
 
 了解这些组件可帮助您解释作业执行模式并在问题发生时诊断问题。
 
-## 了解“任务计划”界面 {#understanding-interface}
+## 了解任务计划界面 {#understanding-interface}
 
 要访问[!UICONTROL Job Schedules]：
 

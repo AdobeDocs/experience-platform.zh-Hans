@@ -4,10 +4,9 @@ solution: Experience Platform
 title: 查看作业计划详细信息
 type: Tutorial
 hide: true
-hidefromtoc: true
-source-git-commit: 3696ebffc4bd1e588a04e5789ff0c7971e636b56
+source-git-commit: 436ce6843e96b76dac0595ff5ab8a6067fb521ea
 workflow-type: tm+mt
-source-wordcount: '1758'
+source-wordcount: '1783'
 ht-degree: 1%
 
 ---
@@ -67,6 +66,8 @@ ht-degree: 1%
 利用此布局，可快速识别数据管道作业与下游处理之间的时间关系。 理想情况下，上游作业（如数据湖和配置文件摄取）应在这些垂直标记的左侧完成，以确保数据在分段和激活开始之前准备就绪。 延伸超过这些标记的任务指示了潜在的计时问题，其中下游流程可能在数据完全准备之前启动。
 
 ### 我应该使用哪个视图？ {#which-view}
+
+使用下表为您的任务选择正确的视图。 将您需要执行的操作与建议的视图匹配以有效导航。
 
 | 我需要…… | 使用此视图 |
 |--------------|---------------|

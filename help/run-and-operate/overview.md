@@ -2,8 +2,7 @@
 title: 运行和操作概述
 description: 使用运行和操作工具检查、排除和优化Adobe Experience Platform实施。 了解计划的批量激活，识别配置问题，并提高系统可靠性。
 hide: true
-hidefromtoc: true
-source-git-commit: 3696ebffc4bd1e588a04e5789ff0c7971e636b56
+source-git-commit: 436ce6843e96b76dac0595ff5ab8a6067fb521ea
 workflow-type: tm+mt
 source-wordcount: '544'
 ht-degree: 1%
@@ -50,7 +49,7 @@ ht-degree: 1%
    >
    >当前，唯一可用的功能是[作业计划](job-schedules.md)。
 
-![显示“运行并操作”左侧导航的Experience Platform UI。](assets/overview/run-and-operate.png)
+![显示“运行和操作”左侧导航的Experience Platform UI。](assets/overview/run-and-operate.png)
 
 ## 可用工具 {#available-tools}
 
