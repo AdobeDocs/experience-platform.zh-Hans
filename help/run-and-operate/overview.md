@@ -1,10 +1,10 @@
 ---
 title: 运行和操作概述
-description: 使用运行和操作工具检查、排除和优化Adobe Experience Platform实施。 了解计划的批量激活，识别配置问题，并提高系统可靠性。
+description: 使用运行和操作工具检查、排除和优化Experience Platform实施。 了解计划的批量激活，识别配置问题，并提高系统可靠性。
 hide: true
-source-git-commit: 436ce6843e96b76dac0595ff5ab8a6067fb521ea
+source-git-commit: 4733fae23c5029f4bc2c405376b1a52212dc0440
 workflow-type: tm+mt
-source-wordcount: '544'
+source-wordcount: '543'
 ht-degree: 1%
 
 ---
