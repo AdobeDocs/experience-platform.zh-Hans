@@ -1,21 +1,17 @@
 ---
 title: Snowflake批量连接
 description: 创建实时Snowflake数据共享，以直接将每日受众更新作为共享表发送到您的帐户。
-last-substantial-update: 2025-10-23T00:00:00Z
+last-substantial-update: 2026-02-17T00:00:00Z
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 6959ccd0-ba30-4750-a7de-d0a709292ef7
-source-git-commit: 271700625e8cc1d2b5e737e89435c543caa86264
+source-git-commit: 89968d4e4c552b7c6b339a39f7a7224133446116
 workflow-type: tm+mt
-source-wordcount: '1662'
-ht-degree: 4%
+source-wordcount: '1708'
+ht-degree: 3%
 
 ---
 
 # Snowflake批量连接 {#snowflake-destination}
-
->[!AVAILABILITY]
->
->此目标连接器的可用性有限，仅适用于[VA7区域](/help/landing/multi-cloud.md#azure-regions)中配置的Real-Time CDP Ultimate客户。
 
 ## 概述 {#overview}
 
@@ -51,7 +47,7 @@ ht-degree: 4%
 
 Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](snowflake.md)和[Snowflake Batch](snowflake-batch.md)。
 
-虽然两个目标均允许您以零复制方式访问Snowflake中的数据，但在每个连接器的用例方面仍有一些推荐的最佳实践。
+虽然两个目标均允许您访问Snowflake中的数据，而无需将其实际复制到帐户中，但在每个连接器的用例方面仍有一些推荐的最佳实践。
 
 下表将概述每种数据共享方法最适合的场景，帮助您确定要使用的连接器。
 
@@ -83,8 +79,13 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
 
 * 您有权访问[!DNL Snowflake]帐户。
 * 您的Snowflake帐户已订阅私人列表。 您或您公司中拥有Snowflake帐户管理员权限的人员可以配置此配置。
+* 您知道您的Snowflake帐户的云提供商和所在地区。 连接到目标时，需要同时输入这两个参数。
 
 有关必要权限的更多信息，请阅读[[!DNL Snowflake] 文档](https://docs.snowflake.com/en/collaboration/consumer-listings-access#access-a-private-listing)。
+
+>[!IMPORTANT]
+>
+>此目标不支持防火墙后面或使用[[!DNL Azure Private Link]](https://docs.snowflake.com/en/user-guide/privatelink-azure)的Snowflake帐户。
 
 ## 支持的受众 {#supported-audiences}
 
@@ -137,7 +138,7 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_snowflake_batch_accountid"
->title="输入您的 Snowflake 帐户 ID"
+>title="输入您的Snowflake数据共享帐户标识符"
 >abstract="如果您的帐户已链接到某个组织，请使用以下格式：`OrganizationName.AccountName`<br><br> 如果您的帐户未链接到某个组织，请使用以下格式：`AccountName`"
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
@@ -146,10 +147,10 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
 
 * **[!UICONTROL Name]**：将来用于识别此目标的名称。
 * **[!UICONTROL Description]**：可帮助您将来识别此目标的描述。
-* **[!UICONTROL Snowflake Account ID]**：您的Snowflake帐户ID。 根据您的帐户是否链接到组织，使用以下帐户ID格式：
-   * 如果您的帐户链接到组织： `OrganizationName.AccountName`。
+* **[!UICONTROL Snowflake Account ID]**：您的[Snowflake数据共享帐户标识符](https://docs.snowflake.com/en/user-guide/admin-account-identifier#label-account-name-data-sharing)。 根据您的帐户是否链接到组织，使用以下格式：
+   * 如果您的帐户链接到组织：输入组织名称和帐户名称，并以&#x200B;**句点** (`.`)分隔。 例如，如果组织名称为ACME，帐户名称为AsiaRegion，请输入`ACME.AsiaRegion`。
    * 如果您的帐户未链接到组织： `AccountName`。
-* **[!UICONTROL Select Snowflake Region]**：选择预配Snowflake实例的区域。 有关支持的云区域的详细信息，请参阅Snowflake [文档](https://docs.snowflake.com/en/user-guide/intro-regions)。
+* **[!UICONTROL Snowflake Region]**：选择预配Snowflake实例的区域。 有关支持的云区域的详细信息，请参阅Snowflake [文档](https://docs.snowflake.com/en/user-guide/intro-regions)。
 * **[!UICONTROL Account acknowledgment]**：输入&#x200B;**[!UICONTROL Snowflake Account ID]**&#x200B;后，在此下拉列表中选择&#x200B;**[!UICONTROL Yes]**&#x200B;以确认您的&#x200B;**[!UICONTROL Snowflake Account ID]**&#x200B;正确且属于您。
 
 >[!IMPORTANT]
@@ -189,17 +190,12 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
 
 动态表包含以下列：
 
-* **TS**：表示每个行上次更新的时间戳列
+* **TS**：时间戳列，指示共享表中的每一行上次更新的时间
+* **合并策略ID**：正在激活的受众所属的[合并策略](../../../profile/merge-policies/overview.md)的ID
 * **映射属性**：在激活工作流期间选择的每个映射属性在Snowflake中均表示为列标题
 * **受众成员资格**：通过相应单元格中的`active`条目指示映射到数据流的任何受众的成员资格
 
-![显示带有动态表数据的Snowflake界面的屏幕截图](../../assets/catalog/cloud-storage/snowflake-batch/data-validation.png)
-
-## 已知限制 {#known-limitations}
-
-### 地区可用性 {#regional-availability}
-
-[!DNL Snowflake]批处理目标当前仅适用于Experience Platform VA7区域中配置的Real-Time CDP客户。
+![显示带有动态表数据的Snowflake界面的屏幕截图](../../assets/catalog/cloud-storage/snowflake-batch/data-validation.png) {align="center" zoomable="yes"}
 
 ## 数据使用和治理 {#data-usage-governance}
 
