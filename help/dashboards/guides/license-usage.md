@@ -32,15 +32,15 @@ ht-degree: 39%
 >id="platform_dashboards_licenseUsage"
 >title="许可证用量仪表板"
 >abstract="通过许可证使用情况仪表板，可洞察已购买的 Adobe Experience Platform 产品。该仪表板概述显示产品的主要量度，包括您对每个主要量度的用量以及您的合同许可证数量。详细信息工作区显示特定沙盒中每个产品的量度细分。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html" text="自动数据集过期"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html?lang=zh-Hans" text="自动数据集过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=zh-Hans" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_licenseusage"
 >title="许可证用量仪表板"
 >abstract="通过许可证使用情况仪表板，可洞察已购买的 Adobe Experience Platform 产品。该仪表板概述显示产品的主要量度，包括您对每个主要量度的用量以及您的合同许可证数量。详细信息工作区显示特定沙盒中每个产品的量度细分。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html" text="自动数据集过期"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html?lang=zh-Hans" text="自动数据集过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=zh-Hans" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_computehours"
@@ -52,85 +52,85 @@ ht-degree: 39%
 >id="platform_dashboards_licenseusage_predictedusage_addressableaudience"
 >title="预测的可寻址受众"
 >abstract="可寻址受众是您的组织有权参与的实时客户轮廓中的一组个人轮廓。该量度包括直接可识别的轮廓和假名轮廓。<br>您的使用量可能已达到已授予许可量。为了减少使用量，请配置数据集或假名轮廓数据过期时间。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=zh-Hans" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=zh-Hans" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_engageableprofiles"
 >title="预测的可参与的轮廓"
 >abstract="可参与轮廓是指您的组织在过去 12 个月内尝试使用 Journey Optimizer 进行互动的实时客户轮廓中的个人轮廓。<br>您的使用量可能已达到已授予许可量。为了减少使用量，请配置数据集或假名轮廓数据过期时间。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=zh-Hans" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=zh-Hans" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_businesspersonprofile"
 >title="预测的商务人士轮廓"
 >abstract="商业人士轮廓是实时客户轮廓中代表 B2B 环境中个人的记录。<br>您的使用量可能已达到已授予许可量。为了减少使用量，请配置数据集或假名轮廓数据过期时间。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=zh-Hans" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=zh-Hans" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_corehours"
 >title="预测的核心小时数"
 >abstract="核心小时数表示 Experience Platform 各项服务所消耗的处理时间。<br>您的使用量可能已达到已授予许可量。为了减少使用量，请配置数据集或假名轮廓数据过期时间。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=zh-Hans" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=zh-Hans" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_totaldatavolume"
 >title="预测的总数据量"
 >abstract="”总数据量“是指实时客户轮廓中可用于互动和个性化工作流程的数据量。<br>您的使用量可能已达到已授予许可量。为了减少使用量，请配置数据集或假名轮廓数据过期时间。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=zh-Hans" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=zh-Hans" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_cjaRowsAvailable"
 >title="预测的 CJA 可用行"
 >abstract="可用的 Customer Journey Analytics 行数指的是可供在 Customer Journey Analytics 中分析的数据的每日平均行数。<br>您的使用量可能已达到已授予许可量。为了减少使用量，请配置数据集或假名轮廓数据过期时间。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=zh-Hans" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=zh-Hans" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_exceededusage_addressableaudience"
 >title="预测的可寻址受众"
 >abstract="可寻址受众是您的组织有权参与的实时客户轮廓中的一组个人轮廓。这包括直接可识别的轮廓和假名轮廓。<br>您的使用量已超出许可量。为了减少使用量，请配置数据集或假名轮廓数据过期时间。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=zh-Hans" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=zh-Hans" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_exceededusage_engageableprofiles"
 >title="预测的可参与的轮廓"
 >abstract="可参与轮廓是指您的组织在过去 12 个月内尝试使用 Journey Optimizer 进行互动的实时客户轮廓中的个人轮廓。<br>您的使用量已超出许可量。为了减少使用量，请配置数据集或假名轮廓数据过期时间。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=zh-Hans" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=zh-Hans" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_exceededusage_businesspersonprofile"
 >title="预测的商务人士轮廓"
 >abstract="商业人士轮廓是实时客户轮廓中代表 B2B 环境中个人的记录。<br>您的使用量已超出许可量。为了减少使用量，请配置数据集或假名轮廓数据过期时间。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=zh-Hans" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=zh-Hans" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_exceededusage_corehours"
 >title="预测的核心小时数"
 >abstract="核心小时数表示 Experience Platform 各项服务所消耗的处理时间。<br>您的使用量已超出许可量。为了减少使用量，请配置数据集或假名轮廓数据过期时间。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=zh-Hans" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=zh-Hans" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_exceededusage_totaldatavolume"
 >title="预测的总数据量"
 >abstract="”总数据量“是指实时客户轮廓中可用于互动和个性化工作流程的数据量。<br>您的使用量已超出许可量。为了减少使用量，请配置数据集或假名轮廓数据过期时间。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=zh-Hans" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=zh-Hans" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_exceededusage_cjaRowsAvailable"
 >title="预测的 CJA 可用行"
 >abstract="可用的 Customer Journey Analytics 行数指的是可供在 Customer Journey Analytics 中分析的数据的每日平均行数。<br>您的使用量已超出许可量。为了减少使用量，请配置数据集或假名轮廓数据过期时间。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="体验事件过期"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=zh-Hans" text="体验事件过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=zh-Hans" text="假名轮廓数据过期"
 
 您可以通过&#x200B;**[!UICONTROL License usage]**&#x200B;仪表板查看有关贵组织许可证使用情况的重要信息。 功能板适用于符合条件的Experience Cloud组织，包括那些许可Adobe Experience Platform的组织以及不许可的组织。 显示的信息是在您组织环境的每日快照期间捕获的，不会实时更新。
 
@@ -246,15 +246,15 @@ ht-degree: 39%
 >id="platform_dashboards_licenseUsage_prediction"
 >title="预测使用量"
 >abstract="预测基于过去 6-7 个月的使用情况，并每周五生成一次。请注意，许可证使用预测是基于过去使用情况的近似值。您有责任了解您组织的实际使用情况，并确保使用不超出您与 Adobe 的许可证范围。为了减少使用量，您可以为沙盒和数据集配置数据集或匿名轮廓的数据有效期限设置。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html" text="自动数据集过期"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html?lang=zh-Hans" text="自动数据集过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=zh-Hans" text="假名轮廓数据过期"
 
 >[!CONTEXTUALHELP]
 >id="platform_licenseusage_prediction"
 >title="预测使用量"
 >abstract="预测基于过去 6-7 个月的使用情况，并在每个月的 15 日生成。请注意，许可证使用预测是基于过去使用情况的近似值。您有责任了解您组织的实际使用情况，并确保使用不超出您与 Adobe 的许可证范围。为了减少使用量，您可以为沙盒和数据集配置数据集或匿名轮廓的数据有效期限设置。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html" text="自动数据集过期"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名轮廓数据过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html?lang=zh-Hans" text="自动数据集过期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=zh-Hans" text="假名轮廓数据过期"
 
 通过准确、最新的使用预测主动管理和优化您的许可资源。 [!UICONTROL Predicted Usage]列预测所有已购产品的所有生产沙盒和开发沙盒中沙盒级别的未来许可证使用情况。 现在，预测每周更新，根据最新的使用情况数据提供六周的预测。 每个预测包括下限和上限以支持知情规划。
 
@@ -295,7 +295,7 @@ ht-degree: 39%
 >
 >从8月20日开始，拥有“[!UICONTROL Average Profile Richness]”和“[!UICONTROL Total Storage]”权限的客户在许可证使用情况仪表板中看到“[!UICONTROL Total Data Volume]”。 客户权利没有变化，只是简化了跟踪量度。 [!UICONTROL Total Data Volume]表示参与和个性化工作流的实时客户配置文件中可用的数据。 此简化的量度改进了实时客户配置文件使用的管理和测量。 我们鼓励客户联系其Adobe代表，以进一步了解此更改。
 
-仪表板中显示的量度取决于与组织关联的产品和授权。 如果贵组织参与了[Adobe Experience Platform代理使用情况绑定的试用](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/agents/trial)或许可了Adobe Experience Platform代理，则仪表板将包含[!UICONTROL AI credits]指标。 如果贵组织未许可Adobe Experience Platform，则AI信用使用情况将显示为主要指标。
+仪表板中显示的量度取决于与组织关联的产品和授权。 如果贵组织参与了[Adobe Experience Platform代理使用情况绑定的试用](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-ai/experience-cloud-ai/agents/trial)或许可了Adobe Experience Platform代理，则仪表板将包含[!UICONTROL AI credits]指标。 如果贵组织未许可Adobe Experience Platform，则AI信用使用情况将显示为主要指标。
 
 | 量度 | 描述 |
 |---|---|
@@ -330,11 +330,11 @@ ht-degree: 39%
 
 | 许可证 | 产品描述 |
 | --- | --- |
-| <ul><li>Adobe Experience Platform:OD LITE</li><li>Adobe Experience Platform:OD STANDARD</li><li>Adobe Experience Platform:OD重</li></ul> | [Adobe Experience Platform](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform.html) |
+| <ul><li>Adobe Experience Platform:OD LITE</li><li>Adobe Experience Platform:OD STANDARD</li><li>Adobe Experience Platform:OD重</li></ul> | [Adobe Experience Platform](https://helpx.adobe.com/cn/legal/product-descriptions/adobe-experience-platform.html) |
 | <ul><li>Adobe Experience Platform:OD</li></ul> | [Experience Platform、应用程序服务和智能服务](https://helpx.adobe.com/legal/product-descriptions/exp-platform-app-svcs.html) |
-| <ul><li>RT客户数据平台:OD</li><li>RT CUSTOMER DATA PLATFORM:OD PRFL至10M</li><li>RT CUSTOMER DATA PLATFORM:OD PRFL至50M</li></ul> | [Adobe Real-Time Customer Data Platform](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) |
-| <ul><li>AEP:OD激活</li><li>AEP:OD激活PRFL至10M</li><li>AEP:OD激活PRFL高达50M</li></ul> | [Adobe Experience Platform激活](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform0.html) |
-| <ul><li>AEP:OD智能</li></ul> | [Adobe Experience Platform Intelligence](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform-intelligence---product-description.html) |
+| <ul><li>RT客户数据平台:OD</li><li>RT CUSTOMER DATA PLATFORM:OD PRFL至10M</li><li>RT CUSTOMER DATA PLATFORM:OD PRFL至50M</li></ul> | [Adobe Real-Time Customer Data Platform](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html) |
+| <ul><li>AEP:OD激活</li><li>AEP:OD激活PRFL至10M</li><li>AEP:OD激活PRFL高达50M</li></ul> | [Adobe Experience Platform激活](https://helpx.adobe.com/cn/legal/product-descriptions/adobe-experience-platform0.html) |
+| <ul><li>AEP:OD智能</li></ul> | [Adobe Experience Platform Intelligence](https://helpx.adobe.com/cn/legal/product-descriptions/adobe-experience-platform-intelligence---product-description.html) |
 | <ul><li>Journey Optimizer SELECT:OD</li><li>Journey Optimizer PRIME:OD</li><li>Journey Optimizer ULTIMATE:OD</li><li>UNP AJO PRIME STARTER:OD</li><li>UNP AJO ULTIMATE STARTER:OD</li><li>UNP Real-Time CDP:OD配置文件编排</li></ul> | [Adobe Journey Optimizer](https://helpx.adobe.com/cn/legal/product-descriptions/adobe-journey-optimizer.html) |
 
 >[!WARNING]
