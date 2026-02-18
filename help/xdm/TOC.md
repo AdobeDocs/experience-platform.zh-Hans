@@ -5,10 +5,10 @@ breadcrumb-title: 体验数据模型 (XDM) 指南
 user-guide-description: 浏览 Experience Platform 中的体验数据模型 (XDM) 系统概述，并了解如何使用类和架构字段组使体验数据标准化。
 feature: Schemas
 role: Developer
-source-git-commit: 57981d2e4306b2245ce0c1cdd9f696065c508a1d
+source-git-commit: 511c93342d112056ead54c0d82184cc262a43383
 workflow-type: tm+mt
-source-wordcount: '707'
-ht-degree: 20%
+source-wordcount: '711'
+ht-degree: 21%
 
 ---
 
@@ -19,6 +19,7 @@ ht-degree: 20%
 * 架构 {#schema}
    * [架构构成基础](schema/composition.md)
    * [数据建模的最佳实践](schema/best-practices.md)
+   * [配置文件启用计划](./schema/profile-enablement-planning.md)
    * [敏感数据和个人数据](./schema/sensitive-and-personal-data.md)
    * [XDM字段类型约束](schema/field-constraints.md)
    * [关系架构](./schema/relational.md)
@@ -81,7 +82,7 @@ ht-degree: 20%
    * [XDM ExperienceEvent](./classes/experienceevent.md)
    * [药物](./classes/medication.md)
    * [付款人](./classes/payer.md)
-   * [计划](./classes/plan.md)
+   * [规划](./classes/plan.md)
    * [策略](./classes/policy.md)
    * [产品](./classes/product.md)
    * [潜在客户](./classes/prospect.md)
@@ -146,7 +147,7 @@ ht-degree: 20%
       * [XDM商业营销活动成员详细信息](./field-groups/b2b-campaign-members/details.md)
    * 药物 {#medication}
       * [保健药物](./field-groups/medication/healthcare-medication.md)
-   * 计划 {#plan}
+   * 规划 {#plan}
       * [医疗保健计划详细信息](./field-groups/plan/healthcare-plan-details.md)
    * 产品 {#product}
       * [产品目录](./field-groups/product/product-catalog.md)
@@ -234,7 +235,7 @@ ht-degree: 20%
    * [Web信息](./data-types/web-information.md)
    * [Web交互](./data-types/web-interaction.md)
    * [网页详细信息](./data-types/webpage-details.md)
-* [!UICONTROL Schemas] UI {#ui}
+* [!UICONTROL Schemas] 用户界面 {#ui}
    * [概述](./ui/overview.md)
    * [浏览XDM资源](./ui/explore.md)
    * 创建和编辑资源 {#resources}
