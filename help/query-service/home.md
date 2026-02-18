@@ -38,7 +38,7 @@ RESTful API提供了类似体验。 您可以使用查询服务API以编程方�
 
 ### [!DNL Data Science Workspace] {#data-science-workspace}
 
-Adobe Experience Platform [!DNL Data Science Workspace]使用机器学习和人工智能从Experience Platform中存储的数据获得见解。 数据科学家可以使用[IDNL Data Science Workspace]，根据有关客户及其活动的记录和时间序列数据构建方法。 这些配方有助于进行预测，例如购买倾向和个人可能会喜欢和使用的推荐选件。 您可以通过将查询服务集成到[!DNL Data Science Workspace]中使用[!DNL JupyterLab]中的SQL来浏览、转换和分析Adobe Analytics数据。 阅读[[!DNL Data Science Workspace] 概述](../data-science-workspace/home.md)和[Jupyter Notebook连接指南](./clients/jupyter-notebook.md)，以了解有关[!DNL Data Science Workspace]如何与查询服务交互的详细信息。
+Adobe Experience Platform [!DNL Data Science Workspace]使用机器学习和人工智能从Experience Platform中存储的数据获得见解。 数据科学家可以使用[!DNL I Data Science Workspace]，根据有关客户及其活动的记录和时间序列数据构建方法。 这些配方有助于进行预测，例如购买倾向和个人可能会喜欢和使用的推荐选件。 您可以通过将查询服务集成到[!DNL Data Science Workspace]中使用[!DNL JupyterLab]中的SQL来浏览、转换和分析Adobe Analytics数据。 阅读[[!DNL Data Science Workspace] 概述](../data-science-workspace/home.md)和[Jupyter Notebook连接指南](./clients/jupyter-notebook.md)，以了解有关[!DNL Data Science Workspace]如何与查询服务交互的详细信息。
 
 ### [!DNL Segmentation Service] {#segmentation}
 
