@@ -285,4 +285,4 @@ ht-degree: 11%
 
 以下视频演示了如何在[!DNL Experience Platform] UI中使用使用策略：
 
->[!VIDEO](https://video.tv.adobe.com/v/32977?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/37121?captions=chi_hans&quality=12&learn=on)
