@@ -26,7 +26,7 @@ ht-degree: 3%
 请务必了解本文档中使用的以下关键术语：
 
 * **标准属性**：标准属性是Adobe预定义的任何属性。 它们对所有客户具有相同的含义，并且在Analytics源数据和Analytics架构字段组中可用。
-* **自定义属性**：自定义属性是Analytics自定义变量层次结构中的任何属性。 在Adobe Analytics实施中使用自定义属性将特定信息捕获到报表包中，这些属性的使用因报表包而异。 自定义属性包括eVar、prop和列表。 有关eVar的更多信息，请参阅以下[有关转化变量](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html)的Analytics文档。
+* **自定义属性**：自定义属性是Analytics自定义变量层次结构中的任何属性。 在Adobe Analytics实施中使用自定义属性将特定信息捕获到报表包中，这些属性的使用因报表包而异。 自定义属性包括eVar、prop和列表。 有关eVar的更多信息，请参阅以下[有关转化变量](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=zh-Hans)的Analytics文档。
 * **自定义字段组中的任何属性**：源自客户创建的字段组的属性都是用户定义的属性，既不是标准属性，也不是自定义属性。
 
 ## 导航源目录
@@ -117,7 +117,7 @@ Experience Platform会自动检测您的映射是否存在任何名称冲突。 
 >id="platform_analytics_import_mapping"
 >title="下载模板"
 >abstract="下载csv模板以离线执行映射。"
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/data-prep/ui/mapping#import-mapping" text="导入映射"
+>additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/data-prep/ui/mapping#import-mapping" text="导入映射"
 
 您可以使用数据准备函数为自定义属性添加新自定义映射或计算字段。 要添加自定义映射，请选择&#x200B;**[!UICONTROL Custom]**。
 
