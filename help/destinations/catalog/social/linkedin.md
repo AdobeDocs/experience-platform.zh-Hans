@@ -134,7 +134,7 @@ LinkedIn令牌每60天过期一次。 您可以从&#x200B;**[!UICONTROL Account 
    ![筛选以仅显示LinkedIn帐户](/help/destinations/assets/catalog/social/linkedin/refresh-oauth-filters.png)
 3. 选择要刷新的帐户，选择省略号并选择&#x200B;**[!UICONTROL Edit details]**。
    ![选择“编辑详细信息”控件](/help/destinations/assets/catalog/social/linkedin/refresh-oauth-edit-details.png)
-4. 在模态窗口中，选择&#x200B;**[!UICONTROL Reconnect OAuth]**并使用您的LinkedIn凭据重新进行身份验证。
+4. 在模态窗口中，选择&#x200B;**[!UICONTROL Reconnect OAuth]**&#x200B;并使用您的LinkedIn凭据重新进行身份验证。
    使用Reconnect OAuth选项的![模式窗口](/help/destinations/assets/catalog/social/linkedin/reconnect-oauth-control.png)
 
 >[!SUCCESS]

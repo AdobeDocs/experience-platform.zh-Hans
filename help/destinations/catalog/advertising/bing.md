@@ -136,7 +136,7 @@ ht-degree: 5%
 
 * **具有ECID和Microsoft Advertising ID映射的配置文件：**&#x200B;已成功导出和激活配置文件
 * **仅具有ECID的配置文件(无Microsoft Advertising ID映射)：**&#x200B;配置文件&#x200B;**未导出**。 需要ECID和MAID之间的ID同步映射。
-* **没有ECID的配置文件：**&#x200B;未导出配置文件&#x200B;****。 此目标必须具有ECID。
+* **没有ECID的配置文件：**&#x200B;未导出配置文件&#x200B;**&#x200B;**。 此目标必须具有ECID。
 
 ## 导出的数据 {#exported-data}
 
