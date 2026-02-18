@@ -79,7 +79,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->保存后，[!UICONTROL Type]侧边栏中的[!UICONTROL &#x200B; Schema properties]字段指示这是[!UICONTROL Relational]架构。 架构库存视图的详细信息侧边栏中也指出了这一点。
+>保存后，[!UICONTROL Type]侧边栏中的[!UICONTROL  Schema properties]字段指示这是[!UICONTROL Relational]架构。 架构库存视图的详细信息侧边栏中也指出了这一点。
 >![架构编辑器画布显示空的关系架构结构，突出显示了关系类型。](../../images/ui/resources/schemas/relational-empty-canvas.png)
 
 ### 上载DDL文件 {#upload-ddl-file}
@@ -241,7 +241,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->在架构编辑器中，标准(Adobe生成的)类和字段组以挂锁图标![挂锁图标表示。](/help/images/icons/lock-closed.png)的问题。挂锁显示在左边栏中的类或字段组名称旁边，以及架构图中作为系统生成资源一部分的任意字段旁边。
+>在架构编辑器中，标准(Adobe生成的)类和字段组以挂锁图标![挂锁图标表示。](/help/images/icons/lock-closed.png)。挂锁显示在左边栏中的类或字段组名称旁边，以及架构图中作为系统生成资源一部分的任意字段旁边。
 >
 >![带有挂锁图标的架构编辑器突出显示](../../images/ui/explore/schema-editor-padlock-icon.png)
 

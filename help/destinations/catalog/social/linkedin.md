@@ -6,7 +6,7 @@ exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
 source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1202'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
 
@@ -44,7 +44,7 @@ Adobe Experience Platform UI中的![LinkedIn目标](../../assets/catalog/social/
 
 此部分介绍哪些类型的受众可以导出到此目标。
 
-| 受众来源 | 支持 | 描述 |
+| 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
 | 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
@@ -110,7 +110,7 @@ Adobe Experience Platform UI中的![LinkedIn目标](../../assets/catalog/social/
 
 以下视频还演示了配置[!DNL LinkedIn Matched Audiences]目标和激活受众的步骤。
 
->[!VIDEO](https://video.tv.adobe.com/v/3411783/?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 >[!NOTE]
 >
@@ -134,7 +134,7 @@ LinkedIn令牌每60天过期一次。 您可以从&#x200B;**[!UICONTROL Account 
    ![筛选以仅显示LinkedIn帐户](/help/destinations/assets/catalog/social/linkedin/refresh-oauth-filters.png)
 3. 选择要刷新的帐户，选择省略号并选择&#x200B;**[!UICONTROL Edit details]**。
    ![选择“编辑详细信息”控件](/help/destinations/assets/catalog/social/linkedin/refresh-oauth-edit-details.png)
-4. 在模态窗口中，选择&#x200B;**[!UICONTROL Reconnect OAuth]**&#x200B;并使用您的LinkedIn凭据重新进行身份验证。
+4. 在模态窗口中，选择&#x200B;**[!UICONTROL Reconnect OAuth]**并使用您的LinkedIn凭据重新进行身份验证。
    使用Reconnect OAuth选项的![模式窗口](/help/destinations/assets/catalog/social/linkedin/reconnect-oauth-control.png)
 
 >[!SUCCESS]

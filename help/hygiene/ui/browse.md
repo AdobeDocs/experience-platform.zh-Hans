@@ -41,7 +41,7 @@ ht-degree: 26%
 
 以下过滤器适用于记录删除请求：
 
-| 筛选条件 | 描述 |
+| 过滤器 | 描述 |
 | --- | --- |
 | [!UICONTROL Status] | 根据工作单的当前状态进行筛选：<ul><li>**[!UICONTROL Completed]**：作业已完成。</li><li>**[!UICONTROL Failed]**：作业遇到错误，无法完成。</li><li>**[!UICONTROL Processing]**：请求已启动，当前正在处理。</li></ul> |
 | [!UICONTROL Date created] | 根据生成工单的时间进行筛选。 |
@@ -51,7 +51,7 @@ ht-degree: 26%
 
 以下过滤器适用于数据集过期请求：
 
-| 筛选条件 | 描述 |
+| 过滤器 | 描述 |
 | --- | --- |
 | [!UICONTROL Status] | 根据工作单的当前状态进行筛选：<ul><li>**[!UICONTROL Completed]**：作业已完成。</li><li>**[!UICONTROL Pending]**：作业已创建，但尚未执行。 [数据集到期请求](./dataset-expiration.md)在计划的删除日期之前假定此状态。 一旦到达删除日期，除非提前取消作业，否则状态将更新为[!UICONTROL Executing]。</li><li>**[!UICONTROL Executing]**：数据集到期请求已启动，当前正在处理。</li><li>**[!UICONTROL Cancelled]**：作业已作为手动用户请求的一部分取消。</li></ul> |
 | [!UICONTROL Date created] | 根据生成工单的时间进行筛选。 |

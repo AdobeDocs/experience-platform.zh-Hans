@@ -7,7 +7,7 @@ exl-id: e8d31718-0b50-44b5-a15b-17668a063a9c
 source-git-commit: 8734b85914d965eebc2f8ccd8c09dd1ffede8cf9
 workflow-type: tm+mt
 source-wordcount: '1260'
-ht-degree: 7%
+ht-degree: 8%
 
 ---
 
@@ -61,7 +61,7 @@ ht-degree: 7%
 
 ![将假名配置文件数据过期添加到您组织的配置文件的弹出框。 应用按钮突出显示。](./images/pseudonymous-profiles/profile-settings-data-expiry.png){width="800" zoomable="yes"}
 
-## 常见问题解答 {#faq}
+## 常见问题 {#faq}
 
 以下部分列出了有关假名配置文件数据到期的常见问题解答：
 

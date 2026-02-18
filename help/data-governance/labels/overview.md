@@ -44,7 +44,7 @@ Adobe Experience Platform允许您将数据使用标签应用于数据集和字�
 
 [!DNL Experience Platform]能够与Adobe Audience Manager共享区段。 已应用于Audience Manager区段的任何数据导出控件都将转换为[!DNL Experience Platform]数据管理识别的等效标签和营销操作。
 
-有关特定数据导出控件如何映射到[!DNL Experience Platform]中的数据使用标签的参考，请参阅[Audience Manager文档](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=zh-Hans#aam-data-export-control-in-aep)。
+有关特定数据导出控件如何映射到[!DNL Experience Platform]中的数据使用标签的参考，请参阅[Audience Manager文档](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aam-data-export-control-in-aep)。
 
 ## 管理 [!DNL Experience Platform] 中的数据使用标签 {#manage-labels}
 

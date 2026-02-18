@@ -136,8 +136,8 @@ Adobe Experience Platform的核心功能之一是将来自多个企业系统的�
 >
 >视频引用将标签应用于单个数据集字段。 此工作流已弃用。 [标签现在必须应用于架构字段级别](./e2e.md#labels)。 视频中的概念仍保持准确，但标记工作流程已更改。
 
->[!VIDEO](https://video.tv.adobe.com/v/32134?captions=chi_hans&quality=12&enable10seconds=on&speedcontrol=on)
+>[!VIDEO](https://video.tv.adobe.com/v/29708?quality=12&enable10seconds=on&speedcontrol=on)
 
 以下视频提供了有关如何将数据使用标签应用于您的架构或Experience Platform中的整个数据集的指南。
 
->[!VIDEO](https://video.tv.adobe.com/v/3422787/?captions=chi_hans&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/29709/?learn=on)

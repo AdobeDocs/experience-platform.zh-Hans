@@ -25,15 +25,15 @@ Adobe Experience Platform用户界面(UI)提供了一个仪表板，通过该仪
 
 >[!NOTE]
 >
->在拍摄快照之后，对数据所做的任何更改或更新都不会反映在仪表板中，直到拍摄下一个快照为止。
+>自拍摄快照以来对数据所做的任何更改或更新都不会反映在功能板中，直到拍摄下一个快照为止。
 
-## 浏览“配置文件”信息板 {#explore-dashboard}
+## 浏览配置文件仪表板 {#explore-dashboard}
 
-要在Experience PlatformUI中导航到配置文件仪表板，请选择左边栏中的&#x200B;**[!UICONTROL Profiles]**，然后选择“**[!UICONTROL Overview]**”选项卡以显示仪表板。
+要导航到Experience Platform UI中的配置文件仪表板，请在左边栏中选择&#x200B;**[!UICONTROL Profiles]**，然后选择&#x200B;**[!UICONTROL Overview]**&#x200B;选项卡以显示该仪表板。
 
 >[!NOTE]
 >
->如果您的组织是Experience Platform新手，并且尚未创建有效的配置文件数据集或合并策略，则配置文件信息板不可见。 相反，[!UICONTROL Overview]选项卡显示链接和文档以帮助您开始使用Real-Time Customer Profile。
+>如果贵组织是Experience Platform的新用户，并且尚未创建活动配置文件数据集或合并策略，则配置文件仪表板不可见。 相反，[!UICONTROL Overview]选项卡显示链接和文档，以帮助您开始使用实时客户个人资料。
 
 ![突出显示了“配置文件和概述”的Experience Platform配置文件仪表板。](../images/profiles/dashboard-overview.png)
 
@@ -43,9 +43,9 @@ Adobe Experience Platform用户界面(UI)提供了一个仪表板，通过该仪
 
 要了解更多信息，请参阅[修改功能板](../customize/modify.md)和[小组件库概述](../customize/widget-library.md)文档。
 
-### 添加小组件 {#add-widget}
+### 添加构件 {#add-widget}
 
-选择“**[!UICONTROL Add widget]**”以导航到小组件库，并查看可添加到仪表板的可用小组件的列表。
+选择&#x200B;**[!UICONTROL Add widget]**&#x200B;以导航到构件库，并查看要添加到仪表板的可用构件的列表。
 
 ![突出显示带有添加小部件的配置文件仪表板概述。](../images/profiles/profiles-overview-add-widget.png)
 
@@ -145,9 +145,9 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 ![包含忠诚度属性复选框和[!UICONTROL Select]的合并架构图突出显示。](../images/profiles/union-schema-attributes.png)
 
-画布上会显示已完成的小组件的预览。 对所选属性感到满意后，选择&#x200B;**[!UICONTROL Save]**&#x200B;以确认您的选择并返回[!UICONTROL Profiles] [!UICONTROL Detail]工作区。 新创建的小组件现在可以在工作区中看到。
+画布上将显示已完成小部件的预览。 在您对所选属性感到满意后，请选择&#x200B;**[!UICONTROL Save]**&#x200B;以确认您的选择并返回到[!UICONTROL Profiles] [!UICONTROL Detail]工作区。 新创建的构件现在可在工作区中看到。
 
-![小组件创建器画布上的“保存”选项高亮显示，并显示Widget预览。](../images/profiles/widget-preview.png)
+![带有保存的构件创建器画布突出显示，并显示构件预览。](../images/profiles/widget-preview.png)
 
 ## 合并策略 {#merge-policies}
 
@@ -159,7 +159,7 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 >[!NOTE]
 >
->下拉菜单仅显示使用`_xdm.context.profile`架构的合并策略。 但是，如果您的组织创建了多个合并策略，则可能需要滚动才能查看可用合并策略的完整列表。
+>下拉菜单仅显示使用`_xdm.context.profile`架构的合并策略。 但是，如果贵组织创建了多个合并策略，则可能意味着您需要滚动才能查看可用合并策略的完整列表。
 
 ![突出显示合并策略下拉列表的“配置文件概述”选项卡。](../images/profiles/select-merge-policy.png)
 
@@ -250,11 +250,11 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 ![突出显示具有客户人工智能评分摘要构件的Experience Platform受众仪表板。](../images/segments/customer-ai-scoring-summary.png)
 
-要导航到所选客户AI模型的详细分析页面，请选择&#x200B;**[!UICONTROL View model details]**。 有关客户AI的更多信息，请参阅[发现见解UI指南](../../intelligent-services/customer-ai/user-guide/discover-insights.md)。
+要导航到所选客户人工智能模型的详细分析页面，请选择&#x200B;**[!UICONTROL View model details]**。 有关客户人工智能的更多信息，请参阅[发现见解UI指南](../../intelligent-services/customer-ai/user-guide/discover-insights.md)。
 
 ## 标准构件 {#standard-widgets}
 
-Adobe提供了多个标准构件，可用于可视化与配置文件数据相关的各种度量。 还可使用[!UICONTROL Widget library]创建要与您的组织共享的自定义小组件。 要了解有关创建自定义小部件的更多信息，请先阅读[小部件库概述](../customize/widget-library.md)。
+Adobe提供了多个标准构件，您可以使用这些构件可视化与配置文件数据相关的各种指标。 您还可以使用[!UICONTROL Widget library]创建要与您的组织共享的自定义构件。 要了解有关创建自定义小组件的更多信息，请从阅读[小组件库概述](../customize/widget-library.md)开始。
 
 要了解有关每个可用标准构件的更多信息，请从以下列表中选择构件的名称：
 
@@ -283,13 +283,13 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 >title="轮廓计数"
 >abstract="此构件显示在拍摄快照时轮廓存储中合并轮廓的总数。该数量取决于应用于您的轮廓数据的所选合并策略。"
 
-**[!UICONTROL Profile count]**&#x200B;小组件显示拍摄快照时配置文件存储区中合并的配置文件总数。 此编号是对您的配置文件数据应用所选合并策略的结果，以便将配置文件片段合并在一起，为每个单独的配置文件形成一个配置文件。
+**[!UICONTROL Profile count]**&#x200B;小组件显示拍摄快照时配置文件存储中合并的配置文件总数。 此数字是所选合并策略应用于您的配置文件数据的结果，用于将配置文件片段合并在一起，为每个片段形成一个单独的配置文件。
 
-请参阅本文档前面有关合并策略的[部分](#merge-policies)以了解详细信息。
+请参阅本文档[前面关于合并策略的](#merge-policies)部分以了解更多信息。
 
 >[!NOTE]
 >
->出于多种原因，[!UICONTROL Profile count]小组件显示的配置文件计数可能与UI的[!UICONTROL Browse]部分的[!UICONTROL Profiles]选项卡上显示的配置文件计数不同。 出现此差异的最常见原因是，[!UICONTROL Browse]选项卡根据您组织的默认合并策略引用合并配置文件总数，而[!UICONTROL Profile count]小组件根据您选择在仪表板中查看的合并策略引用合并配置文件总数。
+>出于多种原因，[!UICONTROL Profile count]构件在UI的[!UICONTROL Browse]部分中显示的数目可能与[!UICONTROL Profiles]选项卡上显示的配置文件计数不同。 出现此差异的最常见原因是，[!UICONTROL Browse]选项卡根据您组织的默认合并策略引用合并配置文件总数，而[!UICONTROL Profile count]小组件根据您选择在仪表板中查看的合并策略引用合并配置文件总数。
 >
 >另一个常见原因是拍摄仪表板快照的时间与为[!UICONTROL Browse]选项卡运行示例作业的时间之间的差异。 您可以通过查看构件上的时间戳来查看[!UICONTROL Profile count]构件上次更新的时间。 要了解有关如何在[!UICONTROL Browse]选项卡上触发示例作业的更多信息，请参阅实时客户个人资料UI指南[中的](../../profile/ui/user-guide.md#profile-count)个人资料计数部分。
 
@@ -390,7 +390,7 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 >title="单一身份标识轮廓"
 >abstract="此构件提供您组织的只有一种类型的 ID 类型创建其身份标识的轮廓的计数。此 ID 类型可以是电子邮件或 ECID。"
 
-[!UICONTROL Single Identity Profiles]小组件提供了您的组织的配置文件计数，这些配置文件仅有一种类型来创建其身份的ID。 此ID类型可以是电子邮件或ECID。 配置文件计数是根据最新快照中包含的数据生成的。
+[!UICONTROL Single Identity Profiles]小组件提供贵组织只有一种ID类型创建其身份的配置文件的计数。 此ID类型可以是电子邮件或ECID。 配置文件计数是根据最新快照中包含的数据生成的。
 
 ![单一身份配置文件小组件。](../images/profiles/single-identity-profiles.png)
 

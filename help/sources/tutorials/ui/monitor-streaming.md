@@ -29,7 +29,7 @@ ht-degree: 11%
 
 要查看流源的现有数据流，请从顶部标题中选择&#x200B;**[!UICONTROL Dataflows]**。
 
-![目录](../../images/tutorials/monitor-streaming/catalog.png)
+![catalog（目录）](../../images/tutorials/monitor-streaming/catalog.png)
 
 [!UICONTROL Dataflows]页面包含贵组织中所有现有数据流的列表，包括有关其源数据、帐户名称和数据流运行状态的信息。
 

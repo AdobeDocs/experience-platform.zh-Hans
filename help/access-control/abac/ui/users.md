@@ -42,7 +42,7 @@ ht-degree: 11%
 
 以下视频旨在支持您了解开发人员凭据和API凭据。
 
->[!VIDEO](https://video.tv.adobe.com/v/3446408/?captions=chi_hans&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3426407/?learn=on)
 
 ## 后续步骤
 

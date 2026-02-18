@@ -181,4 +181,4 @@ Adobe Experience Platform数据科学Workspace使用机器学习和人工智能�
 
 要加深您对Experience Platform中[!DNL XDM System]的了解，请观看以下视频：
 
->[!VIDEO](https://video.tv.adobe.com/v/38510?captions=chi_hans&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/27105?quality=12&learn=on)

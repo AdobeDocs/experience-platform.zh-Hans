@@ -32,7 +32,7 @@ ht-degree: 17%
 >
 >您连接到的目标可能没有所有这些可用选项。 目标开发人员可以决定他们要在目标中支持哪些文件格式选项。 目标开发人员可以确定在连接到目标时可用的选项。 在Experience Platform UI中，必填选项标有星号。
 > 
->Adobe构建的云存储目标 — [Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md)、[Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md)、[Azure Data Lake Storage Gen2](/help/destinations/catalog/cloud-storage/adls-gen2.md)、[数据登陆区域](/help/destinations/catalog/cloud-storage/data-landing-zone.md)、[Google Cloud Storage](/help/destinations/catalog/cloud-storage/google-cloud-storage.md)、[SFTP](/help/destinations/catalog/cloud-storage/sftp.md) — 当前仅支持下面突出显示的六个CSV选项。
+>Adobe构建的云存储目标 — [Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md)、[Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md)、[Azure Data Lake Storage Gen2](/help/destinations/catalog/cloud-storage/adls-gen2.md)、[Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md)、[Google Cloud Storage](/help/destinations/catalog/cloud-storage/google-cloud-storage.md)、[SFTP](/help/destinations/catalog/cloud-storage/sftp.md) — 当前仅支持下面高亮显示的六个CSV选项。
 
 ![显示某些可用文件格式选项的图像。](../assets/ui/batch-destinations-file-formatting-options/file-formatting-options.png)
 
@@ -72,8 +72,8 @@ ht-degree: 17%
 
 可用的选项包括：
 
-* **[!UICONTROL Null Character (\0000)]**&#x200B;的问题。使用此选项可从导出的CSV文件中删除双引号。
-* **[!UICONTROL Double Quotes (")]**&#x200B;的问题。当字符串值包含分隔符或双引号时，请使用此选项。 此选项可帮助您在导出的CSV文件中保留分隔符或双引号，以便您能够正确识别哪个值对应于哪个字段。
+* **[!UICONTROL Null Character (\0000)]**。使用此选项可从导出的CSV文件中删除双引号。
+* **[!UICONTROL Double Quotes (")]**。当字符串值包含分隔符或双引号时，请使用此选项。 此选项可帮助您在导出的CSV文件中保留分隔符或双引号，以便您能够正确识别哪个值对应于哪个字段。
 
 #### 示例
 
@@ -177,14 +177,14 @@ ht-degree: 17%
 *未显示在用户界面屏幕快照中*。 指示是否应跳过导出值前导空格的标记。
 
 已选择&#x200B;**[!UICONTROL True]**&#x200B;的示例输出： `"male","John","TestLastName"`
-已选择&#x200B;**[!UICONTROL False]**&#x200B;的示例输出： `" male","John","TestLastName"`
+已选择**[!UICONTROL False]**&#x200B;的示例输出： `" male","John","TestLastName"`
 
 ### 忽略尾随空格
 
 未显示在UI屏幕快照中。 指示是否应跳过导出值的尾随空格标志。
 
 已选择&#x200B;**[!UICONTROL True]**&#x200B;的示例输出： `"male","John","TestLastName"`
-已选择&#x200B;**[!UICONTROL False]**&#x200B;的示例输出： `"male ","John","TestLastName"`
+已选择**[!UICONTROL False]**&#x200B;的示例输出： `"male ","John","TestLastName"`
 
 ### 后续步骤 {#next-steps}
 

@@ -5,7 +5,7 @@ exl-id: 2a02f6a4-08ed-468c-8052-f5b7be82d183
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
 source-wordcount: '783'
-ht-degree: 11%
+ht-degree: 12%
 
 ---
 
@@ -43,7 +43,7 @@ ht-degree: 11%
 
 在&#x200B;*Analytics*&#x200B;类别下，选择[!DNL Mixpanel]，然后选择&#x200B;**[!UICONTROL Add data]**。
 
-![目录](../../../../images/tutorials/create/mixpanel-export-events/catalog.png)
+![catalog（目录）](../../../../images/tutorials/create/mixpanel-export-events/catalog.png)
 
 此时会显示&#x200B;**[!UICONTROL Connect Mixpanel account]**&#x200B;页面。 在此页上，您可以使用新凭据或现有凭据。
 
@@ -65,7 +65,7 @@ ht-degree: 11%
 >id="platform_sources_mixpanel_timezone"
 >title="为 Mixpanel 提取设置时区"
 >abstract="时区必须与您的 Mixpanel 轮廓时区设置相同，因为 Experience Platform 使用指定的项目时区来从 Mixpanel 提取相关数据。在将事件记录到 Mixpanel 数据存储之前，Mixpanel 将调整其时区以与您的项目时区协调。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/analytics/mixpanel.html?lang=zh-Hans#project-id-and-timezone" text="请在文档中了解详情"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/analytics/mixpanel.html#project-id-and-timezone" text="请在文档中了解详情"
 
 在您的源经过身份验证后，提供您的项目ID和时区，然后选择&#x200B;**[!UICONTROL Select]**。
 

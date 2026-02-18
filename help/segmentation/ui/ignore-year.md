@@ -1,7 +1,7 @@
 ---
 solution: Experience Platform
-title: Ignore Year Time Constraint Update
-description: Learn how to resolve an issue with the ignore year time constraint.
+title: 忽略年度时间约束更新
+description: 了解如何解决忽略年份时间限制的问题。
 hidefromtoc: true
 exl-id: 44bb8817-e32d-4806-ad4e-b1840313e768
 source-git-commit: c7d71113ddcef6aca8b2637814b46e589a6b7fdf
@@ -20,12 +20,12 @@ ht-degree: 8%
 
 >[!IMPORTANT]
 >
->You can only use the &quot;ignore year&quot; time constraint in a segment definition evaluated using **batch segmentation**. Adding the &quot;ignore year&quot; time constraint to your segment definition will make the resulting audience **ineligible** for streaming or edge segmentation.
+>在使用&#x200B;**批处理分段**&#x200B;评估的区段定义中，只能使用“忽略年份”时间限制。 将“忽略年份”时间限制添加到区段定义将使生成的受众&#x200B;**不符合流式或边缘分段条件**。
 
-The February 2024 release for Adobe Experience Platform has introduced changes to Adobe Experience Platform Segmentation Service which resolves an issue with the &quot;ignore year&quot; option in audience creation and evaluation.
+Adobe Experience Platform 2024年2月版对Adobe Experience Platform分段服务进行了更改，解决了受众创建和评估中“忽略年份”选项的问题。
 
-The &quot;ignore year&quot; option is designed to disregard the year component of a date when performing audience evaluations. You can use this option in situations where the temporal relationship between different events is important but the specific year is unimportant, such as a birth date field.
+“忽略年份”选项旨在执行受众评估时忽略日期的年份组成部分。 在不同事件之间的临时关系重要但特定年份不重要的情况下（例如出生日期字段），可以使用此选项。
 
-However, during leap years such as 2024, the underlying system failed to properly handle this option, resulting in inaccurate audience evaluations. As a result if &quot;ignore year&quot; is enabled in a leap year, the audience evaluation would miss one day.
+但是，在像2024这样的闰年，底层系统未能正确处理此选项，导致受众评估不准确。 因此，如果在闰年启用“忽略年份”，则受众评估将错过一天。
 
-If you created an audience before this fix was released, you just need to re-save the audience in the Segment Builder in order to apply the fix. If you&#39;re unsure if your audience is affected by this resolution, the Segment Builder will prompt the user if the existing audience is affected by this issue.
+如果在发布此修复之前创建受众，则只需在区段生成器中重新保存受众即可应用此修复。 如果您不确定受众是否受此解决方案的影响，那么如果现有受众受此问题影响，区段生成器将会提示用户。

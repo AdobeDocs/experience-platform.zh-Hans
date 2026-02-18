@@ -20,7 +20,7 @@ ht-degree: 24%
 >id="platform_permissions_roles_about_create"
 >title="创建新角色"
 >abstract="创建新角色以更好地对与您的 Experience Platform 实例交互的用户进行分类。例如，可为内部营销团队创建一个角色，并将受监管的健康数据 (RHD) 标签应用于该角色，使您的内部营销团队可访问受保护的健康信息 (PHI)。或者，还可为外部机构创建一个角色，并通过不将 RHD 标签应用于该角色而拒绝该角色访问 PHI 数据。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html?lang=zh-Hans" text="管理角色"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html" text="管理角色"
 >additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/abac/end-to-end-guide#label-roles" text="将标签应用于角色"
 
 要创建新角色，请选择侧边栏中的&#x200B;**[!UICONTROL Roles]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL Create Role]**。
@@ -57,7 +57,7 @@ ht-degree: 24%
 
 以下视频旨在支持您了解如何创建新角色以及如何管理该角色的用户。
 
->[!VIDEO](https://video.tv.adobe.com/v/3475983/?captions=chi_hans&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/336081/?learn=on)
 
 ## 复制角色
 

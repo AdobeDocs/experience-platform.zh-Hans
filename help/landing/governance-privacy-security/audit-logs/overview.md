@@ -109,7 +109,7 @@ ht-degree: 29%
 
 以下过滤器可用于UI中的审核事件：
 
-| 筛选条件 | 描述 |
+| 过滤器 | 描述 |
 | --- | --- |
 | [!UICONTROL Category] | 使用下拉菜单按[类别](#category)筛选显示的结果。 |
 | [!UICONTROL Action] | 按操作筛选。 每项服务的可用操作可在上面的资源表中查看。 |
@@ -169,7 +169,7 @@ ht-degree: 29%
 
 ## 管理Adobe Admin Console的审核日志
 
-要了解如何管理Adobe Admin Console中的活动的审核日志，请参阅以下[文档](https://helpx.adobe.com/cn/enterprise/using/audit-logs.html)。
+要了解如何管理Adobe Admin Console中的活动的审核日志，请参阅以下[文档](https://helpx.adobe.com/enterprise/using/audit-logs.html)。
 
 ## 后续步骤和其他资源
 
@@ -177,4 +177,4 @@ ht-degree: 29%
 
 要加深您对Experience Platform中审核日志的了解，请观看以下视频：
 
->[!VIDEO](https://video.tv.adobe.com/v/344644?captions=chi_hans&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/341450?quality=12&learn=on)

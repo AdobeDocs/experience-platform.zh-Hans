@@ -35,7 +35,7 @@ ht-degree: 9%
 
 >[!NOTE]
 >
->如果源架构和目标架构都属于同一类，则不应使用专用关系字段&#x200B;**&#x200B;**。 在这种情况下，请使用合并架构UI查看关系。 有关如何执行此操作的说明，请参阅合并架构UI指南的[查看关系](../../profile/ui/union-schema.md#view-relationships)部分。
+>如果源架构和目标架构都属于同一类，则不应使用专用关系字段&#x200B;****。 在这种情况下，请使用合并架构UI查看关系。 有关如何执行此操作的说明，请参阅合并架构UI指南的[查看关系](../../profile/ui/union-schema.md#view-relationships)部分。
 
 本文档提供了一个教程，介绍如何在[!DNL Experience Platform]用户界面中使用架构编辑器定义两个架构之间的关系。 有关使用API定义架构关系的步骤，请参阅有关[使用架构注册表API定义关系的教程](relationship-api.md)。
 
@@ -115,7 +115,7 @@ ht-degree: 9%
 
 ![字段属性侧边栏中突出显示了具有Add关系的架构编辑器。](../images/tutorials/relationship/add-relationship.png)
 
-出现[!UICONTROL Add relationship]对话框。 通过此对话框，您可以设置配置关系字段所需的参数。 对于Real-Time CDP B2C用户，您只能&#x200B;**1&rbrace;在源架构和引用架构之间设置一对一关系。**
+出现[!UICONTROL Add relationship]对话框。 通过此对话框，您可以设置配置关系字段所需的参数。 对于Real-Time CDP B2C用户，您只能&#x200B;**1}在源架构和引用架构之间设置一对一关系。**
 
 >[!NOTE]
 >

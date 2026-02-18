@@ -39,7 +39,7 @@ Adobe Experience Platform UI中的[[!UICONTROL Data Lifecycle]工作区](./overv
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_scheduleDatasetExpiration_instructions"
 >title="说明"
->abstract="<ul><li>在左侧导航中选择<a href="https://experienceleague.adobe.com/docs/experience-platform/hygiene/ui/overview.html?lang=zh-Hans#">数据生命周期</a>，然后选择<b>创建请求</b>。</li><li>如果要删除记录：</li>   <li>选择<b>记录</b>。</li>   <li>选择要从中删除记录的特定数据集，或选择从所有数据集中删除记录的选项。</li>   <li>提供要删除其记录的使用者的身份标识。选择<b>添加身份标识</b>以一次提供一个身份标识，或改为选择<b>选择文件</b>以上传包含多个身份标识的 JSON 文件。</li>   <li>如果需要，请选择<b>模板</b>以查看该 JSON 文件的预期格式。</li><li>如果要<a href="https://experienceleague.adobe.com/docs/experience-platform/hygiene/ui/dataset-expiration.html?lang=zh-Hans#schedule-dataset-expiration">计划数据集的过期日期</a>，请参阅说明文档。</li></ul>"
+>abstract="<ul><li>在左侧导航中选择<a href="https://experienceleague.adobe.com/docs/experience-platform/hygiene/ui/overview.html#">数据生命周期</a>，然后选择<b>创建请求</b>。</li><li>如果要删除记录：</li>   <li>选择<b>记录</b>。</li>   <li>选择要从中删除记录的特定数据集，或选择从所有数据集中删除记录的选项。</li>   <li>提供要删除其记录的使用者的身份标识。选择<b>添加身份标识</b>以一次提供一个身份标识，或改为选择<b>选择文件</b>以上传包含多个身份标识的 JSON 文件。</li>   <li>如果需要，请选择<b>模板</b>以查看该 JSON 文件的预期格式。</li><li>如果要<a href="https://experienceleague.adobe.com/docs/experience-platform/hygiene/ui/dataset-expiration.html#schedule-dataset-expiration">计划数据集的过期日期</a>，请参阅说明文档。</li></ul>"
 
 要创建请求，请从工作区的主页中选择&#x200B;**[!UICONTROL Create request]**。
 

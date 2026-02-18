@@ -1,7 +1,7 @@
 ---
 keywords: facebook连接；facebook连接；facebook目标；facebook；instagram；messenger；facebook messenger
 title: Facebook连接
-description: 根据散列邮件激活 Facebook 营销活动的轮廓，以实现受众定位、个性化和抑制。
+description: 根据散列邮件激活 Facebook 营销活动的轮廓，以实现受众目标选择、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
 source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
@@ -61,7 +61,7 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 此部分介绍哪些类型的受众可以导出到此目标。
 
-| 受众来源 | 支持 | 描述 |
+| 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
 | 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
@@ -74,7 +74,7 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 | 项目 | 类型 | 注释 |
 |---------|----------|---------|
-| 导出类型 | **[!UICONTROL Audience export]** | You are exporting all members of an audience with the identifiers (name, phone number, or others) used in the Facebook destination. |
+| 导出类型 | **[!UICONTROL Audience export]** | 您正在导出具有Facebook目标中所用标识符（姓名、电话号码或其他）的受众的所有成员。 |
 | 导出频率 | **[!UICONTROL Streaming]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
@@ -157,7 +157,7 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 
 以下视频还演示了配置[!DNL Facebook]目标和激活受众的步骤。
 
->[!VIDEO](https://video.tv.adobe.com/v/3411783/?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 >[!NOTE]
 >
@@ -187,7 +187,7 @@ Facebook身份验证令牌每60天过期一次。 令牌过期后，数据导出
    ![筛选以仅显示Facebook帐户](/help/destinations/assets/catalog/social/facebook/refresh-oauth-filters.png)
 3. 选择要刷新的帐户，选择省略号并选择&#x200B;**[!UICONTROL Edit details]**。
    ![选择“编辑详细信息”控件](/help/destinations/assets/catalog/social/facebook/refresh-oauth-edit-details.png)
-4. 在模式窗口中，选择&#x200B;**[!UICONTROL Reconnect OAuth]**&#x200B;并使用您的Facebook凭据重新进行身份验证。
+4. 在模式窗口中，选择&#x200B;**[!UICONTROL Reconnect OAuth]**并使用您的Facebook凭据重新进行身份验证。
    使用Reconnect OAuth选项的![模式窗口](/help/destinations/assets/catalog/social/facebook/reconnect-oauth-control.png)
 
 >[!SUCCESS]
@@ -283,7 +283,7 @@ Facebook身份验证令牌每60天过期一次。 令牌过期后，数据导出
 >
 >Adobe Experience Platform与[!DNL Facebook]之间的集成支持历史受众回填。 在将受众激活到目标时，所有历史受众资格都会发送到[!DNL Facebook]。
 
-## 故障排除 {#troubleshooting}
+## 疑难解答 {#troubleshooting}
 
 ### 400错误请求错误消息 {#bad-request}
 

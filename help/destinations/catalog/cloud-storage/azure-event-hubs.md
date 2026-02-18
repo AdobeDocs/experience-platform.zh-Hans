@@ -1,5 +1,5 @@
 ---
-keywords: Azure事件中心目标；Azure事件中心；Azure事件中心
+keywords: Azure事件中心目标；azure事件中心；azure eventhub
 title: Azure事件中心连接
 description: 创建到 [!DNL Azure Event Hubs] 存储的实时出站连接，以从Experience Platform流式传输数据。
 badgeUltimate: label="Ultimate" type="Positive"
@@ -17,7 +17,7 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
-> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
 [!DNL Azure Event Hubs]是一个大数据流式传输平台和事件摄取服务。 它每秒可以接收和处理数百万个事件。 发送到事件中心的数据可以使用任何实时分析提供程序或批处理/存储适配器进行转换和存储。
 
@@ -39,7 +39,7 @@ UI中的![AWS Kinesis](../../assets/catalog/cloud-storage/event-hubs/catalog.png
 
 此部分介绍哪些类型的受众可以导出到此目标。
 
-| 受众来源 | 支持 | 描述 |
+| 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
 | 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
