@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2026 年 2 月）
 description: Adobe Experience Platform 的 2026 年 2 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 7cb35f5b35878b655dc668c0b26e22a41d675161
+source-git-commit: a11c00c218ffbbd5618616f401613a604c35859a
 workflow-type: tm+mt
-source-wordcount: '460'
-ht-degree: 46%
+source-wordcount: '606'
+ht-degree: 48%
 
 ---
 
@@ -28,6 +28,7 @@ Adobe Experience Platform 中新功能和现有功能的更新：
 - [警报](#alerts)
 - [目标](#destinations)
 - [源](#sources)
+- [Experience Data Model (XDM)](#xdm)
 
 ## 警报 {#alerts}
 
@@ -79,3 +80,14 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 {style="table-layout:auto"}
 
 有关更多信息，请阅读[源概述](../../sources/home.md)。
+
+## 体验数据模型 (XDM) {#xdm}
+
+XDM 是一种开源规范，可为导入 Experience Platform 的数据提供常用的结构和定义（架构）。通过遵守 XDM 标准，所有客户体验数据都可以合并到一个通用的呈现中，以更快、更加集成的方式提供洞察。您可以从客户行为中获得有价值的洞察，通过区段定义客户受众，并使用客户属性实现个性化目的。
+
+| 功能 | 描述 |
+| --- | --- |
+| 限制编辑包含数据集的架构 | 现在，在架构存在数据集后，会限制导致重大更改的编辑操作。 关联数据集后，您将无法再重命名或删除字段、更改字段数据类型或格式、修改身份描述符、管理相关字段以删除现有字段或更改分配的类；仍支持添加更改和字段弃用。 |
+
+有关详细信息，请参阅 [XDM 概述](../../xdm/home.md)。
+
