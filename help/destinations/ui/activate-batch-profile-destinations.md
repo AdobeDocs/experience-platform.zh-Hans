@@ -3,10 +3,10 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 99bac2ea71003b678a25b3afc10a68d36472bfbc
+source-git-commit: 8019f7426f6e6dd3faef131ada8e307c1d075556
 workflow-type: tm+mt
-source-wordcount: '4578'
-ht-degree: 12%
+source-wordcount: '4783'
+ht-degree: 11%
 
 ---
 
@@ -120,7 +120,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >id="platform_destinations_activate_exportoptions"
 >title="文件导出选项"
 >abstract="选择&#x200B;**导出全部文件**&#x200B;以导出符合受众资格的所有轮廓的完整快照。选择&#x200B;**导出增量文件**&#x200B;以仅导出自上次导出后符合受众资格的轮廓。<br>第一个增量文件导出包括符合受众资格的所有轮廓，充当回填。后续增量文件仅包含自第一个增量文件导出后符合受众资格的轮廓。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=zh-Hans#export-incremental-files" text="导出增量文件"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#export-incremental-files" text="导出增量文件"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_aftersegmentevaluation"
@@ -166,7 +166,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
    <!-- Batch segmentation currently runs at {{insert time of day}} and lasts for an average {{x hours}}. Adobe reserves the right to modify this schedule. -->
 
    ![在批处理目标的激活流程中，突出显示区段后评估选项。](../assets/ui/activate-batch-profile-destinations/after-segment-evaluation-option.png)
-使用&#x200B;**[!UICONTROL Scheduled]**&#x200B;选项可让激活作业在固定时间运行。 此选项可确保每天在同一时间导出Experience Platform配置文件数据。 但是，您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。
+使用**[!UICONTROL Scheduled]**&#x200B;选项可让激活作业在固定时间运行。 此选项可确保每天在同一时间导出Experience Platform配置文件数据。 但是，您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。
 
    ![突出显示批处理目标激活流中的“已计划”选项并显示时间选择器的图像。](../assets/ui/activate-batch-profile-destinations/scheduled-option.png)
 
@@ -181,6 +181,29 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
    > 选择导出间隔时，该间隔的最后一天不包含在导出中。 例如，如果选择1月4日至11日之间的时间间隔，则最后一次文件导出将在1月10日进行。
 
 4. 选择&#x200B;**[!UICONTROL Create]**&#x200B;以保存计划。
+
+### 了解计划的导出行为 {#export-behavior}
+
+计划的导出包括受众快照数据以及在快照创建和导出之间发生的任何增量配置文件或身份更改。 这与[按需导出](export-file-now.md)不同，后者仅使用快照数据。
+
+下表重点说明了计划出口与按需出口的差异，尤其是在数据新鲜度和预期用途方面：
+
+|  | 计划导出 | 立即导出文件 |
+|--------|-------------------|-----------------|
+| **数据源** | 快照+增量更改 | 仅快照 |
+| **轮廓属性** | 导出时的当前值 | 快照时的值 |
+
+如果在受众评估后更新了用户档案，则计划导出将包括更新的属性值，即使评估时确定了受众成员资格也是如此。
+
+**示例**：“retailID为null的用户档案”的受众可能会导出填充了retailID的用户档案（如果该字段在&#x200B;*评估后*&#x200B;但在&#x200B;*计划导出前*&#x200B;更新）。
+
+**推荐**
+
+* 配置[重复数据删除键](#deduplication-keys)以防止重复记录
+* 对精确基于快照的数据使用按需导出
+* 将批量摄取与评估计划调整到一致以最大限度地减少差异
+
+有关按需导出，请参阅有关[按需导出文件](/help/destinations/ui/export-file-now.md#scheduled-vs-ondemand)的文档。
 
 ### 导出增量文件
 
@@ -338,7 +361,11 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >title="关于重复数据删除键"
 >abstract="通过选择重复数据删除键，消除导出文件中同一轮廓的多条记录。选择一个命名空间或最多两个 XDM 架构属性作为重复数据删除键。不选择重复数据删除键可能会导致导出文件中出现重复的轮廓条目。"
 
-重复数据删除键是用户定义的主键，可确定用户希望为其配置文件进行重复数据删除的身份&#x200B;。
+>[!IMPORTANT]
+>
+>始终为计划导出配置重复数据删除键。 如果没有重复数据删除，您可能会看到同一配置文件的重复行或冲突的区段成员资格，因为计划的导出会同时处理快照和增量数据。
+
+重复数据删除键是用户定义的主键，可确定如何对配置文件进行重复数据删除。 当同一个人存在多个记录时，重复数据删除可确保仅导出最新的记录。
 
 重复数据删除键消除了在一个导出文件中拥有同一配置文件的多个记录的可能性。
 
@@ -469,7 +496,7 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 
 ### 具有相同时间戳的用户档案的重复数据删除行为 {#deduplication-same-timestamp}
 
-将轮廓导出到基于文件的目标时，重复数据删除可确保当多个轮廓共享相同的重复数据删除键和相同的参考时间戳时仅导出一个轮廓。此时间戳表示个人资料的受众成员资格或身份图的上次更新时间。 有关如何更新和导出配置文件的更多信息，请参阅[配置文件导出行为](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2)文档。
+将轮廓导出到基于文件的目标时，重复数据删除可确保当多个轮廓共享相同的重复数据删除键和相同的参考时间戳时仅导出一个轮廓。此时间戳表示个人资料的受众成员资格或身份图的上次更新时间。 有关如何更新和导出配置文件的更多信息，请参阅[配置文件导出行为](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2)文档。
 
 #### 关键注意事项
 

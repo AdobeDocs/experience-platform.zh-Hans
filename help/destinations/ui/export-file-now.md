@@ -3,10 +3,10 @@ title: 使用Experience Platform UI按需将文件导出到批处理目标
 type: Tutorial
 description: 了解如何使用Experience Platform UI将按需文件导出到批处理目标。
 exl-id: 0cbe5089-b73d-4584-8451-2fc34d47c357
-source-git-commit: 111f6d5093a0b66a683745b1da8d8909eb17f7eb
+source-git-commit: c7e6de2db416592ca9340fefadd53709fe71b058
 workflow-type: tm+mt
-source-wordcount: '684'
-ht-degree: 8%
+source-wordcount: '805'
+ht-degree: 5%
 
 ---
 
@@ -26,9 +26,26 @@ ht-degree: 8%
 
 本文介绍如何使用Experience Platform UI将文件按需导出到批处理目标，如[云存储](/help/destinations/catalog/cloud-storage/overview.md)和[电子邮件营销](/help/destinations/catalog/email-marketing/overview.md)目标。
 
-**[!UICONTROL Export file now]**&#x200B;控件允许您在不中断先前计划受众的当前导出计划的情况下导出完整文件。 此导出操作在之前计划的导出之外进行，不会更改受众的导出频率。 将立即触发文件导出，并获取 Experience Platform 分段运行的最新结果。
+**[!UICONTROL Export file now]**&#x200B;控件允许您在不中断先前计划受众的当前导出计划的情况下导出完整文件。 此导出操作在之前计划的导出之外进行，不会更改受众的导出频率。
+
+文件导出会立即触发，并仅使用最新受众评估快照中的数据。 它不包括创建快照后发生的配置文件或标识更改。 相反，计划的导出既包括快照数据，也包括快照创建和导出之间发生的增量更改。
 
 您还可以将Experience Platform API用于此目的。 了解如何通过临时激活API[将按需受众](/help/destinations/api/ad-hoc-activation-api.md)激活到批处理目标。
+
+## 计划导出与按需导出 {#scheduled-vs-ondemand}
+
+按需导出和计划导出使用不同的数据源，这可能会导致导出数据存在差异。 请参阅下表以了解每种情况下导出的内容。
+
+|  | 立即导出文件 | 计划导出 |
+|--------|-----------------|-------------------|
+| **数据源** | 仅快照 | 快照+增量更改 |
+| **轮廓属性** | 快照时的值 | 导出时的当前值 |
+
+>[!NOTE]
+>
+>计划导出显示的配置文件计数或属性值可能与按需导出不同，因为它们包含在受众评估后发生的配置文件更新。
+
+有关详细信息，请参阅[了解计划的导出行为](/help/destinations/ui/activate-batch-profile-destinations.md#export-behavior)。
 
 ## 先决条件 {#prerequisites}
 
