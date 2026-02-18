@@ -4,9 +4,9 @@ description: 创建实时Snowflake数据共享，以直接将每日受众更新�
 last-substantial-update: 2026-02-17T00:00:00Z
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 6959ccd0-ba30-4750-a7de-d0a709292ef7
-source-git-commit: 89968d4e4c552b7c6b339a39f7a7224133446116
+source-git-commit: 2ad61b1b7e728429e047c4801b9a79e479a3aa18
 workflow-type: tm+mt
-source-wordcount: '1708'
+source-wordcount: '1735'
 ht-degree: 3%
 
 ---
@@ -152,6 +152,10 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
    * 如果您的帐户未链接到组织： `AccountName`。
 * **[!UICONTROL Snowflake Region]**：选择预配Snowflake实例的区域。 有关支持的云区域的详细信息，请参阅Snowflake [文档](https://docs.snowflake.com/en/user-guide/intro-regions)。
 * **[!UICONTROL Account acknowledgment]**：输入&#x200B;**[!UICONTROL Snowflake Account ID]**&#x200B;后，在此下拉列表中选择&#x200B;**[!UICONTROL Yes]**&#x200B;以确认您的&#x200B;**[!UICONTROL Snowflake Account ID]**&#x200B;正确且属于您。
+
+>[!NOTE]
+>
+> 创建目标后，无法通过&#x200B;**[!UICONTROL Snowflake Account ID]**&#x200B;编辑目标&#x200B;**[!UICONTROL Snowflake Region]**&#x200B;工作流编辑[和](../../ui/edit-destination.md)。 若要使用不同的帐户或区域值，请[创建新的目标连接](../../ui/connect-destination.md)。
 
 >[!IMPORTANT]
 >
