@@ -61,7 +61,7 @@ ht-degree: 13%
 
 <!-- The following video is intended to support your understanding of creating a new role and managing users for that role.
 
->[!VIDEO](https://video.tv.adobe.com/v/336081/?learn=on) -->
+>[!VIDEO](https://video.tv.adobe.com/v/3475983/?captions=chi_hans&learn=on) -->
 
 ## 复制角色
 
