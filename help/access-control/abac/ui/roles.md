@@ -1,18 +1,22 @@
 ---
 keywords: Experience Platform；主页；热门主题；访问控制；基于属性的访问控制；ABAC
 title: 基于属性的访问控制创建角色
-description: 本文档提供了有关通过Adobe Experience Cloud中的权限界面管理角色的信息
+description: 通过Adobe Experience Cloud中的“权限”界面管理角色。
 exl-id: 85699716-339d-4992-8390-95563c7ea7fe
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: b665d0edce713f1b252e07125aabab79d52a9cba
 workflow-type: tm+mt
-source-wordcount: '594'
-ht-degree: 24%
+source-wordcount: '737'
+ht-degree: 13%
 
 ---
 
 # 管理角色
 
-角色定义了管理员、专家或最终用户对组织中的资源的访问权限。在基于角色的访问控制环境中，用户访问设置是通过共同的责任和需求进行分组的。 一个角色具有一组给定的权限，可将您组织的成员分配给一个或多个角色，具体取决于他们需要的查看或写入访问权限的范围。
+<!-- UPDATE ROLES WITH A MORE COMPREHENSIVE EXPLANATION -->
+
+要开始管理角色，请在&#x200B;**[!UICONTROL Permissions]** Adobe Experience Cloud[中导航到](https://experience.adobe.com/){target="_blank"}，然后在左侧面板中选择&#x200B;**[!UICONTROL Roles]**。
+
+![权限中的角色工作区。](../../images/ui/roles/roles-overview.png)
 
 ## 创建新角色 {#create-new-role}
 
@@ -20,80 +24,84 @@ ht-degree: 24%
 >id="platform_permissions_roles_about_create"
 >title="创建新角色"
 >abstract="创建新角色以更好地对与您的 Experience Platform 实例交互的用户进行分类。例如，可为内部营销团队创建一个角色，并将受监管的健康数据 (RHD) 标签应用于该角色，使您的内部营销团队可访问受保护的健康信息 (PHI)。或者，还可为外部机构创建一个角色，并通过不将 RHD 标签应用于该角色而拒绝该角色访问 PHI 数据。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html?lang=zh-Hans" text="管理角色"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html" text="管理角色"
 >additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/abac/end-to-end-guide#label-roles" text="将标签应用于角色"
 
-要创建新角色，请选择侧边栏中的&#x200B;**[!UICONTROL Roles]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL Create Role]**。
+要创建新角色，请选择&#x200B;**[!UICONTROL Create role]**。
 
-![flac-new-role](../../images/flac-ui/flac-new-role.png)
+>[!TIP]
+>
+>只读角色是现成可用的。 只读角色是一种角色，它允许用户查看数据、配置和UI功能，而无需更改系统状态。 管理员无法编辑这些角色，但可以将用户关联到角色。
 
-出现&#x200B;**[!UICONTROL Create a new role]**&#x200B;对话框，提示您输入名称和可选描述。
+![突出显示了“创建角色”选项的角色的工作区。](../../images/ui/roles/roles-create-role.png)
 
-完成后，选择&#x200B;**[!UICONTROL Confirm]**。
+出现&#x200B;**[!UICONTROL Create new role]**&#x200B;对话框。 输入角色的&#x200B;**[!UICONTROL Name]**，也可以输入&#x200B;**[!UICONTROL Description]**，然后选择&#x200B;**[!UICONTROL Confirm]**。
 
-![flac-create-new-role](../../images/flac-ui/flac-create-new-role.png)
+![已填写名称和描述并突出显示“确认”选项的“创建新角色”对话框。](../../images/ui/roles/roles-create-new-role.png)
 
-接下来，使用下拉菜单选择要包含在角色中的资源权限。
+出现&#x200B;**[!UICONTROL Resources]**&#x200B;工作区。 通过滚动或在左侧面板的搜索栏中输入资源名称来查找所需的资源。 通过选择资源名称旁边的![加号图标](/help/images/icons/plus.png)来添加资源。
 
-![flac-add-role-permission](../../images/flac-ui/flac-add-role-permission.png)
+![突出显示单个资源的“添加”选项的资源工作区。](../../images/ui/roles/roles-resources.png)
 
-要添加其他资源，请从左侧导航面板中选择&#x200B;**[!UICONTROL Adobe Experience Platform]**，该面板显示资源列表。 或者，在左侧导航面板的搜索栏中输入资源名称。
+<!-- ADD IN NOTE ABOUT THE DEFAULT SANDBOX - THIS SHOULD BE MENTIONED IN THE HIGHER LEVEL DOCS, WE MAY BE ABLE TO LINK TO IT -->
 
-![flac-add-additional-resources](../../images/flac-ui/flac-add-additional-resources.png)
+资源将添加到主工作区。 选择资源名称旁边的下拉列表，然后选择要添加到角色的权限。 您可以单独选择这些权限，选择&#x200B;**[!UICONTROL Add all]**，或者通过在搜索栏中输入权限名称来查找特定权限。
 
-单击并将相关资源拖放到主面板中。
+![扩展并突出显示带有单个资源的下拉菜单的资源工作区。](../../images/ui/roles/roles-resources-permissions.png)
 
-![flac-additional-resources-added](../../images/flac-ui/flac-additional-resources-added.png)
+继续选择要添加到角色的所有资源和权限。 完成后，选择&#x200B;**[!UICONTROL Save]**。
 
-使用下拉菜单选择要包含在角色中的资源权限。 对要包含到角色的所有资源重复此操作。 完成后，选择&#x200B;**[!UICONTROL Save and exit]**。
+![突出显示了“保存”选项的资源工作区。](../../images/ui/roles/roles-resources-permissions-save.png)
 
-![flac-save-resources](../../images/flac-ui/flac-save-resources.png)
+您将收到一个警报，表明已成功保存角色。 选择&#x200B;**[!UICONTROL Close]**&#x200B;以返回到&#x200B;**[!UICONTROL Roles]**&#x200B;工作区。
+
+![资源工作区中成功警报和“关闭”选项突出显示。](../../images/ui/roles/roles-resources-permissions-close.png)
 
 已成功创建新角色，并且您被重定向到&#x200B;**[!UICONTROL Roles]**&#x200B;页面，您将看到新创建的角色显示在列表中。
 
-![flac-role-saved](../../images/flac-ui/flac-role-saved.png)
+<!-- The following video is intended to support your understanding of creating a new role and managing users for that role.
 
-有关创建角色后如何管理角色权限的更多详细信息，请参阅[管理角色的权限](#manage-permissions-for-a-role)部分。
-
-以下视频旨在支持您了解如何创建新角色以及如何管理该角色的用户。
-
->[!VIDEO](https://video.tv.adobe.com/v/3475983/?captions=chi_hans&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/336081/?learn=on) -->
 
 ## 复制角色
 
-要复制现有角色，请从&#x200B;**[!UICONTROL Roles]**&#x200B;选项卡中选择该角色。 或者，使用筛选器选项筛选结果以查找要复制的角色。
+复制角色将会复制详细信息、权限、标签和沙盒。 用户、用户组和API凭据&#x200B;**未复制**，需要手动将其添加到该角色。
 
-![flac-duplicate-role](../../images/flac-ui/flac-duplicate-role.png)
+要复制现有角色，请在&#x200B;**[!UICONTROL Roles]**&#x200B;选项卡中查找要复制的角色。 选择角色名称旁边的![更多图标](/help/images/icons/more.png)，然后从下拉菜单中选择&#x200B;**[!UICONTROL Duplicate]**。
 
-接下来，从屏幕右上角选择&#x200B;**[!UICONTROL Duplicate]**。
+![角色的工作区中扩展了角色的下拉菜单，并突出显示了“复制”选项。](../../images/ui/roles/role-duplicate.png)
 
-![flac-duplicate](../../images/flac-ui/flac-duplicate.png)
+将显示复制确认对话框。 选择&#x200B;**[!UICONTROL Confirm]**&#x200B;以完成角色复制。 新角色将保存在相同的名称下，并将`_Copy`添加为后缀。
 
-将显示&#x200B;**[!UICONTROL Duplicate role]**&#x200B;对话框，提示您确认复制。
+![突出显示带有“确认”选项的重复确认对话框。](../../images/ui/roles/role-duplicate-confirm.png)
 
-![flac-duplicate-confirm](../../images/flac-ui/flac-duplicate-confirm.png)
+或者，您可以从单个角色的工作区中复制角色。 从&#x200B;**[!UICONTROL Roles]**&#x200B;工作区中选择要复制的角色，然后选择&#x200B;**[!UICONTROL Duplicate]**。
 
-接下来，您将转到角色的详细信息页面，您可以在其中更改角色的名称和权限。 详细信息、标签和沙盒与上一个角色重复。 需要通过“用户”选项卡添加用户。 您可以查看角色[的](permissions.md)管理权限文档，了解有关将详细信息、标签、沙盒和用户添加到角色的更多信息。
+![突出显示了“重复”选项的单个角色的工作区。](../../images/ui/roles/role-duplicate-alt.png)
 
-单击左箭头返回&#x200B;**[!UICONTROL Roles]**&#x200B;选项卡。
+将显示复制确认对话框。 选择&#x200B;**[!UICONTROL Confirm]**&#x200B;以完成角色复制。 您将被重定向到新角色。
 
-![flac-return-to-roles](../../images/flac-ui/flac-return-to-roles.png)
-
-新角色将显示在&#x200B;**[!UICONTROL Roles]**&#x200B;页面的列表中。
-
-![flac-role-duplicate-saved](../../images/flac-ui/flac-role-duplicate-saved.png)
+![突出显示带有“确认”选项的重复确认对话框。](../../images/ui/roles/role-duplicate-alt-confirm.png)
 
 ## 删除角色
 
-选择角色名称旁边的省略号(`…`)，下拉菜单将显示用于编辑、删除或复制角色的控件。 从下拉菜单中选择删除。
+要删除角色，请在&#x200B;**[!UICONTROL Roles]**&#x200B;选项卡中查找要删除的角色。 选择角色名称旁边的![更多图标](/help/images/icons/more.png)，然后从下拉菜单中选择&#x200B;**[!UICONTROL Delete]**。
 
-![flac-role-delete](../../images/flac-ui/flac-role-delete.png)
+![角色的工作区中扩展了角色的下拉菜单，并突出显示了“复制”选项。](../../images/ui/roles/role-delete.png)
 
-出现&#x200B;**[!UICONTROL Delete user role]**&#x200B;对话框，提示您确认删除。
+此时将显示删除确认对话框。 选择&#x200B;**[!UICONTROL Confirm]**&#x200B;以完成删除角色。
 
-![flac-confirm-role-delete](../../images/flac-ui/flac-confirm-role-delete.png)
+![突出显示带有“确认”选项的重复确认对话框。](../../images/ui/roles/role-duplicate-confirm.png)
 
-您将返回到&#x200B;**[!UICONTROL Roles]**&#x200B;选项卡。
+或者，您可以从单个角色的工作区中删除角色。 从&#x200B;**[!UICONTROL Roles]**&#x200B;工作区中选择要删除的角色，然后选择&#x200B;**[!UICONTROL Delete]**。
+
+![突出显示删除选项的单个角色的工作区。](../../images/ui/roles/role-delete-alt.png)
+
+此时将显示删除确认对话框。 选择&#x200B;**[!UICONTROL Confirm]**&#x200B;以完成删除角色。
+
+![突出显示带有“确认”选项的删除确认对话框。](../../images/ui/roles/role-delete-alt-confirm.png)
+
+<!-- ADD PERMISSIONS TO THIS PAGE -->
 
 ## 后续步骤
 
