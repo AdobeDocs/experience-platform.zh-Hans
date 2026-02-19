@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: 了解有关数据激活默认使用量和速率限制的更多信息。
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 11ef8fe8b64a7c2bb698c62093aafe3fb11d3789
+source-git-commit: 67dec10b0d1343fffd522ee3e615ac2823894a67
 workflow-type: tm+mt
-source-wordcount: '1731'
+source-wordcount: '1755'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/cn/legal/product-descriptions.html)中的实际使用限制。
+>除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/legal/product-descriptions.html)中的实际使用限制。
 
 本页提供有关激活行为的默认使用量和速率限制。 查看以下护栏时，假定您已正确[连接到目标](/help/destinations/ui/connect-destination.md)。
 
@@ -76,7 +76,7 @@ ht-degree: 2%
 | 激活频率 | 每日一次完全导出或更频繁的增量导出，每3、6、8或12小时一次。 | 系统强制的护栏 | 有关批处理导出的频率递增的详细信息，请阅读[导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files)和[导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files)文档部分。 |
 | 在给定小时可导出的最大受众数 | 100 | 性能护栏 | 建议向批处理目标数据流添加最多100个受众。 |
 | 每个文件要激活的最大行数（记录） | 500万 | 系统强制的护栏 | Adobe Experience Platform会自动按每个文件500万条记录（行）拆分导出的文件。 每一行表示一个配置文件。 拆分文件名后附加一个数字，指示文件是较大导出的一部分，例如： `filename.csv`、`filename_2.csv`、`filename_3.csv`。 有关详细信息，请参阅激活批处理目标教程的[计划部分](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling)。 |
-| 数据流中激活的自定义上传受众的最大数量 | 10 | 系统强制的护栏 | 将[自定义上传受众](/help/segmentation/ui/audience-portal.md#import-audience)激活到基于文件的批处理目标时，您可以在数据流中激活10个此类受众的限制。 了解有关[将自定义上传受众激活到基于批处理文件的目标](/help/destinations/ui/activate-batch-profile-destinations.md#select-audiences)的工作流的详细信息。 |
+| 数据流中可以激活的最大外部受众（例如FAC、自定义上传、受众合成）数量 | 10 | 系统强制的护栏 | 将外部受众（例如[联合受众组合](/help/segmentation/ui/audience-portal.md#fac)、[自定义上传](/help/segmentation/ui/audience-portal.md#import-audience)、[受众组合](/help/segmentation/ui/audience-portal.md#audience-composition)）激活到基于批处理文件的目标时，您可以在数据流中激活10个此类受众的限制。 有关这些受众类型的详细信息，请参阅[受众类型和自定义](/help/segmentation/ui/audience-portal.md#customize)。 了解有关[将外部受众激活到基于批处理文件的目标](/help/destinations/ui/activate-batch-profile-destinations.md#select-audiences)的工作流的详细信息。 |
 
 {style="table-layout:auto"}
 
@@ -196,7 +196,7 @@ The guardrails below are the same whether you are exporting parquet of JSON file
 请参阅Real-Time CDP产品描述文档中的以下文档，了解有关其他Experience Platform服务护栏、端到端延迟信息和许可信息的更多信息：
 
 * [Real-Time CDP护栏](/help/rtcdp/guardrails/overview.md)
-* [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=zh-Hans#end-to-end-latency-diagrams)。
-* [Real-Time Customer Data Platform (B2C Edition - Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams)。
+* [Real-Time Customer Data Platform (B2C Edition - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
