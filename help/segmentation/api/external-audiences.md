@@ -2,9 +2,9 @@
 title: 外部受众API端点
 description: 了解如何使用外部受众API从Adobe Experience Platform创建、更新、激活和删除外部受众。
 exl-id: eaa83933-d301-48cb-8a4d-dfeba059bae1
-source-git-commit: ff58324446f28cbdca369ecbb58d8261614ae684
+source-git-commit: de18b8292f07c143d63d26a45ca541e50b2ed2f3
 workflow-type: tm+mt
-source-wordcount: '2340'
+source-wordcount: '2528'
 ht-degree: 4%
 
 ---
@@ -107,14 +107,14 @@ curl -X POST https://platform.adobe.io/data/core/ais/external-audience/ \
 | `name` | 字符串 | 外部受众的名称。 |
 | `description` | 字符串 | 外部受众的可选描述。 |
 | `customAudienceId` | 字符串 | 外部受众的可选标识符。 |
-| `fields` | 对象数组 | 字段及其数据类型的列表。 创建字段列表时，可以添加以下项目： <ul><li>`name`： **必需**&#x200B;作为外部受众规范一部分的字段的名称。</li><li>`type`： **必需**&#x200B;进入字段的数据类型。 支持的值包括`string`、`number`、`long`、`integer`、`date` (`2025-05-13`)、`datetime` (`2025-05-23T20:19:00+00:00`)和`boolean`。</li><li>`identityNs`： **身份字段必需**&#x200B;身份字段使用的命名空间。 支持的值包括所有有效的命名空间，如`ECID`或`email`。</li><li>`labels`： *可选*&#x200B;字段的访问控制标签数组。 有关可用访问控制标签的详细信息，请参阅[数据使用标签术语表](/help/data-governance/labels/reference.md)。 </li></ul> |
+| `fields` | 对象数组 | 字段及其数据类型的列表。 数组中必须至少包含1个字段，且最多包含41个字段。 其中一个字段&#x200B;**必须**&#x200B;是标识字段，并且包含`identityNs`。 创建字段列表时，可以添加以下项目： <ul><li>`name`： **必需**&#x200B;作为外部受众规范一部分的字段的名称。</li><li>`type`： **必需**&#x200B;进入字段的数据类型。 支持的值包括`string`、`number`、`long`、`integer`、`date` (`2025-05-13`)、`datetime` (`2025-05-23T20:19:00+00:00`)和`boolean`。</li><li>`identityNs`： **身份字段必需**&#x200B;身份字段使用的命名空间。 支持的值包括所有有效的命名空间，如`ECID`或`email`。</li><li>`labels`： *可选*&#x200B;字段的访问控制标签数组。 有关可用访问控制标签的详细信息，请参阅[数据使用标签术语表](/help/data-governance/labels/reference.md)。 </li></ul> |
 | `sourceSpec` | 对象 | 包含外部受众所在信息的对象。 使用此对象时，您&#x200B;**必须**&#x200B;包括以下信息： <ul><li>`path`： **必需**：外部受众或源中包含外部受众的文件夹的位置。 文件路径&#x200B;**不能**&#x200B;包含任何空格。 例如，如果您的路径为`activation/sample-source/Example CSV File.csv`，则将路径设置为`activation/sample-source/ExampleCSVFile.csv`。 您可以在数据流部分的&#x200B;**Source数据**&#x200B;列中查找到源的路径。</li><li>`type`： **必需**&#x200B;您要从源检索的对象类型。 此值可以是`file`或`folder`。</li><li>`sourceType`： *可选*&#x200B;您要从中检索的源类型。 当前，唯一支持的值为`Cloud Storage`。</li><li>`cloudType`： **必需**&#x200B;云存储的类型，基于源类型。 支持的值包括`S3`、`DLZ`、`GCS`、`Azure`和`SFTP`。</li><li>`baseConnectionId`：基本连接的ID，由源提供程序提供。 如果使用&#x200B;**、**&#x200B;或`cloudType`的`S3`值，则此值为`GCS`必需`SFTP`。 否则，您&#x200B;**不**&#x200B;需要包含此参数。 有关详细信息，请阅读[源连接器概述](../../sources/home.md)。</li></ul> |
 | `ttlInDays` | 整数 | 外部受众的数据过期时间（天）。 此值可以设置为1到90。 默认情况下，数据到期设置为30天。 |
 | `audienceType` | 字符串 | 外部受众的受众类型。 当前仅支持`people`。 |
 | `originName` | 字符串 | **必需**&#x200B;受众的来源。 它指明了受众的来源。 对于外部受众，您应使用`CUSTOM_UPLOAD`。 |
 | `namespace` | 字符串 | 受众的命名空间。 默认情况下，此值设置为`CustomerAudienceUpload`。 |
 | `labels` | 字符串数组 | 应用于外部受众的访问控制标签。 有关可用访问控制标签的详细信息，请参阅[数据使用标签术语表](/help/data-governance/labels/reference.md)。 |
-| `tags` | 字符串数组 | 要应用于外部受众的标记。 有关标记的详细信息，请参阅[管理标记指南](/help/administrative-tags/ui/managing-tags.md)。 |
+| `tags` | 字符串数组 | 要应用于外部受众的标记。 添加标记数组时，**必须**&#x200B;使用`tagId`。 有关标记的详细信息，请参阅[管理标记指南](/help/administrative-tags/ui/managing-tags.md)。 |
 
 +++
 
@@ -624,6 +624,53 @@ curl -X GET https://platform.adobe.io/data/core/ais/external-audience/60ccea95-1
 | 属性 | 类型 | 描述 |
 | -------- | ---- | ----------- |
 | `runs` | 对象 | 一个对象，其中包含属于该受众的摄取运行列表。 有关此对象的详细信息，请参阅[检索摄取状态部分](#retrieve-ingestion-status)。 |
+
++++
+
+## 延长外部受众的数据过期时间 {#extend-data-expiration}
+
+>[!NOTE]
+>
+>若要使用以下端点，您需要具有外部受众的`audienceId`。 通过成功调用`audienceId`终结点，您可以获取`GET /external-audiences/operations/{OPERATION_ID}`。
+
+您可以在提供受众ID的同时向以下端点发出POST请求，以延长外部受众的数据过期时间。
+
+数据过期时间会延长到摄取期间设置的原始持续时间。 如果未指定持续时间，则应用30天的默认扩展。 延长数据过期时间后，系统将使用上次成功摄取的数据重新摄取受众。
+
+**API格式**
+
+```http
+/ais/external-audience/extend-ttl/{AUDIENCE_ID}
+```
+
+**请求**
+
+以下请求扩展指定外部受众的数据过期时间。
+
++++ 延长外部受众数据到期时间的示例请求。
+
+```shell
+curl -x POST https://platform.adobe.io/data/core/ais/external-audience/extend-ttl/60ccea95-1435-4180-97a5-58af4aa285ab \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
++++
+
+**响应**
+
+成功的响应返回HTTP状态200以及受众的详细信息。
+
++++ 延长数据过期时间的示例响应。
+
+```json
+{
+    "audienceId": "60ccea95-1435-4180-97a5-58af4aa285ab",
+    "name": "Sample external audience"
+}
+```
 
 +++
 

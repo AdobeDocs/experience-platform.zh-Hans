@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明（2026 年 2 月）
 description: Adobe Experience Platform 的 2026 年 2 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: a11c00c218ffbbd5618616f401613a604c35859a
+source-git-commit: 05c9a99132d1385f9ec043bb667a72304b17a9b5
 workflow-type: tm+mt
-source-wordcount: '606'
+source-wordcount: '731'
 ht-degree: 48%
 
 ---
@@ -27,6 +27,7 @@ Adobe Experience Platform 中新功能和现有功能的更新：
 
 - [警报](#alerts)
 - [目标](#destinations)
+- [Segmentation Service](#segmentation-service)
 - [源](#sources)
 - [Experience Data Model (XDM)](#xdm)
 
@@ -66,6 +67,19 @@ Experience Platform 允许您订阅各种 Experience Platform 活动的基于事
 {style="table-layout:auto"}
 
 有关更多信息，请阅读[目标概述](../../destinations/home.md)。
+
+## Segmentation Service {#segmentation-service}
+
+[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的轮廓子集。受众可以基于记录型数据（如人口统计信息）或时间序列事件（代表客户与品牌的互动行为）进行构建。
+
+**新增功能或更新后的功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 可编辑的API受众 | 现在，您可以在区段生成器中编辑使用分段服务API或Audience Agent创建的受众。 **注意：**&#x200B;目前无法使用区段生成器编辑包含时间序列数据&#x200B;**的受众**。 |
+| 外部受众数据过期刷新 | 您可以使用分段服务API来延长外部受众的数据过期时间。 有关详细信息，请阅读[外部受众API指南](/help/segmentation/api/external-audiences.md#extend-data-expiration)。 |
+
+有关详细信息，请参阅 [[!DNL Segmentation Service]  概述](../../segmentation/home.md)。
 
 ## 源 {#sources}
 
