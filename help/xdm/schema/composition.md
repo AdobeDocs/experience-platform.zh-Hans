@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 架构组合基础
 description: 了解Experience Data Model (XDM)架构以及在Adobe Experience Platform中构建架构的构建块、原则和最佳实践。
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 5b59d491834854829a89a240ccd612367cf558d4
+source-git-commit: 33b3534a2c3f9b5da54fa4f3897d1e107f7c1976
 workflow-type: tm+mt
-source-wordcount: '4291'
+source-wordcount: '4331'
 ht-degree: 8%
 
 ---
@@ -59,7 +59,7 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 
 为了帮助完成此过程，架构中的关键字段可以标记为标识。 摄取数据时，这些字段中的数据将插入该用户的“[!UICONTROL Identity Graph]”中。 然后，[[!DNL Real-Time Customer Profile]](../../profile/home.md)和其他Experience Platform服务可以访问图形数据，以提供每个客户的拼合视图。
 
-通常标记为“[!UICONTROL Identity]”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)、CRM ID或其他唯一ID字段。 请考虑特定于贵组织的任何唯一标识符，因为它们也可以是好的&quot;[!UICONTROL Identity]&quot;字段。
+通常标记为“[!UICONTROL Identity]”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html)、CRM ID或其他唯一ID字段。 请考虑特定于贵组织的任何唯一标识符，因为它们也可以是好的&quot;[!UICONTROL Identity]&quot;字段。
 
 要了解有关身份信息如何帮助您向客户提供数字体验的更多信息，请参阅[身份服务概述](../../identity-service/home.md)。 有关创建架构[时使用标识的提示，请参阅数据建模最佳实践文档](./best-practices.md#data-validation-fields)。
 
@@ -123,7 +123,7 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 
 >[!NOTE]
 >
->只有在架构尚未用于将数据摄取到Experience Platform并且未启用以在Real-time Customer Profile中使用时，您才可以对其引入重大更改。 但是，一旦在Experience Platform中使用了架构，它就必须遵守附加版本控制策略。
+>只有在架构尚未用于将数据摄取到Experience Platform并且未启用以在Real-time Customer Profile中使用时，您才可以对其引入重大更改。 但是，一旦在Experience Platform中使用了架构，它就必须遵守附加版本控制策略。 一旦为模式创建了数据集，系统就会为模式中的所有字段严格执行模式演化规则。 这些字段在引用它们的所有XDM架构中将变为不可编辑。
 
 下表列出了在编辑架构、字段组和数据类型时支持的更改：
 
