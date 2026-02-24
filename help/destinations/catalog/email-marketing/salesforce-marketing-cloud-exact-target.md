@@ -2,9 +2,9 @@
 title: (API) Salesforce Marketing Cloud连接
 description: Salesforce Marketing Cloud（以前称为ExactTarget）目标允许您导出帐户数据，并在Salesforce Marketing Cloud中激活该数据，以满足您的业务需求。
 exl-id: 0cf068e6-8a0a-4292-a7ec-c40508846e27
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '2823'
+source-wordcount: '2956'
 ht-degree: 2%
 
 ---
@@ -37,7 +37,7 @@ ht-degree: 2%
 
 ### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL (API) Salesforce Marketing Cloud]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=zh-Hans)区段[!DNL Experience Platform]。
+在将数据激活到[!DNL (API) Salesforce Marketing Cloud]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)区段[!DNL Experience Platform]。
 
 ### [!DNL (API) Salesforce Marketing Cloud]中的先决条件 {#prerequisites-destination}
 
@@ -135,12 +135,26 @@ ht-degree: 2%
 
 此部分介绍哪些类型的受众可以导出到此目标。
 
-| 受众来源 | 支持 | 描述 |
+| 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | X | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
+| [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
+
+
+
+按受众数据类型划分的受众支持：
+
+| 受众数据类型 | 受支持 | 描述 | 用例 |
+|--------------------|-----------|-------------|-----------|
+| [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
+| [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
+| [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+
+{style="table-layout:auto"}
+
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -260,19 +274,19 @@ ht-degree: 2%
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**&#x200B;以导航到目标列表。
+1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**以导航到目标列表。
    ![显示“浏览目标”的Experience Platform UI屏幕截图。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/browse-destinations.png)
 
 1. 选择目标并验证状态为&#x200B;**[!UICONTROL enabled]**。
    ![Experience Platform UI屏幕截图显示目标数据流运行。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/destination-dataflow-run.png)
 
-1. 切换到&#x200B;**[!DNL Activation data]**&#x200B;选项卡，然后选择受众名称。
+1. 切换到&#x200B;**[!DNL Activation data]**选项卡，然后选择受众名称。
    ![显示目标激活数据的Experience Platform UI屏幕截图示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/destinations-activation-data.png)
 
 1. 监控受众摘要，并确保用户档案计数对应于在区段内创建的计数。
    ![显示区段的Experience Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/segment.png)
 
-1. 登录到[[!DNL Salesforce Marketing Cloud]](https://mc.exacttarget.com/)网站。 然后导航到&#x200B;**[!DNL Audience Builder]** > **[!DNL Contact Builder]** > **[!DNL All contacts]** > **[!DNL Email]**&#x200B;页面，并检查受众中的配置文件是否已添加。
+1. 登录到[[!DNL Salesforce Marketing Cloud]](https://mc.exacttarget.com/)网站。 然后导航到&#x200B;**[!DNL Audience Builder]** > **[!DNL Contact Builder]** > **[!DNL All contacts]** > **[!DNL Email]**页面，并检查受众中的配置文件是否已添加。
    ![Salesforce Marketing Cloud UI屏幕截图显示了包含区段中所用配置文件的联系人页面。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/contacts.png)
 
 1. 要检查是否已更新任何配置文件，请导航到&#x200B;**[!UICONTROL Email]**&#x200B;页面，并验证受众中配置文件的属性值是否已更新。 如果成功，您可以看到根据[!DNL Salesforce Marketing Cloud]受众计划&#x200B;**[!UICONTROL Mapping ID]**&#x200B;步骤中提供的[值，](#schedule-segment-export-example)中的每个受众状态都已更新为Experience Platform中的相应受众状态。

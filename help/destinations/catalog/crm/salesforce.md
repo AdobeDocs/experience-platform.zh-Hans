@@ -3,9 +3,9 @@ keywords: crm；CRM；CRM目标；salesforce crm；salesforce crm目标
 title: Salesforce CRM连接
 description: Salesforce CRM目标允许您导出帐户数据，并在Salesforce CRM中激活该数据，以满足您的业务需求。
 exl-id: bd9cb656-d742-4a18-97a2-546d4056d093
-source-git-commit: 27f2b28d924fbd85eefbea5a65d1ee9249bafa87
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '2734'
+source-wordcount: '2905'
 ht-degree: 1%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 1%
 
 ### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到Salesforce CRM目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=zh-Hans)区段[!DNL Experience Platform]。
+在将数据激活到Salesforce CRM目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)区段[!DNL Experience Platform]。
 
 ### [!DNL Salesforce CRM]中的先决条件 {#prerequisites-destination}
 
@@ -129,6 +129,31 @@ ht-degree: 1%
 |---|---|---|
 | `SalesforceId` | 您通过区段导出或更新之联系人或潜在客户身份的[!DNL Salesforce CRM]标识符。 | 必需 |
 
+## 支持的受众 {#supported-audiences}
+
+此部分介绍哪些类型的受众可以导出到此目标。
+
+| 受众来源 | 受支持 | 描述 |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+
+{style="table-layout:auto"}
+
+
+
+按受众数据类型划分的受众支持：
+
+| 受众数据类型 | 受支持 | 描述 | 用例 |
+|--------------------|-----------|-------------|-----------|
+| [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
+| [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
+| [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+
+{style="table-layout:auto"}
+
+
 ## 导出类型和频率 {#export-type-frequency}
 
 有关目标导出类型和频率的信息，请参阅下表。
@@ -219,7 +244,7 @@ ht-degree: 1%
      | 源字段 | 目标字段 | 注释 |
      | --- | --- | --- |
      | `IdentityMap: crmID` | `Identity: SalesforceId` | `Mandatory` |
-     | `xdm: person.name.lastName` | `Attribute: LastName` | `Mandatory`的问题。联系人的姓氏，最多80个字符。 |
+     | `xdm: person.name.lastName` | `Attribute: LastName` | `Mandatory`。联系人的姓氏，最多80个字符。 |
      | `xdm: person.name.firstName` | `Attribute: FirstName` | 联系人的名字最多可包含40个字符。 |
      | `xdm: personalEmail.address` | `Attribute: Email` | 联系人的电子邮件地址。 |
 
@@ -235,8 +260,8 @@ ht-degree: 1%
      | 源字段 | 目标字段 | 注释 |
      | --- | --- | --- |
      | `IdentityMap: crmID` | `Identity: SalesforceId` | `Mandatory` |
-     | `xdm: person.name.lastName` | `Attribute: LastName` | `Mandatory`的问题。潜在客户的姓氏最多为80个字符。 |
-     | `xdm: b2b.companyName` | `Attribute: Company` | `Mandatory`的问题。潜在客户的公司。 |
+     | `xdm: person.name.lastName` | `Attribute: LastName` | `Mandatory`。潜在客户的姓氏最多为80个字符。 |
+     | `xdm: b2b.companyName` | `Attribute: Company` | `Mandatory`。潜在客户的公司。 |
      | `xdm: personalEmail.address` | `Attribute: Email` | 商机的电子邮件地址。 |
 
    * 下面显示了使用这些映射的示例：
@@ -255,7 +280,7 @@ ht-degree: 1%
 以下显示了[!DNL Salesforce]中的自定义字段示例：
 ![[!DNL Salesforce]显示自定义字段的UI屏幕截图。](../../assets/catalog/crm/salesforce/salesforce-custom-field.png)
 
-以下显示了一个指示[!DNL Salesforce CRM] **[!UICONTROL Mapping ID]**&#x200B;位置的示例：
+以下显示了一个指示[!DNL Salesforce CRM] **[!UICONTROL Mapping ID]**位置的示例：
 ![显示计划受众导出的Experience Platform UI屏幕截图示例。](../../assets/catalog/crm/salesforce/schedule-segment-export.png)
 
 如上所示，[!DNL Salesforce] **[!UICONTROL Field Name]**&#x200B;与[!DNL Salesforce CRM] **[!UICONTROL Mapping ID]**&#x200B;中指定的值完全匹配。
@@ -273,13 +298,13 @@ ht-degree: 1%
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**&#x200B;以导航到目标列表。
+1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**以导航到目标列表。
    ![显示“浏览目标”的Experience Platform UI屏幕截图。](../../assets/catalog/crm/salesforce/browse-destinations.png)
 
 1. 选择目标并验证状态为&#x200B;**[!UICONTROL enabled]**。
    ![Experience Platform UI屏幕截图显示目标数据流运行。](../../assets/catalog/crm/salesforce/destination-dataflow-run.png)
 
-1. 切换到&#x200B;**[!UICONTROL Activation data]**&#x200B;选项卡，然后选择受众名称。
+1. 切换到&#x200B;**[!UICONTROL Activation data]**选项卡，然后选择受众名称。
    ![显示目标激活数据的Experience Platform UI屏幕截图示例。](../../assets/catalog/crm/salesforce/destinations-activation-data.png)
 
 1. 监控受众摘要，并确保用户档案计数对应于在区段内创建的计数。
@@ -289,7 +314,7 @@ ht-degree: 1%
 
    **使用联系人**
 
-   * 如果您在Experience Platform区段中选择了&#x200B;*联系人*，请导航到&#x200B;**[!DNL Apps]** > **[!DNL Contacts]**&#x200B;页面。
+   * 如果您在Experience Platform区段中选择了&#x200B;*联系人*，请导航到&#x200B;**[!DNL Apps]** > **[!DNL Contacts]**页面。
      ![Salesforce CRM屏幕截图显示了包含区段中的配置文件的“联系人”页面。](../../assets/catalog/crm/salesforce/contacts.png)
 
    * 选择&#x200B;*联系人*&#x200B;并检查字段是否已更新。 您可以看到，根据[!DNL Salesforce CRM]受众计划&#x200B;**[!UICONTROL Mapping ID]**&#x200B;期间提供的[值，](#schedule-segment-export-example)中的每个受众状态都更新为Experience Platform中的相应受众状态。
@@ -297,7 +322,7 @@ ht-degree: 1%
 
    **使用潜在客户**
 
-   * 如果您在Experience Platform区段中选择了&#x200B;*潜在客户*，请导航到&#x200B;**[!DNL Apps]** > **[!DNL Leads]**&#x200B;页面。
+   * 如果您在Experience Platform区段中选择了&#x200B;*潜在客户*，请导航到&#x200B;**[!DNL Apps]** > **[!DNL Leads]**页面。
      ![Salesforce CRM屏幕截图显示具有此区段中的配置文件的“潜在客户”页面。](../../assets/catalog/crm/salesforce/leads.png)
 
    * 选择&#x200B;*潜在客户*&#x200B;并检查字段是否已更新。 您可以看到，根据[!DNL Salesforce CRM]受众计划&#x200B;**[!UICONTROL Mapping ID]**&#x200B;期间提供的[值，](#schedule-segment-export-example)中的每个受众状态都更新为Experience Platform中的相应受众状态。

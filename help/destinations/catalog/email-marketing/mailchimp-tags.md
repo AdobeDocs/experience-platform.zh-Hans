@@ -3,10 +3,10 @@ title: Mailchimp标记
 description: 通过Mailchimp标记目标，可导出帐户数据并在Mailchimp中激活以与联系人接洽。
 last-substantial-update: 2024-02-20T00:00:00Z
 exl-id: 0f278ca8-4fcf-4c47-b538-9cffa45a3d90
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '1599'
-ht-degree: 2%
+source-wordcount: '1733'
+ht-degree: 3%
 
 ---
 
@@ -34,7 +34,7 @@ ht-degree: 2%
 
 ### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL Mailchimp Tags]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html?lang=zh-Hans)受众[!DNL Experience Platform]。
+在将数据激活到[!DNL Mailchimp Tags]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html)受众[!DNL Experience Platform]。
 
 ### [!DNL Mailchimp Tags]目标的先决条件 {#prerequisites-destination}
 
@@ -70,7 +70,7 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 ### 护栏 {#guardrails}
 
-有关[!DNL Mailchimp] API施加的限制的详细信息，请参阅[&#x200B; &#x200B;](https://mailchimp.com/developer/marketing/docs/fundamentals/#api-limits)速率限制[!DNL Mailchimp]。
+有关[!DNL Mailchimp] API施加的限制的详细信息，请参阅[ ](https://mailchimp.com/developer/marketing/docs/fundamentals/#api-limits)速率限制[!DNL Mailchimp]。
 
 ## 支持的身份 {#supported-identities}
 
@@ -86,12 +86,26 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 此部分介绍可将哪种类型的受众导出到此目标。
 
-| 受众来源 | 支持 | 描述 |
+| 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
+| [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
+
+
+
+按受众数据类型划分的受众支持：
+
+| 受众数据类型 | 受支持 | 描述 | 用例 |
+|--------------------|-----------|-------------|-----------|
+| [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
+| [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
+| [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+
+{style="table-layout:auto"}
+
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -189,7 +203,7 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 登录到您的[[!DNL Mailchimp]](https://login.mailchimp.com/)帐户。 然后导航到&#x200B;**[!DNL Audience]** > **[!DNL All Contacts]**&#x200B;页面，并检查受众中的联系人是否已添加以及受众中的联系人是否已使用受众名称进行更新。
+1. 登录到您的[[!DNL Mailchimp]](https://login.mailchimp.com/)帐户。 然后导航到&#x200B;**[!DNL Audience]** > **[!DNL All Contacts]**页面，并检查受众中的联系人是否已添加以及受众中的联系人是否已使用受众名称进行更新。
    ![显示“受众”页面的Mailchimp UI屏幕截图。](../../assets/catalog/email-marketing/mailchimp-tags/contacts.png)
 
 ## 数据使用和治理 {#data-usage-governance}

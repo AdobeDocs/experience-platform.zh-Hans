@@ -3,10 +3,10 @@ title: Merkury Enterprise连接目标
 description: 了解如何使用Adobe Experience Platform UI创建Merkury Enterprise连接目标连接。
 last-substantial-update: 2024-07-20T00:00:00Z
 exl-id: dffc6f4d-b756-4c13-96f3-b1cc57caacdb
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '1370'
-ht-degree: 4%
+source-wordcount: '1499'
+ht-degree: 5%
 
 ---
 
@@ -39,8 +39,8 @@ ht-degree: 4%
 
 >[!IMPORTANT]
 >
->* 若要连接到目标，您需要&#x200B;**查看目标**&#x200B;和&#x200B;**管理目标**、**激活目标**、**查看配置文件**&#x200B;和&#x200B;**查看区段** [[访问控制权限]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/home#permissions)。 阅读[[访问控制概述]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/ui/overview)或联系您的产品管理员以获取所需的权限。
->* 要导出&#x200B;*标识*，您需要&#x200B;**查看标识图形** [[访问控制权限]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/home#permissions)。\！[选择工作流中突出显示的身份命名空间以将受众激活到目标。](../../assets/catalog/data-partners/merkury-connections/media/image3.png)
+>* 若要连接到目标，您需要&#x200B;**查看目标**&#x200B;和&#x200B;**管理目标**、**激活目标**、**查看配置文件**&#x200B;和&#x200B;**查看区段** [[访问控制权限]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions)。 阅读[[访问控制概述]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/ui/overview)或联系您的产品管理员以获取所需的权限。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**查看标识图形** [[访问控制权限]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions)。\！[选择工作流中突出显示的身份命名空间以将受众激活到目标。](../../assets/catalog/data-partners/merkury-connections/media/image3.png)
 
 ## 支持的身份 {#supported-identities}
 
@@ -59,12 +59,26 @@ ht-degree: 4%
 
 此部分介绍可将哪种类型的受众导出到此目标。
 
-| **受众** | **支持** | **描述来源** |
-|---|---|---|      
-| Segmentation Service | ✓ | 通过Experience Platform [[分段服务]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/segmentation/home)生成的受众。 |
-| 自定义上传 | X | 受众[已从CSV文件将](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/segmentation/ui/overview#import-audience)导入Experience Platform。 |
+| 受众来源 | 受支持 | 描述 |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
+
+
+
+按受众数据类型划分的受众支持：
+
+| 受众数据类型 | 受支持 | 描述 | 用例 |
+|--------------------|-----------|-------------|-----------|
+| [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
+| [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
+| [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+
+{style="table-layout:auto"}
+
 
 ## 导出类型和频率
 
@@ -72,8 +86,8 @@ ht-degree: 4%
 
 | **项目** | **类型** | **注释** |
 |---|---|---|  
-| 导出类型 | **基于配置文件** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如[[目标激活工作流]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations#select-attributes)的选择配置文件属性屏幕中所选。 |
-| 频率 | **批次** | 批量目标以三、六、八、十二或二十四小时的增量将文件导出到下游平台。 阅读有关[[基于批处理文件的频率目标]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/destination-types#file-based)的详细信息。 |
+| 导出类型 | **基于配置文件** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如[[目标激活工作流]](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations#select-attributes)的选择配置文件属性屏幕中所选。 |
+| 频率 | **批次** | 批量目标以三、六、八、十二或二十四小时的增量将文件导出到下游平台。 阅读有关[[基于批处理文件的频率目标]](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/destination-types#file-based)的详细信息。 |
 
 {style="table-layout:auto"}
 
@@ -81,9 +95,9 @@ ht-degree: 4%
 
 >[!IMPORTANT]
 >
->若要连接到目标，您需要&#x200B;**查看目标**&#x200B;和&#x200B;**管理和激活数据集目标** [[访问控制权限]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/home#permissions)。 阅读[[访问控制概述]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/ui/overview)或联系您的产品管理员以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**查看目标**&#x200B;和&#x200B;**管理和激活数据集目标** [[访问控制权限]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions)。 阅读[[访问控制概述]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/ui/overview)或联系您的产品管理员以获取所需的权限。
 
-要连接到此目标，请按照[[目标配置教程]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/ui/connect-destination)中描述的步骤操作。 在目标配置工作流中，填写下面两个部分中列出的字段。
+要连接到此目标，请按照[[目标配置教程]](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/connect-destination)中描述的步骤操作。 在目标配置工作流中，填写下面两个部分中列出的字段。
 
 ### 验证目标
 
@@ -128,7 +142,7 @@ csv选项的![图像](../../assets/catalog/data-partners/merkury-connections/med
 
 ## 启用警报
 
-您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/ui/alerts)。
+您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/alerts)。
 
 完成提供目标连接的详细信息后，选择&#x200B;**下一步**。
 
@@ -140,7 +154,7 @@ csv选项的![图像](../../assets/catalog/data-partners/merkury-connections/med
 >* 要导出身份，您需要&#x200B;**查看身份图形**&#x200B;访问控制权限。
 
 
-有关将受众激活到此目标的说明，请阅读[将受众数据激活到批处理配置文件导出目标](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations)。
+有关将受众激活到此目标的说明，请阅读[将受众数据激活到批处理配置文件导出目标](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations)。
 
 ## 映射建议
 
@@ -169,7 +183,7 @@ csv选项的![图像](../../assets/catalog/data-partners/merkury-connections/med
 
 ## 数据使用和治理
 
-在处理您的数据时，所有Adobe Experience Platform目标都符合数据使用策略。 有关Adobe Experience Platform如何实施数据治理的详细信息，请阅读[数据管理概述](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/data-governance/home)。
+在处理您的数据时，所有Adobe Experience Platform目标都符合数据使用策略。 有关Adobe Experience Platform如何实施数据治理的详细信息，请阅读[数据管理概述](https://experienceleague.adobe.com/en/docs/experience-platform/data-governance/home)。
 
 ## 后续步骤
 

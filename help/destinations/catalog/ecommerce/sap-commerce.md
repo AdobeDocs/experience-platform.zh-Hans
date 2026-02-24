@@ -3,10 +3,10 @@ title: SAP Commerce连接
 description: 使用SAP Commerce目标连接器更新SAP帐户中的客户记录。
 last-substantial-update: 2024-02-20T00:00:00Z
 exl-id: 3bd1a2a7-fb56-472d-b9bd-603b94a8937e
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '2175'
-ht-degree: 3%
+source-wordcount: '2309'
+ht-degree: 4%
 
 ---
 
@@ -30,7 +30,7 @@ ht-degree: 3%
 
 ### Experience Platform先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL SAP Commerce]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html?lang=zh-Hans)受众[!DNL Experience Platform]。
+在将数据激活到[!DNL SAP Commerce]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html)受众[!DNL Experience Platform]。
 
 如果您需要有关受众状态的指导，请参阅Experience Platform文档，了解[受众成员资格详细信息架构字段组](/help/xdm/field-groups/profile/segmentation.md)。
 
@@ -119,12 +119,26 @@ ht-degree: 3%
 
 此目标还支持激活下表所述的受众。
 
-| 受众类型 | 支持 | 描述 |
+| 受众类型 | 受支持 | 描述 |
 | ------------- | --------- | ----------- |
-| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
+| [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
+
+
+
+按受众数据类型划分的受众支持：
+
+| 受众数据类型 | 受支持 | 描述 | 用例 |
+|--------------------|-----------|-------------|-----------|
+| [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
+| [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
+| [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+
+{style="table-layout:auto"}
+
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -215,7 +229,7 @@ ht-degree: 3%
 
 1. 在&#x200B;**[!UICONTROL Mapping]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL Add new mapping]**。 您现在可以在屏幕上看到新的映射行。
    ![突出显示了“添加新映射”按钮的Experience Platform UI屏幕截图。](../../assets/catalog/ecommerce/sap-commerce/mapping-add-new-mapping.png)
-1. 在&#x200B;**[!UICONTROL Select source field]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL Select attributes]**&#x200B;类别并选择XDM属性。
+1. 在&#x200B;**[!UICONTROL Select source field]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL Select attributes]**类别并选择XDM属性。
    ![选择“姓氏”作为源属性的Experience Platform UI屏幕截图。](../../assets/catalog/ecommerce/sap-commerce/mapping-select-source-attribute.png)
 1. 在&#x200B;**[!UICONTROL Select target field]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL Select custom attributes]**&#x200B;类别并从客户[!DNL SAP Subscription Billing]架构[属性的列表中键入](https://api.sap.com/api/BusinessPartner_APIs/schema)属性的名称。
    ![Experience Platform UI屏幕截图，其中lastName被定义为target属性。](../../assets/catalog/ecommerce/sap-commerce/mapping-select-target-attribute.png)
@@ -281,7 +295,7 @@ ht-degree: 3%
 
 执行[计划受众导出](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling)步骤时，必须手动将Experience Platform受众映射到[中的](#prerequisites-attribute)属性[!DNL SAP Subscription Billing]。
 
-下面显示了突出显示[!DNL SAP Commerce] **[!UICONTROL Mapping ID]**&#x200B;位置的计划受众导出步骤示例：
+下面显示了突出显示[!DNL SAP Commerce] **[!UICONTROL Mapping ID]**位置的计划受众导出步骤示例：
 ![Experience Platform中的图像显示了填充了映射ID的计划受众导出。](../../assets/catalog/ecommerce/sap-commerce/schedule-segment-export.png)
 
 为此，请选择每个区段，然后在[!DNL SAP Subscription Billing] [!DNL SAP Commerce]目标连接器字段中输入来自&#x200B;**[!UICONTROL Mapping ID]**&#x200B;的自定义引用的名称。 有关创建自定义引用的指导，请参阅[在 [!DNL SAP Subscription Billing]](#prerequisites-custom-reference)中创建自定义引用。
@@ -289,7 +303,7 @@ ht-degree: 3%
 >[!IMPORTANT]
 >
 > 请勿使用自定义引用标签作为值。
-> &#x200B;>![此图像指示您不应使用自定义参考标签值进行映射。](../../assets/catalog/ecommerce/sap-commerce/custom-reference-dont-use-label-for-mapping.png)
+>![此图像指示您不应使用自定义参考标签值进行映射。](../../assets/catalog/ecommerce/sap-commerce/custom-reference-dont-use-label-for-mapping.png)
 
 例如，如果您选择的Experience Platform受众为`sap_audience1`，并且希望将其状态更新到[!DNL SAP Subscription Billing]自定义引用`SAP_1`中，请在[!DNL SAP_Commerce] **[!UICONTROL Mapping ID]**&#x200B;字段中指定此值。
 
@@ -314,7 +328,7 @@ ht-degree: 3%
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-登录到[!DNL SAP Subscription Billing]帐户，然后导航到&#x200B;**[!UICONTROL Contacts]**&#x200B;页面以检查受众状态。 列表可以配置为显示自定义引用的列并显示相应的受众状态。
+登录到[!DNL SAP Subscription Billing]帐户，然后导航到&#x200B;**[!UICONTROL Contacts]**页面以检查受众状态。 列表可以配置为显示自定义引用的列并显示相应的受众状态。
 ![显示客户概述页面的SAP订阅帐单图像，列标题显示受众名称和单元格受众状态](../../assets/catalog/ecommerce/sap-commerce/customer-overview.png)
 
 ## 数据使用和治理 {#data-usage-governance}

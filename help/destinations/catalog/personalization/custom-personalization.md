@@ -3,10 +3,10 @@ keywords: 自定义个性化；目标；experience platform自定义目标；
 title: 自定义个性化连接
 description: 此目标提供外部个性化、内容管理系统、广告服务器以及在您的网站上运行的其他应用程序，以便从Adobe Experience Platform检索受众信息。 此目标根据用户个人资料受众成员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: d252fc30d93fa4440c6ef47146830d0423e1839a
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '992'
-ht-degree: 9%
+source-wordcount: '1126'
+ht-degree: 8%
 
 ---
 
@@ -57,10 +57,24 @@ ht-degree: 9%
 
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
+| [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
+
+
+
+按受众数据类型划分的受众支持：
+
+| 受众数据类型 | 受支持 | 描述 | 用例 |
+|--------------------|-----------|-------------|-----------|
+| [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
+| [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
+| [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+
+{style="table-layout:auto"}
+
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -75,7 +89,7 @@ ht-degree: 9%
 >id="platform_destinations_custom_personalization_datastream"
 >title="关于数据流"
 >abstract="此选项确定受众将包含在哪个数据收集数据流中以响应页面。下拉菜单仅显示已启用目标配置的数据流。您必须先配置数据流，然后才能配置目标。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html?lang=zh-Hans#" text="了解如何配置数据流"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html#" text="了解如何配置数据流"
 
 >[!IMPORTANT]
 > 

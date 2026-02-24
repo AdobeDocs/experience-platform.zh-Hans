@@ -3,9 +3,9 @@ title: Pega配置文件连接器
 description: 使用Adobe Experience Platform中Amazon S3的Pega配置文件连接器将完整的或增量的（或同时使用两者）配置文件数据导出到Amazon S3云存储。 在Pega客户决策中心中，可以安排客户配置文件Designer中的数据作业，以定期从Amazon S3存储导入配置文件数据。
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: f422f21b-174a-4b93-b05d-084b42623314
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '1116'
+source-wordcount: '1256'
 ht-degree: 4%
 
 ---
@@ -40,7 +40,7 @@ ht-degree: 4%
 
 * 配置[!DNL Amazon S3]存储段以及要用于导出和导入数据文件的文件夹路径。
 * 配置[!DNL Amazon S3]访问密钥和[!DNL Amazon S3]密钥：在[!DNL Amazon S3]中，生成一个`access key - secret access key`对以授予Experience Platform对您的[!DNL Amazon S3]帐户的访问权限。
-* 若要成功连接数据并将其导出到您的[!DNL Amazon S3]存储位置，请在[!DNL Amazon S3]中为[!DNL Experience Platform]创建标识和访问管理(IAM)用户，并分配`s3:DeleteObject`、`s3:GetBucketLocation`、`s3:GetObject`、`s3:ListBucket`、`s3:PutObject`、`s3:ListMultipartUploadParts`等权限
+* 若要成功连接数据并将其导出到您的[!DNL Amazon S3]存储位置，请在[!DNL Experience Platform]中为[!DNL Amazon S3]创建标识和访问管理(IAM)用户，并分配`s3:DeleteObject`、`s3:GetBucketLocation`、`s3:GetObject`、`s3:ListBucket`、`s3:PutObject`、`s3:ListMultipartUploadParts`等权限
 * 确保您的[!DNL Pega Customer Decision Hub]实例已升级到8.8或更高版本。
 
 ## 支持的身份 {#supported-identities}
@@ -53,14 +53,39 @@ ht-degree: 4%
 
 {style="table-layout:auto"}
 
+## 支持的受众 {#supported-audiences}
+
+此部分介绍哪些类型的受众可以导出到此目标。
+
+| 受众来源 | 受支持 | 描述 |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+
+{style="table-layout:auto"}
+
+
+
+按受众数据类型划分的受众支持：
+
+| 受众数据类型 | 受支持 | 描述 | 用例 |
+|--------------------|-----------|-------------|-----------|
+| [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
+| [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
+| [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+
+{style="table-layout:auto"}
+
+
 ## 导出类型和频率 {#export-type-frequency}
 
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
 |---------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如[目标激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes)的选择配置文件属性屏幕中所选。 |
-| 导出频率 | **[!UICONTROL 批次]** | 批量目标以三、六、八、十二或二十四小时的增量将文件导出到下游平台。 阅读有关[基于批处理文件的目标](/help/destinations/destination-types.md#file-based)的详细信息。 |
+| 导出类型 | **[!UICONTROL Profile-based]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如[目标激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes)的选择配置文件属性屏幕中所选。 |
+| 导出频率 | **[!UICONTROL Batch]** | 批量目标以三、六、八、十二或二十四小时的增量将文件导出到下游平台。 阅读有关[基于批处理文件的目标](/help/destinations/destination-types.md#file-based)的详细信息。 |
 
 {style="table-layout:auto"}
 
@@ -68,13 +93,13 @@ ht-degree: 4%
 
 >[!IMPORTANT]
 > 
->若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在目标配置工作流中，填写下面两个部分中列出的字段。
 
 ### 验证目标 {#authenticate}
 
-要验证到目标，请填写必填字段并选择&#x200B;**[!UICONTROL 连接到目标]**。
+要验证目标，请填写必填字段并选择&#x200B;**[!UICONTROL Connect to destination]**。
 
 * **[!DNL Amazon S3]访问密钥**&#x200B;和&#x200B;**[!DNL Amazon S3]密钥**：在[!DNL Amazon S3]中，生成一个`access key - secret access key`对以授予Adobe Experience Platform对您[!DNL Amazon S3]帐户的访问权限。 请参阅[Amazon Web Services文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)以了解详情。
 
@@ -84,13 +109,13 @@ ht-degree: 4%
 
 ![显示Pega配置文件连接器目标详细信息的已完成字段的UI屏幕图像](../../assets/catalog/personalization/pega-profile/pega-profile-connect-destination.png)
 
-要配置目标的详细信息，请填写必填字段并选择&#x200B;**[!UICONTROL 下一步]**。 UI中字段旁边的星号表示该字段为必填字段。
+要配置目标的详细信息，请填写必填字段并选择&#x200B;**[!UICONTROL Next]**。 UI中字段旁边的星号表示该字段为必填字段。
 
-* **[!UICONTROL 名称]**：输入有助于识别此目标的名称。
-* **[!UICONTROL 描述]**：输入此目标的描述。
-* **[!UICONTROL 存储段名称]**：输入要由此目标使用的[!DNL Amazon S3]存储段的名称。
-* **[!UICONTROL 文件夹路径]**：输入将承载导出文件的目标文件夹的路径。
-* **[!UICONTROL 压缩类型]**：选择GZIP或NONE压缩类型。
+* **[!UICONTROL Name]**：输入有助于识别此目标的名称。
+* **[!UICONTROL Description]**：输入此目标的描述。
+* **[!UICONTROL Bucket name]**：输入要由此目标使用的[!DNL Amazon S3]存储段的名称。
+* **[!UICONTROL Folder path]**：输入将承载导出文件的目标文件夹的路径。
+* **[!UICONTROL Compression Type]**：选择压缩类型为GZIP或NONE。
 
 >[!TIP]
 >
@@ -100,20 +125,20 @@ ht-degree: 4%
 
 您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
->* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+>* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 有关将受众激活到此目标的说明，请参阅[将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md)。
 
 ### 映射属性和身份 {#map}
 
-在&#x200B;**[!UICONTROL 映射]**&#x200B;步骤中，您可以为配置文件选择要导出的属性和标识字段。 您还可以选择将导出文件中的标头更改为所需的任何友好名称。 有关详细信息，请查看激活批处理目标UI教程中的[映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)。
+在&#x200B;**[!UICONTROL Mapping]**&#x200B;步骤中，您可以为配置文件选择要导出的属性和标识字段。 您还可以选择将导出文件中的标头更改为所需的任何友好名称。 有关详细信息，请查看激活批处理目标UI教程中的[映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)。
 
 ## 验证数据导出 {#exported-data}
 
@@ -122,12 +147,12 @@ ht-degree: 4%
 从S3成功导入配置文件数据会在[!DNL Pega Customer]配置文件数据存储中插入数据。 可以在[!DNL Pega Customer Profile Designer]中验证导入的客户配置文件数据，如下图所示。
 ![UI屏幕的图像，您可以在其中验证客户个人资料Designer中的Adobe个人资料数据](../../assets/catalog/personalization/pega-profile/pega-profile-data.png)
 
-在[!DNL Pega Customer Decision Hub]中，数据管理员可以将[!DNL Customer Profile Designer]中的数据作业配置为定期从S3导入配置文件数据，如下图所示。 有关如何配置数据作业以从[!DNL Amazon S3]导入配置文件数据的详细信息，请参阅[其他资源](#additional-resources)。
+在[!DNL Pega Customer Decision Hub]中，数据管理员可以将[!DNL Customer Profile Designer]中的数据作业配置为定期从S3导入配置文件数据，如下图所示。 有关如何配置数据作业以从[导入配置文件数据的详细信息，请参阅](#additional-resources)其他资源[!DNL Amazon S3]。
 ![用于在客户个人资料Designer中配置数据作业的UI屏幕图像](../../assets/catalog/personalization/pega-profile/pega-profile-screen-image1.png)
 
 ## 其他资源 {#additional-resources}
 
-查看[!DNL Pega Customer Decision Hub]中的[导入数据作业](https://academy.pega.com/topic/import-data-jobs/v1)。
+查看[中的](https://academy.pega.com/topic/import-data-jobs/v1)导入数据作业[!DNL Pega Customer Decision Hub]。
 
 ## 数据使用和治理 {#data-usage-governance}
 

@@ -2,10 +2,10 @@
 title: Marketo Engage目标
 description: Marketo Engage是唯一一款用于营销、广告、分析和商务的端到端客户体验管理(CXM)解决方案。 您可以从自动化和管理活动，从CRM商机管理和客户参与到基于帐户的营销和收入归因。
 exl-id: 5ae5f114-47ba-4ff6-8e42-f8f43eb079f7
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '847'
-ht-degree: 1%
+source-wordcount: '981'
+ht-degree: 2%
 
 ---
 
@@ -61,12 +61,26 @@ Marketo V2目标中的改进包括：
 
 此部分介绍哪些类型的受众可以导出到此目标。
 
-| 受众来源 | 支持 | 描述 |
+| 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
+| [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
+
+
+
+按受众数据类型划分的受众支持：
+
+| 受众数据类型 | 受支持 | 描述 | 用例 |
+|--------------------|-----------|-------------|-----------|
+| [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
+| [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
+| [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+
+{style="table-layout:auto"}
+
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -86,7 +100,7 @@ Marketo V2目标中的改进包括：
 >* 若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
-有关如何设置目标和激活受众的详细说明，请参阅Marketo文档中的[将Adobe Experience Platform受众推送到Marketo静态列表](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html?lang=zh-Hans)。
+有关如何设置目标和激活受众的详细说明，请参阅Marketo文档中的[将Adobe Experience Platform受众推送到Marketo静态列表](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html)。
 
 以下视频还演示了配置Marketo目标和激活受众的步骤。
 
@@ -99,7 +113,7 @@ Marketo V2目标中的改进包括：
 >* 视频中调出的两个限制不再适用。 除了在录制视频时支持的受众成员资格信息之外，您现在可以映射许多其他配置文件属性字段。 您还可以将受众成员导出到Marketo，这些成员尚不存在于Marketo静态列表中，并且会添加到列表中。
 >* 在激活工作流的&#x200B;**[!UICONTROL Schedule audience step]**&#x200B;中，在Marketo V1中，您需要手动添加&#x200B;**[!UICONTROL Mapping ID]**&#x200B;以成功将数据导出到Marketo。 Marketo V2中不再需要此手动步骤。
 
->[!VIDEO](https://video.tv.adobe.com/v/3440168?captions=chi_hans&quality=12)
+>[!VIDEO](https://video.tv.adobe.com/v/338248?quality=12)
 
 ## 监视目标 {#monitor-destination}
 

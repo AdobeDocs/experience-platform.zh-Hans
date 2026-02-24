@@ -4,10 +4,10 @@ title: LINE连接
 description: LINE目标允许您向Experience Platform受众添加配置文件，并为连接的用户提供个性化体验。
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 9981798a-61f2-4a09-9a33-57e63eb36d43
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '1147'
-ht-degree: 2%
+source-wordcount: '1318'
+ht-degree: 3%
 
 ---
 
@@ -60,6 +60,31 @@ ht-degree: 2%
 |---|---|
 | 广告商ID(IFA) | 当源标识为IFA *(广告商的Apple ID)*&#x200B;或GAID *(Google Advertising ID)命名空间时，选择广告商(IFA)目标标识的ID。 |
 | 行用户ID | 当源标识为LINE用户ID时，选择UserID目标标识。 |
+
+## 支持的受众 {#supported-audiences}
+
+此部分介绍哪些类型的受众可以导出到此目标。
+
+| 受众来源 | 受支持 | 描述 |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+
+{style="table-layout:auto"}
+
+
+
+按受众数据类型划分的受众支持：
+
+| 受众数据类型 | 受支持 | 描述 | 用例 |
+|--------------------|-----------|-------------|-----------|
+| [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
+| [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
+| [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+
+{style="table-layout:auto"}
+
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -125,7 +150,7 @@ ht-degree: 2%
 
 | 目标身份 | 源字段 | 目标字段 |
 | --- | --- | --- |
-| 广告商ID(IFA) | `IDFA`或`GAID` | `LineId` |
+| 广告商ID(IFA) | `IDFA` 或 `GAID` | `LineId` |
 | 行用户ID | `UserID` | `LineId` |
 
 如果您的目标身份是&#x200B;*LINE用户ID的*，则需要以下项：

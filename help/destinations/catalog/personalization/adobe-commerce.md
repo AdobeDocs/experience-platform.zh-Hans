@@ -2,10 +2,10 @@
 title: Adobe Commerce目标连接器
 description: 了解Adobe Commerce和Real-Time CDP商家如何通过提供高度相关的网站内容和促销活动，针对Real-Time CDP中构建和管理的客户受众进行自定义，从而个性化购物体验。
 exl-id: f7aa3c6c-ba7a-440c-a4d7-5d7b50dbbc0d
-source-git-commit: 70556134a96260ae111c71ee288d4d646481270b
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '668'
-ht-degree: 3%
+source-wordcount: '839'
+ht-degree: 4%
 
 ---
 
@@ -22,16 +22,41 @@ ht-degree: 3%
 要使用此目标连接，请确保您有权访问：
 
 - [Adobe Experience Platform](https://experience.adobe.com/)
-- [Adobe Developer Console](https://developer.adobe.com/developer-console/docs/guides/getting-started/)。 通过访问开发人员控制台，您可以查看在Adobe Commerce中[完成扩展的配置](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html?lang=zh-Hans#configure-the-extension)所需的服务帐户和凭据信息。
-- [Adobe Commerce版本2.4.4或更高版本](https://business.adobe.com/cn/products/commerce.html)
+- [Adobe Developer Console](https://developer.adobe.com/developer-console/docs/guides/getting-started/)。 通过访问开发人员控制台，您可以查看在Adobe Commerce中[完成扩展的配置](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html#configure-the-extension)所需的服务帐户和凭据信息。
+- [Adobe Commerce版本2.4.4或更高版本](https://business.adobe.com/products/commerce.html)
 
 在Experience Platform中，创建以下内容：
 
-- [架构](../../../xdm/schema/composition.md)。 您创建的架构表示您计划从Adobe Commerce中摄取的数据。 [了解更多](https://experienceleague.adobe.com/docs/commerce-merchant-services/data-connection/fundamentals/update-xdm.html?lang=zh-Hans)有关如何创建包含特定于Commerce的字段组的架构。
+- [架构](../../../xdm/schema/composition.md)。 您创建的架构表示您计划从Adobe Commerce中摄取的数据。 [了解更多](https://experienceleague.adobe.com/docs/commerce-merchant-services/data-connection/fundamentals/update-xdm.html)有关如何创建包含特定于Commerce的字段组的架构。
 - [数据集](../../../catalog/datasets/user-guide.md#create)。 数据集是用于数据收集的存储和管理结构。 您可以使用上面创建的架构创建此数据集。
 - [数据流](../../../datastreams/overview.md#create)。 允许数据从Adobe Experience Platform流向其他Adobe DX产品的ID。 此ID必须关联到您的特定Adobe Commerce实例中的特定网站。 创建此数据流时，请指定您在上面创建的XDM架构。
 
 完成先决条件后，连接到[!DNL Commerce]目标。
+
+## 支持的受众 {#supported-audiences}
+
+此部分介绍哪些类型的受众可以导出到此目标。
+
+| 受众来源 | 受支持 | 描述 |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+
+{style="table-layout:auto"}
+
+
+
+按受众数据类型划分的受众支持：
+
+| 受众数据类型 | 受支持 | 描述 | 用例 |
+|--------------------|-----------|-------------|-----------|
+| [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
+| [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
+| [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+
+{style="table-layout:auto"}
+
 
 ## 连接到目标 {#connect}
 
@@ -71,7 +96,7 @@ ht-degree: 3%
 
 ## [!DNL Adobe Commerce]中的后续步骤
 
-现在您已在Experience Platform中配置了[!DNL Commerce]目标，您需要在[!DNL Audience Activation]中安装[!DNL Commerce]扩展并配置[!DNL Commerce Admin]以导入您创建的Real-Time CDP受众。 请参阅[[!DNL Commerce] 文档](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html?lang=zh-Hans)以了解详情。
+现在您已在Experience Platform中配置了[!DNL Commerce]目标，您需要在[!DNL Audience Activation]中安装[!DNL Commerce]扩展并配置[!DNL Commerce Admin]以导入您创建的Real-Time CDP受众。 请参阅[[!DNL Commerce] 文档](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html)以了解详情。
 
 ## 验证Commerce中的Audience Activation {#exported-data}
 

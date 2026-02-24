@@ -1,13 +1,13 @@
 ---
 title: Acxiom数据增强
-description: 使用此连接器可在Real-Time CDP中将第一方Adobe配置文件激活到Acxiom，以便跨营销渠道扩充和使用。 然后，您可以使用Acxiom源导入具有增强数据的用户档案，并在Real-Time CDP中使用这些用户档案。
+description: 使用此连接器可在Real-Time CDP中将第一方Adobe配置文件激活到Acxiom，以便跨营销渠道扩充和使用该连接器。 然后，您可以使用 Acxiom 源导入具有增强数据的轮廓，并在 Real-Time CDP 中使用它们。
 last-substantial-update: 2024-03-14T00:00:00Z
 badge: Beta 版
 exl-id: 59edc43d-ae8e-4c3d-820c-b5be1c4483f9
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '1346'
-ht-degree: 2%
+source-wordcount: '1439'
+ht-degree: 4%
 
 ---
 
@@ -47,17 +47,31 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->* 若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+>* 若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 ## 支持的受众 {#supported-audiences}
 
 此部分介绍可将哪种类型的受众导出到此目标。
 
-| 受众来源 | 支持 | 描述 |
-|-----------------------------|-----------|---------------------------------------------------------------------------------------------------------------------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | x | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| 受众来源 | 受支持 | 描述 |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+
+{style="table-layout:auto"}
+
+
+
+
+按受众数据类型划分的受众支持：
+
+| 受众数据类型 | 受支持 | 描述 | 用例 |
+|--------------------|-----------|-------------|-----------|
+| [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
+| [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
+| [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -68,8 +82,8 @@ ht-degree: 2%
 
 | 项目 | 类型 | 注释 |
 |------------------|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如[目标激活工作流](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes)的选择配置文件属性屏幕中所选。 |
-| 导出频率 | **[!UICONTROL 批次]** | 批量目标以三、六、八、十二或二十四小时的增量将文件导出到下游平台。 阅读有关[基于批处理文件的目标](/help/destinations/destination-types.md#file-based)的详细信息。 |
+| 导出类型 | **[!UICONTROL Profile-based]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如[目标激活工作流](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes)的选择配置文件属性屏幕中所选。 |
+| 导出频率 | **[!UICONTROL Batch]** | 批量目标以三、六、八、十二或二十四小时的增量将文件导出到下游平台。 阅读有关[基于批处理文件的目标](/help/destinations/destination-types.md#file-based)的详细信息。 |
 
 {style="table-layout:auto"}
 
@@ -77,15 +91,15 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理和激活数据集目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage and Activate Dataset Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在目标配置工作流中，填写下面两个部分中列出的字段。
 
 ### 验证目标 {#authenticate}
 
-要验证到目标，请填写必填字段并选择&#x200B;**[!UICONTROL 连接到目标]**。
+要验证目标，请填写必填字段并选择&#x200B;**[!UICONTROL Connect to destination]**。
 
-要在Experience Platform时访问存储段，您需要为以下凭据提供有效值：
+要在Experience Platform上访问存储段，您需要为以下凭据提供有效值：
 
 | 凭据 | 描述 |
 |---------------|----------------------------------------------------------------------------------------------------------|
@@ -101,7 +115,7 @@ ht-degree: 2%
 
 ### 现有帐户
 
-已使用[!DNL Acxiom Data Enhancement]目标定义的帐户将显示在列表弹出窗口中。 选中后，您可以在右边栏中查看有关帐户的详细信息。 当您导航到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 帐户]**&#x200B;时，从UI查看示例；
+已使用[!DNL Acxiom Data Enhancement]目标定义的帐户将显示在列表弹出窗口中。 选中后，您可以在右边栏中查看有关帐户的详细信息。 当您导航到&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Accounts]**&#x200B;时，从UI查看示例；
 
 ![现有帐户](../../assets/catalog/data-partner/acxiom/image-destination-enhancement-account.png)
 
@@ -115,7 +129,7 @@ ht-degree: 2%
 * **描述** — 目标的简短用途说明
 * **Bucket名称（必需）** - S3上设置的Amazon S3存储段的名称
 * **文件夹路径（必需）** — 如果使用存储段中的子目录，则必须定义路径，或使用“/”引用根路径。
-* **文件类型** — 选择导出文件应使用的格式Experience Platform。 目前，Acxiom处理所需的唯一文件类型是CSV
+* **文件类型** — 选择Experience Platform应用于导出文件的格式。 目前，Acxiom处理所需的唯一文件类型是CSV
 
 >[!IMPORTANT]
 >
@@ -127,14 +141,14 @@ ht-degree: 2%
 
 您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 >
->* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+>* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 有关将受众激活到此目标的说明，请阅读[将受众数据激活到批处理配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md)。
 

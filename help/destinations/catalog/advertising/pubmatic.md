@@ -1,12 +1,12 @@
 ---
 title: PubMatic Connect
-description: PubMatic通过提供面向未来的程序化数字营销供应链，最大程度地实现客户价值。 PubMatic Connect将平台技术和专用服务相结合，以增强库存和数据打包和事务处理的方式。
+description: PubMatic通过提供面向未来的程序化数字营销supply chain，最大程度地实现客户价值。 PubMatic Connect将平台技术和专用服务相结合，以增强库存和数据打包和事务处理的方式。
 last-substantial-update: 2025-02-12T00:00:00Z
 exl-id: 21e07d2c-9a6a-4cfa-a4b8-7ca48613956c
-source-git-commit: 2041c06e660e24f63d4c44adc0e8f3082bb007ae
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '1056'
-ht-degree: 2%
+source-wordcount: '1151'
+ht-degree: 3%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 2%
 
 ## 概述 {#overview}
 
-使用[!DNL PubMatic Connect]通过交付未来的程序化数字营销供应链来最大化客户价值。 [!DNL PubMatic Connect]将平台技术和专用服务相结合，以改进库存和数据打包和事务的方式。
+使用[!DNL PubMatic Connect]通过提供未来程序化数字营销supply chain来最大化客户价值。 [!DNL PubMatic Connect]将平台技术和专用服务相结合，以改进库存和数据打包和事务的方式。
 
 有两个可用的目标可让您将受众数据发送到PubMatic Connect平台。 它们的功能稍有不同：
 
@@ -61,12 +61,26 @@ ht-degree: 2%
 
 此部分介绍可将哪种类型的受众导出到此目标。
 
-| 受众来源 | 支持 | 描述 |
-| --------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------- |
-| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
+| 受众来源 | 受支持 | 描述 |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
+
+
+
+按受众数据类型划分的受众支持：
+
+| 受众数据类型 | 受支持 | 描述 | 用例 |
+|--------------------|-----------|-------------|-----------|
+| [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
+| [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
+| [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+
+{style="table-layout:auto"}
+
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -74,8 +88,8 @@ ht-degree: 2%
 
 | 项目 | 类型 | 注释 |
 | ---------------- | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 导出类型 | **[!UICONTROL 区段导出]** | 您正在导出具有PubMatic Connect目标中使用的标识符（名称、电话号码或其他）的区段（受众）的所有成员。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 当基于区段评估在Experience Platform中更新用户档案时，连接器会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出类型 | **[!UICONTROL Segment export]** | 您正在导出具有PubMatic Connect目标中使用的标识符（名称、电话号码或其他）的区段（受众）的所有成员。 |
+| 导出频率 | **[!UICONTROL Streaming]** | 流目标为基于API的“始终运行”连接。 当基于区段评估在Experience Platform中更新用户档案时，连接器会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -83,17 +97,17 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
-> 若要连接到目标，您需要&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+> 若要连接到目标，您需要&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在目标配置工作流中，填写下面两个部分中列出的字段。
 
 ### 验证目标 {#authenticate}
 
-要验证到目标，请填写必填字段并选择&#x200B;**[!UICONTROL 连接到目标]**。
+要验证目标，请填写必填字段并选择&#x200B;**[!UICONTROL Connect to destination]**。
 
 ![如何进行身份验证](../../assets/catalog/advertising/pubmatic/authenticate-destination.png)
 
-- **[!UICONTROL 持有者令牌]**：填写持有者令牌以对目标进行身份验证。
+- **[!UICONTROL Bearer token]**：填写持有者令牌以对目标进行身份验证。
 
 ### 填写目标详细信息 {#destination-details}
 
@@ -101,29 +115,29 @@ ht-degree: 2%
 
 ![目标详细信息](../../assets/catalog/advertising/pubmatic/destination-details.png)
 
-- **[!UICONTROL 名称]**：将来用于识别此目标的名称。
-- **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
-- **[!UICONTROL 数据合作伙伴ID]**：在[!DNL PubMatic]帐户中为此集成设置的数据合作伙伴ID。
-- **[!UICONTROL 默认国家/地区代码]**：如果配置文件中未提供任何国家/地区代码，则应将默认国家/地区代码应用于所有身份。
-- **[!UICONTROL 帐户ID]**：您的[!DNL PubMatic Connect]帐户ID。
-- **[!UICONTROL 帐户类型]**： [!DNL PubMatic]平台帐户的帐户类型。 如果您有任何问题需要选择，请与您的[!DNL PubMatic]客户经理联系。 可用的选项包括：
-   - [!UICONTROL 发布者]
+- **[!UICONTROL Name]**：将来用于识别此目标的名称。
+- **[!UICONTROL Description]**：可帮助您将来识别此目标的描述。
+- **[!UICONTROL Data partner ID]**：在[!DNL PubMatic]帐户中为此集成设置的数据合作伙伴ID。
+- **[!UICONTROL Default country code]**：如果配置文件中未提供默认国家/地区代码，则应将其应用于所有身份。
+- **[!UICONTROL Account ID]**：您的[!DNL PubMatic Connect]帐户ID。
+- **[!UICONTROL Account type]**： [!DNL PubMatic]平台帐户的帐户类型。 如果您有任何问题需要选择，请与您的[!DNL PubMatic]客户经理联系。 可用的选项包括：
+   - [!UICONTROL PUBLISHER]
    - [!UICONTROL DEMAND_PARTNER]
-   - [!UICONTROL 买家]
+   - [!UICONTROL BUYER]
 
 ### 启用警报 {#enable-alerts}
 
 您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
 ## 将区段激活到此目标 {#activate}
 
 >[!IMPORTANT]
 >
-> - 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+> - 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >
-> - 要导出&#x200B;_标识_，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](../../assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+> - 要导出&#x200B;_标识_，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](../../assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 有关将受众区段激活到此目标的说明，请阅读[将配置文件和区段激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md)。
 

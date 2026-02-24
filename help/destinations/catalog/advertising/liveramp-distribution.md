@@ -2,10 +2,10 @@
 title: LiveRamp — 分发连接
 description: 了解如何使用LiveRamp - Distribution连接器编排和激活之前载入LiveRamp的受众以及下游广告目标。
 exl-id: 1b11a743-1ef9-4b01-90ef-cc072bc03c91
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '2645'
-ht-degree: 39%
+source-wordcount: '2816'
+ht-degree: 37%
 
 ---
 
@@ -56,6 +56,31 @@ ht-degree: 39%
 
 将受众载入LiveRamp后，从[连接到目标](#connect)步骤继续激活工作流，以选择和配置目标目标平台进行数据激活。
 
+## 支持的受众 {#supported-audiences}
+
+此部分介绍哪些类型的受众可以导出到此目标。
+
+| 受众来源 | 受支持 | 描述 |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+
+{style="table-layout:auto"}
+
+
+
+按受众数据类型划分的受众支持：
+
+| 受众数据类型 | 受支持 | 描述 | 用例 |
+|--------------------|-----------|-------------|-----------|
+| [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
+| [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
+| [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+
+{style="table-layout:auto"}
+
+
 ## 连接到目标 {#connect}
 
 >[!CONTEXTUALHELP]
@@ -101,7 +126,7 @@ ht-degree: 39%
 
 ## 目标特定的设置 {#destination-settings}
 
-[支持的每个目标](#supported-destinations) [!DNL LiveRamp - Distribution]都需要您填写特定的配置选项。
+[支持的每个目标](#supported-destinations)[!DNL LiveRamp - Distribution]都需要您填写特定的配置选项。
 
 有关如何配置每个目标的详细指导，请参阅以下部分。
 

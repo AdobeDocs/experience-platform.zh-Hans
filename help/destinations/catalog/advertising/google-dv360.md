@@ -2,10 +2,10 @@
 title: Google显示和视频360连接
 description: Display & Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于在显示器、视频和移动设备库存源中执行重定位和面向受众的数字活动。
 exl-id: bdd3b3fd-891f-44ec-bd47-daf7f3289f92
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '1134'
-ht-degree: 4%
+source-wordcount: '1268'
+ht-degree: 5%
 
 ---
 
@@ -14,12 +14,12 @@ ht-degree: 4%
 >[!IMPORTANT]
 >
 > Google将发布对[Google Ads API](https://developers.google.com/google-ads/api/docs/start)、[Customer Match](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html)和[Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview)的更改，以支持欧盟（[EU用户同意政策](https://digital-markets-act.ec.europa.eu/index_en)）中[Digital Markets Act](https://www.google.com/about/company/user-consent-policy/) (DMA)定义的合规性和同意相关要求。 自2024年3月6日起，将开始实施对同意要求的这些更改。
-> &#x200B;><br/>
-> &#x200B;>为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为 Google 合作伙伴，Adobe 为您提供必要的工具，以遵守欧盟 DMA 下的这些同意要求。
-> &#x200B;><br/>
-> &#x200B;>如果客户购买了Adobe Privacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未经同意的用户档案，则无需采取任何操作。
-> &#x200B;><br/>
-> &#x200B;>未购买Adobe Privacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/home.md#segment-definitions)中的[区段定义](../../../segmentation/ui/segment-builder.md)功能来过滤掉未经同意的用户档案，以便继续使用现有的Real-Time CDP Google目标而不中断。
+><br/>
+>为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为 Google 合作伙伴，Adobe 为您提供必要的工具，以遵守欧盟 DMA 下的这些同意要求。
+><br/>
+>如果客户购买了Adobe Privacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未经同意的用户档案，则无需采取任何操作。
+><br/>
+>未购买Adobe Privacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/home.md#segment-definitions)中的[区段定义](../../../segmentation/ui/segment-builder.md)功能来过滤掉未经同意的用户档案，以便继续使用现有的Real-Time CDP Google目标而不中断。
 
 [!DNL Display & Video 360]（以前称为[!DNL DoubleClick Bid Manager]）是一种工具，用于在显示、视频和移动设备清单源中执行重定位和面向受众的数字营销活动。
 
@@ -32,7 +32,7 @@ ht-degree: 4%
 
 >[!IMPORTANT]
 >
->如果您希望使用Google Display &amp; Video 360创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html?lang=zh-Hans)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了Google集成，则您设置的ID同步功能将会转移到Experience Platform。
+>如果您希望使用Google Display &amp; Video 360创建您的第一个目标，并且以前未在Experience Cloud ID服务(使用Adobe Audience Manager或其他应用程序)中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html)，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了Google集成，则您设置的ID同步功能将会转移到Experience Platform。
 
 ## 支持的身份 {#supported-identities}
 
@@ -42,7 +42,7 @@ ht-degree: 4%
 |---|---|---|
 | GAID | [!DNL Google Advertising ID] |  |
 | IDFA | [!DNL Apple ID for Advertisers] |  |
-| AAM UUID | [Adobe Audience Manager [!DNL Unique User ID]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html?lang=zh-Hans)，也称为[!DNL Device ID]。 Audience Manager与其交互的每个设备相关联的38位数字设备ID。 | Google使用[AAM UUID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html?lang=zh-Hans)来定位加利福尼亚州的用户，并使用Google Cookie ID来定位所有其他用户。 |
+| AAM UUID | [Adobe Audience Manager [!DNL Unique User ID]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html)，也称为[!DNL Device ID]。 Audience Manager与其交互的每个设备相关联的38位数字设备ID。 | Google使用[AAM UUID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html)来定位加利福尼亚州的用户，并使用Google Cookie ID来定位所有其他用户。 |
 | [!DNL Google] Cookie ID | [!DNL Google] Cookie ID | [!DNL Google]使用此ID定位加州以外的用户。 |
 | RIDA | Advertising的Roku ID。 此ID唯一标识Roku设备。 |  |
 | 女佣 | Microsoft Advertising ID。 此ID唯一标识运行Windows 10的设备。 |  |
@@ -52,12 +52,26 @@ ht-degree: 4%
 
 此部分介绍哪些类型的受众可以导出到此目标。
 
-| 受众来源 | 支持 | 描述 |
+| 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ | 受众[已从CSV文件将](../../../segmentation/ui/audience-portal.md#import-audience)导入Experience Platform。 |
+| [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
+
+
+
+按受众数据类型划分的受众支持：
+
+| 受众数据类型 | 受支持 | 描述 | 用例 |
+|--------------------|-----------|-------------|-----------|
+| [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
+| [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
+| [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+
+{style="table-layout:auto"}
+
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -75,7 +89,7 @@ ht-degree: 4%
 >[!NOTE]
 >
 >在Experience Platform中设置您的第一个[!DNL Google Display & Video 360]目标之前，必须将该目标列入允许列表。 在创建目标之前，请确保[!DNL Google]已完成下面描述的允许列表流程。
->&#x200B;>此规则的例外情况适用于[Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html?lang=zh-Hans)客户。 如果您已在Audience Manager中创建了到此Google目标的连接，则无需再次完成允许列表流程，您可以继续后续步骤。
+>此规则的例外情况适用于[Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html)客户。 如果您已在Audience Manager中创建了到此Google目标的连接，则无需再次完成允许列表流程，您可以继续后续步骤。
 
 在Experience Platform中创建[!DNL Google Display & Video 360]目标之前，您必须联系Google以请求将Adobe列入允许列表添加到允许的数据提供商列表中，并将您的帐户添加到中。 请联系Google并提供以下信息：
 
@@ -124,7 +138,7 @@ ht-degree: 4%
 
 要验证数据是否已成功导出到[!DNL Google Display & Video 360]目标，请检查您的[!DNL Google Display & Video 360]帐户。 如果激活成功，则会在您的帐户中填充受众。
 
-## 故障排除 {#troubleshooting}
+## 疑难解答 {#troubleshooting}
 
 ### 400错误请求错误消息 {#bad-request}
 

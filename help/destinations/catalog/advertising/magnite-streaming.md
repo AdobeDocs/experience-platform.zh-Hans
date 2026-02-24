@@ -1,12 +1,12 @@
 ---
 title: Magnite实时目标连接
-description: 使用此目标可将AdobeCDP受众实时交付到Magnite流平台。
+description: 使用此目标可将Adobe CDP受众实时交付到Magnite流平台。
 last-substantial-update: 2024-11-18T00:00:00Z
 exl-id: 4e08a14b-6800-41e1-95a5-826a6241144d
-source-git-commit: da05db9376893bdbe8f0aa291f19a507e4a73d4f
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '1317'
-ht-degree: 1%
+source-wordcount: '1410'
+ht-degree: 2%
 
 ---
 
@@ -56,12 +56,26 @@ Adobe Experience Platform中的[!DNL Magnite: Real-Time]和[Magnite：批处理]
 
 此部分介绍可将哪种类型的受众导出到此目标。
 
-| 受众来源 | 支持 | 描述 |
+| 受众来源 | 受支持 | 描述 |
 |-----------------------------|----------|----------|
-| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform[分段服务](../../../segmentation/home.md)生成的受众。 |
-| 自定义上传 | ✓ {\f13 } | 受众[已将](../../../segmentation/ui/audience-portal.md#import-audience)从CSV文件导入到Experience Platform中。 |
+| [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
+
+
+
+按受众数据类型划分的受众支持：
+
+| 受众数据类型 | 受支持 | 描述 | 用例 |
+|--------------------|-----------|-------------|-----------|
+| [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
+| [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
+| [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+
+{style="table-layout:auto"}
+
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -69,8 +83,8 @@ Adobe Experience Platform中的[!DNL Magnite: Real-Time]和[Magnite：批处理]
 
 | 项目 | 类型 | 注释 |
 |------------------|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 导出类型 | **[!UICONTROL 区段导出]** | 您正在导出区段（受众）的所有成员以及[!DNL Magnite: Real-Time]目标中使用的标识符（姓名、电话号码或其他）。 |
-| 导出频率 | **[!UICONTROL 正在流式传输]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出类型 | **[!UICONTROL Segment export]** | 您正在导出区段（受众）的所有成员以及[!DNL Magnite: Real-Time]目标中使用的标识符（姓名、电话号码或其他）。 |
+| 导出频率 | **[!UICONTROL Streaming]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -78,26 +92,26 @@ Adobe Experience Platform中的[!DNL Magnite: Real-Time]和[Magnite：批处理]
 
 >[!IMPORTANT]
 >
->若要连接到目标，您需要&#x200B;**[!UICONTROL 查看目标]**&#x200B;和&#x200B;**[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**[!UICONTROL View destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写下面两个部分中列出的字段。
 
 ### 验证目标 {#authenticate}
 
-要验证到目标，请填写必填字段并选择&#x200B;**[!UICONTROL 连接到目标]**。
+要验证目标，请填写必填字段并选择&#x200B;**[!UICONTROL Connect to destination]**。
 
 ![目标配置身份验证字段未填写](../../assets/catalog/advertising/magnite/destination-realtime-config-auth-unfilled.png)
 
-* **[!UICONTROL 用户名]**： [!DNL Magnite]提供给您的用户名。
-* **[!UICONTROL 密码]**： [!DNL Magnite]提供给您的密码。
+* **[!UICONTROL Username]**： [!DNL Magnite]提供给您的用户名。
+* **[!UICONTROL Password]**： [!DNL Magnite]提供给您的密码。
 
 ### 填写目标详细信息 {#destination-details}
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
-* **[!UICONTROL 名称]**：将来用于识别此目标的名称。
-* **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
-* **[!UICONTROL 您的公司名称]**：您的客户/公司名称。 仅受支持的[!DNL Magnite Streaming]客户端可供选择。
+* **[!UICONTROL Name]**：将来用于识别此目标的名称。
+* **[!UICONTROL Description]**：可帮助您将来识别此目标的描述。
+* **[!UICONTROL Your company name]**：您的客户/公司名称。 仅受支持的[!DNL Magnite Streaming]客户端可供选择。
 
 >[!NOTE]
 >
@@ -105,7 +119,7 @@ Adobe Experience Platform中的[!DNL Magnite: Real-Time]和[Magnite：批处理]
 
 ![目标配置身份验证字段已填写](../../assets/catalog/advertising/magnite/destination-realtime-config-auth-filled.png)
 
-完成后，选择&#x200B;**[!UICONTROL 创建]**&#x200B;按钮。
+完成后，选择&#x200B;**[!UICONTROL Create]**&#x200B;按钮。
 
 ![可选的治理策略和实施操作](../../assets/catalog/advertising/magnite/destination-realtime-config-grouping-policy.png)
 
@@ -113,14 +127,14 @@ Adobe Experience Platform中的[!DNL Magnite: Real-Time]和[Magnite：批处理]
 
 您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
-完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL 下一步]**。
+完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
 ## 将区段激活到此目标 {#activate}
 
 >[!IMPORTANT]
 >
->* 若要激活数据，您需要&#x200B;**[!UICONTROL 查看目标]**、**[!UICONTROL 激活目标]**、**[!UICONTROL 查看配置文件]**&#x200B;和&#x200B;**[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL 查看标识图形]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
+>* 若要激活数据，您需要&#x200B;**[!UICONTROL View destinations]**、**[!UICONTROL Activate destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 有关将受众区段激活到此目标的说明，请阅读[将配置文件和区段激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md)。
 
@@ -130,9 +144,9 @@ Adobe Experience Platform中的[!DNL Magnite: Real-Time]和[Magnite：批处理]
 
 下一步是将源标识符映射到Magnite device_id标识符。
 
-* 通过选择&#x200B;**[!UICONTROL 添加新映射]**，您可以根据需要添加任意数量的映射。
+* 您可以通过选择&#x200B;**[!UICONTROL Add new mapping]**&#x200B;来添加所需数量的映射。
 
-此使用实时目标的示例显示了一行，该行包含映射到Magnite device_id目标字段的通用deviceId源标识符。 当您使用映射时，请选择[!UICONTROL 下一步]。
+此使用实时目标的示例显示了一行，该行包含映射到Magnite device_id目标字段的通用deviceId源标识符。 当您使用映射时，请选择[!UICONTROL Next]。
 
 ![将所需的数据字段映射到设备标识字段](../../assets/catalog/advertising/magnite/destination-realtime-active-audience-field-mapping.png)
 
@@ -144,11 +158,11 @@ Adobe Experience Platform中的[!DNL Magnite: Real-Time]和[Magnite：批处理]
 
 **映射ID**
 
-* 当受众具有Magnite以前已知的预先存在的区段ID时，使用&#x200B;**[!UICONTROL 映射ID]**&#x200B;字段。
+* 当受众具有Magnite以前已知的预先存在的区段ID时，使用&#x200B;**[!UICONTROL Mapping ID]**&#x200B;字段。
 
-* 要将&#x200B;**[!UICONTROL 映射ID]**&#x200B;添加到受众，请单独选择每个受众行，然后在右侧列中输入数据（请参阅上图）。 如果您不想添加映射ID，请在映射ID字段中输入NONE。
+* 要向受众添加&#x200B;**[!UICONTROL Mapping ID]**，请分别选择每个受众行，然后在右侧列中输入数据（请参阅上图）。 如果您不想添加映射ID，请在映射ID字段中输入NONE。
 
-选择&#x200B;**[!UICONTROL 下一步]**&#x200B;并完成激活流程。
+选择&#x200B;**[!UICONTROL Next]**&#x200B;并完成激活流程。
 
 ![选择“下一步”并完成激活流程。](../../assets/catalog/advertising/magnite/destination-realtime-active-audience-review.png)
 

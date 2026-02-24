@@ -3,10 +3,10 @@ title: Salesforce Marketing Cloud帐户参与度
 description: 了解如何使用Salesforce Marketing Cloud Account Engagement（以前称为Pardot）目标导出您的帐户数据，并在Salesforce Marketing Cloud Account Engagement中激活这些数据，以满足您的业务需求。
 last-substantial-update: 2023-04-14T00:00:00Z
 exl-id: fca9d4f4-8717-4bfa-9992-5164ba98bea4
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '1482'
-ht-degree: 2%
+source-wordcount: '1653'
+ht-degree: 3%
 
 ---
 
@@ -34,7 +34,7 @@ ht-degree: 2%
 
 ### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL Marketing Cloud Account Engagement]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=zh-Hans)区段[!DNL Experience Platform]。
+在将数据激活到[!DNL Marketing Cloud Account Engagement]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)区段[!DNL Experience Platform]。
 
 ### [!DNL Marketing Cloud Account Engagement]中的先决条件 {#prerequisites-destination}
 
@@ -79,6 +79,31 @@ ht-degree: 2%
 | 电子邮件 | 目标客户电子邮件地址 | 必需 |
 
 {style="table-layout:auto"}
+
+## 支持的受众 {#supported-audiences}
+
+此部分介绍哪些类型的受众可以导出到此目标。
+
+| 受众来源 | 受支持 | 描述 |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+
+{style="table-layout:auto"}
+
+
+
+按受众数据类型划分的受众支持：
+
+| 受众数据类型 | 受支持 | 描述 | 用例 |
+|--------------------|-----------|-------------|-----------|
+| [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
+| [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
+| [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+
+{style="table-layout:auto"}
+
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -172,7 +197,7 @@ ht-degree: 2%
 1. 导航到您选择的受众之一。 选择 **[!DNL Activation data]** 选项卡。**[!UICONTROL Mapping ID]**&#x200B;列显示在[!DNL Marketing Cloud Account Engagement Prospects]页面中生成的自定义字段的名称。
    ![显示选定区段映射ID的Experience Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/selected-segment-mapping-id.png)
 
-1. 登录到[[!DNL Salesforce]](https://login.salesforce.com/)网站。 然后导航到&#x200B;**[!DNL Account Engagement]** > **[!DNL Prospects]** > **[!DNL Pardot Prospects]**&#x200B;页面，并检查受众中的潜在客户是否已添加/更新。 或者，您也可以访问[[!DNL Salesforce Pardot]](https://pi.pardot.com/)并访问&#x200B;**[!DNL Prospects]**&#x200B;页面。
+1. 登录到[[!DNL Salesforce]](https://login.salesforce.com/)网站。 然后导航到&#x200B;**[!DNL Account Engagement]** > **[!DNL Prospects]** > **[!DNL Pardot Prospects]**&#x200B;页面，并检查受众中的潜在客户是否已添加/更新。 或者，您也可以访问[[!DNL Salesforce Pardot]](https://pi.pardot.com/)并访问&#x200B;**[!DNL Prospects]**页面。
    ![显示“潜在客户”页面的Salesforce UI屏幕截图。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/prospects.png)
 
 1. 要检查潜在客户是否已更新，请选择一个潜在客户，并验证自定义潜在客户字段是否已使用Experience Platform受众状态进行更新。

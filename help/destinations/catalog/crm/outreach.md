@@ -3,9 +3,9 @@ keywords: CRM；CRM；CRM目标；外联；外联CRM目标
 title: 外联联系
 description: 外联目标允许您导出帐户数据，并在外联中激活它以满足您的业务需求。
 exl-id: 7433933d-7a4e-441d-8629-a09cb77d5220
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '1639'
+source-wordcount: '1810'
 ht-degree: 2%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 2%
 
 ### Experience Platform先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL Outreach]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=zh-Hans)区段[!DNL Experience Platform]。
+在将数据激活到[!DNL Outreach]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)区段[!DNL Experience Platform]。
 
 如果您需要有关受众状态的指导，请参阅Adobe有关[受众成员资格详细信息架构字段组](/help/xdm/field-groups/profile/segmentation.md)的文档。
 
@@ -76,6 +76,31 @@ ht-degree: 2%
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
 | `OutreachId` | <ul><li>[!DNL Outreach]标识符。 这是对应于目标客户配置文件的数值。</li><li>ID必须与要更新的目标客户在[!DNL Outreach] URL中的ID匹配。</li><li>有关详细信息，请参阅[[!DNL Outreach] 文档](https://api.outreach.io/api/v2/docs#update-an-existing-resource)。</li></ul> | 必需 |
+
+## 支持的受众 {#supported-audiences}
+
+此部分介绍哪些类型的受众可以导出到此目标。
+
+| 受众来源 | 受支持 | 描述 |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+
+{style="table-layout:auto"}
+
+
+
+按受众数据类型划分的受众支持：
+
+| 受众数据类型 | 受支持 | 描述 | 用例 |
+|--------------------|-----------|-------------|-----------|
+| [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
+| [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
+| [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+
+{style="table-layout:auto"}
+
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -147,7 +172,7 @@ ht-degree: 2%
 1. 在[!UICONTROL Mapping]步骤中，单击&#x200B;**[!UICONTROL Add new mapping]**。 您将在屏幕上看到一个新映射行。
    ![Experience Platform UI屏幕截图显示如何添加新映射](../../assets/catalog/crm/outreach/add-new-mapping.png)
 
-1. 在[!UICONTROL Select source field]窗口中，选择&#x200B;**[!UICONTROL Select identity namespace]**&#x200B;类别并添加所需的映射。
+1. 在[!UICONTROL Select source field]窗口中，选择&#x200B;**[!UICONTROL Select identity namespace]**类别并添加所需的映射。
    ![Experience Platform UI屏幕截图显示Source映射](../../assets/catalog/crm/outreach/source-mapping.png)
 
 1. 在[!UICONTROL Select target field]窗口中，选择要将源字段映射到的目标字段类型。
@@ -181,7 +206,7 @@ ht-degree: 2%
 
   >[!IMPORTANT]
   >
-  > * 在&#x200B;*内使用的数值`N`(*) [!UICONTROL Mapping ID]应该与[!DNL Outreach]内以数值为后缀的自定义属性键匹配。 示例： *自定义字段`N`标签*。
+  > * 在&#x200B;*内使用的数值`N`(*)[!UICONTROL Mapping ID]应该与[!DNL Outreach]内以数值为后缀的自定义属性键匹配。 示例： *自定义字段`N`标签*。
   > * 您只需指定数值，而无需指定整个自定义字段标签。
   > * [!DNL Outreach]支持最多150个自定义标签字段。
   > * 有关详细信息，请参阅[[!DNL Outreach] 潜在客户文档](https://api.outreach.io/api/v2/docs#prospect)。
@@ -198,13 +223,13 @@ ht-degree: 2%
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**&#x200B;以导航到目标列表。
+1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**以导航到目标列表。
    ![显示“浏览目标”的Experience Platform UI屏幕截图。](../../assets/catalog/crm/outreach/browse-destinations.png)
 
 1. 选择目标并验证状态为&#x200B;**[!UICONTROL enabled]**。
    ![Experience Platform UI屏幕截图显示针对所选目标运行的目标数据流。](../../assets/catalog/crm/outreach/destination-dataflow-run.png)
 
-1. 切换到&#x200B;**[!DNL Activation data]**&#x200B;选项卡，然后选择受众名称。
+1. 切换到&#x200B;**[!DNL Activation data]**选项卡，然后选择受众名称。
    ![显示“目标激活”数据的Experience Platform UI屏幕截图。](../../assets/catalog/crm/outreach/destinations-activation-data.png)
 
 1. 监控受众摘要，并确保用户档案计数对应于在区段内创建的计数。
