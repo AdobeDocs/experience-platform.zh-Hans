@@ -74,7 +74,7 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 您的[!DNL Mailchimp]受众中每个受众最多可以包含60个组名（或兴趣类别），这些组名可以位于单个组中，也可以跨同一受众内的多个组。 有关所需的任何说明，请参阅[!DNL Mailchimp] [组](https://mailchimp.com/help/getting-started-with-groups/)。 达到此限制后，您会从`400 BAD_REQUEST Cannot have more than 60 interests per list (Across all categories)` API收到[!DNL Mailchimp]消息作为错误响应。
 
-此外，有关[!DNL Mailchimp] API施加的限制的详细信息，请参阅[ ](https://mailchimp.com/developer/marketing/docs/fundamentals/#api-limits)速率限制[!DNL Mailchimp]。
+此外，有关[!DNL Mailchimp] API施加的限制的详细信息，请参阅[&#x200B; &#x200B;](https://mailchimp.com/developer/marketing/docs/fundamentals/#api-limits)速率限制[!DNL Mailchimp]。
 
 ## 支持的身份 {#supported-identities}
 
