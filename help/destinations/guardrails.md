@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: 了解有关数据激活默认使用量和速率限制的更多信息。
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 67dec10b0d1343fffd522ee3e615ac2823894a67
+source-git-commit: bdd0039249366ceabebe52694046ec01906ced3c
 workflow-type: tm+mt
-source-wordcount: '1755'
+source-wordcount: '1747'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/cn/legal/product-descriptions.html)中的实际使用限制。
+>除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/legal/product-descriptions.html)中的实际使用限制。
 
 本页提供有关激活行为的默认使用量和速率限制。 查看以下护栏时，假定您已正确[连接到目标](/help/destinations/ui/connect-destination.md)。
 
@@ -49,8 +49,8 @@ ht-degree: 2%
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
-| 单个目标的最大受众数量 | 250 | 性能护栏 | 建议将最多250个受众映射到数据流中的单个目标。 <br><br>如果您需要向某个目标激活超过250个受众，您可以： <ul><li> 取消映射您不想再激活的受众，或</li><li>创建到所需目标的新数据流，并将受众映射到此新数据流。</li></ul> <br>请注意，对于某些目标，映射到目标的受众可能限制为250个以下。 这些目标将在页面中各自部分的下面进一步说明。 |
-| 映射到目标的最大属性数 | 50 | 性能护栏 | 如果存在多个目标和目标类型，则可以选择要映射以导出的配置文件属性和身份。 为获得最佳性能，数据流中应将最多50个属性映射到目标。 |
+| 单个目标的最大受众数量 | 250 | 性能护栏 | 建议将最多250个受众映射到单个目标实例。 <br><br>如果您需要向某个目标激活超过250个受众，您可以： <ul><li> 取消映射您不想再激活的受众，或</li><li>[创建新的目标实例](ui/connect-destination.md)并将受众映射到该实例。</li></ul> <br>请注意，对于某些目标，映射到目标的受众可能限制为250个以下。 这些目标将在页面中各自部分的下面进一步说明。 |
+| 映射到目标的最大属性数 | 50 | 性能护栏 | 如果存在多个目标和目标类型，则可以选择要映射以导出的配置文件属性和身份。 为获得最佳性能，应将最多50个属性映射到目标实例。 |
 | 最大目标数 | 100 | 系统强制的护栏 | 您最多可以创建100个可以连接和激活数据的目标，每个沙盒&#x200B;*为*。 [Edge个性化目标（自定义个性化）](#edge-destinations-activation)最多可以构成100个推荐目标中的10个。 |
 | 激活到目标的数据类型 | 配置文件数据，包括身份和身份映射 | 系统强制的护栏 | 目前，只能将&#x200B;*配置文件记录属性*&#x200B;导出到目标。 目前不支持导出描述事件数据的XDM属性。 |
 | 激活到目标的数据类型 — 阵列和映射属性支持 | 部分可用 | 系统强制的护栏 | 您可以将数组属性导出到[基于文件的目标](/help/destinations/destination-types.md#file-based)。 [参阅更多](/help/destinations/ui/export-arrays-maps-objects.md)关于该功能的信息。 |
@@ -74,9 +74,9 @@ ht-degree: 2%
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
 | 激活频率 | 每日一次完全导出或更频繁的增量导出，每3、6、8或12小时一次。 | 系统强制的护栏 | 有关批处理导出的频率递增的详细信息，请阅读[导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files)和[导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files)文档部分。 |
-| 在给定小时可导出的最大受众数 | 100 | 性能护栏 | 建议向批处理目标数据流添加最多100个受众。 |
+| 在给定小时可导出的最大受众数 | 100 | 性能护栏 | 建议向批处理目标实例添加最多100个受众。 |
 | 每个文件要激活的最大行数（记录） | 500万 | 系统强制的护栏 | Adobe Experience Platform会自动按每个文件500万条记录（行）拆分导出的文件。 每一行表示一个配置文件。 拆分文件名后附加一个数字，指示文件是较大导出的一部分，例如： `filename.csv`、`filename_2.csv`、`filename_3.csv`。 有关详细信息，请参阅激活批处理目标教程的[计划部分](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling)。 |
-| 数据流中可以激活的最大外部受众（例如FAC、自定义上传、受众合成）数量 | 10 | 系统强制的护栏 | 将外部受众（例如[联合受众组合](/help/segmentation/ui/audience-portal.md#fac)、[自定义上传](/help/segmentation/ui/audience-portal.md#import-audience)、[受众组合](/help/segmentation/ui/audience-portal.md#audience-composition)）激活到基于批处理文件的目标时，您可以在数据流中激活10个此类受众的限制。 有关这些受众类型的详细信息，请参阅[受众类型和自定义](/help/segmentation/ui/audience-portal.md#customize)。 了解有关[将外部受众激活到基于批处理文件的目标](/help/destinations/ui/activate-batch-profile-destinations.md#select-audiences)的工作流的详细信息。 |
+| 可在目标实例中激活的最大外部受众数量（例如FAC、自定义上传、受众构成） | 10 | 系统强制的护栏 | 将外部受众（例如[联合受众组合](/help/segmentation/ui/audience-portal.md#fac)、[自定义上传](/help/segmentation/ui/audience-portal.md#import-audience)、[受众组合](/help/segmentation/ui/audience-portal.md#audience-composition)）激活到基于批处理文件的目标时，您可以在目标实例中激活10个此类受众的限制。 有关这些受众类型的详细信息，请参阅[受众类型和自定义](/help/segmentation/ui/audience-portal.md#customize)。 了解有关[将外部受众激活到基于批处理文件的目标](/help/destinations/ui/activate-batch-profile-destinations.md#select-audiences)的工作流的详细信息。 |
 
 {style="table-layout:auto"}
 
@@ -97,8 +97,8 @@ ht-degree: 2%
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
-| [自定义个性化](/help/destinations/catalog/personalization/custom-personalization.md)目标的最大数量 | 10 | 性能护栏 | 您可以将数据流设置为每个沙盒10个自定义个性化目标。 |
-| 每个沙盒映射到个性化目标的最大属性数 | 30 | 性能护栏 | 数据流中最多可以将30个属性映射到每个沙盒的个性化目标。 |
+| [自定义个性化](/help/destinations/catalog/personalization/custom-personalization.md)目标的最大数量 | 10 | 性能护栏 | 每个沙盒最多可以设置10个自定义个性化目标实例。 |
+| 每个沙盒映射到个性化目标的最大属性数 | 30 | 性能护栏 | 每个沙盒最多可以将30个属性映射到个性化目标实例。 |
 
 {style="table-layout:auto"}
 
@@ -143,7 +143,7 @@ ht-degree: 2%
 | 数据集类型 | 护栏 | 护栏类型 | 描述 |
 |---------|----------|---------|-------|
 | 基于&#x200B;**XDM体验事件架构**&#x200B;的数据集 | 最近365天的数据 | 系统强制的护栏 | 将导出上一个日历年的数据。 |
-| 基于&#x200B;**除XDM体验事件架构**&#x200B;之外的任何架构的数据集 | 数据流中所有导出文件的十亿条记录 | 系统强制的护栏 | 对于压缩的JSON或parquet文件，数据集的记录数必须少于100亿，对于未压缩的parquet文件，数据集的记录数必须少于100万，否则导出失败。 如果尝试导出的数据集大于允许的阈值，请减小该数据集的大小。 |
+| 基于&#x200B;**除XDM体验事件架构**&#x200B;之外的任何架构的数据集 | 目标实例中所有导出文件的十亿条记录 | 系统强制的护栏 | 对于压缩的JSON或parquet文件，数据集的记录数必须少于100亿，对于未压缩的parquet文件，数据集的记录数必须少于100万，否则导出失败。 如果尝试导出的数据集大于允许的阈值，请减小该数据集的大小。 |
 
 {style="table-layout:auto"}
 
@@ -160,7 +160,7 @@ The guardrails below are the same whether you are exporting parquet of JSON file
 |Dataset type | Backfill parameter provided | Guardrail | Guardrail type | Description |
 |---------|---------|-----------|-----------|------------|
 | Datasets based on the **XDM Experience Events schema** |  <p><ul><li>Both start and end date provided in `backfill` parameter in API call</li><li>Incomplete `backfill` parameter provided in API call</li></ul></p> | <p><ul><li>Last 30 days</li><li>Last 365 days</li></ul></p> | Hard | <p><ul><li>The export fails if the `startDate - endDate` interval is over 30 days</li><li>Either the `startDate` or `endDate` are missing or  incorrectly formatted in the API call. Expected format: `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`</li></ul></p> |
-| Datasets based on the **XDM Individual Profile schema** |  - | Ten billion records across all files exported in a dataflow | Hard | The record count of the dataset must be less than ten billion for compressed JSON or parquet files and one million for uncompressed parquet files, otherwise the export fails. Reduce the size of the dataset that you are trying to export if it is larger than the allowed threshold. |
+| Datasets based on the **XDM Individual Profile schema** |  - | Ten billion records across all files exported in a destination instance | Hard | The record count of the dataset must be less than ten billion for compressed JSON or parquet files and one million for uncompressed parquet files, otherwise the export fails. Reduce the size of the dataset that you are trying to export if it is larger than the allowed threshold. |
 
 {style="table-layout:auto"}
 
@@ -187,7 +187,7 @@ The guardrails below are the same whether you are exporting parquet of JSON file
 
 | 目标类型 | 描述 |
 | --- | --- |
-| 企业目标(HTTP API、Amazon Kinesis、Azure EventHubs) | 在95%的时间中，Experience Platform会尝试为成功发送的消息提供少于10分钟的吞吐量延迟，每个数据流向企业目标的请求速率低于每秒10,000次。 <br>如果对您的企业目标的请求失败，Experience Platform将存储失败的请求，并重试两次以将请求发送到您的端点。 |
+| 企业目标(HTTP API、Amazon Kinesis、Azure EventHubs) | 在95%的时间中，Experience Platform会尝试为每个企业目标实例以每秒少于10,000个请求的速率为成功发送的消息提供少于10分钟的吞吐量延迟。 <br>如果对您的企业目标的请求失败，Experience Platform将存储失败的请求，并重试两次以将请求发送到您的端点。 |
 
 {style="table-layout:auto"}
 
@@ -196,7 +196,7 @@ The guardrails below are the same whether you are exporting parquet of JSON file
 请参阅Real-Time CDP产品描述文档中的以下文档，了解有关其他Experience Platform服务护栏、端到端延迟信息和许可信息的更多信息：
 
 * [Real-Time CDP护栏](/help/rtcdp/guardrails/overview.md)
-* [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=zh-Hans#end-to-end-latency-diagrams)。
-* [Real-Time Customer Data Platform (B2C Edition - Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams)。
+* [Real-Time Customer Data Platform (B2C Edition - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime和Ultimate包)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)

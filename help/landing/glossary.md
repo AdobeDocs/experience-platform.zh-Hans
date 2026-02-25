@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform术语表
 description: Experience Platform 中的重要术语的词汇表。
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: 0ff9adc8869528f9e13ee384b866b8dcc3d781bd
+source-git-commit: bdd0039249366ceabebe52694046ec01906ced3c
 workflow-type: tm+mt
-source-wordcount: '8169'
+source-wordcount: '8224'
 ht-degree: 0%
 
 ---
@@ -177,7 +177,7 @@ ht-degree: 0%
 
 **数据使用标签**：数据使用标签允许您对反映隐私相关考虑因素和合同条件的数据进行分类，以符合法规和公司政策。 添加到数据集的数据使用标签将会向下继承或应用于该数据集中的所有字段。 数据使用标签也可以直接应用于字段。
 
-**数据流**：数据流是从源流入Experience Platform并从源流向目标的虚拟数据管道。
+**数据流**：数据流是从源流入Experience Platform并从源流向目标的虚拟数据管道。 在目标上下文中，数据流与[目标实例](#destination-instance)同义。{#dataflow}
 
 **数据流运行**：数据流运行是基于用户指定的计划登陆Experience Platform的数据流。
 
@@ -200,6 +200,8 @@ ht-degree: 0%
 **目标类别**：目标类别是具有相似特征的目标的分组。
 
 **目标目录**：目标目录是Experience Platform中可用目标的列表。
+
+**目标实例**：目标实例是通过UI或API创建的个人配置到Experience Platform中特定目标的连接。 它表示从Experience Platform到目标端点的单个激活管道。 也称为[数据流](#dataflow)。{#destination-instance}
 
 **直接调用规则**：在标记的上下文中，直接调用规则是在直接从页面调用它时执行的规则，它绕过事件检测和查找系统。
 
