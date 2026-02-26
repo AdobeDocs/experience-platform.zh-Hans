@@ -1,18 +1,18 @@
 ---
-keywords: Experience Platform；主页；热门主题
+keywords: Experience Platform；首页；热门话题
 solution: Experience Platform
-title: Privacy ServiceAPI指南附录
-description: 本文档包含有关使用Privacy ServiceAPI的其他信息。
+title: Privacy Service API指南附录
+description: 本文档包含有关使用Privacy Service API的其他信息。
 role: Developer
 exl-id: 7099e002-b802-486e-8863-0630d66e330f
-source-git-commit: 644e85fe5c9b1a37f69c75755713e929736c2e89
+source-git-commit: 9b3fb0d545408369d96a3fc7c5c6e9c098af9933
 workflow-type: tm+mt
-source-wordcount: '496'
-ht-degree: 5%
+source-wordcount: '552'
+ht-degree: 6%
 
 ---
 
-# Privacy ServiceAPI指南附录
+# Privacy Service API指南附录
 
 以下部分包含有关使用Adobe Experience Platform Privacy Service API的其他信息。
 
@@ -22,11 +22,11 @@ ht-degree: 5%
 
 下表概述了[!DNL Experience Platform]提供的几种常用预定义标识类型及其关联的`namespace`值：
 
-| 标识类型 | `namespace` | `namespaceId` |
+| 身份标识类型 | `namespace` | `namespaceId` |
 | --- | --- | --- |
 | 电子邮件 | `Email` | `6` |
 | 电话 | `Phone` | `7` |
-| ADOBE ADVERTISING CLOUD ID | `AdCloud` | `411` |
+| Adobe Advertising Cloud ID | `AdCloud` | `411` |
 | ADOBE AUDIENCE MANAGER UUID | `CORE` | `0` |
 | ADOBE EXPERIENCE CLOUD ID | `ECID` | `4` |
 | ADOBE TARGET ID | `TNTID` | `9` |
@@ -38,13 +38,13 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->每个标识类型还具有`namespaceId`整数值，在将该标识的`type`属性设置为“namespaceId”时，可以使用该整数值代替`namespace`字符串。 有关详细信息，请参阅有关[命名空间限定符](#namespace-qualifiers)的部分。
+>每个标识类型还具有`namespaceId`整数值，在将该标识的`namespace`属性设置为“namespaceId”时，可以使用该整数值代替`type`字符串。 有关详细信息，请参阅有关[命名空间限定符](#namespace-qualifiers)的部分。
 
-您可以通过向[!DNL Identity Service] API中的`idnamespace/identities`端点发出GET请求来检索您的组织正在使用的身份命名空间列表。 有关详细信息，请参阅[Identity Service开发人员指南](../../identity-service/api/getting-started.md)。
+您可以通过向`idnamespace/identities` API中的[!DNL Identity Service]端点发出GET请求，检索您的组织正在使用的身份命名空间列表。 有关详细信息，请参阅[Identity Service开发人员指南](../../identity-service/api/getting-started.md)。
 
-## 命名空间限定符
+## 命名空间限定符 {#namespace-qualifiers}
 
-在[!DNL Privacy Service] API中指定`namespace`值时，必须在相应的`type`参数中包含&#x200B;**命名空间限定符**。 下表概述了不同的已接受命名空间限定符。
+在`namespace` API中指定[!DNL Privacy Service]值时，必须在相应的&#x200B;**参数中包含**&#x200B;命名空间限定符`type`。 下表概述了不同的已接受命名空间限定符。
 
 | 限定符 | 定义 |
 | --------- | ---------- |
@@ -58,28 +58,31 @@ ht-degree: 5%
 
 {style="table-layout:auto"}
 
-## 接受的产品值
+## 接受的产品值 {#accepted-product-values}
 
-下表概述了在作业创建请求的`include`属性中指定Adobe产品时接受的值。
+此部分列出了创建Privacy Service作业（API或UI）时在`include`属性中接受的产品标识符值。 在作业请求的`include`数组中使用这些值。
+
+下表列出了支持的产品、其UI显示名称及其相应的代码值。
 
 >[!NOTE]
 >
->产品列表的值不区分大小写。 建议使用驼峰式大小写，但不强制使用。
+>- 产品值不区分大小写；为保持一致性，建议使用驼峰式大小写。
+>- UI和API仅支持上面列出的产品。 如果没有为您的组织配置产品，则它可能会被忽略或导致验证错误 — 请参阅Adobe合同或配置文档以确认权利。
 
-| 产品 | 在`include`属性中使用的值 |
-| --- | --- |
-| Adobe Advertising Cloud | `adCloud` |
-| Adobe Analytics | `analytics` |
-| Adobe Audience Manager | `audienceManager` |
-| Adobe Campaign | `campaign` |
-| Adobe Experience Platform（数据湖） | `aepDataLake` |
-| Adobe Experience Platform （实时客户资料） | `profileService` |
-| Adobe Pass 身份验证 | `primetimeAuthentication` |
-| Adobe Target | `target` |
-| 客户属性(CRS) | `CRS` |
-| 客户历程管理 | `cjm` |
-| 身份服务 | `identity` |
-| Marketo Engage | `marketo` |
-| Marketo Measure | `marketomeasure` |
+| 品牌产品名称 | UI显示名称 | `include` 值 |
+| ------------------------------------------------------ | -------------------------- | ---------------------------------------- |
+| Adobe Analytics | [!UICONTROL Analytics] | `analytics` |
+| Adobe Audience Manager | [!UICONTROL Audience Manager] | `audienceManager` |
+| Adobe Advertising | [!UICONTROL Ad Cloud] | `adCloud` |
+| Adobe Experience Platform (Profile store) | [!UICONTROL Profile] | `profileService` |
+| Adobe Experience Platform（数据湖） | [!UICONTROL AEP Data Lake] | `aepDataLake` |
+| Adobe Campaign | [!UICONTROL Campaign] | `campaign` |
+| Adobe Target | [!UICONTROL Target] | `target` |
+| 客户属性 | [!UICONTROL Customer Attributes (CRS)] | `CRS` |
+| Adobe Journey Optimizer | [!UICONTROL Adobe Journey Optimizer] | `cjm` |
+| Marketo Engage | [!UICONTROL Marketo Engage / AJO B2B] | `marketo` |
+| 身份标识服务 | [!UICONTROL Identity] | `identity` |
+| Marketo Measure | [!UICONTROL Marketo Measure] | `marketomeasure` |
+| Adobe Commerce | [!UICONTROL Commerce (Personalization)] | `commerceMarketingData` |
 
 {style="table-layout:auto"}
