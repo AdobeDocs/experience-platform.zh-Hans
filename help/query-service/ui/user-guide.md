@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询编辑器UI指南
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发以及非交互式查询，以填充Experience Platform中的数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: bf9de8c5358f1ab90dd5d70b0607dcfba7d1e2f5
+source-git-commit: 1d2a8ef649c4454da7cf0949192b8b1eb3696e5a
 workflow-type: tm+mt
-source-wordcount: '3360'
+source-wordcount: '3341'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ## 访问查询编辑器 {#accessing-query-editor}
 
-在[!DNL Experience Platform] UI中，从左侧导航菜单中选择&#x200B;**[!UICONTROL 查询]**&#x200B;以打开查询服务工作区。 接下来，要开始编写查询，请选择屏幕右上角的&#x200B;**[!UICONTROL 创建查询]**。 此链接可从查询服务工作区中的任何页面使用。
+在[!DNL Experience Platform] UI中，从左侧导航菜单中选择&#x200B;**[!UICONTROL Queries]**&#x200B;以打开查询服务工作区。 接下来，要开始编写查询，请选择屏幕右上角的&#x200B;**[!UICONTROL Create Query]**。 此链接可从查询服务工作区中的任何页面使用。
 
 ![突出显示了“创建查询”的“查询”工作区概述选项卡。](../images/ui/query-editor/create-query.png)
 
@@ -53,7 +53,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->您可以在创作查询时[!UICONTROL 禁用语法自动完成]，而不会丢失进度。
+>您可以在创作查询时[!UICONTROL Disable syntax auto complete]而不会失去进度。
 
 要启用深色或浅色主题，请选择设置图标（![A设置图标）。](/help/images/icons/settings.png))，其后显示下拉菜单中的选项。
 
@@ -77,23 +77,23 @@ ht-degree: 0%
 ### 执行选定的查询 {#execute-selected-query}
 
 如果您已经编写了多个查询，但只需要执行一个查询，则可以突出显示所选的查询并选择
-[!UICONTROL 运行选定的查询]图标。 默认情况下，此图标处于禁用状态，直到您在编辑器中选择查询语法。
+[!UICONTROL Run selected query]图标。 默认情况下，此图标处于禁用状态，直到您在编辑器中选择查询语法。
 
-![突出显示具有[!UICONTROL 运行选定查询]图标的查询编辑器。](../images/ui/query-editor/run-selected-query.png)
+![突出显示了[!UICONTROL Run selected query]图标的查询编辑器。](../images/ui/query-editor/run-selected-query.png)
 
 ### 取消查询编辑器会话 {#cancel-query}
 
-通过取消长时间运行的查询来控制查询执行并提高生产效率。 此操作在查询运行时清除查询编辑器。 请注意，查询将继续在后台执行。 如果它是CTAS查询，仍会生成输出数据集。 要在编辑器中取消运行并继续编写SQL语句，请在执行查询后选择&#x200B;**[!UICONTROL 取消查询]**。
+通过取消长时间运行的查询来控制查询执行并提高生产效率。 此操作在查询运行时清除查询编辑器。 请注意，查询将继续在后台执行。 如果它是CTAS查询，仍会生成输出数据集。 要在编辑器中取消运行并继续编写SQL语句，请在执行查询后选择&#x200B;**[!UICONTROL Cancel query]**。
 
-![带有[!UICONTROL 取消查询]的查询编辑器已突出显示。](../images/ui/query-editor/cancel-query-run.png)
+![高亮显示了[!UICONTROL Cancel query]的查询编辑器。](../images/ui/query-editor/cancel-query-run.png)
 
-将显示确认对话框。 选择&#x200B;**[!UICONTROL 确认]**&#x200B;以取消查询运行。
+将显示确认对话框。 选择&#x200B;**[!UICONTROL Confirm]**&#x200B;取消查询运行。
 
 ![高亮显示了“确认”的“取消查询”确认对话框。](../images/ui/query-editor/cancel-query-confirmation-dialog.png)
 
 ### 结果计数 {#result-count}
 
-查询编辑器的行输出最多为50,000个。 您可以选择在查询编辑器控制台中一次显示的行数。 要更改控制台中显示的行数，请选择&#x200B;**[!UICONTROL 结果计数]**&#x200B;下拉列表，并从50、100、150、300、500和1000选项中进行选择。
+查询编辑器的行输出最多为50,000个。 您可以选择在查询编辑器控制台中一次显示的行数。 要更改控制台中显示的行数，请选择&#x200B;**[!UICONTROL Result count]**&#x200B;下拉列表，并从50、100、150、300、500和1000选项中进行选择。
 
 >[!NOTE]
 >
@@ -103,7 +103,7 @@ ht-degree: 0%
 
 ## 编写查询 {#writing-queries}
 
-[!UICONTROL 查询编辑器]的组织方式使编写查询尽可能容易。 下面的屏幕截图显示了编辑器在UI中的显示方式，其中高亮显示了SQL输入字段和&#x200B;**Play**。
+[!UICONTROL Query Editor]经过组织，使编写查询尽可能容易。 下面的屏幕截图显示了编辑器在UI中的显示方式，其中高亮显示了SQL输入字段和&#x200B;**Play**。
 
 ![已突出显示SQL输入字段和“播放”的查询编辑器。](../images/ui/query-editor/editor.png)
 
@@ -115,13 +115,13 @@ ht-degree: 0%
 
 ### 设置文本格式 {#format-text}
 
-[!UICONTROL 格式文本]功能通过添加标准语法样式使您的查询更易读。 选择&#x200B;**[!UICONTROL 设置文本格式]**&#x200B;以标准化查询编辑器中的所有文本。
+[!UICONTROL Format text]功能通过添加标准化语法样式使您的查询更易读取。 选择&#x200B;**[!UICONTROL Format text]**&#x200B;以标准化查询编辑器中的所有文本。
 
 >[!NOTE]
 >
->[!UICONTROL 格式文本]功能不适用于匿名块。 若要了解如何按顺序链接一个或多个SQL语句，请参阅[匿名块文档](../key-concepts/anonymous-block.md)。
+>[!UICONTROL Format text]功能不适用于匿名块。 若要了解如何按顺序链接一个或多个SQL语句，请参阅[匿名块文档](../key-concepts/anonymous-block.md)。
 
-![查询编辑器[!UICONTROL 格式文本]和突出显示的SQL语句。](../images/ui/query-editor/format-text.png)
+![包含[!UICONTROL Format text]和SQL语句的查询编辑器已突出显示。](../images/ui/query-editor/format-text.png)
 
 <!-- ### Undo text {#undo-text}
 
@@ -137,33 +137,33 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 ### 查询详细信息 {#query-details}
 
-要在查询编辑器中查看查询，请从[!UICONTROL 模板]选项卡中选择任何已保存的模板。 查询详细信息面板提供了更多信息和工具来管理所选查询。 它还显示有用的元数据，例如上次修改查询的时间以及修改查询的人员（如果适用）。
+要在查询编辑器中查看查询，请从[!UICONTROL Templates]选项卡中选择任何已保存的模板。 查询详细信息面板提供了更多信息和工具来管理所选查询。 它还显示有用的元数据，例如上次修改查询的时间以及修改查询的人员（如果适用）。
 
 >[!NOTE]
 >
->[!UICONTROL 查看计划]、[!UICONTROL 添加计划]和[!UICONTROL 删除查询]选项仅在将查询另存为模板后可用。 使用[!UICONTROL 添加计划]选项，您可以从查询编辑器直接转到计划生成器。 使用[!UICONTROL 查看计划]选项，您可以直接查看该查询的计划清单。 请参阅查询计划文档，了解如何在UI[&#128279;](./query-schedules.md#create-schedule)中创建查询计划。
+>[!UICONTROL View schedule]、[!UICONTROL Add schedule]和[!UICONTROL Delete query]选项仅在将查询另存为模板后可用。 使用[!UICONTROL Add schedule]选项，您可以从查询编辑器直接转到计划生成器。 使用[!UICONTROL View schedule]选项可直接转到该查询的计划清单。 请参阅查询计划文档，了解如何在UI[中](./query-schedules.md#create-schedule)创建查询计划。
 
 ![查询详细信息面板突出显示的查询编辑器。](../images/ui/query-editor/query-details.png)
 
 在详细信息面板中，您可以直接从UI生成输出数据集，删除或命名显示的查询，查看查询运行计划，并将查询添加到计划中。
 
-要生成输出数据集，请选择&#x200B;**[!UICONTROL 以CTAS]**&#x200B;身份运行。 出现&#x200B;**[!UICONTROL 输入输出数据集详细信息]**&#x200B;对话框。 输入名称和说明，然后选择&#x200B;**[!UICONTROL 以CTAS身份运行]**。 新数据集显示在&#x200B;**[!UICONTROL 数据集]**&#x200B;浏览选项卡中。 请参阅[查看数据集文档](../../catalog/datasets/user-guide.md#view-datasets)，了解有关贵组织可用数据集的更多信息。
+要生成输出数据集，请选择&#x200B;**[!UICONTROL Run as CTAS]**。 出现&#x200B;**[!UICONTROL Enter output dataset details]**&#x200B;对话框。 输入名称和说明，然后选择&#x200B;**[!UICONTROL Run as CTAS]**。 新数据集显示在&#x200B;**[!UICONTROL Datasets]**&#x200B;浏览选项卡中。 请参阅[查看数据集文档](../../catalog/datasets/user-guide.md#view-datasets)，了解有关贵组织可用数据集的更多信息。
 
 >[!NOTE]
 >
->[!UICONTROL 作为CTAS运行]选项仅在查询有&#x200B;**未计划**&#x200B;时才可用。
+>[!UICONTROL Run as CTAS]选项仅在查询有&#x200B;**未**&#x200B;计划时才可用。
 
-![[!UICONTROL 输入输出数据集详细信息]对话框。](../images/ui/query-editor/output-dataset-details.png)
+![该[!UICONTROL Enter output dataset details]对话框。](../images/ui/query-editor/output-dataset-details.png)
 
-执行以CTAS **身份运行的**&#x200B;操作后，将弹出一条确认消息，通知您操作成功。 此弹出消息包含一个链接，为导航到查询日志工作区提供了一种便捷的方式。 有关查询日志的详细信息，请参阅[查询日志文档](./query-logs.md)。
+执行&#x200B;**[!UICONTROL Run as CTAS]**&#x200B;操作后，将弹出一条确认消息，通知您操作成功。 此弹出消息包含一个链接，为导航到查询日志工作区提供了一种便捷的方式。 有关查询日志的详细信息，请参阅[查询日志文档](./query-logs.md)。
 
 ### 保存查询 {#saving-queries}
 
-查询编辑器提供保存功能，允许您保存查询并稍后处理。 要保存查询，请选择查询编辑器右上角的&#x200B;**[!UICONTROL 保存]**。 在保存查询之前，必须使用&#x200B;**[!UICONTROL 查询详细信息]**&#x200B;面板为查询提供一个名称。
+查询编辑器提供保存功能，允许您保存查询并稍后处理。 要保存查询，请选择查询编辑器右上角的&#x200B;**[!UICONTROL Save]**。 在保存查询之前，必须使用&#x200B;**[!UICONTROL Query Details]**&#x200B;面板为查询提供一个名称。
 
 >[!NOTE]
 >
->使用查询编辑器命名并保存在中的查询可用作查询仪表板[!UICONTROL 模板]选项卡中的模板。 有关详细信息，请参阅[模板文档](./query-templates.md)。
+>使用查询编辑器在中命名并保存的查询在查询仪表板[!UICONTROL Templates]选项卡中可用作模板。 有关详细信息，请参阅[模板文档](./query-templates.md)。
 
 在查询编辑器中保存查询时，将会弹出一条确认消息，通知您操作成功。 此弹出消息包含一个链接，为导航到查询计划工作区提供了一种便捷的方法。 请参阅[计划查询文档](./query-schedules.md)以了解如何以自定义节奏运行查询。
 
@@ -175,18 +175,18 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 >[!NOTE]
 >
->连续运行10次失败的已计划查询将自动置于[!UICONTROL 隔离]状态。 具有此状态的查询需要您的干预，然后才能进行任何进一步的执行。 有关更多详细信息，请参阅[隔离的查询](./monitor-queries.md#quarantined-queries)文档。
+>连续运行10次失败的已计划查询将自动置于[!UICONTROL Quarantined]状态。 具有此状态的查询需要您的干预，然后才能进行任何进一步的执行。 有关更多详细信息，请参阅[隔离的查询](./monitor-queries.md#quarantined-queries)文档。
 
-请参阅查询计划文档，了解如何在UI[&#128279;](./query-schedules.md)中创建查询计划。 或者，要了解如何使用API添加计划，请阅读[计划查询端点指南](../api/scheduled-queries.md)。
+请参阅查询计划文档，了解如何在UI[中](./query-schedules.md)创建查询计划。 或者，要了解如何使用API添加计划，请阅读[计划查询端点指南](../api/scheduled-queries.md)。
 
-任何计划的查询都会添加到[!UICONTROL 计划查询]选项卡的列表中。 在该工作区中，您可以通过UI监控所有已计划查询作业的状态。 在[!UICONTROL 计划的查询]选项卡上，您可以找到有关查询运行的重要信息并订阅警报。 可用信息包括状态、计划详细信息和运行失败时的错误消息/代码。 有关详细信息，请参阅[监视计划查询文档](./monitor-queries.md)。
+任何计划的查询都会添加到[!UICONTROL Scheduled queries]选项卡中的列表。 在该工作区中，您可以通过UI监控所有已计划查询作业的状态。 在[!UICONTROL Scheduled queries]选项卡上，您可以找到有关查询运行的重要信息并订阅警报。 可用信息包括状态、计划详细信息和运行失败时的错误消息/代码。 有关详细信息，请参阅[监视计划查询文档](./monitor-queries.md)。
 
 
 ### 如何查找以前的查询 {#previous-queries}
 
-从“查询编辑器”执行的所有查询都在“日志”表中捕获。 您可以使用&#x200B;**[!UICONTROL 日志]**&#x200B;选项卡中的搜索功能来查找查询执行。 已保存的查询列在&#x200B;**[!UICONTROL 模板]**&#x200B;选项卡中。
+从“查询编辑器”执行的所有查询都在“日志”表中捕获。 您可以使用&#x200B;**[!UICONTROL Log]**&#x200B;选项卡中的搜索功能来查找查询执行。 已保存的查询列在&#x200B;**[!UICONTROL Templates]**&#x200B;选项卡中。
 
-如果已计划查询，则[!UICONTROL 计划查询]选项卡通过UI提高了这些查询作业的可见性。 有关详细信息，请参阅[查询监视文档](./monitor-queries.md)。
+如果计划了查询，则[!UICONTROL Scheduled Queries]选项卡改进了这些查询作业在UI中的可见性。 有关详细信息，请参阅[查询监视文档](./monitor-queries.md)。
 
 >[!NOTE]
 >
@@ -196,7 +196,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 使用对象浏览器可轻松搜索和筛选数据集。 对象浏览器减少了在具有大量数据集的大型环境中搜索表和数据集所花费的时间。 通过简化对相关数据和元数据的访问，您可以将更多精力放在查询创作上，而较少精力放在导航上。
 
-要使用对象浏览器浏览数据库，请在搜索字段中输入表名，或选择&#x200B;**[!UICONTROL 表]**&#x200B;以展开可用数据集和表的列表。 使用搜索字段时，会根据您的输入动态筛选可用表列表。
+要使用对象浏览器浏览数据库，请在搜索字段中输入表名，或选择&#x200B;**[!UICONTROL Tables]**&#x200B;以展开可用数据集和表的列表。 使用搜索字段时，会根据您的输入动态筛选可用表列表。
 
 [所选数据库](#database-dropdown)中包含的每个数据集都列在查询编辑器左侧的导航边栏中。
 
@@ -222,7 +222,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 ## 使用查询编辑器执行查询 {#executing-queries}
 
-若要在查询编辑器中运行查询，您可以在编辑器中输入SQL，或者从&#x200B;**[!UICONTROL 日志]**&#x200B;或&#x200B;**[!UICONTROL 模板]**&#x200B;选项卡加载上一个查询，然后选择&#x200B;**播放**。 查询执行状态显示在下面的&#x200B;**[!UICONTROL 控制台]**&#x200B;选项卡中，输出数据显示在&#x200B;**[!UICONTROL 结果]**&#x200B;选项卡中。
+要在查询编辑器中运行查询，您可以在编辑器中输入SQL，或者从&#x200B;**[!UICONTROL Log]**&#x200B;或&#x200B;**[!UICONTROL Templates]**&#x200B;选项卡加载上一个查询，然后选择&#x200B;**播放**。 查询执行的状态显示在下面的&#x200B;**[!UICONTROL Console]**&#x200B;选项卡中，输出数据显示在&#x200B;**[!UICONTROL Results]**&#x200B;选项卡中。
 
 ### 控制台 {#console}
 
@@ -236,7 +236,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 ## 查询结果 {#query-results}
 
-完成查询后，结果将显示在&#x200B;**[!UICONTROL 控制台]**&#x200B;选项卡旁边的&#x200B;**[!UICONTROL 结果]**&#x200B;选项卡中。 此视图显示查询的表格输出，根据您选择的[结果计数](#result-count)显示50到1000行结果。 此视图允许您验证查询是否生成预期的输出。 要使用您的查询生成数据集，请删除对返回行的限制，然后使用`CREATE TABLE tablename AS SELECT`运行查询以使用输出生成数据集。 有关如何从查询编辑器中的查询结果生成数据集的说明，请参阅[生成数据集教程](./create-datasets.md)。
+完成查询后，结果将显示在&#x200B;**[!UICONTROL Results]**&#x200B;选项卡旁边的&#x200B;**[!UICONTROL Console]**&#x200B;选项卡中。 此视图显示查询的表格输出，根据您选择的[结果计数](#result-count)显示50到1000行结果。 此视图允许您验证查询是否生成预期的输出。 要使用您的查询生成数据集，请删除对返回行的限制，然后使用`CREATE TABLE tablename AS SELECT`运行查询以使用输出生成数据集。 有关如何从查询编辑器中的查询结果生成数据集的说明，请参阅[生成数据集教程](./create-datasets.md)。
 
 ![查询编辑器控制台的“结果”选项卡显示查询运行的结果。](../images/ui/query-editor/query-results.png)
 
@@ -248,11 +248,11 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 成功运行查询后，请下载CSV、XLSX或JSON格式的结果，以便在离线分析、报表或电子表格工作流中使用。 此功能通过允许立即访问离线分析、报告和基于Excel的流程的查询结果，简化了营销和分析团队的工作流。
 
-要下载查询结果，请选择“查询编辑器”**[!UICONTROL “结果”]**&#x200B;选项卡右上角的&#x200B;**[!UICONTROL “下载”]**。 然后从下拉菜单中选择&#x200B;**[!UICONTROL CSV]**、**[!UICONTROL XLSX]**&#x200B;或&#x200B;**[!UICONTROL JSON]**。 该文件将自动下载到您的本地计算机。 选择适合您的用例的格式，CSV用于轻量级导出，XLSX用于格式化电子表格，或JSON用于结构化数据处理。
+要下载查询结果，请选择“查询编辑器”**[!UICONTROL Download]**&#x200B;选项卡右上角的&#x200B;**[!UICONTROL Result]**。 然后从下拉菜单中选择&#x200B;**[!UICONTROL CSV]**、**[!UICONTROL XLSX]**&#x200B;或&#x200B;**[!UICONTROL JSON]**。 该文件将自动下载到您的本地计算机。 选择适合您的用例的格式，CSV用于轻量级导出，XLSX用于格式化电子表格，或JSON用于结构化数据处理。
 
 >[!NOTE]
 >
->如果缺少&#x200B;**[!UICONTROL 下载]**&#x200B;按钮，请检查查询结果。 仅当返回记录时，才会显示按钮。 如果未返回任何记录，则&#x200B;**[!UICONTROL 结果]**&#x200B;选项卡将显示“无结果”消息，并且下载选项被禁用。
+>如果缺少&#x200B;**[!UICONTROL Download]**&#x200B;按钮，请检查查询结果。 仅当返回记录时，才会显示按钮。 如果未返回任何记录，**[!UICONTROL Result]**&#x200B;选项卡将显示“无结果”消息，并且下载选项被禁用。
 
 ![下载查询编辑器的结果选项卡，下拉菜单突出显示。](../images/ui/overview/download-results.png)
 
@@ -262,7 +262,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 ### 全屏查看结果 {#view-results}
 
-成功执行查询后，在&#x200B;**[!UICONTROL 结果]**&#x200B;选项卡中选择&#x200B;**[!UICONTROL 查看结果]**&#x200B;以打开以表格形式显示的全屏结果视图。
+成功执行查询后，在&#x200B;**[!UICONTROL View results]**&#x200B;选项卡中选择&#x200B;**[!UICONTROL Result]**&#x200B;以打开以表格形式显示的全屏结果视图。
 
 使用全屏预览可轻松扫描宽表并检查行级详细信息，而无需水平滚动。 全屏视图以可调整大小的网格显示输出，这使您更容易查看大型数据集和跨列扫描。
 
@@ -276,11 +276,11 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 使用查询编辑器中的增强复制功能，以逗号分隔值(CSV)形式复制查询结果并将其粘贴到电子表格工具（如Excel）中，以便立即验证或报告。 此功能可提高可读性、保留格式并简化工作流程，而无需依赖第三方工具。
 
-您可以从[!UICONTROL 结果]选项卡或全屏结果预览中复制查询结果。 从&#x200B;**[!UICONTROL 结果]**&#x200B;选项卡中，选择复制图标（![复制图标）。](../../images/icons/copy.png))以将所有查询结果复制到剪贴板。 要启用复制图标，请先选择一行。 您可以选择单个行，也可以使用顶部的复选框一次选择所有行。
+您可以从[!UICONTROL Result]选项卡或全屏结果预览中复制查询结果。 从&#x200B;**[!UICONTROL Result]**&#x200B;选项卡中，选择复制图标（![复制图标）。](../../images/icons/copy.png))以将所有查询结果复制到剪贴板。 要启用复制图标，请先选择一行。 您可以选择单个行，也可以使用顶部的复选框一次选择所有行。
 
 ![查询编辑器的结果选项卡中突出显示了复制图标。](../images/ui/overview/query-editor-copy-icon.png)
 
-或者，选择&#x200B;**[!UICONTROL 查看结果]**&#x200B;以打开全屏预览。 从该对话框中，选择单个行，或使用左上角的复选框选择所有行，然后选择复制图标（![复制图标）。](../../images/icons/copy.png))以复制所选数据。
+或者，选择&#x200B;**[!UICONTROL View results]**&#x200B;以打开全屏预览。 从该对话框中，选择单个行，或使用左上角的复选框选择所有行，然后选择复制图标（![复制图标）。](../../images/icons/copy.png))以复制所选数据。
 
 ![全屏预览对话框，已选择结果行并且复制图标突出显示。](../images/ui/overview/results-copy.png)
 
@@ -312,7 +312,13 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 >
 >视频中描述的UI已过时，但在工作流中使用的逻辑保持不变。
 
->[!VIDEO](https://video.tv.adobe.com/v/32702?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)
+
+## 监视和管理并发会话 {#monitor-manage-sessions}
+
+使用会话管理可以查看沙盒中的活动查询编辑器会话，识别空闲会话，并结束它们以释放共享容量。 您无法中断正在运行查询的会话。 此功能仅适用于管理员，且需要&#x200B;**[!UICONTROL Manage Query Session]**&#x200B;权限。
+
+要访问会话管理，请选择查询服务工作区中的&#x200B;**[!UICONTROL Admin]**&#x200B;选项卡。 有关查看会话详细信息、解释会话状态和结束空闲会话的分步说明，请参阅[管理查询服务会话](session-management.md)。
 
 ## 后续步骤
 
