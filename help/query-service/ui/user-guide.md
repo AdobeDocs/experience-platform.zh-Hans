@@ -312,7 +312,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 >
 >视频中描述的UI已过时，但在工作流中使用的逻辑保持不变。
 
->[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/32702?captions=chi_hans&quality=12&learn=on)
 
 ## 监视和管理并发会话 {#monitor-manage-sessions}
 
