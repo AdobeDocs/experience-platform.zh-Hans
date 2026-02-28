@@ -97,7 +97,7 @@ ht-degree: 45%
 
 在[!UICONTROL Schemas]的[!DNL Adobe Experience Platform]工作区中管理体验数据模型(XDM)资源。 您可以查看和浏览[!DNL Adobe]提供的核心资源（例如字段组），并为您的组织创建自定义资源和架构。
 
-有关创建[架构](/help/xdm/home.md)的详细信息，请参阅[创建架构教程。](/help/xdm/tutorials/create-schema-ui.md)和[使用XDM对您的客户体验数据进行建模](https://experienceleague.adobe.com/docs/courses/using/experienceplatform-d-1-2021-1-xdm.html)。
+有关创建[架构](/help/xdm/home.md)的详细信息，请参阅[创建架构教程。](/help/xdm/tutorials/create-schema-ui.md)和[使用XDM对您的客户体验数据进行建模](https://experienceleague.adobe.com/docs/courses/using/experienceplatform-d-1-2021-1-xdm.html?lang=zh-Hans)。
 
 有四种用于重新参与用例的架构设计。每个架构都需要设置特定的字段。 您需要启用架构以包含在Real-time Customer Profile中。 有关启用架构以在Real-time Customer Profile中使用的详细信息，请阅读[为Real-time Customer Profile启用架构](/help/xdm/ui/resources/schemas.md#enable-a-schema-for-real-time-customer-profile)。
 
