@@ -3,13 +3,13 @@ title: 受众构成增强功能
 description: 了解针对受众构成所做的增强功能，包括受众扩充和更快的激活。
 hide: true
 hidefromtoc: true
-source-git-commit: 42e639b403edbaf666d8bc21eb35b2b75530d6b0
+exl-id: 068a178e-ef50-45f1-bcce-c207ebcd5ef1
+source-git-commit: 2d16cc990ea15c1596aae92d8768cddc77a30efd
 workflow-type: tm+mt
-source-wordcount: '470'
+source-wordcount: '477'
 ht-degree: 0%
 
 ---
-
 
 # 受众构成增强功能
 
@@ -26,15 +26,15 @@ ht-degree: 0%
 
 ![受众块以及“生成规则”按钮突出显示。](/help/segmentation/images/ui/composition-enhancements/select-build-rule.png)
 
-此时将显示规则生成器画布。 您现在可以创建用于受众扩充的筛选条件。 此筛选条件&#x200B;**必须**&#x200B;包含数组中的属性。 作为数组的属性取决于贵组织的架构结构。 创建筛选条件后，在右侧面板中选择&#x200B;**[!UICONTROL Delivery]**。
+此时将显示规则生成器画布。 您现在可以创建用于受众扩充的筛选条件。 此筛选条件&#x200B;**必须**&#x200B;包含数组中的属性。 作为数组的属性取决于贵组织的架构结构。 创建筛选条件后，在右侧面板中选择&#x200B;**[!UICONTROL View enrichment]**。
 
-![规则生成器画布显示可以具有扩充功能的受众示例。 传递按钮也突出显示。](/help/segmentation/images/ui/composition-enhancements/view-delivery.png)
+![规则生成器画布显示可以具有扩充功能的受众示例。 传递按钮也突出显示。](/help/segmentation/images/ui/composition-enhancements/view-enrichment.png)
 
-从左侧面板的列表中选择要用于扩充的对象数组。 如果配置文件上只有一个数组，则会自动为您选择该数组。 选择&#x200B;**[!UICONTROL Save]**&#x200B;以返回到受众合成。
+从左侧面板的列表中选择对象数组以及要在扩充中使用的字段。 如果配置文件上只有一个数组，则会自动为您选择该数组。 选择&#x200B;**[!UICONTROL Save]**&#x200B;以返回到受众合成。
 
 <!-- , as well as the fields you want to be used in the enrichment. -->
 
-![将显示扩充树的架构树。](/help/segmentation/images/ui/composition-enhancements/view-schema-tree.png)
+![将显示扩充树的架构树。](/help/segmentation/images/ui/composition-enhancements/enrichment-tree.png)
 
 在受众组合中，[!UICONTROL Audience]块现在为“[!UICONTROL Rule builder with enhancement]”类型。 选择&#x200B;**[!UICONTROL Publish]**&#x200B;以通过下一个每日批次激活您的受众。
 
