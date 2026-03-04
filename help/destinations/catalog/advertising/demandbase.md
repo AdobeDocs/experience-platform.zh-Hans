@@ -3,12 +3,13 @@ title: Demandbase连接
 description: 使用此目标来激活 Account-Based Marketing (ABM) 用例的帐户受众。通过 DemandBase 的 B2B Demand Side Platform（DSP）向目标帐户中的相关用户画像和角色投放广告。目标帐户还可以通过 Demandbase 第三方数据进行丰富，以用于营销和销售中的其他下游用例。
 last-substantial-update: 2024-09-30T00:00:00Z
 exl-id: a84609a2-f1d3-4998-9db4-ad59c0a0b631
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 5a03902df358d804cbafb401ffcef54eab240dfd
 workflow-type: tm+mt
 source-wordcount: '914'
 ht-degree: 15%
 
 ---
+
 
 # Demandbase连接 {#demandbase}
 
@@ -37,8 +38,6 @@ ht-degree: 15%
 
 {style="table-layout:auto"}
 
-
-
 按受众数据类型划分的受众支持：
 
 | 受众数据类型 | 受支持 | 描述 | 用例 |
@@ -49,7 +48,6 @@ ht-degree: 15%
 | [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
-
 
 ## 导出类型和频率 {#export-type-and-frequency}
 

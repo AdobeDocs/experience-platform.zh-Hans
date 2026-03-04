@@ -1,19 +1,19 @@
 ---
-title: 庞博拉连接
+title: Bombora ABM受众连接
 description: 根据客户受众，激活Bombora营销活动的用户档案，以实现受众定位、个性化和抑制。
 exl-id: a2f8e399-e192-4104-876a-fe60f8403143
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 049112b29b593daa69a11302e828dc968d7abae3
 workflow-type: tm+mt
-source-wordcount: '969'
-ht-degree: 4%
+source-wordcount: '1170'
+ht-degree: 3%
 
 ---
 
-# 庞博拉连接 {#bombora}
+# Bombora ABM受众连接 {#bombora}
 
 >[!AVAILABILITY]
 >
->将Account Audiences激活到Bombra目标的功能适用于购买[Business-to-Business](/help/rtcdp/overview.md#rtcdp-b2b)和[Business-to-Person](/help/rtcdp/overview.md#rtcdp-b2p)版本的Real-Time Customer Data Platform的公司。
+>向Bombora ABM Audiences目标激活帐户受众的功能适用于购买[Business-to-Business](/help/rtcdp/overview.md#rtcdp-b2b)和[Business-to-Person](/help/rtcdp/overview.md#rtcdp-b2p)版本的Real-Time Customer Data Platform的公司。
 
 根据[帐户受众](/help/segmentation/types/account-audiences.md)，为您的Bombora营销活动激活用户档案，以实现受众定位、个性化和抑制。
 
@@ -52,8 +52,6 @@ ht-degree: 4%
 
 {style="table-layout:auto"}
 
-
-
 按受众数据类型划分的受众支持：
 
 | 受众数据类型 | 受支持 | 描述 | 用例 |
@@ -91,8 +89,9 @@ Bombora需要下表描述的目标标识映射。 了解有关[标识](/help/ide
 
 要将客户受众导出到Bombora，您需要以下信息。
 
-1. 一个庞博拉的账户。
+1. 一个庞博拉的账户。 如果您没有帐户，可以使用[Bombra受众激活请求表](https://customers.bombora.com/artcdp/audience-activation-request)来请求Bombra帐户。
 2. 庞博拉&#x200B;**[!UICONTROL client ID]**&#x200B;和&#x200B;**[!UICONTROL client secret]**。
+3. 发送到Bombora的数据必须来自启用了&#x200B;**配置文件的数据集**，因此该数据集包含在配置文件中。 在将受众激活到此目标之前，请确保已为配置文件[启用您的数据集](/help/catalog/datasets/enable-for-profile.md)。
 
 ## 连接到目标 {#connect}
 
@@ -135,8 +134,6 @@ Bombora需要下表描述的目标标识映射。 了解有关[标识](/help/ide
 
 Bombora目标要求您配置以下映射以便成功激活数据。
 
-
-
 | 源字段 | 目标字段 | 描述 |
 |---------|----------|---------|
 | 任何值 | `Identity: primaryId` | 此映射对于Experience Platform建立与Bombora的连接是必需的。 此值不会导出到Bombora，但目标配置需要此值。 您可以为源字段选择任何属性。 |
@@ -144,6 +141,17 @@ Bombora目标要求您配置以下映射以便成功激活数据。
 
 ![添加必需的映射](../..//assets/catalog/advertising/bombora/mappings.png)
 
+## 受众同步行为 {#sync-behavior}
+
+在首次激活受众后，对Experience Platform中受众的后续更新将逐步同步到Bombora。 以下行为适用：
+
+* **添加到受众的帐户**：将帐户添加到Experience Platform中的受众时，该帐户会自动添加到Bombora中的相应受众。
+* **帐户已移除或不再符合条件**：当帐户不再符合受众条件或从Experience Platform中的受众中移除时，将会从Bombora中的相应受众中移除。
+* **已删除帐户或个人资料**：从Experience Platform中删除帐户或个人资料后，如果该帐户不再符合受众条件，则会将其从Bombora中的相应受众中删除。
+
+### 受众删除和断开连接行为 {#deletion-disconnect}
+
+删除Experience Platform中的受众或从Bombrora激活数据流中删除受众会从Bombrora帐户中删除受众。
 
 ## 其他注释和重要标注 {#additional-notes}
 

@@ -3,9 +3,9 @@ title: 将帐户受众激活到目标
 type: Tutorial
 description: 了解如何将帐户受众激活到目标
 exl-id: ad69d0a8-bf5b-42ac-97a3-401eadda62cd
-source-git-commit: 044306709747c32c4ce265d03d3908bbae169edc
+source-git-commit: 049112b29b593daa69a11302e828dc968d7abae3
 workflow-type: tm+mt
-source-wordcount: '778'
+source-wordcount: '779'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 ## 支持的目标 {#supported-destinations}
 
-转到&#x200B;**[!UICONTROL Connections]** > **[!UICONTROL Destinations]**，然后选择&#x200B;**[!UICONTROL Catalog]**&#x200B;选项卡。 使用&#x200B;**[!UICONTROL Data types]**&#x200B;筛选器并选择&#x200B;**[!UICONTROL Accounts]**&#x200B;查看支持激活帐户受众的目标。 目前，导出帐户受众仅适用于某些云存储目标([Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md)、[ADLS Gen 2](/help/destinations/catalog/cloud-storage/adls-gen2.md)、[Azure Blob Storage](/help/destinations/catalog/cloud-storage/azure-blob.md)、[数据登陆区域](/help/destinations/catalog/cloud-storage/data-landing-zone.md)和[SFTP](/help/destinations/catalog/cloud-storage/sftp.md))以及[Demandbase](/help/destinations/catalog/advertising/demandbase.md)和[（公司）LinkedIn匹配的受众](/help/destinations/catalog/social/linkedin-b2b.md)流目标。
+转到&#x200B;**[!UICONTROL Connections]** > **[!UICONTROL Destinations]**，然后选择&#x200B;**[!UICONTROL Catalog]**&#x200B;选项卡。 使用&#x200B;**[!UICONTROL Data types]**&#x200B;筛选器并选择&#x200B;**[!UICONTROL Accounts]**&#x200B;查看支持激活帐户受众的目标。 目前，导出帐户受众仅适用于某些云存储目标([Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md)、[ADLS Gen 2](/help/destinations/catalog/cloud-storage/adls-gen2.md)、[Azure Blob Storage](/help/destinations/catalog/cloud-storage/azure-blob.md)、[数据登陆区域](/help/destinations/catalog/cloud-storage/data-landing-zone.md)和[SFTP](/help/destinations/catalog/cloud-storage/sftp.md))以及[Bombora](/help/destinations/catalog/advertising/bombora.md)、[Demandbase](/help/destinations/catalog/advertising/demandbase.md)和[（公司）LinkedIn匹配的受众](/help/destinations/catalog/social/linkedin-b2b.md)流式目标。
 
 ![支持帐户受众的目标。](/help/destinations/assets/ui/activate-account-audiences/data-types-filter.png)
 
@@ -53,7 +53,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->可导出帐户受众的目标在卡片的右上角以图标指示，类似于下面高亮显示的目标，或者，您可以使用数据类型筛选器以仅显示可导出帐户受众的目标，如页面上较高位置显示的[&#128279;](#supported-destinations)。
+>可导出帐户受众的目标在卡片的右上角以图标指示，类似于下面高亮显示的目标，或者，您可以使用数据类型筛选器以仅显示可导出帐户受众的目标，如页面上较高位置显示的[](#supported-destinations)。
 
 ![可导出突出显示的配置文件受众的Demandbase目标页面。](/help/destinations/assets/ui/activate-account-audiences/demandbase-icon-activate-account-audiences.png)
 
