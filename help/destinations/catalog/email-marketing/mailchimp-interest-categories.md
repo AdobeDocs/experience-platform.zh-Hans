@@ -3,7 +3,7 @@ title: Mailchimp兴趣类别
 description: Mailchimp（也称为Intuit Mailchimp）是一种流行的营销自动化平台和电子邮件营销服务，企业使用它来管理联系人（客户、客户或其他利益相关方），并使用邮件列表和电子邮件营销活动与其交谈。 使用此连接器可以根据联系人的兴趣和偏好对他们进行排序。
 last-substantial-update: 2023-05-24T00:00:00Z
 exl-id: bdce8295-7305-4d54-81c1-7fa3e580ce70
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: ef1b0b704d1299282995068a0de330d52884bb95
 workflow-type: tm+mt
 source-wordcount: '2409'
 ht-degree: 3%
@@ -36,7 +36,7 @@ Compared to [!DNL Mailchimp Tags] which you would use for internal classificatio
 
 ### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL Mailchimp Interest Categories]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=zh-Hans)区段[!DNL Experience Platform]。
+在将数据激活到[!DNL Mailchimp Interest Categories]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)区段[!DNL Experience Platform]。
 
 ### [!DNL Mailchimp Interest Categories]目标的先决条件 {#prerequisites-destination}
 
@@ -74,7 +74,7 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 您的[!DNL Mailchimp]受众中每个受众最多可以包含60个组名（或兴趣类别），这些组名可以位于单个组中，也可以跨同一受众内的多个组。 有关所需的任何说明，请参阅[!DNL Mailchimp] [组](https://mailchimp.com/help/getting-started-with-groups/)。 达到此限制后，您会从`400 BAD_REQUEST Cannot have more than 60 interests per list (Across all categories)` API收到[!DNL Mailchimp]消息作为错误响应。
 
-此外，有关[!DNL Mailchimp] API施加的限制的详细信息，请参阅[&#x200B; &#x200B;](https://mailchimp.com/developer/marketing/docs/fundamentals/#api-limits)速率限制[!DNL Mailchimp]。
+此外，有关[!DNL Mailchimp] API施加的限制的详细信息，请参阅[ ](https://mailchimp.com/developer/marketing/docs/fundamentals/#api-limits)速率限制[!DNL Mailchimp]。
 
 ## 支持的身份 {#supported-identities}
 
@@ -93,7 +93,7 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
