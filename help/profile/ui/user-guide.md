@@ -3,9 +3,9 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: 实时客户个人资料UI指南
 description: Real-time Customer Profile可以为每位客户创建整体视图，结合来自多个渠道（包括在线、离线、CRM和第三方数据）的数据。 本文档提供了在Adobe Experience Platform用户界面中与Real-time Customer Profile交互的指南。
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: 5db5d0763b1d1456ba184bd24e7ef4c3047e25d1
+source-git-commit: cf975ec6747438a034fcedb51a4b25b0acd46d2f
 workflow-type: tm+mt
-source-wordcount: '1924'
+source-wordcount: '2123'
 ht-degree: 4%
 
 ---
@@ -40,9 +40,9 @@ ht-degree: 4%
 
 ## [!UICONTROL Browse]选项卡
 
-在&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡上，您可以通过选择切换开关在&#x200B;**卡片**&#x200B;视图或&#x200B;**图形**&#x200B;视图中查看配置文件。
+在&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡上，您可以通过选择切换在&#x200B;**卡片**&#x200B;视图或&#x200B;**表**&#x200B;视图中查看配置文件。
 
-![卡片视图和图形视图切换已高亮显示。](../images/user-guide/change-browse-view.png)
+![卡片视图和表格视图切换已突出显示。](../images/user-guide/change-browse-view.png)
 
 此外，您可以使用合并策略浏览配置文件，或使用身份命名空间和值查找特定配置文件。
 
@@ -98,7 +98,7 @@ ht-degree: 4%
 
 ![与标识值匹配的配置文件突出显示。](../images/user-guide/filtered-identity-value.png)
 
-## 查看配置文件 {#view-profile}
+## 查看轮廓 {#view-profile}
 
 >[!CONTEXTUALHELP]
 >id="platform_errors_uplib_201001_404"
@@ -111,11 +111,11 @@ ht-degree: 4%
 
 ### “详细信息”选项卡 {#profile-detail}
 
-**[!UICONTROL Details]**&#x200B;选项卡提供有关所选配置文件的更多详细信息，并分为四个部分：客户配置文件分析、AI insight构件、可自定义构件和自动分类构件。
+**[!UICONTROL Details]**&#x200B;选项卡提供有关所选配置文件的更多详细信息。 根据您处于卡片视图还是图形视图，详细信息选项卡将被划分为多个部分。 对于卡片视图，会显示客户配置文件分析、AI insight构件、可自定义构件和自动分类构件；对于图形视图，会显示配置文件属性和体验事件部分。
 
 ![将显示配置文件详细信息页面。](../images/user-guide/profile-details.png)
 
-此外，您可以切换是否显示AI生成的洞察、显示与边缘相比的集线器详细信息，以及在图形视图中查看详细信息。
+此外，您可以切换是否显示AI生成的洞察，显示与边缘对比的集线器详细信息，以及在卡片视图或图形视图之间进行选择。
 
 ![上面列出的切换(AI生成的见解、Hub或Edge数据以及卡片视图或图形视图)突出显示。](../images/user-guide/profile-toggles.png)
 
@@ -131,7 +131,7 @@ ht-degree: 4%
 >
 >如果您是Healthcare Shield客户，则&#x200B;**无法**&#x200B;使用AI insight小组件。
 
-**[!UICONTROL AI insight widgets]**&#x200B;部分显示由AI生成的构件。 这些小组件根据配置文件数据(包括人口统计信息（如年龄、性别或位置）、用户行为（如购买历史记录、网站活动或社交媒体参与）以及心理图形（如兴趣、偏好或生活方式选择），提供对配置文件的快速见解。 所有AI小组件都使用配置文件中已存在&#x200B;**&#x200B;**&#x200B;的数据。
+**[!UICONTROL AI insight widgets]**&#x200B;部分显示由AI生成的构件。 这些小组件根据配置文件数据(包括人口统计信息（如年龄、性别或位置）、用户行为（如购买历史记录、网站活动或社交媒体参与）以及心理图形（如兴趣、偏好或生活方式选择），提供对配置文件的快速见解。 所有AI小组件都使用配置文件中已存在&#x200B;****&#x200B;的数据。
 
 ![将显示AI insight小组件部分。](../images/user-guide/ai-insight-widgets.png)
 
@@ -158,6 +158,24 @@ ht-degree: 4%
 >如果有多个源字段组，则小组件将仅使用可用选项中的&#x200B;**one**。
 
 ![显示自动分类的Widget部分。](../images/user-guide/auto-classified-widgets.png)
+
+#### 轮廓属性 {#profile-attributes}
+
+**[!UICONTROL Profile attributes]**&#x200B;部分显示配置文件数据的分层图形表示形式。 在此视图中，中心节点代表配置文件本身，辅助节点代表字段组，其余节点代表每个字段组中的属性。
+
+在图形视图中，您可以拖放节点以重新排列节点顺序，折叠和展开节点以查看有关属性的更多详细信息，按属性搜索和筛选，以及放大和缩小以更好地查看属性详细信息。
+
+![此时将显示配置文件的图形视图，其中显示构成配置文件的各种节点。](/help/profile/images/user-guide/profile-attribute-graph.png)
+
+#### 体验事件 {#experience-events}
+
+**[!UICONTROL Experience events]**&#x200B;部分显示包含用户档案的体验事件的时间线。
+
+![显示“体验事件”部分，其中显示包含用户档案的体验事件的时间轴。](/help/profile/images/user-guide/experience-event-graph.png)
+
+如果选择&#x200B;**[!UICONTROL View event]**，则可以看到链接到选定事件的事件属性。 这些详细信息包括路径、属性、显示名称和值。
+
+![将显示“事件属性”弹出框，显示与该事件相关的更多详细信息。](/help/profile/images/user-guide/event-attributes-graph.png)
 
 ### “属性”选项卡 {#attributes}
 
