@@ -99,7 +99,7 @@ Experience Platform UI允许您查看收到的警报和管理警报规则。 以
 
 >[!VIDEO](https://video.tv.adobe.com/v/3480183?learn=on)
 
-有关如何通过与Experience Platform App Builder webhook代理集成在[!DNL Slack]中接收Adobe通知的更多信息，请参阅[在 [!DNL Slack]](https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/monitoring/monitor-events-in-slack)中监视Experience Platform事件。
+有关如何通过与Experience Platform App Builder webhook代理集成在[!DNL Slack]中接收Adobe通知的更多信息，请参阅[在 [!DNL Slack]](https://experienceleague.adobe.com/zh-hans/docs/platform-learn/tutorials/monitoring/monitor-events-in-slack)中监视Experience Platform事件。
 
 ## 后续步骤
 
