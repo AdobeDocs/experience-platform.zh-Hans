@@ -65,7 +65,7 @@ An identity represents a real-world object. There are three objects that are rep
 
 ## 命名空间优先级使用情况
 
-目前，命名空间优先级影响实时客户配置文件的系统行为。 下图说明了此概念。 有关详细信息，请阅读[Adobe Experience Platform和应用程序体系结构图](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications)的指南。
+目前，命名空间优先级影响实时客户配置文件的系统行为。 下图说明了此概念。 有关详细信息，请阅读[Adobe Experience Platform和应用程序体系结构图](https://experienceleague.adobe.com/zh-hans/docs/blueprints-learn/architecture/architecture-overview/platform-applications)的指南。
 
 ![命名空间优先级应用程序作用域的图表。](../images/namespace-priority/application-scope.png "命名空间优先级应用程序作用域的关系图。"){zoomable="yes"}
 
@@ -208,13 +208,13 @@ In a given event, ensure that all of your namespaces that represent a person ent
 
 * **Event applicability**: This behavior applies only to events sent directly to the Edge Network (such as WebSDK and Mobile SDK). Events ingested from [Experience Platform hub](/help/landing/edge-and-hub-comparison.md), such as those ingested with the HTTP API source, other streaming sources, and batch sources, are not subject to this limitation.
 * **边缘分割特异性**：此行为特定于边缘分割。 批量分段和流分段是在集线器上评估的单独服务，不遵循相同的流程。 有关详细信息，请阅读[边缘分段指南](/help/segmentation/methods/edge-segmentation.md)。
-* 有关详细信息，请阅读[Adobe Experience Platform和应用程序体系结构图表](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications#detailed-architecture-diagram)和[Edge Network和中心比较](/help/landing/edge-and-hub-comparison.md)页。
+* 有关详细信息，请阅读[Adobe Experience Platform和应用程序体系结构图表](https://experienceleague.adobe.com/zh-hans/docs/blueprints-learn/architecture/architecture-overview/platform-applications#detailed-architecture-diagram)和[Edge Network和中心比较](/help/landing/edge-and-hub-comparison.md)页。
 
 #### Edge Network应用程序
 
 要确保Edge Network上的应用程序可立即访问边缘配置文件，请确保您的活动在CRMID上包括`primary=true`。 这可确保立即可用，而无需等待集线器的身份图更新。
 
 * Edge Network上的应用程序(如Adobe Target、Offer Decisioning和自定义Personalization目标)将继续依赖事件中的主要身份来从Edge配置文件访问配置文件。
-* 有关Edge Network行为的详细信息，请阅读[Experience PlatformWeb SDK和Edge Network体系结构图表](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/deployment/websdk#experience-platform-webmobile-sdk-or-edge-network-server-api-deployment)。
+* 有关Edge Network行为的详细信息，请阅读[Experience PlatformWeb SDK和Edge Network体系结构图表](https://experienceleague.adobe.com/zh-hans/docs/blueprints-learn/architecture/architecture-overview/deployment/websdk#experience-platform-webmobile-sdk-or-edge-network-server-api-deployment)。
 * 有关如何在Web SDK上配置主标识的详细信息，请阅读有关[数据元素类型](/help/tags/extensions/client/web-sdk/data-element-types.md)和[Web SDK中的标识数据](/help/collection/use-cases/identity/id-overview.md)的文档。
 * 确保体验事件中包含ECID。 如果ECID缺失，则会将其添加到事件负载中，并显示`primary=true`，这可能会导致意外结果。
