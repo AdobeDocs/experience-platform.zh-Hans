@@ -6,7 +6,7 @@ exl-id: 66820711-2db0-4621-908d-01187771de14
 source-git-commit: b0094920720c54990953f79de32ab95c2a5c7e1c
 workflow-type: tm+mt
 source-wordcount: '625'
-ht-degree: 10%
+ht-degree: 12%
 
 ---
 
@@ -83,7 +83,7 @@ ht-degree: 10%
 >[!CONTEXTUALHELP]
 >id="platform_permissions_policies_about"
 >title="策略是什么？"
->abstract="策略是一些语句，它将若干属性组合在一起以确定允许执行和不允许执行的操作。每个组织都有一个默认策略，您必须激活该策略才能开始根据标签控制对特定对象的访问。除非用户被分配了具有匹配标签的角色，否则应用于资源的标签会拒绝访问。策略无法编辑或删除，但可以激活或停用。"
+>abstract="策略是一些语句，它将若干属性组合在一起以确定允许执行和不允许执行的操作。每个组织都有一个默认策略，您必须激活该策略才能开始根据标签控制对特定对象的访问。除非用户被分配了具有匹配标签的角色，否则应用于资源的标签会拒绝访问。策略无法编辑或删除，但可以启用或停用。"
 >additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/abac/permissions-ui/labels" text="管理标签"
 
 要激活现有策略，请从&#x200B;**[!UICONTROL Policies]**&#x200B;的&#x200B;**[!UICONTROL Permissions]**&#x200B;选项卡中选择策略。 策略的激活状态显示在&#x200B;**[!UICONTROL Status]**&#x200B;部分下。

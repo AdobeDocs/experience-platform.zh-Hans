@@ -5,7 +5,7 @@ exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
 source-git-commit: 56ae47f511a7392286c4f85173dba30e93fc07d0
 workflow-type: tm+mt
 source-wordcount: '2520'
-ht-degree: 4%
+ht-degree: 5%
 
 ---
 
@@ -81,7 +81,7 @@ Experience Platform中的每个数据集仅支持一种主要身份类型。
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_primaryidentity"
 >title="主要身份标识命名空间"
->abstract="主身份命名空间是唯一将记录与Experience Platform中的消费者配置文件关联的属性。 数据集的主要身份标识字段由数据集所基于的架构定义。在此列中，您必须提供与数据集架构匹配的主要身份命名空间(例如，电子邮件地址为`email`，Experience Cloud ID为`ecid`)。 要了解详情，请参阅数据生命周期 UI 指南。"
+>abstract="主要身份标识命名空间是用于在 Experience Platform 中将记录唯一关联到消费者轮廓的属性。数据集的主要身份标识字段由数据集所基于的架构定义。在此列中，您必须提供与数据集架构匹配的主要身份标识命名空间（例如，电子邮件地址使用 `email`，Experience Cloud ID 使用 `ecid`）。要了解详情，请参阅数据生命周期 UI 指南。"
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_identityvalue"

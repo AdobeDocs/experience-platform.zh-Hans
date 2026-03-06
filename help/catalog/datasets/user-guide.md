@@ -7,7 +7,7 @@ exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
 source-git-commit: 9bfad453b74afce848ca3b00cd66a2336edf8479
 workflow-type: tm+mt
 source-wordcount: '4294'
-ht-degree: 4%
+ht-degree: 6%
 
 ---
 
@@ -57,14 +57,14 @@ ht-degree: 4%
 >[!CONTEXTUALHELP]
 >id="platform_datasets_orchestratedCampaigns_toggle"
 >title="编排的营销活动"
->abstract="启用此切换可允许在Adobe Journey Optimizer Orchestrated营销活动中使用选定的数据集。 数据集必须使用关系架构，且每个架构只能创建一个数据集。"
->additional-url="https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/campaigns/orchestrated-campaigns/data-configuration/schemas-datasets/manual-schema#enable" text="为编排的活动启用数据集"
+>abstract="启用此切换按钮，以允许所选数据集在 Adobe Journey Optimizer 的编排的营销活动中使用。数据集必须使用关系架构，且每个架构只能创建一个数据集。"
+>additional-url="https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/campaigns/orchestrated-campaigns/data-configuration/schemas-datasets/manual-schema#enable" text="为编排的营销活动启用数据集"
 
 >[!CONTEXTUALHELP]
 >id="platform_datasets_enableforlookup_toggle"
 >title="启用查找"
->abstract="启用此数据集进行查找，以将其在Journey Optimizer中的数据用于个性化、决策和Journey Orchestration。"
->additional-url="https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/data-management/lookup-aep-data" text="在Journey Optimizer中使用Adobe Experience Platform数据"
+>abstract="为此数据集启用查找功能，以便在 Journey Optimizer 中用于个性化、决策和历程编排。"
+>additional-url="https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/data-management/lookup-aep-data" text="在 Journey Optimizer 中使用 Adobe Experience Platform 数据"
 
 在[!DNL Experience Platform] UI中，从左侧导航中选择&#x200B;**[!UICONTROL Datasets]**&#x200B;以打开&#x200B;**[!UICONTROL Datasets]**&#x200B;仪表板。 仪表板列出您组织的所有可用数据集。 将显示每个列出数据集的详细信息，包括其名称、数据集所遵循的架构以及最近一次摄取运行的状态。
 

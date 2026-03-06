@@ -7,7 +7,7 @@ exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
 source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
 source-wordcount: '3042'
-ht-degree: 7%
+ht-degree: 8%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 7%
 
 >[!IMPORTANT]
 >
-> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
 HTTP API目标是一个[!DNL Adobe Experience Platform]流目标，可帮助您将配置文件数据发送到第三方HTTP端点。
 
@@ -210,7 +210,7 @@ curl --location --request POST 'https://some-api.com/token' \
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_endpoint"
 >title="HTTP 端点"
->abstract="要将配置文件数据发送到的HTTP端点的URL。 这是您的数据接收端点，如果进行了配置，则支持mTLS（不适用于OAuth 2密码或客户端凭据身份验证）。"
+>abstract="要将轮廓数据发送到的 HTTP 端点的 URL。这是您的数据接收端点，如已配置则支持 mTLS（不适用于 OAuth 2 Password 或客户端凭据身份验证）。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_includesegmentnames"

@@ -6,7 +6,7 @@ exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
 source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
 source-wordcount: '1052'
-ht-degree: 5%
+ht-degree: 10%
 
 ---
 
@@ -79,7 +79,7 @@ ht-degree: 5%
 
 [!DNL Microsoft Bing]目标需要以下安装程序才能正常工作：
 
-1. **启用ID同步功能**：如果您是第一次设置[!DNL Microsoft Bing]激活，并且以前未在Experience Cloud ID服务中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html?lang=zh-Hans)&#x200B;(使用Adobe Audience Manager或其他应用程序)，请与Adobe Consulting或客户关怀部门联系以启用ID同步。
+1. **启用ID同步功能**：如果您是第一次设置[!DNL Microsoft Bing]激活，并且以前未在Experience Cloud ID服务中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html)&#x200B;(使用Adobe Audience Manager或其他应用程序)，请与Adobe Consulting或客户关怀部门联系以启用ID同步。
    * 如果您之前在Audience Manager中设置[!DNL Microsoft Bing]集成，则您现有的ID同步会自动转移到Experience Platform。
 
 2. **确保在配置文件上使用ECID**：所有配置文件都必须具有ECID，才能成功导出。 此目标的ECID为&#x200B;**强制**。
@@ -119,9 +119,9 @@ ht-degree: 5%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_required_mappings_bing"
->title="预配置的映射集"
->abstract="我们已为您预配置了这两个映射集。 在激活数据到Microsoft Bing时，符合激活受众条件的配置文件必须至少有一个与其配置文件关联的ECID标识，才能成功导出到目标。"
->additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/catalog/advertising/bing#preconfigured-mappings" text="阅读有关预配置映射的更多信息"
+>title="预配置映射集"
+>abstract="我们已为您预配置以下两个映射集。当您将数据激活到 Microsoft Bing 时，符合已激活受众条件的轮廓必须至少关联一个 ECID 身份标识，才能成功导出到该目标。"
+>additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/catalog/advertising/bing#preconfigured-mappings" text="了解有关预配置映射的更多信息"
 
 >[!IMPORTANT]
 > 
@@ -133,7 +133,7 @@ ht-degree: 5%
 
 ![显示受众计划屏幕的UI图像，其中包含如何将受众名称映射到Bing映射ID的示例。](../../assets/catalog/advertising/bing/mapping-id.png)
 
-### 预配置的映射 {#preconfigured-mappings}
+### 预配置映射 {#preconfigured-mappings}
 
 在受众激活工作流期间，预配置并自动填充以下标识映射&#x200B;**：**
 
@@ -150,7 +150,7 @@ ht-degree: 5%
 
 * **具有ECID和Microsoft Advertising ID映射的配置文件：**&#x200B;已成功导出和激活配置文件
 * **仅具有ECID的配置文件(无Microsoft Advertising ID映射)：**&#x200B;配置文件&#x200B;**未导出**。 需要ECID和MAID之间的ID同步映射。
-* **没有ECID的配置文件：**&#x200B;未导出配置文件&#x200B;**&#x200B;**。 此目标必须具有ECID。
+* **没有ECID的配置文件：**&#x200B;未导出配置文件&#x200B;****。 此目标必须具有ECID。
 
 ## 导出的数据 {#exported-data}
 

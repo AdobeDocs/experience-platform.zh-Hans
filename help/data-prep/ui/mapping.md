@@ -1,21 +1,21 @@
 ---
 keywords: Experience Platform；主页；热门主题；映射csv；映射csv文件；将csv文件映射到xdm；将csv映射到xdm；ui指南；映射器；映射；数据准备；数据准备；
-title: 数据准备UI指南
+title: 数据准备 UI 指南
 description: 了解如何在Experience Platform UI中使用数据准备函数将CSV文件映射到XDM架构。
 exl-id: fafa4aca-fb64-47ff-a97d-c18e58ae4dae
 source-git-commit: 789d00912edd0ce8e2871b7e22445a043868ccf5
 workflow-type: tm+mt
 source-wordcount: '1416'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 
-# 数据准备UI指南 {#data-prep-ui-guide}
+# 数据准备 UI 指南 {#data-prep-ui-guide}
 
 >[!CONTEXTUALHELP]
 >id="platform_data_prep_import_mapping"
 >title="下载模板"
->abstract="下载csv模板以离线执行映射。"
+>abstract="下载 CSV 模板以离线执行映射。"
 
 阅读本指南，了解如何使用Adobe Experience Platform用户界面中的[数据准备](../home.md)映射函数将CSV文件映射到[体验数据模型(XDM)架构](../../xdm/home.md)。
 
@@ -119,7 +119,7 @@ ht-degree: 0%
 
 >[!BEGINTABS]
 
->[!TAB 从流导入映射]
+>[!TAB 从流]导入映射
 
 如果您有多个基于相似源文件和目标架构的数据流，则可以导入现有映射并将其重新用于新数据流。
 

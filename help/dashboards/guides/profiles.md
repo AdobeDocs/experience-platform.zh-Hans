@@ -163,7 +163,7 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 ![突出显示合并策略下拉列表的“配置文件概述”选项卡。](../images/profiles/select-merge-policy.png)
 
-## 合并架构
+## 并集架构
 
 [!UICONTROL Union Schema]仪表板显示特定XDM类的合并架构。 通过选择&#x200B;**[!UICONTROL Class]**&#x200B;下拉列表，您可以查看不同XDM类的合并架构。
 

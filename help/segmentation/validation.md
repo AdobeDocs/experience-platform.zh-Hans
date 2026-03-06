@@ -1,13 +1,13 @@
 ---
 title: 受众验证
 description: 了解Experience Platform如何验证您的受众，以确保它们在下游取得更好的表现。
-source-git-commit: 52439e55d3c48631488b17b6b04256bcbbe37bcb
+exl-id: 55877ad5-757f-4928-853c-3b211ece0a45
+source-git-commit: 2d7ba15f918c314fe219212df82aec6d7ac1fc77
 workflow-type: tm+mt
 source-wordcount: '1630'
-ht-degree: 1%
+ht-degree: 13%
 
 ---
-
 
 # 受众验证
 
@@ -35,17 +35,17 @@ ht-degree: 1%
 | 嵌套数据 | 性能优化 | 受众定义中的嵌套数据（数组或映射数据类型）深度超过2级。 |
 | 受众规模 | 性能优化 | 受众资格大小大于沙盒中配置文件总数的30%。 |
 
-### [!BADGE 关键验证]{type=Negative}逻辑复杂性 {#logical-complexity}
+### [!BADGE 关键验证]{type=Negative}逻辑复杂度 {#logical-complexity}
 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_segmentbuilder_rewritescheck"
 >title="查询效率警报"
->abstract="您的受众包含太多查询，这会导致不必要的逻辑复杂性。 在继续之前，请简化受众定义。"
+>abstract="您的受众定义包含过多查询，导致不必要的逻辑复杂度。请在继续之前简化您的受众定义。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_segmentbuilder_cnfcomplexitycheck"
->title="逻辑复杂性"
->abstract="您的受众包含太多查询，这会导致不必要的逻辑复杂性。 在继续之前，请简化受众定义。"
+>title="逻辑复杂度"
+>abstract="您的受众定义包含过多查询，导致不必要的逻辑复杂度。请在继续之前简化您的受众定义。"
 
 逻辑复杂性验证会分析受众定义中逻辑语句(AND、OR、NOT)的结构。 具体而言，它会查找会强制系统为每个配置文件执行过多比较的受众定义。
 
@@ -105,12 +105,12 @@ plan.equals("trial") AND region.equals("canada")
 
 +++
 
-### [!BADGE 关键验证]{type=Negative}顺序事件复杂性 {#sequential-event-complexity}
+### [!BADGE 关键验证]{type=Negative}顺序事件复杂度 {#sequential-event-complexity}
 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_segmentbuilder_chaincountcheck"
->title="事件序列限制"
->abstract="您的受众包含太多连续事件。 受众定义中最多只能有6个顺序事件。 请先从受众定义中删除一些顺序事件，然后再继续。"
+>title="事件顺序限制"
+>abstract="您的受众定义包含过多顺序事件。在您的受众定义中，最多只能包含 6 个顺序事件。请在继续之前，从您的受众定义中移除部分顺序事件。"
 
 序列事件复杂性验证将序列中的序列事件数量限制为6个事件。
 
@@ -144,8 +144,8 @@ chain(xEvent, timestamp, [ A: WHAT(eventType = "productView"), B: WHAT(eventType
 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_segmentbuilder_countaggregationcheck"
->title="计数筛选器警告"
->abstract="您的受众具有过多聚合事件。 您的受众中应最多使用3个聚合事件。 为避免出现性能问题，您应该从受众定义中删除一些聚合事件。"
+>title="计数筛选警告"
+>abstract="您的受众包含过多聚合事件。在您的受众定义中，最多应使用 3 个聚合事件。为避免性能问题，请从您的受众定义中移除部分聚合事件。"
 
 聚合计数检查将受众中使用的聚合事件数限制为3个条件。
 
@@ -153,12 +153,12 @@ chain(xEvent, timestamp, [ A: WHAT(eventType = "productView"), B: WHAT(eventType
 
 要避免触发此验证，请仅在受众定义完全必要时使用特定计数。 例如，如果您只需要知道用户是否参与过一次，则可以使用标准“存在”逻辑，而不是使用“计数> 0”事件。
 
-### [!BADGE 性能优化]{type=Caution}嵌套数据复杂性 {#nested-data-complexity}
+### [!BADGE 性能优化]{type=Caution}嵌套数据复杂度 {#nested-data-complexity}
 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_segmentbuilder_arraydepthcheck"
 >title="嵌套数据警告"
->abstract="受众具有太多嵌套数据层。 您的受众中应当最多使用2层数据。 为避免出现性能问题，您应该简化受众定义。"
+>abstract="您的受众定义包含过多嵌套数据层。在您的受众定义中，最多应使用 2 层数据。为避免性能问题，请扁平化您的受众定义。"
 
 嵌套数据复杂性验证将受众定义中的嵌套数据数量限制为2层。
 
@@ -166,12 +166,12 @@ chain(xEvent, timestamp, [ A: WHAT(eventType = "productView"), B: WHAT(eventType
 
 如果您经常对深嵌套属性执行分段，则可能需要联系您的数据工程团队，以将该属性复制到用户档案架构中的更高级别以便于访问。
 
-### [!BADGE 性能优化]{type=Caution}受众规模 {#audience-size}
+### [!BADGE 性能优化]{type=Caution}受众计数 {#audience-size}
 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_segmentbuilder_profilestorecheck"
->title="受众规模警告"
->abstract="受众撰写的范围太广。 您应该避免编写符合沙盒中总用户档案数30%以上的受众定义。 为避免出现性能问题，您应该收紧受众定义。"
+>title="受众计数警告"
+>abstract="您的受众定义范围过于宽泛。请避免创建覆盖沙盒中超过 30% 总轮廓的受众定义。为避免性能问题，请收紧您的受众定义。"
 
 受众规模验证会检查您的受众定义是否过于宽泛，以至于您的沙盒中超过30%的总配置文件符合受众条件。
 

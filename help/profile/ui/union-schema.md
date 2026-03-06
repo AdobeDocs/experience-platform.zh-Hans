@@ -7,7 +7,7 @@ exl-id: 52af0d77-e37d-4ed8-9dee-71a50b337b4e
 source-git-commit: b7f5f08d5b3632a2d80c39559a5fb5116d9567f8
 workflow-type: tm+mt
 source-wordcount: '1190'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -23,24 +23,24 @@ ht-degree: 0%
 * [[!DNL Identity Service]](../../identity-service/home.md)：在将[!DNL Real-Time Customer Profile]引入到[!DNL Experience Platform]中时，通过桥接来自不同数据源的标识来启用它们。
 * [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
 
-## 了解合并架构 {#understanding-union-schemas}
+## 了解并集架构 {#understanding-union-schemas}
 
 >[!CONTEXTUALHELP]
 >id="rtcdp_collaboration_union_schema"
->title="合并架构"
+>title="并集架构"
 >abstract=""
 
 <!-- The above contextual help is used in the Collaboration UI for a read more link. -->
 
-Real-Time Customer Profile使您能够创建强大、集中的用户档案，其中包含客户属性和带有时间戳的事件，以及与Adobe Experience Platform集成的系统间每个客户交互。 此数据的格式和结构由体验数据模型(XDM)架构提供，每个架构都基于XDM类并包含与该类兼容的字段。
+Real-Time Customer Profile使您可创建强健的集中化档案，其中包含客户属性和时间戳事件，以及与Adobe Experience Platform集成的系统间每次客户交互时的情况。 此数据的格式和结构由体验数据模型(XDM)架构提供，每个架构均基于XDM类并包含与该类兼容的字段。
 
-可以为多个用例创建架构，这些架构引用同一类，但包含特定于其使用的字段。 为配置文件启用某个架构后，它将成为合并架构的一部分。 换言之，联合架构由共享同一类并已为配置文件启用的多个架构组成。 合并架构允许您查看共享同一类的架构中包含的所有字段的合并。 实时客户配置文件使用合并架构创建每个客户的整体视图。
+可以为多个用例创建架构，这些架构引用同一个类，但包含特定于其用途的字段。 为配置文件启用某个架构后，它将成为合并架构的一部分。 换言之，联合架构由共享同一类并已为配置文件启用的多个架构组成。 合并架构允许您查看共享同一类的架构中包含的所有字段的合并。 实时客户配置文件使用合并架构创建每个客户的整体视图。
 
 使用合并模式需要深入了解XDM模式。 有关详细信息，请先阅读架构组合[的](../../xdm/schema/composition.md)基础知识。
 
 ## 查看合并架构 {#view-union-schemas}
 
-要导航到Experience Platform UI中的合并架构，请从左侧导航中选择&#x200B;**[!UICONTROL Profiles]**，然后选择&#x200B;**[!UICONTROL Union Schema]**&#x200B;选项卡。 将打开[!UICONTROL Union Schema]选项卡以显示当前选定类的合并架构。
+要在Experience PlatformUI中导航到联合架构，请从左侧导航栏中选择&#x200B;**[!UICONTROL Profiles]**，然后选择&#x200B;**[!UICONTROL Union Schema]**&#x200B;选项卡。 将打开[!UICONTROL Union Schema]选项卡以显示当前选定类的合并架构。
 
 ![将显示“合并架构”页面，并突出显示“配置文件和合并架构”选项卡。](../images/union-schema/landing.png)
 
@@ -60,11 +60,11 @@ Real-Time Customer Profile使您能够创建强大、集中的用户档案，其
 
 选择任意字段以查看其详细信息，包括显示名称、数据类型、描述、路径、创建日期和上次修改日期。 您还可以查看包含所选字段的参与架构列表。
 
-![联合架构字段已突出显示。 有关高亮显示的字段的详细信息将显示在右侧边栏中。](../images/union-schema/explore-field.png)
+![突出显示了一个联合架构字段。 右侧边栏上将显示有关高亮显示的字段的详细信息。](../images/union-schema/explore-field.png)
 
-选择参与架构的名称会显示与该架构相关的数据集的名称，这些数据集正在将数据摄取到所选字段中。 每个数据集名称都显示为链接。 选择数据集名称将在新窗口中打开该数据集的活动选项卡。
+选择提供架构的名称将显示与该架构相关的数据集的名称，这些数据集正在将数据引入选定字段。 每个数据集名称都显示为链接。 选择数据集名称将在新窗口中打开该数据集的“活动”选项卡。
 
-有关数据集的更多信息，包括在UI中查看数据集活动和预览数据集数据，请访问[数据集UI指南](../../catalog/datasets/user-guide.md)。
+有关数据集的更多信息，包括在UI中查看数据集活动和预览数据集数据，请访问[数据集用户界面指南](../../catalog/datasets/user-guide.md)。
 
 ![与架构相关的数据集列表已突出显示。](../images/union-schema/datasets.png)
 
@@ -74,7 +74,7 @@ Real-Time Customer Profile使您能够创建强大、集中的用户档案，其
 
 ![对合并架构有贡献的架构列表已突出显示。](../images/union-schema/contributing-schemas.png)
 
-选择特定架构的名称会突出显示合并架构中作为所选架构一部分的字段。 选择架构后，合并架构将显示为灰色，其中黑色条指示作为参与架构一部分的字段。
+选择特定方案的名称将突出显示联合方案中的字段，这些字段是所选方案的一部分。 选择某个架构后，联合架构显示为灰色，黑色条表示作为贡献架构一部分的字段。
 
 ![选定的参与架构突出显示。 作为参与架构一部分的字段仍为黑色，而作为参与架构一部分的字段呈灰色。](../images/union-schema/select-schema.png)
 
@@ -86,13 +86,13 @@ Real-Time Customer Profile使您能够创建强大、集中的用户档案，其
 
 从列表中选择单个身份会导致显示的架构根据需要自动更新，以显示身份字段。 如果标识字段已嵌套，这可能包括展开多个字段。
 
-合并架构中会突出显示身份字段，并且屏幕右侧会显示身份的详细信息。 详细信息包括参与架构的列表，该列表包含身份字段，您可以向下钻取以查找与该架构相关的数据集的链接，这些数据集正在将数据摄取到选定的身份字段中。
+联合架构内的标识字段高亮显示，标识的详细信息显示在屏幕右侧。 详细信息包括包含身份字段的提供方案的列表，您可以细化以查找与该方案相关的数据集的链接，这些数据集正在将数据引入选定的身份字段。
 
-![所选的标识已突出显示。 有关所选身份的详细信息，将显示在右侧边栏中。](../images/union-schema/select-identity.png)
+![选中的标识高亮显示。 有关所选标识的详细信息将显示在右侧边栏上。](../images/union-schema/select-identity.png)
 
 ## 查看关系 {#view-relationships}
 
-合并架构UI还允许您查看已根据所选架构类为架构定义的关系。 定义关系是连接属于不同类的两个架构的一种方法，以便获得有关客户数据的更复杂的见解。
+联合架构UI还允许您查看已基于所选架构类为架构定义的关系。 定义关系是一种连接属于不同类的两个架构的方法，以获取有关客户数据的更复杂见解。
 
 如果已为所选类建立了关系，则选择&#x200B;**[!UICONTROL Relationships]**&#x200B;将显示用于创建关系的字段列表。 并非所有架构都使用或需要定义关系，因此关系部分通常不包含任何字段。
 

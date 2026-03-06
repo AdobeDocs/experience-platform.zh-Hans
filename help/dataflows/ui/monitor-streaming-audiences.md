@@ -1,60 +1,60 @@
 ---
-title: 监控流受众
-description: 了解如何使用监控仪表板监控通过流式分段评估的受众
+title: 监控流式传输受众
+description: 了解如何使用监控仪表板监控通过流分段评估的受众
 hide: true
 hidefromtoc: true
-source-git-commit: 6fe0a36a8f2ac2cb954935ee8fe64432442b6e84
+exl-id: b47325fb-7768-4bc0-92d2-5541729e636d
+source-git-commit: 2d7ba15f918c314fe219212df82aec6d7ac1fc77
 workflow-type: tm+mt
 source-wordcount: '368'
-ht-degree: 6%
+ht-degree: 16%
 
 ---
 
+# 监控流式传输受众
 
-# 监控流受众
-
-简介模糊
+简介简介
 
 ## 快速入门
 
-本指南要求您对Experience Platform的以下组件有一定的了解：
+本指南要求您实际了解Experience Platform的以下组件：
 
-* [数据流](../home.md)：数据流表示跨Experience Platform传输信息的数据作业。 它们可在各种服务中进行配置，以促进数据从源连接器移动到目标数据集以及Identity Service、Real-Time Customer Profile和Destinations。
+* [数据流](../home.md)：数据流表示跨Experience Platform传输信息的数据作业。 它们被配置在不同的服务中，以促进数据从源连接器移动到目标数据集以及到身份服务、Real-Time Customer Profile和目标的移动。
 * [分段服务](../../segmentation/home.md)：
-* [能力](../../landing/license-usage-and-guardrails/capacity.md)：在Experience Platform中，能力让您知道您的组织是否超出了任何护栏，并为您提供如何解决这些问题的信息。
+* [容量](../../landing/license-usage-and-guardrails/capacity.md)：在Experience Platform方面，容量可以让您知道您的组织是否超过了任何防护栏，并为您提供了有关如何修复这些问题的信息。
 
-## 监控流式受众的量度 {#streaming-audience-metrics}
+## 流式受众监控量度 {#streaming-audience-metrics}
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_streaming_audience_evaluation_rate"
 >title="评估率"
->abstract="此量度表示每秒计算的记录数。"
+>abstract="此量度表示每秒评估的记录数量。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_streaming_audience_p95_latency"
 >title="P95 摄取延迟"
->abstract="此量度测量到达Adobe Experience Platform的事件的第95百分位延迟值，以成功评估受众。"
+>abstract="此量度用于衡量事件到达 Adobe Experience Platform 后，成功评估并纳入受众所需延迟的第 95 百分位数。"
 >text="Learn more in documentation"
 
 下表提供了有关用于流受众的量度的更多详细信息。
 
 | 量度 | 描述 | 维度 |
 | ------ | ----------- | ---------- |
-| 评估率 | 每秒处理的受众评估数。 | 沙盒，数据集 |
-| P95 摄取延迟 | 成功事件到达受众的第95百分位延迟。 | 沙盒，数据集 |
+| 评估率 | 每秒处理的受众评估数。 | 沙箱，数据集 |
+| P95 摄取延迟 | 活动成功到达观众的延迟的第95个百分点。 | 沙箱，数据集 |
 | 已接收的记录 | 在所选时间窗口内从流式摄取接收的用于流式分段的记录总数。 | 数据集 |
-| 评估的记录 | 在所选时间范围内，**成功**&#x200B;使用流式分段评估的记录总数。 | 数据集 |
-| 失败的记录 | 由于所选时间范围内的错误而在流式分段中进行&#x200B;**失败**&#x200B;评估的记录总数。 | 数据集，流量运行 |
+| 已评估的记录 | 在所选时间窗口内，**使用流分段成功**&#x200B;评估的记录总数。 | 数据集 |
+| 失败的记录 | 由于所选时间窗口内的错误而在流分段中&#x200B;**计算失败**&#x200B;的记录总数。 | 数据集，流运行 |
 | 跳过的记录数 | 流分段中&#x200B;**跳过**&#x200B;评估的总记录数，原因是所选时间范围内的错误。 | 数据集，流量运行 |
-| 配置文件符合条件 | 在所选时间范围内符合受众条件的配置文件数。 | 沙盒，受众 |
-| 配置文件不合格 | 在所选时间范围内取消受众资格的用户档案数。 | 沙盒，受众 |
+| 配置文件符合条件 | 在所选时间范围内限定于受众的配置文件数。 | 沙盒，受众 |
+| 配置文件不合格 | 在所选时间范围内取消受众资格的配置文件数。 | 沙盒，受众 |
 
 {style="table-layout:auto"}
 
-## 使用流受众的监控功能板 {#monitoring-dashboard}
+## 使用监视仪表板对访问群体进行流式传输 {#monitoring-dashboard}
 
-要访问流受众的监控仪表板，请转到Experience Platform UI，从左侧导航中选择&#x200B;**[!UICONTROL Monitoring]**，然后选择&#x200B;**[!UICONTROL Streaming end-to-end]**。
+要访问流式传输受众的监视仪表板，请转到Experience PlatformUI，从左侧导航中选择&#x200B;**[!UICONTROL Monitoring]**，然后选择&#x200B;**[!UICONTROL Streaming end-to-end]**。
 
 图像
 
