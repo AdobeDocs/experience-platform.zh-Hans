@@ -2,9 +2,9 @@
 title: 外部受众API端点
 description: 了解如何使用外部受众API从Adobe Experience Platform创建、更新、激活和删除外部受众。
 exl-id: eaa83933-d301-48cb-8a4d-dfeba059bae1
-source-git-commit: de18b8292f07c143d63d26a45ca541e50b2ed2f3
+source-git-commit: b024571a33c8c9313e0814c090e496a8ffa98009
 workflow-type: tm+mt
-source-wordcount: '2528'
+source-wordcount: '2622'
 ht-degree: 4%
 
 ---
@@ -92,7 +92,11 @@ curl -X POST https://platform.adobe.io/data/core/ais/external-audience/ \
                 "path": "activation/sample-source/example.csv",
                 "type": "file",
                 "sourceType": "Cloud Storage",
-                "baseConnectionId": "1d1d4bc5-b527-46a3-9863-530246a61b2b"
+                "baseConnectionId": "1d1d4bc5-b527-46a3-9863-530246a61b2b",
+                "encryption": {
+                    "publicKeyId": "e31ae895-7896-469a-8e06-eb9207ddf1c2",
+                    "signVerificationId": "ZTMxYWU4OTUtNzg5Ni00NjlhLThlMDYtZWI5MjA3ZGRmMWMy"
+                }
             }
         },
         "ttlInDays": "40",
@@ -108,7 +112,7 @@ curl -X POST https://platform.adobe.io/data/core/ais/external-audience/ \
 | `description` | 字符串 | 外部受众的可选描述。 |
 | `customAudienceId` | 字符串 | 外部受众的可选标识符。 |
 | `fields` | 对象数组 | 字段及其数据类型的列表。 数组中必须至少包含1个字段，且最多包含41个字段。 其中一个字段&#x200B;**必须**&#x200B;是标识字段，并且包含`identityNs`。 创建字段列表时，可以添加以下项目： <ul><li>`name`： **必需**&#x200B;作为外部受众规范一部分的字段的名称。</li><li>`type`： **必需**&#x200B;进入字段的数据类型。 支持的值包括`string`、`number`、`long`、`integer`、`date` (`2025-05-13`)、`datetime` (`2025-05-23T20:19:00+00:00`)和`boolean`。</li><li>`identityNs`： **身份字段必需**&#x200B;身份字段使用的命名空间。 支持的值包括所有有效的命名空间，如`ECID`或`email`。</li><li>`labels`： *可选*&#x200B;字段的访问控制标签数组。 有关可用访问控制标签的详细信息，请参阅[数据使用标签术语表](/help/data-governance/labels/reference.md)。 </li></ul> |
-| `sourceSpec` | 对象 | 包含外部受众所在信息的对象。 使用此对象时，您&#x200B;**必须**&#x200B;包括以下信息： <ul><li>`path`： **必需**：外部受众或源中包含外部受众的文件夹的位置。 文件路径&#x200B;**不能**&#x200B;包含任何空格。 例如，如果您的路径为`activation/sample-source/Example CSV File.csv`，则将路径设置为`activation/sample-source/ExampleCSVFile.csv`。 您可以在数据流部分的&#x200B;**Source数据**&#x200B;列中查找到源的路径。</li><li>`type`： **必需**&#x200B;您要从源检索的对象类型。 此值可以是`file`或`folder`。</li><li>`sourceType`： *可选*&#x200B;您要从中检索的源类型。 当前，唯一支持的值为`Cloud Storage`。</li><li>`cloudType`： **必需**&#x200B;云存储的类型，基于源类型。 支持的值包括`S3`、`DLZ`、`GCS`、`Azure`和`SFTP`。</li><li>`baseConnectionId`：基本连接的ID，由源提供程序提供。 如果使用&#x200B;**、**&#x200B;或`cloudType`的`S3`值，则此值为`GCS`必需`SFTP`。 否则，您&#x200B;**不**&#x200B;需要包含此参数。 有关详细信息，请阅读[源连接器概述](../../sources/home.md)。</li></ul> |
+| `sourceSpec` | 对象 | 包含外部受众所在信息的对象。 使用此对象时，您&#x200B;**必须**&#x200B;包括以下信息： <ul><li>`path`： **必需**：外部受众或源中包含外部受众的文件夹的位置。 文件路径&#x200B;**不能**&#x200B;包含任何空格。 例如，如果您的路径为`activation/sample-source/Example CSV File.csv`，则将路径设置为`activation/sample-source/ExampleCSVFile.csv`。 您可以在数据流部分的&#x200B;**Source数据**&#x200B;列中查找到源的路径。</li><li>`type`： **必需**&#x200B;您要从源检索的对象类型。 此值可以是`file`或`folder`。</li><li>`sourceType`： *可选*&#x200B;您要从中检索的源类型。 当前，唯一支持的值为`Cloud Storage`。</li><li>`cloudType`： **必需**&#x200B;云存储的类型，基于源类型。 支持的值包括`S3`、`DLZ`、`GCS`、`Azure`和`SFTP`。</li><li>`baseConnectionId`：基本连接的ID，由源提供程序提供。 如果使用&#x200B;**、**&#x200B;或`cloudType`的`S3`值，则此值为`GCS`必需`SFTP`。 否则，您&#x200B;**不**&#x200B;需要包含此参数。 有关详细信息，请阅读[源连接器概述](../../sources/home.md)。</li><li>`encryption`： *可选*&#x200B;一个对象，其中包含异步加密数据引入所需的加密密钥。</li><ul><li>`publicKeyId`： **必需**：生成加密密钥对时返回的公钥ID。 有关详细信息，请阅读[加密数据指南](/help/sources/tutorials/api/encrypt-data.md#create-encryption-key-pair)。 </li><li>`signVerificationKeyId`： *可选*：与Experience Platform共享您的客户托管密钥时返回的公钥ID。 **注意：**&#x200B;在响应该API请求时，此字段标记为`publicKeyId`。 有关详细信息，请阅读[加密数据指南](/help/sources/tutorials/api/encrypt-data.md##share-your-public-key-to-experience-platform)。</li></ul></ul> |
 | `ttlInDays` | 整数 | 外部受众的数据过期时间（天）。 此值可以设置为1到90。 默认情况下，数据到期设置为30天。 |
 | `audienceType` | 字符串 | 外部受众的受众类型。 当前仅支持`people`。 |
 | `originName` | 字符串 | **必需**&#x200B;受众的来源。 它指明了受众的来源。 对于外部受众，您应使用`CUSTOM_UPLOAD`。 |
@@ -155,7 +159,11 @@ curl -X POST https://platform.adobe.io/data/core/ais/external-audience/ \
                 "path": "activation/sample-source/example.csv",
                 "type": "file",
                 "sourceType": "Cloud Storage",
-                "baseConnectionId": "1d1d4bc5-b527-46a3-9863-530246a61b2b"
+                "baseConnectionId": "1d1d4bc5-b527-46a3-9863-530246a61b2b",
+                "encryption": {
+                    "publicKeyId": "e31ae895-7896-469a-8e06-eb9207ddf1c2",
+                    "signVerificationId": "ZTMxYWU4OTUtNzg5Ni00NjlhLThlMDYtZWI5MjA3ZGRmMWMy"
+                }
             }
         },
         "ttlInDays": 40,
@@ -390,6 +398,8 @@ curl -X PATCH https://platform.adobe.io/data/core/ais/external-audience/60ccea95
 >[!NOTE]
 >
 >若要使用以下端点，您需要具有外部受众的`audienceId`。 通过成功调用`audienceId`终结点，您可以获取`GET /external-audiences/operations/{OPERATION_ID}`。
+>
+>此外，如果此端点之前已摄取，则可用于刷新受众的数据。
 
 您可以在提供受众ID的同时，通过向以下端点发出POST请求来开始受众摄取。
 
