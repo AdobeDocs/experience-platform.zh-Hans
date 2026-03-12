@@ -2,7 +2,7 @@
 title: 查询服务打包
 description: 以下文档概述了可用于查询服务的功能和产品的打包，并着重说明了临时查询和批量查询之间的差异。
 exl-id: ba472d9e-afe6-423d-9abd-13ecea43f04f
-source-git-commit: 33b3534a2c3f9b5da54fa4f3897d1e107f7c1976
+source-git-commit: 2117b7ad0f507b5a35595d702cb8a70e2e09f39d
 workflow-type: tm+mt
 source-wordcount: '990'
 ht-degree: 3%
@@ -20,8 +20,8 @@ ht-degree: 3%
 
 查询服务功能与以下产品和加载项一起打包：
 
-- **基于Experience Platform的应用程序**(Adobe Real-Time Customer Data Platform、Adobe Customer Journey Analytics和Adobe Journey Optimizer)：从一开始便为基于Experience Platform的应用程序的每个变体和层提供了执行临时查询的查询服务访问权限。
-- **[!DNL Data Distiller]** (可与Adobe Real-Time CDP、Customer Journey Analytics和Adobe Journey Optimizer一起购买的附加组件包)： [!DNL Data Distiller]提供执行批处理查询的查询服务访问权限。
+- **基于Experience Platform的应用程序**（Adobe Real-Time Customer Data Platform、Adobe Customer Journey Analytics和Adobe Journey Optimizer）：从一开始便为基于Experience Platform的应用程序的每个变体和层提供了执行临时查询的查询服务访问权限。
+- **[!DNL Data Distiller]** （可与Adobe Real-Time CDP、Customer Journey Analytics和Adobe Journey Optimizer一起购买的附加组件包）： [!DNL Data Distiller]提供执行批处理查询的查询服务访问权限。
 
 ## 权利 {#entitlements}
 
@@ -39,7 +39,7 @@ ht-degree: 3%
 | 允许数据导出 | 您的总导出权利取决于您的基于平台的应用程序许可证。 例如，Real-Time CDP、AJO、CJA等。 | 是 — 提供了额外的导出授权，以允许导出使用数据Distiller创建的派生数据集。<br>您每年允许的数据导出量以TB为单位，具体取决于您购买的计算小时数。 请查看产品描述以了解更多详细信息。 |
 | 查询执行界面 | <ul><li>查询服务UI</li><li>第三方客户端用户界面</li><li>[!DNL PostgresSQL]客户端用户界面</li></ul> | <ul><li>查询服务UI </li><li>第三方客户端用户界面</li><li>[!DNL PostgresSQL]客户端用户界面</li><li>REST API</li></ul> |
 | 通过返回的查询结果 | 客户端用户界面 | 存储在数据湖中的派生数据集 |
-| 结果限制 | <ul><li>查询服务UI — 输出行数可以是[使用UI设置](./ui/user-guide.md#result-count)配置为50-500行。</li><li>第三方客户 — 50,000</li><li>[!DNL PostgresSQL]客户端 — 50,000</li></ul> | CTAS和ITAS查询仅生成成功消息，因为查询输出存储在派生数据集中。 |
+| 结果限制 | <ul><li>查询服务UI — 输出行数可以是[，并使用UI设置](./ui/user-guide.md#result-count)配置为50-1000行。</li><li>第三方客户 — 50,000</li><li>[!DNL PostgresSQL]客户端 — 50,000</li></ul> | CTAS和ITAS查询仅生成成功消息，因为查询输出存储在派生数据集中。 |
 | 读取数据集容量 | 是 | 是 |
 | 写入数据集容量 | 否 | 是 |
 | 计划产能 | 否 | 是 |
@@ -69,7 +69,7 @@ Experience Platform的访问控制通过[Adobe Admin Console](https://adminconso
 
 ### 相关的SQL分析权限 {#sql-insights-permissions}
 
-要在功能板中创建数据Distiller [SQL Insights](./data-distiller/sql-insights/overview.md)，必须在Admin Console中启用以下权限&#x200B;**&#x200B;**。
+要在功能板中创建数据Distiller [SQL Insights](./data-distiller/sql-insights/overview.md)，必须在Admin Console中启用以下权限&#x200B;****。
 
 | 权限 | 函数 |
 |---|---|

@@ -3,22 +3,24 @@ title: 在Adobe Experience Platform中管理查询服务会话
 description: 了解管理员如何查看、监控和结束活动的查询服务会话，以释放空闲容量和维护可靠的Data Distiller工作流。
 keywords: Experience Platform；查询服务；会话；会话管理；数据Distiller；管理员
 solution: Experience Platform
-source-git-commit: 1d2a8ef649c4454da7cf0949192b8b1eb3696e5a
+badgeLimitedAvailability: label="限量发布版" type="Informative"
+exl-id: f986177a-9a46-4fc6-927e-98b6b7dc8cfe
+source-git-commit: 2117b7ad0f507b5a35595d702cb8a70e2e09f39d
 workflow-type: tm+mt
-source-wordcount: '711'
+source-wordcount: '730'
 ht-degree: 1%
 
 ---
 
 # 管理查询服务会话
 
+>[!AVAILABILITY]
+>
+>查询服务的会话管理当前处于有限可用性，仅适用于拥有&#x200B;**Data Distiller**&#x200B;权利的组织。 要请求获取访问权限，请联系您的Adobe客户团队。
+
 使用本指南可从Adobe Experience Platform用户界面管理活动的查询服务会话。 会话管理可帮助管理员跨沙盒监视并发查询编辑器会话，并在用户保持会话打开状态时释放容量。
 
 ## 会话管理所需的权限 {#permissions}
-
->[!AVAILABILITY]
->
->会话管理仅适用于拥有数据Distiller权利的组织。
 
 >[!IMPORTANT]
 >
@@ -93,4 +95,3 @@ ht-degree: 1%
 
 * [了解用户如何在查询编辑器用户指南中创建和运行查询](user-guide.md)
 * [使用计划查询监控文档监控计划工作负载](monitor-queries.md)
-
