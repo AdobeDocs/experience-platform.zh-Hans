@@ -69,7 +69,7 @@ Experience Platform的访问控制通过[Adobe Admin Console](https://adminconso
 
 ### 相关的SQL分析权限 {#sql-insights-permissions}
 
-要在功能板中创建数据Distiller [SQL Insights](./data-distiller/sql-insights/overview.md)，必须在Admin Console中启用以下权限&#x200B;****。
+要在功能板中创建数据Distiller [SQL Insights](./data-distiller/sql-insights/overview.md)，必须在Admin Console中启用以下权限&#x200B;**&#x200B;**。
 
 | 权限 | 函数 |
 |---|---|
