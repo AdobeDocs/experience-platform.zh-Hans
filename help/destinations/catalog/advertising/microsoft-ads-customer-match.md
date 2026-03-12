@@ -6,7 +6,7 @@ badge: Beta 版
 hide: true
 hidefromtoc: true
 exl-id: 4d405ffb-f600-463b-a215-44e806b6d139
-source-git-commit: 19c8bc9f0b27e1c04c5038cd268bed43cf57080f
+source-git-commit: 82f412676c89d7d14116be9328ab7fa438e10fc0
 workflow-type: tm+mt
 source-wordcount: '1347'
 ht-degree: 3%
@@ -17,7 +17,7 @@ ht-degree: 3%
 
 >[!AVAILABILITY]
 >
->此目标连接器当前处于受限可用性。 要获得访问权限，请联系您的Adobe代表。</br>
+>此目标连接器当前处于受限可用性。 要获得访问权限，请与 Adobe 代表联系。
 
 ## 概述 {#overview}
 
@@ -52,7 +52,7 @@ ht-degree: 3%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -107,23 +107,23 @@ ht-degree: 3%
 >id="platform_destinations_microsoft_ads_cm_customer_id"
 >title="Customer ID"
 >abstract="您的Microsoft Advertising客户ID，也称为经理帐户ID。 这是Microsoft Advertising中可拥有多个广告商帐户（客户帐户ID）的顶级标识符。"
->additional-url="https://learn.microsoft.com/en-us/advertising/guides/get-started?view=bingads-13#get-ids" text="查找您的客户ID"
+>additional-url="https://learn.microsoft.com/en-us/advertising/guides/get-started?view=bingads-13#get-ids" text="Find your Customer ID"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_microsoft_ads_cm_customer_account_id"
->title="客户帐户ID"
->abstract="您的Microsoft Advertising客户帐户ID，也称为广告商帐户ID。 这会标识您的客户ID下的特定广告商帐户。"
+>title="Customer Account ID"
+>abstract="您的Microsoft Advertising客户帐户ID，也称为广告商帐户ID。 This identifies a specific advertiser account under your Customer ID."
 >additional-url="https://learn.microsoft.com/en-us/advertising/guides/get-started?view=bingads-13#get-ids" text="查找您的客户帐户ID"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_microsoft_ads_cm_membership_duration"
->title="成员持续时间"
->abstract="用户在客户匹配列表中保留的天数。 接受的值介于1和390天之间。"
+>title="Membership Duration"
+>abstract="The number of days a user remains in the customer match list. Accepted values are between 1 and 390 days."
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_microsoft_ads_cm_list_availability"
->title="客户匹配列表可用性"
->abstract="选择客户匹配列表是可用于单个广告商帐户，还是可用于经理帐户下的所有帐户。 选择客户ID以使该列表在您的客户ID下的所有广告商帐户中可用。 选择客户帐户ID以仅列出特定的客户帐户ID。"
+>title="Customer Match List Availability"
+>abstract="Select whether the customer match list is available to a single advertiser account or to all accounts under the manager account. Select Customer ID to make the list available across all advertiser accounts under your Customer ID. Select Customer Account ID to restrict the list to the specific Customer Account ID."
 >additional-url="https://help.ads.microsoft.com/apex/index/3/en/56727" text="详细了解Microsoft Advertising中的受众列表共享"
 
 在[设置](../../ui/connect-destination.md)此目标时，必须提供以下信息：
