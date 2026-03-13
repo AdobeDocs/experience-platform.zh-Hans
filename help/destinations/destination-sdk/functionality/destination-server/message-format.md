@@ -2,9 +2,9 @@
 description: 本页介绍从Adobe Experience Platform导出到目标的数据中的消息格式和配置文件转换。
 title: 消息格式
 exl-id: ab05d34e-530f-456c-b78a-7f3389733d35
-source-git-commit: b5d8a1c31705ffe72dadc4fff8626acb7081444a
+source-git-commit: 270facfd580b2dde09906bee1728e1be198680cf
 workflow-type: tm+mt
-source-wordcount: '2488'
+source-wordcount: '2512'
 ht-degree: 0%
 
 ---
@@ -17,12 +17,12 @@ ht-degree: 0%
 
 * **体验数据模型(XDM)**。 [XDM概述](../../../../xdm/home.md)和[如何在Adobe Experience Platform中创建XDM架构](../../../../xdm/tutorials/create-schema-ui.md)。
 * **类**。 [在UI中创建和编辑类](../../../../xdm/ui/resources/classes.md)。
-* **IdentityMap**。 标识映射表示Adobe Experience Platform中所有最终用户标识的映射。 请参阅`xdm:identityMap`XDM字段词典[中的](../../../../xdm/schema/field-dictionary.md)。
+* **标识映射**。 身份图表示Adobe Experience Platform中所有最终用户身份的图。 请参阅`xdm:identityMap`XDM字段词典[中的](../../../../xdm/schema/field-dictionary.md)。
 * **区段成员资格**。 [segmentMembership](../../../../xdm/schema/field-dictionary.md) XDM属性通知配置文件是哪些受众的成员。 对于`status`字段中的三个不同值，请阅读有关[受众成员资格详细信息架构字段组](../../../../xdm/field-groups/profile/segmentation.md)的文档。
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 本页介绍从Adobe Experience Platform导出到目标的数据中的消息格式和配置文件转换。
 
-Adobe Experience Platform会以各种数据格式将数据导出到大量目标。 目标类型的一些示例包括广告平台(Google)、社交网络(Facebook)和云存储位置(Amazon S3、Azure事件中心)。
+Adobe Experience Platform会以各种数据格式将数据导出到大量目标。 目标类型的一些示例包括广告平台(Google)、社交网络(Facebook)和云存储位置（Amazon S3、Azure事件中心）。
 
 Experience Platform可以调整导出用户档案的消息格式，以与您这边的预期格式匹配。 要了解此自定义设置，请务必了解以下概念：
 
@@ -109,14 +109,14 @@ Authorization: Bearer YOUR_REST_API_KEY
 * `segmentMembership` （始终显示在配置文件中）
    * 此部分包含配置文件中存在的所有受众。 受众可以具有以下两种状态之一：`realized`或`exited`。
 * `identityMap` （始终显示在配置文件中）
-   * 此部分包含配置文件中存在的所有身份(电子邮件、Google GAID、Apple IDFA等)，以及映射为在激活工作流中导出的用户。
+   * 此部分包含配置文件中存在的所有身份（电子邮件、Google GAID、Apple IDFA等），以及映射为在激活工作流中导出的用户。
 * 属性（根据目标配置，这些属性可能出现在配置文件中）。 要注意的是，预定义属性和自由格式属性之间也存在一些细微差异：
    * 对于&#x200B;*自由格式属性*，如果配置文件中存在该属性，则它们包含`.value`路径（请参阅示例1中的`lastName`属性）。 如果它们不在配置文件中，则不会包含`.value`路径（请参阅示例1中的`firstName`属性）。
    * 对于&#x200B;*预定义属性*，这些属性不包含`.value`路径。 配置文件中存在的所有映射属性都将出现在属性映射中。 不存在属性（请参阅示例2 — 配置文件上不存在`firstName`属性）。
 
 请参阅下面两个Experience Platform中的配置文件示例：
 
-### 具有自由格式属性的`segmentMembership`、`identityMap`和属性的示例1 {#example-1}
+### 示例1具有`segmentMembership`、`identityMap`和任意形状属性的属性 {#example-1}
 
 ```json
 {
@@ -145,7 +145,7 @@ Authorization: Bearer YOUR_REST_API_KEY
 }
 ```
 
-### 示例2，具有预定义属性的`segmentMembership`、`identityMap`和属性 {#example-2}
+### 示例2包含`segmentMembership`、`identityMap`和预定义属性的属性 {#example-2}
 
 ```json
 {
@@ -170,15 +170,15 @@ Authorization: Bearer YOUR_REST_API_KEY
 }
 ```
 
-## 使用模板语言进行身份、属性和受众成员资格转换 {#using-templating}
+## 使用模板化语言进行身份、属性和受众成员资格转换 {#using-templating}
 
 Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)类似的模板语言）将字段从Experience Platform XDM架构转换为目标支持的格式。
 
 此部分提供了多个如何进行这些转换的示例 — 从输入XDM模式通过模板，然后输出到目标接受的有效负载格式。 下面的示例通过提高复杂性来显示，如下所示：
 
-1. 简单转换示例。 了解模板化如何与[配置文件属性](#attributes)、[受众成员资格](#segment-membership)和[标识](#identities)字段的简单转换一起使用。
-2. 合并上述字段的模板的复杂性增加：[创建发送受众和标识的模板](./message-format.md#segments-and-identities)和[创建发送区段、标识和配置文件属性的模板](#segments-identities-attributes)。
-3. 包含聚合键的模板。 在目标配置中使用[可配置的聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation)时，Experience Platform会根据受众ID、受众状态或身份命名空间等条件对导出到目标的配置文件进行分组。
+1. 简单转换示例。 了解模板化如何与[配置文件属性](#attributes)、[受众成员资格](#audience-membership)和[标识](#identities)字段的简单转换一起使用。
+2. 合并上述字段的模板示例复杂性增加：[创建发送受众和身份的模板](./message-format.md#segments-and-identities)和[创建发送分段、身份和配置文件属性的模板](#segments-identities-attributes)。
+3. 包含聚合密钥的模板。 在目标配置中使用[可配置的聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation)时，Experience Platform会根据访问群体ID、访问群体命名空间、访问群体状态或标识命名空间等条件，对导出到目标的配置文件进行分组。
 
 ### 配置文件属性 {#attributes}
 
@@ -794,7 +794,8 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
                 {% endfor %}
                 ]
             }
-        }
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
     ]
 }
 ```
@@ -838,7 +839,7 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
         {
             "attributes": {
                 "firstName": "Harry",
-                "birthDate": "1980/07/21"
+                "birthDate": "1980/07/31"
             },
             "identities": [
                 {
@@ -859,21 +860,21 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
 
 ### 在模板中包含Aggregation Key，以访问按不同条件分组的导出用户档案 {#template-aggregation-key}
 
-在目标配置中使用[可配置的聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation)时，可以根据受众ID、受众别名、受众成员资格或身份命名空间等条件对导出到目标的配置文件进行分组。
+在目标配置中使用[可配置的聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation)时，可以根据受众ID、受众命名空间、受众别名、受众成员资格或身份命名空间等条件对导出到目标的配置文件进行分组。
 
-在消息转换模板中，您可以访问上述聚合键，如以下部分中的示例所示。 使用聚合密钥构造从Experience Platform导出的HTTP消息，以匹配目标所需的格式和速率限制。
+在消息转换模板中，您可以访问上述聚合键，如以下部分中的示例所示。 使用聚合密钥构造从Experience Platform外导出的HTTP消息，以匹配目标所期望的格式和速率限制。
 
 #### 在模板中使用受众ID聚合密钥 {#aggregation-key-segment-id}
 
-如果您使用[可配置的聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation)并将`includeSegmentId`设置为true，则导出到目标的HTTP消息中的用户档案将按受众ID进行分组。 请参阅下文，了解如何在模板中访问受众ID。
+如果您使用[可配置的聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation)并将`includeSegmentId`设置为true，则导出到目标的HTTP消息中的用户档案将按受众ID进行分组。 请参阅以下内容，了解如何访问模板中的受众ID和受众命名空间。
 
 **输入**
 
 请考虑以下四个配置文件，其中：
 
-* 前两个受众属于受众ID为`788d8874-8007-4253-92b7-ee6b6c20c6f3`的受众
-* 第三个配置文件是受众ID为`8f812592-3f06-416b-bd50-e7831848a31a`的受众的一部分
-* 第四个配置文件是上述两个受众的一部分。
+* 前两个是`788d8874-8007-4253-92b7-ee6b6c20c6f3`命名空间下受众ID为`ups`的受众的一部分
+* 第三个配置文件是`8f812592-3f06-416b-bd50-e7831848a31a`命名空间下受众ID为`CustomerAudienceUpload`的受众的一部分
+* 第四个用户档案属于上述两个受众，每个受众都位于各自的名称空间下。
 
 配置文件1：
 
@@ -925,7 +926,7 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
       }
    },
    "segmentMembership":{
-      "ups":{
+      "CustomerAudienceUpload":{
          "8f812592-3f06-416b-bd50-e7831848a31a":{
             "lastQualificationTime":"2021-02-20T12:00:00Z",
             "status":"realized"
@@ -946,12 +947,14 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
    },
    "segmentMembership":{
       "ups":{
-         "8f812592-3f06-416b-bd50-e7831848a31a":{
-            "lastQualificationTime":"2021-02-20T12:00:00Z",
-            "status":"realized"
-         },
          "788d8874-8007-4253-92b7-ee6b6c20c6f3":{
             "lastQualificationTime":"2020-11-20T13:15:49Z",
+            "status":"realized"
+         }
+      },
+      "CustomerAudienceUpload":{
+         "8f812592-3f06-416b-bd50-e7831848a31a":{
+            "lastQualificationTime":"2021-02-20T12:00:00Z",
             "status":"realized"
          }
       }
@@ -965,11 +968,12 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
 >
 >对于您使用的所有模板，在`""`目标服务器配置[中插入](../../functionality/destination-server/templating-specs.md)模板[之前，必须转义非法字符，如双引号](../../authoring-api/destination-server/create-destination-server.md)。 有关转义双引号的更多信息，请参阅[JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)中的第9章。
 
-请注意以下如何在模板中使用`audienceId`来访问受众ID。 此示例假定您将`audienceId`用于目标分类中的受众成员资格。 您可以改用任何其他字段名称，具体取决于您自己的分类。
+请注意以下如何在模板中使用`audienceId`和`audienceNamespace`来访问受众ID和命名空间。 此示例假定您将`audienceId`用于目标分类中的受众成员资格。 您可以改用任何其他字段名称，具体取决于您自己的分类。
 
 ```python
 {
     "audienceId": "{{ input.aggregationKey.segmentId }}",
+    "audienceNamespace": "{{ input.aggregationKey.segmentNamespace }}",
     "profiles": [
         {% for profile in input.profiles %}
         {
@@ -982,11 +986,12 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
 
 **结果**
 
-将用户档案导出到目标后，会根据其受众ID将其分为两个组。
+当导出到目标时，配置文件根据其受众ID和命名空间分为两组。
 
 ```json
 {
    "audienceId":"788d8874-8007-4253-92b7-ee6b6c20c6f3",
+   "audienceNamespace":"ups",
    "profiles":[
       {
          "firstName":"Hermione"
@@ -1004,6 +1009,7 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
 ```json
 {
    "audienceId":"8f812592-3f06-416b-bd50-e7831848a31a",
+   "audienceNamespace":"CustomerAudienceUpload",
    "profiles":[
       {
          "firstName":"Tom"
@@ -1034,7 +1040,7 @@ customerList={{input.aggregationKey.segmentAlias}}
 * 已实现
 * 已退出
 
-将以下行添加到模板中，根据上述值在区段中添加或删除用户档案：
+根据上述值，将下方的行添加到模板以向线段添加配置文件，或从线段中删除配置文件：
 
 ```python
 action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}ADD{% endif%}
@@ -1198,7 +1204,7 @@ https://api.example.com/audience/{{input.aggregationKey.segmentId}}
 
 ### 引用：转换模板中使用的上下文和函数 {#reference}
 
-提供给模板的上下文包含`input`（此调用中导出的配置文件/数据）和`destination`(有关Adobe将数据发送到的目标的数据，对所有配置文件都有效)。
+提供给模板的上下文包含`input`（此调用中导出的配置文件/数据）和`destination`（有关Adobe将数据发送到的目标的数据，对所有配置文件都有效）。
 
 下表提供了上述示例中函数的说明。
 
