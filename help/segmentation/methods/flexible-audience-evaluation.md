@@ -1,11 +1,11 @@
 ---
-title: 灵活的受众评估指南
+title: Flexible Audience Evaluation Guide
 description: 了解如何使用灵活的受众评估来按需运行批量分段作业。
 role: Developer, User
 exl-id: b85bf735-be02-4bf7-bd63-8d74ae905e58
-source-git-commit: 7a0a98ea035892943a0e9a9a2b059701f6f1f612
+source-git-commit: 518afcfaabb9867452dc6ee94bef103ec167da78
 workflow-type: tm+mt
-source-wordcount: '1124'
+source-wordcount: '1206'
 ht-degree: 5%
 
 ---
@@ -16,9 +16,9 @@ ht-degree: 5%
 >
 >灵活的受众评估是&#x200B;**仅限**，在[!DNL Microsoft Azure]上运行的Experience Platform实例上可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](../../landing/multi-cloud.md)。
 >
->此外，灵活的受众评估是&#x200B;**仅限**&#x200B;可用于Real-Time CDP B2C Edition。
+>Additionally, flexible audience evaluation is **only** available for use with Real-Time CDP B2C Edition.
 
-灵活的受众评估允许您按需运行批量分段作业。 通过灵活的受众评估，您可以运行临时活动发布、及时通信或其他时效性活动。
+Flexible audience evaluation lets you run a batch segmentation job on demand. With flexible audience evaluation, you can run ad-hoc campaign launches, just-in-time communications, or other time-sensitive activities.
 
 ## 护栏 {#guardrails}
 
@@ -30,16 +30,18 @@ ht-degree: 5%
 在运行灵活的受众评估时，请牢记以下条件：
 
 - 每个沙盒每天只能使用灵活的受众评估&#x200B;**两次**。 此限制在午夜(UTC)重置。
-- 您每&#x200B;**生产**&#x200B;沙盒每年最多有&#x200B;**个**&#x200B;灵活的受众评估运行，共50个。
+- 每&#x200B;**生产**&#x200B;沙盒每年最多可运行&#x200B;**个50次灵活的受众评估**。
+   - 一年定义为从Experience Platform合同之日起的一年，以便灵活评估受众。 例如，如果您的合同从5月18日开始，则您的灵活受众评估运行数将每5月18日重置一次。
 - 您每&#x200B;**开发**&#x200B;沙盒每年最多有&#x200B;**次**&#x200B;运行100次灵活受众评估。
+   - 年份的定义为从Experience Platform合同签订之日起的一年，以便进行灵活的受众评估。 例如，如果您从5月18日开始合同，则您的灵活受众评估运行次数将每隔5月18日重置一次。
 - 所有受众&#x200B;**都必须**&#x200B;具有“分段服务”的来源。
-- 必须使用批处理分段评估所有受众&#x200B;**&#x200B;**。
+- 必须使用批处理分段评估所有受众&#x200B;****。
 - 所有受众&#x200B;**必须**&#x200B;是基于人员的受众。
-- 每个灵活受众评估运行最多只能选择20个受众。
+- You can only select a maximum of 20 audiences per flexible audience evaluation run.
 
 >[!NOTE]
 >
->您可以每年购买额外的灵活受众评估运行。 有关更多信息，请联系Adobe客户关怀部门。
+>You can purchase additional flexible audience evaluation runs per year. For more information, contact Adobe Customer Care.
 
 ## 访问 {#access}
 
@@ -47,21 +49,21 @@ ht-degree: 5%
 
 - **[!UICONTROL Evaluate Segment to an Audience]**&#x200B;部分下的&#x200B;**[!DNL Profile Management]**。
 
-有关基于角色的访问控制的详细信息，请阅读[访问控制概述](../../access-control/home.md)。
+For more information on role-based access control, please read the [access control overview](../../access-control/home.md).
 
-## 运行灵活的受众评估
+## Running flexible audience evaluation
 
-您可以使用Experience Platform API或UI运行灵活的受众评估。
+You can run flexible audience evaluation by using either the Experience Platform APIs or UI.
 
 >[!BEGINTABS]
 
->[!TAB Experience Platform API]
+>[!TAB Experience Platform APIs]
 
-要在Experience Platform API中运行灵活的受众评估，您需要创建一个区段作业，其中包含您要评估的所有区段定义（受众）的ID。
+To run flexible audience evaluation within the Experience Platform APIs, you&#39;ll need to create a segment job that contains the IDs of all the segment definitions (audiences) you want to evaluate.
 
 >[!NOTE]
 >
->您只能为每个区段作业API调用添加&#x200B;**个最多**&#x200B;个20个区段定义ID。
+>You can only add a **maximum** of 20 segment definition IDs per segment job API call.
 
 您可以通过向`/segment/jobs`端点发出POST请求并在请求正文中包含区段定义的ID来创建新的区段作业。
 
@@ -86,7 +88,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `segmentId` | 要评估的区段定义的ID。 这些区段定义可以属于不同的合并策略。 |
+| `segmentId` | 要计算的段定义的ID。 这些段定义可以属于不同的合并策略。 |
 
 +++
 
@@ -218,7 +220,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/b31aed3d-b3b1-4
 成功的响应返回HTTP状态200，其中包含有关指定区段作业的详细信息。
 
 
-+++ 用于检索区段作业的示例响应。
++++ A sample response for retrieving a segment job.
 
 ```json
 {
@@ -312,7 +314,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/b31aed3d-b3b1-4
 
 ![显示可以使用灵活受众评估进行评估的受众。](../images/methods/fae/evaluate-audiences-modal.png)
 
-确认列出了正确的受众后，您可以继续请求，并将开始灵活的受众评估。 您可以在[评估作业监视视图](../../dataflows/ui/monitor-audiences.md#evaluation-job-details)中查看此受众评估的状态。
+确认列出的受众正确后，您可以继续处理请求，并开始进行灵活的受众评估。 您可以在[评估作业监视视图](../../dataflows/ui/monitor-audiences.md#evaluation-job-details)中查看此受众评估的状态。
 
 >[!NOTE]
 >
@@ -326,13 +328,13 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/b31aed3d-b3b1-4
 
 以下视频演示了如何在Experience Platform中访问和使用灵活的受众评估。
 
->[!VIDEO](https://video.tv.adobe.com/v/3453650?captions=chi_hans&)
+>[!VIDEO](https://video.tv.adobe.com/v/3453640?)
 
 ## 常见问题 {#faq}
 
-以下部分列出了与灵活受众评估相关的常见问题解答。
+The following section lists frequently asked questions related to flexible audience evaluation.
 
-### 使用灵活的受众评估多久才能激活受众？
+### How soon can I activate an audience using flexible audience evaluation?
 
 +++ 回答
 
@@ -340,19 +342,19 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/b31aed3d-b3b1-4
 
 +++
 
-### 灵活的受众评估需要多长时间？
+### How long does flexible audience evaluation take?
 
 +++ 回答
 
-灵活的受众评估工作最多可能需要四个小时才能完成。
+A flexible audience evaluation job can take up to four hours to complete.
 
 +++
 
-### 我能否通过灵活的受众评估运行计划？
+### Can I run scheduling with flexible audience evaluation?
 
 +++ 回答
 
-不可以，计划无法用于灵活的受众评估。
+No, scheduling is not available to use with flexible audience evaluation.
 
 +++
 
@@ -364,11 +366,11 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/b31aed3d-b3b1-4
 
 +++
 
-### 我可以使用通过灵活受众评估评估的受众来获取哪些服务？
+### 我可以使用哪些服务通过灵活的受众评估来评估受众？
 
 +++ 回答
 
-您可以在所有下游服务(包括目标和Adobe Journey Optimizer历程)中使用受众。
+您可以在所有下游服务（包括目标和Adobe Journey Optimizer历程）中使用受众。
 
 +++
 
@@ -384,7 +386,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/b31aed3d-b3b1-4
 
 +++ 回答
 
-灵活的受众评估仅支持分段服务来源的受众。 灵活的受众评估不支持其他受众，例如组合、自定义上传或数据Distiller。
+Only audiences with the origin of Segmentation Service are supported for flexible audience evaluation. Other audiences, such as compositions, custom upload, or Data Distiller, are not supported for flexible audience evaluation.
 
 +++
 
@@ -396,10 +398,10 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/b31aed3d-b3b1-4
 
 +++
 
-### 通过灵活的受众评估来评估主要受众时，是否需要评估所有依赖的受众？
+### Do I need to evaluate all dependent audiences when evaluating the main audience with flexible audience evaluation?
 
 +++ 回答
 
-否。灵活的受众评估将自动评估所有依赖的受众。 例如，如果受众A依赖于受众B，则您只需要评估受众B。灵活的受众评估将自动评估受众A，然后评估受众B。
+否。Flexible audience evaluation will automatically evaluate all dependent audiences. For example, if Audience A depends on Audience B, you only need to evaluate Audience B. Flexible audience evaluation will automatically evaluate Audience A and then Audience B.
 
 +++
