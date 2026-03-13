@@ -35,7 +35,7 @@ Flexible audience evaluation lets you run a batch segmentation job on demand. Wi
 - 您每&#x200B;**开发**&#x200B;沙盒每年最多有&#x200B;**次**&#x200B;运行100次灵活受众评估。
    - 年份的定义为从Experience Platform合同签订之日起的一年，以便进行灵活的受众评估。 例如，如果您从5月18日开始合同，则您的灵活受众评估运行次数将每隔5月18日重置一次。
 - 所有受众&#x200B;**都必须**&#x200B;具有“分段服务”的来源。
-- 必须使用批处理分段评估所有受众&#x200B;****。
+- 必须使用批处理分段评估所有受众&#x200B;**&#x200B;**。
 - 所有受众&#x200B;**必须**&#x200B;是基于人员的受众。
 - You can only select a maximum of 20 audiences per flexible audience evaluation run.
 
