@@ -10,7 +10,7 @@ ht-degree: 4%
 
 ---
 
-# 管理用户和添加用户组 {#manage-users}
+# 管理用户并添加用户组 {#manage-users}
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_users_about"
@@ -170,5 +170,5 @@ ht-degree: 4%
 <!--
 The following video is intended to support your understanding of developer and API credentials.
 
->[!VIDEO](https://video.tv.adobe.com/v/3446408/?captions=chi_hans&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3426407/?learn=on)
 -->

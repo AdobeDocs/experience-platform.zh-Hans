@@ -1,15 +1,15 @@
 ---
-title: Brand Concierge配置设置
+title: Brand Concierge 配置设置
 description: 为Brand Concierge Chat配置会话持久性和流超时。
 exl-id: d5c0bdf7-563d-4e0e-9b1b-71e2fa783e29
 source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
 source-wordcount: '152'
-ht-degree: 5%
+ht-degree: 16%
 
 ---
 
-# Brand Concierge配置设置 {#brand-concierge}
+# Brand Concierge 配置设置 {#brand-concierge}
 
 >[!AVAILABILITY]
 >
@@ -18,7 +18,7 @@ ht-degree: 5%
 >[!CONTEXTUALHELP]
 >id="platform_tags_websdk_brandconcierge"
 >title="Brand Concierge"
->abstract="在资产上使用Brand Concierge时的配置设置。"
+>abstract="在您的资产上使用 Brand Concierge 时的配置设置。"
 
 通过&#x200B;**[!UICONTROL Brand Concierge]**&#x200B;部分，您可以控制Brand Concierge聊天会话在Web SDK标记扩展中的行为。
 

@@ -5,7 +5,7 @@ exl-id: 2d2504c6-b3f9-4e7b-aff4-a8d8d6c4e3dd
 source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
 source-wordcount: '251'
-ht-degree: 1%
+ht-degree: 9%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 1%
 >[!CONTEXTUALHELP]
 >id="platform_tags_websdk_datastreams"
 >title="数据流"
->abstract="必需。在Edge Network中设置要将数据发送到的数据流。"
+>abstract="必需。设置要将数据发送到 Edge Network 中的哪个数据流。"
 
 此配置部分允许您确定要将数据发送到哪个[数据流](/help/datastreams/overview.md)。 **发送到Edge Network的所有数据都需要数据流ID。**
 

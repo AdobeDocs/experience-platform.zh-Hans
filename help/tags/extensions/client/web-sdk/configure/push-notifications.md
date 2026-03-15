@@ -5,7 +5,7 @@ exl-id: 96ab7ea8-7180-46bb-9c15-eecba2009c52
 source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
 source-wordcount: '196'
-ht-degree: 1%
+ht-degree: 9%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 1%
 >[!CONTEXTUALHELP]
 >id="platform_tags_websdk_pushnotifications"
 >title="推送通知"
->abstract="为推送通知身份验证设置VAPID公钥。"
+>abstract="设置用于推送通知身份验证的 VAPID 公钥。"
 
 >[!AVAILABILITY]
 >

@@ -5,7 +5,7 @@ exl-id: 88c34545-9a58-4d49-a939-36edaa9a46be
 source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
 source-wordcount: '719'
-ht-degree: 1%
+ht-degree: 4%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 1%
 >[!CONTEXTUALHELP]
 >id="platform_tags_websdk_datacollection"
 >title="数据收集"
->abstract="确定要收集的数据以及如何在标记扩展中收集这些数据。"
+>abstract="确定要收集哪些数据，以及通过标记扩展如何收集这些数据。"
 
 通过此配置部分，可决定如何跨扩展收集数据。
 

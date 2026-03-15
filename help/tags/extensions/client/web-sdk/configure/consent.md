@@ -5,7 +5,7 @@ exl-id: 93913a8b-0351-409d-b26a-8dc2ac0296c5
 source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
 source-wordcount: '208'
-ht-degree: 0%
+ht-degree: 12%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_tags_websdk_consent"
 >title="同意"
->abstract="选择默认同意级别，如果未提供其他明确的同意首选项，则假定使用该级别。"
+>abstract="当未提供其他明确的同意偏好时，选择默认假定的同意级别。"
 
 **[!UICONTROL Consent]**&#x200B;部分允许您选择在没有提供其他明确的同意首选项时假设的默认同意级别。 默认同意级别未保存到用户配置文件。
 

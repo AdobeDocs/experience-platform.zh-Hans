@@ -1,15 +1,15 @@
 ---
-title: 身份配置设置
+title: 身份标识配置设置
 description: 定义标记扩展如何识别访客。
 exl-id: 12e707f4-c37b-4c02-bfec-5ef7b98c2d3b
 source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
 source-wordcount: '298'
-ht-degree: 2%
+ht-degree: 9%
 
 ---
 
-# 身份配置设置 {#identity}
+# 身份标识配置设置 {#identity}
 
 >[!CONTEXTUALHELP]
 >id="platform_tags_websdk_identity"

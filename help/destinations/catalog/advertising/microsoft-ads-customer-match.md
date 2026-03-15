@@ -9,7 +9,7 @@ exl-id: 4d405ffb-f600-463b-a215-44e806b6d139
 source-git-commit: 82f412676c89d7d14116be9328ab7fa438e10fc0
 workflow-type: tm+mt
 source-wordcount: '1347'
-ht-degree: 3%
+ht-degree: 16%
 
 ---
 
@@ -106,25 +106,25 @@ ht-degree: 3%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_microsoft_ads_cm_customer_id"
 >title="Customer ID"
->abstract="您的Microsoft Advertising客户ID，也称为经理帐户ID。 这是Microsoft Advertising中可拥有多个广告商帐户（客户帐户ID）的顶级标识符。"
->additional-url="https://learn.microsoft.com/en-us/advertising/guides/get-started?view=bingads-13#get-ids" text="Find your Customer ID"
+>abstract="您的 Microsoft Advertising 客户 ID，也称为管理帐户 ID。这是 Microsoft Advertising 中的顶级标识符，其下可以包含多个广告主帐户（客户帐户 ID）。"
+>additional-url="https://learn.microsoft.com/en-us/advertising/guides/get-started?view=bingads-13#get-ids" text="查找您的客户 ID"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_microsoft_ads_cm_customer_account_id"
->title="Customer Account ID"
->abstract="您的Microsoft Advertising客户帐户ID，也称为广告商帐户ID。 This identifies a specific advertiser account under your Customer ID."
->additional-url="https://learn.microsoft.com/en-us/advertising/guides/get-started?view=bingads-13#get-ids" text="查找您的客户帐户ID"
+>title="客户帐户 ID"
+>abstract="您的 Microsoft Advertising 客户帐户 ID，也称为广告商帐户 ID。此 ID 用于标识您客户 ID 下的特定广告商帐户。"
+>additional-url="https://learn.microsoft.com/en-us/advertising/guides/get-started?view=bingads-13#get-ids" text="查找您的客户帐户 ID"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_microsoft_ads_cm_membership_duration"
->title="Membership Duration"
->abstract="The number of days a user remains in the customer match list. Accepted values are between 1 and 390 days."
+>title="成员资格持续时间"
+>abstract="用户在客户匹配列表中保留的天数。可接受的取值范围为 1 到 390 天。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_microsoft_ads_cm_list_availability"
->title="Customer Match List Availability"
->abstract="Select whether the customer match list is available to a single advertiser account or to all accounts under the manager account. Select Customer ID to make the list available across all advertiser accounts under your Customer ID. Select Customer Account ID to restrict the list to the specific Customer Account ID."
->additional-url="https://help.ads.microsoft.com/apex/index/3/en/56727" text="详细了解Microsoft Advertising中的受众列表共享"
+>title="客户匹配列表可用性"
+>abstract="选择客户匹配列表是仅对单个广告商帐户可用，还是对管理帐户下的所有帐户可用。选择客户 ID 可使该列表在您的客户 ID 下的所有广告商帐户中可用。选择客户帐户 ID 可将该列表限制为仅在指定的客户帐户 ID 下可用。"
+>additional-url="https://help.ads.microsoft.com/apex/index/3/en/56727" text="了解有关 Microsoft Advertising 中受众列表共享的更多信息"
 
 在[设置](../../ui/connect-destination.md)此目标时，必须提供以下信息：
 
@@ -132,7 +132,7 @@ ht-degree: 3%
 * **[!UICONTROL Description]**：可帮助您将来识别此目标的描述。
 * **[!UICONTROL Customer ID]**：您的[!DNL Microsoft Ads]客户ID (CID) 有关如何查找客户ID的说明，请参阅[Microsoft Advertising文档](https://learn.microsoft.com/en-us/advertising/guides/get-started?view=bingads-13#get-ids)。
 * **[!UICONTROL Customer Account ID]**：您的[!DNL Microsoft Ads]客户帐户ID。 有关如何查找客户帐户ID的说明，请参阅[Microsoft Advertising文档](https://learn.microsoft.com/en-us/advertising/guides/get-started?view=bingads-13#get-ids)。
-* **[!UICONTROL Membership Duration]**：用户在客户匹配列表中保留的天数。 接受的值介于1和390天之间。
+* **[!UICONTROL Membership Duration]**：用户在客户匹配列表中保留的天数。 可接受的取值范围为 1 到 390 天。
 * **[!UICONTROL Customer Match List Availability]**：选择客户匹配列表的可用性。 在[!DNL Microsoft Advertising]中，一个客户ID下可以有多个客户帐户ID（广告商帐户）。 选择&#x200B;**[!UICONTROL Customer ID (all advertising accounts)]**&#x200B;以使该列表在您的客户ID下的所有广告商帐户中可用，或选择&#x200B;**[!UICONTROL Customer Account ID (single advertising account)]**&#x200B;以将该列表限制为您在上面提供的特定客户帐户ID。 有关更多详细信息，请参阅[Microsoft Advertising文档](https://help.ads.microsoft.com/apex/index/3/en/56727)。
 
 ![Platform UI图像显示Microsoft Ads客户匹配目标的目标详细信息字段。](../../assets/catalog/advertising/microsoft-ads-customer-match/destination-details.png)

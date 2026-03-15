@@ -5,7 +5,7 @@ exl-id: d830a210-77ab-4823-b5fa-c1194a01bea3
 source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
 source-wordcount: '150'
-ht-degree: 2%
+ht-degree: 20%
 
 ---
 
@@ -14,9 +14,9 @@ ht-degree: 2%
 >[!CONTEXTUALHELP]
 >id="platform_tags_websdk_advanced"
 >title="高级设置"
->abstract="高级配置设置。 Adobe建议在大多数实施中保持这些选项不变。"
+>abstract="高级配置设置。对于大多数实施场景，Adobe 建议保持这些选项的默认设置。"
 
-此配置部分允许您更改高级设置。 Adobe建议在大多数实施中保持这些选项不变。
+此配置部分允许您更改高级设置。 对于大多数实施场景，Adobe 建议保持这些选项的默认设置。
 
 1. 使用您的Adobe ID凭据登录[experience.adobe.com](https://experience.adobe.com)。
 1. 导航到&#x200B;**[!UICONTROL Data Collection]** > **[!UICONTROL Tags]**。
