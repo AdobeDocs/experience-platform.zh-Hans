@@ -5,9 +5,9 @@ breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源引入数据。了解如何构建、赋予标签和增强已摄取的数据。
 feature: Sources
 role: Developer
-source-git-commit: fe5faaeb026fa10d185f43408b122104ecd42196
+source-git-commit: 2c7cc6d29eae13cd8caa387063ae9ab80ca65e1e
 workflow-type: tm+mt
-source-wordcount: '1083'
+source-wordcount: '1089'
 ht-degree: 34%
 
 ---
@@ -74,7 +74,7 @@ ht-degree: 34%
       - [Amazon Redshift连接器](connectors/databases/redshift.md)
       - [Azure HDInsights连接器上的Apache Hive](connectors/databases/hive.md)
       - [Azure HDInsights连接器上的Apache Spark](connectors/databases/spark.md)
-      - [Azure Databricks连接器](connectors/databases/databricks.md)
+      - [Azure数据库连接器](connectors/databases/databricks.md)
       - [Azure Data Explorer连接器](connectors/databases/data-explorer.md)
       - [Azure Synapse Analytics连接器](connectors/databases/synapse-analytics.md)
       - [Azure表存储连接器](connectors/databases/ats.md)
@@ -97,6 +97,8 @@ ht-degree: 34%
       - [庞博拉意图](connectors/data-partners/bombora.md)
       - [Demandbase意图](connectors/data-partners/demandbase.md)
       - [Merkury Enterprise Identity Resolution](connectors/data-partners/merkury.md)
+   - 数据共享 {#data-sharing}
+      - [Deltashare](connectors/data-sharing/deltashare.md)
    - 电子商务 {#ecommerce}
       - [SAP COMMERCE](connectors/ecommerce/sap-commerce.md)
       - [Shopify](connectors/ecommerce/shopify.md)
@@ -310,6 +312,8 @@ ht-degree: 34%
          - [庞博拉意图](tutorials/ui/create/data-partners/bombora.md)
          - [Demandbase意图](tutorials/ui/create/data-partners/demandbase.md)
          - [Merkury Enterprise Identity Resolution](tutorials/ui/create/data-partners/merkury.md)
+      - 数据共享 {#data-sharing}
+         - [Deltashare](tutorials/ui/create/data-sharing/deltashare.md)
       - 电子商务 {#ecommerce}
          - [SAP COMMERCE](tutorials/ui/create/ecommerce/sap-commerce.md)
          - [Shopify](tutorials/ui/create/ecommerce/shopify.md)
@@ -369,15 +373,15 @@ ht-degree: 34%
    - [将数据流另存为草稿](tutorials/ui/draft.md)
    - [将访问标签应用于数据流](tutorials/ui/labels.md)
    - [创建专用端点](tutorials/ui/private-link.md)
-- 自助来源(批处理SDK) {#sdk}
+- 自助来源（批处理SDK） {#sdk}
    - [概述](sources-sdk/overview.md)
    - 配置连接规范 {#config}
       - [配置选项](sources-sdk/config/config.md)
       - [配置身份验证规范](sources-sdk/config/authspec.md)
       - [配置源规范](sources-sdk/config/sourcespec.md)
       - [配置浏览规范](sources-sdk/config/explorespec.md)
-   - 自助源(批处理SDK) API指南 {#self-serve-api}
-      - [自助式源(批处理SDK) API概述](sources-sdk/api/api-overview.md)
+   - 自助源（批处理SDK） API指南 {#self-serve-api}
+      - [自助式源（批处理SDK） API概述](sources-sdk/api/api-overview.md)
       - [快速入门](sources-sdk/api/getting-started.md)
       - [创建连接规范](sources-sdk/api/create.md)
       - [更新连接规范](sources-sdk/api/update-connection-specs.md)
@@ -390,12 +394,12 @@ ht-degree: 34%
       - [文档自助服务API模板](sources-sdk/documentation/template.md)
       - [文档自助服务UI模板](sources-sdk/documentation/ui-template.md)
    - 流式SDK {#streaming-sdk}
-      - [自助式源入门(流SDK)](sources-sdk/streaming/getting-started.md)
+      - [自助式源入门（流SDK）](sources-sdk/streaming/getting-started.md)
       - [为流源创建连接规范](sources-sdk/streaming/create.md)
       - [更新流源的连接规范](sources-sdk/streaming/update-connection-specs.md)
       - [更新流规范](sources-sdk/streaming/update-flow-specs.md)
       - [测试并提交您的连接规范以进行验证](sources-sdk/streaming/submit.md)
-      - [记录您的源(流SDK)](sources-sdk/streaming/document-streaming.md)
+      - [记录您的源（流SDK）](sources-sdk/streaming/document-streaming.md)
       - [文档自助服务API流模板](sources-sdk/streaming/streaming-template-api.md)
       - [文档自助服务UI流模板](sources-sdk/streaming/streaming-template-ui.md)
 - 错误消息 {#errors}
