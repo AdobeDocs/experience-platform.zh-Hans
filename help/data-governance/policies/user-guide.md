@@ -26,7 +26,7 @@ ht-degree: 13%
 
 >[!IMPORTANT]
 >
->默认情况下，所有数据使用策略(包括Adobe提供的核心策略)都处于禁用状态。 为了考虑实施单个策略，您必须手动启用该策略。 有关如何在UI中启用策略的步骤，请参阅[启用策略](#enable)的相关部分。
+>默认情况下，所有数据使用策略（包括Adobe提供的核心策略）都处于禁用状态。 为了考虑实施单个策略，您必须手动启用该策略。 有关如何在UI中启用策略的步骤，请参阅[启用策略](#enable)的相关部分。
 
 ## 先决条件
 
@@ -102,7 +102,7 @@ ht-degree: 13%
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataUsagePolicies_instructions"
 >title="说明"
->abstract="<ul><li>确保您通过 OneTrust 源连接器或用于同意的标准 XDM 架构将首选项数据引入到您的联合架构中。</li><li>在左侧导航中选择<a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html?lang=zh-Hans">策略</a>，然后选择<a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html?lang=zh-Hans#create-governance-policy">创建策略</a>。</li><li>在<b>如果</b>部分下面，描述将触发策略检查的条件或操作。</li><li>在<b>则</b>部分下面，输入必须存在才能在触发该策略的操作中包括轮廓的同意属性。</li><li>选择<b>保存</b>以创建该策略。要启用该策略，请选择右边栏中的<b>状态</b>切换开关。</li><li>Experience Platform 在您对于目标激活区段时自动执行您启用的同意策略，并提供有关每项策略如何影响您的受众规模的详细信息。</li><li>有关此功能的更多帮助，请参阅 Experience League 上关于<a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html?lang=zh-Hans#consent-policy">创建同意策略</a>的指南。</li></ul>"
+>abstract="<ul><li>确保您通过 OneTrust 源连接器或用于同意的标准 XDM 架构将首选项数据引入到您的联合架构中。</li><li>在左侧导航中选择<a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html?lang=zh-Hans">策略</a>，然后选择<a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#create-governance-policy">创建策略</a>。</li><li>在<b>如果</b>部分下面，描述将触发策略检查的条件或操作。</li><li>在<b>则</b>部分下面，输入必须存在才能在触发该策略的操作中包括轮廓的同意属性。</li><li>选择<b>保存</b>以创建该策略。要启用该策略，请选择右边栏中的<b>状态</b>切换开关。</li><li>Experience Platform 在您对于目标激活区段时自动执行您启用的同意策略，并提供有关每项策略如何影响您的受众规模的详细信息。</li><li>有关此功能的更多帮助，请参阅 Experience League 上关于<a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html?lang=zh-Hans#consent-policy">创建同意策略</a>的指南。</li></ul>"
 
 >[!IMPORTANT]
 >
@@ -128,7 +128,7 @@ ht-degree: 13%
 >[!CONTEXTUALHELP]
 >id="platform_governance_policies_consentif"
 >title="“如果”条件"
->abstract="首先定义会触发策略检查的条件。条件可以包括正在采取的某些营销行动、存在的某些数据治理标签，或两者的组合。使用 AND/OR 逻辑，在多个条件之间创建复杂的条件关系。"
+>abstract="首先定义会触发策略检查的条件。条件可以包含正在采取的某些营销行动、存在的某些数据治理标签，或两者的组合。 使用 AND/OR 逻辑，在多个条件之间创建复杂的条件关系。"
 
 在&#x200B;**[!UICONTROL If]**&#x200B;部分下，选择应触发此策略的营销操作和/或数据使用标签。 选择&#x200B;**[!UICONTROL View all]**&#x200B;和&#x200B;**[!UICONTROL Select labels]**&#x200B;分别查看可用营销操作和标签的完整列表。
 
@@ -235,7 +235,7 @@ ht-degree: 13%
 
 ## 启用或禁用策略 {#enable}
 
-默认情况下，所有数据使用策略(包括Adobe提供的核心策略)都处于禁用状态。 对于要考虑实施的单个策略，您必须通过API或UI手动启用该策略。
+默认情况下，所有数据使用策略（包括Adobe提供的核心策略）都处于禁用状态。 对于要考虑实施的单个策略，您必须通过API或UI手动启用该策略。
 
 您可以在&#x200B;**[!UICONTROL Browse]**&#x200B;工作区的&#x200B;**[!UICONTROL Policies]**&#x200B;选项卡中启用或禁用策略。 从列表中选择自定义策略，以在右侧显示其详细信息。 在&#x200B;**[!UICONTROL Status]**&#x200B;下，选择切换按钮以启用或禁用策略。
 
@@ -285,4 +285,4 @@ ht-degree: 13%
 
 以下视频演示了如何在[!DNL Experience Platform] UI中使用使用策略：
 
->[!VIDEO](https://video.tv.adobe.com/v/37121?captions=chi_hans&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/32977?quality=12&learn=on)

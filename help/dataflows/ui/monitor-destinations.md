@@ -142,7 +142,7 @@ ht-degree: 10%
 >id="platform_monitoring_dataflow_run_details_activation"
 >title="数据流运行详细信息"
 >abstract="目标数据流运行详细信息包含有关受众激活状态的信息，以及从实时客户轮廓中获取的量度，以生成唯一身份标识。若要了解更多信息，请查看量度定义指南。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html?lang=zh-Hans#dataflow-runs-for-streaming-destinations" text="流式处理目标的数据流运行"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html#dataflow-runs-for-streaming-destinations" text="流式处理目标的数据流运行"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_batch"
@@ -223,7 +223,7 @@ ht-degree: 10%
 
 使用[!UICONTROL Destinations]仪表板全面了解激活流的运行状况。 首先，获取有关所有批次和流目标的聚合级别的洞察，然后深入查看数据流、数据流运行和激活受众的详细视图，以深入了解您的激活数据。 [!UICONTROL Monitoring]仪表板中的屏幕通过量度和错误描述提供可操作的洞察，帮助您排除激活方案中可能出现的任何问题。
 
-您可以按数据类型(客户、帐户(仅适用于Adobe Real-Time CDP B2B edition)、潜在客户和帐户扩充)过滤显示的信息。 有关这些选项的更多信息，请参阅[监视仪表板指南](/help/dataflows/ui/monitor.md#monitoring-dashboard-overview)。
+您可以按数据类型(客户、帐户（仅适用于Adobe Real-Time CDP B2B edition）、潜在客户和帐户扩充)过滤显示的信息。 有关这些选项的更多信息，请参阅[监视仪表板指南](/help/dataflows/ui/monitor.md#monitoring-dashboard-overview)。
 
 ![在监视仪表板视图中突出显示的数据类型筛选器。](/help/dataflows/assets/ui/monitor-destinations/add-data-filter.png)
 

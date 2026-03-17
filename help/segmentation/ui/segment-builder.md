@@ -139,7 +139,7 @@ ht-degree: 11%
 | 时段 | 该值在选定的月或年内出现。 | 三月期间的销售&#x200B;**为** |
 | 范围(+/-) | 该值出现在选定日期后的天、周、月或年内。 此时间段是两个日期的&#x200B;**包含**。 | 购物车放弃时间为&#x200B;**在**&#x200B;内3天 |
 | 早于 | 该值发生在选定日期之前。 | 成员资格加入日期为&#x200B;**早于** 2025年1月3日 |
-| 之后 | 该值发生在选定日期之后。 | 购买日期为&#x200B;**&#x200B;** 2024年3月14日之后 |
+| 之后 | 该值发生在选定日期之后。 | 购买日期为&#x200B;**** 2024年3月14日之后 |
 | 滚动范围 | 该值出现在两个相对日期之间。 | 上次购买日期处于7天前到3天前的滚动范围内。 |
 | 下一 | 该值出现在所选的下一个时间段内。 | 购物车放弃在未来2天内 |
 
@@ -228,7 +228,7 @@ ht-degree: 11%
 >
 >对于在Experience Platform中创建的受众，仅显示具有&#x200B;**same**&#x200B;合并策略的受众。
 
-**[!UICONTROL Audiences]**&#x200B;选项卡列出了从外部源(如Adobe Audience Manager或Customer Journey Analytics)导入的所有受众，以及在[!DNL Experience Platform]内创建的受众。
+**[!UICONTROL Audiences]**&#x200B;选项卡列出了从外部源（如Adobe Audience Manager或Customer Journey Analytics）导入的所有受众，以及在[!DNL Experience Platform]内创建的受众。
 
 在&#x200B;**[!UICONTROL Audiences]**&#x200B;选项卡上，您可以将所有可用源视为一组文件夹。 选择文件夹时，可以看到可用的子文件夹和受众。 此外，您还可以选择文件夹图标（如最右侧的图像中所示）以查看文件夹结构（复选标记表示您当前所在的文件夹），并通过在树中选择文件夹名称轻松地在文件夹之间向后导航。
 
@@ -473,7 +473,7 @@ ht-degree: 11%
 
 +++ 混合布尔逻辑
 
-以下示例在单个表达式中混合了&#x200B;**1&rbrace;和&lbrace;AND和OR逻辑。**&#x200B;如果不使用容器，则无法在单个级别中将AND与OR逻辑混合使用。
+以下示例在单个表达式中混合了&#x200B;**1}和{AND和OR逻辑。**&#x200B;如果不使用容器，则无法在单个级别中将AND与OR逻辑混合使用。
 
 ![显示如何使用容器混合布尔逻辑以及使用包含/排除逻辑的图像。](/help/segmentation/images/ui/segment-builder/mixed-boolean-container.png)
 
@@ -523,7 +523,7 @@ ht-degree: 11%
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="刷新估计值"
 >abstract="您可以刷新区段定义的估计值，以立即预览符合建议的区段定义资格的轮廓数目。受众估计值是通过使用当天的示例数据的示例大小生成的。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=zh-Hans#estimate-and-preview-an-audience" text="估计和预览受众"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="估计和预览受众"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_qualifiedprofiles"

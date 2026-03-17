@@ -31,7 +31,7 @@ ht-degree: 26%
 
 ![图像显示[!UICONTROL Dataset]选项卡](../images/ui/browse/dataset-tab.png)
 
-选择funnel图标(![funnel图标的图像](/help/images/icons/filter.png))以查看所显示工作单的过滤器列表。
+选择funnel图标（![funnel图标的图像](/help/images/icons/filter.png)）以查看所显示工作单的过滤器列表。
 
 ![显示的工作单过滤器图像](../images/ui/browse/filters.png)
 

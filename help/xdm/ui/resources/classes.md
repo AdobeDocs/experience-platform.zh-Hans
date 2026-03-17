@@ -90,7 +90,7 @@ Adobe提供了多个标准（“核心”）体验数据模型(XDM)类，包括[
 
 ![选择了新类并突出显示[!UICONTROL Schema details]的[!UICONTROL Next]节。](../../images/ui/resources/classes/select-new-class.png)
 
-选择类后，将显示[!UICONTROL Name and review]部分。 在此部分中，您会提供用于标识架构的名称和描述。&#x200B;AEM架构的基本结构（由类提供）显示在画布中，供您查看和验证选定的类和架构结构。
+选择类后，将显示[!UICONTROL Name and review]部分。 在此部分中，提供用于标识架构的名称和描述&#x200B;。架构的基本结构（由类提供）显示在画布中，供您查看和验证选定的类和架构结构。
 
 在文本字段中输入人性化的[!UICONTROL Schema display name]。 接下来，输入适当的描述以帮助识别您的架构。 当您查看了架构结构并对设置感到满意时，请选择&#x200B;**[!UICONTROL Finish]**&#x200B;以创建您的架构。
 
@@ -133,7 +133,7 @@ Adobe提供了多个标准（“核心”）体验数据模型(XDM)类，包括[
 ![架构编辑器已突出显示现有类和[!UICONTROL Create a schema]。](../../images/ui/resources/classes/edit-class-options.png)
 
 如果选择创建新架构，请参阅[创建架构](#create-schema)一节以了解详细信息。 创建完架构（或选择现有架构后）后，将显示架构编辑器。 要更新现有类字段，请从架构结构中选择该字段。 字段的信息将显示在右边栏中。 确保[!UICONTROL Assign to]
-已选择选项&#x200B;**[!UICONTROL Class]**，或者您的更新不会影响类。
+已选择选项**[!UICONTROL Class]**，或者您的更新不会影响类。
 
 ![架构编辑器，其中选定字段并突出显示，右边栏显示，突出显示[!UICONTROL Assign to]。](../../images/ui/resources/classes/edit-existing-field.png)
 

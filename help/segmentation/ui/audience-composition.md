@@ -14,7 +14,7 @@ ht-degree: 16%
 
 >[!BEGINSHADEBOX]
 
-如果您是Adobe Journey Optimizer客户，请阅读Adobe Journey Optimizer文档中的[受众构成快速入门指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/audiences-profiles-identities/audiences/audience-orchestration/get-started-audience-orchestration.html?lang=zh-Hans)，了解有关在该上下文中使用受众构成的更多信息。
+如果您是Adobe Journey Optimizer客户，请阅读Adobe Journey Optimizer文档中的[受众构成快速入门指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/audiences-profiles-identities/audiences/audience-orchestration/get-started-audience-orchestration.html)，了解有关在该上下文中使用受众构成的更多信息。
 
 >[!ENDSHADEBOX]
 
@@ -376,7 +376,7 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 
 >[!IMPORTANT]
 >
->在发布受众构成时，请注意，评估和激活它以在下游服务(例如Real-Time CDP目标或Adobe Journey Optimizer渠道)中使用可能需要48小时。
+>在发布受众构成时，请注意，评估和激活它以在下游服务（例如Real-Time CDP目标或Adobe Journey Optimizer渠道）中使用可能需要48小时。
 
 创建合成后，您可以通过选择&#x200B;**[!UICONTROL Publish]**&#x200B;来保存和发布合成。
 
