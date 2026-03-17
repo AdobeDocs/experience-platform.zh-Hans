@@ -16,7 +16,7 @@ ht-degree: 17%
 >id="platform_permissions_roles_about"
 >title="角色是什么？"
 >abstract="角色定义了管理员、专家或最终用户对组织中的资源的访问权限。它们会对与您的 Experience Platform 实例交互的用户进行分类，是访问控制策略的构建基块。一个角色具有一组给定的权限，可将您组织的成员分配给一个或多个角色，具体取决于他们需要的查看或写入访问权限的范围。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html" text="管理角色"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html?lang=zh-Hans" text="管理角色"
 
 >[!IMPORTANT]
 >
