@@ -65,7 +65,7 @@ Experience Platform允许从其他Adobe应用程序（包括Adobe Analytics和Ad
 
 ### 高级企业源 {#advanced-enterprise-sources}
 
-以下源仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)或已获得独立高级企业Source连接器SKU许可的客户。
+以下源仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)或已获得独立高级企业Source连接器SKU许可的客户。
 
 | 来源 | 类别 | 摄取类型 | 云 |
 | --- | --- | --- | --- |
