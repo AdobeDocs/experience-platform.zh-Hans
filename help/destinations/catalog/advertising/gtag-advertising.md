@@ -14,7 +14,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->此处描述的Google gtag扩展已弃用，并由[[!DNL Google Global Site Tag (gtag)]开发的](https://exchange.adobe.com/apps/ec/101437/google-global-site-tag-gtag)[!DNL Acronym]扩展替换。 在数据收集UI或Experience Platform UI的[!DNL Google Global Site Tag (gtag)]工作区中，您可以找到[[!UICONTROL Tags]](../../../tags/home.md)扩展。
+>此处描述的Google gtag扩展已弃用，并由[[!DNL Google Global Site Tag (gtag)]开发的](https://exchange.adobe.com/apps/ec/101437/google-global-site-tag-gtag) [!DNL Acronym]扩展替换。 在数据收集UI或Experience Platform UI的[!DNL Google Global Site Tag (gtag)]工作区中，您可以找到[[!UICONTROL Tags]](../../../tags/home.md)扩展。
 
 ## 概述 {#overview}
 
