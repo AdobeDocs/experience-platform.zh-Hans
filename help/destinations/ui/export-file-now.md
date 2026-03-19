@@ -3,7 +3,7 @@ title: 使用Experience Platform UI按需将文件导出到批处理目标
 type: Tutorial
 description: 了解如何使用Experience Platform UI将按需文件导出到批处理目标。
 exl-id: 0cbe5089-b73d-4584-8451-2fc34d47c357
-source-git-commit: c7e6de2db416592ca9340fefadd53709fe71b058
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '805'
 ht-degree: 5%
@@ -14,10 +14,10 @@ ht-degree: 5%
 # 使用Experience Platform UI按需将文件导出到批处理目标
 
 >[!IMPORTANT]
-> 
+>
 >若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
-## **[!UICONTROL Export file now]** 概述 {#overview}
+## [!UICONTROL Export file now] 概述 {#overview}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_activatenow"
