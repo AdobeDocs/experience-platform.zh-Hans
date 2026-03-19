@@ -16,7 +16,7 @@ ht-degree: 8%
 >id="platform_destinations_export_arrays_flat_files"
 >title="添加计算字段"
 >abstract="<p>使用&#x200B;**添加计算字段**&#x200B;控件对导出到云存储目标的数据进行各种数据转换。例如，您可以对数据进行哈希处理，将数组连接成字符串等。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/data-transformations-calculated-fields.html#examples" text="示例"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/data-transformations-calculated-fields.html?lang=zh-Hans#examples" text="示例"
 
 >[!AVAILABILITY]
 >

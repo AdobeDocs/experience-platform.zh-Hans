@@ -229,7 +229,7 @@ Yes, you can activate a maximum of 150 edge audiences per sandbox.  For more inf
 ### 在Adobe Target中，我可以在哪里查看激活的属性？ {#target-activated-attributes-location}
 
 +++回答
-可在[JSON](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html)和[HTML](https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html)选件的Target中使用属性。
+可在[JSON](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html?lang=zh-Hans)和[HTML](https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html?lang=zh-Hans)选件的Target中使用属性。
 +++
 
 ### 我是否可以创建没有数据流的目标，然后在以后将数据流添加到同一目标？ {#destination-without-datastream}

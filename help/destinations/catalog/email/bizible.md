@@ -16,7 +16,7 @@ ht-degree: 4%
 
 [!DNL Bizible]是行业领先的B2B归因解决方案，它让您能够无与伦比地查看您的数据，因此您可以做出有助于增长的明智决策。
 
-[!DNL Bizible]是Adobe Experience Platform中的电子邮件扩展。 有关Bizible的详细信息，请阅读Bizible概述资源中的[营销归因](https://experienceleague.adobe.com/docs/bizible/using/introduction-to-bizible/overview-resources/marketing-attribution.html)。
+[!DNL Bizible]是Adobe Experience Platform中的电子邮件扩展。 有关Bizible的详细信息，请阅读Bizible概述资源中的[营销归因](https://experienceleague.adobe.com/docs/bizible/using/introduction-to-bizible/overview-resources/marketing-attribution.html?lang=zh-Hans)。
 
 此目标是标记扩展。 有关标记扩展如何在Experience Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 

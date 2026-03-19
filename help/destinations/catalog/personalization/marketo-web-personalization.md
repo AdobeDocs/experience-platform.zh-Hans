@@ -16,7 +16,7 @@ ht-degree: 3%
 
 此扩展为[!DNL Marketo's] Web Personalization和ContentAI应用程序部署脚本。 [!DNL Marketo] Web Personalization可唯一地根据Web访客特性标识和个性化内容，例如匿名访客的firmographics和[!DNL Marketo]参与平台中针对已知访客的各种行为属性。 [!DNL Marketo] ContentAI包含AI支持的推荐功能，以及针对B2B客户所独有的Web和电子邮件营销活动的个性化功能。
 
-[!DNL Marketo Web Personalization]是Adobe Experience Platform中的个性化扩展。 有关Marketo中Web个性化和ContentAI的更多信息，请阅读[Web Personalization概述](https://experienceleague.adobe.com/docs/marketo/using/product-docs/web-personalization/understanding-web-personalization/web-personalization-overview.html)。
+[!DNL Marketo Web Personalization]是Adobe Experience Platform中的个性化扩展。 有关Marketo中Web个性化和ContentAI的更多信息，请阅读[Web Personalization概述](https://experienceleague.adobe.com/docs/marketo/using/product-docs/web-personalization/understanding-web-personalization/web-personalization-overview.html?lang=zh-Hans)。
 
 此目标是标记扩展。 有关标记扩展如何在Experience Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 

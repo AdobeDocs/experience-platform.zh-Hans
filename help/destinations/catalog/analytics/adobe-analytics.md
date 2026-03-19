@@ -42,7 +42,7 @@ Adobe Analytics是Adobe Experience Platform中的一个analytics扩展。 有关
 
 工作流会将您转到数据收集UI以完成安装。
 
-有关扩展配置选项的信息，请参阅[Adobe Analytics扩展页面](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/implement-solutions/analytics.html)标记文档。
+有关扩展配置选项的信息，请参阅[Adobe Analytics扩展页面](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/implement-solutions/analytics.html?lang=zh-Hans)标记文档。
 
 您还可以直接在[数据收集UI](https://experience.adobe.com/#/data-collection/)中安装该扩展。 有关详细信息，请参阅有关[添加新扩展](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension)的指南。
 
