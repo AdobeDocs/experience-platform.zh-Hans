@@ -2,13 +2,13 @@
 title: 运行和操作概述
 description: 使用运行和操作工具检查、排除和优化Experience Platform实施。 了解计划的批量激活，识别配置问题，并提高系统可靠性。
 hide: true
-source-git-commit: 4733fae23c5029f4bc2c405376b1a52212dc0440
+exl-id: 7f44cdf3-4db1-47f9-bcde-401f6dcfc551
+source-git-commit: a36f984e56f37e4769e54eab182a8c54e891e32f
 workflow-type: tm+mt
-source-wordcount: '543'
+source-wordcount: '676'
 ht-degree: 1%
 
 ---
-
 
 # 运行和操作概述
 
@@ -47,7 +47,7 @@ ht-degree: 1%
 
    >[!NOTE]
    >
-   >当前，唯一可用的功能是[作业计划](job-schedules.md)。
+   >目前，可用的功能为[作业计划](job-schedules.md)和[运行状况检查](health-checks.md)。
 
 ![显示“运行和操作”左侧导航的Experience Platform UI。](assets/overview/run-and-operate.png)
 
@@ -78,12 +78,28 @@ ht-degree: 1%
 
 您还可以了解数据处理阶段之间的依赖关系，帮助您确保整个Experience Platform工作流中的可靠数据流。
 
+### 健康检查 {#health-checks}
+
+>[!IMPORTANT]
+>
+>[!UICONTROL Health checks]当前可作为受限版本使用。
+
+通过[运行状况检查](health-checks.md)，您可以主动检测架构和身份配置问题，以免它们影响您的业务操作。 目前，运行状况检查每天对架构和身份命名空间运行静态扫描，这会显示缺少的最佳实践、错误配置以及导致下游故障的模式。
+
+运行状况检查当前评估五个基本领域：
+
+* **[标识字段验证](health-checks.md#identity-field-validation)**：验证标识字段是否具有正确的长度和模式约束。
+* **[身份图形链接规则](health-checks.md#identity-graph-linking-rules)**：确认已配置链接规则以防止配置文件折叠。
+* **[人员和非人员标识配置](health-checks.md#people-non-people-identity)**：验证架构类中标识类型的使用方式是否正确。
+* **[自定义身份命名空间描述](health-checks.md#namespace-missing-description)**：确保命名空间元数据完整。
+* **[已弃用的标识命名空间](health-checks.md#deprecated-namespace)**：检测过时的命名空间以进行清理。
+
 ## 后续步骤 {#next-steps}
 
 现在您已了解[!UICONTROL Run and Operate]工具的用途和功能，请探索以下资源以深化您的知识：
 
-* 了解[批量摄取](../ingestion/batch-ingestion/overview.md)，以了解数据如何摄取到Experience Platform
+* 了解如何使用[运行状况检查](health-checks.md)检测架构和身份配置问题
 * 了解如何[检查批处理摄取和激活的作业计划](job-schedules.md)
+* 了解[批量摄取](../ingestion/batch-ingestion/overview.md)，以了解数据如何摄取到Experience Platform
 * 了解如何为批处理目标[配置计划激活](../destinations/ui/activate-batch-profile-destinations.md)
 * 探索[数据流监控](../dataflows/ui/monitor-destinations.md)以了解目标
-

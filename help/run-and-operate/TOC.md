@@ -6,9 +6,9 @@ user-guide-title: 运行和操作指南
 user-guide-description: 使用运行和操作工具检查、排除和优化Adobe Experience Platform实施。 了解计划的批量激活，识别配置问题，并提高系统可靠性。
 description: 本文档列出了Adobe Experience Platform运行和操作工具的目录
 role: Admin, User
-source-git-commit: edc3d4bd444a709f45128795e08ca78122dba4f3
+source-git-commit: a36f984e56f37e4769e54eab182a8c54e891e32f
 workflow-type: tm+mt
-source-wordcount: '63'
+source-wordcount: '65'
 ht-degree: 6%
 
 ---
@@ -21,4 +21,4 @@ ht-degree: 6%
    * [检查作业计划](job-schedules.md)
    * [查看作业详情](job-schedules-details.md)
    * [识别反模式](job-schedules-anti-patterns.md)
-
+* [运行状况检查](health-checks.md)
