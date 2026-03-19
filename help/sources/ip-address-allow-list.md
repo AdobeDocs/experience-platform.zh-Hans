@@ -1,10 +1,10 @@
 ---
-description: 列入允许列表了解要成功使用Adobe Experience Platform源，需要添加到的IP地址。
-title: 列入允许列表源的IP地址
+description: 了解要成功使用Adobe Experience Platform源，需要添加到的IP地址。
+title: 源的IP地址
 exl-id: 40093c80-dbdb-4dc1-97bb-81a8200b731f
-source-git-commit: e2403b235b4cfee37761ebd683a1fb8662061406
+source-git-commit: b3c06717aac922bbb8591afe283c6066a78bf033
 workflow-type: tm+mt
-source-wordcount: '243'
+source-wordcount: '249'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 您可以通过网络防火墙定义网络访问控制。 通过指定适当的源IP范围，您可以允许数据传输服务的通信流通过。 在使用源连接器之前，必须将以下IP地址添加到允许列表。 未能将特定于地区的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。
 
-## 列入允许列表连接到[!DNL Azure]上Experience Platform的源的IP地址 {#azure}
+## 连接到[!DNL Azure]上Experience Platform的源的IP地址 {#azure}
 
 ### [!DNL Azure]上的Experience Platform上的批次源 {#batch}
 
@@ -87,6 +87,21 @@ ht-degree: 0%
 - `52.228.81.0/26`
 - `52.228.86.144/29`
 - `52.246.155.224/28`
+
+>[!TAB GBR9：英国]
+
+#### GBR9：英国
+
+- `20.90.129.128/25`
+- `20.90.130.0/24`
+- `20.117.193.184/29`
+- `51.104.9.32/28`
+- `51.104.24.128/25`
+- `51.104.25.0/26`
+- `51.104.29.216/29`
+- `51.105.67.240/28`
+- `51.105.75.240/28`
+- `85.210.193.192/27`
 
 >[!TAB IND2：印度]
 
