@@ -62,7 +62,7 @@ ht-degree: 0%
 
 观看以下视频，了解此页面中描述的工作流的端到端说明。
 
->[!VIDEO](https://video.tv.adobe.com/v/3425367)
+>[!VIDEO](https://video.tv.adobe.com/v/3452667?captions=chi_hans)
 
 ### 步骤1：通过[!DNL LiveRamp - Onboarding]目标将受众从Experience Platform发送到LiveRamp {#onboarding}
 
