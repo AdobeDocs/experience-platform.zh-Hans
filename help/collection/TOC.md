@@ -3,13 +3,13 @@ audience: user
 solution: Data Collection
 user-guide-title: 数据收集
 breadcrumb-title: 数据收集
-user-guide-description: 了解如何将数据发送到Adobe Experience Platform。
+user-guide-description: 了解如何将数据发送至 Adobe Experience Platform。
 feature: Data Collection
 role: Developer
-source-git-commit: caaf5cad7276d6429fbbf35585fd4845de6ff60c
+source-git-commit: c848f821ea911c82531c6784a17df0116572cd86
 workflow-type: tm+mt
-source-wordcount: '149'
-ht-degree: 30%
+source-wordcount: '152'
+ht-degree: 36%
 
 ---
 
@@ -103,6 +103,8 @@ ht-degree: 30%
       + [概述](use-cases/identity/id-overview.md)
       + [第一方设备 ID](use-cases/identity/first-party-device-ids.md)
       + [ID共享](use-cases/identity/id-sharing.md)
+   + MCP {#mcp}
+      + [ChatGPT应用程序](use-cases/mcp/chatgpt.md)
    + [多个SDK实例](use-cases/multiple-instances.md)
    + 个性化 {#personalization}
       + [概述](use-cases/personalization/pers-overview.md)
