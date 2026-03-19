@@ -3,9 +3,9 @@ title: 实时查找边缘配置文件属性
 description: 了解如何使用自定义Personalization目标和Edge Network API实时查找边缘配置文件属性
 type: Tutorial
 exl-id: e185d741-af30-4706-bc8f-d880204d9ec7
-source-git-commit: 60447ef6f881bf2a34f5502f2259328bf73d08c0
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1838'
+source-wordcount: '1836'
 ht-degree: 1%
 
 ---
@@ -36,10 +36,12 @@ Adobe Experience Platform使用[实时客户个人资料](../../profile/home.md)
 
 Edge配置文件查找用例受下表所述的特定性能护栏的约束。 有关Edge Network API护栏的更多详细信息，请参阅护栏[文档页面](https://developer.adobe.com/data-collection-apis/docs/getting-started/guardrails/)。
 
-| Edge Network服务 | Edge区段 | 每秒请求数 |
+| Edge Network服务 | 边缘分段 | 每秒请求数 |
 |---------|----------|---------|
 | 通过[Edge Network API](../catalog/personalization/custom-personalization.md)的[自定义个性化目标](https://developer.adobe.com/data-collection-apis/docs/api/) | 是 | 1500 |
 | 通过[Edge Network API](../catalog/personalization/custom-personalization.md)的[自定义个性化目标](https://developer.adobe.com/data-collection-apis/docs/api/) | 否 | 1500 |
+
+{style="table-layout:auto"}
 
 ## 步骤1：创建和配置数据流 {#create-datastream}
 
@@ -71,7 +73,7 @@ Edge配置文件查找用例受下表所述的特定性能护栏的约束。 有
 
 ## 步骤3：将配置文件属性数据发送到Edge Network{#configure-custom-personalization-connection}
 
-要实时查找Edge用户档案（包括属性和受众成员资格数据），需要在Edge Network中提供这些数据。 为此，您必须创建与&#x200B;**[!UICONTROL Custom Personalization With Attributes]**&#x200B;目标的连接并激活受众，包括要在边缘配置文件中查找的属性。
+要实时查找边缘用户档案（包括属性和受众成员资格数据），需要在Edge Network中提供这些数据。 为此，您必须创建与&#x200B;**[!UICONTROL Custom Personalization With Attributes]**&#x200B;目标的连接并激活受众，包括要在边缘配置文件中查找的属性。
 
 +++ 使用属性连接配置自定义Personalization
 
@@ -88,7 +90,7 @@ Edge配置文件查找用例受下表所述的特定性能护栏的约束。 有
 创建&#x200B;**[!UICONTROL Custom Personalization With Attributes]**&#x200B;连接后，即可将配置文件数据发送到Edge Network。
 
 >[!IMPORTANT]
-> 
+>
 > * 要激活数据并启用工作流的[映射步骤](#mapping)，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。
 > 
 > 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
@@ -204,6 +206,8 @@ curl -X POST "https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM
 | --- | --- | --- | --- |
 | `dataStreamId` | `String` | 可以。 | 您在[步骤1](#create-datastream)中创建的数据流的数据流ID。 |
 
+{style="table-layout:auto"}
+
 ### 响应 {#response}
 
 成功的响应返回HTTP状态`200 OK`，其中的`Handle`对象包含与以下选项卡中的示例类似的信息，具体取决于是否在边缘上找到配置文件。
@@ -283,6 +287,8 @@ curl -X POST "https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM
 | `type` | `handle`对象按类型分组。 对于边缘配置文件查找用例，`handle`对象的类型始终为`activation:pull`。 |
 | `eventIndex` | Edge Network以数组的形式从客户端接收事件。 数组中的事件顺序在处理期间保持不变，并反映在此索引中。 事件索引从`0`开始。 |
 
+{style="table-layout:auto"}
+
 >[!TAB 边缘上不存在配置文件]
 
 如果配置文件在边缘上不存在，您可以看到与以下类似的响应。
@@ -307,6 +313,8 @@ curl -X POST "https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM
 | `payload` | 当边缘上不存在该配置文件时，`payload`对象为空。 |
 | `type` | `payload`对象按类型分组。 对于边缘配置文件查找用例，`payload`对象的类型始终为`activation:pull`。 |
 | `eventIndex` | Edge Network以数组的形式接收来自客户端的事件。 数组中的事件顺序在处理期间保持不变，并反映在此索引中。 事件索引从`0`开始。 |
+
+{style="table-layout:auto"}
 
 >[!ENDTABS]
 

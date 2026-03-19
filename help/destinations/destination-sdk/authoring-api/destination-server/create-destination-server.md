@@ -2,9 +2,9 @@
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK创建目标服务器的API调用。
 title: 创建目标服务器配置
 exl-id: 5c6b6cf5-a9d9-4c8a-9fdc-f8a95ab2a971
-source-git-commit: e1dd6ae9bf28014e8e84de85bdf67707744ea0ad
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '2040'
+source-wordcount: '2038'
 ht-degree: 5%
 
 ---
@@ -24,11 +24,11 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 目标服务器API操作快速入门 {#get-started}
 
-在继续之前，请查看[入门指南](../../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[快速入门指南](../../getting-started.md)，了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 创建目标服务器配置 {#create}
 

@@ -3,9 +3,9 @@ title: Google Cloud Storage连接
 description: 了解如何连接到Google Cloud Storage并激活受众或导出数据集。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: ab274270-ae8c-4264-ba64-700b118e6435
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1310'
+source-wordcount: '1308'
 ht-degree: 2%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 2%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -72,13 +72,13 @@ ht-degree: 2%
 
 ## 用于连接[!DNL Google Cloud Storage]帐户的必备设置 {#prerequisites}
 
-为了将Experience Platform连接到[!DNL Google Cloud Storage]，您必须首先为您的[!DNL Google Cloud Storage]帐户启用互操作性。 要访问互操作性设置，请打开[!DNL Google Cloud Platform]并从导航面板的&#x200B;**[!UICONTROL Settings]**&#x200B;选项中选择&#x200B;**[!UICONTROL Cloud Storage]**。
+要将Experience Platform连接到[!DNL Google Cloud Storage]，必须首先为您的[!DNL Google Cloud Storage]帐户启用互操作性。 要访问互操作性设置，请打开[!DNL Google Cloud Platform]并从导航面板的&#x200B;**[!UICONTROL Settings]**&#x200B;选项中选择&#x200B;**[!UICONTROL Cloud Storage]**。
 
 ![突出显示了Cloud Storage和设置的Google Cloud Platform仪表板。](../../../sources/images/tutorials/create/google-cloud-storage/nav.png)
 
 此时会显示&#x200B;**[!UICONTROL Settings]**&#x200B;页面。 在此处，您可以看到有关您的[!DNL Google]项目ID的信息以及有关您的[!DNL Google Cloud Storage]帐户的详细信息。 要访问互操作性设置，请从顶部标题中选择&#x200B;**[!UICONTROL Interoperability]**。
 
-![&#x200B; Google Cloud Platform仪表板中突出显示的“互操作性”选项卡。](../../../sources/images/tutorials/create/google-cloud-storage/project-access.png)
+![ Google Cloud Platform仪表板中突出显示的“互操作性”选项卡。](../../../sources/images/tutorials/create/google-cloud-storage/project-access.png)
 
 **[!UICONTROL Interoperability]**&#x200B;页面包含与您的服务帐户关联的身份验证、访问密钥和默认项目的信息。 要为您的服务帐户生成新的访问密钥ID和秘密访问密钥，请选择&#x200B;**[!UICONTROL Create a Key for a Service Account]**。
 
@@ -89,7 +89,7 @@ ht-degree: 2%
 ## 连接到目标 {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](/help/destinations/ui/connect-destination.md)中描述的步骤操作。 在目标配置工作流中，填写下面两个部分中列出的字段。
@@ -148,13 +148,13 @@ ht-degree: 2%
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 有关将受众激活到此目标的说明，请参阅[将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md)。
 
-### 日程计划
+### 日程计划 {#scheduling}
 
 在&#x200B;**[!UICONTROL Scheduling]**&#x200B;步骤中，您可以[为](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling)目标设置导出计划[!DNL Google Cloud Storage]，还可以[配置导出文件的名称](/help/destinations/ui/activate-batch-profile-destinations.md#file-names)。
 
@@ -168,4 +168,4 @@ ht-degree: 2%
 
 ## IP地址允许列表 {#ip-address-allow-list}
 
-如果您需要将Adobe 列入允许列表 IP添加到，请参阅[IP地址允许列表](ip-address-allow-list.md)一文。
+如果您需要将Adobe IP添加到，请参阅[IP地址允许列表](ip-address-allow-list.md)一文。

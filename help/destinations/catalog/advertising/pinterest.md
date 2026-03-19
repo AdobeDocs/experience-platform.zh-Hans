@@ -2,9 +2,9 @@
 title: Pinterest客户列表连接
 description: 从您的客户列表、访问过您的网站的人或已在Pinterest上与您的内容交互的人中创建受众。
 exl-id: e601f75f-0d40-4cd0-93ca-54d7439f1db7
-source-git-commit: b6673844a98e2c2bb07b44c6d658a902b08cbea0
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '965'
+source-wordcount: '963'
 ht-degree: 4%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 4%
 
 >[!IMPORTANT]
 >
->此目标由Pinterest团队构建。 如有任何查询或更新请求，请直接通过https://help.pinterest.com/en/contact联系。
+>此目标由Pinterest团队构建。 如有任何查询或更新请求，请直接通过https://help.pinterest.com/en/contact联系他们。
 
 ## 先决条件 {#prerequisites}
 
@@ -26,7 +26,7 @@ ht-degree: 4%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Pinterest Customer List]目标支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=zh-Hans#getting-started)的更多信息。
+[!DNL Pinterest Customer List]目标支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started)的更多信息。
 
 在目标激活工作流的[映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)中，将所需的标识映射到目标字段&#x200B;*pinterest_audience*。 标识是在数据摄取到Pinterest时识别和解析的。
 
@@ -45,7 +45,7 @@ ht-degree: 4%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -76,14 +76,14 @@ ht-degree: 4%
 
 为了帮助您更好地了解您应如何以及何时使用[!DNL Pinterest Customer List]目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
 
-### 用例#1
+### 用例#1 {#use-case-1}
 
 从您的客户列表、访问过您的网站的人或已在Pinterest上与您的内容交互的人中创建受众。
 
 ## 连接到目标 {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
@@ -107,11 +107,11 @@ Pinterest令牌每30天过期一次。 您可以从&#x200B;**[!UICONTROL Account
    ![筛选以仅显示Pinterest帐户](/help/destinations/assets/catalog/advertising/pinterest-customer-list/refresh-oauth-filters.png)
 3. 选择要刷新的帐户，选择省略号并选择&#x200B;**[!UICONTROL Edit details]**。
    ![选择“编辑详细信息”控件](/help/destinations/assets/catalog/advertising/pinterest-customer-list/refresh-oauth-edit-details.png)
-4. 在模式窗口中，选择&#x200B;**[!UICONTROL Reconnect OAuth]**&#x200B;并使用您的Pinterest凭据重新进行身份验证。
+4. 在模式窗口中，选择&#x200B;**[!UICONTROL Reconnect OAuth]**并使用您的Pinterest凭据重新进行身份验证。
    使用Reconnect OAuth选项的![模式窗口](/help/destinations/assets/catalog/advertising/pinterest-customer-list/reconnect-oauth-control.png)
 
 >[!SUCCESS]
-> 
+>
 >您的身份验证凭据已刷新，其过期时间将重置为30天。
 
 ### 启用警报 {#enable-alerts}
@@ -123,7 +123,7 @@ Pinterest令牌每30天过期一次。 您可以从&#x200B;**[!UICONTROL Account
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 

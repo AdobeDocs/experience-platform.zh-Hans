@@ -1,11 +1,11 @@
 ---
 title: Google客户匹配+显示和视频360连接
-description: 借助Google Customer Match + Display & Video 360目标连接器，您可以使用Experience Platform中的在线和离线数据在Google自有和运营的资产(如Search、Shopping、Gmail和YouTube)中与客户联系并重新互动。
-badge: 有限发布版
+description: 借助Google Customer Match + Display & Video 360目标连接器，您可以使用Experience Platform中的在线和离线数据在Google自有和运营的资产（如Search、Shopping、Gmail和YouTube）中与客户联系并重新互动。
+badge: label="有限发布版" type="Informative"
 exl-id: f6da3eae-bf3f-401a-99a1-2cca9a9058d2
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '2479'
+source-wordcount: '2475'
 ht-degree: 5%
 
 ---
@@ -18,13 +18,13 @@ ht-degree: 5%
 
 使用此目标将您的第一方基于PII的[[!DNL Google Customer Match]](https://support.google.com/google-ads/answer/6379332?hl=en)列表直接激活到[!DNL Google Display & Video 360]属性，如[!DNL Search]、[!DNL YouTube]、[!DNL Gmail]和[!DNL Google Display Network]。
 
-某些Google集成的第三方(如Adobe Real-Time CDP)可以使用[!DNL Google Audience Partner API]直接在客户的[!DNL Customer Match]帐户中创建[!DNL Display & Video 360]受众。
+某些Google集成的第三方（如Adobe Real-Time CDP）可以使用[!DNL Google Audience Partner API]直接在客户的[!DNL Customer Match]帐户中创建[!DNL Display & Video 360]受众。
 
 由于新引入的功能能够在[!DNL Customer Matched]中利用[!DNL Display & Video 360]受众，您现在可以在扩展的清单源名册中定位受众。
 
 Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/help/destinations/assets/catalog/advertising/gcm-dv360/catalog.png)
 
-## 与欧盟的更新同意要求相关的Google目标更改的重要通知
+## 与欧盟的更新同意要求相关的Google目标更改的重要通知 {#eu-consent-notice}
 
 >[!IMPORTANT]
 >
@@ -36,7 +36,7 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 ><br/>
 >未购买Adobe Privacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/home.md#segment-definitions)中的[区段定义](../../../segmentation/ui/segment-builder.md)功能来过滤掉未经同意的用户档案，以便继续使用现有的Real-Time CDP Google目标而不中断。
 
-## 何时使用此目标
+## 何时使用此目标 {#when-to-use}
 
 目标目录中提供了与Google的多个集成，并且可能很难了解何时使用每个可用的Google目标。 阅读下表中的信息，了解不同的用例：
 
@@ -48,11 +48,11 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 
 为了帮助您更好地了解如何以及何时使用此目标，以下是Adobe Experience Platform客户可以通过使用此功能解决的示例用例。
 
-### 用例#1
+### 用例#1 {#use-case-1}
 
 运动服装品牌希望通过[!DNL Google Search]和[!DNL Google Shopping]联系现有客户，以根据优惠和项目的过去购买和浏览历史记录对其进行个性化设置。 服装品牌可以从自己的CRM中将电子邮件地址摄取到Experience Platform，并从自己的离线数据中构建受众。 然后，他们可以将这些受众发送到[!DNL Google Customer Match + Display & Video 360]目标，以在[!DNL Google Display & Video 360]属性（如[!DNL Search]、[!DNL YouTube]、[!DNL Gmail]和[!DNL Google Display Network]）中使用。
 
-### 用例#2
+### 用例#2 {#use-case-2}
 
 一家知名科技公司发布了一款新手机。 为了推广这种新手机型号，他们正寻求让拥有旧款手机的客户了解手机的新特性和功能。
 
@@ -78,7 +78,7 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -171,7 +171,7 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 * [[!DNL Customer Match] 电子邮件地址、地址或用户ID](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_email_address_address_or_user_id)
 * [[!DNL Customer Match] 注意事项](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_considerations)
 * [[!DNL Customer Match] 使用电话号码](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_phone_number)
-* 具有移动设备ID的[[!DNL Customer Match] &#x200B;](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_mobile_device_ids)
+* 具有移动设备ID的[[!DNL Customer Match] ](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_mobile_device_ids)
 
 要了解如何在Experience Platform中摄取电子邮件地址，请参阅[批次摄取概述](../../../ingestion/batch-ingestion/overview.md)和[流式摄取概述](../../../ingestion/streaming-ingestion/overview.md)。
 
@@ -190,7 +190,7 @@ Attribute source data is not automatically hashed. When your source field contai
 
 The video below demonstrates the steps to configure a [!DNL Google Customer Match] destination and activate audiences. The steps are also laid out sequentially in the next sections.
 
->[!VIDEO](https://video.tv.adobe.com/v/3411783/?quality=12&learn=on&captions=chi_hans) -->
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng) -->
 
 ## 连接到目标 {#connect}
 
@@ -200,7 +200,7 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 >abstract="请确保您在此处输入的 Google 账户 ID 已与您的 Adobe 账户关联。如果您拥有一个包含多个客户账户的 Google 管理员账户，并希望将 Experience Platform 中的数据导出至某个特定的客户账户，则必须先将该客户账户与您的 Adobe 账户关联，并在此处输入对应的账户 ID。"
 
 >[!IMPORTANT]
-> 
+>
 >若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
@@ -225,7 +225,7 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要将&#x200B;*标识*&#x200B;导出到目标，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](../../assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
@@ -271,7 +271,7 @@ For details on how to find the [!DNL App ID], refer to the [Google official docu
 
 完成激活流程后，切换到您的&#x200B;**[!UICONTROL Google Ads]**&#x200B;帐户。 激活的受众在您的Google帐户中显示为客户列表。 根据您的受众规模，除非有1000多个活动用户可提供服务，否则不会填充某些受众。 在[Google Audience Partner文档](https://developers.google.com/audience-partner/api/docs/customer-match/get-started#verify-list)中查找更多信息。 请注意，您需要向Google请求获取对链接中文档的访问权限。
 
-## 数据治理
+## 数据治理 {#data-governance}
 
 Experience Platform中的某些目标对于发送到目标平台或从目标平台接收的数据具有某些规则和义务。 您有责任了解数据的限制和义务，以及如何在Adobe Experience Platform和目标平台中使用该数据。 Adobe Experience Platform提供数据治理工具，帮助您管理其中一些数据使用义务。 [了解有关Data Governance工具和策略的更多信息](../../../data-governance/labels/overview.md)。
 

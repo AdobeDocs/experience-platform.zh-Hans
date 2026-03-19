@@ -4,9 +4,9 @@ title: Qualtrics自动化
 description: 同步体验和运营客户数据以大规模解锁个性化。 在Qualtrics Experience Id中，使用对Adobe Experience Platform中多个运营数据来源的聚合作为输入，以更好地了解您的客户，并实现有针对性的外联，在了解意图、情绪和体验驱动因素方面缩小差距。
 last-substantial-update: 2023-10-25T00:00:00Z
 exl-id: 3289ed4c-8542-4e22-a574-e49cc6527a24
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1291'
+source-wordcount: '1283'
 ht-degree: 3%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->目标连接器和文档页面由Qualtrics团队创建和维护。 如有任何查询或更新请求，请登录[客户成功中心](https://support-portal.qualtrics.com/)直接联系他们。
+>目标连接器和文档页面由Qualtrics团队创建和维护。 对于任何查询或更新请求，请登录[客户成功中心](https://support-portal.qualtrics.com/)直接与他们联系。
 
 ## 用例 {#use-cases}
 
@@ -39,14 +39,14 @@ ht-degree: 3%
 
 **结果**：持续反馈使组织能够调整和改进新员工上线流程，从而在新员工中提高参与度和工作效率。
 
-## 先决条件
+## 先决条件 {#prerequisites}
 
 在Adobe Experience Platform中设置Qualtrics目标之前，请确保满足以下先决条件：
 
 * 您拥有Qualtrics帐户。
 * 您已从Qualtrics获取必要的API令牌。
 
-### 获取API令牌
+### 获取API令牌 {#obtaining-api-token}
 
 以下是从Qualtrics获取API令牌的必要步骤。
 
@@ -73,7 +73,7 @@ ht-degree: 3%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -105,7 +105,7 @@ ht-degree: 3%
 ## 连接到目标 {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写下面两个部分中列出的字段。
@@ -135,18 +135,18 @@ ht-degree: 3%
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
-有关将受众区段激活到此目标的说明，请阅读[将配置文件和区段激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md)。
+有关将受众激活到此目标的说明，请阅读[将受众激活到流式目标](/help/destinations/ui/activate-segment-streaming-destinations.md)。
 
 ### 映射属性和身份 {#map}
 
 此目标具有打开的架构，因此您可以将任何资产发送到Qualtrics。
 
-#### 映射属性
+#### 映射属性 {#map-attributes}
 
-若要向映射添加属性，只需在添加新映射时选择&#x200B;**自定义属性**&#x200B;即可。 您可以为属性输入任何名称。 Qualtrics鼓励对属性名称使用&#x200B;*camelCase*&#x200B;命名约定（请参阅下面的屏幕快照示例）。
+若要向映射中添加属性，请在添加新映射时选择&#x200B;**自定义属性**。 您可以为属性输入任何名称。 Qualtrics鼓励对属性名称使用&#x200B;*camelCase*&#x200B;命名约定（请参阅下面的屏幕快照示例）。
 
 ![自定义属性](/help/destinations/assets/catalog/survey/qualtrics/custom-attribute.png)
 
@@ -154,7 +154,7 @@ ht-degree: 3%
 
 ![映射示例](/help/destinations/assets/catalog/survey/qualtrics/example-mappings.png)
 
-#### 映射身份标识
+#### 映射身份标识 {#map-identities}
 
 必须为此目标选择身份命名空间。 目标字段映射的两个可能的源字段是：
 

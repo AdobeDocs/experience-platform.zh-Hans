@@ -3,9 +3,9 @@ keywords: Doubleclick Floodlight；doubleclick floodlight扩展；doubleclick；
 title: DoubleClick Floodlight (Beta)扩展
 description: DoubleClick Floodlight (Beta)扩展是Adobe Experience Platform中的一个广告目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: 64e1f964-a58e-43d2-8b1a-3baa6104ab3a
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '448'
+source-wordcount: '437'
 ht-degree: 3%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 3%
 
 此扩展允许使用传统的floodlight格式（而非全局站点标记）快速轻松地部署[!DNL DoubleClick Floodlight]标记。 注意：此扩展处于测试阶段。
 
-[!DNL DoubleClick Floodlight] (Beta)是Adobe Experience Platform中的广告扩展。 有关扩展功能的更多信息，请参阅[DoubleClick Floodlight](https://support.google.com/dcm/answer/2823388?hl=en)的[!DNL Google]支持文档。
+[!DNL DoubleClick Floodlight] (Beta)是Adobe Experience Platform中的广告扩展。 有关扩展功能的更多信息，请参阅[!DNL Google]DoubleClick Floodlight[的](https://support.google.com/dcm/answer/2823388?hl=en)支持文档。
 
 此目标是标记扩展。 有关标记扩展如何在Experience Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
@@ -32,11 +32,11 @@ ht-degree: 3%
 
 要安装DoubleClick Floodlight (Beta)扩展，请执行以下操作：
 
-在[Experience Platform界面](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**。
+在[Experience Platform界面](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**。
 
 从目录中选择扩展或使用搜索栏。
 
-单击目标以将其突出显示，然后在右边栏中选择&#x200B;**[!UICONTROL 配置]**。 如果&#x200B;**[!UICONTROL Configure]**&#x200B;控件呈灰显状态，则表示您缺少&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限。 请参阅[先决条件](#prerequisites)。
+选择目标，然后在右边栏中选择&#x200B;**[!UICONTROL Configure]**。 如果&#x200B;**[!UICONTROL Configure]**&#x200B;控件呈灰显状态，则表示您缺少&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限。 请参阅[先决条件](#prerequisites)。
 
 选择要安装扩展的资产。 您还可以选择创建新资产。 资产是规则、数据元素、配置的扩展、环境和库的集合。在标记文档的[属性页面](../../../tags/ui/administration/companies-and-properties.md#properties-page)部分中了解属性。
 

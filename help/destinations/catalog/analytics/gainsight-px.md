@@ -3,10 +3,10 @@ title: Gainsight PX连接
 description: 使用Gainsight PX目标将分段信息发送到Gainsight PX平台。
 last-substantial-update: 2024-02-20T00:00:00Z
 exl-id: 0ca0d34f-f866-4f59-80f8-60198fbb86be
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '988'
-ht-degree: 3%
+source-wordcount: '983'
+ht-degree: 4%
 
 ---
 
@@ -51,7 +51,7 @@ Gainsight PX支持激活下表中描述的标识。 了解有关[标识](../../.
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -96,7 +96,7 @@ Gainsight PX支持激活下表中描述的标识。 了解有关[标识](../../.
 
 * **[!UICONTROL Password]**：用于登录到[[!DNL Gainsight PX]](https://app.aptrinsic.com)的密码
 * **[!UICONTROL Client ID]**： [公司详细信息页面](https://app.aptrinsic.com/settings/subscription)上的Gainsight PX订阅ID
-* **[!UICONTROL Client secret]**：在[&#x200B; UI中的](https://app.aptrinsic.com/settings/subscription)公司详细信息页面[!DNL Gainsight PX]底部生成的OAuth密钥。
+* **[!UICONTROL Client secret]**：在[ UI中的](https://app.aptrinsic.com/settings/subscription)公司详细信息页面[!DNL Gainsight PX]底部生成的OAuth密钥。
 * **[!UICONTROL Username]**：用于登录到[[!DNL Gainsight PX]](https://app.aptrinsic.com) UI的电子邮件
 
 ### 填写目标详细信息 {#destination-details}
@@ -110,14 +110,14 @@ Gainsight PX支持激活下表中描述的标识。 了解有关[标识](../../.
 
 完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
-## 将区段激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 >
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL Manage Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
-有关将受众区段激活到此目标的说明，请阅读[将配置文件和区段激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md)。
+有关将受众激活到此目标的说明，请阅读[将受众激活到流式目标](/help/destinations/ui/activate-segment-streaming-destinations.md)。
 
 ### 映射身份标识 {#map}
 

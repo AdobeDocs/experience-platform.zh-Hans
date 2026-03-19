@@ -5,10 +5,10 @@ title: 使用流服务API删除目标数据流
 type: Tutorial
 description: 了解如何使用流服务API将数据流删除到批处理目标和流式目标。
 exl-id: fa40cf97-46c6-4a10-b53c-30bed2dd1b2d
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '568'
-ht-degree: 14%
+source-wordcount: '563'
+ht-degree: 18%
 
 ---
 
@@ -24,14 +24,14 @@ ht-degree: 14%
 
 本教程还要求您实际了解Adobe Experience Platform的以下组件：
 
-* [目标](../home.md)： [!DNL Destinations]是预先构建的与目标平台的集成，可无缝激活Adobe Experience Platform中的数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
+* [目标](../home.md)： [!DNL Destinations]是预先构建的与目标平台的集成，可无缝激活Adobe Experience Platform中的数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例。
 * [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了使用[!DNL Flow Service] API成功删除数据流时需要了解的其他信息。
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中有关[如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
 
 ### 收集所需标头的值 {#gather-values-for-required-headers}
 
@@ -67,6 +67,8 @@ DELETE /flows/{FLOW_ID}
 | --------- | ----------- |
 | `{FLOW_ID}` | 要删除的目标数据流的唯一`id`值。 |
 
+{style="table-layout:auto"}
+
 **请求**
 
 ```shell
@@ -92,4 +94,4 @@ curl -X DELETE \
 
 有关如何使用用户界面执行这些操作的步骤，请参阅有关[在UI中删除数据流](../ui/delete-destinations.md)的教程。
 
-您现在可以使用[!DNL Flow Service] API继续并[删除目标帐户](/help/destinations/api/delete-destination-account.md)。
+您现在可以使用[ API继续并](/help/destinations/api/delete-destination-account.md)删除目标帐户[!DNL Flow Service]。

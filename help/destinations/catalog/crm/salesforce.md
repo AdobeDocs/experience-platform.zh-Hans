@@ -3,9 +3,9 @@ keywords: crm；CRM；CRM目标；salesforce crm；salesforce crm目标
 title: Salesforce CRM连接
 description: Salesforce CRM目标允许您导出帐户数据，并在Salesforce CRM中激活该数据，以满足您的业务需求。
 exl-id: bd9cb656-d742-4a18-97a2-546d4056d093
-source-git-commit: ef1b0b704d1299282995068a0de330d52884bb95
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '2905'
+source-wordcount: '2903'
 ht-degree: 1%
 
 ---
@@ -33,11 +33,11 @@ ht-degree: 1%
 
 ### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到Salesforce CRM目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=zh-Hans)区段[!DNL Experience Platform]。
+在将数据激活到Salesforce CRM目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)区段[!DNL Experience Platform]。
 
 ### [!DNL Salesforce CRM]中的先决条件 {#prerequisites-destination}
 
-请注意[!DNL Salesforce CRM]中的以下先决条件，以便将数据从Experience Platform导出到您的Salesforce帐户：
+注意[!DNL Salesforce CRM]中的以下先决条件，以将数据从Experience Platform导出到您的Salesforce帐户：
 
 #### 您需要拥有[!DNL Salesforce]帐户 {#prerequisites-account}
 
@@ -66,7 +66,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->如果[!DNL Salesforce]帐户管理员限制了对受信任IP范围的访问，则需要联系他们以获取[Experience Platform 列入允许列表 IP的](/help/destinations/catalog/streaming/ip-address-allow-list.md)访问权限。 如果您需要其他指导，请参阅[!DNL Salesforce] [限制对连接应用程序的受信任IP范围的访问](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&type=5)文档。
+>如果[!DNL Salesforce]帐户管理员限制了对受信任IP范围的访问，则需要联系他们以获取[Experience Platform IP的](/help/destinations/catalog/streaming/ip-address-allow-list.md)访问权限。 如果您需要其他指导，请参阅[!DNL Salesforce] [限制对连接应用程序的受信任IP范围的访问](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&type=5)文档。
 
 #### 在[!DNL Salesforce]中创建自定义字段 {#prerequisites-custom-field}
 
@@ -136,7 +136,7 @@ ht-degree: 1%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -213,7 +213,7 @@ ht-degree: 1%
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
@@ -280,7 +280,7 @@ ht-degree: 1%
 以下显示了[!DNL Salesforce]中的自定义字段示例：
 ![[!DNL Salesforce]显示自定义字段的UI屏幕截图。](../../assets/catalog/crm/salesforce/salesforce-custom-field.png)
 
-以下显示了一个指示[!DNL Salesforce CRM] **[!UICONTROL Mapping ID]**&#x200B;位置的示例：
+以下显示了一个指示[!DNL Salesforce CRM] **[!UICONTROL Mapping ID]**位置的示例：
 ![显示计划受众导出的Experience Platform UI屏幕截图示例。](../../assets/catalog/crm/salesforce/schedule-segment-export.png)
 
 如上所示，[!DNL Salesforce] **[!UICONTROL Field Name]**&#x200B;与[!DNL Salesforce CRM] **[!UICONTROL Mapping ID]**&#x200B;中指定的值完全匹配。
@@ -298,13 +298,13 @@ ht-degree: 1%
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**&#x200B;以导航到目标列表。
+1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**以导航到目标列表。
    ![显示“浏览目标”的Experience Platform UI屏幕截图。](../../assets/catalog/crm/salesforce/browse-destinations.png)
 
 1. 选择目标并验证状态为&#x200B;**[!UICONTROL enabled]**。
    ![Experience Platform UI屏幕截图显示目标数据流运行。](../../assets/catalog/crm/salesforce/destination-dataflow-run.png)
 
-1. 切换到&#x200B;**[!UICONTROL Activation data]**&#x200B;选项卡，然后选择受众名称。
+1. 切换到&#x200B;**[!UICONTROL Activation data]**选项卡，然后选择受众名称。
    ![显示目标激活数据的Experience Platform UI屏幕截图示例。](../../assets/catalog/crm/salesforce/destinations-activation-data.png)
 
 1. 监控受众摘要，并确保用户档案计数对应于在区段内创建的计数。
@@ -314,7 +314,7 @@ ht-degree: 1%
 
    **使用联系人**
 
-   * 如果您在Experience Platform区段中选择了&#x200B;*联系人*，请导航到&#x200B;**[!DNL Apps]** > **[!DNL Contacts]**&#x200B;页面。
+   * 如果您在Experience Platform区段中选择了&#x200B;*联系人*，请导航到&#x200B;**[!DNL Apps]** > **[!DNL Contacts]**页面。
      ![Salesforce CRM屏幕截图显示了包含区段中的配置文件的“联系人”页面。](../../assets/catalog/crm/salesforce/contacts.png)
 
    * 选择&#x200B;*联系人*&#x200B;并检查字段是否已更新。 您可以看到，根据[!DNL Salesforce CRM]受众计划&#x200B;**[!UICONTROL Mapping ID]**&#x200B;期间提供的[值，](#schedule-segment-export-example)中的每个受众状态都更新为Experience Platform中的相应受众状态。
@@ -322,7 +322,7 @@ ht-degree: 1%
 
    **使用潜在客户**
 
-   * 如果您在Experience Platform区段中选择了&#x200B;*潜在客户*，请导航到&#x200B;**[!DNL Apps]** > **[!DNL Leads]**&#x200B;页面。
+   * 如果您在Experience Platform区段中选择了&#x200B;*潜在客户*，请导航到&#x200B;**[!DNL Apps]** > **[!DNL Leads]**页面。
      ![Salesforce CRM屏幕截图显示具有此区段中的配置文件的“潜在客户”页面。](../../assets/catalog/crm/salesforce/leads.png)
 
    * 选择&#x200B;*潜在客户*&#x200B;并检查字段是否已更新。 您可以看到，根据[!DNL Salesforce CRM]受众计划&#x200B;**[!UICONTROL Mapping ID]**&#x200B;期间提供的[值，](#schedule-segment-export-example)中的每个受众状态都更新为Experience Platform中的相应受众状态。

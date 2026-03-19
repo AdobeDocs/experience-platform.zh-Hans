@@ -4,9 +4,9 @@ title: 使用流服务API编辑目标连接
 type: Tutorial
 description: 了解如何使用流服务API编辑目标连接的各种组件。
 exl-id: d6d27d5a-e50c-4170-bb3a-c4cbf2b46653
-source-git-commit: ea397360e5277bef478b2173bfb5e4be4ac1fab4
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1622'
+source-wordcount: '1610'
 ht-degree: 5%
 
 ---
@@ -29,10 +29,10 @@ ht-degree: 5%
 
 本教程还要求您实际了解Adobe Experience Platform的以下组件：
 
-* [目标](../home.md)： [!DNL Destinations]是预先构建的与目标平台的集成，可无缝激活Adobe Experience Platform中的数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
+* [目标](../home.md)： [!DNL Destinations]是预先构建的与目标平台的集成，可无缝激活Adobe Experience Platform中的数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例。
 * [沙盒](../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-以下部分提供了您需要了解的其他信息，以便使用[!DNL Flow Service] API成功更新数据流。
+以下部分提供了使用[!DNL Flow Service] API成功更新数据流时需要了解的其他信息。
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
@@ -64,7 +64,7 @@ Experience Platform中的所有资源（包括属于[!DNL Flow Service]的资源
 
 >[!TIP]
 >
->您可以使用Experience Platform UI获取目标的数据流ID。 转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**，选择所需的目标数据流并在右边栏中找到目标ID。 目标ID是您将在下一步中用作流ID的值。
+>您可以使用Experience Platform UI获取目标的数据流ID。 转到&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**，选择所需的目标数据流并在右边栏中找到目标ID。 目标ID是您将在下一步中用作流ID的值。
 >
 > ![使用Experience Platform UI获取目标ID](/help/destinations/assets/api/edit-destination/get-destination-id.png)
 
@@ -79,6 +79,8 @@ GET /flows/{FLOW_ID}
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{FLOW_ID}` | 要检索的目标数据流的唯一`id`值。 |
+
+{style="table-layout:auto"}
 
 **请求**
 
@@ -233,6 +235,8 @@ curl -X PATCH \
 | `path` | 定义要更新的流部分。 |
 | `value` | 要用于更新参数的新值。 |
 
+{style="table-layout:auto"}
+
 **响应**
 
 成功的响应将返回您的目标连接ID和更新的Etag。 您可以向[!DNL Flow Service] API发出GET请求，同时提供目标连接ID来验证更新。
@@ -248,7 +252,7 @@ curl -X PATCH \
 
 **请求**
 
-以下请求更新[[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md)或[[!DNL Google Ad Manager 360] 目标](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details)连接的参数，以将新的[**[!UICONTROL 附加受众ID添加到受众名称]**](/help/release-notes/2023/april-2023.md#destinations)字段。
+以下请求更新[[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md)或[[!DNL Google Ad Manager 360] 目标](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details)连接的参数以添加新的[**[!UICONTROL Append audience ID to audience name]**](/help/release-notes/2023/april-2023.md#destinations)字段。
 
 ```shell
 curl -X PATCH \
@@ -272,6 +276,8 @@ curl -X PATCH \
 | `op` | 操作调用，用于定义更新数据流所需的操作。 操作包括： `add`、`replace`和`remove`。 |
 | `path` | 定义要更新的流部分。 |
 | `value` | 要用于更新参数的新值。 |
+
+{style="table-layout:auto"}
 
 **响应**
 
@@ -314,6 +320,8 @@ curl -X PATCH \
 | `op` | 操作调用，用于定义更新数据流所需的操作。 操作包括： `add`、`replace`和`remove`。 |
 | `path` | 定义要更新的流部分。 |
 | `value` | 要用于更新参数的新值。 |
+
+{style="table-layout:auto"}
 
 **响应**
 
@@ -392,6 +400,8 @@ curl -X PATCH \
 | `path` | 定义要更新的流部分。 |
 | `value` | 要用于更新参数的新值。 |
 
+{style="table-layout:auto"}
+
 **响应**
 
 成功的响应将返回您的基本连接ID和更新的电子标记。 您可以向[!DNL Flow Service] API发出GET请求来验证更新，同时提供基本连接ID。
@@ -433,6 +443,8 @@ curl -X PATCH \
 | `op` | 操作调用，用于定义更新数据流所需的操作。 操作包括： `add`、`replace`和`remove`。 |
 | `path` | 定义要更新的流部分。 |
 | `value` | 要用于更新参数的新值。 |
+
+{style="table-layout:auto"}
 
 **响应**
 

@@ -3,9 +3,9 @@ title: Moengage连接
 description: Moengage是一个客户参与平台，可实时支持消费者和品牌之间以客户为中心的互动。
 last-substantial-update: 2023-10-11T00:00:00Z
 exl-id: 051f1a10-3c41-4c0a-b187-bf80de0565f0
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1158'
+source-wordcount: '1156'
 ht-degree: 3%
 
 ---
@@ -16,15 +16,15 @@ ht-degree: 3%
 
 使用[!DNL Moengage]目标将您的Adobe数据（用户属性、区段和事件）实时连接并映射到MoEngage。 然后，客户可以根据这些数据采取行动，提供个性化、有针对性的体验。
 
-与Adobe的集成非常简单直观。 只需获取任何Adobe用户配置文件，并将其映射到MoEngage用户属性。
+与Adobe的集成非常简单直观。 获取任何Adobe用户配置文件，并将其映射到MoEngage用户属性。
 
 >[!IMPORTANT]
 >
->此目标连接器和文档页面由&#x200B;*Moengage*&#x200B;团队创建和维护。 如有任何查询或更新请求，请直接通过&#x200B;*`https://help.moengage.com/hc/en-us`.*&#x200B;联系他们
+>此目标连接器和文档页面由&#x200B;*Moengage*&#x200B;团队创建和维护。 如有任何查询或更新请求，请直接通过&#x200B;*`https://help.moengage.com/hc/en-us`.*&#x200B;与他们联系
 
 ## 用例 {#use-cases}
 
-营销人员希望通过[!DNL Moengage]营销活动来定位用户区段(内置于Adobe Experience Platform)。 此外，他们希望根据Adobe Experience Platform用户档案中的属性个性化营销活动内容。 利用此集成，一旦在Adobe Experience Platform中更新区段和用户档案，用户和属性就会在MoEngage中更新。
+营销人员希望通过[!DNL Moengage]营销活动来定位用户区段（内置于Adobe Experience Platform）。 此外，他们希望根据Adobe Experience Platform用户档案中的属性个性化营销活动内容。 利用此集成，一旦在Adobe Experience Platform中更新区段和用户档案，用户和属性就会在MoEngage中更新。
 
 ## 先决条件 {#prerequisites}
 
@@ -51,7 +51,7 @@ ht-degree: 3%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -83,7 +83,7 @@ ht-degree: 3%
 ## 连接到目标 {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写下面两个部分中列出的字段。
@@ -114,10 +114,10 @@ ht-degree: 3%
 
 完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
-## 将区段激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 有关将受众区段激活到此目标的说明，请参阅[将受众数据激活到流式区段导出目标](../../ui/activate-segment-streaming-destinations.md)。

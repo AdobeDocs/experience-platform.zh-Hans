@@ -2,9 +2,9 @@
 description: 了解如何使用目标测试API为您的目标生成测试消息转换模板。
 title: 生成示例消息转换模板
 exl-id: d18a06f7-0c3a-4b4d-a7d5-011690d00e2c
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '377'
+source-wordcount: '375'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 1%
 
 ## 示例模板API操作快速入门 {#get-started}
 
-在继续之前，请查看[入门指南](../../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[快速入门指南](../../getting-started.md)，了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 获取示例模板 {#generate-sample-template}
 
@@ -28,7 +28,7 @@ ht-degree: 1%
 
 >[!TIP]
 >
->* 您应在此处使用的目标ID是与使用`/destinations`端点创建的目标配置相对应的`instanceId`。 有关详细信息，请参阅[检索目标配置](../../authoring-api/destination-configuration/retrieve-destination-configuration.md)。
+>* 您应在此处使用的目标ID是与使用`instanceId`端点创建的目标配置相对应的`/destinations`。 有关详细信息，请参阅[检索目标配置](../../authoring-api/destination-configuration/retrieve-destination-configuration.md)。
 
 **API格式**
 
@@ -39,6 +39,8 @@ GET authoring/testing/template/sample/{DESTINATION_ID}
 | 参数 | 描述 |
 | -------- | ----------- |
 | `{DESTINATION_ID}` | 要为其生成消息转换模板的目标配置的ID。 |
+
+{style="table-layout:auto"}
 
 **请求**
 

@@ -1,18 +1,18 @@
 ---
-keywords: IP地址、IP范围、允许列表目标、允许列表 列入允许列表、流目标
-title: 列入允许列表流目的地的IP地址
+keywords: IP地址、IP范围、允许列表目标、允许列表、流目标
+title: 流目的地的IP地址
 type: Documentation
-description: 此页面提供了可添加到允许列表的IP范围，以便安全地将数据从Experience Platform导出到HTTP REST API端点或Amazon Kinesis实例。
+description: 此页面提供了可添加到IP范围的IP范围，以便安全地将数据从Experience Platform导出到HTTP REST API端点或Amazon Kinesis实例。
 exl-id: f41303bd-c886-4c67-9e39-21efc3f5b768
-source-git-commit: 6d59d0555dda124acfd16483e11c2899ff5c846e
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '425'
+source-wordcount: '424'
 ht-degree: 2%
 
 ---
 
 
-# 列入允许列表用于基于API的流目标的IP地址 {#ip-address-allowlist}
+# 用于基于API的流目标的IP地址 {#ip-address-allowlist}
 
 >[!IMPORTANT]
 >
@@ -39,7 +39,7 @@ ht-degree: 2%
 
 ## 何时允许列表此页中的IP {#when-to-allowlist}
 
-如果您的组织政策要求您允许列表列入允许列表传入流量的IP，则必须先将以下类别的IP范围添加到中，然后再使用本页面上提到的目标：
+如果您的组织政策要求您允许列表传入流量的IP，则必须先将以下类别的IP范围添加到中，然后再使用本页面上提到的目标：
 
 1. 所有[全局IP地址](#global)
 2. 除了全局IP地址外，还从页面的下面列表中，添加与您预配的区域相对应的IP地址。 使用这些流目标时，如果未能将特定于地区的IP范围添加到允许列表，可能会导致错误或性能下降。

@@ -2,10 +2,10 @@
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK检索目标服务器配置的API调用。
 title: 检索目标服务器配置
 exl-id: 1b375343-e793-4c91-856f-af66fe71822e
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '467'
-ht-degree: 0%
+source-wordcount: '465'
+ht-degree: 1%
 
 ---
 
@@ -22,15 +22,15 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 目标服务器API操作快速入门 {#get-started}
 
-在继续之前，请查看[入门指南](../../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[快速入门指南](../../getting-started.md)，了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 检索目标服务器配置 {#retrieve}
 
-您可以通过向`/authoring/destination-servers`端点发出`GET`请求来检索现有的目标服务器配置。
+您可以通过向`GET`端点发出`/authoring/destination-servers`请求来检索现有的目标服务器配置。
 
 >[!TIP]
 >
@@ -168,6 +168,8 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 | 参数 | 描述 |
 | -------- | ----------- |
 | `{INSTANCE_ID}` | 要检索的目标服务器配置的ID。 |
+
+{style="table-layout:auto"}
 
 +++
 

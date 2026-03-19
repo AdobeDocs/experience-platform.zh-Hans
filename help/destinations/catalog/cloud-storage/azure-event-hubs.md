@@ -4,9 +4,9 @@ title: Azure事件中心连接
 description: 创建到 [!DNL Azure Event Hubs] 存储的实时出站连接，以从Experience Platform流式传输数据。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: ef1b0b704d1299282995068a0de330d52884bb95
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '2156'
+source-wordcount: '2155'
 ht-degree: 5%
 
 ---
@@ -73,12 +73,12 @@ UI中的![AWS Kinesis](../../assets/catalog/cloud-storage/event-hubs/catalog.png
 
 ## IP地址允许列表 {#ip-address-allowlist}
 
-为了满足客户的安全和合规性要求，Experience Platform提供了您可以为[!DNL Azure Event Hubs]目标允许列表的静态IP列表。 有关要允许列表的IP的完整列表，请参阅[流目标的IP地址允许列表](/help/destinations/catalog/streaming/ip-address-allow-list.md)。
+为了满足客户的安全和合规性要求，Experience Platform提供了您可以为[!DNL Azure Event Hubs]目标允许列表的静态IP列表。 有关要允许列表的IP的完整列表，请参阅[流目标的IP地址](/help/destinations/catalog/streaming/ip-address-allow-list.md)。
 
 ## 连接到目标 {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 连接到此目标时，必须提供以下信息：
@@ -137,7 +137,7 @@ UI中的![AWS Kinesis](../../assets/catalog/cloud-storage/event-hubs/catalog.png
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 当前在导出到Azure事件中心目标时不支持[同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)。 [了解详情](/help/destinations/ui/activate-streaming-profile-destinations.md#consent-policy-evaluation)。
 

@@ -3,16 +3,16 @@ title: 根据LiveRamp标识符将受众激活到策划的目标
 type: Tutorial
 description: 了解如何使用LiveRamp RampID将受众从Adobe Experience Platform激活到连接的电视和音频目标以及其他集成。
 exl-id: 37e5bab9-588f-40b3-b65b-68f1a4b868f1
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '662'
+source-wordcount: '660'
 ht-degree: 0%
 
 ---
 
 # 根据LiveRamp标识符将受众激活到策划的目标
 
-使用与[!DNL LiveRamp]的Adobe Real-Time CDP集成将受众激活到使用[[!DNL [LiveRamp RampID]]](https://docs.liveramp.com/connect/en/interpreting-rampid,-liveramp-s-people-based-identifier.html)进行激活的策划的目标列表，包括连接的电视和音频目标，如下面列出的目标。
+使用与[!DNL LiveRamp]的Adobe Real-Time CDP集成将受众激活到使用[!DNL [LiveRamp RampID]](https://docs.liveramp.com/connect/en/interpreting-rampid,-liveramp-s-people-based-identifier.html)进行激活的策划的目标列表，包括连接的电视和音频目标，如下面列出的目标。
 
 >[!IMPORTANT]
 >
@@ -62,11 +62,11 @@ ht-degree: 0%
 
 观看以下视频，了解此页面中描述的工作流的端到端说明。
 
->[!VIDEO](https://video.tv.adobe.com/v/3452667?captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/3425367)
 
 ### 步骤1：通过[!DNL LiveRamp - Onboarding]目标将受众从Experience Platform发送到LiveRamp {#onboarding}
 
-要将受众激活到基于LiveRamp RampIDs的策划目标，您必须执行的第一个操作是&#x200B;**将受众从Experience Platform导出到[!DNL LiveRamp]**。
+要将受众激活到基于LiveRamp RampID的策划目标，您必须首先执行如下操作：**将受众从Experience Platform导出到[!DNL LiveRamp]**。
 
 可使用&#x200B;**[!DNL LiveRamp - Onboarding]**&#x200B;目标执行此操作。
 
@@ -89,7 +89,7 @@ ht-degree: 0%
 
 在您[验证](../catalog/advertising/liveramp-onboarding.md#exported-data)您的受众已成功导出到LiveRamp之后，就可以将受众激活到您的首选目标，如[[!DNL Roku]](../catalog/advertising/liveramp-distribution.md#roku)、[[!DNL Disney]](../catalog/advertising/liveramp-distribution.md#disney)等。
 
-使用&#x200B;**[!DNL LiveRamp - Distribution]**&#x200B;目标激活受众（在[步骤1](#onboarding)中导出）。
+使用[目标激活受众（在](#onboarding)步骤1 **[!DNL LiveRamp - Distribution]**&#x200B;中导出）。
 
 显示LiveRamp — 分发目标卡的![Experience Platform UI图像](../assets/ui/activate-curated-destinations-liveramp/liveramp-distribution-catalog.png)
 
@@ -97,7 +97,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->在&#x200B;**[!DNL LiveRamp - Distribution]**&#x200B;目标的&#x200B;**受众选择**&#x200B;步骤中，您必须在[步骤1](#onboarding)中选择已导出到[LiveRamp — 载入](../catalog/advertising/liveramp-onboarding.md)目标的&#x200B;*完全相同的受众*。
+>在&#x200B;**目标的**&#x200B;受众选择&#x200B;**[!DNL LiveRamp - Distribution]**&#x200B;步骤中，您必须在&#x200B;*步骤1*&#x200B;中选择已导出到[LiveRamp — 载入](../catalog/advertising/liveramp-onboarding.md)目标的[完全相同的受众](#onboarding)。
 
 在配置&#x200B;**[!DNL LiveRamp - Distribution]**&#x200B;目标时，必须为要使用的每个下游目标（Roku、Disney等）创建专用连接。
 

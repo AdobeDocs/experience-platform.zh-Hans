@@ -2,10 +2,10 @@
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK更新现有目标配置的API调用。
 title: 更新目标配置
 exl-id: d7f18689-9806-4f73-a63a-fa112569819c
-source-git-commit: 163c6f6bacfd6f0928b1053bd146a2d4fc4c74d0
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '371'
-ht-degree: 1%
+source-wordcount: '369'
+ht-degree: 2%
 
 ---
 
@@ -34,15 +34,15 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 目标配置API操作快速入门 {#get-started}
 
-在继续之前，请查看[入门指南](../../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[快速入门指南](../../getting-started.md)，了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 更新目标配置 {#update}
 
-您可以通过向`/authoring/destinations`终结点发出包含已更新负载的`PUT`请求来更新[现有](create-destination-configuration.md)目标配置。
+您可以通过向[终结点发出包含已更新负载的](create-destination-configuration.md)请求来更新`PUT`现有`/authoring/destinations`目标配置。
 
 >[!TIP]
 >
@@ -60,9 +60,11 @@ PUT /authoring/destinations/{INSTANCE_ID}
 | -------- | ----------- |
 | `{INSTANCE_ID}` | 要更新的目标配置的ID。 要获取现有目标配置及其对应的`{INSTANCE_ID}`，请参阅[检索目标配置](retrieve-destination-configuration.md)。 |
 
+{style="table-layout:auto"}
+
 +++请求
 
-以下请求使用不同的`filenameConfig`选项更新我们在[此示例](create-destination-configuration.md#create)中创建的目标。
+以下请求使用不同的[选项更新我们在](create-destination-configuration.md#create)此示例`filenameConfig`中创建的目标。
 
 ```shell {line-numbers="true" highlight="115-128"}
 curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinations/{INSTANCE_ID} \
@@ -209,7 +211,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 Destination SDK API端点遵循常规Experience Platform API错误消息原则。 请参阅Experience Platform疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
 
-## 后续步骤
+## 后续步骤 {#next-steps}
 
 阅读本文档后，您现在知道如何通过Destination SDK `/authoring/destinations` API端点更新目标配置。
 

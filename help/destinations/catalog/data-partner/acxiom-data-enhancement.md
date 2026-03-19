@@ -2,11 +2,11 @@
 title: Acxiom数据增强
 description: 使用此连接器可在Real-Time CDP中将第一方Adobe配置文件激活到Acxiom，以便跨营销渠道扩充和使用该连接器。 然后，您可以使用 Acxiom 源导入具有增强数据的轮廓，并在 Real-Time CDP 中使用它们。
 last-substantial-update: 2024-03-14T00:00:00Z
-badge: Beta 版
+badge: label="Beta 版" type="Informative"
 exl-id: 59edc43d-ae8e-4c3d-820c-b5be1c4483f9
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1439'
+source-wordcount: '1436'
 ht-degree: 4%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 4%
 
 >[!NOTE]
 >
->[!DNL Acxiom Data Enhancement]目标为测试版。  此目标连接器和文档页面由Acxiom团队创建和维护。 如有任何查询或更新请求，请直接通过acxiom-adobe-help@acxiom.com联系。
+>[!DNL Acxiom Data Enhancement]目标为测试版。  此目标连接器和文档页面由Acxiom团队创建和维护。 如有任何查询或更新请求，请直接通过acxiom-adobe-help@acxiom.com联系他们。
 
 ## 概述 {#overview}
 
@@ -57,7 +57,7 @@ ht-degree: 4%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -107,13 +107,13 @@ ht-degree: 4%
 | S3密钥 | 存储桶的密钥ID。 您可以从[!DNL Acxiom]团队中检索此值。 |
 | 存储桶名称 | 这是将共享文件的存储段。 您可以从[!DNL Acxiom]团队中检索此值。 |
 
-### 新建帐户
+### 新建帐户 {#new-account}
 
 要定义新的Acxiom Managed S3位置，请执行以下操作：
 
 ![新帐户](../../assets/catalog/data-partner/acxiom/image-destination-new-account.png)
 
-### 现有帐户
+### 现有帐户 {#existing-account}
 
 已使用[!DNL Acxiom Data Enhancement]目标定义的帐户将显示在列表弹出窗口中。 选中后，您可以在右边栏中查看有关帐户的详细信息。 当您导航到&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Accounts]**&#x200B;时，从UI查看示例；
 
@@ -152,7 +152,7 @@ ht-degree: 4%
 
 有关将受众激活到此目标的说明，请阅读[将受众数据激活到批处理配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md)。
 
-### 映射建议
+### 映射建议 {#mapping-suggestions}
 
 在Acxiom端正确处理文件需要名称和地址元素。 虽然并非所有元素都是必需的，但尽可能多地提供将有助于成功匹配。
 
@@ -177,7 +177,7 @@ ht-degree: 4%
 
 要验证数据是否已成功导出，请检查您的[!DNL Amazon S3 Storage]存储段并确保导出的文件包含预期的配置文件人口。
 
-## 后续步骤
+## 后续步骤 {#next-steps}
 
 通过学习本教程，您已成功创建数据流以将配置文件数据从Experience Platform导出到[!DNL Acxiom]托管的S3位置。 接下来，您需要联系Acxiom代表，提供帐户名称、文件名和存储段路径，以便能够设置处理。
 

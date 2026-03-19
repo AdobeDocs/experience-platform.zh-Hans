@@ -2,7 +2,7 @@
 title: Marketo Engage连接
 description: Marketo Engage是唯一一款用于营销、广告、分析和商务的端到端客户体验管理(CXM)解决方案。 您可以从自动化和管理活动，从CRM商机管理和客户参与到基于帐户的营销和收入归因。
 exl-id: e02b6c65-b59e-41ff-8d33-f8fecfd87773
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '1875'
 ht-degree: 2%
@@ -45,7 +45,7 @@ ht-degree: 2%
 
 ## 先决条件 {#prerequisites}
 
-* 设置目标的用户在其Marketo实例和分区中必须具有[编辑人员](https://experienceleague.adobe.com/zh-hans/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database)权限。
+* 设置目标的用户在其Marketo实例和分区中必须具有[编辑人员](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database)权限。
 * 设置此目标时，只有同一Adobe Real-Time CDP组织上的Marketo Engage实例可用。
 * 只有在Adobe Admin Console中管理用户的Marketo Engage实例才能使用此目标。
 
@@ -66,7 +66,7 @@ ht-degree: 2%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> <br> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> <br> |
 
 {style="table-layout:auto"}
 
@@ -108,7 +108,7 @@ Marketo使用您选择的&#x200B;**[!UICONTROL Marketo deduplication field]**&#x
 
 {style="table-layout:auto"}
 
-### 重要注意事项
+### 重要注意事项 {#important-considerations}
 
 * **重复数据删除字段选择**：选择在您的客户配置文件中始终可用且唯一的字段（例如：电子邮件地址、客户ID）
 * **分区处理**：创建新潜在客户时，会将它们放置在所选分区中（或者，如果未选择分区，则将&#x200B;**[!UICONTROL Default]**&#x200B;分区）
@@ -118,7 +118,7 @@ Marketo使用您选择的&#x200B;**[!UICONTROL Marketo deduplication field]**&#x
 ## 连接到目标 {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。
 >
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
@@ -145,8 +145,8 @@ Marketo使用您选择的&#x200B;**[!UICONTROL Marketo deduplication field]**&#x
    * **[!UICONTROL Audience and profile]**：如果您希望将受众成员添加到Marketo列表并保持其配置文件信息最新，请选择此选项。
    * **[!UICONTROL Profile only]**：当您想要使用Experience Platform中的最新信息使Marketo潜在客户配置文件保持最新时，请选择此选项。
    * **[!UICONTROL Audience only]**：如果要将受众成员添加到Marketo列表而不更新其配置文件信息，请选择此选项。
-* **[!UICONTROL Partition]**： *分区选择仅在选择&#x200B;**[!UICONTROL Profile only]**&#x200B;或&#x200B;**[!UICONTROL Audience and profile]**&#x200B;同步类型*&#x200B;时可用。 选择与所选工作区关联的Marketo分区ID。 这允许您指定Marketo中的哪个潜在客户分区将接收导出的数据。 如果不选择特定的分区，您的数据将发送到Marketo中的&#x200B;**[!UICONTROL Default]**&#x200B;分区。
-* **[!UICONTROL Marketo deduplication field]**：选择更新现有Marketo潜在客户时要使用的Marketo重复数据删除字段。 此选择器显示您在Marketo中标记为重复数据删除字段的字段。 如果您希望Marketo中的特定字段显示为重复数据删除字段，则必须将该字段标记为Marketo中的[可搜索字段](https://experienceleague.adobe.com/zh-hans/docs/marketo-developer/marketo/rest/lead-database/lead-database)。
+* **[!UICONTROL Partition]**： *分区选择仅在选择&#x200B;**[!UICONTROL Profile only]**或&#x200B;**[!UICONTROL Audience and profile]**同步类型*&#x200B;时可用。 选择与所选工作区关联的Marketo分区ID。 这允许您指定Marketo中的哪个潜在客户分区将接收导出的数据。 如果不选择特定的分区，您的数据将发送到Marketo中的&#x200B;**[!UICONTROL Default]**&#x200B;分区。
+* **[!UICONTROL Marketo deduplication field]**：选择更新现有Marketo潜在客户时要使用的Marketo重复数据删除字段。 此选择器显示您在Marketo中标记为重复数据删除字段的字段。 如果您希望Marketo中的特定字段显示为重复数据删除字段，则必须将该字段标记为Marketo中的[可搜索字段](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/lead-database/lead-database)。
 
   >[!NOTE]
   >
@@ -165,7 +165,7 @@ Marketo使用您选择的&#x200B;**[!UICONTROL Marketo deduplication field]**&#x
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 

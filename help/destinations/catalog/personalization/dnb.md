@@ -3,9 +3,9 @@ keywords: D&B Visitor Intelligence；D&amp；B；访客智能扩展
 title: D&B Visitor Intelligence扩展
 description: D&B访客智能扩展是Adobe Experience Platform中的个性化目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: e06833d9-51d7-4b0c-a9ce-28e0fadc2b62
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '429'
+source-wordcount: '418'
 ht-degree: 4%
 
 ---
@@ -32,11 +32,11 @@ ht-degree: 4%
 
 要安装D&amp;B Visitor Intelligence扩展：
 
-在[Experience Platform界面](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**。
+在[Experience Platform界面](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**。
 
 从目录中选择扩展或使用搜索栏。
 
-单击目标以将其突出显示，然后在右边栏中选择&#x200B;**[!UICONTROL 配置]**。 如果&#x200B;**[!UICONTROL Configure]**&#x200B;控件呈灰显状态，则表示您缺少&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限。 请参阅[先决条件](#prerequisites)。
+选择目标，然后在右边栏中选择&#x200B;**[!UICONTROL Configure]**。 如果&#x200B;**[!UICONTROL Configure]**&#x200B;控件呈灰显状态，则表示您缺少&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限。 请参阅[先决条件](#prerequisites)。
 
 选择要安装扩展的资产。 您还可以选择创建新资产。 资产是规则、数据元素、配置的扩展、环境和库的集合。在标记文档的[属性页面](../../../tags/ui/administration/companies-and-properties.md#properties-page)部分中了解属性。
 

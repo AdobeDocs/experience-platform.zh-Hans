@@ -5,9 +5,9 @@ badge: label="Alpha" type="Informative"
 hide: true
 hidefromtoc: true
 exl-id: cd792eb0-9e90-49e4-8c50-c65126e355c2
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1913'
+source-wordcount: '1912'
 ht-degree: 3%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 3%
 
 
 >[!IMPORTANT]
-> 
+>
 > 这是[Salesforce Marketing Cloud帐户参与](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md)目标的V2版本。 此版本取代了以前的目标，当前位于Alpha版本中。
 > <br>
 > 如果您当前使用的是[Salesforce Marketing Cloud帐户参与](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md)目标的早期版本，则必须在&#x200B;**2026年1月**&#x200B;之前迁移到此V2版本。 2026年1月后，Adobe将停用以前的版本，并且不再可用。
@@ -54,7 +54,7 @@ ht-degree: 3%
 
 ### [!DNL Salesforce Marketing Cloud Account Engagement]先决条件 {#prerequisites-destination}
 
-请注意以下先决条件，以便将数据从Experience Platform导出到您的[!DNL Marketing Cloud Account Engagement]帐户：
+请注意将数据从Experience Platform导出到您的[!DNL Marketing Cloud Account Engagement]帐户的以下先决条件：
 
 #### 您需要拥有[!DNL Marketing Cloud Account Engagement]帐户 {#prerequisites-account}
 
@@ -91,7 +91,7 @@ ht-degree: 3%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -163,7 +163,7 @@ ht-degree: 3%
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
@@ -219,7 +219,7 @@ Salesforce Marketing Cloud帐户参与目标支持下表中描述的目标属性
 1. 导航到您选择的受众之一。 选择 **[!DNL Activation data]** 选项卡。**[!UICONTROL Mapping ID]**&#x200B;列显示在[!DNL Marketing Cloud Account Engagement Prospects]页面中生成的自定义字段的名称。
    ![显示选定区段映射ID的Experience Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement-v2/selected-segment-mapping-id.png)
 
-1. 登录到[[!DNL Salesforce]](https://login.salesforce.com/)网站。 然后导航到&#x200B;**[!DNL Account Engagement]** > **[!DNL Prospects]** > **[!DNL Pardot Prospects]**&#x200B;页面，并检查受众中的潜在客户是否已添加/更新。 或者，您也可以访问[[!DNL Account Engagement]](https://pi.pardot.com/)并访问&#x200B;**[!DNL Prospects]**&#x200B;页面。
+1. 登录到[[!DNL Salesforce]](https://login.salesforce.com/)网站。 然后导航到&#x200B;**[!DNL Account Engagement]** > **[!DNL Prospects]** > **[!DNL Pardot Prospects]**&#x200B;页面，并检查受众中的潜在客户是否已添加/更新。 或者，您也可以访问[[!DNL Account Engagement]](https://pi.pardot.com/)并访问&#x200B;**[!DNL Prospects]**页面。
    ![显示“潜在客户”页面的Salesforce UI屏幕截图。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement-v2/prospects.png)
 
 1. 要检查潜在客户是否已更新，请选择一个潜在客户，并验证自定义潜在客户字段是否已使用Experience Platform受众状态进行更新。

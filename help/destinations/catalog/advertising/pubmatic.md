@@ -3,9 +3,9 @@ title: PubMatic Connect
 description: PubMatic通过提供面向未来的程序化数字营销supply chain，最大程度地实现客户价值。 PubMatic Connect将平台技术和专用服务相结合，以增强库存和数据打包和事务处理的方式。
 last-substantial-update: 2025-02-12T00:00:00Z
 exl-id: 21e07d2c-9a6a-4cfa-a4b8-7ca48613956c
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1151'
+source-wordcount: '1146'
 ht-degree: 3%
 
 ---
@@ -64,7 +64,7 @@ ht-degree: 3%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -131,7 +131,7 @@ ht-degree: 3%
 
 完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
-## 将区段激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 >
@@ -139,7 +139,7 @@ ht-degree: 3%
 >
 > - 要导出&#x200B;_标识_，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](../../assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
-有关将受众区段激活到此目标的说明，请阅读[将配置文件和区段激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md)。
+有关将受众激活到此目标的说明，请阅读[将受众激活到流式目标](/help/destinations/ui/activate-segment-streaming-destinations.md)。
 
 ### 映射属性和身份 {#map}
 
@@ -154,7 +154,7 @@ ht-degree: 3%
 
 ![映射属性和标识](../..//assets/catalog/advertising/pubmatic/export-identities-to-destination.png)
 
-### 受众计划
+### 受众计划 {#audience-scheduling}
 
 如果您使用的是PubMatic Connect（自定义受众ID映射）目标，则必须为每个受众提供一个映射ID，以使其与PubMatic平台中的“Source受众ID”相对应。
 

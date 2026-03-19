@@ -4,9 +4,9 @@ title: 更新目标帐户
 type: Tutorial
 description: 本教程列出了在Adobe Experience Platform UI中更新目标帐户的步骤
 exl-id: afb41878-4205-4c64-af4d-e2740f852785
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '504'
+source-wordcount: '490'
 ht-degree: 0%
 
 ---
@@ -15,9 +15,9 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-**[!UICONTROL 帐户]**&#x200B;选项卡显示有关您与各种目标建立的连接的详细信息。 请参阅[帐户概述](../ui/destinations-workspace.md#accounts)，以了解有关每个目标帐户的所有信息。
+**[!UICONTROL Accounts]**&#x200B;选项卡显示有关您与各种目标建立的连接的详细信息。 请参阅[帐户概述](../ui/destinations-workspace.md#accounts)，以了解有关每个目标帐户的所有信息。
 
-本教程介绍了使用Experience PlatformUI更新目标帐户详细信息的步骤。
+本教程介绍了使用Experience Platform UI更新目标帐户详细信息的步骤。
 
 您可以更新目标帐户详细信息，以刷新和重新验证您当前使用的目标的当前帐户或已过期帐户的凭据。 通常，OAuth和持有者令牌的生命周期有限，具体取决于目标平台。 当这些令牌过期时，您可以在下面进一步描述的工作流中刷新它们。 此工作流指导您完成OAuth工作流或重新插入令牌。 同样，如果密码或用户访问权限在下游平台中发生更改，您可以刷新凭据。
 
@@ -29,7 +29,7 @@ ht-degree: 0%
 
 请按照以下步骤将连接详细信息更新到现有目标。
 
-1. 登录到[Experience PlatformUI](https://platform.adobe.com/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL 目标]**。 从顶部标题中选择&#x200B;**[!UICONTROL 帐户]**&#x200B;以查看现有帐户。
+1. 登录到[Experience Platform UI](https://platform.adobe.com/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL Destinations]**。 从顶部标题中选择&#x200B;**[!UICONTROL Accounts]**&#x200B;以查看现有帐户。
 
    ![帐户选项卡](../assets/ui/update-accounts/accounts-tab.png)
 
@@ -37,13 +37,13 @@ ht-degree: 0%
 
    ![筛选目标帐户](../assets/ui/update-accounts/filter-accounts.png)
 
-3. 选择要更新的帐户名称旁边的省略号(`...`)。 此时会显示一个弹出面板，其中提供了&#x200B;**[!UICONTROL 激活受众]**、**[!UICONTROL 编辑详细信息]**&#x200B;和&#x200B;**[!UICONTROL 删除]**&#x200B;帐户的选项。 选择![编辑详细信息按钮](/help/images/icons/edit.png) **[!UICONTROL 编辑详细信息]**&#x200B;按钮以编辑帐户信息。
+3. 选择要更新的帐户名称旁边的省略号(`...`)。 此时将出现一个弹出面板，其中提供帐户&#x200B;**[!UICONTROL Activate audiences]**、**[!UICONTROL Edit details]**&#x200B;和&#x200B;**[!UICONTROL Delete]**&#x200B;的选项。 选择![编辑详细信息按钮](/help/images/icons/edit.png) **[!UICONTROL Edit details]**&#x200B;以编辑帐户信息。
 
    ![编辑帐户](../assets/ui/update-accounts/accounts-edit.png)
 
 4. 输入更新后的帐户凭据。
 
-   * 对于使用`OAuth1`或`OAuth2`连接类型的帐户，请选择&#x200B;**[!UICONTROL 重新连接OAuth]**&#x200B;以续订帐户凭据。 您还可以更新帐户的名称和描述。
+   * 对于使用`OAuth1`或`OAuth2`连接类型的帐户，请选择&#x200B;**[!UICONTROL Reconnect OAuth]**&#x200B;以续订帐户凭据。 您还可以更新帐户的名称和描述。
 
    ![编辑详细信息OAuth](../assets/ui/update-accounts/edit-details-oauth.png)
 
@@ -59,10 +59,10 @@ ht-degree: 0%
 
    ![编辑服务器到服务器的详细信息](../assets/ui/update-accounts/edit-details-s2s.png)
 
-5. 选择&#x200B;**[!UICONTROL 保存]**&#x200B;以完成帐户详细信息更新。
+5. 选择&#x200B;**[!UICONTROL Save]**&#x200B;以完成帐户详细信息更新。
 
-## 后续步骤
+## 后续步骤 {#next-steps}
 
-通过学习本教程，您已成功使用&#x200B;**[!UICONTROL 目标]**&#x200B;工作区来更新现有帐户。
+通过完成本教程，您已成功使用&#x200B;**[!UICONTROL destinations]**&#x200B;工作区来更新现有帐户。
 
 有关目标的详细信息，请参阅[目标概述](../catalog/overview.md)。

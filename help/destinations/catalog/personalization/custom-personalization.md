@@ -3,7 +3,7 @@ keywords: 自定义个性化；目标；experience platform自定义目标；
 title: 自定义个性化连接
 description: 此目标提供外部个性化、内容管理系统、广告服务器以及在您的网站上运行的其他应用程序，以便从Adobe Experience Platform检索受众信息。 此目标根据用户个人资料受众成员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '1126'
 ht-degree: 8%
@@ -58,7 +58,7 @@ ht-degree: 8%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -89,10 +89,10 @@ ht-degree: 8%
 >id="platform_destinations_custom_personalization_datastream"
 >title="关于数据流"
 >abstract="此选项确定受众将包含在哪个数据收集数据流中以响应页面。下拉菜单仅显示已启用目标配置的数据流。您必须先配置数据流，然后才能配置目标。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html?lang=zh-Hans#" text="了解如何配置数据流"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html#" text="了解如何配置数据流"
 
 >[!IMPORTANT]
-> 
+>
 >若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
@@ -115,7 +115,7 @@ ht-degree: 8%
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 有关将受众激活到此目标的说明，请阅读[激活配置文件和受众边缘个性化目标](../../ui/activate-edge-personalization-destinations.md)。
@@ -180,7 +180,7 @@ alloy("sendEvent", {
   });
 ```
 
-### [!UICONTROL Custom Personalization With Attributes]的示例响应
+### [!UICONTROL Custom Personalization With Attributes]的示例响应 {#example-response-custom-personalization-with-attributes}
 
 使用&#x200B;**[!UICONTROL Custom Personalization With Attributes]**&#x200B;时，API响应将与以下示例类似。
 

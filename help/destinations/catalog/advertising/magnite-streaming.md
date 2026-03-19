@@ -3,9 +3,9 @@ title: Magnite实时目标连接
 description: 使用此目标可将Adobe CDP受众实时交付到Magnite流平台。
 last-substantial-update: 2024-11-18T00:00:00Z
 exl-id: 4e08a14b-6800-41e1-95a5-826a6241144d
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1410'
+source-wordcount: '1403'
 ht-degree: 2%
 
 ---
@@ -23,11 +23,13 @@ Adobe Experience Platform中的[!DNL Magnite: Real-Time]和[Magnite：批处理]
 * 激活[!DNL Magnite: Real-Time]目标上的受众，如本页所示。
 * 在Magnite：批处理目标上激活相同受众。 [!DNL Magnite: Batch]目标是必需组件。 如果未在[!DNL Magnite Streaming]批处理目标上激活受众，则会导致集成失败，并且不会激活您的受众。
 
-注意：使用实时目标时，[!DNL Magnite Streaming]将实时接收受众，但Magnite只能暂时在其平台上存储实时受众，并且这些受众将在几天内从系统中删除。 因此，如果您要使用Magnite：实时目标，您&#x200B;*还*&#x200B;需要使用Magnite：批处理目标 — 您激活到实时目标的每个受众，还需要激活到批处理目标。
+>[!NOTE]
+>
+>在使用实时目标时，[!DNL Magnite Streaming]将实时接收受众，但Magnite只能暂时在其平台中存储实时受众，并且这些受众将在几天内从系统中删除。 因此，如果您要使用Magnite：实时目标，您&#x200B;*还*&#x200B;需要使用Magnite：批处理目标 — 您激活到实时目标的每个受众，还需要激活到批处理目标。
 
 >[!IMPORTANT]
 >
->目标连接器和文档页面由[!DNL Magnite]团队创建和维护。 如有任何查询或更新请求，请直接通过`adobe-tech@magnite.com`联系他们。
+>目标连接器和文档页面由[!DNL Magnite]团队创建和维护。 如有任何查询或更新请求，请直接通过`adobe-tech@magnite.com`与他们联系。
 
 ## 用例 {#use-cases}
 
@@ -59,7 +61,7 @@ Adobe Experience Platform中的[!DNL Magnite: Real-Time]和[Magnite：批处理]
 | 受众来源 | 受支持 | 描述 |
 |-----------------------------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -129,14 +131,14 @@ Adobe Experience Platform中的[!DNL Magnite: Real-Time]和[Magnite：批处理]
 
 完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
-## 将区段激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 >
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View destinations]**、**[!UICONTROL Activate destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
-有关将受众区段激活到此目标的说明，请阅读[将配置文件和区段激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md)。
+有关将受众激活到此目标的说明，请阅读[将受众激活到流式目标](/help/destinations/ui/activate-segment-streaming-destinations.md)。
 
 创建目标连接后，您可以进入受众激活流程。 以下部分将介绍如何使用实时目标激活受众。
 
@@ -178,7 +180,7 @@ Adobe Experience Platform中的[!DNL Magnite: Real-Time]和[Magnite：批处理]
 
 * 摄取后，受众应在几分钟内显示在[!DNL Magnite Streaming]中，并可应用于交易。 您可以通过查找在Adobe Experience Platform中的激活步骤中共享的区段ID来确认这一点。
 
-## 通过[!DNL Magnite: Batch]目标激活相同受众
+## 通过[!DNL Magnite: Batch]目标激活相同受众 {#activate-magnite-batch}
 
 使用实时目标与[!DNL Magnite Streaming]共享的受众还需要使用Magnite：批处理目标进行共享。 正确配置后，[!DNL Magnite Streaming] UI中的区段名称会更新，以反映Adobe Experience Platform每日更新后使用的名称。
 

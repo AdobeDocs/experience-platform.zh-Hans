@@ -2,11 +2,11 @@
 keywords: 广告；microsoft ads；客户匹配；
 title: Microsoft Ads客户匹配连接
 description: 使用Microsoft广告客户匹配目标按电子邮件地址匹配客户，并在Microsoft Advertising网络中重新与客户互动，包括搜索和受众广告。
-badge: Beta 版
+badge: label="Beta 版" type="Informative"
 hide: true
 hidefromtoc: true
 exl-id: 4d405ffb-f600-463b-a215-44e806b6d139
-source-git-commit: 82f412676c89d7d14116be9328ab7fa438e10fc0
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '1347'
 ht-degree: 16%
@@ -27,11 +27,11 @@ ht-degree: 16%
 
 为了帮助您更好地了解如何以及何时使用[!DNL Microsoft Ads Customer Match]目标，以下是Adobe Experience Platform客户可以使用此功能解决的示例用例。
 
-### 用例#1
+### 用例#1 {#use-case-1}
 
 电子商务品牌希望通过[!DNL Microsoft Search]和[!DNL Microsoft Audience Network]联系现有客户，以根据优惠过去的购买和浏览历史记录对其进行个性化设置。 该品牌可以从自己的CRM中将电子邮件地址摄取到Experience Platform，从自己的离线数据构建受众，并将这些受众发送到[!DNL Microsoft Ads Customer Match]以在搜索和受众广告中使用，从而优化其广告支出。
 
-### 用例#2
+### 用例#2 {#use-case-2}
 
 一家科技公司推出了一种新产品。 为了推广此新产品，他们希望提高以前购买过相关产品的客户的认识。 他们使用电子邮件地址作为标识符，将电子邮件地址从CRM数据库上传到Experience Platform。 根据拥有相关产品的客户创建受众。 这些受众将发送到[!DNL Microsoft Ads Customer Match]，以便公司可以跨[!DNL Microsoft Advertising Network]定位当前客户和类似客户。
 
@@ -96,7 +96,7 @@ ht-degree: 16%
 ## 连接到目标 {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
@@ -106,24 +106,24 @@ ht-degree: 16%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_microsoft_ads_cm_customer_id"
 >title="Customer ID"
->abstract="您的 Microsoft Advertising 客户 ID，也称为管理帐户 ID。这是 Microsoft Advertising 中的顶级标识符，其下可以包含多个广告主帐户（客户帐户 ID）。"
+>abstract="您的 Microsoft Advertising 客户 ID，也称为管理帐户 ID。 这是 Microsoft Advertising 中的顶级标识符，其下可以包含多个广告主帐户（客户帐户 ID）。"
 >additional-url="https://learn.microsoft.com/en-us/advertising/guides/get-started?view=bingads-13#get-ids" text="查找您的客户 ID"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_microsoft_ads_cm_customer_account_id"
 >title="客户帐户 ID"
->abstract="您的 Microsoft Advertising 客户帐户 ID，也称为广告商帐户 ID。此 ID 用于标识您客户 ID 下的特定广告商帐户。"
+>abstract="您的 Microsoft Advertising 客户帐户 ID，也称为广告商帐户 ID。 此 ID 用于标识您客户 ID 下的特定广告商帐户。"
 >additional-url="https://learn.microsoft.com/en-us/advertising/guides/get-started?view=bingads-13#get-ids" text="查找您的客户帐户 ID"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_microsoft_ads_cm_membership_duration"
 >title="成员资格持续时间"
->abstract="用户在客户匹配列表中保留的天数。可接受的取值范围为 1 到 390 天。"
+>abstract="用户在客户匹配列表中保留的天数。 可接受的取值范围为 1 到 390 天。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_microsoft_ads_cm_list_availability"
 >title="客户匹配列表可用性"
->abstract="选择客户匹配列表是仅对单个广告商帐户可用，还是对管理帐户下的所有帐户可用。选择客户 ID 可使该列表在您的客户 ID 下的所有广告商帐户中可用。选择客户帐户 ID 可将该列表限制为仅在指定的客户帐户 ID 下可用。"
+>abstract="选择客户匹配列表是仅对单个广告商帐户可用，还是对管理帐户下的所有帐户可用。 选择客户 ID 可使该列表在您的客户 ID 下的所有广告商帐户中可用。 选择客户帐户 ID 可将该列表限制为仅在指定的客户帐户 ID 下可用。"
 >additional-url="https://help.ads.microsoft.com/apex/index/3/en/56727" text="了解有关 Microsoft Advertising 中受众列表共享的更多信息"
 
 在[设置](../../ui/connect-destination.md)此目标时，必须提供以下信息：
@@ -146,7 +146,7 @@ ht-degree: 16%
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要将&#x200B;*标识*&#x200B;导出到目标，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 

@@ -3,9 +3,9 @@ title: 在新的Beta版云存储目标中使用最后限定时间XDM属性
 description: 了解如何在新的测试版云存储目标中使用上次资格授予时间XDM属性
 badgeBeta: label="Beta 版" type="Informative"
 exl-id: d077ea10-5ff2-4acc-8ee6-78ea6cd752d1
-source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '289'
+source-wordcount: '285'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 1%
 # 在新的Beta版云存储目标中使用最后限定时间XDM属性 {#last-qualification-time}
 
 >[!IMPORTANT]
-> 
+>
 >本页介绍了测试版中的功能。 功能和文档可能会发生更改。 如果您希望访问此测试版计划，请联系您的Adobe代表或客户关怀。
 
 ## 先决条件 {#prerequisites}
@@ -31,7 +31,9 @@ ht-degree: 1%
 
 如果您使用上面列出的六个云存储连接器之一，则可以使用激活工作流的[映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)中的上次资格取得时间XDM属性，在导出文件中创建一个列，其最新时间戳为配置文件符合区段资格取得时间。 这可以帮助您处理某些测量或分析用例，并让您更好地了解何时激活某些受众。
 
-请注意，要将`lastQualificationTime`添加到您的文件导出，您当前需要手动将值`xdm: segmentMembership.ups.seg_id.lastQualificationTime`插入源字段，如下所示。 您还可以将目标字段编辑为`lastQualificationTime`或要为此列命名的任何其他值。 请注意，由于这是测试版功能，因此`xdm: segmentMembership.ups.seg_id.lastQualificationTime`值的语法将来可能会更改。
+>[!NOTE]
+>
+>要将`lastQualificationTime`添加到您的文件导出，您当前需要手动将值`xdm: segmentMembership.ups.seg_id.lastQualificationTime`插入源字段，如下所示。 您还可以将目标字段编辑为`lastQualificationTime`或要为此列命名的任何其他值。 由于这是测试版功能，因此`xdm: segmentMembership.ups.seg_id.lastQualificationTime`值的语法将来可能会更改。
 
 ![显示上次将XDM属性粘贴到映射步骤中的资格时间的屏幕录制](/help/destinations/ui/last-qualification-time.gif)
 

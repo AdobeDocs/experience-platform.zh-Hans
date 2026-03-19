@@ -3,9 +3,9 @@ title: Mailchimp兴趣类别
 description: Mailchimp（也称为Intuit Mailchimp）是一种流行的营销自动化平台和电子邮件营销服务，企业使用它来管理联系人（客户、客户或其他利益相关方），并使用邮件列表和电子邮件营销活动与其交谈。 使用此连接器可以根据联系人的兴趣和偏好对他们进行排序。
 last-substantial-update: 2023-05-24T00:00:00Z
 exl-id: bdce8295-7305-4d54-81c1-7fa3e580ce70
-source-git-commit: ef1b0b704d1299282995068a0de330d52884bb95
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '2409'
+source-wordcount: '2407'
 ht-degree: 3%
 
 ---
@@ -36,11 +36,11 @@ Compared to [!DNL Mailchimp Tags] which you would use for internal classificatio
 
 ### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL Mailchimp Interest Categories]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=zh-Hans)区段[!DNL Experience Platform]。
+在将数据激活到[!DNL Mailchimp Interest Categories]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)区段[!DNL Experience Platform]。
 
 ### [!DNL Mailchimp Interest Categories]目标的先决条件 {#prerequisites-destination}
 
-请注意以下先决条件，以便将数据从Experience Platform导出到您的[!DNL Mailchimp]帐户：
+请注意将数据从Experience Platform导出到您的[!DNL Mailchimp]帐户的以下先决条件：
 
 #### 您必须拥有[!DNL Mailchimp]帐户 {#prerequisites-account}
 
@@ -74,7 +74,7 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 您的[!DNL Mailchimp]受众中每个受众最多可以包含60个组名（或兴趣类别），这些组名可以位于单个组中，也可以跨同一受众内的多个组。 有关所需的任何说明，请参阅[!DNL Mailchimp] [组](https://mailchimp.com/help/getting-started-with-groups/)。 达到此限制后，您会从`400 BAD_REQUEST Cannot have more than 60 interests per list (Across all categories)` API收到[!DNL Mailchimp]消息作为错误响应。
 
-此外，有关[!DNL Mailchimp] API施加的限制的详细信息，请参阅[&#x200B; &#x200B;](https://mailchimp.com/developer/marketing/docs/fundamentals/#api-limits)速率限制[!DNL Mailchimp]。
+此外，有关[!DNL Mailchimp] API施加的限制的详细信息，请参阅[ ](https://mailchimp.com/developer/marketing/docs/fundamentals/#api-limits)速率限制[!DNL Mailchimp]。
 
 ## 支持的身份 {#supported-identities}
 
@@ -93,7 +93,7 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -173,7 +173,7 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
@@ -252,7 +252,7 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 创建目标时，您可能会收到以下错误消息： *`Cannot have more than 60 interests per list (Across all categories)`*&#x200B;或&#x200B;*`400 BAD_REQUEST`*。 如[护栏](#guardrails)部分所述，在单个组中或同一受众限制内的多个组中超过60个组名称（或兴趣类别）时，会发生这种情况。 要修复此错误，请确保在[!DNL Mailchimp]中未超出组名限制。
 
-### [!DNL Mailchimp]状态和错误代码
+### [!DNL Mailchimp]状态和错误代码 {#mailchimp-status-error-codes}
 
 请参阅[[!DNL Mailchimp] 错误页面](https://mailchimp.com/developer/marketing/docs/errors/)，获取包含说明的状态和错误代码的完整列表。
 

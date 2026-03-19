@@ -2,10 +2,10 @@
 description: 此页说明如何使用/testing/destinationInstance API端点查看测试结果的完整详细信息。 此API端点返回的结果与使用流服务API监视数据流时获得的结果相同。
 title: 查看详细的激活结果
 exl-id: a7b27beb-825e-47fd-8939-f499c3298f68
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '547'
-ht-degree: 1%
+source-wordcount: '545'
+ht-degree: 2%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 如果您已[测试目标](file-based-destination-testing-api.md)并收到有效的API响应，则表明您的目标工作正常。
 
-如果要查看有关激活流程的更多详细信息，可以使用[目标测试](file-based-destination-testing-api.md)端点响应中的`results`属性，如下所述。
+如果要查看有关激活流程的更多详细信息，可以使用`results`目标测试[端点响应中的](file-based-destination-testing-api.md)属性，如下所述。
 
 >[!NOTE]
 >
@@ -25,7 +25,7 @@ ht-degree: 1%
 
 ## 快速入门 {#getting-started}
 
-在继续之前，请查看[入门指南](../../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[快速入门指南](../../getting-started.md)，了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 先决条件 {#prerequisites}
 
@@ -42,7 +42,7 @@ ht-degree: 1%
 
 在您[验证目标配置](file-based-destination-testing-api.md)后，您可以查看详细的激活结果，方法是向`authoring/testing/destinationInstance/`端点发出GET请求，并提供您正在测试的目标的目标实例ID以及已激活受众的流运行ID。
 
-在目标测试调用[&#128279;](file-based-destination-testing-api.md)的响应中返回的`results`属性中，您可以找到需要使用的完整API URL。
+在目标测试调用`results`的[响应中返回的](file-based-destination-testing-api.md)属性中，您可以找到需要使用的完整API URL。
 
 **API格式**
 
@@ -54,9 +54,13 @@ GET /authoring/testing/destinationInstance/{DESTINATION_INSTANCE_ID}/results?flo
 | -------- | ----------- |
 | `{DESTINATION_INSTANCE_ID}` | 要为其生成样本配置文件的目标实例的ID。 有关如何获取此ID的详细信息，请参阅[先决条件](#prerequisites)部分。 |
 
+{style="table-layout:auto"}
+
 | 查询字符串参数 | 描述 |
 | -------- | ----------- |
-| `flowRunIds` | 流运行与激活的受众相对应的ID。 您可以在目标测试调用[&#128279;](file-based-destination-testing-api.md)的响应中返回的`results`属性中找到流运行ID。 |
+| `flowRunIds` | 流运行与激活的受众相对应的ID。 您可以在目标测试调用`results`的[响应中返回的](file-based-destination-testing-api.md)属性中找到流运行ID。 |
+
+{style="table-layout:auto"}
 
 **请求**
 
@@ -215,7 +219,7 @@ curl -X GET 'https://platform.adobe.io/data/core/activation/authoring/testing/de
 
 Destination SDK API端点遵循常规Experience Platform API错误消息原则。 请参阅Experience Platform疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
 
-## 后续步骤
+## 后续步骤 {#next-steps}
 
 阅读本文档后，您现在知道如何测试基于文件的目标配置并查看激活结果的完整详细信息。
 

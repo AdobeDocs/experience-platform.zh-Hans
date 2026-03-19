@@ -4,10 +4,10 @@ title: 云存储目标的API迁移指南
 description: 了解在迁移到“新的云存储目标”卡片过程中激活云存储目标的工作流中所做的更改，该卡片具有附加功能。
 type: Tutorial
 exl-id: 4acaf718-794e-43a3-b8f0-9b19177a2bc0
-source-git-commit: 4b9e7c22282a5531f2f25f3d225249e4eb0e178e
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1334'
-ht-degree: 0%
+source-wordcount: '1333'
+ht-degree: 1%
 
 ---
 
@@ -15,11 +15,11 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->* 已购买Real-Time CDP Prime和Ultimate包的客户可以使用本页面上描述的功能。 请联系您的Adobe代表以获取更多信息。
+>* 已购买Real-Time CDP Prime和Ultimate包的客户可以使用本页面上描述的功能。 请联系 Adobe 代表以获取更多信息。
 
 ## 迁移上下文 {#migration-context}
 
-从[2022年10月](/help/release-notes/2022/october-2022.md#new-or-updated-destinations)开始，在导出文件不Experience Platform时，您可以使用新的文件导出功能访问增强的自定功能：
+从2022年10月[日](/help/release-notes/2022/october-2022.md#new-or-updated-destinations)开始，在从Experience Platform导出文件时，您可以使用新的文件导出功能访问增强的自定义功能：
 
 * 额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#file-names)。
 * 能够通过[新映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)在导出的文件中设置自定义文件标头。
@@ -42,7 +42,7 @@ Commenting out the three net new cloud storage destinations
 
 -->
 
-请注意，当前在Experience PlatformUI中，您可以看到三个目标的两个并排目标卡片。 下面显示了[!DNL Amazon S3]旧目标和新目标。 在所有情况下，标有&#x200B;**Beta**&#x200B;的卡都是新的目标卡。
+请注意，当前在Experience Platform UI中，您可以看到三个目标的两张并排目标卡片。 下面显示了[!DNL Amazon S3]旧目标和新目标。 在所有情况下，标有&#x200B;**Beta**&#x200B;的卡都是新的目标卡。
 
 ![并排视图中两个Amazon S3目标卡的图像。](../assets/catalog/cloud-storage/amazon-s3/two-amazons3-destination-cards.png)
 
@@ -80,7 +80,7 @@ TBD if we keep this link but will likely remove it
 
 API用户向后不兼容的更改是更新的`connection spec ID`和`flow spec ID`，如下表所示：
 
-| [!DNL Amazon S3] | 旧版 | 新增 |
+| [!DNL Amazon S3] | 旧版 | 新建 |
 |---------|----------|---------|
 | 流量规范 | 71471eba-b620-49e4-90fd-23f1fa0174d8 | 1a0514a6-33d4-4c7f-aff8-594799c47549 |
 | 连接规范 | 4890fc95-5a1f-4983-94bb-e060c08e3f81 | 4fce964d-3f37-408f-9778-e597338a21ee |
@@ -93,7 +93,7 @@ API用户向后不兼容的更改是更新的`connection spec ID`和`flow spec I
 
 >[!TAB 旧版基本连接和目标连接]
 
-+++查看[!DNL Amazon S3]的旧版[!DNL base connection]
++++查看[!DNL base connection]的旧版[!DNL Amazon S3]
 
 ```json {line-numbers="true" start-line="1" highlight="5"}
 {
@@ -126,7 +126,7 @@ API用户向后不兼容的更改是更新的`connection spec ID`和`flow spec I
 
 +++
 
-+++查看[!DNL Amazon S3]的旧版[!DNL target connection]
++++查看[!DNL target connection]的旧版[!DNL Amazon S3]
 
 ```json {line-numbers="true" start-line="1" highlight="12"}
 {
@@ -166,7 +166,7 @@ API用户向后不兼容的更改是更新的`connection spec ID`和`flow spec I
 
 >[!TAB 新的基本连接和目标连接]
 
-+++查看[!DNL Amazon S3]的新[!DNL base connection]
++++查看[!DNL base connection]的新[!DNL Amazon S3]
 
 ```json {line-numbers="true" start-line="1" highlight="5"}
 {
@@ -199,7 +199,7 @@ API用户向后不兼容的更改是更新的`connection spec ID`和`flow spec I
 
 +++
 
-+++查看[!DNL Amazon S3]的新[!DNL target connection]
++++查看[!DNL target connection]的新[!DNL Amazon S3]
 
 ```json {line-numbers="true" start-line="1" highlight="12, 16-27"}
 {
@@ -252,7 +252,7 @@ API用户向后不兼容的更改是更新的`connection spec ID`和`flow spec I
 
 API用户向后不兼容的更改是更新的`connection spec ID`和`flow spec ID`，如下表所示：
 
-| [!DNL Azure Blob] | 旧版 | 新增 |
+| [!DNL Azure Blob] | 旧版 | 新建 |
 |---------|----------|---------|
 | 流量规范 | 71471eba-b620-49e4-90fd-23f1fa0174d8 | 752d422f-b16f-4f0d-b1c6-26e448e3b388 |
 | 连接规范 | e258278b-a4cf-43ac-b158-4fa0ca0d948b | 6d6b59bf-fb58-4107-9064-4d246c0e5bb2 |
@@ -265,7 +265,7 @@ API用户向后不兼容的更改是更新的`connection spec ID`和`flow spec I
 
 >[!TAB 旧版基本连接和目标连接]
 
-+++查看[!DNL Azure Blob]的旧版[!DNL base connection]
++++查看[!DNL base connection]的旧版[!DNL Azure Blob]
 
 ```json {line-numbers="true" start-line="1" highlight="5"}
 {
@@ -297,7 +297,7 @@ API用户向后不兼容的更改是更新的`connection spec ID`和`flow spec I
 
 +++
 
-+++查看[!DNL Azure Blob]的旧版[!DNL target connection]
++++查看[!DNL target connection]的旧版[!DNL Azure Blob]
 
 ```json {line-numbers="true" start-line="1" highlight="13"}
 {
@@ -338,7 +338,7 @@ API用户向后不兼容的更改是更新的`connection spec ID`和`flow spec I
 
 >[!TAB 新的基本连接和目标连接]
 
-+++查看[!DNL Azure Blob]的新[!DNL base connection]
++++查看[!DNL base connection]的新[!DNL Azure Blob]
 
 ```json {line-numbers="true" start-line="1" highlight="5"}
 {
@@ -370,7 +370,7 @@ API用户向后不兼容的更改是更新的`connection spec ID`和`flow spec I
 
 +++
 
-+++查看[!DNL Azure Blob]的新[!DNL target connection]
++++查看[!DNL target connection]的新[!DNL Azure Blob]
 
 ```json {line-numbers="true" start-line="1" highlight="13, 17-25"}
 {
@@ -424,7 +424,7 @@ API用户向后不兼容的更改是更新的`connection spec ID`和`flow spec I
 
 API用户向后不兼容的更改是更新的`connection spec ID`和`flow spec ID`，如下表所示：
 
-| SFTP | 旧版 | 新增 |
+| SFTP | 旧版 | 新建 |
 |---------|----------|---------|
 | 流量规范 | 71471eba-b620-49e4-90fd-23f1fa0174d8 | fd36aaa4-bf2b-43fb-9387-43785eeb799 |
 | 连接规范 | 64ef4b8b-a6e0-41b5-9677-3805d1ee5dd0 | 36965a81-b1c6-401b-99f8-22508f1e6a26 |
@@ -473,7 +473,7 @@ API用户向后不兼容的更改是更新的`connection spec ID`和`flow spec I
 
 +++
 
-+++查看[!DNL SFTP - SSH key]身份验证的旧版[!DNL base connection]
++++查看[!DNL base connection]身份验证的旧版[!DNL SFTP - SSH key]
 
 ```json {line-numbers="true" start-line="1" highlight="5,15"}
 {
@@ -548,7 +548,7 @@ API用户向后不兼容的更改是更新的`connection spec ID`和`flow spec I
 
 >[!TAB 新的基本连接和目标连接]
 
-+++查看[!DNL SFTP - password authentication]的新[!DNL base connection]
++++查看[!DNL base connection]的新[!DNL SFTP - password authentication]
 
 ```json {line-numbers="true" start-line="1" highlight="5"}
 {
@@ -583,7 +583,7 @@ API用户向后不兼容的更改是更新的`connection spec ID`和`flow spec I
 
 +++
 
-+++查看[!DNL SFTP - SSH key]身份验证的新[!DNL base connection]
++++查看[!DNL base connection]身份验证的新[!DNL SFTP - SSH key]
 
 ```json {line-numbers="true" start-line="1" highlight="5,12"}
 {
@@ -674,7 +674,7 @@ API用户向后不兼容的更改是更新的`connection spec ID`和`flow spec I
 
 请注意旧版示例中的`profileSelectors`对象如何被新的`profileMapping`对象替换。
 
-在[API教程中查找有关设置`profileMapping`对象以将数据导出到云存储目标](/help/destinations/api/activate-segments-file-based-destinations.md#attribute-and-identity-mapping)的完整信息。
+在`profileMapping`API教程中查找有关设置[对象以将数据导出到云存储目标](/help/destinations/api/activate-segments-file-based-destinations.md#attribute-and-identity-mapping)的完整信息。
 
 >[!BEGINTABS]
 
@@ -782,7 +782,7 @@ API用户向后不兼容的更改是更新的`connection spec ID`和`flow spec I
 
 ## 迁移时间线和操作项 {#timeline-and-action-items}
 
-当您的组织准备好进行迁移时，将不迟于&#x200B;**2023年7月26日**，将旧数据流迁移到[!DNL Amazon S3]、[!DNL Azure Blob]和SFTP目标的新目标卡。
+当您的组织准备好进行迁移时，将不迟于[!DNL Amazon S3]2023年7月26日[!DNL Azure Blob]，将旧数据流迁移到&#x200B;**、**&#x200B;和SFTP目标的新目标卡。
 
 随着迁移日期的临近，您将收到来自Adobe的提醒电子邮件。 为此，请阅读下面的操作项部分，为迁移做好准备。
 
@@ -791,7 +791,7 @@ API用户向后不兼容的更改是更新的`connection spec ID`和`flow spec I
 为将[!DNL Amazon S3]、[!DNL Azure Blob]和SFTP云存储目标迁移到新信息卡做准备，请按照以下建议更新脚本和自动API调用。
 
 1. 在2023年7月26日之前更新任何现有[!DNL Amazon S3]、[!DNL Azure Blob]或SFTP云存储目标的脚本或自动API调用。 任何使用旧版连接规范或流规范的自动化API调用或脚本，都需要更新为新连接规范或流规范。
-2. 当您的脚本在7月26日之前更新时，请联系您的Adobe客户代表。
+2. 在7月26日之前更新脚本时，请联系您的Adobe客户代表。
 3. 例如，`targetConnectionSpecId`可用作标志以确定数据流是否已迁移到新的目标卡。 您可以使用`if`条件更新脚本，以查看`flow.inheritedAttributes.targetConnections[0].connectionSpec.id`中旧版和更新的目标连接规范，并确定数据流是否已迁移。 您可以在此页面上的特定部分中查看每个目标的旧连接规范ID和新连接规范ID。
 4. 您的Adobe客户团队将与您联系，以进一步了解何时迁移数据流。
 5. 7月26日之后，所有数据流都将进行迁移。 现在，所有现有数据流都将具有新的流实体（连接规范、流规范、基本连接和目标连接）。 您这边使用旧版流实体的任何脚本或API调用都将停止工作。
@@ -802,4 +802,4 @@ API用户向后不兼容的更改是更新的`connection spec ID`和`flow spec I
 
 ## 后续步骤 {#next-steps}
 
-通过阅读本页，您现在知道是否需要采取任何操作来准备迁移云存储目标。 在设置基于API的工作流以将文件从Experience Platform导出到首选云存储目标时，您还知道要引用哪些文档页面。 接下来，您可以查看[将数据导出到云存储目标](/help/destinations/api/activate-segments-file-based-destinations.md)的API教程。
+通过阅读本页，您现在知道是否需要采取任何操作来准备迁移云存储目标。 在设置基于API的工作流以将文件从Experience Platform导出到您首选的云存储目标时，您还知道要引用哪些文档页面。 接下来，您可以查看[将数据导出到云存储目标](/help/destinations/api/activate-segments-file-based-destinations.md)的API教程。

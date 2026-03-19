@@ -5,17 +5,17 @@ title: 使用流服务API连接到批处理目标并激活数据
 description: 分步说明如何使用流服务API在Experience Platform中创建批量云存储或电子邮件营销目标并激活数据
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '3435'
-ht-degree: 4%
+source-wordcount: '3431'
+ht-degree: 3%
 
 ---
 
 # 连接到基于文件的电子邮件营销目标，并使用流服务API激活数据
 
 >[!IMPORTANT]
-> 
+>
 >* 若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。
 >
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。
@@ -27,7 +27,7 @@ ht-degree: 4%
 本教程将演示如何使用流服务API创建基于文件的[电子邮件营销目标](../catalog/email-marketing/overview.md)，如何为新建的目标创建数据流，以及如何通过CSV文件将数据导出到新建的目标。
 
 >[!TIP]
-> 
+>
 >要了解如何使用流服务API将数据激活到云存储目标，请阅读[专用API教程](/help/destinations/api/activate-segments-file-based-destinations.md)。
 
 本教程在所有示例中都使用[!DNL Adobe Campaign]目标，但步骤与基于文件的电子邮件营销目标相同。
@@ -44,7 +44,7 @@ ht-degree: 4%
 * [[!DNL Segmentation Service]](../../segmentation/api/overview.md)： [!DNL Adobe Experience Platform Segmentation Service]允许您根据[!DNL Adobe Experience Platform]数据在[!DNL Real-Time Customer Profile]中构建受众。
 * [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform]提供了将单个[!DNL Experience Platform]实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
-以下部分提供了在Experience Platform中将数据激活到批处理目标需要了解的其他信息。
+以下部分提供了在Experience Platform中将数据激活到批处理目标时需要了解的其他信息。
 
 ### 收集所需的凭据 {#gather-required-credentials}
 
@@ -61,11 +61,11 @@ ht-degree: 4%
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) [!DNL Experience Platform]。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
 
 ### 收集必需标题和可选标题的值 {#gather-values-headers}
 
-为调用 [!DNL Experience Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+要调用[!DNL Experience Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 * 授权：持有人`{ACCESS_TOKEN}`
 * x-api-key： `{API_KEY}`
@@ -144,7 +144,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 1. 首先，您必须通过设置基本连接来执行调用以授权访问[!DNL Experience Platform]中的数据。
 2. 然后，使用基本连接ID执行另一个调用，在该调用中创建&#x200B;*源连接*，从而建立与[!DNL Experience Platform]数据的连接。
 
-### 在[!DNL Experience Platform]中授权访问您的数据
+### 在[!DNL Experience Platform]中授权访问您的数据 {#authorize-access-experience-platform}
 
 **API格式**
 
@@ -551,7 +551,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 [!DNL Adobe Experience Platform]以[!DNL CSV]文件的形式导出批量电子邮件营销和云存储目标的数据。 在此步骤中，您可以确定要导出文件的存储位置的路径。
 
 >[!IMPORTANT]
-> 
+>
 >[!DNL Adobe Experience Platform]以每个文件500万条记录（行）自动拆分导出文件。 每一行表示一个配置文件。
 >
 >拆分文件名后附加一个数字，指示文件是较大导出的一部分，例如： `filename.csv`、`filename_2.csv`、`filename_3.csv`。
@@ -1054,8 +1054,8 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 | `startDate` | 选择受众应开始将用户档案导出到目标的日期。 |
 | `frequency` | 必填。<br> <ul><li>对于`"DAILY_FULL_EXPORT"`导出模式，您可以选择`ONCE`、`DAILY`、`WEEKLY`或`MONTHLY`。</li><li>对于`"FIRST_FULL_THEN_INCREMENTAL"`导出模式，您可以选择`"DAILY"`、`"EVERY_3_HOURS"`、`"EVERY_6_HOURS"`、`"EVERY_8_HOURS"`、`"EVERY_12_HOURS"`。</li></ul> |
 | `triggerType` | 仅适用于&#x200B;*批次目标*。 仅当在`"DAILY_FULL_EXPORT"`选择器中选择`frequency`模式时，才需要此字段。 <br>必填。<br> <ul><li>选择`"AFTER_SEGMENT_EVAL"`以使激活作业在每日Experience Platform批处理分段作业完成后立即运行。 这可确保在激活作业运行时，将最新的配置文件导出到您的目标。</li><li>选择`"SCHEDULED"`以使激活作业在固定时间运行。 这可确保每天在同一时间导出Experience Platform用户档案数据，但您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。 当选择此选项时，还必须添加`startTime`以指示每日导出应在UTC时段的哪个时间发生。</li></ul> |
-| `endDate` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要使用此字段。 选择<br>和`"exportMode":"DAILY_FULL_EXPORT"`时，`"frequency":"ONCE"`不适用。 <br>设置受众成员停止导出到目标的日期。 |
-| `startTime` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要使用此字段。 <br>必填。 选择应生成包含受众成员的文件并将其导出到目标的时间。 |
+| `endDate` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标（如Amazon S3、SFTP或Azure Blob）中将受众添加到数据流时，才需要使用此字段。 选择<br>和`"exportMode":"DAILY_FULL_EXPORT"`时，`"frequency":"ONCE"`不适用。 <br>设置受众成员停止导出到目标的日期。 |
+| `startTime` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标（如Amazon S3、SFTP或Azure Blob）中将受众添加到数据流时，才需要使用此字段。 <br>必填。 选择应生成包含受众成员的文件并将其导出到目标的时间。 |
 
 {style="table-layout:auto"}
 

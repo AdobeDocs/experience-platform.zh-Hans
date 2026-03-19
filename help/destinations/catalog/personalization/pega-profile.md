@@ -3,9 +3,9 @@ title: Pega配置文件连接器
 description: 使用Adobe Experience Platform中Amazon S3的Pega配置文件连接器将完整的或增量的（或同时使用两者）配置文件数据导出到Amazon S3云存储。 在Pega客户决策中心中，可以安排客户配置文件Designer中的数据作业，以定期从Amazon S3存储导入配置文件数据。
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: f422f21b-174a-4b93-b05d-084b42623314
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1256'
+source-wordcount: '1255'
 ht-degree: 4%
 
 ---
@@ -22,15 +22,15 @@ ht-degree: 4%
 >
 >此目标连接器和文档页面由Pegasystems创建和维护。 如有任何查询或更新请求，请直接在[此处](mailto:support@pega.com)联系Pega。
 
-## 用例
+## 用例 {#use-cases}
 
 为了帮助您更好地了解您应如何以及何时使用[!DNL Pega Profile Connector]目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
 
-### 用例1
+### 用例1 {#use-case-1}
 
 营销人员最初想要使用从Adobe Experience Platform加载的配置文件数据设置[!DNL Pega Customer Decision Hub]。 这是初始满负荷，然后按计划增加负荷。
 
-### 用例2
+### 用例2 {#use-case-2}
 
 营销人员希望在[!DNL Pega Customer Decision Hub]中提供Adobe Experience Platform的最新配置文件数据，以便持续增强关于客户配置文件的Pega见解。
 
@@ -60,7 +60,7 @@ ht-degree: 4%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -92,7 +92,7 @@ ht-degree: 4%
 ## 连接到目标 {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在目标配置工作流中，填写下面两个部分中列出的字段。
@@ -130,7 +130,7 @@ ht-degree: 4%
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 

@@ -3,9 +3,9 @@ title: Adform
 description: Adform是程序化媒体购买和销售解决方案的领先提供商。 将Adform连接到Adobe Experience Platform后，您可以通过基于Experience Cloud ID (ECID)的Adform激活第一方受众。
 last-substantial-update: 2025-10-23T00:00:00Z
 exl-id: b87fe57f-10e3-4c10-9156-f102244fbbe7
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1106'
+source-wordcount: '1103'
 ht-degree: 4%
 
 ---
@@ -18,7 +18,7 @@ Adform是程序化媒体购买和销售解决方案的领先提供商。 将Adfo
 
 >[!IMPORTANT]
 >
->目标连接器和文档页面由Adform团队创建和维护。 如有任何查询或更新请求，请直接通过`support@adform.com`联系他们。
+>目标连接器和文档页面由Adform团队创建和维护。 如有任何查询或更新请求，请直接通过`support@adform.com`与他们联系。
 
 ## 用例 {#use-cases}
 
@@ -28,16 +28,16 @@ Adform是程序化媒体购买和销售解决方案的领先提供商。 将Adfo
 
 使用此目标可根据Adobe Real-Time CDP ID (ECID)和Adform的ID Fusion将Experience Cloud受众发送到Adform以进行激活。 Adform的ID Fusion是Adform的ID解析服务，允许您根据Experience Cloud ID (ECID)激活第一方受众。
 
-一种常见的情况是，根据Experience Cloud ID (ECID)将网站访客重新定位到您的网站或应用程序。 您只需通过现成的[事件流](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking)或[客户端](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/catalog/analytics/adform) Adform扩展将Experience Cloud ID (ECID)发送到Adform。 之后，您可以通过Adform激活目标与Adform共享受众 — 完全基于Experience Cloud ID (ECID)。
+一种常见的情况是，根据Experience Cloud ID (ECID)将网站访客重新定位到您的网站或应用程序。 您只需通过现成的[事件流](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking)或[客户端](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/analytics/adform) Adform扩展将Experience Cloud ID (ECID)发送到Adform。 之后，您可以通过Adform激活目标与Adform共享受众 — 完全基于Experience Cloud ID (ECID)。
 
 ## 先决条件 {#prerequisites}
 
 * 您必须是现有Adform客户才能使用此目标。
 * 您需要拥有Adform Audience Base数据连接凭据。
    * 如果您没有Adform Audience Base数据连接凭据，请联系您的Adform代表。
-* 要正确同步，您需要具有从实体到Adform站点跟踪的[事件流](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking)或[客户端](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/catalog/analytics/adform)连接。
+* 要正确同步，您需要具有从实体到Adform站点跟踪的[事件流](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking)或[客户端](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/analytics/adform)连接。
    * 如果您没有从实体到Adform站点跟踪的事件流或客户端连接，请联系您的Adform代表。
-   * Adform为[事件流](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking)和[客户端](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/catalog/analytics/adform)提供了Adobe Experience Cloud扩展。
+   * Adform为[事件流](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking)和[客户端](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/analytics/adform)提供了Adobe Experience Cloud扩展。
 
 
 ## 支持的身份 {#supported-identities}
@@ -57,7 +57,7 @@ Adform支持激活下表中描述的标识。 了解有关[标识](/help/identit
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -89,7 +89,7 @@ Adform支持激活下表中描述的标识。 了解有关[标识](/help/identit
 ## 连接到目标 {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写下面两个部分中列出的字段。
@@ -123,7 +123,7 @@ Adform支持激活下表中描述的标识。 了解有关[标识](/help/identit
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 

@@ -2,7 +2,7 @@
 description: 了解如何在发布流目标配置之前，使用目标测试API对其进行测试。
 title: 流式目标测试API概述
 exl-id: 21e4d647-1168-4cb4-a2f8-22d201e39bba
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '512'
 ht-degree: 0%
@@ -233,6 +233,6 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 
 有关请求和响应参数的说明，请参阅[目标测试API操作](../../testing-api/streaming-destinations/destination-testing-api.md)。
 
-## 后续步骤
+## 后续步骤 {#next-steps}
 
 测试目标并确认配置正确后，使用[目标发布API](../../publishing-api/create-publishing-request.md)将配置提交到Adobe以供审查。

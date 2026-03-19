@@ -4,9 +4,9 @@ title: Microsoft Dynamics 365连接
 description: Microsoft Dynamics 365目标允许您导出帐户数据，并在Microsoft Dynamics 365中激活该数据，以满足您的业务需求。
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 49bb5c95-f4b7-42e1-9aae-45143bbb1d73
-source-git-commit: ef1b0b704d1299282995068a0de330d52884bb95
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '2100'
+source-wordcount: '2098'
 ht-degree: 2%
 
 ---
@@ -29,13 +29,13 @@ ht-degree: 2%
 
 ### Experience Platform先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL Dynamics 365]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html?lang=zh-Hans)受众[!DNL Experience Platform]。
+在将数据激活到[!DNL Dynamics 365]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html)受众[!DNL Experience Platform]。
 
 如果您需要有关受众状态的指导，请参阅Adobe有关[受众成员资格详细信息架构字段组](/help/xdm/field-groups/profile/segmentation.md)的文档。
 
 ### [!DNL Microsoft Dynamics 365]先决条件 {#prerequisites-destination}
 
-请注意[!DNL Dynamics 365]中的以下先决条件，以便将数据从Experience Platform导出到您的[!DNL Dynamics 365]帐户：
+注意[!DNL Dynamics 365]中的以下先决条件，以将数据从Experience Platform导出到您的[!DNL Dynamics 365]帐户：
 
 #### 您需要拥有[!DNL Microsoft Dynamics 365]帐户 {#prerequisites-account}
 
@@ -98,7 +98,7 @@ ht-degree: 2%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -170,7 +170,7 @@ ht-degree: 2%
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
@@ -233,13 +233,13 @@ ht-degree: 2%
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**&#x200B;以导航到目标列表。
+1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**以导航到目标列表。
    ![显示“浏览目标”的Experience Platform UI屏幕截图。](../../assets/catalog/crm/microsoft-dynamics-365/browse-destinations.png)
 
 1. 选择目标并验证状态为&#x200B;**[!UICONTROL enabled]**。
    ![Experience Platform UI屏幕截图显示目标数据流运行。](../../assets/catalog/crm/microsoft-dynamics-365/destination-dataflow-run.png)
 
-1. 切换到&#x200B;**[!DNL Activation data]**&#x200B;选项卡，然后选择受众名称。
+1. 切换到&#x200B;**[!DNL Activation data]**选项卡，然后选择受众名称。
    ![显示目标激活数据的Experience Platform UI屏幕截图示例。](../../assets/catalog/crm/microsoft-dynamics-365/destinations-activation-data.png)
 
 1. 监控受众摘要，并确保用户档案计数对应于在受众中创建的计数。
@@ -269,7 +269,7 @@ ht-degree: 2%
 * [IOrganizationService.Update(Entity)方法](https://docs.microsoft.com/en-us/dotnet/api/microsoft.xrm.sdk.iorganizationservice.update?view=dataverse-sdk-latest)
 * [使用Web API更新和删除表行](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/update-delete-entities-using-web-api#basic-update)
 
-### Changelog
+### Changelog {#changelog}
 
 此部分捕获此目标连接器的功能和重要文档更新。
 

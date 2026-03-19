@@ -2,9 +2,9 @@
 description: 了解在将数据激活到基于文件的目标时，如何配置文件格式选项
 title: 为基于文件的目标配置文件格式选项
 exl-id: f59b1952-e317-40ba-81d1-35535e132a72
-source-git-commit: 4dd6e8685ff5cc61342b20e971216416918b95da
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1191'
+source-wordcount: '1189'
 ht-degree: 17%
 
 ---
@@ -12,10 +12,10 @@ ht-degree: 17%
 # 为基于文件的目标配置文件格式选项
 
 >[!IMPORTANT]
-> 
+>
 >本文档中介绍的文件格式选项当前仅适用于CSV文件。
 
-当您[连接](/help/destinations/ui/connect-destination.md)到基于文件的目标(如[Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md#connect)、[Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md#connect)或[SFTP](/help/destinations/catalog/cloud-storage/sftp.md#connect))时，可以使用选项为导出的文件配置各种文件格式选项。
+当您[连接](/help/destinations/ui/connect-destination.md)到基于文件的目标（如[Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md#connect)、[Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md#connect)或[SFTP](/help/destinations/catalog/cloud-storage/sftp.md#connect)）时，可以使用选项为导出的文件配置各种文件格式选项。
 
 您可以使用Experience Platform UI为导出的文件配置各种文件格式选项。 您可以修改导出文件的几个属性，以匹配您这边文件接收系统的要求，从而以最佳方式读取和解读从Experience Platform收到的文件。
 
@@ -51,15 +51,15 @@ ht-degree: 17%
 * 分号`(;)`
 * 选项卡`(\t)`
 
-#### 示例
+#### 示例 {#delimiter-examples}
 
 通过UI中的每个选择，查看导出CSV文件中内容的以下示例。
 
-* 已选择&#x200B;**[!UICONTROL Colon `(:)`]**&#x200B;的示例输出： `male:John:Doe`
-* 已选择&#x200B;**[!UICONTROL Comma `(,)`]**&#x200B;的示例输出： `male,John,Doe`
-* 已选择&#x200B;**[!UICONTROL Pipe `(|)`]**&#x200B;的示例输出： `male|John|Doe`
-* 已选择&#x200B;**[!UICONTROL Semicolon `(;)`]**&#x200B;的示例输出： `male;John;Doe`
-* 已选择&#x200B;**[!UICONTROL Tab `(\t)`]**&#x200B;的示例输出： `male \t John \t Doe`
+* 已选择[!UICONTROL Colon `(:)`]的示例输出： `male:John:Doe`
+* 已选择[!UICONTROL Comma `(,)`]的示例输出： `male,John,Doe`
+* 已选择[!UICONTROL Pipe `(|)`]的示例输出： `male|John|Doe`
+* 已选择[!UICONTROL Semicolon `(;)`]的示例输出： `male;John;Doe`
+* 已选择[!UICONTROL Tab `(\t)`]的示例输出： `male \t John \t Doe`
 
 ### 引号字符 {#quote-character}
 
@@ -72,17 +72,17 @@ ht-degree: 17%
 
 可用的选项包括：
 
-* **[!UICONTROL Null Character (\0000)]**。使用此选项可从导出的CSV文件中删除双引号。
-* **[!UICONTROL Double Quotes (")]**。当字符串值包含分隔符或双引号时，请使用此选项。 此选项可帮助您在导出的CSV文件中保留分隔符或双引号，以便您能够正确识别哪个值对应于哪个字段。
+* [!UICONTROL Null Character (\0000)]。使用此选项可从导出的CSV文件中删除双引号。
+* [!UICONTROL Double Quotes (")]。当字符串值包含分隔符或双引号时，请使用此选项。 此选项可帮助您在导出的CSV文件中保留分隔符或双引号，以便您能够正确识别哪个值对应于哪个字段。
 
-#### 示例
+#### 示例 {#quote-character-examples}
 
 考虑输入值`Anna,"Doe,John"`。
 
 在UI中选择每个内容，查看导出CSV文件中的以下内容示例。
 
-* 已选择&#x200B;**[!UICONTROL Null Character (\0000)]**&#x200B;的示例输出： `Anna,Doe,John`
-* 已选择&#x200B;**[!UICONTROL Double Quotes (")]**&#x200B;的示例输出： `Anna,"Doe,John"`
+* 已选择[!UICONTROL Null Character (\0000)]的示例输出： `Anna,Doe,John`
+* 已选择[!UICONTROL Double Quotes (")]的示例输出： `Anna,"Doe,John"`
 
 ### 转义字符 {#escape-character}
 
@@ -96,12 +96,12 @@ ht-degree: 17%
 * 反斜杠`(\)`
 * 单引号`(')`
 
-#### 示例
+#### 示例 {#escape-character-examples}
 
 在UI中选择每个内容，查看导出CSV文件中的以下内容示例。
 
-* 已选择&#x200B;**[!UICONTROL Back slash `(\)`]**&#x200B;的示例输出： `"Test,\"John\",LastName"`
-* 已选择&#x200B;**[!UICONTROL Single quote `(')`]**&#x200B;的示例输出： `"Test,'"John'",LastName"`
+* 已选择[!UICONTROL Back slash `(\)`]的示例输出： `"Test,\"John\",LastName"`
+* 已选择[!UICONTROL Single quote `(')`]的示例输出： `"Test,'"John'",LastName"`
 
 ### 空值输出 {#empty-value-output}
 
@@ -112,17 +112,17 @@ ht-degree: 17%
 
 使用此控件可设置空值的字符串表示形式。 此选项确定在导出的CSV文件中如何表示空值。 可用选项包括：
 
-* **[!UICONTROL Null (null)]**
+* [!UICONTROL Null (null)]
 * **双引号(“)**&#x200B;中的空字符串
-* **[!UICONTROL Empty string]**
+* [!UICONTROL Empty string]
 
-#### 示例
+#### 示例 {#empty-value-examples}
 
 在UI中选择每个内容，查看导出CSV文件中的以下内容示例。
 
-* 已选择&#x200B;**[!UICONTROL null]**&#x200B;的示例输出： `male,NULL,TestLastName`。 在这种情况下，Experience Platform会将空值转换为null值。
+* 已选择[!UICONTROL null]的示例输出： `male,NULL,TestLastName`。 在这种情况下，Experience Platform会将空值转换为null值。
 * 已选择&#x200B;**“**”的示例输出： `male,"",TestLastName`。 在这种情况下，Experience Platform将空值转换为一对双引号。
-* 已选择&#x200B;**[!UICONTROL Empty string]**&#x200B;的示例输出： `male,,TestLastName`。 在这种情况下，Experience Platform将维护空值并按原样导出（不带双引号）。
+* 已选择[!UICONTROL Empty string]的示例输出： `male,,TestLastName`。 在这种情况下，Experience Platform将维护空值并按原样导出（不带双引号）。
 
 >[!TIP]
 >
@@ -137,17 +137,17 @@ ht-degree: 17%
 
 使用此选项设置应如何在导出的文件中表示 null 值。此选项确定在导出的CSV文件中如何表示null值。 可用选项包括：
 
-* **[!UICONTROL Null (null)]**
+* [!UICONTROL Null (null)]
 * **双引号(“)**&#x200B;中的空字符串
-* **[!UICONTROL Empty string]**
+* [!UICONTROL Empty string]
 
-#### 示例
+#### 示例 {#null-value-examples}
 
 在UI中选择每个内容，查看导出CSV文件中的以下内容示例。
 
-* 已选择&#x200B;**[!UICONTROL null]**&#x200B;的示例输出： `male,NULL,TestLastName`。 在这种情况下，不会进行任何转换，并且CSV文件包含null值。
+* 已选择[!UICONTROL null]的示例输出： `male,NULL,TestLastName`。 在这种情况下，不会进行任何转换，并且CSV文件包含null值。
 * 已选择&#x200B;**“**”的示例输出： `male,"",TestLastName`。 在这种情况下，Experience Platform会在空字符串周围使用双引号替换空值。
-* 已选择&#x200B;**[!UICONTROL Empty string]**&#x200B;的示例输出： `male,,TestLastName`。 在这种情况下，Experience Platform会将null值替换为空字符串（不带双引号）。
+* 已选择[!UICONTROL Empty string]的示例输出： `male,,TestLastName`。 在这种情况下，Experience Platform会将null值替换为空字符串（不带双引号）。
 
 ### 压缩格式 {#compression-format}
 
@@ -158,33 +158,33 @@ ht-degree: 17%
 
 设置在将数据保存到文件时要使用何种压缩类型。支持的选项为 GZIP 和 NONE。此选项确定您是否将导出压缩文件。
 
-### 编码
+### 编码 {#encoding}
 
 *未显示在用户界面屏幕快照中*。 指定保存的CSV文件的编码（字符集）。 选项为UTF-8或UTF-16。
 
-### 用于转义引号的字符
+### 用于转义引号的字符 {#char-to-escape-quote}
 
 *未显示在用户界面屏幕快照中*。 指示是否始终将包含引号的值包含在引号中的标志。
 
 默认转义包含引号字符的所有值。
 
-### 行分隔符
+### 行分隔符 {#line-separator}
 
 *未显示在用户界面屏幕快照中*。 定义用于编写的行分隔符。 最大长度为1个字符。
 
-### 忽略前导空格
+### 忽略前导空格 {#ignore-leading-whitespace}
 
 *未显示在用户界面屏幕快照中*。 指示是否应跳过导出值前导空格的标记。
 
-已选择&#x200B;**[!UICONTROL True]**&#x200B;的示例输出： `"male","John","TestLastName"`
-已选择&#x200B;**[!UICONTROL False]**&#x200B;的示例输出： `" male","John","TestLastName"`
+已选择[!UICONTROL True]的示例输出： `"male","John","TestLastName"`
+已选择[!UICONTROL False]的示例输出： `" male","John","TestLastName"`
 
-### 忽略尾随空格
+### 忽略尾随空格 {#ignore-trailing-whitespace}
 
 未显示在UI屏幕快照中。 指示是否应跳过导出值的尾随空格标志。
 
-已选择&#x200B;**[!UICONTROL True]**&#x200B;的示例输出： `"male","John","TestLastName"`
-已选择&#x200B;**[!UICONTROL False]**&#x200B;的示例输出： `"male ","John","TestLastName"`
+已选择[!UICONTROL True]的示例输出： `"male","John","TestLastName"`
+已选择[!UICONTROL False]的示例输出： `"male ","John","TestLastName"`
 
 ### 后续步骤 {#next-steps}
 

@@ -3,7 +3,7 @@ title: 编辑目标
 type: Tutorial
 description: 了解如何在Adobe Experience Platform UI中编辑和更新现有目标帐户
 exl-id: f3298836-668b-43fb-b4f3-85a650766f05
-source-git-commit: f91551c460c7d6fd4f98111210f29cf16ec5b565
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '370'
 ht-degree: 0%
@@ -28,7 +28,7 @@ ht-degree: 0%
 
 1. 导航到&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**。
 2. 选择要编辑的所需目标。
-3. 选择`...`列中的省略号([!UICONTROL Name])并使用![编辑目标控件&#x200B;](/help/images/icons/edit.png)**[!UICONTROL Edit destination]**&#x200B;控件编辑现有目标连接。
+3. 选择`...`列中的省略号([!UICONTROL Name])并使用![编辑目标控件&#x200B;](/help/images/icons/edit.png)**[!UICONTROL Edit destination]**控件编辑现有目标连接。
 4. 在模式窗口中，编辑任何所需的设置。 完成后选择&#x200B;**[!UICONTROL Save]**。
 
 在“编辑目标”窗口中，可以更新最初连接到目标时配置的任何设置。 这些设置因要更新的目标平台而异。
@@ -49,7 +49,7 @@ ht-degree: 0%
 >
 >您的目标连接设置现已更新。
 
-## 其他编辑选项
+## 其他编辑选项 {#other-editing-options}
 
 通过使用Experience Platform UI或流服务API，您可以编辑各种目标配置，如以下链接中所述：
 
@@ -59,7 +59,7 @@ ht-degree: 0%
 | [编辑帐户](/help/destinations/ui/update-accounts.md) | [编辑基本连接组件（身份验证参数和其他组件）](/help/destinations/api/edit-destination.md#patch-base-connection) |
 | [编辑激活数据流](/help/destinations/ui/edit-activation.md) | [更新目标数据流](/help/destinations/api/update-destination-dataflows.md) |
 
-## 后续步骤
+## 后续步骤 {#next-steps}
 
 通过完成本教程，您已成功使用&#x200B;**[!UICONTROL destinations]**&#x200B;工作区来更新现有的目标连接。
 

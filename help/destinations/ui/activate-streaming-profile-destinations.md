@@ -4,7 +4,7 @@ type: Tutorial
 description: 了解如何通过将受众发送到基于个人资料的流目标来激活您在Adobe Experience Platform中的受众数据。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: bc0f781e-60de-44a5-93cb-06b4a3148591
-source-git-commit: 99bac2ea71003b678a25b3afc10a68d36472bfbc
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '762'
 ht-degree: 1%
@@ -15,7 +15,7 @@ ht-degree: 1%
 # 将受众激活到流配置文件导出目标
 
 >[!IMPORTANT]
-> 
+>
 > * 要激活数据并启用工作流的[映射步骤](#mapping)，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。
 > * 若要在不执行工作流的[映射步骤](#mapping)的情况下激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Segment without Mapping]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。
 > 
@@ -95,7 +95,7 @@ ht-degree: 1%
 
 ### 同意策略评估 {#consent-policy-evaluation}
 
-向三个企业目标(Amazon Kinesis、Azure事件中心和HTTP API)的导出当前不支持同意策略评估[。](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)
+向三个企业目标（Amazon Kinesis、Azure事件中心和HTTP API）的导出当前不支持同意策略评估[。](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)
 
 这意味着未同意成为目标&#x200B;*的用户档案包括在导出到这三个目标的*&#x200B;中。
 

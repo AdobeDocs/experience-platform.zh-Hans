@@ -2,9 +2,9 @@
 title: (V1) Pega CDH实时受众连接
 description: 使用Adobe Experience Platform中的Pega客户决策中心实时受众目标，将用户档案属性和受众成员资格数据发送到Pega客户决策中心，以便做出次优决策。
 exl-id: 0546da5d-d50d-43ec-bbc2-9468a7db4d90
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1214'
+source-wordcount: '1213'
 ht-degree: 3%
 
 ---
@@ -25,15 +25,15 @@ Adobe Experience Platform中的配置文件受众成员资格在加载到[!DNL P
 >
 >此目标连接器和文档页面由Pegasystems创建和维护。 如有任何查询或更新请求，请直接在[此处](mailto:support@pega.com)联系Pega。
 
-## 用例
+## 用例 {#use-cases}
 
 为了帮助您更好地了解您应如何以及何时使用[!DNL Customer Decision Hub]目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
 
-### 电信
+### 电信 {#telecommunications}
 
 营销人员希望利用[!DNL Pega Customer Decision Hub]提供的基于数据科学模型的次优操作的见解来吸引客户参与。 [!DNL Pega Customer Decision Hub]在很大程度上取决于客户的意图，例如“Interest_In_5G”、“Interest_in_Unlimited_Dataplan”或“Interest_in_iPhone_accessories”。
 
-### 金融服务
+### 金融服务 {#financial-services}
 
 营销人员希望优化为订阅或取消订阅退休金计划或退休计划快讯的客户提供的优惠。 金融服务公司可以从自己的CRM中摄取多个CustomerID到Adobe Experience Platform，从自己的离线数据构建受众，并将进入和退出受众的个人资料发送到[!DNL Pega Customer Decision Hub]，以在出站渠道中做出次优行动(NBA)决策。
 
@@ -62,7 +62,7 @@ Adobe Experience Platform中的配置文件受众成员资格在加载到[!DNL P
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -122,7 +122,7 @@ Adobe Experience Platform中的配置文件受众成员资格在加载到[!DNL P
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 

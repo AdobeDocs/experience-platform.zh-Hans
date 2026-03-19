@@ -3,7 +3,7 @@ title: 从Real-Time CDP导出数组、映射和对象
 type: Tutorial
 description: 了解如何将阵列、映射和对象从Real-Time CDP导出到云存储目标。
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: f7ff10dd6489842adb8de49b3f8634c20d77cc71
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '1062'
 ht-degree: 13%
@@ -25,16 +25,16 @@ ht-degree: 13%
 |---|---|
 | Adobe创作的云存储目标(Amazon S3、Azure Blob、Azure Data Lake Storage Gen2、Data Landing Zone、Google Cloud Storage、SFTP) | 是，在设置目标连接时，打开了启用数组、映射和对象导出切换开关。 |
 | 基于文件的电子邮件营销目标(Adobe Campaign、Oracle Eloqua、Oracle Responsys、Salesforce Marketing Cloud) | 否 |
-| 现有合作伙伴构建的自定义云存储目标(通过Destination SDK构建的基于文件的自定义目标) | 否 |
-| 企业目标(Amazon Kinesis、Azure事件中心、HTTP API) | 部分。 您可以在激活工作流的映射步骤中选择和导出映射类型对象。 |
-| 流目标(例如：Facebook、Braze、Google Customer Match等) | 否 |
+| 现有合作伙伴构建的自定义云存储目标（通过Destination SDK构建的基于文件的自定义目标） | 否 |
+| 企业目标（Amazon Kinesis、Azure事件中心、HTTP API） | 部分。 您可以在激活工作流的映射步骤中选择和导出映射类型对象。 |
+| 流目标（例如：Facebook、Braze、Google Customer Match等） | 否 |
 | Edge个性化目标 | 否 |
 
 {style="table-layout:auto"}
 
 您可以将此页面作为您希望了解有关从Experience Platform导出数组、映射和其他对象类型的所有信息的首选位置。
 
-## 底线在前面
+## 底线在前面 {#bottom-line}
 
 在此部分中获取有关功能的最重要信息，并继续在下面转到文档的其他部分以了解详细信息。
 
@@ -44,7 +44,7 @@ ht-degree: 13%
 
 ## Experience Platform中的数组和其他对象类型 {#arrays-strings-other-objects}
 
-在Experience Platform中，您可以使用[XDM架构](/help/xdm/home.md)管理不同的字段类型。 在添加对数组导出的支持之前，您可以将简单的键值对类型字段(例如Experience Platform中的字符串)导出到所需的目标。 以前支持导出的此类字段示例为`personalEmail.address`：`johndoe@acme.org`。
+在Experience Platform中，您可以使用[XDM架构](/help/xdm/home.md)管理不同的字段类型。 在添加对数组导出的支持之前，您可以将简单的键值对类型字段（例如Experience Platform中的字符串）导出到所需的目标。 以前支持导出的此类字段示例为`personalEmail.address`：`johndoe@acme.org`。
 
 Experience Platform中的其他字段类型包括数组字段。 阅读有关[在Experience Platform UI](/help/xdm/ui/fields/array.md)中管理数组字段的更多信息。 您现在可以导出数组对象，如下面的示例所示。
 

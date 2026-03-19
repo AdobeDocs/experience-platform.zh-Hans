@@ -2,7 +2,7 @@
 description: 了解如何为支持的身份和属性映射配置配置目标。
 title: 支持的映射配置
 exl-id: a477a3f2-a229-4b22-8588-ee58bd5436c6
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '670'
 ht-degree: 3%
@@ -23,7 +23,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 流媒体目标支持的映射 {#streaming-mappings}
 
@@ -33,6 +33,8 @@ ht-degree: 3%
 | --- | --- |
 | XDM属性 | 自定义属性 |
 | 身份标识命名空间 | 身份标识命名空间 |
+
+{style="table-layout:auto"}
 
 下面的配置示例允许客户使用上表中的两个映射。
 
@@ -87,6 +89,8 @@ ht-degree: 3%
 | XDM属性 | 属性/自定义属性 |
 | 身份标识命名空间 | 属性/自定义属性 |
 | 身份标识命名空间 | 身份标识命名空间 |
+
+{style="table-layout:auto"}
 
 下面的配置示例允许客户使用上表中的所有映射。
 

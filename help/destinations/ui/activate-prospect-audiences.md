@@ -3,9 +3,9 @@ title: 将目标受众激活到目标
 type: Tutorial
 description: 了解如何将潜在客户受众激活到目标
 exl-id: 3e034a14-09d0-4b08-b171-5afb62ae4b62
-source-git-commit: 9f4ce2a3a8af72342683c859caa270662b161b7d
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '595'
+source-wordcount: '593'
 ht-degree: 18%
 
 ---
@@ -47,7 +47,7 @@ ht-degree: 18%
 
 >[!TIP]
 >
->可导出配置文件受众的目标在卡片的右上角以图标指示，类似于下面高亮显示的目标，或者，您可以使用数据类型筛选器仅显示可导出目标受众的目标，如页面上较高位置显示的[&#128279;](#supported-destinations)。
+>可导出配置文件受众的目标在卡片的右上角以图标指示，类似于下面高亮显示的目标，或者，您可以使用数据类型筛选器仅显示可导出目标受众的目标，如页面上较高位置显示的[](#supported-destinations)。
 
 ![可导出突出显示的配置文件受众的Amazon S3目标页面。](/help/destinations/assets/ui/activate-prospect-audiences/amazon-s3-icon-activate-prospect-audiences.png)
 
@@ -63,11 +63,15 @@ ht-degree: 18%
 
 ## 选择您的目标客户受众 {#select-prospect-audiences}
 
-使用潜在客户受众名称左侧的复选框选择要导出到目标的受众，然后选择&#x200B;**[!UICONTROL Next]**。 请注意，此视图中只显示目标客户受众，不显示其他受众。
+使用潜在客户受众名称左侧的复选框选择要导出到目标的受众，然后选择&#x200B;**[!UICONTROL Next]**。
+
+>[!NOTE]
+>
+>此视图中只显示目标客户受众，不显示其他受众。
 
 ![数据集导出工作流显示“选择受众”步骤，您可以在该步骤中选择要导出的潜在客户受众。](/help/destinations/assets/ui/activate-prospect-audiences/select-prospect-audiences.png)
 
-## 计划和后续步骤
+## 计划和后续步骤 {#scheduling-and-next-steps}
 
 在激活工作流的其余部分以导出潜在客户受众时，请阅读有关将数据激活到基于文件的目标的教程。 从[计划受众导出步骤](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling)继续。
 
@@ -87,4 +91,4 @@ Note that we will need to add links to other destination types here as more dest
 
 * [用受信任的数据合作伙伴提供的属性补充第一方轮廓](/help/rtcdp/partner-data/supplement-first-party-profiles.md)，以改善您的数据基础、洞察客户群的新情况并获得更好的受众优化。
 * 使用 Real-Time CDP 中的第三方数据支持，[通过数据合作伙伴提供的潜在客户轮廓扩充您的轮廓基础并与其交流以获取或接触新客户](/help/rtcdp/partner-data/prospecting.md)。
-* [&#128279;](/help/rtcdp/partner-data/onsite-personalization.md)利用合作伙伴辅助的认可在访问期间提供个性化现场体验，而无需用户进行身份验证或之前使用过您的品牌。
+* [](/help/rtcdp/partner-data/onsite-personalization.md)利用合作伙伴辅助的认可在访问期间提供个性化现场体验，而无需用户进行身份验证或之前使用过您的品牌。

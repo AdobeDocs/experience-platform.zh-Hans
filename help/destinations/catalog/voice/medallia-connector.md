@@ -2,9 +2,9 @@
 title: Medallia连接
 description: 激活目标Medallia调查和反馈收集的用户档案，以更好地了解客户的需求和期望。
 exl-id: 2c2766eb-7be1-418c-bf17-d119d244de92
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1269'
+source-wordcount: '1268'
 ht-degree: 3%
 
 ---
@@ -17,17 +17,17 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->此目标连接器和文档页面由Medallia团队创建和维护。 如有任何查询或更新请求，请直接通过adobe-integrations@medallia.com联系。
+>此目标连接器和文档页面由Medallia团队创建和维护。 如有任何查询或更新请求，请直接通过adobe-integrations@medallia.com联系他们。
 
 ## 用例 {#use-cases}
 
 为了帮助您更好地了解如何以及何时应使用Medallia目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
 
-### 用例#1
+### 用例#1 {#use-case-1}
 
 B2B品牌希望评估和简化其入职计划。 他们希望向刚刚完成入门培训流程的客户实时发送个性化调查。
 
-### 用例#2
+### 用例#2 {#use-case-2}
 
 retailer希望更好地了解客户对订单履行情况的偏好。 他们希望向过去一个月内在线和店内购买过产品的客户发送一份简短的1个问题短信调查。
 
@@ -61,7 +61,7 @@ Medallia支持激活下表中描述的标识。 了解有关[标识](/help/ident
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -93,7 +93,7 @@ Medallia支持激活下表中描述的标识。 了解有关[标识](/help/ident
 ## 连接到目标 {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写下面两个部分中列出的字段。
@@ -128,7 +128,7 @@ Medallia支持激活下表中描述的标识。 了解有关[标识](/help/ident
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
@@ -153,7 +153,7 @@ Medallia支持激活下表中描述的标识。 了解有关[标识](/help/ident
 ![显示身份和属性映射示例的图像。](/help/destinations/assets/catalog/voice/medallia-destination-mapping.png)
 
 >[!IMPORTANT]
-> 
+>
 > 使用&#x200B;**目标字段** > **选择自定义属性** > **属性名称**，与您的Medallia投放团队共享映射的每个目标自定义属性的确切&#x200B;**属性名称**。 您可能希望直接共享映射页面的屏幕快照。
 
 ## 导出的数据 {#exported-data}

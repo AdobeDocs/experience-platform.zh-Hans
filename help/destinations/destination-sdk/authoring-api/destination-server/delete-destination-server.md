@@ -2,9 +2,9 @@
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK删除现有目标服务器配置的API调用。
 title: 删除目标服务器配置
 exl-id: 2322a2ce-220e-4590-a553-b15152412752
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '331'
+source-wordcount: '329'
 ht-degree: 1%
 
 ---
@@ -22,15 +22,15 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 目标服务器API操作快速入门 {#get-started}
 
-在继续之前，请查看[入门指南](../../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[快速入门指南](../../getting-started.md)，了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 删除目标服务器配置 {#delete}
 
-您可以删除[现有](create-destination-server.md)目标服务器配置，方法是使用要删除的目标服务器配置的`{INSTANCE_ID}`向`/authoring/destination-servers`端点发出`DELETE`请求。
+您可以删除[现有](create-destination-server.md)目标服务器配置，方法是使用要删除的目标服务器配置的`DELETE`向`/authoring/destination-servers`端点发出`{INSTANCE_ID}`请求。
 
 >[!TIP]
 >
@@ -47,6 +47,8 @@ DELETE /authoring/destination-servers/{INSTANCE_ID}
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{INSTANCE_ID}` | 要删除的目标服务器配置的`ID`。 |
+
+{style="table-layout:auto"}
 
 +++请求
 

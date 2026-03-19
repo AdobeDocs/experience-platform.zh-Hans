@@ -3,9 +3,9 @@ title: Salesforce Marketing Cloud帐户参与度
 description: 了解如何使用Salesforce Marketing Cloud Account Engagement（以前称为Pardot）目标导出您的帐户数据，并在Salesforce Marketing Cloud Account Engagement中激活这些数据，以满足您的业务需求。
 last-substantial-update: 2023-04-14T00:00:00Z
 exl-id: fca9d4f4-8717-4bfa-9992-5164ba98bea4
-source-git-commit: ef1b0b704d1299282995068a0de330d52884bb95
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1653'
+source-wordcount: '1651'
 ht-degree: 3%
 
 ---
@@ -34,11 +34,11 @@ ht-degree: 3%
 
 ### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL Marketing Cloud Account Engagement]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=zh-Hans)区段[!DNL Experience Platform]。
+在将数据激活到[!DNL Marketing Cloud Account Engagement]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)区段[!DNL Experience Platform]。
 
 ### [!DNL Marketing Cloud Account Engagement]中的先决条件 {#prerequisites-destination}
 
-请注意以下先决条件，以便将数据从Experience Platform导出到您的[!DNL Marketing Cloud Account Engagement]帐户：
+请注意将数据从Experience Platform导出到您的[!DNL Marketing Cloud Account Engagement]帐户的以下先决条件：
 
 #### 您需要拥有[!DNL Marketing Cloud Account Engagement]帐户 {#prerequisites-account}
 
@@ -68,7 +68,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->如果[!DNL Salesforce]帐户管理员限制了对受信任IP范围的访问，则需要联系他们以获取[Experience Platform 列入允许列表 IP的](/help/destinations/catalog/streaming/ip-address-allow-list.md)访问权限。 如果您需要其他指导，请参阅[!DNL Salesforce] [限制对连接应用程序的受信任IP范围的访问](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&type=5)文档。
+>如果[!DNL Salesforce]帐户管理员限制了对受信任IP范围的访问，则需要联系他们以获取[Experience Platform IP的](/help/destinations/catalog/streaming/ip-address-allow-list.md)访问权限。 如果您需要其他指导，请参阅[!DNL Salesforce] [限制对连接应用程序的受信任IP范围的访问](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&type=5)文档。
 
 ## 支持的身份 {#supported-identities}
 
@@ -87,7 +87,7 @@ ht-degree: 3%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -161,7 +161,7 @@ ht-degree: 3%
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
@@ -197,7 +197,7 @@ ht-degree: 3%
 1. 导航到您选择的受众之一。 选择 **[!DNL Activation data]** 选项卡。**[!UICONTROL Mapping ID]**&#x200B;列显示在[!DNL Marketing Cloud Account Engagement Prospects]页面中生成的自定义字段的名称。
    ![显示选定区段映射ID的Experience Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/selected-segment-mapping-id.png)
 
-1. 登录到[[!DNL Salesforce]](https://login.salesforce.com/)网站。 然后导航到&#x200B;**[!DNL Account Engagement]** > **[!DNL Prospects]** > **[!DNL Pardot Prospects]**&#x200B;页面，并检查受众中的潜在客户是否已添加/更新。 或者，您也可以访问[[!DNL Salesforce Pardot]](https://pi.pardot.com/)并访问&#x200B;**[!DNL Prospects]**&#x200B;页面。
+1. 登录到[[!DNL Salesforce]](https://login.salesforce.com/)网站。 然后导航到&#x200B;**[!DNL Account Engagement]** > **[!DNL Prospects]** > **[!DNL Pardot Prospects]**&#x200B;页面，并检查受众中的潜在客户是否已添加/更新。 或者，您也可以访问[[!DNL Salesforce Pardot]](https://pi.pardot.com/)并访问&#x200B;**[!DNL Prospects]**页面。
    ![显示“潜在客户”页面的Salesforce UI屏幕截图。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/prospects.png)
 
 1. 要检查潜在客户是否已更新，请选择一个潜在客户，并验证自定义潜在客户字段是否已使用Experience Platform受众状态进行更新。

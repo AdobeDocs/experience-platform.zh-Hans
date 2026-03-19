@@ -2,9 +2,9 @@
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK删除现有目标配置的API调用。
 title: 删除目标配置
 exl-id: c7309ab7-1b8d-46d4-8017-fd4aa5918cdd
-source-git-commit: fda542e62c448788099d63951277278a146fdfc8
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '279'
+source-wordcount: '277'
 ht-degree: 2%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 目标配置API操作快速入门 {#get-started}
 
-在继续之前，请查看[入门指南](../../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[快速入门指南](../../getting-started.md)，了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 删除目标配置 {#delete}
 
@@ -41,6 +41,8 @@ DELETE /authoring/destinations/{INSTANCE_ID}
 | --------- | ----------- |
 | `{INSTANCE_ID}` | 要删除的目标配置的`ID`。 |
 
+{style="table-layout:auto"}
+
 +++请求
 
 ```shell
@@ -60,7 +62,7 @@ curl -X DELETE https://platform.adobe.io/data/core/activation/authoring/destinat
 
 Destination SDK API端点遵循常规Experience Platform API错误消息原则。 请参阅Experience Platform疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
 
-## 后续步骤
+## 后续步骤 {#next-steps}
 
 阅读本文档后，您现在知道如何通过Destination SDK `/authoring/destinations` API端点删除现有目标配置。
 

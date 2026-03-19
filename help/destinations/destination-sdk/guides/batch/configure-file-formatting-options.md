@@ -2,9 +2,9 @@
 description: 为基于文件的目标配置文件格式选项
 title: 了解如何使用Destination SDK为基于文件的目标配置文件格式选项。
 exl-id: e61c7989-1123-4b3b-9781-a6097cd0e2b4
-source-git-commit: d47c82339afa602a9d6914c1dd36a4fc9528ea32
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '913'
+source-wordcount: '902'
 ht-degree: 1%
 
 ---
@@ -13,18 +13,18 @@ ht-degree: 1%
 
 ## 概述 {#overview}
 
-Destination SDK允许您广泛调整导出文件的格式和压缩选项，以匹配存储位置的任何下游要求。
+Destination SDK允许您广泛调整导出文件的格式和压缩选项，以匹配存储位置中的任何下游要求。
 
 本页介绍如何使用Destination SDK为基于文件的目标配置文件格式选项。
 
 ## 先决条件 {#prerequisites}
 
-在进入下面列出的步骤之前，请阅读[Destination SDK快速入门](../../getting-started.md)页面，了解有关获取使用Destination SDKAPI所必需的Adobe I/O身份验证凭据和其他先决条件的信息。
+在继续执行以下步骤之前，请参阅[Destination SDK快速入门](../../getting-started.md)页面，了解有关获取使用Destination SDK API所需的必要Adobe I/O身份验证凭据和其他先决条件的信息。
 
 Adobe还建议您先阅读并熟悉以下文档，然后再继续：
 
 * 每个可用的文件格式选项均在[文件格式配置](../../functionality/destination-server/file-formatting.md)部分中详细记录。
-* 完成使用Destination SDK[配置基于文件的目标](../../guides/configure-file-based-destination-instructions.md)的步骤。
+* 完成使用Destination SDK [配置基于文件的目标](../../guides/configure-file-based-destination-instructions.md)的步骤。
 
 ## 创建服务器和文件配置 {#create-server-file-configuration}
 
@@ -102,13 +102,13 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 >[!TIP]
 >
->**验证Experience PlatformUI**。 使用下面部分中演示的配置来配置文件格式选项时，您应该检查Experience PlatformUI以了解这些选项的呈现方式。
+>**验证Experience Platform UI**。 使用下面部分中演示的配置来配置文件格式选项时，您应该检查Experience Platform UI以了解这些选项的呈现方式。
 
 在上一步中将所需的文件格式选项添加到目标服务器和文件格式配置后，您现在可以使用`/destinations` API端点将所需的字段作为客户数据字段添加到目标配置。
 
 >[!IMPORTANT]
 >
->此步骤是可选的，它仅决定在Experience PlatformUI中应向用户显示哪些文件格式选项。 如果您未设置文件格式选项作为客户数据字段，则文件导出将使用[服务器和文件配置](#create-server-file-configuration)中配置的默认值继续。
+>此步骤是可选的，它仅决定在Experience Platform UI中应向用户显示哪些文件格式选项。 如果您未设置文件格式选项作为客户数据字段，则文件导出将使用[服务器和文件配置](#create-server-file-configuration)中配置的默认值继续。
 
 在此步骤中，您可以按所需的任何顺序对显示的选项进行分组，您可以根据所选文件类型创建自定义分组、下拉字段和条件分组。 所有这些设置都显示在录制和更下面的部分中。
 
@@ -116,9 +116,9 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 ### 对文件格式选项排序 {#ordering}
 
-作为目标配置中的客户数据字段，您添加文件格式选项的顺序反映在UI中。 例如，以下配置将相应地反映在UI中，选项按顺序&#x200B;**[!UICONTROL 分隔符]**、**[!UICONTROL 引号字符]**、**[!UICONTROL 转义字符]**、**[!UICONTROL 空值]**、**[!UICONTROL 空值]**&#x200B;显示。
+作为目标配置中的客户数据字段，您添加文件格式选项的顺序反映在UI中。 例如，以下配置将相应地反映在UI中，选项按顺序&#x200B;**[!UICONTROL Delimiter]**、**[!UICONTROL Quote Character]**、**[!UICONTROL Escape Character]**、**[!UICONTROL Empty Value]**、**[!UICONTROL Null Value]**&#x200B;显示。
 
-![显示Experience PlatformUI中文件格式选项顺序的图像。](../../assets/guides/batch/file-formatting-order.png)
+![显示Experience Platform UI中文件格式选项顺序的图像。](../../assets/guides/batch/file-formatting-order.png)
 
 ```json
         {
@@ -241,7 +241,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 您可以将多个文件格式选项组合在一个节中。 在UI中设置与目标之间的连接时，用户可以查看类似字段的可视化分组并从中受益。
 
-为此，请使用`"type": "object"`创建组，并在`properties`参数中收集所需的文件格式选项，如以下示例所示，其中高亮显示了&#x200B;**[!UICONTROL CSV选项]**&#x200B;分组。
+为此，请使用`"type": "object"`创建组，并在`properties`参数中收集所需的文件格式选项，如下面的示例所示，其中高亮显示分组&#x200B;**[!UICONTROL CSV Options]**。
 
 ```json {line-numbers="true" start-number="100" highlight="106-128"}
 "customerDataFields":[
@@ -487,7 +487,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 ![显示CSV文件的条件文件格式选项的屏幕录制。](../../assets/guides/batch/conditional-file-formatting.gif)
 
-### 完成API请求，其中包括上面显示的所有选项
+### 完成API请求，其中包括上面显示的所有选项 {#complete-api-request}
 
 以下API请求将以上部分中描述的所有选项组合到一个配置中。
 

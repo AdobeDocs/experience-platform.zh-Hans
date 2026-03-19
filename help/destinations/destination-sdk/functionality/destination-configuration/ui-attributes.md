@@ -2,9 +2,9 @@
 description: 了解如何为使用Destination SDK构建的目标配置UI属性，如文档链接、目标卡类别以及目标连接类型和频率。
 title: UI属性
 exl-id: aed8d868-c516-45da-b224-c7e99e4bfaf1
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '802'
+source-wordcount: '796'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ UI属性定义Adobe应在Adobe Experience Platform用户界面中为目标卡显
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -47,6 +47,8 @@ UI属性定义Adobe应在Adobe Experience Platform用户界面中为目标卡显
 |---|---|
 | 实时（流）集成 | 是 |
 | 基于文件（批处理）的集成 | 是 |
+
+{style="table-layout:auto"}
 
 ## 支持的参数 {#supported-parameters}
 
@@ -66,7 +68,7 @@ UI属性定义Adobe应在Adobe Experience Platform用户界面中为目标卡显
 
 使用以下格式： `http://www.adobe.com/go/destinations-YOURDESTINATION-en`，其中`YOURDESTINATION`是目标的名称。 对于名为Moviestar的目标，您将使用`http://www.adobe.com/go/destinations-moviestar-en`。
 
-用户可以从UI中的目标目录页面查看和访问您的文档链接。 他们需要浏览到您的目标卡，然后选择&#x200B;**[!UICONTROL 更多操作]**，然后选择&#x200B;**[!UICONTROL 查看文档]**，如下图所示。
+用户可以从UI中的目标目录页面查看和访问您的文档链接。 他们需要浏览到您的目标卡，然后选择&#x200B;**[!UICONTROL More actions]**，再选择&#x200B;**[!UICONTROL View documentation]**，如下图所示。
 
 ![显示文档链接位置的UI图像。](../../assets/functionality/destination-configuration/ui-attributes-doc-link.png)
 
@@ -94,7 +96,7 @@ UI属性定义Adobe应在Adobe Experience Platform用户界面中为目标卡显
 
 `frequency`是一个字符串参数，它引用您的目标支持的数据导出类型。 对于基于API的集成，设置为`Streaming`；或者，在将文件导出到目标时，设置为`Batch`。
 
-用户可以在每个目标连接的&#x200B;**[!UICONTROL 数据流运行]**&#x200B;页面中看到频率类型。
+用户可以在每个目标连接的&#x200B;**[!UICONTROL Dataflow runs]**&#x200B;页中看到频率类型。
 
 ![显示UI中频率类型位置的UI图像。](../../assets/functionality/destination-configuration/ui-attributes-frequency.png)
 

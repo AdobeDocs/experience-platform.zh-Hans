@@ -4,9 +4,9 @@ title: 使用流服务API导出数据集
 description: 了解如何使用流服务API将数据集导出到所选目标。
 type: Tutorial
 exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '5208'
+source-wordcount: '5203'
 ht-degree: 4%
 
 ---
@@ -40,7 +40,7 @@ ht-degree: 4%
 
 ## 可用于导出的数据集 {#datasets-to-export}
 
-您可以导出的数据集取决于Experience Platform应用程序(Real-Time CDP、Adobe Journey Optimizer)、层(Prime或Ultimate)以及您购买的任何加载项(例如：Data Distiller)。
+您可以导出的数据集取决于Experience Platform应用程序(Real-Time CDP、Adobe Journey Optimizer)、层（Prime或Ultimate）以及您购买的任何加载项（例如：Data Distiller）。
 
 请参阅UI教程页面[上的](/help/destinations/ui/export-datasets.md#datasets-to-export)表以了解可以导出哪些数据集。
 
@@ -59,7 +59,7 @@ ht-degree: 4%
 
 ## 先决条件 {#prerequisites}
 
-要导出数据集，请注意以下先决条件：
+请注意导出数据集的以下先决条件：
 
 * 要将数据集导出到云存储目标，您必须已成功[连接到目标](/help/destinations/ui/connect-destination.md)。 如果您尚未这样做，请转到[目标目录](/help/destinations/catalog/overview.md)，浏览支持的目标，然后配置要使用的目标。
 * 需要启用配置文件数据集才能在实时客户配置文件中使用。 [阅读更多](/help/ingestion/tutorials/ingest-batch-data.md#enable-for-profile)以了解如何启用此选项。
@@ -83,7 +83,7 @@ ht-degree: 4%
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) [!DNL Experience Platform]。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
 
 ### 收集必需标题和可选标题的值 {#gather-values-headers}
 
@@ -828,7 +828,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!ENDTABS]
 
-使用身份验证规范中指定的属性（即响应中的`authSpec`），您可以使用特定于每个目标类型的所需凭据创建基本连接，如以下示例所示：
+使用在身份验证规范（即响应中的`authSpec`）中指定的属性，您可以使用特定于每个目标类型的所需凭据创建基本连接，如以下示例所示：
 
 >[!BEGINTABS]
 
@@ -941,7 +941,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->有关如何获取所需身份验证凭据的信息，请参阅Azure Data Lake Gen 2(ADLS Gen2)目标文档页面的[对目标](/help/destinations/catalog/cloud-storage/adls-gen2.md#authenticate)进行身份验证。
+>有关如何获取所需身份验证凭据的信息，请参阅Azure Data Lake Gen 2(ADLS Gen2)目标文档页面的[对目标](/help/destinations/catalog/cloud-storage/adls-gen2.md#authenticate)进行身份验证部分。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -1632,7 +1632,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 >[!TIP]
 >
 >有关如何获取所需目标参数的信息，请参阅[目标文档页面的](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details)填写目标详细信息[!DNL Amazon S3]部分。
->&#x200B;>有关`datasetFileType`的其他支持值，请参阅API参考文档。
+>有关`datasetFileType`的其他支持值，请参阅API参考文档。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -1685,7 +1685,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 >[!TIP]
 >
 >有关如何获取所需目标参数的信息，请参阅[目标文档页面的](/help/destinations/catalog/cloud-storage/azure-blob.md#destination-details)填写目标详细信息[!DNL Azure Blob Storage]部分。
->&#x200B;>有关`datasetFileType`的其他支持值，请参阅API参考文档。
+>有关`datasetFileType`的其他支持值，请参阅API参考文档。
 
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
@@ -1739,7 +1739,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 >[!TIP]
 >
 >有关如何获取所需目标参数的信息，请参阅Azure [目标文档页面的](/help/destinations/catalog/cloud-storage/adls-gen2.md#destination-details)填写目标详细信息[!DNL Data Lake Gen 2(ADLS Gen2)]部分。
->&#x200B;>有关`datasetFileType`的其他支持值，请参阅API参考文档。
+>有关`datasetFileType`的其他支持值，请参阅API参考文档。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -1791,7 +1791,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 >[!TIP]
 >
 >有关如何获取所需目标参数的信息，请参阅[目标文档页面的](/help/destinations/catalog/cloud-storage/data-landing-zone.md#destination-details)填写目标详细信息[!DNL Data Landing Zone]部分。
->&#x200B;>有关`datasetFileType`的其他支持值，请参阅API参考文档。
+>有关`datasetFileType`的其他支持值，请参阅API参考文档。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -1843,7 +1843,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 >[!TIP]
 >
 >有关如何获取所需目标参数的信息，请参阅[目标文档页面的](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#destination-details)填写目标详细信息[!DNL Google Cloud Storage]部分。
->&#x200B;>有关`datasetFileType`的其他支持值，请参阅API参考文档。
+>有关`datasetFileType`的其他支持值，请参阅API参考文档。
 
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
@@ -1897,7 +1897,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 >[!TIP]
 >
 >有关如何获取所需目标参数的信息，请参阅SFTP目标文档页面的[填写目标详细信息](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#destination-details)部分。
->&#x200B;>有关`datasetFileType`的其他支持值，请参阅API参考文档。
+>有关`datasetFileType`的其他支持值，请参阅API参考文档。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 

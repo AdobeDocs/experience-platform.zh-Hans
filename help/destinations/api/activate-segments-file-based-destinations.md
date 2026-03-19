@@ -4,9 +4,9 @@ title: 使用流服务API将受众激活到基于文件的目标
 description: 了解如何使用流服务API将包含合格配置文件的文件导出到云存储目标。
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: ba2de112ba9f1fce35f847e9eb9396e65f2a9232
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '4976'
+source-wordcount: '4973'
 ht-degree: 4%
 
 ---
@@ -63,7 +63,7 @@ If you were already using the Flow Service API to export profiles to the Amazon 
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) [!DNL Experience Platform]。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
 
 ### 收集必需标题和可选标题的值 {#gather-values-headers}
 
@@ -703,7 +703,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!ENDTABS]
 
-使用身份验证规范中指定的属性（即响应中的`authSpec`），您可以使用特定于每个目标类型的所需凭据创建基本连接，如以下示例所示：
+使用在身份验证规范（即响应中的`authSpec`）中指定的属性，您可以使用特定于每个目标类型的所需凭据创建基本连接，如以下示例所示：
 
 >[!BEGINTABS]
 
@@ -849,7 +849,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->有关如何获取所需身份验证凭据的信息，请参阅Azure Data Lake Gen 2(ADLS Gen2)目标文档页面的[对目标](/help/destinations/catalog/cloud-storage/adls-gen2.md#authenticate)进行身份验证。
+>有关如何获取所需身份验证凭据的信息，请参阅Azure Data Lake Gen 2(ADLS Gen2)目标文档页面的[对目标](/help/destinations/catalog/cloud-storage/adls-gen2.md#authenticate)进行身份验证部分。
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了更多信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -1094,7 +1094,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!ENDTABS]
 
-### 向导出的文件添加加密
+### 向导出的文件添加加密 {#add-encryption}
 
 或者，您也可以向导出的文件添加加密。 为此，您需要从`encryption`对象添加项。 请查阅下面的请求示例，其中必填参数突出显示：
 
@@ -3273,7 +3273,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 记下响应中的数据流ID。 此ID在后续步骤中是必需的。
 
-### 将受众添加到导出
+### 将受众添加到导出 {#add-audiences}
 
 在此步骤中，您还可以选择要导出到目标的受众。 有关此步骤以及将受众添加到数据流的请求格式的更多信息，请查看API参考文档的[更新目标数据流](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Dataflows/operation/patchFlowById)部分中的示例。
 
@@ -3292,7 +3292,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 ![映射步骤](/help/destinations/assets/api/file-based-segment-export/mapping-example.png)的示例
 
-### 创建输入架构
+### 创建输入架构 {#create-input-schema}
 
 要创建输入架构，您首先需要检索[合并架构](/help/profile/ui/union-schema.md)以及可导出到目标的标识。 这是属性和标识的架构，您可以选择它作为源映射。
 
@@ -3730,7 +3730,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
 
 响应中的ID表示您创建的输入架构的唯一标识符。 从响应中复制ID，因为您将在后续步骤中重复使用它。
 
-### 创建输出架构
+### 创建输出架构 {#create-output-schema}
 
 接下来，必须为导出设置输出架构。 首先，您需要查找并检查现有合作伙伴架构。
 

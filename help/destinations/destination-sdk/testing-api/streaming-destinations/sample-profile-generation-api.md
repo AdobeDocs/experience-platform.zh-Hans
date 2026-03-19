@@ -2,9 +2,9 @@
 description: 了解如何使用目标测试API为流式目标生成样本配置文件，以用于目标测试。
 title: 根据源架构生成样本配置文件
 exl-id: 5f1cd00a-8eee-4454-bcae-07b05afa54af
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '980'
+source-wordcount: '976'
 ht-degree: 1%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 1%
 
 ## 范例配置文件生成API操作快速入门 {#get-started}
 
-在继续之前，请查看[入门指南](../../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[快速入门指南](../../getting-started.md)，了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 根据测试目标时使用的源架构生成样本配置文件 {#generate-sample-profiles-source-schema}
 
@@ -47,8 +47,8 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->* 要使用此API，您必须在Experience Platform UI中拥有到目标的现有连接。 阅读[连接到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=zh-Hans)和[将配置文件和受众激活到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=zh-Hans)以了解详细信息。
->* 建立与目标的连接后，获取在[浏览与目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html?lang=zh-Hans)的连接时您应在对此端点的API调用中使用的目标实例ID。
+>* 要使用此API，您必须在Experience Platform UI中拥有到目标的现有连接。 阅读[连接到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html)和[将配置文件和受众激活到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html)以了解详细信息。
+>* 建立与目标的连接后，获取在[浏览与目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html)的连接时您应在对此端点的API调用中使用的目标实例ID。
 >
 >![UI图像如何获取目标实例ID](../../assets/testing-api/get-destination-instance-id.png)
 
@@ -182,10 +182,10 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `segmentMembership` | 描述个人受众成员资格的映射对象。 有关`segmentMembership`的详细信息，请阅读[受众成员资格详细信息](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html?lang=zh-Hans)。 |
+| `segmentMembership` | 描述个人受众成员资格的映射对象。 有关`segmentMembership`的详细信息，请阅读[受众成员资格详细信息](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html)。 |
 | `lastQualificationTime` | 此配置文件上次符合区段资格的时间戳。 |
 | `xdm:status` | 一个字符串字段，指明在当前请求中是否实现了受众成员资格。 接受以下值： <ul><li>`realized`：配置文件是区段的一部分。</li><li>`exited`：配置文件正在作为当前请求的一部分退出受众。</li></ul> |
-| `identityMap` | 描述个人各种身份值及其关联命名空间的映射类型字段。 有关`identityMap`的详细信息，请阅读[架构组合的基础](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=zh-Hans#identityMap)。 |
+| `identityMap` | 描述个人各种身份值及其关联命名空间的映射类型字段。 有关`identityMap`的详细信息，请阅读[架构组合的基础](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html#identityMap)。 |
 
 {style="table-layout:auto"}
 
@@ -377,6 +377,6 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 
 Destination SDK API端点遵循常规Experience Platform API错误消息原则。 请参阅Experience Platform疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
 
-## 后续步骤
+## 后续步骤 {#next-steps}
 
 阅读本文档后，您现在知道如何生成样本配置文件，以便在[测试消息转换模板](create-template.md)或[测试目标配置是否正确](streaming-destination-testing-overview.md)时使用。

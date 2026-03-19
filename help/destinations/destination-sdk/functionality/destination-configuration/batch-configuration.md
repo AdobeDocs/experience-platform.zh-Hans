@@ -2,9 +2,9 @@
 description: 了解如何为使用Destination SDK构建的目标配置文件导出设置。
 title: 批次配置
 exl-id: 0ffbd558-a83c-4c3d-b4fc-b6f7a23a163a
-source-git-commit: 8e7356bdc5692678e46a61b538d4b6748792a423
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1058'
+source-wordcount: '1031'
 ht-degree: 2%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -109,27 +109,27 @@ ht-degree: 2%
 使用文件名配置宏定义导出的文件名应包含的内容。 下表中的宏描述了UI中[文件名配置](../../../ui/activate-batch-profile-destinations.md#file-names)屏幕中的元素。
 
 >[!TIP]
-> 
+>
 >作为最佳实践，您应始终在导出的文件名中包含`SEGMENT_ID`宏。 区段ID是唯一的，因此将它们包含在文件名中是确保文件名唯一的最佳方法。
 
 | 宏 | UI标签 | 描述 | 示例 |
 |---|---|---|---|
-| `DESTINATION` | [!UICONTROL 目标] | UI中的目标名称。 | Amazon S3 |
-| `SEGMENT_ID` | [!UICONTROL 区段ID] | Experience Platform生成的唯一受众ID | ce5c5482-2813-4a80-99bc-57113f6acde2 |
-| `SEGMENT_NAME` | [!UICONTROL 区段名称] | 用户定义的受众名称 | VIP订阅者 |
-| `DESTINATION_INSTANCE_ID` | [!UICONTROL 目标ID] | Experience Platform生成的唯一目标实例ID | 7b891e5f-025a-4f0d-9e73-1919e71da3b0 |
-| `DESTINATION_INSTANCE_NAME` | [!UICONTROL 目标名称] | 用户定义的目标实例名称。 | 我的2022 Advertising目标 |
-| `ORGANIZATION_NAME` | [!UICONTROL 组织名称] | Adobe Experience Platform中的客户组织的名称。 | 我的组织名称 |
-| `SANDBOX_NAME` | [!UICONTROL 沙盒名称] | 客户使用的沙盒的名称。 | prod |
-| `DATETIME` / `TIMESTAMP` | [!UICONTROL 日期和时间] | `DATETIME`和`TIMESTAMP`都定义生成文件的时间，但采用不同的格式。<br><br><ul><li>`DATETIME`使用以下格式： YYYYMMDD_HHMMSS。</li><li>`TIMESTAMP`使用10位Unix格式。 </li></ul> `DATETIME`和`TIMESTAMP`是互斥的，不能同时使用。 | <ul><li>`DATETIME`： 20220509_210543</li><li>`TIMESTAMP`： 1652131584</li></ul> |
-| `CUSTOM_TEXT` | [!UICONTROL 自定义文本] | 要包含在文件名中的用户定义的自定义文本。 无法在`defaultFilename`中使用。 | My_Custom_Text |
-| `TIMESTAMP` | [!UICONTROL 日期和时间] | 生成文件时间的10位数时间戳，采用Unix格式。 | 1652131584 |
-| `MERGE_POLICY_ID` | [!UICONTROL 合并策略ID] | 用于生成导出受众的[合并策略](../../../../profile/merge-policies/overview.md)的ID。 当您根据合并策略在文件中分组导出的受众时，使用此宏。 将此宏与`segmentGroupingEnabled:true`一起使用。 | e8591fdb-2873-4b12-b63e-15275b1c1439 |
-| `MERGE_POLICY_NAME` | [!UICONTROL 合并策略名称] | 用于生成导出受众的[合并策略](../../../../profile/merge-policies/overview.md)的名称。 当您根据合并策略在文件中分组导出的受众时，使用此宏。 将此宏与`segmentGroupingEnabled:true`一起使用。 | 我的自定义合并策略 |
+| `DESTINATION` | [!UICONTROL Destination] | UI中的目标名称。 | Amazon S3 |
+| `SEGMENT_ID` | [!UICONTROL Segment ID] | Experience Platform生成的唯一受众ID | ce5c5482-2813-4a80-99bc-57113f6acde2 |
+| `SEGMENT_NAME` | [!UICONTROL Segment Name] | 用户定义的受众名称 | VIP订阅者 |
+| `DESTINATION_INSTANCE_ID` | [!UICONTROL Destination ID] | Experience Platform生成的唯一目标实例ID | 7b891e5f-025a-4f0d-9e73-1919e71da3b0 |
+| `DESTINATION_INSTANCE_NAME` | [!UICONTROL Destination Name] | 用户定义的目标实例名称。 | 我的2022 Advertising目标 |
+| `ORGANIZATION_NAME` | [!UICONTROL Organization Name] | Adobe Experience Platform中的客户组织的名称。 | 我的组织名称 |
+| `SANDBOX_NAME` | [!UICONTROL Sandbox Name] | 客户使用的沙盒的名称。 | prod |
+| `DATETIME` / `TIMESTAMP` | [!UICONTROL Date and time] | `DATETIME`和`TIMESTAMP`都定义生成文件的时间，但采用不同的格式。<br><br><ul><li>`DATETIME`使用以下格式： YYYYMMDD_HHMMSS。</li><li>`TIMESTAMP`使用10位Unix格式。 </li></ul> `DATETIME`和`TIMESTAMP`是互斥的，不能同时使用。 | <ul><li>`DATETIME`： 20220509_210543</li><li>`TIMESTAMP`： 1652131584</li></ul> |
+| `CUSTOM_TEXT` | [!UICONTROL Custom text] | 要包含在文件名中的用户定义的自定义文本。 无法在`defaultFilename`中使用。 | My_Custom_Text |
+| `TIMESTAMP` | [!UICONTROL Date and time] | 生成文件时间的10位数时间戳，采用Unix格式。 | 1652131584 |
+| `MERGE_POLICY_ID` | [!UICONTROL Merge Policy ID] | 用于生成导出受众的[合并策略](../../../../profile/merge-policies/overview.md)的ID。 当您根据合并策略在文件中分组导出的受众时，使用此宏。 将此宏与`segmentGroupingEnabled:true`一起使用。 | e8591fdb-2873-4b12-b63e-15275b1c1439 |
+| `MERGE_POLICY_NAME` | [!UICONTROL Merge Policy Name] | 用于生成导出受众的[合并策略](../../../../profile/merge-policies/overview.md)的名称。 当您根据合并策略在文件中分组导出的受众时，使用此宏。 将此宏与`segmentGroupingEnabled:true`一起使用。 | 我的自定义合并策略 |
 
 {style="table-layout:auto"}
 
-### 文件名配置示例
+### 文件名配置示例 {#file-name-configuration-example}
 
 以下配置示例显示了API调用中使用的配置与UI中显示的选项之间的对应关系。
 

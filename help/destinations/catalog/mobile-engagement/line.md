@@ -4,9 +4,9 @@ title: LINE连接
 description: LINE目标允许您向Experience Platform受众添加配置文件，并为连接的用户提供个性化体验。
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 9981798a-61f2-4a09-9a33-57e63eb36d43
-source-git-commit: ef1b0b704d1299282995068a0de330d52884bb95
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1318'
+source-wordcount: '1316'
 ht-degree: 3%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 3%
 
 ### [!DNL LINE]先决条件 {#prerequisites-destination}
 
-请注意[!DNL LINE]中的以下先决条件，以便将数据从Experience Platform导出到您的[!DNL LINE]帐户：
+注意[!DNL LINE]中的以下先决条件，以将数据从Experience Platform导出到您的[!DNL LINE]帐户：
 
 #### 您需要拥有[!DNL LINE]帐户 {#prerequisites-account}
 
@@ -58,7 +58,7 @@ ht-degree: 3%
 
 | 目标身份 | 描述 |
 |---|---|
-| 广告商ID(IFA) | 当源标识为IFA *(广告商的Apple ID)*&#x200B;或GAID *(Google Advertising ID)命名空间时，选择广告商(IFA)目标标识的ID。 |
+| 广告商ID(IFA) | 当源标识为IFA *（广告商的Apple ID）*&#x200B;或GAID *(Google Advertising ID)命名空间时，选择广告商(IFA)目标标识的ID。 |
 | 行用户ID | 当源标识为LINE用户ID时，选择UserID目标标识。 |
 
 ## 支持的受众 {#supported-audiences}
@@ -68,7 +68,7 @@ ht-degree: 3%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -136,7 +136,7 @@ ht-degree: 3%
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
@@ -152,6 +152,8 @@ ht-degree: 3%
 | --- | --- | --- |
 | 广告商ID(IFA) | `IDFA` 或 `GAID` | `LineId` |
 | 行用户ID | `UserID` | `LineId` |
+
+{style="table-layout:auto"}
 
 如果您的目标身份是&#x200B;*LINE用户ID的*，则需要以下项：
 ![Experience Platform UI屏幕截图示例，显示将LINE用户ID用于Target身份时的Target映射。](../../assets/catalog/mobile-engagement/line/mappings-userid.png)

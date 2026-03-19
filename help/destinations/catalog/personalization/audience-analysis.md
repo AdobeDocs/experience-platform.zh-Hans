@@ -5,7 +5,7 @@ badgeLimitedAvailability: label="限量发布版" type="Informative"
 exl-id: 81437237-d746-4ce9-b938-7d2541f0ed32
 hide: true
 hidefromtoc: true
-source-git-commit: ef1b0b704d1299282995068a0de330d52884bb95
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '892'
 ht-degree: 4%
@@ -14,13 +14,13 @@ ht-degree: 4%
 
 # Audience Analysis目标
 
-[!UICONTROL Audience Analysis]目标允许您将Adobe Experience Platform受众数据扩充到[Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html?lang=zh-Hans)。 您可以选择要在生成的扩充数据中包含的受众。 然后，受众资格将作为维度出现在[Analysis Workspace](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-workspace/home.html?lang=zh-Hans)报表中。
+[!UICONTROL Audience Analysis]目标允许您将Adobe Experience Platform受众数据扩充到[Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html?lang=zh-Hans)。 您可以选择要在生成的扩充数据中包含的受众。 然后，受众资格将作为维度出现在[Analysis Workspace](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-workspace/home.html)报表中。
 
 >[!AVAILABILITY]
 >
 >此目标处于有限测试阶段。 如果您有兴趣使用此目标，请联系您的Adobe客户团队。
 
-## 先决条件
+## 先决条件 {#prerequisites}
 
 使用此目标之前需要执行以下操作：
 
@@ -28,7 +28,7 @@ ht-degree: 4%
 * 您必须进行配置才能使用Customer Journey Analytics。
 * 您必须在Adobe Experience Platform中至少创建一个受众。
 
-## 支持的身份
+## 支持的身份 {#supported-identities}
 
 Audience Analysis支持激活下表中描述的标识。 了解有关[标识](/help/identity-service/features/namespaces.md)的更多信息。 通常使用Experience Cloud ID (ECID)。
 
@@ -43,14 +43,14 @@ Audience Analysis支持激活下表中描述的标识。 了解有关[标识](/h
 
 {style="table-layout:auto"}
 
-## 支持的受众
+## 支持的受众 {#supported-audiences}
 
 使用此目标时，支持以下类型的受众：
 
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -68,7 +68,7 @@ Audience Analysis支持激活下表中描述的标识。 了解有关[标识](/h
 {style="table-layout:auto"}
 
 
-## 导出类型和频率
+## 导出类型和频率 {#export-type-frequency}
 
 有关目标导出类型和频率的信息，请参阅下表。
 
@@ -79,15 +79,15 @@ Audience Analysis支持激活下表中描述的标识。 了解有关[标识](/h
 
 {style="table-layout:auto"}
 
-## 配置新目标
+## 配置新目标 {#configure-destination}
 
 >[!IMPORTANT]
-> 
+>
 >要创建目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要创建此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
 
-### 目标详细信息
+### 目标详细信息 {#destination-details}
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
@@ -96,7 +96,7 @@ Audience Analysis支持激活下表中描述的标识。 了解有关[标识](/h
 * **[!UICONTROL Datastream ID]**：要与符合条件的受众扩充的数据流ID。 您可以在[数据流管理器](/help/datastreams/overview.md)中获取此ID。
 * **[!UICONTROL Integration alias]**：集成别名。
 
-### 警报
+### 警报 {#alerts}
 
 您可以启用警报，以接收有关发送到目标的数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
 
@@ -104,7 +104,7 @@ Audience Analysis支持激活下表中描述的标识。 了解有关[标识](/h
 
 完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
-### 治理策略和实施行动
+### 治理策略和实施行动 {#governance-policy}
 
 此可选部分允许您定义数据管理策略，并确保在发送和激活受众时使用的数据符合要求。
 
@@ -113,7 +113,7 @@ Audience Analysis支持激活下表中描述的标识。 了解有关[标识](/h
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 创建目标后，您可以为该目标激活所需的受众。

@@ -2,9 +2,9 @@
 title: Snap Inc连接
 description: 了解如何连接到Snapchat广告平台并从Experience Platform导出受众。
 exl-id: 1f0f2dc0-5f3d-424b-9b22-b1a14ac30039
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1166'
+source-wordcount: '1161'
 ht-degree: 3%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->此目标连接器和文档页面由&#x200B;*快照公司*&#x200B;团队创建和维护。 如有任何查询或更新请求，请直接通过&#x200B;*dev-support@snap.com*&#x200B;联系他们
+>此目标连接器和文档页面由&#x200B;*快照公司*&#x200B;团队创建和维护。 如有任何查询或更新请求，请直接通过&#x200B;*dev-support@snap.com*&#x200B;与他们联系
 
 ## 用例 {#use-cases}
 
@@ -25,7 +25,7 @@ ht-degree: 3%
 
 ## 先决条件 {#prerequisites}
 
-要使用此目标，您必须具有Snapchat广告帐户。 有关如何创建规则库的信息，请参阅此文档：
+要使用此目标，您必须具有Snapchat广告帐户。 有关如何创建模板的信息，请参阅此文档：
 
 [开始使用Snapchat Advertising](https://businesshelp.snapchat.com/s/article/overview?language=en_US)
 
@@ -42,12 +42,12 @@ ht-degree: 3%
 发送到&#x200B;*Snap Inc*&#x200B;目标的所有标识符必须以SHA-256格式进行哈希处理。 要在将纯文本标识符发送到目标之前对其进行哈希处理，请在映射目标标识符到目标时选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项。
 
 >[!WARNING]
-> 
+>
 > Snap Inc目标不会接受未经过哈希处理的标识符，发送这些标识符可能会导致错误。
 
 
 >[!IMPORTANT]
-> 
+>
 > Snap Inc目标不支持多个身份。 请仅选择一个身份。
 
 | 目标身份 | 描述 | 注意事项 |
@@ -66,7 +66,7 @@ ht-degree: 3%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 | [!DNL Federated Audience Composition] | 是 | 通过[联合受众构成](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/start/audiences)导入到Experience Platform中的受众。 |
 
 {style="table-layout:auto"}
@@ -99,7 +99,7 @@ ht-degree: 3%
 ## 正在连接到Snap Inc {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 ### 验证目标 {#authenticate}
@@ -127,7 +127,7 @@ ht-degree: 3%
 * **[!UICONTROL Account ID]**：与要将受众导入到的广告帐户关联的广告帐户ID。 有关如何查找的详细信息，请参阅Snapchat业务帮助中心[上的](https://businesshelp.snapchat.com/s/article/biz-acct-id?language=en_US)此文档。
 
 >[!IMPORTANT]
-> 
+>
 >输入不正确或无效的Snapchat广告帐户ID将导致受众激活失败。 请仔细检查您输入的广告帐户ID是否正确。
 
 ### 启用警报 {#enable-alerts}
@@ -139,7 +139,7 @@ ht-degree: 3%
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
@@ -154,7 +154,7 @@ ht-degree: 3%
 
 ![受众](/help/destinations/assets/catalog/advertising/snapchat-ads/audiences.png)
 
-请注意，首次将Adobe受众激活到Snap Inc时，您最初会将其视为空受众。 这是因为Adobe Experience Platform在评估受众之前，不会将成员数据导出到Snap Inc。 有关如何在Experience Platform中评估受众的更多信息，请参阅[分段服务概述](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html?lang=zh-Hans#evaluate-segments)。
+请注意，首次将Adobe受众激活到Snap Inc时，您最初会将其视为空受众。 这是因为Adobe Experience Platform在评估受众之前，不会将成员数据导出到Snap Inc。 有关如何在Experience Platform中评估受众的更多信息，请参阅[分段服务概述](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html#evaluate-segments)。
 
 ## 数据使用和治理 {#data-usage-governance}
 

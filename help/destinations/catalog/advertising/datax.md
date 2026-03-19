@@ -2,9 +2,9 @@
 title: Verizon MediaYahoo DataX连接
 description: DataX是一个聚合的Verizon Media/Yahoo基础架构，它托管着各种组件，使Verizon Media/Yahoo能够以安全、自动化和可扩展的方式与外部合作伙伴交换数据。
 exl-id: 7d02671d-8650-407d-9c9f-fad7da3156bc
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '944'
+source-wordcount: '943'
 ht-degree: 4%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 4%
 
 >[!IMPORTANT]
 >
->此目标连接器和文档页面由[!DNL Verizon Media/Yahoo]的[!DNL DataX]团队创建并维护。 如有任何查询或更新请求，请直接通过[dataoperations@yahooinc.com](mailto:dataoperations@yahooinc.com)联系他们
+>此目标连接器和文档页面由[!DNL Verizon Media/Yahoo]的[!DNL DataX]团队创建并维护。 如有任何查询或更新请求，请直接通过[dataoperations@yahooinc.com](mailto:dataoperations@yahooinc.com)与他们联系
 
 ## 先决条件 {#prerequisites}
 
@@ -67,7 +67,7 @@ ht-degree: 4%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Verizon Media]支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=zh-Hans#getting-started)的更多信息。
+[!DNL Verizon Media]支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started)的更多信息。
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
@@ -84,7 +84,7 @@ ht-degree: 4%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -120,7 +120,7 @@ ht-degree: 4%
 ## 连接到目标 {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 Experience Platform UI中的![Yahoo DataX目标卡](/help/destinations/assets/catalog/advertising/yahoo-datax/catalog.png)
@@ -144,7 +144,7 @@ Experience Platform UI中的![Yahoo DataX目标卡](/help/destinations/assets/ca
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
@@ -156,4 +156,4 @@ Experience Platform UI中的![Yahoo DataX目标卡](/help/destinations/assets/ca
 
 ## 其他资源 {#additional-resources}
 
-有关详细信息，请参阅[!DNL Yahoo/Verizon Media][上的 [!DNL DataX] &#x200B;](https://developer.verizonmedia.com/datax/guide/)文档。
+有关详细信息，请参阅[!DNL Yahoo/Verizon Media][上的 [!DNL DataX] ](https://developer.verizonmedia.com/datax/guide/)文档。

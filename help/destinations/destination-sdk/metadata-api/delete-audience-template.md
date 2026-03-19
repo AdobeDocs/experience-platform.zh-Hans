@@ -2,10 +2,10 @@
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK删除现有受众模板的API调用。
 title: 删除受众模板
 exl-id: 6eb07e3c-3269-4368-9b11-04bd993cc4ab
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '289'
-ht-degree: 1%
+source-wordcount: '287'
+ht-degree: 2%
 
 ---
 
@@ -21,15 +21,15 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 受众模板API操作快速入门 {#get-started}
 
-在继续之前，请查看[入门指南](../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[快速入门指南](../getting-started.md)，了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 删除受众模板 {#delete}
 
-您可以通过向包含要删除的受众模板的`{INSTANCE_ID}`的`/authoring/audience-templates`端点发出`DELETE`请求来删除[现有](create-audience-template.md)受众模板。
+您可以通过向包含要删除的受众模板的[的](create-audience-template.md)端点发出`DELETE`请求来删除`/authoring/audience-templates`现有`{INSTANCE_ID}`受众模板。
 
 要获取现有的受众模板及其对应的`{INSTANCE_ID}`，请参阅有关[检索受众模板](retrieve-audience-template.md)的文章。
 
@@ -42,6 +42,8 @@ DELETE /authoring/audience-templates/{INSTANCE_ID}
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{INSTANCE_ID}` | 要删除的受众模板的`ID`。 |
+
+{style="table-layout:auto"}
 
 +++请求
 

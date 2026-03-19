@@ -3,7 +3,7 @@ title: Experience Cloud 受众
 description: 了解如何将受众从Real-Time Customer Data Platform共享到各种Experience Cloud应用程序。
 last-substantial-update: 2023-09-28T00:00:00Z
 exl-id: 2bdbcda3-2efb-4a4e-9702-4fd9991e9461
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '1810'
 ht-degree: 2%
@@ -15,19 +15,19 @@ ht-degree: 2%
 
 >[!AVAILABILITY]
 >
-> 此目标对[Adobe Real-Time Customer Data Platform Prime和Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户可用。
+> 此目标对[Adobe Real-Time Customer Data Platform Prime和Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户可用。
 
 使用此目标可将受众从Real-Time CDP激活到Audience Manager和Adobe Analytics。
 
-要将受众发送到Adobe Analytics，您需要Audience Manager许可证。 有关详细信息，请参阅[Audience Analytics概述](https://experienceleague.adobe.com/docs/analytics/integration/audience-analytics/mc-audiences-aam.html?lang=zh-Hans)。
+要将受众发送到Adobe Analytics，您需要Audience Manager许可证。 有关详细信息，请参阅[Audience Analytics概述](https://experienceleague.adobe.com/docs/analytics/integration/audience-analytics/mc-audiences-aam.html?lang=en)。
 
 要将受众发送到其他Adobe解决方案，请使用从Real-Time CDP到[Adobe Target](../personalization/adobe-target-connection.md)、[Adobe Advertising](../advertising/adobe-advertising-cloud-connection.md)、[Adobe Campaign](../email-marketing/adobe-campaign.md)和[Marketo Engage](../adobe/marketo-engage.md)的直接连接。
 
 >[!IMPORTANT]
 >
->此目标将取代[Real-Time Customer Data Platform与各种Experience Cloud解决方案之间的旧版受众共享集成](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=zh-Hans#aep-segments-in-aam)。
+>此目标将取代[Real-Time Customer Data Platform与各种Experience Cloud解决方案之间的旧版受众共享集成](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-in-aam)。
 > 
->如果您已通过[旧版受众共享集成](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=zh-Hans#aep-segments-in-aam)将受众从Real-Time CDP共享到Audience Manager和其他Experience Cloud解决方案，则必须联系客户关怀部门以禁用旧版集成，然后才能使用此目标。
+>如果您已通过[旧版受众共享集成](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-in-aam)将受众从Real-Time CDP共享到Audience Manager和其他Experience Cloud解决方案，则必须联系客户关怀部门以禁用旧版集成，然后才能使用此目标。
 
 ![Experience Cloud受众目标，在目标目录中突出显示。](../../assets/catalog/adobe/experience-cloud-audiences/experience-cloud-audiences-destination-catalog.png)
 
@@ -39,8 +39,8 @@ ht-degree: 2%
 
 在Audience Manager中，您可以将Real-Time CDP受众用于数据管理平台用例，例如：
 
-* 正在将[第三方数据](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-types-collected.html?lang=zh-Hans#third-party-data)添加到您的区段；
-* [算法建模](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/algorithmic-models/look-alike-modeling/understanding-models.html?lang=zh-Hans)；
+* 正在将[第三方数据](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-types-collected.html#third-party-data)添加到您的区段；
+* [算法建模](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/algorithmic-models/look-alike-modeling/understanding-models.html)；
 * 将受众激活到基于Cookie的目标，而Real-Time CDP目标目录尚不支持这些目标。
 
 ### 对导出受众的精细控制 {#segments-control}
@@ -53,7 +53,7 @@ ht-degree: 2%
 
 您发送到Experience Cloud受众目标的受众不会自动显示在Adobe Analytics中。
 
-在将受众发送到Adobe Analytics之前，您必须[实施适用于Analytics和Audience Manager的Experience Cloud Identity服务](https://experienceleague.adobe.com/docs/id-service/using/implementation/setup-aam-analytics.html?lang=zh-Hans)。
+在将受众发送到Adobe Analytics之前，您必须[实施适用于Analytics和Audience Manager的Experience Cloud Identity服务](https://experienceleague.adobe.com/docs/id-service/using/implementation/setup-aam-analytics.html?lang=en)。
 
 >[!IMPORTANT]
 >
@@ -78,9 +78,9 @@ ht-degree: 2%
 > * 您&#x200B;*do*&#x200B;需要Audience Manager许可证才能与Adobe Analytics共享Real-Time CDP受众。
 > * 您&#x200B;*不需要* Audience Manager许可证即可与以上[部分中提到的Adobe Advertising Cloud、Adobe Target、Marketo和其他Experience Cloud解决方案共享Real-Time CDP受众](#share-segments-with-other-solutions)。
 
-### 适用于使用旧版受众共享解决方案的客户
+### 适用于使用旧版受众共享解决方案的客户 {#legacy-audience-sharing}
 
-如果您已通过[旧版受众共享集成](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=zh-Hans#aep-segments-in-aam)将受众从Real-Time CDP共享到Audience Manager和其他Experience Cloud解决方案，则必须联系客户关怀团队以禁用旧版集成。
+如果您已通过[旧版受众共享集成](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-in-aam)将受众从Real-Time CDP共享到Audience Manager和其他Experience Cloud解决方案，则必须联系客户关怀团队以禁用旧版集成。
 
 解决取消置备票证的周转时间为六个工作日或更短。 禁用现有的旧版集成后，您可以通过自助服务目标卡继续[创建连接](#connect)。
 
@@ -94,7 +94,7 @@ ht-degree: 2%
 
 * 目前，您可以在每个组织的单个沙盒上配置Experience Cloud受众目标。 尝试在另一个沙盒中配置第二个目标连接会导致错误。
 * 连接到目标时，您可以看到[启用数据流警报](../../ui/alerts.md)的选项。 虽然在UI中可见，但目前不支持&#x200B;**启用警报选项**。
-* **受众回填支持**：首次导出到Audience Manager或其他Experience Cloud解决方案时，包含了受众的历史群体。 [旧版受众共享集成](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=zh-Hans#aep-segments-in-aam)的用户在配置此目标时，应当预期回填差异约为6小时。
+* **受众回填支持**：首次导出到Audience Manager或其他Experience Cloud解决方案时，包含了受众的历史群体。 [旧版受众共享集成](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-in-aam)的用户在配置此目标时，应当预期回填差异约为6小时。
 * 不直接支持源自[受众合成](../../../segmentation/ui/audience-composition.md)的受众。 若要将复合受众激活到此目标，您必须根据复合受众，通过[区段生成器](../../../segmentation/ui/segment-builder.md)创建受众定义，并激活新创建的受众。
 
 ### 激活受众时的延迟 {#audience-activation-latency}
@@ -125,7 +125,7 @@ ht-degree: 2%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -157,7 +157,7 @@ ht-degree: 2%
 ## 连接到目标 {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写下面两个部分中列出的字段。
@@ -180,7 +180,7 @@ ht-degree: 2%
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 有关将受众激活到此目标的说明，请阅读[将配置文件和受众激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md)。 不需要[映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)，并且没有可用于此目标的[计划步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling)。
@@ -189,9 +189,9 @@ ht-degree: 2%
 
 要验证数据导出是否成功，您可以检查受众是否已成功导出到所需的Experience Cloud解决方案。
 
-### 验证Audience Manager中的数据
+### 验证Audience Manager中的数据 {#validate-audience-manager}
 
-您的Real-Time CDP受众在Audience Manager中显示为[信号](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=zh-Hans#aep-segments-as-aam-signals)、[特征](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=zh-Hans#aep-segments-as-aam-traits)和[区段](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=zh-Hans#aep-segments-as-aam-segments)。 您可以验证Audience Manager中是否按照上述文档链接中的说明显示了数据。
+您的Real-Time CDP受众在Audience Manager中显示为[信号](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-as-aam-signals)、[特征](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-as-aam-traits)和[区段](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-as-aam-segments)。 您可以验证Audience Manager中是否按照上述文档链接中的说明显示了数据。
 
 从Real-Time CDP发送受众后15分钟，区段名称即开始在Audience Manager中填充。
 
@@ -204,14 +204,14 @@ ht-degree: 2%
 在处理您的数据时，所有[!DNL Real-Time CDP]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据治理的详细信息，请阅读[数据治理概述](/help/data-governance/home.md)。
 
 Real-Time CDP中的数据治理由[数据使用标签](/help/data-governance/labels/reference.md)和营销操作强制执行。
-数据使用标签会传输到应用程序，但营销操作不会。 这意味着，一旦受众登录到Audience Manager，就可以将来自Real-Time CDP的受众导出到任何可用的目标。 在Audience Manager中，您可以使用[数据导出控件](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-export-controls.html?lang=zh-Hans)来阻止将受众导出到某些目标。
+数据使用标签会传输到应用程序，但营销操作不会。 这意味着，一旦受众登录到Audience Manager，就可以将来自Real-Time CDP的受众导出到任何可用的目标。 在Audience Manager中，您可以使用[数据导出控件](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-export-controls.html)来阻止将受众导出到某些目标。
 
 使用[!DNL HIPAA]营销操作标记的受众不会从Real-Time CDP发送到Audience Manager。
 
-### Audience Manager中的权限管理
+### Audience Manager中的权限管理 {#audience-manager-permissions}
 
-Audience Manager中的受众和特征受[基于角色的访问控制](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/administration/administration-overview.html?lang=zh-Hans) (RBAC)的约束。
+Audience Manager中的受众和特征受[基于角色的访问控制](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/administration/administration-overview.html) (RBAC)的约束。
 
 从Real-Time CDP导出的受众将分配给Audience Manager中名为&#x200B;**[!UICONTROL Experience Platform Segments]**&#x200B;的特定数据源。
 
-要仅允许某些用户访问受众，请使用[基于角色的访问控制](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/administration/administration-overview.html?lang=zh-Hans)配置用户对从Real-Time CDP受众创建的受众和特征的访问权限。
+要仅允许某些用户访问受众，请使用[基于角色的访问控制](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/administration/administration-overview.html)配置用户对从Real-Time CDP受众创建的受众和特征的访问权限。

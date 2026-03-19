@@ -2,7 +2,7 @@
 title: LiveRamp — 分发连接
 description: 了解如何使用LiveRamp - Distribution连接器编排和激活之前载入LiveRamp的受众以及下游广告目标。
 exl-id: 1b11a743-1ef9-4b01-90ef-cc072bc03c91
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '2816'
 ht-degree: 37%
@@ -63,7 +63,7 @@ ht-degree: 37%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -89,7 +89,7 @@ ht-degree: 37%
 >abstract="选择您的目标支持的标识符。有关每个目标支持的标识符的完整列表，请参阅相关文档。"
 
 >[!IMPORTANT]
-> 
+>
 >若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写下面两个部分中列出的字段。
@@ -126,7 +126,7 @@ ht-degree: 37%
 
 ## 目标特定的设置 {#destination-settings}
 
-[支持的每个目标](#supported-destinations) [!DNL LiveRamp - Distribution]都需要您填写特定的配置选项。
+[支持的每个目标](#supported-destinations)[!DNL LiveRamp - Distribution]都需要您填写特定的配置选项。
 
 有关如何配置每个目标的详细指导，请参阅以下部分。
 
@@ -455,7 +455,7 @@ ht-degree: 37%
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 [!DNL LiveRamp - Distribution]连接激活已通过[LiveRamp — 载入](liveramp-onboarding.md)连接载入到您的LiveRamp帐户的受众。

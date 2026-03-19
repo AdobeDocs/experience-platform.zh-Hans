@@ -3,7 +3,7 @@ title: 创建新的目标连接
 type: Tutorial
 description: 了解如何在Adobe Experience Platform中连接到目标、启用警报以及为连接的目标设置营销操作。
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
-source-git-commit: ec6f055de02610e23f30051c4fed4f362e9fbc53
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '1236'
 ht-degree: 4%
@@ -13,7 +13,7 @@ ht-degree: 4%
 # 创建新的目标连接
 
 >[!IMPORTANT]
-> 
+>
 >* 若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要连接到支持数据集导出的目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage and Activate Dataset Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 

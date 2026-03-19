@@ -2,9 +2,9 @@
 description: 了解如何构建API调用以通过Adobe Experience Platform Destination SDK创建目标配置。
 title: 创建目标配置
 exl-id: aae4aaa8-1dd0-4041-a86c-5c86f04d7d13
-source-git-commit: 560200a6553a1aae66c608eef7901b3248c886b4
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1213'
+source-wordcount: '1210'
 ht-degree: 3%
 
 ---
@@ -30,11 +30,11 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 目标配置API操作快速入门 {#get-started}
 
-在继续之前，请查看[入门指南](../../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[快速入门指南](../../getting-started.md)，了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 创建目标配置 {#create}
 
@@ -203,8 +203,8 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `customerDataFields.enum` | 字符串 | 将自定义字段呈现为下拉菜单，并列出用户可用的选项。 <br/><br/>有关这些设置的详细信息，请参阅[客户数据字段](../../functionality/destination-configuration/customer-data-fields.md)。 |
 | `customerDataFields.default` | 字符串 | 从`enum`列表中定义默认值。 |
 | `customerDataFields.pattern` | 字符串 | 如果需要，为自定义字段实施模式。 使用正则表达式可强制实施模式。 例如，如果您的客户ID不包含数字或下划线，请在此字段中输入`^[A-Za-z]+$`。 <br/><br/>有关这些设置的详细信息，请参阅[客户数据字段](../../functionality/destination-configuration/customer-data-fields.md)。 |
-| `uiAttributes.documentationLink` | 字符串 | 请参阅目标的[目标目录](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html?lang=zh-Hans#catalog)中的文档页面。 使用`https://www.adobe.com/go/destinations-YOURDESTINATION-en`，其中`YOURDESTINATION`是目标的名称。 对于名为Moviestar的目标，您将使用`https://www.adobe.com/go/destinations-moviestar-en`。 请注意，只有在Adobe将您的目标设置为实时状态并发布文档后，此链接才有效。 <br/><br/>有关这些设置的详细信息，请参阅[UI属性](../../functionality/destination-configuration/ui-attributes.md)。 ![Experience Platform用户界面图像显示文档链接。](../../assets/authoring-api/destination-configuration/documentation-url.png "文档URL"){width="100" zoomable="yes"} |
-| `uiAttributes.category` | 字符串 | 是指在Adobe Experience Platform中分配给目标的类别。 有关详细信息，请阅读[目标类别](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/destination-types.html?lang=zh-Hans#destination-categories)。 使用以下值之一： `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`。 <br/><br/>有关这些设置的详细信息，请参阅[UI属性](../../functionality/destination-configuration/ui-attributes.md)。 |
+| `uiAttributes.documentationLink` | 字符串 | 请参阅目标的[目标目录](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html#catalog)中的文档页面。 使用`https://www.adobe.com/go/destinations-YOURDESTINATION-en`，其中`YOURDESTINATION`是目标的名称。 对于名为Moviestar的目标，您将使用`https://www.adobe.com/go/destinations-moviestar-en`。 请注意，只有在Adobe将您的目标设置为实时状态并发布文档后，此链接才有效。 <br/><br/>有关这些设置的详细信息，请参阅[UI属性](../../functionality/destination-configuration/ui-attributes.md)。 ![Experience Platform用户界面图像显示文档链接。](../../assets/authoring-api/destination-configuration/documentation-url.png "文档URL"){width="100" zoomable="yes"} |
+| `uiAttributes.category` | 字符串 | 是指在Adobe Experience Platform中分配给目标的类别。 有关详细信息，请阅读[目标类别](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/destination-types.html#destination-categories)。 使用以下值之一： `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`。 <br/><br/>有关这些设置的详细信息，请参阅[UI属性](../../functionality/destination-configuration/ui-attributes.md)。 |
 | `uiAttributes.connectionType` | 字符串 | 连接的类型，具体取决于目标。 支持的值： <ul><li>`Server-to-server`</li><li>`Cloud storage`</li><li>`Azure Blob`</li><li>`Azure Data Lake Storage`</li><li>`S3`</li><li>`SFTP`</li><li>`DLZ`</li></ul> |
 | `uiAttributes.frequency` | 字符串 | 是指目标支持的数据导出类型。 对于基于API的集成，设置为`Streaming`；或者，在将文件导出到目标时，设置为`Batch`。 |
 | `identityNamespaces.externalId.acceptsAttributes` | 布尔值 | 指示客户是否可以将标准配置文件属性映射到您配置的身份。 |
@@ -221,7 +221,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `schemaConfig.profileFields` | 数组 | 添加如上配置所示的预定义`profileFields`时，用户可以选择将Experience Platform属性映射到目标端的预定义属性。 |
 | `schemaConfig.profileRequired` | 布尔值 | 如果用户应能够将Experience Platform中的配置文件属性映射到目标端的自定义属性，则使用`true`，如上面的示例配置所示。 |
 | `schemaConfig.segmentRequired` | 布尔值 | 始终使用`segmentRequired:true`。 |
-| `schemaConfig.identityRequired` | 布尔值 | 如果用户应能够从Experience Platform将身份命名空间映射到所需的架构，请使用`true`。 |
+| `schemaConfig.identityRequired` | 布尔值 | 如果用户应能够从Experience Platform将身份命名空间映射到所需的架构，则使用`true`。 |
 
 {style="table-layout:auto"}
 
@@ -233,11 +233,11 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 +++
 
-## API错误处理
+## API错误处理 {#error-handling}
 
 Destination SDK API端点遵循常规Experience Platform API错误消息原则。 请参阅Experience Platform疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
 
-## 后续步骤
+## 后续步骤 {#next-steps}
 
 阅读本文档后，您现在知道如何通过Destination SDK `/authoring/destinations` API端点创建新的目标配置。
 

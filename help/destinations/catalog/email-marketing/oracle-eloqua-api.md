@@ -3,9 +3,9 @@ title: (API) Oracle Eloqua连接
 description: (API) Oracle Eloqua目标允许您导出帐户数据，并在Oracle Eloqua中激活该数据，以满足您的业务需求。
 last-substantial-update: 2023-03-14T00:00:00Z
 exl-id: 97ff41a2-2edd-4608-9557-6b28e74c4480
-source-git-commit: ef1b0b704d1299282995068a0de330d52884bb95
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '2138'
+source-wordcount: '2136'
 ht-degree: 4%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 4%
 
 [[!DNL Oracle Eloqua]](https://www.oracle.com/cx/marketing/automation/)使营销人员能够计划和执行营销活动，同时为其潜在客户提供个性化的客户体验。 借助集成的商机管理和轻松的营销活动创建，它可帮助营销人员在其购买者的历程中在正确的时间吸引正确的受众，并进行优雅的扩展以跨渠道（包括电子邮件、显示搜索、视频和移动设备）触及受众。 销售团队能够以更快的速度完成更多交易，从而通过实时insight提高营销投资回报率。
 
-此[!DNL Adobe Experience Platform] [目标](/help/destinations/home.md)利用[&#x200B; REST API中的](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-id-put.html)更新联系人[!DNL Oracle Eloqua]操作，该操作允许您&#x200B;**将受众中的身份**&#x200B;更新为[!DNL Oracle Eloqua]。
+此[!DNL Adobe Experience Platform] [目标](/help/destinations/home.md)利用[ REST API中的](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-id-put.html)更新联系人[!DNL Oracle Eloqua]操作，该操作允许您&#x200B;**将受众中的身份**&#x200B;更新为[!DNL Oracle Eloqua]。
 
 [!DNL Oracle Eloqua]使用[基本身份验证](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/Authentication_Basic.html)与[!DNL Oracle Eloqua] REST API通信。 下面的[!DNL Oracle Eloqua]向目标身份验证[部分中进一步提供了向您的](#authenticate)实例进行身份验证的说明。
 
@@ -27,7 +27,7 @@ ht-degree: 4%
 
 ### Experience Platform先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL Oracle Eloqua]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=zh-Hans)区段[!DNL Experience Platform]。
+在将数据激活到[!DNL Oracle Eloqua]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)区段[!DNL Experience Platform]。
 
 如果您需要受众状态指南，请参阅Experience Platform有关[受众成员资格详细信息架构字段组](/help/xdm/field-groups/profile/segmentation.md)的文档。
 
@@ -35,7 +35,7 @@ ht-degree: 4%
 
 要将数据从Experience Platform导出到您的[!DNL Oracle Eloqua]帐户，您需要拥有[!DNL Oracle Eloqua]帐户。
 
-此外，您至少需要&#x200B;*实例的*“高级用户 — 营销权限”[!DNL Oracle Eloqua]。 有关指导，请参阅&#x200B;*安全用户访问*&#x200B;页面上的[“安全组”](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-user/Help/SecurityOverview/SecuredUserAccess.htm)部分。 目标需要在调用[&#x200B; API时以编程方式](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/DeterminingBaseURL.html)确定您的基本URL[!DNL Oracle Eloqua]，也需要该访问权限。
+此外，您至少需要&#x200B;*实例的*“高级用户 — 营销权限”[!DNL Oracle Eloqua]。 有关指导，请参阅&#x200B;*安全用户访问*&#x200B;页面上的[“安全组”](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-user/Help/SecurityOverview/SecuredUserAccess.htm)部分。 目标需要在调用[ API时以编程方式](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/DeterminingBaseURL.html)确定您的基本URL[!DNL Oracle Eloqua]，也需要该访问权限。
 
 #### 收集[!DNL Oracle Eloqua]凭据 {#gather-credentials}
 
@@ -47,6 +47,8 @@ ht-degree: 4%
 | `Username` | [!DNL Oracle Eloqua]帐户的用户名。 |
 | `Password` | [!DNL Oracle Eloqua]帐户的密码。 |
 | `Pod` | [!DNL Oracle Eloqua]支持多个数据中心，每个数据中心具有唯一的域名。 [!DNL Oracle Eloqua]将这些称为“pods”，目前共有7个，即p01、p02、p03、p04、p06、p07和p08。 要获取您所在的POD，请登录到[!DNL Oracle Eloqua]，并在成功登录后记下浏览器中的URL。 例如，如果浏览器URL为`secure.p01.eloqua.com`，则`pod`为`p01`。 有关其他指导，请参阅[确定POD](https://community.oracle.com/topliners/discussion/4470225/determining-your-pod-number-for-oracle-eloqua)页面。 |
+
+{style="table-layout:auto"}
 
 请参阅[登录 [!DNL Oracle Eloqua]](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-user/Help/Administration/Tasks/SigningInToEloqua.htm#Signing)以获取指导。
 
@@ -71,6 +73,8 @@ ht-degree: 4%
 |---|---|---|
 | `EloquaId` | 联系人的唯一标识符。 | 是 |
 
+{style="table-layout:auto"}
+
 ## 支持的受众 {#supported-audiences}
 
 此部分介绍哪些类型的受众可以导出到此目标。
@@ -78,7 +82,7 @@ ht-degree: 4%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -156,7 +160,7 @@ ht-degree: 4%
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
@@ -170,7 +174,7 @@ ht-degree: 4%
 
 1. 在&#x200B;**[!UICONTROL Mapping]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL Add new mapping]**。 您将在屏幕上看到一个新映射行。
 1. 在&#x200B;**[!UICONTROL Select source field]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL Select attributes]**&#x200B;类别并选择XDM属性或选择&#x200B;**[!UICONTROL Select identity namespace]**&#x200B;并选择身份。
-1. 在&#x200B;**[!UICONTROL Select target field]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL Select identity namespace]**&#x200B;并选择身份，或选择&#x200B;**[!UICONTROL Select custom attributes]**&#x200B;并在&#x200B;**[!UICONTROL Attribute name]**&#x200B;字段中键入所需的属性名称。 您提供的属性名称应与[!DNL Oracle Eloqua]中的现有联系人属性匹配。 有关您可以在[[!DNL create a contact]中使用的确切属性名称，请参阅](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-post.html) [!DNL Oracle Eloqua]。
+1. 在&#x200B;**[!UICONTROL Select target field]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL Select identity namespace]**&#x200B;并选择身份，或选择&#x200B;**[!UICONTROL Select custom attributes]**&#x200B;并在&#x200B;**[!UICONTROL Attribute name]**&#x200B;字段中键入所需的属性名称。 您提供的属性名称应与[!DNL Oracle Eloqua]中的现有联系人属性匹配。 有关您可以在[[!DNL create a contact]中使用的确切属性名称，请参阅](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-post.html)[!DNL Oracle Eloqua]。
 
    * 重复这些步骤以在XDM配置文件架构和[!DNL Oracle Eloqua]之间添加所需的和任何所需的属性映射：
 
@@ -223,7 +227,7 @@ ht-degree: 4%
 要验证您是否正确设置了目标，请执行以下步骤：
 
 1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**&#x200B;并导航到目标列表。
-1. 接下来，选择目标并切换到&#x200B;**[!UICONTROL Activation data]**&#x200B;选项卡，然后选择受众名称。
+1. 接下来，选择目标并切换到&#x200B;**[!UICONTROL Activation data]**选项卡，然后选择受众名称。
    ![显示目标激活数据的Experience Platform UI屏幕截图示例。](../../assets/catalog/email-marketing/oracle-eloqua-api/destinations-activation-data.png)
 
 1. 监控受众摘要，并确保用户档案计数对应于区段中的计数。
@@ -251,7 +255,7 @@ ht-degree: 4%
 * [Oracle Eloqua Marketing Automation](https://docs.oracle.com/en/cloud/saas/marketing/eloqua.html)
 * [适用于Oracle Eloqua Marketing Cloud服务的REST API](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/rest-endpoints.html)
 
-### Changelog
+### Changelog {#changelog}
 
 此部分捕获此目标连接器的功能和重要文档更新。
 

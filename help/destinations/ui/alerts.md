@@ -3,22 +3,22 @@ keywords: Experience Platform；主页；热门主题；警报；目标
 description: 您可以在创建数据流时订阅警报，以接收有关流运行的状态、成功或失败的警报消息。
 title: 订阅上下文目标警报
 exl-id: 134144a0-cdfe-49a8-bd8b-e36a4f053de5
-source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '935'
-ht-degree: 14%
+source-wordcount: '931'
+ht-degree: 10%
 
 ---
 
 # 订阅上下文目标警报
 
-Adobe Experience Platform 允许您订阅关于 Adobe Experience Platform 活动的基于事件的警报。通过警报可以减少或消除轮询 [[!DNL Observability Insights] API](../../observability/api/overview.md) 的需要，用于检查任务是否已完成，或者是否已达到工作流中的某个里程碑，或者是否发生任何错误。
+Adobe Experience Platform 允许您订阅关于 Adobe Experience Platform 活动的基于事件的警报。警报可减少或消除轮询[[!DNL Observability Insights] API](../../observability/api/overview.md)以检查作业是否已完成、是否已达到工作流中的某个里程碑或是否已发生任何错误的需要。
 
 在创建数据流以接收有关流运行的状态、成功或失败的警报消息时，您可以订阅警报。
 
 本文档提供了有关如何订阅接收目标数据流的警报消息的步骤。
 
-## 快速入门
+## 快速入门 {#getting-started}
 
 本文档要求您对Adobe Experience Platform的以下组件有一定的了解：
 
@@ -36,7 +36,7 @@ Adobe Experience Platform 允许您订阅关于 Adobe Experience Platform 活动
 
 >[!IMPORTANT]
 >
->您必须为Experience Platform帐户启用电子邮件即时通知，才能接收数据流基于电子邮件的警报通知。
+>您必须为Experience Platform帐户启用电子邮件即时通知，才能接收数据流的电子邮件警报通知。
 
 您可以在[!UICONTROL Configure new destination]目标连接[工作流的](connect-destination.md)步骤期间为数据流启用警报。
 
@@ -56,6 +56,8 @@ Adobe Experience Platform 允许您订阅关于 Adobe Experience Platform 活动
 | 目标流运行成功 | 当受众成功激活到目标时，此警报会通知您。 |
 | 目标流运行开始 | 此警报会在目标流运行开始激活受众时通知您。 |
 | 超出激活跳过率 | 此警报会在激活跳过率超过总激活的1%时通知您。 当标识缺少属性或违反同意时，将在激活期间跳过这些标识。 |
+
+{style="table-layout:auto"}
 
 ## 接收警报 {#receiving-alerts}
 

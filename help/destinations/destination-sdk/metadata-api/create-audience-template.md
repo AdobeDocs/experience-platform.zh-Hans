@@ -2,9 +2,9 @@
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK创建受众模板的API调用。
 title: 创建受众模板
 exl-id: 98d30002-d462-4008-9337-7de0cd608194
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '623'
+source-wordcount: '621'
 ht-degree: 3%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 受众模板API操作快速入门 {#get-started}
 
-在继续之前，请查看[入门指南](../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[快速入门指南](../getting-started.md)，了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 创建受众模板 {#create}
 
@@ -279,10 +279,10 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/audience-t
 
 +++
 
-## API错误处理
+## API错误处理 {#error-handling}
 
 Destination SDK API端点遵循常规Experience Platform API错误消息原则。 请参阅Experience Platform疑难解答指南中的[API状态代码](../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../landing/troubleshooting.md#request-header-errors)。
 
-## 后续步骤
+## 后续步骤 {#next-steps}
 
 阅读本文档后，您现在知道何时使用受众模板以及如何使用`/authoring/audience-templates` API端点配置受众模板。 阅读[如何使用Destination SDK配置您的目标](../guides/configure-destination-instructions.md)，以了解此步骤在配置目标的过程中所处的位置。

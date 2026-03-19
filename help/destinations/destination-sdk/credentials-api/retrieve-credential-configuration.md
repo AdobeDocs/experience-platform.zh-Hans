@@ -2,9 +2,9 @@
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK检索凭据配置的API调用。
 title: 检索凭据配置
 exl-id: cec55073-6e2f-4412-a9dd-1aeb445279c0
-source-git-commit: 560200a6553a1aae66c608eef7901b3248c886b4
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '499'
+source-wordcount: '497'
 ht-degree: 1%
 
 ---
@@ -31,11 +31,11 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 凭据API操作快速入门 {#get-started}
 
-在继续之前，请查看[入门指南](../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[快速入门指南](../getting-started.md)，了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 检索凭据配置 {#retrieve}
 
@@ -122,6 +122,8 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/credentials
 | 参数 | 描述 |
 | -------- | ----------- |
 | `{INSTANCE_ID}` | 要检索的凭据配置的ID。 |
+
+{style="table-layout:auto"}
 
 +++
 

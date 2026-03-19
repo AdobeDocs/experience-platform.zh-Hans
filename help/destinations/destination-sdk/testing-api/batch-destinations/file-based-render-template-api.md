@@ -2,9 +2,9 @@
 description: 此页说明如何使用/authoring/testing/template/render端点可视化目标配置中定义的模板化客户数据字段的外观。
 title: 验证模板化的客户字段
 exl-id: 8ed93f0c-3439-4d11-bb2f-d417a1e0b6a8
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '388'
+source-wordcount: '386'
 ht-degree: 2%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 2%
 
 ## 快速入门 {#getting-started}
 
-在继续之前，请查看[入门指南](../../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[快速入门指南](../../getting-started.md)，了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 先决条件 {#prerequisites}
 
@@ -79,6 +79,8 @@ curl -X POST 'https://platform.adobe.io/data/core/activation/authoring/testing/t
 | -------- | ----------- |
 | `destinationId` | 您正在测试的[目标配置](../../authoring-api/destination-configuration/retrieve-destination-configuration.md)的ID。 |
 | `templates` | 在[目标服务器配置](../../authoring-api/destination-server/create-destination-server.md)中定义的模板化字段名称。 |
+
+{style="table-layout:auto"}
 
 **响应**
 

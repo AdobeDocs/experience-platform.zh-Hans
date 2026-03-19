@@ -1,13 +1,13 @@
 ---
 title: Experience Platform和流目标中的受众生命周期
 description: 了解Experience Platform中的受众名称和映射如何反映在流式目标平台中。
-source-git-commit: 6b4dfa714e078fb5b97900811aade081ffef0d78
+exl-id: 8a9a9e2f-d52f-41c9-ae27-9d2cd797bb85
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '467'
 ht-degree: 2%
 
 ---
-
 
 # 流目标中的受众生命周期
 
@@ -86,6 +86,6 @@ ht-degree: 2%
 * [Twitter自定义受众](../catalog/social/twitter.md)
 * [雅虎数据X](../catalog/advertising/datax.md)
 
-### 不支持受众移除的目标
+### 不支持受众移除的目标 {#no-removal-support}
 
 对于以上未列出的目标，当您从目标中取消映射受众时，Experience Platform只会删除映射。 目标平台中的受众将保持活动状态，直到您在合作伙伴平台中手动将其删除为止。

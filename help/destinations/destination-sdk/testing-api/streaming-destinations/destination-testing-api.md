@@ -2,9 +2,9 @@
 description: 了解如何使用目标测试API来测试您的流目标配置是否正确，以及验证流向您配置的目标的数据流的完整性。
 title: 使用示例配置文件测试您的流目标
 exl-id: 2b54250d-ec30-4ad7-a8be-b86b14e4f074
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '607'
+source-wordcount: '603'
 ht-degree: 1%
 
 ---
@@ -26,13 +26,13 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->* 要使用此API，您必须在Experience Platform UI中拥有到目标的现有连接。 阅读[连接到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=zh-Hans)和[将配置文件和受众激活到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=zh-Hans)以了解详细信息。
->* 建立与目标的连接后，获取在[浏览与目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html?lang=zh-Hans)的连接时您应在对此端点的API调用中使用的目标实例ID。
->  &#x200B;>![UI图像如何获取目标实例ID](../../assets/testing-api/get-destination-instance-id.png)
+>* 要使用此API，您必须在Experience Platform UI中拥有到目标的现有连接。 阅读[连接到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html)和[将配置文件和受众激活到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html)以了解详细信息。
+>* 建立与目标的连接后，获取在[浏览与目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html)的连接时您应在对此端点的API调用中使用的目标实例ID。
+>![UI图像如何获取目标实例ID](../../assets/testing-api/get-destination-instance-id.png)
 
 ## 目标测试API操作快速入门 {#get-started}
 
-在继续之前，请查看[入门指南](../../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[快速入门指南](../../getting-started.md)，了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 测试目标配置，而不将配置文件添加到调用 {#test-without-adding-profiles}
 
@@ -324,6 +324,6 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 
 Destination SDK API端点遵循常规Experience Platform API错误消息原则。 请参阅平台疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
 
-## 后续步骤
+## 后续步骤 {#next-steps}
 
 阅读本文档后，您现在知道如何测试您的目标。 您现在可以使用Adobe [自助式文档流程](../../docs-framework/documentation-instructions.md)为您的目标创建文档页面。

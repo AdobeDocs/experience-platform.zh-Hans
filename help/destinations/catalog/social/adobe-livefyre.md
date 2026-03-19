@@ -3,9 +3,9 @@ keywords: livefyre；livefyre扩展
 title: Adobe Livefyre扩展
 description: Adobe Livefyre扩展是Adobe Experience Platform中的社交目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: a134c144-e7b8-4d48-8c90-5999e5ceb8a0
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '443'
+source-wordcount: '432'
 ht-degree: 3%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 3%
 
 Adobe Livefyre使您能够发现、整理用户生成的内容流并将其发布到您的网站上，以创建真实且高度个性化的体验。
 
-Adobe Livefyre是Adobe Experience Platform中的一项社交扩展。 有关Adobe Livefyre的更多信息，请参阅[Livefyre实施指南](https://experienceleague.adobe.com/docs/livefyre/implementation/home.html?lang=zh-Hans)。
+Adobe Livefyre是Adobe Experience Platform中的一项社交扩展。 有关Adobe Livefyre的更多信息，请参阅[Livefyre实施指南](https://experienceleague.adobe.com/docs/livefyre/implementation/home.html)。
 
 此目标是标记扩展。 有关标记扩展如何在Experience Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
@@ -32,11 +32,11 @@ Adobe Livefyre是Adobe Experience Platform中的一项社交扩展。 有关Adob
 
 安装Adobe Livefyre扩展：
 
-在[Experience Platform界面](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**。
+在[Experience Platform界面](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**。
 
 从目录中选择扩展或使用搜索栏。
 
-单击目标以将其突出显示，然后在右边栏中选择&#x200B;**[!UICONTROL 配置]**。 如果&#x200B;**[!UICONTROL Configure]**&#x200B;控件呈灰显状态，则表示您缺少&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限。 请参阅[先决条件](#prerequisites)。
+选择目标，然后在右边栏中选择&#x200B;**[!UICONTROL Configure]**。 如果&#x200B;**[!UICONTROL Configure]**&#x200B;控件呈灰显状态，则表示您缺少&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限。 请参阅[先决条件](#prerequisites)。
 
 选择要安装扩展的标记属性。 您还可以选择创建新资产。 资产是规则、数据元素、配置的扩展、环境和库的集合。在[标记文档](../../../tags/ui/administration/companies-and-properties.md)中了解属性。
 
@@ -54,6 +54,6 @@ Adobe Livefyre是Adobe Experience Platform中的一项社交扩展。 有关Adob
 
 >[!TIP]
 >
->如果扩展已安装在您的某个资产上，则UI仍会显示该扩展的&#x200B;**[!UICONTROL Install]**。 按照[安装扩展](#install-extension)中的说明启动安装工作流，以配置或删除您的扩展。
+>如果某个资产上已安装该扩展，则对于该扩展，UI仍显示&#x200B;**[!UICONTROL Install]**。 按照[安装扩展](#install-extension)中的说明启动安装工作流，以配置或删除您的扩展。
 
 要升级扩展，请参阅标记文档中的[扩展升级过程](../../../tags/ui/managing-resources/extensions/extension-upgrade.md)指南。

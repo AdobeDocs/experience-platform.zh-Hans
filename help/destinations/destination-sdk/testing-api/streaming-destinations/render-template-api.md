@@ -2,9 +2,9 @@
 description: 了解如何使用目标测试API，根据消息转换模板验证流目的地的输出。
 title: 验证导出的配置文件结构
 exl-id: e64ea89e-6064-4a05-9730-e0f7d7a3e1db
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '794'
+source-wordcount: '792'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 1%
 
 ## 渲染模板API操作快速入门 {#get-started}
 
-在继续之前，请查看[入门指南](../../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[快速入门指南](../../getting-started.md)，了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 根据消息转换模板呈现导出的用户档案 {#render-exported-data}
 
@@ -30,7 +30,7 @@ ht-degree: 1%
 
 >[!TIP]
 >
->* 您应在此处使用的目标ID是与使用`/destinations`端点创建的目标配置相对应的`instanceId`。 有关详细信息，请参阅[检索目标配置](../../authoring-api/destination-configuration/retrieve-destination-configuration.md)。
+>* 您应在此处使用的目标ID是与使用`instanceId`端点创建的目标配置相对应的`/destinations`。 有关详细信息，请参阅[检索目标配置](../../authoring-api/destination-configuration/retrieve-destination-configuration.md)。
 
 **API格式**
 

@@ -2,9 +2,9 @@
 title: (API) Salesforce Marketing Cloud连接
 description: Salesforce Marketing Cloud（以前称为ExactTarget）目标允许您导出帐户数据，并在Salesforce Marketing Cloud中激活该数据，以满足您的业务需求。
 exl-id: 0cf068e6-8a0a-4292-a7ec-c40508846e27
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '2956'
+source-wordcount: '2954'
 ht-degree: 2%
 
 ---
@@ -37,11 +37,11 @@ ht-degree: 2%
 
 ### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL (API) Salesforce Marketing Cloud]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=zh-Hans)区段[!DNL Experience Platform]。
+在将数据激活到[!DNL (API) Salesforce Marketing Cloud]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)区段[!DNL Experience Platform]。
 
 ### [!DNL (API) Salesforce Marketing Cloud]中的先决条件 {#prerequisites-destination}
 
-请注意以下先决条件，以便将数据从Experience Platform导出到您的[!DNL Salesforce Marketing Cloud]帐户：
+请注意将数据从Experience Platform导出到您的[!DNL Salesforce Marketing Cloud]帐户的以下先决条件：
 
 #### 您需要拥有[!DNL Salesforce Marketing Cloud]帐户 {#prerequisites-account}
 
@@ -131,6 +131,8 @@ ht-degree: 2%
 |---|---|---|
 | contactKey | [!DNL Salesforce Marketing Cloud]联系人密钥。 如需其他指导，请参阅[!DNL Salesforce Marketing Cloud] [文档](https://help.salesforce.com/s/articleView?id=sf.mc_cab_contact_builder_best_practices.htm&type=5)。 | 必需 |
 
+{style="table-layout:auto"}
+
 ## 支持的受众 {#supported-audiences}
 
 此部分介绍哪些类型的受众可以导出到此目标。
@@ -138,7 +140,7 @@ ht-degree: 2%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -187,6 +189,8 @@ ht-degree: 2%
 | **[!UICONTROL Client ID]** | 您的[!DNL Salesforce Marketing Cloud] `Client ID`。 |
 | **[!UICONTROL Client Secret]** | 您的[!DNL Salesforce Marketing Cloud] `Client Secret`。 |
 
+{style="table-layout:auto"}
+
 ![Experience Platform UI屏幕截图，显示如何对Salesforce Marketing Cloud进行身份验证。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/authenticate-destination.png)
 
 如果提供的详细信息有效，则UI会以绿色复选标记显示&#x200B;**[!UICONTROL Connected]**&#x200B;状态，之后您可以继续执行下一步。
@@ -208,7 +212,7 @@ ht-degree: 2%
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 > * 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 > * 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
@@ -270,23 +274,25 @@ ht-degree: 2%
 | salesforce mc audience 1 | `salesforce_mc_segment_1` | `salesforce_mc_segment_1` |
 | salesforce mc audience 2 | `salesforce_mc_segment_2` | `salesforce_mc_segment_2` |
 
+{style="table-layout:auto"}
+
 ## 验证数据导出 {#exported-data}
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**&#x200B;以导航到目标列表。
+1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**以导航到目标列表。
    ![显示“浏览目标”的Experience Platform UI屏幕截图。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/browse-destinations.png)
 
 1. 选择目标并验证状态为&#x200B;**[!UICONTROL enabled]**。
    ![Experience Platform UI屏幕截图显示目标数据流运行。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/destination-dataflow-run.png)
 
-1. 切换到&#x200B;**[!DNL Activation data]**&#x200B;选项卡，然后选择受众名称。
+1. 切换到&#x200B;**[!DNL Activation data]**选项卡，然后选择受众名称。
    ![显示目标激活数据的Experience Platform UI屏幕截图示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/destinations-activation-data.png)
 
 1. 监控受众摘要，并确保用户档案计数对应于在区段内创建的计数。
    ![显示区段的Experience Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/segment.png)
 
-1. 登录到[[!DNL Salesforce Marketing Cloud]](https://mc.exacttarget.com/)网站。 然后导航到&#x200B;**[!DNL Audience Builder]** > **[!DNL Contact Builder]** > **[!DNL All contacts]** > **[!DNL Email]**&#x200B;页面，并检查受众中的配置文件是否已添加。
+1. 登录到[[!DNL Salesforce Marketing Cloud]](https://mc.exacttarget.com/)网站。 然后导航到&#x200B;**[!DNL Audience Builder]** > **[!DNL Contact Builder]** > **[!DNL All contacts]** > **[!DNL Email]**页面，并检查受众中的配置文件是否已添加。
    ![Salesforce Marketing Cloud UI屏幕截图显示了包含区段中所用配置文件的联系人页面。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/contacts.png)
 
 1. 要检查是否已更新任何配置文件，请导航到&#x200B;**[!UICONTROL Email]**&#x200B;页面，并验证受众中配置文件的属性值是否已更新。 如果成功，您可以看到根据[!DNL Salesforce Marketing Cloud]受众计划&#x200B;**[!UICONTROL Mapping ID]**&#x200B;步骤中提供的[值，](#schedule-segment-export-example)中的每个受众状态都已更新为Experience Platform中的相应受众状态。
@@ -306,7 +312,7 @@ ht-degree: 2%
    * 要修复此错误，请验证您在激活工作流中为&#x200B;**[!UICONTROL Mapping ID]**&#x200B;目标提供的[!DNL (API) Salesforce Marketing Cloud]是否与您在[!DNL Salesforce Marketing Cloud]中创建的属性的名称完全匹配。 有关指导，请参阅[在 [!DNL Salesforce Marketing Cloud]](#prerequisites-custom-field)中创建属性。
 
 * 激活区段时，您可能会收到错误消息：`The client's IP address is unauthorized for this account. Allowlist the client's IP address...`
-   * 若要修复此错误，请与[!DNL Salesforce Marketing Cloud]帐户管理员联系，将[Experience Platform IP地址](/help/destinations/catalog/streaming/ip-address-allow-list.md)添加到您的[!DNL Salesforce Marketing Cloud]帐户的受信任IP范围。 列入允许列表如果您需要其他指导，请参阅Marketing Cloud[!DNL Salesforce Marketing Cloud]文档中的[个包含的](https://help.salesforce.com/s/articleView?id=sf.mc_es_ip_addresses_for_inclusion.htm&type=5)IP地址。
+   * 若要修复此错误，请与[!DNL Salesforce Marketing Cloud]帐户管理员联系，将[Experience Platform IP地址](/help/destinations/catalog/streaming/ip-address-allow-list.md)添加到您的[!DNL Salesforce Marketing Cloud]帐户的受信任IP范围。 如果您需要其他指导，请参阅Marketing Cloud[!DNL Salesforce Marketing Cloud]文档中的[个包含的](https://help.salesforce.com/s/articleView?id=sf.mc_es_ip_addresses_for_inclusion.htm&type=5)IP地址。
 
 ## 其他资源 {#additional-resources}
 

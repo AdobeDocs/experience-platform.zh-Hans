@@ -2,10 +2,10 @@
 description: 了解如何设置API调用的格式，以通过Adobe Experience Platform Destination SDK提交目标发布请求。
 title: 创建目标发布请求
 exl-id: 913be9de-a699-4756-885d-b3761ec729cb
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '449'
-ht-degree: 1%
+source-wordcount: '447'
+ht-degree: 2%
 
 ---
 
@@ -24,15 +24,15 @@ ht-degree: 1%
 在以下情况下，使用发布目标API端点提交发布请求：
 
 * 作为Destination SDK合作伙伴，您希望使您的产品化目标在所有Experience Platform组织中均可用，以供所有Experience Platform客户使用；
-* 您对配置进行了&#x200B;*任何更新*。 只有在提交新的发布请求(经Experience Platform团队批准)后，配置更新才会反映在目标中。
+* 您对配置进行了&#x200B;*任何更新*。 只有在提交新的发布请求（经Experience Platform团队批准）后，配置更新才会反映在目标中。
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 目标发布API操作快速入门 {#get-started}
 
-在继续之前，请查看[入门指南](../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[快速入门指南](../getting-started.md)，了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 提交目标配置以进行发布 {#create}
 
@@ -77,10 +77,10 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 +++
 
-## API错误处理
+## API错误处理 {#error-handling}
 
 Destination SDK API端点遵循常规Experience Platform API错误消息原则。 请参阅Experience Platform疑难解答指南中的[API状态代码](../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../landing/troubleshooting.md#request-header-errors)。
 
-## 后续步骤
+## 后续步骤 {#next-steps}
 
 阅读本文档后，您现在知道如何提交目标的发布请求。 Adobe Experience Platform团队将在五个工作日内审查您的发布请求并回复您。

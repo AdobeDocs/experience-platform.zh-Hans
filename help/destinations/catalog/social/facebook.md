@@ -3,7 +3,7 @@ keywords: facebook连接；facebook连接；facebook目标；facebook；instagra
 title: Facebook连接
 description: 根据散列邮件激活 Facebook 营销活动的轮廓，以实现受众目标选择、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: ef1b0b704d1299282995068a0de330d52884bb95
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '2770'
 ht-degree: 5%
@@ -20,15 +20,15 @@ ht-degree: 5%
 
 Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/social/facebook/catalog.png)
 
-## 用例
+## 用例 {#use-cases}
 
 为了帮助您更好地了解如何使用[!DNL Facebook]目标以及何时使用，以下是Adobe Experience Platform客户可以使用此功能解决的两个示例用例。
 
-### 用例#1
+### 用例#1 {#use-case-1}
 
 在线retailer希望通过社交平台与现有客户联系，并向他们显示基于先前订单的个性化优惠。 在线retailer可将他们自己的CRM中的电子邮件地址摄取到Adobe Experience Platform，从他们自己的离线数据中构建受众，并将这些受众发送到[!DNL Facebook]社交平台，从而优化他们的广告支出。
 
-### 用例#2
+### 用例#2 {#use-case-2}
 
 航空公司有不同的客户层（青铜、银牌和金牌），并希望通过社交平台为每个层提供个性化优惠。 然而，并非所有客户都使用马航的移动应用，其中一些客户尚未登录该公司网站。 公司拥有的关于这些客户的唯一标识符是会员ID和电子邮件地址。
 
@@ -64,7 +64,7 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -164,14 +164,14 @@ Adobe Experience Platform UI中的![Facebook目标。](../../assets/catalog/soci
 ## 连接到目标 {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写下面两个部分中列出的字段。
 
 以下视频还演示了配置[!DNL Facebook]目标和激活受众的步骤。
 
->[!VIDEO](https://video.tv.adobe.com/v/3411783/?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 >[!NOTE]
 >
@@ -201,11 +201,11 @@ Facebook身份验证令牌每60天过期一次。 令牌过期后，数据导出
    ![筛选以仅显示Facebook帐户](/help/destinations/assets/catalog/social/facebook/refresh-oauth-filters.png)
 3. 选择要刷新的帐户，选择省略号并选择&#x200B;**[!UICONTROL Edit details]**。
    ![选择“编辑详细信息”控件](/help/destinations/assets/catalog/social/facebook/refresh-oauth-edit-details.png)
-4. 在模式窗口中，选择&#x200B;**[!UICONTROL Reconnect OAuth]**&#x200B;并使用您的Facebook凭据重新进行身份验证。
+4. 在模式窗口中，选择&#x200B;**[!UICONTROL Reconnect OAuth]**并使用您的Facebook凭据重新进行身份验证。
    使用Reconnect OAuth选项的![模式窗口](/help/destinations/assets/catalog/social/facebook/reconnect-oauth-control.png)
 
 >[!SUCCESS]
-> 
+>
 >您的身份验证凭据已刷新，其过期时间将重置为60天。
 
 ### 填写目标详细信息 {#destination-details}
@@ -250,7 +250,7 @@ Facebook身份验证令牌每60天过期一次。 令牌过期后，数据导出
 >abstract="广告商直接从客户和合作伙伴那里收集数据。"
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 

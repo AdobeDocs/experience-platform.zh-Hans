@@ -2,7 +2,7 @@
 description: 了解如何通过“/authoring/destination-servers”端点在Adobe Experience Platform Destination SDK中配置目标服务器规范。
 title: 使用Destination SDK创建目标的服务器规范
 exl-id: 62202edb-a954-42ff-9772-863cea37a889
-source-git-commit: 455886806d46a227eddb5ba060c15e1a00e13edf
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '2775'
 ht-degree: 2%
@@ -31,7 +31,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -57,7 +57,7 @@ ht-degree: 2%
 
 {style="table-layout:auto"}
 
-### 何时使用硬编码字段与模板化字段
+### 何时使用硬编码字段与模板化字段 {#when-to-use-hard-coded-vs-templatized}
 
 根据您创建的集成类型，硬编码字段和模板化字段在Destination SDK中都有各自的用途。
 

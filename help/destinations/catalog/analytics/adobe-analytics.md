@@ -3,10 +3,10 @@ keywords: analytics扩展；analytics扩展；目标analytics
 title: Adobe Analytics 扩展
 description: Adobe Analytics扩展是Adobe Experience Platform中的分析目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: 95b6e079-09a6-4262-bd01-11f155286aa9
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '466'
-ht-degree: 4%
+source-wordcount: '455'
+ht-degree: 5%
 
 ---
 
@@ -32,17 +32,17 @@ Adobe Analytics是Adobe Experience Platform中的一个analytics扩展。 有关
 
 要安装Adobe Analytics扩展：
 
-在[Experience Platform界面](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**。
+在[Experience Platform界面](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**。
 
 从目录中选择扩展或使用搜索栏。
 
-单击目标以将其突出显示，然后在右边栏中选择&#x200B;**[!UICONTROL 配置]**。 如果&#x200B;**[!UICONTROL Configure]**&#x200B;控件呈灰显状态，则表示您缺少&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限。 请参阅[先决条件](#prerequisites)。
+选择目标，然后在右边栏中选择&#x200B;**[!UICONTROL Configure]**。 如果&#x200B;**[!UICONTROL Configure]**&#x200B;控件呈灰显状态，则表示您缺少&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限。 请参阅[先决条件](#prerequisites)。
 
 选择要安装扩展的标记属性。 您还可以选择创建新资产。 资产是规则、数据元素、配置的扩展、环境和库的集合。在[标记文档](../../../tags/ui/administration/companies-and-properties.md)中了解属性。
 
 工作流会将您转到数据收集UI以完成安装。
 
-有关扩展配置选项的信息，请参阅[Adobe Analytics扩展页面](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/implement-solutions/analytics.html?lang=zh-Hans)标记文档。
+有关扩展配置选项的信息，请参阅[Adobe Analytics扩展页面](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/implement-solutions/analytics.html)标记文档。
 
 您还可以直接在[数据收集UI](https://experience.adobe.com/#/data-collection/)中安装该扩展。 有关详细信息，请参阅有关[添加新扩展](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension)的指南。
 
@@ -56,6 +56,6 @@ Adobe Analytics是Adobe Experience Platform中的一个analytics扩展。 有关
 
 >[!TIP]
 >
->如果扩展已安装在您的某个资产上，则UI仍会显示该扩展的&#x200B;**[!UICONTROL Install]**。 按照[安装扩展](#install-extension)中的说明启动安装工作流，以配置或删除您的扩展。
+>如果某个资产上已安装该扩展，则对于该扩展，UI仍显示&#x200B;**[!UICONTROL Install]**。 按照[安装扩展](#install-extension)中的说明启动安装工作流，以配置或删除您的扩展。
 
 要升级扩展，请参阅标记文档中的[扩展升级过程](../../../tags/ui/managing-resources/extensions/extension-upgrade.md)指南。

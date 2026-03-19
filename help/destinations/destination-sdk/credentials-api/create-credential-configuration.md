@@ -2,10 +2,10 @@
 description: 本页举例说明了用于创建凭据配置Adobe Experience Platform Destination SDK的API调用。
 title: 创建凭据配置
 exl-id: 9844c9c5-d2dc-4d4b-ae93-759bf23b87fa
-source-git-commit: 560200a6553a1aae66c608eef7901b3248c886b4
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '586'
-ht-degree: 6%
+source-wordcount: '584'
+ht-degree: 7%
 
 ---
 
@@ -31,11 +31,11 @@ ht-degree: 6%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 凭据API操作快速入门 {#get-started}
 
-在继续之前，请查看[入门指南](../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[快速入门指南](../getting-started.md)，了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 创建凭据配置 {#create}
 
@@ -193,9 +193,9 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/credential
 | 参数 | 类型 | 描述 |
 | -------- | ----------- | ----------- |
 | `url` | 字符串 | 授权提供程序的URL |
-| `tenant` | 字符串 | Azure Data Lake存储租户 |
-| `servicePrincipalId` | 字符串 | Azure Data Lake Storage的Azure服务主体ID |
-| `servicePrincipalKey` | 字符串 | 用于Azure Data Lake存储的Azure服务主体密钥 |
+| `tenant` | 字符串 | Azure数据湖存储租户 |
+| `servicePrincipalId` | 字符串 | Azure数据湖存储的Azure服务主体ID |
+| `servicePrincipalKey` | 字符串 | 适用于Azure数据湖存储的Azure服务主体密钥 |
 
 {style="table-layout:auto"}
 

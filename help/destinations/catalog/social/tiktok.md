@@ -3,9 +3,9 @@ title: TikTok连接
 description: 使用您的数据在TikTok上构建自定义受众，以便通过广告促销活动进行定位。 这些受众可能是访问您的网站或与您的内容进行交互的人。 使用Adobe与TikTok Ads Manager的实时集成，快速而安全地将所需受众从Adobe Experience Platform推送到TikTok。
 last-substantial-update: 2023-03-20T00:00:00Z
 exl-id: 7b12d17f-7d9a-4615-9830-92bffe3f6927
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1246'
+source-wordcount: '1244'
 ht-degree: 4%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 4%
 
 >[!IMPORTANT]
 >
->此目标连接器和文档页面由TikTok团队创建和维护。 如有任何查询或更新请求，请直接通过[https://ads.tiktok.com/help/](https://ads.tiktok.com/help/)联系他们。
+>此目标连接器和文档页面由TikTok团队创建和维护。 如有任何查询或更新请求，请直接通过[https://ads.tiktok.com/help/](https://ads.tiktok.com/help/)与他们联系。
 
 ## 用例 {#use-cases}
 
@@ -54,7 +54,7 @@ TikTok支持激活下表中描述的标识。 了解有关[标识](/help/identit
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 | [!DNL Federated Audience Composition] | 是 | 通过[联合受众构成](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/start/audiences)导入到Experience Platform中的受众。 |
 
 {style="table-layout:auto"}
@@ -87,7 +87,7 @@ TikTok支持激活下表中描述的标识。 了解有关[标识](/help/identit
 ## 连接到目标 {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写下面两个部分中列出的字段。
@@ -119,7 +119,7 @@ TikTok支持激活下表中描述的标识。 了解有关[标识](/help/identit
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
@@ -141,7 +141,7 @@ TikTok支持激活下表中描述的标识。 了解有关[标识](/help/identit
 
 ## 导出的数据 {#exported-data}
 
-检查您的[!DNL TikTok Ads Manager]帐户(位于&#x200B;**Assets >受众**&#x200B;下)以验证是否已成功导出Experience Platform受众。 受众将填充为受众类型： `Partner Audience`。
+检查您的[!DNL TikTok Ads Manager]帐户（位于&#x200B;**Assets >受众**&#x200B;下）以验证是否已成功导出Experience Platform受众。 受众将填充为受众类型： `Partner Audience`。
 
 ## 数据使用和治理 {#data-usage-governance}
 

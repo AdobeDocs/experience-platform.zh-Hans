@@ -3,9 +3,9 @@ title: 激活受众以边缘个性化目标
 description: 了解如何为同一页面和下一页面个性化用例将受众从Adobe Experience Platform激活到边缘个性化目标。
 type: Tutorial
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: 5d08a6d90e53aa2f5b1fb72c36e19156e3ac5299
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1883'
+source-wordcount: '1881'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/ed
 >当[使用数据流ID配置Adobe Target连接](../catalog/personalization/adobe-target-connection.md) *而不配置*&#x200B;时，不支持本文中所述的用例。 在没有数据流的情况下，仅支持下一会话个性化用例。
 
 >[!IMPORTANT]
-> 
+>
 >* 要激活数据并启用工作流的[映射步骤](#mapping)，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。
 >* 若要在不执行工作流的[映射步骤](#mapping)的情况下激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Segment without Mapping]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
@@ -39,15 +39,15 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/ed
 >
 >Experience Platform用户界面经常更新，自从录制此视频以来，可能已经发生了变化。 有关最新信息，请参阅以下部分中描述的配置步骤。
 
->[!VIDEO](https://video.tv.adobe.com/v/3449803/?captions=chi_hans&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3418799/?quality=12&learn=on)
 
 有关如何将受众和配置文件属性共享到Adobe Target和自定义个性化目标的简短概述，请观看以下视频。
 
->[!VIDEO](https://video.tv.adobe.com/v/3447365/?captions=chi_hans&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3419036/?quality=12&learn=on)
 
 ## 用例 {#use-cases}
 
-使用Adobe个性化解决方案(如Adobe Target)或您自己的个性化合作伙伴平台（例如，[!DNL Optimizely]、[!DNL Pega]）以及专有系统(例如，内部CMS)，通过[自定义Personalization](../catalog/personalization/custom-personalization.md)目标提供更深入的客户个性化体验。 所有这些功能的同时还利用了Experience Platform Edge Network数据收集和分段功能。
+使用Adobe个性化解决方案（如Adobe Target）或您自己的个性化合作伙伴平台（例如，[!DNL Optimizely]、[!DNL Pega]）以及专有系统（例如，内部CMS），通过[自定义Personalization](../catalog/personalization/custom-personalization.md)目标提供更深入的客户个性化体验。 所有这些功能的同时还利用了Experience Platform Edge Network数据收集和分段功能。
 
 下面介绍的使用案例包括网站个性化和有针对性的网站广告。
 
@@ -61,7 +61,7 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/ed
 
 用户访问您网站上的页面A。 基于此交互，用户已符合一组受众的资格。 然后，用户单击一个链接，该链接会将用户从页面A转至页面B。用户在上一次与页面A进行交互期间符合条件的受众，以及由当前网站访问决定的用户档案更新，将用于支持下一个操作或决策（例如，向访客显示哪个广告横幅，或者，在A/B测试的情况下，显示页面的哪个版本）。
 
-### 下一会话个性化 {#next-session}
+### 下一个会话个性化 {#next-session}
 
 用户访问您网站上的多个页面。 根据这些交互，用户已符合一组受众的条件。 然后，用户终止当前的浏览会话。
 
@@ -174,7 +174,7 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/ed
 
 >[!NOTE]
 >
->目标属性的选择仅适用于[自定义Personalization](../catalog/personalization/custom-personalization.md)激活工作流，以便支持目标平台中的友好名称字段映射。
+>目标属性的选择仅适用于[自定义Personalization](../catalog/personalization/custom-personalization.md)激活工作流，以支持目标平台中的友好名称字段映射。
 
 ![显示如何在映射步骤](../assets/ui/activate-edge-personalization-destinations/mapping-step-select-target-attribute.gif)中选择XDM属性的屏幕录制
 
@@ -192,7 +192,7 @@ Adobe Experience Platform使用[edge segmentation](../../segmentation/methods/ed
 
 选择&#x200B;**[!UICONTROL Next]**&#x200B;以转到[!UICONTROL Review]页面。
 
-## 审查 {#review}
+## 审阅 {#review}
 
 在&#x200B;**[!UICONTROL Review]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL Cancel]**&#x200B;以中断流，**[!UICONTROL Back]**&#x200B;以修改您的设置，或&#x200B;**[!UICONTROL Finish]**&#x200B;以确认您的选择并开始将数据发送到目标。
 

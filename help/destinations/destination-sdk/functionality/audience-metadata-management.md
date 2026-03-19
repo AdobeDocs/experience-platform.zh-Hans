@@ -2,7 +2,7 @@
 description: 使用受众元数据模板以编程方式创建、更新或删除目标中的受众。 Adobe提供了一个可扩展的受众元数据模板，您可以根据营销API的规范配置该模板。 定义、测试和提交模板后，Adobe将使用该模板来构造对目标的调用。
 title: 受众元数据管理
 exl-id: 795e8adb-c595-4ac5-8d1a-7940608d01cd
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '1309'
 ht-degree: 2%
@@ -25,19 +25,19 @@ ht-degree: 2%
 
 借助Destination SDK中的受众元数据支持，在配置Experience Platform目标时，您可以为Experience Platform用户提供以下多个选项之一，以便他们映射并激活受众到您的目标。 您可以通过目标配置[受众元数据配置](../functionality/destination-configuration/audience-metadata-configuration.md)部分中的参数控制用户可用的选项。
 
-### 用例1 — 您有一个第三方API，用户不需要输入映射ID
+### 用例1 — 您有一个第三方API，用户不需要输入映射ID {#use-case-1}
 
 如果您有用于创建/更新/删除受众或受众的API端点，则可以使用受众元数据模板来配置Destination SDK，以匹配受众创建/更新/删除端点的规范。 Experience Platform能够以编程方式创建/更新/删除受众，并将元数据同步回Experience Platform。
 
 在Experience Platform用户界面(UI)中将受众激活到目标时，用户无需在激活工作流中手动填写受众映射ID字段。
 
-### 用例2 — 用户需要首先在您的目标中创建受众，并需要手动输入映射ID
+### 用例2 — 用户需要首先在您的目标中创建受众，并需要手动输入映射ID {#use-case-2}
 
 如果受众和其他元数据需要由合作伙伴或用户在您的目标中手动创建，则用户必须手动填写激活工作流中的受众映射ID字段，以在您的目标和Experience Platform之间同步受众元数据。
 
 ![输入映射ID](../assets/functionality/input-mapping-id.png)
 
-### 用例3 — 您的目标接受Experience Platform受众ID，用户无需手动输入映射ID
+### 用例3 — 您的目标接受Experience Platform受众ID，用户无需手动输入映射ID {#use-case-3}
 
 如果目标系统接受Experience Platform受众ID，则可以在受众元数据模板中对其进行配置。 用户在激活区段时无需填充受众映射ID。
 
@@ -45,7 +45,7 @@ ht-degree: 2%
 
 为了支持上面列出的用例，Adobe为您提供了一个通用模板，您可以根据自己的API规范来自定义该模板。
 
-如果您的API支持：[&#128279;](../metadata-api/create-audience-template.md)
+如果您的API支持：[](../metadata-api/create-audience-template.md)
 
 * HTTP方法：POST、GET、PUT、DELETE、PATCH
 * 身份验证类型：OAuth 1、具有刷新令牌的OAuth 2、具有持有者令牌的OAuth 2

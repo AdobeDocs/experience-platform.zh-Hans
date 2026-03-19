@@ -2,7 +2,7 @@
 title: 阿尔戈利亚
 description: 使用此连接器可将受众激活到算法以进行个性化，并在搜索和推荐中使用。 然后，您可以使用Algolia User Profile source connector将用户档案导入Real-Time CDP以构建丰富的受众。
 exl-id: 116a051a-1b47-4789-826e-c8f0fee60def
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '1140'
 ht-degree: 4%
@@ -63,7 +63,7 @@ ht-degree: 4%
 | 受众来源 | 受支持 | 描述 |
 |---------|---------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -111,7 +111,7 @@ ht-degree: 4%
 
 ![新帐户](../../assets/catalog/personalization/algolia/connection.png)
 
-### 填写目标详细信息
+### 填写目标详细信息 {#destination-details}
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
@@ -131,11 +131,11 @@ ht-degree: 4%
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 要导出身份，您需要查看身份图形[访问控制权限](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/home#permissions)。
+>* 要导出身份，您需要查看身份图形[访问控制权限](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions)。
 
-有关将受众激活到此目标的说明，请阅读[将配置文件和受众激活到流式受众导出目标](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations)。
+有关将受众激活到此目标的说明，请阅读[将配置文件和受众激活到流式受众导出目标](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations)。
 
 ### 映射属性和身份 {#mapping-attributes-identities}
 

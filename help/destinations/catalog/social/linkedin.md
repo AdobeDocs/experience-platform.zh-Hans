@@ -3,7 +3,7 @@ keywords: linkedin连接；linkedin连接；linkedin目标；linkedin；
 title: Linkedin匹配的受众连接
 description: 根据散列电子邮件，激活LinkedIn营销活动的用户档案，以实现受众定位、个性化和抑制。
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '1336'
 ht-degree: 4%
@@ -18,7 +18,7 @@ ht-degree: 4%
 
 Adobe Experience Platform UI中的![LinkedIn目标](../../assets/catalog/social/linkedin/catalog.png)
 
-## 用例
+## 用例 {#use-cases}
 
 为了帮助您更好地了解如何以及何时使用[!DNL LinkedIn Matched Audiences]目标，以下是Adobe Experience Platform客户可以使用此功能解决的用例。
 
@@ -47,7 +47,7 @@ Adobe Experience Platform UI中的![LinkedIn目标](../../assets/catalog/social/
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -117,14 +117,14 @@ Adobe Experience Platform UI中的![LinkedIn目标](../../assets/catalog/social/
 ## 连接到目标 {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写下面两个部分中列出的字段。
 
 以下视频还演示了配置[!DNL LinkedIn Matched Audiences]目标和激活受众的步骤。
 
->[!VIDEO](https://video.tv.adobe.com/v/3411783/?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 >[!NOTE]
 >
@@ -148,11 +148,11 @@ LinkedIn令牌每60天过期一次。 您可以从&#x200B;**[!UICONTROL Account 
    ![筛选以仅显示LinkedIn帐户](/help/destinations/assets/catalog/social/linkedin/refresh-oauth-filters.png)
 3. 选择要刷新的帐户，选择省略号并选择&#x200B;**[!UICONTROL Edit details]**。
    ![选择“编辑详细信息”控件](/help/destinations/assets/catalog/social/linkedin/refresh-oauth-edit-details.png)
-4. 在模态窗口中，选择&#x200B;**[!UICONTROL Reconnect OAuth]**&#x200B;并使用您的LinkedIn凭据重新进行身份验证。
+4. 在模态窗口中，选择&#x200B;**[!UICONTROL Reconnect OAuth]**并使用您的LinkedIn凭据重新进行身份验证。
    使用Reconnect OAuth选项的![模式窗口](/help/destinations/assets/catalog/social/linkedin/reconnect-oauth-control.png)
 
 >[!SUCCESS]
-> 
+>
 >您的身份验证凭据已刷新，其过期时间将重置为60天。
 
 ### 填写目标详细信息 {#destination-details}
@@ -177,7 +177,7 @@ LinkedIn令牌每60天过期一次。 您可以从&#x200B;**[!UICONTROL Account 
 ## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 

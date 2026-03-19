@@ -3,10 +3,10 @@ title: 索引交换
 description: 连接到Index Exchange （索引）并激活您的数据，以便您的受众区段可以通过在索引UI中创建的交易定位。
 last-substantial-update: 2026-01-27T00:00:00Z
 exl-id: 6d2a8553-5e8c-4eeb-ac25-5e4c2bdc5758
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1217'
-ht-degree: 2%
+source-wordcount: '1215'
+ht-degree: 3%
 
 ---
 
@@ -44,7 +44,9 @@ ht-degree: 2%
 
 [!DNL Index]支持激活下表中描述的标识。 了解有关[标识](/help/identity-service/features/namespaces.md)的更多信息。
 
-请注意，[!DNL Index Exchange]目标在每个上载中仅支持一种标识类型。 配置目标详细信息时，必须指定适当的标识符类型（请参阅下面的[“填写目标详细信息”](#destination-details)部分）。
+>[!NOTE]
+>
+>[!DNL Index Exchange]目标在每次上载时仅支持一种标识类型。 配置目标详细信息时，必须指定适当的标识符类型（请参阅下面的[“填写目标详细信息”](#destination-details)部分）。
 
 要上载多个标识类型，请为每个标识类型创建[!DNL Index Exchange]目标的单独实例。
 
@@ -64,7 +66,7 @@ ht-degree: 2%
 | 受众来源 | 受支持 | 描述 |
 | --------- | ---------- | ---------- |
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序(如Adobe Journey Optimizer)中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -96,7 +98,7 @@ ht-degree: 2%
 ## 连接到目标 {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。 在配置目标工作流中，填写下面两个部分中列出的字段。
@@ -112,7 +114,7 @@ ht-degree: 2%
 * [!UICONTROL Identifier Type]：选择与要发送给[!DNL Index]的标识符匹配的索引提供的标识符类型。 请参阅下表支持的标识符类型。 如果不确定要使用哪种标识符类型，请联系您的[!DNL Index]代表。 要发送多种标识符类型，请为此目标创建单独的实例。
 * [!UICONTROL Account ID]：输入您的[!DNL Index]帐户ID。 这与您的发布者ID不同。 如果您不确定要使用哪个ID，请联系您的[!DNL Index]代表。
 
-#### 支持的标识符类型
+#### 支持的标识符类型 {#supported-identifier-types}
 
 | 标识符类型 | 描述 |
 |------------------ | ------------- |
@@ -129,12 +131,12 @@ ht-degree: 2%
 ### 启用警报 {#enable-alerts}
 
 您可以启用警报，以接收有关此目标数据流状态的通知。 从列表中选择一个或多个警报以订阅数据流的状态通知。 有关详细信息，请参阅[使用UI订阅目标警报指南](../../ui/alerts.md)。
-完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
+完成提供目标连接的详细信息后，选择**[!UICONTROL Next]**。
 
-## 将区段激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 

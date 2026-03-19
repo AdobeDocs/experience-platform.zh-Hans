@@ -2,9 +2,9 @@
 description: 本页介绍如何使用Destination SDK中的/sample-profiles API端点基于源架构生成示例配置文件。 您可以使用这些示例配置文件来测试基于文件的目标配置。
 title: 根据源架构生成样本配置文件
 exl-id: aea50d2e-e916-4ef0-8864-9333a4eafe80
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '654'
+source-wordcount: '652'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 1%
 
 ## 快速入门 {#getting-started}
 
-在继续之前，请查看[入门指南](../../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[快速入门指南](../../getting-started.md)，了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 先决条件 {#prerequisites}
 
@@ -116,7 +116,7 @@ curl -X GET 'https://platform.adobe.io/data/core/activation/authoring/sample-pro
 
 Destination SDK API端点遵循常规Experience Platform API错误消息原则。 请参阅Experience Platform疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
 
-## 后续步骤
+## 后续步骤 {#next-steps}
 
 阅读本文档后，您现在知道如何根据在目标[激活流程](../../../ui/activate-batch-profile-destinations.md)中配置的源架构生成示例配置文件。
 

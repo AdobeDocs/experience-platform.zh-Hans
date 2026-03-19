@@ -2,9 +2,9 @@
 description: 此页说明如何使用/testing/destinationInstance API端点来测试您的基于文件的目标是否已正确配置，以及验证数据流到您配置的目标是否完整。
 title: 使用示例配置文件测试基于文件的目标
 exl-id: 75f76aec-245b-4f07-8871-c64a710db9f6
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '831'
+source-wordcount: '829'
 ht-degree: 2%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 2%
 
 ## 快速入门 {#getting-started}
 
-在继续之前，请查看[入门指南](../../getting-started.md)以了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看[快速入门指南](../../getting-started.md)，了解成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 先决条件 {#prerequisites}
 
@@ -240,10 +240,10 @@ curl -X POST 'https://platform.adobe.io/data/core/activation/authoring/testing/d
 
 Destination SDK API端点遵循常规Experience Platform API错误消息原则。 请参阅Experience Platform疑难解答指南中的[API状态代码](../../../../landing/troubleshooting.md#api-status-codes)和[请求标头错误](../../../../landing/troubleshooting.md#request-header-errors)。
 
-## 后续步骤
+## 后续步骤 {#next-steps}
 
 阅读本文档后，您现在知道如何测试基于文件的目标配置。
 
-如果您收到了有效的API响应，则表明目标运行正常。 如果要查看有关激活流程的更多详细信息，可以使用[响应中的`results`属性查看详细的激活结果](file-based-destination-results-api.md)。
+如果您收到了有效的API响应，则表明目标运行正常。 如果要查看有关激活流程的更多详细信息，可以使用`results`响应中的[属性查看详细的激活结果](file-based-destination-results-api.md)。
 
 如果您正在构建公共目标，您现在可以[将目标配置](../../guides/submit-destination.md)提交到Adobe以供审查。

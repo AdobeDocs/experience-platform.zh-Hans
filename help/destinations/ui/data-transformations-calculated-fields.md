@@ -3,7 +3,7 @@ title: 使用计算字段对导出到云存储目标的数据进行转换
 type: Tutorial
 description: 了解如何使用计算字段功能对导出到云存储目标的数据执行转换
 exl-id: 1e14f964-4c03-4d0c-be8d-c3dcb48a335a
-source-git-commit: bd9efc1bcf6058827cc5c603b9976c9e42c7ec9e
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '1604'
 ht-degree: 8%
@@ -16,7 +16,7 @@ ht-degree: 8%
 >id="platform_destinations_export_arrays_flat_files"
 >title="添加计算字段"
 >abstract="<p>使用&#x200B;**添加计算字段**&#x200B;控件对导出到云存储目标的数据进行各种数据转换。例如，您可以对数据进行哈希处理，将数组连接成字符串等。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/data-transformations-calculated-fields.html?lang=zh-Hans#examples" text="示例"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/data-transformations-calculated-fields.html#examples" text="示例"
 
 >[!AVAILABILITY]
 >
@@ -31,7 +31,7 @@ ht-degree: 8%
 
 要将计算字段用于数据转换：
 
-1. [将](/help/destinations/ui/connect-destination.md)连接到所需的云存储目标。 连接到所需的云目标时，将&#x200B;**[!UICONTROL Export arrays, maps, objects]** [选项切换为off](/help/destinations/ui/export-arrays-maps-objects.md##export-arrays-maps-objects-toggle)。
+1. [将](/help/destinations/ui/connect-destination.md)连接到所需的云存储目标。 连接到所需的云目标时，将&#x200B;**[!UICONTROL Export arrays, maps, objects]** [选项切换为off](/help/destinations/ui/export-arrays-maps-objects.md#export-arrays-maps-objects-toggle)。
 2. 执行云存储目标[的](/help/destinations/ui/activate-batch-profile-destinations.md)激活步骤并转到[映射](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)步骤。
 
 ## 如何使用计算字段 {#how-to-export-calculated-fields}
