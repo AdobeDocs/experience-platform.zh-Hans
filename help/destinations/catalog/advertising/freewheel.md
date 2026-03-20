@@ -4,10 +4,11 @@ description: 了解如何将Adobe Experience Platform中的受众激活到FreeWh
 hide: true
 hidefromtoc: true
 badge: label="Beta 版" type="Informative"
-source-git-commit: 081832228c2aea6b436cce66a7e9623c5b79d62d
+exl-id: 1f1d3e57-a8ef-4971-b3d1-43521bd158bb
+source-git-commit: 705e94b13af6830916e7d4bf500c48ae1be88874
 workflow-type: tm+mt
 source-wordcount: '1534'
-ht-degree: 3%
+ht-degree: 8%
 
 ---
 
