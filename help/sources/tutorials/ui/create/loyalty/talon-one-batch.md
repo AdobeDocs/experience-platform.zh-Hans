@@ -4,9 +4,10 @@ description: 了解如何使用UI将批量数据从Talon.One摄取到Adobe Exper
 badge: Beta 版
 hide: true
 hidefromtoc: true
-source-git-commit: d8b8143da3a67bba690229b1f8e88eb86f3fe804
+exl-id: 65a8ae42-0c0f-4bc5-b99e-52b02ab2130a
+source-git-commit: 9c4c4a3bce2329e65abf5e8cfcc2f20ec2799045
 workflow-type: tm+mt
-source-wordcount: '1420'
+source-wordcount: '1518'
 ht-degree: 1%
 
 ---
@@ -17,7 +18,9 @@ ht-degree: 1%
 >
 >[!DNL Talon.One]源为测试版。 有关使用测试版标记源的更多信息，请阅读源概述中的[条款和条件](../../../../home.md#terms-and-conditions)。
 
-阅读本教程，了解如何使用UI中的源工作区将批次数据从[!DNL Talon.One]帐户摄取到Adobe Experience Platform中。
+批次数据的[!DNL Talon.One]源接收为[!DNL Talon.One]应用程序记录的事件。 一个常见用例是筛选`talon_session_closed`以接收已完成的交易，包括已获得或已兑现的忠诚度积分、已兑现的优惠券、已授予的折扣等。 有关API的更多信息，请阅读[[!DNL Talon.One] 管理API引用](https://docs.talon.one/management-api#tag/Customer-data/operation/getApplicationEventsWithoutTotalCount)。
+
+按照本教程了解如何使用UI中的源工作区将批次数据从[!DNL Talon.One]帐户摄取到Adobe Experience Platform中。
 
 ## 快速入门
 
@@ -46,6 +49,10 @@ ht-degree: 1%
 
 ### 创建新帐户
 
+>[!TIP]
+>
+>创建新帐户之前，请查看[概述中的](../../../../connectors/loyalty/talon-one.md#prerequisites)先决条件[!DNL Talon.One]，了解需要哪些身份验证凭据。
+
 要为您的[!DNL Talon.One]源创建新帐户，请选择&#x200B;**[!UICONTROL New account]**&#x200B;并为您的帐户提供名称和可选描述。 接下来，提供您的[!DNL Talon.One]域和[!UICONTROL Talon.One Management API Key]。 完成后，选择&#x200B;**[!UICONTROL Connect to source]**，留出一段时间让您的连接建立。
 
 ![源工作流的创建新帐户步骤。](../../../../images/tutorials/create/talon-one-batch/new.png)
@@ -57,6 +64,10 @@ ht-degree: 1%
 ## 选择数据
 
 完成身份验证后，请提供您的&#x200B;**applicationId**&#x200B;和&#x200B;**sessionType**&#x200B;的值。 在此步骤中，您可以使用预览功能检查数据的结构。 完成后，选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续。
+
+>[!TIP]
+>
+>要捕获已完成的交易（包括已获得或兑换的忠诚度积分、兑换的优惠券和已授予的折扣），请选择`talon_session_closed`事件类型。 有关按类型筛选事件的详细信息，请参阅[API文档 [!DNL Talon.One] 中的](https://docs.talon.one/management-api#tag/Customer-data/operation/getApplicationEventsWithoutTotalCount)&quot;type&quot;查询参数。
 
 ![源工作流的选择数据和预览步骤。](../../../../images/tutorials/create/talon-one-batch/select-data.png)
 

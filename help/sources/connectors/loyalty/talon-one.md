@@ -4,10 +4,11 @@ description: 了解Adobe Experience Platform上的Talon.One源
 badge: Beta 版
 hide: true
 hidefromtoc: true
-source-git-commit: 558a9d6ff3222acbf77edea0a82ef50725cd6203
+exl-id: 92ed180a-6175-45e2-a831-0f40fd8606b0
+source-git-commit: 5ceef18d479854aa4b633e7e5e393a6698a05b2e
 workflow-type: tm+mt
-source-wordcount: '286'
-ht-degree: 3%
+source-wordcount: '439'
+ht-degree: 2%
 
 ---
 
@@ -40,6 +41,28 @@ ht-degree: 3%
 ## 映射 {#mapping}
 
 为了帮助您根据每个效果对象的唯一`effectType`值来映射该对象，您可以使用数据准备`array_to_map`函数。 这允许您轻松地将无序效果数组转换为符合要求的键值对。 有关指导，请参阅以下示例。
+
+您还可以使用Adobe提供的标准化忠诚度字段组，以一致的方式对您的忠诚度计划概念进行建模。
+
+>[!BEGINTABS]
+
+>[!TAB 忠诚度详细信息]
+
+这是XDM Individual Profile的标准XDM字段组，用于通过捕获人员的记录属性而不是事件数据来描述他们的忠诚度会员资格状态。 在您的配置文件架构中使用此字段组捕获：
+
+* **成员**&#x200B;在计划中(`loyaltyID`， `program`， `status`， `tier`)
+* 他们的&#x200B;**当前和生命周期余额** （`points`、`lifetimePoints`、`expiredPoints`等）
+* 密钥&#x200B;**成员资格日期** (`joinDate`，`upgradeDate`，`tierExpiryDate`)
+
+>[!TAB 忠诚度事件详细信息]
+
+“忠诚度事件详细信息”字段组旨在捕获事件级别的忠诚度活动，如在特定交易中挣得或兑换的积分。 此字段组包括`xdm:points`、`xdm:pointsRedeemed`、`xdm:pointsAsOfDate`和`xdm:program`等字段。 在体验事件架构中使用此事件级别字段组来捕获：
+
+* **每个事件的移动**&#x200B;点（已获得、已兑换、已过期）
+* 由忠诚度优惠券或推荐带来的&#x200B;**折扣**
+* **计划ID**&#x200B;和交易ID，用于与忠诚度提供商进行协调。
+
+>[!ENDTABS]
 
 | 来源 | 目标 |
 | ---- | --- |
