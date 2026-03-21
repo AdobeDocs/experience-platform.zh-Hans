@@ -332,7 +332,7 @@ ht-degree: 39%
 | --- | --- |
 | <ul><li>Adobe Experience Platform:OD LITE</li><li>Adobe Experience Platform:OD STANDARD</li><li>Adobe Experience Platform:OD重</li></ul> | [Adobe Experience Platform](https://helpx.adobe.com/cn/legal/product-descriptions/adobe-experience-platform.html) |
 | <ul><li>Adobe Experience Platform:OD</li></ul> | [Experience Platform、应用程序服务和智能服务](https://helpx.adobe.com/cn/legal/product-descriptions/exp-platform-app-svcs.html) |
-| <ul><li>RT客户数据平台:OD</li><li>RT CUSTOMER DATA PLATFORM:OD PRFL至10M</li><li>RT CUSTOMER DATA PLATFORM:OD PRFL至50M</li></ul> | [Adobe Real-Time Customer Data Platform](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) |
+| <ul><li>RT客户数据平台:OD</li><li>RT CUSTOMER DATA PLATFORM:OD PRFL至10M</li><li>RT CUSTOMER DATA PLATFORM:OD PRFL至50M</li></ul> | [Adobe Real-Time Customer Data Platform](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html) |
 | <ul><li>AEP:OD激活</li><li>AEP:OD激活PRFL至10M</li><li>AEP:OD激活PRFL高达50M</li></ul> | [Adobe Experience Platform激活](https://helpx.adobe.com/cn/legal/product-descriptions/adobe-experience-platform0.html) |
 | <ul><li>AEP:OD智能</li></ul> | [Adobe Experience Platform Intelligence](https://helpx.adobe.com/cn/legal/product-descriptions/adobe-experience-platform-intelligence---product-description.html) |
 | <ul><li>Journey Optimizer SELECT:OD</li><li>Journey Optimizer PRIME:OD</li><li>Journey Optimizer ULTIMATE:OD</li><li>UNP AJO PRIME STARTER:OD</li><li>UNP AJO ULTIMATE STARTER:OD</li><li>UNP Real-Time CDP:OD配置文件编排</li></ul> | [Adobe Journey Optimizer](https://helpx.adobe.com/cn/legal/product-descriptions/adobe-journey-optimizer.html) |
