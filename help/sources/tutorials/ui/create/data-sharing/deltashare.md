@@ -7,16 +7,16 @@ exl-id: 4e889401-08c1-4c81-85e7-49fe1328c65d
 source-git-commit: 1533e35032d6a0508588652b0e1ca4c6717d4acb
 workflow-type: tm+mt
 source-wordcount: '133'
-ht-degree: 1%
+ht-degree: 24%
 
 ---
 
-# 在用户界面中使用[!DNL Deltashare]源连接器 {#use-deltashare-in-the-ui}
+# 在 UI 中使用 [!DNL Deltashare] 源连接器 {#use-deltashare-in-the-ui}
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_deltashare_schema"
 >title="架构结构"
->abstract="确保您查看架构结构，因为一旦继续，您将无法再对架构进行更改。"
+>abstract="确保审阅您的架构结构，因为一旦继续，您将无法再更改您的架构。"
 
 阅读本指南，了解如何在Adobe Experience Platform用户界面中使用[!DNL Deltashare]源连接器。
 

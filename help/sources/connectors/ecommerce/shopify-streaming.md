@@ -4,7 +4,7 @@ description: 了解如何创建源连接和数据流，以将流数据从Shopify
 badge: Beta 版
 last-substantial-update: 2023-04-26T00:00:00Z
 exl-id: ae991913-68b5-4bbb-b8a5-e566d67a4c1a
-source-git-commit: 6ab7c5c2e1f800c82d8906fba78fb897f8639877
+source-git-commit: 66b5b54cdb39a7865092b7e2efcf39046aa791cc
 workflow-type: tm+mt
 source-wordcount: '677'
 ht-degree: 2%
@@ -126,7 +126,7 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --- | --- | 
-| `webhook.address` | 发送流消息的http端点。 webhook的模板是： `https://dcs.adobedc.net/collection/{INLET_ID}?{X_ADOBE_FLOW_ID}={FLOW_ID}.` |
+| `webhook.address` | 发送流消息的http端点。 webhook的模板是： `https://dcs.adobedc.net/collection/{INLET_ID}?x-adobe-flow-id={FLOW_ID}.` |
 | `webhook.topic` | webhook订阅的主题。 有关详细信息，请阅读[[!DNL Shopify] webhook活动主题指南](https://shopify.dev/docs/api/admin-rest/2023-04/resources/webhook#event-topics)。 |
 | `webhook.format` | 数据的格式。 |
 
