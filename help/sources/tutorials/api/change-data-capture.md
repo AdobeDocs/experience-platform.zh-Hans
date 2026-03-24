@@ -2,9 +2,9 @@
 title: 在API中为源连接启用更改数据捕获
 description: 了解如何在API中为源连接启用更改数据捕获
 exl-id: 362f3811-7d1e-4f16-b45f-ce04f03798aa
-source-git-commit: bd28d5be932823b8bf9c98280f97694ff221d76d
+source-git-commit: 74743d7dc93e2ba291481ad11e923d28088c4903
 workflow-type: tm+mt
-source-wordcount: '1291'
+source-wordcount: '1294'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,9 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->连接到VA6数据中心时，在Amazon Web Services (AWS)上运行Adobe Experience Platform时，您现在可以对[!DNL Amazon S3]和[!DNL Data Landing Zone]源使用更改数据捕获。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](../../../landing/multi-cloud.md)。
+>* 以下源支持变更数据捕获： [!DNL Amazon S3]、[!DNL Data Landing Zone]、[!DNL Marketo Engage]、[!DNL Microsoft Dynamics]和[!DNL Salesforce]。
+>
+>* 在VA6数据中心的Amazon Web Services (AWS)上使用Adobe Experience Platform时，您还可以为[!DNL Amazon S3]和[!DNL Data Landing Zone]源启用更改数据捕获。 请注意，AWS上的Experience Platform当前仅向有限受众提供。 有关基础架构支持的更多详细信息，请参阅[Experience Platform多云概述](../../../landing/multi-cloud.md)。
 
 在Adobe Experience Platform源中使用变更数据捕获，使您的源和目标系统近乎实时地保持同步。
 
@@ -169,7 +171,7 @@ set spark.databricks.delta.properties.defaults.enableChangeDataFeed = true;
 
 要在[!DNL Google BigQuery]源连接中启用更改历史记录，请在[!DNL Google BigQuery]控制台中导航到您的[!DNL Google Cloud]页面，并将`enable_change_history`设置为`TRUE`。 此属性启用数据表的更改历史记录。
 
-有关详细信息，请阅读[&#x200B; [!DNL GoogleSQL]中](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language#table_option_list)数据定义语言语句的指南。
+有关详细信息，请阅读[ [!DNL GoogleSQL]中](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language#table_option_list)数据定义语言语句的指南。
 
 请阅读以下文档，以了解如何为[!DNL Google BigQuery]源连接启用更改数据捕获的步骤：
 
