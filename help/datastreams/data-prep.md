@@ -2,16 +2,16 @@
 title: 为数据收集准备数据
 description: 了解在为 Adobe Experience Platform Web 和 Mobile SDK 配置数据流时，如何将数据映射到 Experience Data Model (XDM) 事件架构。
 exl-id: 87a70d56-1093-445c-97a5-b8fa72a28ad0
-source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
+source-git-commit: bdcea238740661b453032bbab3ec7e414efd63e3
 workflow-type: tm+mt
-source-wordcount: '1166'
-ht-degree: 43%
+source-wordcount: '1167'
+ht-degree: 41%
 
 ---
 
 # 为数据收集准备数据
 
-数据准备是一项 Adobe Experience Platform 服务，可让您从 [Experience Data Model (XDM)](../xdm/home.md)映射数据并将数据映射到它、转换和验证数据。在配置启用了Experience Platform的[数据流](./overview.md)时，您可以使用数据准备功能在将数据发送到Experience Platform Edge Network时将源数据映射到XDM。
+数据准备是一种Adobe Experience Platform服务，可用于将数据映射、转换和验证到[Experience Data Model (XDM)](../xdm/home.md)以及从中映射和验证数据。 在配置启用了Experience Platform的[数据流](./overview.md)时，您可以使用数据准备功能在将数据发送到Experience Platform Edge Network时将源数据映射到XDM。
 
 所有从网页发送的数据必须以XDM形式登陆Experience Platform。 有3种方法可将数据从页面上的数据层转换为Experience Platform接受的XDM：
 
@@ -25,7 +25,7 @@ ht-degree: 43%
 
 在两种用例中，为数据收集准备数据很有用：
 
-1. 网站具有格式正确、受管并维护的数据层，并且更愿意直接将其发送到Edge Network，而不是使用JavaScript操作在页面上将其转换为XDM(通过标记数据元素或通过手动JavaScript操作)。
+1. 网站具有格式正确、受管并维护的数据层，并且更愿意直接将其发送到Edge Network，而不是使用JavaScript操作在页面上将其转换为XDM（通过标记数据元素或通过手动JavaScript操作）。
 2. 在该站点上部署了标记系统以外的标记系统。
 
 ## 通过WebSDK将现有数据层发送到Edge Network {#send-datalayer-via-websdk}
@@ -48,7 +48,7 @@ ht-degree: 43%
 
 有关“为数据收集准备数据”过程的快速演示，请观看以下视频：
 
->[!VIDEO](https://video.tv.adobe.com/v/345562?captions=chi_hans&quality=12&enable10seconds=on&speedcontrol=on)
+>[!VIDEO](https://video.tv.adobe.com/v/342120?quality=12&enable10seconds=on&speedcontrol=on)
 
 ## [!UICONTROL Select data] {#select-data}
 
@@ -158,7 +158,7 @@ ht-degree: 43%
 
 >[!NOTE]
 >
-> 使用表示任何页面上可能使用的每个数据层元素的示例JSON对象。 例如，并非所有页面都使用购物车数据层元素。 但是，购物车数据层元素应包含在此示例JSON对象中。
+>使用表示任何页面上可能使用的每个数据层元素的示例JSON对象。 例如，并非所有页面都使用购物车数据层元素。 但是，购物车数据层元素应包含在此示例JSON对象中。
 
 ## [!UICONTROL Mapping]
 

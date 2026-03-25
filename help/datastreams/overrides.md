@@ -2,16 +2,16 @@
 title: 配置数据流覆盖
 description: 了解如何在数据流UI中配置数据流覆盖并通过Web SDK或Mobile SDK激活它们。
 exl-id: 3f17a83a-dbea-467b-ac67-5462c07c884c
-source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
+source-git-commit: bdcea238740661b453032bbab3ec7e414efd63e3
 workflow-type: tm+mt
-source-wordcount: '1045'
-ht-degree: 53%
+source-wordcount: '1043'
+ht-degree: 52%
 
 ---
 
 # 配置数据流覆盖
 
-数据流覆盖允许您为数据流定义其他配置，这些配置通过Web SDK或Mobile SDK传递到Edge Network。
+使用数据流覆盖为您的数据流定义其他配置，这些配置通过Web SDK或Mobile SDK传递到Edge Network。
 
 这有助于触发与默认数据流行为不同的数据流行为，而无需创建数据流或修改现有设置。
 
@@ -51,7 +51,7 @@ ht-degree: 53%
 
 ## 在数据流 UI 中配置数据流覆盖 {#configure-overrides}
 
-数据流配置覆盖允许您修改以下数据流配置：
+通过数据流配置覆盖，可修改以下数据流配置：
 
 * Experience Platform 事件数据集
 * Adobe Target 属性令牌
@@ -74,7 +74,7 @@ ht-degree: 53%
 
 要为 Adobe Analytics 数据流配置数据流覆盖，您必须首先创建 [Adobe Analytics](configure.md#analytics) 数据流。按照说明进行操作，使用 [Adobe Analytics](configure.md#analytics) 服务[配置数据流](configure.md)。
 
-创建数据流后，编辑已添加的[Adobe Analytics](configure.md#target)服务，并使用&#x200B;**[!UICONTROL Report Suite Overrides]**&#x200B;部分添加所需的数据流覆盖，如下图所示。
+创建数据流后，编辑已添加的[Adobe Analytics](configure.md#analytics)服务，并使用&#x200B;**[!UICONTROL Report Suite Overrides]**&#x200B;部分添加所需的数据流覆盖，如下图所示。
 
 选择&#x200B;**[!UICONTROL Show Batch Mode]**&#x200B;以启用对报表包覆盖的批量编辑。 您可以复制并粘贴报告包覆盖列表，每行输入一个报告包。
 

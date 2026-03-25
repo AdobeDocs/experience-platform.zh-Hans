@@ -2,9 +2,9 @@
 title: 为数据流配置机器人检测
 description: 了解如何为数据流配置机器人检测，以区分人类和非人类流量。
 exl-id: 6b221d97-0145-4d3e-a32d-746d72534add
-source-git-commit: 5f599b8572c4cebcdfb9ab85027211da4d8a020c
+source-git-commit: bdcea238740661b453032bbab3ec7e414efd63e3
 workflow-type: tm+mt
-source-wordcount: '1374'
+source-wordcount: '1382'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 0%
 >
 >机器人检测不会丢弃任何机器人请求。 它仅使用机器人评分更新XDM架构，并将事件转发到您配置的[数据流服务](configure.md)。
 >
->Adobe解决方案可能会以不同的方式处理机器人评分。 例如，Adobe Analytics使用自己的[机器人过滤服务](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/bot-removal/bot-rules.html?lang=zh-Hans)，而不使用Edge Network设置的分数。 这两个服务使用相同的[IAB机器人列表](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/)，因此机器人得分相同。
+>Adobe解决方案可能会以不同的方式处理机器人评分。 例如，Adobe Analytics使用自己的[机器人过滤服务](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/bot-removal/bot-rules.html)，而不使用Edge Network设置的分数。 这两个服务使用相同的[IAB机器人列表](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/)，因此机器人得分相同。
 
 ## 技术注意事项 {#technical-considerations}
 
@@ -65,12 +65,12 @@ ht-degree: 0%
 
 在机器人检测规则页面中，您可以使用以下功能配置机器人检测：
 
-* 使用[[!DNL [IAB/ABC International Spiders and Bots List]]](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/)。
+* 使用[IAB/ABC国际蜘蛛程序和机器人列表](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/)。
 * 创建自己的机器人检测规则。
 
 ### 使用IAB/ABC国际蜘蛛程序和机器人列表 {#iab-list}
 
-[IAB/ABC国际蜘蛛程序和机器人列表](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/)是第三方行业标准的网络蜘蛛程序和机器人列表。 此列表可帮助您识别自动流量，例如搜索引擎爬网程序、监控工具以及其他您可能不希望包含在分析计数中的非人为流量。
+[IAB/ABC国际蜘蛛程序和机器人列表](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/)是第三方行业标准的网络蜘蛛程序和机器人列表。 此列表可帮助您识别自动流量，例如搜索引擎爬虫、监控工具，以及其他您可能不希望包含在分析计数中的非人为流量。
 
 要将数据流配置为使用IAB/ABC国际蜘蛛程序和机器人列表，请执行以下操作：
 
@@ -87,7 +87,7 @@ ht-degree: 0%
 
 如果需要更细粒度的机器人检测规则，可以将IP条件与请求标头条件结合使用。 机器人检测规则可以使用以下标头：
 
-| HTTP标头 | 描述 |
+| HTTP 页头 | 描述 |
 | --- | --- |
 | `user-agent` | 允许服务器和网络对等方识别请求用户代理的应用程序、操作系统、供应商和/或版本的标头。 |
 | `content-type` | 指示资源的原始媒体类型（在为发送应用任何内容编码之前）。 |

@@ -2,9 +2,9 @@
 title: 创建动态数据流配置
 description: 了解如何根据规则创建动态数据流配置，以将您的数据路由到各种Experience Cloud服务。
 exl-id: 528ddf89-ad87-4021-b5a6-8e25b4469ac4
-source-git-commit: 30b66420e9cee6b4d85cf41a31e9595d5a240fda
+source-git-commit: bdcea238740661b453032bbab3ec7e414efd63e3
 workflow-type: tm+mt
-source-wordcount: '1098'
+source-wordcount: '1092'
 ht-degree: 3%
 
 ---
@@ -52,29 +52,29 @@ ht-degree: 3%
 
 1. 转到&#x200B;**[!UICONTROL Data Collection]** > **[!UICONTROL Datastreams]**&#x200B;页面并选择您创建的数据流。
 
-   ![显示数据流列表的数据流用户界面的图像。](assets/configure-dynamic-datastream/select-datastream.png)
+   ![数据流用户界面显示数据流列表。](assets/configure-dynamic-datastream/select-datastream.png)
 
 1. 选择要为其定义动态配置的服务上的&#x200B;**[!UICONTROL Edit]**&#x200B;选项。
 
-   ![数据流用户界面的图像，显示添加到数据流的服务。](assets/configure-dynamic-datastream/select-service.png)
+   ![数据流用户界面显示添加到数据流的服务。](assets/configure-dynamic-datastream/select-service.png)
 
 1. 在&#x200B;**[!UICONTROL Configure]**&#x200B;页面中，选择&#x200B;**[!UICONTROL Save and Edit Dynamic Configuration]**。
 
-   ![显示数据流配置页的数据流用户界面的图像。](assets/configure-dynamic-datastream/save-and-edit.png)
+   ![数据流用户界面显示数据流配置页。](assets/configure-dynamic-datastream/save-and-edit.png)
 
 1. 选择 **[!UICONTROL Add Dynamic Configuration]**。
 
-   ![数据流用户界面的图像，显示未添加规则的动态配置消息。](assets/configure-dynamic-datastream/add-dynamic-config.png)
+   ![在添加任何规则之前显示动态配置页的数据流用户界面。](assets/configure-dynamic-datastream/add-dynamic-config.png)
 
 1. 从&#x200B;**[!UICONTROL Resources]**&#x200B;面板中，将要用于构建规则的项拖放到窗口的右侧。 您可以合并多个资源以构建复杂的规则。
 
    使用每个资源的选项（如&#x200B;**[!UICONTROL equals]**、**[!UICONTROL does not equal]**、**[!UICONTROL exists]**&#x200B;等）来优化规则。
 
-   ![显示动态配置规则的数据流用户界面的图像。](assets/configure-dynamic-datastream/drag-resources.png)
+   ![数据流用户界面显示正在拖动资源的动态配置规则生成器。](assets/configure-dynamic-datastream/drag-resources.png)
 
-1. 在&#x200B;**[!UICONTROL Configuration]**&#x200B;部分中，根据是否希望将数据发送到每个服务，切换要为每个规则启用或禁用的服务。 如果关闭切换开关，服务路由将禁用，*不会向上游服务发送任何数据*。
+1. 在&#x200B;**[!UICONTROL Configuration]**&#x200B;部分中，根据是否希望将数据发送到每个服务，切换要为每个规则启用或禁用的服务。 如果关闭切换开关，服务路由将禁用，并且&#x200B;*不会向下游服务发送任何数据*。
 
-   ![显示动态配置规则的数据流用户界面的图像。](assets/configure-dynamic-datastream/enable-service.png)
+   ![数据流用户界面显示具有服务切换的动态配置规则。](assets/configure-dynamic-datastream/enable-service.png)
 
 1. 配置完规则后，选择&#x200B;**[!UICONTROL Save]**。
 
@@ -135,9 +135,9 @@ ht-degree: 3%
 
 您可以将此规则划分为以下更简单的规则：
 
-![显示复杂规则的平台UI图像。](assets/configure-dynamic-datastream/simple-rule-1.png)
+![Platform UI图像显示第一个简化规则。](assets/configure-dynamic-datastream/simple-rule-1.png)
 
-![显示复杂规则的平台UI图像。](assets/configure-dynamic-datastream/simple-rule-2.png)
+![Platform UI图像显示第二个简化规则。](assets/configure-dynamic-datastream/simple-rule-2.png)
 
 **避免复杂的规则**。 更简单的规则可确保更快的评估和更好的可维护性。
 
