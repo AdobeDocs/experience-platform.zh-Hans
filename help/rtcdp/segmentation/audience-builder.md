@@ -2,7 +2,7 @@
 title: Real-Time Customer Data Platform中的Audience Builder
 description: 了解如何使用Real-Time Customer Data Platform中的受众生成器创建受众。
 feature: Get Started, Audiences
-badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions" newtab=true
 exl-id: da87baad-b82a-4a45-89c3-cf20d66fe657
 source-git-commit: 8c55aebcb65327394ffbdf59db1d2a203182ed18
 workflow-type: tm+mt
