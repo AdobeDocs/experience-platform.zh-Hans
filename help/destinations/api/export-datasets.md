@@ -4,10 +4,10 @@ title: 使用流服务API导出数据集
 description: 了解如何使用流服务API将数据集导出到所选目标。
 type: Tutorial
 exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '5203'
-ht-degree: 4%
+source-wordcount: '5178'
+ht-degree: 3%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 4%
 
 >[!AVAILABILITY]
 >
->* 已购买Real-Time CDP Prime和Ultimate软件包、Adobe Journey Optimizer或Customer Journey Analytics的客户可以使用此功能。 请联系 Adobe 代表以获取更多信息。
+>* 此功能适用于已购买[!DNL Real-Time CDP] Prime和Ultimate包、[!DNL Adobe Journey Optimizer]或Customer Journey Analytics的客户。 请联系 Adobe 代表以获取更多信息。
 
 >[!IMPORTANT]
 >
@@ -32,7 +32,7 @@ ht-degree: 4%
 
 -->
 
-本文介绍使用[!DNL Flow Service API]将[数据集](/help/catalog/datasets/overview.md)从Adobe Experience Platform导出到首选云存储位置（如[!DNL Amazon S3]、SFTP位置或[!DNL Google Cloud Storage]）所需的工作流。
+本文介绍使用[!DNL Flow Service API]将[数据集](/help/catalog/datasets/overview.md)从[!DNL Adobe Experience Platform]导出到首选云存储位置（如[!DNL Amazon S3]、SFTP位置或[!DNL Google Cloud Storage]）所需的工作流。
 
 >[!TIP]
 >
@@ -40,7 +40,7 @@ ht-degree: 4%
 
 ## 可用于导出的数据集 {#datasets-to-export}
 
-您可以导出的数据集取决于Experience Platform应用程序(Real-Time CDP、Adobe Journey Optimizer)、层（Prime或Ultimate）以及您购买的任何加载项（例如：Data Distiller）。
+您可以导出的数据集取决于Experience Platform应用程序([!DNL Real-Time CDP]、[!DNL Adobe Journey Optimizer])、层（Prime或Ultimate）以及您购买的任何加载项（例如：数据Distiller）。
 
 请参阅UI教程页面[上的](/help/destinations/ui/export-datasets.md#datasets-to-export)表以了解可以导出哪些数据集。
 
@@ -68,9 +68,9 @@ ht-degree: 4%
 
 ![概述 — 创建目标和导出数据集的步骤](../assets/api/export-datasets/export-datasets-api-workflow-get-started.png)
 
-本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
+本指南要求您对[!DNL Adobe Experience Platform]的以下组件有一定的了解：
 
-* [[!DNL Experience Platform datasets]](/help/catalog/datasets/overview.md)：成功引入Adobe Experience Platform的所有数据将作为数据集保留在[!DNL Data Lake]中。 数据集是用于数据集合的存储和管理结构，通常是表格，其中包含架构（列）和字段（行）。数据集还包含描述其存储的数据的各个方面的元数据。
+* [[!DNL Experience Platform datasets]](/help/catalog/datasets/overview.md)：所有成功引入[!DNL Adobe Experience Platform]的数据都将作为数据集保留在[!DNL Data Lake]中。 数据集是用于数据集合的存储和管理结构，通常是表格，其中包含架构（列）和字段（行）。数据集还包含描述其存储的数据的各个方面的元数据。
    * [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform]提供了将单个[!DNL Experience Platform]实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了要将数据集导出到Experience Platform中的云存储目标，您必须了解的其他信息。
@@ -83,7 +83,7 @@ ht-degree: 4%
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) [!DNL Experience Platform]。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
 
 ### 收集必需标题和可选标题的值 {#gather-values-headers}
 
@@ -1994,7 +1994,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-下表提供了`scheduleParams`部分中所有参数的说明，这允许您自定义数据集导出的导出时间、频率、位置等。
+下表提供了“`scheduleParams`”部分中所有参数的说明，可让您自定义数据集导出的导出时间、频率、位置等。
 
 | 参数 | 描述 |
 |---------|----------|
@@ -2063,7 +2063,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-下表提供了`scheduleParams`部分中所有参数的说明，这允许您自定义数据集导出的导出时间、频率、位置等。
+下表提供了“`scheduleParams`”部分中所有参数的说明，可让您自定义数据集导出的导出时间、频率、位置等。
 
 | 参数 | 描述 |
 |---------|----------|
@@ -2133,7 +2133,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-下表提供了`scheduleParams`部分中所有参数的说明，这允许您自定义数据集导出的导出时间、频率、位置等。
+下表提供了“`scheduleParams`”部分中所有参数的说明，可让您自定义数据集导出的导出时间、频率、位置等。
 
 | 参数 | 描述 |
 |---------|----------|
@@ -2203,7 +2203,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-下表提供了`scheduleParams`部分中所有参数的说明，这允许您自定义数据集导出的导出时间、频率、位置等。
+下表提供了“`scheduleParams`”部分中所有参数的说明，可让您自定义数据集导出的导出时间、频率、位置等。
 
 | 参数 | 描述 |
 |---------|----------|
@@ -2272,7 +2272,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-下表提供了`scheduleParams`部分中所有参数的说明，这允许您自定义数据集导出的导出时间、频率、位置等。
+下表提供了“`scheduleParams`”部分中所有参数的说明，可让您自定义数据集导出的导出时间、频率、位置等。
 
 | 参数 | 描述 |
 |---------|----------|
@@ -2342,7 +2342,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-下表提供了`scheduleParams`部分中所有参数的说明，这允许您自定义数据集导出的导出时间、频率、位置等。
+下表提供了“`scheduleParams`”部分中所有参数的说明，可让您自定义数据集导出的导出时间、频率、位置等。
 
 | 参数 | 描述 |
 |---------|----------|

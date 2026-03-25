@@ -3,9 +3,9 @@ title: Kevel连接
 description: 使用Kevel流目标将受众直接激活到Kevel的UserDB和区段管理API中，并支持在决策时实时定位。
 last-substantial-update: 2026-01-27T00:00:00Z
 exl-id: 53ce2864-6a3b-4859-b14d-a03c2ce18884
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1168'
+source-wordcount: '1159'
 ht-degree: 4%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 4%
 
 [[!DNL Kevel]](https://www.kevel.com/)提供支持人工智能的技术和专家指导，帮助创新的商业领袖在零售媒体中启动、扩展和取得成功。 [!DNL Kevel]的Retail Media Cloud功能支持针对网站内和网站外广告采用可归因的可自定义广告格式。
 
-Adobe Experience Platform的[!DNL Kevel]流目标允许客户将Adobe受众直接激活到[!DNL Kevel]的UserDB和区段管理API中，以支持在广告决策时进行实时定位。
+[!DNL Kevel]的[!DNL Adobe Experience Platform]流目标允许客户将Adobe受众直接激活到[!DNL Kevel]的UserDB和区段管理API中，以支持在广告决策时进行实时定位。
 
 >[!IMPORTANT]
 >
@@ -73,7 +73,7 @@ Kevel目标![的](/help/destinations/assets/catalog/advertising/kevel-destinatio
 | 受众来源 | 受支持 | 描述 |
 |-----------------------|-----------|---------------------------------------------------------- |
 | Segmentation Service | 是 | 分段引擎评估的Adobe配置文件受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -86,7 +86,7 @@ Kevel目标![的](/help/destinations/assets/catalog/advertising/kevel-destinatio
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 

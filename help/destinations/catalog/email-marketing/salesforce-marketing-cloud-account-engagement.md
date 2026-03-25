@@ -3,9 +3,9 @@ title: Salesforce Marketing Cloud帐户参与度
 description: 了解如何使用Salesforce Marketing Cloud Account Engagement（以前称为Pardot）目标导出您的帐户数据，并在Salesforce Marketing Cloud Account Engagement中激活这些数据，以满足您的业务需求。
 last-substantial-update: 2023-04-14T00:00:00Z
 exl-id: fca9d4f4-8717-4bfa-9992-5164ba98bea4
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1651'
+source-wordcount: '1633'
 ht-degree: 3%
 
 ---
@@ -22,11 +22,11 @@ ht-degree: 3%
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解您应如何以及何时使用[!DNL Marketing Cloud Account Engagement]目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
+为了帮助您更好地了解您应如何以及何时使用[!DNL Marketing Cloud Account Engagement]目标，以下是[!DNL Adobe Experience Platform]客户可以通过使用此目标解决的示例用例。
 
 ### 向营销活动的联系人发送电子邮件 {#use-case-send-emails}
 
-在线平台的营销部门希望向精选的B2B商机受众广播基于电子邮件的营销活动。 该平台的营销团队可以通过Adobe Experience Platform添加新潜在客户或更新现有潜在客户信息，根据受众自己的离线数据构建受众，并将这些受众发送到[!DNL Marketing Cloud Account Engagement]，然后可以使用这些受众发送营销活动电子邮件。
+在线平台的营销部门希望向精选的B2B商机受众广播基于电子邮件的营销活动。 平台的营销团队可以通过[!DNL Adobe Experience Platform]添加新潜在客户或更新现有潜在客户信息，根据他们自己的离线数据构建受众，并将这些受众发送到[!DNL Marketing Cloud Account Engagement]，然后可以使用这些受众发送营销活动电子邮件。
 
 ## 先决条件 {#prerequisites}
 
@@ -34,7 +34,7 @@ ht-degree: 3%
 
 ### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL Marketing Cloud Account Engagement]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=zh-Hans)区段[!DNL Experience Platform]。
+在将数据激活到[!DNL Marketing Cloud Account Engagement]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)区段[!DNL Experience Platform]。
 
 ### [!DNL Marketing Cloud Account Engagement]中的先决条件 {#prerequisites-destination}
 
@@ -87,7 +87,7 @@ ht-degree: 3%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -100,7 +100,7 @@ ht-degree: 3%
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -132,7 +132,7 @@ ht-degree: 3%
 
 ![Experience Platform UI屏幕截图，显示如何对Marketing Cloud帐户参与进行身份验证。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/authenticate-destination.png)
 
-接下来，在后续窗口中选择[!UICONTROL Allow]以授予&#x200B;**Adobe Experience Platform**&#x200B;应用访问您的[!DNL Salesforce Marketing Cloud Account Engagement]帐户的权限。 *您只需执行此操作一次*。
+接下来，在后续窗口中选择[!UICONTROL Allow]以授予&#x200B;**[!DNL Adobe Experience Platform]**&#x200B;应用访问您的[!DNL Salesforce Marketing Cloud Account Engagement]帐户的权限。 *您只需执行此操作一次*。
 
 ![Salesforce App屏幕快照确认弹出窗口，用于授予Experience Platform App访问Marketing Cloud Account Engagement的权限。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/allow-app.png)
 
@@ -169,7 +169,7 @@ ht-degree: 3%
 
 ### 映射注意事项和示例 {#mapping-considerations-example}
 
-要将受众数据从Adobe Experience Platform正确发送到[!DNL Marketing Cloud Account Engagement]目标，您需要完成字段映射步骤。 映射包括在Experience Platform帐户中的Experience Data Model (XDM)架构字段与其与目标中的相应等效字段之间创建链接。
+要将受众数据从[!DNL Adobe Experience Platform]正确发送到[!DNL Marketing Cloud Account Engagement]目标，您需要执行字段映射步骤。 映射包括在Experience Platform帐户中的Experience Data Model (XDM)架构字段与其与目标中的相应等效字段之间创建链接。
 
 要将XDM字段正确映射到[!DNL Marketing Cloud Account Engagement]目标字段，请执行以下步骤。
 
@@ -197,7 +197,7 @@ ht-degree: 3%
 1. 导航到您选择的受众之一。 选择 **[!DNL Activation data]** 选项卡。**[!UICONTROL Mapping ID]**&#x200B;列显示在[!DNL Marketing Cloud Account Engagement Prospects]页面中生成的自定义字段的名称。
    ![显示选定区段映射ID的Experience Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/selected-segment-mapping-id.png)
 
-1. 登录到[[!DNL Salesforce]](https://login.salesforce.com/)网站。 然后导航到&#x200B;**[!DNL Account Engagement]** > **[!DNL Prospects]** > **[!DNL Pardot Prospects]**&#x200B;页面，并检查受众中的潜在客户是否已添加/更新。 或者，您也可以访问[[!DNL Salesforce Pardot]](https://pi.pardot.com/)并访问&#x200B;**[!DNL Prospects]**&#x200B;页面。
+1. 登录到[[!DNL Salesforce]](https://login.salesforce.com/)网站。 然后导航到&#x200B;**[!DNL Account Engagement]** > **[!DNL Prospects]** > **[!DNL Pardot Prospects]**&#x200B;页面，并检查受众中的潜在客户是否已添加/更新。 或者，您也可以访问[[!DNL Salesforce Pardot]](https://pi.pardot.com/)并访问&#x200B;**[!DNL Prospects]**页面。
    ![显示“潜在客户”页面的Salesforce UI屏幕截图。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/prospects.png)
 
 1. 要检查潜在客户是否已更新，请选择一个潜在客户，并验证自定义潜在客户字段是否已使用Experience Platform受众状态进行更新。

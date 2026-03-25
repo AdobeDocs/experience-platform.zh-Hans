@@ -2,9 +2,9 @@
 title: 文档自助模板//将替换为您的目标名称
 description: 使用此模板在Adobe Experience Platform目录中为您的目标创建公共文档。//替换为概述部分中的段落
 exl-id: 99700474-8bf6-4176-acc1-38814e17c995
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1737'
+source-wordcount: '1710'
 ht-degree: 2%
 
 ---
@@ -30,7 +30,7 @@ ht-degree: 2%
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解您应如何以及何时使用&#x200B;*YourDestination*&#x200B;目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
+为了帮助您更好地了解您应如何以及何时使用&#x200B;*YourDestination*&#x200B;目标，以下是[!DNL Adobe Experience Platform]客户可以通过使用此目标解决的示例用例。
 
 ### 用例#1 {#use-case-1}
 
@@ -42,11 +42,11 @@ ht-degree: 2%
 
 *对于社交网络平台：*
 
-*运动服装品牌希望通过其社交媒体帐户联系现有客户。 服装品牌可以从自己的CRM中摄取电子邮件地址到Adobe Experience Platform，从自己的离线数据构建受众，并将这些受众发送到YourDestination，以在其客户的社交媒体源中显示广告。*
+*运动服装品牌希望通过其社交媒体帐户联系现有客户。 服装品牌可以从自己的CRM将电子邮件地址摄取到[!DNL Adobe Experience Platform]，从自己的离线数据构建受众，并将这些受众发送到YourDestination，以在其客户的社交媒体源中显示广告。*
 
 ## 先决条件 {#prerequisites}
 
-*在此部分添加有关客户在Adobe Experience Platform用户界面中开始设置目标之前需要了解的任何信息。 这可能大约为：*
+*在此部分添加有关客户在[!DNL Adobe Experience Platform]用户界面中开始设置目标之前需要了解的任何信息。 这可能大约为：*
 
 * *需要添加到允许列表*
 * 电子邮件散列的&#x200B;*要求*
@@ -65,9 +65,9 @@ ht-degree: 2%
 |---|---|---|
 | GAID | GOOGLE ADVERTISING ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |
 | IDFA | 广告商的Apple ID | 当源身份是IDFA命名空间时，选择IDFA目标身份。 |
-| ECID | Experience Cloud ID | 表示ECID的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 有关详细信息，请阅读以下有关[ECID](/help/identity-service/features/ecid.md)的文档。 |
-| phone_sha256 | 使用SHA256算法散列的电话号码 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以便在激活时自动对[!DNL Experience Platform]数据进行哈希处理。 |
-| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以便在激活时自动对[!DNL Experience Platform]数据进行哈希处理。 |
+| ECID | Experience Cloud ID | 表示ECID的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“[!DNL Adobe Experience Cloud] ID”、“[!DNL Adobe Experience Platform] ID”。 有关详细信息，请阅读以下有关[ECID](/help/identity-service/features/ecid.md)的文档。 |
+| phone_sha256 | 使用SHA256算法散列的电话号码 | [!DNL Adobe Experience Platform]支持纯文本和SHA256哈希电话号码。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以便在激活时自动对[!DNL Experience Platform]数据进行哈希处理。 |
+| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | [!DNL Adobe Experience Platform]支持纯文本和SHA256哈希电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以便在激活时自动对[!DNL Experience Platform]数据进行哈希处理。 |
 | extern_id | 自定义用户标识 | 当源身份是自定义命名空间时，请选择此目标身份。 |
 
 {style="table-layout:auto"}
@@ -81,7 +81,7 @@ ht-degree: 2%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -92,7 +92,7 @@ ht-degree: 2%
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 是 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 是 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 是 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 是 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -174,7 +174,7 @@ ht-degree: 2%
 
 *添加一段关于如何将数据导出到目标的段落。 这将帮助客户确保他们正确地与您的目标集成。 例如，您可以提供类似于下面的JSON示例。 或者，您可以提供目标界面的屏幕截图和信息，显示客户应如何预期受众填充到目标平台中。*
 
-```
+```json
 {
   "person": {
     "email": "yourstruly@adobe.com"

@@ -2,9 +2,9 @@
 description: 了解如何为使用Destination SDK构建的目标配置文件导出设置。
 title: 批次配置
 exl-id: 0ffbd558-a83c-4c3d-b4fc-b6f7a23a163a
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1031'
+source-wordcount: '1028'
 ht-degree: 2%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -106,7 +106,7 @@ ht-degree: 2%
 
 ## 文件名配置 {#file-name-configuration}
 
-使用文件名配置宏定义导出的文件名应包含的内容。 下表中的宏描述了UI中[文件名配置](../../../ui/activate-batch-profile-destinations.md#file-names)屏幕中的元素。
+使用文件名配置宏定义导出的文件名应包含的内容。 下表中的宏描述了UI中[文件名配置](../../../ui/activate-batch-profile-destinations.md#configure-file-names)屏幕中的元素。
 
 >[!TIP]
 >
@@ -119,7 +119,7 @@ ht-degree: 2%
 | `SEGMENT_NAME` | [!UICONTROL Segment Name] | 用户定义的受众名称 | VIP订阅者 |
 | `DESTINATION_INSTANCE_ID` | [!UICONTROL Destination ID] | Experience Platform生成的唯一目标实例ID | 7b891e5f-025a-4f0d-9e73-1919e71da3b0 |
 | `DESTINATION_INSTANCE_NAME` | [!UICONTROL Destination Name] | 用户定义的目标实例名称。 | 我的2022 Advertising目标 |
-| `ORGANIZATION_NAME` | [!UICONTROL Organization Name] | Adobe Experience Platform中的客户组织的名称。 | 我的组织名称 |
+| `ORGANIZATION_NAME` | [!UICONTROL Organization Name] | [!DNL Adobe Experience Platform]中客户组织的名称。 | 我的组织名称 |
 | `SANDBOX_NAME` | [!UICONTROL Sandbox Name] | 客户使用的沙盒的名称。 | prod |
 | `DATETIME` / `TIMESTAMP` | [!UICONTROL Date and time] | `DATETIME`和`TIMESTAMP`都定义生成文件的时间，但采用不同的格式。<br><br><ul><li>`DATETIME`使用以下格式： YYYYMMDD_HHMMSS。</li><li>`TIMESTAMP`使用10位Unix格式。 </li></ul> `DATETIME`和`TIMESTAMP`是互斥的，不能同时使用。 | <ul><li>`DATETIME`： 20220509_210543</li><li>`TIMESTAMP`： 1652131584</li></ul> |
 | `CUSTOM_TEXT` | [!UICONTROL Custom text] | 要包含在文件名中的用户定义的自定义文本。 无法在`defaultFilename`中使用。 | My_Custom_Text |

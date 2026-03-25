@@ -3,16 +3,16 @@ keywords: Experience Platform；主页；热门主题；警报；目标
 description: 您可以在创建数据流时订阅警报，以接收有关流运行的状态、成功或失败的警报消息。
 title: 订阅上下文目标警报
 exl-id: 134144a0-cdfe-49a8-bd8b-e36a4f053de5
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '931'
-ht-degree: 10%
+source-wordcount: '917'
+ht-degree: 9%
 
 ---
 
 # 订阅上下文目标警报
 
-Adobe Experience Platform 允许您订阅关于 Adobe Experience Platform 活动的基于事件的警报。警报可减少或消除轮询[[!DNL Observability Insights] API](../../observability/api/overview.md)以检查作业是否已完成、是否已达到工作流中的某个里程碑或是否已发生任何错误的需要。
+[!DNL Adobe Experience Platform]允许您订阅有关[!DNL Adobe Experience Platform]活动的基于事件的警报。 警报可减少或消除轮询[[!DNL Observability Insights] API](../../observability/api/overview.md)以检查作业是否已完成、是否已达到工作流中的某个里程碑或是否已发生任何错误的需要。
 
 在创建数据流以接收有关流运行的状态、成功或失败的警报消息时，您可以订阅警报。
 
@@ -20,9 +20,9 @@ Adobe Experience Platform 允许您订阅关于 Adobe Experience Platform 活动
 
 ## 快速入门 {#getting-started}
 
-本文档要求您对Adobe Experience Platform的以下组件有一定的了解：
+本文档要求您对[!DNL Adobe Experience Platform]的以下组件有一定的了解：
 
-* [目标](../home.md)：与目标平台预先构建的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例。
+* [目标](../home.md)：与目标平台预先构建的集成，允许无缝激活来自[!DNL Adobe Experience Platform]的数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 * [可观察性](../../observability/home.md)： [!DNL Observability Insights]允许您通过使用统计指标和事件通知来监视Experience Platform活动。
    * [警报](../../observability/alerts/overview.md)：当您的Experience Platform操作中达到一组特定条件（例如，当系统超出阈值时可能会出现问题）时，Experience Platform可以向您组织中订阅了警报消息的任何用户发送警报消息。
 

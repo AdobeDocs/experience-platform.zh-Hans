@@ -2,9 +2,9 @@
 description: 使用受众元数据模板以编程方式创建、更新或删除目标中的受众。 Adobe提供了一个可扩展的受众元数据模板，您可以根据营销API的规范配置该模板。 定义、测试和提交模板后，Adobe将使用该模板来构造对目标的调用。
 title: 受众元数据管理
 exl-id: 795e8adb-c595-4ac5-8d1a-7940608d01cd
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1309'
+source-wordcount: '1297'
 ht-degree: 2%
 
 ---
@@ -45,7 +45,7 @@ ht-degree: 2%
 
 为了支持上面列出的用例，Adobe为您提供了一个通用模板，您可以根据自己的API规范来自定义该模板。
 
-如果您的API支持：[&#128279;](../metadata-api/create-audience-template.md)
+如果您的API支持：[](../metadata-api/create-audience-template.md)
 
 * HTTP方法：POST、GET、PUT、DELETE、PATCH
 * 身份验证类型：OAuth 1、具有刷新令牌的OAuth 2、具有持有者令牌的OAuth 2
@@ -60,13 +60,13 @@ ht-degree: 2%
 
 | 模板部分 | 描述 |
 |--- |--- |
-| `create` | 包括所有必需的组件（URL、HTTP方法、标头、请求和响应正文），以便对API进行HTTP调用，在平台中以编程方式创建区段/受众，并将信息同步回Adobe Experience Platform。 |
-| `update` | 包括所有必需的组件（URL、HTTP方法、标头、请求和响应正文），以便对API进行HTTP调用，以编程方式更新平台中的区段/受众，并将信息同步回Adobe Experience Platform。 |
+| `create` | 包括所有必需的组件（URL、HTTP方法、标头、请求和响应正文），以便对您的API进行HTTP调用，在您的平台中以编程方式创建区段/受众，并将信息同步回[!DNL Adobe Experience Platform]。 |
+| `update` | 包括所有必需的组件（URL、HTTP方法、标头、请求和响应正文），以便对您的API进行HTTP调用，以编程方式更新平台中的区段/受众，并将信息同步回[!DNL Adobe Experience Platform]。 |
 | `delete` | 包括所有必需的组件（URL、HTTP方法、标头、请求和响应正文），以便对API进行HTTP调用，以编程方式删除平台中的区段/受众。 |
 | `validate` | 在对合作伙伴API进行调用之前，对模板配置中的任何字段运行验证。 例如，您可以验证是否正确输入了用户的帐户ID。 |
 | `notify` | 仅适用于基于文件的目标。 包括所有必需组件（URL、HTTP方法、标头、请求和响应正文），以便对您的API进行HTTP调用，通知您文件导出成功。 |
-| `createDestination` | 包括所有必需的组件（URL、HTTP方法、标头、请求和响应正文），以便对API进行HTTP调用，在平台中以编程方式创建数据流并将信息同步回Adobe Experience Platform。 |
-| `updateDestination` | 包含对API进行HTTP调用、以编程方式更新平台中的数据流并将信息同步回Adobe Experience Platform所需的所有组件（URL、HTTP方法、标头、请求和响应正文）。 |
+| `createDestination` | 包括所有必需的组件（URL、HTTP方法、标头、请求和响应正文），以便对您的API进行HTTP调用，以编程方式在您的平台中创建数据流并将信息同步回[!DNL Adobe Experience Platform]。 |
+| `updateDestination` | 包括所有必需的组件（URL、HTTP方法、标头、请求和响应正文），以便对您的API进行HTTP调用，以编程方式更新平台中的数据流并将信息同步回[!DNL Adobe Experience Platform]。 |
 | `deleteDestination` | 包括所有必需的组件（URL、HTTP方法、标头、请求和响应正文），以便对API进行HTTP调用，以编程方式从平台中删除数据流。 |
 
 {style="table-layout:auto"}

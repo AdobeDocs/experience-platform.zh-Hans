@@ -3,14 +3,14 @@ title: 从Real-Time CDP导出数组、映射和对象
 type: Tutorial
 description: 了解如何将阵列、映射和对象从Real-Time CDP导出到云存储目标。
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1062'
+source-wordcount: '1056'
 ht-degree: 13%
 
 ---
 
-# 从Real-Time CDP导出数组、映射和对象 {#export-arrays-cloud-storage}
+# 从[!DNL Real-Time CDP]导出数组、映射和对象 {#export-arrays-cloud-storage}
 
 >[!AVAILABILITY]
 >
@@ -19,12 +19,12 @@ ht-degree: 13%
 >此外，您还可以将映射类型字段导出到以下目标：[Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)、[HTTP API](/help/destinations/catalog/streaming/http-destination.md)、[Azure事件中心](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)。
 
 
-了解如何将阵列、映射和对象从Real-Time CDP导出到[云存储目标](/help/destinations/catalog/cloud-storage/overview.md)。 此外，您还可以将映射类型字段导出到[企业目标](/help/destinations/destination-types.md#advanced-enterprise-destinations)和有限的[边缘个性化目标](/help/destinations/destination-types.md#edge-personalization-destinations)。 阅读本文档以了解导出工作流、通过此功能启用的用例以及已知限制。 请查看下表，以了解每种目标类型可用的功能。
+了解如何将阵列、映射和对象从[!DNL Real-Time CDP]导出到[云存储目标](/help/destinations/catalog/cloud-storage/overview.md)。 此外，您还可以将映射类型字段导出到[企业目标](/help/destinations/destination-types.md#advanced-enterprise-destinations)和有限的[边缘个性化目标](/help/destinations/destination-types.md#edge-personalization-destinations)。 阅读本文档以了解导出工作流、通过此功能启用的用例以及已知限制。 请查看下表，以了解每种目标类型可用的功能。
 
 | 目标类型 | 能够导出数组、映射和其他自定义对象 |
 |---|---|
 | Adobe创作的云存储目标(Amazon S3、Azure Blob、Azure Data Lake Storage Gen2、Data Landing Zone、Google Cloud Storage、SFTP) | 是，在设置目标连接时，打开了启用数组、映射和对象导出切换开关。 |
-| 基于文件的电子邮件营销目标(Adobe Campaign、Oracle Eloqua、Oracle Responsys、Salesforce Marketing Cloud) | 否 |
+| 基于文件的电子邮件营销目标([!DNL Adobe Campaign]、Oracle Eloqua、Oracle Responsys、Salesforce Marketing Cloud) | 否 |
 | 现有合作伙伴构建的自定义云存储目标（通过Destination SDK构建的基于文件的自定义目标） | 否 |
 | 企业目标（Amazon Kinesis、Azure事件中心、HTTP API） | 部分。 您可以在激活工作流的映射步骤中选择和导出映射类型对象。 |
 | 流目标（例如：Facebook、Braze、Google Customer Match等） | 否 |
@@ -48,7 +48,7 @@ ht-degree: 13%
 
 Experience Platform中的其他字段类型包括数组字段。 阅读有关[在Experience Platform UI](/help/xdm/ui/fields/array.md)中管理数组字段的更多信息。 您现在可以导出数组对象，如下面的示例所示。
 
-```
+```js
 organizations = [{
   id: 123,
   orgName: "Acme Inc",

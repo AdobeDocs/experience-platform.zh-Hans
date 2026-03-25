@@ -2,9 +2,9 @@
 title: 目标激活工作流中的身份处理
 description: 了解如何在激活工作流中处理身份导出，具体取决于目标类型
 exl-id: f4894a08-c7a9-4d57-a6d3-660c49206d6a
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1134'
+source-wordcount: '1132'
 ht-degree: 0%
 
 ---
@@ -71,7 +71,7 @@ ht-degree: 0%
 
 ## 基于API的流目标 {#streaming-destinations}
 
-使用[Destination SDK](/help/destinations/destination-types.md#streaming-destination)构建的基于[API的流目标](/help/destinations/destination-sdk/overview.md)（例如[!DNL Facebook]、[!DNL Google Customer Match]、[!DNL Pinterest]、[!DNL Braze]等）仅支持特定的ID进行导出。 有关可导出到每个目标的特定标识的详细信息，请阅读每个目标文档页面中的&#x200B;*支持的标识*&#x200B;部分（例如，请参阅[目标页面中的](/help/destinations/catalog/advertising/pinterest.md)支持的标识部分[!DNL Pinterest]）。
+使用[Destination SDK](/help/destinations/destination-types.md#streaming-audience-export-destinations)构建的基于[API的流目标](/help/destinations/destination-sdk/overview.md)（例如[!DNL Facebook]、[!DNL Google Customer Match]、[!DNL Pinterest]、[!DNL Braze]等）仅支持特定的ID进行导出。 有关可导出到每个目标的特定标识的详细信息，请阅读每个目标文档页面中的&#x200B;*支持的标识*&#x200B;部分（例如，请参阅[目标页面中的](/help/destinations/catalog/advertising/pinterest.md)支持的标识部分[!DNL Pinterest]）。
 
 但请注意，您可以灵活地使用[专用图](/help/profile/merge-policies/overview.md#id-stitching)或属性中的数据作为标识。 这意味着您可以将XDM属性映射到目标所需的标识字段。 查看[!DNL Pinterest]目标的以下示例，其中XDM属性`personalEmail.address`映射到所需的[!DNL Pinterest]标识`pinterest_audience`。
 
@@ -93,7 +93,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Audience Manager支持这些广告目标中的大多数（这些目标类型在Audience Manager中称为基于设备的目标）。 查看Audience Manager[中所有支持的基于设备的目标的](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/device-based/device-based-destinations-list.html?lang=zh-Hans)列表。 Experience Platform中列出的只有少数客户。 有关在Experience Platform和Audience Manager之间共享数据的信息，请阅读有关[启用从Experience Platform到Audience Manager的数据共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=zh-Hans#enable-aep-to-aam-data)的部分。 目前，没有计划支持更多第三方Cookie目标。
+>Audience Manager支持这些广告目标中的大多数（这些目标类型在Audience Manager中称为基于设备的目标）。 查看Audience Manager[中所有支持的基于设备的目标的](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/device-based/device-based-destinations-list.html)列表。 Experience Platform中列出的只有少数客户。 有关在Experience Platform和Audience Manager之间共享数据的信息，请阅读有关[启用从Experience Platform到Audience Manager的数据共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#enable-aep-to-aam-data)的部分。 目前，没有计划支持更多第三方Cookie目标。
 
 ## 企业目标 {#enterprise-destinations}
 
@@ -101,7 +101,7 @@ ht-degree: 0%
 
 ## Personalization目标 {#personalization-destinations}
 
-[Personalization（或edge）目标](/help/destinations/destination-types.md#edge-personalization-destinations)（例如：Adobe Target，[!DNL Custom Personalization]）不需要在激活工作流中选择任何标识，因为集成是配置文件查找。 客户端（[!DNL Target]、[!DNL Web SDK]或其他）查询[[!UICONTROL Edge]](/help/collection/home.md#edge)并提取它进行现场个性化所需的配置文件信息。
+[Personalization（或edge）目标](/help/destinations/destination-types.md#edge-personalization-destinations)（例如： [!DNL Adobe Target]、[!DNL Custom Personalization]）不需要在激活工作流中选择任何标识，因为集成是配置文件查找。 客户端（[!DNL Target]、[!DNL Web SDK]或其他）查询[[!UICONTROL Edge]](/help/collection/home.md)并提取它进行现场个性化所需的配置文件信息。
 
 <!--
 ![Table with all supported identities](/help/destinations/assets/how-destinations-work/identities-table.png)

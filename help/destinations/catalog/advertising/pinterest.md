@@ -2,9 +2,9 @@
 title: Pinterest客户列表连接
 description: 从您的客户列表、访问过您的网站的人或已在Pinterest上与您的内容交互的人中创建受众。
 exl-id: e601f75f-0d40-4cd0-93ca-54d7439f1db7
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '963'
+source-wordcount: '949'
 ht-degree: 4%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 4%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Pinterest Customer List]目标支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=zh-Hans#getting-started)的更多信息。
+[!DNL Pinterest Customer List]目标支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started)的更多信息。
 
 在目标激活工作流的[映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)中，将所需的标识映射到目标字段&#x200B;*pinterest_audience*。 标识是在数据摄取到Pinterest时识别和解析的。
 
@@ -34,7 +34,7 @@ ht-degree: 4%
 |---|---|---|
 | GAID | [!DNL Google Advertising ID] | 将&#x200B;*GAID*&#x200B;源标识命名空间映射到目标标识字段&#x200B;*pinterest_audience*。 |
 | IDFA | [!DNL Apple ID for Advertisers] | 将&#x200B;*IDFA*&#x200B;源标识命名空间映射到目标标识字段&#x200B;*pinterest_audience*。 |
-| EMAIL | 电子邮件地址（纯文本或使用SHA256算法进行哈希处理） | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 <br>将&#x200B;*Email*&#x200B;或&#x200B;*Email_LC_SHA256*&#x200B;源身份命名空间映射到目标身份字段&#x200B;*pinterest_audience*。 |
+| EMAIL | 电子邮件地址（纯文本或使用SHA256算法进行哈希处理） | [!DNL Adobe Experience Platform]支持纯文本和SHA256哈希电子邮件地址。 <br>将&#x200B;*Email*&#x200B;或&#x200B;*Email_LC_SHA256*&#x200B;源身份命名空间映射到目标身份字段&#x200B;*pinterest_audience*。 |
 
 {style="table-layout:auto"}
 
@@ -45,7 +45,7 @@ ht-degree: 4%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -56,7 +56,7 @@ ht-degree: 4%
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -74,7 +74,7 @@ ht-degree: 4%
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解您应如何以及何时使用[!DNL Pinterest Customer List]目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
+为了帮助您更好地了解您应如何以及何时使用[!DNL Pinterest Customer List]目标，以下是[!DNL Adobe Experience Platform]客户可以通过使用此目标解决的示例用例。
 
 ### 用例#1 {#use-case-1}
 
@@ -107,7 +107,7 @@ Pinterest令牌每30天过期一次。 您可以从&#x200B;**[!UICONTROL Account
    ![筛选以仅显示Pinterest帐户](/help/destinations/assets/catalog/advertising/pinterest-customer-list/refresh-oauth-filters.png)
 3. 选择要刷新的帐户，选择省略号并选择&#x200B;**[!UICONTROL Edit details]**。
    ![选择“编辑详细信息”控件](/help/destinations/assets/catalog/advertising/pinterest-customer-list/refresh-oauth-edit-details.png)
-4. 在模式窗口中，选择&#x200B;**[!UICONTROL Reconnect OAuth]**&#x200B;并使用您的Pinterest凭据重新进行身份验证。
+4. 在模式窗口中，选择&#x200B;**[!UICONTROL Reconnect OAuth]**并使用您的Pinterest凭据重新进行身份验证。
    使用Reconnect OAuth选项的![模式窗口](/help/destinations/assets/catalog/advertising/pinterest-customer-list/reconnect-oauth-control.png)
 
 >[!SUCCESS]
@@ -142,7 +142,7 @@ Pinterest令牌每30天过期一次。 您可以从&#x200B;**[!UICONTROL Account
 
 | 发行月份 | 更新类型 | 描述 |
 |---|---|---|
-| 2023 年 11 月 | 功能和文档更新 | Real-Time CDP中的Pinterest目标现在使用v5广告商API。 |
+| 2023 年 11 月 | 功能和文档更新 | [!DNL Real-Time CDP]中的Pinterest目标现在使用v5广告商API。 |
 
 {style="table-layout:auto"}
 

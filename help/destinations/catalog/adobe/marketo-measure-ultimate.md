@@ -3,9 +3,9 @@ title: Marketo Measure Ultimate目标
 description: 了解如何将数据连接和激活到Marketo Measure Ultimate目标。
 last-substantial-update: 2023-03-07T00:00:00Z
 exl-id: b4220841-8908-41ff-b977-dbeebfa787c8
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '794'
+source-wordcount: '782'
 ht-degree: 3%
 
 ---
@@ -16,11 +16,11 @@ ht-degree: 3%
 
 Marketo Measure（前身为Bizible）为营销人员提供了insight，在增加收入和最大化公司投资回报方面，营销人员可从中发挥最有效的营销工作。 Marketo Measure是一种营销归因解决方案，可自动跟踪和报告渠道效果，让您可见哪些渠道可带来最大的客户参与度，并允许您相应地优化营销支出。
 
-该目标支持企业到企业(B2B)数据从Adobe Experience Platform流入Marketo Measure。 此卡仅供Marketo Measure Ultimate客户使用。
+目标允许企业到企业(B2B)数据从[!DNL Adobe Experience Platform]流到Marketo Measure。 此卡仅供Marketo Measure Ultimate客户使用。
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解应当如何以及何时使用Marketo Measure目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。 此集成：
+为了帮助您更好地了解您应如何以及何时使用Marketo Measure目标，以下是[!DNL Adobe Experience Platform]客户可以通过使用此目标解决的示例用例。 此集成：
 
 * 满足大型企业复杂的数据和性能报告要求。
 * 在多个CRM和营销自动化系统中启用B2B归因报表。
@@ -41,7 +41,7 @@ Marketo Measure（前身为Bizible）为营销人员提供了insight，在增加
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -54,7 +54,7 @@ Marketo Measure（前身为Bizible）为营销人员提供了insight，在增加
 | [人员受众](/help/segmentation/types/people-audiences.md) | 否 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 是 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 是 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -103,7 +103,7 @@ Marketo Measure（前身为Bizible）为营销人员提供了insight，在增加
 
 ## 验证数据导出 {#exported-data}
 
-要验证是否成功导出数据集，您可以检查数据集是否已成功导出到[Snowflake数据仓库](https://experienceleague.adobe.com/docs/marketo-measure/using/marketo-measure-data-warehouse/data-warehouse-access-reader-account.html?lang=zh-Hans)。
+要验证是否成功导出数据集，您可以检查数据集是否已成功导出到[Snowflake数据仓库](https://experienceleague.adobe.com/docs/marketo-measure/using/marketo-measure-data-warehouse/data-warehouse-access-reader-account.html)。
 
 ## 数据使用和治理 {#data-usage-governance}
 

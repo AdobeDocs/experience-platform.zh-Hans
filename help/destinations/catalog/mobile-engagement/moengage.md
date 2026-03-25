@@ -3,9 +3,9 @@ title: Moengage连接
 description: Moengage是一个客户参与平台，可实时支持消费者和品牌之间以客户为中心的互动。
 last-substantial-update: 2023-10-11T00:00:00Z
 exl-id: 051f1a10-3c41-4c0a-b187-bf80de0565f0
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1156'
+source-wordcount: '1132'
 ht-degree: 3%
 
 ---
@@ -24,13 +24,13 @@ ht-degree: 3%
 
 ## 用例 {#use-cases}
 
-营销人员希望通过[!DNL Moengage]营销活动来定位用户区段（内置于Adobe Experience Platform）。 此外，他们希望根据Adobe Experience Platform用户档案中的属性个性化营销活动内容。 利用此集成，一旦在Adobe Experience Platform中更新区段和用户档案，用户和属性就会在MoEngage中更新。
+营销人员希望通过[!DNL Adobe Experience Platform]营销活动来定位用户区段（内置[!DNL Moengage]）。 此外，他们还想根据[!DNL Adobe Experience Platform]用户档案中的属性个性化营销活动内容。 利用此集成，一旦在[!DNL Adobe Experience Platform]中更新了区段和配置文件，用户和属性就会在MoEngage中更新。
 
 ## 先决条件 {#prerequisites}
 
-在将Adobe Experience Platform数据发送到[!DNL Moengage]之前，请注意以下先决条件：
+在将[!DNL Adobe Experience Platform]数据发送到[!DNL Moengage]之前，请注意以下先决条件：
 
-* 要将MoEngage目标与Adobe Experience Platform结合使用，用户必须首先有权访问其[!DNL Moengage]帐户。 请访问以下页面以注册或登录您的MoEngage帐户：https://app.moengage.com
+* 要将MoEngage目标与[!DNL Adobe Experience Platform]一起使用，用户必须首先可以访问其[!DNL Moengage]帐户。 请访问以下页面以注册或登录您的MoEngage帐户：https://app.moengage.com
 
 
 ## 支持的身份 {#supported-identities}
@@ -51,7 +51,7 @@ ht-degree: 3%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -64,7 +64,7 @@ ht-degree: 3%
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -171,7 +171,7 @@ ht-degree: 3%
 
 ## 导出的数据/验证数据导出 {#exported-data}
 
-要验证数据是否已成功导出到[!DNL Moengage]目标，请转到您[!DNL Moengage]帐户中的用户配置文件。 在这里，您应该找到名为`AEPSegments`的用户属性（自动创建）以及已在Adobe Experience Platform的前面步骤中映射的其他自定义属性。
+要验证数据是否已成功导出到[!DNL Moengage]目标，请转到您[!DNL Moengage]帐户中的用户配置文件。 在这里，您应该找到名为`AEPSegments`的用户属性，该属性是自动创建的，以及已在[!DNL Adobe Experience Platform]的前面步骤中映射的其他自定义属性。
 
 `AEPSegments`是[!DNL Moengage]中的数组类型特性。 其中列出了用户在Experience Platform中关联的所有Adobe受众名称。
 

@@ -2,9 +2,9 @@
 title: （公司） LinkedIn连接
 description: 使用此目标来激活 Account-Based Marketing (ABM) 用例的帐户受众。根据散列电子邮件，激活LinkedIn营销活动的用户档案，以实现受众定位、个性化和抑制。
 exl-id: 68d2cca3-952b-49d0-8ea2-e776a233b752
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '770'
+source-wordcount: '760'
 ht-degree: 6%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 6%
 
 >[!AVAILABILITY]
 >
->向（公司） LinkedIn目标激活帐户受众的功能适用于购买[企业对企业](/help/rtcdp/overview.md#rtcdp-b2b)和[企业对个人](/help/rtcdp/overview.md#rtcdp-b2p)版本的Real-Time Customer Data Platform的公司。
+>向（公司） LinkedIn目标激活帐户受众的功能适用于购买[的](/help/rtcdp/overview.md#rtcdp-b2b)企业对企业[和](/help/rtcdp/overview.md#rtcdp-b2p)企业对个人[!DNL Real-Time Customer Data Platform]版本的公司。
 
 使用此目标为Account-Based Marketing (ABM)用例激活您的[帐户受众](/help/segmentation/types/account-audiences.md)。 通过&#x200B;**[!UICONTROL (Companies) LinkedIn]**&#x200B;企业对企业目标向目标帐户中的相关角色和角色播发。 访问LinkedIn文档，以在LinkedIn平台上[了解有关帐户定位](https://business.linkedin.com/marketing-solutions/cx/21/10/ad-targeting/account-targeting)的更多信息。
 
@@ -30,7 +30,7 @@ ht-degree: 6%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -43,7 +43,7 @@ ht-degree: 6%
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 是 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 

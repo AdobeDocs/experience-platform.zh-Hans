@@ -5,9 +5,9 @@ title: 使用流服务API更新目标数据流
 type: Tutorial
 description: 本教程介绍了更新目标数据流的步骤。 了解如何使用流服务API启用或禁用数据流、更新其基本信息或添加和删除受众和属性。
 exl-id: 3f69ad12-940a-4aa1-a1ae-5ceea997a9ba
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '2467'
+source-wordcount: '2459'
 ht-degree: 3%
 
 ---
@@ -24,9 +24,9 @@ ht-degree: 3%
 >
 > 在本教程中，术语&#x200B;*流*&#x200B;和&#x200B;*数据流*&#x200B;可互换使用。 在本教程的上下文中，它们具有相同的含义。
 
-本教程还要求您实际了解Adobe Experience Platform的以下组件：
+本教程还要求您实际了解[!DNL Adobe Experience Platform]的以下组件：
 
-* [目标](../home.md)： [!DNL Destinations]是预先构建的与目标平台的集成，可无缝激活Adobe Experience Platform中的数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例。
+* [目标](../home.md)： [!DNL Destinations]是与目标平台的预建集成，允许无缝激活来自[!DNL Adobe Experience Platform]的数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例。
 * [沙盒](../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了使用[!DNL Flow Service] API成功更新数据流时需要了解的其他信息。
@@ -503,7 +503,7 @@ curl -X PATCH \
 | `value` | 要用于更新参数的新值。 |
 | `id` | 指定要添加到目标数据流的受众的ID。 |
 | `name` | **（可选）**。 指定要添加到目标数据流的受众的名称。 请注意，此字段不是必填字段，您无需提供名称即可将受众成功添加到目标数据流。 |
-| `filenameTemplate` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标（如Amazon S3、SFTP或Azure Blob）中将受众添加到数据流时，才需要使用此字段。 <br>此字段确定导出到目标的文件的文件名格式。 <br>以下选项可用： <br> <ul><li>`%DESTINATION_NAME%`：必填。 导出的文件包含目标名称。</li><li>`%SEGMENT_ID%`：必填。 导出的文件包含导出受众的ID。</li><li>`%SEGMENT_NAME%`： **（可选）**。 导出的文件包含导出的受众的名称。</li><li>`DATETIME(YYYYMMdd_HHmmss)`或`%TIMESTAMP%`： **（可选）**。 为文件选择这两个选项之一，以包含Experience Platform生成文件的时间。</li><li>`custom-text`： **（可选）**。 将此占位符替换为要在文件名末尾追加的任何自定义文本。</li></ul> <br>有关配置文件名的详细信息，请参阅批量目标激活教程中的[配置文件名](/help/destinations/ui/activate-batch-profile-destinations.md#file-names)部分。 |
+| `filenameTemplate` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标（如Amazon S3、SFTP或Azure Blob）中将受众添加到数据流时，才需要使用此字段。 <br>此字段确定导出到目标的文件的文件名格式。 <br>以下选项可用： <br> <ul><li>`%DESTINATION_NAME%`：必填。 导出的文件包含目标名称。</li><li>`%SEGMENT_ID%`：必填。 导出的文件包含导出受众的ID。</li><li>`%SEGMENT_NAME%`： **（可选）**。 导出的文件包含导出的受众的名称。</li><li>`DATETIME(YYYYMMdd_HHmmss)`或`%TIMESTAMP%`： **（可选）**。 为文件选择这两个选项之一，以包含Experience Platform生成文件的时间。</li><li>`custom-text`： **（可选）**。 将此占位符替换为要在文件名末尾追加的任何自定义文本。</li></ul> <br>有关配置文件名的详细信息，请参阅批量目标激活教程中的[配置文件名](/help/destinations/ui/activate-batch-profile-destinations.md#configure-file-names)部分。 |
 | `exportMode` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标（如Amazon S3、SFTP或Azure Blob）中将受众添加到数据流时，才需要使用此字段。 <br>必填。 选择`"DAILY_FULL_EXPORT"`或`"FIRST_FULL_THEN_INCREMENTAL"`。 有关这两个选项的更多信息，请参阅批处理目标激活教程中的[导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files)和[导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files)。 |
 | `startDate` | 选择受众应开始将用户档案导出到目标的日期。 |
 | `frequency` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标（如Amazon S3、SFTP或Azure Blob）中将受众添加到数据流时，才需要使用此字段。 <br>必填。<br> <ul><li>对于`"DAILY_FULL_EXPORT"`导出模式，您可以选择`ONCE`或`DAILY`。</li><li>对于`"FIRST_FULL_THEN_INCREMENTAL"`导出模式，您可以选择`"DAILY"`、`"EVERY_3_HOURS"`、`"EVERY_6_HOURS"`、`"EVERY_8_HOURS"`、`"EVERY_12_HOURS"`。</li></ul> |
@@ -761,7 +761,7 @@ curl -X PATCH \
 >
 >**目标特定的映射要求**
 >
->本节中介绍的`profileSelectors`方法适用于大多数流目标。 但是，某些流目标（包括&#x200B;**Adobe Target**）需要改为使用数据准备映射集工作流。
+>本节中介绍的`profileSelectors`方法适用于大多数流目标。 但是，某些流目标（包括&#x200B;**[!DNL Adobe Target]**）需要改为使用数据准备映射集工作流。
 >
 >**如果成功API响应(202)**&#x200B;后，您的配置文件属性未显示在Experience Platform UI中，则必须使用[将受众激活到批处理目标](../api/activate-segments-file-based-destinations.md#attribute-and-identity-mapping)中记录的映射集方法。
 

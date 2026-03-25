@@ -3,9 +3,9 @@ title: 索引交换
 description: 连接到Index Exchange （索引）并激活您的数据，以便您的受众区段可以通过在索引UI中创建的交易定位。
 last-substantial-update: 2026-01-27T00:00:00Z
 exl-id: 6d2a8553-5e8c-4eeb-ac25-5e4c2bdc5758
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1215'
+source-wordcount: '1202'
 ht-degree: 3%
 
 ---
@@ -16,9 +16,9 @@ ht-degree: 3%
 
 [!DNL Index]是一个全球广告供应方平台，可帮助媒体所有者最大限度地实现其内容在每个屏幕上的价值。 凭借超过20年的行业领先地位，[!DNL Index]将世界上最大的品牌与高级体验制作者联系起来，以提供高质量的消费者体验。
 
-使用此目标连接器将受众区段直接从Adobe Experience Platform导出到[!DNL Index Exchange]的程序化广告平台。
+使用此目标连接器将受众区段直接从[!DNL Adobe Experience Platform]导出到[!DNL Index Exchange]的编程广告平台。
 
-导出后，这些受众区段可用于定位媒体所有者、市场合作伙伴或市场供应商与发布者和策划人共享的交易内容。
+导出后，这些受众区段会定位媒体所有者、市场合作伙伴或市场供应商与发布者和策划人共享的交易内容。
 
 >[!IMPORTANT]
 >
@@ -66,7 +66,7 @@ ht-degree: 3%
 | 受众来源 | 受支持 | 描述 |
 | --------- | ---------- | ---------- |
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -79,7 +79,7 @@ ht-degree: 3%
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -131,7 +131,7 @@ ht-degree: 3%
 ### 启用警报 {#enable-alerts}
 
 您可以启用警报，以接收有关此目标数据流状态的通知。 从列表中选择一个或多个警报以订阅数据流的状态通知。 有关详细信息，请参阅[使用UI订阅目标警报指南](../../ui/alerts.md)。
-完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
+完成提供目标连接的详细信息后，选择**[!UICONTROL Next]**。
 
 ## 激活此目标的受众 {#activate}
 

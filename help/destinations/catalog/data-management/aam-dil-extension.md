@@ -3,9 +3,9 @@ keywords: Audience Manager DIL扩展；目标audience manager；dil扩展
 title: Audience Manager DIL扩展
 description: Audience Manager DIL扩展是Adobe Experience Platform中的数据管理平台(DMP)目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: 7e1099de-0650-4ee2-b746-721afe194097
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '503'
+source-wordcount: '490'
 ht-degree: 3%
 
 ---
@@ -14,9 +14,9 @@ ht-degree: 3%
 
 ## 概述 {#overview}
 
-这是Adobe Audience Manager Data Integration Library扩展（客户端实施）。 注意：此扩展不适用于Adobe Analytics数据的服务器端转发(SSF)。 对于SSF，请使用Adobe Analytics扩展。 重要信息：从版本8.0开始，DIL对[!DNL Experience Cloud] ID服务（版本3.3或更高版本）具有硬依赖关系。 请同时实施[!DNL Experience Cloud] ID服务和DIL以实现完整[!DNL Audience Manager]数据集成功能。
+这是Adobe Audience Manager Data Integration Library扩展（客户端实施）。 注意：此扩展不适用于[!DNL Adobe Analytics]数据的服务器端转发(SSF)。 对于SSF，请使用[!DNL Adobe Analytics]扩展。 重要信息：从版本8.0开始，DIL对[!DNL Experience Cloud] ID服务（版本3.3或更高版本）具有硬依赖关系。 请同时实施[!DNL Experience Cloud] ID服务和DIL以实现完整[!DNL Audience Manager]数据集成功能。
 
-[!DNL Audience Manager] DIL是Adobe Experience Platform中的数据管理平台(DMP)扩展。 有关扩展功能的更多信息，请参阅标记文档中的[Audience Manager扩展页面](../../../tags/extensions/client/audience-manager/overview.md)。
+[!DNL Audience Manager] DIL是[!DNL Adobe Experience Platform]中的数据管理平台(DMP)扩展。 有关扩展功能的更多信息，请参阅标记文档中的[Audience Manager扩展页面](../../../tags/extensions/client/audience-manager/overview.md)。
 
 此目标是标记扩展。 有关扩展如何在Experience Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
@@ -26,7 +26,7 @@ ht-degree: 3%
 
 此扩展位于[!DNL Destinations]目录中，适用于已购买Experience Platform的所有客户。
 
-要使用此扩展，您需要具有对Adobe Experience Platform中标记的访问权限。 标记以内置增值功能的方式提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
+要使用此扩展，您需要访问[!DNL Adobe Experience Platform]中的标记。 标记以内置增值功能的方式提供给[!DNL Adobe Experience Cloud]客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
 
 ## 安装扩展 {#install-extension}
 

@@ -3,9 +3,9 @@ title: Google客户匹配+显示和视频360连接
 description: 借助Google Customer Match + Display & Video 360目标连接器，您可以使用Experience Platform中的在线和离线数据在Google自有和运营的资产（如Search、Shopping、Gmail和YouTube）中与客户联系并重新互动。
 badge: label="有限发布版" type="Informative"
 exl-id: f6da3eae-bf3f-401a-99a1-2cca9a9058d2
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '2475'
+source-wordcount: '2442'
 ht-degree: 5%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 5%
 
 使用此目标将您的第一方基于PII的[[!DNL Google Customer Match]](https://support.google.com/google-ads/answer/6379332?hl=en)列表直接激活到[!DNL Google Display & Video 360]属性，如[!DNL Search]、[!DNL YouTube]、[!DNL Gmail]和[!DNL Google Display Network]。
 
-某些Google集成的第三方（如Adobe Real-Time CDP）可以使用[!DNL Google Audience Partner API]直接在客户的[!DNL Customer Match]帐户中创建[!DNL Display & Video 360]受众。
+某些Google集成的第三方（如Adobe [!DNL Real-Time CDP]）可以使用[!DNL Google Audience Partner API]直接在客户的[!DNL Customer Match]帐户中创建[!DNL Display & Video 360]受众。
 
 由于新引入的功能能够在[!DNL Customer Matched]中利用[!DNL Display & Video 360]受众，您现在可以在扩展的清单源名册中定位受众。
 
@@ -34,7 +34,7 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 ><br/>
 >如果客户购买了Adobe Privacy &amp; Security Shield并配置了[同意策略](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)以过滤掉未经同意的用户档案，则无需采取任何操作。
 ><br/>
->未购买Adobe Privacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/home.md#segment-definitions)中的[区段定义](../../../segmentation/ui/segment-builder.md)功能来过滤掉未经同意的用户档案，以便继续使用现有的Real-Time CDP Google目标而不中断。
+>未购买Adobe Privacy &amp; Security Shield的客户必须使用[区段生成器](../../../segmentation/home.md#segment-definitions)中的[区段定义](../../../segmentation/ui/segment-builder.md)功能来过滤掉未经同意的用户档案，以便继续使用现有的[!DNL Real-Time CDP]Google目标而不中断。
 
 ## 何时使用此目标 {#when-to-use}
 
@@ -46,7 +46,7 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解如何以及何时使用此目标，以下是Adobe Experience Platform客户可以通过使用此功能解决的示例用例。
+为了帮助您更好地了解如何以及何时使用此目标，以下是[!DNL Adobe Experience Platform]客户可以通过使用此功能解决的示例用例。
 
 ### 用例#1 {#use-case-1}
 
@@ -66,8 +66,8 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 |---|---|---|
 | GAID | GOOGLE ADVERTISING ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |
 | IDFA | 广告商的Apple ID | 当源身份是IDFA命名空间时，选择IDFA目标身份。 |
-| phone_sha256_e.164 | E164格式的电话号码，使用SHA256算法进行哈希处理 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电话号码。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以便在激活时自动对[!DNL Experience Platform]数据进行哈希处理。 |
-| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以便在激活时自动对[!DNL Experience Platform]数据进行哈希处理。 |
+| phone_sha256_e.164 | E164格式的电话号码，使用SHA256算法进行哈希处理 | [!DNL Adobe Experience Platform]支持纯文本和SHA256哈希电话号码。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电话号码。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以便在激活时自动对[!DNL Experience Platform]数据进行哈希处理。 |
+| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | [!DNL Adobe Experience Platform]支持纯文本和SHA256哈希电子邮件地址。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，并分别使用适当的命名空间作为纯文本和经过哈希处理的电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以便在激活时自动对[!DNL Experience Platform]数据进行哈希处理。 |
 
 {style="table-layout:auto"}
 
@@ -78,7 +78,7 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -91,7 +91,7 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -149,7 +149,7 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 
 [!DNL Google]要求不发送明确的个人身份信息(PII)。 因此，激活到[!DNL Google Customer Match]的受众必须脱离&#x200B;*散列的*&#x200B;标识符，例如散列电子邮件地址或电话号码。
 
-根据您摄取到Adobe Experience Platform中的ID类型，您必须遵守其相应的要求。
+根据您摄取到[!DNL Adobe Experience Platform]中的ID类型，您必须遵循其相应的要求。
 
 ### 电话号码散列要求 {#phone-number-hashing-requirements}
 
@@ -164,14 +164,14 @@ Adobe Experience Platform UI中的![Google Customer Match + DV360目标。](/hel
 
 ### 电子邮件哈希处理要求 {#hashing-requirements}
 
-您可以在将电子邮件地址摄取到Adobe Experience Platform之前对其进行哈希处理，或者在Experience Platform中明确使用电子邮件地址，并在激活时对其进行[!DNL Experience Platform]哈希处理。
+您可以在将电子邮件地址摄取到[!DNL Adobe Experience Platform]中之前对其进行哈希处理，或者在Experience Platform中明确使用电子邮件地址，并在激活时对其进行[!DNL Experience Platform]哈希处理。
 
 有关Google的哈希要求和其他激活限制的详细信息，请参阅Google文档中的以下部分：
 
 * [[!DNL Customer Match] 电子邮件地址、地址或用户ID](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_email_address_address_or_user_id)
 * [[!DNL Customer Match] 注意事项](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_considerations)
 * [[!DNL Customer Match] 使用电话号码](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_phone_number)
-* 具有移动设备ID的[[!DNL Customer Match] &#x200B;](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_mobile_device_ids)
+* 具有移动设备ID的[[!DNL Customer Match] ](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_mobile_device_ids)
 
 要了解如何在Experience Platform中摄取电子邮件地址，请参阅[批次摄取概述](../../../ingestion/batch-ingestion/overview.md)和[流式摄取概述](../../../ingestion/streaming-ingestion/overview.md)。
 
@@ -190,7 +190,7 @@ Attribute source data is not automatically hashed. When your source field contai
 
 The video below demonstrates the steps to configure a [!DNL Google Customer Match] destination and activate audiences. The steps are also laid out sequentially in the next sections.
 
->[!VIDEO](https://video.tv.adobe.com/v/3411783/?quality=12&learn=on&captions=chi_hans) -->
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng) -->
 
 ## 连接到目标 {#connect}
 
@@ -263,7 +263,7 @@ For details on how to find the [!DNL App ID], refer to the [Google official docu
 
 ## 监视目标 {#monitor-destination}
 
-连接到目标并建立目标数据流后，您可以使用Real-Time CDP中的[监视功能](/help/dataflows/ui/monitor-destinations.md)获取有关在每次数据流运行中激活到目标的配置文件记录的更多信息。
+连接到目标并建立目标数据流后，您可以使用[中的](/help/dataflows/ui/monitor-destinations.md)监视功能[!DNL Real-Time CDP]获取有关每次数据流运行中激活到目标的配置文件记录的更多信息。
 
 [!DNL Google Customer Match + Display & Video 360]连接的监视信息包括与每个数据流和数据流运行中激活、排除和失败的身份相关的受众级别信息。 [参阅更多](/help/dataflows/ui/monitor-destinations.md#segment-level-view)关于该功能的信息。
 
@@ -273,7 +273,7 @@ For details on how to find the [!DNL App ID], refer to the [Google official docu
 
 ## 数据治理 {#data-governance}
 
-Experience Platform中的某些目标对于发送到目标平台或从目标平台接收的数据具有某些规则和义务。 您有责任了解数据的限制和义务，以及如何在Adobe Experience Platform和目标平台中使用该数据。 Adobe Experience Platform提供数据治理工具，帮助您管理其中一些数据使用义务。 [了解有关Data Governance工具和策略的更多信息](../../../data-governance/labels/overview.md)。
+Experience Platform中的某些目标对于发送到目标平台或从目标平台接收的数据具有某些规则和义务。 您有责任了解数据的限制和义务，以及如何在[!DNL Adobe Experience Platform]和目标平台中使用该数据。 [!DNL Adobe Experience Platform]提供数据治理工具，帮助您管理其中一些数据使用义务。 [了解有关Data Governance工具和策略的更多信息](../../../data-governance/labels/overview.md)。
 
 ## 疑难解答 {#troubleshooting}
 

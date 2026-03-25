@@ -2,9 +2,9 @@
 description: 了解如何在发布目标之前使用目标测试API来测试流式传输目标消息转换模板。
 title: 创建和测试消息转换模板
 exl-id: 15e7f436-4d33-4172-bd14-ad8dfbd5e4a8
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '948'
+source-wordcount: '937'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 作为Destination SDK的一部分，Adobe提供开发人员工具来帮助您配置和测试目标。 本页介绍如何创建和测试消息转换模板。 有关如何测试目标的信息，请阅读[测试目标配置](streaming-destination-testing-overview.md)。
 
-要在Adobe Experience Platform中的目标架构与目标支持的消息格式之间&#x200B;**创建和测试消息转换模板**，请使用下面进一步描述的&#x200B;*模板创作工具*。  阅读有关[消息格式文档](../../functionality/destination-server/message-format.md#using-templating)中源架构和目标架构之间的数据转换的详细信息。
+要&#x200B;**在**&#x200B;中的目标架构与目标支持的消息格式之间创建和测试消息转换模板[!DNL Adobe Experience Platform]，请使用下面进一步描述的&#x200B;*模板创作工具*。  阅读有关[消息格式文档](../../functionality/destination-server/message-format.md#using-templating)中源架构和目标架构之间的数据转换的详细信息。
 
 下面说明了创建和测试消息转换模板如何适应Destination SDK中的[目标配置工作流](../../guides/configure-destination-instructions.md)：
 
@@ -24,7 +24,7 @@ ht-degree: 0%
 
 ## 为什么需要创建和测试消息转换模板 {#why-create-message-transformation-template}
 
-在Destination SDK中创建目标的首要步骤之一是，考虑将受众成员资格、身份和配置文件属性的数据格式从Adobe Experience Platform导出到目标时如何进行转换。 在[消息格式文档](../../functionality/destination-server/message-format.md#using-templating)中查找有关Adobe XDM架构与目标架构之间转换的信息。
+在Destination SDK中创建目标的首要步骤之一是，考虑将受众成员资格、身份和配置文件属性的数据格式从[!DNL Adobe Experience Platform]导出到目标时如何进行转换。 在[消息格式文档](../../functionality/destination-server/message-format.md#using-templating)中查找有关Adobe XDM架构与目标架构之间转换的信息。
 
 为了转换成功，您必须提供一个转换模板，类似于此示例： [创建一个发送区段、身份和配置文件属性的模板](../../functionality/destination-server/message-format.md#segments-identities-attributes)。
 
@@ -158,12 +158,12 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 
 ## 呈现模板API {#render-template-api}
 
-使用[示例模板API](create-template.md#sample-template-api)创建消息转换模板后，您可以[渲染模板](render-template-api.md)以基于它生成导出的数据。 这允许您验证Adobe Experience Platform将导出到目标的配置文件是否与目标的预期格式匹配。
+使用[示例模板API](create-template.md#sample-template-api)创建消息转换模板后，您可以[渲染模板](render-template-api.md)以基于它生成导出的数据。 这允许您验证[!DNL Adobe Experience Platform]将导出到目标的配置文件是否与目标的预期格式匹配。
 
 有关可以进行的调用的示例，请参阅API参考：
 
-* [呈现模板，其中没有在正文中发送配置文件](render-template-api.md#multiple-profiles-no-body)
-* [渲染包含正文中发送的用户档案的模板](render-template-api.md#multiple-profiles-with-body)
+* [呈现模板，其中没有在正文中发送配置文件](render-template-api.md#best-effort)
+* [渲染包含正文中发送的用户档案的模板](render-template-api.md#configurable-aggregation)
 
 编辑模板并调用渲染模板API端点，直到导出的配置文件与目标的预期数据格式匹配。
 

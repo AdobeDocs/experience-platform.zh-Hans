@@ -3,22 +3,22 @@ title: 根据LiveRamp标识符将受众激活到策划的目标
 type: Tutorial
 description: 了解如何使用LiveRamp RampID将受众从Adobe Experience Platform激活到连接的电视和音频目标以及其他集成。
 exl-id: 37e5bab9-588f-40b3-b65b-68f1a4b868f1
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '660'
+source-wordcount: '648'
 ht-degree: 0%
 
 ---
 
 # 根据LiveRamp标识符将受众激活到策划的目标
 
-使用与[!DNL LiveRamp]的Adobe Real-Time CDP集成将受众激活到使用[[!DNL [LiveRamp RampID]]](https://docs.liveramp.com/connect/en/interpreting-rampid,-liveramp-s-people-based-identifier.html)进行激活的策划的目标列表，包括连接的电视和音频目标，如下面列出的目标。
+使用与[!DNL Real-Time CDP]的Adobe [!DNL LiveRamp]集成将受众激活到使用[!DNL [LiveRamp RampID]](https://docs.liveramp.com/connect/en/interpreting-rampid,-liveramp-s-people-based-identifier.html)进行激活的精选目标列表，包括连接的电视和音频目标，如下面列出的目标。
 
 >[!IMPORTANT]
 >
 >您无需在Experience Platform界面中摄取或以任何方式使用LiveRamp RampID。
 >
-> 您可以从Real-Time CDP导出身份，如基于PII的标识符、已知标识符和自定义ID，如官方[LiveRamp文档](https://docs.liveramp.com/connect/en/identity-and-identifier-terms-and-concepts.html#known-identifiers)中所述。 然后，这些标识与激活过程中下游的[!DNL LiveRamp RampIDs]匹配。
+> 您可以从[!DNL Real-Time CDP]导出身份，如基于PII的标识符、已知标识符和自定义ID，如官方[LiveRamp文档](https://docs.liveramp.com/connect/en/identity-and-identifier-terms-and-concepts.html#known-identifiers)中所述。 然后，这些标识与激活过程中下游的[!DNL LiveRamp RampIDs]匹配。
 
 
 * [[!DNL 4C Insights]](#insights)
@@ -42,7 +42,7 @@ ht-degree: 0%
 * [[!DNL Teads]](#teads)
 * [[!DNL WB Discovery]](#wb-discovery)
 
-本文介绍了直接从Real-Time CDP UI将受众从Real-Time CDP激活到上面列出的目标所需的工作流。
+本文介绍直接从[!DNL Real-Time CDP] UI将受众从[!DNL Real-Time CDP]激活到上面列出的目标所需的工作流。
 
 ## 激活工作流 {#workflow}
 
@@ -50,19 +50,19 @@ ht-degree: 0%
 
 ![显示通过LiveRamp将受众从Real-Time CDP激活到策划目标的工作流的图表。](../assets/ui/activate-curated-destinations-liveramp/workflow-diagram.png){width="1920" zoomable="yes"}
 
-首先，将受众以CSV文件形式从Real-Time CDP导出到[[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md)目标。
+首先，将受众从[!DNL Real-Time CDP]以CSV文件形式导出到[[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md)目标。
 
 导出受众后，可使用[[!DNL LiveRamp - Distribution]](../catalog/advertising/liveramp-distribution.md)目标激活它们。
 
 >[!TIP]
 >
->通过此流程，您可以直接从Real-Time CDP UI将受众激活到目标，例如[[!DNL Roku]](../catalog/advertising/liveramp-distribution.md#roku)、[[!DNL Disney]](../catalog/advertising/liveramp-distribution.md#disney)等，而无需登录到您的[!DNL LiveRamp]帐户进行激活。
+>通过此流程，您可以直接从[[!DNL Roku]](../catalog/advertising/liveramp-distribution.md#roku) UI将受众激活到目标，如[[!DNL Disney]](../catalog/advertising/liveramp-distribution.md#disney)、[!DNL Real-Time CDP]等，而无需登录到您的[!DNL LiveRamp]帐户进行激活。
 
 ### 视频教程 {#video}
 
 观看以下视频，了解此页面中描述的工作流的端到端说明。
 
->[!VIDEO](https://video.tv.adobe.com/v/3452667?captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/3425367)
 
 ### 步骤1：通过[!DNL LiveRamp - Onboarding]目标将受众从Experience Platform发送到LiveRamp {#onboarding}
 

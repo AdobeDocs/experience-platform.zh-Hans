@@ -2,9 +2,9 @@
 title: Snap Inc连接
 description: 了解如何连接到Snapchat广告平台并从Experience Platform导出受众。
 exl-id: 1f0f2dc0-5f3d-424b-9b22-b1a14ac30039
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1161'
+source-wordcount: '1141'
 ht-degree: 3%
 
 ---
@@ -66,7 +66,7 @@ ht-degree: 3%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 | [!DNL Federated Audience Composition] | 是 | 通过[联合受众构成](https://experienceleague.adobe.com/zh-hans/docs/federated-audience-composition/using/start/audiences)导入到Experience Platform中的受众。 |
 
 {style="table-layout:auto"}
@@ -80,7 +80,7 @@ ht-degree: 3%
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -106,15 +106,15 @@ ht-degree: 3%
 
 要向目标进行身份验证，请执行以下步骤：
 
-1. 从Adobe Experience Platform的目标目录找到&#x200B;*快照公司*&#x200B;目标，然后选择&#x200B;**设置**。
+1. 从&#x200B;*的目标目录找到*&#x200B;快照公司[!DNL Adobe Experience Platform]目标并选择&#x200B;**设置**。
 2. 选择 **[!UICONTROL Connect to destination]**。您将被重定向到以下屏幕：
    ![身份验证屏幕1](/help/destinations/assets/catalog/advertising/snapchat-ads/auth1.png)
 3. 输入您的Snapchat凭据并选择&#x200B;**登录**。
-4. 您将看到Adobe Experience Platform能够访问的Snapchat数据。 选择&#x200B;**继续**&#x200B;以继续连接过程。
+4. 将显示[!DNL Adobe Experience Platform]能够访问的Snapchat数据。 选择&#x200B;**继续**&#x200B;以继续连接过程。
 
 ![身份验证屏幕2](/help/destinations/assets/catalog/advertising/snapchat-ads/auth2.png)
 
-选择“继续”后，请等待，直到您被重定向回Adobe Experience Platform。
+选择“继续”后，请等待，直到您被重定向回[!DNL Adobe Experience Platform]。
 
 ### 填写目标详细信息 {#destination-details}
 
@@ -150,11 +150,11 @@ ht-degree: 3%
 将受众激活到&#x200B;*Snap Inc*&#x200B;目标后，您将能够在Snap Ads管理器的&#x200B;[**受众**&#x200B;部分](https://businesshelp.snapchat.com/s/article/audience-sharing)中查看受众。 要导航到此部分，请执行以下步骤：
 
 1. 登录[快照广告管理器](https://ads.snapchat.com/)
-2. 从屏幕左上角的下拉菜单中选择&#x200B;**受众**。 您将在受众库中看到在Adobe Experience Platform中激活的受众：
+2. 从屏幕左上角的下拉菜单中选择&#x200B;**受众**。 您将在受众库中看到在[!DNL Adobe Experience Platform]中激活的受众：
 
 ![受众](/help/destinations/assets/catalog/advertising/snapchat-ads/audiences.png)
 
-请注意，首次将Adobe受众激活到Snap Inc时，您最初会将其视为空受众。 这是因为Adobe Experience Platform在评估受众之前，不会将成员数据导出到Snap Inc。 有关如何在Experience Platform中评估受众的更多信息，请参阅[分段服务概述](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html?lang=zh-Hans#evaluate-segments)。
+请注意，首次将Adobe受众激活到Snap Inc时，您最初会将其视为空受众。 这是因为[!DNL Adobe Experience Platform]在评估受众之前，不会将成员数据导出到Snap Inc。 有关如何在Experience Platform中评估受众的更多信息，请参阅[分段服务概述](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html#evaluate-segments)。
 
 ## 数据使用和治理 {#data-usage-governance}
 

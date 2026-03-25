@@ -2,9 +2,9 @@
 title: (V2) Pega CDH实时受众连接
 description: 使用Adobe Experience Platform中的Pega客户决策中心实时受众目标，将用户档案属性和受众成员资格数据发送到Pega客户决策中心，以便做出次优决策。
 exl-id: cbb998f9-c268-4d65-87d8-fab56c0844dc
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1170'
+source-wordcount: '1143'
 ht-degree: 4%
 
 ---
@@ -13,9 +13,9 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-使用Adobe Experience Platform中的(V2) [!DNL Pega CDH Realtime Audience]目标将配置文件属性和受众成员资格数据发送到[!DNL Pega Customer Decision Hub]，以便做出下一个最佳操作决策。
+使用[!DNL Pega CDH Realtime Audience]中的(V2) [!DNL Adobe Experience Platform]目标向[!DNL Pega Customer Decision Hub]发送配置文件属性和受众成员资格数据，以便做出下一个最佳操作决策。
 
-Adobe Experience Platform中的配置文件受众成员资格在加载到[!DNL Pega Customer Decision Hub]中时，可用作自适应模型中的预测器，并帮助提供正确的上下文和行为数据，以实现次优行动决策。
+[!DNL Adobe Experience Platform]中的配置文件受众成员资格在加载到[!DNL Pega Customer Decision Hub]中时可用作自适应模型中的预测器，并帮助提供正确的上下文和行为数据以实现次优操作决策。
 
 >[!IMPORTANT]
 >
@@ -23,7 +23,7 @@ Adobe Experience Platform中的配置文件受众成员资格在加载到[!DNL P
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解您应如何以及何时使用[!DNL Customer Decision Hub]目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
+为了帮助您更好地了解您应如何以及何时使用[!DNL Customer Decision Hub]目标，以下是[!DNL Adobe Experience Platform]客户可以通过使用此目标解决的示例用例。
 
 ### 电信 {#telecommunications}
 
@@ -31,11 +31,11 @@ Adobe Experience Platform中的配置文件受众成员资格在加载到[!DNL P
 
 ### 金融服务 {#financial-services}
 
-营销人员希望优化为订阅或取消订阅退休金计划或退休计划快讯的客户提供的优惠。 金融服务公司可以从自己的CRM中将多个客户ID摄取到Adobe Experience Platform，从自己的离线数据构建受众，并将进入和退出受众的个人资料发送到[!DNL Pega Customer Decision Hub]，以在出站渠道中做出次优行动(NBA)决策。
+营销人员希望优化为订阅或取消订阅退休金计划或退休计划快讯的客户提供的优惠。 金融服务公司可从自己的CRM将多个客户ID摄取到[!DNL Adobe Experience Platform]中，从自己的离线数据构建受众，并将进入和退出受众的个人资料发送到[!DNL Pega Customer Decision Hub]，以在出站渠道中做出次优行动(NBA)决策。
 
 ## 先决条件 {#prerequisites}
 
-使用此目标将数据导出到Adobe Experience Platform之前，请确保在[!DNL Pega Customer Decision Hub]中完成以下先决条件：
+使用此目标导出[!DNL Adobe Experience Platform]中的数据之前，请确保在[!DNL Pega Customer Decision Hub]中完成以下先决条件：
 
 * 在您的[实例中配置](https://docs.pega.com/bundle/components/page/customer-decision-hub/components/adobe-membership-component.html)Adobe Experience Platform配置文件和受众成员资格集成组件[!DNL Pega Customer Decision Hub]。
 * 在[实例中使用客户端凭据](https://docs.pega.com/bundle/platform/page/platform/security/configure-oauth-2-client-registration.html)授权类型配置OAuth 2.0 [!DNL Pega Customer Decision Hub]客户端注册。
@@ -47,7 +47,7 @@ Adobe Experience Platform中的配置文件受众成员资格在加载到[!DNL P
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| `CustomerID` | Customer ID | 通用用户标识符，用于唯一标识[!DNL Pega Customer Decision Hub]和Adobe Experience Platform中的配置文件。 |
+| `CustomerID` | Customer ID | 在[!DNL Pega Customer Decision Hub]和[!DNL Adobe Experience Platform]中唯一标识配置文件的通用用户标识符。 |
 
 {style="table-layout:auto"}
 
@@ -58,7 +58,7 @@ Adobe Experience Platform中的配置文件受众成员资格在加载到[!DNL P
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -71,7 +71,7 @@ Adobe Experience Platform中的配置文件受众成员资格在加载到[!DNL P
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -133,7 +133,7 @@ Adobe Experience Platform中的配置文件受众成员资格在加载到[!DNL P
 
 下面是将配置文件导出到[!DNL Pega Customer Decision Hub]时正确标识映射的示例。
 
-* 选择在Adobe Experience Platform和[!DNL Pega Customer Decision Hub]中唯一标识配置文件的源标识。 例如：`CustomerID`。
+* 选择唯一标识[!DNL Adobe Experience Platform]和[!DNL Pega Customer Decision Hub]中的配置文件的源标识。 例如：`CustomerID`。
 * 选择要将所选源配置文件属性映射到的目标配置文件属性。
 
 ![标识映射](../../assets/catalog/personalization/pega/pega-source-destination-mapping.png)

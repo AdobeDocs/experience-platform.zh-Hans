@@ -3,9 +3,9 @@ title: Merkury企业标识目标
 description: 了解如何使用Adobe Experience Platform UI创建Merkury Enterprise Identity目标连接。
 last-substantial-update: 2024-07-20T00:00:00Z
 exl-id: a5452183-289c-49c3-9574-e09b0153dc00
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1592'
+source-wordcount: '1563'
 ht-degree: 4%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 4%
 
 ![显示Merkury与Experience Platform之间互连的图表，包括引入和激活](../../assets/catalog/data-partners/merkury-identity/media/image1.png)
 
-按照此文档页面中的步骤创建[!DNL Merkury Identity]目标连接并激活受众，以便使用Adobe Experience Platform用户界面进行识别和扩充。
+按照此文档页面中的步骤创建[!DNL Merkury Identity]目标连接并激活受众，以使用[!DNL Adobe Experience Platform]用户界面进行识别和扩充。
 
 >[!NOTE]
 >
@@ -40,14 +40,14 @@ ht-degree: 4%
 
 >[!NOTE]
 >
->这些用例通过目标和源连接器的组合执行。 客户将从导出其现有客户记录开始，以便使用此目标连接器进行扩充。 [!DNL Merkury]的服务将搜索文件、检索文件、使用[!DNL Merkury]的数据扩充文件并生成文件。 然后，客户将使用相应的[!DNL Merkury]个Source连接器源卡将水合的客户配置文件摄取回Adobe Real-Time CDP。
+>这些用例通过目标和源连接器的组合执行。 客户将从导出其现有客户记录开始，以便使用此目标连接器进行扩充。 [!DNL Merkury]的服务将搜索文件、检索文件、使用[!DNL Merkury]的数据扩充文件并生成文件。 然后，客户将使用相应的[!DNL Merkury] Source连接器源卡将水合的客户配置文件摄取回Adobe [!DNL Real-Time CDP]。
 
 ## 先决条件 {#prerequisites}
 
 >[!IMPORTANT]
 >
->* 若要连接到目标，您需要&#x200B;**查看目标**&#x200B;和&#x200B;**管理目标**、**激活目标**、**查看配置文件**&#x200B;和&#x200B;**查看区段** [[访问控制权限]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/home#permissions)。 阅读[[访问控制概述]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/ui/overview)或联系您的产品管理员以获取所需的权限。
->* 要导出&#x200B;*标识*，您需要&#x200B;**查看标识图形** [[访问控制权限]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/home#permissions)。\！[选择工作流中突出显示的身份命名空间以将受众激活到目标。](../../assets/catalog/data-partners/merkury-identity/media/image3.png)
+>* 若要连接到目标，您需要&#x200B;**查看目标**&#x200B;和&#x200B;**管理目标**、**激活目标**、**查看配置文件**&#x200B;和&#x200B;**查看区段** [[访问控制权限]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions)。 阅读[[访问控制概述]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/ui/overview)或联系您的产品管理员以获取所需的权限。
+>* 要导出&#x200B;*标识*，您需要&#x200B;**查看标识图形** [[访问控制权限]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions)。\！[选择工作流中突出显示的身份命名空间以将受众激活到目标。](../../assets/catalog/data-partners/merkury-identity/media/image3.png)
 
 ## 支持的身份 {#supported-identities}
 
@@ -55,9 +55,9 @@ ht-degree: 4%
 |---|---|---|
 | GAID | GOOGLE ADVERTISING ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |
 | IDFA | 广告商的Apple ID | 当源身份是IDFA命名空间时，选择IDFA目标身份。 |
-| ECID | Experience Cloud ID | 表示ECID的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 有关详细信息，请参阅[ECID](/help/identity-service/features/ecid.md)上的以下文档。 |
-| phone_sha256 | 使用SHA256算法散列的电话号码 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以便在激活时自动对[!DNL Experience Platform]数据进行哈希处理。 |
-| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以便在激活时自动对[!DNL Experience Platform]数据进行哈希处理。 |
+| ECID | Experience Cloud ID | 表示ECID的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“[!DNL Adobe Experience Cloud] ID”、“[!DNL Adobe Experience Platform] ID”。 有关详细信息，请参阅[ECID](/help/identity-service/features/ecid.md)上的以下文档。 |
+| phone_sha256 | 使用SHA256算法散列的电话号码 | [!DNL Adobe Experience Platform]支持纯文本和SHA256哈希电话号码。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以便在激活时自动对[!DNL Experience Platform]数据进行哈希处理。 |
+| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | [!DNL Adobe Experience Platform]支持纯文本和SHA256哈希电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以便在激活时自动对[!DNL Experience Platform]数据进行哈希处理。 |
 | extern_id | 自定义用户标识 | 当源身份是自定义命名空间时，请选择此目标身份。 |
 
 {style="table-layout:auto"}
@@ -69,7 +69,7 @@ ht-degree: 4%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -82,7 +82,7 @@ ht-degree: 4%
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -94,7 +94,7 @@ ht-degree: 4%
 | **受众** | **支持** | **描述来源** |
 |---|---|---|      
 | Segmentation Service | 是 | 通过Experience Platform [[分段服务]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/segmentation/home)生成的受众。 |
-| 自定义上传 | 否 | 受众[[已将]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/segmentation/ui/overview#import-audience)从CSV文件导入Experience Platform。 |
+| 自定义上传 | 否 | 受众[[已将]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience)从CSV文件导入Experience Platform。 |
 
 {style="table-layout:auto"}
 
@@ -102,9 +102,9 @@ ht-degree: 4%
 
 >[!IMPORTANT]
 >
->若要连接到目标，您需要&#x200B;**查看目标**&#x200B;和&#x200B;**管理和激活数据集目标** [[访问控制权限]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/home#permissions)。 阅读[[访问控制概述]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/ui/overview)或联系您的产品管理员以获取所需的权限。
+>若要连接到目标，您需要&#x200B;**查看目标**&#x200B;和&#x200B;**管理和激活数据集目标** [[访问控制权限]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions)。 阅读[[访问控制概述]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/ui/overview)或联系您的产品管理员以获取所需的权限。
 
-要连接到此目标，请按照[[目标配置教程]](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/ui/connect-destination)中描述的步骤操作。 在目标配置工作流中，填写下面两个部分中列出的字段。
+要连接到此目标，请按照[[目标配置教程]](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/connect-destination)中描述的步骤操作。 在目标配置工作流中，填写下面两个部分中列出的字段。
 
 ### 验证目标 {#authenticate}
 
@@ -150,7 +150,7 @@ csv选项![的](../../assets/catalog/data-partners/merkury-identity/media/image8
 
 ### 启用警报 {#enable-alerts}
 
-您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/ui/alerts)。
+您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/alerts)。
 
 完成提供目标连接的详细信息后，选择&#x200B;**下一步**。
 
@@ -161,7 +161,7 @@ csv选项![的](../../assets/catalog/data-partners/merkury-identity/media/image8
 >* 若要激活数据，您需要&#x200B;**查看目标**、**激活目标**、**查看配置文件**&#x200B;和&#x200B;**查看区段**&#x200B;访问控制权限。 请阅读访问控制概述或联系您的产品管理员以获取所需权限。
 >* 要导出身份，您需要&#x200B;**查看身份图形**&#x200B;访问控制权限。
 
-有关将受众激活到此目标的说明，请阅读[将受众数据激活到批处理配置文件导出目标](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations)。
+有关将受众激活到此目标的说明，请阅读[将受众数据激活到批处理配置文件导出目标](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations)。
 
 ## 映射建议 {#mapping-suggestions}
 
@@ -190,7 +190,7 @@ csv选项![的](../../assets/catalog/data-partners/merkury-identity/media/image8
 
 ## 数据使用和治理 {#data-usage-governance}
 
-在处理您的数据时，所有Adobe Experience Platform目标都符合数据使用策略。 有关Adobe Experience Platform如何实施数据治理的详细信息，请阅读[数据管理概述](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/data-governance/home)。
+在处理您的数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据治理的详细信息，请阅读[数据治理概述](https://experienceleague.adobe.com/en/docs/experience-platform/data-governance/home)。
 
 ## 后续步骤 {#next-steps}
 

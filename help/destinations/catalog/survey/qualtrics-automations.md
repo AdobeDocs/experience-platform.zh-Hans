@@ -4,9 +4,9 @@ title: Qualtrics自动化
 description: 同步体验和运营客户数据以大规模解锁个性化。 在Qualtrics Experience Id中，使用对Adobe Experience Platform中多个运营数据来源的聚合作为输入，以更好地了解您的客户，并实现有针对性的外联，在了解意图、情绪和体验驱动因素方面缩小差距。
 last-substantial-update: 2023-10-25T00:00:00Z
 exl-id: 3289ed4c-8542-4e22-a574-e49cc6527a24
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1283'
+source-wordcount: '1259'
 ht-degree: 3%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 3%
 
 同步体验和运营客户数据以大规模解锁个性化。
 
-在Qualtrics Experience Id中，使用对Adobe Experience Platform中多个运营数据来源的聚合作为输入，以更好地了解您的客户，并实现有针对性的外联，在了解意图、情绪和体验驱动因素方面缩小差距。
+在Qualtrics Experience iD中将[!DNL Adobe Experience Platform]中多个运营数据源的聚合用作输入，以更好地了解您的客户并实现有针对性的外联，从而在了解意图、情绪和体验驱动因素方面缩小差距。
 
 >[!IMPORTANT]
 >
@@ -25,23 +25,23 @@ ht-degree: 3%
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解应如何以及何时使用&#x200B;*Qualtrics自动化*&#x200B;目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
+为了帮助您更好地了解您应如何以及何时使用&#x200B;*Qualtrics自动化*&#x200B;目标，以下是[!DNL Adobe Experience Platform]客户可以通过使用此目标解决的示例用例。
 
 ### 用例#1 {#use-case-1}
 
-**情景**：公司希望跨各种数字接触点（如其网站和移动设备应用程序）衡量客户满意度。 他们使用Adobe Experience Platform根据用户交互来触发Qualtrics调查，例如完成购买或访问特定网页。
+**情景**：公司希望跨各种数字接触点（如其网站和移动设备应用程序）衡量客户满意度。 他们使用[!DNL Adobe Experience Platform]根据用户交互触发Qualtrics调查，如完成购买或访问特定网页。
 
 **结果**：通过收集实时反馈，公司可以改进其客户体验，从而提高满意度和忠诚度。
 
 ### 用例#2 {#use-case-2}
 
-**场景**：组织旨在增强其员工入职流程。 他们利用Adobe Experience Platform通过Qualtrics调查从新员工那里收集反馈。 在预定义的入门培训期后，调查将自动触发。
+**场景**：组织旨在增强其员工入职流程。 他们利用[!DNL Adobe Experience Platform]通过Qualtrics调查从新员工那里收集反馈。 在预定义的入门培训期后，调查将自动触发。
 
 **结果**：持续反馈使组织能够调整和改进新员工上线流程，从而在新员工中提高参与度和工作效率。
 
 ## 先决条件 {#prerequisites}
 
-在Adobe Experience Platform中设置Qualtrics目标之前，请确保满足以下先决条件：
+在[!DNL Adobe Experience Platform]中设置Qualtrics目标之前，请确保满足以下先决条件：
 
 * 您拥有Qualtrics帐户。
 * 您已从Qualtrics获取必要的API令牌。
@@ -73,7 +73,7 @@ ht-degree: 3%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -86,7 +86,7 @@ ht-degree: 3%
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -205,7 +205,7 @@ ht-degree: 3%
 
 要验证是否已在Qualtrics中摄取数据，请转到包含&#x200B;**JSON事件**&#x200B;的工作流，从该处转到&#x200B;**运行历史记录**，您应在该处看到工作流的执行。 每个工作流的状态为&#x200B;**成功**&#x200B;或&#x200B;**失败**。 选择特定执行会显示有关该执行的更多信息，从而允许您在遇到任何问题时进行故障排除。
 
-如果&#x200B;**运行历史记录**&#x200B;中没有可见的执行，则表示尚未触发工作流，这表示可能存在问题。 请确保工作流已启用，并且Adobe Experience Platform中的目标中的&#x200B;**URL**&#x200B;正确无误。 工作流执行不是即时的，因此您可能必须等待一段时间才能完成。
+如果&#x200B;**运行历史记录**&#x200B;中没有可见的执行，则表示尚未触发工作流，这表示可能存在问题。 请确保工作流已启用，并且&#x200B;**中目标中的** URL[!DNL Adobe Experience Platform]正确。 工作流执行不是即时的，因此您可能必须等待一段时间才能完成。
 
 ## 数据使用和治理 {#data-usage-governance}
 

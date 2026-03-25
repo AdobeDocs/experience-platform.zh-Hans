@@ -3,7 +3,7 @@ title: 使用计算字段对导出到云存储目标的数据进行转换
 type: Tutorial
 description: 了解如何使用计算字段功能对导出到云存储目标的数据执行转换
 exl-id: 1e14f964-4c03-4d0c-be8d-c3dcb48a335a
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
 source-wordcount: '1604'
 ht-degree: 8%
@@ -16,7 +16,7 @@ ht-degree: 8%
 >id="platform_destinations_export_arrays_flat_files"
 >title="添加计算字段"
 >abstract="<p>使用&#x200B;**添加计算字段**&#x200B;控件对导出到云存储目标的数据进行各种数据转换。例如，您可以对数据进行哈希处理，将数组连接成字符串等。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/data-transformations-calculated-fields.html?lang=zh-Hans#examples" text="示例"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/data-transformations-calculated-fields.html#examples" text="示例"
 
 >[!AVAILABILITY]
 >
@@ -118,7 +118,7 @@ ht-degree: 8%
 
 在这种情况下，您的输出文件将如下所示。 请注意如何使用`_`字符将数组的元素连接到单个字符串中。
 
-```
+```csv
 First_Name,Last_Name,Personal_Email,Organization
 John,Doe,johndoe@acme.org, "{'id':123,'orgName':'Acme Inc','founded':1990,'latestInteraction':1708041600000}_{'id':456,'orgName':'Superstar Inc','founded':2004,'latestInteraction':1692921600000}_{'id':789,'orgName':'Energy Corp','founded':2021,'latestInteraction':1725753600000}"
 ```
@@ -133,7 +133,7 @@ John,Doe,johndoe@acme.org, "{'id':123,'orgName':'Acme Inc','founded':1990,'lates
 
 在这种情况下，您的输出文件将如下所示。 请注意数组中满足条件的两个元素如何使用`_`字符连接为单个字符串。
 
-```
+```csv
 John,Doe,johndoe@acme.org, "{'id':123,'orgName':'Acme Inc','founded':1990,'latestInteraction':1708041600000}_{'id':789,'orgName':'Energy Corp','founded':2021,'latestInteraction':1725753600000}"
 ```
 
@@ -147,7 +147,7 @@ John,Doe,johndoe@acme.org, "{'id':123,'orgName':'Acme Inc','founded':1990,'lates
 
 在这种情况下，您的输出文件将如下所示。 请注意如何使用`_`字符将数组的三个元素转换并连接为单个字符串。
 
-```
+```csv
 John,Doe,johndoe@acme.org,ACME INC_SUPERSTAR INC_ENERGY CORP
 ```
 
@@ -159,7 +159,7 @@ John,Doe,johndoe@acme.org,ACME INC_SUPERSTAR INC_ENERGY CORP
 
 在这种情况下，您的输出文件将如下所示。 在这种情况下，数组的第一个元素是营销，因此人员是营销部门的成员。
 
-```
+```csv
 `First_Name,Last_Name, Personal_Email, Is_Member_Of_Marketing_Dept
 John,Doe, johndoe@acme.org, "isMarketing"
 ```
@@ -174,7 +174,7 @@ John,Doe, johndoe@acme.org, "isMarketing"
 
 在这种情况下，您的输出文件将如下所示。 请注意如何使用字符`_`将数组的三个元素连接到单个字符串中，并将2023也附加到字符串的末尾。
 
-```
+```csv
 `First_Name,Last_Name,Personal_Email,Organization_Member_2023
 John,Doe, johndoe@acme.org,"Marketing_Sales_Finance_2023"
 ```
@@ -202,7 +202,7 @@ John,Doe, johndoe@acme.org,"Marketing_Sales_Finance_2023"
 
 在这种情况下，您的输出文件将如下所示。 请注意如何在文件中导出数组中的第一个非空`true`值。
 
-```
+```csv
 First_Name,Last_Name,hasPromotion
 John,Doe,true
 ```
@@ -220,7 +220,7 @@ John,Doe,true
 
 在这种情况下，您的输出文件将如下所示。 请注意第二列如何指示数组中的元素数，对应于客户进行的单独购买次数。
 
-```
+```csv
 `Personal_Email,Times_Purchased
 johndoe@acme.org,"5"
 ```
@@ -237,7 +237,7 @@ johndoe@acme.org,"5"
 
 在这种情况下，您的输出文件如下所示，在客户首次购买时导出：
 
-```
+```csv
 `Personal_Email,First_Purchase
 johndoe@acme.org,"1538097126"
 ```
@@ -250,7 +250,7 @@ johndoe@acme.org,"1538097126"
 
 在这种情况下，您的输出文件将如下所示，导出客户第一次和最后一次购买的时间：
 
-```
+```csv
 `Personal_Email,First_Purchase, Last_Purchase
 johndoe@acme.org,"1538097126","1664327526"
 ```

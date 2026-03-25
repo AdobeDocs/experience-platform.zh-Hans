@@ -3,9 +3,9 @@ title: Google Cloud Storage连接
 description: 了解如何连接到Google Cloud Storage并激活受众或导出数据集。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: ab274270-ae8c-4264-ba64-700b118e6435
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1308'
+source-wordcount: '1299'
 ht-degree: 2%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 ## 概述 {#overview}
 
-创建到[!DNL Google Cloud Storage]的实时出站连接，定期将数据文件从Adobe Experience Platform导出到您自己的存储桶中。
+创建到[!DNL Google Cloud Storage]的实时出站连接，定期将数据文件从[!DNL Adobe Experience Platform]导出到您自己的存储桶中。
 
 ## 通过API或UI连接到您的[!DNL Google Cloud Storage]存储 {#connect-api-or-ui}
 
@@ -28,7 +28,7 @@ ht-degree: 2%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -41,7 +41,7 @@ ht-degree: 2%
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 是 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 是 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 是 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -78,7 +78,7 @@ ht-degree: 2%
 
 此时会显示&#x200B;**[!UICONTROL Settings]**&#x200B;页面。 在此处，您可以看到有关您的[!DNL Google]项目ID的信息以及有关您的[!DNL Google Cloud Storage]帐户的详细信息。 要访问互操作性设置，请从顶部标题中选择&#x200B;**[!UICONTROL Interoperability]**。
 
-![&#x200B; Google Cloud Platform仪表板中突出显示的“互操作性”选项卡。](../../../sources/images/tutorials/create/google-cloud-storage/project-access.png)
+![ Google Cloud Platform仪表板中突出显示的“互操作性”选项卡。](../../../sources/images/tutorials/create/google-cloud-storage/project-access.png)
 
 **[!UICONTROL Interoperability]**&#x200B;页面包含与您的服务帐户关联的身份验证、访问密钥和默认项目的信息。 要为您的服务帐户生成新的访问密钥ID和秘密访问密钥，请选择&#x200B;**[!UICONTROL Create a Key for a Service Account]**。
 
@@ -156,7 +156,7 @@ ht-degree: 2%
 
 ### 日程计划 {#scheduling}
 
-在&#x200B;**[!UICONTROL Scheduling]**&#x200B;步骤中，您可以[为](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling)目标设置导出计划[!DNL Google Cloud Storage]，还可以[配置导出文件的名称](/help/destinations/ui/activate-batch-profile-destinations.md#file-names)。
+在&#x200B;**[!UICONTROL Scheduling]**&#x200B;步骤中，您可以[为](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling)目标设置导出计划[!DNL Google Cloud Storage]，还可以[配置导出文件的名称](/help/destinations/ui/activate-batch-profile-destinations.md#configure-file-names)。
 
 ### 映射属性和身份 {#map}
 

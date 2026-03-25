@@ -3,9 +3,9 @@ keywords: Awin广告商转化标记扩展；转化标记；Awin；AWIN
 title: Awin广告商转化标记扩展
 description: Awin广告商转化标记扩展是Adobe Experience Platform中的一个广告目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: 99feb169-acf3-4e68-8785-3f4cf565e5a9
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '488'
+source-wordcount: '482'
 ht-degree: 3%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 3%
 
 转化标记是AWIN.Tracking.Sale JavaScript对象的声明，该声明在确认页面上完成，以指示Mastertag已发生转化。 然后，它将执行必要的跟踪请求。
 
-Awin Advertiser Conversion Tag是Adobe Experience Platform中的一个广告扩展。 有关扩展功能的更多信息，请参阅[Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.103240.awin-conversion-tag.html)上的扩展页面。
+Awin广告商转化标记是[!DNL Adobe Experience Platform]中的广告扩展。 有关扩展功能的更多信息，请参阅[Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.103240.awin-conversion-tag.html)上的扩展页面。
 
 此目标是标记扩展。 有关标记扩展如何在Experience Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
@@ -26,7 +26,7 @@ UI中的![Awin Advertiser Conversiontag扩展](../../assets/catalog/advertising/
 
 所有已购买Experience Platform的客户都可以在“目标”目录中找到此扩展。
 
-要使用此扩展，您需要具有对Experience Platform中标记的访问权限。 标记以内置增值功能的方式提供给Adobe Experience Cloud客户。 请联系您的组织管理员，以获取UI中数据收集功能的访问权限，并要求他们向您授予&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
+要使用此扩展，您需要具有对Experience Platform中标记的访问权限。 标记以内置增值功能的方式提供给[!DNL Adobe Experience Cloud]客户。 请联系您的组织管理员，以获取UI中数据收集功能的访问权限，并要求他们向您授予&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
 
 ## 安装扩展 {#install-extension}
 

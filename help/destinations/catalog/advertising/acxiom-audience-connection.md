@@ -3,9 +3,9 @@ title: Acxiom受众连接
 description: 使用 [!DNL Acxiom Audience Connection] 目标通过 [!DNL Acxiom's Real ID] 技术增强受众并将受众激活到多个平台，如 [!DNL Altice]、 [!DNL Ampersand]、 [!DNL Comcast]等。
 badge: label="Beta 版" type="Informative"
 exl-id: bac0f337-bfab-4779-acc8-f70239552666
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1043'
+source-wordcount: '1034'
 ht-degree: 7%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 7%
 
 使用[!DNL Acxiom Audience Connection]目标通过[!DNL Acxiom's] [Real ID™](https://www.acxiom.com/real-id/real-id/)技术增强受众并将受众激活到多个平台，如[!DNL Altice]、[!DNL Ampersand]、[!DNL Comcast]等。
 
-本教程提供了使用[!DNL Acxiom Audience Connection]用户界面创建[!DNL Adobe Experience Platform]目标连接器的说明。 此连接器用于构建受众并将受众分发到选定的目标。
+本教程提供了使用[!DNL Acxiom Audience Connection]用户界面创建[!DNL Adobe Experience Platform]目标连接器的说明。 此连接器可构建受众并将受众分发到选定的目标。
 
 ## 用例 {#use-cases}
 
@@ -33,7 +33,7 @@ ht-degree: 7%
 ## 先决条件 {#prerequisites}
 
 * **确认使用条款：**&#x200B;在配置新的[!DNL Acxiom Audience Connection]目标之前，您必须阅读并签署[!DNL Acxiom's]使用条款协议。 在您执行的销售订单完成后，您将收到指向协议的链接。
-* **知道您的Adobe组织ID：**&#x200B;需要您的[!DNL Adobe]组织ID才能完成您的用户协议条款。 有关如何[!DNL Adobe's]查看组织ID *的详细信息，请参阅* [Experience Cloud中的组织](https://experienceleague.adobe.com/zh-hans/docs/core-services/interface/administration/organizations#concept_EA8AEE5B02CF46ACBDAD6A8508646255)主题。
+* **知道您的Adobe组织ID：**&#x200B;需要您的[!DNL Adobe]组织ID才能完成您的用户协议条款。 有关如何[!DNL Adobe's]查看组织ID *的详细信息，请参阅* [Experience Cloud中的组织](https://experienceleague.adobe.com/en/docs/core-services/interface/administration/organizations#concept_EA8AEE5B02CF46ACBDAD6A8508646255)主题。
 
 ## 支持的目标 {#supported-destinations}
 
@@ -54,7 +54,7 @@ ht-degree: 7%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -67,7 +67,7 @@ ht-degree: 7%
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -121,7 +121,7 @@ ht-degree: 7%
 | 电子邮件 | 主电子邮件默认情况下，此字段用作重复数据删除键以使记录唯一 | 否 | 10 | 255 |
 | 电话 | 个人电话号码（区号+号码）<br>默认情况下，此字段用作重复数据删除键以使记录唯一。 | 否 | 11 | 10 |
 
-在&#x200B;**[!UICONTROL Source Field]**&#x200B;列中，输入要映射到相应目标字段的每个源属性的名称，或选择箭头图标以打开&#x200B;**[!UICONTROL &#x200B; Select source field]**&#x200B;屏幕。<br>
+在&#x200B;**[!UICONTROL Source Field]**&#x200B;列中，输入要映射到相应目标字段的每个源属性的名称，或选择箭头图标以打开&#x200B;**[!UICONTROL Select source field]**&#x200B;屏幕。<br>
 ![映射屏幕](../../assets/catalog/advertising/acxiom-audience-distribution/mapping_screen.png)
 
 映射所有字段后，选择&#x200B;**[!UICONTROL Next]**。
@@ -153,4 +153,4 @@ ht-degree: 7%
 
 ## 数据使用和治理 {#data-usage-governance}
 
-在处理您的数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据治理的详细信息，请阅读[数据治理概述](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/data-governance/home)。
+在处理您的数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据治理的详细信息，请阅读[数据治理概述](https://experienceleague.adobe.com/en/docs/experience-platform/data-governance/home)。

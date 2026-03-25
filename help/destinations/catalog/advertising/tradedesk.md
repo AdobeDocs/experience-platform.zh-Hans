@@ -3,9 +3,9 @@ keywords: 广告；交易台；广告交易台
 title: 交易台连接
 description: Trade Desk是一个自助服务平台，供广告购买者跨显示器、视频和移动库存源执行重定位和面向受众的数字活动。
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1376'
+source-wordcount: '1359'
 ht-degree: 4%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-使用此目标连接器将配置文件数据发送到[!DNL The Trade Desk]。 此连接器将数据发送到[!DNL The Trade Desk]第一方终结点。 Adobe Experience Platform与[!DNL The Trade Desk]之间的集成不支持将数据导出到[!DNL The Trade Desk]第三方端点。
+使用此目标连接器将配置文件数据发送到[!DNL The Trade Desk]。 此连接器将数据发送到[!DNL The Trade Desk]第一方终结点。 [!DNL Adobe Experience Platform]和[!DNL The Trade Desk]之间的集成不支持将数据导出到[!DNL The Trade Desk]第三方终结点。
 
 [!DNL The Trade Desk]是一个自助服务平台，供广告购买者跨显示、视频和移动库存源执行重定位和面向受众的数字营销活动。
 
@@ -28,7 +28,7 @@ ht-degree: 4%
 
 [!DNL The Trade Desk]支持根据下表所示的标识激活受众。 了解有关[标识](/help/identity-service/features/namespaces.md)的更多信息。
 
-以下是[!DNL The Trade Desk]目标支持的标识。 这些标识可用于激活[!DNL The Trade Desk]的受众。
+以下是[!DNL The Trade Desk]目标支持的标识。 使用这些标识来激活[!DNL The Trade Desk]的受众。
 
 下表中的所有标识均已预配置，并在激活期间自动映射。 您无需在激活工作流中手动配置这些映射。
 
@@ -36,7 +36,7 @@ ht-degree: 4%
 |---|---|---|
 | GAID | GOOGLE ADVERTISING ID | 当配置文件上存在GAID时激活。 |
 | IDFA | 广告商的Apple ID | 当配置文件上存在IDFA时激活。 |
-| ECID | Experience Cloud ID | 表示ECID的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 有关详细信息，请阅读以下有关[ECID](/help/identity-service/features/ecid.md)的文档。 |
+| ECID | Experience Cloud ID | 表示ECID的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“[!DNL Adobe Experience Cloud] ID”、“[!DNL Adobe Experience Platform] ID”。 有关详细信息，请阅读以下有关[ECID](/help/identity-service/features/ecid.md)的文档。 |
 | [!DNL Tradedesk] | [!DNL TDID]平台中的[!DNL The Trade Desk] | 当配置文件具有ECID且Experience Platform中存在ECID到交易台ID映射时激活。 |
 
 {style="table-layout:auto"}
@@ -48,7 +48,7 @@ ht-degree: 4%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -61,7 +61,7 @@ ht-degree: 4%
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -85,7 +85,7 @@ ht-degree: 4%
 
 **对于基于[!DNL The Trade Desk]**&#x200B;的Cookie定位，请确保在ECID和[!DNL Trade Desk ID]之间建立映射。 完成以下步骤以执行此操作：
 
-1. **启用ID同步功能**：如果您是第一次设置[!DNL The Trade Desk ID]激活，并且以前未在Experience Cloud ID服务中启用[ID同步功能](https://experienceleague.adobe.com/zh-hans/docs/id-service/using/id-service-api/methods/idsync)（使用Adobe Audience Manager或其他应用程序），请与Adobe Consulting或客户关怀部门联系以启用ID同步。
+1. **启用ID同步功能**：如果您是第一次设置[!DNL The Trade Desk ID]激活，并且以前未在Experience Cloud ID服务中启用[ID同步功能](https://experienceleague.adobe.com/en/docs/id-service/using/id-service-api/methods/idsync)（使用Adobe Audience Manager或其他应用程序），请与Adobe Consulting或客户关怀部门联系以启用ID同步。
    * 如果您之前在Audience Manager中设置了[!DNL The Trade Desk]集成，则您现有的ID同步会自动转移到Experience Platform。
 
 2. **检测您的网页**：在您的网页上实施代码以创建[!DNL The Trade Desk ID]和Adobe ECID之间的映射。 这允许Experience Platform将交易台ID与客户配置文件相关联。

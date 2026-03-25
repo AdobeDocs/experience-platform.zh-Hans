@@ -2,10 +2,10 @@
 description: Experience Platform Destination SDK使用Pebble模板，允许您将从Experience Platform导出的数据转换为目标所需的格式。
 title: Destination SDK中支持的转换函数
 exl-id: 36f761c7-9d76-41fe-b05f-d4cad655ddd2
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '551'
-ht-degree: 1%
+source-wordcount: '548'
+ht-degree: 2%
 
 ---
 
@@ -17,7 +17,7 @@ Experience Platform Destination SDK使用[[!DNL Pebble] 模板](https://pebblete
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 使用位置 {#where-to-use}
 
@@ -45,7 +45,7 @@ Experience Platform Destination SDK使用[[!DNL Pebble] 模板](https://pebblete
 >在模板中迭代使用`for`数组&#x200B;*或*&#x200B;映射&#x200B;*元素时，使用*&#x200B;是不同的。 循环访问数组时，可以直接获取元素。 循环访问映射时，将获得每个映射项，每个映射项都有一个键值对。
 >
 > * 有关数组元素的示例，请考虑[identityMap](message-format.md#identities)命名空间中的标识，在该命名空间中，您可以对`identityMap.gaid`、`identityMap.email`等元素进行迭代。
-> * 有关映射元素的示例，请考虑[segmentMembership](message-format.md#segment-membership)。
+> * 有关映射元素的示例，请考虑[segmentMembership](message-format.md#audience-membership)。
 
 从[!DNL Pebble]筛选器部分中，Destination SDK支持所有函数。 下面的进一步示例显示了如何在Destination SDK中使用`date`函数。
 
@@ -53,7 +53,7 @@ Experience Platform Destination SDK使用[[!DNL Pebble] 模板](https://pebblete
 
 ## 如何使用`date`函数的示例 {#date-function}
 
-要举例说明Destination SDK中如何使用[!DNL Pebble]函数，请参阅下面如何使用日期函数（[链接，位于Pebble文档](https://pebbletemplates.io/wiki/filter/date/)中）转换时间戳的格式。
+要举例说明[!DNL Pebble]函数在Destination SDK中的使用方式，请参阅下面日期函数（[链接，位于Pebble文档](https://pebbletemplates.io/wiki/filter/date/)中）如何转换时间戳的格式。
 
 ### 用例 {#date-use-case}
 

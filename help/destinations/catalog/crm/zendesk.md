@@ -3,9 +3,9 @@ title: Zendesk连接
 description: Zendesk目标允许您导出帐户数据，并在Zendesk中激活该数据，以满足您的业务需求。
 last-substantial-update: 2023-03-14T00:00:00Z
 exl-id: e7fcbbf4-5d6c-4abb-96cb-ea5b67a88711
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1577'
+source-wordcount: '1565'
 ht-degree: 3%
 
 ---
@@ -20,13 +20,13 @@ ht-degree: 3%
 
 ## 用例 {#use-cases}
 
-多渠道B2C平台的客户服务部希望为其客户提供无缝的个性化体验。 该部门可根据受众自己的离线数据构建受众，以创建新用户配置文件或更新来自不同交互（例如购买、退货等）的现有配置文件信息，并将这些受众从Adobe Experience Platform发送到[!DNL Zendesk]。 在[!DNL Zendesk]中拥有更新的信息可确保客户服务代理立即获得客户的最新信息，从而加快响应和解决速度。
+多渠道B2C平台的客户服务部希望为其客户提供无缝的个性化体验。 该部门可以根据自己的离线数据构建受众，以创建新的用户配置文件或更新来自不同交互（例如购买、退货等）的现有配置文件信息，并将这些受众从[!DNL Adobe Experience Platform]发送到[!DNL Zendesk]。 在[!DNL Zendesk]中拥有更新的信息可确保客户服务代理立即获得客户的最新信息，从而加快响应和解决速度。
 
 ## 先决条件 {#prerequisites}
 
 ### Experience Platform先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL Zendesk]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=zh-Hans)区段[!DNL Experience Platform]。
+在将数据激活到[!DNL Zendesk]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)区段[!DNL Experience Platform]。
 
 如果您需要有关受众状态的指导，请参阅Experience Platform文档，了解[受众成员资格详细信息架构字段组](/help/xdm/field-groups/profile/segmentation.md)。
 
@@ -61,7 +61,7 @@ ht-degree: 3%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -74,7 +74,7 @@ ht-degree: 3%
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -136,7 +136,7 @@ ht-degree: 3%
 
 ### 映射注意事项和示例 {#mapping-considerations-example}
 
-要将受众数据从Adobe Experience Platform正确发送到[!DNL Zendesk]目标，您需要完成字段映射步骤。 映射包括在Experience Platform帐户中的Experience Data Model (XDM)架构字段与其与目标中的相应等效字段之间创建链接。
+要将受众数据从[!DNL Adobe Experience Platform]正确发送到[!DNL Zendesk]目标，您需要执行字段映射步骤。 映射包括在Experience Platform帐户中的Experience Data Model (XDM)架构字段与其与目标中的相应等效字段之间创建链接。
 
 在&#x200B;**[!UICONTROL Target field]**&#x200B;中指定的属性应该完全按照属性映射表中的说明进行命名，因为这些属性将构成请求正文。
 
@@ -179,16 +179,16 @@ ht-degree: 3%
 要验证您是否正确设置了目标，请执行以下步骤：
 
 1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**&#x200B;并导航到目标列表。
-1. 接下来，选择目标并切换到&#x200B;**[!UICONTROL Activation data]**&#x200B;选项卡，然后选择受众名称。
+1. 接下来，选择目标并切换到&#x200B;**[!UICONTROL Activation data]**选项卡，然后选择受众名称。
    ![显示目标激活数据的Experience Platform UI屏幕截图示例。](../../assets/catalog/crm/zendesk/destinations-activation-data.png)
 
 1. 监控受众摘要，并确保用户档案计数对应于区段中的计数。
    ![显示区段的Experience Platform UI屏幕快照示例。](../../assets/catalog/crm/zendesk/segment.png)
 
-1. 登录到[!DNL Zendesk]网站，然后导航到&#x200B;**[!UICONTROL Contacts]**&#x200B;页面以检查受众中的配置文件是否已添加。 此列表可以配置为显示使用受众&#x200B;**[!UICONTROL Mapping ID]**&#x200B;和受众状态创建的其他字段的列。
+1. 登录到[!DNL Zendesk]网站，然后导航到&#x200B;**[!UICONTROL Contacts]**&#x200B;页面以检查受众中的配置文件是否已添加。 此列表可以配置为显示使用受众**[!UICONTROL Mapping ID]**和受众状态创建的其他字段的列。
    ![Zendesk UI屏幕截图显示“联系人”页面，其中包含使用受众名称创建的其他字段。](../../assets/catalog/crm/zendesk/contacts.png)
 
-1. 或者，您可以向下钻取到单个&#x200B;**[!UICONTROL Person]**&#x200B;页面，并检查显示受众名称和受众状态的&#x200B;**[!UICONTROL Additional fields]**&#x200B;部分。
+1. 或者，您可以向下钻取到单个&#x200B;**[!UICONTROL Person]**&#x200B;页面，并检查显示受众名称和受众状态的&#x200B;**[!UICONTROL Additional fields]**部分。
    ![显示“人员”页面的Zendesk UI屏幕截图，“其他字段”部分显示受众名称和受众状态。](../../assets/catalog/crm/zendesk/contact.png)
 
 ## 数据使用和治理 {#data-usage-governance}

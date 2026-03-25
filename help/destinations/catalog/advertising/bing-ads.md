@@ -3,9 +3,9 @@ keywords: bing；bing ads事件跟踪；事件跟踪bing；UET；UET扩展
 title: Bing Ads通用事件跟踪(UET)扩展
 description: Bing Ads通用事件跟踪(UET)扩展是Adobe Experience Platform中的一个广告目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: f2fc4d1f-01b0-4813-902c-9a3c30a8fa78
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '494'
+source-wordcount: '485'
 ht-degree: 3%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 3%
 
 [!DNL Bing Ads Universal Event Tracking] (UET)标记扩展是一种跟踪某人单击您的搜索广告后所发生情况的有用方法。 通过使用单个UET标记记录客户在您的网站上的操作，您可以利用该数据，从而允许您使用再营销列表跟踪转化或目标受众。
 
-[!DNL Bing Ads Universal Event Tracking] (UET)是Adobe Experience Platform中的广告扩展。 有关扩展功能的更多信息，请参阅[Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100154.html)上的扩展页面。
+[!DNL Bing Ads Universal Event Tracking] (UET)是[!DNL Adobe Experience Platform]中的广告扩展。 有关扩展功能的更多信息，请参阅[Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100154.html)上的扩展页面。
 
 此目标是标记扩展。 有关标记扩展如何在Experience Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
@@ -26,7 +26,7 @@ ht-degree: 3%
 
 此扩展位于[!DNL Destinations]目录中，适用于已购买Experience Platform的所有客户。
 
-要使用此扩展，您需要具有对Adobe Experience Platform中标记的访问权限。 标记以内置增值功能的方式提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
+要使用此扩展，您需要访问[!DNL Adobe Experience Platform]中的标记。 标记以内置增值功能的方式提供给[!DNL Adobe Experience Cloud]客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
 
 ## 安装扩展 {#install-extension}
 

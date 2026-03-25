@@ -2,9 +2,9 @@
 title: (API) Salesforce Marketing Cloud连接
 description: Salesforce Marketing Cloud（以前称为ExactTarget）目标允许您导出帐户数据，并在Salesforce Marketing Cloud中激活该数据，以满足您的业务需求。
 exl-id: 0cf068e6-8a0a-4292-a7ec-c40508846e27
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '2954'
+source-wordcount: '2936'
 ht-degree: 2%
 
 ---
@@ -13,31 +13,31 @@ ht-degree: 2%
 
 ## 概述 {#overview}
 
-[[!DNL (API) Salesforce Marketing Cloud]](https://www.salesforce.com/products/marketing-cloud/engagement/) （以前称为[!DNL ExactTarget]）是一个数字营销套件，它允许您为访客和客户构建和自定义历程，以个性化其体验。
+[[!DNL (API) Salesforce Marketing Cloud]](https://www.salesforce.com/products/marketing-cloud/engagement/)（以前称为[!DNL ExactTarget]）是一个数字营销套件，可让您为访客和客户构建和自定义历程，以个性化其体验。
 
 >[!IMPORTANT]
 >
-> 请注意此连接与电子邮件营销目录分区中存在的其他[[!DNL Salesforce Marketing Cloud] 连接](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud.md)之间的区别。 另一个Salesforce Marketing Cloud连接允许您将文件导出到指定的存储位置，而这是一个基于API的流连接。
+> 请注意此连接与电子邮件营销目录分区中存在的其他[[!DNL Salesforce Marketing Cloud] 连接](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud.md)之间的区别。 通过另一个Salesforce Marketing Cloud连接，您可以将文件导出到指定的存储位置，而这是一个基于API的流连接。
 
 与更面向[!DNL Salesforce Marketing Cloud Account Engagement]B2B **营销的**&#x200B;相比，[!DNL (API) Salesforce Marketing Cloud]目标更适合于事务性决策周期较短的&#x200B;**B2C**&#x200B;用例。 您可以合并表示目标受众行为的较大数据集，以通过优先排序和划分联系人（尤其是来自[!DNL Salesforce]外部的数据集）来调整和改进营销活动。 *注意，Experience Platform也具有[[!DNL Salesforce Marketing Cloud Account Engagement]](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md).*&#x200B;的连接
 
-此[!DNL Adobe Experience Platform] [目标](/help/destinations/home.md)使用[!DNL Salesforce Marketing Cloud] [更新联系人](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/updateContacts.html) API，这允许您在新&#x200B;**区段中激活联系人后，针对您的业务需求**&#x200B;添加联系人并更新联系人数据[!DNL Salesforce Marketing Cloud]。
+此[!DNL Adobe Experience Platform] [目标](/help/destinations/home.md)使用[!DNL Salesforce Marketing Cloud] [更新联系人](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/updateContacts.html) API，这允许您在新&#x200B;**区段中激活联系人后，根据业务需求**&#x200B;添加联系人并更新联系人数据[!DNL Salesforce Marketing Cloud]。
 
 [!DNL Salesforce Marketing Cloud]使用带有客户端凭据的OAuth 2作为身份验证机制来与[!DNL Salesforce Marketing Cloud] API通信。 下面的[!DNL Salesforce Marketing Cloud]向目标身份验证[部分中进一步提供了向您的](#authenticate)实例进行身份验证的说明。
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解您应如何以及何时使用[!DNL (API) Salesforce Marketing Cloud]目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
+为了帮助您更好地了解您应如何以及何时使用[!DNL (API) Salesforce Marketing Cloud]目标，以下是[!DNL Adobe Experience Platform]客户可以通过使用此目标解决的示例用例。
 
 ### 向营销活动的联系人发送电子邮件 {#use-case-send-emails}
 
-家庭租赁平台的销售部门希望向目标客户受众广播营销电子邮件。 平台的营销团队可以通过Adobe Experience Platform添加新联系人/更新现有联系人&#x200B;*（及其电子邮件地址）*，使用他们自己的离线数据构建受众，并将这些受众发送到[!DNL Salesforce Marketing Cloud]，然后可以使用这些受众发送营销活动电子邮件。
+家庭租赁平台的销售部门希望向目标客户受众广播营销电子邮件。 平台的营销团队可以通过&#x200B;*添加新联系人/更新现有联系人*（及其电子邮件地址）[!DNL Adobe Experience Platform]，使用他们自己的离线数据构建受众，并将这些受众发送到[!DNL Salesforce Marketing Cloud]，然后可以使用这些受众发送营销活动电子邮件。
 
 ## 先决条件 {#prerequisites}
 
 ### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL (API) Salesforce Marketing Cloud]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=zh-Hans)区段[!DNL Experience Platform]。
+在将数据激活到[!DNL (API) Salesforce Marketing Cloud]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)区段[!DNL Experience Platform]。
 
 ### [!DNL (API) Salesforce Marketing Cloud]中的先决条件 {#prerequisites-destination}
 
@@ -140,7 +140,7 @@ ht-degree: 2%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -153,7 +153,7 @@ ht-degree: 2%
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -220,7 +220,7 @@ ht-degree: 2%
 
 ### 映射注意事项和示例 {#mapping-considerations-example}
 
-要将受众数据从Adobe Experience Platform正确发送到[!DNL (API) Salesforce Marketing Cloud]目标，您需要完成字段映射步骤。 映射包括在Experience Platform帐户中的Experience Data Model (XDM)架构字段与其与目标中的相应等效字段之间创建链接。
+要将受众数据从[!DNL Adobe Experience Platform]正确发送到[!DNL (API) Salesforce Marketing Cloud]目标，您需要执行字段映射步骤。 映射包括在Experience Platform帐户中的Experience Data Model (XDM)架构字段与其与目标中的相应等效字段之间创建链接。
 
 要将XDM字段正确映射到[!DNL (API) Salesforce Marketing Cloud]目标字段，请执行以下步骤。
 
@@ -280,19 +280,19 @@ ht-degree: 2%
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**&#x200B;以导航到目标列表。
+1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**以导航到目标列表。
    ![显示“浏览目标”的Experience Platform UI屏幕截图。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/browse-destinations.png)
 
 1. 选择目标并验证状态为&#x200B;**[!UICONTROL enabled]**。
    ![Experience Platform UI屏幕截图显示目标数据流运行。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/destination-dataflow-run.png)
 
-1. 切换到&#x200B;**[!DNL Activation data]**&#x200B;选项卡，然后选择受众名称。
+1. 切换到&#x200B;**[!DNL Activation data]**选项卡，然后选择受众名称。
    ![显示目标激活数据的Experience Platform UI屏幕截图示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/destinations-activation-data.png)
 
 1. 监控受众摘要，并确保用户档案计数对应于在区段内创建的计数。
    ![显示区段的Experience Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/segment.png)
 
-1. 登录到[[!DNL Salesforce Marketing Cloud]](https://mc.exacttarget.com/)网站。 然后导航到&#x200B;**[!DNL Audience Builder]** > **[!DNL Contact Builder]** > **[!DNL All contacts]** > **[!DNL Email]**&#x200B;页面，并检查受众中的配置文件是否已添加。
+1. 登录到[[!DNL Salesforce Marketing Cloud]](https://mc.exacttarget.com/)网站。 然后导航到&#x200B;**[!DNL Audience Builder]** > **[!DNL Contact Builder]** > **[!DNL All contacts]** > **[!DNL Email]**页面，并检查受众中的配置文件是否已添加。
    ![Salesforce Marketing Cloud UI屏幕截图显示了包含区段中所用配置文件的联系人页面。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/contacts.png)
 
 1. 要检查是否已更新任何配置文件，请导航到&#x200B;**[!UICONTROL Email]**&#x200B;页面，并验证受众中配置文件的属性值是否已更新。 如果成功，您可以看到根据[!DNL Salesforce Marketing Cloud]受众计划&#x200B;**[!UICONTROL Mapping ID]**&#x200B;步骤中提供的[值，](#schedule-segment-export-example)中的每个受众状态都已更新为Experience Platform中的相应受众状态。

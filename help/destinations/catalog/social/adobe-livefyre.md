@@ -3,10 +3,10 @@ keywords: livefyre；livefyre扩展
 title: Adobe Livefyre扩展
 description: Adobe Livefyre扩展是Adobe Experience Platform中的社交目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: a134c144-e7b8-4d48-8c90-5999e5ceb8a0
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '432'
-ht-degree: 3%
+source-wordcount: '423'
+ht-degree: 4%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 3%
 
 Adobe Livefyre使您能够发现、整理用户生成的内容流并将其发布到您的网站上，以创建真实且高度个性化的体验。
 
-Adobe Livefyre是Adobe Experience Platform中的一项社交扩展。 有关Adobe Livefyre的更多信息，请参阅[Livefyre实施指南](https://experienceleague.adobe.com/docs/livefyre/implementation/home.html?lang=zh-Hans)。
+Adobe Livefyre是[!DNL Adobe Experience Platform]中的社交扩展。 有关Adobe Livefyre的更多信息，请参阅[Livefyre实施指南](https://experienceleague.adobe.com/docs/livefyre/implementation/home.html)。
 
 此目标是标记扩展。 有关标记扩展如何在Experience Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
@@ -26,7 +26,7 @@ Adobe Livefyre是Adobe Experience Platform中的一项社交扩展。 有关Adob
 
 此扩展位于[!DNL Destinations]目录中，适用于已购买Experience Platform的所有客户。
 
-要使用此扩展，您需要具有对Adobe Experience Platform中标记的访问权限。 标记以内置增值功能的方式提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
+要使用此扩展，您需要访问[!DNL Adobe Experience Platform]中的标记。 标记以内置增值功能的方式提供给[!DNL Adobe Experience Cloud]客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
 
 ## 安装扩展 {#install-extension}
 

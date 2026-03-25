@@ -4,9 +4,9 @@ title: 使用流服务API编辑目标连接
 type: Tutorial
 description: 了解如何使用流服务API编辑目标连接的各种组件。
 exl-id: d6d27d5a-e50c-4170-bb3a-c4cbf2b46653
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1610'
+source-wordcount: '1604'
 ht-degree: 5%
 
 ---
@@ -27,9 +27,9 @@ ht-degree: 5%
 >
 > 在本教程中，术语&#x200B;*流*&#x200B;和&#x200B;*数据流*&#x200B;可互换使用。 在本教程的上下文中，它们具有相同的含义。
 
-本教程还要求您实际了解Adobe Experience Platform的以下组件：
+本教程还要求您实际了解[!DNL Adobe Experience Platform]的以下组件：
 
-* [目标](../home.md)： [!DNL Destinations]是预先构建的与目标平台的集成，可无缝激活Adobe Experience Platform中的数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例。
+* [目标](../home.md)： [!DNL Destinations]是与目标平台的预建集成，允许无缝激活来自[!DNL Adobe Experience Platform]的数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例。
 * [沙盒](../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了使用[!DNL Flow Service] API成功更新数据流时需要了解的其他信息。

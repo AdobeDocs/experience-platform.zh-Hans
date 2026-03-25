@@ -2,16 +2,16 @@
 description: 了解如何设置聚合策略，以确定应如何对发往您目标的HTTP请求进行分组和批处理。
 title: 聚合策略
 exl-id: 2dfa8815-2d69-4a22-8938-8ea41be8b9c5
-source-git-commit: 92d7abcbd642cea4e0fa041d2926ba8868f506e5
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1235'
+source-wordcount: '1233'
 ht-degree: 2%
 
 ---
 
 # 聚合策略
 
-为了确保将数据导出到API端点时实现最高效率，您可以使用各种设置将导出的用户档案聚合为更大或更小的批次，按身份和其他用例对其进行分组。 这还允许您根据API端点的任何下游限制（速率限制、每个API调用的身份数等）定制数据导出。
+为了确保将数据导出到API端点时实现最高效率，您可以使用各种设置将导出的用户档案聚合为更大或更小的批次，按身份和其他用例对其进行分组。 此外，您还可以根据对API端点的任何下游限制（速率限制、每个API调用的身份数等）定制数据导出。
 
 使用可配置的聚合深入了解Destination SDK提供的设置，或使用尽力聚合告知Destination SDK尽可能多地批处理API调用。
 
@@ -30,7 +30,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 

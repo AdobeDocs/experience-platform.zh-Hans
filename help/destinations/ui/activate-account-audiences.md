@@ -3,9 +3,9 @@ title: 将帐户受众激活到目标
 type: Tutorial
 description: 了解如何将帐户受众激活到目标
 exl-id: ad69d0a8-bf5b-42ac-97a3-401eadda62cd
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '772'
+source-wordcount: '762'
 ht-degree: 0%
 
 ---
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->向目标激活帐户受众的功能适用于购买[企业对企业](/help/rtcdp/overview.md#rtcdp-b2b)和[企业对个人](/help/rtcdp/overview.md#rtcdp-b2p)版本的Real-Time Customer Data Platform的公司。
+>向目标激活帐户受众的功能适用于购买[的](/help/rtcdp/overview.md#rtcdp-b2b)企业对企业[和](/help/rtcdp/overview.md#rtcdp-b2p)企业对个人[!DNL Real-Time Customer Data Platform]版本的公司。
 
-本文介绍了将[帐户受众](/help/segmentation/types/account-audiences.md)从Adobe Experience Platform导出到您的首选目标所需的工作流。
+本文介绍将[帐户受众](/help/segmentation/types/account-audiences.md)从[!DNL Adobe Experience Platform]导出到您的首选目标所需的工作流。
 
 ## 支持的目标 {#supported-destinations}
 
@@ -53,7 +53,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->可导出帐户受众的目标在卡片的右上角以图标指示，类似于下面高亮显示的目标，或者，您可以使用数据类型筛选器以仅显示可导出帐户受众的目标，如页面上较高位置显示的[&#128279;](#supported-destinations)。
+>可导出帐户受众的目标在卡片的右上角以图标指示，类似于下面高亮显示的目标，或者，您可以使用数据类型筛选器以仅显示可导出帐户受众的目标，如页面上较高位置显示的[](#supported-destinations)。
 
 ![可导出突出显示的配置文件受众的Demandbase目标页面。](/help/destinations/assets/ui/activate-account-audiences/demandbase-icon-activate-account-audiences.png)
 
@@ -108,4 +108,4 @@ ht-degree: 0%
 
 ![激活帐户受众工作流的审核步骤，同意强制控制呈灰显状态。](/help/destinations/assets/ui/activate-account-audiences/consent-checks-greyed-out.png)
 
-支持Real-Time CDP中的其他数据治理机制，如[数据使用策略检查](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)和[基于属性的访问控制](/help/destinations/home.md#attribute-based-access)。
+支持[!DNL Real-Time CDP]中的其他数据治理机制，如[数据使用策略检查](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation)和[基于属性的访问控制](/help/destinations/home.md#attribute-based-access)。

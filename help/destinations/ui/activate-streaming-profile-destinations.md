@@ -4,9 +4,9 @@ type: Tutorial
 description: 了解如何通过将受众发送到基于个人资料的流目标来激活您在Adobe Experience Platform中的受众数据。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: bc0f781e-60de-44a5-93cb-06b4a3148591
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '762'
+source-wordcount: '759'
 ht-degree: 1%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 1%
 
 ## 概述 {#overview}
 
-本文介绍了在Adobe Experience Platform中将受众数据激活到基于配置文件的流式目标（也称为[企业目标](/help/destinations/destination-types.md#advanced-enterprise-destinations)）所需的工作流。
+本文说明了在[!DNL Adobe Experience Platform]中将受众数据激活到基于配置文件的流式目标（也称为[企业目标](/help/destinations/destination-types.md#advanced-enterprise-destinations)）所需的工作流。
 
 本文适用于以下三个目标：
 

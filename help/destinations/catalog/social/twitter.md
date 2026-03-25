@@ -2,9 +2,9 @@
 title: Twitter自定义受众连接
 description: 在Twitter中定位现有的关注者和客户，并通过激活在Adobe Experience Platform中构建的受众来创建相关的再营销活动
 exl-id: fd244e58-cd94-4de7-81e4-c321eb673b65
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '958'
+source-wordcount: '937'
 ht-degree: 6%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 6%
 
 ## 概述 {#overview}
 
-在Twitter中定位现有的关注者和客户，并通过激活在Adobe Experience Platform中构建的受众来创建相关的再营销活动。
+在Twitter中定位您现有的关注者和客户，并通过激活[!DNL Adobe Experience Platform]中构建的受众来创建相关的再营销活动。
 
 ## 先决条件 {#prerequisites}
 
@@ -24,12 +24,12 @@ ht-degree: 6%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Twitter Custom Audiences]支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=zh-Hans#getting-started)的更多信息。
+[!DNL Twitter Custom Audiences]支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started)的更多信息。
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| device_id | IDFA/AdID/Android ID | Adobe Experience Platform支持Google Advertising ID (GAID)和广告商Apple ID (IDFA)。 请在目标激活工作流的[映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)中相应地映射源架构中的这些命名空间和/或属性。 |
-| 电子邮件 | 用户的电子邮件地址 | 请将纯文本电子邮件地址和SHA256散列电子邮件地址映射到此字段。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以便在激活时自动对[!DNL Experience Platform]数据进行哈希处理。 如果您在上传到Adobe Experience Platform之前对客户电子邮件地址进行了哈希处理，请注意，必须使用SHA256对这些身份进行哈希处理，而不需使用Salt。 |
+| device_id | IDFA/AdID/Android ID | [!DNL Adobe Experience Platform]支持广告商的Google Advertising ID (GAID)和Apple ID (IDFA)。 请在目标激活工作流的[映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)中相应地映射源架构中的这些命名空间和/或属性。 |
+| 电子邮件 | 用户的电子邮件地址 | 请将纯文本电子邮件地址和SHA256散列电子邮件地址映射到此字段。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以便在激活时自动对[!DNL Experience Platform]数据进行哈希处理。 如果您在上传到[!DNL Adobe Experience Platform]之前对客户电子邮件地址进行了哈希处理，请注意，必须使用SHA256对这些身份进行哈希处理，而不加盐。 |
 
 {style="table-layout:auto"}
 
@@ -40,7 +40,7 @@ ht-degree: 6%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -53,7 +53,7 @@ ht-degree: 6%
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -71,11 +71,11 @@ ht-degree: 6%
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解您应如何以及何时使用[!DNL Twitter Custom Audiences]目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
+为了帮助您更好地了解您应如何以及何时使用[!DNL Twitter Custom Audiences]目标，以下是[!DNL Adobe Experience Platform]客户可以通过使用此目标解决的示例用例。
 
 ### 用例#1 {#use-case-1}
 
-在Twitter中定位现有的关注者和客户，并通过在Twitter中将Adobe Experience Platform中构建的受众激活为[!DNL List Custom Audiences]来创建相关的再营销活动。
+在Twitter中定位您现有的关注者和客户，并通过在Twitter中将[!DNL Adobe Experience Platform]中构建的受众激活为[!DNL List Custom Audiences]来创建相关的再营销活动。
 
 ## 连接到目标 {#connect}
 

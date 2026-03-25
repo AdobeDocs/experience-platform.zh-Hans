@@ -4,9 +4,9 @@ title: HTTP API连接
 description: 使用Adobe Experience Platform中的HTTP API目标将配置文件数据发送到第三方HTTP端点，以运行您自己的Analytics或对从Experience Platform导出的配置文件数据执行您可能所需的任何其他操作。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '3039'
+source-wordcount: '3020'
 ht-degree: 8%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 8%
 
 >[!IMPORTANT]
 >
-> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
 HTTP API目标是一个[!DNL Adobe Experience Platform]流目标，可帮助您将配置文件数据发送到第三方HTTP端点。
 
@@ -36,7 +36,7 @@ HTTP端点可以是客户自己的系统或第三方解决方案。
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -49,7 +49,7 @@ HTTP端点可以是客户自己的系统或第三方解决方案。
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -174,8 +174,8 @@ curl --location --request POST 'https://some-api.com/token' \
 >**mTLS限制： OAuth 2密码身份验证不支持** mTLS。 有关详细信息，请参阅[mTLS注意事项](#mtls-considerations)部分。
 
 * **[!UICONTROL Access Token URL]**：您颁发访问令牌以及（可选）刷新令牌的URL。
-* **[!UICONTROL Client ID]**：系统分配给Adobe Experience Platform的[!DNL client ID]。
-* **[!UICONTROL Client Secret]**：系统分配给Adobe Experience Platform的[!DNL client secret]。
+* **[!UICONTROL Client ID]**：系统分配给[!DNL client ID]的[!DNL Adobe Experience Platform]。
+* **[!UICONTROL Client Secret]**：系统分配给[!DNL client secret]的[!DNL Adobe Experience Platform]。
 * **[!UICONTROL Username]**：用于访问HTTP端点的用户名。
 * **[!UICONTROL Password]**：用于访问HTTP端点的密码。
 
@@ -194,8 +194,8 @@ curl --location --request POST 'https://some-api.com/token' \
 >**mTLS限制： OAuth 2客户端凭据身份验证不支持** mTLS。 有关详细信息，请参阅[mTLS注意事项](#mtls-considerations)部分。
 
 * **[!UICONTROL Access Token URL]**：您颁发访问令牌以及（可选）刷新令牌的URL。
-* **[!UICONTROL Client ID]**：系统分配给Adobe Experience Platform的[!DNL client ID]。
-* **[!UICONTROL Client Secret]**：系统分配给Adobe Experience Platform的[!DNL client secret]。
+* **[!UICONTROL Client ID]**：系统分配给[!DNL client ID]的[!DNL Adobe Experience Platform]。
+* **[!UICONTROL Client Secret]**：系统分配给[!DNL client secret]的[!DNL Adobe Experience Platform]。
 * **[!UICONTROL Client Credentials Type]**：选择您的端点支持的OAuth2客户端凭据授予类型：
    * **[!UICONTROL Body Form Encoded]**：在这种情况下，[!DNL client ID]和[!DNL client secret]包含在发送到目标的请求&#x200B;*的正文中*。 有关示例，请参阅[支持的身份验证类型](#supported-authentication-types)部分。
    * **[!UICONTROL Basic Authorization]**：在这种情况下，[!DNL client ID]和[!DNL client secret]在经过base64编码并发送到目标之后，包含在&#x200B;*标头`Authorization`中的*。 有关示例，请参阅[支持的身份验证类型](#supported-authentication-types)部分。

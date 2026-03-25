@@ -2,16 +2,16 @@
 description: 了解如何通过“/authoring/destination-servers”端点在Adobe Experience Platform Destination SDK中配置目标服务器规范。
 title: 使用Destination SDK创建目标的服务器规范
 exl-id: 62202edb-a954-42ff-9772-863cea37a889
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '2775'
+source-wordcount: '2748'
 ht-degree: 2%
 
 ---
 
 # 使用Destination SDK创建目标的服务器规范
 
-目标服务器规范定义将从Adobe Experience Platform接收数据的目标平台的类型，以及Experience Platform与您的目标之间的通信参数。 例如：
+目标服务器规范定义将从[!DNL Adobe Experience Platform]接收数据的目标平台的类型，以及Experience Platform与您的目标之间的通信参数。 例如：
 
 * [流](#streaming-example)目标服务器规范定义将从Experience Platform接收HTTP消息的HTTP服务器终结点。 要了解如何配置对端点的HTTP调用的格式，请阅读[模板规范](templating-specs.md)页面。
 * [Amazon S3](#s3-example)目标服务器规范定义了Experience Platform将导出文件的[!DNL S3]存储段名称和路径。
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 要了解此组件在何处适合使用Destination SDK创建的集成，请参阅[配置选项](../configuration-options.md)文档中的关系图或查看以下目标配置概述页面：
 
-* [使用Destination SDK配置流目标](../../guides/configure-destination-instructions.md#create-server-template-configuratiom)
+* [使用Destination SDK配置流目标](../../guides/configure-destination-instructions.md#create-server-template-configuration)
 * [使用Destination SDK配置基于文件的目标](../../guides/configure-file-based-destination-instructions.md#create-server-file-configuration)
 
 您可以通过`/authoring/destination-servers`端点配置目标服务器规范。 有关详细的API调用示例，请参阅以下API参考页面，您可以在其中配置此页面中显示的组件。
@@ -31,7 +31,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -65,7 +65,7 @@ ht-degree: 2%
 
 当用户[在Experience Platform UI中连接到您的目标](../../../ui/connect-destination.md)时，您可能希望在没有用户输入的情况下处理目标连接过程。
 
-为此，您可以在服务器规范中对目标平台连接参数进行硬编码。 在目标服务器配置中使用硬编码参数值时，无需用户输入即可处理Adobe Experience Platform与目标平台之间的连接。
+为此，您可以在服务器规范中对目标平台连接参数进行硬编码。 在目标服务器配置中使用硬编码参数值时，无需用户输入即可处理[!DNL Adobe Experience Platform]与目标平台之间的连接。
 
 在下面的示例中，合作伙伴创建了一个数据登录区目标服务器，该服务器对`path.value`字段进行了硬编码。
 
@@ -130,7 +130,7 @@ ht-degree: 2%
 
 ## 实时（流）目标服务器 {#streaming-example}
 
-使用此目标服务器类型，您可以通过HTTP请求将数据从Adobe Experience Platform导出到您的目标。 服务器配置包含有关接收消息的服务器（您侧的服务器）的信息。
+此目标服务器类型允许您通过HTTP请求将数据从[!DNL Adobe Experience Platform]导出到您的目标。 服务器配置包含有关接收消息的服务器（您侧的服务器）的信息。
 
 此过程会将用户数据作为一系列HTTP消息传送到您的目标平台。 以下参数构成了HTTP服务器规格模板。
 
@@ -160,7 +160,7 @@ ht-degree: 2%
 
 ## [!DNL Amazon S3]目标服务器 {#s3-example}
 
-使用此目标服务器，您可以将包含Adobe Experience Platform数据的文件导出到Amazon S3存储空间。
+此目标服务器允许您将包含[!DNL Adobe Experience Platform]数据的文件导出到Amazon S3存储。
 
 以下示例显示了Amazon S3目标的目标服务器配置示例。
 
@@ -194,7 +194,7 @@ ht-degree: 2%
 
 ## [!DNL SFTP]目标服务器 {#sftp-example}
 
-此目标服务器允许您将包含Adobe Experience Platform数据的文件导出到[!DNL SFTP]存储服务器。
+此目标服务器允许您将包含[!DNL Adobe Experience Platform]数据的文件导出到[!DNL SFTP]存储服务器。
 
 以下示例显示了SFTP目标的目标服务器配置示例。
 
@@ -232,7 +232,7 @@ ht-degree: 2%
 
 ## [!DNL Azure Data Lake Storage] ([!DNL ADLS])目标服务器 {#adls-example}
 
-此目标服务器允许您将包含Adobe Experience Platform数据的文件导出到您的[!DNL Azure Data Lake Storage]帐户。
+此目标服务器允许您将包含[!DNL Adobe Experience Platform]数据的文件导出到您的[!DNL Azure Data Lake Storage]帐户。
 
 以下示例显示了[!DNL Azure Data Lake Storage]目标的目标服务器配置示例。
 
@@ -260,7 +260,7 @@ ht-degree: 2%
 
 ## [!DNL Azure Blob Storage]目标服务器 {#blob-example}
 
-此目标服务器允许您将包含Adobe Experience Platform数据的文件导出到[!DNL Azure Blob Storage]容器。
+此目标服务器允许您将包含[!DNL Adobe Experience Platform]数据的文件导出到[!DNL Azure Blob Storage]容器。
 
 以下示例显示了[!DNL Azure Blob Storage]目标的目标服务器配置示例。
 

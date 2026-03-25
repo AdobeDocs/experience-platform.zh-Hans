@@ -4,9 +4,9 @@ title: 云存储目标的API迁移指南
 description: 了解在迁移到“新的云存储目标”卡片过程中激活云存储目标的工作流中所做的更改，该卡片具有附加功能。
 type: Tutorial
 exl-id: 4acaf718-794e-43a3-b8f0-9b19177a2bc0
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1333'
+source-wordcount: '1328'
 ht-degree: 1%
 
 ---
@@ -15,13 +15,13 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->* 已购买Real-Time CDP Prime和Ultimate包的客户可以使用本页面上描述的功能。 请联系 Adobe 代表以获取更多信息。
+>* 此页面上描述的功能适用于已购买[!DNL Real-Time CDP]个Prime和Ultimate包的客户。 请联系 Adobe 代表以获取更多信息。
 
 ## 迁移上下文 {#migration-context}
 
 从2022年10月[日](/help/release-notes/2022/october-2022.md#new-or-updated-destinations)开始，在从Experience Platform导出文件时，您可以使用新的文件导出功能访问增强的自定义功能：
 
-* 额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#file-names)。
+* 额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#configure-file-names)。
 * 能够通过[新映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)在导出的文件中设置自定义文件标头。
 * 能够选择导出文件的[文件类型](/help/destinations/ui/connect-destination.md#file-formatting-and-compression-options)。
 * 能够[自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md)。
@@ -46,7 +46,7 @@ Commenting out the three net new cloud storage destinations
 
 ![并排视图中两个Amazon S3目标卡的图像。](../assets/catalog/cloud-storage/amazon-s3/two-amazons3-destination-cards.png)
 
-虽然这些具有增强功能的目标最初是作为测试版提供的，但&#x200B;*Adobe现在正在将所有Real-Time CDP客户迁移到新的云存储目标*。 对于已在使用[!DNL Amazon S3]、[!DNL Azure Blob]或SFTP的客户，这意味着现有数据流将迁移到新卡片。 请阅读并详细了解作为迁移的一部分的特定更改。
+虽然这些具有增强功能的目标最初是作为测试版提供的，但&#x200B;*Adobe现在正在将所有[!DNL Real-Time CDP]客户迁移到新的云存储目标*。 对于已在使用[!DNL Amazon S3]、[!DNL Azure Blob]或SFTP的客户，这意味着现有数据流将迁移到新卡片。 请阅读并详细了解作为迁移的一部分的特定更改。
 
 ## 本页适用对象 {#who-this-applies-to}
 
@@ -60,13 +60,6 @@ Commenting out the three net new cloud storage destinations
 
 此部分包含有关将数据导出到云存储目标的增强功能的相关API教程和参考文档。
 
-<!--
-
-TBD if we keep this link but will likely remove it
-
-[Legacy API tutorial to export data to cloud storage destinations](/help/destinations/api/connect-activate-batch-destinations.md) (outdated, do not use anymore)
-
--->
 * [用于将受众导出到云存储目标的API教程](/help/destinations/api/activate-segments-file-based-destinations.md)
 * [目标流服务API参考文档](https://developer.adobe.com/experience-platform-apis/references/destinations/)
 

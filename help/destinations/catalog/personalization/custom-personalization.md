@@ -3,10 +3,10 @@ keywords: 自定义个性化；目标；experience platform自定义目标；
 title: 自定义个性化连接
 description: 此目标提供外部个性化、内容管理系统、广告服务器以及在您的网站上运行的其他应用程序，以便从Adobe Experience Platform检索受众信息。 此目标根据用户个人资料受众成员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1126'
-ht-degree: 8%
+source-wordcount: '1111'
+ht-degree: 9%
 
 ---
 
@@ -31,7 +31,7 @@ ht-degree: 8%
 
 ## 概述 {#overview}
 
-设置此目标以允许客户网站上运行的外部个性化平台、内容管理系统、广告服务器和其他应用程序从Adobe Experience Platform检索受众信息。
+设置此目标以允许外部个性化平台、内容管理系统、广告服务器以及在客户网站上运行的其他应用程序从[!DNL Adobe Experience Platform]检索受众信息。
 
 ## 先决条件 {#prerequisites}
 
@@ -58,7 +58,7 @@ ht-degree: 8%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -71,7 +71,7 @@ ht-degree: 8%
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -89,7 +89,7 @@ ht-degree: 8%
 >id="platform_destinations_custom_personalization_datastream"
 >title="关于数据流"
 >abstract="此选项确定受众将包含在哪个数据收集数据流中以响应页面。下拉菜单仅显示已启用目标配置的数据流。您必须先配置数据流，然后才能配置目标。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html?lang=zh-Hans#" text="了解如何配置数据流"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html#" text="了解如何配置数据流"
 
 >[!IMPORTANT]
 >
@@ -126,7 +126,7 @@ ht-degree: 8%
 
 以下是`event.destinations`变量的示例值：
 
-```
+```json
 [
    {
       "type":"profileLookup",
@@ -146,9 +146,9 @@ ht-degree: 8%
 
 如果您没有使用[标记](/help/tags/home.md)来部署Experience Platform Web SDK，请使用[命令响应](/help/collection/js/commands/command-responses.md)来查看导出的数据。
 
-可以解析来自Adobe Experience Platform的JSON响应，以查找您与Adobe Experience Platform集成的应用程序的相应集成别名。 受众ID可以作为定位参数传递到应用程序的代码中。 以下是目标响应特有的内容示例。
+可以解析来自[!DNL Adobe Experience Platform]的JSON响应，以查找要与[!DNL Adobe Experience Platform]集成的应用程序的相应集成别名。 受众ID可以作为定位参数传递到应用程序的代码中。 以下是目标响应特有的内容示例。
 
-```
+```js
 alloy("sendEvent", {
   "renderDecisions": true,
   "xdm": {

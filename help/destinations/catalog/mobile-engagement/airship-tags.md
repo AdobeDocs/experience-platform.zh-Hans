@@ -3,9 +3,9 @@ keywords: 飞艇标签；飞艇目标
 title: 飞艇标记连接
 description: 将Adobe受众数据作为受众标记无缝传递到飞艇，以便在飞艇中进行定位。
 exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1070'
+source-wordcount: '1052'
 ht-degree: 3%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 3%
 
 [!DNL Airship]是领先的客户参与平台，帮助您在客户生命周期的每个阶段都向用户传递有意义、个性化的全渠道信息。
 
-此集成将Adobe Experience Platform受众数据作为[!DNL Airship]标记[传递到](https://docs.airship.com/guides/audience/tags/)中，以进行定位或触发。
+此集成将[!DNL Adobe Experience Platform]受众数据作为[!DNL Airship]标记[传递到](https://docs.airship.com/guides/audience/tags/)中以定位或触发。
 
 若要了解有关[!DNL Airship]的更多信息，请参阅[飞艇文档](https://docs.airship.com)。
 
@@ -27,7 +27,7 @@ ht-degree: 3%
 
 ## 先决条件 {#prerequisites}
 
-在将Adobe Experience Platform受众发送到[!DNL Airship]之前，您必须：
+在将[!DNL Adobe Experience Platform]受众发送到[!DNL Airship]之前，您必须：
 
 * 在您的[!DNL Airship]项目中创建标记组。
 * 生成持有者令牌以进行身份验证。
@@ -43,7 +43,7 @@ ht-degree: 3%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -56,7 +56,7 @@ ht-degree: 3%
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -86,7 +86,7 @@ Adobe Experience Platform中的受众概念与Airship中的[标记](https://docs
 
 ## 生成持有者令牌 {#generate-bearer-token}
 
-转到&#x200B;**[!UICONTROL Settings]**&#x200B;飞艇仪表板&#x200B;**[!UICONTROL APIs & Integrations]**&#x200B;中的[&#x200B; &#39;&#39; &#x200B;](https://go.airship.com)，然后在左侧菜单中选择&#x200B;**[!UICONTROL Tokens]**。
+转到&#x200B;**[!UICONTROL Settings]**&#x200B;飞艇仪表板&#x200B;**[!UICONTROL APIs & Integrations]**&#x200B;中的[ &#39;&#39; ](https://go.airship.com)，然后在左侧菜单中选择&#x200B;**[!UICONTROL Tokens]**。
 
 单击 **[!UICONTROL Create Token]**。
 
@@ -96,7 +96,7 @@ Adobe Experience Platform中的受众概念与Airship中的[标记](https://docs
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解您应如何以及何时使用[!DNL Airship Tags]目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
+为了帮助您更好地了解您应如何以及何时使用[!DNL Airship Tags]目标，以下是[!DNL Adobe Experience Platform]客户可以通过使用此目标解决的示例用例。
 
 ### 用例#1 {#use-case-1}
 
@@ -104,7 +104,7 @@ Adobe Experience Platform中的受众概念与Airship中的[标记](https://docs
 
 ### 用例#2 {#use-case-2}
 
-当用户归属或退出Adobe Experience Platform中的特定受众时，实时触发一对一消息。
+当用户在[!DNL Adobe Experience Platform]内进入或退出特定受众时，实时触发一对一消息。
 
 例如，retailer在Experience Platform中设置特定于牛仔裤品牌的受众。 retailer现在可以在用户将其牛仔裤首选项设置为特定品牌后立即触发移动消息。
 

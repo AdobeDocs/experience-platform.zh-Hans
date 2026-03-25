@@ -3,9 +3,9 @@ title: RainFocus与会者个人资料
 description: 了解如何使用RainFocus与会者个人资料目标连接器，将受众个人资料与RainFocus全球与会者个人资料同步。
 last-substantial-update: 2024-12-17T00:00:00Z
 exl-id: 27c3848c-411a-4305-a5d5-00b145b95287
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1091'
+source-wordcount: '1073'
 ht-degree: 4%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-使用[!DNL RainFocus Attendee Profiles]目标将客户配置文件从Adobe Experience Platform流式传输到[!DNL RainFocus]平台以创建并更新与会者配置文件。
+使用[!DNL RainFocus Attendee Profiles]目标将客户配置文件从[!DNL Adobe Experience Platform]流式传输到[!DNL RainFocus]平台以创建并更新与会者配置文件。
 
 >[!IMPORTANT]
 >
@@ -22,7 +22,7 @@ ht-degree: 4%
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解您应当如何以及何时使用RainFocus目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
+为了帮助您更好地了解您应如何以及何时使用RainFocus目标，以下是[!DNL Adobe Experience Platform]客户可以通过使用此目标解决的示例用例。
 
 ### 用例#1 {#use-case-1}
 
@@ -30,7 +30,7 @@ ht-degree: 4%
 
 ### 用例#2 {#use-case-2}
 
-一家金融服务品牌即将举办一系列面向新客户和现有客户的路演。 他们与Adobe Experience Platform中的目标客户存在一系列受众区段。 使用[!DNL RainFocus]目标连接器，他们能够轻松地将这些配置文件发送到[!DNL RainFocus]进行激活。
+一家金融服务品牌即将举办一系列面向新客户和现有客户的路演。 他们在[!DNL Adobe Experience Platform]中具有一系列目标客户的受众区段。 使用[!DNL RainFocus]目标连接器，他们能够轻松地将这些配置文件发送到[!DNL RainFocus]进行激活。
 
 ## 先决条件 {#prerequisites}
 
@@ -48,7 +48,7 @@ ht-degree: 4%
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以便在激活时自动对[!DNL Experience Platform]数据进行哈希处理。 |
+| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | [!DNL Adobe Experience Platform]支持纯文本和SHA256哈希电子邮件地址。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以便在激活时自动对[!DNL Experience Platform]数据进行哈希处理。 |
 
 {style="table-layout:auto"}
 
@@ -59,7 +59,7 @@ ht-degree: 4%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -72,7 +72,7 @@ ht-degree: 4%
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -172,4 +172,4 @@ ht-degree: 4%
 
 ## 其他资源 {#additional-resources}
 
-* [RainFocus流Source连接器](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/sources/connectors/analytics/rainfocus)
+* [RainFocus流Source连接器](https://experienceleague.adobe.com/en/docs/experience-platform/sources/connectors/analytics/rainfocus)

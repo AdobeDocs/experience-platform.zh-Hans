@@ -3,9 +3,9 @@ keywords: 目录；目录
 title: 目标目录概述
 description: 目标目录提供准备好接收数据的可用目标的列表。 这些目标包括Adobe解决方案、广告平台、调查平台、电子邮件营销平台等。
 exl-id: c490f6f0-f673-4a56-b87a-22884f8be92d
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '140'
+source-wordcount: '137'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 ## 目标类别 {#destination-categories}
 
-您可以在Adobe Experience Platform中将数据激活到其他目标类别。 以下链接提供了有关每个目标类别的更多信息：
+您可以在[!DNL Adobe Experience Platform]中将您的数据激活到不同的目标类别。 以下链接提供了有关每个目标类别的更多信息：
 
 - [Adobe [!UICONTROL destinations]概述](adobe/overview.md)
 - [[!UICONTROL Advertising] [!UICONTROL destinations]概述](advertising/overview.md)

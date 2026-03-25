@@ -4,9 +4,9 @@ title: 删除目标
 type: Tutorial
 description: 本教程列出了在Adobe Experience Platform UI中删除现有目标的步骤
 exl-id: 7b672859-e61a-4b3c-9db9-62048258f0aa
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '411'
+source-wordcount: '396'
 ht-degree: 0%
 
 ---
@@ -15,20 +15,20 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-在Adobe Experience Platform用户界面中，您可以删除到目标的现有连接。
+在[!DNL Adobe Experience Platform]用户界面中，您可以删除到目标的现有连接。
 
 删除目标会删除指向该目标的所有现有数据流。 在删除数据流之前，激活到您删除的目标的所有受众都会取消映射。
 
 有两种方法可以从[!DNL Experience Platform] [!DNL UI]中删除目标。 您可以：
 
-* [从[!UICONTROL 浏览]选项卡中删除目标](#delete-browse-tab)
+* [从[!UICONTROL Browse]选项卡中删除目标](#delete-browse-tab)
 * [从目标详细信息页面中删除目标](#delete-destination-details-page)
 
 ## 从“浏览”选项卡中删除目标{#delete-browse-tab}
 
-按照以下步骤从[!UICONTROL 浏览]选项卡中删除目标。
+按照以下步骤从[!UICONTROL Browse]选项卡中删除目标。
 
-1. 登录到[Experience Platform UI](https://platform.adobe.com/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL 目标]**。 要查看现有目标，请从顶部标题中选择&#x200B;**[!UICONTROL 浏览]**。
+1. 登录到[Experience Platform UI](https://platform.adobe.com/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL Destinations]**。 要查看现有目标，请从顶部标题中选择&#x200B;**[!UICONTROL Browse]**。
 
    ![浏览目标](../assets/ui/delete-destinations/browse-destinations.png)
 
@@ -36,10 +36,10 @@ ht-degree: 0%
 
    ![筛选目标](../assets/ui/delete-destinations/filter-destinations.png)
 
-3. 在“名称”列中选择![更多按钮](/help/images/icons/more.png)按钮，然后选择![删除按钮](/help/images/icons/delete.png) **[!UICONTROL 删除]**&#x200B;以删除现有目标连接。
+3. 在“名称”列中选择![更多按钮](/help/images/icons/more.png)按钮，然后选择![删除按钮](/help/images/icons/delete.png) **[!UICONTROL Delete]**以删除现有目标连接。
    ![删除目标](../assets/ui/delete-destinations/delete-destinations.png)
 
-4. 选择&#x200B;**[!UICONTROL 删除]**&#x200B;以确认删除目标连接。
+4. 选择&#x200B;**[!UICONTROL Delete]**&#x200B;以确认删除目标连接。
 
    ![确认删除目标](../assets/ui/delete-destinations/delete-destinations-confirm.png)
 
@@ -47,7 +47,7 @@ ht-degree: 0%
 
 按照以下步骤从目标详细信息页面中删除目标。
 
-1. 登录到[Experience Platform UI](https://platform.adobe.com/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL 目标]**。 要查看现有目标，请从顶部标题中选择&#x200B;**[!UICONTROL 浏览]**。
+1. 登录到[Experience Platform UI](https://platform.adobe.com/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL Destinations]**。 要查看现有目标，请从顶部标题中选择&#x200B;**[!UICONTROL Browse]**。
 
    ![浏览目标](../assets/ui/delete-destinations/browse-destinations.png)
 
@@ -59,7 +59,7 @@ ht-degree: 0%
 
    ![选择目标](../assets/ui/delete-destinations/delete-destination-select.png)
 
-   * 如果目标具有现有数据流，则您将被带到[!UICONTROL 数据流运行]选项卡。
+   * 如果目标具有现有数据流，则会转到[!UICONTROL Dataflow runs]选项卡。
 
      ![数据流运行选项卡](../assets/ui/delete-destinations/destination-details-dataflows.png)
 
@@ -67,11 +67,11 @@ ht-degree: 0%
 
      ![目标详细信息](../assets/ui/delete-destinations/destination-details-empty.png)
 
-4. 在右边栏中选择&#x200B;**[!UICONTROL 删除]**。
+4. 在右边栏中选择&#x200B;**[!UICONTROL Delete]**。
 
    ![删除目标](../assets/ui/delete-destinations/delete-destinations-button.png)
 
-5. 在确认对话框中选择&#x200B;**[!UICONTROL 删除]**&#x200B;以删除目标。
+5. 在确认对话框中选择&#x200B;**[!UICONTROL Delete]**&#x200B;以删除目标。
 
    ![删除目标确认](..//assets/ui/delete-destinations/delete-destinations-delete.png)
 

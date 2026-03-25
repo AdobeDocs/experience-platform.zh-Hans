@@ -3,9 +3,9 @@ keywords: 目标；目标；目标详细信息页面；目标详细信息页面
 title: 查看目标详细信息
 description: 单个目标的详细信息页面提供了目标详细信息的概览。 目标详细信息包括目标名称、ID、映射到目标的受众以及用于编辑激活以及启用和禁用数据流的控件。
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1222'
+source-wordcount: '1219'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-在Adobe Experience Platform用户界面中，您可以查看和监控目标的属性和活动。 这些详细信息包括目标的名称和ID、用于激活或禁用目标的控件等。 详细信息还包括已激活的配置文件记录、已激活、已失败和已排除的身份的量度，以及数据流运行的历史记录。
+在[!DNL Adobe Experience Platform]用户界面中，您可以查看和监视目标的属性和活动。 这些详细信息包括目标的名称和ID、用于激活或禁用目标的控件等。 详细信息还包括已激活的配置文件记录、已激活、已失败和已排除的身份的量度，以及数据流运行的历史记录。
 
 >[!NOTE]
 >
@@ -158,7 +158,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->有关浏览受众详细信息页面的详细信息，请参阅[受众门户概述](../../segmentation/ui/audience-portal.md#segment-details)。
+>有关浏览受众详细信息页面的详细信息，请参阅[受众门户概述](../../segmentation/ui/audience-portal.md#audience-details)。
 
 ### 编辑导出到批处理目标的多个受众的文件名 {#bulk-edit-file-names}
 

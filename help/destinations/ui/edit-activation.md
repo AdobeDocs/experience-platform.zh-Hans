@@ -4,16 +4,16 @@ title: 编辑激活数据流
 type: Tutorial
 description: 按照本文中的步骤进行操作，以在Adobe Experience Platform中编辑现有的激活数据流。
 exl-id: 0d79fbff-bfde-4109-8353-c7530e9719fb
-source-git-commit: 5fae3fe6a3647ba416a26f4cdb9e5b6ce308e990
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '927'
+source-wordcount: '922'
 ht-degree: 0%
 
 ---
 
 # 编辑激活数据流 {#edit-activation-flows}
 
-在Adobe Experience Platform中，您可以将现有激活数据流的各个组件配置为发送到目标，例如：
+在[!DNL Adobe Experience Platform]中，您可以将现有激活数据流的各种组件配置为目标，例如：
 
 * [启用或禁用](#enable-disable-dataflows)激活数据流
 * [向激活数据流添加其他受众](#add-audiences)
@@ -59,8 +59,8 @@ ht-degree: 0%
 激活工作流会因目标类型而略有不同。 有关每种目标类型的激活工作流的更多信息，请阅读以下指南：
 
 * [将受众激活到流式目标](./activate-segment-streaming-destinations.md)（例如，Facebook或Twitter）；
-* [将受众激活到批量配置文件导出目标](./activate-batch-profile-destinations.md)(例如Amazon S3或Oracle Eloqua)；
-* [将受众激活到流式配置文件导出目标](./activate-streaming-profile-destinations.md)(例如，HTTP API或Amazon Kinesis)。
+* [将受众激活到批量配置文件导出目标](./activate-batch-profile-destinations.md)（例如Amazon S3或Oracle Eloqua）；
+* [将受众激活到流式配置文件导出目标](./activate-streaming-profile-destinations.md)（例如，HTTP API或Amazon Kinesis）。
 
 ## 编辑激活计划和导出频率 {#edit-schedule-frequency}
 
@@ -78,8 +78,8 @@ ht-degree: 0%
 您可以执行的计划操作因目标类型而异。 有关每种目标类型的激活工作流的更多信息，请阅读以下指南：
 
 * [将受众激活到流式目标](./activate-segment-streaming-destinations.md)（例如，Facebook或Twitter）；
-* [将受众激活到批量配置文件导出目标](./activate-batch-profile-destinations.md)(例如Amazon S3或Oracle Eloqua)；
-* [将受众激活到流式配置文件导出目标](./activate-streaming-profile-destinations.md)(例如，HTTP API或Amazon Kinesis)。
+* [将受众激活到批量配置文件导出目标](./activate-batch-profile-destinations.md)（例如Amazon S3或Oracle Eloqua）；
+* [将受众激活到流式配置文件导出目标](./activate-streaming-profile-destinations.md)（例如，HTTP API或Amazon Kinesis）。
 
 ## 编辑映射的属性和身份 {#edit-mapped-attributes}
 
@@ -87,7 +87,7 @@ ht-degree: 0%
 
 ![Experience Platform UI图像显示“激活受众数据流”运行选项。](../assets/ui/edit-activation/activate-audiences.png)
 
-选择激活工作流中的&#x200B;**[!UICONTROL Mapping]**&#x200B;步骤以编辑激活数据流的映射属性和标识。 这允许您调整应将哪些配置文件属性和身份导出到目标。
+选择激活工作流中的&#x200B;**[!UICONTROL Mapping]**&#x200B;步骤以编辑激活数据流的映射属性和标识。 这使您可以调整应将哪些配置文件属性和身份导出到目标。
 
 在激活工作流的&#x200B;**[!UICONTROL Mapping]**&#x200B;步骤中，您可以：
 
@@ -98,8 +98,8 @@ ht-degree: 0%
 激活工作流会因目标类型而略有不同。 有关每种目标类型的激活工作流的更多信息，请阅读以下指南：
 
 * [将受众激活到流式目标](./activate-segment-streaming-destinations.md)（例如，Facebook或Twitter）；
-* [将受众激活到批量配置文件导出目标](./activate-batch-profile-destinations.md)(例如Amazon S3或Oracle Eloqua)；
-* [将受众激活到流式配置文件导出目标](./activate-streaming-profile-destinations.md)(例如，HTTP API或Amazon Kinesis)。
+* [将受众激活到批量配置文件导出目标](./activate-batch-profile-destinations.md)（例如Amazon S3或Oracle Eloqua）；
+* [将受众激活到流式配置文件导出目标](./activate-streaming-profile-destinations.md)（例如，HTTP API或Amazon Kinesis）。
 
 ## 将数据集添加到激活数据流 {#add-datasets}
 

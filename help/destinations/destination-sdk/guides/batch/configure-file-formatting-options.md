@@ -2,9 +2,9 @@
 description: 为基于文件的目标配置文件格式选项
 title: 了解如何使用Destination SDK为基于文件的目标配置文件格式选项。
 exl-id: e61c7989-1123-4b3b-9781-a6097cd0e2b4
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '902'
+source-wordcount: '901'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 ## 概述 {#overview}
 
-Destination SDK允许您广泛调整导出文件的格式和压缩选项，以匹配存储位置中的任何下游要求。
+通过Destination SDK，您可以广泛调整导出文件的格式和压缩选项，以满足存储位置的任何下游要求。
 
 本页介绍如何使用Destination SDK为基于文件的目标配置文件格式选项。
 
@@ -718,7 +718,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 文件格式选项的特定组合可能会导致不想要的文件导出结果。
 Adobe建议不要选择以下CSV选项组合：
 
-```
+```properties
 nullValue -> ""
 quote -> "
 emptyValue -> ""

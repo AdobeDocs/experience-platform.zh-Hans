@@ -3,20 +3,20 @@ keywords: 电子邮件；电子邮件；电子邮件目标；adobe campaign；ca
 title: Adobe Campaign连接
 description: Adobe Campaign 是一套可以帮助您跨所有线上和线下渠道定制和投放营销活动的解决方案。
 exl-id: 0de91738-8f56-41f5-8745-9b14b15db76a
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '975'
+source-wordcount: '930'
 ht-degree: 5%
 
 ---
 
-# Adobe Campaign连接
+# [!DNL Adobe Campaign]连接
 
 ## 概述 {#overview}
 
-Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道个性化和交付营销活动。 有关详细信息，请参阅[Campaign Classic入门](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/starting-with-adobe-campaign/about-adobe-campaign-classic.html)。
+[!DNL Adobe Campaign]是一组解决方案，可帮助您在所有线上和线下渠道个性化和交付营销活动。 有关详细信息，请参阅[Campaign Classic入门](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/starting-with-adobe-campaign/about-adobe-campaign-classic.html)。
 
-若要将受众数据发送到Adobe Campaign，您必须先[连接到Adobe Experience Platform中的目标](#connect-destination)，然后[设置数据导入](#import-data-into-campaign)（从您的存储位置导入Adobe Campaign）。
+若要将受众数据发送到[!DNL Adobe Campaign]，您必须先在[中](#connect-destination)连接目标[!DNL Adobe Experience Platform]，然后[设置数据导入](#import-data-into-campaign)（从您的存储位置导入[!DNL Adobe Campaign]）。
 
 ## 支持的受众 {#supported-audiences}
 
@@ -25,7 +25,7 @@ Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道
 | 受众来源 | 受支持 | 描述 |
 | ---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -38,7 +38,7 @@ Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -68,14 +68,14 @@ Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道
 
 要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
 
-Adobe Campaign支持以下连接类型：
+[!DNL Adobe Campaign]支持以下连接类型：
 
 * **[!UICONTROL Amazon S3]**
 * **[!UICONTROL SFTP with Password]**
 * **[!UICONTROL SFTP with SSH Key]**
 * **[!UICONTROL Azure Blob]**
 
-将数据发送到Adobe Campaign的首选方法是通过[!DNL Amazon S3]或[!DNL Azure Blob]。
+将数据发送到[!DNL Adobe Campaign]的首选方法是通过[!DNL Amazon S3]或[!DNL Azure Blob]。
 
 ### 连接参数 {#parameters}
 
@@ -111,21 +111,21 @@ Adobe Campaign支持以下连接类型：
 
 ### 目标属性 {#destination-attributes}
 
-将受众激活到此目标时，Adobe建议您从[合并架构](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择要导出到目标的唯一标识符和任何其他XDM字段。 有关详细信息，请参阅将受众激活到电子邮件营销目标时的最佳实践[&#128279;](overview.md#best-practices)。
+将受众激活到此目标时，Adobe建议您从[合并架构](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择要导出到目标的唯一标识符和任何其他XDM字段。 有关详细信息，请参阅将受众激活到电子邮件营销目标时的最佳实践[](overview.md#best-practices)。
 
 ## 导出的数据 {#exported-data}
 
 对于[!DNL Adobe Campaign]目标，[!DNL Experience Platform]会在您提供的存储位置中创建一个`.csv`文件。 有关这些文件的详细信息，请参阅Audience Activation教程中的[验证Audience Activation](../../ui/activate-batch-profile-destinations.md#verify)部分。
 
-## 设置数据导入Adobe Campaign {#import-data-into-campaign}
+## 设置数据导入到[!DNL Adobe Campaign] {#import-data-into-campaign}
 
 >[!IMPORTANT]
 >
->* 在执行此集成时，请记住Adobe Campaign合同规定的[!DNL SFTP]存储限制、数据库存储限制和活动配置文件限制。
->* 您需要使用[!DNL Campaign]工作流在Adobe Campaign中计划、导入和映射导出的区段。 请参阅Adobe Campaign Classic文档中的[设置定期导入](https://experienceleague.adobe.com/docs/campaign-classic/using/automating-with-workflows/use-cases/data-management/recurring-import-workflow.html)和Adobe Campaign Standard文档中的[关于数据管理活动](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/data-management-activities/about-data-management-activities.html?lang=zh-Hans)。
->* 将数据发送到Adobe Campaign的首选方法是通过[!DNL Amazon S3]或[!DNL Azure Blob]。
+>* 在执行此集成时，请记住[!DNL SFTP]合同规定的[!DNL Adobe Campaign]存储限制、数据库存储限制和活动配置文件限制。
+>* 您需要使用[!DNL Adobe Campaign]工作流在[!DNL Campaign]中计划、导入和映射导出的区段。 请参阅[文档中的](https://experienceleague.adobe.com/docs/campaign-classic/using/automating-with-workflows/use-cases/data-management/recurring-import-workflow.html)设置循环导入[!DNL Adobe Campaign Classic]和[文档中的](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/data-management-activities/about-data-management-activities.html)关于数据管理活动[!DNL Adobe Campaign Standard]。
+>* 将数据发送到[!DNL Adobe Campaign]的首选方法是通过[!DNL Amazon S3]或[!DNL Azure Blob]。
 
-将[!DNL Experience Platform]连接到[!DNL Amazon S3]或[!DNL Azure Blob]存储空间后，您必须设置数据从存储位置导入Adobe Campaign。 要了解如何完成此操作，请参阅以下Adobe Campaign文档页面：
+将[!DNL Experience Platform]连接到[!DNL Amazon S3]或[!DNL Azure Blob]存储后，您必须设置从存储位置到[!DNL Adobe Campaign]的数据导入。 要了解如何完成此操作，请参阅以下[!DNL Adobe Campaign]文档页面：
 
-* [数据导入和导出入门](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/importing-and-exporting-data/get-started-data-import-export.html?lang=zh-Hans)和Adobe Campaign Classic文档中的[数据加载（文件）](https://experienceleague.adobe.com/docs/campaign-classic/using/automating-with-workflows/action-activities/data-loading--file-.html?lang=zh-Hans)。
-* [开始使用流程和数据管理](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/get-started-workflows.html?lang=zh-Hans)和[在Adobe Campaign Standard文档中加载文件](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/data-management-activities/load-file.html?lang=zh-Hans)。
+* [数据导入和导出入门](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/importing-and-exporting-data/get-started-data-import-export.html?lang=zh-Hans)和[文档中的](https://experienceleague.adobe.com/docs/campaign-classic/using/automating-with-workflows/action-activities/data-loading--file-.html)数据加载（文件）[!DNL Adobe Campaign Classic]。
+* [开始使用流程和数据管理](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/get-started-workflows.html)和[加载文件](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/data-management-activities/load-file.html)（在[!DNL Adobe Campaign Standard]文档中）。

@@ -3,10 +3,10 @@ keywords: Flashtalking OneTag扩展；Flashtalking OneTag扩展；Flashtalking O
 title: Flashtalking OneTag扩展
 description: Flashtalking OneTag扩展是Adobe Experience Platform中的一个广告目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: e0dcbe9d-6fed-4b86-839e-661b7df8580e
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '454'
-ht-degree: 3%
+source-wordcount: '445'
+ht-degree: 4%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 3%
 
 通过[!DNL Flashtalking OneTag]标记扩展，可以轻松地将网站操作归因于显示、视频和移动广告活动。 使用标记将[!DNL Flashtalking OneTag]部署到Web属性。
 
-[!DNL Flashtalking OneTag]是Adobe Experience Platform中的广告扩展。 有关扩展功能的更多信息，请参阅[Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101392.flashtalking-onetag.html)上的扩展页面。
+[!DNL Flashtalking OneTag]是[!DNL Adobe Experience Platform]中的Advertising扩展。 有关扩展功能的更多信息，请参阅[Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101392.flashtalking-onetag.html)上的扩展页面。
 
 此目标是标记扩展。 有关标记扩展如何在Experience Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
@@ -26,7 +26,7 @@ ht-degree: 3%
 
 此扩展位于[!DNL Destinations]目录中，适用于已购买Experience Platform的所有客户。
 
-要使用此扩展，您需要具有对Adobe Experience Platform中标记的访问权限。 标记以内置增值功能的方式提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
+要使用此扩展，您需要访问[!DNL Adobe Experience Platform]中的标记。 标记以内置增值功能的方式提供给[!DNL Adobe Experience Cloud]客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
 
 ## 安装扩展 {#install-extension}
 

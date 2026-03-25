@@ -3,16 +3,16 @@ title: 实时查找边缘配置文件属性
 description: 了解如何使用自定义Personalization目标和Edge Network API实时查找边缘配置文件属性
 type: Tutorial
 exl-id: e185d741-af30-4706-bc8f-d880204d9ec7
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1836'
+source-wordcount: '1833'
 ht-degree: 1%
 
 ---
 
 # 实时查找边缘上的配置文件属性
 
-Adobe Experience Platform使用[实时客户个人资料](../../profile/home.md)作为所有个人资料数据的单一真实来源。 为了快速实时检索数据，它使用[边缘配置文件](../../profile/edge-profiles.md)，这些是分布在[Edge Network](../../collection/home.md#edge)中的轻量级配置文件。 这允许快速实时的个性化用例。
+[!DNL Adobe Experience Platform]使用[实时客户个人资料](../../profile/home.md)作为所有个人资料数据的单一真实来源。 为了快速实时检索数据，它使用[边缘配置文件](../../profile/edge-profiles.md)，这些是分布在[Edge Network](../../collection/home.md)中的轻量级配置文件。 这允许快速实时的个性化用例。
 
 ## 用例 {#use-cases}
 
@@ -112,7 +112,7 @@ Edge配置文件查找用例受下表所述的特定性能护栏的约束。 有
    您可以从多种类型的受众中进行选择，具体取决于其来源：
 
    * **[!UICONTROL Segmentation Service]**：分段服务在Experience Platform中生成的受众。 有关详细信息，请参阅[分段文档](../../segmentation/ui/overview.md)。
-   * **[!UICONTROL Custom upload]**：受众在Experience Platform之外生成，并以CSV文件形式上传到Experience Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/overview.md#import-audience)的文档。
+   * **[!UICONTROL Custom upload]**：受众在Experience Platform之外生成，并以CSV文件形式上传到Experience Platform。 要了解有关外部受众的更多信息，请参阅有关[导入受众](../../segmentation/ui/audience-portal.md#import-audience)的文档。
    * 其他类型的受众，来自其他Adobe解决方案，如[!DNL Audience Manager]。
 
      ![在激活工作流中选择突出显示多个受众的受众步骤。](../assets/ui/activate-edge-personalization-destinations/select-audiences.png)

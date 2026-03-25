@@ -2,27 +2,27 @@
 description: 本页介绍从Adobe Experience Platform导出到目标的数据中的消息格式和配置文件转换。
 title: 消息格式
 exl-id: ab05d34e-530f-456c-b78a-7f3389733d35
-source-git-commit: 270facfd580b2dde09906bee1728e1be198680cf
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '2512'
+source-wordcount: '2470'
 ht-degree: 0%
 
 ---
 
 # 消息格式
 
-## 先决条件 — Adobe Experience Platform概念 {#prerequisites}
+## 先决条件 — [!DNL Adobe Experience Platform]概念 {#prerequisites}
 
 要了解Adobe端的消息格式以及用户档案配置和转换过程，请熟悉以下Experience Platform概念：
 
 * **体验数据模型(XDM)**。 [XDM概述](../../../../xdm/home.md)和[如何在Adobe Experience Platform中创建XDM架构](../../../../xdm/tutorials/create-schema-ui.md)。
 * **类**。 [在UI中创建和编辑类](../../../../xdm/ui/resources/classes.md)。
-* **标识映射**。 身份图表示Adobe Experience Platform中所有最终用户身份的图。 请参阅`xdm:identityMap`XDM字段词典[中的](../../../../xdm/schema/field-dictionary.md)。
+* **IdentityMap**。 标识映射表示[!DNL Adobe Experience Platform]中所有最终用户标识的映射。 请参阅`xdm:identityMap`XDM字段词典[中的](../../../../xdm/schema/field-dictionary.md)。
 * **区段成员资格**。 [segmentMembership](../../../../xdm/schema/field-dictionary.md) XDM属性通知配置文件是哪些受众的成员。 对于`status`字段中的三个不同值，请阅读有关[受众成员资格详细信息架构字段组](../../../../xdm/field-groups/profile/segmentation.md)的文档。
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -35,13 +35,13 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-本页介绍从Adobe Experience Platform导出到目标的数据中的消息格式和配置文件转换。
+此页面介绍从[!DNL Adobe Experience Platform]导出到目标的数据中的消息格式和配置文件转换。
 
-Adobe Experience Platform会以各种数据格式将数据导出到大量目标。 目标类型的一些示例包括广告平台(Google)、社交网络(Facebook)和云存储位置（Amazon S3、Azure事件中心）。
+[!DNL Adobe Experience Platform]以各种数据格式将数据导出到大量目标。 目标类型的一些示例包括广告平台(Google)、社交网络(Facebook)和云存储位置（Amazon S3、Azure事件中心）。
 
 Experience Platform可以调整导出用户档案的消息格式，以与您这边的预期格式匹配。 要了解此自定义设置，请务必了解以下概念：
 
-* Adobe Experience Platform中的源(1)和目标(2) XDM架构
+* [!DNL Adobe Experience Platform]中的源(1)和目标(2) XDM架构
 * 合作伙伴端的预期消息格式(3)，以及
 * XDM架构和预期消息格式之间的转换层，可通过创建[消息转换模板](#using-templating)来定义该转换层。
 
@@ -67,11 +67,11 @@ Users who want to activate data to your destination need to map the fields in th
 
 ## 快速入门 — 转换三个基本属性 {#getting-started}
 
-为了演示配置文件转换过程，以下示例在Adobe Experience Platform中使用了三个常见的配置文件属性：**名字**、**姓氏**&#x200B;和&#x200B;**电子邮件地址**。
+为了演示配置文件转换过程，以下示例在[!DNL Adobe Experience Platform]中使用了三个常见的配置文件属性：**名字**、**姓氏**&#x200B;和&#x200B;**电子邮件地址**。
 
 >[!NOTE]
 >
->在&#x200B;**激活目标工作流**&#x200B;的[映射](../../../ui/activate-segment-streaming-destinations.md#mapping)步骤中，客户将属性从源XDM架构映射到Adobe Experience Platform UI中的合作伙伴XDM架构。
+>在[!DNL Adobe Experience Platform]激活目标工作流&#x200B;**的**&#x200B;映射[步骤中，客户将属性从源XDM架构映射到](../../../ui/activate-segment-streaming-destinations.md#mapping) UI中的合作伙伴XDM架构。
 
 假设您的平台可以接收如下消息格式：
 
@@ -116,7 +116,7 @@ Authorization: Bearer YOUR_REST_API_KEY
 
 请参阅下面两个Experience Platform中的配置文件示例：
 
-### 示例1具有`segmentMembership`、`identityMap`和任意形状属性的属性 {#example-1}
+### 具有自由格式属性的`segmentMembership`、`identityMap`和属性的示例1 {#example-1}
 
 ```json
 {
@@ -145,7 +145,7 @@ Authorization: Bearer YOUR_REST_API_KEY
 }
 ```
 
-### 示例2包含`segmentMembership`、`identityMap`和预定义属性的属性 {#example-2}
+### 示例2，具有预定义属性的`segmentMembership`、`identityMap`和属性 {#example-2}
 
 ```json
 {
@@ -170,15 +170,15 @@ Authorization: Bearer YOUR_REST_API_KEY
 }
 ```
 
-## 使用模板化语言进行身份、属性和受众成员资格转换 {#using-templating}
+## 使用模板语言进行身份、属性和受众成员资格转换 {#using-templating}
 
 Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)类似的模板语言）将字段从Experience Platform XDM架构转换为目标支持的格式。
 
 此部分提供了多个如何进行这些转换的示例 — 从输入XDM模式通过模板，然后输出到目标接受的有效负载格式。 下面的示例通过提高复杂性来显示，如下所示：
 
 1. 简单转换示例。 了解模板化如何与[配置文件属性](#attributes)、[受众成员资格](#audience-membership)和[标识](#identities)字段的简单转换一起使用。
-2. 合并上述字段的模板示例复杂性增加：[创建发送受众和身份的模板](./message-format.md#segments-and-identities)和[创建发送分段、身份和配置文件属性的模板](#segments-identities-attributes)。
-3. 包含聚合密钥的模板。 在目标配置中使用[可配置的聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation)时，Experience Platform会根据访问群体ID、访问群体命名空间、访问群体状态或标识命名空间等条件，对导出到目标的配置文件进行分组。
+2. 合并上述字段的模板的复杂性增加：[创建发送受众和标识的模板](./message-format.md#segments-and-identities)和[创建发送区段、标识和配置文件属性的模板](#segments-identities-attributes)。
+3. 包含聚合键的模板。 在目标配置中使用[可配置的聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation)时，Experience Platform会根据受众ID、受众命名空间、受众状态或身份命名空间等条件对导出到目标的配置文件进行分组。
 
 ### 配置文件属性 {#attributes}
 
@@ -186,7 +186,7 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
 
 >[!IMPORTANT]
 >
->有关Adobe Experience Platform中所有可用配置文件属性的列表，请参阅[XDM字段字典](../../../../xdm/schema/field-dictionary.md)。
+>有关[!DNL Adobe Experience Platform]中所有可用配置文件属性的列表，请参阅[XDM字段字典](../../../../xdm/schema/field-dictionary.md)。
 
 
 **输入**
@@ -609,7 +609,7 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
 
 **结果**
 
-以下`json`表示从Adobe Experience Platform中导出的数据。
+以下`json`表示从[!DNL Adobe Experience Platform]中导出的数据。
 
 ```json
 {
@@ -802,7 +802,7 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
 
 **结果**
 
-以下`json`表示从Adobe Experience Platform中导出的数据。
+以下`json`表示从[!DNL Adobe Experience Platform]中导出的数据。
 
 ```json
 {
@@ -862,11 +862,11 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
 
 在目标配置中使用[可配置的聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation)时，可以根据受众ID、受众命名空间、受众别名、受众成员资格或身份命名空间等条件对导出到目标的配置文件进行分组。
 
-在消息转换模板中，您可以访问上述聚合键，如以下部分中的示例所示。 使用聚合密钥构造从Experience Platform外导出的HTTP消息，以匹配目标所期望的格式和速率限制。
+在消息转换模板中，您可以访问上述聚合键，如以下部分中的示例所示。 使用聚合密钥构造从Experience Platform导出的HTTP消息，以匹配目标所需的格式和速率限制。
 
 #### 在模板中使用受众ID聚合密钥 {#aggregation-key-segment-id}
 
-如果您使用[可配置的聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation)并将`includeSegmentId`设置为true，则导出到目标的HTTP消息中的用户档案将按受众ID进行分组。 请参阅以下内容，了解如何访问模板中的受众ID和受众命名空间。
+如果您使用[可配置的聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation)并将`includeSegmentId`设置为true，则导出到目标的HTTP消息中的用户档案将按受众ID进行分组。 请参阅下文，了解如何在模板中访问受众ID和受众命名空间。
 
 **输入**
 
@@ -874,7 +874,7 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
 
 * 前两个是`788d8874-8007-4253-92b7-ee6b6c20c6f3`命名空间下受众ID为`ups`的受众的一部分
 * 第三个配置文件是`8f812592-3f06-416b-bd50-e7831848a31a`命名空间下受众ID为`CustomerAudienceUpload`的受众的一部分
-* 第四个用户档案属于上述两个受众，每个受众都位于各自的名称空间下。
+* 第四个配置文件是上述两个受众的一部分，每个受众位于各自的命名空间下。
 
 配置文件1：
 
@@ -986,7 +986,7 @@ Adobe使用[Pebble templates](https://pebbletemplates.io/)（与[Jinja](https://
 
 **结果**
 
-当导出到目标时，配置文件根据其受众ID和命名空间分为两组。
+将用户档案导出到目标时，会根据其受众ID和命名空间将用户档案拆分为两个组。
 
 ```json
 {
@@ -1040,7 +1040,7 @@ customerList={{input.aggregationKey.segmentAlias}}
 * 已实现
 * 已退出
 
-根据上述值，将下方的行添加到模板以向线段添加配置文件，或从线段中删除配置文件：
+将以下行添加到模板中，根据上述值在区段中添加或删除用户档案：
 
 ```python
 action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}ADD{% endif%}
@@ -1212,13 +1212,13 @@ https://api.example.com/audience/{{input.aggregationKey.segmentId}}
 |---------|----------|----------|
 | `input.profile` | 以[JsonNode](https://fasterxml.github.io/jackson-databind/javadoc/2.11/com/fasterxml/jackson/databind/node/JsonNodeType.html)表示的配置文件。 遵循此页面上进一步提到的合作伙伴XDM架构。 |  |
 | `hasSegments` | 此函数采用命名空间受众ID的映射作为参数。 如果地图中至少有一个受众（无论其状态如何），则函数返回`true`，否则返回`false`。 您可以使用此函数确定是否对受众映射进行迭代。 | `hasSegments(input.profile.segmentMembership)` |
-| `destination.namespaceSegmentAliases` | 将特定Adobe Experience Platform命名空间中的受众ID映射到合作伙伴系统中的受众别名。 | `destination.namespaceSegmentAliases["ups"]["seg-id-1"]` |
-| `destination.namespaceSegmentNames` | 将特定Adobe Experience Platform命名空间中的受众名称映射到合作伙伴系统中的受众名称。 | `destination.namespaceSegmentNames["ups"]["seg-name-1"]` |
+| `destination.namespaceSegmentAliases` | 将特定[!DNL Adobe Experience Platform]命名空间中的受众ID映射到合作伙伴系统中的受众别名。 | `destination.namespaceSegmentAliases["ups"]["seg-id-1"]` |
+| `destination.namespaceSegmentNames` | 从特定[!DNL Adobe Experience Platform]命名空间中的受众名称映射到合作伙伴系统中的受众名称。 | `destination.namespaceSegmentNames["ups"]["seg-name-1"]` |
 | `destination.namespaceSegmentTimestamps` | 以UNIX时间戳格式返回创建、更新或激活受众的时间。 | <ul><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].createdAt`：以UNIX时间戳格式返回从`seg-id-1`命名空间创建ID为`ups`的区段的时间。</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].updatedAt`：返回从`seg-id-1`命名空间更新ID为`ups`的受众的时间，格式为UNIX时间戳。</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].mappingCreatedAt`：返回从`seg-id-1`命名空间中将ID为`ups`的受众激活到目标的时间（采用UNIX时间戳格式）。</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].mappingUpdatedAt`：以UNIX时间戳格式返回目标上受众激活更新的时间。</li></ul> |
 | `addedSegments(mapOfNamespacedSegmentIds)` | 在所有命名空间中仅返回状态为`realized`的受众。 | `addedSegments(input.profile.segmentMembership)` |
 | `removedSegments(mapOfNamespacedSegmentIds)` | 在所有命名空间中仅返回状态为`exited`的受众。 | `removedSegments(input.profile.segmentMembership)` |
-| `destination.segmentAliases` | **已弃用。 替换为`destination.namespaceSegmentAliases`** <br><br>将Adobe Experience Platform命名空间中的受众ID映射到合作伙伴系统中的受众别名。 | `destination.segmentAliases["seg-id-1"]` |
-| `destination.segmentNames` | **已弃用。 替换为`destination.namespaceSegmentNames`** <br><br>将Adobe Experience Platform命名空间中的受众名称映射到合作伙伴系统中的受众名称。 | `destination.segmentNames["seg-name-1"]` |
+| `destination.segmentAliases` | **已弃用。 替换为`destination.namespaceSegmentAliases`** <br><br>将[!DNL Adobe Experience Platform]命名空间中的受众ID映射到合作伙伴系统中的受众别名。 | `destination.segmentAliases["seg-id-1"]` |
+| `destination.segmentNames` | **已弃用。 替换为`destination.namespaceSegmentNames`** <br><br>将[!DNL Adobe Experience Platform]命名空间中的受众名称映射到合作伙伴系统中的受众名称。 | `destination.segmentNames["seg-name-1"]` |
 | `destination.segmentTimestamps` | **已弃用。 替换为`destination.namespaceSegmentTimestamps`** <br><br>以UNIX时间戳格式返回创建、更新或激活受众的时间。 | <ul><li>`destination.segmentTimestamps["seg-id-1"].createdAt`：返回ID为`seg-id-1`的受众的创建时间（以UNIX时间戳格式）。</li><li>`destination.segmentTimestamps["seg-id-1"].updatedAt`：返回ID为`seg-id-1`的受众的更新时间（以UNIX时间戳格式）。</li><li>`destination.segmentTimestamps["seg-id-1"].mappingCreatedAt`：以UNIX时间戳格式返回ID为`seg-id-1`的受众激活到目标的时间。</li><li>`destination.segmentTimestamps["seg-id-1"].mappingUpdatedAt`：以UNIX时间戳格式返回目标上受众激活更新的时间。</li></ul> |
 
 {style="table-layout:auto"}

@@ -2,9 +2,9 @@
 description: 了解如何使用Destination SDK构建的目标配置受众类型。
 title: 配置受众数据类型
 exl-id: c56fb0f9-adb2-4fb2-ab06-c0398d828600
-source-git-commit: 5d84ea1baa96c288d9d37606122e0a41880478b9
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '735'
+source-wordcount: '732'
 ht-degree: 2%
 
 ---
@@ -20,14 +20,14 @@ ht-degree: 2%
 | [人员受众](../../../../segmentation/types/people-audiences.md) | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](../../../../segmentation/types/account-audiences.md) | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](../../../../segmentation/types/prospect-audiences.md) | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](../../../../catalog/datasets/overview.md) | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](../../../../catalog/datasets/overview.md) | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 支持的受众数据类型取决于您创建的目标类型。
 请参阅下表，了解哪些目标类型支持哪些受众数据类型。
 
 | 目标类型 | 人员受众 | 帐户受众 | 潜在客户受众 | 数据集 |
 |---------|----------|---------|---------|---------|
-| 流式处理 | ✓ | ✓ | X | X |
+| 流传输 | ✓ | ✓ | X | X |
 | 基于文件 | ✓ | ✓ | ✓ | ✓ |
 
 {style="table-layout:auto"}

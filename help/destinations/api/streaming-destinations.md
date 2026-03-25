@@ -5,9 +5,9 @@ title: 使用Adobe Experience Platform中的流服务API连接到流目标并激
 description: 本文档介绍如何使用Adobe Experience Platform API创建流目标
 type: Tutorial
 exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '2203'
+source-wordcount: '2197'
 ht-degree: 2%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 2%
 >
 >阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
-本教程演示了如何使用API调用连接到Adobe Experience Platform数据，如何创建与流式Cloud Storage目标（[Amazon Kinesis](../catalog/cloud-storage/amazon-kinesis.md)或[Azure事件中心](../catalog/cloud-storage/azure-event-hubs.md)）的连接，以及如何创建到新创建目标的数据流，以及如何将数据激活到新创建的目标。
+本教程演示了如何使用API调用连接到[!DNL Adobe Experience Platform]数据、创建与流式Cloud Storage目标（[Amazon Kinesis](../catalog/cloud-storage/amazon-kinesis.md)或[Azure事件中心](../catalog/cloud-storage/azure-event-hubs.md)）的连接、创建到您新创建的目标的数据流以及激活数据到您新创建的目标。
 
 本教程在所有示例中都使用[!DNL Amazon Kinesis]目标，但[!DNL Azure Event Hubs]的步骤相同。
 
@@ -32,7 +32,7 @@ ht-degree: 2%
 
 ## 快速入门 {#get-started}
 
-本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
+本指南要求您对[!DNL Adobe Experience Platform]的以下组件有一定的了解：
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)： Experience Platform用于组织客户体验数据的标准化框架。
 * [[!DNL Catalog Service]](../../catalog/home.md)： [!DNL Catalog]是Experience Platform中数据位置和族系的记录系统。
@@ -565,7 +565,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 >[!IMPORTANT]
 >
-> 除了步骤[将数据激活到新目标](#activate-data)中的配置文件属性和受众之外，[!DNL AWS Kinesis]和[!DNL Azure Event Hubs]中的导出数据还将包含有关身份映射的信息。 这表示导出的配置文件的标识（例如[ECID](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html?lang=zh-Hans)、移动设备ID、Google ID、电子邮件地址等）。 请参阅以下示例。
+> 除了步骤[将数据激活到新目标](#activate-data)中的配置文件属性和受众之外，[!DNL AWS Kinesis]和[!DNL Azure Event Hubs]中的导出数据还将包含有关身份映射的信息。 这表示导出的配置文件的标识（例如[ECID](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html)、移动设备ID、Google ID、电子邮件地址等）。 请参阅以下示例。
 
 ```json
 {

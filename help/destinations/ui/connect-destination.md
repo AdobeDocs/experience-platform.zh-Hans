@@ -3,9 +3,9 @@ title: 创建新的目标连接
 type: Tutorial
 description: 了解如何在Adobe Experience Platform中连接到目标、启用警报以及为连接的目标设置营销操作。
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1236'
+source-wordcount: '1233'
 ht-degree: 4%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-在将受众数据发送到目标之前，必须设置与目标平台的连接。 本文介绍如何设置新的目标连接，然后可以使用Adobe Experience Platform用户界面激活受众或导出数据集。
+在将受众数据发送到目标之前，必须设置与目标平台的连接。 本文介绍如何设置新的目标连接，然后可以使用[!DNL Adobe Experience Platform]用户界面激活受众或导出数据集。
 
 ## 在目录中找到所需的目标 {#setup}
 

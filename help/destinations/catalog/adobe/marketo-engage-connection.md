@@ -2,9 +2,9 @@
 title: Marketo Engage连接
 description: Marketo Engage是唯一一款用于营销、广告、分析和商务的端到端客户体验管理(CXM)解决方案。 您可以从自动化和管理活动，从CRM商机管理和客户参与到基于帐户的营销和收入归因。
 exl-id: e02b6c65-b59e-41ff-8d33-f8fecfd87773
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1875'
+source-wordcount: '1853'
 ht-degree: 2%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 2%
 
 [!DNL Marketo Engage]是唯一用于营销、广告、分析和商业的端到端客户体验管理(CXM)解决方案。 您可以从自动化和管理活动，从CRM商机管理和客户参与到基于帐户的营销和收入归因。
 
-使用此目标在Adobe Experience Platform和Marketo Engage之间实时同步受众数据和配置文件属性。
+使用此目标在[!DNL Adobe Experience Platform]和Marketo Engage之间实时同步受众数据和配置文件属性。
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解您应如何以及何时使用[!DNL Marketo Engage]目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
+为了帮助您更好地了解您应如何以及何时使用[!DNL Marketo Engage]目标，以下是[!DNL Adobe Experience Platform]客户可以通过使用此目标解决的示例用例。
 
 ### 受众同步用例 {#audience-sync-use-cases}
 
@@ -39,14 +39,14 @@ ht-degree: 2%
 
 **通过完整的配置文件同步重新参与并扩展访问范围**
 
-营销团队想要为新营销活动激活产品兴趣受众。 虽然许多配置文件已存在于Marketo中，但一些配置文件是新的，仅存在于Real-Time CDP中。 对于现有人员，他们希望确保在Marketo中更新这些人员，但同时要创建新配置文件。
+营销团队想要为新营销活动激活产品兴趣受众。 虽然许多配置文件已存在于Marketo中，但一些配置文件是新的，仅存在于[!DNL Real-Time CDP]中。 对于现有人员，他们希望确保在Marketo中更新这些人员，但同时要创建新配置文件。
 
-他们可以在Marketo Engage中激活其受众，并将&#x200B;**[!UICONTROL Audience and Profile]**&#x200B;同步类型与&#x200B;**[!UICONTROL Update existing and create new persons]**&#x200B;操作结合使用，以确保他们能够定位来自Marketo的现有潜在客户，并为从Real-Time CDP导出的新受众创建新受众。
+他们可以在Marketo Engage中激活其受众，并将&#x200B;**[!UICONTROL Audience and Profile]**&#x200B;同步类型与&#x200B;**[!UICONTROL Update existing and create new persons]**&#x200B;操作结合使用，以确保他们能够定位来自Marketo的现有潜在客户，并为从[!DNL Real-Time CDP]导出的新受众创建新潜在客户。
 
 ## 先决条件 {#prerequisites}
 
-* 设置目标的用户在其Marketo实例和分区中必须具有[编辑人员](https://experienceleague.adobe.com/zh-hans/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database)权限。
-* 设置此目标时，只有同一Adobe Real-Time CDP组织上的Marketo Engage实例可用。
+* 设置目标的用户在其Marketo实例和分区中必须具有[编辑人员](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database)权限。
+* 设置此目标时，只有同一Adobe [!DNL Real-Time CDP]组织上的Marketo Engage实例可用。
 * 只有在Adobe Admin Console中管理用户的Marketo Engage实例才能使用此目标。
 
 ## 支持的身份 {#supported-identities}
@@ -66,7 +66,7 @@ ht-degree: 2%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> <br> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> <br> |
 
 {style="table-layout:auto"}
 
@@ -77,7 +77,7 @@ ht-degree: 2%
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -145,8 +145,8 @@ Marketo使用您选择的&#x200B;**[!UICONTROL Marketo deduplication field]**&#x
    * **[!UICONTROL Audience and profile]**：如果您希望将受众成员添加到Marketo列表并保持其配置文件信息最新，请选择此选项。
    * **[!UICONTROL Profile only]**：当您想要使用Experience Platform中的最新信息使Marketo潜在客户配置文件保持最新时，请选择此选项。
    * **[!UICONTROL Audience only]**：如果要将受众成员添加到Marketo列表而不更新其配置文件信息，请选择此选项。
-* **[!UICONTROL Partition]**： *分区选择仅在选择&#x200B;**[!UICONTROL Profile only]**&#x200B;或&#x200B;**[!UICONTROL Audience and profile]**&#x200B;同步类型*&#x200B;时可用。 选择与所选工作区关联的Marketo分区ID。 这允许您指定Marketo中的哪个潜在客户分区将接收导出的数据。 如果不选择特定的分区，您的数据将发送到Marketo中的&#x200B;**[!UICONTROL Default]**&#x200B;分区。
-* **[!UICONTROL Marketo deduplication field]**：选择更新现有Marketo潜在客户时要使用的Marketo重复数据删除字段。 此选择器显示您在Marketo中标记为重复数据删除字段的字段。 如果您希望Marketo中的特定字段显示为重复数据删除字段，则必须将该字段标记为Marketo中的[可搜索字段](https://experienceleague.adobe.com/zh-hans/docs/marketo-developer/marketo/rest/lead-database/lead-database)。
+* **[!UICONTROL Partition]**： *分区选择仅在选择&#x200B;**[!UICONTROL Profile only]**或&#x200B;**[!UICONTROL Audience and profile]**同步类型*&#x200B;时可用。 选择与所选工作区关联的Marketo分区ID。 这允许您指定Marketo中的哪个潜在客户分区将接收导出的数据。 如果不选择特定的分区，您的数据将发送到Marketo中的&#x200B;**[!UICONTROL Default]**&#x200B;分区。
+* **[!UICONTROL Marketo deduplication field]**：选择更新现有Marketo潜在客户时要使用的Marketo重复数据删除字段。 此选择器显示您在Marketo中标记为重复数据删除字段的字段。 如果您希望Marketo中的特定字段显示为重复数据删除字段，则必须将该字段标记为Marketo中的[可搜索字段](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/lead-database/lead-database)。
 
   >[!NOTE]
   >
@@ -193,7 +193,7 @@ Marketo使用您选择的&#x200B;**[!UICONTROL Marketo deduplication field]**&#x
 
 将受众导出到Marketo Engage后，您应该登录到Marketo帐户，验证受众是否已按预期激活。 在Marketo中检查相关的潜在客户分区和工作区，以确认受众数据正确显示，并且已执行预期的操作（例如更新或创建人员）。
 
-如果看不到预期的数据，请在Adobe Experience Platform中查看映射和导出设置，然后重试导出。
+如果未看到预期的数据，请在[!DNL Adobe Experience Platform]中查看映射和导出设置，然后再次尝试导出。
 
 ## 数据使用和治理 {#data-usage-governance}
 

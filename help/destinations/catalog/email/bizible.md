@@ -3,9 +3,9 @@ keywords: bizible；bizible扩展；bizible目标
 title: Bizible扩展
 description: Bizible扩展是Adobe Experience Platform中的电子邮件目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: 9e45416d-b951-411c-a59f-34f84529f721
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '423'
+source-wordcount: '414'
 ht-degree: 4%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 4%
 
 [!DNL Bizible]是行业领先的B2B归因解决方案，它让您能够无与伦比地查看您的数据，因此您可以做出有助于增长的明智决策。
 
-[!DNL Bizible]是Adobe Experience Platform中的电子邮件扩展。 有关Bizible的详细信息，请阅读Bizible概述资源中的[营销归因](https://experienceleague.adobe.com/docs/bizible/using/introduction-to-bizible/overview-resources/marketing-attribution.html?lang=zh-Hans)。
+[!DNL Bizible]是[!DNL Adobe Experience Platform]中的电子邮件扩展。 有关Bizible的详细信息，请阅读Bizible概述资源中的[营销归因](https://experienceleague.adobe.com/docs/bizible/using/introduction-to-bizible/overview-resources/marketing-attribution.html)。
 
 此目标是标记扩展。 有关标记扩展如何在Experience Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
@@ -26,7 +26,7 @@ ht-degree: 4%
 
 此扩展位于[!DNL Destinations]目录中，适用于已购买Experience Platform的所有客户。
 
-要使用此扩展，您需要具有对Adobe Experience Platform中标记的访问权限。 标记以内置增值功能的方式提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
+要使用此扩展，您需要访问[!DNL Adobe Experience Platform]中的标记。 标记以内置增值功能的方式提供给[!DNL Adobe Experience Cloud]客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
 
 ## 安装扩展 {#install-extension}
 

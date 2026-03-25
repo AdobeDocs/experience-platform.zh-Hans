@@ -2,16 +2,16 @@
 description: 了解如何为使用Destination SDK构建的目标配置UI属性，如文档链接、目标卡类别以及目标连接类型和频率。
 title: UI属性
 exl-id: aed8d868-c516-45da-b224-c7e99e4bfaf1
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '796'
+source-wordcount: '787'
 ht-degree: 0%
 
 ---
 
 # UI属性
 
-UI属性定义Adobe应在Adobe Experience Platform用户界面中为目标卡显示的可视化元素，例如徽标、指向文档页面的链接、目标描述及其类别和类型。
+UI属性定义Adobe应在[!DNL Adobe Experience Platform]用户界面中为目标卡显示的可视化元素，例如徽标、指向文档页面的链接、目标描述及其类别和类型。
 
 要了解此组件在何处适合使用Destination SDK创建的集成，请参阅[配置选项](../configuration-options.md)文档中的关系图或查看以下目标配置概述页面：
 
@@ -37,7 +37,7 @@ UI属性定义Adobe应在Adobe Experience Platform用户界面中为目标卡显
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -64,7 +64,7 @@ UI属性定义Adobe应在Adobe Experience Platform用户界面中为目标卡显
 
 ### `documentationLink` {#documentation-link}
 
-`documentationLink`是一个字符串参数，它引用目标的[目标目录](../../../catalog/overview.md)中的文档页面。 Adobe Experience Platform中的每个产品化目标都必须具有相应的文档页面。 [了解如何为您的目标创建目标文档页面](../../docs-framework/documentation-instructions.md)。 请注意，私有/自定义目标不需要此项。
+`documentationLink`是一个字符串参数，它引用目标的[目标目录](../../../catalog/overview.md)中的文档页面。 [!DNL Adobe Experience Platform]中的每个产品化目标必须具有相应的文档页面。 [了解如何为您的目标创建目标文档页面](../../docs-framework/documentation-instructions.md)。 请注意，私有/自定义目标不需要此项。
 
 使用以下格式： `http://www.adobe.com/go/destinations-YOURDESTINATION-en`，其中`YOURDESTINATION`是目标的名称。 对于名为Moviestar的目标，您将使用`http://www.adobe.com/go/destinations-moviestar-en`。
 
@@ -78,7 +78,7 @@ UI属性定义Adobe应在Adobe Experience Platform用户界面中为目标卡显
 
 ### `category` {#category}
 
-`category`是一个字符串参数，它引用了在Adobe Experience Platform中分配给目标的类别。 有关详细信息，请阅读[目标类别](../../../destination-types.md)。 使用以下值之一： `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`。
+`category`是一个字符串参数，它引用[!DNL Adobe Experience Platform]中分配给目标的类别。 有关详细信息，请阅读[目标类别](../../../destination-types.md)。 使用以下值之一： `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`。
 
 用户可以在目标目录的屏幕左侧看到目标类别的列表，如下图所示。
 

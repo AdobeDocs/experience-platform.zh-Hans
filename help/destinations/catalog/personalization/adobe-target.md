@@ -3,20 +3,20 @@ keywords: 目标扩展；目标
 title: Adobe Target 扩展
 description: Adobe Target扩展是Adobe Experience Platform中的个性化目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: 62f8c641-7942-41d5-bd86-681c2c5efa6c
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '461'
-ht-degree: 13%
+source-wordcount: '441'
+ht-degree: 5%
 
 ---
 
-# Adobe Target 扩展
+# [!DNL Adobe Target] 扩展
 
 ## 概述 {#overview}
 
-Adobe Target 是 Adobe Experience Cloud 解决方案，可提供定制和个性化客户体验所需的一切功能，从而最大限度地提高您的网站和移动站点、应用程序、社交媒体以及其他数字渠道的收入。
+[!DNL Adobe Target]是[!DNL Adobe Experience Cloud]解决方案，可为您提供定制和个性化客户体验所需的一切功能，从而最大限度地增加您的Web和移动设备网站、应用程序、社交媒体及其他数字渠道的收入。
 
-Adobe Target是Adobe Experience Platform中的个性化扩展。 有关扩展功能的更多信息，请参阅[Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100162.html)上的扩展页面。
+[!DNL Adobe Target]是[!DNL Adobe Experience Platform]中的个性化扩展。 有关扩展功能的更多信息，请参阅[Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100162.html)上的扩展页面。
 
 此目标是标记扩展。 有关标记扩展如何在Experience Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
@@ -26,11 +26,11 @@ Adobe Target是Adobe Experience Platform中的个性化扩展。 有关扩展功
 
 此扩展位于[!DNL Destinations]目录中，适用于已购买Experience Platform的所有客户。
 
-要使用此扩展，您需要具有对Adobe Experience Platform中标记的访问权限。 标记以内置增值功能的方式提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
+要使用此扩展，您需要访问[!DNL Adobe Experience Platform]中的标记。 标记以内置增值功能的方式提供给[!DNL Adobe Experience Cloud]客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您能够安装扩展。
 
 ## 安装扩展 {#install-extension}
 
-要安装Adobe Target扩展：
+要安装[!DNL Adobe Target]扩展，请执行以下操作：
 
 在[Experience Platform界面](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**。
 

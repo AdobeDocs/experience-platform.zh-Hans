@@ -5,16 +5,16 @@ title: 使用流服务API删除目标帐户
 type: Tutorial
 description: 了解如何使用流服务API删除目标帐户。
 exl-id: a963073c-ecba-486b-a5c2-b85bdd426e72
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '758'
-ht-degree: 19%
+source-wordcount: '749'
+ht-degree: 17%
 
 ---
 
 # 使用流服务API删除目标帐户
 
-[!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
+[!DNL Destinations]是预先构建的与目标平台的集成，允许从[!DNL Adobe Experience Platform]无缝激活数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
 在激活数据之前，您需要先设置目标帐户，以连接到目标。 本教程介绍使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)删除不再需要的目标帐户的步骤。
 
@@ -26,16 +26,16 @@ ht-degree: 19%
 
 本教程要求您具有有效的连接ID。 连接ID表示与目标的帐户连接。 如果您没有有效的连接ID，请从[目标目录](../catalog/overview.md)中选择您选择的目标，并按照[连接到目标](../ui/connect-destination.md)中列出的步骤操作，然后再尝试本教程。
 
-本教程还要求您实际了解Adobe Experience Platform的以下组件：
+本教程还要求您实际了解[!DNL Adobe Experience Platform]的以下组件：
 
-* [目标](../home.md)： [!DNL Destinations]是预先构建的与目标平台的集成，可无缝激活Adobe Experience Platform中的数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例。
+* [目标](../home.md)： [!DNL Destinations]是与目标平台的预建集成，允许无缝激活来自[!DNL Adobe Experience Platform]的数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例。
 * [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了使用[!DNL Flow Service] API成功删除目标帐户所需了解的其他信息。
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) [!DNL Experience Platform]。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
 
 ### 收集所需标头的值 {#gather-values-for-required-headers}
 

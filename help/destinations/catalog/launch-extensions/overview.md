@@ -3,16 +3,16 @@ keywords: 标记扩展；标记扩展；Launch目标；Platform标记扩展；Pl
 title: Adobe Experience Platform中的标记扩展
 description: Adobe Experience Platform提供了Adobe推出的新一代标签管理功能。 Experience Platform为您提供了一种简单的方式来部署和管理所有用来改善相关客户体验的分析、营销和广告标记。
 exl-id: 54fca635-0e37-460e-abb3-5da294d4e0cf
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '493'
+source-wordcount: '480'
 ht-degree: 2%
 
 ---
 
-# Adobe Experience Platform中的标记扩展
+# [!DNL Adobe Experience Platform]中的标记扩展
 
-Adobe Experience Platform提供了Adobe推出的新一代标签管理功能。 Experience Platform为您提供了一种简单的方式来部署和管理所有用来改善相关客户体验的分析、营销和广告标记。 标记以内置增值功能的方式提供给Adobe Experience Cloud客户。
+[!DNL Adobe Experience Platform]提供了来自Adobe的下一代标签管理功能。 Experience Platform为您提供了一种简单的方式来部署和管理所有用来改善相关客户体验的分析、营销和广告标记。 标记以内置增值功能的方式提供给[!DNL Adobe Experience Cloud]客户。
 
 有关标记简介，请参阅以下资源：
 
@@ -21,7 +21,7 @@ Adobe Experience Platform提供了Adobe推出的新一代标签管理功能。 E
 
 ## 如何在Experience Platform界面中查找标记扩展 {#how-to-find-extensions-in-interface}
 
-要在Experience Platform界面中查找扩展，请浏览到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**，并在&#x200B;**[!UICONTROL 类型]**&#x200B;筛选器中选择&#x200B;**[!UICONTROL 扩展]**。
+要在Experience Platform界面中查找扩展，请浏览到&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**&#x200B;并在&#x200B;**[!UICONTROL Extensions]**&#x200B;筛选器中选择&#x200B;**[!UICONTROL Types]**。
 
 界面中的![扩展筛选器](../../assets/catalog/launch-extensions/filter.png)
 

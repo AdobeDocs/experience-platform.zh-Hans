@@ -3,10 +3,10 @@ title: 将目标受众激活到目标
 type: Tutorial
 description: 了解如何将潜在客户受众激活到目标
 exl-id: 3e034a14-09d0-4b08-b171-5afb62ae4b62
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '593'
-ht-degree: 18%
+source-wordcount: '583'
+ht-degree: 12%
 
 ---
 
@@ -14,9 +14,9 @@ ht-degree: 18%
 
 >[!AVAILABILITY]
 >
->已购买Real-Time CDP Prime和Ultimate包的客户可以使用此功能。 请联系 Adobe 代表以获取更多信息。
+>此功能适用于已购买[!DNL Real-Time CDP] Prime和Ultimate包的客户。 请联系 Adobe 代表以获取更多信息。
 
-本文介绍了将[潜在受众](/help/segmentation/types/prospect-audiences.md)从Adobe Experience Platform导出到您的首选目标所需的工作流。
+本文介绍了将[潜在受众](/help/segmentation/types/prospect-audiences.md)从[!DNL Adobe Experience Platform]导出到您的首选目标所需的工作流。
 
 ## 支持的目标 {#supported-destinations}
 
@@ -47,7 +47,7 @@ ht-degree: 18%
 
 >[!TIP]
 >
->可导出配置文件受众的目标在卡片的右上角以图标指示，类似于下面高亮显示的目标，或者，您可以使用数据类型筛选器仅显示可导出目标受众的目标，如页面上较高位置显示的[&#128279;](#supported-destinations)。
+>可导出配置文件受众的目标在卡片的右上角以图标指示，类似于下面高亮显示的目标，或者，您可以使用数据类型筛选器仅显示可导出目标受众的目标，如页面上较高位置显示的[](#supported-destinations)。
 
 ![可导出突出显示的配置文件受众的Amazon S3目标页面。](/help/destinations/assets/ui/activate-prospect-audiences/amazon-s3-icon-activate-prospect-audiences.png)
 
@@ -87,8 +87,8 @@ Note that we will need to add links to other destination types here as more dest
 
 ## 由合作伙伴数据支持实现的其他用例 {#other-use-cases}
 
-探索通过 Real-Time CDP 中的合作伙伴数据支持实现的更多用例：
+在[!DNL Real-Time CDP]中进一步探索通过合作伙伴数据支持启用的用例：
 
 * [用受信任的数据合作伙伴提供的属性补充第一方轮廓](/help/rtcdp/partner-data/supplement-first-party-profiles.md)，以改善您的数据基础、洞察客户群的新情况并获得更好的受众优化。
-* 使用 Real-Time CDP 中的第三方数据支持，[通过数据合作伙伴提供的潜在客户轮廓扩充您的轮廓基础并与其交流以获取或接触新客户](/help/rtcdp/partner-data/prospecting.md)。
-* [&#128279;](/help/rtcdp/partner-data/onsite-personalization.md)利用合作伙伴辅助的认可在访问期间提供个性化现场体验，而无需用户进行身份验证或之前使用过您的品牌。
+* 在[!DNL Real-Time CDP]中使用第三方数据支持，以[利用数据合作伙伴提供的潜在客户配置文件扩展您的配置文件库，并与他们接洽以获取或接触新客户](/help/rtcdp/partner-data/prospecting.md)。
+* [](/help/rtcdp/partner-data/onsite-personalization.md)利用合作伙伴辅助的认可在访问期间提供个性化现场体验，而无需用户进行身份验证或之前使用过您的品牌。

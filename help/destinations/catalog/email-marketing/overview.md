@@ -4,10 +4,10 @@ title: 电子邮件营销目标概述
 type: Tutorial
 description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，如发送促销电子邮件营销活动。 了解哪些ESP支持作为Experience Platform目标。
 exl-id: e07f8c5a-0424-4de5-810f-3d5711ef4606
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '377'
-ht-degree: 4%
+source-wordcount: '371'
+ht-degree: 3%
 
 ---
 
@@ -15,11 +15,11 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-电子邮件服务提供商(ESP)使您能够管理电子邮件营销活动，如发送促销电子邮件营销活动。 Adobe Experience Platform通过允许您向电子邮件营销目标激活受众而与ESP集成。
+电子邮件服务提供商(ESP)使您能够管理电子邮件营销活动，如发送促销电子邮件营销活动。 [!DNL Adobe Experience Platform]通过允许您向电子邮件营销目标激活受众而与ESP集成。
 
 ## 支持的电子邮件营销目标 {#supported-destinations}
 
-Adobe Experience Platform支持以下电子邮件营销目标：
+[!DNL Adobe Experience Platform]支持以下电子邮件营销目标：
 
 * [Adobe Campaign](adobe-campaign.md)
 * [Adobe Campaign Managed Cloud Services](adobe-campaign-managed-services.md)

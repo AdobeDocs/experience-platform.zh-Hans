@@ -2,9 +2,9 @@
 title: 阿尔戈利亚
 description: 使用此连接器可将受众激活到算法以进行个性化，并在搜索和推荐中使用。 然后，您可以使用Algolia User Profile source connector将用户档案导入Real-Time CDP以构建丰富的受众。
 exl-id: 116a051a-1b47-4789-826e-c8f0fee60def
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1140'
+source-wordcount: '1112'
 ht-degree: 4%
 
 ---
@@ -17,27 +17,27 @@ ht-degree: 4%
 >
 >[!DNL Algolia]目标连接器和文档页面由Algolia Integration Services团队创建和维护。 有关查询或更新请求，请通过[adobe-algolia-solutions@algolia.com](mailto:adobe-algolia-solutions@algolia.com)联系他们。
 
-使用[!DNL Algolia]目标连接将Adobe Experience Platform受众发送到阿尔及利亚，以进行个性化搜索和推荐。 必须先设置[!DNL Algolia]源连接器，然后才能使用[[!DNL Algolia User Profiles]](/help/sources/connectors/data-partners/algolia-user-profiles.md)目标连接器。 在源连接器设置教程中，您将创建Algolia用户令牌身份。 配置目标连接器时，映射需要此标识。
+使用[!DNL Algolia]目标连接将[!DNL Adobe Experience Platform]受众发送到阿尔及利亚，以进行个性化搜索和推荐。 必须先设置[!DNL Algolia]源连接器，然后才能使用[[!DNL Algolia User Profiles]](/help/sources/connectors/data-partners/algolia-user-profiles.md)目标连接器。 在源连接器设置教程中，您将创建Algolia用户令牌身份。 配置目标连接器时，映射需要此标识。
 
-本教程提供了使用Adobe Experience Platform用户界面创建[!DNL Algolia]目标连接和数据流的步骤。
+本教程提供了使用[!DNL Algolia]用户界面创建[!DNL Adobe Experience Platform]目标连接和数据流的步骤。
 
 ![具有Algolia目标的目标目录。](../../assets/catalog/personalization/algolia/catalog.png)
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解您应如何以及何时使用[!DNL Algolia]目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
+为了帮助您更好地了解您应如何以及何时使用[!DNL Algolia]目标，以下是[!DNL Adobe Experience Platform]客户可以通过使用此目标解决的示例用例。
 
 ### Personalization一致性 {#personalization-consistency}
 
 使用此目标连接器可在您的站点上通过主页提供一致的个性化以进行搜索。
 
-例如，作为营销人员，您可能希望在Adobe Experience Platform中通过多个用户数据源（包括Algolia）构建丰富的受众。 您可以使用[!DNL Algolia]目标连接器共享定位策略的受众，从而提高营销活动的个性化和转化。
+例如，作为营销人员，您可能希望从多个用户数据源（包括阿尔及利亚）在[!DNL Adobe Experience Platform]中构建丰富受众。 您可以使用[!DNL Algolia]目标连接器共享定位策略的受众，从而提高营销活动的个性化和转化。
 
 要实施此用例，必须同时使用[[!DNL Algolia User Profiles]](/help/sources/connectors/data-partners/algolia-user-profiles.md)源连接器和[!DNL Algolia]目标连接器。
 
-首先，将现有[!DNL Algolia]用户配置文件导入Adobe Experience Platform Real-Time CDP和其他源，以开始使用源连接器创建丰富受众。 营销人员会使用可发送到阿尔及利亚的配置文件数据创建受众，以进行搜索和推荐个性化。
+首先，将现有[!DNL Algolia]用户配置文件导入[!DNL Adobe Experience Platform] [!DNL Real-Time CDP]和其他源，以开始使用源连接器创建丰富受众。 营销人员会使用可发送到阿尔及利亚的配置文件数据创建受众，以进行搜索和推荐个性化。
 
-然后，使用相应的[[!DNL Algolia User Profiles]](/help/sources/connectors/data-partners/algolia-user-profiles.md)源连接器将客户配置文件摄取并充回Real-Time CDP。
+然后，使用相应的[[!DNL Algolia User Profiles]](/help/sources/connectors/data-partners/algolia-user-profiles.md)源连接器将客户配置文件摄取并充回[!DNL Real-Time CDP]。
 
 ## 先决条件 {#prerequisites}
 
@@ -63,7 +63,7 @@ ht-degree: 4%
 | 受众来源 | 受支持 | 描述 |
 |---------|---------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -76,7 +76,7 @@ ht-degree: 4%
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -133,9 +133,9 @@ ht-degree: 4%
 >[!IMPORTANT]
 >
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 要导出身份，您需要查看身份图形[访问控制权限](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/home#permissions)。
+>* 要导出身份，您需要查看身份图形[访问控制权限](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions)。
 
-有关将受众激活到此目标的说明，请阅读[将配置文件和受众激活到流式受众导出目标](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations)。
+有关将受众激活到此目标的说明，请阅读[将配置文件和受众激活到流式受众导出目标](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations)。
 
 ### 映射属性和身份 {#mapping-attributes-identities}
 
@@ -145,7 +145,7 @@ ht-degree: 4%
 
 ## 验证数据导出 {#exported-data}
 
-要验证受众是否已成功导出到用户配置文件，请检查您的[!DNL Algolia]仪表板并导航到&#x200B;**[!UICONTROL Advanced Personalization]**，然后单击&#x200B;**[!UICONTROL User Inspector]**。 查找与导出的Adobe Experience Platform受众关联的用户配置文件，并在用户检查器中搜索它。 您将在区段部分看到受众ID。
+要验证受众是否已成功导出到用户配置文件，请检查您的[!DNL Algolia]仪表板并导航到&#x200B;**[!UICONTROL Advanced Personalization]**，然后单击&#x200B;**[!UICONTROL User Inspector]**。 查找与导出的[!DNL Adobe Experience Platform]受众关联的用户配置文件并在用户检查器中搜索它。 您将在区段部分看到受众ID。
 
 ![阿尔及利亚用户检查员](../../assets/catalog/personalization/algolia/verify-segment-user-profile.png)
 

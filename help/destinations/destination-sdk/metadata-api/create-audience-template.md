@@ -2,7 +2,7 @@
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK创建受众模板的API调用。
 title: 创建受众模板
 exl-id: 98d30002-d462-4008-9337-7de0cd608194
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
 source-wordcount: '621'
 ht-degree: 3%
@@ -21,7 +21,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 受众模板API操作快速入门 {#get-started}
 
@@ -262,9 +262,9 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/audience-t
 | `headers.header` | 字符串 | 指定应添加到API调用的任何HTTP标头。 例如：`"Content-Type"` |
 | `headers.value` | 字符串 | 指定应添加到API调用中的HTTP标头值。 例如：`"application/x-www-form-urlencoded"` |
 | `requestBody` | 字符串 | 指定应发送到API的消息正文的内容。 应添加到`requestBody`对象的参数取决于API接受的字段。 请参阅[支持的宏文档](../functionality/audience-metadata-management.md#macros)以了解可在邮件正文中包含的内容。 |
-| `responseFields.name` | 字符串 | 指定API在调用时返回的任何响应字段。 有关示例，请参阅受众元数据功能文档中的[模板示例](../functionality/audience-metadata-management.md#examples)。 |
+| `responseFields.name` | 字符串 | 指定API在调用时返回的任何响应字段。 有关示例，请参阅受众元数据功能文档中的[模板示例](../functionality/audience-metadata-management.md#configuration-examples)。 |
 | `responseFields.value` | 字符串 | 指定API在调用时返回的任何响应字段的值。 |
-| `responseErrorFields.name` | 字符串 | 指定API在调用时返回的任何响应字段。 有关示例，请参阅受众元数据功能文档中的[模板示例](../functionality/audience-metadata-management.md#examples)。 |
+| `responseErrorFields.name` | 字符串 | 指定API在调用时返回的任何响应字段。 有关示例，请参阅受众元数据功能文档中的[模板示例](../functionality/audience-metadata-management.md#configuration-examples)。 |
 | `responseErrorFields.value` | 字符串 | 解析从目标返回API调用响应时返回的任何错误消息。 这些错误消息将在Experience Platform用户界面中向用户显示。 |
 | `validations.field` | 字符串 | 指示在对目标进行API调用之前是否应对任何字段运行验证。 例如，您可以使用`{{validations.accountId}}`来验证用户的帐户ID。 |
 | `validations.regex` | 字符串 | 指示字段的结构应如何才能通过验证。 |

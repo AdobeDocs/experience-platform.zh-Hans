@@ -2,9 +2,9 @@
 description: 本页提供了在使用Destination SDK创作产品化目标时提交该目标以供审阅所需的所有信息。
 title: 提交已生产的目的地以供审查
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1045'
+source-wordcount: '1039'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 0%
 
 在将目标发布到[Experience Platform目标目录](/help/destinations/catalog/overview.md)之前，您必须向Adobe提供有关目标以及您执行的测试的特定信息，以确保用户在将数据激活到您的平台时享有最佳体验。
 
-本页列出了在提交或更新使用Adobe Experience Platform Destination SDK创作的目标时需要提供的所有信息。 要在Adobe Experience Platform中成功提交目标，请向<aepdestsdk@adobe.com>发送一封电子邮件，其中包括：
+本页列出了提交或更新使用[!DNL Adobe Experience Platform] Destination SDK创作的目标时需要提供的所有信息。 若要在[!DNL Adobe Experience Platform]中成功提交目标，请向<aepdestsdk@adobe.com>发送一封电子邮件，其中包括：
 
 * 目标解决的使用案例描述。 只有在提交新的目标配置时才需要此操作。
 * 目标提交原因的描述。 只有在更新现有目标配置时才需要此项。

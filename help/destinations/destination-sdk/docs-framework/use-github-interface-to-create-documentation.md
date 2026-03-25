@@ -2,9 +2,9 @@
 title: 使用GitHub Web界面创建目标文档页面
 description: 此页面上的说明向您展示了如何使用GitHub Web界面为Experience Platform目标创作文档页面并提交它以供审查。
 exl-id: 4780e05e-3d1d-4f1b-8441-df28d09c1a88
-source-git-commit: ff094c0c2c75e097140626d77478b8da9a7edf04
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '729'
+source-wordcount: '723'
 ht-degree: 0%
 
 ---
@@ -17,14 +17,14 @@ ht-degree: 0%
 >
 >另请参阅Adobe参与者指南中的支持文档：
 >
->* [安装Git和Markdown创作工具](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html?lang=zh-Hans)
->* [在本地为文档设置Git存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=zh-Hans)
->* 针对主要更改的[GitHub贡献工作流](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html?lang=zh-Hans)。
+>* [安装Git和Markdown创作工具](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html)
+>* [在本地为文档设置Git存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html)
+>* 针对主要更改的[GitHub贡献工作流](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html)。
 
 ## 设置GitHub创作环境 {#set-up-environment}
 
-1. 在浏览器中，导航到`https://github.com/AdobeDocs/experience-platform.zh-Hans`。
-1. 要[创建分支存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=zh-Hans#fork-the-repository)，请单击&#x200B;**创建分支存储库**，如下所示。 这会在您自己的GitHub帐户中创建Experience Platform存储库的副本。
+1. 在浏览器中，导航到`https://github.com/AdobeDocs/experience-platform.en`。
+1. 要[创建分支存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html#fork-the-repository)，请单击&#x200B;**创建分支存储库**，如下所示。 这会在您自己的GitHub帐户中创建Experience Platform存储库的副本。
 
    ![分支Adobe文档存储库](../assets/docs-framework/ssd-fork-repository.gif)
 
@@ -36,7 +36,7 @@ ht-degree: 0%
 
    ![添加新文件](../assets/docs-framework/github-navigate-and-create-file.gif)
 
-1. 命名您的目标`YOURDESTINATION.md`，其中YOURDESTINATION是您在Adobe Experience Platform中的目标的名称。 例如，如果贵公司名为Moviestar，则应将您的文件命名为`moviestar.md`。
+1. 命名您的目标`YOURDESTINATION.md`，其中YOURDESTINATION是您在[!DNL Adobe Experience Platform]中的目标的名称。 例如，如果贵公司名为Moviestar，则应将您的文件命名为`moviestar.md`。
 
 ## 为您的目标创作文档页面 {#author-documentation}
 
@@ -47,7 +47,7 @@ ht-degree: 0%
    >
    >您可以随时关闭浏览器窗口，稍后再重新打开。 您的工作会自动保存，并在您重新打开浏览器时等待您。
 1. 将内容从Markdown编辑器复制到GitHub中的新文件中。
-1. 对于您计划使用的任何屏幕截图或图像，请使用GitHub界面将文件上传到`experience-platform.en/help/destinations/assets/catalog/[...]`，其中`[...]`是您目标的所需类别。 例如，如果要向Experience Platform添加个性化目标，请选择`personalization`类别。 您需要从正在创作的页面链接到图像。 请参阅[有关如何链接到图像的说明](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html?lang=zh-Hans#link-to-images)。
+1. 对于您计划使用的任何屏幕截图或图像，请使用GitHub界面将文件上传到`experience-platform.en/help/destinations/assets/catalog/[...]`，其中`[...]`是您目标的所需类别。 例如，如果要向Experience Platform添加个性化目标，请选择`personalization`类别。 您需要从正在创作的页面链接到图像。 请参阅[有关如何链接到图像的说明](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html#link-to-images)。
 
    ![将图像上传到GitHub](../assets/docs-framework/upload-image.gif)
 
@@ -59,7 +59,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->请注意，此处没有任何可破坏的内容。 按照本节中的说明，您只是建议更新文档。 您建议的更新将由Adobe Experience Platform文档团队批准或编辑。
+>请注意，此处没有任何可破坏的内容。 按照本节中的说明，您只是建议更新文档。 您建议的更新将由[!DNL Adobe Experience Platform]文档团队批准或编辑。
 
 1. 保存文件并上传所需图像后，您可以打开拉取请求(PR)，将工作分支合并到Adobe文档存储库的主分支。 确保已选择您处理的分支，然后选择&#x200B;**Contribute >打开拉取请求**。
 
@@ -75,7 +75,7 @@ ht-degree: 0%
 
 1. 此时，将显示一条通知，提示您签署Adobe参与者许可协议(CLA)。 这是强制步骤。 签署CLA后，刷新PR页面并提交拉取请求。
 
-1. 您可以通过检查&#x200B;**中的**&#x200B;拉取请求`https://github.com/AdobeDocs/experience-platform.zh-Hans`选项卡来确认拉取请求已提交。
+1. 您可以通过检查&#x200B;**中的**&#x200B;拉取请求`https://github.com/AdobeDocs/experience-platform.en`选项卡来确认拉取请求已提交。
 
    ![PR成功](../assets/docs-framework/ssd-pr-successful.png)
 
@@ -83,4 +83,4 @@ ht-degree: 0%
 
 >[!TIP]
 >
->若要在文档中添加图像和链接，以及有关Markdown的任何其他问题，请阅读Adobe协作编写指南中的[使用Markdown](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=zh-Hans)。
+>若要在文档中添加图像和链接，以及有关Markdown的任何其他问题，请阅读Adobe协作编写指南中的[使用Markdown](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html)。

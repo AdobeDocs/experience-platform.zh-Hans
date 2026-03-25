@@ -3,22 +3,22 @@ keywords: 目标；目标；目标类型
 title: 目标类型和类别
 description: 了解Adobe Experience Platform中目标的各种类型和类别。
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: d57af88cc9507e0164b044a7203c66fe9fd9240e
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '831'
+source-wordcount: '812'
 ht-degree: 1%
 
 ---
 
 # 目标类型和类别
 
-请阅读本页，了解Adobe Experience Platform目标的各种类型和类别。
+请阅读本页以了解[!DNL Adobe Experience Platform]目标的不同类型和类别。
 
 ## 目标类型 {#destination-types}
 
-在Adobe Experience Platform中，我们会区分不同的目标类型，即连接、数据集导出和扩展。 有多种类型的连接目标，可让您将数据导出到基于API的目标、社交目标、CRM平台等。
+在[!DNL Adobe Experience Platform]中，我们区分不同的目标类型 — 连接、数据集导出和扩展。 有多种类型的连接目标，可让您将数据导出到基于API的目标、社交目标、CRM平台等。
 
-最后，还可以区分目标目录中所有组织内可用的公共目标与Real-Time CDP Ultimate客户为满足其特定导出用例而可以创建的专用目标，这两者之间的连接。
+最后，还可以区分目标目录中所有组织提供的公共目标与[!DNL Real-Time CDP]Ultimate客户为满足其特定导出用例而可以创建的专用目标，这两者之间的连接。
 
 >[!BEGINSHADEBOX]
 
@@ -28,7 +28,7 @@ ht-degree: 1%
 
 ## 连接 {#connections}
 
-Adobe Experience Platform中的&#x200B;**[!UICONTROL Profile Export]**、**[!UICONTROL Streaming Audience Export]**&#x200B;和&#x200B;**[!DNL Edge Personalization]**&#x200B;目标捕获事件数据，将其与其他数据源组合以形成[实时客户个人资料](../profile/home.md)，应用分段并将受众和符合条件的个人资料导出到目标。
+**[!UICONTROL Profile Export]**&#x200B;中的&#x200B;**[!UICONTROL Streaming Audience Export]**、**[!DNL Edge Personalization]**&#x200B;和[!DNL Adobe Experience Platform]目标捕获事件数据，将其与其他数据源组合以形成[实时客户个人资料](../profile/home.md)，应用分段，并将受众和符合条件的个人资料导出到目标。
 
 ## 配置文件导出目标 {#profile-export}
 
@@ -41,9 +41,9 @@ Adobe Experience Platform中的&#x200B;**[!UICONTROL Profile Export]**、**[!UIC
 
 >[!IMPORTANT]
 >
->高级企业目标或流式配置文件导出目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+>高级企业目标或流式配置文件导出目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
-使用高级企业目标数据连接器近乎实时地将Adobe Real-Time Customer Data Platform配置文件交付给内部系统或其他第三方系统，以便进行数据同步、分析和进一步扩充配置文件用例。
+使用高级企业目标数据连接器近乎实时地将Adobe [!DNL Real-Time Customer Data Platform]配置文件交付给内部系统或其他第三方系统，以便进行数据同步、分析和进一步扩充配置文件用例。
 
 这些目标会作为Experience Platform数据流接收受众和配置文件数据。
 
@@ -77,7 +77,7 @@ Experience Platform中的Edge个性化目标包括[Adobe Target](/help/destinati
 
 以下视频介绍这两种类型目标的特性：
 
->[!VIDEO](https://video.tv.adobe.com/v/32148?captions=chi_hans&quality=12)
+>[!VIDEO](https://video.tv.adobe.com/v/29707?quality=12)
 
 ## 导出的受众的类型 {#exported-audiences-types}
 
@@ -118,10 +118,10 @@ Experience Platform利用标签管理的强大功能和灵活性，允许您在U
 
 当需要利用完整的集中式客户配置文件或客户受众进行激活时，连接会很有用。 例如，如果要将来自分析系统的行为数据与上传的CRM数据联接，则使用连接来使用户符合给定受众的资格，然后再向该用户投放个性化消息。
 
-当使用事件数据来触发操作或在外部环境中进行分段时，扩展很有用。 例如，如果需要将行为数据转发到外部系统，而无需将其连接到给定用户的文件上的其他数据源。
+当事件数据触发操作或在外部环境中进行分段时，扩展很有帮助。 例如，如果需要将行为数据转发到外部系统，而无需将其连接到给定用户的文件上的其他数据源。
 
 ## 目标类别 {#categories}
 
-[目标目录](https://platform.adobe.com/destination/catalog)中的连接和扩展按目标类别(**Advertising**、**Cloud Storage**、**调查平台**、**电子邮件营销**&#x200B;等)分组，具体取决于它们帮助您实现的营销操作。 有关每个类别以及每个类别中包含的目标的详细信息，请参阅[目标目录文档](./catalog/overview.md)。
+[目标目录](https://platform.adobe.com/destination/catalog)中的连接和扩展按目标类别（**Advertising**、**Cloud Storage**、**调查平台**、**电子邮件营销**&#x200B;等）分组，具体取决于它们帮助您实现的营销操作。 有关每个类别以及每个类别中包含的目标的详细信息，请参阅[目标目录文档](./catalog/overview.md)。
 
 ![目录页面中突出显示的目标类别。](./assets/destination-types/destination-categories-menu.png "目录页面中突出显示的目标类别。"){zoomable="yes"}

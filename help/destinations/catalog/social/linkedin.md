@@ -3,9 +3,9 @@ keywords: linkedin连接；linkedin连接；linkedin目标；linkedin；
 title: Linkedin匹配的受众连接
 description: 根据散列电子邮件，激活LinkedIn营销活动的用户档案，以实现受众定位、个性化和抑制。
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1336'
+source-wordcount: '1312'
 ht-degree: 4%
 
 ---
@@ -20,9 +20,9 @@ Adobe Experience Platform UI中的![LinkedIn目标](../../assets/catalog/social/
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解如何以及何时使用[!DNL LinkedIn Matched Audiences]目标，以下是Adobe Experience Platform客户可以使用此功能解决的用例。
+为了帮助您更好地了解如何以及何时使用[!DNL LinkedIn Matched Audiences]目标，以下是[!DNL Adobe Experience Platform]客户可以通过使用此功能解决的用例。
 
-一家软件公司组织了一次会议，并希望与与会者保持联系，并根据他们的会议出席情况向他们显示个性化的优惠。 公司可以将电子邮件地址或移动设备ID从自己的[!DNL CRM]摄取到Adobe Experience Platform中。 然后，他们可以从自己的离线数据构建受众，并将这些受众发送到[!DNL LinkedIn]社交平台，优化其广告支出。
+一家软件公司组织了一次会议，并希望与与会者保持联系，并根据他们的会议出席情况向他们显示个性化的优惠。 公司可以将电子邮件地址或移动设备ID从自己的[!DNL CRM]摄取到[!DNL Adobe Experience Platform]。 然后，他们可以从自己的离线数据构建受众，并将这些受众发送到[!DNL LinkedIn]社交平台，优化其广告支出。
 
 ## 支持的身份 {#supported-identities}
 
@@ -36,7 +36,7 @@ Adobe Experience Platform UI中的![LinkedIn目标](../../assets/catalog/social/
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
 | GAID | GOOGLE ADVERTISING ID | 当源身份是GAID命名空间时，请选择此目标身份。 |
-| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 请按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，分别使用适当的命名空间处理纯文本和经过哈希处理的电子邮件。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以便在激活时自动对[!DNL Experience Platform]数据进行哈希处理。 |
+| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | [!DNL Adobe Experience Platform]支持纯文本和SHA256哈希电子邮件地址。 请按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明进行操作，分别使用适当的命名空间处理纯文本和经过哈希处理的电子邮件。 当源字段包含未哈希处理的属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以便在激活时自动对[!DNL Experience Platform]数据进行哈希处理。 |
 
 {style="table-layout:auto"}
 
@@ -47,7 +47,7 @@ Adobe Experience Platform UI中的![LinkedIn目标](../../assets/catalog/social/
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -60,7 +60,7 @@ Adobe Experience Platform UI中的![LinkedIn目标](../../assets/catalog/social/
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -86,11 +86,11 @@ Adobe Experience Platform UI中的![LinkedIn目标](../../assets/catalog/social/
 
 [!DNL LinkedIn Matched Audiences]要求不发送明确的个人身份信息(PII)。 因此，激活到[!DNL LinkedIn Matched Audiences]的受众可以脱离&#x200B;*哈希*&#x200B;标识符，例如电子邮件地址或移动设备ID。
 
-根据您摄取到Adobe Experience Platform中的ID类型，您必须遵守其相应的要求。
+根据您摄取到[!DNL Adobe Experience Platform]中的ID类型，您必须遵循其相应的要求。
 
 ## 电子邮件哈希处理要求 {#email-hashing-requirements}
 
-您可以在将电子邮件地址摄取到Adobe Experience Platform之前对其进行哈希处理，或者在Experience Platform中明确使用电子邮件地址，并在激活时对其进行[!DNL Experience Platform]哈希处理。
+您可以在将电子邮件地址摄取到[!DNL Adobe Experience Platform]中之前对其进行哈希处理，或者在Experience Platform中明确使用电子邮件地址，并在激活时对其进行[!DNL Experience Platform]哈希处理。
 
 要了解如何在Experience Platform中摄取电子邮件地址，请参阅[批次摄取概述](/help/ingestion/batch-ingestion/overview.md)和[流式摄取概述](/help/ingestion/streaming-ingestion/overview.md)。
 
@@ -124,7 +124,7 @@ Adobe Experience Platform UI中的![LinkedIn目标](../../assets/catalog/social/
 
 以下视频还演示了配置[!DNL LinkedIn Matched Audiences]目标和激活受众的步骤。
 
->[!VIDEO](https://video.tv.adobe.com/v/3411783/?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 >[!NOTE]
 >
@@ -148,7 +148,7 @@ LinkedIn令牌每60天过期一次。 您可以从&#x200B;**[!UICONTROL Account 
    ![筛选以仅显示LinkedIn帐户](/help/destinations/assets/catalog/social/linkedin/refresh-oauth-filters.png)
 3. 选择要刷新的帐户，选择省略号并选择&#x200B;**[!UICONTROL Edit details]**。
    ![选择“编辑详细信息”控件](/help/destinations/assets/catalog/social/linkedin/refresh-oauth-edit-details.png)
-4. 在模态窗口中，选择&#x200B;**[!UICONTROL Reconnect OAuth]**&#x200B;并使用您的LinkedIn凭据重新进行身份验证。
+4. 在模态窗口中，选择&#x200B;**[!UICONTROL Reconnect OAuth]**并使用您的LinkedIn凭据重新进行身份验证。
    使用Reconnect OAuth选项的![模式窗口](/help/destinations/assets/catalog/social/linkedin/reconnect-oauth-control.png)
 
 >[!SUCCESS]
@@ -189,4 +189,4 @@ LinkedIn令牌每60天过期一次。 您可以从&#x200B;**[!UICONTROL Account 
 
 >[!TIP]
 >
->Adobe Experience Platform与[!DNL LinkedIn Matched Audiences]之间的集成支持历史受众回填。 在将受众激活到目标时，所有历史受众资格都会发送到[!DNL LinkedIn]。
+>[!DNL Adobe Experience Platform]和[!DNL LinkedIn Matched Audiences]之间的集成支持历史受众回填。 在将受众激活到目标时，所有历史受众资格都会发送到[!DNL LinkedIn]。

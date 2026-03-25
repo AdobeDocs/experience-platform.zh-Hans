@@ -3,9 +3,9 @@ keywords: 云存储目标；云存储
 title: 云存储目标概述
 description: Adobe Experience Platform可以将受众作为数据文件交付到Amazon S3、AWS Kinesis、Azure事件中心或SFTP云存储位置。
 exl-id: d29f0a6e-b323-4f78-bbd0-dee2f1e0fedb
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '464'
+source-wordcount: '457'
 ht-degree: 6%
 
 ---
@@ -14,13 +14,13 @@ ht-degree: 6%
 
 ## 概述 {#overview}
 
-Adobe Experience Platform可以将受众作为数据文件交付到云存储位置。 这使您能够通过[!DNL Amazon S3]、[!DNL Azure Blob]、[!DNL Azure Data Lake Storage Gen2]、[!DNL Data Landing Zone]、[!DNL Google Cloud Storage]和SFTP的CSV文件将受众及其配置文件属性发送到您的内部系统。 对于[!DNL Amazon Kinesis]和[!DNL Azure Event Hubs]目标，数据将以[!DNL JSON]格式流式传输出Experience Platform。
+[!DNL Adobe Experience Platform]可以将受众作为数据文件交付到云存储位置。 这使您能够通过[!DNL Amazon S3]、[!DNL Azure Blob]、[!DNL Azure Data Lake Storage Gen2]、[!DNL Data Landing Zone]、[!DNL Google Cloud Storage]和SFTP的CSV文件将受众及其配置文件属性发送到您的内部系统。 对于[!DNL Amazon Kinesis]和[!DNL Azure Event Hubs]目标，数据将以[!DNL JSON]格式流式传输出Experience Platform。
 
 ![Adobe云存储目标](../../assets/catalog/cloud-storage/cloud-storage-destinations.png)
 
 ## 支持的云存储目标 {#supported-destinations}
 
-Adobe Experience Platform支持将数据导出到以下云存储目标：
+[!DNL Adobe Experience Platform]支持将数据导出到以下云存储目标：
 
 * [Amazon Kinesis连接](amazon-kinesis.md)
 * [Amazon S3连接](amazon-s3.md)
