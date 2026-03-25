@@ -2,9 +2,9 @@
 title: 上下文
 description: 自动收集设备、环境或位置数据。
 exl-id: 911cabec-2afb-4216-b413-80533f826b0e
-source-git-commit: 0a45b688243b17766143b950994f0837dc0d0b48
+source-git-commit: 9f7464b78da9615bf6966e34eb129150a481fb5f
 workflow-type: tm+mt
-source-wordcount: '998'
+source-wordcount: '1017'
 ht-degree: 5%
 
 ---
@@ -58,6 +58,7 @@ ht-degree: 5%
 | 省/市/自治区 | 最终用户的省/市/自治区代码。 | `xdm.placeContext.geo.stateProvince` | `CA` |
 | 纬度 | 最终用户位置的纬度。 | `xdm.placeContext.geo._schema.latitude` | `37.3307447` |
 | 经度 | 最终用户位置的经度。 | `xdm.placeContext.geo._schema.longitude` | `-121.8945965` |
+| iana时区 | 最终用户的IANA时区。 包含在库版本2.32.0或更高版本中。 | `xdm.placeContext.ianaTimezone` | `America/Denver` |
 
 ### 时间戳
 
@@ -97,7 +98,7 @@ ht-degree: 5%
 
 ### 一次性Analytics反向链接 {#one-time-analytics-referrer}
 
-`"oneTimeAnalyticsReferrer"`关键字仅在页面的第一个非决策`sendEvent`调用中将反向链接值发送到Adobe Analytics。 此上下文关键字的主要用例是防止Adobe Analytics中的[反向链接](https://experienceleague.adobe.com/zh-hans/docs/analytics/components/dimensions/referrer)维度被主要用于Analytics和Target集成的点击夸大。
+`"oneTimeAnalyticsReferrer"`关键字仅在页面的第一个非决策`sendEvent`调用中将反向链接值发送到Adobe Analytics。 此上下文关键字的主要用例是防止Adobe Analytics中的[反向链接](https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/referrer)维度被主要用于Analytics和Target集成的点击夸大。
 
 如果给定`sendEvent`命令使用决策事件类型(`decisioning.propositionFetch`、`decisioning.propositionDisplay`、`decisioning.propositionInteract`)，则在计算页面上的前`sendEvent`个时，将忽略该类型。 如果反向链接值在页面上发生更改并触发另一个`sendEvent`，则有效负载中将包含新的反向链接值。 此条件允许将功能用于单页应用程序。
 

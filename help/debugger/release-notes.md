@@ -4,24 +4,24 @@ description: Adobe Experience Platform Debugger 的最新发行说明。
 keywords: debugger;experience Platform Debugger 扩展程序;chrome;扩展程序;发行说明
 uuid: 47a5d6f3-c074-4ad5-ad4b-e6030496689b
 exl-id: 3eed44da-5f85-413e-a783-3a0df03a2baf
-source-git-commit: c4048b83c916f4b3b4b5acb3cccb957b65ee25c8
+source-git-commit: 9f7464b78da9615bf6966e34eb129150a481fb5f
 workflow-type: tm+mt
-source-wordcount: '864'
-ht-degree: 91%
+source-wordcount: '846'
+ht-degree: 89%
 
 ---
 
 # Adobe Experience Platform Debugger 发行说明
 
-## 1.6.4版 — 2025年5月6日
+## 1.6.5版 — 2026年3月24日
 
-### 修复和改进功能
+* 修复了导致无法在活动Assurance会话中发送AppMeasurement中的事件的问题。
+
+## 1.6.4版 — 2025年5月6日
 
 * 修复了登录不可用的问题。
 
 ## 1.6.3版 — 2025年4月30日
-
-### 修复和改进功能
 
 * 修复了Debugger会导致DTM和Tags功能无法正常运行的问题。
 * 修复了Analytics后处理点击不会显示在日志中的问题。
@@ -29,24 +29,15 @@ ht-degree: 91%
 
 ## 版本1.6.2 - 2024年10月1日
 
-### 修复和改进功能
-
 * 修复了调试器对所有CSP错误过于敏感的问题
 
 ## 版本 1.6.1，2024 年 7 月 25 日
-
-### 修复和改进功能
 
 * 修复了阻止用户向没有标记的页面添加新标记嵌入代码的问题。
 
 ## 版本 1.6.0，2024 年 7 月 11 日
 
-### 新增功能
-
 * 允许用户选择启用/禁用技术和个人数据收集。
-
-### 修复和改进功能
-
 * 修复 Firefox 脚本注入和隐私政策链接。
 * 捕获缺失的 Analytics 请求。
 * 修复包含大量复杂控制台消息的页面崩溃问题。
@@ -54,19 +45,12 @@ ht-degree: 91%
 
 ## 版本 1.5.4，2023 年 12 月 19 日
 
-### 修复和改进功能
-
 * 修复了无法保留设置的问题。
 * 修复了查看 Analytics 后处理命中时导致 Debugger 崩溃的问题。
 
 ## 版本 1.5.3，2023 年 12 月 6 日
 
-### 新增功能
-
 * 添加了“打开 Debugger 时锁定到活动选项卡”的设置。
-
-### 修复和改进功能
-
 * 修复了专用域上缺少 Analytics 请求的问题。
 * 修复了 Analytics 请求表中缺少活动地图数据的问题。
 * 修复了查看 Target Trace 会导致崩溃的问题。
@@ -76,13 +60,9 @@ ht-degree: 91%
 
 （仅限 Firefox）
 
-### 修复和改进功能
-
 * 更新了对文件的组织形式。
 
 ## 版本 1.5.1 - 2023 年 11 月 2 日
-
-### 修复和改进功能
 
 * 修复了 Analytics 事件被忽略或重复的问题。
 * 修复了超出最大状态存储大小的问题。
@@ -90,12 +70,7 @@ ht-degree: 91%
 
 ## 版本 1.5.0 - 2023 年 10 月 19 日
 
-### 新增功能
-
 * 在标记摘要和日志中显示属性、环境和规则的链接。
-
-### 修复和改进功能
-
 * 修复了未发送标记摘要数据的问题。
 * 修复了 Assurance 会话会出现 CORS 错误的问题
 * 修复了导致 Target Trace 无法出现的问题。

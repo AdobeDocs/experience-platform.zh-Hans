@@ -2,10 +2,10 @@
 title: Brand Concierge 配置设置
 description: 为Brand Concierge Chat配置会话持久性和流超时。
 exl-id: d5c0bdf7-563d-4e0e-9b1b-71e2fa783e29
-source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
+source-git-commit: 9f7464b78da9615bf6966e34eb129150a481fb5f
 workflow-type: tm+mt
-source-wordcount: '152'
-ht-degree: 16%
+source-wordcount: '190'
+ht-degree: 13%
 
 ---
 
@@ -37,3 +37,7 @@ ht-degree: 16%
 ## [!UICONTROL Stream timeout (seconds)]
 
 触发超时错误之前等待会话流块的最长时间（以秒为单位）。 默认值为`10`秒。
+
+## [!UICONTROL Collect sources]
+
+如果用户从Brand Concierge对话中的链接导航到页面，则会收集来源的复选框。 默认情况下处于未选中状态。 如果启用，库将检查查询字符串参数`adobe_brand_concierge_source`并将其值填充到`xdm.channel.referringSource`中。

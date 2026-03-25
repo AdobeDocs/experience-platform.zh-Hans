@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；Experience Platform Web SDK；Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 5ef0b97d6908753be738d7ad2dfd423d02f87c8d
+source-git-commit: d6b2be2c7f7b5a3b002e565dce8cee8af85ffcc2
 workflow-type: tm+mt
-source-wordcount: '2718'
+source-wordcount: '2751'
 ht-degree: 2%
 
 ---
@@ -15,6 +15,12 @@ ht-degree: 2%
 
 本文档介绍Adobe Experience Platform Web SDK的发行说明。
 有关Web SDK标记扩展的最新发行说明，请参阅[Web SDK标记扩展发行说明](/help/tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md)。
+
+## 2.32.0版 — 2026年3月23日
+
+- 共享核心实用程序现已作为独立的npm包([@adobe/alloy-core](https://www.npmjs.com/package/@adobe/alloy-core))发布，以供扩展和集成使用。
+- 当`xdm.placeContext.ianaTimezone`包含在`placeContext`配置变量中时，XDM字段[`context`](/help/collection/js/commands/configure/context.md)中现在包含IANA时区。
+- Brand Concierge：修复了禁用[`stickyConversationSession`](/help/collection/js/commands/configure/conversation.md)时出现的会话ID问题。
 
 ## 2.31.1版 — 2026年2月11日
 
@@ -34,8 +40,6 @@ ht-degree: 2%
 **修复和改进**
 
 - `aria-label`和`name`属性现在在[自动链接集合](commands/configure/clickcollectionenabled.md)中被考虑。
-- 修复了标识映射集成可能存在的争用情况。
-- 修复了`streamingMedia`中未包含时间戳的问题。
 - 修复了自定义代码操作仅运行一次的问题。
 
 ## 版本2.30.0 - 2025年9月24日
@@ -48,7 +52,7 @@ ht-degree: 2%
 
 **新增功能**
 
-- 增加了对Adobe历程Analytics的Adobe广告数据收集的支持
+- 增加了对历程Analytics的Adobe广告数据收集的支持
 - 添加了对在用户配置文件中记录推送订阅详细信息的支持。
 
 **修复和改进**

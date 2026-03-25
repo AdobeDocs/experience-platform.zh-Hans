@@ -1,10 +1,11 @@
 ---
 title: 对话
 description: 配置Brand Concierge聊天设置。
-source-git-commit: 0a45b688243b17766143b950994f0837dc0d0b48
+exl-id: 0f64c7f1-2c28-4c67-af05-dc9ee688fdc0
+source-git-commit: 9f7464b78da9615bf6966e34eb129150a481fb5f
 workflow-type: tm+mt
-source-wordcount: '111'
-ht-degree: 4%
+source-wordcount: '127'
+ht-degree: 3%
 
 ---
 
@@ -20,6 +21,7 @@ ht-degree: 4%
 
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
+| **`collectSources`** | `boolean` | 确定Web SDK是否读取`adobe_brand_concierge_source`查询字符串参数并将其包含在`xdm.channel.referringSource`中。 默认为`false`。 |
 | **`stickyConversationSession`** | `boolean` | 确定Web SDK是否设置会话Cookie来跨页面加载保留Brand Concierge聊天会话。 默认为`false`。 如果忽略或设置为`false`，Brand Concierge Chat会在每次页面加载时启动新会话。 |
 
 ## 示例
@@ -29,6 +31,7 @@ alloy("configure", {
   datastreamId: "ebebf826-a01f-4458-8cec-ef61de241c93",
   orgId: "ADB3LETTERSANDNUMBERS@AdobeOrg",
   conversation: {
+    collectSources: true
     stickyConversationSession: true
   }
 });

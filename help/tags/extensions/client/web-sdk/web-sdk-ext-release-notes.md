@@ -2,17 +2,22 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 7dac63a5c2ca3897795b8849677ae606c8ea8c4b
+source-git-commit: 9f7464b78da9615bf6966e34eb129150a481fb5f
 workflow-type: tm+mt
-source-wordcount: '3165'
+source-wordcount: '3230'
 ht-degree: 20%
 
 ---
 
 
-# Web SDK扩展发行说明
+# Web SDK标记扩展发行说明
 
-本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[Experience Platform Web SDK发行说明](/help/collection/js/release-notes.md)。
+本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[Adobe Experience Platform Web SDK发行说明](/help/collection/js/release-notes.md)。
+
+## 版本2.34.2 - 2026年3月23日
+
+- 包含Adobe Experience Platform Web SDK的[版本2.32.0](/help/collection/js/release-notes.md)。
+- 修复了特定于复制标记属性的问题，该问题导致“更新变量”操作可能保留对原始属性中数据元素的引用。 要修复现有的复制属性，请打开并重新保存每个受影响的更新变量操作及其规则。 在重新保存之前，请避免重命名复制的数据元素。
 
 ## 2.34.1版 — 2026年2月11日
 
