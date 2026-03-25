@@ -104,6 +104,7 @@ ht-degree: 2%
       *句点(“。”) 字符（ASCII代码46）。 例如，将“jane.doe@gmail.com”标准化为“janedoe@gmail.com”。
      *加号(“+”)字符（ASCII代码43）和所有后续字符。 例如，将“janedoe+home@gmail.com”标准化为“janedoe@gmail.com”。
   
+
 ## 电话号码规范化和哈希处理要求 {#phone-hashing}
 
 以下是关于上传电话号码的须知信息：
