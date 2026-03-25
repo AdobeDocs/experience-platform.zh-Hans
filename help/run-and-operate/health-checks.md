@@ -172,7 +172,7 @@ ht-degree: 1%
 
 ![已弃用的身份命名空间详细信息面板，显示说明、影响以及受影响的命名空间列表](assets/health-checks/deprecated-namespace-detail.png)
 
-有关详细信息，请参阅关于过时命名空间的[Experience Cloud知识库文章](https://experienceleague.adobe.com/en/docs/experience-cloud-kcs/kbarticles/ka-18155){target="_blank"}。
+有关详细信息，请参阅关于过时命名空间的[Experience Cloud知识库文章](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-kcs/kbarticles/ka-18155){target="_blank"}。
 
 ## 后续步骤 {#next-steps}
 
