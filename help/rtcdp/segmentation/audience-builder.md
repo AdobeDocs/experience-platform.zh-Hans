@@ -2,9 +2,9 @@
 title: Real-Time Customer Data Platform中的Audience Builder
 description: 了解如何使用Real-Time Customer Data Platform中的受众生成器创建受众。
 feature: Get Started, Audiences
-badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions" newtab=true
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 exl-id: da87baad-b82a-4a45-89c3-cf20d66fe657
-source-git-commit: 8c55aebcb65327394ffbdf59db1d2a203182ed18
+source-git-commit: 809f80c721d6eedf5ee88dbb1cf4bf7e5a413614
 workflow-type: tm+mt
 source-wordcount: '1079'
 ht-degree: 7%
@@ -64,7 +64,7 @@ ht-degree: 7%
 
 或者，您可以看到显示最小值、平均值（平均值）和最大值的数据分布。
 
-![显示属性统计信息的弹出窗口，包括最小值、平均值和最大值。](../assets/segmentation/audience-builder/statistics.png)
+![显示属性统计信息的弹出窗口，包括最小值、平均值和最大值。](../assets/segmentation/audience-builder/statistics.png){width="300"}
 
 如果属性由少于25%的帐户填充，则将改为显示![数据通知图标](../../images/icons/data-notice.png)。 无论如何都将显示该属性的相同摘要数据。
 
@@ -78,7 +78,7 @@ ht-degree: 7%
 
 此外，该属性还具有&#x200B;**[!UICONTROL Ingestion Type]**。 摄取类型让您知道数据的来源，并且可以是以下值之一： **[!UICONTROL Batch]**、**[!UICONTROL Streaming/Edge]**&#x200B;或&#x200B;**[!UICONTROL No Data Ingested]**。
 
-![将显示属性的摄取类型。](/help/rtcdp/assets/segmentation/audience-builder/ingestion-type.png)
+![将显示属性的摄取类型。](/help/rtcdp/assets/segmentation/audience-builder/ingestion-type.png){width="300"}
 
 有关受众生成器中的属性的更详细指南，请阅读[受众生成器用户指南](../../segmentation/ui/segment-builder.md){target="_blank"}。
 
