@@ -2,11 +2,11 @@
 keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标
 title: 电子邮件营销目标概述
 type: Tutorial
-description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，如发送促销电子邮件营销活动。 了解哪些ESP支持作为Experience Platform目标。
+description: 电子邮件服务提供商(ESP)使您能够管理电子邮件营销活动，如发送促销电子邮件促销活动。 了解哪些ESP支持作为Experience Platform目标。
 exl-id: e07f8c5a-0424-4de5-810f-3d5711ef4606
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '371'
+source-wordcount: '370'
 ht-degree: 3%
 
 ---
@@ -41,7 +41,7 @@ ht-degree: 3%
 
 ### 标识选择 {#identity}
 
-Adobe建议您从[合并架构](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 这是您的用户身份已中断的字段。 最常见的是，此字段是电子邮件地址，但它也可以是忠诚度计划ID或电话号码。 有关架构中最常见的唯一标识符及其XDM字段，请参阅下表。
+Adobe建议您从[合并架构](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 这是您的用户身份已中断的字段。 最常见的是，此字段是电子邮件地址，但它也可以是忠诚度计划ID或电话号码。 请参阅下表，了解架构中最常见的唯一标识符及其XDM字段。
 
 | 唯一标识符 | 统一架构中的XDM字段 |
 |----------------- | ---------------------------|

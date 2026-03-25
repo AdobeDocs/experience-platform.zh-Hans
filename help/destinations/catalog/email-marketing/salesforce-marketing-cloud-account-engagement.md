@@ -3,9 +3,9 @@ title: Salesforce Marketing Cloud帐户参与度
 description: 了解如何使用Salesforce Marketing Cloud Account Engagement（以前称为Pardot）目标导出您的帐户数据，并在Salesforce Marketing Cloud Account Engagement中激活这些数据，以满足您的业务需求。
 last-substantial-update: 2023-04-14T00:00:00Z
 exl-id: fca9d4f4-8717-4bfa-9992-5164ba98bea4
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1633'
+source-wordcount: '1630'
 ht-degree: 3%
 
 ---
@@ -30,11 +30,11 @@ ht-degree: 3%
 
 ## 先决条件 {#prerequisites}
 
-请参阅以下部分，了解需要在Experience Platform和[!DNL Salesforce]中设置的任何先决条件，以及在使用[!DNL Marketing Cloud Account Engagement]目标之前需要收集的信息。
+请参阅以下部分，以了解需要在Experience Platform和[!DNL Salesforce]中设置的任何先决条件，以及在使用[!DNL Marketing Cloud Account Engagement]目标之前需要收集的信息。
 
 ### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL Marketing Cloud Account Engagement]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=zh-Hans)区段[!DNL Experience Platform]。
+在将数据激活到[!DNL Marketing Cloud Account Engagement]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)区段[!DNL Experience Platform]。
 
 ### [!DNL Marketing Cloud Account Engagement]中的先决条件 {#prerequisites-destination}
 
@@ -58,7 +58,7 @@ ht-degree: 3%
 | --- | --- |
 | `Username` | 您的[!DNL Marketing Cloud Account Engagement]帐户用户名。 |
 | `Password` | 您的[!DNL Marketing Cloud Account Engagement]帐户密码。 |
-| `Account Engagement Business Unit ID` | 若要查找帐户参与业务部门ID，请使用[!DNL Salesforce]中的设置。 在“设置”的“快速查找”框中输入&#x200B;*业务部门设置*。 您的帐户参与业务单元ID以`0Uv`开头，长度为18个字符。 如果您无法访问业务部门设置信息，请让您的[!DNL Salesforce]帐户管理员为您提供`Account Engagement Business Unit ID`。 如果您需要其他指导，请参阅[[!DNL Salesforce] 身份验证](https://developer.salesforce.com/docs/marketing/pardot/guide/authentication)指南页面。 |
+| `Account Engagement Business Unit ID` | 若要查找帐户参与业务部门ID，请使用[!DNL Salesforce]中的设置。 在“设置”的“快速查找”框中输入&#x200B;*业务部门设置*。 您的帐户参与业务单元ID以`0Uv`开头，长度为18个字符。 如果您无法访问业务部门设置信息，请让您的[!DNL Salesforce]帐户管理员为您提供`Account Engagement Business Unit ID`。 如果您需要任何其他指导，请参阅[[!DNL Salesforce] 身份验证](https://developer.salesforce.com/docs/marketing/pardot/guide/authentication)指导页面。 |
 
 {style="table-layout:auto"}
 
@@ -197,7 +197,7 @@ ht-degree: 3%
 1. 导航到您选择的受众之一。 选择 **[!DNL Activation data]** 选项卡。**[!UICONTROL Mapping ID]**&#x200B;列显示在[!DNL Marketing Cloud Account Engagement Prospects]页面中生成的自定义字段的名称。
    ![显示选定区段映射ID的Experience Platform UI屏幕快照示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/selected-segment-mapping-id.png)
 
-1. 登录到[[!DNL Salesforce]](https://login.salesforce.com/)网站。 然后导航到&#x200B;**[!DNL Account Engagement]** > **[!DNL Prospects]** > **[!DNL Pardot Prospects]**&#x200B;页面，并检查受众中的潜在客户是否已添加/更新。 或者，您也可以访问[[!DNL Salesforce Pardot]](https://pi.pardot.com/)并访问&#x200B;**[!DNL Prospects]**&#x200B;页面。
+1. 转到[[!DNL Salesforce]](https://login.salesforce.com/)网站。 然后导航到&#x200B;**[!DNL Account Engagement]** > **[!DNL Prospects]** > **[!DNL Pardot Prospects]**&#x200B;页面，并检查受众中的潜在客户是否已添加/更新。 或者，您也可以访问[[!DNL Salesforce Pardot]](https://pi.pardot.com/)并访问&#x200B;**[!DNL Prospects]**页面。
    ![显示“潜在客户”页面的Salesforce UI屏幕截图。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/prospects.png)
 
 1. 要检查潜在客户是否已更新，请选择一个潜在客户，并验证自定义潜在客户字段是否已使用Experience Platform受众状态进行更新。

@@ -4,9 +4,9 @@ title: 使用流服务API编辑目标连接
 type: Tutorial
 description: 了解如何使用流服务API编辑目标连接的各种组件。
 exl-id: d6d27d5a-e50c-4170-bb3a-c4cbf2b46653
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1604'
+source-wordcount: '1599'
 ht-degree: 5%
 
 ---
@@ -463,8 +463,8 @@ curl -X PATCH \
 
 ## API错误处理 {#api-error-handling}
 
-本教程中的API端点遵循常规Experience Platform API错误消息原则。 有关解释错误响应的详细信息，请参阅Experience Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
+本教程中的API端点遵循常规Experience Platform API错误消息原则。 有关解释错误响应的更多信息，请参阅Experience Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤 {#next-steps}
 
-通过学习本教程，您已了解如何使用[!DNL Flow Service] API更新目标连接的各种组件。 有关目标的详细信息，请参阅[目标概述](../home.md)。
+您已了解如何使用[!DNL Flow Service] API更新目标连接的各种组件。 有关目标的详细信息，请参阅[目标概述](../home.md)。

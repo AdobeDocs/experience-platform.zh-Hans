@@ -3,9 +3,9 @@ title: 使用计算字段对导出到云存储目标的数据进行转换
 type: Tutorial
 description: 了解如何使用计算字段功能对导出到云存储目标的数据执行转换
 exl-id: 1e14f964-4c03-4d0c-be8d-c3dcb48a335a
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1604'
+source-wordcount: '1603'
 ht-degree: 8%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 8%
 >id="platform_destinations_export_arrays_flat_files"
 >title="添加计算字段"
 >abstract="<p>使用&#x200B;**添加计算字段**&#x200B;控件对导出到云存储目标的数据进行各种数据转换。例如，您可以对数据进行哈希处理，将数组连接成字符串等。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/data-transformations-calculated-fields.html?lang=zh-Hans#examples" text="示例"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/data-transformations-calculated-fields.html#examples" text="示例"
 
 >[!AVAILABILITY]
 >
@@ -101,7 +101,7 @@ ht-degree: 8%
 
 ## 用于执行数据转换的函数示例 {#examples}
 
-有关上面列出的某些函数，请参阅以下部分中的示例和更多信息。 对于列出的其余函数，请参阅数据准备部分[中的](/help/data-prep/functions.md)常规函数文档。
+有关上面列出的某些函数，请参阅以下部分中的示例和更多信息。 对于列出的其余函数，请参阅“数据准备”部分[中的](/help/data-prep/functions.md)常规函数文档。
 
 ### `array_to_string`函数以导出数组 {#array-to-string-function-export-arrays}
 

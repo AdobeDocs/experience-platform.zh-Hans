@@ -4,10 +4,10 @@ title: Amazon Kinesis连接
 description: 创建到Amazon Kinesis存储的实时出站连接，以从Adobe Experience Platform流式传输数据。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '2067'
-ht-degree: 5%
+source-wordcount: '2061'
+ht-degree: 6%
 
 ---
 
@@ -17,9 +17,9 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
-> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
-通过[!DNL Kinesis Data Streams]的[!DNL Amazon Web Services]服务，您可以实时收集和处理大量数据记录流。
+[!DNL Kinesis Data Streams]的[!DNL Amazon Web Services]服务实时收集和处理大量数据记录流。
 
 您可以创建到[!DNL Amazon Kinesis]存储的实时出站连接，以从[!DNL Adobe Experience Platform]流式传输数据。
 

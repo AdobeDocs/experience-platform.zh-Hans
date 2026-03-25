@@ -3,9 +3,9 @@ keywords: 标记扩展；标记扩展；Launch目标；Platform标记扩展；Pl
 title: Adobe Experience Platform中的标记扩展
 description: Adobe Experience Platform提供了Adobe推出的新一代标签管理功能。 Experience Platform为您提供了一种简单的方式来部署和管理所有用来改善相关客户体验的分析、营销和广告标记。
 exl-id: 54fca635-0e37-460e-abb3-5da294d4e0cf
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '480'
+source-wordcount: '477'
 ht-degree: 2%
 
 ---
@@ -45,7 +45,7 @@ Extensions forward raw event data to several types of destinations. Think of ext
 
 ## 使用标记扩展的优势 {#extensions-benefits}
 
-现有Experience Platform客户可以免费使用Experience Cloud的标记功能。 该系统通过易于使用的扩展（您可以安装、配置、更新和删除）简化了网站上的标记部署。 标记在您的网站上留下很小的痕迹，并允许您保持页面快速加载。
+现有Experience Platform客户可以免费使用Experience Cloud的标记功能。 该系统通过易于使用的扩展（您可以安装、配置、更新和删除）简化了网站上的标记部署。 标记在您的网站上留下很小的痕迹，并使您的页面保持快速加载。
 
 虽然无法激活受众来标记扩展，但您可以设置规则以仅在特定情况下转发事件数据。 此功能强大，您只能在特定情况下转发事件数据，而不是在每次交互时发送事件数据。 有关详细信息，请参阅[标记文档](../../../tags/ui/managing-resources/rules.md)中的规则。
 

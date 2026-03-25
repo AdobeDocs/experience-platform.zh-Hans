@@ -2,9 +2,9 @@
 description: 此页说明如何使用/testing/destinationInstance API端点查看测试结果的完整详细信息。 此API端点返回的结果与使用流服务API监视数据流时获得的结果相同。
 title: 查看详细的激活结果
 exl-id: a7b27beb-825e-47fd-8939-f499c3298f68
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '545'
+source-wordcount: '544'
 ht-degree: 2%
 
 ---

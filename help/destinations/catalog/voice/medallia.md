@@ -3,9 +3,9 @@ keywords: 梅德拉利亚；梅德拉利亚
 title: Medallia扩展
 description: Medallia扩展是Adobe Experience Platform中客户目的地的声音。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: c28cf31a-890c-4dcd-b936-5a030dc6e83e
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '450'
+source-wordcount: '448'
 ht-degree: 4%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-在Web资产上快速、无缝地部署[!DNL Medallia]。 该扩展还允许您检测调查事件，通过数据元素实时捕获客户反馈，在规则中使用它来个性化客户体验并与[!DNL Adobe Analytics]共享数据。
+在Web资产上快速、无缝地部署[!DNL Medallia]。 该扩展还检测调查事件，通过数据元素实时捕获客户反馈，将其用于规则中以个性化客户体验并与[!DNL Adobe Analytics]共享数据。
 
 [!DNL Medallia]是[!DNL Adobe Experience Platform]中客户分机的声音。 有关扩展功能的更多信息，请参阅[Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.103279.medallia-for-adobe-launch.html)上的扩展页面。
 

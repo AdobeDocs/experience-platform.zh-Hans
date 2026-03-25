@@ -3,7 +3,7 @@ keywords: Yext转化跟踪；Yext；Yext；Yext转化跟踪
 title: Yext转化跟踪扩展
 description: Yext转化跟踪扩展是Adobe Experience Platform中的分析目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: 786ea14c-25a3-40ac-906d-6a8f7de04f41
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
 source-wordcount: '436'
 ht-degree: 4%
@@ -14,7 +14,7 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-[!DNL Yext Conversion Tracking]扩展允许您测量可归因于使用Yext产品的转化。
+使用[!DNL Yext Conversion Tracking]扩展测量可归因于您使用Yext产品的转化。
 
 [!DNL Yext Conversion Tracking]是[!DNL Adobe Experience Platform]中的Analytics扩展。 有关扩展功能的更多信息，请参阅[Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.103174.yext-conversion-tracking.html)上的扩展页面。
 

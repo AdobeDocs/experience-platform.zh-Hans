@@ -2,9 +2,9 @@
 description: 了解如何通过“/authoring/destination-servers”端点在Adobe Experience Platform Destination SDK中配置目标服务器规范。
 title: 使用Destination SDK创建目标的服务器规范
 exl-id: 62202edb-a954-42ff-9772-863cea37a889
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '2748'
+source-wordcount: '2745'
 ht-degree: 2%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -46,7 +46,7 @@ ht-degree: 2%
 
 ## 硬编码字段与模板化字段 {#templatized-fields}
 
-通过Destination SDK创建目标服务器时，您可以通过将配置参数硬编码到配置中或使用模板化字段来定义配置参数值。 利用模板化的字段，可从Experience Platform UI读取用户提供的值。
+通过Destination SDK创建目标服务器时，您可以通过将配置参数硬编码到配置中或使用模板化字段来定义配置参数值。 模板化字段从Experience Platform UI中读取用户提供的值。
 
 目标服务器参数有两个可配置的字段。 这些选项指示您使用的是硬编码值还是模板化值。
 
@@ -160,7 +160,7 @@ ht-degree: 2%
 
 ## [!DNL Amazon S3]目标服务器 {#s3-example}
 
-此目标服务器允许您将包含[!DNL Adobe Experience Platform]数据的文件导出到Amazon S3存储。
+使用此目标服务器将包含[!DNL Adobe Experience Platform]数据的文件导出到Amazon S3存储。
 
 以下示例显示了Amazon S3目标的目标服务器配置示例。
 
@@ -194,7 +194,7 @@ ht-degree: 2%
 
 ## [!DNL SFTP]目标服务器 {#sftp-example}
 
-此目标服务器允许您将包含[!DNL Adobe Experience Platform]数据的文件导出到[!DNL SFTP]存储服务器。
+使用此目标服务器将包含[!DNL Adobe Experience Platform]数据的文件导出到[!DNL SFTP]存储服务器。
 
 以下示例显示了SFTP目标的目标服务器配置示例。
 
@@ -232,7 +232,7 @@ ht-degree: 2%
 
 ## [!DNL Azure Data Lake Storage] ([!DNL ADLS])目标服务器 {#adls-example}
 
-此目标服务器允许您将包含[!DNL Adobe Experience Platform]数据的文件导出到您的[!DNL Azure Data Lake Storage]帐户。
+使用此目标服务器将包含[!DNL Adobe Experience Platform]数据的文件导出到您的[!DNL Azure Data Lake Storage]帐户。
 
 以下示例显示了[!DNL Azure Data Lake Storage]目标的目标服务器配置示例。
 
@@ -260,7 +260,7 @@ ht-degree: 2%
 
 ## [!DNL Azure Blob Storage]目标服务器 {#blob-example}
 
-此目标服务器允许您将包含[!DNL Adobe Experience Platform]数据的文件导出到[!DNL Azure Blob Storage]容器。
+使用此目标服务器将包含[!DNL Adobe Experience Platform]数据的文件导出到[!DNL Azure Blob Storage]容器。
 
 以下示例显示了[!DNL Azure Blob Storage]目标的目标服务器配置示例。
 
@@ -294,7 +294,7 @@ ht-degree: 2%
 
 ## [!DNL Data Landing Zone] ([!DNL DLZ])目标服务器 {#dlz-example}
 
-此目标服务器允许您将包含Experience Platform数据的文件导出到[[!DNL Data Landing Zone]](../../../catalog/cloud-storage/data-landing-zone.md)存储空间。
+使用此目标服务器将包含Experience Platform数据的文件导出到[[!DNL Data Landing Zone]](../../../catalog/cloud-storage/data-landing-zone.md)存储空间。
 
 以下示例显示了[!DNL Data Landing Zone] ([!DNL DLZ])目标的目标服务器配置示例。
 
@@ -324,7 +324,7 @@ ht-degree: 2%
 
 ## [!DNL Google Cloud Storage]目标服务器 {#gcs-example}
 
-此目标服务器允许您将包含Experience Platform数据的文件导出到您的[!DNL Google Cloud Storage]帐户。
+使用此目标服务器将包含Experience Platform数据的文件导出到您的[!DNL Google Cloud Storage]帐户。
 
 以下示例显示了[!DNL Google Cloud Storage]目标的目标服务器配置示例。
 

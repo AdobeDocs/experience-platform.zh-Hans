@@ -5,9 +5,9 @@ title: 使用流服务API连接到批处理目标并激活数据
 description: 分步说明如何使用流服务API在Experience Platform中创建批量云存储或电子邮件营销目标并激活数据
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '3423'
+source-wordcount: '3413'
 ht-degree: 3%
 
 ---
@@ -41,7 +41,7 @@ ht-degree: 3%
 本指南要求您对[!DNL Adobe Experience Platform]的以下组件有一定的了解：
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
-* [[!DNL Segmentation Service]](../../segmentation/api/overview.md)： [!DNL Adobe Experience Platform Segmentation Service]允许您根据[!DNL Adobe Experience Platform]数据在[!DNL Real-Time Customer Profile]中构建受众。
+* [[!DNL Segmentation Service]](../../segmentation/api/overview.md)： [!DNL Adobe Experience Platform Segmentation Service]根据您的[!DNL Adobe Experience Platform]数据在[!DNL Real-Time Customer Profile]中生成受众。
 * [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform]提供了将单个[!DNL Experience Platform]实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了在Experience Platform中将数据激活到批处理目标时需要了解的其他信息。
@@ -61,7 +61,7 @@ ht-degree: 3%
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) [!DNL Experience Platform]。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
 
 ### 收集必需标题和可选标题的值 {#gather-values-headers}
 
@@ -1049,8 +1049,8 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 | `value` | 要用于更新参数的新值。 |
 | `id` | 指定要添加到目标数据流的受众的ID。 |
 | `name` | *可选*。 指定要添加到目标数据流的受众的名称。 请注意，此字段不是必填字段，您无需提供名称即可将受众成功添加到目标数据流。 |
-| `filenameTemplate` | 此字段确定导出到目标的文件的文件名格式。 <br>以下选项可用： <br> <ul><li>`%DESTINATION_NAME%`：必填。 导出的文件包含目标名称。</li><li>`%SEGMENT_ID%`：必填。 导出的文件包含导出受众的ID。</li><li>`%SEGMENT_NAME%`：可选。 导出的文件包含导出的受众的名称。</li><li>`DATETIME(YYYYMMdd_HHmmss)`或`%TIMESTAMP%`：可选。 为文件选择这两个选项之一，以包含Experience Platform生成文件的时间。</li><li>`custom-text`：可选。 将此占位符替换为要在文件名末尾追加的任何自定义文本。</li></ul> <br>有关配置文件名的详细信息，请参阅批量目标激活教程中的[配置文件名](/help/destinations/ui/activate-batch-profile-destinations.md#configure-file-names)部分。 |
-| `exportMode` | 必填。 选择`"DAILY_FULL_EXPORT"`或`"FIRST_FULL_THEN_INCREMENTAL"`。 有关这两个选项的更多信息，请参阅批处理目标激活教程中的[导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files)和[导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files)。 |
+| `filenameTemplate` | 此字段确定导出到目标的文件的文件名格式。 <br>以下选项可用： <br> <ul><li>`%DESTINATION_NAME%`：必填。 导出的文件包含目标名称。</li><li>`%SEGMENT_ID%`：必填。 导出的文件包含导出受众的ID。</li><li>`%SEGMENT_NAME%`：可选。 导出的文件包含导出的受众的名称。</li><li>`DATETIME(YYYYMMdd_HHmmss)`或`%TIMESTAMP%`：可选。 为文件选择这两个选项之一，以包含Experience Platform生成文件的时间。</li><li>`custom-text`：可选。 将此占位符替换为要在文件名末尾追加的任何自定义文本。</li></ul> <br>有关配置文件名的详细信息，请参阅批处理目标激活教程中的[配置文件名](/help/destinations/ui/activate-batch-profile-destinations.md#configure-file-names)部分。 |
+| `exportMode` | 必填。 选择`"DAILY_FULL_EXPORT"`或`"FIRST_FULL_THEN_INCREMENTAL"`。 有关这两个选项的详细信息，请参阅批处理目标激活教程中的[导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files)和[导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files)。 |
 | `startDate` | 选择受众应开始将用户档案导出到目标的日期。 |
 | `frequency` | 必填。<br> <ul><li>对于`"DAILY_FULL_EXPORT"`导出模式，您可以选择`ONCE`、`DAILY`、`WEEKLY`或`MONTHLY`。</li><li>对于`"FIRST_FULL_THEN_INCREMENTAL"`导出模式，您可以选择`"DAILY"`、`"EVERY_3_HOURS"`、`"EVERY_6_HOURS"`、`"EVERY_8_HOURS"`、`"EVERY_12_HOURS"`。</li></ul> |
 | `triggerType` | 仅适用于&#x200B;*批次目标*。 仅当在`"DAILY_FULL_EXPORT"`选择器中选择`frequency`模式时，才需要此字段。 <br>必填。<br> <ul><li>选择`"AFTER_SEGMENT_EVAL"`以使激活作业在每日Experience Platform批处理分段作业完成后立即运行。 这可确保在激活作业运行时，将最新的配置文件导出到您的目标。</li><li>选择`"SCHEDULED"`以使激活作业在固定时间运行。 这可确保每天在同一时间导出Experience Platform用户档案数据，但您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。 当选择此选项时，还必须添加`startTime`以指示每日导出应在UTC时段的哪个时间发生。</li></ul> |
@@ -1253,11 +1253,11 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 ## API错误处理 {#api-error-handling}
 
-本教程中的API端点遵循常规Experience Platform API错误消息原则。 有关解释错误响应的详细信息，请参阅Experience Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
+本教程中的API端点遵循常规Experience Platform API错误消息原则。 有关解释错误响应的更多信息，请参阅Experience Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤 {#next-steps}
 
-通过学习本教程，您已成功将Experience Platform连接到某个首选的基于文件的电子邮件营销目标，并设置了数据流到相应的目标以导出数据文件。 现在，传出数据可用于电子邮件促销活动、定向广告和许多其他用例的目标。 有关更多详细信息，请参阅以下页面，例如如何使用流服务API编辑现有数据流：
+您已成功将Experience Platform连接到其中一个首选的基于文件的电子邮件营销目标，并设置了数据流到相应的目标以导出数据文件。 现在，传出数据可用于电子邮件促销活动、定向广告和许多其他用例的目标。 有关更多详细信息，请参阅以下页面，例如如何使用流服务API编辑现有数据流：
 
 * [目标概述](../home.md)
 * [目标目录概述](../catalog/overview.md)

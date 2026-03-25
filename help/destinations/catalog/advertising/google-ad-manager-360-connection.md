@@ -2,9 +2,9 @@
 title: (Beta) [!DNL Google Ad Manager 360] 连接
 description: Google Ad Manager 360是Google的一个广告投放平台，它使发布者能够通过视频和移动应用程序管理其网站上的广告显示。
 exl-id: 3251145a-3e4d-40aa-b120-d79c8c9c7cae
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1281'
+source-wordcount: '1280'
 ht-degree: 7%
 
 ---
@@ -92,7 +92,7 @@ ht-degree: 7%
 
 >[!NOTE]
 >
->此规则的例外适用于现有[Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html?lang=zh-Hans)客户。 如果您已在Audience Manager中创建了到此Google目标的连接，则无需再次完成允许列表流程，您可以继续后续步骤。
+>此规则的例外适用于现有[Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html)客户。 如果您已在Audience Manager中创建了到此Google目标的连接，则无需再次完成允许列表流程，您可以继续后续步骤。
 
 1. 按照[Google Ad Manager文档](https://support.google.com/admanager/answer/3289669?hl=en)中描述的步骤，将Adobe添加为链接的数据管理平台(DMP)。
 2. 在[!DNL Google Ad Manager]界面中，转到&#x200B;**[!UICONTROL Admin]** > **[!UICONTROL Global Settings]** > **[!UICONTROL Network Settings]**&#x200B;并启用&#x200B;**[!UICONTROL API Access]**&#x200B;滑块。
@@ -104,7 +104,7 @@ ht-degree: 7%
 >
 >若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
-要连接到此目标，请按照[目标配置教程](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=zh-Hans)中描述的步骤操作。 在目标配置工作流中，填写下面两个部分中列出的字段。
+要连接到此目标，请按照[目标配置教程](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html)中描述的步骤操作。 在目标配置工作流中，填写下面两个部分中列出的字段。
 
 ### 验证目标 {#authenticate}
 

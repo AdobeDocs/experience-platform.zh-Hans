@@ -1,12 +1,12 @@
 ---
 keywords: crm；CRM；CRM目标；Microsoft Dynamics 365；Microsoft Dynamics 365 crm目标
 title: Microsoft Dynamics 365连接
-description: Microsoft Dynamics 365目标允许您导出帐户数据，并在Microsoft Dynamics 365中激活该数据，以满足您的业务需求。
+description: 使用Microsoft Dynamics 365目标导出您的帐户数据，并在Microsoft Dynamics 365中激活该数据，以满足您的业务需求。
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 49bb5c95-f4b7-42e1-9aae-45143bbb1d73
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '2082'
+source-wordcount: '2076'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 [[!DNL Microsoft Dynamics 365]](https://dynamics.microsoft.com/en-us/)是一个基于云的业务应用程序平台，它将企业资源规划(ERP)和客户关系管理(CRM)与生产力应用程序和AI工具相结合，以实现端到端更顺畅、更可控的运营、更好的增长潜力和更低的成本。
 
-此[!DNL Adobe Experience Platform] [目标](/help/destinations/home.md)利用[[!DNL Contact Entity Reference API]](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1)，可让您将受众中的标识更新为[!DNL Dynamics 365]。
+此[!DNL Adobe Experience Platform] [目标](/help/destinations/home.md)利用[[!DNL Contact Entity Reference API]](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1)将受众中的标识更新为[!DNL Dynamics 365]。
 
 [!DNL Dynamics 365]使用具有授权授权的OAuth 2作为身份验证机制与[!DNL Contact Entity Reference API]通信。 下面的[!DNL Dynamics 365]向目标身份验证[部分中进一步提供了向您的](#authenticate)实例进行身份验证的说明。
 
@@ -29,7 +29,7 @@ ht-degree: 2%
 
 ### Experience Platform先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL Dynamics 365]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html?lang=zh-Hans)受众[!DNL Experience Platform]。
+在将数据激活到[!DNL Dynamics 365]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html)受众[!DNL Experience Platform]。
 
 如果您需要有关受众状态的指导，请参阅Adobe有关[受众成员资格详细信息架构字段组](/help/xdm/field-groups/profile/segmentation.md)的文档。
 
@@ -196,7 +196,7 @@ ht-degree: 2%
      |---|---|---|
      | `contactid` | `contactid` | 是 |
 
-   * **[!UICONTROL Select custom attributes]**：选择此选项以将源字段映射到您在&#x200B;**[!UICONTROL Attribute name]**&#x200B;字段中定义的自定义属性。 请参阅[[!DNL Dynamics 365] 文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1#entity-properties)，获取受支持属性的完整列表。
+   * **[!UICONTROL Select custom attributes]**：选择此选项以将源字段映射到您在&#x200B;**[!UICONTROL Attribute name]**&#x200B;字段中定义的自定义属性。 有关支持的属性的完整列表，请参阅[[!DNL Dynamics 365] 文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1#entity-properties)。
      ![Experience Platform UI屏幕截图显示电子邮件的Target映射。](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-email.png)
 
      >[!IMPORTANT]
@@ -233,19 +233,19 @@ ht-degree: 2%
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**&#x200B;以导航到目标列表。
+1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**以导航到目标列表。
    ![显示“浏览目标”的Experience Platform UI屏幕截图。](../../assets/catalog/crm/microsoft-dynamics-365/browse-destinations.png)
 
 1. 选择目标并验证状态为&#x200B;**[!UICONTROL enabled]**。
    ![Experience Platform UI屏幕截图显示目标数据流运行。](../../assets/catalog/crm/microsoft-dynamics-365/destination-dataflow-run.png)
 
-1. 切换到&#x200B;**[!DNL Activation data]**&#x200B;选项卡，然后选择受众名称。
+1. 切换到&#x200B;**[!DNL Activation data]**选项卡，然后选择受众名称。
    ![显示目标激活数据的Experience Platform UI屏幕截图示例。](../../assets/catalog/crm/microsoft-dynamics-365/destinations-activation-data.png)
 
 1. 监控受众摘要，并确保用户档案计数对应于在受众中创建的计数。
    ![显示受众的Experience Platform UI屏幕快照示例。](../../assets/catalog/crm/microsoft-dynamics-365/segment.png)
 
-1. 登录到[!DNL Dynamics 365]网站，然后导航到[!DNL Customers] > [!DNL Contacts]页面，并检查是否已添加受众中的配置文件。 您可以看到，根据[!DNL Dynamics 365]受众计划&#x200B;**[!UICONTROL Mapping ID]**&#x200B;步骤期间提供的[值，](#schedule-audience-export-example)中的每个受众状态都更新为Experience Platform中的相应受众状态。
+1. 转到[!DNL Dynamics 365]网站，然后导航到[!DNL Customers] > [!DNL Contacts]页面，并检查是否已添加受众中的配置文件。 您可以看到，根据[!DNL Dynamics 365]受众计划&#x200B;**[!UICONTROL Mapping ID]**&#x200B;步骤期间提供的[值，](#schedule-audience-export-example)中的每个受众状态都更新为Experience Platform中的相应受众状态。
    ![Dynamics 365 UI屏幕截图显示“联系人”页面中受众状态已更新。](../../assets/catalog/crm/microsoft-dynamics-365/contacts.png)
 
 ## 数据使用和治理 {#data-usage-governance}

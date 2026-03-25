@@ -3,9 +3,9 @@ keywords: 目标；目标；目标详细信息页面；目标详细信息页面
 title: 查看目标详细信息
 description: 单个目标的详细信息页面提供了目标详细信息的概览。 目标详细信息包括目标名称、ID、映射到目标的受众以及用于编辑激活以及启用和禁用数据流的控件。
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1219'
+source-wordcount: '1206'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 0%
 
 请按照以下步骤查看有关现有目标的更多详细信息。 您可以查找目标的目标ID、创建目标的用户、创建目标的时间以及其他信息。
 
-1. 登录到[Experience Platform UI](https://platform.adobe.com/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL Destinations]**。 从顶部标题中选择&#x200B;**[!UICONTROL Browse]**&#x200B;以查看现有目标。
+1. 转到[Experience Platform UI](https://platform.adobe.com/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL Destinations]**。 从顶部标题中选择&#x200B;**[!UICONTROL Browse]**&#x200B;以查看现有目标。
 
    ![浏览目标](../assets/ui/details-page/browse-destinations.png)
 
@@ -55,7 +55,7 @@ ht-degree: 0%
 | 右边栏项目 | 描述 |
 | --- | --- |
 | [!UICONTROL Activate audiences] | 选择此控件可编辑哪些受众已映射到目标、更新导出计划或添加和删除映射的属性和身份。 有关详细信息，请参阅[将受众数据激活到受众流式目标](./activate-segment-streaming-destinations.md)、[将受众数据激活到基于个人资料的批量目标](./activate-batch-profile-destinations.md)和[将受众数据激活到基于个人资料的流式目标](./activate-streaming-profile-destinations.md)指南。 |
-| [!UICONTROL Delete] | 允许您删除此数据流并取消映射之前激活的受众（如果存在）。 |
+| [!UICONTROL Delete] | 删除此数据流并取消映射任何之前激活的受众。 |
 | [!UICONTROL Destination name] | 可以编辑此字段以更新目标的名称。 |
 | [!UICONTROL Description] | 可以编辑此字段以更新或向目标添加可选描述。 |
 | [!UICONTROL Destination] | 表示受众发送到的目标平台。 有关详细信息，请参阅[目标目录](../catalog/overview.md)。 |
@@ -158,7 +158,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->有关浏览受众详细信息页面的详细信息，请参阅[受众门户概述](../../segmentation/ui/audience-portal.md#audience-details)。
+>有关受众详细信息页面的详细信息，请参阅[受众门户概述](../../segmentation/ui/audience-portal.md#audience-details)。
 
 ### 编辑导出到批处理目标的多个受众的文件名 {#bulk-edit-file-names}
 

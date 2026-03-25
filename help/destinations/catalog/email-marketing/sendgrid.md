@@ -1,11 +1,11 @@
 ---
 keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；发件人网格；发件人网格目标
 title: SendGrid连接
-description: SendGrid目标允许您导出第一方数据，并在SendGrid中激活它以满足您的业务需求。
+description: 使用SendGrid目标导出您的第一方数据，并在SendGrid中激活它以满足您的业务需求。
 exl-id: 6f22746f-2043-4a20-b8a6-097d721f2fe7
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1933'
+source-wordcount: '1928'
 ht-degree: 3%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 3%
 
 [SendGrid](https://www.sendgrid.com)是用于交易和营销电子邮件的常用客户通信平台。
 
-此[!DNL Adobe Experience Platform] [目标](/help/destinations/home.md)利用[[!DNL SendGrid Marketing Contacts API]](https://api.sendgrid.com/v3/marketing/contacts)，可让您导出第一方电子邮件配置文件，并在新的SendGrid受众中激活它们，以满足您的业务需求。
+此[!DNL Adobe Experience Platform] [目标](/help/destinations/home.md)利用[[!DNL SendGrid Marketing Contacts API]](https://api.sendgrid.com/v3/marketing/contacts)导出您的第一方电子邮件配置文件，并在新的SendGrid受众中激活它们，以满足您的业务需求。
 
 SendGrid使用API持有者令牌作为与SendGrid API通信的身份验证机制。
 
@@ -34,7 +34,7 @@ SendGrid使用API持有者令牌作为与SendGrid API通信的身份验证机制
 
 ![SendGrid API密钥设置页面显示“创建API密钥”按钮。](../../assets/catalog/email-marketing/sendgrid/01-api-key.jpg)
 
-在将数据激活到SendGrid目标之前，您必须在[中创建](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=zh-Hans)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=zh-Hans)区段[!DNL Experience Platform]。 另请参阅此页面下面的[限制](#limits)部分。
+在将数据激活到SendGrid目标之前，您必须在[中创建](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=zh-Hans)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)区段[!DNL Experience Platform]。 另请参阅此页面下面的[限制](#limits)部分。
 
 >[!IMPORTANT]
 >
@@ -111,7 +111,7 @@ SendGrid支持激活下表中描述的标识。 了解有关[标识](/help/ident
 1. 选择&#x200B;**目录**&#x200B;选项卡并搜索&#x200B;*SendGrid*。 然后选择&#x200B;**设置**。 建立与目标之间的连接后，UI标签将更改为&#x200B;**激活区段**。
    在Experience Platform目标目录中的![SendGrid目标卡片，其中的“设置”按钮突出显示。](../../assets/catalog/email-marketing/sendgrid/02-catalog.jpg)
 
-1. 此时将显示一个向导，可帮助您配置SendGrid目标。 通过选择&#x200B;**配置新目标**&#x200B;来创建新目标。
+1. 此时将显示一个向导，可帮助您配置SendGrid目标。 通过选择&#x200B;**配置新目标**来创建新目标。
    ![SendGrid目标安装向导，显示“配置新目标”选项。](../../assets/catalog/email-marketing/sendgrid/03.jpg)
 
 1. 选择&#x200B;**新帐户**&#x200B;选项并填写&#x200B;**持有者令牌**&#x200B;值。 此值是以前在&#x200B;*先决条件部分*&#x200B;中提到的SendGrid [API密钥](#prerequisites)。
@@ -123,7 +123,7 @@ SendGrid支持激活下表中描述的标识。 了解有关[标识](/help/ident
 
 ### 填写目标详细信息 {#destination-details}
 
-在[设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=zh-Hans)此目标时，必须提供以下信息：
+在[设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html)此目标时，必须提供以下信息：
 
 * **[!UICONTROL Name]**：将来用于识别此目标的名称。
 * **[!UICONTROL Description]**：一个可选描述，可帮助您以后识别此目标。
@@ -160,10 +160,10 @@ SendGrid支持激活下表中描述的标识。 了解有关[标识](/help/ident
    ![映射屏幕，显示选定作为SendGrid导出的源字段的Experience Platform配置文件属性。](../../assets/catalog/email-marketing/sendgrid/17.jpg)
    ![映射屏幕显示Experience Platform XDM字段与SendGrid目标字段之间已完成的属性映射。](../../assets/catalog/email-marketing/sendgrid/18.jpg)
 
-1. 完成映射后，选择&#x200B;**[!UICONTROL Next]**&#x200B;进入审阅屏幕。
+1. 完成映射后，选择&#x200B;**[!UICONTROL Next]**进入审阅屏幕。
    ![SendGrid激活查看屏幕，显示完成安装之前配置的映射摘要。](../../assets/catalog/email-marketing/sendgrid/22.png)
 
-1. 选择&#x200B;**[!UICONTROL Finish]**&#x200B;以完成设置。
+1. 选择&#x200B;**[!UICONTROL Finish]**以完成设置。
    ![显示“完成”按钮的SendGrid激活工作流完成屏幕。](../../assets/catalog/email-marketing/sendgrid/23.jpg)
 
 可以为[SendGrid营销联系人>添加或更新联系人API](https://docs.sendgrid.com/api-reference/contacts/add-or-update-a-contact)设置的受支持属性映射的完整列表如下。
@@ -185,13 +185,13 @@ SendGrid支持激活下表中描述的标识。 了解有关[标识](/help/ident
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**&#x200B;以导航到目标列表。
+1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**以导航到目标列表。
    ![Experience Platform中的“目标浏览”选项卡显示已配置目标的列表。](../../assets/catalog/email-marketing/sendgrid/25.jpg)
 
 1. 选择目标并验证状态为&#x200B;**[!UICONTROL enabled]**。
    “浏览”选项卡中的![SendGrid目标显示已启用状态。](../../assets/catalog/email-marketing/sendgrid/26.jpg)
 
-1. 切换到&#x200B;**[!DNL Activation data]**&#x200B;选项卡，然后选择受众名称。
+1. 切换到&#x200B;**[!DNL Activation data]**选项卡，然后选择受众名称。
    ![SendGrid目标的“激活数据”选项卡，其中显示了选定的受众名称。](../../assets/catalog/email-marketing/sendgrid/27.jpg)
 
 1. 监测受众摘要，并检查与数据集内创建的计数对应的用户档案计数。

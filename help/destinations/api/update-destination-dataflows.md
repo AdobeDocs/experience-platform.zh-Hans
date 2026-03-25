@@ -5,9 +5,9 @@ title: 使用流服务API更新目标数据流
 type: Tutorial
 description: 本教程介绍了更新目标数据流的步骤。 了解如何使用流服务API启用或禁用数据流、更新其基本信息或添加和删除受众和属性。
 exl-id: 3f69ad12-940a-4aa1-a1ae-5ceea997a9ba
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '2459'
+source-wordcount: '2452'
 ht-degree: 3%
 
 ---
@@ -503,8 +503,8 @@ curl -X PATCH \
 | `value` | 要用于更新参数的新值。 |
 | `id` | 指定要添加到目标数据流的受众的ID。 |
 | `name` | **（可选）**。 指定要添加到目标数据流的受众的名称。 请注意，此字段不是必填字段，您无需提供名称即可将受众成功添加到目标数据流。 |
-| `filenameTemplate` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标（如Amazon S3、SFTP或Azure Blob）中将受众添加到数据流时，才需要使用此字段。 <br>此字段确定导出到目标的文件的文件名格式。 <br>以下选项可用： <br> <ul><li>`%DESTINATION_NAME%`：必填。 导出的文件包含目标名称。</li><li>`%SEGMENT_ID%`：必填。 导出的文件包含导出受众的ID。</li><li>`%SEGMENT_NAME%`： **（可选）**。 导出的文件包含导出的受众的名称。</li><li>`DATETIME(YYYYMMdd_HHmmss)`或`%TIMESTAMP%`： **（可选）**。 为文件选择这两个选项之一，以包含Experience Platform生成文件的时间。</li><li>`custom-text`： **（可选）**。 将此占位符替换为要在文件名末尾追加的任何自定义文本。</li></ul> <br>有关配置文件名的详细信息，请参阅批量目标激活教程中的[配置文件名](/help/destinations/ui/activate-batch-profile-destinations.md#configure-file-names)部分。 |
-| `exportMode` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标（如Amazon S3、SFTP或Azure Blob）中将受众添加到数据流时，才需要使用此字段。 <br>必填。 选择`"DAILY_FULL_EXPORT"`或`"FIRST_FULL_THEN_INCREMENTAL"`。 有关这两个选项的更多信息，请参阅批处理目标激活教程中的[导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files)和[导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files)。 |
+| `filenameTemplate` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标（如Amazon S3、SFTP或Azure Blob）中将受众添加到数据流时，才需要使用此字段。 <br>此字段确定导出到目标的文件的文件名格式。 <br>以下选项可用： <br> <ul><li>`%DESTINATION_NAME%`：必填。 导出的文件包含目标名称。</li><li>`%SEGMENT_ID%`：必填。 导出的文件包含导出受众的ID。</li><li>`%SEGMENT_NAME%`： **（可选）**。 导出的文件包含导出的受众的名称。</li><li>`DATETIME(YYYYMMdd_HHmmss)`或`%TIMESTAMP%`： **（可选）**。 为文件选择这两个选项之一，以包含Experience Platform生成文件的时间。</li><li>`custom-text`： **（可选）**。 将此占位符替换为要在文件名末尾追加的任何自定义文本。</li></ul> <br>有关配置文件名的详细信息，请参阅批处理目标激活教程中的[配置文件名](/help/destinations/ui/activate-batch-profile-destinations.md#configure-file-names)部分。 |
+| `exportMode` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标（如Amazon S3、SFTP或Azure Blob）中将受众添加到数据流时，才需要使用此字段。 <br>必填。 选择`"DAILY_FULL_EXPORT"`或`"FIRST_FULL_THEN_INCREMENTAL"`。 有关这两个选项的详细信息，请参阅批处理目标激活教程中的[导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files)和[导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files)。 |
 | `startDate` | 选择受众应开始将用户档案导出到目标的日期。 |
 | `frequency` | 仅适用于&#x200B;*批次目标*。 只有在批量文件导出目标（如Amazon S3、SFTP或Azure Blob）中将受众添加到数据流时，才需要使用此字段。 <br>必填。<br> <ul><li>对于`"DAILY_FULL_EXPORT"`导出模式，您可以选择`ONCE`或`DAILY`。</li><li>对于`"FIRST_FULL_THEN_INCREMENTAL"`导出模式，您可以选择`"DAILY"`、`"EVERY_3_HOURS"`、`"EVERY_6_HOURS"`、`"EVERY_8_HOURS"`、`"EVERY_12_HOURS"`。</li></ul> |
 | `triggerType` | 仅适用于&#x200B;*批次目标*。 仅当在`"DAILY_FULL_EXPORT"`选择器中选择`frequency`模式时，才需要此字段。 <br>必填。<br> <ul><li>选择`"AFTER_SEGMENT_EVAL"`以使激活作业在每日Experience Platform批处理分段作业完成后立即运行。 这可确保在激活作业运行时，将最新的配置文件导出到您的目标。</li><li>选择`"SCHEDULED"`以使激活作业在固定时间运行。 这可确保每天在同一时间导出Experience Platform用户档案数据，但您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。 当选择此选项时，还必须添加`startTime`以指示每日导出应在UTC时段的哪个时间发生。</li></ul> |
@@ -873,8 +873,8 @@ curl -X PATCH \
 
 ## API错误处理 {#api-error-handling}
 
-本教程中的API端点遵循常规Experience Platform API错误消息原则。 有关解释错误响应的详细信息，请参阅Experience Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
+本教程中的API端点遵循常规Experience Platform API错误消息原则。 有关解释错误响应的更多信息，请参阅Experience Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤 {#next-steps}
 
-通过学习本教程，您已了解如何更新目标数据流的各种组件，例如使用[!DNL Flow Service] API添加或删除受众或配置文件属性。 有关目标的详细信息，请参阅[目标概述](../home.md)。
+您已了解如何更新目标数据流的各种组件，例如使用[!DNL Flow Service] API添加或删除受众或配置文件属性。 有关目标的详细信息，请参阅[目标概述](../home.md)。

@@ -3,7 +3,7 @@ keywords: clicktale；clicktale扩展；clicktale目标
 title: Clicktale扩展
 description: Clicktale扩展是Adobe Experience Platform中的分析目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: fb721f0a-6026-4d7b-ba42-2e540e9c5426
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
 source-wordcount: '421'
 ht-degree: 4%
@@ -14,7 +14,7 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-[!DNL Clicktale]标记扩展允许您使用[!DNL Clicktale's]可视编辑器部署代码和映射数据元素。
+使用[!DNL Clicktale]标记扩展以使用[!DNL Clicktale's]可视编辑器部署代码和映射数据元素。
 
 [!DNL Clicktale]是[!DNL Adobe Experience Platform]中的Analytics扩展。 有关扩展功能的更多信息，请参阅[Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100082.html)上的扩展页面。
 

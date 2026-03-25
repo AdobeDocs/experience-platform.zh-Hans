@@ -2,9 +2,9 @@
 description: 使用受众元数据模板以编程方式创建、更新或删除目标中的受众。 Adobe提供了一个可扩展的受众元数据模板，您可以根据营销API的规范配置该模板。 定义、测试和提交模板后，Adobe将使用该模板来构造对目标的调用。
 title: 受众元数据管理
 exl-id: 795e8adb-c595-4ac5-8d1a-7940608d01cd
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1297'
+source-wordcount: '1270'
 ht-degree: 2%
 
 ---
@@ -45,7 +45,7 @@ ht-degree: 2%
 
 为了支持上面列出的用例，Adobe为您提供了一个通用模板，您可以根据自己的API规范来自定义该模板。
 
-如果您的API支持：[&#128279;](../metadata-api/create-audience-template.md)
+如果您的API支持：[](../metadata-api/create-audience-template.md)
 
 * HTTP方法：POST、GET、PUT、DELETE、PATCH
 * 身份验证类型：OAuth 1、具有刷新令牌的OAuth 2、具有持有者令牌的OAuth 2
@@ -546,20 +546,20 @@ ht-degree: 2%
 
 | 宏 | 描述 |
 |--- |--- |
-| `{{segment.alias}}` | 允许您访问Experience Platform中的受众别名。 |
-| `{{segment.name}}` | 允许您访问Experience Platform中的受众名称。 |
-| `{{segment.id}}` | 允许您访问Experience Platform中的受众ID。 |
-| `{{customerData.accountId}}` | 允许您访问在目标配置中设置的帐户ID字段。 |
-| `{{oauth2ServiceAccessToken}}` | 允许您根据OAuth 2配置动态生成访问令牌。 |
-| `{{authData.accessToken}}` | 允许您将访问令牌传递到API端点。 如果Experience Platform应使用未过期的令牌连接到您的目标，请使用`{{authData.accessToken}}`，否则请使用`{{oauth2ServiceAccessToken}}`生成访问令牌。 |
+| `{{segment.alias}}` | 访问Experience Platform中的受众别名。 |
+| `{{segment.name}}` | 访问Experience Platform中的受众名称。 |
+| `{{segment.id}}` | 访问Experience Platform中的受众ID。 |
+| `{{customerData.accountId}}` | 访问在目标配置中设置的帐户ID字段。 |
+| `{{oauth2ServiceAccessToken}}` | 根据您的OAuth 2配置动态生成访问令牌。 |
+| `{{authData.accessToken}}` | 将访问令牌传递到您的API端点。 如果Experience Platform应使用未过期的令牌连接到您的目标，请使用`{{authData.accessToken}}`，否则请使用`{{oauth2ServiceAccessToken}}`生成访问令牌。 |
 | `{{body.segments[0].segment.id}}` | 返回已创建受众的唯一标识符作为键`externalAudienceId`的值。 |
 | `{{error.message}}` | 返回将在Experience Platform UI中向用户显示的错误消息。 |
-| `{{{segmentEnrichmentAttributes}}}` | 允许您访问特定受众的所有扩充属性。  `create`、`update`和`delete`事件支持此宏。 丰富属性仅适用于[自定义上传受众](destination-configuration/schema-configuration.md#external-audiences)。请参阅[批受众激活指南](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes)，了解扩充属性选择的工作方式。 |
+| `{{{segmentEnrichmentAttributes}}}` | 访问特定受众的所有扩充属性。  `create`、`update`和`delete`事件支持此宏。 丰富属性仅适用于[自定义上传受众](destination-configuration/schema-configuration.md#external-audiences)。请参阅[批受众激活指南](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes)，了解扩充属性选择的工作方式。 |
 | `{{destination.name}}` | 返回目标的名称。 |
 | `{{destination.sandboxName}}` | 返回配置目标的Experience Platform沙盒的名称。 |
 | `{{destination.id}}` | 返回目标配置的ID。 |
 | `{{destination.imsOrgId}}` | 返回配置目标的IMS组织ID。 |
-| `{{destination.enrichmentAttributes}}` | 允许您访问映射到目标的所有受众的所有扩充属性。 `createDestination`、`updateDestination`和`deleteDestination`事件支持此宏。 丰富属性仅适用于[自定义上传受众](destination-configuration/schema-configuration.md#external-audiences)。请参阅[批受众激活指南](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes)，了解扩充属性选择的工作方式。 |
-| `{{destination.enrichmentAttributes.<namespace>.<segmentId>}}` | 允许您访问映射到目标的特定外部受众的扩充属性。 丰富属性仅适用于[自定义上传受众](destination-configuration/schema-configuration.md#external-audiences)。请参阅[批受众激活指南](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes)，了解扩充属性选择的工作方式。 |
+| `{{destination.enrichmentAttributes}}` | 访问映射到目标的所有受众的所有扩充属性。 `createDestination`、`updateDestination`和`deleteDestination`事件支持此宏。 丰富属性仅适用于[自定义上传受众](destination-configuration/schema-configuration.md#external-audiences)。请参阅[批受众激活指南](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes)，了解扩充属性选择的工作方式。 |
+| `{{destination.enrichmentAttributes.<namespace>.<segmentId>}}` | 访问映射到目标的特定外部受众的扩充属性。 丰富属性仅适用于[自定义上传受众](destination-configuration/schema-configuration.md#external-audiences)。请参阅[批受众激活指南](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes)，了解扩充属性选择的工作方式。 |
 
 {style="table-layout:auto"}

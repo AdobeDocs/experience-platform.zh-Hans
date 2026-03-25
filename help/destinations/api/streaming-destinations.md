@@ -5,9 +5,9 @@ title: 使用Adobe Experience Platform中的流服务API连接到流目标并激
 description: 本文档介绍如何使用Adobe Experience Platform API创建流目标
 type: Tutorial
 exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '2197'
+source-wordcount: '2192'
 ht-degree: 2%
 
 ---
@@ -565,7 +565,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 >[!IMPORTANT]
 >
-> 除了步骤[将数据激活到新目标](#activate-data)中的配置文件属性和受众之外，[!DNL AWS Kinesis]和[!DNL Azure Event Hubs]中的导出数据还将包含有关身份映射的信息。 这表示导出的配置文件的标识（例如[ECID](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html?lang=zh-Hans)、移动设备ID、Google ID、电子邮件地址等）。 请参阅以下示例。
+> 除了步骤[将数据激活到新目标](#activate-data)中的配置文件属性和受众之外，[!DNL AWS Kinesis]和[!DNL Azure Event Hubs]中的导出数据还将包含有关身份映射的信息。 这表示导出的配置文件的标识（例如[ECID](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html)、移动设备ID、Google ID、电子邮件地址等）。 请参阅以下示例。
 
 ```json
 {
@@ -632,11 +632,11 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 ## API错误处理 {#api-error-handling}
 
-本教程中的API端点遵循常规Experience Platform API错误消息原则。 有关解释错误响应的详细信息，请参阅Experience Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
+本教程中的API端点遵循常规Experience Platform API错误消息原则。 有关解释错误响应的更多信息，请参阅Experience Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤 {#next-steps}
 
-通过遵循本教程，您已成功将Experience Platform连接到其中一个首选流目标，并设置了到相应目标的数据流。 传出数据现在可用于客户分析的目标或您希望执行的任何其他数据操作。 有关更多详细信息，请参阅以下页面：
+您已成功将Experience Platform连接到其中一个首选流目标，并设置了到相应目标的数据流。 传出数据现在可用于客户分析的目标或您希望执行的任何其他数据操作。 有关更多详细信息，请参阅以下页面：
 
 * [目标概述](../home.md)
 * [目标目录概述](../catalog/overview.md)

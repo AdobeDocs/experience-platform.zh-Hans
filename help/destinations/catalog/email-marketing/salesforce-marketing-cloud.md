@@ -1,8 +1,8 @@
 ---
 title: Salesforce Marketing Cloud连接
-description: Salesforce Marketing Cloud是一个数字营销套件，以前称为ExactTarget；它允许您为访客和客户构建和自定义历程，以个性化其体验。
+description: Salesforce Marketing Cloud是一个数字营销套件，以前称为ExactTarget，您可以使用它构建和自定义访客和客户的旅程，以个性化其体验。
 exl-id: e85049a7-eaed-4f8a-b670-9999d56928f8
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
 source-wordcount: '878'
 ht-degree: 3%
@@ -13,7 +13,7 @@ ht-degree: 3%
 
 ## 概述 {#overview}
 
-[[!DNL Salesforce Marketing Cloud]](https://www.salesforce.com/products/marketing-cloud/email-marketing/)是一个数字营销套件，以前称为ExactTarget，它允许您为访客和客户构建和自定义历程，以个性化其体验。
+[[!DNL Salesforce Marketing Cloud]](https://www.salesforce.com/products/marketing-cloud/email-marketing/)是一个数字营销套件，以前称为ExactTarget，可用于为访客和客户构建和自定义历程，以个性化其体验。
 
 若要将受众数据发送到[!DNL Salesforce Marketing Cloud]，您必须先[连接到Experience Platform中的目标](#connect-destination)，然后[设置数据导入](#import-data-into-salesforce)（从您的存储位置导入[!DNL Salesforce Marketing Cloud]）。
 
@@ -57,7 +57,7 @@ ht-degree: 3%
 
 在使用SFTP存储设置电子邮件营销目标时，Adobe建议将某些IP范围添加到SFTP允许列表。
 
-如果您需要将Adobe IP添加到SFTP允许列表，请参阅[SFTP目标的IP地址](../cloud-storage/ip-address-allow-list.md)。
+如果需要将Adobe IP添加到您的，请参阅SFTP目标的[IP地址允许列表](../cloud-storage/ip-address-allow-list.md)。
 
 ## 连接到目标 {#connect}
 
@@ -118,7 +118,7 @@ Commenting out Amazon S3 bucket part for now until support is clarified
 
 ### 目标属性 {#destination-attributes}
 
-将受众激活到此目标时，Adobe建议您从[合并架构](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择要导出到目标的唯一标识符和任何其他XDM字段。 有关详细信息，请参阅将受众激活到电子邮件营销目标时的最佳实践[&#128279;](overview.md#best-practices)。
+将受众激活到此目标时，Adobe建议您从[合并架构](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择要导出到目标的唯一标识符和任何其他XDM字段。 有关详细信息，请参阅[将受众激活到电子邮件营销目标时的最佳实践](overview.md#best-practices)。
 
 ## 导出的数据 {#exported-data}
 

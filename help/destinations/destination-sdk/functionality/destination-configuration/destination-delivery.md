@@ -2,16 +2,16 @@
 description: 了解如何为使用Destination SDK构建的目标配置目标交付设置，以指示导出数据的去向以及在数据登陆位置使用什么身份验证规则。
 title: 目标投放
 exl-id: ade77b6b-4b62-4b17-a155-ef90a723a4ad
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '640'
+source-wordcount: '639'
 ht-degree: 2%
 
 ---
 
 # 目标投放
 
-为了更好地控制导出到目标的数据的登陆位置，Destination SDK允许您指定目标投放设置。
+要更好地控制将数据导出到目标土地的位置，请使用Destination SDK指定目标交付设置。
 
 目标投放部分指示导出数据的去向，以及在数据登陆位置使用的身份验证规则。
 
@@ -31,7 +31,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 

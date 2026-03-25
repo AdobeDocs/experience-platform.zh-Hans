@@ -2,9 +2,9 @@
 description: 了解如何使用Destination SDK配置基于文件的目标，以将目标受众导出到存储位置。
 title: 配置基于文件的目标以将目标受众导出到存储位置
 exl-id: 052fd185-294a-4c1d-8d82-12b27b661e22
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '724'
+source-wordcount: '719'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-本页介绍如何使用Destination SDK通过自定义[文件格式选项](configure-file-formatting-options.md)和自定义[文件名配置](../../functionality/destination-configuration/batch-configuration.md#file-name-configuration)配置基于文件的目标以导出[目标受众](/help/destinations/ui/activate-prospect-audiences.md)。 本指南中的示例介绍了如何将潜在客户配置文件的受众导出到Amazon S3位置。
+本页介绍如何使用Destination SDK通过自定义[文件格式选项](configure-file-formatting-options.md)和自定义[文件名配置](../../functionality/destination-configuration/batch-configuration.md#file-name-configuration)来配置基于文件的目标以导出[潜在客户受众](/help/destinations/ui/activate-prospect-audiences.md)。 本指南中的示例介绍了如何将潜在客户配置文件的受众导出到Amazon S3位置。
 
 您还可以设置STFP或其他存储位置以导出目标客户受众。 请牢记的重要部分是，在[步骤2](#create-destination-configuration)中将以下代码片段添加到目标配置中，以启用[工作流以将目标受众](/help/destinations/ui/activate-prospect-audiences.md)导出到目标。
 
@@ -23,11 +23,11 @@ ht-degree: 0%
   ],
 ```
 
-有关下面使用的参数的详细说明，请参阅目标SDK [&#128279;](../../functionality/configuration-options.md)中的配置选项。
+有关下面使用的参数的详细说明，请参阅目标SDK[中的](../../functionality/configuration-options.md)配置选项。
 
 ## 先决条件 {#prerequisites}
 
-在进入下面列出的步骤之前，请阅读[Destination SDK快速入门](../../getting-started.md)页面，了解有关获取使用Destination SDKAPI所需的身份验证凭据和其他先决条件的信息。
+在继续执行以下步骤之前，请阅读[Destination SDK快速入门](../../getting-started.md)页面，了解有关获取使用Destination SDK API所需的身份验证凭据和其他先决条件的信息。
 
 ## 步骤1：创建服务器和文件配置 {#create-server-file-configuration}
 
@@ -42,7 +42,7 @@ POST platform.adobe.io/data/core/activation/authoring/destination-servers
 **请求**
 
 以下请求创建新的目标服务器配置，该配置由有效负载中提供的参数配置。
-以下有效负载包含通用Amazon S3配置，该配置包含用户可在Experience PlatformUI中定义的自定义[CSV文件格式](../../functionality/destination-server/file-formatting.md)配置参数。
+以下有效负载包含通用Amazon S3配置，该配置包含用户可以在Experience Platform UI中定义的自定义[CSV文件格式](../../functionality/destination-server/file-formatting.md)配置参数。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/activation/authoring/destination-server \
@@ -413,9 +413,9 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 成功的响应返回新的目标配置，包括配置的唯一标识符(`instanceId`)。 如果需要进一步提出HTTP请求以更新目标配置，请根据需要存储此值。
 
-## 步骤3：验证Experience PlatformUI {#verify-ui}
+## 步骤3：验证Experience Platform UI {#verify-ui}
 
-基于以上配置，Experience Platform目录现在将显示新的专用目标卡以供您使用。
+基于以上配置，Experience Platform目录现在将显示新的专用目标卡供您使用。
 
 ![屏幕录制，显示具有选定目标卡的目标目录页面。](../../assets/guides/batch/destination-card.gif)
 
@@ -437,13 +437,13 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 如果要调整上述任何字段，请重复[步骤1](#create-server-file-configuration)和[步骤2](#create-destination-configuration)以根据需要修改配置。
 
-## 步骤4：（可选）Publish您的目标 {#publish-destination}
+## 步骤4：（可选）发布目标 {#publish-destination}
 
 >[!NOTE]
 >
 >如果您正在创建供自己使用的专用目标，并且不想将其发布到目标目录以供其他客户使用，则不需要执行此步骤。
 
-配置目标后，使用[目标发布API](../../publishing-api/create-publishing-request.md)将配置提交给Adobe进行审核。
+配置目标后，使用[目标发布API](../../publishing-api/create-publishing-request.md)将配置提交到Adobe以供审查。
 
 ## 步骤5：（可选）记录您的目标 {#document-destination}
 
@@ -455,4 +455,4 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 ## 后续步骤 {#next-steps}
 
-通过阅读本文，您现在知道如何使用Destination SDK创作自定义[!DNL Amazon S3]目标以导出目标受众。
+您现在知道如何使用Destination SDK创作自定义[!DNL Amazon S3]目标以导出目标受众。

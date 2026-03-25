@@ -4,9 +4,9 @@ title: 使用流服务API将受众激活到基于文件的目标
 description: 了解如何使用流服务API将包含合格配置文件的文件导出到云存储目标。
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '4966'
+source-wordcount: '4933'
 ht-degree: 4%
 
 ---
@@ -50,7 +50,7 @@ If you were already using the Flow Service API to export profiles to the Amazon 
 本指南要求您对[!DNL Adobe Experience Platform]的以下组件有一定的了解：
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)： [!DNL Experience Platform]用于组织客户体验数据的标准化框架。
-* [[!DNL Segmentation Service]](../../segmentation/api/overview.md)： [!DNL Adobe Experience Platform Segmentation Service]允许您根据[!DNL Adobe Experience Platform]数据在[!DNL Real-Time Customer Profile]中构建受众并生成受众。
+* [[!DNL Segmentation Service]](../../segmentation/api/overview.md)： [!DNL Adobe Experience Platform Segmentation Service]根据您的[!DNL Adobe Experience Platform]数据在[!DNL Real-Time Customer Profile]中生成受众。
 * [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform]提供了将单个[!DNL Experience Platform]实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了在Experience Platform中将数据激活到基于文件的目标时需要了解的其他信息。
@@ -63,7 +63,7 @@ If you were already using the Flow Service API to export profiles to the Amazon 
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) [!DNL Experience Platform]。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
 
 ### 收集必需标题和可选标题的值 {#gather-values-headers}
 
@@ -110,7 +110,7 @@ If you were already using the Flow Service API to export profiles to the Amazon 
 
 {style="table-layout:auto"}
 
-在本教程的后续步骤中，您需要这些ID来构建各种流服务实体。 您还需要引用连接规范本身的某些部分来设置某些实体，以便从流服务API中检索连接规范。 请参阅下面的示例，以了解如何检索表中所有目标的连接规范：
+在本教程的后续步骤中，您需要这些ID来构建各种流服务实体。 您还需要引用连接规范本身的某些部分来设置特定图元，以便从流服务API中检索连接规范。 请参阅下面的示例，以了解如何检索表中所有目标的连接规范：
 
 >[!BEGINTABS]
 
@@ -902,7 +902,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->数据登陆区目标不需要身份验证凭据。 有关更多信息，请参阅数据登陆区目标文档页面的[对目标](/help/destinations/catalog/cloud-storage/data-landing-zone.md#authenticate)进行身份验证部分。
+>数据登陆区目标不需要身份验证凭据。 有关详细信息，请参阅数据登陆区目标文档页面的[对目标](/help/destinations/catalog/cloud-storage/data-landing-zone.md#authenticate)进行身份验证。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -4875,11 +4875,11 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 ## API错误处理 {#api-error-handling}
 
-本教程中的API端点遵循常规Experience Platform API错误消息原则。 有关解释错误响应的详细信息，请参阅Experience Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
+本教程中的API端点遵循常规Experience Platform API错误消息原则。 有关解释错误响应的更多信息，请参阅Experience Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤 {#next-steps}
 
-通过学习本教程，您已成功将Experience Platform连接到其中一个首选云存储目标，并设置了到相应目标的数据流以导出受众。 有关更多详细信息，请参阅以下页面，例如如何使用流服务API编辑现有数据流：
+您已成功将Experience Platform连接到其中一个首选云存储目标，并设置了到相应目标的数据流以导出受众。 有关更多详细信息，请参阅以下页面，例如如何使用流服务API编辑现有数据流：
 
 * [目标概述](../home.md)
 * [目标目录概述](../catalog/overview.md)

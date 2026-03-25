@@ -2,9 +2,9 @@
 description: 了解如何构建API调用以通过Adobe Experience Platform Destination SDK创建目标配置。
 title: 创建目标配置
 exl-id: aae4aaa8-1dd0-4041-a86c-5c86f04d7d13
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1207'
+source-wordcount: '1206'
 ht-degree: 3%
 
 ---
@@ -30,7 +30,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 目标配置API操作快速入门 {#get-started}
 
@@ -203,8 +203,8 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `customerDataFields.enum` | 字符串 | 将自定义字段呈现为下拉菜单，并列出用户可用的选项。 <br/><br/>有关这些设置的详细信息，请参阅[客户数据字段](../../functionality/destination-configuration/customer-data-fields.md)。 |
 | `customerDataFields.default` | 字符串 | 从`enum`列表中定义默认值。 |
 | `customerDataFields.pattern` | 字符串 | 如果需要，为自定义字段实施模式。 使用正则表达式可强制实施模式。 例如，如果您的客户ID不包含数字或下划线，请在此字段中输入`^[A-Za-z]+$`。 <br/><br/>有关这些设置的详细信息，请参阅[客户数据字段](../../functionality/destination-configuration/customer-data-fields.md)。 |
-| `uiAttributes.documentationLink` | 字符串 | 请参阅目标的[目标目录](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html?lang=zh-Hans#catalog)中的文档页面。 使用`https://www.adobe.com/go/destinations-YOURDESTINATION-en`，其中`YOURDESTINATION`是目标的名称。 对于名为Moviestar的目标，您将使用`https://www.adobe.com/go/destinations-moviestar-en`。 请注意，只有在Adobe将您的目标设置为实时状态并发布文档后，此链接才有效。 <br/><br/>有关这些设置的详细信息，请参阅[UI属性](../../functionality/destination-configuration/ui-attributes.md)。 ![Experience Platform用户界面图像显示文档链接。](../../assets/authoring-api/destination-configuration/documentation-url.png "文档URL"){width="100" zoomable="yes"} |
-| `uiAttributes.category` | 字符串 | 指在[!DNL Adobe Experience Platform]中分配给目标的类别。 有关详细信息，请阅读[目标类别](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/destination-types.html?lang=zh-Hans#destination-categories)。 使用以下值之一： `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`。 <br/><br/>有关这些设置的详细信息，请参阅[UI属性](../../functionality/destination-configuration/ui-attributes.md)。 |
+| `uiAttributes.documentationLink` | 字符串 | 请参阅目标的[目标目录](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html#catalog)中的文档页面。 使用`https://www.adobe.com/go/destinations-YOURDESTINATION-en`，其中`YOURDESTINATION`是目标的名称。 对于名为Moviestar的目标，您将使用`https://www.adobe.com/go/destinations-moviestar-en`。 请注意，只有在Adobe将您的目标设置为实时状态并发布文档后，此链接才有效。 <br/><br/>有关这些设置的详细信息，请参阅[UI属性](../../functionality/destination-configuration/ui-attributes.md)。 ![Experience Platform用户界面图像显示文档链接。](../../assets/authoring-api/destination-configuration/documentation-url.png "文档URL"){width="100" zoomable="yes"} |
+| `uiAttributes.category` | 字符串 | 指在[!DNL Adobe Experience Platform]中分配给目标的类别。 有关详细信息，请阅读[目标类别](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/destination-types.html#destination-categories)。 使用以下值之一： `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`。 <br/><br/>有关这些设置的详细信息，请参阅[UI属性](../../functionality/destination-configuration/ui-attributes.md)。 |
 | `uiAttributes.connectionType` | 字符串 | 连接的类型，具体取决于目标。 支持的值： <ul><li>`Server-to-server`</li><li>`Cloud storage`</li><li>`Azure Blob`</li><li>`Azure Data Lake Storage`</li><li>`S3`</li><li>`SFTP`</li><li>`DLZ`</li></ul> |
 | `uiAttributes.frequency` | 字符串 | 是指目标支持的数据导出类型。 对于基于API的集成，设置为`Streaming`；或者，在将文件导出到目标时，设置为`Batch`。 |
 | `identityNamespaces.externalId.acceptsAttributes` | 布尔值 | 指示客户是否可以将标准配置文件属性映射到您配置的身份。 |

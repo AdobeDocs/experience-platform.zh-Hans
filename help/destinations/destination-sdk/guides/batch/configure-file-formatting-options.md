@@ -2,9 +2,9 @@
 description: 为基于文件的目标配置文件格式选项
 title: 了解如何使用Destination SDK为基于文件的目标配置文件格式选项。
 exl-id: e61c7989-1123-4b3b-9781-a6097cd0e2b4
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '901'
+source-wordcount: '896'
 ht-degree: 1%
 
 ---
@@ -13,13 +13,13 @@ ht-degree: 1%
 
 ## 概述 {#overview}
 
-通过Destination SDK，您可以广泛调整导出文件的格式和压缩选项，以满足存储位置的任何下游要求。
+使用Destination SDK可广泛调整导出文件的格式和压缩选项，以匹配存储位置的任何下游要求。
 
 本页介绍如何使用Destination SDK为基于文件的目标配置文件格式选项。
 
 ## 先决条件 {#prerequisites}
 
-在继续执行以下步骤之前，请参阅[Destination SDK快速入门](../../getting-started.md)页面，了解有关获取使用Destination SDK API所需的必要Adobe I/O身份验证凭据和其他先决条件的信息。
+在继续执行以下步骤之前，请阅读[Destination SDK快速入门](../../getting-started.md)页面，了解有关获取使用Destination SDK API所需的必要Adobe I/O身份验证凭据和其他先决条件的信息。
 
 Adobe还建议您先阅读并熟悉以下文档，然后再继续：
 
@@ -742,4 +742,4 @@ James,Smith,"","\"\""
 
 ## 后续步骤 {#next-steps}
 
-阅读本文后，您现在知道如何使用Destination SDK为导出的文件设置自定义文件格式选项。 接下来，您的团队可以使用基于文件的目标的[激活工作流](../../../ui/activate-batch-profile-destinations.md)将数据导出到目标。
+您现在知道如何使用Destination SDK为导出的文件设置自定义文件格式选项。 接下来，您的团队可以使用基于文件的目标的[激活工作流](../../../ui/activate-batch-profile-destinations.md)将数据导出到目标。

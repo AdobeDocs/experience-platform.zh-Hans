@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；orac
 title: Oracle Responsys连接
 description: Responsys是Oracle提供的用于跨渠道营销活动的企业电子邮件营销工具，用于个性化电子邮件、移动设备、显示和社交之间的交互。
 exl-id: 70f2f601-afee-4315-bf7a-ed2c92397ebe
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '780'
+source-wordcount: '778'
 ht-degree: 4%
 
 ---
@@ -58,7 +58,7 @@ ht-degree: 4%
 
 在使用SFTP存储设置电子邮件营销目标时，Adobe建议将某些IP范围添加到SFTP允许列表。
 
-如果您需要将Adobe IP添加到SFTP允许列表，请参阅[SFTP目标的IP地址](../cloud-storage/ip-address-allow-list.md)。
+如果需要将Adobe IP添加到您的，请参阅SFTP目标的[IP地址允许列表](../cloud-storage/ip-address-allow-list.md)。
 
 ## 连接到目标 {#connect}
 
@@ -118,7 +118,7 @@ Commenting out Amazon S3 bucket part for now until support is clarified
 
 ### 目标属性 {#destination-attributes}
 
-将受众激活到此目标时，Adobe建议您从[合并架构](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择要导出到目标的唯一标识符和任何其他XDM字段。 有关详细信息，请参阅将受众激活到电子邮件营销目标时的最佳实践[&#128279;](overview.md#best-practices)。
+将受众激活到此目标时，Adobe建议您从[合并架构](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择要导出到目标的唯一标识符和任何其他XDM字段。 有关详细信息，请参阅[将受众激活到电子邮件营销目标时的最佳实践](overview.md#best-practices)。
 
 ## 导出的数据 {#exported-data}
 

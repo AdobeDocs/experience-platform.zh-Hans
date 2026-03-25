@@ -2,9 +2,9 @@
 title: Azure Blob连接
 description: 创建到Azure Blob Storage的实时出站连接，定期从Adobe Experience Platform导出CSV数据文件。
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1172'
+source-wordcount: '1171'
 ht-degree: 7%
 
 ---

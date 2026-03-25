@@ -2,9 +2,9 @@
 description: 了解如何使用目标测试API来测试您的流目标配置是否正确，以及验证流向您配置的目标的数据流的完整性。
 title: 使用示例配置文件测试您的流目标
 exl-id: 2b54250d-ec30-4ad7-a8be-b86b14e4f074
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '603'
+source-wordcount: '602'
 ht-degree: 1%
 
 ---
@@ -26,8 +26,8 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->* 要使用此API，您必须在Experience Platform UI中拥有到目标的现有连接。 阅读[连接到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=zh-Hans)和[将配置文件和受众激活到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=zh-Hans)以了解详细信息。
->* 建立与目标的连接后，获取在[浏览与目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html?lang=zh-Hans)的连接时您应在对此端点的API调用中使用的目标实例ID。
+>* 要使用此API，您必须在Experience Platform UI中拥有到目标的现有连接。 阅读[连接到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html)和[将配置文件和受众激活到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html)以了解详细信息。
+>* 建立与目标的连接后，获取在[浏览与目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html)的连接时您应在对此端点的API调用中使用的目标实例ID。
 >![UI图像如何获取目标实例ID](../../assets/testing-api/get-destination-instance-id.png)
 
 ## 目标测试API操作快速入门 {#get-started}

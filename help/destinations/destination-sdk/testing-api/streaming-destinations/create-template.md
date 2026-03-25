@@ -2,9 +2,9 @@
 description: 了解如何在发布目标之前使用目标测试API来测试流式传输目标消息转换模板。
 title: 创建和测试消息转换模板
 exl-id: 15e7f436-4d33-4172-bd14-ad8dfbd5e4a8
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '937'
+source-wordcount: '934'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 0%
 
 为了转换成功，您必须提供一个转换模板，类似于此示例： [创建一个发送区段、身份和配置文件属性的模板](../../functionality/destination-server/message-format.md#segments-identities-attributes)。
 
-Adobe提供了一个模板工具，允许您创建和测试消息模板，以将数据从Adobe XDM格式转换为目标支持的格式。 该工具具有两个API端点，您可以使用这些端点：
+Adobe提供了一个模板工具，用于创建和测试消息模板，以将数据从Adobe XDM格式转换为目标支持的格式。 该工具具有两个API端点，您可以使用这些端点：
 
 * 使用&#x200B;*示例模板API*&#x200B;获取示例模板。
 * 使用&#x200B;*渲染模板API*&#x200B;来渲染示例模板，以便您可以将结果与目标预期的数据格式进行比较。 将导出的数据与目标所需的数据格式进行比较后，可以编辑模板。 这样，您生成的导出数据与目标所预期的数据格式相匹配。
@@ -158,9 +158,9 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 
 ## 呈现模板API {#render-template-api}
 
-使用[示例模板API](create-template.md#sample-template-api)创建消息转换模板后，您可以[渲染模板](render-template-api.md)以基于它生成导出的数据。 这允许您验证[!DNL Adobe Experience Platform]将导出到目标的配置文件是否与目标的预期格式匹配。
+使用[示例模板API](create-template.md#sample-template-api)创建消息转换模板后，您可以[渲染模板](render-template-api.md)以基于它生成导出的数据。 使用此项验证[!DNL Adobe Experience Platform]将导出到目标的配置文件是否与目标的预期格式匹配。
 
-有关可以进行的调用的示例，请参阅API参考：
+有关可进行的调用的示例，请参阅API引用：
 
 * [呈现模板，其中没有在正文中发送配置文件](render-template-api.md#best-effort)
 * [渲染包含正文中发送的用户档案的模板](render-template-api.md#configurable-aggregation)

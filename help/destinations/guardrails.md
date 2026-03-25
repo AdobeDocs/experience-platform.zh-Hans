@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: 了解有关数据激活默认使用量和速率限制的更多信息。
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: c550186c9cb3bc580a227633e0d7c0b574ecc2e8
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1744'
+source-wordcount: '1741'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/cn/legal/product-descriptions.html)中的实际使用限制。
+>除了此护栏页面外，还检查销售订单中的许可证授权和相应的[产品描述](https://helpx.adobe.com/legal/product-descriptions.html)中的实际使用限制。
 
 本页提供有关激活行为的默认使用量和速率限制。 查看以下护栏时，假定您已正确[连接到目标](/help/destinations/ui/connect-destination.md)。
 
@@ -171,7 +171,7 @@ The guardrails below are the same whether you are exporting parquet of JSON file
 
 ### Destination SDK护栏 {#destination-sdk-guardrails}
 
-[Destination SDK](/help/destinations/destination-sdk/overview.md)是一套配置API，允许您为Experience Platform配置目标集成模式，以根据您选择的数据和身份验证格式将受众和配置文件数据交付到您的端点。 以下护栏适用于您使用Destination SDK配置的目标。
+[Destination SDK](/help/destinations/destination-sdk/overview.md)是一套配置API，用于为Experience Platform配置目标集成模式，以根据您选择的数据和身份验证格式将受众和配置文件数据交付到您的端点。 以下护栏适用于您使用Destination SDK配置的目标。
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
@@ -196,7 +196,7 @@ The guardrails below are the same whether you are exporting parquet of JSON file
 有关其他Experience Platform服务护栏、端到端延迟信息和许可信息，请参阅[!DNL Real-Time CDP]产品描述文档中的以下文档：
 
 * [Real-Time CDP护栏](/help/rtcdp/guardrails/overview.md)
-* [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=zh-Hans#end-to-end-latency-diagrams)。
-* [Real-Time Customer Data Platform （B2C Edition - Prime和Ultimate包）](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform （B2P - Prime和Ultimate包）](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform （B2B - Prime和Ultimate包）](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [各种Experience Platform服务的端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams)。
+* [Real-Time Customer Data Platform （B2C Edition - Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform （B2P - Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform （B2B - Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)

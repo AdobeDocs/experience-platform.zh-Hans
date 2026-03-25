@@ -4,9 +4,9 @@ title: 更新目标帐户
 type: Tutorial
 description: 本教程列出了在Adobe Experience Platform UI中更新目标帐户的步骤
 exl-id: afb41878-4205-4c64-af4d-e2740f852785
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '490'
+source-wordcount: '479'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-**[!UICONTROL Accounts]**&#x200B;选项卡显示有关您与各种目标建立的连接的详细信息。 请参阅[帐户概述](../ui/destinations-workspace.md#accounts)，以了解有关每个目标帐户的所有信息。
+**[!UICONTROL Accounts]**&#x200B;选项卡显示有关您与各种目标建立的连接的详细信息。 有关每个目标帐户的所有可用信息，请参阅[帐户概述](../ui/destinations-workspace.md#accounts)。
 
 本教程介绍了使用Experience Platform UI更新目标帐户详细信息的步骤。
 
@@ -29,7 +29,7 @@ ht-degree: 0%
 
 请按照以下步骤将连接详细信息更新到现有目标。
 
-1. 登录到[Experience Platform UI](https://platform.adobe.com/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL Destinations]**。 从顶部标题中选择&#x200B;**[!UICONTROL Accounts]**&#x200B;以查看现有帐户。
+1. 转到[Experience Platform UI](https://platform.adobe.com/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL Destinations]**。 从顶部标题中选择&#x200B;**[!UICONTROL Accounts]**&#x200B;以查看现有帐户。
 
    ![帐户选项卡](../assets/ui/update-accounts/accounts-tab.png)
 
@@ -63,6 +63,6 @@ ht-degree: 0%
 
 ## 后续步骤 {#next-steps}
 
-通过完成本教程，您已成功使用&#x200B;**[!UICONTROL destinations]**&#x200B;工作区来更新现有帐户。
+您已成功使用&#x200B;**[!UICONTROL destinations]**&#x200B;工作区更新现有帐户。
 
 有关目标的详细信息，请参阅[目标概述](../catalog/overview.md)。

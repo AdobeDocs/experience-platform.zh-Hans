@@ -2,9 +2,9 @@
 description: Adobe Experience Platform中的目标服务对构建目标功能的多个组件使用配置端点。 了解这些组件如何组合使Experience Platform能够在数字生态系统中连接到目标合作伙伴、发送自定义消息并激活配置文件数据。
 title: Destination SDK中的配置选项
 exl-id: 8890c70a-cdb9-4b9d-aa81-affe72b1fdc5
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '821'
+source-wordcount: '817'
 ht-degree: 0%
 
 ---
@@ -56,8 +56,8 @@ ht-degree: 0%
 
 ## 受众元数据配置 {#audience-metadata-configuration}
 
-利用此组件，可配置在您的目标中以编程方式创建、更新或删除受众的方式。 对于基于文件的目标，它允许您在文件成功传送到目标时设置通知。 您可以通过[受众模板端点](../metadata-api/create-audience-template.md)配置此功能。
+使用此组件可配置在您的目标中如何以编程方式创建、更新或删除受众。 对于基于文件的目标，使用它可在文件成功传送到目标时设置通知。 您可以通过[受众模板端点](../metadata-api/create-audience-template.md)配置此功能。
 
 ## 后续步骤 {#next-steps}
 
-通过阅读本文，您现在可以概括了解Destination SDK提供的功能，以及要阅读哪些页面以了解有关特定配置的更多信息。 接下来，您可以阅读包含使用Destination SDK [配置流式传输](../guides/configure-destination-instructions.md)或[基于文件的目标](../guides/configure-file-based-destination-instructions.md)的所有步骤的指南。
+现在，您已大致了解Destination SDK提供的功能，以及要阅读哪些页面以了解有关特定配置的更多信息。 接下来，您可以阅读包含使用Destination SDK [配置流式传输](../guides/configure-destination-instructions.md)或[基于文件的目标](../guides/configure-file-based-destination-instructions.md)的所有步骤的指南。

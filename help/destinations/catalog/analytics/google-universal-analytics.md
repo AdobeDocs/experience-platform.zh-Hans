@@ -3,7 +3,7 @@ keywords: google universal analytics；Google Universal Analytics；Google Unive
 title: Google Universal Analytics扩展
 description: Google Universal Analytics扩展是Adobe Experience Platform中的分析目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: 72576a0f-f2da-46d6-a722-33a0cf17f2c4
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
 source-wordcount: '438'
 ht-degree: 4%
@@ -14,7 +14,7 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-[!DNL Google Universal Analytics]允许您测量广告投资回报率，并跟踪您的Flash、视频和社交网站及应用程序。
+使用[!DNL Google Universal Analytics]衡量您的广告ROI，并跟踪您的Flash、视频和社交网站及应用程序。
 
 [!DNL Google Universal Analytics]是[!DNL Adobe Experience Platform]中的Analytics扩展。 有关扩展功能的更多信息，请参阅[Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.102829.google-universal-analytics.html)上的扩展页面。
 

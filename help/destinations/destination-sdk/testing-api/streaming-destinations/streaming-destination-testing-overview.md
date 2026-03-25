@@ -2,9 +2,9 @@
 description: 了解如何在发布流目标配置之前，使用目标测试API对其进行测试。
 title: 流式目标测试API概述
 exl-id: 21e4d647-1168-4cb4-a2f8-22d201e39bba
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '512'
+source-wordcount: '510'
 ht-degree: 0%
 
 ---
@@ -42,7 +42,7 @@ ht-degree: 0%
 
 您可以调用目标测试API端点，可以在请求中添加或不添加配置文件。
 
-如果您未在请求中添加任何配置文件，Adobe将在内部为您生成这些配置文件，并将它们添加到请求中。 如果要生成配置文件以在此请求中使用，请参阅[示例配置文件生成API参考](../../testing-api/streaming-destinations/sample-profile-generation-api.md)。 您需要基于源XDM架构生成配置文件，如[API引用](../../testing-api/streaming-destinations/sample-profile-generation-api.md#generate-sample-profiles-source-schema)中所示。 请注意，源架构是您正在使用的沙盒的[合并架构](../../../../profile/ui/union-schema.md)。
+如果您未在请求中添加任何配置文件，Adobe将在内部为您生成这些配置文件，并将它们添加到请求中。 如果要生成配置文件以在此请求中使用，请参阅[示例配置文件生成API引用](../../testing-api/streaming-destinations/sample-profile-generation-api.md)。 您需要基于源XDM架构生成配置文件，如[API引用](../../testing-api/streaming-destinations/sample-profile-generation-api.md#generate-sample-profiles-source-schema)中所示。 请注意，源架构是您正在使用的沙盒的[合并架构](../../../../profile/ui/union-schema.md)。
 
 响应包含目标请求处理的结果。 该请求包括三个主要部分：
 

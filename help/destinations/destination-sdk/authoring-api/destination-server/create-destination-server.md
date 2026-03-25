@@ -2,9 +2,9 @@
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK创建目标服务器的API调用。
 title: 创建目标服务器配置
 exl-id: 5c6b6cf5-a9d9-4c8a-9fdc-f8a95ab2a971
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '2038'
+source-wordcount: '2029'
 ht-degree: 5%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 目标服务器API操作快速入门 {#get-started}
 
@@ -782,7 +782,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 ### 创建动态架构目标服务器 {#dynamic-schema-servers}
 
-动态架构允许您动态检索支持的目标属性，并根据自己的API生成架构。 您需要先为动态架构配置目标服务器，然后才能配置架构。
+动态架构可动态检索支持的目标属性，并根据您自己的API生成架构。 您需要先为动态架构配置目标服务器，然后才能配置架构。
 
 在下面的选项卡中查看使用[动态架构](../../functionality/destination-configuration/schema-configuration.md#dynamic-schema-configuration)的目标服务器的示例。
 

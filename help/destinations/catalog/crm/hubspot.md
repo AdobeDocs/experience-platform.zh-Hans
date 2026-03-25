@@ -1,18 +1,18 @@
 ---
 title: HubSpot连接
-description: HubSpot目标允许您管理HubSpot帐户中的联系人记录。
+description: 使用HubSpot目标管理HubSpot帐户中的联系人记录。
 last-substantial-update: 2023-09-28T00:00:00Z
 exl-id: e2114bde-b7c3-43da-9f3a-919322000ef4
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1625'
+source-wordcount: '1619'
 ht-degree: 3%
 
 ---
 
 # [!DNL HubSpot]连接
 
-[[!DNL HubSpot]](https://www.hubspot.com)是一个CRM平台，其中包含连接营销、销售、内容管理和客户服务所需的所有软件、集成和资源。 它允许您在一个CRM平台上连接数据、团队和客户。
+[[!DNL HubSpot]](https://www.hubspot.com)是一个CRM平台，其中包含连接营销、销售、内容管理和客户服务所需的所有软件、集成和资源。 使用它在一个CRM平台上连接您的数据、团队和客户。
 
 此[!DNL Adobe Experience Platform] [目标](/help/destinations/home.md)利用[[!DNL HubSpot] 联系人API](https://developers.hubspot.com/docs/api/crm/contacts)，在激活后从现有Experience Platform受众更新[!DNL HubSpot]中的联系人。
 
@@ -26,11 +26,11 @@ ht-degree: 3%
 
 ## 先决条件 {#prerequisites}
 
-请参阅以下部分，了解需要在Experience Platform和[!DNL HubSpot]中设置的任何先决条件，以及在使用[!DNL HubSpot]目标之前必须收集的信息。
+请参阅以下部分，以了解需要在Experience Platform和[!DNL HubSpot]中设置的任何先决条件，以及在使用[!DNL HubSpot]目标之前必须收集的信息。
 
 ### Experience Platform先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL HubSpot]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html?lang=zh-Hans)受众[!DNL Experience Platform]。
+在将数据激活到[!DNL HubSpot]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html)受众[!DNL Experience Platform]。
 
 如果您需要有关受众状态的指导，请参阅Experience Platform文档，了解[受众成员资格详细信息架构字段组](/help/xdm/field-groups/profile/segmentation.md)。
 
@@ -165,7 +165,7 @@ ht-degree: 3%
 
 1. 在&#x200B;**[!UICONTROL Mapping]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL Add new mapping]**。 您现在可以在屏幕上看到新的映射行。
    ![突出显示了“添加新映射”按钮的Experience Platform UI屏幕截图。](../../assets/catalog/crm/hubspot/mapping-add-new-mapping.png)
-1. 在&#x200B;**[!UICONTROL Select source field]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL Select identity namespace]**&#x200B;并选择身份。
+1. 在&#x200B;**[!UICONTROL Select source field]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL Select identity namespace]**并选择身份。
    ![Experience Platform UI屏幕截图选择电子邮件作为要映射为标识的源属性。](../../assets/catalog/crm/hubspot/mapping-select-source-identity.png)
 1. 在&#x200B;**[!UICONTROL Select target field]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL Select attributes]**&#x200B;并选择`email`。
    ![Experience Platform UI屏幕截图选择电子邮件作为要映射为身份的目标属性。](../../assets/catalog/crm/hubspot/mapping-select-target-identity.png)
@@ -183,7 +183,7 @@ ht-degree: 3%
 
 1. 在&#x200B;**[!UICONTROL Mapping]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL Add new mapping]**。 您现在可以在屏幕上看到新的映射行。
    ![突出显示了“添加新映射”按钮的Experience Platform UI屏幕截图。](../../assets/catalog/crm/hubspot/mapping-add-new-mapping.png)
-1. 在&#x200B;**[!UICONTROL Select source field]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL Select attributes]**&#x200B;类别并选择XDM属性。
+1. 在&#x200B;**[!UICONTROL Select source field]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL Select attributes]**类别并选择XDM属性。
    ![选择“名字”作为源属性的Experience Platform UI屏幕截图。](../../assets/catalog/crm/hubspot/mapping-select-source-attribute.png)
 1. 在&#x200B;**[!UICONTROL Select target field]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL Select attributes]**&#x200B;类别，然后从自动从[!DNL HubSpot]帐户填充的属性列表中进行选择。 目标使用[[!DNL HubSpot] 属性](https://developers.hubspot.com/docs/api/crm/properties) API检索此信息。 已检索[!DNL HubSpot] [默认属性](https://knowledge.hubspot.com/contacts/hubspots-default-contact-properties)和任何自定义属性，以便选择它们作为目标字段。
    ![选择“名字”作为Target属性的Experience Platform UI屏幕截图。](../../assets/catalog/crm/hubspot/mapping-select-target-attribute.png)
@@ -207,10 +207,10 @@ ht-degree: 3%
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 登录到[!DNL HubSpot]网站，然后导航到&#x200B;**[!UICONTROL Contacts]**&#x200B;页面以检查受众状态。 此列表可以配置为显示使用受众名称创建的自定义属性的列，其值是受众状态。
+1. 转到[!DNL HubSpot]网站，然后导航到&#x200B;**[!UICONTROL Contacts]**页面以检查受众状态。 此列表可以配置为显示使用受众名称创建的自定义属性的列，其值是受众状态。
    ![HubSpot UI屏幕截图显示“联系人”页面，该页面带有列标题，其中显示受众名称和单元格受众状态](../../assets/catalog/crm/hubspot/contacts.png)
 
-1. 或者，您可以向下钻取到单个&#x200B;**[!UICONTROL Person]**&#x200B;页面，并导航到显示受众名称和受众状态的属性。
+1. 或者，您可以向下钻取到单个&#x200B;**[!UICONTROL Person]**页面，并导航到显示受众名称和受众状态的属性。
    ![HubSpot UI屏幕截图显示“联系人”页面，该页面具有显示受众名称和受众状态的自定义属性。](../../assets/catalog/crm/hubspot/contact.png)
 
 ## 数据使用和治理 {#data-usage-governance}
@@ -222,7 +222,7 @@ ht-degree: 3%
 [!DNL HubSpot]文档中的其他有用信息如下：
 
 * HubSpot上的[身份验证方法](https://developers.hubspot.com/docs/api/intro-to-auth)
-* [!DNL HubSpot]联系人[和](https://developers.hubspot.com/docs/api/crm/contacts)属性[&#x200B; API的](https://developers.hubspot.com/docs/api/crm/properties) API引用。
+* [!DNL HubSpot]联系人[和](https://developers.hubspot.com/docs/api/crm/contacts)属性[ API的](https://developers.hubspot.com/docs/api/crm/properties) API引用。
 
 ### Changelog {#changelog}
 

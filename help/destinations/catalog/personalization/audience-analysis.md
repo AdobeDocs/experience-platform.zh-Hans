@@ -5,16 +5,16 @@ badgeLimitedAvailability: label="限量发布版" type="Informative"
 exl-id: 81437237-d746-4ce9-b938-7d2541f0ed32
 hide: true
 hidefromtoc: true
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '866'
+source-wordcount: '867'
 ht-degree: 4%
 
 ---
 
 # Audience Analysis目标
 
-[!UICONTROL Audience Analysis]目标允许您将[!DNL Adobe Experience Platform]受众数据扩充到[Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html?lang=zh-Hans)。 您可以选择要在生成的扩充数据中包含的受众。 然后，受众资格将作为维度出现在[Analysis Workspace](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-workspace/home.html?lang=zh-Hans)报表中。
+使用[!UICONTROL Audience Analysis]目标将[!DNL Adobe Experience Platform]受众数据扩充到[Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html?lang=zh-Hans)。 您可以选择要在生成的扩充数据中包含的受众。 然后，受众资格将作为维度出现在[Analysis Workspace](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-workspace/home.html)报表中。
 
 >[!AVAILABILITY]
 >
@@ -106,7 +106,7 @@ Audience Analysis支持激活下表中描述的标识。 了解有关[标识](/h
 
 ### 治理策略和实施行动 {#governance-policy}
 
-通过此可选部分，您可以定义数据管理策略，并确保在发送和激活受众时，所使用的数据符合要求。
+此可选部分允许您定义数据管理策略，并确保在发送和激活受众时使用的数据符合要求。
 
 完成选择目标所需的营销操作后，选择&#x200B;**[!UICONTROL Create]**。
 

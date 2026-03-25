@@ -2,9 +2,9 @@
 description: 此页说明如何使用/testing/destinationInstance API端点来测试您的基于文件的目标是否已正确配置，以及验证数据流到您配置的目标是否完整。
 title: 使用示例配置文件测试基于文件的目标
 exl-id: 75f76aec-245b-4f07-8871-c64a710db9f6
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '829'
+source-wordcount: '828'
 ht-degree: 2%
 
 ---

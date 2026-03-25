@@ -3,9 +3,9 @@ keywords: facebook pixel扩展；facebook pixel扩展；facebook pixel目标；f
 title: Facebook Pixel扩展
 description: Facebook Pixel扩展是Adobe Experience Platform中的一个广告目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: 6a2c661f-1ad0-4d96-b1bb-bf8c158c8521
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '421'
+source-wordcount: '419'
 ht-degree: 4%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-[!DNL Facebook Pixel]是一款分析工具，通过它可了解用户在网站上采取的操作，从而衡量广告的有效性。
+[!DNL Facebook Pixel]是一种分析工具，用于通过了解用户在您的网站上采取的操作来衡量广告的有效性。
 
 [!DNL Facebook Pixel]是[!DNL Adobe Experience Platform]中的Advertising扩展。 有关扩展功能的更多信息，请参阅[Facebook Pixel网站](https://developers.facebook.com/docs/facebook-pixel/)。
 

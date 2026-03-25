@@ -4,9 +4,9 @@ title: 云存储目标的API迁移指南
 description: 了解在迁移到“新的云存储目标”卡片过程中激活云存储目标的工作流中所做的更改，该卡片具有附加功能。
 type: Tutorial
 exl-id: 4acaf718-794e-43a3-b8f0-9b19177a2bc0
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1328'
+source-wordcount: '1322'
 ht-degree: 1%
 
 ---
@@ -661,7 +661,7 @@ API用户向后不兼容的更改是更新的`connection spec ID`和`flow spec I
 
 ### [!DNL Amazon S3]、[!DNL Azure Blob]和SFTP目标通用的向后不兼容更改 {#changes-all-destinations}
 
-所有三个目标中的配置文件选择器步骤将被映射步骤替换，该步骤允许您根据需要重命名导出文件中的列标题。 请参阅下面的并排图像，左侧是旧属性选择器步骤，右侧是新映射步骤。
+所有三个目标中的配置文件选择器步骤将被一个映射步骤替换，以便根据需要重命名导出文件中的列标题。 请参阅下面的并排图像，左侧是旧属性选择器步骤，右侧是新映射步骤。
 
 ![迁移指南概述图像](/help/destinations/assets/api/api-migration-guide/old-and-new-mapping-step.png)
 
@@ -795,4 +795,4 @@ API用户向后不兼容的更改是更新的`connection spec ID`和`flow spec I
 
 ## 后续步骤 {#next-steps}
 
-通过阅读本页，您现在知道是否需要采取任何操作来准备迁移云存储目标。 在设置基于API的工作流以将文件从Experience Platform导出到您首选的云存储目标时，您还知道要引用哪些文档页面。 接下来，您可以查看[将数据导出到云存储目标](/help/destinations/api/activate-segments-file-based-destinations.md)的API教程。
+现在，您可以知道自己是否需要采取任何操作来准备迁移云存储目标。 在设置基于API的工作流以将文件从Experience Platform导出到您首选的云存储目标时，您还知道要引用哪些文档页面。 接下来，您可以查看[将数据导出到云存储目标](/help/destinations/api/activate-segments-file-based-destinations.md)的API教程。

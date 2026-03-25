@@ -5,16 +5,16 @@ solution: Experience Platform
 title: 监测数据流
 type: Tutorial
 exl-id: fbe35ee1-4ee8-4d67-976b-0c45f0168da4
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '128'
-ht-degree: 18%
+source-wordcount: '126'
+ht-degree: 19%
 
 ---
 
 # 监测数据流
 
-[!UICONTROL Destinations]允许您从[!DNL Adobe Experience Platform]向无数外部合作伙伴激活数据。
+使用[!UICONTROL Destinations]将您的数据从[!DNL Adobe Experience Platform]激活到无数外部合作伙伴。
 
 数据流是跨[!DNL Experience Platform]移动数据的数据作业的表示形式。 这些数据流在不同的服务中配置，有助于将数据从源连接器移动到目标数据集，然后由[!DNL Identity Service]和[!DNL Real-Time Customer Profile]使用它，最后激活到目标。
 

@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Adobe Experience Platform Destination SDK术语表
 description: 了解使用Experience Platform Destination SDK创作目标时的重要术语。
 exl-id: d65f390a-a980-49b8-9570-840f03534553
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '671'
+source-wordcount: '669'
 ht-degree: 2%
 
 ---
@@ -44,6 +44,6 @@ ht-degree: 2%
 
 **模板规范和模板策略**：模板规范是用于格式化从[!DNL Adobe Experience Platform]发送到目标的HTTP请求的配置。 它们将XDM架构中的配置文件属性字段转换为目标平台支持的格式。 使用类似于[!DNL Jinja]的模板化语言，这些规范允许根据特定规则和输入数据进行动态数据转换。 [了解详情](/help/destinations/destination-sdk/functionality/destination-server/templating-specs.md)。
 
-**测试API**：测试API允许您在提交发布请求之前验证目标配置。 它提供了用于生成样本配置文件和测试数据流的工具，确保配置符合目标的要求。 该API支持流目标和基于文件的（批量）目标，提供了一种方法来模拟数据并解决设置过程中的潜在问题。 详细了解[流式传输](/help/destinations/destination-sdk/testing-api/streaming-destinations/streaming-destination-testing-overview.md)和[基于文件的目标](/help/destinations/destination-sdk/testing-api/batch-destinations/file-based-destination-testing-overview.md)的测试API。
+**测试API**：在提交发布请求之前，使用测试API验证目标配置。 它提供了用于生成样本配置文件和测试数据流的工具，确保配置符合目标的要求。 该API支持流目标和基于文件的（批量）目标，提供了一种方法来模拟数据并解决设置过程中的潜在问题。 详细了解[流式传输](/help/destinations/destination-sdk/testing-api/streaming-destinations/streaming-destination-testing-overview.md)和[基于文件的目标](/help/destinations/destination-sdk/testing-api/batch-destinations/file-based-destination-testing-overview.md)的测试API。
 
 **转换模板**：转换模板将数据格式从Adobe XDM架构自定义为目标的预期格式。 [了解详情](/help/destinations/destination-sdk/functionality/destination-server/message-format.md)。

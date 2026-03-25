@@ -3,7 +3,7 @@ title: 使用Experience Platform UI按需将文件导出到批处理目标
 type: Tutorial
 description: 了解如何使用Experience Platform UI将按需文件导出到批处理目标。
 exl-id: 0cbe5089-b73d-4584-8451-2fc34d47c357
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
 source-wordcount: '804'
 ht-degree: 5%
@@ -26,7 +26,7 @@ ht-degree: 5%
 
 本文介绍如何使用Experience Platform UI将文件按需导出到批处理目标，如[云存储](/help/destinations/catalog/cloud-storage/overview.md)和[电子邮件营销](/help/destinations/catalog/email-marketing/overview.md)目标。
 
-**[!UICONTROL Export file now]**&#x200B;控件允许您导出完整文件，而不会中断先前计划受众的当前导出计划。 此导出操作在之前计划的导出之外进行，不会更改受众的导出频率。
+使用&#x200B;**[!UICONTROL Export file now]**&#x200B;控件导出完整文件，而不中断先前计划受众的当前导出计划。 此导出操作在之前计划的导出之外进行，不会更改受众的导出频率。
 
 文件导出会立即触发，并仅使用最新受众评估快照中的数据。 它不包括创建快照后发生的配置文件或标识更改。 相反，计划的导出既包括快照数据，也包括快照创建和导出之间发生的增量更改。
 

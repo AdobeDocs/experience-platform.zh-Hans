@@ -1,12 +1,12 @@
 ---
 keywords: 移动设备；移动参与目标；LINE；LINE移动参与目标
 title: LINE连接
-description: LINE目标允许您向Experience Platform受众添加配置文件，并为连接的用户提供个性化体验。
+description: 使用LINE目标向Experience Platform受众添加配置文件，并为连接的用户提供个性化体验。
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 9981798a-61f2-4a09-9a33-57e63eb36d43
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1307'
+source-wordcount: '1306'
 ht-degree: 3%
 
 ---

@@ -5,9 +5,9 @@ title: 使用流服务API删除目标帐户
 type: Tutorial
 description: 了解如何使用流服务API删除目标帐户。
 exl-id: a963073c-ecba-486b-a5c2-b85bdd426e72
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '749'
+source-wordcount: '743'
 ht-degree: 17%
 
 ---
@@ -35,7 +35,7 @@ ht-degree: 17%
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) [!DNL Experience Platform]。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
 
 ### 收集所需标头的值 {#gather-values-for-required-headers}
 
@@ -187,4 +187,4 @@ curl -X DELETE \
 
 ## 后续步骤 {#next-steps}
 
-通过完成本教程，您已成功使用[!DNL Flow Service] API删除现有的目标帐户。 有关使用目标的详细信息，请参阅[目标概述](/help/destinations/home.md)。
+您已成功使用[!DNL Flow Service] API删除现有的目标帐户。 有关使用目标的详细信息，请参阅[目标概述](/help/destinations/home.md)。

@@ -3,9 +3,9 @@ title: Mailchimp兴趣类别
 description: Mailchimp（也称为Intuit Mailchimp）是一种流行的营销自动化平台和电子邮件营销服务，企业使用它来管理联系人（客户、客户或其他利益相关方），并使用邮件列表和电子邮件营销活动与其交谈。 使用此连接器可以根据联系人的兴趣和偏好对他们进行排序。
 last-substantial-update: 2023-05-24T00:00:00Z
 exl-id: bdce8295-7305-4d54-81c1-7fa3e580ce70
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '2395'
+source-wordcount: '2390'
 ht-degree: 3%
 
 ---
@@ -36,7 +36,7 @@ Compared to [!DNL Mailchimp Tags] which you would use for internal classificatio
 
 ### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL Mailchimp Interest Categories]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=zh-Hans)区段[!DNL Experience Platform]。
+在将数据激活到[!DNL Mailchimp Interest Categories]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)区段[!DNL Experience Platform]。
 
 ### [!DNL Mailchimp Interest Categories]目标的先决条件 {#prerequisites-destination}
 
@@ -50,7 +50,7 @@ Compared to [!DNL Mailchimp Tags] which you would use for internal classificatio
 
 您需要您的[!DNL Mailchimp] **API密钥**&#x200B;来针对您的[!DNL Mailchimp Interest Categories]帐户验证[!DNL Mailchimp]目标。 当您&#x200B;**对目标**&#x200B;进行身份验证时，**API密钥**&#x200B;将用作[密码](#authenticate)。
 
-如果您没有&#x200B;**API密钥**，请登录您的帐户并参阅[[!DNL Mailchimp] 生成API密钥](https://mailchimp.com/developer/marketing/guides/quick-start/#generate-your-api-key)文档以创建一个。
+如果您没有&#x200B;**API密钥**，请登录您的帐户并查看[[!DNL Mailchimp] 生成API密钥](https://mailchimp.com/developer/marketing/guides/quick-start/#generate-your-api-key)文档以创建一个。
 
 API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
@@ -74,7 +74,7 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 您的[!DNL Mailchimp]受众中每个受众最多可以包含60个组名（或兴趣类别），这些组名可以位于单个组中，也可以跨同一受众内的多个组。 有关所需的任何说明，请参阅[!DNL Mailchimp] [组](https://mailchimp.com/help/getting-started-with-groups/)。 达到此限制后，您会从`400 BAD_REQUEST Cannot have more than 60 interests per list (Across all categories)` API收到[!DNL Mailchimp]消息作为错误响应。
 
-此外，有关[!DNL Mailchimp] API施加的限制的详细信息，请参阅[&#x200B; &#x200B;](https://mailchimp.com/developer/marketing/docs/fundamentals/#api-limits)速率限制[!DNL Mailchimp]。
+此外，有关[!DNL Mailchimp] API施加的限制的详细信息，请参阅[ ](https://mailchimp.com/developer/marketing/docs/fundamentals/#api-limits)速率限制[!DNL Mailchimp]。
 
 ## 支持的身份 {#supported-identities}
 
@@ -222,7 +222,7 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-* 登录到您的[[!DNL Mailchimp]](https://login.mailchimp.com/)帐户。 然后，导航到&#x200B;**[!DNL Audience]**&#x200B;页面。 接下来，展开&#x200B;**[!DNL Manage Contacts]**&#x200B;菜单并选择&#x200B;**[!DNL Groups]**。
+* 转到您的[[!DNL Mailchimp]](https://login.mailchimp.com/)帐户。 然后，导航到&#x200B;**[!DNL Audience]**&#x200B;页面。 接下来，展开&#x200B;**[!DNL Manage Contacts]**&#x200B;菜单并选择&#x200B;**[!DNL Groups]**。
 
 ![显示“受众”组页面的Mailchimp UI屏幕截图。](../../assets/catalog/email-marketing/mailchimp-interest-categories/audience-groups.png)
 

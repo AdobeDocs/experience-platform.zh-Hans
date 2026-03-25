@@ -2,9 +2,9 @@
 description: 本页介绍如何使用Destination SDK中的/sample-profiles API端点基于源架构生成示例配置文件。 您可以使用这些示例配置文件来测试基于文件的目标配置。
 title: 根据源架构生成样本配置文件
 exl-id: aea50d2e-e916-4ef0-8864-9333a4eafe80
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '652'
+source-wordcount: '651'
 ht-degree: 1%
 
 ---

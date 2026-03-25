@@ -5,9 +5,9 @@ title: 使用流服务API删除目标数据流
 type: Tutorial
 description: 了解如何使用流服务API将数据流删除到批处理目标和流式目标。
 exl-id: fa40cf97-46c6-4a10-b53c-30bed2dd1b2d
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '557'
+source-wordcount: '552'
 ht-degree: 19%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 19%
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) [!DNL Experience Platform]。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
 
 ### 收集所需标头的值 {#gather-values-for-required-headers}
 
@@ -86,12 +86,12 @@ curl -X DELETE \
 
 ## API错误处理 {#api-error-handling}
 
-本教程中的API端点遵循常规Experience Platform API错误消息原则。 有关解释错误响应的详细信息，请参阅Experience Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
+本教程中的API端点遵循常规Experience Platform API错误消息原则。 有关解释错误响应的更多信息，请参阅Experience Platform疑难解答指南中的[API状态代码](/help/landing/troubleshooting.md#api-status-codes)和[请求标头错误](/help/landing/troubleshooting.md#request-header-errors)。
 
 ## 后续步骤 {#next-steps}
 
-通过完成本教程，您已成功使用[!DNL Flow Service] API删除到目标的现有数据流。
+您已成功使用[!DNL Flow Service] API删除到目标的现有数据流。
 
 有关如何使用用户界面执行这些操作的步骤，请参阅有关[在UI中删除数据流](../ui/delete-destinations.md)的教程。
 
-您现在可以使用[&#x200B; API继续并](/help/destinations/api/delete-destination-account.md)删除目标帐户[!DNL Flow Service]。
+您现在可以使用[ API继续并](/help/destinations/api/delete-destination-account.md)删除目标帐户[!DNL Flow Service]。

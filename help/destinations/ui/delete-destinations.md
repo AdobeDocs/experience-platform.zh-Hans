@@ -4,9 +4,9 @@ title: 删除目标
 type: Tutorial
 description: 本教程列出了在Adobe Experience Platform UI中删除现有目标的步骤
 exl-id: 7b672859-e61a-4b3c-9db9-62048258f0aa
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '396'
+source-wordcount: '394'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 0%
 
 按照以下步骤从[!UICONTROL Browse]选项卡中删除目标。
 
-1. 登录到[Experience Platform UI](https://platform.adobe.com/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL Destinations]**。 要查看现有目标，请从顶部标题中选择&#x200B;**[!UICONTROL Browse]**。
+1. 转到[Experience Platform UI](https://platform.adobe.com/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL Destinations]**。 从顶部标题中选择&#x200B;**[!UICONTROL Browse]**&#x200B;以查看现有目标。
 
    ![浏览目标](../assets/ui/delete-destinations/browse-destinations.png)
 
@@ -36,18 +36,18 @@ ht-degree: 0%
 
    ![筛选目标](../assets/ui/delete-destinations/filter-destinations.png)
 
-3. 在“名称”列中选择![更多按钮](/help/images/icons/more.png)按钮，然后选择![删除按钮](/help/images/icons/delete.png) **[!UICONTROL Delete]**&#x200B;以删除现有目标连接。
+3. 在“名称”列中选择![更多按钮](/help/images/icons/more.png)按钮，然后选择![删除按钮](/help/images/icons/delete.png) **[!UICONTROL Delete]**以删除现有目标连接。
    ![删除目标](../assets/ui/delete-destinations/delete-destinations.png)
 
 4. 选择&#x200B;**[!UICONTROL Delete]**&#x200B;以确认删除目标连接。
 
    ![确认删除目标](../assets/ui/delete-destinations/delete-destinations-confirm.png)
 
-## 从目标详细信息页面中删除目标{#delete-destination-details-page}
+## 从目标详细信息页面中删除目标 {#delete-destination-details-page}
 
 按照以下步骤从目标详细信息页面中删除目标。
 
-1. 登录到[Experience Platform UI](https://platform.adobe.com/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL Destinations]**。 要查看现有目标，请从顶部标题中选择&#x200B;**[!UICONTROL Browse]**。
+1. 转到[Experience Platform UI](https://platform.adobe.com/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL Destinations]**。 从顶部标题中选择&#x200B;**[!UICONTROL Browse]**&#x200B;以查看现有目标。
 
    ![浏览目标](../assets/ui/delete-destinations/browse-destinations.png)
 
@@ -75,6 +75,6 @@ ht-degree: 0%
 
    ![删除目标确认](..//assets/ui/delete-destinations/delete-destinations-delete.png)
 
-   >[!NOTE]
-   >
-   >根据服务器负载，[!DNL Experience Platform]可能需要几分钟才能删除目标。
+>[!NOTE]
+>
+>根据服务器负载，[!DNL Experience Platform]可能需要几分钟才能删除目标。

@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件目标；oracle eloqua；ora
 title: （文件）Oracle Eloqua连接
 description: Oracle Eloqua是Oracle提供的用于营销自动化的软件即服务(SaaS)平台，旨在帮助B2B营销人员和组织管理营销活动和销售商机开发。
 exl-id: 6eaa79ff-8874-423b-bdff-aa04f6101a53
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '792'
+source-wordcount: '790'
 ht-degree: 3%
 
 ---
@@ -56,7 +56,7 @@ ht-degree: 3%
 
 在使用SFTP存储设置电子邮件营销目标时，Adobe建议将某些IP范围添加到SFTP允许列表。
 
-如果您需要将Adobe IP添加到SFTP允许列表，请参阅[SFTP目标的IP地址](../cloud-storage/ip-address-allow-list.md)。
+如果需要将Adobe IP添加到您的，请参阅SFTP目标的[IP地址允许列表](../cloud-storage/ip-address-allow-list.md)。
 
 ## 连接到目标 {#connect}
 
@@ -117,7 +117,7 @@ Commenting out Amazon S3 bucket part for now until support is clarified
 
 ### 目标属性 {#destination-attributes}
 
-将受众激活到此目标时，Adobe建议您从[合并架构](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择要导出到目标的唯一标识符和任何其他XDM字段。 有关详细信息，请参阅将受众激活到电子邮件营销目标时的最佳实践[&#128279;](overview.md#best-practices)。
+将受众激活到此目标时，Adobe建议您从[合并架构](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择要导出到目标的唯一标识符和任何其他XDM字段。 有关详细信息，请参阅[将受众激活到电子邮件营销目标时的最佳实践](overview.md#best-practices)。
 
 ## 导出的数据 {#exported-data}
 

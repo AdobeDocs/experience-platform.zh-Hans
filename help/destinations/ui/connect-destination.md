@@ -3,9 +3,9 @@ title: 创建新的目标连接
 type: Tutorial
 description: 了解如何在Adobe Experience Platform中连接到目标、启用警报以及为连接的目标设置营销操作。
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1233'
+source-wordcount: '1215'
 ht-degree: 4%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 4%
    * **[!UICONTROL Activate]**。已为此目标设置了连接。 此目标支持受众激活和数据集导出。
    * **[!UICONTROL Activate audiences]**。已为此目标设置了连接。 此目标仅支持受众激活。
 
-   有关这些控件之间差异的更多信息，您还可以参阅目标工作区文档的[目录](../ui/destinations-workspace.md#catalog)部分。
+   有关这些控件之间差异的更多信息，请参阅目标工作区文档的[目录](../ui/destinations-workspace.md#catalog)部分。
 
    根据您可用的控件，选择&#x200B;**[!UICONTROL Set up]**、**[!UICONTROL Activate]**&#x200B;或&#x200B;**[!UICONTROL Activate audiences]**。
 
@@ -109,7 +109,7 @@ ht-degree: 4%
 
 ### 启用目标警报 {#enable-alerts}
 
-1. （可选）选择要订阅的目标数据流警报。 在创建数据流以接收有关流运行的状态、成功或失败的警报消息时，您可以订阅警报。 可用的警报因您连接到的目标类型（基于文件的或流式传输）而异。 有关目标数据流警报的详细信息，请阅读[订阅上下文中的目标警报](alerts.md)。
+1. （可选）选择要订阅的目标数据流警报。 在创建数据流以接收有关流运行的状态、成功或失败的警报消息时，订阅警报。 可用的警报因您连接到的目标类型（基于文件的或流式传输）而异。 有关目标数据流警报的详细信息，请阅读[订阅上下文中的目标警报](alerts.md)。
 
    ![突出显示了“配置新目标”对话框的内容中目标警报订阅选项。](../assets/ui/connect-destinations/subscribe-to-alerts.png)
 
@@ -127,6 +127,6 @@ ht-degree: 4%
 
 ## 后续步骤 {#next-steps}
 
-通过阅读本文档，您已了解如何使用Experience Platform UI建立与目标的连接。 提醒一下，可用和所需的连接参数因目标而异。 您还应该查阅[目标目录](/help/destinations/catalog/overview.md)中的目标文档页面，了解有关每个目标类型的所需输入和可用选项的特定信息。
+您现在知道如何使用Experience Platform UI建立与目标之间的连接。 可用和所需的连接参数因目标而异。 有关每种目标类型的所需输入和可用选项的特定信息，请参阅[目标目录](/help/destinations/catalog/overview.md)中的目标文档页面。
 
-接下来，您可以继续[激活受众](/help/destinations/ui/activation-overview.md)或[将数据集](/help/destinations/ui/export-datasets.md)导出到您的目标。
+接下来，继续[激活受众](/help/destinations/ui/activation-overview.md)或[将数据集](/help/destinations/ui/export-datasets.md)导出到您的目标。

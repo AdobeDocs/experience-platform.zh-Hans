@@ -2,9 +2,9 @@
 title: 阿尔戈利亚
 description: 使用此连接器可将受众激活到算法以进行个性化，并在搜索和推荐中使用。 然后，您可以使用Algolia User Profile source connector将用户档案导入Real-Time CDP以构建丰富的受众。
 exl-id: 116a051a-1b47-4789-826e-c8f0fee60def
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1112'
+source-wordcount: '1108'
 ht-degree: 4%
 
 ---
@@ -133,9 +133,9 @@ ht-degree: 4%
 >[!IMPORTANT]
 >
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
->* 要导出身份，您需要查看身份图形[访问控制权限](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/home#permissions)。
+>* 要导出身份，您需要查看身份图形[访问控制权限](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions)。
 
-有关将受众激活到此目标的说明，请阅读[将配置文件和受众激活到流式受众导出目标](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations)。
+有关将受众激活到此目标的说明，请阅读[将配置文件和受众激活到流式受众导出目标](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations)。
 
 ### 映射属性和身份 {#mapping-attributes-identities}
 
@@ -163,4 +163,4 @@ ht-degree: 4%
 
 ## 后续步骤 {#next-steps}
 
-通过学习本教程，您已成功创建了一个数据流以将受众从Experience Platform导出到[!DNL Algolia]应用程序。 有关[!DNL Algolia]平台的更多信息，请参阅[Algolia文档](https://www.algolia.com/doc/)。
+您已成功创建数据流以将受众从Experience Platform导出到[!DNL Algolia]应用程序。 有关[!DNL Algolia]平台的更多信息，请参阅[Algolia文档](https://www.algolia.com/doc/)。

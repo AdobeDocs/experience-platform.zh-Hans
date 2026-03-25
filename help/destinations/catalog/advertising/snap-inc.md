@@ -2,9 +2,9 @@
 title: Snap Inc连接
 description: 了解如何连接到Snapchat广告平台并从Experience Platform导出受众。
 exl-id: 1f0f2dc0-5f3d-424b-9b22-b1a14ac30039
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1141'
+source-wordcount: '1139'
 ht-degree: 3%
 
 ---
@@ -124,7 +124,7 @@ ht-degree: 3%
 
 * **[!UICONTROL Name]**：将来用于识别此目标的名称。
 * **[!UICONTROL Description]**：可帮助您将来识别此目标的描述。
-* **[!UICONTROL Account ID]**：与要将受众导入到的广告帐户关联的广告帐户ID。 有关如何查找的详细信息，请参阅Snapchat业务帮助中心[上的](https://businesshelp.snapchat.com/s/article/biz-acct-id?language=en_US)此文档。
+* **[!UICONTROL Account ID]**：与要将受众导入到的广告帐户关联的广告帐户ID。 有关如何查找的详细信息，请参阅[Snapchat业务帮助中心](https://businesshelp.snapchat.com/s/article/biz-acct-id?language=en_US)上的此文档。
 
 >[!IMPORTANT]
 >
@@ -154,7 +154,7 @@ ht-degree: 3%
 
 ![受众](/help/destinations/assets/catalog/advertising/snapchat-ads/audiences.png)
 
-请注意，首次将Adobe受众激活到Snap Inc时，您最初会将其视为空受众。 这是因为[!DNL Adobe Experience Platform]在评估受众之前，不会将成员数据导出到Snap Inc。 有关如何在Experience Platform中评估受众的更多信息，请参阅[分段服务概述](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html?lang=zh-Hans#evaluate-segments)。
+请注意，首次将Adobe受众激活到Snap Inc时，您最初会将其视为空受众。 这是因为[!DNL Adobe Experience Platform]在评估受众之前，不会将成员数据导出到Snap Inc。 有关如何在Experience Platform中评估受众的更多信息，请参阅[分段服务概述](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html#evaluate-segments)。
 
 ## 数据使用和治理 {#data-usage-governance}
 

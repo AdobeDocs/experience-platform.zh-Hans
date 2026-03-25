@@ -4,9 +4,9 @@ title: 编辑激活数据流
 type: Tutorial
 description: 按照本文中的步骤进行操作，以在Adobe Experience Platform中编辑现有的激活数据流。
 exl-id: 0d79fbff-bfde-4109-8353-c7530e9719fb
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '922'
+source-wordcount: '915'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 0%
 
 按照以下步骤浏览现有的激活数据流并识别要编辑的数据流。
 
-1. 登录到[Experience Platform UI](https://platform.adobe.com/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL Destinations]**。 从顶部标题中选择&#x200B;**[!UICONTROL Browse]**&#x200B;以查看现有目标数据流。
+1. 转到[Experience Platform UI](https://platform.adobe.com/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL Destinations]**。 从顶部标题中选择&#x200B;**[!UICONTROL Browse]**&#x200B;以查看现有目标数据流。
 
    ![浏览目标](../assets/ui/edit-activation/browse-destinations.png)
 
@@ -68,7 +68,7 @@ ht-degree: 0%
 
 ![Experience Platform UI图像显示“激活受众数据流”运行选项。](../assets/ui/edit-activation/activate-audiences.png)
 
-选择激活工作流中的&#x200B;**[!UICONTROL Scheduling]**&#x200B;步骤以编辑数据流的激活计划和导出频率。 此步骤允许您配置将数据导出到目标的频率。
+选择激活工作流中的&#x200B;**[!UICONTROL Scheduling]**&#x200B;步骤以编辑数据流的激活计划和导出频率。 使用此步骤可配置将数据导出到目标的频率。
 
 在激活工作流的&#x200B;**[!UICONTROL Scheduling]**&#x200B;步骤中，您可以：
 
@@ -87,7 +87,7 @@ ht-degree: 0%
 
 ![Experience Platform UI图像显示“激活受众数据流”运行选项。](../assets/ui/edit-activation/activate-audiences.png)
 
-选择激活工作流中的&#x200B;**[!UICONTROL Mapping]**&#x200B;步骤以编辑激活数据流的映射属性和标识。 这使您可以调整应将哪些配置文件属性和身份导出到目标。
+选择激活工作流中的&#x200B;**[!UICONTROL Mapping]**&#x200B;步骤以编辑激活数据流的映射属性和标识。 使用此步骤可调整要将哪些配置文件属性和身份导出到目标。
 
 在激活工作流的&#x200B;**[!UICONTROL Mapping]**&#x200B;步骤中，您可以：
 
@@ -142,6 +142,6 @@ ht-degree: 0%
 
 ## 后续步骤 {#next-steps}
 
-通过完成本教程，您已成功使用&#x200B;**[!UICONTROL destinations]**&#x200B;工作区来更新现有的目标数据流。
+您已成功使用&#x200B;**[!UICONTROL destinations]**&#x200B;工作区更新目标数据流。
 
 有关目标的详细信息，请参阅[目标概述](../catalog/overview.md)。
