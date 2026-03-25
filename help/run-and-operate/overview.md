@@ -1,20 +1,18 @@
 ---
 title: 运行和操作概述
 description: 使用运行和操作工具检查、排除和优化Experience Platform实施。 了解计划的批量激活，识别配置问题，并提高系统可靠性。
-hide: true
+solution: Experience Platform
+type: Documentation
+role: Admin, User
 exl-id: 7f44cdf3-4db1-47f9-bcde-401f6dcfc551
-source-git-commit: a36f984e56f37e4769e54eab182a8c54e891e32f
+source-git-commit: 41abc542b11dcd9c295d29cdfad68720ad50129d
 workflow-type: tm+mt
-source-wordcount: '676'
-ht-degree: 1%
+source-wordcount: '636'
+ht-degree: 2%
 
 ---
 
 # 运行和操作概述
-
->[!AVAILABILITY]
->
->“运行”和“操作”功能目前仅作为有限版本提供。
 
 当批处理作业失败或投放的数据不完整时，您需要快速了解导致问题的原因。 根本原因可能是数据可用性问题、计时错误、配置问题或系统容量限制。 如果没有明确的可见性，您可能要花几个小时调查多个系统，才能找到答案。
 
@@ -30,13 +28,11 @@ ht-degree: 1%
 
 * **数据和IT团队**：维护可靠数据管道并解决技术问题的系统管理员和数据工程师。
 * **营销操作**：营销技术人员，他们负责检查到营销平台的数据交付并解决激活问题。
-* **实施人员**：验证实施效率、可靠性并解决技术问题的从业人员。
+* **实施人员**：验证实施效率和可靠性以及解决技术问题的从业人员。
 
 ## 先决条件 {#prerequisites}
 
-要访问“运行和操作”工具，您需要&#x200B;**[!UICONTROL View Job Schedules]**&#x200B;和&#x200B;**[!UICONTROL View Profile Management]** [访问控制权限](/help/access-control/home.md#permissions)。
-[!UICONTROL Job Schedules]页提供了所有已安排的批处理作业的概览。
-请与系统管理员联系以确保您拥有适当的权限。
+要访问“运行和操作”工具，您需要&#x200B;**[!UICONTROL View Job Schedules]**&#x200B;和&#x200B;**[!UICONTROL View Profile Management]** [访问控制权限](/help/access-control/home.md#permissions)。 请与系统管理员联系以确保您拥有适当的权限。
 
 ## 快速入门 {#getting-started}
 
@@ -44,10 +40,6 @@ ht-degree: 1%
 
 1. 登录到您的Experience Platform帐户，然后从左侧导航中选择&#x200B;**[!UICONTROL Run and Operate]**。
 2. 选择符合检查或故障诊断需求的工具。
-
-   >[!NOTE]
-   >
-   >目前，可用的功能为[作业计划](job-schedules.md)和[运行状况检查](health-checks.md)。
 
 ![显示“运行和操作”左侧导航的Experience Platform UI。](assets/overview/run-and-operate.png)
 
@@ -64,7 +56,7 @@ ht-degree: 1%
 > * 批量数据湖摄取
 > * 批量配置文件摄取
 > * 批次分段
-> * 批量目标激活。
+> * 批量目标激活
 
 通过[作业计划](job-schedules.md)，您可以按沙盒检查整个组织内所有计划的批处理操作，包括数据湖摄取、配置文件摄取、分段和目标激活。 查看作业执行状态、性能量度和执行历史记录，以识别模式并诊断影响可靠性的配置问题。
 
@@ -79,10 +71,6 @@ ht-degree: 1%
 您还可以了解数据处理阶段之间的依赖关系，帮助您确保整个Experience Platform工作流中的可靠数据流。
 
 ### 健康检查 {#health-checks}
-
->[!IMPORTANT]
->
->[!UICONTROL Health checks]当前可作为受限版本使用。
 
 通过[运行状况检查](health-checks.md)，您可以主动检测架构和身份配置问题，以免它们影响您的业务操作。 目前，运行状况检查每天对架构和身份命名空间运行静态扫描，这会显示缺少的最佳实践、错误配置以及导致下游故障的模式。
 

@@ -3,27 +3,26 @@ description: 了解如何使用Adobe Experience Platform中的“作业计划”
 solution: Experience Platform
 title: 检查作业计划
 type: Tutorial
-hide: true
-source-git-commit: 436ce6843e96b76dac0595ff5ab8a6067fb521ea
+exl-id: ce855b19-66ab-4d3d-924e-fb9928676aa2
+source-git-commit: 41abc542b11dcd9c295d29cdfad68720ad50129d
 workflow-type: tm+mt
-source-wordcount: '828'
-ht-degree: 0%
+source-wordcount: '824'
+ht-degree: 1%
 
 ---
 
-
 # 检查作业计划
 
->[!AVAILABILITY]
+>[!IMPORTANT]
 >
->[!UICONTROL Job schedules]当前可作为受限版本使用，并且仅适用于以下Real-Time CDP作业：
+>[!UICONTROL Job schedules]当前仅适用于以下Real-Time CDP作业：
 >
 > * 批量数据湖摄取
 > * 批量配置文件摄取
 > * 批次分段
-> * 批量目标激活。
+> * 批量目标激活
 
-[!UICONTROL Job Schedules]提供了跨数据管道的所有已计划批处理作业的统一视图 — 从引入到目标激活。 检查执行状态，识别计划冲突，并在配置问题影响您的业务运营之前对其进行诊断。
+[!UICONTROL Job Schedules]提供了跨数据管道从引入到目标激活的所有已计划批处理作业的统一视图。 检查执行状态，识别计划冲突，并在配置问题影响您的业务运营之前对其进行诊断。
 
 使用作业计划调查失败、优化作业时间并了解数据湖摄取、配置文件处理、分段和目标激活之间的依赖关系。 有关解决常见配置问题的指导，请参阅有关[标识作业计划反模式](job-schedules-anti-patterns.md)的文档。
 
@@ -107,7 +106,6 @@ ht-degree: 0%
 这些模式可能会导致作业失败、数据处理不完整和系统性能不佳。 要了解如何识别和解决这些问题，请参阅有关[识别作业计划反模式](job-schedules-anti-patterns.md)的文档。
 
 当需要调查特定数据集或作业运行时，可以深入查看详细视图，以查看执行历史记录、错误消息、性能度量和依赖关系。 有关查看此详细数据的信息，请参阅有关[查看作业详细信息](job-schedules-details.md)的文档。
-
 
 ## 后续步骤 {#next-steps}
 

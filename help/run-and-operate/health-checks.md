@@ -4,8 +4,8 @@ description: 了解如何使用Adobe Experience Platform中的运行状况检查
 solution: Experience Platform
 type: Documentation
 role: Admin, User
-hide: true
-source-git-commit: ab2420b898dc38d19187cee627b5c44e7fb44a6c
+exl-id: b35aef7c-54f4-4758-9b36-a981510ae21b
+source-git-commit: 41abc542b11dcd9c295d29cdfad68720ad50129d
 workflow-type: tm+mt
 source-wordcount: '1590'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 运行状况检查
 
-运行状况检查会扫描您在沙盒中使用的架构和标识，并提供可用于探索和解决[!UICONTROL AI Assistant]问题的摘要。 将来，可以扫描更多对象以获取更全面的报告。
+运行状况检查会扫描您在沙盒中使用的架构和身份，并提供可用于探索和解决AI Assistant问题的摘要。 将来，可以扫描更多对象以获取更全面的报告。
 
 较差的架构和身份配置会导致严重的下游问题，包括不正确的配置文件创建、区段鉴别失败以及不准确的激活。 这些问题难以检测，通常需要专业知识才能诊断。 运行状况检查将您的方法从被动故障诊断转变为主动预防性维护。
 
@@ -22,7 +22,7 @@ ht-degree: 1%
 
 * **及早检测配置问题**：识别导致个性化、激活等效率低下的缺失的最佳实践、错误配置和模式。
 * **接收引导式修正**：获取有关每个问题的含义以及应如何处理的明确指导。
-* **持续监视**：此时，运行状况检查将运行每日自动扫描，以便在问题变成严重故障之前捕获问题。 未来版本中的时间表可能会发生变化。
+* **持续监视**：目前，运行状况检查运行每日自动扫描，以便在问题变成严重故障之前捕获问题。 未来版本中的时间表可能会发生变化。
 
 ## 先决条件 {#prerequisites}
 
@@ -72,14 +72,14 @@ ht-degree: 1%
 | 详细信息 | 描述 |
 | --- | --- |
 | **问题** | 标记为标识的字段缺少最小/最大长度或模式验证。 |
-| **影响** | 如果不进行验证，垃圾桶值可以输入[!UICONTROL Identity Service]。 诸如“0”、“Guest”之类的值或大小写不匹配（例如，“xyz123”与“XYZ123”）的值会损害在分段和激活期间组装的概要文件的完整性。 |
+| **影响** | 如果不进行验证，垃圾桶值可以输入[!DNL Identity Service]。 诸如“0”、“Guest”之类的值或大小写不匹配（例如，“xyz123”与“XYZ123”）的值会损害在分段和激活期间组装的概要文件的完整性。 |
 | **修正** | 对标记为标识的自定义字段设置最小/最大长度和模式约束。 使用正则表达式可强制实施仅数字、大写或小写或特定字符组合等规则。 |
 
 选择&#x200B;**[!UICONTROL Identity Field Validation]**&#x200B;卡后，右侧将打开一个详细信息面板。 该面板显示：
 
 * **[!UICONTROL Description]**：扫描以确保标识字段具有最小/最大长度以及用于数据完整性的正则表达式模式规则。 列出受影响的架构和字段。
 * **[!UICONTROL Impact]**：如果架构中的标识字段没有设置最小/最大长度和模式验证，则可能会导致数据不一致，从而影响数据的完整性和质量。
-* **[!UICONTROL General areas of impact]**： [!UICONTROL Identity Service]中的低质量标识符；拼接不可靠。
+* **[!UICONTROL General areas of impact]**： [!DNL Identity Service]中的低质量标识符；拼接不可靠。
 * **[!UICONTROL Experience League Documentation]**：指向数据建模最佳实践的链接。
 * **[!UICONTROL Affected Schemas]**：受影响架构的列表，每个架构均带有扩展器以查看更多详细信息，并带有打开该架构的链接。
 
@@ -122,7 +122,7 @@ ht-degree: 1%
 选择&#x200B;**[!UICONTROL People & Non-People Identity Config]**&#x200B;卡后，右侧将打开一个详细信息面板。 该面板显示：
 
 * **[!UICONTROL Description]**：验证跨架构类正确使用了标识类型。 列出配置错误的架构并突出显示错误的分配。
-* **[!UICONTROL Impact]**：如果为非人员实体指定了人员身份，这将夸大配置文件计数，并使此数据不符合查找条件。 如果为人员实体指定非人员身份，则数据不可用于流或边缘分段。
+* **[!UICONTROL Impact]**：如果为非人员实体指定了人员身份，这将夸大配置文件计数，并使此数据不符合查找条件。 如果人员实体被赋予非人员身份，则数据不可用于流或边缘分段。
 * **[!UICONTROL General areas of impact]**：标识图不完整；配置文件计数夸大；查找误用。
 * **[!UICONTROL Affected Schemas]**：存在问题的架构列表。 展开架构行可查看每个错误配置的路径、身份名称和架构类型。 使用链接图标打开架构。
 
@@ -172,7 +172,7 @@ ht-degree: 1%
 
 ![已弃用的身份命名空间详细信息面板，显示说明、影响以及受影响的命名空间列表](assets/health-checks/deprecated-namespace-detail.png)
 
-有关详细信息，请参阅关于过时命名空间的[Experience Cloud知识库文章](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-kcs/kbarticles/ka-18155){target="_blank"}。
+有关详细信息，请参阅关于过时命名空间的[Experience Cloud知识库文章](https://experienceleague.adobe.com/en/docs/experience-cloud-kcs/kbarticles/ka-18155){target="_blank"}。
 
 ## 后续步骤 {#next-steps}
 
