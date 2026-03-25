@@ -3,9 +3,9 @@ title: Adobe Advertising DSP连接
 description: 了解如何使用多种身份类型与Adobe Advertising Demand-Side Platform (DSP)共享经过身份验证和未经身份验证的第一方受众。
 feature: Destinations
 exl-id: 0ff80d38-993f-4609-bf2a-01a3e6cfe10b
-source-git-commit: 8d9cf177b306350d232ec8918376211a098f396f
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1491'
+source-wordcount: '1469'
 ht-degree: 3%
 
 ---
@@ -56,11 +56,11 @@ Adobe Advertising Demand-Side Platform (DSP)目标允许用户与DSP帐户或帐
 
       * 对于每个IDFA，在IdentityMap列中包含值`IDFA`。
 
-* Experience Platform帐户的Experience Cloud组织ID。 您可以在Adobe Real-Time Customer Data Platform (Real-Time CDP)用户配置文件页面上找到您的ID。
+* Experience Platform帐户的Experience Cloud组织ID。 您可以在Adobe [!DNL Real-Time Customer Data Platform] ([!DNL Real-Time CDP])用户配置文件页面上找到您的ID。
 
-* DSP[中用于接收营销活动激活受众的](https://experienceleague.adobe.com/zh-hans/docs/advertising/dsp/audiences/sources/source-manage)Real-Time CDP源。 您的Adobe客户团队将使用您的Experience Cloud组织ID创建源。
+* DSP[[!DNL Real-Time CDP] 中用于接收营销活动激活受众的](https://experienceleague.adobe.com/en/docs/advertising/dsp/audiences/sources/source-manage)源。 您的Adobe客户团队将使用您的Experience Cloud组织ID创建源。
 
-* 在[!DNL DSP][中创建 [!DNL DSP]Real-Time CDP源时生成的](https://experienceleague.adobe.com/zh-hans/docs/advertising/dsp/audiences/sources/source-manage)帐户或广告商的源密钥。 您的[!DNL DSP]帐户团队将与您共享此密钥。 您将在Experience Platform中使用它来创建与Advertising DSP目标的目标连接，如下所述。
+* 在[!DNL DSP][[!DNL Real-Time CDP] 中创建 [!DNL DSP]源时生成的](https://experienceleague.adobe.com/en/docs/advertising/dsp/audiences/sources/source-manage)帐户或广告商的源密钥。 您的[!DNL DSP]帐户团队将与您共享此密钥。 您将在Experience Platform中使用它来创建与Advertising DSP目标的目标连接，如下所述。
 
 ### 设置ID同步以共享Cookie {#cookie-sync}
 
@@ -72,7 +72,7 @@ ID同步是共享第三方Cookie的先决条件。 使用[!DNL Web SDK]数据流
 
 **启用与[!DNL Experience Cloud ID Service]**&#x200B;同步的第三方ID
 
-如果您将[!DNL Experience Platform]标记与[!DNL Experience Cloud ID Service]一起使用，请使用[Experience Cloud ID服务扩展](/help/tags/extensions/client/id-service/overview.md)配置第三方ID同步。 当您从Real-Time CDP激活受众时，这将允许使用给定ECID的匹配Adobe Advertising Cookie。
+如果您将[!DNL Experience Platform]标记与[!DNL Experience Cloud ID Service]一起使用，请使用[Experience Cloud ID服务扩展](/help/tags/extensions/client/id-service/overview.md)配置第三方ID同步。 这样当您从[!DNL Real-Time CDP]激活受众时，特定ECID的匹配Adobe Advertising Cookie即可使用。
 
 ## 支持的身份 {#supported-identities}
 
@@ -95,7 +95,7 @@ Adobe Advertising DSP目标支持激活下表中描述的标识。 了解有关[
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -106,7 +106,7 @@ Adobe Advertising DSP目标支持激活下表中描述的标识。 了解有关[
 | [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
-| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在Adobe Experience Platform数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
+| [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
@@ -133,7 +133,7 @@ Adobe Advertising DSP目标支持激活下表中描述的标识。 了解有关[
 
 若要连接到目标，请在[!UICONTROL Connection type]部分提供以下参数，然后选择&#x200B;**[!UICONTROL Connect to destination]**：
 
-* **[!UICONTROL Account or Advertiser Key]**：在DSP用户界面[!UICONTROL Source Key]中创建[Real-Time CDP源时生成此](https://experienceleague.adobe.com/zh-hans/docs/advertising/dsp/audiences/sources/source-manage)。 您的Adobe客户团队将在创建源后与您共享此密钥。
+* **[!UICONTROL Account or Advertiser Key]**：在DSP用户界面[!UICONTROL Source Key]中创建[[!DNL Real-Time CDP] 源时生成此](https://experienceleague.adobe.com/en/docs/advertising/dsp/audiences/sources/source-manage)。 您的Adobe客户团队将在创建源后与您共享此密钥。
 
 ![显示“帐户”或“广告商密钥”字段的连接类型部分的屏幕截图。](/help/destinations/assets/catalog/advertising/adobe-advertising-cloud-connection/authenticate-destination.png)
 
@@ -158,7 +158,7 @@ Adobe Advertising DSP目标支持激活下表中描述的标识。 了解有关[
 >id="platform_destinations_required_mappings_adcloud_dsp"
 >title="预配置映射集"
 >abstract="我们已为您预配置这两个映射集： ECID和[!DNL adcloud] Cookie。 在将数据激活到Adobe Advertising DSP时，符合激活受众条件的配置文件必须至少有一个与其配置文件关联的ECID标识，才能成功导出到目标。"
->additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/catalog/advertising/adobe-advertising-cloud-connection#preconfigured-mappings" text="了解有关预配置映射的更多信息"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/advertising/adobe-advertising-cloud-connection#preconfigured-mappings" text="了解有关预配置映射的更多信息"
 
 >[!IMPORTANT]
 >
@@ -202,7 +202,7 @@ Adobe Advertising DSP目标支持激活下表中描述的标识。 了解有关[
 
 * 在DSP中，当您从&#x200B;**[!UICONTROL Audiences]** > **[!UICONTROL All Audiences]**&#x200B;或从版面设置的&#x200B;**[!UICONTROL Audience Targeting]**&#x200B;部分创建或编辑受众时，该受众可用。 受众应显示在[!UICONTROL Adobe Segments]文件夹下的[!UICONTROL Real-Time CDP]选项卡中。
 
-![DSP受众界面屏幕截图，其中显示了“Real-Time CDP区段”选项卡下列出的导入受众区段的Adobe文件夹。](/help/destinations/assets/catalog/advertising/adobe-advertising-cloud-connection/segments-in-dsp.png)
+![DSP受众界面的屏幕截图，其中显示了[!DNL Real-Time CDP]文件夹，“Adobe区段”选项卡下列出了导入的受众区段。](/help/destinations/assets/catalog/advertising/adobe-advertising-cloud-connection/segments-in-dsp.png)
 
 ## 数据使用和治理 {#data-usage-governance}
 

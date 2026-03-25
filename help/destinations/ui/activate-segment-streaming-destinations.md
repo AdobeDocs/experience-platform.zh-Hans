@@ -3,10 +3,10 @@ title: 将受众数据激活到流目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将现有受众映射到流目标来激活这些受众。
 exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1124'
-ht-degree: 3%
+source-wordcount: '1115'
+ht-degree: 2%
 
 ---
 
@@ -23,7 +23,7 @@ ht-degree: 3%
 
 ## 概述 {#overview}
 
-本文介绍了在Adobe Experience Platform流目标中激活受众所需的工作流。
+本文说明了在[!DNL Adobe Experience Platform]流目标中激活受众所需的工作流。
 
 ## 先决条件 {#prerequisites}
 
@@ -102,9 +102,9 @@ ht-degree: 3%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_applytransformation"
 >title="应用转换"
->abstract="使用未进行哈希处理的源字段时选中此选项，让 Adobe Experience Platform 在激活时自动对它们进行哈希处理。"
+>abstract="在使用未经过哈希处理的源字段时选中此选项，以便在激活时让[!DNL Adobe Experience Platform]自动对其进行哈希处理。"
 
-将未经过哈希处理的源属性映射到目标期望进行哈希处理的目标属性时（例如： `email_lc_sha256`或`phone_sha256`），请选中&#x200B;**应用转换**&#x200B;选项，以使Adobe Experience Platform在激活时自动对源属性进行哈希处理。
+将未经过哈希处理的源属性映射到目标期望进行哈希处理的目标属性时（例如： `email_lc_sha256`或`phone_sha256`），请选中&#x200B;**应用转换**&#x200B;选项以使[!DNL Adobe Experience Platform]在激活时自动对源属性进行哈希处理。
 
 ![应用在“标识”映射步骤中突出显示的转换控件。](../assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
 
@@ -172,5 +172,5 @@ For [!DNL Facebook Custom Audience], a successful activation means that a [!DNL 
 
 >[!TIP]
 >
->The integration between Adobe Experience Platform and [!DNL Facebook] supports historical audience backfills. All historical audience qualifications are sent to [!DNL Facebook] when you activate the audiences to the destination.
+>The integration between [!DNL Adobe Experience Platform] and [!DNL Facebook] supports historical audience backfills. All historical audience qualifications are sent to [!DNL Facebook] when you activate the audiences to the destination.
 -->
