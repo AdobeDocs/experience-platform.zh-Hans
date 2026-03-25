@@ -4,10 +4,10 @@ title: 在UI中导出XDM架构
 description: 了解如何在Adobe Experience Platform用户界面中将现有架构导出到其他沙盒或组织。
 type: Tutorial
 exl-id: c467666d-55bc-4134-b8f4-7758d49c4786
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 67ae12b0a410d50c25f4e044b8430b70249670eb
 workflow-type: tm+mt
-source-wordcount: '636'
-ht-degree: 11%
+source-wordcount: '690'
+ht-degree: 10%
 
 ---
 
@@ -29,6 +29,10 @@ ht-degree: 11%
 ## 先决条件
 
 虽然Experience Platform UI允许您导出XDM资源，但必须使用架构注册表API将这些资源导入其他沙盒或组织以完成工作流。 在遵循本指南之前，请参阅[架构注册表API快速入门](../api/getting-started.md)指南，以了解有关所需身份验证标头的重要信息。
+
+>[!NOTE]
+>
+>如果找不到诸如&#x200B;**Delete**&#x200B;或&#x200B;**复制JSON结构**&#x200B;之类的操作，请确保您使用的是自定义（租户定义的）资源，并从表行菜单或详细信息视图(**[!UICONTROL More]**)访问它。 操作的可用性还取决于权限和使用限制。 请参阅[管理架构、类、字段组和数据类型：操作和删除](./explore.md#xdm-resource-actions)。
 
 ## 生成导出有效负载 {#generate-export-payload}
 

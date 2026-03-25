@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 在UI中创建和编辑架构字段组
 description: 了解如何在Experience Platform用户界面中创建和编辑架构字段组。
 exl-id: 928d70a6-0468-4fb7-a53a-6686ac77f2a3
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 67ae12b0a410d50c25f4e044b8430b70249670eb
 workflow-type: tm+mt
-source-wordcount: '966'
-ht-degree: 9%
+source-wordcount: '1004'
+ht-degree: 8%
 
 ---
 
@@ -23,6 +23,10 @@ ht-degree: 9%
 字段组根据字段组表示的数据的行为（记录或时间序列）定义其兼容的类。 这意味着并非所有字段组都可以与所有类一起使用。
 
 Adobe Experience Platform提供了许多标准字段组，涵盖广泛的营销用例。 但是，您还可以创建和编辑自己的自定义字段组，以定义与XDM架构中的业务相关的其他概念。 本指南概述了如何在Experience Platform UI中为您的组织创建、编辑和管理自定义字段组。
+
+>[!NOTE]
+>
+>XDM操作在库存表和资源详细信息视图(**[!UICONTROL More]**)中可用。 完整操作仅适用于自定义（租户定义的）资源；标准资源的选项有限。 请参阅[管理架构、类、字段组和数据类型：操作和删除](../explore.md#xdm-resource-actions)。
 
 ## 先决条件 {#prerequisites}
 

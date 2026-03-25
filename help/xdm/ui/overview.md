@@ -4,18 +4,18 @@ solution: Experience Platform
 title: 架构UI概述
 description: 此概述涵盖Experience Platform中架构工作区的主要功能。
 exl-id: b6e089ce-cf9e-4150-92ab-368382a75049
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 67ae12b0a410d50c25f4e044b8430b70249670eb
 workflow-type: tm+mt
-source-wordcount: '310'
+source-wordcount: '343'
 ht-degree: 9%
 
 ---
 
-# [!UICONTROL 架构]用户界面概述
+# [!UICONTROL Schemas] UI 概述
 
-Adobe Experience Platform用户界面中的[!UICONTROL 架构]工作区允许您管理体验数据模型(XDM)资源，包括架构、类、架构字段组和数据类型。 您可以查看和浏览由 Adobe 提供的核心资源，并为贵组织创建自定义资源和架构。
+Adobe Experience Platform用户界面中的[!UICONTROL Schemas]工作区允许您管理体验数据模型(XDM)资源，包括架构、类、架构字段组和数据类型。 您可以查看和浏览由 Adobe 提供的核心资源，并为贵组织创建自定义资源和架构。
 
-要在Experience Platform UI中访问工作区，请在左边栏中选择&#x200B;**[!UICONTROL 架构]**。
+要在Experience Platform UI中访问工作区，请在左边栏中选择&#x200B;**[!UICONTROL Schemas]**。
 
 ![在Experience Platform UI左侧导航中突出显示的具有架构的架构工作区。](../images/ui/overview/schemas-tab.png)
 
@@ -27,7 +27,11 @@ Adobe Experience Platform用户界面中的[!UICONTROL 架构]工作区允许您
 
 ## 创建和管理XDM资源
 
-[!UICONTROL 架构]工作区提供了强大的工具，用于创建和自定义组织的XDM资源。 请参阅以下文档，了解如何在UI中创建和编辑每种资源类型：
+>[!NOTE]
+>
+>XDM操作在库存表和资源详细信息视图(**[!UICONTROL More]**)中可用。 完整操作仅适用于自定义（租户定义的）资源；标准资源的选项有限。 请参阅[管理架构、类、字段组和数据类型：操作和删除](./explore.md#xdm-resource-actions)。
+
+[!UICONTROL Schemas]工作区提供了强大的工具，用于创建和自定义组织的XDM资源。 请参阅以下文档，了解如何在UI中创建和编辑每种资源类型：
 
 * [架构](./resources/schemas.md)
 * [分类](./resources/classes.md)
@@ -40,4 +44,4 @@ Adobe Experience Platform用户界面中的[!UICONTROL 架构]工作区允许您
 
 ## 后续步骤
 
-本文档介绍了Experience Platform UI中的[!UICONTROL 架构]工作区。 请参阅本概述中链接的文档，了解有关如何管理架构和其他XDM资源的更多信息。
+本文档介绍了Experience Platform UI中的[!UICONTROL Schemas]工作区。 请参阅本概述中链接的文档，了解有关如何管理架构和其他XDM资源的更多信息。

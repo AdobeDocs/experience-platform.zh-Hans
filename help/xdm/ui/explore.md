@@ -5,9 +5,9 @@ title: 浏览UI中的架构资源
 description: 了解如何在Experience Platform用户界面中探索现有架构、类、架构字段组和数据类型。
 type: Tutorial
 exl-id: b527b2a0-e688-4cfe-a176-282182f252f2
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: ca90fd3f8615e21fb4c44104c2de7679db1e1025
 workflow-type: tm+mt
-source-wordcount: '1360'
+source-wordcount: '1965'
 ht-degree: 0%
 
 ---
@@ -20,24 +20,24 @@ ht-degree: 0%
 
 ## 查找架构资源 {#lookup}
 
-在Experience Platform UI的左侧导航中选择&#x200B;**[!UICONTROL 架构]**。 [!UICONTROL 架构]工作区提供了&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡以浏览组织中的所有架构，还提供了额外的专用选项卡，分别用于浏览&#x200B;**[!UICONTROL 类]**、**[!UICONTROL 字段组]**、**[!UICONTROL 数据类型]**&#x200B;和&#x200B;**[!UICONTROL 关系]**。
+在Experience Platform UI的左侧导航中选择&#x200B;**[!UICONTROL Schemas]**。 [!UICONTROL Schemas]工作区提供了一个&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡来浏览您组织中的所有架构，以及额外的专用选项卡来分别浏览&#x200B;**[!UICONTROL Classes]**、**[!UICONTROL Field groups]**、**[!UICONTROL Data types]**&#x200B;和&#x200B;**[!UICONTROL Relationships]**。
 
 ![突出显示带有多个选项卡的架构工作区。](../images/ui/explore/tabs.png)
 
-筛选器图标（![筛选器图标图像](/help/images/icons/filter.png)）在左边栏中显示控件，以缩小列出的结果的范围。 资源筛选器分别可用于&#x200B;**[!UICONTROL 浏览]**&#x200B;和&#x200B;**[!UICONTROL 关系]**&#x200B;选项卡上的架构和关系。
+筛选器图标（![筛选器图标图像](/help/images/icons/filter.png)）在左边栏中显示控件，以缩小列出的结果的范围。 资源筛选器分别可用于&#x200B;**[!UICONTROL Browse]**&#x200B;和&#x200B;**[!UICONTROL Relationships]**&#x200B;选项卡上的架构和关系。
 
-在[!UICONTROL 架构]工作区的[!UICONTROL 浏览]选项卡上，您可以筛选架构清单。 使用&#x200B;**[!UICONTROL 包含在配置文件]**&#x200B;切换可仅显示已启用以便在[实时客户配置文件](../../profile/home.md)中使用的架构。 使用&#x200B;**[!UICONTROL 显示临时架构]**&#x200B;切换开关筛选使用仅供单个数据集使用的命名空间字段创建的架构列表。
+在[!UICONTROL Browse]工作区的[!UICONTROL Schemas]选项卡上，您可以筛选架构清单。 使用&#x200B;**[!UICONTROL Included in Profile]**&#x200B;切换开关可仅显示已启用在[实时客户个人资料](../../profile/home.md)中使用的架构。 使用&#x200B;**[!UICONTROL Show adhoc schemas]**&#x200B;切换筛选创建的架构列表，这些架构的字段已命名为仅供单个数据集使用。
 
-![突出显示筛选器面板的[!UICONTROL 架构]工作区[!UICONTROL 浏览]选项卡。](../images/ui/explore/filters.png)
+![突出显示过滤器面板的[!UICONTROL Schemas]工作区[!UICONTROL Browse]选项卡。](../images/ui/explore/filters.png)
 
-在[!UICONTROL 架构]工作区的[!UICONTROL 关系]选项卡上，您可以根据四个条件筛选关系列表。 这些筛选器包括[!UICONTROL Source架构]、[!UICONTROL 目标架构]、[!UICONTROL Source类]和[!UICONTROL 目标类]。 下表提供了这些过滤器的说明。
+在[!UICONTROL Relationship]工作区的[!UICONTROL Schemas]选项卡上，您可以根据四个条件筛选关系列表。 这些筛选器包括[!UICONTROL Source schema]、[!UICONTROL Destination schema]、[!UICONTROL Source class]和[!UICONTROL Destination class]。 下表提供了这些过滤器的说明。
 
-| 筛选条件 | 描述 |
+| 过滤器 | 描述 |
 |-----------------------------------|------------|
-| [!UICONTROL Source架构] | 要查看所选架构是起点或“源”的所有关系，请从[!UICONTROL Source架构]下拉菜单中选择架构。 |
-| [!UICONTROL 目标架构] | 要查看所选架构为目标或“目标”的所有关系，请从[!UICONTROL 目标架构]下拉菜单中选择架构。 |
-| [!UICONTROL Source类] | 要根据初始架构的类筛选关系，请从[!UICONTROL Source class]下拉菜单中选择类。 |
-| [!UICONTROL 目标类] | 要显示以特定类的架构结尾的关系，请从[!UICONTROL 目标类]下拉菜单中选择类。 |
+| [!UICONTROL Source schema] | 要查看所选架构是起点或“源”的所有关系，请从[!UICONTROL Source schema]下拉菜单中选择架构。 |
+| [!UICONTROL Destination schema] | 要查看所选架构为目标或“目标”的所有关系，请从[!UICONTROL Destination schema]下拉菜单中选择架构。 |
+| [!UICONTROL Source class] | 要根据初始架构的类筛选关系，请从[!UICONTROL Source class]下拉菜单中选择类。 |
+| [!UICONTROL Destination class] | 要显示以特定类的架构结尾的关系，请从[!UICONTROL Destination class]下拉菜单中选择一个类。 |
 
 {style="table-layout:auto"}
 
@@ -51,6 +51,81 @@ ht-degree: 0%
 
 找到要浏览的资源后，从列表中选择其名称，以在画布中查看其结构。
 
+## 管理架构、类、字段组和数据类型：操作和删除 {#xdm-resource-actions}
+
+当您需要管理或删除XDM资源，或者操作（例如删除）不可用并且需要了解原因时，可使用此部分。
+
+### 在何处查找操作（内联与详细信息页面） {#where-to-find-actions}
+
+要执行删除、导出或复制资源等操作，请使用以下入口点之一：
+
+在&#x200B;**[!UICONTROL Browse]**、**[!UICONTROL Classes]**、**[!UICONTROL Field groups]**&#x200B;和&#x200B;**[!UICONTROL Data types]**&#x200B;选项卡上，管理操作在两个位置可用：
+
+- **在表**&#x200B;中内联：每个资源行都包含一个操作菜单（例如，**[!UICONTROL …]**），该菜单提供对可用操作的直接访问。
+
+![架构清单显示每个资源的省略号菜单中可用的内联操作。](../images/ui/explore/xdm-schema-inventory-inline-actions-menu.png)
+
+- **资源详细信息视图**：要访问详细信息视图中的完整操作，必须选择&#x200B;**自定义（租户定义的）**&#x200B;资源。 标准（Adobe提供）资源的操作有限，不会显示“删除”、“复制JSON结构”或“添加到包”等选项。 从库存中选择自定义资源以打开其详细信息视图，然后使用页眉中的&#x200B;**[!UICONTROL More]**&#x200B;菜单访问相同的可用操作。
+
+![资源详细信息视图标头，其中显示“更多”菜单以及可用的操作，例如删除、复制JSON结构和下载样本文件。](../images/ui/explore/more-actions.png)
+
+对于支持的资源类型（架构、类、字段组和数据类型），这些操作在两个入口点之间是一致的。
+
+### 可用操作 {#available-actions}
+
+根据资源类型和您的权限，以下操作可能可用：
+
+- **[!UICONTROL Delete]** — 从您的组织中永久移除自定义资源（在限制允许的情况下）。 如果阻止删除，请参阅[约束](#delete-constraints)。
+- **[!UICONTROL Download sample file]** — 根据资源结构生成示例数据文件。 分步： [生成示例XDM数据](./sample.md)。
+- **[!UICONTROL Copy JSON structure]** — 复制JSON格式的资源定义以供重用、导出或检查。 分步： [导出XDM架构](./export.md)。
+- **[!UICONTROL Add to package]** — 将资源包含在沙盒包中，以便跨沙盒导出或导入。 分步： [将对象导出到包](../../sandboxes/ui/sandbox-tooling.md#export-objects)。
+
+以下内容适用于不同的资源类型：
+
+- 对于&#x200B;**自定义（租户定义的）**&#x200B;架构、类、字段组和数据类型，上述所有操作可能都可用。
+- 对于&#x200B;**标准（Adobe定义）**&#x200B;类、字段组和数据类型：
+   - 只有&#x200B;**[!UICONTROL Download sample file]**&#x200B;可用。
+   - **删除**、**复制JSON结构**&#x200B;和&#x200B;**添加到包**&#x200B;不可用。
+
+### 删除行为 {#delete-behavior}
+
+当您想要删除不再需要的自定义资源时，请使用&#x200B;**[!UICONTROL Delete]**&#x200B;操作。
+
+>[!IMPORTANT]
+>
+> 删除资源会将其从组织中永久删除，并且无法撤消。 由于使用情况、权限或系统限制，无法删除某些资源。
+
+要删除资源，请执行以下操作：
+
+1. 在表中找到资源或打开其详细信息视图。
+2. 选择操作菜单（**[!UICONTROL …]**&#x200B;或&#x200B;**[!UICONTROL More]**）。
+3. 选择 **[!UICONTROL Delete]**。
+4. 再次选择&#x200B;**[!UICONTROL Delete]**&#x200B;以确认对话框中的操作。
+
+确认后，该资源将从您的组织中永久移除。
+
+如果资源无法删除，则该选项显示为禁用，并带有工具提示来说明无法执行该操作的原因。
+
+![架构清单已禁用删除内联操作工具提示，说明该限制。](../images/ui/explore/xdm-schema-inventory-disabled-delete-tooltip.png)
+
+### 约束（数据集、配置文件、RBAC、租户与全局） {#delete-constraints}
+
+如果诸如&#x200B;**[!UICONTROL Delete]**&#x200B;之类的操作不可用或已禁用，则通常是由于以下情况之一造成的：
+
+- **权限(RBAC)**：您必须具有执行管理操作所需的权限（如&#x200B;**[!UICONTROL Manage Schemas]**）。 如果缺少权限，则使用工具提示显示操作被禁用。 要了解如何配置权限，请参阅[访问控制UI概述](../../access-control/ui/overview.md)。
+
+- **数据集关联**：无法删除一个或多个数据集使用的资源（例如与数据集关联的架构）。 要识别和移除数据集依赖项，请参阅[删除数据集](../../catalog/datasets/user-guide.md#delete)。
+
+- **配置文件启用**：无法删除为实时客户配置文件启用的架构。 有关配置文件启用如何影响架构的指导，请参阅[规划实时客户配置文件启用](../schema/profile-enablement-planning.md)。
+
+- **租户与全局资源**：可以删除租户定义的（自定义）资源（受约束约束），但无法删除标准（Adobe提供的）类、字段组和数据类型。
+
+这些约束直接反映在UI中。 当某个操作不可用时，它会显示为已禁用，并包含说明特定限制的工具提示。
+
+如果无法删除资源，请查看上述条件以确定是否需要更新权限、删除依赖项或调整数据模型。
+
+有关画布中的其他架构编辑工作流，请参阅[在UI中创建和编辑架构](./resources/schemas.md)。
+
 ## 在画布中浏览XDM资源 {#explore}
 
 选择资源后，其结构将在画布中打开。
@@ -63,7 +138,7 @@ ht-degree: 0%
 
 ### 标准类和字段组指示器 {#standard-class-and-field-group-indicator}
 
-在架构编辑器中，标准(Adobe生成的)类和字段组以挂锁图标（![A挂锁图标）表示。](/help/images/icons/lock-closed.png)的问题。挂锁显示在左边栏中的类或字段组名称旁边，以及架构图中作为系统生成资源一部分的任意字段旁边。
+在架构编辑器中，标准（Adobe生成的）类和字段组以挂锁图标（![A挂锁图标）表示。](/help/images/icons/lock-closed.png)。挂锁显示在左边栏中的类或字段组名称旁边，以及架构图中作为系统生成资源一部分的任意字段旁边。
 
 ![带有挂锁图标的架构编辑器突出显示](../images/ui/explore/schema-editor-padlock-icon.png)
 
@@ -81,15 +156,15 @@ ht-degree: 0%
 
 ![画布上显示的“邮政地址”数据类型及其关联的数据类型突出显示。](../images/ui/explore/data-types.png)
 
-任何附加了方括号(`[]`)的数据类型均表示该特定数据类型的数组。 例如，**[!UICONTROL String]\[]**&#x200B;的数据类型指示该字段需要字符串值的数组。 **[!UICONTROL 付款项]\[]**&#x200B;的数据类型表示符合[!UICONTROL 付款项]数据类型的对象数组。
+任何附加了方括号(`[]`)的数据类型均表示该特定数据类型的数组。 例如，**[!UICONTROL String]\[]**&#x200B;的数据类型表示该字段需要字符串值的数组。 **[!UICONTROL Payment Item]\[]**&#x200B;的数据类型表示符合[!UICONTROL Payment Item]数据类型的对象数组。
 
 如果数组字段基于对象类型，则可以在画布中选择其图标，以显示每个数组项的预期属性。
 
 ![画布中的对象，其数组字段突出显示，并显示每个数组项的预期属性。](../images/ui/explore/array-type.png)
 
-### [!UICONTROL 字段属性] {#field-properties}
+### [!UICONTROL Field properties] {#field-properties}
 
-当您选择画布中任何字段的名称时，右边栏会更新，以在&#x200B;**[!UICONTROL 字段属性]**&#x200B;下显示有关该字段的详细信息。 这可以包括字段的预期用例、默认值、模式、格式、字段是否为必填等的描述。
+当您选择画布中任何字段的名称时，右边栏会更新以在&#x200B;**[!UICONTROL Field properties]**&#x200B;下显示有关该字段的详细信息。 这可以包括字段的预期用例、默认值、模式、格式、字段是否为必填等的描述。
 
 ![从Commerce数据类型中选择的字段具有突出显示的字段属性。](../images/ui/explore/field-properties.png)
 
@@ -111,11 +186,11 @@ ht-degree: 0%
 
 ### 关系字段 {#relationship}
 
-如果要检查包含关系字段的架构，则该字段将列在左边栏中的&#x200B;**[!UICONTROL 关系]**&#x200B;下。 选择左边栏中的关系字段名称以显示画布中的字段，无论其嵌套深度如何。 关系字段在画布中也以唯一方式高亮显示，显示字段链接到的引用架构的名称。 对于具有B2B功能的组织，可以编写自定义关系名称，并在这些情况下显示在画布上。
+如果要检查包含关系字段的架构，则该字段将列在左边栏中的&#x200B;**[!UICONTROL Relationships]**&#x200B;下。 选择左边栏中的关系字段名称以显示画布中的字段，无论其嵌套深度如何。 关系字段在画布中也以唯一方式高亮显示，显示字段链接到的引用架构的名称。 对于具有B2B功能的组织，可以编写自定义关系名称，并在这些情况下显示在画布上。
 
 ![架构编辑器突出显示了关系字段和编辑关系。](../images/ui/explore/relationship-field.png)
 
-要查看引用架构的主要标识的标识命名空间，请选择关系字段，然后在[!UICONTROL 字段属性]侧边栏中&#x200B;**[!UICONTROL 编辑关系]**。 关系的参数显示在显示的[!UICONTROL 编辑关系]对话框中。
+要查看引用架构的主要标识的标识命名空间，请选择关系字段，然后在&#x200B;**[!UICONTROL Edit relationship]**&#x200B;侧边栏中选择[!UICONTROL Field properties]。 关系的参数显示在显示的[!UICONTROL Edit relationship]对话框中。
 
 ![显示具有关系参数的“编辑关系”对话框。](../images/ui/explore/edit-relationship-dialog.png)
 
@@ -123,4 +198,4 @@ ht-degree: 0%
 
 ## 后续步骤
 
-本文档介绍了如何在Experience Platform UI中探索现有XDM资源。 有关[!UICONTROL 架构]工作区和[!DNL Schema Editor]的不同功能的详细信息，请参阅[[!UICONTROL 架构]工作区概述](./overview.md)。
+本文档介绍了如何在Experience Platform UI中探索现有XDM资源。 有关[!UICONTROL Schemas]工作区和[!DNL Schema Editor]的不同功能的详细信息，请参阅[[!UICONTROL Schemas]工作区概述](./overview.md)。

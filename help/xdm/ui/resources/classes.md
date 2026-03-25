@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建和编辑类
 description: 了解如何在Experience Platform用户界面中创建和编辑类。
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
-source-git-commit: a05ee385694b028b513e2fa632079e665ba815bb
+source-git-commit: 67ae12b0a410d50c25f4e044b8430b70249670eb
 workflow-type: tm+mt
-source-wordcount: '1562'
+source-wordcount: '1600'
 ht-degree: 5%
 
 ---
@@ -23,6 +23,10 @@ ht-degree: 5%
 Adobe提供了多个标准（“核心”）体验数据模型(XDM)类，包括[XDM Individual Profile](../../classes/individual-profile.md)和[XDM ExperienceEvent](../../classes/experienceevent.md)。 除了这些核心类之外，您还可以创建自己的自定义类，以描述组织更具体的用例。
 
 本文档概述如何在Experience Platform UI中创建、编辑和管理自定义类。
+
+>[!NOTE]
+>
+>XDM操作在库存表和资源详细信息视图(**[!UICONTROL More]**)中可用。 完整操作仅适用于自定义（租户定义的）资源；标准资源的选项有限。 请参阅[管理架构、类、字段组和数据类型：操作和删除](../explore.md#xdm-resource-actions)。
 
 ## 先决条件 {#prerequisites}
 
@@ -133,7 +137,7 @@ Adobe提供了多个标准（“核心”）体验数据模型(XDM)类，包括[
 ![架构编辑器已突出显示现有类和[!UICONTROL Create a schema]。](../../images/ui/resources/classes/edit-class-options.png)
 
 如果选择创建新架构，请参阅[创建架构](#create-schema)一节以了解详细信息。 创建完架构（或选择现有架构后）后，将显示架构编辑器。 要更新现有类字段，请从架构结构中选择该字段。 字段的信息将显示在右边栏中。 确保[!UICONTROL Assign to]
-已选择选项&#x200B;**[!UICONTROL Class]**，或者您的更新不会影响类。
+已选择选项**[!UICONTROL Class]**，或者您的更新不会影响类。
 
 ![架构编辑器，其中选定字段并突出显示，右边栏显示，突出显示[!UICONTROL Assign to]。](../../images/ui/resources/classes/edit-existing-field.png)
 

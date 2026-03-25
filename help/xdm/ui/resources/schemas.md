@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 在UI中创建和编辑架构
 description: 了解如何在Experience Platform用户界面中创建和编辑架构的基础知识。
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 491588dab1388755176b5e00f9d8ae3e49b7f856
+source-git-commit: 67ae12b0a410d50c25f4e044b8430b70249670eb
 workflow-type: tm+mt
-source-wordcount: '4635'
-ht-degree: 2%
+source-wordcount: '4680'
+ht-degree: 1%
 
 ---
 
@@ -79,7 +79,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->保存后，[!UICONTROL Type]侧边栏中的[!UICONTROL &#x200B; Schema properties]字段指示这是[!UICONTROL Relational]架构。 架构库存视图的详细信息侧边栏中也指出了这一点。
+>保存后，[!UICONTROL Type]侧边栏中的[!UICONTROL  Schema properties]字段指示这是[!UICONTROL Relational]架构。 架构库存视图的详细信息侧边栏中也指出了这一点。
 >![架构编辑器画布显示空的关系架构结构，突出显示了关系类型。](../../images/ui/resources/schemas/relational-empty-canvas.png)
 
 ### 上载DDL文件 {#upload-ddl-file}
@@ -151,7 +151,7 @@ ht-degree: 2%
 
 ![具有从可用类表中选择的类且突出显示[!UICONTROL Create schema]的[!UICONTROL Next]工作流。](../../images/ui/resources/schemas/select-class.png)
 
-选择类后，将显示[!UICONTROL Name and review]部分。 在此部分中，您会提供用于标识架构的名称和描述。&#x200B;AEM架构的基本结构（由类提供）显示在画布中，供您查看和验证选定的类和架构结构。
+选择类后，将显示[!UICONTROL Name and review]部分。 在此部分中，提供用于标识架构的名称和描述&#x200B;。架构的基本结构（由类提供）显示在画布中，供您查看和验证选定的类和架构结构。
 
 在文本字段中输入人性化的[!UICONTROL Schema display name]。 接下来，输入适当的描述以帮助识别您的架构。 当您查看了架构结构并对设置感到满意时，请选择&#x200B;**[!UICONTROL Finish]**&#x200B;以创建您的架构。
 
@@ -178,6 +178,12 @@ ht-degree: 2%
 选择架构后，[!DNL Schema Editor]即会显示，画布中显示架构的结构。 您现在可以[将字段组](#add-field-groups)添加到架构中（或[添加这些组中的单个字段](#add-individual-fields)）、[编辑字段显示名称](#display-names)或[编辑现有的自定义字段组](./field-groups.md#edit)（如果架构使用了任何组）。
 
 ## 更多操作 {#more}
+
+>[!NOTE]
+>
+>XDM操作在库存表和资源详细信息视图(**[!UICONTROL More]**)中可用。 完整操作仅适用于自定义（租户定义的）资源；标准资源的选项有限。 请参阅[管理架构、类、字段组和数据类型：操作和删除](../explore.md#xdm-resource-actions)。
+
+下面介绍了架构编辑器标头操作。
 
 在架构编辑器中，您还可以执行快速操作以复制架构的JSON结构，或者删除架构（如果尚未为实时客户配置文件启用）或者具有关联的数据集。 选择视图顶部的[!UICONTROL More]以显示包含快速操作的下拉列表。
 
@@ -241,7 +247,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->在架构编辑器中，标准(Adobe生成的)类和字段组以挂锁图标![挂锁图标表示。](/help/images/icons/lock-closed.png)。挂锁显示在左边栏中的类或字段组名称旁边，以及架构图中作为系统生成资源一部分的任意字段旁边。
+>在架构编辑器中，标准（Adobe生成的）类和字段组以挂锁图标![挂锁图标表示。](/help/images/icons/lock-closed.png)。挂锁显示在左边栏中的类或字段组名称旁边，以及架构图中作为系统生成资源一部分的任意字段旁边。
 >
 >![带有挂锁图标的架构编辑器突出显示](../../images/ui/explore/schema-editor-padlock-icon.png)
 

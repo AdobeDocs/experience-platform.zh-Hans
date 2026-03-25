@@ -5,9 +5,9 @@ title: 使用架构编辑器创建架构
 type: Tutorial
 description: 本教程介绍了在 Experience Platform 中使用架构编辑器创建架构的步骤。
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 67ae12b0a410d50c25f4e044b8430b70249670eb
 workflow-type: tm+mt
-source-wordcount: '4670'
+source-wordcount: '4740'
 ht-degree: 1%
 
 ---
@@ -126,7 +126,7 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Experience Data Mod
 
 >[!NOTE]
 >
->在架构编辑器中，标准(Adobe生成的)类和字段组以挂锁图标（![A挂锁图标）表示。](/help/images/icons/lock-closed.png)的问题。挂锁显示在左边栏中的类或字段组名称旁边，以及架构图中作为系统生成资源一部分的任意字段旁边。
+>在架构编辑器中，标准（Adobe生成的）类和字段组以挂锁图标（![A挂锁图标）表示。](/help/images/icons/lock-closed.png)。挂锁显示在左边栏中的类或字段组名称旁边，以及架构图中作为系统生成资源一部分的任意字段旁边。
 >
 >![带有挂锁图标的架构编辑器突出显示](../images/ui/explore/padlock-icon-highlight.png)
 
@@ -360,6 +360,10 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Experience Data Mod
 
 ## 更多操作 {#more}
 
+>[!NOTE]
+>
+>使用XDM资源时，可从库存表（行菜单）和资源详细信息视图(**[!UICONTROL More]**)中执行操作。 要访问完整的操作集，包括&#x200B;**删除**、**复制JSON结构**&#x200B;和&#x200B;**添加到包**，您必须选择自定义（租户定义的）资源。 标准（Adobe提供的）资源的操作有限。 有关操作、约束和权限的完整概述，请参阅[管理架构、类、字段组和数据类型：操作和删除](../ui/explore.md#xdm-resource-actions)。
+
 在架构编辑器中，您还可以执行快速操作以复制架构的JSON结构或删除架构。 选择视图顶部的[!UICONTROL More]以显示包含快速操作的下拉列表。
 
 ![突出显示了“更多”按钮并显示下拉选项的架构编辑器。](../images/tutorials/create-schema/more-actions.png)
@@ -409,11 +413,11 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Experience Data Mod
 
 以下视频说明如何在[!DNL Experience Platform] UI中创建简单架构。
 
->[!VIDEO](https://video.tv.adobe.com/v/3430217?captions=chi_hans&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/27012?quality=12&learn=on)
 
 以下视频旨在加深您对使用现场小组和课堂的理解。
 
->[!VIDEO](https://video.tv.adobe.com/v/3413600?captions=chi_hans&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/27013?quality=12&learn=on)
 
 ## 附录
 
