@@ -1,13 +1,13 @@
 ---
 title: Snowflake流连接
 description: 创建实时Snowflake数据共享，以直接将流式受众更新作为共享表发送到您的帐户。
-last-substantial-update: 2025-10-23T00:00:00Z
+last-substantial-update: 2026-03-24T00:00:00Z
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 4a00e46a-dedb-4dd3-b496-b0f4185ea9b0
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: f74680fa35490f0e8b2d371739ecf8ef3eed74c9
 workflow-type: tm+mt
-source-wordcount: '1547'
-ht-degree: 4%
+source-wordcount: '1637'
+ht-degree: 2%
 
 ---
 
@@ -29,7 +29,7 @@ ht-degree: 4%
 
 首次将Snowflake实例中的数据共享到您的实例时，系统会提示您接受Adobe的私有列表。
 
-![显示Snowflake个人分发名单接受屏幕截图](../../assets/catalog/cloud-storage/snowflake/snowflake-accept-listing.png)
+![显示Snowflake个人分发名单接受屏幕截图](../../assets/catalog/warehouses/snowflake/snowflake-accept-listing.png)
 
 ### 数据保留和生存时间(TTL) {#ttl}
 
@@ -45,7 +45,7 @@ ht-degree: 4%
 
 ## 流数据共享与批量数据共享 {#batch-vs-streaming}
 
-Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](snowflake.md)和[Snowflake Batch](snowflake-batch.md)。
+[!DNL Adobe Experience Platform]提供两种类型的[!DNL Snowflake]目标：[Snowflake Streaming](snowflake.md)和[Snowflake Batch](snowflake-batch.md)。
 
 下表将概述每种数据共享方法最适用的场景，帮助您确定要使用的目标。
 
@@ -69,14 +69,15 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
 * **效率和细微差别**：通过允许快速响应用户行为变化，提高营销工作的效率和细微差别
 * **实时客户历程优化**：在区段成员资格或配置文件属性发生更改时立即更新客户体验
 
-流式数据共享根据区段更改、身份映射更改或属性更改提供持续更新，使其适用于延迟严重且需要立即更新的情况。
+流式数据共享根据区段更改、身份映射更改或属性更改提供持续更新，使其适用于低延迟情况很重要的情况。
 
 ## 先决条件 {#prerequisites}
 
 在配置Snowflake连接之前，请确保您满足以下先决条件：
 
 * 您有权访问[!DNL Snowflake]帐户。
-* 您的Snowflake帐户已订阅私人列表。 您或您公司中拥有Snowflake帐户管理员权限的人员可以配置此配置。
+* 您的[!DNL Snowflake]帐户已订阅私人列表。 您或您公司中拥有[!DNL Snowflake]帐户管理员权限的人员可以配置此项。
+* 您知道您的[!DNL Snowflake]帐户区域，在连接到目标时将从下拉列表中进行选择。
 
 有关必要权限的更多信息，请阅读[[!DNL Snowflake] 文档](https://docs.snowflake.com/en/collaboration/consumer-listings-access#access-a-private-listing)。
 
@@ -86,12 +87,10 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
 
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
+| [!DNL Segmentation Service] | 是 | 通过[!DNL Adobe Experience Platform] [分段服务](../../../segmentation/home.md)生成的受众。 |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)，[!DNL Adobe Experience Platform]</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他[!DNL Adobe Experience Platform]应用（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
-
-
 
 按受众数据类型划分的受众支持：
 
@@ -104,7 +103,6 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
 
 {style="table-layout:auto"}
 
-
 ## 导出类型和频率 {#export-type-frequency}
 
 有关目标导出类型和频率的信息，请参阅下表。
@@ -112,7 +110,7 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
 | 项目 | 类型 | 注释 |
 |---------|----------|---------|
 | 导出类型 | **[!UICONTROL Audience export]** | 您正在导出具有[!DNL Snowflake]目标中使用的标识符（姓名、电话号码或其他）的受众的所有成员。 |
-| 导出频率 | **[!UICONTROL Streaming]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| 导出频率 | **[!UICONTROL Streaming]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在[!DNL Adobe Experience Platform]中更新了配置文件，连接器就会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -128,18 +126,18 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
 
 要验证目标，请选择&#x200B;**[!UICONTROL Connect to destination]**。
 
-![显示如何向目标进行身份验证的示例屏幕截图](../../assets/catalog/cloud-storage/snowflake/authenticate-destination.png)
+![显示如何向目标进行身份验证的示例屏幕截图](../../assets/catalog/warehouses/snowflake/authenticate-destination.png)
 
 ### 填写目标详细信息 {#destination-details}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_snowflake_accountID"
 >title="输入您的 Snowflake 帐户 ID"
->abstract="如果您的帐户已链接到某个组织，请使用以下格式：`OrganizationName.AccountName`<br><br> 如果您的帐户未链接到某个组织，请使用以下格式：`AccountName`"
+>abstract="如果您的帐户已链接到组织，请使用此格式：`OrganizationName.AccountName`<br><br>如果您的帐户未链接到组织，请使用此格式：`AccountName`"
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
-![显示如何填写目标详细信息的示例屏幕截图](../../assets/catalog/cloud-storage/snowflake/configure-destination-details.png)
+![显示如何填写目标详细信息的示例屏幕截图](../../assets/catalog/warehouses/snowflake/configure-destination-details.png)
 
 * **[!UICONTROL Name]**：将来用于识别此目标的名称。
 * **[!UICONTROL Description]**：可帮助您将来识别此目标的描述。
@@ -148,9 +146,13 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
    * 如果您的帐户未链接到组织： `AccountName`。
 * **[!UICONTROL Account acknowledgment]**：打开Snowflake帐户ID确认，以确认您的帐户ID正确且属于您。
 
+>[!NOTE]
+>
+> 创建目标后，无法通过&#x200B;**[!UICONTROL Snowflake Account ID]**&#x200B;编辑目标[工作流编辑](../../ui/edit-destination.md)。 若要使用其他帐户，请[创建新的目标连接](../../ui/connect-destination.md)。
+
 >[!IMPORTANT]
 >
-> 目标名称和Experience Platform沙盒名称中使用的特殊字符会自动转换为Snowflake中的下划线(`_`)。 为避免混淆，请勿在您的目标和沙盒名称中使用任何特殊字符。
+> 目标名称和[!DNL Adobe Experience Platform]沙盒名称中使用的特殊字符在`_`中自动转换为下划线([!DNL Snowflake])。 为避免混淆，请勿在您的目标和沙盒名称中使用任何特殊字符。
 
 ### 启用警报 {#enable-alerts}
 
@@ -171,23 +173,25 @@ Experience Platform提供两种类型的Snowflake目标：[Snowflake Streaming](
 
 Snowflake目标支持将配置文件属性映射到自定义属性。
 
-![Experience Platform用户界面图像，显示Snowflake目标的映射屏幕。](../../assets/catalog/cloud-storage/snowflake/mapping.png)
+![Experience Platform用户界面图像，显示Snowflake目标的映射屏幕。](../../assets/catalog/warehouses/snowflake/mapping.png)
 
 使用您在&#x200B;**[!UICONTROL Attribute name]**&#x200B;字段中提供的属性名称，在Snowflake中自动创建目标属性。
 
 ## 导出的数据/验证数据导出 {#exported-data}
 
-检查您的Snowflake帐户，验证是否已正确导出数据。
+数据将通过共享表共享到您的Snowflake帐户中。 检查您的Snowflake帐户，验证是否已正确导出数据。
 
-## 已知限制 {#known-limitations}
+以下示例显示了共享表中的示例行：某些列将身份和区段成员资格存储为JSON；映射的配置文件属性显示为单独的字符串列。
 
-### 默认合并策略限制 {#default-merge-policy-restriction}
+![显示IDENTITYMAP、SEGMENT_MEMBERSHIP和映射的属性列的示例Snowflake工作表行](../../assets/catalog/warehouses/snowflake/snowflake-streaming-exported-data.png) {align="center" zoomable="yes"}
 
-目前，只能导出映射到默认合并策略的受众。
+### 数据结构 {#data-structure}
 
-### 地区可用性 {#regional-availability}
+上面的屏幕截图显示了以下列：
 
-[!DNL Snowflake]流目标当前仅对Experience Platform VA7区域中配置的[!DNL Real-Time CDP]客户可用。
+* **IDENTITYMAP**：每个配置文件标识映射的JSON对象。
+* **SEGMENT_MEMBERSHIP**：数据流上激活的每个受众的JSON对象。 值包括`lastQualificationTime`和`status`（例如，当配置文件符合区段资格时`realized`）。
+* **映射属性**：在激活工作流期间选择的每个映射属性都表示为[!DNL Snowflake]中的列标题。
 
 ## 数据使用和治理 {#data-usage-governance}
 
