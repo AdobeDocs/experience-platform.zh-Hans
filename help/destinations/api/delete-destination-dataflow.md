@@ -31,7 +31,7 @@ ht-degree: 19%
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) [!DNL Experience Platform]。
 
 ### 收集所需标头的值 {#gather-values-for-required-headers}
 
@@ -94,4 +94,4 @@ curl -X DELETE \
 
 有关如何使用用户界面执行这些操作的步骤，请参阅有关[在UI中删除数据流](../ui/delete-destinations.md)的教程。
 
-您现在可以使用[ API继续并](/help/destinations/api/delete-destination-account.md)删除目标帐户[!DNL Flow Service]。
+您现在可以使用[&#x200B; API继续并](/help/destinations/api/delete-destination-account.md)删除目标帐户[!DNL Flow Service]。

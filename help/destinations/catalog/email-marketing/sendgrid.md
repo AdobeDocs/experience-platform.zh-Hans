@@ -111,7 +111,7 @@ SendGrid支持激活下表中描述的标识。 了解有关[标识](/help/ident
 1. 选择&#x200B;**目录**&#x200B;选项卡并搜索&#x200B;*SendGrid*。 然后选择&#x200B;**设置**。 建立与目标之间的连接后，UI标签将更改为&#x200B;**激活区段**。
    在Experience Platform目标目录中的![SendGrid目标卡片，其中的“设置”按钮突出显示。](../../assets/catalog/email-marketing/sendgrid/02-catalog.jpg)
 
-1. 此时将显示一个向导，可帮助您配置SendGrid目标。 通过选择&#x200B;**配置新目标**来创建新目标。
+1. 此时将显示一个向导，可帮助您配置SendGrid目标。 通过选择&#x200B;**配置新目标**&#x200B;来创建新目标。
    ![SendGrid目标安装向导，显示“配置新目标”选项。](../../assets/catalog/email-marketing/sendgrid/03.jpg)
 
 1. 选择&#x200B;**新帐户**&#x200B;选项并填写&#x200B;**持有者令牌**&#x200B;值。 此值是以前在&#x200B;*先决条件部分*&#x200B;中提到的SendGrid [API密钥](#prerequisites)。
@@ -160,10 +160,10 @@ SendGrid支持激活下表中描述的标识。 了解有关[标识](/help/ident
    ![映射屏幕，显示选定作为SendGrid导出的源字段的Experience Platform配置文件属性。](../../assets/catalog/email-marketing/sendgrid/17.jpg)
    ![映射屏幕显示Experience Platform XDM字段与SendGrid目标字段之间已完成的属性映射。](../../assets/catalog/email-marketing/sendgrid/18.jpg)
 
-1. 完成映射后，选择&#x200B;**[!UICONTROL Next]**进入审阅屏幕。
+1. 完成映射后，选择&#x200B;**[!UICONTROL Next]**&#x200B;进入审阅屏幕。
    ![SendGrid激活查看屏幕，显示完成安装之前配置的映射摘要。](../../assets/catalog/email-marketing/sendgrid/22.png)
 
-1. 选择&#x200B;**[!UICONTROL Finish]**以完成设置。
+1. 选择&#x200B;**[!UICONTROL Finish]**&#x200B;以完成设置。
    ![显示“完成”按钮的SendGrid激活工作流完成屏幕。](../../assets/catalog/email-marketing/sendgrid/23.jpg)
 
 可以为[SendGrid营销联系人>添加或更新联系人API](https://docs.sendgrid.com/api-reference/contacts/add-or-update-a-contact)设置的受支持属性映射的完整列表如下。
@@ -185,13 +185,13 @@ SendGrid支持激活下表中描述的标识。 了解有关[标识](/help/ident
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**以导航到目标列表。
+1. 选择&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**&#x200B;以导航到目标列表。
    ![Experience Platform中的“目标浏览”选项卡显示已配置目标的列表。](../../assets/catalog/email-marketing/sendgrid/25.jpg)
 
 1. 选择目标并验证状态为&#x200B;**[!UICONTROL enabled]**。
    “浏览”选项卡中的![SendGrid目标显示已启用状态。](../../assets/catalog/email-marketing/sendgrid/26.jpg)
 
-1. 切换到&#x200B;**[!DNL Activation data]**选项卡，然后选择受众名称。
+1. 切换到&#x200B;**[!DNL Activation data]**&#x200B;选项卡，然后选择受众名称。
    ![SendGrid目标的“激活数据”选项卡，其中显示了选定的受众名称。](../../assets/catalog/email-marketing/sendgrid/27.jpg)
 
 1. 监测受众摘要，并检查与数据集内创建的计数对应的用户档案计数。

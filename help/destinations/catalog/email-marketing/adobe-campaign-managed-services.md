@@ -185,7 +185,7 @@ ht-degree: 2%
 
    ![属性映射屏幕显示映射到[!DNL Adobe Campaign]目标字段的XDM源字段，带有必需键指示符和重复数据删除键指示符。](../../assets/catalog/email-marketing/adobe-campaign-managed-services/mapping.png)
 
-1. 执行映射后，您可以查看并完成目标配置以开始向&#x200B;**[!DNL Campaign]**发送数据。
+1. 执行映射后，您可以查看并完成目标配置以开始向&#x200B;**[!DNL Campaign]**&#x200B;发送数据。
    [了解如何查看和完成目标配置](/help/destinations/destination-types.md#destination-types-and-categories)。
 
 ## 导出的数据/验证数据导出 {#exported-data}

@@ -45,7 +45,7 @@ ht-degree: 2%
 
 为了支持上面列出的用例，Adobe为您提供了一个通用模板，您可以根据自己的API规范来自定义该模板。
 
-如果您的API支持：[](../metadata-api/create-audience-template.md)
+如果您的API支持：[&#128279;](../metadata-api/create-audience-template.md)
 
 * HTTP方法：POST、GET、PUT、DELETE、PATCH
 * 身份验证类型：OAuth 1、具有刷新令牌的OAuth 2、具有持有者令牌的OAuth 2

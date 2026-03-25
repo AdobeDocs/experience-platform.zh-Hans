@@ -79,7 +79,7 @@ ht-degree: 3%
 
 ## 生成持有者令牌 {#bearer-token}
 
-转到&#x200B;**[!UICONTROL Settings]**&#x200B;飞艇仪表板&#x200B;**[!UICONTROL APIs & Integrations]**&#x200B;中的[ &#39;&#39; ](https://go.airship.com)，然后在左侧菜单中选择&#x200B;**[!UICONTROL Tokens]**。
+转到&#x200B;**[!UICONTROL Settings]**&#x200B;飞艇仪表板&#x200B;**[!UICONTROL APIs & Integrations]**&#x200B;中的[&#x200B; &#39;&#39; &#x200B;](https://go.airship.com)，然后在左侧菜单中选择&#x200B;**[!UICONTROL Tokens]**。
 
 单击 **[!UICONTROL Create Token]**。
 
