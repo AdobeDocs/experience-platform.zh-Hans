@@ -3,9 +3,9 @@ title: 交易台 — CRM连接
 description: 激活交易台帐户中的配置文件，以根据CRM数据进行受众定位和抑制。
 last-substantial-update: 2025-01-16T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: b02e746ba0b8a75699510b37937cb57e7eaefcca
 workflow-type: tm+mt
-source-wordcount: '1797'
+source-wordcount: '1800'
 ht-degree: 2%
 
 ---
@@ -73,11 +73,9 @@ ht-degree: 2%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 否 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他Experience Platform应用程序（如Adobe Journey Optimizer）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
-
-
 
 按受众数据类型划分的受众支持：
 
@@ -106,7 +104,6 @@ ht-degree: 2%
       *句点(“。”) 字符（ASCII代码46）。 例如，将“jane.doe@gmail.com”标准化为“janedoe@gmail.com”。
      *加号(“+”)字符（ASCII代码43）和所有后续字符。 例如，将“janedoe+home@gmail.com”标准化为“janedoe@gmail.com”。
   
-
 ## 电话号码规范化和哈希处理要求 {#phone-hashing}
 
 以下是关于上传电话号码的须知信息：
@@ -166,7 +163,7 @@ ht-degree: 2%
 
 ### 填写目标详细信息 {#fill-in-details}
 
-在将受众数据发送到或激活到目标之前，您必须先设置与自己的目标平台的连接。 在[设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=zh-Hans)此目标时，必须提供以下信息：
+在将受众数据发送到或激活到目标之前，您必须先设置与自己的目标平台的连接。 在[设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html)此目标时，必须提供以下信息：
 
 * **[!UICONTROL Account Type]**：请选择&#x200B;**[!UICONTROL Existing Account]**&#x200B;选项。
 * **[!UICONTROL Name]**：将来用于识别此目标的名称。
