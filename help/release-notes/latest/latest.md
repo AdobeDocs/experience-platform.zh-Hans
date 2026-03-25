@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2026 年 3 月）
 description: Adobe Experience Platform 的 2026 年 3 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 8c8b3b223c67dd6e9a00f9cf297f51fd09f3227f
+source-git-commit: 30b66420e9cee6b4d85cf41a31e9595d5a240fda
 workflow-type: tm+mt
-source-wordcount: '1266'
-ht-degree: 34%
+source-wordcount: '1369'
+ht-degree: 32%
 
 ---
 
@@ -27,6 +27,7 @@ Adobe Experience Platform 中新功能和现有功能的更新：
 
 - [高级数据生命周期管理](#advanced-data-lifecycle-management)
 - [Agent Orchestrator](#agent-orchestrator)
+- [数据流](#datastreams)
 - [目标](#destinations)
 - [Experience Data Model (XDM)](#xdm)
 - [实时客户轮廓](#real-time-customer-profile)
@@ -53,11 +54,23 @@ Agent Orchestrator允许您构建和部署支持AI的代理，这些代理可以
 
 | 功能 | 描述 |
 | --- | --- |
-| [的 [!DNL Microsoft 365 Copilot]Adobe Marketing Agent](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-ai/experience-cloud-ai/agents/ama-ms) | [!DNL Microsoft 365 Copilot]的Adobe Marketing Agent是您的嵌入式代理，它将Adobe的营销智能直接引入日常工具，如[!DNL Teams]、[!DNL Word]、[!DNL PowerPoint]和其他[!DNL Microsoft 365]应用程序。 您可以使用此代理从Adobe应用程序中获取可信的营销活动见解，同时您还可以在规划营销活动、审查受众、与同事合作回答客户问题以及在不离开[!DNL Microsoft 365]工作流程的情况下做出基于数据的决策。 |
+| [的 [!DNL Microsoft 365 Copilot]Adobe Marketing Agent](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/agents/ama-ms) | [!DNL Microsoft 365 Copilot]的Adobe Marketing Agent是您的嵌入式代理，它将Adobe的营销智能直接引入日常工具，如[!DNL Teams]、[!DNL Word]、[!DNL PowerPoint]和其他[!DNL Microsoft 365]应用程序。 您可以使用此代理从Adobe应用程序中获取可信的营销活动见解，同时您还可以在规划营销活动、审查受众、与同事合作回答客户问题以及在不离开[!DNL Microsoft 365]工作流程的情况下做出基于数据的决策。 |
 
 {style="table-layout:auto"}
 
 有关更多信息，请阅读 [Agent Orchestrator 文档](https://experienceleague.adobe.com/zh-hans/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator)。
+
+## 数据流 {#datastreams}
+
+数据流表示在实施Adobe Experience Platform Web SDK和Mobile SDK以及Adobe Experience Platform Edge Network服务器API时的服务器端配置。 SDK中的数据流配置命令可处理客户端与之交互的所有服务。
+
+| 功能 | 描述 |
+| --- | --- |
+| 动态数据流配置一般可用性 | 动态数据流配置现已正式可用。 动态数据流配置允许您为针对数据流启用的每个服务定义用户可配置的规则集，这些规则集规定哪些Experience Cloud解决方案应接收每种类型的数据。 有关详细信息，请参阅[动态数据流配置指南](../../datastreams/configure-dynamic-datastream.md)。 |
+
+{style="table-layout:auto"}
+
+有关详细信息，请阅读[数据流概述](../../datastreams/overview.md)。
 
 ## 目标 {#destinations}
 
