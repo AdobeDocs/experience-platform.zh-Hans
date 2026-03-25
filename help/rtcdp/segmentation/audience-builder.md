@@ -2,12 +2,12 @@
 title: Real-Time Customer Data Platform中的Audience Builder
 description: 了解如何使用Real-Time Customer Data Platform中的受众生成器创建受众。
 feature: Get Started, Audiences
-badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions" newtab=true
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 exl-id: da87baad-b82a-4a45-89c3-cf20d66fe657
-source-git-commit: 5998adf98aa7250864983d7e4e629921633e1a1c
+source-git-commit: 8c55aebcb65327394ffbdf59db1d2a203182ed18
 workflow-type: tm+mt
-source-wordcount: '955'
-ht-degree: 9%
+source-wordcount: '1079'
+ht-degree: 7%
 
 ---
 
@@ -40,10 +40,6 @@ ht-degree: 9%
 
 ![在Audience Builder中突出显示设置图标。](../assets/segmentation/audience-builder/select-settings.png){zoomable="yes"}
 
->[!NOTE]
->
->**[!UICONTROL Field options]**&#x200B;部分当前为测试版，仅向部分客户提供。 有关详细信息，请联系 Adobe 客户关怀。
-
 将显示[!UICONTROL Settings]节。 在此部分中，您可以更新显示哪些字段以及字段之间的关系。
 
 对于&#x200B;**[!UICONTROL Field options]**，您可以只显示包含数据的字段或完整XDM架构。
@@ -58,9 +54,17 @@ ht-degree: 9%
 
 ![受众生成器中会显示“属性”选项卡](../assets/segmentation/audience-builder/attributes.png)
 
-选择属性时，您可以通过选择[信息图标](../../images/icons/info.png)来查看摘要数据。 摘要数据包括顶值、字段含义以及包含此属性值的帐户百分比等信息。
+选择属性时，您可以通过选择[信息图标](../../images/icons/info.png)来查看摘要数据。 摘要数据包括诸如顶值、字段内容的说明、值的记录计数以及包含此属性值的帐户的百分比等信息。
+
+**[!UICONTROL Populated]**&#x200B;部分显示填充了属性的记录数与可用记录总数的对比，以及具有此字段值的帐户的百分比。
+
+**[!UICONTROL Top values]**&#x200B;部分显示该属性最常出现的值，并包括诸如值、具有该值的记录数以及该值所代表的记录总数百分比等详细信息。
 
 ![显示属性的摘要数据完整填充版本的弹出框。](../assets/segmentation/audience-builder/full-summary-data.png){width="300"}
+
+或者，您可以看到显示最小值、平均值（平均值）和最大值的数据分布。
+
+![显示属性统计信息的弹出窗口，包括最小值、平均值和最大值。](../assets/segmentation/audience-builder/statistics.png)
 
 如果属性由少于25%的帐户填充，则将改为显示![数据通知图标](../../images/icons/data-notice.png)。 无论如何都将显示该属性的相同摘要数据。
 
@@ -72,7 +76,11 @@ ht-degree: 9%
 >
 >此摘要数据按&#x200B;**每天**&#x200B;更新。
 
-有关受众生成器的更详细指南，请阅读[受众生成器用户指南](../../segmentation/ui/segment-builder.md){target="_blank"}。
+此外，该属性还具有&#x200B;**[!UICONTROL Ingestion Type]**。 摄取类型让您知道数据的来源，并且可以是以下值之一： **[!UICONTROL Batch]**、**[!UICONTROL Streaming/Edge]**&#x200B;或&#x200B;**[!UICONTROL No Data Ingested]**。
+
+![将显示属性的摄取类型。](/help/rtcdp/assets/segmentation/audience-builder/ingestion-type.png)
+
+有关受众生成器中的属性的更详细指南，请阅读[受众生成器用户指南](../../segmentation/ui/segment-builder.md){target="_blank"}。
 
 ### 受众 {#audiences}
 

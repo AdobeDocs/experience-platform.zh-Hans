@@ -3,10 +3,10 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 2341b02ecbd93965654bdbc38bbacadeae5be0ed
+source-git-commit: 8c55aebcb65327394ffbdf59db1d2a203182ed18
 workflow-type: tm+mt
-source-wordcount: '6311'
-ht-degree: 11%
+source-wordcount: '6574'
+ht-degree: 10%
 
 ---
 
@@ -55,6 +55,16 @@ ht-degree: 11%
 您可以在&#x200B;**[!UICONTROL Fields]**&#x200B;工作区左侧的[!DNL Segment Builder]部分中看到这些构建基块。 **[!UICONTROL Fields]**&#x200B;包含每个主要构建基块的选项卡：“[!UICONTROL Attributes]”、“[!UICONTROL Events]”和“[!UICONTROL Audiences]”。
 
 ![区段生成器的字段部分突出显示。](../images/ui/segment-builder/segment-fields.png)
+
+您可以选择![设置图标](/help/images/icons/settings.png)来调整所显示字段的设置。
+
+对于&#x200B;**[!UICONTROL Available fields]**，您可以只显示包含数据的字段或完整XDM架构。
+
+对于&#x200B;**[!UICONTROL Data sources]**，您可以进行筛选以显示来自指定摄取类型的属性。 支持的值包括&#x200B;**[!UICONTROL Show batch data]**、**[!UICONTROL Show streaming/edge data]**&#x200B;和&#x200B;**[!UICONTROL Show fields with no ingested data]**。
+
+对于&#x200B;**[!UICONTROL Merge policy]**，您可以选择字段所属的合并策略。
+
+![设置区域显示在区段生成器中。](../images/ui/segment-builder/settings.png)
 
 ### 属性
 
@@ -139,13 +149,29 @@ ht-degree: 11%
 | 时段 | 该值在选定的月或年内出现。 | 三月期间的销售&#x200B;**为** |
 | 范围(+/-) | 该值出现在选定日期后的天、周、月或年内。 此时间段是两个日期的&#x200B;**包含**。 | 购物车放弃时间为&#x200B;**在**&#x200B;内3天 |
 | 早于 | 该值发生在选定日期之前。 | 成员资格加入日期为&#x200B;**早于** 2025年1月3日 |
-| 之后 | 该值发生在选定日期之后。 | 购买日期为&#x200B;**&#x200B;** 2024年3月14日之后 |
+| 之后 | 该值发生在选定日期之后。 | 购买日期为&#x200B;**** 2024年3月14日之后 |
 | 滚动范围 | 该值出现在两个相对日期之间。 | 上次购买日期处于7天前到3天前的滚动范围内。 |
 | 下一 | 该值出现在所选的下一个时间段内。 | 购物车放弃在未来2天内 |
 
 有关时间和日期函数的更多详细信息，请阅读[时间约束部分](#time-constraints)。
 
 +++
+
+当您选择属性时，可以通过选择[信息图标](../../images/icons/info.png)查看摘要数据。 摘要数据包括诸如字段内容的说明、值的记录计数以及包含此属性值的帐户的百分比等信息。
+
+**[!UICONTROL Top values]**&#x200B;部分显示该属性最常出现的值，并包括诸如值、具有该值的记录数以及该值所代表的记录总数百分比等详细信息。
+
+![显示属性摘要数据的弹出框](/help/segmentation/images/ui/segment-builder/summary-data.png)
+
+如果属性由不到25%的配置文件填充，则将改为显示![数据通知图标](../../images/icons/data-notice.png)。 无论如何都将显示该属性的相同摘要数据。
+
+>[!NOTE]
+>
+>仅当字段&#x200B;**不**&#x200B;包含太多不同的值并且这些字段的值通常重复时，才会显示最大值。 此外，此摘要数据每&#x200B;**天**&#x200B;更新。
+
+此外，该属性还具有&#x200B;**[!UICONTROL Ingestion Type]**。 摄取类型让您知道数据的来源，并且可以是以下值之一： **[!UICONTROL Batch]**、**[!UICONTROL Streaming/Edge]**&#x200B;或&#x200B;**[!UICONTROL No Data Ingested]**。
+
+![将显示属性的摄取类型。](/help/segmentation/images/ui/segment-builder/ingestion-type.png)
 
 #### 计算属性 {#computed-attributes}
 
@@ -473,7 +499,7 @@ ht-degree: 11%
 
 +++ 混合布尔逻辑
 
-以下示例在单个表达式中混合了&#x200B;**1&rbrace;和&lbrace;AND和OR逻辑。**&#x200B;如果不使用容器，则无法在单个级别中将AND与OR逻辑混合使用。
+以下示例在单个表达式中混合了&#x200B;**1}和{AND和OR逻辑。**&#x200B;如果不使用容器，则无法在单个级别中将AND与OR逻辑混合使用。
 
 ![显示如何使用容器混合布尔逻辑以及使用包含/排除逻辑的图像。](/help/segmentation/images/ui/segment-builder/mixed-boolean-container.png)
 
@@ -523,7 +549,7 @@ ht-degree: 11%
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="刷新估计值"
 >abstract="您可以刷新区段定义的估计值，以立即预览符合建议的区段定义资格的轮廓数目。受众估计值是通过使用当天的示例数据的示例大小生成的。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=zh-Hans#estimate-and-preview-an-audience" text="估计和预览受众"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="估计和预览受众"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_qualifiedprofiles"
