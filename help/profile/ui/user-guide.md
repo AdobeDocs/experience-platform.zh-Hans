@@ -3,9 +3,9 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: 实时客户个人资料UI指南
 description: Real-time Customer Profile可以为每位客户创建整体视图，结合来自多个渠道（包括在线、离线、CRM和第三方数据）的数据。 本文档提供了在Adobe Experience Platform用户界面中与Real-time Customer Profile交互的指南。
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: cf975ec6747438a034fcedb51a4b25b0acd46d2f
+source-git-commit: faeb53bfc4eba815eb1d9d00c464da4dc1a3b016
 workflow-type: tm+mt
-source-wordcount: '2123'
+source-wordcount: '2177'
 ht-degree: 4%
 
 ---
@@ -117,7 +117,7 @@ ht-degree: 4%
 
 此外，您可以切换是否显示AI生成的洞察，显示与边缘对比的集线器详细信息，以及在卡片视图或图形视图之间进行选择。
 
-![上面列出的切换(AI生成的见解、Hub或Edge数据以及卡片视图或图形视图)突出显示。](../images/user-guide/profile-toggles.png)
+![上面列出的切换（AI生成的见解、Hub或Edge数据以及卡片视图或图形视图）突出显示。](../images/user-guide/profile-toggles.png)
 
 #### 客户轮廓洞察 {#customer-profile-insights}
 
@@ -131,7 +131,7 @@ ht-degree: 4%
 >
 >如果您是Healthcare Shield客户，则&#x200B;**无法**&#x200B;使用AI insight小组件。
 
-**[!UICONTROL AI insight widgets]**&#x200B;部分显示由AI生成的构件。 这些小组件根据配置文件数据(包括人口统计信息（如年龄、性别或位置）、用户行为（如购买历史记录、网站活动或社交媒体参与）以及心理图形（如兴趣、偏好或生活方式选择），提供对配置文件的快速见解。 所有AI小组件都使用配置文件中已存在&#x200B;**&#x200B;**&#x200B;的数据。
+**[!UICONTROL AI insight widgets]**&#x200B;部分显示由AI生成的构件。 这些小组件根据配置文件数据(包括人口统计信息（如年龄、性别或位置）、用户行为（如购买历史记录、网站活动或社交媒体参与）以及心理图形（如兴趣、偏好或生活方式选择），提供对配置文件的快速见解。 所有AI小组件都使用配置文件中已存在&#x200B;****&#x200B;的数据。
 
 ![将显示AI insight小组件部分。](../images/user-guide/ai-insight-widgets.png)
 
@@ -169,7 +169,7 @@ ht-degree: 4%
 
 #### 体验事件 {#experience-events}
 
-**[!UICONTROL Experience events]**&#x200B;部分显示包含用户档案的体验事件的时间线。
+**[!UICONTROL Experience events]**&#x200B;部分显示包含用户档案的体验事件的时间线。 默认情况下，此部分显示过去48小时内的体验事件。 但是，您可以将日期范围设置为最多30天。
 
 ![显示“体验事件”部分，其中显示包含用户档案的体验事件的时间轴。](/help/profile/images/user-guide/experience-event-graph.png)
 
@@ -193,7 +193,11 @@ ht-degree: 4%
 
 ### “事件”选项卡 {#events}
 
-**[!UICONTROL Events]**&#x200B;选项卡包含与客户关联的100个最新ExperienceEvents中的数据。 此数据可能包括电子邮件打开次数、购物车活动和页面查看次数。 为任何单个事件选择&#x200B;**[!UICONTROL View all]**&#x200B;会提供附加字段和值作为事件的一部分捕获。
+>[!NOTE]
+>
+>事件的显示最多可延迟15分钟。
+
+默认情况下，**[!UICONTROL Events]**&#x200B;选项卡包含过去48小时的数据，以及与客户关联的100个最新ExperienceEvents。 此数据可能包括电子邮件打开次数、购物车活动和页面查看次数。 您还可以设置最长30天的日期范围。 为任何单个事件选择&#x200B;**[!UICONTROL View all]**&#x200B;会提供附加字段和值作为事件的一部分捕获。
 
 通过选择到&#x200B;**[!UICONTROL View JSON]**，还可以将事件视为JSON对象。 这有助于了解如何在Experience Platform中捕获事件。
 
