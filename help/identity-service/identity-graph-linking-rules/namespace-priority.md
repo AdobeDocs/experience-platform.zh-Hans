@@ -37,35 +37,35 @@ ht-degree: 2%
 >
 >* 分层图是指具有多级链接的标识图。 查看下图，了解具有三个图层的图形示例。
 
-![图形图层图](../images/namespace-priority/graph-layers.png "图形图层图"){zoomable="yes"}
+![图形层图](../images/namespace-priority/graph-layers.png "图形层图"){zoomable="yes"}
 
-### Semantic meaning of the namespace
+### 命名空间的语义含义
 
-An identity represents a real-world object. There are three objects that are represented in the identity graph. In order of importance, they are:
+标识表示真实世界的对象。 身份图中有三个表示对象。 按重要性排序，它们是：
 
-* People (Cross-device, Email, Phone number)
-* Hardware device
+* 人员（跨设备、电子邮件、电话号码）
+* 硬件设备
 * Web浏览器(Cookie)
 
-与硬件设备（如IDFA、GAID）相比，人名空间相对不可变，而硬件设备与Web浏览器相比相对不可变。 基本上，您（人）将始终是单个实体，可以拥有多个硬件设备（手机、笔记本电脑、平板电脑等），并使用多个浏览器(Google Chrome、Safari、FireFox等)
+人员命名空间与硬件设备（例如IDFA、GAID）相比相对不可变，而硬件设备与Web浏览器相比相对不可变。 基本上，您（人员）将始终是单一实体，可以拥有多个硬件设备（手机、笔记本电脑、平板电脑等），并且可以使用多个浏览器（Google Chrome、Safari、FireFox等）
 
-处理这个问题的另一种方法是基数。 对于给定的人员实体，将创建多少个身份？ 在大多数情况下，一个人将拥有一个CRMID、少数硬件设备标识符（不应当经常进行IDFA/GAID重置）以及更多Cookie（可以想象一个人可以在多个设备上浏览、使用无痕模式或在任意给定时间重置Cookie）。 通常，**基数越低表示命名空间优先级越高**。
+处理此主题的另一种方法是通过基数。 对于给定的人员实体，将创建多少个身份？ 在大多数情况下，人员将拥有一个CRMID、多个硬件设备标识符（IDFA/GAID重置不应经常发生）以及更多Cookie（可以想象的是，个人可以在任意给定时间浏览多个设备、使用无痕模式或重置Cookie）。 通常，**较低的基数表示具有较高优先级**&#x200B;的命名空间。
 
 ## 验证命名空间优先级设置
 
-了解了如何排列命名空间的优先级后，您就可以使用UI中的图形模拟工具测试各种图形折叠方案，并确保您的优先级配置返回预期的图形结果。 有关详细信息，请阅读有关使用[图形模拟工具](./graph-simulation.md)的指南。
+了解如何设置命名空间的优先级后，即可使用UI中的图形模拟工具来测试各种图形折叠方案，并确保优先级配置返回预期的图形结果。 有关详细信息，请阅读有关使用[图形模拟工具](./graph-simulation.md)的指南。
 
 ## 配置命名空间优先级
 
-可使用[标识设置UI](./identity-settings-ui.md)配置命名空间优先级。 在标识设置界面中，可以拖放命名空间以确定其相对重要性。
+可以使用[身份设置UI](./identity-settings-ui.md)配置命名空间优先级。 在身份设置界面中，您可以拖放命名空间以确定其相对重要性。
 
 >[!IMPORTANT]
 >
->不能将设备/Cookie命名空间优先于人员命名空间。 This restriction ensures that misconfigurations do not happen.
+>无法区分设备/Cookie命名空间的优先级与人员命名空间的优先级。 此限制可确保不会发生错误配置。
 
 ## 命名空间优先级使用情况
 
-目前，命名空间优先级影响实时客户配置文件的系统行为。 下图说明了此概念。 有关详细信息，请阅读[Adobe Experience Platform和应用程序体系结构图](https://experienceleague.adobe.com/zh-hans/docs/blueprints-learn/architecture/architecture-overview/platform-applications)的指南。
+目前，命名空间优先级影响实时客户配置文件的系统行为。 下图说明了此概念。 有关详细信息，请阅读[Adobe Experience Platform和应用程序体系结构图](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications)的指南。
 
 ![命名空间优先级应用程序作用域的图表。](../images/namespace-priority/application-scope.png "命名空间优先级应用程序作用域的关系图。"){zoomable="yes"}
 
@@ -78,11 +78,11 @@ An identity represents a real-world object. There are three objects that are rep
 * 为给定沙盒配置身份设置后，体验事件的主要身份将由配置中的最高命名空间优先级确定。
    * 这是因为体验事件在本质上是动态的。 身份映射可以包含三个或更多身份，命名空间优先级可确保最重要的命名空间与体验事件相关联。
 * 因此，实时客户个人资料&#x200B;**将不再使用下列配置**：
-   * 使用Web SDK、Mobile SDK或Edge Network API在`primary=true`中发送身份时的主要身份配置(`identityMap`)（将继续在配置文件中使用身份命名空间和身份值）。 **注意**：数据湖存储或Adobe Target等Real-Time客户配置文件之外的服务将继续使用主身份配置(`primary=true`)。
-   * 在XDM体验事件类架构上标记为主标识的任何字段。
-   * Adobe Analytics源连接器（ECID或AAID）中的默认主身份设置。
-* 另一方面，**命名空间优先级不会确定配置文件记录的主标识**。
-   * For profile records, you should continue to define your identity fields in the schema, including the primary identity. 有关详细信息，请阅读[在UI](/help/xdm/ui/fields/identity.md)中定义标识字段的指南。
+   * 使用Web SDK、Mobile SDK或Edge Network API在`primary=true`中发送身份时的主要身份配置(`identityMap`)（将继续在配置文件中使用身份命名空间和身份值）。 **注意**： Real-time Customer Profile之外的服务（如Data Lake Storage或Adobe Target）将继续使用主标识配置(`primary=true`)。
+   * 在XDM体验事件类架构中标记为主要标识的任何字段。
+   * Adobe Analytics源连接器（ECID或AAID）中的默认主标识设置。
+* 另一方面，**命名空间优先级不能确定配置文件记录**&#x200B;的主要身份。
+   * 对于配置文件记录，您应该继续在架构中定义您的身份字段，包括主要身份。 有关详细信息，请阅读[在UI](/help/xdm/ui/fields/identity.md)中定义标识字段的指南。
 
 >[!TIP]
 >
@@ -99,36 +99,36 @@ An identity represents a real-world object. There are three objects that are rep
 | 命名空间 | 命名空间的实际应用 | 优先级 |
 | --- | --- | --- |
 | CRMID | 用户 | 1 |
-| IDFA | Apple硬件设备(iPhone、IPad等) | 2 |
-| GAID | Google硬件设备(Google Pixel、Pixelbook等) | 3 |
-| ECID | Web浏览器(Firefox、Safari、Google Chrome等) | 4 |
+| IDFA | Apple硬件设备（iPhone、IPad等） | 2 |
+| GAID | Google硬件设备（Google Pixel、Pixelbook等） | 3 |
+| ECID | Web浏览器（Firefox、Safari、Google Chrome等） | 4 |
 | AAID | Web 浏览器 | 5 |
 
 {style="table-layout:auto"}
 
 鉴于上述配置，用户操作和主标识的确定将按如下方式解析：
 
-| 用户操作（体验事件） | 身份验证状态 | 数据源 | Namespaces in event | Namespace of primary identity |
+| 用户操作（体验事件） | 身份验证状态 | 数据源 | 事件中的命名空间 | 主要身份的命名空间 |
 | --- | --- | --- | --- | --- |
-| View credit card offer page | 未经身份验证（匿名） | Web SDK | `{ECID}` | ECID |
+| 查看信用卡优惠页面 | 未经身份验证（匿名） | Web SDK | `{ECID}` | ECID |
 | 查看帮助页面 | 未经身份验证 | Mobile SDK | `{ECID, IDFA}` | IDFA |
 | 查看支票帐户余额 | Authenticated | Web SDK | `{CRMID, ECID}` | CRMID |
-| Sign up for home loan | Authenticated | Analytics source connector | `{CRMID, ECID, AAID}` | CRMID |
-| Transfer $1,000 from checking to savings | Authenticated | Mobile SDK | `{CRMID, GAID, ECID}` | CRMID |
+| 注册家庭贷款 | Authenticated | Analytics源连接器 | `{CRMID, ECID, AAID}` | CRMID |
+| 将1,000美元从支票转帐到节省额 | Authenticated | Mobile SDK | `{CRMID, GAID, ECID}` | CRMID |
 
 {style="table-layout:auto"}
 
-## 分段服务：分段会员资格元数据存储
+## 分段服务：分段成员资格元数据存储
 
-![段成员资格存储关系图。](../images/namespace-priority/segment-membership-storage.png "段成员资格存储关系图。"){zoomable="yes"}
+![区段成员资格存储图表。](../images/namespace-priority/segment-membership-storage.png "区段成员资格存储图表。"){zoomable="yes"}
 
-对于给定的合并配置文件，段成员资格将根据具有最高命名空间优先级的标识进行存储。
+对于给定的合并用户档案，区段成员资格将根据具有最高命名空间优先级的身份进行存储。
 
 例如，假设有两个配置文件：
 
 * 配置文件1表示John。
-   * John的个人资料符合S1（区段会员资格1）的条件。 例如， S1可以表示标识为男性的客户群体。
-   * John的个人资料也符合S2（区段会员资格2）的条件。 这可以指忠诚度为金牌的客户群体。
+   * John的个人资料符合S1（区段成员资格1）的条件。 例如，S1可能是指标识为男性的客户区段。
+   * John的个人资料还符合S2（区段成员资格2）的条件。 这可能指忠诚度状态为黄金的客户区段。
 * 个人资料2代表简。
    * Jane的个人资料符合S3（区段会员资格3）的要求。 这可能指客户中识别为女性的部分。
    * Jane的个人资料还符合S4（区段成员资格4）的条件。 这可能指忠诚度状态为白金级的客户区段。
@@ -145,10 +145,10 @@ An identity represents a real-world object. There are three objects that are rep
 
 对于给定标识，数据卫生记录删除请求功能采用以下方式：
 
-* Real-time Customer Profile：删除指定为主要标识的任何配置文件片段。 **现在将基于命名空间优先级确定配置文件上的主标识。**
-* 数据湖：删除以指定标识作为主标识的所有记录。 与Real-Time Customer Profile不同，数据湖中的主身份基于WebSDK (`primary=true`)上指定的主身份或标记为主身份的字段
+* Real-time Customer Profile：删除指定为主要标识的任何配置文件片段。 **现在将根据命名空间优先级确定配置文件上的主要身份。**
+* 数据湖：删除将指定标识作为主标识的所有记录。 与实时客户配置文件不同，数据湖中的主标识基于WebSDK (`primary=true`)中指定的主标识或标记为主标识的字段
 
-有关详细信息，请参阅[高级生命周期管理概述](/help/hygiene/home.md)。
+有关详细信息，请阅读[高级生命周期管理概述](/help/hygiene/home.md)。
 
 ### 计算属性
 
@@ -171,18 +171,18 @@ An identity represents a real-world object. There are three objects that are rep
 在选择数据时，您需要指定一个命名空间，该命名空间将用于确定计算得分的事件和存储计算得分的事件。 建议您选择代表人员的命名空间。
 
 * 如果您使用WebSDk收集Web行为数据，则建议您在身份映射中选择CRMID命名空间。
-* If you are collecting web behavior data using the Analytics source connector, then you should select the identity descriptor (CRMID).
+* 如果您使用Analytics Source Connector收集Web行为数据，则应当选择身份描述符(CRMID)。
 
-This configuration results in computing scores only using authenticated events.
+此配置导致仅使用已验证的事件计算得分。
 
-For more information, read the documents on [Attribution AI](/help/intelligent-services/attribution-ai/overview.md) and [Customer AI](/help/intelligent-services/customer-ai/overview.md).
+有关详细信息，请阅读[归因人工智能](/help/intelligent-services/attribution-ai/overview.md)和[客户人工智能](/help/intelligent-services/customer-ai/overview.md)上的文档。
 
-### Partner-built destinations
+### 合作伙伴构建的目标
 
-Updated audience disqualification results for profiles associated to a shared device may not be sent to downstream destinations. This may happen in certain rare occurrences where:
+与共享设备关联的用户档案的更新后受众资格取消结果可能不会发送到下游目标。 这种情况可能会在某些极少数情况下发生，例如：
 
-* 受众资格认证仅基于匿名活动。
-* 在短时间内跨多个配置文件登录。
+* 受众资格仅基于匿名活动。
+* 在短时间内跨多个用户档案登录。
 
 有关合作伙伴构建目标的详细信息，请阅读[目标概述](/help/destinations/home.md#adobe-built-and-partner-built-destinations)。
 
@@ -200,21 +200,21 @@ Updated audience disqualification results for profiles associated to a shared de
 在[!DNL Identity Graph Linking Rules]的上下文中，需要注意有关Edge分段和Edge Network应用程序的两个主要行为更改：
 
 1. `identityMap`必须包含已标记为唯一的人员命名空间。 不支持标记为身份（身份描述符）的字段。
-2. The person namespace must have the `primary = true` configuration when an end-user is browsing while authenticated.
+2. 当最终用户在验证期间浏览时，人员命名空间必须具有`primary = true`配置。
 
 #### 边缘分段
 
-In a given event, ensure that all of your namespaces that represent a person entity are included in the `identityMap` because [identities sent as XDM fields](/help/xdm/ui/fields/identity.md) are ignored and are not used for segment membership metadata storage.
+在给定事件中，确保在`identityMap`中包含所有表示人员实体的命名空间，因为作为XDM字段[发送的](/help/xdm/ui/fields/identity.md)身份将被忽略，并且不会用于区段成员资格元数据存储。
 
-* **Event applicability**: This behavior applies only to events sent directly to the Edge Network (such as WebSDK and Mobile SDK). Events ingested from [Experience Platform hub](/help/landing/edge-and-hub-comparison.md), such as those ingested with the HTTP API source, other streaming sources, and batch sources, are not subject to this limitation.
-* **边缘分割特异性**：此行为特定于边缘分割。 批量分段和流分段是在集线器上评估的单独服务，不遵循相同的流程。 有关详细信息，请阅读[边缘分段指南](/help/segmentation/methods/edge-segmentation.md)。
-* 有关详细信息，请阅读[Adobe Experience Platform和应用程序体系结构图表](https://experienceleague.adobe.com/zh-hans/docs/blueprints-learn/architecture/architecture-overview/platform-applications#detailed-architecture-diagram)和[Edge Network和中心比较](/help/landing/edge-and-hub-comparison.md)页。
+* **事件适用性**：此行为仅适用于直接发送到Edge Network的事件（如WebSDK和Mobile SDK）。 从[Experience Platform中心](/help/landing/edge-and-hub-comparison.md)摄取的事件，例如通过HTTP API源、其他流源和批处理源摄取的事件，不受此限制的约束。
+* **Edge分段特异性**：此行为特定于边缘分段。 批量分段和流式分段是在中心服务器上进行评估的单独服务，并且不遵循相同的流程。 有关详细信息，请阅读[边缘分段指南](/help/segmentation/methods/edge-segmentation.md)。
+* 有关详细信息，请阅读[Adobe Experience Platform和应用程序体系结构图](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications#detailed-architecture-diagram)和[Edge Network和中心比较](/help/landing/edge-and-hub-comparison.md)页。
 
 #### Edge Network应用程序
 
-要确保Edge Network上的应用程序可立即访问边缘配置文件，请确保您的活动在CRMID上包括`primary=true`。 这可确保立即可用，而无需等待集线器的身份图更新。
+要确保Edge Network上的应用程序可以毫不延迟地访问Edge配置文件，请确保您的事件包括CRMID上的`primary=true`。 这可以确保立即可用，而无需等待来自中心的标识图更新。
 
-* Edge Network上的应用程序(如Adobe Target、Offer Decisioning和自定义Personalization目标)将继续依赖事件中的主要身份来从Edge配置文件访问配置文件。
-* 有关Edge Network行为的详细信息，请阅读[Experience PlatformWeb SDK和Edge Network体系结构图表](https://experienceleague.adobe.com/zh-hans/docs/blueprints-learn/architecture/architecture-overview/deployment/websdk#experience-platform-webmobile-sdk-or-edge-network-server-api-deployment)。
-* 有关如何在Web SDK上配置主标识的详细信息，请阅读有关[数据元素类型](/help/tags/extensions/client/web-sdk/data-element-types.md)和[Web SDK中的标识数据](/help/collection/use-cases/identity/id-overview.md)的文档。
-* 确保体验事件中包含ECID。 如果ECID缺失，则会将其添加到事件负载中，并显示`primary=true`，这可能会导致意外结果。
+* Edge Network上的应用程序（如Adobe Target、Offer Decisioning和自定义Personalization目标）将继续依赖事件中的主要身份来从Edge配置文件访问配置文件。
+* 有关Experience Platform行为的详细信息，请阅读[Edge Network Web SDK和Edge Network架构图](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/deployment/websdk#experience-platform-webmobile-sdk-or-edge-network-server-api-deployment)。
+* 有关如何在Web SDK[上配置主身份的详细信息，请阅读有关](/help/tags/extensions/client/web-sdk/data-element-types.md)数据元素类型[和](/help/collection/use-cases/identity/id-overview.md)Web SDK中的身份数据的文档。
+* 确保ECID包含在体验事件中。 如果ECID缺失，则会将其添加到具有`primary=true`的事件有效负载中，这可能会导致意外结果。
