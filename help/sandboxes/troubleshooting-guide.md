@@ -27,7 +27,7 @@ ht-degree: 9%
 >id="platform_sandboxes_sandboxtypes"
 >title="沙盒类型"
 >abstract="沙盒类型指示这是生产沙盒还是开发沙盒。生产沙盒包括实时数据，开发沙盒用于测试和开发。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/sandbox/ui/user-guide.html#create" text="在 UI 中创建沙盒"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/sandbox/ui/user-guide.html?lang=zh-Hans#create" text="在 UI 中创建沙盒"
 
 Experience Platform中有两种沙盒类型可用：
 
@@ -53,7 +53,7 @@ Experience Platform实例支持多个生产和开发沙盒，每个沙盒维护�
 
 默认的Experience Platform许可证总共授予您5个沙盒，您可以将其分类为生产或开发。 您可以额外许可包含10个沙盒的包，最多总共75个沙盒。
 
-生产沙盒可以重置或删除，但Adobe Analytics也将其用于[Cross Device Analytics (CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html)功能，或者其中托管的身份图形也被Adobe Audience Manager用于[基于人员的目标(PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html)功能除外。
+生产沙盒可以重置或删除，但Adobe Analytics也将其用于[Cross Device Analytics (CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html?lang=zh-Hans)功能，或者其中托管的身份图形也被Adobe Audience Manager用于[基于人员的目标(PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html?lang=zh-Hans)功能除外。
 
 您可以更新生产沙盒的标题。 但是，无法重命名生产沙盒。
 
