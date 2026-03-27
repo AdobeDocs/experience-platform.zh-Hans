@@ -6,10 +6,10 @@ badge: label="Beta 版" type="Informative"
 hide: true
 hidefromtoc: true
 exl-id: 4d405ffb-f600-463b-a215-44e806b6d139
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: 40a9ea68fd855b2f0d92a4fa336f1b68142f0649
 workflow-type: tm+mt
-source-wordcount: '1335'
-ht-degree: 16%
+source-wordcount: '1511'
+ht-degree: 14%
 
 ---
 
@@ -25,15 +25,15 @@ ht-degree: 16%
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解如何以及何时使用[!DNL Microsoft Ads Customer Match]目标，以下是[!DNL Adobe Experience Platform]客户可以通过使用此功能解决的示例用例。
+为了帮助您更好地了解如何以及何时使用[!DNL Microsoft Ads Customer Match]目标，以下是Adobe Experience Platform客户可以使用此功能解决的示例用例。
 
-### 用例#1 {#use-case-1}
+### 通过个性化优惠重新定位现有客户 {#use-case-1}
 
 电子商务品牌希望通过[!DNL Microsoft Search]和[!DNL Microsoft Audience Network]联系现有客户，以根据优惠过去的购买和浏览历史记录对其进行个性化设置。 该品牌可以从自己的CRM中将电子邮件地址摄取到Experience Platform，从自己的离线数据构建受众，并将这些受众发送到[!DNL Microsoft Ads Customer Match]以在搜索和受众广告中使用，从而优化其广告支出。
 
-### 用例#2 {#use-case-2}
+### 向现有客户推广新产品 {#use-case-2}
 
-一家科技公司推出了一种新产品。 为了推广此新产品，他们希望提高以前购买过相关产品的客户的认识。 他们使用电子邮件地址作为标识符，将电子邮件地址从CRM数据库上传到Experience Platform。 根据拥有相关产品的客户创建受众。 这些受众将发送到[!DNL Microsoft Ads Customer Match]，以便公司可以跨[!DNL Microsoft Advertising Network]定位当前客户和类似客户。
+一家科技公司推出了一款新产品，并希望提高之前购买过相关产品的客户的认识。 他们使用电子邮件地址作为标识符，将电子邮件地址从CRM数据库上传到Experience Platform。 根据拥有相关产品的客户创建受众。 这些受众将发送到[!DNL Microsoft Ads Customer Match]，以便公司可以定位整个[!DNL Microsoft Advertising Network]的当前客户和类似客户。
 
 ## 支持的身份 {#supported-identities}
 
@@ -41,7 +41,7 @@ ht-degree: 16%
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| `email` | 纯文本电子邮件地址 | [!DNL Microsoft Ads Customer Match]连接仅支持纯文本电子邮件地址。 Experience Platform会在导出时自动对电子邮件地址进行哈希处理，以符合Microsoft的要求。 |
+| `email` | 纯文本电子邮件地址 | 映射步骤中仅支持纯文本（未散列）电子邮件地址作为&#x200B;**源**&#x200B;字段。 不支持预散列源字段。 在将电子邮件地址导出到[!DNL Microsoft Ads]之前，Experience Platform始终对其进行哈希处理。 |
 
 {style="table-layout:auto"}
 
@@ -85,6 +85,20 @@ ht-degree: 16%
 ### 接受客户匹配条款和条件 {#accept-customer-match-terms}
 
 在通过此目标激活受众之前，必须先在您的[!DNL Microsoft Advertising]帐户中手动创建客户匹配列表。 接受客户匹配条款和条件需要这种初始手动创建，这样可自动创建从Experience Platform发送的受众。 未能完成此步骤可能会导致激活受众时出错。
+
+### 工作帐户(MS Entra) IT管理员批准 {#work-account-admin-approval}
+
+如果您使用Microsoft工作帐户（也称为Microsoft Entra帐户）进行身份验证，则组织的IT管理员可能需要先获得批准，然后才能连接到[!DNL Microsoft Advertising]。
+
+当您尝试使用工作帐户进行身份验证时，您可能会被重定向到&#x200B;**需要审批**&#x200B;页面。 此页面请求链接应用程序的理由，并列出所需的权限，包括`ads.manage`。 提交请求，您的IT管理员将收到通知以进行审查。 您还将收到一封确认电子邮件，确认您已提交请求。
+
+在IT管理员在Azure门户中批准请求后，您可以返回Experience Platform并使用您的工作帐户进行身份验证。 有关指导，请参阅Microsoft文档：
+
+* [审核管理员同意请求并采取行动](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/review-admin-consent-requests)
+* [配置管理员同意工作流](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-admin-consent-workflow)
+* [配置用户如何同意应用程序](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent)
+
+如果IT管理员尚未批准请求，则身份验证将失败，并出现以下错误： `AADSTS650052: The app needs access to a service ('https://ads.microsoft.com') that your organization has not subscribed to or enabled. Contact your IT Admin to review the configuration of your service subscriptions.`
 
 ### 帐户配置 {#account-configuration}
 
@@ -135,7 +149,7 @@ ht-degree: 16%
 * **[!UICONTROL Membership Duration]**：用户在客户匹配列表中保留的天数。 可接受的取值范围为 1 到 390 天。
 * **[!UICONTROL Customer Match List Availability]**：选择客户匹配列表的可用性。 在[!DNL Microsoft Advertising]中，一个客户ID下可以有多个客户帐户ID（广告商帐户）。 选择&#x200B;**[!UICONTROL Customer ID (all advertising accounts)]**&#x200B;以使该列表在您的客户ID下的所有广告商帐户中可用，或选择&#x200B;**[!UICONTROL Customer Account ID (single advertising account)]**&#x200B;以将该列表限制为您在上面提供的特定客户帐户ID。 有关更多详细信息，请参阅[Microsoft Advertising文档](https://help.ads.microsoft.com/apex/index/3/en/56727)。
 
-![Platform UI图像显示Microsoft Ads客户匹配目标的目标详细信息字段。](../../assets/catalog/advertising/microsoft-ads-customer-match/destination-details.png)
+  ![Platform UI图像显示Microsoft Ads客户匹配目标的目标详细信息字段。](../../assets/catalog/advertising/microsoft-ads-customer-match/destination-details.png)
 
 ### 启用警报 {#enable-alerts}
 
@@ -161,7 +175,7 @@ ht-degree: 16%
 
 >[!IMPORTANT]
 >
->必须使用未散列（纯文本）源字段。 请勿使用预哈希的源标识，如`Emails (SHA256, lowercased)`。 Experience Platform会在导出时自动对电子邮件地址进行哈希处理，以符合Microsoft的要求。
+>必须将纯文本（未散列）电子邮件地址映射为&#x200B;**源**&#x200B;字段。 不支持预哈希的源标识，如`Emails (SHA256, lowercased)`。 在将电子邮件地址导出到[!DNL Microsoft Ads]之前，Experience Platform始终对其进行哈希处理。
 
 ![UI图像显示了映射步骤，其中IdentityMap电子邮件映射到身份电子邮件。](../../assets/catalog/advertising/microsoft-ads-customer-match/mapping.png)
 
