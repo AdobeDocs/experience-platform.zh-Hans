@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 在UI中监视目标的数据流
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 5b36722e5c2ca0cc8a4fb8667ceb3dc4a3568b02
+source-git-commit: b61d6d49e3fcd9a75d2920048ce76d3707592edb
 workflow-type: tm+mt
-source-wordcount: '3542'
-ht-degree: 10%
+source-wordcount: '3580'
+ht-degree: 9%
 
 ---
 
@@ -26,7 +26,7 @@ ht-degree: 10%
 - [数据流](../home.md)：数据流是跨Experience Platform移动数据的数据作业的表示形式。 数据流在不同服务之间配置，帮助将数据从源连接器移动到目标数据集、[!DNL Identity]和[!DNL Profile]以及[!DNL Destinations]。
    - [数据流运行](../../sources/notifications.md)：数据流运行是基于所选数据流的频率配置的周期性计划作业。
 - [目标](../../destinations/home.md)：目标是预建的与常用应用程序的集成，可无缝激活Experience Platform中的数据，以用于跨渠道营销活动、电子邮件活动、定向广告和许多其他用例。
-- [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供将单个[!DNL Experience Platform]实例划分为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+- [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform]提供了将单个[!DNL Experience Platform]实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ## 在目标工作区中监视数据流 {#monitor-dataflows-in-the-destinations-workspace}
 
@@ -70,7 +70,7 @@ ht-degree: 10%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesfailed_streaming"
 >title="失败的身份标识"
->abstract="针对所选目标失败的单个轮廓身份标识的计数。请检查错误诊断，以获取详细信息。"
+>abstract="为所选目标失败的单个配置文件身份计数。 有关详细信息，请查看错误诊断。"
 
 对于流目标，[!UICONTROL Dataflow runs]选项卡会每小时更新数据流运行中的量度数据。 标记的最突出的统计数据是身份信息。
 
@@ -98,11 +98,11 @@ ht-degree: 10%
 - **[!UICONTROL Profiles received]**：数据流中接收的配置文件总数。
 - **[!UICONTROL Identities activated]**：作为数据流运行的一部分成功激活到所选目标的配置文件身份总数。 此量度包括创建、更新和从导出的受众中移除的身份标识。
 - **[!UICONTROL Identities excluded]**：基于缺少属性和同意违规而从激活中排除的配置文件身份总数。
-- **[!UICONTROL Identities failed]**&#x200B;由于错误未激活到目标的配置文件身份总数。
+- **[!UICONTROL Identities failed]**：由于错误而未激活到目标的配置文件标识总数。
 
   >[!IMPORTANT]
   >
-  > 从 2025 年 3 月开始，Adobe 将推出一项更新，以提高流式处理目标的报告准确性。此增强功能可确保Experience Platform中的报表与目标平台之间更好地保持一致。
+  > 从2025年3月开始，Adobe将推出一项更新，以提高流目标的报表准确性。 此增强功能可确保Experience Platform中的报表与目标平台之间更好地保持一致。
   >
   > 在此更新之前，**[!UICONTROL Identities failed]**&#x200B;包括所有激活重试。 进行此更新后，总计数中仅包含上次激活重试。
   > 
@@ -142,12 +142,12 @@ ht-degree: 10%
 >id="platform_monitoring_dataflow_run_details_activation"
 >title="数据流运行详细信息"
 >abstract="目标数据流运行详细信息包含有关受众激活状态的信息，以及从实时客户轮廓中获取的量度，以生成唯一身份标识。若要了解更多信息，请查看量度定义指南。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html?lang=zh-Hans#dataflow-runs-for-streaming-destinations" text="流式处理目标的数据流运行"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html#dataflow-runs-for-streaming-destinations" text="流式处理目标的数据流运行"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_batch"
 >title="收到的轮廓"
->abstract="数据流中接收的轮廓总数。该值每 60 分钟更新一次。"
+>abstract="数据流运行中接收的配置文件总数。 对于计划的导出，这包括最新受众快照中的配置文件，以及在快照创建时间和导出时间之间受众成员资格或身份发生更改的任何配置文件。 因此，此计数可能会高于受众中的用户档案数。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesactivated_batch"
@@ -208,7 +208,7 @@ ht-degree: 10%
 >
 >现在，您可以在监视仪表板中查看有关数据流及其关联的数据流运行的信息。 有关详细信息，请阅读以下部分。
 
-## 监控目标仪表板 {#monitoring-destinations-dashboard}
+## 监视目标仪表板 {#monitoring-destinations-dashboard}
 
 >[!NOTE]
 >
@@ -280,7 +280,7 @@ ht-degree: 10%
 
 ![监视仪表板中高亮显示的所有数据流。](../assets/ui/monitor-destinations/dashboard-dataflows.png)
 
-选择数据流以进行进一步检查后，数据流详细信息页面会包含一个切换开关，通过该开关可查看数据流中的激活数据，这些数据按数据流运行或受众进行划分。
+选择数据流进行进一步检查后，数据流详细信息页面会包含切换开关，允许您查看数据流中的激活数据，这些数据按数据流运行或受众进行划分。
 
 ### 数据流运行视图 {#dataflow-runs-view}
 
@@ -298,7 +298,7 @@ ht-degree: 10%
 
 ![数据流运行视图，其中仅显示失败切换高亮显示](../assets/ui/monitor-destinations/dataflow-runs-show-failures-only.gif)
 
-### 受众级别视图 {#segment-level-view}
+### 受众级别视图 {#audience-level-view}
 
 选择&#x200B;**[!UICONTROL Audiences]**&#x200B;后，您会看到在选定时间范围内激活到选定数据流的受众列表。 此屏幕包括受众级别的信息，其中包括有关已激活记录、已排除记录以及上次数据流运行的状态和时间的信息。 通过查看排除和激活记录的量度，您可以验证受众是否已成功激活。
 
@@ -351,7 +351,7 @@ ht-degree: 10%
 
 “数据流运行”页面显示有关数据流运行的信息，包括数据流运行开始时间、处理时间、收到的记录、激活的记录、排除的记录、失败的记录、激活率和状态。
 
-当您从[受众级别视图](#segment-level-view)向下钻取到数据流运行页面时，您可以通过以下选项筛选数据流运行：
+当您从[受众级别视图](#audience-level-view)向下钻取到数据流运行页面时，您可以通过以下选项筛选数据流运行：
 
 - **[!UICONTROL Dataflow runs with failed records]**：对于所选受众，此选项列出激活失败的所有数据流运行。 要检查特定数据流运行中的记录失败的原因，请查看该数据流运行的[数据流运行详细信息页面](#dataflow-run-details-page)。
 - **[!UICONTROL Dataflow runs with excluded records]**：对于所选受众，此选项列出了所有数据流运行，其中某些记录未完全激活并跳过某些配置文件。 要检查某个数据流运行中的记录被跳过的原因，请查看该数据流运行的[数据流运行详细信息页面](#dataflow-run-details-page)。
@@ -371,7 +371,7 @@ ht-degree: 10%
 - **[!UICONTROL IMS org ID]**：数据流所属的组织。
 - **[!UICONTROL Last updated]**：上次更新数据流运行的时间。
 
-详细信息页面还有切换功能，可在数据流运行错误和受众之间切换。 此选项适用于[受众级别视图](#segment-level-view)部分中列出的目标。
+详细信息页面还有切换功能，可在数据流运行错误和受众之间切换。 此选项适用于[受众级别视图](#audience-level-view)部分中列出的目标。
 
 数据流运行错误视图显示失败的记录和跳过的记录的列表。 显示失败和跳过的记录的信息，包括错误代码、身份计数和描述。 默认情况下，该列表会显示失败的记录。 要显示跳过的记录，请选择&#x200B;**[!UICONTROL Records skipped]**&#x200B;切换开关。
 
