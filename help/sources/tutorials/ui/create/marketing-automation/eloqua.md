@@ -1,9 +1,10 @@
 ---
 title: 在UI中将Oracle Eloqua (V2)连接到Experience Platform
 description: 了解如何在UI中将您的Oracle Eloqua帐户连接到Experience Platform。
-source-git-commit: 180754969d4ae8dbd1308dfc85dae73baf64f759
+exl-id: 87b6d2e2-fd0b-4ca7-860c-01957712ec2a
+source-git-commit: 2ffffbae2d267c4db05e386a41eb8707c9e5b736
 workflow-type: tm+mt
-source-wordcount: '1187'
+source-wordcount: '1185'
 ht-degree: 1%
 
 ---
@@ -124,7 +125,6 @@ ht-degree: 1%
 >* **联系人：** `C_DateModified`
 >* **帐户：** `M_DateModified`
 >* **活动：** `CreatedAt`
->* **自定义对象：** `UpdatedAt`
 >* **营销活动：** `updatedAt`
 
 完成映射后，您现在可以为数据流配置摄取计划。 将您的[!UICONTROL Frequency]设置为`Once`以配置一次性摄取运行。 对于增量摄取，您可以将[!UICONTROL Frequency]设置为`Hour`、`Day`或`Week`。 使用增量摄取时，还必须配置[!UICONTROL Interval]以定义摄取运行之间发生的时间量。 例如，摄取频率设置为`Day`，间隔设置为`15`意味着您的数据流计划每15天摄取一次数据。

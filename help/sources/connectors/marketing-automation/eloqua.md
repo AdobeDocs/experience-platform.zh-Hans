@@ -2,9 +2,10 @@
 title: Oracle Eloqua (V2) Source概述
 description: 了解如何将Oracle Eloqua连接到Adobe Experience Platform。
 last-substantial-update: 2025-02-02T00:00:00Z
-source-git-commit: 4d47eae91711596677335b03568add9f6fbade74
+exl-id: f63beebd-920c-41dd-a924-61511135a234
+source-git-commit: 2ffffbae2d267c4db05e386a41eb8707c9e5b736
 workflow-type: tm+mt
-source-wordcount: '1824'
+source-wordcount: '1822'
 ht-degree: 2%
 
 ---
@@ -102,7 +103,6 @@ ht-degree: 2%
 >- **联系人：** `C_DateModified`
 >- **帐户：** `M_DateModified`
 >- **活动：** `CreatedAt`
->- **自定义对象：** `UpdatedAt`
 >- **营销活动：** `updatedAt`
 
 下表提供了Experience Platform中[!DNL Eloqua]源字段及其对应的Experience Data Model (XDM)目标字段之间的详细映射。 每一行都概述了转换逻辑（无论字段是否不可变），并提供了额外的注释来帮助您了解如何在Experience Platform中摄取和构建[!DNL Eloqua]数据。
@@ -244,4 +244,3 @@ ht-degree: 2%
 ## 将[!DNL Eloqua]连接到Experience Platform
 
 继续在Experience Platform中配置[!DNL Eloqua]源连接。 有关通过UI设置连接的分步指南，请参阅此处的[教程](../../tutorials/ui/create/marketing-automation/eloqua.md)。 阅读本教程以了解如何连接[!DNL Eloqua]帐户、选择数据、映射字段、计划摄取和监视数据流。
-
