@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中监视目标的数据流
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: b61d6d49e3fcd9a75d2920048ce76d3707592edb
+source-git-commit: 6aacade76b31268b8f6a9db2b8c191d8c7702a1b
 workflow-type: tm+mt
-source-wordcount: '3580'
+source-wordcount: '3577'
 ht-degree: 9%
 
 ---
@@ -142,7 +142,7 @@ ht-degree: 9%
 >id="platform_monitoring_dataflow_run_details_activation"
 >title="数据流运行详细信息"
 >abstract="目标数据流运行详细信息包含有关受众激活状态的信息，以及从实时客户轮廓中获取的量度，以生成唯一身份标识。若要了解更多信息，请查看量度定义指南。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html?lang=zh-Hans#dataflow-runs-for-streaming-destinations" text="流式处理目标的数据流运行"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html#dataflow-runs-for-streaming-destinations" text="流式处理目标的数据流运行"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_batch"
@@ -212,7 +212,7 @@ ht-degree: 9%
 
 >[!NOTE]
 >
->Experience Platform *中除* [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md)和[自定义个性化](/help/destinations/catalog/personalization/custom-personalization.md)目标之外的所有目标当前都支持目标监视功能。
+>Experience Platform *中除* Adobe Target[目标](/help/destinations/catalog/personalization/adobe-target-connection.md)之外的所有目标当前都支持目标监视功能。
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_activation"
