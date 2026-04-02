@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中定义枚举字段和建议值
 description: 了解如何在Experience Platform用户界面中定义字符串字段的枚举和建议值。
 exl-id: 67ec5382-31de-4f8d-9618-e8919bb5a472
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
 workflow-type: tm+mt
 source-wordcount: '1222'
 ht-degree: 8%
@@ -30,7 +30,7 @@ ht-degree: 8%
 
 本文档介绍如何在[!UICONTROL Schemas] UI工作区中定义枚举和建议值。 要快速了解枚举和建议值（包括如何在UI中配置它们及其下游影响），请观看以下视频：
 
->[!VIDEO](https://video.tv.adobe.com/v/3413675/?captions=chi_hans&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3409501/?quality=12&learn=on)
 
 ## 定义枚举 {#enum}
 
@@ -72,7 +72,8 @@ ht-degree: 8%
 
 ![显示为UI中的字符串字段填写的枚举值和显示名称的图像](../../images/ui/fields/enum/suggested-standard-add.png)
 
-<!-- ### Removing suggested values for standard fields
+<!-- 
+### Removing suggested values for standard fields
 
 Only suggested values that you define can be removed from a standard field. Existing suggested values can be disabled so that they no longer appear in the segmentation dropdown, but they cannot be removed outright.
 
@@ -82,7 +83,8 @@ For example, consider a profile schema where the a suggested value for the stand
 
 In this example, the display name "[!UICONTROL Non-specific]" is now disabled from being shown in the segmentation dropdown list. However, the value `non_specific` is still part of the list of enumerated fields and is therefore still allowed on ingestion. In other words, you cannot disable the actual enum value for the standard field as it would go against the principle of only allowing changes that make a field less restrictive.
 
-See the [section below](#evolution) for more information on the rules for updating enums and suggested values for existing schema fields. -->
+See the [section below](#evolution) for more information on the rules for updating enums and suggested values for existing schema fields. 
+-->
 
 ## 枚举和建议值的演化规则 {#evolution}
 

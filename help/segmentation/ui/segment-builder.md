@@ -3,7 +3,7 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 8c55aebcb65327394ffbdf59db1d2a203182ed18
+source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
 workflow-type: tm+mt
 source-wordcount: '6574'
 ht-degree: 10%
@@ -144,12 +144,12 @@ ht-degree: 10%
 | 本月 | 该值出现在这个日历月。 | 出生月份&#x200B;**为本月** |
 | 今年 | 该值出现在此日历年。 | 注册日期&#x200B;**为**&#x200B;今年 |
 | 自定义日期 | 该值发生在给定日期。 | 购买日期&#x200B;**为**&#x200B;自定义日期 |
-| 最近 | 该值发生在最后选定的时间段内。 上个月的生日&#x200B;**为** |
+| 最近 | 该值发生在最后选定的时间段内。 上个月的生日&#x200B;**为** | |
 | 从（到） | 该值出现在选定的两个日历日期内。 此时间段是两个日期的&#x200B;**包含**。 | 帐户创建日期&#x200B;**为**，从4月20日至7月13日 |
 | 时段 | 该值在选定的月或年内出现。 | 三月期间的销售&#x200B;**为** |
 | 范围(+/-) | 该值出现在选定日期后的天、周、月或年内。 此时间段是两个日期的&#x200B;**包含**。 | 购物车放弃时间为&#x200B;**在**&#x200B;内3天 |
 | 早于 | 该值发生在选定日期之前。 | 成员资格加入日期为&#x200B;**早于** 2025年1月3日 |
-| 之后 | 该值发生在选定日期之后。 | 购买日期为&#x200B;**&#x200B;** 2024年3月14日之后 |
+| 之后 | 该值发生在选定日期之后。 | 购买日期为&#x200B;**** 2024年3月14日之后 |
 | 滚动范围 | 该值出现在两个相对日期之间。 | 上次购买日期处于7天前到3天前的滚动范围内。 |
 | 下一 | 该值出现在所选的下一个时间段内。 | 购物车放弃在未来2天内 |
 
@@ -499,7 +499,7 @@ ht-degree: 10%
 
 +++ 混合布尔逻辑
 
-以下示例在单个表达式中混合了&#x200B;**1&rbrace;和&lbrace;AND和OR逻辑。**&#x200B;如果不使用容器，则无法在单个级别中将AND与OR逻辑混合使用。
+以下示例在单个表达式中混合了&#x200B;**1}和{AND和OR逻辑。**&#x200B;如果不使用容器，则无法在单个级别中将AND与OR逻辑混合使用。
 
 ![显示如何使用容器混合布尔逻辑以及使用包含/排除逻辑的图像。](/help/segmentation/images/ui/segment-builder/mixed-boolean-container.png)
 
@@ -549,7 +549,7 @@ ht-degree: 10%
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="刷新估计值"
 >abstract="您可以刷新区段定义的估计值，以立即预览符合建议的区段定义资格的轮廓数目。受众估计值是通过使用当天的示例数据的示例大小生成的。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=zh-Hans#estimate-and-preview-an-audience" text="估计和预览受众"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="估计和预览受众"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_qualifiedprofiles"

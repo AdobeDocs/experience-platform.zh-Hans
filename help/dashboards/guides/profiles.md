@@ -4,7 +4,7 @@ title: 配置文件仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板，您可以查看有关贵组织的实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '4677'
 ht-degree: 8%
@@ -55,7 +55,8 @@ Adobe Experience Platform用户界面(UI)提供了一个仪表板，通过该仪
 
 通过打开[!UICONTROL Overview]工作区，可查看生成可在您的仪表板上可视化的分析的SQL。 您可以从现有见解的SQL中获得灵感，以创建新查询，这些查询可根据您的业务需求从Experience Platform数据获取独特的见解。 若要了解有关此功能的详细信息，请参阅[查看SQL UI指南](../view-sql.md)。
 
-<!-- ## (Beta) Profile efficacy insights {#profile-efficacy-insights}
+<!-- 
+## (Beta) Profile efficacy insights {#profile-efficacy-insights}
 
 >[!IMPORTANT]
 >
@@ -67,7 +68,8 @@ The [!UICONTROL Efficacy] tab provides metrics on the quality and completeness o
 
 See the [profile efficacy widgets section](#profile-efficacy-widgets) for more information on the widgets currently available.
 
-The layout of this dashboard is also customizable by selecting [**[!UICONTROL Modify dashboard]**](../customize/modify.md) from the [!UICONTROL Overview] tab. -->
+The layout of this dashboard is also customizable by selecting [**[!UICONTROL Modify dashboard]**](../customize/modify.md) from the [!UICONTROL Overview] tab. 
+-->
 
 ## 浏览配置文件 {#browse-profiles}
 
@@ -119,7 +121,7 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 * 要了解根据Adobe标准[收集同意数据所需的架构字段组](../../landing/governance-privacy-security/consent/adobe/overview.md)，请参阅有关这些启用配置文件的架构字段组的文档。
    * [[!UICONTROL Consent and Preference Details]](../../xdm/field-groups/profile/consents.md)
-   * [[!UICONTROL IdentityMap]](../../xdm/field-groups/profile/identitymap.md) (如果使用Experience Platform Web或Mobile SDK发送同意信号，则必须填写此项)
+   * [[!UICONTROL IdentityMap]](../../xdm/field-groups/profile/identitymap.md) （如果使用Experience Platform Web或Mobile SDK发送同意信号，则必须填写此项）
 * 要了解如何使用Adobe标准处理客户同意和偏好设置数据，请参阅有关Experience Platform中的[同意处理](../../landing/governance-privacy-security/consent/adobe/overview.md)的概述。
 * 组合的数据治理和同意策略可用于根据用户档案的同意偏好和您建立的组织规则筛选用户档案以进行分段。 要了解如何创建和使用这些组合策略，请参阅有关[管理数据使用策略](../../data-governance/policies/user-guide.md#combine-policies)的用户指南。
 
@@ -439,7 +441,8 @@ Adobe提供了多个标准构件，您可以使用这些构件可视化与配置
 
 The [!UICONTROL Unsegmented Profiles by Identity] widget categorizes the total number of unsegmented profiles by their unique identifier. The data is visualized in a bar chart for ease of comparison. 
 
-![The Unsegmented Profiles by Identity widget.](../images/profiles/unsegmented-profiles-by-identity.png) -->
+![The Unsegmented Profiles by Identity widget.](../images/profiles/unsegmented-profiles-by-identity.png) 
+-->
 
 ### [!UICONTROL Audiences] {#audiences}
 
@@ -452,11 +455,13 @@ The [!UICONTROL Unsegmented Profiles by Identity] widget categorizes the total n
 <!-- https://jira.corp.adobe.com/browse/PLAT-115291 -->
 
 <!-- * [[!UICONTROL Audiences change trend]](#audiences-change-trend) -->
-<!-- ### [!UICONTROL Audiences change trend] {#audiences-change-trend}
+<!-- 
+### [!UICONTROL Audiences change trend] {#audiences-change-trend}
 
 This line graph widget visualizes the change in the total number of audiences each day, trending over time. The change in the number of audiences is dependent on the selected merge policy being applied to your profile data. The period of analysis is selected from the widget dropdown menu. The bar chart can be visualized over 30 days, 90 days, and 12-month periods.
 
-The visualization allows you to monitor the overall health of audiences within Adobe Experience Platform by understanding trends in the growth or decline of the total number of audiences. -->
+The visualization allows you to monitor the overall health of audiences within Adobe Experience Platform by understanding trends in the growth or decline of the total number of audiences. 
+-->
 
 <!-- ![The Audiences change trend widget.]() -->
 
@@ -517,7 +522,8 @@ The visualization allows you to monitor the overall health of audiences within A
 ![带有合并策略下拉列表和小组件受众下拉列表的Experience Platform UI配置文件仪表板突出显示。](../images/profiles/audience-overlap-by-merge-policy.png)
 
 
-<!-- ## (Beta) Profile efficacy widgets {#profile-efficacy-widgets}
+<!-- 
+## (Beta) Profile efficacy widgets {#profile-efficacy-widgets}
 
 >[!IMPORTANT]
 >
@@ -583,7 +589,8 @@ The three levels of completeness are:
 * Medium completeness: Profiles have less than 70% and more than 30% of attributes filled. 
 * Low completeness: Profiles have less than 30% of attributes filled.
 
-![The profiles completeness trend widget](../images/profiles/profiles-completeness-trend.png) -->
+![The profiles completeness trend widget](../images/profiles/profiles-completeness-trend.png) 
+-->
 
 ## 后续步骤
 

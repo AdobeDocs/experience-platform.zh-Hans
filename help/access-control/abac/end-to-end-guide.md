@@ -4,7 +4,7 @@ title: Attribute-Based Access Control端到端指南
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的端到端指南
 role: Developer
 exl-id: 7e363adc-628c-4a66-a3bd-b5b898292394
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
 workflow-type: tm+mt
 source-wordcount: '1522'
 ht-degree: 8%
@@ -67,7 +67,7 @@ Experience Platform UI的权限工作区随即出现，并在&#x200B;**[!UICONTR
 >id="platform_permissions_labels_about"
 >title="标签是什么？"
 >abstract="使用标签，可根据适用于数据的使用及访问策略将数据集和字段分类。Adobe Experience Platform 提供若干由 Adobe 定义的<strong>核心</strong>数据使用标签，这些标签涵盖适用于数据治理的多种常见限制。例如，通过 RHD（受监管的健康数据）等敏感的 <strong>S</strong> 标签，可将涉及受保护的健康信息 (PHI) 的数据分类。还可自行定义适合组织需求的自定义标签。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html?lang=zh-Hans#understanding-data-usage-labels" text="数据使用标签概述"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html#understanding-data-usage-labels" text="数据使用标签概述"
 
 角色是对与Experience Platform实例交互的用户类型进行分类的方法，是访问控制策略的构建块。 角色具有给定的权限集，组织的成员可以根据所需的访问范围分配给一个或多个角色。
 
@@ -140,7 +140,7 @@ Experience Platform UI的权限工作区随即出现，并在&#x200B;**[!UICONTR
 
 >[!NOTE]
 >
-> 使用[!UICONTROL Permissions]对象级访问控制[，将在](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/access-control/object-based-access)工作区中创建的标签（如上面的区段标签）分配给Adobe Journey Optimizer中的各种对象。
+> 使用[!UICONTROL Permissions]对象级访问控制[，将在](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/access-control/object-based-access)工作区中创建的标签（如上面的区段标签）分配给Adobe Journey Optimizer中的各种对象。
 
 ## 激活访问控制策略 {#policy}
 
@@ -162,25 +162,26 @@ Experience Platform UI的权限工作区随即出现，并在&#x200B;**[!UICONTR
 
 ![激活策略确认](../images/abac-end-to-end-user-guide/abac-policies-confirm-activate.png)
 
-<!-- ## Create an access control policy {#policy}
+<!-- 
+## Create an access control policy {#policy}
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_policies_about"
 >title="What are policies?"
 >abstract="Policies are statements that bring attributes together to establish permissible and impermissible actions. Every organization comes with a default policy that you must activate to define rules for resources like segments and schema fields. Default policies can neither be edited nor deleted. However, default policies can be activated or deactivated."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=zh-Hans" text="Manage policies"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html" text="Manage policies"
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_policies_about_create"
 >title="Create a policy"
 >abstract="Create a policy to define the actions that your users can and cannot take against your segments and schema fields."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=zh-Hans#create-a-new-policy" text="Create a policy"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html#create-a-new-policy" text="Create a policy"
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_policies_edit_permitdeny"
 >title="Configure permissible and impermissible actions for a policy"
 >abstract="A <b>deny access to</b> policy will deny users access when the criteria is met. Combined with <b>The following being false</b> - all users will be denied access unless they meet the matching criteria set. This type of policy allows you to protect a sensitive resource and only allow access to users with matching labels. <br>A <b>permit access to</b> policy will permit users access when the criteria are met. When combined with <b>The following being true</b> - users will be given access if they meet the matching criteria set. This does not explicitly deny access to users, but adds a permit access. This type of policy allows you to give additional access to resource and in addition to those users who might already have access through role permissions."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=zh-Hans#edit-a-policy" text="Edit a policy"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html#edit-a-policy" text="Edit a policy"
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_policies_edit_resource"
@@ -237,7 +238,8 @@ Select **[!UICONTROL The following being false]** and then select **[!UICONTROL 
 
 Select **[!UICONTROL Activate]** to activate the policy, and a dialog appears which prompts you to confirm activation. Select **[!UICONTROL Confirm]** and then select **[!UICONTROL Close]**.
 
-![Image showing the Policy being activated](../images/abac-end-to-end-user-guide/abac-create-policy-activation.png) -->
+![Image showing the Policy being activated](../images/abac-end-to-end-user-guide/abac-create-policy-activation.png) 
+-->
 
 ## 后续步骤
 
@@ -247,4 +249,4 @@ Select **[!UICONTROL Activate]** to activate the policy, and a dialog appears wh
 
 以下视频旨在支持您了解基于属性的访问控制，并概述如何配置角色、资源和策略。
 
->[!VIDEO](https://video.tv.adobe.com/v/3451849?captions=chi_hans&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/345641?learn=on)
