@@ -2,10 +2,10 @@
 title: 沙盒工具
 description: 在沙盒之间无缝导出和导入沙盒配置。
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: fad8cc977ec6928420abab4fd3dafca7475c33c4
+source-git-commit: f5c32c5687b5931ed59fa6a379ed5e5927e3a9ac
 workflow-type: tm+mt
-source-wordcount: '3448'
-ht-degree: 6%
+source-wordcount: '3641'
+ht-degree: 5%
 
 ---
 
@@ -58,7 +58,7 @@ ht-degree: 6%
 
 ### Adobe Journey Optimizer对象 {#abobe-journey-optimizer-objects}
 
-下表列出了当前支持沙盒工具的[!DNL Adobe Journey Optimizer]对象和限制。 有关最佳实践的完整列表，请参阅[Journey Optimizer一般最佳实践](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/connect-systems/sandbox/copy-objects-to-sandbox?#global)指南。
+下表列出了当前支持沙盒工具的[!DNL Adobe Journey Optimizer]对象和限制。 有关最佳实践的完整列表，请参阅[Journey Optimizer一般最佳实践](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/connect-systems/sandbox/copy-objects-to-sandbox?#global)指南。
 
 | 平台 | 对象 | 支持的依赖对象 | 详细信息 |
 | --- | --- | --- | --- |
@@ -70,8 +70,8 @@ ht-degree: 6%
 | [!DNL Adobe Journey Optimizer] | 自定义操作 |  | 自定义操作可以单独添加到资源包中。 将自定义操作分配给历程后，便无法再编辑它。 要更新自定义操作，您应： <ul><li>在迁移历程之前移动自定义操作</li><li>在迁移后更新自定义操作的配置（如请求标头、查询参数和身份验证）</li><li>使用您在第一步中添加的自定义操作迁移历程对象</li></ul> |
 | [!DNL Adobe Journey Optimizer] | 内容模板 | | 内容模板可以作为历程对象的依赖对象复制。 通过独立模板，可轻松地在Journey Optimizer营销活动和历程中重用自定义内容。 |
 | [!DNL Adobe Journey Optimizer] | 片段 | 所有嵌套片段。 | 片段可以作为历程对象的依赖对象复制。 片段是可重用的组件，可以在各个Journey Optimizer营销活动和历程中的一个或多个电子邮件中引用。 |
-| [!DNL Adobe Journey Optimizer] | 营销活动 | 促销活动中使用的以下对象将作为从属对象复制： <ul><li>营销活动</li><li>受众</li><li>架构</li><li>内容模板</li><li>片段</li><li>消息/内容</li><li>渠道配置</li><li>统一的决策对象</li><li>试验设置/变体</li></ul> | <ul><li>营销活动可与所有与用户档案、受众、架构、内联消息和依赖对象相关的项目一起复制。 不会复制某些项目，例如数据使用标签和语言设置。 有关无法复制的对象的完整列表，请参阅[将对象导出到另一个沙盒](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox)指南。</li><li>如果存在相同的配置，系统将自动检测并重新使用目标沙盒中的现有渠道配置对象。 如果未找到匹配的配置，则在导入期间跳过渠道配置，并且用户必须手动更新此历程的目标沙盒中的渠道设置。</li><li>用户可以重复使用目标沙盒中的现有试验和受众作为所选营销活动的依赖对象。</li></ul> |
-| [!DNL Adobe Journey Optimizer] | 决策 | 在复制决策对象之前，目标沙盒中必须存在以下对象： <ul><li>在决策对象间使用的配置文件属性</li><li>自定义选件属性的字段组</li><li>用于跨规则、排名或上限的上下文属性的数据流架构。</li></ul> | <ul><li>当前不支持复制使用AI模型的排名公式。</li><li>决策项（优惠项）不会自动包含在内。 为确保它们已传输，请使用&#x200B;**添加到包**&#x200B;选项手动添加它们。</li><li>使用选择策略的策略要求在复制过程中手动添加关联的决策项。 使用手动或备用决策项目的策略会自动将这些项目作为直接依赖项包含在内。</li><li>必须先复制决策项目，然后再复制任何其他相关对象。</li><li>有关支持的对象的完整列表，请参阅[将对象导出到另一个沙盒](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox)指南。</li></ul> |
+| [!DNL Adobe Journey Optimizer] | 营销活动 | 促销活动中使用的以下对象将作为从属对象复制： <ul><li>营销活动</li><li>受众</li><li>架构</li><li>内容模板</li><li>片段</li><li>消息/内容</li><li>渠道配置</li><li>统一的决策对象</li><li>试验设置/变体</li></ul> | <ul><li>营销活动可与所有与用户档案、受众、架构、内联消息和依赖对象相关的项目一起复制。 不会复制某些项目，例如数据使用标签和语言设置。 有关无法复制的对象的完整列表，请参阅[将对象导出到另一个沙盒](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox)指南。</li><li>如果存在相同的配置，系统将自动检测并重新使用目标沙盒中的现有渠道配置对象。 如果未找到匹配的配置，则在导入期间跳过渠道配置，并且用户必须手动更新此历程的目标沙盒中的渠道设置。</li><li>用户可以重复使用目标沙盒中的现有试验和受众作为所选营销活动的依赖对象。</li></ul> |
+| [!DNL Adobe Journey Optimizer] | 决策 | 在复制决策对象之前，目标沙盒中必须存在以下对象： <ul><li>在决策对象间使用的配置文件属性</li><li>自定义选件属性的字段组</li><li>用于跨规则、排名或上限的上下文属性的数据流架构。</li></ul> | <ul><li>当前不支持复制使用AI模型的排名公式。</li><li>决策项（优惠项）不会自动包含在内。 为确保它们已传输，请使用&#x200B;**添加到包**&#x200B;选项手动添加它们。</li><li>使用选择策略的策略要求在复制过程中手动添加关联的决策项。 使用手动或备用决策项目的策略会自动将这些项目作为直接依赖项包含在内。</li><li>必须先复制决策项目，然后再复制任何其他相关对象。</li><li>有关支持的对象的完整列表，请参阅[将对象导出到另一个沙盒](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox)指南。</li></ul> |
 
 ## 将对象导出到包中 {#export-objects}
 
@@ -229,13 +229,36 @@ ht-degree: 6%
 
 留出一段时间以完成导入。 完成时间会因包中的对象数而异。 您可以从[!UICONTROL Sandboxes] **[!UICONTROL Jobs]**&#x200B;选项卡监视导入作业。
 
+### 将对象快速复制到沙盒 {#express-copy}
+
+>[!IMPORTANT]
+>
+>Express Copy功能目前为测试版，仅向部分客户提供。 Express copy (Beta)当前仅支持架构和源数据流。
+
+您可以从对象清单页面访问快速复制。 例如，要查看可用架构的列表，请从左侧导航中选择&#x200B;**[!UICONTROL Schemas]**，然后选择&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡。 接下来，选择所选架构旁边的省略号(`...`)，在下拉菜单中查看控制选项。 从下拉列表中选择&#x200B;**[!UICONTROL Add to package]**。
+
+![架构列表，显示突出显示[!UICONTROL Add to package]控件的下拉菜单。](../images/ui/sandbox-tooling/add-to-package-express.png)
+
+出现&#x200B;**[!UICONTROL Add to package]**&#x200B;对话框。 选择&#x200B;**[!UICONTROL Express copy]**&#x200B;选项，然后从下拉列表中选择&#x200B;**[!UICONTROL Target sandbox]**。 最后，选择&#x200B;**[!UICONTROL Add]**&#x200B;以确认您的选择。
+
+![[!UICONTROL Add to package]对话框，显示从下拉列表中选定的包。](../images/ui/sandbox-tooling/express-copy.png)
+
+>[!NOTE]
+>
+> Express Copy会自动打包所选对象及其所需的依赖关系，并将它们部署到目标沙盒。 如果相关对象在目标沙盒中已存在，则会重用该对象，否则，将创建一个新对象。
+
+要检查快速复制请求的状态，请从左侧导航中选择&#x200B;**[!UICONTROL Sandboxes]**，然后选择&#x200B;**[!UICONTROL Jobs]**&#x200B;选项卡。 此时将显示所有作业和当前处理状态的列表。
+
+![显示作业列表的作业选项卡。](../images/ui/sandbox-tooling/sandboxes-jobs.png)
+
 ## 监控导入详细信息 {#view-import-details}
 
 要查看导入的详细信息，请导航到[!UICONTROL Sandboxes] **[!UICONTROL Jobs]**&#x200B;选项卡，然后从列表中选择包。 或者，使用搜索栏搜索包。
 
 ![沙盒[!UICONTROL Jobs]选项卡突出显示导入包选择。](../images/ui/sandbox-tooling/imports-tab.png)
 
-<!--### View imported objects {#view-imported-objects}
+<!--
+### View imported objects {#view-imported-objects}
 
 On the **[!UICONTROL Jobs]** tab in the [!UICONTROL Sandboxes] environment, select **[!UICONTROL View imported objects]** from the right details pane.
 
@@ -245,7 +268,8 @@ Select **[!UICONTROL View imported objects]** from the right details pane on the
 
 Use the arrows to expand objects to view the full list of fields that have been imported into the package.
 
-![The sandboxes [!UICONTROL Imported objects] showing a list of objects imported into the package.](../images/ui/sandbox-tooling/expand-imported-objects.png)-->
+![The sandboxes [!UICONTROL Imported objects] showing a list of objects imported into the package.](../images/ui/sandbox-tooling/expand-imported-objects.png)
+-->
 
 在沙盒环境的&#x200B;**[!UICONTROL View import summary]**&#x200B;选项卡的右侧详细信息窗格中选择&#x200B;**[!UICONTROL Jobs]**。
 
@@ -353,7 +377,7 @@ Use the arrows to expand objects to view the full list of fields that have been 
 
 以下视频旨在支持您了解沙盒工具，并概述如何创建新包、发布包和导入包。
 
->[!VIDEO](https://video.tv.adobe.com/v/3446099/?captions=chi_hans&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3424763/?learn=on)
 
 ## 后续步骤
 
