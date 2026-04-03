@@ -2,7 +2,7 @@
 title: 归因分析
 description: 本文档介绍如何使用查询服务基于首次联系和最近联系营销归因模型创建营销效果衡量技术。
 exl-id: d62cd349-06fc-4ce6-a5e8-978f11186927
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1418'
 ht-degree: 0%
@@ -19,10 +19,10 @@ ht-degree: 0%
 
 * [报告包数据概述的Adobe Analytics源连接器](../../sources/connectors/adobe-applications/mapping/analytics.md)。
 * [Analytics字段映射文档](../../sources/connectors/adobe-applications/mapping/analytics.md)提供了有关摄取和映射Analytics数据以便与查询服务一起使用的更多信息。
-* [Attribution IQ概述](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html?lang=zh-Hans)
-* [Adobe Analytics归因面板指南](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/panels/attribution.html?lang=zh-Hans)。
+* [Attribution IQ概述](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html)
+* [Adobe Analytics归因面板指南](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/panels/attribution.html)。
 
-可以在`OVER()`窗口函数部分[中找到](../sql/adobe-defined-functions.md#window-functions)函数中参数的说明。 [Adobe营销和Commerce术语表](https://business.adobe.com/cn/glossary/index.html)可能也很有用。
+可以在`OVER()`窗口函数部分[中找到](../sql/adobe-defined-functions.md#window-functions)函数中参数的说明。 [Adobe营销和Commerce术语表](https://business.adobe.com/glossary/index.html)可能也很有用。
 
 对于以下每个用例，都会提供一个参数化SQL查询示例作为模板供您自定义。 在SQL示例中任何您想要评估的`{ }`处提供参数。
 
