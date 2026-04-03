@@ -2,9 +2,9 @@
 title: 使用Adobe Experience Platform Data Distiller最大化价值的关键提示 — OS656
 description: 了解如何通过Adobe Experience Platform Data Distiller丰富实时客户配置文件数据并使用行为分析构建目标受众，从而实现价值最大化。 该资源包括一个示例数据集和一个案例研究，演示如何应用回访间隔、频度、货币(RFM)模型进行客户分段。
 exl-id: f3af4b9a-5024-471a-b740-a52fd226a985
-source-git-commit: 3a8c53a5c5e72231c195ccfab32109ed4971fa8b
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
-source-wordcount: '3743'
+source-wordcount: '3664'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## 先决条件
 
-要执行此用例，您的Adobe Experience Platform实例必须获得[Data Distiller](./overview.md)的许可。 有关更多信息，请与Adobe代表联系。
+要执行此用例，您的Adobe Experience Platform实例必须获得[Data Distiller](./overview.md)的许可。 请联系 Adobe 代表以获取更多信息。
 
 您还需要知道您的&#x200B;**组织的租户ID**，这是执行查询所必需的。 登录Experience Platform时，您的租户ID是URL的第一部分，紧跟在@符号之后。
 
@@ -65,22 +65,22 @@ RFM模型使用三个关键参数根据事务性行为划分客户。
 
 #### 从CSV文件创建数据集 {#create-a-dataset}
 
-在Experience Platform UI中，在左侧导航边栏中选择&#x200B;**[!UICONTROL 数据集]**，然后选择&#x200B;**[!UICONTROL 创建数据集]**。 然后从可用选项中选择&#x200B;**[!UICONTROL 从CSV文件创建数据集]**。
+在Experience Platform UI的左侧导航边栏中选择&#x200B;**[!UICONTROL Datasets]**，然后选择&#x200B;**[!UICONTROL Create dataset]**。 然后从可用选项中选择&#x200B;**[!UICONTROL Create dataset from CSV file]**。
 
-此时将显示[!UICONTROL 配置数据集]面板。 在&#x200B;**[!UICONTROL Name]**&#x200B;字段中，输入数据集名称为“luma_web_data”，然后选择&#x200B;**[!UICONTROL 下一步]**。
+此时会显示[!UICONTROL Configure Dataset]面板。 在&#x200B;**[!UICONTROL Name]**&#x200B;字段中，以“luma_web_data”形式输入数据集名称并选择&#x200B;**[!UICONTROL Next]**。
 
-将显示[!UICONTROL 添加数据]面板。 将CSV文件拖放到&#x200B;**[!UICONTROL 添加数据]**&#x200B;框中，或选择&#x200B;**[!UICONTROL 选择文件]**&#x200B;浏览并上传该文件。
+此时会显示[!UICONTROL Add data]面板。 将CSV文件拖放到&#x200B;**[!UICONTROL Add data]**&#x200B;框中，或选择&#x200B;**[!UICONTROL Choose File]**&#x200B;浏览并上传该文件。
 
 要了解有关此过程的更多信息，请参阅数据集UI指南中的[批次摄取教程](../../ingestion/tutorials/ingest-batch-data.md)和[数据集创建工作流](../../catalog/datasets/user-guide.md#create)。
 
 #### 查看并完成上传 {#review-and-complete-upload}
 
-上传文件后，数据预览将显示在UI底部。 选择&#x200B;**[!UICONTROL 完成]**&#x200B;以完成上载。
+上传文件后，数据预览将显示在UI底部。 选择&#x200B;**[!UICONTROL Finish]**&#x200B;以完成上载。
 
 ![“从CSV文件创建数据集”工作流的“添加数据”部分突出显示了数据预览和“完成”。](../images/data-distiller/top-tips-to-maximize-value/add-data-finish.png)
 
 此时将显示“luma_web_data”数据集的数据集活动视图。 手动上传CSV文件
-已作为批次摄取，并由[!UICONTROL 批次ID]标识。 右侧的面板将表名称显示为`luma_web_data`。
+已作为批次摄取，并由[!UICONTROL Batch ID]标识。 右侧的面板将表名称显示为`luma_web_data`。
 
 >[!TIP]
 >
@@ -88,11 +88,12 @@ RFM模型使用三个关键参数根据事务性行为划分客户。
 
 ![新创建的“luma_web_data”数据集的“数据集活动”选项卡突出显示，该数据集具有表名称、批次ID和“预览数据集”。](../images/data-distiller/top-tips-to-maximize-value/luma_web_data-dataset-details.png)
 
-<!-- ![The "Dataset activity" tab for the newly created "luma_web_data" dataset with the table name, batch ID and "Preview dataset" highlighted.]() 
+<!-- 
+![The "Dataset activity" tab for the newly created "luma_web_data" dataset with the table name, batch ID and "Preview dataset" highlighted.]() 
 My table name is; luma_web_data_20250312_235611_817 Should we explain the suffix? 
 -->
 
-数据处理完毕后，选择右上角的[!UICONTROL 预览数据集]以预览数据集。 这就是数据集预览的显示方式：
+数据处理完毕后，选择右上角的[!UICONTROL Preview dataset]预览数据集。 这就是数据集预览的显示方式：
 
 ![“luma_web_data”数据集的数据集预览。](../images/data-distiller/top-tips-to-maximize-value/luma_web_data-preview.png)
 
@@ -118,7 +119,7 @@ My table name is; luma_web_data_20250312_235611_817 Should we explain the suffix
 
 #### 执行基本探索查询 {#basic-exploration-queries}
 
-在Adobe Experience Platform UI中，选择左侧导航边栏中的&#x200B;**[!UICONTROL 查询]**，然后选择&#x200B;**[!UICONTROL 创建查询]**。 此时将显示“查询编辑器”。
+在Adobe Experience Platform UI中，在左侧导航边栏中选择&#x200B;**[!UICONTROL Queries]**，然后选择&#x200B;**[!UICONTROL Create Query]**。 此时将显示“查询编辑器”。
 
 将以下查询粘贴到编辑器并执行它：
 
@@ -126,7 +127,7 @@ My table name is; luma_web_data_20250312_235611_817 Should we explain the suffix
 SELECT * FROM luma_web_data; 
 ```
 
-查询结果显示在&#x200B;**[!UICONTROL 结果]**&#x200B;选项卡的查询编辑器下方。 若要展开新对话框中的结果，请选择&#x200B;**[!UICONTROL 查看结果]**。 结果如下图所示。
+查询结果显示在&#x200B;**[!UICONTROL Results]**&#x200B;选项卡的查询编辑器下方。 要展开新对话框中的结果，请选择&#x200B;**[!UICONTROL View results]**。 结果如下图所示。
 
 ![基本查询探索结果的“查询结果”对话框。](../images/data-distiller/top-tips-to-maximize-value/basic-query-exploration-results.png)
 
@@ -438,7 +439,7 @@ SELECT * FROM rfm_model_segment;
 
 >[!NOTE]
 >
->“电子邮件”命名空间是Adobe Experience Platform中的[标准身份命名空间](../../identity-service/features/namespaces.md#standard)。 在定义身份字段时，请确保指定适当的命名空间，以促进准确身份解析。&#x200B;AEM
+>“电子邮件”命名空间是Adobe Experience Platform中的[标准身份命名空间](../../identity-service/features/namespaces.md#standard)。 在定义身份字段时，请确保指定适当的命名空间，以促进准确身份解析&#x200B;。
 >
 >有关定义身份字段和使用身份命名空间的更多信息，请参阅[Identity Service文档](../../identity-service/home.md)或[在Adobe Experience Platform UI中定义身份字段指南](../../xdm/ui/fields/identity.md)。
 
@@ -470,11 +471,11 @@ FROM rfm_model_segment;
 
 此查询的结果与本剧本中以前创建的数据集类似，但ID不同。
 
-创建数据集后，导航到&#x200B;**[!UICONTROL 数据集]** > **[!UICONTROL 浏览]** > `adls_rfm_profile`以验证数据集是否为空。
+创建数据集后，导航到&#x200B;**[!UICONTROL Datasets]** > **[!UICONTROL Browse]** > `adls_rfm_profile`以验证数据集是否为空。
 
 ![显示包含“adls_rfm_profile”数据集详细信息的数据集工作区，并突出显示启用配置文件的切换。](../images/data-distiller/top-tips-to-maximize-value/profile-enabled-toggle.png)
 
-您还可以导航到&#x200B;**[!UICONTROL 架构]** > **[!UICONTROL 浏览]** > `adls_rfm_profile`，以查看新创建的数据集的XDM个人资料架构图及其自定义字段组。
+您还可以导航到&#x200B;**[!UICONTROL Schemas]** > **[!UICONTROL Browse]** > `adls_rfm_profile`，查看新创建数据集的XDM个人资料架构图及其自定义字段组。
 
 ![架构画布中显示了带有“adls_rfm_profile”图表的XDM工作区。](../images/data-distiller/top-tips-to-maximize-value/xdm-individual-profile-schema.png)
 
@@ -482,7 +483,7 @@ FROM rfm_model_segment;
 
 接下来，将来自`rfm_model_segment VIEW`的数据插入为实时客户资料启用的`adls_rfm_profile`。
 
-确保`INSERT`语句的`SELECT`查询中的字段顺序与`rfm_model_segment`的结构完全匹配。 此对齐方式确保将`rfm_model_segment`中的值正确插入到目标表中的相应字段中。 源字段和目标字段之间的不匹配可能导致数据不匹配。
+确保`SELECT`语句的`INSERT`查询中的字段顺序与`rfm_model_segment`的结构完全匹配。 此对齐方式确保将`rfm_model_segment`中的值正确插入到目标表中的相应字段中。 源字段和目标字段之间的不匹配可能导致数据不匹配。
 
 >[!NOTE]
 >
@@ -503,30 +504,30 @@ FROM   rfm_model_segment;
 
 #### 计划查询执行
 
-保存SQL后，导航到&#x200B;**[!UICONTROL 模板]**&#x200B;选项卡以查看保存的查询并启动计划过程。 计划查询的方法有两种：
+保存SQL后，导航到&#x200B;**[!UICONTROL Templates]**&#x200B;选项卡以查看保存的查询并启动计划过程。 计划查询的方法有两种：
 
-从右侧边栏中选择&#x200B;**[!UICONTROL 添加计划]**。
+从右侧边栏中选择&#x200B;**[!UICONTROL Add Schedule]**。
 
 ![突出显示了“查询”工作区的“编辑”选项卡和“添加”计划。](../images/data-distiller/top-tips-to-maximize-value/add-schedule-1.png)
 
-或者，选择模板名称下方的&#x200B;**[!UICONTROL 计划]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 添加计划]**。
+或者，选择模板名称下方的&#x200B;**[!UICONTROL Schedules]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL Add Schedule]**。
 
 ![突出显示了“查询”工作区的“计划”选项卡中的“添加计划”。](../images/data-distiller/top-tips-to-maximize-value/add-schedule-2.png)
 
 有关计划查询的详细信息，请参阅[查询计划文档](../ui/query-schedules.md)。
 
-此时将显示[!UICONTROL 计划详细信息]视图。 在此处，输入以下详细信息以配置计划：
+出现[!UICONTROL Schedule details]视图。 在此处，输入以下详细信息以配置计划：
 
-- **[!UICONTROL 执行频率]**： **每周**
-- **[!UICONTROL 执行日]**：**星期一和星期二**
-- **[!UICONTROL 计划执行时间]**： **上午10:10 UTC**
-- **[!UICONTROL 计划期间]**：**2025年3月17日至4月30日**
+- **[!UICONTROL Execution Frequency]**： **每周**
+- **[!UICONTROL Day of Execution]**： **星期一和星期二**
+- **[!UICONTROL Schedule Execution Time]**： **10:10上午UTC**
+- **[!UICONTROL Schedule Period]**：**2025年3月17日至4月30日**
 
-选择&#x200B;**[!UICONTROL 保存]**&#x200B;以确认计划。
+选择&#x200B;**[!UICONTROL Save]**&#x200B;以确认计划。
 
 ![计划详细信息中已配置设置并突出显示“保存”。](../images/data-distiller/top-tips-to-maximize-value/set-schedule.png)
 
-保存计划后，您可以随时导航到&#x200B;**[!UICONTROL 计划查询]**&#x200B;选项卡以监视计划的Data Distiller作业。 有关[查看查询执行状态、错误消息和警报](../ui/monitor-queries.md)的更多详细信息，请参阅监视计划查询文档。
+保存计划后，您可以随时导航到&#x200B;**[!UICONTROL Scheduled Queries]**&#x200B;选项卡以监视计划的Data Distiller作业。 有关[查看查询执行状态、错误消息和警报](../ui/monitor-queries.md)的更多详细信息，请参阅监视计划查询文档。
 
 配置完毕后， SQL查询将在定义的时间间隔内自动运行，确保数据保持最新，无需手动干预。
 
@@ -543,9 +544,9 @@ FROM   rfm_model_segment;
 
 #### 解决方案1：通过Data Distiller的SQL受众 {#data-distiller-sql-audience}
 
-使用`CREATE AUDIENCE AS SELECT`命令定义新受众。 创建的受众保存在数据集中，并在&#x200B;**[!UICONTROL 数据Distiller]**&#x200B;下的&#x200B;**[!UICONTROL 受众]**&#x200B;工作区中注册。
+使用`CREATE AUDIENCE AS SELECT`命令定义新受众。 创建的受众保存在数据集中，并在&#x200B;**[!UICONTROL Audiences]**&#x200B;下的&#x200B;**[!UICONTROL Data Distiller]**&#x200B;工作区中注册。
 
-使用SQL扩展创建的受众自动在[!UICONTROL 受众]工作区的[!UICONTROL Data Distiller]源下注册。 通过[受众门户](../../segmentation/ui/audience-portal.md)，您可以根据需要查看、管理和激活受众。
+使用SQL扩展创建的受众自动在[!UICONTROL Data Distiller]工作区的[!UICONTROL Audiences]源下注册。 通过[受众门户](../../segmentation/ui/audience-portal.md)，您可以根据需要查看、管理和激活受众。
 
 ![显示可用受众的受众门户。](../images/data-distiller/top-tips-to-maximize-value/audiences-workspace-1.png)
 
@@ -646,19 +647,19 @@ DROP AUDIENCE IF EXISTS adls_rfm_audience;
 
 使用RFM属性根据用户的行为和特征划分用户。 此部分将指导您通过Adobe Experience Platform UI使用RFM得分定义受众。
 
-要验证数据是否已加载到Real-Time Customer Profile，请导航到&#x200B;**[!UICONTROL 客户] > [!UICONTROL 配置文件] > [!UICONTROL 浏览]**。 选择&#x200B;**[!UICONTROL 身份命名空间]**&#x200B;作为`Email`并输入`user0076@example.com`。 检查配置文件详细信息，确认它包含预期的RFM属性。
+要验证数据是否已加载到Real-Time Customer Profile，请导航到&#x200B;**[!UICONTROL Customers]> [!UICONTROL Profiles] >[!UICONTROL Browse]**。 选择&#x200B;**[!UICONTROL Identity Namespace]**&#x200B;作为`Email`并输入`user0076@example.com`。 检查配置文件详细信息，确认它包含预期的RFM属性。
 
 ![配置文件工作区显示应用了电子邮件主标识和电子邮件值过滤器的可用配置文件。](../images/data-distiller/top-tips-to-maximize-value/profiles-workspace.png)
 
 ![配置文件属性视图显示特定配置文件的属性。](../images/data-distiller/top-tips-to-maximize-value/profiles-attributes.png)
 
-要浏览现有受众，请从左侧导航面板中选择&#x200B;**[!UICONTROL 受众]**，并确保已选择&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡。 此时将显示沙盒中可用受众的列表。 选择受众会显示其描述、符合条件的规则以及包含的用户档案数。
+要浏览现有受众，请从左侧导航面板中选择&#x200B;**[!UICONTROL Audiences]**，并确保已选择&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡。 此时将显示沙盒中可用受众的列表。 选择受众会显示其描述、符合条件的规则以及包含的用户档案数。
 
-要创建新受众，请选择右上角的&#x200B;**[!UICONTROL 创建受众]**。 此时将显示一个对话框，其中包含两个选项。 选择&#x200B;**[!UICONTROL 生成规则]**，然后选择&#x200B;**[!UICONTROL 创建]**。
+要创建新受众，请选择右上角的&#x200B;**[!UICONTROL Create Audience]**。 此时将显示一个对话框，其中包含两个选项。 依次选择&#x200B;**[!UICONTROL Build Rule]**&#x200B;和&#x200B;**[!UICONTROL Create]**。
 
 ![已选择“生成规则”并突出显示“创建”的“创建受众”对话框。](../images/data-distiller/top-tips-to-maximize-value/create-audience-dialog.png)
 
-受众构成UI提供了对配置文件属性的访问权限。 导航到&#x200B;**[!UICONTROL Attributes] > [!UICONTROL XDM Individual Profile]**&#x200B;以查看可用属性。
+受众构成UI提供了对配置文件属性的访问权限。 导航到&#x200B;**[!UICONTROL Attributes]>[!UICONTROL XDM Individual Profile]**&#x200B;以查看可用属性。
 
 有关使用受众合成的更多详细信息，请参阅[受众合成UI指南](../../segmentation/ui/audience-composition.md)。 有关使用区段生成器的更多详细信息，请参阅[区段生成器用户界面指南](../../segmentation/ui/segment-builder.md)。
 
@@ -672,6 +673,6 @@ DROP AUDIENCE IF EXISTS adls_rfm_audience;
 
 ![在受众合成UI中创建受众。](../images/data-distiller/top-tips-to-maximize-value/drag-and-drop.png)
 
-要结束受众，请选择右上角的&#x200B;**[!UICONTROL 保存并发布]**。 保存后，新创建的受众将显示在[!UICONTROL 受众]工作区中，您可以在该工作区中查看其摘要和符合条件。
+要结束受众，请选择右上角的&#x200B;**[!UICONTROL Save and Publish]**。 保存后，新创建的受众将显示在[!UICONTROL Audiences]工作区中，您可以在其中查看其摘要和资格条件。
 
 使用区段生成器访问派生的RFM属性并设计其他受众。 根据RFM分数激活新创建的SQL受众，并将其发送到任何首选目标，包括Adobe Journey Optimizer。
