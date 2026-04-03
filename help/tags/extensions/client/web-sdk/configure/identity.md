@@ -2,10 +2,10 @@
 title: 身份标识配置设置
 description: 定义标记扩展如何识别访客。
 exl-id: 12e707f4-c37b-4c02-bfec-5ef7b98c2d3b
-source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
+source-git-commit: b292b9243816b1eed7fd3939096ddc30d6be0606
 workflow-type: tm+mt
-source-wordcount: '298'
-ht-degree: 9%
+source-wordcount: '265'
+ht-degree: 10%
 
 ---
 
@@ -35,7 +35,3 @@ ht-degree: 9%
 ## [!UICONTROL Use third-party cookies]
 
 启用此选项后，Web SDK会尝试将用户标识符存储在第三方Cookie中。 如果成功，则在用户跨多个域导航时将用户标识为单个用户，而不是在每个域上将用户标识为单独的用户。 如果启用了此选项，则如果SDK不支持第三方Cookie或用户将其配置为不允许第三方Cookie，则浏览器仍可能无法将用户标识符存储在第三方Cookie中。 在这种情况下，SDK只将标识符存储在第一方域中。 与此复选框等效的JavaScript库为[`thirdPartyCookiesEnabled`](/help/collection/js/commands/configure/thirdpartycookiesenabled.md)。
-
->[!IMPORTANT]
->
->第三方Cookie与Web SDK中的[第一方设备ID](/help/collection/use-cases/identity/first-party-device-ids.md)功能不兼容。 您可以使用第一方设备ID，也可以使用第三方Cookie；您不能同时使用这两项功能。

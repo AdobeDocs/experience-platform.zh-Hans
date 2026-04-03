@@ -2,10 +2,10 @@
 title: defaultconsent
 description: 为Web属性设置默认同意收集方法。
 exl-id: 2a22fa8b-a234-4d3e-9b55-c7482a928fe6
-source-git-commit: 1e272eb18fac2f59f9737756d48947a25573d772
+source-git-commit: bf0bb72777cacd822fd6e887ac3ef71764784214
 workflow-type: tm+mt
-source-wordcount: '514'
-ht-degree: 5%
+source-wordcount: '431'
+ht-degree: 0%
 
 ---
 
@@ -20,7 +20,7 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
->`defaultConsent`值在页面加载之间不持久。 确保每次调用`configure`命令时都设置所需的默认同意。
+>`defaultConsent`值在页面加载之间不持久。 确保每次调用`configure`命令时都设置所需的默认同意。 相反，访客已解决的同意（通过[`setConsent`](../setconsent.md)设置）将保留在Cookie中，并在后续页面加载时自动应用。
 
 ```js
 alloy("configure", {
@@ -40,32 +40,7 @@ alloy("configure", {
 
 ## 将`defaultConsent`与`setConsent`一起使用 {#using-consent}
 
-Web SDK提供了两个互补的同意选项：
-
-* `defaultConsent` （此页面）：确定默认同意首选项。
-* [`setConsent`](../setconsent.md)：捕获访客的同意首选项。
-
-如果同时使用这些设置，则可能会导致数据收集和Cookie设置结果有所不同，具体取决于其配置的值。
-
-请参阅下表，根据同意设置了解何时进行数据收集以及何时设置Cookie。
-
-| `defaultConsent` | `setConsent` | 发生数据收集 | Web SDK设置浏览器Cookie |
-|---------|----------|---------|---------|
-| `in` | `in` | 是 | 是 |
-| `in` | `out` | 否 | 是 |
-| `in` | 未设置 | 是 | 是 |
-| `pending` | `in` | 是 | 是 |
-| `pending` | `out` | 否 | 是 |
-| `pending` | 未设置 | 否 | 否 |
-| `out` | `in` | 是 | 是 |
-| `out` | `out` | 否 | 是 |
-| `out` | 未设置 | 否 | 否 |
-
-有关库设置的Cookie列表，请参阅[Adobe Experience Platform Web SDK Cookie](https://experienceleague.adobe.com/zh-hans/docs/core-services/interface/data-collection/cookies/web-sdk)。
-
->[!NOTE]
->
->即使访客选择退出跟踪，也会设置身份和同意Cookie。 这些Cookie是尊重其数据收集偏好所必需的。
+如果同时使用，`defaultConsent`和`setConsent`会根据其配置的值生成不同的数据收集、Cookie设置和标识结果。 有关完整的交互表，请参阅数据收集[中的](/help/collection/identity/consent.md#how-consent-affects-identity)同意和标识。
 
 ## 基于`gdprApplies`设置默认同意
 

@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；Experience Platform Web SDK；Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: d6b2be2c7f7b5a3b002e565dce8cee8af85ffcc2
+source-git-commit: b292b9243816b1eed7fd3939096ddc30d6be0606
 workflow-type: tm+mt
-source-wordcount: '2751'
+source-wordcount: '2752'
 ht-degree: 2%
 
 ---
@@ -76,7 +76,7 @@ ht-degree: 2%
 **修复和改进**
 
 - 修复了[Media Analytics跟踪器](commands/getmediaanalyticstracker.md)中的一个错误，该错误导致媒体对象的`length`属性错误地接受无效数据类型。
-- 改进了[身份管理](../use-cases/identity/id-overview.md)错误处理，以便在身份查找失败时正确处理promise拒绝。
+- 改进了[身份管理](../identity/overview.md)错误处理，以便在身份查找失败时正确处理promise拒绝。
 - 解决了包含HTML内容项的个性化内容无法呈现的问题，该问题导致与缺少`renderStatusHandler`相关的错误。
 - 修复了Activity Map [URL集合](commands/configure/clickcollectionenabled.md)以正确处理非HTTP URL。
 
@@ -147,7 +147,7 @@ ht-degree: 2%
 
 **新增功能**
 
-- 在[getIdentity](/help/collection/use-cases/identity/id-overview.md)命令中添加了对请求[核心ID](commands/getidentity.md)的支持。
+- 在[getIdentity](/help/collection/identity/overview.md#core-id-and-third-party-identity)命令中添加了对请求[核心ID](commands/getidentity.md)的支持。
 
 **修复和改进**
 
@@ -296,7 +296,7 @@ ht-degree: 2%
 
 **新增功能**
 
-- 现在，通过在移动应用程序和移动Web内容之间以及跨域共享访客ID，您可以更准确地提供个性化体验。 有关详细信息，请参阅[专用文档](../use-cases/identity/id-sharing.md)。
+- 现在，通过在移动应用程序和移动Web内容之间以及跨域共享访客ID，您可以更准确地提供个性化体验。 请参阅数据收集中的[标识](../identity/overview.md)以了解详情。
 - 您现在可以将[!DNL Adobe Target]中的一系列建议渲染或执行到单页应用程序中，而无需增加Analytics量度。 这减少了报告错误，并提高了分析准确性。
 - 向`getLibraryInfo`命令添加了其他信息，包括可用命令和实例的最终配置。
 

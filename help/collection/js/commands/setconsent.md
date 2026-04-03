@@ -2,10 +2,10 @@
 title: setConsent
 description: 用于每个页面，以跟踪用户的同意首选项。
 exl-id: d01a6ef1-4fa7-4a60-a3a1-19568b4e0d23
-source-git-commit: 66105ca19ff1c75f1185b08b70634b7d4a6fd639
+source-git-commit: bf0bb72777cacd822fd6e887ac3ef71764784214
 workflow-type: tm+mt
-source-wordcount: '1117'
-ht-degree: 2%
+source-wordcount: '1042'
+ht-degree: 0%
 
 ---
 
@@ -22,7 +22,7 @@ Web SDK支持以下标准：
    1. 体验事件架构包含[IAB TCF 2.0同意字段组](/help/xdm/field-groups/event/iab.md)。
    1. 您将IAB同意信息包含在事件[XDM对象](sendevent/xdm.md)中。 在发送事件数据时，Web SDK不会自动包含同意信息。
 
-使用此命令时，Web SDK会将用户的首选项写入[`kndctr_<orgId>_consent`](https://experienceleague.adobe.com/zh-hans/docs/core-services/interface/data-collection/cookies/web-sdk) Cookie。 无论访客的同意首选项如何，都会设置此Cookie，因为它存储该访客的同意首选项。 下次用户在浏览器中加载您的网站时，SDK将检索这些保留的首选项，以确定是否可将事件发送到Adobe。
+使用此命令时，Web SDK会将用户的首选项写入[`kndctr_<orgId>_consent`](https://experienceleague.adobe.com/en/docs/core-services/interface/data-collection/cookies/web-sdk) Cookie。 无论访客的同意首选项如何，都会设置此Cookie，因为它存储该访客的同意首选项。 下次用户在浏览器中加载您的网站时，SDK将检索这些保留的首选项，以确定是否可将事件发送到Adobe。
 
 Adobe建议您将任何同意对话框首选项与Web SDK同意分开存储。 Web SDK不提供检索同意的方法。 为确保用户首选项与SDK保持同步，您可以在每次加载页面时调用`setConsent`命令。 Web SDK仅在同意更改时进行服务器调用。
 
@@ -32,26 +32,7 @@ Adobe建议您将任何同意对话框首选项与Web SDK同意分开存储。 W
 
 ## 将`defaultConsent`与`setConsent`一起使用 {#using-consent}
 
-Web SDK提供了两个互补的同意配置命令：
-
-* [`defaultConsent`](configure/defaultconsent.md)：此命令在调用`setConsent`之前自动设置访客的默认同意首选项。
-* `setConsent` （当前页面）：此命令显式设置访客的同意首选项。
-
-如果同时使用这些设置，则可能会导致数据收集和Cookie设置结果有所不同，具体取决于其配置的值：
-
-| `defaultConsent` | `setConsent` | 发生数据收集 | Web SDK设置浏览器Cookie |
-| --- | --- | --- | --- |
-| `in` | `in` | 是 | 是 |
-| `in` | `out` | 否 | 是 |
-| `in` | 未设置 | 是 | 是 |
-| `pending` | `in` | 是 | 是 |
-| `pending` | `out` | 否 | 是 |
-| `pending` | 未设置 | 否 | 否 |
-| `out` | `in` | 是 | 是 |
-| `out` | `out` | 否 | 是 |
-| `out` | 未设置 | 否 | 否 |
-
-有关可设置的Cookie的完整列表，请参阅核心服务指南中的[Adobe Experience Platform Web SDK Cookie](https://experienceleague.adobe.com/zh-hans/docs/core-services/interface/data-collection/cookies/web-sdk)。
+如果同时使用，`defaultConsent`和`setConsent`会根据其配置的值生成不同的数据收集、Cookie设置和标识结果。 有关完整的交互表，请参阅数据收集[中的](/help/collection/identity/consent.md#how-consent-affects-identity)同意和标识。
 
 ## 使用`setConsent`命令
 
