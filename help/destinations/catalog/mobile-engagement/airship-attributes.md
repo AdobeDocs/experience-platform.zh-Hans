@@ -3,7 +3,7 @@ keywords: 飞艇属性；飞艇目标
 title: 飞艇属性连接
 description: 将Adobe受众数据作为受众属性无缝传递到飞艇，以便在飞艇中进行定位。
 exl-id: bfc1b52f-2d68-40d6-9052-c2ee1e877961
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1121'
 ht-degree: 3%
@@ -79,7 +79,7 @@ ht-degree: 3%
 
 ## 生成持有者令牌 {#bearer-token}
 
-转到&#x200B;**[!UICONTROL Settings]**&#x200B;飞艇仪表板&#x200B;**[!UICONTROL APIs & Integrations]**&#x200B;中的[&#x200B; &#39;&#39; &#x200B;](https://go.airship.com)，然后在左侧菜单中选择&#x200B;**[!UICONTROL Tokens]**。
+转到&#x200B;**[!UICONTROL Settings]**&#x200B;飞艇仪表板&#x200B;**[!UICONTROL APIs & Integrations]**&#x200B;中的[ &#39;&#39; ](https://go.airship.com)，然后在左侧菜单中选择&#x200B;**[!UICONTROL Tokens]**。
 
 单击 **[!UICONTROL Create Token]**。
 
