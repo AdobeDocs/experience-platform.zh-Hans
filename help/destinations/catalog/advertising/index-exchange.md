@@ -3,7 +3,7 @@ title: 索引交换
 description: 连接到Index Exchange （索引）并激活您的数据，以便您的受众区段可以通过在索引UI中创建的交易定位。
 last-substantial-update: 2026-01-27T00:00:00Z
 exl-id: 6d2a8553-5e8c-4eeb-ac25-5e4c2bdc5758
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1202'
 ht-degree: 3%
@@ -89,7 +89,7 @@ ht-degree: 3%
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
-| --------- | ---------- | --------- | 
+| --------- | ---------- | --------- |
 | 导出类型 | **[!UICONTROL Segment export]** | 使用[!DNL Index Exchange]目标中使用的标识符（IDFA、GAID或其他）导出区段（受众）的所有成员。 |
 | 导出频率 | **[!UICONTROL Batch]** | 以3、6、8、12或24小时的时间间隔将文件导出到下游平台。 阅读有关[基于批处理文件的目标](/help/destinations/destination-types.md#file-based)的详细信息。 |
 
@@ -131,7 +131,7 @@ ht-degree: 3%
 ### 启用警报 {#enable-alerts}
 
 您可以启用警报，以接收有关此目标数据流状态的通知。 从列表中选择一个或多个警报以订阅数据流的状态通知。 有关详细信息，请参阅[使用UI订阅目标警报指南](../../ui/alerts.md)。
-完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
+完成提供目标连接的详细信息后，选择**[!UICONTROL Next]**。
 
 ## 激活此目标的受众 {#activate}
 
