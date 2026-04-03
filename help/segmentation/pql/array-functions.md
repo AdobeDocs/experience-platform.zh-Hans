@@ -3,10 +3,10 @@ solution: Experience Platform
 title: 数组、列表和设置PQL函数
 description: Profile Query Language (PQL)提供了一些功能，可简化与数组、列表和字符串的交互。
 exl-id: 5ff2b066-8857-4cde-9932-c8bf09e273d3
-source-git-commit: c4d034a102c33fda81ff27bee73a8167e9896e62
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '820'
-ht-degree: 4%
+ht-degree: 3%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 4%
 
 [!DNL Profile Query Language] (PQL)提供了一些功能，使与数组、列表和字符串的交互更容易。 有关其他PQL函数的详细信息，请参阅[[!DNL Profile Query Language] 概述](./overview.md)。
 
-## In
+## 在
 
 `in`函数用于确定一个项是数组的成员，还是作为布尔值列表的成员。
 
@@ -32,7 +32,7 @@ ht-degree: 4%
 person.birthMonth in [3, 6, 9]
 ```
 
-## Not in
+## 不在
 
 `notIn`函数用于确定一个项是否不是作为布尔值的数组或列表的成员。
 
@@ -54,7 +54,7 @@ person.birthMonth in [3, 6, 9]
 person.birthMonth notIn [3, 6, 9]
 ```
 
-## Intersects
+## 相交
 
 `intersects`函数用于确定两个数组或列表是否至少有一个公共成员作为布尔值。
 
@@ -90,7 +90,7 @@ person.favoriteColors.intersects(["red", "blue", "green"])
 person1.favoriteColors.intersection(person2.favoriteColors) = ["red", "blue", "green"]
 ```
 
-## Subset of
+## 子集
 
 `subsetOf`函数用于确定一个特定数组（数组A）是否是另一个数组（数组B）的子集。 换句话说，数组A中的所有元素都是数组B的元素作为布尔值。
 
@@ -108,7 +108,7 @@ person1.favoriteColors.intersection(person2.favoriteColors) = ["red", "blue", "g
 person.favoriteCities.subsetOf(person.visitedCities)
 ```
 
-## Superset of
+## 超集
 
 `supersetOf`函数用于确定一个特定数组（数组A）是否是另一个数组（数组B）的超集。 换句话说，该数组A包含数组B中的所有元素作为布尔值。
 
@@ -126,7 +126,7 @@ person.favoriteCities.subsetOf(person.visitedCities)
 person.eatenFoods.supersetOf(["sushi", "pizza"])
 ```
 
-## Includes
+## 包括
 
 `includes`函数用于确定一个数组或列表是否包含作为布尔值的给定项。
 
@@ -185,7 +185,7 @@ person.orders.storeId.distinct().count() > 1
 xEvent[type="order"].groupBy(storeId)
 ```
 
-## 筛选条件
+## 过滤器
 
 `filter`函数用于根据作为数组或列表的表达式筛选数组或列表，具体取决于输入。
 
@@ -261,7 +261,7 @@ orders.topN(price, 5)
 ```
 
 | 参数 | 描述 |
-| --------- | ----------- | 
+| --------- | ----------- |
 | `{ARRAY}` | 要排序的数组或列表。 |
 | `{VALUE}` | 要对数组或列表进行排序的属性。 |
 | `{AMOUNT}` | 要返回的项目数。 |
@@ -274,7 +274,7 @@ orders.topN(price, 5)
 orders.bottomN(price, 5)
 ```
 
-## First item
+## 第一个项目
 
 `head`函数用于将数组或列表中的第一个项作为对象返回。
 
@@ -286,7 +286,7 @@ orders.bottomN(price, 5)
 
 **示例**
 
-以下PQL查询返回价格最高的前五位订单中的第一位。 有关`topN`函数的更多信息，请参见[数组](#first-n)中的第一个`n`。
+以下PQL查询返回价格最高的前五位订单中的第一位。 有关`topN`函数的更多信息，请参见[数组`n`中的第一个](#first-n)。
 
 ```sql
 orders.topN(price, 5).head()
