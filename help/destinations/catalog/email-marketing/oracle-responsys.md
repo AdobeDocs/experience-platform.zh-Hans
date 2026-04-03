@@ -3,7 +3,7 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；orac
 title: Oracle Responsys连接
 description: Responsys是Oracle提供的用于跨渠道营销活动的企业电子邮件营销工具，用于个性化电子邮件、移动设备、显示和社交之间的交互。
 exl-id: 70f2f601-afee-4315-bf7a-ed2c92397ebe
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '778'
 ht-degree: 4%
