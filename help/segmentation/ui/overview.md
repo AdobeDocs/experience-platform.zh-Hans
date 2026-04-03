@@ -3,10 +3,10 @@ solution: Experience Platform
 title: 分段服务UI指南
 description: 了解如何在Adobe Experience Platform UI中创建和管理受众和区段定义。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
-source-wordcount: '1046'
-ht-degree: 2%
+source-wordcount: '1028'
+ht-degree: 1%
 
 ---
 
@@ -31,15 +31,15 @@ ht-degree: 2%
 
 ## 概述
 
-在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 受众]**&#x200B;以打开显示[!UICONTROL 受众]仪表板的&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL Audiences]**&#x200B;以打开显示&#x200B;**[!UICONTROL Overview]**&#x200B;仪表板的[!UICONTROL Audiences]选项卡。
 
 >[!NOTE]
 >
->如果您的组织是Experience Platform的新用户，并且尚未创建活动配置文件数据集或合并策略，则[!UICONTROL 受众]仪表板不可见。 相反，[!UICONTROL 概述]选项卡会显示链接和文档，以帮助您开始使用受众。
+>如果您的组织是Experience Platform的新用户，并且尚未创建活动配置文件数据集或合并策略，则[!UICONTROL Audiences]仪表板不可见。 相反，[!UICONTROL Overview]选项卡显示链接和文档以帮助您开始使用受众。
 
-### [!UICONTROL 受众]仪表板 {#segments-dashboard}
+### [!UICONTROL Audiences]仪表板 {#segments-dashboard}
 
-**[!UICONTROL 受众]**&#x200B;仪表板概述了与贵组织的受众数据相关的关键量度。
+**[!UICONTROL Audiences]**&#x200B;仪表板概述了与贵组织的受众数据相关的关键量度。
 
 若要了解详细信息，请访问[受众仪表板指南](../../dashboards/guides/audiences.md)。
 
@@ -47,7 +47,7 @@ ht-degree: 2%
 
 ## 浏览 {#browse}
 
-选择&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡以查看受众门户。 Audience Portal提供了属于您的组织和沙盒的所有受众的列表，并包括配置文件计数、来源、创建日期、上次修改日期、标记和划分等详细信息。
+选择&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡以查看受众门户。 Audience Portal提供了属于您的组织和沙盒的所有受众的列表，并包括配置文件计数、来源、创建日期、上次修改日期、标记和划分等详细信息。
 
 此外，通过受众门户，您可以使用区段生成器或受众构成创建新受众，以及将外部生成的受众导入Experience Platform。
 
@@ -55,7 +55,7 @@ ht-degree: 2%
 
 ## 构成 {#compositions}
 
-选择&#x200B;**[!UICONTROL 合成]**&#x200B;选项卡可查看通过受众合成为您的组织生成的所有受众的列表。
+选择&#x200B;**[!UICONTROL Compositions]**&#x200B;选项卡可查看通过受众构成为您的组织生成的所有受众的列表。
 
 ![在组织的受众组合中创建的受众列表。](../images/ui/overview/compositions.png)
 
@@ -78,15 +78,15 @@ ht-degree: 2%
 ![可为“合成”节显示的属性。](../images/ui/overview/compositions-customize-table.png)
 
 | 字段 | 描述 |
-| ----- | ----------- | 
-| [!UICONTROL 名称] | 受众的名称。 |
-| [!UICONTROL 状态] | 受众的状态。 此字段的可能值包括`Draft`、`Inactive`和`Published`。 |
-| [!UICONTROL 已创建] | 创建受众的时间和日期。 |
-| [!UICONTROL 创建者] | 创建受众的人员姓名。 |
-| [!UICONTROL 已更新] | 上次更新受众的时间和日期。 |
-| [!UICONTROL 更新者] | 上次更新受众的人员姓名。 |
+| ----- | ----------- |
+| [!UICONTROL Name] | 受众的名称。 |
+| [!UICONTROL Status] | 受众的状态。 此字段的可能值包括`Draft`、`Inactive`和`Published`。 |
+| [!UICONTROL Created] | 创建受众的时间和日期。 |
+| [!UICONTROL Created by] | 创建受众的人员姓名。 |
+| [!UICONTROL Updated] | 上次更新受众的时间和日期。 |
+| [!UICONTROL Updated by] | 上次更新受众的人员姓名。 |
 
-要查看受众的构成方式，请在[!UICONTROL 受众]选项卡中选择受众的名称。
+要查看受众的构成方式，请在[!UICONTROL Audiences]选项卡中选择受众的名称。
 
 此时将显示“受众构成”页面，其中包含构成受众的构建基块。 有关如何使用受众合成的更多详细信息，请参阅[受众合成UI指南](./audience-composition.md)。
 
@@ -104,7 +104,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->为了使流式分段正常工作，您需要为组织启用计划分段。 有关启用计划分段的详细信息，请参阅本用户指南[&#128279;](#scheduled-segmentation)中的流式分段一节。
+>为了使流式分段正常工作，您需要为组织启用计划分段。 有关启用计划分段的详细信息，请参阅本用户指南[中的](#scheduled-segmentation)流式分段一节。
 
 ## 边缘分段 {#edge-segmentation}
 
