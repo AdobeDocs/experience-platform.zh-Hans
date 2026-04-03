@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform；主页；热门主题；映射csv；映射csv文件；将csv文件映射到xdm；将csv映射到xdm；ui指南；映射器；映射；数据准备；数据准备；准备数据；
+keywords: Experience Platform；主页；热门主题；映射csv；映射csv文件；将csv文件映射到xdm；将csv映射到xdm；ui指南；映射器；映射；数据准备；数据准备；
 solution: Experience Platform
 title: 使用数据准备处理数据格式
 description: 本文档概述了数据准备中处理不同数据类型的方式。
 exl-id: 4ad253b7-3f83-48cd-9c46-8b5ba627c09e
-source-git-commit: a49140853124f4f7beee87a739c8e670838947f4
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
-source-wordcount: '626'
-ht-degree: 8%
+source-wordcount: '624'
+ht-degree: 10%
 
 ---
 
@@ -95,7 +95,7 @@ date({DATE}, {FORMAT}, {DEFAULT_DATE})
 | F | 一个月中星期几 | 数值 | 2 |
 | E | 一周中某天的名称 | 文本 | 星期二；星期二 |
 | u | 星期几（数字）。 1表示星期一， ...， 7表示星期日 | 数值 | 1 |
-| 一个 | AM/PM标记 | 文本 | 下午 |
+| a | AM/PM标记 | 文本 | 下午 |
 | H | 一天中的小时(0-23) | 数值 | 0 |
 | k | 一天中的小时(1-24) | 数值 | 24 |
 | K | 上午/下午的小时(0-11) | 数值 | 0 |
