@@ -5,7 +5,7 @@ title: 使用数据访问API查看数据集数据
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform中的数据访问API查找、访问和下载存储在数据集中的数据。 本文档介绍数据访问API的一些独特功能，例如分页和部分下载。
 exl-id: 1c1e5549-d085-41d5-b2c8-990876000f08
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1365'
 ht-degree: 9%
@@ -24,7 +24,7 @@ ht-degree: 9%
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) [!DNL Experience Platform]。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
 
 ### 收集所需标头的值
 
@@ -118,7 +118,7 @@ GET /batches?createdAfter={START_TIMESTAMP}&dataSet={DATASET_ID}&sort={SORT_BY}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{START_TIMESTAMP}` | 开始时间戳，以毫秒为单位(例如，1514836799000)。 |
+| `{START_TIMESTAMP}` | 开始时间戳，以毫秒为单位（例如，1514836799000）。 |
 | `{DATASET_ID}` | 数据集标识符。 |
 | `{SORT_BY}` | 按提供的值对响应进行排序。 例如，`desc:created`按创建日期降序排列对象。 |
 
@@ -348,7 +348,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb
 ```
 
 | 属性 | 描述 |
-| -------- | ----------- | 
+| -------- | ----------- |
 | `data._links.self.href` | 用于下载关联文件的URL。 |
 
 此响应返回包含两个单独文件的目录，ID为`{FILE_ID_2}`和`{FILE_ID_3}`。 在此方案中，必须遵循每个文件的URL才能访问该文件。
@@ -443,7 +443,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb
 ```
 
 | 属性 | 描述 |
-| -------- | ----------- | 
+| -------- | ----------- |
 | `Range: bytes=0-99` | 指定要下载的字节范围。 如果未指定，则API下载整个文件。 在此示例中，下载前100个字节。 |
 
 **响应**
