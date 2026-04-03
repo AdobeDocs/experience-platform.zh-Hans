@@ -5,14 +5,14 @@ badgePrivateBeta: label="Private Beta" type="Informative"
 hide: true
 hidefromtoc: true
 exl-id: a796b58b-b36f-4277-870b-0d3939af8061
-source-git-commit: 6d1745b93d2ad7cf6ef96510bd5128a43de9ef03
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
-source-wordcount: '554'
+source-wordcount: '520'
 ht-degree: 3%
 
 ---
 
-# [!UICONTROL 医疗保健]数据模型V2
+# [!UICONTROL Healthcare]数据模型V2
 
 ## 字段组和类 {#field-groups}
 
@@ -34,27 +34,27 @@ ht-degree: 3%
 
 | 名称 | 描述 |
 | --- | --- |
-| [[!UICONTROL 地址]](./data-types/address.md) | 描述使用邮政惯例表示的地址（与GPS或其他位置定义格式不同）。 |
-| [[!UICONTROL 批注]](./data-types/annotation.md) | 归因于作者的文本节点。 |
-| [[!UICONTROL 可用性]](./data-types/availability.md) | 项目的可用性数据。 |
-| [[!UICONTROL 可编码的概念]](./data-types/codeable-concept.md) | 从一个资源到另一个资源的引用。 |
-| [[!UICONTROL 可编码引用]](./data-types/codeable-reference.md) | 对资源或概念的引用。 |
-| [[!UICONTROL 编码]](./data-types/coding.md) | 对术语系统定义的代码的引用。 |
-| [[!UICONTROL 联系点]](./data-types/contact-point.md) | 人员的联系详细信息。 |
-| [[!UICONTROL 剂量]](./data-types/dosage.md) | 服药方式或应服药方式。 |
-| [[!UICONTROL 持续时间]](./data-types/duration.md) | 时间长度。 |
-| [[!UICONTROL 扩展的联系人详细信息]](./data-types/extended-contact-detail.md) | 扩展联系人的信息。 |
-| [[!UICONTROL 人名]](./data-types/human-name.md) | 有关人类或其他生命实体的名称的信息。 |
-| [[!UICONTROL 标识符]](./data-types/identifier.md) | 用于计算的标识符。 |
-| [[!UICONTROL 钱]](./data-types/money.md) | 以某种公认货币表示的经济效用金额。 |
-| [[!UICONTROL 周期]](./data-types/period.md) | 由开始和结束日期/时间定义的时间段。 |
-| [[!UICONTROL 人员]](./data-types/person.md) | 有关一般人员记录的信息。 |
-| [[!UICONTROL 数量]](./data-types/quantity.md) | 可衡量的金额。 |
+| [[!UICONTROL Address]](./data-types/address.md) | 描述使用邮政惯例表示的地址（与GPS或其他位置定义格式不同）。 |
+| [[!UICONTROL Annotation]](./data-types/annotation.md) | 归因于作者的文本节点。 |
+| [[!UICONTROL Availability]](./data-types/availability.md) | 项目的可用性数据。 |
+| [[!UICONTROL Codeable Concept]](./data-types/codeable-concept.md) | 从一个资源到另一个资源的引用。 |
+| [[!UICONTROL Codeable Reference]](./data-types/codeable-reference.md) | 对资源或概念的引用。 |
+| [[!UICONTROL Coding]](./data-types/coding.md) | 对术语系统定义的代码的引用。 |
+| [[!UICONTROL Contact Point]](./data-types/contact-point.md) | 人员的联系详细信息。 |
+| [[!UICONTROL Dosage]](./data-types/dosage.md) | 服药方式或应服药方式。 |
+| [[!UICONTROL Duration]](./data-types/duration.md) | 时间长度。 |
+| [[!UICONTROL Extended Contact Details]](./data-types/extended-contact-detail.md) | 扩展联系人的信息。 |
+| [[!UICONTROL Human Name]](./data-types/human-name.md) | 有关人类或其他生命实体的名称的信息。 |
+| [[!UICONTROL Identifier]](./data-types/identifier.md) | 用于计算的标识符。 |
+| [[!UICONTROL Money]](./data-types/money.md) | 以某种公认货币表示的经济效用金额。 |
+| [[!UICONTROL Period]](./data-types/period.md) | 由开始和结束日期/时间定义的时间段。 |
+| [[!UICONTROL Person]](./data-types/person.md) | 有关一般人员记录的信息。 |
+| [[!UICONTROL Quantity]](./data-types/quantity.md) | 可衡量的金额。 |
 | [[!UICONTROL Range]](./data-types/range.md) | 由低值和高值绑定的一组值。 |
-| [[!UICONTROL 比率]](./data-types/ratio.md) | 通过分子和分母两个[[!UICONTROL 数量]](./data-types/quantity.md)值的比率。 |
-| [[!UICONTROL 引用]](./data-types/reference.md) | 从一个资源到另一个资源的引用。 |
-| [[!UICONTROL 重复]](./data-types/repeat.md) | 描述事件计划时间的一组规则。 |
-| [[!UICONTROL 简单数量]](./data-types/simple-quantity.md) | 可衡量的金额。 |
-| [[!UICONTROL 计时]](./data-types/timing.md) | 有关可能发生多次的事件的信息。 |
-| [[!UICONTROL 虚拟服务详细信息]](./data-types/virtual-service-detail.md) | 虚拟服务联系人详细信息。 |
+| [[!UICONTROL Ratio]](./data-types/ratio.md) | 通过分子和分母的两个[[!UICONTROL Quantity]](./data-types/quantity.md)值的比率。 |
+| [[!UICONTROL Reference]](./data-types/reference.md) | 从一个资源到另一个资源的引用。 |
+| [[!UICONTROL Repeat]](./data-types/repeat.md) | 描述事件计划时间的一组规则。 |
+| [[!UICONTROL Simple Quantity]](./data-types/simple-quantity.md) | 可衡量的金额。 |
+| [[!UICONTROL Timing]](./data-types/timing.md) | 有关可能发生多次的事件的信息。 |
+| [[!UICONTROL Virtual Service Detail]](./data-types/virtual-service-detail.md) | 虚拟服务联系人详细信息。 |
 
