@@ -4,7 +4,7 @@ title: 使用流服务API将受众激活到基于文件的目标
 description: 了解如何使用流服务API将包含合格配置文件的文件导出到云存储目标。
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '4933'
 ht-degree: 4%
@@ -63,7 +63,7 @@ If you were already using the Flow Service API to export profiles to the Amazon 
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) [!DNL Experience Platform]。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
 
 ### 收集必需标题和可选标题的值 {#gather-values-headers}
 
@@ -4066,7 +4066,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
 
 **响应**
 
-+++创建输出架构 — 响应
++++ 创建输出架构 — 响应
 
 ```json
 {
@@ -4372,6 +4372,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
 
 响应中的ID表示您创建的输入架构的唯一标识符。 从响应中复制ID，因为您将在后续步骤中重复使用它。
 
++++
+
 >[!ENDSHADEBOX]
 
 ### 创建映射集 {#create-mapping-set}
@@ -4382,7 +4384,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
 
 **请求**
 
-+++创建映射集 — 请求
++++ 创建映射集 — 请求
 
 >[!IMPORTANT]
 >
@@ -4775,7 +4777,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 **请求**
 
-+++将文件清单添加到现有目标连接 — 请求
++++ 将文件清单添加到现有目标连接 — 请求
 
 ```shell
 curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flowservice/targetConnections/{TARGET_CONNECTION_ID}' \
@@ -4795,6 +4797,8 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 ]'
 ```
 
++++
+
 >[!ENDSHADEBOX]
 
 ## 验证数据流（获取数据流运行） {#get-dataflow-runs}
@@ -4807,7 +4811,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 **请求**
 
-+++获取数据流运行 — 请求
++++ 获取数据流运行 — 请求
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/foundation/flowservice/runs?property=flowId==eb54b3b3-3949-4f12-89c8-64eafaba858f' \
@@ -4823,7 +4827,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **响应**
 
-+++获取数据流运行 — 响应
++++ 获取数据流运行 — 响应
 
 ```json
 {
