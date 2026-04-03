@@ -2,7 +2,7 @@
 title: LiveRamp — 分发连接
 description: 了解如何使用LiveRamp - Distribution连接器编排和激活之前载入LiveRamp的受众以及下游广告目标。
 exl-id: 1b11a743-1ef9-4b01-90ef-cc072bc03c91
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '2807'
 ht-degree: 37%
@@ -126,7 +126,7 @@ ht-degree: 37%
 
 ## 目标特定的设置 {#destination-settings}
 
-[支持的每个目标](#supported-destinations) [!DNL LiveRamp - Distribution]都需要您填写特定的配置选项。
+[支持的每个目标](#supported-destinations)[!DNL LiveRamp - Distribution]都需要您填写特定的配置选项。
 
 有关如何配置每个目标的详细指导，请参阅以下部分。
 
