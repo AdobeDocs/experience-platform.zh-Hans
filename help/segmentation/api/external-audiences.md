@@ -2,7 +2,7 @@
 title: 外部受众API端点
 description: 了解如何使用外部受众API从Adobe Experience Platform创建、更新、激活和删除外部受众。
 exl-id: eaa83933-d301-48cb-8a4d-dfeba059bae1
-source-git-commit: b024571a33c8c9313e0814c090e496a8ffa98009
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '2622'
 ht-degree: 4%
@@ -558,7 +558,8 @@ curl -X GET https://platform.adobe.io/data/core/ais/external-audience/60ccea95-1
 GET /external-audience/{AUDIENCE_ID}/runs
 ```
 
-<!-- **Query parameters**
+<!-- 
+**Query parameters**
 
 +++ A list of available query parameters. 
 
@@ -568,7 +569,8 @@ GET /external-audience/{AUDIENCE_ID}/runs
 | `sortBy` | The order in which the returned items are sorted. You can sort by either `name` or by `createdAt`. Additionally, you can add a `-` sign to sort by **descending** order instead of **ascending** order. By default, the items are sorted by `createdAt` in descending order. | `sortBy=name` |
 | `property` | A filter to determine which audience ingestion runs are displayed. You can filter on the following properties: <ul><li>`name`: Lets you filter by the audience name. If using this property, you can compare by using `=`, `!=`, `=contains`, or `!=contains`. </li><li>`createdAt`: Lets you filter by the ingestion time. If using this property, you can compare by using `>=` or `<=`.</li><li>`status`: Lets you filter by the ingestion run's status. If using this property, you can compare by using `=`, `!=`, `=contains`, or `!=contains`. </li></ul>  | `property=createdAt<1683669114845`<br/>`property=name=demo_audience`<br/>`property=status=SUCCESS` |
 
-+++ -->
++++ 
+-->
 
 **请求**
 
@@ -621,7 +623,8 @@ curl -X GET https://platform.adobe.io/data/core/ais/external-audience/60ccea95-1
 }
 ```
 
-<!-- ,
+<!--
+ ,
     "_page": {
         "limit": 20,
         "count": 2,
@@ -629,7 +632,8 @@ curl -X GET https://platform.adobe.io/data/core/ais/external-audience/60ccea95-1
     }
     
 | `_page` | Object | An object that contains the pagination information about the list of results. |
-     -->
+   
+-->
 
 | 属性 | 类型 | 描述 |
 | -------- | ---- | ----------- |
