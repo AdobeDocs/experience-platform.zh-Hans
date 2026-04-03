@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用API管理数据集的数据使用标签
 description: 数据集服务API允许您应用和编辑数据集的使用标签。 它是Adobe Experience Platform数据目录功能的一部分，但与管理数据集元数据的目录服务API不同。
 exl-id: 24a8d870-eb81-4255-8e47-09ae7ad7a721
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1340'
 ht-degree: 1%
@@ -19,7 +19,7 @@ ht-degree: 1%
 >
 >仅数据管理用例支持在数据集级别应用标签。 如果尝试创建数据的访问策略，则必须[将标签应用于数据集所基于的架构](../../xdm/tutorials/labels.md)。 有关详细信息，请参阅[基于属性的访问控制](../../access-control/abac/overview.md)的概述。
 
-本文档介绍如何使用[!DNL Dataset Service API]管理数据集和字段的标签。 有关如何使用API调用管理数据使用标签本身的步骤，请参阅[!DNL Policy Service API]的[标签端点指南](../api/labels.md)。
+本文档介绍如何使用[!DNL Dataset Service API]管理数据集和字段的标签。 有关如何使用API调用管理数据使用标签本身的步骤，请参阅[的](../api/labels.md)标签端点指南[!DNL Policy Service API]。
 
 ## 快速入门
 
@@ -105,7 +105,7 @@ PUT /datasets/{DATASET_ID}/labels
 >
 >如果相关数据集当前存在标签，则只能通过PUT请求添加新标签，该请求需要`If-Match`标头。 将标签添加到数据集后，以后需要最新的`etag`值来更新或删除标签<br>在执行PUT方法之前，必须对数据集标签执行GET请求。 确保仅更新请求中要修改的特定字段，而其余字段保持不变。 此外，确保PUT调用维护与GET调用相同的父实体。 任何差异都会导致客户出错。
 
-要检索最新版本的dataset-label实体，请向`/datasets/{DATASET_ID}/labels`端点发出[GET请求](#look-up)。 当前值在`etag`标头下的响应中返回。 更新现有数据集标签时，最佳实践是先对数据集执行查找请求，以获取其最新的`etag`值，然后再在后续PUT请求的`If-Match`标头中使用该值。
+要检索最新版本的dataset-label实体，请向[端点发出](#look-up)GET请求`/datasets/{DATASET_ID}/labels`。 当前值在`etag`标头下的响应中返回。 更新现有数据集标签时，最佳实践是先对数据集执行查找请求，以获取其最新的`etag`值，然后再在后续PUT请求的`If-Match`标头中使用该值。
 
 ```shell
 curl -X POST \
@@ -185,7 +185,7 @@ PUT /datasets/{DATASET_ID}/labels
 
 应用PUT操作的以下数据集的properties/person/properties/address字段上具有C1 optionalLabel，而/properties/person/properties/name/properties/fullName字段上具有C1， C2 optionalLabels。 在put操作之后，第一字段将没有标签（C1标签被删除），而第二字段将只有C1标签（C2标签被删除）
 
-在以下示例场景中，PUT请求用于删除添加到各个字段的标签。 在发出请求之前，`fullName`字段已应用`C1`和`C2`标签，并且`address`字段已应用`C1`标签。 PUT请求使用`optionalLabels.labels`参数覆盖具有`C1`标签的`fullName`字段中的现有标签`C1, C2`标签。 该请求还会使用一组空的字段标签覆盖`address`字段中的`C1`标签。
+在以下示例场景中，PUT请求用于删除添加到各个字段的标签。 在发出请求之前，`fullName`字段已应用`C1`和`C2`标签，并且`address`字段已应用`C1`标签。 PUT请求使用`C1, C2`参数覆盖具有`fullName`标签的`C1`字段中的现有标签`optionalLabels.labels`标签。 该请求还会使用一组空的字段标签覆盖`C1`字段中的`address`标签。
 
 ```shell
 curl -X PUT \
