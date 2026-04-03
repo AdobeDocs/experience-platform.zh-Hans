@@ -2,7 +2,7 @@
 title: Adobe Experience Platform演示扩展概述
 description: 了解Adobe Experience Platform中的Adobe Experience Platform Demo扩展。
 exl-id: 4bafa132-0d21-4140-ab46-f09cc20bce6f
-source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1009'
 ht-degree: 81%
