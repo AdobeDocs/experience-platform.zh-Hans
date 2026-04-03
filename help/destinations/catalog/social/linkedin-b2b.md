@@ -2,7 +2,7 @@
 title: （公司） LinkedIn连接
 description: 使用此目标来激活 Account-Based Marketing (ABM) 用例的帐户受众。根据散列电子邮件，激活LinkedIn营销活动的用户档案，以实现受众定位、个性化和抑制。
 exl-id: 68d2cca3-952b-49d0-8ea2-e776a233b752
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '760'
 ht-degree: 6%
