@@ -3,7 +3,7 @@ title: Snowflake Source Connector概述
 description: 了解如何使用API或用户界面将Snowflake连接到Adobe Experience Platform。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: df066463-1ae6-4ecd-ae0e-fb291cec4bd5
-source-git-commit: 687363ab664e43cc854b535760dfbfc55acefd2c
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1570'
 ht-degree: 2%
@@ -38,11 +38,11 @@ ht-degree: 2%
 
 >[!TAB 帐户密钥身份验证(Azure)]
 
-提供以下凭据的值，以使用帐户密钥身份验证将[!DNL Snowflake]连接到Azure上的Experience Platform。
+为以下凭据提供值，以使用帐户密钥身份验证将[!DNL Snowflake]连接到Azure上的Experience Platform。
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `account` | 帐户名称可唯一标识组织内的帐户。 在这种情况下，您必须跨不同的[!DNL Snowflake]组织唯一标识帐户。 要实现此目的，您必须在帐户名称前添加组织名称。 例如： `myorg-myaccount.snowflakecomputing.com`。 阅读有关[检索 [!DNL Snowflake] 帐户标识符](#retrieve-your-account-identifier)的部分以获取其他指导。 有关更多信息，请参阅[[!DNL Snowflake] 文档](https://docs.snowflake.com/en/user-guide/admin-account-identifier#format-1-preferred-account-name-in-your-organization)。 |
+| `account` | 帐户名称可唯一标识组织内的帐户。 在这种情况下，您必须跨不同的[!DNL Snowflake]组织唯一标识帐户。 要实现此目的，您必须在帐户名称前添加组织名称。 例如：`myorg-myaccount.snowflakecomputing.com`。阅读有关[检索 [!DNL Snowflake] 帐户标识符](#retrieve-your-account-identifier)的部分以获取其他指导。 有关更多信息，请参阅[[!DNL Snowflake] 文档](https://docs.snowflake.com/en/user-guide/admin-account-identifier#format-1-preferred-account-name-in-your-organization)。 |
 | `warehouse` | [!DNL Snowflake]仓库管理应用程序的查询执行过程。 每个[!DNL Snowflake]仓库彼此独立，在将数据传送到Experience Platform时必须单独访问。 |
 | `database` | [!DNL Snowflake]数据库包含要带Experience Platform的数据。 |
 | `username` | [!DNL Snowflake]帐户的用户名。 |
@@ -56,7 +56,7 @@ ht-degree: 2%
 
 | 凭据 | 描述 |
 | --- | --- |
-| `account` | 帐户名称可唯一标识组织内的帐户。 在这种情况下，您必须跨不同的[!DNL Snowflake]组织唯一标识帐户。 要实现此目的，您必须在帐户名称前添加组织名称。 例如： `myorg-myaccount.snowflakecomputing.com`。 阅读有关[检索 [!DNL Snowflake] 帐户标识符](#retrieve-your-account-identifier)的部分以获取其他指导。 有关更多信息，请参阅[[!DNL Snowflake] 文档](https://docs.snowflake.com/en/user-guide/admin-account-identifier#format-1-preferred-account-name-in-your-organization)。 |
+| `account` | 帐户名称可唯一标识组织内的帐户。 在这种情况下，您必须跨不同的[!DNL Snowflake]组织唯一标识帐户。 要实现此目的，您必须在帐户名称前添加组织名称。 例如：`myorg-myaccount.snowflakecomputing.com`。阅读有关[检索 [!DNL Snowflake] 帐户标识符](#retrieve-your-account-identifier)的部分以获取其他指导。 有关更多信息，请参阅[[!DNL Snowflake] 文档](https://docs.snowflake.com/en/user-guide/admin-account-identifier#format-1-preferred-account-name-in-your-organization)。 |
 | `username` | [!DNL Snowflake]帐户的用户名。 |
 | `privateKey` | [!DNL Base64-]帐户的[!DNL Snowflake]编码私钥。 您可以生成加密或未加密的私钥。 如果您使用的是加密的私钥，那么在针对Experience Platform进行身份验证时，还必须提供私钥密码。 有关详细信息，请阅读[检索私钥](#retrieve-your-private-key)一节。 |
 | `privateKeyPassphrase` | 私钥密码是附加的安全层，在使用加密的私钥进行身份验证时必须使用该安全层。 如果您使用未加密的私钥，则无需提供密码。 |
@@ -90,7 +90,7 @@ ht-degree: 2%
 
 | 凭据 | 描述 |
 | --- | --- |
-| `account` | 帐户名称可唯一标识组织内的帐户。 在这种情况下，您必须跨不同的[!DNL Snowflake]组织唯一标识帐户。 要实现此目的，您必须在帐户名称前添加组织名称。 例如： `http://myorg-myaccount.snowflakecomputing.com/`。 请阅读有关[检索 [!DNL Snowflake] 帐户标识符](#etrieve-your-account-identifier)的指南，以获取其他指导。 有关更多信息，请参阅[[!DNL Snowflake] 文档](https://docs.snowflake.com/en/user-guide/admin-account-identifier#format-1-preferred-account-name-in-your-organization)。 |
+| `account` | 帐户名称可唯一标识组织内的帐户。 在这种情况下，您必须跨不同的[!DNL Snowflake]组织唯一标识帐户。 要实现此目的，您必须在帐户名称前添加组织名称。 例如：`http://myorg-myaccount.snowflakecomputing.com/`。请阅读有关[检索 [!DNL Snowflake] 帐户标识符](#etrieve-your-account-identifier)的指南，以获取其他指导。 有关更多信息，请参阅[[!DNL Snowflake] 文档](https://docs.snowflake.com/en/user-guide/admin-account-identifier#format-1-preferred-account-name-in-your-organization)。 |
 | `username` | [!DNL Snowflake]帐户的用户名。 |
 | `privateKey` | [!DNL Snowflake]用户的私钥，以base64编码为单行，无标头或换行符。 要准备它，请复制PEM文件的内容，删除`BEGIN`/`END`行和所有换行符，然后对结果进行base64编码。 有关详细信息，请阅读[检索私钥](#retrieve-your-private-key)一节。 **注意：** AWS连接当前不支持加密的私钥。 |
 | `port` | [!DNL Snowflake]通过Internet连接到服务器时使用的端口号。 |
