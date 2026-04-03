@@ -2,10 +2,10 @@
 title: 使用流服务API筛选Source的行级数据
 description: 本教程介绍了有关如何使用流服务API在源级别过滤数据的步骤
 exl-id: 224b454e-a079-4df3-a8b2-1bebfb37d11f
-source-git-commit: fe7025b7e48634232d823f8380610c6409b2d4b1
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
-source-wordcount: '1823'
-ht-degree: 4%
+source-wordcount: '1820'
+ht-degree: 3%
 
 ---
 
@@ -43,7 +43,7 @@ ht-degree: 4%
 
 过滤源的行级数据的第一步是检索源的连接规范，并确定源支持的运算符和语言。
 
-要检索给定源的连接规范，请向[!DNL Flow Service] API的`/connectionSpecs`端点发出GET请求，并在查询参数中提供源的属性名称。
+要检索给定源的连接规范，请向`/connectionSpecs` API的[!DNL Flow Service]端点发出GET请求，并在查询参数中提供源的属性名称。
 
 **API格式**
 
@@ -53,7 +53,7 @@ GET /connectionSpecs/{QUERY_PARAMS}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{QUERY_PARAMS}` | 用于筛选结果的可选查询参数。 您可以通过应用`name`属性并在搜索中指定`"google-big-query"`来检索[!DNL Google BigQuery]连接规范。 |
+| `{QUERY_PARAMS}` | 用于筛选结果的可选查询参数。 您可以通过应用[!DNL Google BigQuery]属性并在搜索中指定`name`来检索`"google-big-query"`连接规范。 |
 
 +++请求
 
@@ -114,7 +114,7 @@ curl -X GET \
 
 #### 比较运算符 {#comparison-operators}
 
-| 操作员 | 描述 |
+| 运算符 | 描述 |
 | --- | --- |
 | `==` | 按属性是否等于提供的值筛选。 |
 | `!=` | 按属性是否不等于提供的值筛选。 |
@@ -156,7 +156,7 @@ curl -X GET \
 
 ### 预览数据 {#preview-your-data}
 
-您可以预览数据，方法是向[!DNL Flow Service] API的`/explore`端点发出GET请求，同时提供`filters`作为查询参数的一部分，并在[!DNL Base64]中指定PQL输入条件。
+您可以预览数据，方法是向`/explore` API的[!DNL Flow Service]端点发出GET请求，同时提供`filters`作为查询参数的一部分，并在[!DNL Base64]中指定PQL输入条件。
 
 **API格式**
 
@@ -420,24 +420,24 @@ curl -X POST \
 | 3 | 单击链接 |
 | 6 | 发送电子邮件 |
 | 7 | 电子邮件已送达 |
-| 8 | 电子邮件退回 |
+| 8 | 电子邮件已退回 |
 | 9 | 取消订阅电子邮件 |
 | 10 | 打开电子邮件 |
 | 11 | 单击电子邮件 |
-| 12 | 新商机 |
+| 12 | 新建潜在客户 |
 | 21 | 转化商机 |
-| 22 | 更改分数 |
+| 22 | 更改得分 |
 | 24 | 添加到列表 |
 | 25 | 从列表中删除 |
-| 27 | 电子邮件软退信 |
-| 32 | 合并商机 |
+| 27 | 电子邮件软退回 |
+| 32 | 合并潜在客户 |
 | 34 | 添加到机会 |
 | 35 | 从机会中移除 |
 | 36 | 更新机会 |
 | 46 | 有趣的时刻 |
 | 101 | 更改收入阶段 |
 | 104 | 进程中的更改状态 |
-| 110 | 调用 Webhook |
+| 110 | 调用Webhook |
 | 113 | 添加到培养 |
 | 114 | 更改培养轨迹 |
 | 115 | 更改培养节奏 |
@@ -457,7 +457,7 @@ curl -X POST \
 
 创建完草稿的数据流后，您必须检索其对应的ID。
 
-在用户界面中，导航到源目录，然后从顶部标题中选择&#x200B;**[!UICONTROL 数据流]**。 使用状态列可识别在草稿模式下保存的所有数据流，然后选择数据流的名称。 接下来，使用右侧的&#x200B;**[!UICONTROL 属性]**&#x200B;面板来查找您的数据流ID。
+在UI中，导航到源目录，然后从顶部标题中选择&#x200B;**[!UICONTROL Dataflows]**。 使用状态列可识别在草稿模式下保存的所有数据流，然后选择数据流的名称。 接下来，使用右侧的&#x200B;**[!UICONTROL Properties]**&#x200B;面板来查找您的数据流ID。
 
 ### 检索数据流详细信息
 
@@ -881,7 +881,7 @@ curl -X POST \
 
 +++
 
-您可以使用Experience Platform UI验证草稿数据流是否已发布。 导航到源目录中的数据流页面并引用数据流的&#x200B;**[!UICONTROL 状态]**。 如果成功，状态现在应设置为&#x200B;**已启用**。
+您可以使用Experience Platform UI验证草稿数据流是否已发布。 导航到源目录中的数据流页面并引用数据流的&#x200B;**[!UICONTROL Status]**。 如果成功，状态现在应设置为&#x200B;**已启用**。
 
 >[!TIP]
 >
