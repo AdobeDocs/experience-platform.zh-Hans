@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 查询服务中的Adobe定义的SQL函数
 description: 本文档介绍了Adobe查询服务中可用的Adobe Experience Platform定义函数的信息。
 exl-id: 275aa14e-f555-4365-bcd6-0dd6df2456b3
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1468'
 ht-degree: 2%
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 # 查询服务中的Adobe定义的SQL函数
 
-Adobe定义的函数（此处称为ADF）是Adobe Experience Platform查询服务中的预建函数，有助于对[!DNL Experience Event]数据执行常见的业务相关任务。 这些功能包括[会话化](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html?lang=zh-Hans)和[归因](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html?lang=zh-Hans)的功能，这些功能与Adobe Analytics中的功能类似。
+Adobe定义的函数（此处称为ADF）是Adobe Experience Platform查询服务中的预建函数，有助于对[!DNL Experience Event]数据执行常见的业务相关任务。 这些功能包括[会话化](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html)和[归因](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html)的功能，这些功能与Adobe Analytics中的功能类似。
 
 本文档提供[!DNL Query Service]中可用的Adobe定义函数的信息。
 
@@ -47,7 +47,7 @@ OVER ({PARTITION} {ORDER} {FRAME})
 
 这种数据分组或会话化有助于关联事件，以揭示有关客户体验的更多上下文。
 
-有关Adobe Analytics中的会话化的更多信息，请参阅有关[上下文感知会话](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html?lang=zh-Hans)的文档。
+有关Adobe Analytics中的会话化的更多信息，请参阅有关[上下文感知会话](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html)的文档。
 
 **查询语法**
 
@@ -282,11 +282,11 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 ```console
                 id                 |       timestamp       |                 name                |                    previous_page                    
 |-----------------------------------+-----------------------+-------------------------------------+-----------------------------------------------------
- 457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 17:15:28.0 |                                     | 
- 457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 17:53:05.0 | Home                                | 
+ 457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 17:15:28.0 |                                     |
+ 457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 17:53:05.0 | Home                                |
  457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 17:53:45.0 | Kids                                | (Home)
  457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 19:22:34.0 |                                     | (Kids)
- 457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 20:01:12.0 | Home                                | 
+ 457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 20:01:12.0 | Home                                |
  457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 20:01:57.0 | Kids                                | (Home)
  457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 20:03:36.0 | Search Results                      | (Kids)
  457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 20:04:30.0 | Product Details: Pemmican Power Bar | (Search Results)
@@ -487,4 +487,4 @@ LIMIT 10
 
 以下视频介绍了如何在Adobe Experience Platform界面和PSQL客户端中运行查询。 此外，该视频还使用了以下示例：XDM对象中的各个属性；使用Adobe定义的函数；使用CREATE TABLE AS SELECT (CTAS)。
 
->[!VIDEO](https://video.tv.adobe.com/v/32702?captions=chi_hans&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)
