@@ -2,9 +2,9 @@
 title: 身份图查看器
 description: 标识图是特定客户的不同标识之间的关系映射，为您提供客户如何跨不同渠道与您的品牌互动的可视表示形式。
 exl-id: ccd5f8d8-595b-4636-9191-553214e426bd
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
-source-wordcount: '1407'
+source-wordcount: '1379'
 ht-degree: 6%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 6%
 
 以下视频旨在支持您了解身份图查看器。
 
->[!VIDEO](https://video.tv.adobe.com/v/345652/?quality=12&learn=on&captions=chi_hans)
+>[!VIDEO](https://video.tv.adobe.com/v/331030/?quality=12&learn=on)
 
 ## 快速入门
 
@@ -38,11 +38,11 @@ ht-degree: 6%
 
 ## 访问身份图查看器 {#access-identity-graph-viewer}
 
-在Experience Platform UI中，在左侧导航中选择&#x200B;**[!UICONTROL 标识]**，然后从标题的选项卡列表中选择&#x200B;**[!UICONTROL 标识图形]**。
+在Experience Platform UI中，在左侧导航中选择&#x200B;**[!UICONTROL Identities]**，然后从标题的选项卡列表中选择&#x200B;**[!UICONTROL Identity Graph]**。
 
 ![已选择“身份图形”选项卡，在Experience Platform UI中显示“身份”工作区。](../images/graph-viewer/identity-graph.png)
 
-要查看身份图，请提供身份命名空间及其相应的值，然后选择&#x200B;**[!UICONTROL 查看]**。
+要查看身份图，请提供身份命名空间及其相应的值，然后选择&#x200B;**[!UICONTROL View]**。
 
 >[!TIP]
 >
@@ -56,7 +56,7 @@ ht-degree: 6%
 
 ![身份图形查看器界面。](../images/graph-viewer/identity-graph-viewer-main.png)
 
-身份图显示链接到您输入的身份命名空间和值组合的所有身份。 每个节点都由一个身份命名空间及其对应的值组成。 您可以选择、保持和拖动任何节点以与图形交互。 或者，您可以将鼠标悬停在节点上，以查看有关其相应标识值的信息。 选择&#x200B;**[!UICONTROL 查看图形]**&#x200B;以隐藏或显示该图形。
+身份图显示链接到您输入的身份命名空间和值组合的所有身份。 每个节点都由一个身份命名空间及其对应的值组成。 您可以选择、保持和拖动任何节点以与图形交互。 或者，您可以将鼠标悬停在节点上，以查看有关其相应标识值的信息。 选择&#x200B;**[!UICONTROL View graph]**&#x200B;以隐藏或显示图形。
 
 >[!IMPORTANT]
 >
@@ -68,11 +68,11 @@ ht-degree: 6%
 
 ![所选电子邮件和GAID节点之间的标识链接。](../images/graph-viewer/identity-link.png)
 
-[!UICONTROL 身份]表提供了您的身份数据的不同视图，以表格形式列出了身份命名空间和身份值组合。 选择图形中的节点将更新[!UICONTROL 标识]表中突出显示的行项。
+[!UICONTROL Identities]表提供了您的身份数据的不同视图，以表格形式列出了身份命名空间和身份值组合。 选择图形中的节点将更新[!UICONTROL Identities]表中高亮显示的行项。
 
 ![具有图形内链接的标识列表的标识表。](../images/graph-viewer/identities-table.png)
 
-使用下拉菜单对图形数据进行排序，并突出显示有关特定身份命名空间的信息。 例如，从菜单中选择&#x200B;**[!UICONTROL 电子邮件]**&#x200B;以查看特定于电子邮件身份命名空间的数据。
+使用下拉菜单对图形数据进行排序，并突出显示有关特定身份命名空间的信息。 例如，从菜单中选择&#x200B;**[!UICONTROL Email]**&#x200B;以查看特定于电子邮件身份命名空间的数据。
 
 ![身份表已排序为仅显示电子邮件数据。](../images/graph-viewer/sort-email.png)
 
@@ -81,7 +81,7 @@ ht-degree: 6%
 下表提供了有关右边栏中显示的数据源属性的更多信息：
 
 | 数据源 | 描述 |
-| --- | --- | 
+| --- | --- |
 | 批次 ID | 与批次数据对应的自动生成的标识符。 |
 | 数据集 ID | 与您的数据集对应的自动生成标识符。 |
 | 数据集名称 | 包含批次数据的数据集的名称。 |
@@ -89,19 +89,19 @@ ht-degree: 6%
 
 ![右边栏，显示身份数据和信息数据源。](../images/graph-viewer/right-rail.png)
 
-您还可以使用&#x200B;*[!UICONTROL 数据源]*&#x200B;查看与您的身份有关的数据源的列表。 为数据集和批次ID的表格视图选择[!UICONTROL 数据源]。
+您还可以使用&#x200B;*[!UICONTROL Data source]*&#x200B;查看与您的身份有关的数据源列表。 为数据集和批次ID的表格视图选择[!UICONTROL Data source]。
 
 ![选定数据源选项卡。](../images/graph-viewer/data-source-table.png)
 
-使用滑块可按首次建立身份的时间过滤图形数据。 默认情况下，身份图查看器显示图形内链接的所有身份。 按住并拖动滑块可调整时间，以调整新身份链接到图形的最后一个时间戳。 在以下示例中，图形显示最近的标识链接(GAID)是在&#x200B;**[!UICONTROL 08/19/2020,4:29:29 PM]**&#x200B;建立的。
+使用滑块可按首次建立身份的时间过滤图形数据。 默认情况下，身份图查看器显示图形内链接的所有身份。 按住并拖动滑块可调整时间，以调整新身份链接到图形的最后一个时间戳。 在下面的示例中，该图形显示最近的身份链接(GAID)建立在&#x200B;**[!UICONTROL 08/19/2020, 4:29:29 PM]**&#x200B;上。
 
 ![选定的图形查看器时间戳滑块。](../images/graph-viewer/slider-one.png)
 
-调整滑块以查看另一个标识链接（电子邮件）已在&#x200B;**[!UICONTROL 08/19/2020,4:25:30 PM]**&#x200B;建立。
+调整滑块以查看已在&#x200B;**[!UICONTROL 08/19/2020, 4:25:30 PM]**&#x200B;上建立另一个标识链接（电子邮件）。
 
 ![图形查看器时间戳滑块已调整为上次建立的新链接。](../images/graph-viewer/slider-two.png)
 
-您还可以调整滑块以查看图形的最早小版本。 在以下示例中，身份图形查看器显示图形首次创建于&#x200B;**[!UICONTROL 08/19/2020， 4:11:49 PM]**，其第一个链接为ECID、电子邮件和电话。
+您还可以调整滑块以查看图形的最早小版本。 在下面的示例中，身份图查看器显示该图是首次在&#x200B;**[!UICONTROL 08/19/2020, 4:11:49 PM]**&#x200B;上创建的，其第一个链接是ECID、电子邮件和电话。
 
 ![图形查看器时间戳滑块已调整为第一个建立的新链接。](../images/graph-viewer/slider-three.png)
 
@@ -121,7 +121,7 @@ ht-degree: 6%
 
 ### 从数据集访问身份图查看器
 
-您还可以使用数据集界面访问身份图查看器。 从数据集[!UICONTROL 浏览]页面中，选择要与之交互的数据集，然后选择&#x200B;**[!UICONTROL 预览数据集]**
+您还可以使用数据集界面访问身份图查看器。 从数据集[!UICONTROL Browse]页面中，选择要与之交互的数据集，然后选择&#x200B;**[!UICONTROL Preview dataset]**
 
 ![预览数据集](../images/identity-graph-viewer/preview-dataset.png)
 
