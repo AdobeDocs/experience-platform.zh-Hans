@@ -5,7 +5,7 @@ title: 使用流式引入API流式记录数据
 type: Tutorial
 description: 本教程将帮助您开始使用流摄取API，它是Adobe Experience Platform数据摄取服务API的一部分。
 exl-id: 097dfd5a-4e74-430d-8a12-cac11b1603aa
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1036'
 ht-degree: 2%
@@ -166,7 +166,7 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/des
 
 >[!NOTE]
 >
->{0&#x200B;}身份命名空间代码{1&#x200B;}**&#x200B;**
+>{0&#x200B;}身份命名空间代码{1&#x200B;}****
 >
 > 请确保代码有效 — 上面的示例使用“email”，它是一个标准身份命名空间。 在[身份服务常见问题解答](../../identity-service/troubleshooting-guide.md#what-are-the-standard-identity-namespaces-provided-by-experience-platform)中可以找到其他常用的标准身份命名空间。
 >
