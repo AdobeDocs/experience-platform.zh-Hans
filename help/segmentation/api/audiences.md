@@ -3,7 +3,7 @@ title: 受众API端点
 description: 使用Adobe Experience Platform分段服务API中的受众端点，以编程方式创建、管理和更新贵组织的受众。
 role: Developer
 exl-id: cb1a46e5-3294-4db2-ad46-c5e45f48df15
-source-git-commit: 63fa87ac9777b3ac66d990dd4bfbd202f07b0eba
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1592'
 ht-degree: 2%
@@ -33,7 +33,7 @@ GET /audiences?{QUERY_PARAMETERS}
 
 >[!NOTE]
 >
->如果您不使用任何查询参数使用此端点，则&#x200B;**不会返回非活动受众**。 但是，如果将此端点与`property=audienceId`查询参数一起使用，则将返回非活动受众&#x200B;**&#x200B;**。
+>如果您不使用任何查询参数使用此端点，则&#x200B;**不会返回非活动受众**。 但是，如果将此端点与`property=audienceId`查询参数一起使用，则将返回非活动受众&#x200B;****。
 
 在检索受众列表时，可以使用以下查询参数：
 
@@ -183,7 +183,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/audiences?limit=2 \
 ```
 
 | 属性 | 受众类型 | 描述 |
-| -------- | ------------- | ----------- | 
+| -------- | ------------- | ----------- |
 | `id` | 两者 | 系统生成的受众只读标识符。 |
 | `audienceId` | 两者 | 如果该受众是平台生成的受众，则其值与`id`的值相同。 如果受众是外部生成的，则此值由客户端提供。 |
 | `schema` | 两者 | 受众的体验数据模型(XDM)架构。 |
@@ -246,7 +246,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences
 ```
 
 | 属性 | 描述 |
-| -------- | ----------- | 
+| -------- | ----------- |
 | `name` | 受众的名称。 |
 | `description` | 受众的描述。 |
 | `type` | 一个字段，用于显示受众是平台生成的受众还是外部生成的受众。 可能的值包括`SegmentDefinition`和`ExternalSegment`。 `SegmentDefinition`引用在Platform中生成的受众，而`ExternalSegment`引用未在Platform中生成的受众。 |
@@ -339,7 +339,7 @@ GET /audiences/{AUDIENCE_ID}
 ```
 
 | 参数 | 描述 |
-| --------- | ----------- | 
+| --------- | ----------- |
 | `{AUDIENCE_ID}` | 您尝试检索的受众ID。 请注意，这是`id`字段，是&#x200B;**而不是** `audienceId`字段。 |
 
 **请求**
@@ -472,7 +472,7 @@ curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513
 ```
 
 | 属性 | 描述 |
-| -------- | ----------- | 
+| -------- | ----------- |
 | `audienceId` | 受众的ID。 对于外部生成的受众，此值可由用户提供。 |
 | `name` | 受众的名称。 |
 | `namespace` | 受众的命名空间。 |
@@ -555,7 +555,7 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/audiences/60ccea95-1435-41
 | 属性 | 描述 |
 | -------- | ----------- |
 | `op` | 所执行的PATCH操作的类型。 对于此终结点，此值是&#x200B;**始终** `/add`。 |
-| `path` | 要更新的字段的路径。 无法编辑系统生成的字段，如`id`、`audienceId`和`namespace` **&#x200B;**。 |
+| `path` | 要更新的字段的路径。 无法编辑系统生成的字段，如`id`、`audienceId`和`namespace` ****。 |
 | `value` | 分配给`path`中指定的属性的新值。 |
 
 +++
