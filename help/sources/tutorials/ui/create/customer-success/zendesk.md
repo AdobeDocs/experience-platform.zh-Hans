@@ -2,10 +2,10 @@
 title: 在UI中创建Zendesk Source连接
 description: 了解如何使用Adobe Experience Platform用户界面创建Zendesk源连接。
 exl-id: 75d303b0-2dcd-4202-987c-fe3400398d90
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
-source-wordcount: '746'
-ht-degree: 7%
+source-wordcount: '724'
+ht-degree: 8%
 
 ---
 
@@ -39,37 +39,37 @@ ht-degree: 7%
 
 在创建[!DNL Zendesk]源连接之前，还必须确保首先创建一个Experience Platform架构以用于您的源。 有关如何创建架构的完整步骤，请参阅有关[创建Experience Platform架构](../../../../../xdm/schema/composition.md)的教程。
 
-有关[!DNL Zendesk Search API]所需的[!DNL Zendesk]架构的其他指导，请参阅下面的[限制](#limits)部分。
+有关[!DNL Zendesk]所需的[!DNL Zendesk Search API]架构的其他指导，请参阅下面的[限制](#limits)部分。
 
 ![创建架构](../../../../images/tutorials/create/zendesk/schema.png)
 
 ## 连接您的[!DNL Zendesk]帐户
 
-在Experience Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
+在Experience Platform UI中，从左侧导航栏中选择&#x200B;**[!UICONTROL Sources]**&#x200B;以访问[!UICONTROL Sources]工作区。 [!UICONTROL Catalog]屏幕显示您可以用来创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
-在&#x200B;*客户成功*&#x200B;类别下，选择&#x200B;**[!UICONTROL Zendesk]**，然后选择&#x200B;**[!UICONTROL 添加数据]**。
+在&#x200B;*客户成功*&#x200B;类别下，选择&#x200B;**[!UICONTROL Zendesk]**，然后选择&#x200B;**[!UICONTROL Add data]**。
 
-![目录](../../../../images/tutorials/create/zendesk/catalog.png)
+![catalog（目录）](../../../../images/tutorials/create/zendesk/catalog.png)
 
-出现&#x200B;**[!UICONTROL 连接Zendesk帐户]**&#x200B;页面。 在此页上，您可以使用新凭据或现有凭据。
+此时会显示&#x200B;**[!UICONTROL Connect Zendesk account]**&#x200B;页面。 在此页上，您可以使用新凭据或现有凭据。
 
 ### 现有账户
 
-若要使用现有帐户，请选择您要用来创建新数据流的&#x200B;*Zendesk*&#x200B;帐户，然后选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
+若要使用现有帐户，请选择您想要用来创建新数据流的&#x200B;*Zendesk*&#x200B;帐户，然后选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续。
 
 ![现有](../../../../images/tutorials/create/zendesk/existing.png)
 
 ### 新帐户
 
-如果要创建新帐户，请选择&#x200B;**[!UICONTROL 新建帐户]**，然后提供名称、可选描述和凭据。 完成后，选择&#x200B;**[!UICONTROL 连接到源]**，然后留出一些时间来建立新连接。
+如果要创建新帐户，请选择&#x200B;**[!UICONTROL New account]**，然后提供名称、可选描述和凭据。 完成后，选择&#x200B;**[!UICONTROL Connect to source]**，然后留出一些时间来建立新连接。
 
 ![新](../../../../images/tutorials/create/zendesk/new.png)
 
 ### 选择数据
 
-在您的源进行身份验证后，页面将更新为交互式架构树，从而允许您浏览和检查数据的层次结构。 选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
+在您的源进行身份验证后，页面将更新为交互式架构树，从而允许您浏览和检查数据的层次结构。 选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续。
 
 ![select-data](../../../../images/tutorials/create/zendesk/select-data.png)
 
@@ -85,7 +85,7 @@ ht-degree: 7%
 
 下面概述了验证是否成功连接[!DNL Zendesk]源以及是否正在将[!DNL Zendesk]配置文件摄取到Experience Platform时可以采取的步骤。
 
-在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以访问[!UICONTROL 数据集]工作区。 [!UICONTROL 数据集活动]屏幕显示执行的详细信息。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL Datasets]**&#x200B;以访问[!UICONTROL Datasets]工作区。 [!UICONTROL Dataset Activity]屏幕显示执行的详细信息。
 
 ![活动页面](../../../../images/tutorials/create/zendesk/dataset-activity.png)
 
@@ -93,7 +93,7 @@ ht-degree: 7%
 
 ![数据流页面](../../../../images/tutorials/create/zendesk/dataflow-monitoring.png)
 
-最后，选择&#x200B;**[!UICONTROL 预览数据集]**&#x200B;以显示已摄取的数据。
+最后，选择&#x200B;**[!UICONTROL Preview dataset]**&#x200B;以显示已摄取的数据。
 
 ![Zendesk数据集](../../../../images/tutorials/create/zendesk/preview-dataset.png)
 
