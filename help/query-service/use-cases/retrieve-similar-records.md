@@ -2,9 +2,9 @@
 title: 使用高阶函数检索类似记录
 description: 了解如何基于相似性量度和相似性阈值，从一个或多个数据集识别和检索相似或相关记录。 此工作流可突出显示不同数据集之间的有意义的关系或重叠。
 exl-id: 4810326a-a613-4e6a-9593-123a14927214
-source-git-commit: 27eab04e409099450453a2a218659e576b8f6ab4
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
-source-wordcount: '4031'
+source-wordcount: '4030'
 ht-degree: 3%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 3%
 - **相似性联接**&#x200B;是一种操作，它根据记录之间的相似性度量从一个或多个表中标识和检索记录对。 相似连接的主要要求如下：
    - **相似性量度**：相似性连接依赖于预定义的相似性量度或量度。 这些度量包括：Jaccard相似度、余弦相似度、编辑距离等。 量度取决于数据的性质和用例。 此量度量化了两个记录的相似或异同。
    - **阈值**：使用相似性阈值来确定两个记录何时被视为相似到足以包含在连接结果中。 相似度分数高于阈值的记录被视为匹配。
-- **Jaccard相似度**&#x200B;指标，即Jaccard相似性度量，是用来衡量样本集相似性和多样性的统计量。 它定义为交集的大小除以样本集的并集的大小。 Jaccard相似性度量的范围从0到1。 Jaccard相似度为零表示集合之间没有相似性，Jaccard相似度为1表示集合相同。
+- **Jaccard相似度**指标，即Jaccard相似性度量，是用来衡量样本集相似性和多样性的统计量。 它定义为交集的大小除以样本集的并集的大小。 Jaccard相似性度量的范围从0到1。 Jaccard相似度为零表示集合之间没有相似性，Jaccard相似度为1表示集合相同。
   ![一个维恩图以说明Jaccard相似性度量。](../images/use-cases/jaccard-similarity.png)
 - **数据Distiller中的高阶函数**&#x200B;是动态的内联工具，可直接在SQL语句中处理和转换数据。 这些通用函数消除了数据操作中多个步骤的需要，尤其是当[处理复杂类型（如数组和映射](../sql/higher-order-functions.md)）时。 通过提高查询效率和简化转换，高阶函数有助于在各种业务情景下更灵活地分析和更好地决策。
 
@@ -107,9 +107,9 @@ SELECT * FROM featurevector1;
 
 - 第1行： `CREATE TEMP TABLE featurevector1 AS`：此语句创建名为`featurevector1`的临时表。 临时表通常只能在当前会话中访问，并且会在会话结束时自动删除。
 - 第1行和第2行： `SELECT * FROM (...)`：此部分代码是用于生成插入到`featurevector1`表中的数据的子查询。
-在子查询中，使用`UNION ALL`命令合并多个`SELECT`语句。 每个`SELECT`语句都生成一行数据，这些数据具有为`ProductName`列指定的值。
-- 第3行： `SELECT 'iPad' AS ProductName`：这将在`ProductName`列中生成值为`iPad`的行。
-- 第5行： `SELECT 'iPhone'`：这将在`ProductName`列中生成值为`iPhone`的行。
+在子查询中，使用`SELECT`命令合并多个`UNION ALL`语句。 每个`SELECT`语句都生成一行数据，这些数据具有为`ProductName`列指定的值。
+- 第3行： `SELECT 'iPad' AS ProductName`：这将在`iPad`列中生成值为`ProductName`的行。
+- 第5行： `SELECT 'iPhone'`：这将在`iPhone`列中生成值为`ProductName`的行。
 
 SQL语句创建一个表，如下所示：
 
@@ -146,7 +146,7 @@ SELECT * FROM featurevector2;
 
 以下部分说明了在开始标记化过程之前先进行的数据转换（如重复数据删除、去除空格和小写转换）。
 
-### 删除重复项 {#deduplication}
+### 重复数据删除 {#deduplication}
 
 接下来，使用`DISTINCT`子句删除重复项。 此示例中没有重复项，但这是提高任何比较准确性的重要步骤。 下面显示了必要的SQL：
 
@@ -157,7 +157,7 @@ SELECT DISTINCT(ProductName) AS featurevector2_distinct FROM featurevector2
 
 ### 去除空格 {#whitespace-removal}
 
-在以下SQL语句中，从特征向量中删除空格。 查询的`replace(ProductName, ' ', '') AS featurevector1_nospaces`部分从`featurevector1`表中获取`ProductName`列并使用`replace()`函数。 `REPLACE`函数将所有出现的空格(“ ”)替换为空字符串(“)。 这会有效地从`ProductName`值中删除所有空格。 结果别名为`featurevector1_nospaces`。
+在以下SQL语句中，从特征向量中删除空格。 查询的`replace(ProductName, ' ', '') AS featurevector1_nospaces`部分从`ProductName`表中获取`featurevector1`列并使用`replace()`函数。 `REPLACE`函数将所有出现的空格(“ ”)替换为空字符串(“)。 这会有效地从`ProductName`值中删除所有空格。 结果别名为`featurevector1_nospaces`。
 
 ```SQL
 SELECT DISTINCT(ProductName) AS featurevector1_distinct, replace(ProductName, ' ', '') AS featurevector1_nospaces FROM featurevector1
@@ -325,7 +325,7 @@ FROM
 
 ### 确保设置令牌长度 {#ensure-set-token-length}
 
-可以将其他条件添加到语句中，以确保生成的序列具有特定长度。 以下SQL语句通过使`transform`函数更复杂而扩展了令牌生成逻辑。 该语句使用`transform`中的`filter`函数以确保生成的序列长度为6个字符。 它通过将NULL值指定给这些职位来处理不可能出现的情况。
+可以将其他条件添加到语句中，以确保生成的序列具有特定长度。 以下SQL语句通过使`transform`函数更复杂而扩展了令牌生成逻辑。 该语句使用`filter`中的`transform`函数以确保生成的序列长度为6个字符。 它通过将NULL值指定给这些职位来处理不可能出现的情况。
 
 ```SQL
 SELECT
@@ -397,7 +397,7 @@ SELECT transform(
 
 本节将分析三元组SQL语句的精简版本，以更好地了解Data Distiller中高位函数的值，从而更有效地创建n元组。
 
-以下语句对`featurevector1`表中的`ProductName`列进行操作。 它使用从生成的序列获得的位置，生成从表中的修改的产品名称派生的一组三个字符的子字符串。
+以下语句对`ProductName`表中的`featurevector1`列进行操作。 它使用从生成的序列获得的位置，生成从表中的修改的产品名称派生的一组三个字符的子字符串。
 
 ```SQL {line-numbers="true"}
 SELECT
@@ -447,7 +447,7 @@ FROM
 
 条件`i -> i + 6 <= length(lower(replace(ProductName, ' ', '')))`确保起始位置`i`加上`6`（所需七字符子字符串的长度减一）不超过修改后的`ProductName`的长度。
 
-`CASE`语句用于根据其长度有条件地包含或排除子字符串。 仅包含7个字符的子字符串；其他子字符串将替换为NULL。 然后，`transform`函数使用这些子字符串从`featurevector1`表中的`ProductName`列创建子字符串序列。
+`CASE`语句用于根据其长度有条件地包含或排除子字符串。 仅包含7个字符的子字符串；其他子字符串将替换为NULL。 然后，`transform`函数使用这些子字符串从`ProductName`表中的`featurevector1`列创建子字符串序列。
 
 >[!TIP]
 >
@@ -576,9 +576,9 @@ CROSS JOIN
 
 以下是用来创建交叉连接的SQl的概要：
 
-- 第2行： `A.featurevector1_distinct AS SetA_ProductNames`从表`A`中选择`featurevector1_distinct`列并为其分配别名`SetA_ProductNames`。 SQL的此部分将生成第一个数据集中不同产品名称的列表。
-- 第4行： `A.tokens AS SetA_tokens1`从表或子查询`A`中选择`tokens`列并为其分配别名`SetA_tokens1`。 SQL的此部分会生成与第一个数据集中的产品名称关联的标记化值列表。
-- 第8行： `CROSS JOIN`操作将合并两个数据集中所有可能的行组合。 换句话说，它将第一个表中的每个产品名称及其关联的令牌与第二个表(`B`)中的每个产品名称及其关联的令牌配对。 `A`这将生成两个数据集的笛卡尔乘积，其中，输出中的每一行表示两个数据集的产品名称及其关联令牌的组合。
+- 第2行： `A.featurevector1_distinct AS SetA_ProductNames`从表`featurevector1_distinct`中选择`A`列并为其分配别名`SetA_ProductNames`。 SQL的此部分将生成第一个数据集中不同产品名称的列表。
+- 第4行： `A.tokens AS SetA_tokens1`从表或子查询`tokens`中选择`A`列并为其分配别名`SetA_tokens1`。 SQL的此部分会生成与第一个数据集中的产品名称关联的标记化值列表。
+- 第8行： `CROSS JOIN`操作将合并两个数据集中所有可能的行组合。 换句话说，它将第一个表中的每个产品名称及其关联的令牌与第二个表(`A`)中的每个产品名称及其关联的令牌配对。 `B`这将生成两个数据集的笛卡尔乘积，其中，输出中的每一行表示两个数据集的产品名称及其关联令牌的组合。
 
 结果如下表所示：
 
@@ -697,7 +697,7 @@ WHERE jaccard_similarity>=0.4
 
 此查询的结果提供了相似性连接的列，如下所示：
 
-+++选择以展开
++++ 选择以展开
 
 |   | SetA_ProductNames | SetA_ProductNames |
 |---|--------------------------|------------------------|
@@ -707,7 +707,7 @@ WHERE jaccard_similarity>=0.4
 
 {style="table-layout:auto"}
 
-+++：
++++
 
 ### 后续步骤 {#next-steps}
 
@@ -717,4 +717,4 @@ WHERE jaccard_similarity>=0.4
 - 数据清理：提高数据质量。
 - 购物篮分析：分析客户行为、偏好和潜在的交叉销售机会。
 
-如果您尚未这样做，则建议阅读[AI/ML功能管道概述](../data-distiller/ml-feature-pipelines/overview.md)。 使用该概述了解Data Distiller和您的首选机器学习如何构建自定义数据模型，以支持带有Experience Platform数据的营销用例。
+如果您尚未这样做，则建议阅读[AI/ML功能管道概述](../data-distiller/ml-feature-pipelines/overview.md)。 使用该概述了解Data Distiller和您的首选机器学习如何构建自定义数据模型，以支持您通过Experience Platform数据实施营销用例。
