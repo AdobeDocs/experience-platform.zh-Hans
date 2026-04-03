@@ -5,7 +5,7 @@ title: 数据管理策略API端点
 description: 数据治理策略是您的组织采用的规则，用于描述允许或限制您对Experience Platform中的数据执行的营销操作类型。 /policies端点用于与查看、创建、更新或删除数据治理策略相关的所有API调用。
 role: Developer
 exl-id: 62a6f15b-4c12-4269-bf90-aaa04c147053
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1864'
 ht-degree: 2%
@@ -14,11 +14,11 @@ ht-degree: 2%
 
 # 数据治理策略端点
 
-数据治理策略是描述允许或限制您对[!DNL Experience Platform]内的数据执行的营销操作类型的规则。 [!DNL Policy Service API]中的`/policies`端点允许您以编程方式管理组织的数据治理策略。
+数据治理策略是描述允许或限制您对[!DNL Experience Platform]内的数据执行的营销操作类型的规则。 `/policies`中的[!DNL Policy Service API]端点允许您以编程方式管理组织的数据治理策略。
 
 >[!IMPORTANT]
 >
->切勿将治理策略与访问控制策略混为一谈，访问控制策略确定组织中的某些Experience Platform用户可以访问的特定数据属性。 有关如何以编程方式管理访问控制策略的详细信息，请参阅[访问控制API](../../access-control/abac/api/policies.md)的`/policies`端点指南。
+>切勿将治理策略与访问控制策略混为一谈，访问控制策略确定组织中的某些Experience Platform用户可以访问的特定数据属性。 有关如何以编程方式管理访问控制策略的详细信息，请参阅`/policies`访问控制API[的](../../access-control/abac/api/policies.md)端点指南。
 
 ## 快速入门
 
@@ -26,7 +26,7 @@ ht-degree: 2%
 
 ## 检索策略列表 {#list}
 
-通过分别向`/policies/core`或`/policies/custom`发出GET请求，可列出所有`core`或`custom`策略。
+通过分别向`core`或`custom`发出GET请求，可列出所有`/policies/core`或`/policies/custom`策略。
 
 **API格式**
 
@@ -284,7 +284,7 @@ POST /policies/custom
 
 **请求**
 
-以下请求创建一个新策略，该策略限制对包含标签`C1 OR (C3 AND C7)`的数据执行营销操作`exportToThirdParty`。
+以下请求创建一个新策略，该策略限制对包含标签`exportToThirdParty`的数据执行营销操作`C1 OR (C3 AND C7)`。
 
 ```shell
 curl -X POST \
@@ -321,7 +321,7 @@ curl -X POST \
 | --- | --- |
 | `name` | 策略的显示名称。 |
 | `status` | 策略的当前状态。 存在三种可能的状态：`DRAFT`、`ENABLED`或`DISABLED`。 默认情况下，只有`ENABLED`个策略参与评估。 有关详细信息，请参阅[策略评估](../enforcement/overview.md)的概述。 |
-| `marketingActionRefs` | 一个数组，列出了策略的所有适用营销操作的URI。 在[查找营销操作](./marketing-actions.md#look-up)的响应的`_links.self.href`下提供了营销操作的URI。 |
+| `marketingActionRefs` | 一个数组，列出了策略的所有适用营销操作的URI。 在`_links.self.href`查找营销操作[的响应的](./marketing-actions.md#look-up)下提供了营销操作的URI。 |
 | `description` | 可选描述，为策略用例提供进一步的上下文。 |
 | `deny` | 描述特定数据使用标签的策略表达式将限制策略的相关营销操作无法执行。 |
 
@@ -429,7 +429,7 @@ curl -X PUT \
 | --- | --- |
 | `name` | 策略的显示名称。 |
 | `status` | 策略的当前状态。 存在三种可能的状态：`DRAFT`、`ENABLED`或`DISABLED`。 默认情况下，只有`ENABLED`个策略参与评估。 有关详细信息，请参阅[策略评估](../enforcement/overview.md)的概述。 |
-| `marketingActionRefs` | 一个数组，列出了策略的所有适用营销操作的URI。 在[查找营销操作](./marketing-actions.md#look-up)的响应的`_links.self.href`下提供了营销操作的URI。 |
+| `marketingActionRefs` | 一个数组，列出了策略的所有适用营销操作的URI。 在`_links.self.href`查找营销操作[的响应的](./marketing-actions.md#look-up)下提供了营销操作的URI。 |
 | `description` | 可选描述，为策略用例提供进一步的上下文。 |
 | `deny` | 描述特定数据使用标签的策略表达式将限制策略的相关营销操作无法执行。 有关此属性的更多信息，请参阅[创建策略](#create-policy)一节。 |
 
