@@ -3,7 +3,7 @@ title: 数据集过期API端点
 description: 数据卫生API中的/ttl端点允许您在Adobe Experience Platform中以编程方式计划数据集过期时间。
 role: Developer
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: ca6d7d257085da65b3f08376f0bd32e51e293533
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '2331'
 ht-degree: 1%
@@ -504,7 +504,7 @@ curl -X DELETE \
 
 | 参数 | 描述 | 示例 |
 | --- | --- | --- |
-| `author` | 使用`author`查询参数查找最近更新了数据集到期的人员。 如果自创建后未进行任何更新，则将与到期的原始创建者匹配。 此参数与`created_by`字段与搜索字符串对应的过期日期匹配。<br>如果搜索字符串以`LIKE`或`NOT LIKE`开头，则其余部分将被视为SQL搜索模式。 否则，整个搜索字符串将被视为必须完全匹配`created_by`字段的整个内容的文字字符串。 | `author=LIKE %john%`, `author=John Q. Public` |
+| `author` | 使用`author`查询参数查找最近更新了数据集到期的人员。 如果自创建后未进行任何更新，则将与到期的原始创建者匹配。 此参数与`created_by`字段与搜索字符串对应的过期日期匹配。<br>如果搜索字符串以`LIKE`或`NOT LIKE`开头，则其余部分将被视为SQL搜索模式。 否则，整个搜索字符串将被视为必须完全匹配`created_by`字段的整个内容的文字字符串。 | `author=LIKE %john%`、`author=John Q. Public` |
 | `datasetId` | 匹配应用于特定数据集的过期时间。 | `datasetId=62b3925ff20f8e1b990a7434` |
 | `datasetName` | 匹配数据集名称包含提供的搜索字符串的过期时间。 匹配项不区分大小写。 | `datasetName=Acme` |
 | `description` |   | `description=Handle expiration of Acme information through the end of 2024.` |
