@@ -4,7 +4,7 @@ description: 将您的第一方受众导出到 Acxiom 目标，以允许 Acxiom 
 last-substantial-update: 2024-03-14T00:00:00Z
 badge: label="Beta 版" type="Informative"
 exl-id: d82e8cd3-970c-44af-99b0-ea154eb3655e
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1531'
 ht-degree: 4%
