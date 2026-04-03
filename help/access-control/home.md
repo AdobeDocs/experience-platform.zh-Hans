@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 访问控制概述
 description: Adobe Experience Platform的访问控制是通过Adobe Admin Console提供的。 此功能利用Admin Console中的产品配置文件，它将用户与权限和沙盒关联起来。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: da3328e58b9009d80fea1c84e79fb14c9cc1ecf2
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '3279'
 ht-degree: 0%
@@ -17,7 +17,7 @@ Adobe Experience Platform的访问控制是通过&#x200B;**[!UICONTROL Permissio
 
 ## 访问控制层级和工作流
 
-要配置Experience Platform的访问控制，您必须对拥有Experience Platform产品的组织具有系统或产品管理员权限。 可以授予或撤销权限的最低角色是产品管理员。 可以管理权限的其他管理员角色是系统管理员（无限制）。 有关详细信息，请参阅有关[管理角色](https://helpx.adobe.com/cn/enterprise/using/admin-roles.html)的Adobe帮助中心文章。
+要配置Experience Platform的访问控制，您必须对拥有Experience Platform产品的组织具有系统或产品管理员权限。 可以授予或撤销权限的最低角色是产品管理员。 可以管理权限的其他管理员角色是系统管理员（无限制）。 有关详细信息，请参阅有关[管理角色](https://helpx.adobe.com/enterprise/using/admin-roles.html)的Adobe帮助中心文章。
 
 >[!NOTE]
 >
@@ -132,7 +132,7 @@ Experience Platform附带两个预配置的默认角色。 下表概述了每个
 | [!DNL Adobe Mix Modeler] | [!UICONTROL View Adobe Mix Modeler Models Configurations] | 对模型配置的只读访问权限。 |
 | [!DNL Adobe Mix Modeler] | [!UICONTROL Manage Adobe Mix Modeler Models Plans Configurations] | 查看和修改计划配置的功能。 |
 | [!DNL Adobe Mix Modeler] | [!UICONTROL View Adobe Mix Modeler Models Plans Configurations] | 对计划配置的只读访问权限。 |
-| [!DNL AI Assistant] | [!UICONTROL Enable AI Assistant] | 能够询问[[!DNL [AI assistant]]](../ai-assistant/access.md)问题。 |
+| [!DNL AI Assistant] | [!UICONTROL Enable AI Assistant] | 能够询问[!DNL [AI assistant]](../ai-assistant/access.md)问题。 |
 | [!DNL AI Assistant] | [!UICONTROL View Operational Insights] | 访问以获取对[操作分析](../ai-assistant/home.md##operational-insights)查询的响应。 |
 | [!DNL AI Assistant] | [!UICONTROL Generate Content] | 允许用户使用[!DNL AI Assistant]生成内容。 |
 | [!DNL AI Assistant] | [!UICONTROL Manage Brand Kit] | 允许用户使用[!DNL AI Assistant]创建品牌指南。 |
