@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 数据准备映射函数
 description: 本文档介绍了与数据准备一起使用的映射函数。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '6009'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -63,8 +63,8 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | ltrim | 删除字符串开头的空格。 | <ul><li>字符串： **必需**&#x200B;要删除空白的字符串。</li></ul> | ltrim(STRING) | ltrim(&quot; hello&quot;) | &quot;hello&quot; |
 | rtrim | 删除字符串末尾的空格。 | <ul><li>字符串： **必需**&#x200B;要删除空白的字符串。</li></ul> | rtrim(STRING) | rtrim(“hello ”) | &quot;hello&quot; |
 | trim | 删除字符串开头和结尾的空格。 | <ul><li>字符串： **必需**&#x200B;要删除空白的字符串。</li></ul> | trim(STRING) | trim(&quot; hello &quot;) | &quot;hello&quot; |
-| 等于 | 比较两个字符串以确认它们是否相等。 此函数区分大小写。 | <ul><li>STRING1： **必需**&#x200B;要比较的第一个字符串。</li><li>STRING2： **必需**&#x200B;要比较的第二个字符串。</li></ul> | STRING1. &#x200B;equals(&#x200B;STRING2) | “string1”。&#x200B;equals&#x200B;(&quot;STRING1&quot;) | false |
-| equalsIgnoreCase | 比较两个字符串以确认它们是否相等。 此函数为&#x200B;**而非**&#x200B;区分大小写。 | <ul><li>STRING1： **必需**&#x200B;要比较的第一个字符串。</li><li>STRING2： **必需**&#x200B;要比较的第二个字符串。</li></ul> | STRING1. &#x200B;equalsIgnoreCase&#x200B;(STRING2) | “string1”。&#x200B;equalsIgnoreCase&#x200B;(&quot;STRING1) | true |
+| 等于 | 比较两个字符串以确认它们是否相等。 此函数区分大小写。 | <ul><li>STRING1： **必需**&#x200B;要比较的第一个字符串。</li><li>STRING2： **必需**&#x200B;要比较的第二个字符串。</li></ul> | STRING1. &#x200B;equals(&#x200B;STRING2) | “string1”。&#x200B;equals&#x200B;(&quot;STRING1&quot;) | 假 |
+| equalsIgnoreCase | 比较两个字符串以确认它们是否相等。 此函数为&#x200B;**而非**&#x200B;区分大小写。 | <ul><li>STRING1： **必需**&#x200B;要比较的第一个字符串。</li><li>STRING2： **必需**&#x200B;要比较的第二个字符串。</li></ul> | STRING1. &#x200B;equalsIgnoreCase&#x200B;(STRING2) | “string1”。&#x200B;equalsIgnoreCase&#x200B;(&quot;STRING1) | 真 |
 
 {style="table-layout:auto"}
 
@@ -73,7 +73,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | 函数 | 描述 | 参数 | 句法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | extract_regex | 根据正则表达式从输入字符串中提取组。 | <ul><li>字符串： **必需**&#x200B;从中提取组的字符串。</li><li>REGEX： **必需**&#x200B;您希望组匹配的正则表达式。</li></ul> | extract_regex(STRING， REGEX) | extract_regex&#x200B;(&quot;E259，E259B_009,1_1&quot;&#x200B;， &quot;([^，]+)，[^，]*，([^，]+)&quot;) | [&quot;E259，E259B_009,1_1&quot;，&quot;E259&quot;，&quot;1_1&quot;] |
-| matches_regex | 检查字符串是否与输入的正则表达式匹配。 | <ul><li>字符串： **必需**&#x200B;要检查的字符串与正则表达式匹配。</li><li>REGEX： **必需**&#x200B;要与之进行比较的正则表达式。</li></ul> | matches_regex(STRING， REGEX) | matches_regex(&quot;E259，E259B_009,1_1&quot;， &quot;([^，]+)，[^，]*，([^，]+)&quot;) | true |
+| matches_regex | 检查字符串是否与输入的正则表达式匹配。 | <ul><li>字符串： **必需**&#x200B;要检查的字符串与正则表达式匹配。</li><li>REGEX： **必需**&#x200B;要与之进行比较的正则表达式。</li></ul> | matches_regex(STRING， REGEX) | matches_regex(&quot;E259，E259B_009,1_1&quot;， &quot;([^，]+)，[^，]*，([^，]+)&quot;) | 真 |
 
 {style="table-layout:auto"}
 
@@ -101,7 +101,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 | 函数 | 描述 | 参数 | 句法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
-| get_url_protocol | 从给定URL返回协议。 如果输入无效，则返回空值。 | <ul><li>URL： **必需**&#x200B;需要从中提取协议的URL。</li></ul> | get_url_protocol&#x200B;(URL) | get_url_protocol(&quot;https://platform&#x200B;.adobe.com/home&quot;) | https |
+| get_url_protocol | 从给定URL返回协议。 如果输入无效，则返回空值。 | <ul><li>URL： **必需**&#x200B;需要从中提取协议的URL。</li></ul> | get_url_protocol&#x200B;(URL) | get_url_protocol(&quot;&#x200B;.adobe.com/home&quot;) | https |
 | get_url_host | 返回给定URL的主机。 如果输入无效，则返回空值。 | <ul><li>URL： **必需**&#x200B;需要从中提取主机的URL。</li></ul> | get_url_host&#x200B;(URL) | get_url_host&#x200B;(&quot;https://platform&#x200B;.adobe.com/home&quot;) | platform.adobe.com |
 | get_url_port | 返回给定URL的端口。 如果输入无效，则返回空值。 | <ul><li>URL： **必需**&#x200B;需要从中提取端口的URL。</li></ul> | get_url_port(URL) | get_url_port&#x200B;(&quot;sftp://example.com//home/&#x200B;joe/employee.csv&quot;) | 22 |
 | get_url_path | 返回给定URL的路径。 默认情况下，将返回完整路径。 | <ul><li>URL： **必需**&#x200B;需要从中提取路径的URL。</li><li>FULL_PATH： *可选*&#x200B;一个布尔值，用于确定是否返回完整路径。 如果设置为false，则仅返回路径的结尾。</li></ul> | get_url_path&#x200B;(URL， FULL_PATH) | get_url_path&#x200B;(&quot;sftp://example.com//&#x200B;home/joe/employee.csv&quot;) | &quot;//home/joe/&#x200B;employee.csv&quot; |
@@ -126,7 +126,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | 日期 | 将日期字符串转换为ZonedDateTime对象（ISO 8601格式）。 | <ul><li>日期： **必需**&#x200B;表示日期的字符串。</li><li>格式： **必需**&#x200B;表示源日期格式的字符串。**注意：**&#x200B;这&#x200B;**不**&#x200B;表示要将日期字符串转换为的格式。 </li><li>DEFAULT_DATE： **必需**&#x200B;如果提供的日期为null，则返回默认日期。</li></ul> | date(DATE， FORMAT， DEFAULT_DATE) | date(&quot;2019-10-23 11:24&quot;， &quot;yyyy-MM-dd HH:mm&quot;， now()) | `2019-10-23T11:24:00Z` |
 | 日期 | 将日期字符串转换为ZonedDateTime对象（ISO 8601格式）。 | <ul><li>日期： **必需**&#x200B;表示日期的字符串。</li><li>格式： **必需**&#x200B;表示源日期格式的字符串。**注意：**&#x200B;这&#x200B;**不**&#x200B;表示要将日期字符串转换为的格式。 </li></ul> | 日期（日期，格式） | date(&quot;2019-10-23 11:24&quot;， &quot;yyyy-MM-dd HH:mm&quot;) | `2019-10-23T11:24:00Z` |
 | 日期 | 将日期字符串转换为ZonedDateTime对象（ISO 8601格式）。 | <ul><li>日期： **必需**&#x200B;表示日期的字符串。</li></ul> | date(DATE) | date(&quot;2019-10-23 11:24&quot;) | “2019-10-23T11:24:00Z” |
-| date_part | 检索日期的各个部分。 支持以下组件值： <br><br>&quot;year&quot;<br>&quot;yyyy&quot;<br>&quot;yy&quot;<br><br>&quot;quarter&quot;<br>&quot;qq&quot;<br>&quot;q&quot;<br><br>&quot;month&quot;<br>&quot;mm&quot;<br>&quot;m&quot;<br><br>&quot;dayofyear&quot;<br>&quot;dy&quot;<br>&quot;y&quot;<br><br>&quot;day&quot;<br>&quot;dd&quot;<br>&quot;d&quot;<br><br>&quot;week&quot;<br>&quot;ww&quot;<br>&quot;w&quot;<br><br>&quot;weekday&quot;<br>&quot;dw&quot;&lbrace;20&quot;<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> | <ul><li>组件： **必需**&#x200B;表示日期部分的字符串。 </li><li>日期： **必需**&#x200B;标准格式的日期。</li></ul> | date_part&#x200B;(COMPONENT， DATE) | date_part(&quot;MM&quot;， date(&quot;2019-10-17 11:55:12&quot;) | 10 |
+| date_part | 检索日期的各个部分。 支持以下组件值： <br><br>&quot;year&quot;<br>&quot;yyyy&quot;<br>&quot;yy&quot;<br><br>&quot;quarter&quot;<br>&quot;qq&quot;<br>&quot;q&quot;<br><br>&quot;month&quot;<br>&quot;mm&quot;<br>&quot;m&quot;<br><br>&quot;dayofyear&quot;<br>&quot;dy&quot;<br>&quot;y&quot;<br><br>&quot;day&quot;<br>&quot;dd&quot;<br>&quot;d&quot;<br><br>&quot;week&quot;<br>&quot;ww&quot;<br>&quot;w&quot;<br><br>&quot;weekday&quot;<br>&quot;dw&quot;{20&quot;<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> | <ul><li>组件： **必需**&#x200B;表示日期部分的字符串。 </li><li>日期： **必需**&#x200B;标准格式的日期。</li></ul> | date_part&#x200B;(COMPONENT， DATE) | date_part(&quot;MM&quot;， date(&quot;2019-10-17 11:55:12&quot;) | 10 |
 | set_date_part | 替换给定日期中的组件。 接受以下组件： <br><br>&quot;year&quot;<br>&quot;yyyy&quot;<br>&quot;yy&quot;<br><br>&quot;month&quot;<br>&quot;mm&quot;<br>&quot;m&quot;<br><br>&quot;day&quot;<br>&quot;dd&quot;<br>&quot;d&quot;<br><br>&quot;hour&quot;<br>&quot;hh&quot;<br><br>&quot;minute&quot;<br>&quot;mi&quot;<br>&quot;n&quot;<br><br>&quot;second&quot;<br>&quot;ss&quot;<br>&quot;s&quot; | <ul><li>组件： **必需**&#x200B;表示日期部分的字符串。 </li><li>值： **必需**&#x200B;为给定日期的组件设置的值。</li><li>日期： **必需**&#x200B;标准格式的日期。</li></ul> | set_date_part&#x200B;(COMPONENT， VALUE， DATE) | set_date_part(&quot;m&quot;， 4， date(&quot;2016-11-09T11:44:44.797&quot;) | “2016-04-09T11:44:44Z” |
 | make_date_time | 从部件创建日期。 此函数也可以使用make_timestamp进行感应。 | <ul><li>YEAR： **必需**&#x200B;用四位数字表示的年份。</li><li>月份： **必需**&#x200B;月份。 允许的值为1到12。</li><li>日： **必需**&#x200B;日。 允许的值为1到31。</li><li>小时：**必需**&#x200B;小时。 允许的值为0到23。</li><li>MINUTE： **必需**&#x200B;分钟。 允许的值为0到59。</li><li>NANOSECOND： **必需**&#x200B;纳秒值。 允许的值为0到999999999。</li><li>时区： **必需**&#x200B;日期时间的时区。</li></ul> | make_date_time&#x200B;（年、月、日、小时、分钟、秒、纳秒、时区） | make_date_time&#x200B;（2019， 10， 17， 11， 55， 12， 999，“美国/洛杉矶”） | `2019-10-17T11:55:12Z` |
 | zone_date_to_utc | 将任何时区的日期转换为UTC格式的日期。 | <ul><li>日期： **必需**&#x200B;尝试转换的日期。</li></ul> | zone_date_to_utc&#x200B;(DATE) | `zone_date_to_utc&#x200B;(2019-10-17T11:55:&#x200B;12 PST` | `2019-10-17T19:55:12Z` |
@@ -142,11 +142,11 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 | 函数 | 描述 | 参数 | 句法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
-| is_empty | 检查对象是否为空。 | <ul><li>输入： **必需**&#x200B;您尝试检查的对象为空。</li></ul> | is_empty(INPUT) | `is_empty([1, null, 2, 3])` | false |
+| is_empty | 检查对象是否为空。 | <ul><li>输入： **必需**&#x200B;您尝试检查的对象为空。</li></ul> | is_empty(INPUT) | `is_empty([1, null, 2, 3])` | 假 |
 | arrays_to_object | 创建对象列表。 | <ul><li>输入： **必需**&#x200B;键和数组对的分组。</li></ul> | arrays_to_object(INPUT) | `arrays_to_objects('sku', explode("id1\|id2", '\\\|'), 'price', [22.5,14.35])` | ```[{ "sku": "id1", "price": 22.5 }, { "sku": "id2", "price": 14.35 }]``` |
 | to_object | 根据给定的平面键/值对创建对象。 | <ul><li>输入： **必需**&#x200B;键/值对的平面列表。</li></ul> | to_object(INPUT) | to_object&#x200B;(“firstName”、“John”、“lastName”、“Doe”) | `{"firstName": "John", "lastName": "Doe"}` |
 | str_to_object | 从输入字符串创建对象。 | <ul><li>字符串： **必需**&#x200B;正在分析以创建对象的字符串。</li><li>VALUE_DELIMITER： *可选*&#x200B;用于将字段与值分开的分隔符。 默认分隔符为`:`。</li><li>FIELD_DELIMITER： *可选*&#x200B;用于分隔字段值对的分隔符。 默认分隔符为`,`。</li></ul> | str_to_object&#x200B;(STRING， VALUE_DELIMITER， FIELD_DELIMITER) **注意**：您可以使用`get()`函数以及`str_to_object()`来检索字符串中键的值。 | <ul><li>示例#1： str_to_object(&quot;firstName - John ； lastName - ； - 123 345 7890&quot;， &quot;-&quot;， &quot;；&quot;)</li><li>示例#2： str_to_object(&quot;firstName - John ； lastName - ； phone - 123 456 7890&quot;， &quot;-&quot;， &quot;；&quot;)。get(&quot;firstName&quot;)</li></ul> | <ul><li>示例#1：`{"firstName": "John", "lastName": "Doe", "phone": "123 456 7890"}`</li><li>示例#2： &quot;John&quot;</li></ul> |
-| contains_key | 检查源数据中是否存在该对象。 **注意：**&#x200B;此函数替换已弃用的`is_set()`函数。 | <ul><li>输入： **必需**&#x200B;要检查的路径是否存在于源数据中。</li></ul> | contains_key(INPUT) | contains_key(&quot;evars.evar.field1&quot;) | true |
+| contains_key | 检查源数据中是否存在该对象。 **注意：**&#x200B;此函数替换已弃用的`is_set()`函数。 | <ul><li>输入： **必需**&#x200B;要检查的路径是否存在于源数据中。</li></ul> | contains_key(INPUT) | contains_key(&quot;evars.evar.field1&quot;) | 真 |
 | 无效 | 将属性的值设置为`null`。 当您不想将字段复制到目标架构时，应使用此字段。 | | nullify() | nullify() | `null` |
 | get_keys | 解析键/值对并返回所有键。 | <ul><li>对象： **必需**&#x200B;从中提取键的对象。</li></ul> | get_keys(OBJECT) | get_keys({&quot;book1&quot;： “Pride and Visimit”， “book2”： “1984”}) | `["book1", "book2"]` |
 | get_values | 解析键/值对并根据给定的键返回字符串的值。 | <ul><li>字符串： **必需**&#x200B;要分析的字符串。</li><li>KEY： **必需**&#x200B;必须提取其值的键。</li><li>VALUE_DELIMITER： **必需**&#x200B;用于分隔字段和值的分隔符。 如果提供了`null`或空字符串，则此值为`:`。</li><li>FIELD_DELIMITER： *可选*&#x200B;用于分隔字段和值对的分隔符。 如果提供了`null`或空字符串，则此值为`,`。</li></ul> | get_values(STRING， KEY， VALUE_DELIMITER， FIELD_DELIMITER) | get_values(\&quot;firstName - John ， lastName - Cena ， phone - 555 420 8692\&quot;， \&quot;firstName\&quot;， \&quot;-\&quot;， \&quot;，\&quot;) | John |
@@ -280,14 +280,14 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 | 函数 | 描述 | 参数 | 句法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
-| ua_os_name | 从用户代理字符串中提取操作系统名称。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_os_name&#x200B;(USER_AGENT) | ua_os_name&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS |
-| ua_os_version_major | 从用户代理字符串中提取操作系统的主要版本。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_os_version_major&#x200B;(USER_AGENT) | ua_os_version_major&#x200B;s(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS 5 |
-| ua_os_version | 从用户代理字符串中提取操作系统的版本。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_os_version&#x200B;(USER_AGENT) | ua_os_version&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | 5.1.1 |
-| ua_os_name_version | 从用户代理字符串中提取操作系统的名称和版本。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_os_name_version&#x200B;(USER_AGENT) | ua_os_name_version&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS 5.1.1 |
-| ua_agent_version | 从用户代理字符串中提取代理版本。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_agent_version&#x200B;(USER_AGENT) | ua_agent_version&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | 5.1 |
-| ua_agent_version_major | 从用户代理字符串中提取代理名称和主要版本。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_agent_version_major&#x200B;(USER_AGENT) | ua_agent_version_major&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Safari 5 |
-| ua_agent_name | 从用户代理字符串中提取代理名称。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_agent_name&#x200B;(USER_AGENT) | ua_agent_name&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Safari |
-| ua_device_class | 从用户代理字符串中提取设备类。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_device_class&#x200B;(USER_AGENT) | ua_device_class&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | 电话 |
+| ua_os_name | 从用户代理字符串中提取操作系统名称。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_os_name&#x200B;(USER_AGENT) | ua_os_name&#x200B;(&quot;Mozilla/5.0（iPhone；CPU iPhone OS 5_1_1，如Mac OS X）AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS |
+| ua_os_version_major | 从用户代理字符串中提取操作系统的主要版本。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_os_version_major&#x200B;(USER_AGENT) | ua_os_version_major&#x200B;s(&quot;Mozilla/5.0（iPhone；CPU iPhone OS 5_1_1，如Mac OS X）AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS 5 |
+| ua_os_version | 从用户代理字符串中提取操作系统的版本。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_os_version&#x200B;(USER_AGENT) | ua_os_version&#x200B;(&quot;Mozilla/5.0（iPhone；CPU iPhone OS 5_1_1，如Mac OS X）AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | 5.1.1 |
+| ua_os_name_version | 从用户代理字符串中提取操作系统的名称和版本。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_os_name_version&#x200B;(USER_AGENT) | ua_os_name_version&#x200B;(&quot;Mozilla/5.0（iPhone；CPU iPhone OS 5_1_1，如Mac OS X）AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS 5.1.1 |
+| ua_agent_version | 从用户代理字符串中提取代理版本。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_agent_version&#x200B;(USER_AGENT) | ua_agent_version&#x200B;(&quot;Mozilla/5.0（iPhone；CPU iPhone OS 5_1_1，如Mac OS X）AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | 5.1 |
+| ua_agent_version_major | 从用户代理字符串中提取代理名称和主要版本。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_agent_version_major&#x200B;(USER_AGENT) | ua_agent_version_major&#x200B;(&quot;Mozilla/5.0（iPhone；CPU iPhone OS 5_1_1，如Mac OS X）AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Safari 5 |
+| ua_agent_name | 从用户代理字符串中提取代理名称。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_agent_name&#x200B;(USER_AGENT) | ua_agent_name&#x200B;(&quot;Mozilla/5.0（iPhone；CPU iPhone OS 5_1_1，如Mac OS X）AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Safari |
+| ua_device_class | 从用户代理字符串中提取设备类。 | <ul><li>USER_AGENT： **必需**&#x200B;用户代理字符串。</li></ul> | ua_device_class&#x200B;(USER_AGENT) | ua_device_class&#x200B;(&quot;Mozilla/5.0（iPhone；CPU iPhone OS 5_1_1，如Mac OS X）AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | 电话 |
 
 {style="table-layout:auto"}
 
@@ -306,12 +306,14 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | aa_get_product_quantities | 从Analytics产品字符串中提取数量。 | <ul><li>PRODUCTS_STRING： **必需** Analytics产品字符串。</li></ul> | aa_get_product_quantities(PRODUCTS_STRING) | aa_get_product_quantities（&quot;；示例产品1；1；3.50，示例类别2；示例产品2&quot;） | [&quot;1&quot;，空] |
 | aa_get_product_prices | 从Analytics产品字符串中提取价格。 | <ul><li>PRODUCTS_STRING： **必需** Analytics产品字符串。</li></ul> | aa_get_product_prices(PRODUCTS_STRING) | aa_get_product_prices（&quot;；示例产品1；1；3.50，示例类别2；示例产品2&quot;） | [&quot;3.50&quot;，空] |
 | aa_get_product_event_values | 从products字符串中提取命名事件的值作为字符串数组。 | <ul><li>PRODUCTS_STRING： **必需** Analytics产品字符串。</li><li>EVENT_NAME： **必需**&#x200B;要从中提取值的事件名称。</li></ul> | aa_get_product_event_values(PRODUCTS_STRING， EVENT_NAME) | aa_get_product_event_values（&quot;；示例产品1；1；4.20；event1=2.3\|event2=5:1，；示例产品2；1；4.20；event1=3\|event2=2:2&quot;， &quot;event1&quot;） | [&quot;2.3&quot;，&quot;3&quot;] |
-| aa_get_product_evars | 从products字符串中抽取命名事件的evar值作为字符串数组。 | <ul><li>PRODUCTS_STRING： **必需** Analytics产品字符串。</li><li>eVar_NAME： **必需**&#x200B;要提取的eVar名称。</li></ul> | aa_get_product_evars(PRODUCTS_STRING， EVENT_NAME) | aa_get_product_evars(&quot;；示例产品；1；6.69；；eVar1=Merchandising value&quot;， &quot;eVar1&quot;) | [“促销值”] |
+| aa_get_product_evars | 从products字符串中抽取命名事件的evar值作为字符串数组。 | <ul><li>PRODUCTS_STRING： **必需** Analytics产品字符串。</li><li>eVar_NAME： **必需**&#x200B;要提取的eVar名称。</li></ul> | aa_get_product_evars(PRODUCTS_STRING， EVENT_NAME) | aa_get_product_evars（&quot;；示例产品；1；6.69；；eVar1=Merchandising value&quot;， &quot;eVar1&quot;） | [“促销值”] |
 
 {style="table-layout:auto"}
 
-<!-- | aa_get_product_events | Extracts a named event from the products string as an array of objects. | <ul><li>PRODUCTS_STRING: **Required** The Analytics products string.</li><li>EVENT_NAME: **Required** The event name to extract values from.</li></ul> | aa_get_product_events(PRODUCTS_STRING, EVENT_NAME) | aa_get_product_events(";Example product 1;1;4.20;event1=2.3\|event2=5:1,;Example product 2;1;4.20;event1=3\|event2=2:2", "event2") | [`{"id": "1","value", "5"}`, `{"id": "2","value", "1"}`] |
-| aa_get_product_event_ids | Extracts the IDs for the named event from the products string as an array of strings. | <ul><li>PRODUCTS_STRING: **Required** The Analytics products string.</li><li>EVENT_NAME: **Required** The event name to extract values from.</li></ul> | aa_get_product_event_ids(PRODUCTS_STRING, EVENT_NAME) | aa_get_product_event_ids(";Example product 1;1;4.20;event1=2.3\|event2=5:1,;Example product 2;1;4.20;event1=3\|event2=2:2", "event2") | ["1", "2"] | -->
+<!-- 
+| aa_get_product_events | Extracts a named event from the products string as an array of objects. | <ul><li>PRODUCTS_STRING: **Required** The Analytics products string.</li><li>EVENT_NAME: **Required** The event name to extract values from.</li></ul> | aa_get_product_events(PRODUCTS_STRING, EVENT_NAME) | aa_get_product_events(";Example product 1;1;4.20;event1=2.3\|event2=5:1,;Example product 2;1;4.20;event1=3\|event2=2:2", "event2") | [`{"id": "1","value", "5"}`, `{"id": "2","value", "1"}`] |
+| aa_get_product_event_ids | Extracts the IDs for the named event from the products string as an array of strings. | <ul><li>PRODUCTS_STRING: **Required** The Analytics products string.</li><li>EVENT_NAME: **Required** The event name to extract values from.</li></ul> | aa_get_product_event_ids(PRODUCTS_STRING, EVENT_NAME) | aa_get_product_event_ids(";Example product 1;1;4.20;event1=2.3\|event2=5:1,;Example product 2;1;4.20;event1=3\|event2=2:2", "event2") | ["1", "2"] | 
+-->
 
 ### 对象复制 {#object-copy}
 
@@ -387,11 +389,11 @@ address.line1 -> addr.addrLine1
 | > | %3E |
 | ? | %3F |
 | @ | %40 |
-| &lbrack; | %5B |
+| [ | %5B |
 | | | %5C |
-| &rbrack; | %5D |
+| ] | %5D |
 | ^ | %5E |
-| &grave; | %60 |
+| ` | %60 |
 | ~ | %7E |
 
 {style="table-layout:auto"}
