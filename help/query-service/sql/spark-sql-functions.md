@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 查询服务中的Spark SQL函数
 description: 了解扩展SQL功能的受支持Spark SQL函数。
 exl-id: 59e6d82b-3317-456d-8c56-3efd5978433a
-source-git-commit: 7ac1521adb916313c8b53fe2a095821d756480be
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1903'
 ht-degree: 1%
