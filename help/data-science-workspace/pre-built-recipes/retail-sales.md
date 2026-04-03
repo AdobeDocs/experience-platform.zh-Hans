@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 零售指导方针
 description: 通过零售销售方法，您可以预测特定时间段内植入的所有商店的销售预测。 借助准确的预测模型，retailer将能够发现需求与定价政策之间的关系，并做出优化的定价决策，以实现销售和收入的最大化。
 exl-id: ff01fcd1-fca6-4957-8470-a974fd1520aa
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '603'
 ht-degree: 2%
