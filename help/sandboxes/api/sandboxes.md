@@ -5,7 +5,7 @@ title: 沙盒管理API端点
 description: 沙盒API中的/sandboxes端点允许您在Adobe Experience Platform中以编程方式管理沙盒。
 role: Developer
 exl-id: 0ff653b4-3e31-4ea5-a22e-07e18795f73e
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1477'
 ht-degree: 3%
@@ -14,7 +14,7 @@ ht-degree: 3%
 
 # 沙盒管理端点
 
-Adobe Experience Platform中的沙盒提供了独立的开发环境，允许您在不影响生产环境的情况下测试功能、运行实验以及进行自定义配置。 [!DNL Sandbox] API中的`/sandboxes`端点允许您以编程方式管理Experience Platform中的沙盒。
+Adobe Experience Platform中的沙盒提供了独立的开发环境，允许您在不影响生产环境的情况下测试功能、运行实验以及进行自定义配置。 `/sandboxes` API中的[!DNL Sandbox]端点允许您以编程方式管理Experience Platform中的沙盒。
 
 ## 快速入门
 
@@ -199,7 +199,7 @@ curl -X GET \
 
 ### 创建开发沙盒
 
-要创建开发沙盒，您必须在请求有效负载中提供值为`development`的`type`特性。
+要创建开发沙盒，您必须在请求有效负载中提供值为`type`的`development`特性。
 
 **API格式**
 
@@ -251,7 +251,7 @@ curl -X POST \
 
 ### 创建生产沙盒
 
-要创建生产沙盒，您必须在请求有效负载中提供值为`production`的`type`特性。
+要创建生产沙盒，您必须在请求有效负载中提供值为`type`的`production`特性。
 
 **API格式**
 
@@ -404,7 +404,7 @@ curl -X PUT \
 }
 ```
 
-如果Adobe Analytics也在其中托管的身份图形用于[Cross Device Analytics (CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html?lang=zh-Hans)功能，或者Adobe Audience Manager也在其中托管的身份图形用于[基于人员的目标(PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html?lang=zh-Hans)功能，则无法重置默认生产沙盒和任何用户创建的生产沙盒。
+如果Adobe Analytics也在其中托管的身份图形用于[Cross Device Analytics (CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html)功能，或者Adobe Audience Manager也在其中托管的身份图形用于[基于人员的目标(PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html)功能，则无法重置默认生产沙盒和任何用户创建的生产沙盒。
 
 以下是可阻止沙盒重置的可能异常列表：
 
