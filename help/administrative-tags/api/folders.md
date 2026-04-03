@@ -3,7 +3,7 @@ title: 文件夹端点
 description: 了解如何使用Adobe Experience Platform API创建、更新、管理和删除文件夹。
 role: Developer
 exl-id: ee43d699-725d-4ffd-a71b-049eeb3b4d7c
-source-git-commit: 78aa48701abaadea963b25e390aa96d7b31386f4
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '818'
 ht-degree: 4%
@@ -58,7 +58,7 @@ curl -X GET https://experience.adobe.io/unifiedfolders/folders/dataset/root/subf
 
 成功的响应会返回HTTP状态200，其中包含组织中数据集的所有顶级文件夹的列表。
 
-+++一个示例响应，其中包含贵组织中数据集的所有顶级文件夹的列表。
++++包含组织中数据集所有顶级文件夹列表的示例响应。
 
 ```json
 {
@@ -256,7 +256,7 @@ curl -X GET https://experience.adobe.io/unifiedfolders/folders/dataset/83f8287c-
 
 ## 验证指定的文件夹 {#validate}
 
-您可以验证文件夹是否有资格在其中包含对象，方法是向`/folder/{FOLDER_TYPE}/{FOLDER_ID}/validate`端点发出GET请求，并提供文件夹类型和ID。
+您可以向`/folder/{FOLDER_TYPE}/{FOLDER_ID}/validate`端点发出GET请求，以验证文件夹是否有资格在其中包含对象，并提供文件夹类型和ID。
 
 **API格式**
 
@@ -271,7 +271,7 @@ GET /folders/{FOLDER_TYPE}/{FOLDER_ID}/validate
 
 **请求**
 
-+++用于验证特定文件夹的示例请求
++++验证特定文件夹的示例请求
 
 ```shell
 curl -X GET https://experience.adobe.io/unifiedfolders/folders/dataset/83f8287c-767b-4106-b271-257282fd170e/validate
@@ -316,7 +316,7 @@ curl -X GET https://experience.adobe.io/unifiedfolders/folders/dataset/83f8287c-
 
 ## 更新特定文件夹 {#update}
 
-您可以更新属于您组织的特定文件夹的详细信息，方法是向`/folder`端点发出PATCH请求并指定文件夹类型和文件夹的ID。
+您可以更新属于您组织的特定文件夹的详细信息，方法是向`/folder`端点发出PATCH请求，并指定文件夹类型和文件夹的ID。
 
 **API格式**
 
