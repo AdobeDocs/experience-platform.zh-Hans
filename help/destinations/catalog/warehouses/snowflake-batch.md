@@ -4,7 +4,7 @@ description: 创建实时Snowflake数据共享，以直接将每日受众更新�
 last-substantial-update: 2026-02-17T00:00:00Z
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 6959ccd0-ba30-4750-a7de-d0a709292ef7
-source-git-commit: f6565f7820d6d6394d26b88fdde3d42a90dedd63
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1804'
 ht-degree: 3%
