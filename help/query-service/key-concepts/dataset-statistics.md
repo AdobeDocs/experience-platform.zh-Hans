@@ -2,7 +2,7 @@
 title: 数据集统计信息计算
 description: 本文档介绍如何使用SQL命令计算Azure Data Lake Storage (ADLS)数据集的列级统计信息。
 exl-id: 66f11cd4-b115-40b8-ba8a-c4bb3606bbbf
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1085'
 ht-degree: 0%
@@ -62,7 +62,7 @@ ANALYZE TABLE adc_geometric COMPUTE STATISTICS AS alias_name;
 `COMPUTE STATISTICS`查询的示例输出如下所示：
 
 ```console
-| Statistics ID         | 
+| Statistics ID         |
 | --------------------- |
 | adc_geometric_stats_1 |
 (1 row)
