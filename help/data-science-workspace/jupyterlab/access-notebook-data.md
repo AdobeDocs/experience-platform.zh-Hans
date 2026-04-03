@@ -2,9 +2,9 @@
 keywords: Experience Platform；JupyterLab；笔记本；数据科学Workspace；热门主题；%数据集；交互模式；批处理模式；Spark sdk；python sdk；访问数据；笔记本数据访问
 solution: Experience Platform
 title: Jupyterlab Notebooks中的数据访问
-description: 本指南重点介绍如何使用Jupyter Notebooks(内置于数据科学Workspace中)访问您的数据。
+description: 本指南重点介绍如何使用Jupyter Notebooks（内置于数据科学Workspace中）访问您的数据。
 exl-id: 2035a627-5afc-4b72-9119-158b95a35d32
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '3274'
 ht-degree: 3%
