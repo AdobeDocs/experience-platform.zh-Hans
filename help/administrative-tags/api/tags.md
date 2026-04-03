@@ -3,7 +3,7 @@ title: 统一标记端点
 description: 了解如何使用Adobe Experience Platform API创建、更新、管理和删除标记类别和标记。
 role: Developer
 exl-id: 6687d1da-a5e4-435a-9f99-1b0f9ac98088
-source-git-commit: 717a4ea0568200c940cf9b8f26f4dd2aa9c00a3e
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1860'
 ht-degree: 3%
@@ -34,7 +34,7 @@ ht-degree: 3%
 
 ## 检索标记类别的列表 {#get-tag-categories}
 
-您可以通过向`/tagCategory`端点发出GET请求来检索属于您组织的标记类别的列表。
+您可以通过向`/tagCategory`端点发出GET请求来检索属于您组织的标记类别列表。
 
 **API格式**
 
@@ -159,7 +159,7 @@ curl -X POST https://experience.adobe.io/unifiedtags/tagCategory
 
 ## 检索特定标记类别 {#get-tag-category}
 
-您可以通过向`/tagCategory`端点发出GET请求并指定标记类别的ID来检索属于您组织的特定标记类别。
+您可以通过向`/tagCategory`端点发出GET请求并指定标记类别的ID，检索属于您组织的特定标记类别。
 
 **API格式**
 
@@ -224,7 +224,7 @@ curl -X GET https://experience.adobe.io/unifiedtags/tagCategory/e2b7c656-067b-44
 >
 >只有系统管理员和产品管理员可以使用此API调用。
 
-您可以通过向`/tagCategory`端点发出PATCH请求并指定标记类别的ID来更新属于您组织的特定标记类别的详细信息。
+您可以更新属于您组织的特定标记类别的详细信息，方法是向`/tagCategory`端点发出PATCH请求并指定标记类别的ID。
 
 **API格式**
 
@@ -323,7 +323,7 @@ curl -X DELETE https://experience.adobe.io/unifiedtags/tagCategory/e2b7c656-067b
 
 ## 检索标记列表 {#get-tags}
 
-您可以通过向`/tags`端点以及标记类别的ID发出GET请求来检索属于您组织的标记列表。
+您可以通过向`/tags`端点以及标记类别的ID发出GET请求，检索属于您组织的标记列表。
 
 **API格式**
 
@@ -518,7 +518,7 @@ POST /tags
 
 **请求**
 
-+++用于创建新标记的示例请求。
++++创建新标记的示例请求。
 
 ```shell
 curl -X POST https://experience.adobe.io/unifiedtags/tags
@@ -589,7 +589,7 @@ GET /tags/{TAG_ID}
 
 **请求**
 
-+++检索特定标记的示例请求
++++用于检索特定标记的示例请求
 
 ```shell
 curl -X GET https://experience.adobe.io/unifiedtags/tags/2bd5ddd9-7284-4767-81d9-c75b122f2a6a \
@@ -605,7 +605,7 @@ curl -X GET https://experience.adobe.io/unifiedtags/tags/2bd5ddd9-7284-4767-81d9
 
 成功的响应返回HTTP状态200以及指定标记的详细信息。
 
-+++包含指定标记详细信息的示例响应。
++++包含指定标记详细信息的示例响应。 
 
 ```json
 {
