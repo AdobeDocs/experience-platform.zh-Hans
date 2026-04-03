@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制创建角色
 description: 通过Adobe Experience Cloud中的“权限”界面管理角色。
 exl-id: 85699716-339d-4992-8390-95563c7ea7fe
-source-git-commit: b665d0edce713f1b252e07125aabab79d52a9cba
+source-git-commit: ed966156c253a8c07380079013d98c578821ae03
 workflow-type: tm+mt
 source-wordcount: '737'
 ht-degree: 13%
@@ -24,7 +24,7 @@ ht-degree: 13%
 >id="platform_permissions_roles_about_create"
 >title="创建新角色"
 >abstract="创建新角色以更好地对与您的 Experience Platform 实例交互的用户进行分类。例如，可为内部营销团队创建一个角色，并将受监管的健康数据 (RHD) 标签应用于该角色，使您的内部营销团队可访问受保护的健康信息 (PHI)。或者，还可为外部机构创建一个角色，并通过不将 RHD 标签应用于该角色而拒绝该角色访问 PHI 数据。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html?lang=zh-Hans" text="管理角色"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html" text="管理角色"
 >additional-url="https://experienceleague.adobe.com/zh-hans/docs/experience-platform/access-control/abac/end-to-end-guide#label-roles" text="将标签应用于角色"
 
 要创建新角色，请选择&#x200B;**[!UICONTROL Create role]**。
@@ -59,9 +59,11 @@ ht-degree: 13%
 
 已成功创建新角色，并且您被重定向到&#x200B;**[!UICONTROL Roles]**&#x200B;页面，您将看到新创建的角色显示在列表中。
 
-<!-- The following video is intended to support your understanding of creating a new role and managing users for that role.
+<!-- 
+The following video is intended to support your understanding of creating a new role and managing users for that role.
 
->[!VIDEO](https://video.tv.adobe.com/v/3475983/?captions=chi_hans&learn=on) -->
+>[!VIDEO](https://video.tv.adobe.com/v/336081/?learn=on) 
+-->
 
 ## 复制角色
 
