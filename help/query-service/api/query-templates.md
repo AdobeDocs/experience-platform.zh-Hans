@@ -5,7 +5,7 @@ title: 查询模板API端点
 description: 本指南详细说明您可以使用查询服务API进行的各种查询模板API调用。
 role: Developer
 exl-id: 14cd7907-73d2-478f-8992-da3bdf08eacc
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '977'
 ht-degree: 2%
@@ -18,7 +18,7 @@ ht-degree: 2%
 
 以下部分描述了您可以使用[!DNL Query Service] API进行的各种API调用。 每个调用包括常规API格式、显示所需标头的示例请求以及示例响应。
 
-有关通过Experience PlatformUI创建模板的信息，请参阅[UI查询模板文档](../ui/query-templates.md)。
+有关通过Experience Platform用户界面创建模板的信息，请参阅[UI查询模板文档](../ui/query-templates.md)。
 
 ### 检索查询模板列表
 
@@ -41,10 +41,10 @@ GET /query-templates?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `orderby` | 指定排序结果所依据的字段。 支持的字段为`created`和`updated`。 例如，`orderby=created`将按创建的结果以升序排序。 在创建之前(`orderby=-created`)添加`-`将按创建的顺序降序对项进行排序。 |
+| `orderby` | 指定排序结果所依据的字段。 支持的字段为`created`和`updated`。 例如，`orderby=created`将按创建的结果以升序排序。 在创建之前(`-`)添加`orderby=-created`将按创建的顺序降序对项进行排序。 |
 | `limit` | 指定页大小限制，以控制页中包含的结果数。 （*默认值： 20*） |
 | `start` | 指定ISO格式时间戳对结果进行排序。 如果未指定开始日期，则API调用将首先返回最早创建的模板，然后继续列出更新的结果。<br>个ISO时间戳允许在日期和时间使用不同级别的粒度。 基本ISO时间戳采用`2020-09-07`格式，表示日期2020年9月7日。 一个更复杂的示例将编写为`2022-11-05T08:15:30-05:00`，对应于2022年11月5日美国东部标准时间上午8:15:30。 可以为时区提供UTC偏移量，时区由后缀“Z”(`2020-01-01T01:01:01Z`)表示。 如果未提供时区，则默认设置为0。 |
-| `property` | 根据字段筛选结果。 筛选器&#x200B;**必须**&#x200B;进行HTML转义。 逗号用于组合多组过滤器。 支持的字段为`name`和`userId`。 唯一支持的运算符是`==`（等于）。 例如，`name==my_template`将返回名称为`my_template`的所有查询模板。 |
+| `property` | 根据字段筛选结果。 筛选器&#x200B;**必须**&#x200B;对HTML进行转义。 逗号用于组合多组过滤器。 支持的字段为`name`和`userId`。 唯一支持的运算符是`==`（等于）。 例如，`name==my_template`将返回名称为`my_template`的所有查询模板。 |
 
 **请求**
 
@@ -189,7 +189,7 @@ GET /query-templates/{TEMPLATE_ID}
 ```
 
 | 属性 | 描述 |
-| -------- | ----------- | 
+| -------- | ----------- |
 | `{TEMPLATE_ID}` | 要检索的查询模板的`id`值。 |
 
 **请求**
