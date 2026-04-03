@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用流服务API为Mailchimp Campaign创建数据流
 description: 了解如何使用流服务API将Adobe Experience Platform连接到MailChimp Campaign。
 exl-id: fd4821c7-6fe1-4cad-8e13-3549dbe0ce98
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '1934'
 ht-degree: 1%
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 # 使用流服务API为[!DNL Mailchimp Campaign]创建数据流
 
-以下教程将指导您完成使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)创建源连接和数据流以将[!DNL Mailchimp Campaign]数据引入Experience Platform的步骤。
+以下教程将指导您完成使用[!DNL Mailchimp Campaign]API[[!DNL Flow Service] 创建源连接和数据流以将](https://www.adobe.io/experience-platform-apis/references/flow-service/)数据引入Experience Platform的步骤。
 
 ## 先决条件
 
@@ -29,7 +29,7 @@ ht-degree: 1%
 
 ### 使用基本身份验证创建[!DNL Mailchimp]基本连接
 
-若要使用基本身份验证创建[!DNL Mailchimp]基本连接，请在为您的`authorizationTestUrl`、`username`和`password`提供凭据时向[!DNL Flow Service] API的`/connections`端点发出POST请求。
+若要使用基本身份验证创建[!DNL Mailchimp]基本连接，请在为您的`/connections`、[!DNL Flow Service]和`authorizationTestUrl`提供凭据时向`username` API的`password`端点发出POST请求。
 
 **API格式**
 
@@ -90,7 +90,7 @@ curl -X POST \
 
 ### 使用OAuth 2刷新代码创建[!DNL Mailchimp]基本连接
 
-要使用OAuth 2刷新代码创建[!DNL Mailchimp]基本连接，请在为您的`authorizationTestUrl`和`accessToken`提供凭据时向`/connections`端点发出POST请求。
+要使用OAuth 2刷新代码创建[!DNL Mailchimp]基本连接，请在为您的`/connections`和`authorizationTestUrl`提供凭据时向`accessToken`端点发出POST请求。
 
 **API格式**
 
@@ -467,7 +467,7 @@ A successful response returns details of the newly created mapping including its
 }
 ```
 
---->
+-->
 
 ## 创建流 {#flow}
 
@@ -551,11 +551,11 @@ curl -X POST \
 
 ### 更新您的数据流
 
-通过提供数据流的ID，向[!DNL Flow Service] API的`/flows`端点发出PATCH请求来更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 发出PATCH请求时，必须在`If-Match`标头中提供数据流唯一的`etag`。 有关完整的API示例，请阅读有关[使用API更新源数据流](../../update-dataflows.md)的指南。
+通过提供数据流的ID，向`/flows` API的[!DNL Flow Service]端点发出PATCH请求来更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 发出PATCH请求时，必须在`etag`标头中提供数据流唯一的`If-Match`。 有关完整的API示例，请阅读有关[使用API更新源数据流](../../update-dataflows.md)的指南。
 
 ### 更新您的帐户
 
-在提供基本连接ID作为查询参数的同时，通过向[!DNL Flow Service] API执行PATCH请求来更新源帐户的名称、描述和凭据。 发出PATCH请求时，必须在`If-Match`标头中提供源帐户的唯一`etag`。 有关完整的API示例，请阅读有关[使用API更新源帐户](../../update.md)的指南。
+在提供基本连接ID作为查询参数的同时，通过向[!DNL Flow Service] API执行PATCH请求来更新源帐户的名称、描述和凭据。 发出PATCH请求时，必须在`etag`标头中提供源帐户的唯一`If-Match`。 有关完整的API示例，请阅读有关[使用API更新源帐户](../../update.md)的指南。
 
 ### 删除您的数据流
 
@@ -563,4 +563,4 @@ curl -X POST \
 
 ### 删除您的帐户
 
-在提供要删除的帐户的基本连接ID时，通过向[!DNL Flow Service] API执行DELETE请求来删除您的帐户。 有关完整的API示例，请阅读有关使用API[&#128279;](../../delete.md)删除源帐户的指南。
+在提供要删除的帐户的基本连接ID时，通过向[!DNL Flow Service] API执行DELETE请求来删除您的帐户。 有关完整的API示例，请阅读有关使用API[删除源帐户](../../delete.md)的指南。
