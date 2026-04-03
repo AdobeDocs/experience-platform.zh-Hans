@@ -2,7 +2,7 @@
 title: Salesforce Marketing Cloud连接
 description: Salesforce Marketing Cloud是一个数字营销套件，以前称为ExactTarget，您可以使用它构建和自定义访客和客户的旅程，以个性化其体验。
 exl-id: e85049a7-eaed-4f8a-b670-9999d56928f8
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '878'
 ht-degree: 3%
