@@ -6,10 +6,10 @@ seo-description: Experience Platform Debugger Network screen
 seo-title: Network Tab
 uuid: 839686c9-6e4f-4661-acf6-150ea24dc47f
 exl-id: ed0579ef-ec26-43df-9453-a395c105038a
-source-git-commit: df1a67e4b6f3d2eaeaba2b8d3c9b1588ee0b1461
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
-source-wordcount: '219'
-ht-degree: 62%
+source-wordcount: '215'
+ht-degree: 63%
 
 ---
 
@@ -29,16 +29,18 @@ ht-degree: 62%
 
 ![](images/network-analytics.jpg)
 
-要返回显示所有解决方案，请选择&#x200B;**[!UICONTROL 网络]**
+要返回显示所有解决方案，请选择&#x200B;**[!UICONTROL Network]**
 
 选择网络视图中的项目以查看展开视图。 从展开的视图窗口中，可以将显示的信息复制到“剪贴板”。
 
 ![](images/network-expand.jpg)
 
-<!--Use the icon at the top of each column to copy the server call URL to your clipboard, where you can paste it into another document for reference or debugging purposes.
+<!--
+Use the icon at the top of each column to copy the server call URL to your clipboard, where you can paste it into another document for reference or debugging purposes.
 
-![](images/copy.jpg)-->
+![](images/copy.jpg)
+-->
 
-要清除列表，请选择&#x200B;**[!UICONTROL 删除事件]**。
+要清除列表，请选择&#x200B;**[!UICONTROL Remove Events]**。
 
-要下载包含此屏幕上的信息的Excel文件，请选择&#x200B;**[!UICONTROL 下载]**。
+要下载包含此屏幕上的信息的Excel文件，请选择&#x200B;**[!UICONTROL Download]**。
