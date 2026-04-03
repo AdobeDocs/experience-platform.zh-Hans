@@ -2,7 +2,7 @@
 title: Adobe Experience Platform 发行说明（2024 年 2 月）
 description: Adobe Experience Platform 的 2024 年 2 月发行说明。
 exl-id: 7e4b76b7-4027-4890-b869-1dbb79670c3e
-source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
+source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
 workflow-type: tm+mt
 source-wordcount: '1237'
 ht-degree: 94%
@@ -50,7 +50,8 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 要详细了解数据收集，请阅读[数据收集概述](/help/tags/home.md)。
 
-<!-- ## Data Prep {#data-prep}
+<!-- 
+## Data Prep {#data-prep}
 
 Data Prep allows data engineers to map, transform, and validate data to and from Experience Data Model (XDM).
 
@@ -62,7 +63,8 @@ Data Prep allows data engineers to map, transform, and validate data to and from
 
 {style="table-layout:auto"}
 
-For more information on Data Prep, read the [Data Prep overview](/help/data-prep/home.md). -->
+For more information on Data Prep, read the [Data Prep overview](/help/data-prep/home.md). 
+-->
 
 ## 目标 {#destinations}
 
