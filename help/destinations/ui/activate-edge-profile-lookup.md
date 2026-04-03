@@ -3,7 +3,7 @@ title: 实时查找边缘配置文件属性
 description: 了解如何使用自定义Personalization目标和Edge Network API实时查找边缘配置文件属性
 type: Tutorial
 exl-id: e185d741-af30-4706-bc8f-d880204d9ec7
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '1833'
 ht-degree: 1%
@@ -52,9 +52,11 @@ Edge配置文件查找用例受下表所述的特定性能护栏的约束。 有
 * **[!UICONTROL Edge Segmentation]**：如果需要边缘分段，请启用此选项。 如果您只想在边缘上查找配置文件属性，但不想根据边缘配置文件执行任何分段，则将此选项保留为禁用。
 
 
-<!-- >[!IMPORTANT]
+<!-- 
+>[!IMPORTANT]
 >
->Enabling edge segmentation limits the maximum number of lookup requests to 1500 request per second. If you need a higher request throughput, disable edge segmentation for your datastream. See the [guardrails documentation](../guardrails.md#edge-destinations-activation) for detailed information. -->
+>Enabling edge segmentation limits the maximum number of lookup requests to 1500 request per second. If you need a higher request throughput, disable edge segmentation for your datastream. See the [guardrails documentation](../guardrails.md#edge-destinations-activation) for detailed information. 
+-->
 
 ![显示数据流配置屏幕的Experience Platform UI图像。](../assets/ui/activate-edge-profile-lookup/datastream-config.png)
 
