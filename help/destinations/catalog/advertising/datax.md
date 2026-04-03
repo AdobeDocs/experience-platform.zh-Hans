@@ -2,7 +2,7 @@
 title: Verizon MediaYahoo DataX连接
 description: DataX是一个聚合的Verizon Media/Yahoo基础架构，它托管着各种组件，使Verizon Media/Yahoo能够以安全、自动化和可扩展的方式与外部合作伙伴交换数据。
 exl-id: 7d02671d-8650-407d-9c9f-fad7da3156bc
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '934'
 ht-degree: 4%
@@ -67,7 +67,7 @@ ht-degree: 4%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Verizon Media]支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=zh-Hans#getting-started)的更多信息。
+[!DNL Verizon Media]支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started)的更多信息。
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
@@ -156,4 +156,4 @@ Experience Platform UI中的![Yahoo DataX目标卡](/help/destinations/assets/ca
 
 ## 其他资源 {#additional-resources}
 
-有关详细信息，请参阅[!DNL Yahoo/Verizon Media][上的 [!DNL DataX] &#x200B;](https://developer.verizonmedia.com/datax/guide/)文档。
+有关详细信息，请参阅[!DNL Yahoo/Verizon Media][上的 [!DNL DataX] ](https://developer.verizonmedia.com/datax/guide/)文档。
