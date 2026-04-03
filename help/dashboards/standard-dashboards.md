@@ -2,7 +2,7 @@
 title: 标准仪表板
 description: 了解如何构建和管理自定义仪表板，以便在其中创建、添加和编辑定制构件以可视化关键量度。
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '1553'
 ht-degree: 1%
@@ -14,11 +14,13 @@ ht-degree: 1%
 使用Adobe Experience Platform功能板，可通过功能板加速分析并自定义可视化图表。 使用此功能可构建和管理自定义仪表板，您可以在其中创建、添加和编辑定制构件，以可视化与您的组织相关的关键量度。
 
 
-<!-- Getting started / permissions section commented out for Beta. This will be necessary after GA only
+<!-- 
+Getting started / permissions section commented out for Beta. This will be necessary after GA only
 
 ## Getting started
 
-To view dashboards in Adobe Experience Platform you must have the appropriate permissions enabled. Please read the [dashboards permissions documentation](./permissions.md#available-permissions) to learn how to grant users the ability to view, edit, and update Experience Platform dashboards using Adobe Admin Console. If you do not have administrator privileges for your organization, contact your product administrator to obtain the required permissions. -->
+To view dashboards in Adobe Experience Platform you must have the appropriate permissions enabled. Please read the [dashboards permissions documentation](./permissions.md#available-permissions) to learn how to grant users the ability to view, edit, and update Experience Platform dashboards using Adobe Admin Console. If you do not have administrator privileges for your organization, contact your product administrator to obtain the required permissions. 
+-->
 
 ## 创建自定义仪表板
 
@@ -28,10 +30,12 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 在添加自定义功能板之前，功能板清单为空，并显示“未找到功能板”。 消息。 创建后，您的所有功能板都会在功能板清单中列出。
 
-<!-- >[!NOTE]
+<!-- 
+>[!NOTE]
 >
 >To edit an existing dashboard, select the dashboard name from the inventory list followed by the pencil icon (![A pencil icon.](/help/images/icons/edit.png))
->![A custom inventory listed in the dashboard inventory.](./images/standard-dashboards/dashbaord-inventory.png "A custom inventory listed in the dashboard inventory."){width="100" zoomable="yes"} -->
+>![A custom inventory listed in the dashboard inventory.](./images/standard-dashboards/dashbaord-inventory.png "A custom inventory listed in the dashboard inventory."){width="100" zoomable="yes"} 
+-->
 
 出现[!UICONTROL Create dashboard]对话框。 为要创建的构件集合输入一个人性化的描述性名称，然后选择&#x200B;**[!UICONTROL Save]**。
 
@@ -182,4 +186,4 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 要加深您对Experience Platform中的功能板的了解，请观看以下视频：
 
->[!VIDEO](https://video.tv.adobe.com/v/3413779?captions=chi_hans&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3409637?quality=12&learn=on)
