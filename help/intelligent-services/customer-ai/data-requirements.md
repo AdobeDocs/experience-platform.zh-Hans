@@ -6,9 +6,9 @@ title: 客户人工智能中的数据要求
 topic-legacy: Getting started
 description: 进一步了解客户人工智能使用的所需事件、输入和输出。
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
-source-git-commit: 73dea391f8fcb1d2d491c814b453afb4e538459d
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
-source-wordcount: '2552'
+source-wordcount: '2539'
 ht-degree: 1%
 
 ---
@@ -49,8 +49,8 @@ ht-degree: 1%
 
 - 使用[Analytics源连接器](../../sources/tutorials/ui/create/adobe-applications/analytics.md)的Adobe Analytics数据
 - 使用[Adobe Audience Manager源连接器](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md)的Audience Manager数据
-- [体验事件数据集](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/experienceevent.html?lang=zh-Hans)
-- [使用者体验事件数据集](https://experienceleague.adobe.com/docs/experience-platform/intelligent-services/data-preparation.html?lang=zh-Hans#cee-schema)
+- [体验事件数据集](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/experienceevent.html)
+- [使用者体验事件数据集](https://experienceleague.adobe.com/docs/experience-platform/intelligent-services/data-preparation.html#cee-schema)
 
 如果每个数据集共享相同的身份类型（命名空间）（如ECID），则可以添加来自不同来源的多个数据集。 有关添加多个数据集的更多信息，请访问[客户人工智能用户指南](../customer-ai/user-guide/configure.md)。
 
@@ -60,7 +60,7 @@ ht-degree: 1%
 
 下表概述了本文档中使用的一些常用术语：
 
-| 搜索词 | 定义 |
+| 术语 | 定义 |
 | --- | --- |
 | [体验数据模型(XDM)](../../xdm/home.md) | XDM是一个基础框架，它允许由Adobe Experience Platform提供支持的Adobe Experience Cloud在正确的时间通过正确的渠道向正确的人员传递正确的信息。 Experience Platform使用XDM系统以特定方式整理数据，以便更轻松地用于Experience Platform服务。 |
 | [XDM架构](../../xdm/schema/composition.md) | Experience Platform使用架构，以一致且可重用的方式描述数据结构。 通过在系统中以一致的方式定义数据，更容易保留含义并因此从数据中获取价值。 将数据引入Experience Platform之前，必须构建架构以描述数据的结构并对每个字段中可以包含的数据类型提供约束。 架构由一个基本XDM类以及零个或多个架构字段组组成。 |
@@ -71,7 +71,7 @@ ht-degree: 1%
 
 ## 客户人工智能输入数据 {#customer-ai-input-data}
 
-对于输入数据集(如Adobe Analytics和Adobe Audience Manager)，默认情况下，源连接器在连接过程中直接映射这些标准字段组(Commerce、Web、应用程序和搜索)中的事件。 下表显示了Customer AI的默认标准字段组中的事件字段。
+对于输入数据集（如Adobe Analytics和Adobe Audience Manager），默认情况下，源连接器在连接过程中直接映射这些标准字段组（Commerce、Web、应用程序和搜索）中的事件。 下表显示了Customer AI的默认标准字段组中的事件字段。
 
 有关映射Adobe Analytics数据或Audience Manager数据的详细信息，请访问Analytics字段映射或Audience Manager [字段映射指南](../../sources/connectors/adobe-applications/mapping/audience-manager.md)。
 
@@ -91,29 +91,29 @@ ht-degree: 1%
 
 默认情况下，客户人工智能使用四个标准字段组中的事件：Commerce、Web、Application和Search。 无需在下面列出的标准字段组中为每个事件提供数据，但在某些情况下需要某些事件。 如果标准字段组中有任何可用事件，建议将其包含在架构中。 例如，如果要创建用于预测购买事件的客户人工智能模型，则从Commerce和网页详细信息字段组获得数据会很有用。
 
-要在Experience Platform UI中查看字段组，请选择左边栏上的&#x200B;**[!UICONTROL 架构]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 字段组]**&#x200B;选项卡。
+要在Experience Platform UI中查看字段组，请选择左边栏上的&#x200B;**[!UICONTROL Schemas]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL Field groups]**&#x200B;选项卡。
 
 | 字段组 | 事件类型 | XDM字段路径 |
 | --- | --- | --- |
-| [!UICONTROL Commerce详细信息] | 订单 | <li> `commerce.order.purchaseID` </li> <li> `productListItems.SKU` </li> |
+| [!UICONTROL Commerce Details] | 订单 | <li> `commerce.order.purchaseID` </li> <li> `productListItems.SKU` </li> |
 |  | productListView | <li> `commerce.productListViews.value` </li> <li> `productListItems.SKU` </li> |
 |  | 结账 | <li> `commerce.checkouts.value` </li> <li> `productListItems.SKU` </li> |
 |  | 购买 | <li> `commerce.purchases.value` </li> <li> `productListItems.SKU` </li> |
 |  | productListRemovals | <li> `commerce.productListRemovals.value` </li> <li> `productListItems.SKU` </li> |
 |  | productListOpens | <li> `commerce.productListOpens.value` </li> <li> `productListItems.SKU` </li> |
 |  | 产品视图 | <li> `commerce.productViews.value` </li> <li> `productListItems.SKU` </li> |
-| [!UICONTROL Web详细信息] | webVisit | `web.webPageDetails.name` |
+| [!UICONTROL Web Details] | webVisit | `web.webPageDetails.name` |
 |  | webInteraction | `web.webInteraction.linkClicks.value` |
-| [!UICONTROL 应用程序详细信息] | applicationClose | <li> `application.applicationCloses.value` </li> <li> `application.name` </li> |
+| [!UICONTROL Application Details] | applicationClose | <li> `application.applicationCloses.value` </li> <li> `application.name` </li> |
 |  | applicationCrashes | <li> `application.crashes.value` </li> <li> `application.name` </li> |
 |  | applicationFeatureUsages | <li> `application.featureUsages.value` </li> <li> `application.name` </li> |
 |  | applicationFirstLaunch | <li> `application.firstLaunches.value` </li> <li> `application.name` </li> |
 |  | applicationinstalls | <li> application.installs.value </li> <li> `application.name` </li> |
 |  | applicationLaunch | <li> application.launches.value </li> <li> `application.name` </li> |
 |  | applicationUpgrade | <li> application.upgrades.value </li> <li> `application.name` </li> |
-| [!UICONTROL 搜索详细信息] | 搜索 | `search.keywords` |
+| [!UICONTROL Search Details] | 搜索 | `search.keywords` |
 
-此外，Customer AI可以使用订阅数据构建更好的流失模型。 使用[[!UICONTROL 订阅]](../../xdm/data-types/subscription.md)数据类型格式的每个配置文件都需要订阅数据。 大多数字段是可选的，但是，对于最佳流失模型，强烈建议您为尽可能多的字段（如`startDate`、`endDate`）提供数据，以及任何其他相关详细信息。 请联系您的帐户团队以获取有关此功能的更多支持。
+此外，Customer AI可以使用订阅数据构建更好的流失模型。 每个配置文件需要使用[[!UICONTROL Subscription]](../../xdm/data-types/subscription.md)数据类型格式的订阅数据。 大多数字段是可选的，但是，对于最佳流失模型，强烈建议您为尽可能多的字段（如`startDate`、`endDate`）提供数据，以及任何其他相关详细信息。 请联系您的帐户团队以获取有关此功能的更多支持。
 
 ### 添加自定义事件和配置文件属性 {#add-custom-events}
 
@@ -219,7 +219,7 @@ ht-degree: 1%
 
 | 属性 | 描述 |
 | ----- | ----------- |
-| [!UICONTROL 得分] | 客户在定义的时间范围内实现预测目标的相对可能性。 这个值不应被视为概率百分比，而应被视为个体相对于群体总数的可能性。 此得分从0到100不等。 |
+| [!UICONTROL Score] | 客户在定义的时间范围内实现预测目标的相对可能性。 这个值不应被视为概率百分比，而应被视为个体相对于群体总数的可能性。 此得分从0到100不等。 |
 | 概率 | 此属性是用户档案在定义的时间范围内实现预测目标的真实概率。 在比较不同目标的输出时，建议您考虑百分比或得分上的概率。 在确定合格群体的平均概率时，应始终使用概率，因为对于不频繁发生的事件，概率往往位于较低侧。 概率范围在0和1之间的值。 |
 | 百分位数 | 此值提供有关用户档案相对于其他类似评分的用户档案的性能信息。 例如，百分位数等级为99的客户档案流失率表明，其流失风险高于所有其他已评分客户档案的99%。 百分位数的范围是1到100。 |
 | 倾向性类型 | 选定的倾向性类型。 |
