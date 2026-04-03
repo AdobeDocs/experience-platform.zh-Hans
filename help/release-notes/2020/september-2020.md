@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: September 8, 2020
 author: crhoades, ens25212
 exl-id: bf401f3a-b088-4cbd-9a64-224294b797b9
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '866'
 ht-degree: 36%
@@ -16,7 +16,7 @@ ht-degree: 36%
 
 **发行日期： 2020年9月9日**
 
-Adobe Experience Platform 中现有功能的更新：
+Adobe Experience Platform 现有功能的更新包括：
 
 - [数据治理](#governance)
 - [[!DNL Destinations]](#destinations)
@@ -72,7 +72,7 @@ Adobe Experience Platform 数据治理是一系列策略和技术，用于管理
 | ------- | ----------- |
 | 支持 LGPD（巴西） | 现在可以根据巴西 [!DNL Lei Geral de Proteção de Dados] (LGPD) 法规创建隐私作业。这些任务会根据监管代码 `lgpd_bra` 进行追踪。 |
 
-有关该服务的更多信息，请参阅 [Privacy Service 概述](../../privacy-service/home.md) 。
+有关该服务的更多信息，请参阅 [Privacy Service 概述](../../privacy-service/home.md)。
 
 ## 实时客户轮廓 {#profile}
 
