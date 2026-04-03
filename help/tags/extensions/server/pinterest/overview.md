@@ -4,7 +4,7 @@ title: Pinterest事件转发扩展
 description: 通过这个Adobe Experience Platform事件转发扩展，您可以将事件摄取到Pinterest中，以满足您的业务需求。
 last-substantial-update: 2023-04-27T00:00:00Z
 exl-id: 44f38a9b-0a28-4b51-bead-ee460eb8405e
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1427'
 ht-degree: 3%
@@ -33,7 +33,7 @@ ht-degree: 3%
 
 您必须拥有有效的[!DNL Pinterest] [商业帐户](https://help.pinterest.com/en/business/article/get-a-business-account)才能使用此扩展。 转到[[!DNL Pinterest] 注册页面](https://www.pinterest.com/business/create/)进行注册并创建帐户（如果还没有帐户）。
 
-您还需要一个[!DNL Pinterest]开发人员帐户，该帐户需要与您的[!DNL Pinterest]业务帐户关联。 若要将开发人员帐户与业务帐户关联，请参阅[[!DNL Pinterest &#x200B;] 开发人员帐户](https://developers.pinterest.com/account-setup/)。
+您还需要一个[!DNL Pinterest]开发人员帐户，该帐户需要与您的[!DNL Pinterest]业务帐户关联。 若要将开发人员帐户与业务帐户关联，请参阅[[!DNL Pinterest ] 开发人员帐户](https://developers.pinterest.com/account-setup/)。
 
 ### 收集所需的配置详细信息 {#configuration-details}
 
@@ -58,13 +58,13 @@ ht-degree: 3%
 >
 >根据您的实施需求，您可能需要在配置扩展之前创建架构、数据元素和数据集。 请在开始之前查看所有配置步骤，以确定需要为用例设置哪些实体。
 
-在左侧导航中，选择&#x200B;**[!UICONTROL Extensions]**。 在&#x200B;**[!UICONTROL Configure]**&#x200B;选项卡的[!DNL Pinterest]扩展的卡片中选择&lbrace;0**。[!UICONTROL Installed]
+在左侧导航中，选择&#x200B;**[!UICONTROL Extensions]**。 在&#x200B;**[!UICONTROL Configure]**&#x200B;选项卡的[!DNL Pinterest]扩展的卡片中选择{0**。[!UICONTROL Installed]
 
 在![[!DNL Pinterest]选项卡中显示的[!UICONTROL Install]扩展突出显示[!UICONTROL Configure]。](../../../images/extensions/server/pinterest/configure.png)
 
 在下一个屏幕上，输入您之前在[!UICONTROL Ads Account Id]配置详细信息[!UICONTROL Conversion Access Token]部分中收集的[和](#configuration-details)。 完成后，选择&#x200B;**[!UICONTROL Save]**。
 
-![&#x200B; [!DNL Pinterest] [!UICONTROL Configure]屏幕突出显示[!UICONTROL Ads Account Id]和[!UICONTROL Conversion Access Token]输入字段。](../../../images/extensions/server/pinterest/input.png)
+![ [!DNL Pinterest] [!UICONTROL Configure]屏幕突出显示[!UICONTROL Ads Account Id]和[!UICONTROL Conversion Access Token]输入字段。](../../../images/extensions/server/pinterest/input.png)
 
 ## 配置事件转发规则 {#config-rule}
 
@@ -81,7 +81,7 @@ ht-degree: 3%
 创建新规则需要以下事件数据：
 
 | 字段名称 | 描述 | 示例 |
-| --- | --- | --- | 
+| --- | --- | --- |
 | [!UICONTROL Event Name] | 用户事件的类型。 这可以是任何事件类型，但若要利用[!DNL Pinterest Analytics]，建议使用[[!DNL Pinterest] 事件代码](https://help.pinterest.com/en/business/article/add-event-codes) | &amp;amp；ast；签出<br> &amp;amp；ast； add_to_cart <br> &amp;amp；ast； page_visit <br> &amp;amp；ast；注册<br> &amp;amp；ast； [用户定义的事件] |
 | [!UICONTROL Action Source] | 指示转化事件发生的位置的源。 | &amp;amp；ast； app_android <br> &amp;amp；ast； app_ios <br> &amp;amp；ast； Web <br> &amp;amp；ast；脱机 |
 | [!UICONTROL Event Time] | 这是指事件时间。 使用的默认时间格式为UNIX，格式为`<seconds>.<miliseconds>`，具体取决于您的本地时区。 有关详细信息，请参阅[[!DNL Pinterest] API](https://developers.pinterest.com/docs/api/v5/#operation/events/create)。 | 1433188255.500表示新纪元后的1433188255秒和500毫秒，或2015年6月1日星期一晚上7:50:55 GMT。 |
@@ -110,7 +110,7 @@ ht-degree: 3%
 可以输入的以下用户数据不是必填字段：
 
 | 字段名称 | 描述 | 示例 |
-| --- | --- | --- | 
+| --- | --- | --- |
 | [!UICONTROL Email] | 用户电子邮件地址或用户地址电子邮件的SHA256哈希。 | ebd543592...f2b7e1 |
 | [!UICONTROL Mobile Adverstising IDs] | 用户的“Google Advertising ID”(GAID)或“Apple的广告商标识符”(IDFA)的Sha256哈希 | ebd543592...f2b7e1 |
 | [!UICONTROL Client IP Address] | 用户的IP地址，可以是IPv4或IPv6格式。 用于匹配。 | 192.168.0.1 |
@@ -161,7 +161,7 @@ ht-degree: 3%
 
 如果事件收集和[!DNL Experience Platform]集成成功，您将在[!DNL Pinterest] UI中看到事件。
 
-![&#x200B; [!DNL Pinterest]事件管理器](../../../images/extensions/server/pinterest/event-history.png)
+![ [!DNL Pinterest]事件管理器](../../../images/extensions/server/pinterest/event-history.png)
 
 您可以进一步穿透钻取并查看[!DNL Pinterest]事件数据分发。
 
