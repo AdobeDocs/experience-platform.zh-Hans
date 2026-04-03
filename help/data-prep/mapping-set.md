@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 映射集概述
 description: 了解如何将映射集与Adobe Experience Platform数据准备结合使用。
 exl-id: b45545b7-3ae7-400d-b6fd-b2cb76061093
-source-git-commit: bb0366284f1850bd9742b18d95608f901319f642
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '979'
 ht-degree: 0%
