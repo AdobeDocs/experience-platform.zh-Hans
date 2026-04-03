@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 批量摄取API指南
 description: 本文档为使用Adobe Experience Platform的批量摄取API的开发者提供全面的指南。
 exl-id: 4ca9d18d-1b65-4aa7-b608-1624bca19097
-source-git-commit: 0e484dffa38d454561f9d67c6bea92f426d3515d
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '2435'
 ht-degree: 4%
@@ -99,7 +99,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 >[!NOTE]
 >
->请参阅附录部分，了解正确格式化的JSON数据文件[&#128279;](#data-transformation-for-batch-ingestion)的示例。
+>请参阅附录部分，了解正确格式化的JSON数据文件[的](#data-transformation-for-batch-ingestion)示例。
 
 **API格式**
 
@@ -623,7 +623,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 >[!NOTE]
 >
->请参阅附录部分，了解格式正确的CSV数据文件[&#128279;](#data-transformation-for-batch-ingestion)的示例。
+>请参阅附录部分，了解格式正确的CSV数据文件[的](#data-transformation-for-batch-ingestion)示例。
 
 **API格式**
 
@@ -760,7 +760,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 要修补批次，需要满足以下条件：
 
-- **为配置文件和属性更新启用的数据集。**&#x200B;这是通过数据集标记完成的，需要向`unifiedProfile`数组添加特定的`isUpsert:true`标记。 有关说明如何创建数据集或配置现有数据集以进行更新插入的详细步骤，请参阅[启用数据集以进行配置文件更新](../../catalog/datasets/enable-upsert.md)的教程。
+- **为配置文件和属性更新启用的数据集。**&#x200B;这是通过数据集标记完成的，需要向`isUpsert:true`数组添加特定的`unifiedProfile`标记。 有关说明如何创建数据集或配置现有数据集以进行更新插入的详细步骤，请参阅[启用数据集以进行配置文件更新](../../catalog/datasets/enable-upsert.md)的教程。
 - **包含要修补的字段和配置文件标识字段的Parquet文件。**&#x200B;为批次打补丁的数据格式与常规批次摄取过程类似。 必需的输入是一个Parquet文件，除了要更新的字段之外，上传的数据还必须包含身份字段，以便与配置文件存储中的数据匹配。
 
 一旦为配置文件和upsert启用了数据集，并且有一个Parquet文件，其中包含要修补的字段以及必要的标识字段，则可以按照[摄取Parquet文件](#ingest-parquet-files)的步骤操作，以便通过批量摄取完成修补程序。
@@ -801,7 +801,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 ```
 
 | 参数 | 描述 |
-| --------- | ----------- | 
+| --------- | ----------- |
 | `{DATASET_ID}` | 引用数据集的ID。 |
 
 **响应**
