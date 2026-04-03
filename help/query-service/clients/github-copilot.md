@@ -2,7 +2,7 @@
 title: 将GitHub Copilot和Visual Studio代码连接到查询服务
 description: 了解如何将GitHub Copilot和Visual Studio代码与Adobe Experience Platform查询服务连接起来。
 exl-id: c5b71cc8-1d30-48c0-a8e2-135445a66639
-source-git-commit: 9f4ce2a3a8af72342683c859caa270662b161b7d
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '1370'
 ht-degree: 0%
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## 快速入门 {#get-started}
 
-本指南要求您已经拥有GitHub帐户的访问权限并注册了[!DNL GitHub Copilot]。 您可以[从GitHub网站](https://github.com/github-copilot/signup)注册。 您还需要[!DNL VS Code]。 您可从他们的官方网站[下载 [!DNL VS Code] 1&rbrace;。](https://code.visualstudio.com/download)
+本指南要求您已经拥有GitHub帐户的访问权限并注册了[!DNL GitHub Copilot]。 您可以[从GitHub网站](https://github.com/github-copilot/signup)注册。 您还需要[!DNL VS Code]。 您可从他们的官方网站[下载 [!DNL VS Code] 1}。](https://code.visualstudio.com/download)
 
 安装[!DNL VS Code]并激活[!DNL Copilot]订阅后，获取Experience Platform的连接凭据。 这些凭据位于Experience Platform UI中[!UICONTROL Credentials]工作区的[!UICONTROL Queries]选项卡中。 阅读[的凭据指南，了解如何在Experience Platform UI](../ui/credentials.md)中找到这些值。 如果您当前无权访问[!UICONTROL Queries]工作区，请联系您的组织管理员。
 
@@ -95,7 +95,7 @@ ht-degree: 0%
 
 ## [!DNL GitHub Copilot] 入门 {#get-started-with-copilot}
 
-首先，确保您已安装[!DNL VS Code]的最新版本。 过时的[!DNL VS Code]版本可能会阻止键[!DNL Copilot]功能按预期工作。 接下来，请确保已启用[!DNL Enable Auto Completions]设置。 如果[!DNL Copilot]运行正常，则状态栏中会显示&#x200B;**[!DNL Copilot]图标** （![Copilot图标](../images/clients/github-copilot/copilot-icon.png)）（如果有问题，则会显示[!DNL Copilot]错误图标）。 选择&#x200B;**[!DNL Copilot]图标**&#x200B;以打开[!DNL [!DNL GitHub Copilot]菜单]。 从&#x200B;**[!DNL [!DNL GitHub Copilot]菜单]**&#x200B;中选择&#x200B;**[!DNL Edit Settings]**
+首先，确保您已安装[!DNL VS Code]的最新版本。 过时的[!DNL VS Code]版本可能会阻止键[!DNL Copilot]功能按预期工作。 接下来，请确保已启用[!DNL Enable Auto Completions]设置。 如果[!DNL Copilot]运行正常，则状态栏中会显示&#x200B;**[!DNL Copilot]图标** （![Copilot图标](../images/clients/github-copilot/copilot-icon.png)）（如果有问题，则会显示[!DNL Copilot]错误图标）。 选择&#x200B;**[!DNL Copilot]图标**&#x200B;以打开[！DNL [!DNL GitHub Copilot]菜单]。 从&#x200B;**[！DNL [!DNL GitHub Copilot]菜单]**&#x200B;中选择&#x200B;**[!DNL Edit Settings]**
 
 ![显示[!DNL VS Code]并突出显示[!DNL GitHub Copilot Menu]图标和“编辑设置”的[!DNL Copilot]编辑器。](../images/clients/github-copilot/github-copilot-menu.png)
 
@@ -115,7 +115,7 @@ ht-degree: 0%
 
 ### 接受完整的或部分重影文本建议 {#accept-suggestions}
 
-当[!DNL GitHub Copilot]建议代码完成时，您可以接受部分或完整的建议。 选择&#x200B;**Tab**&#x200B;接受整个建议，或按住&#x200B;**Control(或Mac上的Command)**&#x200B;并按&#x200B;**向右箭头**&#x200B;接受部分文本。 若要取消建议，请按&#x200B;**Escape**。
+当[!DNL GitHub Copilot]建议代码完成时，您可以接受部分或完整的建议。 选择&#x200B;**Tab**&#x200B;接受整个建议，或按住&#x200B;**Control（或Mac上的Command）**&#x200B;并按&#x200B;**向右箭头**&#x200B;接受部分文本。 若要取消建议，请按&#x200B;**Escape**。
 
 >[!TIP]
 >  
@@ -136,10 +136,11 @@ ht-degree: 0%
 
 ![具有差异视图的内联聊天窗口](../images/clients/github-copilot/inline-chat.png)
 
-<!-- THis section is poss unnecessary:
+<!-- 
+THis section is poss unnecessary:
 There are inline features for chat including doc, expalin, fix and test
 ![fix, document, explain](../images/clients/github-copilot/fix-document-explain.png)
- -->
+-->
 
 ## 专用聊天视图 {#dedicated-chat}
 
