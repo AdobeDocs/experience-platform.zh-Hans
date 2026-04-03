@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 内容标记概述
 description: 内容标记是一组AI服务，可让您从内容中提取智能功能、组织和简化内容流，并向客户提供更具影响力的个性化体验。
 exl-id: 65c527d7-b1bd-414f-aba1-8445676a7052
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '322'
 ht-degree: 0%
