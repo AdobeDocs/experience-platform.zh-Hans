@@ -3,7 +3,7 @@ keywords: Experience Platform；配置文件；实时客户配置文件；疑难
 title: 同意和偏好设置数据类型
 description: 隐私同意、Personalization和营销偏好设置数据类型旨在支持从您的数据操作中收集由同意管理平台(CMP)和其他源生成的客户权限和偏好设置。
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
-source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '2305'
 ht-degree: 1%
