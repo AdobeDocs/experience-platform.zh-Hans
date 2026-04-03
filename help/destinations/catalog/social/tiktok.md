@@ -3,7 +3,7 @@ title: TikTok连接
 description: 使用您的数据在TikTok上构建自定义受众，以便通过广告促销活动进行定位。 这些受众可能是访问您的网站或与您的内容进行交互的人。 使用Adobe与TikTok Ads Manager的实时集成，快速而安全地将所需受众从Adobe Experience Platform推送到TikTok。
 last-substantial-update: 2023-03-20T00:00:00Z
 exl-id: 7b12d17f-7d9a-4615-9830-92bffe3f6927
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1211'
 ht-degree: 4%
