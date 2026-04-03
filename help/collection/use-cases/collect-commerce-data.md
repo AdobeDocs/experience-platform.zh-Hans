@@ -2,9 +2,9 @@
 title: 使用Adobe Experience Platform Web SDK收集商务、产品和订单信息
 description: 了解如何使用Adobe Experience Platform Web SDK添加与产品或购物车相关的数据。
 exl-id: 3c79e776-89ef-494b-a2ea-3c23efce09ae
-source-git-commit: 9b2ecedfafbafed042eba73a034cb9b9e95af579
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
-source-wordcount: '785'
+source-wordcount: '786'
 ht-degree: 2%
 
 ---
@@ -51,7 +51,7 @@ ht-degree: 2%
 
 展开以下部分以查看使用`commerce`对象中的字段的Web SDK命令示例。
 
-+++`productViews`
++++ 产品视图
 
 将`sendEvent`字段设置为`productViews`的基本Web SDK `1`调用：
 
@@ -91,7 +91,7 @@ alloy("sendEvent", {
 
 展开以下部分以查看使用`commerce`对象的Web SDK命令的示例。
 
-+++`Order`对象示例
++++ `Order`对象示例
 
 Web SDK `sendEvent`调用设置适用于`order`数组中的多个产品的`productListItems`对象：
 
@@ -151,7 +151,7 @@ alloy("sendEvent",{
 
 展开以下部分以查看使用`productListItems`对象的Web SDK命令示例。
 
-+++`productListItems`示例
++++ `productListItems`示例
 
 Web SDK `sendEvent`调用为`productViews`数组中的多个产品设置`productListItems`：
 
@@ -179,7 +179,7 @@ alloy("sendEvent",{
 
 +++
 
-+++`productListAdds`示例
++++ `productListAdds`示例
 
 Web SDK `sendEvent`调用为`productListAdds`数组中的多个产品设置`productListItems`事件：
 
@@ -213,7 +213,7 @@ alloy("sendEvent",{
 
 +++
 
-+++`checkouts`示例
++++ `checkouts`示例
 
 Web SDK `sendEvent`调用为`checkouts`数组中的多个产品设置`productListItems`事件：
 
