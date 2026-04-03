@@ -4,7 +4,7 @@ description: 了解Adobe Experience Platform中的模型详细信息。
 hide: true
 hidefromtoc: true
 exl-id: 74a8ef82-cff9-4a7e-95c8-f915eb664eda
-source-git-commit: 6623c7dad0fc4ddb7cb79e8f474b824915f130fc
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '3171'
 ht-degree: 0%
