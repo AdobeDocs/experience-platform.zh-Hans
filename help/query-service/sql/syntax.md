@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 查询服务中的SQL语法
 description: 本文档详细介绍并说明Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '4686'
 ht-degree: 1%
@@ -124,7 +124,7 @@ SELECT * FROM (SELECT id FROM table_to_be_queried SNAPSHOT BETWEEN start_snapsho
 
 >[!NOTE]
 >
->在`HEAD`子句中使用`TAIL`或`SNAPSHOT`时，必须用单引号将它们括起来(例如，“HEAD”、“TAIL”)。 使用不带引号的这些变量会导致语法错误。
+>在`HEAD`子句中使用`TAIL`或`SNAPSHOT`时，必须用单引号将它们括起来（例如，“HEAD”、“TAIL”）。 使用不带引号的这些变量会导致语法错误。
 
 下表说明了SNAPSHOT子句中每个语法选项的含义。
 
@@ -892,7 +892,7 @@ ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-04-01 00:
 控制台输出如下所示。
 
 ```console
-|     Statistics ID      | 
+|     Statistics ID      |
 | ---------------------- |
 | adc_geometric_stats_1  |
 (1 row)
@@ -1105,7 +1105,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 | 参数 | 描述 |
 | ------ | ------ |
-| `TEMPORARY`或`TEMP` | 可选参数。 如果指定了参数，则创建的表为临时表。 |
+| `TEMPORARY` 或 `TEMP` | 可选参数。 如果指定了参数，则创建的表为临时表。 |
 | `UNLOGGED` | 可选参数。 如果指定了参数，则创建的表是未记录的表。 有关未记录表的详细信息可在[[!DNL PostgreSQL] 文档](https://www.postgresql.org/docs/current/sql-createtable.html)中找到。 |
 | `new_table` | 要创建的表的名称。 |
 
@@ -1256,7 +1256,7 @@ ALTER TABLE table_name ADD COLUMN column_name_1 data_type1, column_name_2 data_t
 
 ##### 支持的数据类型
 
-下表列出了用于向Azure SQL中具有[!DNL Postgres SQL]、XDM和[!DNL Accelerated Database Recovery] (ADR)的表添加列的接受数据类型。
+下表列出了向Azure SQL中具有[!DNL Postgres SQL]、XDM和[!DNL Accelerated Database Recovery] (ADR)的表添加列时接受的数据类型。
 
 | — | PSQL客户端 | XDM | ADR | 描述 |
 |---|---|---|---|---|
