@@ -2,7 +2,7 @@
 title: (V2) Pega CDH实时受众连接
 description: 使用Adobe Experience Platform中的Pega客户决策中心实时受众目标，将用户档案属性和受众成员资格数据发送到Pega客户决策中心，以便做出次优决策。
 exl-id: cbb998f9-c268-4d65-87d8-fab56c0844dc
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1143'
 ht-degree: 4%
