@@ -3,7 +3,7 @@ title: Real-Time Customer Data Platform Insights数据模型B2C Edition
 description: 了解如何将SQL查询与Real-Time Customer Data Platform分析数据模型(B2C Edition)结合使用，以自定义您自己的营销和KPI用例的Real-Time CDP报表。
 badgeB2C: null
 exl-id: 61bc7f23-9f79-4c75-a515-85dd9dda2d02
-source-git-commit: a32064848809d1cad07f769f04d82c35df451e38
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '1051'
 ht-degree: 2%
@@ -448,7 +448,8 @@ SELECT Sum(overlap_col1) overlap_col1,
 
 +++
 
-<!-- Commented out as Anil wanted to add something but did not provide information yet:
+<!-- 
+Commented out as Anil wanted to add something but did not provide information yet:
 ### Overlap Namespace-Audience model {#overlap-namespace-audience-model}
 
 The overlap namespace-audience model is comprised of the following datasets: 
@@ -463,11 +464,13 @@ The overlap namespace-audience model is comprised of the following datasets:
 - `adwh_dim_destination`
 - `adwh_dim_destination_platform`
 
-![An ERD of the overlap namespace-audience model.](../images/cdp-insights/overlap-namespace-audience-model.png) -->
+![An ERD of the overlap namespace-audience model.](../images/cdp-insights/overlap-namespace-audience-model.png) 
+-->
 
 <!-- What insights are gathered from this particular data model? -->
 
-<!-- Commented out as Anil wanted to add something but did not provide information yet:
+<!-- 
+Commented out as Anil wanted to add something but did not provide information yet:
 ### AI model {#ai-model}
 
 The AI model is comprised of the following datasets: 
@@ -477,7 +480,8 @@ The AI model is comprised of the following datasets:
 - `adwh_dim_merge_policies`
 - `adwh_dim_ai_models`
 
-![An ERD of the AI model.](./images/cdp-insights/ai-model.png) -->
+![An ERD of the AI model.](./images/cdp-insights/ai-model.png) 
+-->
 
 <!-- What insights are gathered from this particular data model? -->
 
