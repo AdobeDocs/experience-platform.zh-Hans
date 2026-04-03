@@ -2,7 +2,7 @@
 title: Adobe客户端数据层扩展
 description: 了解Adobe Experience Platform中的Adobe Client Data Layer标记扩展。
 exl-id: c4d1b4d3-4b51-4701-be2e-31b08e109bf6
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '647'
 ht-degree: 0%
@@ -13,8 +13,10 @@ ht-degree: 0%
 
 本文档提供了有关如何使用Adobe客户端数据层扩展的示例和最佳实践。
 
-<!-- (Missing document?)
-If you would like to have more details on development consideration, [please reach this page](./dev.md). -->
+<!-- 
+(Missing document?)
+If you would like to have more details on development consideration, [please reach this page](./dev.md). 
+-->
 
 ## 安装
 
@@ -22,12 +24,14 @@ If you would like to have more details on development consideration, [please rea
 
 目录![中的](./images/catalog.png)ACDL扩展视图
 
-<!-- (GitHub link?)
+<!-- 
+(GitHub link?)
 There is also the possibility to fork this project. You can download this github project, realize the change that you deem required for your specific use-case and re-upload it on your Organization as a private extension.
 This installation will not be supported on our end.<br>
 >[!NOTE]
 >
-> _Consider renaming the extension name in the extension.json file_ -->
+> _Consider renaming the extension name in the extension.json file_ 
+-->
 
 ## 扩展视图
 
@@ -37,7 +41,7 @@ This installation will not be supported on our end.<br>
 >
 >更改对象名称时，原始`adobeDataLayer`对象仍在实例化中，然后复制到您选择的新变量名称。
 
-## 事件
+## 活动
 
 通过扩展，您可以侦听Data Layer上的事件。 可以使用以下事件：
 
