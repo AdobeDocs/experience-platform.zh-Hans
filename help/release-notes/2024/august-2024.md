@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2024 年 8 月）
 description: Adobe Experience Platform 的 2024 年 8 月发行说明。
 exl-id: 153891e9-fd82-4894-a047-c8d82f214fef
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
-workflow-type: ht
-source-wordcount: '1565'
-ht-degree: 100%
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
+workflow-type: tm+mt
+source-wordcount: '1556'
+ht-degree: 94%
 
 ---
 
@@ -60,24 +60,24 @@ Adobe Experience Platform 提供了一组丰富的功能，以摄取任何类型
 
 [!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
-**新增或更新目标**{#new-updated-destinations}
+**新增或更新目标** {#new-updated-destinations}
 
 | 目标 | 描述 |
 | ----------- | ----------- |
-| [Braze](/help/destinations/catalog/mobile-engagement/braze.md) | [!UICONTROL Braze] 管理其仪表板和 REST 端点的多个不同实例。[!UICONTROL Braze] 客户应该根据所配置的实例使用正确的 REST 端点。此版本添加了一个新的 US-07 端点，您可以在连接到 [!UICONTROL Braze] 时选择该端点。 |
+| [Braze](/help/destinations/catalog/mobile-engagement/braze.md) | [!UICONTROL Braze]为其仪表板和REST端点管理多个不同的实例。 [!UICONTROL Braze]客户应基于您预配到的实例使用正确的REST端点。 此版本添加了一个新的US-07终结点，您可以在连接到[!UICONTROL Braze]时选择此终结点。 |
 
 {style="table-layout:auto"}
 
-**新增或更新的功能**{#destinations-new-updated-functionality}
+**新增或更新的功能** {#destinations-new-updated-functionality}
 
 | 功能 | 描述 |
 | ----------- | ----------- |
 | 现在通常可以按需将文件导出到批量目标。 | 现在，所有客户都可以选择按需将文件导出到批量目标。请参阅[专用文档](../../destinations/ui/export-file-now.md)，以了解更多详情。 |
 | 在[计划步骤](../../destinations/ui/activate-batch-profile-destinations.md#scheduling)中编辑多个导出受众的导出计划。 | 现在，所有客户都可以直接从 Audience Activation 工作流程的计划步骤中编辑多个导出受众的导出计划。![突出显示计划步骤中的编辑计划选项的 Experience Platform 用户界面图像。](assets/august/edit-schedule.png "计划步骤中的编辑计划选项。"){width="250" align="center" zoomable="yes"} |
 | 在[计划步骤](../../destinations/ui/activate-batch-profile-destinations.md#scheduling)中编辑多个导出受众的文件名。 | 现在，所有客户都可以直接从 Audience Activation 工作流程的计划步骤中编辑导出受众文件的名称。![突出显示计划步骤中的编辑文件名称选项的 Experience Platform 用户界面图像。](assets/august/edit-file-name.png "计划步骤中的编辑文件名称选项。"){width="250" align="center" zoomable="yes"} |
-| 从[目标详细信息](../../destinations/ui/destination-details-page.md#bulk-remove)页面的数据流中删除多个受众。 | 现在，所有客户都可以从&#x200B;**[!UICONTROL 目标详细信息]**&#x200B;页面的现有数据流中删除多个受众。![突出显示目标详细信息页面中的删除受众选项的 Experience Platform 用户界面的图像。](assets/august/bulk-remove-audiences.png "目标详情页面中的移除受众选项。"){width="250" align="center" zoomable="yes"} |
-| 从[目标详细信息](../../destinations/ui/destination-details-page.md#bulk-export)页面按需将多个文件导出到批量目标。 | 现在，所有客户都可以从&#x200B;**[!UICONTROL 目标详细信息]**&#x200B;页面按需将多个文件导出到批量目标。![突出显示目标详细信息页面中的立即导出文件选项的 Experience Platform 用户界面的图像。](assets/august/bulk-export-file-now.png "目标详细信息页面中的立即导出文件选项。"){width="250" align="center" zoomable="yes"} |
-| 在[目标详细信息](../../destinations/ui/destination-details-page.md#bulk-edit-file-names)页面中编辑多个导出受众的文件名。 | 您现在可以直接在&#x200B;**[!UICONTROL 目标详细信息]**&#x200B;页面中编辑多个导出文件的名称。![突出显示目标详细信息页面中的编辑文件名称选项的 Experience Platform 用户界面的图像。](assets/august/edit-file-name-destination-details.png "目标详细信息页面中的编辑文件名称选项。"){width="250" align="center" zoomable="yes"} |
+| 从[目标详细信息](../../destinations/ui/destination-details-page.md#bulk-remove)页面的数据流中删除多个受众。 | 现在，所有客户都可以使用从&#x200B;**[!UICONTROL Destination Details]**&#x200B;页面中移除现有数据流多个受众的选项。 ![突出显示目标详细信息页面中的删除受众选项的 Experience Platform 用户界面的图像。](assets/august/bulk-remove-audiences.png "目标详情页面中的移除受众选项。"){width="250" align="center" zoomable="yes"} |
+| 从[目标详细信息](../../destinations/ui/destination-details-page.md#bulk-export)页面按需将多个文件导出到批量目标。 | 所有客户现在都可以使用按需将多个文件从&#x200B;**[!UICONTROL Destination Details]**&#x200B;页面导出到批处理目标的选项。 ![突出显示目标详细信息页面中的立即导出文件选项的 Experience Platform 用户界面的图像。](assets/august/bulk-export-file-now.png "目标详细信息页面中的立即导出文件选项。"){width="250" align="center" zoomable="yes"} |
+| 在[目标详细信息](../../destinations/ui/destination-details-page.md#bulk-edit-file-names)页面中编辑多个导出受众的文件名。 | 您现在可以直接从&#x200B;**[!UICONTROL Destination Details]**&#x200B;页面编辑多个导出文件的名称。 ![突出显示目标详细信息页面中的编辑文件名称选项的 Experience Platform 用户界面的图像。](assets/august/edit-file-name-destination-details.png "目标详细信息页面中的编辑文件名称选项。"){width="250" align="center" zoomable="yes"} |
 | 从[目标详细信息](../../destinations/ui/export-datasets.md#remove-dataset)页面的数据流中删除多个数据集。 | 现在所有客户都可以选择从数据流中删除多个数据集。![突出显示目标详细信息页面中的删除数据集选项的 Experience Platform 用户界面的图像。](assets/august/bulk-remove-datasets.png "目标详情页面中的删除数据集选项。"){width="250" align="center" zoomable="yes"} |
 
 {style="table-layout:auto"}
@@ -86,7 +86,7 @@ Adobe Experience Platform 提供了一组丰富的功能，以摄取任何类型
 
 ## Experience Data Model (XDM) {#xdm}
 
-XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提供通用结构和定义（架构）。通过遵守 XDM 标准，所有客户体验数据都可以合并到一个通用的呈现中，以更快、更加集成的方式提供见解。您可以从客户行为中获得有价值的见解，通过区段定义客户受众，并使用客户属性实现个性化目的。
+XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提供通用结构和定义（架构）。通过遵守 XDM 标准，所有客户体验数据都可以合并到一个通用的呈现中，以更快、更加集成的方式提供洞察。您可以从客户行为中获得有价值的洞察，通过区段定义客户受众，并使用客户属性实现个性化目的。
 
 **新增功能**
 
