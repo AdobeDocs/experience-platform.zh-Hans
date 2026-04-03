@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Audiences UI指南
 description: Adobe Experience Platform UI中的受众组合提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了一些直观的控件，可用于为贵组织构建和编辑受众。
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: 66084e9847cca7ce6afd6a5b8c67689c9deef580
+source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
 workflow-type: tm+mt
 source-wordcount: '2293'
 ht-degree: 16%
@@ -14,7 +14,7 @@ ht-degree: 16%
 
 >[!BEGINSHADEBOX]
 
-如果您是Adobe Journey Optimizer客户，请阅读Adobe Journey Optimizer文档中的[受众构成快速入门指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/audiences-profiles-identities/audiences/audience-orchestration/get-started-audience-orchestration.html?lang=zh-Hans)，了解有关在该上下文中使用受众构成的更多信息。
+如果您是Adobe Journey Optimizer客户，请阅读Adobe Journey Optimizer文档中的[受众构成快速入门指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/audiences-profiles-identities/audiences/audience-orchestration/get-started-audience-orchestration.html)，了解有关在该上下文中使用受众构成的更多信息。
 
 >[!ENDSHADEBOX]
 
@@ -244,7 +244,8 @@ ht-degree: 16%
 
 ![要添加的扩充属性已突出显示。](../images/ui/audience-composition/select-enrichment-attribute.png)
 
-<!-- ## [!UICONTROL Join] {#join-block}
+<!-- 
+## [!UICONTROL Join] {#join-block}
 
 The **[!UICONTROL Join]** block type allows you to add in external audiences from datasets that have not yet been processed by Adobe Experience Platform.
 
@@ -262,7 +263,8 @@ After selecting **[!UICONTROL Add Audience]**, a list of audiences appears. Sele
 
 Your selected audiences now appear within the right rail when the **[!UICONTROL Join]** block is selected. 
 
-![The audiences that were added as part of the Join are shown.](../images/ui/audience-composition/selected-audiences.png) -->
+![The audiences that were added as part of the Join are shown.](../images/ui/audience-composition/selected-audiences.png) 
+-->
 
 ## [!UICONTROL Rank] {#rank-block}
 
