@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制管理用户
 description: 通过Adobe Experience Cloud中的“权限”界面管理用户和用户组。
 exl-id: 16450867-040a-4be1-a6c0-f03d0a1b90ba
-source-git-commit: b665d0edce713f1b252e07125aabab79d52a9cba
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '918'
 ht-degree: 4%
@@ -22,7 +22,8 @@ ht-degree: 4%
 
 ## 管理用户
 
-<!-- ADD LINKS INTO IMPORTANT NOTE BELOW
+<!-- 
+ADD LINKS INTO IMPORTANT NOTE BELOW
 >[!IMPORTANT]
 >
 >[!UICONTROL Permissions] manages access control for existing Experience Platform users. To add users to Experience Platform, navigate to Adobe Admin Console through the **[!UICONTROL Edit in admin console]** option. To learn how to add users through the Admin Console, follow the [adding users to Experience Platform](...){#target="_blank"} guide.
@@ -56,7 +57,8 @@ ht-degree: 4%
 
 要从用户中删除角色，请选择该角色名称旁边的&#x200B;**X**。
 
-<!-- ADD LINKS INTO IMPORTANT NOTE BELOW
+<!-- 
+ADD LINKS INTO IMPORTANT NOTE BELOW
 
 >[!NOTE]
 >
@@ -73,11 +75,12 @@ ht-degree: 4%
 
 用户组是多个已分组在一起的用户，并且有权执行相同的功能。
 
-<!-- ADD LINKS INTO IMPORTANT NOTE BELOW
+<!-- 
+ADD LINKS INTO IMPORTANT NOTE BELOW
 >[!IMPORTANT]
 >
 >[!UICONTROL Permissions] manages access control for existing Experience Platform user groups. To add user groups to Experience Platform, navigate to Admin Console through the **[!UICONTROL Edit in admin console]** option. To learn how to add user groups in the Admin Console, follow the [adding user groups to Experience Platform](...){#target="_blank"} guide.
- -->
+-->
 
 要查看您组织的用户，请在&#x200B;**[!UICONTROL Permissions]** Adobe Experience Cloud[中导航到](https://experience.adobe.com/){target="_blank"}。从左侧面板的&#x200B;**[!UICONTROL Groups]**&#x200B;部分中选择&#x200B;**[!UICONTROL Users]**。
 
@@ -170,5 +173,5 @@ ht-degree: 4%
 <!--
 The following video is intended to support your understanding of developer and API credentials.
 
->[!VIDEO](https://video.tv.adobe.com/v/3446408/?captions=chi_hans&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3426407/?learn=on)
 -->
