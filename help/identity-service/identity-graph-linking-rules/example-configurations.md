@@ -2,7 +2,7 @@
 title: Identity Graph链接规则配置指南
 description: 了解您可以使用身份图链接规则配置的各种实施类型。
 exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '1951'
 ht-degree: 7%
@@ -240,7 +240,7 @@ CRMID: Jill, CChash: undefined
 在模拟图形之前，在图形模拟界面中配置以下设置。
 
 | 显示名称 | 身份标识符号 | 身份标识类型 | 每个图唯一 | 命名空间优先级 |
-| --- | --- | --- | --- | --- | 
+| --- | --- | --- | --- | --- |
 | CRMID | CRMID | 跨设备 | ✔️ | 1 |
 | CRMIDhash | CRMIDhash | 跨设备 | ✔️ | 2 |
 | ECID | ECID | COOKIE | | 3 |
@@ -281,6 +281,7 @@ CRMID: Jane, CRMIDhash: aaaa
 ![共享设备图形在哈希处理过程中出错，导致出现非唯一的哈希CRMID。](../images/configs/intermediate/hashing-error.png)
 
 >[!ENDTABS]
+
 <!-- 
 ### Use case: You are using Real-Time CDP and Adobe Commerce
 
@@ -339,7 +340,8 @@ Email: jane@g, ECID: 111
 
 ![A graph that displays a member and a guest who share a device.](../images/configs/intermediate/shared-device-member-and-guest.png)
 
->[!ENDTABS] -->
+>[!ENDTABS] 
+-->
 
 ### 用例：您的数据包括三个唯一的命名空间
 
