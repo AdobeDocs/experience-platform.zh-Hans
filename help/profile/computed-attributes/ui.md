@@ -2,7 +2,7 @@
 title: 计算属性UI指南
 description: 了解如何使用Adobe Experience Platform UI创建、查看和更新计算属性。
 exl-id: bc621167-6dba-473e-90e4-aac7ceb6579a
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1497'
 ht-degree: 6%
@@ -43,7 +43,7 @@ ht-degree: 6%
 | [!UICONTROL Last evaluation status] | 说明在上次评估运行中是否成功计算计算了该计算属性的状态。 可能的值包括&#x200B;**[!UICONTROL Success]**&#x200B;或&#x200B;**[!UICONTROL Failed]**。 |
 | [!UICONTROL Refresh frequency] | 指示计算属性的刷新频率。 可能的值包括每小时、每天、每周或每月。 |
 | [!UICONTROL Fast refresh] | 显示是否为此计算属性启用快速刷新的值。 如果启用了快速刷新，则计算属性可以每天刷新，而不是每周、每两周或每月刷新。 此值仅适用于回溯周期大于每周的计算属性。 |
-| [!UICONTROL Lifecycle status] | 计算属性的当前状态。 可能存在三种状态： <ul><li>**[!UICONTROL Draft]：**&#x200B;计算特性&#x200B;**尚未**&#x200B;在架构上创建字段。 在此状态下，可以编辑计算属性。 </li><li>**[!UICONTROL Published]：**&#x200B;计算属性在架构上创建了字段，可以随时使用。 在此状态下，无法编辑计算属性&#x200B;**&#x200B;**。</li><li>**[!UICONTROL Inactive]：**&#x200B;已禁用计算特性。 有关非活动状态的详细信息，请阅读[常见问题页](./faq.md#inactive-status)。 </li> |
+| [!UICONTROL Lifecycle status] | 计算属性的当前状态。 可能存在三种状态： <ul><li>**[!UICONTROL Draft]：**&#x200B;计算特性&#x200B;**尚未**&#x200B;在架构上创建字段。 在此状态下，可以编辑计算属性。 </li><li>**[!UICONTROL Published]：**&#x200B;计算属性在架构上创建了字段，可以随时使用。 在此状态下，无法编辑计算属性&#x200B;****。</li><li>**[!UICONTROL Inactive]：**&#x200B;已禁用计算特性。 有关非活动状态的详细信息，请阅读[常见问题页](./faq.md#inactive-status)。 </li> |
 | [!UICONTROL Created] | 显示计算属性的创建日期和时间的时间戳。 |
 | [!UICONTROL Last modified] | 显示上次修改计算属性的日期和时间的时间戳。 |
 
