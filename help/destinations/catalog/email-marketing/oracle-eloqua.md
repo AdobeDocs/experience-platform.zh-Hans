@@ -3,7 +3,7 @@ keywords: 电子邮件；电子邮件；电子邮件目标；oracle eloqua；ora
 title: （文件）Oracle Eloqua连接
 description: Oracle Eloqua是Oracle提供的用于营销自动化的软件即服务(SaaS)平台，旨在帮助B2B营销人员和组织管理营销活动和销售商机开发。
 exl-id: 6eaa79ff-8874-423b-bdff-aa04f6101a53
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '790'
 ht-degree: 3%
