@@ -2,11 +2,11 @@
 title: Real-Time Customer Data Platform中的Audience Builder
 description: 了解如何使用Real-Time Customer Data Platform中的受众生成器创建受众。
 feature: Get Started, Audiences
-badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions" newtab=true
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 exl-id: da87baad-b82a-4a45-89c3-cf20d66fe657
-source-git-commit: 809f80c721d6eedf5ee88dbb1cf4bf7e5a413614
+source-git-commit: ec31766ade15eb04907803c8cfe450fd9bdc1406
 workflow-type: tm+mt
-source-wordcount: '1079'
+source-wordcount: '1115'
 ht-degree: 7%
 
 ---
@@ -54,11 +54,15 @@ ht-degree: 7%
 
 ![受众生成器中会显示“属性”选项卡](../assets/segmentation/audience-builder/attributes.png)
 
+>[!NOTE]
+>
+>摘要数据处于&#x200B;**有限可用性**&#x200B;中。
+
 选择属性时，您可以通过选择[信息图标](../../images/icons/info.png)来查看摘要数据。 摘要数据包括诸如顶值、字段内容的说明、值的记录计数以及包含此属性值的帐户的百分比等信息。
 
 **[!UICONTROL Populated]**&#x200B;部分显示填充了属性的记录数与可用记录总数的对比，以及具有此字段值的帐户的百分比。
 
-**[!UICONTROL Top values]**&#x200B;部分显示该属性最常出现的值，并包括诸如值、具有该值的记录数以及该值所代表的记录总数百分比等详细信息。
+**[!UICONTROL Top values]**&#x200B;部分显示该属性最常出现的值，并包括诸如值、具有该值的记录数以及该值所代表的记录总数百分比等详细信息。 每个字段的记录数由用户档案快照决定，该快照会在合并所有参与的数据集数据后提供记录的合并视图。
 
 ![显示属性的摘要数据完整填充版本的弹出框。](../assets/segmentation/audience-builder/full-summary-data.png){width="300"}
 
