@@ -3,7 +3,7 @@ title: Mailchimp标记
 description: 使用Mailchimp标记目标导出您的帐户数据，并在Mailchimp中激活它以与联系人接洽。
 last-substantial-update: 2024-02-20T00:00:00Z
 exl-id: 0f278ca8-4fcf-4c47-b538-9cffa45a3d90
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1714'
 ht-degree: 3%
@@ -34,7 +34,7 @@ ht-degree: 3%
 
 ### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到[!DNL Mailchimp Tags]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=zh-Hans)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html?lang=zh-Hans)受众[!DNL Experience Platform]。
+在将数据激活到[!DNL Mailchimp Tags]目标之前，您必须在[中创建一个](/help/xdm/schema/composition.md)架构[、](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)数据集[和](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html)受众[!DNL Experience Platform]。
 
 ### [!DNL Mailchimp Tags]目标的先决条件 {#prerequisites-destination}
 
@@ -70,7 +70,7 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 ### 护栏 {#guardrails}
 
-有关[!DNL Mailchimp] API施加的限制的详细信息，请参阅[&#x200B; &#x200B;](https://mailchimp.com/developer/marketing/docs/fundamentals/#api-limits)速率限制[!DNL Mailchimp]。
+有关[!DNL Mailchimp] API施加的限制的详细信息，请参阅[ ](https://mailchimp.com/developer/marketing/docs/fundamentals/#api-limits)速率限制[!DNL Mailchimp]。
 
 ## 支持的身份 {#supported-identities}
 
@@ -203,7 +203,7 @@ API密钥的示例为`0123456789abcdef0123456789abcde-us14`。
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 转到您的[[!DNL Mailchimp]](https://login.mailchimp.com/)帐户。 然后导航到&#x200B;**[!DNL Audience]** > **[!DNL All Contacts]**&#x200B;页面，并检查受众中的联系人是否已添加以及受众中的联系人是否已使用受众名称进行更新。
+1. 转到您的[[!DNL Mailchimp]](https://login.mailchimp.com/)帐户。 然后导航到&#x200B;**[!DNL Audience]** > **[!DNL All Contacts]**页面，并检查受众中的联系人是否已添加以及受众中的联系人是否已使用受众名称进行更新。
    ![显示“受众”页面的Mailchimp UI屏幕截图。](../../assets/catalog/email-marketing/mailchimp-tags/contacts.png)
 
 ## 数据使用和治理 {#data-usage-governance}
