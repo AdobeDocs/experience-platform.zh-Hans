@@ -3,7 +3,7 @@ title: 使用流服务API创建Google PubSub Source连接
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Google PubSub帐户。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: f5b8f9bf-8a6f-4222-8eb2-928503edb24f
-source-git-commit: bad1e0a9d86dcce68f1a591060989560435070c5
+source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
 workflow-type: tm+mt
 source-wordcount: '1181'
 ht-degree: 2%
@@ -16,7 +16,7 @@ ht-degree: 2%
 >
 >[!DNL Google PubSub]源在源目录中可供已购买Real-Time Customer Data Platform Ultimate的用户使用。
 
-本教程将指导您使用[[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>)将[!DNL Google PubSub]（以下称为“[!DNL PubSub]”）连接到Experience Platform的步骤。
+本教程将指导您使用[!DNL Google PubSub]API[!DNL PubSub]将[[!DNL Flow Service] （以下称为“](<https://www.adobe.io/experience-platform-apis/references/flow-service/>)”）连接到Experience Platform的步骤。
 
 ## 快速入门
 
@@ -25,7 +25,7 @@ ht-degree: 2%
 * [源](../../../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
 * [沙盒](../../../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-以下部分提供了使用[!DNL Flow Service] API成功将[!DNL PubSub]连接到Experience Platform所需了解的其他信息。
+以下部分提供了使用[!DNL PubSub] API成功将[!DNL Flow Service]连接到Experience Platform所需了解的其他信息。
 
 ### 收集所需的凭据
 
@@ -70,13 +70,13 @@ ht-degree: 2%
 
 创建源连接的第一步是验证您的[!DNL PubSub]源并生成基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并识别要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-要创建基本连接ID，请在提供您的[!DNL PubSub]身份验证凭据作为请求参数的一部分时，向`/connections`端点发出POST请求。
+要创建基本连接ID，请在提供您的`/connections`身份验证凭据作为请求参数的一部分时，向[!DNL PubSub]端点发出POST请求。
 
 [!DNL PubSub]源允许您指定身份验证期间允许的访问类型。 您可以将帐户设置为具有根访问权限或限制对特定[!DNL PubSub]主题和订阅的访问权限。
 
 >[!NOTE]
 >
->分配给[!DNL PubSub]项目的主体（角色）在[!DNL PubSub]项目内创建的所有主题和订阅中被继承。 如果希望主体（角色）可以访问特定主题，则还必须将该主体（角色）添加到主题的相应订阅中。 有关详细信息，请阅读有关访问控制[&#128279;](<https://cloud.google.com/pubsub/docs/access-control>)的[!DNL PubSub] 文档。
+>分配给[!DNL PubSub]项目的主体（角色）在[!DNL PubSub]项目内创建的所有主题和订阅中被继承。 如果希望主体（角色）可以访问特定主题，则还必须将该主体（角色）添加到主题的相应订阅中。 有关详细信息，请阅读有关访问控制[[!DNL PubSub] 的](<https://cloud.google.com/pubsub/docs/access-control>)文档。
 
 **API格式**
 
@@ -90,7 +90,7 @@ POST /connections
 
 若要创建基于项目的身份验证的基础连接，请对`/connections`端点发出POST请求，并在请求正文中提供您的`projectId`和`credentials`。
 
-+++请求
++++ 请求
 
 ```shell
 curl -X POST \
@@ -123,9 +123,9 @@ curl -X POST \
 | `auth.params.credentials` | 验证[!DNL PubSub]所需的凭据或密钥。 |
 | `connectionSpec.id` | [!DNL PubSub]连接规范ID： `70116022-a743-464a-bbfe-e226a7f8210c`。 |
 
-++++
++++
 
-+++响应
++++ 响应
 
 成功的响应返回新创建的连接的详细信息，包括其唯一标识符(`id`)。 在下一步创建源连接时需要此基本连接ID。
 
@@ -136,13 +136,13 @@ curl -X POST \
 }
 ```
 
-++++
++++
 
 >[!TAB 基于主题和订阅的身份验证]
 
 若要创建具有主题和基于订阅的身份验证的基础连接，请向`/connections`端点发出POST请求，并在请求正文中提供您的`credentials`、`topicName`和`subscriptionName`。
 
-+++请求
++++ 请求
 
 ```shell
 curl -X POST \
@@ -179,7 +179,7 @@ curl -X POST \
 
 +++
 
-+++响应
++++ 响应
 
 成功的响应返回新创建的连接的详细信息，包括其唯一标识符(`id`)。 在下一步创建源连接时需要此基本连接ID。
 
@@ -190,7 +190,7 @@ curl -X POST \
 }
 ```
 
-++++
++++
 
 >[!ENDTABS]
 
@@ -199,7 +199,7 @@ curl -X POST \
 
 源连接创建和管理与摄取数据的外部源的连接。 源连接由数据源、数据格式和创建数据流所需的源连接ID等信息组成。 源连接实例特定于租户和组织。
 
-要创建源连接，请向[!DNL Flow Service] API的`/sourceConnections`端点发出POST请求。
+要创建源连接，请向`/sourceConnections` API的[!DNL Flow Service]端点发出POST请求。
 
 **API格式**
 
@@ -264,4 +264,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过学习本教程，您已使用[!DNL Flow Service] API创建了[!DNL PubSub]源连接。 您可以在下一个教程中使用此源连接ID来[使用 [!DNL Flow Service] API](../../collect/streaming.md)创建流式数据流。
+通过学习本教程，您已使用[!DNL PubSub] API创建了[!DNL Flow Service]源连接。 您可以在下一个教程中使用此源连接ID来[使用 [!DNL Flow Service] API](../../collect/streaming.md)创建流式数据流。
