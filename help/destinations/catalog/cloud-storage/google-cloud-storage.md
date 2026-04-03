@@ -3,7 +3,7 @@ title: Google Cloud Storage连接
 description: 了解如何连接到Google Cloud Storage并激活受众或导出数据集。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: ab274270-ae8c-4264-ba64-700b118e6435
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1297'
 ht-degree: 2%
@@ -78,7 +78,7 @@ ht-degree: 2%
 
 此时会显示&#x200B;**[!UICONTROL Settings]**&#x200B;页面。 在此处，您可以看到有关您的[!DNL Google]项目ID的信息以及有关您的[!DNL Google Cloud Storage]帐户的详细信息。 要访问互操作性设置，请从顶部标题中选择&#x200B;**[!UICONTROL Interoperability]**。
 
-![&#x200B; Google Cloud Platform仪表板中突出显示的“互操作性”选项卡。](../../../sources/images/tutorials/create/google-cloud-storage/project-access.png)
+![ Google Cloud Platform仪表板中突出显示的“互操作性”选项卡。](../../../sources/images/tutorials/create/google-cloud-storage/project-access.png)
 
 **[!UICONTROL Interoperability]**&#x200B;页面包含与您的服务帐户关联的身份验证、访问密钥和默认项目的信息。 要为您的服务帐户生成新的访问密钥ID和秘密访问密钥，请选择&#x200B;**[!UICONTROL Create a Key for a Service Account]**。
 
