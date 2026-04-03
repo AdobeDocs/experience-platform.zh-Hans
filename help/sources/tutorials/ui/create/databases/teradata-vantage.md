@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；Teradata Vantage
 title: 在UI中创建Teradata Vantage Source连接
 description: 了解如何使用Teradata UI创建Adobe Experience Platform Vantage源连接。
 exl-id: 3fdb09fa-128a-477b-9144-d4ef3ed18ea6
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
-source-wordcount: '418'
+source-wordcount: '399'
 ht-degree: 2%
 
 ---
@@ -33,27 +33,27 @@ ht-degree: 2%
 
 ## 连接您的[!DNL Teradata Vantage]帐户
 
-在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL Sources]**&#x200B;以访问[!UICONTROL Sources]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
-在[!UICONTROL 数据库]类别下，选择&#x200B;**[!UICONTROL Teradata优势]**，然后选择&#x200B;**[!UICONTROL 设置]**。
+在[!UICONTROL Databases]类别下，选择&#x200B;**[!UICONTROL Teradata Vantage]**，然后选择&#x200B;**[!UICONTROL Set up]**。
 
 >[!TIP]
 >
->当给定的源尚未具有经过身份验证的帐户时，源目录中的源会显示&#x200B;**[!UICONTROL 设置]**&#x200B;选项。 一旦存在经过身份验证的帐户，此选项将更改为&#x200B;**[!UICONTROL 添加数据]**。
+>当给定的源尚未拥有经过身份验证的帐户时，源目录中的源会显示&#x200B;**[!UICONTROL Set up]**&#x200B;选项。 一旦存在经过身份验证的帐户，此选项将更改为&#x200B;**[!UICONTROL Add data]**。
 
 ![已选择Teradata Vantage源的源目录。](../../../../images/tutorials/create/teradata/catalog.png)
 
-此时会显示&#x200B;**[!UICONTROL 连接到Teradata Vantage]**&#x200B;页面。 在此页上，您可以使用新凭据或现有凭据。
+此时会显示&#x200B;**[!UICONTROL Connect to Teradata Vantage]**&#x200B;页面。 在此页上，您可以使用新凭据或现有凭据。
 
 ### 现有账户
 
-若要连接现有帐户，请选择您要连接的[!DNL Teradata Vantage]帐户，然后选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
+要连接现有帐户，请选择要连接的[!DNL Teradata Vantage]帐户，然后选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续。
 
 ![源工作区中的现有帐户页面。](../../../../images/tutorials/create/teradata/existing.png)
 
 ### 新帐户
 
-如果您正在使用新凭据，请选择&#x200B;**[!UICONTROL 新帐户]**。 在显示的输入表单上，提供名称、可选描述和您的[!DNL Teradata Vantage]凭据。 完成后，选择&#x200B;**[!UICONTROL 连接]**，然后留出一些时间来建立新连接。
+如果您正在使用新凭据，请选择&#x200B;**[!UICONTROL New account]**。 在显示的输入表单上，提供名称、可选描述和您的[!DNL Teradata Vantage]凭据。 完成后，选择&#x200B;**[!UICONTROL Connect]**，然后留出一些时间来建立新连接。
 
 ![源工作区中的新帐户创建界面。](../../../../images/tutorials/create/teradata/new.png)
 
