@@ -2,7 +2,7 @@
 title: 探索性数据分析
 description: 了解如何使用Data Distiller浏览和分析Python笔记本中的数据。
 exl-id: 1dd4cf6e-f7cc-4f4b-afbd-bfc1d342a2c3
-source-git-commit: 27834417a1683136a173996cff1fd422305e65b9
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '760'
 ht-degree: 13%
@@ -103,9 +103,9 @@ print(f"Approximate count: {approx_count} using {sampling_rate *10}% sample")
 Approximate count: 1284600.0 using 5.0% sample
 ```
 
-## 电子邮件漏斗分析 {#email-funnel-analysis}
+## 发送电子邮件至funnel分析 {#email-funnel-analysis}
 
-漏斗分析是一种了解实现目标结果所需的步骤以及完成每个步骤的用户数量的方法。 以下示例对导致用户订阅新闻稿的步骤进行了简单的漏斗分析。 订阅结果由`web.formFilledOut`的事件类型表示。
+funnel分析是一种了解实现目标结果所需的步骤以及完成每个步骤的用户数量的方法。 以下示例演示了简单的funnel分析，其中分析了向订阅新闻稿的用户引导的步骤。 订阅结果由`web.formFilledOut`的事件类型表示。
 
 首先，运行查询以获取每一步的用户数。
 
@@ -152,7 +152,7 @@ fig.show()
 
 **示例输出**
 
-![eventType电子邮件漏斗的信息图。](../../images/data-distiller/email-funnel.png)
+![eventType电子邮件funnel的信息图。](../../images/data-distiller/email-funnel.png)
 
 ## 事件关联 {#event-correlations}
 
@@ -234,7 +234,7 @@ corrdf.fillna(0)
 
 **示例输出**：
 
-|    | 变量 | 值 | 特征 | 皮尔逊关联 |
+|    | 变量 | value | 特征 | 皮尔逊关联 |
 | --- | ---  |  ---  |  ---  | --- |
 | 0 | `webForms_EmailOpens` | 0.218874 | EmailOpens | 0.218874 |
 | 1 | `webForms_advertisingClicks` | 0.026805 | 广告点击量 | 0.026805 |
@@ -262,4 +262,4 @@ ax.set_title("Pearson Correlation of Events with the outcome event")
 
 ## 后续步骤
 
-通过阅读本文档，您已了解如何使用Data Distiller浏览和分析[!DNL Python]笔记本中的数据。 在机器学习环境中创建从Experience Platform到馈送自定义模型的功能管道的下一步是[为机器学习设计功能](./feature-engineering.md)。
+通过阅读本文档，您已了解如何使用Data Distiller浏览和分析[!DNL Python]笔记本中的数据。 从Experience Platform创建功能管道以在机器学习环境中馈送自定义模型的下一步是[为机器学习设计功能](./feature-engineering.md)。
